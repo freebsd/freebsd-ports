@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	avidemux2
-PORTVERSION=	2.0.32
-PORTREVISION=	2
+PORTVERSION=	2.0.34
 CATEGORIES=	multimedia
 MASTER_SITES=	http://fixounet.free.fr/avidemux/ \
 		http://download.berlios.de/avidemux/
-DISTNAME=	avidemux-${PORTVERSION}
+DISTNAME=	avidemux-${PORTVERSION}-test1
 
 MAINTAINER=	amistry@am-productions.biz
 COMMENT=	Simple GUI based video editor
@@ -19,9 +18,11 @@ COMMENT=	Simple GUI based video editor
 LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 		mad.2:${PORTSDIR}/audio/libmad \
 		xml2.5:${PORTSDIR}/textproc/libxml2
-BUILD_DEPENDS=	\
-	${X11BASE}/include/X11/extensions/Xvlib.h:${PORTSDIR}/graphics/xv
 
+WANT_AUTOCONF_VER=259
+WANT_AUTOCONF_RUN=yes
+WANT_AUTOMAKE_VER=19
+WANT_AUTOMAKE_RUN=yes
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL_VER=15
@@ -37,6 +38,13 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 		PTHREAD_CFLAGS=${PTHREAD_CFLAGS}
 CONFIGURE_ARGS=	--disable-warnings
 USE_GMAKE=	yes
+OPTIONS=	OPTIMIZED_CFLAGS "build with -O3 for lavcodec" off \
+		FAAC "FAAC (mpeg4/aac encoder)" off \
+		FAAD "FAAD (mpeg4/aac decoder)" off \
+		MPEGENC "MPEG/MJPEG video" off \
+		A52 "A52 audio" off \
+		XVID "Xvid video" off \
+		SDL "SDL audio/video framework" off
 
 .include <bsd.port.pre.mk>
 
@@ -95,46 +103,34 @@ LIB_DEPENDS+=	faac.0:${PORTSDIR}/audio/faac
 LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
 .endif
 
-pre-everything::
-.if !defined(WITH_MPEGENC)
-	@${ECHO_MSG} "To enable mpeg support define WITH_MPEGENC."
-.endif
-
-.if !defined(WITH_XVID)
-	@${ECHO_MSG} "To enable xvid as the decoder define WITH_XVID."
-.endif
-
-.if !defined(WITH_A52)
-	@${ECHO_MSG} "To enable A/52 support define WITH_A52."
-.endif
-
-.if !defined(WITH_SDL)
-	@${ECHO_MSG} "To enable SDL support define WITH_SDL."
-.endif
-
-.if !defined(WITH_FAAC)
-	@${ECHO_MSG} "To enable FAAC (mpeg4/aac encoder) support define WITH_FAAC."
-.endif
-
-.if !defined(WITH_FAAD)
-	@${ECHO_MSG} "To enable FAAD (mpeg4/aac decoder) support define WITH_FAAD."
-.endif
-
 post-patch:
 	@${TOUCH} ${WRKSRC}/*
 	@${REINPLACE_CMD} 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure ${WRKSRC}/*/*/Makefile
 	@${REINPLACE_CMD} 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/adm_lavcodec/*.c
 	@${REINPLACE_CMD} 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/adm_lavcodec/*/*.c
 	@${REINPLACE_CMD} 's|ADM_LOCALEDIR=$${datadir}/locale|ADM_LOCALEDIR=${PREFIX}/share/locale|' ${WRKSRC}/configure
-	@${REINPLACE_CMD} "s|-O2|${CFLAGS}|" ${WRKSRC}/adm_lavcodec/Makefile
-	@${REINPLACE_CMD} "s|-O2||" ${WRKSRC}/configure
+	@${REINPLACE_CMD} "s|-O2|${CFLAGS}|" ${WRKSRC}/configure
+.if !defined(WITH_OPTIMIZED_CFLAGS)
+	@${REINPLACE_CMD} "s|-O3|${CFLAGS}|" ${WRKSRC}/adm_lavcodec/Makefile.am
+.endif
 	@${REINPLACE_CMD} 's|SDL/|SDL11/|' \
 		${WRKSRC}/avidemux/ADM_audiodevice/ADM_deviceSDL.cpp \
 		${WRKSRC}/avidemux/ADM_gui2/GUI_sdlDraw.cpp \
 		${WRKSRC}/avidemux/main.cpp
+#	 ACLOCAL hack see PR ports/41945
+	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOMAKE_ENV} ${ACLOCAL} \
+		--acdir=${ACLOCAL_DIR})
 .if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} 's|-falign-loops=16||g ; s|-msse||g' ${WRKSRC}/configure \
-		${WRKSRC}/adm_lavcodec/Makefile.in ${WRKSRC}/adm_lavcodec/libpostproc/Makefile.in
+	@${REINPLACE_CMD} 's|-falign-loops=16||' ${WRKSRC}/configure \
+		${WRKSRC}/adm_lavcodec/Makefile.in \
+		${WRKSRC}/adm_lavcodec/Makefile.in \
+		${WRKSRC}/adm_lavcodec/libpostproc/Makefile.in \
+		${WRKSRC}/adm_lavcodec/libpostproc/Makefile.am
+	@${REINPLACE_CMD} 's|-msse||' ${WRKSRC}/configure \
+		${WRKSRC}/adm_lavcodec/Makefile.in \
+		${WRKSRC}/adm_lavcodec/Makefile.am \
+		${WRKSRC}/adm_lavcodec/libpostproc/Makefile.in \
+		${WRKSRC}/adm_lavcodec/libpostproc/Makefile.am
 .endif
 
 .include <bsd.port.post.mk>
