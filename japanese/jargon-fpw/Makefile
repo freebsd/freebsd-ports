@@ -44,7 +44,7 @@ post-patch:
 
 do-build:
 	cd ${WRKSRC}; \
-	fpwmake -f ${MAKEFILE}; \
+	fpwmake -f ${MAKEFILE} > /dev/null; \
 	fpwmake -f ${MAKEFILE} catalogs
 
 do-install:
