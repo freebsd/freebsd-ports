@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	verlihub
-PORTVERSION=	0.9.7r5
-PORTREVISION=	1
+PORTVERSION=	0.9.7
+PORTREVISION=	
+PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	verlihub
-DISTNAME=	verlihub-0.9.7-RC5
+MASTER_SITE_SUBDIR= 	verlihub
 
 MAINTAINER=	hurbold@yahoo.com
 COMMENT=	Verlihub Linux/Unix Direct Connect Hub Software
@@ -24,14 +24,18 @@ USE_MYSQL=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=	15
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lssl -lcrypto"
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PORTDOCS=	configuring.txt help.sql using.txt features.html help.html params.php verlihub.html
 
 post-patch:
 	@${CAT} ${PKGDIR}/pkg-message | ${SED} 's|%%PREFIX%%|${PREFIX}|' > ${PKGMESSAGE}
+	@${REINPLACE_CMD} -e "s|/bin/bash|/usr/local/bin/bash|" ${WRKSRC}/scripts/install \
+	${WRKSRC}/scripts/regnick ${WRKSRC}/scripts/runhub ${WRKSRC}/scripts/trigger
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -52,10 +56,6 @@ post-install:
 
 .if ${OSVERSION} < 502010
 USE_GCC=	3.3
-.endif
-
-.if ${PERL_LEVEL} < 500800
-IGNORE=		requires perl 5.8 or later. Install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
