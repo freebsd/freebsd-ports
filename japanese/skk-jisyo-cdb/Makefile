@@ -6,6 +6,7 @@
 #
 
 PORTNAME=	skk-jisyo-cdb
+PORTVERSION=	200209
 PORTREVISION=	0
 
 MAINTAINER=	toru@tkd.ne.jp
