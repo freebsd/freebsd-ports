@@ -1,30 +1,24 @@
-# New ports collection makefile for:    Ng
-# Date created:         18 November 1998
-# Whom:                 Kawaguti Ginga <ginga@athena.club.ne.jp>
+# New ports collection makefile for:	Ng-devel
+# Date created:				18 June 2003
+# Whom:					Kawaguti Ginga <ginga-freebsd@ginganet.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	ng
-PORTVERSION=	1.4.4
+PORTVERSION=	1.5.b1
 CATEGORIES=	japanese editors
 MASTER_SITES=	http://tomato.sakura.ne.jp/~amura/archives/ng/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
-
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	ng-1.4.4-replace_bug.patch
+DISTNAME=	${PORTNAME}-1.5beta1
 
 MAINTAINER?=	ginga-freebsd@ginganet.org
-COMMENT?=	A very light Emacs-clone with Japanese support
+COMMENT=	A very light Emacs-clone with Japanese support
 
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LIBS="-ltermcap"
 ALL_TARGET=	ng
+GNU_CONFIGURE=	yes
 
-PORTDOCS=	CHANGES.1_3 CHANGES.doc Ng.FAQ Ng.doc Ng.ref Ng.tut \
+PORTDOCS=	CHANGES.1_3 CHANGES.1_4 CHANGES.doc Ng.FAQ Ng.doc Ng.ref Ng.tut \
 		README.Ng README.SKG
-
-post-patch:
-	@(cd ${WRKSRC}; ${LN} -sf sys/bsd/Makefile . )
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ng ${PREFIX}/bin
