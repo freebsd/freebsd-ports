@@ -1,14 +1,12 @@
---- configure.orig	Fri Feb 22 03:43:38 2002
-+++ configure	Fri Feb 22 03:44:56 2002
-@@ -11095,7 +11095,10 @@
- EOF
+--- configure.orig	Sat Apr  6 15:19:30 2002
++++ configure	Sun Apr  7 09:13:07 2002
+@@ -12087,6 +12087,9 @@
  
  cat >> confdefs.h <<EOF
--#define SERVER_CONFIG_FILE "conf/$progname.conf"
-+#define SERVER_CONFIG_FILE "etc/apache2/$progname.conf"
-+#define DEFAULT_ERRORLOG "/var/log/httpd-error.log"
-+#define AP_TYPES_CONFIG_FILE "etc/apache2/mime.types"
-+#define DOCUMENT_LOCATION HTTPD_ROOT "/www/data"
+ #define SERVER_CONFIG_FILE "${rel_sysconfdir}/${progname}.conf"
++#define DEFAULT_ERRORLOG "${rel_logfiledir}/httpd-error.log"
++#define AP_TYPES_CONFIG_FILE "${rel_sysconfdir}/mime.types"
++#define DOCUMENT_LOCATION "${rel_htdocsdir}"
  EOF
  
  cat >> confdefs.h <<EOF

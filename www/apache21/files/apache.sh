@@ -1,16 +1,13 @@
 #!/bin/sh
-
-if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/$(basename $0)\$"); then
-    echo "$0: Cannot determine the PREFIX" >&2
-    exit 1
-fi
+PREFIX=@@PREFIX@@
 
 case "$1" in
 start)
-	[ -x ${PREFIX}/sbin/apachectl ] && ${PREFIX}/sbin/apachectl start > /dev/null && echo -n ' apache'
+	[ "@@SSL@@" = "ssl" -a -f "$PREFIX/etc/apache2/ssl.crt/server.crt" ] && SSL=ssl
+	[ -x ${PREFIX}/sbin/apachectl ] && ${PREFIX}/sbin/apachectl start${SSL} > /dev/null && echo -n ' apache2'
 	;;
 stop)
-	[ -r /var/run/httpd.pid ] && ${PREFIX}/sbin/apachectl stop > /dev/null && echo -n ' apache'
+	[ -r /var/run/httpd.pid ] && ${PREFIX}/sbin/apachectl stop > /dev/null && echo -n ' apache2'
 	;;
 *)
 	echo "Usage: `basename $0` {start|stop}" >&2
