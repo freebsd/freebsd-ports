@@ -3,12 +3,12 @@ $FreeBSD$
 
 --- docs/Makefile.in.orig
 +++ docs/Makefile.in
-@@ -152,7 +152,7 @@
+@@ -178,7 +178,7 @@
+ sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
- 
 -SUBDIRS = reference tutorial
 +SUBDIRS =
- 
  EXTRA_DIST = \
  	gmime-config.txt	\
+ 	gtkdocs_fix

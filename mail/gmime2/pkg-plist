@@ -22,7 +22,6 @@ include/gmime-2.0/gmime/gmime-filter-yenc.h
 include/gmime-2.0/gmime/gmime-filter.h
 include/gmime-2.0/gmime/gmime-gpg-context.h
 include/gmime-2.0/gmime/gmime-header.h
-include/gmime-2.0/gmime/gmime-host-utils.h
 include/gmime-2.0/gmime/gmime-iconv-utils.h
 include/gmime-2.0/gmime/gmime-iconv.h
 include/gmime-2.0/gmime/gmime-message-part.h
@@ -46,7 +45,6 @@ include/gmime-2.0/gmime/gmime-stream-mem.h
 include/gmime-2.0/gmime/gmime-stream-mmap.h
 include/gmime-2.0/gmime/gmime-stream-null.h
 include/gmime-2.0/gmime/gmime-stream.h
-include/gmime-2.0/gmime/gmime-type-utils.h
 include/gmime-2.0/gmime/gmime-utils.h
 include/gmime-2.0/gmime/gmime.h
 include/gmime-2.0/gmime/internet-address.h
