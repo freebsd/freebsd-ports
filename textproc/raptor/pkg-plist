@@ -1,5 +1,5 @@
+bin/rapper
 bin/raptor-config
-bin/rdfdump
 include/ntriples.h
 include/raptor.h
 lib/libraptor.a
