@@ -1,0 +1,39 @@
+Index: Makefile
+diff -u Makefile.orig Makefile
+--- Makefile.orig	Fri May 12 03:39:39 2000
++++ Makefile	Fri Sep 15 01:11:28 2000
+@@ -1,8 +1,8 @@
+ # Makefile for a GKrellM SNMP monitor plugin
+ 
+ # Linux
+-GTK_CONFIG = gtk-config
+-IMLIB_CONFIG = imlib-config
++GTK_CONFIG?= gtk-config
++IMLIB_CONFIG?= imlib-config
+ SYSLIB = -lsnmp
+ # we need lib crypto if libsnmp has privacy support.
+ SYSLIB += -lcrypto
+@@ -14,8 +14,8 @@
+ #PLUGIN_DIR = /usr/X11R6/libexec/gkrellm/plugins/
+ 
+ USER_PLUGIN_DIR = $(HOME)/.gkrellm/plugins
+-PLUGIN_DIR = /usr/share/gkrellm/plugins
+-GKRELLM_INCLUDE = -I/usr/local/include
++PLUGIN_DIR?= /usr/share/gkrellm/plugins
++GKRELLM_INCLUDE?= -I/usr/local/include
+ 
+ GTK_INCLUDE = `$(GTK_CONFIG) --cflags`
+ GTK_LIB = `$(GTK_CONFIG) --libs`
+@@ -24,11 +24,9 @@
+ IMLIB_LIB = `$(IMLIB_CONFIG) --libs-gdk`
+ 
+ 
+-FLAGS = -O2 -Wall -fPIC $(GTK_INCLUDE) $(IMLIB_INCLUDE) $(GKRELLM_INCLUDE)
++CFLAGS += -Wall -fPIC $(GTK_INCLUDE) $(IMLIB_INCLUDE) $(GKRELLM_INCLUDE)
+ LIBS = $(GTK_LIB) $(IMLIB_LIB) $(SYSLIB)
+ LFLAGS = -shared
+-
+-CC = gcc $(CFLAGS) $(FLAGS)
+ 
+ INSTALL = install -c
+ INSTALL_PROGRAM = $(INSTALL) -s

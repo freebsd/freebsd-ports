@@ -1,0 +1,7 @@
+GKrellM SNMP Plugin
+Author: Christian W. Zuckschwerdt <zany@triq.net>
+WWW: http://triq.net/gkrellm/
+
+A plugin for GKrellM  which allows monitoring of SNMP-Values.
+
+- Eike Bernhardt <eike.bernhardt@gmx.de>

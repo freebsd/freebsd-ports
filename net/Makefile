@@ -75,6 +75,7 @@
     SUBDIR += generic-nqs
     SUBDIR += ggsd
     SUBDIR += gicq
+    SUBDIR += gkrellm_snmp
     SUBDIR += gnet
     SUBDIR += gnomba
     SUBDIR += gnome-vnc
