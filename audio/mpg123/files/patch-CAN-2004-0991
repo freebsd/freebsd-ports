@@ -1,0 +1,30 @@
+--- common.c.orig	2003/01/29 19:22:48	1.4
++++ common.c	2005/01/01 19:21:47	1.5
+@@ -343,9 +343,12 @@
+       fr->mpeg25 = 1;
+     }
+     
+-    if (!param.tryresync || !oldhead) {
+-          /* If "tryresync" is true, assume that certain
+-             parameters do not change within the stream! */
++    if (!param.tryresync || !oldhead ||
++        (((oldhead>>19)&0x3) ^ ((newhead>>19)&0x3))) {
++          /* If "tryresync" is false, assume that certain
++             parameters do not change within the stream!
++	     Force an update if lsf or mpeg25 settings
++	     have changed. */
+       fr->lay = 4-((newhead>>17)&3);
+       if( ((newhead>>10)&0x3) == 0x3) {
+         fprintf(stderr,"Stream error\n");
+Index: debian/mpg123/layer2.c
+--- layer2.c.orig	Tue Sep  7 14:32:13 2004
++++ layer2.c	Sat Jan  1 20:21:47 2005
+@@ -240,7 +240,7 @@
+        { alloc_0, alloc_1, alloc_2, alloc_3 , alloc_4 };
+   static int sblims[5] = { 27 , 30 , 8, 12 , 30 };
+ 
+-  if(fr->lsf)
++  if(fr->sampling_frequency >= 3) /* Or equivalent: (fr->lsf == 1) */
+     table = 4;
+   else
+     table = translate[fr->sampling_frequency][2-fr->stereo][fr->bitrate_index];
