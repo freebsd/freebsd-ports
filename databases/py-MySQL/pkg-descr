@@ -1,0 +1,4 @@
+You can easily access a MySQL database through the Python MySQL module.
+
+Before using the Python MySQL functions, the module must be imported with
+"import MySQL".

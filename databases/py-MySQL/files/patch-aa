@@ -1,0 +1,38 @@
+--- MySQLmodule.c.orig	Sat Oct  3 05:14:18 1998
++++ MySQLmodule.c	Fri Jan 14 08:40:00 2000
+@@ -232,7 +232,7 @@
+     PyObject *rowlist, *fieldobj;
+     MYSQL_FIELD *tf;
+     int i, n;
+-    unsigned int *lengths;
++    unsigned long *lengths;
+ 
+     n = mysql_num_fields(res);
+     lengths = mysql_fetch_lengths(res);
+@@ -381,7 +381,7 @@
+     if (reslist == NULL) return NULL;
+     n = mysql_num_fields(res);
+     for (i = 0; i < n; i++) {
+-        tf = &(mysql_fetch_field_direct(res, i));
++        tf = mysql_fetch_field_direct(res, i);
+ 	if (tf == NULL) {
+ 	    if (res->handle && mysql_error(res->handle)[0] != 0) {
+ 	        PyErr_SetString(MySQLError,mysql_error(res->handle));
+@@ -1122,7 +1122,7 @@
+     if (rows > 0) {
+         cols = mysql_num_fields(self->res);
+         for (j=0; j<cols; j++) {
+- 	    tf = &(mysql_fetch_field_direct(self->res,j));
++ 	    tf = mysql_fetch_field_direct(self->res,j);
+ 	    if (tf == NULL) {
+ 		if (self->res->handle && mysql_error(self->res->handle)[0] != 0) {
+ 		    PyErr_SetString(MySQLError,mysql_error(self->res->handle));
+@@ -1144,7 +1144,7 @@
+ 	    rowlist = PyList_GetItem(datalist,i);
+ 	    if (rowlist == NULL) goto error;
+ 	    for (j=0; j<cols; j++) {
+-	        tf = &(mysql_fetch_field_direct(self->res,j));
++	        tf = mysql_fetch_field_direct(self->res,j);
+ 		if (tf == NULL) {
+ 		    if (self->res->handle && mysql_error(self->res->handle)[0] != 0) {
+ 		        PyErr_SetString(MySQLError,mysql_error(self->res->handle));
