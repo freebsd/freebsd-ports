@@ -51,6 +51,7 @@ CONFIGURE_ARGS+=--with-libs="-lsvml"
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
+USE_BZIP2=	yes
 ALL_TARGET=	# empty
 PLIST_SUB+=	VERSION=${PORTVERSION}
 MPQC_COMMAND=	${PREFIX}/bin/mpqc
