@@ -30,6 +30,10 @@ ALL_TARGET=	all
 ALL_TARGET=	ipsc
 .endif
 
+.if ${OSVERSION} >= 500113
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 post-extract:
 	@${LN} -s ${WRKDIRPREFIX}${.CURDIR}/../prips/work/prips \
 		${WRKDIR}/prips
