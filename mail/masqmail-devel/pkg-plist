@@ -11,14 +11,14 @@ share/masqmail/tpl/failmsg.tpl.it
 share/masqmail/tpl/warnmsg.tpl
 share/masqmail/tpl/warnmsg.tpl.de
 share/masqmail/tpl/warnmsg.tpl.fr
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/INSTALL
-%%DOCSDIR%%/NEWS
-%%DOCSDIR%%/README
-%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 @dirrm share/masqmail/tpl
 @dirrm share/masqmail
 @dirrm etc/masqmail
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rmdir /var/log/masqmail 2>/dev/null || true
