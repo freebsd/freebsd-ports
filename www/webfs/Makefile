@@ -6,18 +6,21 @@
 #
 
 PORTNAME=	webfs
-PORTVERSION= 	1.0
+PORTVERSION= 	1.6
 CATEGORIES=	www
-MASTER_SITES=	http://me.IN-Berlin.DE/~kraxel/dl/
+MASTER_SITES=	http://www.strusel007.de/linux/misc/
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	jedgar@FreeBSD.org
 
+WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 MAN1=		webfsd.1
 
 do-configure:
 	@${CP} ${WRKSRC}/webfsd.man ${WRKSRC}/webfsd.1
-	@${PERL} -pi.orig -e 's|/etc/mime.types|${PREFIX}/etc/webfsd/mime.types|' ${WRKSRC}/webfsd.1
-	@${PERL} -pi.orig -e 's|/etc/mime.types|${PREFIX}/etc/webfsd/mime.types|' ${WRKSRC}/main.c
+.for file in webfsd.1 main.c Makefile
+	@${PERL} -pi.orig -e 's|/etc/mime.types|${PREFIX}/etc/webfsd/mime.types|' ${WRKSRC}/${file}
+.endfor
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/webfsd ${PREFIX}/sbin
