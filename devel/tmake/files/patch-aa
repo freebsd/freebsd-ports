@@ -1,0 +1,17 @@
+--- lib/unix/generic.t	Fri Jul 30 08:55:18 1999
++++ lib/unix/generic.t.new	Thu Apr  6 20:43:17 2000
+@@ -150,10 +150,10 @@
+ 
+ ####### Compiler, tools and options
+ 
+-CC	=	#$ Expand("TMAKE_CC");
+-CXX	=	#$ Expand("TMAKE_CXX");
+-CFLAGS	=	#$ Expand("TMAKE_CFLAGS"); ExpandGlue("DEFINES","-D"," -D","");
+-CXXFLAGS=	#$ Expand("TMAKE_CXXFLAGS"); ExpandGlue("DEFINES","-D"," -D","");
++CC	?=	#$ Expand("TMAKE_CC");
++CXX	?=	#$ Expand("TMAKE_CXX");
++CFLAGS	?=	#$ Expand("TMAKE_CFLAGS"); ExpandGlue("DEFINES","-D"," -D","");
++CXXFLAGS?=	#$ Expand("TMAKE_CXXFLAGS"); ExpandGlue("DEFINES","-D"," -D","");
+ INCPATH	=	#$ ExpandPath("INCPATH","-I"," -I","");
+ #$ Config("staticlib") && DisableOutput();
+ LINK	=	#$ Expand("TMAKE_LINK");
