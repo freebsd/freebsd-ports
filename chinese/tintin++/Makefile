@@ -7,10 +7,10 @@
 
 CATEGORIES=	chinese
 
-MASTERDIR=	${.CURDIR}/../../net/tintin++
-
 MAINTAINER=	foxfair@FreeBSD.org
 
-EXTRA_PATCHES=	${.CURDIR}/files/extra-patch.1
+MASTERDIR=	${.CURDIR}/../../net/tintin++-devel
+
+CONFIGURE_ARGS=	--enable-big5
 
 .include "${MASTERDIR}/Makefile"
