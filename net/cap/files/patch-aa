@@ -1,0 +1,82 @@
+--- Configure.orig	Fri Nov 15 15:53:40 1996
++++ Configure	Fri Nov 15 16:43:36 1996
+@@ -433,7 +433,7 @@
+ usingphase2="# define([usephase2],1)"
+ usingatis="# define([useatis],1)"
+ singletree="# define([debug],1)"
+-includefile="# define([includef],1)"
++includefile="define([includef],1)"
+ result=0
+ usephase2=0
+ uabsupport=0
+@@ -1517,29 +1517,39 @@
+ echo "# prevent itself from being included twice"
+ echo "# define _TYPES"
+ echo "${needselfdef}"
+-${PCAT} <<\EOT1
++${PCAT} <<\EOTL
+ # MINOR CONFIGURATION: configure various programs
+ 
+ #define([columbia],1) # so columbia can do things quickly
+ #define([rutgersdef],1) # so rutgers can do things quickly
+ 
++EOTL
++echo "# Installation prefix"
++if [ ! -z ${PREFIX} ]; then
++    echo "define([prefix],[[${PREFIX}]])"
++  else
++    echo "define([prefix],[[/usr/local]])"
++fi
++echo
++
++${PCAT} <<\EOT1
+ # location of include files
+-define([includedir],[[/usr/include]])
++define([includedest],concat(prefix,[[[/include]]]))
+ ifelse(os,[epix],[define([includedir],[[/bsd43/usr/include]])])
+ # location of des subroutine source (see lib/afp/README)
+ define([desloc],[[../../extras]])
+ # location of atalk.local, etc.
+-define([etcdest],[[/etc]])
++define([etcdest],concat(prefix,[/etc/cap]))
+ ifdef([columbia],[define([etcdest],[[/usr/local/lib/cap]])])
+ # location of user cap programs
+-define([capdestdir],[[/usr/local/cap]])
++define([capdestdir],concat(prefix,[/bin]))
+ # location of cap "server" programs (aufs, lwsrv, papif, uab etc.)
+-define([capsrvrdestdir],[[/usr/local/cap]])
++define([capsrvrdestdir],concat(prefix,[/sbin]))
+ # location of some cap data files
+-define([caplibdestdir],[[/usr/local/lib/cap]])
++define([caplibdestdir],concat(prefix,[/lib/cap]))
+ ifdef([rutgersdef],[define([caplibdestdir],[[/usr/local/cap/lib]])])
+ # location of cap libraries
+-define([libdestdir],[[/usr/local/lib]])
++define([libdestdir],concat(prefix,[/lib]))
+ # override for aux (doesn't search /usr/local/lib)
+ ifelse(os,[aux],[define([libdestdir],[[/usr/lib]])])
+ # cap library names
+@@ -1587,11 +1597,11 @@
+ ifelse(os,[netbsd],
+ 	[define([libafpc],concat([-L],libdestdir,[ ],libafpc))])
+ ifelse(os,[freebsd],
+-	[define([libcap],concat([-L],libdestdir,[ ],libcap))])
++	[define([libcap],concat([-L],cwd,[/lib/cap],[ ],libcap))])
+ ifelse(os,[freebsd],
+-	[define([libafp],concat([-L],libdestdir,[ ],libafp))])
++	[define([libafp],concat([-L],cwd,[/lib/afp],[ ],libafp))])
+ ifelse(os,[freebsd],
+-	[define([libafpc],concat([-L],libdestdir,[ ],libafpc))])
++	[define([libafpc],concat([-L],cwd,[/lib/afpc],[ ],libafpc))])
+ # any special libraries
+ define([libspecial],[])
+ ifelse(os,[ultrix40],[
+@@ -1717,7 +1727,7 @@
+ # for cap.printers - uncomment and change the following line to point
+ # papif, et. al. to a location other than /etc/cap.printers.  (Note:
+ # line below would set it to $etcdest/cap.printers)
+-# define([capprinters],concat([\"],etcdest,[/],[cap.printers],[\"]))
++define([capprinters],concat([\"],etcdest,[/],[cap.printers],[\"]))
+ ifdef([columbia],
+        [define([capprinters],concat([\"],etcdest,[/],[cap.printers],[\"]))])
+ # for atalkdbm - allows change following line(s) to modify atalk.local

@@ -1,0 +1,30 @@
+--- support/ethertalk/bpfiltp.c.orig	Mon Nov 25 13:06:49 1996
++++ support/ethertalk/bpfiltp.c	Mon Nov 25 13:08:07 1996
+@@ -63,6 +63,9 @@
+ #ifdef __FreeBSD__
+ #define MULTI_BPF_PKT
+ #define USE_SIOCGIFCONF
++#if __FreeBSD__ >= 2
++#include <osreldate.h>
++#endif
+ #endif __FreeBSD__
+ 
+ #ifdef NeXT
+@@ -785,7 +788,7 @@
+ 
+   bcopy(eaddr, &eh.ether_dhost, 6);
+ #ifdef PHASE2
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) && __FreeBSD_version <= 199607
+   /* This should really be fixed in the kernel. */
+   eh.ether_type = buflen;
+ #else
+@@ -806,7 +809,7 @@
+   *q++ = (eph->protocol >> 8) & 0xff;
+   *q++ = (eph->protocol & 0xff);
+ #else  PHASE2
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) && __FreeBSD_version <= 199607
+   /* This should really be fixed in the kernel. */
+   eh.ether_type = eph->protocol;
+ #else

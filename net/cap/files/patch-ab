@@ -1,0 +1,15 @@
+--- Makefile.orig	Wed Nov 13 21:19:14 1996
++++ Makefile	Thu Nov 14 14:19:16 1996
+@@ -19,6 +19,12 @@
+ 	(cd lib/afpc; make install)
+ 	touch libinstall
+ 
++dummy-libinstall: libsmade
++	ranlib lib/cap/libcap.a
++	ranlib lib/afp/libafp.a
++	ranlib lib/afpc/libafpc.a
++	touch libinstall
++
+ programs: libinstall
+ 	-(cd etc; make)
+ 	-(cd samples; make)

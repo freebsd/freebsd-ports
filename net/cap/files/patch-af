@@ -1,0 +1,73 @@
+--- etc/list-cap-servers.orig	Mon Nov 25 13:11:46 1996
++++ etc/list-cap-servers	Mon Nov 25 13:22:07 1996
+@@ -1,2 +1,2 @@
+ #! /bin/sh
+-ps agx | egrep ':[0-9][0-9]( | [^ ]*/)(atalkrd|atis|aufs|lwsrv|lwrename|printqueue)( |$)'
++ps ax | egrep '[0-9][0-9]( | [^ ]*/)(atalkrd|atis|aufs|lwsrv|lwrename|printqueue|snitch|aarpd)( |$)'
+--- etc/start-cap-servers.orig	Tue Nov 26 02:38:32 1996
++++ etc/start-cap-servers	Tue Nov 26 02:49:03 1996
+@@ -1,11 +1,12 @@
+ #!/bin/sh
+ 
+-### sample start servers file (copy to /usr/local/lib)
+-### start from '/etc/rc.local'
++### sample start servers file (copy to /usr/local/etc/rc.d
++### as start-cap-servers.sh or something.  And /etc/rc will automatically
++### execute this script.)
+ 
+-LOGd=/usr/tmp
++LOGd=/var/log
+ LOGf=/dev/null
+-CAP=/usr/local/cap
++CAP=/usr/local/sbin
+ LIB=/usr/local/lib/cap
+ 
+ LWARGS="-a ${LIB}/procsets -f ${LIB}/LW+Fonts"
+@@ -19,7 +20,7 @@
+ #
+ # Otherwise start aarpd first for Native EtherTalk
+ #
+-# ${CAP}/aarpd "interface" "zone"
++${CAP}/aarpd "interface" "zone"
+ 
+ #
+ # Or capd for Kernel AppleTalk under Linux
+@@ -34,12 +35,12 @@
+ #
+ # Make this 15 seconds if using aarpd
+ #
+-sleep 5
++sleep 15
+ 
+-${CAP}/snitch -S -f "SUN 4 SunOS 4.0 UNIX" -l lwsrv
++${CAP}/snitch -S -f "`uname -s -r` UNIX" -l lwsrv
+ ${CAP}/lwsrv -n "Technical Services Spool" -p lw.tsa ${LWARGS}
+ 
+ # if CAP compiled with FIXED_DIRIDS then start AFP ID server first
+ # ${CAP}/afpidsrvr -l ${LOGd}/afpidsrvr.log
+ 
+-${CAP}/aufs -U 20 -V ${LIB}/afpvols -l ${LOGf} -n `hostname`
++${CAP}/aufs -U 20 -V ${LIB}/afpvols -F ${LIB}/afpfile -l ${LOGf} -n `hostname`
+--- etc/kill-cap-servers.orig	Mon Nov 25 16:16:13 1996
++++ etc/kill-cap-servers	Mon Nov 25 16:21:11 1996
+@@ -1,17 +1,17 @@
+ #! /bin/sh
+ TEMP=/tmp/kcs$$
+ trap "rm -f $TEMP" 1 2 3 15
+-ps agx | egrep ':[0-9][0-9]( | [^ ]*/)(atalkrd|atis|aufs|lwsrv|lwrename|printqueue)( |$)' > $TEMP
++ps ax | egrep '[0-9][0-9]( | [^ ]*/)(atalkrd|atis|aufs|lwsrv|lwrename|printqueue|snitch|aarpd)( |$)' > $TEMP
+ cat $TEMP
+ echo -n 'Kill [ny]? '
+ read reply junk
+ if [ X${reply-n} = Xy ] ; then
+         echo Killing...
+-        AUFS=`egrep ':[0-9][0-9]( | [^ ]*/)aufs( |$)' $TEMP | awk '{print $1}'`
++        AUFS=`egrep '[0-9][0-9]( | [^ ]*/)aufs( |$)' $TEMP | awk '{print $1}'`
+         if [ x"$AUFS" != x ]; then
+                 kill -HUP $AUFS
+         fi
+-        kill `egrep -v ':[0-9][0-9]( | [^ ]*/)aufs( |$)' $TEMP | awk '{print $1}'`
++        kill `egrep -v '[0-9][0-9]( | [^ ]*/)aufs( |$)' $TEMP | awk '{print $1}'`
+ else
+         echo Cancelled...
+ fi

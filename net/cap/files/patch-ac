@@ -1,0 +1,24 @@
+--- netat/Makefile.m4.orig	Thu Nov 14 14:23:47 1996
++++ netat/Makefile.m4	Thu Nov 14 14:24:05 1996
+@@ -1,4 +1,4 @@
+-I=includedir()
++I=includedest()
+ HFILES = aberrors.h abqueue.h appletalk.h afp.h afpcmd.h afpc.h \
+ 	 compat.h sysvcompat.h macfile.h abnbp.h fcntldomv.h afppass.h
+ 
+--- etc/Makefile.m4.orig	Sun Mar  8 22:46:19 1992
++++ etc/Makefile.m4	Sat Nov 30 09:36:23 1996
+@@ -1,11 +1,12 @@
+ CFLAGS=cflags() nbpflags() specialcflags()
+ SDESTDIR=capsrvrdestdir()
+ UDESTDIR=capdestdir()
+-ETCDIR=etcdest()
+ CAPLIB=libcap()
+ I=includedir()
+ # for other libraries (like BSD on hpux)
+ SLIB=libspecial()
++
++ETCDIR=/var/run
+ 
+ ifdef([useatis],[],[# ])ATISPROGS=atis
+ PROGS=${ATISPROGS} 

@@ -1,0 +1,33 @@
+#!/bin/sh
+if [ -z ${BATCH} ]; then
+    echo "This port comes with reasonable defaults as follows:"
+    echo "  Native Ethertalk with Phase 2 compatibility."
+    echo "  Critical AUFS stat() calls to be cached. (STAT_CACHE)"
+    echo "  USR1 signal makes parent aufs re-read system volumes file. (REREAD_AFPVOLS)"
+    echo "  Pid of aufs is dumped to /var/run/aufs.pid. (PID_FILE)"
+    echo "  User defined file suffix to creator/type/xlate mapping. (USR_FILE_TYPES)"
+    echo "  Automatically create user .afpvols and 'mac' directories if non-existent."
+    echo "    (CREATE_AFPVOL)"
+    echo "  Fix permissions on network trash stuff. (NETWORKTRASH)"
+    echo "  Add entry to the 'wtmp' file for each AUFS connection. (LOG_WTMP)"
+    echo "  Run lpd job as Chooser Name if it is valid UNIX account and "
+    echo "    refuse printing if Chooser name is invalid. (RUN_AS_USER, USER_REQUIRED)"
+    echo "  Lpr output to stdout/stderr are included in lwsrv log. (LWSRV_LPR_LOG)"
+    echo
+    echo -n "Would you like to use them? (y/n)> "
+    read ans
+    case ${ans} in
+      y*|Y*) BATCH=yes ;;
+    esac
+  fi
+
+echo "===>  Copying custom m4.features file."
+cp ${FILESDIR}/m4.features ${WRKSRC}
+
+if [ -z ${BATCH} ]; then
+    (cd ${WRKSRC}; ./Configure)
+  else
+    sed -e s+@CWD@+${WRKSRC}+ -e s+@PREFIX@+${PREFIX}+ \
+      ${FILESDIR}/m4.setup.in > ${WRKSRC}/m4.setup
+    (cd ${WRKSRC}; ./gen.makes)
+  fi

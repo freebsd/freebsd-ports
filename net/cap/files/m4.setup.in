@@ -1,0 +1,542 @@
+define(`concat',$1$2$3$4$5$6$7$8$9)
+changequote([,])
+
+# os - one of:
+#   "bsd" - bsd 4.2, bsd 4.3, ultrix 1.1, acis 4.2,4.3 other
+#       "standard" bsd systems without nfs
+#   "ultrix12" - Ultrix 1.2
+#   "ultrix20" - Ultrix 2.0 or greater
+#   "ultrix40" - Ultrix 4.0 or greater
+#   "osf1" - OSF/1 1.3 or greater
+#   "hpux" - HP/UX
+#   "aux" - A/UX
+#   "uts" - Amdahl UTS
+#   "xenix5" - SCO Xenix System V
+#   "aix" - IBM AIX System V
+#   "pyr" - pyramid (in BSD universe)
+#   "sunos" - SunOS 4.N or less
+#   "solaris" - Solaris 2.N (SunOS 5.0 and greater)
+#   "encore" - Encore MultiMax
+#   "next" - NeXT/MACH
+#   "dynix" - Sequent Balance
+#   "irix" - Silicon Graphics IRIS-4D/IRIX
+#   "newsos" - Sony NEWS
+#   "drsnx" - ICL DRS/NX V4.0
+#   "epix" - Control Data EP/IX
+#   "386bsd" - 386/BSD and derivatives
+#   "netbsd" - NetBSD 1.0
+#   "freebsd" - FreeBSD 2.0
+#   "bsdi" - BSDI BSD/386 1.1
+#   "domainosbsd" - HP/Apollo Domain BSD 4.3
+# Warning: hpux, pyr are hardcoded in some of the makefiles (sorry)
+
+# MAJOR CONFIGURATION
+# set to one of the above (or configure your own below)
+define([os],[[freebsd]])
+
+# System call configuration (not for system v compatibilty)
+# known: X_GETOPT, X_VPRINTF, X_GETMNT, X_STATFS, X_QUOTA,
+# X_SUNQUOTA, X_FLOCK, X_LOCKF, X_FCNTLLOCKF
+# getopt - "cap: argument processing"
+define([X_GETOPT],1)
+# getmnt - "aufs: info on file systems (dec)"
+# define([X_GETMNT],1)
+# statvfs - "aufs: info on file systems (solaris)"
+# define([X_STATFS],1)
+# statfs - "aufs: info on file systems (sun nfs)"
+# define([X_STATFS],1)
+# statfs - "aufs: info on file systems (irix,domainos)"
+# define([X_STATFS],1)
+# statfs - "aufs: info on file systems (bsd44)"
+define([X_STATFS],1)
+# quota - "aufs: info on user quota"
+# define([X_QUOTA],1)
+# ioctl - "aufs: info on user quota (solaris)"
+# define([X_QUOTA],1)
+# getmntent - "aufs: used by sunquota"
+# define([X_SUNQUOTA],1)
+# quotactl - "aufs: used by bsdquota"
+# define([X_BSDQUOTA],1)
+# flock - "afp: file locking"
+define([X_FLOCK],1)
+# lockf - "afp: byte range locking using unistd.h"
+# define([X_LOCKF],1)
+# lockf - "afp: byte range locking using fcntl.h"
+# define([X_FCNTLLOCKF],1)
+# vfprintf - "cap: variable arg fprintf"
+define([X_VPRINTF],1)
+# recvmsg - "cap: lib: scatter gather recv"
+# define([X_NORECVMSG],1)
+# sendmsg - "cap: lib: scatter gather send"
+# define([X_NOSENDMSG],1)
+# ffs - "cap: lib: ffs - find first set bit"
+# define([X_NOFFS],1)
+
+# GETOPT support
+ifdef([X_GETOPT],[],[define([needgetopt],[att_getopt.o])])
+# VPRINTF support
+ifdef([X_VPRINTF],[define([usevprintf], 1)],[])
+
+# Path to cap sources: useful for testing
+define([cwd],[@CWD@])
+# turn on if your system sends packets very quickly
+# (see applications/aufs/INSTALLATION)
+# define([fastether],1) # For papif and samples
+
+# The following selects the correct lap delivery objects
+define([lapobj],[abetalk.o abddp.o abnbp.o atalkdbm.o])
+
+# This determines what happens to UAB and UAR
+define([uabprogs],[])
+define([uabplibs],[])
+define([uabpobjs],[])
+
+# This sets up Native EtherTalk support
+define([etherprogs],[aarpd])
+define([etherpobjs],[bpfiltp.o])
+
+# This sets up capd
+define([capdprogs],[])
+define([capdpobjs],[])
+
+# And this determines if Phase 2 packets are used
+define([usephase2],1)
+
+# The following selects byteswapping or otherwise
+define([usebyteswap],1)
+
+# We use build_here to restrict CAP to a single directory tree
+# but still using etcdest (see below) for the location of atalk.local
+# and other configuration files
+# define([build_here],1)
+
+# We use the debug flag to restrict CAP to a single directory tree
+# for testing purposes, e.g. testing new versions
+# define([debug],1)
+
+# The includef flag sets an alternate localtion for include files
+define([includef],1)
+
+# Systems with kernel AppleTalk support do not need atis
+define([useatis],1)
+
+# uncomment if your param.h includes types.h and types.h doesn't
+# prevent itself from being included twice
+# define _TYPES
+# define([selfdefinetypes],1)
+# MINOR CONFIGURATION: configure various programs
+
+#define([columbia],1) # so columbia can do things quickly
+#define([rutgersdef],1) # so rutgers can do things quickly
+
+# Installation prefix
+define([prefix],[[@PREFIX@]])
+
+# location of include files
+define([includedest],concat(prefix,[[[/include]]]))
+ifelse(os,[epix],[define([includedir],[[/bsd43/usr/include]])])
+# location of des subroutine source (see lib/afp/README)
+define([desloc],[[../../extras]])
+# location of atalk.local, etc.
+define([etcdest],concat(prefix,[/etc/cap]))
+ifdef([columbia],[define([etcdest],[[/usr/local/lib/cap]])])
+# location of user cap programs
+define([capdestdir],concat(prefix,[/bin]))
+# location of cap "server" programs (aufs, lwsrv, papif, uab etc.)
+define([capsrvrdestdir],concat(prefix,[/sbin]))
+# location of some cap data files
+define([caplibdestdir],concat(prefix,[/lib/cap]))
+ifdef([rutgersdef],[define([caplibdestdir],[[/usr/local/cap/lib]])])
+# location of cap libraries
+define([libdestdir],concat(prefix,[/lib]))
+# override for aux (doesn't search /usr/local/lib)
+ifelse(os,[aux],[define([libdestdir],[[/usr/lib]])])
+# cap library names
+define([caplib],[[libcap.a]])
+define([afplib],[[libafp.a]])
+define([afpclib],[[libafpc.a]])
+# names to load cap libraries with
+define([libcap],[[-lcap]])
+define([libafp],[[-lafp]])
+define([libafpc],[[-lafpc]])
+ifelse(os,[encore],
+	[define([libcap],concat([-L],libdestdir,[ ],libcap))])
+ifelse(os,[encore],
+	[define([libafp],concat([-L],libdestdir,[ ],libafp))])
+ifelse(os,[encore],
+	[define([libafpc],concat([-L],libdestdir,[ ],libafpc))])
+ifelse(os,[aix],
+	[define([libcap],concat([-L],libdestdir,[ ],libcap))])
+ifelse(os,[aix],
+	[define([libafp],concat([-L],libdestdir,[ ],libafp))])
+ifelse(os,[aix],
+	[define([libafpc],concat([-L],libdestdir,[ ],libafpc))])
+ifelse(os,[hpux],
+	[define([libcap],concat([-L],libdestdir,[ ],libcap))])
+ifelse(os,[hpux],
+	[define([libafp],concat([-L],libdestdir,[ ],libafp))])
+ifelse(os,[hpux],
+	[define([libafpc],concat([-L],libdestdir,[ ],libafpc))])
+ifelse(os,[epix],
+	[define([libcap],concat([-L],libdestdir,[ ],libcap))])
+ifelse(os,[epix],
+	[define([libafp],concat([-L],libdestdir,[ ],libafp))])
+ifelse(os,[epix],
+	[define([libafpc],concat([-L],libdestdir,[ ],libafpc))])
+ifelse(os,[solaris],
+	[define([libcap],concat([-L],libdestdir,[ ],libcap))])
+ifelse(os,[solaris],
+	[define([libafp],concat([-L],libdestdir,[ ],libafp))])
+ifelse(os,[solaris],
+	[define([libafpc],concat([-L],libdestdir,[ ],libafpc))])
+ifelse(os,[netbsd],
+	[define([libcap],concat([-L],libdestdir,[ ],libcap))])
+ifelse(os,[netbsd],
+	[define([libafp],concat([-L],libdestdir,[ ],libafp))])
+ifelse(os,[netbsd],
+	[define([libafpc],concat([-L],libdestdir,[ ],libafpc))])
+ifelse(os,[freebsd],
+	[define([libcap],concat([-L],cwd,[/lib/cap],[ ],libcap))])
+ifelse(os,[freebsd],
+	[define([libafp],concat([-L],cwd,[/lib/afp],[ ],libafp))])
+ifelse(os,[freebsd],
+	[define([libafpc],concat([-L],cwd,[/lib/afpc],[ ],libafpc))])
+# any special libraries
+define([libspecial],[])
+ifelse(os,[ultrix40],[
+	define([libspecial],concat(libspecial,[ -lauth]))])
+ifelse(os,[osf1],[
+	define([libspecial],concat(libspecial,[ -lsecurity]))])
+ifelse(os,[xenix5],[
+	define([libspecial],concat(libspecial,[ -lsocket]))])
+ifelse(os,[drsnx],[
+	define([libspecial],concat(libspecial,[ -lucb]))])
+ifelse(os,[uts],[
+	define([libspecial],concat(libspecial,[ -lsocket -lbsd -la]))])
+ifelse(os,[dynix],[
+	define([libspecial],concat(libspecial,[ -lseq]))])
+ifelse(os,[irix],[
+	define([libspecial],concat(libspecial,[ -lbsd]))])
+ifelse(os,[aix],[
+	define([libspecial],concat(libspecial,[ -lbsd]))])
+ifelse(os,[aux],[
+	define([libspecial],concat(libspecial,[ -lat -lbsd]))])
+ifelse(os,[hpux],[
+	define([libspecial],concat(libspecial,[ -lBSD -lndbm]))])
+ifelse(os,[epix],[
+	define([libspecial],concat(libspecial,[ -lc -lsec]))])
+ifelse(os,[386bsd],[
+	define([libspecial],concat(libspecial,[ -lrpc]))])
+ifelse(os,[netbsd],[
+	define([libspecial],concat(libspecial,[ -lcrypt]))])
+ifelse(os,[freebsd],[
+	define([libspecial],concat(libspecial,[ -lcrypt]))])
+ifelse(os,[bsdi],[
+	define([libspecial],concat(libspecial,[ -lrpc -lkvm]))])
+ifelse(os,[linux],[
+	define([libspecial],concat(libspecial,[ -lgdbm]))])
+ifelse(os,[solaris],[
+	define([libspecial],concat(libspecial,[ -lsocket -lnsl ]))])
+# rutgers specific
+define([libru],[])
+ifdef([rutgersdef], [
+ifelse(os,[solaris],[
+	define([libru],concat(libru,[ -L/usr/local/lib -R/usr/local/lib -lru ]))],[
+	define([libru],concat(libru,[ -lru ]))])])
+
+#
+# special configurations for individual source files
+#
+
+#
+# Aufs: see applications/aufs/INSTALLATION
+#
+# WARNING: OS DEPENDENT
+# define([smartunixfinderinfo],1)
+#
+# Set -DNONLXLATE, -DFULL_NCS_SUPPORT, -DGGTYPE="gid_t" or -DNOCHGRPEXEC
+#  in m4.features
+# Others: USESTATFS, USEGETMNT, USECHOWN, USEQUOTA, USESUNQUOTA, USEBSDQUOTA
+#  are autoconfigured
+define([aufsosdefs],[aufsosflags()])
+
+#
+# lib/cap/authenticate.c: configuration file
+#
+define([authconfig],concat([\"],etcdest,[/],[cap.auth],[\"]))
+
+#
+# lwsrv: see applications/lwsrv/README
+#
+# lwflags and simpleflags are now defined in m4.features
+
+#
+# lwrename: set name of file containing list of printers to be renamed
+#
+define([lwrenamefile],concat([\"],caplibdestdir,[/lwrename.list\"]))
+
+#
+# papif: see applications/papif/README
+#
+# uncomment and set to right location to turn on printing "plain text files"
+# define([pstextloc],[[\"/usr/local/lib/ps/pstext\"]])
+#
+# uncomment and set to right location to turn on page reversal
+# define([psrevloc],[[\"/usr/local/lib/ps/psrev\"]])
+#
+# Valid are:
+#  -DVERBOSELOG - default (set =0 to turn off)
+#  -DNO_STRUCT - default is on (structured)
+#  -DNOACCT - default is on (accounting)
+#  -DIDLESTUFF - default is off
+#  -DSFLOWQ - default is 8 (min 1, max 8)
+#  -DRFLOWQ - default is 8 (min 1, max 8)
+#  -DATPRESPONSETIMEOUT - default is 120 (2 minutes) - in seconds
+#  -DWATCHTIME - default is 10 seconds (in seconds)
+#  -DDEBUG - default is off
+#  -DSTRIPCONTROLD - default is off
+#  -DMAPCRTOLF - default is off
+#  -DMACUSER - default is off (need LPD_JOB environment variable in lpd)
+#  -DPLP - Use with PLP rather than Berkeley lpd
+#  see papif README file for explanations of the above
+# The following defines are recommended for System V lp printers (vs. bsd lpd)
+#  -DWATCHTIME=0 (no status) -DNOACCT
+define([papflags],[-DMACUSER])
+define([papflags],concat(papflags,[ -DIDLESTUFF]))
+
+# Set -DBANNERFIRST if you want the banner page to come out as the
+#  first page instead of the last page 
+# Set -DBANNERLAST if want it last
+# Set -DPSBANNER if you want a custom PostScipt Banner (must specify
+#  short banners in printcap). This still defaults to regular banners
+# Add -DCHARGEBANNER if you want to charge the banner page to the user
+#  on system V - there is no accounting, so leave blank
+define([papbanner],[-DCHARGEBANNER])
+
+# for cap.printers - uncomment and change the following line to point
+# papif, et. al. to a location other than /etc/cap.printers.  (Note:
+# line below would set it to $etcdest/cap.printers)
+define([capprinters],concat([\"],etcdest,[/],[cap.printers],[\"]))
+ifdef([columbia],
+       [define([capprinters],concat([\"],etcdest,[/],[cap.printers],[\"]))])
+# for atalkdbm - allows change following line(s) to modify atalk.local
+# (probably shouldn't).  Remember that atalk.local is expected to
+# be in etcdest
+define([atalklocal],concat([\"],etcdest,[/],[atalk.local],[\"]))
+define([etalklocal],concat([\"],etcdest,[/],[etalk.local],[\"]))
+define([configdir],concat([\"],etcdest,[\"]))
+define([uabpidfile],concat([\"],caplibdestdir,[/],[uab.pid],[\"]))
+define([uabbrdescr],concat([\"],caplibdestdir,[/],[bridge_desc],[\"]))
+
+# in case you want to globally change the c compiler
+define([thecompiler],[cc])
+define([theloader],[ld])
+define([theinstaller],[cp])
+
+#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+#		      END OF CONFIGABLE OPTIONS                            #
+#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+# You should only edit past here if you are "porting"
+# Automatics
+define([osname],[Unknown])
+ifelse(os,[ultrix12],[define([osname],[Ultrix 1.2])])
+ifelse(os,[ultrix20],[define([osname],[Ultrix 2.0])])
+ifelse(os,[ultrix40],[define([osname],[Ultrix 4.0])])
+ifelse(os,[osf1],[define([osname],[OSF/1])])
+ifelse(os,[aux],[define([osname],[A/UX])])
+ifelse(os,[sunos],[define([osname],[SunOS])])
+ifelse(os,[solaris],[define([osname],[Solaris 2.x in native SVR4 mode])])
+ifelse(os,[encore],[define([osname],[Encore Umax])])
+ifelse(os,[hpux],[define([osname],[HP-UX (for 9000 series)])])
+ifelse(os,[uts],[define([osname],[Amdahl UTS])])
+ifelse(os,[bsd],[define([osname],[Standard BSD])])
+ifelse(os,[pyr],[define([osname],[Pyramid in BSD universe])])
+ifelse(os,[xenix5],[define([osname],[SCO Xenix System V])])
+ifelse(os,[aix],[define([osname],[IBM AIX System V])])
+ifelse(os,[next],[define([osname],[NeXT/MACH])])
+ifelse(os,[dynix],[define([osname],[Sequent Balance])])
+ifelse(os,[irix],[define([osname],[Silicon Graphics IRIS/IRIX])])
+ifelse(os,[newsos],[define([osname],[Sony NEWS])])
+ifelse(os,[drsnx],[define([osname],[ICL DRS])])
+ifelse(os,[epix],[define([osname],[Control Data EP/IX])])
+ifelse(os,[386bsd],[define([osname],[386/BSD etc])])
+ifelse(os,[netbsd],[define([osname],[NetBSD 1.0])])
+ifelse(os,[freebsd],[define([osname],[FreeBSD])])
+ifelse(os,[bsdi],[define([osname],[BSD/386])])
+ifelse(os,[domainosbsd],[define([osname],[HP/Apollo Domain BSD 4.3])])
+#
+define([cflags],ifdef([selfdefinetypes],[-D_TYPES],[]))
+define([cflags],concat(cflags,ifdef([usebyteswap],[ -DBYTESWAPPED],[])))
+define([cflags],concat(cflags,ifdef([usephase2],[ -DPHASE2],[])))
+define([bigcflags],ifelse(os,[hpux],[]))
+# The encore optimiser is slightly over zealous
+ifelse(os,[encore],[define([cflags],concat(cflags,[ -Dencore]))],[
+    define([cflags],concat(cflags,[ -O]))])
+ifelse(os,[pyr],[
+    define([cflags],concat(cflags,[ -q]))])
+ifelse(os,[next],[
+    define([cflags],concat(cflags,[ -DNeXT -DADDRINPACK]))])
+ifelse(os,[xenix5],[
+    define([cflags],concat(cflags,[ -Dxenix5 -I$I -DLAI_TCP -Di386]))])
+ifelse(os,[aix],[
+    define([cflags],concat(cflags,[ -DAIX -DUSETIMES -DNOWAIT3 -DUSEDIRENT]))])
+ifelse(os,[solaris],[
+    define([cflags],concat(cflags,[ -DSOLARIS]))])
+ifelse(os,[uts],[
+    define([cflags],concat(cflags,[ -eft ]))])
+ifelse(os,[irix],[
+    define([cflags],concat(cflags,[ -cckr -D_BSD_COMPAT]))])
+ifelse(os,[drsnx],[
+    define([cflags],concat(cflags,[ -DNOWAIT3]))])
+ifelse(os,[epix],[
+    define([cflags],concat(cflags,[ -DEPIX]))])
+ifelse(os,[osf1],[
+    define([cflags],concat(cflags,[ -DUSEDIRENT]))])
+ifelse(os,[netbsd],[
+    define([cflags],concat(cflags,[ -D__386BSD__]))])
+ifelse(os,[bsdi],[
+    define([cflags],concat(cflags,[ -D__386BSD__]))])
+ifelse(os,[linux],[
+    define([cflags],concat(cflags,[ -DUSE_GDBM]))])
+
+# was used for nbp, but found we needed more... leave in case
+define([nbpflags],[])
+define([lflags],[])
+define([mflags],[])
+
+# aux's c compiler isn't nice - it doesn't have a preprocessor
+# definition for aux.  So, let's invent one.  Also turn on -n
+# for shared code.
+ifelse(os,[aux],[
+	define([cflags],concat(cflags,[ -n -Daux]))
+	define([lflags],concat(lflags,[ -n]))])
+
+# for NetBSD 1.0 on 68k strip symbols to avoid ld error on some progs
+ifelse(os,[netbsd],[define([lflags],concat(lflags,[ -s]))])
+
+# use the transitional option of the C compiler - interpret as K&R C, not ANSI
+ifelse(os,[drsnx],[
+	define([cflags],concat(cflags,[ -Xt -Ddrsnx]))])
+
+# check to see if we need sysvinstall usage
+ifelse(os,[hpux6],[define([sysvinstall],[yes])],
+       os,[irix3],[define([sysvinstall],[yes])])
+
+# or if we really want to use install
+# ifelse(os,[someOS], [define([theinstaller],[install])])
+
+# for cap library
+# Valid are:
+#  NOFFS - no ffs function defined, fake it out
+#  LOCALTIME_GTOD - uses pd localtime, but gettimeofday always reads
+#   disk based time of day.  Always defined for AUX for now.  Probably
+#   needs to be changed for versions of Aux after 1.0
+#  NORECVMSG - no recvmsg in system (fake it out)
+#  NOSENDMSG - no recvmsg in system (fake it out)
+define([caposdefs],
+	concat( ifdef([X_NOFFS],[ -DNOFFS],[]),
+		ifelse(os,[aux],[ -DLOCALTIME_GTOD],[]),
+		ifdef([X_NORECVMSG], [ -DNORECVMSG],[]),
+		ifdef([X_NOSENDMSG], [ -DNOSENDMSG],[])))
+# for afp library
+# two cases for X_LOCKF - if lockf isn't defined
+# first: X_FCNTLLOCKF is defined, so just note that lockf uses fcntl.h
+# second: "         " isn't defined so define no lockf
+# we "know" that flock() was hiding in libbsd.a under aix
+define([afposdefs],
+	concat(	ifdef([X_FLOCK],[], ifelse(os,[aix],[],[ -DNOFLOCK])),
+		ifdef([X_LOCKF],[],
+		   [ifdef([X_FCNTLLOCKF],[ -DLOCKFUSESFCNTL],[ -DNOLOCKF])])))
+# for aufs
+define([aufsosdefs],
+    concat(aufsosdefs,
+	ifdef([X_STATFS],[ -DUSESTATFS],[]),
+	ifdef([X_GETMNT],[ -DUSEGETMNT],[]),
+	ifdef([X_QUOTA],[ -DUSEQUOTA],[]),
+	ifdef([X_SUNQUOTA],[ -DUSESUNQUOTA],[]),
+	ifdef([X_BSDQUOTA],[ -DUSEBSDQUOTA],[]),
+	ifelse(os,[irix],[ -DNOVFORK]),
+	ifelse(os,[aix],[ -DNOVFORK -DUSECHOWN],[])))
+
+# if no ranlib (or fakeout like hpux) and need to order libaries
+ifelse(os,[dummy],   [define(uselordertsort,[1])],
+       os,[aux],     [define(uselordertsort,[1])],
+       os,[solaris], [define(uselordertsort,[1])],
+       os,[uts],     [define(uselordertsort,[1])],
+       os,[drsnx],   [define(uselordertsort,[1])],
+       os,[irix],    [define(uselordertsort,[1])])
+
+# lw config
+define([lwflags],
+    concat(lwflags,
+	ifdef([fastether],[ -DSFLOWQ=1],[]),
+	ifelse(os,[aix],[],[])))
+
+# more papif config
+define([papflags],
+    concat(papflags,
+	ifelse(os,[irix],[ -DNOVFORK]),
+	ifelse(os,[aix],[ -DNOVFORK],[])))
+
+#NBPFLAGS = nbpflags()
+#SPECCFLAGS = specialcflags()
+#BIGCFLAGS = bigcflags()
+#CFLAGS = cflags()
+#LFLAGS = lflags()
+#AFPOSDEFS = afposdefs()
+#AUFSOSDEFS = aufsosdefs()
+
+ifdef([debug],[
+ define([build_here],1)
+# location of atalk.local, etc.
+ define([etcdest],concat(cwd,[[[/etc]]]))
+])
+
+ifdef([includef],[
+# location of include files
+ define([includedir],[cwd])
+ define([cflags],concat(cflags,[ -I],includedir))
+])
+
+ifdef([build_here],[
+# location of include files
+ define([includedir],[cwd])
+# location of des subroutine source (see lib/afp/README)
+ define([desloc],[[../../extras]])
+# location of user cap programs
+ define([capdestdir],concat(cwd,[[[/bin]]]))
+# location of cap "server" programs (aufs, lwsrv, papif, uab etc.)
+ define([capsrvrdestdir],concat(cwd,[[[/bin]]]))
+# location of some cap data files
+ define([caplibdestdir],concat(cwd,[[[/bin]]]))
+# location of cap libraries
+ define([libdestdir],concat(cwd,[[[/lib]]]))
+# cap library names
+ define([caplib],[[libcap.a]])
+ define([afplib],[[libafp.a]])
+ define([afpclib],[[libafpc.a]])
+# names to load cap libraries with
+ define([libcap],concat(cwd,[[[/lib/libcap.a]]]))
+ define([libafp],concat(cwd,[[[/lib/libafp.a]]]))
+ define([libafpc],concat(cwd,[[[/lib/libafpc.a]]]))
+ define([capprinters],concat([\"],etcdest,[/],[cap.printers],[\"]))
+ define([cflags],concat(cflags,[ -I],includedir))
+ define([atalklocal],concat([\"],etcdest,[/],[atalk.local],[\"]))
+ define([etalklocal],concat([\"],etcdest,[/],[etalk.local],[\"]))
+ define([configdir],concat([\"],etcdest,[\"]))
+])
+
+define([datestring],maketemp(/tmp/capcXXXXXX))
+syscmd(date > datestring())
+##########MARKER##########
+# Makefile autoconfigured for ...
+[#] osname() system on include(datestring())
+syscmd(rm -f datestring())
+
+MFLAGS=mflags()
+LFLAGS=lflags()
+CC=thecompiler()
+LD=theloader()
+SHELL=/bin/sh
+INSTALLER=theinstaller()

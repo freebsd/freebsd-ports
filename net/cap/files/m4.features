@@ -1,0 +1,245 @@
+# m4.features
+#
+# This file is used to determine the default set of additional features
+# that will be incorporated into CAP. These features have been contributed
+# by many people throughout the network community.
+#
+# Necessary preamble - please don't alter
+define(`concat',$1$2$3$4$5$6$7$8$9)
+define(`specialcflags',`')
+define(`aufsosflags',`')
+define(`simpleflags',`')
+define(`lwflags',`')
+#
+# To change the feature set, simply uncomment the wanted defines().
+# The Configure file will then use the customised version.
+# For more details, refer to the file 'CAP60.README'
+#
+# + SHORT_NAMES adds short name support to AUFS for AppleShare PC.
+# define(`specialcflags',concat(specialcflags,` -DSHORT_NAMES'))
+#
+# + NOCASEMATCH removes UNIX case sensitivity in AUFS (like Macs).
+# define(`specialcflags',concat(specialcflags,` -DNOCASEMATCH'))
+#
+# + SIZESERVER adds a daemon per AUFS server process for volume size info.
+# define(`specialcflags',concat(specialcflags,` -DSIZESERVER'))
+#
+# + LWSRV_AUFS_SECURITY provides printer security based on AUFS connection.
+# define(`specialcflags',concat(specialcflags,` -DLWSRV_AUFS_SECURITY'))
+#
+# + HIDE_LWSEC_FILE increases security of LWSRV_AUFS_SECURITY flag file
+# define(`aufsosflags',concat(aufsosflags,` -DHIDE_LWSEC_FILE'))
+# define(`lwflags',concat(lwflags,` -DHIDE_LWSEC_FILE'))
+#
+# + LWSRV_LPR_LOG causes stdout/stderr lpr output to be included in lwsrv log
+define(`specialcflags',concat(specialcflags,` -DLWSRV_LPR_LOG'))
+#
+# + AUTHENTICATE turn on alternate AUFS/LWSRV authentication method
+# define(`specialcflags',concat(specialcflags,` -DAUTHENTICATE'))
+#
+# + STAT_CACHE causes critical AUFS stat() calls to be cached.
+define(`specialcflags',concat(specialcflags,` -DSTAT_CACHE'))
+#
+# + TREL_TIMEOUT causes an extra TREL timeout listener to run to avoid timeouts
+# define(`specialcflags',concat(specialcflags,` -DTREL_TIMEOUT'))
+#
+# + RUTGERS includes local modifications for Rutgers University
+# define(`specialcflags',concat(specialcflags,` -DRUTGERS'))
+#
+# + MELBOURNE includes local modifications for Melbourne University
+# define(`specialcflags',concat(specialcflags,` -DMELBOURNE'))
+#
+# + USE_HOST_ICON provides automatic aufs ICON selection on supported hosts
+# define(`specialcflags',concat(specialcflags,` -DUSE_HOST_ICON'))
+#
+# + PERMISSIVE_USER_NAME allows AUFS users to have their real name in Chooser
+# define(`specialcflags',concat(specialcflags,` -DPERMISSIVE_USER_NAME'))
+#
+# + ULTRIX_SECURITY adds ULTRIX enhanced security to aufs
+# define(`specialcflags',concat(specialcflags,` -DULTRIX_SECURITY'))
+#
+# + DIGITAL_UNIX_SECURITY adds OSF/1 enhanced security to aufs
+# define(`specialcflags',concat(specialcflags,` -DDIGITAL_UNIX_SECURITY'))
+#
+# + USING_FDDI_NET adds support for FDDI networks (Digital UNIX/Ultrix only)
+# define(`specialcflags',concat(specialcflags,` -DUSING_FDDI_NET'))
+#
+# + USE_MAC_DATES maintains Mac Create/Modify dates on file copy
+# define(`specialcflags',concat(specialcflags,` -DUSE_MAC_DATES'))
+#
+# + DEV_NIT specifies alternate NIT device name (default "/dev/nit")
+# define(`specialcflags',concat(specialcflags,` -DDEV_NIT=\"/dev/nit\"'))
+#
+# + APPLICATION_MANAGER control the use of designated applications
+# define(`specialcflags',concat(specialcflags,` -DAPPLICATION_MANAGER'))
+#
+# + AUFS_README links readme file into new user's top level
+# define(`specialcflags',concat(specialcflags,` -DAUFS_README'))
+#
+# + ULT42PFBUG unpatched ULTRIX 4.2 packet filter workaround (also need COPYALL)
+# define(`specialcflags',concat(specialcflags,` -DULT42PFBUG'))
+#
+# + AUFS_IDLE_TIMEOUT will disconnect idle AUFS sessions (-[i|I] period)
+# define(`specialcflags',concat(specialcflags,` -DAUFS_IDLE_TIMEOUT'))
+#
+# + REREAD_AFPVOLS  kill -USR1 will make parent aufs re-read system vols file
+define(`specialcflags',concat(specialcflags,` -DREREAD_AFPVOLS'))
+#
+# + PASS_THRU pass through LWSRV jobs with no adobe preprocessing (for PCs)
+# define(`specialcflags',concat(specialcflags,` -DPASS_THRU'))
+#
+# + DONT_PARSE pass through LWSRV jobs with no adobe preprocessing at all
+# define(`specialcflags',concat(specialcflags,` -DDONT_PARSE'))
+#
+# + XDEV_RENAME allow files to be moved over cross device links
+# define(`specialcflags',concat(specialcflags,` -DXDEV_RENAME'))
+#
+# + USR_FILE_TYPES user defined file suffix to creator/type/xlate mapping
+define(`specialcflags',concat(specialcflags,` -DUSR_FILE_TYPES'))
+#
+# + CREATE_AFPVOL create user .afpvols and 'mac' directories if non-existent
+define(`specialcflags',concat(specialcflags,` -DCREATE_AFPVOL=\"mac\"'))
+#
+# + CREAT_AFPVOL_NAM customize name for the volume (modifies CREATE_AFPVOL)
+# (CREAT_AFPVOL_NAM fmt string: %U user, %H host, %V vol, %D home eg: "%U@%H")
+# define(`specialcflags',concat(specialcflags,` -DCREAT_AFPVOL_NAM="\"%U\""'))
+#
+# + ISO_TRANSLATE use Macintosh/ISO 8859 character translation on I/O
+# define(`specialcflags',concat(specialcflags,` -DISO_TRANSLATE'))
+#
+# + ISO_FILENAMES extend ISO translation to filenames (assumes ISO_TRANSLATE)
+# define(`specialcflags',concat(specialcflags,` -DISO_FILENAMES'))
+#
+# + ISO_FILE_TRANS use ISO translation on unix/TEXT file contents
+# define(`specialcflags',concat(specialcflags,` -DISO_FILE_TRANS'))
+#
+# + DENYREADWRITE implement AUFS read/write access and deny modes
+# define(`specialcflags',concat(specialcflags,` -DDENYREADWRITE'))
+#
+# + STEAL_PORTS extends DDP dynamic skts down into experimental range 64-128
+# (WARNING!!: Requires uar.1.0.patch11 or uar.1.1.patch09 for use with UAR)
+# define(`specialcflags',concat(specialcflags,` -DSTEAL_PORTS'))
+#
+# + USESYSLOG sends PAPIF Information, Warning & Debug messages to syslog()
+# define(`specialcflags',concat(specialcflags,` -DUSESYSLOG'))
+#
+# + NOCAPDOTPRINTERS uses /etc/lp/printers/<lw>/comment instead of cap.printers
+# (Note: intended for use with Solaris 2.N only)
+# define(`specialcflags',concat(specialcflags,` -DNOCAPDOTPRINTERS'))
+#
+#
+# AUFS definable options (previously required editing m4.setup)
+#
+# + FIXED_DIRIDS compile server and AUFS code for fixed directory & file IDs
+# define(`specialcflags',concat(specialcflags,` -DFIXED_DIRIDS'))
+#
+# + DISTRIB_PASSWDS use ~/.afppass for encrypted passwords (see CAP60.README)
+# define(`specialcflags',concat(specialcflags,` -DDISTRIB_PASSWDS'))
+#
+# + AFP_DISTPW_PATH alternate directory for .afppass files (not in ~user)
+# define(`specialcflags',concat(specialcflags,` -DAFP_DISTPW_PATH=\"/etc/dp\"'))
+#
+# + AFP_DISTPW_MODE enforced .afppass mode (must be 0644 for NFS mounted dirs)
+# define(`specialcflags',concat(specialcflags,` -DAFP_DISTPW_MODE=0600'))
+#
+# + DEBUG_AFP_CMD write detailed AUFS AFP debugging info to -Z specified file
+# define(`specialcflags',concat(specialcflags,` -DDEBUG_AFP_CMD'))
+#
+# + PID_FILE write an aufs process-ID file
+define(`specialcflags',concat(specialcflags,` -DPID_FILE=\"/var/run/aufs.pid\"'))
+#
+# + CLOSE_LOG_SIG close and reopen the aufs log on signal -USR2
+# define(`specialcflags',concat(specialcflags,` -DCLOSE_LOG_SIG=SIGUSR2'))
+#
+# + LOG_WTMP add entry to the 'wtmp' file for each AUFS connection (not IRIX4)
+define(`aufsosflags',concat(aufsosflags,` -DLOG_WTMP'))
+#
+# + LOG_WTMP_FILE specify name of alternate wtmp file for LOG_WTMP feature
+define(`aufsosflags',concat(aufsosflags,` -DLOG_WTMP_FILE=\"/var/log/wtmp\"'))
+#
+# + ADMIN_GRP allows users in specified UNIX group to login as AUFS superuser
+# define(`aufsosflags',concat(aufsosflags,` -DADMIN_GRP=\"macadm\"'))
+#
+# + NONLXLATE for aufs
+# define(`aufsosflags',concat(aufsosflags,` -DNONLXLATE'))
+#
+# + FULL_NCS_SUPPORT (National Character Support) for aufs
+# define(`aufsosflags',concat(aufsosflags,` -DFULL_NCS_SUPPORT'))
+#
+# + NCS_ALL_TEXT perform specified translation on any TEXT file
+# define(`aufsosflags',concat(aufsosflags,` -DNCS_ALL_TEXT'))
+#
+# + GGTYPE="gid_t" (group ID type) for AUFS
+# define(`aufsosflags',concat(aufsosflags,` -DGGTYPE="gid_t"'))
+#
+# + NOCHGRPEXEC don't exec chgrp, just use chown(2) 3rd arg. [Not for Sys V]
+# define(`aufsosflags',concat(aufsosflags,` -DNOCHGRPEXEC'))
+#
+# + USEDIRSETGID set group ID bit on non-primary group dirs [SunOS/Sys V]
+# define(`aufsosflags',concat(aufsosflags,` -DUSEDIRSETGID'))
+#
+# + NETWORKTRASH fix permissions on network trash stuff
+define(`aufsosflags',concat(aufsosflags,` -DNETWORKTRASH'))
+#
+# + SHADOW_PASSWD add support for shadow password files if supported
+# define(`aufsosflags',concat(aufsosflags,` -DSHADOW_PASSWD'))
+#
+# + LOGIN_AUTH_PROG AUFS -L option specifies external authorization program
+# define(`aufsosflags',concat(aufsosflags,` -DLOGIN_AUTH_PROG'))
+#
+# + USEQUOTA forces usage of ufs quotas [Solaris 2.x only]
+#   note: check if you applied ufs quota patch:
+#         100833-xx for Solaris 2.1
+#         101039-xx for Solaris 2.2
+# define(`aufsosflags',concat(aufsosflags,` -DUSEQUOTA'))
+#
+#
+# LWSRV definable options (previously required editing m4.setup)
+#
+# + LPRARGS passes arguments on lwsrv command line directly to lpr
+# define(`lwflags',concat(lwflags,` -DLPRARGS'))
+#
+# + DOCNAME adds document name as a part of job name to lpr
+# define(`lwflags',concat(lwflags,` -DDOCNAME'))
+#
+# + LPRCMD redefine BSD lpr to use alternate path
+# define(`lwflags',concat(lwflags,` -DLPRCMD=\"/usr/local/bin/lpr\"'))
+#
+# + TEMPFILE set alternative path for lwsrv spool files (default /tmp)
+# define(`lwflags',concat(lwflags,` -DTEMPFILE=\"/usr/tmp/lwsrvXXXXXX\"'))
+#
+# + USELPRSYM add -s (symlink) option to lwsrv lpr call (not for OSF/1)
+# define(`lwflags',concat(lwflags,` -DUSELPRSYM'))
+#
+# + USESYSVLP required for HP-UX (and probably other System V) spooling
+# define(`lwflags',concat(lwflags,` -DUSESYSVLP'))
+#
+# + PAGECOUNT adds page count to job name (value is internal buffer size)
+# define(`lwflags',concat(lwflags,` -DPAGECOUNT=512'))
+# define(`simpleflags',concat(simpleflags,` -DPAGECOUNT=512'))
+#
+# + ADOBE_DSC2_CONFORMANT forces Adobe DSC2 conformance
+# define(`simpleflags',concat(simpleflags,` -DADOBE_DSC2_CONFORMANT'))
+#
+# + PROCSET_PATCH delete PatchPrep header for non-Apple LaserWriters
+# define(`simpleflags',concat(simpleflags,` -DPROCSET_PATCH'))
+#
+# + RUN_AS_USER run lpd job as Chooser Name if valid UNIX account (no authent)
+define(`lwflags',concat(lwflags,` -DRUN_AS_USER'))
+#
+# + USER_REQUIRED (requires RUN_AS_USER) refuse printing if Chsr name invalid
+define(`lwflags',concat(lwflags,` -DUSER_REQUIRED'))
+#
+#
+# PAPIF options
+#
+# + DUPLEXMODE tell suitably equipped printer to print on both sides of a page
+# define(`specialcflags',concat(specialcflags,` -DDUPLEXMODE'))
+#
+# + TRANS3 add support for TranScript 3.0 'psdman' (instead of pstext)
+# define(`specialcflags',concat(specialcflags,` -DTRANS3'))
+#
+# + PSJOBHEADER send PS header in file specified in env. variable "PSJOBHEADER"
+# define(`specialcflags',concat(specialcflags,` -DPSJOBHEADER'))
+#
+#

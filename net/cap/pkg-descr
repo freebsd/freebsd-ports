@@ -1,0 +1,21 @@
+CAP - The Columbia AppleTalk Package for UNIX
+
+CAP implements the AppleTalk protocol stack on a variety of UNIX
+machines.  The main applications provide an AppleShare 2.0 compatible
+server (aufs), a LaserWriter Spooler (lwsrv) and a program to print to
+LaserWriters (papif).  The latter can be used to talk to EtherTalk
+LaserWriters, LocalTalk LaserWriters used on Dayna EtherPrint cards or
+on a LocalTalk/EtherTalk gateway.  There are also a number of
+contributed packages bundled with CAP.
+
+Note: Files are installed into following locations:
+	/usr/local/sbin:		Commands for system manager.
+		aarpd afpidlist afpidsrvr afpidtool atis aufs aufsmkkey
+		aufsmkusr lwrename lwsrv lwsrv8 lwsrvconfig papif papof
+		printqueue sizeserver snitch
+	/usr/local/bin:			User commands.
+		ash atistest atlook atlooklws atpinger cvt2apple cvt2cap
+		getzones instappl isrv iwpr lwpr papstatus tlw
+	/usr/local/etc/cap:		Sample configuration files.
+	/usr/local/lib/cap:		More sample configuration files.
+	/usr/local/share/doc/cap:	Relivant documentation.
