@@ -1,0 +1,10 @@
+--- config.h.in.orig	Thu Jan 10 11:06:01 2002
++++ config.h.in	Thu Jan 10 11:06:18 2002
+@@ -6,6 +6,7 @@
+ #undef HAVE_CATGETS
+ #undef HAVE_GETTEXT
+ #undef HAVE_LC_MESSAGES
++#undef HAVE_LOGINCAP
+ #undef HAVE_STPCPY
+ #undef HAVE_PAM
+ #undef HAVE_TCPWRAPPERS
