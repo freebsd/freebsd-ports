@@ -23,9 +23,11 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Archive::Zip.3 Archive::Zip::Tree.3 Archive::Zip::FAQ.3 Archive::Zip::MemberRead.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
 BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
 RUN_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
 .endif
+
+.include <bsd.port.post.mk>
