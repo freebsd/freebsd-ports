@@ -65,3 +65,7 @@ share/games/klondike/CARDS/c_ts.xbm
 share/games/klondike/CARDS/c_warnspace.xbm
 @exec mkdir -p %D/share/games/klondike/SCORES
 @exec chmod 333 %D/share/games/klondike/SCORES
+@dirrm share/games/klondike/CARDS/
+@dirrm share/games/klondike/SCORES/
+@dirrm share/games/klondike/
+@unexec rmdir share/games 2>/dev/null || true
