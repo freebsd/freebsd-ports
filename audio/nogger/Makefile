@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nogger
-PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTVERSION=	0.8.6
 CATEGORIES=	audio
 MASTER_SITES=	http://www.efd.lth.se/~d00jkr/nogger/
 
@@ -16,6 +15,12 @@ COMMENT=	No-frills, GTK-based Ogg Vorbis player
 
 LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20 \
 		vorbis.2:${PORTSDIR}/audio/libvorbis
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+#BROKEN=	"just makes a humming noise"
+.endif
 
 PLIST=		${WRKDIR}/plist
 USE_GMAKE=	y
@@ -39,4 +44,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
