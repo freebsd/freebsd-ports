@@ -22,6 +22,12 @@ GNU_CONFIGURE=	yes
 MAKE_ENV=	"LIBS=-lrpcsvc" "XFLAGS=-g -O2   -DSTDC_HEADERS=1 -DGETGROUPS_T=gid_t -DSYS_ERRLIST_DECLARED=1 " "RPCGEN=/usr/bin/rpcgen"
 INSTALL_TARGET=	all
 
+.include <bsd.port.pre.mk>
+
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+IGNORE=		The source (${DISTFILES}is not available anymore. If you still have a copy, copy it to ${DISTDIR} and run make again. See http://www.wwdsi.com/products/download.html for more details regarding the next versions of Saint.
+.endif
+
 pre-install:
 		${MKDIR} ${PREFIX}/saint
 		${TAR} --directory ${WRKSRC} -cf - . --exclude src --exclude Makefile --exclude Makefile.in --exclude old --exclude config.cache --exclude config.log --exclude config.status --exclude configure --exclude configure.in --exclude install-sh --exclude saint.1 | \
@@ -34,4 +40,4 @@ do-install:
 post-install:
 		${RM} -rf ${PREFIX}/saint/include/ASM-i386
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
