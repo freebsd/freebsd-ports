@@ -1,3 +1,4 @@
+share/texmf/tex/latex/preview/prauctex.cfg
 share/texmf/tex/latex/preview/prauctex.def
 share/texmf/tex/latex/preview/preview.sty
 @dirrm share/texmf/tex/latex/preview
