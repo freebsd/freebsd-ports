@@ -20,6 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/RPC/PlServer.pm:${PORTSDIR}/net/p5-PlRPC
 RUN_DEPENDS=	${BUILD_DEPENDS}
 .endif
 
+CONFLICTS=	p5-DBI-137-1.37
 PERL_CONFIGURE=	yes
 
 MAN1=		dbiprof.1 \
@@ -53,7 +54,7 @@ pre-everything::
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		This port is for perl 5.6.0 and later only.
+IGNORE=		Please install databases/p5-DBI-137 and try again
 .endif
 
 .include <bsd.port.post.mk>
