@@ -73,8 +73,10 @@
 ##                                [cgi|errordocs|icons|wwwdata]
 ##
 ##  Optionnal patches:  
-##      WITH_EXPERIMENTAL_PATCHES Add performance patches (generally backported
-##                                from apr/httpd CVS)
+#      WITH_EXPERIMENTAL_PATCHES Add performance patches (generally backported
+#                                from apr/httpd CVS)
+#
+##      WITH_KQUEUE_SUPPORT       Add kqueue support to apr/httpd
 ##      WITH_WINDOWSUPDATEFIX     Add a fix to use apache as proxy with 
 ##                                Windows Update service.
 ##
