@@ -1,32 +1,14 @@
---- Makefile.orig	Mon May 29 23:03:08 2000
-+++ Makefile	Thu Sep 14 23:35:11 2000
-@@ -54,28 +54,28 @@
+--- Makefile.orig	Fri Apr  5 23:53:39 2002
++++ Makefile	Sat Apr 20 02:26:08 2002
+@@ -55,7 +55,6 @@
+ 
+ DESTDIR=
  SHELL=	/bin/sh
+-PREFIX=	/usr/local
  
  # CONFIGURE: Set location of executable, it's group and mode.
--BINDIR=	/usr/local/bin
-+BINDIR=	${PREFIX}/bin
- BINGRP=	kmem
- BINMOD=	2755
- 
- # CONFIGURE: Set location of man directory and man page suffix.
--MANDIR=	/usr/man/manl
--MANSFX=	l
-+MANDIR=	${PREFIX}/man/man1
-+MANSFX=	1
- 
- # CONFIGURE(Config): Select an OSTYPE for your machine from the list above.
--OSTYPE=	sys-5r4
-+OSTYPE=	bsd-44
- 
- # CONFIGURE(Config): Add any OS-specific options here.
- COPTS=	
- 
- # CONFIGURE(Config): Add any special libraries your system needs.
--LIBS=	
-+LIBS=	-lkvm
- 
- SRCS=	main.c argparse.c getproc.c
+ BINDIR=	${PREFIX}/bin
+@@ -79,7 +78,7 @@
  OBJS=	main.o argparse.o getproc.o
  HDRS=	conf.h
  
@@ -35,12 +17,24 @@
  
  all:	skill
  
-@@ -102,7 +102,7 @@
+@@ -96,18 +95,11 @@
+ #(SysV)	filepriv -d ${DESTDIR}/${BINDIR}/skill
+ 	rm -f ${DESTDIR}/${BINDIR}/skill ${DESTDIR}/${MANDIR}/skill.${MANSFX}
+ 	rm -f ${DESTDIR}/${BINDIR}/snice ${DESTDIR}/${MANDIR}/snice.${MANSFX}
+-#	install -c -g ${BINGRP} -m ${BINMOD} -s skill ${DESTDIR}/${BINDIR}
+-	cp skill ${DESTDIR}/${BINDIR}/skill
+-	strip ${DESTDIR}/${BINDIR}/skill
+-	chgrp ${BINGRP} ${DESTDIR}/${BINDIR}/skill
+-	chmod ${BINMOD} ${DESTDIR}/${BINDIR}/skill
++	${BSD_INSTALL_PROGRAM} skill ${DESTDIR}/${BINDIR}
+ 	ln ${DESTDIR}/${BINDIR}/skill ${DESTDIR}/${BINDIR}/snice
+ #(SysV)	filepriv -f dacread ${DESTDIR}/${BINDIR}/skill
  #	install -c -m 644 skill.1 ${DESTDIR}/${MANDIR}/skill.${MANSFX}
- 	cp skill.1 ${DESTDIR}/${MANDIR}/skill.${MANSFX}
- 	chmod 644 ${DESTDIR}/${MANDIR}/skill.${MANSFX}
+-	cp skill.1 ${DESTDIR}/${MANDIR}/skill.${MANSFX}
+-	chmod 644 ${DESTDIR}/${MANDIR}/skill.${MANSFX}
 -	ln ${DESTDIR}/${MANDIR}/skill.${MANSFX}\
-+	@# ln ${DESTDIR}/${MANDIR}/skill.${MANSFX}\
- 		${DESTDIR}/${MANDIR}/snice.${MANSFX}
+-		${DESTDIR}/${MANDIR}/snice.${MANSFX}
++	${BSD_INSTALL_MAN} skill.1 ${DESTDIR}/${MANDIR}/skill.${MANSFX}
  
  config Config: FRC
+ 	./Config
