@@ -8,11 +8,9 @@
 PORTNAME=	libcache
 PORTVERSION=	1.1.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.afro-productions.com/
+MASTER_SITES=	http://www.afro-productions.com/libcache/
 
 MAINTAINER=	ports@FreeBSD.org
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 INSTALLS_SHLIB=	yes
 
