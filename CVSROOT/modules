@@ -5041,7 +5041,6 @@ mozilla-devel	ports/www/mozilla-devel
 mozilla-devel-gtk2	ports/www/mozilla-devel-gtk2
 mozilla-fonts	ports/x11-fonts/mozilla-fonts
 mozilla-gtk2	ports/www/mozilla-gtk2
-mozilla-thunderbird	ports/mail/mozilla-thunderbird
 mp		ports/editors/mp
 mp-a4		ports/print/mp-a4
 mp-letter	ports/print/mp-letter
@@ -9027,6 +9026,7 @@ threeDS		ports/graphics/threeDS
 thttpd		ports/www/thttpd
 thudboard	ports/games/thudboard
 thumbnail_index ports/www/thumbnail_index
+thunderbird	ports/mail/thunderbird
 thx_1138	ports/math/thx_1138
 ticker.app	ports/sysutils/ticker.app
 tictactoe3d	ports/games/tictactoe3d
