@@ -29,10 +29,8 @@ CONFIGURE_ARGS=	--enable-multibyte --program-prefix=n
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 400000
-post-extract:
-	${RM} -f ${WRKSRC}/../include/sys/queue.h
-.endif
+post-patch:
+	${LN} -s /usr/include/sys/queue.h ${WRKSRC}/../include/sys/queue_dist.h
 
 post-install:
 	@${CP} ${WRKSRC}/../docs.m17n/README.english \
