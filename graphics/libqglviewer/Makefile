@@ -15,6 +15,8 @@ DISTNAME=	libQGLViewer-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ library helps development of 3D applications
 
+BUILD_DEPENDS=	${QMAKE}:${PORTSDIR}/devel/qmake
+
 USE_BZIP2=	yes
 USE_QT_VER=	3
 MAKE_ENV=	QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
@@ -24,6 +26,12 @@ INSTALLS_SHLIB=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/QGLViewer
 PORTDOCS=	*
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on 4.x"
+.endif
 
 do-build:
 	@(cd ${WRKSRC}/QGLViewer && ${SETENV} ${MAKE_ENV} ${QMAKE} && \
@@ -38,4 +46,4 @@ post-install:
 	@${FIND} ${PREFIX}/include/QGLViewer -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
