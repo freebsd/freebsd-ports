@@ -6,6 +6,12 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040525:
+  AFFECTS: users of databases/postgresql-client
+
+  This port was removed because of dependencies problem. If you still want to
+  have it, install databases/postgresql7 with -DWITHOUT_SERVER
+
 20040521:
   AFFECTS: users of irc/ircd-hybrid-ru
 
