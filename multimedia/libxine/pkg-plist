@@ -7,6 +7,8 @@ include/xine/buffer.h
 include/xine/compat.h
 include/xine/configfile.h
 include/xine/demux.h
+include/xine/dvd_reader.h
+include/xine/ifo_types.h
 include/xine/input_plugin.h
 include/xine/lrb.h
 include/xine/metronom.h
@@ -32,9 +34,11 @@ include/xine/xineutils.h
 include/xine/xmllexer.h
 include/xine/xmlparser.h
 lib/libxine.so
-lib/libxine.so.4
+lib/libxine.so.5
 lib/xine/plugins/1.0.0/post/xineplug_post_goom.so
 lib/xine/plugins/1.0.0/post/xineplug_post_invert.so
+lib/xine/plugins/1.0.0/post/xineplug_post_mosaico.so
+lib/xine/plugins/1.0.0/post/xineplug_post_switch.so
 lib/xine/plugins/1.0.0/post/xineplug_post_visualizations.so
 %%HAVE_ARTS%%lib/xine/plugins/1.0.0/xineplug_ao_out_arts.so
 %%HAVE_ESOUND%%lib/xine/plugins/1.0.0/xineplug_ao_out_esd.so
@@ -103,6 +107,7 @@ lib/xine/plugins/1.0.0/xineplug_inp_http.so
 lib/xine/plugins/1.0.0/xineplug_inp_mms.so
 lib/xine/plugins/1.0.0/xineplug_inp_net.so
 lib/xine/plugins/1.0.0/xineplug_inp_pnm.so
+lib/xine/plugins/1.0.0/xineplug_inp_rtp.so
 lib/xine/plugins/1.0.0/xineplug_inp_rtsp.so
 lib/xine/plugins/1.0.0/xineplug_inp_stdin_fifo.so
 lib/xine/plugins/1.0.0/xineplug_inp_vcd.so
