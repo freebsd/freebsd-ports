@@ -1,0 +1,4 @@
+bin/clips
+lib/libClips.so.6
+lib/libClips.so
+lib/libClips.la
