@@ -1,18 +1,9 @@
 @comment $NetBSD: PLIST,v 1.1.1.1 2001/01/10 14:47:47 taca Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/ipadic-ja.info
-info/ipadic-ja.info
-info/ipadic-ja.info-1
-info/ipadic-ja.info-2
-info/ipadic-ja.info-3
-@exec install-info --info-dir=%D/info %D/info/ipadic-ja.info
 share/chasen/dic/ipadic/Makefile.bat
 share/chasen/dic/ipadic/cforms.cha
-share/chasen/dic/ipadic/chadic.ary
 share/chasen/dic/ipadic/chadic.da
 share/chasen/dic/ipadic/chadic.dat
-share/chasen/dic/ipadic/chadic.int
 share/chasen/dic/ipadic/chadic.lex
-share/chasen/dic/ipadic/chadic.pat
 share/chasen/dic/ipadic/chasenrc
 @unexec if cmp -s %D/etc/chasenrc %D/share/chasen/dic/ipadic/chasenrc.example; then rm -f %D/etc/chasenrc; else true; fi
 share/chasen/dic/ipadic/chasenrc.example

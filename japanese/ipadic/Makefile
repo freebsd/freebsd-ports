@@ -7,21 +7,17 @@
 #
 
 PORTNAME=	ipadic
-PORTVERSION=	2.5.1.1
+PORTVERSION=	2.7.0
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://chasen.aist-nara.ac.jp/stable/ipadic/
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese Morphological Dictionary for ChaSen
 
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	${PORTNAME}-${PORTVERSION}.diff
-PATCH_DIST_STRIP=	-p1
-
 BUILD_DEPENDS=	chasen:${PORTSDIR}/japanese/chasen-base
 
 GNU_CONFIGURE=	YES
+CONFIGURE_ARGS=	--with-dicdir=${PREFIX}/share/chasen/dic
 USE_LIBTOOL_VER=13
 
 post-install:

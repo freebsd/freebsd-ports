@@ -7,14 +7,14 @@
 #
 
 PORTNAME=	chasen
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.3
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://chasen.aist-nara.ac.jp/stable/chasen/
 PKGNAMESUFFIX=	-base
 
 PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	chasen-${PORTVERSION}-nmz.diff
-PATCH_DIST_STRIP=	-p1
+PATCHFILES=	chasen-2.3.3.20030821.patch chasen-2.3.3.20030822.patch chasen-2.3.3.20031024.patch
+PATCH_DIST_STRIP=	-p0
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese Morphological Analysis System
@@ -22,6 +22,7 @@ COMMENT=	Japanese Morphological Analysis System
 BUILD_DEPENDS=	${LOCALBASE}/include/darts.h:${PORTSDIR}/devel/darts
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-darts=${LOCALBASE}/include --with-libiconv=${LOCALBASE}
 #USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
