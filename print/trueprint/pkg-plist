@@ -1,0 +1,5 @@
+bin/trueprint
+lib/printers
+@unexec install-info --delete %D/info/trueprint.info %D/info/dir
+info/trueprint.info
+@exec install-info %D/info/trueprint.info %D/info/dir

@@ -1,0 +1,10 @@
+--- index.c.orig	Thu Feb 17 14:07:51 2000
++++ index.c	Thu Feb 17 14:08:04 2000
+@@ -14,6 +14,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
++#include <sys/types.h>
+ #include <sys/stat.h>
+ #include <unistd.h>
+ 
