@@ -25,8 +25,12 @@ pre-everything::
 .endif
 
 post-patch:
-	${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.orig
-	${SED} -E "s:-I/usr/src/gnu/usr.sbin/sendmail/include:${PTHREAD_CFLAGS}:g;s:-lpthread:${PTHREAD_LIBS}:g" < ${WRKSRC}/Makefile.orig > ${WRKSRC}/Makefile
+.for ii in Makefile milter-regex.c rules.c
+	${MV} ${WRKSRC}/${ii} ${WRKSRC}/${ii}.orig
+	${SED} -e "s:-lpthread:${PTHREAD_LIBS}:g; \
+	s:-I/usr/src/gnu/usr.sbin/sendmail/include:${PTHREAD_CFLAGS}:g; \
+	s/[[:<:]]log(/milterlog(/g" < ${WRKSRC}/${ii}.orig > ${WRKSRC}/${ii}
+.endfor
 
 pre-install:
 	${ECHO_CMD} libexec/milter-regex > ${PLIST}
