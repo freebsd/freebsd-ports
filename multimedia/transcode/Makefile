@@ -68,10 +68,10 @@ pre-extract:
 .endif
 .if !defined(WITH_LIBA52)
 	@${ECHO_MSG}
-	@${ECHO_MSG} "You can enable liba52 support by defining WITH_LIBDV"
+	@${ECHO_MSG} "You can enable liba52 support by defining WITH_LIBA52"
 .else
 	@${ECHO_MSG}
-	@${ECHO_MSG} "You enabled liba52 support by defining WITH_LIBDV"
+	@${ECHO_MSG} "You enabled liba52 support by defining WITH_LIBA52"
 .endif
 .if defined(WITHOUT_AVIFILE)
 	@${ECHO_MSG}
@@ -83,10 +83,10 @@ pre-extract:
 
 .if !defined(WITH_NASM)
 	@${ECHO_MSG}
-	@${ECHO_MSG} "You can enable the nasm dependent moduley by defining WITH_NASM"
+	@${ECHO_MSG} "You can enable the nasm dependent modules by defining WITH_NASM"
 .else
 	@${ECHO_MSG}
-	@${ECHO_MSG} "You enabled nsdm support by defining WITH_NASM"
+	@${ECHO_MSG} "You enabled nasm support by defining WITH_NASM"
 .endif(WITH_NASM)
 
 .include <bsd.port.mk>
