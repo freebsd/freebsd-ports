@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.7 1998/07/13 23:31:49 se Exp $
+# $Id: Makefile,v 1.8 1998/07/19 17:57:16 se Exp $
 #
 
 DISTNAME=	kdegraphics-1.0
@@ -13,8 +13,8 @@ MASTER_SITE_SUBDIR= stable/1.0/distribution/tar/generic/source
 
 MAINTAINER=	se@freebsd.org
 
-BUILD_DEPENDS=	moc:${PORTSDIR}/x11/qt133
-LIB_DEPENDS=	qt\\.1\\.3[3-9]:${PORTSDIR}/x11/qt133 \
+BUILD_DEPENDS=	moc:${PORTSDIR}/x11/qt140
+LIB_DEPENDS=	qt\\.1\\.\\\(33\\\|40\\\):${PORTSDIR}/x11/qt140 \
 		gif\\.[23]\\.:${PORTSDIR}/graphics/giflib \
 		jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg \
 		kdecore\\.1\\.[0-9]:${PORTSDIR}/x11/kdelibs \
