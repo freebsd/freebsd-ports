@@ -16,3 +16,5 @@
        https support for the LWP - libwww perl libraries.  If you
        want access to the OpenSSL API via perl, check out Sampo's
        Net::SSLeay.
+
+WWW: http://search.cpan.org/search?dist=Crypt-SSLeay
