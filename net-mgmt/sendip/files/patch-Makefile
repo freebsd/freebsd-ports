@@ -1,13 +1,14 @@
---- Makefile	Sun Feb 24 12:37:47 2002
-+++ Makefile	Sat Mar  9 08:15:25 2002
-@@ -8,12 +8,13 @@
+--- Makefile.orig	Sun Feb 24 04:37:47 2002
++++ Makefile	Wed Sep  4 19:40:15 2002
+@@ -8,15 +8,16 @@
  #For Solaris, you may need
  #INSTALL=/usr/ucb/install
  
 -CFLAGS=	-fPIC -pipe -Wall -Wpointer-arith -Wwrite-strings \
-+CFLAGS=	-fPIC -fsigned-char -pipe -Wall -Wpointer-arith -Wwrite-strings \
++CFLAGS+=	-fPIC -fsigned-char -Wall -Wpointer-arith -Wwrite-strings \
  			-Wstrict-prototypes -Wnested-externs -Winline -Werror -g \
- 			-DSENDIP_LIBS=\"$(LIBDIR)\"
+-			-DSENDIP_LIBS=\"$(LIBDIR)\"
++			-DSENDIP_LIBS=\"$(LIBDIR)\" -DHAVE_STRING_H=1
  #-Wcast-align causes problems on solaris, but not serious ones
  LDFLAGS=	-g -rdynamic -lm
 -LDFLAGS_SOLARIS= -g -lsocket -lnsl -lm
@@ -15,4 +16,8 @@
 +LDFLAGS_SOLARIS= -g -lsocket -lnsl -lm -ldl
  LDFLAGS_LINUX= -g  -rdynamic -ldl -lm
  LIBCFLAGS= -shared
- CC=	gcc
+-CC=	gcc
++CC?=	cc
+ 
+ PROGS= sendip
+ PROTOS= ipv4.so ipv6.so icmp.so tcp.so udp.so rip.so bgp.so ntp.so #dns.so
