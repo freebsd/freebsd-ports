@@ -18,6 +18,89 @@ Java_Include=				bsd.java.mk
 Java_Include_MAINTAINER=	znerd@FreeBSD.org
 
 #
+# Variables that each port can define:
+#
+# USE_JAVA			Should be defined to the remaining variables to have any
+#					effect
+#
+# JAVA_VERSION		List of space-separated suitable java versions for the
+#					port. An optional "+" allows you to specify a range of
+#					versions. (allowed values: 1.1[+] 1.2[+] 1.3[+] 1.4[+])
+#
+# JAVA_OS			List of space-separated suitable JDK port operating systems
+#					for the port. (allowed values: native linux)
+#
+# JAVA_VENDOR		List of space-separated suitable JDK port vendors for the
+#					port. (allowed values: freebsd bsdjava sun ibm blackdown)
+#
+# JAVA_BUILD		When set, it means that the selected JDK port should be
+#					added to build dependencies for the port.
+#
+# JAVA_RUN			This variable works exactly the same as JAVA_BUILD but
+#					regarding run dependencies.
+#
+# USE_JIKES			Whether the port should or should not use jikes(1) to build.
+#
+# Variables defined for the port:
+#
+# JAVA_PORT			The name of the JDK port. (e.g. 'java/jdk14')
+#
+# JAVA_PORT_VERSION	The version of the JDK port. (e.g. '1.4')
+#
+# JAVA_PORT_OS		The operating system used by the JDK port. (e.g. 'linux')
+#
+# JAVA_PORT_VENDOR	The vendor of the JDK port. (e.g. 'sun')
+#
+# JAVA_PORT_OS_DESCRIPTION		Description of the operating system used by the
+#								JDK port. (e.g. 'Linux')
+#
+# JAVA_PORT_VENDOR_DESCRIPTION	Description of the vendor of the JDK port.
+#								(e.g. 'FreeBSD Foundation')
+#
+# JAVA_HOME			Path to the installation directory of the JDK. (e.g.
+#					'/usr/local/jdk1.3.1')
+#
+# JAVAC				Path to the Java compiler to use. (e.g.
+#					'/usr/local/jdk1.1.8/bin/javac' or '/usr/local/bin/jikes')
+#
+# JAR				Path to the JAR tool to use. (e.g.
+#					'/usr/local/jdk1.2.2/bin/jar' or '/usr/local/bin/fastjar')
+#
+# APPLETVIEWER		Path to the appletviewer utility. (e.g.
+#					'/usr/local/linux-jdk1.2.2/bin/appletviewer')
+#
+# JAVA				Path to the java executable. Use this for executing Java
+#					programs. (e.g. '/usr/local/jdk1.3.1/bin/java')
+#
+# JAVADOC			Path to the javadoc utility program.
+#
+# JAVAH				Path to the javah program.
+#
+# JAVAP				Path to the javap program.
+#
+# JAVA_KEYTOOL		Path to the keytool utility program. This settings is
+#					availble only if the JDK is Java 1.2 or higher.
+#
+# JAVA_N2A			Path to the native2ascii tool.
+#
+# JAVA_POLICYTOOL	Path to the policytool program. This variable is available
+#					only if the JDK is Java 1.2 or higher.
+#
+# JAVA_SERIALVER	Path to the serialver utility program.
+#
+# RMIC				Path to the RMI stub/skeleton generator, rmic.
+#
+# RMIREGISTRY		Path to the RMI registry program, rmiregistry.
+#
+# RMID				Path to the RMI daemon program. This settings is only
+#					available if the JDK is Java 1.2 or higher.
+#
+# JAVA_CLASSES		Path to the archive that contains the JDK class files. On
+#					JDK 1.2 or later, this is ${JAVA_HOME}/jre/lib/rt.jar.
+#					Earlier JDK's use ${JAVA_HOME/lib/classes.zip.
+#
+
+#
 # There are the following stages:
 #
 # Stage 1: Define constants
