@@ -880,17 +880,35 @@ http_access deny Gopher</pre>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Caused by corrupt parsing code in the expat library
-	  part of jabberd it is possible for an attacker to
-	  crash the daemon if it is not using UTF-8.</p>
+	<p>José Antonio Calvo discovered a bug in the Jabber 1.x server.
+	  According to Matthias Wimmer:</p>
+	<blockquote cite="http://devel.amessage.info/jabberd14/README.html">
+	  <p>Without this patch, it is possible to remotly crash
+	    jabberd14, if there is access to one of the following types
+	    of network sockets:</p>
+	  <ul>
+	    <li>Socket accepting client connections</li>
+	    <li>Socket accepting connections from other servers</li>
+	    <li>Socket connecting to an other Jabber server</li>
+	    <li>Socket accepting connections from server components</li>
+	    <li>Socket connecting to server components</li>
+	  </ul>
+	  <p>This is any socket on which the jabberd server parses
+	    XML!</p>
+	  <p>The problem existed in the included expat XML parser code.
+	    This patch removes the included expat code from jabberd14
+	    and links jabberd against an installed version of expat.</p>
+	</blockquote>
       </body>
     </description>
     <references>
+      <url>http://devel.amessage.info/jabberd14/README.html</url>
       <url>http://mail.jabber.org/pipermail/jabberd/2004-September/002004.html</url>
     </references>
     <dates>
       <discovery>2004-09-19</discovery>
       <entry>2004-12-26</entry>
+      <modified>2005-01-13</modified>
     </dates>
   </vuln>
 
