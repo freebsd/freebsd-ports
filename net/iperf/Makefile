@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	iperf
-PORTVERSION= 	1.6.3
-DISTNAME=	iperf-1.6.3-source
+PORTVERSION= 	1.6.4
+DISTNAME=	iperf-1.6.4-source
 CATEGORIES=	net
 MASTER_SITES=	http://dast.nlanr.net/Projects/Iperf/
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
