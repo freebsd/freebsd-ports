@@ -21,6 +21,6 @@ MAN1=		bgrot.1
 MANCOMPRESSED=	yes
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/bgrot.conf.skel ${PREFIX}/etc
+	@${CAT} pkg-message
 
 .include <bsd.port.mk>
