@@ -31,7 +31,7 @@
 + bsf:	# FreeBSD
 + 	$(MAKE) mtest OS=bsi EXTRADRIVERS="$(EXTRADRIVERS)" \
 + 		STDPROTO=bezerkproto MAILSPOOL=/var/mail \
-+ 		ACTIVEFILE=/usr/lib/news/active NEWSSPOOL=/usr/spool/news \
++ 		ACTIVEFILE=/usr/local/news/lib/active NEWSSPOOL=/var/news \
 + 		RSHPATH=/usr/bin/rsh CFLAGS="-O -pipe -DNFSKLUDGE $(EXTRACFLAGS)" \
 + 		LDFLAGS="-lcrypt"
 + 
