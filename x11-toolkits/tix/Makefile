@@ -3,7 +3,7 @@
 # Date created:		22 December 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.16 1998/08/07 22:56:40 asami Exp $
+# $Id: Makefile,v 1.17 1998/08/07 23:56:52 asami Exp $
 #
 
 DISTNAME=	Tix4.1.0.006
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.xpi.com/pub/
 
 MAINTAINER=	ports@FreeBSD.ORG
 
-LIB_DEPENDS=	tk80\\.1\\.:${PORTSDIR}/x11-toolkits/tk80
+LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 
 WRKSRC=		${WRKDIR}/Tix4.1.0/unix/tk8.0
 GNU_CONFIGURE=	yes

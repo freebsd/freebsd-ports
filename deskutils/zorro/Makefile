@@ -3,7 +3,7 @@
 # Date created:         03 Aug 1996
 # Whom:                 shanee@rabbit.augusta.de
 #
-# $Id: Makefile,v 1.12 1998/08/07 22:17:55 asami Exp $
+# $Id: Makefile,v 1.13 1998/08/07 23:56:14 asami Exp $
 #
 
 DISTNAME=	zorro-1.1p8
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/sorted/apps/zorro-1.1p8/
 
 MAINTAINER=	shanee@augusta.de
 
-LIB_DEPENDS=	tk80\\.1\\.:${PORTSDIR}/x11-toolkits/tk80
+LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 
 NO_BUILD=	yes
 

@@ -3,7 +3,7 @@
 # Date created:		7 Oct 1996
 # Whom:			pst
 #
-# $Id: Makefile,v 1.11 1998/08/07 23:56:55 asami Exp $
+# $Id: Makefile,v 1.12 1998/08/08 00:02:08 asami Exp $
 #
 
 DISTNAME=	tkgoodstuff8.0-final
@@ -14,7 +14,7 @@ MASTER_SITES=	http://www-personal.umich.edu/~markcrim/tkgoodstuff/dists/
 MAINTAINER=	pst@FreeBSD.org
 
 RUN_DEPENDS=	fvwm2:${PORTSDIR}/x11-wm/fvwm2
-LIB_DEPENDS=	tk80\\.1:${PORTSDIR}/x11-toolkits/tk80
+LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	TCLCONFIGSH=${PREFIX}/lib/tcl8.0/tclConfig.sh \

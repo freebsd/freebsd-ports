@@ -3,7 +3,7 @@
 # Date created:				18 August 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/09/09 19:22:37 andreas Exp $
 #
 
 DISTNAME=	abacus
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	andy@icc.surw.chel.su
 
 LIB_DEPENDS=	tcl80:${PORTSDIR}/lang/tcl80 \
-		tk80:${PORTSDIR}/x11-toolkits/tk80
+		tk80.1:${PORTSDIR}/x11-toolkits/tk80
 
 ALL_TARGET=	dep tcl_interf/nxlc
 USE_GMAKE=	yes

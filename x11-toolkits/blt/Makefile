@@ -3,7 +3,7 @@
 # Date created:		22 September 1998
 # Whom:			Kenjiro Cho <kjc@csl.sony.co.jp>
 #
-# $Id: Makefile,v 1.19 1998/08/07 23:56:50 asami Exp $
+# $Id: Makefile,v 1.20 1998/09/22 09:23:55 kjc Exp $
 #
 
 DISTNAME=	BLT2.4f
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.tcltk.com/pub/blt/
 
 MAINTAINER=	kjc@csl.sony.co.jp
 
-LIB_DEPENDS=	tk80\\.1:${PORTSDIR}/x11-toolkits/tk80
+LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 
 WRKSRC=		${WRKDIR}/blt2.4f
 GNU_CONFIGURE=	yes

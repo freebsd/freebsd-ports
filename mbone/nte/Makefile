@@ -3,7 +3,7 @@
 # Date created:				5 September 1996
 # Whom:	      Bill Fenner <fenner@FreeBSD.ORG>
 #
-#   $Id: Makefile,v 1.10 1998/08/27 18:42:42 fenner Exp $
+#   $Id: Makefile,v 1.11 1998/09/21 23:39:42 fenner Exp $
 #
 
 DISTNAME=	nte-1.5a29
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/nte/1.5a29/
 
 MAINTAINER=	fenner@FreeBSD.org
 
-LIB_DEPENDS=	tk80\\.1:${PORTSDIR}/x11-toolkits/tk80
+LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 
 WRKSRC=		${WRKDIR}/nte
 
