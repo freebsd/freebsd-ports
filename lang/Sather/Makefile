@@ -22,10 +22,10 @@ MAN1=		sacomp.1
 
 pre-configure:
 	@${PERL} -pi.in \
-		-e 's:%%CC%%:${CC}:g' \
-	        's:%%CFLAGS%%:${CFLAGS}:g' \
-	        's:%%LOCALBASE%%:${LOCALBASE}:g' \
-	        's:%%GMAKE%%:${GMAKE}:g' \
+		-e "s:%%CC%%:${CC}:g			;" \
+	        -e "s:%%CFLAGS%%:${CFLAGS}:g		;" \
+	        -e "s:%%LOCALBASE%%:${LOCALBASE}:g	;" \
+	        -e "s:%%GMAKE%%:${GMAKE}:g		;" \
 		${WRKSRC}/System/Common/CONFIG.proto
 
 do-install:
