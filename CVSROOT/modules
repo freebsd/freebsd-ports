@@ -5406,6 +5406,7 @@ rats		ports/security/rats
 rawboot		src/sys/i386/boot/rawboot
 rawio		ports/benchmarks/rawio
 ray		src/sys/dev/ray
+ray++		ports/graphics/ray++
 raycontrol	src/usr.sbin/raycontrol
 rayshade	ports/graphics/rayshade
 rblcheck	ports/mail/rblcheck
