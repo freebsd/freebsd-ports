@@ -17,7 +17,7 @@ MASTER_SITES=	http://quimby.gnus.org/gnus/dist/ \
 		ftp://ftp.task.gda.pl/mirror/ftp.gnus.org/pub/gnus/ \
 		http://www.gnus.org/dist/ \
 		ftp://ftp.gnus.org/dist/ \
-		ftp://ftp.twoguys.org/gnus/ \
+		ftp://ftp.twoguys.org/gnus/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	ilya@martynov.org
