@@ -1,0 +1,6 @@
+bin/get_first_movie
+bin/get_first_person
+bin/get_movie
+bin/get_person
+bin/search_movie
+bin/search_person
