@@ -8845,6 +8845,7 @@ qemacs		ports/editors/qemacs
 qemu		ports/emulators/qemu
 qextmdi		ports/devel/qextmdi
 qfsm		ports/cad/qfsm
+qgfe		ports/math/qgfe
 qglviewer	ports/graphics/qglviewer
 qgo		ports/games/qgo
 qhacc		ports/finance/qhacc
