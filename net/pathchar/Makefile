@@ -11,7 +11,6 @@ PORTVERSION=	a1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/pathchar/  \
 		http://www.caida.org/Tools/Pathchar/  \
-		http://www.fips.de/Computer/woman/  \
 		http://sitka.triumf.ca/net/  \
 		ftp://ftp.freebsd.org/pub/FreeBSD/ports/local-distfiles/obrien/
 DISTNAME=	pathchar-a1-freebsd-3.0
