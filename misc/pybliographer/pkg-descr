@@ -1,0 +1,18 @@
+Pybliographer is a tool for handling databases of bibliographic references.
+It provides an homogeneous interface (with powerful editing and searching
+features) for several bibliographic database formats - currently supported
+are BibTeX, Medline, Ovid and Refer.  In addition, it can export references
+directly to LyX.
+
+Both a scriptable command-line interface ("pybliographer") and a GNOME-
+compliant GUI ("pybliographic") are installed by the port.
+
+Pybliographer is written in Python, and some Python knowledge would be
+helpful in making the most of the command-line environment and when doing
+advanced searches.  The GUI version, on the other hand, is extremely novice-
+friendly.
+
+Author:  Frederic Gobry <gobry@users.sourceforge.net>
+WWW:     http://www.gnome.org/pybliographer/
+
+-- Johann Visagie <johann@egenetics.com>
