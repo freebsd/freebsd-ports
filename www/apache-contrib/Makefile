@@ -48,6 +48,6 @@ AP_INCLUDE?=    ${PREFIX}/include/apache
 AP_LIBEXEC?=    ${PREFIX}/libexec/apache
 .endif
 
-ALL_TARGET=	APXS=${APXS}/sbin/apxs all
+ALL_TARGET=	APXS=${APXS} all
 
 .include <bsd.port.mk>
