@@ -74,8 +74,7 @@
 #  WITH_MUTT_IFDEF_PATCH
 
 PORTNAME=	mutt-devel
-PORTVERSION=	1.5.5.1
-PORTREVISION=	2
+PORTVERSION=	1.5.6
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -88,8 +87,10 @@ DISTNAME=	mutt-${PORTVERSION}i
 
 PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
 		http://www2.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
+		http://www3.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
 		ftp://ftp.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv \
 		ftp://ftp2.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv \
+		ftp://ftp3.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv \
 		http://cedricduval.free.fr/mutt/patches/download/:cd \
 		http://home.woolridge.ca/mutt/patches/:dw
 
@@ -123,8 +124,11 @@ SCRIPTS_ENV=	WRKDIR="${WRKDIR}"
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_MUTT_EDIT_THREADS)
+BROKEN=		"mutt-devel's edit threads patch appears to be broken"
+.endif
+CD_PATCH_VERSION=	1.5.5.1
 CD_IFDEF_PATCH_VERSION=	1.5.4
-DW_PATCH_VERSION=	1.5.5
 .if !defined(VVV_PATCH_VERSION)
 VVV_PATCH_VERSION=	${PORTVERSION}
 .endif
@@ -215,6 +219,7 @@ CONFIGURE_ARGS+=	--enable-locales-fix
 CONFIGURE_ARGS+=	--with-curses=${PREFIX}
 .elif defined(USE_SLANG)
 CONFIGURE_ARGS+=	--with-slang=${PREFIX}
+PATCHFILES+=	patch-${VVV_PATCH_VERSION}.vvv.slang.gz:vvv
 .endif
 .if defined(WITH_MUTT_CYRUS_SASL)
 CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
@@ -232,7 +237,6 @@ SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_NNTP)
 PATCHFILES+=	patch-${VVV_PATCH_VERSION}.vvv.nntp.gz:vvv
-PATCHFILES+=	patch-${VVV_PATCH_VERSION}.vvv.compose.gz:vvv
 CONFIGURE_ARGS+=	--enable-nntp
 SGML_NEEDED=	yes
 .endif
