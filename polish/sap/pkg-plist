@@ -1,0 +1,4 @@
+bin/sap
+lib/sap/dvp_1.dic
+lib/sap/dvp_2.dic
+@dirrm lib/sap
