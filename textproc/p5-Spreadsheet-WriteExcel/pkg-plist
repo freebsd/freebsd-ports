@@ -1,0 +1,50 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Spreadsheet/WriteExcel/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel.pm
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/BIFFwriter.pm
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/Format.pm
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/OLEwriter.pm
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/Workbook.pm
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/Worksheet.pm
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/doc/WriteExcel.html
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/doc/examples.html
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/doc/index.html
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/doc/merge1.gif
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/doc/merge2.gif
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/doc/number_formats1.html
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/doc/number_formats2.html
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/doc/regions.gif
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/doc/simple.gif
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/doc/stocks.gif
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/doc/textwrap.gif
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/doc/tpj.html
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/doc/tpj0503-0004-01.gif
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/doc/tpj0503-0004-02.gif
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/doc/tpj0503-0004-03.gif
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/doc/tpj0503-0004-04.gif
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/doc/tpj0503-0004-05.gif
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/doc/win32ole.gif
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/examples/Big.pm
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/examples/WorkbookBig.pm
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/examples/big.pl
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/examples/cgi.pl
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/examples/copyformat.pl
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/examples/csv2xls.pl
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/examples/easter_egg.pl
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/examples/formats.pl
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/examples/merge1.pl
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/examples/merge2.pl
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/examples/ms_time.pl
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/examples/regions.pl
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/examples/simple.pl
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/examples/stocks.pl
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/examples/tab2xls.pl
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/examples/textwrap.pl
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/examples/win32ole.pl
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/examples/writeA1.pl
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/examples/writemany.pl
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/doc
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/examples
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Spreadsheet/WriteExcel
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Spreadsheet 2>/dev/null || true
