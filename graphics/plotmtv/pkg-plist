@@ -1,0 +1,7 @@
+bin/ctr2mtv
+bin/drawplot2mtv
+bin/mtv2mtv
+bin/pdraw2mtv
+bin/plotmtv
+man/man1/plotmtv.1.gz
+share/doc/plotmtv/DataFormat.ps.Z

@@ -1,0 +1,17 @@
+*** Plot/Imakefile.orig	Sat Jan 25 17:35:02 1997
+--- Plot/Imakefile	Sat Jan 25 17:35:31 1997
+***************
+*** 29,34 ****
+         PROGNAME = plotmtv
+  
+  install.local:: all $(PROGRAM)
+!         $(INSTALL) -c $(INSTPGMFLAGS)  $(PROGNAME) $(LOCALBINDIR)
+  
+  ComplexProgramTarget($(PROGNAME))
+--- 29,34 ----
+         PROGNAME = plotmtv
+  
+  install.local:: all $(PROGRAM)
+! 	$(INSTALL) -c $(INSTPGMFLAGS)  $(PROGNAME) $(LOCALBINDIR)
+  
+  ComplexProgramTarget($(PROGNAME))
