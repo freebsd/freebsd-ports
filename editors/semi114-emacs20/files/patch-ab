@@ -1,0 +1,13 @@
+--- mime-ui-ja.texi.orig	Sun Feb 28 14:35:10 1999
++++ mime-ui-ja.texi	Tue Mar  9 06:44:08 1999
+@@ -1,6 +1,10 @@
+ \input texinfo.tex
+ @setfilename mime-ui-ja.info
+ @settitle{SEMI 1.8 説明書}
++@dircategory The Emacs editor and associated tools 
++@direntry 
++* mime-ui-ja: (mime-ui-ja).	MIME user interface for GNU Emacs. (Japanese)
++@end direntry 
+ @titlepage
+ @title SEMI 1.8 説明書
+ @author 守岡 知彦 <morioka@@jaist.ac.jp>
