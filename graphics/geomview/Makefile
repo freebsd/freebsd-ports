@@ -11,7 +11,7 @@ CATEGORIES=	graphics tk83
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	geomview
 
-MAINTAINER=	fenner@FreeBSD.org
+MAINTAINER=	bms@FreeBSD.org
 COMMENT=	An interactive viewer for 3- and 4-D geometric objects
 
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
