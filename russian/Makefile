@@ -11,6 +11,7 @@
     SUBDIR += koi8r-ps
     SUBDIR += messarge
     SUBDIR += netscape4.language
+    SUBDIR += p5-Lingua-RU-Charset
     SUBDIR += pgp.language
     SUBDIR += pine.language
     SUBDIR += rispell
