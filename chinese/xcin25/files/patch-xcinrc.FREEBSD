@@ -1,5 +1,5 @@
---- etc/xcinrc.FREEBSD.orig	Sat Apr 13 22:57:29 2002
-+++ etc/xcinrc.FREEBSD	Sat Apr 13 22:59:29 2002
+--- etc/xcinrc.FREEBSD.orig	Thu Nov 29 21:50:42 2001
++++ etc/xcinrc.FREEBSD	Sat Apr 20 02:08:58 2002
 @@ -75,7 +75,7 @@
            (BEEP_WRONG           YES)
            (BEEP_DUPCHAR         NO)
@@ -9,7 +9,7 @@
  	  (HINT_TSI		NO)))
  
  (define bimsphone_default
-@@ -126,13 +126,11 @@
+@@ -126,31 +126,27 @@
  
  (define phone@big5
  	'((SETKEY		3)
@@ -25,7 +25,12 @@
  
  (define bimsphone@big5
  	'((SETKEY		6)
-@@ -144,13 +142,11 @@
+ 	  (MODULE		"bimsphone")))
+ 
+ (define bimspinyin@big5
+-	'((SETKEY		7)
++	'((SETKEY		5)
+ 	  (MODULE		"bimsphone")))
  
  (define array30@big5
  	'((SETKEY		8)
