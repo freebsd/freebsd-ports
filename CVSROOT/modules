@@ -4848,6 +4848,7 @@ pips3000	ports/print/pips3000
 pips3300	ports/print/pips3300
 pips3500	ports/print/pips3500
 pips670		ports/print/pips670
+pips720		ports/print/pips720
 pips750_2000	ports/print/pips750_2000
 pips760		ports/print/pips760
 pips770		ports/print/pips770
