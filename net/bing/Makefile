@@ -8,17 +8,17 @@
 PORTNAME=	bing
 PORTVERSION=	1.0.4
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.lip6.fr/pub/networking/
+MASTER_SITES=	ftp://netsw.org/net/ip/audit/load/bing/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A point-to-point bandwith measurement tool
 
-MAN8= 		bing.8
+MAN8=		bing.8
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/bing
-	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/bing
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
