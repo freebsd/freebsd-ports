@@ -8,7 +8,7 @@
 PORTNAME=	isreal
 PORTVERSION=	2.0
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.freeradius.org/pub/isreal/
+MASTER_SITES=	ftp://ftp.striker.ottawa.on.ca/pub/isreal/
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	mark@kyne.com.au
