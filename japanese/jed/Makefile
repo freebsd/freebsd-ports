@@ -78,6 +78,9 @@ pre-fetch:
 post-extract:
 	@cd ${WRKDIR} && ${MV} *.sl ${_LIBDIR}/
 
+post-patch:
+	@${RM} ${_INFODIR}/*.orig
+
 do-install:
 	@${MKDIR} ${JED_ROOT}
 .for d in bin doc lib lib/colors lib/tm
