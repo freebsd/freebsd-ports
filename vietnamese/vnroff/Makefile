@@ -4,10 +4,10 @@
 # Date created:		Monday, Dec 9, 1996
 # Whom:			David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.1.1.1 1996/08/09 04:17:16 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1996/12/25 12:42:41 obrien Exp $
 #
 
-PKGNAME=	vn-vnroff-2.0
+PKGNAME=	vi-vnroff-2.0
 CATEGORIES=	vietnamese
 MASTER_SITES=	ftp://ftp.media.mit.edu/pub/Vietnet/Viscii/Troff/
 DISTFILES=	vnroff.c.Z vnroff.1.Z
