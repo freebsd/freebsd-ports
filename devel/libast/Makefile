@@ -10,7 +10,7 @@ PORTVERSION=	0.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.eterm.org/download/
 
-MAINTAINER=	ishmael27@home.com
+MAINTAINER=	ishmael27x@yahoo.com
 
 LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2
 
