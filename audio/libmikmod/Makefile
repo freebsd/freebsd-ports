@@ -8,9 +8,8 @@
 PORTNAME=	libmikmod
 PORTVERSION=	3.1.9
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		http://www.mikmod.darkorb.net/libmikmod/
-MASTER_SITE_SUBDIR=	apps/sound/libs
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	sada
 
 MAINTAINER=	ports@FreeBSD.org
 
