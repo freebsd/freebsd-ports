@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	awstats
-PORTVERSION=	5.7
+PORTVERSION=	5.9
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -38,6 +38,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/logresolvemerge.pl ${PREFIX}/bin/awstats_logresolvemerge.pl
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/maillogconvert.pl ${PREFIX}/bin/awstats_maillogconvert.pl
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/urlaliasbuilder.pl ${PREFIX}/bin/awstats_urlaliasbuilder.pl
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/webmin/awstats-1.1.wbm ${PREFIX}/bin/awstats-1.1.wbm
 	${INSTALL_SCRIPT} ${WRKSRC}/wwwroot/cgi-bin/awredir.pl ${PREFIX}/www/cgi-bin
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/awstats.model.conf ${PREFIX}/www/cgi-bin
 	${INSTALL_SCRIPT} ${WRKSRC}/wwwroot/cgi-bin/awstats.pl ${PREFIX}/www/cgi-bin
@@ -75,4 +76,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/*.* ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
+.endif
+
+.include <bsd.port.post.mk>
