@@ -1,4 +1,7 @@
 bin/interop2html
+%%PYTHON_SITELIBDIR%%/SOAP.py
+%%PYTHON_SITELIBDIR%%/SOAP.pyc
+%%PYTHON_SITELIBDIR%%/SOAP.pyo
 %%PORTDOCS%%%%EXAMPLESDIR%%/alanbushTest.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/cardClient.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/cardServer.py
@@ -18,7 +21,3 @@ bin/interop2html
 %%PORTDOCS%%%%DOCSDIR%%/quickstart.txt
 %%PORTDOCS%%%%DOCSDIR%%/simpleTypes.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@cwd %%LOCALBASE%%
-%%PYTHON_SITELIBDIR%%/SOAP.py
-%%PYTHON_SITELIBDIR%%/SOAP.pyc
-%%PYTHON_SITELIBDIR%%/SOAP.pyo
