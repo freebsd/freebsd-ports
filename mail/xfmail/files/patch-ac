@@ -1,8 +1,0 @@
---- Makefile.am.orig	Sat Jun  2 22:11:34 2001
-+++ Makefile.am	Sun Jun 24 22:59:18 2001
-@@ -1,4 +1,4 @@
--SUBDIRS = src intl data man po
-+SUBDIRS = src data man
- 
- DIST_SUBDIRS = $(SUBDIRS) contrib
- 
