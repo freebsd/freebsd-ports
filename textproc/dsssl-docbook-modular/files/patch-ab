@@ -1,0 +1,1425 @@
+diff -ur modular.org/common/dbl1ca.dsl modular/common/dbl1ca.dsl
+--- modular.org/common/dbl1ca.dsl	Wed Feb 21 18:03:32 2001
++++ common/dbl1ca.dsl	Wed Feb 21 18:36:05 2001
+@@ -230,6 +230,9 @@
+ ;; (e.g. REFNAME) with a little abuse.
+ ;;
+ 
++(define (local-ca-intra-label-sep)
++  (list))
++
+ (define (ca-intra-label-sep)
+   (list
+    (list (normalize "equation")		"-")
+@@ -259,10 +262,13 @@
+ (define (gentext-ca-intra-label-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-ca-intra-label-sep)))
+ 	 (sep    (assoc name (ca-intra-label-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++        (car (cdr lsep))
++        (if sep
++            (car (cdr sep))
++            ""))))
+ 
+ ;; gentext-label-title-sep returns the seperator to be inserted
+ ;; between a label and the text following the label for the
+@@ -272,6 +278,9 @@
+ ;; abuse.
+ ;;
+ 
++(define (local-ca-label-title-sep)
++  (list))
++
+ (define (ca-label-title-sep)
+   (list
+    (list (normalize "abstract")		": ")
+@@ -315,10 +324,13 @@
+ (define (gentext-ca-label-title-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-ca-label-title-sep)))
+ 	 (sep    (assoc name (ca-label-title-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++      (car (cdr lsep))
++      (if sep
++  	  (car (cdr sep))
++   	  ""))))
+ 
+ (define (ca-label-number-format-list)
+   (list
+diff -ur modular.org/common/dbl1cs.dsl modular/common/dbl1cs.dsl
+--- modular.org/common/dbl1cs.dsl	Wed Feb 21 18:03:32 2001
++++ common/dbl1cs.dsl	Wed Feb 21 18:37:04 2001
+@@ -229,6 +229,9 @@
+ ;; (e.g. REFNAME) with a little abuse.
+ ;;
+ 
++(define (local-cs-intra-label-sep)
++  (list))
++
+ (define (cs-intra-label-sep)
+   (list
+    (list (normalize "equation")		"-")
+@@ -258,10 +261,13 @@
+ (define (gentext-cs-intra-label-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-cs-intra-label-sep)))
+ 	 (sep    (assoc name (cs-intra-label-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++        (car (cdr lsep))
++        (if sep
++            (car (cdr sep))
++            ""))))
+ 
+ ;; gentext-label-title-sep returns the seperator to be inserted
+ ;; between a label and the text following the label for the
+@@ -271,6 +277,9 @@
+ ;; abuse.
+ ;;
+ 
++(define (local-cs-label-title-sep)
++  (list))
++
+ (define (cs-label-title-sep)
+   (list
+    (list (normalize "abstract")		": ")
+@@ -314,10 +323,13 @@
+ (define (gentext-cs-label-title-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-cs-label-title-sep)))
+ 	 (sep    (assoc name (cs-label-title-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++      (car (cdr lsep))
++      (if sep
++  	  (car (cdr sep))
++   	  ""))))
+ 
+ (define (cs-label-number-format-list)
+   (list
+diff -ur modular.org/common/dbl1da.dsl modular/common/dbl1da.dsl
+--- modular.org/common/dbl1da.dsl	Wed Feb 21 18:03:32 2001
++++ common/dbl1da.dsl	Wed Feb 21 18:37:07 2001
+@@ -218,6 +218,9 @@
+ ;; (e.g. REFNAME) with a little abuse.
+ ;;
+ 
++(define (local-da-intra-label-sep)
++  (list))
++
+ (define (da-intra-label-sep)
+   (list
+    (list (normalize "equation")		"-")
+@@ -247,10 +250,13 @@
+ (define (gentext-da-intra-label-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-da-intra-label-sep)))
+ 	 (sep    (assoc name (da-intra-label-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++        (car (cdr lsep))
++        (if sep
++            (car (cdr sep))
++            ""))))
+ 
+ ;; gentext-label-title-sep returns the seperator to be inserted
+ ;; between a label and the text following the label for the
+@@ -260,6 +266,9 @@
+ ;; abuse.
+ ;;
+ 
++(define (local-da-label-title-sep)
++  (list))
++
+ (define (da-label-title-sep)
+   (list
+    (list (normalize "abstract")		": ")
+@@ -303,10 +312,13 @@
+ (define (gentext-da-label-title-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-da-label-title-sep)))
+ 	 (sep    (assoc name (da-label-title-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++      (car (cdr lsep))
++      (if sep
++  	  (car (cdr sep))
++   	  ""))))
+ 
+ (define (da-label-number-format-list)
+   (list
+diff -ur modular.org/common/dbl1de.dsl modular/common/dbl1de.dsl
+--- modular.org/common/dbl1de.dsl	Wed Feb 21 18:03:32 2001
++++ common/dbl1de.dsl	Wed Feb 21 18:37:11 2001
+@@ -231,6 +231,9 @@
+ ;; (e.g. REFNAME) with a little abuse.
+ ;;
+ 
++(define (local-de-intra-label-sep)
++  (list))
++
+ (define (de-intra-label-sep)
+   (list
+    (list (normalize "equation")		"-")
+@@ -260,10 +263,13 @@
+ (define (gentext-de-intra-label-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-de-intra-label-sep)))
+ 	 (sep    (assoc name (de-intra-label-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++        (car (cdr lsep))
++        (if sep
++            (car (cdr sep))
++            ""))))
+ 
+ ;; gentext-label-title-sep returns the seperator to be inserted
+ ;; between a label and the text following the label for the
+@@ -273,6 +279,9 @@
+ ;; abuse.
+ ;;
+ 
++(define (local-de-label-title-sep)
++  (list))
++
+ (define (de-label-title-sep)
+   (list
+    (list (normalize "abstract")		": ")
+@@ -316,10 +325,13 @@
+ (define (gentext-de-label-title-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-de-label-title-sep)))
+ 	 (sep    (assoc name (de-label-title-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++      (car (cdr lsep))
++      (if sep
++  	  (car (cdr sep))
++   	  ""))))
+ 
+ (define (de-label-number-format-list)
+   (list
+diff -ur modular.org/common/dbl1el.dsl modular/common/dbl1el.dsl
+--- modular.org/common/dbl1el.dsl	Wed Feb 21 18:03:32 2001
++++ common/dbl1el.dsl	Wed Feb 21 18:37:15 2001
+@@ -231,6 +231,9 @@
+ ;; (e.g. REFNAME) with a little abuse.
+ ;;
+ 
++(define (local-el-intra-label-sep)
++  (list))
++
+ (define (el-intra-label-sep)
+   (list
+    (list (normalize "equation")		"-")
+@@ -260,10 +263,13 @@
+ (define (gentext-el-intra-label-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-el-intra-label-sep)))
+ 	 (sep    (assoc name (el-intra-label-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++        (car (cdr lsep))
++        (if sep
++            (car (cdr sep))
++            ""))))
+ 
+ ;; gentext-label-title-sep returns the seperator to be inserted
+ ;; between a label and the text following the label for the
+@@ -273,6 +279,9 @@
+ ;; abuse.
+ ;;
+ 
++(define (local-el-label-title-sep)
++  (list))
++
+ (define (el-label-title-sep)
+   (list
+    (list (normalize "abstract")		": ")
+@@ -316,10 +325,13 @@
+ (define (gentext-el-label-title-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-el-label-title-sep)))
+ 	 (sep    (assoc name (el-label-title-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++      (car (cdr lsep))
++      (if sep
++  	  (car (cdr sep))
++   	  ""))))
+ 
+ (define (el-label-number-format-list)
+   (list
+diff -ur modular.org/common/dbl1en.dsl modular/common/dbl1en.dsl
+--- modular.org/common/dbl1en.dsl	Wed Feb 21 18:03:32 2001
++++ common/dbl1en.dsl	Wed Feb 21 18:26:31 2001
+@@ -231,6 +231,9 @@
+ ;; (e.g. REFNAME) with a little abuse.
+ ;;
+ 
++(define (local-en-intra-label-sep)
++  (list))
++
+ (define (en-intra-label-sep)
+   (list
+    (list (normalize "equation")		"-")
+@@ -260,10 +263,13 @@
+ (define (gentext-en-intra-label-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-en-intra-label-sep)))
+ 	 (sep    (assoc name (en-intra-label-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++        (car (cdr lsep))
++        (if sep
++            (car (cdr sep))
++            ""))))
+ 
+ ;; gentext-label-title-sep returns the seperator to be inserted
+ ;; between a label and the text following the label for the
+@@ -273,6 +279,9 @@
+ ;; abuse.
+ ;;
+ 
++(define (local-en-label-title-sep)
++  (list))
++
+ (define (en-label-title-sep)
+   (list
+    (list (normalize "abstract")		": ")
+@@ -316,10 +325,13 @@
+ (define (gentext-en-label-title-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-en-label-title-sep)))
+ 	 (sep    (assoc name (en-label-title-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++      (car (cdr lsep))
++      (if sep
++  	  (car (cdr sep))
++   	  ""))))
+ 
+ (define (en-label-number-format-list)
+   (list
+diff -ur modular.org/common/dbl1es.dsl modular/common/dbl1es.dsl
+--- modular.org/common/dbl1es.dsl	Wed Feb 21 18:03:32 2001
++++ common/dbl1es.dsl	Wed Feb 21 18:37:20 2001
+@@ -220,6 +220,9 @@
+ ;; (e.g. REFNAME) with a little abuse.
+ ;;
+ 
++(define (local-es-intra-label-sep)
++  (list))
++
+ (define (es-intra-label-sep)
+   (list
+    (list (normalize "equation")		"-")
+@@ -249,10 +252,13 @@
+ (define (gentext-es-intra-label-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-es-intra-label-sep)))
+ 	 (sep    (assoc name (es-intra-label-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++        (car (cdr lsep))
++        (if sep
++            (car (cdr sep))
++            ""))))
+ 
+ ;; gentext-label-title-sep returns the seperator to be inserted
+ ;; between a label and the text following the label for the
+@@ -262,6 +268,9 @@
+ ;; abuse.
+ ;;
+ 
++(define (local-es-label-title-sep)
++  (list))
++
+ (define (es-label-title-sep)
+   (list
+    (list (normalize "abstract")		": ")
+@@ -305,10 +314,13 @@
+ (define (gentext-es-label-title-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-es-label-title-sep)))
+ 	 (sep    (assoc name (es-label-title-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++      (car (cdr lsep))
++      (if sep
++  	  (car (cdr sep))
++   	  ""))))
+ 
+ (define (es-label-number-format-list)
+   (list
+diff -ur modular.org/common/dbl1et.dsl modular/common/dbl1et.dsl
+--- modular.org/common/dbl1et.dsl	Wed Feb 21 18:03:32 2001
++++ common/dbl1et.dsl	Wed Feb 21 18:39:34 2001
+@@ -231,6 +231,9 @@
+ ;; (e.g. REFNAME) with a little abuse.
+ ;;
+ 
++(define (local-et-intra-label-sep)
++  (list))
++
+ (define (et-intra-label-sep)
+   (list
+    (list (normalize "equation")		"-")
+@@ -260,10 +263,13 @@
+ (define (gentext-et-intra-label-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (et-intra-label-sep)))
+ 	 (sep    (assoc name (en-intra-label-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++        (car (cdr lsep))
++        (if sep
++	    (car (cdr sep))
++	    ""))))
+ 
+ ;; gentext-label-title-sep returns the seperator to be inserted
+ ;; between a label and the text following the label for the
+@@ -273,6 +279,9 @@
+ ;; abuse.
+ ;;
+ 
++(define (local-et-label-title-sep)
++  (list))
++
+ (define (et-label-title-sep)
+   (list
+    (list (normalize "abstract")		": ")
+@@ -316,10 +325,13 @@
+ (define (gentext-et-label-title-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-et-label-title-sep)))
+ 	 (sep    (assoc name (et-label-title-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++      (car (cdr lsep))
++      (if sep
++  	  (car (cdr sep))
++   	  ""))))
+ 
+ (define (et-label-number-format-list)
+   (list
+diff -ur modular.org/common/dbl1fi.dsl modular/common/dbl1fi.dsl
+--- modular.org/common/dbl1fi.dsl	Wed Feb 21 18:03:32 2001
++++ common/dbl1fi.dsl	Wed Feb 21 18:39:38 2001
+@@ -230,6 +230,9 @@
+ ;; (e.g. REFNAME) with a little abuse.
+ ;;
+ 
++(define (local-fi-intra-label-sep)
++  (list))
++
+ (define (fi-intra-label-sep)
+   (list
+    (list (normalize "equation")		"-")
+@@ -259,10 +262,13 @@
+ (define (gentext-fi-intra-label-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-fi-intra-label-sep)))
+ 	 (sep    (assoc name (fi-intra-label-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++        (car (cdr lsep))
++        (if sep
++            (car (cdr sep))
++            ""))))
+ 
+ ;; gentext-label-title-sep returns the seperator to be inserted
+ ;; between a label and the text following the label for the
+@@ -272,6 +278,9 @@
+ ;; abuse.
+ ;;
+ 
++(define (local-fi-label-title-sep)
++  (list))
++
+ (define (fi-label-title-sep)
+   (list
+    (list (normalize "abstract")		": ")
+@@ -315,10 +324,13 @@
+ (define (gentext-fi-label-title-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-fi-label-title-sep)))
+ 	 (sep    (assoc name (fi-label-title-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++      (car (cdr lsep))
++      (if sep
++  	  (car (cdr sep))
++   	  ""))))
+ 
+ (define (fi-label-number-format-list)
+   (list
+diff -ur modular.org/common/dbl1fr.dsl modular/common/dbl1fr.dsl
+--- modular.org/common/dbl1fr.dsl	Wed Feb 21 18:03:32 2001
++++ common/dbl1fr.dsl	Wed Feb 21 18:39:43 2001
+@@ -224,6 +224,9 @@
+ ;; (e.g. REFNAME) with a little abuse.
+ ;;
+ 
++(define (local-fr-intra-label-sep)
++  (list))
++
+ (define (fr-intra-label-sep)
+   (list
+    (list (normalize "equation")		"-")
+@@ -253,10 +256,13 @@
+ (define (gentext-fr-intra-label-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-fr-intra-label-sep)))
+ 	 (sep    (assoc name (fr-intra-label-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++        (car (cdr lsep))
++        (if sep
++            (car (cdr sep))
++            ""))))
+ 
+ ;; gentext-label-title-sep returns the seperator to be inserted
+ ;; between a label and the text following the label for the
+@@ -266,6 +272,9 @@
+ ;; abuse.
+ ;;
+ 
++(define (local-fr-label-title-sep)
++  (list))
++
+ (define (fr-label-title-sep)
+   (list
+    (list (normalize "abstract")		" : ")
+@@ -309,10 +318,13 @@
+ (define (gentext-fr-label-title-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-fr-label-title-sep)))
+ 	 (sep    (assoc name (fr-label-title-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++      (car (cdr lsep))
++      (if sep
++  	  (car (cdr sep))
++   	  ""))))
+ 
+ (define (fr-label-number-format-list)
+   (list
+diff -ur modular.org/common/dbl1hu.dsl modular/common/dbl1hu.dsl
+--- modular.org/common/dbl1hu.dsl	Wed Feb 21 18:03:32 2001
++++ common/dbl1hu.dsl	Wed Feb 21 18:40:09 2001
+@@ -233,6 +233,9 @@
+ ;; (e.g. REFNAME) with a little abuse.
+ ;;
+ 
++(define (local-hu-intra-label-sep)
++  (list))
++
+ (define (hu-intra-label-sep)
+   (list
+    (list (normalize "equation")		"-")
+@@ -262,10 +265,13 @@
+ (define (gentext-hu-intra-label-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-hu-intra-label-sep)))
+ 	 (sep    (assoc name (hu-intra-label-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++        (car (cdr lsep))
++        (if sep
++            (car (cdr sep))
++            ""))))
+ 
+ ;; gentext-label-title-sep returns the seperator to be inserted
+ ;; between a label and the text following the label for the
+@@ -275,6 +281,9 @@
+ ;; abuse.
+ ;;
+ 
++(define (local-hu-label-title-sep)
++  (list))
++
+ (define (hu-label-title-sep)
+   (list
+    (list (normalize "abstract")		": ")
+@@ -318,10 +327,13 @@
+ (define (gentext-hu-label-title-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-hu-label-title-sep)))
+ 	 (sep    (assoc name (hu-label-title-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++      (car (cdr lsep))
++      (if sep
++  	  (car (cdr sep))
++   	  ""))))
+ 
+ (define (hu-label-number-format-list)
+   (list
+diff -ur modular.org/common/dbl1it.dsl modular/common/dbl1it.dsl
+--- modular.org/common/dbl1it.dsl	Wed Feb 21 18:03:32 2001
++++ common/dbl1it.dsl	Wed Feb 21 18:41:22 2001
+@@ -257,6 +257,9 @@
+ ;; (e.g. REFNAME) with a little abuse.
+ ;;
+ 
++(define (local-it-intra-label-sep)
++  (list))
++
+ (define (it-intra-label-sep)
+   (list
+    (list (normalize "equation")		"-")
+@@ -286,10 +289,13 @@
+ (define (gentext-it-intra-label-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-it-intra-label-sep)))
+ 	 (sep    (assoc name (it-intra-label-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++        (car (cdr lsep))
++        (if sep
++            (car (cdr sep))
++            ""))))
+ 
+ ;; gentext-label-title-sep returns the seperator to be inserted
+ ;; between a label and the text following the label for the
+@@ -299,6 +305,9 @@
+ ;; abuse.
+ ;;
+ 
++(define (local-it-label-title-sep)
++  (list))
++
+ (define (it-label-title-sep)
+   (list
+    (list (normalize "abstract")		": ")
+@@ -342,10 +351,13 @@
+ (define (gentext-it-label-title-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-it-label-title-sep)))
+ 	 (sep    (assoc name (it-label-title-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++      (car (cdr lsep))
++      (if sep
++  	  (car (cdr sep))
++   	  ""))))
+ 
+ (define (it-label-number-format-list)
+   (list
+diff -ur modular.org/common/dbl1ja.dsl modular/common/dbl1ja.dsl
+--- modular.org/common/dbl1ja.dsl	Wed Feb 21 18:03:32 2001
++++ common/dbl1ja.dsl	Wed Feb 21 18:41:26 2001
+@@ -230,6 +230,9 @@
+ ;; (e.g. REFNAME) with a little abuse.
+ ;;
+ 
++(define (local-ja-intra-label-sep)
++  (list))
++
+ (define (ja-intra-label-sep)
+   (list
+    (list (normalize "equation")		"-")
+@@ -259,10 +262,13 @@
+ (define (gentext-ja-intra-label-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-ja-intra-label-sep)))
+ 	 (sep    (assoc name (ja-intra-label-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++        (car (cdr lsep))
++        (if sep
++            (car (cdr sep))
++            ""))))
+ 
+ ;; gentext-label-title-sep returns the seperator to be inserted
+ ;; between a label and the text following the label for the
+@@ -272,6 +278,9 @@
+ ;; abuse.
+ ;;
+ 
++(define (local-ja-label-title-sep)
++  (list))
++
+ (define (ja-label-title-sep)
+   (list
+    (list (normalize "abstract")		": ")
+@@ -315,10 +324,13 @@
+ (define (gentext-ja-label-title-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-ja-label-title-sep)))
+ 	 (sep    (assoc name (ja-label-title-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++      (car (cdr lsep))
++      (if sep
++  	  (car (cdr sep))
++   	  ""))))
+ 
+ (define (ja-label-number-format-list)
+   (list
+diff -ur modular.org/common/dbl1ko.dsl modular/common/dbl1ko.dsl
+--- modular.org/common/dbl1ko.dsl	Wed Feb 21 18:03:32 2001
++++ common/dbl1ko.dsl	Wed Feb 21 18:41:30 2001
+@@ -242,6 +242,9 @@
+ ;; (e.g. REFNAME) with a little abuse.
+ ;;
+ 
++(define (local-ko-intra-label-sep)
++  (list))
++
+ (define (ko-intra-label-sep)
+   (list
+    (list (normalize "equation")		"-")
+@@ -271,10 +274,13 @@
+ (define (gentext-ko-intra-label-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-ko-intra-label-sep)))
+ 	 (sep    (assoc name (ko-intra-label-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++        (car (cdr lsep))
++        (if sep
++            (car (cdr sep))
++            ""))))
+ 
+ ;; gentext-label-title-sep returns the seperator to be inserted
+ ;; between a label and the text following the label for the
+@@ -284,6 +290,9 @@
+ ;; abuse.
+ ;;
+ 
++(define (local-ko-label-title-sep)
++  (list))
++
+ (define (ko-label-title-sep)
+   (list
+    (list (normalize "abstract")		": ")
+@@ -327,10 +336,13 @@
+ (define (gentext-ko-label-title-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-ko-label-title-sep)))
+ 	 (sep    (assoc name (ko-label-title-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++      (car (cdr lsep))
++      (if sep
++  	  (car (cdr sep))
++   	  ""))))
+ 
+ (define (ko-label-number-format-list)
+   (list
+diff -ur modular.org/common/dbl1nl.dsl modular/common/dbl1nl.dsl
+--- modular.org/common/dbl1nl.dsl	Wed Feb 21 18:03:32 2001
++++ common/dbl1nl.dsl	Wed Feb 21 18:41:34 2001
+@@ -226,6 +226,9 @@
+ ;; (e.g. REFNAME) with a little abuse.
+ ;;
+ 
++(define (local-nl-intra-label-sep)
++  (list))
++
+ (define (nl-intra-label-sep)
+   (list
+    (list (normalize "equation")		"-")
+@@ -255,10 +258,13 @@
+ (define (gentext-nl-intra-label-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-nl-intra-label-sep)))
+ 	 (sep    (assoc name (nl-intra-label-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++        (car (cdr lsep))
++        (if sep
++            (car (cdr sep))
++            ""))))
+ 
+ ;; gentext-label-title-sep returns the seperator to be inserted
+ ;; between a label and the text following the label for the
+@@ -268,6 +274,9 @@
+ ;; abuse.
+ ;;
+ 
++(define (local-nl-label-title-sep)
++  (list))
++
+ (define (nl-label-title-sep)
+   (list
+    (list (normalize "abstract")		": ")
+@@ -311,10 +320,13 @@
+ (define (gentext-nl-label-title-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-nl-label-title-sep)))
+ 	 (sep    (assoc name (nl-label-title-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++      (car (cdr lsep))
++      (if sep
++  	  (car (cdr sep))
++   	  ""))))
+ 
+ (define (nl-label-number-format-list)
+   (list
+diff -ur modular.org/common/dbl1no.dsl modular/common/dbl1no.dsl
+--- modular.org/common/dbl1no.dsl	Wed Feb 21 18:03:32 2001
++++ common/dbl1no.dsl	Wed Feb 21 18:41:37 2001
+@@ -223,6 +223,9 @@
+ ;; (e.g. REFNAME) with a little abuse.
+ ;;
+ 
++(define (local-no-intra-label-sep)
++  (list))
++
+ (define (no-intra-label-sep)
+   (list
+    (list (normalize "equation")		"-")
+@@ -252,10 +255,13 @@
+ (define (gentext-no-intra-label-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-no-intra-label-sep)))
+ 	 (sep    (assoc name (no-intra-label-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++        (car (cdr lsep))
++        (if sep
++            (car (cdr sep))
++            ""))))
+ 
+ ;; gentext-label-title-sep returns the seperator to be inserted
+ ;; between a label and the text following the label for the
+@@ -265,6 +271,9 @@
+ ;; abuse.
+ ;;
+ 
++(define (local-no-label-title-sep)
++  (list))
++
+ (define (no-label-title-sep)
+   (list
+    (list (normalize "abstract")		": ")
+@@ -308,10 +317,13 @@
+ (define (gentext-no-label-title-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-no-label-title-sep)))
+ 	 (sep    (assoc name (no-label-title-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++      (car (cdr lsep))
++      (if sep
++  	  (car (cdr sep))
++   	  ""))))
+ 
+ (define (no-label-number-format-list)
+   (list
+diff -ur modular.org/common/dbl1pl.dsl modular/common/dbl1pl.dsl
+--- modular.org/common/dbl1pl.dsl	Wed Feb 21 18:03:33 2001
++++ common/dbl1pl.dsl	Wed Feb 21 18:41:49 2001
+@@ -220,6 +220,9 @@
+ ;; (e.g. REFNAME) with a little abuse.
+ ;;
+ 
++(define (local-pl-intra-label-sep)
++  (list))
++
+ (define (pl-intra-label-sep)
+   (list
+    (list (normalize "equation")		"-")
+@@ -249,10 +252,13 @@
+ (define (gentext-pl-intra-label-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-pl-intra-label-sep)))
+ 	 (sep    (assoc name (pl-intra-label-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++        (car (cdr lsep))
++        (if sep
++            (car (cdr sep))
++            ""))))
+ 
+ ;; gentext-label-title-sep returns the seperator to be inserted
+ ;; between a label and the text following the label for the
+@@ -262,6 +268,9 @@
+ ;; abuse.
+ ;;
+ 
++(define (local-pl-label-title-sep)
++  (list))
++
+ (define (pl-label-title-sep)
+   (list
+    (list (normalize "abstract")		": ")
+@@ -305,10 +314,13 @@
+ (define (gentext-pl-label-title-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-pl-label-title-sep)))
+ 	 (sep    (assoc name (pl-label-title-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++      (car (cdr lsep))
++      (if sep
++  	  (car (cdr sep))
++   	  ""))))
+ 
+ (define (pl-label-number-format-list)
+   (list
+diff -ur modular.org/common/dbl1pt.dsl modular/common/dbl1pt.dsl
+--- modular.org/common/dbl1pt.dsl	Wed Feb 21 18:03:33 2001
++++ common/dbl1pt.dsl	Wed Feb 21 18:41:52 2001
+@@ -220,6 +220,9 @@
+ ;; (e.g. REFNAME) with a little abuse.
+ ;;
+ 
++(define (local-pt-intra-label-sep)
++  (list))
++
+ (define (pt-intra-label-sep)
+   (list
+    (list (normalize "equation")		"-")
+@@ -249,10 +252,13 @@
+ (define (gentext-pt-intra-label-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-pt-intra-label-sep)))
+ 	 (sep    (assoc name (pt-intra-label-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++        (car (cdr lsep))
++        (if sep
++            (car (cdr sep))
++            ""))))
+ 
+ ;; gentext-label-title-sep returns the seperator to be inserted
+ ;; between a label and the text following the label for the
+@@ -262,6 +268,9 @@
+ ;; abuse.
+ ;;
+ 
++(define (local-pt-label-title-sep)
++  (list))
++
+ (define (pt-label-title-sep)
+   (list
+    (list (normalize "abstract")		": ")
+@@ -305,10 +314,13 @@
+ (define (gentext-pt-label-title-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-pt-label-title-sep)))
+ 	 (sep    (assoc name (pt-label-title-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++      (car (cdr lsep))
++      (if sep
++  	  (car (cdr sep))
++   	  ""))))
+ 
+ (define (pt-label-number-format-list)
+   (list
+diff -ur modular.org/common/dbl1ptbr.dsl modular/common/dbl1ptbr.dsl
+--- modular.org/common/dbl1ptbr.dsl	Wed Feb 21 18:03:33 2001
++++ common/dbl1ptbr.dsl	Wed Feb 21 18:41:56 2001
+@@ -221,6 +221,9 @@
+ ;; (e.g. REFNAME) with a little abuse.
+ ;;
+ 
++(define (local-ptbr-intra-label-sep)
++  (list))
++
+ (define (ptbr-intra-label-sep)
+   (list
+    (list (normalize "equation")		"-")
+@@ -250,10 +253,13 @@
+ (define (gentext-ptbr-intra-label-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-ptbr-intra-label-sep)))
+ 	 (sep    (assoc name (ptbr-intra-label-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++        (car (cdr lsep))
++        (if sep
++            (car (cdr sep))
++            ""))))
+ 
+ ;; gentext-label-title-sep returns the seperator to be inserted
+ ;; between a label and the text following the label for the
+@@ -263,6 +269,9 @@
+ ;; abuse.
+ ;;
+ 
++(define (local-ptbr-label-title-sep)
++  (list))
++
+ (define (ptbr-label-title-sep)
+   (list
+    (list (normalize "abstract")		": ")
+@@ -306,10 +315,13 @@
+ (define (gentext-ptbr-label-title-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-ptbr-label-title-sep)))
+ 	 (sep    (assoc name (ptbr-label-title-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++      (car (cdr lsep))
++      (if sep
++  	  (car (cdr sep))
++   	  ""))))
+ 
+ (define (ptbr-label-number-format-list)
+   (list
+diff -ur modular.org/common/dbl1ro.dsl modular/common/dbl1ro.dsl
+--- modular.org/common/dbl1ro.dsl	Wed Feb 21 18:03:33 2001
++++ common/dbl1ro.dsl	Wed Feb 21 18:42:04 2001
+@@ -222,6 +222,9 @@
+ ;; (e.g. REFNAME) with a little abuse.
+ ;;
+ 
++(define (local-ro-intra-label-sep)
++  (list))
++
+ (define (ro-intra-label-sep)
+   (list
+    (list (normalize "equation")		"-")
+@@ -251,10 +254,13 @@
+ (define (gentext-ro-intra-label-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-ro-intra-label-sep)))
+ 	 (sep    (assoc name (ro-intra-label-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++        (car (cdr lsep))
++        (if sep
++            (car (cdr sep))
++            ""))))
+ 
+ ;; gentext-label-title-sep returns the seperator to be inserted
+ ;; between a label and the text following the label for the
+@@ -264,6 +270,9 @@
+ ;; abuse.
+ ;;
+ 
++(define (local-ro-label-title-sep)
++  (list))
++
+ (define (ro-label-title-sep)
+   (list
+    (list (normalize "abstract")		": ")
+@@ -307,10 +316,13 @@
+ (define (gentext-ro-label-title-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-ro-label-title-sep)))
+ 	 (sep    (assoc name (ro-label-title-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++      (car (cdr lsep))
++      (if sep
++  	  (car (cdr sep))
++   	  ""))))
+ 
+ (define (ro-label-number-format-list)
+   (list
+diff -ur modular.org/common/dbl1ru.dsl modular/common/dbl1ru.dsl
+--- modular.org/common/dbl1ru.dsl	Wed Feb 21 18:03:33 2001
++++ common/dbl1ru.dsl	Wed Feb 21 18:42:07 2001
+@@ -232,6 +232,9 @@
+ ;; (e.g. REFNAME) with a little abuse.
+ ;;
+ 
++(define (local-ru-intra-label-sep)
++  (list))
++
+ (define (ru-intra-label-sep)
+   (list
+    (list (normalize "equation")		"-")
+@@ -261,10 +264,13 @@
+ (define (gentext-ru-intra-label-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-ru-intra-label-sep)))
+ 	 (sep    (assoc name (ru-intra-label-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++        (car (cdr lsep))
++        (if sep
++            (car (cdr sep))
++            ""))))
+ 
+ ;; gentext-label-title-sep returns the seperator to be inserted
+ ;; between a label and the text following the label for the
+@@ -274,6 +280,9 @@
+ ;; abuse.
+ ;;
+ 
++(define (local-ru-label-title-sep)
++  (list))
++
+ (define (ru-label-title-sep)
+   (list
+    (list (normalize "abstract")		": ")
+@@ -317,10 +326,13 @@
+ (define (gentext-ru-label-title-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-ru-label-title-sep)))
+ 	 (sep    (assoc name (ru-label-title-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++      (car (cdr lsep))
++      (if sep
++  	  (car (cdr sep))
++   	  ""))))
+ 
+ (define (ru-label-number-format-list)
+   (list
+diff -ur modular.org/common/dbl1sk.dsl modular/common/dbl1sk.dsl
+--- modular.org/common/dbl1sk.dsl	Wed Feb 21 18:03:33 2001
++++ common/dbl1sk.dsl	Wed Feb 21 18:42:12 2001
+@@ -229,6 +229,9 @@
+ ;; (e.g. REFNAME) with a little abuse.
+ ;;
+ 
++(define (local-sk-intra-label-sep)
++  (list))
++
+ (define (sk-intra-label-sep)
+   (list
+    (list (normalize "equation")		"-")
+@@ -258,10 +261,13 @@
+ (define (gentext-sk-intra-label-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-sk-intra-label-sep)))
+ 	 (sep    (assoc name (sk-intra-label-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++        (car (cdr lsep))
++        (if sep
++            (car (cdr sep))
++            ""))))
+ 
+ ;; gentext-label-title-sep returns the seperator to be inserted
+ ;; between a label and the text following the label for the
+@@ -271,6 +277,9 @@
+ ;; abuse.
+ ;;
+ 
++(define (local-sk-label-title-sep)
++  (list))
++
+ (define (sk-label-title-sep)
+   (list
+    (list (normalize "abstract")		": ")
+@@ -314,10 +323,13 @@
+ (define (gentext-sk-label-title-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-sk-label-title-sep)))
+ 	 (sep    (assoc name (sk-label-title-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++      (car (cdr lsep))
++      (if sep
++  	  (car (cdr sep))
++   	  ""))))
+ 
+ (define (sk-label-number-format-list)
+   (list
+diff -ur modular.org/common/dbl1sl.dsl modular/common/dbl1sl.dsl
+--- modular.org/common/dbl1sl.dsl	Wed Feb 21 18:03:33 2001
++++ common/dbl1sl.dsl	Wed Feb 21 18:42:14 2001
+@@ -233,6 +233,9 @@
+ ;; (e.g. REFNAME) with a little abuse.
+ ;;
+ 
++(define (local-sl-intra-label-sep)
++  (list))
++
+ (define (sl-intra-label-sep)
+   (list
+    (list (normalize "equation")		"-")
+@@ -262,10 +265,13 @@
+ (define (gentext-sl-intra-label-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-sl-intra-label-sep)))
+ 	 (sep    (assoc name (sl-intra-label-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++        (car (cdr lsep))
++        (if sep
++            (car (cdr sep))
++            ""))))
+ 
+ ;; gentext-label-title-sep returns the seperator to be inserted
+ ;; between a label and the text following the label for the
+@@ -275,6 +281,9 @@
+ ;; abuse.
+ ;;
+ 
++(define (local-sl-label-title-sep)
++  (list))
++
+ (define (sl-label-title-sep)
+   (list
+    (list (normalize "abstract")		": ")
+@@ -318,10 +327,13 @@
+ (define (gentext-sl-label-title-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-sl-label-title-sep)))
+ 	 (sep    (assoc name (sl-label-title-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++      (car (cdr lsep))
++      (if sep
++  	  (car (cdr sep))
++   	  ""))))
+ 
+ (define (sl-label-number-format-list)
+   (list
+diff -ur modular.org/common/dbl1sv.dsl modular/common/dbl1sv.dsl
+--- modular.org/common/dbl1sv.dsl	Wed Feb 21 18:03:33 2001
++++ common/dbl1sv.dsl	Wed Feb 21 18:42:21 2001
+@@ -231,6 +231,9 @@
+ ;; (e.g. REFNAME) with a little abuse.
+ ;;
+ 
++(define (local-sv-intra-label-sep)
++  (list))
++
+ (define (sv-intra-label-sep)
+   (list
+    (list (normalize "equation")		"-")
+@@ -260,10 +263,13 @@
+ (define (gentext-sv-intra-label-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-sv-intra-label-sep)))
+ 	 (sep    (assoc name (sv-intra-label-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++        (car (cdr lsep))
++        (if sep
++            (car (cdr sep))
++            ""))))
+ 
+ ;; gentext-label-title-sep returns the seperator to be inserted
+ ;; between a label and the text following the label for the
+@@ -273,6 +279,9 @@
+ ;; abuse.
+ ;;
+ 
++(define (local-sv-label-title-sep)
++  (list))
++
+ (define (sv-label-title-sep)
+   (list
+    (list (normalize "abstract")		": ")
+@@ -316,10 +325,13 @@
+ (define (gentext-sv-label-title-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-sv-label-title-sep)))
+ 	 (sep    (assoc name (sv-label-title-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++      (car (cdr lsep))
++      (if sep
++  	  (car (cdr sep))
++   	  ""))))
+ 
+ (define (sv-label-number-format-list)
+   (list
+diff -ur modular.org/common/dbl1zhcn.dsl modular/common/dbl1zhcn.dsl
+--- modular.org/common/dbl1zhcn.dsl	Wed Feb 21 18:03:33 2001
++++ common/dbl1zhcn.dsl	Wed Feb 21 18:42:27 2001
+@@ -234,6 +234,9 @@
+ ;; (e.g. REFNAME) with a little abuse.
+ ;;
+ 
++(define (local-zhcn-intra-label-sep)
++  (list))
++
+ (define (zhcn-intra-label-sep)
+   (list
+    (list (normalize "equation")		"-")
+@@ -263,10 +266,13 @@
+ (define (gentext-zhcn-intra-label-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-zhcn-intra-label-sep)))
+ 	 (sep    (assoc name (zhcn-intra-label-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++        (car (cdr lsep))
++        (if sep
++            (car (cdr sep))
++            ""))))
+ 
+ ;; gentext-label-title-sep returns the seperator to be inserted
+ ;; between a label and the text following the label for the
+@@ -276,6 +282,9 @@
+ ;; abuse.
+ ;;
+ 
++(define (local-zhcn-label-title-sep)
++  (list))
++
+ (define (zhcn-label-title-sep)
+   (list
+    (list (normalize "abstract")		": ")
+@@ -319,10 +328,13 @@
+ (define (gentext-zhcn-label-title-sep gind)
+   (let* ((giname (if (string? gind) gind (gi gind)))
+ 	 (name   (normalize giname))
++	 (lsep   (assoc name (local-zhcn-label-title-sep)))
+ 	 (sep    (assoc name (zhcn-label-title-sep))))
+-    (if sep
+-	(car (cdr sep))
+-	"")))
++    (if lsep
++      (car (cdr lsep))
++      (if sep
++  	  (car (cdr sep))
++   	  ""))))
+ 
+ (define (zhcn-label-number-format-list)
+   (list
