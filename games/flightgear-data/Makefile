@@ -3,7 +3,7 @@
 # Date created:		26 June 1999
 # Whom:			Brian Buchanan <brian@CSUA.Berkeley.EDU>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/07/03 06:36:33 cpiazza Exp $
 #
 
 DISTNAME=		FlightGear-${FLIGHTGEAR_VERSION}
@@ -21,6 +21,13 @@ RUN_DEPENDS=		mpg123:${PORTSDIR}/audio/mpg123
 EXTRACT_ONLY=		${DISTNAME}.tar.gz
 
 FLIGHTGEAR_VERSION=	0.6.1
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 400003
+BUILD_DEPENDS=		eg++:${PORTSDIR}/lang/egcs
+CXX=			eg++
+.endif
 
 .if defined(BUILD_SCENERY_TOOLS)
 MASTER_SITES+=		ftp://ftp.cs.man.ac.uk/pub/amurta/
@@ -66,4 +73,4 @@ pre-install:
 post-install:
 	${MV} ${PREFIX}/FlightGear/bin/runfgfs ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
