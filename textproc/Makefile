@@ -126,6 +126,7 @@
     SUBDIR += lacheck
     SUBDIR += latex2html
     SUBDIR += latte
+    SUBDIR += liblrdf
     SUBDIR += libtre
     SUBDIR += libxml
     SUBDIR += libxml++
