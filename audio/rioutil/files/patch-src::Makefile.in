@@ -1,17 +1,14 @@
-
-$FreeBSD$
-
---- src/Makefile.in.orig	Mon Sep 17 21:41:29 2001
-+++ src/Makefile.in	Thu Oct 11 15:04:39 2001
+--- src/Makefile.in.orig	Fri Dec 14 09:11:53 2001
++++ src/Makefile.in	Sat Dec 15 01:46:11 2001
 @@ -204,7 +204,7 @@
  INCLUDES =  -I$(top_srcdir)/include -I/usr/local/include
  
  riofck_SOURCES = fckrio.c
 -rioutil_SOURCES = main.c getopt.c getopt1.c main.h getopt.h
 +rioutil_SOURCES = main.c main.h
- @MACOSX_TRUE@rioutil_LDADD = -L/usr/local/lib $(top_srcdir)/librioutil/librioutil.la -lIOKit -lstdc++
- @MACOSX_FALSE@rioutil_LDADD = -L/usr/local/lib $(top_srcdir)/librioutil/librioutil.la -lstdc++
- @MACOSX_TRUE@riofck_LDADD = -L/usr/local/lib $(top_srcdir)/librioutil/librioutil.la -lIOKit -lstdc++
+ @MACOSX_TRUE@rioutil_LDADD = -L/usr/local/lib $(top_srcdir)/librioutil/librioutil.la -lIOKit
+ @MACOSX_FALSE@rioutil_LDADD = -L/usr/local/lib $(top_srcdir)/librioutil/librioutil.la
+ @MACOSX_TRUE@riofck_LDADD = -L/usr/local/lib $(top_srcdir)/librioutil/librioutil.la -lIOKit /System/Library/Frameworks/CoreFoundation.framework/Versions/Current/CoreFoundation
 @@ -223,7 +223,7 @@
  CPPFLAGS = @CPPFLAGS@
  LDFLAGS = @LDFLAGS@
@@ -21,7 +18,7 @@ $FreeBSD$
  rioutil_LDFLAGS = 
  riofck_OBJECTS =  fckrio.$(OBJEXT)
  @MACOSX_TRUE@riofck_DEPENDENCIES =  \
-@@ -382,7 +382,7 @@
+@@ -383,7 +383,7 @@
  	../include/usbdevfs.h ../include/usbdrv.h ../include/rio_usb.h
  getopt.o: getopt.c ../include/config.h
  getopt1.o: getopt1.c ../include/config.h
