@@ -27,7 +27,7 @@ NO_BUILD=	yes
 NO_FILTER_SHLIBS=	yes
 STRIP=
 WRKSRC?=	${WRKDIR}/${BROWSER}-v408.x86-unknown-freebsd
-PKGDIR?=	${.CURDIR}/pkg
+PKGDIR=		${.CURDIR}/pkg
 
 AUTOADMIN?=	autoadmin-v408.x86-unknown-freebsd.tar.gz
 BROWSER?=	communicator
