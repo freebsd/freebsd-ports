@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Archive-Tar
-PORTVERSION=	1.08
-PORTREVISION=	1
+PORTVERSION=	1.09
 CATEGORIES=	archivers perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Archive
@@ -27,9 +26,6 @@ MAN3=		Archive::Tar.3 Archive::Tar::File.3
 
 .if ${PERL_LEVEL} < 500600
 RUN_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
-.endif
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 .endif
 
 .include <bsd.port.post.mk>

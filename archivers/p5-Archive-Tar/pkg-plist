@@ -1,3 +1,4 @@
+bin/ptar
 %%SITE_PERL%%/Archive/Tar.pm
 %%SITE_PERL%%/Archive/Tar/Constant.pm
 %%SITE_PERL%%/Archive/Tar/File.pm
