@@ -38,6 +38,10 @@ LIB_DATA=	alpi bfct bgk const cyclic defs.h dfff dmul dmul102 \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64" || ${ARCH} == "ia64"
+BROKEN=		"Does not compile on sparc64 or ia64"
+.endif
+
 pre-install:
 	@${MKDIR} ${DATADIR}
 	@${MKDIR} ${DOCSDIR}
