@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.3 1995/10/02 14:51:20 erich Exp $
+# $Id: Makefile,v 1.4 1995/10/04 17:34:43 asami Exp $
 #
 
     SUBDIR += afio
@@ -7,6 +7,7 @@
     SUBDIR += top
     SUBDIR += tua
     SUBDIR += xbatt
+    SUBDIR += xcpustate
     SUBDIR += xdu
     SUBDIR += xperfmon
     SUBDIR += xsysstats
