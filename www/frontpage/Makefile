@@ -17,6 +17,8 @@ MAINTAINER=	hetzels@westbend.net
 
 .include <bsd.port.pre.mk>
 
+USE_REINPLACE=	yes
+
 ONLY_FOR_ARCHS=	i386 alpha
 
 FP_VER=		5.0
@@ -107,14 +109,13 @@ post-extract:
 
 post-patch:
 .if !defined(PATCH_DEBUG)
-	@${PERL} -pi -e 's:PREFIX:${PREFIX}:g ; \
-			 s:MOD_FPDOCDIR:${MOD_FPDOCDIR}:g' ${WRKDIR}/${FPINSTALL}
+	@${REINPLACE_CMD} -e 's:PREFIX:${PREFIX}:g' ${WRKDIR}/${FPINSTALL}
 .endif
 
 do-install:
 	@${ECHO_MSG} "===> Untaring FrontPage Extensions to ${PREFIX}"
 	@(cd ${PREFIX} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${FRONTPAGE} ${EXTRACT_AFTER_ARGS})
-	@${PERL} -pi -e 's:IMAGESDIR:../images/:g' ${PREFIX}/${FPCSS}
+	@${REINPLACE_CMD} -e 's:IMAGESDIR:../images/:g' ${PREFIX}/${FPCSS}
 	@${RM} ${PREFIX}/${FPHTTPD}/httpd
 	@${MKDIR} ${MOD_FPDOCDIR}
 	@${CP} ${PREFIX}/${README} ${MOD_FPDOCDIR}/index.html
