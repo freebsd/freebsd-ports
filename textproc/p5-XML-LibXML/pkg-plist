@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/LibXML/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/Attr.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/Boolean.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/CDATASection.pod
@@ -14,10 +15,12 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/Node.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/NodeList.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/Number.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/Parser.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/PI.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/SAX.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/SAX.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/SAX/Builder.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/SAX/Builder.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/SAX/Generator.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/SAX/Parser.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/LibXML/Text.pod
