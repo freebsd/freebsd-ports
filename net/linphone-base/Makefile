@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web phone that supports SIP protocol
 
 LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm \
-		speex.2:${PORTSDIR}/audio/speex \
+		speex.3:${PORTSDIR}/audio/speex \
 		osip.9:${PORTSDIR}/net/libosip
 
 USE_GNOME=	glib20 gnomehack gnometarget intlhack pkgconfig

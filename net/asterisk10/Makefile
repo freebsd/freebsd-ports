@@ -7,7 +7,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.asterisk.org/pub/telephony/asterisk/ \
 		ftp://ftp.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -20,7 +20,7 @@ ONLY_FOR_ARCHS=	i386
 BUILD_DEPENDS=  ${LOCALBASE}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql40-client \
 		${NONEXISTENT}:${PORTSDIR}/devel/pwlib:build \
 		${NONEXISTENT}:${PORTSDIR}/net/openh323:build
-LIB_DEPENDS=	speex.2:${PORTSDIR}/audio/speex
+LIB_DEPENDS=	speex.3:${PORTSDIR}/audio/speex
 RUN_DEPENDS=    ${LOCALBASE}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql40-client
 
 GNU_CONFIGURE=	yes
