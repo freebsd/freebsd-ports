@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hsftp
-PORTVERSION=	1.14
+PORTVERSION=	1.15
 CATEGORIES=	ftp
 MASTER_SITES=	http://la-samhna.de/hsftp/
 
