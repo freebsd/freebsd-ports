@@ -1,0 +1,14 @@
+--- ksirc/puke/controller.cpp.orig	Mon Jun 21 16:46:39 1999
++++ ksirc/puke/controller.cpp	Mon Dec  6 14:58:10 1999
+@@ -220,9 +220,9 @@
+ #endif /* DEBUG */
+ 
+         struct iovec iov[2];
+-        iov[0].iov_base = (void *) message;
++        iov[0].iov_base = message->cArg;
+         iov[0].iov_len = 5*sizeof(int);
+-        iov[1].iov_base = (void *) message->cArg;
++        iov[1].iov_base = message->cArg;
+         iov[1].iov_len = message->iTextSize;
+         bytes = writev(fd, iov, 2);
+       }
