@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Kwiki-NewPage
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Kwiki
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	elvis@sslab.cs.ccu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kwiki New Page Plugin
 
 BUILD_DEPENDS=	${SITE_PERL}/Kwiki.pm:${PORTSDIR}/www/p5-Kwiki

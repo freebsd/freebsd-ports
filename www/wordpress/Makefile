@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cafelog
 
-MAINTAINER=	elvis@sslab.cs.ccu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A state-of-the-art semantic personal publishing platform
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
