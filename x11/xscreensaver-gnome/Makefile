@@ -27,7 +27,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-pam --with-gl --with-gle --with-xpm --with-xml \
 		--with-hackdir=${PREFIX}/bin/xscreensaver-hacks \
 		--with-configdir=${PREFIX}/share/xscreensaver/config \
-		--with-jpeg=${LOCALBASE} --without-motif --with-gnome
+		--with-jpeg=${LOCALBASE} --without-motif --with-gnome \
+		--without-kerberos
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		X_CFLAGS="-I${LOCALBASE}/include/gnome-xml"
