@@ -13,6 +13,7 @@ bin/autodia_java.pl
 %%SITE_PERL%%/Autodia/Diagram/Component.pm
 %%SITE_PERL%%/Autodia/Diagram/Superclass.pm
 %%SITE_PERL%%/Autodia/Handler/python.pm
+%%SITE_PERL%%/Autodia/Handler/umbrello.pm
 %%SITE_PERL%%/Autodia/Handler/SQL.pm
 %%SITE_PERL%%/Autodia/Handler/Perl.pm
 %%SITE_PERL%%/Autodia/Handler/Torque.pm
@@ -21,17 +22,18 @@ bin/autodia_java.pl
 %%SITE_PERL%%/Autodia/Handler/Java.pm
 %%SITE_PERL%%/Autodia/Handler/PHP.pm
 %%SITE_PERL%%/Autodia/Handler/dia.pm
-share/doc/autodia/CHANGES
-share/doc/autodia/COPYING
-share/doc/autodia/CREDITS
-share/doc/autodia/DEVELOP
-share/doc/autodia/FAQ
-share/doc/autodia/INSTALL
-share/doc/autodia/MANIFEST
-share/doc/autodia/README
-share/doc/autodia/TODO
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/DEVELOP
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/MANIFEST
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Autodia
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto 2>/dev/null || true
 @dirrm %%SITE_PERL%%/Autodia/Diagram
 @dirrm %%SITE_PERL%%/Autodia/Handler
 @dirrm %%SITE_PERL%%/Autodia
-@dirrm share/doc/autodia
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
