@@ -1,0 +1,13 @@
+--- fixmake.orig	Fri Nov  4 23:31:27 1994
++++ fixmake	Wed May 15 21:28:30 1996
+@@ -30,8 +30,8 @@
+ 				echo renaming $name to $name.proto
+ 				mv $name $name.proto
+ 			fi
+-			cat $MASTER > $name
+-			sed '/^include/d' $name.proto >> $name
++			sed 's/^include[^.M]\(.*\)/.include <\1>/' $name.proto \
++				| sed 's/CFLAGS=/CFLAGS+=/' > $name
+ 			echo "built $name"
+ 		done
+ 	)
