@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.94
+PORTVERSION?=	0.95
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/:xmame \
 		http://www.sys2064.com/files/util/:history \
@@ -273,6 +273,12 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/romcmp ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/chdman ${PREFIX}/bin
 .endif
+
+.if ${MAMEMESS} == "mess"
+	${INSTALL_PROGRAM} ${WRKSRC}/imgtool ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/dat2html ${PREFIX}/bin
+.endif
+
 	${MV} ${PREFIX}/bin/x${MAMEMESS}.${DISPLAY_METHOD} \
 		${PREFIX}/bin/x${MAMEMESS}
 	${CHOWN} root:games ${PREFIX}/bin/x${MAMEMESS}
