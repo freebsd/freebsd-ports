@@ -356,7 +356,7 @@ metacity_LIB_DEPENDS=	metacity-private.0:${PORTSDIR}/x11-wm/metacity
 metacity_DETECT=	${X11BASE}/libdata/pkgconfig/libmetacity-private.pc
 metacity_USE_GNOME_IMPL=gconf2 glade2
 
-gal2_LIB_DEPENDS=	gal-2.0.5:${PORTSDIR}/x11-toolkits/gal2
+gal2_LIB_DEPENDS=	gal-2.0.6:${PORTSDIR}/x11-toolkits/gal2
 gal2_DETECT=		${X11BASE}/libdata/pkgconfig/gal-2.0.pc
 gal2_USE_GNOME_IMPL=gnomeui libgnomeprintui
 
@@ -407,7 +407,7 @@ intlhack_PRE_PATCH=		${FIND} ${WRKSRC} -name "intltool-merge.in" | ${XARGS} ${RE
 						 s|^push @INC, "/.*|push @INC, "${LOCALBASE}/share/intltool";|'
 intlhack_USE_GNOME_IMPL=intltool
 
-gtkhtml3_LIB_DEPENDS=	gtkhtml-3.0.3:${PORTSDIR}/www/gtkhtml3
+gtkhtml3_LIB_DEPENDS=	gtkhtml-3.0.4:${PORTSDIR}/www/gtkhtml3
 gtkhtml3_DETECT=		${X11BASE}/libdata/pkgconfig/libgtkhtml-3.0.pc
 gtkhtml3_USE_GNOME_IMPL=gal2 gail
 
@@ -461,6 +461,7 @@ GNOME_DESKTOP_VERSION?=	2
 # it does, and its requirement disagrees with the user's chosen desktop,
 # do not add the component to the HAVE_GNOME list.
 
+USE_GNOME?=
 _USE_GNOME_SAVED:=${USE_GNOME}
 _USE_GNOME_DESKTOP=yes
 HAVE_GNOME?=
