@@ -21,6 +21,12 @@ USE_GNOME=	gtk12
 
 ALL_TARGET=	gxedit
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
+BROKEN=		"Does not compile on alpha 5.x"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/config.h
 
@@ -41,4 +47,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
