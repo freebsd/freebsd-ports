@@ -7,6 +7,7 @@
 
 PORTNAME=	amsn
 PORTVERSION=	0.71
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://download.sourceforge.net/${PORTNAME}/
 
@@ -43,5 +44,7 @@ post-install:
 		> ${PREFIX}/bin/amsn
 	@${CHMOD} 555 ${PREFIX}/bin/amsn
 	@${CHMOD} 555 ${PREFIX}/lib/msn/amsn
+	@uudecode -o ${PREFIX}/lib/msn/i/logolinmsn.gif \
+		${FILESDIR}/logolinmsn.gif.uue
 
 .include <bsd.port.mk>
