@@ -9,7 +9,7 @@ PORTNAME=	ecartis
 PORTVERSION=	1.0.0b
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ecartis.org/pub/ecartis/snapshots/tar/
-DISTNAME=	ecartis-1.0.0-snap20020118
+DISTNAME=	ecartis-1.0.0-snap20020427
 
 MAINTAINER=	trish@bsdunix.net
 
