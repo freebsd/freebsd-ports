@@ -26,6 +26,10 @@ CONFIGURE_ARGS= --without-openssl
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 500113
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 CONFIGURE_ARGS+= --prefix=${PREFIX}/ \
 		--with-bundled-libresolv \
 		--with-mailbin=${PREFIX}/sbin \
