@@ -7,24 +7,27 @@
 # $Id: Makefile,v 1.16 1996/01/16 03:43:25 ache Exp $
 #
 
-DISTNAME=       lynx2-4-FM
+DISTNAME=       lynx2-4-fm
 PKGNAME=        lynx-2.4fm
+WRKSRC=         ${WRKDIR}/lynx2-4-FM
 CATEGORIES+=	www
 
 # Original location, lynx changes too often there
 #MASTER_SITES=   http://www.wfbr.edu/lynx/
 #NCFTP=          w3c
-#NCFTPFLAGS=     -to multipart/x-zip -timeout 120 -o ${DISTFILES}
+#NCFTPFLAGS=     -to multipart/x-zip -timeout 300 -o ${DISTFILES}
 #FETCH_DEPENDS=  ${NCFTP}:${PORTSDIR}/www/comline
 
-# Beware ugly VMS names
-NCFTPFLAGS=     -c
-MASTER_SITES=   ftp://ftp.hhs.dk//fote_mirror/
-DISTFILES=      lynx2-4-fm.zip
-NCFTPTAIL=      > ${DISTFILES}
+# FTP mirror of original location. Beware ugly VMS names
+#NCFTPFLAGS=     -c
+#MASTER_SITES=   ftp://ftp.hhs.dk//fote_mirror/
+#NCFTPTAIL=      > ${DISTFILES}
+
+MASTER_SITES=   ftp://ftp.kiae.su/unix/tcpip/nidr/www/
 
 EXTRACT_CMD=    unzip
 EXTRACT_ARGS=   -q
+EXTRACT_SUFX=   .zip
 
 MAINTAINER=	ache@FreeBSD.ORG
 
