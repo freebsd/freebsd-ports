@@ -7,6 +7,7 @@
     SUBDIR += cyrproxy
     SUBDIR += d1489
     SUBDIR += elm.language
+    SUBDIR += fortuneru
     SUBDIR += gd
     SUBDIR += kde2-i18n
     SUBDIR += koi8r-ps
