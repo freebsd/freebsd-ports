@@ -5112,6 +5112,7 @@ p5-DateConvert	ports/devel/p5-DateConvert
 p5-DelimMatch	ports/textproc/p5-DelimMatch
 p5-Devel-Constants	ports/devel/p5-Devel-Constants
 p5-Devel-DProf	ports/devel/p5-Devel-DProf
+p5-Devel-Leak	ports/devel/p5-Devel-Leak
 p5-Devel-Modlist	ports/devel/p5-Devel-Modlist
 p5-Devel-Peek	ports/devel/p5-Devel-Peek
 p5-Devel-Profiler	ports/devel/p5-Devel-Profiler
