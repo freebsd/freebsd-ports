@@ -6,24 +6,27 @@
 #
 
 PORTNAME=	openvrml
-PORTVERSION=	0.10.1
+PORTVERSION=	0.12.4
 CATEGORIES=	www graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	openvrml
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	3d@freebsd.org
+MAINTAINER=	3d@FreeBSD.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
-CONFIGURE_ARGS=	--with-jpeg-prefix=${LOCALBASE} \
-		--with-png-prefix=${LOCALBASE} \
-		--with-MesaGL
-CONFIGURE_ENV=	LIBS="-L${X11BASE}/lib -lX11 -lXext -lm -lGL -lGLU -pthread"
-USE_GMAKE=	yes
-USE_LIBTOOL=	yes
-USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 USE_MESA=	yes
+USE_X_PREFIX=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lXext"
+CONFIGURE_ARGS=	--without-spidermonkey --without-jdk --without-doxygen
+USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
 
 .include <bsd.port.mk>
