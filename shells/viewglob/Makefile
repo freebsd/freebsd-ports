@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		viewglob
-PORTVERSION=		1.0
-PORTREVISION=	1
+PORTVERSION=		1.0.2
 CATEGORIES=		shells
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,8 +24,13 @@ USE_GCC=		3.4
 
 MAN1=			gviewglob.1 viewglob.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=	does not compile on FreeBSD 4.x, it's missing posix_openpt and ptsname functions
+.endif
+
 post-extract:
 	@${CP} ${WRKSRC}/src/tc_setraw.h ${WRKSRC}/src/tc_setraw.viewglob.h
-	@${CP} ${WRKSRC}/src/ptutil.h ${WRKSRC}/src/ptutil.viewglob.h
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
