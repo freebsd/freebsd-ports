@@ -1,0 +1,47 @@
+--- aclocal.m4.orig	Fri Jan  5 00:08:12 2001
++++ aclocal.m4	Sat Jan  6 06:48:33 2001
+@@ -518,7 +518,7 @@
+ 
+ CXXFLAGS="$CXXFLAGS -I$qt_includes"
+ LDFLAGS="$X_LDFLAGS"
+-LIBS="-lqt -lXext -lX11 $LIBSOCKET"
++LIBS="-lqt2 -lXext -lX11 $LIBSOCKET"
+ LD_LIBRARY_PATH=
+ export LD_LIBRARY_PATH
+ LIBRARY_PATH=
+@@ -565,7 +565,7 @@
+ [
+ AC_REQUIRE([K_PATH_X])
+ AC_REQUIRE([KDE_USE_QT])
+-LIBQT="-lqt"
++LIBQT="-lqt2"
+ if test $kde_qtver = 2; then
+   
+   AC_REQUIRE([AC_FIND_PNG])
+@@ -704,7 +704,7 @@
+ AC_SUBST(QT_LDFLAGS)
+ AC_PATH_QT_MOC
+ 
+-LIB_QT='-lqt $(LIBPNG) -lXext $(LIB_X11)'
++LIB_QT='-lqt2 $(LIBPNG) -lXext $(LIB_X11)'
+ AC_SUBST(LIB_QT)
+ 
+ ])
+@@ -2587,7 +2587,7 @@
+ 
+ AC_DEFUN(KDE_CHECK_LIBPTHREAD,
+ [
+-AC_CHECK_LIB(pthread, pthread_create, [LIBPTHREAD="-lpthread"], LIBPTHREAD= )
++AC_CHECK_FUNC(c_r, pthread_create, [LIBPTHREAD="-pthread"], LIBPTHREAD= )
+ AC_SUBST(LIBPTHREAD)
+ ])
+ 
+@@ -2709,7 +2709,7 @@
+ kde_python_link_found=no
+ KDE_TRY_LINK_PYTHON(normal)
+ KDE_TRY_LINK_PYTHON(m, -lm)
+-KDE_TRY_LINK_PYTHON(pthread, $LIBPTHREAD)
++KDE_TRY_LINK_PYTHON(c_r, $LIBPTHREAD)
+ KDE_TRY_LINK_PYTHON(tcl, -ltcl)
+ KDE_TRY_LINK_PYTHON(m_and_thread, [$LIBPTHREAD -lm], [],
+ 	[AC_MSG_WARN([it seems, Python depends on another library. 
