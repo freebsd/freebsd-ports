@@ -8288,6 +8288,7 @@ ruby-musicbrainz	ports/audio/ruby-musicbrainz
 ruby-mwdom	ports/textproc/ruby-mwdom
 ruby-mysql	ports/databases/ruby-mysql
 ruby-narray	ports/math/ruby-narray
+ruby-narray_miss	ports/math/ruby-narray_miss
 ruby-ncurses	ports/devel/ruby-ncurses
 ruby-net-geoip	ports/net/ruby-net-geoip
 ruby-netcdf	ports/math/ruby-netcdf
