@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lipsf
-PORTVERSION=	1.14b
+PORTVERSION=	2.00
 CATEGORIES=	japanese print
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA012337/soft/lipsf/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
