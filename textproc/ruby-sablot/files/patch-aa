@@ -1,0 +1,17 @@
+--- extconf.rb.orig	Sun Jun 24 07:01:40 2001
++++ extconf.rb	Thu Aug 30 12:39:31 2001
+@@ -15,10 +15,10 @@
+ end
+ 
+ if have_header("sablot.h") and
+-    (have_library("xmltok", "XmlParseXmlDecl") or
+-     have_library("expat",  "XmlParseXmlDecl")) and
+-    (have_library("xmlparse", "XML_ParserCreate") or
+-     have_library("expat",    "XML_ParserCreate")) and
++    (have_library("expat", "XmlParseXmlDecl") or
++     have_library("xmltok",  "XmlParseXmlDecl")) and
++    (have_library("expat", "XML_ParserCreate") or
++     have_library("xmlparse",    "XML_ParserCreate")) and
+     have_library("sablot", "SablotProcessStrings")
+   create_makefile("sablot")
+   STDERR.print <<EOB
