@@ -1,0 +1,24 @@
+--- ../pwlib/make/unix.mak.orig	Mon Jun 26 04:17:20 2000
++++ ../pwlib/make/unix.mak	Sun Apr 29 23:25:49 2001
+@@ -443,9 +443,9 @@
+ 
+ P_PTHREADS	:= 1
+ 
+-ifeq ($(MACHTYPE),x86)
+-STDCCFLAGS	+= -m486
+-endif
++#ifeq ($(MACHTYPE),x86)
++#STDCCFLAGS	+= -m486
++#endif
+ 
+ ifndef OSRELEASE
+ OSRELEASE	:= $(shell sysctl -n kern.osreldate)
+@@ -812,7 +812,7 @@
+ 
+ else
+ 
+-OPTCCFLAGS	+= -O2 -DNDEBUG
++OPTCCFLAGS	+= -DNDEBUG
+ #OPTCCFLAGS	+= -DP_USE_INLINES=1
+ #OPTCCFLAGS	+= -fconserve-space
+ ifneq ($(OSTYPE),macos)
