@@ -7,7 +7,7 @@
 --                                  B o d y                                 --
 --                         (Version for new GNARL)                          --
 --                                                                          --
---                             $Revision: 1.4 $                            --
+--                             $Revision: 1.1 $                            --
 --                                                                          --
 --   Copyright (C) 1991,1992,1993,1994,1995,1996 Florida State University   --
 --                                                                          --
@@ -50,23 +50,20 @@ with System.Interrupt_Management;
 --           Abort_Task_Interrupt
 --           Interrupt_ID
 
+with System.Interrupt_Management.Operations;
+--  used for Set_Interrupt_Mask
+--           All_Tasks_Mask
+pragma Elaborate_All (System.Interrupt_Management.Operations);
+
 with System.OS_Interface;
 --  used for various type, constant, and operations
 
 with System.Parameters;
 --  used for Size_Type
 
-with System.Storage_Elements;
---  used for To_Address
---           Integer_Address
-
 with System.Tasking;
 --  used for Ada_Task_Control_Block
 --           Task_ID
-
-with System.Time_Operations;
---  used for Clock
---           Clock_Delay_Correction
 
 with Unchecked_Conversion;
 with Unchecked_Deallocation;
@@ -78,7 +75,6 @@ package body System.Task_Primitives.Operations is
    use System.Error_Reporting;
    use System.OS_Interface;
    use System.Parameters;
-   use System.Time_Operations;
 
    pragma Linker_Options ("-lc_r");
 
@@ -91,9 +87,6 @@ package body System.Task_Primitives.Operations is
 
    ATCB_Key : aliased pthread_key_t;
    --  Key used to find the Ada Task_ID associated with a thread
-
-   All_Signal_Mask,
-   --  The set of all signals
 
    Unblocked_Signal_Mask : aliased sigset_t;
    --  The set of signals that should unblocked in all tasks
@@ -159,6 +152,8 @@ package body System.Task_Primitives.Operations is
       context : access struct_sigcontext) is
 
       T : Task_ID := Self;
+      Result  : Interfaces.C.int;
+      Old_Set : aliased sigset_t;
 
    begin
       --  Assuming it is safe to longjmp out of a signal handler, the
@@ -166,6 +161,13 @@ package body System.Task_Primitives.Operations is
 
       if T.Deferral_Level = 0
         and then T.Pending_ATC_Level < T.ATC_Nesting_Level then
+
+         --  Make sure signals used for RTS internal purpose are unmasked
+
+         Result := pthread_sigmask
+           (SIG_UNBLOCK, Unblocked_Signal_Mask'Access, Old_Set'Access);
+         pragma Assert (Result = 0
+           or else Shutdown ("GNULLI failure---Enter_Task (pthread_sigmask)"));
          raise Standard'Abort_Signal;
       end if;
 
@@ -286,7 +288,11 @@ package body System.Task_Primitives.Operations is
 
    begin
       Result := pthread_mutex_lock (L);
-      Ceiling_Violation := Result = EINVAL;
+      if Result = 0 then
+         Ceiling_Violation := False;
+      else
+         Ceiling_Violation := Result = EINVAL;
+      end if;
       --  assumes the cause of EINVAL is a priority ceiling violation
       pragma Assert (Result = 0 or else Result = EINVAL
           or else Shutdown ("GNULLI failure---pthread_mutex_lock"));
@@ -370,40 +376,113 @@ package body System.Task_Primitives.Operations is
    -- Sleep_For --
    ---------------
 
-   procedure Sleep_For (Self_ID : Task_ID; Rel_Time : Duration) is
-      Result : Interfaces.C.Int;
-      Request : aliased timespec;
-
+   procedure Sleep_For
+     (Self_ID  : Task_ID;
+      Rel_Time : Duration;
+      Timedout : out Boolean)
+   is
    begin
-      pragma Assert (Self_ID = Self
-        or else Shutdown ("GNULLI failure---Self in Sleep_For"));
-      Request := To_Timespec (Rel_Time + Clock + Clock_Delay_Correction);
-      Result := pthread_cond_timedwait
-        (Self_ID.LL.CV'Access, Self_ID.LL.L'Access, Request'Access);
-      pragma Assert
-        (Result = 0
-           or else (Clock >= To_Duration (Request) - Clock_Delay_Correction)
-           or else Shutdown ("GNULLI failure---Sleep_For"));
+      Sleep_Until (Self_ID, Rel_Time + Clock, Timedout);
    end Sleep_For;
 
    -----------------
    -- Sleep_Until --
    -----------------
 
-   procedure Sleep_Until (Self_ID : Task_ID; Abs_Time : Duration) is
-      Result : Interfaces.C.Int;
+   procedure Sleep_Until
+     (Self_ID  : Task_ID;
+      Abs_Time : Duration;
+      Timedout : out Boolean)
+   is
       Request : aliased timespec;
+      Result  : Interfaces.C.int;
 
    begin
       pragma Assert (Self_ID = Self
         or else Shutdown ("GNULLI failure---Self in Sleep_Until"));
-      Request := To_Timespec (Abs_Time + Clock_Delay_Correction);
-      Result := pthread_cond_timedwait
-        (Self_ID.LL.CV'Access, Self_ID.LL.L'Access, Request'Access);
-      pragma Assert
-        (Result = 0 or else Clock >= Abs_Time
-          or else Shutdown ("GNULLI failure---Sleep_Until (early)"));
+
+      if Abs_Time <= Clock then
+         Timedout := True;
+         Result := sched_yield;
+         return;
+      end if;
+
+      Request := To_Timespec (Abs_Time);
+
+      --  We loop until the requested delay is serviced. For early wakeups,
+      --  we check the Clock again and re-request delays until we sleep
+      --  at least for the specified amount.
+
+      loop
+         --  Perform delays until one of the following conditions is true:
+         --  1) cond_timedwait wakes up due to time expiration.
+         --  2) We were interrupted by an abort signal (abortion is pending).
+         --  3) We received a wakeup, via cond_signal to our CV.
+         --  4) An error has occurred in the OS-provided delay primitive.
+         --  Conditions (1), (2), and (3) are normal.
+         --  Condition (4) should never happen unless the OS is broken,
+         --  or there is an error in our own runtime system code.
+
+         loop
+            Result := pthread_cond_timedwait
+              (Self_ID.LL.CV'Access, Self_ID.LL.L'Access, Request'Access);
+
+            if Result = 0 or else
+              (Self_ID.Pending_Action and then
+                Self_ID.Pending_ATC_Level < Self_ID.ATC_Nesting_Level)
+            then
+               Timedout := False;
+               return;
+            else
+               --  As of 11/25/97, FreeBSD-3.0 returns the correct
+               --  (POSIX specified) code (ETIMEDOUT) for a timed-out
+               --  operation.  Previous versions of FreeBSD would
+               --  return -1, and set the thread-safe errno to EAGAIN.
+               if Result < 0 and then Errno = EAGAIN then
+                  Result := ETIMEDOUT;
+               end if;
+            end if;
+
+            if Result = ETIMEDOUT then
+               exit;
+            end if;
+
+            pragma Assert (Result /= EINVAL or else
+              Shutdown ("GNULLI failure---Sleep_Until (cond_timedwait)"));
+         end loop;
+
+         --  Make sure we delayed long enough. If we did, give up the
+         --  CPU. Otherwise, request a delay again with unserviced amount
+         --  of time.
+
+         if (Abs_Time <= Clock) then
+            Timedout := True;
+            Result := sched_yield;
+            exit;
+         else
+            Request := To_Timespec (Abs_Time);
+         end if;
+      end loop;
    end Sleep_Until;
+
+   -----------
+   -- Clock --
+   -----------
+
+   function Clock return Duration is
+      TS     : aliased timespec;
+      Result : Interfaces.C.int;
+
+   begin
+      Result := clock_gettime (CLOCK_REALTIME, TS'Unchecked_Access);
+      pragma Assert (Result = 0
+        or else Shutdown ("GNULLI failure---clock_gettime"));
+      return To_Duration (TS);
+   exception
+      when others =>
+         pragma Assert (Shutdown ("exception in Clock"));
+         return 0.0;
+   end Clock;
 
    ------------
    -- Wakeup --
@@ -474,31 +553,14 @@ package body System.Task_Primitives.Operations is
 
    procedure Enter_Task (Self_ID : Task_ID) is
       Result  : Interfaces.C.int;
-      Old_Set : aliased sigset_t;
 
    begin
 
       Self_ID.LL.Thread := pthread_self;
 
-      --  It is not safe for the new task accept signals until it
-      --  has bound its TCB pointer to the thread with pthread_setspecific (),
-      --  since the handler wrappers use the TCB pointer
-      --  to restore the stack limit.
-
       Result := pthread_setspecific (ATCB_Key, To_Address (Self_ID));
       pragma Assert (Result = 0 or else
         Shutdown ("GNULLI failure---Enter_Task (pthread_setspecific)"));
-
-      --  Must wait until the above operation is done to unmask signals,
-      --  since signal handler for abort will try to access the ATCB to
-      --  check whether abort is deferred, and exception propagation will
-      --  try to use task-specific data as mentioned above.
-
-      Result := pthread_sigmask
-        (SIG_UNBLOCK, Unblocked_Signal_Mask'Access, Old_Set'Access);
-      pragma Assert (Result = 0
-        or else Shutdown ("GNULLI failure---Enter_Task (pthread_sigmask)"));
-
    end Enter_Task;
 
    ----------------------
@@ -571,7 +633,6 @@ package body System.Task_Primitives.Operations is
       Attributes          : aliased pthread_attr_t;
       Adjusted_Stack_Size : Interfaces.C.size_t;
       Result              : Interfaces.C.int;
-      Old_Set             : aliased sigset_t;
 
       function Thread_Body_Access is new
         Unchecked_Conversion (System.Address, Thread_Body);
@@ -634,10 +695,10 @@ package body System.Task_Primitives.Operations is
       pragma Assert (Result = 0
         or else Shutdown ("GNULLI failure---pthread_attr_setstacksize"));
 
-      Result := pthread_sigmask
-        (SIG_SETMASK, All_Signal_Mask'Access, Old_Set'Access);
-      pragma Assert (Result = 0 or else
-        Shutdown ("GNULLI failure---Create_Task (pthread_sigmask)"));
+      --  Since the initial signal mask of a thread is inherited from the
+      --  creator, and the Environment task has all its signals masked, we
+      --  do not need to manipulate caller's signal mask at this point.
+      --  All tasks in RTS will have All_Tasks_Mask initially.
 
       Result := pthread_create
         (T.LL.Thread'Access,
@@ -648,11 +709,6 @@ package body System.Task_Primitives.Operations is
         or else Shutdown ("GNULLI failure---Create_Task (pthread_create)"));
 
       Succeeded := Result = 0;
-
-      Result := pthread_sigmask
-        (SIG_SETMASK, Old_Set'Unchecked_Access, null);
-      pragma Assert (Result = 0 or else
-        Shutdown ("GNULLI failure---Create_Task (pthread_sigmask)"));
 
       Set_Priority (T, Priority);
 
@@ -735,7 +791,7 @@ package body System.Task_Primitives.Operations is
         sigaction (
           Signal (System.Interrupt_Management.Abort_Task_Interrupt),
           act'Access,
-          old_act'Access);
+          old_act'Unchecked_Access);
       pragma Assert (Result = 0
         or else Shutdown ("GNULLI failure---Initialize (sigaction)"));
 
@@ -755,9 +811,14 @@ begin
       --  It doesn't appear necessary to call it because pthread_init is
       --  called before any Ada elaboration occurs.
 
-      Result := sigfillset (All_Signal_Mask'Access);
-      pragma Assert (Result = 0
-        or else Shutdown ("GNULLI failure---Initialize (sigfillset)"));
+      --  Mask Environment task for all signals. The original mask of the
+      --  Environment task will be recovered by Interrupt_Server task
+      --  during the elaboration of s-interr.adb.
+
+      System.Interrupt_Management.Operations.Set_Interrupt_Mask
+        (System.Interrupt_Management.Operations.All_Tasks_Mask'Access);
+
+      --  Prepare the set of signals that should unblocked in all tasks
 
       Result := sigemptyset (Unblocked_Signal_Mask'Access);
       pragma Assert (Result = 0

@@ -7,7 +7,7 @@
 --                                  B o d y                                 --
 --                         (Version for new GNARL)                          --
 --                                                                          --
---                             $Revision: 1.3 $                            --
+--                             $Revision: 1.1 $                            --
 --                                                                          --
 --   Copyright (C) 1991,1992,1993,1994,1995,1996 Florida State University   --
 --                                                                          --
@@ -185,7 +185,8 @@ package body System.Interrupt_Management is
          Keep_Unmasked (Exception_Interrupts (I)) := True;
          Result :=
            sigaction
-             (Signal (Exception_Interrupts (I)), act'Access, old_act'Access);
+             (Signal (Exception_Interrupts (I)), act'Access,
+              old_act'Unchecked_Access);
          pragma Assert (Result = 0
            or else Shutdown ("GNULLI failure---sigaction"));
       end loop;

@@ -7,7 +7,7 @@
 --                                   S p e c                                --
 --                         (Version for new GNARL)                          --
 --                                                                          --
---                             $Revision: 1.5 $                            --
+--                             $Revision: 1.1 $                            --
 --                                                                          --
 --    Copyright (C) 1991,92,93,94,95,1996 Free Software Foundation, Inc.    --
 --                                                                          --
@@ -103,8 +103,8 @@ package System.OS_Interface is
    -- Errno --
    -----------
 
-   function errno return int;
-   pragma Import (C, errno, "__get_errno");
+   function Errno return int;
+   pragma Inline (Errno);
 
    --  NAMEs not used are commented-out
    --  NAMEs not supported on this system have __NAME for value
@@ -231,6 +231,7 @@ package System.OS_Interface is
       sa_flags     : int;
    end record;
    pragma Convention (C, struct_sigaction);
+   type struct_sigaction_ptr is access all struct_sigaction;
 
 
    SIG_BLOCK   : constant := 1;
@@ -250,7 +251,7 @@ package System.OS_Interface is
    function sigaction
      (sig  : Signal;
       act  : access struct_sigaction;
-      oact : access struct_sigaction)
+      oact : struct_sigaction_ptr)
      return int;
    pragma Import (C, sigaction, "sigaction");
 
@@ -262,6 +263,16 @@ package System.OS_Interface is
 
    function nanosleep (rqtp, rmtp : access timespec)  return int;
    pragma Import (C, nanosleep, "nanosleep");
+
+   type clockid_t is private;
+
+   CLOCK_REALTIME : constant clockid_t;
+
+   function clock_gettime
+     (clock_id : clockid_t;
+      tp       : access timespec)
+      return int;
+   pragma Import (C, clock_gettime, "clock_gettime");
 
    function To_Duration (TS : timespec) return Duration;
    pragma Inline (To_Duration);
@@ -362,6 +373,25 @@ package System.OS_Interface is
       oset : access sigset_t)
      return int;
    pragma Import (C, pthread_sigmask, "pthread_sigmask");
+
+   --  We declare two wrappers for pthread_sigmask, since null may need
+   --  to be passed for either set or oset and this is not allowed
+   --  in Ada for access mode parameters (the error was not catched by
+   --  GNAT until recently, and a flag, -gnatdj, was added to allow it
+   --  to compile).
+
+   function pthread_sigmask_set
+     (how  : int;
+      set  : access sigset_t)
+     return int;
+   --  Identical to pthread_sigmask (how, set, null).
+
+   function pthread_sigmask_oset
+     (how  : int;
+      oset : access sigset_t)
+     return int;
+   --  Identical to pthread_sigmask (how, null, oset).
+
 
    ----------------------------
    --  POSIX.1c  Section 11  --
@@ -670,6 +700,9 @@ private
       ts_nsec      : long;
    end record;
    pragma Convention (C, timespec);
+
+   type clockid_t is new int;
+   CLOCK_REALTIME : constant clockid_t := 0;
 
    type struct_timeval is record
       tv_sec       : long;
