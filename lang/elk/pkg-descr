@@ -1,0 +1,12 @@
+This is release 2.2 of Elk, the Extension Language Kit.
+
+Elk is a Scheme interpreter intended to be used as a general, reusable
+extension language subsystem for integration into existing and future
+applications.  Elk can also be used as a stand-alone implementation of
+the Scheme programming language.
+
+One purpose of the Elk project is to end the recent proliferation of
+mutually incompatible Lisp-like extension languages.  Instead of
+inventing and implementing yet another extension language, application
+programmers can integrate Elk into their application to make it
+extensible and highly customizable.
