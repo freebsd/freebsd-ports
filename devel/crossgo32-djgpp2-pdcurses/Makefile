@@ -8,8 +8,10 @@
 PORTNAME=	crossgo32-djgpp2-pdcurses
 PORTVERSION=	2.2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.simtel.net/pub/simtelnet/gnu/djgpp/v2tk/ \
-		ftp://ftp.cdrom.com/pub/simtelnet/gnu/djgpp/v2tk/
+MASTER_SITES=	ftp://ftp.ntu.edu.tw/UNIX/GNU/djgpp/v2tk/ \
+		ftp://ftp.in-span.net/disk/disk5/simtel.net/gnu/djgpp/v2tk/ \
+		ftp://ftp.informatik.uni-hamburg.de/ftpmnt/rrz1/pub/os/dos/djgpp/v2tk/ \
+		ftp://ftp.uni-koeln.de/pc/djgpp/v2tk/
 DISTNAME=	pdc22
 
 MAINTAINER=	ports@FreeBSD.org
