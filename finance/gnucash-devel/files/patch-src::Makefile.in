@@ -1,0 +1,15 @@
+
+$FreeBSD$
+
+--- src/Makefile.in	2002/03/13 10:25:32	1.1
++++ src/Makefile.in	2002/03/13 10:25:44
+@@ -174,8 +174,7 @@
+   quotes \
+   pixmaps \
+   optional \
+-  . \
+-  test
++  .
+ 
+ 
+ # Engine Makefile.am file.
