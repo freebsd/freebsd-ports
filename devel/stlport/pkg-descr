@@ -1,0 +1,13 @@
+STLport is an an adaptation of SGI's Standard Template Library.
+The goal of the STLport effort is to make SGI's STL
+implementation usable with most compilers while retaining full
+functionality.
+
+The Standard Template Library is a C++ library of container
+classes, algorithms, and iterators providing many of the basic
+algorithms and data structures of computer science.
+
+STL: http://www.sgi.com/Technology/STL/
+
+-- 
+Josh Gilliam                    <josh@quick.net>

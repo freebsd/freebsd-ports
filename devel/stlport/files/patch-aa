@@ -1,0 +1,12 @@
+--- stl_rope.h.orig	Sun Feb  8 18:08:40 1998
++++ stl_rope.h	Thu Dec 17 19:37:18 1998
+@@ -776,7 +776,8 @@
+ 	__rope_iterator_base<charT,Alloc>(r.tree_ptr, pos) {}
+     self& operator= (const self & x) {
+ 	if (0 != x.buf_ptr) {
+-	    *this = x;
++	    *(static_cast<__rope_iterator_base<charT,Alloc>*>(this)) = x; 
++            // bugfix by Kevin Atkinosn (kevina@clark.net) was *this = x;
+ 	} else {
+ 	    current_pos = x.current_pos;
+ 	    root = x.root;
