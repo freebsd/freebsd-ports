@@ -8,7 +8,7 @@
 PORTNAME=	mac-robber
 PORTVERSION=	1.00
 CATEGORIES=	security
-MASTER_SITES=	http://www.atstake.com/research/tools/
+MASTER_SITES=	http://www.atstake.com/research/tools/forensic/
 
 MAINTAINER=	Yonatan@xpert.com
 COMMENT=	A tool for listing Modify, Access, Create timestamps from files
