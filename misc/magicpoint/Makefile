@@ -7,11 +7,11 @@
 # "?=" and "+=" are for localized (i.e. Japanese) version
 
 PORTNAME=	magicpoint
-PORTVERSION=	1.06a
+PORTVERSION=	1.07a
 CATEGORIES+=	misc
 MASTER_SITES=	ftp://ftp.mew.org/pub/MagicPoint/
 
-MAINTAINER?=	itojun@itojun.org
+MAINTAINER?=	mita@jp.FreeBSD.org
 
 LIB_DEPENDS+=	ttf.4:${PORTSDIR}/print/freetype
 
@@ -28,18 +28,17 @@ post-build:
 MAN1=	mgp.1 mgp2ps.1 mgpembed.1 mgpnet.1 xwintoppm.1 xmindpath.1
 
 DOCS=	COPYRIGHT COPYRIGHT.jp README README.fonts README.fonts.jp \
-	SYNTAX TODO.jp USAGE USAGE.jp
-SAMPLES=	README README.jp ascii.mgp cloud.gif dad.eps dad.gif dns.mgp \
-		default.mgp gradation.mgp mgp-old1.gif mgp-old2.gif \
-		mgp-old3.gif mgp1.gif mgp2.gif mgp3.gif sample.mgp \
-		tutorial.mgp v6.mgp v6header.eps v6header.gif
-SAMPLES=	README README.jp cloud.gif dad.eps dad.gif default.mgp \
+	README.lang RELNOTES SYNTAX TODO.jp USAGE USAGE.jp
+SAMPLES=	README README.jp cloud.jpg dad.eps dad.jpg default.mgp \
 		dns-jp.mgp embed-jp.mgp embed.mgp gradation-jp.mgp \
-		gradation.mgp mgp-old1.gif mgp-old2.gif mgp-old3.gif \
-		mgp1.gif mgp2.gif mgp3.gif mgp3.xbm mgprc-sample \
+		gradation.mgp mgp-old1.jpg mgp-old2.jpg mgp-old3.jpg \
+		mgp1.jpg mgp2.jpg mgp3.jpg mgp3.xbm mgprc-sample \
 		multilingual.mgp sample-fr.mgp sample-jp.mgp sample.mgp \
-		sendmail6-jp.mgp sendmail6.mgp tutorial-jp.mgp tutorial.mgp \
-		v6-jp.mgp v6.mgp v6header.eps v6header.gif
+		sendmail6-jp.mgp sendmail6.mgp tutorial-jp.mgp \
+		tutorial.mgp v6-jp.mgp v6.mgp v6header.eps v6header.jpg
+EMACS_LISPS=	mgp-mode.el mgp-el/COPYING mgp-el/README \
+		mgp-el/mgp.el mgp-el/mgp.sty mgp-el/sample.tex
+SAMPLE_SCRIPTS=	eqn2eps.sh tex2eps.sh mgp2html.pl mgp2latex.pl
 
 # NOTE: there are some discussions/twists in gzip'ing xmindpath.1.
 post-install:
@@ -53,6 +52,14 @@ post-install:
 	${MKDIR} ${PREFIX}/share/doc/mgp/sample
 	for i in $(SAMPLES); do \
 		${INSTALL_DATA} ${WRKSRC}/sample/$$i ${PREFIX}/share/doc/mgp/sample; \
+	done
+	${MKDIR} ${PREFIX}/share/doc/mgp/emacs-lisp/mgp-el
+	for i in $(EMACS_LISPS); do \
+		${INSTALL_DATA} ${WRKSRC}/contrib/$$i ${PREFIX}/share/doc/mgp/emacs-lisp/$$i; \
+	done
+	${MKDIR} ${PREFIX}/share/doc/mgp/scripts
+	for i in $(SAMPLE_SCRIPTS); do \
+		${INSTALL_SCRIPT} ${WRKSRC}/contrib/$$i ${PREFIX}/share/doc/mgp/scripts/$$i; \
 	done
 .endif
 
