@@ -14,9 +14,9 @@ PKGNAMEPREFIX=	hs-
 MAINTAINER=	obraun@FreeBSD.org
 COMMENT=	A GTK+ Binding for Haskell
 
-BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
+BUILD_DEPENDS=	ghc-5.04.3:${PORTSDIR}/lang/ghc5 \
 		c2hs:${PORTSDIR}/devel/hs-c2hs
-RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
+RUN_DEPENDS=	ghc-5.04.3:${PORTSDIR}/lang/ghc5 \
 		c2hs:${PORTSDIR}/devel/hs-c2hs
 .if !defined(WITHOUT_IHASKELL)
 RUN_DEPENDS+=	ports-config:${PORTSDIR}/devel/hs-hpl
