@@ -1,12 +1,14 @@
 bin/archive-generator
-bin/gdict-applet
 bin/gnome-calculator
 bin/gnome-character-map
 bin/gnome-dictionary
 bin/gnome-search-tool
 bin/gnome-system-log
+etc/gconf/gconf.xml.defaults/apps/gnome-dictionary/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnome-dictionary/%gconf.xml
 etc/gconf/schemas/gdict.schemas
 libdata/bonobo/servers/GNOME_GDictApplet.server
+libexec/gdict-applet
 share/gnome/applications/archive-generator.desktop
 share/gnome/applications/gnome-calculator.desktop
 share/gnome/applications/gnome-character-map.desktop
@@ -18,13 +20,13 @@ share/gnome/gnome-system-log/gnome-system-log-actions.db
 share/gnome/gnome-system-log/gnome-system-log-descript.db
 share/gnome/gnome-system-log/gnome-system-log-regexp.db
 share/gnome/help/archive-generator/C/archive-generator.xml
-share/gnome/help/archive-generator/C/figures/archive-generator-addfile.png
 share/gnome/help/archive-generator/C/figures/archive-generator-contents.png
 share/gnome/help/archive-generator/C/figures/archive-generator.png
 share/gnome/help/archive-generator/C/legal.xml
 share/gnome/help/gnome-calculator/C/figures/gcalc_window.png
 share/gnome/help/gnome-calculator/C/gnome-calculator.xml
 share/gnome/help/gnome-calculator/C/legal.xml
+share/gnome/help/gnome-character-map/C/figures/gnome-character-map.png
 share/gnome/help/gnome-character-map/C/gnome-character-map.xml
 share/gnome/help/gnome-character-map/C/legal.xml
 share/gnome/help/gnome-dictionary/C/figures/gdict-find.png
@@ -95,7 +97,6 @@ share/locale/wa/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-utils-2.0.mo
 @dirrm share/gnome/pixmaps/gnome-system-log
-@dirrm share/gnome/omf/gnome-utils
 @dirrm share/gnome/help/gnome-system-log/C/figures
 @dirrm share/gnome/help/gnome-system-log/C
 @dirrm share/gnome/help/gnome-system-log
@@ -105,9 +106,12 @@ share/locale/zh_TW/LC_MESSAGES/gnome-utils-2.0.mo
 @dirrm share/gnome/help/gnome-dictionary/C/figures
 @dirrm share/gnome/help/gnome-dictionary/C
 @dirrm share/gnome/help/gnome-dictionary
+@dirrm share/gnome/help/gnome-character-map/C/figures
 @dirrm share/gnome/help/gnome-character-map/C
 @dirrm share/gnome/help/gnome-character-map
 @dirrm share/gnome/help/gnome-calculator/C/figures
 @dirrm share/gnome/help/gnome-calculator/C
 @dirrm share/gnome/help/gnome-calculator
 @dirrm share/gnome/gnome-system-log
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-dictionary
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-dictionary
