@@ -1,0 +1,17 @@
+bin/grdb
+share/grdb/AAAAAAGeneral.ad
+share/grdb/AAAMotif.ad
+share/grdb/AAATk.ad
+share/grdb/AAAXaw.ad
+share/grdb/Ddd.ad
+share/grdb/Editres.ad
+share/grdb/Emacs.ad
+share/grdb/ML.ad
+share/grdb/Nedit.ad
+share/grdb/Netscape.ad
+share/grdb/RVPlayer.ad
+share/grdb/XCalc.ad
+share/grdb/XTerm.ad
+share/grdb/XV.ad
+share/grdb/XWp.ad
+@dirrm share/grdb
