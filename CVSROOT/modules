@@ -569,6 +569,7 @@ balsa		ports/mail/balsa
 bamg		ports/math/bamg
 bandwidthd	ports/net-mgmt/bandwidthd
 barcode		ports/graphics/barcode
+barnyard	ports/security/barnyard
 barrage		ports/games/barrage
 barry		ports/sysutils/barry
 base64		ports/converters/base64
