@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sysconftool
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -14,8 +14,9 @@ MASTER_SITE_SUBDIR=	courier
 MAINTAINER=	yds@CoolRat.org
 COMMENT=	Helps to install application configuration files
 
+USE_BZIP2=	yes
 USE_PERL5=	yes
-USE_AUTOMAKE_VER=	14
+WANT_AUTOMAKE_VER=	15
 
 MAN1=		sysconftool.1 sysconftoolcheck.1
 MAN7=		sysconftool.7
