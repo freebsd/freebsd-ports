@@ -6,27 +6,28 @@
 #
 
 PORTNAME=	edonkey
-PORTVERSION=	0.0.2
+PORTVERSION=	0.3.2
 CATEGORIES=	misc
-MASTER_SITES=	http://users.aber.ac.uk/tpm01/ed2k_tools/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	ed2k-tools
 PKGNAMESUFFIX=	-tool-hash
-DISTNAME=	ed2k_hash-${PORTVERSION:S/^0.//}
+DISTNAME=	ed2k_hash-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+USE_REINPLACE=	yes
+USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
 
-WRKSRC=	${WRKDIR}/ed2k_hash
-
-# I could have written a Makefile but I would rather
-# not waste inodes
-do-build:
-	cd ${WRKSRC} && ${CC} -D__linux ${CFLAGS} ${LDFLAGS} -lmd \
-		-I${LOCALBASE}/include -L${LOCALBASE}/lib -lgnugetopt \
-		ed2k_hash.c -o ${PORTNAME}${PKGNAMESUFFIX}
+post-patch:
+# respect CFLAGS
+	@${REINPLACE_CMD} -E -e \
+		's|-O2||' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}${PKGNAMESUFFIX} \
-		${PREFIX}/bin
+# uphold POLA, do not change binary name
+	@${INSTALL_PROGRAM} ${WRKSRC}/ed2k_hash/ed2k_hash \
+		${PREFIX}/bin/${PORTNAME}${PKGNAMESUFFIX}
 
 .include <bsd.port.mk>
