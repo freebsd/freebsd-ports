@@ -58,6 +58,5 @@ bin/ri
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/ri/emacs
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/ri
 lib/xemacs/site-lisp/ri.el
-@unexec rmdir -p %D/lib/xemacs/site-lisp 2>/dev/null || true
 share/emacs/site-lisp/ri.el
-@comment share/emacs/site-lisp is created by mtree
+%%RUBY_ELISPDIR%%/ri.el
