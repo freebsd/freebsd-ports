@@ -7,6 +7,7 @@ lib/xvile/atr2html
 lib/xvile/atr2text
 lib/xvile/vile-as-filt
 lib/xvile/vile-asm-filt
+lib/xvile/vile-au3-filt
 lib/xvile/vile-basic-filt
 lib/xvile/vile-c-filt
 lib/xvile/vile-crypt
@@ -108,6 +109,7 @@ share/xvile/vile/digraphs.rc
 share/xvile/vile/gnugpg.rc
 share/xvile/vile/loaderrs.rc
 share/xvile/vile/manpage.rc
+share/xvile/vile/modes.rc
 share/xvile/vile/palettes.rc
 share/xvile/vile/pictmode.rc
 share/xvile/vile/search.rc
@@ -119,6 +121,7 @@ share/xvile/vile/which.rc
 share/xvile/vile/as.keywords
 share/xvile/vile/as386.keywords
 share/xvile/vile/asm.keywords
+share/xvile/vile/au3.keywords
 share/xvile/vile/basic.keywords
 share/xvile/vile/c.keywords
 share/xvile/vile/cpp.keywords
@@ -183,6 +186,7 @@ share/xvile/macros/digraphs.rc
 share/xvile/macros/gnugpg.rc
 share/xvile/macros/loaderrs.rc
 share/xvile/macros/manpage.rc
+share/xvile/macros/modes.rc
 share/xvile/macros/palettes.rc
 share/xvile/macros/pictmode.rc
 share/xvile/macros/search.rc

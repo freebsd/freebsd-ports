@@ -47,6 +47,7 @@ share/vile/digraphs.rc
 share/vile/gnugpg.rc
 share/vile/loaderrs.rc
 share/vile/manpage.rc
+share/vile/modes.rc
 share/vile/palettes.rc
 share/vile/pictmode.rc
 share/vile/search.rc
@@ -57,6 +58,7 @@ share/vile/vile.hlp
 share/vile/as.keywords
 share/vile/as386.keywords
 share/vile/asm.keywords
+share/vile/au3.keywords
 share/vile/c.keywords
 share/vile/cpp.keywords
 share/vile/filters.rc
@@ -122,6 +124,7 @@ share/vile/macros/digraphs.rc
 share/vile/macros/gnugpg.rc
 share/vile/macros/loaderrs.rc
 share/vile/macros/manpage.rc
+share/vile/macros/modes.rc
 share/vile/macros/palettes.rc
 share/vile/macros/pictmode.rc
 share/vile/macros/search.rc
