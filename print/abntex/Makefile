@@ -11,7 +11,7 @@ CATEGORIES=	print
 MASTER_SITES=	http://download.codigolivre.org.br/abntex/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	hmendes@brturbo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Both classes and styles for both LaTex and bibtex for ABNT rules
 
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX

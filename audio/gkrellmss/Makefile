@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://web.wt.net/~billw/gkrellmss/
 
-MAINTAINER=	hmendes@brturbo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A plugin for GKrellM with a VU meter showing left/right channel audio
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
