@@ -1,0 +1,21 @@
+*** ./src/smtp/smtp.h.orig	Thu Sep 14 13:04:43 2000
+--- ./src/smtp/smtp.h	Thu Sep 14 13:04:53 2000
+***************
+*** 12,19 ****
+    * SASL library.
+    */
+  #ifdef USE_SASL_AUTH
+! #include <sasl.h>
+! #include <saslutil.h>
+  #endif
+  
+   /*
+--- 12,19 ----
+    * SASL library.
+    */
+  #ifdef USE_SASL_AUTH
+! #include <sasl/sasl.h>
+! #include <sasl/saslutil.h>
+  #endif
+  
+   /*

@@ -1,4 +1,9 @@
 #!/bin/sh
+#
+#	$FreeBSD$
+#
+
+PKG_PREFIX=${PKG_PREFIX:=/usr/local}
 
 user=postfix
 group=postfix
@@ -87,6 +92,5 @@ if [ x"$2" = xPOST-INSTALL ]; then
     fi
     /usr/sbin/chown root:maildrop ${PKG_PREFIX}/sbin/postdrop
     /bin/chmod 2555 ${PKG_PREFIX}/sbin/postdrop
-    /bin/mkdir -p /var/spool/postfix
     ${PKG_PREFIX}/sbin/postfix check
 fi

@@ -1,5 +1,5 @@
-*** ./postdrop/postdrop.c.orig	Sun Apr 25 18:05:43 1999
---- ./postdrop/postdrop.c	Thu Jun  1 22:44:22 2000
+*** ./src/postdrop/postdrop.c.orig	Sun Apr 25 18:05:43 1999
+--- ./src/postdrop/postdrop.c	Thu Jun  1 22:44:22 2000
 ***************
 *** 39,41 ****
   /*	/var/spool/postfix, mail queue

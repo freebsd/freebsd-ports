@@ -1,11 +1,20 @@
---- man/man5/canonical.5.orig	Mon Sep  6 05:13:32 1999
-+++ man/man5/canonical.5	Tue Nov  7 22:57:40 2000
-@@ -8,7 +8,7 @@
- .SH SYNOPSIS
- .na
- .nf
--\fBpostmap /etc/postfix/canonical\fR
-+\fBpostmap !!PREFIX!!/etc/postfix/canonical\fR
- .SH DESCRIPTION
- .ad
- .fi
+*** ./man/man5/canonical.5.orig	Sat Apr 22 20:28:30 2000
+--- ./man/man5/canonical.5	Thu Jun  1 22:40:18 2000
+***************
+*** 10,12 ****
+  .nf
+! \fBpostmap /etc/postfix/canonical\fR
+  .SH DESCRIPTION
+--- 10,12 ----
+  .nf
+! \fBpostmap !!PREFIX!!/etc/postfix/canonical\fR
+  .SH DESCRIPTION
+***************
+*** 21,23 ****
+  is used for fast searching by the mail system. Execute the command
+! \fBpostmap /etc/postfix/canonical\fR in order to rebuild the indexed
+  file after changing the canonical table.
+--- 21,23 ----
+  is used for fast searching by the mail system. Execute the command
+! \fBpostmap !!PREFIX!!/etc/postfix/canonical\fR in order to rebuild the indexed
+  file after changing the canonical table.

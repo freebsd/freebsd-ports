@@ -1,11 +1,11 @@
---- conf/virtual.orig	Tue Dec 21 03:00:13 1999
-+++ conf/virtual	Tue Nov  7 22:48:18 2000
-@@ -4,7 +4,7 @@
- # SUMMARY
- #	format of Postfix virtual table
- # SYNOPSIS
--#	\fBpostmap /etc/postfix/virtual\fR
-+#	\fBpostmap !!PREFIX!!/etc/postfix/virtual\fR
- # DESCRIPTION
- #	The optional \fBvirtual\fR table specifies redirections for local
- #	and non-local recipients or domains. The redirections are used by
+*** ./conf/virtual.orig	Tue Mar  7 10:42:59 2000
+--- ./conf/virtual	Thu Jun  1 22:13:54 2000
+***************
+*** 7,9 ****
+  # SYNOPSIS
+! #        postmap /etc/postfix/virtual
+  # 
+--- 7,9 ----
+  # SYNOPSIS
+! #        postmap !!PREFIX!!/etc/postfix/virtual
+  # 

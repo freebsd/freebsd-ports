@@ -1,0 +1,129 @@
+#!/bin/sh
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix26/scripts/Attic/configure.postfix,v 1.1 2001-03-04 19:35:00 sf Exp $
+
+if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
+	exit
+fi
+
+tempfile=`mktemp -t checklist`
+
+if [ "${BATCH}" = "yes" ]; then
+	set \"PCRE\"
+else
+	/usr/bin/dialog --title "Postfix configuration options" --clear \
+		--checklist "\n\
+Please select desired options:" -1 -1 16 \
+PCRE		"Perl Compatible Regular Expressions" OFF \
+SASL		"Cyrus SASL (Simple Authentication and Security Layer)" OFF \
+DB3		"Berkeley DB3 (required if SASL also built with DB3)" OFF \
+MySQL		"MySQL map lookups" OFF \
+OpenLDAP	"OpenLDAP map lookups" OFF \
+Test		"SMTP/LMTP test server and generator" OFF \
+TLS		"Secure Sockets Layer and Transport Layer Security" OFF \
+IPv6		"IPv6 support" OFF \
+2> $tempfile
+
+	retval=$?
+
+	if [ -s $tempfile ]; then
+		set `cat $tempfile`
+	fi
+	rm -f $tempfile
+
+	case $retval in
+		0)	if [ -z "$*" ]; then
+				echo "Nothing selected"
+			fi
+			;;
+		1)	echo "Cancel pressed."
+			exit 1
+			;;
+	esac
+fi
+
+${MKDIR} ${WRKDIRPREFIX}${CURDIR}
+exec > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+
+echo "PREFIX=	${PREFIX}"
+
+SUB_PCRE="@comment "
+SUB_SASL="@comment "
+SUB_TLS="@comment "
+SUB_LDAP="@comment "
+SUB_TEST="@comment "
+
+while [ "$1" ]; do
+	case $1 in
+		\"PCRE\")
+			echo "CONF1+=		pcre_table"
+			echo "CONF2+=		sample-pcre.cf"
+			echo "MAN5+=		pcre_table.5"
+			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/libpcre.a:\${PORTSDIR}/devel/pcre"
+			echo "POSTFIX_CCARGS+=	-DHAS_PCRE -I\${LOCALBASE}/include"
+			echo "POSTFIX_AUXLIBS+=	\${LOCALBASE}/lib/libpcre.a"
+			SUB_PCRE=""
+			;;
+		\"SASL\")
+			echo "CONF2+=		sample-auth.cf"
+			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/libsasl.a:\${PORTSDIR}/security/cyrus-sasl"
+			echo "POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -I\${LOCALBASE}/include"
+			echo "POSTFIX_AUXLIBS+=	\${LOCALBASE}/lib/libsasl.a -lpam -lcrypt"
+			echo ".if exists(/usr/lib/libkrb.a)"
+			echo "POSTFIX_AUXLIBS+=	-lkrb -ldes -lcom_err"
+			echo ".endif"
+			SUB_SASL=""
+			;;
+		\"TLS\")
+			echo "CONF2+=		sample-tls.cf"
+			echo "BIN1+=		tlsmgr"
+			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I/usr/include/openssl"
+			echo "POSTFIX_AUXLIBS+=	-lssl -lcrypto"
+			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.7.0-20010228-0.9.6.tar.gz"
+			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.7.0-20010228-0.9.6/pfixtls.diff"
+			echo "PATCH_STRIP=	-p1"
+			SUB_TLS=""
+			;;
+		\"DB3\")
+			echo "LIB_DEPENDS+=	db3.1:\${PORTSDIR}/databases/db3"
+			echo "POSTFIX_CCARGS+=	-I\${LOCALBASE}/include/db3"
+			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -ldb3"
+			;;
+		\"MySQL\")
+			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/mysql/libmysqlclient.a:\${PORTSDIR}/databases/mysql323-client"
+			echo "POSTFIX_CCARGS+=	-DHAS_MYSQL -I\${LOCALBASE}/include/mysql"
+			echo "POSTFIX_AUXLIBS+=	\${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz"
+			;;
+		\"OpenLDAP\")
+			echo "CONF2+=		sample-ldap.cf"
+			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/libldap.a:\${PORTSDIR}/net/openldap"
+			echo "POSTFIX_CCARGS+=	-DHAS_LDAP -I\${LOCALBASE}/include"
+			echo "POSTFIX_AUXLIBS+=	\${LOCALBASE}/lib/libldap.a \${PREFIX}/lib/liblber.a"
+			SUB_LDAP=""
+			;;
+		\"Test\")
+			echo "BIN3=		smtp-sink smtp-source"
+			SUB_TEST=""
+			;;
+		\"IPv6\")
+			echo "PATCH_SITES+=	ftp://ftp.kame.net/pub/kame/misc/"
+			echo "PATCH_SITES+=	\${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/kame/misc/&,}"
+			echo "PATCHFILES+=	postfix-20010225snap-v6-20010228a.diff.gz"
+			echo ""
+			echo "pre-patch:"
+			echo "	cd \${WRKSRC} && ln -s . postfix"
+			echo ""
+			;;
+		*)
+			echo "Invalid option(s): $*" > /dev/stderr
+			rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			exit 1
+			;;
+	esac
+	shift
+done
+
+echo "PLIST_SUB+=	SUB_PCRE=\"${SUB_PCRE}\""
+echo "PLIST_SUB+=	SUB_SASL=\"${SUB_SASL}\""
+echo "PLIST_SUB+=	SUB_TLS=\"${SUB_TLS}\""
+echo "PLIST_SUB+=	SUB_LDAP=\"${SUB_LDAP}\""
+echo "PLIST_SUB+=	SUB_TEST=\"${SUB_TEST}\""

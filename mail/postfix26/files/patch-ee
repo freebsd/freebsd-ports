@@ -1,5 +1,5 @@
-*** ./master/master.c.orig	Tue Mar  7 10:25:07 2000
---- ./master/master.c	Thu Jun  1 22:43:50 2000
+*** ./src/master/master.c.orig	Tue Mar  7 10:25:07 2000
+--- ./src/master/master.c	Thu Jun  1 22:43:50 2000
 ***************
 *** 104,107 ****
   /* FILES

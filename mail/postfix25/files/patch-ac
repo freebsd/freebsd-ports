@@ -1,11 +1,11 @@
---- conf/access.orig	Fri Dec 11 19:55:48 1998
-+++ conf/access	Tue Nov  7 22:25:54 2000
-@@ -4,7 +4,7 @@
- # SUMMARY
- #	format of Postfix access table
- # SYNOPSIS
--#	\fBpostmap /etc/postfix/access\fR
-+#	\fBpostmap !!PREFIX!!/etc/postfix/access\fR
- # DESCRIPTION
- #	The optional \fBaccess\fR table directs the Postfix SMTP server
- #	to selectively reject or accept mail from or to specific hosts,
+*** ./conf/access.orig	Tue Mar  7 10:42:58 2000
+--- ./conf/access	Thu Jun  1 21:53:36 2000
+***************
+*** 7,9 ****
+  # SYNOPSIS
+! #        postmap /etc/postfix/access
+  # 
+--- 7,9 ----
+  # SYNOPSIS
+! #        postmap !!PREFIX!!/etc/postfix/access
+  # 
