@@ -30,6 +30,7 @@
     SUBDIR += dbview
     SUBDIR += edb
     SUBDIR += erserver
+    SUBDIR += evolution-data-server
     SUBDIR += fastdb
     SUBDIR += firebird
     SUBDIR += firebird-devel
