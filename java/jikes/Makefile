@@ -3,13 +3,12 @@
 # Date created:         09 December 1998
 # Whom:                 Matthew Dillon <dillon@backplane.com>
 #
-# $Id: Makefile,v 1.1 1998/12/10 18:02:52 dillon Exp $
+# $Id: Makefile,v 1.2 1998/12/10 20:29:37 dillon Exp $
 #
 
 DISTNAME=	jikes-0.41
 CATEGORIES=	lang
 MASTER_SITES=	http://www.backplane.com/FreeBSDPorts/
-#DISTFILES=	${DISTNAME}.tar.gz
 
 MAINTAINER=	dillon@backplane.com
 
