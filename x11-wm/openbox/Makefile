@@ -8,6 +8,7 @@
 
 PORTNAME=	openbox
 PORTVERSION=	0.3.0.4
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://icculus.org/openbox/releases/
 DISTNAME=	openbox-3.0-rc4
@@ -49,6 +50,9 @@ pre-install:
 .for ii in gnome-panel-control openbox kdetrayproxy themeupdate.py
 	${ECHO_CMD} bin/${ii} >> ${PLIST}
 .endfor
+.for ii in parser render
+	${ECHO_CMD} libdata/pkgconfig/ob${ii}-3.0.pc >> ${PLIST}
+.endfor
 	cd ${WRKSRC} && ${FIND} -s data themes -type f \
 		| ${SED} -e 's:^:share/openbox/:' >> ${PLIST} \
 		&& ${FIND} data themes -type d | sort -r \
@@ -81,6 +85,10 @@ do-install:
 		${PREFIX}/include/openbox/3.0
 .for ii in parser/parse render/theme render/render
 	${INSTALL_DATA} ${WRKSRC}/${ii}.h ${PREFIX}/include/openbox/3.0
+.endfor
+.for ii in parser render
+	${INSTALL_DATA} ${WRKSRC}/${ii}/ob${ii}-3.0.pc \
+		${PREFIX}/libdata/pkgconfig/
 .endfor
 .for ii in menu rc
 	${INSTALL_DATA} ${WRKSRC}/data/${ii}.xml \
