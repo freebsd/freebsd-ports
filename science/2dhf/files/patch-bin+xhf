@@ -1,0 +1,11 @@
+--- bin/xhf.org	Thu Jul 24 18:25:05 2003
++++ bin/xhf	Thu Jul 24 18:26:38 2003
+@@ -99,7 +99,7 @@
+ 	endif
+ 	echo '     '
+ #  envoke x2dhf program
+-	nice +19 ./x2dhf < $1.data  
++	nice +19 %%PREFIX%%/bin/x2dhf < $1.data  
+     endif
+ 
+     if ( $1 != 'remove' ) then
