@@ -1,6 +1,6 @@
---- Makefile.in.orig	Tue Aug 28 05:43:05 2001
-+++ Makefile.in	Wed Sep 19 19:39:43 2001
-@@ -12,9 +12,9 @@
+--- Makefile.in~	Mon Feb 11 00:43:27 2002
++++ Makefile.in	Sun Feb 17 13:33:34 2002
+@@ -11,9 +11,9 @@
  
  DEFS=-DHAVE_CONFIG_H
  
@@ -12,7 +12,7 @@
  XLIB=-lXaw -lXmu
  EXTENSIONLIB=-lXext
  INCLUDES=-I$(INCDIR)
-@@ -22,9 +22,9 @@
+@@ -21,9 +21,9 @@
  LIBS=-L$(LIBDIR) -lXaw $(XLIB) -lXt $(EXTENSIONLIB) -lX11 -lm
  
  #CC=/compat/linux/usr/bin/gcc
@@ -25,7 +25,7 @@
  LDFLAGS=-s
  
  LINT=lint
-@@ -33,14 +33,16 @@
+@@ -32,16 +32,19 @@
  RM=rm -f
  INSTALL=install
  
@@ -40,13 +40,17 @@
  	$(CC) -c $(CFLAGS) $*.c
  
 -PROGRAM = mbmon xmbmon testpci testsmb testhwm testfan
-+PROGRAM = mbmon testpci testsmb testhwm testfan
-+DOCS=	__DOCS__
++PROGRAM = mbmon
++TESTER	= testpci testsmb testhwm testfan
++DOCS=	00README.txt	00READMEj.txt	DEBUG_Info	xmbmon.resources
 +PROGRAM+= xmbmon
  
- all: $(PROGRAM)
+-all: $(PROGRAM)
++all: $(PROGRAM) $(TESTER)
  
-@@ -69,8 +71,14 @@
+ mbmon: methods.h mbmon.c mbmon_small.c getMBinfo.o getMB-isa.o getMB-smb.o getMB-via.o pci_hwm.h pci_hwm.o smb_io.h smb_io.c
+ 	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ mbmon.c getMBinfo.o getMB-isa.o getMB-smb.o getMB-via.o pci_hwm.o
+@@ -68,8 +71,14 @@
  	$(RM) Makefile config.cache config.log config.h config.status
  
  install: $(PROGRAM)
