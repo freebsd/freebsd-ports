@@ -1,64 +1,110 @@
---- configure.orig	Thu Sep  3 03:46:35 1998
-+++ configure	Thu Sep  3 17:53:27 1998
-@@ -3525,49 +3525,6 @@
+--- configure.orig	Sun Sep  6 16:29:01 1998
++++ configure	Tue Sep  8 08:02:03 1998
+@@ -3525,14 +3525,14 @@
  #
  
  if test "$tif" = yes; then
 -    echo $ac_n "checking for TIFFGetVersion in -ltiff""... $ac_c" 1>&6
 -echo "configure:3530: checking for TIFFGetVersion in -ltiff" >&5
 -ac_lib_var=`echo tiff'_'TIFFGetVersion | sed 'y%./+-%__p_%'`
--if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
--  echo $ac_n "(cached) $ac_c" 1>&6
--else
--  ac_save_LIBS="$LIBS"
++    echo $ac_n "checking for TIFFGetVersion in -ltiff34""... $ac_c" 1>&6
++echo "configure:3530: checking for TIFFGetVersion in -ltiff34" >&5
++ac_lib_var=`echo tiff34'_'TIFFGetVersion | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
 -LIBS="-ltiff $GFX_INC_PATH $GFX_LIB_PATH $XLFLAGS $XLIBS $GFXLIBS -lm $LIBS"
--cat > conftest.$ac_ext <<EOF
--#line 3538 "configure"
--#include "confdefs.h"
--/* Override any gcc2 internal prototype to avoid an error.  */
--/* We use char because int might match the return type of a gcc2
--    builtin and then its argument prototype would still apply.  */
--char TIFFGetVersion();
--
--int main() {
--TIFFGetVersion()
--; return 0; }
--EOF
--if { (eval echo configure:3549: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
--  rm -rf conftest*
--  eval "ac_cv_lib_$ac_lib_var=yes"
--else
--  echo "configure: failed program was:" >&5
--  cat conftest.$ac_ext >&5
--  rm -rf conftest*
--  eval "ac_cv_lib_$ac_lib_var=no"
--fi
--rm -f conftest*
--LIBS="$ac_save_LIBS"
--
--fi
--if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
--  echo "$ac_t""yes" 1>&6
++LIBS="-ltiff34 $GFX_INC_PATH $GFX_LIB_PATH $XLFLAGS $XLIBS $GFXLIBS -lm $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 3538 "configure"
+ #include "confdefs.h"
+@@ -3560,22 +3560,22 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
 -  GFXFLAGS="$GFXFLAGS -DUSE_TIFF" GFXLIBS="-ltiff $GFXLIBS" 
--	ICONEXT="tiff"
--else
--  echo "$ac_t""no" 1>&6
--fi
--
--
--    if ! test "$ICONEXT" = "tiff"; then
- 	echo $ac_n "checking for TIFFGetVersion in -ltiff34""... $ac_c" 1>&6
- echo "configure:3573: checking for TIFFGetVersion in -ltiff34" >&5
- ac_lib_var=`echo tiff34'_'TIFFGetVersion | sed 'y%./+-%__p_%'`
-@@ -3609,7 +3566,6 @@
++  GFXFLAGS="$GFXFLAGS -DUSE_TIFF" GFXLIBS="-ltiff34 $GFXLIBS"
+ 	ICONEXT="tiff"
+ else
    echo "$ac_t""no" 1>&6
  fi
  
--    fi
++
+     if test ! "$ICONEXT" = "tiff"; then
+-    	if test "$zlib" = "yes"; then
+-    	    echo $ac_n "checking for TIFFGetVersion in -ltiff""... $ac_c" 1>&6
++	echo $ac_n "checking for TIFFGetVersion in -ltiff""... $ac_c" 1>&6
+ echo "configure:3573: checking for TIFFGetVersion in -ltiff" >&5
+ ac_lib_var=`echo tiff'_'TIFFGetVersion | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-ltiff $GFX_INC_PATH $GFX_LIB_PATH $XLFLAGS $XLIBS $GFXLIBS -lz -lm $LIBS"
++LIBS="-ltiff $GFX_INC_PATH $GFX_LIB_PATH $XLFLAGS $XLIBS $GFXLIBS -lm $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 3581 "configure"
+ #include "confdefs.h"
+@@ -3603,26 +3603,25 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  GFXFLAGS="$GFXFLAGS -DUSE_TIFF" GFXLIBS="-ltiff -lz $GFXLIBS" 
++  GFXFLAGS="$GFXFLAGS -DUSE_TIFF" GFXLIBS="-ltiff $GFXLIBS" 
+ 		ICONEXT="tiff"
+ else
+   echo "$ac_t""no" 1>&6
  fi
  
+-	fi
+     fi
+-    
+     if test ! "$ICONEXT" = "tiff"; then
+-	echo $ac_n "checking for TIFFGetVersion in -ltiff34""... $ac_c" 1>&6
+-echo "configure:3618: checking for TIFFGetVersion in -ltiff34" >&5
+-ac_lib_var=`echo tiff34'_'TIFFGetVersion | sed 'y%./+-%__p_%'`
++    	if test "$zlib" = "yes"; then
++    	    echo $ac_n "checking for TIFFGetVersion in -ltiff""... $ac_c" 1>&6
++echo "configure:3617: checking for TIFFGetVersion in -ltiff" >&5
++ac_lib_var=`echo tiff'_'TIFFGetVersion | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-ltiff34 $GFX_INC_PATH $GFX_LIB_PATH $XLFLAGS $XLIBS $GFXLIBS -lm $LIBS"
++LIBS="-ltiff $GFX_INC_PATH $GFX_LIB_PATH $XLFLAGS $XLIBS $GFXLIBS -lz -lm $LIBS"
+ cat > conftest.$ac_ext <<EOF
+-#line 3626 "configure"
++#line 3625 "configure"
+ #include "confdefs.h"
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+@@ -3633,7 +3632,7 @@
+ TIFFGetVersion()
+ ; return 0; }
+ EOF
+-if { (eval echo configure:3637: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
++if { (eval echo configure:3636: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
+   rm -rf conftest*
+   eval "ac_cv_lib_$ac_lib_var=yes"
+ else
+@@ -3648,12 +3647,13 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  GFXFLAGS="$GFXFLAGS -DUSE_TIFF" GFXLIBS="-ltiff34 $GFXLIBS"
++  GFXFLAGS="$GFXFLAGS -DUSE_TIFF" GFXLIBS="-ltiff -lz $GFXLIBS" 
+ 		ICONEXT="tiff"
+ else
+   echo "$ac_t""no" 1>&6
+ fi
  
-@@ -3778,7 +3734,7 @@
++	fi
+     fi
+ fi
+ 
+@@ -3823,7 +3823,7 @@
  
  
  
