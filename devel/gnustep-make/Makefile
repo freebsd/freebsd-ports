@@ -17,15 +17,8 @@ MASTER_SITE_SUBDIR=	core
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep makefile package
 
-USE_GCC=	3.2
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 300000
-BROKEN=		"Sorry, this port does not work on FreeBSD-2.2.x"
-.endif
-
 PREFIX=		${LOCALBASE}/GNUstep
+NO_MTREE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	INSTALL_PROGRAM="${INSTALL} -c" INSTALL_DATA="${INSTALL} -c" \
 		CFLAGS="${CFLAGS} -D_THREAD_SAFE"
@@ -33,14 +26,10 @@ CONFIGURE_TARGET=
 USE_GMAKE=	yes
 MAKEFILE=
 MAKE_FLAGS=	OPTFLAG="${CFLAGS}"
-NO_MTREE=	yes
 
-.if ${MACHINE_ARCH} == "i386"
-GNU_ARCH=	ix86
-.else
-GNU_ARCH=	${MACHINE_ARCH}
-.endif
-PLIST_SUB+=	GNU_ARCH=${GNU_ARCH} OPSYS=${OPSYS:L} VERSION=${PORTVERSION}
+.include <bsd.port.pre.mk>
+
+.include "${PORTSDIR}/devel/gnustep/bsd.gnustep.mk"
 
 post-configure:
 	${MV} ${WRKSRC}/config.make ${WRKSRC}/config.make.sed
