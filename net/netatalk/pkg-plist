@@ -10,6 +10,7 @@ bin/apple_rm
 bin/asip-status.pl
 bin/cleanappledouble.pl
 bin/cnid2_create
+bin/cnid_index
 bin/cnid_maint
 bin/getzones
 bin/macusers
@@ -34,7 +35,6 @@ bin/nbplkup
 bin/nbprgstr
 bin/nbpunrgstr
 bin/netatalk-config
-bin/netatalkshorternamelinks.pl
 bin/pap
 bin/papstatus
 bin/psorder
@@ -85,6 +85,7 @@ include/atalk/rtmp.h
 include/atalk/server_child.h
 include/atalk/tdb.h
 include/atalk/uam.h
+include/atalk/unicode.h
 include/atalk/util.h
 include/atalk/zip.h
 include/netatalk/aarp.c
