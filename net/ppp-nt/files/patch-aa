@@ -1,0 +1,11 @@
+--- Makefile.orig	Mon Aug 10 06:32:24 1998
++++ Makefile	Mon Aug 10 06:34:07 1998
+@@ -10,6 +10,8 @@
+ LDADD+= -lmd -lcrypt -lutil -lz
+ DPADD+= ${LIBMD} ${LIBCRYPT} ${LIBUTIL} ${LIBZ}
+ MAN8=	ppp.8
++BINDIR=@PREFIX@/sbin
++MANDIR=@PREFIX@/man/man
+ BINMODE=4554
+ BINOWN=	root
+ BINGRP=	network
