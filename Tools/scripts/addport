@@ -32,7 +32,9 @@ my $tmpdir;
 my $pwd;
 my $repo;
 my $ssh;
-$ENV{CVS_RSH} = "ssh";
+if( !defined $ENV{"CVS_RSH"} ) {
+	$ENV{CVS_RSH} = "ssh";
+}
 my $make = "make";
 my $portlint = "portlint -N -a -c";
 my $perl = "perl";
@@ -45,7 +47,7 @@ my $category;
 # now check to make sure this isn't running on freefall
 chomp(my $myhost = lc(`hostname`));
 if ($myhost ne lc($h)) {
-	$ssh = "ssh $u\@$h";
+	$ssh = "$ENV{CVS_RSH} $u\@$h";
 	$repo = "$u\@$h:/home/ncvs";
 } else {
 	$ssh = "";
