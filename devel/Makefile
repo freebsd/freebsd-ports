@@ -172,6 +172,7 @@
     SUBDIR += kelp
     SUBDIR += kimwitu
     SUBDIR += kimwitu++
+    SUBDIR += korelib
     SUBDIR += kpp
     SUBDIR += ktranslator
     SUBDIR += lclint
