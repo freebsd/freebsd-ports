@@ -1,0 +1,42 @@
+--- sql-mysql.h	Mon Sep 14 06:51:37 1998
++++ sql-mysql.h	Wed Nov 10 17:40:15 2004
+@@ -31,4 +31,4 @@
+ 	Sql_row *fetchrow(int resHandle=0);
+ 
+-	char    *getErrorMsg();
++	const char    *getErrorMsg();
+ };
+--- sql-interface.h	Mon Sep 14 06:52:41 1998
++++ sql-interface.h	Wed Nov 10 17:43:15 2004
+@@ -54,5 +54,5 @@
+ 
+ 	// Get the error message, if there was one, for the last message
+-	virtual char *getErrorMsg()        { return NULL; }
++	virtual const char *getErrorMsg()        { return NULL; }
+ 
+ 	// Virtual destructor
+--- sql-manager.h	Wed Jun  9 22:47:25 1999
++++ sql-manager.h	Wed Nov 10 17:55:13 2004
+@@ -13,5 +13,5 @@
+ 
+   	// The last error message
+-	char *errmsg;
++	const char *errmsg;
+ 
+  public:
+@@ -26,5 +26,5 @@
+ 
+ 	// Get the error message, if there was one, for the last message
+-	char *getErrorMsg();
++	const char *getErrorMsg();
+ 
+ };
+--- sql-manager.cc	Wed Jun  9 22:50:23 1999
++++ sql-manager.cc	Wed Nov 10 18:07:41 2004
+@@ -28,5 +28,5 @@
+ 
+ // ---------------------------------------------------------
+-char *
++const char *
+ Manager_sql::getErrorMsg() {
+ 	return errmsg;
