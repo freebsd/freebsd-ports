@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.mpg123.de/mpg123/ \
 		http://ftp.tu-clausthal.de/pub/unix/audio/mpg123/
 
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
-PATCHFILES=	mpg123-059r-v6-20000111.diff.gz
+PATCHFILES=	mpg123-059r-v6-20000217.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	jkoshy@freebsd.org
