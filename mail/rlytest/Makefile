@@ -7,22 +7,30 @@
 
 PORTNAME=	rlytest
 PORTVERSION=	1.20
+PORTREVISION=   1
 CATEGORIES=	mail security
 MASTER_SITES=	http://www.unicom.com/sw/rlytest/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=
+EXTRACT_ONLY=   # defined
 
 MAINTAINER=	paul@it.ca
 
 USE_PERL5=	yes
-EXTRACT_ONLY=	# defined
-NO_BUILD=
+
+NO_WRKSUBDIR=   yes
+
+MAN1=           rlytest.1
 
 pre-patch:
-	perl -pe 's,^#!/usr/local/bin/perl$$,#!/usr/bin/perl,' < ${_DISTDIR}${DISTFILES} > ${WRKDIR}/rlytest
+	perl -pe 's,^#!/usr/local/bin/perl$$,#!/usr/bin/perl,' < ${_DISTDIR}${DISTFILES} > ${WRKSRC}/rlytest
+
+do-build:
+	pod2man ${WRKSRC}/rlytest ${WRKSRC}/rlytest.1
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/rlytest ${PREFIX}/bin/rlytest
+	${INSTALL_SCRIPT} ${WRKSRC}/rlytest ${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/rlytest.1 ${PREFIX}/man/man1/
 
 post-install:
 	${CAT} ${PKGMESSAGE}
