@@ -1,0 +1,7 @@
+--- liw/publibdoc/Makefile.orig	Thu May 23 16:17:39 2002
++++ liw/publibdoc/Makefile	Tue Jan 11 01:02:53 2005
+@@ -4,4 +4,3 @@
+ install: 
+ 	$(INSTALL) -d "$(man3dir)"
+ 	$(INSTALL_MAN) $(srcdir)/publib.3 $(man3dir)/publib.$(man3ext)
+-	gzip -9f $(man3dir)/publib.$(man3ext)

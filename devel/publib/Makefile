@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	publib
-PORTVERSION=	0.32
-PORTREVISION=	1
+PORTVERSION=	0.38
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.debian.org/debian/pool/main/p/publib/
-DISTNAME=	publib_0.32.orig
+DISTNAME=	publib_${PORTVERSION}.orig
 
 MAINTAINER=	never@nevermind.kiev.ua
 COMMENT=	Publib is a library of C functions for various purposes
@@ -27,11 +27,9 @@ GNU_CONFIGURE=	yes
 MAN3=		dynarr.3 \
 		xmalloc.3 \
 		bitarr.3 \
-		cfg.3 \
 		cmp.3 \
 		__set_liberror.3 \
 		errormsg.3 \
-		expr.3 \
 		files.3 \
 		fname.3 \
 		fnpathfind.3 \
