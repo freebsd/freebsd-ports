@@ -7,7 +7,7 @@
 
 PORTNAME=	XFree86
 PORTVERSION=	4.1.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR=	4.1.0
@@ -64,10 +64,10 @@ pre-fetch:
 .elif defined(USA_RESIDENT)
 .if ${USA_RESIDENT} == NO
 pre-fetch:
-#.ifndef WITH_MATROX_GXX_DRIVER
-#	@${ECHO} Define WITH_MATROX_GXX_DRIVER if you want to enable Matrox driver for 
-#	@${ECHO} G200, G400 and G450 graphic adapters
-#.endif
+.ifndef WITH_MATROX_GXX_DRIVER
+	@${ECHO} Define WITH_MATROX_GXX_DRIVER if you want to enable Matrox driver for 
+	@${ECHO} G200, G400, G450 and G550 graphic adapters
+.endif
 MASTER_SITES+=	ftp://psych.psy.uq.oz.au/pub/X11R5/ \
 		ftp://ftp.internat.freebsd.org/pub/FreeBSD/X11-Crypto/ \
 		ftp://ftp3.za.freebsd.org/pub/FreeBSD/X11-Crypto/
@@ -77,10 +77,10 @@ IGNOREFILES=	Wraphelp.c
 pre-fetch:
 	@${ECHO}
 	@${ECHO} Assuming that you have fetched a USA-Legal Wraphelp.c.
-#.ifndef WITH_MATROX_GXX_DRIVER
-#	@${ECHO} Define WITH_MATROX_GXX_DRIVER if you want to enable Matrox driver for 
-#	@${ECHO} G200, G400 and G450 graphic adapters
-#.endif
+.ifndef WITH_MATROX_GXX_DRIVER
+	@${ECHO} Define WITH_MATROX_GXX_DRIVER if you want to enable Matrox driver for 
+	@${ECHO} G200, G400, G450 and G550 graphic adapters
+.endif
 .endif # ${USA_RESIDENT}
 .endif
 
@@ -91,11 +91,17 @@ pre-fetch:
 BROKEN=	"can't be compiled on this system (missing headers)"
 .endif
 
-#.if defined(WITH_MATROX_GXX_DRIVER)
-#MGA_DRIVER_VERSION=	1_2_0beta
-#MASTER_SITES+=	ftp://ftp.matrox.com/pub/mga/archive/linux/2001/beta_${MGA_DRIVER_VERSION:S/beta//}/
-#DISTFILES+=	mga-${MGA_DRIVER_VERSION}.tgz
-#.endif # WITH_MATROX_GXX_DRIVER
+.if defined(WITH_MATROX_GXX_DRIVER)
+MGA_DRIVER_VERSION=	133_143
+MGA_DRIVER_DIR=		1.4.3
+MASTER_SITES+=	ftp://ftp.matrox.com/pub/mga/archive/linux/2001/beta_${MGA_DRIVER_VERSION}/
+DISTFILES+=	mga-${MGA_DRIVER_VERSION}-source.tgz
+
+PLIST_SUB+=	MATROX_GXX=""
+.else
+PLIST_SUB+=	MATROX_GXX="@comment "
+.endif # WITH_MATROX_GXX_DRIVER
+
 
 .if ${OSVERSION} > 500012
 post-patch:
@@ -104,17 +110,22 @@ post-patch:
 	  ${SED} -e 52d -e 54d < ${WRKSRC}/include/Xarch.h.orig > \
 	  ${WRKSRC}/include/Xarch.h; fi
 .endif # ${OSVERSION} > 500012
-#.if defined(WITH_MATROX_GXX_DRIVER)
-#.if !target(post-patch)
-#post-patch:
-#.endif # !target(post-patch)
-#	@${MV} ${WRKSRC}/programs/Xserver/hw/xfree86/drivers/mga \
-#		${WRKSRC}/programs/Xserver/hw/xfree86/drivers/mga.old
-#	@${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/mga-${MGA_DRIVER_VERSION}.tgz \
-#		-C ${WRKSRC}/programs/Xserver/hw/xfree86/drivers
-#	@${CP} ${WRKSRC}/config/cf/xf86site.def ${WRKSRC}/config/cf/host.def
-#	@${ECHO} "#define HaveMatroxHal YES" >> ${WRKSRC}/config/cf/host.def
-#.endif # WITH_MATROX_GXX_DRIVER
+.if defined(WITH_MATROX_GXX_DRIVER)
+.if !target(post-patch)
+post-patch:
+.endif # !target(post-patch)
+	@${MV} ${WRKSRC}/programs/Xserver/hw/xfree86/drivers/mga \
+		${WRKSRC}/programs/Xserver/hw/xfree86/drivers/mga.old
+	@${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/mga-${MGA_DRIVER_VERSION}-source.tgz \
+		-C ${WRKDIR}
+	@${MV} ${WRKDIR}/mgasource/mga-${MGA_DRIVER_DIR}/mga \
+		${WRKSRC}/programs/Xserver/hw/xfree86/drivers
+	@${CP} ${WRKSRC}/config/cf/xf86site.def ${WRKSRC}/config/cf/host.def
+	@${ECHO} "#define HaveMatroxHal YES" >> ${WRKSRC}/config/cf/host.def
+	@${PERL} -pi.orig -ne 's!(#define PCI_CHIP_MGAG400\s+0x0525)!\1\n#define PCI_CHIP_MGAG550 0x2527\n!; \
+			s!({PCI_CHIP_MGAG400,\s+"MGA G400 AGP",0},)!\1\n{PCI_CHIP_MGAG550, "MGA G550 AGP", 0},\n!' \
+			${WRKSRC}/programs/Xserver/hw/xfree86/common/xf86PciInfo.h
+.endif # WITH_MATROX_GXX_DRIVER
 
 pre-install:
 	${MKDIR} ${PREFIX}
