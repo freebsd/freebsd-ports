@@ -5108,6 +5108,7 @@ nrpe		ports/net/nrpe
 nrpep		ports/net/nrpep
 ns		ports/net/ns
 nsc		ports/net/nsc
+nsca		ports/net/nsca
 nscache		ports/www/nscache
 nsd		ports/dns/nsd
 nserver		ports/misc/nserver
