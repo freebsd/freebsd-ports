@@ -1,0 +1,10 @@
+SDIC is a lookup mode on Emacsen for an English - Japanese dictionary.
+It is a simple, small, speedy and smart program.
+
+;;; for sdic-mode
+(autoload 'sdic-describe-word "sdic" nil t)
+(global-set-key "\C-cw" 'sdic-describe-word)
+(autoload 'sdic-describe-word-at-point "sdic" nil t)
+(global-set-key "\C-cW" 'sdic-describe-word-at-point)
+
+WWW: http://www-nagao.kuee.kyoto-u.ac.jp/member/tsuchiya/sdic/
