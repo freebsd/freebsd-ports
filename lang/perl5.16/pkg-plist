@@ -457,7 +457,7 @@ lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/hv.h
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/intrpvar.h
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/iperlsys.h
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/keywords.h
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/libperl.a
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/libperl.so
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/malloc_ctl.h
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/mg.h
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/nostdio.h
@@ -477,6 +477,7 @@ lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/perly.h
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/pp.h
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/pp_proto.h
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/proto.h
+lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/reentr.inc
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/reentr.h
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/regcomp.h
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/regexp.h
@@ -818,7 +819,6 @@ lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time/HiRes/HiRes.bs
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time/HiRes/HiRes.so
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/Normalize/Normalize.bs
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/Normalize/Normalize.so
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/Normalize/autosplit.ix
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/XS/APItest/APItest.bs
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/XS/APItest/APItest.so
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/XS/Typemap/Typemap.bs
@@ -853,6 +853,7 @@ lib/perl5/%%PERL_VER%%/pod/perl570delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl571delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl572delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl573delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl581delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl58delta.pod
 lib/perl5/%%PERL_VER%%/pod/perlaix.pod
 lib/perl5/%%PERL_VER%%/pod/perlamiga.pod
@@ -1006,7 +1007,6 @@ lib/perl5/%%PERL_VER%%/unicore/Jamo.txt
 lib/perl5/%%PERL_VER%%/unicore/JamoShort.pl
 lib/perl5/%%PERL_VER%%/unicore/Lbrk.pl
 lib/perl5/%%PERL_VER%%/unicore/LineBreak.txt
-lib/perl5/%%PERL_VER%%/unicore/Makefile
 lib/perl5/%%PERL_VER%%/unicore/Name.pl
 lib/perl5/%%PERL_VER%%/unicore/NamesList.txt
 lib/perl5/%%PERL_VER%%/unicore/NormalizationCorrections.txt

@@ -7,7 +7,6 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VER}
-PORTREVISION=	2
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -20,7 +19,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Practical Extraction and Report Language
 
-PERL_VER=	5.8.1
+PERL_VER=	5.8.2
 PERL_ARCH=	mach
 PERL_VERSION=	${PERL_VER}
 
@@ -33,7 +32,7 @@ CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
 	-Dsitearch=${SITE_PERL}/${PERL_ARCH} \
 	-Dsitelib=${SITE_PERL} -Dscriptdir=${PREFIX}/bin \
 	-Ui_malloc -Ui_iconv -Uinstallusrbinperl \
-	-Dcc="${CC}" \
+	-Dcc="${CC}" -Doptimize="${CFLAGS}" -Duseshrplib \
 	-Dccflags=-DAPPLLIB_EXP=\"${BSDPAN_DEST}\"
 
 .if defined(ENABLE_SUIDPERL)
@@ -107,7 +106,7 @@ MAN1=	a2p.1 c2ph.1 dprofpp.1 enc2xs.1 find2perl.1 h2ph.1 h2xs.1 \
 	perlvmesa.1 perlvms.1 perlvos.1 perlwin32.1 perlxs.1 perlxstut.1 \
 	piconv.1 pl2pm.1 pod2html.1 pod2latex.1 pod2man.1 pod2text.1 \
 	pod2usage.1 podchecker.1 podselect.1 psed.1 pstruct.1 s2p.1 \
-	splain.1 xsubpp.1 cpan.1  perl573delta.1 perl58delta.1 \
+	splain.1 xsubpp.1 cpan.1  perl573delta.1 perl58delta.1 perl581delta.1 \
 	perlartistic.1 perlcheat.1 perlgpl.1 perlmacosx.1 perlos400.1 \
 	perlreref.1
 
