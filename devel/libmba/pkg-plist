@@ -1,7 +1,9 @@
 include/mba/cfg.h
+include/mba/csv.h
 include/mba/domnode.h
 include/mba/hashmap.h
 include/mba/hexdump.h
+include/mba/iterator.h
 include/mba/linkedlist.h
 include/mba/mbs.h
 include/mba/msgno.h
