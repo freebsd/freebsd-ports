@@ -12,7 +12,7 @@ CATEGORIES=	devel tk80
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/guitools/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	andreas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
 
