@@ -19,6 +19,7 @@ PATCHFILES=	${PKGNAMEPREFIX}linux-${MAJ}-${VER}-generated-files.tar.gz
 
 MAINTAINER?=	trevor@FreeBSD.org
 
+BROKEN=		"damage to CVS repository"
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
