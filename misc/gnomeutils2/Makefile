@@ -16,7 +16,7 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	panel-menu.0:${PORTSDIR}/x11/gnomepanel
+LIB_DEPENDS=	panel-applet-2.0:${PORTSDIR}/x11/gnomepanel
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
