@@ -8,7 +8,7 @@
 PORTNAME=	matrix
 PORTVERSION=	1.0
 CATEGORIES=	math devel
-MASTER_SITES=	http://rnoc.urc.ac.ru/~anton/projects/files/
+MASTER_SITES=	http://www.chelcom.ru/~anton/projects/files/
 DISTNAME=	matrix-${PORTVERSION}
 
 MAINTAINER=	anton@chelcom.ru
