@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	intltool
-PORTVERSION=	0.31
+PORTVERSION=	0.31.1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.31
@@ -31,10 +31,6 @@ MAN8=		intltool-extract.8 intltool-merge.8 intltool-prepare.8 \
 		intltool-update.8 intltoolize.8
 
 CONFLICTS=	xml-i18n-tools-*
-
-post-extract:
-	@${CP} ${FILESDIR}/install-sh ${WRKSRC}
-	@${CHMOD} +x ${WRKSRC}/install-sh
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} \
