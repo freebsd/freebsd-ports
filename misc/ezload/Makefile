@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	ezload
-PORTVERSION=	0.3.1
+PORTVERSION=	0.4.0
 CATEGORIES=	misc
-MASTER_SITES=	http://www.etla.net/~n_hibma/usb/
+MASTER_SITES=	http://proj.bpsw.biz/ezload/downloads/
 
 MAINTAINER=	mcampos@bpsw.biz
-COMMENT=	Down-/uploader for AnchorChip's EZ-USB chip
+COMMENT=	Firmware down/uploader for Cypress' EZ-USB chip
 
 MAN1=		ezupload.1 ezdownload.1 aw.1
 MANCOMPRESSED=	yes
@@ -20,8 +20,8 @@ MAKE_ENV=	BINDIR="${PREFIX}/bin" MANDIR="${PREFIX}/man/man" MKDIR="${MKDIR}" INS
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 400012
-IGNORE=		'This port only works on 4.00012'
+.if ${OSVERSION} < 460000
+IGNORE=		'This port only works on FreeBSD 4.6.0+'
 .endif
 
 .include <bsd.port.post.mk>
