@@ -1,0 +1,7 @@
+%%RUBY_SITEARCHLIBDIR%%/MCrypt.so
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/mcrypt/testmcrypt.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/mcrypt
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mcrypt/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mcrypt/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mcrypt/TODO
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mcrypt
