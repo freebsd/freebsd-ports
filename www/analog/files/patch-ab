@@ -1,5 +1,5 @@
-*** analhead.h.orig	Wed Apr  8 17:48:58 1998
---- analhead.h	Wed Apr  8 19:32:48 1998
+*** analhead.h.orig	Thu Apr  9 14:59:28 1998
+--- analhead.h	Fri Apr 10 01:34:18 1998
 ***************
 *** 5,10 ****
 --- 5,13 ----
@@ -31,7 +31,7 @@
      lives. You don't really need these; they are just used in this file to
      build up other filenames. Note how you can stick together names by
 ***************
-*** 29,35 ****
+*** 29,39 ****
   #define DOMAINSFILE ANALOGDIR"domains.tab"
   /* the file where the domain definitions live; see docs/domfile.html */
   
@@ -39,7 +39,11 @@
   /* The name of the default logfile. Can be a list, separated by commas
      (but no spaces), and can include wild cards. */
   
---- 31,37 ----
+! #define IMAGEDIR "images/"
+  /* URL of the directory where the images for the graphical reports live.
+     The URL can be absolute, or relative to the output page: e.g., just the
+     empty string "" for the same directory as the output page. */
+--- 31,41 ----
   #define DOMAINSFILE ANALOGDIR"domains.tab"
   /* the file where the domain definitions live; see docs/domfile.html */
   
@@ -47,6 +51,10 @@
   /* The name of the default logfile. Can be a list, separated by commas
      (but no spaces), and can include wild cards. */
   
+! #define IMAGEDIR "/images/"
+  /* URL of the directory where the images for the graphical reports live.
+     The URL can be absolute, or relative to the output page: e.g., just the
+     empty string "" for the same directory as the output page. */
 ***************
 *** 41,47 ****
   #define LANGDIR ANALOGDIR"lang/"
