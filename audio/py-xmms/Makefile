@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	xmms
-PORTVERSION=	1.07
+PORTVERSION=	2.00
 CATEGORIES=	audio python
-MASTER_SITES=	http://www.via.ecp.fr/~flo/2002/PyXMMS/dist/
+MASTER_SITES=	http://people.via.ecp.fr/~flo/2002/PyXMMS/dist/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyxmms-${PORTVERSION}
 
@@ -20,6 +20,7 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+USE_BZIP2=	yes
 USE_GNOME=	glib12
 XMMS_CONFIG?=	${X11BASE}/bin/xmms-config
 MAKE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}" XMMS_CONFIG="${XMMS_CONFIG}"
