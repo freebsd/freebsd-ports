@@ -23,7 +23,7 @@ NOCLEANDEPENDS= yes
 
 USE_X_PREFIX=	yes
 USE_BISON=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOCONF=	yes		# we need this so configure is regenerated
 USE_GNOMENG=	yes
 USE_GNOME=	gdkpixbuf gnomelibs gnomehack gnomeprefix
 USE_GMAKE=	yes
