@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.49 1998/11/24 22:46:14 billf Exp $
+# $Id: Makefile,v 1.50 1998/12/05 05:37:07 flathill Exp $
 #
 
     SUBDIR += LPRng
@@ -26,6 +26,7 @@
     SUBDIR += mkisofs
     SUBDIR += no-login
     SUBDIR += pib
+    SUBDIR += pkg_version
     SUBDIR += rdate
     SUBDIR += rtty
     SUBDIR += setquota
