@@ -6,15 +6,21 @@
 #
 
 PORTNAME=	smalleiffel
-PORTVERSION=	0.77
+PORTVERSION=	0.76.b4
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.loria.fr/pub/loria/genielog/SmallEiffel/
-DISTNAME=	se
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://people.FreeBSD.org/~sada/distfiles/
 
 MAINTAINER=	berend@pobox.com
 
 WRKSRC=		${WRKDIR}/SmallEiffel
+
+# SmallEiffel needs this to find system.se
+MAKE_ENV+=	SmallEiffel=${WRKSRC}/sys/system.se
+ALL_TARGET=
+PLIST_SUB=	PKGNAME=${PKGNAME}
+
+PKGMESSAGE=	${WRKDIR}/MESSAGE
+PKGINSTALL=	${WRKDIR}/INSTALL
 
 # We install in this directory
 SEDIR=		${PREFIX}/${PKGNAME}
@@ -22,13 +28,6 @@ SEDIR=		${PREFIX}/${PKGNAME}
 # We alias a directory to the installation directory
 # so it is possible to easily switch between different builds
 ALIASDIR=	${PREFIX}/SmallEiffel
-
-# SmallEiffel needs this to find system.se
-MAKE_ENV+=	SmallEiffel=${WRKSRC}/sys/system.se
-ALL_TARGET=
-
-PKGMESSAGE=	${WRKDIR}/MESSAGE
-PKGINSTALL=	${WRKDIR}/INSTALL
 
 # Make sure we can set the symbolic link SmallEiffel
 # to the actual release directory.
@@ -60,3 +59,7 @@ do-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
+
+# below is the location of original distributions.
+#MASTER_SITES=	ftp://ftp.loria.fr/pub/loria/genielog/SmallEiffel/se.beta_test
+#DISTNAME=	se
