@@ -1,9 +1,9 @@
 bin/gnapster
-%%DATADIR%%/gnapster/themes/cyblue.theme
-%%DATADIR%%/gnapster/themes/cypress.theme
-%%DATADIR%%/gnapster/themes/default.theme
-%%DATADIR%%/gnapster/themes/faded.theme
-%%DATADIR%%/gnapster/pixmaps/gnapster.png
+share/gnapster/themes/cyblue.theme
+share/gnapster/themes/cypress.theme
+share/gnapster/themes/default.theme
+share/gnapster/themes/faded.theme
+share/gnapster/pixmaps/gnapster.png
 share/locale/ca/LC_MESSAGES/gnapster.mo
 share/locale/da/LC_MESSAGES/gnapster.mo
 share/locale/de/LC_MESSAGES/gnapster.mo
@@ -19,6 +19,6 @@ share/locale/pt/LC_MESSAGES/gnapster.mo
 share/locale/ru/LC_MESSAGES/gnapster.mo
 share/locale/sv/LC_MESSAGES/gnapster.mo
 share/locale/tr/LC_MESSAGES/gnapster.mo
-@dirrm %%DATADIR%%/gnapster/themes
-@dirrm %%DATADIR%%/gnapster/pixmaps
-@dirrm %%DATADIR%%/gnapster
+@dirrm share/gnapster/themes
+@dirrm share/gnapster/pixmaps
+@dirrm share/gnapster
