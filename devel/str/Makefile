@@ -8,7 +8,8 @@
 PORTNAME=	str
 PORTVERSION=	0.9.9
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/str/
+MASTER_SITES=	${MASTER_SITE_OSSP}
+MASTER_SITE_SUBDIR=	lib/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic String Library

@@ -8,9 +8,8 @@
 PORTNAME=	eperl
 PORTVERSION=	2.2.14
 CATEGORIES=	lang www perl5
-MASTER_SITES=	ftp://ftp.ossp.org/pkg/tool/eperl/ \
-		${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=Parse
+MASTER_SITES=	${MASTER_SITE_OSSP}
+MASTER_SITE_SUBDIR=	tool/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Embedded Perl 5 Language
