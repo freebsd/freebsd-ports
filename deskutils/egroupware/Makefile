@@ -13,12 +13,14 @@ DISTNAME=	phpGroupWare-${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
 
-RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
+RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4 \
+		${LOCALBASE}/www/data/phpgroupware/projects/index.php:${PORTSDIR}/deskutils/phpgw_projects \
+		${LOCALBASE}/www/data/phpgroupware/inv/index.php:${PORTSDIR}/deskutils/phpgw_inventory
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/phpgroupware
 
 do-install:
-		@${CP} -r ${WRKDIR}/phpgroupware ${PREFIX}/www/data/
+		@${CP} -r ${WRKSRC} ${PREFIX}/www/data/
 
 .include <bsd.port.mk>
