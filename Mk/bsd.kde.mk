@@ -13,12 +13,12 @@ KDE_MAINTAINER=		will@FreeBSD.org
 # XXX: Write HAVE_ definitions sometime.
 
 # USE_QT_VER		- Says that the port uses the Qt toolkit.  Possible values:
-#					  1, 2, or 3; each specify the major version of Qt to use.
+#					  1 or 3; each specify the major version of Qt to use.
 # USE_KDELIBS_VER	- Says that the port uses KDE libraries.  Possible values:
-#					  1, 2, or 3; each specify the major version of KDE to use.
+#					  3 specifies the major version of KDE to use.
 #					  This implies USE_QT of the appropriate version.
 # USE_KDEBASE_VER	- Says that the port uses the KDE base.  Possible values:
-#					  1, 2, or 3; each specify the major version of KDE to use.
+#					  3 specifies the major version of KDE to use.
 #					  This implies USE_KDELIBS of the appropriate version.
 
 #
@@ -26,13 +26,6 @@ KDE_MAINTAINER=		will@FreeBSD.org
 # DO NOT USE USE_QT_VER=1 UNLESS YOU WILL NOT BE NEEDING ANY ASSISTANCE
 # WHATSOEVER FROM THE MAINTAINER OF THIS FILE!
 #
-
-# Compat shims.
-.if defined(USE_QT)
-USE_QT_VER=		2
-pre-everything::
-	@${ECHO} ">>> Warning:  this port needs to be updated as it uses the old-style USE_QT variable!"
-.endif # defined(USE_QT)
 
 # tagged MASTER_SITE_KDE_kde
 kmaster=				${MASTER_SITE_KDE:S@%/@%/:kde@g}
@@ -83,15 +76,12 @@ USE_QT_VER=		3
 PREFIX=			${KDE_PREFIX}
 .else
 BROKEN=			"Unknown value in USE_KDELIBS_VER"
-# kdelibs 2.x common stuff -- DEFAULT
-USE_QT_VER=		2
 .endif # ${USE_KDELIBS_VER} == 3
 .endif # defined(USE_KDELIBS_VER)
 
 # End of USE_KDELIBS_VER section
 
 # USE_QT_VER section
-.if defined(USE_QT_VER)
 # Qt 1.x common stuff
 .if ${USE_QT_VER} == 1
 LIB_DEPENDS+=  qt1.3:${PORTSDIR}/x11-toolkits/qt145
@@ -149,28 +139,8 @@ CONFIGURE_ARGS+=--with-qt-includes=${QT_PREFIX}/include \
 				--with-extra-includes=${LOCALBASE}/include
 CONFIGURE_ENV+=	MOC="${MOC}" CPPFLAGS="${CPPFLAGS} ${QTCPPFLAGS}" LIBS="${QTCFGLIBS}"
 .endif # !defined(QT_NONSTANDARD)
-
-.else # QT2
-
-QTCPPFLAGS?=
-QTCGFLIBS?=
-
-# Qt 2.x common stuff -- DEFAULT
-LIB_DEPENDS+=	qt2.4:${PORTSDIR}/x11-toolkits/qt23
-QTNAME=			qt2
-MOC?=			${X11BASE}/bin/moc2
-QTCPPFLAGS+=	-D_GETOPT_H -I${LOCALBASE}/include -I${PREFIX}/include \
-				-I${X11BASE}/include/qt2
-QTCFGLIBS+=		-Wl,-export-dynamic -L${LOCALBASE}/lib -L${X11BASE}/lib -ljpeg -lgcc -lstdc++
-.if !defined(QT_NONSTANDARD)
-CONFIGURE_ARGS+=--with-qt-includes=${X11BASE}/include/qt2 \
-				--with-qt-libraries=${X11BASE}/lib \
-				--with-extra-libs=${LOCALBASE}/lib
-CONFIGURE_ENV+=	MOC="${MOC}" LIBQT="-l${QTNAME}" \
-				CPPFLAGS="${CPPFLAGS} ${QTCPPFLAGS}" LIBS="${QTCFGLIBS}"
-.endif # !defined(QT_NONSTANDARD)
-
-.endif # USE_QT_VER == ???
+.else
+BROKEN="Unsupported value of USE_QT_VER"
 .endif # defined(USE_QT_VER)
 
 # End of USE_QT_VER section

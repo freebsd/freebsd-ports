@@ -155,8 +155,6 @@
     SUBDIR += py-xlib
     SUBDIR += qscintilla
     SUBDIR += qt145
-    SUBDIR += qt2-static
-    SUBDIR += qt23
     SUBDIR += qt33
     SUBDIR += qtpixmap
     SUBDIR += qwt
