@@ -1,0 +1,11 @@
+Cxmon is an interactive command-driven file manipulation tool that is 
+inspired by the "Amiga Monitor".
+
+Cxmon has commands and features similar to a machine code 
+monitor/debugger, built-in PowerPC, 680x0, 80x86, 6502 and Z80
+disassemblers and special support for disassembling MacOS code.
+
+You can also simply use it as an interactive workbench for manipulating 
+files, or even as a hex calculator.
+
+WWW: http://www.uni-mainz.de/~bauec002/CXMain.html

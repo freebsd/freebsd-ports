@@ -157,6 +157,7 @@
     SUBDIR += cvsweb
     SUBDIR += cvswrap
     SUBDIR += cweb
+    SUBDIR += cxmon
     SUBDIR += cxref
     SUBDIR += darcs
     SUBDIR += darts
