@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	emboss
-PORTVERSION=	1.7.0
-PORTREVISION=	1
+PORTVERSION=	1.8.0
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.uk.embnet.org/pub/EMBOSS/ \
 		ftp://ftp.no.embnet.org/pub/EMBOSS/
-DISTFILES=	${PORTNAME_U}-${PORTVERSION}${EXTRACT_SUFX}
+DISTFILES=	${PORTNAME:U}-${PORTVERSION}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	${PORTNAME_U}-${PORTVERSION}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${PORTNAME:U}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	johann@egenetics.com
 
@@ -24,9 +23,7 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_XLIB=	yes
 PLIST=		${WRKDIR}/pkg-plist
-
-# Make doesn't know about :U
-PORTNAME_U=	EMBOSS
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
@@ -39,7 +36,7 @@ SCRIPTS_ENV+=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		MKDIR="${MKDIR}" \
 		RM="${RM}"
 
-WRKSRC=		${WRKDIR}/${PORTNAME_U}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME:U}-${PORTVERSION}
 EMBASSY_WRKDIR=	${WRKSRC}/EMBASSY
 PHYLIP_VERSION=	3.573c
 MSE_VERSION=	0.0.4
@@ -109,6 +106,8 @@ post-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/emboss/acd/emboss.default \
 	  ${PREFIX}/etc/emboss.default.sample
 .if !defined(BATCH)
+	@ ${PERL} -pe 's#%%PREFIX%%#${PREFIX}#' \
+	  pkg-message > ${PKGMESSAGE}
 	@ ${CAT} ${PKGMESSAGE}
 .endif
 

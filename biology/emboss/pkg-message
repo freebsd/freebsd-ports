@@ -3,13 +3,12 @@
 The EMBOSS suite has been successfully installed.
 
 In order to use the EMBOSS programs, you will need to set some environment
-variables in your shell startup file.  If EMBOSS was installed to the
-default prefix, then:
+variables in your shell startup file.
 
-- set PLPLOT_LIB to:     "/usr/local/share/EMBOSS"
-- set EMBOSS_ACDROOT to: "/usr/local/share/EMBOSS/acd"
+- set PLPLOT_LIB to:     "%%PREFIX%%/share/EMBOSS"
+- set EMBOSS_ACDROOT to: "%%PREFIX%%/share/EMBOSS/acd"
 
-NB:  A sample configuration file has been installed to /usr/local/etc as
+NB:  A sample configuration file has been installed to %%PREFIX%%/etc as
 emboss.default.sample.  This must be renamed to emboss.default and edited
 to suit your site and its requirements.
 
