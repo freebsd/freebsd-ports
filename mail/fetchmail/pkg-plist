@@ -16,7 +16,6 @@ share/doc/fetchmail/README
 share/doc/fetchmail/design-notes.html
 share/doc/fetchmail/fetchmail-FAQ.html
 share/doc/fetchmail/fetchmail-features.html
-share/doc/fetchmail/sample.rcfile
 @dirrm share/doc/fetchmail
 @unexec rmdir %D/share/locale/*/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/* 2>/dev/null || true
