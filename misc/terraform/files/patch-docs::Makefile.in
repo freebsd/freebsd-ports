@@ -1,0 +1,11 @@
+--- docs/Makefile.in.orig	Thu Apr 25 01:16:48 2002
++++ docs/Makefile.in	Tue May  6 00:06:13 2003
+@@ -205,7 +205,7 @@
+ install-exec-am:
+ install-exec: install-exec-am
+ 
+-install-data-am: install-dataDATA
++install-data-am:
+ install-data: install-data-am
+ 
+ install-am: all-am
