@@ -4394,6 +4394,7 @@ libltdl		ports/devel/libltdl
 liblug		ports/graphics/liblug
 libmad		ports/audio/libmad
 libmal		ports/palm/libmal
+libmath++	ports/math/libmath++
 libmatroska	ports/multimedia/libmatroska
 libmba		ports/devel/libmba
 libmcal		ports/misc/libmcal
@@ -5110,6 +5111,7 @@ monitord	ports/sysutils/monitord
 monkey		ports/www/monkey
 monkeybubble	ports/games/monkeybubble
 mono		ports/lang/mono
+monopd		ports/games/monopd
 monster-masher	ports/games/monster-masher
 moon-buggy	ports/games/moon-buggy
 moonlander	ports/games/moonlander
