@@ -1,0 +1,22 @@
+
+$FreeBSD$
+
+--- configure.in.orig	Sun Jul 22 19:43:15 2001
++++ configure.in	Tue Aug 28 17:00:19 2001
+@@ -136,13 +136,13 @@
+ AC_SUBST(FLaC__USIZE64)
+ 
+ SAVE_CFLAGS="$CFLAGS"
+-CFLAGS='-I$(top_builddir) -I$(srcdir)/include -I $(top_srcdir)/include -Wall -W'
++CFLAGS='-I$(top_builddir) -I$(srcdir)/include -I $(top_srcdir)/include'
+ if test x$debug = xtrue; then
+ 	CFLAGS="$CFLAGS -g -O0 -DDEBUG"
+ else
+-	CFLAGS="$CFLAGS -O3 -DNDEBUG"
++	CFLAGS="$CFLAGS -DNDEBUG"
+ 	if test x$GCC = xyes; then
+-		CFLAGS="$CFLAGS -fomit-frame-pointer -funroll-loops -finline-functions -Winline -DFLaC__INLINE=__inline__"
++		CFLAGS="$CFLAGS -DFLaC__INLINE=__inline__"
+ 	fi
+ fi
+ CFLAGS="$CFLAGS $SAVE_CFLAGS"
