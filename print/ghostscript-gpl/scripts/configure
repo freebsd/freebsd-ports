@@ -22,7 +22,7 @@ Have fun with this new configuration style !     -andreas \n\n\
   "appledmp" "Apple Dot Matrix Printer / Imagewriter" ON \
   "bj10e"    "Canon BubbleJet BJ10e" ON \
   "bj200"    "Canon BubbleJet BJ200 and BJC-240(b&w)" ON \
-  "bjc600"   "Canon Color BubbleJet BJC-240/600/4000/70+Apple StyleWriter 2x00" ON \
+  "bjc600"   "Canon Color BJC-240/600/4000/70 + Apple StyleWriter 2x00" ON \
   "bjc800"   "Canon Color BubbleJet BJC-240/800" ON \
   "ccr"      "CalComp Raster format" ON \
   "cdeskjet" "HP DeskJet 500C, 1 bit/pixel color" ON \
