@@ -310,6 +310,7 @@
     SUBDIR += tifmerge
     SUBDIR += tkxanim
     SUBDIR += togl
+    SUBDIR += truevision
     SUBDIR += twinlib
     SUBDIR += txtmerge
     SUBDIR += urt
