@@ -1,10 +1,9 @@
-@cd /usr/local
 @owner bin
 @mode 755
-bin/funzip
 bin/unzip
+@exec ln -f %D/%F %B/zipinfo
+bin/funzip
 bin/unzipsfx
-bin/zipinfo
 @mode 644
 man/man1/funzip.1
 man/man1/unzip.1
