@@ -1,0 +1,5 @@
+Steel Bank Common Lisp (SBCL) is a Open Source development system for
+ANSI Common Lisp. It provides an interactive environment including an
+integrated native compiler, interpreter, and debugger.
+
+WWW: http://sbcl.sourceforge.net/

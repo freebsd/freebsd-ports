@@ -181,6 +181,7 @@
     SUBDIR += ruby_r-devel
     SUBDIR += ruby_static
     SUBDIR += ruby_static-devel
+    SUBDIR += sbcl
     SUBDIR += scheme48
     SUBDIR += schemetoc
     SUBDIR += scm
