@@ -6,7 +6,7 @@
 
 PORTNAME=	shared-mime-info
 PORTVERSION=	0.15
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc gnome
 MASTER_SITES=	http://www.marcuscom.com/downloads/ \
 		http://www.freedesktop.org/software/shared-mime-info/
