@@ -26,6 +26,7 @@
     SUBDIR += php_doc
     SUBDIR += staroffice5
     SUBDIR += staroffice52
+    SUBDIR += staroffice70
     SUBDIR += steak
     SUBDIR += unix-connect
     SUBDIR += webalizer2
