@@ -1,0 +1,68 @@
+include/Doc.hh
+include/DocInfo.hh
+include/Error.hh
+include/Position.hh
+include/State.hh
+include/Text.hh
+include/common/FlateStream.hh
+include/common/Rect.hh
+include/common/Resource.hh
+include/core/Array.hh
+include/core/Dictionary.hh
+include/core/File.hh
+include/core/Object.hh
+include/core/ProxyObj.hh
+include/core/Stream.hh
+include/core/Type.hh
+include/font/Descriptor.hh
+include/font/Error.hh
+include/font/Flags.hh
+include/font/Font.hh
+include/font/ProgStream.hh
+include/font/Simple.hh
+include/font/Standard.hh
+include/font/TrueType.hh
+include/font/ftwrap/Error.hh
+include/font/ftwrap/Face.hh
+include/font/ftwrap/FaceBody.hh
+include/font/ftwrap/Glyph.hh
+include/font/ftwrap/Library.hh
+include/font/ftwrap/LibraryBody.hh
+include/font/ftwrap/Types.hh
+include/image/ColourSpace.hh
+include/image/Header.hh
+include/image/Image.hh
+include/image/JpegEncoder.hh
+include/page/Info.hh
+include/page/NodeBase.hh
+include/page/Page.hh
+include/page/ResDict.hh
+include/page/TreeNode.hh
+include/page/XObjInst.hh
+include/text/Error.hh
+include/text/Position.hh
+include/text/State.hh
+include/text/Text.hh
+include/util/Colour.hh
+include/util/Dash.hh
+include/util/Error.hh
+include/util/Flate.hh
+include/util/Image.hh
+include/util/ImgBase.hh
+include/util/JpegImage.hh
+include/util/Matrix2D.hh
+include/util/Node.hh
+include/util/Path.hh
+include/util/State.hh
+include/util/XObject.hh
+@dirrm include/common
+@dirrm include/core
+@dirrm include/font/ftwrap
+@dirrm include/font
+@dirrm include/image
+@dirrm include/page
+@dirrm include/text
+@dirrm include/util
+lib/libpdfdoc.a
+lib/libpdfdoc.so
+lib/libpdfdoc.so.0

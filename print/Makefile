@@ -96,6 +96,7 @@
     SUBDIR += libgnomeprint20
     SUBDIR += libijs
     SUBDIR += libpaper
+    SUBDIR += libpdf++
     SUBDIR += lilypond
     SUBDIR += lilypond-devel
     SUBDIR += lout

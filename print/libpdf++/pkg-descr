@@ -1,0 +1,4 @@
+libpdf++ is a C++ library to generate PDF files. It is for programs like word
+processor to write PDF export filters.
+
+WWW: http://libpdfxx.sourceforge.net/
