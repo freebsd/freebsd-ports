@@ -13,7 +13,7 @@ MASTER_SITES=	http://yindy1.aist-nara.ac.jp/~tetu-s/sofken/software/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	cbc06942@pop06.odn.ne.jp
+MAINTAINER=	hym@cocoa.freemail.ne.jp
 
 USE_IMAKE=	yes
 USE_XPM=	yes
