@@ -37,10 +37,10 @@ CONFLICTS?=	apache+ipv6-1.* apache+ssl-1.* apache-1.* apache-2.* \
 		apache_fp-1.* caudium-devel-1.* caudium10-1.* caudium12-* \
 		ru-apache+mod_ssl-1.* ru-apache-1.* thttpd-2.* w3c-httpd-3.*
 VERSION_APACHE=	1.3.31
-VERSION_MODSSL=	2.8.17
+VERSION_MODSSL=	2.8.18
 VERSION_MODSNMP=	1.3.14.12
 VERSION_MODACCEL=	1.0.31
-VERSION_MODDEFLATE=	1.0.20
+VERSION_MODDEFLATE=	1.0.21
 USE_OPENSSL=	yes
 HAS_CONFIGURE=	yes
 USE_PERL5_BUILD=	yes
