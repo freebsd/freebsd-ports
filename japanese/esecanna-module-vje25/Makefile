@@ -14,7 +14,7 @@ MASTER_SITES=	http://esecanna.netfort.gr.jp/ \
 
 MAINTAINER=	knu@idaemons.org
 
-RUN_DEPENDS=	${PREFIX}/sbin/esecannaserver:${PORTSDIR}/japanese/esecanna
+RUN_DEPENDS=	${LOCALBASE}/sbin/esecannaserver:${PORTSDIR}/japanese/esecanna
 
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
