@@ -1,0 +1,21 @@
+--- gdk-pixbuf/Makefile.in.orig	Sat Jan 22 17:28:47 2000
++++ gdk-pixbuf/Makefile.in	Fri Jan 28 10:36:20 2000
+@@ -147,14 +147,14 @@
+ AM_CPPFLAGS = "-DPIXBUF_LIBDIR=\"$(libexecdir)\""
+ 
+ LDADDS = libgdk_pixbuf.la $(LIBART_LIBS) $(GLIB_LIBS) $(GTK_LIBS)
+-@INSIDE_GNOME_LIBS_TRUE@testpixbuf_LDADD = $(LDADDS) $(LIBART_LIBS) -lgmodule
+-@INSIDE_GNOME_LIBS_FALSE@testpixbuf_LDADD = $(LDADDS) $(LIBART_LIBS) $(GNOME_LIBS) -lgmodule
++@INSIDE_GNOME_LIBS_TRUE@testpixbuf_LDADD = $(LDADDS) $(LIBART_LIBS)
++@INSIDE_GNOME_LIBS_FALSE@testpixbuf_LDADD = $(LDADDS) $(LIBART_LIBS) $(GNOME_LIBS)
+ @INSIDE_GNOME_LIBS_TRUE@testpixbuf_drawable_LDADD = $(LDADDS)
+ @INSIDE_GNOME_LIBS_FALSE@testpixbuf_drawable_LDADD = $(LDADDS) $(GNOME_LIBS)
+ @INSIDE_GNOME_LIBS_TRUE@testpixbuf_scale_LDADD = $(LDADDS)
+ @INSIDE_GNOME_LIBS_FALSE@testpixbuf_scale_LDADD = $(LDADDS) $(GNOME_LIBS)
+-@INSIDE_GNOME_LIBS_TRUE@testanimation_LDADD = $(LDADDS) $(LIBART_LIBS) -lgmodule
+-@INSIDE_GNOME_LIBS_FALSE@testanimation_LDADD = $(LDADDS) $(LIBART_LIBS) $(GNOME_LIBS) -lgmodule
++@INSIDE_GNOME_LIBS_TRUE@testanimation_LDADD = $(LDADDS) $(LIBART_LIBS)
++@INSIDE_GNOME_LIBS_FALSE@testanimation_LDADD = $(LDADDS) $(LIBART_LIBS) $(GNOME_LIBS)
+ 
+ GDK_PIXBUF_LIBS = $(LIBART_LIBS) $(GLIB_LIBS) $(GTK_LIBS)
+ 
