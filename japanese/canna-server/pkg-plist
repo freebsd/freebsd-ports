@@ -178,9 +178,12 @@ man/man3/cannalib.3.gz
 man/man3/uilib.3.gz
 sbin/cannakill
 sbin/cannaserver
+@exec mkdir /var/run/canna
+@exec chown bin.bin /var/run/canna
 @exec chown bin.bin %D/lib/canna/dic/canna
 @exec chmod 775 %D/lib/canna/dic/canna
 @exec chown bin.bin %D/lib/canna/dic
 @exec chmod 775 %D/lib/canna/dic
 @exec chown bin.bin %D/lib/canna/dic/user/user %D/lib/canna/dic/user
 @exec chmod 775 %D/lib/canna/dic/user/user %D/lib/canna/dic/user
+@dirrm /var/run/canna
