@@ -1,0 +1,5 @@
+OpenUPSd is a UPS daemon, pretty specific to those Belkin
+serial-connected UPS's that speak the "regulator pro smart protocol".
+This daemon is monitoring only, at the moment anyway.
+
+WWW: http://frmb.org/openupsd.html
