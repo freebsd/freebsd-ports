@@ -1,0 +1,15 @@
+Ettercap is a network sniffer/interceptor/logger for switched LAN.
+It uses ARP poisoning and the man-in-the-middle technique to sniff all
+the connections between two host.
+
+It's possible to sniff in three modes:
+
+   + IP Based, the packets are filtered on IP source and dest
+   + MAC Based, packets filtered on mac address, useful to sniff
+     connections through gateway
+   + ARP based, uses arp poisoning to sniff in switched lan.
+
+Ettercap also supports character injection and plugins.
+
+- George Reid
+greid@ukug.uk.freebsd.org
