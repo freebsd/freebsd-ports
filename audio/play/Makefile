@@ -3,12 +3,12 @@
 # Date created:		20 May 1998
 # Whom:			Masanori Kiriake <seiken@nbs.co.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/25 21:36:06 steve Exp $
+# $Id: Makefile,v 1.2 1998/08/24 05:57:48 asami Exp $
 #
 
 DISTNAME=	play-1.0
 CATEGORIES=	audio
-MASTER_SITES=	ftp://jaz.jp.FreeBSD.org/pub/incoming/PUT-here/
+MASTER_SITES=	ftp://ports.jp.FreeBSD.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS
 
 MAINTAINER=	seiken@nbs.co.jp
 
