@@ -6,13 +6,17 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	7.9.1
+PORTVERSION=	7.9.2
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		http://download.sourceforge.net/curl/ \
 		ftp://ftp.sunet.se/pub/www/utilities/curl/ \
 		ftp://ftp.fu-berlin.de/pub/unix/network/curl/ \
 		ftp://crydee.sai.msu.ru/zeus/unix/WWW/tools/mirror/
+
+PATCHFILES=	curl-lib-sendf.c.patch
+PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	roam
 
 MAINTAINER=	roam@FreeBSD.org
 
@@ -48,11 +52,10 @@ CONFIGURE_ARGS += --with-krb4=/usr
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 
 # Note: some of these tests seem to intermitently fail on my system.
 # I don't know why they would do that, yet.
 test:	build
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} test)
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test
 
 .include <bsd.port.mk>
