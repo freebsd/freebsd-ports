@@ -39,7 +39,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/pam_smb.conf.example ${PREFIX}/etc/
 	${INSTALL_DATA} ${WRKSRC}/pam_smb.conf.example2 ${PREFIX}/etc/
 	${INSTALL_SCRIPT} ${FILESDIR}/${STARTUP_SCRIPT} ${PREFIX}/etc/rc.d/
-	${PERL} -pi -e s,%%PREFIX%%,${PREFIX}, ${PREFIX}/etc/rc.d/${STARTUP_SCRIPT}
+	${REINPLACE_CMD} -e s,%%PREFIX%%,${PREFIX}, ${PREFIX}/etc/rc.d/${STARTUP_SCRIPT}
 
 post-install:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGMESSAGE}
