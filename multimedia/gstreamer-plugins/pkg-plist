@@ -1,12 +1,8 @@
 bin/gst-launch-ext-%%VERSION%%
 bin/gst-visualise-%%VERSION%%
-etc/gconf/gconf.xml.defaults/schemas/system/gstreamer/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/system/gstreamer/%%VERSION%%/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/system/gstreamer/%%VERSION%%/default/%gconf.xml
-etc/gconf/gconf.xml.defaults/system/gstreamer/%gconf.xml
-etc/gconf/gconf.xml.defaults/system/gstreamer/%%VERSION%%/%gconf.xml
-etc/gconf/gconf.xml.defaults/system/gstreamer/%%VERSION%%/default/%gconf.xml
+@unexec GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gstreamer-%%VERSION%%.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gstreamer-%%VERSION%%.schemas
+@exec GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gstreamer-%%VERSION%%.schemas > /dev/null || /usr/bin/true
 include/gstreamer-%%VERSION%%/gst/audio/gstaudiofilter.h
 include/gstreamer-%%VERSION%%/gst/audio/audioclock.h
 include/gstreamer-%%VERSION%%/gst/audio/audio.h
@@ -19,6 +15,7 @@ include/gstreamer-%%VERSION%%/gst/idct/idct.h
 include/gstreamer-%%VERSION%%/gst/media-info/media-info.h
 include/gstreamer-%%VERSION%%/gst/mixer/mixer-enumtypes.h
 include/gstreamer-%%VERSION%%/gst/mixer/mixer.h
+include/gstreamer-%%VERSION%%/gst/mixer/mixeroptions.h
 include/gstreamer-%%VERSION%%/gst/mixer/mixertrack.h
 include/gstreamer-%%VERSION%%/gst/navigation/navigation.h
 include/gstreamer-%%VERSION%%/gst/play/play-enumtypes.h
@@ -42,10 +39,12 @@ include/gstreamer-%%VERSION%%/gst/xwindowlistener/xwindowlistener.h
 lib/gstreamer-%%VERSION%%/libgstac3parse.so
 lib/gstreamer-%%VERSION%%/libgstadder.so
 lib/gstreamer-%%VERSION%%/libgstalaw.so
+lib/gstreamer-%%VERSION%%/libgstalpha.so
 %%ARTS%%lib/gstreamer-%%VERSION%%/libgstartsdsink.so
 lib/gstreamer-%%VERSION%%/libgstasf.so
 lib/gstreamer-%%VERSION%%/libgstaudioconvert.so
 lib/gstreamer-%%VERSION%%/libgstaudiofilter.so
+lib/gstreamer-%%VERSION%%/libgstaudiorate.so
 lib/gstreamer-%%VERSION%%/libgstaudio.so
 %%LIBAUDIOFILE%%lib/gstreamer-%%VERSION%%/libgstaudiofile.so
 lib/gstreamer-%%VERSION%%/libgstaudioscale.so
@@ -60,6 +59,7 @@ lib/gstreamer-%%VERSION%%/libgstchart.so
 lib/gstreamer-%%VERSION%%/libgstcutter.so
 lib/gstreamer-%%VERSION%%/libgstdebug.so
 lib/gstreamer-%%VERSION%%/libgstdeinterlace.so
+%%DTS%%lib/gstreamer-%%VERSION%%/libgstdtsdec.so
 %%LIBDV%%lib/gstreamer-%%VERSION%%/libgstdvdec.so
 %%LIBDVDNAV%%lib/gstreamer-%%VERSION%%/libgstdvdnavsrc.so
 %%LIBDVDREAD%%lib/gstreamer-%%VERSION%%/libgstdvdreadsrc.so
@@ -93,7 +93,6 @@ lib/gstreamer-%%VERSION%%/libgstmatroska.so
 lib/gstreamer-%%VERSION%%/libgstmedian.so
 %%LIBMIKMOD%%lib/gstreamer-%%VERSION%%/libgstmikmod.so
 lib/gstreamer-%%VERSION%%/libgstmixmatrix.so
-lib/gstreamer-%%VERSION%%/libgstmodplug.a
 lib/gstreamer-%%VERSION%%/libgstmodplug.so
 lib/gstreamer-%%VERSION%%/libgstmonoscope.so
 lib/gstreamer-%%VERSION%%/libgstmp1videoparse.so
@@ -104,6 +103,7 @@ lib/gstreamer-%%VERSION%%/libgstmpegaudio.so
 lib/gstreamer-%%VERSION%%/libgstmpegaudioparse.so
 lib/gstreamer-%%VERSION%%/libgstmpegstream.so
 lib/gstreamer-%%VERSION%%/libgstmulaw.so
+lib/gstreamer-%%VERSION%%/libgstmultipart.so
 %%NAS%%lib/gstreamer-%%VERSION%%/libgstnassink.so
 lib/gstreamer-%%VERSION%%/libgstnavigationtest.so
 %%OGG%%lib/gstreamer-%%VERSION%%/libgstogg.so
@@ -147,10 +147,13 @@ lib/gstreamer-%%VERSION%%/libgstudp.so
 lib/gstreamer-%%VERSION%%/libgstvbidec.so
 lib/gstreamer-%%VERSION%%/libgstvideo.so
 lib/gstreamer-%%VERSION%%/libgstvideobalance.so
+lib/gstreamer-%%VERSION%%/libgstvideobox.so
 lib/gstreamer-%%VERSION%%/libgstvideocrop.so
 lib/gstreamer-%%VERSION%%/libgstvideodrop.so
 lib/gstreamer-%%VERSION%%/libgstvideofilter.so
 lib/gstreamer-%%VERSION%%/libgstvideoflip.so
+lib/gstreamer-%%VERSION%%/libgstvideomixer.so
+lib/gstreamer-%%VERSION%%/libgstvideorate.so
 lib/gstreamer-%%VERSION%%/libgstvideoscale.so
 lib/gstreamer-%%VERSION%%/libgstvideotestsrc.so
 lib/gstreamer-%%VERSION%%/libgstvolenv.so
@@ -184,9 +187,11 @@ libdata/pkgconfig/gstreamer-play-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-plugins-%%VERSION%%.pc
 share/locale/af/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/az/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
+share/locale/en_GB/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/nl/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/sr/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/sv/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
+share/locale/uk/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 @unexec rmdir %D/lib/gstreamer-%%VERSION%% 2>/dev/null || true
 @dirrm include/gstreamer-%%VERSION%%/gst/xwindowlistener
 @dirrm include/gstreamer-%%VERSION%%/gst/xoverlay
@@ -204,12 +209,6 @@ share/locale/sv/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 @dirrm include/gstreamer-%%VERSION%%/gst/floatcast
 @dirrm include/gstreamer-%%VERSION%%/gst/colorbalance
 @dirrm include/gstreamer-%%VERSION%%/gst/audio
-@dirrm etc/gconf/gconf.xml.defaults/system/gstreamer/%%VERSION%%/default
-@dirrm etc/gconf/gconf.xml.defaults/system/gstreamer/%%VERSION%%
-@dirrm etc/gconf/gconf.xml.defaults/system/gstreamer
-@dirrm etc/gconf/gconf.xml.defaults/schemas/system/gstreamer/%%VERSION%%/default
-@dirrm etc/gconf/gconf.xml.defaults/schemas/system/gstreamer/%%VERSION%%
-@dirrm etc/gconf/gconf.xml.defaults/schemas/system/gstreamer
 @unexec rmdir %D/include/gstreamer-%%VERSION%%/gst 2>/dev/null || true
 @unexec rmdir %D/include/gstreamer-%%VERSION%% 2>/dev/null || true
 @exec %%X11BASE%%/bin/gst-register-%%VERSION%% 2>/dev/null || true
