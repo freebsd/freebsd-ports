@@ -4,9 +4,10 @@
 # $FreeBSD$
 
 PORTNAME=	netmask
-PORTVERSION=	2.3.7
+PORTVERSION=	2.4
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_DEBIAN}
+MASTER_SITES=	http://trap.mtview.ca.us/~talby/ \
+		${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/n/netmask/
 DISTNAME=	netmask_${PORTVERSION}
 
