@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pike72
-PORTVERSION=	7.2.380
+PORTVERSION=	7.2.440
 PORTREVISION=	0
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.oav.net/pkg_freebsd/distfiles/ \
@@ -20,7 +20,6 @@ DISTNAME=	pike-${PORTVERSION}
 
 MAINTAINER=	kiwi@oav.net
 
-BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison/
 .if (${MACHINE} == "i386")
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm/
 .endif
@@ -38,6 +37,7 @@ WANT_GTK=	yes
 WANT_GNOME=	yes
 #USE_AUTOCONF_VER=213
 #USE_AUTOMAKE=	yes
+USE_BISON=	yes
 
 GNU_CONFIGURE=  yes
 
@@ -66,6 +66,7 @@ CONFIGURE_ARGS+= --without-debug \
 		 --without-ssleay
 #		 --with-gdbm=${PREFIX} \
 #		 --without-relocatable-dumped-modules \
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
