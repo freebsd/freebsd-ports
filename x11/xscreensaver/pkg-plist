@@ -25,6 +25,7 @@ bin/discrete
 bin/distort
 bin/drift
 bin/epicycle
+bin/extrusion
 bin/fadeplot
 bin/flag
 bin/flame
@@ -89,6 +90,7 @@ bin/sierpinski3d
 bin/slidescreen
 bin/slip
 bin/sonar
+bin/speedmine
 bin/sphere
 bin/spiral
 bin/spotlight
@@ -109,6 +111,7 @@ bin/vines
 bin/wander
 bin/webcollage
 bin/whirlwindwarp
+bin/whirlygig
 bin/worm
 bin/xflame
 bin/xjack
