@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A KDE application for submitting updates to livejournal.com
 
+BROKEN=		"Does not compile"
+
 USE_KDELIBS_VER=	3
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
