@@ -1,0 +1,6 @@
+Ruby/GD is an extension library to use Thomas Boutell's gd library
+(http://www.boutell.com/gd/) from Ruby.
+
+Author: Matsumoto Yukihiro <matz@ruby-lang.org> (original author)
+	Ryuichi Tamura <tam@kais.kyoto-u.ac.jp> (current maintainer)
+WWW:	http://kirara.prec.kyoto-u.ac.jp/~tam/GD/index.en.html
