@@ -1992,6 +1992,8 @@ share/doc/gtkmm-2.0/docs/tutorial/figures/dialogs_fontselectiondialog.png
 share/doc/gtkmm-2.0/docs/tutorial/figures/dialogs_messagedialog.png
 share/doc/gtkmm-2.0/docs/tutorial/figures/dialogs_simple.png
 share/doc/gtkmm-2.0/docs/tutorial/figures/drag_and_drop.png
+share/doc/gtkmm-2.0/docs/tutorial/figures/drawingarea_lines.png
+share/doc/gtkmm-2.0/docs/tutorial/figures/drawingarea_text.png
 share/doc/gtkmm-2.0/docs/tutorial/figures/entry.png
 share/doc/gtkmm-2.0/docs/tutorial/figures/eventbox.png
 share/doc/gtkmm-2.0/docs/tutorial/figures/frame.png
@@ -2015,6 +2017,7 @@ share/doc/gtkmm-2.0/docs/tutorial/figures/toolbar.png
 share/doc/gtkmm-2.0/docs/tutorial/figures/treeview_draganddrop.png
 share/doc/gtkmm-2.0/docs/tutorial/figures/treeview_editablecells.png
 share/doc/gtkmm-2.0/docs/tutorial/figures/treeview_list.png
+share/doc/gtkmm-2.0/docs/tutorial/figures/treeview_popup.png
 share/doc/gtkmm-2.0/docs/tutorial/figures/treeview_tree.png
 share/doc/gtkmm-2.0/docs/tutorial/html/apa.html
 share/doc/gtkmm-2.0/docs/tutorial/html/apas02.html
@@ -2065,6 +2068,7 @@ share/doc/gtkmm-2.0/docs/tutorial/html/ch08s03.html
 share/doc/gtkmm-2.0/docs/tutorial/html/ch08s04.html
 share/doc/gtkmm-2.0/docs/tutorial/html/ch08s05.html
 share/doc/gtkmm-2.0/docs/tutorial/html/ch08s06.html
+share/doc/gtkmm-2.0/docs/tutorial/html/ch08s07.html
 share/doc/gtkmm-2.0/docs/tutorial/html/ch09.html
 share/doc/gtkmm-2.0/docs/tutorial/html/ch09s02.html
 share/doc/gtkmm-2.0/docs/tutorial/html/ch09s03.html
@@ -2110,6 +2114,11 @@ share/doc/gtkmm-2.0/docs/tutorial/html/ch21.html
 share/doc/gtkmm-2.0/docs/tutorial/html/ch21s02.html
 share/doc/gtkmm-2.0/docs/tutorial/html/ch22.html
 share/doc/gtkmm-2.0/docs/tutorial/html/index.html
+share/doc/gtkmm-2.0/tests/child_widget/main.cc
+share/doc/gtkmm-2.0/tests/child_widget/testwindow.cc
+share/doc/gtkmm-2.0/tests/child_widget/testwindow.h
+share/doc/gtkmm-2.0/tests/child_widget_managed/main.cc
+%%EXAMPLES%%share/devhelp/books/gtkmm-2.0/gtkmm2.devhelp
 %%EXAMPLES%%share/doc/gtkmm-2.0/examples/arrow/arrow.cc
 %%EXAMPLES%%share/doc/gtkmm-2.0/examples/arrow/direction.cc
 %%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/alignment/examplewindow.cc
@@ -2167,9 +2176,16 @@ share/doc/gtkmm-2.0/docs/tutorial/html/index.html
 %%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/drag_and_drop/dndwindow.cc
 %%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/drag_and_drop/dndwindow.h
 %%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/drag_and_drop/main.cc
-%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/drawingarea/main.cc
-%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/drawingarea/myarea.cc
-%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/drawingarea/myarea.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/drawingarea_lines/customdrawingarea.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/drawingarea_lines/customdrawingarea.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/drawingarea_lines/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/drawingarea_lines/testwindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/drawingarea_lines/testwindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/drawingarea_text/customdrawingarea.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/drawingarea_text/customdrawingarea.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/drawingarea_text/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/drawingarea_text/testwindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/drawingarea_text/testwindow.h
 %%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/entry/examplewindow.cc
 %%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/entry/examplewindow.h
 %%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/entry/main.cc
@@ -2249,6 +2265,11 @@ share/doc/gtkmm-2.0/docs/tutorial/html/index.html
 %%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/treeview/list/examplewindow.cc
 %%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/treeview/list/examplewindow.h
 %%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/treeview/list/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/treeview/popup/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/treeview/popup/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/treeview/popup/main.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/treeview/popup/treeview_withpopup.cc
+%%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/treeview/popup/treeview_withpopup.h
 %%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/treeview/tree/examplewindow.cc
 %%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/treeview/tree/examplewindow.h
 %%EXAMPLES%%share/doc/gtkmm-2.0/examples/book/treeview/tree/main.cc
@@ -2296,6 +2317,7 @@ share/doc/gtkmm-2.0/docs/tutorial/html/index.html
 %%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/cellrenderercustom
 %%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/calendar
 %%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/treeview/tree
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/treeview/popup
 %%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/treeview/list
 %%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/treeview/editable_cells
 %%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/treeview/drag_and_drop
@@ -2322,7 +2344,8 @@ share/doc/gtkmm-2.0/docs/tutorial/html/index.html
 %%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/frame
 %%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/eventbox
 %%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/entry
-%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/drawingarea
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/drawingarea_text
+%%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/drawingarea_lines
 %%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/drag_and_drop
 %%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/dialogs/simple
 %%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book/dialogs/messagedialog
@@ -2346,6 +2369,10 @@ share/doc/gtkmm-2.0/docs/tutorial/html/index.html
 %%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/book
 %%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/arrow
 %%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples
+%%EXAMPLES%%@dirrm share/devhelp/books/gtkmm-2.0
+@dirrm share/doc/gtkmm-2.0/tests/child_widget_managed
+@dirrm share/doc/gtkmm-2.0/tests/child_widget
+@dirrm share/doc/gtkmm-2.0/tests
 @dirrm share/doc/gtkmm-2.0/docs/tutorial/html
 @dirrm share/doc/gtkmm-2.0/docs/tutorial/figures
 @dirrm share/doc/gtkmm-2.0/docs/tutorial
