@@ -1,0 +1,22 @@
+From the README:
+
+  What is GTransferManager
+  ========================
+
+  GTransferManager allows the user to retrieve multiple files from the
+  web. These files can be retrieved in multiple parts and each part
+  retrieved on a separate session that the user is connected to the
+  Internet. This is most useful to users with dialup connections. The
+  program performs this tasks using wget as it's back-end.
+
+  The program now supports CORBA. This makes easy for other programs
+  to use GTransferManager to handle the transfer of files from the
+  Internet.
+
+  The program has also a applet that communicates with program using
+  CORBA. The applet can launch the program, request for a new download
+  or accept drops of URLs from netscape and give this URLs to GTM.
+
+WWW: http://gtm.sourceforge.net/
+
+Jacques Vidrine <nectar@FreeBSD.ORG>
