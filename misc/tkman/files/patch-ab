@@ -1,9 +1,9 @@
---- tkmandesc.tcl.orig	Mon Jul 13 11:44:31 1998
-+++ tkmandesc.tcl	Thu Jul 30 13:43:44 1998
-@@ -221,8 +221,9 @@
+--- tkmandesc.tcl.orig	Wed Mar  1 19:55:54 2000
++++ tkmandesc.tcl	Sat May 20 07:57:33 2000
+@@ -223,8 +223,9 @@
  		set mani(manTitleList) $man(manTitleList)
  
- 		if {![info exists env(MANPATH)] || [string trim $env(MANPATH)]==""} {
+ 		if {![info exists env(MANPATH)] || [string equal [string trim $env(MANPATH)] ""]} {
 -			puts stderr "You must set a MANPATH environment variable,\nwhich is a colon-separated list of directories in which\nto find man pages, for example /usr/man:/usr/share/man.\n(See the help page for an explanation of why\nalternatives to the MANPATH are a bad thing.)"
 -			exit 1
 +#			puts stderr "You must set a MANPATH environment variable,\nwhich is a colon-separated list of directories in which\nto find man pages, for example /usr/man:/usr/share/man.\n(See the help page for an explanation of why\nalternatives to the MANPATH are a bad thing.)"
