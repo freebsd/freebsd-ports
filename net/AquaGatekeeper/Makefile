@@ -50,8 +50,10 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 500000 || ${OSVERSION} < 400000
+.if ${OSVERSION} < 400000
 BROKEN=		"Supported only on 4.x systems"
+.elif ${OSVERSION} >= 500000
+LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
 .endif
 
 .include <bsd.port.post.mk>
