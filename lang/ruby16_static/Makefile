@@ -30,7 +30,7 @@ _RUBY_PORTDIR=	${_PORTSDIR}/${RUBY_PORT}
 LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
 
 .if ${RUBY_VER} < 1.7
-EXT_PORTS+=	lang/ruby16-shim-ruby18
+EXT_PORTS+=	${RUBY_SHIM18_PORT}
 .else
 EXT_PORTS+=	converters/ruby-iconv
 .endif
@@ -99,7 +99,7 @@ do-extract:
 	while read extdir; do \
 		extdir=$${extdir%/extconf.rb}; \
 		case "$p" in \
-		lang/ruby16-shim-ruby18) \
+		${RUBY_SHIM18_PORT) \
 			m=$$(basename $$extdir); \
 			case $$extdir in \
 			*/racc/*) \
