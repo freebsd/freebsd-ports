@@ -1,13 +1,14 @@
 # New ports collection makefile for:	opendx
 # Date created:		27 May 1999
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
+# Updates:              Randall Hopper <rhh@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	opendx
-PORTVERSION=	4.1.3
-PORTREVISION=	1
+PORTVERSION=	4.2.0
+PORTREVISION=	0
 CATEGORIES=	graphics math
 MASTER_SITES=	http://www.research.ibm.com/dx/srcDownload/srcArchive/ \
 	        http://opendx.npaci.edu/source/
@@ -29,7 +30,6 @@ USE_NEWGCC=	yes
 USE_XLIB=	yes
 AUTOMAKE_ARGS=	-a -i
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-magick
 CONFIGURE_ENV=	ARCH="" \
 		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${PREFIX}/include" \
 		CPPFLAGS="-I${PREFIX}/include" \
