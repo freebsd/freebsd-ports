@@ -67,7 +67,7 @@ foreach $tty (@ttys) {
     foreach $port (split) {
 	if ($tty =~ /^\s*$port/) {
 	    print STDERR "replacing line $tty";
-	    $tty = "$port\t\"$prefix/sbin/mgetty\"\tunknown on secure\n";
+	    $tty = "$port\t\"$prefix/sbin/mgetty\"\tunknown on insecure\n";
 	    $replaced{$port} = 1;
 	}
     }
@@ -76,7 +76,7 @@ $_ = $devices;
 foreach $port (split) {
     if (!$replaced{$port}) {
 	print STDERR "adding port $port\n";
-	push (@ttys, "$port\t\"$prefix/sbin/mgetty\"\tunknown on secure\n");
+	push (@ttys, "$port\t\"$prefix/sbin/mgetty\"\tunknown on insecure\n");
     }
 }
 system ("mv -f /etc/ttys /etc/ttys.old");
