@@ -1,0 +1,6 @@
+Masterball is a puzzle similar in nature to the famous Rubik's Cube.
+The original puzzle has 8 sectors on a sphere  (longitudinal cuts),
+with each sector divided into 4 segments (latitudinal cuts).
+
+By building from the source and editing its Imakefile before the
+``build'' phase, you may be able to use Motif or LessTif with this port.
