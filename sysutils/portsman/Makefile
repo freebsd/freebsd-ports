@@ -7,6 +7,7 @@
 
 PORTNAME=	portsman
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.berlios.de/portsman/
 # temporary
@@ -23,7 +24,11 @@ LIB_DEPENDS=	ncurses.5:${PORTSDIR}/devel/ncurses
 
 MAN1=		portsman.1
 MAN5=		portsmanrc.5
-USE_GZIP=	yes
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e "/^pmanrcdir/s|etc$$|etc/portsman|" \
+		${WRKSRC}/config/Makefile.in
 
 .include <bsd.port.post.mk>
