@@ -1,0 +1,5 @@
+PangoXSL implements a version of the Pango library with a PDF backend for
+creating PDF output. This library also implements several of the inline
+properties defined by XSL that are not currently implemented by Pango.
+
+WWW: http://pangopdf.sourceforge.net
