@@ -2,7 +2,7 @@
 # Date created:		31 May 2002
 # Whom:			dinoex
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.openssl.mk,v 1.13 2004-03-18 13:30:47 dinoex Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.openssl.mk,v 1.14 2004-04-08 05:17:37 dinoex Exp $
 #
 # Use of 'USE_OPENSSL=yes' includes this Makefile after bsd.ports.pre.mk
 #
@@ -111,7 +111,12 @@ OPENSSL_SHLIBVER?=	3
 OPENSSL_PORT?=		security/openssl
 .endif
 OPENSSLDIR=		${OPENSSLBASE}/openssl
+.if exists(/usr/lib/libcrypto.so.${OPENSSL_SHLIBVER})
+BUILD_DEPENDS+=		${LOCALBASE}/lib/libcrypto.so.${OPENSSL_SHLIBVER}:${PORTSDIR}/${OPENSSL_PORT}
+RUN_DEPENDS+=		${LOCALBASE}/lib/libcrypto.so.${OPENSSL_SHLIBVER}:${PORTSDIR}/${OPENSSL_PORT}
+.else
 LIB_DEPENDS+=		crypto.${OPENSSL_SHLIBVER}:${PORTSDIR}/${OPENSSL_PORT}
+.endif
 OPENSSLRPATH=		${LOCALBASE}/lib
 
 .endif
