@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://www.ww.net/pub/wildwind/upsd/ \
 		http://www.cre8tivegroup.com/ \
 		ftp://ftp.sw.ru/pub/unix/upsd/
 
-MAINTAINER=	alexis@ww.net
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/upsd-2.0
 
