@@ -8,7 +8,7 @@ $FreeBSD$
  
  
 -xmps_LDADD = -L@LIBXMPS_DIR@ -lxmps -L@LIBXMPSUTILS_DIR@ -lxmpsutils
-+xmps_LDADD = -L@LIBXMPS_DIR@ -lxmps -L@LIBXMPSUTILS_DIR@ -lxmpsutils -pthread
++xmps_LDADD = -L@LIBXMPS_DIR@ -lxmps -L@LIBXMPSUTILS_DIR@ -lxmpsutils -lpthread
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = ../config.h
  CONFIG_CLEAN_FILES = 
