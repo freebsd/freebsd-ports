@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	musicpd
-PORTVERSION=	0.9.3
-PORTREVISION=	2
+PORTVERSION=	0.9.4
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,6 +20,11 @@ LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao \
 
 GNU_CONFIGURE=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
+
+OPTIONS=	FLAC "Support for FLAC Audio" on \
+		VORBIS "Support for OGG Vorbis Audio" on \
+		WAV "Support for WAV Audio" on \
+		ICONV "Support for international characters" on
 
 .include <bsd.port.pre.mk>
 
@@ -72,15 +76,6 @@ SED_SCRIPT+=	-e 's,%%PREFIX%%,${PREFIX},g' \
 		-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
 		-e 's,%%RC_SUFX%%,${RC_SUFX},g'
 PLIST_SUB+=	RC_SUFX=${RC_SUFX}
-
-pre-everything::
-	@${ECHO_CMD} "You can build ${PKGNAME} with the following options:"
-	@${ECHO_CMD}
-	@${ECHO_CMD} "WITHOUT_VORBIS          Disable Ogg Vorbis support"
-	@${ECHO_CMD} "WITHOUT_FLAC            Disable FLAC support"
-	@${ECHO_CMD} "WITHOUT_WAV             Disable libao support"
-	@${ECHO_CMD} "WITHOUT_ICONV           Disable international chars support"
-	@${ECHO_CMD}
 
 post-build:
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/musicpd.sh >${WRKDIR}/musicpd.sh
