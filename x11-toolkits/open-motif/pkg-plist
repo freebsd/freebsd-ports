@@ -1,13 +1,17 @@
 @comment $FreeBSD$
-@exec [ -f %D/lib/X11/config/host.orig ] || mv %D/lib/X11/config/host.def %D/lib/X11/config/host.def.orig
+@exec [ -f %D/lib/X11/config/host.def.orig ] || mv %D/lib/X11/config/host.def %D/lib/X11/config/host.def.orig
 lib/X11/config/host.def
 @unexec [ -f %D/%F.orig ] && mv %D/%F.orig %D/%F || :
 bin/DNDDemo
+bin/UTMXmText
+bin/aicon
 bin/airport
 bin/autopopups
+bin/combo_box
+bin/container
 bin/dainput
-bin/draw
 bin/dogs
+bin/draw
 bin/earth
 bin/exm_in_c
 bin/exm_in_uil
@@ -19,21 +23,30 @@ bin/hellomotif
 bin/i18ninput
 bin/motifshell
 bin/mwm
+bin/notebook
 bin/onHelp
 bin/periodic
 bin/piano
 bin/sampler2_0
 bin/setDate
 bin/simpleDemo
+bin/simple_drag
+bin/simple_drop
 bin/simpledrop
+bin/spin_box
+bin/tic_mark
 bin/todo
 bin/uil
 bin/uilsymdump
+bin/xmanimate
 bin/xmapdef
 bin/xmbind
 bin/xmfonts
 bin/xmforc
 bin/xmform
+include/X11/bitmaps/xm_error
+include/X11/bitmaps/xm_hour16
+include/X11/bitmaps/xm_hour16m
 include/Mrm/MrmAppl.h
 include/Mrm/MrmDecls.h
 include/Mrm/MrmPublic.h
@@ -210,9 +223,6 @@ include/Xm/XmStrDefs.h
 include/Xm/Xmfuncs.h
 include/Xm/XmosP.h
 include/Xm/XpmP.h
-include/X11/bitmaps/xm_error
-include/X11/bitmaps/xm_hour16
-include/X11/bitmaps/xm_hour16m
 include/X11/bitmaps/xm_hour32
 include/X11/bitmaps/xm_hour32m
 include/X11/bitmaps/xm_information
@@ -268,7 +278,25 @@ lib/X11/bindings/sun_at
 lib/X11/bindings/tek
 lib/X11/bindings/xmbind.alias
 lib/X11/config/Motif.rules
+lib/X11/config/Motif.rules.openmotif
 lib/X11/config/Motif.tmpl
+lib/X11/config/Motif.tmpl.openmotif
+lib/X11/help/aicon.help
+lib/X11/help/draw.help
+lib/X11/help/filemanager.help
+lib/X11/help/getsubres.help
+lib/X11/help/helpOn.help
+lib/X11/help/i18ninput.help
+lib/X11/help/sampler2_0.help
+lib/X11/help/todo.help
+lib/X11/help/xmanimate.help
+lib/X11/motifshell/help
+lib/X11/motifshell/membership
+lib/X11/motifshell/motif
+lib/X11/motifshell/motifshell.c
+lib/X11/motifshell/principles
+lib/X11/motifshell/research
+lib/X11/motifshell/welcome
 lib/X11/system.mwmrc
 lib/X11/uid/C/uid/l_strings.uid
 lib/X11/uid/English.uid
@@ -291,12 +319,15 @@ lib/X11/uid/xmanimate.uid
 lib/libMrm.a
 lib/libMrm.so
 lib/libMrm.so.2
+lib/libMrm_d.a
 lib/libUil.a
 lib/libUil.so
 lib/libUil.so.2
+lib/libUil_d.a
 lib/libXm.a
 lib/libXm.so
 lib/libXm.so.2
+lib/libXm_d.a
 share/doc/openmotif/BUGREPORT
 share/doc/openmotif/CLOSEDBUGS.gz
 share/doc/openmotif/COPYRIGHT.MOTIF
@@ -410,11 +441,13 @@ share/doc/openmotif/guides/mot-wwg.ps.Z
 @comment	@dirrm share/examples/openmotif/demos/ch17/simple_drop
 @comment	@dirrm share/examples/openmotif/demos/ch17
 @comment	@dirrm share/examples/openmotif/demos
-@dirrm share/examples/openmotif
+@comment	@dirrm share/examples/openmotif
 @dirrm include/Xm
 @dirrm include/Mrm
 @dirrm include/uil
 @dirrm lib/X11/bindings
+@dirrm lib/X11/help
+@dirrm lib/X11/motifshell
 @dirrm lib/X11/uid/C/uid
 @dirrm lib/X11/uid/C
 @dirrm lib/X11/uid/french/uid

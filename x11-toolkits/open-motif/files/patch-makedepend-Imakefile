@@ -1,0 +1,19 @@
+--- config/makedepend/Imakefile.org	Fri Apr 28 08:04:06 2000
++++ config/makedepend/Imakefile	Sat Aug  5 12:50:48 2000
+@@ -1,5 +1,16 @@
+ XCOMM $TOG: Imakefile /main/27 1997/04/30 15:38:09 kaleb $
+ 
++#ifdef FreeBSDArchitecture
++#undef InstallProgram
++#define InstallProgram(file,dest) /* as nothing */
++#undef InstallNamedProg
++#define InstallNamedProg(srcname,dstname,dest) /* as nothing */
++#undef InstallManPage
++#define InstallManPage(file,dest) /* as nothing */
++#undef InstallManPageLong
++#define InstallManPageLong(srcname,dest,dstname) /* as nothing */
++#endif
++
+     SRCS = include.c main.c parse.c pr.c cppsetup.c ifparser.c 
+     OBJS = include.o main.o parse.o pr.o cppsetup.o ifparser.o 
+ 

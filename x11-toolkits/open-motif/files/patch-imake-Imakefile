@@ -1,0 +1,19 @@
+--- config/imake/Imakefile.org	Fri Apr 28 08:04:06 2000
++++ config/imake/Imakefile	Sat Aug  5 12:50:32 2000
+@@ -1,5 +1,16 @@
+ XCOMM $TOG: Imakefile /main/10 1997/04/30 15:39:17 kaleb $
+ 
++#ifdef FreeBSDArchitecture
++#undef InstallProgram
++#define InstallProgram(file,dest) /* as nothing */
++#undef InstallNamedProg
++#define InstallNamedProg(srcname,dstname,dest) /* as nothing */
++#undef InstallManPage
++#define InstallManPage(file,dest) /* as nothing */
++#undef InstallManPageLong
++#define InstallManPageLong(srcname,dest,dstname) /* as nothing */
++#endif
++
+ XCOMM Some compilers generate fatal errors if an -L directory does
+ XCOMM not exist.  Since BUILDLIBDIR may not exist yet suppress its use.
+          LDPRELIB =
