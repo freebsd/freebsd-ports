@@ -1,0 +1,20 @@
+--- makefile.orig	Sun Jun 28 05:00:06 1998
++++ makefile	Sun Jun 28 05:01:25 1998
+@@ -13,7 +13,7 @@
+ 
+ CC=gcc
+ MATHLIB=-lm
+-CFLAGS=-I/usr/X11/include
++CFLAGS=-I/usr/X11R6/include
+ 
+ # Change this to "touch" if your system doesn't have the "strip" command:
+ POSTPROCESS=strip
+@@ -25,7 +25,7 @@
+ #XLIB=-L/usr/openwin/lib -lX11
+ 
+ # uncomment for FreeBSD
+-#XLIB=-L /usr/X11R6/lib -lX11 -lcompat
++XLIB=-L /usr/X11R6/lib -lX11 -lcompat
+ 
+ # End of makefile user-definable variables-----------------------------------
+ 
