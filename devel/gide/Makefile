@@ -3,7 +3,7 @@
 # Date created:				29 Jul 1998
 # Whom:					rom
 #
-# $Id: Makefile,v 1.17 1998/11/16 17:23:05 vanilla Exp $
+# $Id: Makefile,v 1.18 1999/01/17 20:01:53 vanilla Exp $
 #
 
 DISTNAME= 	gIDE-0.0.14
@@ -12,6 +12,8 @@ CATEGORIES=	devel
 MASTER_SITES=	http://gide.pn.org/
 
 MAINTAINER=	rom_glsa@ein-hashofet.co.il
+
+BROKEN='fetch: reading remote file from gide.pn.org: Connection reset by peer (maybe try -b or -t)'
 
 LIB_DEPENDS=	gnomeui.1:${PORTSDIR}/x11/gnomelibs \
 		guile.4:${PORTSDIR}/lang/guile
