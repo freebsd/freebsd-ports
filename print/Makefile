@@ -173,6 +173,7 @@
     SUBDIR += trueprint
     SUBDIR += ttf2pt1
     SUBDIR += ttftot42
+    SUBDIR += txfonts
     SUBDIR += virtualpaper
     SUBDIR += wmlpq
     SUBDIR += xdvi
