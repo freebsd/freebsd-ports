@@ -1,0 +1,17 @@
+*** util/lg/Makefile.in.orig	Mon Jun  3 14:14:33 2002
+--- util/lg/Makefile.in	Mon Jun  3 14:14:51 2002
+***************
+*** 1,6 ****
+  PREFIX = @prefix@
+  
+! INSTALL = @INSTALL@
+  INSTALL_DATA = @INSTALL_DATA@
+  
+  UTIL_LG_PROGS = @RD_UTIL_LG_PROGS@
+--- 1,6 ----
+  PREFIX = @prefix@
+  
+! INSTALL = @INSTALL_SCRIPT@
+  INSTALL_DATA = @INSTALL_DATA@
+  
+  UTIL_LG_PROGS = @RD_UTIL_LG_PROGS@
