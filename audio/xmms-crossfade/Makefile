@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	xmms-crossfade
-PORTVERSION=	0.3.4
-PORTREVISION=	1
+PORTVERSION=	0.3.8
 CATEGORIES=	audio
-MASTER_SITES=	http://www.mynetcologne.de/~nc-eisenlpe2/xmms-crossfade/
+MASTER_SITES=	http://www.eisenlohr.org/xmms-crossfade/
 
 MAINTAINER=	pat@FreeBSD.org
 COMMENT=	XMMS Output plugin for crossfading between songs
@@ -21,6 +20,11 @@ USE_INC_LIBTOOL_VER=	13
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
+
+pre-patch:
+	${REINPLACE_CMD} "s|@libdir@|${PREFIX}/lib/xmms/Output|" \
+		${WRKSRC}/Makefile.in
 
 post-install:
 .ifndef(NOPORTDOCS)
