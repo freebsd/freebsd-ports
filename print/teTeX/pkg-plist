@@ -70,7 +70,7 @@ bin/MakeTeXTFM
 bin/MakeTeXPK
 bin/texi2html
 bin/allec
-bin/mp
+bin/mpost
 bin/mf
 bin/amstex
 bin/kpsexpand
