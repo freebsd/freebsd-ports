@@ -1,5 +1,5 @@
---- pnm/Makefile.orig	Mon Sep  3 09:45:17 2001
-+++ pnm/Makefile	Wed Sep  5 00:00:00 2001
+--- pnm/Makefile.orig	Wed Sep  5 12:10:50 2001
++++ pnm/Makefile	Thu Sep  6 00:00:00 2001
 @@ -155,6 +155,7 @@
  MERGE_OBJECTS = $(patsubst %,%.o2, $(MERGEBINARIES))
  
@@ -17,12 +17,3 @@
  ifneq ($(BUILD_FIASCO), N) 
  	$(MAKE) -C fiasco all
  endif
-@@ -190,7 +191,7 @@
- 
- jpegtopnm: %: %.o exif.o $(NETPBMLIBS) $(LIBOPT)
- 	$(LD) $(LDFLAGS) -o $@ $< exif.o `$(LIBOPT) $(NETPBMLIBS)` $(JPEGLD) \
--	   $(CDEBUG)
-+	   -lm $(CDEBUG)
- 
- ifeq ($(URTLIB_DIR),$(URTDIR))
- # We're using the internal URT library, so make sure it's built
