@@ -19,11 +19,13 @@ RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		zoo:${PORTSDIR}/archivers/zoo \
 		arc:${PORTSDIR}/archivers/arc \
 		unzip:${PORTSDIR}/archivers/unzip
+LIB_DEPENDS=	pth.20:${PORTSDIR}/devel/pth
 
 USE_GMAKE=	yes
-HAS_CONFIGURE=	yes
+USE_LIBTOOL=	yes
+INSTALLS_SHLIB=	yes
 
-CONFIGURE_ARGS=	--prefix=${PREFIX} --disable-clamav --disable-pthreads
+CONFIGURE_ARGS=	--prefix=${PREFIX} --disable-clamav
 
 MAN1=		clamscan.1 freshclam.1 sigtool.1 clamdscan.1
 MAN5=		clamav.conf.5

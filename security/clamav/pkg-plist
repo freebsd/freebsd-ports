@@ -1,6 +1,8 @@
 bin/clamscan
+bin/clamdscan
 bin/freshclam
 bin/sigtool
+sbin/clamd
 include/clamav.h
 lib/libclamav.so.1
 lib/libclamav.so

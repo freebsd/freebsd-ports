@@ -4,8 +4,8 @@ if [ "$2" != "PRE-INSTALL" ]; then
     exit 0
 fi
 
-USER=clamav
-GROUP=clamav
+USER?=clamav
+GROUP?=clamav
 
 if ! pw groupshow "$GROUP" 2>/dev/null 1>&2; then
 	if pw groupadd $GROUP; then
