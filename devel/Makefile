@@ -67,6 +67,8 @@
     SUBDIR += doxygen
     SUBDIR += dryad
     SUBDIR += elftoaout
+    SUBDIR += elib-emacs
+    SUBDIR += elib-emacs20
     SUBDIR += entity
     SUBDIR += f77flow
     SUBDIR += fastcrc
