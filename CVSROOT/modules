@@ -597,6 +597,7 @@ bootparamd	src/usr.sbin/bootparamd
 bootpd		src/libexec/bootpd
 bootpgw		src/libexec/bootpgw
 borzoi		ports/security/borzoi
+botan		ports/security/botan
 bottlerocket	ports/misc/bottlerocket
 bounce		ports/net/bounce
 bouncycastle	ports/java/bouncycastle
@@ -4777,7 +4778,6 @@ openag		ports/audio/openag
 openal		ports/audio/openal
 openam		ports/net/openam
 openbox		ports/x11-wm/openbox
-opencl		ports/security/opencl
 opendchub	ports/net/opendchub
 opendis		ports/graphics/opendis
 opendx		ports/graphics/opendx
