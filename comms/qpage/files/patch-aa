@@ -1,0 +1,35 @@
+--- Makefile.orig	Sat Aug  2 21:02:24 1997
++++ Makefile	Sun Aug  3 21:38:37 1997
+@@ -16,14 +16,16 @@
+ #	NEED_STRERROR		- your system does NOT support strerror()
+ #
+ 
+-CCENV=		-DSOLARIS -DFACILITY=LOG_LOCAL1 # -DSNPP_SERVER=\"short\"
++#CCENV=		-DSOLARIS -DFACILITY=LOG_LOCAL1 # -DSNPP_SERVER=\"short\"
++CCENV=		-DFACILITY=LOG_DAEMON -DLOCKDIR=\"/var/spool/lock\" -DDAEMONUSER=1 -DDAEMONGROUP=68 -DSYSTEM_CONFIG=\"${PREFIX}/etc/qpage.cf\" -D_PATH_SENDMAIL=\"/usr/sbin/sendmail\"
+ #DEBUG=		-g -DDEBUG
+ 
+-CFLAGS=		-mr $(DEBUG) $(CCENV)
+-LDLIBS=		-lsocket -lnsl
++#CFLAGS=		-mr $(DEBUG) $(CCENV)
++CFLAGS=		-g $(DEBUG) $(CCENV)
++#LDLIBS=		-lsocket -lnsl
+ 
+ #CC=cc
+-#CC=gcc
++CC=gcc
+ RM=		/bin/rm -f
+ 
+ 
+@@ -53,6 +55,11 @@
+ all:		$(PROG)
+ 
+ $(OBJS):	$(INCL)
++
++install:	all
++		${BSD_INSTALL_PROGRAM} qpage ${PREFIX}/bin
++		${BSD_INSTALL_MAN} qpage.man ${PREFIX}/man/man1/qpage.1
++		${BSD_INSTALL_DATA} example-qpage.cf ${PREFIX}/etc
+ 
+ $(PROG):	$(OBJS)
+ 		$(RM) $(PROG)
