@@ -23,7 +23,7 @@
 -INSTALLDIR = $(DESTDIR)/$(PLUGINDIR)
 +INSTALLDIR = $(PREFIX)/libexec/gkrellm/plugins
  
- VERSION=0.3
+ VERSION=0.4
  
 -CC ?= gcc
  CFLAGS += $(FLAGS) -DVERSION=\"$(VERSION)\"

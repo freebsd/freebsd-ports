@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gkrellmqst
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	net games
 MASTER_SITES=	http://tadpol.org/unxware/
 DISTNAME=	gkrellm_qst-${PORTVERSION:S/.p/pre_/}
