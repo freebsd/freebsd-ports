@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	f2c
-PORTVERSION=	2.0.1
+PORTVERSION=	3.0.0
 CATEGORIES=	lang
 MASTER_SITES=	ftp://troutmask.apl.washington.edu/pub/
-DISTNAME=	f2c-freebsd.2.0.1
+DISTNAME=	f2c-freebsd.3.0.0
 
 MAINTAINER=	kargl@troutmask.apl.washington.edu
 
