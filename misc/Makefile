@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.126 1998/01/01 23:02:25 wosch Exp $
+# $Id: Makefile,v 1.127 1998/01/02 17:13:03 wosch Exp $
 #
 
     SUBDIR += acron
@@ -22,6 +22,7 @@
     SUBDIR += git
     SUBDIR += gnuls
     SUBDIR += ical
+    SUBDIR += iselect
     SUBDIR += jive
     SUBDIR += kdeutils
     SUBDIR += kp
