@@ -1,0 +1,585 @@
+diff -crN --exclude=*freebsd* ue312.orig/Makefile ue312/Makefile
+*** ue312.orig/Makefile	Thu Jan  1 01:00:00 1970
+--- ue312/Makefile	Sat Jan 14 12:14:26 1995
+***************
+*** 0 ****
+--- 1,12 ----
++ #
++ # simple makefile for uemacs 
++ #
++ 
++ all:
++ 	(cd freebsd; make emacs)
++ 
++ install:	all
++ 	install -c -s freebsd/emacs /usr/local/bin/uemacs
++ 	mkdir -p /usr/local/lib/uemacs
++ 	install -c -m 644 -o bin -g bin cmd/* /usr/local/lib/uemacs
++ 	mv /usr/local/lib/uemacs/emacs.rc /usr/local/lib/uemacs/.emacsrc
+diff -crN --exclude=*freebsd* ue312.orig/h/epath.h ue312/h/epath.h
+*** ue312.orig/h/epath.h	Tue Mar 16 15:13:46 1993
+--- ue312/h/epath.h	Sat Jan 14 11:26:35 1995
+***************
+*** 68,74 ****
+  {
+  	".emacsrc",
+  	"emacs.hlp",
+! 	"/usr/local/",
+  	"/usr/lib/",
+  	""
+  };
+--- 68,74 ----
+  {
+  	".emacsrc",
+  	"emacs.hlp",
+! 	"/usr/local/lib/uemacs/",
+  	"/usr/lib/",
+  	""
+  };
+diff -crN --exclude=*freebsd* ue312.orig/src/bind.c ue312/src/bind.c
+*** ue312.orig/src/bind.c	Thu Apr 22 21:20:54 1993
+--- ue312/src/bind.c	Sat Jan 14 12:03:55 1995
+***************
+*** 619,624 ****
+--- 619,625 ----
+  	register char *sp;	/* pointer into path spec */
+  	register int i; 	/* index */
+  	static char fspec[NFILEN];	/* full path spec to search */
++         char patha[NFILEN] = "";
+  	char *getenv();
+  
+  	/* if we have an absolute path.. check only there! */
+***************
+*** 675,683 ****
+  #if OS2
+  	path = getenv("DPATH");
+  #else
+! 	path = getenv("PATH");
+  #endif
+  #endif
+  	if (path != NULL)
+  		while (*path) {
+  
+--- 676,686 ----
+  #if OS2
+  	path = getenv("DPATH");
+  #else
+! 	strcat(patha, getenv("PATH"));
+!         strcat(patha, "/usr/local/lib/uemacs");
+  #endif
+  #endif
++         path = &patha[0];
+  	if (path != NULL)
+  		while (*path) {
+  
+diff -crN --exclude=*freebsd* ue312.orig/src/line.c ue312/src/line.c
+*** ue312.orig/src/line.c	Mon Dec 21 14:08:18 1992
+--- ue312/src/line.c	Fri Jan 13 19:05:04 1995
+***************
+*** 668,674 ****
+  	register int size;	/* length of line to return */
+  	register char *sp;	/* string pointer into line */
+  	register char *dp;	/* string pointer into returned line */
+! 	char rline[NSTRING];	/* line to return */
+  
+  	/* find the contents of the current line and its length */
+  	lp = curwp->w_dotp;
+--- 668,674 ----
+  	register int size;	/* length of line to return */
+  	register char *sp;	/* string pointer into line */
+  	register char *dp;	/* string pointer into returned line */
+! 	static char rline[NSTRING];	/* line to return */
+  
+  	/* find the contents of the current line and its length */
+  	lp = curwp->w_dotp;
+diff -crN --exclude=*freebsd* ue312.orig/src/lock.c ue312/src/lock.c
+*** ue312.orig/src/lock.c	Wed Apr 21 10:22:40 1993
+--- ue312/src/lock.c	Fri Jan 13 19:09:11 1995
+***************
+*** 10,19 ****
+--- 10,26 ----
+  
+  #if	FILOCK
+  
++ #if BSD
++ #undef BSD
++ #include <sys/param.h>
++ #endif
++ 
+  #if	BSD || WMCS || SUN || XENIX || HPUX8 || HPUX9 || AVIION || USG || AUX
+  #include <sys/errno.h>
++ #if !(defined(BSD) && (BSD >= 199103))
+  extern int sys_nerr;		/* number of system error messages defined */
+  extern char *sys_errlist[];	/* list of message texts */
++ #endif
+  #endif
+  
+  #if	MSC
+diff -crN --exclude=*freebsd* ue312.orig/src/unix.c ue312/src/unix.c
+*** ue312.orig/src/unix.c	Wed Apr 21 11:09:20 1993
+--- ue312/src/unix.c	Sat Jan 14 11:02:21 1995
+***************
+*** 95,101 ****
+--- 95,103 ----
+  
+  /** Additional include files **/
+  #if BSD
++ #undef      BSD				/* well, ...			*/
+  #include <sys/time.h>			/* Timer definitions		*/
++ #include <sys/param.h>                  /* BSD version number		*/
+  #endif /* BSD */
+  #if BSD || SUN || HPUX8 || HPUX9 || AVIION
+  #include <signal.h>			/* Signal definitions		*/
+***************
+*** 104,115 ****
+--- 106,125 ----
+  #include <termio.h>			/* Terminal I/O definitions	*/
+  #endif /* USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX */
+  #if AVIION
++ #define     HAVE_TERMIOS    1
+  #include <termios.h>			/* Terminal I/O definitions	*/
+  #endif /* AVIION */
+  #if CURSES
+  #include <curses.h>			/* Curses screen output		*/
+  #undef WINDOW				/* Oh no!			*/
+  #endif /* CURSES */
++ #if (defined(BSD) && (BSD >= 199103))
++ #define     HAVE_TERMIOS    1
++ #include <termios.h>
++ #else
++ #define     HAVE_SGTTY      1
++ #include <sgtty.h>
++ #endif
+  
+  /** Completion include files **/
+  /** Directory accessing: Try and figure this out... if you can! **/
+***************
+*** 164,185 ****
+  #endif /* TERMCAP */
+  
+  /** Local variables **/
+! #if BSD
+  static struct sgttyb cursgtty;		/* Current modes		*/
+  static struct sgttyb oldsgtty;		/* Original modes		*/
+  static struct tchars oldtchars;		/* Current tchars		*/
+  static struct ltchars oldlchars;	/* Current ltchars		*/
+  static char blank[6] =			/* Blank out character set	*/
+  	{ -1, -1, -1, -1, -1, -1 };
+! #endif /* BSD */
+  #if USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX
+  static struct termio curterm;		/* Current modes		*/
+  static struct termio oldterm;		/* Original modes		*/
+  #endif /* USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX */
+! #if AVIION
+  static struct termios curterm;		/* Current modes		*/
+  static struct termios oldterm;		/* Original modes		*/
+! #endif /* AVIION */
+  #if TERMCAP
+  static char tcapbuf[NCAPBUF];		/* Termcap character storage	*/
+  #define CAP_CL		0		/* Clear to end of page		*/
+--- 174,195 ----
+  #endif /* TERMCAP */
+  
+  /** Local variables **/
+! #if HAVE_SGTTY
+  static struct sgttyb cursgtty;		/* Current modes		*/
+  static struct sgttyb oldsgtty;		/* Original modes		*/
+  static struct tchars oldtchars;		/* Current tchars		*/
+  static struct ltchars oldlchars;	/* Current ltchars		*/
+  static char blank[6] =			/* Blank out character set	*/
+  	{ -1, -1, -1, -1, -1, -1 };
+! #endif /* HAVE_SGTTY */
+  #if USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX
+  static struct termio curterm;		/* Current modes		*/
+  static struct termio oldterm;		/* Original modes		*/
+  #endif /* USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX */
+! #if HAVE_TERMIOS
+  static struct termios curterm;		/* Current modes		*/
+  static struct termios oldterm;		/* Original modes		*/
+! #endif /* HAVE_TERMIOS */
+  #if TERMCAP
+  static char tcapbuf[NCAPBUF];		/* Termcap character storage	*/
+  #define CAP_CL		0		/* Clear to end of page		*/
+***************
+*** 250,255 ****
+--- 260,270 ----
+  static int cfcolor = -1;		/* Current forground color	*/
+  static int cbcolor = -1;		/* Current background color	*/
+  #endif /* COLOR */
++ 
++ /*
++  * I added the K[1-5] capabilities at the end. Hopefully someone finds this
++  * useful.      -- tg
++  */
+  static struct keybind keybind[] = {	/* Keybinding list		*/
+  	{ "bt", SHFT|CTRL|'i' },	/* Back-tab key			*/
+  	{ "k1", SPEC|'1' },		/* F1 key			*/
+***************
+*** 290,296 ****
+  	{ "kP", SPEC|'Z' },		/* Previous page key		*/
+  	{ "kR", CTRL|'Z' },		/* Scroll backward key		*/
+  	{ "kr", SPEC|'F' },		/* Right arrow key		*/
+! 	{ "ku", SPEC|'P' }		/* Up arrow key			*/
+  };
+  #endif /* TERMCAP */
+  static int inbuf[NINCHAR];		/* Input buffer			*/
+--- 305,316 ----
+  	{ "kP", SPEC|'Z' },		/* Previous page key		*/
+  	{ "kR", CTRL|'Z' },		/* Scroll backward key		*/
+  	{ "kr", SPEC|'F' },		/* Right arrow key		*/
+! 	{ "ku", SPEC|'P' },		/* Up arrow key			*/
+!         { "K1", SPEC|'<' },		/* Keypad 7 -> Home		*/
+!         { "K2", SPEC|'V' },		/* Keypad 9 -> Page Up		*/
+!         { "K3", '' },		     	/* Keypad 5 -> not bound	*/
+!         { "K4", SPEC|'>' },		/* Keypad 1 -> End		*/
+!         { "K5", CTRL|'V' }		/* Keypad 3 -> Page Down	*/
+  };
+  #endif /* TERMCAP */
+  static int inbuf[NINCHAR];		/* Input buffer			*/
+***************
+*** 363,369 ****
+  int ttopen()
+  {
+  	strcpy(os, "UNIX");
+! #if BSD
+  	/* Get tty modes */
+  	if (ioctl(0, TIOCGETP, &oldsgtty) ||
+  		ioctl(0, TIOCGETC, &oldtchars) ||
+--- 383,389 ----
+  int ttopen()
+  {
+  	strcpy(os, "UNIX");
+! #if HAVE_SGTTY
+  	/* Get tty modes */
+  	if (ioctl(0, TIOCGETP, &oldsgtty) ||
+  		ioctl(0, TIOCGETC, &oldtchars) ||
+***************
+*** 375,388 ****
+  
+  	/* Set new modes */
+  	cursgtty.sg_flags |= CBREAK;
+! 	cursgtty.sg_flags &= ~(ECHO|CRMOD);
+  
+  	/* Set tty modes */
+  	if (ioctl(0, TIOCSETP, &cursgtty) ||
+  		ioctl(0, TIOCSETC, blank) ||
+  		ioctl(0, TIOCSLTC, blank))
+  		return(-1);
+! #endif /* BSD */
+  #if USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX
+  
+  #if SMOS
+--- 395,408 ----
+  
+  	/* Set new modes */
+  	cursgtty.sg_flags |= CBREAK;
+! 	cursgtty.sg_flags &= ~(ECHO|CRMOD|IXON|IXANY|IXOFF);
+  
+  	/* Set tty modes */
+  	if (ioctl(0, TIOCSETP, &cursgtty) ||
+  		ioctl(0, TIOCSETC, blank) ||
+  		ioctl(0, TIOCSLTC, blank))
+  		return(-1);
+! #endif /* HAVE_SGTTY */
+  #if USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX
+  
+  #if SMOS
+***************
+*** 437,443 ****
+  		return(-1);
+  	}
+  #endif /* USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX */
+! #if AVIION
+  	/* Get modes */
+  	if (tcgetattr(0, &oldterm)) {
+  		perror("Cannot tcgetattr");
+--- 457,463 ----
+  		return(-1);
+  	}
+  #endif /* USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX */
+! #if HAVE_TERMIOS
+  	/* Get modes */
+  	if (tcgetattr(0, &oldterm)) {
+  		perror("Cannot tcgetattr");
+***************
+*** 448,455 ****
+  	curterm = oldterm;
+  
+  	/* Set new modes */
+! 	curterm.c_iflag &= ~(INLCR|ICRNL|IGNCR);
+! 	curterm.c_lflag &= ~(ICANON|ISIG|ECHO);
+  	curterm.c_cc[VMIN] = 1;
+  	curterm.c_cc[VTIME] = 0;
+  
+--- 468,476 ----
+  	curterm = oldterm;
+  
+  	/* Set new modes */
+!         /* disable XON/XOFF. We want to use ^S/^Q */
+! 	curterm.c_iflag &= ~(INLCR|ICRNL|IGNCR|IXON|IXANY|IXOFF);
+! 	curterm.c_lflag &= ~(ICANON|ISIG|ECHO|IEXTEN);
+  	curterm.c_cc[VMIN] = 1;
+  	curterm.c_cc[VTIME] = 0;
+  
+***************
+*** 463,469 ****
+  		perror("Cannot tcsetattr");
+  		return(-1);
+  	}
+! #endif /* AVIION */
+  
+  	/* Success */
+  	return(0);
+--- 484,490 ----
+  		perror("Cannot tcsetattr");
+  		return(-1);
+  	}
+! #endif /* HAVE_TERMIOS */
+  
+  	/* Success */
+  	return(0);
+***************
+*** 476,487 ****
+  	if (reset != (char*)NULL)
+  		write(1, reset, strlen(reset));
+  
+! #if BSD
+  	if (ioctl(0, TIOCSETP, &oldsgtty) ||
+  		ioctl(0, TIOCSETC, &oldtchars) ||
+  		ioctl(0, TIOCSLTC, &oldlchars))
+  		return(-1);
+! #endif /* BSD */
+  
+  #if USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX
+  #if SMOS
+--- 497,508 ----
+  	if (reset != (char*)NULL)
+  		write(1, reset, strlen(reset));
+  
+! #if HAVE_SGTTY
+  	if (ioctl(0, TIOCSETP, &oldsgtty) ||
+  		ioctl(0, TIOCSETC, &oldtchars) ||
+  		ioctl(0, TIOCSLTC, &oldlchars))
+  		return(-1);
+! #endif /* HAVE_SGTTY */
+  
+  #if USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX
+  #if SMOS
+***************
+*** 492,502 ****
+  		return(-1);
+  #endif /* USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX */
+  
+! #if AVIION
+  	/* Set tty mode */
+  	if (tcsetattr(0, TCSANOW, &oldterm))
+  		return(-1);
+! #endif /* AVIION */
+  
+  	/* Success */
+  	return(0);
+--- 513,523 ----
+  		return(-1);
+  #endif /* USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX */
+  
+! #if HAVE_TERMIOS
+  	/* Set tty mode */
+  	if (tcsetattr(0, TCSANOW, &oldterm))
+  		return(-1);
+! #endif /* HAVE_TERMIOS */
+  
+  	/* Success */
+  	return(0);
+***************
+*** 628,634 ****
+  /** Grab input characters, with wait **/
+  unsigned char grabwait()
+  {
+! #if BSD
+  	unsigned char ch;
+  
+  	/* Perform read */
+--- 649,655 ----
+  /** Grab input characters, with wait **/
+  unsigned char grabwait()
+  {
+! #if HAVE_SGTTY
+  	unsigned char ch;
+  
+  	/* Perform read */
+***************
+*** 637,644 ****
+  		exit(1);
+  	}
+  	return(ch);
+! #endif /* BSD */
+! #if USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX || AVIION
+  	unsigned char ch;
+  
+  	/* Change mode, if necessary */
+--- 658,665 ----
+  		exit(1);
+  	}
+  	return(ch);
+! #endif /* HAVE_SGTTY */
+! #if USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX || HAVE_TERMIOS
+  	unsigned char ch;
+  
+  	/* Change mode, if necessary */
+***************
+*** 648,656 ****
+  #if USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX
+  		ioctl(0, TCSETA, &curterm);
+  #endif /* USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX */
+! #if AVIION
+  		tcsetattr(0, TCSANOW, &curterm);
+! #endif /* AVIION */		
+  	}
+  
+  	/* Perform read */
+--- 669,677 ----
+  #if USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX
+  		ioctl(0, TCSETA, &curterm);
+  #endif /* USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX */
+! #if HAVE_TERMIOS
+  		tcsetattr(0, TCSANOW, &curterm);
+! #endif /* HAVE_TERMIOS */		
+  	}
+  
+  	/* Perform read */
+***************
+*** 661,673 ****
+  
+  	/* Return new character */
+  	return(ch);
+! #endif /* USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX || AVIION */
+  }
+  
+  /** Grab input characters, short wait **/
+  unsigned char grabnowait()
+  {
+! #if BSD
+  	static struct timeval timout = { 0, 500000L };
+  	int count, r;
+  
+--- 682,694 ----
+  
+  	/* Return new character */
+  	return(ch);
+! #endif /* USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX || HAVE_TERMIOS */
+  }
+  
+  /** Grab input characters, short wait **/
+  unsigned char grabnowait()
+  {
+! #if HAVE_SGTTY
+  	static struct timeval timout = { 0, 500000L };
+  	int count, r;
+  
+***************
+*** 683,690 ****
+  
+  	/* Perform read */
+  	return(grabwait());
+! #endif /* BSD */
+! #if USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX || AVIION
+  	int count;
+  	unsigned char ch;
+  
+--- 704,711 ----
+  
+  	/* Perform read */
+  	return(grabwait());
+! #endif /* HAVE_SGTTY */
+! #if USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX || HAVE_TERMIOS
+  	int count;
+  	unsigned char ch;
+  
+***************
+*** 695,703 ****
+  #if USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX
+  		ioctl(0, TCSETA, &curterm);
+  #endif /* USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX */
+! #if AVIION
+  		tcsetattr(0, TCSANOW, &curterm);
+! #endif /* AVIION */		
+  	}
+  
+  	/* Perform read */
+--- 716,724 ----
+  #if USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX
+  		ioctl(0, TCSETA, &curterm);
+  #endif /* USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX */
+! #if HAVE_TERMIOS
+  		tcsetattr(0, TCSANOW, &curterm);
+! #endif /* HAVE_TERMIOS */		
+  	}
+  
+  	/* Perform read */
+***************
+*** 711,717 ****
+  
+  	/* Return new character */
+  	return(ch);
+! #endif /* USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX || AVIION */
+  }
+  
+  /** Queue input character **/
+--- 732,738 ----
+  
+  	/* Return new character */
+  	return(ch);
+! #endif /* USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX || HAVE_TERMIOS */
+  }
+  
+  /** Queue input character **/
+***************
+*** 879,885 ****
+  	cp = getenv("TERM");
+  	if (!cp) {
+  		puts(TEXT182);
+! /*		"Environment variable \"TERM\" not define!" */
+  		exit(1);
+  	}
+  
+--- 900,906 ----
+  	cp = getenv("TERM");
+  	if (!cp) {
+  		puts(TEXT182);
+! /*		"Environment variable \"TERM\" not defined!" */
+  		exit(1);
+  	}
+  
+***************
+*** 957,971 ****
+  	}
+  
+  	/* Set speed for padding sequences */
+! #if BSD
+  	ospeed = cursgtty.sg_ospeed;
+! #endif /* BSD */
+  #if USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX
+  	ospeed = curterm.c_cflag & CBAUD;
+  #endif /* USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX */
+! #if AVIION
+  	ospeed = cfgetospeed(&curterm);
+! #endif /* AVIION */
+  	
+  	/* Send out initialization sequences */
+  	putpad(capbind[CAP_IS].store);
+--- 978,992 ----
+  	}
+  
+  	/* Set speed for padding sequences */
+! #if HAVE_SGTTY
+  	ospeed = cursgtty.sg_ospeed;
+! #endif /* HAVE_SGTTY */
+  #if USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX
+  	ospeed = curterm.c_cflag & CBAUD;
+  #endif /* USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX */
+! #if HAVE_TERMIOS
+  	ospeed = cfgetospeed(&curterm);
+! #endif /* HAVE_TERMIOS */
+  	
+  	/* Send out initialization sequences */
+  	putpad(capbind[CAP_IS].store);
