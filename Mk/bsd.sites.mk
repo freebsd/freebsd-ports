@@ -266,12 +266,9 @@ MASTER_SITE_RINGSERVER+=	\
 
 MASTER_SITE_RUBY+= \
 	ftp://ftp.ruby-lang.org/pub/ruby/%SUBDIR%/ \
-	ftp://fearless.ece.vill.edu/pub/ruby/%SUBDIR%/ \
 	ftp://ftp.fu-berlin.de/unix/languages/ruby/%SUBDIR%/ \
 	ftp://ftp.TokyoNet.AD.JP/pub/misc/ruby/%SUBDIR%/ \
 	ftp://ftp.iij.ad.jp/pub/lang/ruby/%SUBDIR%/ \
-	ftp://ftp.krnet.ne.jp/pub/ruby/%SUBDIR%/ \
-	ftp://mirror.nucba.ac.jp/mirror/ruby/%SUBDIR%/ \
 	ftp://ftp.kr.FreeBSD.org/pub/ruby/%SUBDIR%/ \
 	ftp://ftp.easynet.be/ruby/ruby/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/lang/ruby/%SUBDIR%/
