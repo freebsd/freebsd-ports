@@ -1,0 +1,11 @@
+--- Makefile.orig	Sat Sep  6 00:55:57 2003
++++ Makefile	Thu Aug 12 14:35:59 2004
+@@ -2,7 +2,7 @@
+ #CXX  		=g++ -O3 -mpentium -Wall -DEMU64_DEBUG
+ #CC		=gcc -O3 -I/usr/X11R6/include -fPIC -fomit-frame-pointer -funroll-loops -ffast-math -mcpu=pentium -pipe
+ #CC		=gcc -O3 -mpentium -Wall -g -pg
+-CC 		=gcc -O3 -fomit-frame-pointer -funroll-loops -ffast-math -mcpu=athlon -Wall -DUSE_GTK `gtk-config --cflags` -I/usr/X11R6/include -pipe
++#CC 		=gcc -O3 -fomit-frame-pointer -funroll-loops -ffast-math -mcpu=athlon -Wall -DUSE_GTK `gtk-config --cflags` -I/usr/X11R6/include -pipe
+ 
+ OBJ		=main.o
+ 
