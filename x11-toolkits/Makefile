@@ -53,6 +53,7 @@
     SUBDIR += p5-Glade
     SUBDIR += p5-Gnome
     SUBDIR += p5-Gtk
+    SUBDIR += p5-GtkGLArea
     SUBDIR += p5-Tcl-Tk
     SUBDIR += p5-Tk
     SUBDIR += pango
