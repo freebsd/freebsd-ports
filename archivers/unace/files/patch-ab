@@ -1,0 +1,29 @@
+--- Makefile.orig	Wed May 12 16:10:27 1999
++++ Makefile	Tue Aug 22 02:20:26 2000
+@@ -13,14 +13,14 @@
+ #CFLAGS = -dNOSTRICMP         #for UNIX compilers not supporting stricmp()
+ #CFLAGS = -dHI_LO_BYTE_ORDER  #select correct byte order for your machine!!
+ 
+-#CFLAGS = -Wall -O3 -s #-DNDEBUG
++CFLAGS += -DNDEBUG
+ #CFLAGS = -g -Wall -DMDEBUG
+-CFLAGS = -O3 -fno-strength-reduce -fomit-frame-pointer # These are for Linux
++#CFLAGS = -O3 -fno-strength-reduce -fomit-frame-pointer # These are for Linux
+ #CFLAGS = -O -g -Wall -dLO_HI_BYTE_ORDER
+ CHALLOC = challoc.o
+ CHALLOC =
+ CHNEW = chnew.o challoc.o
+-CC = gcc
++CC ?= gcc
+ 
+ ifeq ($(OSTYPE), Linux)
+ CFLAGS += -DUNIX -DCASEINSENSE
+@@ -38,7 +38,7 @@
+ 
+ 
+ unace$(EXEEXT): $(OBJ) $(CHALLOC)
+-	gcc $(CFLAGS) -o $@ $^ $(LIBS)
++	$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
+ 
+ clean:
+ 	rm -f *.o a.out core unace unace.exe

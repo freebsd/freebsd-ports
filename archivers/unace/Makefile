@@ -9,18 +9,13 @@
 PORTNAME=	unace
 PORTVERSION=	1.2b
 CATEGORIES=	archivers
-MASTER_SITES=	http://members.aol.com/mlemke6413/
-DISTNAME=	unacepub
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	utils/compress
 
 MAINTAINER=	jonny@jonny.eng.br
 
-FETCH_BEFORE_ARGS=	-t
-
-USE_ZIP=	yes
 USE_GMAKE=	yes
-ALL_TARGET=	unace
-MAKEFILE=	unix/makefile
-NO_WRKSUBDIR=	yes
+ALL_TARGET=	clean unace
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unace ${PREFIX}/bin
