@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBI
-PORTVERSION=	1.36
+PORTVERSION=	1.37
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBI
@@ -15,8 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	The perl5 Database Interface.  Required for DBD::* modules
 
+.if defined(WITH_PROXY)
 BUILD_DEPENDS=	${SITE_PERL}/RPC/PlServer.pm:${PORTSDIR}/net/p5-PlRPC
 RUN_DEPENDS=	${BUILD_DEPENDS}
+.endif
 
 PERL_CONFIGURE=	yes
 
@@ -40,5 +42,12 @@ MAN3=		Bundle::DBI.3 \
 		DBI::PurePerl.3 \
 		DBI::W32ODBC.3 \
 		Win32::DBIODBC.3
+
+.if !defined(WITH_PROXY)
+pre-everything::
+	@${ECHO_CMD} "If you need DBI::Proxy, try to set WITH_PROXY."
+	@${ECHO_CMD} ""
+	@sleep 1
+.endif
 
 .include <bsd.port.mk>
