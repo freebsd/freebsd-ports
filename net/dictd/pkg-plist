@@ -6,4 +6,5 @@ share/dictd/example.site
 share/dictd/example2.conf
 share/dictd/example3.conf
 etc/dictd.conf
+etc/rc.d/dictd.sh
 @dirrm share/dictd
