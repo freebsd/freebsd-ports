@@ -37,4 +37,8 @@ INFO=		bfd
 BROKEN=		"Does not compile on FreeBSD 4.x"
 .endif
 
+.if ${ARCH} == "amd64"
+BROKEN=		"Configure fails on amd64"
+.endif
+
 .include <bsd.port.post.mk>
