@@ -1,6 +1,6 @@
 # New ports collection makefile for:	ruby-aspectr
 # Date created:		08 April 2002
-# Whom:			Sean Chittenden <sean@chittenden.org>
+# Whom:			Sean Chittenden <seanc@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	sean@chittenden.org
+MAINTAINER=	seanc@FreeBSD.org
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/runit/error.rb:${PORTSDIR}/devel/ruby-unit
 
