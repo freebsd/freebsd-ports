@@ -39,6 +39,9 @@ lib/perl5/site_perl/%%PERL_VER%%/locales_mrtg.pm
 %%PORTDOCS%%share/doc/mrtg/mibhelp.html
 %%PORTDOCS%%share/doc/mrtg/mibhelp.pod
 %%PORTDOCS%%share/doc/mrtg/mibhelp.txt
+%%PORTDOCS%%share/doc/mrtg/mrtg-ipv6.html
+%%PORTDOCS%%share/doc/mrtg/mrtg-ipv6.pod
+%%PORTDOCS%%share/doc/mrtg/mrtg-ipv6.txt
 %%PORTDOCS%%share/doc/mrtg/mrtg-l.png
 %%PORTDOCS%%share/doc/mrtg/mrtg-m.png
 %%PORTDOCS%%share/doc/mrtg/mrtg-r.png
@@ -67,6 +70,7 @@ lib/perl5/site_perl/%%PERL_VER%%/locales_mrtg.pm
 %%PORTDOCS%%share/doc/mrtg/webserver.html
 %%PORTDOCS%%share/doc/mrtg/webserver.pod
 %%PORTDOCS%%share/doc/mrtg/webserver.txt
+share/mrtg/favicon.ico
 share/mrtg/mrtg-l.gif
 share/mrtg/mrtg-l.png
 share/mrtg/mrtg-m.gif
