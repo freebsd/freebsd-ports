@@ -9,7 +9,8 @@ PORTNAME=	hanterm
 PORTVERSION=	3.1.5
 PORTREVISION=	1
 CATEGORIES=	korean x11
-MASTER_SITES=	http://hanterm.org/download/
+MASTER_SITES=	http://hanterm.org/download/ \
+		ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/
 
 MAINTAINER=	cjh@FreeBSD.org
 
