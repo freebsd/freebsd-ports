@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wiliki
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	www scheme
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,8 +21,11 @@ RUN_DEPENDS=	${LOCALBASE}/share/gauche/${GAUCHE_VER}/lib/dbm/gdbm.scm:${PORTSDIR
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+
+.include <bsd.port.pre.mk>
+
 .if exists(${LOCALBASE}/bin/gauche-config)
-GAUCHE_VER!=	`gauche-config -V`
+GAUCHE_VER=	`gauche-config -V`
 .else
 GAUCHE_VER=	none
 .endif
@@ -31,7 +34,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's,/usr/bin,${PREFIX}/bin,' \
 		-e 's,/home/shiro/data/wikidata.dbm,/var/wiliki/data.dbm,' \
 		-e 's/"wiliki-sample.css"/#f/' \
-		-e "s/'jp/'en/" ${WRKSRC}/src/wiliki.cgi
+		-e "s/:language 'jp/:language 'en/" ${WRKSRC}/src/wiliki.cgi
 
 pre-install:
 	${MKDIR} `gauche-config --sitelibdir`
@@ -46,4 +49,4 @@ post-install:
 	${CHOWN} www:www /var/wiliki
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
