@@ -6,15 +6,19 @@
 #
 
 PORTNAME=	ipfm
-PORTVERSION=	0.10.4
+PORTVERSION=	0.11.4
 CATEGORIES=	net
-MASTER_SITES=	http://www.via.ecp.fr/~tibob/ipfm/archive/
+MASTER_SITES=	http://robert.cheramy.net/ipfm/archive/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	roman@xpert.com
 
-PATCH_STRIP=	-p1
-
 GNU_CONFIGURE=	yes
+
+MAN5=		ipfm.conf.5
+MAN8=		ipfm.8
+
+post-install:
+	@strip ${PREFIX}/sbin/ipfm
 
 .include <bsd.port.mk>
