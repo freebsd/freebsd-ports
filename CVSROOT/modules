@@ -5227,6 +5227,7 @@ mbrolavox	ports/audio/mbrolavox
 mbrowse		ports/net-mgmt/mbrowse
 mbx2mbox	ports/mail/mbx2mbox
 mc		ports/misc/mc
+mc-light	ports/misc/mc-light
 mcal		ports/deskutils/mcal
 mcl		ports/mbone/mcl
 mcron		ports/sysutils/mcron
