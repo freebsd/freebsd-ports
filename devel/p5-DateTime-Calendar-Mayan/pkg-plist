@@ -1,0 +1,4 @@
+%%SITE_PERL%%/DateTime/Calendar/Mayan.pm
+%%SITE_PERL%%/DateTime/Calendar/Mayan.pod
+@unexec rmdir %D/%%SITE_PERL%%/DateTime/Calendar 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/DateTime 2>/dev/null || true
