@@ -1,0 +1,11 @@
+BeanShell is a small, free, embeddable, Java source interpreter with
+object scripting language features, written in Java. BeanShell
+executes standard Java statements and expressions, in addition to
+obvious scripting commands and syntax. BeanShell supports scripted
+objects as simple method closures like those in Perl and
+JavaScript(tm).
+
+WWW: http://www.beanshell.org/
+
+- Kimura Fuyuki
+fuyuki@mj.0038.net
