@@ -1,6 +1,5 @@
 bin/spin
 bin/xspin
-bin/xspin351.tcl
 share/doc/spin/Doc/Book.Ch6.add
 share/doc/spin/Doc/Book.Errata
 share/doc/spin/Doc/Book.answers
@@ -8,6 +7,7 @@ share/doc/spin/Doc/Book.samples
 share/doc/spin/Doc/V1.Updates
 share/doc/spin/Doc/V2.Updates
 share/doc/spin/Doc/V3.Updates
+share/doc/spin/Doc/V4.Updates
 share/doc/spin/Examples/ex.1a
 share/doc/spin/Examples/ex.1b
 share/doc/spin/Examples/ex.1c
