@@ -1,0 +1,11 @@
+--- scripts/scrollkeeper-config.in.orig	Thu Mar 21 00:08:51 2002
++++ scripts/scrollkeeper-config.in	Sat May 25 23:59:53 2002
+@@ -4,7 +4,7 @@
+ localstatedir=@localstatedir@
+ partial_db_dir=@SCROLLKEEPER_PARTIAL_DB_DIR@
+ pkglocalstatedir=${localstatedir}/${partial_db_dir}
+-pkgdatadir=${prefix}/share/scrollkeeper
++pkgdatadir=${prefix}/share/gnome/scrollkeeper
+ datadir=@datadir@
+ 
+ usage()
