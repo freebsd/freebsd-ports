@@ -10,7 +10,7 @@ PORTVERSION=	0.3.2
 PORTREVISION=	1
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-rc1
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta5
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
