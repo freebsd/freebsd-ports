@@ -7,13 +7,15 @@
 
 PORTNAME=	liece
 PORTVERSION=	1.4.4
+PORTREVISION=	1
 CATEGORIES=	irc elisp
 MASTER_SITES=	http://www.unixuser.org/~ueno/liece/dist/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	yoichi@eken.phys.nagoya-u.ac.jp
 
-BUILD_DEPENDS+=	${LOCALBASE}/share/flim/${FLIM_COOKIE}:${PORTSDIR}/editors/flim-${EMACS_PORT_NAME}-current
+BUILD_DEPENDS+=	${LOCALBASE}/share/flim/${FLIM_COOKIE}:${PORTSDIR}/editors/flim-${EMACS_PORT_NAME}-current \
+		${LOCALBASE}/bin/msgfmt:${PORTSDIR}/devel/gettext
 RUN_DEPENDS+=	${LOCALBASE}/share/flim/${FLIM_COOKIE}:${PORTSDIR}/editors/flim-${EMACS_PORT_NAME}-current
 
 EMACS_PORT_NAME?=	emacs20
@@ -55,6 +57,9 @@ EMACS_ONLY?=		""
 .endif
 
 post-install:
+	${MKDIR} ${PREFIX}/${ETCDIR}/po/ja_JP.EUC/LC_MESSAGES
+	${LN} -sf ja_JP.EUC ${PREFIX}/${ETCDIR}/po/ja
+	msgfmt -o ${PREFIX}/${ETCDIR}/po/ja_JP.EUC/LC_MESSAGES/liece.mo ${WRKSRC}/etc/po/ja.po	
 .if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKSRC}/sample.dot.emacs ${PREFIX}/${ETCDIR}/
 	${MKDIR} ${PREFIX}/${ETCDIR}/doc
