@@ -6,7 +6,7 @@
 
 PORTNAME=	qt
 PORTVERSION=	3.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	http://www.river-bank.demon.co.uk/download/PyQt/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
