@@ -126,32 +126,58 @@ news/doc/hook-perl
 news/doc/hook-python
 news/doc/hook-tcl
 news/doc/sample-control
-news/etc/actsync.cfg
-news/etc/actsync.ign
-news/etc/buffindexed.conf
-news/etc/control.ctl
-news/etc/cycbuff.conf
-news/etc/distrib.pats
-news/etc/expire.ctl
-news/etc/incoming.conf
-news/etc/inn.conf
-news/etc/innfeed.conf
-news/etc/innreport.conf
-news/etc/innwatch.ctl
-news/etc/moderators
-news/etc/motd.news
-news/etc/news2mail.cf
-news/etc/newsfeeds
-news/etc/nnrpd.track
-news/etc/nntpsend.ctl
-news/etc/ovdb.conf
-news/etc/overview.fmt
-news/etc/passwd.nntp
-news/etc/radius.conf
-news/etc/readers.conf
-news/etc/sasl.conf
-news/etc/storage.conf
-news/etc/subscriptions
+@unexec if cmp -s %D/news/etc/actsync.cfg %D/news/etc/actsync.cfg.dist; then rm -f %D/news/etc/actsync.cfg ; fi
+news/etc/actsync.cfg.dist
+@unexec if cmp -s %D/news/etc/actsync.ign %D/news/etc/actsync.ign.dist; then rm -f %D/news/etc/actsync.ign ; fi
+news/etc/actsync.ign.dist
+@unexec if cmp -s %D/news/etc/buffindexed.conf %D/news/etc/buffindexed.conf.dist; then rm -f %D/news/etc/buffindexed.conf ; fi
+news/etc/buffindexed.conf.dist
+@unexec if cmp -s %D/news/etc/control.ctl %D/news/etc/control.ctl.dist; then rm -f %D/news/etc/control.ctl ; fi
+news/etc/control.ctl.dist
+@unexec if cmp -s %D/news/etc/cycbuff.conf %D/news/etc/cycbuff.conf.dist; then rm -f %D/news/etc/cycbuff.conf ; fi
+news/etc/cycbuff.conf.dist
+@unexec if cmp -s %D/news/etc/distrib.pats %D/news/etc/distrib.pats.dist; then rm -f %D/news/etc/distrib.pats ; fi
+news/etc/distrib.pats.dist
+@unexec if cmp -s %D/news/etc/expire.ctl %D/news/etc/expire.ctl.dist; then rm -f %D/news/etc/expire.ctl ; fi
+news/etc/expire.ctl.dist
+@unexec if cmp -s %D/news/etc/incoming.conf %D/news/etc/incoming.conf.dist; then rm -f %D/news/etc/incoming.conf ; fi
+news/etc/incoming.conf.dist
+@unexec if cmp -s %D/news/etc/inn.conf %D/news/etc/inn.conf.dist; then rm -f %D/news/etc/inn.conf ; fi
+news/etc/inn.conf.dist
+@unexec if cmp -s %D/news/etc/innfeed.conf %D/news/etc/innfeed.conf.dist; then rm -f %D/news/etc/innfeed.conf ; fi
+news/etc/innfeed.conf.dist
+@unexec if cmp -s %D/news/etc/innreport.conf %D/news/etc/innreport.conf.dist; then rm -f %D/news/etc/innreport.conf ; fi
+news/etc/innreport.conf.dist
+@unexec if cmp -s %D/news/etc/innwatch.ctl %D/news/etc/innwatch.ctl.dist; then rm -f %D/news/etc/innwatch.ctl ; fi
+news/etc/innwatch.ctl.dist
+@unexec if cmp -s %D/news/etc/moderators %D/news/etc/moderators.dist; then rm -f %D/news/etc/moderators ; fi
+news/etc/moderators.dist
+@unexec if cmp -s %D/news/etc/motd.news %D/news/etc/motd.news.dist; then rm -f %D/news/etc/motd.news ; fi
+news/etc/motd.news.dist
+@unexec if cmp -s %D/news/etc/news2mail.cf %D/news/etc/news2mail.cf.dist; then rm -f %D/news/etc/news2mail.cf ; fi
+news/etc/news2mail.cf.dist
+@unexec if cmp -s %D/news/etc/newsfeeds %D/news/etc/newsfeeds.dist; then rm -f %D/news/etc/newsfeeds ; fi
+news/etc/newsfeeds.dist
+@unexec if cmp -s %D/news/etc/nnrpd.track %D/news/etc/nnrpd.track.dist; then rm -f %D/news/etc/nnrpd.track ; fi
+news/etc/nnrpd.track.dist
+@unexec if cmp -s %D/news/etc/nntpsend.ctl %D/news/etc/nntpsend.ctl.dist; then rm -f %D/news/etc/nntpsend.ctl ; fi
+news/etc/nntpsend.ctl.dist
+@unexec if cmp -s %D/news/etc/ovdb.conf %D/news/etc/ovdb.conf.dist; then rm -f %D/news/etc/ovdb.conf ; fi
+news/etc/ovdb.conf.dist
+@unexec if cmp -s %D/news/etc/overview.fmt %D/news/etc/overview.fmt.dist; then rm -f %D/news/etc/overview.fmt ; fi
+news/etc/overview.fmt.dist
+@unexec if cmp -s %D/news/etc/passwd.nntp %D/news/etc/passwd.nntp.dist; then rm -f %D/news/etc/passwd.nntp ; fi
+news/etc/passwd.nntp.dist
+@unexec if cmp -s %D/news/etc/radius.conf %D/news/etc/radius.conf.dist; then rm -f %D/news/etc/radius.conf ; fi 
+news/etc/radius.conf.dist
+@unexec if cmp -s %D/news/etc/readers.conf %D/news/etc/readers.conf.dist; then rm -f %D/news/etc/readers.conf; fi
+news/etc/readers.conf.dist
+@unexec if cmp -s %D/news/etc/sasl.conf %D/news/etc/sasl.conf.dist; then rm -f %D/news/etc/sasl.conf ; fi
+news/etc/sasl.conf.dist
+@unexec if cmp -s %D/news/etc/storage.conf %D/news/etc/storage.conf.dist; then rm -f %D/news/etc/storage.conf ; fi
+news/etc/storage.conf.dist
+@unexec if cmp -s %D/news/etc/subscriptions %D/news/etc/subscriptions.dist; then rm -f %D/news/etc/subscriptions ; fi
+news/etc/subscriptions.dist
 news/include/clibrary.h
 news/include/conffile.h
 news/include/config.h
@@ -196,7 +222,7 @@ news/lib/libstorage.a
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm news/tmp
+@unexec rmdir %D/news/tmp 2>/dev/null || true
 @dirrm news/spool/overview
 @dirrm news/spool/outgoing
 @dirrm news/spool/innfeed
@@ -204,12 +230,13 @@ news/lib/libstorage.a
 @dirrm news/spool/incoming
 @dirrm news/spool/articles
 @dirrm news/spool/archive
+@dirrm news/spool/tmp
 @dirrm news/spool
 @dirrm news/run
 @dirrm news/lib
 @dirrm news/include/inn
 @dirrm news/include
-@dirrm news/etc
+@unexec rmdir %D/news/etc 2>/dev/null || true
 @dirrm news/doc
 @dirrm news/db
 @dirrm news/bin/rnews.libexec
@@ -219,4 +246,4 @@ news/lib/libstorage.a
 @dirrm news/bin/auth/passwd
 @dirrm news/bin/auth
 @dirrm news/bin
-@dirrm news
+@unexec rmdir %D/news 2>/dev/null ||( echo "===>  If you don't plan to use inn later, you can safely remove %D/news. Deinstall process kept these files intact:" | fmt && for i in $(find %D/news -type f); do echo "    - $i"; done)
