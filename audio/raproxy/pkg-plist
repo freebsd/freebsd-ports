@@ -1,13 +1,13 @@
 libexec/raproxy
-share/doc/raproxy/about.html
-share/doc/raproxy/advanced.html
-share/doc/raproxy/contents.html
-share/doc/raproxy/generic.html
-share/doc/raproxy/index.html
-share/doc/raproxy/moreinfo.html
-share/doc/raproxy/player.html
-share/doc/raproxy/raproxy.pdf
-share/doc/raproxy/thrdprty.html
-share/doc/raproxy/tproxy.pdf
-share/doc/raproxy/usekit.html
-@dirrm share/doc/raproxy
+%%PORTDOCS%%share/doc/raproxy/about.html
+%%PORTDOCS%%share/doc/raproxy/advanced.html
+%%PORTDOCS%%share/doc/raproxy/contents.html
+%%PORTDOCS%%share/doc/raproxy/generic.html
+%%PORTDOCS%%share/doc/raproxy/index.html
+%%PORTDOCS%%share/doc/raproxy/moreinfo.html
+%%PORTDOCS%%share/doc/raproxy/player.html
+%%PORTDOCS%%share/doc/raproxy/raproxy.pdf
+%%PORTDOCS%%share/doc/raproxy/thrdprty.html
+%%PORTDOCS%%share/doc/raproxy/tproxy.pdf
+%%PORTDOCS%%share/doc/raproxy/usekit.html
+%%PORTDOCS%%@dirrm share/doc/raproxy
