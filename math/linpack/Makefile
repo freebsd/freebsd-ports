@@ -3,14 +3,15 @@
 # Date created:         31 October 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.12 1997/07/17 15:12:56 max Exp $
+# $Id: Makefile,v 1.13 1998/07/07 19:04:05 scrappy Exp $
 #
 
 DISTNAME=	linpack
 PKGNAME=	linpack-1.0
 CATEGORIES=	math
 MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/linpack/ \
-		ftp://ftp.netlib.org/linpack/
+		ftp://www.hensa.ac.uk/mirrors/linpack/ \
+		ftp://elib.zib-berlin.de/pub/linpack/
 
 DIST_SUBDIR=	${DISTNAME}
 
