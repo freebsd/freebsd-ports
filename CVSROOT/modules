@@ -6081,6 +6081,7 @@ q3server-osp	ports/games/q3server-osp
 q3server-ra3	ports/games/q3server-ra3
 q3server-ut	ports/games/q3server-ut
 q3server-wfa	ports/games/q3server-wfa
+qadsl		ports/net/qadsl
 qbrew		ports/misc/qbrew
 qcad		ports/cad/qcad
 qcamcontrol	src/usr.sbin/qcamcontrol
