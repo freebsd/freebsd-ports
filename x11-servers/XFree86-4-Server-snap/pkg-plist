@@ -31,7 +31,6 @@ lib/X11/doc/README.dps
 lib/X11/doc/README.fonts
 %%I386:%%lib/X11/doc/README.i740
 %%I386:%%lib/X11/doc/README.i810
-%%MATROX%%lib/X11/doc/README.mga
 %%MATROX%%lib/X11/doc/README.mga_HALLIB
 lib/X11/doc/README.mouse
 %%I386:%%lib/X11/doc/README.newport
