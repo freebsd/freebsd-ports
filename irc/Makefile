@@ -60,6 +60,7 @@
     SUBDIR += trickyirc
     SUBDIR += xaric
     SUBDIR += xchat
+    SUBDIR += xchat2
     SUBDIR += zircon
 
 .include <bsd.port.subdir.mk>
