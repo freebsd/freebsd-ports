@@ -9,7 +9,7 @@ PORTNAME=	zodb
 PORTVERSION=	2001.06.16
 CATEGORIES=	databases python
 MASTER_SITES=	http://amk.ca/files/zodb/
-DISTNAME=	zodb
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
 
 MAINTAINER=	wjv@FreeBSD.org
 
