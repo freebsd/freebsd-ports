@@ -1,0 +1,14 @@
+bin/mkid
+bin/lid
+bin/fid
+bin/fnid
+bin/xtokid
+bin/eid
+bin/aid
+bin/gid
+bin/defid
+info/id-utils.info
+share/emacs/site-lisp/id-utils.elc
+share/id-lang.map
+share/locale/de/LC_MESSAGES/id-utils.mo
+share/locale/fr/LC_MESSAGES/id-utils.mo
