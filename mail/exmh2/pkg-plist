@@ -2,6 +2,7 @@ bin/exmh
 bin/exmh-async
 bin/exmh-bg
 bin/ftp.expect
+bin/inc.expect
 lib/exmh-%%EXMH_VERSION%%/PgpDecryptExpect
 lib/exmh-%%EXMH_VERSION%%/addr.tcl
 lib/exmh-%%EXMH_VERSION%%/aliases.tcl
@@ -13,6 +14,28 @@ lib/exmh-%%EXMH_VERSION%%/autorefile.tcl
 lib/exmh-%%EXMH_VERSION%%/background.tcl
 lib/exmh-%%EXMH_VERSION%%/base64.tcl
 lib/exmh-%%EXMH_VERSION%%/bindings.tcl
+lib/exmh-%%EXMH_VERSION%%/bitmaps/abort.xbm
+lib/exmh-%%EXMH_VERSION%%/bitmaps/address.xbm
+lib/exmh-%%EXMH_VERSION%%/bitmaps/bind.xbm
+lib/exmh-%%EXMH_VERSION%%/bitmaps/bitmaps.defaults
+lib/exmh-%%EXMH_VERSION%%/bitmaps/commit.xbm
+lib/exmh-%%EXMH_VERSION%%/bitmaps/compose.xbm
+lib/exmh-%%EXMH_VERSION%%/bitmaps/delete.xbm
+lib/exmh-%%EXMH_VERSION%%/bitmaps/forward.xbm
+lib/exmh-%%EXMH_VERSION%%/bitmaps/getmail.xbm
+lib/exmh-%%EXMH_VERSION%%/bitmaps/help.xbm
+lib/exmh-%%EXMH_VERSION%%/bitmaps/link.xbm
+lib/exmh-%%EXMH_VERSION%%/bitmaps/move.xbm
+lib/exmh-%%EXMH_VERSION%%/bitmaps/new.xbm
+lib/exmh-%%EXMH_VERSION%%/bitmaps/phone.xbm
+lib/exmh-%%EXMH_VERSION%%/bitmaps/pref.xbm
+lib/exmh-%%EXMH_VERSION%%/bitmaps/quote.xbm
+lib/exmh-%%EXMH_VERSION%%/bitmaps/scan.xbm
+lib/exmh-%%EXMH_VERSION%%/bitmaps/search.xbm
+lib/exmh-%%EXMH_VERSION%%/bitmaps/send.xbm
+lib/exmh-%%EXMH_VERSION%%/bitmaps/sign.xbm
+lib/exmh-%%EXMH_VERSION%%/bitmaps/unmark.xbm
+lib/exmh-%%EXMH_VERSION%%/bitmaps/write.xbm
 lib/exmh-%%EXMH_VERSION%%/busy.tcl
 lib/exmh-%%EXMH_VERSION%%/buttons.tcl
 lib/exmh-%%EXMH_VERSION%%/clink.au
@@ -85,9 +108,7 @@ lib/exmh-%%EXMH_VERSION%%/html/custom.html
 lib/exmh-%%EXMH_VERSION%%/html/exmh-fans.html
 lib/exmh-%%EXMH_VERSION%%/html/exmh-faq.html
 lib/exmh-%%EXMH_VERSION%%/html/exmh.README.html
-lib/exmh-%%EXMH_VERSION%%/html/exmh.key.color.gif
 lib/exmh-%%EXMH_VERSION%%/html/exmh.pref.gif
-lib/exmh-%%EXMH_VERSION%%/html/exmh.snap.10.99.gif
 lib/exmh-%%EXMH_VERSION%%/html/exmh.snap1.gif
 lib/exmh-%%EXMH_VERSION%%/html/guide.html
 lib/exmh-%%EXMH_VERSION%%/html/index.html
@@ -101,6 +122,7 @@ lib/exmh-%%EXMH_VERSION%%/html/red-ball.gif
 lib/exmh-%%EXMH_VERSION%%/html/reference.html
 lib/exmh-%%EXMH_VERSION%%/html/right-arrow.gif
 lib/exmh-%%EXMH_VERSION%%/html/software.html
+lib/exmh-%%EXMH_VERSION%%/html/symlink.html
 lib/exmh-%%EXMH_VERSION%%/html/tutorial.html
 lib/exmh-%%EXMH_VERSION%%/html/whatis.html
 lib/exmh-%%EXMH_VERSION%%/html/yel-ball.gif
@@ -194,5 +216,6 @@ lib/exmh-%%EXMH_VERSION%%/widgetText.tcl
 lib/exmh-%%EXMH_VERSION%%/widgets.tcl
 lib/exmh-%%EXMH_VERSION%%/xns.tcl
 lib/exmh-%%EXMH_VERSION%%/xnsgetmail.exp
+@dirrm lib/exmh-%%EXMH_VERSION%%/bitmaps
 @dirrm lib/exmh-%%EXMH_VERSION%%/html
 @dirrm lib/exmh-%%EXMH_VERSION%%
