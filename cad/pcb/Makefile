@@ -16,6 +16,7 @@ COMMENT=	X11 interactive printed circuit board layout system
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		latex:${PORTSDIR}/print/teTeX
+LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
