@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.javasoft.com/docs/ \
 		http://java.sun.com/docs/books/tutorial/download/
 DISTNAME=	tutorial
 
-MAINTAINER=	parv_fm@emailgroups.net
+MAINTAINER=	parv@pair.com
 COMMENT=	Official Java 2 SDK tutorial
 
 NO_WRKSUBDIR=	yes
