@@ -5022,7 +5022,6 @@ ports_traceroute	ports/net/traceroute
 ports_truncate	ports/sysutils/truncate
 ports_ukrainian	ports/ukrainian
 ports_units	ports/math/units
-ports-uucp	ports/net/freebsd-uucp
 ports_vietnamese	ports/vietnamese
 ports_www	ports/www
 ports_x11	ports/x11
