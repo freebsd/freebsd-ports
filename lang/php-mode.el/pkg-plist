@@ -1,0 +1,6 @@
+share/emacs/site-lisp/php-mode.el
+@exec mkdir -p %D/lib/xemacs/site-lisp
+@exec ln -sf %D/%F %D/lib/xemacs/site-lisp/php-mode.el
+@unexec rm %D/lib/xemacs/site-lisp/php-mode.el
+@dirrm lib/xemacs/site-lisp
+@dirrm lib/xemacs
