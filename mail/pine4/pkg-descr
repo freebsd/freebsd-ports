@@ -4,3 +4,6 @@ computer users in mind, but can be tailored to accommodate the needs
 of "power users" as well.  Pine uses Internet message protocols (e.g.
 RFC-822, SMTP, MIME, IMAP, NNTP) and runs on Unix and PCs.  This
 package also includes the Pico editor and the IMAP daemon.
+
+If you want to use the spell checking feature of pine, set the
+environment variable SPELL to "/usr/local/bin/ispell -l".
