@@ -1,15 +1,14 @@
-OpenBSD's OpenSSH portable version
+High Performance Enabled SSH/SCP
+from the Pittsburgh Supercomputing Center
 
-Normal OpenSSH development produces a very small, secure, and easy to maintain
-version for the OpenBSD project. The OpenSSH Portability Team takes that pure
-version and adds portability code so that OpenSSH can run on many other
-operating systems (Unfortunately, in particular since OpenSSH does
-authentication, it runs into a *lot* of differences between Unix operating
-systems). 
+hpn-ssh is a version of OpenSSH modified to support high-performance
+bulk transfers (such as with scp or rsync).  These modifications are
+required because:
 
-The portable OpenSSH follows development of the official version, but releases
-are not synchronized. Portable releases are marked with a 'p' (e.g. 3.1p1).
-The official OpenBSD source will never use the 'p' suffix, but will instead
-increment the version number when they hit 'stable spots' in their development. 
+  SCP and the underlying SSH protocol is network performance limited by
+  statically defined internal flow control buffers. These buffers often
+  end up acting as a brake on the network throughput of SCP especially
+  on long and wide paths. Modifying the ssh code to allow the flow
+  control buffers to be defined at run time eliminates this bottleneck.
 
-WWW: http://www.openssh.com/portable.html
+WWW: http://www.psc.edu/networking/projects/hpn-ssh/
