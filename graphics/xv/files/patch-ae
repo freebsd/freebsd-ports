@@ -1,11 +1,28 @@
---- xvimage.c~	Fri Jan 13 18:11:36 1995
-+++ xvimage.c	Tue Oct 15 16:41:47 1996
-@@ -46,6 +46,274 @@
+--- xvimage.c
++++ xvimage.c	Wed Jan 12 15:10:24 2000
+@@ -29,40 +29,302 @@
+ static void flipSel           PARM((int));
+ static void do_zoom           PARM((int, int));
+ static void compute_zoom_rect PARM((int, int, int*, int*, int*, int*));
+ static void do_unzoom         PARM((void));
+ static void do_pan            PARM((int, int));
+ static void do_pan_calc       PARM((int, int, int *, int *));
+ static void crop1             PARM((int, int, int, int, int));
+ static int  doAutoCrop24      PARM((void));
+ static void floydDitherize1   PARM((XImage *, byte *, int, int, int, 
+ 				    byte *, byte *,byte *));
+ static int  highbit           PARM((unsigned long));
+ 
+ static int  doPadSolid        PARM((char *, int, int, int, int));
+ static int  doPadBggen        PARM((char *, int, int, int, int));
+ static int  doPadLoad         PARM((char *, int, int, int, int));
+ 
+ static int  doPadPaste        PARM((byte *, int, int, int, int));
  static int  ReadImageFile1    PARM((char *, PICINFO *));
  
  
-+/* The following array represents the pixel values for each shade of
-+ * the primary color components.
++/* The following array represents the pixel values for each shade
++ * of the primary color components.
 + * If 'p' is a pointer to a source image rgb-byte-triplet, we can
 + * construct the output pixel value simply by 'oring' together
 + * the corresponding components:
@@ -20,7 +37,7 @@
 + * This is both efficient and generic, since the only assumption
 + * is that the primary color components have separate bits.
 + * The order and distribution of bits does not matter, and we
-+ * don't need additional vaiables and shifting/masking code.
++ * don't need additional variables and shifting/masking code.
 + * The array size is 3 KBytes total and thus very reasonable.
 + */
 +
@@ -42,21 +59,14 @@
 + * The method is to draw points in a pixmap with the specified shades
 + * of primary colors and then get the corresponding XImage pixel
 + * representation.
-+ * Thus we can get away with any Bit-order/Byte-Order dependencies.
++ * Thus we can get away with any Bit-order/Byte-order dependencies.
 + *
-+ * The routine uses some global X variables: theDisp, theScreen,
-+ * and dispDEEP. Adapt these to your application as necessary.
++ * The routine uses some global X variables:
++ * theDisp, theScreen, dispDEEP, and theCmap.
++ * Adapt these to your application as necessary.
 + * I've not passed them in as parameters, since for other platforms
 + * than X these may be different (see vfixpix.c), and so the
 + * screen_init() interface is unique.
-+ *
-+ * BUG: I've read in the "Xlib Programming Manual" from O'Reilly &
-+ * Associates, that the DefaultColormap in TrueColor might not
-+ * provide the full shade representation in XAllocColor.
-+ * In this case one had to provide a 'best' colormap instead.
-+ * However, my tests with Xaccel on a Linux-Box with a Mach64
-+ * card were fully successful, so I leave that potential problem
-+ * to you at the moment and would appreciate any suggestions...
 + */
 +
 +static void screen_init()
@@ -73,43 +83,45 @@
 +
 +  check_map = XCreatePixmap(theDisp, RootWindow(theDisp,theScreen),
 +			    1, 1, dispDEEP);
-+  check_gc = XCreateGC(theDisp, RootWindow(theDisp,theScreen), 0, NULL);
++  check_gc = XCreateGC(theDisp, check_map, 0, NULL);
 +  for (ci = 0; ci < 3; ci++) {
 +    for (i = 0; i < 256; i++) {
-+      check_col.flags = DoRed | DoGreen | DoBlue;
 +      check_col.red = 0;
 +      check_col.green = 0;
 +      check_col.blue = 0;
 +      /* Do proper upscaling from unsigned 8 bit (image data values)
 +	 to unsigned 16 bit (X color representation). */
 +      ((unsigned short *)&check_col.red)[ci] = (unsigned short)((i << 8) | i);
-+      if (!XAllocColor(theDisp, DefaultColormap(theDisp,theScreen), &check_col))
-+	FatalError("XAllocColor in screen_init() failed"); /* shouldn't happen */
++      if (theVisual->class == TrueColor)
++	XAllocColor(theDisp, theCmap, &check_col);
++      else
++	xvAllocColor(theDisp, theCmap, &check_col);
 +      screen_set[ci][i] =
 +	(((unsigned short *)&check_col.red)[ci] >> 8) & 0xff;
 +      XSetForeground(theDisp, check_gc, check_col.pixel);
 +      XDrawPoint(theDisp, check_map, check_gc, 0, 0);
 +      check_image = XGetImage(theDisp, check_map, 0, 0, 1, 1,
 +			      AllPlanes, ZPixmap);
-+      if (!check_image) FatalError("XGetImage in screen_init() failed");
-+      switch (check_image->bits_per_pixel) {
-+      case 8:
-+	screen_rgb[ci][i] = *(CARD8 *)check_image->data;
-+	break;
-+      case 16:
-+	screen_rgb[ci][i] = *(CARD16 *)check_image->data;
-+	break;
-+      case 24:
-+	screen_rgb[ci][i] =
-+	  ((unsigned long)*(CARD8 *)check_image->data << 16) |
-+	  ((unsigned long)*(CARD8 *)(check_image->data + 1) << 8) |
-+	  (unsigned long)*(CARD8 *)(check_image->data + 2);
-+	break;
-+      case 32:
-+	screen_rgb[ci][i] = *(CARD32 *)check_image->data;
-+	break;
++      if (check_image) {
++	switch (check_image->bits_per_pixel) {
++	case 8:
++	  screen_rgb[ci][i] = *(CARD8 *)check_image->data;
++	  break;
++	case 16:
++	  screen_rgb[ci][i] = *(CARD16 *)check_image->data;
++	  break;
++	case 24:
++	  screen_rgb[ci][i] =
++	    ((unsigned long)*(CARD8 *)check_image->data << 16) |
++	    ((unsigned long)*(CARD8 *)(check_image->data + 1) << 8) |
++	    (unsigned long)*(CARD8 *)(check_image->data + 2);
++	  break;
++	case 32:
++	  screen_rgb[ci][i] = *(CARD32 *)check_image->data;
++	  break;
++	}
++	XDestroyImage(check_image);
 +      }
-+      XDestroyImage(check_image);
 +    }
 +  }
 +  XFreeGC(theDisp, check_gc);
@@ -156,7 +168,6 @@
 + * current column.  (If we are lucky, those variables are in registers, but
 + * even if not, they're probably cheaper to access than array elements are.)
 + *
-+ * The fserrors[] array is indexed [component#][position].
 + * We provide (#columns + 2) entries per component; the extra entry at each
 + * end saves us from special-casing the first and last pixels.
 + */
@@ -275,7 +286,41 @@
  
  #define DO_CROP 0
  #define DO_ZOOM 1
-@@ -1883,33 +2151,17 @@
+ 
+ 
+ /***********************************/
+ void Resize(w,h)
+ int w,h;
+ {
+   RANGE(w,1,maxWIDE);  RANGE(h,1,maxHIGH);
+ 
+   if (HaveSelection()) DrawSelection(0);  /* turn off old rect */
+ 
+   if (psUp) PSResize();   /* if PSDialog is open, mention size change  */
+ 
+   /* if same size, and Ximage created, do nothing */
+   if (w==eWIDE && h==eHIGH && theImage!=NULL) return;
+ 
+   if (DEBUG) fprintf(stderr,"Resize(%d,%d)  eSIZE=%d,%d  cSIZE=%d,%d\n",
+ 		     w,h,eWIDE,eHIGH,cWIDE,cHIGH);
+@@ -1866,156 +2128,145 @@
+     if (!xim) FatalError("couldn't create xim!");
+ 
+     imagedata = (byte *) malloc((size_t) (xim->bytes_per_line * high));
+     if (!imagedata) FatalError("couldn't malloc imagedata");
+ 
+     xim->data = (char *) imagedata;
+     floydDitherize1(xim, pic24,PIC24, (int) wide, (int) high, NULL,NULL,NULL);
+ 
+     return xim;
+   }
+ 
+ 
+ 
+ 
+   if (theVisual->class == TrueColor || theVisual->class == DirectColor) {
+ 
+     /************************************************************************/
      /* Non-ColorMapped Visuals:  TrueColor, DirectColor                     */
      /************************************************************************/
  
@@ -311,7 +356,13 @@
  
      imagedata = (byte *) malloc((size_t) (high * bperline));
      if (!imagedata) FatalError("couldn't malloc imagedata");
-@@ -1923,82 +2175,87 @@
+ 
+     xim->data = (char *) imagedata;
+ 
+     if (bperpix != 8 && bperpix != 16 && bperpix != 24 && bperpix != 32) {
+       char buf[128];
+       sprintf(buf,"Sorry, no code written to handle %d-bit %s",
+ 	      bperpix, "TrueColor/DirectColor displays!");
        FatalError(buf);
      }
  
@@ -363,19 +414,6 @@
 -	    *ip++ = (xcol>>8)  & 0xff;
 -	    *ip++ = (xcol>>16) & 0xff;
 -	    *ip++ = (xcol>>24) & 0xff;
--	  }
--	}
--
--	else if (bperpix == 24) {
--	  if (border == MSBFirst) {
--	    *ip++ = (xcol>>16) & 0xff;
--	    *ip++ = (xcol>>8)  & 0xff;
--	    *ip++ =  xcol      & 0xff;
--	  }
--	  else {  /* LSBFirst */
--	    *ip++ =  xcol      & 0xff;
--	    *ip++ = (xcol>>8)  & 0xff;
--	    *ip++ = (xcol>>16) & 0xff;
 +#ifdef DO_FIXPIX_SMOOTH
 +#if 0
 +    /* If we wouldn't have to save the original pic24 image data,
@@ -396,7 +434,6 @@
 +     * dithering/rendering in a loop using a temporary line buffer.
 +     */
 +    if (bperpix < 24) {
-+      int alldone = 0;
 +      FSBUF *fs = fs2_init(wide);
 +      if (fs) {
 +	byte *row_buf = malloc((size_t)wide * 3);
@@ -422,12 +459,25 @@
 +	      }
 +	    }
  	  }
-+	  alldone = 1;
+-	}
 +	  free(row_buf);
++	  free(fs);
+ 
+-	else if (bperpix == 24) {
+-	  if (border == MSBFirst) {
+-	    *ip++ = (xcol>>16) & 0xff;
+-	    *ip++ = (xcol>>8)  & 0xff;
+-	    *ip++ =  xcol      & 0xff;
+-	  }
+-	  else {  /* LSBFirst */
+-	    *ip++ =  xcol      & 0xff;
+-	    *ip++ = (xcol>>8)  & 0xff;
+-	    *ip++ = (xcol>>16) & 0xff;
+-	  }
++	  return xim;
  	}
 +	free(fs);
 +      }
-+      if (alldone) return xim;
 +    }
 +#endif
 +#endif
@@ -470,3 +520,20 @@
  	}
        }
      }
+   }
+ 
+   else {
+ 
+     /************************************************************************/
+     /* CMapped Visuals:  PseudoColor, GrayScale, StaticGray, StaticColor... */
+     /************************************************************************/
+ 
+     byte *pic8;
+     int   bwdith;
+ 
+     /* in all cases, make an 8-bit version of the image, either using
+        'black' and 'white', or the stdcmap */
+ 
+     bwdith = 0;
+ 
+     if (ncols == 0 && dispDEEP != 1) {   /* do 'black' and 'white' dither */
