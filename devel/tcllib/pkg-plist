@@ -1,5 +1,6 @@
 lib/tcllib%%PORTVERSION%%/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/base64/base64.tcl
+lib/tcllib%%PORTVERSION%%/base64/base64c.tcl
 lib/tcllib%%PORTVERSION%%/base64/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/base64/uuencode.tcl
 lib/tcllib%%PORTVERSION%%/base64/yencode.tcl
@@ -25,6 +26,7 @@ lib/tcllib%%PORTVERSION%%/counter/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/crc/cksum.tcl
 lib/tcllib%%PORTVERSION%%/crc/crc16.tcl
 lib/tcllib%%PORTVERSION%%/crc/crc32.tcl
+lib/tcllib%%PORTVERSION%%/crc/crcc.tcl
 lib/tcllib%%PORTVERSION%%/crc/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/crc/sum.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/crc
@@ -68,6 +70,7 @@ lib/tcllib%%PORTVERSION%%/doctools/mpformats/fmt.null
 lib/tcllib%%PORTVERSION%%/doctools/mpformats/fmt.text
 lib/tcllib%%PORTVERSION%%/doctools/mpformats/fmt.tmml
 lib/tcllib%%PORTVERSION%%/doctools/mpformats/fmt.wiki
+lib/tcllib%%PORTVERSION%%/doctools/mpformats/fr.msg
 lib/tcllib%%PORTVERSION%%/doctools/mpformats/idx.html
 lib/tcllib%%PORTVERSION%%/doctools/mpformats/idx.nroff
 lib/tcllib%%PORTVERSION%%/doctools/mpformats/idx.null
@@ -101,6 +104,9 @@ lib/tcllib%%PORTVERSION%%/html/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/htmlparse/htmlparse.tcl
 lib/tcllib%%PORTVERSION%%/htmlparse/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/htmlparse
+lib/tcllib%%PORTVERSION%%/inifile/ini.tcl
+lib/tcllib%%PORTVERSION%%/inifile/pkgIndex.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/inifile
 lib/tcllib%%PORTVERSION%%/irc/irc.tcl
 lib/tcllib%%PORTVERSION%%/irc/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/irc
@@ -130,13 +136,22 @@ lib/tcllib%%PORTVERSION%%/md4/md4c.tcl
 lib/tcllib%%PORTVERSION%%/md4/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/md4
 lib/tcllib%%PORTVERSION%%/md5/md5.tcl
+lib/tcllib%%PORTVERSION%%/md5/md5c.tcl
+lib/tcllib%%PORTVERSION%%/md5/md5x.tcl
 lib/tcllib%%PORTVERSION%%/md5/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/md5
+lib/tcllib%%PORTVERSION%%/md5crypt/md5crypt.tcl
+lib/tcllib%%PORTVERSION%%/md5crypt/md5cryptc.tcl
+lib/tcllib%%PORTVERSION%%/md5crypt/pkgIndex.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/md5crypt
 lib/tcllib%%PORTVERSION%%/mime/mime.tcl
 lib/tcllib%%PORTVERSION%%/mime/performance.tcl
 lib/tcllib%%PORTVERSION%%/mime/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/mime/smtp.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/mime
+lib/tcllib%%PORTVERSION%%/multiplexer/multiplexer.tcl
+lib/tcllib%%PORTVERSION%%/multiplexer/pkgIndex.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/multiplexer
 lib/tcllib%%PORTVERSION%%/ncgi/ncgi.tcl
 lib/tcllib%%PORTVERSION%%/ncgi/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/ncgi
@@ -168,6 +183,9 @@ lib/tcllib%%PORTVERSION%%/sha1/sha1.tcl
 lib/tcllib%%PORTVERSION%%/smtpd/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/smtpd/smtpd.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/smtpd
+lib/tcllib%%PORTVERSION%%/snit/pkgIndex.tcl
+lib/tcllib%%PORTVERSION%%/snit/snit.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/snit
 lib/tcllib%%PORTVERSION%%/soundex/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/soundex/soundex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/soundex
@@ -186,11 +204,26 @@ lib/tcllib%%PORTVERSION%%/struct/pooltest.tcl
 lib/tcllib%%PORTVERSION%%/struct/prioqueue.tcl
 lib/tcllib%%PORTVERSION%%/struct/queue.tcl
 lib/tcllib%%PORTVERSION%%/struct/record.tcl
+lib/tcllib%%PORTVERSION%%/struct/sets.tcl
 lib/tcllib%%PORTVERSION%%/struct/skiplist.tcl
 lib/tcllib%%PORTVERSION%%/struct/stack.tcl
 lib/tcllib%%PORTVERSION%%/struct/struct.tcl
 lib/tcllib%%PORTVERSION%%/struct/tree.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/struct
+lib/tcllib%%PORTVERSION%%/struct1/graph.tcl
+lib/tcllib%%PORTVERSION%%/struct1/list.tcl
+lib/tcllib%%PORTVERSION%%/struct1/matrix.tcl
+lib/tcllib%%PORTVERSION%%/struct1/pkgIndex.tcl
+lib/tcllib%%PORTVERSION%%/struct1/pool.tcl
+lib/tcllib%%PORTVERSION%%/struct1/pooltest.tcl
+lib/tcllib%%PORTVERSION%%/struct1/prioqueue.tcl
+lib/tcllib%%PORTVERSION%%/struct1/queue.tcl
+lib/tcllib%%PORTVERSION%%/struct1/record.tcl
+lib/tcllib%%PORTVERSION%%/struct1/skiplist.tcl
+lib/tcllib%%PORTVERSION%%/struct1/stack.tcl
+lib/tcllib%%PORTVERSION%%/struct1/struct.tcl
+lib/tcllib%%PORTVERSION%%/struct1/tree.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/struct1
 lib/tcllib%%PORTVERSION%%/textutil/adjust.tcl
 lib/tcllib%%PORTVERSION%%/textutil/dehypht.tex
 lib/tcllib%%PORTVERSION%%/textutil/eshyph_vo.tex
