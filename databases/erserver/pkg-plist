@@ -17,7 +17,7 @@ share/doc/erserver/install.html
 share/doc/erserver/install.pdf
 share/doc/erserver/install.txt
 share/doc/erserver/logo.png
-etc/repliclog.cfg
+etc/repliclog.cfg.sample
 share/java/classes/jdbc7.0-1.2.jar
 @comment share/java/classes/erserver.jar
 share/erserver/erserver.freebsd
