@@ -20,7 +20,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	petef@FreeBSD.org
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang \
-		intl.2:${PORTSDIR}/devel/gettext \
+		intl.4:${PORTSDIR}/devel/gettext \
 		iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_BZIP2=	yes

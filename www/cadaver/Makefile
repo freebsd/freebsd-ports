@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.webdav.org/cadaver/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 .ifndef NO_OPENSSL
 USE_OPENSSL=	yes

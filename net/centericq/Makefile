@@ -14,7 +14,7 @@ MASTER_SITES=	http://konst.org.ua/download/
 
 MAINTAINER=	ijliao@FreeBSD.org
 
-LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		iconv.3:${PORTSDIR}/converters/libiconv \
 		sigc.1:${PORTSDIR}/devel/libsigc++
 #		fribidi.0:${PORTSDIR}/converters/fribidi

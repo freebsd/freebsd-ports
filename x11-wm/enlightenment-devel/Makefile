@@ -23,7 +23,7 @@ MAINTAINER=	vanilla@FreeBSD.org
 
 LIB_DEPENDS=	Fnlib.0:${PORTSDIR}/graphics/fnlib \
 		ghttp.1:${PORTSDIR}/www/libghttp \
-		intl.2:${PORTSDIR}/devel/gettext
+		intl.4:${PORTSDIR}/devel/gettext
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

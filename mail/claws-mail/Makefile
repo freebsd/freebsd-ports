@@ -17,7 +17,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	corecode@corecode.ath.cx
 
-LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 THEMEVERSION=	2
 THEMEFILE=	sylpheed-theme-pak${THEMEVERSION}${EXTRACT_SUFX}

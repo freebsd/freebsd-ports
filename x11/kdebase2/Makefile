@@ -17,7 +17,7 @@ MAINTAINER?=	kde@FreeBSD.org
 
 BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
 		automake14:${PORTSDIR}/devel/automake14
-LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_KDELIBS_VER=2
 SOMAJOR=	4

@@ -16,7 +16,7 @@ DISTFILES=	objprelink.c.gz binutils-${BINUTILS_VER}.tar.bz2
 
 MAINTAINER=	dominic_marks@btinternet.com
 
-LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 ONLY_FOR_ARCHS=	i386
 BINUTILS_VER=	2.11.2

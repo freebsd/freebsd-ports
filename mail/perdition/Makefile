@@ -17,7 +17,7 @@ MASTER_SITE_SUBDIR=	${PORTVERSION}
 
 MAINTAINER=	kkonstan@daemon.gr
 
-LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		popt.0:${PORTSDIR}/devel/popt \
 		gdbm.2:${PORTSDIR}/databases/gdbm \
 		vanessa_logger.0:${PORTSDIR}/devel/libvanessa_logger \

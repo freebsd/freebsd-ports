@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	trevor@FreeBSD.org
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
-		intl.2:${PORTSDIR}/devel/gettext \
+		intl.4:${PORTSDIR}/devel/gettext \
 		xml.5:${PORTSDIR}/textproc/libxml
 
 GNU_CONFIGURE=	yes

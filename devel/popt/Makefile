@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-4.0.x/ \
 
 MAINTAINER=	lioux@FreeBSD.org
 
-LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes

@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}_gui-${PORTVERSION}
 MAINTAINER=	lioux@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/ogle/libdvdcontrol.so.7:${PORTSDIR}/graphics/ogle
-LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		glade.4:${PORTSDIR}/devel/libglade \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 RUN_DEPENDS=	ogle:${PORTSDIR}/graphics/ogle

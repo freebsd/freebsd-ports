@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	erich@tacni.net
 
 BUILD_DEPENDS=	msgfmt-old:${PORTSDIR}/devel/gettext-old
-LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

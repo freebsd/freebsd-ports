@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-ko-${PORTVERSION}
 
 MAINTAINER=	cjh@FreeBSD.org
 
-LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	${LOCALBASE}/share/texmf/doc/latex/hlatex/uhc.ks:${PORTSDIR}/korean/hlatex
 
 GNU_CONFIGURE=	YES

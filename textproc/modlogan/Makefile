@@ -15,7 +15,7 @@ MAINTAINER=	netchild@FreeBSD.org
 
 LIB_DEPENDS=	adns.1:${PORTSDIR}/net/adns \
 		gd.2:${PORTSDIR}/graphics/gd \
-		intl.2:${PORTSDIR}/devel/gettext \
+		intl.4:${PORTSDIR}/devel/gettext \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		ltdl.1:${PORTSDIR}/devel/libtool

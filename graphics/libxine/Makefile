@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libavcodec.a:${PORTSDIR}/graphics/ffmpeg \
 LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		SDL-1.1:${PORTSDIR}/devel/sdl12 \
-		intl.2:${PORTSDIR}/devel/gettext \
+		intl.4:${PORTSDIR}/devel/gettext \
 		iconv.3:${PORTSDIR}/converters/libiconv \
 		divxdecore.1:${PORTSDIR}/graphics/libdivxdecore-devel
 

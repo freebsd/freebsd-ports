@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.apcupsd.org/pub/apcupsd/stable/tar/
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.de
 
-LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 STARTUP_SCRIPT=	apcupsd.sh.sample
 PLIST_SUB=	STARTUP_SCRIPT=${STARTUP_SCRIPT}

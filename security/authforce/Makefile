@@ -14,7 +14,7 @@ MAINTAINER=     ache@FreeBSD.org
 
 LIB_DEPENDS=    gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		curl.2:${PORTSDIR}/ftp/curl \
-		intl.2:${PORTSDIR}/devel/gettext
+		intl.4:${PORTSDIR}/devel/gettext
 
 USE_BZIP2=      yes
 

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	udeproject
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_X_PREFIX=	yes

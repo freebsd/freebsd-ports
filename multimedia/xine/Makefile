@@ -18,7 +18,7 @@ MAINTAINER=	nobutaka@FreeBSD.org
 LIB_DEPENDS=	xine.1:${PORTSDIR}/graphics/libxine \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		png.5:${PORTSDIR}/graphics/png \
-		intl.2:${PORTSDIR}/devel/gettext
+		intl.4:${PORTSDIR}/devel/gettext
 
 USE_X_PREFIX=	yes
 USE_IMLIB=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	http://members.optushome.com.au/davidsymonds/gt/
 
 MAINTAINER=	freebsdports@arved.de
 
-LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
 
 USE_GTK=	yes

@@ -17,7 +17,7 @@ PATCHFILES=	jwhois.rel_3_1_0-to-2002-04-20@2000UTC.patch.asc.gz
 
 MAINTAINER=	matusita@FreeBSD.org
 
-LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--localstatedir=${PREFIX}/var/jwhois

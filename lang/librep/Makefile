@@ -18,7 +18,7 @@ MASTER_SITE_SUBDIR=	librep
 MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm \
-		intl.2:${PORTSDIR}/devel/gettext
+		intl.4:${PORTSDIR}/devel/gettext
 
 PLIST_SUB=	GNUHOST=${ARCH}-pc-freebsd${OSREL:C/\..*//} VERSION=${PORTVERSION}
 
