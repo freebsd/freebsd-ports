@@ -1,6 +1,6 @@
-phpGroupWare is a web based GroupWare system. It comes with serveral core
-apps for email, calendar, todo list, address book, file manager, and a
-notepad.  It also provides a framework for add-on applications to integrate
-seamlessly in phpGroupWare.
+eGroupWare is a multi-user, web-based groupware suite developed on a
+custom set of PHP-based APIs. Currently available modules include:
+email, addressbook, calendar, infolog (notes, to-do's, phone calls),
+content management, forum, bookmarks, wiki.
 
-WWW: http://phpgroupware.org/
+WWW: http://www.egroupware.org/

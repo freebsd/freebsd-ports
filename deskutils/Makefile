@@ -16,6 +16,7 @@
     SUBDIR += dlume
     SUBDIR += dragstack
     SUBDIR += drivel
+    SUBDIR += egroupware
     SUBDIR += fusenshi
     SUBDIR += gaddr
     SUBDIR += ganttproject
