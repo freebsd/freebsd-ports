@@ -13,7 +13,7 @@ CATEGORIES=	editors
 LANGPREFIX=	da
 LANGSUFFIX=	DK
 LANGDIST+=	da_DK.zip
-HYPHDIST+=	hyph_da.zip
+HYPHDIST+=	hyph_da_DK.zip
 MASTERDIR=	${.CURDIR}/../ooodict-all
 RDEP=		${PORTSDIR}/editors/openoffice-dk
 
