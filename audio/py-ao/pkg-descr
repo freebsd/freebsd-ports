@@ -1,0 +1,6 @@
+pyao - a Python wrapper module for the ao library
+
+Ao is an audio abstraction library that lets you output to different
+devices using the same interface.
+
+WWW:	http://www.andrewchatham.com/pyogg/
