@@ -1,5 +1,5 @@
 # New ports collection makefile for:	skk10-elisp-emacs20
-# Version required:	10.52a
+# Version required:	10.55
 # Date created:		21 September 1999
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.asahi-net.or.jp/~gy2m-nkjm/skk/
 
 MAINTAINER?=	shige@FreeBSD.org
 
-SKK10_VER=	10.52a
+SKK10_VER=	10.55
 
 # This port is a master port.
 PORT_CLASS?=	master
@@ -36,14 +36,14 @@ HAVE_COMMON_PORT=	NO
 # dependency: skk-jisyo
 RUN_DEPENDS+=	${LOCALBASE}/share/skk/${SKKJISYO}:${SKK_MASTERDIR}
 # dependency: apel
-BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${.CURDIR}/../../editors/apel-${EMACS_PORT_NAME}
-RUN_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${.CURDIR}/../../editors/apel-${EMACS_PORT_NAME}
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
+RUN_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
 # dependency: emacsen
-BUILD_DEPENDS+=	${EMACS_CMD}:${.CURDIR}/../../editors/${EMACS_PORT_NAME}
+BUILD_DEPENDS+=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT_NAME}
 .if defined(HAVE_COMMON_PORT) && (${HAVE_COMMON_PORT} == "YES")
-RUN_DEPENDS+=	${EMACS_CMD}:${.CURDIR}/../../editors/${EMACS_PORT_NAME}-common
+RUN_DEPENDS+=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT_NAME}-common
 .else
-RUN_DEPENDS+=	${EMACS_CMD}:${.CURDIR}/../../editors/${EMACS_PORT_NAME}
+RUN_DEPENDS+=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT_NAME}
 .endif
 
 WRKSRC=		${WRKDIR}/skk-${SKK10_VER}
@@ -54,7 +54,7 @@ PLIST_SUB=	EMACS=${EMACS_CMD} EMACS_LIBDIR=${EMACS_LIBDIR}
 # information of skk-jisyo
 SKKJISYO_SIZE?=	L
 SKKJISYO?=	SKK-JISYO.${SKKJISYO_SIZE}
-SKK_MASTERDIR=	${.CURDIR}/../../japanese/skk-jisyo
+SKK_MASTERDIR=	${PORTSDIR}/japanese/skk-jisyo
 
 post-install:
 	@install-info ${PREFIX}/info/skk.info ${PREFIX}/info/dir

@@ -6,6 +6,8 @@
 %%EMACS_LIBDIR%%/site-lisp/skk/skk-autoloads.elc
 %%EMACS_LIBDIR%%/site-lisp/skk/skk-comp.el
 %%EMACS_LIBDIR%%/site-lisp/skk/skk-comp.elc
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-develop.el
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-develop.elc
 %%EMACS_LIBDIR%%/site-lisp/skk/skk-foreword.el
 %%EMACS_LIBDIR%%/site-lisp/skk/skk-foreword.elc
 %%EMACS_LIBDIR%%/site-lisp/skk/skk-gadget.el
