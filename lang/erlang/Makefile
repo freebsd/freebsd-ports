@@ -7,6 +7,7 @@
 
 PORTNAME=	erlang
 PORTVERSION=	r10b3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang parallel
 MASTER_SITES=	http://www.erlang.org/download/        \
