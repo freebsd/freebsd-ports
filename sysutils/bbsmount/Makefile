@@ -34,7 +34,6 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "===> Installing documentation"
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL} ${WRKSRC}/data/README.bbsmount ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL} ${PORTDOCS} ${DOCSDIR}
 .endif
 	if [ ! -e ${PREFIX}/share/bbtools/bbsmount.bb ]; then \
