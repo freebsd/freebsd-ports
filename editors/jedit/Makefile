@@ -9,6 +9,7 @@ PORTNAME=	jedit
 PORTVERSION=	3.0.2
 CATEGORIES=	editors java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://members.nbci.com/romainguy/ \
 		http://members.xoom.com/romainguy/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${PORTNAME}${PORTVERSION:S/.//g}install.jar swingall.jar
