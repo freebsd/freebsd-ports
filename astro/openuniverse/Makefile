@@ -3,7 +3,7 @@
 # Date created:				4 August 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/06 17:57:50 mph Exp $
+# $Id: Makefile,v 1.2 1998/09/15 11:45:45 asami Exp $
 #
 
 DISTNAME=	ssystem-1.3
@@ -13,9 +13,9 @@ MASTER_SITES=	http://www1.las.es/~amil/ssystem/
 MAINTAINER=	andy@icc.surw.chel.su
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		MesaGL\\.1\[34\]\\.:${PORTSDIR}/graphics/Mesa3 \
-		MesaGLU\\.1\[34\]\\.:${PORTSDIR}/graphics/Mesa3 \
-		glut\\.3\\.:${PORTSDIR}/graphics/Mesa3
+		MesaGL.14:${PORTSDIR}/graphics/Mesa3 \
+		MesaGLU.14:${PORTSDIR}/graphics/Mesa3 \
+		glut.3:${PORTSDIR}/graphics/Mesa3
 
 USE_X11=	yes
 
