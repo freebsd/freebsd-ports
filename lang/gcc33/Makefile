@@ -32,7 +32,7 @@ COMMENT?=	GNU Compiler Collection 3.3
 
 .if defined (WITH_BOUNDSCHECKING)
 # Fetch another file, but don't extract it.  Also add another patchfile.
-BCPATCH=	bounds-checking-gcc-3.3-1.01.patch.bz2
+BCPATCH=	bounds-checking-gcc-3.3.1-1.00.patch.bz2
 DISTFILES+=	${BCPATCH}:bc
 EXTRACT_ONLY=	${DISTFILES:S/${BCPATCH}:bc//}
 EXTRA_PATCHES=	${FILESDIR}/opt.patch-bc
@@ -133,6 +133,7 @@ pre-patch:
 	cd ${_DISTDIR} ; \
 	${BZCAT} ${BCPATCH} | \
 		${SED} -e '/^--- .*ada/,/^diff/d' | \
+		${SED} -e '/^--- .*parse.h/,/^diff/d' | \
 		${PATCH} -d ${PATCH_WRKSRC} -E -p1 --quiet
 .endif
 
