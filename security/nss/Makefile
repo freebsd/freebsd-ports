@@ -21,6 +21,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/mozilla/security/nss
 
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
+USE_PERL5=	yes
 MAKE_ENV=	BSD_LDOPTS="${PTHREAD_LIBS} -L${LOCALBASE}/lib" \
 		BUILD_OPT=1
 ALL_TARGET=	nss_build_all
