@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Sat Mar  4 18:12:42 2000
++++ src/Makefile.in	Sat Mar  4 18:12:55 2000
+@@ -95,7 +95,7 @@
+ 
+ AM_YFLAGS = -d -t
+ AM_LFLAGS = -i
+-AM_CFLAGS = -O3 -g
++AM_CFLAGS = 
+ DEFS = @DEFS@ -DDATADIR="\"${pkgdatadir}\""
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = config.h
