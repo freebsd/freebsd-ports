@@ -2,50 +2,58 @@
 
 # $FreeBSD$
 #
-# For postmaster startup options, edit $PGDATA/postgresql.conf
+# PROVIDE: postgresql
+# REQUIRE: LOGIN
+# KEYWORD: FreeBSD shutdown
 #
-# Note that PGDATA is set in ~pgsql/.profile, don't try to manipulate it here!
+# Add the following line to /etc/rc.conf to enable PostgreSQL:
 #
+#  postgresql_enable="YES"
+#  # optional
+#  postgresql_data="%%PREFIX%%/pgsql/data"
+#  postgresql_flags="-w -s -m fast"
+#
+# This scripts takes one of the following commands:
+#
+#   start stop restart reload status initdb
+#
+# For postmaster startup options, edit ${postgresql_data}/postgresql.conf
 
-PREFIX=%%PREFIX%%
-PGBIN=${PREFIX}/bin
+prefix=%%PREFIX%%
 
-case $1 in
-start)
-    [ -x ${PGBIN}/pg_ctl ] && {
-	echo -n ' pgsql'
-	su -l pgsql -c \
-	    "[ -d \${PGDATA} ] && exec ${PREFIX}/bin/pg_ctl start -s -w"
-    }
-    ;;
+. %%RC_SUBR%%
 
-stop)
-    [ -x ${PGBIN}/pg_ctl ] && {
-	echo -n ' pgsql'
-	su -l pgsql -c "exec ${PREFIX}/bin/pg_ctl stop -s -m fast"
-    }
-    ;;
+load_rc_config postgresql
 
-restart)
-    [ -x ${PGBIN}/pg_ctl ] && {
-	exec su -l pgsql -c "exec ${PREFIX}/bin/pg_ctl restart -s -m fast"
-    }
-    ;;
+# set defaults
+postgresql_enable=${postgresql_enable:-"NO"}
+postgresql_flags=${postgresql_flags:-"-w -s -m fast"}
+postgresql_user=pgsql
+eval postgresql_data=${postgresql_data:-"~${postgresql_user}/data"}
+postgresql_class=${postgresql_class:-"default"}
 
-reload)
-    [ -x ${PGBIN}/pg_ctl ] && {
-	exec su -l pgsql -c "exec ${PREFIX}/bin/pg_ctl reload"
-    }
-    ;;
+name=postgresql
+rcvar=`set_rcvar`
+command=${prefix}/bin/pg_ctl
+command_args="-D ${postgresql_data} ${postgresql_flags} $1"
+extra_commands="reload initdb"
 
-status)
-    [ -x ${PGBIN}/pg_ctl ] && {
-	exec su -l pgsql -c "exec ${PREFIX}/bin/pg_ctl status"
-    }
-    ;;
+start_cmd="postgresql_command start"
+stop_cmd="postgresql_command stop"
+restart_cmd="postgresql_command restart"
+reload_cmd="postgresql_command reload"
+status_cmd="postgresql_command status"
 
-*)
-    echo "usage: `basename $0` {start|stop|restart|reload|status}" >&2
-    exit 64
-    ;;
-esac
+initdb_cmd="postgresql_initdb"
+
+postgresql_command()
+{
+    su -l ${postgresql_user} -c "exec ${command} ${command_args}"
+}
+    
+postgresql_initdb()
+{
+    su -l -c ${postgresql_class} ${postgresql_user} -c "exec ${prefix}/bin/initdb -D ${postgresql_data}"
+}
+
+run_rc_command "$1"
