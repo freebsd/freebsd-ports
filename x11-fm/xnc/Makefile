@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xnc
-PORTVERSION=	4.4.0
+PORTVERSION=	4.4.4
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.xnc.dubna.su/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -35,8 +35,8 @@ MAN1=		es.1 ives.1 vs.1 xjpegroot.1 xnc.1 xnlaunch.1
 
 post-install:
 .if !defined(NOPORTDOCS)
-		${MKDIR} ${PREFIX}/share/doc/xnc
-		${INSTALL_DATA} ${WRKSRC}/Docs/* ${PREFIX}/share/doc/xnc
+		@${MKDIR} ${PREFIX}/share/doc/xnc
+		@${INSTALL_DATA} ${WRKSRC}/Docs/* ${PREFIX}/share/doc/xnc
 .endif
 		@${CAT} ${PKGMESSAGE}
 

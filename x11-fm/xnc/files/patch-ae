@@ -1,6 +1,6 @@
---- image/makefile.in.orig	Tue Jan 18 17:35:15 2000
-+++ image/makefile.in	Sat Jun 24 15:56:50 2000
-@@ -31,31 +31,31 @@
+--- image/makefile.in.orig	Wed Apr 25 20:12:34 2001
++++ image/makefile.in	Wed Apr 25 20:14:32 2001
+@@ -31,34 +31,34 @@
  all:: libie.a $(PNGDEP) $(ZDEP)
  
  24to8.o: 24to8.c
@@ -10,6 +10,10 @@
  jpeg.o: jpeg.c
 -	 $(CC) -c jpeg.c $(CXXOPT) $(INCLUDES)
 +	 $(CC) -c jpeg.c $(CXXOPT) $(INCLUDES) $(CPPFLAGS)
+ 
+ accel.o: accel.c
+-	 $(CC) -c accel.c $(CXXOPT) $(CXXINCLUDES)
++	 $(CC) -c accel.c $(CXXOPT) $(CXXINCLUDES) $(CPPFLAGS)
  
  pcdr.o: pcdr.c
 -	 $(CC) -c pcdr.c $(CXXOPT) $(INCLUDES)
@@ -37,20 +41,16 @@
  
  png.o: png.c
 -	 $(CC) -c png.c $(CXXOPT) $(INCLUDES) $(ZINC) $(PNGINC)
-+	 $(CC) -c png.c $(CXXOPT) $(INCLUDES) $(CPPFLAGS) $(ZINC) $(PNGINC)
++	 $(CC) -c png.c $(CXXOPT) $(INCLUDES) $(ZINC) $(PNGINC) $(CPPFLAGS)
  
  ../zlib/libz.a:
  	cd ../zlib && make
-@@ -64,10 +64,10 @@
+@@ -67,7 +67,7 @@
  	cd ../libpng && make
  
  pcxr.o: pcxr.c
 -	 $(CC) -c pcxr.c $(CXXOPT) $(INCLUDES)
 +	 $(CC) -c pcxr.c $(CXXOPT) $(INCLUDES) $(CPPFLAGS)
- 
- accel.o: accel.c
--	 $(CC) -c accel.c $(CFLAGS)
-+	 $(CC) -c accel.c $(CFLAGS) $(CPPFLAGS)
  
  libie.a: $(IOBJS)
  	 $(RM) -f libie.a
