@@ -4,14 +4,13 @@
 %%PORTDOCS%%share/doc/phpbb/FAQ.html
 %%PORTDOCS%%share/doc/phpbb/INSTALL.html
 %%PORTDOCS%%share/doc/phpbb/README.html
-%%PORTDOCS%%share/doc/phpbb/coding-guidelines.txt
-%%PORTDOCS%%share/doc/phpbb/codingstandards.htm
 share/phpbb/contrib/README.html
 share/phpbb/contrib/dbinformer.php
 share/phpbb/contrib/template_db_cache.php
 share/phpbb/contrib/template_file_cache.php
+share/phpbb/contrib/visual_confirmation.zip
 share/phpbb/install.php
-share/phpbb/update_to_204.php
+share/phpbb/update_to_205.php
 share/phpbb/upgrade.php
 %%PHPBBDIR%%/admin/admin_forum_prune.php
 %%PHPBBDIR%%/admin/admin_mass_email.php
@@ -32,6 +31,8 @@ share/phpbb/upgrade.php
 %%PHPBBDIR%%/admin/admin_db_utilities.php
 %%PHPBBDIR%%/admin/admin_ranks.php
 %%PHPBBDIR%%/admin/admin_ug_auth.php
+%%PHPBBDIR%%/cache/.htaccess
+%%PHPBBDIR%%/cache/index.htm
 %%PHPBBDIR%%/common.php
 %%PHPBBDIR%%/db/mssql-odbc.php
 %%PHPBBDIR%%/db/oracle.php
@@ -45,6 +46,8 @@ share/phpbb/upgrade.php
 %%PHPBBDIR%%/extension.inc
 %%PHPBBDIR%%/faq.php
 %%PHPBBDIR%%/groupcp.php
+%%PHPBBDIR%%/images/avatars/index.htm
+%%PHPBBDIR%%/images/avatars/gallery/index.htm
 %%PHPBBDIR%%/images/index.htm
 %%PHPBBDIR%%/images/smiles/icon_confused.gif
 %%PHPBBDIR%%/images/smiles/icon_idea.gif
@@ -108,7 +111,7 @@ share/phpbb/upgrade.php
 %%PHPBBDIR%%/install/schemas/postgres_schema.sql
 %%PHPBBDIR%%/install/schemas/mysql_schema.sql
 %%PHPBBDIR%%/install/schemas/mssql_schema.sql
-%%PHPBBDIR%%/install/update_to_204.php
+%%PHPBBDIR%%/install/update_to_205.php
 %%PHPBBDIR%%/install/index.htm
 %%PHPBBDIR%%/language/lang_english/lang_faq.php
 %%PHPBBDIR%%/language/lang_english/email/admin_activate.tpl
@@ -305,8 +308,10 @@ share/phpbb/upgrade.php
 @dirrm share/phpbb
 @unexec rmdir share 2>/dev/null || true
 @dirrm %%PHPBBDIR%%/admin
+@dirrm %%PHPBBDIR%%/cache
 @dirrm %%PHPBBDIR%%/db
 @dirrm %%PHPBBDIR%%/images/smiles
+@unexec rmdir %D/%%PHPBBDIR%%/images/avatars/gallery 2>/dev/null || true
 @unexec rmdir %D/%%PHPBBDIR%%/images/avatars/upload 2>/dev/null || true
 @unexec rmdir %D/%%PHPBBDIR%%/images/avatars 2>/dev/null || true
 @unexec rmdir %D/%%PHPBBDIR%%/images 2>/dev/null || true
