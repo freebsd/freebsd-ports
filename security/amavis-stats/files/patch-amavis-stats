@@ -1,0 +1,13 @@
+--- amavis-stats.orig  Sat Mar 27 17:25:27 2004
++++ amavis-stats       Sun Jun  6 01:15:27 2004
+@@ -83,8 +83,8 @@
+ $version   = "0.1.12"; # this value is auto-updated by packing system
+ $pkg       = "amavis-stats";
+ $locale    = "C";
+-$lockfile  = "/var/lock/$pkg";
+-$statedir  = "/var/lib/$pkg";
++$lockfile  = "/var/tmp/$pkg";
++$statedir  = "/usr/local/www/$pkg";
+ $statefile = "$statedir/$pkg.state"; # last read position of the logfile
+ $namesfile = "$statedir/$pkg.names"; # stores the virus name to id mappings
+ $countfile = "$statedir/$pkg.count"; # per virus totals
