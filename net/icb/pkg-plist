@@ -1,0 +1,8 @@
+@comment $Id$
+bin/icb
+share/icb/icbserverdb
+share/icb/sample.icbrc
+share/icb/bartender
+share/icb/confuse
+share/icb/echofile
+@dirrm share/icb

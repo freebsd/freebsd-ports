@@ -1,0 +1,19 @@
+*** murgil/serverserve.c.orig	Wed May  6 18:47:32 1998
+--- murgil/serverserve.c	Wed May  6 18:47:48 1998
+***************
+*** 33,39 ****
+  	if (port_fd > highestfd)
+  		highestfd = port_fd;
+  
+! 	signal(SIGALRM, gotalarm);
+  	timeisup = 0;
+  
+  	for (;;) {
+--- 33,39 ----
+  	if (port_fd > highestfd)
+  		highestfd = port_fd;
+  
+! 	signal(SIGALRM, (void *)gotalarm);
+  	timeisup = 0;
+  
+  	for (;;) {

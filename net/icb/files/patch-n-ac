@@ -1,0 +1,11 @@
+--- icb/protos.h-orig	Fri Feb 24 22:20:25 1995
++++ icb/protos.h	Wed Apr 15 12:07:50 1998
+@@ -64,7 +64,7 @@
+ int inserttab(void);
+ int ishushed(char *nick);
+ int lcaseit(char *s);
+-#ifdef linux
++#if defined(linux) || (defined(BSD) && BSD >= 199306)
+ int linebuffer(FILE *fp);
+ #else
+ int linebuffer(struct _iobuf *fp);

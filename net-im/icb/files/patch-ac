@@ -1,0 +1,12 @@
+--- icb/c_log.c.orig	Fri Feb 24 13:20:18 1995
++++ icb/c_log.c	Mon May 25 15:04:35 1998
+@@ -46,7 +46,9 @@
+ 	struct tm *t, *localtime();
+ 	time_t clock;
+ 	extern int errno, sys_nerr;
++#if !(defined(BSD) && BSD >= 199306)
+ 	extern char *sys_errlist[];
++#endif
+ 
+ 	/* determine pathname to use */
+ 	if (path == NULL || *path == '\0')

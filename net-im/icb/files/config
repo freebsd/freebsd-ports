@@ -1,0 +1,56 @@
+#
+#	THIS IS AN AUTOMATICALLY GENERATED FILE
+#
+#	If you edit this file and later run "setup", your
+#	changes will be lost. This file gets fed to "make",
+#	so keep that in mind if you make changes.
+#
+
+# Installing user's home directory
+HOME		= /nonexistent
+
+# Directory where the client will be installed.
+BINDIR		= @PREFIX@/bin
+
+# Directory where the manual page will be installed.
+MANDIR		= @PREFIX@/man
+
+# Compiler to use.
+CC		= cc
+
+# Compile options.
+CFLAGS		= -O2  -DNO_LRAND48 -DSTRINGS_H -DTIME_H
+TCLCFLAGS	= -O2  -DNO_LRAND48 -DSTRINGS_H -DTIME_H
+
+# Lint flags
+LFLAGS		= -u  -DNO_LRAND48 -DSTRINGS_H -DTIME_H
+
+# System dependent source file.
+SYSDEP		=sysdep.bsd
+
+# Other libraries to include.
+OTHERLIBS	=-lcurses -ltermcap
+
+# Resolver library
+RESOLVLIB	=
+
+# Parallel makes. Set to & for Sequents.
+PMAKE		=
+
+# Makefile dependency generator.
+MAKEDEPEND	= makedepend
+
+# Makefile dependency generator.
+DEPENDFLAGS	= -fMake  -DNO_LRAND48 -DSTRINGS_H -DTIME_H
+
+# Hostname and port of remote server.
+#DEFAULTHOST	= crater.unm.edu
+DEFAULTHOST	= cvs.openbsd.org
+DEFAULTPORT	= 7326
+
+# Directory for support files
+LIBDIR = @PREFIX@/share/icb
+
+# location of server database
+SERVERLIST = @PREFIX@/share/icb/icbserverdb
+

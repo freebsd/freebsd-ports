@@ -1,0 +1,67 @@
+*** icb/signals.c.orig	Wed May  6 18:55:15 1998
+--- icb/signals.c	Wed May  6 18:55:55 1998
+***************
+*** 22,35 ****
+  /*	sighandler askquit(), suspend(), icbexit(); */
+  
+  	/* exit on a hangup or terminate signal */
+! 	signal(SIGHUP, icbexit);
+! 	signal(SIGTERM, icbexit);
+  
+  	/* on an interrupt, verify the user wants to quit */
+! 	signal(SIGINT, askquit);
+  
+  	/* suspend on a stop signal */
+! 	signal(SIGTSTP, suspend);
+  }
+  
+  
+--- 22,35 ----
+  /*	sighandler askquit(), suspend(), icbexit(); */
+  
+  	/* exit on a hangup or terminate signal */
+! 	signal(SIGHUP, (void *)icbexit);
+! 	signal(SIGTERM, (void *)icbexit);
+  
+  	/* on an interrupt, verify the user wants to quit */
+! 	signal(SIGINT, (void *)askquit);
+  
+  	/* suspend on a stop signal */
+! 	signal(SIGTSTP, (void *)suspend);
+  }
+  
+  
+***************
+*** 45,51 ****
+  	sigsetmask(sigblock(0) &~ mask(SIGTSTP));
+  	kill(0, SIGTSTP);
+  	sigblock(mask(SIGTSTP));
+! 	signal(SIGTSTP, suspend);
+  	icbterm();
+  	continued = 1;
+  }
+--- 45,51 ----
+  	sigsetmask(sigblock(0) &~ mask(SIGTSTP));
+  	kill(0, SIGTSTP);
+  	sigblock(mask(SIGTSTP));
+! 	signal(SIGTSTP, (void *)suspend);
+  	icbterm();
+  	continued = 1;
+  }
+***************
+*** 73,79 ****
+  	if (c == 'Y' || c == 'y')
+  		icbexit();
+  	
+! 	signal(SIGINT, askquit);
+  	continued = 1;
+  
+  	if (oem)
+--- 73,79 ----
+  	if (c == 'Y' || c == 'y')
+  		icbexit();
+  	
+! 	signal(SIGINT, (void *)askquit);
+  	continued = 1;
+  
+  	if (oem)

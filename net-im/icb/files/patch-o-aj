@@ -1,0 +1,29 @@
+*** tcl/tclProc.c.orig	Mon May 18 03:13:18 1998
+--- tcl/tclProc.c	Mon May 18 03:14:36 1998
+***************
+*** 793,803 ****
+       */
+  
+      procDone:
+!     for (argPtr = frame.varPtr; argPtr != NULL; argPtr = argPtr->nextPtr) {
+  	if (argPtr->flags & VAR_DYNAMIC) {
+  	    free(argPtr->value);
+  	}
+! 	free((char *) argPtr);
+      }
+      iPtr->framePtr = frame.callerPtr;
+      iPtr->varFramePtr = frame.callerVarPtr;
+--- 793,805 ----
+       */
+  
+      procDone:
+!     for (argPtr = frame.varPtr; argPtr != NULL;) {
+! 	void *tmp = argPtr;
+  	if (argPtr->flags & VAR_DYNAMIC) {
+  	    free(argPtr->value);
+  	}
+!         argPtr = argPtr->nextPtr;
+! 	free(tmp);
+      }
+      iPtr->framePtr = frame.callerPtr;
+      iPtr->varFramePtr = frame.callerVarPtr;
