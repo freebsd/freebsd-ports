@@ -7,6 +7,7 @@
 
 PORTNAME=	gimp
 DISTVERSION=	2.2-pre2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -83,7 +84,7 @@ CONFIGURE_ARGS+=	--enable-mp
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mgnomepanel}!=""
-USE_GNOME+=		gnomepanel
+USE_GNOME+=		gnomepanel desktopfileutils
 CONFIGURE_ARGS+=	--with-desktop-dir=${X11BASE}/share/gnome
 PKGNAMESUFFIX=		-gnome
 PLIST_SUB+=		GNOMEPANEL:=""
@@ -108,5 +109,8 @@ pre-everything::
 	@${ECHO_MSG} "	WITH_HTML_HELP_BROWSER=yes	Turns on the GIMP help browser"
 	@${ECHO_MSG} "	WITH_MP=yes 		Turns on multiple-processor support"
 	@${ECHO_MSG} ""
+
+post-install:
+	@${X11BASE}/bin/update-desktop-database
 
 .include <bsd.port.post.mk>
