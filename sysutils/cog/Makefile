@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cog
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.krakoa.dk/progs/cog/
 
@@ -21,12 +21,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|Icon=|Icon=cog-icon-2-48x48.png|g' \
-		${WRKSRC}/cog.desktop
-
-post-install:
-	@${LN} -sf ${PREFIX}/share/gnome/cog/pixmaps/cog-icon-2-48x48.png \
-		${PREFIX}/share/gnome/pixmaps/cog-icon-2-48x48.png
+PLIST_SUB=	VERSION=${PORTVERSION}
 
 .include <bsd.port.mk>
