@@ -1,0 +1,46 @@
+bin/kwiki-install
+%%SITE_PERL%%/CGI/Kwiki.pm
+%%SITE_PERL%%/CGI/Kwiki/Backup.pm
+%%SITE_PERL%%/CGI/Kwiki/Backup/Rcs.pm
+%%SITE_PERL%%/CGI/Kwiki/Backup/SVN.pm
+%%SITE_PERL%%/CGI/Kwiki/Backup/SVNPerl.pm
+%%SITE_PERL%%/CGI/Kwiki/Blog.pm
+%%SITE_PERL%%/CGI/Kwiki/CGI.pm
+%%SITE_PERL%%/CGI/Kwiki/Changes.pm
+%%SITE_PERL%%/CGI/Kwiki/Config.pm
+%%SITE_PERL%%/CGI/Kwiki/Config_yaml.pm
+%%SITE_PERL%%/CGI/Kwiki/Cookie.pm
+%%SITE_PERL%%/CGI/Kwiki/Database.pm
+%%SITE_PERL%%/CGI/Kwiki/Display.pm
+%%SITE_PERL%%/CGI/Kwiki/Driver.pm
+%%SITE_PERL%%/CGI/Kwiki/Edit.pm
+%%SITE_PERL%%/CGI/Kwiki/Formatter.pm
+%%SITE_PERL%%/CGI/Kwiki/I18N.pm
+%%SITE_PERL%%/CGI/Kwiki/I18N/Kwiki.pot
+%%SITE_PERL%%/CGI/Kwiki/I18N/i_default.pm
+%%SITE_PERL%%/CGI/Kwiki/I18N/zh_cn.po
+%%SITE_PERL%%/CGI/Kwiki/I18N/zh_tw.po
+%%SITE_PERL%%/CGI/Kwiki/Import.pm
+%%SITE_PERL%%/CGI/Kwiki/Javascript.pm
+%%SITE_PERL%%/CGI/Kwiki/Metadata.pm
+%%SITE_PERL%%/CGI/Kwiki/New.pm
+%%SITE_PERL%%/CGI/Kwiki/Pages.pm
+%%SITE_PERL%%/CGI/Kwiki/Pages/zh_cn.pm
+%%SITE_PERL%%/CGI/Kwiki/Pages/zh_tw.pm
+%%SITE_PERL%%/CGI/Kwiki/Plugin.pm
+%%SITE_PERL%%/CGI/Kwiki/Plugin/Diff.pm
+%%SITE_PERL%%/CGI/Kwiki/Prefs.pm
+%%SITE_PERL%%/CGI/Kwiki/Privacy.pm
+%%SITE_PERL%%/CGI/Kwiki/Scripts.pm
+%%SITE_PERL%%/CGI/Kwiki/Search.pm
+%%SITE_PERL%%/CGI/Kwiki/Slides.pm
+%%SITE_PERL%%/CGI/Kwiki/Style.pm
+%%SITE_PERL%%/CGI/Kwiki/Template.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI-Kwiki/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI-Kwiki
+@dirrm %%SITE_PERL%%/CGI/Kwiki/Plugin
+@dirrm %%SITE_PERL%%/CGI/Kwiki/Pages
+@dirrm %%SITE_PERL%%/CGI/Kwiki/I18N
+@dirrm %%SITE_PERL%%/CGI/Kwiki/Backup
+@dirrm %%SITE_PERL%%/CGI/Kwiki
+@unexec rmdir %D/%%SITE_PERL%%/CGI 2>/dev/null || true

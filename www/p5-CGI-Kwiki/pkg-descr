@@ -1,0 +1,20 @@
+Kwiki is perhaps the simplest, most modular and easy to extend wiki. A wiki
+allows users to freely create and edit web pages in any web browser. Kwiki
+is Open Source Software and is available on CPAN.
+
+The overall design goal of CGI::Kwiki is simplicity and extensibility. 
+Even so, Kwiki will have some killer built in features not available in 
+most wikis:
+
+    * KwikiSlideShow
+    * KwikiBlog
+    * KwikiSisters
+    * KwikiHotKeys
+    * KwikiFit
+    * KwikiPod
+    * KwikiPrivacy 
+
+Each feature is implemented as a separate plugin class. This keeps things 
+simple and extensible.
+
+WWW: http://www.kwiki.org/

@@ -1,0 +1,14 @@
+/* ================================================================= */
+Note: 
+	Kwiki software installed! Now you should create 
+	your kwiki web directory by yourself:
+
+$ mkdir cgi-bin/my-kwiki
+$ cd cgi-bin/my-kwiki
+
+	Next execute kwiki-install script:
+
+$ kwiki-install
+
+	Finally remember to point your browser at required location.
+/* ================================================================= */
