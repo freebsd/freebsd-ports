@@ -24,7 +24,7 @@ post-extract:
 
 pre-install:
 	${RM} -f ${PLIST}
-.for i in ${BINS}
+.for i in ${BINS} as/as86_encap
 	${ECHO_CMD} bin/`${BASENAME} ${i}` >> ${PLIST}
 .endfor
 .if !defined(NOPORTDOCS)
