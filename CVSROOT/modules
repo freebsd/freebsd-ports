@@ -5894,6 +5894,7 @@ p5-TraceFuncs	ports/devel/p5-TraceFuncs
 p5-Tree-DAG_Node	ports/devel/p5-Tree-DAG_Node
 p5-Tree-Nary	ports/textproc/p5-Tree-Nary
 p5-UNIVERSAL-exports	ports/devel/p5-UNIVERSAL-exports
+p5-UNIVERSAL-moniker	ports/devel/p5-UNIVERSAL-moniker
 p5-UPS-Nut	ports/sysutils/p5-UPS-Nut
 p5-URI		ports/net/p5-URI
 p5-URI-Find	ports/textproc/p5-URI-Find
