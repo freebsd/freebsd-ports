@@ -1,0 +1,18 @@
+--- Makefile.orig	Sun Jan  2 19:22:20 2005
++++ Makefile	Sun Jan  2 19:25:29 2005
+@@ -1,10 +1,9 @@
+-FESTIVAL_VOICES_PATH=/usr/share/festival/voices
+-PLUGIN_GAIM_PATH=/usr/lib/gaim
+-PKG_CONFIG_PATH=/usr/lib/pkgconfig
+-PLUGIN_CFLAGS=`pkg-config gtk+-2.0 --cflags` `pkg-config glib-2.0 --cflags` -DPLUGIN_VERSION=\"$(PLUGIN_VERSION)\" -DFESTIVAL_VOICES_PATH=\"$(FESTIVAL_VOICES_PATH)\" -march=pentium3 -O3 -pipe 
++FESTIVAL_VOICES_PATH=${LOCALBASE}/share/festival/lib/voices
++PLUGIN_GAIM_PATH=${PREFIX}/lib/gaim
++PKG_CONFIG_PATH=${LOCALBASE}/libdata/pkgconfig
++PLUGIN_CFLAGS=`pkg-config gtk+-2.0 --cflags` `pkg-config glib-2.0 --cflags` -DPLUGIN_VERSION=\"$(PLUGIN_VERSION)\" -DFESTIVAL_VOICES_PATH=\"$(FESTIVAL_VOICES_PATH)\" -O3 -pipe
+ PLUGIN_LIBS=`pkg-config gtk+-2.0 --libs` `pkg-config glib-2.0 --libs`
+-LIBTOOL=libtool
+-CC= gcc
++LIBTOOL=libtool15
+ 
+ all: festival.so
+ 
