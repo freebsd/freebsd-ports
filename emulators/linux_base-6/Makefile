@@ -10,22 +10,23 @@ PORTVERSION=		6.1
 PORTREVISION=		6
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX}
-MASTER_SITE_SUBDIR=	${PORTVERSION}/en/os/${MACHINE_ARCH}/RedHat/RPMS
+MASTER_SITE_SUBDIR=	${PORTVERSION}/en/os/${ARCH}/RedHat/RPMS
 DISTFILES=		${RPM_SET1} ${RPM_LDCONFIG} ${RPM_SET2} \
 			${RPM_RPM} ${RPM_SET3}
 
 PATCH_SITES=		${MASTER_SITE_REDHAT_LINUX}
-PATCH_SITE_SUBDIR=	updates/6.2/en/os/${MACHINE_ARCH} \
-				updates/6.1/en/os/${MACHINE_ARCH} \
-				6.2/en/os/${MACHINE_ARCH}/RedHat/RPMS
+PATCH_SITE_SUBDIR=	updates/6.2/en/os/${ARCH} \
+				updates/6.1/en/os/${ARCH} \
+				6.2/en/os/${ARCH}/RedHat/RPMS
 PATCHFILES=		${UPDATES}
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=	The base set of packages needed in Linux mode
 
+
 DEPRECATED=	"obsolete and has a minor security bug:  see http://www.redhat.com/support/errata/archives/RHSA-2000-117.html"
 
-.if (${MACHINE_ARCH} == "alpha")
+.if (${ARCH} == "alpha")
 FORBIDDEN=	"see <URL:http://rhn.redhat.com/errata/RHSA-2003-089.html> or\
  <URL:http://www.cert.org/advisories/CA-2003-10.html>"
 .endif
@@ -42,17 +43,17 @@ NO_BUILD=		yes
 NO_FILTER_SHLIBS=	yes
 NO_LATEST_LINK=		yes
 NO_MTREE=		yes
-PLIST=			${PKGDIR}/pkg-plist.${MACHINE_ARCH}
-MD5_FILE=		${MASTERDIR}/distinfo.${MACHINE_ARCH}
+PLIST=			${PKGDIR}/pkg-plist.${ARCH}
+MD5_FILE=		${MASTERDIR}/distinfo.${ARCH}
 
 .include <bsd.port.pre.mk>
 
-RPM_GLIBC=		glibc-2.1.3-29.${MACHINE_ARCH}.rpm
+RPM_GLIBC=		glibc-2.1.3-29.${ARCH}.rpm
 UPDATES=		${RPM_GLIBC} \
-			zlib-1.1.3-25.6.${MACHINE_ARCH}.rpm \
-			XFree86-libs-3.3.6-29.${MACHINE_ARCH}.rpm \
-			gtk+-1.2.6-7.${MACHINE_ARCH}.rpm
-.if (${MACHINE_ARCH} == "i386")
+			zlib-1.1.3-25.6.${ARCH}.rpm \
+			XFree86-libs-3.3.6-29.${ARCH}.rpm \
+			gtk+-1.2.6-7.${ARCH}.rpm
+.if (${ARCH} == "i386")
 LIBC5_COMPAT=		ld.so-1.9.5-11.i386.rpm libc-5.3.12-31.i386.rpm
 RPM_BINUTILS=		binutils-2.9.1.0.23-6.i386.rpm
 RPM_GLIB=
@@ -75,27 +76,27 @@ UPDATES+=
 RPM_SET1=		setup-2.0.5-1.noarch.rpm \
 			filesystem-1.3.5-1.noarch.rpm \
 			basesystem-6.0-4.noarch.rpm
-RPM_SET2=		termcap-9.12.6-15.${MACHINE_ARCH}.rpm \
-			libtermcap-2.0.8-18.${MACHINE_ARCH}.rpm \
-			bash-1.14.7-16.${MACHINE_ARCH}.rpm \
-			ncurses-4.2-25.${MACHINE_ARCH}.rpm \
-			info-3.12h-2.${MACHINE_ARCH}.rpm \
-			fileutils-4.0-8.${MACHINE_ARCH}.rpm \
-			grep-2.3-2.${MACHINE_ARCH}.rpm \
+RPM_SET2=		termcap-9.12.6-15.${ARCH}.rpm \
+			libtermcap-2.0.8-18.${ARCH}.rpm \
+			bash-1.14.7-16.${ARCH}.rpm \
+			ncurses-4.2-25.${ARCH}.rpm \
+			info-3.12h-2.${ARCH}.rpm \
+			fileutils-4.0-8.${ARCH}.rpm \
+			grep-2.3-2.${ARCH}.rpm \
 			${RPM_BINUTILS} \
-			gd-1.3-5.${MACHINE_ARCH}.rpm \
-			gdbm-1.8.0-2.${MACHINE_ARCH}.rpm \
+			gd-1.3-5.${ARCH}.rpm \
+			gdbm-1.8.0-2.${ARCH}.rpm \
 			${RPM_GLIB} \
 			${LIBC5_COMPAT} \
-			libstdc++-2.9.0-24.${MACHINE_ARCH}.rpm \
-			sh-utils-2.0-1.${MACHINE_ARCH}.rpm \
-			readline-2.2.1-5.${MACHINE_ARCH}.rpm \
+			libstdc++-2.9.0-24.${ARCH}.rpm \
+			sh-utils-2.0-1.${ARCH}.rpm \
+			readline-2.2.1-5.${ARCH}.rpm \
 			redhat-release-6.1-1.noarch.rpm
-RPM_SET3=		setserial-2.15-2.${MACHINE_ARCH}.rpm \
-			slang-1.2.2-4.${MACHINE_ARCH}.rpm \
-			stat-1.5-11.${MACHINE_ARCH}.rpm \
-			tcsh-6.08.00-6.${MACHINE_ARCH}.rpm \
-			xpm-3.4k-1.${MACHINE_ARCH}.rpm
+RPM_SET3=		setserial-2.15-2.${ARCH}.rpm \
+			slang-1.2.2-4.${ARCH}.rpm \
+			stat-1.5-11.${ARCH}.rpm \
+			tcsh-6.08.00-6.${ARCH}.rpm \
+			xpm-3.4k-1.${ARCH}.rpm
 
 DBPATH=			/var/lib/rpm
 RPM=			LC_ALL=C rpm
@@ -163,9 +164,9 @@ do-install:
 	@${LINUXBASE}/sbin/ldconfig
 	@${TOUCH} ${LINUXBASE}/etc/ld.so.conf
 	@for R in ${RPM_GLIBC} \
-		zlib-1.1.3-25.6.${MACHINE_ARCH}.rpm \
+		zlib-1.1.3-25.6.${ARCH}.rpm \
 		${RPM_SET2} \
-		XFree86-libs-3.3.6-29.${MACHINE_ARCH}.rpm; do \
+		XFree86-libs-3.3.6-29.${ARCH}.rpm; do \
 			${ECHO_MSG} $$R; \
 			${RPM} -U ${RPMFLAGS} ${RPMDIR}/$$R; \
 		done

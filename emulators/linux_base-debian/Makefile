@@ -34,8 +34,7 @@ PREFIX?=	${LINUXBASE}
 
 .if (${ARCH} == "amd64")
 LATEST_LINK=	${PORTNAME:C/linux_base/linux32_base/}
-MACHINE_ARCH=	i386
-ARCH=		${MACHINE_ARCH}
+ARCH=		i386
 .endif
 
 DIST_SUBDIR=	debian-${PORTVERSION}-${DISTDATE}

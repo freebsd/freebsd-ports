@@ -13,41 +13,41 @@ CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX} \
 			${MASTER_SITE_REDHAT_LINUX:S/$/:new/}
 MASTER_SITE_SUBDIR=    \
-			${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}/RedHat/RPMS \
-			updates/${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}/:new
+			${PORTVERSION}/${LANG}/os/${ARCH}/RedHat/RPMS \
+			updates/${PORTVERSION}/${LANG}/os/${ARCH}/:new
 DISTFILES=		redhat-release-8.0-8.noarch.rpm \
-			glibc-common-2.3.2-4.80.8.${MACHINE_ARCH}.rpm:new \
-			glibc-2.3.2-4.80.8.${MACHINE_ARCH}.rpm:new \
+			glibc-common-2.3.2-4.80.8.${ARCH}.rpm:new \
+			glibc-2.3.2-4.80.8.${ARCH}.rpm:new \
 			setup-2.5.20-1.noarch.rpm \
 			filesystem-2.1.6-5.noarch.rpm \
 			basesystem-8.0-1.noarch.rpm \
-			libattr-2.0.8-3.${MACHINE_ARCH}.rpm \
-			libacl-2.0.11-2.${MACHINE_ARCH}.rpm \
-			libelf-0.8.2-2.${MACHINE_ARCH}.rpm \
-			bzip2-libs-1.0.2-5.${MACHINE_ARCH}.rpm \
+			libattr-2.0.8-3.${ARCH}.rpm \
+			libacl-2.0.11-2.${ARCH}.rpm \
+			libelf-0.8.2-2.${ARCH}.rpm \
+			bzip2-libs-1.0.2-5.${ARCH}.rpm \
 			termcap-11.0.1-13.noarch.rpm \
-			compat-db-3.3.11-2.${MACHINE_ARCH}.rpm \
-			db4-4.0.14-14.${MACHINE_ARCH}.rpm \
-			gdbm-1.8.0-18.${MACHINE_ARCH}.rpm \
-			glib-1.2.10-8.${MACHINE_ARCH}.rpm \
-			libtermcap-2.0.8-31.${MACHINE_ARCH}.rpm \
-			bash-2.05b-5.${MACHINE_ARCH}.rpm \
-			bzip2-1.0.2-5.${MACHINE_ARCH}.rpm \
-			compat-libstdc++-7.3-2.96.110.${MACHINE_ARCH}.rpm \
-			ncurses-5.2-28.${MACHINE_ARCH}.rpm \
-			info-4.2-5.${MACHINE_ARCH}.rpm \
-			grep-2.5.1-4.${MACHINE_ARCH}.rpm \
-			fileutils-4.1.9-11.${MACHINE_ARCH}.rpm \
-			popt-1.7-1.06.${MACHINE_ARCH}.rpm \
-			readline-4.3-3.${MACHINE_ARCH}.rpm \
-			setserial-2.17-9.${MACHINE_ARCH}.rpm \
-			libstdc++-3.2-7.${MACHINE_ARCH}.rpm \
-			slang-1.4.5-11.${MACHINE_ARCH}.rpm \
-			sh-utils-2.0.12-3.${MACHINE_ARCH}.rpm \
-			rpm-4.1-1.06.${MACHINE_ARCH}.rpm \
-			libgcc-3.2-7.${MACHINE_ARCH}.rpm \
-			freetype-2.1.2-7.${MACHINE_ARCH}.rpm \
-			zlib-1.1.4-8.8x.${MACHINE_ARCH}.rpm:new
+			compat-db-3.3.11-2.${ARCH}.rpm \
+			db4-4.0.14-14.${ARCH}.rpm \
+			gdbm-1.8.0-18.${ARCH}.rpm \
+			glib-1.2.10-8.${ARCH}.rpm \
+			libtermcap-2.0.8-31.${ARCH}.rpm \
+			bash-2.05b-5.${ARCH}.rpm \
+			bzip2-1.0.2-5.${ARCH}.rpm \
+			compat-libstdc++-7.3-2.96.110.${ARCH}.rpm \
+			ncurses-5.2-28.${ARCH}.rpm \
+			info-4.2-5.${ARCH}.rpm \
+			grep-2.5.1-4.${ARCH}.rpm \
+			fileutils-4.1.9-11.${ARCH}.rpm \
+			popt-1.7-1.06.${ARCH}.rpm \
+			readline-4.3-3.${ARCH}.rpm \
+			setserial-2.17-9.${ARCH}.rpm \
+			libstdc++-3.2-7.${ARCH}.rpm \
+			slang-1.4.5-11.${ARCH}.rpm \
+			sh-utils-2.0.12-3.${ARCH}.rpm \
+			rpm-4.1-1.06.${ARCH}.rpm \
+			libgcc-3.2-7.${ARCH}.rpm \
+			freetype-2.1.2-7.${ARCH}.rpm \
+			zlib-1.1.4-8.8x.${ARCH}.rpm:new
 
 MAINTAINER=		trevor@FreeBSD.org
 COMMENT=	Base set of packages needed in Linux mode (only for i386)
@@ -58,13 +58,13 @@ CONFLICTS=	linux_base-6* linux_base-7* linux_base-deb* linux_base-gen* \
 		linux_base-rh* linux_base-suse*
 RESTRICTED=		"binaries under GNU GPL without accompanying source"
 ONLY_FOR_ARCHS=		i386 amd64
-DIST_SUBDIR=		rpm/${MACHINE_ARCH}/${PORTVERSION}
+DIST_SUBDIR=		rpm/${ARCH}/${PORTVERSION}
 PREFIX=			${LINUXBASE}
 NO_BUILD=		yes
 NO_FILTER_SHLIBS=	yes
 NO_MTREE=		yes
 PLIST=			${WRKDIR}/pkg-plist
-MD5_FILE=		${MASTERDIR}/distinfo.${MACHINE_ARCH}
+MD5_FILE=		${MASTERDIR}/distinfo.${ARCH}
 
 # Let's avoid hardcoding 'en' as the language.
 LANG=			en
@@ -88,8 +88,8 @@ REMOVE_FILES=		bin/df bin/su etc/exports etc/group etc/localtime \
 BRAND_FILES=		bin/rpm sbin/ldconfig sbin/sln
 
 .if (${ARCH} == "amd64")
-LATEST_LINK:=	${LATEST_LINK:C/linux/linux32/}
-MACHINE_ARCH=		i386
+LATEST_LINK:=		${LATEST_LINK:C/linux/linux32/}
+ARCH=			i386
 FALLBACK_ELF_MIB=	kern.elf32.fallback_brand
 .else
 FALLBACK_ELF_MIB=	kern.fallback_elf_brand
