@@ -28,12 +28,8 @@ USE_BZIP2=	yes
 .include <bsd.port.pre.mk>
 
 EGCS_REV=	egcs-2.91.66
-LIBSTDCPP_REV=	2.9.0
 
 .if ${PORTOBJFORMAT} == "elf"
-.if ${MACHINE_ARCH} == "i386"
-PLIST=		${WRKDIR}/PLIST
-.endif
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .else
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
@@ -65,9 +61,6 @@ pre-configure:
 	@(MAJ=`sysctl -n kern.osreldate | ${SED} -e '/.....$$/s///'` ; \
 	${SED} -e "s:__FreeBSD__:__FreeBSD__=$${MAJ}:" ${FILESDIR}/freebsd.h \
 		>${WRKSRC}/gcc/config/freebsd.h )
-.if ${PORTOBJFORMAT} == "elf" && ${MACHINE_ARCH} == "i386"
-	@${SED} -e 's/^@comment ELF-only://' ${PKGDIR}/pkg-plist >${PLIST}
-.endif
 
 pre-install:
 	${MKDIR} ${PREFIX}/info
@@ -100,5 +93,15 @@ post-install:
 .for info in cpp g77 gcc
 	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
 .endfor
+	cd ${PREFIX} ;\
+	    find lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV} \
+		-type f -o -type l >${WRKDIR}/PLIST.gcc-lib
+	${ECHO} "r ${TMPPLIST}"			> ${WRKDIR}/ex.script
+	${ECHO} "/Insert PLIST.gcc-lib"		>> ${WRKDIR}/ex.script
+	${ECHO} "d"				>> ${WRKDIR}/ex.script
+	${ECHO} "r ${WRKDIR}/PLIST.gcc-lib"	>> ${WRKDIR}/ex.script
+	${ECHO} "x!"				>> ${WRKDIR}/ex.script
+	${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-gcc-lib
+	cd ${WRKDIR} ; ex < ex.script
 
 .include <bsd.port.post.mk>
