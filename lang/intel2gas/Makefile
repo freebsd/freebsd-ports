@@ -11,7 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://hermes.terminal.at/intel2gas/ \
 		ftp://ftp.scene.org/pub/resources/code/libs/ptc/hermes/intel2gas/
 
-MAINTAINER=	adam@whizkidtech.net
+MAINTAINER=	ports@FreeBSD.Org
 
 GNU_CONFIGURE=	yes
 
