@@ -3,9 +3,21 @@ share/snort/CREDITS
 share/snort/RULES.SAMPLE
 share/snort/USAGE
 share/snort/backdoor-lib
+share/snort/ddos-lib
+share/snort/finger-lib
+share/snort/ftp-lib
 share/snort/misc-lib
+share/snort/netbios-lib
 share/snort/overflow-lib
+share/snort/ping-lib
+share/snort/rpc-lib
 share/snort/scan-lib
+share/snort/smtp-lib
 share/snort/snort-lib
-share/snort/web-lib
+share/snort/telnet-lib
+share/snort/webcf-lib
+share/snort/webcgi-lib
+share/snort/webfp-lib
+share/snort/webiis-lib
+share/snort/webmisc-lib
 @dirrm share/snort
