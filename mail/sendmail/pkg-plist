@@ -1,3 +1,4 @@
+@comment $FreeBSD: /tmp/pcvs/ports/mail/sendmail/pkg-plist,v 1.2 2001-03-10 20:49:31 dinoex Exp $
 bin/hoststat
 bin/mailq
 bin/newaliases
