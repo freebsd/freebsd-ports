@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Lingua/Stem/Ru.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem/Ru/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem/Ru
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Lingua/Stem 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Lingua 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%% 2>/dev/null || true
