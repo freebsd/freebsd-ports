@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=sleuthkit
 
 MAINTAINER=	jan@atstake.com
 
+USE_PERL5=	yes
 DOCS=		README docs/* tct.docs/*
 MAN1=		blockcalc.1 dcalc.1 dcat.1 dls.1 dstat.1 ffind.1 \
 		find_file.1 find_inode.1 fls.1 fsstat.1 icat.1 ifind.1 \
