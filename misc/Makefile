@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.157 1998/08/09 01:05:43 steve Exp $
+# $Id: Makefile,v 1.158 1998/08/09 15:32:17 kuriyama Exp $
 #
 
     SUBDIR += acron
@@ -63,6 +63,7 @@
     SUBDIR += x-files
     SUBDIR += xd
     SUBDIR += xdelta
+    SUBDIR += xenmenu
     SUBDIR += xgas
     SUBDIR += xless
     SUBDIR += xpns
