@@ -1,3 +1,15 @@
+lib/libamd.a
 lib/libumfpack.a
-%%PORTDOCS%%share/doc/umfpack/README.gz
+%%PORTDOCS%%%%DOCSDIR%%/AMD_userguide.pdf
+%%PORTDOCS%%%%DOCSDIR%%/QuickStart.pdf
+%%PORTDOCS%%%%DOCSDIR%%/UserGuide.pdf
+%%PORTDOCS%%%%DOCSDIR%%/Papers/amadalgo.pdf
+%%PORTDOCS%%%%DOCSDIR%%/Papers/amadalgo.ps
+%%PORTDOCS%%%%DOCSDIR%%/Papers/amf4.pdf
+%%PORTDOCS%%%%DOCSDIR%%/Papers/amf4.ps
+%%PORTDOCS%%%%DOCSDIR%%/Papers/amf4algo.pdf
+%%PORTDOCS%%%%DOCSDIR%%/Papers/amf4algo.ps
+%%PORTDOCS%%%%DOCSDIR%%/README.gz
+%%PORTDOCS%%@dirrm share/doc/umfpack/Papers
 %%PORTDOCS%%@dirrm share/doc/umfpack
+

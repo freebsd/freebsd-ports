@@ -6,25 +6,33 @@
 #
 
 PORTNAME=	umfpack
-PORTVERSION=	2.2.1
+PORTVERSION=	4.1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.cise.ufl.edu/pub/faculty/davis/umfpack/
-DISTNAME=	UMFPACK${PORTVERSION}
+DISTNAME=	UMFPACKv${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Unsymmetric-pattern Multifrontal Package
+COMMENT=	Unsymmetric-pattern MultiFrontal Package
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libblas.a:${PORTSDIR}/math/blas
+BUILD_DEPENDS=	${LOCALBASE}/lib/libcblas.a:${PORTSDIR}/math/atlas
 
-NO_CDROM=	'Must not be sold'
-ALL_TARGET=	libumfpack.a
+WRKSRC=		${WRKDIR}/${DISTNAME}/UMFPACK
+ALL_TARGET=	lib
+
+post-extract:
+	${CP} ${FILESDIR}/Make.freebsd ${WRKDIR}/${DISTNAME}/AMD/Make
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/libumfpack.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/AMD/Lib/libamd.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/Lib/libumfpack.a ${PREFIX}/lib
+
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/umfpack
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/umfpack
-	${GZIP_CMD} ${PREFIX}/share/doc/umfpack/README
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/AMD/Doc/*.pdf ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${GZIP_CMD} ${DOCSDIR}/README
+	${INSTALL_DATA} ${WRKSRC}/*.pdf  ${DOCSDIR}
+	${CP} -R ${WRKDIR}/${DISTNAME}/Papers ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
