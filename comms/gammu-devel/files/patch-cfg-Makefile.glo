@@ -1,0 +1,41 @@
+--- cfg/Makefile.glo.orig	Mon Jul 26 04:01:32 2004
++++ cfg/Makefile.glo	Wed Mar  2 10:42:01 2005
+@@ -102,7 +102,7 @@
+ 	@echo Making $<
+ 	@$(CC) -c $(CFLAGS) -I$(TOPDIR)/common/ $(CPPFLAGS) $(<) -o $(@)
+     
+-all: gammu
++all: gammu shared
+ 
+ $(TOPDIR)/gammu/gammu: $(COMMON) $(GAMMU)
+ 	@echo Linking gammu
+@@ -203,7 +203,7 @@
+ 	@$(INSTALL) -m 0644 $(TOPDIR)/docs/docs/english/gammu.1 $(DESTDIR)$(INSTALL_MAN_DIR)
+ 	@$(RM) $(DESTDIR)$(INSTALL_DOC_DIR)/docs/english/gammu.1
+  
+-install: uninstall all installdocs installlocales installonly
++install: uninstall all installdocs installlocales installlibonly
+ 
+ installonly: all
+ 	@echo Installing binaries to $(DESTDIR)$(INSTALL_BIN_DIR)
+@@ -220,8 +220,7 @@
+ 
+ 	@echo Installing shared library to $(DESTDIR)$(INSTALL_LIB_DIR)
+ 	@$(INSTALL) -m 0755 -d $(DESTDIR)$(INSTALL_LIB_DIR)
+-	@$(INSTALL) -m 0644 $(TOPDIR)/common/libGammu.so.$(SONAME_MAJOR).$(SONAME_MINOR) $(DESTDIR)$(INSTALL_LIB_DIR)
+-	@$(LN) -s libGammu.so.$(SONAME_MAJOR).$(SONAME_MINOR) $(DESTDIR)$(INSTALL_LIB_DIR)/libGammu.so.$(SONAME_MAJOR)
++	@$(INSTALL) -m 0644 $(TOPDIR)/common/libGammu.so.$(SONAME_MAJOR).$(SONAME_MINOR) $(DESTDIR)$(INSTALL_LIB_DIR)/libGammu.so.$(SONAME_MAJOR)
+ 	@$(LN) -s libGammu.so.$(SONAME_MAJOR) $(DESTDIR)$(INSTALL_LIB_DIR)/libGammu.so
+  
+ 	@echo Installing static library to $(DESTDIR)$(INSTALL_LIB_DIR)
+@@ -240,8 +239,8 @@
+ 	@$(INSTALL) -m 0644 cfg/config.h $(DESTDIR)$(INSTALL_H_DIR)/config.h
+ 
+ 	@echo Installing pkgconfig file
+-	@$(INSTALL) -m 0755 -d $(DESTDIR)$(INSTALL_LIB_DIR)/pkgconfig
+-	@$(INSTALL) -m 0644 cfg/pkgconfig/gammu.pc $(DESTDIR)$(INSTALL_LIB_DIR)/pkgconfig
++	@$(INSTALL) -m 0755 -d $(prefix)/libdata/pkgconfig
++	@$(INSTALL) -m 0644 cfg/pkgconfig/gammu.pc $(prefix)/libdata/pkgconfig
+ 
+ apidoc:
+ 	@if test -z "$(DOXYGEN)" ; then \
