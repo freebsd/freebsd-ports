@@ -25,7 +25,7 @@ USE_X_PREFIX=	yes
 USE_BISON=	yes
 USE_AUTOCONF=	yes		# we need this so configure is regenerated
 USE_GNOMENG=	yes
-USE_GNOME=	gdkpixbuf gnomelibs gnomehack gnomeprefix
+USE_GNOME=	gdkpixbuf gnomelibs gnomehack gnomeprefix gconf
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-ptlib-includes=${WRKDIRPREFIX}${.CURDIR}/../openh323/work/pwlib/include/ptlib \
 		--with-ptlib-libs=${WRKDIRPREFIX}${.CURDIR}/../openh323/work/pwlib/lib \

@@ -23,6 +23,7 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GNOMENG=	yes
 WANT_GNOME=	yes
+USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
@@ -41,9 +42,12 @@ post-extract:
 .endif
 
 .if ${HAVE_GNOME:Mgnomelibs}!=""
-USE_GNOME=	gtk12
+USE_GNOME=	gnomeprefix gnomelibs
+PKGNAMESUFFIX=	-gnome
+PLIST_SUB=	DATADIR="share/gnome"
 .else
 CONFIGURE_ARGS+=--disable-gnome
+PLIST_SUB=	DATADIR="share"
 .endif
 
 .include <bsd.port.post.mk>
