@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	emacs-wget
-PORTVERSION=	0.4.2
+PORTVERSION=	0.5.0
 CATEGORIES=	ftp www elisp
 MASTER_SITES=	http://pop-club.hp.infoseek.co.jp/emacs/emacs-wget/
 
@@ -19,7 +19,9 @@ NO_BUILD=	yes
 
 do-install:
 	${MKDIR} ${PREFIX}/share/emacs/site-lisp/wget
-	${INSTALL_DATA} ${WRKSRC}/*.el ${PREFIX}/share/emacs/site-lisp/wget
+.for i in wget wget-sysdep w3-wget w3m-wget
+	${INSTALL_DATA} ${WRKSRC}/${i}.el ${PREFIX}/share/emacs/site-lisp/wget
+.endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for i in README README.ja USAGE USAGE.ja
