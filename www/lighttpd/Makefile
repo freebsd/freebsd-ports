@@ -7,6 +7,7 @@
 
 PORTNAME=	lighttpd
 PORTVERSION=	1.3.13
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.lighttpd.net/download/ \
 		http://dl.fkb.wormulon.net/lighttpd/ \
@@ -18,31 +19,43 @@ COMMENT=	A secure, fast, compliant, and very flexible Web Server
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 USE_AUTOCONF_VER=	259
-USE_REINPLACE=	yes
-USE_RC_SUBR=	yes
+USE_REINPLACE=		yes
+USE_RC_SUBR=		yes
 USE_LIBTOOL_VER=	15
-USE_GNOME=	lthack
+USE_GNOME=		lthack
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS=-I${PREFIX}/include LIBS=-L${PREFIX}/lib
-CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/lighttpd
-STARTUP_FILE=	${PREFIX}/etc/rc.d/lighttpd.sh
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+CONFIGURE_ENV=		CPPFLAGS=-I${PREFIX}/include LIBS=-L${PREFIX}/lib
+CONFIGURE_ARGS=		--libdir=${PREFIX}/lib/lighttpd
+STARTUP_FILE=		${PREFIX}/etc/rc.d/lighttpd.sh
+RC_SCRIPTS_SUB=		PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
-.if !defined(WITHOUT_OPENSSL)
+MAN1=		lighttpd.1 spawn-fcgi.1
+
+OPTIONS=	OPENSSL		"Enable SSL support"	on \
+		OPENLDAP	"Enable LDAP support"	off \
+		MYSQL		"Enable MYSQL support"	off \
+		IPV6		"Disable IPV6 support"	off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_OPENSSL)
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--with-openssl
 .endif
 
-MAN1=		lighttpd.1 spawn-fcgi.1
-
-pre-everything::
-.if !defined(WITHOUT_OPENSSL)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "You can disable SSL support by defining WITHOUT_OPENSSL"
+.if !defined(WITHOUT_OPENLDAP)
+USE_OPENLDAP=	yes
+CONFIGURE_ARGS+=	--with-ldap
 .endif
-	@${ECHO_MSG}
-	@${ECHO_MSG} "If you want MySQL virtual host support install"
-	@${ECHO_MSG} "databases/mysql*-client/ prior to building lighttpd!"
+
+.if !defined(WITHOUT_MYSQL)
+USE_MYSQL=	yes
+CONFIGURE_ARGS+=	--with-mysql
+.endif
+
+.if !defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=	--disable-ipv6
+.endif
 
 post-install:
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
@@ -51,4 +64,4 @@ post-install:
 	@${INSTALL_DATA} ${FILESDIR}/lighttpd.conf.sample ${PREFIX}/etc/
 	@${LIBTOOL} --finish ${PREFIX}/lib
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
