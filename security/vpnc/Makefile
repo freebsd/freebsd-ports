@@ -7,11 +7,11 @@
 
 PORTNAME=	vpnc
 PORTVERSION=	0.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	security
 MASTER_SITES=	http://www.unix-ag.uni-kl.de/~massar/vpnc/:source \
 	http://dragon.roe.ch/mirrors/distfiles/vpnc/:script
-DISTNAME=	${PORTNAME}-${PORTVERSION}-rm+zomb-pre9
+DISTNAME=	${PORTNAME}-${PORTVERSION}-rm+zomb.1
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source ${STARTSCRIPT}:script
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -50,7 +50,8 @@ do-install:
 	@${INSTALL_SCRIPT} -m 755 ${WRKDIR}/vpnc.sh-fulltunnel ${PREFIX}/etc/rc.d/vpnc.sh.sample-fulltunnel
 	@${INSTALL_DATA} -m 600 ${WRKSRC}/vpnc.conf ${PREFIX}/etc/vpnc.conf.sample
 .if !defined(NO_INSTALL_MANPAGES)
-	@${INSTALL_MAN} ${FILESDIR}/vpnc.8 ${PREFIX}/man/man8
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/vpnc.8
+	@${INSTALL_MAN} ${WRKSRC}/vpnc.8 ${PREFIX}/man/man8
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
