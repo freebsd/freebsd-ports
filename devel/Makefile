@@ -522,6 +522,7 @@
     SUBDIR += pth-devel
     SUBDIR += ptl
     SUBDIR += py-ansistyle
+    SUBDIR += py-ciphon
     SUBDIR += py-coro
     SUBDIR += py-cxx
     SUBDIR += py-fileutils
