@@ -28,6 +28,7 @@ CONFIGURE_ARGS=	--with-x=no
 .endif
 
 post-patch:
+	@${RM} -f ${WRKSRC}/config.cache
 	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g;" ${WRKSRC}/configure.in
 
 .include <bsd.port.mk>
