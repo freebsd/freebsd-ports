@@ -1,0 +1,13 @@
+--- userdb/Makefile.in.orig	Sat Dec 18 18:33:08 2004
++++ userdb/Makefile.in	Sat Dec 18 18:34:09 2004
+@@ -378,8 +378,8 @@
+ 	  inst=`echo $$i | sed -e 's/\\.[0-9a-z]*$$//'`; \
+ 	  inst=`echo $$inst | sed -e 's/^.*\///'`; \
+ 	  inst=`echo $$inst | sed '$(transform)'`.$$ext; \
+-	  echo " $(INSTALL_DATA) '$$file' '$(DESTDIR)$(man8dir)/$$inst'"; \
+-	  $(INSTALL_DATA) "$$file" "$(DESTDIR)$(man8dir)/$$inst"; \
++	  echo " %%INSTALL_MAN%% '$$file' '$(DESTDIR)$(man8dir)/$$inst'"; \
++	  %%INSTALL_MAN%% "$$file" "$(DESTDIR)$(man8dir)/$$inst"; \
+ 	done
+ uninstall-man8:
+ 	@$(NORMAL_UNINSTALL)
