@@ -1,5 +1,5 @@
---- config.c.orig	Sun Dec 28 12:44:08 2003
-+++ config.c	Sun Dec 28 12:54:09 2003
+--- config.c.org	Tue Jan 20 22:32:38 2004
++++ config.c	Tue Jan 20 22:32:54 2004
 @@ -1188,7 +1188,9 @@
     switch(OS)
     {
@@ -43,7 +43,19 @@
     }
     return(la);
  }
-@@ -2840,7 +2842,10 @@
+@@ -2835,12 +2837,22 @@
+          }
+          break;
+       case LASPARC: /* don't know */
++         if (!CmndOneLine(targ, "sysctl hw.model", ln))
++         {
++            if (strstr(ln, "UltraSparc-II")) mach = SunUS2;
++            if (strstr(ln, "UltraSparc-I")) mach = SunUS1;
++            if (strstr(ln, "UltraSparc")) mach = SunUSX;
++            else mach = SunUSX;
++         }
+          break;
+       case LAALPHA:
           if (!CmndOneLine(targ, "sysctl hw.model", ln))
           {
              if (strstr(ln, "433au")) mach = Dec21164;
@@ -54,32 +66,45 @@
           }
           break;
        case LAIA64: /* don't know */
-@@ -2849,14 +2854,22 @@
+@@ -2849,14 +2861,32 @@
           if (!CmndOneLine(targ, "sysctl hw.model", ln))
           {
              if (strstr(ln, "Pentium Pro")) mach = IntPPRO;
 +            else if (strstr(ln, "Pentium(R) Pro")) mach = IntPPRO;
 +            else if (strstr(ln, "Pentium 4")) mach = IntP4;
 +            else if (strstr(ln, "Pentium(R) 4")) mach = IntP4;
++            else if (strstr(ln, "Pentium(R) M")) mach = IntP4;
              else if (strstr(ln, "Pentium III")) mach = IntPIII;
+-            else if (strstr(ln, "Pentium II ")) mach = IntPII;
++            else if (strstr(ln, "Pentium III/Pentium III")) mach = IntPIII;
 +            else if (strstr(ln, "Pentium(R) III")) mach = IntPIII;
-             else if (strstr(ln, "Pentium II ")) mach = IntPII;
++            else if (strstr(ln, "Pentium II")) mach = IntPII;
++            else if (strstr(ln, "Pentium II/PentiumII")) mach = IntPII;
 +            else if (strstr(ln, "Pentium(R) II ")) mach = IntPII;
 +            else if (strstr(ln, "Celeron")) mach = IntPII;
 +            else if (strstr(ln, "Celeron(R)")) mach = IntPII;
++            else if (strstr(ln, "Opteron(tm)") && sizeof(void *)==4) mach = AmdHammer32;
++            else if (strstr(ln, "Opteron(tm)") && sizeof(void *)==8) mach = AmdHammer64;
++            else if (strstr(ln, "AMD Athlon(tm) 64") && sizeof(void *)==4) mach = AmdHammer32;
++            else if (strstr(ln, "AMD Athlon(tm) 64") && sizeof(void *)==8) mach = AmdHammer64;
++            else if (strstr(ln, "Athlon(tm)")) mach = AmdAthlon;
              else if (strstr(ln, "Athlon")) mach = AmdAthlon;
              else if (strstr(ln, "AMD-K7")) mach = AmdAthlon;
 -            else if (strstr(ln, "32 bit Hammer")) mach = AmdHammer32;
 -            else if (strstr(ln, "64 bit Hammer")) mach = AmdHammer64;
-+            else if (strstr(ln, "Opteron(tm)") && sizeof(void *)==4) mach = AmdHammer32;
-+            else if (strstr(ln, "Opteron(tm)") && sizeof(void *)==8) mach = AmdHammer64;
-             else if (strstr(ln, "Pentium/P55C")) mach = IntP5MMX; /* sent by */
-             else if (strstr(ln, "Pentium")) mach=IntP5;       /* Nakata Maho */
+-            else if (strstr(ln, "Pentium/P55C")) mach = IntP5MMX; /* sent by */
+-            else if (strstr(ln, "Pentium")) mach=IntP5;       /* Nakata Maho */
++            else if (strstr(ln, "AMD-K6(tm)")) mach = IntP5MMX;
++            else if (strstr(ln, "Pentium/P55C")) mach = IntP5MMX;
++            else if (strstr(ln, "Pentium/P54C")) mach=IntP5;
++            else if (strstr(ln, "Pentium")) mach=IntP5;
++            else if (strstr(ln, "VIA"))     mach=IntP5MMX;       
++            else if (strstr(ln, "Crusoe(tm)")) mach=IntP5MMX;       
 +            else mach = IntP5;
           }
           break;
        default:;
-@@ -3654,8 +3654,8 @@
+@@ -3641,8 +3671,8 @@
     }
     if (THREADS) /* add ncpu to ARCH */
     {
@@ -90,7 +115,7 @@
     }
     do
     {
-@@ -4064,9 +4063,9 @@
+@@ -4047,9 +4077,9 @@
     if (mach == IA64Itan || mach == IA64Itan2 )
        fprintf(fpout, " -DATL_MAXNREG=128");
     if (ASMD != ASM_None) fprintf(fpout, " -DATL_%s", ASMNAM[ASMD]);
