@@ -1,0 +1,13 @@
+bin/kpp
+share/doc/HTML/en/kpp/index.html
+share/doc/HTML/en/kpp/index-1.html
+share/doc/HTML/en/kpp/index-2.html
+share/doc/HTML/en/kpp/index-3.html
+share/doc/HTML/en/kpp/index-4.html
+share/doc/HTML/en/kpp/index-5.html
+share/doc/HTML/en/kpp/index-6.html
+share/applnk/Applications/kpp.kdelnk
+share/icons/kpp.xpm
+share/icons/mini/kpp.xpm
+share/apps/spec.template
+@dirrm share/doc/HTML/en/kpp

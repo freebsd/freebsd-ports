@@ -1,0 +1,11 @@
+--- po/Makefile.in	Fri Nov 19 01:42:00 1999
++++ po/Makefile.in.new	Sun Nov 21 19:30:52 1999
+@@ -158,7 +158,7 @@
+ POFILES = de.po 
+ 
+ ####### kdevelop will overwrite this part!!! (end)############
+-GMOFILES = $(POFILES:.po=.gmo)
++#GMOFILES = $(POFILES:.po=.gmo)
+ 
+ localedir = $(kde_locale)
+ 
