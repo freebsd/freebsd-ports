@@ -43,20 +43,26 @@ lib/xfce4/mcs-plugins/libxffmsettings.la
 lib/xfce4/mcs-plugins/libxffmsettings.so
 libdata/pkgconfig/xffm-1.0.pc
 share/locale/ca/LC_MESSAGES/xffm.mo
+share/locale/cs/LC_MESSAGES/xffm.mo
 share/locale/de/LC_MESSAGES/xffm.mo
 share/locale/es/LC_MESSAGES/xffm.mo
 share/locale/es_MX/LC_MESSAGES/xffm.mo
 share/locale/fr/LC_MESSAGES/xffm.mo
+share/locale/hi/LC_MESSAGES/xffm.mo
 share/locale/hu/LC_MESSAGES/xffm.mo
 share/locale/ja/LC_MESSAGES/xffm.mo
 share/locale/lt/LC_MESSAGES/xffm.mo
 share/locale/ms/LC_MESSAGES/xffm.mo
 share/locale/nl/LC_MESSAGES/xffm.mo
 share/locale/pt_PT/LC_MESSAGES/xffm.mo
+share/locale/ta/LC_MESSAGES/xffm.mo
 share/locale/tr/LC_MESSAGES/xffm.mo
+share/locale/uk/LC_MESSAGES/xffm.mo
+share/locale/vi/LC_MESSAGES/xffm.mo
 share/locale/zh_CN/LC_MESSAGES/xffm.mo
 share/locale/zh_TW/LC_MESSAGES/xffm.mo
 share/xfce4/doc/C/xffm.html
+share/xfce4/doc/fr/xffm.html
 share/xffm/AUTHORS
 share/xffm/applications.xml
 share/xffm/pixmaps/comp1.xpm
@@ -159,6 +165,7 @@ share/xffm/pixmaps/plain/xpaint.png
 @unexec rmdir %D/lib/xfce4 2>/dev/null || true
 @unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/C 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/fr 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc 2>/dev/null || true
 @unexec rmdir %D/share/xfce4 2>/dev/null || true
 @dirrm share/xffm/pixmaps/no_icons

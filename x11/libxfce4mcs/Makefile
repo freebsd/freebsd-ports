@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libxfce4mcs
-PORTVERSION=	4.0.0
+PORTVERSION=	4.0.1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${PORTVERSION}/src/ \
 		http://linux.imp.mx/xfce4/xfce_${PORTVERSION}/src/
