@@ -6,13 +6,14 @@
 #
 
 PORTNAME=		heimdal
-PORTVERSION=	0.4e
-PORTREVISION=	3
+PORTVERSION=	0.5
+PORTREVISION=	0
 CATEGORIES=		security ipv6
 MASTER_SITES=	ftp://ftp.pdc.kth.se/pub/heimdal/src/ \
 				ftp://ftp.replay.com/pub/replay/crypto/APPS/kerberos/heimdal/ \
 				ftp://ftp.tuniv.szczecin.pl/dsk4/ftp.replay.com/pub/crypto/APPS/kerberos/heimdal/ \
 				ftp://ftp.hacktic.nl/pub/replay/crypto/APPS/kerberos/heimdal/
+DISTNAME=		heimdal-${PORTVERSION}
 
 MAINTAINER=		nectar@FreeBSD.ORG
 
@@ -23,16 +24,13 @@ LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap2
 BUILD_DEPENDS+= ${LOCALBASE}/lib/libcrack.a:${PORTSDIR}/security/cracklib
 .endif
 
-
 RESTRICTED=		"Crypto; export-controlled"
 
-# must use supplied ltconfig et. al. for now
-#USE_LIBTOOL=		yes
-
+USE_LIBTOOL=		no	# Uses included version.
+USE_OPENSSL=		yes
 GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}--freebsd${OSREL}
 INSTALLS_SHLIB=		yes
-CONFIGURE_ARGS=		--prefix=${PREFIX} --enable-shared
+CONFIGURE_ARGS+=	--enable-shared
 .if defined(WITH_LDAP)
 CONFIGURE_ARGS+=	--with-openldap=${LOCALBASE}
 .endif
@@ -56,11 +54,6 @@ CONFIGURE_ENV+=		LIBS="-lcom_err"
 CONFIGURE_ARGS+=	--with-krb4-include=/usr/include --with-krb4-lib=/usr/lib
 .elif !defined(KRB5_KRB4_COMPAT)
 CONFIGURE_ARGS+=	--without-krb4
-.endif
-
-# OpenSSL 0.9.6 and later have MD4 and can be used in the build
-.if exists(/usr/include/openssl/md4.h) && exists(/usr/lib/libcrypto.a)
-OPENSSL_IN_BASE=	YES
 .endif
 
 PLIST:=				${WRKDIR}/PLIST
@@ -90,9 +83,6 @@ pre-install:
 .endif
 .if defined(USE_XLIB)
 	@${CAT} ${PKGDIR}/pkg-plist.x11 >> ${PLIST}
-.endif
-.if !defined(OPENSSL_IN_BASE)
-	@${CAT} ${PKGDIR}/pkg-plist.des >> ${PLIST}
 .endif
 .if !exists(/usr/include/ifaddrs.h)
 	@${ECHO_CMD} include/ifaddrs.h >> ${PLIST}

@@ -1,9 +1,0 @@
-bin/des
-include/des.h
-include/md4.h
-include/md5.h
-include/rc4.h
-include/sha.h
-lib/libdes.a
-lib/libdes.so
-lib/libdes.so.3
