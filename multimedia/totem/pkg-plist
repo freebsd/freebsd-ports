@@ -1,5 +1,6 @@
 bin/totem
 bin/totem-video-thumbnailer
+bin/vanity
 etc/gconf/gconf.xml.defaults/apps/totem/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@vnd.rn-realmedia/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-ogg/%gconf.xml
@@ -24,10 +25,13 @@ etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-ms-wmv/%
 etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-msvideo/%gconf.xml
 etc/gconf/schemas/totem.schemas
 etc/gconf/schemas/totem-video-thumbnail.schemas
+libdata/bonobo/servers/Totem_properties.server
+libexec/totem-properties-page
 share/gnome/application-registry/totem.applications
 share/gnome/applications/totem.desktop
 share/gnome/mime-info/totem.keys
 share/gnome/pixmaps/media-player-48.png
+share/gnome/pixmaps/vanity.png
 share/gnome/totem/filmholes.png
 share/gnome/totem/media-player-48.png
 share/gnome/totem/stock_media_next.png
@@ -46,6 +50,8 @@ share/gnome/totem/totem_logo.png
 share/gnome/totem/playlist.glade
 share/gnome/totem/properties.glade
 share/gnome/totem/uri.glade
+share/gnome/totem/vanity.glade
+share/gnome/totem/vanity.png
 share/locale/am/LC_MESSAGES/totem.mo
 share/locale/be/LC_MESSAGES/totem.mo
 share/locale/ca/LC_MESSAGES/totem.mo
@@ -69,6 +75,8 @@ share/locale/pl/LC_MESSAGES/totem.mo
 share/locale/pt/LC_MESSAGES/totem.mo
 share/locale/pt_BR/LC_MESSAGES/totem.mo
 share/locale/ru/LC_MESSAGES/totem.mo
+share/locale/sr/LC_MESSAGES/totem.mo
+share/locale/sr@Latn/LC_MESSAGES/totem.mo
 share/locale/sv/LC_MESSAGES/totem.mo
 share/locale/tr/LC_MESSAGES/totem.mo
 share/locale/uk/LC_MESSAGES/totem.mo
