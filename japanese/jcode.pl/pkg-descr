@@ -1,0 +1,19 @@
+``jcode.pl-2.x'' is a perl library for japanese character code conversion.
+It supports translation of each JIS, EUC, Shift JIS texts, and automatically
+recognizes the encode-method of the target text files.
+
+To use this, your script should load this library as
+
++ require "jcode.pl";
+or
++ require('jcode.pl');
+
+# ``unshift(@INC, '/usr/local/lib/perl');'' could be needed before.
+
+# See also:
+# http://www.bekkoame.or.jp/~syunji/perl/perl_j.html
+# http://www.bekkoame.or.jp/~syunji/perl/jcode20.txt
+# (both pages are written in Japanese)
+
+- SADA Kenji
+sada@e-mail.ne.jp
