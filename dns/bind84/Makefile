@@ -22,6 +22,8 @@ DIST_SUBDIR=	bind-${PORTVERSION}
 MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	The Berkeley Internet Name Domain, an implementation of DNS
 
+FORBIDDEN=	Bug WRT unnecesarry queries. 8.4.4 to be release soon.
+
 .if defined(PORT_REPLACES_BASE_BIND8)
 PKGNAMESUFFIX=	-base
 PREFIX=		/usr
