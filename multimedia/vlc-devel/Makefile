@@ -6,29 +6,58 @@
 #
 # Options to define Features:
 # WITH_AUTODETECT=yes
+#
 # WITH_GNOME=yes
+#  Gnome Interface
+#
+# WITHOUT_GTKVLC=yes
+#  Gtk12 Interface (Default interface)
+#
 # WITH_ESOUND=yes
+#
 # WITH_AALIB=yes
+#
 # WITH_CDDB=yes
+#
 # WITH_DTS=yes
+#
 # WITH_FRIBIDI=yes
+#
 # WITH_GGI=yes
+#
 # WITH_LIBDVBPSI=yes
+#
 # WITH_LIBID3TAG=yes
+#
 # WITH_LIBMATROSKA=yes
+#
 # WITH_LIBMPEG2=yes
+#
 # WITH_LIBTHEORA=yes
+#
 # WITH_LIVEMEDIA=yes
-# WITH_NCURSES=yes (ncurses interface)
+#
+# WITH_NCURSES=yes
+#  Ncurses interface
+#
 # WITH_SPEEX=yes
+#
 # WITH_SVGALIB=yes
+#
 # WITH_XOSD=yes
-# WITH_XVID=yes
+#
+# WITHOUT_XVID=yes
+#
 # WITH_WXWINDOWS=yes
+#  WxWindows Interface
+#
 # WITH_OPTIMIZED_CFLAGS=yes
+#
 # WITH_DVD_DEVICE=/dev/somedevice (5.x: default is acd0, 4:x default is acd0c)
 # WITH_CDROM_DEVICE=/dev/somedevice
+#
 # WITHOUT_NLS=yes
+#
 # WITHOUT_LIBID3TAG=yes
 
 PORTNAME=	vlc
@@ -92,10 +121,8 @@ WITHOUT_SPEEX=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-USE_GCC=	3.3
+USE_GCC=	3.4
 .endif
-
-.if defined(WITH_AUTODETECT) && !defined(BATCH)
 
 .if ${HAVE_GNOME:Mgnomelibs}!="" && !defined(WITHOUT_GNOME)
 WITH_GNOME=	yes
@@ -104,6 +131,8 @@ WITH_GNOME=	yes
 .if ${HAVE_GNOME:Mesound}!="" && !defined(WITHOUT_ESOUND)
 WITH_ESOUND=	yes
 .endif
+
+.if defined(WITH_AUTODETECT) && !defined(BATCH)
 
 .if exists(${LOCALBASE}/lib/libaa.so.1) && !defined(WITHOUT_AALIB)
 WITH_AALIB=	yes
@@ -153,10 +182,6 @@ WITH_SVGALIB=	yes
 WITH_XOSD=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libxvidcore.so.4) && !defined(WITHOUT_XVID)
-WITH_XVID=	yes
-.endif
-
 .endif
 
 .if defined(WITH_MATROSKA)
@@ -194,8 +219,14 @@ CONFIGURE_ARGS+=--enable-gnome
 PLIST_FILES+=	bin/gnome-vlc \
 		lib/vlc/gui/libgnome_plugin.so \
 		lib/vlc/misc/libgnome_main_plugin.so
+.endif
+
+.if !defined(WITHOUT_GTKVLC)
+PLIST_FILES+=	bin/gvlc \
+		lib/vlc/gui/libgtk_plugin.so \
+		lib/vlc/misc/libgtk_main_plugin.so
 .else
-CONFIGURE_ARGS+=--enable-gtk
+CONFIGURE_ARGS+=--disable-gtk
 .endif
 
 .if defined(WITH_WXWINDOWS) && !defined(WITHOUT_WXWINDOWS)
@@ -322,7 +353,7 @@ CONFIGURE_ARGS+=--enable-xosd
 CONFIGURE_ARGS+=--disable-xosd
 .endif
 
-.if defined(WITH_XVID) && !defined(WITHOUT_XVID)
+.if !defined(WITHOUT_XVID)
 LIB_DEPENDS+=	xvidcore.4:${PORTSDIR}/multimedia/xvid
 CONFIGURE_ARGS+=--enable-xvideo
 PLIST_FILES+=	lib/vlc/video_output/libxvideo_plugin.so
