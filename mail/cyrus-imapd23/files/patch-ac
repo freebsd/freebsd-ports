@@ -1,8 +1,16 @@
 Index: configure
 diff -u configure.orig configure
---- configure.orig	Sat May 29 03:08:17 2004
-+++ configure	Sat May 29 06:43:27 2004
-@@ -6551,7 +6551,7 @@
+--- configure.orig	Fri Jun 18 03:55:49 2004
++++ configure	Wed Jul 21 04:21:05 2004
+@@ -309,6 +309,7 @@
+ #endif"
+ 
+ ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS build build_cpu build_vendor build_os host host_cpu host_vendor host_os MAKEDEPEND cyrus_prefix service_path cyrus_user cyrus_group CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT RANLIB ac_ct_RANLIB SET_MAKE INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CPP EGREP AWK LIBOBJS LIB_SOCKET IPV6_OBJS PRE_SUBDIRS EXTRA_SUBDIRS DEPLIBS LOCALDEFS WITH_AUTH BDB_INC BDB_LIB CYRUSDB_OBJS SIEVE_OBJS SIEVE_LIBS SIEVE_CPPFLAGS YACC LEX LEXLIB LEX_OUTPUT_ROOT SIEVE_SUBDIRS WITH_NONBLOCK WITH_GMTOFF WITH_MAP WITH_LOCK cyrus_sigveclib WITH_PTS AFS_LIBS AFS_LDFLAGS LDAP_CPPFLAGS LDAP_LDFLAGS LDAP_LIBS SERVER_SUBDIRS OPENSSL_INC OPENSSL_LIB ZEPHYR_LIBS ZEPHYR_CPPFLAGS WITH_IDLE IMAP_PROGS COMPILE_ET COM_ERR_LIBS COM_ERR_LDFLAGS COM_ERR_CPPFLAGS LIB_CRYPT GSSAPI_LIBS GSSAPIBASE_LIBS LIB_DYN_SASL DYNSASLFLAGS LIB_SASL SASLFLAGS PERL PERL_CCCDLFLAGS MD5OBJ SNMP_SUBDIRS LIB_WRAP SNMP_CONFIG LIB_UCDSNMP LIB_RT IMAP_COM_ERR_LIBS IMAP_LIBS PERL_SUBDIRS PERL_DEPSUBDIRS LTLIBOBJS'
++ac_subst_vars="${ac_subst_vars} LDFLAGS_UCDSNMP"
+ ac_subst_files=''
+ 
+ # Initialize some variables set by options.
+@@ -6551,7 +6552,7 @@
  	    BDB_LIBADD=""
  	fi
  
@@ -11,7 +19,7 @@ diff -u configure.orig configure
            do
              as_ac_Lib=`echo "ac_cv_lib_$dbname''_db_create" | $as_tr_sh`
  echo "$as_me:$LINENO: checking for db_create in -l$dbname" >&5
-@@ -6575,11 +6575,11 @@
+@@ -6575,11 +6576,11 @@
  #endif
  /* We use char because int might match the return type of a gcc2
     builtin and then its argument prototype would still apply.  */
@@ -25,7 +33,7 @@ diff -u configure.orig configure
    ;
    return 0;
  }
-@@ -13502,6 +13502,7 @@
+@@ -13502,6 +13503,7 @@
      EXTRA_SUBDIRS="${EXTRA_SUBDIRS} perl"
      PERL_SUBDIRS="imap"
      PERL="${with_perl}"
@@ -33,16 +41,18 @@ diff -u configure.orig configure
      PERL_CCCDLFLAGS="$cccdlflags"
  
  fi
-@@ -14020,7 +14021,7 @@
+@@ -14020,7 +14022,9 @@
  
      if test -n "$SNMP_LIBS" && test -n "$SNMP_PREFIX"; then
        CPPFLAGS="$CPPFLAGS -I${SNMP_PREFIX}/include"
 -      LIB_UCDSNMP=$SNMP_LIBS
 +      LIB_UCDSNMP="$SNMP_LIBS -lwrap"
++      PERLLIBDIR=`$PERL -e 'use Config; print "$Config{archlibexp}/CORE";'`
++      LDFLAGS_UCDSNMP="-L${PERLLIBDIR} -R${PERLLIBDIR}"
  
  cat >>confdefs.h <<\_ACEOF
  #define HAVE_NETSNMP 1
-@@ -14251,7 +14252,7 @@
+@@ -14251,7 +14255,7 @@
  #define HAVE_UCDSNMP 1
  _ACEOF
  
@@ -51,3 +61,11 @@ diff -u configure.orig configure
        echo "$as_me:$LINENO: checking for rpmdbOpen in -lrpm" >&5
  echo $ECHO_N "checking for rpmdbOpen in -lrpm... $ECHO_C" >&6
  if test "${ac_cv_lib_rpm_rpmdbOpen+set}" = set; then
+@@ -15067,6 +15071,7 @@
+ s,@LIB_WRAP@,$LIB_WRAP,;t t
+ s,@SNMP_CONFIG@,$SNMP_CONFIG,;t t
+ s,@LIB_UCDSNMP@,$LIB_UCDSNMP,;t t
++s,@LDFLAGS_UCDSNMP@,$LDFLAGS_UCDSNMP,;t t
+ s,@LIB_RT@,$LIB_RT,;t t
+ s,@IMAP_COM_ERR_LIBS@,$IMAP_COM_ERR_LIBS,;t t
+ s,@IMAP_LIBS@,$IMAP_LIBS,;t t

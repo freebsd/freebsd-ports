@@ -1,7 +1,7 @@
 Index: tools/mkimap
 diff -u tools/mkimap.orig tools/mkimap
---- tools/mkimap.orig	Mon Mar 10 03:39:36 2003
-+++ tools/mkimap	Fri Mar 21 17:24:10 2003
+--- tools/mkimap.orig	Wed Jun 30 03:16:54 2004
++++ tools/mkimap	Tue Jul 27 04:47:43 2004
 @@ -61,6 +61,9 @@
  
  $imapdconf = shift || "/etc/imapd.conf";
@@ -19,18 +19,18 @@ diff -u tools/mkimap.orig tools/mkimap
 +mkdir $d, 0755;
  chdir $d or die "couldn't change to $d";
  
- mkdir "proc", 0755;
+ mkdir "proc", 0755 || warn "can't create $d/proc: $!";
 @@ -95,11 +99,14 @@
- mkdir "msg", 0755;
- mkdir "ptclient", 0755;
+ mkdir "msg", 0755 || warn "can't create $d/msg: $!";
+ mkdir "ptclient", 0755 || warn "can't create $d/ptclient: $!";
  
 +system "/usr/sbin/chown -R $cyrus_user:$cyrus_group .";
 +
  while ($part = shift @parts) {
      print "creating $part...\n";
-     mkdir $part, 0755;
+     mkdir $part, 0755 || warn "can't create $part: $!";
      chdir $part or die "couldn't change to partition $part";
-     mkdir "stage.", 0755;
+     mkdir "stage.", 0755 || warn "can't create $part/stage.: $!";
 +    system "/usr/sbin/chown -R $cyrus_user:$cyrus_group $part";
  }
  

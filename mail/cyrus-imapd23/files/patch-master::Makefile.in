@@ -1,8 +1,17 @@
 Index: master/Makefile.in
 diff -u master/Makefile.in.orig master/Makefile.in
---- master/Makefile.in.orig	Wed Nov 12 13:02:03 2003
-+++ master/Makefile.in	Thu Mar 11 01:18:52 2004
-@@ -75,10 +75,10 @@
+--- master/Makefile.in.orig	Sat May 29 03:03:05 2004
++++ master/Makefile.in	Wed Jul 21 04:13:16 2004
+@@ -58,7 +58,7 @@
+ DEPLIBS = @DEPLIBS@
+ 
+ CFLAGS = @CFLAGS@
+-LDFLAGS = @LDFLAGS@ @COM_ERR_LDFLAGS@
++LDFLAGS = @LDFLAGS_UCDSNMP@ @LDFLAGS@ @COM_ERR_LDFLAGS@
+ LIBS = ../lib/libcyrus_min.a @LIB_UCDSNMP@ @LIBS@ @COM_ERR_LIBS@
+ 
+ SHELL = /bin/sh
+@@ -76,10 +76,10 @@
  all: $(PROGS) $(LOBJS)
  
  install:
