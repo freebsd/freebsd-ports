@@ -24,6 +24,12 @@ USE_GMAKE=	yes
 MAKE_ENV+=	OPENWINHOME=${X11BASE}
 WEB_BROWSER?=	mozilla
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Broken pkg-plist"
+.endif
+
 pre-build:
 	@${REINPLACE_CMD} -e 's+netscape+${WEB_BROWSER}+ ' \
 	  ${WRKSRC}/Robot/Makefile
@@ -45,4 +51,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/Demos/*.rob ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
