@@ -16,7 +16,7 @@ MASTER_SITES=	http://erevan.cuore.org/files/ermixer/
 
 MAINTAINER=	alane@FreeBSD.org
 
-USE_QT_VERSION=	3
+USE_QT_VER=	3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-qt
