@@ -72,6 +72,7 @@
     SUBDIR += kdelibs3
     SUBDIR += keylaunch
     SUBDIR += kgamma
+    SUBDIR += libXtrans
     SUBDIR += libcapplet
     SUBDIR += libdnd
     SUBDIR += libgnome
