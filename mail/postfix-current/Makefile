@@ -7,7 +7,8 @@
 
 PORTNAME=	postfix
 PORTVERSION=	20010228
-CATEGORIES=	mail
+PORTREVISION=	1
+CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
 		ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/%SUBDIR%/ \
 		ftp://ftp.tux.org/pub/net/postfix/experimental/ \
