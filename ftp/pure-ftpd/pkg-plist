@@ -30,7 +30,7 @@ sbin/pure-uploadscript
 %%PORTDOCS%%share/doc/pure-ftpd/pure-ftpd.png
 %%PORTDOCS%%share/doc/pure-ftpd/pureftpd.schema
 share/examples/pure-ftpd/pam/pure-ftpd
-share/examples/pure-ftpd/sfv-crc-check.pl
+share/examples/pure-ftpd/pure-vpopauth.pl
 share/examples/pure-ftpd/xml_python_processors.txt
 @dirrm share/examples/pure-ftpd/pam
 @dirrm share/examples/pure-ftpd

@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	pure-ftpd
-PORTVERSION=	1.0.12
+PORTVERSION=	1.0.13
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
+		ftp://ftp2.fr.pureftpd.org/pub/mirrors/ftp.fr.pureftpd.org/pub/pure-ftpd/releases/ \
+		ftp://ftp3.fr.pureftpd.org/pure-ftpd/releases/ \
 		ftp://ftp.dk.pureftpd.org/mirrors/pure-ftpd/releases/ \
 		ftp://ftp.es.pureftpd.org/mirror/pureftpd/latest/releases/ \
+		ftp://ftp.nl.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.fr.pureftpd.org/pub/pure-ftpd/releases/ \
-		ftp://ftp.za.pureftpd.org/pub/pure-ftpd/releases/ \
-		http://ftp.cn.pureftpd.org/pure-ftpd/releases/ \
+		ftp://ftp.cn.pureftpd.org/pub/pureftpd/pure-ftpd/releases/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pureftpd
 
@@ -85,7 +87,7 @@ DOCS=		AUTHORS CONTACT COPYING HISTORY NEWS \
 		README.Authentication-Modules THANKS pure-ftpd.png \
 		pureftpd.schema
 
-CONTRIB=	xml_python_processors.txt sfv-crc-check.pl
+CONTRIB=	xml_python_processors.txt pure-vpopauth.pl
 
 pre-fetch:
 	@${ECHO} "You can use the following additional options:"
@@ -97,8 +99,9 @@ pre-fetch:
 		support, lang is one of"
 	@${ECHO} "  english, german, romanian, french, french-funny, polish, spanish,"
 	@${ECHO} "  dutch, italian, brazilian-portuguese, danish, slovak, korean,"
-	@${ECHO} "  norwegian, swedish, russian, traditional-chinese, simplified-chinese."
-	@${ECHO}
+	@${ECHO} "  norwegian, swedish, russian, traditional-chinese, simplified-chinese"
+	@${ECHO} "  and czech."
+	@${ECHO}	
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/pureftpd-ldap.conf ${PREFIX}/etc/pureftpd-ldap.conf.sample
