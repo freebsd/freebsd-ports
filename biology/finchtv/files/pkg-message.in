@@ -1,0 +1,15 @@
+
+----------------------------------------------------------------------------
+
+  As reported in the ReleaseNotes.txt file, the 'Online Help' menu may not 
+  work. If you need to access the FinchTV help pages/documentation see
+  below.
+
+  FinchTV Help pages are installed under
+  %%DOCSDIR%%
+  and can be accessed using the following URL:
+  file://%%DOCSDIR%%/Help/index.htm
+
+  They are also available online at http://geospiza.com/finchtv/help
+
+----------------------------------------------------------------------------

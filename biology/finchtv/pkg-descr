@@ -1,0 +1,19 @@
+FinchTV is the popular way to view sequence traces on Linux, Mac OSX,
+and Windows. FinchTV is the only trace viewer that can display an entire
+trace in a scalable multi-pane view.
+
+FinchTV reads chromatogram files from the most popular formats. In
+addition to displaying a multi-color sequence above the trace, FinchTV
+displays quality values (when available). You can adjust the scale in
+both vertical and horizontal directions in either single or multipane
+views.
+
+FinchTV can:
+o print traces (on a single page or control the number of panels printed)
+o export sequences in FASTA format
+o open gzipped files
+o open files with drag and drop
+o shows additional details about the file (sample ID, run start and stop
+  times, spacing, mobility, lane number, etc.)
+
+WWW: http://www.geospiza.com/finchtv/index.htm

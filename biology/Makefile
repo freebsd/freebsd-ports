@@ -23,6 +23,7 @@
     SUBDIR += fasta
     SUBDIR += fasta3
     SUBDIR += fastdnaml
+    SUBDIR += finchtv
     SUBDIR += flip
     SUBDIR += fluctuate
     SUBDIR += garlic
