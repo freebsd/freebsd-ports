@@ -5,10 +5,10 @@ FreeBSD 5.x users should add the following to their /etc/libmap.conf
 
 # Might crash if used with libpthread
 [beep-media-player]
-libc_r.so.5		libc_r.so.5
-libc_r.so		libc_r.so
+libpthread.so.1		libc_r.so.5
+libpthread.so		libc_r.so
 
 [/usr/X11R6/bin/beep-media-player]
-libc_r.so.5		libc_r.so.5
-libc_r.so		libc_r.so
+libpthread.so.1		libc_r.so.5
+libpthread.so		libc_r.so
 
