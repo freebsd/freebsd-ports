@@ -62,6 +62,7 @@
     SUBDIR += logcheck
     SUBDIR += lsh
     SUBDIR += lxnb
+    SUBDIR += mcrypt
     SUBDIR += mhash
     SUBDIR += mindterm-binary
     SUBDIR += nbaudit
