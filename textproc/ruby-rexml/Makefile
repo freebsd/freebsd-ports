@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rexml
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.5
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.germane-software.com/~ser/Software/archives/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -21,10 +21,10 @@ USE_RUBY=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-DOCS=		README index.html tutorial.html api
+DOCS=		README index.html tutorial.html api img
 
 do-install:
-	cd ${WRKSRC} && ${RUBY} install.rb
+	cd ${WRKSRC} && ${RUBY} bin/install.rb
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
 .for f in ${DOCS}

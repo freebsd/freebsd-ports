@@ -17,6 +17,12 @@
 %%RUBY_SITELIBDIR%%/rexml/text.rb
 %%RUBY_SITELIBDIR%%/rexml/xmldecl.rb
 %%RUBY_SITELIBDIR%%/rexml/xpath.rb
+%%RUBY_SITELIBDIR%%/rexml/dtd/attlistdecl.rb
+%%RUBY_SITELIBDIR%%/rexml/dtd/dtd.rb
+%%RUBY_SITELIBDIR%%/rexml/dtd/elementdecl.rb
+%%RUBY_SITELIBDIR%%/rexml/dtd/entitydecl.rb
+%%RUBY_SITELIBDIR%%/rexml/dtd/notationdecl.rb
+@dirrm %%RUBY_SITELIBDIR%%/rexml/dtd
 @dirrm %%RUBY_SITELIBDIR%%/rexml
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/README
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/index.html
@@ -81,6 +87,17 @@
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/api/rexml/index.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/api/rexml/index.xml
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/api/rexml/style.css
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/api/rexml/dtd/AttlistDecl.xml
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/api/rexml/dtd/DTD.xml
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/api/rexml/dtd/ElementDecl.xml
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/api/rexml/dtd/EntityDecl.xml
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/api/rexml/dtd/NotationDecl.xml
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/api/rexml/dtd/Parser.xml
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/api/rexml/dtd/REXML.xml
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/img/rexml.png
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/img/rexml_50p.png
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rexml/img
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rexml/api/rexml/dtd
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rexml/api/rexml
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rexml/api
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rexml
