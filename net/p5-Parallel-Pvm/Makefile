@@ -28,8 +28,8 @@ MAN3=		Parallel::Pvm.3
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not build on amd64 (pvm needs to provide shared libraries)"
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+BROKEN=		"Does not build on amd64 or ia64 (pvm needs to provide shared libraries)"
 .endif
 
 .include <bsd.port.post.mk>
