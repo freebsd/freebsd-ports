@@ -56,7 +56,6 @@ MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=athena" ${I18N}
 #MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=yes" ${I18N}
 .elif defined(WITH_GTK)
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gtk --with-gtk-prefix=${X11BASE}" ${I18N}
-MAKE_ARGS+=	CONF_OPT_PERL="--enable-pythoninterp"
 MAKE_ARGS+=	X_LIBS="$(X_LIBS) -lXt"
 .else
 USE_MOTIF=	yes
