@@ -32,6 +32,33 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d4bd4046-93a6-11d9-8378-000bdb1444a4">
+    <topic>rxvt-unicode -- buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>rxvt-unicode</name>
+	<range><lt>5.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A rxvt-unicode changelog reports:</p>
+	<blockquote cite="http://dist.schmorp.de/rxvt-unicode/Changes">
+	  <p>Fix a bug that allowed to overflow a buffer via a long
+	    escape sequence, which is probably exploitable (fix by
+	    Rob Holland / Yoann Vandoorselaere / Gentoo Audit Team).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://dist.schmorp.de/rxvt-unicode/Changes</url>
+    </references>
+    <dates>
+      <discovery>2005-03-13</discovery>
+      <entry>2005-03-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a7062952-9023-11d9-a22c-0001020eed82">
     <topic>phpmyadmin -- information disclosure vulnerability</topic>
     <affects>
