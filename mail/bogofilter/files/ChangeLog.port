@@ -1,6 +1,9 @@
 FreeBSD's port ChangeLog for mail/bogofilter
 ------------------------
 
+2004-07-07
+- add patch-ac to fix bogus test failure in bogofilter-tdb and bogofilter-qdbm
+
 0.92.1
 - pick up bugfixes, dropping patch-aa and patch-ab from 0.92.0_1
 - update GSL dependency to gsl.6 (GNU GSL v1.5)
