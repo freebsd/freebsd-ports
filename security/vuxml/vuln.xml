@@ -1613,11 +1613,15 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
+      <cvename>CAN-2004-1171</cvename>
+      <certvu>305294</certvu>
+      <url>http://www.kde.org/info/security/advisory-20041209-1.txt</url>
       <mlist msgid="ICEEJPLEDKODPNFKJEGAIEBJGFAA.df@sec-consult.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110178786809694</mlist>
     </references>
     <dates>
       <discovery>2004-10-06</discovery>
       <entry>2004-12-12</entry>
+      <modified>2005-01-13</modified>
     </dates>
   </vuln>
 
