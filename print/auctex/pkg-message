@@ -1,0 +1,23 @@
+
+Customizing
+===========
+   Next, you should edit the file
+`/usr/local/share/emacs/site-lisp/tex-site.el' to fit your local site.
+You do this by looking at the customization section in the beginning
+of `/usr/local/share/emacs/site-lisp/auctex/tex.el' and copy the
+definitions that are wrong for your site to `tex-site.el'.  Do *not*
+edit `tex.el' directly, or you will have to do all the work over again
+when you upgrade AUC TeX.  AUC TeX will not overwrite your old
+`tex-site.el' file next time you install, so you will be able to keep
+all your customizations.
+
+   You probably want to copy and edit `TeX-printer-list' to contain the
+printers available at your site.
+
+Enabling AUC TeX
+================
+   You can now tell your users to enable AUC TeX by adding
+
+     (require 'tex-site)
+
+to their `~/.emacs' file.
