@@ -7,7 +7,7 @@
 
 PORTNAME=	openoffice
 PORTVERSION=	641c
-CATEGORIES=	editors
+CATEGORIES=	editors x11
 MASTER_SITES=	http://sf1.mirror.openoffice.org/641c/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/ \
 		ftp://ftp.netbsd.org/pub/NetBSD/misc/mrauch/ 
