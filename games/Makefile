@@ -319,6 +319,7 @@
     SUBDIR += tome
     SUBDIR += toppler
     SUBDIR += tornado
+    SUBDIR += tractorgen
     SUBDIR += trojka
     SUBDIR += ttraffic
     SUBDIR += tux-aqfh
