@@ -1,9 +1,10 @@
 --- postilion/options.tcl	Wed Feb 23 17:27:28 2000
 +++ postilion/options.tcl	Mon Feb 12 19:24:36 2001
 @@ -217,5 +217,5 @@
-     if [info exists $env(MAIL)] {
+-    if [info exists $env(MAIL)] {
 -	set option(default_folder) "INBOX file {} /var/spool/mail/$env(USER)"
 -    } else {
++    if [info exists env(MAIL)] {
  	set option(default_folder) "INBOX file {} $env(MAIL)"
 +    } else {
 +	set option(default_folder) "INBOX file {} /var/mail/$env(USER)"
