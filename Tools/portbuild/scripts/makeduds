@@ -6,6 +6,8 @@ pb=/var/portbuild
 
 . ${pb}/portbuild.conf
 
+. ${pb}/scripts/buildenv
+
 # -j# to make duds
 DUDSJOBS=4
 
@@ -16,48 +18,15 @@ usage () {
 if [ $# != 1 ]; then
   usage
 fi
-case "x$1" in
-  x4)
-    branch=4
-    export PORTOBJFORMAT=elf
-    export OSREL=4.5
-    export OSVERSION=450002
-    ;;
-  x4-exp)
-    branch=4-exp
-    export PORTOBJFORMAT=elf
-    export OSREL=4.5
-    export OSVERSION=450002
-    ;;
-  x5)
-    branch=5
-    export PORTOBJFORMAT=elf
-    export OSREL=5.0
-    export OSVERSION=500031
-    ;;
-  *)
-    usage
-    ;;
-esac
 
-export PORTSDIR=${pb}/${branch}/ports
+branch=$1
+
+buildenv ${pb} ${branch}
+
 duds=${pb}/${branch}/duds
 
-if [ "x$NODUMMY" = "x" ]; then
-  unset XFREE86_VERSION
-  unset MOTIF_OPEN
-else
-  export XFREE86_VERSION=4
-  export MOTIF_OPEN=t
-fi
 unset DISPLAY
-export BATCH=t
-export HAVE_MOTIF=t
-export PACKAGE_BUILDING=t
-export PARALLEL_PACKAGE_BUILD=t
-export SRCBASE=/var/portbuild/${branch}/src
-#export NO_RESTRICTED=t
-#export FOR_CDROM=t
+
 cd ${PORTSDIR}
 make -j${DUDSJOBS} ignorelist ECHO_MSG=true > ${duds} || exit 1
 sort ${duds} > ${duds}.tmp
