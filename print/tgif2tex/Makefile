@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	tgif2tex
-PORTVERSION=	1.46
+PORTVERSION=	2.01
 CATEGORIES+=	print
 MASTER_SITES=	http://camphor.elcom.nitech.ac.jp/~nakano/tgif2tex/
-DISTNAME=	${PORTNAME}
 
 MAINTAINER=	taoka@FreeBSD.org
 
@@ -21,16 +20,10 @@ DOCSRC+=	example.obj \
 
 do-build:
 	@cd ${WRKSRC}; ${MV} tgif2tex tgif2tex.org; \
-	${SED} -e 's,/usr/local/X11R6/bin/tgif,${X11BASE}/bin/tgif,' \
-		-e 's;^#! */usr/local/bin/perl *;#!${PERL5};' \
+	${SED}	-e 's,/usr/local/X11R6/bin/tgif,${X11BASE}/bin/tgif,' \
+		-e 's;^#! */usr/bin/perl *;#!${PERL5};' \
+		-e 's,/usr/local,${PREFIX},' \
 			tgif2tex.org > tgif2tex
-
-pre-install:
-	@if [ ${PREFIX} != "/usr/local" ]; then \
-	    ${SED} s,/usr/local,${PREFIX}, ${WRKSRC}/tgif2tex \
-			> ${WRKSRC}/tgif2tex.org; \
-	    ${MV} ${WRKSRC}/tgif2tex.org ${WRKSRC}/tgif2tex; \
-	fi
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tgif2tex ${PREFIX}/bin/tgif2tex
