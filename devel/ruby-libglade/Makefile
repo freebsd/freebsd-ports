@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	libglade
-PORTVERSION=	1.2
-PORTREVISION=	2
+PORTVERSION=	${RUBY_GNOME_PORTVERSION}
+PORTEPOCH=	1
 CATEGORIES=	devel ruby gnome
-MASTER_SITES=	http://beta4.com/
+MASTER_SITES=	${RUBY_GNOME_MASTER_SITES}
+MASTER_SITE_SUBDIR=	${RUBY_GNOME_MASTER_SITE_SUBDIR}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	ruby-${PORTNAME}-${PORTVERSION:S/./-/g}
+DISTNAME=	${RUBY_GNOME_DISTNAME}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
@@ -23,10 +24,9 @@ USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 USE_GNOME=	yes
 
-WRKSRC=		${WRKDIR}/ruby-${PORTNAME}
-CONFIGURE_ARGS=	--with-glade-include="${LOCALBASE}/include/glade" \
-		--with-glib-config="${GLIB_CONFIG}" \
-		--with-gtk-config="${GTK_CONFIG}"
+.include "${.CURDIR}/../../x11/ruby-gnome/Makefile.common"
+
+WRKSRC=		${RUBY_GNOME_WRKSRC}/${PORTNAME}
 INSTALL_TARGET=	site-install
 
 post-install:
