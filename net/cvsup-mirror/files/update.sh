@@ -42,7 +42,7 @@ cd ${rundir} || exit
 colldir=sup.client
 startup=${PREFIX}/etc/rc.d
 eval chome=~${cuser}
-cmd="env HOME=${chome} cvsup"
+cmd="exec env HOME=${chome} cvsup"
 options="-1gL 1 -b ${base} -c ${colldir} ${CVSUP_ARGS}"
 
 umask 2
