@@ -7,7 +7,7 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	2.2.2
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES?=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	Attic/${PORTVERSION}/src
@@ -27,9 +27,6 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 .if !exists(/usr/bin/bzip2)
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif
-
-FORBIDDEN=	Security advisory on serious SSL bug. No fix is planned. \
-		Ask not for whom the bell tolls, it tolls for thee.
 
 USE_OPENSSL=	yes
 USE_QT_VER=	2
