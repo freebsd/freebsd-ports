@@ -1,0 +1,6 @@
+bin/xcolorsel
+lib/X11/app-defaults/Xcolorsel
+lib/X11/app-defaults/Xcolorsel-color
+lib/X11/xcolorsel/Xcolorsel.help
+man/man1/xcolorsel.1.gz
+@dirrm lib/X11/xcolorsel
