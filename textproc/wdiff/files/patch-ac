@@ -1,0 +1,13 @@
+--- wdiff.c.orig	Sun Nov  6 02:57:23 1994
++++ wdiff.c	Wed Aug  1 16:48:38 2001
+@@ -892,8 +892,9 @@
+ {
+   /* Launch the diff program.  */
+ 
++  unsetenv ("DIFF_OPTIONS");
+   if (ignore_case)
+-    input_file = readpipe (DIFF_PROGRAM, "-c", left_side->temp_name,
++    input_file = readpipe (DIFF_PROGRAM, "-i", left_side->temp_name,
+ 			   right_side->temp_name, NULL);
+   else
+     input_file = readpipe (DIFF_PROGRAM, left_side->temp_name,
