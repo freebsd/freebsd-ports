@@ -22,6 +22,7 @@ PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	jmz@FreeBSD.org
 
+USE_XLIB=	yes
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.4:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
@@ -44,12 +45,12 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xloadimage ${PREFIX}/bin
 	@cd ${PREFIX}/bin && \
-		ln -sf xloadimage xsetbg && \
-		ln -sf xloadimage xview
+		${LN} -sf xloadimage xsetbg && \
+		${LN} -sf xloadimage xview
 	${INSTALL_PROGRAM} ${WRKSRC}/uufilter ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/xloadimage.man ${PREFIX}/man/man1/xloadimage.1
 	${INSTALL_MAN} ${WRKSRC}/uufilter.man ${PREFIX}/man/man1/uufilter.1
-	mkdir -p ${PREFIX}/share/examples/xloadimage
+	${MKDIR} ${PREFIX}/share/examples/xloadimage
 	${INSTALL_DATA} ${WRKSRC}/xloadimagerc \
 		${PREFIX}/share/examples/xloadimage/xloadimagerc
 
