@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	system/printing
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Send print jobs to lpd servers anywhere on a network
 
+FORBIDDEN=	"Local and remote exploitable buffer overflow (CAN-2004-0393, CAN-2004-0454)"
+
 #LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
