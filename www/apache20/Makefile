@@ -142,6 +142,8 @@ WITH_PTHREAD_CFLAGS?=	${PTHREAD_CFLAGS}
 
 .include "${APACHEDIR}/Makefile.doc"
 .include "${APACHEDIR}/Makefile.modules"
+WANT_APACHE=	common2
+.include "${APACHEDIR}/Makefile.modules.3rd"
 
 CONFIGURE_ARGS+=	--with-mpm=${WITH_MPM:L} ${CONFIGURE_TARGET}
 
