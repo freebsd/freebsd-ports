@@ -72,6 +72,7 @@
     SUBDIR += nvi-big5
     SUBDIR += nvi-euc-cn
     SUBDIR += nvi-euc-tw
+    SUBDIR += openoffice
     SUBDIR += p5-Date-Chinese
     SUBDIR += pine4
     SUBDIR += pyDict
