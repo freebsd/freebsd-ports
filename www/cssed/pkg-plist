@@ -1,0 +1,51 @@
+bin/cssed
+libdata/pkgconfig/cssed.pc
+%%DATADIR%%/data/cssed-cfg.xml
+%%DATADIR%%/data/cssed-def.dtd
+%%DATADIR%%/data/cssed-def.xml
+%%DATADIR%%/include/SciLexer.h
+%%DATADIR%%/include/Scintilla.h
+%%DATADIR%%/include/ScintillaWidget.h
+%%DATADIR%%/include/cssdialogs-class.h
+%%DATADIR%%/include/cssedwindow.h
+%%DATADIR%%/include/document.h
+%%DATADIR%%/include/plugin.h
+%%DATADIR%%/pixmaps/arrow.png
+%%DATADIR%%/pixmaps/color_wizard.png
+%%DATADIR%%/pixmaps/color_wizard_menu.png
+%%DATADIR%%/pixmaps/cssed-about.png
+%%DATADIR%%/pixmaps/cssed-icon.png
+%%DATADIR%%/pixmaps/dlg_border.png
+%%DATADIR%%/pixmaps/dlg_box.png
+%%DATADIR%%/pixmaps/dlg_box_menu.png
+%%DATADIR%%/pixmaps/dlg_margin.png
+%%DATADIR%%/pixmaps/dlg_padding.png
+%%DATADIR%%/pixmaps/doc_close.png
+%%DATADIR%%/pixmaps/document_info.png
+%%DATADIR%%/pixmaps/document_info_menu.png
+%%DATADIR%%/pixmaps/font.png
+%%DATADIR%%/pixmaps/hide_footer.png
+%%DATADIR%%/pixmaps/hide_footer_menu.png
+%%DATADIR%%/pixmaps/hide_sidebar.png
+%%DATADIR%%/pixmaps/hide_sidebar_menu.png
+%%DATADIR%%/pixmaps/scan_selector.png
+%%DATADIR%%/pixmaps/scan_selector_menu.png
+%%DATADIR%%/pixmaps/selector_wizard.png
+%%DATADIR%%/pixmaps/selector_wizard_menu.png
+%%DATADIR%%/pixmaps/show_footer.png
+%%DATADIR%%/pixmaps/show_footer_menu.png
+%%DATADIR%%/pixmaps/show_sidebar.png
+%%DATADIR%%/pixmaps/show_sidebar_menu.png
+%%DATADIR%%/pixmaps/validate.png
+%%DATADIR%%/pixmaps/validate_dump.png
+%%DATADIR%%/pixmaps/validate_dump_menu.png
+%%DATADIR%%/pixmaps/validate_menu.png
+share/locale/de/LC_MESSAGES/cssed.mo
+share/locale/es/LC_MESSAGES/cssed.mo
+share/locale/fr/LC_MESSAGES/cssed.mo
+share/locale/gl/LC_MESSAGES/cssed.mo
+share/locale/it/LC_MESSAGES/cssed.mo
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/include
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%
