@@ -9,7 +9,8 @@
 DISTNAME=	BLT2.4m
 PKGNAME=	blt-2.4m
 CATEGORIES=	x11-toolkits tk82
-MASTER_SITES=	ftp://ftp.tcltk.com/pub/blt/
+MASTER_SITES=	ftp://ftp.tcltk.com/pub/blt/ \
+		ftp://ftp.csl.sony.co.jp/pub/kjc/ttt-libs/
 
 MAINTAINER=	kjc@csl.sony.co.jp
 
