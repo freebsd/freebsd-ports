@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.7 1998/03/04 23:19:00 se Exp $
+# $Id: Makefile,v 1.8 1998/03/06 19:52:18 se Exp $
 #
 
 DISTNAME=	kdenetwork-Beta3-1
@@ -39,6 +39,6 @@ CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)" \
 WRKSRC=		${WRKDIR}/kdenetwork
 
 pre-configure:
-		ln -s $(PREFIX)/include/uu.h $(WRKSRC)/krn/uudeview.h
+		${LN} -sf $(PREFIX)/include/uu.h $(WRKSRC)/krn/uudeview.h
 
 .include <bsd.port.mk>
