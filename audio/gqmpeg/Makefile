@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.netpedia.net/hosting/gqview/packages/ \
 		http://www.geocities.com/SiliconValley/Haven/5235/packages/
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	lyngbol@candid.dk
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
