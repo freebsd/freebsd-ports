@@ -15,6 +15,7 @@
     SUBDIR += engradient
     SUBDIR += fltk
     SUBDIR += fltk-xunicode
+    SUBDIR += flvw
     SUBDIR += fox
     SUBDIR += fox-xunicode
     SUBDIR += gal

@@ -1,0 +1,42 @@
+@comment $FreeBSD$
+include/FL/Flv_CStyle.H
+@exec ln -fs %f %B/Flv_CStyle.h
+@unexec rm -f %B/Flv_CStyle.h
+include/FL/Flv_Data_Source.H
+@exec ln -fs %f %B/Flv_Data_Source.h
+@unexec rm -f %B/Flv_Data_Source.h
+include/FL/Flv_List.H
+@exec ln -fs %f %B/Flv_List.h
+@unexec rm -f %B/Flv_List.h
+include/FL/Flv_Style.H
+@exec ln -fs %f %B/Flv_Style.h
+@unexec rm -f %B/Flv_Style.h
+include/FL/Flv_Table.H
+@exec ln -fs %f %B/Flv_Table.h
+@unexec rm -f %B/Flv_Table.h
+include/FL/Flve_Check_Button.H
+@exec ln -fs %f %B/Flve_Check_Button.h
+@unexec rm -f %B/Flve_Check_Button.h
+include/FL/Flve_Combo.H
+@exec ln -fs %f %B/Flve_Combo.h
+@unexec rm -f %B/Flve_Combo.h
+include/FL/Flve_Input.H
+@exec ln -fs %f %B/Flve_Input.h
+@unexec rm -f %B/Flve_Input.h
+lib/libflvw.a
+lib/libflvw.so.1
+@exec ln -fs %f %B/libflvw.so
+@unexec rm -f %B/libflvw.so
+%%PORTDOCS%%share/doc/flvw/basics.html
+%%PORTDOCS%%share/doc/flvw/callbacks.html
+%%PORTDOCS%%share/doc/flvw/classref.html
+%%PORTDOCS%%share/doc/flvw/flv_ctable.html
+%%PORTDOCS%%share/doc/flvw/flv_list.html
+%%PORTDOCS%%share/doc/flvw/flv_style.html
+%%PORTDOCS%%share/doc/flvw/flv_style_list.html
+%%PORTDOCS%%share/doc/flvw/flv_table.html
+%%PORTDOCS%%share/doc/flvw/index.html
+%%PORTDOCS%%share/doc/flvw/intro.html
+%%PORTDOCS%%share/doc/flvw/scroll_bar.html
+%%PORTDOCS%%share/doc/flvw/stylebasics.html
+%%PORTDOCS%%share/doc/flvw/widget_features.html

@@ -1,0 +1,60 @@
+--- src/Makefile.orig	Sat Jan 22 14:30:26 2000
++++ src/Makefile	Sat Aug 18 09:09:18 2001
+@@ -13,7 +13,7 @@
+ # Make all targets...
+ #
+ 
+-all:	libflvw.a
++all:	../lib/libflvw.a ../lib/libflvw.so.1
+ 
+ #
+ # Remove object and target files...
+@@ -24,31 +24,40 @@
+ 	@$(RM) -f *.o core *~ ../FL/*~ ../FL/*.bak
+ 
+ distclean: clean
+-	@$(RM) -f ../lib/libflvw.a makedepend
++	@$(RM) -f ../lib/libflvw.a ../lib/libflvw.so.1 makedepend
+ 
+-install: libflvw.a
++install: all
+ 	@echo "Installing libraries..."
+ 	@-mkdir -p $(libdir)
+-	@rm -f $(libdir)/$(LIBNAME)
+-	@-cp $(LIBRARY).a $(libdir)
+-	@-chmod 644 $(libdir)/$(LIBNAME).a
+-	@echo "Installing include files..."
++	@rm -f $(libdir)/libflvw.a $(libdir)/libflvw.so*
++	@-cp ../lib/libflvw.a ../lib/libflvw.so.1 $(libdir)
++	@-ln -s libflvw.so.1 $(libdir)/libflvw.so
++	@-chmod 644 $(libdir)/libflvw.a $(libdir)/libflvw.so.1
++	@echo "Installing headers..."
+ 	@-mkdir -p $(includedir)/FL
+-	@-cp -r ../FL/* $(includedir)/FL/
++	@-cp ../FL/*.H $(includedir)/FL/
+ 
+ #
+ # Make the flvw widget library.
+ #
+ 
+ FLVW_OBJS	= Flv_Style.o     Flv_List.o    Flv_Table.o    Flv_CStyle.o    Flve_Input.o    Flve_Check_Button.o
++FLVW_SHOBJS=	$(FLVW_OBJS:.o=.lo)
+ FLVW_HDRS:	FL/Flv_Style.H FL/Flv_List.H FL/Flv_Table.H FL/Flv_CStyle.H FL/Flve_Input.H FL/Flve_Check_Button.H
+ 
+-libflvw.a:	$(FLVW_OBJS) $(FLVW_HDRS)
++../lib/libflvw.a:	$(FLVW_OBJS)
+ 	@echo Building library $@...
+ 	@$(RM) -f ../lib/libflvw.a
+ 	@$(AR) $(ARFLAGS) ../lib/libflvw.a $(FLVW_OBJS)
+ 	@$(RANLIB) ../lib/libflvw.a
+ 
++../lib/libflvw.so.1:	$(FLVW_SHOBJS)
++	@echo Building library $@...
++	@$(RM) -f ../lib/libflvw.so.1
++	@$(CXX) $(CXXFLAGS) -shared -Wl,-soname,libflvw.so.1 -o ../lib/libflvw.so.1 $(FLVW_SHOBJS)
++
++$(FLVW_OBJS): $(FLVW_HDRS)
++$(FLVW_SHOBJS): $(FLVW_HDRS)
+ 
+ #
+ # End of Makefile.

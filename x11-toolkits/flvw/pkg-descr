@@ -1,0 +1,6 @@
+The FLVW (Fast Light Virtual Widgets) require the use of the FLTK
+(Fast Light ToolKit) library.  They are designed to handle large
+amounts of data.  As such they are definitely not the smallest of
+FLTK widgets, but they are designed to use memory conservatively.
+
+WWW: http://www.fltk.org/
