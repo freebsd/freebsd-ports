@@ -1,0 +1,3 @@
+bin/oqtplayer
+%%PORTDOCS%%share/doc/OQTPlayer/readme
+%%PORTDOCS%%@dirrm share/doc/OQTPlayer
