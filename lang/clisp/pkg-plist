@@ -1,5 +1,4 @@
 bin/clisp
-lib/clisp/clisp-link
 lib/clisp/base/libavcall.a
 lib/clisp/base/libcallback.a
 lib/clisp/base/libiconv.a
@@ -13,7 +12,9 @@ lib/clisp/base/lispinit.mem
 lib/clisp/base/makevars
 lib/clisp/base/modules.h
 lib/clisp/base/modules.o
+lib/clisp/clisp-link
 lib/clisp/data/UnicodeData.txt
+lib/clisp/data/clhs.txt
 lib/clisp/full/libavcall.a
 lib/clisp/full/libcallback.a
 lib/clisp/full/libiconv.a
@@ -52,10 +53,15 @@ share/doc/clisp/doc/editors.txt
 share/doc/clisp/doc/impnotes.html
 share/doc/clisp/doc/readline.dvi
 share/locale/de/LC_MESSAGES/clisp.mo
+share/locale/de/LC_MESSAGES/clisplow.mo
 share/locale/en/LC_MESSAGES/clisp.mo
+share/locale/en/LC_MESSAGES/clisplow.mo
 share/locale/es/LC_MESSAGES/clisp.mo
+share/locale/es/LC_MESSAGES/clisplow.mo
 share/locale/fr/LC_MESSAGES/clisp.mo
+share/locale/fr/LC_MESSAGES/clisplow.mo
 share/locale/nl/LC_MESSAGES/clisp.mo
+share/locale/nl/LC_MESSAGES/clisplow.mo
 @dirrm share/doc/clisp/doc
 @dirrm share/doc/clisp
 @dirrm lib/clisp/base
