@@ -13,7 +13,7 @@ bin/xemacs-%%XEMACS_VER%%
 @unexec rm %B/xemacs
 @unexec rm %B/xemacs21
 etc/rc.d/xemacs21.sh
-@exec mkdir -p /var/run/xemacs/lock ; chmod 1777 /var/run/xemacs/lock
+@exec mkdir -p /var/run/emacs/lock ; chmod 1777 /var/run/emacs/lock
 lib/xemacs-%%XEMACS_VER%%/etc/BETA
 lib/xemacs-%%XEMACS_VER%%/etc/CHARSETS
 lib/xemacs-%%XEMACS_VER%%/etc/CODING-STANDARDS
@@ -541,6 +541,7 @@ lib/xemacs-%%XEMACS_VER%%/lisp/mule/canna-leim.el
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/chinese.el
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/cyrillic.el
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/english.el
+lib/xemacs-%%XEMACS_VER%%/lisp/mule/ethiopic.el
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/european.el
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/greek.el
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/hebrew.el
@@ -559,12 +560,14 @@ lib/xemacs-%%XEMACS_VER%%/lisp/mule/mule-init.el
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/mule-misc.el
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/mule-x-init.el
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/mule-tty-init.el
+lib/xemacs-%%XEMACS_VER%%/lisp/mule/thai-xtis-chars.el
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/viet-chars.el
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/arabic.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/canna-leim.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/chinese.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/cyrillic.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/english.elc
+lib/xemacs-%%XEMACS_VER%%/lisp/mule/ethiopic.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/european.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/greek.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/hebrew.elc
@@ -583,6 +586,7 @@ lib/xemacs-%%XEMACS_VER%%/lisp/mule/mule-init.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/mule-misc.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/mule-tty-init.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/mule-x-init.elc
+lib/xemacs-%%XEMACS_VER%%/lisp/mule/thai-xtis-chars.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/viet-chars.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/term/AT386.el
 lib/xemacs-%%XEMACS_VER%%/lisp/term/README
@@ -936,6 +940,31 @@ lib/xemacs-%%XEMACS_VER%%/i386--freebsd/gzip-el.sh
 lib/xemacs-%%XEMACS_VER%%/i386--freebsd/add-big-package.sh
 lib/xemacs-%%XEMACS_VER%%/i386--freebsd/DOC
 lib/xemacs-%%XEMACS_VER%%/i386--freebsd/config.values
+@dirrm lib/xemacs-%%XEMACS_VER%%/etc/app-defaults/fr
+@dirrm lib/xemacs-%%XEMACS_VER%%/etc/app-defaults/ja
+@dirrm lib/xemacs-%%XEMACS_VER%%/etc/app-defaults
+@dirrm lib/xemacs-%%XEMACS_VER%%/etc/e
+@dirrm lib/xemacs-%%XEMACS_VER%%/etc/auctex/style
+@dirrm lib/xemacs-%%XEMACS_VER%%/etc/auctex
+@dirrm lib/xemacs-%%XEMACS_VER%%/etc/frame-icon
+@dirrm lib/xemacs-%%XEMACS_VER%%/etc/gnats
+@dirrm lib/xemacs-%%XEMACS_VER%%/etc/gnus
+@dirrm lib/xemacs-%%XEMACS_VER%%/etc/gnusrefcard
+@dirrm lib/xemacs-%%XEMACS_VER%%/etc/message
+@dirrm lib/xemacs-%%XEMACS_VER%%/etc/mine
+@dirrm lib/xemacs-%%XEMACS_VER%%/etc/mule
+@dirrm lib/xemacs-%%XEMACS_VER%%/etc/ns
+@dirrm lib/xemacs-%%XEMACS_VER%%/etc/sgml/ISO_8879=1986/entities
+@dirrm lib/xemacs-%%XEMACS_VER%%/etc/sgml/ISO_8879=1986
+@dirrm lib/xemacs-%%XEMACS_VER%%/etc/sgml/cdtd
+@dirrm lib/xemacs-%%XEMACS_VER%%/etc/sgml
+@dirrm lib/xemacs-%%XEMACS_VER%%/etc/skk
+@dirrm lib/xemacs-%%XEMACS_VER%%/etc/smilies
+@dirrm lib/xemacs-%%XEMACS_VER%%/etc/sounds
+@dirrm lib/xemacs-%%XEMACS_VER%%/etc/time
+@dirrm lib/xemacs-%%XEMACS_VER%%/etc/vm
+@dirrm lib/xemacs-%%XEMACS_VER%%/etc/w3
+@dirrm lib/xemacs-%%XEMACS_VER%%/etc/custom/example-themes
 @dirrm lib/xemacs-%%XEMACS_VER%%/etc/custom
 @dirrm lib/xemacs-%%XEMACS_VER%%/etc/eos
 @dirrm lib/xemacs-%%XEMACS_VER%%/etc/idd
@@ -947,9 +976,74 @@ lib/xemacs-%%XEMACS_VER%%/i386--freebsd/config.values
 @dirrm lib/xemacs-%%XEMACS_VER%%/etc
 @dirrm lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%
 @dirrm lib/xemacs-%%XEMACS_VER%%/info
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/apel
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/cl
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/efs
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/egg
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/auctex/style
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/auctex
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/bytecomp
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/calendar
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/cc-mode
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/comint
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/custom
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/dired
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/edebug
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/ediff
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/electric
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/emulators
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/energize
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/eos
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/epoch
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/eterm
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/games
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/gnats
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/gnus
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/hm--html-menus
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/hyperbole/kotl
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/hyperbole
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/ilisp
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/iso
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/its
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/language
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/leim/quail
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/leim
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/locale/ja
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/locale
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/mailcrypt
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/mel
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/mh-e
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/mu
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/modes
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/ns
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/oobr/tree-nx/English.lproj/InfoPanel.nib
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/oobr/tree-nx/English.lproj/TreeView.nib
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/oobr/tree-nx/English.lproj/DocWindow.nib
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/oobr/tree-nx/English.lproj
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/oobr/tree-nx
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/oobr/tree-x
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/oobr
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/packages
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/pcl-cvs
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/prim
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/psgml
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/quail
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/rmail
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/skk
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/sunpro
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/tl
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/tm
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/tooltalk
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/url
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/utils
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/viper
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/vm
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/vms
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/w3
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/w32
+@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/x11
 @dirrm lib/xemacs-%%XEMACS_VER%%/lisp/mule
 @dirrm lib/xemacs-%%XEMACS_VER%%/lisp/term
 @dirrm lib/xemacs-%%XEMACS_VER%%/lisp
 @dirrm lib/xemacs-%%XEMACS_VER%%
 @dirrm lib/xemacs
-@unexec rm -rf /var/run/xemacs
