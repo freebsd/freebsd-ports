@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.ardiri.com/download/files/palm/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	Resource compiler for Pilot applications
 
 WRKSRC=		${WRKDIR}/pilrc-${PORTVERSION}
 

@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR= net-snmp
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	An extendable SNMP implementation
 
 USE_PERL5=	yes
 USE_REINPLACE=	yes

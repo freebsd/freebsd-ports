@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	XML
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	Perl extension interface to James Clark's XML parser, expat
 
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
 

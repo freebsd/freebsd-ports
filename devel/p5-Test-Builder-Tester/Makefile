@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Test
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	Test testsuites that have been built with Test::Builder
 
 BUILD_DEPENDS=	${SITE_PERL}/Test/Builder.pm:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}

@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.jclark.com/pub/xml/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	XSL Transformations (XSLT) implementation in Java
 
 USE_JAVA=	1.1+
 USE_ZIP=	YES

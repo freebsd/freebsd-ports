@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kuriyama
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	New flavor of asclock
 
 WRKSRC=		${WRKDIR}/asclock-xlib
 USE_XPM=	YES

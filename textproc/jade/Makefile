@@ -16,6 +16,7 @@ PATCHFILES=	jade_1.2.1-18.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	An object-oriented SGML/XML parser toolkit and DSSSL engine
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes

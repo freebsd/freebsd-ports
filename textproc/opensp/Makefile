@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	openjade
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	This package is a collection of SGML/XML tools called OpenSP
 
 USE_GMAKE=	YES
 USE_LIBTOOL=	YES

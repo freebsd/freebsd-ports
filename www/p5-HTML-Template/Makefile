@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	HTML
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	Perl module to use HTML Templates from CGI scripts
 
 PERL_CONFIGURE=	yes
 

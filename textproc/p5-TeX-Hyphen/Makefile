@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	TeX
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	Hyphenate words using TeX's patterns
 
 PERL_CONFIGURE=	YES
 

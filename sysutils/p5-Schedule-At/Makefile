@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	Schedule
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	OS independent interface to the Unix 'at' command
 
 PERL_CONFIGURE=	yes
 

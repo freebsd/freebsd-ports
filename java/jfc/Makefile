@@ -13,6 +13,7 @@ DISTNAME=	swing1_1_1
 EXTRACT_SUFX=	.zip
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	Java Foundation Classes (JFC)/Swing
 
 RUN_DEPENDS=	${PREFIX}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk11
 

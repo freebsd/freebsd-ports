@@ -16,6 +16,7 @@ PATCHFILES=	patch.20.gz patch.21e.gz patch.22e.gz patch.23e.gz \
 		patch.24e.gz patch.25e.gz patch.26e.gz
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	Mail dispatcher for mailing list.  Fits nicely with majordomo
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmimekit.a:${PORTSDIR}/japanese/mimekit
 

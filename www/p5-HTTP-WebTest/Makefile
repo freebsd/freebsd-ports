@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	HTTP
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	Tests remote URLs or local web files
 
 BUILD_DEPENDS=	\
 	${SITE_PERL}/Algorithm/Diff.pm:${PORTSDIR}/devel/p5-Algorithm-Diff \

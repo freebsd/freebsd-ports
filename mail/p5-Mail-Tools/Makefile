@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	MailTools-${PORTVERSION}
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	Perl5 modules for dealing with Internet e-mail messages
 
 PERL_CONFIGURE=	yes
 

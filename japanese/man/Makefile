@@ -18,6 +18,7 @@ PATCHFILES=	jp-man-1.1j-ex-20020115.patch
 PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	A manual display command for Japanese (EUC)
 
 RUN_DEPENDS=	${LOCALBASE}/bin/groff:${PORTSDIR}/japanese/groff \
 		jless:${PORTSDIR}/japanese/less

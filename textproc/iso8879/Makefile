@@ -14,6 +14,7 @@ DISTNAME=	isoENTS
 EXTRACT_SUFX=	.zip
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	Character entity sets from ISO 8879:1986 (SGML)
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.conserver.com/conserver/
 PKGNAMESUFFIX=	-com
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	Application that allows multiple users to watch serial consoles
 
 GNU_CONFIGURE=	YES
 USE_REINPLACE=	yes
