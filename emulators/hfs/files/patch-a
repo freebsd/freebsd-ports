@@ -1,0 +1,25 @@
+--- catalog.cxx~	Wed Oct 26 14:53:09 1994
++++ catalog.cxx	Sat Jan  1 17:32:13 2000
+@@ -613,7 +613,8 @@
+ 
+    // remainder are only valid if item is a file
+   if (isfile) {
+-    for (int i = 0; i < 4;i++)
++      int i;
++    for (i = 0; i < 4;i++)
+       creator[i]   = fb.creator[i];
+     for (i = 0; i < 4;i++)
+       filetype[i]  = fb.filetype[i];
+--- volume.cxx~	Wed Oct 26 14:53:09 1994
++++ volume.cxx	Sat Jan  1 17:33:36 2000
+@@ -521,8 +521,9 @@
+ BOOL DeviceVolume::Read (ULONG logical_block, void * buffer) 
+ 
+ {
++    int i;
+   Cache * c = cache;
+-  for (int i = 0; i < CacheSize; i++, c++) {
++  for (i = 0; i < CacheSize; i++, c++) {
+     if (c->lastUsed != 0 && c->block == logical_block) {
+       memcpy(buffer, c->buffer, LogicalBlockSize);
+       c->lastUsed = countLRU++;
