@@ -5212,6 +5212,7 @@ p5-DateTime-Format-DBI	ports/devel/p5-DateTime-Format-DBI
 p5-DateTime-Format-DateManip	ports/devel/p5-DateTime-Format-DateManip
 p5-DateTime-Format-Epoch	ports/devel/p5-DateTime-Format-Epoch
 p5-DateTime-Format-Excel	ports/devel/p5-DateTime-Format-Excel
+p5-DateTime-Format-HTTP	ports/devel/p5-DateTime-Format-HTTP
 p5-DateTime-Format-ICal	ports/devel/p5-DateTime-Format-ICal
 p5-DateTime-Format-ISO8601	ports/devel/p5-DateTime-Format-ISO8601
 p5-DateTime-Format-Mail	ports/devel/p5-DateTime-Format-Mail
