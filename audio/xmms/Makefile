@@ -15,7 +15,7 @@ MAINTAINER=	esk@ira.uka.de
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		glib12.2:${PORTSDIR}/devel/glib12 \
 		mikmod.2:${PORTSDIR}/audio/libmikmod \
-		esd.1:${PORTSDIR}/audio/esound
+		esd.2:${PORTSDIR}/audio/esound
 
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	GTK_CONFIG=${X11BASE}/bin/gtk12-config \
