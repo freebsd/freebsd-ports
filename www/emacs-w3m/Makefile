@@ -37,7 +37,8 @@ PLIST_SUB+=	EMACS_NAME=${EMACS_NAME} \
 		ETCDIR=${ETCDIR} \
 		PKGINFODIR=${PKGINFODIR} \
 		ICONS=${ICONS} \
-		ETC=${ETC}
+		ETC=${ETC} \
+		SHIMBUN=${SHIMBUN}
 
 DOCS=		FAQ README
 DOCS_JA=	FAQ.ja README.ja README.namazu.ja README.shimbun.ja TIPS.ja
@@ -71,7 +72,13 @@ INSTALL_TARGET=	install install-icons
 .endif
 .endif
 
-.include <bsd.port.pre.mk>
+.if defined(WITHOUT_SHIMBUN)
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-Makefile.in
+SHIMBUN=	"@comment "
+WITHOUT_OCTET_VIEWER=	yes
+.else
+SHIMBUN=	""
+.endif
 
 .if (${EMACS_PORT_NAME} == "emacs21")
 FLIM_PORT=	${PORTSDIR}/editors/flim
@@ -90,11 +97,13 @@ SEMI_PORT?=	${PORTSDIR}/editors/semi-${EMACS_PORT_NAME}
 MULE_UCS_PORT?=	${PORTSDIR}/converters/mule-ucs-${EMACS_PORT_NAME}
 MULE_UCS_ELISP_FILE=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/mule-ucs/un-define.el
 
-BUILD_DEPENDS=	w3m:${PORTSDIR}/www/w3m-m17n \
-		${FLIM_COOKIE}:${FLIM_PORT}
-RUN_DEPENDS=	w3m:${PORTSDIR}/www/w3m-m17n \
-		${FLIM_COOKIE}:${FLIM_PORT}
-.if (${EMACS_PORT_NAME} != "xemacs21-mule" && !defined(WITHOUT_OCTET_VIEWER))
+BUILD_DEPENDS=	w3m:${PORTSDIR}/www/w3m-m17n
+RUN_DEPENDS=	w3m:${PORTSDIR}/www/w3m-m17n
+.if !defined(WITHOUT_SHIMBUN)
+BUILD_DEPENDS+=	${FLIM_COOKIE}:${FLIM_PORT}
+RUN_DEPENDS+=	${FLIM_COOKIE}:${FLIM_PORT}
+.endif
+.if !defined(WITHOUT_OCTET_VIEWER)
 RUN_DEPENDS+=	${SEMI_COOKIE}:${SEMI_PORT} \
 		wvHtml:${PORTSDIR}/textproc/wv \
 		xlhtml:${PORTSDIR}/textproc/xlhtml \
@@ -102,9 +111,14 @@ RUN_DEPENDS+=	${SEMI_COOKIE}:${SEMI_PORT} \
 .endif
 
 pre-everything::
-.if (${EMACS_PORT_NAME} != "xemacs21-mule" || !defined(WITHOUT_OCTET_VIEWER))
+.if !defined(WITHOUT_SHIMBUN)
 	@${ECHO_MSG} "===>"
-	@${ECHO_MSG} "===>  If you don't use octet stream viewer,"
+	@${ECHO_MSG} "===>  If you don't use the shimbun modules, please define WITHOUT_SHIMBUN."
+	@${ECHO_MSG} "===>"
+.endif
+.if !defined(WITHOUT_OCTET_VIEWER)
+	@${ECHO_MSG} "===>"
+	@${ECHO_MSG} "===>  If you don't use the octet stream viewer,"
 	@${ECHO_MSG} "===>  please define WITHOUT_OCTET_VIEWER."
 	@${ECHO_MSG} "===>"
 .endif
@@ -127,4 +141,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -19,4 +19,6 @@ ICONDIR=		${EMACS_PACKAGESDIR}/etc/w3m
 PKGINFODIR=		${EMACS_PACKAGESDIR}/pkginfo
 INSTALL_TARGET=		install-package
 
+WITHOUT_OCTET_VIEWER=	yes
+
 .include <${MASTERDIR}/Makefile>
