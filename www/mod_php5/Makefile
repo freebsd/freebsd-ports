@@ -3,7 +3,7 @@
 # Date created:		So  21 Jun 1998 16:09:39 CEST
 # Whom:			Stefan Herrmann <stefan@asterix.webaffairs.net>
 #
-# $Id: Makefile,v 1.66 1999/01/13 17:31:09 dirk Exp $
+# $Id: Makefile,v 1.67 1999/03/08 07:28:32 asami Exp $
 #
 
 DISTNAME=	apache_${VERSION_APACHE}
@@ -23,7 +23,7 @@ MAINTAINER=	dirk@FreeBSD.ORG
 Y2K=		http://www.php.net/y2k.php3
 
 VERSION_APACHE=	1.3.4
-VERSION_PHP3=	3.0.6
+VERSION_PHP3=	3.0.7
 
 #
 # Set APACHE_PERF_TUNING env. variable to YES to get maximum performance
