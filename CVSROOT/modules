@@ -4966,8 +4966,6 @@ mozilla-devel-gtk2	ports/www/mozilla-devel-gtk2
 mozilla-firebird	ports/www/mozilla-firebird
 mozilla-fonts	ports/x11-fonts/mozilla-fonts
 mozilla-gtk2	ports/www/mozilla-gtk2
-mozilla-headers	ports/www/mozilla-headers
-mozilla-headers-devel	ports/www/mozilla-headers-devel
 mozilla-thunderbird	ports/mail/mozilla-thunderbird
 mp		ports/editors/mp
 mp-a4		ports/print/mp-a4
