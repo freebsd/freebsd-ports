@@ -6,22 +6,23 @@
 #
 
 PORTNAME=	ttmkfdir
-PORTVERSION=	0.0
-PORTREVISION=	1
+PORTVERSION=	20021109
 CATEGORIES=	x11-fonts x11
-MASTER_SITES=	http://www.joerg-pommnitz.de/TrueType/
-DISTNAME=	${PORTNAME}
+MASTER_SITES=	http://people.redhat.com/yshao/
+DISTNAME=	${PORTNAME}2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create fonts.scale file for use with TrueType font server
 
-NO_WRKSUBDIR=	yes
-USE_X_PREFIX=	yes
-USE_FREETYPE=	yes
+BUILD_DEPENDS=	libtool13:${PORTSDIR}/devel/libtool13
+LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
-do-build:
-	cd ${WRKSRC}; ${CC} ${CFLAGS} -I${LOCALBASE}/include/freetype1/freetype \
-		ttmkfdir.c -o ttmkfdir -L${LOCALBASE}/lib -lttf
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_GETOPT_LONG=yes
+USE_X_PREFIX=	yes
+
+MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ttmkfdir ${PREFIX}/bin
