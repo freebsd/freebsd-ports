@@ -7,6 +7,7 @@ include/libgnomeprint-%%LIBVERSION%%/libgnomeprint/gnome-pgl.h
 include/libgnomeprint-%%LIBVERSION%%/libgnomeprint/gnome-print-config.h
 include/libgnomeprint-%%LIBVERSION%%/libgnomeprint/gnome-print-job.h
 include/libgnomeprint-%%LIBVERSION%%/libgnomeprint/gnome-print-paper.h
+include/libgnomeprint-%%LIBVERSION%%/libgnomeprint/gnome-print-transport.h
 include/libgnomeprint-%%LIBVERSION%%/libgnomeprint/gnome-print-unit.h
 include/libgnomeprint-%%LIBVERSION%%/libgnomeprint/gnome-print.h
 include/libgnomeprint-%%LIBVERSION%%/libgnomeprint/gnome-rfont.h
