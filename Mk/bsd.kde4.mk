@@ -92,8 +92,8 @@ CONFIGURE_ENV+=        MOC="${MOC}" QTDIR="${QTDIR}"
 .elif ${USE_QT_VER} == 3
 
 # Yeah, it's namespace pollution, but this is really the best place for this
-# stuff since arts/kdelibs use it.
-KDE_VERSION=	3.1
+# stuff. Arts does NOT use it anymore.
+KDE_VERSION=		3.1.1
 KDE_ORIGVER=	${KDE_VERSION}
 KDE_PREFIX?=	${LOCALBASE}
 
