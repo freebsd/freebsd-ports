@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zope
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	www python
 MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
 DISTNAME=	Zope-${PORTVERSION}-src
@@ -34,6 +34,13 @@ SCGIBINDIR?=	${WEBBASEDIR}/cgi-bin.default
 APACHE_CONFDIR?=	${PREFIX}/etc/apache
 PYTHON15?=	${LOCALBASE}/bin/python1.5
 
+WHOAMI!=	id -un
+.if ${WHOAMI} == "root"
+NOBODY_USER?=	nobody
+.else
+NOBODY_USER?=	${WHOAMI}
+.endif
+
 # Don't change these.
 ZOPEBASEDIR=	${PREFIX}/${SZOPEBASEDIR}
 CGIBINDIR=	${PREFIX}/${SCGIBINDIR}
@@ -50,44 +57,47 @@ do-install:	#
 		${ECHO} "Saving existing Database to /tmp/Data.fs.BAK." ; \
 		${MV} ${ZOPEBASEDIR}/var/Data.fs /tmp/Data.fs.BAK ; \
 		fi
-	#
+	@#
 	@${MKDIR} ${ZOPEBASEDIR}
 	@${ECHO} "===>   Please be patient, some builds need their time."
 	@${ECHO} "===>   Copying..."
 	@${CP} -Rp ${WRKSRC}/* ${ZOPEBASEDIR}/
-	#
-	@(cd ${ZOPEBASEDIR} ; \
-		${PYTHON15} w_pcgi.py ; \
-		${PYTHON15} wo_pcgi.py ; \
+	@#
+	@${CHMOD} -R u+w ${ZOPEBASEDIR}
+	@(cd ${ZOPEBASEDIR} && ${PYTHON15} w_pcgi.py)
+	@${CHMOD} -R u+w ${ZOPEBASEDIR}
+	@(cd ${ZOPEBASEDIR} && ${PYTHON15} wo_pcgi.py)
+	@(cd ${ZOPEBASEDIR} && \
 		${MV} Zope.cgi Zope.cgi.orig ; \
 		${ECHO} "#! ${CGIBINDIR}/pcgi-wrapper" > Zope.cgi ; \
 		${CAT} Zope.cgi.orig >> Zope.cgi )
-	#
+	@#
 	@${MKDIR} ${CGIBINDIR}
 	@(cd ${ZOPEBASEDIR} ; \
-		${INSTALL} -o nobody -m 555 Zope.cgi \
+		${INSTALL} -m 555 Zope.cgi \
 			pcgi/pcgi-wrapper \
 			${CGIBINDIR} )
-	#
+	@#
 	@${ECHO} "===>   Fixing permissions of Zope's own var directory..."
 	@${CHMOD} ugo+rwt ${ZOPEBASEDIR}/var
-	@${CHOWN} nobody ${ZOPEBASEDIR}/var
-	@${CHOWN} nobody ${ZOPEBASEDIR}/var/*
-	#
+	@${CHOWN} ${NOBODY_USER} ${ZOPEBASEDIR}/var
+	@${CHOWN} ${NOBODY_USER} ${ZOPEBASEDIR}/var/*
+	@#
 	@${ECHO} "===>   Setting user/password to zopemaster/test..."
 	@(cd ${ZOPEBASEDIR} && \
 		${PYTHON15} zpasswd.py -u zopemaster \
 			-p test -e CLEARTEXT access )
-	#
-	@${CHOWN} nobody ${ZOPEBASEDIR}/access
-	#
+	@#
+	@${CHOWN} ${NOBODY_USER} ${ZOPEBASEDIR}/access
+	@#
 	@${ECHO} "===>   Copying Apache config file changes to ${APACHE_CONFDIR}/apache.conf.Zope-Changes."
 	@${MKDIR} ${APACHE_CONFDIR}
 	@${CP} -p ${FILESDIR}/apache.conf.Zope-Changes ${APACHE_CONFDIR}/
-	#
+	@#
 	@${ECHO} "===>   Please have a look at this file and the instructions"
 	@${ECHO} "===>   therein and incorporate them to your apache.conf."
 	@${ECHO} "===>   Creating rc startup file for Zope-${PORTVERSION}..."
+	@${MKDIR} -p ${PREFIX}/etc/rc.d
 	@${SED} -e "s|%%ZOPEBASEDIR%%|${ZOPEBASEDIR}|g" -e "s|%%CGIBINDIR%%|${CGIBINDIR}|g" \
 		< ${FILESDIR}/zope.sh.in > ${PREFIX}/etc/rc.d/zope.sh
 	@${CHMOD} ug+x,o-rwx ${PREFIX}/etc/rc.d/zope.sh
