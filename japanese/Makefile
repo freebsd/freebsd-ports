@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.187 1999/02/11 15:46:53 kuriyama Exp $
+# $Id: Makefile,v 1.188 1999/02/12 16:43:18 flathill Exp $
 #
 
     SUBDIR += Canna
@@ -73,6 +73,7 @@
     SUBDIR += k12
     SUBDIR += kakasi
     SUBDIR += kappa20
+    SUBDIR += kbanner
     SUBDIR += kcc
     SUBDIR += kinput2-canna
     SUBDIR += kinput2-canna+sj3
