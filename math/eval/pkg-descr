@@ -1,0 +1,8 @@
+Eval is a full featured floating point expression evaluator that
+can assign variables, has many built-in functions and constants, allows
+input and output in any number base, and uses a C-like syntax for
+expression evaluation.  Full ANSI C source is included and easily
+portable to other platforms.
+Author:  Will Menninger
+
+This version comes with readline support.

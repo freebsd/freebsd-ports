@@ -1,0 +1,27 @@
+--- /tmp/Eval/source/Makefile.unx	Tue Apr 13 21:04:14 1993
++++ Makefile	Sat Nov  8 11:50:35 1997
+@@ -11,13 +11,14 @@
+ # in order to get the string space high enough.  I haven't had any
+ # trouble with any of the other source modules.
+ #
+-CCFLAGS=-c
++CCFLAGS=-c -fwritable-strings $(CFLAGS)
+ #
+ # On some systems, you can use LIBC=-lc_s to make the program smaller by
+ # linking to a shared library.
+ #
+ LIBC=-lc
+ LIBM=-lm
++LIBREADLINE=-lreadline -ltermcap
+ EXE=
+ OBJ=.o
+ HEADER=eval.h
+@@ -30,7 +31,7 @@
+ $(OBJFILES):  $(HEADER)
+ 
+ Eval$(EXE):  $(OBJFILES)
+-	$(CC) -o Eval $(OBJFILES) $(LIBM) $(LIBC)
++	$(CC) -o Eval $(OBJFILES) $(LIBM) $(LIBC) $(LIBREADLINE)
+ 	chmod 755 Eval
+ 
+ eval:	Eval$(EXE)
