@@ -7,16 +7,16 @@
 
 PORTNAME=	libimg
 PORTVERSION=	1.2b2
-CATEGORIES=	japanese graphics tk80 japanese
+CATEGORIES=	japanese graphics tk80
 MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/sorted/packages-8.0/graphics/Img/1.2/ \
 		http://www.aaa-int.or.jp/~jfactory/TkStep/dist/
 DISTNAME=	img${PORTVERSION}
 
-MAINTAINER=	kiri@pis.toba-cmt.ac.jp
-COMMENT=	Enhanced Tk, adding support for many other Image formats:BMP,XBM,XPM,...
+MAINTAINER=	kiri@FreeBSD.org
+COMMENT=	Enhanced Tk adding support for many other Image formats
 
-BUILD_DEPENDS=	${PREFIX}/lib/tcl8.0jp/tclIndex:${PORTSDIR}/japanese/tcl80 \
-		${PREFIX}/lib/tk8.0jp/tk.tcl:${PORTSDIR}/japanese/tk80
+BUILD_DEPENDS=	${LOCALBASE}/lib/tcl8.0jp/tclIndex:${PORTSDIR}/japanese/tcl80 \
+		${LOCALBASE}/lib/tk8.0jp/tk.tcl:${PORTSDIR}/japanese/tk80
 
 USE_AUTOCONF=	yes
 HAS_CONFIGURE=	yes
