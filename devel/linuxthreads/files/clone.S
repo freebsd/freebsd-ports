@@ -93,6 +93,7 @@ ENTRY(_clone)
 #ifdef DEBUG
 	movl	%eax,_fcn
 #endif
+	movl	$0, %ebp		
 	call	*%eax
 	addl	$8, %esp
 
