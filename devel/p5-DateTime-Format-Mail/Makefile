@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	DateTime-Format-Mail
-PORTVERSION=	0.29
+PORTVERSION=	0.29.01
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DateTime
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/\1/}
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Convert between DateTime and RFC2822/822 formats
@@ -23,4 +24,5 @@ PERL_CONFIGURE=	yes
 
 MAN3=		DateTime::Format::Mail.3
 
+.include "../../devel/p5-Module-Build/inc.build.mk"
 .include <bsd.port.mk>
