@@ -76,11 +76,11 @@
   ##
   # enter groud id -starts
   ##
-!    echo $n "*Enter group id of httpd's child process [nobody]:$c? "
+!    echo $n "*Enter group id of httpd's child process [nogroup]:$c? "
      read answer
      if [ .$answer = . ]
      then 
-! 	answer=nobody
+! 	answer=nogroup
      fi
      until [ $answer != "x" ]
      do
