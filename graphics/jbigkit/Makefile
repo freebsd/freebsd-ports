@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jbigkit
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.informatik.uni-erlangen.de/pub/doc/ISO/JBIG/
 
@@ -14,7 +14,7 @@ MAINTAINER=	mi@aldan.algebra.com
 
 WRKSRC= ${WRKDIR}/jbigkit
 MAN1=	jbgtopbm.1 pbmtojbg.1
-MAN5=	pbm.5 pgm.5
+MAN5=	pgm.5
 
 post-install:
 .if !defined(NOPORTDOCS)
