@@ -6,16 +6,23 @@
 #
 
 PORTNAME=	bbconf
-PORTVERSION=	1.4
+PORTVERSION=	1.8
 CATEGORIES=	x11-wm
-MASTER_SITES=   http://bbconf.sourceforge.net/code/
+MASTER_SITES=	http://bbconf.sourceforge.net/code/
 
 MAINTAINER=	stijn@win.tue.nl
 
 USE_X_PREFIX=	yes
+USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
-USE_QT_VER=	2
+CONFIGURE_TARGET=
+CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_QT_VER=	3
 
 MAN1=		bbconf.1
+
+post-patch:
+	@find ${WRKSRC} -name 'Makefile.in' -print | \
+	    xargs ${PERL} -pi.orig -e 's#lib/bbconf#libexec/bbconf#g'
 
 .include <bsd.port.mk>
