@@ -1,0 +1,5 @@
+bin/nvi-devel
+lib/libvi.a
+lib/libvi.la
+lib/libvi.so
+lib/libvi.so.0
