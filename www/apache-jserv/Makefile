@@ -3,7 +3,7 @@
 # Date created:         1999/05/29
 # Whom:			Kensaku Masuda <greg@greg.rim.or.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/06/30 22:03:11 kuriyama Exp $
 
 DISTNAME=	Apache_JServ_1.0
 PKGNAME=	apache-jserv-1.0
@@ -13,6 +13,7 @@ MASTER_SITES=	http://java.apache.org/jserv/dist/
 MAINTAINER=	greg@greg.rim.or.jp
 
 BUILD_DEPENDS=	${PREFIX}/jdk1.1.8/bin/javac:${PORTSDIR}/java/jdk\
+		${PREFIX}/sbin/apachectl:${PORTSDIR}/www/apache13\
 		${PREFIX}/share/java/classes/jsdk.jar:${PORTSDIR}/java/jsdk
 RUN_DEPENDS=	${PREFIX}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk\
 		${PREFIX}/sbin/apachectl:${PORTSDIR}/www/apache13\
