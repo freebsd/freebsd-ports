@@ -44,6 +44,8 @@ share/doc/smokeping/IOSPing.pm.html
 share/doc/smokeping/IOSPing.pm.txt
 share/doc/smokeping/ParseConfig.pm.html
 share/doc/smokeping/ParseConfig.pm.txt
+share/doc/smokeping/RemoteFPing.pm.html
+share/doc/smokeping/RemoteFPing.pm.txt
 share/doc/smokeping/Smokeping.pm.html
 share/doc/smokeping/Smokeping.pm.txt
 share/doc/smokeping/base.pm.html
@@ -60,12 +62,14 @@ share/doc/smokeping/smokeping_config.html
 share/doc/smokeping/smokeping_config.txt
 share/doc/smokeping/smokeping_install.html
 share/doc/smokeping/smokeping_install.txt
+share/doc/smokeping/telnetIOSPing.pm.html
+share/doc/smokeping/telnetIOSPing.pm.txt
 smokeping/htdocs/smokeping.cgi
+smokeping/lib/ISG/ParseConfig.pm
+smokeping/lib/ISG/VppGateway.pm
 smokeping/lib/Smokeping.pm
-smokeping/lib/probes/FPing.pm
-smokeping/lib/probes/FPing6.pm
-smokeping/lib/probes/IOSPing.pm
-smokeping/lib/probes/base.pm
+smokeping/lib/probes/Curl.pm
+smokeping/lib/probes/DNS.pm
 smokeping/lib/probes/EchoPing.pm
 smokeping/lib/probes/EchoPingChargen.pm
 smokeping/lib/probes/EchoPingDiscard.pm
@@ -73,12 +77,14 @@ smokeping/lib/probes/EchoPingHttp.pm
 smokeping/lib/probes/EchoPingHttps.pm
 smokeping/lib/probes/EchoPingIcp.pm
 smokeping/lib/probes/EchoPingSmtp.pm
-smokeping/lib/probes/DNS.pm
+smokeping/lib/probes/FPing.pm
+smokeping/lib/probes/FPing6.pm
+smokeping/lib/probes/IOSPing.pm
+smokeping/lib/probes/RemoteFPing.pm
+smokeping/lib/probes/base.pm
 smokeping/lib/probes/basefork.pm
 smokeping/lib/probes/basevars.pm
-smokeping/lib/probes/Curl.pm
-smokeping/lib/ISG/ParseConfig.pm
-smokeping/lib/ISG/VppGateway.pm
+smokeping/lib/probes/telnetIOSPing.pm
 @unexec rmdir %D/etc/smokeping || true
 @exec mkdir -p %D/smokeping/htdocs/img; chown www:www %D/smokeping/htdocs/img
 @unexec rm -rf %D/smokeping/htdocs/img
