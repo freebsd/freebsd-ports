@@ -1,0 +1,77 @@
+lib/tkscanfax/fax-about.tcl
+lib/tkscanfax/images/hbkim.gif
+lib/tkscanfax/images/tkfax-s.gif
+lib/tkscanfax/msg_C.tcl
+lib/tkscanfax/fax-conf-win.tcl
+lib/tkscanfax/fax-conf.tcl
+lib/tkscanfax/fax-faxwin.tcl
+lib/tkscanfax/fax-file.tcl
+lib/tkscanfax/fax-init.tcl
+lib/tkscanfax/fax-lib.tcl
+lib/tkscanfax/fax-mkpg.tcl
+lib/tkscanfax/fax-pbook.tcl
+lib/tkscanfax/fax-queue.tcl
+lib/tkscanfax/fax-received.tcl
+lib/tkscanfax/fax-scan.tcl
+lib/tkscanfax/scan-about.tcl
+lib/tkscanfax/msg_ja.tcl
+lib/tkscanfax/scan-drivers/microtek-mtekscan.tcl
+lib/tkscanfax/scan-drivers/epson-ep_scan.tcl
+lib/tkscanfax/scan-drivers/epson-scanimage.tcl
+lib/tkscanfax/scan-drivers/epson.tcl
+lib/tkscanfax/scan-drivers/hp-hpscanpbm.tcl
+lib/tkscanfax/scan-drivers/mustek-scanimage.tcl
+lib/tkscanfax/scan-drivers/mustek-mscan.tcl
+lib/tkscanfax/scan-drivers/sharp.tcl
+lib/tkscanfax/tex/covermacro-aux.tex
+lib/tkscanfax/tex/covermacro-en.tex
+lib/tkscanfax/tex/covermacro-ja.tex
+lib/tkscanfax/tex/covermacro-kr.tex
+lib/tkscanfax/tex/covermacro-ja.tex.rpmsave.rpmorig
+lib/tkscanfax/tex/covermacro-en.tex.rpmsave.rpmorig.rpmorig
+lib/tkscanfax/scan-conf.tcl
+lib/tkscanfax/scan-scanwin.tcl
+lib/tkscanfax/scan-file.tcl
+lib/tkscanfax/scan-init.tcl
+lib/tkscanfax/scan-lib.tcl
+lib/tkscanfax/scan-out.tcl
+lib/tkscanfax/scan-scan.tcl
+lib/tkscanfax/scan-win.tcl
+lib/tkscanfax/tkfax
+lib/tkscanfax/tkscan
+lib/tkscanfax/doc/efax.html
+lib/tkscanfax/doc/efax.rc.sample
+lib/tkscanfax/doc/efax.rc.sample.ja
+lib/tkscanfax/doc/fax.html
+lib/tkscanfax/doc/tkscanfax.html
+lib/tkscanfax/doc/tkscanfax_e.html
+lib/tkscanfax/doc/tkscanfax_ja.html
+lib/tkscanfax/doc/INSTALL
+lib/tkscanfax/doc/INSTALL.ja
+lib/tkscanfax/doc/README.ja
+lib/tkscanfax/doc/TRANSLATION
+lib/tkscanfax/doc/images/gfax.png
+lib/tkscanfax/doc/images/jamain2.png
+lib/tkscanfax/doc/images/ref.gif
+lib/tkscanfax/doc/images/shinobas.gif
+lib/tkscanfax/doc/images/tkfax-b.xpm
+lib/tkscanfax/doc/images/tkfax-s.xpm
+lib/tkscanfax/doc/images/tkfax-s.png
+lib/tkscanfax/doc/images/tux.gif
+lib/tkscanfax/doc/printcap.sample
+lib/tkscanfax/doc/fax
+lib/tkscanfax/doc/tkfax_tips_ja.html
+lib/tkscanfax/doc/sysreport.sh
+lib/tkscanfax/tkscanfax.spec
+lib/tkscanfax/fax-logbrowse.tcl
+lib/tkscanfax/fax-balloon.tcl
+@exec /bin/ln -sf %D/lib/tkscanfax/tkscan %D/bin
+@exec /bin/ln -sf %D/lib/tkscanfax/tkfax %D/bin 
+@unexec /bin/rm -f %D/bin/tkscan
+@unexec /bin/rm -f %D/bin/tkfax
+@dirrm lib/tkscanfax/doc/images
+@dirrm lib/tkscanfax/doc
+@dirrm lib/tkscanfax/tex
+@dirrm lib/tkscanfax/scan-drivers
+@dirrm lib/tkscanfax/images
+@dirrm lib/tkscanfax

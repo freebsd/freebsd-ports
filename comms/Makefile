@@ -39,6 +39,7 @@
     SUBDIR += sredird
     SUBDIR += tits
     SUBDIR += tkhylafax
+    SUBDIR += tkscanfax
     SUBDIR += viewfax
     SUBDIR += vpb2
     SUBDIR += vrflash
