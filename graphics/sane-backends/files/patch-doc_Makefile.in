@@ -5,7 +5,7 @@
  oldincludedir = /usr/include
  configdir = ${sysconfdir}/sane.d
 -docdir=$(prefix)/doc/sane-@VERSION@
-+docdir=$(datadir)/doc/sane
++docdir=$(DOCSDIR)
  
  MKDIR = $(top_srcdir)/mkinstalldirs
  INSTALL = @INSTALL@

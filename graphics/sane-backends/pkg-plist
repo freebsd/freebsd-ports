@@ -183,9 +183,9 @@ lib/sane/libsane-sceptre.so.1
 lib/sane/libsane-sharp.a
 lib/sane/libsane-sharp.so
 lib/sane/libsane-sharp.so.1
-lib/sane/libsane-sm3600.a
-lib/sane/libsane-sm3600.so
-lib/sane/libsane-sm3600.so.1
+%%USB%%lib/sane/libsane-sm3600.a
+%%USB%%lib/sane/libsane-sm3600.so
+%%USB%%lib/sane/libsane-sm3600.so.1
 lib/sane/libsane-snapscan.a
 lib/sane/libsane-snapscan.so
 lib/sane/libsane-snapscan.so.1
@@ -223,86 +223,86 @@ lib/sane/libsane-umax_pp.a
 lib/sane/libsane-umax_pp.so
 lib/sane/libsane-umax_pp.so.1
 sbin/saned
-%%PORTDOCS%%share/doc/sane/AUTHORS
-%%PORTDOCS%%share/doc/sane/ChangeLog
-%%PORTDOCS%%share/doc/sane/LICENSE
-%%PORTDOCS%%share/doc/sane/NEWS
-%%PORTDOCS%%share/doc/sane/PROBLEMS
-%%PORTDOCS%%share/doc/sane/PROJECTS
-%%PORTDOCS%%share/doc/sane/README
-%%PORTDOCS%%share/doc/sane/README.aix
-%%PORTDOCS%%share/doc/sane/README.beos
-%%PORTDOCS%%share/doc/sane/README.darwin
-%%PORTDOCS%%share/doc/sane/README.djpeg
-%%PORTDOCS%%share/doc/sane/README.freebsd
-%%PORTDOCS%%share/doc/sane/README.hp-ux
-%%PORTDOCS%%share/doc/sane/README.linux
-%%PORTDOCS%%share/doc/sane/README.netbsd
-%%PORTDOCS%%share/doc/sane/README.openbsd
-%%PORTDOCS%%share/doc/sane/README.os2
-%%PORTDOCS%%share/doc/sane/README.solaris
-%%PORTDOCS%%share/doc/sane/README.unixware2
-%%PORTDOCS%%share/doc/sane/README.unixware7
-%%PORTDOCS%%share/doc/sane/README.windows
-%%PORTDOCS%%share/doc/sane/canon/canon.changes
-%%PORTDOCS%%share/doc/sane/canon/canon.install2700F.txt
-%%PORTDOCS%%share/doc/sane/gt68xx/gt68xx.CHANGES
-%%PORTDOCS%%share/doc/sane/leo/leo.txt
-%%PORTDOCS%%share/doc/sane/matsushita/matsushita.txt
-%%PORTDOCS%%share/doc/sane/mustek/mustek.CHANGES
-%%PORTDOCS%%share/doc/sane/mustek_usb/mustek_usb.CHANGES
-%%PORTDOCS%%share/doc/sane/mustek_usb/mustek_usb.TODO
-%%PORTDOCS%%share/doc/sane/plustek/BUILD
-%%PORTDOCS%%share/doc/sane/plustek/FAQ
-%%PORTDOCS%%share/doc/sane/plustek/MakeModule.sh
-%%PORTDOCS%%share/doc/sane/plustek/Makefile.kernel24
-%%PORTDOCS%%share/doc/sane/plustek/Makefile.kernel26
-%%PORTDOCS%%share/doc/sane/plustek/Makefile.module
-%%PORTDOCS%%share/doc/sane/plustek/Plustek-PARPORT-TODO.txt
-%%PORTDOCS%%share/doc/sane/plustek/Plustek-PARPORT.changes
-%%PORTDOCS%%share/doc/sane/plustek/Plustek-PARPORT.txt
-%%PORTDOCS%%share/doc/sane/plustek/Plustek-USB-TODO.txt
-%%PORTDOCS%%share/doc/sane/plustek/Plustek-USB.changes
-%%PORTDOCS%%share/doc/sane/plustek/Plustek-USB.txt
-%%PORTDOCS%%share/doc/sane/plustek/VERSION0
-%%PORTDOCS%%share/doc/sane/plustek/VERSION1
-%%PORTDOCS%%share/doc/sane/sane-backends-external.html
-%%PORTDOCS%%share/doc/sane/sane-backends.html
-%%PORTDOCS%%share/doc/sane/sane-mfgs-external.html
-%%PORTDOCS%%share/doc/sane/sane-mfgs.html
-%%PORTDOCS%%share/doc/sane/sceptre/s1200.txt
-%%PORTDOCS%%share/doc/sane/teco/teco1.txt
-%%PORTDOCS%%share/doc/sane/teco/teco2.txt
-%%PORTDOCS%%share/doc/sane/teco/teco3.txt
-%%PORTDOCS%%share/doc/sane/u12/U12.changes
-%%PORTDOCS%%share/doc/sane/u12/U12.todo
-%%PORTDOCS%%share/doc/sane/umax/negative-types.txt
-%%PORTDOCS%%share/doc/sane/umax/sane-logo.jpg
-%%PORTDOCS%%share/doc/sane/umax/sane-umax-advanced-options-doc.html
-%%PORTDOCS%%share/doc/sane/umax/sane-umax-advanced.jpg
-%%PORTDOCS%%share/doc/sane/umax/sane-umax-astra-doc.html
-%%PORTDOCS%%share/doc/sane/umax/sane-umax-config-doc.html
-%%PORTDOCS%%share/doc/sane/umax/sane-umax-doc.html
-%%PORTDOCS%%share/doc/sane/umax/sane-umax-histogram.jpg
-%%PORTDOCS%%share/doc/sane/umax/sane-umax-mirage-doc.html
-%%PORTDOCS%%share/doc/sane/umax/sane-umax-not-listed-doc.html
-%%PORTDOCS%%share/doc/sane/umax/sane-umax-others-doc.html
-%%PORTDOCS%%share/doc/sane/umax/sane-umax-parport-doc.html
-%%PORTDOCS%%share/doc/sane/umax/sane-umax-powerlook-doc.html
-%%PORTDOCS%%share/doc/sane/umax/sane-umax-scanner-clones-doc.html
-%%PORTDOCS%%share/doc/sane/umax/sane-umax-speed-doc.html
-%%PORTDOCS%%share/doc/sane/umax/sane-umax-standard-options-doc.html
-%%PORTDOCS%%share/doc/sane/umax/sane-umax-standard.jpg
-%%PORTDOCS%%share/doc/sane/umax/sane-umax-text.jpg
-%%PORTDOCS%%share/doc/sane/umax/sane-umax-text2.jpg
-%%PORTDOCS%%share/doc/sane/umax/sane-umax-text4.jpg
-%%PORTDOCS%%share/doc/sane/umax/sane-umax-uc-doc.html
-%%PORTDOCS%%share/doc/sane/umax/sane-umax-vista-doc.html
-%%PORTDOCS%%share/doc/sane/umax/sane-umax.jpg
-%%PORTDOCS%%share/doc/sane/umax/umax.BUGS
-%%PORTDOCS%%share/doc/sane/umax/umax.CHANGES
-%%PORTDOCS%%share/doc/sane/umax/umax.FAQ
-%%PORTDOCS%%share/doc/sane/umax/umax.TODO
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/PROBLEMS
+%%PORTDOCS%%%%DOCSDIR%%/PROJECTS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.aix
+%%PORTDOCS%%%%DOCSDIR%%/README.beos
+%%PORTDOCS%%%%DOCSDIR%%/README.darwin
+%%PORTDOCS%%%%DOCSDIR%%/README.djpeg
+%%PORTDOCS%%%%DOCSDIR%%/README.freebsd
+%%PORTDOCS%%%%DOCSDIR%%/README.hp-ux
+%%PORTDOCS%%%%DOCSDIR%%/README.linux
+%%PORTDOCS%%%%DOCSDIR%%/README.netbsd
+%%PORTDOCS%%%%DOCSDIR%%/README.openbsd
+%%PORTDOCS%%%%DOCSDIR%%/README.os2
+%%PORTDOCS%%%%DOCSDIR%%/README.solaris
+%%PORTDOCS%%%%DOCSDIR%%/README.unixware2
+%%PORTDOCS%%%%DOCSDIR%%/README.unixware7
+%%PORTDOCS%%%%DOCSDIR%%/README.windows
+%%PORTDOCS%%%%DOCSDIR%%/canon/canon.changes
+%%PORTDOCS%%%%DOCSDIR%%/canon/canon.install2700F.txt
+%%PORTDOCS%%%%DOCSDIR%%/gt68xx/gt68xx.CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/leo/leo.txt
+%%PORTDOCS%%%%DOCSDIR%%/matsushita/matsushita.txt
+%%PORTDOCS%%%%DOCSDIR%%/mustek/mustek.CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/mustek_usb/mustek_usb.CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/mustek_usb/mustek_usb.TODO
+%%PORTDOCS%%%%DOCSDIR%%/plustek/BUILD
+%%PORTDOCS%%%%DOCSDIR%%/plustek/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/plustek/MakeModule.sh
+%%PORTDOCS%%%%DOCSDIR%%/plustek/Makefile.kernel24
+%%PORTDOCS%%%%DOCSDIR%%/plustek/Makefile.kernel26
+%%PORTDOCS%%%%DOCSDIR%%/plustek/Makefile.module
+%%PORTDOCS%%%%DOCSDIR%%/plustek/Plustek-PARPORT-TODO.txt
+%%PORTDOCS%%%%DOCSDIR%%/plustek/Plustek-PARPORT.changes
+%%PORTDOCS%%%%DOCSDIR%%/plustek/Plustek-PARPORT.txt
+%%PORTDOCS%%%%DOCSDIR%%/plustek/Plustek-USB-TODO.txt
+%%PORTDOCS%%%%DOCSDIR%%/plustek/Plustek-USB.changes
+%%PORTDOCS%%%%DOCSDIR%%/plustek/Plustek-USB.txt
+%%PORTDOCS%%%%DOCSDIR%%/plustek/VERSION0
+%%PORTDOCS%%%%DOCSDIR%%/plustek/VERSION1
+%%PORTDOCS%%%%DOCSDIR%%/sane-backends-external.html
+%%PORTDOCS%%%%DOCSDIR%%/sane-backends.html
+%%PORTDOCS%%%%DOCSDIR%%/sane-mfgs-external.html
+%%PORTDOCS%%%%DOCSDIR%%/sane-mfgs.html
+%%PORTDOCS%%%%DOCSDIR%%/sceptre/s1200.txt
+%%PORTDOCS%%%%DOCSDIR%%/teco/teco1.txt
+%%PORTDOCS%%%%DOCSDIR%%/teco/teco2.txt
+%%PORTDOCS%%%%DOCSDIR%%/teco/teco3.txt
+%%PORTDOCS%%%%DOCSDIR%%/u12/U12.changes
+%%PORTDOCS%%%%DOCSDIR%%/u12/U12.todo
+%%PORTDOCS%%%%DOCSDIR%%/umax/negative-types.txt
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-logo.jpg
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-advanced-options-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-advanced.jpg
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-astra-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-config-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-histogram.jpg
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-mirage-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-not-listed-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-others-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-parport-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-powerlook-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-scanner-clones-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-speed-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-standard-options-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-standard.jpg
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-text.jpg
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-text2.jpg
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-text4.jpg
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-uc-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax-vista-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/umax/sane-umax.jpg
+%%PORTDOCS%%%%DOCSDIR%%/umax/umax.BUGS
+%%PORTDOCS%%%%DOCSDIR%%/umax/umax.CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/umax/umax.FAQ
+%%PORTDOCS%%%%DOCSDIR%%/umax/umax.TODO
 %%NLS%%share/locale/bg/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/da/LC_MESSAGES/sane-backends.mo
@@ -319,18 +319,18 @@ sbin/saned
 @exec mkdir %D/share/sane/gt68xx
 @unexec rmdir %D/share/sane/gt68xx 2>/dev/null || true
 @unexec rmdir %D/share/sane 2>/dev/null || true
-%%PORTDOCS%%@dirrm share/doc/sane/umax
-%%PORTDOCS%%@dirrm share/doc/sane/u12
-%%PORTDOCS%%@dirrm share/doc/sane/teco
-%%PORTDOCS%%@dirrm share/doc/sane/sceptre
-%%PORTDOCS%%@dirrm share/doc/sane/plustek
-%%PORTDOCS%%@dirrm share/doc/sane/mustek_usb
-%%PORTDOCS%%@dirrm share/doc/sane/mustek
-%%PORTDOCS%%@dirrm share/doc/sane/matsushita
-%%PORTDOCS%%@dirrm share/doc/sane/leo
-%%PORTDOCS%%@dirrm share/doc/sane/gt68xx
-%%PORTDOCS%%@dirrm share/doc/sane/canon
-%%PORTDOCS%%@dirrm share/doc/sane
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/umax
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/u12
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/teco
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/sceptre
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plustek
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/mustek_usb
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/mustek
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/matsushita
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/leo
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/gt68xx
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/canon
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/sane
 @dirrm include/sane
 @dirrm etc/sane.d
