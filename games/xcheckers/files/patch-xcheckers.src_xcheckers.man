@@ -1,0 +1,29 @@
+
+$FreeBSD$
+
+--- xcheckers.src/xcheckers.man.orig	Thu Aug 10 14:18:52 2000
++++ xcheckers.src/xcheckers.man	Wed Jul 30 20:46:21 2003
+@@ -89,7 +89,7 @@
+ in
+ .I ~/.xcheckersrc
+ and in
+-.I /usr/lib/X11/app-defaults/XCheckers.
++.I @X11BASE@/lib/X11/app-defaults/XCheckers.
+ (First mentioned places overriding)
+ 
+ .TP
+@@ -131,11 +131,11 @@
+ Read in at startup to determine player name.
+ 
+ .SH FILES
+-.I /usr/lib/X11/app-defaults/XCheckers,
++.I @X11BASE@/lib/X11/app-defaults/XCheckers,
+ .br
+-.I /usr/lib/X11/xcheckers/scene.xpm,
++.I @X11BASE@/share/xcheckers/scene.xpm,
+ .br
+-.I /usr/lib/X11/xcheckers/stars.xpm
++.I @X11BASE@/share/xcheckers/stars.xpm
+ 
+ .SH SEE ALSO
+ .BR simplech (6),

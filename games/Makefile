@@ -404,6 +404,7 @@
     SUBDIR += xbubble
     SUBDIR += xchadance
     SUBDIR += xchain
+    SUBDIR += xcheckers
     SUBDIR += xchomp
     SUBDIR += xcogitate
     SUBDIR += xconq

@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+bin/simplech
+bin/xcheckers
+share/xcheckers/big.xpm
+share/xcheckers/scene.xpm
+share/xcheckers/stars.xpm
+lib/X11/app-defaults/XCheckers
+@dirrm share/xcheckers

@@ -1,0 +1,21 @@
+
+$FreeBSD$
+
+--- xcheckers.src/Imakefile.orig	Sun Dec  9 19:43:13 2001
++++ xcheckers.src/Imakefile	Wed Jul 30 20:46:21 2003
+@@ -3,7 +3,6 @@
+ # Imakefile for xcheckers
+ # Don Okt 21 12:38:50 CEST 1999
+ 
+-           PREFIX = /usr/local
+            BINDIR = $(PREFIX)/bin
+            MANDIR = $(PREFIX)/man/man6
+         MANSUFFIX = 6
+@@ -13,7 +12,6 @@
+ 
+      CDEBUGFLAGS = -g -Wall -O2
+ #      CDEBUGFLAGS = -Wall -O3
+-               CC = gcc
+ 
+          INCLUDES = -I./
+   LOCAL_LIBRARIES = $(XPMLIB) $(XLIB)
