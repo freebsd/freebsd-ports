@@ -49,6 +49,10 @@ PLIST_SUB+=	WITH_ALTQ="@comment "
 IGNORE=		"Only for 5.0 and above"
 .endif
 
+.if ${OSVERSION} > 502104
+IGNORE=		"authpf is part of the base system now"
+.endif
+
 .if !exists(${SRC_BASE}/sys/Makefile) && \
     (defined(WITH_ALTQ) && !exists(${SYS_ALTQ}/Makefile))
 IGNORE=		"Kernel source files required"
