@@ -3969,6 +3969,7 @@ migrate		ports/biology/migrate
 mikmod		ports/audio/mikmod
 mille		src/games/mille
 mime		ports/devel/mime
+mimedefang	ports/mail/mimedefang
 mimelib		ports/converters/mimelib
 mimepp		ports/converters/mimepp
 mindfocus	ports/games/mindfocus
