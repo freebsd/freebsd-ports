@@ -1,0 +1,13 @@
+--- src/Defines.cs.in.orig	Sun Oct 24 23:22:12 2004
++++ src/Defines.cs.in	Sun Oct 24 23:24:03 2004
+@@ -9,8 +9,8 @@
+ 
+ public class Defines {
+ 	public static string VERSION = "@version@";
+-	public static string DATADIR = "@prefix@/share";
++	public static string DATADIR = "@prefix@/share/gnome";
+ 	public static string APP_DATADIR = DATADIR + "/mcatalog";
+ 	public static string IMAGE_DATADIR = DATADIR + "/pixmaps/mcatalog";
+-	public static string GNOME_LOCALE_DIR = DATADIR + "/locale";
++	public static string GNOME_LOCALE_DIR = "@prefix@/share/locale";
+ }

@@ -1,0 +1,31 @@
+bin/mcatalog
+lib/mcatalog/mcatalog.exe
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+share/gnome/applications/mcatalog.desktop
+share/gnome/pixmaps/mcatalog.png
+share/gnome/pixmaps/mcatalog/default/background.jpg
+share/gnome/pixmaps/mcatalog/default/shelf.png
+share/gnome/pixmaps/mcatalog/grass/background.jpg
+share/gnome/pixmaps/mcatalog/grass/shelf.png
+share/gnome/pixmaps/mcatalog/leather/background.jpg
+share/gnome/pixmaps/mcatalog/leather/shelf.png
+share/gnome/pixmaps/mcatalog/metal/background.jpg
+share/gnome/pixmaps/mcatalog/metal/shelf.png
+share/gnome/pixmaps/mcatalog/wood/background.jpg
+share/gnome/pixmaps/mcatalog/wood/shelf.png
+share/locale/cs/LC_MESSAGES/mcatalog.mo
+share/locale/es/LC_MESSAGES/mcatalog.mo
+share/locale/hu/LC_MESSAGES/mcatalog.mo
+@dirrm share/gnome/pixmaps/mcatalog/wood
+@dirrm share/gnome/pixmaps/mcatalog/metal
+@dirrm share/gnome/pixmaps/mcatalog/leather
+@dirrm share/gnome/pixmaps/mcatalog/grass
+@dirrm share/gnome/pixmaps/mcatalog/default
+@dirrm share/gnome/pixmaps/mcatalog
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/mcatalog
