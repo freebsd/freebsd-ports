@@ -1,0 +1,24 @@
+# Fixes two tab-nick-completion bugs:
+# 1. Crash when you type space-tab
+# 2. Critical glib warning when completion in a dialog-tab.
+--- src/fe-gtk/fkeys.c	2004-07-01 18:28:43.000000000 +0200
++++ src/fe-gtk/fkeys.c	2004-07-05 12:19:56.000000000 +0200
+@@ -1394,7 +1394,7 @@
+ 			skip_len++;
+ 		}
+ 		else
+-			cursor_pos = g_utf8_pointer_to_offset(text, g_utf8_offset_to_pointer(ch, 1));
++			return 2;
+ 	}
+ 
+ 	comp = skip_len;
+@@ -1599,7 +1599,8 @@
+ 		gtk_entry_set_text (GTK_ENTRY (t), buf);
+ 		gtk_editable_set_position (GTK_EDITABLE (t), g_utf8_pointer_to_offset(buf, buf + cursor_pos));
+ 	}
+-	g_completion_free(gcomp);
++	if (gcomp)
++		g_completion_free(gcomp);
+ 	return 2;
+ }
+ #undef COMP_BUF
