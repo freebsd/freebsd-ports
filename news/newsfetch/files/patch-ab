@@ -1,0 +1,56 @@
+--- newsfetch.c.orig	Thu Jul 23 18:28:56 1998
++++ newsfetch.c	Wed Dec  1 13:56:52 1999
+@@ -7,6 +7,7 @@
+ 
+  
+ #include <stdio.h>
++#include <string.h>
+ #include <signal.h>
+ #include <pwd.h>
+ #include <sys/types.h>
+@@ -28,6 +29,7 @@
+ int wait_after_articles = 0, articles_fetched=0, last_than_current;
+ int wait_for_time = 0, timeout=READ_TIMEOUT, article_fetching=0;
+ int cleanup=1, max_article, news_target=0, first_article, only_list=0;
++int port = 119;
+ char group[100], pipe_command[100];
+ FILE *rcfp, *rctmpfp, *socket_fp[2];
+ char lockfile[100];
+@@ -59,6 +61,16 @@
+ 	getHomedir(homedir);
+ 	strcpy(hostname,argv[1]);
+ 
++	{
++	  char *p;
++	  int n;
++
++	  if (NULL != (p = strchr(hostname, ':')) && 0 < (n = atoi(p + 1))) {
++	    port = n;
++	    *p = '\0';
++	  }
++	}
++
+ 	get_commandline(argc, argv, dirname, rcfile,
+                 &cleanup, &wait_after_articles, &wait_for_time, 
+ 		&command_flag, execute_command,
+@@ -75,7 +87,7 @@
+ 			generateProcmailrc(homedir, rcfile, dirname, pipe_command);
+ 		}
+ 
+-	socket_id=ConnectServer(hostname,119, 0);
++	socket_id=ConnectServer(hostname, port, 0);
+ 
+ 	/* two file descriptor are for portability among diff systems */
+ 	createFd(socket_id, socket_fp);
+
+--- newsfetch.1.orig	Tue Apr 14 20:04:25 1998
++++ newsfetch.1	Wed Dec  1 13:29:35 1999
+@@ -5,7 +5,7 @@
+ .SH SYNOPSIS
+ .B newsfetch
+ .BI
+-hostname
++hostname[:port]
+ [
+ .BI \-clsyvV
+ ]
