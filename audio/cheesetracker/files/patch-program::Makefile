@@ -1,7 +1,0 @@
---- program/Makefile.in.orig	Wed Mar  6 15:09:38 2002
-+++ program/Makefile.in	Wed Mar  6 15:09:49 2002
-@@ -74,3 +74,3 @@
- 
--CXXFLAGS = @CXXFLAGS@ $(SIGC_CFLAGS) -I../trackercore -I../editor -I../posix -I../waveout -I../interface_gtk -I../freeverb
-+CXXFLAGS = @CXXFLAGS@ $(SIGC_CFLAGS) -I../trackercore -I../editor -I../posix -I../waveout -I../interface_gtk -I../freeverb -fhuge-objects
- 
