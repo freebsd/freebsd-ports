@@ -7,7 +7,7 @@
 
 PORTNAME=	mozilla
 PORTVERSION=	0.9.8
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
@@ -88,5 +88,7 @@ do-install:
 	cd ${WRKSRC}/dist/bin && ${TAR} -chf - . | \
 		${TAR} -xf - -C ${PREFIX}/lib/mozilla
 	${INSTALL_SCRIPT} ${WRKSRC}/mozilla ${PREFIX}/bin
+	${LN} -sf ${LOCALBASE}/jdk1.3.1/jre/plugin/i386/ns600/libjavaplugin_oji.so \
+		${PREFIX}/lib/mozilla/plugins/libjavaplugin_oji.so
 
 .include <bsd.port.mk>

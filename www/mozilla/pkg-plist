@@ -320,6 +320,7 @@ lib/mozilla/mozilla-bin
 lib/mozilla/mozilla-config
 lib/mozilla/mozilla-xremote-client
 lib/mozilla/nsinstall
+lib/mozilla/plugins/libjavaplugin_oji.so
 lib/mozilla/plugins/libnullplugin.so
 lib/mozilla/regExport
 lib/mozilla/regchrome
