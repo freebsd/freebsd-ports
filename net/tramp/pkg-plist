@@ -1,7 +1,11 @@
+%%EMACS20_ONLY%%%%TRAMP_LISPDIR%%/base64.el
+%%EMACS20_ONLY%%%%TRAMP_LISPDIR%%/base64.elc
 %%EMACS20_ONLY%%%%TRAMP_LISPDIR%%/format-spec.el
 %%EMACS20_ONLY%%%%TRAMP_LISPDIR%%/format-spec.elc
 %%EMACS20_ONLY%%%%TRAMP_LISPDIR%%/md5.el
 %%EMACS20_ONLY%%%%TRAMP_LISPDIR%%/md5.elc
+%%EMACS20_ONLY%%%%TRAMP_LISPDIR%%/uudecode.el
+%%EMACS20_ONLY%%%%TRAMP_LISPDIR%%/uudecode.elc
 %%TRAMP_LISPDIR%%/tramp-ftp.el
 %%TRAMP_LISPDIR%%/tramp-ftp.elc
 %%TRAMP_LISPDIR%%/tramp-smb.el
@@ -15,13 +19,9 @@
 %%TRAMP_LISPDIR%%/tramp.el
 %%TRAMP_LISPDIR%%/tramp.elc
 %%TRAMP_LISPDIR%%/trampcache.el
-%%TRAMP_LISPDIR%%/tramp2-cache.el
-%%TRAMP_LISPDIR%%/tramp2-compat.el
-%%TRAMP_LISPDIR%%/tramp2-enc.el
-%%TRAMP_LISPDIR%%/tramp2-hack.el
-%%TRAMP_LISPDIR%%/tramp2-ops.el
-%%TRAMP_LISPDIR%%/tramp2-util.el
-%%TRAMP_LISPDIR%%/tramp2.el
+%%TRAMP_LISPDIR%%/trampcache.elc
+%%TRAMP_LISPDIR%%/trampver.el
+%%TRAMP_LISPDIR%%/trampver.elc
 @dirrm %%TRAMP_LISPDIR%%
 %%PORTDOCS%%@unexec install-info --delete --section="%%DIRSECTION%%" --entry="%%INFOENTRY%%" %D/info/tramp %D/info/dir
 %%PORTDOCS%%%%JAPANESE_INFO%%@unexec install-info --delete --section="%%DIRSECTION%%" --entry="%%INFOENTRY_JA%%" %D/info/tramp_ja.info %D/info/dir
