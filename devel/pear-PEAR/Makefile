@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PEAR
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.3.1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	antonio@php.net
@@ -25,8 +25,14 @@ FILES=		PEAR.php System.php package.dtd template.spec OS/Guess.php 		\
 		PEAR/Autoloader.php PEAR/Command.php PEAR/Common.php PEAR/Config.php 	\
 		PEAR/Dependency.php PEAR/Downloader.php PEAR/Exception.php 		\
 		PEAR/ErrorStack.php PEAR/Builder.php PEAR/Installer.php 		\
-		PEAR/Packager.php PEAR/Registry.php PEAR/Remote.php
+		PEAR/Packager.php PEAR/Registry.php PEAR/Remote.php PEAR/RunTest.php
+SCRIPTFILES=	pear2
 
 .include <bsd.port.pre.mk>
+
+post-patch:
+	@${SED} "s|@pear_version@|${PORTVERSION}|g" \
+		${WRKSRC}/scripts/pearcmd.php > ${WRKSRC}/pear-${SCRIPTFILES}
+
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
 .include <bsd.port.post.mk>

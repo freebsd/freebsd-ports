@@ -10,4 +10,13 @@ fi
 PKG_NAME=${1%%-[0-9._]*}
 PACKAGE=$(echo $PKG_NAME | sed 's/pear-//')
 
-${PKG_PREFIX}/bin/pear uninstall -r -n ${PACKAGE} || true
+PEAR=${PKG_PREFIX}/bin/pear
+PEAR2=${PKG_PREFIX}/bin/pear2
+
+if [ ${PKG_NAME} = "pear-PEAR" ]; then
+	PEAR_INSTALLER=${PEAR}
+else
+	PEAR_INSTALLER=${PEAR2}
+fi
+
+${PEAR_INSTALLER} uninstall -r -n ${PACKAGE} || true
