@@ -1,16 +1,17 @@
 #!/bin/sh
 home=/a/asami/portbuild/errorlogs
 scripts=/a/asami/portbuild/scripts
-dir1=3-latest
-dir2=4-latest
-dir3=3-full
-dir4=4-full
 
-cd $home/$dir1 && ${scripts}/processlogs
-cd $home/$dir2 && ${scripts}/processlogs
-cd $home && ${scripts}/comparelogs $dir1 $dir2
-cd $home && ${scripts}/comparelogs $dir2 $dir1
-cd $home && ${scripts}/comparelogs $dir3 $dir4
-cd $home && ${scripts}/comparelogs $dir4 $dir3
-cd $home && ${scripts}/bothlogs $dir1 $dir2
-cd $home && ${scripts}/bothlogs $dir3 $dir4
+for ver in full latest; do
+  for num in 3 4 5; do
+    cd $home/$num-$ver && ${scripts}/processlogs
+  done
+  for num in 3 4 5; do
+    cd $home/$num-$ver-logs && ${scripts}/processlogs2
+  done
+  for num in 3 5; do
+    cd $home && ${scripts}/comparelogs $num-$ver 4-$ver
+    cd $home && ${scripts}/comparelogs 4-$ver $num-$ver
+  done
+  cd $home && ${scripts}/bothlogs [3-5]-$ver
+done
