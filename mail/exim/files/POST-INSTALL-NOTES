@@ -6,22 +6,22 @@ The following documentation has been installed:
 In addition, plain text versions of these documents have been installed
 as:
 
-    ${PREFIX}/share/doc/exim/filter.txt
-    ${PREFIX}/share/doc/exim/spec.txt
+    %%DOCSDIR%%/filter.txt
+    %%DOCSDIR%%/spec.txt
 
 Postscript, PDF, HTML and plain text versions of these documents, as well
 as a comprehensive FAQ list, are available at http://www.exim.org/ .
 
 To use Exim instead of sendmail on startup:
 
-*) Create exim/configure from exim/configure.default .
 *) Clear the sendmail queue and stop the sendmail daemon.
 *) Adjust mailer.conf(5) as appropriate.
 *) Set the 'sendmail_enable' rc.conf(5) variable to 'NONE'.
 *) Set the 'daily_status_include_submit_mailq' and
    'daily_clean_hoststat_enable' periodic.conf(5)
    variables to 'NO'.
-*) Start exim with '${PREFIX}/etc/rc.d/exim.sh start'.
+*) Set the 'exim_enable' rc.conf(5) variable to 'YES'.
+*) Start exim with '%%RC_DIR%%/exim%%RC_SUFX%% start'.
 
 You may also want to configure newsyslog(8) to rotate Exim log files:
 
@@ -36,6 +36,6 @@ now done by routers. Policy controls for incoming mail are now done by
 Access Control Lists instead of separate options. All this means that
 pre-4.00 configuration files have to be massively converted. If you
 are coming from a 3.xx release, please read the document in the file
-${PREFIX}/share/doc/exim/Exim4.upgrade, and allow some time to complete
+%%DOCSDIR%%/Exim4.upgrade, and allow some time to complete
 the upgrade.
 

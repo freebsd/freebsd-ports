@@ -38,7 +38,7 @@ It is important to follow them in sequence.
 
 *  Start clamd with /usr/local/etc/rc.d/clamd.sh start .
 
-*  Start Exim with /usr/local/etc/rc.d/exim.sh start .
+*  Start Exim with %%RC_DIR%%/exim%%RC_SUFX%% start .
 
 Sheldon Hearn <sheldonh@FreeBSD.org>
 
