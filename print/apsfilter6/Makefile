@@ -9,7 +9,7 @@ PORTNAME=	apsfilter
 PORTVERSION=	6.0.0
 CATEGORIES=	print
 MASTER_SITES=	http://www.apsfilter.org/download/
-DISTFILES=	apsfilter-current-28.08.2000.tar.bz2
+DISTFILES=	apsfilter-current-31.08.2000.tar.bz2
 
 MAINTAINER=	andreas@FreeBSD.org
 
