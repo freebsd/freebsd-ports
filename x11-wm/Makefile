@@ -30,6 +30,7 @@
     SUBDIR += sapphire
     SUBDIR += sawfish
     SUBDIR += scwm
+    SUBDIR += spager
     SUBDIR += toolbox
     SUBDIR += tvtwm
     SUBDIR += ude
