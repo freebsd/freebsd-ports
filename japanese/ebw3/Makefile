@@ -3,11 +3,11 @@
 # Date created:         23 Jun 1997
 # Whom:                 Hironori Ikura <hikura@kaisei.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/02/23 20:06:27 steve Exp $
 #
 
 DISTNAME=	ebw3-0.2-b4
-PKGNAME=	jp-ebw3-0.2b4
+PKGNAME=	ja-ebw3-0.2b4
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.imasy.or.jp/pub/unix/net/www/ebw3/
 
