@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	enca
-PORTVERSION=	0.99.2
+PORTVERSION=	0.99.3
 CATEGORIES=	converters textproc russian ukrainian
 MASTER_SITES=	http://physics.muni.cz/~yeti/Ftp/enca/
 
