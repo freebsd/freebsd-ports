@@ -1137,3 +1137,5 @@ sysutils/mkisofs-devel|sysutils/cdrtools-devel|2004-06-02|merged
 lang/squeak3|lang/squeak|2004-06-03|New stable version
 net-mgmt/dhcpconf||2004-06-03|Obsolete and no longer maintained
 net/samba-devel|net/samba3|2004-06-07|considered stable
+chinese/mkisofs|sysutils/cdrtools-cjk|2004-06-07|replaced by a superset
+chinese/cdrtools|sysutils/cdrtools-cjk|2004-06-07|replaced by a superset
