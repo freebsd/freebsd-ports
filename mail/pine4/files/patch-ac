@@ -390,7 +390,7 @@
 +        8
 +        9 logs gross details of command execution
 +  ----*/
-+ #define DEFAULT_DEBUG 2
++ #define DEFAULT_DEBUG 0
 + 
 + 
 + 
