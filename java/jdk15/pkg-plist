@@ -4,6 +4,8 @@ jdk%%JDK_VERSION%%/LICENSE.fr
 jdk%%JDK_VERSION%%/README
 jdk%%JDK_VERSION%%/README.html
 jdk%%JDK_VERSION%%/bin/.java_wrapper
+jdk%%JDK_VERSION%%/bin/ControlPanel
+jdk%%JDK_VERSION%%/bin/HtmlConverter
 jdk%%JDK_VERSION%%/bin/appletviewer
 %%DEBUG:%%jdk%%JDK_VERSION%%/bin/appletviewer_g
 jdk%%JDK_VERSION%%/bin/awt_robot
@@ -22,6 +24,8 @@ jdk%%JDK_VERSION%%/bin/i386/green_threads/jarsigner
 %%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/green_threads/jarsigner_g
 jdk%%JDK_VERSION%%/bin/i386/green_threads/java
 %%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/green_threads/java_g
+%%PLUGIN:%%jdk%%JDK_VERSION%%/bin/i386/green_threads/java_vm
+%%PLUGIN:%%%%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/green_threads/java_vm_g
 jdk%%JDK_VERSION%%/bin/i386/green_threads/javac
 %%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/green_threads/javac_g
 jdk%%JDK_VERSION%%/bin/i386/green_threads/javadoc
@@ -54,6 +58,52 @@ jdk%%JDK_VERSION%%/bin/i386/green_threads/serialver
 %%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/green_threads/serialver_g
 jdk%%JDK_VERSION%%/bin/i386/green_threads/tnameserv
 %%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/green_threads/tnameserv_g
+%%NATIVE:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/appletviewer
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/appletviewer_g
+%%NATIVE:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/extcheck
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/extcheck_g
+%%NATIVE:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/idlj
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/idlj_g
+%%NATIVE:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/jar
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/jar_g
+%%NATIVE:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/jarsigner
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/jarsigner_g
+%%NATIVE:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/java
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/java_g
+%%PLUGIN:%%%%NATIVE:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/java_vm
+%%PLUGIN:%%%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/java_vm_g
+%%NATIVE:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/javac
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/javac_g
+%%NATIVE:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/javadoc
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/javadoc_g
+%%NATIVE:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/javah
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/javah_g
+%%NATIVE:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/javap
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/javap_g
+%%NATIVE:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/jdb
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/jdb_g
+%%NATIVE:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/keytool
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/keytool_g
+%%NATIVE:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/native2ascii
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/native2ascii_g
+%%NATIVE:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/oldjava
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/oldjava_g
+%%NATIVE:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/oldjavac
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/oldjavac_g
+%%NATIVE:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/oldjdb
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/oldjdb_g
+%%NATIVE:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/policytool
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/policytool_g
+%%NATIVE:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/rmic
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/rmic_g
+%%NATIVE:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/rmid
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/rmid_g
+%%NATIVE:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/rmiregistry
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/rmiregistry_g
+%%NATIVE:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/serialver
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/serialver_g
+%%NATIVE:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/tnameserv
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/tnameserv_g
 jdk%%JDK_VERSION%%/bin/idlj
 %%DEBUG:%%jdk%%JDK_VERSION%%/bin/idlj_g
 jdk%%JDK_VERSION%%/bin/jar
@@ -641,34 +691,90 @@ jdk%%JDK_VERSION%%/include/jvmdi.h
 jdk%%JDK_VERSION%%/include/jvmpi.h
 jdk%%JDK_VERSION%%/jre/CHANGES
 jdk%%JDK_VERSION%%/jre/COPYRIGHT
+jdk%%JDK_VERSION%%/jre/ControlPanel.html
 jdk%%JDK_VERSION%%/jre/LICENSE
 jdk%%JDK_VERSION%%/jre/LICENSE.fr
 jdk%%JDK_VERSION%%/jre/README
 jdk%%JDK_VERSION%%/jre/Welcome.html
 jdk%%JDK_VERSION%%/jre/bin/.java_wrapper
+jdk%%JDK_VERSION%%/jre/bin/ControlPanel
 jdk%%JDK_VERSION%%/jre/bin/awt_robot
 jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/appletviewer
+%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/appletviewer_g
 jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/extcheck
+%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/extcheck_g
 jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/idlj
+%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/idlj_g
 jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/jar
+%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/jar_g
 jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/jarsigner
+%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/jarsigner_g
 jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/java
+%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/java_g
+%%PLUGIN:%%jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/java_vm
+%%PLUGIN:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/java_vm_g
 jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/javac
+%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/javac_g
 jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/javadoc
+%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/javadoc_g
 jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/javah
+%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/javah_g
 jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/javap
+%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/javap_g
 jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/jdb
+%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/jdb_g
 jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/keytool
+%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/keytool_g
 jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/native2ascii
+%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/native2ascii_g
 jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/oldjava
+%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/oldjava_g
 jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/oldjavac
+%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/oldjavac_g
 jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/oldjdb
+%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/oldjdb_g
 jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/policytool
+%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/policytool_g
 jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/rmic
+%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/rmic_g
 jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/rmid
+%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/rmid_g
 jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/rmiregistry
+%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/rmiregistry_g
 jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/serialver
+%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/serialver_g
 jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/tnameserv
+%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/tnameserv_g
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/appletviewer_g
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/extcheck_g
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/idlj_g
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/jar_g
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/jarsigner_g
+%%NATIVE:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/java
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/java_g
+%%PLUGIN:%%%%NATIVE:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/java_vm
+%%PLUGIN:%%%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/java_vm_g
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/javac_g
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/javadoc_g
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/javah_g
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/javap_g
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/jdb_g
+%%NATIVE:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/keytool
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/keytool_g
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/native2ascii_g
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/oldjava_g
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/oldjavac_g
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/oldjdb_g
+%%NATIVE:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/policytool
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/policytool_g
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/rmic_g
+%%NATIVE:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/rmid
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/rmid_g
+%%NATIVE:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/rmiregistry
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/rmiregistry_g
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/serialver_g
+%%NATIVE:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/tnameserv
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/tnameserv_g
 jdk%%JDK_VERSION%%/jre/bin/java
 jdk%%JDK_VERSION%%/jre/bin/keytool
 jdk%%JDK_VERSION%%/jre/bin/policytool
@@ -724,6 +830,8 @@ jdk%%JDK_VERSION%%/jre/lib/i386/libioser12.so
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/libioser12_g.so
 jdk%%JDK_VERSION%%/jre/lib/i386/libjava.so
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/libjava_g.so
+%%PLUGIN:%%jdk%%JDK_VERSION%%/jre/lib/i386/libjavaplugin_jni.so
+%%PLUGIN:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/libjavaplugin_jni_g.so
 jdk%%JDK_VERSION%%/jre/lib/i386/libjawt.so
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/libjawt_g.so
 jdk%%JDK_VERSION%%/jre/lib/i386/libjcov.so
@@ -741,6 +849,8 @@ jdk%%JDK_VERSION%%/jre/lib/i386/libverify.so
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/libverify_g.so
 jdk%%JDK_VERSION%%/jre/lib/i386/libzip.so
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/libzip_g.so
+%%NATIVE:%%jdk%%JDK_VERSION%%/jre/lib/i386/native_threads/libhpi.so
+%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/native_threads/libhpi_g.so
 jdk%%JDK_VERSION%%/jre/lib/images/cursors/cursors.properties
 jdk%%JDK_VERSION%%/jre/lib/images/cursors/invalid32x32.gif
 jdk%%JDK_VERSION%%/jre/lib/images/cursors/motif_CopyDrop32x32.gif
@@ -749,9 +859,22 @@ jdk%%JDK_VERSION%%/jre/lib/images/cursors/motif_LinkDrop32x32.gif
 jdk%%JDK_VERSION%%/jre/lib/images/cursors/motif_LinkNoDrop32x32.gif
 jdk%%JDK_VERSION%%/jre/lib/images/cursors/motif_MoveDrop32x32.gif
 jdk%%JDK_VERSION%%/jre/lib/images/cursors/motif_MoveNoDrop32x32.gif
+%%PLUGIN:%%jdk%%JDK_VERSION%%/jre/lib/javaplugin.jar
 jdk%%JDK_VERSION%%/jre/lib/jvm.cfg
 jdk%%JDK_VERSION%%/jre/lib/jvm.hprof.txt
 jdk%%JDK_VERSION%%/jre/lib/jvm.jcov.txt
+%%PLUGIN:%%jdk%%JDK_VERSION%%/jre/lib/locale/de/LC_MESSAGES/sunw_java_plugin.mo
+%%PLUGIN:%%jdk%%JDK_VERSION%%/jre/lib/locale/es/LC_MESSAGES/sunw_java_plugin.mo
+%%PLUGIN:%%jdk%%JDK_VERSION%%/jre/lib/locale/fr/LC_MESSAGES/sunw_java_plugin.mo
+%%PLUGIN:%%jdk%%JDK_VERSION%%/jre/lib/locale/it/LC_MESSAGES/sunw_java_plugin.mo
+%%PLUGIN:%%jdk%%JDK_VERSION%%/jre/lib/locale/ja/LC_MESSAGES/sunw_java_plugin.mo
+%%PLUGIN:%%jdk%%JDK_VERSION%%/jre/lib/locale/ko.UTF-8/LC_MESSAGES/sunw_java_plugin.mo
+%%PLUGIN:%%jdk%%JDK_VERSION%%/jre/lib/locale/ko/LC_MESSAGES/sunw_java_plugin.mo
+%%PLUGIN:%%jdk%%JDK_VERSION%%/jre/lib/locale/sv/LC_MESSAGES/sunw_java_plugin.mo
+%%PLUGIN:%%jdk%%JDK_VERSION%%/jre/lib/locale/zh.GBK/LC_MESSAGES/sunw_java_plugin.mo
+%%PLUGIN:%%jdk%%JDK_VERSION%%/jre/lib/locale/zh/LC_MESSAGES/sunw_java_plugin.mo
+%%PLUGIN:%%jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW.BIG5/LC_MESSAGES/sunw_java_plugin.mo
+%%PLUGIN:%%jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW/LC_MESSAGES/sunw_java_plugin.mo
 jdk%%JDK_VERSION%%/jre/lib/psfont.properties.ja
 jdk%%JDK_VERSION%%/jre/lib/psfontj2d.properties
 jdk%%JDK_VERSION%%/jre/lib/rt.jar
@@ -760,7 +883,12 @@ jdk%%JDK_VERSION%%/jre/lib/security/java.policy
 jdk%%JDK_VERSION%%/jre/lib/security/java.security
 jdk%%JDK_VERSION%%/jre/lib/sunrsasign.jar
 jdk%%JDK_VERSION%%/jre/lib/tzmappings
+%%PLUGIN:%%jdk%%JDK_VERSION%%/jre/plugin/i386/ns4/javaplugin.so
+%%PLUGIN:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/plugin/i386/ns4/javaplugin_g.so
+%%PLUGIN:%%jdk%%JDK_VERSION%%/jre/plugin/i386/ns600/libjavaplugin_oji.so
+%%PLUGIN:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/plugin/i386/ns600/libjavaplugin_oji_g.so
 jdk%%JDK_VERSION%%/lib/dt.jar
+jdk%%JDK_VERSION%%/lib/htmlconverter.jar
 jdk%%JDK_VERSION%%/lib/i386/libdt_socket.so
 jdk%%JDK_VERSION%%/lib/i386/libjdwp.so
 jdk%%JDK_VERSION%%/lib/ir.idl
@@ -795,10 +923,39 @@ jdk%%JDK_VERSION%%/src.jar
 @dirrm jdk%%JDK_VERSION%%/man
 @dirrm jdk%%JDK_VERSION%%/lib/i386
 @dirrm jdk%%JDK_VERSION%%/lib
+%%PLUGIN:%%@dirrm jdk%%JDK_VERSION%%/jre/plugin/i386/ns600
+%%PLUGIN:%%@dirrm jdk%%JDK_VERSION%%/jre/plugin/i386/ns4
+%%PLUGIN:%%@dirrm jdk%%JDK_VERSION%%/jre/plugin/i386
 @dirrm jdk%%JDK_VERSION%%/jre/plugin
 @dirrm jdk%%JDK_VERSION%%/jre/lib/security
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW/LC_MESSAGES
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW.BIG5/LC_MESSAGES
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW.BIG5
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh/LC_MESSAGES
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh.GBK/LC_MESSAGES
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh.GBK
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/sv/LC_MESSAGES
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/sv
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ko/LC_MESSAGES
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ko.UTF-8/LC_MESSAGES
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ko.UTF-8
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ko
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ja/LC_MESSAGES
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ja
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/it/LC_MESSAGES
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/it
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/fr/LC_MESSAGES
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/fr
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/es/LC_MESSAGES
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/es
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/de/LC_MESSAGES
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/de
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale
 @dirrm jdk%%JDK_VERSION%%/jre/lib/images/cursors
 @dirrm jdk%%JDK_VERSION%%/jre/lib/images
+%%NATIVE:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/i386/native_threads
 @dirrm jdk%%JDK_VERSION%%/jre/lib/i386/green_threads
 @dirrm jdk%%JDK_VERSION%%/jre/lib/i386/classic
 @dirrm jdk%%JDK_VERSION%%/jre/lib/i386
@@ -808,6 +965,7 @@ jdk%%JDK_VERSION%%/src.jar
 @dirrm jdk%%JDK_VERSION%%/jre/lib/audio
 @dirrm jdk%%JDK_VERSION%%/jre/lib/applet
 @dirrm jdk%%JDK_VERSION%%/jre/lib
+@dirrm jdk%%JDK_VERSION%%/jre/bin/i386/native_threads
 @dirrm jdk%%JDK_VERSION%%/jre/bin/i386/green_threads
 @dirrm jdk%%JDK_VERSION%%/jre/bin/i386
 @dirrm jdk%%JDK_VERSION%%/jre/bin
@@ -911,6 +1069,7 @@ jdk%%JDK_VERSION%%/src.jar
 @dirrm jdk%%JDK_VERSION%%/demo/applets/Animator
 @dirrm jdk%%JDK_VERSION%%/demo/applets
 @dirrm jdk%%JDK_VERSION%%/demo
+@dirrm jdk%%JDK_VERSION%%/bin/i386/native_threads
 @dirrm jdk%%JDK_VERSION%%/bin/i386/green_threads
 @dirrm jdk%%JDK_VERSION%%/bin/i386
 @dirrm jdk%%JDK_VERSION%%/bin
