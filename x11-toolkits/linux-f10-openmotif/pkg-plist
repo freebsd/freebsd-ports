@@ -1,0 +1,5 @@
+usr/X11R6/lib/libMrm.so.2.1
+usr/X11R6/lib/libUil.so.2.1
+usr/X11R6/lib/libXm.so.2.1
+@exec chroot %D /sbin/ldconfig
+@unexec chroot %D /sbin/ldconfig

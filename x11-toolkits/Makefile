@@ -59,6 +59,7 @@
     SUBDIR += libjtoolbar
     SUBDIR += libjtree
     SUBDIR += linux-gtk
+    SUBDIR += linux-openmotif
     SUBDIR += neXtaw
     SUBDIR += open-motif
     SUBDIR += open-motif-devel
