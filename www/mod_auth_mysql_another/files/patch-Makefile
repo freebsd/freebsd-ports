@@ -1,8 +1,8 @@
 --- /dev/null	Sat Apr 20 17:11:40 2002
 +++ Makefile	Sat Apr 20 17:12:22 2002
 @@ -0,0 +1,17 @@
-+APXS      = apxs
-+APXSFLAGS =
++APXS      = %%APXS%%
++APXSFLAGS = %%APXSFLAGS%%
 +DSO   = mod_auth_mysql.so
 +SRCS  = mod_auth_mysql.c
 +OPTS  = -I%%PREFIX%%/include -L%%PREFIX%%/lib/mysql -lmysqlclient

@@ -59,7 +59,10 @@ do-extract:
 
 post-patch:
 	@${CP} ${WRKDIR}/mod_auth_mysql/Makefile ${WRKDIR}/mod_auth_mysql/Makefile.new
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' < ${WRKDIR}/mod_auth_mysql/Makefile.new \
+	@(${SED} -e 's|%%PREFIX%%|${PREFIX}|g' | \
+	    ${SED} -e 's|%%APXS%%|${APXS}|g' | \
+	    ${SED} -e 's|%%APXSFLAGS%%|${APXSFLAGS}|g') \
+	    < ${WRKDIR}/mod_auth_mysql/Makefile.new \
 	    > ${WRKDIR}/mod_auth_mysql/Makefile
 
 post-install:
