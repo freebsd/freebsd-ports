@@ -5,6 +5,7 @@ etc/runit/3.sample
 etc/runit/ctrlaltdel.sample
 etc/runit/getty-ttyv4/run.sample
 etc/runit/getty-ttyv4/finish.sample
+sbin/chpst
 sbin/runit
 sbin/runit-init
 sbin/runsv
@@ -21,6 +22,7 @@ sbin/utmpset
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/benefits.html
+%%PORTDOCS%%%%DOCSDIR%%/chpst.8.html
 %%PORTDOCS%%%%DOCSDIR%%/dependencies.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/install.html
