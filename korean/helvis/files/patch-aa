@@ -1,6 +1,19 @@
-diff -c -r ../helvis-1.8h2-ori/config.h ./config.h
-*** ../helvis-1.8h2-ori/config.h	Wed Apr  5 18:21:19 1995
---- ./config.h	Wed Apr  2 21:54:21 1997
+*** config.h.orig	Wed Apr  5 18:21:19 1995
+--- config.h	Fri May 24 02:06:52 2002
+***************
+*** 387,395 ****
+--- 387,397 ----
+  #endif
+  
+  /* BSD uses bcopy() instead of memcpy() */
++ /*
+  #if BSD && !hpux
+  # define memcpy(dest, src, siz)	bcopy(src, dest, siz)
+  #endif
++ */
+  
+  /* BSD uses getwd() instead of getcwd().  The arguments are a little different,
+   * but we'll ignore that and hope for the best; adding arguments to the macro
 ***************
 *** 417,423 ****
   
@@ -10,7 +23,7 @@ diff -c -r ../helvis-1.8h2-ori/config.h ./config.h
   # define PRSVDIR	"/var/preserve"
   # define PRSVINDEX	"/var/preserve/Index"
   # define TMPDIR		"/var/tmp"
---- 417,423 ----
+--- 419,425 ----
   
   /******************* Names of files and environment vars **********************/
   
