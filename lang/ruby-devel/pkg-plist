@@ -6,7 +6,6 @@ bin/irb%%_RUBY_SUFFIX%%
 bin/ruby%%_RUBY_SUFFIX%%
 lib/lib%%RUBY_NAME%%.so
 lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
-%%RUBY_ARCHLIBDIR%%/bigfloat.so
 %%RUBY_ARCHLIBDIR%%/config.h
 %%RUBY_ARCHLIBDIR%%/curses.so
 %%RUBY_ARCHLIBDIR%%/dbm.so
@@ -262,6 +261,8 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/curses/hello.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/curses/rain.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/curses/view.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/c++sample.C
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/c++sample.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/drives.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/getch.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/libc.rb

@@ -77,8 +77,7 @@ PLIST_SUB+=	IF_DEFAULT=${IF_DEFAULT} \
 INSTALLED_SCRIPTS=	${PREFIX}/bin/irb \
 			${PREFIX}/bin/h2rb
 
-OBSOLETED_MODULES=	bigfloat \
-			dl \
+OBSOLETED_MODULES=	dl \
 			fileutils \
 			racc-runtime \
 			sha1 \
@@ -170,7 +169,7 @@ post-install:
 	${MKDIR} ${RUBY_EXAMPLESDIR}/curses
 	${INSTALL_DATA} ${WRKSRC}/ext/curses/hello.rb ${WRKSRC}/ext/curses/rain.rb ${WRKSRC}/ext/curses/view.rb ${RUBY_EXAMPLESDIR}/curses
 	${MKDIR} ${RUBY_EXAMPLESDIR}/dl
-	${INSTALL_DATA} ${WRKSRC}/ext/dl/sample/*.rb ${RUBY_EXAMPLESDIR}/dl
+	${INSTALL_DATA} ${WRKSRC}/ext/dl/sample/*.C ${WRKSRC}/ext/dl/sample/*.rb ${RUBY_EXAMPLESDIR}/dl
 	${MKDIR} ${RUBY_EXAMPLESDIR}/pty
 	${INSTALL_DATA} ${WRKSRC}/ext/pty/expect_sample.rb ${WRKSRC}/ext/pty/script.rb ${WRKSRC}/ext/pty/shl.rb ${RUBY_EXAMPLESDIR}/pty
 	${INSTALL_DATA} ${WRKSRC}/COPYING* ${RUBY_DOCDIR}
