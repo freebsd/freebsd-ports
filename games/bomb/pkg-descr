@@ -1,0 +1,9 @@
+This program displays animations on the SVGAlib screen, or in X.
+It responds to keyboard input.
+
+GUILE support is not implemented in this port.
+
+To exit the program, press Esc.
+
+Trevor Johnson
+trevor@FreeBSD.org
