@@ -1,0 +1,3 @@
+bin/h2l
+share/htmltolatex/nmr.tex
+@dirrm share/htmltolatex
