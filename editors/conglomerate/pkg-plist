@@ -16,6 +16,7 @@ share/gnome/conglomerate/dispspecs/forrest-document.xds
 share/gnome/conglomerate/dispspecs/kernel-traffic-newsletter.xds
 share/gnome/conglomerate/dispspecs/readme.xds
 share/gnome/conglomerate/dispspecs/relax-ng.xds
+share/gnome/conglomerate/dispspecs/teixlite.xds
 share/gnome/conglomerate/dispspecs/website-layout.xds
 share/gnome/conglomerate/dispspecs/website-webpage.xds
 share/gnome/conglomerate/dispspecs/xhtml1-strict.xds
@@ -146,6 +147,8 @@ share/locale/de/LC_MESSAGES/conglomerate.mo
 share/locale/el/LC_MESSAGES/conglomerate.mo
 share/locale/es/LC_MESSAGES/conglomerate.mo
 share/locale/fr/LC_MESSAGES/conglomerate.mo
+share/locale/hr/LC_MESSAGES/conglomerate.mo
+share/locale/ja/LC_MESSAGES/conglomerate.mo
 share/locale/nl/LC_MESSAGES/conglomerate.mo
 share/locale/no/LC_MESSAGES/conglomerate.mo
 share/locale/pl/LC_MESSAGES/conglomerate.mo
