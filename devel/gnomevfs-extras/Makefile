@@ -16,21 +16,17 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	einekoai@chello.nl
 COMMENT=	A plugin for gnomevfs2 to browse smb shares with nautilus2
 
-LIB_DEPENDS=	gnomevfs-2.0:${PORTSDIR}/devel/gnomevfs2
-
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier
+USE_GNOME=	gnomeprefix gnomehack gnomehier gnomevfs2
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--without-rio500
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|malloc\.h|stdlib.h|g'
 
