@@ -298,6 +298,9 @@
     SUBDIR += gnomecrash
     SUBDIR += gnomevfs
     SUBDIR += gnomevfs2
+    SUBDIR += gnu-autoconf
+    SUBDIR += gnu-automake
+    SUBDIR += gnu-libtool
     SUBDIR += gnulibiberty
     SUBDIR += gnustep
     SUBDIR += gnustep-make
