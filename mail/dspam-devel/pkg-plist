@@ -7,6 +7,7 @@ bin/dspam_corpus
 bin/dspam_crc
 bin/dspam_dump
 bin/dspam_genaliases
+bin/dspam_logrotate
 bin/dspam_merge
 bin/dspam_stats
 @unexec if cmp -s %D/etc/dspam.conf %D/etc/dspam.conf.sample; then rm -f %D/etc/dspam.conf; fi
@@ -14,18 +15,18 @@ etc/dspam.conf.sample
 include/dspam/buffer.h
 include/dspam/config.h
 include/dspam/decode.h
+include/dspam/diction.h
 include/dspam/error.h
 include/dspam/heap.h
-include/dspam/lht.h
 include/dspam/libdspam.h
 include/dspam/libdspam_objects.h
 include/dspam/nodetree.h
 include/dspam/storage_driver.h
-include/dspam/tbt.h
 lib/libdspam.a
 lib/libdspam.so
 lib/libdspam.so.6
 libdata/pkgconfig/dspam.pc
+@unexec rmdir %B 2>/dev/null || true
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README

@@ -5,30 +5,43 @@
 # $FreeBSD$
 #
 
+# Note to commiters: If don't commit a maintainer patch and as a result PKGNAME
+# or user variables (WITH*) changes please add an entry in ${FILESDIR}/UPDATING and
+# modify UPD_LINE_NO=(no_of_added_lines-1) in this Makefile
+# else the port will be broken. Thanks.
+
 PORTNAME=	dspam-devel
 PORTVERSION=	${PORTVER_MAJ}${SNAP_DATE}
+PORTREVISION=	0
 CATEGORIES=	mail
-MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/ports/dspam-devel/sources/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
 
 MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Bayesian spam filter - development version
 
+PORTVER_MAJ=	3.4.r1
+SNAP_DATE=	.20050216.0945
+
 .ifdef(SNAP_DATE)
 WRKSRC=		${WRKDIR}/dspam-cvs-devel${SNAP_DATE}
-.else
-WRKSRC=		${WRKDIR}/dspam-${PORTVER_MAJ}
 .endif
 
-#SNAP_DATE=	.20041225.1815
-PORTVER_MAJ=	3.3.4
+## maintainer only
+.ifdef(MAINT)
+MASTER_SITES=	http://dspam.nuclearelephant.com/sources/
+NO_CHECKSUM=	yes
+.	ifdef(SNAP_DATE)
+DISTFILES=	snapshot-devel.tar.gz
+FETCH_BEFORE_ARGS=	-v -o ${DISTDIR}/${PORTNAME}-${PORTVERSION}.tar.gz
+.	endif
+.endif
 
 ## debug / log / admin options
 OPTIONS=	DEBUG "Enable debugging logging" on
 OPTIONS+=	VERBOSE_DEBUG "Enable debug in LOGDIR/dspam.debug" off
 OPTIONS+=	BNR_DEBUG "Enable debug for BNR" off
 OPTIONS+=	PREF_EXT "Preferences in database not in files" off
-OPTIONS+=	DAEMON "Daemonize dspam; speak LMTP" on
+OPTIONS+=	DAEMON "Daemonize dspam; speak proprietary LMTP" on
 
 ## algorithm options
 OPTIONS+=	GRAHAM_BAYES "Enable Graham (traditional) bayesian" on
@@ -38,7 +51,6 @@ OPTIONS+=	CHI_SQUARE "Use Fisher-Robinson Inv Chi-Square" off
 OPTIONS+=	RPV "Use Robinson technique combining p-values" on
 OPTIONS+=	TEST_COND "More inoculous results rapidly, risk fps" on
 OPTIONS+=	NO_BIAS "No bias toward innocent mail" off
-OPTIONS+=	WHITELIST "Automatic whitelisting of ham" off
 OPTIONS+=	NEURAL_NET "Enable neural networking" off
 
 ## run-time configure  options
@@ -75,7 +87,6 @@ OPTIONS+=	QMAIL "Play nice with Qmail mail server" off
 
 OPTIONS+=	CGI "Install CGI (pulls in apache)" off
 
-USE_GNOME=	pkgconfig
 USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
@@ -83,11 +94,13 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-#CFLAGS+=	-g
+.ifdef(GDBS)
+CFLAGS+=	-g -DDEBUG
+.endif
 
 PKGMESSAGE=	 ${WRKSRC}/src/README.FreeBSD
 
-UPD_LINE_NO=	39
+UPD_LINE_NO=	15
 
 CONFLICTS=	dspam-2* dspam-3*
 
@@ -107,6 +120,13 @@ DSPAM_HOME_MODE?=	0770
 
 .include <bsd.port.pre.mk>
 
+## Actually Thu Feb 10 17:38:05 EET 2005 works
+#.if ${OSVERSION} >= 500036
+#.	if	${OSVERSION} < 503102
+#IGNORE=	Need newer pthread support, please upgrade your system
+#.	endif
+#.endif
+
 CONFIGURE_ARGS+=	--with-logdir=${LOG_DIR}
 PLIST_SUB+=	LOG_DIR=${LOG_DIR}
 
@@ -116,12 +136,8 @@ CONFIGURE_ARGS+=	--with-dspam-home-group=${DSPAM_HOME_GROUP}
 CONFIGURE_ARGS+=	--with-dspam-home-mode=${DSPAM_HOME_MODE}
 PLIST_SUB+=	DSPAM_HOME=${DSPAM_HOME}
 
-.if defined(DSPAM_OWNER)
 CONFIGURE_ARGS+=	--with-dspam-owner=${DSPAM_OWNER}
-.endif
-.if defined(DSPAM_GROUP)
 CONFIGURE_ARGS+=	--with-dspam-group=${DSPAM_GROUP}
-.endif
 # we set DSPAM_MODE at the end as some LDA whant specific mode
 
 SED_SCRIPT=	-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
@@ -157,6 +173,7 @@ WITH_DAEMON=	on
 CONFIGURE_ARGS+=	--enable-daemon
 RC_DIR=		${PREFIX}/etc/rc.d
 RC_SUFX=	.sh
+USE_RC_SUBR=	yes
 PLIST_FILES+=	etc/rc.d/dspam${RC_SUFX}
 SED_SCRIPT+=	-e 's,%%DAEMON%%,,g'
 SED_RC_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
@@ -193,10 +210,6 @@ CONFIGURE_ARGS+=	 --disable-test-conditional
 CONFIGURE_ARGS+=	--disable-bias
 .endif
 
-.if defined(WITH_WHITELIST)
-CONFIGURE_ARGS+=	--enable-whitelist
-.endif
-
 .if defined(WITH_NEURAL_NET)
 CONFIGURE_ARGS+=	--enable-neural-networking
 .endif
@@ -209,11 +222,11 @@ CONFIGURE_ARGS+=	--enable-homedir
 CONFIGURE_ARGS+=	--disable-trusted-user-security
 .endif
 
-DBDRV_TOTAL_COUNT=	ooooooooo # 9
+DBDRV_TOTAL_COUNT=	ooooooooo # 8
 DBDRV_COUNT=	${DBDRV_TOTAL_COUNT}
 
 .if defined(WITH_POSTGRESQL)
-USE_PGSQL=	YES
+USE_PGSQL=	yes
 CONFIGURE_ARGS+=	--with-storage-driver=pgsql_drv \
 		--with-pgsql-includes=${LOCALBASE}/include \
 		--with-pgsql-libraries=${LOCALBASE}/lib
@@ -343,9 +356,6 @@ LDA_COUNT:=	${LDA_COUNT:S/o//}
 .	if defined(WITH_MYSQL40) || (WITH_MYSQL41)
 _EXIM_EXT=	-mysql
 .	elseif defined(WITH_POSTGRESQL)
-####
-### fix me for pg 7.3: how to pass the db option to exim port ?
-###
 _EXIM_EXT=	-postgresql
 .	endif
 RUN_DEPENDS+=	exim:${PORTSDIR}/mail/exim${_EXIM_EXT}
@@ -355,13 +365,13 @@ LDA_COUNT:=	${LDA_COUNT:S/o//}
 
 .if defined(WITH_MAILDROP_LDA)
 RUN_DEPENDS+=	maildrop:${PORTSDIR}/mail/maildrop
-CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/bin/maildrop -d $$u'
+CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/bin/maildrop'
 LDA_COUNT:=	${LDA_COUNT:S/o//}
 .endif
 
 .if defined(WITH_PROCMAIL_LDA)
 RUN_DEPENDS+=	procmail:${PORTSDIR}/mail/procmail
-CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/bin/procmail -d $$u'
+CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/bin/procmail'
 LDA_COUNT:=	${LDA_COUNT:S/o//}
 .endif
 
@@ -408,8 +418,8 @@ PLIST_SUB+=	CGI=""
 CGI_PATH?=	${PREFIX}/www/vhosts/dspam
 SED_SCRIPT+=	-e 's,%%CGI%%,,g'
 SED_SCRIPT+=	-e 's,%%CGI_PATH%%,${CGI_PATH},g'
-#SED_FILES=      ${LS}  ${WRKSRC}/cgi/*.pl
-#SED_FILES+=     ${LS} $PWRKSRC}/cgi/*.cgi
+#SED_FILES=	${LS}  ${WRKSRC}/cgi/*.pl
+#SED_FILES+=	${LS} $PWRKSRC}/cgi/*.cgi
 .else
 PLIST_SUB+=	CGI="@comment "
 SED_SCRIPT+=	-e '/%%CGI%%/D'
@@ -431,13 +441,21 @@ DOCS=	CHANGELOG LICENSE README README.FreeBSD README.courier README.exim \
 	README.pop3filter README.postfix README.qmail README.sendmail \
 	RELEASE.NOTES
 
+.ifndef(MAINT)
 pre-everything::
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "Last ${FILESDIR}/UPDATING entry:"
 	@${GREP} -B 1 -A ${UPD_LINE_NO} ${PKGNAME} ${FILESDIR}/UPDATING
 	@${ECHO_CMD} ""
+.else # maintainer only
+post-fetch:
+.	ifndef(STOP)
+#.		include "/root/ports/upd"
+.	endif
+.endif
 
 pre-extract:
+	@${ECHO_CMD} ""
 	@${ECHO_CMD} "Define vars below before make-ing if you need:"
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "SIGNATURE_LIFE=${SIGNATURE_LIFE} (default 15)"
@@ -454,12 +472,15 @@ pre-extract:
 		@${ECHO_CMD} "installed in other place that this installation's default"
 		@${ECHO_CMD} "${PREFIX}/www/vhosts/dspam"
 .	endif
-	@${ECHO_CMD} "Define WITHOUT_DAEMON if not using OPTIONS and do not whant daemon."
+	@${ECHO_CMD} "Define WITHOUT_DAEMON if not using OPTIONS and do not want daemon."
+	@${ECHO_CMD} ""
+	@sleep 5
 
-.for old_opt in MAILDROP PROCMAIL TRAD_BAYES ALT_BAYES WITH_SPAM_SUBJ \
+.for old_opt in MAILDROP PROCMAIL TRAD_BAYES ALT_BAYES SPAM_SUBJ \
 	USER_LOGGING SYSTEM_LOGGING WEBMAIL OPT_IN SAT PARSE_TO_HEADERS \
 	BROKEN_MTA BROKEN_ERR_CODES SIGNATURE_HEADERS SIGNATURE_ATACH \
-	HOMEDIR_DOT SIGNATURE_LIFE SQLITE QUARANTINE_AGENT
+	HOMEDIR_DOT SIGNATURE_LIFE SQLITE QUARANTINE_AGENT WHITELIST \
+	POSTGRESQL73 POSTGRESQL74
 .	if defined(WITH_${old_opt}) || defined(WITHOUT_${old_opt})
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "******************************************************************"
@@ -548,6 +569,8 @@ post-install:
 # stupid hack until I figure out where/how to patch
 	@${MKDIR} ${PREFIX}/libdata/pkgconfig
 	@${MV} ${PREFIX}/lib/pkgconfig/dspam.pc ${PREFIX}/libdata/pkgconfig/dspam.pc
+	${TEST} `ls -1 ${PREFIX}/lib/pkgconfig | wc -l` -eq 0 && \
+		${RM} -R ${PREFIX}/lib/pkgconfig || true
 
 .if defined(USE_MYSQL)
 	@${MKDIR} ${EXAMPLESDIR}/mysql
@@ -566,34 +589,34 @@ post-install:
 .endif
 .if defined(HAVE_SQLITE)
 	@${MKDIR} ${EXAMPLESDIR}/sqlite
-	cd  ${WRKSRC}/src/tools.sqlite_drv && \
+	cd ${WRKSRC}/src/tools.sqlite_drv && \
 		${INSTALL_DATA} README *.sql ${EXAMPLESDIR}/sqlite
 .endif
 .if defined(WITH_ORACLE)
 	@${MKDIR} ${EXAMPLESDIR}/oracle
-	cd  ${WRKSRC}/src/tools.ora_drv && \
+	cd ${WRKSRC}/src/tools.ora_drv && \
 		${INSTALL_DATA} README *.sql ${EXAMPLESDIR}/oracle
 .endif
 
 .if defined(WITH_CGI)
 .	for I in admin.cgi admingraph.cgi configure.pl dspam.cgi graph.cgi
-		@${SED} -i '' -e "s,/usr/bin/perl,${PERL},g"  ${WRKSRC}/cgi/${I}
+		@${SED} -i '' -e "s,/usr/bin/perl,${PERL},g" ${WRKSRC}/cgi/${I}
 .	endfor
-	cd  ${WRKSRC}/cgi && ${MV} configure.pl configure.pl.sample
-	cd  ${WRKSRC}/cgi && ${MKDIR} ${CGI_PATH} && \
+	cd ${WRKSRC}/cgi && ${MV} configure.pl configure.pl.sample
+	cd ${WRKSRC}/cgi && ${MKDIR} ${CGI_PATH} && \
 		${INSTALL_SCRIPT} configure.pl.sample ${CGI_PATH}/ && \
 		${INSTALL_SCRIPT} *.cgi ${CGI_PATH}
-	cd  ${WRKSRC}/cgi && \
+	cd ${WRKSRC}/cgi && \
 		${INSTALL_DATA} base.css dspam-logo-small.gif rgb.txt ${CGI_PATH}/
-	cd  ${WRKSRC}/cgi && \
+	cd ${WRKSRC}/cgi && \
 		${INSTALL_DATA} default.prefs ${CGI_PATH}/default.prefs.sample
-	cd  ${WRKSRC}/cgi && \
+	cd ${WRKSRC}/cgi && \
 		${INSTALL_DATA} admins ${CGI_PATH}/admins.sample
-	@${MKDIR} ${CGI_PATH}/templates && cd  ${WRKSRC}/cgi/templates && \
+	@${MKDIR} ${CGI_PATH}/templates && cd ${WRKSRC}/cgi/templates && \
 		${INSTALL_DATA} *.html ${CGI_PATH}/templates/
 .endif
 
-	@${SED} ${SED_SCRIPT} ${.CURDIR}/pkg-message >  ${WRKSRC}/README.FreeBSD
+	@${SED} ${SED_SCRIPT} ${.CURDIR}/pkg-message > ${WRKSRC}/README.FreeBSD
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
@@ -603,18 +626,18 @@ post-install:
 	@${MKDIR} -m ${DSPAM_HOME_MODE} ${DSPAM_HOME}
 	@${CHOWN} ${DSPAM_HOME_OWNER}:${DSPAM_HOME_GROUP} ${DSPAM_HOME}
 .for _file in firstrun.txt firstspam.txt quarantinefull.txt
-	if ! ${TEST} -e  ${WRKSRC}/txt/${_file}.sample;\
+	if ! ${TEST} -e ${WRKSRC}/txt/${_file}.sample;\
 	then\
-		cd  ${WRKSRC}/txt && \
+		cd ${WRKSRC}/txt && \
 		${MV} ${_file} ${_file}.sample;\
 	fi
-	cd  ${WRKSRC}/txt && \
+	cd ${WRKSRC}/txt && \
 		${INSTALL_DATA} ${_file}.sample ${DSPAM_HOME}
 .endfor
 
 	@${MKDIR} -m ${DSPAM_HOME_MODE} ${LOG_DIR}
 
-	@${CAT}  ${WRKSRC}/README.FreeBSD
+	@${CAT} ${WRKSRC}/README.FreeBSD
 	@${ECHO_CMD} "If you haven't defined NOPORTDOCS you can review this"
 	@${ECHO_CMD} "message in ${DOCSDIR}/README.FreeBSD"
 	@${ECHO_CMD}
