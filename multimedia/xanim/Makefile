@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.go.dlr.de/fresh/unix/src/misc/:main \
 		ftp://ftp.ayamura.org/pub/graphics/:main \
 		ftp://ftp.ut.ee/pub/graphics/xanim/:main \
 		${MASTER_SITE_LOCAL} \
-		ftp://ftp.ut.ee/pub/graphics/xanim/dlls/ \
+		ftp://ftp.ut.ee/pub/graphics/xanim/dlls/
 MASTER_SITE_SUBDIR=	dinoex
 DISTNAME=	xanim2920
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:main ${EXTRA_FILES}
