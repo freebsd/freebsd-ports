@@ -1,5 +1,5 @@
 *** sys/unix/Makefile.top.orig	Tue Jul  4 02:42:05 2000
---- sys/unix/Makefile.top	Sat Dec  9 13:08:51 2000
+--- sys/unix/Makefile.top	Wed Dec 26 13:46:52 2001
 ***************
 *** 14,31 ****
   # MAKE = make
@@ -15,7 +15,7 @@
   # See also the option "SECURE" in include/config.h
 ! GAMEPERM = 04755
 ! FILEPERM = 0644
-  EXEPERM  = 0755
+! EXEPERM  = 0755
 ! DIRPERM  = 0755
   
   # GAMEDIR also appears in config.h as "HACKDIR".
@@ -31,9 +31,9 @@
   
   # Permissions - some places use setgid instead of setuid, for instance
   # See also the option "SECURE" in include/config.h
-! GAMEPERM = 02755
+! GAMEPERM = 0755
 ! FILEPERM = 0664
-  EXEPERM  = 0755
+! EXEPERM  = 02755
 ! DIRPERM  = 0775
   
   # GAMEDIR also appears in config.h as "HACKDIR".
@@ -76,3 +76,50 @@
   
   VARDATD = data oracles options quest.dat rumors
   VARDAT = $(VARDATD) $(VARDATND)
+***************
+*** 170,182 ****
+  	sed -e 's;/usr/games/lib/nethackdir;$(GAMEDIR);' \
+  		-e 's;HACKDIR/nethack;HACKDIR/$(GAME);' \
+  		< sys/unix/nethack.sh \
+! 		> $(SHELLDIR)/$(GAME)
+  # set up their permissions
+  	-( cd $(GAMEDIR) ; $(CHOWN) $(GAMEUID) $(GAME) ; \
+  			$(CHGRP) $(GAMEGRP) $(GAME) )
+  	chmod $(GAMEPERM) $(GAMEDIR)/$(GAME)
+  	-$(CHOWN) $(GAMEUID) $(SHELLDIR)/$(GAME)
+  	$(CHGRP) $(GAMEGRP) $(SHELLDIR)/$(GAME)
+  	chmod $(EXEPERM) $(SHELLDIR)/$(GAME)
+  
+  dofiles-dlb: check-dlb
+--- 169,189 ----
+  	sed -e 's;/usr/games/lib/nethackdir;$(GAMEDIR);' \
+  		-e 's;HACKDIR/nethack;HACKDIR/$(GAME);' \
+  		< sys/unix/nethack.sh \
+! 		> $(GAMEDIR)/$(GAME)-start.sh
+! 	@echo "#include <unistd.h>"   > nethack-wrapper.c 
+! 	@echo "int main(int argc, char *argv[]) {" >> nethack-wrapper.c 
+! 	@echo "    execv(\"$(GAMEDIR)/$(GAME)-start.sh\", argv);}" >> nethack-wrapper.c 
+! 	$(CC) $(CFLAGS) -o nethack-wrapper nethack-wrapper.c
+! 	cp nethack-wrapper $(SHELLDIR)/$(GAME)
+  # set up their permissions
+  	-( cd $(GAMEDIR) ; $(CHOWN) $(GAMEUID) $(GAME) ; \
+  			$(CHGRP) $(GAMEGRP) $(GAME) )
+  	chmod $(GAMEPERM) $(GAMEDIR)/$(GAME)
+  	-$(CHOWN) $(GAMEUID) $(SHELLDIR)/$(GAME)
+  	$(CHGRP) $(GAMEGRP) $(SHELLDIR)/$(GAME)
++ 	chmod $(GAMEPERM) $(GAMEDIR)/$(GAME)-start.sh
++ 	-$(CHOWN) $(GAMEUID) $(GAMEDIR)/$(GAME)-start.sh
++ 	$(CHGRP) $(GAMEGRP) $(GAMEDIR)/$(GAME)-start.sh
+  	chmod $(EXEPERM) $(SHELLDIR)/$(GAME)
+  
+  dofiles-dlb: check-dlb
+***************
+*** 236,241 ****
+--- 243,249 ----
+  clean:
+  	( cd src ; $(MAKE) clean )
+  	( cd util ; $(MAKE) clean )
++ 	rm -f nethack-wrapper.c nethack-wrapper
+  
+  # 'make spotless' returns the source tree to near-distribution condition.
+  # it removes .o files, executables, and compiled data files
