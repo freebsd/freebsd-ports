@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Text-Kakasi
-PORTVERSION=	1.04
+PORTVERSION=	1.05
 CATEGORIES=	japanese perl5
 MASTER_SITES=	http://www.daionet.gr.jp/~knok/kakasi/
 
 MAINTAINER=	knu@FreeBSD.org
 
-LIB_DEPENDS=	kakasi.2:${PORTSDIR}/japanese/kakasi
+LIB_DEPENDS=	kakasi.3:${PORTSDIR}/japanese/kakasi
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ENV=	PREFIX="${PREFIX}"
