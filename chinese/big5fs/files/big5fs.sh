@@ -11,7 +11,7 @@ start)
 		kldload /usr/local/modules/big5msdos.ko
 	fi
 	if [ -x @@PREFIX@@/modules/big5ntfs.ko ]; then
-		echo -n ' Big5 ntfs'
+		echo -n ' Big5-ntfs'
 		kldload /usr/local/modules/big5ntfs.ko
 	fi
 	;;

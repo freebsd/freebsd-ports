@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		big5fs
-PORTVERSION=		2.0
+PORTVERSION=		2.1
 CATEGORIES=		chinese
 MASTER_SITES=		ftp://freebsd.sinica.edu.tw/pub/keith/
 
