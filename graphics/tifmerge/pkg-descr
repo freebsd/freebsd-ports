@@ -1,0 +1,12 @@
+Library to convert TIFF files into multi-page TIFF files. It contains only one
+function callable by programs:
+
+	int TiffAppend(const char *outfile, const char *infile);
+
+It will insert images from infile as additional pages to outfile. Infile
+and outfile must be names of two existing TIFF files.
+
+The function returns 0 on success, non-0 otherwise.
+
+The code for this library was written by Peter van Vloten <pixelpan@aol.com>
+and was published in May 1999 issue of Windows Developer's Journal (sic!).
