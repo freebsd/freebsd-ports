@@ -10,7 +10,6 @@ PORTNAME?=	nmap
 PORTVERSION=	3.00
 CATEGORIES=	security
 MASTER_SITES=	http://download.insecure.org/nmap/dist/  \
-		ftp://nuxi.ucdavis.edu/pub/misc/  \
 		http://www.mobis.com/ajax/projects/
 DISTNAME=	nmap-${PORTVERSION:S/.b/BETA/}
 EXTRACT_SUFX=	.tgz
