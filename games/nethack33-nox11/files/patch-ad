@@ -1,20 +1,51 @@
---- include/system.h.orig	Mon Nov  4 08:01:25 1996
-+++ include/system.h	Sat Jun 19 16:18:02 1999
-@@ -80,7 +80,7 @@
- # if !defined(SUNOS4) || defined(RANDOM)
- E void FDECL(srandom, (unsigned int));
- # else
--#  ifndef bsdi
-+#  if !defined(bsdi) && !defined(__FreeBSD__)
- E int FDECL(srandom, (unsigned int));
- #  endif
- # endif
-@@ -510,7 +510,7 @@
- # if defined(ULTRIX) || defined(SYSV) || defined(MICRO) || defined(VMS) || defined(MAC)
- E time_t FDECL(time, (time_t *));
- # else
--E long FDECL(time, (time_t *));
-+E time_t FDECL(time, (time_t *));
- # endif /* ULTRIX */
+--- ./sys/unix/Makefile.src.orig	Sat Dec 11 00:21:05 1999
++++ ./sys/unix/Makefile.src	Sun Dec 12 20:27:50 1999
+@@ -132,8 +132,8 @@
+ # flags for debugging:
+ # CFLAGS = -g -I../include
  
- #ifdef VMS
+-CFLAGS = -O -I../include
+-LFLAGS = 
++CFLAGS += -O -I../include -I${X11BASE}/include
++LFLAGS =  -L${X11BASE}/lib
+ 
+ # Only used for Qt interface (other interfaces are standard C)
+ CXXFLAGS = -g $(CFLAGS) -I. -I$(QTDIR)/include
+@@ -165,8 +165,8 @@
+ 
+ #
+ # 
+-WINSRC = $(WINTTYSRC)
+-WINOBJ = $(WINTTYOBJ)
++WINSRC = $(WINTTYSRC) $(WINX11SRC)
++WINOBJ = $(WINTTYOBJ) $(WINX11OBJ)
+ 
+ # on some systems the termcap library is in -ltermcap or -lcurses
+ # on 386 Xenix, the -ltermlib tputs() seems not to work; use -lcurses instead
+@@ -186,7 +186,7 @@
+ #
+ # libraries for X11
+ # If USE_XPM is defined in config.h, you will also need -lXpm here.
+-WINX11LIB = -lXaw -lXmu -lXext -lXt -lX11
++WINX11LIB = -lXaw -lXmu -lXext -lXt -lX11 -lXpm
+ # WINX11LIB = -lXaw -lXmu -lXt -lX11
+ # WINX11LIB = -lXaw -lXmu -lXext -lXt -lXpm -lX11 -lm
+ # WINX11LIB = -lXaw -lXmu -lXpm -lXext -lXt -lX11 -lSM -lICE -lm # BSD/OS 2.0
+@@ -199,7 +199,7 @@
+ #
+ #
+ 
+-WINLIB = $(WINTTYLIB)
++WINLIB = $(WINTTYLIB) $(WINX11LIB)
+ 
+ # any other strange libraries your system needs (for Sysunix only -- the more
+ # specialized targets should already be right)
+@@ -223,7 +223,7 @@
+ # IRIX 4.0.x needs -lsun if NIS (YP) is being used for passwd file lookup
+ # LIBS = -lsun
+ #
+-LIBS =
++LIBS = -lSM -lICE
+ 
+ # make NetHack
+ GAME     = nethack

@@ -1,37 +1,47 @@
-diff -ruN ./include/unixconf.h ../nethack-3.2.2/include/unixconf.h
---- ./include/unixconf.h	Wed Dec 11 05:20:08 1996
-+++ ../nethack-3.2.2/include/unixconf.h	Sun Mar 21 17:25:02 1999
-@@ -31,7 +31,7 @@
+--- ./sys/unix/Makefile.top.orig	Sat Dec 11 05:21:05 1999
++++ ./sys/unix/Makefile.top	Mon Dec 13 11:51:27 1999
+@@ -14,17 +14,16 @@
+ # MAKE = make
  
- /* define any of the following that are appropriate */
- /* #define SVR4		/* use in addition to SYSV for System V Release 4 */
--#define NETWORK		/* if running on a networked system */
-+/* #define NETWORK		/* if running on a networked system */
- 			/* e.g. Suns sharing a playground through NFS */
- #define SUNOS4	/* SunOS 4.x */
- /* #define LINUX	/* Another Unix clone */
-@@ -42,12 +42,12 @@
- /* #define AIX_31	/* In AIX 3.1 (IBM RS/6000) use BSD ioctl's to gain
- 			 * job control (note that AIX is SYSV otherwise)
- 			 * Also define this for AIX 3.2 */
--/* #define TEXTCOLOR	/* Use System V r3.2 terminfo color support */
-+#define TEXTCOLOR	/* Use System V r3.2 terminfo color support */
- 			/* and/or ANSI color support on termcap systems */
- 			/* and/or X11 color */
--/* #define POSIX_JOB_CONTROL	/* use System V / POSIX job control
-+#define POSIX_JOB_CONTROL	/* use System V / POSIX job control
- 			 * (e.g., VSUSP) */
--/* #define POSIX_TYPES	/* use POSIX types for system calls and termios */
-+#define POSIX_TYPES	/* use POSIX types for system calls and termios */
- 			/* define for many recent OS releases, including
- 			 * those with specific defines (since types are
- 			 * changing toward the standard from earlier chaos).
-@@ -125,7 +125,7 @@
-  * A stat system call is done on the mailbox every MAILCKFREQ moves.
-  */
+ # make NetHack
+-PREFIX	 = /usr
+ GAME     = nethack
+ GAMEUID  = games
+-GAMEGRP  = bin
++GAMEGRP  = games
  
--#define MAIL			/* Deliver mail during the game */
-+/* #define MAIL			/* Deliver mail during the game */
+ # Permissions - some places use setgid instead of setuid, for instance
+ # See also the option "SECURE" in include/config.h
+-GAMEPERM = 04755
+-FILEPERM = 0644
++GAMEPERM = 02755
++FILEPERM = 0664
+ EXEPERM  = 0755
+-DIRPERM  = 0755
++DIRPERM  = 0775
  
- /* The Andrew Message System does mail a little differently from normal
-  * UNIX.  Mail is deposited in the user's own directory in ~/Mailbox
+ # GAMEDIR also appears in config.h as "HACKDIR".
+ #
+@@ -33,8 +32,8 @@
+ # therefore there should not be anything in GAMEDIR that you want to keep
+ # (if there is, you'll have to do the installation by hand or modify the
+ # instructions)
+-GAMEDIR  = $(PREFIX)/games/lib/$(GAME)dir
+-SHELLDIR = $(PREFIX)/games
++GAMEDIR  = $(PREFIX)/share/$(GAME)
++SHELLDIR = $(PREFIX)/bin
+ 
+ # per discussion in Install.X11 and Install.Qt
+ VARDATND = 
+@@ -184,9 +183,9 @@
+ 
+ install: $(GAME) $(VARDAT) dungeon spec_levs
+ # set up the directories
+-	-mkdir $(SHELLDIR)
++	-mkdir -p $(SHELLDIR)
+ 	-rm -rf $(GAMEDIR)
+-	-mkdir $(GAMEDIR) $(GAMEDIR)/save
++	-mkdir -p $(GAMEDIR) $(GAMEDIR)/save
+ 	-$(CHOWN) $(GAMEUID) $(GAMEDIR) $(GAMEDIR)/save
+ 	$(CHGRP) $(GAMEGRP) $(GAMEDIR) $(GAMEDIR)/save
+ 	chmod $(DIRPERM) $(GAMEDIR) $(GAMEDIR)/save
