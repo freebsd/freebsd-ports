@@ -371,6 +371,7 @@
     SUBDIR += xml-lite.el
     SUBDIR += xml2rfc
     SUBDIR += xml4j
+    SUBDIR += xmlada
     SUBDIR += xmlcharent
     SUBDIR += xmlpp
     SUBDIR += xmlppm
