@@ -1,0 +1,10 @@
+--- Makefile.PL.orig	Thu Jan 21 23:52:42 1999
++++ Makefile.PL	Tue May 25 21:53:42 1999
+@@ -129,6 +129,7 @@
+    chomp ($lib_line = <STDIN>);
+    $lib_line = $lline unless $lib_line =~ /\S/;
+ } else {
++  $lib_line = $lline;
+   print "\n";
+ }
+ 

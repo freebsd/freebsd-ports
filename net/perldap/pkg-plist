@@ -1,0 +1,14 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mozilla/LDAP/API/API.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mozilla/LDAP/API/API.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Mozilla/LDAP/Conn.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Mozilla/LDAP/LDIF.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Mozilla/LDAP/Utils.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Mozilla/LDAP/API.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Mozilla/LDAP/Entry.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mozilla/LDAP/API/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mozilla/LDAP/API/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mozilla/LDAP/API
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mozilla/LDAP
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mozilla
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Mozilla/LDAP
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Mozilla
