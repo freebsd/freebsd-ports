@@ -1,0 +1,11 @@
+--- vmmon-only/freebsd/hostif.c.patched	Tue Apr  8 15:15:20 2003
++++ vmmon-only/freebsd/hostif.c	Tue Apr  8 15:16:21 2003
+@@ -183,7 +183,7 @@
+ {
+ #define DEB(x) 
+    caddr_t addr = (caddr_t)VPN_2_VA(ppn);
+-   pt_entry_t *pteptr = vtopte(addr);
++   pt_entry_t *pteptr = vtopte((vm_offset_t)addr);
+    PTE pte;
+ 
+    DEB(printf("FindMPN: for page %d address %p(phys %p) pteptr %p", ppn, addr, (caddr_t)vtophys(addr), pteptr));
