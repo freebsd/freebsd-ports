@@ -6,15 +6,22 @@
 #
 
 PORTNAME=	onis
-PORTVERSION=	0.3.3
+PORTVERSION=	0.6.1
 CATEGORIES=	irc
-MASTER_SITES=	http://verplant.org/onis/
+MASTER_SITES=	http://verplant.org/onis/ \
+		http://www.bsdberlin.org/~dako/distfiles/irc/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dako@bsdberlin.org
 COMMENT=	A script that converts IRC logfiles into an HTML statistics page
 
 NO_BUILD=	YES
 USE_PERL5=	YES
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500601
+IGNORE=	This port requires perl 5.6.x or later. Install lang/perl5 and try again.
+.endif
 
 do-install:
 	@if [ ! -d ${DATADIR} ]; then \
@@ -22,4 +29,4 @@ do-install:
 	fi
 	${CP} -R ${WRKSRC}/* ${DATADIR}/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
