@@ -1,5 +1,5 @@
---- ../config/config.mk.orig	Fri Aug 18 16:09:38 2000
-+++ ../config/config.mk	Mon Sep 11 17:26:22 2000
+--- config/config.mk.orig	Fri Aug 18 16:09:38 2000
++++ config/config.mk	Mon Sep 11 17:26:22 2000
 @@ -77,6 +77,7 @@
  #platform = x86_freebsd_3.2
  #platform = x86_freebsd_4.0
