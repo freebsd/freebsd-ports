@@ -15,6 +15,11 @@ MAINTAINER?=	sada@FreeBSD.org
 
 Y2K=		http://home.netscape.com/products/year2000/faq/client.html
 
+.if !defined(INFILE_HEAD)
+# not included from master ports
+NO_LATEST_LINK=	yes
+.endif
+
 USE_XLIB=	yes
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=	yes

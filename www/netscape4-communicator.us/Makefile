@@ -18,6 +18,7 @@ Y2K=		http://home.netscape.com/products/year2000/faq/client.html
 RUN_DEPENDS=	/compat/linux/lib/ld-linux.so.1:${PORTSDIR}/emulators/linux_base
 
 RESTRICTED=	"Commerial & USA ITAR export restrictions"
+NO_LATEST_LINK=	yes
 ONLY_FOR_ARCHS=	i386
 
 NO_FETCH=	yes
