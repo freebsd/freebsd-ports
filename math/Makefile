@@ -11,6 +11,7 @@
     SUBDIR += asir2000
     SUBDIR += atlas
     SUBDIR += biggles
+    SUBDIR += blacs
     SUBDIR += blas
     SUBDIR += blitz++
     SUBDIR += calc
