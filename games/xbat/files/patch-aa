@@ -1,34 +1,32 @@
 --- Imakefile.orig	Thu Dec  5 18:00:58 1996
 +++ Imakefile	Fri Jan 24 22:17:03 1997
-@@ -5,25 +5,28 @@
- WAIT = 10000
- USE_USLEEP = -DUSE_USLEEP
- 
-+# Installation prefix.
-+PREFIX?=/usr/X11R6
+@@ -1,24 +1,26 @@
++# Installation prefix
++PREFIX?= /usr/X11R6
 +
- # TOP10 DIR インストールしない場合は、「./」 などにしてください。
- #	       IMAGE DIR,MAP DIR DOMO DIRも同じ
+ # TOP10 DIR : directory for socre files
+ #
 -SCORE_DIR  = /usr/local/games/Xbat/Score
-+SCORE_DIR  = ${PREFIX}/lib/X11/Xbat/Score
++SCORE_DIR  = ${PREFIX}/games/Xbat/Score
  
- # IMAGE DIR 
+ # IMAGE DIR : directory for image files
 -IMAGE_DIR = /usr/local/games/Xbat/Image
-+IMAGE_DIR = ${PREFIX}/lib/X11/Xbat/Image
++IMAGE_DIR = ${PREFIX}/games/Xbat/Image
  
- # MAP DIR
+ # MAP DIR : directory for map files
 -MAP_DIR = /usr/local/games/Xbat/Map
-+MAP_DIR = ${PREFIX}/lib/X11/Xbat/Map
++MAP_DIR = ${PREFIX}/games/Xbat/Map
  
- # DOMO_DIR
+ # DOMO_DIR : directory for domogram movement files
 -DOMO_DIR = /usr/local/games/Xbat/Domo
-+DOMO_DIR = ${PREFIX}/lib/X11/Xbat/Domo
++DOMO_DIR = ${PREFIX}/games/Xbat/Domo
  
--# UNION 「インテル並びのCPUは１にしてね」、と彼女が言った
+ # UNION : Set 1 if you have Intel CPU or so.
+ # If you don't know whether you have Intel CPU or not, 
+ # compile union_check.c and run.
 -UNION = 0
-+# UNION "Please set 1 if you have Intel CPU or so." She said.
-+UNION = 1
- 
+-#UNION = 1 
++UNION = 1 
  
  #BIN DIR
 -BINDIR = /usr/local/bin
