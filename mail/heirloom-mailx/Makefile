@@ -6,19 +6,21 @@
 #
 
 PORTNAME=	nail
-PORTVERSION=	10.6
+PORTVERSION=	10.7
 CATEGORIES=	mail
-MASTER_SITES=	http://omnibus.ruf.uni-freiburg.de/~gritter/archive/nail/
+MASTER_SITES=	http://nail.berlios.de/archive/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BSD mail utility with MIME extensions
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
+USE_BZIP2=	yes
+USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -liconv"
-CONFIGURE_ARGS=	--with-rcfile="${PREFIX}/etc/nail.rc"
+CONFIGURE_ARGS=	--with-openssl --with-rcfile="${PREFIX}/etc/nail.rc"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-liconv"
+LDFLAGS=	-L${LOCALBASE}/lib
 
 MAN1=		nail.1
 
