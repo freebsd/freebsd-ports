@@ -1,0 +1,38 @@
+--- tcl8.5a1/html/UserCmd/tclsh.htm.orig	Thu Mar  4 11:24:31 2004
++++ tcl8.5a1/html/UserCmd/tclsh.htm	Thu Nov 18 12:47:37 2004
+@@ -4,7 +4,7 @@
+ <DL><DD>tclsh - Simple shell containing Tcl interpreter</DL>
+ <DD><A HREF="tclsh.htm#M3" NAME="L3">SYNOPSIS</A>
+ <DL>
+-<DD><B>tclsh</B> ?-encoding <I>name</I>? ?<I>fileName arg arg ...</I>?
++<DD><B>tclsh8.5</B> ?-encoding <I>name</I>? ?<I>fileName arg arg ...</I>?
+ </DL>
+ <DD><A HREF="tclsh.htm#M4" NAME="L4">DESCRIPTION</A>
+ <DD><A HREF="tclsh.htm#M5" NAME="L5">SCRIPT FILES</A>
+@@ -23,7 +23,7 @@
+ <H3><A NAME="M2">NAME</A></H3>
+ tclsh - Simple shell containing Tcl interpreter
+ <H3><A NAME="M3">SYNOPSIS</A></H3>
+-<B>tclsh</B> ?-encoding <I>name</I>? ?<I>fileName arg arg ...</I>?<BR>
++<B>tclsh8.5</B> ?-encoding <I>name</I>? ?<I>fileName arg arg ...</I>?<BR>
+ <H3><A NAME="M4">DESCRIPTION</A></H3>
+ <B>Tclsh</B> is a shell-like application that reads Tcl commands
+ from its standard input or from a file and evaluates them.
+@@ -58,7 +58,7 @@
+ line, but the script file can always <B><A HREF="../TclCmd/source.htm">source</A></B> it if desired.
+ <P>
+ If you create a Tcl script in a file whose first line is
+-<PRE><B>#!/usr/local/bin/tclsh</B></PRE>
++<PRE><B>#!/usr/local/bin/tclsh8.5</B></PRE>
+ then you can invoke the script file directly from your shell if
+ you mark the file as executable.
+ This assumes that <B>tclsh</B> has been installed in the default
+@@ -72,7 +72,7 @@
+ following three lines:
+ <PRE><B>#!/bin/sh
+ # the next line restarts using tclsh &#92;
+-exec tclsh &quot;$0&quot; &quot;$@&quot;</B></PRE>
++exec tclsh8.5 &quot;$0&quot; &quot;$@&quot;</B></PRE>
+ This approach has three advantages over the approach in the previous
+ paragraph.  First, the location of the <B>tclsh</B> binary doesn't have
+ to be hard-wired into the script:  it can be anywhere in your shell
