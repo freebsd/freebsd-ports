@@ -9,7 +9,7 @@
 PORTNAME=	align
 PORTVERSION=	1.5.0
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.go.dlr.de/fresh/unix/src/privat2/
+MASTER_SITES=	http://www.cs.indiana.edu/~kinzler/align/
 
 MAINTAINER=	ports@FreeBSD.org
 
