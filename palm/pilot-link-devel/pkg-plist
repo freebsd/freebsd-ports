@@ -24,9 +24,11 @@ bin/pilot-clip
 bin/pilot-datebook
 bin/pilot-dedupe
 bin/pilot-file
+bin/pilot-foto
 bin/pilot-prc
 bin/pilot-schlep
 bin/pilot-xfer
+bin/pitclsh
 bin/read-expenses
 bin/read-ical
 bin/read-notepad
@@ -84,6 +86,10 @@ lib/libpisync.a
 lib/libpisync.la
 lib/libpisync.so
 lib/libpisync.so.0
+lib/libpitcl.a
+lib/libpitcl.la
+lib/libpitcl.so.0
+lib/libpitcl.so
 share/aclocal/pilot-link.m4
 share/pilot-link/getrom.prc
 share/pilot-link/getrom2.prc
@@ -99,4 +105,3 @@ share/pilot-link/pix/case.xbm
 share/pilot-link/pix/casemask.xbm
 @dirrm share/pilot-link/pix
 @dirrm share/pilot-link
-@dirrm share/aclocal
