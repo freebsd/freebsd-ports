@@ -4387,6 +4387,7 @@ mawk		ports/lang/mawk
 maxima		ports/math/maxima
 mayavi		ports/science/mayavi
 mb2md		ports/mail/mb2md
+mboxcheck-applet	ports/mail/mboxcheck-applet
 mboxgrep	ports/mail/mboxgrep
 mboxstats	ports/mail/mboxstats
 mbrola		ports/audio/mbrola
