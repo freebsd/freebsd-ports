@@ -7,6 +7,7 @@
 
 PORTNAME=	polypaudio
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/polypaudio/
 
@@ -21,7 +22,8 @@ WANT_GNOME=	yes
 USE_XLIB=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=15
+# Needs libtool archive (.la) files for libltdl
+USE_INC_LIBTOOL_VER=15
 USE_LIBLTDL=	yes
 USE_GMAKE=	yes
 USE_GETOPT_LONG=yes
