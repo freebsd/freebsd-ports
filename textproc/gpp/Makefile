@@ -10,7 +10,7 @@ PORTVERSION=	2.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.math.polytechnique.fr/cmat/auroux/prog/
 
-MAINTAINER=	josb@cncdsl.com
+MAINTAINER=	jos@catnook.com
 
 MAN1=		gpp.1
 
