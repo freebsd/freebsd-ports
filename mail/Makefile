@@ -261,6 +261,7 @@
     SUBDIR += prom-wl
     SUBDIR += pronto
     SUBDIR += py-milter
+    SUBDIR += py-mimelib
     SUBDIR += py-spambayes
     SUBDIR += pygmy
     SUBDIR += pymsgauth
