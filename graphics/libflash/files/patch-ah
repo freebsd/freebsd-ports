@@ -1,0 +1,21 @@
+--- Lib/cxform.cc.orig	Sun Aug  6 18:07:51 2000
++++ Lib/cxform.cc	Sun Aug  6 18:08:18 2000
+@@ -23,7 +23,7 @@
+ static char *rcsid = "$Id";
+ 
+ #ifdef __FreeBSD__
+-#include <floatingpoint.h>
++#include <ieeefp.h>
+ #endif
+ 
+ #include "cxform.h"
+@@ -63,7 +63,9 @@
+ 	if (newColor.blue > 255) newColor.blue = 255;
+ 	newColor.alpha = getAlpha(color.alpha);
+ #ifdef __FreeBSD__
++#ifndef __alpha__
+ 	fpresetsticky(FP_X_DZ|FP_X_INV);
++#endif
+ 	fpsetmask(FP_X_DZ|FP_X_INV);
+ #endif
+ 
