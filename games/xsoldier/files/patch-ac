@@ -1,0 +1,19 @@
+--- main.c	Fri Feb 28 08:50:07 1997
++++ main.c.new	Wed Dec 15 19:35:37 1999
+@@ -129,14 +129,14 @@
+         argv0++;
+     else
+         argv0 = argv[0];
+-    strcpy(command,argv0); /*** コマンド名取得とコピー ***/
++    strlcpy(command,argv0,sizeof(command)); /*** コマンド名取得とコピー ***/
+ 
+     for (i=1; i<argc; i++)
+     {
+ 	if ((strcmp(argv[i],"-display")==0) || (strcmp(argv[i],"-d")==0))
+ 	{
+ 	    if (i < argc-1)
+-		strcpy(display,argv[i+1]);
++		strlcpy(display,argv[i+1],sizeof(display));
+ 	}
+         else if ((strcmp(argv[i],"-wait")==0) || (strcmp(argv[i],"-w")==0))
+ 	{
