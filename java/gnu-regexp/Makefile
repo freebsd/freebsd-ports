@@ -15,16 +15,21 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A regexp library for Java
 
 USE_JAVA=	1.1+
-
 NO_BUILD=	yes
 
-DOCDIR=		${PREFIX}/share/doc/${PORTNAME}
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
+
+PLIST_FILES=	${JAVAJARDIR:S,^${PREFIX}/,,}/gnu-regexp.jar
 
 do-install:
-	${MKDIR} ${DOCDIR}
-	cd ${WRKSRC}/docs && ${FIND} . \
-	    | ${CPIO} -pdmu -R ${DOCOWN}:${DOCGRP} ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/lib/${PORTNAME}-${PORTVERSION}.jar \
-	    ${PREFIX}/share/java/classes/${PORTNAME}.jar
+	    ${JAVAJARDIR}/${PORTNAME}.jar
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC}/docs && ${FIND} . \
+	    | ${CPIO} -pdmu -R ${DOCOWN}:${DOCGRP} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
