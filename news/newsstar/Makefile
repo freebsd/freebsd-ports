@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	newsstar
-PORTVERSION=	1.1
+PORTVERSION=	1.1.1
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -30,9 +30,13 @@ USE_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-inn-path=${PREFIX}/news/bin
 .endif
 
-CONFIGURE_ARGS+=--with-conf-dir=${PREFIX}/etc/newsstar \
+CONFIGURE_ARGS+=--prefix=${PREFIX} \
+		--with-conf-dir=${PREFIX}/etc/newsstar \
 		--with-rc-dir=/var/spool/newsstar/lib \
 		--with-incoming-dir=/var/spool/newsstar/incoming
+
+CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes

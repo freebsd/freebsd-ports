@@ -28,3 +28,4 @@ libexec/newsstar.bin
 %%PORTDOCS%%%%EXAMPLESDIR%%/newsrc.sample
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm etc/newsstar

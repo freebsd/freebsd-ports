@@ -1,0 +1,19 @@
+--- newsstar.in.orig	Sun Jul  4 00:21:24 2004
++++ newsstar.in	Mon Jul 12 21:38:49 2004
+@@ -29,7 +29,6 @@
+ $NEWS_PATH = '@NEWS_PATH@';
+ $prefix = "@prefix@";
+ $exec_prefix = "@exec_prefix@";
+-$libexecdir = "@libexecdir@";
+ $NEWSSTAR_BIN = "@NEWSSTAR_BIN@";
+ $MAINCF = $CONF_DIR . "/main.cf";
+ $INCOMING_DIR = "@INCOMING_DIR@";
+@@ -199,7 +198,7 @@
+ 
+ if ($USE_SN)
+ {
+-    $SPOOL_DIR = "/var/spool/sn" if ($SPOOL_DIR eq "");
++    $SPOOL_DIR = "/var/spool/news" if ($SPOOL_DIR eq "");
+     $OUTGOING_DIR = $SPOOL_DIR . "/.outgoing"  if ($OUTGOING_DIR eq "");
+     $OUTGOING_NEWSSTAR_DIR = $OUTGOING_DIR . "/.newsstar";
+     $ARTICLES_DIR = $SPOOL_DIR if ($ARTICLES_DIR eq "");
