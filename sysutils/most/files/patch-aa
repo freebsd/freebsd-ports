@@ -1,0 +1,22 @@
+--- src/Makefile.in.orig	Tue Jun  8 11:47:47 1999
++++ src/Makefile.in	Tue Jun  8 11:48:39 1999
+@@ -42,7 +42,7 @@
+ prefix		= @prefix@
+ BIN_DIR		= $(prefix)/bin
+ MAN_DIR		= $(prefix)/man/man1
+-DOC_DIR		= $(prefix)/doc/most
++DOC_DIR		= $(prefix)/share/doc/most
+ 
+ SYS_INITFILE	= $(prefix)/etc/most.conf
+ 
+@@ -87,8 +87,10 @@
+ install: all $(BIN_DIR)
+ 	$(INSTALL) -s $(OBJDIR)/most $(BIN_DIR)
+ 	$(INSTALL_DATA) ../most.1 $(MAN_DIR)
++.if !defined(NOPORTDOCS)
+ 	$(INSTALL) -d $(DOC_DIR) -m 755
+ 	$(INSTALL_DATA) $(DOC_FILES) $(DOC_DIR)
++.endif
+ $(BIN_DIR):
+ 	- ../mkinsdir.sh $(BIN_DIR)
+ # The symlinks target is for my own private use.  It simply creates the object
