@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/_beta/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An RSS aggregator for KDE
 
+BROKEN=		Does not compile
+
 CONFLICTS=	kdepim-3.4.*
 
 LIB_DEPENDS=	kdepim.1:${PORTSDIR}/deskutils/kdepim3
