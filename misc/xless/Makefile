@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=     applications
 MAINTAINER=	conrads@home.com
 
 USE_IMAKE=	yes
-MANN=		xless.n
-MANCOMPRESSED=	no
+MAN1=		xless.1
+MANCOMPRESSED= 	yes	
 
 .include <bsd.port.mk>
