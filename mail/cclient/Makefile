@@ -26,11 +26,20 @@ SHLIBNAME=	lib${SHLIBBASE}.so.${SHLIBMAJ}
 MAKE_ENV=	SHLIBNAME=${SHLIBNAME} SHLIBBASE=${SHLIBBASE}
 PLIST_SUB=	SHLIBNAME=${SHLIBNAME} SHLIBBASE=${SHLIBBASE}
 
+PREFIX_FIX_FILES=	Makefile src/osdep/unix/Makefile \
+			src/osdep/unix/Makefile.gss \
+			src/osdep/unix/Makefile.ssl
+
 .include <bsd.port.pre.mk>
 
 .if ${PORTOBJFORMAT} == "aout"
 SHLIBNAME=	lib${SHLIBBASE}.so.${SHLIBMAJ}.0
 .endif
+
+post-patch:
+.for file in ${PREFIX_FIX_FILES}
+	@${PERL} -pi -ne "s!/usr/local!${PREFIX}!g" ${WRKSRC}/${file}
+.endfor
 
 post-configure:
 	@${ECHO_MSG} ">> The c-client shared library will be named ${SHLIBNAME}"
