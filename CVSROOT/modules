@@ -4468,6 +4468,7 @@ libimg		ports/graphics/libimg
 libiodbc	ports/databases/libiodbc
 libirman	ports/comms/libirman
 libj2dplot	ports/x11-toolkits/libj2dplot
+libjit		ports/lang/libjit
 libjparser	ports/x11-toolkits/libjparser
 libjsearch	ports/x11-toolkits/libjsearch
 libjtoolbar	ports/x11-toolkits/libjtoolbar
