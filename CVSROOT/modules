@@ -11562,6 +11562,7 @@ word2x		ports/textproc/word2x
 wordnet		ports/textproc/wordnet
 wordplay	ports/games/wordplay
 wordpress	ports/www/wordpress
+wordpress-mu	ports/www/wordpress-mu
 words		ports/textproc/words
 worker		ports/x11-fm/worker
 workman		ports/audio/workman
