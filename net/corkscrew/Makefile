@@ -6,13 +6,20 @@
 #
 
 PORTNAME=	corkscrew
-PORTVERSION=	1.5
+PORTVERSION=	2.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.agroman.net/corkscrew/
 
 MAINTAINER=	markp@FreeBSD.org
 
 GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in NEWS README TODO
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
