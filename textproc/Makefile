@@ -544,6 +544,7 @@
     SUBDIR += xmlcatmgr
     SUBDIR += xmlcharent
     SUBDIR += xmlenc
+    SUBDIR += xmlformat
     SUBDIR += xmlindent
     SUBDIR += xmlpp
     SUBDIR += xmlppm
