@@ -99,7 +99,6 @@
     SUBDIR += xgs
     SUBDIR += xmame
     SUBDIR += xmess
-    SUBDIR += xpinmame
     SUBDIR += xsystem35
     SUBDIR += xzx
     SUBDIR += yape
