@@ -3,7 +3,7 @@
 # Date created:		24 December 1997
 # Whom:			itojun@itojun.org
 #
-# $Id: Makefile,v 1.3 1998/04/07 22:43:37 itojun Exp $
+# $Id: Makefile,v 1.4 1998/09/06 13:48:20 itojun Exp $
 #
 
 DISTNAME=	magicpoint-1.04a
@@ -22,7 +22,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-vflib
 
 post-configure:
-	(cd ${WRKSRC}/contrib/xmindpath; ./configure --prefix=${X11BASE})
+	(cd ${WRKSRC}/contrib/xmindpath; ./configure --prefix=${PREFIX})
 
 post-build:
 	(cd ${WRKSRC}/contrib/xmindpath; make)
@@ -45,7 +45,7 @@ SAMPLES=	README README.jp cloud.gif dad.eps dad.gif default.mgp \
 
 post-install:
 	(cd ${WRKSRC}/contrib/xmindpath; make install)
-.if ${MANCOMPRESSED} == yes
+.if !defined(NOMANCOMPRESS)
 	# why do we need this?
 	${GZIP_CMD} ${PREFIX}/man/man1/xmindpath.1
 .endif
