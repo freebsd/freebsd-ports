@@ -5354,6 +5354,7 @@ pari-devel	ports/math/pari-devel
 parmetis	ports/math/parmetis
 party		ports/irc/party
 pash		ports/shells/pash
+passivetex	ports/print/passivetex
 passlogd	ports/net/passlogd
 passwd		src/usr.bin/passwd
 paste		src/usr.bin/paste
