@@ -1595,7 +1595,8 @@ WANT_OPENLDAP_VER=	${USE_OPENLDAP_VER}
 .if defined(USE_OPENLDAP)
 .if !empty(WANT_OPENLDAP_VER:M2[0-9]) && \
 	exists(${PORTSDIR}/net/openldap${WANT_OPENLDAP_VER}-client/Makefile)
-LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap${WANT_OPENLDAP_VER}-client
+OPENLDAP_LIB_VER=	${WANT_OPENLDAP_VER:C/^2[0-1]$/2/:C/^2([2-9])$/20\1/}
+LIB_DEPENDS+=		ldap.${OPENLDAP_LIB_VER}:${PORTSDIR}/net/openldap${WANT_OPENLDAP_VER}-client
 .else
 BROKEN=			"unknown OpenLDAP version: ${WANT_OPENLDAP_VER}"
 .endif
@@ -2552,7 +2553,13 @@ CONFIGURE_LOG?=		config.log
 CONFIGURE_FAIL_MESSAGE?=	"Please report the problem to ${MAINTAINER} [maintainer] and attach the \"${CONFIGURE_WRKSRC}/${CONFIGURE_LOG}\" including the output of the failure of your make command. Also, it might be a good idea to provide an overview of all packages installed on your system (e.g. an \`ls ${PKG_DBDIR}\`)."
 
 # Maximum command line length
-CONFIGURE_MAX_CMD_LEN?=16384
+.if !defined(CONFIGURE_MAX_CMD_LEN)
+.if exists(/sbin/sysctl)
+CONFIGURE_MAX_CMD_LEN!=	/sbin/sysctl -n kern.argmax
+.else
+CONFIGURE_MAX_CMD_LEN!=	/usr/sbin/sysctl -n kern.argmax
+.endif
+.endif
 
 .if defined(GNU_CONFIGURE)
 CONFIGURE_ARGS+=	--prefix=${PREFIX} ${CONFIGURE_TARGET}
