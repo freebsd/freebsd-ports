@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+IAM=`basename "$0"`
+
+case "${IAM}" in
+	xincluder-sax) MAIN_CLASS=SAXXIncluder ;;
+	xincluder-dom) MAIN_CLASS=DOMXIncluder ;;
+	xincluder-jdom) MAIN_CLASS=JDOMXIncluder ;;
+	xincluder) MAIN_CLASS=SAXXIncluder ;;
+	*) echo "ERROR!" ; false ;;
+esac
+
+JAVA_VERSION="1.2+" "%%LOCALBASE%%/bin/java" -cp "`"%%LOCALBASE%%/bin/classpath"`" "com.elharo.xml.xinclude.${MAIN_CLASS}" "$@"
