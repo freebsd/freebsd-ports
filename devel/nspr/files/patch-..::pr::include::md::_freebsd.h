@@ -1,6 +1,6 @@
---- ../pr/include/md/_freebsd.h.orig	Sat Feb 16 02:12:55 2002
-+++ ../pr/include/md/_freebsd.h	Sun Jan 12 03:10:59 2003
-@@ -40,14 +40,19 @@
+--- ../pr/include/md/_freebsd.h	Thu Jan 16 08:16:27 2003
++++ ../pr/include/md/_freebsd.h	Sat Dec 13 13:22:20 2003
+@@ -40,14 +40,21 @@
  #if __FreeBSD__ >= 2
  #include <osreldate.h>  /* for __FreeBSD_version */
  #endif
@@ -18,6 +18,8 @@
 +#define _PR_SI_ARCHITECTURE "sparc"
 +#elif defined(__ia64__)
 +#define _PR_SI_ARCHITECTURE "ia64"
++#elif defined(__amd64__)
++#define _PR_SI_ARCHITECTURE "amd64"
  #else
  #error "Unknown CPU architecture"
  #endif
