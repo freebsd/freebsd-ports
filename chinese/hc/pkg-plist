@@ -1,0 +1,6 @@
+bin/hc
+bin/b2g
+bin/g2b
+share/chinese/hc.tab
+share/chinese/hc-supp.tab
+man/man1/hc.1.gz

@@ -1,0 +1,17 @@
+--- Makefile.orig	Wed Mar 10 23:22:44 1993
++++ Makefile	Tue Feb  4 02:48:17 1997
+@@ -5,12 +5,12 @@
+ 
+ b2g:
+ 	echo "#! /bin/csh" > b2g
+-	echo $(PWD)/hc "-m b2g -t" $(PWD)/hc.tab "$$*" >> b2g
++	echo $(PREFIX)/bin/hc "-m b2g -t" $(PREFIX)/share/chinese/hc.tab "$$*" >> b2g
+ 	chmod a+x b2g
+ 
+ g2b:
+ 	echo "#! /bin/csh" > g2b
+-	echo $(PWD)/hc -m g2b -t $(PWD)/hc.tab "$$*" >> g2b
++	echo $(PREFIX)/bin/hc -m g2b -t $(PREFIX)/share/chinese/hc.tab "$$*" >> g2b
+ 	chmod a+x g2b
+ 
+ clean:

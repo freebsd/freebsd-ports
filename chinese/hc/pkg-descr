@@ -1,0 +1,9 @@
+This is the Hanzi Converter, which converts between GB and BIG-5 codes.
+
+The program converts a GB file to a BIG-5 file, or a BIG-5 file to a GB file.
+GB (GuoBiao) refers to the standard implementation of "GB2312-80" of
+Mainland China, in which the two bytes representing a GB code have their
+most significant bit set to 1.  BIG-5 refers to the Big Five standard
+published in 1984 by Taiwan's Institute for Information Industry.
+
+-- David O'Brien
