@@ -1,0 +1,17 @@
+bin/mozilla-bonobo-viewer
+etc/gconf/gconf.xml.defaults/apps/mozilla-bonobo/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/mozilla-bonobo/mime-types/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/mozilla-bonobo/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/mozilla-bonobo/mime-types/%gconf.xml
+etc/gconf/schemas/mozilla-bonobo.schemas
+lib/browser_plugins/libmozilla_bonobo.so
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+@dirrm etc/gconf/gconf.xml.defaults/apps/mozilla-bonobo/mime-types
+@dirrm etc/gconf/gconf.xml.defaults/apps/mozilla-bonobo
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/mozilla-bonobo/mime-types
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/mozilla-bonobo
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
