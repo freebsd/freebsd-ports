@@ -1,46 +1,29 @@
-*** installperl.orig	Mon Jun 24 22:08:25 1996
---- installperl	Wed Jun 26 22:21:05 1996
-***************
-*** 89,95 ****
-  &safe_unlink("$installbin/sperl$ver$exe_ext");
-  if ($d_dosuid) {
-      &cmd("cp suidperl$exe_ext $installbin/sperl$ver$exe_ext");
-!     &chmod(04711, "$installbin/sperl$ver$exe_ext");
-  }
-  
-  exit 0 if $versiononly;
---- 89,95 ----
-  &safe_unlink("$installbin/sperl$ver$exe_ext");
-  if ($d_dosuid) {
-      &cmd("cp suidperl$exe_ext $installbin/sperl$ver$exe_ext");
-!     &chmod(04111, "$installbin/sperl$ver$exe_ext");
-  }
-  
-  exit 0 if $versiononly;
-***************
-*** 203,212 ****
-  	      ((readlink "$mainperldir/perl$exe_ext") eq "$binexp/perl$exe_ext"));
-      }
-      if ((! $mainperl_is_instperl) &&
-! 	(&yn("Many scripts expect perl to be installed as " .
-! 	     "$mainperldir/perl.\n" . 
-! 	     "Do you wish to have $mainperldir/perl be the same as\n" .
-! 	     "$binexp/perl? [y] ")))
-      {	
-  	unlink("$mainperldir/perl$exe_ext");
-  	eval 'link("$installbin/perl$exe_ext", "$mainperldir/perl$exe_ext")' ||
---- 203,216 ----
-  	      ((readlink "$mainperldir/perl$exe_ext") eq "$binexp/perl$exe_ext"));
-      }
-      if ((! $mainperl_is_instperl) &&
-! 	0)
-! #	Disable Perl5 from 'taking' over from the system Perl.
-! #	(nasty hack, but it is only for the FreeBSD build, so WTH.
-! #
-! #	(&yn("Many scripts expect perl to be installed as " .
-! #	     "$mainperldir/perl.\n" . 
-! #	     "Do you wish to have $mainperldir/perl be the same as\n" .
-! #	     "$binexp/perl? [y] ")))
-      {	
-  	unlink("$mainperldir/perl$exe_ext");
-  	eval 'link("$installbin/perl$exe_ext", "$mainperldir/perl$exe_ext")' ||
+--- installperl.ORIG	Mon May 12 05:22:27 1997
++++ installperl	Fri May 23 11:40:27 1997
+@@ -93,7 +93,7 @@
+ safe_unlink("$installbin/sperl$ver$exe_ext");
+ if ($d_dosuid) {
+     copy("suidperl$exe_ext", "$installbin/sperl$ver$exe_ext");
+-    chmod(04711, "$installbin/sperl$ver$exe_ext");
++    chmod(04111, "$installbin/sperl$ver$exe_ext");
+ }
+ 
+ # Install library files.
+@@ -156,11 +156,12 @@
+ 	      (-l $usrbinperl) &&
+ 	      ((readlink $usrbinperl) eq $expinstperl));
+     }
+-    if ((! $mainperl_is_instperl) &&
+-	(yn("Many scripts expect perl to be installed as $usrbinperl.\n" . 
+-	     "Do you wish to have $usrbinperl be the same as\n" .
+-	     "$expinstperl? [y] ")))
+-    {	
++#    if ((! $mainperl_is_instperl) &&
++#	(yn("Many scripts expect perl to be installed as $usrbinperl.\n" . 
++#	     "Do you wish to have $usrbinperl be the same as\n" .
++#	     "$expinstperl? [y] ")))
++#    {	
++    if ('') {  # MarkM - May 1997. Take the NO route always.
+ 	unlink($usrbinperl);
+ 	eval { CORE::link $instperl, $usrbinperl } ||
+ 	    eval { symlink $expinstperl, $usrbinperl } ||

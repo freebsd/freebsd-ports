@@ -1,10 +1,10 @@
 
-* jp-perl-5.003
+* jp-perl-5.004.01
 
 	This port collection was used:
 		port collection lang/perl5
 				by markm@FreeBSD.ORG,
-	    and jperl5.003.patch7_1
+	    and jperl5.004_01-970617
 				by yasushi@cs.washington.edu. 
 
 ----------- From lang/perl5/pkg/DESC
@@ -23,5 +23,5 @@ This is due to a bug in vprintf in the C library.
 - MarkM
 ----------
 
-- Yoshiro MIHIRA
-(sanpei@yy.cs.keio.ac.jp)
+- Hironori Ikura
+<hikura@kaisei.org>
