@@ -1,0 +1,31 @@
+bin/chinput
+bin/kpengine
+bin/zwincontrol
+lib/Chinput/Chinput.ad
+lib/Chinput/hzbig5.dat
+lib/Chinput/hzgb.dat
+lib/Chinput/im/libimm_server.so
+lib/Chinput/im/libimmclient.a
+lib/Chinput/im/cce_pinyin.so
+lib/Chinput/im/cce_hzinput.so
+lib/Chinput/im/TL_hzinput.so
+lib/Chinput/im/sys-gb.tab
+lib/Chinput/im/sys-big5.tab
+lib/Chinput/im/bin/cin2tab
+lib/Chinput/im/bin/txt2tab
+lib/Chinput/im/bin/tab2txt
+lib/Chinput/im/cce/pinyin.map
+lib/Chinput/im/cce/sysphrase.tab
+lib/Chinput/im/cce/usrphrase.tab
+lib/Chinput/im/gb/sp.tab
+lib/Chinput/im/gb/WuBi.tab
+lib/Chinput/im/gb/CCDOSPY.tab
+lib/Chinput/im/gbk/gbkpy_mb.tab
+lib/Chinput/im/tl_sysphrase.gb.bin
+share/locale/zh_CN/LC_MESSAGES/zwincontrol.mo
+@dirrm lib/Chinput/im/gbk
+@dirrm lib/Chinput/im/gb
+@dirrm lib/Chinput/im/cce
+@dirrm lib/Chinput/im/bin
+@dirrm lib/Chinput/im
+@dirrm lib/Chinput
