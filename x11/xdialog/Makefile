@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	xdialog
-PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTVERSION=	2.1.2
 CATEGORIES=	x11
 MASTER_SITES=	http://thgodef.nerim.net/xdialog/
 DISTNAME=	${PORTNAME:S/x/X/}-${PORTVERSION}
@@ -19,16 +18,30 @@ COMMENT=	A drop in replacement for the "dialog" or "cdialog" programs
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
+USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-MAN1=	Xdialog.1
+MAN1=		Xdialog.1
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's| install-docDATA||g'
+		's|m4 lib src|m4 src|g ; \
+		 s|-I../lib||g ; \
+		 s|-L../lib -lgetopt||g ; \
+		 s| install-docDATA||g'
 
 post-install:
 .if !defined(NOPORTDOCS)
