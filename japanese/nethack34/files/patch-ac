@@ -1,14 +1,5 @@
---- include/unixconf.h.orig	Sun Jun 16 13:00:22 2002
-+++ include/unixconf.h	Sun Jun 16 13:01:19 2002
-@@ -25,7 +25,7 @@
- /* #define ULTRIX */	/* define for Ultrix v3.0 or higher (but not lower) */
- 			/* Use BSD for < v3.0 */
- 			/* "ULTRIX" not to be confused with "ultrix" */
--/* #define SYSV	*/	/* define for System V, Solaris 2.x, newer versions */
-+#define SYSV		/* define for System V, Solaris 2.x, newer versions */
- 			/* of Linux */
- /* #define HPUX */	/* Hewlett-Packard's Unix, version 6.5 or higher */
- 			/* use SYSV for < v6.5 */
+--- include/unixconf.h.orig	Tue Aug 13 06:38:29 2002
++++ include/unixconf.h	Tue Aug 13 06:43:03 2002
 @@ -143,7 +143,7 @@
   * A stat system call is done on the mailbox every MAILCKFREQ moves.
   */

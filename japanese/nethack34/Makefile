@@ -26,13 +26,16 @@ PATCH_DIST_STRIP=	-p1
 
 USE_BISON=	yes
 
+HACKNAME?=	jnethack
+HACKDOCSDIR?=	share/doc/ja/nethack
+
 post-install: jnethack-post-install
 
 jnethack-post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/ja/nethack
+	${MKDIR} ${PREFIX}/${HACKDOCSDIR}
 .for i in README.j ChangeLog.j INSTALL.j
-	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/ja/nethack
+	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/${HACKDOCSDIR}
 .endfor
 .endif
 

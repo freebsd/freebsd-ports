@@ -1,5 +1,5 @@
---- include/config.h.orig	Sun Jun 16 03:02:11 2002
-+++ include/config.h	Sun Jun 16 03:05:19 2002
+--- include/config.h.orig	Tue Aug 13 06:38:29 2002
++++ include/config.h	Tue Aug 13 06:39:09 2002
 @@ -216,7 +216,7 @@
  /* #define COMPRESS "/usr/bin/compress"	*/ /* Lempel-Ziv compression */
  /* #define COMPRESS_EXTENSION ".Z" */		/* compress's extension */
@@ -14,7 +14,7 @@
  #    define HACKDIR "jnethackdir"	/* nethack directory */
  #  else
 -#    define HACKDIR "/usr/games/lib/jnethackdir"
-+#    define HACKDIR "%%PREFIX%%/lib/jnethack"
++#    define HACKDIR "%%HACKDIR%%"
  #  endif
  # endif
  
