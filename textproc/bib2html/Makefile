@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	bib2html
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	textproc print
-MASTER_SITES=	http://www.arakhne.org/mirrors/ \
+MASTER_SITES=	http://galland.stephane.free.fr/arakhne.org/bib2html/ \
 		http://fresh.t-systems-sfr.com/unix/src/privat2/
 
 MAINTAINER=	ports@FreeBSD.org
