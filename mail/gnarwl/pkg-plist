@@ -1,0 +1,21 @@
+bin/gnarwl
+etc/gnarwl.cfg
+sbin/damnit
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/FAQ.gz
+%%DOCSDIR%%/HISTORY.gz
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/ISPEnv.schema
+%%DOCSDIR%%/ISPEnv2.schema
+%%DOCSDIR%%/LICENSE
+%%DOCSDIR%%/README
+%%DOCSDIR%%/example.ldif
+var/lib/gnarwl/.forward
+var/lib/gnarwl/badheaders.db
+var/lib/gnarwl/blacklist.db
+var/lib/gnarwl/header.txt
+var/lib/gnarwl/footer.txt
+@dirrm %%DOCSDIR%%
+@dirrm var/lib/gnarwl/bin
+@dirrm var/lib/gnarwl/block
+@dirrm var/lib/gnarwl

@@ -1,0 +1,544 @@
+diff -u --new-file --recursive ../gnarwl-3.3.orig/Makefile.in ./Makefile.in
+--- ../gnarwl-3.3.orig/Makefile.in	Sat Jan 25 12:27:42 2003
++++ ./Makefile.in	Mon Mar 29 14:27:37 2004
+@@ -10,7 +10,7 @@
+ BIN=gnarwl
+ SBIN=damnit
+ MAN_SEC=8
+-VER=$(shell basename `pwd` | sed s\\$(BIN)-\\\\)
++VER=$(shell basename `pwd` | gsed s\\$(BIN)-\\\\)
+ 
+ ##
+ # Path settings (no trailing slashes!)
+@@ -38,8 +38,8 @@
+ ##
+ 
+ CC=@CC@
+-CFLAGS=-DBLOCKDIR=\"$(BLOCKDIR)\" -DCFGFILE=\"$(CONFDIR)/gnarwl.cfg\" -DVERSION=\"$(VER)\" -g -Wall -O2 -I..
+-LFLAGS=-lldap -lgdbm -ldl -lresolv
++CFLAGS=@CFLAGS@ -DBLOCKDIR=\"$(BLOCKDIR)\" -DCFGFILE=\"$(CONFDIR)/gnarwl.cfg\" -DVERSION=\"$(VER)\" -g -Wall -O2 -I.. @CPPFLAGS@
++LFLAGS=@LDFLAGS@ @LIBS@
+ 
+ ##
+ ## No serviceable parts below
+diff -u --new-file --recursive ../gnarwl-3.3.orig/configure ./configure
+--- ../gnarwl-3.3.orig/configure	Fri Dec 13 16:07:31 2002
++++ ./configure	Mon Mar 29 14:09:02 2004
+@@ -835,7 +835,7 @@
+ # Don't blindly perform a `cd "$ac_dir"/$ac_foo && pwd` since $ac_foo can be
+ # absolute.
+ ac_abs_builddir=`cd "$ac_dir" && cd $ac_builddir && pwd`
+-ac_abs_top_builddir=`cd "$ac_dir" && cd ${ac_top_builddir}. && pwd`
++ac_abs_top_builddir=`cd "$ac_dir" && cd $ac_top_builddir && pwd`
+ ac_abs_srcdir=`cd "$ac_dir" && cd $ac_srcdir && pwd`
+ ac_abs_top_srcdir=`cd "$ac_dir" && cd $ac_top_srcdir && pwd`
+ 
+@@ -1909,6 +1909,17 @@
+ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ 
+ 
++# Add some includes things
++
++if test -d /usr/local/include; then
++  CPPFLAGS="$CPPFLAGS -I/usr/local/include"
++fi
++
++if test -d /usr/local/lib; then
++  LDFLAGS="$LDFLAGS -L/usr/local/lib"
++fi
++
++
+ 
+ # Check whether --with-homedir or --without-homedir was given.
+ if test "${with_homedir+set}" = set; then
+@@ -2185,6 +2196,71 @@
+ 
+ 
+ 
++echo "$as_me:$LINENO: checking for iconv in -liconv" >&5
++echo $ECHO_N "checking for iconv in -liconv... $ECHO_C" >&6
++if test "${ac_cv_lib_iconv_iconv+set}" = set; then
++  echo $ECHO_N "(cached) $ECHO_C" >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-liconv  $LIBS"
++cat >conftest.$ac_ext <<_ACEOF
++#line $LINENO "configure"
++#include "confdefs.h"
++
++/* Override any gcc2 internal prototype to avoid an error.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++/* We use char because int might match the return type of a gcc2
++   builtin and then its argument prototype would still apply.  */
++char iconv ();
++#ifdef F77_DUMMY_MAIN
++#  ifdef __cplusplus
++     extern "C"
++#  endif
++   int F77_DUMMY_MAIN() { return 1; }
++#endif
++int
++main ()
++{
++iconv ();
++  ;
++  return 0;
++}
++_ACEOF
++rm -f conftest.$ac_objext conftest$ac_exeext
++if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
++  (eval $ac_link) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); } &&
++         { ac_try='test -s conftest$ac_exeext'
++  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
++  (eval $ac_try) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; }; then
++  ac_cv_lib_iconv_iconv=yes
++else
++  echo "$as_me: failed program was:" >&5
++cat conftest.$ac_ext >&5
++ac_cv_lib_iconv_iconv=no
++fi
++rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++echo "$as_me:$LINENO: result: $ac_cv_lib_iconv_iconv" >&5
++echo "${ECHO_T}$ac_cv_lib_iconv_iconv" >&6
++if test $ac_cv_lib_iconv_iconv = yes; then
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_LIBICONV 1
++_ACEOF
++
++  LIBS="-liconv $LIBS"
++
++fi
++
++
+ for ac_func in iconv
+ do
+ as_ac_var=`echo "ac_cv_func_$ac_func" | $as_tr_sh`
+@@ -2261,6 +2337,342 @@
+ done
+ 
+ 
++
++echo "$as_me:$LINENO: checking for dlopen in -ldl" >&5
++echo $ECHO_N "checking for dlopen in -ldl... $ECHO_C" >&6
++if test "${ac_cv_lib_dl_dlopen+set}" = set; then
++  echo $ECHO_N "(cached) $ECHO_C" >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-ldl  $LIBS"
++cat >conftest.$ac_ext <<_ACEOF
++#line $LINENO "configure"
++#include "confdefs.h"
++
++/* Override any gcc2 internal prototype to avoid an error.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++/* We use char because int might match the return type of a gcc2
++   builtin and then its argument prototype would still apply.  */
++char dlopen ();
++#ifdef F77_DUMMY_MAIN
++#  ifdef __cplusplus
++     extern "C"
++#  endif
++   int F77_DUMMY_MAIN() { return 1; }
++#endif
++int
++main ()
++{
++dlopen ();
++  ;
++  return 0;
++}
++_ACEOF
++rm -f conftest.$ac_objext conftest$ac_exeext
++if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
++  (eval $ac_link) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); } &&
++         { ac_try='test -s conftest$ac_exeext'
++  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
++  (eval $ac_try) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; }; then
++  ac_cv_lib_dl_dlopen=yes
++else
++  echo "$as_me: failed program was:" >&5
++cat conftest.$ac_ext >&5
++ac_cv_lib_dl_dlopen=no
++fi
++rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++echo "$as_me:$LINENO: result: $ac_cv_lib_dl_dlopen" >&5
++echo "${ECHO_T}$ac_cv_lib_dl_dlopen" >&6
++if test $ac_cv_lib_dl_dlopen = yes; then
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_LIBDL 1
++_ACEOF
++
++  LIBS="-ldl $LIBS"
++
++fi
++
++
++
++echo "$as_me:$LINENO: checking for gethostbyname" >&5
++echo $ECHO_N "checking for gethostbyname... $ECHO_C" >&6
++if test "${ac_cv_func_gethostbyname+set}" = set; then
++  echo $ECHO_N "(cached) $ECHO_C" >&6
++else
++  cat >conftest.$ac_ext <<_ACEOF
++#line $LINENO "configure"
++#include "confdefs.h"
++/* System header to define __stub macros and hopefully few prototypes,
++    which can conflict with char gethostbyname (); below.  */
++#include <assert.h>
++/* Override any gcc2 internal prototype to avoid an error.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++/* We use char because int might match the return type of a gcc2
++   builtin and then its argument prototype would still apply.  */
++char gethostbyname ();
++char (*f) ();
++
++#ifdef F77_DUMMY_MAIN
++#  ifdef __cplusplus
++     extern "C"
++#  endif
++   int F77_DUMMY_MAIN() { return 1; }
++#endif
++int
++main ()
++{
++/* The GNU C library defines this for functions which it implements
++    to always fail with ENOSYS.  Some functions are actually named
++    something starting with __ and the normal name is an alias.  */
++#if defined (__stub_gethostbyname) || defined (__stub___gethostbyname)
++choke me
++#else
++f = gethostbyname;
++#endif
++
++  ;
++  return 0;
++}
++_ACEOF
++rm -f conftest.$ac_objext conftest$ac_exeext
++if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
++  (eval $ac_link) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); } &&
++         { ac_try='test -s conftest$ac_exeext'
++  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
++  (eval $ac_try) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; }; then
++  ac_cv_func_gethostbyname=yes
++else
++  echo "$as_me: failed program was:" >&5
++cat conftest.$ac_ext >&5
++ac_cv_func_gethostbyname=no
++fi
++rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
++fi
++echo "$as_me:$LINENO: result: $ac_cv_func_gethostbyname" >&5
++echo "${ECHO_T}$ac_cv_func_gethostbyname" >&6
++if test $ac_cv_func_gethostbyname = yes; then
++  :
++else
++
++echo "$as_me:$LINENO: checking for gethostbyname in -lresolv" >&5
++echo $ECHO_N "checking for gethostbyname in -lresolv... $ECHO_C" >&6
++if test "${ac_cv_lib_resolv_gethostbyname+set}" = set; then
++  echo $ECHO_N "(cached) $ECHO_C" >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-lresolv  $LIBS"
++cat >conftest.$ac_ext <<_ACEOF
++#line $LINENO "configure"
++#include "confdefs.h"
++
++/* Override any gcc2 internal prototype to avoid an error.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++/* We use char because int might match the return type of a gcc2
++   builtin and then its argument prototype would still apply.  */
++char gethostbyname ();
++#ifdef F77_DUMMY_MAIN
++#  ifdef __cplusplus
++     extern "C"
++#  endif
++   int F77_DUMMY_MAIN() { return 1; }
++#endif
++int
++main ()
++{
++gethostbyname ();
++  ;
++  return 0;
++}
++_ACEOF
++rm -f conftest.$ac_objext conftest$ac_exeext
++if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
++  (eval $ac_link) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); } &&
++         { ac_try='test -s conftest$ac_exeext'
++  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
++  (eval $ac_try) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; }; then
++  ac_cv_lib_resolv_gethostbyname=yes
++else
++  echo "$as_me: failed program was:" >&5
++cat conftest.$ac_ext >&5
++ac_cv_lib_resolv_gethostbyname=no
++fi
++rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++echo "$as_me:$LINENO: result: $ac_cv_lib_resolv_gethostbyname" >&5
++echo "${ECHO_T}$ac_cv_lib_resolv_gethostbyname" >&6
++if test $ac_cv_lib_resolv_gethostbyname = yes; then
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_LIBRESOLV 1
++_ACEOF
++
++  LIBS="-lresolv $LIBS"
++
++fi
++
++fi
++
++echo "$as_me:$LINENO: checking for gethostbyname" >&5
++echo $ECHO_N "checking for gethostbyname... $ECHO_C" >&6
++if test "${ac_cv_func_gethostbyname+set}" = set; then
++  echo $ECHO_N "(cached) $ECHO_C" >&6
++else
++  cat >conftest.$ac_ext <<_ACEOF
++#line $LINENO "configure"
++#include "confdefs.h"
++/* System header to define __stub macros and hopefully few prototypes,
++    which can conflict with char gethostbyname (); below.  */
++#include <assert.h>
++/* Override any gcc2 internal prototype to avoid an error.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++/* We use char because int might match the return type of a gcc2
++   builtin and then its argument prototype would still apply.  */
++char gethostbyname ();
++char (*f) ();
++
++#ifdef F77_DUMMY_MAIN
++#  ifdef __cplusplus
++     extern "C"
++#  endif
++   int F77_DUMMY_MAIN() { return 1; }
++#endif
++int
++main ()
++{
++/* The GNU C library defines this for functions which it implements
++    to always fail with ENOSYS.  Some functions are actually named
++    something starting with __ and the normal name is an alias.  */
++#if defined (__stub_gethostbyname) || defined (__stub___gethostbyname)
++choke me
++#else
++f = gethostbyname;
++#endif
++
++  ;
++  return 0;
++}
++_ACEOF
++rm -f conftest.$ac_objext conftest$ac_exeext
++if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
++  (eval $ac_link) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); } &&
++         { ac_try='test -s conftest$ac_exeext'
++  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
++  (eval $ac_try) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; }; then
++  ac_cv_func_gethostbyname=yes
++else
++  echo "$as_me: failed program was:" >&5
++cat conftest.$ac_ext >&5
++ac_cv_func_gethostbyname=no
++fi
++rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
++fi
++echo "$as_me:$LINENO: result: $ac_cv_func_gethostbyname" >&5
++echo "${ECHO_T}$ac_cv_func_gethostbyname" >&6
++if test $ac_cv_func_gethostbyname = yes; then
++  :
++else
++
++echo "$as_me:$LINENO: checking for gethostbyname in -lnsl" >&5
++echo $ECHO_N "checking for gethostbyname in -lnsl... $ECHO_C" >&6
++if test "${ac_cv_lib_nsl_gethostbyname+set}" = set; then
++  echo $ECHO_N "(cached) $ECHO_C" >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-lnsl  $LIBS"
++cat >conftest.$ac_ext <<_ACEOF
++#line $LINENO "configure"
++#include "confdefs.h"
++
++/* Override any gcc2 internal prototype to avoid an error.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++/* We use char because int might match the return type of a gcc2
++   builtin and then its argument prototype would still apply.  */
++char gethostbyname ();
++#ifdef F77_DUMMY_MAIN
++#  ifdef __cplusplus
++     extern "C"
++#  endif
++   int F77_DUMMY_MAIN() { return 1; }
++#endif
++int
++main ()
++{
++gethostbyname ();
++  ;
++  return 0;
++}
++_ACEOF
++rm -f conftest.$ac_objext conftest$ac_exeext
++if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
++  (eval $ac_link) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); } &&
++         { ac_try='test -s conftest$ac_exeext'
++  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
++  (eval $ac_try) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; }; then
++  ac_cv_lib_nsl_gethostbyname=yes
++else
++  echo "$as_me: failed program was:" >&5
++cat conftest.$ac_ext >&5
++ac_cv_lib_nsl_gethostbyname=no
++fi
++rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++echo "$as_me:$LINENO: result: $ac_cv_lib_nsl_gethostbyname" >&5
++echo "${ECHO_T}$ac_cv_lib_nsl_gethostbyname" >&6
++if test $ac_cv_lib_nsl_gethostbyname = yes; then
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_LIBNSL 1
++_ACEOF
++
++  LIBS="-lnsl $LIBS"
++
++fi
++
++fi
++
++
+ cat >>confdefs.h <<_ACEOF
+ #define UMASK $permmask
+ _ACEOF
+@@ -2958,7 +3370,7 @@
+ # Don't blindly perform a `cd "$ac_dir"/$ac_foo && pwd` since $ac_foo can be
+ # absolute.
+ ac_abs_builddir=`cd "$ac_dir" && cd $ac_builddir && pwd`
+-ac_abs_top_builddir=`cd "$ac_dir" && cd ${ac_top_builddir}. && pwd`
++ac_abs_top_builddir=`cd "$ac_dir" && cd $ac_top_builddir && pwd`
+ ac_abs_srcdir=`cd "$ac_dir" && cd $ac_srcdir && pwd`
+ ac_abs_top_srcdir=`cd "$ac_dir" && cd $ac_top_srcdir && pwd`
+ 
+diff -u --new-file --recursive ../gnarwl-3.3.orig/configure.ac ./configure.ac
+--- ../gnarwl-3.3.orig/configure.ac	Mon Dec  9 17:49:38 2002
++++ ./configure.ac	Mon Mar 29 14:08:48 2004
+@@ -6,6 +6,17 @@
+ # Checks for programs.
+ AC_PROG_CC
+ 
++# Add some includes things
++
++if test -d /usr/local/include; then
++  CPPFLAGS="$CPPFLAGS -I/usr/local/include"
++fi
++
++if test -d /usr/local/lib; then
++  LDFLAGS="$LDFLAGS -L/usr/local/lib"
++fi
++
++
+ AC_ARG_WITH(homedir,AC_HELP_STRING([--with-homedir=DIR],[Homedir for the gnarwl user]),[homedir="$withval"],[homedir="\${prefix}/var/lib/gnarwl"])
+ AC_ARG_WITH(docdir,AC_HELP_STRING([--with-docdir=DIR],[Where to install the docs]),docdir="$withval",docdir="\${prefix}/share/doc/packages/gnarwl")
+ AC_ARG_WITH(useradd_prog,AC_HELP_STRING([--with-useradd_prog=DIR],[Programm for adding users]),useradd_prog="$withval",useradd_prog="/usr/sbin/useradd")
+@@ -28,7 +39,15 @@
+ AC_CHECK_LIB([ldap],[ldap_init])
+ AC_CHECK_FUNCS([ldap_set_option])
+ 
++AC_CHECK_LIB([iconv],[iconv])
+ AC_CHECK_FUNCS([iconv])
++
++AC_CHECK_LIB([dl],[dlopen])
++
++dnl I dunno why libresolv is needed on linux so make a klundge for that.
++
++AC_CHECK_FUNC(gethostbyname, , [AC_CHECK_LIB(resolv, gethostbyname)])
++AC_CHECK_FUNC(gethostbyname, , [AC_CHECK_LIB(nsl, gethostbyname)])
+ 
+ AC_DEFINE_UNQUOTED(UMASK,$permmask)
+ AC_DEFINE_UNQUOTED(MAXLINE,$maxline)
+diff -u --new-file --recursive ../gnarwl-3.3.orig/data/Makefile ./data/Makefile
+--- ../gnarwl-3.3.orig/data/Makefile	Fri Dec 13 01:48:20 2002
++++ ./data/Makefile	Mon Mar 29 14:29:02 2004
+@@ -7,10 +7,10 @@
+ 	rm -f $(BIN)-$(VER).spec gnarwl.cfg
+ 
+ config:
+-	@sed "s\\_HOMEDIR_\\$(HOMEDIR)\\g ; s\\_VER_\\$(VER)\\g ; s\\_MAN_SEC_\\$(MAN_SEC)\\g" < config.tmpl > gnarwl.cfg
++	@gsed "s\\_HOMEDIR_\\$(HOMEDIR)\\g ; s\\_VER_\\$(VER)\\g ; s\\_MAN_SEC_\\$(MAN_SEC)\\g" < config.tmpl > gnarwl.cfg
+ 
+ spec:
+-	@sed "s\\_BIN_\\$(BIN)\\g ; s\\_VER_\\$(VER)\\g; s\\_SBIN_\\$(SBIN)\\g; s\\_SEC_\\$(MAN_SEC)\\g" < spec.tmpl > $(BIN)-$(VER).spec 
++	@gsed "s\\_BIN_\\$(BIN)\\g ; s\\_VER_\\$(VER)\\g; s\\_SBIN_\\$(SBIN)\\g; s\\_SEC_\\$(MAN_SEC)\\g" < spec.tmpl > $(BIN)-$(VER).spec 
+ 
+ install:
+ 	mkdir -m 755 -p  $(HOMEDIR)/block $(HOMEDIR)/bin $(CONFDIR)
+diff -u --new-file --recursive ../gnarwl-3.3.orig/doc/Makefile ./doc/Makefile
+--- ../gnarwl-3.3.orig/doc/Makefile	Fri Jun 13 11:29:44 2003
++++ ./doc/Makefile	Mon Mar 29 14:29:29 2004
+@@ -8,8 +8,8 @@
+ 
+ manpage:
+ 	@echo Generating manpage...
+-	@sed "s\\_CONFDIR_\\$(CONFDIR)\\g ; s\\_HOMEDIR_\\$(HOMEDIR)\\g ; s\\_MANSEC_\\$(MAN_SEC)\\g" < $(BIN).man | groff -man -Tascii > $(BIN).$(MAN_SEC)
+-	@sed "s\\_CONFDIR_\\$(CONFDIR)\\g ; s\\_HOMEDIR_\\$(HOMEDIR)\\g ; s\\_MANSEC_\\$(MAN_SEC)\\g" < $(SBIN).man | groff -man -Tascii > $(SBIN).$(MAN_SEC)
++	@gsed "s\\_CONFDIR_\\$(CONFDIR)\\g ; s\\_HOMEDIR_\\$(HOMEDIR)\\g ; s\\_MANSEC_\\$(MAN_SEC)\\g" < $(BIN).man | groff -man -Tascii > $(BIN).$(MAN_SEC)
++	@gsed "s\\_CONFDIR_\\$(CONFDIR)\\g ; s\\_HOMEDIR_\\$(HOMEDIR)\\g ; s\\_MANSEC_\\$(MAN_SEC)\\g" < $(SBIN).man | groff -man -Tascii > $(SBIN).$(MAN_SEC)
+ 
+ 
+ install:
