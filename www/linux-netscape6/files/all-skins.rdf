@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<RDF:RDF
+     xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Description about="urn:mozilla:skin:classic/1.0">
+    <NS341:displayName xmlns:NS341="http://www.mozilla.org/rdf/chrome#">Classic</NS341:displayName>
+    <NS342:author xmlns:NS342="http://www.mozilla.org/rdf/chrome#">mozilla.org</NS342:author>
+    <NS343:description xmlns:NS343="http://www.mozilla.org/rdf/chrome#">This theme simulates the appearance of previous Netscape versions.</NS343:description>
+    <NS344:name xmlns:NS344="http://www.mozilla.org/rdf/chrome#">classic/1.0</NS344:name>
+    <NS345:image xmlns:NS345="http://www.mozilla.org/rdf/chrome#">jar:resource:///chrome/classic.jar!/skin/classic/global/preview.png</NS345:image>
+    <NS346:locType xmlns:NS346="http://www.mozilla.org/rdf/chrome#">install</NS346:locType>
+    <NS347:packages xmlns:NS347="http://www.mozilla.org/rdf/chrome#" resource="urn:mozilla:skin:classic/1.0:packages"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:skin:classic/1.0:messenger">
+    <NS348:baseURL xmlns:NS348="http://www.mozilla.org/rdf/chrome#">jar:resource:/chrome/classic.jar!/skin/classic/messenger/</NS348:baseURL>
+    <NS349:allowScripts xmlns:NS349="http://www.mozilla.org/rdf/chrome#">false</NS349:allowScripts>
+    <NS350:package xmlns:NS350="http://www.mozilla.org/rdf/chrome#" resource="urn:mozilla:package:messenger"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:skin:modern/1.0:global">
+    <NS351:baseURL xmlns:NS351="http://www.mozilla.org/rdf/chrome#">jar:resource:/chrome/modern.jar!/skin/modern/global/</NS351:baseURL>
+    <NS352:allowScripts xmlns:NS352="http://www.mozilla.org/rdf/chrome#">false</NS352:allowScripts>
+    <NS353:package xmlns:NS353="http://www.mozilla.org/rdf/chrome#" resource="urn:mozilla:package:global"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:skin:classic/1.0:editor">
+    <NS354:baseURL xmlns:NS354="http://www.mozilla.org/rdf/chrome#">jar:resource:/chrome/classic.jar!/skin/classic/editor/</NS354:baseURL>
+    <NS355:allowScripts xmlns:NS355="http://www.mozilla.org/rdf/chrome#">false</NS355:allowScripts>
+    <NS356:package xmlns:NS356="http://www.mozilla.org/rdf/chrome#" resource="urn:mozilla:package:editor"/>
+  </RDF:Description>
+  <RDF:Seq about="urn:mozilla:skin:modern/1.0:packages">
+    <RDF:li resource="urn:mozilla:skin:modern/1.0:communicator"/>
+    <RDF:li resource="urn:mozilla:skin:modern/1.0:editor"/>
+    <RDF:li resource="urn:mozilla:skin:modern/1.0:global"/>
+    <RDF:li resource="urn:mozilla:skin:modern/1.0:messenger"/>
+    <RDF:li resource="urn:mozilla:skin:modern/1.0:navigator"/>
+  </RDF:Seq>
+  <RDF:Description about="urn:mozilla:skin:modern/1.0:editor">
+    <NS357:baseURL xmlns:NS357="http://www.mozilla.org/rdf/chrome#">jar:resource:/chrome/modern.jar!/skin/modern/editor/</NS357:baseURL>
+    <NS358:allowScripts xmlns:NS358="http://www.mozilla.org/rdf/chrome#">false</NS358:allowScripts>
+    <NS359:package xmlns:NS359="http://www.mozilla.org/rdf/chrome#" resource="urn:mozilla:package:editor"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:skin:modern/1.0:navigator">
+    <NS360:baseURL xmlns:NS360="http://www.mozilla.org/rdf/chrome#">jar:resource:/chrome/modern.jar!/skin/modern/navigator/</NS360:baseURL>
+    <NS361:allowScripts xmlns:NS361="http://www.mozilla.org/rdf/chrome#">false</NS361:allowScripts>
+    <NS362:package xmlns:NS362="http://www.mozilla.org/rdf/chrome#" resource="urn:mozilla:package:navigator"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:skin:modern/1.0">
+    <NS366:displayName xmlns:NS366="http://www.mozilla.org/rdf/chrome#">Modern</NS366:displayName>
+    <NS367:author xmlns:NS367="http://www.mozilla.org/rdf/chrome#">Netscape</NS367:author>
+    <NS368:description xmlns:NS368="http://www.mozilla.org/rdf/chrome#">This is the default theme for Netscape 6. Apply this theme if you want to restore the original setting.</NS368:description>
+    <NS369:name xmlns:NS369="http://www.mozilla.org/rdf/chrome#">modern/1.0</NS369:name>
+    <NS370:image xmlns:NS370="http://www.mozilla.org/rdf/chrome#">jar:resource:///chrome/modern.jar!/skin/modern/global/preview.gif</NS370:image>
+    <NS371:locType xmlns:NS371="http://www.mozilla.org/rdf/chrome#">install</NS371:locType>
+    <NS372:packages xmlns:NS372="http://www.mozilla.org/rdf/chrome#" resource="urn:mozilla:skin:modern/1.0:packages"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:skin:classic/1.0:communicator">
+    <NS373:baseURL xmlns:NS373="http://www.mozilla.org/rdf/chrome#">jar:resource:/chrome/classic.jar!/skin/classic/communicator/</NS373:baseURL>
+    <NS374:allowScripts xmlns:NS374="http://www.mozilla.org/rdf/chrome#">false</NS374:allowScripts>
+    <NS375:package xmlns:NS375="http://www.mozilla.org/rdf/chrome#" resource="urn:mozilla:package:communicator"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:skin:classic/1.0:global">
+    <NS379:baseURL xmlns:NS379="http://www.mozilla.org/rdf/chrome#">jar:resource:/chrome/classic.jar!/skin/classic/global/</NS379:baseURL>
+    <NS380:allowScripts xmlns:NS380="http://www.mozilla.org/rdf/chrome#">false</NS380:allowScripts>
+    <NS381:package xmlns:NS381="http://www.mozilla.org/rdf/chrome#" resource="urn:mozilla:package:global"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:skin:modern/1.0:communicator">
+    <NS382:baseURL xmlns:NS382="http://www.mozilla.org/rdf/chrome#">jar:resource:/chrome/modern.jar!/skin/modern/communicator/</NS382:baseURL>
+    <NS383:allowScripts xmlns:NS383="http://www.mozilla.org/rdf/chrome#">false</NS383:allowScripts>
+    <NS384:package xmlns:NS384="http://www.mozilla.org/rdf/chrome#" resource="urn:mozilla:package:communicator"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:skin:modern/1.0:messenger">
+    <NS385:baseURL xmlns:NS385="http://www.mozilla.org/rdf/chrome#">jar:resource:/chrome/modern.jar!/skin/modern/messenger/</NS385:baseURL>
+    <NS386:allowScripts xmlns:NS386="http://www.mozilla.org/rdf/chrome#">false</NS386:allowScripts>
+    <NS387:package xmlns:NS387="http://www.mozilla.org/rdf/chrome#" resource="urn:mozilla:package:messenger"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:skin:classic/1.0:navigator">
+    <NS388:baseURL xmlns:NS388="http://www.mozilla.org/rdf/chrome#">jar:resource:/chrome/classic.jar!/skin/classic/navigator/</NS388:baseURL>
+    <NS389:allowScripts xmlns:NS389="http://www.mozilla.org/rdf/chrome#">false</NS389:allowScripts>
+    <NS390:package xmlns:NS390="http://www.mozilla.org/rdf/chrome#" resource="urn:mozilla:package:navigator"/>
+  </RDF:Description>
+  <RDF:Seq about="urn:mozilla:skin:classic/1.0:packages">
+    <RDF:li resource="urn:mozilla:skin:classic/1.0:communicator"/>
+    <RDF:li resource="urn:mozilla:skin:classic/1.0:editor"/>
+    <RDF:li resource="urn:mozilla:skin:classic/1.0:global"/>
+    <RDF:li resource="urn:mozilla:skin:classic/1.0:messenger"/>
+    <RDF:li resource="urn:mozilla:skin:classic/1.0:navigator"/>
+  </RDF:Seq>
+  <RDF:Seq about="urn:mozilla:skin:root">
+    <RDF:li resource="urn:mozilla:skin:modern/1.0"/>
+    <RDF:li resource="urn:mozilla:skin:classic/1.0"/>
+  </RDF:Seq>
+</RDF:RDF>

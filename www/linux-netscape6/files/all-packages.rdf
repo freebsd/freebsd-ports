@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<RDF:RDF
+     xmlns:NS391="http://www.mozilla.org/rdf/chrome#"
+     xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Description about="urn:mozilla:package:global">
+    <NS391:baseURL>jar:resource:/chrome/toolkit.jar!/content/global/</NS391:baseURL>
+    <NS391:locType>install</NS391:locType>
+    <NS391:displayName>Toolkit</NS391:displayName>
+    <NS391:author>mozilla.org</NS391:author>
+    <NS391:name>global</NS391:name>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:package:communicator">
+    <NS391:baseURL>jar:resource:/chrome/comm.jar!/content/communicator/</NS391:baseURL>
+    <NS391:locType>install</NS391:locType>
+    <NS391:displayName>Communicator Shared</NS391:displayName>
+    <NS391:author>mozilla.org</NS391:author>
+    <NS391:name>communicator</NS391:name>
+  </RDF:Description>
+  <RDF:Seq about="urn:mozilla:package:root">
+    <RDF:li resource="urn:mozilla:package:global"/>
+    <RDF:li resource="urn:mozilla:package:communicator"/>
+    <RDF:li resource="urn:mozilla:package:editor"/>
+    <RDF:li resource="urn:mozilla:package:navigator"/>
+    <RDF:li resource="urn:mozilla:package:messenger"/>
+  </RDF:Seq>
+  <RDF:Description about="urn:mozilla:package:navigator">
+    <NS391:baseURL>jar:resource:/chrome/comm.jar!/content/navigator/</NS391:baseURL>
+    <NS391:locType>install</NS391:locType>
+    <NS391:displayName>Navigator</NS391:displayName>
+    <NS391:author>mozilla.org</NS391:author>
+    <NS391:name>navigator</NS391:name>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:package:editor">
+    <NS391:baseURL>jar:resource:/chrome/comm.jar!/content/editor/</NS391:baseURL>
+    <NS391:locType>install</NS391:locType>
+    <NS391:displayName>Editor</NS391:displayName>
+    <NS391:author>mozilla.org</NS391:author>
+    <NS391:name>editor</NS391:name>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:package:messenger">
+    <NS391:baseURL>jar:resource:/chrome/messenger.jar!/content/messenger/</NS391:baseURL>
+    <NS391:locType>install</NS391:locType>
+    <NS391:displayName>Messenger</NS391:displayName>
+    <NS391:author>mozilla.org</NS391:author>
+    <NS391:name>messenger</NS391:name>
+  </RDF:Description>
+</RDF:RDF>
