@@ -3354,6 +3354,7 @@ ircproxy	ports/irc/ircproxy
 ircservices	ports/irc/ircservices
 irit		ports/graphics/irit
 iroffer		ports/irc/iroffer
+ironpython	ports/lang/ironpython
 irrd		ports/net/irrd
 irrtoolset	ports/net-mgmt/irrtoolset
 irsim		ports/cad/irsim
