@@ -345,6 +345,7 @@
     SUBDIR += ruby-sary
     SUBDIR += ruby-spreadsheet-excel
     SUBDIR += ruby-text-format
+    SUBDIR += ruby-xmlconfigfile
     SUBDIR += ruby-xmlparser
     SUBDIR += ruby-xmlscan
     SUBDIR += ruby-xmlscan-old
