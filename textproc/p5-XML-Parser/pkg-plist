@@ -21,6 +21,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings/x-sjis-jisx0
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings/x-sjis-unicode.enc
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Expat.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/LWPExternEnt.pl
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Parser/Expat
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Parser
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML
