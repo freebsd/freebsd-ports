@@ -1187,6 +1187,7 @@ dnetc		ports/misc/dnetc/
 dnews		ports/news/dnews
 dnrd		ports/net/dnrd
 dns_balance	ports/net/dns_balance
+dnsmasq		ports/net/dnsmasq
 dnssecwalker	ports/net/dnssecwalker
 dnstop		ports/net/dnstop
 dnstracer	ports/net/dnstracer
