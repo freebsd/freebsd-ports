@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pancho
-PORTVERSION=	7.1.0
+PORTVERSION=	9.0.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.panchoproject.org/archives/pancho/
 DISTNAME=	pancho-v${PORTVERSION}
@@ -17,22 +17,22 @@ RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/SNMP.pm:${PORTSDIR
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Config/IniFiles.pm:${PORTSDIR}/devel/p5-Config-IniFiles \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Parallel/ForkManager.pm:${PORTSDIR}/devel/p5-Parallel-ForkManager
 
+WRKSRC=		${WRKDIR}/Pancho-${PORTVERSION}
 USE_PERL5=	YES
-NO_BUILD=	YES
+PERL_CONFIGURE=	YES
 
-pre-patch:
-	@${CHMOD} u+w ${WRKSRC}/pancho
-	@${MV} ${WRKSRC}/pancho ${WRKSRC}/pancho.old
-	@${SED} -e '1,1s:/usr/bin/perl:${PERL5}:' \
-		< ${WRKSRC}/pancho.old > ${WRKSRC}/pancho
-	@${RM} ${WRKSRC}/pancho.old
-	@${MV} ${WRKSRC}/pancho ${WRKSRC}/pancho.old
-	@${SED} -e '28,1s:pancho.conf:${PREFIX}/etc/pancho.conf:' \
-		< ${WRKSRC}/pancho.old > ${WRKSRC}/pancho
-	@${RM} ${WRKSRC}/pancho.old
+MAN1=		pancho.1
 
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/pancho ${PREFIX}/bin
+post-patch:
+	@${MV} ${WRKSRC}/lib/Pancho/Plugins/README ${WRKSRC}/README.plugins
+	@${MV} ${WRKSRC}/lib/Pancho/Plugins/Plugin.sample ${WRKSRC}/
+
+post-install:
 	@${INSTALL_DATA} ${WRKSRC}/samples/sample.conf ${PREFIX}/etc/pancho.conf.sample
-
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
+.for f in README README.plugins Plugin.sample
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/${PORTNAME}
+.endfor
+.endif
 .include <bsd.port.mk>
