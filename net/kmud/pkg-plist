@@ -1,0 +1,9 @@
+share/doc/HTML/en/kmud/index-1.html
+share/doc/HTML/en/kmud/index-2.html
+share/doc/HTML/en/kmud/index-3.html
+share/doc/HTML/en/kmud/index-4.html
+share/doc/HTML/en/kmud/index.html
+bin/kmud
+share/applnk/Applications/kmud.kdelnk
+share/icons/kmud.xpm
+@dirrm share/doc/HTML/en/kmud
