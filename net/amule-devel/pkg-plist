@@ -42,11 +42,9 @@ share/gnome/doc/aMule-2.0.0rc7/license.txt
 share/gnome/pixmaps/amule.xpm
 %%PL_ALC%%share/gnome/pixmaps/alc.xpm
 %%PL_CAS%%share/gnome/pixmaps/wxcas.xpm
-@unexec rmdir %D/share/gnome/pixmaps 2>/dev/null || true
 share/gnome/applications/amule.desktop
 %%PL_ALC%%share/gnome/applications/alc.desktop
 %%PL_CAS%%share/gnome/applications/wxcas.desktop
-@unexec rmdir %D/share/gnome/applications 2>/dev/null || true
 %%PL_AMULEWEBSRV%%share/gnome/amuleweb/webserver/GraphCon.gif
 %%PL_AMULEWEBSRV%%share/gnome/amuleweb/webserver/GraphDL.gif
 %%PL_AMULEWEBSRV%%share/gnome/amuleweb/webserver/GraphUL.gif
