@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.88 1998/07/31 18:50:34 nectar Exp $
+# $Id: Makefile,v 1.89 1998/08/09 00:29:08 steve Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -70,6 +70,7 @@
     SUBDIR += wml
     SUBDIR += wn
     SUBDIR += wwwcount
+    SUBDIR += wwwoffle
     SUBDIR += wwwstat
     SUBDIR += xitami
 
