@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File
-PORTVERSION=	1.1.0.r2
+PORTVERSION=	1.1.0.r3
 PORTEPOCH=	1
 CATEGORIES=	sysutils www pear
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/RC/}
@@ -24,10 +24,10 @@ TESTS=		parser.php test.csv FileTest.php
 
 .include <bsd.port.pre.mk>
 
-PHP_VERS=       ${PHP_VERSION:S/.//g}
+PHP_VERS=	${PHP_VERSION:S/.//g}
 
 .if defined(PHP_VERS) && ${PHP_VERS} < 430
-IGNORE=         "You need PHP 4.3.0 or later to install PEAR::File"
+IGNORE=		"You need PHP 4.3.0 or later to install PEAR::File"
 .endif
 
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
