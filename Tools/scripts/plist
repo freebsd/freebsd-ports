@@ -83,17 +83,30 @@ end
 
 if __FILE__ == $0
 	require 'getopts'
-	if !getopts('M', 'm:') || ARGV.size != 1
+	if !getopts('Md', 'm:') || ARGV.size != 1
 		$stderr.print <<-USAGE_EOF
-usage: #{$0} [-M] [-m mtree] somepath
+usage: #{$0} [-Md] [-m mtree] somepath
        Generate a pkg-plist to stdout given a previously empty somepath which
        a port has been installed into (PREFIX=somepath).  The mtree file is
        consulted to prevent base directories from being added to the plist.
        The -M argument allows manpages to be added to the plist.
+       The -d argument puts all @dirrm commands at the end of the plist.
 USAGE_EOF
 		exit 1
 	end
-	man = $OPT_M || true
 	mtree = $OPT_m || '/etc/mtree/BSD.local.dist'
-	puts Plist.new(man, Mtree.read(mtree).paths).make(ARGV[0]).join("\n")
+	pl = Plist.new(!$OPT_M, Mtree.read(mtree).paths).make(ARGV[0])
+	if $OPT_d
+		plnotdirrm = []
+		pldirrm = []
+		pl.each {|ent|
+			if ent =~ /^@dirrm /
+				pldirrm.push(ent)
+			else
+				plnotdirrm.push(ent)
+			end
+			pl = plnotdirrm + pldirrm
+		}
+	end
+	puts(pl.join("\n"))
 end
