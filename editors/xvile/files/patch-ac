@@ -1,5 +1,5 @@
---- makefile.in.orig	Thu Nov 11 03:04:17 1999
-+++ makefile.in	Sat Dec 25 12:03:45 1999
+--- makefile.in.orig	Wed Jan 12 00:30:07 2000
++++ makefile.in	Wed Feb  2 21:37:48 2000
 @@ -35,6 +35,7 @@
  INSTALL		= @INSTALL@
  INSTALL_PROGRAM	= @INSTALL_PROGRAM@
@@ -17,7 +17,7 @@
  
  
  prefix		= @prefix@
-@@ -265,7 +266,7 @@
+@@ -267,7 +268,7 @@
  
  all ::	$(ALL)
  
@@ -26,34 +26,12 @@
  	-mv $(TARGET) o$(TARGET)
  	@ECHO_LD@$(LINK) $(LDFLAGS) -o $@ $(OBJ) $(X_LIBS) $(LIBS)
  
-@@ -607,9 +608,9 @@
+@@ -611,7 +612,7 @@
  	$(INSTALL_PROGRAM)	$(TARGET) $@
  
  $(BINDIR)/xshell.sh:		$(srcdir)/xshell.sh
 -	$(INSTALL_PROGRAM)	$(srcdir)/xshell.sh $@
 +	$(INSTALL_SCRIPT)	$(srcdir)/xshell.sh $@
  $(BINDIR)/vileget:		$(srcdir)/perl/vileget
--	$(INSTALL_SCRIPT)	$(srcdir)/perl/vileget $@
-+	$(INSTALL_SCRIPTV)	$(srcdir)/perl/vileget $@
+ 	$(INSTALL_SCRIPT)	$(srcdir)/perl/vileget $@
  
- $(BINDIR)/@TARGET@-pager:	$(srcdir)/macros/vile-pager
- 	sed -e 's/ vile / @TARGET@ /' $(srcdir)/macros/vile-pager >$@
-@@ -646,15 +647,15 @@
- $(PERLDIR)/dir.pl:		$(srcdir)/perl/dir.pl
- 	$(INSTALL_DATA)		$(srcdir)/perl/dir.pl $@
- $(PERLDIR)/glob2re.pl:		$(srcdir)/perl/glob2re.pl
--	$(INSTALL_SCRIPT)	$(srcdir)/perl/glob2re.pl $@
-+	$(INSTALL_SCRIPTV)	$(srcdir)/perl/glob2re.pl $@
- $(PERLDIR)/hgrep.pl:		$(srcdir)/perl/hgrep.pl
--	$(INSTALL_SCRIPT)	$(srcdir)/perl/hgrep.pl $@
-+	$(INSTALL_SCRIPTV)	$(srcdir)/perl/hgrep.pl $@
- $(PERLDIR)/hilite.pl:		$(srcdir)/perl/hilite.pl
- 	$(INSTALL_DATA)		$(srcdir)/perl/hilite.pl $@
- $(PERLDIR)/lock.pl:		$(srcdir)/perl/lock.pl
- 	$(INSTALL_DATA)		$(srcdir)/perl/lock.pl $@
- $(PERLDIR)/manfilt.pl:		$(srcdir)/perl/manfilt.pl
--	$(INSTALL_SCRIPT)	$(srcdir)/perl/manfilt.pl $@
-+	$(INSTALL_SCRIPTV)	$(srcdir)/perl/manfilt.pl $@
- $(PERLDIR)/mime.pl:		$(srcdir)/perl/mime.pl
- 	$(INSTALL_DATA)		$(srcdir)/perl/mime.pl $@
- $(PERLDIR)/plugins.pl:		$(srcdir)/perl/plugins.pl
