@@ -28,6 +28,9 @@ F=$WRKDIR/.config
 configure () {
 rm -f $F
 
+# set ProjectRoot to be ${PREFIX}
+echo "#define ProjectRoot ${PREFIX}" >>$F
+
 # Tk detection
 tkversion=
 for v in 42 80 81 82 83 42jp 80jp; do
@@ -75,7 +78,7 @@ done
 if [ X$tkversion != X ]; then
   case $tkversion in
   *jp)
-    echo "Using Japanized tk-$jptkLversion"
+    echo "Using Japanized tk-$tkLversion"
     if [ X"${MACHINE}" = X"pc98" ]; then
 	echo "#define HasJpTk		YES" >>$F
 	echo "#define JpTkLibDir	/usr/local/lib" >>$F
@@ -150,7 +153,7 @@ if [ -e /etc/X11/xinit/xinitrc ]; then
 else
     XINITDEFAULT=YES
 fi
-if [ -e /usr/X11R6/lib/X11/fs/config ]; then
+if [ -e ${PREFIX}/lib/X11/fs/config ]; then
     XFSDEFAULT=NO
 else
     XFSDEFAULT=YES
