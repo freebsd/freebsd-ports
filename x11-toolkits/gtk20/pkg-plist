@@ -133,6 +133,7 @@ lib/libgtk11d.so.1.2
 share/locale/de/LC_MESSAGES/gtk+.mo
 share/locale/fr/LC_MESSAGES/gtk+.mo
 share/locale/ja/LC_MESSAGES/gtk+.mo
+share/locale/ko/LC_MESSAGES/gtk+.mo
 share/locale/nl/LC_MESSAGES/gtk+.mo
 share/locale/no/LC_MESSAGES/gtk+.mo
 share/locale/pl/LC_MESSAGES/gtk+.mo
