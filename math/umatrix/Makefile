@@ -8,10 +8,9 @@
 PORTNAME=	umatrix
 PORTVERSION=	1.1
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
+MASTER_SITES=	http://www.sigala.it/sandro/files/
 
-MAINTAINER=	ssigala@globalnet.it
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 MAN1=		umatrix.1
