@@ -1,0 +1,10 @@
+--- Makefile.comm.in.orig	Mon Jun  5 00:24:18 2000
++++ Makefile.comm.in	Mon Jun  5 00:24:41 2000
+@@ -19,6 +19,7 @@
+ PERL=@PERL@
+ LIBTOOL=@LIBTOOL@
+ INSTALL=@INSTALL@
++INSTALL_PROGRAM=@INSTALL_PROGRAM@
+ 
+ LIBOBJS=@LIBOBJS@
+ LIBS=@LIBS@
