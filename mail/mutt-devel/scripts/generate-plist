@@ -29,8 +29,9 @@ bin/pgpewrap
 bin/pgpring
 bin/smime_keys
 @unexec if cmp -s %D/etc/Muttrc.dist %D/etc/Muttrc; then rm -f %D/etc/Muttrc; fi
+@unexec if cmp -s %D/etc/mime.types.dist %D/etc/mime.types; then rm -f %D/etc/mime.types; fi
 etc/Muttrc.dist
-etc/mime.types
+etc/mime.types.dist
 EOF
 
 if [ "$MUTT_NLS" = "yes" ]; then
