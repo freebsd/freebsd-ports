@@ -1,0 +1,48 @@
+@cwd /usr/local
+bin/kmymoney2
+share/doc/HTML/en/kmymoney2/common
+share/doc/HTML/en/kmymoney2/index.docbook
+share/doc/HTML/en/kmymoney2/blank_icon.png
+share/doc/HTML/en/kmymoney2/mainwindow.png
+share/doc/HTML/en/kmymoney2/newaccount.png
+share/doc/HTML/en/kmymoney2/newaccount_icon.png
+share/doc/HTML/en/kmymoney2/newbank.png
+share/doc/HTML/en/kmymoney2/newbank_icon.png
+share/doc/HTML/en/kmymoney2/startdialog.png
+share/doc/HTML/en/kmymoney2/transwindow.png
+share/applnk/Applications/kmymoney2.desktop
+share/apps/kmymoney2/toolbar/kmymoney_newacc.xpm
+share/apps/kmymoney2/toolbar/kmymoney_up.xpm
+share/apps/kmymoney2/pics/account-folder.xpm
+share/apps/kmymoney2/pics/bank-folder.xpm
+share/apps/kmymoney2/pics/startlogo.png
+share/apps/kmymoney2/pics/setting_list.png
+share/apps/kmymoney2/icons/hicolor/22x22/actions/pay_edit.png
+share/apps/kmymoney2/icons/hicolor/22x22/actions/bank.png
+share/apps/kmymoney2/icons/hicolor/22x22/actions/categories.png
+share/apps/kmymoney2/icons/hicolor/22x22/actions/transaction_find.png
+share/apps/kmymoney2/icons/hicolor/22x22/actions/reconcile.png
+share/apps/kmymoney2/icons/hicolor/16x16/actions/bank.png
+share/apps/kmymoney2/icons/hicolor/16x16/actions/categories.png
+share/apps/kmymoney2/icons/hicolor/16x16/actions/pay_edit.png
+share/apps/kmymoney2/icons/hicolor/16x16/actions/transaction_export.png
+share/apps/kmymoney2/icons/hicolor/16x16/actions/transaction_find.png
+share/apps/kmymoney2/icons/hicolor/16x16/actions/transaction_import.png
+share/apps/kmymoney2/icons/hicolor/16x16/actions/reconcile.png
+share/apps/kmymoney2/kmymoney2ui.rc
+share/apps/kmymoney2/default_categories.dat
+share/icons/locolor/16x16/apps/kmymoney2.png
+share/icons/locolor/32x32/apps/kmymoney2.png
+share/icons/hicolor/16x16/mimetypes/kmy.png
+share/icons/hicolor/32x32/mimetypes/kmy.png
+share/icons/hicolor/48x48/mimetypes/kmy.png
+@dirrm share/doc/HTML/en/kmymoney2
+@dirrm share/apps/kmymoney2/toolbar
+@dirrm share/apps/kmymoney2/pics
+@dirrm share/apps/kmymoney2/icons/hicolor/16x16/actions
+@dirrm share/apps/kmymoney2/icons/hicolor/16x16
+@dirrm share/apps/kmymoney2/icons/hicolor/22x22/actions
+@dirrm share/apps/kmymoney2/icons/hicolor/22x22
+@dirrm share/apps/kmymoney2/icons/hicolor
+@dirrm share/apps/kmymoney2/icons
+@dirrm share/apps/kmymoney2
