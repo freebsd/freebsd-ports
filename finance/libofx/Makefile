@@ -17,8 +17,9 @@ COMMENT=	OpenSource implementation of the OFX (Open Financial eXchange)
 LIB_DEPENDS=	osp.3:${PORTSDIR}/textproc/opensp
 
 USE_GMAKE=	yes
-USE_GNOME=	gnometarget lthack
-USE_INC_LIBTOOL_VER=	13
+USE_GNOME=	gnometarge
+USE_LIBTOOL_VER=	15
+USE_GETOPT_LONG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-doxygen --disable-dot \
