@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	bing
-PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTVERSION=	1.0.5
 CATEGORIES=	net
-MASTER_SITES=	ftp://netsw.org/net/ip/audit/load/bing/
+MASTER_SITES=	http://www.freenix.org/reseau/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A point-to-point bandwith measurement tool

@@ -1,3 +1,3 @@
 bin/bing
-share/doc/bing/README
-@dirrm share/doc/bing
+%%DOCSDIR%%/README
+@dirrm %%DOCSDIR%%
