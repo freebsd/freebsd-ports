@@ -6,30 +6,25 @@
 #
 
 PORTNAME=	xerces-j
-PORTVERSION=	1.4.4
-CATEGORIES=	textproc
+PORTVERSION=	2.0.1
+CATEGORIES=	textproc java
 MASTER_SITES=	http://xml.apache.org/dist/xerces-j/
-DISTNAME=	Xerces-J-bin.${PORTVERSION}
+DISTNAME=	xerces-${PORTVERSION:S/./_/g}
+DISTFILES=	Xerces-J-bin.${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	kevlo@FreeBSD.org
 
-RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
+USE_JAVA=	1.2+
 
 WRKSRC=		${WRKDIR}/xerces-${PORTVERSION:S/./_/g}
 NO_BUILD=	yes
 
-PLIST_SUB=	PORTVERSION="${PORTVERSION}"
-
-.include <bsd.port.pre.mk>
-
 do-install:
-	@cd ${WRKSRC}; \
-		${MKDIR} ${PREFIX}/share/java/classes/; \
-		${INSTALL_DATA} ${WRKSRC}/xerces.jar ${WRKSRC}/xercesSamples.jar ${PREFIX}/share/java/classes/; \
-		${MKDIR} ${PREFIX}/share/java/${PKGNAME}/; \
-		${CP} LICENSE ${PREFIX}/share/java/${PKGNAME}/; \
-		${CP} -R docs ${PREFIX}/share/java/${PKGNAME}/; \
-		${CP} -R data ${PREFIX}/share/java/${PKGNAME}/; \
-		${CP} -R samples ${PREFIX}/share/java/${PKGNAME}/
+	(cd ${WRKSRC} && ${INSTALL_DATA} xercesImpl.jar xmlParserAPIs.jar \
+		${PREFIX}/share/java/classes)
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC}/docs && ${TAR} -cf - . | ${TAR} -xf - -C ${DOCSDIR})
+.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
