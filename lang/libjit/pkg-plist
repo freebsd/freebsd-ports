@@ -12,6 +12,8 @@ include/jit/jit-init.h
 include/jit/jit-insn.h
 include/jit/jit-intrinsic.h
 include/jit/jit-meta.h
+include/jit/jit-objmodel-private.h
+include/jit/jit-objmodel.h
 include/jit/jit-opcode.h
 include/jit/jit-plus.h
 include/jit/jit-type.h

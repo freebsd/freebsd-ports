@@ -1,12 +1,12 @@
---- jit/jit-interp.cpp.orig	Tue Apr 27 00:23:50 2004
-+++ jit/jit-interp.cpp	Tue Apr 27 00:24:18 2004
-@@ -30,6 +30,9 @@
- #include "jit-rules.h"
- #include "jit-memory.h"
- #include <config.h>
-+#ifdef __FreeBSD__
-+	#include <stdlib.h>
-+#endif
+--- jit/jit-interp.c.orig	Sun Aug  8 14:47:39 2004
++++ jit/jit-interp.c	Sun Aug  8 14:48:08 2004
+@@ -33,6 +33,9 @@
  #if HAVE_ALLOCA_H
  	#include <alloca.h>
  #endif
++#ifdef __FreeBSD__
++	#include <stdlib.h>
++#endif
+ #ifdef JIT_WIN32_PLATFORM
+ 	#include <malloc.h>
+ 	#ifndef alloca
