@@ -31,6 +31,7 @@ COMMENT=	The GNU Bourne Again Shell
 
 .include <bsd.port.pre.mk>
 
+USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/bash-${PORTVERSION:C/\....$//}
 GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS=	--with-installed-readline
@@ -40,6 +41,10 @@ CONFIGURE_ENV=	LDFLAGS=-static
 CONFIGURE_ARGS+= --enable-static-link=no
 .endif
 MAN1=		bash.1 bashbug.1
+
+post-patch:
+	@${REINPLACE_CMD} -e "s,.FN /bin/bash,.FN ${PREFIX}/bin/bash," \
+		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}/doc/bash.1
 
 post-install:
 	${CP} /etc/shells /etc/shells.bak
