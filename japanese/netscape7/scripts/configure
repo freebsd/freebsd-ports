@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/japanese/netscape7/scripts/Attic/configure,v 1.3 2002-10-14 13:50:20 trevor Exp $
+# $FreeBSD: /tmp/pcvs/ports/japanese/netscape7/scripts/Attic/configure,v 1.4 2003-07-03 09:55:02 trevor Exp $
 
 echo ${WRKSRC}/components.conf
 if [ -f ${WRKSRC}/components.conf ]; then
@@ -11,14 +11,13 @@ tempfile=`/usr/bin/mktemp -t checklist`
 
 if [ -z "${BATCH}" ]; then
 
-/usr/bin/dialog --title "Netscape 6 component selection" --clear \
+/usr/bin/dialog --title "Netscape 7 component selection" --clear \
 	--checklist "\n\
-Choose components of Netscape 6 to download and install. \n\
+Choose components of Netscape 7 to download and install. \n\
 Press the space bar to toggle selections." -1 -1 10 \
 "browser"	"Web browser"				ON \
 "defljajp"	"Japanese/Japan profile defaults"	ON \
 "flash"		"Flash plugin"				ON \
-"jre"		"Java plugin (requires linux_base-6"	ON \
 "langjajp"	"Japanese/Japan language pack"		ON \
 "mail"		"e-mail and news"			ON \
 "regjp"		"regional settings for Japan"		ON \
@@ -53,3 +52,7 @@ echo "$choice" \
 	| perl -pi -e "s/ /\n/g" \
 	> ${WRKSRC}/components.conf
 fi
+
+echo "* Your choices are saved.  You must run the \"make\" command again to"
+echo "* complete the build.  Ignore the \"Error code 1\" below."
+exit 1

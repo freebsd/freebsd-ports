@@ -7,9 +7,9 @@
 #
 
 PKGNAMEPREFIX=	ja-
-PORTREVISION=	0
+PORTVERSION=	7.02
 CATEGORIES=	japanese www linux
-
+MASTER_SITE_SUBDIR=	${DIST_SUBDIR}/unix/linux22/eehxkt
 DISTFILES=	AIM.xpi \
 		browser.xpi \
 		defljajp.xpi \

@@ -1,17 +1,4 @@
-* WARNING **********************************************************************
-* Using the same profile for Netscape 7 and Mozilla is strongly discouraged.   *
-* See <URL:http://wp.netscape.com/eng/mozilla/ns7/relnotes/7.html#prefs>.      *
-*                                                                              *
-* This port has a security bug.  If a user enables Javascript, hostile Web     *
-* sites can track the URLs which the user visits after leaving the site.  Such *
-* URLs could contain passwords or other sensitive information.  To avoid this  *
-* bug, users can add the line:                                                 *
-*                                                                              *
-*       user_pref("capability.policy.default.Window.onunload", "noAccess");    *
-*                                                                              *
-* to their prefs.js files under ~/.mozilla/ (thanks to Sven Neuhaus for        *
-* reporting the bug, and to MadMaverick9 at Mozillazine for the work-around).  *
-*                                                                              *
-* See <URL:http://members.ping.de/~sven/mozbug/refcook.html> for a             *
-* demonstration and other work-arounds.                                        *
-********************************************************************************
+* WARNING ********************************************************************
+* Using the same profile for Netscape 7 and Mozilla is strongly discouraged. *
+* See <URL:http://wp.netscape.com/eng/mozilla/ns7/relnotes/7.html#prefs>.    *
+******************************************************************************
