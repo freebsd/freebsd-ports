@@ -36,6 +36,7 @@ bin/y2racc
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/parser.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/usage.html
+@dirrm %%RUBY_SITELIBDIR%%/racc
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
