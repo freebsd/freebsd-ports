@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	vmware2
-PORTVERSION=	2.0.1.570
+PORTVERSION=	2.0.2.621
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://www4.vmware.com/software/ \
 		http://vmware-svca.www.conxion.com/software/ \
