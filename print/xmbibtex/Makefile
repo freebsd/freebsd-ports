@@ -3,7 +3,7 @@
 # Date created:				06 Nov 1997
 # Whom:					Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1997/11/10 10:34:58 asami Exp $
+# $Id: Makefile,v 1.3 1997/11/10 10:47:35 tg Exp $
 #
 
 DISTNAME=	xmbibtex-1.3
@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	apps/tex
 
 MAINTAINER=	ports@FreeBSD.ORG
 
+REQUIRES_MOTIF=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
