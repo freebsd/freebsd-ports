@@ -16,10 +16,17 @@ MAINTAINER=	se@freebsd.org
 .if !exists(/usr/include/tcpd.h)
 LIB_DEPENDS=	wrap.7:${PORTSDIR}/security/tcp_wrapper
 .endif
+.if defined(WITH_SASL)
+LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
+.endif
 
 USE_BISON=	true
 GNU_CONFIGURE=	true
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX} #--without-flex --without-bison
+.if defined(WITH_SASL)
+CONFIGURE_ARGS+=	--with-sasl=${PREFIX}
+CFLAGS+=	-I${PREFIX}/include/sasl
+.endif
 
 MAN1=	ra.1 racount.1 ragator.1 ramon.1 rasort.1 raxml.1
 MAN5=	argus.5 argus.conf.5 rarc.5
