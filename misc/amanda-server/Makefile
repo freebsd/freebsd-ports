@@ -29,6 +29,10 @@ PATCH_STRIP=
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502000
+BROKEN=		"Broken pkg-plist"
+.endif
+
 .if exists(/usr/include/sys/scsiio.h)
 .error You have the file /usr/include/sys/scsiio.h on your system.  This was removed after FreeBSD 3.5 and will break the build of this port.  Please remove it.
 .endif
