@@ -1,0 +1,22 @@
+--- src/perl/Makefile.in.orig	Tue Feb 22 09:11:53 2005
++++ src/perl/Makefile.in	Tue Feb 22 09:12:11 2005
+@@ -467,7 +467,7 @@
+ 
+ install-exec-local:
+ 	for dir in $(perl_dirs); do \
+-	  cd $$dir && $(MAKE) install && cd ..; \
++	  cd $$dir && $(MAKE) pure_install && cd ..; \
+ 	done
+ 
+ clean-generic:
+--- src/perl/Makefile.am.orig	Tue Feb 22 09:12:25 2005
++++ src/perl/Makefile.am	Tue Feb 22 09:12:35 2005
+@@ -148,7 +148,7 @@
+ 
+ install-exec-local:
+ 	for dir in $(perl_dirs); do \
+-	  cd $$dir && $(MAKE) install && cd ..; \
++	  cd $$dir && $(MAKE) pure_install && cd ..; \
+ 	done
+ 
+ clean-generic:
