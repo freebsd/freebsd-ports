@@ -1,0 +1,6 @@
+This module supports getaddrinfo() and getnameinfo() to intend to
+enable protocol independent programing.
+If your environment supports IPv6, IPv6 related defines such as
+AF_INET6 are included.
+
+- Hajimu UMEMOTO <ume@FreeBSD.org>
