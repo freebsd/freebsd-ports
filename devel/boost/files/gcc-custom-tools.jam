@@ -1,3 +1,0 @@
-extends-toolset gcc ;
-GXX = %%GXX%% ;
-GCC = %%GCC%% ;
