@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		regexxer
-PORTVERSION=		0.4
-PORTREVISION=		2
+PORTVERSION=		0.6
 CATEGORIES=		devel textproc gnome
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE} \
 			${MASTER_SITE_SOURCEFORGE:S/$/:pcre/} \
@@ -20,9 +19,10 @@ DISTFILES=		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=		rui@ruilopes.com
 COMMENT=		An interactive tool for performing search and replace operations
 
-LIB_DEPENDS=		gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtk--2
+LIB_DEPENDS=		gnomevfsmm-1.3:${PORTSDIR}/devel/gnome-vfsmm
 
 USE_X_PREFIX=		yes
+USE_REINPLACE=		yes
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
 USE_GNOME=		gnomehack gnomeprefix gnometarget
@@ -31,6 +31,9 @@ CONFIGURE_ARGS=		PCRE_CONFIG="${PCRE_WRKDIR}/.install/bin/pcre-config"
 PCRE_NAME=		pcre
 PCRE_VERSION=		4.4
 PCRE_WRKDIR=		${WRKDIR}/${PCRE_NAME}-${PCRE_VERSION}
+
+post-patch:
+	@${REINPLACE_CMD} -E 's,^(pcre_.+ sed )-n (.*),\1\2,' ${WRKSRC}/configure
 
 pre-configure:
 	@(cd ${PCRE_WRKDIR} && \
