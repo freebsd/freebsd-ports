@@ -7,6 +7,7 @@
 
 PORTNAME=	freeradius
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
 		ftp://ftp.Awfulhak.org/pub/radius/
@@ -14,14 +15,18 @@ MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
 MAINTAINER=	brian@FreeBSD.org
 COMMENT=	A free RADIUS server implementation
 
-LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
+		ltdl.4:${PORTSDIR}/devel/libltdl
 
 LOGDIR?=	/var/log
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --quiet --with-logdir=${LOGDIR} \
-		--localstatedir=/var
+		--localstatedir=/var \
+		--disable-ltdl-install \
+		--with-ltdl-include=${LOCALBASE}/include \
+		--with-ltdl-lib=${LOCALBASE}/lib
 
 .if defined(WITH_OPENLDAP_VER)
 .if ${WITH_OPENLDAP_VER} == 20 || ${WITH_OPENLDAP_VER} == 21

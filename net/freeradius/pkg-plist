@@ -59,11 +59,6 @@ etc/raddb/users.sample
 etc/raddb/x99.conf.sample
 etc/raddb/x99passwd.sample.sample
 etc/rc.d/radiusd.sh
-include/ltdl.h
-lib/libltdl.a
-lib/libltdl.la
-lib/libltdl.so
-lib/libltdl.so.4
 lib/libradius-0.8.1.la
 lib/libradius-0.8.1.so
 lib/libradius.a
