@@ -3529,6 +3529,7 @@ libical		ports/devel/libical
 libiconv	ports/converters/libiconv
 libicq		ports/net/libicq
 libicq2000	ports/net/libicq2000
+libidea		ports/security/libidea
 libident	ports/security/libident
 libijs		ports/print/libijs
 libimg		ports/graphics/libimg
