@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gdm2
-PORTVERSION=	2.4.4.5
+PORTVERSION=	2.4.4.6
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=		sources/${PORTNAME:S/2$//}/2.4
@@ -39,6 +39,11 @@ PLIST_SUB=	PAM_MISC="@comment "
 post-extract:
 	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" \
 		${FILESDIR}/gdm.sh.sample > ${WRKSRC}/gdm.sh.sample
+
+post-patch:
+	${FIND} ${WRKSRC} -name "intltool-merge.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|mkdir $$lang or|mkdir $$lang, 0777 or| ; \
+		 s|^push @INC, "/.*|push @INC, "${LOCALBASE}/share/intltool";|'
 
 post-install:
 .if !defined(PACKAGE_BUILDING)
