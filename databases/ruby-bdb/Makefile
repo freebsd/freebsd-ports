@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bdb
-PORTVERSION=	0.3.5
+PORTVERSION=	0.3.8
 CATEGORIES=	databases ruby
 MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -25,6 +25,7 @@ LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
+USE_RUBY_RDOC=		yes
 
 .if defined(WITH_BDB4)
 CONFIGURE_ARGS=	--with-db-include-dir="${PREFIX}/include/db4" \
@@ -35,7 +36,18 @@ CONFIGURE_ARGS=	--with-db-include-dir="${PREFIX}/include/db3" \
 .endif
 INSTALL_TARGET=	site-install
 
-DOCS=		Changes README.en bdb.html bdb.rd docs/*
+DOCS=		Changes \
+		README.en \
+		bdb.html \
+		bdb.rd \
+		docs/*.html \
+		docs/*.rd \
+		docs/doc
+
+post-build:
+.if !defined(NOPORTDOCS)
+	cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} rdoc
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -43,7 +55,7 @@ post-install:
 	${CP} -R ${WRKSRC}/examples/* ${RUBY_MODEXAMPLESDIR}/
 	${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	${CP} -R ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .endif
 
