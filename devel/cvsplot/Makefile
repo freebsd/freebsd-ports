@@ -19,6 +19,7 @@ RUN_DEPENDS=	${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
 		${SITE_PERL}/String/ShellQuote.pm:${PORTSDIR}/textproc/p5-String-ShellQuote \
 		gnuplot:${PORTSDIR}/math/gnuplot
 
+USE_PERL5=	yes
 NO_BUILD=	yes
 PLIST_FILES=	bin/cvsplot
 
