@@ -1,0 +1,50 @@
+Index: tcpdump.c
+===========================================================================
+--- tcpdump.c	2004/11/17 15:20:25	#1
++++ tcpdump.c	2004/11/17 15:20:25
+@@ -112,6 +112,9 @@
+ 	{
+ 		case -1: /* Not an IP packet */
+ 			return (-1);
++		case EH_SIZE + ETHER_VLAN_ENCAP_LEN:
++			memcpy(&eth_header.ether_type, buf+EH_SIZE+2, 2);
++			/* FALLTHROUGH */
+ 		case EH_SIZE: /* straight Ethernet encapsulation */
+ 			memcpy((char *)ip_buf,buf+offset,iplen);
+ 			callback_plast = ip_buf+iplen-offset-1;
+Index: tcpdump.h
+===========================================================================
+--- tcpdump.h	2004/11/17 15:20:25	#1
++++ tcpdump.h	2004/11/17 15:20:25
+@@ -178,7 +178,7 @@
+ }
+ 
+ /* This function determine the offset for the IP packet in an Ethernet frame */
+-/* We handle two cases : straight Ethernet encapsulation or PPPoE encapsulation */
++/* We handle three cases : straight Ethernet, PPPoE, or .1q VLAN encapsulation */
+ /* Written by Yann Samama (ysamama@nortelnetworks.com) on july 18th, 2003 */
+ static int find_ip_eth(char* buf)
+ {
+@@ -191,10 +191,8 @@
+ 	switch (eth_proto_type)
+ 	{
+ 		case ETHERTYPE_IPV6: /* it's pure IPv6 over ethernet */
+-			offset = 14;
+-			break;
+ 		case ETHERTYPE_IP: /* it's pure IPv4 over ethernet */
+-			offset = 14;
++			offset = sizeof(struct ether_header);
+ 			break;
+ 		case ETHERTYPE_PPPOE_SESSION: /* it's a PPPoE session */
+ 			memcpy(&ppp_proto_type, buf+20, 2);
+@@ -202,6 +200,10 @@
+ 			if (ppp_proto_type == 0x0021) /* it's IP over PPPoE */
+ 				offset = PPPOE_SIZE;
+ 			break;
++		case ETHERTYPE_VLAN:
++			offset = sizeof(struct ether_header) +
++			    ETHER_VLAN_ENCAP_LEN;
++			break;
+ 		default: /* well, this is not an IP packet */
+ 			offset = -1;
+ 			break;			
