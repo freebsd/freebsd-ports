@@ -9,13 +9,13 @@ PORTNAME=	mutt
 PORTVERSION=	${VERSION}.j${JP_VERSION}
 CATEGORIES=	japanese mail
 MASTER_SITES=	http://www.emaillab.org/mutt/1.3/ \
-		http://www.hiei.kit.ac.jp/~hitomi/mutt/ \
-		ftp://ftp.mutt.org/pub/mutt/devel/ \
-		http://www2.odn.ne.jp/~aab27060/ports/distfiles/
+		http://ha4.seikyou.ne.jp/home/Kohtaro.Hitomi/mutt/ \
+		http://www5.xdsl.ne.jp/~shuna/distfiles/mutt/ \
+		ftp://ftp.mutt.org/pub/mutt/devel/
 DISTNAME=	${PORTNAME}-${VERSION}i
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME}-ja${JP_VERSION}${EXTRACT_SUFX} \
-		manual_ja-${PRE_VERSION}i-2${EXTRACT_SUFX}
+		manual_ja-${VERSION:R}i-0${EXTRACT_SUFX}
 
 MAINTAINER=	shuna@pop16.odn.ne.jp
 
@@ -29,8 +29,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/msgfmt:${PORTSDIR}/devel/gettext
 .endif
 RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview
 
-PRE_VERSION=	1.2
-VERSION=	1.3.14
+VERSION=	1.3.16
 JP_VERSION=	0
 
 DIST_SUBDIR=	mutt
@@ -55,6 +54,7 @@ MAN5=		muttrc.5 mbox.5
 
 DIFFDIR=	${WRKDIR}/${DISTNAME}-ja${JP_VERSION}
 DIFFNAME=	${DISTNAME}-ja${JP_VERSION}.diff
+SRCDOCDIR=	${WRKDIR}/manual_ja-${VERSION:R}i
 DOCDIR=		${PREFIX}/share/doc/mutt
 
 pre-patch:
@@ -66,11 +66,12 @@ pre-configure:
 post-install:
 	${INSTALL_DATA} ${DIFFDIR}/README.JA-PATCH ${DOCDIR}
 	${INSTALL_DATA} ${DIFFDIR}/manual-ja-patch.txt ${DOCDIR}
-	${INSTALL_DATA} ${DIFFDIR}/sample.muttrc-tt ${DOCDIR}
+	${INSTALL_DATA} ${DIFFDIR}/mutt-ja.rc ${DOCDIR}/samples
+	${INSTALL_DATA} ${DIFFDIR}/sample.muttrc-tt ${DOCDIR}/samples
 	${INSTALL_DATA} ${DIFFDIR}/usage-japanese.txt ${DOCDIR}
-	${INSTALL_DATA} ${WRKDIR}/manual_ja.txt ${DOCDIR}
-	${INSTALL_DATA} ${WRKDIR}/manual_ja.tex ${DOCDIR}
-	${INSTALL_DATA} ${WRKDIR}/manual_ja.html ${DOCDIR}
-	${INSTALL_DATA} ${WRKDIR}/manual_ja.sgml ${DOCDIR}
+	${INSTALL_DATA} ${SRCDOCDIR}/manual_ja.txt ${DOCDIR}
+	${INSTALL_DATA} ${SRCDOCDIR}/manual_ja.tex ${DOCDIR}
+	${INSTALL_DATA} ${SRCDOCDIR}/manual_ja.html ${DOCDIR}
+	${INSTALL_DATA} ${SRCDOCDIR}/manual_ja.sgml ${DOCDIR}
 
 .include <bsd.port.mk>

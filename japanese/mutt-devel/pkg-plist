@@ -34,17 +34,36 @@ share/doc/mutt/manual_ja.html
 share/doc/mutt/manual_ja.sgml
 share/doc/mutt/manual_ja.tex
 share/doc/mutt/manual_ja.txt
-share/doc/mutt/sample.muttrc-tt
 share/doc/mutt/samples/Mush.rc
 share/doc/mutt/samples/Pine.rc
 share/doc/mutt/samples/Tin.rc
 share/doc/mutt/samples/gpg.rc
+share/doc/mutt/samples/mutt-ja.rc
 share/doc/mutt/samples/pgp2.rc
 share/doc/mutt/samples/pgp5.rc
 share/doc/mutt/samples/pgp6.rc
 share/doc/mutt/samples/sample.mailcap
 share/doc/mutt/samples/sample.muttrc
 share/doc/mutt/samples/sample.muttrc-tlr
+share/doc/mutt/samples/sample.muttrc-tt
+share/doc/mutt/samples/iconv/iconv.aix-3.2.5.rc
+share/doc/mutt/samples/iconv/iconv.aix-4.1.5.rc
+share/doc/mutt/samples/iconv/iconv.aix-4.2.0.rc
+share/doc/mutt/samples/iconv/iconv.aix-4.3.2.rc
+share/doc/mutt/samples/iconv/iconv.freebsd-3.3.rc
+share/doc/mutt/samples/iconv/iconv.glibc-2.1.3.rc
+share/doc/mutt/samples/iconv/iconv.glibc-2.1.90.rc
+share/doc/mutt/samples/iconv/iconv.hpux-10.01.rc
+share/doc/mutt/samples/iconv/iconv.hpux-10.20.rc
+share/doc/mutt/samples/iconv/iconv.hpux-11.00.rc
+share/doc/mutt/samples/iconv/iconv.irix-6.5.rc
+share/doc/mutt/samples/iconv/iconv.osf1-4.0a.rc
+share/doc/mutt/samples/iconv/iconv.osf1-4.0d.rc
+share/doc/mutt/samples/iconv/iconv.solaris-2.4.rc
+share/doc/mutt/samples/iconv/iconv.solaris-2.5.1.rc
+share/doc/mutt/samples/iconv/iconv.solaris-2.6-cjk.rc
+share/doc/mutt/samples/iconv/iconv.solaris-2.6.rc
+share/doc/mutt/samples/iconv/iconv.solaris-2.7.rc
 share/doc/mutt/usage-japanese.txt
 share/locale/cs/LC_MESSAGES/mutt.mo
 share/locale/da/LC_MESSAGES/mutt.mo
@@ -56,6 +75,7 @@ share/locale/fr/LC_MESSAGES/mutt.mo
 share/locale/gl/LC_MESSAGES/mutt.mo
 share/locale/id/LC_MESSAGES/mutt.mo
 share/locale/it/LC_MESSAGES/mutt.mo
+share/locale/ja/LC_MESSAGES/mutt.mo
 share/locale/ko/LC_MESSAGES/mutt.mo
 share/locale/lt/LC_MESSAGES/mutt.mo
 share/locale/nl/LC_MESSAGES/mutt.mo
@@ -64,9 +84,11 @@ share/locale/pt_BR/LC_MESSAGES/mutt.mo
 share/locale/ru/LC_MESSAGES/mutt.mo
 share/locale/sk/LC_MESSAGES/mutt.mo
 share/locale/sv/LC_MESSAGES/mutt.mo
+share/locale/tr/LC_MESSAGES/mutt.mo
 share/locale/uk/LC_MESSAGES/mutt.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/mutt.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/mutt.mo
 @dirrm share/doc/mutt/html
+@dirrm share/doc/mutt/samples/iconv
 @dirrm share/doc/mutt/samples
 @dirrm share/doc/mutt

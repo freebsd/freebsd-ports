@@ -1,6 +1,6 @@
---- Makefile.am.orig	Wed Oct 11 19:43:53 2000
-+++ Makefile.am	Sun Feb  4 21:10:00 2001
-@@ -138,7 +138,6 @@
+--- Makefile.am.orig	Tue Feb 13 01:59:42 2001
++++ Makefile.am	Thu Mar  1 02:28:56 2001
+@@ -139,7 +139,6 @@
  	fi
  
  install-data-local: Muttrc
