@@ -991,6 +991,7 @@ cvsgraph	ports/devel/cvsgraph
 cvslines	ports/devel/cvslines
 cvsmail		ports/mail/cvsmail
 cvsmapfs	ports/devel/cvsmapfs
+cvsmonitor	ports/devel/cvsmonitor
 cvspadm		ports/devel/cvspadm
 cvsplot		ports/devel/cvsplot
 cvsps		ports/devel/cvsps
