@@ -7,6 +7,7 @@
 
 PORTNAME=	pkg_tarup
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://cvsweb.netbsd.org/bsdweb.cgi/~checkout~/pkgsrc/pkgtools/pkg_tarup/files/
 DISTNAME=	${PORTNAME}\?rev=${PORTVERSION}\&content-type=text%2fplain
