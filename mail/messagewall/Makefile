@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	messagewall
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.8
 CATEGORIES=	mail
 MASTER_SITES=	http://www.messagewall.org/download/
 DISTNAME=	messagewall-${PORTVERSION}
@@ -28,6 +28,8 @@ post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/firemake.cflags \
 		${WRKSRC}/firemake.ldflags
+	${REINPLACE_CMD} -e 's|-lcrypto|-lcrypto ${PTHREAD_LIBS}|' \
+		${WRKSRC}/firemake.libs
 
 do-install:
 	@${CP} ${WRKSRC}/messagewall ${PREFIX}/bin

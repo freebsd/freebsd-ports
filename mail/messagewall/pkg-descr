@@ -1,10 +1,14 @@
-MessageWall is a free software SMTP proxy. It sits between the outside 
-world and your mail server and keeps out viruses, spam and mail relaying. 
-Unlike many existing ISP-level filtering solutions, it offers 
-customization of filtering features on a per-address basis. MessageWall 
-employs a scoring system that allows message rejection based on multiple 
-rules with different weigths, and header tagging when the message doesn't 
-reach the threshold.
+MessageWall is an SMTP proxy. It sits between the outside world and
+your mail server and keeps out viruses, spam, and mail relaying.
+It offers filtering via header and body checks, DNS-based blacklists
+for IP addresses (DNSBL) and domains (RHSBL), DNS-based distributed
+checksumming (DNS DCC) similar to Vipul's Razor, and Open AntiVirus
+pattern scanning.  ke many existing ISP-level filtering solutions,
+it offers customization of filtering features on a per-address
+basis. Unlike SpamAssassin, it communicates via SMTP, so it works
+with any MTA. It also supports scoring based on rules with a rejection
+threshold; this allows hybrid warning/rejection configurations based
+on how many and which rules a message matches.
 
 WWW: http://www.messagewall.org
 
