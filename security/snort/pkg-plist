@@ -9,16 +9,20 @@ etc/unicode.map-sample
 @unexec if [ -f %D/etc/threshold.conf ] && cmp -s %D/etc/threshold.conf %D/etc/threshold.conf-sample; then rm -f %D/etc/threshold.conf; fi
 etc/threshold.conf-sample
 @exec [ -f %B/threshold.conf ] || cp %B/%f %B/threshold.conf
+%%PRELUDE%%@unexec if [ -f %D/etc/prelude-classification.config ] && cmp -s %D/etc/prelude-classification.config %D/etc/prelude-classification.config-sample; then rm -f %D/etc/prelude-classification.config; fi
+%%PRELUDE%%etc/prelude-classification.config-sample
+%%PRELUDE%%@exec [ -f %B/prelude-classification.config ] || cp %B/%f %B/prelude-classification.config
 etc/rc.d/snort.sh
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.FLEXRESP
+%%PORTDOCS%%%%DOCSDIR%%/README.INLINE
 %%PORTDOCS%%%%DOCSDIR%%/README.PLUGINS
+%%PORTDOCS%%%%PRELUDE%%%%DOCSDIR%%/README.Prelude
 %%PORTDOCS%%%%DOCSDIR%%/README.UNSOCK
 %%PORTDOCS%%%%DOCSDIR%%/README.WIN32
 %%PORTDOCS%%%%DOCSDIR%%/README.alert_order
@@ -30,11 +34,14 @@ etc/rc.d/snort.sh
 %%PORTDOCS%%%%DOCSDIR%%/README.flowbits
 %%PORTDOCS%%%%DOCSDIR%%/README.flow-portscan
 %%PORTDOCS%%%%DOCSDIR%%/README.http_inspect
+%%PORTDOCS%%%%DOCSDIR%%/README.sfportscan
 %%PORTDOCS%%%%DOCSDIR%%/README.thresholding
 %%PORTDOCS%%%%DOCSDIR%%/README.wireless
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/USAGE
+%%PORTDOCS%%%%DOCSDIR%%/faq.pdf
 %%PORTDOCS%%%%DOCSDIR%%/snort_manual.pdf
+%%PORTDOCS%%%%DOCSDIR%%/snort_schema_v106.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%DATADIR%%/attack-responses.rules
 %%DATADIR%%/backdoor.rules
