@@ -7208,6 +7208,7 @@ spacechart	ports/astro/spacechart
 spager		ports/x11-wm/spager
 spamass-milter	ports/mail/spamass-milter
 spambnc		ports/mail/spambnc
+spamprobe	ports/mail/spamprobe
 spar		ports/math/spar
 sparc-rtems-binutils	ports/devel/sparc-rtems-binutils
 sparc-rtems-chill	ports/devel/sparc-rtems-chill
