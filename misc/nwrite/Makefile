@@ -18,7 +18,9 @@ CONFIGURE_ARGS=	--enable-clear-procs
 
 MAN1=		nwrite.1
 PLIST_FILES=	bin/nwrite
-
+RESTRICTED=	"ownership of the software is in dispute"
+NO_CDROM=	${RESTRICTED}
+NO_FTP=		${RESTRICTED}
 BINGRP=		tty
 BINMODE=	2755
 
