@@ -15,6 +15,7 @@ DISTNAME=	beonex-comm-${PORTVERSION}-stable-1-source-tarball
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Open-source browser, HTML editor, mail and news client
+FORBIDDEN=	"warning from author about security problems"
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		freetype-config:${PORTSDIR}/print/freetype2
