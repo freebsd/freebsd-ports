@@ -19,6 +19,7 @@ libdata/pkgconfig/vte.pc
 libexec/gnome-pty-helper
 share/gnome/vte/termcap/xterm
 share/locale/am/LC_MESSAGES/vte.mo
+share/locale/be/LC_MESSAGES/vte.mo
 share/locale/bg/LC_MESSAGES/vte.mo
 share/locale/ca/LC_MESSAGES/vte.mo
 share/locale/cs/LC_MESSAGES/vte.mo
@@ -31,6 +32,8 @@ share/locale/fr/LC_MESSAGES/vte.mo
 share/locale/he/LC_MESSAGES/vte.mo
 share/locale/hu/LC_MESSAGES/vte.mo
 share/locale/id/LC_MESSAGES/vte.mo
+share/locale/it/LC_MESSAGES/vte.mo
+share/locale/ja/LC_MESSAGES/vte.mo
 share/locale/ko/LC_MESSAGES/vte.mo
 share/locale/lv/LC_MESSAGES/vte.mo
 share/locale/mn/LC_MESSAGES/vte.mo
