@@ -1,0 +1,12 @@
+--- libgnomeui/gnome-druid-page-standard.c.orig	Sun Oct 29 18:21:01 2000
++++ libgnomeui/gnome-druid-page-standard.c	Sun Oct 29 18:21:19 2000
+@@ -202,7 +202,8 @@
+ 				       gnome_canvas_text_get_type (), 
+ 				       "text", druid_page_standard->title,
+ 				       "font", "-adobe-helvetica-bold-r-normal-*-*-180-*-*-p-*-iso8859-1",
+-				       "fontset", "-adobe-helvetica-bold-r-normal-*-*-180-*-*-p-*-iso8859-1,*-r-*",
++                                       "fontset", "-misc-fixed-medium-r-normal--
++14-*-*-*-*-*-*-*",
+ 				       NULL);
+ 	gnome_canvas_item_set (druid_page_standard->title_item,
+ 			       "x", 15.0,

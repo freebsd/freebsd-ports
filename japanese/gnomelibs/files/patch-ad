@@ -1,0 +1,61 @@
+--- ./zvt/README.mb.jp2	Sun Oct 29 18:32:20 2000
++++ ./zvt/README.mb	Sun Oct 29 18:32:20 2000
+@@ -0,0 +1,58 @@
++*Poor* Multibyte Kanji patch for gnome-zvt.
++
++		      Yasuyuki Furukawa <yasu@on.cs.keio.ac.jp>
++
++This patch make gnome-libs to use multibyte
++(ex kanji, Japanese character), and to support "OverTheSpot" Input
++Method.
++
++If you use multibyte characters in the gnome-terminal, you require
++gnome-core-x.y.z-terminal_mb-*.patch, too.
++
++-----------
++   TODO
++-----------
++   - JIS locale support.
++   - JIS curses support in EUC.
++   - integrate UTF and multibyte code.
++   - support half Katakana character(JISX201).
++   - optimize the routine for redrawing in multibyte environment.
++     (DONE at 0.5)
++   - more speedy.
++     (DONE at 0.4)
++
++-----------
++ ChangeLog
++-----------
++* Sun Jan 16 2000 Yasuyuki Furukawa <furukawa@vinelinux.org>
++  - Release 0.6 -- bug fix
++  - prevend to be into alt mode with half katakana.
++  - fixed to fail getting of character-wdith in startup.
++
++* Thu Nov  4 1999 Yasuyuki Furukawa <furukawa@vinelinux.org>
++  - Release 0.5 -- a little faster.
++  - update.c (vt_line_update): enable optimize redrawing for
++    multibyte locale. Now more clear for redrawing multibyte
++    character. but there is a problem wheln scrolled dumping.
++
++* Tue Nov  2 1999 Yasuyuki Furukawa <furukawa@vinelinux.org>
++  - Release 0.2 -- bug fix
++  - update.c (vt_line_update): disable optimizing routine for
++    redrawing 
++  - zvtterm (zvt_term_convert_selection): fix for selection memory
++    bug in compound_text.
++
++  - Release 0.3 -- a little optimized. 
++  - vt.c (vt_query_line_mbchar): more optimize.
++  - zvtterm.c (vt_draw_text): reduce zvt_im_preedit_set_spot() call
++
++  - Release 0.4 -- JIS dumping support in EUC locale.
++  - vt.c (vt_parse_vt): add escape sequence "ESC$B" and "ESC)B".
++         JIS text can be dumped at least.(NOT IN CURSES...)
++
++* Tue Nov  1 1999 Yasuyuki Furukawa <furukawa@vinelinux.org
++  - Release 0.1
++  - update.c, zvtterm.c, vt.c, zterm.c, vt.h, zterm.h: updated for
++    gnome-libs-1.0.54 based on my old kanji patch.
++    old patch is following:
++         http://www.on.cs.keio.ac.jp/~yasu/linux/gnome/
