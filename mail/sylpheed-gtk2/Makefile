@@ -44,7 +44,7 @@ CONFIGURE_ARGS+=	--enable-ssl
 .endif
 
 .if defined(WITH_GPGME)
-LIB_DEPENDS+=		gpgme.9:${PORTSDIR}/security/gpgme
+LIB_DEPENDS+=		gpgme.9:${PORTSDIR}/security/gpgme03
 RUN_DEPENDS+=		gpg:${PORTSDIR}/security/gnupg
 CONFIGURE_ARGS+=	--enable-gpgme
 .endif
