@@ -1,25 +1,30 @@
-bin/elm
 bin/answer
 bin/checkalias
+bin/elm
 bin/elmalias
 bin/fastmail
 bin/frm
-@exec ln -f %D/%F %D/bin/nfrm
+@exec ln -f %B/%f %B/nfrm
+@unexec rm -f %B/nfrm
 bin/listalias
 bin/messages
 bin/newalias
 bin/newmail
-@exec ln -f %D/%F %D/bin/wnewmail
+@exec ln -f %B/%f %B/wnewmail
+@unexec rm -f %B/wnewmail
 bin/printmail
 bin/readmsg
-lib/prlong
-lib/elm.mimecharsets
-lib/elm.mimetypes
-lib/elmcharset
-lib/elmterminal
-lib/elmrc-info
-lib/elm-help.0
-lib/elm-help.1
-lib/elm-help.2
-lib/elm-help.3
 share/nls/C/elm2.4me+.cat
+lib/elm/elm-help.0
+lib/elm/elm-help.1
+lib/elm/elm-help.2
+lib/elm/elm-help.3
+lib/elm/elm.mimecharsets
+@unexec if cmp -s %D/lib/elm/elm.mimetypes %D/lib/elm/elm.mimetypes-dist; then rm -f %D/lib/elm/elm.mimetypes; fi
+lib/elm/elm.mimetypes-dist
+@exec [ ! -f %B/elm.mimetypes ] && cp %B/%f %B/elm.mimetypes
+lib/elm/elmcharset
+lib/elm/elmrc-info
+lib/elm/elmterminal
+lib/elm/prlong
+@dirrm lib/elm

@@ -1,0 +1,20 @@
+--- nls/Makefile.orig	Fri Dec 29 20:56:45 2000
++++ nls/Makefile	Sat Jan  6 23:21:16 2001
+@@ -3,7 +3,7 @@
+ #
+ LANGFILE=LANGS
+ CATNAME=elm2.4me+.cat
+-GENCAT=	nls/gencat
++GENCAT=	gencat
+ 
+ HDIR=	../hdrs
+ SDIR=	C/C/C
+@@ -44,7 +44,7 @@
+ 	./Install $(LANGFILE) $(GENCAT) $(CATNAME)
+ 
+ $(HFILES): $(MFILES)
+-	gencat/gencat $(MSGCAT) "$(SDIR)/`basename $@ .h`".m -h $@
++	$(GENCAT) $(MSGCAT) "$(SDIR)/`basename $@ .h`".m -h $@
+ 
+ clean: FRC
+ 	/bin/rm -f $(MSGCAT)

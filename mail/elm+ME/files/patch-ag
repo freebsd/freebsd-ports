@@ -1,0 +1,29 @@
+--- doc/Makefile.SH.orig	Fri Dec 29 20:56:43 2000
++++ doc/Makefile.SH	Sun Jan  7 04:39:50 2001
+@@ -145,6 +145,8 @@
+ 	$(SED) 's"#LIB#"$(LIB)"g;' < elmterminal.1 > elmterminal.1.subs
+ frm.1.subs: frm.1
+ 	$(SED) 's"#LIB#"$(LIB)"g;' < frm.1 > frm.1.subs
++newmail.1.subs: newmail.1
++	$(SED) 's"#LIB#"$(LIB)"g;' < newmail.1 > newmail.1.subs
+ 
+ formatted_pages: catman $(FORMATTED_PAGES_LIST)
+ 
+@@ -224,7 +226,7 @@
+ 				$(CP) $? $@
+ 				$(CHMOD) u=rw,go=r $@
+ 
+-$(MAN)/newmail$(MANEXT):	newmail.1
++$(MAN)/newmail$(MANEXT):	newmail.1.subs
+ 				$(RM) $@
+ 				$(CP) $? $@
+ 				$(CHMOD) u=rw,go=r $@
+@@ -425,7 +427,7 @@
+ 		true ; \
+ 	fi
+ 
+-catman/newmail$(CATMANEXT)$(SUFFIX):		newmail.1
++catman/newmail$(CATMANEXT)$(SUFFIX):		newmail.1.subs
+ 	$(MANROFF) $(MANROFF_OPTS) -man $? > catman/newmail$(CATMANEXT)
+ 	@if $(TEST) "$(PACKED)" = y ; then \
+ 		$(RM) $@ ; \
