@@ -1,0 +1,9 @@
+This Perl module is useful for writers of daemons and other processes
+that need to tell whether they are already running, in order to
+prevent multiple process instances. The module accomplishes this
+via *nix-style pidfiles, which are files that store a process
+identifier.
+
+Inspired by Proc::PID_File, but with a much simpler interface.
+
+WWW: http://search.cpan.org/dist/Proc-PID-File/
