@@ -16,14 +16,6 @@ lib/libImlib.so.5
 lib/libgdk_imlib.a
 lib/libgdk_imlib.so
 lib/libgdk_imlib.so.5
-lib/libimlib-bmp.so
-lib/libimlib-gif.so
-lib/libimlib-jpeg.so
-lib/libimlib-png.so
-lib/libimlib-ppm.so
-lib/libimlib-ps.so
-lib/libimlib-tiff.so
-lib/libimlib-xpm.so
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/aclocal/imlib.m4
