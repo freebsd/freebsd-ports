@@ -10,7 +10,7 @@ PORTVERSION=	0.0.7b2
 CATEGORIES=	net
 MASTER_SITES=	http://netsaint.sourceforge.net/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	blaz@amis.net
 
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
