@@ -6,6 +6,7 @@
 
 PORTNAME=	mod_frontpage
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://people.freebsd.org/~mbr/distfiles/
 
