@@ -22,11 +22,14 @@ post-extract:
 	@${RM} -rf ${WRKSRC}/src/medusa/CVS
 	@${SED} -e 's,__PREFIX__,${PREFIX},g' ${FILESDIR}/adzapper.sh > \
 		${WRKSRC}/adzapper.sh
+	@${SED} -e 's,__PREFIX__,${PREFIX},g' ${FILESDIR}/adzapper.sh > \
+		${WRKSRC}/rc.adzapper.sh
 
 do-install:
 	${MKDIR} ${PREFIX}/share/adzapper
 	${INSTALL_SCRIPT} ${WRKSRC}/adzapper.sh ${PREFIX}/sbin/adzapper
 	${INSTALL_SCRIPT} ${WRKSRC}/adzapper.py ${PREFIX}/share/adzapper/
+	${INSTALL_SCRIPT} ${WRKSRC}/rc.adzapper.sh ${PREFIX}/etc/rc.d/adzapper.sh
 	${CP} -Rp ${WRKSRC}/zaplets ${PREFIX}/share/adzapper
 	${CP} -Rp ${WRKSRC}/doc ${PREFIX}/share/adzapper
 	${CP} -Rp ${WRKSRC}/src ${PREFIX}/share/adzapper
