@@ -10,12 +10,17 @@ lib/X11/xcin25/doc/CREDITS
 lib/X11/xcin25/doc/Changes
 lib/X11/xcin25/doc/Cin
 lib/X11/xcin25/doc/CopyRight
+lib/X11/xcin25/doc/En/README.En
+lib/X11/xcin25/doc/En/SETUP.En
+lib/X11/xcin25/doc/En/Usage.En
+lib/X11/xcin25/doc/En/UserGuide.En
 lib/X11/xcin25/doc/FAQ
 lib/X11/xcin25/doc/README
 lib/X11/xcin25/doc/SETUP
 lib/X11/xcin25/doc/Todo
 lib/X11/xcin25/doc/Usage
 lib/X11/xcin25/doc/UserGuide
+lib/X11/xcin25/doc/history/Changes-19991011
 lib/X11/xcin25/doc/internal/IMdkit
 lib/X11/xcin25/doc/internal/gen_inp
 lib/X11/xcin25/doc/internal/gui_request
@@ -46,6 +51,8 @@ lib/X11/xcin25/tab/euc/sys.tab
 lib/X11/xcin25/tab/euc/wubizixing.tab
 share/locale/zh_TW.Big5/LC_MESSAGES/xcin.mo
 @dirrm lib/X11/xcin25/bin
+@dirrm lib/X11/xcin25/doc/En
+@dirrm lib/X11/xcin25/doc/history
 @dirrm lib/X11/xcin25/doc/internal
 @dirrm lib/X11/xcin25/doc/modules
 @dirrm lib/X11/xcin25/doc

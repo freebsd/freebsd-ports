@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xcin
-PORTVERSION=	2.5.2
+PORTVERSION=	2.5.2.1
 CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/xcin/
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	tabe.0:${PORTSDIR}/chinese/libtabe \
 		db2.0:${PORTSDIR}/databases/db
 RUN_DEPENDS=	${X11BASE}/lib/X11/locale/zh_TW.Big5/XLC_LOCALE:${PORTSDIR}/x11/XFree86 \
 		${X11BASE}/lib/X11/fonts/local/kc15f.pcf.gz:${PORTSDIR}/chinese/kcfonts \
-		${LOCALBASE}/share/tabe/libtabe-0.1.8:${PORTSDIR}/chinese/libtabe
+		${LOCALBASE}/share/tabe/libtabe-0.1.9:${PORTSDIR}/chinese/libtabe
 
 WRKSRC=		${WRKDIR}/xcin-2.5
 USE_X_PREFIX=	yes
@@ -41,6 +41,13 @@ post-install:
 		SETUP Todo Usage UserGuide
 	${INSTALL_MAN} ${WRKSRC}/doc/${DOC} ${PREFIX}/lib/X11/xcin25/doc
 .endfor
+	${MKDIR} ${PREFIX}/lib/X11/xcin25/doc/En
+.for En in README.En SETUP.En Usage.En UserGuide.En
+	${INSTALL_MAN} ${WRKSRC}/doc/En/${En} ${PREFIX}/lib/X11/xcin25/doc/En
+.endfor
+	${MKDIR} ${PREFIX}/lib/X11/xcin25/doc/history
+	${INSTALL_MAN} ${WRKSRC}/doc/history/Changes-19991011 \
+		${PREFIX}/lib/X11/xcin25/doc/history
 	${MKDIR} ${PREFIX}/lib/X11/xcin25/doc/internal
 .for INTERNAL in IMdkit gen_inp gui_request module structer
 	${INSTALL_MAN} ${WRKSRC}/doc/internal/${INTERNAL} \
