@@ -1,0 +1,22 @@
+--- configure.orig	Mon Aug  6 01:55:52 2001
++++ configure	Thu Jul 11 12:38:47 2002
+@@ -1094,6 +1094,9 @@
+ 
+         acx_pthread_flags="-pthread -pthreads pthread -mt $acx_pthread_flags"
+         ;;
++        *freebsd5*)
++	acx_pthread_flags="-lc_r -kthread lthread -pthread"
++        ;;
+ esac
+ 
+ if test x"$acx_pthread_ok" = xno; then
+@@ -1418,6 +1421,9 @@
+         # we'll just look for -pthreads and -lpthread first:
+ 
+         acx_pthread_flags="-pthread -pthreads pthread -mt $acx_pthread_flags"
++        ;;
++        *freebsd5*)
++	acx_pthread_flags="-lc_r -kthread lthread -pthread"
+         ;;
+ esac
+ 

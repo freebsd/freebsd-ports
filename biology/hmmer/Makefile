@@ -7,6 +7,7 @@
 
 PORTNAME=	hmmer
 PORTVERSION=	2.2.g
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.genetics.wustl.edu/pub/eddy/hmmer/${VERSIONSTRING}/
 DISTNAME=	${PORTNAME}-${VERSIONSTRING}
