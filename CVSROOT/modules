@@ -599,7 +599,6 @@ bsd_grep	src/usr.bin/grep
 bsd_ld		src/usr.bin/ld
 bsd_man		src/usr.bin/man
 bsd_patch	src/usr.bin/patch
-bsd_sort	src/usr.bin/sort
 bsd_uucp	src/usr.bin/uucp
 bsd_whatis	src/usr.bin/whatis
 bsdi-netscape47-communicator	ports/www/bsdi-netscape47-communicator
