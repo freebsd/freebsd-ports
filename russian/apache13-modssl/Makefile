@@ -7,6 +7,7 @@
 
 PORTNAME=	apache+mod_ssl
 PORTVERSION=	${VERSION_APACHE}+${VERSION_RA}+${VERSION_MODSSL}
+PORTREVISION=	1
 CATEGORIES=	russian www security
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITES_MODSSL:S/$/:modssl/} \
@@ -206,6 +207,9 @@ pre-patch:
 	@cd ${WRKDIR} \
 	&& tar cf - src conf htdocs | tar xf - -C ${WRKDIR}/apache_${VERSION_APACHE}
 	@cd ${WRKDIR}/mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE} \
+	&& ${ECHO_MSG} "===>  Fix mod_ssl-${VERSION_MODSSL} extension for compatibility with Russian Apache" \
+	&& ${PATCH} --quiet < ${FILESDIR}/mod_ssl-fix
+	@cd ${WRKDIR}/mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE} \
 	&& ${ECHO_MSG} "===>  Applying mod_ssl-${VERSION_MODSSL} extension" \
 	&& ./configure --with-apache=../${DISTNAME} --expert
 
@@ -232,8 +236,5 @@ post-install:
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/apache.sh startup file."; \
 		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/apache.sh ${PREFIX}/etc/rc.d/apache.sh; \
 	fi
-.if defined(WITH_SUEXEC)
-	@${ECHO_CMD} "sbin/suexec" >> ${TMPPLIST}
-.endif
 
 .include <bsd.port.post.mk>
