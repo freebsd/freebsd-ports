@@ -1,4 +1,0 @@
-bin/commitlog2cvsweb
-bin/cvsrdiff2cvsweb
-bin/cvsuplog2cvsweb
-etc/cvsweb-converters.conf.sample
