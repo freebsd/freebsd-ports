@@ -23,6 +23,7 @@
     SUBDIR += enjoympeg
     SUBDIR += ffmpeg
     SUBDIR += fxtv
+    SUBDIR += gavl
     SUBDIR += gmencoder
     SUBDIR += goggles
     SUBDIR += gopchop
