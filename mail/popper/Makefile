@@ -1,13 +1,13 @@
 # New ports collection makefile for:	popper
-# Version required:     2.3
+# Version required:     2.4b2
 # Date created:		1 April 1995
 # Whom:			pst
 #
-# $Id: Makefile,v 1.14 1997/04/02 01:38:22 ache Exp $
+# $Id: Makefile,v 1.15 1997/04/23 04:27:18 ache Exp $
 #
 
-DISTNAME=       qpopper2.3
-PKGNAME=        qpopper-2.3
+DISTNAME=       qpopper2.4b2
+PKGNAME=        qpopper-2.4b2
 CATEGORIES=	mail
 MASTER_SITES=   ftp://ftp.qualcomm.com/eudora/servers/unix/popper/
 EXTRACT_SUFX=	.tar.Z
@@ -20,5 +20,37 @@ MAINTAINER=	pst@freebsd.org
 #
 
 NO_PACKAGE=	"Needs POP UID"
+
+O_DEFS=         -DSETPROCTITLE -DKEEP_TEMP_DROP -DBSD44_DBM -DBIND43 \
+		-DAPOP='\"'${PREFIX}'/etc/popper/pop.auth\"' \
+		-DPOPUID='\"pop\"' \
+		-DNONAUTHFILE='\"/etc/ftpusers\"'
+
+.if !defined(APOP_ONLY)
+.if exists(/usr/lib/libskey.a)
+P_LIBS=         -lskey
+O_DEFS+=        -DSKEY
+.endif
+.else
+O_DEFS+=        -DAPOP_ONLY
+.endif
+
+P_LIBS+=        -lmd -lcrypt -lutil
+
+GNU_CONFIGURE=  yes
+CONFIGURE_ENV+= LIBS="${P_LIBS}" O_DEFS="${O_DEFS}"
+
+MAN8=   popauth.8 popper.8
+
+post-patch:
+	$(RM) ${WRKSRC}/md5.h
+
+do-install:
+	cd ${WRKSRC} && \
+		${INSTALL_PROGRAM} -o pop -m 4111 popauth ${PREFIX}/bin
+	cd ${WRKSRC} && \
+		${INSTALL_PROGRAM} -g mail -m 2111 popper ${PREFIX}/libexec
+	cd ${WRKSRC} && \
+		${INSTALL_MAN} ${MAN8} ${PREFIX}/man/man8
 
 .include <bsd.port.mk>
