@@ -225,6 +225,7 @@
     SUBDIR += fnorb
     SUBDIR += fortran-utils
     SUBDIR += fpc-gdbint
+    SUBDIR += fpc-regexpr
     SUBDIR += fpp
     SUBDIR += freelibiberty
     SUBDIR += freescope
