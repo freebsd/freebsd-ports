@@ -419,22 +419,38 @@
   /* FILTOPTTBLDIR=/usr/local/lib/tex */
   /* FILTOPTTBLFILE=$(FILTOPTBLDIR)/xdvipaper.jdvi2kps */
 ***************
-*** 175,181 ****
+*** 175,183 ****
   
   CDEBUGFLAGS=-g
   
 ! VFLIB=VFlib-1.32/VFlib.a
   #ifdef	Use_ZEIT
-  DEPLIBS=$(VFLIB) XawClientDepLibs
+! DEPLIBS=$(VFLIB) XawClientDepLibs
   LOCAL_LIBRARIES=$(VFLIB) XawClientLibs
---- 175,181 ----
+  #else
+  DEPLIBS=XawClientDepLibs
+--- 175,183 ----
   
   CDEBUGFLAGS=-g
   
-! VFLIB=/usr/local/lib/VFlib.a
+! VFLIB=-L/usr/local/lib -lVFlib
   #ifdef	Use_ZEIT
-  DEPLIBS=$(VFLIB) XawClientDepLibs
+! DEPLIBS=XawClientDepLibs
   LOCAL_LIBRARIES=$(VFLIB) XawClientLibs
+  #else
+  DEPLIBS=XawClientDepLibs
+***************
+*** 244,252 ****
+  
+  ComplexProgramTarget(xdvi)
+  
+- $(VFLIB):
+- 	cd VFlib-1.32; make
+- 
+  xdvi.man: xdvi_man.sed mksedscript
+  	chmod u+x mksedscript
+  	./mksedscript $(DEFAULT_FONT_PATH) $(DEFAULT_FONT_SIZES) \
+--- 244,249 ----
 ***************
 *** 267,273 ****
   #endif	/* Use_MAKEPK */
@@ -444,7 +460,7 @@
   #endif	/* Use_ZEIT */
   
   #ifdef	Use_PRINTDVI
---- 267,273 ----
+--- 264,270 ----
   #endif	/* Use_MAKEPK */
   
   #ifdef	Use_ZEIT

@@ -3,7 +3,7 @@
 # Date created:		15 Sep 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/09 12:55:09 asami Exp $
+# $Id: Makefile,v 1.2 1996/11/11 10:11:47 max Exp $
 #
 
 DISTNAME=	dvi2ps-2.0j-beta4
@@ -14,7 +14,7 @@ DISTFILES=	dvi2ps-2.0j-beta4.tar.gz
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
-BUILD_DEPENDS=	${PREFIX}/lib/VFlib.a:${PORTSDIR}/japanese/vflib
+LIB_DEPENDS=	VFlib\\.2\\.:${PORTSDIR}/japanese/vflib
 
 post-patch:
 	@(cd ${WRKSRC}; make newlib)
