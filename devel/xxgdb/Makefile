@@ -17,6 +17,12 @@ COMMENT=	An X window interface for gdb
 USE_IMAKE=	yes
 MAN1=		xxgdb.1
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64"
+.endif
+
 # This isn't included in the original Imakefile for some reason.
 #  Yes, I know this will recompile the program every time, but
 #  we have the cookie anyway and it's much easier this way
@@ -27,4 +33,4 @@ post-build:
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xxgdbiowin ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
