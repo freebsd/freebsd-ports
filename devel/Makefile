@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.120 1998/07/12 08:41:20 scrappy Exp $
+# $Id: Makefile,v 1.121 1998/07/12 23:00:13 steve Exp $
 #
 
     SUBDIR += ElectricFence
@@ -34,12 +34,14 @@
     SUBDIR += gindent
     SUBDIR += glade
     SUBDIR += gmake
+    SUBDIR += guileobjc
     SUBDIR += id-utils
     SUBDIR += ilu
     SUBDIR += jam
     SUBDIR += lclint
     SUBDIR += libdlmalloc
     SUBDIR += libmalloc
+    SUBDIR += libobjects
     SUBDIR += libproplist
     SUBDIR += libslang
     SUBDIR += libtool
