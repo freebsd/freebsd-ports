@@ -6,12 +6,12 @@
 # $FreeBSD$
 #
 
-DISTNAME=	FD-1.03k
-PKGNAME=	fd-1.03k
+DISTNAME=	FD-1.03l
+PKGNAME=	fd-1.03l
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.ics.es.osaka-u.ac.jp/pub/FDclone/
 
-MAINTAINER=	 nobu@psrc.isac.co.jp
+MAINTAINER=	nobu@psrc.isac.co.jp
 
 MANLANG=	ja
 MAN1=		fd.1
