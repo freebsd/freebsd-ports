@@ -1,7 +1,7 @@
 $FreeBSD$
 
---- ../mud.dgd.orig	Thu Mar  4 13:54:52 1999
-+++ ../mud.dgd	Thu Aug 28 14:54:26 2003
+--- mud.dgd.orig	Thu Mar  4 13:54:52 1999
++++ mud.dgd	Thu Aug 28 14:54:26 2003
 @@ -1,10 +1,10 @@
  telnet_port	= 6047;			/* telnet port number */
  binary_port	= 6048;			/* binary port number */

@@ -44,6 +44,7 @@ sbin/dgd
 %%DATADIR%%/kernel/kernel/lib/api/user.c
 %%DATADIR%%/kernel/kernel/lib/auto.c
 %%DATADIR%%/kernel/kernel/lib/connection.c
+%%NETWORKING%%%%DATADIR%%/kernel/kernel/lib/network/port.c
 %%DATADIR%%/kernel/kernel/lib/port.c
 %%DATADIR%%/kernel/kernel/lib/user.c
 %%DATADIR%%/kernel/kernel/lib/wiztool.c
@@ -58,9 +59,12 @@ sbin/dgd
 %%DATADIR%%/kernel/kernel/sys/driver.c
 %%DATADIR%%/kernel/kernel/sys/objregd.c
 %%DATADIR%%/kernel/kernel/sys/rsrcd.c
+%%NETWORKING%%%%DATADIR%%/kernel/kernel/sys/telnet_port.c
 %%DATADIR%%/kernel/kernel/sys/userd.c
+%%NETWORKING%%%%DATADIR%%/kernel/usr/System/initd.c
 %%PORTDOCS%%%%DOCSDIR%%/Commercial
 %%PORTDOCS%%%%DOCSDIR%%/Copyright
+%%NETWORKING%%%%PORTDOCS%%%%DOCSDIR%%/Copyright.NETWORK-PACKAGE
 %%PORTDOCS%%%%DOCSDIR%%/Credits
 %%PORTDOCS%%%%DOCSDIR%%/Extensions
 %%PORTDOCS%%%%DOCSDIR%%/Introduction
@@ -81,7 +85,9 @@ sbin/dgd
 %%PORTDOCS%%%%DOCSDIR%%/kfun/call_trace
 %%PORTDOCS%%%%DOCSDIR%%/kfun/ceil
 %%PORTDOCS%%%%DOCSDIR%%/kfun/clone_object
+%%NETWORKING%%%%PORTDOCS%%%%DOCSDIR%%/kfun/close_user
 %%PORTDOCS%%%%DOCSDIR%%/kfun/compile_object
+%%NETWORKING%%%%PORTDOCS%%%%DOCSDIR%%/kfun/connect
 %%PORTDOCS%%%%DOCSDIR%%/kfun/cos
 %%PORTDOCS%%%%DOCSDIR%%/kfun/cosh
 %%PORTDOCS%%%%DOCSDIR%%/kfun/crypt
@@ -112,7 +118,9 @@ sbin/dgd
 %%PORTDOCS%%%%DOCSDIR%%/kfun/millitime
 %%PORTDOCS%%%%DOCSDIR%%/kfun/modf
 %%PORTDOCS%%%%DOCSDIR%%/kfun/object_name
+%%NETWORKING%%%%PORTDOCS%%%%DOCSDIR%%/kfun/open_port
 %%PORTDOCS%%%%DOCSDIR%%/kfun/parse_string
+%%NETWORKING%%%%PORTDOCS%%%%DOCSDIR%%/kfun/ports
 %%PORTDOCS%%%%DOCSDIR%%/kfun/pow
 %%PORTDOCS%%%%DOCSDIR%%/kfun/previous_object
 %%PORTDOCS%%%%DOCSDIR%%/kfun/previous_program
@@ -163,6 +171,7 @@ sbin/dgd
 @dirrm %%DATADIR%%/kernel/usr
 @dirrm %%DATADIR%%/kernel/kernel/sys
 @dirrm %%DATADIR%%/kernel/kernel/obj
+%%NETWORKING%%@dirrm %%DATADIR%%/kernel/kernel/lib/network
 @dirrm %%DATADIR%%/kernel/kernel/lib/api
 @dirrm %%DATADIR%%/kernel/kernel/lib
 @dirrm %%DATADIR%%/kernel/kernel/data
