@@ -31,9 +31,6 @@ post-patch:
 	${RUBY} -i.orig -p \
 		-e 'gsub %r:#!/bin/env:, "#!/usr/bin/env"' \
 			${WRKSRC}/Gnuplot.rb
-	${RUBY} -i.orig -p \
-		-e 'gsub %r:gplot/Gnuplot:, "Gnuplot"' \
-			${WRKSRC}/demo.rb
 
 do-install:
 	${MKDIR} ${RUBY_SITELIBDIR}/gplot
