@@ -15,10 +15,6 @@ MASTER_SITE_SUBDIR=	ffmpeg
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Hyper fast realtime audio/video encoder/converter, streaming server
 
-BROKEN=		"Does not compile"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2004-04-21
-
 USE_GETOPT_LONG=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -131,11 +127,11 @@ CONFIGURE_ARGS+=	--enable-mp3lame
 .endif
 ## optimization
 .ifdef(WITH_OPTIMIZED_CFLAGS)
-CONFIGURE_ARGS+=	--extra-cflags="-fPIC -I${LOCALBASE}/include \
+CONFIGURE_ARGS+=	--extra-cflags="-fPIC -DPIC -I${LOCALBASE}/include \
 			-I${X11BASE}/include \
 			-ffast-math -fomit-frame-pointer"
 .else
-CONFIGURE_ARGS+=	--extra-cflags="-fPIC -I${LOCALBASE}/include \
+CONFIGURE_ARGS+=	--extra-cflags="-fPIC -DPIC -I${LOCALBASE}/include \
 			-I${X11BASE}/include" \
 			--disable-opts
 .endif
