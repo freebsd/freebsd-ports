@@ -1,5 +1,5 @@
 --- Imakefile.orig	Fri Nov 22 09:28:46 1996
-+++ Imakefile	Thu Nov 20 03:28:47 1997
++++ Imakefile	Thu Jul 16 11:08:58 1998
 @@ -24,23 +24,23 @@
  XCOMM This is the directory where the highscore, level & sound data will be 
  XCOMM placed. Default will be the current directory.
@@ -36,7 +36,7 @@
          -DSOUNDS_DIR=\"$(SOUNDS_DIR)\" \
 -        -DREADMEP_FILE=\"$(XBOING_DIR)/docs/problems.doc\"
 -XCOMM   -DUSE_FLOCK=\"True\" \
-+        -DREADMEP_FILE=\"$(XBOING_DIR)/docs/problems.doc\" \
++        -DREADMEP_FILE=\"$(XBOING_DIR)/problems.doc\" \
 +        -DUSE_FLOCK=\"True\"
  XCOMM   -DNEED_USLEEP=\"True\" \
  XCOMM   -DNO_LOCKING=\"True\" 
