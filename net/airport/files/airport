@@ -18,7 +18,6 @@ case $0 in
 		file=AirportModemUtility
 	;;
 	*)
-	*)
 	echo "Unknown command"
 	exit 1
 esac
