@@ -3,7 +3,7 @@
 @@ -1,5 +1,9 @@
  #include <sys/ioctl.h>
 +#ifdef __FreeBSD__
-+#include <machine/soundcard.h>
++#include <sys/soundcard.h>
 +#else
  #include <linux/soundcard.h>
 +#endif
