@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Feb  8 18:23:04 1998
-+++ Makefile	Sat Oct  3 17:37:02 1998
+--- Makefile.orig	Mon Feb  9 02:23:04 1998
++++ Makefile	Sat Nov 14 22:58:27 1998
 @@ -21,6 +21,7 @@
  	@echo ""
  	@echo "make linux-help     Linux, more help"
@@ -8,21 +8,25 @@
  	@echo "make solaris        Solaris 2.x (tested: 2.5 and 2.5.1) using SparcWorks cc"
  	@echo "make solaris-gcc    Solaris 2.x using GNU cc (somewhat slower)"
  	@echo "make sunos          SunOS 4.x (tested: 4.1.4)"
-@@ -145,6 +146,14 @@
- 			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DOSS' \
- 		mpg123-make
- 
-+freebsd-elf:
-+	$(MAKE) CC=cc LDFLAGS= \
-+		OBJECTS='decode_i386.o dct64_i386.o getbits.o audio_oss.o' \
-+		CFLAGS='-Wall -ansi -pedantic -O4 -m486 -fomit-frame-pointer \
-+			-funroll-all-loops -ffast-math -DROT_I386 \
+@@ -140,8 +141,16 @@
+ freebsd:
+ 	$(MAKE) CC=cc LDFLAGS= \
+ 		OBJECTS='decode_i386.o dct64_i386.o getbits_.o audio_oss.o' \
+-		CFLAGS='-Wall -ansi -pedantic -O4 -m486 -fomit-frame-pointer \
+-			-funroll-all-loops -ffast-math -DROT_I386 \
++		CFLAGS+='-Wall -ansi -pedantic -fomit-frame-pointer \
++			-funroll-all-loops -ffast-math -DROT_I386 -DREAD_MMAP \
 +			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DOSS' \
 +		mpg123-make
 +
- solaris:
- 	$(MAKE) CC=cc LDFLAGS='-lsocket -lnsl' \
- 		OBJECTS='decode.o dct64.o audio_sun.o' \
++freebsd-elf:
++	$(MAKE) CC=cc LDFLAGS= \
++		OBJECTS='decode_i386.o dct64_i386.o getbits.o audio_oss.o' \
++		CFLAGS='-Wall -ansi -pedantic -fomit-frame-pointer \
++			-funroll-all-loops -ffast-math -DROT_I386 -DREAD_MMAP \
+ 			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DOSS' \
+ 		mpg123-make
+ 
 @@ -251,7 +260,7 @@
  	@ $(MAKE) BINNAME=mpg123m mpg123
  
