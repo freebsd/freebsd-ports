@@ -1,5 +1,5 @@
 bin/ninja
-bin/ninja-1.1
+bin/ninja-%%VERSION%%
 bin/wserv
 share/ninja/translation/ASCII
 share/ninja/translation/CP437
