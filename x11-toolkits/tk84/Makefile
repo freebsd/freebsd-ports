@@ -26,7 +26,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/unix
 GNU_CONFIGURE=	yes
 TK_VER=		8.4
 SHORT_TK_VER=	84
-CONFIGURE_ARGS=	--enable-shared --with-tcl=${PREFIX}/lib/tcl${TK_VER}
+CONFIGURE_ARGS=	--enable-shared --with-tcl=${PREFIX}/lib/tcl${TK_VER} \
+		--includedir=${LOCALBASE}/include/tk${TK_VER}
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR} TK_LIB_FILE=libtk${SHORT_TK_VER}.so.1
 MAKE_ENV=	SHORT_TK_VER=${SHORT_TK_VER}
 PLIST_SUB=	TK_VER=${TK_VER} SHORT_TK_VER=${SHORT_TK_VER}
@@ -35,7 +36,6 @@ PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.wish
 NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
 TCL84_PORT?=	lang/tcl84
 USE_REINPLACE=	YES
-
 MANCOMPRESSED=	no
 
 MAN1=	wish.1
@@ -340,11 +340,11 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	text.n tk_textCut.n \
 	text.n tk_textPaste.n
 
+.include <bsd.port.pre.mk>
+
 post-configure:
 	${REINPLACE_CMD} -e 's=${WRKDIRPREFIX}${PORTSDIR}=$${WRKDIRPREFIX}${PORTSDIR}=' \
 		${WRKSRC}/tkConfig.sh
-
-.include <bsd.port.pre.mk>
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/pkgIndex.tcl ${PREFIX}/lib/tk${TK_VER}/

@@ -5,7 +5,7 @@
  
  # Directory in which to install the include file tk.h:
 -INCLUDE_INSTALL_DIR	= $(INSTALL_ROOT)$(includedir)
-+INCLUDE_INSTALL_DIR	= $(INSTALL_ROOT)$(includedir)/tk$(VERSION)
++INCLUDE_INSTALL_DIR	= $(INSTALL_ROOT)$(includedir)
 +GENERIC_INCLUDE_INSTALL_DIR = $(INCLUDE_INSTALL_DIR)/generic
 +UNIX_INCLUDE_INSTALL_DIR = $(INCLUDE_INSTALL_DIR)/unix
  
