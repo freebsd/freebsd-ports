@@ -31,7 +31,7 @@ BROKEN=	Does not compile on ${ARCH}
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread||; s|-nostdinc++||; \
-		s|-fPIC||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lpthread||; s|-nostdinc++||' \
+		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
