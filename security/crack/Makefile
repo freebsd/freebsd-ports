@@ -5,14 +5,13 @@
 # Whom:			David O'Brien <obrien@FreeBSD.org>
 # Whom:                 Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.4 1997/02/06 07:14:48 asami Exp $
+# $Id: Makefile,v 1.5 1997/06/09 15:13:41 fenner Exp $
 #
 
 DISTNAME=	crack5.0
 PKGNAME=	crack-5.0
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.win.tue.nl/pub/security/  \
-		ftp://ftp.lerc.nasa.gov/security/  \
 		ftp://ftp.ox.ac.uk/pub/comp/security/software/crackers/  \
 		ftp://ftp.auscert.org.au/pub/coast/mirrors/cert.org/tools/crack/ \
 		ftp://ftp.riken.go.jp/pub/net/cert_security_tools/crack/
