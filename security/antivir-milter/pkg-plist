@@ -1,19 +1,29 @@
-@unexec if cmp -s %D/AntiVir/antivir-dist_avfbmlt %D/AntiVir/antivir; then rm -f %D/AntiVir/antivir; fi
-AntiVir/antivir-dist_avfbmlt
+@unexec if cmp -s %D/AntiVir/antivir-dist_avmilter %D/AntiVir/antivir; then rm -f %D/AntiVir/antivir; fi
+AntiVir/antivir-dist_avmilter
 @exec [ -f %B/antivir ] || cp -p %B/%f %B/antivir
-@unexec if cmp -s %D/AntiVir/antivir.vdf-dist_avfbmlt %D/AntiVir/antivir.vdf; then rm -f %D/AntiVir/antivir.vdf; fi
-AntiVir/antivir.vdf-dist_avfbmlt
+@unexec if cmp -s %D/AntiVir/antivir.vdf-dist_avmilter %D/AntiVir/antivir.vdf; then rm -f %D/AntiVir/antivir.vdf; fi
+AntiVir/antivir.vdf-dist_avmilter
 @exec [ -f %B/antivir.vdf ] || cp -p %B/%f %B/antivir.vdf
 @unexec rmdir %D/AntiVir 2> /dev/null || echo "If permanently deleting this package, %D/AntiVir and its contents must be removed manually."
 bin/avq
 bin/avqrm
+@unexec if cmp -s %D/etc/avmilter/avmilter.conf.sample %D/etc/avmilter/avmilter.conf; then rm -f %D/etc/avmilter/avmilter.conf; else echo "If permanently deleting this package, %D/etc/avmilter/avmilter.conf must be removed manually."; fi
+etc/avmilter/avmilter.conf.sample
+@exec [ -f %B/avmilter.conf ] || cp %B/%f %B/avmilter.conf
+@unexec if cmp -s %D/etc/avmilter/avmilter.ignore.sample %D/etc/avmilter/avmilter.ignore; then rm -f %D/etc/avmilter/avmilter.ignore; else echo "If permanently deleting this package, %D/etc/avmilter/avmilter.ignore must be removed manually."; fi
+etc/avmilter/avmilter.ignore.sample
+@exec [ -f %B/avmilter.ignore ] || cp %B/%f %B/avmilter.ignore
+@unexec if cmp -s %D/etc/avmilter/avmilter.scan.sample %D/etc/avmilter/avmilter.scan; then rm -f %D/etc/avmilter/avmilter.scan; else echo "If permanently deleting this package, %D/etc/avmilter/avmilter.scan must be removed manually."; fi
+etc/avmilter/avmilter.scan.sample
+@exec [ -f %B/avmilter.scan ] || cp %B/%f %B/avmilter.scan
+@unexec if cmp -s %D/etc/avmilter/avmilter.warn.sample %D/etc/avmilter/avmilter.warn; then rm -f %D/etc/avmilter/avmilter.warn; else echo "If permanently deleting this package, %D/etc/avmilter/avmilter.warn must be removed manually."; fi
+etc/avmilter/avmilter.warn.sample
+@exec [ -f %B/avmilter.warn ] || cp %B/%f %B/avmilter.warn
+@unexec rmdir %D/etc/avmilter 2> /dev/null || echo "If permanently deleting this package, %D/etc/avmilter and its contents must be removed manually."
 @unexec if cmp -s %D/etc/antivir.conf.sample %D/etc/antivir.conf; then rm -f %D/etc/antivir.conf; else echo "If permanently deleting this package, %D/etc/antivir.conf must be removed manually."; fi
 etc/antivir.conf.sample
 @exec [ -f %B/antivir.conf ] || cp %B/%f %B/antivir.conf
-@unexec if cmp -s %D/etc/avmilter.conf.sample %D/etc/avmilter.conf; then rm -f %D/etc/avmilter.conf; else echo "If permanently deleting this package, %D/etc/avmilter.conf must be removed manually."; fi
-etc/avmilter.conf.sample
-@exec [ -f %B/avmilter.conf ] || cp %B/%f %B/avmilter.conf
-etc/rc.d/antivir-milter.sh
+etc/rc.d/avmilter.sh
 sbin/antivirupdater
 sbin/avmilter
 @exec install -d -o smmsp -g smmsp -m 700 /var/spool/avmilter
@@ -24,9 +34,6 @@ sbin/avmilter
 @unexec rmdir /var/spool/avmilter/outgoing 2> /dev/null || true
 @unexec rmdir /var/spool/avmilter/rejected 2> /dev/null || true
 @unexec rmdir /var/spool/avmilter 2> /dev/null || echo "If permanently deleting this package, /var/spool/avmilter and its contents must be removed manually."
-%%EXAMPLESDIR%%/avmilter.ignore
-%%EXAMPLESDIR%%/avmilter.scan
-%%EXAMPLESDIR%%/avmilter.warn
 %%EXAMPLESDIR%%/templates/de/patho-administrator
 %%EXAMPLESDIR%%/templates/de/patho-recipient
 %%EXAMPLESDIR%%/templates/de/patho-sender
@@ -75,6 +82,7 @@ sbin/avmilter
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.DE
 %%PORTDOCS%%%%DOCSDIR%%/MANUAL
+%%PORTDOCS%%%%DOCSDIR%%/README.gpg
 %%PORTDOCS%%%%DOCSDIR%%/avmilter_de.pdf
 %%PORTDOCS%%%%DOCSDIR%%/avmilter_en.pdf
 %%PORTDOCS%%%%DOCSDIR%%/antivir.gpg

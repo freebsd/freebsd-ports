@@ -1,0 +1,16 @@
+--- pgp/README.orig	Fri Oct  1 11:25:22 2004
++++ pgp/README	Tue Oct 12 17:50:07 2004
+@@ -58,10 +58,10 @@
+ 
+ 
+ 7. Activate GnuPG in AntiVir by adding the GnuPGBinary directive to the
+-   /etc/antivir.conf file. This directive takes as argument the full path
+-   to your GnuPG binary. Typically it would look like this:
++   %%PREFIX%%/etc/antivir.conf file. This directive takes as argument the
++   full path to your GnuPG binary. Typically it would look like this:
+ 
+-   GnuPGBinary /usr/local/bin/gpg
++   GnuPGBinary %%LOCALBASE%%/bin/gpg
+ 
+ 
+ Note: Currently only engine or program updates utilize GnuPG. VDF file

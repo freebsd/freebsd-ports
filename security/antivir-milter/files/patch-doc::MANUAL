@@ -1,11 +1,11 @@
 --- doc/MANUAL.orig	Wed Jan 28 11:48:04 2004
 +++ doc/MANUAL	Mon Mar  1 01:08:06 2004
-@@ -3,39 +3,39 @@
+@@ -24,37 +24,38 @@
  
  To start, stop, restart AntiVir Milter:
  
 -	# /usr/sbin/rcavmilter [start|stop|status|restart]
-+	# %%PREFIX%%/etc/rc.d/antivir-milter.sh [start|stop|status|restart]
++	# %%PREFIX%%/etc/rc.d/avmilter.sh [start|stop|status|restart]
  
  When executed successfully, a message from AntiVir Milter with
  the scan engine version and VDF version is present in the log file
@@ -16,60 +16,51 @@
  2. Copying the license file 
  ---------------------------
  
- If you have a license file for commercial or privat user,
--copy the license file *.key to the folder /usr/lib/AntiVir and 
+-Copy the license file *.key to the folder /usr/lib/AntiVir and 
 -set the access rights of user and group to default uucp:
--
++Copy the license file *.key to the folder %%PREFIX%%/AntiVir and 
++set the access rights of user root and group to smmsp:
+ 
 -	# cp hbedv.key /usr/lib/AntiVir/
 -	# chown uucp:uucp /usr/lib/AntiVir/avmgate.key
-+copy the license file *.key to the folder %%PREFIX%%/AntiVir and 
-+set the access rights of user root and group smmsp:
- 
 +	# cp hbedv.key %%PREFIX%%/AntiVir/
 +	# chown root:smmsp %%PREFIX%%/AntiVir/hbedv.key
 +	# chmod 440 %%PREFIX%%/AntiVir/hbedv.key
+ 
  
  3. Configuring AntiVir Milter
  -----------------------------
  
 -AntiVir Milter provides the configuration file /etc/avmilter.conf:
-+AntiVir Milter provides the configuration file %%PREFIX%%/etc/avmilter.conf:
- The following directives are available:
+-The following directives are available:
++AntiVir Milter provides the following directives in the configuration file
++%%PREFIX%%/etc/avmilter/avmilter.conf:
  
--# User                            uucp
--# Group                           uucp
-+# User                            smmsp
-+# Group                           smmsp
- # Postmaster                      postmaster
- # MyHostName                      localhost
- # SpoolDir                        /var/spool/avmilter
--# AntiVirDir                      /usr/lib/AntiVir
-+# AntiVirDir                      %%PREFIX%%/AntiVir
- # TemporaryDir                    /var/tmp
- # MinFreeBlocks                   100
--# ForwardTo                       /usr/lib/sendmail -oem -oi
-+# ForwardTo                       /usr/sbin/sendmail -oem -oi
- # MaxNestingLevel                 20
- # MaxAttachments                  100
- # BlockSuspiciousMime             NO
-@@ -43,7 +43,7 @@
- # VirusAlertToRcpt                NO
- # VirusAlertToSender              NO
- # VirusAlertToPostmaster          YES
--# VirusAlertsUser                 AntiVir
-+# VirusAlertsUser                 MAILER-DAEMON
- # RejectVirusMail                 NO
- # ScanInArchive                   YES
- # ArchiveMaxSize		  0
-@@ -64,21 +64,21 @@
- # LogFile			  NO
- # MaxRecipientsPerMessage	  100
- 
--For a detailed description see /etc/avmilter.conf.
-+For a detailed description see %%PREFIX%%/etc/avmilter.conf.
- 
- 
- 4. Configuring automatic update
+-# User				uucp
+-# Group				uucp
++# User				smmsp
++# Group				smmsp
+ # Postmaster			postmaster
+ # MyHostName			localhost
+ # SpoolDir			/var/spool/avmilter
+-# AntiVirDir			/usr/lib/AntiVir
++# AntiVirDir			%%PREFIX%%/AntiVir
+ # TemporaryDir			/var/tmp
+-# ForwardTo			/usr/lib/sendmail -oem -oi
++# ForwardTo			/usr/sbin/sendmail -oem -oi
+ # MaxNestingLevel		same as ArchiveMaxRecursion
+ # MaxAttachments		100
+ # BlockSuspiciousMime		NO
+@@ -62,7 +63,7 @@
+ # ExposeRecipientAlerts		NO
+ # ExposeSenderAlerts		NO
+ # ExposePostmasterAlerts	YES
+-# AlertsUser			AntiVir
++# AlertsUser			MAILER-DAEMON
+ # RejectAlertMail		NO
+ # QuarantineAlert		YES
+ # ScanInArchive			YES
+@@ -93,13 +94,13 @@
  -------------------------------
  
  Add the following line for a daily update at e.g. 0:25 a.m.:
@@ -80,29 +71,23 @@
  in the file antivir.conf.
  
 -The file /etc/antivir.conf contains settable parameters effecting
--the automatic virus protection updates. The following directives 
--are provided:
+-the automatic protection updates. The following directives 
 +The file %%PREFIX%%/etc/antivir.conf contains settable parameters
-+effecting the automatic virus protection updates. The following
-+directives are provided:
++effecting the automatic protection updates. The following directives
+ are provided:
  
- # EmailTo            root@localhost
- # LogTo              /var/log/antivir.log
-@@ -88,10 +88,10 @@
- # HTTPProxyPassword  password
- # SyslogFacility     user
- # SyslogPriority     notice
+ # EmailTo            	root@localhost
+@@ -113,7 +114,7 @@
+ # HTTPProxyPassword  	password
+ # SyslogFacility     	user
+ # SyslogPriority     	notice
 -# GnuPGBinary
-+# GnuPGBinary        %%PREFIX%%/bin/gpg
++# GnuPGBinary		%%LOCALBASE%%/bin/gpg
  # GnuPGOptions
- 
--For a detailled description see /etc/avmilter.conf.
-+For a detailled description see %%PREFIX%%/etc/avmilter.conf.
- 
- 
- 5. Notification Templates
-@@ -101,7 +101,7 @@
- have the possibility to define your own text in virus and
+ # DetectDialer
+ # DetectJoke
+@@ -133,7 +134,7 @@
+ you have the possibility to define your own text in alert and
  pathological notification mails.
  
 -The directory /usr/lib/AntiVir/templates contains the 
@@ -110,3 +95,32 @@
  following files:
  
  	patho-administrator
+@@ -190,14 +191,15 @@
+ will be printed to syslog:
+ (avmilter[1234]: Mail from foo@bar.tld to john@doe.tld will be scanned!)
+ 
+-The tables are: /etc/avmilter.scan and /etc/avmilter.ignore.
++The tables are: %%PREFIX%%/etc/avmilter/avmilter.scan and
++%%PREFIX%%/etc/avmilter/avmilter.ignore.
+ Example files are included in this package.
+ Each table consists of an address that contains regular expressions
+ and one and/or two flags:
+ 
+ Examples:
+ ----------------------
+-/etc/avmilter.scan:
++avmilter.scan:
+ The i is an option for the regexp and it means ignore case.
+ 
+ #The following matches exactly the *recipient* address "foo@bar.tld"
+@@ -298,8 +300,8 @@
+ 11. Notice Mail Restrictions
+ ------------------------
+ 
+-In the /etc/avmilter.warn file one can specify who receives a
+-mail in case of an alert.
++In the %%PREFIX%%/etc/avmilter/avmilter.warn file one can specify
++who receives a mail in case of an alert.
+ The definition there is used instead of the definition in the
+ avmilter.conf (Expose*Alerts).
+ 
