@@ -40,6 +40,7 @@
     SUBDIR += dsssl-docbook-modular
     SUBDIR += dtd-catalogs
     SUBDIR += dtd2relax
+    SUBDIR += dtdinst
     SUBDIR += dtdparse
     SUBDIR += eruby
     SUBDIR += expat
