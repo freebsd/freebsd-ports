@@ -37,21 +37,3 @@
  
  # Assume non-shared by default and override below
  BLDSHARED="false"
-@@ -3939,7 +3953,7 @@
- 		AC_DEFINE(HAVE_TRU64_ACLS,1,[Whether Tru64 ACLs are available])
- 		ACL_LIBS="$ACL_LIBS -lpacl"
- 		;;
--	*freebsd5*)
-+	*freebsd[[5-9]]*)
- 		AC_MSG_RESULT(Using FreeBSD posix ACLs)
- 		AC_DEFINE(HAVE_POSIX_ACLS,1,[Whether FreeBSD POSIX ACLs are available])
- 		AC_DEFINE(HAVE_ACL_GET_PERM_NP,1,[Whether acl_get_perm_np() is available])
-@@ -4258,7 +4272,7 @@
- 	*linux*)
- 		WINBIND_NSS_EXTRA_OBJS="nsswitch/winbind_nss_linux.o"
- 		;;
--	*freebsd5*)
-+	*freebsd[[5-9]]*)
- 		# FreeBSD winbind client is implemented as a wrapper around
- 		# the Linux version.
- 		WINBIND_NSS_EXTRA_OBJS="nsswitch/winbind_nss_freebsd.o \

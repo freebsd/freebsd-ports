@@ -1,21 +1,35 @@
-If you want to use samba ports,
+If you want to run this samba port:
 
 1. Copy /usr/local/etc/smb.conf.default to /usr/local/etc/smb.conf, and edit
    it.
 2. Put string 'samba_enable="YES"' into your /etc/rc.conf.
 3. Type '/usr/local/etc/rc.d/samba.sh start' or reboot.
 
+This port doesn't create 'smbpasswd' file automatically anymore. Users
+are encouraged to use 'tdbsam' backend instead:
+
+  [global]
+    passdb backend = tdbsam, smbpasswd
+
+You can use pdbedit to migrate accounts from 'smbpasswd' to 'tdbsam',
+see the Samba-HOWTO-Collection.
+
+You still can create 'smbpasswd' file with the supplied 'make_smbpasswd'
+script:
+
+  cat /etc/passwd | grep -v "^#" | make_smbpasswd > smbpasswd
+  chmod 600 smbpasswd
+
+But the usage of it is deprecated.
+
 See document files in /usr/local/share/doc/samba and example config files in
 /usr/local/share/examples/samba for details.
 
-FreeBSD Samba ports for localization and encrypt passwords support are no
-longer provided because these supports have been integrated into the
-original distribution since 1.9.18.  If you're Western European or Japanese
-Windows users, please set "client code page" parameter in smb.conf (1.9.18
-does not support Chinese Windows. If you want to use Chinese samba, please
-use chinese/samba port).  See smb.conf.sample for details.  If you want to
-use NT4+SP3 or Win95+updates clients, set "encrypt passwords" parameter to
-yes and use smbpasswd [username] to use /usr/local/private/smbpasswd for
-authentication.
+This port doesn't come anymore with the IDEALX Samba LDAP management tools.
+They are a separate port now, net/smbldap-tools. Please, install it, if you
+are going to use Samba LDAP back end.
+
+Japanese users, please, take a look onto japanese/samba3 port instead -
+it comes with additional multibyte characters support.
 
 FreeBSD Samba3 port maintainer: Timur Bakeyev <timur@gnu.org>
