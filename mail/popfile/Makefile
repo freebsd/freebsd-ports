@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	popfile
-PORTVERSION=	0.22.1
+PORTVERSION=	0.22.2
 #PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -16,8 +16,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	matusita@FreeBSD.org
 COMMENT=Automatic mail classification tool, acts as a POP3 proxy
 
-# Since 1) DBD::SQLite2 RUN_DEPENDS on DBI and 2) Date::TimeDate is also
-# included in devel/p5-TimeDate, these modules is NOT listed here.
+# Use DBD::SQLite2 since POPFile doesn't support SQLite 1.x.
+# See also files/patch-Bayes.pm.
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite2.pm:${PORTSDIR}/databases/p5-DBD-SQLite2 \
 		${SITE_PERL}/HTML/Tagset.pm:${PORTSDIR}/www/p5-HTML-Tagset \
 		${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
@@ -37,6 +37,15 @@ START_SCRIPTS_SUB= DATADIR=${DATADIR}
 
 .if defined(WITH_POPFILE_SSL)
 RUN_DEPENDS+=  ${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL
+.endif
+
+.if defined(WITH_POPFILE_XMLRPC)
+RUN_DEPENDS+=  ${SITE_PERL}/XMLRPC/Transport/HTTP.pm:${PORTSDIR}/net/p5-SOAP-Lite
+.endif
+
+.if defined(WITH_POPFILE_SOCKS)
+# XXX: IO::Socket::Socks should be listed here but no ports yet. For those
+# interested, check http://search.cpan.org/~reatmon/IO-Socket-Socks-0.1/.
 .endif
 
 .if defined(WITH_POPFILE_UPGRADE_FROM_0_20)
@@ -61,34 +70,33 @@ pre-fetch:
 	@${ECHO_CMD} "This port has some compile options:"
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "   * make WITH_POPFILE_SSL=YES"
-	@${ECHO_CMD} "        Since v0.22.0, SSL support is added for all proxy protocols."
-	@${ECHO_CMD} "        You may use SSL protocol to connect an actual servers."
-	@${ECHO_CMD} "        Note that this does NOT enable POPFile to accept SSL connection"
-	@${ECHO_CMD} "        from clients."
+	@${ECHO_CMD} "        POPFile supports SSL for all proxy protocols.  You may use SSL"
+	@${ECHO_CMD} "        protocol to connect an actual servers.  Note that this does NOT"
+	@${ECHO_CMD} "        enable POPFile to accept SSL connection from clients.  Enable
+	@${ECHO_CMD} "        this option to install net/p5-SOAP-Lite."
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "   * make WITH_POPFILE_XMLRPC=YES"
+	@${ECHO_CMD} "        Your program may communicate to POPFile via XMLRPC or SOAP."
+	@${ECHO_CMD} "        Note that POPFile acts as a server, no client implementation is"
+	@${ECHO_CMD} "        provided; you have to have your own client by yourself.  Enable"
+	@${ECHO_CMD} "        this option to install net/p5-SOAP-Lite."
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "   * make WITH_POPFILE_UPGRADE_FROM_0_20=YES"
-	@${ECHO_CMD} "        Since v0.21.0, The corpus format Is changed from BerkeyDB to SQLite."
-	@${ECHO_CMD} "        If you have old (v0.20.1 or before) corpus and want to use it with"
-	@${ECHO_CMD} "        new POPFile, use this option.  BerkeleyDB module will be installed"
-	@${ECHO_CMD} "        and POPFile automatically convert from the old corpus to a new one."
-	@${ECHO_CMD} "        Note that this is just for _upgrade_ time only; once you have"
-	@${ECHO_CMD} "        converted your corpus or you are a new user since v0.21.0,"
-	@${ECHO_CMD} "        you don't need this option next time."
+	@${ECHO_CMD} "        Since v0.21.0, The corpus format Is changed from BerkeleyDB to."
+	@${ECHO_CMD} "        SQLite.  If you have old (v0.20.1 or before) corpus and upgrade to"
+	@${ECHO_CMD} "        new POPFile, enable this option to install databases/p5-BerkeleyDB"
+	@${ECHO_CMD} "        for upgrading your corpus.  Note that once you have converted to"
+	@${ECHO_CMD} "        new SQLite corpus, you do not need this option next time."
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "   * make WITH_POPFILE_JAPANESE=YES"
-	@${ECHO_CMD} "        Even if POPFile supports Japanese help message, parsing Japanese"
-	@${ECHO_CMD} "        email is enabled not by POPFile itself, but by KAKASI (Kanji Kana"
-	@${ECHO_CMD} "        Simple Inverter.)  If you need Japanese email support, use this"
-	@${ECHO_CMD} "        option.  KAKASI perl5 module is also installed."
+	@${ECHO_CMD} "        Even though POPFile supports Japanese help messages, parsing"
+	@${ECHO_CMD} "        Japanese email is not supported by POPFile itself, but by KAKASI"
+	@${ECHO_CMD} "        (Kanji Kana Simple Inverter.)  If you need Japanese email support,"
+	@${ECHO_CMD} "        enable this option to install japanese/p5-Text-Kakasi."
 .if ${PERL_LEVEL} < 500800
-	@${ECHO_CMD} "        If you still using perl 5.6 or before, a hacky patch is also"
-	@${ECHO_CMD} "        applied to POPFile itself, and install japanese/p5-jcode.pl."
+	@${ECHO_CMD} "        If you still using perl 5.6 or before, a hacky patch (use jcode.pl
+	@${ECHO_CMD} "        instead of Encode::from_to) is applied for using POPFile."
 .endif
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "These options just add runtime (perl) module dependencies; you can install"
-	@${ECHO_CMD} "security/p5-IO-Socket-SSL, databases/p5-BerkeleyDB, or japanese/p5-Text-Kakasi"
-	@${ECHO_CMD} "separately."
-	@${ECHO_CMD} ""
 
 post-patch:
 	${CHMOD} +x ${WRKSRC}/popfile.pl
@@ -100,5 +108,6 @@ do-install:
 	@${SED} ${START_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/popfile.sh > ${WRKDIR}/popfile.sh
 	${INSTALL_SCRIPT} ${WRKDIR}/popfile.sh ${PREFIX}/sbin
+	${RM} ${WRKDIR}/popfile.sh
 
 .include <bsd.port.post.mk>
