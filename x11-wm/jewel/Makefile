@@ -17,6 +17,7 @@ COMMENT=	Window manager based on aewm++
 ALL_TARGET=	jewel
 DOCDIR=		share/doc/${PORTNAME}
 DOCS=		Changelog Changelog.DLR Changelog.jewel INSTALL LICENSE README
+MAN1=		jewel.1x
 PLIST=		${WRKDIR}/pkg-plist
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
@@ -37,6 +38,7 @@ pre-install:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/jewel ${PREFIX}/bin/jewel
+	${INSTALL_MAN} ${WRKSRC}/jewel.1x ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/${DOCDIR}
 .for ii in ${DOCS}
