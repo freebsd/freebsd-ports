@@ -5,16 +5,20 @@
 # $FreeBSD$
 #
 
-PORTNAME=      ifstat
-PORTVERSION=   1.0
-CATEGORIES=    net
-MASTER_SITES=  http://gael.roualland.free.fr/%SUBDIR%/
-MASTER_SITE_SUBDIR=    ${PORTNAME}
+PORTNAME=	ifstat
+PORTVERSION=	1.1
+CATEGORIES=	net
+MASTER_SITES=	http://gael.roualland.free.fr/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=    ports@FreeBSD.org
-COMMENT=       Network interface statistics monitoring tool
+MAINTAINER=	krion@FreeBSD.org
+COMMENT=	Network interface statistics monitoring tool
 
-GNU_CONFIGURE= yes
-MAN1=          ifstat.1
+LIB_DEPENDS=	netsnmp.6:${PORTSDIR}/net/net-snmp
+
+GNU_CONFIGURE=	yes
+USE_OPENSSL=	yes
+
+MAN1=		ifstat.1
 
 .include <bsd.port.mk>
