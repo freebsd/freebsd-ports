@@ -1,10 +1,11 @@
-%%PORTDOCS%%share/doc/chora/BUGS
-%%PORTDOCS%%share/doc/chora/CHANGES
-%%PORTDOCS%%share/doc/chora/COPYING
-%%PORTDOCS%%share/doc/chora/CREDITS
-%%PORTDOCS%%share/doc/chora/GOALS
-%%PORTDOCS%%share/doc/chora/INSTALL
-%%PORTDOCS%%share/doc/chora/README
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/GOALS
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
 %%CHORADIR%%/annotate.php
 %%CHORADIR%%/co.php
 %%CHORADIR%%/config/.htaccess
@@ -13,7 +14,6 @@
 %%CHORADIR%%/config/conf.php.dist
 %%CHORADIR%%/config/cvsroots.php
 %%CHORADIR%%/config/cvsroots.php.dist
-%%CHORADIR%%/config/cvsroots.php.dist.orig
 %%CHORADIR%%/config/html.php
 %%CHORADIR%%/config/html.php.dist
 %%CHORADIR%%/config/longIntro.txt
@@ -60,7 +60,10 @@
 %%CHORADIR%%/locale/nl_NL/LC_MESSAGES/chora.mo
 %%CHORADIR%%/locale/pl_PL/LC_MESSAGES/chora.mo
 %%CHORADIR%%/locale/pt_BR/LC_MESSAGES/chora.mo
+%%CHORADIR%%/locale/ro_RO/LC_MESSAGES/chora.mo
 %%CHORADIR%%/locale/sv_SE/LC_MESSAGES/chora.mo
+%%CHORADIR%%/locale/zh_CN/LC_MESSAGES/chora.mo
+%%CHORADIR%%/locale/zh_TW/LC_MESSAGES/chora.mo
 %%CHORADIR%%/menu.php
 %%CHORADIR%%/po/.htaccess
 %%CHORADIR%%/po/Makefile
@@ -76,8 +79,11 @@
 %%CHORADIR%%/po/nl_NL.po
 %%CHORADIR%%/po/pl_PL.po
 %%CHORADIR%%/po/pt_BR.po
+%%CHORADIR%%/po/ro_RO.po
 %%CHORADIR%%/po/shtool
 %%CHORADIR%%/po/sv_SE.po
+%%CHORADIR%%/po/zh_CN.po
+%%CHORADIR%%/po/zh_TW.po
 %%CHORADIR%%/po/xgettext.sh
 %%CHORADIR%%/prefs.php
 %%CHORADIR%%/status.php
@@ -118,7 +124,7 @@
 %%CHORADIR%%/templates/log/rev.inc
 %%CHORADIR%%/templates/menu/menu.inc
 etc/horde/httpd.conf.chora
-%%PORTDOCS%%@dirrm share/doc/chora
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%CHORADIR%%/config
 @dirrm %%CHORADIR%%/graphics/mime
 @dirrm %%CHORADIR%%/graphics
@@ -145,8 +151,14 @@ etc/horde/httpd.conf.chora
 @dirrm %%CHORADIR%%/locale/pl_PL
 @dirrm %%CHORADIR%%/locale/pt_BR/LC_MESSAGES
 @dirrm %%CHORADIR%%/locale/pt_BR
+@dirrm %%CHORADIR%%/locale/ro_RO/LC_MESSAGES
+@dirrm %%CHORADIR%%/locale/ro_RO
 @dirrm %%CHORADIR%%/locale/sv_SE/LC_MESSAGES
 @dirrm %%CHORADIR%%/locale/sv_SE
+@dirrm %%CHORADIR%%/locale/zh_CN/LC_MESSAGES
+@dirrm %%CHORADIR%%/locale/zh_CN
+@dirrm %%CHORADIR%%/locale/zh_TW/LC_MESSAGES
+@dirrm %%CHORADIR%%/locale/zh_TW
 @dirrm %%CHORADIR%%/locale
 @dirrm %%CHORADIR%%/po
 @dirrm %%CHORADIR%%/templates/annotate
