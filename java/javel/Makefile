@@ -19,6 +19,12 @@ MAKEFILE=	makefile
 
 MAN1=	javel.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500035
+BROKEN=		"Does not compile on 5.0"
+.endif
+
 post-patch:
 	@${PERL} -pi -e "s,^CC,#CC,g ; s,^CFLAGS,#CFLAGS,g ; \
 		s,CC,CXX,g ; s,CFLAGS,CXXFLAGS,g" ${WRKSRC}/${MAKEFILE}
@@ -27,4 +33,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/javel ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/javel.1 ${MAN1PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

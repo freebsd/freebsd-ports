@@ -12,7 +12,13 @@ MASTER_SITES=	http://zed.c3po.it/
 
 MAINTAINER=	exile@chamber.ee
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500035
+BROKEN=		"Does not compile on 5.0"
+.endif
+
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/zed
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

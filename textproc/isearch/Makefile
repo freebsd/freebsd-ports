@@ -16,10 +16,16 @@ MAINTAINER=	pmarquis@pobox.com
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	INSTALL=${PREFIX}/bin
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500035
+BROKEN=		"Does not compile on 5.0"
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/html/*.html ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

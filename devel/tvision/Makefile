@@ -20,6 +20,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500035
+BROKEN=		"Does not compile on 5.0"
+.endif
+
 post-extract:
 	@${MV} ${WRKSRC}/myendian.h ${WRKSRC}/lib
 
@@ -29,4 +35,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,menus.h msgbox.h,menus.h msgbox.h myendian.h,' \
 		${WRKSRC}/lib/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -15,4 +15,10 @@ MAINTAINER=	john@coastalgeology.org
 
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500035
+BROKEN=		"Does not compile on 5.0"
+.endif
+
+.include <bsd.port.post.mk>
