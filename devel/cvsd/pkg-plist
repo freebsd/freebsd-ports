@@ -1,4 +1,4 @@
-etc/cvsd/cvsd.conf
+etc/cvsd/cvsd.conf.sample
 etc/rc.d/cvsd.sh.sample
 sbin/cvsd
 sbin/cvsd-buildroot
