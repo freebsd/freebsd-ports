@@ -12,7 +12,7 @@ MASTER_SITES=	http://x3270.bgp.nu/download/
 DISTNAME=	${PORTNAME}-332p1
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	Yonatan@xpert.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3270 Terminal emulator
 
 BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}

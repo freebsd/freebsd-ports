@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	yonatan@xpert.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console program to recover files based on their headers and footers
 
 USE_GMAKE=	yes
