@@ -6,14 +6,20 @@
 #
 
 PORTNAME=	sylpheed-claws
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.4
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
 DISTNAME=	sylpheed-${PORTVERSION}claws
+DISTFILES=	${EXTRACT_ONLY} \
+		${THEMEFILE}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	corecode@corecode.ath.cx
 
+THEMEFILE=	sylpheed-theme-pak1${EXTRACT_SUFX}
+
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
@@ -83,11 +89,15 @@ pre-everything::
 	@${ECHO} "      WITHOUT_SSL    Disable OpenSSL support"
 	@${ECHO} ""
 
+post-extract:
+	@${MKDIR} ${WRKSRC}/themes
+	@cd ${WRKSRC}/themes && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${THEMEFILE} ${EXTRACT_AFTER_ARGS}
+
 post-patch:
 	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" \
 		${WRKSRC}/tools/README.sylprint ${WRKSRC}/tools/sylprint.pl
 .if defined(NOPORTDOCS)
-	@${PERL} -pi -e 's|^(SUBDIRS = .*)manual (.*)|\1\2|' ${WRKSRC}/Makefile.in
+	@${PERL} -pi -e 's|^(SUBDIRS = .*)manual faq (.*)|\1\2|' ${WRKSRC}/Makefile.in
 .endif
 
 pre-build:

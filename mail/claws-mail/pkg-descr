@@ -12,7 +12,8 @@ In addition to the above, Sylpheed-claws has the following extra features:
 * folder properties: associate certain options per folder,
 	'Request Return Receipt', 'Default To', and 'Default account'
 * subject simplification for changing the display of subject lines via RegExp
-* pixmap themes
+* pixmap themes, delete news postings, new mail notification
+* selectable pop download of messages
 and more...
 
 WWW: http://sylpheed-claws.sourceforge.net/

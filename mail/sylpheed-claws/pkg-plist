@@ -11,6 +11,22 @@ lib/charset.alias
 %%PORTDOCS%%share/doc/sylpheed-claws/RELEASE_NOTES.claws
 %%PORTDOCS%%share/doc/sylpheed-claws/TODO
 %%PORTDOCS%%share/doc/sylpheed-claws/TODO.jp
+%%PORTDOCS%%share/doc/sylpheed-claws/faq/en/sylpheed-faq-1.html
+%%PORTDOCS%%share/doc/sylpheed-claws/faq/en/sylpheed-faq-2.html
+%%PORTDOCS%%share/doc/sylpheed-claws/faq/en/sylpheed-faq-3.html
+%%PORTDOCS%%share/doc/sylpheed-claws/faq/en/sylpheed-faq.html
+%%PORTDOCS%%share/doc/sylpheed-claws/faq/es/sylpheed-faq-1.html
+%%PORTDOCS%%share/doc/sylpheed-claws/faq/es/sylpheed-faq-2.html
+%%PORTDOCS%%share/doc/sylpheed-claws/faq/es/sylpheed-faq-3.html
+%%PORTDOCS%%share/doc/sylpheed-claws/faq/es/sylpheed-faq.html
+%%PORTDOCS%%share/doc/sylpheed-claws/faq/fr/sylpheed-faq-1.html
+%%PORTDOCS%%share/doc/sylpheed-claws/faq/fr/sylpheed-faq-2.html
+%%PORTDOCS%%share/doc/sylpheed-claws/faq/fr/sylpheed-faq-3.html
+%%PORTDOCS%%share/doc/sylpheed-claws/faq/fr/sylpheed-faq.html
+%%PORTDOCS%%share/doc/sylpheed-claws/faq/it/sylpheed-faq-1.html
+%%PORTDOCS%%share/doc/sylpheed-claws/faq/it/sylpheed-faq-2.html
+%%PORTDOCS%%share/doc/sylpheed-claws/faq/it/sylpheed-faq-3.html
+%%PORTDOCS%%share/doc/sylpheed-claws/faq/it/sylpheed-faq.html
 %%PORTDOCS%%share/doc/sylpheed-claws/manual/en/sylpheed-1.html
 %%PORTDOCS%%share/doc/sylpheed-claws/manual/en/sylpheed-10.html
 %%PORTDOCS%%share/doc/sylpheed-claws/manual/en/sylpheed-11.html
@@ -20,6 +36,7 @@ lib/charset.alias
 %%PORTDOCS%%share/doc/sylpheed-claws/manual/en/sylpheed-15.html
 %%PORTDOCS%%share/doc/sylpheed-claws/manual/en/sylpheed-16.html
 %%PORTDOCS%%share/doc/sylpheed-claws/manual/en/sylpheed-17.html
+%%PORTDOCS%%share/doc/sylpheed-claws/manual/en/sylpheed-18.html
 %%PORTDOCS%%share/doc/sylpheed-claws/manual/en/sylpheed-2.html
 %%PORTDOCS%%share/doc/sylpheed-claws/manual/en/sylpheed-3.html
 %%PORTDOCS%%share/doc/sylpheed-claws/manual/en/sylpheed-4.html
@@ -29,6 +46,27 @@ lib/charset.alias
 %%PORTDOCS%%share/doc/sylpheed-claws/manual/en/sylpheed-8.html
 %%PORTDOCS%%share/doc/sylpheed-claws/manual/en/sylpheed-9.html
 %%PORTDOCS%%share/doc/sylpheed-claws/manual/en/sylpheed.html
+%%PORTDOCS%%share/doc/sylpheed-claws/manual/fr/sylpheed-1.html
+%%PORTDOCS%%share/doc/sylpheed-claws/manual/fr/sylpheed-10.html
+%%PORTDOCS%%share/doc/sylpheed-claws/manual/fr/sylpheed-11.html
+%%PORTDOCS%%share/doc/sylpheed-claws/manual/fr/sylpheed-12.html
+%%PORTDOCS%%share/doc/sylpheed-claws/manual/fr/sylpheed-13.html
+%%PORTDOCS%%share/doc/sylpheed-claws/manual/fr/sylpheed-14.html
+%%PORTDOCS%%share/doc/sylpheed-claws/manual/fr/sylpheed-15.html
+%%PORTDOCS%%share/doc/sylpheed-claws/manual/fr/sylpheed-16.html
+%%PORTDOCS%%share/doc/sylpheed-claws/manual/fr/sylpheed-17.html
+%%PORTDOCS%%share/doc/sylpheed-claws/manual/fr/sylpheed-18.html
+%%PORTDOCS%%share/doc/sylpheed-claws/manual/fr/sylpheed-19.html
+%%PORTDOCS%%share/doc/sylpheed-claws/manual/fr/sylpheed-2.html
+%%PORTDOCS%%share/doc/sylpheed-claws/manual/fr/sylpheed-20.html
+%%PORTDOCS%%share/doc/sylpheed-claws/manual/fr/sylpheed-3.html
+%%PORTDOCS%%share/doc/sylpheed-claws/manual/fr/sylpheed-4.html
+%%PORTDOCS%%share/doc/sylpheed-claws/manual/fr/sylpheed-5.html
+%%PORTDOCS%%share/doc/sylpheed-claws/manual/fr/sylpheed-6.html
+%%PORTDOCS%%share/doc/sylpheed-claws/manual/fr/sylpheed-7.html
+%%PORTDOCS%%share/doc/sylpheed-claws/manual/fr/sylpheed-8.html
+%%PORTDOCS%%share/doc/sylpheed-claws/manual/fr/sylpheed-9.html
+%%PORTDOCS%%share/doc/sylpheed-claws/manual/fr/sylpheed.html
 %%PORTDOCS%%share/doc/sylpheed-claws/manual/ja/sylpheed-1.html
 %%PORTDOCS%%share/doc/sylpheed-claws/manual/ja/sylpheed-10.html
 %%PORTDOCS%%share/doc/sylpheed-claws/manual/ja/sylpheed-11.html
@@ -117,60 +155,150 @@ share/sylpheed-claws/themes/Kovico-sylpheed/trash_open_hrm.xpm
 share/sylpheed-claws/themes/Kovico-sylpheed/unread.xpm
 share/sylpheed-claws/themes/Kovico-sylpheed/up_arrow.xpm
 share/sylpheed-claws/themes/Kovico-sylpheed/vcard.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/address.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/address_book.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/close.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/dir_close.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/dir_close_hrm.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/dir_open.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/dir_open_hrm.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/down_arrow.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/edit_extern.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/exec.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/forwarded.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/ignorethread.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/inbox_close.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/inbox_close_hrm.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/inbox_open.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/inbox_open_hrm.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/insert_file.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/mail.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/mail_attach.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/mail_compose.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/mail_forward.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/mail_receive.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/mail_receive_all.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/mail_reply.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/mail_reply_to_all.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/mail_reply_to_author.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/mail_send.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/mail_send_queue.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/mail_sign.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/new.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/news_compose.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/outbox_close.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/outbox_close_hrm.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/outbox_open.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/outbox_open_hrm.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/paste.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/queue_close.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/queue_close_hrm.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/queue_open.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/queue_open_hrm.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/replied.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/trash_close.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/trash_close_hrm.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/trash_open.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/trash_open_hrm.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/unread.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/up_arrow.xpm
-share/sylpheed-claws/themes/Plain_and_Blueish/vcard.xpm
-%%PORTDOCS%%@dirrm share/doc/sylpheed-claws/manual/ja
-%%PORTDOCS%%@dirrm share/doc/sylpheed-claws/manual/en
-%%PORTDOCS%%@dirrm share/doc/sylpheed-claws/manual
-%%PORTDOCS%%@dirrm share/doc/sylpheed-claws
-@dirrm share/sylpheed-claws/themes/Plain_and_Blueish
+share/sylpheed-claws/themes/Plain_and_Bluish/address.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/address_book.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/close.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/dir_close.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/dir_close_hrm.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/dir_open.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/dir_open_hrm.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/down_arrow.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/edit_extern.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/exec.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/forwarded.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/ignorethread.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/inbox_close.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/inbox_close_hrm.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/inbox_open.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/inbox_open_hrm.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/insert_file.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/mail.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/mail_attach.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/mail_compose.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/mail_forward.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/mail_receive.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/mail_receive_all.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/mail_reply.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/mail_reply_to_all.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/mail_reply_to_author.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/mail_send.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/mail_send_queue.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/mail_sign.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/new.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/news_compose.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/outbox_close.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/outbox_close_hrm.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/outbox_open.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/outbox_open_hrm.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/paste.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/queue_close.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/queue_close_hrm.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/queue_open.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/queue_open_hrm.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/replied.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/trash_close.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/trash_close_hrm.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/trash_open.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/trash_open_hrm.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/unread.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/up_arrow.xpm
+share/sylpheed-claws/themes/Plain_and_Bluish/vcard.xpm
+share/sylpheed-claws/themes/README
+share/sylpheed-claws/themes/XeNtish/README
+share/sylpheed-claws/themes/XeNtish/address.xpm
+share/sylpheed-claws/themes/XeNtish/address_book.xpm
+share/sylpheed-claws/themes/XeNtish/close.xpm
+share/sylpheed-claws/themes/XeNtish/dir_close.xpm
+share/sylpheed-claws/themes/XeNtish/dir_close_hrm.xpm
+share/sylpheed-claws/themes/XeNtish/dir_open.xpm
+share/sylpheed-claws/themes/XeNtish/dir_open_hrm.xpm
+share/sylpheed-claws/themes/XeNtish/down_arrow.xpm
+share/sylpheed-claws/themes/XeNtish/edit_extern.xpm
+share/sylpheed-claws/themes/XeNtish/exec.xpm
+share/sylpheed-claws/themes/XeNtish/forwarded.xpm
+share/sylpheed-claws/themes/XeNtish/ignorethread.xpm
+share/sylpheed-claws/themes/XeNtish/inbox_close.xpm
+share/sylpheed-claws/themes/XeNtish/inbox_close_hrm.xpm
+share/sylpheed-claws/themes/XeNtish/inbox_open.xpm
+share/sylpheed-claws/themes/XeNtish/inbox_open_hrm.xpm
+share/sylpheed-claws/themes/XeNtish/insert_file.xpm
+share/sylpheed-claws/themes/XeNtish/mail.xpm
+share/sylpheed-claws/themes/XeNtish/mail_attach.xpm
+share/sylpheed-claws/themes/XeNtish/mail_compose.xpm
+share/sylpheed-claws/themes/XeNtish/mail_forward.xpm
+share/sylpheed-claws/themes/XeNtish/mail_receive.xpm
+share/sylpheed-claws/themes/XeNtish/mail_receive_all.xpm
+share/sylpheed-claws/themes/XeNtish/mail_reply.xpm
+share/sylpheed-claws/themes/XeNtish/mail_reply_to_all.xpm
+share/sylpheed-claws/themes/XeNtish/mail_reply_to_author.xpm
+share/sylpheed-claws/themes/XeNtish/mail_send.xpm
+share/sylpheed-claws/themes/XeNtish/mail_send_queue.xpm
+share/sylpheed-claws/themes/XeNtish/mail_sign.xpm
+share/sylpheed-claws/themes/XeNtish/new.xpm
+share/sylpheed-claws/themes/XeNtish/news_compose.xpm
+share/sylpheed-claws/themes/XeNtish/outbox_close.xpm
+share/sylpheed-claws/themes/XeNtish/outbox_close_hrm.xpm
+share/sylpheed-claws/themes/XeNtish/outbox_open.xpm
+share/sylpheed-claws/themes/XeNtish/outbox_open_hrm.xpm
+share/sylpheed-claws/themes/XeNtish/paste.xpm
+share/sylpheed-claws/themes/XeNtish/queue_close.xpm
+share/sylpheed-claws/themes/XeNtish/queue_close_hrm.xpm
+share/sylpheed-claws/themes/XeNtish/queue_open.xpm
+share/sylpheed-claws/themes/XeNtish/queue_open_hrm.xpm
+share/sylpheed-claws/themes/XeNtish/replied.xpm
+share/sylpheed-claws/themes/XeNtish/trash_close.xpm
+share/sylpheed-claws/themes/XeNtish/trash_close_hrm.xpm
+share/sylpheed-claws/themes/XeNtish/trash_open.xpm
+share/sylpheed-claws/themes/XeNtish/trash_open_hrm.xpm
+share/sylpheed-claws/themes/XeNtish/unread.xpm
+share/sylpheed-claws/themes/XeNtish/up_arrow.xpm
+share/sylpheed-claws/themes/XeNtish/vcard.xpm
+share/sylpheed-claws/themes/tml-pixmaps/clip.xpm
+share/sylpheed-claws/themes/tml-pixmaps/close.xpm
+share/sylpheed-claws/themes/tml-pixmaps/dir_close.xpm
+share/sylpheed-claws/themes/tml-pixmaps/dir_close_hrm.xpm
+share/sylpheed-claws/themes/tml-pixmaps/dir_open.xpm
+share/sylpheed-claws/themes/tml-pixmaps/dir_open_hrm.xpm
+share/sylpheed-claws/themes/tml-pixmaps/down_arrow.xpm
+share/sylpheed-claws/themes/tml-pixmaps/inbox.xpm
+share/sylpheed-claws/themes/tml-pixmaps/inbox_hrm.xpm
+share/sylpheed-claws/themes/tml-pixmaps/locked.xpm
+share/sylpheed-claws/themes/tml-pixmaps/mail.xpm
+share/sylpheed-claws/themes/tml-pixmaps/mail_attach.xpm
+share/sylpheed-claws/themes/tml-pixmaps/mail_compose.xpm
+share/sylpheed-claws/themes/tml-pixmaps/mail_forward.xpm
+share/sylpheed-claws/themes/tml-pixmaps/mail_receive.xpm
+share/sylpheed-claws/themes/tml-pixmaps/mail_receive_all.xpm
+share/sylpheed-claws/themes/tml-pixmaps/mail_reply.xpm
+share/sylpheed-claws/themes/tml-pixmaps/mail_reply_to_all.xpm
+share/sylpheed-claws/themes/tml-pixmaps/mail_reply_to_author.xpm
+share/sylpheed-claws/themes/tml-pixmaps/mail_send.xpm
+share/sylpheed-claws/themes/tml-pixmaps/mail_send_queue.xpm
+share/sylpheed-claws/themes/tml-pixmaps/mark.xpm
+share/sylpheed-claws/themes/tml-pixmaps/new.xpm
+share/sylpheed-claws/themes/tml-pixmaps/news_compose.xpm
+share/sylpheed-claws/themes/tml-pixmaps/outbox.xpm
+share/sylpheed-claws/themes/tml-pixmaps/outbox_hrm.xpm
+share/sylpheed-claws/themes/tml-pixmaps/paste.xpm
+share/sylpheed-claws/themes/tml-pixmaps/replied.xpm
+share/sylpheed-claws/themes/tml-pixmaps/trash_close.xpm
+share/sylpheed-claws/themes/tml-pixmaps/trash_hrm.xpm
+share/sylpheed-claws/themes/tml-pixmaps/trash_open.xpm
+share/sylpheed-claws/themes/tml-pixmaps/unread.xpm
+@dirrm share/sylpheed-claws/themes/tml-pixmaps
+@dirrm share/sylpheed-claws/themes/XeNtish
+@dirrm share/sylpheed-claws/themes/Plain_and_Bluish
 @dirrm share/sylpheed-claws/themes/Kovico-sylpheed
 @dirrm share/sylpheed-claws/themes
-@unexec rmdir %D/share/pixmaps 2>/dev/null || true
 @dirrm share/sylpheed-claws
+@unexec rmdir %D/share/pixmaps 2>/dev/null || true
+%%PORTDOCS%%@dirrm share/doc/sylpheed-claws/manual/ja
+%%PORTDOCS%%@dirrm share/doc/sylpheed-claws/manual/fr
+%%PORTDOCS%%@dirrm share/doc/sylpheed-claws/manual/en
+%%PORTDOCS%%@dirrm share/doc/sylpheed-claws/manual
+%%PORTDOCS%%@dirrm share/doc/sylpheed-claws/faq/it
+%%PORTDOCS%%@dirrm share/doc/sylpheed-claws/faq/fr
+%%PORTDOCS%%@dirrm share/doc/sylpheed-claws/faq/es
+%%PORTDOCS%%@dirrm share/doc/sylpheed-claws/faq/en
+%%PORTDOCS%%@dirrm share/doc/sylpheed-claws/faq
+%%PORTDOCS%%@dirrm share/doc/sylpheed-claws
