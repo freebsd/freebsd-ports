@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-vnc
 PORTVERSION=	0.1
-CATEGORIES= 	net gnome
+CATEGORIES=	net gnome
 MASTER_SITES=	ftp://ftp.daa.com.au/pub/james/gnome/
 
 MAINTAINER=	domi@saargate.de

@@ -5,15 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=       	tcpstat
-PORTVERSION=		1.4
-CATEGORIES=     	net
-MASTER_SITES=   	http://www.frenchfries.net/paul/tcpstat/
+PORTNAME=	tcpstat
+PORTVERSION=	1.4
+CATEGORIES=	net
+MASTER_SITES=   http://www.frenchfries.net/paul/tcpstat/
 
-MAINTAINER=		greid@ukug.uk.freebsd.org
+MAINTAINER=	greid@ukug.uk.freebsd.org
 
-GNU_CONFIGURE=		yes
+GNU_CONFIGURE=	yes
 
-MAN1=			tcpstat.1
+MAN1=		tcpstat.1
 
 .include <bsd.port.mk>
