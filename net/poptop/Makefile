@@ -13,17 +13,22 @@ MASTER_SITE_SUBDIR=	poptop
 DISTNAME=		pptpd-${PORTVERSION:S/.b/-b/}
 
 MAINTAINER=		ports@FreeBSD.org
-COMMENT=	Windows 9x compatible PPTP (VPN) server
+COMMENT=		Windows 9x compatible PPTP (VPN) server
 
 GNU_CONFIGURE=		yes
+.ifdef(POPTOP_KERNPPP)
+CONFIGURE_ARGS=
+.else
 CONFIGURE_ARGS=		--with-bsdppp
+.endif
 WRKSRC=			${WRKDIR}/${PORTNAME}-1.1.4
 
 MAN5=			pptpd.conf.5
 MAN8=			pptpd.8 pptpctrl.8
 
+# fix broken timestamps that trigger autotools hell
 pre-patch:
-	${CP} ${WRKSRC}/our_getopt.h ${WRKSRC}/getopt.h
+	@cd ${WRKSRC}; touch aclocal.m4 Makefile.in stamp-h.in
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/samples/pptpd.conf \
