@@ -14,7 +14,8 @@ MAINTAINER=	cjuniet@entreview.com
 
 USE_X_PREFIX=	yes
 USE_XLIB=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_PERL5=	yes
 
 post-install:

@@ -15,7 +15,8 @@ DISTNAME=	XJTEXT-${PORTVERSION}
 MAINTAINER=	sada@FreeBSD.org
 
 USE_BISON=	yes
-USE_IMLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	imlib
 EXAMPLEDIR=	${PREFIX}/share/examples/xjtext
 DOCDIR=		${PREFIX}/share/doc/xjtext
 

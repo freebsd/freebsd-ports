@@ -13,7 +13,8 @@ MASTER_SITES=	http://www.linet.gr.jp/~mituiwa/
 MAINTAINER=	sada@FreeBSD.ORG
 
 FORBIDDEN=	"distfile is not available"
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 
 DOCDIR=		${PREFIX}/share/doc/ja-word
 EXAMPLEDIR=	${PREFIX}/share/examples/ja-word
