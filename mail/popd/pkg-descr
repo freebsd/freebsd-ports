@@ -6,5 +6,4 @@ from the server when users collect mail older than a specified
 time, falsification of UIDL information and removal of old mail.
 
 Additional features include SSL and proxy support, as well as
-support for a variety of mailbox formats.  The bulletin feature
-is nonfunctional in this release.
+support for a variety of mailbox formats and bulletins.
