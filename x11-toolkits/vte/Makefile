@@ -31,6 +31,7 @@ CONFIGURE_ARGS=	--disable-python
 
 .ifdef(WITH_GLX)
 CONFIGURE_ARGS+=	--with-glX
+USE_GL=			yes
 .endif
 
 pre-everything::
