@@ -22,6 +22,7 @@ USE_GMAKE=	yes
 USE_GLIB=	yes
 USE_GTK=	yes
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/wmusic ${PREFIX}/bin
