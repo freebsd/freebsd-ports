@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pen
-PORTVERSION=	0.7.0
+PORTVERSION=	0.9.3
 CATEGORIES=	net
 MASTER_SITES=	ftp://siag.nu/pub/pen/ \
 		http://siag.nu/pub/pen/
@@ -17,6 +17,6 @@ MAINTAINER=	dominic_marks@btinternet.com
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-daemon
 
-MAN1=		mergelogs.1 pen.1 penctl.1
+MAN1=		mergelogs.1 pen.1 penctl.1 penlog.1 penlogd.1
 
 .include <bsd.port.mk>
