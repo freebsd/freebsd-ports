@@ -1,7 +1,7 @@
 Integration between nautilus, evolution, and gaim.
 
 Nautilus context menu component ("Send To: Gaim Buddy/Evolution Addressbook")
-with a dialog for insert the email acount or IM account which you want to 
+with a dialog for insert the email account or IM account which you want to 
 send the file/files. Contact with evolution-data-server and get the email
 accounts from your Evolution Addressbook.
 
