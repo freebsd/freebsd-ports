@@ -2599,6 +2599,7 @@ httptunnel	ports/www/httptunnel
 httrack		ports/www/httrack
 hu-ispell	ports/hungarian/ispell
 hu-ooodict-HU	ports/editors/ooodict-hu_HU
+hu-phone	ports/hungarian/hu-phone
 hugelatex	ports/print/hugelatex
 hugs		ports/lang/hugs
 hx		ports/net/hx
