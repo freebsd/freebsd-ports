@@ -1,32 +1,32 @@
 
 $FreeBSD$
 
---- monikers/Makefile.in.orig	Fri Aug  3 10:29:46 2001
-+++ monikers/Makefile.in	Fri Aug  3 10:30:33 2001
-@@ -189,10 +189,10 @@
+--- monikers/Makefile.in.orig	Tue Jan 22 09:26:05 2002
++++ monikers/Makefile.in	Tue Jan 22 20:47:04 2002
+@@ -195,10 +195,10 @@
  DEFS = @DEFS@ -I. -I$(srcdir) -I..
  CPPFLAGS = @CPPFLAGS@
  LDFLAGS = @LDFLAGS@
 -libmoniker_config_la_LDFLAGS = 
-+libmoniker_config_la_LDFLAGS = -avoid-version
++libmoniker_config_la_LDFLAGS = -avoid-version -module
  libmoniker_config_la_DEPENDENCIES =  ../bonobo-conf/libbonobo_conf.la
  libmoniker_config_la_OBJECTS =  bonobo-moniker-config.lo
 -libmoniker_gconf_la_LDFLAGS = 
-+libmoniker_gconf_la_LDFLAGS = -avoid-version
++libmoniker_gconf_la_LDFLAGS = -avoid-version -module
  @ENABLE_GCONF_TRUE@libmoniker_gconf_la_DEPENDENCIES = 
  @ENABLE_GCONF_TRUE@libmoniker_gconf_la_OBJECTS =  \
  @ENABLE_GCONF_TRUE@bonobo-moniker-gconf.lo bonobo-config-gconfdb.lo
-@@ -203,11 +203,11 @@
+@@ -209,11 +209,11 @@
  bonobo_moniker_xmldb_OBJECTS =  bonobo-config-xmldb.$(OBJEXT) \
  bonobo-config-dirdb.$(OBJEXT) bonobo-moniker-xmldb.$(OBJEXT)
  bonobo_moniker_xmldb_DEPENDENCIES =  ../bonobo-conf/libbonobo_conf.la
 -bonobo_moniker_xmldb_LDFLAGS = 
-+bonobo_moniker_xmldb_LDFLAGS = -avoid-version
++bonobo_moniker_xmldb_LDFLAGS = -avoid-version -module
  test_xmldb_OBJECTS =  test-xmldb.$(OBJEXT) bonobo-config-xmldb.$(OBJEXT) \
  bonobo-config-dirdb.$(OBJEXT)
  test_xmldb_DEPENDENCIES =  ../bonobo-conf/libbonobo_conf.la
 -test_xmldb_LDFLAGS = 
-+test_xmldb_LDFLAGS = -avoid-version
++test_xmldb_LDFLAGS = -avoid-version -module
  COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  CCLD = $(CC)

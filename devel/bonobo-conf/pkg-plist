@@ -10,9 +10,7 @@ include/bonobo-conf/bonobo-preferences.h
 include/bonobo-conf/bonobo-property-bag-proxy.h
 include/bonobo-conf/bonobo-property-editor.h
 include/bonobo-conf/bonobo-property-frame.h
-lib/bonobo/monikers/libmoniker_config.a
 lib/bonobo/monikers/libmoniker_config.so
-lib/bonobo/monikers/libmoniker_gconf.a
 lib/bonobo/monikers/libmoniker_gconf.so
 lib/libbonobo_conf.a
 lib/libbonobo_conf.so
