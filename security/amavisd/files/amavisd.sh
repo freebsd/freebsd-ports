@@ -7,7 +7,7 @@ fi
 
 case "$1" in
 start)
-	( [ -x ${PREFIX}/sbin/amavisd ] && [ -x ${PREFIX}/sbin/amavis-milter ] ) || exit 1
+	( [ -x ${PREFIX}/sbin/amavisd ] || [ -x ${PREFIX}/sbin/amavis-milter ] ) || exit 1
 	AMAVISD=$(/bin/ps -xU %%AMAVISUSER%% | grep amavisd | awk '{ print $1 }')
 	( /bin/test "$AMAVISD" ) && \
 	su - %%AMAVISUSER%% -c "/bin/kill $AMAVISD" > /dev/null
@@ -15,7 +15,7 @@ start)
 	su - %%AMAVISUSER%% -c ${PREFIX}/sbin/amavisd > /dev/null 2>&1 && echo -n ' amavisd'
 	;;
 stop)
-	( [ -x ${PREFIX}/sbin/amavisd ] && [ -x ${PREFIX}/sbin/amavis-milter ] ) || exit 1
+	( [ -x ${PREFIX}/sbin/amavisd ] || [ -x ${PREFIX}/sbin/amavis-milter ] ) || exit 1
 	AMAVISD=$(/bin/ps -xU %%AMAVISUSER%% | grep amavisd | awk '{ print $1 }')
 	( /bin/test "$AMAVISD") && \
 	su - %%AMAVISUSER%% -c "/bin/kill $AMAVISD" > /dev/null && echo -n ' amavisd'
