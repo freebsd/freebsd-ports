@@ -1,5 +1,5 @@
 #
-#	$FreeBSD: /tmp/pcvs/ports/Mk/bsd.emacs.mk,v 1.1 2000-05-06 10:45:34 asami Exp $
+#	$FreeBSD: /tmp/pcvs/ports/Mk/bsd.emacs.mk,v 1.2 2000-05-08 13:09:50 shige Exp $
 #
 #	bsd.emacs.mk - 19990829 Shigeyuki Fukushima.
 #
@@ -53,12 +53,14 @@ Emacs_Include_MAINTAINER=	shige@FreeBSD.org
 
 
 # Emacs-19.x
-.if (${EMACS_PORT_NAME} == "emacs19")
+.if (${EMACS_PORT_NAME} == "emacs")
 EMACS_NAME=		emacs
 EMACS_VER=		19.34
 EMACS_MAJOR_VER=	19
 EMACS_LIBDIR?=		share/${EMACS_NAME}
 EMACS_LIBDIR_WITH_VER?=	share/${EMACS_NAME}/${EMACS_VER}
+EMACS_PORTSDIR=		${PORTSDIR}/editors/emacs
+EMACS_COMMON_PORT=	NO
 
 # Emacs-20.x
 .elif (${EMACS_PORT_NAME} == "emacs20")
@@ -67,22 +69,28 @@ EMACS_VER=		20.6
 EMACS_MAJOR_VER=	20
 EMACS_LIBDIR?=		share/${EMACS_NAME}
 EMACS_LIBDIR_WITH_VER?=	share/${EMACS_NAME}/${EMACS_VER}
+EMACS_PORTSDIR=		${PORTSDIR}/editors/emacs20
+EMACS_COMMON_PORT=	NO
 
 # Mule-19.x
-.elif (${EMACS_PORT_NAME} == "mule19")
+.elif (${EMACS_PORT_NAME} == "mule")
 EMACS_NAME=		mule
 EMACS_VER=		19.34
 EMACS_MAJOR_VER=	19
 EMACS_LIBDIR?=		share/${EMACS_NAME}
 EMACS_LIBDIR_WITH_VER?=	share/${EMACS_NAME}/${EMACS_VER}
+EMACS_PORTSDIR=		${PORTSDIR}/editors/mule
+EMACS_COMMON_PORT=	YES
 
 # XEmacs-19.x
-.elif (${EMACS_PORT_NAME} == "xemacs19")
+.elif (${EMACS_PORT_NAME} == "xemacs")
 EMACS_NAME=		xemacs
 EMACS_VER=		19.16
 EMACS_MAJOR_VER=	19
 EMACS_LIBDIR?=		lib/${EMACS_NAME}
 EMACS_LIBDIR_WITH_VER?=	lib/${EMACS_NAME}-${EMACS_VER}
+EMACS_PORTSDIR=		${PORTSDIR}/editors/xemacs
+EMACS_COMMON_PORT=	NO
 
 # XEmacs-20.x
 .elif (${EMACS_PORT_NAME} == "xemacs20")
@@ -91,6 +99,8 @@ EMACS_VER=		20.4
 EMACS_MAJOR_VER=	20
 EMACS_LIBDIR?=		lib/${EMACS_NAME}
 EMACS_LIBDIR_WITH_VER?=	lib/${EMACS_NAME}-${EMACS_VER}
+EMACS_PORTSDIR=		${PORTSDIR}/editors/xemacs20
+EMACS_COMMON_PORT=	NO
 
 # XEmacs-21.x
 .elif (${EMACS_PORT_NAME} == "xemacs21")
@@ -99,6 +109,8 @@ EMACS_VER=		21.1.9
 EMACS_MAJOR_VER=	21
 EMACS_LIBDIR?=		lib/${EMACS_NAME}
 EMACS_LIBDIR_WITH_VER?=	lib/${EMACS_NAME}-${EMACS_VER}
+EMACS_PORTSDIR=		${PORTSDIR}/editors/xemacs21
+EMACS_COMMON_PORT=	NO
 
 # XEmacs-21.x with Mule
 .elif (${EMACS_PORT_NAME} == "xemacs21-mule")
@@ -107,12 +119,15 @@ EMACS_VER=		21.1.9
 EMACS_MAJOR_VER=	21
 EMACS_LIBDIR?=		lib/${EMACS_NAME}
 EMACS_LIBDIR_WITH_VER?=	lib/${EMACS_NAME}-${EMACS_VER}
+EMACS_PORTSDIR=		${PORTSDIR}/editors/xemacs21-mule
+EMACS_COMMON_PORT=	YES
+
 .else
 .BEGIN:
 	@${ECHO} "Error: Bad value of EMACS_PORT_NAME: ${EMACS_PORT_NAME}."
 	@${ECHO} "Valid values are:"
-	@${ECHO} "	Emacs  family: emacs19 mule19 emacs20"
-	@${ECHO} "	XEmacs family: xemacs19 xemacs20 xemacs21 xemacs21-mule"
+	@${ECHO} "	Emacs  family: emacs mule emacs20"
+	@${ECHO} "	XEmacs family: xemacs xemacs20 xemacs21 xemacs21-mule"
 	@${FALSE}
 .endif
 
@@ -122,8 +137,16 @@ EMACS_LIBDIR_WITH_VER?=	lib/${EMACS_NAME}-${EMACS_VER}
 #
 
 # emacsen command-line filename
-EMACS_CMD?=			${PREFIX}/bin/${EMACS_NAME}-${EMACS_VER}
+EMACS_CMD?=			${LOCALBASE}/bin/${EMACS_NAME}-${EMACS_VER}
 
-# emacsen libdir without ${PREFIX}
+# emacsen libdir without ${LOCALBASE}
 EMACS_SITE_LISPDIR?=		${EMACS_LIBDIR}/site-lisp
 EMACS_VERSION_SITE_LISPDIR?=	${EMACS_LIBDIR_WITH_VER}/site-lisp
+
+# build&run-dependency
+BUILD_DEPENDS+=		${EMACS_CMD}:${EMACS_PORTSDIR}
+.if defined(EMACS_COMMON_PORT) && (${EMACS_COMMON_PORT} == "YES")
+RUN_DEPENDS+=	${EMACS_CMD}:${EMACS_PORTSDIR}-common
+.else
+RUN_DEPENDS+=	${EMACS_CMD}:${EMACS_PORTSDIR}
+.endif
