@@ -3942,6 +3942,7 @@ libvorbis	ports/audio/libvorbis
 libwmf		ports/graphics/libwmf
 libwnck		ports/x11-toolkits/libwnck
 libworkman	ports/audio/libworkman
+libwpcg		ports/graphics/libwpcg
 libwrap		src/lib/libwrap
 libwww		ports/www/libwww
 libxalloc	ports/devel/libxalloc
