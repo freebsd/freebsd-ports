@@ -5,10 +5,11 @@ bin/kfax
 bin/kfract
 bin/kghostview
 bin/kiconedit
-bin/kooka
+%%SANE%%bin/kooka
 bin/kpaint
 bin/kruler
 bin/ksnapshot
+bin/kuickshow
 bin/kview
 bin/kviewshell
 %%SANE%%include/devselector.h
@@ -25,10 +26,19 @@ bin/kviewshell
 %%SANE%%include/previewer.h
 %%SANE%%include/scanparams.h
 %%SANE%%include/scansourcedialog.h
+include/kmultipageInterface.h
 lib/kcolorchooser.la
 lib/kcolorchooser.so
+lib/kde3/kfile_pdf.la
+lib/kde3/kfile_pdf.so
+lib/kde3/kfile_png.la
+lib/kde3/kfile_png.so
+lib/kde3/kfile_ps.la
+lib/kde3/kfile_ps.so
 %%KAMERA%%lib/kio_kamera.la
 %%KAMERA%%lib/kio_kamera.so
+lib/kuickshow.la
+lib/kuickshow.so
 lib/kview.la
 lib/kview.so
 %%KAMERA%%lib/libkcm_kamera.la
@@ -39,7 +49,6 @@ lib/libkfax.la
 lib/libkfax.so
 lib/libkghostview.la
 lib/libkghostview.so
-lib/libkghostview.so.1
 lib/libkmultipage.la
 lib/libkmultipage.so
 lib/libkmultipage.so.0
@@ -62,10 +71,12 @@ share/applnk/Graphics/kiconedit.desktop
 share/applnk/Graphics/kpaint.desktop
 share/applnk/Graphics/kruler.desktop
 share/applnk/Graphics/ksnapshot.desktop
+share/applnk/Graphics/kuickshow.desktop
 share/applnk/Graphics/kview.desktop
 %%KAMERA%%share/applnk/Settings/Peripherals/kamera.desktop
 %%SANE%%share/applnk/Utilities/kooka.desktop
 share/apps/kdvi/kdvi_part.rc
+share/apps/kdvi/tips
 share/apps/kdvi/toolbar/forwpage.xpm
 share/apps/kdvi/toolbar/largetext.xpm
 share/apps/kdvi/toolbar/smalltext.xpm
@@ -132,6 +143,16 @@ share/apps/kruler/kruler-north.png
 share/apps/kruler/kruler-south.png
 share/apps/kruler/kruler-west.png
 share/apps/kruler/move.wav
+share/apps/kuickshow/im_palette.pal
+share/apps/kuickshow/pics/about.png
+share/apps/kuickshow/pics/calibrate.png
+share/apps/kuickshow/pics/handcursor.png
+share/apps/kuickshow/pics/imageviewer-medium.png
+share/apps/kuickshow/pics/imageviewer-small.png
+share/apps/kuickshow/pics/ksslide.png
+share/apps/kuickshow/pics/kuickshow-day.jpg
+share/apps/kuickshow/pics/kuickshow-night.jpg
+share/apps/kuickshow/pics/logo.png
 share/apps/kview/kview_part.rc
 share/apps/kview/kview_popup.rc
 share/apps/kview/kviewui.rc
@@ -139,14 +160,20 @@ share/apps/kview/toolbar/rotate.png
 share/apps/kviewerpart/kviewerpart.rc
 share/apps/kviewshell/kviewshell.rc
 share/apps/kviewshell/paper-formats
+share/doc/HTML/en/kcoloredit/common
+share/doc/HTML/en/kcoloredit/index.cache.bz2
+share/doc/HTML/en/kcoloredit/index.docbook
 share/doc/HTML/en/kdvi/KDVI-features.dvi
 share/doc/HTML/en/kdvi/KDVI-features.tex
 share/doc/HTML/en/kdvi/aboutkde.ps
 share/doc/HTML/en/kdvi/common
 share/doc/HTML/en/kdvi/index.cache.bz2
 share/doc/HTML/en/kdvi/index.docbook
+share/doc/HTML/en/kdvi/kdvi-search.el
 share/doc/HTML/en/kdvi/optionrequester1.png
 share/doc/HTML/en/kdvi/optionrequester2.png
+share/doc/HTML/en/kdvi/srcltx.sty
+share/doc/HTML/en/kdvi/srctex.sty
 share/doc/HTML/en/kfract/common
 share/doc/HTML/en/kfract/index.cache.bz2
 share/doc/HTML/en/kfract/index.docbook
@@ -157,6 +184,12 @@ share/doc/HTML/en/kghostview/index.docbook
 share/doc/HTML/en/kiconedit/common
 share/doc/HTML/en/kiconedit/index.cache.bz2
 share/doc/HTML/en/kiconedit/index.docbook
+share/doc/HTML/en/kooka/common
+share/doc/HTML/en/kooka/index.cache.bz2
+share/doc/HTML/en/kooka/index.docbook
+share/doc/HTML/en/kooka/kooka_gocr.png
+share/doc/HTML/en/kooka/kooka_gocr_result.png
+share/doc/HTML/en/kooka/kooka_mainctrl.png
 share/doc/HTML/en/kpaint/common
 share/doc/HTML/en/kpaint/index.cache.bz2
 share/doc/HTML/en/kpaint/index.docbook
@@ -168,6 +201,9 @@ share/doc/HTML/en/ksnapshot/index.cache.bz2
 share/doc/HTML/en/ksnapshot/index.docbook
 share/doc/HTML/en/ksnapshot/preview.png
 share/doc/HTML/en/ksnapshot/window.png
+share/doc/HTML/en/kuickshow/common
+share/doc/HTML/en/kuickshow/index.cache.bz2
+share/doc/HTML/en/kuickshow/index.docbook
 share/doc/HTML/en/kview/common
 share/doc/HTML/en/kview/index.cache.bz2
 share/doc/HTML/en/kview/index.docbook
@@ -193,7 +229,9 @@ share/icons/hicolor/16x16/apps/kiconedit.png
 share/icons/hicolor/16x16/apps/kpaint.png
 share/icons/hicolor/16x16/apps/kruler.png
 share/icons/hicolor/16x16/apps/ksnapshot.png
+share/icons/hicolor/16x16/apps/kuickshow.png
 share/icons/hicolor/16x16/apps/kview.png
+share/icons/hicolor/16x16/apps/kviewshell.png
 share/icons/hicolor/32x32/apps/kcoloredit.png
 share/icons/hicolor/32x32/apps/kdvi.png
 share/icons/hicolor/32x32/apps/kfax.png
@@ -203,7 +241,9 @@ share/icons/hicolor/32x32/apps/kiconedit.png
 share/icons/hicolor/32x32/apps/kpaint.png
 share/icons/hicolor/32x32/apps/kruler.png
 share/icons/hicolor/32x32/apps/ksnapshot.png
+share/icons/hicolor/32x32/apps/kuickshow.png
 share/icons/hicolor/32x32/apps/kview.png
+share/icons/hicolor/32x32/apps/kviewshell.png
 share/icons/hicolor/48x48/apps/kdvi.png
 share/icons/hicolor/48x48/apps/kfax.png
 share/icons/hicolor/48x48/apps/kfract.png
@@ -213,9 +253,15 @@ share/icons/hicolor/48x48/apps/kpaint.png
 share/icons/hicolor/48x48/apps/kruler.png
 share/icons/hicolor/48x48/apps/ksnapshot.png
 share/icons/hicolor/48x48/apps/kview.png
+share/icons/hicolor/48x48/apps/kviewshell.png
 share/icons/locolor/16x16/apps/kcoloredit.png
+share/icons/locolor/16x16/apps/kuickshow.png
 share/icons/locolor/32x32/apps/kcoloredit.png
+share/icons/locolor/32x32/apps/kuickshow.png
 %%KAMERA%%share/services/kamera.protocol
+share/services/kfile_pdf.desktop
+share/services/kfile_png.desktop
+share/services/kfile_ps.desktop
 %%SANE%%share/services/scanservice.desktop
 @dirrm share/icons/locolor/32x32/apps
 @dirrm share/icons/locolor/32x32
@@ -225,22 +271,27 @@ share/icons/locolor/32x32/apps/kcoloredit.png
 @dirrm share/icons/hicolor/48x48/apps
 @dirrm share/icons/hicolor/32x32/apps
 @dirrm share/doc/HTML/en/kview
+@dirrm share/doc/HTML/en/kuickshow
 @dirrm share/doc/HTML/en/ksnapshot
 @dirrm share/doc/HTML/en/kruler
 @dirrm share/doc/HTML/en/kpaint
+@dirrm share/doc/HTML/en/kooka
 @dirrm share/doc/HTML/en/kiconedit
 @dirrm share/doc/HTML/en/kghostview
 @dirrm share/doc/HTML/en/kfract
 @dirrm share/doc/HTML/en/kdvi
+@dirrm share/doc/HTML/en/kcoloredit
 @dirrm share/apps/kviewshell
 @dirrm share/apps/kviewerpart
 @dirrm share/apps/kview/toolbar
 @dirrm share/apps/kview
+@dirrm share/apps/kuickshow/pics
+@dirrm share/apps/kuickshow
 @dirrm share/apps/kruler
 @dirrm share/apps/kpaint/toolbar
 @dirrm share/apps/kpaint
-@dirrm share/apps/kooka/pics
-@dirrm share/apps/kooka
+%%SANE%%@dirrm share/apps/kooka/pics
+%%SANE%%@dirrm share/apps/kooka
 @dirrm share/apps/kiconedit/toolbar
 @dirrm share/apps/kiconedit/pics
 @dirrm share/apps/kiconedit
@@ -250,6 +301,6 @@ share/icons/locolor/32x32/apps/kcoloredit.png
 @dirrm share/apps/kfax
 @dirrm share/apps/kdvi/toolbar
 @dirrm share/apps/kdvi
-@dirrm share/applnk/Utilities
+%%SANE%%@dirrm share/applnk/Utilities
 @dirrm share/applnk/Graphics
 @dirrm share/applnk
