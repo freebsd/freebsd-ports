@@ -687,6 +687,7 @@
     SUBDIR += titano
     SUBDIR += tkcon
     SUBDIR += tkcvs
+    SUBDIR += tkp4
     SUBDIR += tkref
     SUBDIR += tmake
     SUBDIR += tpg
