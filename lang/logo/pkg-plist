@@ -1,7 +1,9 @@
 bin/logo
+%%EMACS_LOGO_MODE%%bin/install-logo-mode
 lib/logo/logolib/#
 lib/logo/logolib/`
-lib/logo/logolib/arraytolist
+lib/logo/logolib/?rest
+lib/logo/logolib/Messages
 lib/logo/logolib/buryall
 lib/logo/logolib/buryname
 lib/logo/logolib/cascade
@@ -32,7 +34,6 @@ lib/logo/logolib/map
 lib/logo/logolib/ignore
 lib/logo/logolib/invoke
 lib/logo/logolib/iseq
-lib/logo/logolib/listtoarray
 lib/logo/logolib/localmake
 lib/logo/logolib/macroexpand
 lib/logo/logolib/map.se
@@ -69,9 +70,23 @@ lib/logo/logolib/until
 lib/logo/logolib/while
 lib/logo/logolib/xcor
 lib/logo/logolib/ycor
+%%EMACS_LOGO_MODE%%lib/logo/emacs/.LOOPS
+%%EMACS_LOGO_MODE%%lib/logo/emacs/.logo
+%%EMACS_LOGO_MODE%%lib/logo/emacs/README
+%%EMACS_LOGO_MODE%%lib/logo/emacs/check.lg
+%%EMACS_LOGO_MODE%%lib/logo/emacs/comint-logo.el
+%%EMACS_LOGO_MODE%%lib/logo/emacs/comint-logo.elc
+%%EMACS_LOGO_MODE%%lib/logo/emacs/dot.emacs
+%%EMACS_LOGO_MODE%%lib/logo/emacs/dot.loops
+%%EMACS_LOGO_MODE%%lib/logo/emacs/edfunc.el
+%%EMACS_LOGO_MODE%%lib/logo/emacs/letrec.el
+%%EMACS_LOGO_MODE%%lib/logo/emacs/logo.el
+%%EMACS_LOGO_MODE%%lib/logo/emacs/tutor1.lg
+%%EMACS_LOGO_MODE%%lib/logo/emacs/tutorial.lg
 lib/logo/helpfiles/HELPCONTENTS
 lib/logo/helpfiles/`
 lib/logo/helpfiles/allopen
+lib/logo/helpfiles/allowgetset
 lib/logo/helpfiles/and
 lib/logo/helpfiles/apply
 lib/logo/helpfiles/arc
@@ -95,6 +110,7 @@ lib/logo/helpfiles/bitxor
 lib/logo/helpfiles/bk
 lib/logo/helpfiles/bl
 lib/logo/helpfiles/buried
+lib/logo/helpfiles/buriedp
 lib/logo/helpfiles/bury
 lib/logo/helpfiles/buryall
 lib/logo/helpfiles/buryname
@@ -103,7 +119,6 @@ lib/logo/helpfiles/butfirsts
 lib/logo/helpfiles/butlast
 lib/logo/helpfiles/bye
 lib/logo/helpfiles/cascade
-lib/logo/helpfiles/cascaded2
 lib/logo/helpfiles/caseignoredp
 lib/logo/helpfiles/catch
 lib/logo/helpfiles/char
@@ -173,10 +188,12 @@ lib/logo/helpfiles/first
 lib/logo/helpfiles/firsts
 lib/logo/helpfiles/for
 lib/logo/helpfiles/foreach
+lib/logo/helpfiles/forever
 lib/logo/helpfiles/form
 lib/logo/helpfiles/forward
 lib/logo/helpfiles/fput
 lib/logo/helpfiles/fs
+lib/logo/helpfiles/fullprintp
 lib/logo/helpfiles/fullscreen
 lib/logo/helpfiles/fulltext
 lib/logo/helpfiles/gc
@@ -224,7 +241,6 @@ lib/logo/helpfiles/macrop
 lib/logo/helpfiles/make
 lib/logo/helpfiles/map
 lib/logo/helpfiles/mapdse
-lib/logo/helpfiles/not
 lib/logo/helpfiles/mdarray
 lib/logo/helpfiles/mditem
 lib/logo/helpfiles/mdsetitem
@@ -239,6 +255,7 @@ lib/logo/helpfiles/names
 lib/logo/helpfiles/nodes
 lib/logo/helpfiles/nodribble
 lib/logo/helpfiles/norefresh
+lib/logo/helpfiles/not
 lib/logo/helpfiles/numberp
 lib/logo/helpfiles/op
 lib/logo/helpfiles/openappend
@@ -266,6 +283,7 @@ lib/logo/helpfiles/pensize
 lib/logo/helpfiles/penup
 lib/logo/helpfiles/pick
 lib/logo/helpfiles/plist
+lib/logo/helpfiles/plistp
 lib/logo/helpfiles/plists
 lib/logo/helpfiles/pllist
 lib/logo/helpfiles/po
@@ -283,6 +301,7 @@ lib/logo/helpfiles/power
 lib/logo/helpfiles/pprop
 lib/logo/helpfiles/ppt
 lib/logo/helpfiles/pr
+lib/logo/helpfiles/prefix
 lib/logo/helpfiles/primitivep
 lib/logo/helpfiles/print
 lib/logo/helpfiles/printdepthlimit
@@ -308,6 +327,7 @@ lib/logo/helpfiles/readchars
 lib/logo/helpfiles/reader
 lib/logo/helpfiles/readlist
 lib/logo/helpfiles/readpos
+lib/logo/helpfiles/readrawline
 lib/logo/helpfiles/readword
 lib/logo/helpfiles/redefp
 lib/logo/helpfiles/reduce
@@ -346,9 +366,10 @@ lib/logo/helpfiles/setpalette
 lib/logo/helpfiles/setpc
 lib/logo/helpfiles/setpen
 lib/logo/helpfiles/setpencolor
-lib/logo/helpfiles/setpensize
 lib/logo/helpfiles/setpenpattern
+lib/logo/helpfiles/setpensize
 lib/logo/helpfiles/setpos
+lib/logo/helpfiles/setprefix
 lib/logo/helpfiles/setread
 lib/logo/helpfiles/setreadpos
 lib/logo/helpfiles/setscrunch
@@ -371,6 +392,8 @@ lib/logo/helpfiles/st
 lib/logo/helpfiles/standout
 lib/logo/helpfiles/startup
 lib/logo/helpfiles/step
+lib/logo/helpfiles/stepped
+lib/logo/helpfiles/steppedp
 lib/logo/helpfiles/stop
 lib/logo/helpfiles/substringp
 lib/logo/helpfiles/sum
@@ -383,12 +406,15 @@ lib/logo/helpfiles/throw
 lib/logo/helpfiles/to
 lib/logo/helpfiles/towards
 lib/logo/helpfiles/trace
+lib/logo/helpfiles/traced
+lib/logo/helpfiles/tracedp
 lib/logo/helpfiles/transfer
 lib/logo/helpfiles/ts
 lib/logo/helpfiles/type
 lib/logo/helpfiles/unbury
 lib/logo/helpfiles/unburyall
 lib/logo/helpfiles/unburyname
+lib/logo/helpfiles/unburyonedit
 lib/logo/helpfiles/unstep
 lib/logo/helpfiles/until
 lib/logo/helpfiles/untrace
@@ -403,7 +429,41 @@ lib/logo/helpfiles/writepos
 lib/logo/helpfiles/writer
 lib/logo/helpfiles/xcor
 lib/logo/helpfiles/ycor
-share/doc/logo/usermanual
+%%PORTDOCS%%share/doc/logo/usermanual
+%%WITH_FULL_DOCS%%info/ucblogo.info
+%%WITH_FULL_DOCS%%info/ucblogo.info-1
+%%WITH_FULL_DOCS%%info/ucblogo.info-2
+%%WITH_FULL_DOCS%%info/ucblogo.info-3
+%%WITH_FULL_DOCS%%info/ucblogo.info-4
+%%WITH_FULL_DOCS%%info/loops.info.gz
+%%WITH_FULL_DOCS%%info/loops.info-1.gz
+%%WITH_FULL_DOCS%%info/loops.info-2.gz
+%%WITH_FULL_DOCS%%info/loops.info-3.gz
+%%WITH_FULL_DOCS%%info/loops.info-4.gz
+%%WITH_FULL_DOCS%%info/loops.info-5.gz
+%%WITH_FULL_DOCS%%share/doc/logo/html/usermanual.html
+%%WITH_FULL_DOCS%%share/doc/logo/html/usermanual_1.html
+%%WITH_FULL_DOCS%%share/doc/logo/html/usermanual_10.html
+%%WITH_FULL_DOCS%%share/doc/logo/html/usermanual_11.html
+%%WITH_FULL_DOCS%%share/doc/logo/html/usermanual_12.html
+%%WITH_FULL_DOCS%%share/doc/logo/html/usermanual_13.html
+%%WITH_FULL_DOCS%%share/doc/logo/html/usermanual_14.html
+%%WITH_FULL_DOCS%%share/doc/logo/html/usermanual_15.html
+%%WITH_FULL_DOCS%%share/doc/logo/html/usermanual_2.html
+%%WITH_FULL_DOCS%%share/doc/logo/html/usermanual_3.html
+%%WITH_FULL_DOCS%%share/doc/logo/html/usermanual_4.html
+%%WITH_FULL_DOCS%%share/doc/logo/html/usermanual_5.html
+%%WITH_FULL_DOCS%%share/doc/logo/html/usermanual_6.html
+%%WITH_FULL_DOCS%%share/doc/logo/html/usermanual_7.html
+%%WITH_FULL_DOCS%%share/doc/logo/html/usermanual_8.html
+%%WITH_FULL_DOCS%%share/doc/logo/html/usermanual_9.html
+%%WITH_FULL_DOCS%%share/doc/logo/html/usermanual_abt.html
+%%WITH_FULL_DOCS%%share/doc/logo/html/usermanual_fot.html
+%%WITH_FULL_DOCS%%share/doc/logo/html/usermanual_ovr.html
+%%WITH_FULL_DOCS%%share/doc/logo/html/usermanual_toc.html
+%%WITH_FULL_DOCS%%share/doc/logo/usermanual.pdf
+%%WITH_FULL_DOCS%%share/doc/logo/usermanual.ps
+%%WITH_FULL_DOCS%%share/doc/logo/usermanual.texi
 share/examples/logo/csls/algs
 share/examples/logo/csls/basic
 share/examples/logo/csls/cards
@@ -427,7 +487,9 @@ share/examples/logo/csls/tower
 share/examples/logo/csls/ttt
 @dirrm lib/logo/helpfiles
 @dirrm lib/logo/logolib
+%%EMACS_LOGO_MODE%%@dirrm lib/logo/emacs
 @dirrm lib/logo
 @dirrm share/examples/logo/csls
 @dirrm share/examples/logo
-@dirrm share/doc/logo
+%%WITH_FULL_DOCS%%@dirrm share/doc/logo/html
+%%PORTDOCS%%@dirrm share/doc/logo

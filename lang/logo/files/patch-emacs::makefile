@@ -1,0 +1,39 @@
+--- emacs/makefile.orig	Wed Jul 25 00:54:03 2001
++++ emacs/makefile	Thu May 16 01:08:12 2002
+@@ -1,7 +1,7 @@
+ BUILDIR	      = `pwd`
+-INFODIR	      = $(prefix)/info
++INFODIR	      = $(PREFIX)/info
+ EMACSDIR      = $(LIBLOC)/emacs
+-DOCSDIR	      = $(LIBLOC)/docs
++DOCSDIR	      = $(PREFIX)/share/doc/logo
+ HTMLDIR	      = $(DOCSDIR)/html
+ LOADPATH      = $(subst X,$(EMACSDIR),(setq load-path (cons "\"X\"" load-path)))
+ LOGOBIN	      = $(subst X,$(BINDIR),(setq logo-binary-name \"X/logo\"))
+@@ -63,9 +63,8 @@
+ 	-rm -f add.user install-logo-mode dot.emacs dot.loops *.elc
+ 	-rm -f docs/*.{aux,cp,cps,dvi,fn,ky,log,pg,toc,tp,vr}
+ 
+-install: all
+-	for d in $(INFODIR) $(EMACSDIR) $(DOCSDIR) $(HTMLDIR); do [ -d $$d ] || mkdir -p $$d || exit 1; done
+-	cp -f info/* $(INFODIR)/.
++install-emacs:
++	for d in $(EMACSDIR); do [ -d $$d ] || mkdir -p $$d || exit 1; done
+ 	cp -f logo.* $(EMACSDIR)/.
+ 	cp -f letrec.* $(EMACSDIR)/.
+ 	cp -f comint*.* $(EMACSDIR)/.
+@@ -78,10 +77,13 @@
+ 	cp -p install-logo-mode $(BINDIR)/.
+ 	cp -f edfunc.el $(EMACSDIR)/.
+ 	cp -f check.lg $(EMACSDIR)/.
++
++install-docs:
++	for d in $(INFODIR) $(DOCSDIR) $(HTMLDIR); do [ -d $$d ] || mkdir -p $$d || exit 1; done
++	cp -f info/* $(INFODIR)/.
+ 	-cp -f docs/*.info* $(INFODIR)/.
+ 	-cp -f docs/*.html $(HTMLDIR)/.
+ 	-cp -f docs/usermanual.ps $(DOCSDIR)/.
+ 	-cp -f docs/usermanual.pdf $(DOCSDIR)/.
+ 	-cp -f docs/usermanual.texi $(DOCSDIR)/.
+-
+ 
