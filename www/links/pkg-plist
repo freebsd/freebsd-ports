@@ -1,12 +1,1 @@
 bin/links
-%%PORTDOCS%%share/doc/links/adjusted.png
-%%PORTDOCS%%share/doc/links/black-control-rocking.png
-%%PORTDOCS%%share/doc/links/black-icon.png
-%%PORTDOCS%%share/doc/links/calibration.html
-%%PORTDOCS%%share/doc/links/elbow.png
-%%PORTDOCS%%share/doc/links/kalibrace.html
-%%PORTDOCS%%share/doc/links/picture-crank-0.png
-%%PORTDOCS%%share/doc/links/picture-crank-up.png
-%%PORTDOCS%%share/doc/links/picture-icon.png
-%%PORTDOCS%%share/doc/links/test_pattern.png
-@dirrm share/doc/links
