@@ -173,6 +173,7 @@
     SUBDIR += p5-DBIx-Tree
     SUBDIR += p5-DBIx-XHTML_Table
     SUBDIR += p5-DBIx-XML_RDB
+    SUBDIR += p5-DBM-Deep
     SUBDIR += p5-DBZ_File
     SUBDIR += p5-DWH_File
     SUBDIR += p5-Data-Page

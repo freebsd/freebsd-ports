@@ -1,0 +1,5 @@
+%%SITE_PERL%%/DBM/Deep.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBM/Deep/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBM/Deep
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBM 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/DBM 2>/dev/null || true

@@ -1,0 +1,8 @@
+A unique flat-file database module, written in pure perl. True multi-level
+hash/array support (unlike MLDBM, which is faked), hybrid OO / tie() interface,
+cross-platform FTPable files, and quite fast. Can handle millions of keys and
+unlimited hash levels without significant slow-down. Written from the ground-up
+in pure perl -- this is NOT a wrapper around a C-based DBM.  Out-of-the-box
+compatibility with Unix, Mac OS X and Windows.
+
+WWW: http://search.cpan.org/dist/DBM-Deep/
