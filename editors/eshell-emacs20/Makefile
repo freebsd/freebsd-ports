@@ -8,7 +8,7 @@
 PORTNAME=	eshell
 PORTVERSION=	2.4.2
 CATEGORIES=	editors elisp
-MASTER_SITES=	http://emacswiki.org/johnw/Emacs/packages/
+MASTER_SITES=	http://www.newartisans.com/johnw/Emacs/packages/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	${PORTNAME}
 
