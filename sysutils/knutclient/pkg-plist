@@ -1,0 +1,63 @@
+bin/knutclient
+share/applnk/Applications/knutclient.desktop
+share/apps/knutclient/knutclientui.rc
+share/doc/HTML/cs/knutclient/asetting-cs.png
+share/doc/HTML/cs/knutclient/common
+share/doc/HTML/cs/knutclient/fsetting-cs.png
+share/doc/HTML/cs/knutclient/index.cache.bz2
+share/doc/HTML/cs/knutclient/index.docbook
+share/doc/HTML/cs/knutclient/knutclient-cs.png
+share/doc/HTML/cs/knutclient/msetting-cs.png
+share/doc/HTML/cs/knutclient/new-cs.png
+share/doc/HTML/cs/knutclient/psetting-cs.png
+share/doc/HTML/cs/knutclient/usetting-cs.png
+share/doc/HTML/en/knutclient/asetting-en.png
+share/doc/HTML/en/knutclient/common
+share/doc/HTML/en/knutclient/fsetting-en.png
+share/doc/HTML/en/knutclient/index.cache.bz2
+share/doc/HTML/en/knutclient/index.docbook
+share/doc/HTML/en/knutclient/knutclient-en.png
+share/doc/HTML/en/knutclient/msetting-en.png
+share/doc/HTML/en/knutclient/new-en.png
+share/doc/HTML/en/knutclient/psetting-en.png
+share/doc/HTML/en/knutclient/usetting-en.png
+share/icons/hicolor/16x16/apps/knutclient.png
+share/icons/hicolor/32x32/apps/knutclient.png
+share/icons/hicolor/48x48/apps/knutclient.png
+share/icons/locolor/16x16/apps/knutclient.png
+share/icons/locolor/32x32/apps/knutclient.png
+share/locale/cs/LC_MESSAGES/knutclient.mo
+share/locale/de/LC_MESSAGES/knutclient.mo
+share/locale/fr/LC_MESSAGES/knutclient.mo
+share/locale/it/LC_MESSAGES/knutclient.mo
+@unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/it 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr 2>/dev/null || true
+@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/de 2>/dev/null || true
+@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/cs 2>/dev/null || true
+@unexec rmdir %D/share/locale 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrm share/doc/HTML/en/knutclient
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@dirrm share/doc/HTML/cs/knutclient
+@unexec rmdir %D/share/doc/HTML/cs 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@dirrm share/apps/knutclient
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Applications 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true
