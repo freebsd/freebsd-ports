@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.35 1999/03/19 22:20:14 asami Exp $
+# $Id: Makefile,v 1.36 1999/04/02 00:48:02 taoka Exp $
 #
 
     SUBDIR += asmodem
@@ -11,6 +11,7 @@
     SUBDIR += lrzsz
     SUBDIR += mgetty+sendfax
     SUBDIR += minicom
+    SUBDIR += mserver
     SUBDIR += qpage
     SUBDIR += rzsz
     SUBDIR += seyon
