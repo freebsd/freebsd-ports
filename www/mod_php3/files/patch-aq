@@ -1,0 +1,19 @@
+--- ../php3/configure.orig	Tue Mar  2 02:35:59 1999
++++ ../php3/configure	Sun May  2 20:15:51 1999
+@@ -4508,14 +4508,14 @@
+ 		else
+ 			if test -f $IMAP_DIR/lib/libimap.a; then
+ 				IMAP_LIBS="-L$IMAP_DIR/lib -limap"
+-			elif test ! -f $IMAP_DIR/lib/c-client.a; then
++			elif test ! -f $IMAP_DIR/lib/libc-client4.a; then
+ 				if test ! -f $IMAP_DIR/lib/libc-client4.so; then
+ 					{ echo "configure: error: could not find c-client.a in $IMAP_DIR/lib !" 1>&2; exit 1; }
+ 				else
+ 					IMAP_LIBS="${ld_runpath_switch}$IMAP_DIR/lib -L$IMAP_DIR/lib -lc-client4"
+ 				fi
+ 			else
+-				IMAP_LIBS="-L$IMAP_DIR/lib $IMAP_DIR/lib/c-client.a"
++				IMAP_LIBS="-L$IMAP_DIR/lib $IMAP_DIR/lib/libc-client4.a"
+ 			fi
+ 		fi
+ 		IMAP_INCLUDE="-I$IMAP_INC_DIR/"

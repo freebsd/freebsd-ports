@@ -13,6 +13,7 @@ GD		"PHP3:   GD library support" ON \
 FreeType	"PHP3:   TrueType font rendering (implies GD)" OFF \
 zlib		"PHP3:   zlib library support" ON \
 pdflib		"PHP3:   pdflib support" OFF \
+IMAP		"PHP3:   IMAP support" OFF \
 MySQL		"PHP3:   MySQL database support" ON \
 PostgreSQL	"PHP3:   PostgreSQL database support" OFF \
 mSQL		"PHP3:   mSQL database support" OFF \
@@ -62,6 +63,10 @@ while [ "$1" ]; do
 		\"pdflib\")
 			echo "BUILD_DEPENDS+=		\${PREFIX}/lib/libpdf.a:\${PORTSDIR}/print/pdflib" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			echo "PHP3_CONF_ARGS+=	--with-pdflib=\${PREFIX}" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			;;
+		\"IMAP\")
+			echo "BUILD_DEPENDS+=		\${PREFIX}/lib/libc-client4.a:\${PORTSDIR}/mail/imap-uw" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo "PHP3_CONF_ARGS+=	--with-imap=\${PREFIX}" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			;;
 		\"MySQL\")
 			echo "LIB_DEPENDS+=		mysqlclient.6:\${PORTSDIR}/databases/mysql322" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
