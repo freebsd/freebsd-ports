@@ -4783,6 +4783,7 @@ p5-File-MMagic	ports/devel/p5-File-MMagic
 p5-File-ReadBackwards	ports/devel/p5-File-ReadBackwards
 p5-File-Remove	ports/devel/p5-File-Remove
 p5-File-Rsync	ports/net/p5-File-Rsync
+p5-File-Scan	ports/security/p5-File-Scan
 p5-File-Slurp	ports/devel/p5-File-Slurp
 p5-File-Sort	ports/misc/p5-File-Sort
 p5-File-Spec	ports/devel/p5-File-Spec
