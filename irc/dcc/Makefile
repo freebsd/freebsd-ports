@@ -9,8 +9,7 @@ PORTNAME=	dcc
 PORTVERSION=	2.5.6
 PORTREVISION=	1
 CATEGORIES=	irc
-MASTER_SITES=	ftp://ftp.fan.gr.jp/pub/elisp/irchat-pj/2.5/ \
-		ftp://ftp.fan.gr.jp/pub/elisp/irchat-pj/2.5/OLD/
+MASTER_SITES=	http://his.luky.org/ftp/mirrors/irchat-pj/2.5/
 DISTNAME=	irchat-pj-${PORTVERSION}p
 
 PATCH_SITES=	${MASTER_SITES}
@@ -20,6 +19,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	yoichi@FreeBSD.org
 COMMENT=	DCC support program for irchat-pj
 
+USE_BZIP2=	yes
 PLIST_FILES=	bin/dcc
 ALL_TARGET=	dcc
 LDFLAGS=	${PTHREAD_LIBS}
