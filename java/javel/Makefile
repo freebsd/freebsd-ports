@@ -12,7 +12,7 @@ CATEGORIES=	java
 MASTER_SITES=	http://www.geocities.com/l.gregoire/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	znerd@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile

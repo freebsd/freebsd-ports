@@ -11,7 +11,7 @@ PORTVERSION=	2.2.1
 CATEGORIES=	java devel
 MASTER_SITES=	http://www.tildeslash.com/mmake/dist/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	znerd@FreeBSD.org
 
 BUILD_DEPENDS=	jikes:${PORTSDIR}/java/jikes
 RUN_DEPENDS=	${BUILD_DEPENDS}
