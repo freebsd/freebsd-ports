@@ -5,7 +5,9 @@ bin/h2ph
 bin/h2xs
 bin/perl5.00401
 @exec ln -fs %D/%F %B/perl
+@exec ln -fs %D/%F %B/perl5
 @unexec rm %B/perl
+@unexec rm %B/perl5
 bin/perlbug
 bin/perldoc
 bin/pl2pm
