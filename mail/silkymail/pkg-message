@@ -11,7 +11,7 @@ in %%LOCALBASE%%/etc/php.ini
 It is recommended that you restart Apache.
 
 Silkymail requires an IMAP server. If you want to install one on
-this machine, you may install the ports mail/cyrus-imapd, or
+this machine, you may install the ports mail/cyrus-imapd22,
 mail/imap-uw, or mail/courier-imap.
 
 ************************************************************************
