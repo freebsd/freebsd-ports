@@ -27,6 +27,7 @@ bin/ezmlm-tstdig
 bin/ezmlm-unsub
 bin/ezmlm-warn
 bin/ezmlm-weed
-etc/ezmlmglrc.sample
-etc/ezmlmrc.sample
-etc/ezmlmsubrc.sample
+etc/ezmlm/ezmlmglrc.sample
+etc/ezmlm/ezmlmrc.sample
+etc/ezmlm/ezmlmsubrc.sample
+@dirrm etc/ezmlm
