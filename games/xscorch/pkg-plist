@@ -5,6 +5,7 @@ share/%%GNOME%%/xscorch/copying.txt
 share/%%GNOME%%/xscorch/images/xscorch-icon.xpm
 share/%%GNOME%%/xscorch/images/xscorch-logo.xpm
 share/%%GNOME%%/xscorch/profiles.def
+share/%%GNOME%%/xscorch/scorings.def
 share/%%GNOME%%/xscorch/sounds/README
 share/%%GNOME%%/xscorch/weapons.def
 share/%%GNOME%%/xscorch/xscorch.txt
