@@ -7,7 +7,7 @@
 
 PORTNAME=	bg5pdf
 PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	chinese print
 MASTER_SITES=	http://cschin.yydolphin.net/bg5pdf/ \
 		ftp://freebsd.sinica.edu.tw/pub/statue/bg5pdf/
@@ -19,6 +19,11 @@ LIB_DEPENDS=    pdf.6:${PORTSDIR}/print/pdflib
 
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_REINPLACE=	yes
+
+post-patch:
+	${REINPLACE_CMD} -e 's,%%PYTHON_INCLUDEDIR%%,${PYTHON_INCLUDEDIR},g' \
+		${WRKSRC}/Makefile
 
 do-install:
 	@${MKDIR} ${EXAMPLESDIR}
