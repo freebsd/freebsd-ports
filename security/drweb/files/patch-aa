@@ -1,7 +1,7 @@
---- etc/drweb/drweb32.ini.orig	Thu Aug 22 19:09:19 2002
-+++ etc/drweb/drweb32.ini	Fri Aug 23 23:42:50 2002
+--- etc/drweb/drweb32.ini.orig	Mon Jan  6 21:03:02 2003
++++ etc/drweb/drweb32.ini	Sat Jun  7 12:32:31 2003
 @@ -1,11 +1,11 @@
- [BSD]
+ [Scanner]
 -EnginePath = "/opt/drweb/lib/drweb32.dll"
 -VirusBase = "/var/drweb/bases/*.vdb", "/var/drweb/bases/*.VDB"
 -MoveFilesTo = "/var/drweb/infected"
@@ -18,7 +18,7 @@
  RenameFilesTo = #??
  FilesTypes = EXE,COM,SYS,OV?,BAT,BIN,DRV,PRG,BOO,SCR,CMD,VXD,386,DLL,FON,DO?
  FilesTypes = XL?,WIZ,RTF,CL*,HT*,VB*,JS*,INF,AR?,ZIP,R??,PP?,OBJ,LIB,HLP,MD?
-@@ -30,44 +30,44 @@
+@@ -30,42 +30,42 @@
  ScanSubDirectories = Yes
  PromptOnAction = No
  LimitLog = No
@@ -34,7 +34,7 @@
  RecodeMode = QuotedPrintable
  RecodeChar = "?"
  
- [BSD:Daemon]
+ [Daemon]
 -EnginePath = "/opt/drweb/lib/drweb32.dll"
 -VirusBase = "/var/drweb/bases/*.vdb", "/var/drweb/bases/*.VDB"
 -MoveFilesTo = "/var/drweb/infected"
@@ -50,19 +50,16 @@
  LogFileName = "syslog"
 -;LogFileName = "/var/drweb/log/drwebd.log"
 -;BusyFile = "/var/drweb/run/drwebd.bsy"
--SocketMode = TCP
--SocketFile = "/var/drweb/run/drwebd.socket"
--;SocketMode = Unix
--;SocketAccess 0666
 -;PidFile = "/var/drweb/run/drwebd.pid"
 +;LogFileName = "/var/log/drwebd.log"
 +;BusyFile = "%INSTALL%/run/drwebd.bsy"
-+;SocketMode = TCP
-+SocketFile = "%INSTALL%/run/drwebd.sock"
-+SocketMode = Unix
-+SocketAccess 0660
 +PidFile = "%INSTALL%/run/drwebd.pid"
- DaemonPort = 3000
+ 
+-Socket 3000 127.0.0.1
+-;Scket /var/drweb/run/drwebd.socket 666
++;Socket 3000 127.0.0.1
++Socket = %INSTALL%/run/drwebd.sock 660
+ 
  SocketTimeout = 40
  SocketReuseAddr = Yes
  FileTimeout = 40
@@ -74,13 +71,12 @@
  LogScanned = Yes
  LogInfo = Yes
  LogPacked = Yes
- Interfaces = "localhost"
 -;User = drweb
 +User = drweb
  ;UserID = 
  ;GroupID = 
  ScanFiles = All
-@@ -77,10 +77,10 @@
+@@ -75,10 +75,10 @@
  SyslogPriority = "Alert"
  
  FilterRule X-Mailer ".*Mass.*Sender.*" Reject
