@@ -1,0 +1,9 @@
+Nagios-statd is an addon to the Nagios (formerly netsaint) program. 
+It is a Python daemon and scripts that plug-in to Nagios 
+and allow you to check remote host information 
+(such as load, users, filesystems, etc.) 
+Released under the BSD license.
+
+Author:	Nick Reinking
+WWW:	http://www.twoevils.org/html/files.php
+

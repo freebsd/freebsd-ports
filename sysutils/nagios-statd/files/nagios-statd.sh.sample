@@ -1,0 +1,21 @@
+#!/bin/sh
+# $FreeBSD$
+
+case "${1}" in
+start)
+        nagios-statd
+        echo -n " nagios-statd"
+        ;;
+stop)
+        /usr/bin/killall nagios-statd
+        ;;
+restart)
+        $0 stop
+        $0 start
+        ;;
+*)
+        echo "Usage: $0 {start|stop|restart}"
+        ;;
+esac
+
+exit 0

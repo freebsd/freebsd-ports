@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+bin/nagios-stat
+sbin/nagios-statd
+etc/rc.d/nagios-statd.sh.sample
