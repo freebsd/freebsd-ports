@@ -116,8 +116,8 @@
  			-e 's;@@ServerRoot@@/icons;$(iconsdir);' \
  			-e 's;@@ServerRoot@@/cgi-bin;$(cgidir);' \
  			-e 's;@@ServerRoot@@/proxy;$(proxycachedir);' \
-+			-e 's;@@ServerRoot@@/srm.conf;$(sysconfdir)/srm.conf;' \
-+			-e 's;@@ServerRoot@@/access.conf;$(sysconfdir)/access.conf;' \
++			-e 's;@@ServerRoot@@/srm.conf;$(sysconfdir)/$(TARGET).conf;' \
++			-e 's;@@ServerRoot@@/access.conf;$(sysconfdir)/$(TARGET).conf;' \
  			-e 's;@@ServerRoot@@;$(prefix);g' \
  			-e 's;httpd.conf;$(TARGET).conf;' \
  			-e 's;logs/accept.lock;$(runtimedir)/$(TARGET).lock;' \
