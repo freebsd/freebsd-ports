@@ -33,8 +33,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.//g}
 
 post-install:
 	@${ECHO} "================================================================================"
-	@${ECHO} "Copy/move/symlink ${PREFIX}/etc/pam_ldap/ldap.conf.dist to"
-	@${ECHO} "${PREFIX}/etc/pam_ldap/ldap.conf to be able to use it."
+	@${ECHO} "Copy/move/symlink ${PREFIX}/etc/ldap.conf.dist to"
+	@${ECHO} "${PREFIX}/etc/ldap.conf to be able to use it."
 	@${ECHO} "Add lines like the following to /etc/pam.conf"
 	@${ECHO} "to get things going:"
 	@${ECHO} ""
