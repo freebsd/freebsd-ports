@@ -1,0 +1,80 @@
+diff -ruN --exclude=Makefile.in --exclude=externVars.h.in --exclude=config.h.in --exclude=config.h.in~ --exclude=Makefile ./libPMGR/src/PMGRrDbCreate.c ../../0.2.9_2/portmanager/libPMGR/src/PMGRrDbCreate.c
+--- ./libPMGR/src/PMGRrDbCreate.c	Wed Mar  2 15:38:33 2005
++++ ../../0.2.9_2/portmanager/libPMGR/src/PMGRrDbCreate.c	Thu Mar  3 19:25:56 2005
+@@ -28,6 +28,7 @@
+ 	char		pkgDir[]		= PKGDBDIR;
+ 	char*		fieldKey		= NULL;
+ 	char*		fieldValue		= NULL;
++	char*		ignoredPortDir		= NULL;
+ 	char*		installedPortDir	= NULL;
+ 	char*		installedPortName	= NULL;
+ 	classDir*	dir			= NULL;
+@@ -35,39 +36,57 @@
+ 	int		QTY_configDb		= 0;
+ 	int		dirMode			= 7;
+ 	int		errorCode		= 0;
++	int		stringSize		= 0;
+ 	signed int	fopenIdx		= 0;
+ 	signed int	mallocIdx		= 0;
+ 
+ 	property->objIdx	= 0;
+ 
+-	/***************************************************************/
+-	/* add any ignored ports in config.db  to ignore.db            */
+-	/***************************************************************/
++	/*
++	 * add any ignored ports in config.db to ignore.db
++	 */
+ 	IDX_configDb	= 1;
+ 	QTY_configDb	= MGdbGetRecordQty( property->configDb );
+ 	
+-	
+ 	while( IDX_configDb < QTY_configDb )
+ 	{
+ 		fieldKey	= MGdbGet( property->configDb, IDX_configDb, property->fieldKey );
+-		if( !strcmp( fieldKey, "IGNORE" ) )
++		if( strstr( fieldKey, "IGNORE" ) )
+ 		{
+ 			fieldValue	= MGdbGet( property->configDb, IDX_configDb, property->fieldValue );
++
++			if( fieldValue[0] != '/' )
++			{
++				stringSize		= 1 + strlen( fieldValue ) + 1;
++				ignoredPortDir		= malloc( stringSize );
++				ignoredPortDir[0]	= 0;
++				strcat( ignoredPortDir, "/" );
++				strcat( ignoredPortDir, fieldValue );
++			}
++			else
++			{
++				stringSize		= strlen( fieldValue ) + 1;
++				ignoredPortDir		= malloc( stringSize );
++				ignoredPortDir[0]	= 0;
++				strcat( ignoredPortDir, fieldValue );
++			}
++
+ 			MGdbGoTop( property->ignoreDb );
+-			if( !MGdbSeek( property->ignoreDb, property->fieldIgnorePortDir, fieldValue,
++			if( !MGdbSeek( property->ignoreDb, property->fieldIgnorePortDir, ignoredPortDir,
+ 					property->fieldIgnorePortDir ) )
+ 			{
+ 				fprintf( stdout, "%s %s info: adding %s to ignore.db reason: pm-020.conf option\n",
+-					id, VERSION, fieldValue );
+-				MGdbAdd( property->ignoreDb, fieldValue, "pm-020.conf option", NULL );
++					id, VERSION, ignoredPortDir );
++				MGdbAdd( property->ignoreDb, ignoredPortDir, "pm-020.conf option", NULL );
+ 			}
++			free( ignoredPortDir );
+ 		}
+ 		IDX_configDb++;	
+ 	}
+ 
+-	/***************************************************************/
+-	/* create initial data bases                                   */
+-	/***************************************************************/
++	/*
++	 * create initial data bases
++	 */
+ 
+ 	/*zzzzzzzzzzzzzz*/
+ 	property->objIdx++;
