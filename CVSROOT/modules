@@ -3818,6 +3818,7 @@ ja-gorua	ports/japanese/gorua
 ja-gqmpeg	ports/japanese/gqmpeg
 ja-grep		ports/japanese/grep
 ja-groff	ports/japanese/groff
+ja-gskk		ports/japanese/gskk
 ja-gtkicq	ports/japanese/gtkicq
 ja-gxditview	ports/japanese/gxditview
 ja-hex		ports/japanese/hex
