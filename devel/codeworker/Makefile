@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	codeworker
-PORTVERSION=	3.2
+PORTVERSION=	3.3
 CATEGORIES=	devel
 MASTER_SITES=	http://codeworker.free.fr/downloads/
 DISTNAME=	CodeWorker_SRC${PORTVERSION:S/./_/}
@@ -28,6 +28,6 @@ post-patch:
 		-e "s|CC|CXX|g" -e "s|^CXX|#CXX|g" ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/CodeWorker ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/codeworker ${PREFIX}/bin
 
 .include <bsd.port.mk>
