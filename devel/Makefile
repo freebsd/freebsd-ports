@@ -624,7 +624,6 @@
     SUBDIR += scandoc
     SUBDIR += scons
     SUBDIR += sdcc
-    SUBDIR += sdl10
     SUBDIR += sdl12
     SUBDIR += sdlmm
     SUBDIR += sdts++
