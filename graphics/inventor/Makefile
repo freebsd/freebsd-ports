@@ -19,16 +19,16 @@ COMMENT=	This is SGI's Open Inventor (TM)
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
+USE_X_PREFIX=	yes
 USE_XLIB=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_MOTIF=	yes
-USE_MESA=	yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 ONLY_FOR_ARCHS=	i386
-PREFIX=		${X11BASE} # not a good manner
+#PREFIX=		${X11BASE} # not a good manner
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ENV=	LD_LIBRARY_PATH=${WRKSRC}/lib:${WRKSRC}/libSoXt
