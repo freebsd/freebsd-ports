@@ -13,8 +13,8 @@ if [ -f /usr/src/Makefile ]; then
   mkdir /usr/src /usr/obj
 fi
 
-mount $master:$chroot/usr/src /usr/src
-mount $master:$chroot/usr/obj /usr/obj
+mount -o -2 $master:$chroot/usr/src /usr/src
+mount -o -2 $master:$chroot/usr/obj /usr/obj
 
 echo "installing world"
 cd /usr/src && make installworld > /usr/tmp/make.0 2>&1 </dev/null
