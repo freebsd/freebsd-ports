@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.8.8
+PORTVERSION=	0.8.9
 CATEGORIES=	multimedia
-MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/ \
-		${MASTER_SITE_GNOME}
+MASTER_SITES=	${MASTER_SITE_GNOME} \
+		http://gstreamer.freedesktop.org/src/gstreamer/
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${GST_VERSION}
 DIST_SUBDIR=	gnome2
 

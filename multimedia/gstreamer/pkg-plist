@@ -106,6 +106,7 @@ share/locale/af/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/az/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/ca/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/cs/LC_MESSAGES/gstreamer-%%VERSION%%.mo
+share/locale/de/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/en_GB/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/fr/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/it/LC_MESSAGES/gstreamer-%%VERSION%%.mo
@@ -116,6 +117,7 @@ share/locale/sr/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/sv/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/tr/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/uk/LC_MESSAGES/gstreamer-%%VERSION%%.mo
+share/locale/vi/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 @unexec rm %D/share/gnome/cache/gstreamer-%%VERSION%%/registry.xml 2>/dev/null || true
 @dirrm share/gnome/cache/gstreamer-%%VERSION%%
 @unexec rmdir %D/share/gnome/cache 2>/dev/null || true
