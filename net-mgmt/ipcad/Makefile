@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	ipcad
-PORTVERSION=	3.4.5
+PORTVERSION=	3.6.3
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://ipcad.sourceforge.net/	\
-		http://www.spelio.net.ru/soft/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} 	\
+		http://ipcad.sourceforge.net/	\
+		http://lionet.info/soft/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	vlm@lionet.info
 COMMENT=	IP accounting daemon with Cisco-like RSH and NetFlow export modes
