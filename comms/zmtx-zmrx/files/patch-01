@@ -1,0 +1,29 @@
+--- zmrx.c.orig	Sun Oct 13 12:25:53 1996
++++ zmrx.c	Mon Oct 14 20:17:03 1996
+@@ -70,7 +70,7 @@
+ 
+ 	cps = ftell(fp) / duration;
+ 
+-	fprintf(stderr,"zmrx: receiving file \"%s\" %8ld bytes (%3d %%/%5d cps)           \r",
++	fprintf(stderr,"receiving file \"%s\" %8ld bytes (%3d %%/%5d cps)\r",
+ 		name,ftell(fp),percentage,cps);
+ }
+ 
+@@ -223,7 +223,7 @@
+ 	}
+ 
+ 	if (opt_v) {
+-		fprintf(stderr,"zmrx: receiving file \"%s\"\r",name);
++		fprintf(stderr,"receiving file \"%s\"\r",name);
+ 	}
+ 
+ 	sscanf(rx_data_subpacket + strlen(rx_data_subpacket) + 1,
+@@ -342,7 +342,7 @@
+ 	 */
+ 
+ 	if (opt_v) {
+-		fprintf(stderr,"zmrx: received file \"%s\"                 \n",name);
++		fprintf(stderr,"zmrx: received file \"%s\"\n",name);
+ 	}
+ }
+ 
