@@ -5,13 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=       phone
-PORTVERSION=	1.0
+PORTNAME=       uk-phone
+PORTVERSION=	2.0
 CATEGORIES=	misc
-MASTER_SITES=   ${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	wosch/src asami/LOCAL_PORTS
-PKGNAMEPREFIX=	uk-
-DISTFILES=	uk.phone.gz
+MASTER_SITES=   ftp://ftp.Awfulhak.org/pub/PSTN/ \
+		http://people.FreeBSD.org/~brian/PSTN/
+EXTRACT_SUFX=	.gz
 
 MAINTAINER=     brian@FreeBSD.org
 
