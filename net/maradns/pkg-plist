@@ -1,5 +1,6 @@
 bin/askmara
 etc/mararc.sample
+etc/rc.d/maradns.sh.sample
 sbin/getzone
 sbin/maradns
 sbin/zoneserver
