@@ -1,0 +1,9 @@
+bin/spider
+man/man1/spider.1.gz
+@exec mkdir %D/lib/X11/spider
+lib/X11/spider/doc.controls
+lib/X11/spider/doc.intro
+lib/X11/spider/doc.rules
+lib/X11/spider/doc.examples
+lib/X11/spider/doc.misc
+lib/X11/spider/doc.summary
