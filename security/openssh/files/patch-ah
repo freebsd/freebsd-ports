@@ -1,20 +1,11 @@
---- /usr/ports/distfiles/OpenSSH-1.2/src/usr.bin/ssh/ssh-add/Makefile	Wed Oct 27 12:54:48 1999
-+++ ./ssh-add/Makefile	Tue Nov 23 19:26:48 1999
-@@ -2,20 +2,13 @@
+--- ssh-add/Makefile.orig	Thu Jun 29 14:35:47 2000
++++ ssh-add/Makefile	Sat Nov  4 17:01:50 2000
+@@ -5,12 +5,12 @@
  
- PROG=	ssh-add
- BINOWN=	root
--
--.if (${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "powerpc" || \
--	${MACHINE_ARCH} == "hppa")
--BINMODE=0000
--.else
--BINMODE?=555
--.endif
--
+ BINMODE?=555
+ 
 -BINDIR=	/usr/bin
 -MAN=	ssh-add.1
-+BINMODE=555
 +BINDIR=	/bin
 +MAN1=	ssh-add.1
  

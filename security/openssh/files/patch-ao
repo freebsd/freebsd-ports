@@ -1,20 +1,29 @@
---- sshd_config.orig	Fri Jan  7 01:27:30 2000
-+++ sshd_config	Fri Jan  7 01:31:01 2000
-@@ -3,12 +3,13 @@
- Port 22
+--- sshd_config.orig	Fri Aug  4 16:30:35 2000
++++ sshd_config	Sat Nov  4 17:32:28 2000
+@@ -4,12 +4,11 @@
+ #Protocol 2,1
  #ListenAddress 0.0.0.0
  #ListenAddress ::
 -HostKey /etc/ssh_host_key
-+HostKey __PREFIX__/etc/ssh_host_key
++HostKey /usr/local/etc/ssh_host_key
  ServerKeyBits 768
 -LoginGraceTime 600
-+LoginGraceTime 60
++LoginGraceTime 120
  KeyRegenerationInterval 3600
 -PermitRootLogin yes
 -#
 +PermitRootLogin no
-+# Rate-limit sshd connections to 5 connections per 10 seconds
-+ConnectionsPerPeriod 5/10
  # Don't read ~/.rhosts and ~/.shosts files
  IgnoreRhosts yes
  # Uncomment if you don't trust ~/.ssh/known_hosts for RhostsRSAAuthentication
+@@ -48,7 +47,7 @@
+ #KerberosTgtPassing yes
+ 
+ #CheckMail yes
+-#UseLogin no
++UseLogin no
+ 
+-#Subsystem	sftp	/usr/local/sbin/sftpd
+-#MaxStartups 10:30:60
++Subsystem	sftp	/usr/local/sbin/sftpd
++MaxStartups 10:30:60
