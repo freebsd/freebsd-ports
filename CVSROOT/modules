@@ -4072,6 +4072,7 @@ latex-feynmf	ports/print/latex-feynmf
 latex-index	ports/print/latex-index
 latex-keystroke	ports/print/latex-keystroke
 latex-layouts	ports/print/latex-layouts
+latex-logpap	ports/print/latex-logpap
 latex-mathabx	ports/print/latex-mathabx
 latex-mk	ports/misc/latex-mk
 latex-pgf	ports/print/latex-pgf
