@@ -1,0 +1,40 @@
+diff -ruN gal.orig/widgets/e-font.c gal/widgets/e-font.c
+--- gal.orig/widgets/e-font.c	Mon Oct 30 15:52:47 2000
++++ gal/widgets/e-font.c	Mon Oct 30 15:53:37 2000
+@@ -39,8 +39,8 @@
+ 	EFont * font;
+ 	GdkFont *gdkfont;
+ 
+-	gdkfont = gdk_font_load (name);
+-	if (!gdkfont) gdkfont = gdk_font_load ("fixed");
++	gdkfont = gdk_fontset_load("-misc-fixed-medium-r-normal--14-*-*-*-*-*-*-*");
++	if (!gdkfont) gdkfont = gdk_fontset_load("-misc-fixed-medium-r-normal--14-*-*-*-*-*-*-*");
+ 	g_return_val_if_fail (gdkfont != NULL, NULL);
+ 	font = e_font_from_gdk_font (gdkfont);
+ 	gdk_font_unref (gdkfont);
+@@ -108,7 +108,7 @@
+ 			    c[0], c[1], c[2], c[3], c[4], c[5], c[6], c[7],
+ 			    c[8], c[9], c[10], c[11], c[12], enc);
+ 		/* Try to load unicode font */
+-		newfont = gdk_font_load (p);
++		newfont = gdk_fontset_load("-misc-fixed-medium-r-normal--14-*-*-*-*-*-*-*");
+ 		if (newfont) {
+ 			/* OK, use that */
+ 			gdk_font_unref (gdkfont);
+@@ -137,14 +137,14 @@
+ 					    c[0], c[1], c[2], lightname, c[4],
+ 					    c[5], "*", "*", c[8], c[9], c[10],
+ 					    c[11], "*", enc);
+-				lightfont = gdk_font_load (p);
++				lightfont = gdk_fontset_load("-misc-fixed-medium-r-normal--14-*-*-*-*-*-*-*");
+ 			}
+ 			if (!boldfont) {
+ 				g_snprintf (p, len, "%s-%s-%s-%s-%s-%s-%s-%s-%s-%s-%s-%s-%s-%s",
+ 					    c[0], c[1], c[2], boldname, c[4],
+ 					    c[5], "*", "*", c[8], c[9], c[10],
+ 					    c[11], "*", enc);
+-				boldfont = gdk_font_load (p);
++				boldfont = gdk_fontset_load("-misc-fixed-medium-r-normal--14-*-*-*-*-*-*-*");
+ 			}
+ 		} else
+ 			lightfont = gdkfont;

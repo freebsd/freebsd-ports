@@ -1,0 +1,12 @@
+diff -ruN gal.orig/e-table/e-table-group-container.c gal/e-table/e-table-group-container.c
+--- gal.orig/e-table/e-table-group-container.c	Mon Oct 30 15:52:49 2000
++++ gal/e-table/e-table-group-container.c	Mon Oct 30 15:53:42 2000
+@@ -132,7 +132,7 @@
+ 	etgc->ascending = column.ascending;
+ 
+ 	
+-	etgc->font = gdk_font_load ("lucidasans-10");
++	etgc->font = gdk_fontset_load("-misc-fixed-medium-r-normal--14-*-*-*-*-*-*-*");
+ 	if (!etgc->font){
+ 		etgc->font = GTK_WIDGET (GNOME_CANVAS_ITEM (etgc)->canvas)->style->font;
+ 		
