@@ -15,6 +15,8 @@ MASTER_SITES=	http://gtk.php.net/distributions/ \
 MAINTAINER=	kiesel@schlund.de
 COMMENT=	An extension to use gtk in PHP-applications
 
+BROKEN=		"Conflicting dependencies: php4-cli and php4"
+
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../lang/php4/bsd.php.mk"
 
