@@ -17,12 +17,14 @@ DISTFILES=	gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
 		gcc-g77-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	esk@ira.uka.de
-COMMENT=	GNU cross compiler suite for vanilla ARM targets.
+COMMENT=	GNU cross compiler suite for vanilla ARM targets
 
 BUILD_DEPENDS=	${PKGNAMEPREFIX}as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils \
 		${PKGNAMEPREFIX}ld:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils
 RUN_DEPENDS=	${PKGNAMEPREFIX}as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils \
 		${PKGNAMEPREFIX}ld:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils
+
+ONLY_FOR_ARCHS=	i386
 
 GCC_REV=	${DISTNAME:S/gcc-//g}
 PLIST_SUB+=	GCC_REV=${GCC_REV}
@@ -43,16 +45,18 @@ MAN1=		${PKGNAMEPREFIX}g++.1 ${PKGNAMEPREFIX}gcc.1 cccp.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
 .if !defined(DEFAULT_CPU)
 pre-extract:
 	@${ECHO}
 	@${ECHO} "You can specify a default cpu target for gcc by setting DEFAULT_CPU to the"
 	@${ECHO} "appropriate target (e.g., strongarm1100)."
 	@${ECHO}
+.endif
+
+.if ${OSVERSION} >= 500113
+post-patch:
+	@(cd ${PATCH_WRKSRC} && ${PATCH} < ${PATCHDIR}/libiberty-strerror.c && \
+	${PATCH} < ${PATCHDIR}/libiberty-strsignal.c)
 .endif
 
 post-configure:
