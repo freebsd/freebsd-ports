@@ -2820,7 +2820,6 @@ ja-fumeikai-fpw	ports/japanese/fumeikai-fpw
 ja-gal		ports/japanese/gal
 ja-gawk		ports/japanese/gawk
 ja-gd		ports/japanese/gd
-ja-ghostscript-gnu-cjk		ports/japanese/ghostscript-gnu-cjk
 ja-ghostscript-gnu-jpnfont	ports/japanese/ghostscript-gnu-jpnfont
 ja-gicq		ports/japanese/gicq
 ja-gn-gnspool	ports/japanese/gn-gnspool
@@ -3485,7 +3484,6 @@ ko-eterm	ports/korean/eterm
 ko-ftghostscript5	ports/korean/ftghostscript5
 ko-gaim		ports/korean/gaim
 ko-gau		ports/korean/gau
-ko-ghostscript-gnu-cjk	ports/korean/ghostscript-gnu-cjk
 ko-ghostscript-gnu-korfont	ports/korean/ghostscript-gnu-korfont
 ko-ghostscript55httf	ports/korean/ghostscript55httf
 ko-gtkcomm	ports/korean/gtkcomm
