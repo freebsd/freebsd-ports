@@ -267,6 +267,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <url>http://www.squid-cache.org/Advisories/SQUID-2005_3.txt</url>
 	<url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-wccp_buffer_overflow</url>
 	<url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1217</url>
+	<certvu>823350</certvu>
     </references>
     <dates>
       <discovery>2005-01-28</discovery>
@@ -472,11 +473,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <references>
       <cvename>CAN-2005-0174</cvename>
       <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-header_parsing</url>
+      <certvu>768702</certvu>
     </references>
     <dates>
       <discovery>2005-01-24</discovery>
       <entry>2005-01-24</entry>
-      <modified>2005-01-31</modified>
+      <modified>2005-02-07</modified>
     </dates>
   </vuln>
 
@@ -669,11 +671,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-response_splitting</url>
       <url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1200</url>
       <url>https://www.watchfire.com/securearea/whitepapers.aspx?id=8</url>
+      <certvu>625878</certvu>
     </references>
     <dates>
       <discovery>2004-03-01</discovery>
       <entry>2005-01-22</entry>
-      <modified>2005-01-31</modified>
+      <modified>2005-02-07</modified>
     </dates>
   </vuln>
 
