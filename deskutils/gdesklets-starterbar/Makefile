@@ -7,10 +7,10 @@
 
 PORTNAME=	starterbar
 PORTVERSION=	0.22.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
-PKGNAMEPREFIX= gdesklets-
+PKGNAMEPREFIX=	gdesklets-
 DISTNAME=	starterbar-desklet-${PORTVERSION}
 
 MAINTAINER=	mezz7@cox.net
@@ -19,17 +19,19 @@ COMMENT=	An icon bar for GNOME 2.x where you can put starters into
 RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets
 
 USE_BZIP2=	yes
+USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 
 NAME=		StarterBar
 DATADIR=	${PREFIX}/share/gnome
+PKGMESSAGE=	${WRKDIR}/pkg-message
 LANG=		de fr pt sq sr sr@Latn sv
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-IGNORE=		"Requires FreeBSD 5.0 or later, because of uuidgen command first appeared in FreeBSD 5.0"
+RUN_DEPENDS+=	uuid:${PORTSDIR}/misc/ossp-uuid
 .endif
 
 do-build:
@@ -39,6 +41,10 @@ do-build:
 	@${PATCH} ${WRKSRC}/${NAME}/__init__.py < ${FILESDIR}/${NAME}::__init__.py
 	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' \
 		${WRKSRC}/${NAME}/IconTheme.py
+.if ${OSVERSION} < 500000
+	@${REINPLACE_CMD} -e 's|uuidgen|uuid|g' \
+		${WRKSRC}/${NAME}/IconSet.py
+.endif
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
@@ -60,6 +66,10 @@ do-install:
 		${DATADIR}/gdesklets/Sensors/${NAME}/README
 
 post-install:
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${DATADIR}/gdesklets/Sensors/${NAME}
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${DATADIR}/gdesklets/Sensors/${NAME}
+	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g ; s|%%NAME%%|${NAME}|g' \
+		${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
