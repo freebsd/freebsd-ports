@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Exporter/Tidy.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Exporter/Tidy/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Exporter/Tidy
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Exporter 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Exporter 2>/dev/null || true
