@@ -2,5 +2,6 @@ bin/faac
 include/faac.h
 include/faaccfg.h
 lib/libfaac.a
+lib/libfaac.la
 lib/libfaac.so
 lib/libfaac.so.0
