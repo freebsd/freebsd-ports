@@ -140,6 +140,7 @@
     SUBDIR += lib3ds
     SUBDIR += libafterimage
     SUBDIR += libart
+    SUBDIR += libart_lgpl2
     SUBDIR += libaux
     SUBDIR += libdivxdecore
     SUBDIR += libdivxdecore-devel
