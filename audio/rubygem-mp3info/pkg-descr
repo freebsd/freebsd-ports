@@ -1,0 +1,7 @@
+This library gives you access to low level information on mp3 files
+(bitrate, length, samplerate, etc...).  It is written in pure ruby.
+
+Note that this library does not fetch ID3 tag.
+
+Author:	Guillaume Pierronnet <moumar@netcourrier.com>
+WWW:	http://davedd.free.fr/ruby-mp3info/
