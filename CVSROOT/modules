@@ -2138,6 +2138,7 @@ icbm3d		ports/games/icbm3d
 icebreaker	ports/games/icebreaker
 icecast		ports/audio/icecast
 icegradient	ports/x11-toolkits/icegradient
+icemc		ports/x11-wm/icemc
 icepref		ports/x11-wm/icepref
 icewm		ports/x11-wm/icewm
 ici		ports/lang/ici
