@@ -38,9 +38,7 @@ PLIST_SUB+=		WANT_SWIG_PERL=""
 PLIST_SUB+=		WANT_SWIG_PERL="@comment "
 .endif
 .if defined(WANT_SWIG_PHP4)
-# We need both mod_php4 and php4
-BUILD_DEPENDS+=		${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4 \
-			php:${PORTSDIR}/www/mod_php4
+BUILD_DEPENDS+=		${LOCALBASE}/include/php/main/php.h:${PORTSDIR}/lang/php4
 PLIST_SUB+=		WANT_SWIG_PHP4=""
 .else
 PLIST_SUB+=		WANT_SWIG_PHP4="@comment "
