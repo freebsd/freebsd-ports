@@ -1,9 +1,13 @@
 bin/pclock
+share/pclock/pixmaps/glowclock.xpm
 share/pclock/pixmaps/green.xpm
 share/pclock/pixmaps/oclock.xpm
 share/pclock/pixmaps/radar.xpm
+share/pclock/pixmaps/rolex2.xpm
+share/pclock/pixmaps/rolexgmt.xpm
 share/pclock/pixmaps/round-3d.xpm
 share/pclock/pixmaps/square.xpm
+share/pclock/pixmaps/swatch.xpm
 share/pclock/pixmaps/time-icon.xpm
 share/pclock/pixmaps/will-return.xpm
 share/pclock/pixmaps/wmaker-tile.xpm
