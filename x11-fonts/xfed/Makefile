@@ -3,7 +3,7 @@
 # Date created:         7 December 1994
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.14 1997/03/03 13:51:50 tg Exp $
+# $Id: Makefile,v 1.15 1997/03/04 06:16:02 asami Exp $
 #
 
 DISTNAME=	xfed
@@ -11,7 +11,7 @@ PKGNAME=	xfed-1.0
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.demon.co.uk/pub/graphics/systems/X11.old/pub/R6untarred/contrib/programs/
 
-MAINTAINER=	asami@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.ORG
 
 IGNOREFILES=	${DISTFILES}
 USE_IMAKE=	yes

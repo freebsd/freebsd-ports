@@ -3,7 +3,7 @@
 # Date created:         23 July 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.1.1.1 1995/07/29 11:30:49 asami Exp $
+# $Id: Makefile,v 1.2 1996/11/18 11:29:43 asami Exp $
 #
 
 DISTNAME=	xgrasp.1.7d
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://qiclab.scn.rain.com/pub/X11/	\
 		ftp://ftp.cs.ubc.ca/mirror1/x-contrib.R5/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	asami@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.ORG
 
 USE_IMAKE=	yes
 NO_WRKSUBDIR=	yes

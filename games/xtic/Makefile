@@ -3,7 +3,7 @@
 # Date created:         22 June 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.1.1.1 1995/06/23 04:35:56 asami Exp $
+# $Id: Makefile,v 1.2 1996/11/18 09:53:26 asami Exp $
 #
 
 DISTNAME=       xtic1.12
@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
 
-MAINTAINER=	asami@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.ORG
 
 USE_IMAKE=      yes
 

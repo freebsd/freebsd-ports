@@ -3,7 +3,7 @@
 # Date created:         22 Mar 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.11 1996/12/17 05:33:18 asami Exp $
+# $Id: Makefile,v 1.12 1997/01/03 09:37:10 obrien Exp $
 #
 
 DISTNAME=       xemeraldia-0.3
@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.kuis.kyoto-u.ac.jp/News.Archives/fj.sources/1995/
 DISTFILES=	271.gz
 
-MAINTAINER=	asami@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.ORG
 
 USE_IMAKE=      yes
 NO_INSTALL_MANPAGES=	yes

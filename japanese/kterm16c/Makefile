@@ -3,7 +3,7 @@
 # Date created:		18 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.14 1997/09/14 21:34:51 max Exp $
+# $Id: Makefile,v 1.15 1997/10/17 12:56:49 itojun Exp $
 #
 
 DISTNAME=	kterm-6.2.0
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	applications
 PATCH_SITES=	ftp://ftp.sra.co.jp/pub/x11/kterm/
 PATCHFILES=	kterm-6.2.0.NFS-xauth.patch
 
-MAINTAINER=	asami@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.ORG
 
 USE_IMAKE=	yes
 

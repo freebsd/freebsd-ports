@@ -3,7 +3,7 @@
 # Date created:		2 May 1995
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.4 1995/11/26 11:29:21 asami Exp $
+# $Id: Makefile,v 1.5 1996/11/18 09:52:36 asami Exp $
 #
 
 DISTNAME=	xxgdb-1.12
@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=   ${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	utilities
 
-MAINTAINER=	asami@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.ORG
 
 USE_IMAKE=	yes
 

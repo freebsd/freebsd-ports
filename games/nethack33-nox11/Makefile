@@ -3,7 +3,7 @@
 # Date created:		27 March 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.11 1997/01/03 09:36:45 obrien Exp $
+# $Id: Makefile,v 1.12 1997/07/12 16:53:36 max Exp $
 #
 
 DISTNAME=	nethack-3.2.2
@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.uu.net/pub/games/nethack/sources/ \
 		${MASTER_SITE_GNU}
 
-MAINTAINER=	asami@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.ORG
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 

@@ -3,14 +3,14 @@
 # Date created:         17 July 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.3 1996/11/18 11:29:33 asami Exp $
+# $Id: Makefile,v 1.4 1997/11/15 13:53:58 asami Exp $
 #
 
 DISTNAME=	xdl-2.1
 CATEGORIES=	graphics x11
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 
-MAINTAINER=	asami@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.ORG
 
 USE_X11=	yes
 MAN1=		xdl.1

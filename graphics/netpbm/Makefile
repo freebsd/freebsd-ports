@@ -3,7 +3,7 @@
 # Date created:		?
 # Whom:			jmz (original)
 #
-# $Id: Makefile,v 1.8 1996/11/18 11:28:55 asami Exp $
+# $Id: Makefile,v 1.9 1997/12/01 07:57:24 tg Exp $
 #
 
 DISTNAME=	netpbm
@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTFILES=	netpbm-1mar1994.tar.gz
 
-MAINTAINER=	asami@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.ORG
 
 LIB_DEPENDS=	tiff34\\.1\\.:${PORTSDIR}/graphics/tiff34
 

@@ -3,7 +3,7 @@
 # Date created:		12 September 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.3 1996/11/18 09:52:57 asami Exp $
+# $Id: Makefile,v 1.4 1997/02/12 10:25:56 obrien Exp $
 #
 
 DISTNAME=	xbill-2.0
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	asami@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.ORG
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 

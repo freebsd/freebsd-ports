@@ -3,7 +3,7 @@
 # Date created:		27 August 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.4 1996/11/30 00:12:17 torstenb Exp $
+# $Id: Makefile,v 1.5 1997/09/06 05:32:33 max Exp $
 #
 
 DISTNAME=	xgalaga-1.6c
@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
 
-MAINTAINER=	asami@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.ORG
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 

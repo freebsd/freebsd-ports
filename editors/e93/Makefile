@@ -3,7 +3,7 @@
 # Date created:		21 June 1995
 # Whom:			Satoshi Asami (asami)
 #
-# $Id: Makefile,v 1.12 1997/07/13 18:49:14 max Exp $
+# $Id: Makefile,v 1.13 1997/09/18 08:02:35 asami Exp $
 #
 
 DISTNAME=	e93-1.2r6X
@@ -12,7 +12,7 @@ CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	editors
 
-MAINTAINER=	asami@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.ORG
 
 LIB_DEPENDS=	tcl80\\.1\\.:${PORTSDIR}/lang/tcl80
 
