@@ -32,6 +32,7 @@
     SUBDIR += gnumeric
     SUBDIR += hc
     SUBDIR += hztty
+    SUBDIR += irssi
     SUBDIR += joe
     SUBDIR += kcfonts
     SUBDIR += kde2-i18n
