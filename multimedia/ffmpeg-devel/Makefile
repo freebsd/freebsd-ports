@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	ffmpeg
+DISTVERSION=	0.4.9-pre1
 PORTREVISION=	1
 CATEGORIES=	multimedia audio net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	ffmpeg
-DISTVERSION=	0.4.9-pre1
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Hyper fast realtime audio/video encoder/converter, streaming server
@@ -160,7 +160,7 @@ CONFIGURE_ARGS+=	--extra-cflags="-fPIC -DPIC -I${LOCALBASE}/include \
 			-I${X11BASE}/include \
 			-fomit-frame-pointer -fno-unit-at-a-time" \
 			--extra-ldflags="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm "
-#			--disable-opts 
+#			--disable-opts
 .	endif
 .else
 CONFIGURE_ARGS+=	--extra-cflags="-fPIC -DPIC -I${LOCALBASE}/include \

@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	kmplayer
+DISTVERSION=	0.8.4-rc4b
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	http://www.xs4all.nl/%7Ejjvrieze/
 #DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.r/-rc/}
-DISTVERSION=	0.8.4-rc4b
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	KDE frontend to mplayer
@@ -30,7 +30,7 @@ CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--with-x=${X11BASE} --disable-debug
 
 OPTIONS=	GSTREAMER "Enable support for video playback using gstreamer" off \
-		XINE "Enable support for video playback using libxine" off 
+		XINE "Enable support for video playback using libxine" off
 
 WANT_GNOME=	gstreamerplugins
 

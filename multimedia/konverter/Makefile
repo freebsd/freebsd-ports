@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	konverter
+DISTVERSION=	0.92-beta1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	http://www.kraus.tk/projects/konverter/sources/
-DISTVERSION=	0.92-beta1
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	KDE MEncoder frontend
