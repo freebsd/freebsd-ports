@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Proc-Background
-PORTVERSION=	1.01
+PORTVERSION=	1.03
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Proc
@@ -16,9 +16,10 @@ MAINTAINER=	ports@FreeBSD.org
 
 PERL_CONFIGURE=	yes
 
-MAN1PREFIX=	${PREFIX}
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN1=		timed-process.1
-MAN3=		Proc::Background.3 Proc::Background::Win32.3 Proc::Background::Unix.3
+MAN3=		Proc::Background.3 \
+		Proc::Background::Win32.3 \
+		Proc::Background::Unix.3
 
 .include <bsd.port.mk>

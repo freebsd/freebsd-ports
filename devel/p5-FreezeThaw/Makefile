@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	FreezeThaw
-PORTVERSION=	0.3
+PORTVERSION=	0.41
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	FreezeThaw
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 PERL_CONFIGURE=	YES
 
-MAN3=		FreezeThaw.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3=		FreezeThaw.3
 
 .include <bsd.port.mk>
