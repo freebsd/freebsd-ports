@@ -1,35 +1,43 @@
 bin/qvwm
-lib/X11/qvwm/default.qvwm-theme
-lib/X11/qvwm/images/clouds.xpm
-lib/X11/qvwm/images/clouds2.xpm
-lib/X11/qvwm/images/def16.ani
-lib/X11/qvwm/images/def32.ani
-lib/X11/qvwm/images/emacs16.ani
-lib/X11/qvwm/images/emacs32.ani
-lib/X11/qvwm/images/exit32.ani
-lib/X11/qvwm/images/find32.ani
-lib/X11/qvwm/images/help32.xpm
-lib/X11/qvwm/images/icon16.ani
-lib/X11/qvwm/images/icon32.ani
-lib/X11/qvwm/images/logo_clouds.xpm
-lib/X11/qvwm/images/logo_os2.xpm
-lib/X11/qvwm/images/netscape16.ani
-lib/X11/qvwm/images/netscape32.ani
-lib/X11/qvwm/images/quit32.ani
-lib/X11/qvwm/images/qvwmdesk.ani
-lib/X11/qvwm/images/run32.ani
-lib/X11/qvwm/images/setting32.ani
-lib/X11/qvwm/images/taskbar16.ani
-lib/X11/qvwm/images/xcalc16.xpm
-lib/X11/qvwm/images/xcalc32.ani
-lib/X11/qvwm/images/xeyes16.ani
-lib/X11/qvwm/images/xeyes32.ani
-lib/X11/qvwm/images/xterm16.xpm
-lib/X11/qvwm/images/xterm32.ani
-lib/X11/qvwm/images/xv16.xpm
-lib/X11/qvwm/images/xv32.xpm
-lib/X11/qvwm/sounds/chimes.wav
-lib/X11/qvwm/system.qvwmrc
-@dirrm lib/X11/qvwm/images
-@dirrm lib/X11/qvwm/sounds
-@dirrm lib/X11/qvwm
+share/qvwm/clouds.qvwm-theme
+share/qvwm/default.qvwm-theme
+share/qvwm/french.qvwmrc
+share/qvwm/images/clouds.xpm
+share/qvwm/images/clouds2.xpm
+share/qvwm/images/def16.ani
+share/qvwm/images/def32.ani
+share/qvwm/images/emacs16.ani
+share/qvwm/images/emacs32.ani
+share/qvwm/images/exit32.ani
+share/qvwm/images/find32.ani
+share/qvwm/images/help32.xpm
+share/qvwm/images/icon16.ani
+share/qvwm/images/icon32.ani
+share/qvwm/images/logo_clouds.xpm
+share/qvwm/images/logo_os2.xpm
+share/qvwm/images/netscape16.ani
+share/qvwm/images/netscape32.ani
+share/qvwm/images/quit32.ani
+share/qvwm/images/qvwmdesk.ani
+share/qvwm/images/run32.ani
+share/qvwm/images/setting32.ani
+share/qvwm/images/space.ani
+share/qvwm/images/space2.ani
+share/qvwm/images/taskbar16.ani
+share/qvwm/images/xcalc16.xpm
+share/qvwm/images/xcalc32.ani
+share/qvwm/images/xeyes16.ani
+share/qvwm/images/xeyes32.ani
+share/qvwm/images/xterm16.xpm
+share/qvwm/images/xterm32.ani
+share/qvwm/images/xv16.xpm
+share/qvwm/images/xv32.xpm
+share/qvwm/kanji.qvwmrc
+share/qvwm/korean.qvwmrc
+share/qvwm/light.qvwmrc
+share/qvwm/sounds/chimes.wav
+share/qvwm/space.qvwm-theme
+share/qvwm/system.qvwmrc
+@dirrm share/qvwm/images
+@dirrm share/qvwm/sounds
+@dirrm share/qvwm
