@@ -110,7 +110,6 @@
     SUBDIR += gnomepm
     SUBDIR += gnomesword
     SUBDIR += gnomeuserdocs2
-    SUBDIR += gnomeutils2
     SUBDIR += gnuls
     SUBDIR += gnustep-examples
     SUBDIR += goblin
