@@ -1,0 +1,13 @@
+--- configure	2000/09/19 07:22:11	1.1
++++ configure	2000/09/19 07:29:28
+@@ -3480,8 +3480,8 @@
+ fi
+ 
+ 
+-LDFLAGS="$balsa_save_LDFLAGS"
+-LIBS="$balsa_save_LIBS"
++#LDFLAGS="$balsa_save_LDFLAGS"
++#LIBS="$balsa_save_LIBS"
+ 
+ for ac_hdr in libgnomeui/gnome-window-icon.h
+ do
