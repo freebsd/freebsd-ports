@@ -14,6 +14,9 @@ DISTNAME=	communicator-v408-export.x86-unknown-linux2.0_libc5
 
 MAINTAINER=	ports@FreeBSD.org
 
+# This should have been marked FORBIDDEN long ago. - nectar 2002/02/10
+FORBIDDEN=	"Multiple vulnerabilities: see http://www.securityfocus.com/bid/2637, http://www.securityfocus.com/bid/1726"
+
 RUN_DEPENDS=	/compat/linux/lib/ld.so:${PORTSDIR}/emulators/linux_base \
 		netscape:${PORTSDIR}/www/netscape-wrapper
 
