@@ -1,0 +1,10 @@
+--- grap.h.orig	Sun Nov 24 03:19:42 2002
++++ grap.h	Sun Nov 24 03:20:51 2002
+@@ -55,6 +55,7 @@
+ 
+ using namespace std;
+ 
++#include <vector>
+ #include <string>
+ #include <list>
+ #include <algorithm>
