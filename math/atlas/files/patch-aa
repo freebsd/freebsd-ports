@@ -1,6 +1,26 @@
---- config.c.orig	Mon Jun 17 09:37:24 2002
-+++ config.c	Mon Jul 15 18:39:46 2002
-@@ -2049,12 +2049,14 @@
+--- config.c.orig	Mon Jun 17 10:37:24 2002
++++ config.c	Sun Aug 18 03:11:24 2002
+@@ -692,7 +692,7 @@
+          else if (mach == IA64Itan || MachIsUS(mach) ||
+                   mach == Dec21164 || mach == Dec21264)
+          {
+-            if (major == 3)
++            if ((major == 2 && minor < 96) || (major == 3)) /* Nasty hack for FreeBSD/Alpha STABLE */
+             {
+                strcpy(goodgcc, files[i]);
+                return(0);
+@@ -2040,7 +2040,10 @@
+          if (!CmndOneLine(targ, "sysctl hw.model", ln))
+          {
+             if (strstr(ln, "433au")) mach = Dec21164;
++            else if (strstr(ln, "500au")) mach = Dec21164;
++            else if (strstr(ln, "AlphaPC 164")) mach = Dec21164;
+             else if (strstr(ln, "XP1000")) mach = Dec21264;
++            else mach = Dec21264;
+          }
+          break;
+       case LAIA64: /* don't know */
+@@ -2049,12 +2052,14 @@
           if (!CmndOneLine(targ, "sysctl hw.model", ln))
           {
              if (strstr(ln, "Pentium Pro")) mach = IntPPRO;
@@ -10,12 +30,13 @@
              else if (strstr(ln, "Athlon")) mach = AmdAthlon;
              else if (strstr(ln, "AMD-K7")) mach = AmdAthlon;
              else if (strstr(ln, "Pentium/P55C")) mach = IntP5MMX; /* sent by */
-             else if (strstr(ln, "Pentium")) mach=IntP5;       /* Nakata Maho */
-+            else mach=IntP5;
+-            else if (strstr(ln, "Pentium")) mach=IntP5;       /* Nakata Maho */
++            else if (strstr(ln, "Pentium")) mach = IntP5;       /* Nakata Maho */
++            else mach = IntP5;
           }
           break;
        default:;
-@@ -3024,6 +3026,9 @@
+@@ -3024,6 +3029,9 @@
     }
     if (USEWINF77) strcpy(F77, "$(BINdir)/winf77.exe");
  
