@@ -84,6 +84,7 @@
     SUBDIR += siod
     SUBDIR += slib
     SUBDIR += smalltalk
+    SUBDIR += sml-mode.el
     SUBDIR += sml-nj
     SUBDIR += squeak1
     SUBDIR += squeak2

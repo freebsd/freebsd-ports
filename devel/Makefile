@@ -169,7 +169,6 @@
     SUBDIR += sdl
     SUBDIR += sfio
     SUBDIR += shtool
-    SUBDIR += sml-mode.el
     SUBDIR += stlport
     SUBDIR += swarm
     SUBDIR += t1lib
