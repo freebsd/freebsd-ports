@@ -1,0 +1,22 @@
+--- init-script.in	Fri Apr  7 11:11:37 2000
++++ init-script.in.new	Mon Jun 12 19:28:55 2000
+@@ -26,11 +26,8 @@
+ #
+   
+ # Source function library
+-# Solaris doesn't have an rc.d directory, so do a test first
+-if [ -f /etc/rc.d/init.d/functions ]; then
+-. /etc/rc.d/init.d/functions
+-elif [ -f /etc/init.d/functions ]; then
+-. /etc/init.d/functions
++if [ -f /usr/local/etc/netsaint/functions ]; then
++. /usr/local/etc/netsaint/functions
+ fi
+ 
+ prefix=@prefix@
+@@ -92,4 +89,4 @@
+   
+ # End of this script
+         
+-        
++        

@@ -1,0 +1,31 @@
+--- Makefile.in	Fri Apr  7 11:11:31 2000
++++ Makefile.in.new	Mon Jun 12 19:33:19 2000
+@@ -36,7 +36,7 @@
+ 		@echo "Please supply a command line argument (i.e. 'make all').  Other targets are:"
+ 		@echo "   netsaint cgis config"
+ 		@echo "   clean distclean devclean"
+-		@echo "   install install-html install-config install-init install-daemoninit install-commandmode"
++		@echo "   install install-html install-config install-init install-daemoninit install-commandmode install-all"
+ 		@echo "   uninstall"
+ 
+ # FreeBSD make does not support -C option, so we'll use the Apache style... (patch by Stanley Hopcroft 12/27/1999)
+@@ -99,13 +99,17 @@
+ 	$(INSTALL) -m 664 $(INSTALL_OPTS) nscgi.cfg $(CGIDIR)
+ 
+ install-init:
+-	$(INSTALL) -m 774 -o root -g root init-script /etc/rc.d/init.d/netsaint
++	$(INSTALL) -m 774 -o root -g wheel init-script /usr/local/etc/rc.d/netsaint.sh
++	$(INSTALL) -m 774 -o netsaint -g netsaint functions /usr/local/etc/netsaint/functions
+ 
+ install-daemoninit:
+-	$(INSTALL) -m 774 -o root -g root daemon-init /etc/rc.d/init.d/netsaint
++	$(INSTALL) -m 774 -o root -g wheel daemon-init /usr/local/etc/rc.d/netsaint.sh
++	$(INSTALL) -m 774 -o netsaint -g netsaint functions /usr/local/etc/netsaint/functions
+ 
+ install-commandmode:
+ 	$(INSTALL) -m 775 $(COMMAND_OPTS) -d $(LOGDIR)/rw
+ 
+ uninstall:
+ 	rm -rf $(BINDIR)/netsaint $(CGIDIR)/*.cgi $(CFGDIR)/*.cfg $(HTMLDIR)
++
++install-all: all install config install-config install-daemoninit
