@@ -63,7 +63,7 @@ do-install:
 	${MKDIR} ${APP_HOME}
 	cd ${WRKSRC} && ${FIND} . \
 		| ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${APP_HOME}
-	${LOCALBASE}/bin/registervm "${APP_HOME}/bin/java # IBM-JDK${PORTVERSION}_${PORTREVISION}"
+	${LOCALBASE}/bin/registervm "${APP_HOME}/bin/java # Linux-IBM-JDK${PORTVERSION}_${PORTREVISION}"
 
 post-install:
 .if defined(WITH_JAPANESE_FONTS)
