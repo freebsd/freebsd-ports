@@ -67,7 +67,7 @@ pre-everything::
 	@${ECHO_MSG} "You may use the following build options:"
 	@${ECHO_MSG}
 	@${ECHO_MSG} "WITH_LIBARTS	build with libArts output plugin"
-	@${ECHO_MSG} "WITHOUT_ESOUND	do NOT build with esd support"
+	@${ECHO_MSG} "WITHOUT_GNOME=esound	do NOT build with esd support"
 	@${ECHO_MSG} "WITHOUT_VORBIS	do NOT build with Ogg/Vorbis codec plugin"
 	@${ECHO_MSG}
 	@${ECHO_MSG} "WITH_ALL_PLUGINS=yes  build with all plugins"
