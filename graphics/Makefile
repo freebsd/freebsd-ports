@@ -189,6 +189,7 @@
     SUBDIR += wmicons
     SUBDIR += xanim
     SUBDIR += xaos
+    SUBDIR += xbarcode
     SUBDIR += xbmbrowser
     SUBDIR += xdgagrab
     SUBDIR += xdl
