@@ -91,6 +91,7 @@
     SUBDIR += gnomemedia2
     SUBDIR += gnowavcut
     SUBDIR += gnump3d
+    SUBDIR += gnupod
     SUBDIR += gogo
     SUBDIR += gqmpeg
     SUBDIR += gramofile
