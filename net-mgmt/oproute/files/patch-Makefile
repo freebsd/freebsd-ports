@@ -1,0 +1,11 @@
+--- Makefile.orig	Sat Mar  3 23:03:42 2001
++++ Makefile	Sat Mar  3 23:03:59 2001
+@@ -1,7 +1,7 @@
+ 
+ CPPFLAGS = -O3
+ VERSION = 0.7
+-BIN = /usr/local/bin
++BIN = %%PREFIX%%/bin
+ 
+ all: oproute
+ 
