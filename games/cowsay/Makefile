@@ -7,6 +7,7 @@
 
 PORTNAME=	cowsay
 PORTVERSION=	3.03
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.nog.net/pub/tony/cowsay/
 
@@ -20,6 +21,7 @@ MAN1=		cowsay.1
 
 do-install:
 	cd ${WRKSRC}; ${SH} install.sh ${PREFIX}
+	@${INSTALL_DATA} ${FILESDIR}/jkh.cow ${PREFIX}/share/cows
 	@${INSTALL_DATA} ${FILESDIR}/tux-stab.cow ${PREFIX}/share/cows
 
 .include <bsd.port.mk>
