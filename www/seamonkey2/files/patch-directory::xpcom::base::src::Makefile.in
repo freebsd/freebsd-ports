@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- directory/xpcom/base/src/Makefile.in.orig	Thu Sep 20 15:30:57 2001
++++ directory/xpcom/base/src/Makefile.in	Thu Oct 25 15:37:03 2001
+@@ -80,6 +80,5 @@
+ 
+ include $(topsrcdir)/config/rules.mk
+ 
+-CFLAGS		+= $(LDAP_CFLAGS)
+-CXXFLAGS	+= $(LDAP_CFLAGS)
++DEFINES		+= $(LDAP_CFLAGS)
+ 
