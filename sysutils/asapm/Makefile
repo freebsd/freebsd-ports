@@ -1,12 +1,12 @@
 # New ports collection makefile for:	asapm
-# Version required:	2.6
+# Version required:	2.7
 # Date created:		6 Aug 1998
 # Whom:			Brian Handy <handy@physics.montana.edu>
 #
-# $Id: Makefile,v 1.8 1999/01/26 02:30:51 steve Exp $
+# $Id: Makefile,v 1.9 1999/04/08 11:11:43 jseger Exp $
 #
 
-DISTNAME=	asapm-2.6
+DISTNAME=	asapm-2.7
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.afterstep.org/apps/asapm/ \
 		http://www.tigr.net/afterstep/as-apps/download/asapm/
