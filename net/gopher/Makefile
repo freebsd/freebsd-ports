@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gopher
-PORTVERSION=	2.3
+PORTVERSION=	2.3.1
 CATEGORIES=	net
 MASTER_SITES=	ftp://boombox.micro.umn.edu/pub/gopher/Unix/
-DISTNAME=	gopher2_3
+DISTNAME=	gopher2_3.1
 
 MAINTAINER=	ports@FreeBSD.org
 
