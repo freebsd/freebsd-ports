@@ -10,18 +10,19 @@ PORTVERSION=	1.12
 CATEGORIES=	benchmarks net
 MASTER_SITES=	ftp://ftp.sgi.com/sgi/src/ttcp/
 DISTFILES=	ttcp.c ttcp.1 README
+EXTRACT_ONLY=	#none
 
 MAINTAINER=	mharo@FreeBSD.org
 COMMENT=	Benchmarking tool for analysing TCP and UDP performance
 
-EXTRACT_ONLY=	#none
 NO_WRKSUBDIR=	yes
+DIST_SUBDIR=	${PORTNAME}
 MAN1=		ttcp.1
 
 post-extract:
-	${CP} ${DISTDIR}/ttcp.c ${WRKSRC}/
-	${CP} ${DISTDIR}/ttcp.1 ${WRKSRC}/
-	${CP} ${DISTDIR}/README ${WRKSRC}/
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/ttcp.c ${WRKSRC}/
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/ttcp.1 ${WRKSRC}/
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/README ${WRKSRC}/
 
 do-build:
 	${CC} ${CFLAGS} -o ${WRKSRC}/ttcp ${WRKSRC}/ttcp.c
