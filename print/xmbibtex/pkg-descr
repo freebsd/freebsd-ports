@@ -8,16 +8,3 @@ that the Medline file format is not unique. Up to now, there are
 import filters available for the "Ovid Medline", the "PubMed Medline"
 and for the "Spirs Medline" format. It would be nice if some people
 could write additional import filters for other file formats.
-
-If you find this program useful, I would appreciate receiving a
-picture postcard from your home city (although this is not enforced
-since the program is GPL).
-
-Harald M. Stauss, MD
-Dept. of Physiology
-Humboldt University - Charite Berlin
-Tucholskystr. 2
-10117 Berlin
-Germany
-
-(harald.stauss@rz.hu-berlin.de)
