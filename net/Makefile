@@ -368,6 +368,7 @@
     SUBDIR += sambasentinel
     SUBDIR += samplicator
     SUBDIR += satellite
+    SUBDIR += scdp
     SUBDIR += scotty
     SUBDIR += scotty3
     SUBDIR += sdl_net

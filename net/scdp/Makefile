@@ -1,0 +1,23 @@
+# New ports collection makefile for:   scdp
+# Date created:                14 September 2001
+# Whom:                        arved@arved.de
+#
+# $FreeBSD$
+
+PORTNAME=	scdp
+PORTVERSION=	1.0.b
+CATEGORIES=	net
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	scdp
+
+MAINTAINER=	freebsdports@arved.de
+
+BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
+
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+
+post-patch:
+	@${PERL} -pi -e 's,malloc.h,stdlib.h,' ${WRKSRC}/scdp.c
+
+.include <bsd.port.mk>
