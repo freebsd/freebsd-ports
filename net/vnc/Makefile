@@ -18,6 +18,7 @@ MAINTAINER=	 	bmah@ca.sandia.gov
 USE_PERL5=		YES
 
 EXTRACT_ONLY=		vnc-3.3.3r1_unixsrc.tgz
+IGNOREFILES=		vnc-latest_doc.tgz
 
 WRKSRC=			${WRKDIR}/vnc_unixsrc
 
