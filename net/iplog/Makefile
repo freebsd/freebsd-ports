@@ -7,12 +7,13 @@
 
 PORTNAME=	iplog
 PORTVERSION=	2.2.3
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://misc.ojnk.net/~odin/stuff/
 MASTER_SITE_SUBDIR=	ojnk
 
-MAINTAINER=	ust@cert.siemens.de
+MAINTAINER=	udo.schweigert@siemens.com
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
