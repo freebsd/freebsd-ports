@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	tkinfo
-PORTVERSION=	2.4
-CATEGORIES=	misc tk82
+PORTVERSION=	2.5
+CATEGORIES=	misc tk83
 MASTER_SITES=	http://math-www.uni-paderborn.de/~axel/tkinfo/
 
-MAINTAINER=	tg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
+RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 
 NO_BUILD=	yes
 MAN1=		tkinfo.1
