@@ -7,6 +7,7 @@
 
 PORTNAME=	awstats
 PORTVERSION=	5.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -35,10 +36,12 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/wwwroot/cgi-bin/awstats.pl ${PREFIX}/www/cgi-bin
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/lang/* ${PREFIX}/www/cgi-bin/lang
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/lib/* ${PREFIX}/www/cgi-bin/lib
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/geoip.pm ${PREFIX}/www/cgi-bin/plugins
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/graph3d.pm ${PREFIX}/www/cgi-bin/plugins
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/hashfiles.pm ${PREFIX}/www/cgi-bin/plugins
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/timehires.pm ${PREFIX}/www/cgi-bin/plugins
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/timezone.pm ${PREFIX}/www/cgi-bin/plugins
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/urlalias.pm ${PREFIX}/www/cgi-bin/plugins
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/example/* ${PREFIX}/www/cgi-bin/plugins/example
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/icon/browser/* ${PREFIX}/www/icons/browser
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/icon/clock/* ${PREFIX}/www/icons/clock
