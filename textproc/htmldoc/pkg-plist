@@ -1,0 +1,32 @@
+bin/htmldoc
+share/doc/htmldoc/help.html
+share/doc/htmldoc/htmldoc.pdf
+share/htmldoc/afm/Courier
+share/htmldoc/afm/Courier-Bold
+share/htmldoc/afm/Courier-BoldOblique
+share/htmldoc/afm/Courier-Oblique
+share/htmldoc/afm/Helvetica
+share/htmldoc/afm/Helvetica-Bold
+share/htmldoc/afm/Helvetica-BoldOblique
+share/htmldoc/afm/Helvetica-Oblique
+share/htmldoc/afm/Symbol
+share/htmldoc/afm/Times-Bold
+share/htmldoc/afm/Times-BoldItalic
+share/htmldoc/afm/Times-Italic
+share/htmldoc/afm/Times-Roman
+share/htmldoc/data/iso-8859-1
+share/htmldoc/data/iso-8859-2
+share/htmldoc/data/iso-8859-3
+share/htmldoc/data/iso-8859-4
+share/htmldoc/data/iso-8859-5
+share/htmldoc/data/iso-8859-6
+share/htmldoc/data/iso-8859-7
+share/htmldoc/data/iso-8859-8
+share/htmldoc/data/iso-8859-9
+share/htmldoc/data/iso-8859-14
+share/htmldoc/data/iso-8859-15
+share/htmldoc/data/koi8-r
+share/htmldoc/data/psglyphs
+@dirrm share/htmldoc/afm
+@dirrm share/htmldoc/data
+@dirrm share/htmldoc
