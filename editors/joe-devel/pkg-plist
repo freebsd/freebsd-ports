@@ -1,14 +1,24 @@
-bin/joe
 bin/jmacs
+bin/joe
+bin/jpico
 bin/jstar
 bin/rjoe
-bin/jpico
 bin/termidx
-etc/joerc
-etc/jmacsrc
-etc/jstarrc
-etc/rjoerc
-etc/jpicorc
+@unexec if cmp -s %D/etc/jmacsrc.dist %D/etc/jmacsrc; then rm -f %D/etc/jmacsrc; fi
+etc/jmacsrc.dist
+@exec if [ ! -f %D/etc/jmacsrc ]; then cp %D/etc/%f %D/etc/jmacsrc; fi
+@unexec if cmp -s %D/etc/joerc.dist %D/etc/joerc; then rm -f %D/etc/joerc; fi
+etc/joerc.dist
+@exec if [ ! -f %D/etc/joerc ]; then cp %D/etc/%f %D/etc/joerc; fi
+@unexec if cmp -s %D/etc/jpicorc.dist %D/etc/jpicorc; then rm -f %D/etc/jpicorc; fi
+etc/jpicorc.dist
+@exec if [ ! -f %D/etc/jpicorc ]; then cp %D/etc/%f %D/etc/jpicorc; fi
+@unexec if cmp -s %D/etc/jstarrc.dist %D/etc/jstarrc; then rm -f %D/etc/jstarrc; fi
+etc/jstarrc.dist
+@exec if [ ! -f %D/etc/jstarrc ]; then cp %D/etc/%f %D/etc/jstarrc; fi
+@unexec if cmp -s %D/etc/rjoerc.dist %D/etc/rjoerc; then rm -f %D/etc/rjoerc; fi
+etc/rjoerc.dist
+@exec if [ ! -f %D/etc/rjoerc ]; then cp %D/etc/%f %D/etc/rjoerc; fi
 %%PORTDOCS%%share/doc/joe/INFO
 %%PORTDOCS%%share/doc/joe/README
 %%PORTDOCS%%share/doc/joe/CommandList
