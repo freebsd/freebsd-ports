@@ -28,6 +28,9 @@ MAN6=	bzflag.6 bzfrelay.6 bzfls.6 bzfs.6
 do-configure:
 	@${CP} ${FILESDIR}/config-sys ${WRKSRC}/
 
+post-build:
+	@(cd ${WRKSRC}/man && ${MAKE} targets)
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${PREFIX}/bin/
 	@${INSTALL_MAN}	${WRKSRC}/man/*.6 ${PREFIX}/man/man6/
