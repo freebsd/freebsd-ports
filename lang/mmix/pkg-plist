@@ -1,5 +1,6 @@
 bin/mmix
 bin/mmixal
+bin/mmmix
 bin/mmotype
 share/mmix/README
 share/mmix/abstime.w
@@ -47,8 +48,8 @@ share/mmix/primesf.mms
 share/mmix/primesfx.mms
 share/mmix/primessf.mms
 share/mmix/primesx.mmconfig
-share/mmix/primesx.mmix
 share/mmix/primesx.mms
+share/mmix/pushtest.mms
 share/mmix/saddle1.mms
 share/mmix/saddle2.mms
 share/mmix/silly.mms
@@ -60,6 +61,7 @@ share/mmix/sortx.mms
 share/mmix/strcpy.mms
 share/mmix/sub1.mms
 share/mmix/sub2.mms
+share/mmix/tem.mms
 share/mmix/test.mmconfig
 share/mmix/test.mmix
 share/mmix/test.mms

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mmix
-PORTVERSION=	1.0
+PORTVERSION=	20011014
 CATEGORIES=	lang
 MASTER_SITES=	http://www-cs-faculty.stanford.edu/~knuth/programs/
 DISTNAME=	mmix
@@ -15,22 +15,25 @@ MAINTAINER=	keith@FreeBSD.org
 
 BUILD_DEPENDS=	ctangle:${PORTSDIR}/devel/cweb
 
-MMIXDIR=	${PREFIX}/share/mmix
 NO_WRKSUBDIR=	yes
 FILES=		mmix.1 mmix.mp silly.out silly.run
+
+post-patch:
+	@${PERL} -pi -e "s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mmix ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/mmixal ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/mmmix ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/mmotype ${PREFIX}/bin
-	@${MKDIR} ${MMIXDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${MMIXDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.mmconfig ${MMIXDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.mmix ${MMIXDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.mms ${MMIXDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.w ${MMIXDIR}
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.mmconfig ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.mmix ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.mms ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.w ${DATADIR}
 .for f in ${FILES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${MMIXDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
 .endfor
 
 .include <bsd.port.mk>
