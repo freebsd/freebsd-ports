@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	milter-sender
-PORTVERSION=	0.55
+PORTVERSION=	0.57
 CATEGORIES=	mail
 MASTER_SITES=	http://www.snert.com/Software/download/
-DISTFILES=	libsnert-1.33.tgz milter-sender-${PORTVERSION}.tgz
+DISTFILES=	libsnert-1.34.tgz milter-sender-${PORTVERSION}.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real-time sender address verification, based on Milter API

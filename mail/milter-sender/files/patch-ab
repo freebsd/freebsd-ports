@@ -1,6 +1,6 @@
---- install.sh.in.orig	Thu Apr  1 00:44:46 2004
-+++ install.sh.in	Fri Jun  4 06:38:29 2004
-@@ -13,38 +13,22 @@
+--- install.sh.in.orig	Sun May 30 11:26:05 2004
++++ install.sh.in	Wed Jun 16 13:50:22 2004
+@@ -18,62 +18,22 @@
  MAILDIR="@with_sendmail@"
  MILTER_CF="@milter_cf@"
  
@@ -20,7 +20,34 @@
  
 -	case `uname -s` in
 -	Linux*)
--		chkconfig --add ${MILTER}
+-		which chkconfig
+-		if test $? -eq 0; then	
+-			chkconfig --add ${MILTER}
+-		else
+-			# Probably a stupid Debian system.
+-			cd ${STARTUP_DIR}
++${BSD_INSTALL_PROGRAM} ${MILTER} ${SBINDIR}
+ 
+-			# Create relative links
+-			cd ../rc0.d
+-			ln -s ../init.d/${MILTER} K20${MILTER}
+-			cd ../rc1.d
+-			ln -s ../init.d/${MILTER} K20${MILTER}
+-			cd ../rc6.d
+-			ln -s ../init.d/${MILTER} K20${MILTER}
++${BSD_INSTALL_DATA} ${MILTER}.mc ${MAILDIR}/${MILTER}.mc.sample
++[ ! -f ${MAILDIR}/${MILTER}.mc ] && cp ${MAILDIR}/${MILTER}.mc.sample ${MAILDIR}/${MILTER}.mc
+ 
+-			# Assume S20sendmail or higher.
+-			cd ../rc2.d
+-			ln -s ../init.d/${MILTER} S18${MILTER}
+-			cd ../rc3.d
+-			ln -s ../init.d/${MILTER} S18${MILTER}
+-			cd ../rc4.d
+-			ln -s ../init.d/${MILTER} S18${MILTER}
+-			cd ../rc5.d
+-			ln -s ../init.d/${MILTER} S18${MILTER}
+-		fi
 -		;;
 -	SunOS*)
 -		# Does SunOS have a chkconfig like tool?	
@@ -29,17 +56,14 @@
 -		;;
 -	esac
 -fi
-+${BSD_INSTALL_PROGRAM} ${MILTER} ${SBINDIR}
- 
--cp -f ${MILTER} ${SBINDIR}
--chmod 550 ${SBINDIR}/${MILTER}
-+${BSD_INSTALL_DATA} ${MILTER}.mc ${MAILDIR}/${MILTER}.mc.sample
-+[ ! -f ${MAILDIR}/${MILTER}.mc ] && cp ${MAILDIR}/${MILTER}.mc.sample ${MAILDIR}/${MILTER}.mc
- 
--cp -f ${MILTER}.mc ${MAILDIR}/${MILTER}.mc.sample
 +./milter-sender help=1 | sed 's|^MilterSocket=.*|MilterSocket=unix:/var/spool/milter-sender/socket|' >${MILTER_CF}.sample
 +[ ! -f ${MILTER_CF} ] && cp ${MILTER_CF}.sample ${MILTER_CF}
  
+-cp -f ${MILTER} ${SBINDIR}
+-chmod 550 ${SBINDIR}/${MILTER}
+-
+-cp -f ${MILTER}.mc ${MAILDIR}/${MILTER}.mc.sample
+-
 -./milter-sender help=1 >${MILTER_CF}.sample
 -
 -chmod g+r ${MAILDIR} ${MAILDIR}/access.* ${MAILDIR}/aliases.* ${MILTER_CF}.sample*
