@@ -1,0 +1,2 @@
+lib/im/leif/FreeWnnLE.so
+@unexec rmdir %D/lib/im/leif > /dev/null 2>&1 || true
