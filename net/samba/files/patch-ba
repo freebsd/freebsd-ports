@@ -1,5 +1,14 @@
 --- source/configure.in.orig	Sat Jun  8 07:55:55 2002
 +++ source/configure.in	Mon Jun 17 18:15:30 2002
+@@ -884,7 +884,7 @@
+ 			LDSHFLAGS="-shared"
+ 			DYNEXP="-Wl,-Bdynamic"
+ 			SONAMEFLAG="-Wl,-soname,"
+-			PICFLAG="-fPIC"
++			PICFLAG="-fPIC -DPIC"
+ 			AC_DEFINE(STAT_ST_BLOCKSIZE,512)
+ 		;;
+ 		*irix*) AC_DEFINE(IRIX)
 @@ -1897,7 +1897,7 @@
    yes)
      AC_MSG_RESULT(yes)
