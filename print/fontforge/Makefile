@@ -1,18 +1,18 @@
-# New ports collection makefile for:	pfaedit
+# New ports collection makefile for:	fontforge
 # Date created:		25 March 2001
 # Whom:			KANOU Hiroki <kanou@khdd.net>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	pfaedit
-PORTVERSION=	20${DIST_VER}
-PORTREVISION=	1
+PORTNAME=	fontforge
+PORTVERSION=	20040404
+PORTREVISION=	0
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	pfaedit
+MASTER_SITE_SUBDIR=	fontforge
 DISTFILES=	${EXTRACT_ONLY} ${DOCFILE}
-EXTRACT_ONLY=	${PORTNAME}_full-${DIST_VER}.tgz
+EXTRACT_ONLY=	${PORTNAME}_full-${PORTVERSION}.tgz
 
 MAINTAINER=	kanou@khdd.net
 COMMENT=	Type 1/TrueType/OpenType/bitmap font editor
@@ -23,22 +23,23 @@ LIB_DEPENDS=	uninameslist.0:${PORTSDIR}/textproc/libuninameslist \
 		png.5:${PORTSDIR}/graphics/png \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		freetype.9:${PORTSDIR}/print/freetype2 \
-		xml2:${PORTSDIR}/textproc/libxml2
+		xml2.5:${PORTSDIR}/textproc/libxml2
 
-DOCFILE=	${PORTNAME}_htdocs-${DIST_VER}.tgz
-DIST_VER=	031210
+DOCFILE=	${PORTNAME}_htdocs-${PORTVERSION}.tgz
 
 USE_GMAKE=	yes
 USE_XLIB=	yes
-USE_AUTOCONF_VER=	253
+USE_ICONV=	yes
 PATCH_STRIP=	-l
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 -L${LOCALBASE}/lib"
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DIST_VER}
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CFLAGS="${CFLAGS} \
+		-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 \
+		-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include \
+		-I${LOCALBASE}/include/freetype2"
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL=	yes
 
-MAN1=		pfaedit.1 sfddiff.1
+MAN1=		fontforge.1 sfddiff.1
 
 post-extract:
 	${MKDIR} ${WRKDIR}/html ${WRKSRC}/cidmap
@@ -47,9 +48,9 @@ post-extract:
 	${RM} ${WRKDIR}/html/cidmaps.tgz
 
 post-install:
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
+.if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKDIR}/html/* ${DOCSDIR}
 .endif
 

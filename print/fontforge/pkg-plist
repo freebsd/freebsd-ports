@@ -1,4 +1,4 @@
-bin/pfaedit
+bin/fontforge
 bin/sfddiff
 bin/acorn2sfd
 lib/libgdraw.la
@@ -15,7 +15,6 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/BDFgrey.html
 %%PORTDOCS%%%%DOCSDIR%%/BethSans.png
 %%PORTDOCS%%%%DOCSDIR%%/BethSerif.png
-%%PORTDOCS%%%%DOCSDIR%%/Bezier.gif
 %%PORTDOCS%%%%DOCSDIR%%/Big5.txt
 %%PORTDOCS%%%%DOCSDIR%%/BitmapView.png
 %%PORTDOCS%%%%DOCSDIR%%/C1.png
@@ -30,7 +29,6 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/C9.png
 %%PORTDOCS%%%%DOCSDIR%%/CaslonOriginality.png
 %%PORTDOCS%%%%DOCSDIR%%/CharPrint.png
-%%PORTDOCS%%%%DOCSDIR%%/CharView.png
 %%PORTDOCS%%%%DOCSDIR%%/Constrain1_1.png
 %%PORTDOCS%%%%DOCSDIR%%/Constrain1_2.png
 %%PORTDOCS%%%%DOCSDIR%%/Constrain2_1.png
@@ -46,6 +44,7 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/Encodings.ps.gz
 %%PORTDOCS%%%%DOCSDIR%%/FVHMetrics.png
 %%PORTDOCS%%%%DOCSDIR%%/FVVMetrics.png
+%%PORTDOCS%%%%DOCSDIR%%/FontForgeSplash.png
 %%PORTDOCS%%%%DOCSDIR%%/FontDisplay.png
 %%PORTDOCS%%%%DOCSDIR%%/FontSample.png
 %%PORTDOCS%%%%DOCSDIR%%/GSUB-Order.png
@@ -60,6 +59,7 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/HI.hints.png
 %%PORTDOCS%%%%DOCSDIR%%/HI.nohints.png
 %%PORTDOCS%%%%DOCSDIR%%/HebrewMetrics.png
+%%PORTDOCS%%%%DOCSDIR%%/HebrewSerifs.png
 %%PORTDOCS%%%%DOCSDIR%%/Hints.png
 %%PORTDOCS%%%%DOCSDIR%%/HotKeys.html
 %%PORTDOCS%%%%DOCSDIR%%/IndexFS.html
@@ -67,7 +67,6 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/ItalicCompCaslon.png
 %%PORTDOCS%%%%DOCSDIR%%/ItalicCompGalliard.png
 %%PORTDOCS%%%%DOCSDIR%%/KernPairs.png
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/MacFeatName.png
 %%PORTDOCS%%%%DOCSDIR%%/MacMapping.png
 %%PORTDOCS%%%%DOCSDIR%%/MacOSX.html
@@ -80,13 +79,11 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/PfaEdit-TeX.html
 %%PORTDOCS%%%%DOCSDIR%%/PfaEdits.gif
 %%PORTDOCS%%%%DOCSDIR%%/Print.png
-%%PORTDOCS%%%%DOCSDIR%%/Problems-MacOSX.html
 %%PORTDOCS%%%%DOCSDIR%%/ReviewHints.png
 %%PORTDOCS%%%%DOCSDIR%%/SelectByATT.png
 %%PORTDOCS%%%%DOCSDIR%%/Shades.png
 %%PORTDOCS%%%%DOCSDIR%%/Shades2.png
 %%PORTDOCS%%%%DOCSDIR%%/Shades4.png
-%%PORTDOCS%%%%DOCSDIR%%/Shadow.png
 %%PORTDOCS%%%%DOCSDIR%%/ShadowWireframe.png
 %%PORTDOCS%%%%DOCSDIR%%/ShowGridFit.png
 %%PORTDOCS%%%%DOCSDIR%%/Spacem_1.png
@@ -101,6 +98,7 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/Sxiti.png
 %%PORTDOCS%%%%DOCSDIR%%/Sxiti2.png
 %%PORTDOCS%%%%DOCSDIR%%/Sxiti3.png
+%%PORTDOCS%%%%DOCSDIR%%/TTCvt.png
 %%PORTDOCS%%%%DOCSDIR%%/TTPoints.png
 %%PORTDOCS%%%%DOCSDIR%%/TTRegisters.png
 %%PORTDOCS%%%%DOCSDIR%%/TTStack.png
@@ -121,6 +119,7 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/agrave_anchored.png
 %%PORTDOCS%%%%DOCSDIR%%/ahighest.png
 %%PORTDOCS%%%%DOCSDIR%%/autokern.png
+%%PORTDOCS%%%%DOCSDIR%%/autotrace.html
 %%PORTDOCS%%%%DOCSDIR%%/autowidth.html
 %%PORTDOCS%%%%DOCSDIR%%/autowidth.png
 %%PORTDOCS%%%%DOCSDIR%%/autowidthmenu.png
@@ -138,14 +137,17 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/charinfo-akhn.png
 %%PORTDOCS%%%%DOCSDIR%%/charinfo-comment.png
 %%PORTDOCS%%%%DOCSDIR%%/charinfo-comp.png
+%%PORTDOCS%%%%DOCSDIR%%/charinfo-counters.png
 %%PORTDOCS%%%%DOCSDIR%%/charinfo-lig.png
 %%PORTDOCS%%%%DOCSDIR%%/charinfo-pos.png
 %%PORTDOCS%%%%DOCSDIR%%/charinfo-subs.png
 %%PORTDOCS%%%%DOCSDIR%%/charinfo.html
 %%PORTDOCS%%%%DOCSDIR%%/charinfo.png
+%%PORTDOCS%%%%DOCSDIR%%/charview-multilayer.png
 %%PORTDOCS%%%%DOCSDIR%%/charview-vert.png
 %%PORTDOCS%%%%DOCSDIR%%/charview.html
 %%PORTDOCS%%%%DOCSDIR%%/charview2.png
+%%PORTDOCS%%%%DOCSDIR%%/charwithhintmask.png
 %%PORTDOCS%%%%DOCSDIR%%/cidmenu.html
 %%PORTDOCS%%%%DOCSDIR%%/cliargs.html
 %%PORTDOCS%%%%DOCSDIR%%/contextchain.html
@@ -167,6 +169,7 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/diffs.html
 %%PORTDOCS%%%%DOCSDIR%%/display.html
 %%PORTDOCS%%%%DOCSDIR%%/document.nvd
+%%PORTDOCS%%%%DOCSDIR%%/editcvt.png
 %%PORTDOCS%%%%DOCSDIR%%/editexample.html
 %%PORTDOCS%%%%DOCSDIR%%/editexample2.html
 %%PORTDOCS%%%%DOCSDIR%%/editexample3.html
@@ -174,10 +177,12 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/editexample5.html
 %%PORTDOCS%%%%DOCSDIR%%/editexample6.html
 %%PORTDOCS%%%%DOCSDIR%%/editexample7.html
+%%PORTDOCS%%%%DOCSDIR%%/editexample-fr.html
 %%PORTDOCS%%%%DOCSDIR%%/editmenu.html
 %%PORTDOCS%%%%DOCSDIR%%/edittransition-context.png
 %%PORTDOCS%%%%DOCSDIR%%/edittransition-indic.png
 %%PORTDOCS%%%%DOCSDIR%%/edittransition-insert.png
+%%PORTDOCS%%%%DOCSDIR%%/edittransition-kern.png
 %%PORTDOCS%%%%DOCSDIR%%/elementmenu.html
 %%PORTDOCS%%%%DOCSDIR%%/englishkernpairs.txt
 %%PORTDOCS%%%%DOCSDIR%%/errrecovery.html
@@ -196,6 +201,7 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/featsetdlg.png
 %%PORTDOCS%%%%DOCSDIR%%/feature-tag-pos.png
 %%PORTDOCS%%%%DOCSDIR%%/feature-tag-sub.png
+%%PORTDOCS%%%%DOCSDIR%%/ffanvil32.png
 %%PORTDOCS%%%%DOCSDIR%%/ffi-caret.png
 %%PORTDOCS%%%%DOCSDIR%%/ffi-moved.png
 %%PORTDOCS%%%%DOCSDIR%%/ffi-refs.png
@@ -217,6 +223,7 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-context.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-encoding.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-macfeat.png
+%%PORTDOCS%%%%DOCSDIR%%/fontinfo-macstyle.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-panose.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-private.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-ps.png
@@ -244,6 +251,7 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/helpmenu.html
 %%PORTDOCS%%%%DOCSDIR%%/hexley.png
 %%PORTDOCS%%%%DOCSDIR%%/hinting.html
+%%PORTDOCS%%%%DOCSDIR%%/hintmaskinfo.png
 %%PORTDOCS%%%%DOCSDIR%%/hintsmenu.html
 %%PORTDOCS%%%%DOCSDIR%%/histogram.html
 %%PORTDOCS%%%%DOCSDIR%%/histogram.png
@@ -276,6 +284,7 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/l8.png
 %%PORTDOCS%%%%DOCSDIR%%/l9.png
 %%PORTDOCS%%%%DOCSDIR%%/langdlg.png
+%%PORTDOCS%%%%DOCSDIR%%/layerdlg.png
 %%PORTDOCS%%%%DOCSDIR%%/layers.png
 %%PORTDOCS%%%%DOCSDIR%%/lcani.gif
 %%PORTDOCS%%%%DOCSDIR%%/lcdigits.png
@@ -292,7 +301,21 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/mergepre.png
 %%PORTDOCS%%%%DOCSDIR%%/metricsmenu.html
 %%PORTDOCS%%%%DOCSDIR%%/metricsview.html
+%%PORTDOCS%%%%DOCSDIR%%/mmappleaxes.png
+%%PORTDOCS%%%%DOCSDIR%%/mmaxes.png
+%%PORTDOCS%%%%DOCSDIR%%/mmcharview.png
+%%PORTDOCS%%%%DOCSDIR%%/mmcounts.png
+%%PORTDOCS%%%%DOCSDIR%%/mmdesigns.png
+%%PORTDOCS%%%%DOCSDIR%%/mmextrapolate2.png
+%%PORTDOCS%%%%DOCSDIR%%/mmfinal.png
+%%PORTDOCS%%%%DOCSDIR%%/mmfuncs.png
+%%PORTDOCS%%%%DOCSDIR%%/mmmenu.html
+%%PORTDOCS%%%%DOCSDIR%%/mmnamedstyles.png
+%%PORTDOCS%%%%DOCSDIR%%/mmnamingastyle.png
+%%PORTDOCS%%%%DOCSDIR%%/multilayer.html
+%%PORTDOCS%%%%DOCSDIR%%/multiplemaster.html
 %%PORTDOCS%%%%DOCSDIR%%/newanchor.png
+%%PORTDOCS%%%%DOCSDIR%%/newcountermask.png
 %%PORTDOCS%%%%DOCSDIR%%/newfont.png
 %%PORTDOCS%%%%DOCSDIR%%/non-standard.html
 %%PORTDOCS%%%%DOCSDIR%%/o-baddir.png
@@ -308,6 +331,7 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/overshoot.png
 %%PORTDOCS%%%%DOCSDIR%%/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/pcf-format.html
+%%PORTDOCS%%%%DOCSDIR%%/pfaeditchangelog.html
 %%PORTDOCS%%%%DOCSDIR%%/pfaeditmath.html
 %%PORTDOCS%%%%DOCSDIR%%/phi-hints-filled.png
 %%PORTDOCS%%%%DOCSDIR%%/phi-hints-outline.png
@@ -316,13 +340,13 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/pnts.gif
 %%PORTDOCS%%%%DOCSDIR%%/pointinfo.png
 %%PORTDOCS%%%%DOCSDIR%%/pointmenu.html
+%%PORTDOCS%%%%DOCSDIR%%/pointsize.png
 %%PORTDOCS%%%%DOCSDIR%%/prefs-apps.png
 %%PORTDOCS%%%%DOCSDIR%%/prefs-editing.png
 %%PORTDOCS%%%%DOCSDIR%%/prefs-font.png
 %%PORTDOCS%%%%DOCSDIR%%/prefs-generic.png
 %%PORTDOCS%%%%DOCSDIR%%/prefs-macfeat.png
 %%PORTDOCS%%%%DOCSDIR%%/prefs-macmap.png
-%%PORTDOCS%%%%DOCSDIR%%/prefs-macset.png
 %%PORTDOCS%%%%DOCSDIR%%/prefs-script.png
 %%PORTDOCS%%%%DOCSDIR%%/prefs.html
 %%PORTDOCS%%%%DOCSDIR%%/print.html
@@ -330,6 +354,7 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/privatekeymenu.png
 %%PORTDOCS%%%%DOCSDIR%%/problems.html
 %%PORTDOCS%%%%DOCSDIR%%/quadbezier.gif
+%%PORTDOCS%%%%DOCSDIR%%/quadbezier.png
 %%PORTDOCS%%%%DOCSDIR%%/quadraticspline.png
 %%PORTDOCS%%%%DOCSDIR%%/quotations.html
 %%PORTDOCS%%%%DOCSDIR%%/realindex.html
@@ -382,6 +407,7 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/tools.png
 %%PORTDOCS%%%%DOCSDIR%%/transform.html
 %%PORTDOCS%%%%DOCSDIR%%/transform.png
+%%PORTDOCS%%%%DOCSDIR%%/transition-kern.png
 %%PORTDOCS%%%%DOCSDIR%%/transition-context.png
 %%PORTDOCS%%%%DOCSDIR%%/transition-indic.png
 %%PORTDOCS%%%%DOCSDIR%%/transition-insert.png
@@ -397,18 +423,19 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/x-height.png
 %%PORTDOCS%%%%DOCSDIR%%/xim.html
 %%PORTDOCS%%%%DOCSDIR%%/xres.html
-share/pfaedit/Adobe-CNS1-4.cidmap
-share/pfaedit/Adobe-GB1-4.cidmap
-share/pfaedit/Adobe-Identity-0.cidmap
-share/pfaedit/Adobe-Japan1-5.cidmap
-share/pfaedit/Adobe-Japan2-0.cidmap
-share/pfaedit/Adobe-Korea1-2.cidmap
-share/pfaedit/pfaedit-de.ui
-share/pfaedit/pfaedit-en.ui
-share/pfaedit/pfaedit-es.ui
-share/pfaedit/pfaedit-fr.ui
-share/pfaedit/pfaedit-it.ui
-share/pfaedit/pfaedit-ja.ui
-share/pfaedit/pfaedit-ru.ui
-@dirrm share/pfaedit
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%DOCSDIR%%/LICENSE
+share/fontforge/Adobe-CNS1-4.cidmap
+share/fontforge/Adobe-GB1-4.cidmap
+share/fontforge/Adobe-Identity-0.cidmap
+share/fontforge/Adobe-Japan1-5.cidmap
+share/fontforge/Adobe-Japan2-0.cidmap
+share/fontforge/Adobe-Korea1-2.cidmap
+share/fontforge/pfaedit-de.ui
+share/fontforge/pfaedit-en.ui
+share/fontforge/pfaedit-es.ui
+share/fontforge/pfaedit-fr.ui
+share/fontforge/pfaedit-it.ui
+share/fontforge/pfaedit-ja.ui
+share/fontforge/pfaedit-ru.ui
+@dirrm share/fontforge
+@dirrm %%DOCSDIR%%
