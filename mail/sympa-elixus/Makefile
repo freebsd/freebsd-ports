@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTVERSION=	9575
+PORTVERSION=	9982
 PORTREVISION=	0
 MASTER_SITES=	http://p4.elixus.org/hist/
 PKGNAMESUFFIX=	-elixus
