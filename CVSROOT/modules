@@ -2040,6 +2040,7 @@ gfslicer	ports/sysutils/gfslicer
 gftp		ports/ftp/gftp
 ggsd		ports/net/ggsd
 ggv2		ports/print/ggv2
+ggz-client-libs	ports/games/ggz-client-libs
 ghc		ports/lang/ghc
 ghc6		ports/lang/ghc6
 ghc-doc		ports/lang/ghc-doc
