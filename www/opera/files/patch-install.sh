@@ -1,5 +1,5 @@
---- install.sh.orig	Mon Oct  6 15:01:39 2003
-+++ install.sh	Wed Oct  8 22:36:31 2003
+--- install.sh.orig	Fri Nov 21 13:52:17 2003
++++ install.sh	Thu Apr 15 13:32:10 2004
 @@ -760,9 +760,7 @@
  
      wrapper_opera_plugin_paths="    \"\${HOME}/.opera/plugins\" \\
@@ -30,7 +30,7 @@
  
      wrapper_file="${wrapper_dir}/opera"
      
-@@ -981,11 +974,8 @@
+@@ -983,11 +976,8 @@
  
  # Acrobat Reader
  for BINDIR in \\
@@ -44,7 +44,7 @@
      ; do
      if test -d \${BINDIR} ; then PATH=\${PATH}:\${BINDIR}; fi
  done
-@@ -1243,29 +1233,6 @@
+@@ -1245,31 +1235,8 @@
  
  	if test -z "${OPERADESTDIR}"; then
  
@@ -72,9 +72,12 @@
 -	fi
 -
       # Shorcuts and Icons
- 	icons
+-	icons
++	#icons
  	gnome
-@@ -1356,22 +1323,22 @@
+ 	kde 3
+ 	kde 2
+@@ -1358,22 +1325,22 @@
  
      debug_msg 0 "in icons()"
  
@@ -109,7 +112,7 @@
      fi
    
      if test ! -d /etc/X11/wmconfig/; then
-@@ -1437,33 +1404,33 @@
+@@ -1439,33 +1406,33 @@
        fi
        # end /opt/gnome share
  
@@ -164,7 +167,7 @@
            fi
  	fi
  	# end /usr/share/gnome link
-@@ -1503,12 +1470,12 @@
+@@ -1505,12 +1472,12 @@
  
      fi  
      
@@ -182,7 +185,7 @@
      fi
  }
  
-@@ -1532,8 +1499,8 @@
+@@ -1534,8 +1501,8 @@
        fi
        if test -w /opt/kde/share/applnk/Internet; then generate_desktop /opt/kde/share/applnk/Internet; fi
  

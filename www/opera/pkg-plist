@@ -128,7 +128,4 @@ bin/opera
 %%GNOMELNK:%%share/gnome/apps/Internet/opera.desktop
 %%GNOME:%%share/gnome/pixmaps/opera.xpm
 %%KDE2:%%@dirrm share/applnk/Networking/WWW
-
-@cwd /etc/X11
-wmconfig/opera
 %%APPLNK:%%applnk/Internet/opera.desktop
