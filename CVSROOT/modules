@@ -6721,6 +6721,7 @@ personality	ports/sysutils/personality
 pexts		ports/lang/pexts
 pf		ports/security/pf
 pfaedit		ports/print/pfaedit
+pfbtopfa	ports/print/pfbtopfa
 pfe-devel	ports/lang/pfe-devel
 pfinger		ports/net/pfinger
 pflogstats	ports/mail/pflogstats
