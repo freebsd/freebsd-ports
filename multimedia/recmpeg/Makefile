@@ -28,4 +28,10 @@ PLIST_FILES=	bin/recmpeg
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64"
+BROKEN=		"Fails to link on ia64"
+.endif
+
+.include <bsd.port.post.mk>
