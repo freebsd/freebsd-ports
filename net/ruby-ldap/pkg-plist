@@ -23,9 +23,9 @@
 %%RUBY_EXAMPLESDIR%%/ldap/search.rb
 %%RUBY_EXAMPLESDIR%%/ldap/search2.rb
 %%RUBY_EXAMPLESDIR%%/ldap/search3.rb
-%%RUBY_EXAMPLESDIR%%/ldap/test
-%%RUBY_EXAMPLESDIR%%/ldap/test.sh
+@unexec rm -f %D/%%RUBY_EXAMPLESDIR%%/ldap/test 2>/dev/null || true
 @unexec rm -f %D/%%RUBY_EXAMPLESDIR%%/ldap/test.log 2>/dev/null || true
+%%RUBY_EXAMPLESDIR%%/ldap/test.sh
 @dirrm %%RUBY_EXAMPLESDIR%%/ldap/openldap2/test-db
 @dirrm %%RUBY_EXAMPLESDIR%%/ldap/openldap2/schema
 @dirrm %%RUBY_EXAMPLESDIR%%/ldap/openldap2
