@@ -13,10 +13,12 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.8
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A collection of themes and icons for GNOME 2 designed for accessibility
+COMMENT=	A collection of themes and icons for GNOME2 designed for accessibility
 
 BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-themes/gtk-engines2
 RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-themes/gtk-engines2
+
+CONFLICTS=	gtk-smooth-engine-[0-9]*
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
