@@ -1,6 +1,6 @@
---- src/modules.c.orig	Mon Jul 16 18:54:01 2001
-+++ src/modules.c	Fri Nov  2 11:49:45 2001
-@@ -94,7 +94,7 @@
+--- src/modules.c.orig	Mon Jun  2 11:31:15 2003
++++ src/modules.c	Mon Jun  2 11:31:44 2003
+@@ -101,7 +101,7 @@
  #ifndef STATIC
  
  /* Directory to look for modules */
