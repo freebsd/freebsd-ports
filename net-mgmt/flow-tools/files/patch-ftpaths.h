@@ -1,6 +1,6 @@
---- lib/ftpaths.h	2003/04/03 18:24:08
-+++ lib/ftpaths.h	2003/04/03 18:38:09
-@@ -29,16 +29,16 @@
+--- lib/ftpaths.h.orig	Wed Dec  3 22:19:47 2003
++++ lib/ftpaths.h	Wed Jul  7 15:06:42 2004
+@@ -29,17 +29,17 @@
  #ifndef FTPATHS_H
  #define FTPATHS_H
  
@@ -9,11 +9,13 @@
 -#define FT_PATH_CFG_FILTER          "/usr/local/netflow/var/cfg/filter.cfg"
 -#define FT_PATH_CFG_STAT            "/usr/local/netflow/var/cfg/stat.cfg"
 -#define FT_PATH_CFG_MASK            "/usr/local/netflow/var/cfg/mask.cfg"
+-#define FT_PATH_CFG_XLATE           "/usr/local/netflow/var/cfg/xlate.cfg"
 +#define FT_PATH_CFG_MAP             "/usr/local/etc/flow-tools/map.cfg"
 +#define FT_PATH_CFG_TAG             "/usr/local/etc/flow-tools/tag.cfg"
 +#define FT_PATH_CFG_FILTER          "/usr/local/etc/flow-tools/filter.cfg"
 +#define FT_PATH_CFG_STAT            "/usr/local/etc/flow-tools/stat.cfg"
 +#define FT_PATH_CFG_MASK            "/usr/local/etc/flow-tools/mask.cfg"
++#define FT_PATH_CFG_XLATE           "/usr/local/etc/flow-tools/xlate.cfg"
  
 -#define FT_PATH_SYM_IP_PROT         "/usr/local/netflow/var/sym/ip-prot.sym"
 -#define FT_PATH_SYM_IP_TYPE         "/usr/local/netflow/var/sym/ip-type.sym"
@@ -27,9 +29,9 @@
 +#define FT_PATH_SYM_TAG             "/usr/local/share/flow-tools/tag.sym"
  
  #endif /* FTPATHS_H */
---- lib/ftpaths.h.in	2003/04/03 18:24:08
-+++ lib/ftpaths.h.in	2003/04/03 18:38:09
-@@ -29,16 +29,16 @@
+--- lib/ftpaths.h.in.orig	Tue Nov 11 08:49:14 2003
++++ lib/ftpaths.h.in	Wed Jul  7 15:05:45 2004
+@@ -29,17 +29,17 @@
  #ifndef FTPATHS_H
  #define FTPATHS_H
  
@@ -38,11 +40,13 @@
 -#define FT_PATH_CFG_FILTER          "@localstatedir@/cfg/filter.cfg"
 -#define FT_PATH_CFG_STAT            "@localstatedir@/cfg/stat.cfg"
 -#define FT_PATH_CFG_MASK            "@localstatedir@/cfg/mask.cfg"
+-#define FT_PATH_CFG_XLATE           "@localstatedir@/cfg/xlate.cfg"
 +#define FT_PATH_CFG_MAP             "@localstatedir@/etc/flow-tools/map.cfg"
 +#define FT_PATH_CFG_TAG             "@localstatedir@/etc/flow-tools/tag.cfg"
 +#define FT_PATH_CFG_FILTER          "@localstatedir@/etc/flow-tools/filter.cfg"
 +#define FT_PATH_CFG_STAT            "@localstatedir@/etc/flow-tools/stat.cfg"
 +#define FT_PATH_CFG_MASK            "@localstatedir@/etc/flow-tools/mask.cfg"
++#define FT_PATH_CFG_XLATE           "@localstatedir@/etc/flow-tools/xlate.cfg"
  
 -#define FT_PATH_SYM_IP_PROT         "@localstatedir@/sym/ip-prot.sym"
 -#define FT_PATH_SYM_IP_TYPE         "@localstatedir@/sym/ip-type.sym"
