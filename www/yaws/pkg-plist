@@ -57,9 +57,13 @@ www/yaws/EXHEAD
 www/yaws/HEAD
 www/yaws/TOPTAB
 www/yaws/api.yaws
+www/yaws/appmods.yaws
 www/yaws/arg.yaws
 www/yaws/bindings.yaws
 www/yaws/code.yaws
+www/yaws/code/Makefile
+www/yaws/code/myappmod.beam
+www/yaws/code/myappmod.erl
 www/yaws/configuration.yaws
 www/yaws/contact.yaws
 www/yaws/contribs.yaws
@@ -242,6 +246,7 @@ www/yaws/ybed.erl
 @dirrm www/yaws/shopingcart
 @dirrm www/yaws/icons/small
 @dirrm www/yaws/icons
+@dirrm www/yaws/code
 @dirrm www/yaws
 @dirrm lib/erlang/lib/yaws-%%VERSION%%/src
 @dirrm lib/erlang/lib/yaws-%%VERSION%%/priv
