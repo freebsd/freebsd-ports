@@ -112,7 +112,7 @@ PROFTPD_LIBS+=	-lssl -lcrypto
 .endif
 
 .if defined(WITH_CTRLS)
-CFLAGS+=	--enable-ctrls
+CONFIGURE_ARGS+=	--enable-ctrls
 MAN8+=		ftpdctl.8
 .else
 .endif
