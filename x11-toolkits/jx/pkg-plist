@@ -1,4 +1,6 @@
 bin/autodoc
+bin/jfdesign
+bin/jxlayout
 bin/makecheck
 bin/makemake
 bin/maketouch
@@ -776,9 +778,15 @@ include/ace/CLASSIX/CLASSIX_Stream.h
 include/ace/CLASSIX/CLASSIX_Stream.i
 include/jcore/FlexLexer.h
 include/jcore/JArray.h
+include/jcore/JArray.tmpl
+include/jcore/JArray.tmpls
 include/jcore/JAssertBase.h
 include/jcore/JAsynchDataReceiver.h
+include/jcore/JAsynchDataReceiver.tmpl
+include/jcore/JAsynchDataReceiver.tmpls
 include/jcore/JAuxTableData.h
+include/jcore/JAuxTableData.tmpl
+include/jcore/JAuxTableData.tmpls
 include/jcore/JBroadcastSnooper.h
 include/jcore/JBroadcaster.h
 include/jcore/JChooseSaveFile.h
@@ -787,11 +795,14 @@ include/jcore/JColormap.h
 include/jcore/JComplex.h
 include/jcore/JConstBitmap.h
 include/jcore/JConstHashCursor.h
+include/jcore/JConstHashCursor.tmpl
 include/jcore/JContainer.h
 include/jcore/JCoreLibVersion.h
 include/jcore/JCreateProgressDisplay.h
 include/jcore/JCreateTextPG.h
 include/jcore/JDynamicHistogram.h
+include/jcore/JDynamicHistogram.tmpl
+include/jcore/JDynamicHistogram.tmpls
 include/jcore/JEPSPrinter.h
 include/jcore/JError.h
 include/jcore/JErrorState.h
@@ -807,9 +818,15 @@ include/jcore/JGetCurrentColormap.h
 include/jcore/JGetCurrentFontManager.h
 include/jcore/JHTMLScanner.h
 include/jcore/JHashCursor.h
+include/jcore/JHashCursor.tmpl
 include/jcore/JHashRecord.h
+include/jcore/JHashRecord.tmpl
 include/jcore/JHashTable.h
+include/jcore/JHashTable.tmpl
+include/jcore/JHashTable.tmpls
 include/jcore/JHistogram.h
+include/jcore/JHistogram.tmpl
+include/jcore/JHistogram.tmpls
 include/jcore/JIPCError.h
 include/jcore/JImage.h
 include/jcore/JImageMask.h
@@ -820,7 +837,10 @@ include/jcore/JInterpolate.h
 include/jcore/JKLRand.h
 include/jcore/JLatentPG.h
 include/jcore/JLinkedList.h
+include/jcore/JLinkedList.tmpl
+include/jcore/JLinkedList.tmpls
 include/jcore/JLinkedListIterator.h
+include/jcore/JLinkedListIterator.tmpl
 include/jcore/JMDIServer.h
 include/jcore/JMMArrayTable.h
 include/jcore/JMMErrorPrinter.h
@@ -831,16 +851,26 @@ include/jcore/JMMTable.h
 include/jcore/JMatrix.h
 include/jcore/JMemoryManager.h
 include/jcore/JMessageProtocol.h
+include/jcore/JMessageProtocol.tmpl
+include/jcore/JMessageProtocol.tmpls
 include/jcore/JMinMax.h
+include/jcore/JMinMax.tmpl
+include/jcore/JMinMax.tmpls
 include/jcore/JObjTableData.h
+include/jcore/JObjTableData.tmpl
+include/jcore/JObjTableData.tmpls
 include/jcore/JOrderedSet.h
+include/jcore/JOrderedSet.tmpl
 include/jcore/JOrderedSetIterator.h
+include/jcore/JOrderedSetIterator.tmpl
 include/jcore/JOrderedSetUtil.h
 include/jcore/JOutPipeStream.h
 include/jcore/JPSPrinter.h
 include/jcore/JPSPrinterBase.h
 include/jcore/JPTPrinter.h
 include/jcore/JPackedTableData.h
+include/jcore/JPackedTableData.tmpl
+include/jcore/JPackedTableData.tmpls
 include/jcore/JPagePrinter.h
 include/jcore/JPainter.h
 include/jcore/JPartition.h
@@ -856,31 +886,56 @@ include/jcore/JProcessError.h
 include/jcore/JProgressDisplay.h
 include/jcore/JPtrArray-JString.h
 include/jcore/JPtrArray.h
+include/jcore/JPtrArray.tmpl
+include/jcore/JPtrArray.tmpls
+include/jcore/JPtrArray2.tmpls
 include/jcore/JPtrArrayIterator.h
+include/jcore/JPtrArrayIterator.tmpl
 include/jcore/JPtrQueue.h
+include/jcore/JPtrQueue.tmpl
+include/jcore/JPtrQueue.tmpls
 include/jcore/JPtrStack.h
+include/jcore/JPtrStack.tmpl
+include/jcore/JPtrStack.tmpls
 include/jcore/JQueue.h
+include/jcore/JQueue.tmpl
+include/jcore/JQueue.tmpls
 include/jcore/JRTTIBase.h
 include/jcore/JRect.h
 include/jcore/JRegex.h
 include/jcore/JRunArray.h
+include/jcore/JRunArray.tmpl
+include/jcore/JRunArray.tmpls
 include/jcore/JRunArrayIterator.h
+include/jcore/JRunArrayIterator.tmpl
 include/jcore/JSimpleProcess.h
 include/jcore/JSliderBase.h
+include/jcore/JSortablePtrArray.tmpls
 include/jcore/JStack.h
+include/jcore/JStack.tmpl
+include/jcore/JStack.tmpls
 include/jcore/JStaticBuffer.h
 include/jcore/JStdError.h
 include/jcore/JStopWatch.h
 include/jcore/JStrValue.h
+include/jcore/JStrValue.tmpl
+include/jcore/JStrValue.tmpls
 include/jcore/JString.h
 include/jcore/JStringMap.h
+include/jcore/JStringMap.tmpl
+include/jcore/JStringMap.tmpls
 include/jcore/JStringMapCursor.h
+include/jcore/JStringMapCursor.tmpl
 include/jcore/JStringPtrMap.h
+include/jcore/JStringPtrMap.tmpl
+include/jcore/JStringPtrMap.tmpls
 include/jcore/JStringPtrMapCursor.h
+include/jcore/JStringPtrMapCursor.tmpl
 include/jcore/JStringTableData.h
 include/jcore/JSubset.h
 include/jcore/JSubstitute.h
 include/jcore/JTEHTMLScanner.h
+include/jcore/JTESetFont.th
 include/jcore/JTEStyler.h
 include/jcore/JTEUndoBase.h
 include/jcore/JTEUndoDrop.h
@@ -905,6 +960,8 @@ include/jcore/JUNIXPrefsManager.h
 include/jcore/JUndo.h
 include/jcore/JUserNotification.h
 include/jcore/JValueTableData.h
+include/jcore/JValueTableData.tmpl
+include/jcore/JValueTableData.tmpls
 include/jcore/JVector.h
 include/jcore/JXPM.h
 include/jcore/instantiate_template.h
@@ -1002,6 +1059,7 @@ include/jx/JXGC.h
 include/jx/JXGetCurrColormap.h
 include/jx/JXGetCurrFontMgr.h
 include/jx/JXGetNewDirDialog.h
+include/jx/JXGetPreallocColor.th
 include/jx/JXGoToLineDialog.h
 include/jx/JXHelpDirector.h
 include/jx/JXHelpManager.h
@@ -1033,6 +1091,7 @@ include/jx/JXMenu.h
 include/jx/JXMenuBar.h
 include/jx/JXMenuData.h
 include/jx/JXMenuDirector.h
+include/jx/JXMenuItemIDUtil.th
 include/jx/JXMenuManager.h
 include/jx/JXMenuTable.h
 include/jx/JXMessageDialog.h
@@ -1100,6 +1159,7 @@ include/jx/JXUNIXDirTable.h
 include/jx/JXUNIXDirUpdateTask.h
 include/jx/JXUpRect.h
 include/jx/JXUpdateDocMenuTask.h
+include/jx/JXUpdateShortcutIndex.th
 include/jx/JXUpdateStringListWidth.h
 include/jx/JXUrgentTask.h
 include/jx/JXUserNotification.h
@@ -1167,95 +1227,95 @@ lib/libjcore-1_5_3.so.%%LIBJX%%
 lib/libjx-1_5_3.a
 lib/libjx-1_5_3.so
 lib/libjx-1_5_3.so.%%LIBJX%%
-%%PORTDOCS:%%share/doc/JX/ACE_VERSION
-%%PORTDOCS:%%share/doc/JX/CHANGES
-%%PORTDOCS:%%share/doc/JX/FAQ
-%%PORTDOCS:%%share/doc/JX/LICENSE
-%%PORTDOCS:%%share/doc/JX/LICENSE_jxlayout
-%%PORTDOCS:%%share/doc/JX/LICENSE_makemake
-%%PORTDOCS:%%share/doc/JX/Make.files_template
-%%PORTDOCS:%%share/doc/JX/Make.header_template
-%%PORTDOCS:%%share/doc/JX/Makefiles.txt
-%%PORTDOCS:%%share/doc/JX/README
-%%PORTDOCS:%%share/doc/JX/README_ACE
-%%PORTDOCS:%%share/doc/JX/README_jxlayout
-%%PORTDOCS:%%share/doc/JX/README_makemake
-%%PORTDOCS:%%share/doc/JX/jcore_1.0.0.ps.gz
-%%PORTDOCS:%%share/doc/JX/jcore_1.0.0.txt
-%%PORTDOCS:%%share/doc/JX/jx_1.0.0.ps.gz
-%%PORTDOCS:%%share/doc/JX/jx_1.0.0.txt
-%%PORTDOCS:%%share/examples/JX/tutorial/01-HelloWorld/HelloWorldDir.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/01-HelloWorld/HelloWorldDir.h
-%%PORTDOCS:%%share/examples/JX/tutorial/01-HelloWorld/hello_world.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/02-MenuHello/MenuHelloDir.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/02-MenuHello/MenuHelloDir.h
-%%PORTDOCS:%%share/examples/JX/tutorial/02-MenuHello/menu_hello.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/03-DialogHello/DHStringInputDialog.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/03-DialogHello/DHStringInputDialog.h
-%%PORTDOCS:%%share/examples/JX/tutorial/03-DialogHello/DialogHelloDir.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/03-DialogHello/DialogHelloDir.h
-%%PORTDOCS:%%share/examples/JX/tutorial/03-DialogHello/dialog_hello.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/04-Widget/Widget.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/04-Widget/Widget.h
-%%PORTDOCS:%%share/examples/JX/tutorial/04-Widget/WidgetDir.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/04-Widget/WidgetDir.h
-%%PORTDOCS:%%share/examples/JX/tutorial/04-Widget/widget_main.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/05-Scrolling/ScrollingWidget.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/05-Scrolling/ScrollingWidget.h
-%%PORTDOCS:%%share/examples/JX/tutorial/05-Scrolling/ScrollingWidgetDir.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/05-Scrolling/ScrollingWidgetDir.h
-%%PORTDOCS:%%share/examples/JX/tutorial/05-Scrolling/scrolling.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/06-DragPainter/DragWidget.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/06-DragPainter/DragWidget.h
-%%PORTDOCS:%%share/examples/JX/tutorial/06-DragPainter/DragWidgetDir.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/06-DragPainter/DragWidgetDir.h
-%%PORTDOCS:%%share/examples/JX/tutorial/06-DragPainter/drag_painter.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/07-Printing/PrintWidget.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/07-Printing/PrintWidget.h
-%%PORTDOCS:%%share/examples/JX/tutorial/07-Printing/PrintWidgetDir.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/07-Printing/PrintWidgetDir.h
-%%PORTDOCS:%%share/examples/JX/tutorial/07-Printing/printing.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/08-SimpleTable/SimpleTable.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/08-SimpleTable/SimpleTable.h
-%%PORTDOCS:%%share/examples/JX/tutorial/08-SimpleTable/SimpleTableDir.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/08-SimpleTable/SimpleTableDir.h
-%%PORTDOCS:%%share/examples/JX/tutorial/08-SimpleTable/simpletable_main.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/09-DataTable/DataTable.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/09-DataTable/DataTable.h
-%%PORTDOCS:%%share/examples/JX/tutorial/09-DataTable/DataTableDir.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/09-DataTable/DataTableDir.h
-%%PORTDOCS:%%share/examples/JX/tutorial/09-DataTable/datatable_main.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/10-SelectionTable/SelectionTable.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/10-SelectionTable/SelectionTable.h
-%%PORTDOCS:%%share/examples/JX/tutorial/10-SelectionTable/SelectionTableDir.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/10-SelectionTable/SelectionTableDir.h
-%%PORTDOCS:%%share/examples/JX/tutorial/10-SelectionTable/selectiontable_main.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/11-EditTable/EditTable.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/11-EditTable/EditTable.h
-%%PORTDOCS:%%share/examples/JX/tutorial/11-EditTable/EditTableDir.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/11-EditTable/EditTableDir.h
-%%PORTDOCS:%%share/examples/JX/tutorial/11-EditTable/edittable_main.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/12-Clipboard/CBStringInputDialog.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/12-Clipboard/CBStringInputDialog.h
-%%PORTDOCS:%%share/examples/JX/tutorial/12-Clipboard/ClipboardDir.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/12-Clipboard/ClipboardDir.h
-%%PORTDOCS:%%share/examples/JX/tutorial/12-Clipboard/ClipboardWidget.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/12-Clipboard/ClipboardWidget.h
-%%PORTDOCS:%%share/examples/JX/tutorial/12-Clipboard/clipboard.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/13-Undo/JPtrArray-JUndo.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/13-Undo/RedoLine.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/13-Undo/RedoLine.h
-%%PORTDOCS:%%share/examples/JX/tutorial/13-Undo/UndoLine.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/13-Undo/UndoLine.h
-%%PORTDOCS:%%share/examples/JX/tutorial/13-Undo/UndoWidget.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/13-Undo/UndoWidget.h
-%%PORTDOCS:%%share/examples/JX/tutorial/13-Undo/UndoWidgetDir.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/13-Undo/UndoWidgetDir.h
-%%PORTDOCS:%%share/examples/JX/tutorial/13-Undo/undo.cc
-%%PORTDOCS:%%share/examples/JX/tutorial/Make.files
-%%PORTDOCS:%%share/examples/JX/tutorial/Make.header
-%%PORTDOCS:%%share/examples/JX/tutorial/Makefile
-%%PORTDOCS:%%share/examples/JX/tutorial/README
+%%PORTDOCS:%%share/doc/jx/ACE_VERSION
+%%PORTDOCS:%%share/doc/jx/CHANGES
+%%PORTDOCS:%%share/doc/jx/FAQ
+%%PORTDOCS:%%share/doc/jx/LICENSE
+%%PORTDOCS:%%share/doc/jx/LICENSE_jxlayout
+%%PORTDOCS:%%share/doc/jx/LICENSE_makemake
+%%PORTDOCS:%%share/doc/jx/Make.files_template
+%%PORTDOCS:%%share/doc/jx/Make.header_template
+%%PORTDOCS:%%share/doc/jx/Makefiles.txt
+%%PORTDOCS:%%share/doc/jx/README
+%%PORTDOCS:%%share/doc/jx/README_ACE
+%%PORTDOCS:%%share/doc/jx/README_jxlayout
+%%PORTDOCS:%%share/doc/jx/README_makemake
+%%PORTDOCS:%%share/doc/jx/jcore_1.0.0.ps.gz
+%%PORTDOCS:%%share/doc/jx/jcore_1.0.0.txt
+%%PORTDOCS:%%share/doc/jx/jx_1.0.0.ps.gz
+%%PORTDOCS:%%share/doc/jx/jx_1.0.0.txt
+%%PORTDOCS:%%share/examples/jx/tutorial/01-HelloWorld/HelloWorldDir.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/01-HelloWorld/HelloWorldDir.h
+%%PORTDOCS:%%share/examples/jx/tutorial/01-HelloWorld/hello_world.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/02-MenuHello/MenuHelloDir.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/02-MenuHello/MenuHelloDir.h
+%%PORTDOCS:%%share/examples/jx/tutorial/02-MenuHello/menu_hello.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/03-DialogHello/DHStringInputDialog.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/03-DialogHello/DHStringInputDialog.h
+%%PORTDOCS:%%share/examples/jx/tutorial/03-DialogHello/DialogHelloDir.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/03-DialogHello/DialogHelloDir.h
+%%PORTDOCS:%%share/examples/jx/tutorial/03-DialogHello/dialog_hello.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/04-Widget/Widget.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/04-Widget/Widget.h
+%%PORTDOCS:%%share/examples/jx/tutorial/04-Widget/WidgetDir.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/04-Widget/WidgetDir.h
+%%PORTDOCS:%%share/examples/jx/tutorial/04-Widget/widget_main.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/05-Scrolling/ScrollingWidget.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/05-Scrolling/ScrollingWidget.h
+%%PORTDOCS:%%share/examples/jx/tutorial/05-Scrolling/ScrollingWidgetDir.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/05-Scrolling/ScrollingWidgetDir.h
+%%PORTDOCS:%%share/examples/jx/tutorial/05-Scrolling/scrolling.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/06-DragPainter/DragWidget.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/06-DragPainter/DragWidget.h
+%%PORTDOCS:%%share/examples/jx/tutorial/06-DragPainter/DragWidgetDir.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/06-DragPainter/DragWidgetDir.h
+%%PORTDOCS:%%share/examples/jx/tutorial/06-DragPainter/drag_painter.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/07-Printing/PrintWidget.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/07-Printing/PrintWidget.h
+%%PORTDOCS:%%share/examples/jx/tutorial/07-Printing/PrintWidgetDir.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/07-Printing/PrintWidgetDir.h
+%%PORTDOCS:%%share/examples/jx/tutorial/07-Printing/printing.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/08-SimpleTable/SimpleTable.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/08-SimpleTable/SimpleTable.h
+%%PORTDOCS:%%share/examples/jx/tutorial/08-SimpleTable/SimpleTableDir.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/08-SimpleTable/SimpleTableDir.h
+%%PORTDOCS:%%share/examples/jx/tutorial/08-SimpleTable/simpletable_main.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/09-DataTable/DataTable.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/09-DataTable/DataTable.h
+%%PORTDOCS:%%share/examples/jx/tutorial/09-DataTable/DataTableDir.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/09-DataTable/DataTableDir.h
+%%PORTDOCS:%%share/examples/jx/tutorial/09-DataTable/datatable_main.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/10-SelectionTable/SelectionTable.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/10-SelectionTable/SelectionTable.h
+%%PORTDOCS:%%share/examples/jx/tutorial/10-SelectionTable/SelectionTableDir.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/10-SelectionTable/SelectionTableDir.h
+%%PORTDOCS:%%share/examples/jx/tutorial/10-SelectionTable/selectiontable_main.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/11-EditTable/EditTable.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/11-EditTable/EditTable.h
+%%PORTDOCS:%%share/examples/jx/tutorial/11-EditTable/EditTableDir.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/11-EditTable/EditTableDir.h
+%%PORTDOCS:%%share/examples/jx/tutorial/11-EditTable/edittable_main.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/12-Clipboard/CBStringInputDialog.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/12-Clipboard/CBStringInputDialog.h
+%%PORTDOCS:%%share/examples/jx/tutorial/12-Clipboard/ClipboardDir.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/12-Clipboard/ClipboardDir.h
+%%PORTDOCS:%%share/examples/jx/tutorial/12-Clipboard/ClipboardWidget.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/12-Clipboard/ClipboardWidget.h
+%%PORTDOCS:%%share/examples/jx/tutorial/12-Clipboard/clipboard.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/13-Undo/JPtrArray-JUndo.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/13-Undo/RedoLine.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/13-Undo/RedoLine.h
+%%PORTDOCS:%%share/examples/jx/tutorial/13-Undo/UndoLine.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/13-Undo/UndoLine.h
+%%PORTDOCS:%%share/examples/jx/tutorial/13-Undo/UndoWidget.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/13-Undo/UndoWidget.h
+%%PORTDOCS:%%share/examples/jx/tutorial/13-Undo/UndoWidgetDir.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/13-Undo/UndoWidgetDir.h
+%%PORTDOCS:%%share/examples/jx/tutorial/13-Undo/undo.cc
+%%PORTDOCS:%%share/examples/jx/tutorial/Make.files
+%%PORTDOCS:%%share/examples/jx/tutorial/Make.header
+%%PORTDOCS:%%share/examples/jx/tutorial/Makefile
+%%PORTDOCS:%%share/examples/jx/tutorial/README
 share/jx/blank.xpm
 share/jx/jx_check_spelling.xpm
 share/jx/jx_edit_clean_right_margin.xpm
@@ -1285,22 +1345,22 @@ share/jx/jx_help_toc.xpm
 share/jx/jx_replace_selection.xpm
 share/jx/jx_run_script.xpm
 @dirrm share/jx
-%%PORTDOCS:%%@dirrm share/examples/JX/tutorial/13-Undo
-%%PORTDOCS:%%@dirrm share/examples/JX/tutorial/12-Clipboard
-%%PORTDOCS:%%@dirrm share/examples/JX/tutorial/11-EditTable
-%%PORTDOCS:%%@dirrm share/examples/JX/tutorial/10-SelectionTable
-%%PORTDOCS:%%@dirrm share/examples/JX/tutorial/09-DataTable
-%%PORTDOCS:%%@dirrm share/examples/JX/tutorial/08-SimpleTable
-%%PORTDOCS:%%@dirrm share/examples/JX/tutorial/07-Printing
-%%PORTDOCS:%%@dirrm share/examples/JX/tutorial/06-DragPainter
-%%PORTDOCS:%%@dirrm share/examples/JX/tutorial/05-Scrolling
-%%PORTDOCS:%%@dirrm share/examples/JX/tutorial/04-Widget
-%%PORTDOCS:%%@dirrm share/examples/JX/tutorial/03-DialogHello
-%%PORTDOCS:%%@dirrm share/examples/JX/tutorial/02-MenuHello
-%%PORTDOCS:%%@dirrm share/examples/JX/tutorial/01-HelloWorld
-%%PORTDOCS:%%@dirrm share/examples/JX/tutorial
-%%PORTDOCS:%%@dirrm share/examples/JX
-%%PORTDOCS:%%@dirrm share/doc/JX
+%%PORTDOCS:%%@dirrm share/examples/jx/tutorial/13-Undo
+%%PORTDOCS:%%@dirrm share/examples/jx/tutorial/12-Clipboard
+%%PORTDOCS:%%@dirrm share/examples/jx/tutorial/11-EditTable
+%%PORTDOCS:%%@dirrm share/examples/jx/tutorial/10-SelectionTable
+%%PORTDOCS:%%@dirrm share/examples/jx/tutorial/09-DataTable
+%%PORTDOCS:%%@dirrm share/examples/jx/tutorial/08-SimpleTable
+%%PORTDOCS:%%@dirrm share/examples/jx/tutorial/07-Printing
+%%PORTDOCS:%%@dirrm share/examples/jx/tutorial/06-DragPainter
+%%PORTDOCS:%%@dirrm share/examples/jx/tutorial/05-Scrolling
+%%PORTDOCS:%%@dirrm share/examples/jx/tutorial/04-Widget
+%%PORTDOCS:%%@dirrm share/examples/jx/tutorial/03-DialogHello
+%%PORTDOCS:%%@dirrm share/examples/jx/tutorial/02-MenuHello
+%%PORTDOCS:%%@dirrm share/examples/jx/tutorial/01-HelloWorld
+%%PORTDOCS:%%@dirrm share/examples/jx/tutorial
+%%PORTDOCS:%%@dirrm share/examples/jx
+%%PORTDOCS:%%@dirrm share/doc/jx
 @dirrm lib/jx/make/sys
 @dirrm lib/jx/make
 @dirrm lib/jx/lib
@@ -1310,5 +1370,3 @@ share/jx/jx_run_script.xpm
 @dirrm include/jcore
 @dirrm include/ace/CLASSIX
 @dirrm include/ace
-bin/jfdesign
-bin/jxlayout

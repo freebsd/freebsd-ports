@@ -21,7 +21,7 @@ LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_XLIB=	yes
+USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
@@ -56,13 +56,13 @@ INCLUDEDIR=	jcore jx
 INCLUDEDIR_ACE_WRKSRC=	ACE/ACE_wrappers/ace
 INCLUDEDIR_ACE_DIR=	. CLASSIX
 # documentation
-DOCDIR_PREFIX=	${PREFIX}/share/doc/JX
+DOCDIR_PREFIX=	${PREFIX}/share/doc/jx
 DOCFILES=	README FAQ LICENSE CHANGES
 DOCDIRS=	ACE jxlayout makemake
 DOCDIRFILES=	LICENSE README
 # examples
 EXAMPLEDIRS=		tutorial
-EXAMPLEDIR_PREFIX=	${PREFIX}/share/examples/JX
+EXAMPLEDIR_PREFIX=	${PREFIX}/share/examples/jx
 # xpm images
 ICONDIRS=	libjx/menu_image
 ICONDIR_PREFIX=	${PREFIX}/share/jx
@@ -170,7 +170,7 @@ do-install:
 # Install all header files
 .for i in ${INCLUDEDIR}
 	@${INSTALL_DATA_DIR} ${PREFIX}/include/${i} ; \
-	for j in ${WRKSRC}/include/${i}/*.h ; \
+	for j in ${WRKSRC}/include/${i}/*.h ${WRKSRC}/include/${i}/*.th ; \
 	do \
 		${INSTALL_DATA} $${j} ${PREFIX}/include/${i} ; \
 	done
@@ -184,6 +184,11 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${INCLUDEDIR_ACE_WRKSRC}/${i}/*.i \
 		${PREFIX}/include/ace/${i}/
 .endfor
+# Install all *.tmpl* files
+	@for j in ${WRKSRC}/include/jcore/*.tmpl* ; \
+	do \
+		${INSTALL_DATA} $${j} ${PREFIX}/include/jcore ; \
+	done
 # Install all libraries
 .for i in ${LIBFILES}
 	@${INSTALL_PROGRAM} ${WRKSRC}/lib/${i} ${PREFIX}/lib
@@ -214,10 +219,10 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/programs/${i} ${PREFIX}/bin
 .endfor
 .for i in ${X11R6FILES}
-	@${INSTALL_PROGRAM} ${WRKSRC}/programs/${i} ${X11PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/programs/${i} ${PREFIX}/bin
 .endfor
 .for i in ${X11R6FILES_SCRIPT}
-	@${INSTALL_SCRIPT} ${WRKSRC}/programs/${i} ${X11PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/programs/${i} ${PREFIX}/bin
 .endfor
 
 post-install:
