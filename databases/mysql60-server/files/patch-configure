@@ -1,6 +1,6 @@
---- configure.orig	Thu Apr  3 14:16:29 2003
-+++ configure	Fri May 23 01:05:46 2003
-@@ -8101,6 +8101,7 @@
+--- configure.orig	Mon Dec  1 13:55:34 2003
++++ configure	Wed Dec 10 00:22:08 2003
+@@ -8127,6 +8127,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,7 +8,7 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -9043,7 +9044,7 @@
+@@ -9069,7 +9070,7 @@
    ;;
  esac
  fi
@@ -17,7 +17,7 @@
  
  if test -n "$HOSTNAME"; then
    echo "$as_me:$LINENO: result: $HOSTNAME" >&5
-@@ -9235,43 +9236,8 @@
+@@ -9261,43 +9262,8 @@
  echo "$as_me:$LINENO: checking \"how to check if pid exists\"" >&5
  echo $ECHO_N "checking \"how to check if pid exists\"... $ECHO_C" >&6
  PS=$ac_cv_path_PS
@@ -61,26 +61,7 @@
  
  echo "$as_me:$LINENO: result: \"$FIND_PROC\"" >&5
  echo "${ECHO_T}\"$FIND_PROC\"" >&6
-@@ -12752,8 +12718,16 @@
-     ;;
-   *freebsd*)
-     echo "Adding fix for interrupted reads"
--    CFLAGS="$CFLAGS -DHAVE_BROKEN_REALPATH"
--    CXXFLAGS="$CXXFLAGS -DMYSQLD_NET_RETRY_COUNT=1000000 -DHAVE_BROKEN_REALPATH"
-+    OSVERSION=`/sbin/sysctl -a | /usr/bin/grep osreldate | /usr/bin/awk '{ print $2 }'`
-+    if test "$OSVERSION" -gt "480100" && \
-+       test "$OSVERSION" -lt "500000" || \
-+       test "$OSVERSION" -gt "500109"
-+    then
-+	CXXFLAGS="$CXXFLAGS -DMYSQLD_NET_RETRY_COUNT=1000000"
-+    else
-+	CFLAGS="$CFLAGS -DHAVE_BROKEN_REALPATH"
-+	CXXFLAGS="$CXXFLAGS -DMYSQLD_NET_RETRY_COUNT=1000000 -DHAVE_BROKEN_REALPATH"
-+    fi
-     ;;
-   *netbsd*)
-     echo "Adding flag -Dunix"
-@@ -23545,7 +23519,7 @@
+@@ -23893,7 +23859,7 @@
  	/* ) rel_srcdir="$srcdir" ;;
  	* )  rel_srcdir="../$srcdir" ;;
      esac
