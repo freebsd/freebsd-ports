@@ -443,9 +443,11 @@ libdata/pkgconfig/ImageMagick++.pc
 libdata/pkgconfig/ImageMagick.pc
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Image/Magick.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/.packlist
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/Magick.a
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/Magick.bs
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/Magick.so
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/autosplit.ix
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/extralibs.ld
 share/ImageMagick-5.5.7/Copyright.txt
 share/ImageMagick-5.5.7/QuickStart.txt
 %%PORTDOCS%%share/doc/ImageMagick/images/background.gif

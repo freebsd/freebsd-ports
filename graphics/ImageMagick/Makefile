@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-PORTVERSION=	5.5.7.15
-PORTREVISION=	1
+PORTVERSION=	5.5.7.16
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://gd.tuwien.ac.at/pub/graphics/%SUBDIR%/ \
@@ -116,12 +115,6 @@ CONFIGURE_ARGS+=	--without-tiff
 # Produce BZip compressed MIFF images
 .if defined(WITHOUT_IMAGEMAGICK_BZLIB)
 CONFIGURE_ARGS+=	--without-bzlib
-.endif
-
-# HDF (Hierarchical Data Format) images
-.if !defined(WITHOUT_IMAGEMAGICK_HDF) && (${MACHINE_ARCH:L} != amd64)
-LIB_DEPENDS+=		df.1:${PORTSDIR}/graphics/hdf
-CONFIGURE_ARGS+=	--with-hdf
 .endif
 
 # FPX (FlashPIX) images
