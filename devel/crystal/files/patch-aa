@@ -1,0 +1,12 @@
+diff -ur ./plugins/sound/driver/oss/ossdrv.cpp /usr/home/mkm/ports/crystal.old/work/CS/plugins/sound/driver/oss/ossdrv.cpp
+--- ./plugins/sound/driver/oss/ossdrv.cpp	Sat Jun  8 21:45:52 2002
++++ /usr/home/mkm/ports/crystal.old/work/CS/plugins/sound/driver/oss/ossdrv.cpp	Sat Mar  9 18:08:16 2002
+@@ -32,7 +32,7 @@
+ #if defined(__NetBSD__)
+ #  include <soundcard.h>
+ #elif defined(OS_BSD)
++#  include <sys/soundcard.h>
+-#  include <machine/soundcard.h>
+ #else
+ #  include <sys/soundcard.h>
+ #endif
