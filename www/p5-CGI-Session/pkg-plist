@@ -8,9 +8,9 @@ lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/Serialize/Storable.pm
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/Serialize
 lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/ID/Incr.pm
 lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/ID/MD5.pm
-lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/ID/Static.pm
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/ID
 lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/DB_File.pm
+lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/Example.pm
 lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/MySQL.pm
 lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/File.pm
 lib/perl5/site_perl/%%PERL_VER%%/CGI/Session.pm
@@ -35,6 +35,7 @@ lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/version.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/dump.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/autosplit.ix
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI/Session/.packlist
+lib/perllocal.pod-CGI-Session
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/CGI/Session
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/CGI 2>/dev/null || true
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session
