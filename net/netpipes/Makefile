@@ -3,13 +3,13 @@
 # Date created:				12th April 1997
 # Whom:					doconnor@gsoft.com.au
 #
-# $Id: Makefile,v 1.3 1998/01/22 00:20:33 msmith Exp $
+# $Id: Makefile,v 1.4 1998/04/18 12:38:28 itojun Exp $
 #
 
 DISTNAME=	netpipes4.0
 PKGNAME=	netpipes-4.0
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.purplefrog.com/pub/netpipes/
+MASTER_SITES=	ftp://ftp.denic.net/pub1/dist/
 
 MAINTAINER=	doconnor@gsoft.com.au
 
