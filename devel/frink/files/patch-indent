@@ -1,10 +1,36 @@
---- frink.c	Mon Apr 23 10:31:13 2001
-+++ frink.c	Tue May  8 15:47:35 2001
-@@ -34 +34 @@
+This patch sets frink's indentation defaults closer to the FreeBSD's
+style(9) guidelines.
+--- README	Thu Jun 21 10:49:12 2001
++++ README	Fri May 31 15:04:26 2002
+@@ -33,3 +33,3 @@
+    -c <n>
+-          set further indent for continuations to n. default = 2
++          set further indent for continuations to n. default = 4
+ 
+@@ -77,3 +77,3 @@
+    -i <n>
+-          set indent for each level to n. default = 4
++          set indent for each level to n. default = 8
+ 
+--- README.html	Thu Jun 21 10:49:12 2001
++++ README.html	Fri May 31 15:04:48 2002
+@@ -49,3 +49,3 @@
+ 
+-<dd>set further indent for continuations to n. default = 2</dd>
++<dd>set further indent for continuations to n. default = 4</dd>
+ 
+@@ -150,3 +150,3 @@
+ 
+-<dd>set indent for each level to n. default = 4</dd>
++<dd>set indent for each level to n. default = 8</dd>
+ 
+Common subdirectories: work/frink-2.1.5/Windows and frink-2.1.5/Windows
+--- frink.c	Thu Jun 21 10:49:12 2001
++++ frink.c	Fri May 31 15:05:31 2002
+@@ -37,4 +37,4 @@
+ int width	= 80;
 -int indent	= 4;
+-int contdent	= 2;
 +int indent	= 8;
---- frink.1	Mon Apr 23 10:31:13 2001
-+++ frink.1	Tue May  8 15:47:48 2001
-@@ -79 +79 @@
--Set the indentation for each level. (default = 4)
-+Set the indentation for each level. (default = 8)
++int contdent	= 4;
+ int nocomments	= 0;
