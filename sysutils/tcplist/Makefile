@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.shar
 
 MAINTAINER=	obrien@NUXI.com
 
-RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
+RUN_DEPENDS=	${LOCALBASE}/sbin/lsof:${PORTSDIR}/sysutils/lsof
 
 EXTRACT_CMD=	${CAT}
 EXTRACT_BEFORE_ARGS=
