@@ -29,28 +29,19 @@ MOD_DIR=	libexec/apache2
 MOD_DIR=	libexec/apache
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if !exists(${LOCALBASE}/lib/libldap.so.2)
-IGNORE+=	"OpenLDAP support is required \(2.0 or greater\)"
-.endif
-
-.if !exists(${LOCALBASE}/lib/libmcrypt.so)
-IGNORE+=	"mcrypt support is required"
-.endif
-
-.if !exists(${LOCALBASE}/lib/libintl.so)
-IGNORE+=	"gettext support is required"
-.endif
-
 WWW_ROOT?=	www/lam
 PLIST_SUB+=	WWWROOT=${WWW_ROOT}
-WWW_USER?=	www
-WWW_GROUP?=	www
 WWW_DIR=	config graphics help lib locale sess style templates
-DOC_FILES=	COPYING HISTORY INSTALL README TODO docs/README.fpdf \
-		docs/README.openldap docs/README.shells docs/README.hosts \
-		docs/README.security docs/README.lamdaemon.pl
+MYPORTDOCS=	HISTORY README TODO docs/README.fpdf docs/README.openldap \
+		docs/README.shells docs/README.hosts docs/README.security \
+		docs/README.lamdaemon.pl
+WWW_OWNED=	sess tmp config config config/profiles config/profiles/groups \
+		config/profiles/groups/default.prg config/profiles/hosts \
+		config/profiles/hosts/default.prh config/profiles/users \
+		config/profiles/users/default.pru config/language config/shells \
+		config/config.cfg config/lam.conf
+
+LAM_SCRIPTS=	lib/createntlm.pl lib/lamdaemon.pl
 
 CVS_DIRS=	${WRKSRC}/lib/font/CVS ${WRKSRC}/lib/font/makefont/CVS
 
@@ -66,11 +57,20 @@ do-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for FILE in ${DOC_FILES}
+.for FILE in ${MYPORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
 .endif
-	@${CHOWN} -R ${WWW_USER}:${WWW_GROUP} ${PREFIX}/${WWW_ROOT}
+	@${MKDIR} ${PREFIX}/${WWW_ROOT}/tmp
+	@[ -e ${PREFIX}/${WWW_ROOT}/config/config.cfg ] || \
+			${INSTALL_DATA} ${WRKSRC}/config/config.cfg_sample ${PREFIX}/${WWW_ROOT}/config/config.cfg
+	@[ -e ${PREFIX}/${WWW_ROOT}/config/lam.conf ] || \
+			${INSTALL_DATA} ${WRKSRC}/config/lam.conf_sample ${PREFIX}/${WWW_ROOT}/config/lam.conf
+	@${ECHO_MSG} "===> Setting correct permissions"
+	@${FIND} ${PREFIX}/${WWW_ROOT} -type f -exec ${CHMOD} 644 {} \;
+	@${FIND} ${PREFIX}/${WWW_ROOT} -type d -exec ${CHMOD} 755 {} \;
+	@cd ${PREFIX}/${WWW_ROOT} ; ${CHOWN} ${WWWOWN}:${WWWGRP} ${WWW_OWNED}
+	@cd ${PREFIX}/${WWW_ROOT} ; ${CHMOD} 755 ${LAM_SCRIPTS}
 
 post-install:
 	@${ECHO_MSG} ""
@@ -84,4 +84,4 @@ post-install:
 	@${ECHO_MSG} "     include       ${LOCALBASE}/etc/openldap/schema/samba.schema"
 	@${ECHO_MSG} ""
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
