@@ -9,12 +9,10 @@ PORTNAME=	gpsman
 PORTVERSION=	6.0.1
 PORTREVISION=	1
 CATEGORIES=	astro tk84
-MASTER_SITES=	http://www.ncc.up.pt/gpsman/gpsmanhtml/ \
-		http://www.ncc.up.pt/~mig/ \
-		${MASTER_SITE_SUNSITE}
+MASTER_SITES=	${MASTER_SITE_SUNSITE} \
+		http://www.ncc.up.pt/gpsman/gpsmanhtml/ \
+		http://www.ncc.up.pt/~mig/
 MASTER_SITE_SUBDIR=	science/cartography
-# This is ugly; sorry.
-DISTNAME=	${PORTNAME}_FreeBSD-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	david@catwhisker.org
