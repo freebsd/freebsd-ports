@@ -3,6 +3,7 @@ bin/gpsd
 bin/gpsdrive
 bin/gpsfetchmap
 bin/gpsfetchmap.pl
+bin/gpspoint2gpsdrive.pl
 bin/mb2gpsdrive.pl
 bin/wpcvt
 bin/wpget
@@ -19,6 +20,7 @@ share/gpsdrive/gpsdrive/LEEME
 share/gpsdrive/gpsdrive/LISEZMOI
 share/gpsdrive/gpsdrive/README
 share/gpsdrive/gpsdrive/README.FreeBSD
+share/gpsdrive/gpsdrive/README.gpspoint2gspdrive
 share/gpsdrive/gpsdrive/README.mb2gpsdrive
 share/gpsdrive/gpsdrive/TODO
 share/gpsdrive/gpsdrivesplash.png
@@ -30,11 +32,8 @@ share/locale/fr/LC_MESSAGES/gpsdrive.mo
 share/locale/hu/LC_MESSAGES/gpsdrive.mo
 share/locale/it/LC_MESSAGES/gpsdrive.mo
 share/locale/nl/LC_MESSAGES/gpsdrive.mo
-share/locale/pt/LC_MESSAGES/gpsdrive.mo
-share/locale/ru/LC_MESSAGES/gpsdrive.mo
 share/locale/sk/LC_MESSAGES/gpsdrive.mo
 share/locale/sv/LC_MESSAGES/gpsdrive.mo
 share/locale/tr/LC_MESSAGES/gpsdrive.mo
-share/locale/xx/LC_MESSAGES/gpsdrive.mo
 @dirrm share/gpsdrive/gpsdrive
 @dirrm share/gpsdrive

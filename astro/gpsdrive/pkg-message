@@ -1,5 +1,5 @@
 
-NOTES:
+FreeBSD NOTES:
 
 Support for Garmin format input is disabled because buggy.
 Set your GPS device to NMEA mode and start gpsd before gpsdrive.

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gpsdrive
-PORTVERSION=	1.23.r9
+PORTVERSION=	1.26.r4
 CATEGORIES=	astro
 MASTER_SITES=	http://gpsdrive.kraftvoll.at/ \
 		http://gpsdrive.teachlinux.com/ \
