@@ -176,6 +176,7 @@
     SUBDIR += ruby-libpng
     SUBDIR += ruby-ming
     SUBDIR += ruby-opengl
+    SUBDIR += ruby-qt2gl
     SUBDIR += sane
     SUBDIR += sced
     SUBDIR += scrot
