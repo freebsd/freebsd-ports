@@ -1,5 +1,5 @@
---- analog.cfg.orig	Tue Nov 16 14:40:33 1999
-+++ analog.cfg	Thu Dec  9 06:53:56 1999
+--- analog.cfg.orig	Tue Mar 21 12:58:01 2000
++++ analog.cfg	Thu Mar 23 12:27:27 2000
 @@ -7,7 +7,8 @@
  # There is a much more extensive configuration file in examples/big.cfg
  #
@@ -7,6 +7,6 @@
 -# LOGFILE logfile.log
 +LOGFORMAT COMBINED
 +LOGFILE /var/log/httpd-access.log
+ # OUTFILE outfile.html
  # HOSTNAME "[my organisation]"
  # REQINCLUDE pages
- LINKINCLUDE pages

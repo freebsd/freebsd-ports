@@ -1,5 +1,5 @@
 # New ports collection makefile for: analog
-# http://www.statslab.cam.ac.uk/~sret1/analog/
+# http://www.analog.cx/
 # Version required:     4.*
 # Date created:		October 21st 1996
 # Whom:			jfitz
@@ -7,10 +7,9 @@
 # $FreeBSD$
 #
 
-DISTNAME=       analog4.03
-PKGNAME=        analog-4.03
+DISTNAME=       analog-4.04
 CATEGORIES=	www
-MASTER_SITES=   http://www.statslab.cam.ac.uk/~sret1/analog/ \
+MASTER_SITES=   http://www.analog.cx/ \
 		http://brendanr.simplenet.com/analog/ \
 		http://www.magma.ca/~brendanr/analog/ \
 		http://www.monash.edu.au/mirror/analog/ \
@@ -22,7 +21,7 @@ MASTER_SITES=   http://www.statslab.cam.ac.uk/~sret1/analog/ \
 
 MAINTAINER=     ache@freebsd.org
 
-Y2K=		http://www.statslab.cam.ac.uk/~sret1/analog/
+Y2K=            http://www.analog.cx/
 
 MAKE_FLAGS=     -DPREFIX=${PREFIX} -f
 ALL_TARGET=     analog
