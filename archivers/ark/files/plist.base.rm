@@ -90,6 +90,9 @@
 @dirrm share/apps/kgpg/icons
 @dirrm share/apps/kgpg
 @dirrm share/apps/kedit
+@dirrm share/apps/kdm/pics/users
+@dirrm share/apps/kdm/pics
+@dirrm share/apps/kdm
 @dirrm share/apps/kdf/pics
 @dirrm share/apps/kdf
 @dirrm share/apps/kconf_update
