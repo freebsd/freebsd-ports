@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netwib
-PORTVERSION=	5.20.0
+PORTVERSION=	5.21.0
 CATEGORIES=	net devel ipv6
 MASTER_SITES=	http://www.laurentconstantin.com/common/netw/netwib/download/v5/ \
 		http://membres.lycos.fr/lauconstantin/common/netw/netwib/download/v5/ \
@@ -22,6 +22,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src/src
 USE_REINPLACE=	yes
 MAN3=		netwib.3 netwib_dat.3 netwib_err.3 netwib_net.3 \
 		netwib_pkt.3 netwib_shw.3 netwib_sys.3
+
+PLIST_SUB+=	SHORTPORTVERSION=${PORTVERSION:C/([0-9]*)\.([0-9]*)\.[0-9]*/\1\2/}
 
 do-configure:
 		@${REINPLACE_CMD} \
