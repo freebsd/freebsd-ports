@@ -38,5 +38,6 @@
     SUBDIR += XttXF98srv-WABEP
     SUBDIR += XttXF98srv-WABS
     SUBDIR += XttXF98srv-WSNA
+    SUBDIR += x2x
 
 .include <bsd.port.subdir.mk>
