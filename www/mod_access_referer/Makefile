@@ -1,0 +1,37 @@
+# New ports collection makefile for:	mod_access_referer
+# Date created:			18 Oct 2000
+# Whom:				Alex Kapranoff <kapr@crosswinds.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	mod_access_referer
+PORTVERSION=	1.0.1
+CATEGORIES=	www
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	accessreferer
+
+MAINTAINER=	kapr@crosswinds.net
+
+BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
+RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
+
+APXS=		${LOCALBASE}/sbin/apxs
+
+DOCS=		HACKING LICENSE.txt ChangeLog README TODO mod_access_referer.html
+
+do-build:
+	@cd ${WRKSRC} && \
+	${APXS} -c mod_access_referer.c
+
+do-install:
+	${APXS} -i -A -n access_referer ${WRKSRC}/mod_access_referer.so
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/mod_access_referer
+.for f in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/mod_access_referer/
+.endfor
+.endif
+	${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>
