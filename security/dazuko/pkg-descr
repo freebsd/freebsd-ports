@@ -1,0 +1,6 @@
+A common interface across all platforms is needed for 3rd party file
+access control. With such an interface, focus could be redirected
+from OS hacking to solving real problems. The interface is here. It
+is called Dazuko.
+
+WWW: http://dazuko.org/
