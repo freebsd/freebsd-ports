@@ -1,5 +1,5 @@
-*** makefile.std.orig	Sat Feb 28 16:00:24 1998
---- makefile.std	Mon Mar  2 22:20:36 1998
+*** scripts/makefile.std.orig	Sat Mar  7 23:12:04 1998
+--- scripts/makefile.std	Sat Mar 28 16:39:42 1998
 ***************
 *** 5,33 ****
   # Where the zlib library and include files are located
@@ -29,7 +29,7 @@
   	$(RANLIB) $@
   
   pngtest: pngtest.o libpng.a
-  	$(CC) -o pngtest $(CCFLAGS) pngtest.o $(LDFLAGS)
+  	$(CC) -o pngtest $(CFLAGS) pngtest.o $(LDFLAGS)
   
 --- 5,42 ----
   # Where the zlib library and include files are located
@@ -38,7 +38,7 @@
 ! #ZLIBLIB=../zlib
 ! #ZLIBINC=../zlib
   
-! VER=0.99
+! VER=2.1
 ! #CC=cc
 ! #CFLAGS=-I$(ZLIBINC) -O # -g -DPNG_DEBUG=1
 ! LDFLAGS=-L. -lpng -lz -lm -static
@@ -68,7 +68,7 @@
 + 	${CC} -shared -Wl,-x -Wl,-assert -Wl,pure-text -o $@ $(OBJS:S/o$/so/g) -lz -lm
 + 
   pngtest: pngtest.o libpng.a
-  	$(CC) -o pngtest $(CCFLAGS) pngtest.o $(LDFLAGS)
+  	$(CC) -o pngtest $(CFLAGS) pngtest.o $(LDFLAGS)
   
 ***************
 *** 37,48 ****
