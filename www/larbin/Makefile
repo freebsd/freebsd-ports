@@ -12,12 +12,16 @@ MASTER_SITES=	ftp://ftp.sourceforge.net/pub/sourceforge/larbin/
 
 MAINTAINER=	hiten@uk.FreeBSD.org
 
-BROKEN=		"Does not build"
-
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 PATCH_WRKSRC=	${WRKSRC}/src
+MAKE_ARGS=	CXX=${CXX}
+
+post-patch:
+	@${SED} -e 's,CC=,CC?=,' -e 's,CFLAGS=-O3,CFLAGS+=,' < \
+		${WRKSRC}/adns/Makefile > ${WRKSRC}/adns/Makefile.new
+	@${MV} ${WRKSRC}/adns/Makefile.new ${WRKSRC}/adns/Makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/larbin ${PREFIX}/bin/
