@@ -349,6 +349,7 @@
     SUBDIR += p5-PHP-Session
     SUBDIR += p5-ParallelUA
     SUBDIR += p5-Sledge
+    SUBDIR += p5-Sledge-Plugin-CacheContent
     SUBDIR += p5-Sledge-Plugin-Download
     SUBDIR += p5-Sledge-Plugin-Dumper
     SUBDIR += p5-Sledge-Plugin-HTML2HDML
