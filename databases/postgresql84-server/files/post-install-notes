@@ -7,8 +7,7 @@ p5-Pg
   A perl5 API for client access to PostgreSQL databases.
 
 postgresql-tcltk 
-  If you want tcl/tk client support. You get a neat GUI, pgaccess, as
-  a bonus!
+  If you want tcl/tk client support.
 
 postgresql-jdbc
   For Java JDBC support.

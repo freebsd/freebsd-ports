@@ -28,20 +28,25 @@ include/postgresql/internal/libpq/pqcomm.h
 @dirrm include/postgresql/internal/libpq
 include/postgresql/internal/lib/dllist.h
 @dirrm include/postgresql/internal/lib
+include/postgresql/informix/esql/datetime.h
+include/postgresql/informix/esql/decimal.h
+include/postgresql/informix/esql/sqlda.h
+include/postgresql/informix/esql/sqltypes.h
+@dirrm include/postgresql/informix/esql
+@dirrm include/postgresql/informix
 include/postgresql/internal/c.h
 include/postgresql/internal/libpq-int.h
 include/postgresql/internal/postgres_fe.h
+include/postgresql/internal/port.h
 include/postgresql/internal/pqexpbuffer.h
 @dirrm include/postgresql/internal
-include/compatlib.h
-include/datetime.h
-include/decimal.h
 include/ecpg_informix.h
 include/ecpgerrno.h
 include/ecpglib.h
 include/ecpgtype.h
 include/libpq-fe.h
 include/pg_config.h
+include/pg_config_manual.h
 include/pg_config_os.h
 include/pgtypes_date.h
 include/pgtypes_error.h
@@ -51,8 +56,6 @@ include/pgtypes_timestamp.h
 include/postgres_ext.h
 include/sql3types.h
 include/sqlca.h
-include/sqlda.h
-include/sqltypes.h
 lib/libecpg.a
 lib/libecpg.so
 lib/libecpg.so.4
@@ -98,11 +101,11 @@ lib/libpgtypes.so.1
 %%SERVER%%share/postgresql/information_schema.sql
 %%SERVER%%share/postgresql/pg_hba.conf.sample
 %%SERVER%%share/postgresql/pg_ident.conf.sample
-%%SERVER%%share/postgresql/pg_service.conf.sample
 %%SERVER%%share/postgresql/postgres.bki
 %%SERVER%%share/postgresql/postgres.description
 %%SERVER%%share/postgresql/postgresql.conf.sample
 %%SERVER%%share/postgresql/sql_features.txt
+share/postgresql/pg_service.conf.sample
 share/postgresql/post-install-notes
 @unexec rmdir %D/share/postgresql 2>/dev/null || true
 %%GETTEXT%%share/locale/cs/LC_MESSAGES/libpq.mo

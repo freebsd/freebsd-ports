@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	7.4
+PORTVERSION?=	7.4.1
 PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
@@ -73,12 +73,12 @@ CONFIGURE_ARGS+=	"--with-openssl=${OPENSSLBASE}"
 .if defined(WITHOUT_SERVER)
 PLIST_SUB+=	SERVER="@comment "
 PKGNAMESUFFIX=	-client
-PKGMSG=		""
+PKGMSG=		/dev/null
 CONFLICTS=	postgresql-7* postgresql-devel-*
 .else
 PKGMESSAGE=	${FILESDIR}/pkg-message.server
 PKGMSG=		${PKGMESSAGE}
-CONFLICTS=	postgresql-7*client postgreql-devel-*
+CONFLICTS=	postgresql-client-7* postgresql-devel-*
 PLIST_SUB+=	SERVER=""
 INSTALL_TARGET+=	install-all-headers
 MAKEFILE=	GNUmakefile
