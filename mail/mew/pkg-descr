@@ -1,9 +1,8 @@
 Mew is a "Message interface to Emacs Window" to integrate
 
-   - electronic mail
+   - Email
    - NetNews
    - MIME(Multipurpose Internet Mail Extensions)
-   - PEM(Privacy Enhanced Mail)
    - PGP(Pretty Good Privacy)
 
 and to make it easy to view and compose them. With Mew you can send a
@@ -17,11 +16,8 @@ Info path and elisp load path would be set as follows :
 
 You must be setting your own environment:
 
-    1st -   Do "inc" in your home directory
-    2nd -   Set up "~/.mh_profile" correctry
-    3rd -   make "~/Mail/scan.form" correctry
-    4th -   make directory "~/Mail/drafts"
-    5th -   Set up "~/.emacs" correctry
+    1st -   Set up "~/.im/Config" correctly (execute imsetup)
+    2nd -   Set up "~/.emacs" correctly
  
 (See info by C-h i and  selecting   "Mew", "Install" and "User" ).
 
