@@ -24,6 +24,7 @@ share/eboard/Kingdom.png
 share/eboard/Leipzig.png
 share/eboard/Mayan.png
 share/eboard/Move1.wav
+share/eboard/NAG.en.txt
 share/eboard/OldClassicDark.png
 share/eboard/Rastapov.png
 share/eboard/Slics.png
@@ -41,6 +42,8 @@ share/eboard/rock.png
 share/eboard/eboard_themes.conf
 share/locale/de/LC_MESSAGES/eboard.mo
 share/locale/es/LC_MESSAGES/eboard.mo
+share/locale/it/LC_MESSAGES/eboard.mo
+share/locale/it_IT/LC_MESSAGES/eboard.mo
 share/locale/pt_BR/LC_MESSAGES/eboard.mo
 @dirrm share/eboard
 %%PORTDOCS%%@dirrm share/doc/eboard
