@@ -1,0 +1,30 @@
+--- Makefile.orig	Fri May 17 02:20:02 2002
++++ Makefile	Fri May 17 02:20:33 2002
+@@ -55,7 +55,7 @@
+ 
+ install:
+ 	mkdir -p $(GAMEDIR)
+-	chown bin.games $(GAMEDIR)
++	chown root:games $(GAMEDIR)
+ 	chmod g+w $(GAMEDIR)
+ 	install -c qix $(LOCALDIR)/bin/
+ 	install -c qix.bin $(LOCALDIR)/bin/
+@@ -66,15 +66,15 @@
+ 	cat fonts.alias >> $(X11FNT)/fonts.alias
+ 	mkfontdir $(X11FNT)
+ 	xset +fp $(X11FNT)
+-	chown bin.games $(LOCALDIR)/bin/qix.xbin
++	chown root:games $(LOCALDIR)/bin/qix.xbin
+ 	chmod g+s $(LOCALDIR)/bin/qix.xbin
+ .endif
+ 	if [ ! -e $(SCORE_FILE) ]; then\
+ 	  install -c qix.score $(SCORE_FILE);\
+-	  chown bin.games $(SCORE_FILE);\
++	  chown root:games $(SCORE_FILE);\
+ 	  chmod 664 $(SCORE_FILE);\
+ 	fi
+-	chown bin.games $(LOCALDIR)/bin/qix.bin
++	chown root:games $(LOCALDIR)/bin/qix.bin
+ 	chmod g+s $(LOCALDIR)/bin/qix.bin
+ 	install -c qix.1 $(LOCALDIR)/man/man1
+ 
