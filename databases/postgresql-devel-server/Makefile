@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	7.3.1
+PORTVERSION?=	7.3.2
 CATEGORIES?=	databases
 MASTER_SITES=	ftp://ftp3.us.postgresql.org/pub/postgresql/%SUBDIR%/ \
 		ftp://ftp5.us.postgresql.org/pub/PostgreSQL/%SUBDIR%/ \
@@ -24,9 +24,7 @@ MASTER_SITES=	ftp://ftp3.us.postgresql.org/pub/postgresql/%SUBDIR%/ \
 		ftp://ftp.postgresql.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
 DISTFILES=	postgresql-base-${PORTVERSION}${EXTRACT_SUFX} \
-		postgresql-opt-${PORTVERSION}${EXTRACT_SUFX} \
-		postgresql-test-${PORTVERSION}${EXTRACT_SUFX} \
-		postgresql-docs-${PORTVERSION}${EXTRACT_SUFX}
+		postgresql-opt-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER?=	girgen@pingpong.net
 
@@ -65,17 +63,10 @@ PLIST_SUB+=	GETTEXT="@comment "
 CFLAGS+= -O3 -funroll-loops
 .endif
 
-.if defined(WITH_DEBUG) && defined(WITH_STRIPBIN)
-	@${ECHO} "WITH_DEBUG and WITH_STRIPBIN are mutually exclusive tunables."
-	@${ECHO} "Please choose one or the other."
-	@exit ${FALSE}
-.endif
-
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
-.endif
-
-.if defined(WITH_STRIPBIN)
+INSTALL_TARGET=	install
+.else
 INSTALL_TARGET=	install-strip
 .endif
 
@@ -89,35 +80,18 @@ PKGMESSAGE=	${PKGDIR}/pkg-message.client
 PLIST_SUB+=	SERVER="@comment "
 PKGNAMESUFFIX=	-client
 .else
-SERVERBINARIES+=	postgres
 PLIST_SUB+=	SERVER=""
-INSTALL_TARGET=	install install-all-headers
-.endif
-
-.if defined(WITH_MIT_KRB5) && defined(WITH_HEIMDAL_KRB5)
-	@${ECHO} "WITH_MIT_KRB5 and WITH_HEIMDAL_KRB5 are mutually exclusive."
-	@${ECHO} "Please choose one or the other."
-	@exit 1
+INSTALL_TARGET+= install-all-headers
+MAKEFILE=	GNUmakefile
 .endif
 
 .if defined(WITH_MIT_KRB5)
 KRB5CONF=	${LOCALBASE}/bin/krb5-config
-.if !exists(${KRB5CONFIG})
-	@${ECHO} "Unable to find krb5-config in your local base, please verify that"
-	@${ECHO} "security/krb5 is installed or undefine the WITH_MIT_KRB5 tunable."
-	@exit 1
-.endif
 WITH_KRB5=	yes
 .endif
 
 .if defined(WITH_HEIMDAL_KRB5)
 KRB5CONF=	/usr/bin/krb5-config
-.if !exists(${KRB5CONFIG})
-	@${ECHO} "Unable to find krb5-config in the base system.  Undefine"
-	@${ECHO} "WITH_HEIMDAL_KRB5 or add MAKE_KERBEROS5=yes to /etc/make.conf"
-	@${ECHO} "and remake world (or undefine the WITH_HEIMDAL_KRB5 tunable)."
-	@exit 1
-.endif
 LIB_DEPENDS+=	krb5.3:${PORTSDIR}/security/krb5
 WITH_KRB5=	yes
 .endif
@@ -129,6 +103,10 @@ LDFLAGS+=	`${KRB5CONF} --libs krb5`
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+= -O3 -funroll-loops
+.endif
+
+.if defined(WITH_TESTS)
+DISTFILES+=	postgresql-test-${PORTVERSION}${EXTRACT_SUFX}
 .endif
 
 MAN1=		clusterdb.1 createdb.1 createlang.1 createuser.1 dropdb.1 \
@@ -175,8 +153,25 @@ pre-everything::
 	@${ECHO} "	WITH_HEIMDAL_KRB5	Builds with Heimdal's kerberos support"
 	@${ECHO} "	WITH_OPTIMIZED_CFLAGS	Builds with compiler optimizations (-O3)"
 	@${ECHO} "	WITH_DEBUG		Builds with debugging symbols"
-	@${ECHO} "	WITH_STRIPBIN		Installs stripped binaries"
+	@${ECHO} "	WITH_TESTS		Allows the use of a \"check\" target"
+	@${ECHO} "				building the module"
 	@${ECHO} ""
+.if defined(WITH_MIT_KRB5) && defined(WITH_HEIMDAL_KRB5)
+	@${ECHO} "WITH_MIT_KRB5 and WITH_HEIMDAL_KRB5 are mutually exclusive."
+	@${ECHO} "Please choose one or the other."
+	@exit 1
+.endif
+.if defined(WITH_MIT_KRB5) && !exists(${KRB5CONF})
+	@${ECHO} "Unable to find krb5-config in your local base, please verify that"
+	@${ECHO} "security/krb5 is installed or undefine the WITH_MIT_KRB5 tunable."
+	@exit 1
+.endif
+.if defined(WITH_HEIMDAL_KRB5) && !exists(${KRB5CONF})
+	@${ECHO} "Unable to find krb5-config in the base system.  Undefine"
+	@${ECHO} "WITH_HEIMDAL_KRB5 or add MAKE_KERBEROS5=yes to /etc/make.conf"
+	@${ECHO} "and remake world (or undefine the WITH_HEIMDAL_KRB5 tunable)."
+	@exit 1
+.endif
 
 .if defined(WITHOUT_SERVER)
 do-install:
@@ -196,14 +191,7 @@ post-install:
 	${CAT} ${FILESDIR}/post-install-notes ${PKGMESSAGE} |\
 		${SED} "s|/usr/local|${PREFIX}|g" |\
 		tee ${PREFIX}/share/postgresql/post-install-notes
-.if !defined(DEBUG_FLAGS)
-.for file in ecpg pg_dump pg_id pg_restore psql ${SERVERBINARIES}
-	@ strip ${PREFIX}/bin/${file}
-.endfor
-.endif
 .if !defined(WITHOUT_SERVER)
-# install shell defaults for pgsql user
-	@ strip ${PREFIX}/bin/postgres
 .for i in profile cshrc
 	@ ${SED} "s|%%PREFIX%%|${PREFIX}|g" \
 		< ${FILESDIR}/dot.$i.in \
@@ -222,6 +210,17 @@ post-install:
 	${CHOWN} -R pgsql:pgsql ~pgsql/. ;\
 	${INSTALL_DATA} ${FILESDIR}/502.pgsql \
 			${PREFIX}/share/postgresql
+.endif
+
+.if defined(WITH_TESTS)
+check:
+	@if [ `id -u` != 0 ] ; then \
+	  ${ECHO} "Running postgresql regressions tests" ;\
+	  cd ${WRKSRC}; ${GMAKE} check ;\
+	 else \
+	  ${ECHO} "You cannot run regression tests when postgresql is built as user root." ; \
+	  ${ECHO} "Clean and rebuild the port as a regular user to run the tests." ;\
+	 fi
 .endif
 
 .include <bsd.port.mk>
