@@ -5,7 +5,6 @@
     SUBDIR += SoXt
     SUBDIR += Xaw3d
     SUBDIR += XawPlus
-    SUBDIR += at-spi
     SUBDIR += bakery
     SUBDIR += bakery_gnomeui
     SUBDIR += blt
@@ -24,7 +23,6 @@
     SUBDIR += fox
     SUBDIR += fox-devel
     SUBDIR += freeglut
-    SUBDIR += gail
     SUBDIR += gal
     SUBDIR += gal2
     SUBDIR += gauche-gtk
