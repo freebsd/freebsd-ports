@@ -1,5 +1,5 @@
 --- Configure.orig	Sat Sep 18 19:28:55 1999
-+++ Configure	Sat Jan  8 02:06:32 2000
++++ Configure	Sat Jan  8 02:43:46 2000
 @@ -1,4 +1,4 @@
 -#!/usr/local/bin/perl
 +#!/usr/bin/perl
@@ -44,7 +44,7 @@
  
 -$cfg{'test_exist'} = get_bool($msg, $oldcfg{'test_exist'});
 +#$cfg{'test_exist'} = get_bool($msg, $oldcfg{'test_exist'});
-+$cfg{'test_exist'} = 1;
++$cfg{'test_exist'} = 0;
  
  print <<EDQ unless $cfg{'test_exist'};
  
@@ -165,7 +165,7 @@
  
  #---------------------------------------------------------------------------
  
-@@ -414,37 +424,39 @@
+@@ -414,37 +424,40 @@
  
  #---------------------------------------------------------------------------
  
@@ -195,6 +195,7 @@
  
 -$cfg{'ftp_ext_passive'} = get_bool($msg,$def);
 +#$cfg{'ftp_ext_passive'} = get_bool($msg,$def);
++$cfg{'ftp_ext_passive'} = 0;
  
  
 -$def = $oldcfg{'ftp_int_passive'} || 0;
@@ -217,11 +218,11 @@
  
 -$cfg{'inet_domain'} = ($ans =~ /(\S+)/)[0];
 +#$cfg{'inet_domain'} = ($ans =~ /(\S+)/)[0];
-+$cfg{'inet_domain'} = "";
++$cfg{'inet_domain'} = undef;
  
  #---------------------------------------------------------------------------
  
-@@ -460,7 +472,8 @@
+@@ -460,7 +473,8 @@
  Do you want me to run these tests (y|n) ?
  EDQ
  
