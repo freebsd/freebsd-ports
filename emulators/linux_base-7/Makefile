@@ -7,7 +7,7 @@
 
 PORTNAME=		linux_base
 PORTVERSION=		7.1
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		emulators linux
 MASTER_SITES=		${RPM_MIRRORS:S/__DIR__/${STDDIR}/g}
 DISTFILES=		${RPM_GLIBC_COMMON} \
@@ -35,7 +35,6 @@ DISTFILES=		${RPM_GLIBC_COMMON} \
 			${RPM_SETSERIAL} \
 			slang-1.4.2-2.${MACHINE_ARCH}.rpm \
 			sh-utils-2.0-13.${MACHINE_ARCH}.rpm \
-			zlib-1.1.3-22.${MACHINE_ARCH}.rpm \
 			rpm-4.0.2-8.${MACHINE_ARCH}.rpm \
 			${RPM_FREETYPE} \
 			${RPM_XFREE86_LIBS}
@@ -73,6 +72,7 @@ UPDDIR=		linux/updates/${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}
 
 .include <bsd.port.pre.mk>
 
+UPDATES=		zlib-1.1.3-25.7.${MACHINE_ARCH}.rpm
 .if (${MACHINE_ARCH} == "i386")
 RPM_BZIP2=		bzip2-1.0.1-3.i386.rpm
 RPM_FREETYPE=		freetype-2.0.1-4.i386.rpm
@@ -84,7 +84,7 @@ RPM_COMPAT_LIBSTDCXX=	compat-libstdc++-6.2-2.9.0.14.i386.rpm
 RPM_SETSERIAL=		setserial-2.17-2.i386.rpm
 RPM_SETUP=		setup-2.4.7-1.noarch.rpm
 RPM_XFREE86_LIBS=	XFree86-libs-4.0.3-5.i386.rpm
-UPDATES=		libstdc++-2.96-85.i386.rpm
+UPDATES+=		libstdc++-2.96-85.i386.rpm
 .else
 RPM_BZIP2=		bzip2-1.0.1-4.alpha.rpm
 RPM_FREETYPE=		freetype-2.0.1-5.alpha.rpm
@@ -96,7 +96,7 @@ RPM_COMPAT_LIBSTDCXX=
 RPM_SETSERIAL=		setserial-2.17-3.alpha.rpm
 RPM_SETUP=		setup-2.4.7-2.noarch.rpm
 RPM_XFREE86_LIBS=	XFree86-libs-4.0.3-21.alpha.rpm
-UPDATES=
+UPDATES+=
 .endif
 
 DBPATH=			/var/lib/rpm
