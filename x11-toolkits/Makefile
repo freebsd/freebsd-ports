@@ -30,6 +30,7 @@
     SUBDIR += pmw
     SUBDIR += py-gnome
     SUBDIR += py-gtk
+    SUBDIR += py-qt
     SUBDIR += py-tkinter
     SUBDIR += py-wxPython
     SUBDIR += pykde
