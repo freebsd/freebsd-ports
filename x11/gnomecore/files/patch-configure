@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- configure.orig	Mon Jun 10 15:26:35 2002
-+++ configure	Mon Jun 10 15:27:34 2002
+--- configure.orig	Mon Sep  9 14:09:25 2002
++++ configure	Sat Oct  5 13:43:32 2002
 @@ -5723,6 +5723,7 @@
  
  # This can be used to rebuild libtool when needed
@@ -11,6 +8,15 @@ $FreeBSD$
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -7863,7 +7864,7 @@
+ 
+                               
+    for ac_hdr in argz.h limits.h locale.h nl_types.h malloc.h string.h \
+-unistd.h sys/param.h
++unistd.h sys/param.h langinfo.h
+ do
+ ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
+ echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
 @@ -9299,7 +9300,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
