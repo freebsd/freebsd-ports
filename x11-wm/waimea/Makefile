@@ -16,6 +16,7 @@ MAINTAINER=	danfe@regency.nsu.ru
 COMMENT=	An X11 window manager designed for maximum efficiency
 
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/Xft
+RUN_DEPENDS=	${X11BASE}/bin/Esetroot:${PORTSDIR}/x11/eterm
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
