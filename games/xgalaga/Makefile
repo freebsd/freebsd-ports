@@ -26,8 +26,9 @@ CONFIGURE_ARGS=	--prefix=${X11BASE}/lib/X11/xgalaga \
 
 .if defined(NOSOUND)
 CONFIGURE_ARGS+=	--without-sound
-PLIST=			${PKGDIR}/pkg-plist.nosound
+PLIST_SUB=	SOUND="@comment "
 .else
+PLIST_SUB=	SOUND=""
 pre-configure:
 	@${ECHO_CMD} "*****************************************************"
 	@${ECHO_CMD} "* Note that you can build a version of xgalaga that *"
