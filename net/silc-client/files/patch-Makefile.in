@@ -1,15 +1,15 @@
---- Makefile.in.orig	Thu Nov 27 11:07:16 2003
-+++ Makefile.in	Sat Nov 29 01:46:30 2003
-@@ -235,7 +235,7 @@
- 
+--- Makefile.in.orig	Wed Jan 14 19:28:32 2004
++++ Makefile.in	Wed Jan 14 20:07:01 2004
+@@ -283,7 +283,7 @@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
  AUTOMAKE_OPTIONS = 1.0 no-dependencies foreign
- 
 -COMMONDIRS = lib irssi silc silcd doc includes
 +COMMONDIRS = lib irssi silc includes
  
  # Sub directories defined by "distributions" file, and can be overridden
  # with ./configure, which substitutes these variables.
-@@ -270,7 +270,6 @@
+@@ -316,7 +316,6 @@
  # Installing of SILC into the system
  #
  etcdir = $(DESTDIR)$(silc_etcdir)
@@ -17,7 +17,7 @@
  helpdir = $(DESTDIR)$(silc_helpdir)
  docdir = $(DESTDIR)$(silc_docdir)
  logsdir = $(DESTDIR)$(silc_logsdir)
-@@ -712,22 +711,17 @@
+@@ -759,22 +758,17 @@
  
  install-dirs:
  	-mkdir -p $(etcdir)
@@ -40,7 +40,7 @@
  	-$(INSTALL_DATA) $(srcdir)/COPYING $(docdir)/
  	-$(INSTALL_DATA) $(srcdir)/CHANGES $(docdir)/
  	-$(INSTALL_DATA) $(srcdir)/CREDITS $(docdir)/
-@@ -751,12 +745,8 @@
+@@ -798,12 +792,8 @@
  	fi
  
  etc-install-client:
@@ -54,7 +54,7 @@
  
  etc-install-server:
  	-@if test '!' -f $(etcdir)/silcd.conf ; then \
-@@ -767,9 +757,6 @@
+@@ -814,9 +804,6 @@
            chmod go= $(etcdir)/silcd.conf; \
  	fi
  
@@ -64,7 +64,7 @@
  toolkit-install:
  	-mkdir -p $(docdir)/toolkit/
  	-$(INSTALL_DATA) $(srcdir)/doc/toolkit/* $(docdir)/toolkit
-@@ -786,9 +773,9 @@
+@@ -833,9 +820,9 @@
  	  $(sbindir)/silcd -C $(etcdir); \
  	fi
  
