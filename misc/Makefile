@@ -401,6 +401,7 @@
     SUBDIR += tkrunit
     SUBDIR += tpp
     SUBDIR += translate
+    SUBDIR += translator
     SUBDIR += ttyrec
     SUBDIR += tvguide
     SUBDIR += txt2regex

@@ -1,0 +1,9 @@
+Translator is a simple front-end to AltaVista's excellent
+Babelfish. It is designed to integrate into the GNOME desktop, and as
+such features an (almost) HIG compliant interface, and support for
+GNOME's HTTP proxy settings.
+
+WWW: http://jodrell.net/projects/translator/
+
+- Jean-Yves Lefort
+jylefort@brutele.be
