@@ -1,6 +1,6 @@
 bin/nwn
 %%DATADIR%%/EULA.txt
-%%DATADIR%%/NWNv162.txt
+%%DATADIR%%/NWNv%%NWNVERSION%%.txt
 %%DATADIR%%/data/patch.bif
 %%DATADIR%%/dialog.tlk
 %%DATADIR%%/dmclient
