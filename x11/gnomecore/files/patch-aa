@@ -1,5 +1,5 @@
 --- configure.orig	Thu Sep 24 08:04:55 1998
-+++ configure	Sat Sep 26 23:41:37 1998
++++ configure	Thu Oct 15 04:06:29 1998
 @@ -942,12 +942,12 @@
  
  
@@ -18,3 +18,11 @@
  	    
  	  else
  	    echo "$ac_t""not found" 1>&6
+@@ -5110,6 +5110,7 @@
+ case "$host" in
+ *linux*) CDROM_HOST=linux;;
+ *solaris*) CDROM_HOST=solaris;;
++*freebsd*) CDROM_HOST=freebsd;;
+ esac
+ 
+ 
