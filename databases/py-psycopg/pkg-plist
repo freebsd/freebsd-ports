@@ -12,6 +12,7 @@ lib/%%PYTHON_VERSION%%/site-packages/psycopgmodule.so
 %%PORTDOCS%%share/doc/py-psycopg/TODO
 %%PORTDOCS%%share/examples/py-psycopg/binary.py
 %%PORTDOCS%%share/examples/py-psycopg/bool.py
+%%PORTDOCS%%share/examples/py-psycopg/bounded.py
 %%PORTDOCS%%share/examples/py-psycopg/commit.py
 %%PORTDOCS%%share/examples/py-psycopg/copy_from.py
 %%PORTDOCS%%share/examples/py-psycopg/copy_from2.py
@@ -20,8 +21,9 @@ lib/%%PYTHON_VERSION%%/site-packages/psycopgmodule.so
 %%PORTDOCS%%share/examples/py-psycopg/dt.py
 %%PORTDOCS%%share/examples/py-psycopg/first.py
 %%PORTDOCS%%share/examples/py-psycopg/integrity.py
-%%PORTDOCS%%share/examples/py-psycopg/oid.py
+%%PORTDOCS%%share/examples/py-psycopg/interval.py
 %%PORTDOCS%%share/examples/py-psycopg/notify.py
+%%PORTDOCS%%share/examples/py-psycopg/oid.py
 %%PORTDOCS%%share/examples/py-psycopg/somehackers.jpg
 %%PORTDOCS%%share/examples/py-psycopg/threads.py
 %%PORTDOCS%%share/examples/py-psycopg/usercast.py
