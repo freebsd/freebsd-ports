@@ -8,7 +8,8 @@
 PORTNAME=	wminfo
 PORTVERSION=	1.51
 CATEGORIES=	misc windowmaker
-MASTER_SITES=	http://kling.mine.nu/files/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	pav
 
 MAINTAINER=	t.kempka@web.de
 COMMENT=	Dockapp to run shell scripts and display the output
