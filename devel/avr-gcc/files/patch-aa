@@ -1,0 +1,22 @@
+--- gcc/configure.in.orig	Sat Mar 10 22:07:33 2001
++++ gcc/configure.in	Sat Mar 10 22:13:54 2001
+@@ -626,7 +626,7 @@
+  			thread_file='posix'
+  		fi
+ 		;;
+-	alpha*-*-netbsd*)
++	alpha*-*-netbsd*|alpha*-*-freebsd*)
+ 		tm_file="${tm_file} alpha/elf.h alpha/netbsd.h alpha/netbsd-elf.h"
+ 		target_cpu_default="MASK_GAS"
+ 		tmake_file="alpha/t-crtbe alpha/t-ieee"
+--- gcc/configure.orig	Wed Oct 13 09:58:02 1999
++++ gcc/configure	Thu Mar 15 17:52:27 2001
+@@ -3059,7 +3059,7 @@
+  			thread_file='posix'
+  		fi
+ 		;;
+-	alpha*-*-netbsd*)
++	alpha*-*-netbsd*|alpha*-*-freebsd*)
+ 		tm_file="${tm_file} alpha/elf.h alpha/netbsd.h alpha/netbsd-elf.h"
+ 		target_cpu_default="MASK_GAS"
+ 		tmake_file="alpha/t-crtbe alpha/t-ieee"
