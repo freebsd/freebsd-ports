@@ -12,7 +12,7 @@
 #
 
 PORTNAME=	lire
-PORTVERSION=	1.5
+PORTVERSION=	2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.logreport.org/pub/
 
@@ -30,8 +30,6 @@ BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		${SITE_PERL}/${PERL_ARCH}/Curses.pm:${PORTSDIR}/devel/p5-Curses \
 		${SITE_PERL}/Curses/UI.pm:${PORTSDIR}/devel/p5-Curses-UI \
 		${SITE_PERL}/Locale/TextDomain.pm:${PORTSDIR}/devel/p5-Locale-libintl
-
-BROKEN=		Unfetchable
 
 OPTIONS=	CHARTS "Have Charts output format" On \
 		HTML "Have HTML or DocBook output format" On \
