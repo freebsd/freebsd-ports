@@ -1,0 +1,30 @@
+It not work in > 256 colors modes, please fix it, if you can.
+								  Ache
+--------------------------- Original README -------------------------------
+Xfedor is a bdf/xbm/xpm/mouse editor.
+It has been achieved before Xt or Motif were available, so it is only 
+based on Xlib :-|
+
+Known problems:
+      - very very old proprietary/personal:-) look&feelsick
+      - C comments in french
+      - filer.c module (BDF reader/writer) has to be reviewed for new BDF
+        stuff and some bugs (COMMENT lines lost, unexpected changes in
+	read/write only actions...) 
+      - non Xt based => icccm problems, fixed geometry, lack of resources...
+      - not even X based originally, so don't expect something great.
+        (visual problem I would say on weird X server).
+
+Otherwise, it can still help to create mouse cursors, colored pixmaps and
+possibly fonts (if you don't care about XLFD compliance...).
+
+Xfedor needs the Xpm library to link.
+
+
+
+Daniel Dardailler.
+daniel@osf.org 
+Last updated: May 26 1994
+
+PS: I do *not* support this code anylonger. Nobody does.
+
