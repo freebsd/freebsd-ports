@@ -17,7 +17,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Apache 1.3 webserver with SSL/TLS functionality
 
-LIB_DEPENDS=	mm.12:${PORTSDIR}/devel/mm
+LIB_DEPENDS=	mm.13:${PORTSDIR}/devel/mm
 
 MASTER_SITES_MODSSL=	http://www.modssl.org/source/ \
 		ftp://ftp.modssl.org/source/ \
