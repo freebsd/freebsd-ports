@@ -41,7 +41,11 @@ PLIST_SUB=	VERSION="2.0" EVO_VERSION=${EVO_VERSION}
 CONFIGURE_ARGS+=	--with-krb5=/usr
 .else
 LIB_DEPENDS+=		krb5:${PORTSDIR}/security/heimdal
+.if defined(HEIMDAL_HOME)
+CONFIGURE_ARGS+=	--with-krb5=${HEIMDAL_HOME} --with-krb5-includes=${HEIMDAL_HOME}/include
+.else
 CONFIGURE_ARGS+=	--with-krb5=${LOCALBASE}
+.endif
 .endif
 
 .include <bsd.port.post.mk>
