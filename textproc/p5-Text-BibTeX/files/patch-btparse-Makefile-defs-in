@@ -1,0 +1,21 @@
+*** ../btparse-0.33/Makefile.defs.in.orig	Fri Jan 30 18:03:34 2004
+--- ../btparse-0.33/Makefile.defs.in	Fri Jan 30 18:03:39 2004
+***************
+*** 38,45 ****
+  #   CPPFLAGS  all flags for the C preprocessor
+  
+  CC = @CC@
+! CFLAGS = @CFLAGS@
+! CFLAGS2 = @CFLAGS2@
+  DEFINES = @DEFINES@
+  EXTRA_CPPFLAGS = 
+  CPPFLAGS = -Ipccts $(DEFINES) $(EXTRA_CPPFLAGS)
+--- 38,45 ----
+  #   CPPFLAGS  all flags for the C preprocessor
+  
+  CC = @CC@
+! CFLAGS = -fPIC @CFLAGS@
+! CFLAGS2 = -fPIC @CFLAGS2@
+  DEFINES = @DEFINES@
+  EXTRA_CPPFLAGS = 
+  CPPFLAGS = -Ipccts $(DEFINES) $(EXTRA_CPPFLAGS)
