@@ -16,4 +16,5 @@ share/gnome/pixmaps/flink/logo64.xpm
 share/gnome/pixmaps/flink/flink.xpm
 share/gnome/pixmaps/flink/flink.png
 share/locale/sv/LC_MESSAGES/flink.mo
+@dirrm share/gnome/pixmaps/flink
 %%PORTDOCS%%@dirrm share/doc/flink
