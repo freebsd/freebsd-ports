@@ -4,7 +4,7 @@
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.1.1.1 1998/02/14 04:10:30 obrien Exp $
+# $Id: Makefile,v 1.2 1998/11/21 23:05:10 obrien Exp $
 #
 
 DISTNAME=	nat10
@@ -16,14 +16,12 @@ MASTER_SITES=	ftp://ftp.secnet.com/pub/tools/nat10/  \
 MAINTAINER=     obrien@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
-MAN1=		nat.1
+MAN1=		nat.1 nbaudit.1
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/nat ${PREFIX}/bin
 	@ln -f ${PREFIX}/bin/nat ${PREFIX}/bin/nbaudit
 	@${INSTALL_MAN} ${WRKSRC}/nat.1 ${PREFIX}/man/man1
-
-after-install:
-	@ln -f ${PREFIX}/man/man1/nat.1.gz ${PREFIX}/man/man1/nbaudit.1.gz
+	@ln -f ${PREFIX}/man/man1/nat.1 ${PREFIX}/man/man1/nbaudit.1
 
 .include <bsd.port.mk>

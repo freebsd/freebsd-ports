@@ -1,5 +1,14 @@
---- Makefile.orig	Sun Feb 16 19:18:04 1997
-+++ Makefile	Wed Jan 21 03:02:33 1998
+--- Makefile.orig	Mon Feb 17 13:48:04 1997
++++ Makefile	Fri Apr  9 23:13:30 1999
+@@ -2,7 +2,7 @@
+ # Makefile for Samba SMB client/server for unix
+ # Copyright Andrew Tridgell 1992,1993,1994
+ ###########################################################################
+-CC = gcc
++CC ?= gcc
+ 
+ # set this to the default group you want your machine to appear in
+ # for browsing. This can also be set in nmbd (see nmbd(8))
 @@ -189,8 +189,8 @@
  # This is for FreeBSD
  # contributed by kuku@acds.physik.rwth-aachen.de
