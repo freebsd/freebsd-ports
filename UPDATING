@@ -6,6 +6,23 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040701:
+  AFFECTS: users of security/portaudit
+
+  The preference file format, as well as the periodic(8)
+  names have changed. If you use the default settings,
+  no modifications are necessary.
+
+  new settings in /usr/local/etc/portaudit.conf:
+    portaudit_fetch_env="HTTP_PROXY="
+    portaudit_fetch_cmd="fetch -1amp"
+    portaudit_sites="http://www.FreeBSD.org/ports/"
+
+  new settings in periodic.conf(5):
+    daily_status_security_portaudit_enable="YES"
+    daily_status_security_portaudit_expiry="2"
+    daily_status_security_portaudit_user="nobody"
+
 20040629:
   AFFECTS: users of net/daapd
 
