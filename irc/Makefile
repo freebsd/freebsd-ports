@@ -46,6 +46,7 @@
     SUBDIR += liece-dcc
     SUBDIR += liece-emacs20
     SUBDIR += lostirc
+    SUBDIR += miau
     SUBDIR += muh
     SUBDIR += nethirc
     SUBDIR += ngircd

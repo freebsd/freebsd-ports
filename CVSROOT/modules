@@ -4427,6 +4427,7 @@ libgmp-freebsd	ports/math/libgmp-freebsd
 libgmp4		ports/math/libgmp4
 libgnetwork	ports/net/libgnetwork
 libgnome	ports/x11/libgnome
+libgnome-java	ports/x11/libgnome-java
 libgnomecanvas	ports/graphics/libgnomecanvas
 libgnomecanvasmm	ports/graphics/libgnomecanvasmm
 libgnomecups	ports/print/libgnomecups
@@ -4436,7 +4437,6 @@ libgnomeprint	ports/print/libgnomeprint
 libgnomeprintui	ports/x11-toolkits/libgnomeprintui
 libgnomeui	ports/x11-toolkits/libgnomeui
 libgnomeuimm	ports/x11-toolkits/libgnomeuimm
-libgnome-java	ports/x11/libgnome-java
 libgnugetopt	ports/devel/libgnugetopt
 libgpg-error	ports/security/libgpg-error
 libgphoto2	ports/graphics/libgphoto2
@@ -4518,6 +4518,7 @@ libpathan	ports/textproc/libpathan
 libpci		ports/devel/libpci
 libpdel		ports/devel/libpdel
 libpdf++	ports/print/libpdf++
+libpdtp		ports/net/libpdtp
 libprelude	ports/security/libprelude
 libpreps	ports/devel/libpreps
 libpreps-devel	ports/devel/libpreps-devel
@@ -5007,6 +5008,7 @@ mhc-xemacs21-mule	ports/deskutils/mhc-xemacs21-mule
 mhonarc		ports/www/mhonarc
 mhwaveedit	ports/audio/mhwaveedit
 mi-aspell	ports/textproc/mi-aspell
+miau		ports/irc/miau
 mico		ports/devel/mico
 micq		ports/net/micq
 micro_httpd	ports/www/micro_httpd
@@ -7240,6 +7242,7 @@ pdnmesh		ports/cad/pdnmesh
 pdnsd		ports/dns/pdnsd
 pdq		ports/print/pdq
 pdss		ports/lang/pdss
+pdtpd		ports/net/pdtpd
 pdumpfs		ports/sysutils/pdumpfs
 peacock		ports/www/peacock
 pear-APC	ports/www/pear-APC
@@ -10948,5 +10951,3 @@ zthread		ports/devel/zthread
 ztrack		ports/games/ztrack
 zu-aspell	ports/textproc/zu-aspell
 zziplib		ports/devel/zziplib
-pdtpd		ports/net/pdtpd
-libpdtp		ports/net/libpdtp
