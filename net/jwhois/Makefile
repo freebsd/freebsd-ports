@@ -7,7 +7,7 @@
 
 PORTNAME=	jwhois
 PORTVERSION=	3.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	jwhois
@@ -16,15 +16,22 @@ MAINTAINER=	matusita@FreeBSD.org
 COMMENT=An improved WHOIS client capable of selecting server to query
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--localstatedir=${PREFIX}/var/jwhois
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib"
+CONFIGURE_ARGS=	--localstatedir=${PREFIX}/var/jwhois
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB=	NLS="@comment "
+.else
+PLIST_SUB=	NLS=""
+.endif
 
 INSTALL_TARGET=	install-strip
 
 MANLANG=	"" sv
 MAN1=	jwhois.1
+INFO=	jwhois
 
 post-install:
 	${MKDIR} ${PREFIX}/var/jwhois
