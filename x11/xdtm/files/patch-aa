@@ -1,6 +1,18 @@
 --- Imakefile.orig	Thu Mar 14 07:02:00 1996
-+++ Imakefile	Sun Oct  4 17:56:07 1998
-@@ -241,10 +241,11 @@
++++ Imakefile	Mon May 31 09:22:43 1999
+@@ -147,6 +147,11 @@
+          XDTMOPTIONS = -DHAS_STRSTR -DUSE_CWD -DECHO_N -DUSE_TERMIOS
+ #endif
+ 
++#ifdef FreeBSDArchitecture
++        LOCAL_LDFLAGS =
++        XDTMOPTIONS = -DHAS_STRSTR -DUSE_CWD -DECHO_N -DUSE_TERMIOS
++#endif
++
+ #if SystemV4		/* SVR4 is mostly POSIX */
+ 	 XDTMOPTIONS = -DHAS_STRSTR -DUSE_CWD -DUSE_TERMIOS
+ #endif
+@@ -241,10 +246,11 @@
  	sed -e 's^\"{icon dir}\"^\"$(XDTMDIR)/icons\"^' \
  	   xdtmrc.orig > xdtmrc
  	sed -e 's^iconfile^$(XDTMDIR)/new_xdtm.xbm^' Xdtm.ad.tmpl > Xdtm.ad
