@@ -1,6 +1,6 @@
---- INSTALL.orig	Thu Nov  7 00:04:53 1996
-+++ INSTALL	Wed Nov 20 17:37:14 1996
-@@ -117,6 +117,8 @@
+--- INSTALL.orig	Wed Jan 26 16:38:00 2000
++++ INSTALL	Thu Mar  9 10:33:31 2000
+@@ -115,6 +115,8 @@
      if [ "$i" -a -f "$i" ] ; then
          if [ `uname -s` = "Linux" ] ; then
            size=`ls -lLn "$i" | ( read perm links owner group size date ; echo $size )`
@@ -9,7 +9,19 @@
          else
            size=`ls -lLon "$i" | ( read perm links owner size date ; echo $size )`
          fi
-@@ -486,7 +488,7 @@
+@@ -157,9 +159,9 @@
+    uid=`expr "$id_out" : 'uid=[0-9]*(\([^)]*\))'`
+    gid=`expr "$id_out" : '[^ ]* gid=[0-9]*(\([^)]*\))'`
+   if [ "$uid" = "root" ] ; then
+-    ( cd "$1" ; tar xfo "$2" ; chown -R $uid . ; chgrp -R $gid . )
++    ( cd "$1" ; tar --unlink -xof "$2" ; chown -R $uid . ; chgrp -R $gid . )
+   else
+-    ( cd "$1" ; tar xfo "$2" )
++    ( cd "$1" ; tar --unlink -xof "$2" )
+   fi
+ }
+ 
+@@ -490,7 +492,7 @@
    SearchPlatformTar="$3"
    CustomPlatformTar="$4"
  
@@ -18,7 +30,7 @@
    ReadLicense=""
  
    PrintRequiredFree "$ReadTar" "$SearchTar" "$CustomTar" \
-@@ -559,7 +561,7 @@
+@@ -563,7 +565,7 @@
    *) ScriptDirectory="$CurrentDirectory"/"$ScriptDirectory" ;;
  esac
  
@@ -27,12 +39,3 @@
    OSname=`uname -s`
    if [ "$OSname" = "AIX" ] ; then
      OSrelease=`uname -a | ( read name host minor major foo ; echo $major.$minor )`
-@@ -1044,7 +1046,7 @@
-     DistDefaultNum="$DistIntelBSDINum"
-     DefaultName="Intel/BSDI"
-     ;;
--  Linux)
-+  FreeBSD|Linux)
-     AcroDefaultNum="$AcroIntelLinuxNum"
-     ExchDefaultNum="$ExchIntelLinuxNum"
-     ReadDefaultNum="$ReadIntelLinuxNum"
