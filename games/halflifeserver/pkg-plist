@@ -1,5 +1,5 @@
+%%PORTDOCS%%%%HLDSDIR%%EULA.TXT
 %%PORTDOCS%%%%HLDSDIR%%HLTV-Readme.txt
-%%PORTDOCS%%%%HLDSDIR%%3108a_changes.txt
 %%HLDSDIR%%dmc/cl_dlls/client.dll
 %%HLDSDIR%%dmc/delta.lst
 %%HLDSDIR%%dmc/dlls/dmc_i386.so
@@ -382,14 +382,14 @@
 %%HLDSDIR%%dmc/sprites/yelflare2.spr
 %%HLDSDIR%%dmc/sprites/zerogxplode.spr
 %%HLDSDIR%%dmc/titles.txt
-%%BOOSTER%%%%HLDSDIR%%booster.so
 %%HLDSDIR%%engine_i386.so
-%%BOOSTER%%%%HLDSDIR%%hlds_boost
+%%HLDSDIR%%hlds
 %%HLDSDIR%%hlds_run
 %%HLDSDIR%%hlds_run.dat
 %%HLDSDIR%%hltv
 %%HLDSDIR%%hltv.cfg
 %%HLDSDIR%%kver.kp
+%%HLDSDIR%%libSteamValidateUserIDTickets.so
 %%HLDSDIR%%libhlwon.so
 %%PORTDOCS%%%%HLDSDIR%%linuxreadme.txt
 %%PORTDOCS%%%%HLDSDIR%%readme.txt
@@ -552,7 +552,7 @@
 %%HLDSDIR%%tfc/sound/weapons/asscan4.wav
 %%HLDSDIR%%tfc/tfc.wad
 %%HLDSDIR%%tfc/tfc2.wad
-%%HLDSDIR%%tfc/tfstats/readme.txt
+%%PORTDOCS%%%%HLDSDIR%%tfc/tfstats/readme.txt
 %%HLDSDIR%%tfc/tfstats/tfc.2fort.rul
 %%HLDSDIR%%tfc/tfstats/tfc.cz2.rul
 %%HLDSDIR%%tfc/tfstats/tfc.rock2.rul
@@ -560,8 +560,9 @@
 %%HLDSDIR%%tfc/tfstats/tfc.well.rul
 %%HLDSDIR%%tfc/tfstats/tfstats.txt
 %%HLDSDIR%%tfc/tfstats/tfstats_l
+%%HLDSDIR%%tfc/valve.rc
 %%HLDSDIR%%valve/cl_dlls/client.dll
-%%HLDSDIR%%valve/credits.txt
+%%PORTDOCS%%%%HLDSDIR%%valve/credits.txt
 %%HLDSDIR%%valve/decals.wad
 %%HLDSDIR%%valve/delta.lst
 %%HLDSDIR%%valve/dlls/hl_i386.so
