@@ -51,7 +51,7 @@ BUILD_DEPENDS=  ${APXS}:${APACHE_PORT} \
 		${SITE_PERL}/Text/Wrapper.pm:${PORTSDIR}/textproc/p5-Text-Wrapper \
 		${SITE_PERL}/Tie/IxHash.pm:${PORTSDIR}/devel/p5-Tie-IxHash \
 		${ARCH_PERL}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
-		${SITE_PERL}/Time/ParseDate.pm:${PORTSDIR}/devel/p5-Time \
+		${SITE_PERL}/Time/ParseDate.pm:${PORTSDIR}/devel/p5-Time-modules \
 		${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize
 RUN_DEPENDS=    ${BUILD_DEPENDS}
 
