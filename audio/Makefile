@@ -324,6 +324,7 @@
     SUBDIR += streamtuner-live365
     SUBDIR += streamtuner-local
     SUBDIR += streamtuner-python
+    SUBDIR += streamtuner-xiph
     SUBDIR += sweep
     SUBDIR += swhplugins
     SUBDIR += taglib
