@@ -1845,6 +1845,8 @@ evg		ports/www/evg
 evilfinder	ports/games/evilfinder
 evilwm		ports/x11-wm/evilwm
 evolution	ports/mail/evolution
+evolution-data-server	ports/databases/evolution-data-server
+evolution-webcal	ports/www/evolution-webcal
 evolvotron	ports/graphics/evolvotron
 eweather	ports/x11/eweather
 ewipe		ports/misc/ewipe
@@ -2725,10 +2727,12 @@ gnomedb		ports/databases/gnomedb
 gnomedesktop	ports/x11/gnomedesktop
 gnomefind	ports/sysutils/gnomefind
 gnomegames2	ports/games/gnomegames2
+gnomegames2-extra-data	ports/games/gnomegames2-extra-data
 gnomehier	ports/misc/gnomehier
 gnomeiconedit	ports/graphics/gnomeiconedit
 gnomeicu2	ports/net/gnomeicu2
 gnomekeyring	ports/security/gnomekeyring
+gnomekeyringmanager	ports/security/gnomekeyringmanager
 gnomekiss	ports/games/gnomekiss
 gnomelibs	ports/x11/gnomelibs
 gnomemag	ports/accessibility/gnomemag
