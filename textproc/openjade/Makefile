@@ -8,7 +8,8 @@
 PORTNAME=	openjade
 PORTVERSION= 	1.3
 CATEGORIES=	textproc
-MASTER_SITES=	http://download.sourceforge.net/openjade/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	kuriyama@FreeBSD.org
 

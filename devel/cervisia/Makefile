@@ -7,8 +7,8 @@
 PORTNAME=	cervisia
 PORTVERSION=	0.6.0
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.sourceforge.net/pub/sourceforge/cervisia/ \
-		http://download.sourceforge.net/cervisia/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	will@FreeBSD.org
 

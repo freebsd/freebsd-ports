@@ -8,7 +8,8 @@
 PORTNAME=	gcolor
 PORTVERSION=	0.4
 CATEGORIES=	graphics gnome x11
-MASTER_SITES=	http://download.sourceforge.net/gcolor/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	will@FreeBSD.org
 

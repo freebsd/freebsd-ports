@@ -8,8 +8,9 @@
 PORTNAME=	icewm-i18n
 PORTVERSION=	1.0.3
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://download.sourceforge.net/icewm/ \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/icewm/
+MASTER_SITE_SUBDIR=	icewm
 DISTNAME=	icewm-${PORTVERSION}
 EXTRACT_SUFX=	.src.tar.gz
 

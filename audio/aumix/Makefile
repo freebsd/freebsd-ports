@@ -8,12 +8,10 @@
 PORTNAME=	aumix
 PORTVERSION=	2.6
 CATEGORIES=	audio
-MASTER_SITES=	http://jpj.net/~trevor/aumix/ \
-		http://download.sourceforge.net/aumix/ \
-		http://jpj.net/~trevor/aumix/old/ \
-		ftp://aumix.sourceforge.net/pub/aumix/stable/ \
-		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	apps/sound/mixers
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://jpj.net/~trevor/aumix/ \
+		http://jpj.net/~trevor/aumix/old/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	cpiazza@FreeBSD.org
 

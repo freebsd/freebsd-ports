@@ -8,7 +8,8 @@
 PORTNAME=	gnofin
 PORTVERSION=	0.8.0
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	http://download.sourceforge.net/gnofin/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jedgar@FreeBSD.org
 

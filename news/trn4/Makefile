@@ -8,7 +8,8 @@
 PORTNAME=	trn
 PORTVERSION=	4.0.b74
 CATEGORIES=	news
-MASTER_SITES=	ftp://trn.sourceforge.net/pub/trn/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	trn4-test74
 
 MAINTAINER=	mph@freebsd.org

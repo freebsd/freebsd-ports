@@ -7,7 +7,8 @@
 PORTNAME=	wmtop
 PORTVERSION=	0.81
 CATEGORIES=	sysutils
-MASTER_SITES=	http://wmtop.sourceforge.net/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	wmtop@tanelorn.demon.co.uk
 

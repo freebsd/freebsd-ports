@@ -8,8 +8,9 @@
 PORTNAME=	iplog
 PORTVERSION=	2.1.1
 CATEGORIES=	security
-MASTER_SITES=	http://download.sourceforge.net/ojnk/ \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.karlsbakk.net/pub/ojnk/iplog/
+MASTER_SITE_SUBDIR=	ojnk
 
 PATCH_SITES=	http://ojnk.sourceforge.net/stuff/ \
 		ftp://ftp.karlsbakk.net/pub/ojnk/iplog/

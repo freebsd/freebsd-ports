@@ -8,7 +8,8 @@
 PORTNAME=	libsigc++
 PORTVERSION=	1.0.0
 CATEGORIES=	devel
-MASTER_SITES=	http://download.sourceforge.net/libsigc/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	libsigc
 
 MAINTAINER=	JoeLu@JoeLu.m8.ntu.edu.tw
 

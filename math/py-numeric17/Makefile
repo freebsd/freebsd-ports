@@ -8,7 +8,8 @@
 PORTNAME=	numeric
 PORTVERSION=	15.3
 CATEGORIES=	math python
-MASTER_SITES=	http://download.sourceforge.net/numpy/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	numpy
 PKGNAMEPREFIX=	py-
 DISTNAME=	Numerical-${PORTVERSION}
 EXTRACT_SUFX=	.tgz

@@ -8,7 +8,8 @@
 PORTNAME=	gqview
 PORTVERSION=	0.8.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://download.sourceforge.net/gqview/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	nakai@FreeBSD.org
 

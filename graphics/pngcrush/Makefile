@@ -8,7 +8,8 @@
 PORTNAME=	pngcrush
 PORTVERSION=	1.4.4
 CATEGORIES=	graphics
-MASTER_SITES=	http://download.sourceforge.net/pmt/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	pmt
 
 MAINTAINER=	jedgar@FreeBSD.org
 

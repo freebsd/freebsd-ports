@@ -8,7 +8,8 @@
 PORTNAME=	kicq
 PORTVERSION=	0.3.0
 CATEGORIES=	net kde
-MASTER_SITES=	http://download.sourceforge.net/kicq/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	paxvel@iname.com
 

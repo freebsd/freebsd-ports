@@ -8,7 +8,8 @@
 PORTNAME=	tinyproxy
 PORTVERSION=	1.3.3
 CATEGORIES=	www
-MASTER_SITES=	http://download.sourceforge.net/tinyproxy/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mitsuru@riken.go.jp
 

@@ -8,8 +8,9 @@
 PORTNAME=	code2html
 PORTVERSION= 	0.8.9a
 CATEGORIES=	textproc
-MASTER_SITES=	ftp://code2html.sourceforge.net/pub/code2html/all/ \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.cosy.sbg.ac.at/~ppalfrad/code2html/all/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jedgar@FreeBSD.org
 

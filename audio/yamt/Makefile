@@ -8,8 +8,9 @@
 PORTNAME=	yamt
 PORTVERSION=	0.5
 CATEGORIES=	audio gnome
-MASTER_SITES=	http://download.sourceforge.net/yamt/ \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.gpad.ac.ru/pub/FreeBSD/distfiles/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	dima@Chg.RU
 

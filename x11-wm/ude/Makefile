@@ -8,8 +8,9 @@
 PORTNAME=	ude
 PORTVERSION= 	0.2.7.1
 CATEGORIES=	x11-wm
-MASTER_SITES=	ftp://download.sourceforge.net/pub/sourceforge/udeproject/ \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ude.the-coffeeshop.dk/pub/UDE/
+MASTER_SITE_SUBDIR=	udeproject
 DISTNAME=	${PORTNAME}-0.2.7-BETA
 
 MAINTAINER=	will@FreeBSD.org

@@ -8,7 +8,8 @@
 PORTNAME=	gtkmm
 PORTVERSION=	1.2.0
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://download.sourceforge.net/gtkmm/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	nakai@FreeBSD.org
 

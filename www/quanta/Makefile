@@ -8,8 +8,8 @@
 PORTNAME=	quanta
 PORTVERSION= 	1.0.2
 CATEGORIES=	www kde
-MASTER_SITES=	ftp://ftp.sourceforge.net/pub/sourceforge/quanta/ \
-		http://download.sourceforge.net/quanta/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	will@FreeBSD.org
 

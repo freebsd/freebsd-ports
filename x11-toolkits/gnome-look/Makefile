@@ -8,7 +8,8 @@
 PORTNAME=	gnome-look
 PORTVERSION=	0.1.3
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://download.sourceforge.net/gnome-look/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sobomax@FreeBSD.org
 

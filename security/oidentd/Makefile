@@ -8,8 +8,9 @@
 PORTNAME=	oidentd
 PORTVERSION=	1.6.4
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.sourceforge.net/pub/sourceforge/ojnk/ \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.numb.org/~odin/stuff/
+MASTER_SITE_SUBDIR=	ojnk
 
 MAINTAINER=	trevor@jpj.net
 

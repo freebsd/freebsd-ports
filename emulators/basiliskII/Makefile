@@ -8,7 +8,8 @@
 PORTNAME=		basiliskII
 PORTVERSION=		0.8.1
 CATEGORIES=		emulators
-MASTER_SITES=		http://download.sourceforge.net/basilisk/
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	basilisk
 DISTNAME=		BasiliskII_src_30012000
 
 MAINTAINER=		sobomax@FreeBSD.org

@@ -8,7 +8,8 @@
 PORTNAME=		extace
 PORTVERSION=		1.2.23
 CATEGORIES=		audio
-MASTER_SITES=		http://download.sourceforge.net/eXtace/
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	eXtace
 
 MAINTAINER=		sobomax@FreeBSD.org
 

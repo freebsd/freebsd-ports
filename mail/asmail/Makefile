@@ -8,8 +8,9 @@
 PORTNAME=	asmail
 PORTVERSION=	0.56
 CATEGORIES=	mail afterstep
-MASTER_SITES=	http://asmail.sourceforge.net/files/ \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://gates.enemy.at/pub/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	brett@peloton.runet.edu
 

@@ -8,7 +8,8 @@
 PORTNAME=	gedit
 PORTVERSION=	0.7.9
 CATEGORIES=	editors gnome
-MASTER_SITES=	http://download.sourceforge.net/gedit/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ade@FreeBSD.org
 
