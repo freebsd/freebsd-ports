@@ -37,8 +37,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>mod_python</name>
-	<range><ge>2.7.0</ge><le>2.7.10</le></range>
-	<range><ge>3.0.0</ge><le>3.0.4</le></range>
+	<range><ge>2.7.0</ge><lt>2.7.10</lt></range>
+	<range><ge>3.0.0</ge><lt>3.0.4</lt></range>
       </package>
     </affects>
     <description>
