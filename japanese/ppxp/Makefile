@@ -9,8 +9,6 @@ CATEGORIES=	japanese
 
 MASTERDIR=	${.CURDIR}/../../net/ppxp
 
-MAINTAINER=	sada@FreeBSD.org
-
 WITH_TCLJP=	yes
 
 .include "${MASTERDIR}/Makefile"
