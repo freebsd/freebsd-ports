@@ -1,0 +1,7 @@
+%%SITE_PERL%%/XML/Generator/PerlData.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Generator/PerlData/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Generator/PerlData
+@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/XML/Generator 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Generator 2>/dev/null || true
