@@ -8,9 +8,7 @@
 PORTNAME=	tintin
 PORTVERSION=	1.5.9
 CATEGORIES=     net games
-MASTER_SITES=   ftp://ftp.walrus.com/pub/avatar/clients/ \
-		ftp://ftp.cctpu.edu.ru/pub/comp/networking/mud/ \
-		ftp://iclub.nsu.ru/pub/mud/clients/tintin++/
+MASTER_SITES=   http://mail.newclear.net/tintin/download/
 DISTNAME=	tintin++v1.5pl9
 
 MAINTAINER=	jhp@cocoja.holywar.net
