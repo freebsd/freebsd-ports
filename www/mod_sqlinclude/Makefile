@@ -7,8 +7,8 @@
 PORTNAME=	mod_sqlinclude
 PORTVERSION=	1.2
 CATEGORIES=	www
-MASTER_SITES=	http://wfmh.org.pl/~carlos/files/ \
-		ftp://ftp.nuug.no/pub/anders/distfiles/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
