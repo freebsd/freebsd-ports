@@ -28,6 +28,7 @@ SNMP		"SNMP support" OFF \
 XML		"XML support" OFF \
 FTP		"File Transfer Protocol support" OFF \
 gettext		"gettext library support" OFF \
+YP		"YP/NIS support" OFF \
 2> /tmp/checklist.tmp.$$
 
 	retval=$?
@@ -148,6 +149,9 @@ while [ "$1" ]; do
 		\"gettext\")
 			echo "LIB_DEPENDS+=	intl.1:\${PORTSDIR}/devel/gettext"
 			echo "CONFIGURE_ARGS+=--with-gettext=\${PREFIX}"
+			;;
+		\"YP\")
+			echo "CONFIGURE_ARGS+=--with-yp"
 			;;
 		*)
 			echo "Invalid option(s): $*" > /dev/stderr
