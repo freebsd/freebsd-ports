@@ -2,13 +2,13 @@
 bin/qmail-scanner-queue.pl
 %%SPOOLDIR%%/quarantine-attachments.sample
 %%SPOOLDIR%%/quarantine-attachments.txt
-@unexec rmdir %%SPOOLDIR%%/archives/cur 2>1 || true
-@unexec rmdir %%SPOOLDIR%%/archives/new 2>1 || true
-@unexec rmdir %%SPOOLDIR%%/archives/tmp 2>1 || true
-@unexec rmdir %%SPOOLDIR%%/archives 2>1 || true
-@unexec rmdir %%SPOOLDIR%%/quarantine/cur 2>1 || true
-@unexec rmdir %%SPOOLDIR%%/quarantine/new 2>1 || true
-@unexec rmdir %%SPOOLDIR%%/quarantine/tmp 2>1 || true
-@unexec rmdir %%SPOOLDIR%%/quarantine 2>1 || true
-@unexec rmdir %%SPOOLDIR%%/tmp 2>1 || true
-@unexec rmdir %%SPOOLDIR%% 2>1 || true
+@unexec rmdir %%SPOOLDIR%%/archives/cur 2>/dev/null || true
+@unexec rmdir %%SPOOLDIR%%/archives/new 2>/dev/null || true
+@unexec rmdir %%SPOOLDIR%%/archives/tmp 2>/dev/null || true
+@unexec rmdir %%SPOOLDIR%%/archives 2>/dev/null || true
+@unexec rmdir %%SPOOLDIR%%/quarantine/cur 2>/dev/null || true
+@unexec rmdir %%SPOOLDIR%%/quarantine/new 2>/dev/null || true
+@unexec rmdir %%SPOOLDIR%%/quarantine/tmp 2>/dev/null || true
+@unexec rmdir %%SPOOLDIR%%/quarantine 2>/dev/null || true
+@unexec rmdir %%SPOOLDIR%%/tmp 2>/dev/null || true
+@unexec rmdir %%SPOOLDIR%% 2>/dev/null || true

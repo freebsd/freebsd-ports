@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qmail-scanner
-PORTVERSION=	1.20.r4
+PORTVERSION=	1.20
 CATEGORIES=	mail security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -37,9 +37,14 @@ QMAILSCAN_ADMIN?=	root
 .if defined(QMAILSCAN_ADMINREALNAME)
 CONFIGURE_ARGS+=	--admin-realname "${QMAILSCAN_ADMINREALNAME}"
 .endif
-QMAILSCAN_NOTIFY?=	sender,recips,admin
+QMAILSCAN_NOTIFY?=	sender,recips
 .if defined(QMAILSCAN_LOCALDOMAINS)
 CONFIGURE_ARGS+=	--local-domains "${QMAILSCAN_LOCALDOMAINS}"
+.endif
+.if defined(QMAILSCAN_SCANNERS)
+CONFIGURE_ARGS+=	--scanners "${QMAILSCAN_SCANNERS}"
+.else
+CONFIGURE_ARGS+=	--scanners auto
 .endif
 .if defined(QMAILSCAN_SPAMSREDIRECT)
 CONFIGURE_ARGS+=	--spams-redirect "${QMAILSCAN_SPAMSREDIRECT}"
@@ -52,13 +57,12 @@ SPOOLDIR=	${PREFIX}/qmailscan
 PLIST_SUB=	SPOOLDIR="${SPOOLDIR:S,${PREFIX}/,,}"
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--qmaildir ${QMAIL_DIR} --spooldir ${SPOOLDIR} \
-		--bindir ${PREFIX}/bin \
+CONFIGURE_ARGS+=	\
+		--qmaildir ${QMAIL_DIR} --spooldir ${SPOOLDIR} --bindir ${PREFIX}/bin \
 		--admin "${QMAILSCAN_ADMIN}" --notify "${QMAILSCAN_NOTIFY}" \
 		--silent-viruses auto \
-		--archive no --redundant yes --unzip yes \
+		--redundant yes --unzip yes \
 		--add-dscr-hdrs yes \
-		--scanners auto \
 		--fix-mime yes \
 		--log-details syslog --debug no \
 		--batch
