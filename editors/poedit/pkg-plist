@@ -1,10 +1,17 @@
 bin/poedit
+share/locale/cs/LC_MESSAGES/poedit.mo
+share/locale/de/LC_MESSAGES/poedit.mo
+share/locale/et/LC_MESSAGES/poedit.mo
+share/locale/fr/LC_MESSAGES/poedit.mo
+share/locale/hr/LC_MESSAGES/poedit.mo
+share/locale/it/LC_MESSAGES/poedit.mo
+share/locale/nl/LC_MESSAGES/poedit.mo
+share/locale/nn/LC_MESSAGES/poedit.mo
+share/locale/pl/LC_MESSAGES/poedit.mo
+share/locale/tr/LC_MESSAGES/poedit.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/poedit.mo
+share/poedit/help-gettext.zip
+share/poedit/help-hr.zip
 share/poedit/help.zip
 share/poedit/resources.zip
 @dirrm share/poedit
-share/locale/cs/LC_MESSAGES/poedit.mo
-share/locale/zh_TW.Big5/LC_MESSAGES/poedit.mo
-%%GNOME:%%share/gnome/apps/Development/poedit.desktop
-%%GNOME:%%share/gnome/mime-info/poedit.keys
-%%GNOME:%%share/gnome/mime-info/poedit.mime
-%%GNOME:%%share/gnome/pixmaps/poedit.xpm
