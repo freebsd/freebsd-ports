@@ -44,6 +44,12 @@ MAN3=		Apache::ErrorReport.3 \
 		Apache::PageKit::Model.3 \
 		Apache::PageKit::Session.3
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502102
+BROKEN=		"Does not compile"
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR} ${EXAMPLESDIR} \
@@ -76,4 +82,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
