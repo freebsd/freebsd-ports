@@ -13,9 +13,10 @@ MASTER_SITE_SUBDIR=	${RUBY_VER}
 DISTNAME=	${RUBY_DISTNAME}
 DIST_SUBDIR=	ruby
 
-#PATCH_SITES=	http://www.ruby-lang.org/~knu/
-#PATCHFILES=	${RUBY_DISTNAME}-${RUBY_SNAPSHOTVERSION}.patch.gz
-#PATCH_DIST_STRIP=	-p1
+PATCH_SITES=	http://www.ruby-lang.org/~knu/
+PATCHFILES=	${RUBY_DISTNAME}-${RUBY_SNAPSHOTVERSION}.patch.gz \
+		ruby-malloc_race.patch.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	knu@FreeBSD.org
 

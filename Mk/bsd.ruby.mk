@@ -38,6 +38,9 @@ Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 # RUBY_VERSION_CODE	- Full integer version of ruby without preview/beta suffix in the form of `xyz'.
 # RUBY_PORTVERSION	- PORTVERSION for the standard ruby ports (ruby, ruby-gdbm, etc.).
 # RUBY_DISTNAME		- DISTNAME for the standard ruby ports, i.e. the basename of the ruby distribution tarball.
+# RUBY_DISTVERSION	- The version number part of RUBY_DISTNAME.
+# RUBY_DISTVER		- Same as RUBY_DISTVERSION, but converted into PORTVERSION style (preview -> .p etc.)
+# RUBY_SNAPSHOTVERSION	- Snapshot version.  Mostly it is a date.
 # RUBY_WRKSRC		- WRKSRC for the ruby port.
 #
 # RUBY_SHLIBVER		- Major version of libruby (see below for current value).
@@ -96,21 +99,17 @@ RUBY_VERSION?=		1.6.4
 RUBY_SUFFIX?=		# empty
 .endif
 
-RUBY_SNAPSHOTVERSION=	preview1
-RUBY_SNAPSHOTVER=	${RUBY_SNAPSHOTVERSION:S/preview/p/}
+RUBY_DISTVERSION?=	${RUBY_VERSION}-preview1
+RUBY_SNAPSHOTVERSION?=	2001.04.11
+RUBY_DISTVER=		${RUBY_DISTVERSION:S/-preview/.p/}
 
 .if !defined(RUBY_SNAPSHOTVERSION) || empty(RUBY_SNAPSHOTVERSION)
-RUBY_PORTVERSION=	${RUBY_VERSION}
+RUBY_PORTVERSION=	${RUBY_DISTVER}
 .else
-RUBY_PORTVERSION=	${RUBY_VERSION}.${RUBY_SNAPSHOTVER}
-
-.if ${RUBY_SNAPSHOTVERSION} != ${RUBY_SNAPSHOTVER}
-# preview release
-RUBY_DISTNAME?=		ruby-${RUBY_VERSION}-${RUBY_SNAPSHOTVERSION}
-.endif
+RUBY_PORTVERSION=	${RUBY_DISTVER}.${RUBY_SNAPSHOTVERSION}
 .endif
 
-RUBY_DISTNAME?=		ruby-${RUBY_VERSION}
+RUBY_DISTNAME?=		ruby-${RUBY_DISTVERSION}
 
 RUBY_WRKSRC?=		${WRKDIR}/ruby-${RUBY_VERSION}
 
