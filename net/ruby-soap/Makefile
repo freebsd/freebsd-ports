@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	soap
-PORTVERSION=	1.4.5
+PORTVERSION=	1.4.7
 CATEGORIES=	net ruby
 MASTER_SITES=	http://www.jin.gr.jp/~nahi/Ruby/SOAP4R/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ MAINTAINER=	knu@FreeBSD.org
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/application.rb:${PORTSDIR}/sysutils/ruby-devel-logger \
 		${RUBY_SITELIBDIR}/http-access2.rb:${PORTSDIR}/www/ruby-http-access \
 		${RUBY_SITELIBDIR}/GServer.rb:${PORTSDIR}/net/ruby-gserver \
-		${RUBY_SITELIBDIR}/nqxml/info.rb:${PORTSDIR}/textproc/ruby-nqxml \
+		${RUBY_SITELIBDIR}/rexml/rexml.rb:${PORTSDIR}/textproc/ruby-rexml \
 		${DEPEND_RUBY_DATE2}
 
 USE_RUBY=	yes
@@ -34,10 +34,11 @@ DEPEND_RUBY_DATE2=	${RUBY_SITELIBDIR}/date.rb:${PORTSDIR}/devel/ruby-date2
 .endif
 
 post-extract:
-	${CP} ${WRKSRC}/redist/soap/httpserver.rb ${WRKSRC}/sample/
+	${RM} -f ${WRKSRC}/redist/GServer.rb
 
 do-install:
-	${CP} -R ${WRKSRC}/lib/* ${RUBY_SITELIBDIR}/
+	cd ${WRKSRC}; ${RUBY} install.rb
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/wsdl2ruby.rb ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
 	${CP} -R ${WRKSRC}/sample/* ${WRKSRC}/test ${RUBY_EXAMPLESDIR}/${PORTNAME}/
