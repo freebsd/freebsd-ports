@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Finance-Currency-Convert-XE
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	finance perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Finance
@@ -35,10 +35,8 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-post-patch:
-	${PERL} -pi \
-		-e 's/5.006/5.004/;' \
-		-e '$$_="" if /use warnings/;' \
-		${WRKSRC}/lib/Finance/Currency/Convert/XE.pm
+.if ${PERL_LEVEL} < 500601
+IGNORE=		requires perl 5.6.x or later. Install lang/perl5.8 then try again
+.endif
 
 .include <bsd.port.post.mk>
