@@ -142,6 +142,7 @@
     SUBDIR += sablotron
     SUBDIR += sarep
     SUBDIR += sdf
+    SUBDIR += sdocbook-xml
     SUBDIR += se-ispell
     SUBDIR += sgmlformat
     SUBDIR += sgmls
