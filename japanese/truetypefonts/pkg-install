@@ -1,9 +1,9 @@
 #!/bin/sh
+FONTDIR=${PKG_PREFIX}/lib/X11/fonts/truetype
 if [ "$2" = "PRE-INSTALL" ]; then
   echo "Please add ${FONTDIR} to your /etc/XF86Config file"
   exit 0
 fi
-FONTDIR=${PKG_PREFIX}/lib/X11/fonts/truetype
 cd ${FONTDIR}
 touch fonts.dir
 sed -e '/-watanabe-/d' -e '/-wadalab-/d' fonts.dir > fonts.dir.tmp
