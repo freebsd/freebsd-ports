@@ -8,20 +8,16 @@ PORTNAME=	duke3d
 PORTVERSION=	20012306
 CATEGORIES=	games
 MASTER_SITES=	http://sheepkiller.nerim.net/ports/${PORTNAME}/
-#DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	arundel@gmx.net
 COMMENT=	Icculus Duke Nukem 3D port for various Operating Systems
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
-NO_CDROM=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_SDL=	mixer sdl
-NO_PACKAGE=	yes
 USE_REINPLACE=	yes
-REINPLACE_ARGS=
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -46,9 +42,9 @@ post-patch:
 		${WRKDIR}/fix.sh
 	@${SED} -e 's|%%DUKEDIR%%|${PREFIX}/${PORTNAME}|g' ${FILESDIR}/wrapper.sh > \
 		${WRKDIR}/wrapper.sh
-	@${FIND} ${WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD}-i.bak -e \
+	@${FIND} ${WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|malloc\.h|stdlib.h|g'
-	@${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD}-i.bak -e \
+	@${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|sdl-config|${SDL_CONFIG}|g ; s|%%X11BASE%%|${X11BASE}|g ; \
 		s|%%CFLAGS%%|${CFLAGS} -I${X11BASE}/include|g'
 
