@@ -1,0 +1,10 @@
+The editor 'ee' (easy editor) is intended to be a simple, easy to use 
+terminal-based screen oriented editor that requires no instruction to 
+use.  Its primary use would be for people who are new to computers, or who 
+use computers only for things like e-mail.
+
+This port makes orginal `ee' to treat Japanese by Mr.HIRABAYASHI
+Kouichi(kh@mogami-wire.co.jp).
+
+-KIRIYAMA Kazuhiko
+<kiri@pis.toba-cmt.ac.jp>
