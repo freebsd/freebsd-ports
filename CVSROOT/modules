@@ -273,6 +273,14 @@ aimsniff	ports/security/aimsniff
 airoflash	ports/misc/airoflash
 airport		ports/net-mgmt/airport
 aish		ports/converters/aish
+akode		ports/audio/akode
+akode-plugins-jack	ports/audio/akode-plugins-jack
+akode-plugins-mpc	ports/audio/akode-plugins-mpc
+akode-plugins-mpeg	ports/audio/akode-plugins-mpeg
+akode-plugins-oss	ports/audio/akode-plugins-oss
+akode-plugins-polypaudio	ports/audio/akode-plugins-polypaudio
+akode-plugins-resampler	ports/audio/akode-plugins-resampler
+akode-plugins-xiph	ports/audio/akode-plugins-xiph
 akpop3d		ports/mail/akpop3d
 akregator	ports/www/akregator
 alac		ports/audio/alac
@@ -4371,6 +4379,7 @@ jtans		ports/games/jtans
 jtop		ports/sysutils/jtop
 jude-community	ports/devel/jude-community
 judy		ports/devel/judy
+juk		ports/audio/juk
 juke		ports/audio/juke
 jump		ports/java/jump
 jumpgate	ports/net/jumpgate
@@ -4702,7 +4711,6 @@ koffice-i18n-zu	ports/misc/koffice-i18n-zu
 koffice-kde3	ports/editors/koffice-kde3
 kompose		ports/deskutils/kompose
 konq-plugins	ports/misc/konq-plugins
-konqueror-nsplugins	ports/www/konqueror-nsplugins
 konversation	ports/irc/konversation
 konverse	ports/net/konverse
 konverter	ports/multimedia/konverter
