@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.70 1996/06/19 20:09:49 adam Exp $
+# $Id: Makefile,v 1.71 1996/06/20 18:52:18 jkh Exp $
 #
 
     SUBDIR += archie
@@ -22,6 +22,7 @@
     SUBDIR += nv
     SUBDIR += pcnfsd
     SUBDIR += pmf
+    SUBDIR += radius
     SUBDIR += rdist6
     SUBDIR += rmsg
     SUBDIR += samba
@@ -34,6 +35,7 @@
     SUBDIR += tinyfugue
     SUBDIR += tkined
     SUBDIR += trafshow
+    SUBDIR += ucd-snmp
     SUBDIR += vic
     SUBDIR += wais
     SUBDIR += wide-dhcp
