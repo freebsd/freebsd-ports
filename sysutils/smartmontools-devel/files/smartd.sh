@@ -1,0 +1,40 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: smartd
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: FreeBSD shutdown
+
+# Define these smartd_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/smartd
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+smartd_enable="NO"
+smartd_flags=""
+
+. %%RC_SUBR%%
+
+name="smartd"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/sbin/smartd"
+pidfile="/var/run/smartd.pid"
+required_files="%%PREFIX%%/etc/smartd.conf"
+
+load_rc_config $name
+
+case "${smartd_flags}" in
+*-p\ *)
+	echo "ERROR: \$smartd_flags includes -p option." \
+		"Please use \$smartd_pidfile instead."
+	exit 1
+	;;
+*)
+	smartd_flags="-p ${smartd_pidfile} ${smartd_flags}"
+	;;
+esac
+
+run_rc_command "$1"
