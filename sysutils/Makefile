@@ -209,6 +209,7 @@
     SUBDIR += wmcube
     SUBDIR += wmcube-gdk
     SUBDIR += wmfire
+    SUBDIR += wmflame
     SUBDIR += wmfsm
     SUBDIR += wmhm
     SUBDIR += wminet
