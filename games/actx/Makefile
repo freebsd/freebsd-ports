@@ -1,13 +1,13 @@
 # New ports collection makefile for:   actx
-# Version required:    0.98pre4
+# Version required:    0.99.1
 # Date created:        19 Feb 1999
 # Whom:                Shinya Esu <esu@yk.rim.or.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	actx-0.98pre4
-PKGNAME=	actx-0.98p4
+DISTNAME=	actx-0.99.1
+PKGNAME=	actx-0.99.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.astr.tohoku.ac.jp/~taji/ActX/
 
@@ -25,13 +25,13 @@ post-extract:
 	@ ${CP} ${WRKSRC}/samples/sample.actxrc ${WRKSRC}/install.actxrc
 
 post-patch:
-.for i in install.actxrc samples/sample.actxrc samples/sample.actxrc-jp
+.for i in install.actxrc samples/sample.actxrc
 	@ ${MV} ${WRKSRC}/$i ${WRKSRC}/$i.old
 	@ ${SED} -e "s#%%ACTXDIR%%#${ACTXDIR}#" ${WRKSRC}/$i.old > ${WRKSRC}/$i
 .endfor
 
 post-install:
-.for i in sample.Xdefaults sample.actxrc sample.actxrc-jp
+.for i in sample.Xdefaults sample.actxrc
 	@ ${INSTALL_DATA} ${WRKSRC}/samples/$i ${ACTXDIR}
 .endfor
 .if !defined(NOPORTDOCS)

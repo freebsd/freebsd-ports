@@ -1,13 +1,15 @@
---- samples/sample.actxrc.orig	Mon Feb 22 11:57:44 1999
-+++ samples/sample.actxrc	Mon Feb 22 11:58:14 1999
-@@ -6,9 +6,9 @@
+--- samples/sample.actxrc.org   Fri Oct  8 00:44:18 1999
++++ samples/sample.actxrc       Fri Oct  8 00:44:44 1999
+@@ -8,11 +8,11 @@
  
- Actx*titleOfMenu: ONE  - for Bright Season -
+ Axtx*titleOfMenuE: ONE  - for Bright Season -
  
--Actx*xpmDir: /usr/local/lib/ActX
+-Actx*xpmDir: /usr/local/lib/actx
 +Actx*xpmDir: %%ACTXDIR%%
  
--!Actx*sndDir: /usr/local/lib/ActX/wav
+ Actx*baloonFont: -*-fixed-medium-r-normal--14-*
+ 
+-!Actx*sndDir: /usr/local/lib/actX/wav
 +!Actx*sndDir: %%ACTXDIR%%/wav
  
  !Actx*sndCom: /usr/local/bin/wavplay -q %s
