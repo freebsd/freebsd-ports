@@ -1,16 +1,13 @@
-From libfiredns(3):
-
-"libfiredns is a library for handling asynchronous DNS
+libfiredns is a library for handling asynchronous DNS
 requests.  It provides a very simple interface for sending
 requests and parsing reponses, as well as low-timeout
 blocking functions.  It can also be compiled to override
 the BIND/LIBC functions with its alternative implementations.
 libfiredns functions have much lower timeouts than the stock
 functions and tend to be faster because they send requests
-to all configured system nameservers at the same time."
+to all configured system nameservers at the same time.
 
-WWW: http://ares.penguinhosting.net/~ian/
+WWW:	http://ares.penguinhosting.net/~ian/
 
 - Dean
-
 dean@odyssey.apana.org.au
