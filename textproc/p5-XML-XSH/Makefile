@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	XML/:cpan xsh/:sourceforge
 PKGNAMEPREFIX=	p5-
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:cpan,sourceforge
 
-MAINTAINER=	lev@FreeBSD.org
+MAINTAINER=	mat@FreeBSD.org
 COMMENT=	This is xsh - an XML Editing Shell
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
