@@ -5450,6 +5450,7 @@ manipulate_data	ports/security/manipulate_data
 mantis		ports/databases/mantis
 manued.el	ports/textproc/manued.el
 mapagi		ports/print/mapagi
+mapchan		ports/sysutils/mapchan
 mapedit		ports/www/mapedit
 maplay		ports/audio/maplay
 mapserver	ports/graphics/mapserver
