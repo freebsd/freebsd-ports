@@ -17,6 +17,7 @@ BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
 LIB_DEPENDS=	mysqlclient.6:${PORTSDIR}/databases/mysql322-client
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python
 
+FETCH_BEFORE_ARGS=	-b
 ALL_TARGET=	_mysqlmodule.o
 
 pre-configure:
