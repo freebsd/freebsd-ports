@@ -1,7 +1,7 @@
 This is a package containing only the executables for XEmacs with
 Mule(version %%XEMACS_VER%%), the next generation of Emacs.
 
-You need to install a package, xemacs-common-%%XEMACS_VER%%, containing emacs
+You need to install a package, xemacs-common-%%XEMACS_REL%%, containing emacs
 lisp files, info pages, and so on (except executables) for
 XEmacs with Mule(version %%XEMACS_VER%%).
 
@@ -9,17 +9,17 @@ This package is built with Japanese support by using SKK, SJ3, Canna,
 Wnn4 or Wnn6 as an external input engine. Each input method would be
 supported in following ports respectively:
 
-	japanese/xemacs-canna ........ SKK, SJ3, Canna
-	japanese/xemacs-canna+wnn4 ... SKK, SJ3, Canna, Wnn4
-	japanese/xemacs-canna+wnn6 ... SKK, SJ3, Canna, Wnn6
-	japanese/xemacs-wnn4 ......... SKK, SJ3, Wnn4
-	japanese/xemacs-wnn6 ......... SKK, SJ3, Wnn6
+	japanese/xemacs%%XEMACS_MAJOR_VER%%-canna ........ SKK, SJ3, Canna
+	japanese/xemacs%%XEMACS_MAJOR_VER%%-canna+wnn4 ... SKK, SJ3, Canna, Wnn4
+	japanese/xemacs%%XEMACS_MAJOR_VER%%-canna+wnn6 ... SKK, SJ3, Canna, Wnn6
+	japanese/xemacs%%XEMACS_MAJOR_VER%%-wnn4 ......... SKK, SJ3, Wnn4
+	japanese/xemacs%%XEMACS_MAJOR_VER%%-wnn6 ......... SKK, SJ3, Wnn6
 
 If you use with SJ3 or SKK, you should be installed sj3serv or skkserv
 in advance. SKK is supported as already builtin. Also it will
 support several input methods under leim. 
 
-This package and the package xemacs-common-%%XEMACS_VER%%, might clobber any
+This package and the package xemacs-common-%%XEMACS_REL%%, might clobber any
 existing emacs installation.  In particular, the executables and man
 pages of etags/ctags are installed, and the info pages that come with
 the original emacs will be overwritten too.

@@ -1,57 +1,45 @@
-# New ports collection makefile for:	XEmacs
-# Version required:	21.1.8
-# Date created:		5 Dec 1997
-# Whom:			Kazuyuki IENAGA <ienaga@jsys.co.jp>
+# New ports collection makefile for:	XEmacs with Mule
+# Version required:	21.1
+# Date created:		8 Dec 1999
+# Whom:			KIRIYAMA Kazuhiko<kiri@pis.toba-cmt.ac.jp>
 #
 # $FreeBSD$
 #
 
-# This is the MASTER port of XEmacs Mule slave ports(japanese/xemacs-*)
+# This is the MASTER port of XEmacs Mule slave ports(japanese/xemacs${XEMACS_MAJOR_VER}-*)
 # and provides `Architecture Dependent' parts of xemacs binary. 
 #
 # Caracteristic variables of XEmacs Mule ports family:
+#	MULE_PORT         : Mule port if defined(means COMMN or SLAVE)
 #	MULE_COMMON       : COMMON port if defined
-#	PKGLDIR           : Local PKGDIR of MASTER port(editors/xemacs-mule/pkg)
+#	MULE_SLAVE        : SLAVE port if defined
+#	PKGLDIR           : Local PKGDIR of editors/xemacs${XEMACS_MAJOR_VER}-mule
+#                           (that is editors/xemacs${XEMACS_MAJOR_VER}-mule/pkg)
 #	SITE_INCLUDES     : site include path(configure arguments)
 #	SITE_LIBRARIES    : site libraries path(configure arguments)
 #	WITH_INPUT_METHOD : input methods(configure arguments)
 #	LIB_INPUT_METHOD  : LIB_DEPENDS list of Input Methods
 #	BUILD_INPUT_METHOD: BUILD_DEPENDS list of Input Methods
 
-DISTNAME=	xemacs-${XEMACS_VER}
-PKGNAME=	${LANGPREFIX}xemacs${PKGNAMEEXT}-${XEMACS_VER}
-CATEGORIES?=	editors
-MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/xemacs/${FTP_DIR}/ \
-		ftp://ftp.xemacs.org/pub/xemacs/${FTP_DIR}/ \
-		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/${FTP_DIR}/ \
-		ftp://ftp.th-darmstadt.de/pub/editors/xemacs/${FTP_DIR}/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-elc${EXTRACT_SUFX} \
-		${DISTNAME}-info${EXTRACT_SUFX}
-DIST_SUBDIR=	xemacs
+.if !defined(MULE_SLAVE) && !defined(MULE_COMMON)
+MULE_SLAVE=	yes
+.endif
 
 MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
 
-.if !defined(MULE_COMMON)
+.if defined(MULE_SLAVE)
 BUILD_DEPENDS=	${PREFIX}/lib/xemacs/xemacs-packages/pkginfo/MANIFEST.xemacs-devel:${PORTSDIR}/editors/xemacs-packages \
 		${PREFIX}/lib/xemacs/mule-packages/pkginfo/MANIFEST.skk:${PORTSDIR}/editors/xemacs-mule-packages \
 		${BUILD_INPUT_METHOD}
-RUN_DEPENDS=	${PREFIX}/lib/${XEMACS_DIR}/lisp/x-win-xfree86.elc:${PORTSDIR}/editors/xemacs-mule-common \
-		${PREFIX}/lib/xemacs/xemacs-packages/pkginfo/MANIFEST.xemacs-devel:${PORTSDIR}/editors/xemacs-packages \
+RUN_DEPENDS=	${PREFIX}/lib/xemacs-${XEMACS_VER}/lisp/x-win-xfree86.elc:${PORTSDIR}/editors/xemacs${XEMACS_MAJOR_VER}-mule-common \
 		${PREFIX}/lib/xemacs/mule-packages/pkginfo/MANIFEST.skk:${PORTSDIR}/editors/xemacs-mule-packages
-.endif
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.3:${PORTSDIR}/graphics/png \
-		compface.1:${PORTSDIR}/mail/faces \
-		tiff.4:${PORTSDIR}/graphics/tiff \
+LIB_DEPENDS=	compface.1:${PORTSDIR}/mail/faces \
 		${LIB_INPUT_METHOD}
+.endif
 
-WRKSRC=		${WRKDIR}/xemacs-${XEMACS_VER}
-USE_AUTOCONF=	yes
-USE_XLIB=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=${MACHINE_ARCH}--freebsd
-CONFIGURE_ARGS?=--with-x11 \
+CONFIGURE_ARGS?=${XEMACS_ARCH} \
+		--prefix=${PREFIX} \
+		--with-x11 \
 		--with-xim=no \
 		--with-mule \
 		--x-includes=${X11BASE}/include \
@@ -75,56 +63,86 @@ CONFIGURE_ARGS?=--with-x11 \
 		--lockdir=/var/run/emacs/lock \
 		${WITH_INPUT_METHOD}
 MAKE_ENV=	LANG=C
-MAKE_ARGS=	prefix=${PREFIX}
-PATCHDIR=	${.CURDIR}/../../editors/xemacs-mule/patches
-FILESDIR=	${.CURDIR}/../../editors/xemacs-mule/files
 INSTALL_COOKIE=	${WRKDIR}/.install_done-${PKGNAME}
 PACKAGE_COOKIE=	${WRKDIR}/.package_done-${PKGNAME}
 STRIP=
 INSTALL_TARGET?=install-arch-dep
+FILESDIR=	${.CURDIR}/../../editors/xemacs${XEMACS_MAJOR_VER}/files
 PLIST?=		${PKGLDIR}/PLIST
-PLIST_SUB?=	XEMACS_DIR=${XEMACS_DIR} ARCH_SUBDIR=${ARCH_SUBDIR} EMACS_CMD=${EMACS_CMD}
 
-XEMACS_MAJVER=		21.1
-XEMACS_VER=		21.1.8
-EMACS_CMD=		xemacs-${XEMACS_VER}
-XEMACS_DIR=		xemacs-${XEMACS_VER}
-FTP_DIR=		xemacs-${XEMACS_MAJVER}
-ARCH_SUBDIR=		${MACHINE_ARCH}--freebsd
+.include	<bsd.port.pre.mk>
+
+XEMACS_MAJOR_VER?=	${.CURDIR:S!^${PORTSDIR}/editors/xemacs!!:S!-mule$!!}
+MULE_PORT=		yes
 PKGNAMEEXT?=		-mule
-DESCR_TMPL?=		${.CURDIR}/../xemacs-mule/files/DESCR.tmpl
-.if !defined(MULE_COMMON)
-PKGLDIR=		${.CURDIR}/../../editors/xemacs-mule/pkg
+DESCR_TMPL?=		${.CURDIR}/../xemacs${XEMACS_MAJOR_VER}-mule/files/DESCR.tmpl
+COMMENT_TEXT?=		XEmacs(version ${XEMACS_MAJOR_VER}) text editor with mule(Only the executables)
+.if defined(MULE_SLAVE)
+BINNAMEEXT=		-mule
+PKGLDIR=		${.CURDIR}/../../editors/xemacs${XEMACS_MAJOR_VER}-mule/pkg
 SITE_INCLUDES+=		${PREFIX}/include
 SITE_LIBRARIES+=	${PREFIX}/lib
 WITH_INPUT_METHOD?=	--with-canna=no --with-wnn=no --with-wnn6=no
 .endif
 
-.if !defined(MULE_COMMON)
+.if defined(MULE_SLAVE)
 pre-build:
 	@find ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
 	@${RM} -f ${WRKSRC}/lib-src/DOC* ${WRKSRC}/src/xemacs
 
-# for xemacs-mule-common in defining ${WRKDIRPREFIX}
-.if !exists(${WRKDIRPREFIX}${.CURDIR}/../../editors/xemacs-mule-common)
+# for xemacs${XEMACS_MAJOR_VER}-mule-common in defining ${WRKDIRPREFIX}
+.if !exists(${WRKDIRPREFIX}${.CURDIR}/../../editors/xemacs${XEMACS_MAJOR_VER}-mule-common)
 post-build:
-	@${MKDIR} ${WRKDIRPREFIX}${.CURDIR}/../../editors/xemacs-mule-common
+	@${MKDIR} ${WRKDIRPREFIX}${.CURDIR}/../../editors/xemacs${XEMACS_MAJOR_VER}-mule-common
 .endif
 
 post-install::
-.for file in b2m ctags etags gnuclient xemacs-${XEMACS_VER}
-	@strip ${PREFIX}/bin/${file}
-.endfor
+	@${LN} -sf ja ${PREFIX}/lib/xemacs/mule-packages/etc/app-defaults/ja_JP.EUC
 	@${TOUCH} ${TOUCH_FLAGS} ${INSTALL_COOKIE}
 .endif
 
 post-package:
 	@${TOUCH} ${TOUCH_FLAGS} ${PACKAGE_COOKIE}
 
-# for make DESCR (only maintainer use)
-arrange::
+# for make DESCR and COMMENT (only maintainer use)
+pre-arrange::
 	@${MKDIR} ${PKGDIR}
+	@${ECHO} "${COMMENT_TEXT}" > ${COMMENT}
+.if (${PKGNAMEEXT} == "-canna") || (${PKGNAMEEXT} == "-mule") || (${PKGNAMEEXT} == "-mule-common")
 	@${SED} -e "s/%%XEMACS_VER%%/${XEMACS_VER}/g" \
+		-e "s/%%XEMACS_REL%%/${XEMACS_REL}/g" \
+		-e "s/%%XEMACS_MAJOR_VER%%/${XEMACS_MAJOR_VER}/g" \
 		${DESCR_TMPL} > ${DESCR}
+.endif
+	${CHOWN} kiri:staff ${COMMENT} ${DESCR}
 
-.include <bsd.port.mk>
+# for make PLIST (only maintainer use)
+arrange::
+.if (${PKGNAMEEXT} == "-mule")||(${PKGNAMEEXT} == "-mule-common")
+	${RM} -f ${PLIST}
+.if (${PKGNAMEEXT} == "-mule")
+	${MAKE} DIRRM2RMDIRS="lib/xemacs/mule-packages/etc lib/xemacs/mule-packages lib/xemacs/mule-packages/etc/app-defaults" \
+		DIRRMDEPTH=2 plist
+.endif
+.if (${PKGNAMEEXT} == "-mule-common")
+	${MAKE} DIRRM2RMDIRS="lib/xemacs-${XEMACS_VER} etc/rc.d" DIRRMDEPTH=1 plist
+.for dirp in site mule xemacs
+.for dir in etc info man pkginfo
+	${ECHO} "@exec mkdir -p %D/lib/xemacs/${dirp}-packages/${dir}" >> ${PLIST}
+	${ECHO} "@unexec rmdir %D/lib/xemacs/${dirp}-packages/${dir} 2>/dev/null || true" >> ${PLIST}
+.endfor
+	${ECHO} "@unexec rmdir %D/lib/xemacs/${dirp}-packages 2>/dev/null || true" >> ${PLIST}
+.endfor
+	${ECHO} "@exec mkdir -p /var/run/emacs/lock ; chmod 1777 /var/run/emacs/lock" >> ${PLIST}
+.endif
+	${CAT} ${WRKPLIST} >> ${PLIST}
+	${CHOWN} kiri:staff ${PLIST}
+.endif
+
+.if (${PKGNAMEEXT} != "-mule-common")
+pre-plist:
+	${MKDIR} ${PREFIX}/lib/xemacs/mule-packages/etc/app-defaults
+.endif
+
+
+.include "${.CURDIR}/../../editors/xemacs${XEMACS_MAJOR_VER}/Makefile"
