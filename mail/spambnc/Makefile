@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	spambnc
-PORTVERSION=	20020705
+PORTVERSION=	20021213
 CATEGORIES=	mail
 MASTER_SITES=	http://www.spambouncer.org/
 DISTFILES=	sb.tar.Z index.shtml
-DIST_SUBDIR=	spambnc
+DIST_SUBDIR=	spambnc-${PORTVERSION}
 EXTRACT_ONLY=	sb.tar.Z
 
 MAINTAINER=	greid@FreeBSD.org
