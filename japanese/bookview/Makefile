@@ -6,20 +6,18 @@
 #
 
 PORTNAME=	bookview
-PORTVERSION=	3.1.1
+PORTVERSION=	3.2
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/net/ndtp/bookview/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/net/ndtp/bookview/
 
 MAINTAINER=	takamune@avrl.mei.co.jp
-COMMENT=	NDTP client using Japanized Tcl/Tk
+COMMENT=	NDTP client written in Tcl/Tk
 
-RUN_DEPENDS=	wish8.0jp:${PORTSDIR}/japanese/tk80
+RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	WISH=${PREFIX}/bin/wish8.0jp \
-		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
-		INSTALL_DATA="${INSTALL_DATA}"
+CONFIGURE_ENV=	WISH=${LOCALBASE}/bin/wish8.4
 
 .include <bsd.port.mk>
