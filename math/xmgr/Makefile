@@ -3,7 +3,7 @@
 # Date created:		So   2 Mär 1997 12:11:43 MET
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.11 1998/09/27 20:18:19 steve Exp $
+# $Id: Makefile,v 1.12 1998/10/28 17:04:20 fenner Exp $
 #
 
 DISTNAME=	xmgr-4.1.1
@@ -14,8 +14,6 @@ MASTER_SITES=	ftp://ftp.uni-bielefeld.de/pub/systems/FreeBSD/lkoeller/ \
 		ftp://wauug.erols.com/pub/X-Windows/xmgr4/src/old/
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
-
-BROKEN_ELF=	build
 
 BUILD_DEPENDS=	${X11BASE}/lib/libhlpclient.a:${PORTSDIR}/x11/libhelp \
 		${LOCALBASE}/lib/libmfhdf.a:${PORTSDIR}/graphics/hdf
@@ -31,5 +29,11 @@ CONFIGURE_ARGS=	-prefix=${X11BASE} \
 
 ALL_TARGET=
 INSTALL_TARGET=	install links
+
+post-patch:
+	mv ${WRKSRC}/configure ${WRKSRC}/configure.input
+	sed "s%__MOTIFLIB__%${MOTIFLIB}%" ${WRKSRC}/configure.input > ${WRKSRC}/configure
+	rm -f ${WRKSRC}/configure.input
+	chmod 755 ${WRKSRC}/configure
 
 .include <bsd.port.mk>

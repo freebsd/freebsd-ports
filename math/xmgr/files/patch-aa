@@ -1,15 +1,49 @@
-*** ../xmgr-4.1.1/configure     Mon Dec  1 02:09:24 1997
---- ./configure Sun Jan 18 17:31:25 1998
+*** configure.orig	Mon Dec  1 02:09:24 1997
+--- configure	Mon Dec  7 19:55:33 1998
 ***************
 *** 626,631 ****
 --- 626,632 ----
-
+  
     case "${host}" in
       i?86-*-linux-*) CONF_FILE="ix86-linux";;
 +     i?86-*-freebsd*) CONF_FILE="freebsd";;
       *-*-linux-*) CONF_FILE="linux";;
       i?86-*-sco-*) CONF_FILE="ix86-sco";;
       alpha-dec-osf4.*) CONF_FILE="alpha-osf4";;
+***************
+*** 4489,4495 ****
+    echo $ac_n "(cached) $ac_c" 1>&6
+  else
+    ac_save_LIBS="$LIBS"
+! LIBS="-lXm $X_PRE_LIBS $X_EXTRA_LIBS $X_LIBS -lXt -lXext -lX11 $LIBS"
+  cat > conftest.$ac_ext <<EOF
+  #line 4495 "configure"
+  #include "confdefs.h"
+--- 4490,4496 ----
+    echo $ac_n "(cached) $ac_c" 1>&6
+  else
+    ac_save_LIBS="$LIBS"
+! LIBS="__MOTIFLIB__ $X_PRE_LIBS $X_EXTRA_LIBS $X_LIBS -lXt -lXext -lX11 $LIBS"
+  cat > conftest.$ac_ext <<EOF
+  #line 4495 "configure"
+  #include "confdefs.h"
+***************
+*** 4524,4530 ****
+  EOF
+  
+      ACEGR=xmgr
+!     GUI_LIBS="-lXm $X_PRE_LIBS $X_EXTRA_LIBS $X_LIBS -lXt -lXext -lX11"
+      LIBS="$GUI_LIBS $LIBS"
+      CFLAGS="$CFLAGS $X_CFLAGS"
+      echo $ac_n "checking for main in -lXpm""... $ac_c" 1>&6
+--- 4525,4531 ----
+  EOF
+  
+      ACEGR=xmgr
+!     GUI_LIBS="__MOTIFLIB__ $X_PRE_LIBS $X_EXTRA_LIBS $X_LIBS -lXt -lXext -lX11"
+      LIBS="$GUI_LIBS $LIBS"
+      CFLAGS="$CFLAGS $X_CFLAGS"
+      echo $ac_n "checking for main in -lXpm""... $ac_c" 1>&6
 ***************
 *** 4857,4863 ****
     echo $ac_n "(cached) $ac_c" 1>&6
@@ -19,7 +53,7 @@
   cat > conftest.$ac_ext <<EOF
   #line 4863 "configure"
   #include "confdefs.h"
---- 4857,4863 ----
+--- 4858,4864 ----
     echo $ac_n "(cached) $ac_c" 1>&6
   else
     ac_save_LIBS="$LIBS"
@@ -35,7 +69,7 @@
 !   NETCDF_LIBS="$NETCDF_LIBS -ldf"; cat >> confdefs.h <<\EOF
   #define HAVE_MFHDF 1
   EOF
-
+  
 --- 4882,4888 ----
   fi
   if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
@@ -43,3 +77,11 @@
 !   NETCDF_LIBS="$NETCDF_LIBS -lmfhdf -ldf -lz"; cat >> confdefs.h <<\EOF
   #define HAVE_MFHDF 1
   EOF
+  
+***************
+*** 5405,5408 ****
+  chmod +x $CONFIG_STATUS
+  rm -fr confdefs* $ac_clean_files
+  test "$no_create" = yes || ${CONFIG_SHELL-/bin/sh} $CONFIG_STATUS || exit 1
+- 
+--- 5406,5408 ----
