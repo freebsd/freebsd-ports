@@ -1,8 +1,6 @@
 @comment $FreeBSD$
 bin/rsync
+@unexec if cmp -s %D/etc/rsyncd.conf.sample %D/etc/rsyncd.conf; then rm -f %D/etc/rsyncd.conf; fi
 etc/rsyncd.conf.sample
-etc/rc.d/rsyncd.sh.sample
-%%PORTDOCS%%share/doc/rsync/README
-%%PORTDOCS%%share/doc/rsync/COPYING
-%%PORTDOCS%%share/doc/rsync/tech_report.tex
-%%PORTDOCS%%@dirrm share/doc/rsync
+@exec [ -f %B/rsyncd.conf ] || cp %B/%f %B/rsyncd.conf
+etc/rc.d/rsyncd.sh
