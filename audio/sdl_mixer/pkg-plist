@@ -1,6 +1,4 @@
-bin/playmus
-bin/playwave
 include/SDL11/SDL_mixer.h
+lib/libSDL_mixer.a
 lib/libSDL_mixer.so
 lib/libSDL_mixer.so.2
-lib/libSDL_mixer.a
