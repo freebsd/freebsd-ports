@@ -312,6 +312,7 @@ do-install:
 	${MKDIR} ${PREFIX}/jdk${JDK_VERSION}
 	cd ${JDKIMAGEDIR} && ${FIND} . \
 	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
+	@${ECHO_MSG} "@unexec ${LOCALBASE}/bin/unregistervm ${PREFIX}/jdk${JDK_VERSION}/bin/java" >> ${TMPPLIST}
 	${FIND} -s ${JDKIMAGEDIR} -not -type d | \
 	  ${SED} -ne 's#${JDKIMAGEDIR}#jdk${JDK_VERSION}#p' >> ${TMPPLIST}
 .if defined(WITH_DEBUG)
@@ -329,7 +330,6 @@ do-install:
 	@${FIND} -s -d ${PREFIX}/jdk${JDK_VERSION} -type d | \
 	  ${SED} -ne 's#^${PREFIX}/#@dirrm #p' >> ${TMPPLIST}
 	@${ECHO_MSG} "@exec ${LOCALBASE}/bin/registervm ${PREFIX}/jdk${JDK_VERSION}/bin/java # FREEBSD-JDK${JDK_VERSION}" >> ${TMPPLIST}
-	@${ECHO_MSG} "@unexec ${LOCALBASE}/bin/unregistervm ${PREFIX}/jdk${JDK_VERSION}/bin/java" >> ${TMPPLIST}
 
 post-install:
 .if !defined(MINIMAL)
