@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Crypt-OpenSSL-RSA
-PORTVERSION=	0.18
-PORTREVISION=	1
+PORTVERSION=	0.19
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Crypt
@@ -25,13 +24,4 @@ MAN3=		Crypt::OpenSSL::RSA.3
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
-.include <bsd.port.pre.mk>
-
-##
-## this port requires PERL 5.6.x or later
-##
-.if ${PERL_LEVEL} < 500600
-IGNORE=		Port requires perl 5.6.x or later.
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
