@@ -6,25 +6,26 @@
 #
 
 PORTNAME=	skipstone
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.muhri.net/skipstone/
 
 MAINTAINER=	eric@FreeBSD.org
-
-BROKEN=		"Does not work with the current mozilla port"
 
 BUILD_DEPENDS=	${X11BASE}/include/mozilla/gtkembedmoz/gtkmozembed.h:${PORTSDIR}/www/mozilla-headers \
 		${X11BASE}/lib/mozilla-embedded/libgtkembedmoz.so:${PORTSDIR}/www/mozilla-embedded
 RUN_DEPENDS=	${X11BASE}/lib/mozilla-embedded/libgtkembedmoz.so:${PORTSDIR}/www/mozilla-embedded \
 		wget:${PORTSDIR}/ftp/wget
 
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-mozilla-includes=${X11BASE}/include/mozilla --with-mozilla-libs=${X11BASE}/lib/mozilla-embedded
+
 USE_GTK=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 
 post-patch:
-	@${PERL} -pi -e 's#/usr/local#${X11BASE}#' ${WRKSRC}/src/skipstone.h
-	@${PERL} -pi -e 's#X11BASE#${X11BASE}#' ${WRKSRC}/src/skipstone
+	@${REINPLACE_CMD} -e 's|gtk-config|${GTK_CONFIG}|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
