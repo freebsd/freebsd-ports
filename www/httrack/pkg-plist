@@ -12,11 +12,10 @@ include/httrack/htssystem.h
 include/httrack/htswrap.h
 include/httrack/httrack-library.h
 lib/libhttrack.a
-lib/libhttrack.la
 lib/libhttrack.so
 lib/libhttrack.so.1
-share/applications/WebHTTrack.desktop
 share/applications/WebHTTrack-Websites.desktop
+share/applications/WebHTTrack.desktop
 share/doc/httrack/history.txt
 share/doc/httrack/html/abuse.html
 share/doc/httrack/html/addurl.html
@@ -32,8 +31,8 @@ share/doc/httrack/html/history.txt
 share/doc/httrack/html/httrack.man.html
 share/doc/httrack/html/images/bg_rings.gif
 share/doc/httrack/html/images/header_title_4.gif
-share/doc/httrack/html/images/screenshot_01b.jpg
 share/doc/httrack/html/images/screenshot_01.jpg
+share/doc/httrack/html/images/screenshot_01b.jpg
 share/doc/httrack/html/img/addurl1.gif
 share/doc/httrack/html/img/addurl2.gif
 share/doc/httrack/html/img/addurl3.gif
@@ -54,6 +53,7 @@ share/doc/httrack/html/img/snap9.gif
 share/doc/httrack/html/img/snap9_a.gif
 share/doc/httrack/html/img/snap9_b.gif
 share/doc/httrack/html/img/snap9_c.gif
+share/doc/httrack/html/img/snap9_d.gif
 share/doc/httrack/html/img/snap9_d2.gif
 share/doc/httrack/html/img/snap9_d3.gif
 share/doc/httrack/html/img/snap9_d4.gif
@@ -61,12 +61,11 @@ share/doc/httrack/html/img/snap9_d5.gif
 share/doc/httrack/html/img/snap9_d6.gif
 share/doc/httrack/html/img/snap9_d7.gif
 share/doc/httrack/html/img/snap9_d8.gif
-share/doc/httrack/html/img/snap9_d.gif
 share/doc/httrack/html/img/snap9_e.gif
 share/doc/httrack/html/img/snap9_f.gif
+share/doc/httrack/html/img/snap9_g.gif
 share/doc/httrack/html/img/snap9_g2.gif
 share/doc/httrack/html/img/snap9_g3.gif
-share/doc/httrack/html/img/snap9_g.gif
 share/doc/httrack/html/img/snap9_h.gif
 share/doc/httrack/html/img/snap9_i.gif
 share/doc/httrack/html/img/snap9_j.gif
@@ -89,11 +88,11 @@ share/doc/httrack/html/server/images/bg_rings.gif
 share/doc/httrack/html/server/images/fade.gif
 share/doc/httrack/html/server/images/header_title_4.gif
 share/doc/httrack/html/server/index.html
+share/doc/httrack/html/server/option1.html
 share/doc/httrack/html/server/option10.html
 share/doc/httrack/html/server/option11.html
-share/doc/httrack/html/server/option1.html
-share/doc/httrack/html/server/option2b.html
 share/doc/httrack/html/server/option2.html
+share/doc/httrack/html/server/option2b.html
 share/doc/httrack/html/server/option3.html
 share/doc/httrack/html/server/option4.html
 share/doc/httrack/html/server/option5.html
@@ -107,15 +106,16 @@ share/doc/httrack/html/server/step3.html
 share/doc/httrack/html/server/step4.html
 share/doc/httrack/html/shelldoc.html
 share/doc/httrack/html/start.html
+share/doc/httrack/html/step.html
 share/doc/httrack/html/step1.html
 share/doc/httrack/html/step2.html
 share/doc/httrack/html/step3.html
 share/doc/httrack/html/step4.html
 share/doc/httrack/html/step5.html
 share/doc/httrack/html/step9.html
+share/doc/httrack/html/step9_opt1.html
 share/doc/httrack/html/step9_opt10.html
 share/doc/httrack/html/step9_opt11.html
-share/doc/httrack/html/step9_opt1.html
 share/doc/httrack/html/step9_opt2.html
 share/doc/httrack/html/step9_opt3.html
 share/doc/httrack/html/step9_opt4.html
@@ -124,21 +124,18 @@ share/doc/httrack/html/step9_opt6.html
 share/doc/httrack/html/step9_opt7.html
 share/doc/httrack/html/step9_opt8.html
 share/doc/httrack/html/step9_opt9.html
-share/doc/httrack/html/step.html
 share/doc/httrack/httrack-doc.html
 share/httrack/icons/webhttrack.xpm
-share/httrack/lang.def
-share/httrack/lang.indexes
 share/httrack/lang/Castellano.txt
 share/httrack/lang/Cesky.txt
+share/httrack/lang/Chinese-BIG5.txt
+share/httrack/lang/Chinese-Simplified.txt
 share/httrack/lang/Dansk.txt
 share/httrack/lang/Deutsch.txt
 share/httrack/lang/Eesti.txt
 share/httrack/lang/English.txt
 share/httrack/lang/Francais.txt
 share/httrack/lang/Greek.txt
-share/httrack/lang/Chinese-BIG5.txt
-share/httrack/lang/Chinese-Simplified.txt
 share/httrack/lang/Italiano.txt
 share/httrack/lang/Japanese.txt
 share/httrack/lang/Macedonian.txt
@@ -146,8 +143,8 @@ share/httrack/lang/Magyar.txt
 share/httrack/lang/Nederlands.txt
 share/httrack/lang/Norsk.txt
 share/httrack/lang/Polski.txt
-share/httrack/lang/Portugues.txt
 share/httrack/lang/Portugues-Brasil.txt
+share/httrack/lang/Portugues.txt
 share/httrack/lang/Romanian.txt
 share/httrack/lang/Russian.txt
 share/httrack/lang/Slovak.txt
@@ -155,6 +152,8 @@ share/httrack/lang/Slovenian.txt
 share/httrack/lang/Svenska.txt
 share/httrack/lang/Turkish.txt
 share/httrack/lang/Ukrainian.txt
+share/httrack/lang.def
+share/httrack/lang.indexes
 share/httrack/libtest/callbacks-example.c
 share/httrack/libtest/example.c
 share/httrack/libtest/example.dsp
@@ -182,3 +181,5 @@ share/pixmaps/httrack.xpm
 @dirrm share/doc/httrack/html
 @dirrm share/doc/httrack
 @dirrm include/httrack
+@unexec rmdir %D/share/pixmaps 2>/dev/null || true
+@unexec rmdir %D/share/applications 2>/dev/null || true
