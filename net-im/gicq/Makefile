@@ -30,8 +30,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 .if ${HAVE_GNOME:Mgnomelibs}!=""
 USE_GNOME+=	gnomeprefix gnomehack gnomelibs
 PKGNAMESUFFIX=	-gnome
+PLIST_SUB=	DATADIR="share/gnome"
 .else
 CONFIGURE_ARGS+=--without-gnome
+PLIST_SUB=	DATADIR="share"
 .endif
 
 post-patch:
