@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	edwin@mavtju.org
+MAINTAINER=	edwin@mavetju.org
 COMMENT=	Webbased calendar with iCal support
 
 NO_BUILD=	yes
