@@ -1,9 +1,0 @@
-@cwd /usr/local
-etc/gn_mime.types
-libexec/gn
-libexec/sgn
-libexec/waisgn
-bin/mkcache
-gnroot
-@cwd ./gnroot
-@exec ../bin/mkcache -r

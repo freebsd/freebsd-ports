@@ -105,7 +105,6 @@
     SUBDIR += geeklog
     SUBDIR += gforge
     SUBDIR += glibwww
-    SUBDIR += gn
     SUBDIR += gnuinfo
     SUBDIR += gnujsp
     SUBDIR += grail
