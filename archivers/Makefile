@@ -2,6 +2,7 @@
 #
 
     SUBDIR += 9e
+    SUBDIR += alz2zip
     SUBDIR += arc
     SUBDIR += arj
     SUBDIR += bicom
