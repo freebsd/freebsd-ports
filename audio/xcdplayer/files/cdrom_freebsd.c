@@ -33,6 +33,7 @@ static int c;
 
 extern char	*device;
 static char     cdrom[] =       "/dev/rcd0c";
+static char     cdrom1[] =      "/dev/rmcd0c";
 
 cdrom_info	cdi;
 char		info_filename[256];
@@ -95,11 +96,13 @@ cdrom_open() {
 
 	if (device != NULL) {
 		if ((cdrom_fd = open(device, O_RDONLY)) == -1) {
-			perror("open: ");
+			perror(device);
 			return(-1);
 		}
 	} else {
-		if ((cdrom_fd = open(cdrom, O_RDONLY)) == -1) {
+		if (   (cdrom_fd = open(cdrom, O_RDONLY)) == -1
+		    && (cdrom_fd = open(cdrom1, O_RDONLY)) == -1
+		   ) {
 			perror("open: ");
 			return(-1);
 		}
