@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Email-Abstract
-PORTVERSION=	2.0
+PORTVERSION=	2.01
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Email
@@ -30,10 +30,11 @@ MAN3=		Email::Abstract.3 \
 
 .include <bsd.port.pre.mk>
 .if ${PERL_LEVEL} <= 500504
-EXTRA_PATCHES=	${PATCHDIR}/5.005-Makefile.PL \
-		${PATCHDIR}/5.005-lib::Email::Abstract.pm
-
 post-patch:
-	@${RM} ${WRKSRC}/lib/Email/Abstract.pm.orig
+	@${PERL} -pi -e '$$_ = "" if /use 5.006;/;' \
+		     -e '$$_ = "" if /use warnings;/;' \
+		     -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1); $$1/;' \
+		${WRKSRC}/Makefile.PL \
+		${WRKSRC}/lib/Email/Abstract.pm
 .endif
 .include <bsd.port.post.mk>
