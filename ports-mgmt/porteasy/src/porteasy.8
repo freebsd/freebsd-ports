@@ -1,0 +1,221 @@
+.\"-
+.\" Copyright (c) 2000 Dag-Erling Coïdan Smørgrav
+.\" All rights reserved.
+.\"
+.\" Redistribution and use in source and binary forms, with or without
+.\" modification, are permitted provided that the following conditions
+.\" are met:
+.\" 1. Redistributions of source code must retain the above copyright
+.\"    notice, this list of conditions and the following disclaimer
+.\"    in this position and unchanged.
+.\" 2. Redistributions in binary form must reproduce the above copyright
+.\"    notice, this list of conditions and the following disclaimer in the
+.\"    documentation and/or other materials provided with the distribution.
+.\" 3. The name of the author may not be used to endorse or promote products
+.\"    derived from this software without specific prior written permission.
+.\"
+.\" THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+.\" IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+.\" OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+.\" IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+.\" INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+.\" NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+.\" DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+.\" THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+.\" (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+.\" THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+.\"
+.\"	$FreeBSD$
+.\"
+.Dd September 19, 2000
+.Dt PORTLINT 8
+.Sh NAME
+.Nm porteasy
+.Nd fetch and build ports
+.Sh SYNOPSIS
+.Nm porteasy
+.Op Fl abcefhikluVv
+.Op Fl d Ar dir
+.Op Fl D Ar date
+.Op Fl p Ar dir
+.Op Fl r Ar dir
+.Op Fl t Ar tag
+.Op Ar port ...
+.Sh DESCRIPTION
+.Nm
+maintains an updated ports tree, and fetches and builds ports
+automatically, keeping track of dependencies.
+.Pp
+The following options are available:
+.Bl -tag -width Fl
+.It Fl a
+Use the FreeBSD project's anoncvs server as CVS root.
+.It Fl b
+Build the selected ports.
+.It Fl c
+Clean the selected ports.
+.It Fl D Ar date
+Specify a date to use for CVS operations.
+.It Fl d Ar dir
+Specify the package database directory (normally
+.Pa /var/db/pkg ).
+.It Fl e
+Deselect ports that are already installed.
+.It Fl f
+Fetch the selected ports.
+.It Fl h
+Show a summary of options and parameters.
+.It Fl i
+Describe the selected ports.
+.It Fl k
+Build packages for the selected ports.
+.It Fl l
+List the selected ports.
+.It Fl p Ar dir
+Specify the ports directory (normally 
+.Pa /usr/ports ).
+.It Fl r Ar dir
+Specify the CVS root directory.
+.It Fl t Ar tag
+Specify a tag to use for CVS operations.
+.It Fl u
+Update all necessary files using CVS.
+.It Fl V
+Show the
+.Nm
+version number and exit.
+.It Fl v
+Verbose mode: show more information about what is being done.
+.El
+.Sh SEQUENCE
+This section describes the operations performed by
+.Nm
+and the order in which they are performed.
+.Ss Update index
+If the
+.Fl u
+option was specified, the index file is updated from CVS.
+.Ss Select ports
+The ports listed on the command line are looked up in the index, using
+simple heuristics to identify incompletely named ports.
+If a certain match is not found,
+.Nm
+prints a list of possible matches and exits.
+.Pp
+All direct and indirect dependencies of the ports listed on the
+command line are also selected and marked as dependencies.
+.Pp
+If the
+.Fl e
+option was specified,
+.Nm
+then checks to see if any of the required ports are already installed;
+those that are are deselected.
+.Pp
+Selected ports that were specified on the command line are marked as
+explicitly selected, while dependencies are marked as implicitly
+selected.
+.Ss List selected ports
+If the
+.Fl l
+option was specified, all selected ports are listed.
+Explicitly selected ports are indicated with a star.
+.Ss Update ports tree
+If the
+.Fl u
+option and at least one of the
+.Fl b ,
+.Fl f ,
+.Fl i
+or
+.Fl k
+options was specified, all selected ports are updated from CVS.
+.Ss Describe selected ports
+If the
+.Fl i
+option was specified,
+.Nm
+prints a description of each port that was specified on the command
+line.
+If no ports were specified,
+.Nm
+instead prints a list of all installed ports, with unknown ports (i.e.
+ports that are not in the index file, or are out of date) indicated
+with a question mark.
+.Ss Clean the tree
+If the
+.Fl c
+option was specified,
+.Nm
+runs the `clean' target on every selected port.
+If no ports were selected,
+.Nm
+runs the `clean' target on every known port that is present in the
+tree.
+.Ss Fetch ports
+If at least one of the
+.Fl b ,
+.Fl f
+or
+.Fl k
+options was specified,
+.Nm
+runs the `fetch' target on every selected port.
+.Ss Install ports
+If one or both of the
+.Fl f
+or
+.Fl k
+options were specified,
+.Nm
+runs the `install' target on every explicitly selected port.
+Dependencies are handled by the ports system.
+.Ss Fetch ports
+If the
+.Fl k
+option was specified,
+.Nm
+runs the `package' target on every explicitly selected port.
+Dependencies are handled by the ports system.
+.Ss Clean the tree (again)
+If one or both of the
+.Fl f
+or
+.Fl k
+options were specified,
+.Nm
+finally runs the `clean' target on every selected port once it's
+installed and (optionally) the package has been built.
+.Sh NOTES
+There may be a significant difference between what ports are selected
+(and listed if the
+.Fl l
+option is specified) and what ports are actually installed and/or have
+packages built for them, since:
+.Bl -bullet
+.It
+the index file lists all dependencies, including ones that are
+conditional on system configuration or build-time options.
+.It
+implicitly selected ports that are already installed, or somehow pass
+the dependency check (e.g. because an alternate, equivalent port has
+been installed) will be passed over by the ports system, as indeed
+they should.
+.El
+.Sh FILES
+.Nm
+maintains and operates on a ports tree, normally
+.Pa /usr/ports .
+Some information is gathered from the package database, normally
+located in
+.Pa /var/db/pkg .
+.Sh AUTHORS
+.Nm
+was written by
+.An Dag-Erling Smørgrav Aq des@FreeBSD.org .
+Several people contributed their comments and suggestions, most
+notably
+.An Eivind Eklund Aq eivind@FreeBSD.org .
+.Sh BUGS
+.Nm
+does not read your mind.

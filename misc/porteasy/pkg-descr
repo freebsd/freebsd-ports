@@ -1,0 +1,22 @@
+Porteasy lets you install ports and build packages without maintaining
+a full ports tree.  It achieves this by scanning the ports index for
+dependency information, and using CVS to update only the ports you
+requested and their dependencies.
+
+Here are some of the things porteasy does for you:
+
+  - automatically update the necessary files (and only the necessary
+    files) using CVS (including anoncvs support)
+
+  - list all of a port's dependencies, optionally hiding those that
+    are already installed
+
+  - fetch all the necessary distfiles right away, in a single batch,
+    so you don't have to wait for one dependency to build before
+    fetching the next one's distfile.  Dialup users will love this.
+
+  - build and install arbitrary ports.
+
+  - build packages.
+
+				-- des@freebsd.org
