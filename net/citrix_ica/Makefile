@@ -72,23 +72,11 @@ do-install:
 		${ECHO} "-----------------------------------------------------------" ; \
 		${FALSE} ; \
 	fi
-
-	@${ECHO_CMD} -e "1\n${CDIR}\ny\n1\ny${HAVE_KDE}\n3" > ${WRKSRC}/response ;
-	@for dir in ${NSCP}; do \
-		if [ -e $${dir}/plugins/libnullplugin.so ]; then \
-			BIN=`${FILE} ${dir}/plugins/libnullplugin.so | ${AWK} '{print $11}'` ; \
-			case $${BIN} in \
-			\(SYSV\),) \
-				${ECHO_CMD} -e "1\n${CDIR}\ny\n1\ny${HAVE_KDE}\n3" > ${WRKSRC}/response ; \
-			esac \
-		fi \
-	done
-
 	${SED} s%DESTINATION%${CDIR}% < ${FILESDIR}/wfcmgr \
 		> ${WRKSRC}/wfcmgr.x
 	${SED} s%DESTINATION%${CDIR}% < ${FILESDIR}/wfica \
 		> ${WRKSRC}/wfica.x
-	cd ${WRKSRC} && ${LINUXBASE}/bin/sh -c './setupwfc < response'
+	cd ${WRKSRC} && /bin/sh -c './setupwfc'
 	${INSTALL_SCRIPT} ${WRKSRC}/wfcmgr.x ${PREFIX}/bin/wfcmgr
 	${INSTALL_SCRIPT} ${WRKSRC}/wfica.x ${PREFIX}/bin/wfica
 

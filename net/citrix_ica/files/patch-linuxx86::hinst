@@ -1,5 +1,23 @@
 --- linuxx86/hinst.orig	Fri May  7 14:44:44 2004
 +++ linuxx86/hinst	Fri Jun  4 17:44:53 2004
+@@ -75,7 +75,7 @@
+ fi
+ 
+ #  Install in here by default.
+-DefaultInstallDir=/usr/lib/ICAClient
++DefaultInstallDir=/usr/local/ICAClient
+ 
+ #  Default CDROM mount point
+ DefaultCDSourceDir=/cdrom
+@@ -2091,7 +2091,7 @@
+ 
+ 	# rm -f $m_filename $mf_filename $o_filename $of_filename
+ 
+-	/bin/true
++	/usr/bin/true
+ }
+ 
+ ###############################################################################
 @@ -2142,10 +2142,34 @@
  #
  ###############################################################################
