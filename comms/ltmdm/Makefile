@@ -7,7 +7,7 @@
 
 PORTNAME=	ltmdm
 PORTVERSION=	1.4
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	comms
 MASTER_SITES=	http://www.dons.net.au/~darius/ \
 		http://soupnazi.org/FreeBSD/ports/distfiles/
@@ -29,6 +29,8 @@ MAKE_ARGS	= LTMDM_OBJ_VERSION=595
 
 MAKE_ARGS+=	LTMDM_DEV_MAJOR=${LTMDM_DEV_MAJOR}
 MAKE_ARGS+=	LTMDM_OBJ_VERSION=${LTMDM_OBJ_VERSION}
+
+PORTDOCS=	README.TXT README-en.TXT INSTALL.TXT INSTALL-en.TXT
 
 pre-fetch:
 .if !exists(${SRC_BASE}/sys/Makefile)
@@ -53,10 +55,9 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/ltmdm.sh ${PREFIX}/etc/rc.d/
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README.TXT ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/README-en.TXT ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/INSTALL.TXT ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/INSTALL-en.TXT ${DOCSDIR}/
+.for i in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
+.endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
 
