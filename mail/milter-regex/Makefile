@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.benzedrine.cx/
 DISTNAME=	milter-regex-${PORTVERSION}
 
 MAINTAINER=	trevor@FreeBSD.org
-COMMENT=	"Milter plugin to sendmail for regular expression filtering"
+COMMENT=	Milter plugin to sendmail for regular expression filtering
 
 MAN8=		milter-regex.8
 PLIST_FILES=	libexec/milter-regex
