@@ -3,7 +3,7 @@
 # Date created:		6 Apr 1995
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.4 1997/10/12 15:36:45 max Exp $
+# $Id: Makefile,v 1.6 1998/11/21 20:10:55 steve Exp $
 #
 
 DISTNAME=	netscape-3.04
@@ -15,10 +15,10 @@ DISTFILES=	netscape-ko-v301.alpha-dec-osf2.0.tar.gz NLS.tar.gz
 
 MAINTAINER=	junker@jazz.snu.ac.kr
 
-RUN_DEPENDS+=	${PREFIX}/bin/netscape:${PORTSDIR}/www/netscape3 \
-		${X11BASE}/lib/X11/fonts/misc/hgm12.pcf.gz:${PORTSDIR}/korean/hanyangfonts
+RUN_DEPENDS=	${PREFIX}/bin/netscape:${PORTSDIR}/www/netscape3 \
+		${X11BASE}/lib/X11/fonts/local/hgm12.pcf.gz:${PORTSDIR}/korean/hanyangfonts
 
-RESTRICTED=	"Commercial Software"
+DIST_SUBDIR=	netscape3
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
