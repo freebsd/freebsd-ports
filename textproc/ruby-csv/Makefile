@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	csv
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.0
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.jin.gr.jp/~nahi/Ruby/CSV/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -19,15 +19,11 @@ USE_RUBY=	yes
 
 NO_BUILD=	yes
 
-MODULES=	csv.rb
-
 do-install:
-.for f in ${MODULES}
-	${INSTALL_DATA} ${WRKSRC}/lib/${f} ${RUBY_SITELIBDIR}
-.endfor
+	cd ${WRKSRC}; ${RUBY} install.rb
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_DOCDIR}/csv
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${RUBY_DOCDIR}/csv
+	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${RUBY_DOCDIR}/${PORTNAME}
 .endif
 
 .include <bsd.port.mk>
