@@ -49,8 +49,6 @@ bin/tickadj
 %%PORTDOCS%%share/doc/ntp/driver40.htm
 %%PORTDOCS%%share/doc/ntp/driver42.htm
 %%PORTDOCS%%share/doc/ntp/driver43.htm
-%%PORTDOCS%%share/doc/ntp/driver43_1.gif
-%%PORTDOCS%%share/doc/ntp/driver43_2.jpg
 %%PORTDOCS%%share/doc/ntp/driver44.htm
 %%PORTDOCS%%share/doc/ntp/driver4.htm
 %%PORTDOCS%%share/doc/ntp/driver5.htm
@@ -135,6 +133,8 @@ bin/tickadj
 %%PORTDOCS%%share/doc/ntp/pic/bustardfly.gif
 %%PORTDOCS%%share/doc/ntp/pic/c51.jpg
 %%PORTDOCS%%share/doc/ntp/pic/driver29.gif
+%%PORTDOCS%%share/doc/ntp/pic/driver43_1.gif
+%%PORTDOCS%%share/doc/ntp/pic/driver43_2.jpg
 %%PORTDOCS%%share/doc/ntp/pic/fg6021.gif
 %%PORTDOCS%%share/doc/ntp/pic/fg6039.jpg
 %%PORTDOCS%%share/doc/ntp/pic/flatheads.gif
