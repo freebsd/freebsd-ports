@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/DNS.pm:${PORTSDI
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Razor/Client.pm:${PORTSDIR}/mail/razor-agents
+		razor-client:${PORTSDIR}/mail/razor-agents
 
 .if !defined(PERL_VERSION) || ${PERL_VERSION} != "5.8.0"
 RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser
