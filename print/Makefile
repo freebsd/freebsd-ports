@@ -87,6 +87,7 @@
     SUBDIR += tgif2tex
     SUBDIR += tr2latex
     SUBDIR += transfig
+    SUBDIR += trueprint
     SUBDIR += virtualpaper
     SUBDIR += xdvi
     SUBDIR += xdvik
