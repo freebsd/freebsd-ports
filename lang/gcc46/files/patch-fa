@@ -1,6 +1,6 @@
---- gcc/c-common.c.orig	Mon Sep 25 10:04:45 2000
-+++ gcc/c-common.c	Mon Oct  9 02:51:14 2000
-@@ -171,7 +171,7 @@
+--- gcc/c-common.c.orig	Thu Nov 16 22:05:12 2000
++++ gcc/c-common.c	Mon Nov 27 02:25:55 2000
+@@ -193,7 +193,7 @@
  						 int, int, int));
  static void init_attributes		PARAMS ((void));
  static void record_function_format	PARAMS ((tree, tree, enum format_type,
@@ -9,7 +9,7 @@
  static void record_international_format	PARAMS ((tree, tree, int));
  static int default_valid_lang_attribute PARAMS ((tree, tree, tree, tree));
  
-@@ -862,6 +862,7 @@
+@@ -888,6 +888,7 @@
  	    enum format_type format_type;
  	    tree argument;
  	    unsigned int arg_num;
@@ -17,7 +17,7 @@
  
  	    if (TREE_CODE (decl) != FUNCTION_DECL)
  	      {
-@@ -872,7 +873,7 @@
+@@ -898,7 +899,7 @@
  
  	    if (TREE_CODE (format_type_id) != IDENTIFIER_NODE)
  	      {
@@ -26,7 +26,7 @@
  		continue;
  	      }
  	    else
-@@ -880,12 +881,26 @@
+@@ -906,12 +907,26 @@
  		const char *p = IDENTIFIER_POINTER (format_type_id);
  
  		if (!strcmp (p, "printf") || !strcmp (p, "__printf__"))
@@ -52,8 +52,8 @@
 +		  }
  		else
  		  {
- 		    status_warning (status, "`%s' is an unrecognized format function type", p);
-@@ -958,7 +973,8 @@
+ 		    warning ("`%s' is an unrecognized format function type", p);
+@@ -990,7 +1005,8 @@
  
  	    record_function_format (DECL_NAME (decl),
  				    DECL_ASSEMBLER_NAME (decl),
@@ -63,7 +63,7 @@
  	    break;
  	  }
  
-@@ -1441,6 +1457,13 @@
+@@ -1654,6 +1670,13 @@
  
  static const format_char_info print_char_table[] =
  {
@@ -75,9 +75,9 @@
 +#define unextended_print_char_table	(print_char_table + 3)
 +#endif
    /* C89 conversion specifiers.  */
-   { "di",  0, STD_C89, { T89_I,   T99_I,   T89_I,   T89_L,   T99_LL,  TEX_LL,  T99_SST, T99_PD,  T99_IM  }, "-wp0 +'I", "i" },
-   { "oxX", 0, STD_C89, { T89_UI,  T99_UI,  T89_UI,  T89_UL,  T99_ULL, TEX_ULL, T99_ST,  T99_UPD, T99_UIM }, "-wp0#",    "i" },
-@@ -1526,6 +1549,7 @@
+   { "di",  0, STD_C89, { T89_I,   T99_SC,  T89_S,   T89_L,   T99_LL,  TEX_LL,  T99_SST, T99_PD,  T99_IM  }, "-wp0 +'I", "i" },
+   { "oxX", 0, STD_C89, { T89_UI,  T99_UC,  T89_US,  T89_UL,  T99_ULL, TEX_ULL, T99_ST,  T99_UPD, T99_UIM }, "-wp0#",    "i" },
+@@ -1752,6 +1775,7 @@
    enum format_type format_type;	/* type of format (printf, scanf, etc.) */
    int format_num;		/* number of format argument */
    int first_arg_num;		/* number of first arg (zero for varargs) */
@@ -85,7 +85,7 @@
  } function_format_info;
  
  static function_format_info *function_format_list = NULL;
-@@ -1570,42 +1594,42 @@
+@@ -1837,42 +1861,42 @@
      {
        /* Functions from ISO/IEC 9899:1990.  */
        record_function_format (get_identifier ("printf"), NULL_TREE,
@@ -144,7 +144,7 @@
      }
  
    if (flag_hosted && flag_noniso_default_format_attributes)
-@@ -1630,12 +1654,13 @@
+@@ -1895,12 +1919,13 @@
  
  static void
  record_function_format (name, assembler_name, format_type,
@@ -159,7 +159,7 @@
  {
    function_format_info *info;
  
-@@ -1659,6 +1684,7 @@
+@@ -1924,6 +1949,7 @@
    info->format_type = format_type;
    info->format_num = format_num;
    info->first_arg_num = first_arg_num;
@@ -167,17 +167,17 @@
  }
  
  /* Record information for the names of function that modify the format
-@@ -2019,7 +2045,7 @@
- 
-   if (integer_zerop (format_tree))
-     {
+@@ -2415,7 +2441,7 @@
+ 	 specially if info == NULL and add a res->number_null entry for
+ 	 that case, or maybe add a function pointer to be called at
+ 	 the end instead of hardcoding check_format_info_main.  */
 -      status_warning (status, "null format string");
 +      if (!info->null_format_ok) status_warning (status, "null format string");
-       return;
-     }
-   if (TREE_CODE (format_tree) != ADDR_EXPR)
-@@ -2340,6 +2366,54 @@
- 		}
+ 
+       /* Skip to first argument to check, so we can see if this format
+ 	 has any arguments (it shouldn't).  */
+@@ -2611,6 +2637,54 @@
+ 	      main_arg_num = opnum + info->first_arg_num - 1;
  	    }
  	}
 +      if (*format_chars == 'b')
@@ -229,14 +229,14 @@
 +	    }
 +	}
  
-       aflag = 0;
- 
-@@ -2441,7 +2515,7 @@
- 	status_warning (status, "width used with `%c' format", format_char);
-       if (index (fci->flags2, '3') != 0
- 	  || (format_char == 'y' && index (flag_chars, 'E')))
--	status_warning (status, "`%%%c' yields only last 2 digits of year in some locales",
-+	status_warning (status, "`%%%c' yields only last 2 digits of year in some locales on non-BSD systems",
- 		 format_char);
-       else if (index (fci->flags2, '2') != 0)
- 	status_warning (status, "`%%%c' yields only last 2 digits of year", format_char);
+       /* Read any format flags, but do not yet validate them beyond removing
+ 	 duplicates, since in general validation depends on the rest of
+@@ -2984,7 +3058,7 @@
+ 	else if (strchr (fci->flags2, '2') != 0)
+ 	  y2k_level = 2;
+ 	if (y2k_level == 3)
+-	  status_warning (status, "`%%%c' yields only last 2 digits of year in some locales",
++	  status_warning (status, "`%%%c' yields only last 2 digits of year in some locales on non-BSD systems",
+ 			  format_char);
+ 	else if (y2k_level == 2)
+ 	  status_warning (status, "`%%%c' yields only last 2 digits of year", format_char);
