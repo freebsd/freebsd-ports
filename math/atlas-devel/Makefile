@@ -38,12 +38,6 @@ post-patch:
 .if !defined(WITH_OPTIMIZED_FLAGS)
 	@${ECHO_CMD} "You can optimize lapack sub project by setting WITH_OPTIMIZED_FLAGS=yes."
 .endif
-.if ${ARCH} == "i386" && ${OSVERSION} >= 502000
-	@${ECHO_CMD} "NOTE FOR SMP USERS: You also want to activate libkse or libthr by"
-	@${ECHO_CMD} "# cp /usr/lib/libkse.so.1 /usr/lib/libpthread.so.1"
-	@${ECHO_CMD} "# ln -s /usr/lib/libpthread.so.1 /usr/lib/libpthread.so"
-	@${ECHO_CMD} "If not, stop this and re make again"
-.endif
 	@${REINPLACE_CMD} -e 's+%%PTHREAD_CFLAGS%%+ ${PTHREAD_CFLAGS}+' \
 		${WRKSRC}/config.c
 	@${REINPLACE_CMD} -e 's+%%PTHREAD_LIBS%%+ ${PTHREAD_LIBS}+' \
