@@ -4,7 +4,7 @@
  #include <sys/resource.h>
  #include <limits.h>
  #include <fcntl.h>
-+#include <machine/param.h>
++#include <sys/param.h>
  #include <sys/signal.h> 
  #include <stdlib.h>	/* For errno, putenv, etc.	      */
  #include <errno.h>	/* For errno on SunOS systems	      */
