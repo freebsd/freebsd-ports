@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.gusnet.cx:8080/proj/histring/
 
 MAINTAINER=	roam@FreeBSD.org
-COMMENT=	"A tool to highlight strings using the ANSI terminal escape sequences"
+COMMENT=	A tool to highlight strings using the ANSI terminal escape sequences
 
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/histring

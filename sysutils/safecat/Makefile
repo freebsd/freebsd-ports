@@ -13,7 +13,7 @@ MASTER_SITES=	http://budney.homeunix.net:8080/users/budney/linux/software/safeca
 MASTER_SITE_SUBDIR=	utils/file
 
 MAINTAINER=	roam@FreeBSD.org
-COMMENT=	"Safely write data to a directory using D. J. Bernstein's Maildir ideology"
+COMMENT=	Safely write data to a directory using D. J. Bernstein's Maildir ideology
 
 USE_REINPLACE=	yes
 
