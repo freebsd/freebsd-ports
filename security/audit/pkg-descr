@@ -1,0 +1,11 @@
+Audit is a client/server system that allows remote system logs auditing and
+centralizing. It supports standard and modular syslog output formats
+(non-standard logs can be easily supported due to its modular design). The
+server (auditd) runs on audited machines and the client (audit) runs on the
+auditors workstations. Multiple auditors are supported and managed by one or
+more 'chief' auditors. Auditors can be configured in a way that each of them
+can examine specific sets of logs.
+
+WWW: http://www.corest.com/products/corewisdom/CW02.php
+
+- Anders Nordby <anders@FreeBSD.org>
