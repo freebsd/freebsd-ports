@@ -7,7 +7,7 @@
 
 PORTNAME=	orion
 PORTVERSION=	1.5.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	www java
 MASTER_SITES=	http://www.orionserver.com/distributions/ \
 		http://www.atlassian.com/software/orion/downloads/ \
@@ -18,9 +18,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	znerd@FreeBSD.org
 
-BUILD_DEPENDS=	${JAVA_HOME}/bin/javac:${JAVA_PORT}
-RUN_DEPENDS=	${JAVA_HOME}/bin/javac:${JAVA_PORT}
-
+USE_JAVA=	1.2+
 USE_ZIP=	YES
 NO_BUILD=	YES
 
@@ -35,14 +33,6 @@ CONTROL_SCRIPT=	${PREFIX}/bin/${CONTROL_SCRIPT_NAME}
 STARTUP_ORDER=	020
 STARTUP_SCRIPT_NAME=	${PORTNAME}.sh
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/${STARTUP_ORDER}.${STARTUP_SCRIPT_NAME}
-JAVA_HOME?=	${LOCALBASE}/jdk1.3.1
-JAVA_PORT?=	${PORTSDIR}/java/jdk13
-JIKES_LOCATION=	${LOCALBASE}/bin/jikes
-WITH_JIKES?=	YES
-.if ${WITH_JIKES} == "YES" || ${WITH_JIKES} == "yes"
-WITH_JIKES=	"YES"
-RUN_DEPENDS+=	${JIKES_LOCATION}:${PORTSDIR}/java/jikes
-.endif
 USER=		www
 GROUP=		www
 PW?=		/usr/sbin/pw
