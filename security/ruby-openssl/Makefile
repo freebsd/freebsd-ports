@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openssl
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.1
 CATEGORIES=	security ruby
 MASTER_SITES=	http://freesoftware.fsf.org/download/rubypki/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
