@@ -4,6 +4,8 @@ share/misc/Muttrc
 share/misc/mime.types
 share/doc/mutt/manual.txt
 share/doc/mutt/pgp-Notes.txt
+share/doc/mutt/language.txt
+share/doc/mutt/language50.txt
 share/doc/mutt/sample.muttrc
 share/doc/mutt/Mush.rc
 share/doc/mutt/Pine.rc
