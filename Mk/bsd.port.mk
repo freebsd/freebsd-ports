@@ -435,6 +435,14 @@ FreeBSD_MAINTAINER=	asami@FreeBSD.org
 # Start of pre-makefile section.
 .if !defined(AFTERPORTMK)
 
+.if defined(_PREMKINCLUDED)
+.BEGIN:
+	@${ECHO} "${PKGNAME}: You cannot include bsd.port[.pre].mk twice"
+	@${FALSE}
+.endif
+
+_PREMKINCLUDED=	yes
+
 # Get the architecture
 .if !defined(ARCH)
 ARCH!=	/usr/bin/uname -m
@@ -568,6 +576,14 @@ PREFIX?=		${LOCALBASE}
 # Start of post-makefile section.
 .if !defined(BEFOREPORTMK)
 
+.if defined(_POSTMKINCLUDED)
+.BEGIN:
+	@${ECHO} "${PKGNAME}: You cannot include bsd.port[.post].mk twice"
+	@${FALSE}
+.endif
+
+_POSTMKINCLUDED=	yes
+
 WRKDIR?=		${WRKDIRPREFIX}${.CURDIR}/work
 .if defined(NO_WRKSUBDIR)
 WRKSRC?=		${WRKDIR}
@@ -586,7 +602,7 @@ PLIST_SUB+=		PORTOBJFORMAT=${PORTOBJFORMAT}
 .if ${MANCOMPRESSED} != yes && ${MANCOMPRESSED} != no && \
 	${MANCOMPRESSED} != maybe
 .BEGIN:
-	@${ECHO_MSG} "Error: Value of MANCOMPRESSED (is \"${MANCOMPRESSED}\") can only be \"yes\", \"no\" or \"maybe\"".
+	@${ECHO} "${PKGNAME}: Value of MANCOMPRESSED (is \"${MANCOMPRESSED}\") can only be \"yes\", \"no\" or \"maybe\"".
 	@${FALSE}
 .endif
 .endif
@@ -629,7 +645,7 @@ LIBTOOLFILES?=		configure
 .endif
 LIBTOOLFLAGS?=		--disable-ltlibs
 .endif
-.if defined(USE_NEWGCC) && ${OSVERSION} < 400004
+.if defined(USE_NEWGCC) && ${OSVERSION} < 400012
 CC=				gcc295
 CXX=			g++295
 BUILD_DEPENDS+=	gcc295:${PORTSDIR}/lang/egcs
@@ -643,7 +659,7 @@ BUILD_DEPENDS+=		${X11BASE}/lib/libXm.a:${PORTSDIR}/x11-toolkits/Motif-dummy
 .endif
 .endif
 
-PKG_IGNORE_DEPENDS?=		'(XFree86-3\.3\.5|Motif-2\.1\.10)'
+PKG_IGNORE_DEPENDS?=		'(XFree86-3\.3\.6|Motif-2\.1\.10)'
 
 .if ${OSVERSION} >= 300000
 PERL_VERSION=	5.00503
@@ -660,7 +676,7 @@ PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
 # 3.0-current after perl5 import
 .if !exists(/usr/bin/perl${PERL_VERSION}) && defined(USE_PERL5)
 .BEGIN:
-	@${ECHO_MSG} "Error: you don't have the right version of perl in /usr/bin."
+	@${ECHO} "Error: you don't have the right version of perl in /usr/bin."
 	@${FALSE}
 .endif
 PERL5=			/usr/bin/perl${PERL_VERSION}
@@ -1075,18 +1091,18 @@ maintainer:
 
 .if !defined(CATEGORIES)
 .BEGIN:
-	@${ECHO_MSG} "CATEGORIES is mandatory."
+	@${ECHO} "${PKGNAME}: CATEGORIES is mandatory."
 	@${FALSE}
 .else
 VALID_CATEGORIES+=	afterstep archivers astro audio benchmarks biology \
 	cad chinese comms converters databases deskutils devel \
 	editors elisp emulators ftp games german gnome graphics \
-	irc japanese java kde korean lang \
+	ipv6 irc japanese java kde korean lang \
 	mail math mbone misc net news \
 	offix palm perl5 plan9 print python russian \
 	security shells sysutils \
-	tcl76 tcl80 tcl81 tcl82 textproc \
-	tk42 tk80 tk82 tkstep80 \
+	tcl76 tcl80 tcl81 tcl82 tcl83 textproc \
+	tk42 tk80 tk82 tk83 tkstep80 \
 	vietnamese windowmaker www \
 	x11 x11-clocks x11-fm x11-fonts x11-servers x11-toolkits x11-wm
 check-categories:
@@ -1094,7 +1110,7 @@ check-categories:
 	@if ${ECHO} ${VALID_CATEGORIES} | ${GREP} -wq ${cat}; then \
 		${TRUE}; \
 	else \
-		${ECHO_MSG} "Error: category ${cat} not in list of valid categories."; \
+		${ECHO} "${PKGNAME}: category ${cat} not in list of valid categories."; \
 		${FALSE}; \
 	fi
 .endfor
@@ -1165,7 +1181,7 @@ __pmlinks!=	${ECHO} '${MLINKS:S/	/ /}' | ${AWK} \
   }' | ${SED} -e 's \([^/ ][^ ]*\.\(.\)[^. ]*\) $${MAN\2PREFIX}/man/$$$$$$$${__lang}/man\2/\1.gzg' -e 's/ //g' -e 's/MANlPREFIX/MANLPREFIX/g' -e 's/MANnPREFIX/MANNPREFIX/g'
 .if ${__pmlinks:Mbroken} == "broken"
 .BEGIN:
-	@${ECHO_MSG} "Error: Unable to parse MLINKS."
+	@${ECHO} "${PKGNAME}: Unable to parse MLINKS."
 	@${FALSE}
 .endif
 _MLINKS=	${_MLINKS_PREPEND}
@@ -1757,12 +1773,12 @@ _PORT_USE: .USE
 	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} check-categories
 .if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)
 	@if [ -d ${PKG_DBDIR}/${PKGNAME} ]; then \
-		${ECHO_MSG} "===>  ${PKGNAME} is already installed - perhaps an older version?"; \
-		${ECHO_MSG} "      If so, you may wish to \`\`make deinstall'' and install"; \
-		${ECHO_MSG} "      this port again by \`\`make reinstall'' to upgrade it properly."; \
-		${ECHO_MSG} "      If you really wish to overwrite the old port of ${PKGNAME}"; \
-		${ECHO_MSG} "      without deleting it first, set the variable \"FORCE_PKG_REGISTER\""; \
-		${ECHO_MSG} "      in your environment or the \"make install\" command line."; \
+		${ECHO} "===>  ${PKGNAME} is already installed - perhaps an older version?"; \
+		${ECHO} "      If so, you may wish to \`\`make deinstall'' and install"; \
+		${ECHO} "      this port again by \`\`make reinstall'' to upgrade it properly."; \
+		${ECHO} "      If you really wish to overwrite the old port of ${PKGNAME}"; \
+		${ECHO} "      without deleting it first, set the variable \"FORCE_PKG_REGISTER\""; \
+		${ECHO} "      in your environment or the \"make install\" command line."; \
 		exit 1; \
 	fi
 .endif
@@ -1786,8 +1802,8 @@ _PORT_USE: .USE
 .if !defined(NO_MTREE)
 	@if [ `id -u` = 0 ]; then \
 		if [ ! -f ${MTREE_FILE} ]; then \
-			${ECHO_MSG} "Error: mtree file \"${MTREE_FILE}\" is missing."; \
-			${ECHO_MSG} "Copy it from a suitable location (e.g., /usr/src/etc/mtree) and try again."; \
+			${ECHO} "Error: mtree file \"${MTREE_FILE}\" is missing."; \
+			${ECHO} "Copy it from a suitable location (e.g., /usr/src/etc/mtree) and try again."; \
 			exit 1; \
 		else \
 			${MTREE_CMD} ${MTREE_ARGS} ${PREFIX}/ >/dev/null; \
@@ -1945,8 +1961,8 @@ post-${name}:
 .if !target(patch-libtool)
 patch-libtool:
 	@(if ${LIBTOOL} --version | grep -vq "1\.3\.3-freebsd-ports"; then \
-		(echo "Your libtool installation is out of date. Please remove"; \
-		 echo "and reinstall ${PORTSDIR}/devel/libtool."; \
+		(${ECHO} "Your libtool installation is out of date. Please remove"; \
+		 ${ECHO} "and reinstall ${PORTSDIR}/devel/libtool."; \
 		 exit 1); \
 	  fi; \
 	 LIBTOOLDIR=`which ${LIBTOOL} | sed -e 's^/bin/libtool^/share/libtool^'` || ${LOCALBASE}/share/libtool; \
