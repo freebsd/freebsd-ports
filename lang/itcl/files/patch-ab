@@ -1,5 +1,5 @@
 --- tcl7.5/unix/Makefile.in.orig	Fri Jun 28 18:24:04 1996
-+++ tcl7.5/unix/Makefile.in	Sun Aug 18 00:18:39 1996
++++ tcl7.5/unix/Makefile.in	Thu Oct 17 20:29:25 1996
 @@ -44,7 +44,7 @@
  SCRIPT_INSTALL_DIR =	$(INSTALL_ROOT)$(TCL_LIBRARY)
  
@@ -18,7 +18,20 @@
  
  # Directory in which to install manual entry for tclsh:
  MAN1_INSTALL_DIR =	$(MAN_INSTALL_DIR)/man1
-@@ -562,8 +562,6 @@
+@@ -539,12 +539,6 @@
+ 	@echo "Installing ${TCL_UNSHARED_LIB_FILE} (with standalone capability)"
+ 	@$(INSTALL_DATA) ${TCL_UNSHARED_LIB_FILE} $(LIB_INSTALL_DIR)/${TCL_UNSHARED_LIB_FILE}
+ 	@$(RANLIB) $(LIB_INSTALL_DIR)/${TCL_UNSHARED_LIB_FILE}
+-	@if test -f $(LIB_INSTALL_DIR)/libtcl.a -a ! -h $(LIB_INSTALL_DIR)/libtcl.a; then \
+-	    echo "Renaming your old libtcl.a to libtcl.a.old" ; \
+-	    mv $(LIB_INSTALL_DIR)/libtcl.a $(LIB_INSTALL_DIR)/libtcl.a.old ; \
+-	fi
+-	@rm -f $(LIB_INSTALL_DIR)/libtcl.a
+-	@$(LN_S) $(TCL_UNSHARED_LIB_FILE) $(LIB_INSTALL_DIR)/libtcl.a
+ 	@if test "$(TCL_LIB_FILE)" != "${TCL_UNSHARED_LIB_FILE}"; then \
+ 	    echo "Installing $(TCL_LIB_FILE)" ; \
+ 	    $(INSTALL_DATA) $(TCL_LIB_FILE) $(LIB_INSTALL_DIR) ; \
+@@ -562,8 +556,6 @@
  	@$(INSTALL_DATA) $(GENERIC_DIR)/tcl.h $(INCLUDE_INSTALL_DIR)/tcl.h
  	@echo "Installing tclConfig.sh"
  	@$(INSTALL_DATA) tclConfig.sh $(LIB_INSTALL_DIR)/tclConfig.sh
