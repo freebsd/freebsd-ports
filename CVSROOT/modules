@@ -6189,6 +6189,7 @@ pornview	ports/graphics/pornview
 portal		src/sys/miscfs/portal
 portcheckout	ports/devel/portcheckout
 porteasy	ports/misc/porteasy
+portell		ports/misc/portell
 porters-handbook	doc/en_US.ISO8859-1/books/porters-handbook
 portfwd		ports/net/portfwd
 portlint	ports/devel/portlint
