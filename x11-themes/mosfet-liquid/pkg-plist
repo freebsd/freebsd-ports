@@ -1,0 +1,15 @@
+lib/kde2/libkwinliquid.la
+lib/kde2/libkwinliquid.so
+lib/libkcm_transmenu.la
+lib/libkcm_transmenu.so
+lib/liquid.la
+lib/liquid.so
+share/applnk/Settings/LookNFeel/transmenu.desktop
+share/apps/kdisplay/color-schemes/Liquid.kcsrc
+share/apps/kstyle/themes/liquid.themerc
+share/apps/kwin/liquid.desktop
+@dirrm share/apps/kwin/
+@dirrm share/apps/kstyle/themes
+@dirrm share/apps/kdisplay/color-schemes
+@dirrm share/applnk/Settings/LookNFeel
+@dirrm lib/kde2
