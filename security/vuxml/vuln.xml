@@ -33,7 +33,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="03653079-8594-11d9-afa0-003048705d5a">
-    <topic> phpbb - multiple information disclosure vulnerabilities </topic>
+    <topic>phpbb -- multiple information disclosure vulnerabilities</topic>
     <affects>
       <package>
 	<name>phpbb</name>
