@@ -17,11 +17,13 @@ bin/mico-ar
 bin/mico-c++
 %%MICO_SERVICE%%bin/mico-ccm
 %%MICO_SERVICE%%bin/mico-ccmd
+bin/mico-config
 bin/mico-cpp
 bin/mico-ld
 bin/mico-shc++
 bin/mico-shld
 bin/micod
+bin/mkdepend
 %%MICO_SERVICE%%bin/noded
 %%MICO_SERVICE%%bin/nsadmin
 %%MICO_SERVICE%%bin/nsd
@@ -298,33 +300,33 @@ include/mico/valuetype.idl
 include/mico/valuetype_impl.h
 include/mico/version.h
 include/mico/x11.h
-lib/libmico2.3.10.a
-lib/libmico2.3.10.so
-lib/libmico2.3.10.so.1
-lib/libmicoaux2.3.10.a
-lib/libmicoaux2.3.10.so
-lib/libmicoaux2.3.10.so.1
-%%MICO_SERVICE%%lib/libmicoccm2.3.10.a
-%%MICO_SERVICE%%lib/libmicoccm2.3.10.so
-%%MICO_SERVICE%%lib/libmicoccm2.3.10.so.1
-%%MICO_SERVICE%%lib/libmicocoss2.3.10.a
-%%MICO_SERVICE%%lib/libmicocoss2.3.10.so
-%%MICO_SERVICE%%lib/libmicocoss2.3.10.so.1
-%%MICO_GTK%%lib/libmicogtk2.3.10.a
-%%MICO_GTK%%lib/libmicogtk2.3.10.so
-%%MICO_GTK%%lib/libmicogtk2.3.10.so.1
-lib/libmicoir2.3.10.a
-lib/libmicoir2.3.10.so
-lib/libmicoir2.3.10.so.1
-%%MICO_QT%%lib/libmicoqt2.3.10.a
-%%MICO_QT%%lib/libmicoqt2.3.10.so
-%%MICO_QT%%lib/libmicoqt2.3.10.so.1
-%%MICO_TCL%%lib/libmicotcl2.3.10.a
-%%MICO_TCL%%lib/libmicotcl2.3.10.so
-%%MICO_TCL%%lib/libmicotcl2.3.10.so.1
-%%MICO_X11%%lib/libmicox2.3.10.a
-%%MICO_X11%%lib/libmicox2.3.10.so
-%%MICO_X11%%lib/libmicox2.3.10.so.1
+lib/libmico2.3.11.a
+lib/libmico2.3.11.so
+lib/libmico2.3.11.so.1
+lib/libmicoaux2.3.11.a
+lib/libmicoaux2.3.11.so
+lib/libmicoaux2.3.11.so.1
+%%MICO_SERVICE%%lib/libmicoccm2.3.11.a
+%%MICO_SERVICE%%lib/libmicoccm2.3.11.so
+%%MICO_SERVICE%%lib/libmicoccm2.3.11.so.1
+%%MICO_SERVICE%%lib/libmicocoss2.3.11.a
+%%MICO_SERVICE%%lib/libmicocoss2.3.11.so
+%%MICO_SERVICE%%lib/libmicocoss2.3.11.so.1
+%%MICO_GTK%%lib/libmicogtk2.3.11.a
+%%MICO_GTK%%lib/libmicogtk2.3.11.so
+%%MICO_GTK%%lib/libmicogtk2.3.11.so.1
+lib/libmicoir2.3.11.a
+lib/libmicoir2.3.11.so
+lib/libmicoir2.3.11.so.1
+%%MICO_QT%%lib/libmicoqt2.3.11.a
+%%MICO_QT%%lib/libmicoqt2.3.11.so
+%%MICO_QT%%lib/libmicoqt2.3.11.so.1
+%%MICO_TCL%%lib/libmicotcl2.3.11.a
+%%MICO_TCL%%lib/libmicotcl2.3.11.so
+%%MICO_TCL%%lib/libmicotcl2.3.11.so.1
+%%MICO_X11%%lib/libmicox2.3.11.a
+%%MICO_X11%%lib/libmicox2.3.11.so
+%%MICO_X11%%lib/libmicox2.3.11.so.1
 lib/mico-setup.csh
 lib/mico-setup.sh
 %%PORTDOCS%%%%DOCSDIR%%/html/WARNINGS
@@ -416,33 +418,6 @@ lib/mico-setup.sh
 %%PORTDOCS%%%%EXAMPLESDIR%%/bench/bench_impl.h
 %%PORTDOCS%%%%EXAMPLESDIR%%/bench/client.cc
 %%PORTDOCS%%%%EXAMPLESDIR%%/bench/server.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/boa/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/boa/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account/account.idl
-%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account/main.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account2/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account2/account
-%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account2/account.idl
-%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account2/client.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account2/server.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account3/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account3/account
-%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account3/account.idl
-%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account3/client.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account3/server.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account4/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account4/account
-%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account4/account.idl
-%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account4/client.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/boa/account4/server.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/boa/activate/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/boa/activate/client.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/boa/activate/hello-permethod
-%%PORTDOCS%%%%EXAMPLESDIR%%/boa/activate/hello-shared
-%%PORTDOCS%%%%EXAMPLESDIR%%/boa/activate/hello-unshared
-%%PORTDOCS%%%%EXAMPLESDIR%%/boa/activate/hello.idl
-%%PORTDOCS%%%%EXAMPLESDIR%%/boa/activate/server.cc
 %%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/Makefile
 %%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/events/Makefile
 %%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/ccm/events/README
@@ -1256,12 +1231,6 @@ lib/mico-setup.sh
 %%PORTDOCS%%%%MICO_SERVICE%%@dirrm %%EXAMPLESDIR%%/ccm/hello
 %%PORTDOCS%%%%MICO_SERVICE%%@dirrm %%EXAMPLESDIR%%/ccm/events
 %%PORTDOCS%%%%MICO_SERVICE%%@dirrm %%EXAMPLESDIR%%/ccm
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/boa/activate
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/boa/account4
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/boa/account3
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/boa/account2
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/boa/account
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/boa
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/bench
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html

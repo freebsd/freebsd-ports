@@ -1,0 +1,50 @@
+--- configure.in.orig	Sat Oct 11 02:30:00 2003
++++ configure.in	Sat Oct 11 02:34:43 2003
+@@ -594,7 +594,7 @@
+ # System dependencies.
+ #
+ 
+-CONF_OPT_FLAGS=-O2
++CONF_OPT_FLAGS="-O2"
+ CONF_DEBUG_FLAGS=-g
+ CONF_LIBNSL=yes
+ CONF_EXCEPT_FLAGS=
+@@ -619,7 +619,7 @@
+   CFLAGS="-Wall $CFLAGS"
+ 
+   if test X"$use_speed_tune" = Xyes; then
+-    CONF_OPT_FLAGS=-O2
++    CONF_OPT_FLAGS="-O2"
+   fi
+ 
+   CONF_SHARED_CC="$CXX -shared"
+@@ -677,7 +677,7 @@
+     CONF_SOEXT=sl
+     CONF_OBJ_SIZE_LIMIT=yes
+     ;;
+-  *freebsd4*)
++  *freebsd*)
+     # must not use .so.1.0 here
+     if test X"$use_threads" = Xyes; then
+       CXXFLAGS="$CXXFLAGS -D_THREAD_SAFE"
+@@ -1017,7 +1017,8 @@
+   if test X"$TCL_VERSION" != X; then
+     dnl # remove quotes if any
+     TCL_VERSION=`echo $TCL_VERSION | tr -d \"`
+-    TCL_LIBS=-ltcl$TCL_VERSION
++    TCL_LIBS="-ltcl$TCL_VERSION -L/usr/local/lib"
++    TCL_LIBS=`echo $TCL_LIBS | tr -d .`
+     HAVE_TCL=yes
+     AC_MSG_RESULT($TCL_VERSION)
+   else
+@@ -1049,8 +1050,8 @@
+ AC_CHECK_LIB(socket, open)
+ AC_CHECK_LIB(bsd, open)
+ 
+-AC_CHECK_LIB(elf, open)
+-AC_CHECK_LIB(dl, open)
++#AC_CHECK_LIB(elf, open)
++#AC_CHECK_LIB(dl, open)
+ AC_CHECK_LIB(dld, open)
+ AC_CHECK_LIB(ld, open)
+ 

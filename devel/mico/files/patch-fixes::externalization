@@ -103,17 +103,6 @@
  // Externalize Root Node
      CosObjectIdentity::ObjectIdentifier starting_node_id = starting_node->constant_random_id();
  // End
---- coss/externalization/Externalization_impl.cc.orig	Fri Jul  4 15:28:31 2003
-+++ coss/externalization/Externalization_impl.cc	Fri Jul  4 15:28:51 2003
-@@ -37,6 +37,8 @@
- #include <coss/CosStream_impl.h>
- #include <coss/RegisterHelper.h>
- 
-+using std::string;
-+
- #ifndef _WIN32
- Stream_impl::Stream_impl(const char* filename = NULL)
-     : POA_CosExternalization::Stream(),
 --- coss/externalization/extreferenced.cc.orig	Fri Jul  4 17:57:42 2003
 +++ coss/externalization/extreferenced.cc	Fri Jul  4 17:58:50 2003
 @@ -34,8 +34,8 @@
@@ -340,3 +329,24 @@
  {
  //  Node read its non-object data using the primitive StreamIO::read_...(data) function
      random_id = sio -> read_unsigned_long();
+--- coss/externalization/Externalization_impl.cc.orig	Mon Oct 13 13:49:22 2003
++++ coss/externalization/Externalization_impl.cc	Tue Oct 14 04:45:47 2003
+@@ -22,6 +22,9 @@
+  *                 sedov@postman.simcb.ru
+  */
+ 
++#include <string>
++using std::string;
++
+ #ifndef _WIN32
+     #include <stream.h>
+ #endif
+@@ -37,7 +40,7 @@
+ #include <coss/CosStream_impl.h>
+ #include <coss/RegisterHelper.h>
+ 
+-Stream_impl::Stream_impl(const char* filename = NULL)
++Stream_impl::Stream_impl(const char* filename)
+     : POA_CosExternalization::Stream(),
+       POA_CosLifeCycle::LifeCycleObject()
+ {

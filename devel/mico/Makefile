@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mico
-PORTVERSION=	2.3.10
-PORTREVISION=	3
+PORTVERSION=	2.3.11
 CATEGORIES=	devel
 MASTER_SITES=	http://www.mico.org/:src \
 		http://www.ciam.ru/~sem/FreeBSD/:docs
@@ -15,15 +14,16 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:src \
 		doc-html.tar.gz:docs
 
 MAINTAINER=	sem@ciam.ru
-COMMENT=	Fully compliant implementation of CORBA2 with some CORBA3 features
+COMMENT=	Fully compliant implementation of CORBA2.4 with some CORBA3 features
 
 WRKSRC=			${WRKDIR}/${PORTNAME}
 INSTALLS_SHLIB=		yes
 GNU_CONFIGURE=		yes
 USE_REINPLACE=		yes
 USE_GMAKE=		yes
+USE_AUTOCONF_VER=	253
 .if !defined(WITH_SYSTEM_GCC)
-USE_GCC=		3.2
+USE_GCC=		3.3
 .endif
 
 CONFIGURE_ARGS=		--enable-cd --disable-mini-stl --enable-threads
@@ -100,8 +100,8 @@ post-extract:
 	@${TAR} xzf ${DISTDIR}/doc-html.tar.gz -C ${WRKDIR}
 
 post-patch:
-	@${REINPLACE_CMD} -e "s#-O2#${CFLAGS}#;s#\"-pthread#\"${PTHREAD_LIBS}#" ${WRKSRC}/configure
-.if ${OSVERSION} < 500035 && !defined(WITH_SYSTEM_GCC)
+	@${REINPLACE_CMD} -e "s#\"-O2\"#\"${CFLAGS}\"#;s#\"-pthread#\"${PTHREAD_LIBS}#" ${WRKSRC}/configure.in
+.if ${OSVERSION} < 500035
 	@${LN} -s /usr/include/g++/FlexLexer.h ${WRKSRC}/include
 .endif
 
