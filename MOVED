@@ -391,7 +391,6 @@ www/xswallow||2003-07-12|port is obsolete
 net/gnut||2003-07-12|security vulnerability, and no active development
 www/mod_log_mysql|www/mod_log_sql|2003-07-12|renamed by author in new version
 x11/gnomecore||2003-07-15|removed as part of GNOME 1.4 desktop phase out
-x11/gdm||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 x11/gnomeapplets||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 x11/xalf||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 x11/linux-xalf||2003-07-15|removed as part of GNOME 1.4 desktop phase out
@@ -1379,3 +1378,4 @@ graphics/gthumb2|graphics/gthumb|2005-01-23|moved to non-versioned directory
 devel/bugbuddy2|devel/bugbuddy|2005-01-24|moved to non-versioned directory
 x11-toolkits/eel2|x11-toolkits/eel|2005-01-25|moved to non-versioned directory
 graphics/eog2|graphics/eog|2005-01-25|moved to non-versioned directory
+x11/gdm2|x11/gdm|2005-01-25|moved to non-versioned directory

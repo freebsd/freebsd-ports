@@ -9,7 +9,7 @@ trap "rm -f ${tmp_pkg_info}" 0
 pkg_info > ${tmp_pkg_info}
 
 if [ "$2" = "PRE-INSTALL" ]; then
-     GNOME_ONE_DESKTOP="gnomecore gnomeapplets gnomemedia gnomeutils gtop libgtop sawfish nautilus gedit xalf gnomegames gdm ggv gnomeaudio"
+     GNOME_ONE_DESKTOP="gnomecore gnomeapplets gnomemedia gnomeutils gtop libgtop sawfish nautilus gedit xalf gnomegames ggv gnomeaudio"
      for package in ${GNOME_ONE_DESKTOP}; do
 	 if grep "^${package}-[0-9]" ${tmp_pkg_info} >/dev/null 2>&1; then
 	     echo "${package} was detected on the system.  This package is part of the GNOME 1.x"
