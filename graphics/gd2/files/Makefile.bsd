@@ -1,6 +1,7 @@
 PROGS!=	make -V BIN_PROGRAMS -f ${WRKSRC}/Makefile
 TESTS!=	make -V TEST_PROGRAMS -f ${WRKSRC}/Makefile
 OBJS!=	make -V LIBOBJS -f ${WRKSRC}/Makefile
+MAKEDIR=/usr/share/mk
 SRCS=	${OBJS:.o=.c}
 LIB=gd
 SHLIB_MAJOR=4
@@ -8,7 +9,7 @@ SHLIB_MINOR=0
 INCS=	gd.h gd_io.h gdcache.h gdfontg.h gdfontl.h gdfontmb.h \
 	gdfonts.h gdfontt.h
 SHLIB_NAME!=	make -V SHLIB_NAME LIB=${LIB} \
-	SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR} -f bsd.lib.mk
+	SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR} -f ${MAKEDIR}/bsd.lib.mk
 
 CFLAGS+=-I${.CURDIR} -I${LOCALBASE}/include/freetype2/ \
 	-I${LOCALBASE}/include/freetype2/freetype -I${LOCALBASE}/include \
@@ -33,17 +34,17 @@ lib${LIB}.a ${SHLIB_NAME}: ${SRCS}
 	make LIB=${LIB} SRCS="${SRCS}" \
 		SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR} \
 		CFLAGS="${CFLAGS}" -ECFLAGS LDADD="${LDADD}" \
-		-f bsd.lib.mk ${.TARGET}
+		-f ${MAKEDIR}/bsd.lib.mk ${.TARGET}
 
 ${PROGS} ${TESTS}: ${SHLIB_NAME} lib${LIB}.a
 	make PROG=${.TARGET} NOMAN=1 LDADD="-L. -lgd" \
-		CFLAGS="${CFLAGS}" -ECFLAGS -f bsd.prog.mk
+		CFLAGS="${CFLAGS}" -ECFLAGS -f ${MAKEDIR}/bsd.prog.mk
 
 install:
 	mkdir -p ${PREFIX}/include
 	make LIB=${LIB} LIBDIR=${PREFIX}/lib NOPROFILE=true \
 		SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR} \
-		-f bsd.lib.mk install
+		-f ${MAKEDIR}/bsd.lib.mk install
 	cd ${.CURDIR} && ${INSTALL_DATA} ${INCS} ${PREFIX}/include
 	cd ${.CURDIR} && ${INSTALL_PROGRAM} ${PROGS} ${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${.CURDIR}/bdftogd ${PREFIX}/bin/
