@@ -59,8 +59,8 @@ lib/libdc.la
 lib/libdc.so
 lib/libdc.so.0
 libdata/pkgconfig/dclib.pc
-@unexec rmdir %D/share/dcgui/plugin 2>/dev/null || true
-@unexec rmdir %D/share/dcgui 2>/dev/null || true
+@dirrm share/dcgui/plugin
+@dirrm share/dcgui
 @dirrm include/dclib/hash
 @dirrm include/dclib/core
 @dirrm include/dclib
