@@ -5,22 +5,26 @@
 # $FreeBSD$
 #
 
-PORTNAME=	nethirc
-PORTVERSION=	0.04
+PORTNAME=	NetHirc
+PORTVERSION=	0.7
 CATEGORIES=	irc
-MASTER_SITES=	ftp://ftp.nog.net/pub/tony/nethirc/
-EXTRACT_SUFX=	.tar.Z
+MASTER_SITES=	ftp://ftp.nog.net/pub/tony/nethirc/old/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Perl-based irc client that uses Net::IRC
+MAINTAINER=	matt_mills@btopenworld.com
+COMMENT=	Perl-based IRC client that uses Net::IRC
 
 RUN_DEPENDS=	${SITE_PERL}/Net/IRC.pm:${PORTSDIR}/irc/p5-IRC
 
-NO_BUILD=	yes
-USE_PERL5=	yes
-MAN1=		nethirc.1 nhirc.1
+PERL_CONFIGURE=	yes
 
-do-install:
-	(cd ${WRKSRC} && ${SH} install.sh ${PREFIX})
+MANCOMPRESSED=	no
+MAN1=		nethirc.pl.1
+MAN3=		NetHirc.3 nethirc.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+IGNORE=		requires Perl 5.8.x or later. Install lang/perl5.8 then try again
+.endif
+
+.include <bsd.port.post.mk>
