@@ -34,17 +34,17 @@ PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
 
 NO_BUILD=	yes
 USE_LINUX=	yes
-DL_JDK_VERSION=	1.4.0-rc
-INSTALL_JDK_VERSION=	1.4.0rc1
+DL_JDK_VERSION=	1.4.0
+INSTALL_JDK_VERSION=	1.4.0
 ONLY_FOR_ARCHS=	i386
 TARGET_DIR?=	${PREFIX}/${PKGBASE}${PORTVERSION}
-DOWNLOAD_URL?=	http://java.sun.com/j2se/1.4/\#linux
+DOWNLOAD_URL?=	http://java.sun.com/j2se/1.4/
 PORTTITLE=	Java 2 Development Kit ${INSTALL_JDK_VERSION} for Linux
 
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=You must manually fetch the ${PORTTITLE} GNUZIP Tar shell script (${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
+IGNORE=You must manually fetch the J2SE v1.4 SDK Linux GNUZIP Tar shell script (${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
 
 post-fetch:
