@@ -1,0 +1,401 @@
+--- bin/named/Makefile.in	2001-06-01 03:45:00.000000000 +0300
++++ bin/named/Makefile.in	2003-03-10 15:13:06.000000000 +0200
+@@ -26,10 +26,10 @@
+ #
+ # Add database drivers here.
+ #
+-DBDRIVER_OBJS =
+-DBDRIVER_SRCS =
+-DBDRIVER_INCLUDES =
+-DBDRIVER_LIBS =
++DBDRIVER_OBJS = mysqldb.@O@
++DBDRIVER_SRCS = mysqldb.c
++DBDRIVER_INCLUDES = -I${LOCALBASE}/include
++DBDRIVER_LIBS = -L${LOCALBASE}/lib/mysql -lmysqlclient
+ 
+ CINCLUDES =	-I${srcdir}/include -I${srcdir}/unix/include \
+ 		${LWRES_INCLUDES} ${DNS_INCLUDES} \
+diff -uNr bin/named/include/mysqldb.h bin/named/include/mysqldb.h
+--- bin/named/include/mysqldb.h	1970-01-01 02:00:00.000000000 +0200
++++ bin/named/include/mysqldb.h	2003-03-10 15:09:19.000000000 +0200
+@@ -0,0 +1,7 @@
++
++#include <isc/types.h>
++
++isc_result_t mysqldb_init(void);
++
++void mysqldb_clear(void);
++
+diff -uNr bin/named/main.c bin/named/main.c
+--- bin/named/main.c	2002-08-05 09:57:01.000000000 +0300
++++ bin/named/main.c	2003-03-10 15:44:36.000000000 +0200
+@@ -62,6 +62,7 @@
+  * Include header files for database drivers here.
+  */
+ /* #include "xxdb.h" */
++#include "mysqldb.h"
+ 
+ static isc_boolean_t	want_stats = ISC_FALSE;
+ static char		program_name[ISC_DIR_NAMEMAX] = "named";
+@@ -527,6 +528,7 @@
+ 	 * Add calls to register sdb drivers here.
+ 	 */
+ 	/* xxdb_init(); */
++	mysqldb_init ();
+ 
+ 	ns_server_create(ns_g_mctx, &ns_g_server);
+ }
+@@ -541,6 +543,7 @@
+ 	 * Add calls to unregister sdb drivers here.
+ 	 */
+ 	/* xxdb_clear(); */
++	mysqldb_clear ();
+ 
+ 	isc_log_write(ns_g_lctx, NS_LOGCATEGORY_GENERAL, NS_LOGMODULE_MAIN,
+ 		      ISC_LOG_NOTICE, "exiting");
+diff -uNr bin/named/mysqldb.c bin/named/mysqldb.c
+--- bin/named/mysqldb.c	1970-01-01 02:00:00.000000000 +0200
++++ bin/named/mysqldb.c	2003-03-10 15:09:11.000000000 +0200
+@@ -0,0 +1,342 @@
++/*
++ * Copyright (C) 2002 Mihai Chelaru ( kefren@netbastards.org )
++ *
++ * Permission to use, copy, modify, and distribute this software for any
++ * purpose with or without fee is hereby granted, provided that the above
++ * copyright notice and this permission notice appear in all copies.
++ *
++ * THE SOFTWARE IS PROVIDED "AS IS" AND I DISCLAIM ALL WARRANTIES WITH
++ * REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
++ * AND FITNESS. IN NO EVENT SHALL I BE LIABLE FOR ANY SPECIAL, DIRECT,
++ * INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING
++ * FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
++ * NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION
++ * WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
++ */
++
++
++#include <config.h>
++#include <stdio.h>
++#include <malloc.h>
++#include <mysql/mysql.h>
++#include <isc/mem.h>
++#include <dns/sdb.h>
++#include <dns/result.h>
++#include <named/globals.h>
++
++#include <mysqldb.h>
++
++#define ROWS 20
++#define MAXCOLUMN 200
++
++/*
++#define ONEDATABASE
++#define MDEBUG
++*/
++struct mysqlrow {
++	char           *s[ROWS];
++};
++
++static dns_sdbimplementation_t *mysqldb = NULL;
++
++struct mydbinfo {
++	MYSQL          *conn;
++	char           *database;
++	char           *table;
++	char           *host;
++	char           *user;
++	char           *passwd;
++};
++
++/* My internal functions */
++
++int             mysql_dbcon(struct mydbinfo *);
++
++int 
++mysql_dbcon(struct mydbinfo * dbi)
++{
++#ifdef MDEBUG
++	printf("Connecting\n");
++#endif
++	dbi->conn=mysql_init(NULL);
++	if (dbi->conn == NULL) return 0;
++	if (!mysql_real_connect(dbi->conn, dbi->host, dbi->user, dbi->passwd, dbi->database, 3306, NULL, 0))
++		return 0;
++#ifdef MDEBUG
++	printf("Connected\n");
++#endif
++	return 1;
++}
++
++/* External functions */
++
++static isc_result_t 
++mysqldb_lookup(const char *zone, const char *name, void *dbdata, dns_sdblookup_t * lookup)
++{
++	char           *querystring = NULL, seclook[150];
++	struct mydbinfo *dbi = (struct mydbinfo *) dbdata;
++	MYSQL_RES      *result;
++	struct mysqlrow myrow;
++	int             i, j, totlen;
++	MYSQL_ROW       row;
++	int             num_fields, putrr_success=0;
++#ifdef MDEBUG
++	printf("Lookup in %.200s for %.200s ", zone, name);
++#endif
++	querystring = (char *) malloc(200);
++	if (!querystring)
++		return ISC_R_NOMEMORY;
++	snprintf(querystring, 200, "SELECT TTL,RDTYPE,RDATA FROM %s where name='%.150s'", dbi->table, name);
++#ifdef MDEBUG
++	printf("Query = %s\n", querystring);
++#endif
++	mysql_ping(dbi->conn);
++	if (mysql_query(dbi->conn, querystring)) {
++		printf("Query Error in lookup\n");
++		free(querystring);
++		return ISC_R_FAILURE;
++	}
++	free(querystring);
++	result = mysql_store_result(dbi->conn);
++
++	num_fields = mysql_num_fields(result);
++	if (num_fields > ROWS) {
++		printf("Incorrect database format\n");
++		mysql_free_result(result);
++		return ISC_R_FAILURE;
++	}
++	/* allocate to fetch */
++	for (i = 0; i < ROWS; i++)
++		if (!(myrow.s[i] = (char *) malloc(MAXCOLUMN))) {
++			for (j = 0; j < i; j++)
++				free(myrow.s[i]);
++			mysql_free_result(result);
++			return ISC_R_NOMEMORY;
++		}
++	/* Ok. we found no reason why to not let fetch */
++	while ((row = mysql_fetch_row(result))) {
++		unsigned long  *lengths;
++		lengths = mysql_fetch_lengths(result);
++		totlen = 0;
++		for (i = 0; i < num_fields; i++) {
++			totlen += lengths[i];
++			snprintf(myrow.s[i], MAXCOLUMN, "%.*s", (int) lengths[i], row[i] ? row[i] : "NULL");
++		}
++#ifdef MDEBUG
++		printf("Lookup: %s %s %s\n", myrow.s[0], myrow.s[1], myrow.s[2]);
++#endif
++		if (dns_sdb_putrr(lookup, myrow.s[1], strtol(myrow.s[0], NULL, 10), myrow.s[2]) != ISC_R_SUCCESS) {
++			for (i = 0; i < ROWS; i++)
++				free(myrow.s[i]);
++			mysql_free_result(result);
++			printf("Lookup Failure\n");
++			return ISC_R_FAILURE;
++		} else putrr_success=1;
++	}
++#ifdef MDEBUG
++	printf ("Bailing out lookup\n");
++#endif
++	/* Ok. success. bail out. */
++	for (i = 0; i < ROWS; i++)
++		free(myrow.s[i]);
++	mysql_free_result(result);
++
++	/* Check if there is any *.foo.com available and return it in case that this is not a *.foo.com call */
++	if ((!putrr_success)&&(name[0]!='*')) {
++#ifdef MDEBUG
++printf ("Cannot find it. Trying to check * record\n");
++#endif
++		snprintf (seclook,150,"*.%s",zone);
++		return mysqldb_lookup (zone, seclook, dbdata, lookup);
++		}
++	
++	/* else return SUCCESS */
++	return ISC_R_SUCCESS;
++}
++
++static isc_result_t 
++mysqldb_allnodes(const char *zone, void *dbdata, dns_sdballnodes_t * allnodes)
++{
++	char           *querystring = NULL;
++	struct mydbinfo *dbi = (struct mydbinfo *) dbdata;
++	MYSQL_RES      *result;
++	struct mysqlrow myrow;
++	MYSQL_ROW       row;
++	int             num_fields;
++	int             i, totlen, j;
++#ifdef MDEBUG
++	printf("All Nodes\n");
++#endif
++	querystring = (char *) malloc(200);
++	if (!querystring)
++		return ISC_R_NOMEMORY;
++	snprintf(querystring, 200, "SELECT TTL,NAME,RDTYPE,RDATA FROM %s where name like('%%%.150s')", dbi->table, zone);
++	mysql_ping(dbi->conn);
++	if (mysql_query(dbi->conn, querystring)) {
++		printf("Query Error\n");
++		free(querystring);
++		return ISC_R_FAILURE;
++	}
++	free(querystring);
++	result = mysql_store_result(dbi->conn);
++
++	num_fields = mysql_num_fields(result);
++	if (num_fields > ROWS) {
++		printf("Incorrect database format\n");
++		mysql_free_result(result);
++		return ISC_R_FAILURE;
++	}
++	/* allocate to fetch */
++	for (i = 0; i < ROWS; i++)
++		if (!(myrow.s[i] = (char *) malloc(MAXCOLUMN))) {
++			for (j = 0; j < i; j++)
++				free(myrow.s[i]);
++			mysql_free_result(result);
++			return ISC_R_NOMEMORY;
++		}
++	/* Ok. we found no reason why to not let fetch */
++	while ((row = mysql_fetch_row(result))) {
++		unsigned long  *lengths;
++		lengths = mysql_fetch_lengths(result);
++		totlen = 0;
++		for (i = 0; i < num_fields; i++) {
++			totlen += lengths[i];
++			snprintf(myrow.s[i], MAXCOLUMN, "%.*s", (int) lengths[i], row[i] ? row[i] : "NULL");
++		}
++#ifdef MDEBUG
++		printf("All Nodes: %s %s %s %s\n", myrow.s[0], myrow.s[1], myrow.s[2], myrow.s[3]);
++#endif
++		if (dns_sdb_putnamedrr(allnodes, myrow.s[1], myrow.s[2], strtol(myrow.s[0], NULL, 10), myrow.s[3]) != ISC_R_SUCCESS) {
++			for (i = 0; i < ROWS; i++)
++				free(myrow.s[i]);
++			mysql_free_result(result);
++			return ISC_R_FAILURE;
++		}
++	}
++
++	/* Ok. success. bail out. */
++	mysql_free_result(result);
++	for (i = 0; i < ROWS; i++)
++		free(myrow.s[i]);
++	return ISC_R_SUCCESS;
++}
++
++
++
++/*
++ * Open database argv[i]=database,table,hostname,user,passwd
++ */
++
++static isc_result_t 
++mysqldb_create(const char *zone, int argc, char **argv, void *driverdata, void **dbdata)
++{
++	struct mydbinfo *dbi;
++	#ifdef ONEDATABASE
++	static MYSQL *dbconstat;
++	#endif
++
++	/* Argument count checking */
++	if (argc < 5)
++		return ISC_R_FAILURE;
++
++	/* dbi init */
++
++	dbi = (struct mydbinfo *) isc_mem_get(ns_g_mctx, sizeof(struct mydbinfo));
++	if (!dbi)
++		return ISC_R_NOMEMORY;
++	dbi->database = NULL;
++	dbi->table = NULL;
++	dbi->host = NULL;
++	dbi->user = NULL;
++	dbi->passwd = NULL;
++
++	dbi->database = isc_mem_strdup(ns_g_mctx, argv[0]);
++	dbi->table = isc_mem_strdup(ns_g_mctx, argv[1]);
++	dbi->host = isc_mem_strdup(ns_g_mctx, argv[2]);
++	dbi->user = isc_mem_strdup(ns_g_mctx, argv[3]);
++	dbi->passwd = isc_mem_strdup(ns_g_mctx, argv[4]);
++
++	if ((!dbi->database) || (!dbi->table) || (!dbi->host) || (!dbi->user) || (!dbi->passwd)) {
++		printf("Cannot strdup\n");
++		if (dbi->conn)
++			mysql_close(dbi->conn);
++		if (dbi->database)
++			isc_mem_free(ns_g_mctx, dbi->database);
++		if (dbi->table)
++			isc_mem_free(ns_g_mctx, dbi->table);
++		if (dbi->host)
++			isc_mem_free(ns_g_mctx, dbi->host);
++		if (dbi->user)
++			isc_mem_free(ns_g_mctx, dbi->user);
++		if (dbi->passwd)
++			isc_mem_free(ns_g_mctx, dbi->passwd);
++		isc_mem_put(ns_g_mctx, dbi, sizeof(struct mydbinfo));
++		return ISC_R_NOMEMORY;
++	}
++	/* connect to database */
++	#ifdef ONEDATABASE
++	if (!((dbconstat) && (!mysql_ping(dbconstat))))
++	#endif
++	if (!mysql_dbcon(dbi)) {
++		printf("Cannot connect to database\n");
++		return ISC_R_FAILURE;
++	}
++	#ifdef ONEDATABASE
++	if (dbconstat) dbi->conn = dbconstat; else dbconstat = dbi->conn;
++	#endif
++	*dbdata = dbi;
++	return ISC_R_SUCCESS;
++}
++
++static void 
++mysqldb_destroy(const char *zone, void *driverdata, void **dbdata)
++{
++	struct mydbinfo *dbi;
++
++	dbi = (struct mydbinfo *) (*dbdata);
++	if (!dbi)
++		return;
++	if (dbi->conn)
++		mysql_close(dbi->conn);
++	if (dbi->database)
++		isc_mem_free(ns_g_mctx, dbi->database);
++	if (dbi->table)
++		isc_mem_free(ns_g_mctx, dbi->table);
++	if (dbi->host)
++		isc_mem_free(ns_g_mctx, dbi->host);
++	if (dbi->user)
++		isc_mem_free(ns_g_mctx, dbi->user);
++	if (dbi->passwd)
++		isc_mem_free(ns_g_mctx, dbi->passwd);
++	isc_mem_put(ns_g_mctx, dbi, sizeof(struct mydbinfo));
++#ifdef MDEBUG
++	printf("Destroyed\n");
++#endif
++}
++
++
++/* SDB methods */
++
++static dns_sdbmethods_t mysqldb_methods = {
++	mysqldb_lookup,
++	NULL,			/* authority */
++	mysqldb_allnodes,
++	mysqldb_create,
++	mysqldb_destroy
++};
++
++
++
++isc_result_t 
++mysqldb_init()
++{
++	unsigned int    flags = 0;
++	return dns_sdb_register("mysql", &mysqldb_methods, NULL, flags, ns_g_mctx, &mysqldb);
++}
++
++void 
++mysqldb_clear()
++{
++	if (mysqldb)
++		dns_sdb_unregister(&mysqldb);
++}

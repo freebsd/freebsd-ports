@@ -1,0 +1,4 @@
+bind9-sdb-mysql provides a MySQL Simplified Database Interface (sdb) to bind9.
+So, zones can be stored in a MySQL database.
+
+WWW: http://gw.netbastards.org/bm/
