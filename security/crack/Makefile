@@ -47,5 +47,4 @@ do-install:
 	@${RM} -f ${WRKSRC}/Run/*
 	@(cd ${WRKSRC} ; tar cf - . | (cd ${PREFIX}/crack; tar xfBp -))
 
-
 .include <bsd.port.mk>
