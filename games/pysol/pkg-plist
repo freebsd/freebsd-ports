@@ -3526,6 +3526,9 @@ share/pysol/html/rules/carpet.html
 share/pysol/html/rules/casinoklondike.html
 share/pysol/html/rules/castlesinspain.html
 share/pysol/html/rules/chameleon.html
+share/pysol/html/rules/chessboard.html
+share/pysol/html/rules/citadel.html
+share/pysol/html/rules/congress.html
 share/pysol/html/rules/courtyard.html
 share/pysol/html/rules/cruel.html
 share/pysol/html/rules/deadkinggolf.html
@@ -3534,6 +3537,7 @@ share/pysol/html/rules/deuces.html
 share/pysol/html/rules/dieboesesieben.html
 share/pysol/html/rules/diekoenigsbergerin.html
 share/pysol/html/rules/dieschlange.html
+share/pysol/html/rules/diplomat.html
 share/pysol/html/rules/doublecanfield.html
 share/pysol/html/rules/doubleklondike.html
 share/pysol/html/rules/doubleklondikebythrees.html
@@ -3548,6 +3552,7 @@ share/pysol/html/rules/fallingstar.html
 share/pysol/html/rules/fan.html
 share/pysol/html/rules/flowerclock.html
 share/pysol/html/rules/forecell.html
+share/pysol/html/rules/fortress.html
 share/pysol/html/rules/fortyandeight.html
 share/pysol/html/rules/fortythieves.html
 share/pysol/html/rules/fourteen.html
@@ -3569,10 +3574,12 @@ share/pysol/html/rules/hopscotch.html
 share/pysol/html/rules/indian.html
 share/pysol/html/rules/interregnum.html
 share/pysol/html/rules/irmgard.html
+share/pysol/html/rules/kingdom.html
 share/pysol/html/rules/kingonlybakersgame.html
 share/pysol/html/rules/klondike.html
 share/pysol/html/rules/klondikebythrees.html
 share/pysol/html/rules/labellelucie.html
+share/pysol/html/rules/ladypalk.html
 share/pysol/html/rules/larasgame.html
 share/pysol/html/rules/littleforty.html
 share/pysol/html/rules/lucas.html
@@ -3580,6 +3587,7 @@ share/pysol/html/rules/maria.html
 share/pysol/html/rules/martha.html
 share/pysol/html/rules/matriarchy.html
 share/pysol/html/rules/matsukiri.html
+share/pysol/html/rules/maze.html
 share/pysol/html/rules/midshipman.html
 share/pysol/html/rules/milligancell.html
 share/pysol/html/rules/milliganharp.html
@@ -3634,6 +3642,7 @@ share/pysol/html/rules/stalactites.html
 share/pysol/html/rules/steps.html
 share/pysol/html/rules/storehouse.html
 share/pysol/html/rules/streets.html
+share/pysol/html/rules/streetsandalleys.html
 share/pysol/html/rules/superflowergarden.html
 share/pysol/html/rules/superiorcanfield.html
 share/pysol/html/rules/terrace.html
