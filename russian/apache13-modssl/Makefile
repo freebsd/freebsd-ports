@@ -55,35 +55,110 @@ LIB_DEPENDS=	mm.11:${PORTSDIR}/devel/mm
 
 VERSION_APACHE=	1.3.26
 VERSION_MODSSL=	2.8.10
-VERSION_RA=	30.14
+VERSION_RA=	30.15
 
-USE_PERL5=	yes
+#
+# some defaults
+#
+
+DATADIR=${PREFIX}/www
+DOCUMENT_ROOT=${DATADIR}/data
+DEFAULT_PATH?=/bin:/usr/bin:${PREFIX}/bin
+
+#
+# suexec support
+#
+.if defined(WITH_APACHE_SUEXEC)
+
+APACHE_SUEXEC_DOCROOT?=${DOCUMENT_ROOT}
+APACHE_SUEXEC_USERDIR?=public_html
+
+SUEXEC_CONF= \
+	 --enable-suexec \
+	 --suexec-docroot=${APACHE_SUEXEC_DOCROOT} \
+	 --suexec-caller=www \
+	 --suexec-uidmin=1000 \
+	 --suexec-gidmin=1000 \
+	 --suexec-logfile=/var/log/httpd-suexec.log \
+	 --suexec-userdir=${APACHE_SUEXEC_USERDIR} \
+	 --suexec-safepath=${DEFAULT_PATH}
+
+.if defined(APACHE_SUEXEC_UMASK)
+SUEXEC_CONF+=	--suexec-umask=${APACHE_SUEXEC_UMASK}
+.endif
+
+PLIST_SUB+=	SUEXEC=""
+SUEXEC_MAN=	suexec.8
+
+.else # WITH_APACHE_SUEXEC
+
+SUEXEC_CONF=
+PLIST_SUB+=	SUEXEC="@comment "
+SUEXEC_MAN=
+
+.endif # WITH_APACHE_SUEXEC
+
+
+#
+# Configutre parameters
+#
+
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--server-uid=www \
-		--server-gid=www \
-		--with-perl=${PERL} \
-		--with-layout=${FILESDIR}/FreeBSD.layout:FreeBSD \
-		--suexec-docroot=${PREFIX}/www/data \
-		--without-confadjust \
-		--enable-shared=remain \
-		--enable-module=most \
-		--enable-module=auth_db \
-		--enable-module=ssl \
-		--disable-shared=ssl \
-		--enable-module=define \
-		--disable-shared=define \
-		--disable-module=auth_dbm
+CONFIGURE_ARGS=	\
+		 --prefix=${PREFIX} \
+		 --server-uid=www \
+		 --server-gid=www \
+		 --with-perl=${PERL} \
+		 --with-layout=${FILESDIR}/FreeBSD.layout:FreeBSD \
+		 --without-confadjust
 
 OPTIM=		-DHARD_SERVER_LIMIT=512 \
 		-DDOCUMENT_LOCATION=\\"${PREFIX}/www/data/\\" \
 		-DDEFAULT_PATH=\\"${PREFIX}/bin:/bin:/usr/bin\\" \
 		-DACCEPT_FILTER_NAME=\\"httpready\\"
 
-.if defined(WITH_APACHE_PERF_TUNING) && ${WITH_APACHE_PERF_TUNING} == YES
-OPTIM+=		-DBUFFERED_LOGS -DFD_SETSIZE=1024
-CFLAGS+=	-O6 -funroll-loops -fstrength-reduce -fomit-frame-pointer \
-		-fexpensive-optimizations -ffast-math
+.if defined(WITH_DSO_MODULES)
+CONFIGURE_ARGS+= \
+		 --enable-shared=max \
+		 --disable-shared=so \
+		 --disable-shared=charset \
+		 --enable-module=most \
+		 --enable-module=auth_db \
+		 --enable-module=mmap_static \
+		 --enable-module=define \
+		 --disable-module=auth_dbm \
+		 ${SUEXEC_CONF}
+
+PLIST_SUB+=	 DSO_MOD=""
+.else
+CONFIGURE_ARGS+= \
+		 --enable-shared=remain \
+		 --enable-module=most \
+		 --enable-module=auth_db \
+		 --enable-module=mmap_static \
+		 --enable-module=define \
+		 --disable-shared=define \
+		 --enable-module=ssl \
+		 --disable-shared=ssl \
+		 --disable-module=auth_dbm \
+		 ${SUEXEC_CONF}
+
+PLIST_SUB+=	 DSO_MOD="@comment "
+.endif
+
+OPTIM=		 -DDOCUMENT_LOCATION=\\"${DOCUMENT_ROOT}\\" \
+		 -DDEFAULT_PATH=\\"${DEFAULT_PATH}\\"
+
+.if defined(APACHE_HARD_SERVER_LIMIT)                                                                                   
+OPTIM+=		 -DHARD_SERVER_LIMIT=${APACHE_HARD_SERVER_LIMIT}
+.else
+OPTIM+=		 -DHARD_SERVER_LIMIT=512
+.endif
+
+
+.if defined(APACHE_PERF_TUNING)
+OPTIM+=		-DBUFFERED_LOGS
+CFLAGS+=	-O6 -fomit-frame-pointer
 .endif
 
 CONFIGURE_ENV=	CFLAGS='${CFLAGS}' \
@@ -94,29 +169,41 @@ CONFIGURE_ENV=	CFLAGS='${CFLAGS}' \
 
 INSTALL_TARGET=	install-quiet
 
-MAN1=	dbmmanage.1 htdigest.1 htpasswd.1
-MAN8=	ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8
+MAN1=		dbmmanage.1 htdigest.1 htpasswd.1
+MAN8=		ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8 \
+		${SUEXEC_MAN}
 
 TYPE=	test
 CRT=
 KEY=
 
-pre-extract:
-.if defined(WITH_SUEXEC)
-	@${ECHO} "Be sure to edit suexec specific arguments to configure in the Makefile."
-CONFIGURE_ARGS+=--enable-suexec \
-		--suexec-caller=nobody \
-		--suexec-logfile=/var/log/suexec.log \
-		--suexec-uidmin=50000 \
-		--suexec-gidmin=60000
-MAN8+=		suexec.8
+pre-fetch:
+	@${ECHO_MSG} ""
+.if defined(WITH_DSO_MODULES)
+	@${ECHO_MSG} "Build all modules (except mod_so and mod_charest) as DSO."
 .else
-	@${ECHO} "Define WITH_SUEXEC to build with suexec support."
+	@${ECHO_MSG} "You could define WITH_DSO_MODULES to build all modules as DSO."
 .endif
-
-.if defined(APACHE_CONFIGURE_ARGS)
-CONFIGURE_ARGS+=	${APACHE_CONFIGURE_ARGS}
+.if defined(APACHE_PERF_TUNING)
+	@${ECHO_MSG} "Build Apache for maximum performance."
+.else
+	@${ECHO_MSG} "You could define APACHE_PERF_TUNING to build Apache for maximum performace."
 .endif
+.if defined(APACHE_HARD_SERVER_LIMIT)
+	@${ECHO_MSG} "Build Apache with HARD_SERVER_LIMIT=${APACHE_HARD_SERVER_LIMIT}"
+.else
+	@${ECHO_MSG} "You could define APACHE_HARD_SERVER_LIMIT, default one is 512"
+.endif
+.if defined(WITH_APACHE_SUEXEC)
+	@${ECHO_MSG} "Build apache with suexec support"
+	@${ECHO_MSG} "   suexec docroot:  ${APACHE_SUEXEC_DOCROOT}"
+	@${ECHO_MSG} "   suexec userdir:  ${APACHE_SUEXEC_USERDIR}"
+	@${ECHO_MSG} "   suexec safepath: ${DEFAULT_PATH}"
+	@${ECHO_MSG} "   These values could be defined as APACHE_SUEXEC_DOCROOT, APACHE_SUEXEC_USERDIR and DEFAULT_PATH."
+.else
+	@${ECHO_MSG} "You could define WITH_APACHE_SUEXEC to build suexec support."
+.endif
+	@${ECHO_MSG} ""
 
 pre-patch:
 	@cd ${WRKDIR}/apache_${VERSION_APACHE} \
