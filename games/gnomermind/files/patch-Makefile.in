@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.in	2001/04/11 12:39:24	1.1
++++ Makefile.in	2001/04/11 12:39:59
+@@ -116,7 +116,7 @@
+ EXTRA_DIST =          gnomermind.desktop.in 	gnomermind.spec.in         TODO         README         AUTHORS         NEWS         ChangeLog         COPYING 	HACKING 	xml-i18n-extract.in 	xml-i18n-merge.in 	xml-i18n-update.in
+ 
+ 
+-Infosdir = $(datadir)/doc/gnomermind
++Infosdir = $(datadir)/gnomermind/doc
+ Infos_DATA = TODO         README         AUTHORS         NEWS         ChangeLog         COPYING 	HACKING
+ 
+ 
