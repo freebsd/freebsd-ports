@@ -1,5 +1,23 @@
---- src/osdep/unix/Makefile.orig	Tue Oct 31 13:55:01 2000
-+++ src/osdep/unix/Makefile	Sun Dec 17 23:39:05 2000
+--- src/osdep/unix/Makefile.old	Tue Oct 31 22:55:01 2000
++++ src/osdep/unix/Makefile	Sun Dec 31 19:11:17 2000
+@@ -23,7 +23,7 @@
+ EXTRAAUTHENTICATORS=
+ SPECIALAUTHENTICATORS=
+ EXTRADRIVERS=mbox
+-PASSWDTYPE=std
++PASSWDTYPE=pam
+ 
+ 
+ # Extended flags needed for non-standard passwd types.  You may need to modify.
+@@ -37,7 +37,7 @@
+ # AFSLDFLAGS may also need -L/usr/ucblib -lucb
+ DCECFLAGS= -DDCE_MINIMAL -DPASSWD_OVERRIDE=\"/opt/pop3/passwd/passwd\"
+ DCELDFLAGS= -ldce
+-PAMLDFLAGS= -lpam -ldl
++PAMLDFLAGS= -lpam
+ 
+ 
+ # Build parameters normally set by the individual port
 @@ -74,7 +74,7 @@
  # Commands possibly overriden by the individual port
  
