@@ -222,12 +222,9 @@ else
     >/dev/null 2>&1
 fi
 
-chroot ${chroot} /sbin/ldconfig -m /usr/lib/compat
-chroot ${chroot} /sbin/ldconfig -R
+chroot ${chroot} /sbin/ldconfig -m /usr/lib /usr/lib/compat
 if [ ${arch} = "i386" ]; then
-	chroot ${chroot} /sbin/ldconfig -aout -m /usr/lib/aout
-	chroot ${chroot} /sbin/ldconfig -aout -m /usr/lib/compat/aout
-	chroot ${chroot} /sbin/ldconfig -aout -R
+	chroot ${chroot} /sbin/ldconfig -aout -m /usr/lib/aout /usr/lib/compat/aout
 fi
 
 while [ $# -gt 0 ]; do
@@ -269,7 +266,7 @@ if [ "${error}" = 0 ]; then
 #  ifconfig lo0 alias 10.${ip1}.${ip2}.${ip3}/32
 #  jail ${chroot} jail-${chroot} 10.${ip1}.${ip2}.${ip3} /usr/bin/nice -n $nice /buildscript ${dirname} 2 > ${chroot}/tmp/${pkgname}.log2 2>&1
 #  ifconfig lo0 delete 10.${ip1}.${ip2}.${ip3}
-  chroot ${chroot} /buildscript ${dirname} 2 > ${chroot}/tmp/${pkgname}.log2 2>&1
+  chroot ${chroot} /usr/bin/nice -n $nice /buildscript ${dirname} 2 > ${chroot}/tmp/${pkgname}.log2 2>&1
 
   grep pnohang ${chroot}/tmp/${pkgname}.log2
   cat ${chroot}/tmp/${pkgname}.log2 >> ${chroot}/tmp/${pkgname}.log
