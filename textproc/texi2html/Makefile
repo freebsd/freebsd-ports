@@ -1,16 +1,15 @@
 # New ports collection makefile for:	texi2html
-# Version required:			1.51
+# Version required:			1.52
 # Date created:				5 Nov 1997
 # Whom:					Ian Vaudrey <i.vaudrey@bigfoot.com>
 #
-# $Id: Makefile,v 1.1.1.1 1997/11/17 17:57:55 max Exp $
+# $Id: Makefile,v 1.2 1997/12/15 05:50:39 max Exp $
 #
 
 DISTNAME=	texi2html
-PKGNAME=	texi2html-1.51
+PKGNAME=	texi2html-1.52
 CATEGORIES=	textproc
-MASTER_SITES=	http://wwwcn.cern.ch/dci/texi2html/ \
-		ftp://ftp.scc.ru/pub/unix/
+MASTER_SITES=	http://wwwcn.cern.ch/dci/texi2html/
 EXTRACT_SUFX=	.shar.Z
 
 MAINTAINER=	i.vaudrey@bigfoot.com
@@ -25,7 +24,7 @@ NO_BUILD=	yes
 MAN1=		texi2html.1
 
 post-extract:
-	@cd ${WRKSRC}; split -l 1881 texi2html texi2html.
+	@cd ${WRKSRC}; split -l 1940 texi2html texi2html.
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/texi2html.aa ${PREFIX}/bin/texi2html
