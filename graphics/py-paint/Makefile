@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	paint
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	graphics python
 MASTER_SITES=	http://object-craft.com.au/projects/paint/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,27 +22,18 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S,^${LOCALBASE}/,,g} \
 		SHARE_SUBDIR=${SHARE_SUBDIR}
-WRKSRC=		${WRKDIR}/${PORTNAME}
 SHARE_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 
 INC_DIRS=	["${LOCALBASE}/include/freetype1","${LOCALBASE}/include","${X11BASE}/include","${LOCALBASE}/include/freetype1/freetype"]
 LIB_DIRS=	["${LOCALBASE}/lib","${X11BASE}/lib"]
-REPATCH=	cd ${WRKSRC} && ${SED}
-REPATCHSUBST=	-e 's@^\(.*libraries.*\)$$@\1include_dirs=${INC_DIRS},library_dirs=${LIB_DIRS},@g'
-REPATCHFILES=	setup.py
 TMPSUFFIX=	.temp
 EXAMPLES=	test_bar.py test_paint.py testpie.py
 
 .include <bsd.port.pre.mk>
 
 post-patch:
-.if ${PYTHON_REL} >= 160
-	cd ${WRKSRC} && ${PATCH} -s <${PATCHDIR}/optpatch-aa
-.endif
-.for file in ${REPATCHFILES}
-	${REPATCH} ${REPATCHSUBST} ${file} > ${file}${TMPSUFFIX} && \
-		${CAT} ${file}${TMPSUFFIX} > ${file}
-.endfor
+	${PERL} -pi -e 's@^(.*libraries.*)$$@\1include_dirs=${INC_DIRS},library_dirs=${LIB_DIRS},@g' \
+		${WRKSRC}/setup.py
 
 .if !defined(NOPORTDOCS)
 post-install:
