@@ -22,7 +22,6 @@
     SUBDIR += bb
     SUBDIR += bbjd
     SUBDIR += bestfit
-    SUBDIR += biblereader
     SUBDIR += bibletime
     SUBDIR += bidwatcher
     SUBDIR += birthday
