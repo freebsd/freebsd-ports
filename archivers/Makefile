@@ -32,7 +32,6 @@
     SUBDIR += libarchive
     SUBDIR += libcabinet
     SUBDIR += libcomprex
-    SUBDIR += linux-unace
     SUBDIR += lzo
     SUBDIR += lzop
     SUBDIR += macutils
