@@ -6,30 +6,35 @@
 #
 
 PORTNAME=		p0f
-PORTVERSION=		1.8.2
-PORTREVISION=		1
+PORTVERSION=		2.0.1
 CATEGORIES=		net
-MASTER_SITES=		http://www.stearns.org/p0f/
+MASTER_SITES=		http://lcamtuf.coredump.cx/p0f/
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		trevor@FreeBSD.org
 COMMENT=		Passive OS fingerprinting tool
 
-USE_REINPLACE=		yes
-DOCFILES=		COPYING CREDITS ChangeLog README
-MAN1=			p0f.1
+DOCFILES=		COPYING CREDITS KNOWN_BUGS README TODO winxp-memleak.txt
 PLIST=			${WRKDIR}/pkg-plist
+WRKSRC=			${WRKDIR}/p0f
 
 post-patch:
-	${REINPLACE_CMD} -e "s=/etc=${PREFIX}/etc=g" \
-		${WRKSRC}/README \
-		${WRKSRC}/p0f.c
+.for ii in config.h doc/README
+	${MV} ${WRKSRC}/${ii} ${WRKSRC}/${ii}.orig
+	${SED} -e "s=/etc=${PREFIX}/etc=g" < ${WRKSRC}/${ii}.orig > \
+		${WRKSRC}/${ii}
+.endfor
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/p0f ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/p0frep ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/p0f.fp ${PREFIX}/etc
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for ii in ${DOCFILES}
+	${INSTALL_DATA} ${WRKSRC}/doc/${ii} ${DOCSDIR}
+.endfor
+.endif
 
 pre-install:
 	${ECHO_CMD} bin/p0f	> ${PLIST}
@@ -40,14 +45,6 @@ pre-install:
 	${ECHO_CMD} share/doc/p0f/$i >> ${PLIST}
 .endfor
 	${ECHO_CMD} "@dirrm share/doc/p0f" >> ${PLIST}
-.endif
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in ${DOCFILES}
-	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/p0f
-.endfor
 .endif
 
 .include <bsd.port.mk>

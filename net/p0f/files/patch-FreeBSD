@@ -1,0 +1,16 @@
+$FreeBSD$
+
+--- mk/FreeBSD.orig	Sat Aug 30 15:41:17 2003
++++ mk/FreeBSD	Mon Sep  8 03:58:17 2003
+@@ -7,10 +7,9 @@
+ # (C) Copyright 2000-2003 by Michal Zalewski <lcamtuf@coredump.cx>
+ #
+ 
+-CC      = gcc
++CC?      = gcc
+ LIBS	= -lpcap -I/usr/include/pcap -I/usr/local/include/pcap
+ STRIP   = strip
+-CFLAGS  = -O3 -Wall -fomit-frame-pointer -funroll-loops
+ FILE	= p0f
+ 
+ all: $(FILE) strip	
