@@ -31,7 +31,7 @@ CONFIGURE_ARGS+=	--enable-mga
 .endif
 
 .ifdef(WITH_SDL)
-LIB_DEPENDS+=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
+LIB_DEPENDS+=	SDL-1.1:${PORTSDIR}/devel/sdl12
 
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libvo::configure.incl
 SDL_CONFIG?=    ${LOCALBASE}/bin/sdl11-config
