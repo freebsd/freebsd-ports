@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	par
-PORTVERSION= 	1.50
+PORTVERSION= 	1.51
 CATEGORIES=	textproc
 MASTER_SITES=   http://www.cs.berkeley.edu/~amc/Par/
-DISTNAME=	Par150
+DISTNAME=	Par151
 
 MAINTAINER=	mark@grondar.za
 
