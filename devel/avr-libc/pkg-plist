@@ -1,3 +1,4 @@
+avr/include/avr/boot.h
 avr/include/avr/crc16.h
 avr/include/avr/delay.h
 avr/include/avr/eeprom.h
@@ -150,6 +151,7 @@ share/doc/avr-libc/avr-libc-user-manual/ftv2node.png
 share/doc/avr-libc/avr-libc-user-manual/ftv2plastnode.png
 share/doc/avr-libc/avr-libc-user-manual/ftv2pnode.png
 share/doc/avr-libc/avr-libc-user-manual/ftv2vertline.png
+share/doc/avr-libc/avr-libc-user-manual/group__avr__boot.html
 share/doc/avr-libc/avr-libc-user-manual/group__avr__eeprom.html
 share/doc/avr-libc/avr-libc-user-manual/group__avr__errno.html
 share/doc/avr-libc/avr-libc-user-manual/group__avr__interrupts.html
@@ -177,11 +179,12 @@ share/doc/avr-libc/avr-libc-user-manual/malloc.html
 share/doc/avr-libc/avr-libc-user-manual/mem_sections.html
 share/doc/avr-libc/avr-libc-user-manual/modules.html
 share/doc/avr-libc/avr-libc-user-manual/pages.html
+share/doc/avr-libc/avr-libc-user-manual/release_method.html
+share/doc/avr-libc/avr-libc-user-manual/releases.png
 share/doc/avr-libc/avr-libc-user-manual/structdiv__t.html
 share/doc/avr-libc/avr-libc-user-manual/structldiv__t.html
+share/doc/avr-libc/avr-libc-user-manual/todo.html
 share/doc/avr-libc/avr-libc-user-manual/tree.html
-share/doc/avr-libc/avr-libc-user-manual/tree.js
-share/doc/avr-libc/avr-libc-user-manual/treeview.js
 share/doc/avr-libc/avr-libc-user-manual/twi_demo.html
 share/doc/avr-libc/avr-libc-user-manual/using_avrprog.html
 share/doc/avr-libc/avr-libc-user-manual/using_tools.html
@@ -201,6 +204,7 @@ share/doc/avr-libc/examples/signal.c
 share/doc/avr-libc/examples/twitest/Makefile
 share/doc/avr-libc/examples/twitest/twitest.c
 @dirrm avr/include/avr
+@dirrm avr/include
 @dirrm avr/lib/avr3
 @dirrm avr/lib/avr4
 @dirrm avr/lib/avr5

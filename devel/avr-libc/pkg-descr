@@ -13,7 +13,7 @@ it more complete and up-to-date.  Some parts of the current library
 have proven to be not all that useful (e. g. timer_enable_int())
 so they might be removed in a future version.
 
-For the time being, some older documentation (more complete but
-somewhat out of date) is being installed as well.
+The port is currently taken from the avr-libc-1_0-branch which will
+eventually become version 1.0.
 
 WWW: http://savannah.nongnu.org/projects/avr-libc

@@ -1,0 +1,11 @@
+--- doc/api/Makefile.in.orig	Tue Sep  9 21:30:47 2003
++++ doc/api/Makefile.in	Tue Sep  9 22:44:08 2003
+@@ -289,7 +289,7 @@
+ ps: demo $(TARGET_DOX_PS)
+ 
+ # Rule for generating html output.
+-html: demo $(TARGET_DOX_HTML) fix_png fix_anchors fix_javascript
++html: demo $(TARGET_DOX_HTML) fix_png fix_anchors #fix_javascript
+ 
+ # Make the background color of the png's transparent.
+ fix_png: $(wildcard $(USER_MANUAL)/*.png)
