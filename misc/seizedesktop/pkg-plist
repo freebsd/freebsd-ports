@@ -138,3 +138,4 @@ bin/SeizeDesktop.app
 @dirrm JDE/SeizeDesktop/WindowMaker/screenshot
 @dirrm JDE/SeizeDesktop/WindowMaker
 @dirrm JDE/SeizeDesktop
+@unexec rmdir %D/JDE 2>/dev/null || true
