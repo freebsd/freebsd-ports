@@ -35,13 +35,15 @@ BINARY_NAME=	${PORTNAME}${PKGNAMESUFFIX}
 post-extract:
 	@${GZCAT} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKSRC}/${BINARY_NAME}
 
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/${BINARY_NAME} ${PREFIX}/bin
+
+.include <bsd.port.pre.mk>
+
 pre-install:
 .if exists(${STRIP_CMD})
 	@${STRIP_CMD} ${WRKSRC}/${BINARY_NAME}
 .endif
 	@${BRANDELF} -t Linux ${WRKSRC}/${BINARY_NAME}
 
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${BINARY_NAME} ${PREFIX}/bin
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
