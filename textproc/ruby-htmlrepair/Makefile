@@ -7,7 +7,7 @@
 
 PORTNAME=	htmlrepair
 PORTVERSION=	1.0.1
-CATEGORIES=	textproc ruby
+CATEGORIES=	textproc www ruby
 MASTER_SITES=	http://www.moonwolf.com/ruby/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
