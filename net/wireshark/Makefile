@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ethereal
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.3
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.ethereal.com/pub/ethereal/%SUBDIR%/ \
 		ftp://gd.tuwien.ac.at/infosys/security/ethereal/%SUBDIR%/ \
@@ -27,10 +27,9 @@ MAN1+=		ethereal.1
 PLIST_SUB+=	ETHEREAL=bin/ethereal
 .else
 PLIST_SUB+=	ETHEREAL="@comment ethereal not built"
-LIB_DEPENDS+=	glib12.3:${PORTSDIR}/devel/glib12
+USE_GLIB=	yes
 CONFIGURE_ARGS+=	--enable-ethereal=no \
 			--disable-gtktest
-CONFIGURE_ENV+=	GLIB_CONFIG=${LOCALBASE}/bin/glib12-config
 .endif
 
 USE_LIBTOOL=	yes
