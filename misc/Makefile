@@ -68,6 +68,7 @@
     SUBDIR += gtkfind
     SUBDIR += gtl
     SUBDIR += gweather
+    SUBDIR += gwhich
     SUBDIR += gyvescm
     SUBDIR += hello
     SUBDIR += heyu
