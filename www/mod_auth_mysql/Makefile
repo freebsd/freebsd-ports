@@ -8,10 +8,8 @@ PORTNAME=	mod_auth_mysql
 PORTVERSION=	2.20
 CATEGORIES=	www
 MASTER_SITES=	http://download.sourceforge.net/mirrors/mysql/Downloads/Contrib/ \
-		http://east.dl.sourceforge.net/mirrors/mysql/Downloads/Contrib/ \
-		http://west.dl.sourceforge.net/mirrors/mysql/Downloads/Contrib/ \
-		http://unc.dl.sourceforge.net/mirrors/mysql/Downloads/Contrib/ \
-		http://telia.dl.sourceforge.net/mirrors/mysql/Downloads/Contrib/ \
+		http://mysql.he.net/Downloads/Crontrib/ \
+		http://mysql.azc.uam.mx/Downloads/Crontrib/ \
 		http://www.mysql.com/Contrib/
 
 MAINTAINER=	jeh@FreeBSD.org
