@@ -6,6 +6,3 @@ Jaxen provides a single point for XPath expression evaluation, regardless of
 the target object model, whether its dom4j, JDOM, DOM, JavaBeans, or whatnot.
 
 WWW: http://jaxen.org
-
-- Herve Quiroz
-herve.quiroz@esil.univ-mrs.fr
