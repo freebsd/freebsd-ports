@@ -164,6 +164,12 @@ CONFIGURE_ENV+=	MOC="${MOC}" LIBQT="-l${QTNAME}" \
 
 # End of USE_QT_VER section
 
+# XXX - This really belongs into bsd.port.mk
+.if !defined(_NO_KDE_CONFTARGET_HACK)
+CONFIGURE_TARGET=
+CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+.endif
+
 # Assemble plist from parts
 # <alane@freebsd.org> 2002-12-06
 .if defined(KDE_BUILD_PLIST)
