@@ -52,6 +52,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-server.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-server.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-setup.el
+%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-study.el
+%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-study.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-tut.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-tut.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-vars.el
