@@ -1,0 +1,29 @@
+--- utils/splitprc.c~	Wed Feb  7 13:58:34 2001
++++ utils/splitprc.c	Sun Oct 20 03:34:32 2002
+@@ -73,10 +73,10 @@
+ char		bmap_file[256];
+ 
+ FILE		*ifp;
+-FILE		*ofp = stdout;
+-FILE		*hfp = NULL;
+-FILE		*cfp = NULL;
+-FILE		*rfp = NULL;
++FILE		*ofp;
++FILE		*hfp;
++FILE		*cfp;
++FILE		*rfp;
+ 
+ 
+ struct res_type {
+@@ -970,6 +970,11 @@
+ {
+ 	char asc[20];
+ 	int c, bytectr, linectr, ctr;
++
++	ofp = stdout;
++	hfp = NULL;
++	cfp = NULL;
++	rfp = NULL;
+ 
+ 	progname = argv[0];
+ 	hdr_file[0] = '\0';
