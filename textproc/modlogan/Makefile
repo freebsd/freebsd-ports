@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	modlogan
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.4
 CATEGORIES=	textproc www
 MASTER_SITES=	http://www.kneschke.de/projekte/modlogan/download/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -47,7 +47,7 @@ DOC1=		faq.txt glosar manual.txt plugin-options.txt \
 		using-plugins.txt writing-plugins.txt
 
 post-patch:
-	@${PERL} -pi -e 's:\@sysconfdir\@:${PREFIX}/etc/modlogan:g' ${WRKSRC}/doc/modlogan.conf-dist
+	@${PERL} -pi -e 's:\@sysconfdir\@:${PREFIX}/etc/modlogan:g' ${WRKSRC}/doc/modlogan.conf-dist.in
 
 post-configure:
 	${TOUCH} ${WRKSRC}/libltdl/config.status
@@ -60,7 +60,7 @@ post-install:
 .endfor
 .endif
 	${MKDIR} ${PREFIX}/share/examples/modlogan
-.for i in footer.ihtml header.ihtml convert_to_055.pl convert_to_060.pl
+.for i in footer.ihtml header.ihtml convert_history_to_07x.pl convert_to_055.pl convert_to_060.pl
 	@${INSTALL_DATA} ${WRKSRC}/doc/${i} ${PREFIX}/share/examples/modlogan/${i}
 .endfor
 	@# remove .la (can't use USE_LIBTOOL)
