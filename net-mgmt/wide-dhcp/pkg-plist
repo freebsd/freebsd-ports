@@ -15,3 +15,5 @@ etc/rc.d/wide-dhcps.sh.sample
 @exec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^dhcpc /etc/services.bak ; echo "dhcpc		68/udp    # dhcp client") > /etc/services
 @unexec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^dhcpc /etc/services.bak ) > /etc/services
 @unexec rm -f /var/db/dhcp_cache
+@dirrm share/doc/dhcp
+@dirrm share/examples/dhcp
