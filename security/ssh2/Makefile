@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.25 1996/06/15 07:03:11 torstenb Exp $
+# $Id: Makefile,v 1.26 1996/06/15 17:50:17 jkh Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -85,10 +85,6 @@ post-install:
 		${PREFIX}/man/man1/ssh-agent.1 ${PREFIX}/man/man1/ssh-keygen.1 \
 		${PREFIX}/man/man1/ssh.1 ${PREFIX}/man/man8/sshd.8 \
 		${PREFIX}/man/man1/make-ssh-known-hosts.1
-	@echo "---------------------------------------------------------------"
-	@echo "If you are installing for the first time, do not forget to run:"
-	@echo "   ssh-keygen -b 1024 -f $(PREFIX)/etc/ssh_host_key -N '' "
-	@echo "---------------------------------------------------------------"
 	@if [ ! -f ${PREFIX}/etc/rc.d/sshd.sh ]; then \
 		echo "Installing ${PREFIX}/etc/rc.d/sshd.sh startup file."; \
 		echo "#!/bin/sh" > ${PREFIX}/etc/rc.d/sshd.sh; \
