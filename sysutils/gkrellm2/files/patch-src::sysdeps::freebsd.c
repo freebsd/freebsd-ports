@@ -1,26 +1,18 @@
 Index: src/sysdeps/freebsd.c
 diff -u src/sysdeps/freebsd.c.orig src/sysdeps/freebsd.c
---- src/sysdeps/freebsd.c.orig	Wed Jan 22 00:17:21 2003
-+++ src/sysdeps/freebsd.c	Thu Feb 20 19:29:34 2003
-@@ -81,7 +81,12 @@
- /* ===================================================================== */
- /* CPU monitor interface */
+--- src/sysdeps/freebsd.c.orig	Wed Mar  5 13:14:38 2003
++++ src/sysdeps/freebsd.c	Sat Mar 22 13:58:33 2003
+@@ -372,6 +372,13 @@
  
-+#include <osreldate.h>
-+#if __FreeBSD_version >= 500101
-+#include <sys/resource.h>
-+#else
- #include <sys/dkstat.h>
+ #else
+ 
++#if __FreeBSD_version >= 500107
++#define getdevs(stats)	devstat_getdevs(NULL, stats)
++#define selectdevs	devstat_selectdevs
++#define bytes_read	bytes[DEVSTAT_READ]
++#define bytes_written	bytes[DEVSTAT_WRITE]
 +#endif
- #include <kvm.h>
- 
- 
-@@ -301,8 +306,6 @@
- /* ===================================================================== */
- /* Disk monitor interface */
- 
--#include <osreldate.h>
--#include <sys/dkstat.h>
- #if __FreeBSD_version >= 300000
- #include <devstat.h>
- static struct statinfo	statinfo_cur;
++
+ gint
+ gkrellm_sys_disk_order_from_name(gchar *name)
+ 	{

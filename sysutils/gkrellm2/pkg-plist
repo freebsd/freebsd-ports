@@ -19,6 +19,7 @@ etc/rc.d/gkrellmd.sh.sample
 %%CLIENT%%share/locale/fr/LC_MESSAGES/gkrellm.mo
 %%CLIENT%%share/locale/it/LC_MESSAGES/gkrellm.mo
 %%CLIENT%%share/locale/ja/LC_MESSAGES/gkrellm.mo
+%%CLIENT%%share/locale/nl/LC_MESSAGES/gkrellm.mo
 %%CLIENT%%share/locale/pl/LC_MESSAGES/gkrellm.mo
 %%CLIENT%%share/locale/ru/LC_MESSAGES/gkrellm.mo
 %%CLIENT%%share/locale/sl/LC_MESSAGES/gkrellm.mo
