@@ -6096,6 +6096,7 @@ phppgadmin	ports/databases/phppgadmin
 phraze		ports/misc/phraze
 phylip		ports/biology/phylip
 physcalc	ports/math/physcalc
+physfs		ports/devel/physfs
 pib		ports/sysutils/pib
 pic2fig		ports/print/pic2fig
 picasm		ports/devel/picasm
