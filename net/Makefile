@@ -128,7 +128,6 @@
     SUBDIR += lambdamoo
     SUBDIR += ldapmodule
     SUBDIR += ldapsdk
-    SUBDIR += libetherx
     SUBDIR += libicq
     SUBDIR += libjabber
     SUBDIR += libnet
