@@ -168,7 +168,7 @@
 +|   4) Alarm Power On     : %-32s|\n\
 +|   5) LCD Power          : %-32s|\n\
 +|   6) Volume             : %-32s|\n\
-+|   7) Off (Suspend/Hiber): %-32s|\n\\n\
++|   7) Off (Suspend/Hiber): %-32s|\n\
  +-----------------------------------------------------------+\n\n",
      version, s[0], s[1], s[2], s[3], s[4], s[5], s[6], s[7]);
  #else
