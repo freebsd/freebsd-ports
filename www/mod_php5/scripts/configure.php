@@ -25,7 +25,8 @@ SybaseDB	"Sybase/MS-SQL database support (DB-lib)" OFF \
 SybaseCT	"Sybase/MS-SQL database support (CT-lib)" OFF \
 Interbase	"Interbase 6 database support (Firebird)" OFF \
 dBase		"dBase database support" OFF \
-OpenLDAP	"OpenLDAP support" OFF \
+OpenLDAP1	"OpenLDAP 1.x support" OFF \
+OpenLDAP2	"OpenLDAP 2.x support" OFF \
 OpenSSL		"OpenSSL support" OFF \
 SNMP		"SNMP support" OFF \
 XML		"XML support" OFF \
@@ -153,13 +154,33 @@ while [ "$1" ]; do
 		\"dBase\")
 			echo "CONFIGURE_ARGS+=--with-dbase"
 			;;
-		\"OpenLDAP\")
+		\"OpenLDAP1\")
 			echo "LIB_DEPENDS+=	ldap.1:\${PORTSDIR}/net/openldap"
 			echo "LIB_DEPENDS+=	lber.1:\${PORTSDIR}/net/openldap"
 			echo "CONFIGURE_ARGS+=--with-ldap=\${PREFIX}"
+			if [ "$OPENLDAP2" ]; then
+				echo "OpenLDAP1 and OpenLDAP2 are mutually exclusive." > /dev/stderr
+				rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+				exit 1
+			fi
 			if [ -f /usr/lib/libkrb.a -a -f /usr/lib/libdes.a -a ! -L /usr/lib/libdes.a ]; then
 				LIBS="${LIBS} -lkrb -ldes -L\${PREFIX}/lib"
 			fi
+			OPENLDAP1=1
+			;;
+		\"OpenLDAP2\")
+			echo "LIB_DEPENDS+=	ldap.2:\${PORTSDIR}/net/openldap2"
+			echo "LIB_DEPENDS+=	lber.2:\${PORTSDIR}/net/openldap2"
+			echo "CONFIGURE_ARGS+=--with-ldap=\${PREFIX}"
+			if [ "$OPENLDAP1" ]; then
+				echo "OpenLDAP1 and OpenLDAP2 are mutually exclusive." > /dev/stderr
+				rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+				exit 1
+			fi
+			if [ -f /usr/lib/libkrb.a -a -f /usr/lib/libdes.a -a ! -L /usr/lib/libdes.a ]; then
+				LIBS="${LIBS} -lkrb -ldes -L\${PREFIX}/lib"
+			fi
+			OPENLDAP2=1
 			;;
 		\"OpenSSL\")
 			echo "USE_OPENSSL=yes"
