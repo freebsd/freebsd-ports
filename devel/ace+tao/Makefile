@@ -44,15 +44,20 @@ TAO_ROOT=	${ACE_ROOT}/TAO
 PLIST_SUB+=	TAO=${TAO} TESTS=${TESTS} \
 		ACE_VERSION=${ACE_VERSION} TAO_VERSION=${TAO_VERSION}
 
-.if defined(WITHOUT_TAO)
-TAO=	"@comment "
-PKGNAMESUFFIX?=	-notao
-.endif
-
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 502125
-BROKEN=	Does not build with gcc 3.4
+WITHOUT_TAO=	yes
+pre-extract:
+	@${ECHO_MSG} "****************************************************"; \
+	 ${ECHO_MSG} "*        TAO is not build with gcc 3.4             *"; \
+	 ${ECHO_MSG} "*     so only ACE will build  and install          *"; \
+	 ${ECHO_MSG} "****************************************************"
+.endif
+
+.if defined(WITHOUT_TAO)
+TAO=	"@comment "
+PKGNAMESUFFIX?=	-notao
 .endif
 
 post-patch:
