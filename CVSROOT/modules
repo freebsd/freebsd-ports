@@ -632,6 +632,7 @@ bro		ports/security/bro
 brs		ports/misc/brs
 bsd-airtools	ports/net/bsd-airtools
 bsdftpd-ssl	ports/ftp/bsdftpd-ssl
+bsdiff		ports/misc/bsdiff
 bsdproxy	ports/net/bsdproxy
 bsdsar		ports/sysutils/bsdsar
 bsdtris		ports/games/bsdtris
