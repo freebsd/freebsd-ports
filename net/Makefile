@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.66 1996/04/12 08:42:56 asami Exp $
+# $Id: Makefile,v 1.67 1996/04/18 16:42:12 ache Exp $
 #
 
     SUBDIR += archie
@@ -31,6 +31,7 @@
     SUBDIR += tintin++
     SUBDIR += tinyfugue
     SUBDIR += tkined
+    SUBDIR += trafshow
     SUBDIR += vic
     SUBDIR += wais
     SUBDIR += wu-ftpd
