@@ -1,367 +1,1053 @@
---- pine/mailpart.c.orig	Tue Jul 21 03:18:49 1998
-+++ pine/mailpart.c	Tue Jul 28 08:35:04 1998
-@@ -134,18 +134,18 @@
-        {HELP_MENU,
- 	OTHER_MENU,
- 	{"<",NULL,{MC_EXIT,2,{'<',','}},KS_EXITMODE},
--	{">","[View]",{MC_VIEW_ATCH,5,{'v','>','.',ctrl('M'),ctrl('J')}},
-+	{">","[檢視]",{MC_VIEW_ATCH,5,{'v','>','.',ctrl('M'),ctrl('J')}},
- 	  KS_VIEW},
--	{"P", "PrevAttch",{MC_PREVITEM,4,{'p',ctrl('B'),ctrl('P'),KEY_UP}},
-+	{"P", "前一附件",{MC_PREVITEM,4,{'p',ctrl('B'),ctrl('P'),KEY_UP}},
- 	  KS_PREVMSG},
--	{"N", "NextAtch",
-+	{"N", "次一附件",
- 	 {MC_NEXTITEM, 5, {'n','\t',ctrl('F'),ctrl('N'), KEY_DOWN}},
- 	 KS_NEXTMSG},
- 	PREVPAGE_MENU,
- 	NEXTPAGE_MENU,
- 	DELETE_MENU,
- 	UNDELETE_MENU,
--	{"S", "Save", {MC_SAVETEXT,1,{'s'}}, KS_SAVE},
-+	{"S", "存檔", {MC_SAVETEXT,1,{'s'}}, KS_SAVE},
- 	{NULL, NULL, {MC_EXPORT, 1, {'e'}}, KS_EXPORT},
+--- pine/mailcmd.c.orig	Fri Jul 17 13:57:21 1998
++++ pine/mailcmd.c	Tue Aug  4 12:42:17 1998
+@@ -110,39 +110,39 @@
+ /*
+  * List of Select options used by apply_* functions...
+  */
+-static char *sel_pmt1 = "ALTER message selection : ";
++static char *sel_pmt1 = "更改信件的選擇：";
+ ESCKEY_S sel_opts1[] = {
+-    {'a', 'a', "A", "unselect All"},
++    {'a', 'a', "A", "取消所有選擇"},
+     {'c', 'c', "C", NULL},
+-    {'b', 'b', "B", "Broaden selctn"},
+-    {'n', 'n', "N", "Narrow selctn"},
+-    {'f', 'f', "F", "Flip selected"},
++    {'b', 'b', "B", "擴大選擇"},
++    {'n', 'n', "N", "縮小選擇"},
++    {'f', 'f', "F", "切換選擇"},
+     {-1, 0, NULL, NULL}
+ };
  
- 	HELP_MENU,
-@@ -154,9 +154,9 @@
- 	QUIT_MENU,
- 	PIPE_MENU,
- 	BOUNCE_MENU,
--	{"A","AboutAttch",{MC_ABOUTATCH,1,{'a'}},KS_NONE},
-+	{"A","關於附件",{MC_ABOUTATCH,1,{'a'}},KS_NONE},
- 	WHEREIS_MENU,
--	{"%", "Print", MC_PRINTMSG,1,{'%'}, KS_PRINT},
-+	{"%", "列印", MC_PRINTMSG,1,{'%'}, KS_PRINT},
- 	INDEX_MENU,
- 	REPLY_MENU,
- 	FORWARD_MENU};
-@@ -173,11 +173,11 @@
- static struct key att_view_keys[] =
-        {HELP_MENU,
- 	OTHER_MENU,
--	{"<",NULL,{MC_EXIT,2,{'<',','}},KS_EXITMODE},
--	{"Ret","[View Hilite]",{MC_VIEW_HANDLE,3,
-+	{"<",NULL,{MC_EXIT,3,{'<',',',KEY_LEFT}},KS_EXITMODE},
-+	{"Ret","[檢視 Hilite]",{MC_VIEW_HANDLE,3,
- 				{ctrl('m'),ctrl('j'),KEY_RIGHT}},KS_NONE},
--	{"^B","Prev URL",{MC_PREV_HANDLE,1,{ctrl('B')}},KS_NONE},
--	{"^F","Next URL",{MC_NEXT_HANDLE,1,{ctrl('F')}},KS_NONE},
-+	{"^B","前一 URL",{MC_PREV_HANDLE,1,{ctrl('B')}},KS_NONE},
-+	{"^F","次一 URL",{MC_NEXT_HANDLE,1,{ctrl('F')}},KS_NONE},
- 	PREVPAGE_MENU,
- 	NEXTPAGE_MENU,
- 	DELETE_MENU,
-@@ -193,7 +193,7 @@
- 	BOUNCE_MENU,
- 	NULL_MENU,
- 	WHEREIS_MENU,
--	{"%", "Print", MC_PRINTMSG,1,{'%'}, KS_PRINT},
-+	{"%", "列印", MC_PRINTMSG,1,{'%'}, KS_PRINT},
- 	NULL_MENU,
- 	REPLY_MENU,
- 	FORWARD_MENU};
-@@ -323,12 +323,12 @@
  
-     if(mn_total_cur(ps->msgmap) > 1L){
- 	q_status_message(SM_ORDER | SM_DING, 0, 3,
--			 "Can only view one message's attachments at a time!");
-+			 "同一時間僅能檢視一封信的附件！");
+-char *sel_pmt2 = "SELECT criteria : ";
++char *sel_pmt2 = "選擇標準：";
+ static ESCKEY_S sel_opts2[] = {
+-    {'a', 'a', "A", "select All"},
+-    {'c', 'c', "C", "select Cur"},
+-    {'n', 'n', "N", "Number"},
+-    {'d', 'd', "D", "Date"},
+-    {'t', 't', "T", "Text"},
+-    {'s', 's', "S", "Status"},
++    {'a', 'a', "A", "選擇所有"},
++    {'c', 'c', "C", "選擇目前的"},
++    {'n', 'n', "N", "數目"},
++    {'d', 'd', "D", "日期"},
++    {'t', 't', "T", "文字"},
++    {'s', 's', "S", "狀態"},
+     {-1, 0, NULL, NULL}
+ };
+ 
+ 
+-static char *sel_pmt3 = "APPLY command : ";
++static char *sel_pmt3 = "套用命令：";
+ static ESCKEY_S sel_opts3[] = {
+-    {'d', 'd',  "D", "Del"},
+-    {'u', 'u',  "U", "Undel"},
+-    {'r', 'r',  "R", "Reply"},
+-    {'f', 'f',  "F", "Forward"},
+-    {'%', '%',  "%", "Print"},
+-    {'t', 't',  "T", "TakeAddr"},
+-    {'s', 's',  "S", "Save"},
+-    {'e', 'e',  "E", "Export"},
++    {'d', 'd',  "D", "刪除"},
++    {'u', 'u',  "U", "復原刪除"},
++    {'r', 'r',  "R", "回覆"},
++    {'f', 'f',  "F", "轉寄"},
++    {'%', '%',  "%", "列印"},
++    {'t', 't',  "T", "地址簿"},
++    {'s', 's',  "S", "存檔"},
++    {'e', 'e',  "E", "匯出"},
+     { -1,   0, NULL, NULL},
+     { -1,   0, NULL, NULL},
+     { -1,   0, NULL, NULL},
+@@ -152,24 +152,24 @@
+ 
+ 
+ static char *sel_flag = 
+-    "Select New, Deleted, Answered, or Important messages ? ";
++    "選擇 新的，已刪除的，已回覆的，或重要的信件？";
+ static char *sel_flag_not = 
+-    "Select NOT New, NOT Deleted, NOT Answered or NOT Tagged msgs ? ";
++    "選擇 非新的，非已刪除的，非已回覆的，或非被標記的信件？";
+ static ESCKEY_S sel_flag_opt[] = {
+-    {'n', 'n', "N", "New"},
+-    {'*', '*', "*", "Important"},
+-    {'d', 'd', "D", "Deleted"},
+-    {'a', 'a', "A", "Answered"},
+-    {'!', '!', "!", "Not"},
++    {'n', 'n', "N", "新的"},
++    {'*', '*', "*", "重要的"},
++    {'d', 'd', "D", "已刪除的"},
++    {'a', 'a', "A", "已回覆的"},
++    {'!', '!', "!", "非"},
+     {-1, 0, NULL, NULL}
+ };
+ 
+ 
+ static ESCKEY_S sel_date_opt[] = {
+     {0, 0, NULL, NULL},
+-    {ctrl('P'), 12, "^P", "Prev Day"},
+-    {ctrl('N'), 13, "^N", "Next Day"},
+-    {ctrl('X'), 11, "^X", "Cur Msg"},
++    {ctrl('P'), 12, "^P", "前一天"},
++    {ctrl('N'), 13, "^N", "後一天"},
++    {ctrl('X'), 11, "^X", "目前的"},
+     {ctrl('W'), 14, "^W", "Toggle When"},
+     {KEY_UP,    12, "", ""},
+     {KEY_DOWN,  13, "", ""},
+@@ -179,18 +179,18 @@
+ 
+ static char *sel_text =
+ #ifdef	RECIPIENT
+-    "Select based on To, From, Cc, Recip, Subject fields or All message text ? ";
++    "選擇以 收件人，寄件人，副本，領受者，主題 等欄位為主，或所有的訊息文字？";
+ #else	/* RECIPIENT */
+-    "Select based on To, From, Cc, Subject fields or All message text ? ";
++    "選擇以 收件人，寄件人，副本，主題 等欄位為主，或所有的訊息文字？";
+ #endif	/* RECIPIENT */
+ static ESCKEY_S sel_text_opt[] = {
+-    {'f', 'f', "F", "From"},
+-    {'s', 's', "S", "Subject"},
+-    {'t', 't', "T", "To"},
+-    {'a', 'a', "A", "All Text"},
+-    {'c', 'c', "C", "Cc"},
++    {'f', 'f', "F", "寄件人"},
++    {'s', 's', "S", "主題"},
++    {'t', 't', "T", "收件人"},
++    {'a', 'a', "A", "所有的訊息文字"},
++    {'c', 'c', "C", "副本"},
+ #ifdef	RECIPIENT
+-    {'r', 'r', "R", "Recipient"},
++    {'r', 'r', "R", "領受者"},
+ #endif	/* RECIPIENT */
+     {-1, 0, NULL, NULL}
+ };
+@@ -244,7 +244,7 @@
+       case MC_HELP :
+ 	if(state->nr_mode) {
+ 	    q_status_message(SM_ORDER, 0, 3,
+-			     "No help text currently available");
++			     "目前無法取得文字說明");
+ 	    break;
+ 	}
+ 
+@@ -273,7 +273,7 @@
+ 
+           /*------- View message text --------*/
+       case MC_VIEW_TEXT :
+-	if(any_messages(msgmap, NULL, "to View")){
++	if(any_messages(msgmap, NULL, "可供檢視")){
+ 	    state->next_screen = mail_view_screen;
+ #if	defined(DOS) && !defined(WIN32)
+ 	    flush_index_cache();		/* save room on PC */
+@@ -297,10 +297,10 @@
+ 		mn_dec_cur(stream, msgmap);
+ 		if(i == mn_get_cur(msgmap))
+ 		  q_status_message(SM_ORDER, 0, 2,
+-				  "Already on first message in Zoomed Index");
++				  "已經到縮放索引中的第一封訊息了");
+ 	    }
+ 	    else
+-	      q_status_message(SM_ORDER, 0, 1, "Already on first message");
++	      q_status_message(SM_ORDER, 0, 1, "已經到第一封訊息了");
+ 	}
+ 
+ 	break;
+@@ -312,7 +312,7 @@
+ 	   && (i = mn_get_cur(msgmap)) < mn_get_total(msgmap)){
+ 	    mn_inc_cur(stream, msgmap);
+ 	    if(i == mn_get_cur(msgmap))
+-	      any_messages(NULL, "more", "in Zoomed Index");
++	      any_messages(NULL, "更多的", "在可縮放索引中");
+ 	}
+ 	else{
+ 	    prompt[0] = '\0';
+@@ -329,7 +329,7 @@
+ 		  strcat(prompt, ".  No more folders to TAB to.");
+ 	    }
+ 
+-	    any_messages(NULL, (mn_get_total(msgmap) > 0L) ? "more" : NULL,
++	    any_messages(NULL, (mn_get_total(msgmap) > 0L) ? "更多的" : NULL,
+ 			 prompt[0] ? prompt : NULL);
+ 
+ 	    if(!IS_NEWS(stream))
+@@ -474,9 +474,9 @@
+ 			    }
+ 			}
+ 			else
+-			  q_status_message1(SM_ORDER, 0, 2, "No more %ss",
++			  q_status_message1(SM_ORDER, 0, 2, "沒有更多的%s了",
+ 				     (state->context_current->use&CNTXT_INCMNG)
+-				        ? "incoming folder" : "news group");
++				        ? "新進資料匣" : "新聞組群");
+ 
+ 			break;
+ 		    }
+@@ -493,9 +493,9 @@
+ 		     */
+ 		    if(F_OFF(F_AUTO_OPEN_NEXT_UNREAD, state)){
+ 			static ESCKEY_S next_opt[] = {
+-			    {'y', 'y', "Y", "Yes"},
+-			    {'n', 'n', "N", "No"},
+-			    {TAB, 'n', "Tab", "NextNew"},
++			    {'y', 'y', "Y", "是"},
++			    {'n', 'n', "N", "否"},
++			    {TAB, 'n', "Tab", "下一新的"},
+ 			    {-1, 0, NULL, NULL}
+ 			};
+ 
+@@ -521,7 +521,7 @@
+ 	    else
+ 	      any_messages(NULL,
+ 			   (mn_get_total(msgmap) > 0L)
+-			     ? IS_NEWS(stream) ? "more undeleted" : "more new"
++			     ? IS_NEWS(stream) ? "更多遭復原刪除的" : "更多新的"
+ 			     : NULL,
+ 			   NULL);
+ 	}
+@@ -539,7 +539,7 @@
+ 	 * global "zoom mode" flag to suppress messags from the index
+ 	 * should suffice.
+ 	 */
+-	if(any_messages(msgmap, NULL, "to Zoom on")){
++	if(any_messages(msgmap, NULL, "可供放大")){
+ 	    if(unzoom_index(state, msgmap)){
+ 		dprint(4, (debugfile, "\n\n ---- Exiting ZOOM mode ----\n"));
+ 		q_status_message(SM_ORDER,0,2, "Index Zoom Mode is now off");
+@@ -551,7 +551,7 @@
+ 				  comatose(i), plural(i));
+ 	    }
+ 	    else
+-	      any_messages(NULL, "selected", "to Zoom on");
++	      any_messages(NULL, "被選中的", "可供放大");
+ 	}
+ 
+ 	break;
+@@ -559,7 +559,7 @@
+ 
+           /*---------- print message on paper ----------*/
+       case MC_PRINTMSG :
+-	if(any_messages(msgmap, NULL, "to print"))
++	if(any_messages(msgmap, NULL, "可供列印"))
+ 	  cmd_print(state, msgmap, 0, in_index);
+ 
+ 	break;
+@@ -567,7 +567,7 @@
+ 
+           /*---------- Take Address ----------*/
+       case MC_TAKE :
+-	if(any_messages(msgmap, NULL, "to Take address from"))
++	if(any_messages(msgmap, NULL, "可供取得地址"))
+ 	  cmd_take_addr(state, msgmap, 0);
+ 
+ 	break;
+@@ -575,7 +575,7 @@
+ 
+           /*---------- Save Message ----------*/
+       case MC_SAVE :
+-	if(any_messages(msgmap, NULL, "to Save"))
++	if(any_messages(msgmap, NULL, "可供存檔"))
+ 	  cmd_save(state, msgmap, 0);
+ 
+ 	break;
+@@ -583,7 +583,7 @@
+ 
+           /*---------- Export message ----------*/
+       case MC_EXPORT :
+-	if(any_messages(msgmap, NULL, "to Export")){
++	if(any_messages(msgmap, NULL, "可供匯出")){
+ 	    cmd_export(state, msgmap, question_line, 0);
+ 	    state->mangled_footer = 1;
+ 	}
+@@ -597,29 +597,28 @@
+ 	if(IS_NEWS(stream) && stream->rdonly){
+ 	    if((del_count = count_flagged(stream, F_DEL)) > 0L){
+ 		state->mangled_footer = 1;
+-		sprintf(prompt, "Exclude %ld message%s from %s", del_count,
+-			plural(del_count), pretty_fn(state->cur_folder));
++		sprintf(prompt, "自 %s 中排除 %ld 封信件",
++			pretty_fn(state->cur_folder), del_count);
+ 		if(F_ON(F_AUTO_EXPUNGE, state)
+ 		   || want_to(prompt, 'y', 0, NO_HELP, WT_NORM) == 'y'){
+ 		    msgno_exclude(stream, msgmap);
+ 		    clear_index_cache();
+ 		    state->mangled_body = 1;
+ 		    state->mangled_header = 1;
+-		    q_status_message2(SM_ORDER, 0, 4, "%s message%s excluded",
+-				      long2string(del_count),
+-				      plural(del_count));
++		    q_status_message1(SM_ORDER, 0, 4, "%s 封信件被排除了",
++				      long2string(del_count));
+ 		}
+ 		else
+-		  any_messages(NULL, NULL, "Excluded");
++		  any_messages(NULL, NULL, "排除在外");
+ 	    }
+ 	    else
+-	      any_messages(NULL, "deleted", "to Exclude");
++	      any_messages(NULL, "被刪除", "可供排除");
+ 
+ 	    break;
+ 	}
+ 	else if(READONLY_FOLDER){
+ 	    q_status_message(SM_ORDER, 0, 4,
+-			     "Can't expunge. Folder is read-only");
++			     "無法刪除。信件匣是唯讀的");
+ 	    break;
+ 	}
+ 
+@@ -634,7 +633,7 @@
+ 		break;
+ 	    }
+ 	    else if(ret == 'x') {		/* ^C */
+-		cmd_cancelled("Expunge");
++		cmd_cancelled("刪除");
+ 		break;
+ 	    }
+ 	}
+@@ -685,11 +684,11 @@
+ 	if(state->expunge_count <= 0)
+ 	  if(del_count)
+ 	    q_status_message1(SM_ORDER, 0, 3,
+-			      "No messages expunged from folder \"%s\"",
++			      "沒有任何信件自信件匣 \"%s\" 中刪除",
+ 			      pretty_fn(state->cur_folder));
+ 	  else
+ 	    q_status_message(SM_ORDER, 0, 3,
+-			 "No messages marked deleted.  No messages expunged.");
++			 "沒有任何信件被標示為刪除。沒有信件被刪除。");
+ 
+ 	break;
+ 
+@@ -719,16 +718,15 @@
+ 		     */
+ 		    refresh_sort(msgmap, FALSE);
+ 		    state->mangled_header = 1;
+-		    q_status_message2(SM_ORDER, 0, 4,
+-				      "%s message%s UNexcluded",
+-				      long2string(del_count),
+-				      plural(del_count));
++		    q_status_message1(SM_ORDER, 0, 4,
++				      "%s 封信件被復原排除",
++				      long2string(del_count));
+ 		}
+ 		else
+-		  any_messages(NULL, NULL, "UNexcluded");
++		  any_messages(NULL, NULL, "復原排除");
+ 	    }
+ 	    else
+-	      any_messages(NULL, "excluded", "to UNexclude");
++	      any_messages(NULL, "被排除", "可供復原排除");
+ 	}
+ 
+ 	break;
+@@ -736,7 +734,7 @@
+ 
+           /*------- Make Selection -----------*/
+       case MC_SELECT :
+-	if(any_messages(msgmap, NULL, "to Select")){
++	if(any_messages(msgmap, NULL, "可供選擇")){
+ 	    aggregate_select(state, msgmap, question_line, in_index);
+ 	    if(in_index && any_lflagged(msgmap, MN_SLCT) > 0L
+ 	       && !any_lflagged(msgmap, MN_HIDE)
+@@ -768,7 +766,7 @@
+ 		  unzoom_index(state, msgmap);
+ 	    }
+ 	    else
+-	      any_messages(NULL, NULL, "to Apply command to.  Try \"Select\"");
++	      any_messages(NULL, NULL, "可供套用命令。試試 \"選擇\"");
+ 	}
+ 
+ 	break;
+@@ -846,21 +844,21 @@
+ {
+     if(cmd == ctrl('Q') || cmd == ctrl('S'))
+       q_status_message1(SM_ASYNC, 0, 2,
+- "%s char received.  Set \"preserve-start-stop\" feature in Setup/Config.",
++ "收到 %s 字元。以 設定/環境設定 開啟 \"preserve-start-stop\"。",
+ 			pretty_command(cmd));
+     else if(cmd == KEY_JUNK)
+       q_status_message3(SM_ORDER, 0, 2,
+-		      "Invalid key pressed.%s%s%s",
+-		      (help) ? " Use " : "",
++		      "輸入了無效的按鍵。%s%s%s",
++		      (help) ? "請以 " : "",
+ 		      (help) ?  help   : "",
+-		      (help) ? " for help" : "");
++		      (help) ? " 呼叫輔助說明" : "");
+     else
+       q_status_message4(SM_ORDER, 0, 2,
+-		      "Command \"%s\" not defined for this screen.%s%s%s",
++		      "命令 \"%s\" 未在此畫面定義。%s%s%s",
+ 		      pretty_command(cmd),
+-		      (help) ? " Use " : "",
++		      (help) ? "請以 " : "",
+ 		      (help) ?  help   : "",
+-		      (help) ? " for help" : "");
++		      (help) ? " 呼叫輔助說明。" : "");
+ }
+ 
+ 
+@@ -1133,11 +1131,9 @@
+     char *type, *cmd;
+ {
+     if(mn_get_total(map) <= 0L){
+-	q_status_message4(SM_ORDER, 0, 2, "No %s%smessages%s%s",
++	q_status_message2(SM_ORDER, 0, 2, "沒有%s信件%s",
+ 			  type ? type : "",
+-			  type ? " " : "",
+-			  (!cmd || *cmd != '.') ? " " : "",
+-			  cmd ? cmd : "in folder");
++			  cmd ? cmd : "在信件匣中");
+ 	return(FALSE);
+     }
+ 
+@@ -1161,8 +1157,8 @@
+ {
+     if(READONLY_FOLDER || state->dead_stream){
+ 	q_status_message2(SM_ORDER | (state->dead_stream ? SM_DING : 0), 0, 3,
+-			  "Can't %s message.  Folder is %s.", cmd,
+-			  (state->dead_stream) ? "closed" : "read-only");
++			  "無法%s信件。信件匣是%s的。", cmd,
++			  (state->dead_stream) ? "關閉" : "唯讀");
+ 	return(FALSE);
+     }
+ 
+@@ -1182,7 +1178,7 @@
+ cmd_cancelled(cmd)
+     char *cmd;
+ {
+-    q_status_message1(SM_INFO, 0, 2, "%s cancelled", cmd ? cmd : "Command");
++    q_status_message1(SM_INFO, 0, 2, "取消%s", cmd ? cmd : "命令");
+ }
+ 
+ 
+@@ -1208,7 +1204,7 @@
+ 
+     dprint(4, (debugfile, "\n - delete message -\n"));
+     if(!(any_messages(msgmap, NULL, "to Delete")
+-	 && can_set_flag(state, "delete")))
++	 && can_set_flag(state, "刪除")))
+       return;
+ 
+     if(state->io_error_on_stream) {
+@@ -1218,16 +1214,15 @@
+ 
+     if(agg){
+ 	sequence = selected_sequence(state->mail_stream, msgmap, &del_count);
+-	sprintf(prompt, "%ld selected message%s marked for deletion",
+-		del_count, plural(del_count));
++	sprintf(prompt, "%ld 封信件被標示為待刪除", del_count);
+     }
+     else{
+ 	msgno	  = mn_get_cur(msgmap);
+ 	del_count = 1L;				/* return current */
+ 	sequence  = cpystr(long2string(mn_m2raw(msgmap, mn_get_cur(msgmap))));
+ 	lastmsg	  = (msgno >= mn_get_total(msgmap));
+-	sprintf(prompt, "%s%s marked for deletion",
+-		lastmsg ? "Last message" : "Message ",
++	sprintf(prompt, "%s%s 被標示為待刪除",
++		lastmsg ? "最後一封信" : "信件 ",
+ 		lastmsg ? "" : long2string(msgno));
+     }
+ 
+@@ -1289,7 +1284,7 @@
+ 
+     dprint(4, (debugfile, "\n - undelete -\n"));
+     if(!(any_messages(msgmap, NULL, "to Undelete")
+-	 && can_set_flag(state, "undelete")))
++	 && can_set_flag(state, "復原刪除")))
+       return;
+ 
+     if(agg){
+@@ -1380,7 +1375,7 @@
+     };
+ 
+     if(!(any_messages(msgmap, NULL, "to Flag")
+-	 && can_set_flag(state, "flag")))
++	 && can_set_flag(state, "標示")))
+       return;
+ 
+     if(state->io_error_on_stream) {
+@@ -1735,7 +1730,7 @@
+     if(msgno_any_exceptions(state->mail_stream, msgmap)
+        && want_to("Saved copy will NOT include entire message!  Continue",
+ 		  'y', 'n', NO_HELP, WT_FLUSH_IN | WT_SEQ_SENSITIVE) != 'y'){
+-	cmd_cancelled("Save message");
++	cmd_cancelled("信件存檔");
  	return;
      }
--    else if(ps->atmts && ps->atmts->description && !(ps->atmts + 1)->description)
-+    else if(ps->atmts && !(ps->atmts + 1)->description)
-       q_status_message1(SM_ASYNC, 0, 3,
--	"Message %s has only one part (the message body), and no attachments.",
-+	"信件 %s 僅有一部分(信件本體)，沒有附件。",
- 	long2string(mn_get_cur(ps->msgmap)));
  
-     /*
-@@ -471,7 +471,7 @@
- 	  break;
+@@ -1858,32 +1853,32 @@
+     ekey[rc].ch      = ctrl('T');
+     ekey[rc].rval    = 2;
+     ekey[rc].name    = "^T";
+-    ekey[rc++].label = "To Fldrs";
++    ekey[rc++].label = "信件匣列表";
  
- 	if(ps->mangled_header){
--	    set_titlebar("ATTACHMENT INDEX", ps->mail_stream,
-+	    set_titlebar("附件索引", ps->mail_stream,
- 			 ps->context_current, ps->cur_folder, ps->msgmap, 1,
- 			 MessageNumber, 0, 0);
- 	    ps->mangled_header = 0;
-@@ -535,7 +535,7 @@
- 		  clrbitn(ATT_PRINT_KEY, bitmap);
+     if(saveable_count > 1){
+ 	ekey[rc].ch      = ctrl('P');
+ 	ekey[rc].rval    = 10;
+ 	ekey[rc].name    = "^P";
+-	ekey[rc++].label = "Prev Collection";
++	ekey[rc++].label = "前一總集";
  
- 		km->keys[ATT_EXPORT_KEY].name  = "E";
--		km->keys[ATT_EXPORT_KEY].label = "Export";
-+		km->keys[ATT_EXPORT_KEY].label = "匯出";
- 	    }
+ 	ekey[rc].ch      = ctrl('N');
+ 	ekey[rc].rval    = 11;
+ 	ekey[rc].name    = "^N";
+-	ekey[rc++].label = "Next Collection";
++	ekey[rc++].label = "後一總集";
+     }
  
- 	    if(km_popped){
-@@ -630,7 +630,7 @@
- 	    if(ctmp = next_attline(current))
- 	      current = ctmp;
- 	    else
--	      q_status_message(SM_ORDER, 0, 1, "Already on last attachment");
-+	      q_status_message(SM_ORDER, 0, 1, "已經到最後一附件了");
+     if(F_ON(F_ENABLE_TAB_COMPLETE, ps_global)){
+ 	ekey[rc].ch      = TAB;
+ 	ekey[rc].rval    = 12;
+ 	ekey[rc].name    = "TAB";
+-	ekey[rc++].label = "Complete";
++	ekey[rc++].label = "完成";
+     }
  
+     if(F_ON(F_ENABLE_SUB_LISTS, ps_global)){
+ 	ekey[rc].ch      = ctrl('X');
+ 	ekey[rc].rval    = 14;
+ 	ekey[rc].name    = "^X";
+-	ekey[rc++].label = "ListMatches";
++	ekey[rc++].label = "列出符合";
+     }
+ 
+     if(saveable_count > 1){
+@@ -2021,7 +2016,7 @@
+ 	    /* else fall thru like they cancelled */
+ 
+ 	  case 1 :
+-	    cmd_cancelled("Save message");
++	    cmd_cancelled("信件存檔");
+ 	    done--;
  	    break;
  
-@@ -638,7 +638,7 @@
- 	    if(ctmp = prev_attline(current))
- 	      current = ctmp;
- 	    else
--	      q_status_message(SM_ORDER, 0, 1, "Already on first attachment");
-+	      q_status_message(SM_ORDER, 0, 1, "已經到第一個附件了");
- 
- 	    break;
- 
-@@ -652,7 +652,7 @@
- 	    }
- 	    else
- 	      q_status_message(SM_ORDER, 0, 1,
--			       "Already on last page of attachments");
-+			       "已經在附件的最後一頁了");
- 	    
- 
- 	    break;
-@@ -673,7 +673,7 @@
- 	    }
- 	    else
- 	      q_status_message(SM_ORDER, 0, 1,
--			       "Already on first page of attachments");
-+			       "已經在附件的第一頁了");
- 
- 	    break;
- 
-@@ -1041,7 +1041,7 @@
+@@ -3126,16 +3121,16 @@
  {
-     bitmap_t	 bitmap;
+     if(context && ps_global->context_list->next && context_isambig(folder)){
+ 	sprintf(tmp_20k_buf,
+-		"Folder \"%.15s%s\" in <%.15s%s> doesn't exist. Create",
++		"信件匣 \"%.15s%s\" 在 <%.15s%s> 不存在。要建立",
+ 		folder, (strlen(folder) > 15) ? "..." : "",
+ 		context->nickname,
+ 		(strlen(context->nickname) > 15) ? "..." : "");
+     }
+     else
+-      sprintf(tmp_20k_buf,"Folder \"%.40s\" doesn't exist.  Create", folder);
++      sprintf(tmp_20k_buf,"信件匣 \"%.40s\" 不存在。要建立", folder);
  
--    set_titlebar("ATTACHMENT INDEX", ps_global->mail_stream,
-+    set_titlebar("附件索引", ps_global->mail_stream,
- 		 ps_global->context_current, ps_global->cur_folder,
- 		 ps_global->msgmap, 1, FolderName,0,0);
+     if(want_to(tmp_20k_buf, 'y', 'n', NO_HELP, WT_SEQ_SENSITIVE) != 'y'){
+-	cmd_cancelled("Save message");
++	cmd_cancelled("信件存檔");
+ 	return(-1);
+     }
  
-@@ -1210,7 +1210,7 @@
-     gf_io_t     pc;
-     STORE_S    *store;
-     static ESCKEY_S att_save_opts[] = {
--	{ctrl('T'), 10, "^T", "To Files"},
-+	{ctrl('T'), 10, "^T", "檔案列表"},
- 	{-1, 0, NULL, NULL},
- 	{-1, 0, NULL, NULL},
- 	{-1, 0, NULL, NULL}};
-@@ -1242,7 +1242,7 @@
- 	att_save_opts[++r].ch  = ctrl('V');
- 	att_save_opts[r].rval  = 12;
- 	att_save_opts[r].name  = "^V";
--	att_save_opts[r].label = "Downld Msg";
-+	att_save_opts[r].label = "下載信件";
+@@ -3259,14 +3254,14 @@
+     export_opts[i = 0].ch  = ctrl('T');
+     export_opts[i].rval	   = 10;
+     export_opts[i].name	   = "^T";
+-    export_opts[i++].label = "To Files";
++    export_opts[i++].label = "檔案列表";
+ 
+ #if	!defined(DOS) && !defined(MAC) && !defined(OS2)
+     if(ps_global->VAR_DOWNLOAD_CMD && ps_global->VAR_DOWNLOAD_CMD[0]){
+ 	export_opts[i].ch      = ctrl('V');
+ 	export_opts[i].rval    = 12;
+ 	export_opts[i].name    = "^V";
+-	export_opts[i++].label = "Downld Msg";
++	export_opts[i++].label = "下載";
      }
  #endif	/* !(DOS || MAC) */
  
-@@ -1250,7 +1250,7 @@
- 	att_save_opts[++r].ch  =  ctrl('I');
- 	att_save_opts[r].rval  = 11;
- 	att_save_opts[r].name  = "TAB";
--	att_save_opts[r].label = "Complete";
-+	att_save_opts[r].label = "完成";
+@@ -3274,7 +3269,7 @@
+ 	export_opts[i].ch      =  ctrl('I');
+ 	export_opts[i].rval    = 11;
+ 	export_opts[i].name    = "TAB";
+-	export_opts[i++].label = "Complete";
++	export_opts[i++].label = "完成";
      }
  
-     att_save_opts[++r].ch = -1;
-@@ -1469,7 +1469,7 @@
- 				a->number, 
- 				save_folder);
- 	    else if(rv == -1)
--	      cmd_cancelled("Attached message Save");
-+	      cmd_cancelled("存入附加訊息");
- 	    /* else whatever broke in save_fetch_append shoulda bitched */
- 
- 	    so_give(&so);
-@@ -1545,11 +1545,11 @@
- 
- 	if(rv == 1)
- 	  q_status_message2(SM_ORDER, 0, 4,
--			    "Attached digest (part %s) saved to \"%s\"",
-+			    "附加的 digest(第 %s 部份) 存為 \"%s\"",
- 			    a->number, 
- 			    save_folder);
- 	else if(rv == -1)
--	  cmd_cancelled("Attached digest Save");
-+	  cmd_cancelled("存入附加的 digest");
- 	/* else whatever broke in save_fetch_append shoulda bitched */
- 
- 	if(our_stream)
-@@ -1603,7 +1603,7 @@
-     ATTACH_S *ap = a;
-     STORE_S  *store;
-     static ESCKEY_S opts[] = {
--	{ctrl('T'), 10, "^T", "To Files"},
-+	{ctrl('T'), 10, "^T", "檔案列表"},
- 	{-1, 0, NULL, NULL},
- 	{-1, 0, NULL, NULL}};
- 
-@@ -1611,7 +1611,7 @@
- 	opts[i].ch    =  ctrl('I');
- 	opts[i].rval  = 11;
- 	opts[i].name  = "TAB";
--	opts[i].label = "Complete";
-+	opts[i].label = "完成";
+ #if	0
+@@ -3283,7 +3278,7 @@
+ 	export_opts[i].ch      = ctrl('X');
+ 	export_opts[i].rval    = 14;
+ 	export_opts[i].name    = "^X";
+-	export_opts[i++].label = "ListMatches";
++	export_opts[i++].label = "列出符合";
      }
+ #endif
  
-     filename[0] = full_filename[0] = '\0';
-@@ -1624,7 +1624,7 @@
-     if(rv < 0){
- 	switch(rv){
+@@ -3297,7 +3292,7 @@
+     if(r < 0){
+ 	switch(r){
  	  case -1:
--	    cmd_cancelled("Export");
-+	    cmd_cancelled("匯出檔案");
+-	    cmd_cancelled("Export message");
++	    cmd_cancelled("匯出信件");
  	    break;
  
  	  case -2:
-@@ -1676,7 +1676,7 @@
-     ATTACH_S *ap;
-     STORE_S  *store;
-     static ESCKEY_S opts[] = {
--	{ctrl('T'), 10, "^T", "To Files"},
-+	{ctrl('T'), 10, "^T", "檔案列表"},
- 	{-1, 0, NULL, NULL},
- 	{-1, 0, NULL, NULL}};
+@@ -3319,7 +3314,7 @@
  
-@@ -1684,7 +1684,7 @@
- 	opts[i].ch    =  ctrl('I');
- 	opts[i].rval  = 11;
- 	opts[i].name  = "TAB";
--	opts[i].label = "Complete";
-+	opts[i].label = "完成";
-     }
- 
-     filename[0] = full_filename[0] = '\0';
-@@ -1697,7 +1697,7 @@
-     if(rv < 0){
- 	switch(rv){
- 	  case -1:
--	    cmd_cancelled("Export");
-+	    cmd_cancelled("匯出檔案");
- 	    break;
- 
- 	  case -2:
-@@ -1905,14 +1905,14 @@
-         /*----- Can't display this type ------*/
- 	if(a->body->encoding < ENCOTHER)
- 	  q_status_message4(SM_ORDER | SM_DING, 3, 5,
--		     "Don't know how to display %s%s%s attachments.%s",
-+		     "不知如何顯示 %s%s%s 的附件。%s",
- 			    body_type_names(a->body->type),
- 			    a->body->subtype ? "/" : "",
- 			    a->body->subtype ? a->body->subtype :"",
--			    (flags & DA_SAVE) ? " Try Save." : "");
-+			    (flags & DA_SAVE) ? " 試試存檔。" : "");
- 	else
- 	  q_status_message1(SM_ORDER | SM_DING, 3, 5,
--			    "Don't know how to unpack \"%s\" encoding",
-+			    "不知如何解開 \"%s\" 的編碼",
- 			    body_encodings[(a->body->encoding <= ENCMAX)
- 					     ? a->body->encoding : ENCOTHER]);
- 
-@@ -2101,7 +2101,7 @@
- 	gf_set_so_writec(&pc, store);
- 	(void) decode_text(a, msgno, pc, QStatus, FM_DISPLAY | FM_HANDLES);
- 	gf_clear_so_writec(store);
--	scroll_attachment("ATTACHED TEXT", store, src, handles, a, flags);
-+	scroll_attachment("附件文字", store, src, handles, a, flags);
- 	free_handles(&handles);
- 	so_give(&store);	/* free resources associated with store */
-     }
-@@ -2276,22 +2276,22 @@
-     memset(&sargs, 0, sizeof(SCROLL_S));
-     sargs.text.text    = so_text(store);
-     sargs.text.src     = src;
--    sargs.text.desc    = "attachment";
-+    sargs.text.desc    = "附件";
-     sargs.text.handles = handles;
-     sargs.bar.title    = title;
-     sargs.proc.tool    = process_attachment_cmd;
-     sargs.proc.data.p  = (void *) a;
-     sargs.help.text    = h_mail_text_att_view;
--    sargs.help.title   = "HELP FOR ATTACHED TEXT VIEW";
-+    sargs.help.title   = "檢視附件文字的輔助說明";
-     sargs.keys.menu    = &att_view_keymenu;
-     setbitmap(sargs.keys.bitmap);
- 
-     /* First, fix up "back" key */
-     if(flags & DA_FROM_VIEW){
--	att_view_keymenu.keys[ATV_BACK_KEY].label = "MsgText";
-+	att_view_keymenu.keys[ATV_BACK_KEY].label = "信件文字";
-     }
-     else{
--	att_view_keymenu.keys[ATV_BACK_KEY].label = "AttchIndex";
-+	att_view_keymenu.keys[ATV_BACK_KEY].label = "附件索引";
-     }
- 
-     if(!handles){
-@@ -2705,10 +2705,10 @@
-     memset(&sargs, 0, sizeof(SCROLL_S));
-     sargs.text.text  = so_text(store);
-     sargs.text.src   = CharStar;
--    sargs.text.desc  = "attachment info";
--    sargs.bar.title  = "ABOUT ATTACHMENT";
-+    sargs.text.desc  = "附件資訊";
-+    sargs.bar.title  = "關於附件";
-     sargs.help.text  = h_simple_text_view;
--    sargs.help.title = "HELP FOR \"ABOUT ATTACHMENT\"";
-+    sargs.help.title = "\"關於附件\"的輔助說明";
- 
-     scrolltool(&sargs);
- 
-@@ -2770,7 +2770,7 @@
- 		else		/* partially formatted outgoing message */
- 		  pine_send(outgoing, &body,
- 			    ps_global->nr_mode
--			      ? "SEND MESSAGE" : "FORWARD MESSAGE",
-+			      ? "送出信件" : "轉寄信件",
- 			    NULL, NULL, NULL, NULL, NULL, FALSE);
- 
- 		ps_global->mangled_screen = 1;
-@@ -2856,7 +2856,7 @@
- 		  pine_simple_send(outgoing, &body, NULL, NULL, NULL, 1);
- 		else		/* partially formatted outgoing message */
- 		  pine_send(outgoing, &body,
--		      ps_global->nr_mode ? "SEND MESSAGE" : "FORWARD MESSAGE",
-+		      ps_global->nr_mode ? "送出信件" : "轉寄信件",
- 			    NULL, NULL, NULL, NULL, NULL, FALSE);
- 
- 		ps_global->mangled_screen = 1;
-@@ -2953,7 +2953,7 @@
- 				 tp = body_partno(stream, msgno, a->body),
- 				 msgtext, prefix, include_text)){
- 		/* partially formatted outgoing message */
--		pine_send(outgoing, &body, "COMPOSE MESSAGE REPLY",
-+		pine_send(outgoing, &body, "編輯信件回函",
- 			  fcc.tptr, NULL, NULL, NULL, NULL, 0);
- 
- 		pine_free_body(&body);
-@@ -3034,7 +3034,7 @@
- 
- 	sprintf(prompt, "Pipe %sattachment %s to %s: ", raw ? "RAW " : "",
- 		a->number, capture ? "" : "(Free Output) ");
--	pipe_opt[1].label = raw ? "DecodedData" : "Raw Data";
-+	pipe_opt[1].label = raw ? "解碼後的資料" : "原始資料";
- 	pipe_opt[2].label = capture ? "Free Output" : "Capture Output";
- 	flags = OE_APPEND_CURRENT | OE_SEQ_SENSITIVE;
- 	rc = optionally_enter(pipe_command, -FOOTER_ROWS(ps_global), 0,
-@@ -3052,7 +3052,7 @@
+ 	if(ps_global->restricted){
+ 	    q_status_message(SM_ORDER | SM_DING, 3, 3,
+-			     "Download disallowed in restricted mode");
++			     "限制模式中不允許\下載");
+ 	    goto fini;
  	}
- 	else if(rc == 0){
- 	    if(pipe_command[0] == '\0'){
--		cmd_cancelled("Pipe command");
-+		cmd_cancelled("導向命令");
- 		break;
+ 
+@@ -3338,7 +3333,7 @@
+ 		 || !format_message(mn_m2raw(msgmap, mn_get_cur(msgmap)),
+ 				    env, b, FM_NEW_MESS | FM_NOWRAP, pc)){
+ 		  q_status_message(SM_ORDER | SM_DING, 3, 3,
+-			   err = "Error writing tempfile for download");
++			   err = "寫入下載暫存檔時發生錯誤");
+ 		  break;
+ 	      }
+ 
+@@ -3351,18 +3346,18 @@
+ 		  (void) close_system_pipe(&syspipe);
+ 		else
+ 		  q_status_message(SM_ORDER | SM_DING, 3, 3,
+-				err = "Error running download command");
++				err = "執行下載命令時發生錯誤");
  	    }
  
-@@ -3126,7 +3126,7 @@
- 	    break;
+ 	    unlink(tfp);
  	}
- 	else if(rc == 1){
--	    cmd_cancelled("Pipe");
-+	    cmd_cancelled("導向");
- 	    break;
+ 	else
+ 	  q_status_message(SM_ORDER | SM_DING, 3, 3,
+-			 err = "Error building temp file for download");
++			 err = "無法建立供下載使用的暫存檔");
+ 
+ 	fs_give((void **)&tfp);
+ 	if(!err)
+-	  q_status_message(SM_ORDER, 0, 3, "Download Command Completed");
++	  q_status_message(SM_ORDER, 0, 3, "下載命令完成");
+ 
+ 	goto fini;
+     }
+@@ -3474,7 +3469,7 @@
+     STORE_S *store = NULL;
+     struct variable *vars = ps->vars;
+     static ESCKEY_S simple_export_opts[] = {
+-	{ctrl('T'), 10, "^T", "To Files"},
++	{ctrl('T'), 10, "^T", "檔案列表"},
+ 	{-1, 0, NULL, NULL},
+ 	{-1, 0, NULL, NULL}};
+ 
+@@ -3482,7 +3477,7 @@
+ 	simple_export_opts[r].ch    =  ctrl('I');
+ 	simple_export_opts[r].rval  = 11;
+ 	simple_export_opts[r].name  = "TAB";
+-	simple_export_opts[r].label = "Complete";
++	simple_export_opts[r].label = "完成";
+     }
+ 
+     if(!srctext){
+@@ -3555,7 +3550,7 @@
+ 	break;
+ 
+       case -1:
+-	cmd_cancelled("Export");
++	cmd_cancelled("匯出");
+ 	break;
+ 
+       case -2:
+@@ -4131,32 +4126,32 @@
+     ekey[rc].ch	     = (allow_list) ? ctrl('T') : 0 ;
+     ekey[rc].rval    = (allow_list) ? 2 : 0;
+     ekey[rc].name    = (allow_list) ? "^T" : "";
+-    ekey[rc++].label = (allow_list) ? "ToFldrs" : "";
++    ekey[rc++].label = (allow_list) ? "檔案列表" : "";
+ 
+     if(ps_global->context_list->next){
+ 	ekey[rc].ch      = ctrl('P');
+ 	ekey[rc].rval    = 10;
+ 	ekey[rc].name    = "^P";
+-	ekey[rc++].label = "Prev Collection";
++	ekey[rc++].label = "前一總集";
+ 
+ 	ekey[rc].ch      = ctrl('N');
+ 	ekey[rc].rval    = 11;
+ 	ekey[rc].name    = "^N";
+-	ekey[rc++].label = "Next Collection";
++	ekey[rc++].label = "後一總集";
+     }
+ 
+     if(F_ON(F_ENABLE_TAB_COMPLETE,ps_global)){
+ 	ekey[rc].ch      = TAB;
+ 	ekey[rc].rval    = 12;
+ 	ekey[rc].name    = "TAB";
+-	ekey[rc++].label = "Complete";
++	ekey[rc++].label = "完成";
+     }
+ 
+     if(F_ON(F_ENABLE_SUB_LISTS, ps_global)){
+ 	ekey[rc].ch      = ctrl('X');
+ 	ekey[rc].rval    = 14;
+ 	ekey[rc].name    = "^X";
+-	ekey[rc++].label = "ListMatches";
++	ekey[rc++].label = "列出符合";
+     }
+ 
+     if(ps_global->context_list->next){
+@@ -4272,15 +4267,15 @@
+ 				    newfolder);
+ 		else if(tc->use & CNTXT_INCMNG)
+ 		  q_status_message1(SM_ORDER, 0, 3,
+-				    "Can't find Incoming Folder: %s",
++				    "找不到新進信件匣：%s",
+ 				    newfolder);
+ 		else if(context_isambig(newfolder))
+ 		  q_status_message3(SM_ORDER, 0, 3,
+-				    "Can't find folder \"%s\" in %.*s",
+-				    newfolder, (void *) 50, tc->nickname);
++				    "在 %.*s 中找不到信件匣 \"%s\"",
++				    (void *) 50, tc->nickname, newfolder);
+ 		else
+ 		  q_status_message1(SM_ORDER, 0, 3,
+-				    "Can't find folder \"%s\"",
++				    "找不到信件匣 \"%s\"",
+ 				    newfolder);
+ 
+ 		return(NULL);
+@@ -4293,7 +4288,7 @@
+ 	    /* fall thru like they cancelled */
+ 
+ 	  case 1 :				/* o_e says user cancel */
+-	    cmd_cancelled("Open folder");
++	    cmd_cancelled("開啟信件匣");
+ 	    return(NULL);
+ 
+ 	  case 2 :				/* o_e says user wants list */
+@@ -4529,7 +4524,7 @@
+ 	else if ((new_context->use & CNTXT_INCMNG)
+ 		 && (folder_index(newfolder, new_context, FI_FOLDER) < 0)){
+ 	    q_status_message1(SM_ORDER, 3, 4,
+-			    "Can't find Incoming Folder %s.", newfolder);
++			    "找不到新進信件匣 %s。", newfolder);
+ 	    return(0);
  	}
- 	else if(rc = 3)
+     }
+@@ -4610,7 +4605,7 @@
+ 	}
+     }
+ 
+-    strcat(strncat(strcpy(status_msg, "Opening \""),
++    strcat(strncat(strcpy(status_msg, "正在開啟 \""),
+ 	    pretty_fn(newfolder), 70), "\"");
+     we_cancel = busy_alarm(1, status_msg, NULL, 1);
+ 
+@@ -4693,7 +4688,7 @@
+ 			 && !mn_get_revsort(ps_global->msgmap)))
+ 		      refresh_sort(ps_global->msgmap, FALSE);
+ 
+-                    q_status_message1(SM_ORDER, 0, 3, "Folder \"%s\" reopened",
++                    q_status_message1(SM_ORDER, 0, 3, "重新開啟資料匣 \"%s\"",
+                                       old_folder);
+                 }
+             }
+@@ -4774,14 +4769,13 @@
+ 
+     /* UWIN doesn't want to see this message */
+     if(!ps_global->nr_mode)
+-      q_status_message7(SM_ORDER, 0, 4, "%s \"%s\" opened with %s message%s%s",
++      q_status_message7(SM_ORDER, 0, 4, "%s \"%s\" 已開啟，共 %s 封信%s",
+ 			IS_NEWS(ps_global->mail_stream)
+-			  ? "News group" : "Folder",
++			  ? "新聞組群" : "信件匣",
+ 			pretty_fn(newfolder),
+ 			comatose(mn_get_total(ps_global->msgmap)),
+-			plural(mn_get_total(ps_global->msgmap)),
+-			READONLY_FOLDER ?" READONLY" : "",
+-			NULL, NULL);
++			READONLY_FOLDER ?" 唯讀" : "",
++			NULL, NULL, NULL);
+ 
+     sort_folder(ps_global->msgmap, ps_global->def_sort,
+ 		ps_global->def_sort_rev, TRUE);
+@@ -4947,9 +4941,9 @@
+     char ing[4];
+ 
+     if(final_msg)
+-      strcpy(ing, "ed");
++      strcpy(ing, "已");
+     else
+-      strcpy(ing, "ing");
++      strcpy(ing, "正");
+ 
+     buff1[0] = '\0';
+     buff2[0] = '\0';
+@@ -4958,7 +4952,7 @@
+                    stream->mailbox));
+         if(!stream->rdonly){
+ 
+-            q_status_message1(SM_INFO, 0, 1, "Closing \"%s\"...", folder);
++            q_status_message1(SM_INFO, 0, 1, "正在關閉 \"%s\"...", folder);
+ 	    flush_status_messages(1);
+ 
+ 	    /* Save read messages? */
+@@ -4998,10 +4992,8 @@
+ 		}
+ 		else{
+ 		    sprintf(prompt_b,
+-			    "Expunge the %ld deleted message%s from \"%s\"",
+-			    delete_count,
+-			    delete_count == 1 ? "" : "s",
+-			    short_folder_name);
++			    "自 \"%s\" 中刪除 %ld 封信件", short_folder_name,
++			    delete_count);
+ 		    ret = want_to(prompt_b, 'y', 0, NO_HELP, WT_NORM);
+ 		}
+ 
+@@ -5012,13 +5004,10 @@
+ 
+ 		if(ret == 'y'){
+ 		    sprintf(buff2,
+-		      "Clos%s \"%.30s\". %s %s message%s and delet%s %s.",
++		      "%s關閉 \"%.30s\"。保留 %s 封並刪除 %s 封信件。",
+ 			ing,
+ 	 		pretty_fn(folder),
+-			final_msg ? "Kept" : "Keeping",
+ 			comatose((stream->nmsgs - delete_count)),
+-			plural(stream->nmsgs - delete_count),
+-			ing,
+ 			long2string(delete_count));
+ 		    if(final_msg)
+ 		      *final_msg = cpystr(buff2);
+@@ -5042,17 +5031,15 @@
+ 	    if(ret != 'y'){
+ 		if(stream->nmsgs){
+ 		    sprintf(buff2,
+-		        "Clos%s folder \"%s\". %s%s%s message%s.",
++		        "%s關閉信件匣 \"%s\"。保留%s%s 封信件。",
+ 			ing,
+ 			pretty_fn(folder), 
+-			final_msg ? "Kept" : "Keeping",
+-			(stream->nmsgs == 1L) ? " single" : " all ",
++			(stream->nmsgs == 1L) ? " 一" : "全部共 ",
+ 			(stream->nmsgs > 1L)
+-			  ? comatose(stream->nmsgs) : "",
+-			plural(stream->nmsgs));
++			  ? comatose(stream->nmsgs) : "");
+ 		}
+ 		else{
+-		    sprintf(buff2, "Clos%s empty folder \"%s\"",
++		    sprintf(buff2, "%s關閉空的信件匣 \"%s\"",
+ 			ing, pretty_fn(folder));
+ 		}
+ 
+@@ -5071,7 +5058,7 @@
+ 		  q_status_message(SM_ORDER,
+ 		      F_ON(F_AUTO_READ_MSGS,ps_global) ? 0 : 3, 5, moved_msg);
+ 
+-		sprintf(buff2, "Clos%s news group \"%s\"",
++		sprintf(buff2, "%s關閉新聞組群 \"%s\"",
+ 			ing, pretty_fn(folder));
+ 
+ 		if(F_ON(F_NEWS_CROSS_DELETE, ps_global))
+@@ -5079,7 +5066,7 @@
+ 	    }
+             else
+ 	      sprintf(buff2,
+-			"Clos%s read-only folder \"%s\". No changes to save",
++			"%s關閉唯讀的信件匣 \"%s\"。未存入任何改變",
+ 			ing, pretty_fn(folder));
+ 
+ 	    if(final_msg)
+@@ -5368,18 +5355,18 @@
+     if(in_index && F_ON(F_PRINT_INDEX, state)){
+ 	char m[10];
+ 	static ESCKEY_S prt_opts[] = {
+-	    {'i', 'i', "I", "Index"},
++	    {'i', 'i', "I", "索引"},
+ 	    {'m', 'm', "M", NULL},
+ 	    {-1, 0, NULL, NULL}};
+ 
+-	sprintf(m, "Message%s", (msgs>1L) ? "s" : "");
++	sprintf(m, "信件");
+ 	prt_opts[1].label = m;
+-	sprintf(prompt, "Print %sFolder Index or %s %s? ",
+-	    agg ? "selected " : "", agg ? "selected" : "current", m);
++	sprintf(prompt, "印出 %s信件匣索引或 %s %s? ",
++	    agg ? "已被選擇的 " : "", agg ? "已被選擇的" : "目前的", m);
+ 	switch(radio_buttons(prompt, -FOOTER_ROWS(state), prt_opts, 'm', 'x',
+ 			     NO_HELP, RB_NORM|RB_SEQ_SENSITIVE)){
+ 	  case 'x' :
+-	    cmd_cancelled("Print");
++	    cmd_cancelled("列印");
+ 	    if(agg)
+ 	      restore_selected(msgmap);
+ 
+@@ -5396,11 +5383,11 @@
+     }
+ 
+     if(do_index)
+-      sprintf(prompt, "%sFolder Index ", agg ? "Selected " : "");
++      sprintf(prompt, "%s信件匣索引 ", agg ? "已被選擇的" : "");
+     else if(msgs > 1L)
+-      sprintf(prompt, "%s messages ", long2string(msgs));
++      sprintf(prompt, "%s 封信件 ", long2string(msgs));
+     else
+-      sprintf(prompt, "Message %s ", long2string(mn_get_cur(msgmap)));
++      sprintf(prompt, "第 %s 封信件", long2string(mn_get_cur(msgmap)));
+ 
+     if(open_printer(prompt) < 0){
+ 	if(agg)
+@@ -5663,7 +5650,7 @@
+ 	    /* else fall thru as if cancelled */
+ 
+ 	  case 1 :
+-	    cmd_cancelled("Pipe command");
++	    cmd_cancelled("導向(Pipe)命令");
+ 	    done++;
+ 	    break;
+ 
+@@ -5746,7 +5733,7 @@
+     sel_opts = sel_opts2;
+     if(old_tot = any_lflagged(msgmap, MN_SLCT)){
+ 	i = get_lflag(state->mail_stream, msgmap, mn_get_cur(msgmap), MN_SLCT);
+-	sel_opts1[1].label = "unselect Cur" + (i ? 0 : 2);
++	sel_opts1[1].label = "取消目前選擇" + (i ? 0 : 2);
+ 	sel_opts += 2;			/* disable extra options */
+ 	switch(q = radio_buttons(sel_pmt1, q_line, sel_opts1, 'c', 'x', help,
+ 				 RB_NORM)){
+@@ -5790,7 +5777,7 @@
+      */
+     switch(q){
+       case 'x':				/* cancel */
+-	cmd_cancelled("Select command");
++	cmd_cancelled("選取命令");
+ 	return;
+ 
+       case 'c' :			/* select/unselect current */
+@@ -5998,14 +5985,14 @@
+ 	sel_opts3[i].ch      = '*';
+ 	sel_opts3[i].rval    = '*';
+ 	sel_opts3[i].name    = "*";
+-	sel_opts3[i++].label = "Flag";
++	sel_opts3[i++].label = "旗標";
+     }
+ 
+     if(F_ON(F_ENABLE_PIPE,state)){ /* pipe? */
+ 	sel_opts3[i].ch      = '|';
+ 	sel_opts3[i].rval    = '|';
+ 	sel_opts3[i].name    = "|";
+-	sel_opts3[i++].label = "Pipe";
++	sel_opts3[i++].label = "導向(Pipe)";
+     }
+ 
+     /*
+@@ -6017,7 +6004,7 @@
+ 	sel_opts3[i].ch      = 'b';
+ 	sel_opts3[i].rval    = 'b';
+ 	sel_opts3[i].name    = "B";
+-	sel_opts3[i++].label = "Bounce";
++	sel_opts3[i++].label = "退信";
+     }
+ 
+     if(F_ON(F_ENABLE_PRYNT, state)){
+@@ -6088,7 +6075,7 @@
+ 	break;
+ 
+       case 'x' :			/* cancel */
+-	cmd_cancelled("Apply command");
++	cmd_cancelled("套用命令");
+ 	rv = 0;
+ 	break;
+ 
+@@ -6205,7 +6192,7 @@
+ 	*t = '\0';
+ 
+         if(r == 1 || numbers[0] == '\0'){
+-	    cmd_cancelled("Selection by number");
++	    cmd_cancelled("根據數字選擇");
+ 	    return(1);
+         }
+ 	else
+@@ -6331,7 +6318,7 @@
+ 			     prompt, sel_date_opt, help, &flags);
+ 	switch (r){
+ 	  case 1 :
+-	    cmd_cancelled("Selection by date");
++	    cmd_cancelled("根據日期選擇");
+ 	    return(1);
+ 
+ 	  case 3 :
+@@ -6441,15 +6428,15 @@
+ 	ekey[0].ch    = ctrl('T');
+ 	ekey[0].name  = "^T";
+ 	ekey[0].rval  = 10;
+-	ekey[0].label = "Cur To";
++	ekey[0].label = "目前收信人";
+ 	ekey[1].ch    = ctrl('R');
+ 	ekey[1].name  = "^R";
+ 	ekey[1].rval  = 11;
+-	ekey[1].label = "Cur From";
++	ekey[1].label = "目前寄件人";
+ 	ekey[2].ch    = ctrl('W');
+ 	ekey[2].name  = "^W";
+ 	ekey[2].rval  = 12;
+-	ekey[2].label = "Cur Cc";
++	ekey[2].label = "目前副本";
+ 	break;
+ 
+       case 's' :
+@@ -6457,7 +6444,7 @@
+ 	ekey[0].ch    = ctrl('X');
+ 	ekey[0].name  = "^X";
+ 	ekey[0].rval  = 13;
+-	ekey[0].label = "Cur Subject";
++	ekey[0].label = "目前主題";
+ 	break;
+ 
+       case 'a' :
+@@ -6556,7 +6543,7 @@
+     }
+ 
+     if(type == 'x' || r == 'x'){
+-	cmd_cancelled("Selection by text");
++	cmd_cancelled("根據文字選擇");
+ 	return(1);
+     }
+ 
+@@ -6735,7 +6722,7 @@
+ 			  NO_HELP, RB_NORM);
+ 			  
+ 	if(s == 'x'){
+-	    cmd_cancelled("Selection by status");
++	    cmd_cancelled("根據狀態選擇");
+ 	    return(1);
+ 	}
+ 	else if(s == '!')
+@@ -6832,7 +6819,7 @@
+ 
+     /*----- String together the prompt ------*/
+     tmp[1] = '\0';
+-    strcpy(prompt, "Choose type of sort, or Reverse current sort : ");
++    strcpy(prompt, "選取排序方式，或反轉目前的排序：");
+     for(i = 0; state->sort_types[i] != EndofList && i < 8; i++) {
+ 	sorts[i].rval	   = i;
+ 	p = sorts[i].label = sort_name(state->sort_types[i]);
+@@ -6849,7 +6836,7 @@
+     sorts[i].ch     = 'r';
+     sorts[i].rval   = 'r';
+     sorts[i].name   = cpystr("R");
+-    sorts[i].label  = "Reverse";
++    sorts[i].label  = "反轉";
+     sorts[++i].ch   = -1;
+     help = h_select_sort;
+ 
+@@ -6862,7 +6849,7 @@
+     }
+     else{
+ 	retval = 0;
+-	cmd_cancelled("Sort");
++	cmd_cancelled("排序");
+     }
+ 
+     while(--i >= 0)

@@ -1,9 +1,10 @@
 # New ports collection makefile for:	pine
-# Version required:     4.00
-# Date created:		19 Nov1997
-# Whom:			Wu Ching-hong <woju@FreeBSD.ee.Ntu.edu.TW>
+# http://www.washington.edu/pine/
+# Version required:     4.02
+# Date created:		15 July 1998
+# Whom:			Liang Tai-hwa <avatar@www.mmlab.cse.yzu.edu.tw>
 #
-# $Id: Makefile,v 1.4 1998/07/21 15:27:41 asami Exp $
+# $Id: Makefile,v 1.24 1998/07/21 13:45:58 asami Exp $
 #
 
 DISTNAME=       pine4.02
@@ -13,7 +14,7 @@ MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/
 
 MAINTAINER=	avatar@www.mmlab.cse.yzu.edu.tw
 
-NO_LATEST_LINK=	yes
+NO_LATEST_LINK= yes
 
 MAN1= 		pine.1 pico.1 pilot.1
 
@@ -22,7 +23,7 @@ do-build:
 
 do-install:
 	${INSTALL} ${COPY} -o ${LIBOWN} -g ${LIBGRP} -m ${LIBMODE} \
-		 ${WRKSRC}/bin/libpico.so.1.3 ${PREFIX}/lib/libpico.so.1.3
+		${WRKSRC}/bin/libpico.so.1.3 ${PREFIX}/lib/libpico.so.1.3
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pico ${PREFIX}/bin/pico
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pilot ${PREFIX}/bin/pilot
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pine ${PREFIX}/bin/pine
@@ -33,11 +34,11 @@ do-install:
 			${PREFIX}/etc/dot.pinerc.sample
 	${INSTALL_DATA} ${FILESDIR}/dot.pinerc.pgp.sample \
 			${PREFIX}/etc/dot.pinerc.pgp.sample
-	${INSTALL_DATA} ${FILESDIR}/pine.conf ${PREFIX}/etc/pine.conf
 	${INSTALL_MAN} ${WRKSRC}/doc/pico.1 ${PREFIX}/man/man1/pico.1
 	${INSTALL_MAN} ${WRKSRC}/doc/pilot.1 ${PREFIX}/man/man1/pilot.1
 	${INSTALL_MAN} ${WRKSRC}/doc/pine.1 ${PREFIX}/man/man1/pine.1
 .if !defined(NOPORTDOCS)
+	${INSTALL_DATA} -d ${PREFIX}/share/doc/pine
 	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} \
 			${PREFIX}/share/doc/pine/tech-notes
 	${INSTALL_DATA} ${WRKSRC}/doc/brochure.txt ${PREFIX}/share/doc/pine

@@ -1,11 +1,11 @@
---- pico/edef.h.orig	Thu Apr 23 07:53:44 1998
-+++ pico/edef.h	Tue Jul 28 08:35:00 1998
-@@ -59,7 +59,7 @@
- int	ComposerEditing = FALSE;	/* TRUE if message line is open */
- int	revexist = FALSE;		/* does reverse video exist?	*/
- char	modecode[] = "WCSEVO";		/* letters to represent modes	*/
--long	gmode = MDWRAP;			/* global editor mode		*/
-+long	gmode = MDWRAP | MDTCAPWINS;	/* global editor mode		*/
- int     sgarbf  = TRUE;                 /* TRUE if screen is garbage	*/
- int     mpresf  = FALSE;                /* TRUE if message in last line */
- int	clexec	= FALSE;		/* command line execution flag	*/
+--- pico/ebind.h.orig	Sat Feb 28 08:10:31 1998
++++ pico/ebind.h	Tue Aug  4 12:42:14 1998
+@@ -145,7 +145,7 @@
+ 	{CTRL|'O',		filewrite},
+ 	{CTRL|'P',		backline},
+ 	{CTRL|'R',		insfile},
+-#ifdef	SPELLER
++#if defined(SPELLER) && !defined(__FreeBSD__)
+ 	{CTRL|'T',		spell},
+ #endif	/* SPELLER */
+ 	{CTRL|'U',		yank},

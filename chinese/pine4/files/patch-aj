@@ -1,184 +1,348 @@
---- pico/display.c.orig	Sat Jun 20 01:19:53 1998
-+++ pico/display.c	Tue Jul 28 08:34:59 1998
-@@ -71,32 +71,32 @@
-  * Standard pico keymenus...
-  */
- static KEYMENU menu_pico[] = {
--    {"^G", "Get Help", KS_SCREENHELP},	{"^O", "WriteOut", KS_SAVEFILE},
--    {"^R", "Read File", KS_READFILE},	{"^Y", "Prev Pg", KS_PREVPAGE},
--    {"^K", "Cut Text", KS_NONE},	{"^C", "Cur Pos", KS_CURPOSITION},
--    {"^X", "Exit", KS_EXIT},		{"^J", "Justify", KS_JUSTIFY},
--    {"^W", "Where is", KS_WHEREIS},	{"^V", "Next Pg", KS_NEXTPAGE},
-+    {"^G", "輔助說明", KS_SCREENHELP}, {"^O", "寫入檔案", KS_SAVEFILE},
-+    {"^R", "讀取檔案", KS_READFILE},   {"^Y", "上一頁", KS_PREVPAGE},
-+    {"^K", "剪下一行", KS_NONE},       {"^C", "目前位置", KS_CURPOSITION},
-+    {"^X", "離開", KS_EXIT},           {"^J", "重整段落", KS_JUSTIFY},
-+    {"^W", "搜尋", KS_WHEREIS},        {"^V", "下一頁", KS_NEXTPAGE},
-     {"^U", NULL, KS_NONE},
- #ifdef	SPELLER
--    {"^T", "To Spell", KS_SPELLCHK}
-+    {"^T", "拼字檢查", KS_SPELLCHK}
- #else
--    {"^D", "Del Char", KS_NONE}
-+    {"^D", "刪除字元", KS_NONE}
- #endif
- };
- #define	UNCUT_KEY	10
+--- pico/composer.c.orig	Fri Jul  3 07:00:40 1998
++++ pico/composer.c	Tue Aug  4 12:42:14 1998
+@@ -136,12 +136,12 @@
  
  
- static KEYMENU menu_compose[] = {
--    {"^G", "Get Help", KS_SCREENHELP},	{"^X", NULL, KS_SEND},
--    {"^R", "Read File", KS_READFILE},	{"^Y", "Prev Pg", KS_PREVPAGE},
--    {"^K", "Cut Text", KS_NONE},	{"^O", "Postpone", KS_POSTPONE},
--    {"^C", "Cancel", KS_CANCEL},	{"^J", "Justify", KS_JUSTIFY},
--    {NULL, NULL, KS_NONE},		{"^V", "Next Pg", KS_NEXTPAGE},
-+    {"^G", "輔助說明", KS_SCREENHELP}, {"^X", NULL, KS_SEND},
-+    {"^R", "讀取檔案", KS_READFILE},   {"^Y", "上一頁", KS_PREVPAGE},
-+    {"^K", "剪下一行", KS_NONE},       {"^O", "暫緩寫信", KS_POSTPONE},
-+    {"^C", "取消", KS_CANCEL},         {"^J", "重整段落", KS_JUSTIFY},
-+    {NULL, NULL, KS_NONE},             {"^V", "下一頁", KS_NEXTPAGE},
-     {"^U", NULL, KS_NONE},
- #ifdef	SPELLER
--    {"^T", "To Spell", KS_SPELLCHK}
-+    {"^T", "拼字檢查", KS_SPELLCHK}
- #else
--    {"^D", "Del Char", KS_NONE}
-+    {"^D", "刪除字元", KS_NONE}
- #endif
+ static KEYMENU menu_header[] = {
+-    {"^G", "Get Help", KS_SCREENHELP},	{"^X", "Send", KS_SEND},
+-    {"^R", "Rich Hdr", KS_RICHHDR},	{"^Y", "PrvPg/Top", KS_PREVPAGE},
+-    {"^K", "Cut Line", KS_CURPOSITION},	{"^O", "Postpone", KS_POSTPONE},
+-    {"^C", "Cancel", KS_CANCEL},	{"^D", "Del Char", KS_NONE},
+-    {"^J", "Attach", KS_ATTACH},	{"^V", "NxtPg/End", KS_NEXTPAGE},
+-    {"^U", "UnDel Line", KS_NONE},	{NULL, NULL}
++    {"^G", "輔助說明", KS_SCREENHELP},	{"^X", "送出", KS_SEND},
++    {"^R", "完整標頭", KS_RICHHDR},	{"^Y", "上一頁", KS_PREVPAGE},
++    {"^K", "剪下一行", KS_CURPOSITION},	{"^O", "暫緩寫信", KS_POSTPONE},
++    {"^C", "取消", KS_CANCEL},	{"^D", "刪除字元", KS_NONE},
++    {"^J", "夾附件", KS_ATTACH},	{"^V", "下一頁", KS_NEXTPAGE},
++    {"^U", "復原刪除行", KS_NONE},	{NULL, NULL}
  };
- #define	EXIT_KEY	1
-@@ -152,7 +152,7 @@
-     (*term.t_rev)(FALSE);
-     vscreen = (VIDEO **) malloc((term.t_nrow+1)*sizeof(VIDEO *));
-     if (vscreen == NULL){
--	emlwrite("Allocating memory for virtual display failed.", NULL);
-+	emlwrite("配置記憶體給虛擬顯示器失敗。", NULL);
+ #define	SEND_KEY	1
+ #define	RICH_KEY	2
+@@ -231,7 +231,7 @@
+ 		     if(strlen(addrbuf) + strlen(buf) >= addrbuflen){
+ 			 addrbuflen += NLINE * 4;
+ 			 if(!(addrbuf = (char *)realloc(addrbuf, addrbuflen))){
+-			     emlwrite("\007Can't realloc addrbuf to %d bytes",
++			     emlwrite("\007無法更改 addrbuf 的記憶體配置至 %d bytes",
+ 				      (void *) addrbuflen);
+ 			     return(ABORT);
+ 			 }
+@@ -298,7 +298,7 @@
+      * get first chunk of memory, and tie it to structure...
+      */
+     if((curline = HALLOC()) == NULL){
+-        emlwrite("Unable to make room for full Header.", NULL);
++        emlwrite("無法配置空間給完整標頭。", NULL);
          return(FALSE);
      }
- 
-@@ -160,7 +160,7 @@
-     pscreen = (VIDEO **) malloc((term.t_nrow+1)*sizeof(VIDEO *));
-     if (pscreen == NULL){
- 	free((void *)vscreen);
--	emlwrite("Allocating memory for physical display failed.", NULL);
-+	emlwrite("配置記憶體給實體顯示器失敗。", NULL);
-         return(FALSE);
-     }
- 
-@@ -171,7 +171,7 @@
-         if (vp == NULL){
- 	    free((void *)vscreen);
- 	    free((void *)pscreen);
--	    emlwrite("Allocating memory for virtual display lines failed.",
-+	    emlwrite("配置記憶體給虛擬顯示行失敗。",
- 		     NULL);
-             return(FALSE);
- 	}
-@@ -191,7 +191,7 @@
- 
- 	    free((void *)vscreen);
- 	    free((void *)pscreen);
--	    emlwrite("Allocating memory for physical display lines failed.",
-+	    emlwrite("配置記憶體給實體顯示行失敗。",
- 		     NULL);
-             return(FALSE);
- 	}
-@@ -749,12 +749,12 @@
+     longest = term.t_ncol - e->prlen - 1;
+@@ -680,7 +680,7 @@
  	    }
- 
- 	    if(lastflag&CFFILL){
--		menu_pico[UNCUT_KEY].label = "UnJustify";
--		emlwrite("Can now UnJustify!", NULL);
-+		menu_pico[UNCUT_KEY].label = "取消重整";
-+		emlwrite("現在可以取消重整!", NULL);
- 		mpresf = FARAWAY;	/* remove this after next keystroke! */
+ 	    else{
+ 		(*term.t_beep)();
+-		emlwrite("Unknown Command: ^Z", NULL);
++		emlwrite("未知的命令：^Z", NULL);
  	    }
+ 	    break;
+ 
+@@ -693,12 +693,12 @@
+ 	    err = NULL;
+ 	    if(headents[ods.cur_e].is_attach){
+ 		if(SyncAttach() < 0){
+-		    if(mlyesno("Problem with attachments. Postpone anyway?",
++		    if(mlyesno("附件有問題。無論如何都要暫緩該信嗎？",
+ 			       FALSE) != TRUE){
+ 			if(FormatLines(headents[ods.cur_e].hd_text, "",
+ 				       term.t_ncol - headents[ods.cur_e].prlen,
+ 				       headents[ods.cur_e].break_on_comma, 0) == -1)
+-			  emlwrite("\007Format lines failed!", NULL);
++			  emlwrite("\007版面整理失敗!", NULL);
+ 			UpdateHeader();
+ 			PaintHeader(COMPOSER_TOP_LINE, FALSE);
+ 			PaintBody(1);
+@@ -952,7 +952,7 @@
+ 		    if(FormatLines(headents[ods.cur_e].hd_text, buf,
+ 				   term.t_ncol - headents[ods.cur_e].prlen,
+ 				   headents[ods.cur_e].break_on_comma,0)==-1){
+-			emlwrite("\007Format lines failed!", NULL);
++			emlwrite("\007版面整理失敗!", NULL);
+ 		    }
+ 
+ 		    UpdateHeader();
+@@ -1011,7 +1011,7 @@
+                         if(FormatLines(ods.cur_l, bufp,
+ 				      (term.t_ncol-headents[ods.cur_e].prlen), 
+                                       headents[ods.cur_e].break_on_comma, 0) == -1){
+-                            emlwrite("Problem adding address to header !",
++                            emlwrite("在標頭加入地址時出了問題!",
+                                      NULL);
+                             (*term.t_beep)();
+                             break;
+@@ -1092,10 +1092,10 @@
+ 	  default :				/* huh? */
+ bleep:
+ 	    if(ch&CTRL)
+-	      emlwrite("\007Unknown command: ^%c", (void *)(ch&0xff));
++	      emlwrite("\007未知的命令：^%c", (void *)(ch&0xff));
  	    else
--	      menu_pico[UNCUT_KEY].label = "UnCut Text";
-+	      menu_pico[UNCUT_KEY].label = "復原刪字";
+ 	  case BADESC:
+-	      emlwrite("\007Unknown command", NULL);
++	      emlwrite("\007未知的命令", NULL);
  
- 	    wkeyhelp(menu_pico);
- 	    sgarbk = FALSE;
-@@ -944,18 +944,18 @@
- 	  ShowPrompt();
+ 	  case NODATA:
+ 	    break;
+@@ -1135,14 +1135,14 @@
+ 	if(gripe){
+ 	    char xx[81];
+ 
+-	    strcpy(xx, "Can't move down. Use ^X to ");
++	    strcpy(xx, "無法再往下移了。請用 ^X ");
+ 	    strcat(xx, (Pmaster && Pmaster->exit_label)
+ 			    ? Pmaster->exit_label
+ 			    : (gmode & MDHDRONLY)
+-			      ? "eXit/Save"
++			      ? "離開/送出"
+ 			      : (gmode & MDVIEW)
+-				? "eXit"
+-				: "Send");
++				? "離開"
++				: "送出");
+ 	    strcat(xx, ".");
+ 	    emlwrite(xx, NULL);
+ 	}
+@@ -1177,7 +1177,7 @@
+ 		if(FormatLines(headents[ods.cur_e].hd_text, "",
+ 			       term.t_ncol-headents[new_e].prlen,
+ 			       headents[ods.cur_e].break_on_comma, 0) == -1)
+-		  emlwrite("\007Format lines failed!", NULL);
++		  emlwrite("\007版面整理失敗!", NULL);
+ 	    }
+ 	} else if(headents[ods.cur_e].builder) { /* expand addresses	    */
+ 	    int mangled = 0;
+@@ -1248,8 +1248,8 @@
+     if(!(new_l = prev_sel_hline(&new_e, ods.cur_l))){	/* all the way up! */
+ 	ods.p_line = COMPOSER_TOP_LINE;
+ 	if(gripe)
+-	  emlwrite("Can't move beyond top of %s",
+-	      (Pmaster->pine_flags & MDHDRONLY) ? "entry" : "header");
++	  emlwrite("無法移到超出%s的頂端",
++	      (Pmaster->pine_flags & MDHDRONLY) ? "項目" : "標頭");
+ 
+ 	return(0);
+     }
+@@ -1278,7 +1278,7 @@
+ 		if(FormatLines(headents[ods.cur_e].hd_text, "",
+ 			       term.t_ncol - headents[ods.cur_e].prlen,
+ 			       headents[ods.cur_e].break_on_comma,0) == -1)
+-		  emlwrite("\007Format lines failed!", NULL);
++		  emlwrite("\007版面整理失敗!", NULL);
+ 	    }
+ 	}
+ 	else if(headents[ods.cur_e].builder){
+@@ -1357,7 +1357,7 @@
+ 	    lp = lp->next;
+ 	}
  	else{
- 	    menu_compose[EXIT_KEY].label  = (Pmaster->headents)
--					      ? "Send" :"Exit";
-+					      ? "送出" :"離開";
- 	    menu_compose[PSTPN_KEY].name  = (Pmaster->headents)
- 					      ? "^O" : NULL;
- 	    menu_compose[PSTPN_KEY].label = (Pmaster->headents)
--					      ? "Postpone" : NULL;
-+					      ? "暫緩寫信" : NULL;
- 	    menu_compose[WHERE_KEY].name  = (Pmaster->alt_ed) ? "^_" : "^W";
- 	    menu_compose[WHERE_KEY].label = (Pmaster->alt_ed) ? "Alt Edit" 
--							      : "Where is";
-+							      : "搜尋";
- 	    KS_OSDATASET(&menu_compose[WHERE_KEY],
- 			 (Pmaster->alt_ed) ? KS_ALTEDITOR : KS_WHEREIS);
--	    menu_compose[UNCUT_KEY].label = (thisflag&CFFILL) ? "UnJustify"
--							      : "UnCut Text";
-+	    menu_compose[UNCUT_KEY].label = (thisflag&CFFILL) ? "取消重整"
-+							      : "復原刪字";
- 	    wkeyhelp(menu_compose);
- #ifdef _WINDOWS
- 	    /* When alt editor is available "Where is" is not on the menu
-@@ -1150,11 +1150,11 @@
+-	    emlwrite("\007Can't allocate line for new attachment!", NULL);
++	    emlwrite("\007無法為新的附件配置空間!", NULL);
+ 	    return(0);
+ 	}
      }
+@@ -1371,12 +1371,12 @@
+     /* validate the new attachment, and reformat if needed */
+     if(status = SyncAttach()){
+ 	if(status < 0)
+-	  emlwrite("\007Problem attaching: %s", fn);
++	  emlwrite("\007有問題的附件：%s", fn);
  
-     menu_yesno[1].name  = "Y";
--    menu_yesno[1].label = (dflt == TRUE) ? "[Yes]" : "Yes";
-+    menu_yesno[1].label = (dflt == TRUE) ? "[是]" : "是";
-     menu_yesno[6].name  = "^C";
--    menu_yesno[6].label = "Cancel";
-+    menu_yesno[6].label = "取消";
-     menu_yesno[7].name  = "N";
--    menu_yesno[7].label = (dflt == FALSE) ? "[No]" : "No";
-+    menu_yesno[7].label = (dflt == FALSE) ? "[否]" : "否";
-     wkeyhelp(menu_yesno);		/* paint generic menu */
-     sgarbk = TRUE;			/* mark menu dirty */
-     if(Pmaster && curwp)
-@@ -1168,7 +1168,7 @@
- 	switch(GetKey()){
- 	  case (CTRL|'M') :		/* default */
- 	    if(dflt >= 0){
--		pputs((dflt) ? "Yes" : "No", 1);
-+		pputs((dflt) ? "是" : "否", 1);
- 		rv = dflt;
+ 	if(FormatLines(headents[a_e].hd_text, "",
+ 		       term.t_ncol - headents[a_e].prlen,
+ 		       headents[a_e].break_on_comma, 0) == -1){
+-	    emlwrite("\007Format lines failed!", NULL);
++	    emlwrite("\007版面整理失敗!", NULL);
+ 	    return(0);
+ 	}
+     }
+@@ -1452,7 +1452,7 @@
+ 	
+ 	if (term.t_nrow < 6 && ch != NODATA){
+ 	    (*term.t_beep)();
+-	    emlwrite("Please make the screen bigger.", NULL);
++	    emlwrite("請將畫面調大一些。", NULL);
+ 	    continue;
+ 	}
+ 
+@@ -1523,13 +1523,13 @@
+ 		if(headents[ods.cur_e].only_file_chars
+ 		   && !fallowc((unsigned char) ch)){
+ 		    /* no garbage in filenames */
+-		    emlwrite("\007Can't have a '%c' in folder name",
++		    emlwrite("\007資料匣中不能有 '%c' 這個字元",
+ 			     (void *) ch);
+ 		    continue;
+ 		}
+ 		else if(headents[ods.cur_e].is_attach
+ 			&& intag(strng,ods.p_off)){
+-		    emlwrite("\007Can't edit attachment number!", NULL);
++		    emlwrite("\007無法編輯附件的代碼!", NULL);
+ 		    continue;
+ 		}
+ 
+@@ -1675,7 +1675,7 @@
+ 		    headents[ods.cur_e].dirty  = 1;
+ 		}
+ 		else
+-		  emlwrite("Problem Unkilling text", NULL);
++		  emlwrite("有問題的反刪除文字", NULL);
+ 		continue;
+ 
+ 	      case (CTRL|'F') :
+@@ -1726,7 +1726,7 @@
+ 		  continue;
+ 
+ 		if(headents[ods.cur_e].is_attach && intag(strng, ods.p_off)){
+-		    emlwrite("\007Can't edit attachment number!", NULL);
++		    emlwrite("\007無法編輯附件的代碼!", NULL);
+ 		    continue;
+ 		}
+ 
+@@ -1740,7 +1740,7 @@
+ 		}
+ 
+ 		if(headents[ods.cur_e].is_attach && intag(strng, ods.p_off-1)){
+-		    emlwrite("\007Can't edit attachment number!", NULL);
++		    emlwrite("\007無法編輯附件的代碼!", NULL);
+ 		    continue;
+ 		}
+ 
+@@ -1951,7 +1951,7 @@
+ 
+ 	if(nlp == NULL){			/* no place to add below? */
+ 	    if((lp = HALLOC()) == NULL){
+-		emlwrite("Can't allocate any more lines for header!", NULL);
++		emlwrite("無法再配置更多的空間給標頭!", NULL);
+ 		free(buf);
+ 		return(-1);
  	    }
- 	    else
-@@ -1185,14 +1185,14 @@
- 	  case 'y' :
- 	  case 'Y' :
- 	  case F3  :
--	    pputs("Yes", 1);
-+	    pputs("是", 1);
- 	    rv = TRUE;
- 	    break;
+@@ -1986,7 +1986,7 @@
  
- 	  case 'n' :
- 	  case 'N' :
- 	  case F4  :
--	    pputs("No", 1);
-+	    pputs("否", 1);
- 	    rv = FALSE;
- 	    break;
+ 	    if(strlen(buf) && !nlp){
+ 		if((lp = HALLOC()) == NULL){
+-		    emlwrite("Can't allocate any more lines for header!",NULL);
++		    emlwrite("無法再配置更多的空間給標頭!",NULL);
+ 		    free(buf);
+ 		    return(-1);
+ 		}
+@@ -2272,14 +2272,14 @@
  
-@@ -1320,7 +1320,7 @@
- #endif
- 
-     menu_mlreply[0].name = "^G";
--    menu_mlreply[0].label = "Get Help";
-+    menu_mlreply[0].label = "輔助說明";
-     KS_OSDATASET(&menu_mlreply[0], KS_SCREENHELP);
-     for(j = 0, i = 1; i < 6; i++){	/* insert odd extras */
- 	menu_mlreply[i].name = NULL;
-@@ -1340,7 +1340,7 @@
+     if(level < 0 || !headents[level].name){
+ 	(*term.t_beep)();
+-	emlwrite("Sorry, I can't help you with that.", NULL);
++	emlwrite("很抱歉，關於那個我無法幫忙。", NULL);
+ 	sleep(2);
+ 	return(FALSE);
      }
  
-     menu_mlreply[6].name = "^C";
--    menu_mlreply[6].label = "Cancel";
-+    menu_mlreply[6].label = "取消";
-     KS_OSDATASET(&menu_mlreply[6], KS_NONE);
-     for(j = 0, i = 7; i < 12; i++){	/* insert even extras */
- 	menu_mlreply[i].name = NULL;
+-    sprintf(buf, "Help for %s %.40s Field",
+-		 (Pmaster->pine_flags & MDHDRONLY) ? "Address Book"
+-						 : "Composer",
++    sprintf(buf, "%s欄位%.40s的輔助說明",
++		 (Pmaster->pine_flags & MDHDRONLY) ? "地址簿"
++						 : "編輯器",
+ 		 headents[level].name);
+     (*Pmaster->helper)(headents[level].help, buf, 1);
+     ttresize();
+@@ -2909,7 +2909,7 @@
+     }
+     
+     if((sbuf=(char *)malloc((unsigned) i)) == NULL){
+-	emlwrite("Can't malloc space to expand address", NULL);
++	emlwrite("無法配置記憶體空間以展開地址", NULL);
+ 	return(-1);
+     }
+     
+@@ -2966,7 +2966,7 @@
+ 		if(!arg){
+ 		    headarg = arg = (BUILDER_ARG *)malloc(sizeof(BUILDER_ARG));
+ 		    if(!arg){
+-			emlwrite("Can't malloc space for fcc", NULL);
++			emlwrite("無法配置記憶體空間給 fcc", NULL);
+ 			return(-1);
+ 		    }
+ 		    else{
+@@ -2979,7 +2979,7 @@
+ 		else{
+ 		    nextarg = (BUILDER_ARG *)malloc(sizeof(BUILDER_ARG));
+ 		    if(!nextarg){
+-			emlwrite("Can't malloc space for fcc", NULL);
++			emlwrite("無法配置記憶體空間給 fcc", NULL);
+ 			return(-1);
+ 		    }
+ 		    else{
+@@ -2995,7 +2995,7 @@
+ 		if(!e->sticky){
+ 		    line = e->hd_text;
+ 		    if(!(arg->tptr=(char *)malloc(strlen(line->text) + 1))){
+-			emlwrite("Can't malloc space for fcc", NULL);
++			emlwrite("無法配置記憶體空間給 fcc", NULL);
+ 			return(-1);
+ 		    }
+ 		    else
+@@ -3012,7 +3012,7 @@
+     if(!headarg){
+ 	headarg = (BUILDER_ARG *)malloc(sizeof(BUILDER_ARG));
+ 	if(!headarg){
+-	    emlwrite("Can't malloc space", NULL);
++	    emlwrite("無法配置記憶體空間", NULL);
+ 	    return(-1);
+ 	}
+ 	else{
+@@ -3321,7 +3321,7 @@
+ 
+     if(ksize()){
+ 	if((bp = buf = (char *)malloc(ksize()+5)) == NULL){
+-	    emlwrite("Can't malloc space for saved text", NULL);
++	    emlwrite("無法配置保存文字的記憶體空間", NULL);
+ 	    return(FALSE);
+ 	}
+     }
+@@ -3355,7 +3355,7 @@
+ 	work_buf_len = strlen(ods.cur_l->text) + buf_len;
+ 	work_buf = (char *) malloc((work_buf_len + 1) * sizeof(char));
+ 	if (work_buf == NULL) {
+-	    emlwrite("Can't malloc space for saved text", NULL);
++	    emlwrite("無法配置保存文字的記憶體空間", NULL);
+ 	    return(FALSE);
+ 	}
+ 
+@@ -3564,9 +3564,9 @@
+     if(Pmaster && Pmaster->exit_label)
+       menu_header[SEND_KEY].label = Pmaster->exit_label;
+     else if(gmode & (MDVIEW | MDHDRONLY))
+-      menu_header[SEND_KEY].label =  (gmode & MDHDRONLY) ? "eXit/Save" : "eXit";
++      menu_header[SEND_KEY].label =  (gmode & MDHDRONLY) ? "離開/儲存" : "離開";
+     else
+-      menu_header[SEND_KEY].label = "Send";
++      menu_header[SEND_KEY].label = "送出";
+ 
+     if(gmode & MDVIEW){
+ 	menu_header[CUT_KEY].name  = NULL;
+@@ -3587,7 +3587,7 @@
+ 	menu_header[RICH_KEY].name  = NULL;
+     }
+     else{
+-	menu_header[RICH_KEY].label = "Rich Hdr";
++	menu_header[RICH_KEY].label = "完整標頭";
+ 	menu_header[RICH_KEY].name  = "^R";
+     }
+ 
+@@ -3666,7 +3666,7 @@
+                 *headents[i].realaddr = bufp;
+             }
+             else{
+-                emlwrite("Can't make room to pack header field.", NULL);
++                emlwrite("無法配置包裝表頭欄位的記憶體空間。", NULL);
+                 retval = FALSE;
+             }
+         }

@@ -1,117 +1,51 @@
---- pico/pico.c.orig	Tue Jul  7 05:41:45 1998
-+++ pico/pico.c	Tue Jul 28 08:35:00 1998
-@@ -318,7 +318,7 @@
- 	c = GetKey();
-         if (term.t_nrow < 6 && c != NODATA){
-             (*term.t_beep)();
--            emlwrite("Please make the screen bigger.", NULL);
-+            emlwrite("請將畫面調大一些。", NULL);
-             continue;
-         }
+--- pico/file.c.orig	Fri Jul 17 08:11:52 1998
++++ pico/file.c	Tue Aug  4 12:42:14 1998
+@@ -137,13 +137,13 @@
  
-@@ -560,9 +560,9 @@
-     }
-     
-     if(c&CTRL)
--      emlwrite("\007Unknown Command: ^%c", (void *)(c&0xff));
-+      emlwrite("\007未知的命令：^%c", (void *)(c&0xff));
-     else
--      emlwrite("\007Unknown Command", NULL);
-+      emlwrite("\007未知的命令", NULL);
+ 	    menu_ins[last_menu].name  = "^T";
+ 	    menu_ins[last_menu].key   = (CTRL|'T');
+-	    menu_ins[last_menu].label = "To Files";
++	    menu_ins[last_menu].label = "檔案列表";
+ 	    KS_OSDATASET(&menu_ins[last_menu], KS_NONE);
  
-     lastflag = 0;                           /* Fake last flags.     */
-     return (FALSE);
-@@ -615,7 +615,7 @@
- 	    return(TRUE);
- 	}
- 	else{
--	    emlwrite("Cancel Cancelled", NULL);
-+	    emlwrite("取消", NULL);
- 	    curwp->w_flag |= WFMODE;		/* and modeline so we  */
- 	    sgarbk = TRUE;			/* redraw the keymenu  */
- 	    pclear(term.t_nrow - 1, term.t_nrow + 1);
-@@ -624,17 +624,17 @@
- 	}
-     }
-     else switch(mlyesno(Pmaster->headents
--	 ? "Cancel message (answering \"Yes\" will abandon your mail message)"
-+	 ? "\"取消\"這個動作將會放棄你目前的信件。確定取消嗎"
- 	 : (anycb() == FALSE)
--	     ? "Cancel Edit (and abandon changes)"
--	     : "Cancel Edit",
-+	     ? "取消編輯(並放棄所有的改變)"
-+	     : "取消編輯",
- 	 FALSE)){
-       case TRUE:
- 	pico_all_done = COMP_CANCEL;
- 	return(TRUE);
- 
-       case ABORT:
--	emlwrite("\007Cancel Cancelled", NULL);
-+	emlwrite("\007取消", NULL);
- 	break;
- 
-       default:
-@@ -672,7 +672,7 @@
- 
- 	/* First, make sure there are no outstanding problems */ 
- 	if(AttachError()){
--	    emlwrite("\007Problem with attachments!  Fix errors or delete attachments.", NULL);
-+	    emlwrite("\007有問題的附件! 請修復或刪除該附件。", NULL);
- 	    return(FALSE);
- 	}
- 
-@@ -706,7 +706,7 @@
-         if (f != FALSE                          /* Argument forces it.  */
-         || anycb() == FALSE                     /* All buffers clean.   */
- 						/* User says it's OK.   */
--        || (s=mlyesno("Save modified buffer (ANSWERING \"No\" WILL DESTROY CHANGES)", -1)) == FALSE) {
-+        || (s=mlyesno("存入更改過的緩衝區 (回答 \"No\" 將清除所有已做過的修改)", -1)) == FALSE) {
-                 vttidy();
- #if     defined(USE_TERMCAP) || defined(USE_TERMINFO) || defined(VMS)
- 		kbdestroy(kbesc);
-@@ -719,7 +719,7 @@
- 	      wquit(1, 0);
- 	}
- 	else if(s == ABORT){
--	    emlwrite("Exit cancelled", NULL);
-+	    emlwrite("取消離開", NULL);
- 	    if(term.t_mrow == 0)
- 	      curwp->w_flag |= WFHARD;	/* cause bottom 3 lines to paint */
- 	}
-@@ -753,7 +753,7 @@
- ctrlg(f, n)
- int f, n;
- {
--    emlwrite("Cancelled", NULL);
-+    emlwrite("取消", NULL);
-     return (ABORT);
- }
- 
-@@ -764,7 +764,7 @@
- rdonly()
- {
-     (*term.t_beep)();
--    emlwrite("Key illegal in VIEW mode", NULL);
-+    emlwrite("這不是一個在 VIEW 模式中合法的命令", NULL);
-     return(FALSE);
- }
- 
-@@ -1289,7 +1289,7 @@
-        wp->doto = 0;
-    }
-    else
--     emlwrite("Can't allocate space for text", NULL);
-+     emlwrite("無法配置文字的記憶體空間", NULL);
- 
-    return((void *)wp);
- }
-@@ -1377,7 +1377,7 @@
- 	    register LINE *lp;
- 
- 	    if((lp = lalloc(0)) == NULL){
--		emlwrite("Can't allocate space for more characters",NULL);
-+		emlwrite("無法配置記憶體空間給更多的字元",NULL);
- 		return(0);
+ 	    if(Pmaster && Pmaster->msgntext){
+ 		menu_ins[++last_menu].name  = "^W";
+ 		menu_ins[last_menu].key     = (CTRL|'W');
+-		menu_ins[last_menu].label   = msg ? "InsertFile" : "InsertMsg";
++		menu_ins[last_menu].label   = msg ? "插入檔案" : "插入訊息";
+ 		KS_OSDATASET(&menu_ins[last_menu], KS_NONE);
  	    }
  
+@@ -159,26 +159,25 @@
+ 	    if(gmode & MDCMPLT){
+ 		menu_ins[++last_menu].name = msg ? "" : "TAB";
+ 		menu_ins[last_menu].key    = (CTRL|'I');
+-		menu_ins[last_menu].label  = msg ? "" : "Complete";
++		menu_ins[last_menu].label  = msg ? "" : "完成";
+ 		KS_OSDATASET(&menu_ins[last_menu], KS_NONE);
+ 	    }
+ 
+ 	    menu_ins[++last_menu].name = NULL;
+ 	}
+ 
+-	sprintf(prompt, "%s to insert from %s %s: ",
+-		msg ? "Number of message" : "File",
+-		(msg || (gmode&MDCURDIR)) ? "current"
++	sprintf(prompt, "自%s%s插入的%s：",
++		(msg || (gmode&MDCURDIR)) ? "目前的"
+ 					  : (gmode&MDTREE) ? opertree
+-							   : "home",
+-		msg ? "folder" : "directory");
++							   : "家",
++		msg ? "檔案匣" : "目錄", msg ? "信件編號" : "檔案");
+ 	s = mlreplyd(prompt, fname, NFILEN, QDEFLT, msg ? NULL : menu_ins);
+ 	/* something to read and it was edited or the default accepted */
+         if(fname[0] && (s == TRUE || s == FALSE)){
+ 	    bye++;
+ 	    if(msg){
+ 		if((*Pmaster->msgntext)(atol(fname), insmsgchar))
+-		  emlwrite("Message %s included", fname);
++		  emlwrite("信件 %s 已含入", fname);
+ 	    }
+ 	    else{
+ 		bye++;

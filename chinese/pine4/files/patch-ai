@@ -1,348 +1,592 @@
---- pico/composer.c.orig	Fri Jul  3 07:00:40 1998
-+++ pico/composer.c	Tue Jul 28 08:34:59 1998
-@@ -136,12 +136,12 @@
+--- pico/browse.c.orig	Sat Jul 11 06:41:25 1998
++++ pico/browse.c	Tue Aug  4 12:42:13 1998
+@@ -126,12 +126,12 @@
  
  
- static KEYMENU menu_header[] = {
--    {"^G", "Get Help", KS_SCREENHELP},	{"^X", "Send", KS_SEND},
--    {"^R", "Rich Hdr", KS_RICHHDR},	{"^Y", "PrvPg/Top", KS_PREVPAGE},
--    {"^K", "Cut Line", KS_CURPOSITION},	{"^O", "Postpone", KS_POSTPONE},
--    {"^C", "Cancel", KS_CANCEL},	{"^D", "Del Char", KS_NONE},
--    {"^J", "Attach", KS_ATTACH},	{"^V", "NxtPg/End", KS_NEXTPAGE},
--    {"^U", "UnDel Line", KS_NONE},	{NULL, NULL}
-+    {"^G", "輔助說明", KS_SCREENHELP},	{"^X", "送出", KS_SEND},
-+    {"^R", "完整標頭", KS_RICHHDR},	{"^Y", "上一頁", KS_PREVPAGE},
-+    {"^K", "剪下一行", KS_CURPOSITION},	{"^O", "暫緩寫信", KS_POSTPONE},
-+    {"^C", "取消", KS_CANCEL},	{"^D", "刪除字元", KS_NONE},
-+    {"^J", "夾附件", KS_ATTACH},	{"^V", "下一頁", KS_NEXTPAGE},
-+    {"^U", "復原刪除行", KS_NONE},	{NULL, NULL}
+ static	KEYMENU menu_browse[] = {
+-    {"?", "Get Help", KS_SCREENHELP},	{NULL, NULL, KS_NONE},
+-    {NULL, NULL, KS_NONE},		{"-", "Prev Pg", KS_PREVPAGE},
+-    {"D", "Delete", KS_NONE},		{"C","Copy", KS_NONE},
++    {"?", "輔助說明", KS_SCREENHELP},	{NULL, NULL, KS_NONE},
++    {NULL, NULL, KS_NONE},		{"-", "上一頁", KS_PREVPAGE},
++    {"D", "刪除", KS_NONE},		{"C","複製", KS_NONE},
+     {NULL, NULL, KS_NONE},		{NULL, NULL, KS_NONE},
+-    {"W", "Where is", KS_NONE},		{"Spc", "Next Pg", KS_NEXTPAGE},
+-    {"R", "Rename", KS_NONE},		{NULL, NULL, KS_NONE}
++    {"W", "搜尋", KS_NONE},		{"Spc", "下一頁", KS_NEXTPAGE},
++    {"R", "更名", KS_NONE},		{NULL, NULL, KS_NONE}
  };
- #define	SEND_KEY	1
- #define	RICH_KEY	2
-@@ -231,7 +231,7 @@
- 		     if(strlen(addrbuf) + strlen(buf) >= addrbuflen){
- 			 addrbuflen += NLINE * 4;
- 			 if(!(addrbuf = (char *)realloc(addrbuf, addrbuflen))){
--			     emlwrite("\007Can't realloc addrbuf to %d bytes",
-+			     emlwrite("\007無法更改 addrbuf 的記憶體配置至 %d bytes",
- 				      (void *) addrbuflen);
- 			     return(ABORT);
- 			 }
-@@ -298,7 +298,7 @@
-      * get first chunk of memory, and tie it to structure...
-      */
-     if((curline = HALLOC()) == NULL){
--        emlwrite("Unable to make room for full Header.", NULL);
-+        emlwrite("無法配置空間給完整標頭。", NULL);
-         return(FALSE);
-     }
-     longest = term.t_ncol - e->prlen - 1;
-@@ -680,7 +680,7 @@
- 	    }
- 	    else{
- 		(*term.t_beep)();
--		emlwrite("Unknown Command: ^Z", NULL);
-+		emlwrite("未知的命令：^Z", NULL);
- 	    }
- 	    break;
+ #define	QUIT_KEY	1
+ #define	EXEC_KEY	2
+@@ -331,7 +331,7 @@
+     child[0] = '\0';
  
-@@ -693,12 +693,12 @@
- 	    err = NULL;
- 	    if(headents[ods.cur_e].is_attach){
- 		if(SyncAttach() < 0){
--		    if(mlyesno("Problem with attachments. Postpone anyway?",
-+		    if(mlyesno("附件有問題。無論如何都要暫緩該信嗎？",
- 			       FALSE) != TRUE){
- 			if(FormatLines(headents[ods.cur_e].hd_text, "",
- 				       term.t_ncol - headents[ods.cur_e].prlen,
- 				       headents[ods.cur_e].break_on_comma, 0) == -1)
--			  emlwrite("\007Format lines failed!", NULL);
-+			  emlwrite("\007版面整理失敗!", NULL);
- 			UpdateHeader();
- 			PaintHeader(COMPOSER_TOP_LINE, FALSE);
- 			PaintBody(1);
-@@ -952,7 +952,7 @@
- 		    if(FormatLines(headents[ods.cur_e].hd_text, buf,
- 				   term.t_ncol - headents[ods.cur_e].prlen,
- 				   headents[ods.cur_e].break_on_comma,0)==-1){
--			emlwrite("\007Format lines failed!", NULL);
-+			emlwrite("\007版面整理失敗!", NULL);
- 		    }
- 
- 		    UpdateHeader();
-@@ -1011,7 +1011,7 @@
-                         if(FormatLines(ods.cur_l, bufp,
- 				      (term.t_ncol-headents[ods.cur_e].prlen), 
-                                       headents[ods.cur_e].break_on_comma, 0) == -1){
--                            emlwrite("Problem adding address to header !",
-+                            emlwrite("在標頭加入地址時出了問題!",
-                                      NULL);
-                             (*term.t_beep)();
-                             break;
-@@ -1092,10 +1092,10 @@
- 	  default :				/* huh? */
- bleep:
- 	    if(ch&CTRL)
--	      emlwrite("\007Unknown command: ^%c", (void *)(ch&0xff));
-+	      emlwrite("\007未知的命令：^%c", (void *)(ch&0xff));
- 	    else
- 	  case BADESC:
--	      emlwrite("\007Unknown command", NULL);
-+	      emlwrite("\007未知的命令", NULL);
- 
- 	  case NODATA:
- 	    break;
-@@ -1135,14 +1135,14 @@
- 	if(gripe){
- 	    char xx[81];
- 
--	    strcpy(xx, "Can't move down. Use ^X to ");
-+	    strcpy(xx, "無法再往下移了。請用 ^X ");
- 	    strcat(xx, (Pmaster && Pmaster->exit_label)
- 			    ? Pmaster->exit_label
- 			    : (gmode & MDHDRONLY)
--			      ? "eXit/Save"
-+			      ? "離開/送出"
- 			      : (gmode & MDVIEW)
--				? "eXit"
--				: "Send");
-+				? "離開"
-+				: "送出");
- 	    strcat(xx, ".");
- 	    emlwrite(xx, NULL);
- 	}
-@@ -1177,7 +1177,7 @@
- 		if(FormatLines(headents[ods.cur_e].hd_text, "",
- 			       term.t_ncol-headents[new_e].prlen,
- 			       headents[ods.cur_e].break_on_comma, 0) == -1)
--		  emlwrite("\007Format lines failed!", NULL);
-+		  emlwrite("\007版面整理失敗!", NULL);
- 	    }
- 	} else if(headents[ods.cur_e].builder) { /* expand addresses	    */
- 	    int mangled = 0;
-@@ -1248,8 +1248,8 @@
-     if(!(new_l = prev_sel_hline(&new_e, ods.cur_l))){	/* all the way up! */
- 	ods.p_line = COMPOSER_TOP_LINE;
- 	if(gripe)
--	  emlwrite("Can't move beyond top of %s",
--	      (Pmaster->pine_flags & MDHDRONLY) ? "entry" : "header");
-+	  emlwrite("無法移到超出%s的頂端",
-+	      (Pmaster->pine_flags & MDHDRONLY) ? "項目" : "標頭");
- 
+     if((gmode&MDTREE) && !in_oper_tree(dir)){
+-	emlwrite("\007Can't read outside of %s in restricted mode", opertree);
++	emlwrite("\007無法在限制模式中讀取 %s 以外的東西", opertree);
+ 	sleep(2);
  	return(0);
      }
-@@ -1278,7 +1278,7 @@
- 		if(FormatLines(headents[ods.cur_e].hd_text, "",
- 			       term.t_ncol - headents[ods.cur_e].prlen,
- 			       headents[ods.cur_e].break_on_comma,0) == -1)
--		  emlwrite("\007Format lines failed!", NULL);
-+		  emlwrite("\007版面整理失敗!", NULL);
- 	    }
- 	}
- 	else if(headents[ods.cur_e].builder){
-@@ -1357,7 +1357,7 @@
- 	    lp = lp->next;
- 	}
+@@ -419,7 +419,7 @@
  	else{
--	    emlwrite("\007Can't allocate line for new attachment!", NULL);
-+	    emlwrite("\007無法為新的附件配置空間!", NULL);
- 	    return(0);
- 	}
-     }
-@@ -1371,12 +1371,12 @@
-     /* validate the new attachment, and reformat if needed */
-     if(status = SyncAttach()){
- 	if(status < 0)
--	  emlwrite("\007Problem attaching: %s", fn);
-+	  emlwrite("\007有問題的附件：%s", fn);
- 
- 	if(FormatLines(headents[a_e].hd_text, "",
- 		       term.t_ncol - headents[a_e].prlen,
- 		       headents[a_e].break_on_comma, 0) == -1){
--	    emlwrite("\007Format lines failed!", NULL);
-+	    emlwrite("\007版面整理失敗!", NULL);
- 	    return(0);
- 	}
-     }
-@@ -1452,7 +1452,7 @@
- 	
- 	if (term.t_nrow < 6 && ch != NODATA){
- 	    (*term.t_beep)();
--	    emlwrite("Please make the screen bigger.", NULL);
-+	    emlwrite("請將畫面調大一些。", NULL);
- 	    continue;
+ 	    if(timeo && (c == NODATA || time_to_check()))
+ 	      if(pico_new_mail())
+-		emlwrite("You may possibly have new mail.", NULL);
++		emlwrite("您可能有新信件。", NULL);
  	}
  
-@@ -1523,13 +1523,13 @@
- 		if(headents[ods.cur_e].only_file_chars
- 		   && !fallowc((unsigned char) ch)){
- 		    /* no garbage in filenames */
--		    emlwrite("\007Can't have a '%c' in folder name",
-+		    emlwrite("\007資料匣中不能有 '%c' 這個字元",
- 			     (void *) ch);
- 		    continue;
- 		}
- 		else if(headents[ods.cur_e].is_attach
- 			&& intag(strng,ods.p_off)){
--		    emlwrite("\007Can't edit attachment number!", NULL);
-+		    emlwrite("\007無法編輯附件的代碼!", NULL);
- 		    continue;
+ 	if(km_popped)
+@@ -695,7 +695,7 @@
+ 			gmp->current->fname);
+ 		/* make sure selected isn't a directory or executable */
+ 		if(!LikelyASCII(child)){
+-		    emlwrite("Can't edit non-text file.  Try Launch.", NULL);
++		    emlwrite("無法讀取非文字檔。試試 \"啟動\"。", NULL);
+ 		    break;
  		}
  
-@@ -1675,7 +1675,7 @@
- 		    headents[ods.cur_e].dirty  = 1;
+@@ -725,13 +725,13 @@
+ 		return(0);
+ 	    }
+ 
+-	    emlwrite("\007Unknown command '%c'", (void *)c);
++	    emlwrite("\007未知的命令 '%c'", (void *)c);
+ 	    break;
+ 
+ 	  case 'l':			            /* run Command */
+ 	  case 'L':
+ 	    if(!(gmode&MDBRONLY)){
+-		emlwrite("\007Unknown command '%c'", (void *)c);
++		emlwrite("\007未知的命令 '%c'", (void *)c);
+ 		break;
+ 	    }
+ 
+@@ -748,11 +748,11 @@
+ 		    {NULL, NULL, 0, KS_NONE},
+ 		};
+ 
+-		status = mlreply("Command to execute: ",
++		status = mlreply("欲執行的命令：",
+ 				 tmp, NLINE, QNORML, opts);
+ 		switch(status){
+ 		  case HELPCH:
+-		    emlwrite("\007No help yet!", NULL);
++		    emlwrite("\007尚無輔助說明!", NULL);
+ /* remove break and sleep after help text is installed */
+ 		    sleep(3);
+ 		    break;
+@@ -763,7 +763,7 @@
+ 		    PaintBrowser(gmp, 0, &crow, &ccol);
+ 		    break;
+ 		  case ABORT:
+-		    emlwrite("Command cancelled", NULL);
++		    emlwrite("命令已取消", NULL);
+ 		    i++;
+ 		    break;
+ 		  case FALSE:
+@@ -771,7 +771,7 @@
+ 		    i++;
+ 
+ 		    if(tmp[0] == '\0'){
+-			emlwrite("No command specified", NULL);
++			emlwrite("尚未下達命令", NULL);
+ 			break;
+ 		    }
+ 
+@@ -790,12 +790,12 @@
+ 	  case 'D':
+ 	    if(gmp->current->mode == FIODIR){
+ /* BUG: if dir is empty it should be deleted */
+-		emlwrite("\007Can't delete a directory", NULL);
++		emlwrite("\007無法刪除該目錄", NULL);
+ 		break;
+ 	    }
+ 
+ 	    if(gmode&MDSCUR){				/* not allowed! */
+-		emlwrite("Delete not allowed in restricted mode",NULL);
++		emlwrite("無法在限制模式中使用刪除指令",NULL);
+ 		break;
+ 	    }
+ 
+@@ -806,17 +806,17 @@
+ 	    while(i++ < 2){		/* verify twice!! */
+ 		if(i == 1){
+ 		    if(fexist(child, "w", (off_t *)NULL) != FIOSUC)
+-		      strcpy(tmp, "File is write protected! OVERRIDE");
++		      strcpy(tmp, "檔案為防寫! 要跳過防寫保護");
+ 		    else
+-		      sprintf(tmp, "Delete file \"%.*s\"", NLINE - 20, child);
++		      sprintf(tmp, "刪除檔案 \"%.*s\"", NLINE - 20, child);
  		}
  		else
--		  emlwrite("Problem Unkilling text", NULL);
-+		  emlwrite("有問題的反刪除文字", NULL);
- 		continue;
+-		  strcpy(tmp, "File CANNOT be UNdeleted!  Really delete");
++		  strcpy(tmp, "檔案將無法被反刪除! 確定刪除");
  
- 	      case (CTRL|'F') :
-@@ -1726,7 +1726,7 @@
- 		  continue;
- 
- 		if(headents[ods.cur_e].is_attach && intag(strng, ods.p_off)){
--		    emlwrite("\007Can't edit attachment number!", NULL);
-+		    emlwrite("\007無法編輯附件的代碼!", NULL);
- 		    continue;
+ 		if((status = mlyesno(tmp, FALSE)) != TRUE){
+ 		    emlwrite((status ==  ABORT)
+-			       ? "Delete Cancelled"
+-			       : "File Not Deleted",
++			       ? "取消刪除"
++			       : "檔案沒有被刪除",
+ 			     NULL);
+ 		    break;
  		}
+@@ -824,7 +824,7 @@
  
-@@ -1740,7 +1740,7 @@
+ 	    if(status == TRUE){
+ 		if(unlink(child) < 0){
+-		    emlwrite("Delete Failed: %s", errstr(errno));
++		    emlwrite("刪除失敗：%s", errstr(errno));
  		}
- 
- 		if(headents[ods.cur_e].is_attach && intag(strng, ods.p_off-1)){
--		    emlwrite("\007Can't edit attachment number!", NULL);
-+		    emlwrite("\007無法編輯附件的代碼!", NULL);
- 		    continue;
- 		}
- 
-@@ -1951,7 +1951,7 @@
- 
- 	if(nlp == NULL){			/* no place to add below? */
- 	    if((lp = HALLOC()) == NULL){
--		emlwrite("Can't allocate any more lines for header!", NULL);
-+		emlwrite("無法再配置更多的空間給標頭!", NULL);
- 		free(buf);
- 		return(-1);
- 	    }
-@@ -1986,7 +1986,7 @@
- 
- 	    if(strlen(buf) && !nlp){
- 		if((lp = HALLOC()) == NULL){
--		    emlwrite("Can't allocate any more lines for header!",NULL);
-+		    emlwrite("無法再配置更多的空間給標頭!",NULL);
- 		    free(buf);
- 		    return(-1);
- 		}
-@@ -2272,14 +2272,14 @@
- 
-     if(level < 0 || !headents[level].name){
- 	(*term.t_beep)();
--	emlwrite("Sorry, I can't help you with that.", NULL);
-+	emlwrite("很抱歉，關於那個我無法幫忙。", NULL);
- 	sleep(2);
- 	return(FALSE);
-     }
- 
--    sprintf(buf, "Help for %s %.40s Field",
--		 (Pmaster->pine_flags & MDHDRONLY) ? "Address Book"
--						 : "Composer",
-+    sprintf(buf, "%s欄位%.40s的輔助說明",
-+		 (Pmaster->pine_flags & MDHDRONLY) ? "地址簿"
-+						 : "編輯器",
- 		 headents[level].name);
-     (*Pmaster->helper)(headents[level].help, buf, 1);
-     ttresize();
-@@ -2909,7 +2909,7 @@
-     }
-     
-     if((sbuf=(char *)malloc((unsigned) i)) == NULL){
--	emlwrite("Can't malloc space to expand address", NULL);
-+	emlwrite("無法配置記憶體空間以展開地址", NULL);
- 	return(-1);
-     }
-     
-@@ -2966,7 +2966,7 @@
- 		if(!arg){
- 		    headarg = arg = (BUILDER_ARG *)malloc(sizeof(BUILDER_ARG));
- 		    if(!arg){
--			emlwrite("Can't malloc space for fcc", NULL);
-+			emlwrite("無法配置記憶體空間給 fcc", NULL);
- 			return(-1);
+ 		else{			/* fix up pointers and redraw */
+ 		    tp = gmp->current;
+@@ -893,12 +893,12 @@
+  
+ 	    while(!i){
+  
+-		status = mlreply("Directory to go to: ", child, NLINE, QNORML,
++		status = mlreply("切換至哪一個目錄：", child, NLINE, QNORML,
+ 				 NULL);
+  
+ 		switch(status){
+ 		  case HELPCH:
+-		    emlwrite("\007No help yet!", NULL);
++		    emlwrite("\007尚無輔助說明!", NULL);
+ 		    /* remove break and sleep after help text is installed */
+ 		    sleep(3);
+ 		    break;
+@@ -906,7 +906,7 @@
+ 		    PaintBrowser(gmp, 0, &crow, &ccol);
+ 		  break;
+ 		  case ABORT:
+-		    emlwrite("Goto cancelled", NULL);
++		    emlwrite("取消切換目錄", NULL);
+ 		    i++;
+ 		    break;
+ 		  case FALSE:
+@@ -917,17 +917,17 @@
+ 		      strcpy(child, gethomedir(NULL));
+  
+ 		    if(!compresspath(gmp->dname, child, NLINE)){
+-			emlwrite("Invalid Directory: %s", child);
++			emlwrite("無效的目錄：%s", child);
+ 			break;
  		    }
- 		    else{
-@@ -2979,7 +2979,7 @@
- 		else{
- 		    nextarg = (BUILDER_ARG *)malloc(sizeof(BUILDER_ARG));
- 		    if(!nextarg){
--			emlwrite("Can't malloc space for fcc", NULL);
-+			emlwrite("無法配置記憶體空間給 fcc", NULL);
- 			return(-1);
+ 
+ 		    if((gmode&MDSCUR) && homeless(child)){
+-			emlwrite("Restricted mode browsing limited to home directory",NULL);
++			emlwrite("限制模式中僅能瀏覽 home directory",NULL);
+ 			break;
  		    }
- 		    else{
-@@ -2995,7 +2995,7 @@
- 		if(!e->sticky){
- 		    line = e->hd_text;
- 		    if(!(arg->tptr=(char *)malloc(strlen(line->text) + 1))){
--			emlwrite("Can't malloc space for fcc", NULL);
-+			emlwrite("無法配置記憶體空間給 fcc", NULL);
- 			return(-1);
+  
+ 		    if((gmode&MDTREE) && !in_oper_tree(child)){
+-			emlwrite("Attempt to Goto directory denied", NULL);
++			emlwrite("已拒絕使用者切換目錄的請求", NULL);
+ 			break;
+ 		    }
+  
+@@ -943,7 +943,7 @@
+ 			PaintBrowser(gmp, 0, &crow, &ccol);
  		    }
  		    else
-@@ -3012,7 +3012,7 @@
-     if(!headarg){
- 	headarg = (BUILDER_ARG *)malloc(sizeof(BUILDER_ARG));
- 	if(!headarg){
--	    emlwrite("Can't malloc space", NULL);
-+	    emlwrite("無法配置記憶體空間", NULL);
- 	    return(-1);
- 	}
- 	else{
-@@ -3321,7 +3321,7 @@
+-		      emlwrite("\007Not a directory: \"%s\"", child);
++		      emlwrite("\007\"%s\"不是一個目錄", child);
+  
+ 		    break;
+ 		  default:
+@@ -956,7 +956,7 @@
+ 	  case 'a':					/* Add */
+ 	  case 'A':
+ 	    if(gmode&MDSCUR){				/* not allowed! */
+-		emlwrite("Copy not allowed in restricted mode",NULL);
++		emlwrite("無法在限制模式中新增檔案",NULL);
+ 		break;
+ 	    }
  
-     if(ksize()){
- 	if((bp = buf = (char *)malloc(ksize()+5)) == NULL){
--	    emlwrite("Can't malloc space for saved text", NULL);
-+	    emlwrite("無法配置保存文字的記憶體空間", NULL);
- 	    return(FALSE);
+@@ -965,10 +965,10 @@
+ 
+ 	    while(!i){
+ 
+-		switch(status=mlreply("Name of file to add: ", child, NLINE,
++		switch(status=mlreply("欲新增的檔名：", child, NLINE,
+ 				      QFFILE, NULL)){
+ 		  case HELPCH:
+-		    emlwrite("\007No help yet!", NULL);
++		    emlwrite("\007尚無輔助說明!", NULL);
+ /* remove break and sleep after help text is installed */
+ 		    sleep(3);
+ 		    break;
+@@ -976,7 +976,7 @@
+ 		    PaintBrowser(gmp, 0, &crow, &ccol);
+ 		    break;
+ 		  case ABORT:
+-		    emlwrite("Add File Cancelled", NULL);
++		    emlwrite("取消新增檔案", NULL);
+ 		    i++;
+ 		    break;
+ 		  case FALSE:
+@@ -987,7 +987,7 @@
+ 		    i++;
+ 
+ 		    if(child[0] == '\0'){
+-			emlwrite("No file named.  Add Cancelled.", NULL);
++			emlwrite("未指定檔名，取消新增檔案。", NULL);
+ 			break;
+ 		    }
+ 
+@@ -995,7 +995,7 @@
+ 		    sprintf(child, "%s%c%s", gmp->dname, C_FILESEP, tmp);
+ 
+ 		    if((status = fexist(child, "w", (off_t *)NULL)) == FIOSUC){
+-			sprintf(tmp,"File \"%.*s\" already exists!",
++			sprintf(tmp,"檔案 \"%.*s\" 已存在!",
+ 				NLINE - 20, child);
+ 			emlwrite(tmp, NULL);
+ 			break;
+@@ -1011,7 +1011,7 @@
+ 		    }
+ 		    else{			/* highlight new file */
+ 			ffclose();
+-			emlwrite("Added File \"%s\"", child);
++			emlwrite("新增檔案 \"%s\"", child);
+ 
+ 			if((p = strrchr(child, C_FILESEP)) == NULL){
+ 			    emlwrite("Problems refiguring browser", NULL);
+@@ -1059,12 +1059,12 @@
+ 	  case 'c':					/* copy */
+ 	  case 'C':
+ 	    if(gmp->current->mode == FIODIR){
+-		emlwrite("\007Can't copy a directory", NULL);
++		emlwrite("\007無法複製目錄", NULL);
+ 		break;
+ 	    }
+ 
+ 	    if(gmode&MDSCUR){				/* not allowed! */
+-		emlwrite("Copy not allowed in restricted mode",NULL);
++		emlwrite("無法在限制模式中複製檔案",NULL);
+ 		break;
+ 	    }
+ 
+@@ -1073,10 +1073,10 @@
+ 
+ 	    while(!i){
+ 
+-		switch(status=mlreply("Name of new copy: ", child, NLINE,
++		switch(status=mlreply("新複製檔名：", child, NLINE,
+ 				      QFFILE, NULL)){
+ 		  case HELPCH:
+-		    emlwrite("\007No help yet!", NULL);
++		    emlwrite("\007尚無輔助說明!", NULL);
+ /* remove break and sleep after help text is installed */
+ 		    sleep(3);
+ 		    break;
+@@ -1084,7 +1084,7 @@
+ 		    PaintBrowser(gmp, 0, &crow, &ccol);
+ 		    break;
+ 		  case ABORT:
+-		    emlwrite("Make Copy Cancelled", NULL);
++		    emlwrite("取消複製檔案", NULL);
+ 		    i++;
+ 		    break;
+ 		  case FALSE:
+@@ -1095,12 +1095,12 @@
+ 		    i++;
+ 
+ 		    if(child[0] == '\0'){
+-			emlwrite("No destination, file not copied", NULL);
++			emlwrite("未指定目地檔名，檔案沒有被複製。", NULL);
+ 			break;
+ 		    }
+ 
+ 		    if(!strcmp(gmp->current->fname, child)){
+-			emlwrite("\007Can't copy file on to itself!", NULL);
++			emlwrite("\007無法將檔案複製至它自己!", NULL);
+ 			break;
+ 		    }
+ 
+@@ -1108,12 +1108,12 @@
+ 		    sprintf(child, "%s%c%s", gmp->dname, C_FILESEP, tmp);
+ 
+ 		    if((status = fexist(child, "w", (off_t *)NULL)) == FIOSUC){
+-			sprintf(tmp,"File \"%.*s\" exists! OVERWRITE",
++			sprintf(tmp,"檔案 \"%.*s\" 已存在! 要覆蓋\嗎",
+ 				NLINE - 20, child);
+ 			if((status = mlyesno(tmp, 0)) != TRUE){
+ 			    emlwrite((status == ABORT)
+-				      ? "Make copy cancelled" 
+-				      : "File Not Renamed",
++				      ? "取消複製" 
++				      : "檔案沒有被複製",
+ 				     NULL);
+ 			    break;
+ 			}
+@@ -1131,7 +1131,7 @@
+ 			break;
+ 		    }
+ 		    else{			/* highlight new file */
+-			emlwrite("File copied to %s", child);
++			emlwrite("複製檔案到 %s", child);
+ 
+ 			if((p = strrchr(child, C_FILESEP)) == NULL){
+ 			    emlwrite("Problems refiguring browser", NULL);
+@@ -1174,12 +1174,12 @@
+ 	    i = 0;
+ 
+ 	    if(!strcmp(gmp->current->fname, "..")){
+-		emlwrite("\007Can't rename \"..\"", NULL);
++		emlwrite("\007無法更改 \"..\" 的名稱", NULL);
+ 		break;
+ 	    }
+ 
+ 	    if(gmode&MDSCUR){				/* not allowed! */
+-		emlwrite("Rename not allowed in restricted mode",NULL);
++		emlwrite("無法在限制模式中更改檔案名",NULL);
+ 		break;
+ 	    }
+ 
+@@ -1187,10 +1187,10 @@
+ 
+ 	    while(!i){
+ 
+-		switch(status=mlreply("Rename file to: ", child, NLINE, QFFILE,
++		switch(status=mlreply("檔案名稱更改為：", child, NLINE, QFFILE,
+ 				      NULL)){
+ 		  case HELPCH:
+-		    emlwrite("\007No help yet!", NULL);
++		    emlwrite("\007尚無輔助說明!", NULL);
+ /* remove break and sleep after help text is installed */
+ 		    sleep(3);
+ 		    break;
+@@ -1198,7 +1198,7 @@
+ 		    PaintBrowser(gmp, 0, &crow, &ccol);
+ 		    break;
+ 		  case ABORT:
+-		    emlwrite("Rename cancelled", NULL);
++		    emlwrite("取消更改檔案名稱", NULL);
+ 		    i++;
+ 		    break;
+ 		  case FALSE:
+@@ -1216,13 +1216,13 @@
+ 		    status = fexist(child, "w", (off_t *)NULL);
+ 		    if(status == FIOSUC || status == FIOFNF){
+ 			if(status == FIOSUC){
+-			    sprintf(tmp,"File \"%.*s\" exists! OVERWRITE",
++			    sprintf(tmp,"檔案 \"%.*s\" 已存在! 要覆蓋\嗎",
+ 				    NLINE - 20, child);
+ 
+ 			    if((status = mlyesno(tmp, FALSE)) != TRUE){
+ 				emlwrite((status ==  ABORT)
+-					  ? "Rename cancelled"
+-					  : "Not Renamed",
++					  ? "取消更名"
++					  : "檔案沒有被更名",
+ 					 NULL);
+ 				break;
+ 			    }
+@@ -1232,7 +1232,7 @@
+ 				gmp->current->fname);
+ 
+ 			if(rename(tmp, child) < 0){
+-			    emlwrite("Rename Failed: %s", errstr(errno));
++			    emlwrite("更名失敗：%s", errstr(errno));
+ 			}
+ 			else{
+ 			    if((p = strrchr(child, C_FILESEP)) == NULL){
+@@ -1291,7 +1291,7 @@
+ 
+ 			if((gmode&MDTREE) && !in_oper_tree(tmp)){
+ 			    emlwrite(
+-				   "\007Can't visit parent in restricted mode",
++				   "\007無法在限制模式中檢視上層目錄",
+ 				   NULL);
+ 			    break;
+ 			}
+@@ -1312,7 +1312,7 @@
+ 			        strcpy(tmp, S_FILESEP);
+ #endif
+ 			      else{
+-				  emlwrite("\007Can't move up a directory",
++				  emlwrite("\007無法切換至上一層目錄",
+ 					   NULL);
+ 				  break;
+ 			      }
+@@ -1339,12 +1339,12 @@
+ 			PlaceCell(gmp, gmp->current, &row, &col);
+ 		    }
+ 		    else
+-		      emlwrite("\007Problem finding dir \"%s\"",child);
++		      emlwrite("\007搜尋目錄 \"%s\" 時出了問題",child);
+ 		}
+ 
+ 		PaintBrowser(gmp, 0, &crow, &ccol);
+ 		if(!*child)
+-		  emlwrite("Select/View \".. parent dir\" to return to previous directory.",
++		  emlwrite("以 [選擇]/[檢視] \".. parent dir\" 回到前一個目錄。",
+ 			   NULL);
+ 
+ 		break;
+@@ -1383,7 +1383,7 @@
+ 
+ 		switch(readpattern("File name to find")){
+ 		  case HELPCH:
+-		    emlwrite("\007No help yet!", NULL);
++		    emlwrite("\007尚無輔助說明!", NULL);
+ /* remove break and sleep after help text is installed */
+ 		    sleep(3);
+ 		    break;
+@@ -1414,10 +1414,10 @@
+ 			}
+ 			while(tp->next);
+ 
+-			emlwrite("Searched to end of directory", NULL);
++			emlwrite("搜尋至目錄結尾", NULL);
+ 		    }
+ 		    else
+-		      emlwrite("Searched to start of directory", NULL);
++		      emlwrite("搜尋至目錄起始", NULL);
+ 
+ 		    if(tp){
+ 			PlaceCell(gmp, gmp->current, &row, &col);
+@@ -1436,7 +1436,7 @@
+ 		    i++;			/* make sure we jump out */
+ 		    break;
+ 		  case ABORT:
+-		    emlwrite("Whereis cancelled", NULL);
++		    emlwrite("取消搜尋", NULL);
+ 		    i++;
+ 		    break;
+ 		  case FALSE:
+@@ -1460,7 +1460,7 @@
+ 			mlerase();
+ 		    }
+ 		    else
+-		      emlwrite("\"%s\" not found", pat);
++		      emlwrite("找不到 \"%s\"", pat);
+ 
+ 		    i++;
+ 		    break;
+@@ -1482,11 +1482,11 @@
+ 	  default:				/* what? */
+ 	  Default:
+ 	    if(c < 0xff)
+-	      emlwrite("\007Unknown command: '%c'", (void *) c);
++	      emlwrite("\007未知的命令：'%c'", (void *) c);
+ 	    else if(c & CTRL)
+-	      emlwrite("\007Unknown command: ^%c", (void *)(c&0xff));
++	      emlwrite("\007未知的命令：^%c", (void *)(c&0xff));
+ 	    else
+-	      emlwrite("\007Unknown command", NULL);
++	      emlwrite("\007未知的命令", NULL);
+ 	  case NODATA:				/* no op */
+ 	    break;
  	}
+@@ -1516,7 +1516,7 @@
+ 
+     errbuf[0] = '\0';
+     if((mp=(struct bmaster *)malloc(sizeof(struct bmaster))) == NULL){
+-	emlwrite("\007Can't malloc space for master filename cell", NULL);
++	emlwrite("\007無法配置記憶體空間給 master filename cell", NULL);
+ 	return(NULL);
      }
-@@ -3355,7 +3355,7 @@
- 	work_buf_len = strlen(ods.cur_l->text) + buf_len;
- 	work_buf = (char *) malloc((work_buf_len + 1) * sizeof(char));
- 	if (work_buf == NULL) {
--	    emlwrite("Can't malloc space for saved text", NULL);
-+	    emlwrite("無法配置保存文字的記憶體空間", NULL);
- 	    return(FALSE);
- 	}
  
-@@ -3564,9 +3564,9 @@
-     if(Pmaster && Pmaster->exit_label)
-       menu_header[SEND_KEY].label = Pmaster->exit_label;
-     else if(gmode & (MDVIEW | MDHDRONLY))
--      menu_header[SEND_KEY].label =  (gmode & MDHDRONLY) ? "eXit/Save" : "eXit";
-+      menu_header[SEND_KEY].label =  (gmode & MDHDRONLY) ? "離開/儲存" : "離開";
-     else
--      menu_header[SEND_KEY].label = "Send";
-+      menu_header[SEND_KEY].label = "送出";
+@@ -1540,7 +1540,7 @@
+     mp->cpf = mp->fpl = 0;
+     mp->longest = 5;				/* .. must be labeled! */
  
-     if(gmode & MDVIEW){
- 	menu_header[CUT_KEY].name  = NULL;
-@@ -3587,7 +3587,7 @@
- 	menu_header[RICH_KEY].name  = NULL;
+-    emlwrite("Building file list of %s...", mp->dname);
++    emlwrite("正在建立 %s 的檔案列表...", mp->dname);
+ 
+     if((mp->names = getfnames(mp->dname, NULL, &nentries, errbuf)) == NULL){
+ 	free((char *) mp);
+@@ -1559,7 +1559,7 @@
+      * easily be made a user option later on...
+      */
+     if((filtnames=(char **)malloc((nentries+1) * sizeof(char *))) == NULL){
+-	emlwrite("\007Can't malloc space for name array", NULL);
++	emlwrite("\007無法配置記憶體空間給 name array", NULL);
+ 	zotmaster(&mp);
+ 	return(NULL);
+     }
+@@ -1610,7 +1610,7 @@
+     while(nentries--){				/* stat filtered files */
+ 	/* get a new cell */
+ 	if((ncp=(struct fcell *)malloc(sizeof(struct fcell))) == NULL){
+-	    emlwrite("\007Can't malloc cells for browser!", NULL);
++	    emlwrite("\007無法配置記憶體空間給 browser!", NULL);
+ 	    zotfcells(mp->head);		/* clean up cells */
+ 	    free((char *) filtnames);
+ 	    free((char *) mp);
+@@ -1780,22 +1780,22 @@
+ BrowserKeys()
+ {
+     menu_browse[QUIT_KEY].name  = (gmode&MDBRONLY) ? "Q" : "E";
+-    menu_browse[QUIT_KEY].label = (gmode&MDBRONLY) ? "Quit" : "Exit Brwsr";
++    menu_browse[QUIT_KEY].label = (gmode&MDBRONLY) ? "離開" : "離開瀏覽器";
+     menu_browse[GOTO_KEY].name  = (gmode&MDGOTO) ? "G" : NULL;
+-    menu_browse[GOTO_KEY].label = (gmode&MDGOTO) ? "Goto" : NULL;
++    menu_browse[GOTO_KEY].label = (gmode&MDGOTO) ? "切換" : NULL;
+     if(gmode & MDBRONLY){
+ 	menu_browse[EXEC_KEY].name  = "L";
+-	menu_browse[EXEC_KEY].label = "Launch";
++	menu_browse[EXEC_KEY].label = "啟動";
+ 	menu_browse[SELECT_KEY].name  = "V";
+-	menu_browse[SELECT_KEY].label = "[View]";
++	menu_browse[SELECT_KEY].label = "[檢視]";
+ 	menu_browse[PICO_KEY].name  = "E";
+-	menu_browse[PICO_KEY].label = "Edit";
++	menu_browse[PICO_KEY].label = "編輯";
      }
      else{
--	menu_header[RICH_KEY].label = "Rich Hdr";
-+	menu_header[RICH_KEY].label = "完整標頭";
- 	menu_header[RICH_KEY].name  = "^R";
+ 	menu_browse[SELECT_KEY].name  = "S";
+-	menu_browse[SELECT_KEY].label = "[Select]";
++	menu_browse[SELECT_KEY].label = "[選擇]";
+ 	menu_browse[PICO_KEY].name  = "A";
+-	menu_browse[PICO_KEY].label = "Add";
++	menu_browse[PICO_KEY].label = "新增";
      }
  
-@@ -3666,7 +3666,7 @@
-                 *headents[i].realaddr = bufp;
-             }
-             else{
--                emlwrite("Can't make room to pack header field.", NULL);
-+                emlwrite("無法配置包裝表頭欄位的記憶體空間。", NULL);
-                 retval = FALSE;
-             }
-         }
+     wkeyhelp(menu_browse);
+@@ -1898,7 +1898,7 @@
+ 
+ 	if((tp = tp->next) == NULL){		/* above top? */
+ 	    if(secondtry++){
+-		emlwrite("\007Internal error: can't find fname cell", NULL);
++		emlwrite("\007內部錯誤： 找不到 fname cell", NULL);
+ 		return(-1);
+ 	    }
+ 	    else{
+@@ -2064,10 +2064,10 @@
+ 	if(!p)					/* no suitable length! */
+ 	  p = &dir[l-(term.t_ncol-i-19)];
+ 
+-	sprintf(buf, "%s Dir ...%s", (gmode&MDBRONLY) ? "" : " BROWSER  ", p);
++	sprintf(buf, "%s 目錄 ...%s", (gmode&MDBRONLY) ? "" : " BROWSER  ", p);
+     }
+     else 
+-      sprintf(buf,"%s  Dir: %s", (gmode&MDBRONLY) ? "" : " BROWSER  ", dir);
++      sprintf(buf,"%s  目錄： %s", (gmode&MDBRONLY) ? "" : " BROWSER  ", dir);
+ 
+     if(i < j)					/* keep it centered */
+       j = j - i;				/* as long as we can */
+@@ -2196,18 +2196,18 @@
+ 	      if((line = (buf[i] == '\n') ? 0 : line + 1) >= LA_LINE_LIMIT
+ 		 || !buf[i]){
+ 		  rv = FALSE;
+-		  emlwrite("Can't display non-text file.  Try \"Launch\".",
++		  emlwrite("無法顯示非文字檔。試試 \"啟動\"。",
+ 			   NULL);
+ 		  break;
+ 	      }
+ 	}
+ 	else
+-	  emlwrite("Can't read file: %s", file);
++	  emlwrite("無法讀取檔案：%s", file);
+ 
+ 	fclose(fp);
+     }
+     else
+-      emlwrite("Can't open file: %s", file);
++      emlwrite("無法開啟檔案：%s", file);
+ 
+     return(rv);
+ }

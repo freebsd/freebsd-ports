@@ -1,155 +1,280 @@
---- pine/reply.c.orig	Wed Jul 15 08:40:00 1998
-+++ pine/reply.c	Tue Jul 28 08:35:06 1998
-@@ -88,9 +88,9 @@
- /*
-  * Little defs to keep the code a bit neater...
-  */
--#define	FRM_PMT	"Use \"Reply-To:\" address instead of \"From:\" address"
--#define	ALL_PMT		"Reply to all recipients"
--#define	NEWS_PMT	"Follow-up to news group(s), Reply via email to author or Both? "
-+#define	FRM_PMT	"使用 \"Reply-To:\" 地址代替 \"From:\" 地址"
-+#define	ALL_PMT		"回覆給所有的收信者"
-+#define	NEWS_PMT	"回覆至新聞組群，回函給作者或兩者皆要？"
+--- pine/pine.c.orig	Wed Jul 22 06:02:36 1998
++++ pine/pine.c	Tue Aug  4 12:42:20 1998
+@@ -107,12 +107,12 @@
+ 	OTHER_MENU,
+ 	NULL_MENU,
+ 	NULL_MENU,
+-	{"P","PrevCmd",{MC_PREVITEM,3,{'p',ctrl('P'),KEY_UP}},KS_NONE},
+-	{"N","NextCmd",{MC_NEXTITEM,3,{'n',ctrl('N'),KEY_DOWN}},KS_NONE},
++	{"P","前一命令",{MC_PREVITEM,3,{'p',ctrl('P'),KEY_UP}},KS_NONE},
++	{"N","次一命令",{MC_NEXTITEM,3,{'n',ctrl('N'),KEY_DOWN}},KS_NONE},
+ 	NULL_MENU,
+ 	NULL_MENU,
+-	{"R","RelNotes",{MC_RELNOTES,1,{'r'}},KS_NONE},
+-	{"K","KBLock",{MC_KBLOCK,1,{'k'}},KS_NONE},
++	{"R","出版說明",{MC_RELNOTES,1,{'r'}},KS_NONE},
++	{"K","鍵盤鎖定",{MC_KBLOCK,1,{'k'}},KS_NONE},
+ 	NULL_MENU,
+ 	NULL_MENU,
  
- /*
-  * standard type of storage object used for body parts...
-@@ -411,7 +411,7 @@
- #endif
+@@ -122,10 +122,10 @@
+ 	COMPOSE_MENU,
+ 	LISTFLD_MENU,
+ 	GOTO_MENU,
+-	{"I","Index",{MC_INDEX,1,{'i'}},KS_FLDRINDEX},
+-	{"J","Journal",{MC_JOURNAL,1,{'j'}},KS_REVIEW},
+-	{"S","Setup",{MC_SETUP,1,{'s'}},KS_NONE},
+-	{"A","AddrBook",{MC_ADDRBOOK,1,{'a'}},KS_ADDRBOOK},
++	{"I","索引",{MC_INDEX,1,{'i'}},KS_FLDRINDEX},
++	{"J","日誌",{MC_JOURNAL,1,{'j'}},KS_REVIEW},
++	{"S","設定",{MC_SETUP,1,{'s'}},KS_NONE},
++	{"A","地址簿",{MC_ADDRBOOK,1,{'a'}},KS_ADDRBOOK},
+ 	NULL_MENU,
+ 	NULL_MENU};
+ INST_KEY_MENU(main_keymenu, main_keys);
+@@ -511,7 +511,7 @@
+ 		static struct key simple_file_keys[] =
+ 		{HELP_MENU,
+ 		 NULL_MENU,
+-		 {"Q","Quit Viewer",{MC_EXIT,1,{'q'}},KS_NONE},
++		 {"Q","離開",{MC_EXIT,1,{'q'}},KS_NONE},
+ 		 NULL_MENU,
+ 		 NULL_MENU,
+ 		 NULL_MENU,
+@@ -520,15 +520,15 @@
+ 		 PRYNTTXT_MENU,
+ 		 WHEREIS_MENU,
+ 		 FWDEMAIL_MENU,
+-		 {"S", "Save", {MC_SAVETEXT,1,{'s'}}, KS_SAVE}};
++		 {"S", "存檔", {MC_SAVETEXT,1,{'s'}}, KS_SAVE}};
+ 		INST_KEY_MENU(simple_file_keymenu, simple_file_keys);
+ #define SAVE_KEY 9
  
-     /* partially formatted outgoing message */
--    pine_send(outgoing, &body, "COMPOSE MESSAGE REPLY",
-+    pine_send(outgoing, &body, "編輯信件回函",
- 	      fcc.tptr, &reply, NULL, NULL, NULL, 0);
-   done:
-     pine_free_body(&body);
-@@ -485,7 +485,7 @@
- 			 (ADDRESS *) NULL, env->from, 0);
+ 		memset(&sargs, 0, sizeof(SCROLL_S));
+ 		sargs.text.text = so_text(store);
+ 		sargs.text.src  = src;
+-		sargs.text.desc = "file";
+-		sargs.bar.title = "FILE VIEW";
++		sargs.text.desc = "檔案";
++		sargs.bar.title = "檢視檔案";
+ 		sargs.bar.style = FileTextPercent;
+ 		sargs.keys.menu = &simple_file_keymenu;
+ 		setbitmap(sargs.keys.bitmap);
+@@ -709,7 +709,7 @@
+ 	    if(!pine_state->VAR_INBOX_PATH || !pine_state->VAR_INBOX_PATH[0]
+ 	       || strucmp(pine_state->VAR_INBOX_PATH, "inbox") == 0){
+ 		HelpType help = NO_HELP;
+-		static   ESCKEY_S ekey[] = {{ctrl(T), 2, "^T", "To Fldrs"},
++		static   ESCKEY_S ekey[] = {{ctrl(T), 2, "^T", "資料匣"},
+ 					  {-1, 0, NULL, NULL}};
  
-     if(ret == 'x') {
--	cmd_cancelled("Reply");
-+	cmd_cancelled("回覆");
- 	return(0);
-     }
+ 		pine_state->mangled_footer = 1;
+@@ -719,7 +719,7 @@
  
-@@ -534,7 +534,7 @@
- 	       || (*saved_cc || *saved_resent))){
- 	    *flags &= ~RSF_QUERY_REPLY_ALL;
- 	    if((ret=want_to(ALL_PMT,'n','x',NO_HELP,WT_SEQ_SENSITIVE)) == 'x'){
--		cmd_cancelled("Reply");
-+		cmd_cancelled("回覆");
- 		return(0);
+         	    rv = optionally_enter(int_mail, -FOOTER_ROWS(pine_state),
+ 				      0, MAXPATH,
+-				      "No inbox!  Folder to open as inbox : ",
++				      "沒有新進信件匣(inbox)！信件匣開啟為 inbox：",
+ 				      /* ekey */ NULL, help, &flags);
+         	    if(rv == 3){
+ 			help = (help == NO_HELP) ? h_sticky_inbox : NO_HELP;
+@@ -731,7 +731,7 @@
+     		}
+ 
+     		if(rv == 1){
+-		    q_status_message(SM_ORDER, 0, 2 ,"Folder open cancelled");
++		    q_status_message(SM_ORDER, 0, 2 ,"取消開啟信件匣");
+ 		    rv = 0;		/* reset rv */
+ 		} 
+ 		else if(rv == 2){
+@@ -750,7 +750,7 @@
+ 		    removing_leading_white_space(int_mail);
+ 		    if((!pine_state->VAR_INBOX_PATH 
+ 			|| strucmp(pine_state->VAR_INBOX_PATH, "inbox") == 0)
+-		     && want_to("Preserve folder as \"inbox-path\" in PINERC", 
++		     && want_to("在 PINERC 中保留資料匣為 \"inbox-path\"", 
+ 				'y', 'n', NO_HELP, WT_NORM) == 'y'){
+ 			set_variable(V_INBOX_PATH, int_mail, 1);
+ 		    }
+@@ -895,25 +895,25 @@
+ 		 *news_addition;
+     int		  key_index;	  /* index into keymenu array for this cmd */
+ } mkeys[] = {
+-    {" %s     HELP               -  Get help using Pine",
++    {" %s     使用說明           -  Pine 的使用說明",
+      NULL, MAIN_HELP_KEY},
+     {"", NULL, UNUSED},
+-    {" %s     COMPOSE MESSAGE    -  Compose and send%s a message",
++    {" %s     寫信               -  寫信或是發表文章",
+      "/post", MAIN_COMPOSE_KEY},
+     {"", NULL, UNUSED},
+-    {" %s     MESSAGE INDEX      -  View messages in current folder",
++    {" %s     查看信件匣         -  查看目前信件匣內的信件",
+      NULL, MAIN_INDEX_KEY},
+     {"", NULL, UNUSED},
+-    {" %s     FOLDER LIST        -  Select a folder%s to view",
+-     " OR news group", MAIN_FOLDER_KEY},
++    {" %s     信件匣列表         -  列出信件匣%s以供選擇",
++     "或是新聞組群", MAIN_FOLDER_KEY},
+     {"", NULL, UNUSED},
+-    {" %s     ADDRESS BOOK       -  Update address book",
++    {" %s     地址簿             -  更新或修改地址簿的內容",
+      NULL, MAIN_ADDRESS_KEY},
+     {"", NULL, UNUSED},
+-    {" %s     SETUP              -  Configure Pine Options",
++    {" %s     設定               -  設定 Pine 的內部參數",
+      NULL, MAIN_SETUP_KEY},
+     {"", NULL, UNUSED},
+-    {" %s     QUIT               -  Leave the Pine program",
++    {" %s     離開               -  結束 Pine 的使用",
+      NULL, MAIN_QUIT_KEY}
+ };
+ 
+@@ -1206,7 +1206,7 @@
+ 		pine_state->mangled_footer = 1;
  	    }
- 	    else if(ret == 'y')
-@@ -1099,8 +1099,8 @@
- {
-     int ret, edited = 0;
-     static ESCKEY_S rtq_opts[] = {
--	{'y', 'y', "Y", "Yes"},
--	{'n', 'n', "N", "No"},
-+	{'y', 'y', "Y", "是"},
-+	{'n', 'n', "N", "否"},
- 	{-1, 0, NULL, NULL},	                  /* may be overridden below */
- 	{-1, 0, NULL, NULL}
-     };
-@@ -1110,19 +1110,18 @@
-       return(1);
+ 	    else{
+-		helper(main_menu_tx, "HELP FOR MAIN MENU", 0);
++		helper(main_menu_tx, "主選單的輔助說明", 0);
+ 		pine_state->mangled_screen = 1;
+ 	    }
  
-     while(1){
--	sprintf(tmp_20k_buf, "Include %s%soriginal message%s in Reply%s%s%s? ",
--		(many > 1L) ? comatose(many) : "",
--		(many > 1L) ? " " : "",
--		(many > 1L) ? "s" : "",
--		F_ON(F_ENABLE_EDIT_REPLY_INDENT, ps) ? " (using \"" : "",
-+	sprintf(tmp_20k_buf, "在回函%s%s%s中包含%s%s原本的訊息？",
-+		F_ON(F_ENABLE_EDIT_REPLY_INDENT, ps) ? "（使用 \"" : "",
- 		F_ON(F_ENABLE_EDIT_REPLY_INDENT, ps) ? *prefix : "",
--		F_ON(F_ENABLE_EDIT_REPLY_INDENT, ps) ? "\")" : "");
-+		F_ON(F_ENABLE_EDIT_REPLY_INDENT, ps) ? "\" 為引言標示代號）" : "",
-+		(many > 1L) ? comatose(many) : "",
-+		(many > 1L) ? " " : "");
+@@ -1234,7 +1234,7 @@
+ 		just_a_navigate_cmd++;
+ 	    }
+ 	    else
+-	      q_status_message(SM_ORDER, 0, 2, "Already at top of list");
++	      q_status_message(SM_ORDER, 0, 2, "已經在列表頂端了");
  
- 	if(F_ON(F_ENABLE_EDIT_REPLY_INDENT, ps)){
- 	    rtq_opts[2].ch    = ctrl('R');
- 	    rtq_opts[2].rval  = 'r';
- 	    rtq_opts[2].name  = "^R";
--	    rtq_opts[2].label = "Edit Indent String";
-+	    rtq_opts[2].label = "編輯引言標示代號";
- 	}
- 	else
- 	  rtq_opts[2].ch    = -1;
-@@ -1133,7 +1132,7 @@
- 				   rtq_opts, edited ? 'y' : 'n',
- 				   'x', NO_HELP, RB_SEQ_SENSITIVE)){
- 	  case 'x':
--	    cmd_cancelled("Reply");
-+	    cmd_cancelled("回覆");
- 	    return(-1);
+ 	    break;
  
- 	  case 'r':
-@@ -1152,7 +1151,7 @@
+@@ -1250,14 +1250,14 @@
+ 		just_a_navigate_cmd++;
+ 	    }
+ 	    else
+-	      q_status_message(SM_ORDER, 0, 2, "Already at bottom of list");
++	      q_status_message(SM_ORDER, 0, 2, "已經在列表底端了");
  
- 		    switch(optionally_enter(buf, ps->ttyo->screen_rows > 4
- 					    ? -FOOTER_ROWS(ps_global) : -1,
--					    0, 63, "Reply prefix : ", 
-+					    0, 63, "引言標示代號：", 
- 					    NULL, NO_HELP, &flags)){
- 		      case 0:		/* entry successful, continue */
- 			if(flags & OE_USER_MODIFIED){
-@@ -1165,7 +1164,7 @@
- 			break;
+ 	    break;
  
- 		      case 1:
--			cmd_cancelled("Reply");
-+			cmd_cancelled("回覆");
  
- 		      case -1:
- 			return(-1);
-@@ -1518,9 +1517,9 @@
-     ENVELOPE *env, *outgoing;
- {
-     int    ret = 1;
--    static ESCKEY_S news_opt[] = { {'f', 'f', "F", "Follow-up"},
--				   {'r', 'r', "R", "Reply"},
--				   {'b', 'b', "B", "Both"},
-+    static ESCKEY_S news_opt[] = { {'f', 'f', "F", "回覆至版上"},
-+				   {'r', 'r', "R", "回給作者"},
-+				   {'b', 'b', "B", "兩者皆要"},
- 				   {-1, 0, NULL, NULL} };
+ 	    /*---------- Release Notes ----------*/
+ 	  case MC_RELNOTES :
+-	    helper(h_news, "PINE RELEASE NOTES", 0);
++	    helper(h_news, "PINE 出版摘要", 0);
+ 	    pine_state->mangled_screen = 1;
+ 	    break;
  
-     if(env->newsgroups && *env->newsgroups && !reply_poster_followup(env))
-@@ -1544,7 +1543,7 @@
+@@ -1486,7 +1486,7 @@
  
- 	case 'x' :		/* cancel or unknown response */
- 	default  :
--	  cmd_cancelled("Reply");
-+	  cmd_cancelled("回覆");
- 	  ret = 0;
- 	  break;
-       }
-@@ -1552,7 +1551,7 @@
-     if(ret > 1){
- 	if(env->followup_to){
- 	    q_status_message(SM_ORDER, 2, 3,
--			     "Posting to specified Followup-To groups");
-+			     "刊登至特定的回覆組群");
- 	    outgoing->newsgroups = cpystr(env->followup_to);
- 	}
- 	else if(!outgoing->newsgroups)
-@@ -1710,7 +1709,7 @@
-      * up...
-      */
-     if(ret == 'x'){
--	q_status_message(SM_ORDER, 0, 3, "Forward message cancelled");
-+	q_status_message(SM_ORDER, 0, 3, "取消信件轉寄");
- 	goto clean_early;
+     /* paint the titlebar if needed */
+     if(ps->mangled_header){
+-	set_titlebar("MAIN MENU", ps->mail_stream, ps->context_current,
++	set_titlebar("主選單", ps->mail_stream, ps->context_current,
+ 		     ps->cur_folder, ps->msgmap, 1, FolderName, 0, 0);
+ 	ps->mangled_header = 0;
      }
-     else if(ret == 'y'){			/* attach message[s]!!! */
-@@ -1842,7 +1841,7 @@
-       pine_simple_send(outgoing, &body, NULL, NULL, NULL, 1);
-     else			/* partially formatted outgoing message */
-       pine_send(outgoing, &body,
--		ps->nr_mode ? "SEND MESSAGE" : "FORWARD MESSAGE",
-+		ps->nr_mode ? "送出信件" : "轉寄信件",
- 		NULL, NULL, NULL, NULL, NULL, FALSE);
+@@ -1651,13 +1651,13 @@
+ {
+     char        prompt[80];
+     char        letters[20];
+-    char        *printer  = "Printer";
+-    char        *passwd   = "Newpassword";
+-    char        *config   = "Config";
+-    char        *update   = "Update";
+-    char	*sigedit  = "Signature";
+-    char	*abooks   = "AddressBooks";
+-    char	*clctns   = "collectionList";
++    char        *printer  = "印表機";
++    char        *passwd   = "設定新密碼";
++    char        *config   = "環境設定";
++    char        *update   = "更新環境";
++    char	*sigedit  = "編輯簽名檔";
++    char	*abooks   = "地址簿";
++    char	*clctns   = "總集列表";
+ #ifdef	ENABLE_LDAP
+     char	*dir      = "Directory";
+ #endif
+@@ -1735,13 +1735,13 @@
+     }
  
-   clean:
+     sprintf(prompt,
+-	    "Choose a setup task from %s : ",
+-	    F_ON(F_BLANK_KEYMENU,ps_global) ? letters : "the menu below");
++	    "請從%s選擇你所要設定的工作：",
++	    F_ON(F_BLANK_KEYMENU,ps_global) ? letters : "下列表單中");
+ 
+     s = radio_buttons(prompt, ql, setup_names, deefault, 'x', help, RB_NORM);
+     /* ^C */
+     if(s == 'x') {
+-	q_status_message(SM_ORDER,0,3,"Setup command cancelled");
++	q_status_message(SM_ORDER,0,3,"取消設定指令");
+ 	s = 'e';
+     }
+ 
+@@ -1854,14 +1854,14 @@
+     HELP_MENU,
+     NULL_MENU,
+     {"E",NULL,{MC_EXIT,1,{'e',ctrl('M'),ctrl('J')}},KS_NONE},
+-    {"Ret","[Be Counted!]",{MC_VIEW_HANDLE,2,{ctrl('M'),ctrl('J')}},KS_NONE},
++    {"Ret","[列入使用者總計中]",{MC_VIEW_HANDLE,2,{ctrl('M'),ctrl('J')}},KS_NONE},
+     NULL_MENU,
+     NULL_MENU,
+     PREVPAGE_MENU,
+     NEXTPAGE_MENU,
+     PRYNTMSG_MENU,
+     NULL_MENU,
+-    {"R","RelNotes",{MC_RELNOTES,1,{'r'}},KS_NONE},
++    {"R","出版說明",{MC_RELNOTES,1,{'r'}},KS_NONE},
+     NULL_MENU};
+ INST_KEY_MENU(nuov_keymenu, nuov_keys);
+ #define	NUOV_EXIT	2
+@@ -1950,13 +1950,13 @@
+ 		memset(&sargs, 0, sizeof(SCROLL_S));
+ 		sargs.text.text	   = so_text(store);
+ 		sargs.text.src	   = CharStar;
+-		sargs.text.desc	   = "greeting text";
++		sargs.text.desc	   = "問候文字";
+ 		sargs.text.handles = handles;
+-		sargs.bar.title	   = "GREETING TEXT";
++		sargs.bar.title	   = "問候文字";
+ 		sargs.bar.style	   = TextPercent;
+ 		sargs.proc.tool	   = nuov_processor;
+ 		sargs.help.text	   = main_menu_tx;
+-		sargs.help.title   = "MAIN PINE HELP";
++		sargs.help.title   = "PINE 的主要輔助說明";
+ 		sargs.resize_exit  = 1;
+ 		sargs.force_h	   = 1;
+ 		sargs.keys.menu	   = &km;
+@@ -1967,11 +1967,11 @@
+ 		setbitmap(sargs.keys.bitmap);
+ 
+ 		if(ps->phone_home){
+-		    km.keys[NUOV_EXIT].label = "Exit this greeting";
++		    km.keys[NUOV_EXIT].label = "離開";
+ 		    km.keys[NUOV_EXIT].bind.nch = 1;
+ 		}
+ 		else{
+-		    km.keys[NUOV_EXIT].label	= "[Exit this greeting]";
++		    km.keys[NUOV_EXIT].label	= "[離開]";
+ 		    km.keys[NUOV_EXIT].bind.nch = 3;
+ 		    clrbitn(NUOV_VIEW, sargs.keys.bitmap);
+ 		}
+@@ -2029,7 +2029,7 @@
+ 	break;
+ 
+       case MC_RELNOTES :
+-	helper(h_news, "PINE RELEASE NOTES", 0);
++	helper(h_news, "PINE 出版摘要", 0);
+ 	ps_global->mangled_screen = 1;
+ 	break;
+ 
+@@ -2148,7 +2148,7 @@
+     dprint(1, (debugfile, "\n\n    ---- QUIT SCREEN ----\n"));    
+ 
+     if(!pine_state->nr_mode && F_OFF(F_QUIT_WO_CONFIRM,pine_state)
+-       && want_to("Really quit pine", 'y', 0, NO_HELP, WT_NORM) != 'y') {
++       && want_to("真的要離開 Pine 嗎？", 'y', 0, NO_HELP, WT_NORM) != 'y') {
+         pine_state->next_screen = pine_state->prev_screen;
+         return;
+     }

@@ -1,14 +1,14 @@
-bin/pgpdecode
-bin/pgpencrypt
-bin/pgpsign
 bin/pico
 bin/pilot
 bin/pine
-etc/dot.pinerc.pgp.sample
-etc/dot.pinerc.sample
 lib/libpico.so.1.3
 @exec /sbin/ldconfig -m %B
 @unexec /sbin/ldconfig -R
+bin/pgpencrypt
+bin/pgpdecode
+bin/pgpsign
+etc/dot.pinerc.pgp.sample
+etc/dot.pinerc.sample
 man/man1/pico.1.gz
 man/man1/pilot.1.gz
 man/man1/pine.1.gz

@@ -1,65 +1,367 @@
---- pine/newmail.c.orig	Fri Mar 27 07:28:33 1998
-+++ pine/newmail.c	Tue Jul 28 08:35:04 1998
-@@ -289,38 +289,28 @@
-     ENVELOPE	*e;
-     char	 subject[200], from[2*MAX_SCREEN_COLS],
- 		 intro[MAX_SCREEN_COLS+1];
--    static char *carray[] = { "regarding",
--				"concerning",
--				"about",
--				"as to",
--				"as regards",
--				"as respects",
--				"in re",
--				"re",
--				"respecting",
--				"in point of",
--				"with regard to",
--				"subject:"
-+    static char *carray[] = { "關於",
-+				"有關"
-     };
+--- pine/mailpart.c.orig	Tue Jul 21 03:18:49 1998
++++ pine/mailpart.c	Tue Aug  4 12:42:18 1998
+@@ -134,18 +134,18 @@
+        {HELP_MENU,
+ 	OTHER_MENU,
+ 	{"<",NULL,{MC_EXIT,2,{'<',','}},KS_EXITMODE},
+-	{">","[View]",{MC_VIEW_ATCH,5,{'v','>','.',ctrl('M'),ctrl('J')}},
++	{">","[檢視]",{MC_VIEW_ATCH,5,{'v','>','.',ctrl('M'),ctrl('J')}},
+ 	  KS_VIEW},
+-	{"P", "PrevAttch",{MC_PREVITEM,4,{'p',ctrl('B'),ctrl('P'),KEY_UP}},
++	{"P", "前一附件",{MC_PREVITEM,4,{'p',ctrl('B'),ctrl('P'),KEY_UP}},
+ 	  KS_PREVMSG},
+-	{"N", "NextAtch",
++	{"N", "次一附件",
+ 	 {MC_NEXTITEM, 5, {'n','\t',ctrl('F'),ctrl('N'), KEY_DOWN}},
+ 	 KS_NEXTMSG},
+ 	PREVPAGE_MENU,
+ 	NEXTPAGE_MENU,
+ 	DELETE_MENU,
+ 	UNDELETE_MENU,
+-	{"S", "Save", {MC_SAVETEXT,1,{'s'}}, KS_SAVE},
++	{"S", "存檔", {MC_SAVETEXT,1,{'s'}}, KS_SAVE},
+ 	{NULL, NULL, {MC_EXPORT, 1, {'e'}}, KS_EXPORT},
  
-     e = mail_fetchstructure(stream, max_num, NULL);
+ 	HELP_MENU,
+@@ -154,9 +154,9 @@
+ 	QUIT_MENU,
+ 	PIPE_MENU,
+ 	BOUNCE_MENU,
+-	{"A","AboutAttch",{MC_ABOUTATCH,1,{'a'}},KS_NONE},
++	{"A","關於附件",{MC_ABOUTATCH,1,{'a'}},KS_NONE},
+ 	WHEREIS_MENU,
+-	{"%", "Print", MC_PRINTMSG,1,{'%'}, KS_PRINT},
++	{"%", "列印", MC_PRINTMSG,1,{'%'}, KS_PRINT},
+ 	INDEX_MENU,
+ 	REPLY_MENU,
+ 	FORWARD_MENU};
+@@ -173,11 +173,11 @@
+ static struct key att_view_keys[] =
+        {HELP_MENU,
+ 	OTHER_MENU,
+-	{"<",NULL,{MC_EXIT,2,{'<',','}},KS_EXITMODE},
+-	{"Ret","[View Hilite]",{MC_VIEW_HANDLE,3,
++	{"<",NULL,{MC_EXIT,3,{'<',',',KEY_LEFT}},KS_EXITMODE},
++	{"Ret","[檢視 Hilite]",{MC_VIEW_HANDLE,3,
+ 				{ctrl('m'),ctrl('j'),KEY_RIGHT}},KS_NONE},
+-	{"^B","Prev URL",{MC_PREV_HANDLE,1,{ctrl('B')}},KS_NONE},
+-	{"^F","Next URL",{MC_NEXT_HANDLE,1,{ctrl('F')}},KS_NONE},
++	{"^B","前一 URL",{MC_PREV_HANDLE,1,{ctrl('B')}},KS_NONE},
++	{"^F","次一 URL",{MC_NEXT_HANDLE,1,{ctrl('F')}},KS_NONE},
+ 	PREVPAGE_MENU,
+ 	NEXTPAGE_MENU,
+ 	DELETE_MENU,
+@@ -193,7 +193,7 @@
+ 	BOUNCE_MENU,
+ 	NULL_MENU,
+ 	WHEREIS_MENU,
+-	{"%", "Print", MC_PRINTMSG,1,{'%'}, KS_PRINT},
++	{"%", "列印", MC_PRINTMSG,1,{'%'}, KS_PRINT},
+ 	NULL_MENU,
+ 	REPLY_MENU,
+ 	FORWARD_MENU};
+@@ -323,12 +323,12 @@
  
-     if(!folder) {
-         if(number > 1)
--          sprintf(intro, "%ld new messages!", number);
-+          sprintf(intro, "%ld 封新信件！", number);
-         else
--	  sprintf(intro, "New mail%s!",
--		  (e && address_is_us(e->to, ps_global)) ? " to you" : "");
-+	  sprintf(intro, "%s新信！",
-+		  (e && address_is_us(e->to, ps_global)) ? "您有" : "");
+     if(mn_total_cur(ps->msgmap) > 1L){
+ 	q_status_message(SM_ORDER | SM_DING, 0, 3,
+-			 "Can only view one message's attachments at a time!");
++			 "同一時間僅能檢視一封信的附件！");
+ 	return;
      }
-     else {
-         if(number > 1)
--          sprintf(intro,"%ld messages saved to folder \"%s\"", number, folder);
-+          sprintf(intro,"%ld 封信件被存至資料匣 \"%s\"", number, folder);
-         else
--          sprintf(intro, "Mail saved to folder \"%s\"", folder);
-+          sprintf(intro, "信件被存至資料匣 \"%s\"", folder);
+-    else if(ps->atmts && ps->atmts->description && !(ps->atmts + 1)->description)
++    else if(ps->atmts && !(ps->atmts + 1)->description)
+       q_status_message1(SM_ASYNC, 0, 3,
+-	"Message %s has only one part (the message body), and no attachments.",
++	"信件 %s 僅有一部分(信件本體)，沒有附件。",
+ 	long2string(mn_get_cur(ps->msgmap)));
+ 
+     /*
+@@ -471,7 +471,7 @@
+ 	  break;
+ 
+ 	if(ps->mangled_header){
+-	    set_titlebar("ATTACHMENT INDEX", ps->mail_stream,
++	    set_titlebar("附件索引", ps->mail_stream,
+ 			 ps->context_current, ps->cur_folder, ps->msgmap, 1,
+ 			 MessageNumber, 0, 0);
+ 	    ps->mangled_header = 0;
+@@ -535,7 +535,7 @@
+ 		  clrbitn(ATT_PRINT_KEY, bitmap);
+ 
+ 		km->keys[ATT_EXPORT_KEY].name  = "E";
+-		km->keys[ATT_EXPORT_KEY].label = "Export";
++		km->keys[ATT_EXPORT_KEY].label = "匯出";
+ 	    }
+ 
+ 	    if(km_popped){
+@@ -630,7 +630,7 @@
+ 	    if(ctmp = next_attline(current))
+ 	      current = ctmp;
+ 	    else
+-	      q_status_message(SM_ORDER, 0, 1, "Already on last attachment");
++	      q_status_message(SM_ORDER, 0, 1, "已經到最後一附件了");
+ 
+ 	    break;
+ 
+@@ -638,7 +638,7 @@
+ 	    if(ctmp = prev_attline(current))
+ 	      current = ctmp;
+ 	    else
+-	      q_status_message(SM_ORDER, 0, 1, "Already on first attachment");
++	      q_status_message(SM_ORDER, 0, 1, "已經到第一個附件了");
+ 
+ 	    break;
+ 
+@@ -652,7 +652,7 @@
+ 	    }
+ 	    else
+ 	      q_status_message(SM_ORDER, 0, 1,
+-			       "Already on last page of attachments");
++			       "已經在附件的最後一頁了");
+ 	    
+ 
+ 	    break;
+@@ -673,7 +673,7 @@
+ 	    }
+ 	    else
+ 	      q_status_message(SM_ORDER, 0, 1,
+-			       "Already on first page of attachments");
++			       "已經在附件的第一頁了");
+ 
+ 	    break;
+ 
+@@ -1041,7 +1041,7 @@
+ {
+     bitmap_t	 bitmap;
+ 
+-    set_titlebar("ATTACHMENT INDEX", ps_global->mail_stream,
++    set_titlebar("附件索引", ps_global->mail_stream,
+ 		 ps_global->context_current, ps_global->cur_folder,
+ 		 ps_global->msgmap, 1, FolderName,0,0);
+ 
+@@ -1210,7 +1210,7 @@
+     gf_io_t     pc;
+     STORE_S    *store;
+     static ESCKEY_S att_save_opts[] = {
+-	{ctrl('T'), 10, "^T", "To Files"},
++	{ctrl('T'), 10, "^T", "檔案列表"},
+ 	{-1, 0, NULL, NULL},
+ 	{-1, 0, NULL, NULL},
+ 	{-1, 0, NULL, NULL}};
+@@ -1242,7 +1242,7 @@
+ 	att_save_opts[++r].ch  = ctrl('V');
+ 	att_save_opts[r].rval  = 12;
+ 	att_save_opts[r].name  = "^V";
+-	att_save_opts[r].label = "Downld Msg";
++	att_save_opts[r].label = "下載信件";
+     }
+ #endif	/* !(DOS || MAC) */
+ 
+@@ -1250,7 +1250,7 @@
+ 	att_save_opts[++r].ch  =  ctrl('I');
+ 	att_save_opts[r].rval  = 11;
+ 	att_save_opts[r].name  = "TAB";
+-	att_save_opts[r].label = "Complete";
++	att_save_opts[r].label = "完成";
      }
  
-     if(e && e->from){
--	sprintf(from, " %srom ", (number > 1L) ? "Most recent f" : "F");
-+	sprintf(from, "%s自", (number > 1L) ? "最近來" : "來");
- 	if(e->from->personal)
- 	  istrncpy(from + ((number > 1L) ? 18 : 6),
- 		   (char *) rfc1522_decode((unsigned char *) tmp_20k_buf,
-@@ -337,13 +327,13 @@
+     att_save_opts[++r].ch = -1;
+@@ -1469,7 +1469,7 @@
+ 				a->number, 
+ 				save_folder);
+ 	    else if(rv == -1)
+-	      cmd_cancelled("Attached message Save");
++	      cmd_cancelled("存入附加訊息");
+ 	    /* else whatever broke in save_fetch_append shoulda bitched */
  
-     if(number <= 1L) {
-         if(e && e->subject){
--	    sprintf(subject, " %s ", carray[(unsigned)random()%12]);
-+	    sprintf(subject, " %s ", carray[(unsigned)random()%2]);
- 	    istrncpy(subject + strlen(subject),
- 		     (char *) rfc1522_decode((unsigned char *) tmp_20k_buf,
- 					     e->subject, NULL), 100);
- 	}
+ 	    so_give(&so);
+@@ -1545,11 +1545,11 @@
+ 
+ 	if(rv == 1)
+ 	  q_status_message2(SM_ORDER, 0, 4,
+-			    "Attached digest (part %s) saved to \"%s\"",
++			    "附加的 digest(第 %s 部份) 存為 \"%s\"",
+ 			    a->number, 
+ 			    save_folder);
+ 	else if(rv == -1)
+-	  cmd_cancelled("Attached digest Save");
++	  cmd_cancelled("存入附加的 digest");
+ 	/* else whatever broke in save_fetch_append shoulda bitched */
+ 
+ 	if(our_stream)
+@@ -1603,7 +1603,7 @@
+     ATTACH_S *ap = a;
+     STORE_S  *store;
+     static ESCKEY_S opts[] = {
+-	{ctrl('T'), 10, "^T", "To Files"},
++	{ctrl('T'), 10, "^T", "檔案列表"},
+ 	{-1, 0, NULL, NULL},
+ 	{-1, 0, NULL, NULL}};
+ 
+@@ -1611,7 +1611,7 @@
+ 	opts[i].ch    =  ctrl('I');
+ 	opts[i].rval  = 11;
+ 	opts[i].name  = "TAB";
+-	opts[i].label = "Complete";
++	opts[i].label = "完成";
+     }
+ 
+     filename[0] = full_filename[0] = '\0';
+@@ -1624,7 +1624,7 @@
+     if(rv < 0){
+ 	switch(rv){
+ 	  case -1:
+-	    cmd_cancelled("Export");
++	    cmd_cancelled("匯出檔案");
+ 	    break;
+ 
+ 	  case -2:
+@@ -1676,7 +1676,7 @@
+     ATTACH_S *ap;
+     STORE_S  *store;
+     static ESCKEY_S opts[] = {
+-	{ctrl('T'), 10, "^T", "To Files"},
++	{ctrl('T'), 10, "^T", "檔案列表"},
+ 	{-1, 0, NULL, NULL},
+ 	{-1, 0, NULL, NULL}};
+ 
+@@ -1684,7 +1684,7 @@
+ 	opts[i].ch    =  ctrl('I');
+ 	opts[i].rval  = 11;
+ 	opts[i].name  = "TAB";
+-	opts[i].label = "Complete";
++	opts[i].label = "完成";
+     }
+ 
+     filename[0] = full_filename[0] = '\0';
+@@ -1697,7 +1697,7 @@
+     if(rv < 0){
+ 	switch(rv){
+ 	  case -1:
+-	    cmd_cancelled("Export");
++	    cmd_cancelled("匯出檔案");
+ 	    break;
+ 
+ 	  case -2:
+@@ -1905,14 +1905,14 @@
+         /*----- Can't display this type ------*/
+ 	if(a->body->encoding < ENCOTHER)
+ 	  q_status_message4(SM_ORDER | SM_DING, 3, 5,
+-		     "Don't know how to display %s%s%s attachments.%s",
++		     "不知如何顯示 %s%s%s 的附件。%s",
+ 			    body_type_names(a->body->type),
+ 			    a->body->subtype ? "/" : "",
+ 			    a->body->subtype ? a->body->subtype :"",
+-			    (flags & DA_SAVE) ? " Try Save." : "");
++			    (flags & DA_SAVE) ? " 試試存檔。" : "");
  	else
--	  strcpy(subject, " with no subject");
-+	  strcpy(subject, " 沒有主題");
+ 	  q_status_message1(SM_ORDER | SM_DING, 3, 5,
+-			    "Don't know how to unpack \"%s\" encoding",
++			    "不知如何解開 \"%s\" 的編碼",
+ 			    body_encodings[(a->body->encoding <= ENCMAX)
+ 					     ? a->body->encoding : ENCOTHER]);
  
-         if(!from[0])
-           subject[1] = toupper((unsigned char)subject[1]);
+@@ -2101,7 +2101,7 @@
+ 	gf_set_so_writec(&pc, store);
+ 	(void) decode_text(a, msgno, pc, QStatus, FM_DISPLAY | FM_HANDLES);
+ 	gf_clear_so_writec(store);
+-	scroll_attachment("ATTACHED TEXT", store, src, handles, a, flags);
++	scroll_attachment("附件文字", store, src, handles, a, flags);
+ 	free_handles(&handles);
+ 	so_give(&store);	/* free resources associated with store */
+     }
+@@ -2276,22 +2276,22 @@
+     memset(&sargs, 0, sizeof(SCROLL_S));
+     sargs.text.text    = so_text(store);
+     sargs.text.src     = src;
+-    sargs.text.desc    = "attachment";
++    sargs.text.desc    = "附件";
+     sargs.text.handles = handles;
+     sargs.bar.title    = title;
+     sargs.proc.tool    = process_attachment_cmd;
+     sargs.proc.data.p  = (void *) a;
+     sargs.help.text    = h_mail_text_att_view;
+-    sargs.help.title   = "HELP FOR ATTACHED TEXT VIEW";
++    sargs.help.title   = "檢視附件文字的輔助說明";
+     sargs.keys.menu    = &att_view_keymenu;
+     setbitmap(sargs.keys.bitmap);
+ 
+     /* First, fix up "back" key */
+     if(flags & DA_FROM_VIEW){
+-	att_view_keymenu.keys[ATV_BACK_KEY].label = "MsgText";
++	att_view_keymenu.keys[ATV_BACK_KEY].label = "信件文字";
+     }
+     else{
+-	att_view_keymenu.keys[ATV_BACK_KEY].label = "AttchIndex";
++	att_view_keymenu.keys[ATV_BACK_KEY].label = "附件索引";
+     }
+ 
+     if(!handles){
+@@ -2705,10 +2705,10 @@
+     memset(&sargs, 0, sizeof(SCROLL_S));
+     sargs.text.text  = so_text(store);
+     sargs.text.src   = CharStar;
+-    sargs.text.desc  = "attachment info";
+-    sargs.bar.title  = "ABOUT ATTACHMENT";
++    sargs.text.desc  = "附件資訊";
++    sargs.bar.title  = "關於附件";
+     sargs.help.text  = h_simple_text_view;
+-    sargs.help.title = "HELP FOR \"ABOUT ATTACHMENT\"";
++    sargs.help.title = "\"關於附件\"的輔助說明";
+ 
+     scrolltool(&sargs);
+ 
+@@ -2770,7 +2770,7 @@
+ 		else		/* partially formatted outgoing message */
+ 		  pine_send(outgoing, &body,
+ 			    ps_global->nr_mode
+-			      ? "SEND MESSAGE" : "FORWARD MESSAGE",
++			      ? "送出信件" : "轉寄信件",
+ 			    NULL, NULL, NULL, NULL, NULL, FALSE);
+ 
+ 		ps_global->mangled_screen = 1;
+@@ -2856,7 +2856,7 @@
+ 		  pine_simple_send(outgoing, &body, NULL, NULL, NULL, 1);
+ 		else		/* partially formatted outgoing message */
+ 		  pine_send(outgoing, &body,
+-		      ps_global->nr_mode ? "SEND MESSAGE" : "FORWARD MESSAGE",
++		      ps_global->nr_mode ? "送出信件" : "轉寄信件",
+ 			    NULL, NULL, NULL, NULL, NULL, FALSE);
+ 
+ 		ps_global->mangled_screen = 1;
+@@ -2953,7 +2953,7 @@
+ 				 tp = body_partno(stream, msgno, a->body),
+ 				 msgtext, prefix, include_text)){
+ 		/* partially formatted outgoing message */
+-		pine_send(outgoing, &body, "COMPOSE MESSAGE REPLY",
++		pine_send(outgoing, &body, "編輯信件回函",
+ 			  fcc.tptr, NULL, NULL, NULL, NULL, 0);
+ 
+ 		pine_free_body(&body);
+@@ -3034,7 +3034,7 @@
+ 
+ 	sprintf(prompt, "Pipe %sattachment %s to %s: ", raw ? "RAW " : "",
+ 		a->number, capture ? "" : "(Free Output) ");
+-	pipe_opt[1].label = raw ? "DecodedData" : "Raw Data";
++	pipe_opt[1].label = raw ? "解碼後的資料" : "原始資料";
+ 	pipe_opt[2].label = capture ? "Free Output" : "Capture Output";
+ 	flags = OE_APPEND_CURRENT | OE_SEQ_SENSITIVE;
+ 	rc = optionally_enter(pipe_command, -FOOTER_ROWS(ps_global), 0,
+@@ -3052,7 +3052,7 @@
+ 	}
+ 	else if(rc == 0){
+ 	    if(pipe_command[0] == '\0'){
+-		cmd_cancelled("Pipe command");
++		cmd_cancelled("導向命令");
+ 		break;
+ 	    }
+ 
+@@ -3126,7 +3126,7 @@
+ 	    break;
+ 	}
+ 	else if(rc == 1){
+-	    cmd_cancelled("Pipe");
++	    cmd_cancelled("導向");
+ 	    break;
+ 	}
+ 	else if(rc = 3)
