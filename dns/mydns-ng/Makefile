@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mydns
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.7
 CATEGORIES=	net databases
 MASTER_SITES=	http://mydns.bboy.net/download/
 
@@ -28,9 +28,11 @@ DOCS=	AUTHORS COPYING ChangeLog NEWS QUICKSTART README TODO
 .if defined (WITH_PGSQL)
 LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql7
 CONFIGURE_ARGS+=	--without-mysql
+PKGNAMESUFFIX=		-pg
 .else
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 CONFIGURE_ARGS+=	--without-pgsql
+PKGNAMESUFFIX=		-mysql
 .endif
 
 .if !defined(NOPORTDOCS)
