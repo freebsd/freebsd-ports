@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	7.8.1
+PORTVERSION=	7.9
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		http://download.sourceforge.net/curl/ \
@@ -17,10 +17,10 @@ MASTER_SITES=	http://curl.haxx.se/download/ \
 MAINTAINER=	roam@FreeBSD.org
 
 MAN1=		curl.1 curl-config.1
-MAN3=		curl_easy_cleanup.3 curl_easy_getinfo.3 curl_easy_init.3 \
-		curl_easy_perform.3 curl_easy_setopt.3 \
+MAN3=		curl_easy_cleanup.3 curl_easy_duphandle.3 curl_easy_getinfo.3 \
+		curl_easy_init.3 curl_easy_perform.3 curl_easy_setopt.3 \
 		curl_escape.3 curl_unescape.3 \
-		curl_formparse.3 curl_formfree.3 \
+		curl_formadd.3 curl_formparse.3 curl_formfree.3 \
 		curl_getdate.3 curl_getenv.3 \
 		curl_global_init.3 curl_global_cleanup.3 \
 		curl_mprintf.3 \
