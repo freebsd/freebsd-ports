@@ -1,0 +1,22 @@
+bin/freefem
+share/doc/freefem/freefem.hlp.gz
+share/doc/freefem/exampl.pde/brachet.pde
+share/doc/freefem/exampl.pde/condens.pde
+share/doc/freefem/exampl.pde/convectn.pde
+share/doc/freefem/exampl.pde/convhill.pde
+share/doc/freefem/exampl.pde/crack.pde
+share/doc/freefem/exampl.pde/crack.pde.sav
+share/doc/freefem/exampl.pde/heat.pde
+share/doc/freefem/exampl.pde/holbeam.pde
+share/doc/freefem/exampl.pde/lame.pde
+share/doc/freefem/exampl.pde/multib.pde
+share/doc/freefem/exampl.pde/muonde.pde
+share/doc/freefem/exampl.pde/nacabig.pde
+share/doc/freefem/exampl.pde/nsstep.pde
+share/doc/freefem/exampl.pde/shock.pde
+share/doc/freefem/exampl.pde/stokespo.pde
+share/doc/freefem/exampl.pde/validate.pde
+share/doc/freefem/exampl.pde/validcplx.pde
+share/doc/freefem/exampl.pde/validsys.pde
+@dirrm share/doc/freefem/exampl.pde
+@dirrm share/doc/freefem

@@ -1,0 +1,42 @@
+*** makefile.x.orig	Wed Jan 24 08:37:09 1996
+--- makefile.x	Tue Dec 24 14:46:59 1996
+***************
+*** 26,35 ****
+  #
+  # the following preprocessing options are available
+  #  ADAPT : to enable mesh adaptation
+! export CXXFLAGS	= -g -DADAPT
+  #export CXXFLAGS = -g
+! export CXXINC	= -I./ -Iadapt/ -I/usr/local/X11R5/include
+! export CXXLIBS	= -Ladapt/ -ladapt -L/usr/local/X11R5/lib -lX11 -lm 
+  #export CXXLIBS	= -L/usr/local/X11R5/lib -lX11 -lm 
+  
+  
+--- 26,35 ----
+  #
+  # the following preprocessing options are available
+  #  ADAPT : to enable mesh adaptation
+! export CXXFLAGS	= -O $(CFLAGS) -DADAPT
+  #export CXXFLAGS = -g
+! export CXXINC	= -I./ -Iadapt/ -I$(X11BASE)/include
+! export CXXLIBS	= -Ladapt/ -ladapt -L$(X11BASE)/lib -lX11 -lm 
+  #export CXXLIBS	= -L/usr/local/X11R5/lib -lX11 -lm 
+  
+  
+***************
+*** 48,54 ****
+  	$(CXX) $(CXXFLAGS) $(CXXINC) -c $<
+  
+  libadapt:
+! 	cd adapt;make -f makefile.x;cd ..
+  
+  purify: freefem
+  	purify $(CXX)  -o freefem.pure $(OBJS) $(CXXLIBS)
+--- 48,54 ----
+  	$(CXX) $(CXXFLAGS) $(CXXINC) -c $<
+  
+  libadapt:
+! 	cd adapt;$(MAKE) -f makefile.x;cd ..
+  
+  purify: freefem
+  	purify $(CXX)  -o freefem.pure $(OBJS) $(CXXLIBS)
