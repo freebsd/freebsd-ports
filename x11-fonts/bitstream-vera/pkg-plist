@@ -1,0 +1,18 @@
+etc/fonts/local.conf
+%%FONTSDIR%%/COPYRIGHT.TXT
+%%FONTSDIR%%/fonts.dir
+%%FONTSDIR%%/tt2001gn.ttf
+%%FONTSDIR%%/tt2002gn.ttf
+%%FONTSDIR%%/tt2003gn.ttf
+%%FONTSDIR%%/tt2004gn.ttf
+%%FONTSDIR%%/tt2005gn.ttf
+%%FONTSDIR%%/tt2007gn.ttf
+%%FONTSDIR%%/tt2009gn.ttf
+%%FONTSDIR%%/tt2010gn.ttf
+%%FONTSDIR%%/tt2011gn.ttf
+%%FONTSDIR%%/tt2012gn.ttf
+%%PORTDOCS%%share/doc/bitstream-vera/Bitstream_Vera_Fonts_README.html
+%%PORTDOCS%%@dirrm share/doc/bitstream-vera
+@unexec /bin/rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
+@dirrm %%FONTSDIR%%
+@exec %%X11BASE%%/bin/fc-cache -f -v
