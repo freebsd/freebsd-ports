@@ -4,4 +4,7 @@
        This port has placed a log file in /var/log/ named dansguardian.log
        This log file can get quite large.  Please read the newsyslog(8) man
        page for instructions on setting up log rotation and compression.
+
+       WARNING:  This port uses RCng.  Please read the comments in the startup
+       script for instructions on enabling the daemon.
 *******************************************************************************
