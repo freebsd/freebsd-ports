@@ -465,6 +465,7 @@
     SUBDIR += p5-Algorithm-Diff
     SUBDIR += p5-Algorithm-MDiff
     SUBDIR += p5-Algorithm-MarkovChain
+    SUBDIR += p5-Algorithm-Numerical-Shuffle
     SUBDIR += p5-Algorithm-Permute
     SUBDIR += p5-Alias
     SUBDIR += p5-App-Info

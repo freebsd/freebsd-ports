@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Algorithm/Numerical/Shuffle.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Numerical/Shuffle/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Numerical/Shuffle
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Numerical 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Algorithm/Numerical 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Algorithm 2>/dev/null || true
