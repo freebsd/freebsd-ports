@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.19 1996/08/02 15:04:14 andreas Exp $
+# $Id: Makefile,v 1.20 1996/09/03 19:41:46 jfitz Exp $
 #
 
     SUBDIR += CGI
@@ -27,6 +27,7 @@
     SUBDIR += tkWWW
     SUBDIR += w3-msql
     SUBDIR += w3c_httpd
+    SUBDIR += webcopy
     SUBDIR += weblint
     SUBDIR += wn
     SUBDIR += wwwcount
