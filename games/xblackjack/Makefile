@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11/Motif blackjack game
 
 USE_IMAKE=	yes
-LIB_DEPENDS+=	Xm.1:${PORTSDIR}/x11-toolkits/lesstif
+LIB_DEPENDS+=	Xm.2:${PORTSDIR}/x11-toolkits/lesstif
 MAN1=		xblackjack.1
 
 .include <bsd.port.mk>
