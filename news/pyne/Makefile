@@ -15,6 +15,8 @@ MASTER_SITES=	http://www.soul-less.pwp.blueyonder.co.uk/pyne/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 offline Newsreader/Emailer
 
+BROKEN=		Configure fails
+
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/GTK.py:${PORTSDIR}/x11-toolkits/py-gtk \
 		${PYTHON_SITELIBDIR}/gtkextra/__init__.py:${PORTSDIR}/x11-toolkits/py-gtkextra
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/GTK.py:${PORTSDIR}/x11-toolkits/py-gtk \
