@@ -1,0 +1,19 @@
+--- Makefile.PL.orig	Tue Aug 24 18:30:46 1999
++++ Makefile.PL	Tue Aug 29 10:32:23 2000
+@@ -90,13 +90,13 @@
+ 
+ 
+ opendir(DIR,$lib_ldap);
+-@files = grep{/ldap|lber/} readdir(DIR);
++@files = grep{/mozldap|mozlber/} readdir(DIR);
+ closedir(DIR);
+ 
+ if (!((@ldaplib = grep{/ldapssl.*\.($libexts)$/} @files) && $ssl_def))
+ {
+-   @ldaplib = grep{/ldap.*\.($libexts)$/} @files;
+-   @lberlib = grep{/lber.*\.($libexts)$/} @files;
++   @ldaplib = grep{/mozldap.*\.($libexts)$/} @files;
++   @lberlib = grep{/mozlber.*\.($libexts)$/} @files;
+ }
+ 
+ if ($#ldaplib < 0)
