@@ -1,0 +1,11 @@
+Exuberant Ctags generates an index (or tag) file of source language
+objects in source files that allows these items to be quickly and
+easily located by a text editor or other utility.
+
+Alternatively, it can generate a cross reference file which lists,
+in human-readable form, information about the various objects found
+in a set of source code files.
+
+Supported languages include: C, C++, Java, Eiffel, FORTRAN.
+
+WWW:    http://fly.hiwaay.net/~darren/ctags/
