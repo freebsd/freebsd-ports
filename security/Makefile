@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
+# $Id: Makefile,v 1.24 1998/01/21 11:39:36 obrien Exp $
 #
 
     SUBDIR += SSLeay
@@ -19,6 +19,7 @@
     SUBDIR += pidentd
     SUBDIR += rsaref
     SUBDIR += ssh
+    SUBDIR += skip
     SUBDIR += sudo
     SUBDIR += super
     SUBDIR += swatch
