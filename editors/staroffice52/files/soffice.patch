@@ -1,0 +1,47 @@
+*** soffice.orig	Tue Oct 26 16:57:20 1999
+--- soffice	Tue Oct 26 17:00:15 1999
+***************
+*** 15,26 ****
+  # resolve installation directory
+  sd_platform=`uname -s`
+  case $sd_platform in
+! 	SCO_SV) test=/bin/test     ;;
+!   	*)      test=/usr/bin/test ;;
+  esac
+  
+  sd_cwd="`pwd`"
+! if $test -L "$0" ; then
+  	sd_basename=`basename $0`
+   	sd_script=`ls -l $0 | sed "s/.*${sd_basename} -> //g"` 
+  else
+--- 15,27 ----
+  # resolve installation directory
+  sd_platform=`uname -s`
+  case $sd_platform in
+! 	FreeBSD) test=/bin/test && symb="-h"	;;
+! 	SCO_SV) test=/bin/test	&& symb="-L"	;;
+! 	*)	test=/usr/bin/test && symb="-L" ;;
+  esac
+  
+  sd_cwd="`pwd`"
+! if $test $symb "$0" ; then
+  	sd_basename=`basename $0`
+   	sd_script=`ls -l $0 | sed "s/.*${sd_basename} -> //g"` 
+  else
+***************
+*** 68,74 ****
+      export LD_LIBRARYN32_PATH
+      ;;
+  
+!   Linux)
+      LD_LIBRARY_PATH="$sd_inst/lib":$LD_LIBRARY_PATH
+      export LD_LIBRARY_PATH
+      ;;
+--- 69,75 ----
+      export LD_LIBRARYN32_PATH
+      ;;
+  
+!   Linux|FreeBSD)
+      LD_LIBRARY_PATH="$sd_inst/lib":$LD_LIBRARY_PATH
+      export LD_LIBRARY_PATH
+      ;;
