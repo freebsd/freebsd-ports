@@ -1,11 +1,36 @@
---- Strn/Makefile.orig	Tue Nov 11 04:28:01 1997
-+++ Strn/Makefile	Sat Dec 13 23:28:53 1997
-@@ -42,7 +42,7 @@
- 
- $(LIBSO): $(SOBJS)
- 	/bin/rm -f $(LIBSO)
--	gcc -shared -Wl,-soname,$(LIBSO) -o $(LIBSO) $(SOBJS)
-+	$(CC) -shared -Wl,-x -o $(LIBSO) `lorder $(SOBJS) | tsort -q`
- 	/bin/ln -s $(LIBSO) $(LIBSOS)
- 	-@/bin/ls -l $(LIBSOS) $(LIBSO)
- 
+*** Strn/Makefile.orig	Tue Nov 11 15:28:01 1997
+--- Strn/Makefile	Tue Sep  8 00:25:07 1998
+***************
+*** 6,12 ****
+  SHELL=/bin/sh
+  .SUFFIXES: .c .o .so
+  LIB=libStrn.a
+! LIBSO=libStrn.so.1
+  LIBSOS=libStrn.so
+  CC=cc
+  CPPFLAGS=
+--- 6,12 ----
+  SHELL=/bin/sh
+  .SUFFIXES: .c .o .so
+  LIB=libStrn.a
+! LIBSO=libStrn.so.1.0
+  LIBSOS=libStrn.so
+  CC=cc
+  CPPFLAGS=
+***************
+*** 42,48 ****
+  
+  $(LIBSO): $(SOBJS)
+  	/bin/rm -f $(LIBSO)
+! 	gcc -shared -Wl,-soname,$(LIBSO) -o $(LIBSO) $(SOBJS)
+  	/bin/ln -s $(LIBSO) $(LIBSOS)
+  	-@/bin/ls -l $(LIBSOS) $(LIBSO)
+  
+--- 42,48 ----
+  
+  $(LIBSO): $(SOBJS)
+  	/bin/rm -f $(LIBSO)
+! 	$(CC) -shared -Wl,-x -o $(LIBSO) `lorder $(SOBJS) | tsort -q`
+  	/bin/ln -s $(LIBSO) $(LIBSOS)
+  	-@/bin/ls -l $(LIBSOS) $(LIBSO)
+  
