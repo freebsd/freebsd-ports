@@ -37,6 +37,7 @@ BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk13
 BUILD_DEPENDS+=	imake:${PORTSDIR}/devel/imake-4
 LIB_DEPENDS+=	pth.14:${PORTSDIR}/devel/pth
 
+USE_PERL5=	yes
 USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_BISON=	yes
