@@ -86,7 +86,7 @@ pre-everything::
 	@${ECHO_MSG} "		WITHOUT_CNID=yes	Turns off CNID persistent DID support"
 	@${ECHO_MSG} "		WITH_SRVLOC=yes		Enable Service Location Protocol support"
 	@${ECHO_MSG} "		WITH_PAM=yes		Enable PAM support"
-	@${ECHO_MSG} "		WITH_TIMELOARD=yes	Enable Timelord network time service"
+	@${ECHO_MSG} "		WITH_TIMELORD=yes	Enable Timelord network time service"
 	@${ECHO_MSG} "		WITH_MANGLING=yes	Enable long file name mangling support (requires CNID)"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "See Netatalk's Makefile for more details on some of these options."
