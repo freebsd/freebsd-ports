@@ -72,7 +72,9 @@ include/apache/multithread.h
 include/apache/os-inline.c
 include/apache/os.h
 include/apache/rfc1413.h
+%%WITHIPV6%%include/apache/sa_len.h
 include/apache/scoreboard.h
+%%WITHIPV6%%include/apache/sockaddr_storage.h
 include/apache/util_date.h
 include/apache/util_md5.h
 include/apache/util_script.h

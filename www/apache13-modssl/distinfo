@@ -1,3 +1,4 @@
 MD5 (apache_1.3.29.tar.gz) = e97fe9bf51dc2c9c233d53f63b1347e3
 MD5 (mod_ssl-2.8.16-1.3.29.tar.gz) = 4f6c580ffa07d33e8584406132b98e86
 MD5 (mod_snmp_1.3.14.12.tar.gz) = b0bddbb4e5ff4c6a46d114998f12740a
+MD5 (apache-1.3.29modssl-v6-20031204.diff.gz) = d84056da5795f7d0ba80df9e8105a94c
