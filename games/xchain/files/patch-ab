@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Apr 27 00:32:58 1998
-+++ Makefile	Mon Apr 27 00:33:22 1998
+--- Makefile.orig	Wed Feb 25 03:50:23 1998
++++ Makefile	Sat Jun 10 11:32:52 2000
 @@ -1,8 +1,8 @@
  DESTDIR = /
  # This is so dpkg-buildpackage can build in the correct dir
@@ -7,7 +7,7 @@
 -CC=gcc
 -CFLAGS=-O2 -Wall
 +#CC=gcc
-+#CFLAGS=-O2 -Wall
++CFLAGS+=-DDEF_WISH_PATH=\"${LOCALBASE}/bin/wish8.2\"
  
  OBJS=		xchain.o
  
