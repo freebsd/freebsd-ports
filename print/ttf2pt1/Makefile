@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	statue@freebsd.sinica.edu.tw
 
 LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
 
