@@ -1,0 +1,11 @@
+lib/xfce4/panel-plugins/libxfcexmms.so
+share/xfce4-xmms-controller-plugin/eject.png
+share/xfce4-xmms-controller-plugin/next.png
+share/xfce4-xmms-controller-plugin/stop.png
+share/xfce4-xmms-controller-plugin/pause.png
+share/xfce4-xmms-controller-plugin/play.png
+share/xfce4-xmms-controller-plugin/prev.png
+share/xfce4-xmms-controller-plugin/icon.png
+@unexec rmdir %D/lib/xfce4/panel-plugins 2>/dev/null || true
+@unexec rmdir %D/lib/xfce4 2>/dev/null || true
+@unexec rmdir %D/share/xfce4-xmms-controller-plugin 2>/dev/null || true

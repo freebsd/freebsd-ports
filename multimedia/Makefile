@@ -136,6 +136,7 @@
     SUBDIR += xanim
     SUBDIR += xawtv
     SUBDIR += xdvshow
+    SUBDIR += xfce4-xmms-controller-plugin
     SUBDIR += xfce4-xmms-plugin
     SUBDIR += xine
     SUBDIR += xine_artsplugin
