@@ -8091,6 +8091,7 @@ pipemeter	ports/sysutils/pipemeter
 pipenightdreams	ports/games/pipenightdreams
 pips-sc60s	ports/print/pips-sc60s
 pips-sc65_66s	ports/print/pips-sc65_66s
+pips-sc84_83s	ports/print/pips-sc84_83s
 pips2200	ports/print/pips2200
 pips3000	ports/print/pips3000
 pips3300	ports/print/pips3300
