@@ -123,6 +123,7 @@ freefonts		ports/x11-fonts/freefonts	Some of the fonts are
 						into the public domain and may
 						[not be] sold").
 forte			ports/java/forte	Restrictive copyright.
+freenet6		ports/net/freenet6	Must agree to License Agreement before downloading.
 ftree			ports/misc/ftree	Can't distribute commercially.
 fwtk-*			ports/security/fwtk	No redistribution allowed
 Frisk-*			ports/games/xfrisk	Copyright/trademark violation?
