@@ -10,6 +10,7 @@
     SUBDIR += add
     SUBDIR += apc
     SUBDIR += asir2000
+    SUBDIR += biggles
     SUBDIR += blas
     SUBDIR += calc
     SUBDIR += calctool
