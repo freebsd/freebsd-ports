@@ -25,6 +25,7 @@ DATADIR=	${PREFIX}/share/gnome
 LANG=		de es fr pt sq sr sr@Latn sv
 PKGMESSAGE=	${WRKDIR}/pkg-message
 WRKSRC=		${WRKDIR}/${NAME}
+IGNORE=		Seems to be a dead Project - Do not run with gDesklets 0.34.x.
 
 do-build:
 	@${WRKSRC}/Install_${NAME}_Sensor.bin --nomsg ${WRKSRC}
