@@ -17,6 +17,7 @@
     SUBDIR += netscape4.language
     SUBDIR += p5-Lingua-RU-Charset
     SUBDIR += p5-XML-Parser-encodings
+    SUBDIR += p5-cyrillic
     SUBDIR += pgp.language
     SUBDIR += pine.language
     SUBDIR += pscyr

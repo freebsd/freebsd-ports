@@ -1,0 +1,7 @@
+This module includes cyrillic string conversion functions from one and
+to another charset, to upper and to lower case without locale switching.
+Also included single-byte charsets detection routine.  It is easy to add
+new code pages. For this purpose it is necessary only to add appropriate
+string of a code page.
+
+Author: Albert MICHEEV <Albert@f80.n5049.z2.fidonet.org>
