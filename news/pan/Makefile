@@ -6,10 +6,13 @@
 #
 
 PORTNAME=	pan
-PORTVERSION=	0.11.1.94
+PORTVERSION=	0.11.2
 CATEGORIES=	news gnome
-MASTER_SITES=	http://pan.rebelbase.com/download/${PORTVERSION}/SOURCE/ \
+MASTER_SITES=	${MASTER_SITE_GNOME} \
+		http://pan.rebelbase.com/download/${PORTVERSION}/SOURCE/ \
 		http://pan.rebelbase.com/download/obsolete/${PORTVERSION}/SOURCE/
+MASTER_SITE_SUBDIR=	stable/sources/pan
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 
