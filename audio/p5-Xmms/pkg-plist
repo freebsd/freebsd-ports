@@ -14,4 +14,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Xmms/SongChange/SongChange.s
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Xmms/Config
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Xmms/Remote
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Xmms/SongChange
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Xmms
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Xmms-Perl
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bundle
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Xmms
