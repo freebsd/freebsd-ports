@@ -1,7 +1,8 @@
-# $Id: Makefile,v 1.10 1999/04/30 05:33:25 taoka Exp $
+# $Id: Makefile,v 1.11 1999/04/30 06:02:43 taoka Exp $
 #
 
     SUBDIR += asclock
+    SUBDIR += asclock-gtk
     SUBDIR += asclock-xlib
     SUBDIR += astime
     SUBDIR += bclock
