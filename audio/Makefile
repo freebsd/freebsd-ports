@@ -126,7 +126,6 @@
     SUBDIR += linux-libaudiofile
     SUBDIR += linux-realplayer
     SUBDIR += linux-vsound
-    SUBDIR += litestream
     SUBDIR += lopster
     SUBDIR += mad
     SUBDIR += maplay
