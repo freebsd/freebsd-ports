@@ -140,14 +140,14 @@
 [homes]
    comment = Home Directories
    browseable = no
-   writable = yes
+   writeable = yes
 
 # Un-comment the following and create the netlogon directory for Domain Logons
 ; [netlogon]
 ;   comment = Network Logon Service
 ;   path = /usr/local/samba/lib/netlogon
 ;   guest ok = yes
-;   writable = no
+;   writeable = no
 ;   share modes = no
 
 
@@ -167,7 +167,7 @@
    browseable = no
 # Set public = yes to allow user 'guest account' to print
    guest ok = no
-   writable = no
+   writeable = no
    printable = yes
 
 # This one is useful for people to share files
@@ -183,7 +183,7 @@
 ;   comment = Public Stuff
 ;   path = /home/samba
 ;   public = yes
-;   writable = yes
+;   writeable = yes
 ;   printable = no
 ;   write list = @staff
 
@@ -198,7 +198,7 @@
 ;   path = /homes/fred
 ;   printer = freds_printer
 ;   public = no
-;   writable = no
+;   writeable = no
 ;   printable = yes
 
 # A private directory, usable only by fred. Note that fred requires write
@@ -208,7 +208,7 @@
 ;   path = /usr/somewhere/private
 ;   valid users = fred
 ;   public = no
-;   writable = yes
+;   writeable = yes
 ;   printable = no
 
 # a service which has a different directory for each machine that connects
@@ -219,23 +219,23 @@
 ;  comment = PC Directories
 ;  path = /usr/pc/%m
 ;  public = no
-;  writable = yes
+;  writeable = yes
 
 # A publicly accessible directory, read/write to all users. Note that all files
 # created in the directory by users will be owned by the default user, so
 # any user with access can delete any other user's files. Obviously this
-# directory must be writable by the default user. Another user could of course
+# directory must be writeable by the default user. Another user could of course
 # be specified, in which case all files would be owned by that user instead.
 ;[public]
 ;   path = /usr/somewhere/else/public
 ;   public = yes
 ;   only guest = yes
-;   writable = yes
+;   writeable = yes
 ;   printable = no
 
 # The following two entries demonstrate how to share a directory so that two
 # users can place files there that will be owned by the specific users. In this
-# setup, the directory should be writable by both users and should have the
+# setup, the directory should be writeable by both users and should have the
 # sticky bit set on it to prevent abuse. Obviously this could be extended to
 # as many users as required.
 ;[myshare]
@@ -243,7 +243,7 @@
 ;   path = /usr/somewhere/shared
 ;   valid users = mary fred
 ;   public = no
-;   writable = yes
+;   writeable = yes
 ;   printable = no
 ;   create mask = 0765
 
