@@ -1,6 +1,6 @@
-# $Id: Makefile,v 1.26 1994/11/20 20:44:50 ats Exp $
+# $Id: Makefile,v 1.27 1994/11/23 00:04:24 asami Exp $
 #
-SUBDIR=	Xaw3d color_xterm emu fvwm ghostview iv ivs jpeg kterm olvwm pcb tk \
+SUBDIR=	Xaw3d color_xterm emu fvwm iv ivs jpeg kterm olvwm pcb tk \
 	tkhfs xanim xarchie \
 	xcdplayer xdvi xearth xlockmore xpm xsnow xtexshell xv \
 	ImageMagick ctwm mpeg-lib tiff
