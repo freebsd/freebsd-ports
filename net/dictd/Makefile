@@ -8,16 +8,20 @@
 
 PORTNAME=	dictd
 PORTVERSION=	1.5.5
+PORTREVISION=	1
 CATEGORIES=	net textproc
 MASTER_SITES=	ftp://ftp.dict.org/pub/dict/
 
 MAINTAINER=	ijliao@FreeBSD.org
 
+RUN_DEPENDS=	${LOCALBASE}/lib/dict/wn.index:${PORTSDIR}/net/dictd-database
+
 MAN1=		dictzip.1
 MAN8=		dictd.8
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	"--prefix=${PREFIX} --with-cflags=${CFLAGS} --with-etcdir=${PREFIX}/etc"
+CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc --with-cflags="${CFLAGS}"
+CONFIGURE_ENV=	CFLAGS="${CFLAGS}"
 USE_GMAKE=	yes
 
 ALL_TARGET=	dictd dictzip
@@ -30,12 +34,15 @@ post-patch:
 .for i in dictd.conf example.conf
 	@${PERL} -pi -e "s|/usr|${PREFIX}|g" ${WRKSRC}/$i
 .endfor
+	@${PERL} -pi -e "s|%%CFLAGS%%|${CFLAGS}|g" ${WRKSRC}/zlib/Makefile
+	@${PERL} -pi -e "s|[\ \t]T_USER| T_USERNAME|g" ${WRKSRC}/servparse.*
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/${PORTNAME}
 .for i in example.conf example.dictrc example.site example2.conf example3.conf
 	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/${PORTNAME}
 .endfor
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}.conf
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/dictd.sh > ${PREFIX}/etc/rc.d/dictd.sh
 	@${CHMOD} +x ${PREFIX}/etc/rc.d/dictd.sh
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${PKGMESSAGE}
