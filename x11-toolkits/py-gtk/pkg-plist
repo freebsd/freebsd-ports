@@ -8,9 +8,22 @@ lib/python1.5/site-packages/GtkExtra.py
 lib/python1.5/site-packages/GtkExtra.pyc
 lib/python1.5/site-packages/Gtkinter.py
 lib/python1.5/site-packages/Gtkinter.pyc
+lib/python1.5/site-packages/pyglade/build.py
+lib/python1.5/site-packages/pyglade/build.pyc
+lib/python1.5/site-packages/pyglade/style.py
+lib/python1.5/site-packages/pyglade/style.pyc
+lib/python1.5/site-packages/pyglade/xmlparse.py
+lib/python1.5/site-packages/pyglade/xmlparse.pyc
+lib/python1.5/site-packages/pyglade/__init__.py
+lib/python1.5/site-packages/pyglade/__init__.pyc
 lib/python1.5/site-packages/_gdkimlibmodule.so
-lib/python1.5/site-packages/gtkmodule.so
+lib/python1.5/site-packages/_gtkmodule.so
+@dirrm lib/python1.5/site-packages/pyglade
 share/doc/pygtk/README
+share/examples/pygtk/glade/README
+share/examples/pygtk/glade/glade.py
+share/examples/pygtk/glade/test.glade
+share/examples/pygtk/glade/test2.glade
 share/examples/pygtk/ide/README
 share/examples/pygtk/ide/break.xpm
 share/examples/pygtk/ide/browse.py
@@ -56,5 +69,6 @@ share/examples/pygtk/testgtk/testgtkrc
 @dirrm share/examples/pygtk/neil
 @dirrm share/examples/pygtk/imlib
 @dirrm share/examples/pygtk/ide
+@dirrm share/examples/pygtk/glade
 @dirrm share/examples/pygtk
 @dirrm share/doc/pygtk

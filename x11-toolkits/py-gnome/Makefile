@@ -1,13 +1,13 @@
 # New ports collection makefile for:	pygtk
-# Version required:	0.4.5
+# Version required:	0.5.2
 # Date created:		30 May 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.9 1998/08/07 23:56:51 asami Exp $
+# $Id: Makefile,v 1.10 1998/08/11 07:38:01 tg Exp $
 #
 
-DISTNAME=	pygtk-0.4.5
-PKGNAME=	py-gtk-0.4.5
+DISTNAME=	pygtk-0.5.2
+PKGNAME=	py-gtk-0.5.2
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	ftp://ftp.daa.com.au/pub/james/python/ \
 		ftp://ftp.gimp.org/pub/gtk/python/ \
@@ -22,6 +22,7 @@ LIB_DEPENDS=	Imlib\\.1\\.7:${PORTSDIR}/graphics/imlib
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-gtk-config=${X11BASE}/bin/gtk11-config
 ALL_TARGET=	sharedmods
 MAKE_FLAGS=	OPT="${CFLAGS}"
 
