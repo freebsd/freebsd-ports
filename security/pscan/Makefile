@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pscan
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	security
 MASTER_SITES=	http://www.striker.ottawa.on.ca/~aland/pscan/
 DISTNAME=	${PORTNAME}
@@ -18,5 +18,6 @@ ALL_TARGET=	#empty
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pscan ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/find_formats.sh ${PREFIX}/bin/find_formats
 
 .include <bsd.port.mk>
