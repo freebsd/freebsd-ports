@@ -38,8 +38,8 @@ Index: m3/m3browser/src/m3makefile
 RCS file: /home/jdp/m3-cvs/m3/m3browser/src/m3makefile,v
 retrieving revision 1.1.1.1
 diff -u -r1.1.1.1 m3makefile
---- m3makefile	1996/09/24 05:21:56	1.1.1.1
-+++ m3makefile	1996/09/24 05:32:39
+--- m3/m3browser/src/m3makefile	1996/09/24 05:21:56	1.1.1.1
++++ m3/m3browser/src/m3makefile	1996/09/24 05:32:39
 @@ -6,6 +6,7 @@
  
  m3_option ("-times")
