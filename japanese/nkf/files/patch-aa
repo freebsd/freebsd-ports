@@ -1,0 +1,21 @@
+--- Makefile.orig	Mon Nov 16 19:21:40 1998
++++ Makefile	Wed Feb 23 13:37:09 2000
+@@ -1,11 +1,17 @@
++PREFIX?= /usr/local
+ CC = cc
+-CFLAGS = -O
++CFLAGS?= -O
+ SHAR = shar -T
+ # SHAR = shar 
+ PERL = perl5
+ 
+ nkf : nkf.c
+ 	$(CC) $(CFLAGS) -o nkf nkf.c
++
++install:
++	/usr/bin/install -o root -g wheel -m 755 -c -s nkf ${PREFIX}/bin
++	/usr/bin/install -o root -g wheel -m 644 -c nkf.1 ${PREFIX}/man/man1/nkf.1
++	/usr/bin/install -o root -g wheel -m 644 -c nkf.1j ${PREFIX}/man/ja/man1/nkf.1
+ 
+ clean:
+ 	rm -fr nkf.o nkf nkf.in nkf.out nkf17 *~
