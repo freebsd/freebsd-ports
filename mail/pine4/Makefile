@@ -16,6 +16,8 @@ DISTNAME?=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER?=	pine@freebsd.ady.ro
 
+FORBIDDEN=	"Remotely exploitable buffer overflows."
+
 Y2K=		http://www.washington.edu/pine/QandA/sysadmins.html#Millenium
 
 MAN1=		pine.1 pico.1 pilot.1
