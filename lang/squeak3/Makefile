@@ -66,6 +66,12 @@ MAKE_ARGS+=	CC=${CC}
 MAKE_ARGS+=	CCFLAGS="${CFLAGS}"
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386" && ${ARCH} != "sparc64"
+BROKEN=		"Does not compile on !i386 and !sparc64"
+.endif
+
 pre-configure:
 	@${MKDIR} ${BUILD_WRKSRC}
 	@cd ${WRKSRC}/platforms/unix/npsqueak && ${REINPLACE_CMD} -e 's|include|include -I${X11BASE}/include|g' Makefile
@@ -94,4 +100,4 @@ post-install:
 	${STRIP_CMD} ${PREFIX}/share/squeak/${SQUEAK_VERSION}/squeak
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
