@@ -17,7 +17,7 @@ PATCH_SITES=	http://www.nn.iij4u.or.jp/~tutimura/tex/
 PATCHFILES=	xdvik-${VERSION_XDVIK}-j${VERSION_JPATCH}.patch.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	inagaki@tg.rim.or.jp
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	DVI Previewer(kpathsearch) for X. + jp-patch
 
 .if defined(WITH_VF2FT)
