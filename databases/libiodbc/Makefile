@@ -9,8 +9,7 @@
 #        databases/unixODBC.
 
 PORTNAME=	libiodbc
-PORTVERSION=	3.52.1
-PORTREVISION=	1
+PORTVERSION=	3.52.2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.iodbc.org/downloads/iODBC/ \
 		${MASTER_SITE_SOURCEFORGE}
