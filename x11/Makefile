@@ -150,6 +150,7 @@
     SUBDIR += xmx
     SUBDIR += xnee
     SUBDIR += xprompt
+    SUBDIR += xrootconsole
     SUBDIR += xscreensaver
     SUBDIR += xscreensaver-gnome
     SUBDIR += xskyroot
