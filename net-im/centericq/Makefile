@@ -14,7 +14,6 @@ MAINTAINER=	cpiazza@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/center
 USE_GMAKE=	yes
-USE_NEWGCC=	yes
 
 post-patch:
 	@${PERL} -pi -e 's:__PREFIX__:${PREFIX}:' ${WRKSRC}/centerICQ.cc
