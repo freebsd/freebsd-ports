@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	racc
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	devel	# ruby
 MASTER_SITES=	http://www1.u-netsurf.ne.jp/~brew/mine/soft/
 PKGNAMEPREFIX=	ruby-
@@ -24,14 +24,19 @@ RUBY=		${LOCALBASE}/bin/ruby
 RUBY_VER=	1.4
 RUBY_ARCH=	${ARCH}-freebsd${OSREL}
 
-MODULES=	facade.rb format.rb info.rb libracc.rb raccp.rb raccs.rb \
-		register.rb state.rb
+MODULES=	facade.rb format.rb grammer.rb info.rb iset.rb \
+		libracc.rb raccp.rb raccs.rb state.rb
 MODULES_RT=	parser.rb
 DOCS_EN=	changes.html command.html debug.html grammer.html \
 		index.html usage.html
 DOCS_JA=	changes.html command.html debug.html grammer.html \
 		index.html parser.html usage.html
 EXAMPLES=	calc.y calc2-ja.y compile.rb
+
+post-patch:
+	${PERL} -i -pe '$$. == 1 && s,^#!\s*\S+,#!${RUBY},' \
+		${WRKSRC}/misc/racc2y \
+		${WRKSRC}/misc/y2racc
 
 do-configure:
 	@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} setup.rb config
@@ -40,7 +45,8 @@ do-build:
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${RUBY} setup.rb setup
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/racc/racc ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/racc/racc \
+		${WRKSRC}/misc/racc2y ${WRKSRC}/misc/y2racc ${PREFIX}/bin/
 	${MKDIR} ${PREFIX}/lib/ruby/site_ruby/${RUBY_VER}/racc
 .for f in ${MODULES}
 	${INSTALL_DATA} ${WRKSRC}/lib/racc/${f} \
