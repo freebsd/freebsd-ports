@@ -3,7 +3,7 @@
 # Date created:		7 February 1996
 # Whom:			asami
 #
-# $Id: Makefile,v 1.4 1996/07/27 20:39:20 asami Exp $
+# $Id: Makefile,v 1.5 1996/11/11 10:12:38 max Exp $
 #
 
 DISTNAME=	okphone-1.2
@@ -18,6 +18,6 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	asami@FreeBSD.ORG
 
 post-install:
-	@${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	@/bin/sh ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
