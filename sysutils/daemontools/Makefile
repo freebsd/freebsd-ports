@@ -7,10 +7,23 @@
 
 PORTNAME=	daemontools
 PORTVERSION=	0.76
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cr.yp.to/daemontools/ \
 		ftp://cr.yp.to/daemontools/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+
+.if !defined(WITHOUT_MAN)
+MANDATE=	-20010714
+MASTER_SITES+=	http://smarden.org/pape/djb/manpages/:1
+DISTFILES+=	${DISTNAME}-man${MANDATE}.tar.gz:1
+
+MAN8=		envdir.8 envuidgid.8 fghack.8 multilog.8 pgrphack.8 \
+		readproctitle.8 setlock.8 setuidgid.8 softlimit.8 \
+		supervise.8 svc.8 svok.8 svscan.8 svscanboot.8 svstat.8 \
+		tai64n.8 tai64nlocal.8
+MANCOMPRESSED=	no
+.endif
 
 MAINTAINER=	roam@FreeBSD.org
 
@@ -45,5 +58,8 @@ post-install:
 		${PREFIX}/share/examples/${PORTNAME}
 	@${INSTALL_DATA} ${WRKDIR}/${SAMPLERC} \
 		${PREFIX}/share/examples/${PORTNAME}
+.if !defined(WITHOUT_MAN)
+	@${INSTALL_MAN} ${WRKDIR}/daemontools-man/*.8 ${PREFIX}/man/man8/
+.endif
 
 .include <bsd.port.mk>
