@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Template-Toolkit
-PORTVERSION=	2.13
+PORTVERSION=	2.14
 CATEGORIES=	www textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Template
@@ -123,6 +123,11 @@ MAN3=	Template.3 \
 post-patch:
 	${PERL} -pi -e 's,/usr/local/tt2,${PREFIX}/share/tt2,g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+.if ${PERL_LEVEL} < 500601
+	${FIND} ${WRKSRC} -name '*.orig' -delete
+
+EXTRA_PATCHES=	${PATCHDIR}/5.005-lib-Template-Document.pm
+.endif
 
 .if ${PERL_LEVEL} >= 500800
 MAN3+=	Template::Config.3
