@@ -5,18 +5,17 @@
 # $FreeBSD$
 #
 
-PORTNAME=		xoj
-PORTVERSION=		1.0
-CATEGORIES=		games
-MASTER_SITES=		${MASTER_SITE_SUNSITE}
+PORTNAME=	xoj
+PORTVERSION=	1.0
+CATEGORIES=	games
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/demos
-EXTRACT_SUFX=		.tgz
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-USE_IMAKE=		yes
-
-do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/xoj ${PREFIX}/bin
+USE_XPM=	yes
+USE_IMAKE=	yes
+NO_INSTALL_MANPAGES=	yes
 
 .include <bsd.port.mk>
