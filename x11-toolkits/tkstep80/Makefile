@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tkstep
-PORTVERSION= 	8.0.4
+PORTVERSION=	8.0.4
 CATEGORIES=	x11-toolkits tk80
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
 DISTNAME=	tk${PORTVERSION}

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thinice
-PORTVERSION= 	1.0.3
+PORTVERSION=	1.0.3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.ing.umu.se/~stric/theme/
 DISTNAME=	gtk-${PORTNAME}-theme-${PORTVERSION}

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtk-engines-collection
-PORTVERSION= 	1.6
+PORTVERSION=	1.6
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	# empty
 DISTFILES=	# empty

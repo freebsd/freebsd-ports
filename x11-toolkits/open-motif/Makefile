@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	open-motif
-PORTVERSION= 	2.1.30
+PORTVERSION=	2.1.30
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://openmotif.opengroup.org/pub/openmotif/R${PORTVERSION}/tars/  \

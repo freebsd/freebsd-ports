@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtk-engines
-PORTVERSION= 	0.10
+PORTVERSION=	0.10
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gtk-engines

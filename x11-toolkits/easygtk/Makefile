@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	easygtk
-PORTVERSION= 	1.2
+PORTVERSION=	1.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.linsupport.com/sw/ \
 		http://www.linuxbox.com/~drow/EasyGTK/

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tix
-PORTVERSION= 	4.1.0.007
+PORTVERSION=	4.1.0.007
 CATEGORIES=	x11-toolkits tk82
 MASTER_SITES=   http://www.neosoft.com/tcl/ftparchive/%SUBDIR%/ \
 		ftp://ftp.riken.go.jp/pub/lang/tcl/netsoft/%SUBDIR%/

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	guile-gtk
-PORTVERSION= 	0.19
+PORTVERSION=	0.19
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.ping.de/sites/zagadka/guile-gtk/download/
 MASTER_SITE_SUBDIR=	unstable/sources/gnome-guile
