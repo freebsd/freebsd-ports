@@ -1,0 +1,11 @@
+--- siglist.h.orig	Mon Mar 15 07:21:34 1999
++++ siglist.h	Mon Mar 15 07:21:50 1999
+@@ -28,7 +28,7 @@
+ #endif /* Solaris || USGr4_2 || drs6000 || amiga || Minix */
+ 
+ #if !defined (Solaris) && !defined (Linux) && !defined (__BSD_4_4__) && \
+-	!defined (Minix) && !defined (NetBSD) && !defined (FreeBSD) && \
++	!defined (Minix) && !defined (NetBSD) && !defined (__FreeBSD__) && \
+ 	!defined (BSD_OS)
+ extern char *sys_siglist[];
+ #endif /* !Solaris && !Linux && !__BSD_4_4__ && !Minix && !NetBSD && !FreeBSD && !BSD_OS */
