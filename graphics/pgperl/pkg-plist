@@ -1,4 +1,5 @@
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PGPLOT.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/old_test.pl
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/PGPLOT/PGPLOT.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/PGPLOT/PGPLOT.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/PGPLOT/.packlist
