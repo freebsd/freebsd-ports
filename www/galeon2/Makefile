@@ -53,8 +53,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_C
 MAN1=		galeon.1
 
 FLASHPLAYER=	${LOCALBASE}/lib/libflashplayer.so.1
-XXX_FILES=	GaleonAutomation-common.c GaleonAutomation-skels.c \
-	   	GaleonAutomation-stubs.c GaleonAutomation.h
 
 .include <bsd.port.pre.mk>
 
@@ -75,11 +73,6 @@ pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "  mozilla-devel-gtk2 "
 	@${ECHO_MSG} ""
-
-post-extract:
-.for i in ${XXX_FILES}
-	@${RM} -f ${WRKSRC}/src/${i}
-.endfor
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|mozilla-gtkmozembed|mozilla-gtkmozembed${HEADERS_SUFX}|g' \
