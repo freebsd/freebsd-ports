@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.1 1997/04/26 20:08:43 jfieber Exp $
+# $Id: Makefile,v 1.2 1997/04/27 00:11:43 asami Exp $
 #
 
+    SUBDIR += agrep
     SUBDIR += glimpse
     SUBDIR += isearch
     SUBDIR += ispell
