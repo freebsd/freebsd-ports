@@ -22,7 +22,8 @@ MAINTAINER=	joerg@freebsd.org
 BUILD_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils \
 		autoheader:${PORTSDIR}/devel/autoconf \
-		perl:${PORTSDIR}/lang/perl5
+		perl:${PORTSDIR}/lang/perl5 \
+		gettext:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils
 
