@@ -32,6 +32,86 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7850a238-680a-11d9-a9e7-0001020eed82">
+    <topic>cups-lpr -- lppasswd multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>cups-lpr</name>
+	<name>fr-cups-lpr</name>
+	<range><lt>1.1.23</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>D. J. Bernstein reports that Bartlomiej Sieka has
+	  discovered several security vulnerabilities in lppasswd,
+	  which is part of CUPS:</p>
+	<blockquote cite="http://tigger.uic.edu/~jlongs2/holes/cups2.txt">
+	  <p>First, lppasswd blithely ignores write errors in
+	    fputs(line,outfile) at lines 311 and 315 of lppasswd.c,
+	    and in fprintf(...) at line 346. An attacker who fills up
+	    the disk at the right moment can arrange for
+	    /usr/local/etc/cups/passwd to be truncated.</p>
+	  <p>Second, if lppasswd bumps into a file-size resource limit
+	    while writing passwd.new, it leaves passwd.new in place,
+	    disabling all subsequent invocations of lppasswd. Any
+	    local user can thus disable lppasswd...</p>
+	  <p>Third, line 306 of lppasswd.c prints an error message to
+	    stderr but does not exit. This is not a problem on systems
+	    that ensure that file descriptors 0, 1, and 2 are open for
+	    setuid programs, but it is a problem on other systems;
+	    lppasswd does not check that passwd.new is different from
+	    stderr, so it ends up writing a user-controlled error
+	    message to passwd if the user closes file descriptor
+	    2.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-1268</cvename>
+      <cvename>CAN-2004-1269</cvename>
+      <cvename>CAN-2004-1270</cvename>
+      <bid>12007</bid>
+      <bid>12004</bid>
+      <url>http://www.cups.org/str.php?L1023</url>
+      <url>http://tigger.uic.edu/~jlongs2/holes/cups2.txt</url>
+    </references>
+    <dates>
+      <discovery>2004-12-11</discovery>
+      <entry>2005-01-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="40a3bca2-6809-11d9-a9e7-0001020eed82">
+    <topic>cups-base -- HPGL buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>cups-base</name>
+	<name>fr-cups-base</name>
+	<range><lt>1.1.23</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ariel Berkman has discovered a buffer overflow
+	  vulnerability in CUPS's HPGL input driver.  This
+	  vulnerability could be exploited to execute arbitrary code
+	  with the permission of the CUPS server by printing a
+	  specially crated HPGL file.</p>
+      </body>
+    </description>
+    <references>
+      <bid>11968</bid>
+      <cvename>CAN-2004-1267</cvename>
+      <url>http://tigger.uic.edu/~jlongs2/holes/cups.txt</url>
+      <url>http://www.cups.org/str.php?L1024</url>
+    </references>
+    <dates>
+      <discovery>2004-12-15</discovery>
+      <entry>2005-01-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ce109fd4-67f3-11d9-a9e7-0001020eed82">
     <topic>mysql-scripts -- mysqlaccess insecure temporary file creation</topic>
     <affects>
