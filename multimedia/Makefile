@@ -2,6 +2,7 @@
 #
     SUBDIR += avifile
     SUBDIR += ffmpeg
+    SUBDIR += ffmpeg045
     SUBDIR += gstreamer
     SUBDIR += gstreamer-player
     SUBDIR += gstreamer-plugins
