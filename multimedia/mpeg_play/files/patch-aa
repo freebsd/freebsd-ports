@@ -1,9 +1,0 @@
---- ./Imakefile.org	Tue Feb  6 23:37:51 1996
-+++ ./Imakefile	Wed Feb  7 00:05:59 1996
-@@ -1,5 +1,5 @@
- /* See Makefile.proto for flags to define */
--        DESTDIR = /usr/pkg/video
-+        /* DESTDIR = /usr/pkg/video */
-         NDEBUG  = /* -DNDEBUG */
-        /*ANALYSIS = -DANALYSIS */
-           SHMEM = -DSH_MEM

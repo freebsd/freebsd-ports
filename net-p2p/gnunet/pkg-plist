@@ -1,9 +1,0 @@
-bin/gnunet-download
-bin/gnunet-gtk
-bin/gnunet-insert
-bin/gnunet-insert-mp3
-bin/gnunet-search
-bin/gnunetd
-lib/libgnunetcommon.a
-lib/libgnunetfilesharing.a
-lib/libgnunetutil.a

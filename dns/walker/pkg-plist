@@ -1,3 +1,0 @@
-bin/walker
-%%PORTDOCS%%share/doc/walker/walker.html
-%%PORTDOCS%%@dirrm share/doc/walker

@@ -1,3 +1,0 @@
-(require 'info)
-(info-initialize)
-(setq elisp-info-list '("elisp-ja"))

@@ -1,8 +1,0 @@
-#!/bin/sh
-#
-# $FreeBSD$
-
-for f in `find ${WRKSRC} -type f | xargs grep -l '\!\!PREFIX\!\!' ` ; do \
-	mv $f $f.orig && sed s+!!PREFIX!!+$PREFIX+g < $f.orig > $f && \
-		rm $f.orig
-done

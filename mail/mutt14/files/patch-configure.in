@@ -1,9 +1,0 @@
---- configure.in.orig	Fri Jul 28 11:50:24 2000
-+++ configure.in	Wed Dec  5 12:18:13 2001
-@@ -610,4 +615,6 @@
- AC_SUBST(MUTTLOCALEDIR)
- AC_DEFINE_UNQUOTED(MUTTLOCALEDIR, "$MUTTLOCALEDIR")
-+
-+MUTTLIBS="$MUTTLIBS -lxpg4"
- 
- AC_OUTPUT(Makefile intl/Makefile m4/Makefile dnl

@@ -1,3 +1,0 @@
-bin/nbtscan
-%%PORTDOCS%%share/doc/nbtscan/README
-%%PORTDOCS%%@dirrm share/doc/nbtscan

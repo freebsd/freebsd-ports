@@ -1,7 +1,0 @@
-############################################################
-If you want to use Egg key binding on kinput2, then
-you should run
-
-kinput2 -ccdef ccdef.kinput2.egg
-
-############################################################"

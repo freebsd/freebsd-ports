@@ -1,8 +1,0 @@
-RAT is a network audio tool that allows users to particpate in
-audio conferences over the internet. These can be between two
-participants directly, or between a group of participants on a
-common multicast group.  RAT features sender based loss mitigation
-mechanisms and receiver based audio repair techniques to compensate
-for packet loss, and load adaption in response to host performance.
-
-WWW: http://www-mice.cs.ucl.ac.uk/multimedia/software/rat/

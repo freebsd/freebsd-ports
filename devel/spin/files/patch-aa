@@ -1,8 +1,0 @@
---- ../Xspin3.4/xspin347.tcl.orig	Wed Jun 23 18:29:29 1999
-+++ ../Xspin3.4/xspin347.tcl	Wed Jun 23 18:30:51 1999
-@@ -1,4 +1,4 @@
--#!/usr/local/bin/wish -f
-+#!%%LOCALBASE%%/bin/%%WISH%% -f
- 
- #======================================================================#
- # Tcl/Tk Spin Controller, Gerard J. Holzmann, Bell Laboratories, USA.  #

@@ -1,16 +1,16 @@
 bin/xanim
-lib/X11/xanim/cvid.readme
-lib/X11/xanim/cyuv.readme
-lib/X11/xanim/h261.readme
-lib/X11/xanim/h263.readme
-lib/X11/xanim/iv32.readme
-lib/X11/xanim/iv41.readme
-lib/X11/xanim/iv50.readme
-lib/X11/xanim/vid_cvid_2.1_freebsdELFx86.xa
-lib/X11/xanim/vid_cyuv_1.0_freebsdELFx86.xa
-lib/X11/xanim/vid_h261_1.0_freebsdELFx86.xa
-lib/X11/xanim/vid_h263_1.0_freebsdELFx86.xa
-lib/X11/xanim/vid_iv32_2.1_freebsdELFx86.xa
-lib/X11/xanim/vid_iv41_1.1_freebsdELFx86.xa
-lib/X11/xanim/vid_iv50_1.0_freebsdELFx86.xa
-@dirrm lib/X11/xanim
+%%CODECS%%lib/X11/xanim/cvid.readme
+%%CODECS%%lib/X11/xanim/cyuv.readme
+%%CODECS%%lib/X11/xanim/h261.readme
+%%CODECS%%lib/X11/xanim/h263.readme
+%%CODECS%%lib/X11/xanim/iv32.readme
+%%CODECS%%lib/X11/xanim/iv41.readme
+%%CODECS%%lib/X11/xanim/iv50.readme
+%%CODECS%%lib/X11/xanim/vid_cvid_2.1_freebsdELFx86.xa
+%%CODECS%%lib/X11/xanim/vid_cyuv_1.0_freebsdELFx86.xa
+%%CODECS%%lib/X11/xanim/vid_h261_1.0_freebsdELFx86.xa
+%%CODECS%%lib/X11/xanim/vid_h263_1.0_freebsdELFx86.xa
+%%CODECS%%lib/X11/xanim/vid_iv32_2.1_freebsdELFx86.xa
+%%CODECS%%lib/X11/xanim/vid_iv41_1.1_freebsdELFx86.xa
+%%CODECS%%lib/X11/xanim/vid_iv50_1.0_freebsdELFx86.xa
+%%CODECS%%@dirrm lib/X11/xanim

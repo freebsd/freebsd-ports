@@ -1,4 +1,0 @@
-bin/scli
-@unexec install-info --delete %D/info/scli.info %D/info/dir
-info/scli.info
-@exec install-info %D/info/scli.info %D/info/dir
