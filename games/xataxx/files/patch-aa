@@ -1,0 +1,11 @@
+--- Imakefile	Tue Oct 29 04:23:52 1991
++++ /home/andy/tmp/wrk/Imakefile	Sat Jul  4 21:29:46 1998
+@@ -8,7 +8,7 @@
+ DEPLIBS =
+ 
+ /* DATADIR is where the boards and bitmaps will be installed */
+-DATADIR	= /afs/andrew.cmu.edu/usr0/games/lib/xataxx
++DATADIR	= $(X11BASE)/share/xataxx
+ 
+ LOCAL_LIBRARIES = $(XLIB) 
+ SRCS	= bits.c board.c colbits.c demo.c display.c main.c nubot.c parse.c zot.c
