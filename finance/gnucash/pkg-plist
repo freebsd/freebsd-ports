@@ -171,6 +171,7 @@ lib/gnucash/libgncmod-locale-reports-us.la
 lib/gnucash/libgncmod-locale-reports-us.so
 lib/gnucash/libgncmod-locale-reports-us.so.0
 lib/gnucash/libgncmod-log-replay.la
+lib/gnucash/libgncmod-log-replay.so
 lib/gnucash/libgncmod-log-replay.so.0
 lib/gnucash/libgncmod-network-utils.la
 lib/gnucash/libgncmod-network-utils.so
@@ -289,6 +290,12 @@ share/gnome/gnucash/accounts/da/acctchrt_car.gnucash-xea
 share/gnome/gnucash/accounts/da/acctchrt_common.gnucash-xea
 share/gnome/gnucash/accounts/da/acctchrt_homeloan.gnucash-xea
 share/gnome/gnucash/accounts/da/acctchrt_homeown.gnucash-xea
+share/gnome/gnucash/accounts/de_CH/acctchrt_brokerage.gnucash-xea
+share/gnome/gnucash/accounts/de_CH/acctchrt_chkmu.gnucash-xea
+share/gnome/gnucash/accounts/de_CH/acctchrt_common.gnucash-xea
+share/gnome/gnucash/accounts/de_CH/acctchrt_kids.gnucash-xea
+share/gnome/gnucash/accounts/de_CH/acctchrt_otherasset.gnucash-xea
+share/gnome/gnucash/accounts/de_CH/acctchrt_otherloan.gnucash-xea
 share/gnome/gnucash/accounts/de_DE/acctchrt_auto.gnucash-xea
 share/gnome/gnucash/accounts/de_DE/acctchrt_autoloan.gnucash-xea
 share/gnome/gnucash/accounts/de_DE/acctchrt_brokerage.gnucash-xea
@@ -298,7 +305,9 @@ share/gnome/gnucash/accounts/de_DE/acctchrt_investment.gnucash-xea
 share/gnome/gnucash/accounts/de_DE/acctchrt_kids.gnucash-xea
 share/gnome/gnucash/accounts/de_DE/acctchrt_otherasset.gnucash-xea
 share/gnome/gnucash/accounts/de_DE/acctchrt_otherloan.gnucash-xea
+share/gnome/gnucash/accounts/de_DE/acctchrt_skr04.gnucash-xea
 share/gnome/gnucash/accounts/de_DE/acctchrt_studium.gnucash-xea
+share/gnome/gnucash/accounts/el_GR/acctchrt_brokerage.gnucash-xea
 share/gnome/gnucash/accounts/el_GR/acctchrt_carloan.gnucash-xea
 share/gnome/gnucash/accounts/el_GR/acctchrt_common.gnucash-xea
 share/gnome/gnucash/accounts/es_ES/acctchrt_brokerage.gnucash-xea
@@ -388,6 +397,14 @@ share/gnome/gnucash/accounts/sk/acctchrt_renter.gnucash-xea
 share/gnome/gnucash/accounts/sk/acctchrt_retiremt.gnucash-xea
 share/gnome/gnucash/accounts/sk/acctchrt_spouseinc.gnucash-xea
 share/gnome/gnucash/accounts/sk/acctchrt_spouseretire.gnucash-xea
+share/gnome/gnucash/accounts/tr_TR/acctchrt_TEKDUZ.gnucash-xea
+share/gnome/gnucash/accounts/tr_TR/acctchrt_brokerage.gnucash-xea
+share/gnome/gnucash/accounts/tr_TR/acctchrt_carloan.gnucash-xea
+share/gnome/gnucash/accounts/tr_TR/acctchrt_cdmoneymkt.gnucash-xea
+share/gnome/gnucash/accounts/tr_TR/acctchrt_checkbook.gnucash-xea
+share/gnome/gnucash/accounts/tr_TR/acctchrt_common.gnucash-xea
+share/gnome/gnucash/accounts/tr_TR/acctchrt_fixedassets.gnucash-xea
+share/gnome/gnucash/accounts/tr_TR/acctchrt_homeloan.gnucash-xea
 share/gnome/gnucash/doc/AUTHORS
 share/gnome/gnucash/doc/COPYING
 share/gnome/gnucash/doc/ChangeLog
@@ -650,6 +667,7 @@ share/gnome/pixmaps/gnucash/gnucash-icon.png
 share/gnome/pixmaps/gnucash/gnucash_splash.png
 share/gnome/pixmaps/gnucash/stock_split_title.png
 share/gnome/pixmaps/gnucash/stock_split_watermark.png
+share/locale/ca/LC_MESSAGES/gnucash.mo
 share/locale/cs/LC_MESSAGES/gnucash.mo
 share/locale/da/LC_MESSAGES/gnucash.mo
 share/locale/de/LC_MESSAGES/gnucash.mo
@@ -670,6 +688,7 @@ share/locale/ru/LC_MESSAGES/gnucash.mo
 share/locale/sk/LC_MESSAGES/gnucash.mo
 share/locale/sv/LC_MESSAGES/gnucash.mo
 share/locale/ta/LC_MESSAGES/gnucash.mo
+share/locale/tr/LC_MESSAGES/gnucash.mo
 share/locale/uk/LC_MESSAGES/gnucash.mo
 share/locale/zh_CN/LC_MESSAGES/gnucash.mo
 share/locale/zh_TW/LC_MESSAGES/gnucash.mo
@@ -695,6 +714,7 @@ share/locale/zh_TW/LC_MESSAGES/gnucash.mo
 @dirrm share/gnome/gnucash/doc/html
 @dirrm share/gnome/gnucash/doc/examples
 @dirrm share/gnome/gnucash/doc
+@dirrm share/gnome/gnucash/accounts/tr_TR
 @dirrm share/gnome/gnucash/accounts/sk
 @dirrm share/gnome/gnucash/accounts/pt_PT
 @dirrm share/gnome/gnucash/accounts/pt_BR
@@ -703,6 +723,7 @@ share/locale/zh_TW/LC_MESSAGES/gnucash.mo
 @dirrm share/gnome/gnucash/accounts/es_ES
 @dirrm share/gnome/gnucash/accounts/el_GR
 @dirrm share/gnome/gnucash/accounts/de_DE
+@dirrm share/gnome/gnucash/accounts/de_CH
 @dirrm share/gnome/gnucash/accounts/da
 @dirrm share/gnome/gnucash/accounts/C
 @dirrm share/gnome/gnucash/accounts

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnucash
-PORTVERSION=	1.8.7
+PORTVERSION=	1.8.8
 CATEGORIES=	finance gnome
 MASTER_SITES=	http://www.gnucash.org/pub/gnucash/sources/stable/ \
 		ftp://ftp.gnucash.org/pub/gnucash/sources/stable/ \
@@ -23,7 +23,7 @@ LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile \
 		ofx.0:${PORTSDIR}/finance/libofx \
 		db4.0:${PORTSDIR}/databases/db4 \
 		gw-standard.0:${PORTSDIR}/devel/g-wrap
-RUN_DEPENDS=	${LOCALBASE}/share/guile/slib/slibcat:${PORTSDIR}/lang/slib-guile \
+RUN_DEPENDS=	${LOCALBASE}/share/guile/slibcat:${PORTSDIR}/lang/slib-guile \
 		${SITE_PERL}/HTML/Base.pm:${PORTSDIR}/www/p5-HTML \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
@@ -57,6 +57,12 @@ post-patch:
 		${WRKSRC}/configure
 .else
 LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
+.endif
+
+.if exists(${LOCALBASE}/include/openhbci.h) || defined(WITH_OPENHBCI)
+LIB_DEPENDS+=	openhbci.13:${PORTSDIR}/finance/openhbci \
+		ktoblzcheck.1:${PORTSDIR}/finance/ktoblzcheck
+CONFIGURE_ARGS+=--enable-hbci
 .endif
 
 .include <bsd.port.post.mk>
