@@ -1,0 +1,3 @@
+lib/kde2/kio_ed2kslave.la
+lib/kde2/kio_ed2kslave.so
+share/services/ed2kslave.protocol
