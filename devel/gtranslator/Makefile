@@ -31,5 +31,6 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/local/share/gtranslator|${PREFIX}/share/gnome/${PORTNAME}|g; \
 		s|/usr/local/share/pixmaps|${PREFIX}/share/gnome/pixmaps|g" \
 		${WRKSRC}/src/defines.h
+	@${REINPLACE_CMD} -e "s|-Werror||" ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
