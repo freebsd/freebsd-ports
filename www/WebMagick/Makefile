@@ -15,6 +15,8 @@ DISTNAME=       ${PORTNAME}-2.03pre1
 
 MAINTAINER=	ache@freebsd.org
 
+BROKEN=		"Configure fails"
+
 LIB_DEPENDS=	Magick.5:${PORTSDIR}/graphics/ImageMagick
 
 USE_PERL5=	yes
