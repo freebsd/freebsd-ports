@@ -1,4 +1,4 @@
 bin/atlast
-share/doc/atlast/atlast.ps
-share/doc/atlast/atlast.rtf
-@dirrm share/doc/atlast
+%%PORTDOCS%%share/doc/atlast/atlast.ps
+%%PORTDOCS%%share/doc/atlast/atlast.rtf
+%%PORTDOCS%%@dirrm share/doc/atlast

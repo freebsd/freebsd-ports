@@ -1,34 +1,43 @@
-*** Makefile.orig	Tue Aug 26 21:20:06 1997
---- Makefile	Tue Aug 26 21:21:46 1997
+*** Makefile.orig	Mon May  9 03:26:47 1994
+--- Makefile	Fri Oct  5 05:18:35 2001
 ***************
-*** 1,13 ****
-  
-  #	Unix makefile for ATLAST
-  
-! COPTIONS = -O
-  
-  LIBRARIES = -lm
+*** 7,15 ****
   
   INCLUDE =
   
 ! ATLCONFIG = -DMEMSTAT -DALIGNMENT -DEXPORT
   
-  CFLAGS = $(COPTIONS) $(INCLUDE) $(ATLCONFIG)
+! CFLAGS = $(COPTIONS) $(INCLUDE) $(ATLCONFIG)
   
---- 1,13 ----
+  ATLOBJ = atlast.o atlmain.o
   
-  #	Unix makefile for ATLAST
-  
-! COPTIONS = -O3 -pipe
-  
-  LIBRARIES = -lm
+--- 7,15 ----
   
   INCLUDE =
   
 ! ATLCONFIG = -DMEMSTAT -DALIGNMENT -DEXPORT -DNOMEMCHECK
   
-  CFLAGS = $(COPTIONS) $(INCLUDE) $(ATLCONFIG)
+! CFLAGS += $(INCLUDE) $(ATLCONFIG)
   
+  ATLOBJ = atlast.o atlmain.o
+  
+***************
+*** 18,24 ****
+  all:	$(APPS)
+  
+  atlast: $(ATLOBJ)
+! 	cc $(CFLAGS) $(ATLOBJ) -o atlast $(LIBRARIES)
+  
+  atlast.o:   atlast.c atldef.h
+  atldef.h:   atlast.h
+--- 18,24 ----
+  all:	$(APPS)
+  
+  atlast: $(ATLOBJ)
+! 	$(CC) $(CFLAGS) $(ATLOBJ) -o atlast $(LIBRARIES)
+  
+  atlast.o:   atlast.c atldef.h
+  atldef.h:   atlast.h
 ***************
 *** 33,39 ****
   	echo  >>/tmp/regin.tmp
