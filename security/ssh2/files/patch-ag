@@ -1,6 +1,6 @@
---- configure.orig	Tue May 11 12:34:58 1999
-+++ configure	Fri Jun 18 23:36:10 1999
-@@ -5003,7 +5003,7 @@
+--- configure.orig	Wed May 17 18:01:34 2000
++++ configure	Wed May 17 18:10:35 2000
+@@ -5373,7 +5373,7 @@
  char tgetent();
  
  int main() {
@@ -8,8 +8,8 @@
 +XXXtgetent()
  ; return 0; }
  EOF
- if { (eval echo configure:5010: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
-@@ -5033,7 +5033,7 @@
+ if { (eval echo configure:5380: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+@@ -5497,7 +5497,7 @@
    echo "$ac_t""no" 1>&6
  fi
  

@@ -1,6 +1,6 @@
---- apps/ssh/sshchsession.c.orig	Fri May  7 20:02:03 1999
-+++ apps/ssh/sshchsession.c	Sat Jun 19 03:51:31 1999
-@@ -81,6 +81,11 @@
+--- apps/ssh/sshchsession.c.orig	Wed May 17 18:01:34 2000
++++ apps/ssh/sshchsession.c	Wed May 17 18:11:14 2000
+@@ -77,6 +77,11 @@
  #include <ulimit.h>
  #endif /* ULIMIT_H */
  
@@ -12,7 +12,7 @@
  #define SSH_DEBUG_MODULE "Ssh2ChannelSession"
  
  #define SSH_SESSION_INTERACTIVE_WINDOW                 10000
-@@ -406,6 +411,67 @@
+@@ -483,6 +488,67 @@
    if (getenv("TZ"))
      ssh_child_set_env(envp, envsizep, "TZ", getenv("TZ"));
  
@@ -80,7 +80,7 @@
    /* Set SSH_CLIENT. */
    snprintf(buf, sizeof(buf), "%s %s %s %s",
             session->common->remote_ip, session->common->remote_port,
-@@ -633,12 +699,20 @@
+@@ -710,12 +776,20 @@
    char buff[100], *time_string;
    
    /* Check /etc/nologin. */
@@ -101,7 +101,7 @@
        while (fgets(buf, sizeof(buf), f))
          fputs(buf, stderr);
        fclose(f);
-@@ -789,7 +863,11 @@
+@@ -878,7 +952,11 @@
                    {
                      struct stat mailbuf;
                      if (stat(mailbox, &mailbuf) == -1 || mailbuf.st_size == 0)

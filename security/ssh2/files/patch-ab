@@ -1,11 +1,11 @@
---- lib/sshapputil/Makefile.in.orig	Tue May 11 17:35:02 1999
-+++ lib/sshapputil/Makefile.in	Fri Jun 18 16:02:20 1999
-@@ -108,7 +108,7 @@
- INCLUDES = -I../.. -I. -I$(srcdir) \
- 	-I$(top_builddir) -I$(top_srcdir) \
- 	-I../sshutil -I$(srcdir)/../sshutil -I../sshmath \
--	-I$(srcdir)/../sshmath -I../zlib -I$(srcdir)/../zlib
-+	-I$(srcdir)/../sshmath
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = ../../sshconf.h
- CONFIG_CLEAN_FILES = 
+--- lib/sshapputil/Makefile.in.orig	Thu Mar 30 21:41:53 2000
++++ lib/sshapputil/Makefile.in	Wed May 17 18:04:39 2000
+@@ -120,7 +120,7 @@
+ include_HEADERS = sshuserfile.h 		  sshuserfilebuf.h
+ 
+ 
+-ADD_INCLUDES = -I../.. -I. -I$(srcdir) 	-I$(top_builddir) -I$(top_srcdir) 	-I../sshutil -I$(srcdir)/../sshutil -I../sshmath 	-I$(srcdir)/../sshmath -I../zlib -I$(srcdir)/../zlib
++ADD_INCLUDES = -I../.. -I. -I$(srcdir) 	-I$(top_builddir) -I$(top_srcdir) 	-I../sshutil -I$(srcdir)/../sshutil -I../sshmath 	-I$(srcdir)/../sshmath
+ 
+ 
+ INCLUDES = $(ADD_INCLUDES) -I$(srcdir) -I. -I$(top_srcdir) -I$(top_builddir) -I$(top_builddir)/include -I$(top_srcdir)/lib/sshutil

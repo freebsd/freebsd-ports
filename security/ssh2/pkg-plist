@@ -26,35 +26,36 @@ bin/ssh-askpass2
 @exec mv %D/bin/ssh-askpass %D/bin/ssh-askpass.old
 bin/ssh-askpass
 @unexec mv -f %B/%f.old %B/%f
+bin/ssh-dummy-shell
+bin/ssh-probe2
+bin/ssh-probe
 bin/ssh-signer2
 bin/ssh-signer
 etc/ssh2/ssh2_config
+etc/ssh2/ssh_dummy_shell.out
 etc/ssh2/sshd2_config
-man/man1/sftp.1.gz
 @exec mv %D/man/man1/ssh.1.gz %D/man/man1/ssh.old.1.gz
-man/man1/ssh.1.gz
 @unexec mv -f %B/ssh.old.1.gz %B/%f
 @exec mv %D/man/man1/ssh-add.1.gz %D/man/man1/ssh-add.old.1.gz
-man/man1/ssh-add.1.gz
 @unexec mv -f %B/ssh-add.old.1.gz %B/%f
 @exec mv %D/man/man1/ssh-agent.1.gz %D/man/man1/ssh-agent.old.1.gz
-man/man1/ssh-agent.1.gz
 @unexec mv -f %B/ssh-agent.old.1.gz %B/%f
 @exec mv %D/man/man1/ssh-keygen.1.gz %D/man/man1/ssh-keygen.old.1.gz
-man/man1/ssh-keygen.1.gz
 @unexec mv -f %B/ssh-keygen.old.1.gz %B/%f
 @exec mv %D/man/man1/scp.1.gz %D/man/man1/scp.old.1.gz
-man/man1/scp.1.gz
 @unexec mv -f %B/scp.old.1.gz %B/%f
 @exec mv %D/man/man8/sshd.8.gz %D/man/man8/sshd.old.8.gz
-man/man8/sshd.8.gz
 @unexec mv -f %B/sshd.old.8.gz %B/%f
 sbin/sshd2
 @exec mv %D/sbin/sshd %D/sbin/sshd.old
 sbin/sshd
 @unexec mv -f %B/%f.old %B/%f
+share/doc/ssh2/BUG.REPORT
 share/doc/ssh2/CHANGES
+share/doc/ssh2/FAQ
+share/doc/ssh2/INSTALL
 share/doc/ssh2/LICENSING
 share/doc/ssh2/README
+share/doc/ssh2/SSH2.QUICKSTART
 @dirrm share/doc/ssh2
 @exec if [ ! -f %D/etc/ssh2/hostkey ]; then umask 022; echo "Generating 1024 bit host key."; %D/bin/ssh-keygen2 -P -b 1024 -t dsa -c "1024-bit dsa hostkey" -o %D/etc/ssh2/hostkey;  fi

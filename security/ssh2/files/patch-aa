@@ -1,31 +1,32 @@
---- lib/Makefile.in.orig	Tue May 11 17:35:00 1999
-+++ lib/Makefile.in	Fri Jun 18 16:01:12 1999
-@@ -99,14 +99,14 @@
+--- lib/Makefile.in.orig	Thu Mar 30 21:41:49 2000
++++ lib/Makefile.in	Wed May 17 18:03:14 2000
+@@ -105,7 +105,7 @@
  
  AUTOMAKE_OPTIONS = 1.0 foreign dist-zip no-dependencies
  
--SUBDIRS = zlib sshmath sshreadline sshutil sshapputil sshcrypt sshproto sshsession sshpgp
-+SUBDIRS = sshmath sshreadline sshutil sshapputil sshcrypt sshproto sshsession sshpgp
+-SUBDIRS = sshutil zlib sshmath sshreadline sshapputil sshcrypt sshproto sshsession sshpgp sshfilexfer
++SUBDIRS = sshutil sshmath sshreadline sshapputil sshcrypt sshproto sshsession sshpgp sshfilexfer
  
- # sshtest testsuite
+ SUBDIRS_windelta = +win32
  
- lib_LIBRARIES = libssh.a
- # libsshcrypt.kpure.a
+@@ -114,7 +114,7 @@
+ # The `object_SUBLIBRARIES' variables are used on the Windows to
+ # expand the original library `object' with the listed sublibraries at
+ # the link step.
+-libssh_a_SUBLIBRARIES =  	sshcert/libsshcert.a				sshcrypt/libsshcrypt.a				sshexternalkey/libsshexternalkey.a		sshhs/libsshhs.a				sshhttp/libsshhttp.a				sshipsecappapi/libsshipsecappapi.a		sshisakmp/libsshisakmp.a			sshldap/libsshldap.a				sshmath/libsshmath.a				sshpgp/libsshpgp.a				sshproto/libsshproto.a				sshscard/libsshscard.a				sshtls/libsshtls.a				sshsmtp/libsshsmtp.a				sshemul/libsshemul.a				sshutil/libsshutil.a				sshfilexfer/libsshfilexfer.a			sshsession/libsshsession.a			trq/libtrq.a					zlib/libz.a
++libssh_a_SUBLIBRARIES =  	sshcert/libsshcert.a				sshcrypt/libsshcrypt.a				sshexternalkey/libsshexternalkey.a		sshhs/libsshhs.a				sshhttp/libsshhttp.a				sshipsecappapi/libsshipsecappapi.a		sshisakmp/libsshisakmp.a			sshldap/libsshldap.a				sshmath/libsshmath.a				sshpgp/libsshpgp.a				sshproto/libsshproto.a				sshscard/libsshscard.a				sshtls/libsshtls.a				sshsmtp/libsshsmtp.a				sshemul/libsshemul.a				sshutil/libsshutil.a				sshfilexfer/libsshfilexfer.a			sshsession/libsshsession.a			trq/libtrq.a
  
--SUBLIBRARIES = sshmath/libsshmath.a zlib/libz.a sshutil/libsshutil.a sshapputil/libsshapputil.a sshcrypt/libsshcrypt.a sshproto/libsshproto.a sshsession/libsshsession.a sshreadline/libsshreadline.a sshpgp/libsshpgp.a
-+SUBLIBRARIES = sshmath/libsshmath.a sshutil/libsshutil.a sshapputil/libsshapputil.a sshcrypt/libsshcrypt.a sshproto/libsshproto.a sshsession/libsshsession.a sshreadline/libsshreadline.a sshpgp/libsshpgp.a
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = ../sshconf.h
- CONFIG_CLEAN_FILES = 
-@@ -369,11 +369,6 @@
- all-local: includes
- includes:
+@@ -314,11 +314,6 @@
+ 
+ local-includes:
  	-if test '!' -d ../include; then mkdir ../include; fi
 -	for i in zlib/zlib.h zlib/zconf.h; do   \
 -	  if test -f $(srcdir)/$$i; then		  \
 -	    $(COPY_INCLUDE) $(srcdir)/$$i ../include;	  \
 -	  fi;						  \
 -	done
- 	-for dir in $(SUBDIRS); do \
- 		if test "$$dir" != "zlib" && test "$$dir" != "gmp"; then \
- 		  ( cd $$dir && $(MAKE) includes) ; \
+ 
+ includes: local-includes
+ 	for d in $(SUBDIRS); do (cd $$d && $(MAKE) includes); done
