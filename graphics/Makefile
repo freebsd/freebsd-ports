@@ -473,6 +473,7 @@
     SUBDIR += xwpick
     SUBDIR += xzgv
     SUBDIR += yafray
+    SUBDIR += zgv
     SUBDIR += zimg
     SUBDIR += zphoto
 
