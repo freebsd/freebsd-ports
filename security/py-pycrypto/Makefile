@@ -6,16 +6,25 @@
 #
 
 PORTNAME=	pycrypto
-PORTVERSION=	1.9.a6
+PORTVERSION=	2.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.amk.ca/files/python/crypto/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S@.a@a@}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Python Cryptography Toolkit
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+USE_REINPLACE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+LIB_DEPENDS+=	gmp.6:${PORTSDIR}/math/libgmp4
+.endif
+
+pre-configure:
+	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|" ${WRKSRC}/setup.py
+
+.include <bsd.port.post.mk>
