@@ -17,8 +17,6 @@ BUILD_DEPENDS=	fvwm2:${PORTSDIR}/x11-wm/fvwm2-devel \
 		gm4:${PORTSDIR}/devel/m4
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-BROKEN=		"Port broken due to PR ports/36849."
-
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
