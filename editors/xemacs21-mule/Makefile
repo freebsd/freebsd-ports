@@ -17,7 +17,7 @@
 #	WITH_INPUT_METHOD : input methods(configure arguments)
 #	LIB_INPUT_METHOD  : LIB_DEPENDS list of Input Methods
 #	BUILD_INPUT_METHOD: BUILD_DEPENDS list of Input Methods
-#	WITH_XIM          : X Input Method(configure arguments)
+#	WITH_XIM          : X Input Method(configure arguments), xlib or motif
 
 .if !defined(MULE_SLAVE) && !defined(MULE_COMMON)
 MULE_SLAVE=	yes
@@ -36,9 +36,7 @@ LIB_DEPENDS=	compface.1:${PORTSDIR}/mail/faces \
 		intl.1:${PORTSDIR}/devel/gettext \
 		${LIB_INPUT_METHOD}
 
-CONFIGURE_ARGS?=${XEMACS_ARCH} \
-		--prefix=${PREFIX} \
-		--with-x11 \
+CONFIGURE_ARGS?=--with-x11 \
 		--with-xim=${WITH_XIM} \
 		--with-mule \
 		--x-includes=${X11BASE}/include \
@@ -57,7 +55,7 @@ CONFIGURE_ARGS?=${XEMACS_ARCH} \
 		--with-jpeg \
 		--with-png \
 		--with-tiff \
-		--infopath=${PREFIX}/lib/xemacs/info:${PREFIX}/info:${X11BASE}/info:/usr/info:${PREFIX}/lib/texmf/doc/info:/usr/lib/texmf/doc:/usr/share/info \
+		--infopath=${LOCALBASE}/lib/xemacs/info:${LOCALBASE}/info:${X11BASE}/info:/usr/info:${LOCALBASE}/lib/texmf/doc/info:/usr/lib/texmf/doc:/usr/share/info \
 		--with-clash-detection \
 		--lockdir=/var/run/emacs/lock \
 		--with-database=berkdb \
@@ -80,11 +78,11 @@ DESCR_TMPL?=		${.CURDIR}/../xemacs${XEMACS_MAJOR_VER}-mule/files/DESCR.tmpl
 COMMENT_TEXT?=		XEmacs(version ${XEMACS_MAJOR_VER}) text editor with mule(Only the executables)
 .if defined(MULE_SLAVE)
 BINNAMEEXT=		-mule
-SITE_INCLUDES+=		${PREFIX}/include
-SITE_LIBRARIES+=	${PREFIX}/lib
+SITE_INCLUDES+=		${LOCALBASE}/include
+SITE_LIBRARIES+=	${LOCALBASE}/lib
 WITH_INPUT_METHOD?=	--with-canna=no --with-wnn=no --with-wnn6=no
 .endif
-WITH_XIM?=	no
+WITH_XIM?=		xlib
 
 .if defined(MULE_SLAVE)
 pre-build:
