@@ -11,7 +11,8 @@ CATEGORIES=	math linux
 MASTER_SITES=	ftp://ftp.mupad.de/MuPAD/distrib/unix/ \
 		ftp://archives.cs.ehime-u.ac.jp/pub/MuPAD/distrib/unix/ \
 		ftp://ftp.uni-paderborn.de/pub/MuPAD/distrib/unix/
-DISTFILES=	mupad_linux_scilab_253.tgz
+DISTNAME=	mupad_linux_scilab_253
+EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	mupad
 
 MAINTAINER=	maho@FreeBSD.org
@@ -24,9 +25,6 @@ RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXm.so.2:${PORTSDIR}/x11-toolkits/linu
 		${LINUXBASE}/usr/lib/libtiff.so.3:${PORTSDIR}/graphics/linux-tiff \
 		${LINUXBASE}/usr/lib/libungif.so.4:${PORTSDIR}/graphics/linux-ungif
 
-BROKEN=		"Checksum mismatch"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2004-04-16
 NO_CDROM=	"unsure to sell for profit"
 
 USE_LINUX=		yes
@@ -53,13 +51,12 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/INSTALL ${PREFIX}/mupad
 	@${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/mupad
 .for d in mmg mupad mxdvi mxmupad mxvcam
-	@brandelf -t Linux ${PREFIX}/mupad/freebsd/bin/$d
+	@${BRANDELF} -t Linux ${PREFIX}/mupad/freebsd/bin/$d
 .endfor
 
 .for d in ${MAN1}
 	@${INSTALL_MAN} ${WRKSRC}/share/doc/man/man1/$d ${PREFIX}/man/man1
 .endfor
-
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/mupad/share/doc
