@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	Term
 
 MAINTAINER=	ports@FreeBSD.org
 
-RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Array/PrintCols.pm:${PORTSDIR}/misc/p5-Array-PrintCols
+RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Array/PrintCols.pm:${PORTSDIR}/misc/p5-Array-PrintCols
 
 USE_PERL5=	YES
 
