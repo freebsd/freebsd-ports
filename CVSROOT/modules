@@ -6724,6 +6724,7 @@ props		ports/x11/props
 prosper		ports/textproc/prosper
 prototype	ports/devel/prototype
 proxy-suite	ports/net/proxy-suite
+proxychains	ports/net/proxychains
 proxycheck	ports/security/proxycheck
 proxyper	ports/misc/proxyper
 proxytunnel	ports/security/proxytunnel
