@@ -5,49 +5,95 @@
 # $FreeBSD$
 #
 
-PORTNAME=	wxgtk
-PORTVERSION=	2.2.9
-PORTEPOCH=	1
+PORTNAME=	wx
+PORTVERSION=	2.4.2
+PORTREVISION?=	0
+PKGNAMESUFFIX=	${WXGTK_FLAVOR}
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		ftp://wesley.informatik.uni-freiburg.de/pub/linux/wxxt/source/
 MASTER_SITE_SUBDIR=	wxwindows
 DISTNAME=	wxGTK-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The wxWindows GUI toolkit with GTK+ bindings
+MAINTAINER?=	fjoe@FreeBSD.org
+COMMENT?=	The wxWindows GUI toolkit with GTK+ bindings
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff
+		tiff.4:${PORTSDIR}/graphics/tiff \
+		iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_MESA=	yes
+USE_GL=		yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-libpng=sys \
 		--with-libjpeg=sys \
 		--with-libtiff=sys \
 		--with-zlib=sys \
-		--with-opengl \
-		--host=${CONFIGURE_TARGET} \
-		--build=${CONFIGURE_TARGET}
-CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} \
-			  -I${WRKSRC}/include \
+		--with-opengl
+CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include \
 			  -I${LOCALBASE}/include \
-			  -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib \
-			 -L${X11BASE}/lib -lm"
+			  -I${X11BASE}/include \
+			  ${PTHREAD_CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib -liconv \
+			 -L${X11BASE}/lib \
+			 ${PTHREAD_LIBS}"
+MAKE_ENV=	WXGTK_FLAVOR="${WXGTK_FLAVOR}"
+PLIST=		${.CURDIR}/pkg-plist
+
+WXGTK_FLAVOR?=	gtk
+
+.if ${WXGTK_FLAVOR} != "gtk-common"
+RUN_DEPENDS=	${X11BASE}/include/wx/wx.h:${PORTSDIR}/x11-toolkits/wxgtk-common
+.endif
+
+.if ${WXGTK_FLAVOR:M*-common} != ""
+NO_BUILD=	yes
+INSTALL_TARGET=	install-common
+.endif # *-common
+
+.if ${WXGTK_FLAVOR:M*-contrib*} != ""
+BUILD_WRKSRC=	${WRKSRC}/contrib/src
+INSTALL_WRKSRC=	${BUILD_WRKSRC}
+
+.if ${WXGTK_FLAVOR} != "gtk-contrib-common"
+RUN_DEPENDS=	${X11BASE}/include/wx/stc/stc.h:${PORTSDIR}/x11-toolkits/wxgtk-contrib-common
+.if ${WXGTK_FLAVOR} == "gtk-contrib"
+LIB_DEPENDS+=	wx_gtk-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk-devel
+.elif ${WXGTK_FLAVOR} == "gtk2-contrib"
+LIB_DEPENDS+=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
+.elif ${WXGTK_FLAVOR} == "gtk2-unicode-contrib"
+LIB_DEPENDS+=	wx_gtk2u-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2-unicode
+.endif
+.endif # !gtk-contrib-common
+.endif # *-contrib*
+
+.include <bsd.port.pre.mk>
+
+.if ${WXGTK_FLAVOR:M*-unicode*} != ""
+.if ${OSVERSION} < 500000
+BROKEN=		Systems prior to FreeBSD 5.0 currently out of support
+.else
+CONFIGURE_ARGS+=--enable-unicode
+.endif
+.endif # *-unicode*
+
+.if ${WXGTK_FLAVOR:Mgtk2*} != ""
+USE_GNOME=	gtk20
+CONFIGURE_ARGS+=--enable-gtk2 ${MACHINE_ARCH}-portbld-freebsd${OSREL}
+.else
+USE_GNOME=	gtk12
+CONFIGURE_ARGS+=--host=${CONFIGURE_TARGET} --build=${CONFIGURE_TARGET}
+.endif
 
 pre-patch:
-	@${REINPLACE_CMD} -e 's|-l[$$]THREADS_LIB|${PTHREAD_LIBS}|g ; \
-			 s|-l[$$]THREADS_LINK|${PTHREAD_LIBS}|g' \
-				${WRKSRC}/configure
+.if ${WXGTK_FLAVOR:Mgtk2*} != ""
+	@${REINPLACE_CMD} -e 's|lgdk|lgdk-x11-2.0|g' ${WRKSRC}/configure
+.else
+	@${REINPLACE_CMD} -e 's|lgdk|lgdk12|g' ${WRKSRC}/configure
+.endif
 
-post-install:
-	@${RM} -rf ${PREFIX}/include/wx/motif
-	@${RM} -rf ${PREFIX}/include/wx/msw
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
