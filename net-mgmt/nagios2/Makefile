@@ -7,10 +7,10 @@
 
 PORTNAME=	nagios
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=nagios
-DISTNAME=	nagios-1.0
 
 MAINTAINER=	blaz@si.FreeBSD.org
 COMMENT=	Extremely powerful network monitoring system
@@ -34,7 +34,7 @@ CONFIGURE_ARGS=	--with-command-user=nagios \
 		--libexecdir=${PREFIX}/libexec/nagios \
 		--datadir=${PREFIX}/share/nagios \
 		--sysconfdir=${PREFIX}/etc/nagios \
-		--localstatedir=${PREFIX}/var/nagios \
+		--localstatedir=/var/spool/nagios \
 		--prefix=${PREFIX}
 
 .if defined(WITH_MYSQL)
@@ -45,17 +45,13 @@ CONFIGURE_ARGS+=--with-mysql-lib=${LOCALBASE}/lib/mysql \
 .endif
 
 .if defined(WITH_POSTGRES)
-POSTGRESQL_PORT?=	databases/postgresql7
-LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
+LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql7
 CONFIGURE_ARGS+=--with-pgsql-lib=${LOCALBASE}/pgsql \
 		--with-pgsql-inc=${LOCALBASE}/pgsql \
 		--with-pgsql-xdata
 .endif
 
 INSTALL_TARGET=	all install config install-config install-daemoninit install-commandmode
-
-pre-fetch:
-	@${SH} ${SCRIPTDIR}/checkps
 
 pre-install:
 	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
