@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gcc30
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.1
 CATEGORIES=	lang java
 MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/releases/gcc-${GCC_REV}/  \
 		${MASTER_SITE_SOURCEWARE}
@@ -26,8 +26,7 @@ PATCH_ARGS=	-d ${SRCDIR} -E ${PATCH_STRIP}
 .if !defined(PATCH_DEBUG)
 PATCH_ARGS+=	--forward --quiet
 .endif
-GCC_REV=	${PORTVERSION:C/\.0$//}
-CONFIGURE_SCRIPT=	../gcc-${GCC_REV}/configure
+CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
 
 .include <bsd.port.pre.mk>
 
@@ -37,6 +36,7 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
 .endif
 
+GCC_REV=	${PORTVERSION:C/\.0$//}
 SRCDIR=		${WRKDIR}/gcc-${GCC_REV}
 WRKSRC=		${WRKDIR}/build
 TARGLIB=	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}
