@@ -7,6 +7,7 @@
 
 PORTNAME=	interchange
 PORTVERSION=	4.8.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.interchange.redhat.com/interchange/4.8/tar/
 
