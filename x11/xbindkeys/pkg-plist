@@ -1,4 +1,4 @@
 bin/xbindkeys
-%%WITH_GUI%%bin/xbindkeys_show
+%%TCLTK%%bin/xbindkeys_show
 %%PORTDOCS%%%%EXAMPLESDIR%%/xbindkeysrc
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
