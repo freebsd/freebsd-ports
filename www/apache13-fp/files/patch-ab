@@ -1,5 +1,5 @@
 *** Makefile.tmpl.orig	Sat Sep 19 07:41:48 1998
---- Makefile.tmpl	Wed Oct 14 19:07:18 1998
+--- Makefile.tmpl	Sat Nov 28 10:30:01 1998
 ***************
 *** 107,112 ****
 --- 107,113 ----
@@ -11,6 +11,16 @@
   libexecdir_relative   = @libexecdir_relative@
   
 ***************
+*** 119,124 ****
+--- 120,126 ----
+  suexec_safepath = @suexec_safepath@
+  
+  #   some substituted configuration parameters
++ conf_user	 = @conf_user@
+  conf_group       = @conf_group@
+  conf_port        = @conf_port@
+  conf_serveradmin = @conf_serveradmin@
+***************
 *** 166,173 ****
   			-DUID_MIN=$(suexec_uidmin) \
   			-DGID_MIN=$(suexec_gidmin) \
@@ -20,7 +30,7 @@
   			-DSAFE_PATH=\"$(suexec_safepath)\" \
   		' \
   		suexec; \
---- 167,174 ----
+--- 168,175 ----
   			-DUID_MIN=$(suexec_uidmin) \
   			-DGID_MIN=$(suexec_gidmin) \
   			-DUSERDIR_SUFFIX=\"$(suexec_userdir)\" \
@@ -40,7 +50,7 @@
   	$(MKDIR) $(root)$(includedir)
   	$(MKDIR) $(root)$(runtimedir)
   	$(MKDIR) $(root)$(logfiledir)
---- 225,233 ----
+--- 226,234 ----
   	$(MKDIR) $(root)$(mandir)/man1
   	$(MKDIR) $(root)$(mandir)/man8
   	$(MKDIR) $(root)$(sysconfdir)
@@ -77,7 +87,7 @@
   	fi
   	@echo "Copying tree $(TOP)/icons/ -> $(root)$(datadir)/icons/"; \
   	(cd $(TOP)/icons/ && $(TAR) cf - *) |\
---- 341,372 ----
+--- 342,373 ----
   #   icons and distributed CGI scripts.
   install-data:
   	@echo "===> [data: Installing initial data files]"
@@ -111,7 +121,7 @@
   	@echo "Copying tree $(TOP)/icons/ -> $(root)$(datadir)/icons/"; \
   	(cd $(TOP)/icons/ && $(TAR) cf - *) |\
 ***************
-*** 378,395 ****
+*** 378,397 ****
   		 echo ""; \
   		 cat $(TOP)/conf/$${conf}-dist ) |\
   		 sed -e '/# LoadModule/r $(TOP)/$(SRC)/.apaci.install.conf' \
@@ -130,7 +140,9 @@
   			-e 's;conf/magic;$(sysconfdir)/magic;' \
   			-e 's;conf/mime.types;$(sysconfdir)/mime.types;' \
   			-e 's;Group #-1;Group $(conf_group);' \
---- 386,405 ----
+  			-e 's;Port 80;Port $(conf_port);' \
+  			-e 's;ServerAdmin you@your.address;ServerAdmin $(conf_serveradmin);' \
+--- 387,409 ----
   		 echo ""; \
   		 cat $(TOP)/conf/$${conf}-dist ) |\
   		 sed -e '/# LoadModule/r $(TOP)/$(SRC)/.apaci.install.conf' \
@@ -150,4 +162,7 @@
 ! 			-e 's;logs/agent_log;$(logfiledir)/httpd-agent.log;' \
   			-e 's;conf/magic;$(sysconfdir)/magic;' \
   			-e 's;conf/mime.types;$(sysconfdir)/mime.types;' \
++ 			-e 's;User nobody;User $(conf_user);' \
   			-e 's;Group #-1;Group $(conf_group);' \
+  			-e 's;Port 80;Port $(conf_port);' \
+  			-e 's;ServerAdmin you@your.address;ServerAdmin $(conf_serveradmin);' \

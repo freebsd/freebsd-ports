@@ -1,5 +1,27 @@
-*** configure.orig	Thu Sep 17 12:07:53 1998
---- configure	Thu Sep 24 03:57:33 1998
+*** configure.orig	Thu Sep 17 03:07:53 1998
+--- configure	Sat Nov 28 11:33:04 1998
+***************
+*** 810,815 ****
+--- 810,816 ----
+  ##
+  ##  determine special configuration parameters
+  ##
++ conf_user="nobody"
+  conf_group="#-1"
+  conf_port="80"
+  conf_serveradmin="you@your.address"
+***************
+*** 828,833 ****
+--- 829,837 ----
+      conf_serveradmin="`$aux/buildinfo.sh -n %u@%h%d`"
+      conf_servername="`$aux/buildinfo.sh -n %h%d`"
+  fi
++ if [ ".$suexec" = .1 ]; then
++     conf_user="$suexec_caller"
++ fi
+   
+  ##
+  ##  determine prefix-relative paths for directories
 ***************
 *** 870,877 ****
       echo "       DEFAULT_PIDLOG: ${runtimedir_relative}httpd.pid"
@@ -10,7 +32,7 @@
       echo "    TYPES_CONFIG_FILE: ${sysconfdir_relative}mime.types"
       echo "   SERVER_CONFIG_FILE: ${sysconfdir_relative}httpd.conf"
       echo "   ACCESS_CONFIG_FILE: ${sysconfdir_relative}access.conf"
---- 870,877 ----
+--- 874,881 ----
       echo "       DEFAULT_PIDLOG: ${runtimedir_relative}httpd.pid"
       echo "   DEFAULT_SCOREBOARD: ${runtimedir_relative}httpd.scoreboard"
       echo "     DEFAULT_LOCKFILE: ${runtimedir_relative}httpd.lock"
@@ -19,6 +41,16 @@
       echo "    TYPES_CONFIG_FILE: ${sysconfdir_relative}mime.types"
       echo "   SERVER_CONFIG_FILE: ${sysconfdir_relative}httpd.conf"
       echo "   ACCESS_CONFIG_FILE: ${sysconfdir_relative}access.conf"
+***************
+*** 912,917 ****
+--- 916,922 ----
+  -e "s%@suexec_uidmin@%$suexec_uidmin%g" \
+  -e "s%@suexec_gidmin@%$suexec_gidmin%g" \
+  -e "s%@suexec_safepath@%$suexec_safepath%g" \
++ -e "s%@conf_user@%$conf_user%g" \
+  -e "s%@conf_group@%$conf_group%g" \
+  -e "s%@conf_port@%$conf_port%g" \
+  -e "s%@conf_serveradmin@%$conf_serveradmin%g" \
 ***************
 *** 935,942 ****
   echo "echo '-DDEFAULT_PIDLOG=\"${runtimedir_relative}httpd.pid\"'" >>$src/apaci
@@ -29,7 +61,7 @@
   echo "echo '-DTYPES_CONFIG_FILE=\"${sysconfdir_relative}mime.types\"'" >>$src/apaci
   echo "echo '-DSERVER_CONFIG_FILE=\"${sysconfdir_relative}httpd.conf\"'" >>$src/apaci
   echo "echo '-DACCESS_CONFIG_FILE=\"${sysconfdir_relative}access.conf\"'" >>$src/apaci
---- 935,942 ----
+--- 940,947 ----
   echo "echo '-DDEFAULT_PIDLOG=\"${runtimedir_relative}httpd.pid\"'" >>$src/apaci
   echo "echo '-DDEFAULT_SCOREBOARD=\"${runtimedir_relative}httpd.scoreboard\"'" >>$src/apaci
   echo "echo '-DDEFAULT_LOCKFILE=\"${runtimedir_relative}httpd.lock\"'" >>$src/apaci
