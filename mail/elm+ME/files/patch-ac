@@ -1,5 +1,5 @@
-*** Configure.old	Thu Feb 22 22:56:56 1996
---- Configure	Thu Feb 22 22:58:51 1996
+*** Configure.orig	Sun Feb 18 20:24:15 1996
+--- Configure	Mon Feb 26 03:07:58 1996
 ***************
 *** 15,28 ****
   # working with this copy of Configure, you may wish to get metaconfig.)
@@ -27,8 +27,45 @@
       echo "(I see you are using the Korn shell.  Some ksh's blow up on Configure," && \
       echo "especially on exotic machines.  If yours does, try the Bourne shell instead.)"
 ***************
-*** 2473,2478 ****
---- 2468,2475 ----
+*** 719,725 ****
+  
+  : see if date exists, if so, init c_date
+  if $test ! "x$date" = "x" ; then
+!     c_date=`LANGUAGE= $date`
+  else
+      c_date='date was unavailable at configuration'
+  fi
+--- 714,720 ----
+  
+  : see if date exists, if so, init c_date
+  if $test ! "x$date" = "x" ; then
+!     c_date=`LANG= LC_TIME= $date`
+  else
+      c_date='date was unavailable at configuration'
+  fi
+***************
+*** 2278,2284 ****
+  
+  : see if crypt exists
+  echo " "
+! if $contains '^crypt$' libc.list >/dev/null 2>&1; then
+      echo 'crypt() found.'
+      d_crypt="$define"
+      cryptlib=''
+--- 2273,2282 ----
+  
+  : see if crypt exists
+  echo " "
+! if $test "$cryptlib" = -lcrypt; then
+!     echo 'crypt() found.'
+!     d_crypt="$define"
+! elif $contains '^crypt$' libc.list >/dev/null 2>&1; then
+      echo 'crypt() found.'
+      d_crypt="$define"
+      cryptlib=''
+***************
+*** 2477,2482 ****
+--- 2475,2482 ----
       lock_dir=/usr/spool/locks
   elif $test -d /usr/spool/uucp ; then
       lock_dir=/usr/spool/uucp
@@ -38,7 +75,7 @@
       lock_dir=/var/spool/locks
   elif $test -d /var/spool/uucp ; then
 ***************
-*** 3310,3319 ****
+*** 3364,3373 ****
   	$cat <<EOM
   
   The Character Set which your terminals support. You could set this
@@ -47,9 +84,9 @@
 ! US-ASCII as well. For a X-Windows environment, ISO-8859-1 would be 
 ! a convenient value.
   
-  EOM
-  	rp="Default Character Set which could be displayed [$dflt]"
---- 3307,3316 ----
+  Default Display Character Set is overriden by environment variable
+  \$MM_CHARSET if it is set (and \$NOMETAMAIL is not set.)
+--- 3364,3373 ----
   	$cat <<EOM
   
   The Character Set which your terminals support. You could set this
@@ -58,5 +95,5 @@
 ! KOI8-R charsets could display US-ASCII as well. For a X-Windows
 ! environment, ISO-8859-1 would be a convenient value.
   
-  EOM
-  	rp="Default Character Set which could be displayed [$dflt]"
+  Default Display Character Set is overriden by environment variable
+  \$MM_CHARSET if it is set (and \$NOMETAMAIL is not set.)

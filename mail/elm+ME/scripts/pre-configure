@@ -1,7 +1,7 @@
 #!/bin/sh -
 #
 #	pre-configure script for Elm port to FreeBSD 2.0
-#	$Id: pre-configure,v 1.8 1996/01/12 01:54:50 ache Exp $
+#	$Id: pre-configure,v 1.9 1996/02/23 01:45:05 ache Exp $
 
 PortsDir=$PORTSDIR
   CurDir=$CURDIR
@@ -24,6 +24,7 @@ d_mkdir='define'
 d_rename='define'
 d_symlink='define'
 d_whoami='undef'
+d_poll='undef'
 n='-n'
 c=''
 orderlib='false'
@@ -80,6 +81,7 @@ lint
 lp
 lpr
 mailx
+metamail
 mips
 more
 nroff
@@ -146,7 +148,7 @@ pack='pack'
 compress='/usr/bin/compress'
 execmail=''
 libswanted='intl nls'
-c_date='Tue Jul  4 04:52:32 MSD 1995'
+c_date='Mon Feb 26 02:39:33 MSK 1996'
 d_ascii='undef'
 d_broke_ctype='undef'
 d_calendar='define'
@@ -154,7 +156,7 @@ calendar='calendar'
 d_chown_neg1='define'
 d_content='undef'
 d_crypt='define'
-cryptlib='/usr/lib/libcrypt.a'
+cryptlib='-lcrypt'
 d_cuserid='undef'
 d_disphost='undef'
 d_domname='define'
@@ -184,12 +186,13 @@ d_msgcat='define'
 d_usenls='undef'
 d_mallocvoid='define'
 d_mboxedit='define'
-d_mime='undef'
+d_mime='define'
+metamail_path='none'
 defencoding=''
-d_8bitmime='undef'
+d_8bitmime='define'
 d_binarymime='undef'
-defcharset='US-ASCII'
-defdispcharset='US-ASCII'
+defcharset='ISO-8859-1'
+defdispcharset='ISO-8859-1'
 d_mmdf='undef'
 d_newauto='define'
 d_noaddfrom='define'
@@ -247,7 +250,7 @@ i_unistd='define'
 i_utime='define'
 i_sysutime='undef'
 lib='/usr/local/lib'
-libc='/usr/lib/libc.so.2.2'
+libc='/usr/lib/libc.so.3.0'
 linepr='/usr/bin/lp'
 maildir='/var/mail'
 mailer='/usr/sbin/sendmail'

@@ -1,25 +1,27 @@
 # New ports collection makefile for:    elm
-# Version required:     2.4 pl25 ME8b
+# Version required:     2.4.25.ME+.9
 # Date created:         26 June 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.13 1995/12/21 10:47:59 ache Exp $
+# $Id: Makefile,v 1.14 1996/02/20 04:18:46 ache Exp $
 #
 
-DISTNAME=       elm-2.4pl24me8b
-VERSION=        2.4.25m8b          # allows to not edit elm+* Makefiles
-PKGNAME=        elm-${VERSION}
+DISTNAME=       elm-2.4ME+9
 CATEGORIES+=	mail
-MASTER_SITES=   ftp://ftp.kiae.su/unix/mail/ ftp://ftp.myxa.com/pub/elm/
-DISTFILES=      ${DISTNAME}${EXTRACT_SUFX} elm2.4.p25
-EXTRACT_ONLY=   ${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=   ftp://dionysos.fmi.fi/KEH/ \
+		ftp://ftp.kiae.su/unix/mail/
+WRKSRC=         ${WRKDIR}/elm2.4.ME+.9
 
 MAINTAINER=	ache@FreeBSD.ORG
 
-pre-patch:
-	-patch -d ${WRKSRC} -s -p -N -S + < ${PORTSDIR}/distfiles/elm2.4.p25
-
 post-install:
 	cd ${WRKSRC}/nls; ${MAKE} install
+	if [ -f ${PREFIX}/lib/elm.mimetypes ] ; then \
+		${INSTALL} -c -o ${BINOWN} -g ${BINGRP} -m 644 \
+			${FILESDIR}/elm.mimetypes ${PREFIX}/lib/elm.mimetypes-dist; \
+	else \
+		${INSTALL} -c -o ${BINOWN} -g ${BINGRP} -m 644 \
+			${FILESDIR}/elm.mimetypes ${PREFIX}/lib; \
+	fi
 
 .include <bsd.port.mk>
