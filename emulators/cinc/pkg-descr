@@ -1,0 +1,12 @@
+cinc is a program that emulates the Bell Laboratories cardiac computer
+(from here on referred to as cardiac). cardiac stands for cardboard
+illustrative aid to computation.
+
+casm is an assembler for the cinc emulator. casm reads a casm source program
+and translates it to a cinc loadable program that can be executed with the
+cinc emulator.
+
+cinc allows you to run cardiac programs on a real computer.  The real
+cardiac allows the student to learn how computers work internally.
+
+WWW: http://sourceforge.net/projects/cinc
