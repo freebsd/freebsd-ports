@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	kris
 
 FORBIDDEN=		"Remotely exploitable buffer overflow"
 
-MAINTAINER=		issei@jp.FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 
 USE_OPENSSL=		YES
 

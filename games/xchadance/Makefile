@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://home.jp.FreeBSD.org/~issei/LOCAL_PORTS/
 DISTFILES=	xchada01.lzh
 
-MAINTAINER=	issei@jp.FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 

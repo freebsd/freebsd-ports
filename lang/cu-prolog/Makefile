@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.icot.or.jp/ifs/kbms-clp/unix/cuprolog/
 DISTFILES=	${DISTNAME}.tar.gz cupdoc.tar.gz
 DISTNAME=	cupsrc
 
-MAINTAINER=	issei@jp.FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/src
 MAKEFILE=	makefile

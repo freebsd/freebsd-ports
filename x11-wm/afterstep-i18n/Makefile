@@ -23,7 +23,7 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz \
 
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	issei@jp.FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 DIST_SUBDIR=	afterstep
 USE_X_PREFIX=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	0.5.5p1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.hitachi-ms.co.jp/pub/bjorb/
 
-MAINTAINER=	issei@jp.FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_OPENSSL=	YES
 

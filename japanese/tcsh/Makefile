@@ -10,7 +10,7 @@ PORTVERSION=	6.08.05
 CATEGORIES=	japanese shells
 MASTER_SITES=	ftp://ftp.astron.com/pri/
 
-MAINTAINER=	issei@jp.FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} >= 500006 || ${OSVERSION} < 500000 && ${OSVERSION} >= 400021
