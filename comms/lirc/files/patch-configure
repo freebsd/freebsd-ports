@@ -1,0 +1,19 @@
+--- configure.orig	Sun Oct  6 18:22:41 2002
++++ configure	Sun Nov 30 23:26:58 2003
+@@ -1495,8 +1495,6 @@
+ 
+ 		    		    		    ac_config_headers="$ac_config_headers config.h"
+ 
+-CFLAGS="-O2 -g -Wall"
+-
+ ac_ext=c
+ ac_cpp='$CPP $CPPFLAGS'
+ ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
+@@ -6753,6 +6751,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
