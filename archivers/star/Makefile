@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/star/
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	MAKEPROG=${GMAKE} CCOM=${CC}
 MAN1=		star.1
