@@ -5,23 +5,23 @@
 # $FreeBSD$
 #
 
-PORTNAME=		amcl
-PORTVERSION=		0.7.0
-CATEGORIES=		net
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE} \
-			http://www.localhost.nu/apps/amcl/tars/ \
-			http://amcl.alliances.org/tars/
+PORTNAME=	amcl
+PORTVERSION=	0.7.0
+CATEGORIES=	net
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://www.localhost.nu/apps/amcl/tars/ \
+		http://amcl.alliances.org/tars/
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=		${PORTNAME}-${PORTVERSION}pl1
+DISTNAME=	${PORTNAME}-${PORTVERSION}pl1
 
-MAINTAINER=		will@FreeBSD.org
+MAINTAINER=	will@FreeBSD.org
 
-LIB_DEPENDS=		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
-GTK_CONFIG?=		${X11BASE}/bin/gtk12-config
-WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_X_PREFIX=		yes
-GNU_CONFIGURE=		yes
-CONFIGURE_ENV+=		GTK_CONFIG="${GTK_CONFIG}"
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	GTK_CONFIG="${GTK_CONFIG}"
 
 .include <bsd.port.mk>
