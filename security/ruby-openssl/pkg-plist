@@ -13,6 +13,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/ossl_cipher.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/ossl_config.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/ossl_digest.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/ossl_pkey.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/ossl_rsa.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/ossl_x509.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/ossl_x509crl.rb
@@ -22,5 +23,6 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/c/key.c
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/openssl/c
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/openssl
-%%PORTDOCS%%%%RUBY_DOCDIR%%/openssl/README.txt
+%%PORTDOCS%%%%RUBY_DOCDIR%%/openssl/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/openssl/README
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/openssl
