@@ -1,0 +1,21 @@
+*** testcpp/6/makefile	Tue Oct  3 23:31:24 1995
+--- /home/andy/tmp/wrk/testcpp/6/makefile	Tue Jun 24 05:53:19 1997
+***************
+*** 14,21 ****
+  ERR = A/err
+  HDR_FILE =
+  SCAN = A/ALexer
+! PCCTS = ../..
+! A_H = $(PCCTS)/h
+  BIN = $(PCCTS)/bin
+  A = $(BIN)/antlr
+  D = $(BIN)/dlg
+--- 14,21 ----
+  ERR = A/err
+  HDR_FILE =
+  SCAN = A/ALexer
+! PCCTS = /usr/local
+! A_H = $(PCCTS)/include/pccts
+  BIN = $(PCCTS)/bin
+  A = $(BIN)/antlr
+  D = $(BIN)/dlg

@@ -1,0 +1,21 @@
+*** testcpp/2/makefile	Sat Sep 23 22:53:10 1995
+--- /home/andy/tmp/wrk/testcpp/2/makefile	Tue Jun 24 05:50:47 1997
+***************
+*** 16,23 ****
+  ERR = err
+  HDR_FILE =
+  SCAN = DLGLexer
+! PCCTS = ../..
+! ANTLR_H = $(PCCTS)/h
+  BIN = $(PCCTS)/bin
+  ANTLR = $(BIN)/antlr
+  DLG = $(BIN)/dlg
+--- 16,23 ----
+  ERR = err
+  HDR_FILE =
+  SCAN = DLGLexer
+! PCCTS = /usr/local
+! ANTLR_H = $(PCCTS)/include/pccts
+  BIN = $(PCCTS)/bin
+  ANTLR = $(BIN)/antlr
+  DLG = $(BIN)/dlg
