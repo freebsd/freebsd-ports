@@ -1,37 +1,39 @@
 bin/quirc
-%%PORTDOCS%%share/doc/quirc/AUTHORS
-%%PORTDOCS%%share/doc/quirc/ChangeLog
-%%PORTDOCS%%share/doc/quirc/FAQ
-%%PORTDOCS%%share/doc/quirc/NEWS
-%%PORTDOCS%%share/doc/quirc/README
-%%PORTDOCS%%share/doc/quirc/color.txt
-%%PORTDOCS%%share/doc/quirc/dccresum.txt
-%%PORTDOCS%%share/doc/quirc/links.txt
-%%PORTDOCS%%share/doc/quirc/nickcomp.txt
-%%PORTDOCS%%share/doc/quirc/quedit.txt
-%%PORTDOCS%%share/doc/quirc/rfc1459.txt
-%%PORTDOCS%%share/doc/quirc/tdcc.txt
-share/quirc/VERSION
-share/quirc/common/install.tcl
-share/quirc/dal.tcl
-share/quirc/doc.tcl
-share/quirc/fontsel
-share/quirc/fun.tcl
-share/quirc/global.tcl
-share/quirc/info.tcl
-share/quirc/listfile.tcl
-share/quirc/mircservers.tcl
-share/quirc/newserver.tcl
-share/quirc/notify.tcl
-share/quirc/popups.tcl
-share/quirc/quedit
-share/quirc/qwidgets.tcl
-share/quirc/server.tcl
-share/quirc/servers
-share/quirc/themes/default.tcl
-share/quirc/variables.tcl
-share/quirc/winpopup.tcl
-@dirrm share/quirc/themes
-@dirrm share/quirc/common
-@dirrm share/quirc
-%%PORTDOCS%%@dirrm share/doc/quirc
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/color.txt
+%%PORTDOCS%%%%DOCSDIR%%/dccresum.txt
+%%PORTDOCS%%%%DOCSDIR%%/links.txt
+%%PORTDOCS%%%%DOCSDIR%%/nickcomp.txt
+%%PORTDOCS%%%%DOCSDIR%%/quedit.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc1459.txt
+%%PORTDOCS%%%%DOCSDIR%%/tdcc.txt
+%%DATADIR%%/VERSION
+%%DATADIR%%/common/install.tcl
+%%DATADIR%%/dal.tcl
+%%DATADIR%%/default.tcl
+%%DATADIR%%/doc.tcl
+%%DATADIR%%/fontsel
+%%DATADIR%%/fun.tcl
+%%DATADIR%%/global.tcl
+%%DATADIR%%/info.tcl
+%%DATADIR%%/install.tcl
+%%DATADIR%%/listfile.tcl
+%%DATADIR%%/mircservers.tcl
+%%DATADIR%%/newserver.tcl
+%%DATADIR%%/notify.tcl
+%%DATADIR%%/popups.tcl
+%%DATADIR%%/quedit
+%%DATADIR%%/qwidgets.tcl
+%%DATADIR%%/server.tcl
+%%DATADIR%%/servers
+%%DATADIR%%/themes/default.tcl
+%%DATADIR%%/variables.tcl
+%%DATADIR%%/winpopup.tcl
+@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%/common
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
