@@ -21,6 +21,7 @@ GNU_CONFIGURE=	YES
 CONFIGURE_ARGS+=	--with-modules="${CONFIGURE_MODULES} pipe" \
 			--with-dynmodules=""
 #			--enable-debug
+LDAP_PORT?=	net/openldap20-client
 
 # use user config if possible
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
@@ -86,8 +87,8 @@ describe:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500043 && defined(WITH_LDAP)
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20-client
-LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap20-client
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/${LDAP_PORT}
+LIB_DEPENDS+=	lber.2:${PORTSDIR}/${LDAP_PORT}
 CONFIGURE_MODULES+=	"ldap"
 
 post-patch:
