@@ -45,7 +45,7 @@ AlephOne-*		ports/games/alephone-data Bungie/Microsoft do not
 altivore.c		ports/security/altivore	No redistribution allowed
 apache*-ssl		ports/www/apache13-ssl	Crypto; export-controlled
 apache/mod_tidy-*	ports/www/mod_tidy	no license
-apache2/mod_watch4*	ports/www/mod_watch4	Do not distribute binaries. Do not put 
+apache2/mod_watch4*	ports/www/mod_watch4	Do not distribute binaries. Do not put
 						distfiles on CD-ROM.
 apple_pascal_0.dsk.gz	ports/emulators/p-interp Redistribution rights for Apple
 						Pascal disk images are unclear
@@ -56,7 +56,7 @@ atari800/*		ports/emulators/atari800 xf25 contains copyright ROMs
 avfbmlt*.tgz		ports/security/antivir-milter No redistribution allowed
 bamg*			ports/math/bamg		Contact author personally
 						regarding commercial use
-baudline_*		ports/audio/baudline	No redistribution allowed	
+baudline_*		ports/audio/baudline	No redistribution allowed
 BCWipe-*		ports/security/bcwipe	Non-Commercial Distribution and
 						Use Only
 bicom*			ports/archivers/bicom	Contact author personally
@@ -72,8 +72,8 @@ bugseeker2ee*		ports/java/bugseeker	License doesn't allow
 						redistribution.
 bzip-*			ports/archivers/bzip	Some algorithms used may
 						infringe certain US patents.
-						Opinions differ. Commercial 
-						use could render you liable 
+						Opinions differ. Commercial
+						use could render you liable
 						to unfriendly legal action.
 cap60/*			ports/net/cap		Don't sell for profit
 ccc-*.alpha.rpm		ports/lang/compaq-cc	Distribution not allowed
@@ -83,8 +83,8 @@ citrix_ica-*.tar.gz	ports/net/citrix_ica	License prohibits redistribution
 cfs-*			ports/security/cfs	Crypto; export-controlled
 clibpdf*.tar.gz		ports/print/clibpdf	Needs a license to bundle with
 						other products
-classes111_01.zip	ports/databases/jdbc-oracle816  This software is 
-						under license and export 
+classes111_01.zip	ports/databases/jdbc-oracle816  This software is
+						under license and export
 						controls.
 CODE2000.ZIP		ports/x11-fonts/code2000 Only unmodified original
 						package can be distributed.
@@ -265,7 +265,7 @@ ICON-Crystal-SVG-For-Gnome.* ports/x11-themes/gnome-icons-crystal Author rights 
 ICON-Gentoo-Test.*	ports/x11-themes/gnome-icons-gentoo-test Author rights unclear
 ICON-Gnome-RH8.*	ports/x11-themes/gnome-icons-refined Author rights unclear
 ICON-Iris-*		ports/x11-themes/gnome-icons-iris Author rights unclear
-ICON-Noia-full-*	ports/x11-themes/gnome-icons-noia-full Author rights unclear 
+ICON-Noia-full-*	ports/x11-themes/gnome-icons-noia-full Author rights unclear
 ICON-NoiaWarm-*		ports/x11-themes/gnome-icons-noia-warm Author rights unclear
 ICON-Slick.*		ports/x11-themes/gnome-icons-slick Author rights unclear
 ICON-Snow-Apple.*	ports/x11-themes/gnome-icons-snow-apple Author rights unclear
@@ -391,9 +391,9 @@ msql-*			ports/databases/msql	Not free for commercial org.
 mtv-*.tar.gz		ports/multimedia/mtv	No redistribution
 mupad/*			ports/math/mupad	unsure to sell for profit
 mypaedia-*		ports/japanese/mypaedia-fpw The original dictionary is not free
-mysqlman.tar.gz		ports/databases/mysqlman Not redistributable, license 
+mysqlman.tar.gz		ports/databases/mysqlman Not redistributable, license
 						agreement required
-ncftpd-*		ports/ftp/ncftpd	30 day evaluation license 
+ncftpd-*		ports/ftp/ncftpd	30 day evaluation license
 netbeans-*		ports/java/netbeans	Restrictive copyright.
 netpbm-*		ports/graphics/netpbm	Not allowed to sell.
 netscape-*-us-*		ports/www/netscape*	Crypto; export-controlled
@@ -558,7 +558,7 @@ webcopy-*		ports/www/webcopy	Don't sell for profit
 webfonts/*		ports/x11-fonts/webfonts Restrictive copyright
 webglimpse-*.src.tar.gz	ports/www/webglimpse	depends on glimpse
 win32/*			ports/multimedia/win32-codecs Licensing status of the
-						codecs is unknown. 
+						codecs is unknown.
 xbarcode-*.tar.gz	ports/graphics/xbarcode	Must not be sold
 xchada01.lzh		ports/games/xchadance	contains commercial character
 						data
@@ -589,5 +589,5 @@ ZendOptimizer-*.tar.gz	ports/devel/ZendOptimizer Redistribution of pre-compiled
 zh-moettf/*		ports/chinese/moettf	Contact Taiwan Ministry of
 						Education for commercial use
 NTU*.TTF		ports/chinese/ntuttf	No commercial use
-ztelnet-*		ports/net/ztelnet	zmodem code has 
+ztelnet-*		ports/net/ztelnet	zmodem code has
 						restrictive copyright
