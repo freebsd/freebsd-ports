@@ -1,0 +1,5 @@
+bin/jpilot
+share/jpilot/jpilotrc.blue
+share/jpilot/jpilotrc.default
+share/jpilot/jpilotrc.green
+@dirrm share/jpilot
