@@ -1,163 +1,206 @@
---- Makefile.orig	Sun Apr 13 12:50:29 1997
-+++ Makefile	Sat Jan 31 13:43:03 1998
-@@ -6,29 +6,35 @@
- # DO NOT put a blank between the path and the #, or you'll get compile errors.
- #
- 
--DIR  = /usr/local/bin#		# user-callable executable (plan)
--LIB  = /usr/local/lib#		# auxiliary programs (pland, notifier, netplan)
--HELP = $(LIB)#			# help file (plan.help)
--MAN  = /usr/man/local/man#	# unformatted nroff manpage (plan.[14])
--# MAN = /usr/local/man/man#	# for linux
-+DOCBASE = $(PREFIX)/share/doc/plan#
-+
-+DIR  = $(PREFIX)/bin#		# user-callable executable (plan)
-+LIB = $(PREFIX)/share#        # auxiliary programs (pland, notifier, netplan)
-+EXAMPLES = $(DOCBASE)/examples#	# Example holiday files
-+DOCS = $(DOCBASE)#		# doc files
-+HELP = $(DOCBASE)#              # help file (plan.help)
-+#MAN  = /usr/man/local/man#	# unformatted nroff manpage (plan.[14])
-+MAN = $(PREFIX)/man/man#	# for linux and freebsd
- CATMAN = /usr/catman/local/cat#	# formatted manpage (plan.[14])
- INCDIR =#			# extra cc options, e.g. "-I/var/include"
--NOB_UID = 60001#		# numerical user ID of <nobody> account
--NOB_GID = 60001#		# default numerical group ID of <nobody> account
--CPP_PATH="/lib/cpp -P -I$(HELP)"# used by plan to pre-process holiday files,
-+NOB_UID = 65534#		# numerical user ID of <nobody> account
-+NOB_GID = 65534#		# default numerical group ID of <nobody> account
-+CPP_PATH="/usr/bin/cpp -P -I$(DOCS)"# used by plan to pre-process holiday files,
- #				# plan will check if this file really exists
- ESCTOISOLATIN=\"\\033\(B\"#	# switching to ISO8859-1
- ESCTOJISLATIN=\"\\033\(J\"#	# switching to JIS X0201-1976 roman
- # LENTOASCII			# length of ESCTOASCII
- # LOCALE_SJIS, LOCALE_EUC	# locale names for Japanese
- # JAPAN				# uncomment this for Japanese version of plan
--#JAPAN = -DJAPAN -DESCTOASCII=$(ESCTOJISLATIN) -DLENTOASCII=3 \
--#        -DLOCALE_SJIS=\"ja_JP.SJIS\" -DLOCALE_EUC=\"ja_JP.EUC\"
-+.if defined(JAPANESE)
-+JAPAN = -DJAPAN -DESCTOASCII=$(ESCTOJISLATIN) -DLENTOASCII=3 \
-+        -DLOCALE_SJIS=\"ja_JP.SJIS\" -DLOCALE_EUC=\"ja_JP.EUC\"
-+.endif
- #				# JAPAN requires X11R5 and a Japanese env.
- 
--DEBUG = -s
-+#DEBUG = -s
- #DEBUG = -g
--#DEBUG = -O2 -s			# do NOT define -O2 on DEC OSF/1 machines!
-+DEBUG = -O2 -s			# do NOT define -O2 on DEC OSF/1 machines!
- 
- #DEFTARGET = sgi
- DEFTARGET = help
-@@ -55,6 +61,8 @@
- #	-DVARARGS	use pre-ANSI varargs instead of stdargs
- #	-DDESTROYBUG	fixes Linux XtDestroyWidget bug that kills plan when a
- #			Done button is used. WARNING: introduces a memory leak
-+#	-DSTDLIBMALLOC	do not include <malloc.h>, use <stdlib.h> instead,
-+#			(FreeBSD)
- #
- # Note for HP systems: if you have the PROG-AUX option, remove -DNOREGEX
- # from HP_C, and add -lPW to HP_L1. On Suns, try removing -DNOREGEX (and
-@@ -105,6 +113,10 @@
- BSDIG_C	= -ansi -I/usr/X11/include -DBSD -DRABBITS -DNOLOCK -DNOREGEX -Dbsdi
- NBSD_C	= -ansi -I/usr/X11R6/include -DBSD -DRABBITS -DNOLOCK -DNOREGEX\
- 	  -DNO_MOTIF
-+FBSD_C	= $(CFLAGS) -ansi -I$(X11BASE)/include -DBSD -DFLOCK -DPOSIX_REGEX -DRABBITS -DSTDLIBMALLOC
-+OBSD_C	= $(CFLAGS) -ansi -I$(X11BASE)/include -DBSD -DFLOCK -DPOSIX_REGEX -DRABBITS -DSTDLIBMALLOC
-+IBM_C	= -O -I/usr/include/X11 -D_ALL_SOURCE -DIBM -DAIXV3 -DNOMSEP -DRABBITS
-+PS2_C	= -O -I/usr/include/X11 -D_POSIX_SOURCE\
- LINUX_C	= -D_POSIX_SOURCE -DNOLOCK -DLINUX
- SVR4_C	= -DSVR4 -DSYSV -DOLDTZ -DUSERAND -DPID_T=long -DNOMSEP
- NEWS_C	= -DNEWSOS4 -DNOMSEP -DSUN -DBSD -DRABBITS -DPID_T="int" -Dconst=""
-@@ -181,6 +193,10 @@
- BSDIG_L2= -L/usr/X11/lib -lc
- NBSD_L1	= -L/usr/X11R6/lib -lXm -lXt -lX11
- NBSD_L2	= -L/usr/X11R6/lib -lc
-+FBSD_L1	= -L$(X11BASE)/lib ${MOTIFLIB} -lXt -lX11 -lXext -lc
-+FBSD_L2	= -lc
-+OBSD_L1	= -L$(X11BASE)/lib ${MOTIFLIB} -lXt -lX11 -lXext -lc
-+OBSD_L2	= -lc
- LINUX_L1= -L/usr/lib/X11R6/lib -lXm -lXt -lX11 -lXpm -lc -lXext
- LINUX_L2= -lc
- SVR4_L1	= -lXm -lXt -lX11 -lgen -lsocket -lnsl
-@@ -240,6 +256,8 @@
- 	@echo "  make bsdi      BSDI/386"
- 	@echo "  make bsdig     BSDI/386 with gcc"
- #	@echo "  make netbsd	NetBSD/i386 1.0A (maybe others too)"
-+	@echo "  make freebsd   FreeBSD
-+	@echo "  make openbsd   OpenBSD
- 	@echo "  make svr4      SVR4 Using gcc"
- 	@echo "  make news4     Sony NEWS-OS4.x"
- 	@echo "  make news4g    Sony NEWS-OS4.x with gcc"
-@@ -349,6 +367,12 @@
- netbsd:
- 	env CF="$(NBSD_C)" L1F="$(NBSD_L1)" L2F="$(NBSD_L2)" MYCC=gcc $(MAKE) all
- 
-+freebsd:
-+	env CF="$(FBSD_C)" L1F="$(FBSD_L1)" L2F="$(FBSD_L2)" MYCC=${CC} $(MAKE) all
-+
-+openbsd:
-+	env CF="$(OBSD_C)" L1F="$(OBSD_L1)" L2F="$(OBSD_L2)" MYCC=${CC} $(MAKE) all
-+
- svr4:
- 	env CF="$(SVR4_C)" L1F="$(SVR4_L1)" L2F="$(SVR4_L2)" MYCC=gcc make all
- 
-@@ -451,13 +475,13 @@
- 	$(MYCC) $(DEBUG) $(CF) $(JAPAN) $(INCDIR) -c -DLIB=\"$(LIB)\" $<
- 
- holiday.o: holiday.c Makefile
--	$(MYCC) $(DEBUG) $(CF) $(JAPAN) $(INCDIR) -DCPP_PATH=\"$(CPP_PATH)\" -c -DLIB=\"$(LIB)\" $<
-+	$(MYCC) $(DEBUG) $(CF) $(JAPAN) $(INCDIR) -DCPP_PATH=\"$(CPP_PATH)\" -c -DLIB=\"$(DOCS)\" $<
- 
- util.o: util.c
- 	$(MYCC) $(DEBUG) $(CF) $(JAPAN) $(INCDIR) -c -DPATH=\"$(LIB):$(DIR):$(HELP)\" $<
- 
- netplan.o: netplan.c netplan_if.h
--	$(MYCC) $(DEBUG) $(CF) -DNOBODY_UID=$(NOB_UID) -DNOBODY_GID=$(NOB_GID) $(INCDIR) -c -DLIB=\"$(LIB)\" $<
-+	$(MYCC) $(DEBUG) $(CF) -DNOBODY_UID=$(NOB_UID) -DNOBODY_GID=$(NOB_GID) $(INCDIR) -c -DLIB=\"$(NETPLAN)\" $<
- #	$(MYCC) $(DEBUG) $(CF) -DNOBODY_UID=`grep nobody /etc/passwd | head -1 | awk -F: '{print $$3}'` -DNOBODY_GID=`grep nobody /etc/passwd | head -1 | awk -F: '{print $$4}'` $(INCDIR) -c -DLIB=\"$(LIB)\" $<
- 
- parser.c: parser.y
-@@ -480,15 +504,15 @@
- 
- #---------------------------------------------------------------
- install:
--	cp plan $(DIR)
--	-rm -f $(DIR)/pland $(DIR)/notifier
--	cp pland notifier netplan ../misc/plan_cal.ps $(LIB)
--	-test x$(JAPAN) != x && cp ../misc/plan_calSJ.ps $(LIB)
--	cp ../misc/plan.help $(HELP)
--	-strip $(DIR)/plan $(LIB)/pland $(LIB)/notifier $(LIB)/netplan
--	-chmod 755 $(DIR)/plan $(LIB)/pland $(LIB)/notifier $(LIB)/netplan
--	-chmod 644 $(HELP)/plan.help $(LIB)/plan_cal.ps
--	-test x$(JAPAN) != x && chmod 644 $(LIB)/plan_calSJ.ps
-+	${INSTALL} -d $(DOCBASE)
-+	${INSTALL} -d $(EXAMPLES)
-+	${BSD_INSTALL_PROGRAM} pland $(DIR)
-+	${BSD_INSTALL_PROGRAM} notifier netplan plan $(DIR)
-+	${BSD_INSTALL_SCRIPT} ../misc/Killpland $(DIR)
-+	${BSD_INSTALL_MAN} ../misc/plan.help ../misc/plan_cal.ps \
-+	  ../misc/Monochrome ../misc/BlackWhite $(DOCS)
-+	${BSD_INSTALL_SCRIPT} -c -m 755 ../misc/Mkdoc ../misc/Mkdoc.nawk $(DOCS)
-+	-test x$(JAPAN) != x && ${BSD_INSTALL_MAN} ../misc/plan_calSJ.ps $(DOCS)
- 	-mkdir $(LIB)/netplan.dir
- 	-chmod 777 $(LIB)/netplan.dir
- 	-test -x `which nroff` && nroff -man ../misc/plan.1 >../misc/plan.1cat
-@@ -497,14 +521,10 @@
- 	-test -d $(MAN)1 && cp ../misc/plan.1 $(MAN)1/plan.1
- 	-test -d $(MAN)4 && cp ../misc/plan.4 $(MAN)4/plan.4
- 	-test -d $(MAN)1 && cp ../misc/netplan.1 $(MAN)1/netplan.1
--	-test -d $(CATMAN)1 && cp ../misc/plan.1cat $(CATMAN)1/plan.1
--	-test -d $(CATMAN)4 && cp ../misc/plan.4cat $(CATMAN)4/plan.4
--	-test -d $(CATMAN)1 && cp ../misc/netplan.1cat $(CATMAN)1/netplan.1
--	-test -f ${HOME}/.holiday || cp ../holiday/holiday_german ${HOME}/.holiday
--	-test `uname` = IRIX && mkdir $$HOME/.icons
--	-test `uname` = IRIX && cp ../misc/Plan.icon $$HOME/.icons/Plan.icon
--	@echo ""
--	@echo "use ../holiday/* as templates for your ~/.holiday file"
-+	${BSD_INSTALL_MAN} ../README $(DOCBASE)
-+	${BSD_INSTALL_DATA} ../holiday/holiday_* $(EXAMPLES)
-+	${ECHO} ""
-+	${ECHO} "Use " $(EXAMPLES)"/holiday/* as templates for your ~/.holiday file"
- 
- clean:
- 	-rm -f *.o
+*** Makefile.orig	Sun Feb 22 02:53:33 1998
+--- Makefile	Sun Mar 22 00:04:06 1998
+***************
+*** 6,34 ****
+  # DO NOT put a blank between the path and the #, or you'll get compile errors.
+  #
+  
+! DIR  = /usr/local/bin#		# user-callable executable (plan)
+! LIB  = /usr/local/lib#		# auxiliary programs (pland, notifier, netplan)
+! HELP = $(LIB)#			# help file (plan.help)
+  NETPLANDIR = $(LIB)#		# netplan expects netplan.dir/ here
+  # NETPLANDIR = "/var/lib/plan"#	# use this for Debian Linux
+- MAN  = /usr/man/local/man#	# unformatted nroff manpage (plan.[14])
+- # MAN = /usr/local/man/man#	# for linux
+  CATMAN = /usr/catman/local/cat#	# formatted manpage (plan.[14])
+  INCDIR =#			# extra cc options, e.g. "-I/var/include"
+! NOB_UID = 60001#		# numerical user ID of <nobody> account
+! NOB_GID = 60001#		# default numerical group ID of <nobody> account
+! CPP_PATH="/lib/cpp -P -I$(HELP)"# used by plan to pre-process holiday files,
+  #				# plan will check if this file really exists
+  ESCTOISOLATIN=\"\\033\(B\"#	# switching to ISO8859-1
+  ESCTOJISLATIN=\"\\033\(J\"#	# switching to JIS X0201-1976 roman
+  # LENTOASCII			# length of ESCTOASCII
+  # LOCALE_SJIS, LOCALE_EUC	# locale names for Japanese
+  # JAPAN				# uncomment this for Japanese version of plan
+! #JAPAN = -DJAPAN -DESCTOASCII=$(ESCTOJISLATIN) -DLENTOASCII=3 \
+! #        -DLOCALE_SJIS=\"ja_JP.SJIS\" -DLOCALE_EUC=\"ja_JP.EUC\"
+  #				# JAPAN requires X11R5 and a Japanese env.
+  
+! DEBUG = -g
+  #DEBUG = -O2#			# do NOT define -O2 on DEC OSF/1 machines!
+  #DEBUG =
+  
+--- 6,40 ----
+  # DO NOT put a blank between the path and the #, or you'll get compile errors.
+  #
+  
+! DOCBASE = $(PREFIX)/share/doc/plan#
+! 
+! DIR  = $(PREFIX)/bin#		# user-callable executable (plan)
+! LIB  = $(PREFIX)/share#		# auxiliary programs (pland, notifier, netplan)
+! EXAMPLES = $(DOCBASE)/examples#	# Example holiday files
+! DOCS = $(DOCBASE)#		# doc files
+! HELP = $(DOCBASE)#              # help file (plan.help)
+! #MAN  = /usr/man/local/man#	# unformatted nroff manpage (plan.[14])
+! MAN = $(PREFIX)/man/man#	# for linux and freebsd
+  NETPLANDIR = $(LIB)#		# netplan expects netplan.dir/ here
+  # NETPLANDIR = "/var/lib/plan"#	# use this for Debian Linux
+  CATMAN = /usr/catman/local/cat#	# formatted manpage (plan.[14])
+  INCDIR =#			# extra cc options, e.g. "-I/var/include"
+! NOB_UID = 65534#		# numerical user ID of <nobody> account
+! NOB_GID = 65534#		# default numerical group ID of <nobody> account
+! CPP_PATH="/usr/bin/cpp -P -I$(HELP)"# used by plan to pre-process holiday files,
+  #				# plan will check if this file really exists
+  ESCTOISOLATIN=\"\\033\(B\"#	# switching to ISO8859-1
+  ESCTOJISLATIN=\"\\033\(J\"#	# switching to JIS X0201-1976 roman
+  # LENTOASCII			# length of ESCTOASCII
+  # LOCALE_SJIS, LOCALE_EUC	# locale names for Japanese
+  # JAPAN				# uncomment this for Japanese version of plan
+! .if defined(JAPANESE)
+! JAPAN = -DJAPAN -DESCTOASCII=$(ESCTOJISLATIN) -DLENTOASCII=3 \
+!         -DLOCALE_SJIS=\"ja_JP.SJIS\" -DLOCALE_EUC=\"ja_JP.EUC\"
+! .endif
+  #				# JAPAN requires X11R5 and a Japanese env.
+  
+! DEBUG = -O2 -g
+  #DEBUG = -O2#			# do NOT define -O2 on DEC OSF/1 machines!
+  #DEBUG =
+  
+***************
+*** 115,121 ****
+  BSDIG_C	= -DBSD -DRABBITS -I/usr/X11/include -DFLOCK -DNOREGEX -Dbsdi -ansi 
+  NBSD_C	= -ansi -I/usr/X11R6/include -DBSD -DRABBITS -DNOLOCK -DNOREGEX\
+  	  -DNO_MOTIF
+! FBSD_C	= -ansi -I/usr/X11R6/include -DBSD -DNOLOCK -DNOREGEX -DRABBITS\
+  	  -DSTDLIBMALLOC
+  LINUX_C	= -I/usr/X11R6/include -D_POSIX_SOURCE -DNOLOCK -DLINUX
+  SVR4_C	= -DSVR4 -DSYSV -DOLDTZ -DUSERAND -DPID_T=long -DNOMSEP
+--- 121,129 ----
+  BSDIG_C	= -DBSD -DRABBITS -I/usr/X11/include -DFLOCK -DNOREGEX -Dbsdi -ansi 
+  NBSD_C	= -ansi -I/usr/X11R6/include -DBSD -DRABBITS -DNOLOCK -DNOREGEX\
+  	  -DNO_MOTIF
+! FBSD_C	= $(CFLAGS) -ansi -I$(X11BASE)/include -DBSD -DFLOCK -DPOSIX_REGEX -DRABBITS\
+! 	  -DSTDLIBMALLOC
+! OBSD_C	= $(CFLAGS) -ansi -I$(X11BASE)/include -DBSD -DFLOCK -DPOSIX_REGEX -DRABBITS\
+  	  -DSTDLIBMALLOC
+  LINUX_C	= -I/usr/X11R6/include -D_POSIX_SOURCE -DNOLOCK -DLINUX
+  SVR4_C	= -DSVR4 -DSYSV -DOLDTZ -DUSERAND -DPID_T=long -DNOMSEP
+***************
+*** 195,202 ****
+  BSDIG_L2= -L/usr/X11/lib -lc
+  NBSD_L1	= -L/usr/X11R6/lib -lXm -lXt -lX11
+  NBSD_L2	= -L/usr/X11R6/lib -lc
+! FBSD_L1	= -L/usr/X11R6/lib -lXm -lXt -lX11 -lXext
+! FBSD_L2	= -L/usr/X11R6/lib -lc
+  LINUX_L1= -L/usr/X11R6/lib -L/usr/lib/X11R6/lib -lSM -lXm -lXt -lX11 -lXpm -lc -lXext -lSM -lICE -lX11
+  LINUX_L2= -lc
+  SVR4_L1	= -lXm -lXt -lX11 -lgen -lsocket -lnsl
+--- 203,212 ----
+  BSDIG_L2= -L/usr/X11/lib -lc
+  NBSD_L1	= -L/usr/X11R6/lib -lXm -lXt -lX11
+  NBSD_L2	= -L/usr/X11R6/lib -lc
+! FBSD_L1	= -L$(X11BASE)/lib ${MOTIFLIB} -lXt -lX11 -lXext -lc
+! FBSD_L2	= -lc
+! OBSD_L1	= -L$(X11BASE)/lib ${MOTIFLIB} -lXt -lX11 -lXext -lc
+! OBSD_L2	= -lc
+  LINUX_L1= -L/usr/X11R6/lib -L/usr/lib/X11R6/lib -lSM -lXm -lXt -lX11 -lXpm -lc -lXext -lSM -lICE -lX11
+  LINUX_L2= -lc
+  SVR4_L1	= -lXm -lXt -lX11 -lgen -lsocket -lnsl
+***************
+*** 259,264 ****
+--- 269,275 ----
+  	@echo "  make bsdig     BSDI/386 with gcc"
+  	@echo "  make netbsd	NetBSD/i386 1.0A (maybe others too)"
+  	@echo "  make freebsd   FreeBSD 2.x"
++ 	@echo "  make openbsd   OpenBSD 2.x"
+  	@echo "  make svr4      SVR4 Using gcc"
+  	@echo "  make news4     Sony NEWS-OS4.x"
+  	@echo "  make news4g    Sony NEWS-OS4.x with gcc"
+***************
+*** 386,391 ****
+--- 397,405 ----
+  freebsd:
+  	env CF="$(FBSD_C)" L1F="$(FBSD_L1)" L2F="$(FBSD_L2)" MYCC=${CC} make all
+  
++ openbsd:
++ 	env CF="$(OBSD_C)" L1F="$(OBSD_L1)" L2F="$(OBSD_L2)" MYCC=${CC} make all
++ 
+  svr4:
+  	env CF="$(SVR4_C)" L1F="$(SVR4_L1)" L2F="$(SVR4_L2)" MYCC=gcc make all
+  
+***************
+*** 489,495 ****
+  	$(MYCC) $(DEBUG) $(CF) $(JAPAN) $(INCDIR) -c -DLIB=\"$(LIB)\" $<
+  
+  holiday.o: holiday.c $(MAKEFILE)
+! 	$(MYCC) $(DEBUG) $(CF) $(JAPAN) $(INCDIR) -DCPP_PATH=\"$(CPP_PATH)\" -c -DLIB=\"$(LIB)\" $<
+  
+  util.o: util.c $(MAKEFILE)
+  	$(MYCC) $(DEBUG) $(CF) $(JAPAN) $(INCDIR) -c -DPATH=\"$(LIB):$(DIR):$(HELP)\" $<
+--- 503,509 ----
+  	$(MYCC) $(DEBUG) $(CF) $(JAPAN) $(INCDIR) -c -DLIB=\"$(LIB)\" $<
+  
+  holiday.o: holiday.c $(MAKEFILE)
+! 	$(MYCC) $(DEBUG) $(CF) $(JAPAN) $(INCDIR) -DCPP_PATH=\"$(CPP_PATH)\" -c -DLIB=\"$(DOCS)\" $<
+  
+  util.o: util.c $(MAKEFILE)
+  	$(MYCC) $(DEBUG) $(CF) $(JAPAN) $(INCDIR) -c -DPATH=\"$(LIB):$(DIR):$(HELP)\" $<
+***************
+*** 520,550 ****
+  
+  #---------------------------------------------------------------
+  install:
+! 	cp plan $(DIR)
+! 	-rm -f $(DIR)/pland $(DIR)/notifier
+! 	cp pland notifier netplan ../misc/plan_cal.ps $(LIB)
+! 	-(test x$(JAPAN) != x && cp ../misc/plan_calSJ.ps $(LIB)) || exit 0
+! 	cp ../misc/plan.help $(HELP)
+! 	-strip $(DIR)/plan $(LIB)/pland $(LIB)/notifier $(LIB)/netplan
+! 	-chmod 755 $(DIR)/plan $(LIB)/pland $(LIB)/notifier $(LIB)/netplan
+! 	-chmod 644 $(HELP)/plan.help $(LIB)/plan_cal.ps
+! 	-(test x$(JAPAN) != x && chmod 644 $(LIB)/plan_calSJ.ps) || exit 0
+  	-mkdir $(LIB)/netplan.dir
+  	-chmod 700 $(LIB)/netplan.dir
+- 	-(test -x `which nroff` && nroff -man ../misc/plan.1 >../misc/plan.1cat) || exit 0
+- 	-(test -x `which nroff` && nroff -man ../misc/plan.4 >../misc/plan.4cat) || exit 0
+- 	-(test -x `which nroff` && nroff -man ../misc/netplan.1 >../misc/netplan.1cat) || exit 0
+  	-(test -d $(MAN)1 && cp ../misc/plan.1 $(MAN)1/plan.1) || exit 0
+  	-(test -d $(MAN)4 && cp ../misc/plan.4 $(MAN)4/plan.4) || exit 0
+  	-(test -d $(MAN)1 && cp ../misc/netplan.1 $(MAN)1/netplan.1) || exit 0
+! 	-(test -d $(CATMAN)1 && cp ../misc/plan.1cat $(CATMAN)1/plan.1) || exit 0
+! 	-(test -d $(CATMAN)4 && cp ../misc/plan.4cat $(CATMAN)4/plan.4) || exit 0
+! 	-(test -d $(CATMAN)1 && cp ../misc/netplan.1cat $(CATMAN)1/netplan.1) || exit 0
+! 	-(test -f ${HOME}/.holiday || cp ../holiday/holiday_german ${HOME}/.holiday) || exit 0
+! 	-(test `uname` = IRIX -o `uname` = IRIX64 && mkdir $$HOME/.icons) || exit 0
+! 	-(test `uname` = IRIX -o `uname` = IRIX64 && cp ../misc/Plan.icon $$HOME/.icons/Plan.icon) || exit 0
+! 	@echo ""
+! 	@echo "use ../holiday/* as templates for your ~/.holiday file"
+  
+  clean:
+  	-rm -f *.o
+--- 534,557 ----
+  
+  #---------------------------------------------------------------
+  install:
+! 	${INSTALL} -d $(DOCBASE)
+! 	${INSTALL} -d $(EXAMPLES)
+! 	${BSD_INSTALL_PROGRAM} pland $(DIR)
+! 	${BSD_INSTALL_PROGRAM} notifier netplan plan $(DIR)
+! 	${BSD_INSTALL_SCRIPT} ../misc/Killpland $(DIR)
+! 	${BSD_INSTALL_MAN} ../misc/plan.help ../misc/plan_cal.ps \
+! 	  ../misc/Monochrome ../misc/BlackWhite $(DOCS)
+! 	${BSD_INSTALL_SCRIPT} -c -m 755 ../misc/Mkdoc ../misc/Mkdoc.nawk $(DOCS)
+! 	-test x$(JAPAN) != x && ${BSD_INSTALL_MAN} ../misc/plan_calSJ.ps $(DOCS)
+  	-mkdir $(LIB)/netplan.dir
+  	-chmod 700 $(LIB)/netplan.dir
+  	-(test -d $(MAN)1 && cp ../misc/plan.1 $(MAN)1/plan.1) || exit 0
+  	-(test -d $(MAN)4 && cp ../misc/plan.4 $(MAN)4/plan.4) || exit 0
+  	-(test -d $(MAN)1 && cp ../misc/netplan.1 $(MAN)1/netplan.1) || exit 0
+! 	${BSD_INSTALL_MAN} ../README $(DOCBASE)
+! 	${BSD_INSTALL_DATA} ../holiday/holiday_* $(EXAMPLES)
+! 	${ECHO} ""
+! 	${ECHO} "Use " $(EXAMPLES)"/holiday/* as templates for your ~/.holiday file"
+  
+  clean:
+  	-rm -f *.o
