@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	memchan
-PORTVERSION=	2.1p1
+PORTVERSION=	2.1p2
 CATEGORIES=	devel tcl83
 MASTER_SITES=	http://www.oche.de/~akupries/soft/memchan/download/
 PKGNAMEPREFIX=	tcl-
 DISTNAME=	memchan${PORTVERSION}
 
-MAINTAINER=     mi@aldan.algebra.com
+MAINTAINER=	mi@aldan.algebra.com
 
 BUILD_DEPENDS=	tclsh${TCLV}:${PORTSDIR}/lang/tcl${TCLVND}
 
@@ -39,8 +39,8 @@ DDIR=		${PREFIX}/lib/tcl${TCLV}/Trf
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/tcl${TCLV}/memchan
-	${INSTALL_DATA} ${WRKSRC}/libmemchan${TCLVND}.so.1 ${FILESDIR}/pkgIndex.tcl \
-		${PREFIX}/lib/tcl${TCLV}/memchan
+	${INSTALL_DATA} ${WRKSRC}/libmemchan.so.1 ${PREFIX}/lib/
+	${INSTALL_DATA} ${WRKSRC}/pkgIndex.tcl ${PREFIX}/lib/tcl${TCLV}/memchan
 .ifndef(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/memchan
 	${CP} -pR ${WRKSRC}/../doc/html/* ${PREFIX}/share/doc/memchan/
