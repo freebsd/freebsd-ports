@@ -5653,6 +5653,7 @@ mod_throttle	ports/www/mod_throttle
 mod_ticket	ports/www/mod_ticket
 mod_tidy	ports/www/mod_tidy
 mod_traf_thief	ports/www/mod_traf_thief
+mod_transform	ports/www/mod_transform
 mod_trigger	ports/www/mod_trigger
 mod_tsunami	ports/www/mod_tsunami
 mod_uid		ports/www/mod_uid
