@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libopendaap
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
 CATEGORIES=	devel net
 MASTER_SITES=	http://crazney.net/programs/itunes/files/
 
@@ -23,10 +23,10 @@ CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}"
 
 INSTALLS_SHLIB=	yes
 
+pre-everything::
+	@${ECHO_MSG} "This version does NOT work with iTunes 4.5"
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|-DNOT_HAVE_SA_LEN||' \
-		${WRKSRC}/mDNS/Makefile.am \
-		${WRKSRC}/mDNS/Makefile.in
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' \
 		${WRKSRC}/Makefile.am \
 		${WRKSRC}/Makefile.in
