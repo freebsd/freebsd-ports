@@ -8,7 +8,7 @@
 
 PORTNAME=	sqlite
 PORTVERSION=	2.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.hwaci.com/sw/sqlite/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -21,6 +21,7 @@ USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
 USE_REINPLACE=  YES
 CONFIGURE_ARGS= --prefix=${PREFIX} --with-hints=freebsd.hints
+ALL_TARGET=	all libtclsqlite.la
 INSTALLS_SHLIB=	YES
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -51,7 +52,7 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${FILESDIR}/example.tcl ${DOCSDIR}
 .for file in ${DOCFILES}
-	@${INSTALL_DATA} ${WRKSRC}/doc//${file} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
 .endfor
 .endif
 

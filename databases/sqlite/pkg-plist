@@ -3,11 +3,11 @@ include/sqlite.h
 lib/libsqlite.a
 lib/libsqlite.la
 lib/libsqlite.so
-lib/libsqlite.so.0
-lib/sqlite/libtclsqlite.so.0
-lib/sqlite/libtclsqlite.so
-lib/sqlite/libtclsqlite.la
+lib/libsqlite.so.2
 lib/sqlite/libtclsqlite.a
+lib/sqlite/libtclsqlite.la
+lib/sqlite/libtclsqlite.so
+lib/sqlite/libtclsqlite.so.2
 lib/sqlite/pkgIndex.tcl
 @dirrm lib/sqlite
 %%PORTDOCS%%share/doc/sqlite/arch.html
@@ -16,6 +16,7 @@ lib/sqlite/pkgIndex.tcl
 %%PORTDOCS%%share/doc/sqlite/changes.html
 %%PORTDOCS%%share/doc/sqlite/crosscompile.html
 %%PORTDOCS%%share/doc/sqlite/download.html
+%%PORTDOCS%%share/doc/sqlite/example.tcl
 %%PORTDOCS%%share/doc/sqlite/faq.html
 %%PORTDOCS%%share/doc/sqlite/index.html
 %%PORTDOCS%%share/doc/sqlite/lang.html
@@ -27,5 +28,4 @@ lib/sqlite/pkgIndex.tcl
 %%PORTDOCS%%share/doc/sqlite/sqlite.html
 %%PORTDOCS%%share/doc/sqlite/tclsqlite.html
 %%PORTDOCS%%share/doc/sqlite/vdbe.html
-%%PORTDOCS%%share/doc/sqlite/example.tcl
 %%PORTDOCS%%@dirrm share/doc/sqlite
