@@ -813,3 +813,4 @@ x11-wm/mosfet-liquid||2004-02-13|obsolete
 mail/mozilla-thunderbird|mail/thunderbird|2004-02-14|Name change to fit the project
 devel/linux-p4v|devel/p4v|2004-02-14|FreeBSD native version of port now available
 mail/p5-Mail-SpamAssassin-snapshot||2004-02-14|No longer needed
+lang/squeak2|lang/squeak3|2004-02-17|Outdated, obsolete and no longer needed
