@@ -1,0 +1,6 @@
+************************* WARNING ***************************
+C-client has been built with third-party maildir support.
+This support should be considered expermental; use at your
+own risk.
+************************* WARNING ***************************
+

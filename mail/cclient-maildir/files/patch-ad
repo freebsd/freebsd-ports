@@ -1,0 +1,42 @@
+--- src/osdep/unix/maildir.h.orig	Mon Jul  3 22:51:43 2000
++++ src/osdep/unix/maildir.h	Mon Jul  3 22:52:39 2000
+@@ -52,5 +52,5 @@
+ char *maildir_file (char *dst,char *name);
+ void maildir_copynew (const char *mailbox);
+ int maildir_select (struct direct *name);
+-int maildir_namesort (struct direct **d1,struct direct **d2);
++int maildir_namesort (const void *d1,const void *d2);
+ void maildir_listwork(char *name, MAILSTREAM *stream, char *s2, char *subdir, int flag);
+--- src/osdep/unix/maildir.c.orig	Mon Jul  3 22:53:24 2000
++++ src/osdep/unix/maildir.c	Mon Jul  3 22:57:50 2000
+@@ -417,7 +417,7 @@
+ 
+       mail_exists(stream, i+1);
+ 				/* if newly seen, add to list */
+-      (elt = mail_elt (stream, i + 1))->maildirp = (long) cpystr (names[i]->d_name);
++      (elt = mail_elt (stream, i + 1))->maildirp = cpystr (names[i]->d_name);
+        elt->valid = T;
+ 
+       /* grab the flags */
+@@ -540,9 +540,10 @@
+   return NIL;
+ }
+ 
+-int maildir_namesort (struct direct **d1,struct direct **d2)
++int maildir_namesort (const void *d1,const void *d2)
+ {
+-  return strcmp ((*d1)->d_name,(*d2)->d_name);
++  return strcmp ((*(struct direct **) d1)->d_name,
++		 (*(struct direct **) d2)->d_name);
+ }
+ 
+ 
+@@ -786,7 +787,7 @@
+   }
+                                 /* update the file name in cache */
+   fs_give ((void **) &elt->maildirp);
+-  elt->maildirp = (long) cpystr (fn);
++  elt->maildirp = cpystr (fn);
+ 
+   /* fix the UID on the file */
+   tbuf.actime = elt->private.uid;
