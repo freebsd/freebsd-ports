@@ -12,12 +12,11 @@ MASTER_SITES=	http://www.geocities.com/SiliconValley/Vista/2471/files/
 DISTNAME=	wmcdplay-1.0-beta1
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	clkao@CirX.ORG
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/wmcdplay
 
 USE_IMAKE=	yes
 USE_XPM=	yes
-NO_INSTALL_MANPAGES=	yes
 
 .include <bsd.port.mk>
