@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ptex
-PORTVERSION=	2.1.10
+PORTVERSION=	2.1.11
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/tetex/
 PKGNAMEPREFIX=	ja-
@@ -56,7 +56,7 @@ MAN1=				access.1 allcm.1 allneeded.1 amstex.1 \
 
 TETEX_SRC=	teTeX-src-1.0.7.tar.gz
 TETEX_TEXMF=	teTeX-texmf-1.0.2.tar.gz
-PTEX_TEXMF=	ptex-texmf-1.8.tar.gz
+PTEX_TEXMF=	ptex-texmf-1.10.tar.gz
 LIBPNG_PREFIX?=	${LOCALBASE}
 LIBWWW_PREFIX?=	${LOCALBASE}
 TEXMF_TREE=	${PREFIX}/share/texmf
