@@ -256,6 +256,7 @@
     SUBDIR += p5-GD-Graph
     SUBDIR += p5-GD-Graph3d
     SUBDIR += p5-GD-TextUtil
+    SUBDIR += p5-GD2
     SUBDIR += p5-Gimp
     SUBDIR += p5-GraphViz
     SUBDIR += p5-GraphViz-Data-Structure
