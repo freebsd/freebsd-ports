@@ -7,6 +7,7 @@
 
 PORTNAME=	heyu
 PORTVERSION=	1.35
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://heyu.tanj.com/
 DISTNAME=	x10_heyu
@@ -15,14 +16,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	plambert@plambert.net
 COMMENT=	Control a CM11A interface from the command line
 
-BROKEN=		"Checksum mismatch"
-
 IS_INTERACTIVE=	yes
 ALL_TARGET=	heyu
 WRKSRC=		${WRKDIR}/heyu.dir
 USE_REINPLACE=	yes
 
-MAN1=		heyu.1
+MAN1=		heyu.1 heyuhelper.1
 MAN5=		x10config.5 \
 		x10sched.5
 
@@ -30,7 +29,7 @@ do-configure:
 	${REINPLACE_CMD} 's|/usr/local|${PREFIX}|' ${WRKSRC}/Makefile
 
 pre-patch:
-	(cd ${WRKSRC} && ./Configure)
+	(cd ${WRKSRC} && ./Configure freebsd)
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/heyu
