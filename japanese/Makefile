@@ -164,6 +164,7 @@
     SUBDIR += mule-sj3+wnn6
     SUBDIR += mule-wnn6
     SUBDIR += mutt
+    SUBDIR += mutt-devel
     SUBDIR += mypaedia-fpw
     SUBDIR += mypaedia-fpw-package
     SUBDIR += namazu

@@ -1,0 +1,10 @@
+--- Makefile.am.orig	Wed Aug 30 18:59:43 2000
++++ Makefile.am	Sun Sep 24 04:58:37 2000
+@@ -137,7 +137,6 @@
+ 	fi
+ 
+ install-data-local: Muttrc
+-	$(srcdir)/mkinstalldirs $(DESTDIR)$(sharedir)
+ 	$(srcdir)/mkinstalldirs $(DESTDIR)$(sysconfdir)
+ 	-if [ -f $(DESTDIR)$(sharedir)/Muttrc ] ; then \
+ 		mv $(DESTDIR)$(sharedir)/Muttrc $(DESTDIR)$(sysconfdir) ; \

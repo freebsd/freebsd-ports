@@ -1,10 +1,11 @@
---- Makefile.am.orig	Sat Jul 29 20:11:33 2000
-+++ Makefile.am	Sat Jul 29 20:15:54 2000
-@@ -122,7 +122,6 @@
- 	fi
+--- gnupgparse.c.orig	Thu May 25 04:18:32 2000
++++ gnupgparse.c	Sun Sep 24 04:57:10 2000
+@@ -44,7 +44,7 @@
+ #include "mutt.h"
+ #include "pgp.h"
+ #include "charset.h"
+-#include "iconv.h"
++#include "giconv.h"
  
- install-data-local: Muttrc
--	$(srcdir)/mkinstalldirs $(DESTDIR)$(sharedir)
- 	$(srcdir)/mkinstalldirs $(DESTDIR)$(sysconfdir)
- 	-if [ -f $(DESTDIR)$(sharedir)/Muttrc ] ; then \
- 		mv $(DESTDIR)$(sharedir)/Muttrc $(DESTDIR)$(sysconfdir) ; \
+ /* for hexval */
+ #include "mime.h"

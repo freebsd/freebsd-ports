@@ -1,0 +1,47 @@
+--- configure.in.orig	Sun Sep 24 04:54:05 2000
++++ configure.in	Sun Sep 24 04:54:50 2000
+@@ -416,14 +416,14 @@
+     [ mutt_cv_func_iconv=no
+       mutt_cv_lib_iconv=no
+       AC_TRY_LINK([#include <stdlib.h>
+-#include <iconv.h>],
++#include <giconv.h>],
+ 	[iconv_t cd = iconv_open("",""); iconv(cd,NULL,NULL,NULL,NULL); iconv_close(cd);],
+ 	mutt_cv_func_iconv=yes)
+       if test "$mutt_cv_func_iconv" = no; then
+ 	mutt_save_LIBS="$LIBS"
+-	LIBS="$LIBS -liconv"
++	LIBS="$LIBS -lgiconv"
+ 	AC_TRY_LINK([#include <stdlib.h>
+-#include <iconv.h>],
++#include <giconv.h>],
+ 	  [iconv_t cd = iconv_open("",""); iconv(cd,NULL,NULL,NULL,NULL); iconv_close(cd);],
+ 	  mutt_cv_lib_iconv=yes
+ 	  mutt_cv_func_iconv=yes)
+@@ -434,7 +434,7 @@
+   AC_MSG_ERROR(Unable to find iconv library)
+ fi
+ if test "$mutt_cv_lib_iconv" = yes; then
+-  LIBICONV="-liconv"
++  LIBICONV="-lgiconv"
+ fi
+ AC_DEFINE(HAVE_ICONV)
+ fi
+@@ -448,7 +448,7 @@
+ 	mutt_save_LIBS="$LIBS"
+ 	LIBS="$LIBS $LIBICONV"
+ 	AC_TRY_RUN([
+-#include <iconv.h>
++#include <giconv.h>
+ int main()
+ {
+   iconv_t cd;
+@@ -479,7 +479,7 @@
+ 	mutt_save_LIBS="$LIBS"
+ 	LIBS="$LIBS $LIBICONV"
+ 	AC_TRY_RUN([
+-#include <iconv.h>
++#include <giconv.h>
+ #include <string.h>
+ int main()
+ {
