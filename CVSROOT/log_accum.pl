@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/perl -w
 #
 # $FreeBSD$
 #
@@ -14,6 +14,10 @@
 #
 # Extensively hacked for FreeBSD by Peter Wemm <peter@netplex.com.au>,
 #  with parts stolen from Greg Woods <woods@most.wierd.com> version.
+#
+# Lightly hacked by Mark Murray to allow it to work unmodified
+#  on both the master repository (freefall) and the international
+#  crypto repository (internat).
 #
 
 require 5.003;		# might work with older perl5
@@ -104,14 +108,15 @@ sub read_line {
 }
 
 sub read_logfile {
-    local(@text);
+    local(@text) = ();
     local($filename, $leader) = @_;
-    open(FILE, "<$filename");
-    while (<FILE>) {
-	chop;
-	push(@text, $leader.$_);
-    }
-    close(FILE);
+    open(FILE, "<$filename") and do {
+	while (<FILE>) {
+	    chop;
+	    push(@text, $leader.$_);
+	}
+	close(FILE);
+    };
     @text;
 }
 
@@ -330,30 +335,24 @@ sub do_changes_file {
 
 sub mail_notification {
     local(@text) = @_;
-    local($line, $word, $subjlines, $subjwords, @mailaddrs, $host, $dom);
-    local(%unique);
+    local($line, $word, $subjlines, $subjwords, @mailaddrs);
+#   local(%unique);
 
-    $host = hostname();
-    if ($host =~ /\.freebsd\.org$/i) {
-	$dom = '@FreeBSD.org';
-    } else {
-	$dom = '';
-    }
+#   %unique = ();
 
     print "Mailing the commit message...\n";
 
-    %unique = ();
-
     @mailaddrs = &read_logfile("$MAIL_FILE.$id", "");
 
-    if ($debug) {
-	open(MAIL, "| /usr/local/bin/mailsend -H peter");
+    if ($debug or !$freebsd) {
+	open(MAIL, "| /usr/local/bin/mailsend -H $owner$dom");
     } else {
-	open(MAIL, "| /usr/local/bin/mailsend -H cvs-committers cvs-all");
+	open(MAIL, "| /usr/local/bin/mailsend -H cvs-committers$dom cvs-all$dom");
     }
 
-#    print(MAIL 'To: cvs-committers' . $dom . ", cvs-all" . $dom);
 # This is turned off since the To: lines go overboard.
+# - but keep it for the time being in case we do something like cvs-stable
+#    print(MAIL 'To: cvs-committers' . $dom . ", cvs-all" . $dom);
 #    foreach $line (@mailaddrs) {
 #	next if ($unique{$line});
 #	$unique{$line} = 1;
@@ -404,6 +403,22 @@ sub mail_notification {
 # Setup environment
 #
 umask (002);
+$host = hostname();
+if ($host =~ /^(freefall|internat)\.freebsd\.org$/i) {
+    $freebsd = 1;
+    $dom = '@FreeBSD.org';
+    if ($1 =~ /freefall/i) {
+	$crypto = '';
+	$owner = 'peter';
+    } else {
+	$crypto = 1;
+	$owner = 'markm';
+    }
+} else {
+    $freebsd = $crypto = '';
+    $owner = 'postmaster';  # Change this!!!
+    $dom = ''; # Change this!!
+}
 
 #
 # Initialize basic variables
@@ -442,6 +457,10 @@ if ($ARGV[0] =~ /New directory/) {
     @text = ();
     push(@text, $header);
     push(@text, "");
+    if ($freebsd and $crypto) {
+	push(@text, "FreeBSD International Crypto Repository");
+	push(@text, "");
+    }
     push(@text, "  ".$ARGV[0]);
     &do_changes_file(@text);
     #&mail_notification(@text);
@@ -459,6 +478,10 @@ if ($ARGV[0] =~ /Imported sources/) {
     @text = ();
     push(@text, $header);
     push(@text, "");
+    if ($freebsd and $crypto) {
+	push(@text, "FreeBSD International Crypto Repository");
+	push(@text, "");
+    }
 
     push(@text, "  ".$ARGV[0]);
     &do_changes_file(@text);
@@ -600,6 +623,10 @@ $header = &build_header();
 @text = ();
 push(@text, $header);
 push(@text, "");
+if ($freebsd and $crypto) {
+    push(@text, "FreeBSD International Crypto Repository");
+    push(@text, "");
+}
 for ($i = 0; ; $i++) {
     last if (! -e "$LOG_FILE.$i.$id");
     @lines = &read_logfile("$CHANGED_FILE.$i.$id", "");
