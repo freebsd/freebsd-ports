@@ -1,15 +1,15 @@
 # New ports collection makefile for:	wu-ftpd
-# Version required:     2.4.2-beta-14
+# Version required:     2.4.2-beta-15
 # Date created:		18 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.13 1997/04/29 02:48:10 asami Exp $
+# $Id: Makefile,v 1.14 1997/09/09 22:59:50 ache Exp $
 #
 # REMINDER: to use ftpaccess(5) you need to specify -a in command line,
 # it is changed from previous versions
 
-DISTNAME=       wu-ftpd-2.4.2-beta-14
-PKGNAME=        wu-ftpd-2.4.2b14
+DISTNAME=       wu-ftpd-2.4.2-beta-15
+PKGNAME=        wu-ftpd-2.4.2b15
 CATEGORIES=	net
 # AUSCERT recommendation
 MASTER_SITES=   ftp://ftp.academ.com/pub/wu-ftpd/private/
