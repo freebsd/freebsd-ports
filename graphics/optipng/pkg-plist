@@ -8,3 +8,4 @@ bin/optipng
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/USAGE
 %%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
