@@ -49,8 +49,10 @@ EMACS_LOADLIBS=	--load=texinfmt.el --load=PORT_TEXIFMT.MK
 
 .include <bsd.port.pre.mk>
 
+.if defined(PACKAGE_BUILDING)
 .if ${OSVERSION} < 500000
 IGNORE=		is broken: hangs during build
+.endif
 .endif
 
 post-extract:
