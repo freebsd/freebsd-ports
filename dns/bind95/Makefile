@@ -12,16 +12,18 @@
 # release you can generally build it cleanly from the source - Doug
 
 PORTNAME=	bind9
-PORTVERSION=	9.2.1rc1
+PORTVERSION=	9.2.1.rc1
 CATEGORIES=	net ipv6
-MASTER_SITES=	ftp://ftp.isc.org/isc/bind9/${PORTVERSION}/ \
-		ftp://ftp.nominum.com/pub/isc/bind9/${PORTVERSION}/ \
-		ftp://ftp.nerdc.ufl.edu/pub/mirrors/ftp.isc.org/isc/bind9/${PORTVERSION}/ \
-		ftp://ftp.sunet.se/pub/network/isc/bind9/${PORTVERSION}/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/bind9/${PORTVERSION}/,}
+MASTER_SITES=	ftp://ftp.isc.org/isc/bind9/${ISCVERSION}/ \
+		ftp://ftp.nominum.com/pub/isc/bind9/${ISCVERSION}/ \
+		ftp://ftp.nerdc.ufl.edu/pub/mirrors/ftp.isc.org/isc/bind9/${ISCVERSION}/ \
+		ftp://ftp.sunet.se/pub/network/isc/bind9/${ISCVERSION}/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/bind9/${ISCVERSION}/,}
 DISTFILES=	bind-9.2.1rc1.tar.gz
 
 MAINTAINER=	DougB@FreeBSD.org
+
+ISCVERSION=	9.2.1rc1
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps
@@ -78,7 +80,7 @@ MAN8=	dnssec-keygen.8 dnssec-makekeyset.8 dnssec-signkey.8 dnssec-signzone.8 \
 	lwresd.8 named-checkconf.8 named-checkzone.8 named.8 nsupdate.8 \
 	rndc-confgen.8 rndc.8
 
-WRKSRC=	${WRKDIR}/bind-${PORTVERSION}
+WRKSRC=	${WRKDIR}/bind-${ISCVERSION}
 DIR=	${WRKSRC}/bin/
 post-patch:
 .for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.8 \
