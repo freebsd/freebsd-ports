@@ -1,0 +1,34 @@
+--- pop_init.c.orig	Thu Jul  9 19:44:07 1998
++++ pop_init.c	Mon Jul 12 22:56:01 1999
+@@ -237,4 +237,4 @@
+                     pop_log(p,POP_PRIORITY,
+-                        "Unable to open trace file \"%s\", err = %d",
+-                            optarg,errno);
++                        "Unable to open trace file \"%s\": ",
++                            optarg, strerror(errno));
+                     exit(1);
+@@ -268,3 +268,4 @@
+         pop_log(p,POP_PRIORITY,
+-            "Unable to obtain socket and address of client, err = %d",errno);
++            "Unable to obtain socket and address of client: %s",
++		strerror(errno));
+         exit(1);
+@@ -283,4 +284,4 @@
+         pop_log(p,POP_PRIORITY,
+-            "(v%s) Unable to get canonical name of client, err = %d",
+-	    VERSION, errno);
++            "(v"VERSION") Unable to get canonical name of client %s: %s",
++	    p->ipaddr, hstrerror(h_errno));
+         p->client = p->ipaddr;
+@@ -362,3 +363,4 @@
+         pop_log(p,POP_PRIORITY,
+-            "Unable to open communication stream for input, err = %d",errno);
++            "Unable to open communication stream for input: ",
++		strerror(errno));
+         exit (1);
+@@ -369,3 +371,4 @@
+         pop_log(p,POP_PRIORITY,
+-            "Unable to open communication stream for output, err = %d",errno);
++            "Unable to open communication stream for output: ",
++		strerror(errno));
+         exit (1);
