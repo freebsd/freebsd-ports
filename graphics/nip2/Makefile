@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nip
-PORTVERSION=	7.8.12
-PORTREVISION=	1
+PORTVERSION=	7.8.14
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/vips-7.8/
 
@@ -19,6 +18,7 @@ LIB_DEPENDS=	vips.0:${PORTSDIR}/graphics/vips \
 		gtkextra.17:${PORTSDIR}/x11-toolkits/gtkextra
 
 USE_GMAKE=	yes
+USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
 USE_LIBTOOL_VER=13
 USE_XLIB=	yes
