@@ -21,6 +21,23 @@ USE_REINPLACE=	yes
 
 MANLANG=	"" fr
 
+.ifndef CUPS_OVERWRITE_BASE
+PKGINSTALL=	nonexistent
+PKGDEINSTALL=	nonexistent
+PKGMESSAGE=	nonexistent
+.endif
+
+pre-everything::
+.ifndef CUPS_OVERWRITE_BASE
+	@${ECHO_MSG} "***"
+	@${ECHO_MSG} "You can define CUPS_OVERWRITE_BASE=yes in your"
+	@${ECHO_MSG} "make.conf to remove base system lpr tools from"
+	@${ECHO_MSG} "PATH search. In this case it is recommended to"
+	@${ECHO_MSG} "also define NO_LPR=yes, to not write base lpr"
+	@${ECHO_MSG} "binaries during next make world"
+	@${ECHO_MSG} "***"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/SILENT/d' \
 		${WRKSRC}/Makedefs.in
@@ -30,8 +47,10 @@ post-patch:
 post-install:
 	${FIND} ${PREFIX}/man/cat* -type l -name '*.0' -delete
 	${FIND} ${PREFIX}/man/fr/cat* -type l -name '*.0' -delete
+.ifdef CUPS_OVERWRITE_BASE
 	${SH} ${PKGINSTALL} placeholder POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
+.endif
 
 .include "${.CURDIR}/../../print/cups/Makefile.common"
 .include <bsd.port.pre.mk>
