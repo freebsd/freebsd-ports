@@ -1,5 +1,9 @@
+bin/getbpsf
+bin/uc2win
+bin/win2mb
 bin/zhcon
 etc/zhcon.conf
+etc/zhcon.conf.sample
 lib/zhcon/font/asc12.bpsf
 lib/zhcon/font/asc12x.bpsf
 lib/zhcon/font/asc14.bpsf
@@ -7,7 +11,6 @@ lib/zhcon/font/asc14b.bpsf
 lib/zhcon/font/asc16.bpsf
 lib/zhcon/font/asc24.bpsf
 lib/zhcon/font/big5-12-ming.bpsf
-lib/zhcon/font/big5-16-ming.bpsf
 lib/zhcon/font/big5-16.bpsf
 lib/zhcon/font/gb-16.bpsf
 lib/zhcon/font/gb-24-kai.bpsf
@@ -16,7 +19,7 @@ lib/zhcon/font/hzk12.bpsf
 lib/zhcon/font/hzk14.bpsf
 lib/zhcon/font/hzk16.bpsf
 lib/zhcon/font/jis-16.bpsf
-lib/zhcon/font/kscm-16.bpsf
+lib/zhcon/font/ksc-16.bpsf
 lib/zhcon/input/big5-ary30.mb
 lib/zhcon/input/big5-cj.mb
 lib/zhcon/input/big5-liu5.mb
@@ -36,18 +39,10 @@ lib/zhcon/input/winpy.mb
 lib/zhcon/input/winsp.mb
 lib/zhcon/input/winzm.mb
 share/locale/ja/LC_MESSAGES/zhcon.mo
-share/locale/kr/LC_MESSAGES/zhcon.mo
+share/locale/ko/LC_MESSAGES/zhcon.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/zhcon.mo
 share/locale/zh_CN.GBK/LC_MESSAGES/zhcon.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/zhcon.mo
-@dirrm share/locale/zh_TW.Big5/LC_MESSAGES
-@dirrm share/locale/zh_TW.Big5
-@dirrm share/locale/zh_CN.GBK/LC_MESSAGES
-@dirrm share/locale/zh_CN.GBK
-@dirrm share/locale/zh_CN.GB2312/LC_MESSAGES
-@dirrm share/locale/zh_CN.GB2312
-@dirrm share/locale/kr/LC_MESSAGES
-@dirrm share/locale/kr
 @dirrm lib/zhcon/input
 @dirrm lib/zhcon/font
 @dirrm lib/zhcon
