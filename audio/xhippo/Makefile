@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	xhippo
-PORTVERSION=	2.1
+PORTVERSION=	2.4
 CATEGORIES=	audio
-MASTER_SITES=	http://zenchaos.netpedia.net/software/
+MASTER_SITES=   http://zenchaos.netpedia.net/software/ \
+		http://www.us-lot.org/~azz/xhippo/
 
 MAINTAINER=	rod@zort.on.ca
 
@@ -22,12 +23,10 @@ CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 USE_XLIB=	yes
 
 post-install:
-	@if [ ! -f ${PREFIX}/etc/xhippo.config ]; then \
-		${INSTALL_SCRIPT} ${WRKSRC}/xhippo.config \
-		    ${PREFIX}/etc ; \
-	fi
-	${INSTALL_SCRIPT} ${WRKSRC}/xhippo.config \
-		${PREFIX}/etc/xhippo.config.default
+	${INSTALL_DATA} ${WRKSRC}/xhippo.config ${PREFIX}/etc/xhippo.config.default
+.if !exists(${PREFIX}/etc/xhippo.config)
+	${CP} ${PREFIX}/etc/xhippo.config.default ${PREFIX}/etc/xhippo.config
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
