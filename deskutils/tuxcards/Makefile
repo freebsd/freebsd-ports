@@ -8,7 +8,7 @@
 PORTNAME=	tuxcards
 PORTVERSION=	0.8
 PORTREVISION=	1
-CATEGORIES=	misc deskutils
+CATEGORIES=	deskutils
 MASTER_SITES=	http://www.arved.de/bsd/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-ohneCactus
 
