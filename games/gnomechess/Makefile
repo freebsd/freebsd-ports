@@ -12,7 +12,7 @@ CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-chess
 
-MAINTAINER=	reg@freebsd.org
+MAINTAINER=	reg@FreeBSD.org
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 BUILD_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore \

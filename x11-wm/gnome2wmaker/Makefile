@@ -10,7 +10,7 @@ DISTNAME=	gnome2wmaker-1.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ulli.linuxbox.com/gnome2wmaker/
 
-MAINTAINER=     reg@freebsd.org
+MAINTAINER=     reg@FreeBSD.org
 
 BUILD_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
 RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore \
