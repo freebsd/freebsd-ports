@@ -7004,6 +7004,7 @@ ruby-slang	ports/devel/ruby-slang
 ruby-smf	ports/audio/ruby-smf
 ruby-snmp	ports/net/ruby-snmp
 ruby-soap	ports/net/ruby-soap
+ruby-spread	ports/net/ruby-spread
 ruby-sqlrelay	ports/databases/ruby-sqlrelay
 ruby-svg	ports/graphics/ruby-svg
 ruby-sysvipc	ports/devel/ruby-sysvipc
