@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	balsa
-PORTVERSION= 	0.8.1
+PORTVERSION= 	0.9.0
 CATEGORIES=	mail gnome
 MASTER_SITES=	ftp://ftp.newton.cx/pub/balsa/ \
 		http://www.theochem.kth.se/~pawsa/balsa/
 
 MAINTAINER=	ports@FreeBSD.org
 
-RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 		PropList.2:${PORTSDIR}/devel/libPropList
+RUN_DEPENDS=	gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
