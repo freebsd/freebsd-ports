@@ -42,67 +42,8 @@ etc/rc.d/xemacs21.sh
 @exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/etc/toolbar
 @exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/etc/vm
 @exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/etc/w3
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/apel
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/cl
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/efs
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/egg
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/auctex/style
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/bytecomp
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/calendar
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/cc-mode
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/comint
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/custom
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/dired
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/edebug
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/ediff
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/electric
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/emulators
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/energize
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/eos
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/epoch
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/eterm
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/games
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/gnats
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/gnus
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/hm--html-menus
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/hyperbole/kotl
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/ilisp
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/iso
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/its
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/language
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/leim/quail
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/locale/ja
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/mailcrypt
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/mel
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/mh-e
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/modes
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/mu
 @exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/mule
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/ns
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/oobr/tree-nx/English.lproj/DocWindow.nib
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/oobr/tree-nx/English.lproj/InfoPanel.nib
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/oobr/tree-nx/English.lproj/TreeView.nib
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/oobr/tree-x
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/packages
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/pcl-cvs
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/prim
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/psgml
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/quail
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/rmail
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/skk
 @exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/term
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/sunpro
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/tl
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/tm
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/tooltalk
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/url
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/utils
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/viper
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/vm
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/vms
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/w3
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/w32
-@exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/lisp/x11
 @exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%
 @exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/info
 @exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%
@@ -1071,74 +1012,8 @@ lib/xemacs-%%XEMACS_VER%%/info/xemacs.info-9
 @dirrm lib/xemacs-%%XEMACS_VER%%/etc/vm
 @dirrm lib/xemacs-%%XEMACS_VER%%/etc/w3
 @dirrm lib/xemacs-%%XEMACS_VER%%/etc
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/apel
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/cl
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/efs
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/egg
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/auctex/style
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/auctex
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/bytecomp
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/calendar
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/cc-mode
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/comint
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/custom
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/dired
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/edebug
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/ediff
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/electric
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/emulators
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/energize
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/eos
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/epoch
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/eterm
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/games
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/gnats
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/gnus
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/hm--html-menus
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/hyperbole/kotl
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/hyperbole
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/ilisp
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/iso
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/its
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/language
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/leim/quail
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/leim
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/locale/ja
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/locale
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/mailcrypt
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/mel
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/mh-e
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/modes
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/mu
 @dirrm lib/xemacs-%%XEMACS_VER%%/lisp/mule
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/ns
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/oobr/tree-nx/English.lproj/DocWindow.nib
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/oobr/tree-nx/English.lproj/InfoPanel.nib
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/oobr/tree-nx/English.lproj/TreeView.nib
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/oobr/tree-nx/English.lproj
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/oobr/tree-nx
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/oobr/tree-x
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/oobr
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/packages
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/pcl-cvs
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/prim
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/psgml
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/quail
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/rmail
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/skk
 @dirrm lib/xemacs-%%XEMACS_VER%%/lisp/term
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/sunpro
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/tl
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/tm
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/tooltalk
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/url
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/utils
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/viper
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/vm
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/vms
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/w3
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/w32
-@dirrm lib/xemacs-%%XEMACS_VER%%/lisp/x11
 @dirrm lib/xemacs-%%XEMACS_VER%%/lisp
 @dirrm lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%
 @dirrm lib/xemacs-%%XEMACS_VER%%/info

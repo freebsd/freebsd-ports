@@ -13,7 +13,7 @@ MASTER_SITES=	\
 		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/xemacs-${XEMACS_REL}/ \
 		ftp://ftp.lab.kdd.co.jp/xemacs/xemacs-${XEMACS_REL}/ \
 		ftp://ftp.th-darmstadt.de/pub/editors/xemacs/xemacs-${XEMACS_REL}/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-elc${EXTRACT_SUFX} ${DISTNAME}-info${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}a${EXTRACT_SUFX} ${DISTNAME}-elc${EXTRACT_SUFX} ${DISTNAME}-info${EXTRACT_SUFX}
 
 MAINTAINER?=	gj@FreeBSD.org
 
@@ -38,11 +38,12 @@ CONFIGURE_ARGS?=${XEMACS_ARCH} --prefix=${PREFIX} \
 		--with-clash-detection \
 		--lockdir=/var/run/emacs/lock \
 		--with-sound=native \
+		--with-session=yes \
 		--site-includes=${PREFIX}/include \
 		--site-libraries=${PREFIX}/lib \
-		--with-session=yes \
 		--with-png=yes \
 		--with-tiff=yes \
+		--with-site-lisp \
 		${WITH_XFACE} ${WITH_DIALOGS} ${WITH_OFFIX}
 MAKE_ARGS=	prefix=${PREFIX}
 .if !defined(MULE_SLAVE)
@@ -92,6 +93,10 @@ post-install::
 # ``make install'' does not set the permissions like pkg_add does.
 	${MKDIR} /var/run/emacs/lock
 	${CHMOD} 1777 /var/run/emacs/lock
+# For some reason install no longer makes ${PREFIX}/lib/xemacs/site-lisp.
+# Do what PLIST does for pkg_add.
+	${MKDIR} ${PREFIX}/lib/xemacs/site-lisp
+	${CHMOD} 755 ${PREFIX}/lib/xemacs/site-lisp
 	${RM} -f ${PREFIX}/bin/send-pr
 # install xemacs21.sh into ${PREFIX}/etc/rc.d
 	@if [ ! -d ${PREFIX}/etc/rc.d ]; then ${MKDIR} ${PREFIX}/etc/rc.d; fi
