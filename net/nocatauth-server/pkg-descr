@@ -1,0 +1,6 @@
+This is the authorization server component of the NoCat system. Please note
+that the gpg target is not currently used or installed, and the message
+regarding 'make pgpkeys' should be disregarded for the time being.
+
+Bruce
+bms@FreeBSD.org

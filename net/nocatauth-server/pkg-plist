@@ -1,0 +1,66 @@
+nocat/pgp/trustedkeys.gpg
+@dirrm nocat/pgp
+nocat/nocat.conf
+nocat/lib/NoCat/User.pm
+nocat/lib/NoCat/Source/Samba.pm
+nocat/lib/NoCat/Source/RADIUS.pm
+nocat/lib/NoCat/Source/Passwd.pm
+nocat/lib/NoCat/Source/PAM.pm
+nocat/lib/NoCat/Source/NIS.pm
+nocat/lib/NoCat/Source/LDAP.pm
+nocat/lib/NoCat/Source/IMAP.pm
+nocat/lib/NoCat/Source/DBI.pm
+nocat/lib/NoCat/Source.pm
+@dirrm nocat/lib/NoCat/Source
+nocat/lib/NoCat/Peer.pm
+nocat/lib/NoCat/Message.pm
+nocat/lib/NoCat/Group.pm
+nocat/lib/NoCat/Gateway/Passive.pm
+nocat/lib/NoCat/Gateway/Open.pm
+nocat/lib/NoCat/Gateway/Captive.pm
+nocat/lib/NoCat/Gateway.pm
+@dirrm nocat/lib/NoCat/Gateway
+nocat/lib/NoCat/Firewall.pm
+nocat/lib/NoCat/AuthService.pm
+nocat/lib/NoCat.pm
+@dirrm nocat/lib/NoCat
+@dirrm nocat/lib
+nocat/httpd.conf
+nocat/htdocs/update.html
+nocat/htdocs/status.html
+nocat/htdocs/splash.html
+nocat/htdocs/renew_pasv.html
+nocat/htdocs/renew.html
+nocat/htdocs/register_ok.html
+nocat/htdocs/register.html
+nocat/htdocs/logout.html
+nocat/htdocs/login_ok.html
+nocat/htdocs/login.html
+nocat/htdocs/login-no-skip.html
+nocat/htdocs/images/update.gif
+nocat/htdocs/images/skip.gif
+nocat/htdocs/images/reset.gif
+nocat/htdocs/images/register.gif
+nocat/htdocs/images/logout.gif
+nocat/htdocs/images/login.gif
+nocat/htdocs/images/continue.gif
+nocat/htdocs/images/auth_logo.gif
+@dirrm nocat/htdocs/images
+nocat/htdocs/fatal.html
+nocat/htdocs/expired.html
+@dirrm nocat/htdocs
+nocat/etc/passwd
+nocat/etc/groupadm
+nocat/etc/group
+@dirrm nocat/etc
+nocat/cgi-bin/update
+nocat/cgi-bin/register
+nocat/cgi-bin/login
+nocat/cgi-bin/admlogin
+@dirrm nocat/cgi-bin
+nocat/bin/vtun.sh
+nocat/bin/gateway
+nocat/bin/detect-fw.sh
+nocat/bin/admintool
+@dirrm nocat/bin
+@dirrm nocat
