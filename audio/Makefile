@@ -295,6 +295,7 @@
     SUBDIR += xmms-ladspa
     SUBDIR += xmms-liveice
     SUBDIR += xmms-mad
+    SUBDIR += xmms-midi
     SUBDIR += xmms-musepack
     SUBDIR += xmms-osssurround
     SUBDIR += xmms-pipe
