@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	rio
-PORTVERSION=	1.06
+PORTVERSION=	1.07
 CATEGORIES=	audio
 MASTER_SITES=	http://www.world.co.uk/sba/
-DISTNAME=	rio006
+DISTNAME=	rio007
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.Org
 
-WRKSRC=		${WRKDIR}/rio
+WRKSRC=		${WRKDIR}/rio107
 MAKEFILE=	makefile
 
 BINOWN=		root
