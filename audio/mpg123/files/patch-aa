@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Feb  2 03:34:45 2000
-+++ Makefile	Wed Feb  2 03:36:53 2000
+--- Makefile.orig	Fri May  5 00:07:57 2000
++++ Makefile	Fri May  5 00:13:05 2000
 @@ -4,13 +4,15 @@
  
  # Where to install binary and manpage on "make install":
@@ -18,39 +18,45 @@
  # Additional LIBDIR and libraries if exist
  IPV6LIBDIR=
  IPV6LIB=
-@@ -300,35 +302,49 @@
+@@ -300,35 +302,55 @@
  #CFLAGS='$(CFLAGS) -DI386_ASSEM -O2 -DREAL_IS_FLOAT -DLINUX -Wall -g'
  #CFLAGS='$(CFLAGS) -DI386_ASSEM -DREAL_IS_FLOAT -DLINUX -Wall -O2 -m486 -fomit-frame-pointer -funroll-all-loops -finline-functions -ffast-math -malign-loops=2 -malign-jumps=2 -malign-functions=2'
  
 +CC ?= cc
 +LDFLAGS =
-+CFLAGS ?=-O4 -m486
 +
++.if ${MACHINE_ARCH} == "i386"
++ARCHOPT= -funroll-all-loops -ffast-math -fomit-frame-pointer \
++	 -DROT_I386 -DI386_ASSEM -DREAL_IS_FLOAT 
++ARCHFILES= decode_i386.o
++CFLAGS ?=-O4 -m486
 +.if defined(OPT_ARCH)
 +.if (${OPT_ARCH} == "i486")
-+ARCHOPT = -DI486_OPT
-+ARCHFILES = decode_i486.o dct64_i486.o dct64_i386.o
++ARCHOPT+= -DI486_OPT
++ARCHFILES+= decode_i486.o dct64_i486.o dct64_i386.o
 +.elif (${OPT_ARCH} == "i586")
-+ARCHOPT = -DPENTIUM_OPT
-+ARCHFILES = decode_i586.o dct64_i386.o
++ARCHOPT+= -DPENTIUM_OPT
++ARCHFILES+= decode_i586.o dct64_i386.o
 +.elif (${OPT_ARCH} == "3dnow")
-+ARCHOPT = -DPENTIUM_OPT -DUSE_3DNOW
-+ARCHFILES = dct64_3dnow.o decode_3dnow.o
++ARCHOPT+= -DPENTIUM_OPT -DUSE_3DNOW
++ARCHFILES+= dct64_3dnow.o decode_3dnow.o
 +dct64_3dnow.o:
 +	${INSTALL} ./precompiled/linux-i386/dct64_3dnow.o .
 +decode_3dnow.o:
 +	${INSTALL} ./precompiled/linux-i386/decode_3dnow.o .
 +.endif
 +.endif
++.elif ${MACHINE_ARCH} == "alpha"
++ARCHOPT= -funroll-loops -ffast-math
++ARCHFILES= decode.o dct64.o
++.endif
 +
-+CFLAGS +=-Wall -ansi -pedantic -fomit-frame-pointer \
-+	-funroll-all-loops -ffast-math -DROT_I386 \
-+	-DREAD_MMAP \
-+	-DI386_ASSEM ${ARCHOPT} -DREAL_IS_FLOAT -DUSE_MMAP -DOSS -DTERM_CONTROL
++CFLAGS +=-Wall -ansi -pedantic ${ARCHOPT} \
++	 -DREAD_MMAP -DUSE_MMAP -DOSS -DTERM_CONTROL
 +
 +.if defined(OPT_ESOUND)
-+CFLAGS +=-I${PREFIX}/include
-+LDFLAGS+=-L${PREFIX}/lib
++CFLAGS +=-I${LOCALBASE}/include
++LDFLAGS+=-L${LOCALBASE}/lib
 +.endif
 +
  freebsd:
@@ -60,7 +66,7 @@
 -			-funroll-all-loops -ffast-math -DROT_I386 \
 -			-DREAD_MMAP \
 -			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DOSS' \
-+	${MAKE}	OBJECTS='decode_i386.o ${ARCHFILES} audio_oss.o term.o' \
++	${MAKE}	OBJECTS='${ARCHFILES} audio_oss.o term.o' \
  		mpg123-make
  
  freebsd-esd:
@@ -74,13 +80,13 @@
 -			-I/usr/local/include -L/usr/local/lib \
 -			$(CFLAGS)' \
 +	$(MAKE) AUDIO_LIB='-lesd -laudiofile' \
-+		OBJECTS='decode_i386.o ${ARCHFILES} audio_esd.o term.o' \
++		OBJECTS='${ARCHFILES} audio_esd.o term.o' \
  		mpg123-make
  
  freebsd-frontend:
 -	$(MAKE) CC=cc LDFLAGS= \
 -		OBJECTS='decode_i386.o dct64_i386.o audio_oss.o \
-+	$(MAKE) OBJECTS='decode_i386.o ${ARCHFILES} audio_oss.o \
++	$(MAKE) OBJECTS='${ARCHFILES} audio_oss.o \
  			control_sajber.o control_tk3play.o' \
 -		CFLAGS='$(CFLAGS) -Wall -ansi -pedantic -O4 -m486 -fomit-frame-pointer \
 -			-funroll-all-loops -ffast-math -DROT_I386 \
@@ -89,7 +95,7 @@
  		$(FRONTEND)
   
  
-@@ -567,7 +583,7 @@
+@@ -567,7 +589,7 @@
  	@ $(MAKE) CFLAGS='$(CFLAGS)' BINNAME=mpg123m mpg123
  
  mpg123-make:
