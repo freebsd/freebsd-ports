@@ -1,0 +1,22 @@
+bin/mbchk
+@unexec install-info --delete %D/info/grub.info %D/info/dir
+@unexec install-info --delete %D/info/multiboot.info %D/info/dir
+info/grub.info
+info/grub.info-1
+info/grub.info-2
+info/grub.info-3
+info/grub.info-4
+info/multiboot.info
+@exec install-info %D/info/multiboot.info %D/info/dir
+@exec install-info %D/info/grub.info %D/info/dir
+sbin/grub
+sbin/grub-install
+share/grub/i386-freebsd/e2fs_stage1_5
+share/grub/i386-freebsd/fat_stage1_5
+share/grub/i386-freebsd/ffs_stage1_5
+share/grub/i386-freebsd/minix_stage1_5
+share/grub/i386-freebsd/reiserfs_stage1_5
+share/grub/i386-freebsd/stage1
+share/grub/i386-freebsd/stage2
+@dirrm share/grub/i386-freebsd
+@dirrm share/grub 

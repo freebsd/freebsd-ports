@@ -40,6 +40,7 @@
     SUBDIR += gnomecontrolcenter
     SUBDIR += gnomefind
     SUBDIR += gpart
+    SUBDIR += grub
     SUBDIR += gtar
     SUBDIR += gtop
     SUBDIR += guitar
