@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	umix
-PORTREVISION=	1
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.ionstream.fi/sakari/umix/files/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	greid@ukug.uk.freebsd.org
 
