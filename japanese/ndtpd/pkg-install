@@ -1,0 +1,105 @@
+#! /bin/sh
+
+[ "$2" = "POST-INSTALL" ] || exit 0
+
+#
+# Make directories under /var.
+#
+[ ! -d /var/ndtpd ] && mkdir /var/ndtpd
+[ ! -d /var/ndtpd/log ] && mkdir /var/ndtpd/log
+
+#
+# Add `ndtp' to /etc/services.
+#
+sed -e 's/#.*//' -e 's/^/ /' -e 's/$/ /g' -e 's/	/ /g' /etc/services \
+    | grep ' ndtp ' > /dev/null 2>&1
+
+if [ $? -ne 0 ] ; then
+    YESNO=YET
+    while [ "${YESNO}" = YET ] ; do
+	echo -n "May I register the \`ndtp' service name to /etc/services? ([y]/n) "
+	read LINE
+	case "X${LINE}" in
+	Xy|XY|X)
+	    YESNO=YES
+	    ;;
+	Xn|XN)
+	    YESNO=NO
+	    ;;
+	*)
+	    echo "Please answer \`y' or \`n'."
+	    ;;
+	esac
+    done
+
+    if [ "${YESNO}" = YES ] ; then
+	if grep '[ 	]2010/tcp' /etc/services > /dev/null 2>&1 ; then
+	    cp /etc/services /etc/services.bak
+	    sed -e 's/\([ 	]2010\/tcp\)/\1	ndtp/' /etc/services.bak \
+		> /etc/services
+	else
+	    echo 'ndtp		2010/tcp' >> /etc/services
+	fi
+	echo "The original file is saved as /etc/services.bak."
+	echo
+    fi
+fi
+
+#
+# Copy a rc-file to `${PKG_PREFIX}/etc/rc.d/ndtpd.sh'.
+#
+if [ -f ${PKG_PREFIX}/etc/rc.d/ndtpd.sh ] ; then
+    YESNO=YET
+    while [ "${YESNO}" = YET ] ; do
+	echo -n "${PKG_PREFIX}/rc.d/ndtpd.sh already exists.  May I overwrite it? (y/[n]) "
+	read LINE
+	case "X${LINE}" in
+	Xy|XY)
+	    YESNO=YES
+	    ;;
+	Xn|XN|X)
+	    YESNO=NO
+	    ;;
+	*)
+	    echo "Please answer \`y' or \`n'."
+	    ;;
+	esac
+    done
+else
+    YESNO=YES
+fi
+
+if [ "${YESNO}" = YES ] ; then
+    sed "s;@prefix@;${PKG_PREFIX};" > ${PKG_PREFIX}/etc/rc.d/ndtpd.sh \
+	<< '__END__'
+#! /bin/sh
+#
+# NDTPD: rc-file for FreeBSD.
+#
+
+### NDTPD options: ###
+ndtpd_enable="NO"		# Run ndtpd (or NO).
+ndtpd_flags=""			# Flags to ndtpd (if enabled).
+### End of NDTPD options: ###
+
+ndtpd="@prefix@/sbin/ndtpd"
+if [ "X${ndtpd_enable}" = X"YES" -a -f ${ndtpd} ]; then
+	echo -n " ndtpd"
+	${ndtpd} ${ndtpd_flags}
+fi
+__END__
+
+    chmod 755 ${PKG_PREFIX}/etc/rc.d/ndtpd.sh
+    echo
+    echo "I put a rc-file to ${PKG_PREFIX}/etc/rc.d/ndtpd.sh, but ndtpd doesn't"
+    echo "start through the script.  If you want to start ndtpd as standalone"
+    echo "daemon through the script, please turn the \`ndtpd_enable' variable"
+    echo "in the script to \`YES', and set \`ndtpd_flags' to an appropriate"
+    echo "value if required."
+    echo ""
+    echo "If you want to start ndtpd through inetd, the script is not"
+    echo "required."
+    echo
+fi
+
+exit 0

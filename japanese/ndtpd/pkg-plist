@@ -1,0 +1,162 @@
+bin/ebfont
+bin/ebinfo
+bin/ebappendix
+etc/ndtpd.sample
+include/eb/appendix.h
+include/eb/defs.h
+include/eb/eb.h
+include/eb/error.h
+include/eb/font.h
+include/eb/io.h
+include/eb/language.h
+include/eb/text.h
+include/eb/types.h
+lib/libeb.a
+libexec/ndtpstat
+sbin/ndtpd
+sbin/ndtpcheck
+sbin/ndtpcontrol
+sbin/ndtpdaily
+@unexec install-info --delete %D/info/ndtpd.info    %D/info/dir
+@unexec install-info --delete %D/info/ndtpd-ja.info %D/info/dir
+info/ndtpd.info
+info/ndtpd-ja.info
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/ndtpd.info    %D/info/dir
+@exec install-info %D/info/ndtpd-ja.info %D/info/dir
+share/ndtpd/appendix/chujiten-2.3/catalog.app
+share/ndtpd/appendix/chujiten-2.3/waei.app
+share/ndtpd/appendix/chujiten-2.3/eiwa.app
+share/ndtpd/appendix/chujiten-2.3/catalog
+share/ndtpd/appendix/chujiten-2.3/eiwa/appendix
+share/ndtpd/appendix/chujiten-2.3/waei/appendix
+share/ndtpd/appendix/chujiten2-2.0/chujiten.app
+share/ndtpd/appendix/chujiten2-2.0/catalogs.app
+share/ndtpd/appendix/chujiten2-2.0/catalogs
+share/ndtpd/appendix/chujiten2-2.0/chujiten/data/furoku
+share/ndtpd/appendix/chujiten6-2.3/catalog.app
+share/ndtpd/appendix/chujiten6-2.3/catalog
+share/ndtpd/appendix/chujiten6-2.3/chujiten.app
+share/ndtpd/appendix/chujiten6-2.3/chujiten/appendix
+share/ndtpd/appendix/heritage-2.2/catalog.app
+share/ndtpd/appendix/heritage-2.2/roget.app
+share/ndtpd/appendix/heritage-2.2/dict.app
+share/ndtpd/appendix/heritage-2.2/abbrev.app
+share/ndtpd/appendix/heritage-2.2/bioentry.app
+share/ndtpd/appendix/heritage-2.2/geoentry.app
+share/ndtpd/appendix/heritage-2.2/root.app
+share/ndtpd/appendix/heritage-2.2/info.app
+share/ndtpd/appendix/heritage-2.2/catalog
+share/ndtpd/appendix/heritage-2.2/roget/appendix
+share/ndtpd/appendix/heritage-2.2/dict/appendix
+share/ndtpd/appendix/heritage-2.2/abbrev/appendix
+share/ndtpd/appendix/heritage-2.2/bioentry/appendix
+share/ndtpd/appendix/heritage-2.2/geoentry/appendix
+share/ndtpd/appendix/heritage-2.2/colleges.app
+share/ndtpd/appendix/heritage-2.2/colleges/appendix
+share/ndtpd/appendix/heritage-2.2/root/appendix
+share/ndtpd/appendix/heritage-2.2/info/appendix
+share/ndtpd/appendix/heritage-2.2/font
+share/ndtpd/appendix/jitenban-2.4/chujiten.app
+share/ndtpd/appendix/jitenban-2.4/iwakoku.app
+share/ndtpd/appendix/jitenban-2.4/catalogs
+share/ndtpd/appendix/jitenban-2.4/chiezo.app
+share/ndtpd/appendix/jitenban-2.4/mypaedia/data/furoku
+share/ndtpd/appendix/jitenban-2.4/catalogs.app
+share/ndtpd/appendix/jitenban-2.4/iwakoku/data/furoku
+share/ndtpd/appendix/jitenban-2.4/chujiten/data/furoku
+share/ndtpd/appendix/jitenban-2.4/chiezo/data/furoku
+share/ndtpd/appendix/jitenban-2.4/mypaedia.app
+share/ndtpd/appendix/jitenban97-2.1/catalogs.app
+share/ndtpd/appendix/jitenban97-2.1/chujiten.app
+share/ndtpd/appendix/jitenban97-2.1/iwakoku.app
+share/ndtpd/appendix/jitenban97-2.1/chiezo.app
+share/ndtpd/appendix/jitenban97-2.1/mypaedia.app
+share/ndtpd/appendix/jitenban97-2.1/catalogs
+share/ndtpd/appendix/jitenban97-2.1/iwakoku/data/furoku
+share/ndtpd/appendix/jitenban97-2.1/chujiten/data/furoku
+share/ndtpd/appendix/jitenban97-2.1/chiezo/data/furoku
+share/ndtpd/appendix/jitenban97-2.1/mypaedia/data/furoku
+share/ndtpd/appendix/kanjigen-2.0/catalog
+share/ndtpd/appendix/kanjigen-2.0/catalog.app
+share/ndtpd/appendix/kanjigen-2.0/gdd01.app
+share/ndtpd/appendix/kanjigen-2.0/gdd01/appendix
+share/ndtpd/appendix/kojien-2.3/catalog.app
+share/ndtpd/appendix/kojien-2.3/kojien.app
+share/ndtpd/appendix/kojien-2.3/catalog
+share/ndtpd/appendix/kojien-2.3/kojien/appendix
+share/ndtpd/appendix/kojien2-2.0/koujien.app
+share/ndtpd/appendix/kojien2-2.0/furoku.app
+share/ndtpd/appendix/kojien2-2.0/catalogs.app
+share/ndtpd/appendix/kojien2-2.0/catalogs
+share/ndtpd/appendix/kojien2-2.0/koujien/data/furoku
+share/ndtpd/appendix/kojien2-2.0/furoku/data/furoku
+share/ndtpd/appendix/kojien4-2.2/catalog.app
+share/ndtpd/appendix/kojien4-2.2/koujien/appendix
+share/ndtpd/appendix/kojien4-2.2/furoku.app
+share/ndtpd/appendix/kojien4-2.2/catalog
+share/ndtpd/appendix/kojien4-2.2/furoku/appendix
+share/ndtpd/appendix/kojien4-2.2/koujien.app
+share/ndtpd/appendix/readers-2.2/catalog.app
+share/ndtpd/appendix/readers-2.2/catalog
+share/ndtpd/appendix/readers-2.2/readers.app
+share/ndtpd/appendix/readers-2.2/readers/appendix
+share/ndtpd/appendix/readers2-2.0/readers.app
+share/ndtpd/appendix/readers2-2.0/catalogs.app
+share/ndtpd/appendix/readers2-2.0/catalogs
+share/ndtpd/appendix/readers2-2.0/readers/data/furoku
+@dirrm share/ndtpd/appendix/chujiten-2.3/eiwa
+@dirrm share/ndtpd/appendix/chujiten-2.3/waei
+@dirrm share/ndtpd/appendix/chujiten-2.3
+@dirrm share/ndtpd/appendix/chujiten2-2.0/chujiten/data
+@dirrm share/ndtpd/appendix/chujiten2-2.0/chujiten
+@dirrm share/ndtpd/appendix/chujiten2-2.0
+@dirrm share/ndtpd/appendix/chujiten6-2.3/chujiten
+@dirrm share/ndtpd/appendix/chujiten6-2.3
+@dirrm share/ndtpd/appendix/heritage-2.2/roget
+@dirrm share/ndtpd/appendix/heritage-2.2/dict
+@dirrm share/ndtpd/appendix/heritage-2.2/abbrev
+@dirrm share/ndtpd/appendix/heritage-2.2/bioentry
+@dirrm share/ndtpd/appendix/heritage-2.2/geoentry
+@dirrm share/ndtpd/appendix/heritage-2.2/colleges
+@dirrm share/ndtpd/appendix/heritage-2.2/root
+@dirrm share/ndtpd/appendix/heritage-2.2/info
+@dirrm share/ndtpd/appendix/heritage-2.2
+@dirrm share/ndtpd/appendix/jitenban-2.4/mypaedia/data
+@dirrm share/ndtpd/appendix/jitenban-2.4/mypaedia
+@dirrm share/ndtpd/appendix/jitenban-2.4/iwakoku/data
+@dirrm share/ndtpd/appendix/jitenban-2.4/iwakoku
+@dirrm share/ndtpd/appendix/jitenban-2.4/chujiten/data
+@dirrm share/ndtpd/appendix/jitenban-2.4/chujiten
+@dirrm share/ndtpd/appendix/jitenban-2.4/chiezo/data
+@dirrm share/ndtpd/appendix/jitenban-2.4/chiezo
+@dirrm share/ndtpd/appendix/jitenban-2.4
+@dirrm share/ndtpd/appendix/jitenban97-2.1/iwakoku/data
+@dirrm share/ndtpd/appendix/jitenban97-2.1/iwakoku
+@dirrm share/ndtpd/appendix/jitenban97-2.1/chujiten/data
+@dirrm share/ndtpd/appendix/jitenban97-2.1/chujiten
+@dirrm share/ndtpd/appendix/jitenban97-2.1/chiezo/data
+@dirrm share/ndtpd/appendix/jitenban97-2.1/chiezo
+@dirrm share/ndtpd/appendix/jitenban97-2.1/mypaedia/data
+@dirrm share/ndtpd/appendix/jitenban97-2.1/mypaedia
+@dirrm share/ndtpd/appendix/jitenban97-2.1
+@dirrm share/ndtpd/appendix/kanjigen-2.0/gdd01
+@dirrm share/ndtpd/appendix/kanjigen-2.0
+@dirrm share/ndtpd/appendix/kojien-2.3/kojien
+@dirrm share/ndtpd/appendix/kojien-2.3
+@dirrm share/ndtpd/appendix/kojien2-2.0/koujien/data
+@dirrm share/ndtpd/appendix/kojien2-2.0/koujien
+@dirrm share/ndtpd/appendix/kojien2-2.0/furoku/data
+@dirrm share/ndtpd/appendix/kojien2-2.0/furoku
+@dirrm share/ndtpd/appendix/kojien2-2.0
+@dirrm share/ndtpd/appendix/kojien4-2.2/koujien
+@dirrm share/ndtpd/appendix/kojien4-2.2/furoku
+@dirrm share/ndtpd/appendix/kojien4-2.2
+@dirrm share/ndtpd/appendix/readers-2.2/readers
+@dirrm share/ndtpd/appendix/readers-2.2
+@dirrm share/ndtpd/appendix/readers2-2.0/readers/data
+@dirrm share/ndtpd/appendix/readers2-2.0/readers
+@dirrm share/ndtpd/appendix/readers2-2.0
+@dirrm include/eb
+@dirrm share/ndtpd/appendix
+@dirrm share/ndtpd
