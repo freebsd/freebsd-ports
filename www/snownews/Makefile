@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	snownews
-PORTVERSION=	1.3.5
+PORTVERSION=	1.4.2
 CATEGORIES=	www
 MASTER_SITES=	http://home.kcore.de/~kiza/software/snownews/download/
 
@@ -21,6 +21,6 @@ LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
 USE_GMAKE=	yes
 
 MAN1=		snownews.1
-MANLANG=	"" de nl fr
+MANLANG=	"" de nl fr it
 
 .include <bsd.port.mk>
