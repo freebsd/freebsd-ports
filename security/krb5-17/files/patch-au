@@ -1,0 +1,19 @@
+*** appl/bsd/forward.c.ORIG	Fri Feb  6 19:41:16 1998
+--- appl/bsd/forward.c	Tue Jun 30 19:46:01 1998
+***************
+*** 51,57 ****
+       */
+    
+      sprintf(ccname, "FILE:/tmp/krb5cc_p%d", getpid());
+!     setenv("KRB5CCNAME", ccname, 0);
+    
+      if (retval = krb5_cc_resolve(context, ccname, ccache)) 
+  	goto cleanup;
+--- 51,57 ----
+       */
+    
+      sprintf(ccname, "FILE:/tmp/krb5cc_p%d", getpid());
+!     setenv("KRB5CCNAME", ccname, 1);
+    
+      if (retval = krb5_cc_resolve(context, ccname, ccache)) 
+  	goto cleanup;
