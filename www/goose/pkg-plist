@@ -1,0 +1,5 @@
+bin/goose
+%%DATADIR%%/GoogleSearch.wsdl
+@dirrm %%DATADIR%%
+%%PORTDOCS%%%%EXAMPLESDIR%%/goose.conf.example
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
