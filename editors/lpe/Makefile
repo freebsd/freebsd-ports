@@ -17,7 +17,8 @@ LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang \
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	LDFLAGS="-L${PREFIX}/lib -L${LOCALBASE}/lib" \
+		CPPFLAGS="-I${PREFIX}/include -I${LOCALBASE}/include" \
 		LIBS="-ltermcap"
 CONFIGURE_ARGS=	--includedir=${LOCALBASE}/include
 
