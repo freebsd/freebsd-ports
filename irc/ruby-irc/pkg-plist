@@ -4,38 +4,38 @@
 %%RUBY_SITELIBDIR%%/irc/irc.rb
 @dirrm %%RUBY_SITELIBDIR%%/irc
 %%RUBY_SITELIBDIR%%/localize.rb
-%%RUBY_DOCDIR%%/irc/BUGS
-%%RUBY_DOCDIR%%/irc/ChangeLog
-%%RUBY_DOCDIR%%/irc/MANIFEST
-%%RUBY_DOCDIR%%/irc/NEWS
-%%RUBY_DOCDIR%%/irc/README
-%%RUBY_DOCDIR%%/irc/TODO
-%%RUBY_DOCDIR%%/irc/ja/MEMO.ja
-%%RUBY_DOCDIR%%/irc/ja/README.ja
-%%RUBY_DOCDIR%%/irc/ja/index.html
-%%RUBY_DOCDIR%%/irc/ja/irc-client.doc
-%%RUBY_DOCDIR%%/irc/ja/irc-client-api.doc
-%%RUBY_DOCDIR%%/irc/ja/irc-lib-api.doc
-%%RUBY_DOCDIR%%/irc/ja/irc-lib.doc
-@dirrm %%RUBY_DOCDIR%%/irc/ja
-@dirrm %%RUBY_DOCDIR%%/irc
-%%RUBY_EXAMPLESDIR%%/irc/ja/cpi/dice.cpi
-%%RUBY_EXAMPLESDIR%%/irc/ja/cpi/init.cpi
-%%RUBY_EXAMPLESDIR%%/irc/ja/cpi/omikuji.cpi
-%%RUBY_EXAMPLESDIR%%/irc/ja/cpi/operator.cpi
-%%RUBY_EXAMPLESDIR%%/irc/ja/cpi/syslog.cpi
-%%RUBY_EXAMPLESDIR%%/irc/ja/cpi/userlog.cpi
-%%RUBY_EXAMPLESDIR%%/irc/ja/bot.rb
-@dirrm %%RUBY_EXAMPLESDIR%%/irc/ja/cpi
-@dirrm %%RUBY_EXAMPLESDIR%%/irc/ja/log
-@dirrm %%RUBY_EXAMPLESDIR%%/irc/ja
-%%RUBY_EXAMPLESDIR%%/irc/cpi/dice.cpi
-%%RUBY_EXAMPLESDIR%%/irc/cpi/init.cpi
-%%RUBY_EXAMPLESDIR%%/irc/cpi/omikuji.cpi
-%%RUBY_EXAMPLESDIR%%/irc/cpi/operator.cpi
-%%RUBY_EXAMPLESDIR%%/irc/cpi/syslog.cpi
-%%RUBY_EXAMPLESDIR%%/irc/cpi/userlog.cpi
-%%RUBY_EXAMPLESDIR%%/irc/bot.rb
-@dirrm %%RUBY_EXAMPLESDIR%%/irc/cpi
-@dirrm %%RUBY_EXAMPLESDIR%%/irc/log
-@dirrm %%RUBY_EXAMPLESDIR%%/irc
+%%PORTDOCS%%%%RUBY_DOCDIR%%/irc/BUGS
+%%PORTDOCS%%%%RUBY_DOCDIR%%/irc/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/irc/MANIFEST
+%%PORTDOCS%%%%RUBY_DOCDIR%%/irc/NEWS
+%%PORTDOCS%%%%RUBY_DOCDIR%%/irc/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/irc/TODO
+%%PORTDOCS%%%%RUBY_DOCDIR%%/irc/ja/MEMO.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/irc/ja/README.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/irc/ja/index.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/irc/ja/irc-client.doc
+%%PORTDOCS%%%%RUBY_DOCDIR%%/irc/ja/irc-client-api.doc
+%%PORTDOCS%%%%RUBY_DOCDIR%%/irc/ja/irc-lib-api.doc
+%%PORTDOCS%%%%RUBY_DOCDIR%%/irc/ja/irc-lib.doc
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/irc/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/irc
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/irc/ja/cpi/dice.cpi
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/irc/ja/cpi/init.cpi
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/irc/ja/cpi/omikuji.cpi
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/irc/ja/cpi/operator.cpi
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/irc/ja/cpi/syslog.cpi
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/irc/ja/cpi/userlog.cpi
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/irc/ja/bot.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/irc/ja/cpi
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/irc/ja/log
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/irc/ja
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/irc/cpi/dice.cpi
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/irc/cpi/init.cpi
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/irc/cpi/omikuji.cpi
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/irc/cpi/operator.cpi
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/irc/cpi/syslog.cpi
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/irc/cpi/userlog.cpi
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/irc/bot.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/irc/cpi
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/irc/log
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/irc

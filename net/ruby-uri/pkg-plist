@@ -1,7 +1,7 @@
 %%RUBY_SITELIBDIR%%/uri.rb
 %%RUBY_SITELIBDIR%%/urireg.rb
-%%RUBY_EXAMPLESDIR%%/uri/test-uri.rb
-%%RUBY_EXAMPLESDIR%%/uri/in-uri.txt
-@dirrm %%RUBY_EXAMPLESDIR%%/uri
-%%RUBY_DOCDIR%%/uri/index.html
-@dirrm %%RUBY_DOCDIR%%/uri
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/uri/test-uri.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/uri/in-uri.txt
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/uri
+%%PORTDOCS%%%%RUBY_DOCDIR%%/uri/index.html
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/uri

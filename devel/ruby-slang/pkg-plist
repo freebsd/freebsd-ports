@@ -1,13 +1,13 @@
 %%RUBY_SITEARCHLIBDIR%%/slanglib.so
 %%RUBY_SITELIBDIR%%/slang.rb
-%%RUBY_EXAMPLESDIR%%/slang/fm.rb
-%%RUBY_EXAMPLESDIR%%/slang/smgtest.rb
-%%RUBY_EXAMPLESDIR%%/slang/urlview.rb
-%%RUBY_EXAMPLESDIR%%/slang/ja/pager.rb
-@dirrm %%RUBY_EXAMPLESDIR%%/slang/ja
-@dirrm %%RUBY_EXAMPLESDIR%%/slang
-%%RUBY_DOCDIR%%/slang/README
-%%RUBY_DOCDIR%%/slang/changes.txt
-%%RUBY_DOCDIR%%/slang/ja/README.euc
-@dirrm %%RUBY_DOCDIR%%/slang/ja
-@dirrm %%RUBY_DOCDIR%%/slang
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/slang/fm.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/slang/smgtest.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/slang/urlview.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/slang/ja/pager.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/slang/ja
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/slang
+%%PORTDOCS%%%%RUBY_DOCDIR%%/slang/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/slang/changes.txt
+%%PORTDOCS%%%%RUBY_DOCDIR%%/slang/ja/README.euc
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/slang/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/slang

@@ -1,27 +1,27 @@
 %%RUBY_SITEARCHLIBDIR%%/ClibPDF.so
-%%RUBY_DOCDIR%%/clibpdf/README
-%%RUBY_DOCDIR%%/clibpdf/ja/ChangeLog.ja
-%%RUBY_DOCDIR%%/clibpdf/ja/README.ja
-%%RUBY_DOCDIR%%/clibpdf/ja/TODO.ja
-@dirrm %%RUBY_DOCDIR%%/clibpdf/ja
-@dirrm %%RUBY_DOCDIR%%/clibpdf
-%%RUBY_EXAMPLESDIR%%/clibpdf/Arcs.rb
-%%RUBY_EXAMPLESDIR%%/clibpdf/DomainDemo.rb
-%%RUBY_EXAMPLESDIR%%/clibpdf/MarkerTest.rb
-%%RUBY_EXAMPLESDIR%%/clibpdf/Minimal.rb
-%%RUBY_EXAMPLESDIR%%/clibpdf/beziertest.rb
-%%RUBY_EXAMPLESDIR%%/clibpdf/charwidth.rb
-%%RUBY_EXAMPLESDIR%%/clibpdf/cover.rb
-%%RUBY_EXAMPLESDIR%%/clibpdf/dashtest.rb
-%%RUBY_EXAMPLESDIR%%/clibpdf/filltest.rb
-%%RUBY_EXAMPLESDIR%%/clibpdf/fontlist.rb
-%%RUBY_EXAMPLESDIR%%/clibpdf/helloworld.rb
-%%RUBY_EXAMPLESDIR%%/clibpdf/linkpdfpage.rb
-%%RUBY_EXAMPLESDIR%%/clibpdf/outline.rb
-%%RUBY_EXAMPLESDIR%%/clibpdf/textalign.rb
-%%RUBY_EXAMPLESDIR%%/clibpdf/textboxfit.rb
-%%RUBY_EXAMPLESDIR%%/clibpdf/timeaxis.rb
-%%RUBY_EXAMPLESDIR%%/clibpdf/weather.rb
-%%RUBY_EXAMPLESDIR%%/clibpdf/ja/jpntest.rb
-@dirrm %%RUBY_EXAMPLESDIR%%/clibpdf/ja
-@dirrm %%RUBY_EXAMPLESDIR%%/clibpdf
+%%PORTDOCS%%%%RUBY_DOCDIR%%/clibpdf/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/clibpdf/ja/ChangeLog.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/clibpdf/ja/README.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/clibpdf/ja/TODO.ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/clibpdf/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/clibpdf
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/Arcs.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/DomainDemo.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/MarkerTest.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/Minimal.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/beziertest.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/charwidth.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/cover.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/dashtest.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/filltest.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/fontlist.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/helloworld.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/linkpdfpage.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/outline.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/textalign.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/textboxfit.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/timeaxis.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/weather.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/ja/jpntest.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/clibpdf/ja
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/clibpdf

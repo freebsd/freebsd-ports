@@ -1,6 +1,6 @@
 bin/byaccr
-%%RUBY_EXAMPLESDIR%%/byaccr/Parser.rb
-%%RUBY_EXAMPLESDIR%%/byaccr/Test.rb
-%%RUBY_EXAMPLESDIR%%/byaccr/cal.y
-@dirrm %%RUBY_EXAMPLESDIR%%/byaccr
-@unexec rmdir %D/%%RUBY_EXAMPLESDIR%% 2>/dev/null || true
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/byaccr/Parser.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/byaccr/Test.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/byaccr/cal.y
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/byaccr
+%%PORTDOCS%%@unexec rmdir %D/%%RUBY_EXAMPLESDIR%% 2>/dev/null || true

@@ -3,18 +3,18 @@
 %%RUBY_SITELIBDIR%%/optparse/uri.rb
 %%RUBY_SITELIBDIR%%/optparse.rb
 @dirrm %%RUBY_SITELIBDIR%%/optparse
-%%RUBY_EXAMPLESDIR%%/optparse/ja/getopts.test
-%%RUBY_EXAMPLESDIR%%/optparse/cmd-ls.rb
-%%RUBY_EXAMPLESDIR%%/optparse/cmd.rb
-%%RUBY_EXAMPLESDIR%%/optparse/getopts.test.en
-%%RUBY_EXAMPLESDIR%%/optparse/opttest.rb
-%%RUBY_DOCDIR%%/optparse/ja/README.ja
-%%RUBY_DOCDIR%%/optparse/ja/optparse.ja.rd
-%%RUBY_DOCDIR%%/optparse/ChangeLog
-%%RUBY_DOCDIR%%/optparse/README.en
-%%RUBY_DOCDIR%%/optparse/optparse.en.rd
-%%RUBY_DOCDIR%%/optparse/optparse.rlog
-@dirrm %%RUBY_EXAMPLESDIR%%/optparse/ja
-@dirrm %%RUBY_EXAMPLESDIR%%/optparse
-@dirrm %%RUBY_DOCDIR%%/optparse/ja
-@dirrm %%RUBY_DOCDIR%%/optparse
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/optparse/ja/getopts.test
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/optparse/cmd-ls.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/optparse/cmd.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/optparse/getopts.test.en
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/optparse/opttest.rb
+%%PORTDOCS%%%%RUBY_DOCDIR%%/optparse/ja/README.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/optparse/ja/optparse.ja.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/optparse/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/optparse/README.en
+%%PORTDOCS%%%%RUBY_DOCDIR%%/optparse/optparse.en.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/optparse/optparse.rlog
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/optparse/ja
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/optparse
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/optparse/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/optparse

@@ -18,61 +18,61 @@ bin/runtest.rb
 @dirrm %%RUBY_SITELIBDIR%%/runit/cui
 @dirrm %%RUBY_SITELIBDIR%%/runit/ext
 @dirrm %%RUBY_SITELIBDIR%%/runit
-%%RUBY_EXAMPLESDIR%%/runit/simpletest.rb
-%%RUBY_EXAMPLESDIR%%/runit/testall.rb
-%%RUBY_EXAMPLESDIR%%/runit/testarray.rb
-%%RUBY_EXAMPLESDIR%%/runit/testrepeatedtest.rb
-%%RUBY_EXAMPLESDIR%%/runit/testtestsetup.rb
-@dirrm %%RUBY_EXAMPLESDIR%%/runit
-%%RUBY_DOCDIR%%/runit/ChangeLog
-%%RUBY_DOCDIR%%/runit/README
-%%RUBY_DOCDIR%%/runit/ToDo
-%%RUBY_DOCDIR%%/runit/assert.html
-%%RUBY_DOCDIR%%/runit/assert.rd
-%%RUBY_DOCDIR%%/runit/cui/testrunner.html
-%%RUBY_DOCDIR%%/runit/cui/testrunner.rd
-%%RUBY_DOCDIR%%/runit/error.html
-%%RUBY_DOCDIR%%/runit/error.rd
-%%RUBY_DOCDIR%%/runit/ext/repeatedtest.html
-%%RUBY_DOCDIR%%/runit/ext/repeatedtest.rd
-%%RUBY_DOCDIR%%/runit/ext/testdecorator.html
-%%RUBY_DOCDIR%%/runit/ext/testdecorator.rd
-%%RUBY_DOCDIR%%/runit/ext/testsetup.html
-%%RUBY_DOCDIR%%/runit/ext/testsetup.rd
-%%RUBY_DOCDIR%%/runit/index.html
-%%RUBY_DOCDIR%%/runit/ja/assert.html
-%%RUBY_DOCDIR%%/runit/ja/assert.rd
-%%RUBY_DOCDIR%%/runit/ja/cui/testrunner.html
-%%RUBY_DOCDIR%%/runit/ja/cui/testrunner.rd
-%%RUBY_DOCDIR%%/runit/ja/error.html
-%%RUBY_DOCDIR%%/runit/ja/error.rd
-%%RUBY_DOCDIR%%/runit/ja/index.html
-%%RUBY_DOCDIR%%/runit/ja/robserver.html
-%%RUBY_DOCDIR%%/runit/ja/robserver.rd
-%%RUBY_DOCDIR%%/runit/ja/testcase.html
-%%RUBY_DOCDIR%%/runit/ja/testcase.rd
-%%RUBY_DOCDIR%%/runit/ja/testfailure.html
-%%RUBY_DOCDIR%%/runit/ja/testfailure.rd
-%%RUBY_DOCDIR%%/runit/ja/testresult.html
-%%RUBY_DOCDIR%%/runit/ja/testresult.rd
-%%RUBY_DOCDIR%%/runit/ja/testsuite.html
-%%RUBY_DOCDIR%%/runit/ja/testsuite.rd
-%%RUBY_DOCDIR%%/runit/ja/version.html
-%%RUBY_DOCDIR%%/runit/ja/version.rd
-%%RUBY_DOCDIR%%/runit/robserver.html
-%%RUBY_DOCDIR%%/runit/robserver.rd
-%%RUBY_DOCDIR%%/runit/testcase.html
-%%RUBY_DOCDIR%%/runit/testcase.rd
-%%RUBY_DOCDIR%%/runit/testfailure.html
-%%RUBY_DOCDIR%%/runit/testfailure.rd
-%%RUBY_DOCDIR%%/runit/testresult.html
-%%RUBY_DOCDIR%%/runit/testresult.rd
-%%RUBY_DOCDIR%%/runit/testsuite.html
-%%RUBY_DOCDIR%%/runit/testsuite.rd
-%%RUBY_DOCDIR%%/runit/version.html
-%%RUBY_DOCDIR%%/runit/version.rd
-@dirrm %%RUBY_DOCDIR%%/runit/cui
-@dirrm %%RUBY_DOCDIR%%/runit/ext
-@dirrm %%RUBY_DOCDIR%%/runit/ja/cui
-@dirrm %%RUBY_DOCDIR%%/runit/ja
-@dirrm %%RUBY_DOCDIR%%/runit
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/runit/simpletest.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/runit/testall.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/runit/testarray.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/runit/testrepeatedtest.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/runit/testtestsetup.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/runit
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ToDo
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/assert.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/assert.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/cui/testrunner.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/cui/testrunner.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/error.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/error.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ext/repeatedtest.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ext/repeatedtest.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ext/testdecorator.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ext/testdecorator.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ext/testsetup.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ext/testsetup.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/index.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ja/assert.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ja/assert.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ja/cui/testrunner.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ja/cui/testrunner.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ja/error.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ja/error.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ja/index.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ja/robserver.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ja/robserver.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ja/testcase.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ja/testcase.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ja/testfailure.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ja/testfailure.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ja/testresult.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ja/testresult.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ja/testsuite.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ja/testsuite.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ja/version.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ja/version.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/robserver.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/robserver.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/testcase.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/testcase.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/testfailure.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/testfailure.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/testresult.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/testresult.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/testsuite.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/testsuite.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/version.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/version.rd
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/runit/cui
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/runit/ext
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/runit/ja/cui
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/runit/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/runit

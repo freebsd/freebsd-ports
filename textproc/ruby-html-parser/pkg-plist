@@ -1,5 +1,5 @@
 %%RUBY_SITELIBDIR%%/formatter.rb
 %%RUBY_SITELIBDIR%%/html-parser.rb
 %%RUBY_SITELIBDIR%%/sgml-parser.rb
-%%RUBY_DOCDIR%%/html-parser/README.html
-@dirrm %%RUBY_DOCDIR%%/html-parser
+%%PORTDOCS%%%%RUBY_DOCDIR%%/html-parser/README.html
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/html-parser

@@ -8,19 +8,19 @@
 %%RUBY_SITELIBDIR%%/qholiday.rb
 %%RUBY_SITELIBDIR%%/strftime.rb
 %%RUBY_SITELIBDIR%%/strptime.rb
-%%RUBY_EXAMPLESDIR%%/date2/cal.rb
-%%RUBY_EXAMPLESDIR%%/date2/daylight.rb
-%%RUBY_EXAMPLESDIR%%/date2/goodfriday.rb
-%%RUBY_EXAMPLESDIR%%/date2/ja/ncal.rb
-@dirrm %%RUBY_EXAMPLESDIR%%/date2/ja
-@dirrm %%RUBY_EXAMPLESDIR%%/date2
-%%RUBY_DOCDIR%%/date2/MANUAL.en
-%%RUBY_DOCDIR%%/date2/MANUAL.en.html
-%%RUBY_DOCDIR%%/date2/MANUAL.en.rd
-%%RUBY_DOCDIR%%/date2/README.en
-%%RUBY_DOCDIR%%/date2/ja/MANUAL
-%%RUBY_DOCDIR%%/date2/ja/MANUAL.html
-%%RUBY_DOCDIR%%/date2/ja/MANUAL.rd
-%%RUBY_DOCDIR%%/date2/ja/README
-@dirrm %%RUBY_DOCDIR%%/date2/ja
-@dirrm %%RUBY_DOCDIR%%/date2
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/date2/cal.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/date2/daylight.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/date2/goodfriday.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/date2/ja/ncal.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/date2/ja
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/date2
+%%PORTDOCS%%%%RUBY_DOCDIR%%/date2/MANUAL.en
+%%PORTDOCS%%%%RUBY_DOCDIR%%/date2/MANUAL.en.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/date2/MANUAL.en.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/date2/README.en
+%%PORTDOCS%%%%RUBY_DOCDIR%%/date2/ja/MANUAL
+%%PORTDOCS%%%%RUBY_DOCDIR%%/date2/ja/MANUAL.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/date2/ja/MANUAL.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/date2/ja/README
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/date2/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/date2

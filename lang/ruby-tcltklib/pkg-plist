@@ -1,16 +1,16 @@
 %%RUBY_ARCHLIBDIR%%/tcltklib.so
 %%RUBY_LIBDIR%%/tcltk.rb
-%%RUBY_DOCDIR%%/tcltklib/ja/MANUAL.euc
-%%RUBY_DOCDIR%%/tcltklib/ja/README.euc
-@dirrm %%RUBY_DOCDIR%%/tcltklib/ja
-@dirrm %%RUBY_DOCDIR%%/tcltklib
-%%RUBY_EXAMPLESDIR%%/tcltklib/batsu.gif
-%%RUBY_EXAMPLESDIR%%/tcltklib/maru.gif
-%%RUBY_EXAMPLESDIR%%/tcltklib/sample0.rb
-%%RUBY_EXAMPLESDIR%%/tcltklib/sample1.rb
-%%RUBY_EXAMPLESDIR%%/tcltklib/sample2.rb
-%%RUBY_EXAMPLESDIR%%/tcltklib/demo/lines0.tcl
-%%RUBY_EXAMPLESDIR%%/tcltklib/demo/lines1.rb
-%%RUBY_EXAMPLESDIR%%/tcltklib/demo/lines2.rb
-@dirrm %%RUBY_EXAMPLESDIR%%/tcltklib/demo
-@dirrm %%RUBY_EXAMPLESDIR%%/tcltklib
+%%PORTDOCS%%%%RUBY_DOCDIR%%/tcltklib/ja/MANUAL.euc
+%%PORTDOCS%%%%RUBY_DOCDIR%%/tcltklib/ja/README.euc
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/tcltklib/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/tcltklib
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tcltklib/batsu.gif
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tcltklib/maru.gif
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tcltklib/sample0.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tcltklib/sample1.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tcltklib/sample2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tcltklib/demo/lines0.tcl
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tcltklib/demo/lines1.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tcltklib/demo/lines2.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/tcltklib/demo
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/tcltklib

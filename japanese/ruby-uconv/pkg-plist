@@ -1,13 +1,13 @@
 %%RUBY_SITEARCHLIBDIR%%/uconv.so
-%%RUBY_EXAMPLESDIR%%/uconv/ja/euc2unicode.rb
-%%RUBY_EXAMPLESDIR%%/uconv/ja/test_euc.txt
-%%RUBY_EXAMPLESDIR%%/uconv/ja/test_euc.xml
-%%RUBY_EXAMPLESDIR%%/uconv/ja/trilang.xml
-%%RUBY_EXAMPLESDIR%%/uconv/ja/unicode2euc.rb
-%%RUBY_EXAMPLESDIR%%/uconv/ja/xmlconv.rb
-@dirrm %%RUBY_EXAMPLESDIR%%/uconv/ja
-@dirrm %%RUBY_EXAMPLESDIR%%/uconv
-%%RUBY_DOCDIR%%/uconv/README
-%%RUBY_DOCDIR%%/uconv/ja/README.ja
-@dirrm %%RUBY_DOCDIR%%/uconv/ja
-@dirrm %%RUBY_DOCDIR%%/uconv
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/uconv/ja/euc2unicode.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/uconv/ja/test_euc.txt
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/uconv/ja/test_euc.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/uconv/ja/trilang.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/uconv/ja/unicode2euc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/uconv/ja/xmlconv.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/uconv/ja
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/uconv
+%%PORTDOCS%%%%RUBY_DOCDIR%%/uconv/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/uconv/ja/README.ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/uconv/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/uconv
