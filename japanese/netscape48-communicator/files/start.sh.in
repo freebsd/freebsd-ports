@@ -14,6 +14,7 @@ export XKEYSYMDB=@X11BASE@/lib/X11/XKeysymDB
 export XAPPLRESDIR=@RDIR@
 export TIMID_DIR=/usr/local/lib/timidity
 export XCMSDB=/dev/null
+ulimit -c 0
 if [ -e /usr/local/lib/aout/libxpg4-ns.so.2.0 ]; then
 	export LD_PRELOAD=/usr/local/lib/aout/libxpg4-ns.so.2.0
 elif [ x$JA_NETSCAPE_USE_LD_PRELOAD != x -a x$JA_NETSCAPE_USE_LD_PRELOAD != xno ]; then
