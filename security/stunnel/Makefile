@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stunnel
-PORTVERSION=	3.15
+PORTVERSION=	3.16
 CATEGORIES=	security
 MASTER_SITES=	ftp://stunnel.mirt.net/stunnel/ \
 		http://www.stunnel.org/download/stunnel/src/ \
