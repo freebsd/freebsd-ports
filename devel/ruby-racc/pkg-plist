@@ -10,6 +10,7 @@ bin/y2racc
 %%RUBY_SITELIBDIR%%/racc/raccp.rb
 %%RUBY_SITELIBDIR%%/racc/raccs.rb
 %%RUBY_SITELIBDIR%%/racc/state.rb
+%%RUBY_SITELIBDIR%%/racc/ucodep.rb
 %%RUBY_EXAMPLESDIR%%/racc/calc-ja.y
 %%RUBY_EXAMPLESDIR%%/racc/calc.y
 %%RUBY_EXAMPLESDIR%%/racc/conflict.y
