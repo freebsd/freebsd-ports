@@ -657,8 +657,11 @@ PREFIX?=		${LOCALBASE}
 OPENSSLBASE=	/usr
 OPENSSLDIR=		/etc/ssl
 # OpenSSL in the base system may not include IDEA for patent licensing reasons.
-OPENSSL_IDEA?=	${MAKE_IDEA}
+.if defined(MAKE_IDEA) && !defined(OPENSSL_IDEA)
+OPENSSL_IDEA=	${MAKE_IDEA}
+.else
 OPENSSL_IDEA?=	NO
+.endif
 .if ${OPENSSL_IDEA} == "NO"
 # XXX This is a hack to work around the fact that /etc/make.conf clobbers
 #     our CFLAGS. It might not be enough for all future ports.
