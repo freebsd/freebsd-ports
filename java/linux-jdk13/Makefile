@@ -42,6 +42,9 @@ IGNORE=You must manually fetch the Java SDK 1.3.0 for Linux archive (j2sdk-1_3_0
 .endif
 .endfor
 
+post-fetch:
+	@${CHMOD} +x ${DISTDIR}/${DISTFILES}
+
 post-patch:
 	find ${WRKSRC} -name '*.orig' -print | xargs ${RM} -f
 
