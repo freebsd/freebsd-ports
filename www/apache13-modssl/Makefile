@@ -23,6 +23,7 @@ MASTER_SITES=	http://www.apache.org/dist/httpd/ \
 		ftp://ftp.mtnranch.net/pub/apache/dist/httpd/ \
 		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/httpd/ \
 		ftp://apache.nextpath.com/pub/apache/dist/httpd/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/apache/dist/httpd,} \
 		${MASTER_SITES_MODSSL:S/$/:modssl/}
 DISTNAME=	apache_${VERSION_APACHE}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -43,7 +44,8 @@ MASTER_SITES_MODSSL=	http://www.modssl.org/source/ \
 		ftp://ftp.uni-trier.de/pub/unix/security/mod_ssl/ \
 		ftp://ftp.blatzheim.com/pub/mod_ssl/ \
 		ftp://ftp.fu-berlin.de/unix/security/mod_ssl/ \
-		ftp://ftp.ntrl.net/pub/mirror/ralfsw/mod_ssl/
+		ftp://ftp.ntrl.net/pub/mirror/ralfsw/mod_ssl/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/mod_ssl/source,}
 USE_OPENSSL=	YES
 
 .include <bsd.port.pre.mk>

@@ -22,7 +22,8 @@ MASTER_SITES=   http://www.apache.org/dist/httpd/ \
 		ftp://galileo.galilei.com/pub/apache/httpd/ \
 		ftp://ftp.mtnranch.net/pub/apache/dist/httpd/ \
 		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/httpd/ \
-		ftp://apache.nextpath.com/pub/apache/dist/httpd/
+		ftp://apache.nextpath.com/pub/apache/dist/httpd/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/apache/dist/httpd,}
 DISTNAME=	apache_${PORTVERSION}
 
 #PATCH_SITES=    http://www.apache.org/dist/httpd/patches/apply_to_1.3.26/
