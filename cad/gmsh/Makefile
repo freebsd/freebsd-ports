@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmsh
-PORTVERSION=	1.56.1
+PORTVERSION=	1.56.2
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geuz.org/gmsh/src/	\
 		http://cm.bell-labs.com/netlib/voronoi/:triangle
