@@ -3,7 +3,7 @@
 # Date created:        10 June 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.14 1998/07/02 17:42:55 vanilla Exp $
+# $Id: Makefile,v 1.15 1998/07/19 06:34:35 vanilla Exp $
 #
 
 DISTNAME=	enlightenment-0.14
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.enlightenment.org/pub/enlightenment/enlightenment/ \
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
-BUILD_DEPENDS=  ${PREFIX}/lib/perl/5/site_perl/Gtk.pm:${PORTSDIR}/x11/p5-Gtk
+BUILD_DEPENDS=  ${PREFIX}/lib/perl5/site_perl/Gtk.pm:${PORTSDIR}/x11/p5-Gtk
 
 LIB_DEPENDS=	esd\\.0\\.0:${PORTSDIR}/audio/esound \
 		Fnlib\\.0\\.3:${PORTSDIR}/graphics/fnlib \
