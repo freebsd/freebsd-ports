@@ -1,0 +1,18 @@
+--- programs/Xserver/hw/xfree86/os-support/bus/Imakefile.orig	Thu Jan 20 03:43:03 2005
++++ programs/Xserver/hw/xfree86/os-support/bus/Imakefile	Thu Jan 20 03:46:40 2005
+@@ -66,6 +66,13 @@
+ PCIDRVRSRC = netbsdPci.c
+ PCIDRVROBJ = netbsdPci.o
+ 
++#elif defined(FreeBSDArchitecture) && defined(PpcArchitecture)
++
++XCOMM FreeBSD/PowerPC PCI driver (using /dev/pci)
++
++PCIDRVRSRC = freebsdPci.c
++PCIDRVROBJ = freebsdPci.o
++
+ #elif defined(PpcArchitecture)
+ 
+ XCOMM PowerPC PCI drivers
+
+

@@ -1,5 +1,5 @@
---- config/cf/FreeBSD.cf.orig	Sat Aug 14 17:03:36 2004
-+++ config/cf/FreeBSD.cf	Wed Dec 29 13:40:20 2004
+--- config/cf/FreeBSD.cf.orig	Sun Aug 15 10:03:36 2004
++++ config/cf/FreeBSD.cf	Sun Feb  6 03:56:59 2005
 @@ -78,6 +78,7 @@
  #define HasIssetugid		YES
  #define HasPoll			YES
@@ -59,7 +59,18 @@
  #  else
  #   define LibraryRpathLoadFlags	-R $(USRLIBDIRPATH)
  #  endif
-@@ -463,18 +465,8 @@
+@@ -442,7 +444,9 @@
+ #define AsVISOption		-Av9a
+ #define AsOutputArchSize	64
+ #endif
+-
++#ifdef PpcArchitecture
++#define XF86INT10_BUILD		X86INT10_STUB
++#endif
+ #define StandardDefines	-DCSRG_BASED
+ 
+ #if OSMajorVersion > 1
+@@ -463,18 +467,8 @@
  #define XawI18nDefines		-DUSE_XWCHAR_STRING -DUSE_XMBTOWC
  #endif
  
