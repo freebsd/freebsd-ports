@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xmlrpc
-PORTVERSION=	1.7.14
-PORTREVISION=	1
+PORTVERSION=	1.7.15
 CATEGORIES=	net ruby
 MASTER_SITES=	http://www.fantasy-coders.de/ruby/xmlrpc4r/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
