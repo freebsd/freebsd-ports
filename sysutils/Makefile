@@ -177,6 +177,7 @@
     SUBDIR += p5-Sys-CpuLoad
     SUBDIR += p5-SyslogScan
     SUBDIR += p5-Tie-Syslog
+    SUBDIR += p5-UPS-Nut
     SUBDIR += p5-Unix-ConfigFile
     SUBDIR += p5-Unix-Syslog
     SUBDIR += p5-User
