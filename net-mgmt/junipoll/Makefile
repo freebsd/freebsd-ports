@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	junipoll
-PORTVERSION=	1.015
+PORTVERSION=	1.017
 CATEGORIES=	net perl5
 MASTER_SITES=	http://net.doit.wisc.edu/~plonka/junipoll/
 MASTER_SITE_SUBDIR=	. old
