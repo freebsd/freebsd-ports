@@ -74,7 +74,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -87,7 +87,9 @@ DISTNAME=	squid-2.5.STABLE7
 DIST_SUBDIR=	squid2.5
 
 PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.5/bugs/
-PATCHFILES=	squid-2.5.STABLE7-half_closed_POST.patch
+PATCHFILES=	squid-2.5.STABLE7-half_closed_POST.patch \
+		squid-2.5.STABLE7-LDAP_version_documentation.patch \
+		squid-2.5.STABLE7_req_resp_header.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de

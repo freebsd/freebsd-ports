@@ -2,3 +2,7 @@ MD5 (squid2.5/squid-2.5.STABLE7.tar.bz2) = bf63e34906c68d716896eec0351108dc
 SIZE (squid2.5/squid-2.5.STABLE7.tar.bz2) = 1051830
 MD5 (squid2.5/squid-2.5.STABLE7-half_closed_POST.patch) = 7468154bb645932718d74c3dafcc9ec3
 SIZE (squid2.5/squid-2.5.STABLE7-half_closed_POST.patch) = 805
+MD5 (squid2.5/squid-2.5.STABLE7-LDAP_version_documentation.patch) = 7e2dbbcfd22643246c3637a60b234214
+SIZE (squid2.5/squid-2.5.STABLE7-LDAP_version_documentation.patch) = 1170
+MD5 (squid2.5/squid-2.5.STABLE7_req_resp_header.patch) = 4237a7bcea6cb440e2b80414daf82c25
+SIZE (squid2.5/squid-2.5.STABLE7_req_resp_header.patch) = 1696
