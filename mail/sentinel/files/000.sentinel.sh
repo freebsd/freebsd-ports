@@ -18,9 +18,11 @@ start)
 	fi
 	;;
 stop)
+# The libmilter documentation specifies that only
+# uncatchable signals can kill the milter
 		if [ -e ${SOCKET} ]
 		then
-			killall sentinel
+			killall -KILL sentinel
 		fi
 	;;
 *)
