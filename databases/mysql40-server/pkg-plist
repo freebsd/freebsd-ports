@@ -9,7 +9,9 @@ bin/mysql_setpermission
 bin/mysql_zap
 bin/mysqlaccess
 bin/mysqlbug
+bin/mysqlhotcopy
 bin/perror
+bin/print_defaults
 bin/replace
 bin/resolveip
 bin/safe_mysqld
@@ -100,7 +102,7 @@ share/mysql/korean/errmsg.sys
 share/mysql/korean/errmsg.txt
 share/mysql/make_binary_distribution
 share/mysql/my-example.cnf
-share/mysql/mysql-3.22.30.spec
+share/mysql/mysql-3.22.32.spec
 share/mysql/mysql-log-rotate
 share/mysql/mysql.server
 share/mysql/norwegian-ny/errmsg.sys

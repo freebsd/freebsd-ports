@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	mysql-3.22.30
+DISTNAME=	mysql-3.22.32
 PKGNAME?=	${DISTNAME:S/-/-server-/}
 CATEGORIES=	databases
 MASTER_SITES=	http://www.fh-wolfenbuettel.de/ftp/pub/database/mysql/Downloads/MySQL-3.22/ \
