@@ -7,7 +7,7 @@
 
 PORTNAME=	vmware3
 PORTVERSION=	3.2.1.2242
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://www4.vmware.com/software/ \
@@ -22,7 +22,7 @@ DISTFILES=	VMware-workstation-${PORTVERSION:R}-${PORTVERSION:E}${EXTRACT_SUFX}:v
 MAINTAINER=	orlando.bassotto@ieo-research.it
 COMMENT=	A virtual machine emulator - a full PC in a window
 
-RUN_DEPENDS=	${LINUXBASE}/dev/rtc:${PORTSDIR}/emulators/rtc
+RUN_DEPENDS=	${PORTSDIR}/emulators/rtc
 
 RESTRICTED=	"Not sure if we can redistribute it"
 
@@ -130,9 +130,6 @@ post-patch:
 	${CP} ${FILESDIR}/Makefile.vmnet ${WRKSRC}/vmnet-only/Makefile
 .if ${OSVERSION} < 500000
 	${CAT} ${FILESDIR}/freebsd4.patch | (cd ${WRKSRC} && ${PATCH}) > /dev/null 2>&1
-.endif
-.if ${OSVERSION} >= 502104
-	${CAT} ${FILESDIR}/freebsd5.patch | (cd ${WRKSRC} && ${PATCH}) > /dev/null 2>&1
 .endif
 
 setoptions:

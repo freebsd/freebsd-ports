@@ -1,0 +1,30 @@
+--- vmmon-only/freebsd/driver.c.orig	Sat Mar 13 04:04:55 2004
++++ vmmon-only/freebsd/driver.c	Sat Mar 13 04:07:43 2004
+@@ -163,9 +163,14 @@
+ 
+ static struct cdevsw vmmon_cdevsw = {
+ #if __FreeBSD_version >= 500104
++#if __FreeBSD_version >= 502103
++	.d_version =    D_VERSION,
++	.d_flags =	D_NEEDGIANT,
++#else
++	.d_maj =        CDEV_MAJOR
++#endif
+ 	.d_open =       FreeBSD_Driver_Open,
+ 	.d_name =       DEVICE_NAME,
+-	.d_maj =        CDEV_MAJOR
+ #else
+         /* open */      FreeBSD_Driver_Open,
+         /* close */     noclose,
+@@ -390,6 +395,11 @@
+ 	fp->f_ops = &vmmon_fileops;
+ 	fp->f_type = DTYPE_VNODE;
+ 	FILEDESC_UNLOCK(p->p_fd);
++
++#if __FreeBSD_version >= 501111
++	/* falloc now returns TWO references to the file, not one. */
++	fdrop(fp, td);
++#endif
+ 
+ 	PROC_LOCK(p);
+ 	td->td_dupfd = fd;

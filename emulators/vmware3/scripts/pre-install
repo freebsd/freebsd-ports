@@ -15,10 +15,10 @@ done
 ln -fs /dev/ttyva ${linux_dev}/tty11
 ln -fs /dev/ttyvb ${linux_dev}/tty12
 ln -fs ${linux_dev}/tty1 ${linux_dev}/tty0
-mknod ${linux_dev}/null c 2 2
-chmod 666 ${linux_dev}/null
+echo Creating vmmon node
+mknod /dev/vmmon c 200 0
 echo Creating vmnet1 node
-mknod /compat/linux/dev/vmnet1 c 149 ${VMNET1_MINOR}
+mknod /dev/vmnet1 c 149 ${VMNET1_MINOR}
 echo Creating $linux_dev/hd\?
 mknod ${linux_dev}/hda b 0 0x00010002
 mknod ${linux_dev}/hdb b 0 0x0001000a
