@@ -1,11 +1,8 @@
 --------------------------------------------------------------------
 
 Documentation has been installed in %%PREFIX%%/share/doc
-Sample files have been installed in %%PREFIX%%/share/examples
-These include the scripts necessary to start running Verlihub and some sample
-configuration files.
-The executable has been installed in %%PREFIX%%/bin
-A script to link Verlihub plugins has been installed in %%PREFIX%%/bin
+
+Scripts and the executable have been installed in %%PREFIX%%/bin
 
 This port requires a working mysql server installation, either
 locally or remotely.
@@ -13,15 +10,12 @@ locally or remotely.
 Once you have a properly-running mysql server, please run the install
 script:
 
-%%PREFIX%%/share/examples/verlihub/scripts/install
+%%PREFIX%%/bin/vh_install
 
 Follow the instructions given.
 
-You can copy or move the scripts to the .verlihub location:
-
-cp -R %%PREFIX%%/share/examples/verlihub/scripts/* /path/to/.verlihub
-
 Visit http://verlihub.sourceforge.net for the project's homepage
-or http://verlihub.no-ip.com for the project's forums.
+or http://verlihub.no-ip.com for the project's forums. The verlihub
+manual is available online at http://www.danomac.org/verlihub
 
 -------------------------------------------------------------------
