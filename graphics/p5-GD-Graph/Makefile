@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	GD-Graph
-PORTVERSION=	1.30
+PORTVERSION=	1.33
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	GD
@@ -24,6 +24,7 @@ MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		GD::Graph.3 \
 		GD::Graph::Data.3 \
 		GD::Graph::Error.3 \
+		GD::Graph::FAQ.3 \
 		GD::Graph::colour.3
 
 do-configure:
