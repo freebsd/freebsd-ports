@@ -47,6 +47,9 @@ buildenv () {
 
     export __MAKE_CONF=${pb}/${arch}/make.conf
 
+    export DISTDIR=${pb}/${arch}/${branch}/distfiles
+    export PACKAGES=${pb}/${arch}/${branch}/packages
+
     export UNAME_m=${ARCH}
     export UNAME_n=freebsd.org
     export UNAME_p=${ARCH}
