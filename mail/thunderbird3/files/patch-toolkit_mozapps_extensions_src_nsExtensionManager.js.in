@@ -1,0 +1,17 @@
+--- toolkit/mozapps/extensions/src/nsExtensionManager.js.in.orig	Tue Jul 27 15:35:12 2004
++++ toolkit/mozapps/extensions/src/nsExtensionManager.js.in	Tue Jul 27 15:36:02 2004
+@@ -1568,9 +1568,14 @@
+   
+   _checkForGlobalInstalls: function (aPath, aItemType)
+   {
++    var fPrefix = "file://";
+     // First see if the path supplied is a file path
+     var file = Components.classes["@mozilla.org/file/local;1"]
+                          .createInstance(Components.interfaces.nsILocalFile);
++    if (aPath.substr(0, fPrefix.length) == fPrefix) {
++	// Strip out the file:// prefix if it exists
++	aPath = aPath.substr(fPrefix.length, aPath.length);
++    }
+     try {
+       file.initWithPath(aPath);
+     }
