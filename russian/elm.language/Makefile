@@ -2,7 +2,7 @@
 # Date created:         2 Dec 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.10 1996/12/03 15:25:18 ache Exp $
+# $Id: Makefile,v 1.11 1998/06/27 05:19:28 asami Exp $
 #
 
 PKGNAME=        ru-elm-2.4ME
@@ -12,8 +12,8 @@ RUN_DEPENDS+=   elm:${PORTSDIR}/mail/elm
 
 MAINTAINER=     ache@FreeBSD.org
 
-NO_EXTRACT=     YES
-NO_WRKDIR=      YES
+EXTRACT_ONLY=   # empty
+NO_WRKSUBDIR=   YES
 NO_BUILD=       YES
 
 do-fetch:
