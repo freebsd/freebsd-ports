@@ -8,13 +8,14 @@
 PORTNAME=	eawpats
 PORTVERSION=	12
 CATEGORIES=	audio
-MASTER_SITES=	http://madchat.org/music/ \
-		http://5hdumat.samizdat.net/music/
+MASTER_SITES=	http://www.stardate.bc.ca/eawpatches/
 DISTNAME=	eawpats12_full
+EXTRACT_SUFX=   .rar
 
 MAINTAINER=	lennox@cs.columbia.edu
 COMMENT=	Eric A. Welsh's collection of Gravis Ultrasound MIDI patches
 
+EXTRACT_DEPENDS= unrar:${PORTSDIR}/archivers/unrar
 # Not useful without timidity.
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity++
 
@@ -26,11 +27,15 @@ USE_REINPLACE=	yes
 PATCH_SUBDIRS=	ethnic mazpat/fx gsdrum08 gsdrum25 gsdrum40 gus power sfx wime
 DOC_SUBDIRS=	ethnic gsdrum08 gsdrum25 gsdrum40 power wime
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}
 TIMIDITY_DATADIR=	${PREFIX}/share/timidity
 
+EXTRACT_CMD=    unrar
+EXTRACT_BEFORE_ARGS= x
+EXTRACT_AFTER_ARGS=
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|/home/user/eawpats|${DATADIR}|' ${WRKSRC}/linuxconfig/timidity.cfg
+	@${REINPLACE_CMD} -e 's|c:\\timidity|${DATADIR}|;s|c:\\eawpats|${DATADIR}|' ${WRKSRC}/timidity.cfg
 
 do-install:
 	${MKDIR} ${DATADIR}
@@ -40,7 +45,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${subdir}/*.pat ${DATADIR}/${subdir}
 .endfor
 	${MKDIR} ${TIMIDITY_DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/linuxconfig/timidity.cfg ${TIMIDITY_DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/timidity.cfg ${TIMIDITY_DATADIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/*.txt ${WRKSRC}/*.hlp ${DOCSDIR}
