@@ -35,7 +35,7 @@ pre-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/argus-2.0/html/man
-.for i in README LICENSE COPYRIGHT doc/CHANGES doc/FAQ doc/HOW-TO
+.for i in README COPYING COPYRIGHT doc/CHANGES doc/FAQ doc/HOW-TO
 	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/argus-2.0
 .endfor
 .for i in  doc/html/man/*.html
