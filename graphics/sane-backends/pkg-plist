@@ -21,6 +21,7 @@ etc/sane.d/microtek.conf
 etc/sane.d/microtek2.conf
 etc/sane.d/mustek.conf
 etc/sane.d/mustek_pp.conf
+etc/sane.d/mustek_usb.conf
 etc/sane.d/nec.conf
 etc/sane.d/net.conf
 etc/sane.d/pie.conf
@@ -103,6 +104,9 @@ lib/sane/libsane-mustek.so.1
 lib/sane/libsane-mustek_pp.a
 lib/sane/libsane-mustek_pp.so
 lib/sane/libsane-mustek_pp.so.1
+lib/sane/libsane-mustek_usb.a
+lib/sane/libsane-mustek_usb.so
+lib/sane/libsane-mustek_usb.so.1
 lib/sane/libsane-nec.a
 lib/sane/libsane-nec.so
 lib/sane/libsane-nec.so.1
@@ -164,7 +168,8 @@ sbin/saned
 %%PORTDOCS%%share/doc/sane/canon/canon.changes
 %%PORTDOCS%%share/doc/sane/canon/canon.install2700F.txt
 %%PORTDOCS%%share/doc/sane/mustek/mustek.CHANGES
-%%PORTDOCS%%share/doc/sane/umax/negative-types.txt
+%%PORTDOCS%%share/doc/sane/mustek_usb/mustek_usb.CHANGES
+%%PORTDOCS%%share/doc/sane/mustek_usb/mustek_usb.TODO
 %%PORTDOCS%%share/doc/sane/umax/sane-logo.jpg
 %%PORTDOCS%%share/doc/sane/umax/sane-logo2.jpg
 %%PORTDOCS%%share/doc/sane/umax/sane-umax-advanced-options-doc.html
@@ -199,6 +204,7 @@ sbin/saned
 %%PORTDOCS%%share/doc/sane/umax/umax.FAQ
 %%PORTDOCS%%share/doc/sane/umax/umax.TODO
 %%PORTDOCS%%@dirrm share/doc/sane/umax
+%%PORTDOCS%%@dirrm share/doc/sane/mustek_usb
 %%PORTDOCS%%@dirrm share/doc/sane/mustek
 %%PORTDOCS%%@dirrm share/doc/sane/canon
 %%PORTDOCS%%@dirrm share/doc/sane
