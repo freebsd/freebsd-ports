@@ -266,6 +266,7 @@
     SUBDIR += ruboard
     SUBDIR += ruby-http-access
     SUBDIR += ruby-tmpl
+    SUBDIR += ruby-webunit
     SUBDIR += screem
     SUBDIR += sitecopy
     SUBDIR += skipstone
