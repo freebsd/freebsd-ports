@@ -1,0 +1,11 @@
+WWW::Wikipedia provides an automated interface to the Wikipedia 
+http://www.wikipedia.org, which is a free, collaborative, online encyclopedia.
+
+This module allows you to search for a topic and return the resulting entry. 
+It also gives you access to related topics which are also available via the 
+Wikipedia for that entry.
+
+WWW: http://search.cpan.org/dist/WWW-Wikipedia
+
+-- Cheng-Lung Sung
+clsung at dragon2.net
