@@ -7,10 +7,10 @@
 
 PORTNAME=	nc6
 PORTVERSION=	0.5
-PORTREVISION=	1
+PORTREVISION=	2	
 CATEGORIES=	net ipv6
-MASTER_SITES=	ftp://ftp.deepspace6.net/pub/sources/nc6/ \
-		http://ftp.deepspace6.net/pub/sources/nc6/
+MASTER_SITES=	ftp://ftp.deepspace6.net/pub/ds6/sources/nc6/ \
+		http://ftp.deepspace6.net/pub/ds6/sources/nc6/
 
 MAINTAINER=	filippo@widestore.net
 COMMENT=	Netcat clone with IPv6 support
