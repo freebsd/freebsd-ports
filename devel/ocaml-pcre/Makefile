@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pcre
-PORTVERSION=	5.06.2
+PORTVERSION=	5.07.1
 PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.oefai.at/~markus/ocaml_sources/
@@ -15,8 +15,6 @@ DISTNAME=	pcre-ocaml-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl compatible regular expressions for Objective Caml
-
-BROKEN=		"Unfetchable"
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib
