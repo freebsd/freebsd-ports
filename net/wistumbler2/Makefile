@@ -7,10 +7,10 @@
 
 PORTNAME=	wistumbler2
 PORTVERSION=	2.00
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.nopcode.org/prj/wistumbler2/
-DISTNAME=	wistumbler${PORTVERSION}-pre3
+DISTNAME=	wistumbler${PORTVERSION}-pre7
 
 MAINTAINER=	esn@x123.info
 COMMENT=	Network Stumbler for WaveLAN/IEEE Wireless
@@ -30,15 +30,11 @@ MAKE_ENV=	PREFIX=${LOCALBASE} USE_GTK=0
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on 4.x"
-.else
 # this port needs the file /sys/dev/owi/if_ieee80211.h, but there
 # was not a FreeBSD version bump specifically for that.  Use the
 # nearest one.
 .if ${OSVERSION} < 501107
-IGNORE=	requires newer kernel sources that include /sys/dev/owi/if_ieee80211.h
-.endif
+IGNORE=		requires never kernel sources that include /sys/dev/owi/if_ieee80211.h
 .endif
 
 pre-everything::
