@@ -16,7 +16,7 @@ DISTFILES=	${DISTNAME}.tgz
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.4:${PORTSDIR}/graphics/png
+		png.5:${PORTSDIR}/graphics/png
 
 DIST_SUBDIR=	amaya
 WRKSRC=		${WRKDIR}/Amaya/obj
