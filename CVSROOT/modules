@@ -2795,6 +2795,7 @@ gnome-ssh-askpass	ports/security/gnome-ssh-askpass
 gnome-swallow	ports/x11/gnome-swallow
 gnome-themes	ports/x11-themes/gnome-themes
 gnome-themes-extras	ports/x11-themes/gnome-themes-extras
+gnome-translate	ports/textproc/gnome-translate
 gnome-user-share	ports/www/gnome-user-share
 gnome-vfsmm	ports/devel/gnome-vfsmm
 gnome-vnc	ports/net/gnome-vnc
@@ -5066,6 +5067,7 @@ libtomcrypt	ports/security/libtomcrypt
 libtool13	ports/devel/libtool13
 libtool15	ports/devel/libtool15
 libtorrent	ports/net/libtorrent
+libtranslate	ports/textproc/libtranslate
 libtre		ports/textproc/libtre
 libtremor	ports/audio/libtremor
 libtunepimp	ports/audio/libtunepimp
