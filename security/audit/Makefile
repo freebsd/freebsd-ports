@@ -17,10 +17,11 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}beta-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for remote and centralized audit data collection
 
-BROKEN=		Broken pkg-plist
+OPTIONS=	MYSQL "With MySQL support" off \
+		PGSQL "With PostGreSQL support" off
 
 .if defined(WITH_MYSQL)
-LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+USE_MYSQL=	yes
 .endif
 .if defined(WITH_PGSQL)
 POSTGRESQL_PORT?=	databases/postgresql7
@@ -56,7 +57,7 @@ MANCOMPRESSED=	yes
 MAN1=	audit.1
 MAN8=	auditd.8
 
-DOCS=	COPYING README TODO
+PORTDOCS=	COPYING README TODO
 FIXPREFIX_CONF=	src/include/audconf.h src/auditd/auditd.8
 LIBVERSION=	1
 
@@ -82,7 +83,7 @@ post-install:
 	${INSTALL_DATA}	${WRKSRC}/auditd.conf ${PREFIX}/etc/auditd.conf.sample
 .if !defined(NOPORTDOCS)
 	${INSTALL} -d -o root -g wheel -m 0755 ${DOCSDIR}
-.for f in ${DOCS}
+.for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
