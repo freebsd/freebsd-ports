@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openvpn
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +20,8 @@ GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-lzo-lib=${LOCALBASE}/lib \
-		--with-lzo-headers=${LOCALBASE}/include
+		--with-lzo-headers=${LOCALBASE}/include \
+		--prefix=${PREFIX}
 
 MAN8=		openvpn.8
 
