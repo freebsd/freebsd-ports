@@ -7441,7 +7441,6 @@ sma		ports/mail/sma
 smacx		ports/games/smacx
 smail		ports/mail/smail
 smalleiffel	ports/lang/smalleiffel
-smalleiffel-devel	ports/lang/smalleiffel-devel
 smalltalk	ports/lang/smalltalk
 smapi		ports/mail/smapi
 smartdoc	ports/textproc/smartdoc
