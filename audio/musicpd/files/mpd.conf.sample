@@ -1,0 +1,27 @@
+# required
+port                 "2100"
+music_directory      "/mp3"
+playlist_directory   "/mp3"
+log_file             "/var/log/mpd.log"
+error_file           "/var/log/mpd.error"
+
+# optional
+max_connections      "5"
+connection_timeout   "60"
+db_file              "/mp3/.mpddb"
+
+# log_level can be "default", "secure", "verbose"
+log_level            "default"
+
+mixer_device         "/dev/mixer"
+max_playlist_length  "4096"
+buffer_before_play   "25%"
+bind_to_address	     "any"
+
+mixer_type           "oss"
+mixer_device         "/dev/mixer"
+
+ao_driver            "oss"
+ao_driver_options    "dsp=/dev/dsp"
+
+#user                 "mp3"
