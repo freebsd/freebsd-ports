@@ -64,7 +64,7 @@ pre-configure:
 .for AM in automake aclocal
 	${LN} -sf ${LOCALBASE}/bin/${AM}14 ${WRKSRC}/auto-bin/${AM}
 .endfor
-	cd ${WRKSRC} && env PATH=$$PATH:${WRKSRC}/auto-bin \
+	cd ${WRKSRC} && env PATH=${WRKSRC}/auto-bin:$$PATH \
 		${GMAKE} -f Makefile.cvs
 	${PERL} -pi -e "s@libkscan_la_LIBADD =@libkscan_la_LIBADD= -lintl@g" ${WRKSRC}/libkscan/Makefile.in
 	${PERL} -pi -e "s@libkcm_kamera_la_LIBADD =@libkcm_kamera_la_LIBADD= -lintl@g" ${WKRSRC}/kamera/kcontrol/Makefile.in
