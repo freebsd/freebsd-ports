@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.cvsnt.org/archive/ \
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	CVS clone
 
+BROKEN=		"Stomps on libltdl port, and pkg-plist broken"
+
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--enable-fork
 USE_GETOPT_LONG=yes
