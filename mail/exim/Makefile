@@ -80,7 +80,7 @@ PKGMESSAGE=	${WRKDIR}/POST-INSTALL-NOTES
 PKGMESSAGE=	${WRKDIR}/pkg-message
 .endif
 
-MAKE_ENV+=	OSTYPE="${OPSYS}" ARCHTYPE="${ARCH}"
+MAKE_ENV+=	OSTYPE="${OPSYS}" ARCHTYPE="${ARCH}" DUMMY_LDFLAGS="${DUMMY_LDFLAGS}"
 .if defined(EXIMON_ONLY)
 MAKE_ENV+=	INSTALL_ARG="eximon eximon.bin"
 .elif defined(WITHOUT_SUID)
@@ -547,6 +547,8 @@ WITHOUT_IPV6=	yes
 SEDLIST+=	-e 's,^\# (HAVE_IPV6=),\1,'
 .endif
 
+DUMMY_LDFLAGS!=	${ECHO_CMD} ${LDFLAGS} | ${SED} -e 's|-Wl,-rpath|-Wl,-DUMMYrpath|g; s|-rpath|-Wl,-rpath|g; s|-DUMMYrpath|-rpath|g'
+
 pre-everything::
 .if empty(.MAKEFLAGS:M-s) && defined(WITH_WISHLIST)
 	@${ECHO} ''
@@ -570,6 +572,7 @@ do-configure:
 .endif
 	@[ ! -f ${PKGDIR}/pkg-install ] || ${SED} ${SED_SCRIPT} ${PKGDIR}/pkg-install > ${PKGINSTALL}
 	@${REINPLACE_CMD} -E ${SEDLIST} ${WRKSRC}/src/configure.default
+	@${REINPLACE_CMD} -e 's/$$(LDFLAGS)/$$(DUMMY_LDFLAGS)/' ${WRKSRC}/OS/Makefile-Base
 	@${REINPLACE_CMD} -e 's/"(Exim $$version_number)\\n\\t"/"(Exim $$version_number (${OPSYS}))\\n\\t"/' \
 		${WRKSRC}/src/globals.c
 	@${REINPLACE_CMD} -e 's/Exim version %s \(#%s \)\{0,1\}/&(${OPSYS} ${OSREL}) /' ${WRKSRC}/src/exim.c
