@@ -19,7 +19,7 @@ DISTNAME=	ar302osf
 EXTRACT_SUFX=	.tar.Z
 LATEST_LINK=	acroread3
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tg@FreeBSD.org
 COMMENT=	View, distribute and print PDF documents
 
 .if ${ARCH} == "i386"
