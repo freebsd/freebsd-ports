@@ -1919,6 +1919,7 @@ fpc-devel	ports/lang/fpc-devel
 fpc-fvision	ports/devel/fpc-fvision
 fpc-gdb		ports/devel/fpc-gdb
 fpc-gdbint	ports/devel/fpc-gdbint
+fpc-ide		ports/editors/fpc-ide
 fpc-inet	ports/net/fpc-inet
 fpc-odbc	ports/databases/fpc-odbc
 fpc-postgres	ports/databases/fpc-postgres
