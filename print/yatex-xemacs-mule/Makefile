@@ -13,4 +13,8 @@ XEMACS-MULE=	yes
 MASTERDIR=	${.CURDIR}/../yatex
 COMMENT=	${.CURDIR}/pkg/COMMENT
 
+.if defined(PARALLEL_PACKAGE_BUILD)
+FORBIDDEN=	hang
+.endif
+
 .include	"${MASTERDIR}/Makefile"
