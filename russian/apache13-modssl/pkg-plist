@@ -309,7 +309,6 @@ share/doc/apache/index.html.ru.koi8-r
 share/doc/apache/index.html.ru.ucs2
 share/doc/apache/index.html.ru.ucs4
 share/doc/apache/index.html.ru.utf8
-share/doc/apache/index.html.tw.Big5
 share/doc/apache/index.html.se
 share/doc/apache/manual/LICENSE
 share/doc/apache/manual/bind.html
@@ -418,7 +417,6 @@ share/doc/apache/manual/mod/mod_define.html
 share/doc/apache/manual/mod/mod_digest.html
 share/doc/apache/manual/mod/mod_dir.html
 share/doc/apache/manual/mod/mod_dld.html
-share/doc/apache/manual/mod/mod_env.html
 share/doc/apache/manual/mod/mod_example.html
 share/doc/apache/manual/mod/mod_expires.html
 share/doc/apache/manual/mod/mod_headers.html
@@ -430,7 +428,6 @@ share/doc/apache/manual/mod/mod_log_agent.html
 share/doc/apache/manual/mod/mod_log_common.html
 share/doc/apache/manual/mod/mod_log_config.html
 share/doc/apache/manual/mod/mod_log_referer.html
-share/doc/apache/manual/mod/mod_mime.html
 share/doc/apache/manual/mod/mod_mime_magic.html
 share/doc/apache/manual/mod/mod_mmap_static.html
 share/doc/apache/manual/mod/mod_negotiation.html.en
@@ -438,7 +435,6 @@ share/doc/apache/manual/mod/mod_negotiation.html.html
 share/doc/apache/manual/mod/mod_negotiation.html.ja.jis
 share/doc/apache/manual/mod/mod_proxy.html
 share/doc/apache/manual/mod/mod_rewrite.html
-share/doc/apache/manual/mod/mod_setenvif.html
 share/doc/apache/manual/mod/mod_so.html
 share/doc/apache/manual/mod/mod_speling.html
 share/doc/apache/manual/mod/mod_ssl/index.html
@@ -522,11 +518,9 @@ share/doc/apache/manual/programs/header.html
 share/doc/apache/manual/programs/htdigest.html
 share/doc/apache/manual/programs/htpasswd.html
 share/doc/apache/manual/programs/httpd.html
-share/doc/apache/manual/programs/index.html
 share/doc/apache/manual/programs/logresolve.html
 share/doc/apache/manual/programs/other.html
 share/doc/apache/manual/programs/rotatelogs.html
-share/doc/apache/manual/programs/suexec.html
 share/doc/apache/manual/readme-tpf.html
 share/doc/apache/manual/search/manual-index.cgi
 share/doc/apache/manual/sections.html
