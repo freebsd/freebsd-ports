@@ -3,7 +3,7 @@
 # Date created:         9 Dec 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.6 1996/11/18 11:40:53 asami Exp $
+# $Id: Makefile,v 1.7 1997/07/21 17:23:13 fenner Exp $
 #
 
 DISTNAME=	WWW
@@ -15,6 +15,8 @@ DISTFILES=      w3c-libwww-4.0D.tar.gz \
 		w3c_4.0D_src.tar.gz
 
 MAINTAINER=     ache@freebsd.org
+
+BROKEN_ELF=	-lwww
 
 do-build:
 	cd ${WRKSRC}; ./BUILD comline
