@@ -31,7 +31,7 @@ MAN3=		Pod::Man.3 Pod::ParseLink.3 Pod::Text.3 Pod::Text::Color.3 \
 PLIST_SUB=	PL_FILES=""
 
 .if ${PERL_LEVEL} < 500600
-RUN_DEPENDS=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec \
+RUN_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec \
 		${SITE_PERL}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor
 .elif ${PERL_LEVEL} < 500802
 .undef MAN1
