@@ -1,0 +1,12 @@
+diff -uNr ../gg/configure ./configure
+--- ../gg/configure	Fri May  1 14:48:25 1998
++++ ./configure	Mon Jul 20 12:49:23 1998
+@@ -4004,7 +4004,7 @@
+   ;;
+ esac
+ fi
+-EMACS="$ac_cv_path_EMACS"
++EMACS=no
+ if test -n "$EMACS"; then
+   echo "$ac_t""$EMACS" 1>&6
+ else
