@@ -1,0 +1,9 @@
+bin/skype
+%%DATADIR%%/icons/skype_16_32.png
+%%DATADIR%%/icons/skype_24_32.png
+%%DATADIR%%/icons/skype_32_32.png
+%%DATADIR%%/icons/skype_48_32.png
+@dirrm %%DATADIR%%/icons
+%%DATADIR%%/call_in.wav
+@dirrm %%DATADIR%%
+%%GNOME%%share/gnome/applications/skype.desktop
