@@ -87,11 +87,6 @@ CONFIGURE_ARGS+=--with-regex=apache
 EXT_DIR=	20020429
 SAPI_FILE=	"@comment "
 
-.if defined(WITH_DEBUG)
-CONFIGURE_ARGS+=--enable-debug
-EXT_DIR:=	${EXT_DIR}-debug
-.endif
-
 CONFLICTS=	php4-cli-4* mod_php4-4* php4-cgi-4*
 .if defined(WITHOUT_APACHE)
 .if defined(WITHOUT_CLI)
@@ -535,11 +530,16 @@ CONFIGURE_ARGS+=--with-zlib=yes
 .if !defined(WITHOUT_APACHE)
 .if exists(${LOCALBASE}/include/apache2/apr.h)
 WITH_APACHE2=	yes
+APACHE_MPM!=	${APXS} -q MPM_NAME
 .endif
 .if defined(WITH_APACHE2)
+APACHE_MPM?=	${WITH_MPM}
 APACHE_PORT?=	www/apache2
 CONFIGURE_ARGS+=--with-apxs2=${APXS}
 SAPI_FILE=	libexec/apache2/libphp4.so
+.if ${APACHE_MPM} == "worker"
+EXT_DIR:=	${EXT_DIR}-zts
+.endif
 .else
 APACHE_PORT?=	www/apache13
 CONFIGURE_ARGS+=--with-apxs=${APXS}
@@ -547,6 +547,11 @@ SAPI_FILE=	libexec/apache/libphp4.so
 .endif
 BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
+.endif
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=--enable-debug
+EXT_DIR:=	${EXT_DIR}-debug
 .endif
 
 PLIST_SUB+=	SAPI_FILE=${SAPI_FILE} \
@@ -675,7 +680,6 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/php.ini-dist ${PREFIX}/etc
 	@${INSTALL_DATA} ${WRKSRC}/php.ini-recommended ${PREFIX}/etc
 	@${INSTALL_DATA} ${WRKDIR}/php.conf ${PREFIX}/etc
-	@${TOUCH} ${PREFIX}/lib/php/${EXT_DIR}/.php
 .if !defined(WITHOUT_APACHE)
 	@${ECHO_CMD} "*****************************************************************************"
 	@${ECHO_CMD} ""

@@ -18,10 +18,21 @@
 .endif
 
 PHP_VER?=	4
-.if !defined(WITH_DEBUG)
-PHP_EXT_DIR?=	20020429
+.if !defined(PHP_EXT_DIR)
+PHP_EXT_DIR=	20020429
+.if exists(${LOCALBASE}/include/apache2/apr.h)
+APACHE_MPM!=	${APXS} -q MPM_NAME
+.if ${APACHE_MPM} == "worker"
+PHP_EXT_DIR:=	${PHP_EXT_DIR}-zts
+.endif
 .else
-PHP_EXT_DIR?=	20020429-debug
+.if defined(WITH_APACHE2) && defined(WITH_MPM) && ${WITH_MPM} == "worker"
+PHP_EXT_DIR:=	${PHP_EXT_DIR}-zts
+.endif
+.endif
+.if defined(WITH_DEBUG)
+PHP_EXT_DIR:=	${PHP_EXT_DIR}-debug
+.endif
 .endif
 .if !defined(WITHOUT_PEAR)
 PHP_PEAR?=	yes
@@ -32,7 +43,7 @@ PHP_SAPI?=	""
 
 .if defined(BROKEN_WITH_PHP)
 .       for VER in ${BROKEN_WITH_PHP}
-.               if (${PHP_VER} == "${VER}")
+.               if ${PHP_VER} == "${VER}"
 BROKEN=         "Doesn't work with PHP version : ${PHP_VER} (Doesn't support PHP ${BROKEN_WITH_PHP})"
 .               endif
 .       endfor
