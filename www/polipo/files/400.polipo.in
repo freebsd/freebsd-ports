@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# control file for periodic/daily
+# polipo expiry
+# 
+#
+
+if [ -r %%DESTDIR%%%%PREFIX%%/etc/rc.d/polipo.sh ]
+then
+	echo ""
+	echo "polipo expiry:"
+	%%DESTDIR%%%%PREFIX%%/etc/rc.d/polipo.sh expire
+fi
+
+exit 0
