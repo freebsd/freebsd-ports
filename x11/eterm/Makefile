@@ -3,7 +3,7 @@
 # Date created:        24 November 1997
 # Whom:                Murray Stokely <murray@cdrom.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/11/01 14:58:46 jseger Exp $
 #
 
 DISTNAME=	Eterm-DR-0.6a
@@ -14,12 +14,11 @@ MASTER_SITES=	http://www.tcserv.com/archive/E/ \
 
 MAINTAINER=	murray@cdrom.com
 
-MAN1=		Eterm.1
-
 LIB_DEPENDS=	Im\\.3\\.:${PORTSDIR}/graphics/imlib
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+MAN1=		Eterm.1
 
 do-build:
 	cd ${WRKSRC}/src && \
