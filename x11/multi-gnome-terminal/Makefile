@@ -7,6 +7,7 @@
 
 PORTNAME=	multi-gnome-terminal
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://multignometerm.sourceforge.net/
@@ -14,19 +15,16 @@ MASTER_SITE_SUBDIR=	multignometerm
 
 MAINTAINER=	fdubuy@free.fr
 
-BUILD_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
-LIB_DEPENDS+=	xml.5:${PORTSDIR}/textproc/libxml \
-		ORBit.2:${PORTSDIR}/devel/ORBit
-RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
-
 USE_X_PREFIX=	yes
-USE_GTK=	yes
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomehack gnomelibs
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-# The distribution Makefile.in files append "/gnome" to --datadir
-CONFIGURE_ARGS+=	--datadir=${PREFIX}/share
 
 MAN1=		multi-gnome-terminal.1
+
+post-install:
+	@${INSTALL_DATA} ${WRKSRC}/pixmaps/multignometerm.png \
+		${PREFIX}/share/gnome/pixmaps/multignometerm.png
 
 .include <bsd.port.mk>
