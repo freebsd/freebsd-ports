@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms-speex
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://jzb.rapanden.dk/speex/
 DISTNAME=	speex-xmms-${PORTVERSION}
@@ -15,7 +16,7 @@ MAINTAINER=	dyeske@yahoo.com
 COMMENT=	XMMS input plugin to play speex files
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
-LIB_DEPENDS=	speex.0:${PORTSDIR}/audio/speex
+LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 WRKSRC=		${WRKDIR}/speex-xmms
