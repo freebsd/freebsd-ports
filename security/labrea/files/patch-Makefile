@@ -1,53 +1,22 @@
-*** Makefile	Wed Feb 20 09:27:56 2002
---- Makefile.new	Wed Jun 11 18:10:47 2003
-***************
-*** 4,17 ****
-  -mcpu=i686 -fexpensive-optimizations -fomit-frame-pointer
-  #OPTFLAGS = -g
-  CC = gcc
-! CFLAGS = -Wall `libnet-config --defines` $(OPTFLAGS) $(INCLUDES)
-  LDLIBS = `libnet-config --libs` -lpcap 
-! LDFLAGS = -s
-! INCLUDES = -I/usr/include/pcap
-! 
-! LaBrea:	LaBrea.o CleanExit.o FixArrays.o GoDaemon.o \
-!         PacketHandler.o ServiceTimer.o ToggleLogging.o
-  
-  LaBrea.o: LaBrea.c labrea.h defines.h
-  CleanExit.o: CleanExit.c labrea.h defines.h
-  FixArrays.o: FixArrays.c labrea.h defines.h
---- 4,17 ----
-  -mcpu=i686 -fexpensive-optimizations -fomit-frame-pointer
-  #OPTFLAGS = -g
-  CC = gcc
-! CFLAGS = -Wall `libnet-config --defines` -DCONFIG_PATH=\"/usr/local/etc\" $(OPTFLAGS) $(INCLUDES)
-  LDLIBS = `libnet-config --libs` -lpcap 
-! LDFLAGS = -s -L/usr/local/lib
-! INCLUDES = -I/usr/include/pcap -I/usr/local/include
-! FILES = LaBrea.o CleanExit.o FixArrays.o GoDaemon.o PacketHandler.o ServiceTimer.o ToggleLogging.o
-  
-+ LaBrea: $(FILES)
-+        
-  LaBrea.o: LaBrea.c labrea.h defines.h
-  CleanExit.o: CleanExit.c labrea.h defines.h
-  FixArrays.o: FixArrays.c labrea.h defines.h
-***************
-*** 20,26 ****
-  ServiceTimer.o: ServiceTimer.c labrea.h defines.h
-  ToggleLogging.o: ToggleLogging.c labrea.h defines.h
-  
-  clean:
-  	rm -f *.o core LaBrea
-- 
-  
---- 20,29 ----
-  ServiceTimer.o: ServiceTimer.c labrea.h defines.h
-  ToggleLogging.o: ToggleLogging.c labrea.h defines.h
-  
-+ install: 
-+ 	$(CC) -o LaBrea $(FILES) $(LDFLAGS) $(LDLIBS)
-+ 	$(INSTALL) -c -o root -g wheel LaBrea /usr/local/bin
-+ 
-  clean:
-  	rm -f *.o core LaBrea
-  
+--- Makefile.orig	Thu Feb 21 00:27:56 2002
++++ Makefile	Wed Jun 25 10:36:50 2003
+@@ -3,14 +3,15 @@
+ OPTFLAGS = -O6 -funroll-loops -frerun-cse-after-loop -finline-functions \
+ -mcpu=i686 -fexpensive-optimizations -fomit-frame-pointer
+ #OPTFLAGS = -g
+-CC = gcc
+-CFLAGS = -Wall `libnet-config --defines` $(OPTFLAGS) $(INCLUDES)
++CC ?= gcc
++CFLAGS += -Wall `libnet-config --defines` -DCONFIG_PATH=\"$(PREFIX)/etc\" $(INCLUDES)
+ LDLIBS = `libnet-config --libs` -lpcap 
+-LDFLAGS = -s
+-INCLUDES = -I/usr/include/pcap
++LDFLAGS = -s -L$(PREFIX)/lib
++INCLUDES = -I/usr/include/pcap -I$(PREFIX)/include
+ 
+ LaBrea:	LaBrea.o CleanExit.o FixArrays.o GoDaemon.o \
+         PacketHandler.o ServiceTimer.o ToggleLogging.o
++	$(CC) -o LaBrea $> $(LDFLAGS) $(LDLIBS)
+ 
+ LaBrea.o: LaBrea.c labrea.h defines.h
+ CleanExit.o: CleanExit.c labrea.h defines.h

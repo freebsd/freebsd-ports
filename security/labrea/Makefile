@@ -17,11 +17,12 @@ COMMENT=	Security tarpit defense tool
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 
-ALL_TARGET=	${PORTNAME}
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/LaBrea ${PREFIX}/bin
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/LaBrea.README ${DOCSDIR}
 	@echo "******************************************"
 	@echo "You will need to read the LaBrea.README in"
