@@ -1,9 +1,15 @@
-
-$FreeBSD$
-
---- configure.orig	Tue Jun 11 12:09:04 2002
-+++ configure	Thu Jul 18 15:09:54 2002
-@@ -17491,13 +17491,13 @@
+--- configure.orig	Fri Aug 15 02:46:48 2003
++++ configure	Fri Aug 15 02:50:17 2003
+@@ -2380,7 +2380,7 @@
+   if test -n "$GCC"; then
+     echo "$as_me:$LINENO: result: Turning on gcc compiler warnings." >&5
+ echo "${ECHO_T}Turning on gcc compiler warnings." >&6
+-    CC="$CC -pedantic -Wall -Wstrict-prototypes -Wnested-externs"
++    CC="$CC -Wall -Wstrict-prototypes -Wnested-externs"
+     # supposedly gcc 3.4 will have "-Wdeclaration-after-statement"
+     # and then perhaps we can do without -pedantic?
+   else
+@@ -17886,13 +17886,13 @@
  # Now that we know whether we have Gnome, we can decide where the XML
  # config files get installed.
  #
