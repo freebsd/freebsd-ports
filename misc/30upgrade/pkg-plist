@@ -1,3 +1,5 @@
+usr/bin/install-info
+usr/bin/makeinfo
 usr/libexec/elf/ld
 usr/share/mk/bsd.port.mk
 usr/share/mk/bsd.port.pre.mk
