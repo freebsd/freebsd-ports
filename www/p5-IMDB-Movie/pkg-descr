@@ -1,0 +1,8 @@
+This is a module that uses LWP and HTML::TokeParser to parse the 
+web page for the requested movie. You can use an IMDB identification 
+number or the name of the movie. IMDB.pm will try to return the 
+best match.
+
+Author:	Jeffrey Hayes Anderson <captvanhalen@yahoo.com>
+
+WWW:	http://search.cpan.org/dist/IMDB-Movie/

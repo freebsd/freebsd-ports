@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/IMDB/Movie.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IMDB/Movie/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IMDB/Movie
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/IMDB 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/IMDB 2>/dev/null || true
