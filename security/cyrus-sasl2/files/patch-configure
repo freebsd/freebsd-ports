@@ -1,7 +1,7 @@
 Index: configure
 diff -u configure.orig configure
 --- configure.orig	Thu Mar 11 00:56:10 2004
-+++ configure	Fri Mar 12 00:26:13 2004
++++ configure	Thu Mar 25 04:11:41 2004
 @@ -1576,6 +1576,7 @@
  fi
  echo "$as_me:$LINENO: result: yes" >&5
@@ -83,3 +83,12 @@ diff -u configure.orig configure
      GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_STATIC_LIBS $gssapi_dir/libgssapi.a $gssapi_dir/libkrb5.a $gssapi_dir/libasn1.a $gssapi_dir/libroken.a $gssapi_dir/libcom_err.a ${LIB_CRYPT}"
    elif test "$gss_impl" = "cybersafe03"; then
  # Version of CyberSafe with two libraries
+@@ -11224,7 +11227,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpq $LIB_PGSQL_DIR $LIBS"
++LIBS="-lpq $LIB_PGSQL_DIR $GSSAPIBASE_LIBS $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
