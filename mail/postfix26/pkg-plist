@@ -5,9 +5,7 @@ etc/postfix/LICENSE
 etc/postfix/access
 etc/postfix/aliases
 etc/postfix/canonical
-etc/postfix/main.cf
 etc/postfix/main.cf.default
-etc/postfix/master.cf
 etc/postfix/pcre_table
 etc/postfix/post-install
 etc/postfix/postfix-files
@@ -24,6 +22,8 @@ etc/postfix/sample-flush.cf
 etc/postfix/sample-ldap.cf
 etc/postfix/sample-lmtp.cf
 etc/postfix/sample-local.cf
+etc/postfix/sample-main.cf
+etc/postfix/sample-master.cf
 etc/postfix/sample-misc.cf
 etc/postfix/sample-pcre-access.cf
 etc/postfix/sample-pcre-body.cf
@@ -74,6 +74,8 @@ sbin/postmap
 sbin/postqueue
 sbin/postsuper
 sbin/sendmail
+bin/newaliases
+bin/mailq
 %%SUB_TEST%%sbin/smtp-sink
 %%SUB_TEST%%sbin/smtp-source
 %%PORTDOCS%%share/doc/postfix/DB_README
