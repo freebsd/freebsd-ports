@@ -26,6 +26,9 @@ MAN3=		XML::Simple.3 XML::Simple::FAQ.3
 .if ${PERL_LEVEL} <= 500503
 EXTRA_PATCHES=	${PATCHDIR}/5.005_03-lib::XML::Simple.pm
 
+post-patch:
+	@${FIND} ${WRKSRC} -name '*.orig' -delete
+
 post-configure:
 	${PERL} -pi -e 's/(\(POD2MAN_EXE\))/$$1 --lax/' ${WRKSRC}/Makefile
 
