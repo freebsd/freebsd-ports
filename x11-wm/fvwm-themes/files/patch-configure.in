@@ -1,0 +1,11 @@
+--- configure.in.orig	Fri Feb  2 15:35:13 2001
++++ configure.in	Fri Feb  2 15:35:41 2001
+@@ -39,7 +39,7 @@
+ fi
+ 
+ # we check for FvwmM4 below
+-AC_PATH_PROG(M4, m4)
++AC_PATH_PROG(M4, gm4)
+ if test -z "$M4"; then
+ 	AC_MSG_WARN(m4 is not found; you will have a few problems using this package!)
+ fi
