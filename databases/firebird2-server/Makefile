@@ -18,8 +18,6 @@ DISTFILES=	bootkit-1.0.2.908.tar.gz \
 MAINTAINER=	chris@aims.com.au
 COMMENT=	The open-source InterBase(tm) 6.0 spin-off (Classic version)
 
-BROKEN=		"Installs files in /usr/interbase"
-
 WRKSRC=		${WRKDIR}/firebird-1.0.2.908
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/firebird/lib
