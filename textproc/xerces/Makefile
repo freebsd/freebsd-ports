@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xerces
-PORTVERSION=	1.1.3
+PORTVERSION=	1.2.3
 CATEGORIES=	textproc
 MASTER_SITES=	http://xml.apache.org/dist/xerces-j/
 DISTNAME=	Xerces-J-bin.${PORTVERSION}
@@ -30,6 +30,7 @@ do-install:
 		${MKDIR} ${PREFIX}/share/java/${PKGNAME}/; \
 		${CP} LICENSE ${PREFIX}/share/java/${PKGNAME}/; \
 		${CP} -R docs ${PREFIX}/share/java/${PKGNAME}/; \
-		${CP} -R data ${PREFIX}/share/java/${PKGNAME}/
+		${CP} -R data ${PREFIX}/share/java/${PKGNAME}/; \
+		${CP} -R samples ${PREFIX}/share/java/${PKGNAME}/
 
 .include <bsd.port.post.mk>

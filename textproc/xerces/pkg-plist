@@ -1,5 +1,6 @@
 share/java/classes/xerces.jar
 share/java/classes/xercesSamples.jar
+share/java/xerces-%%PORTVERSION%%/LICENSE
 share/java/xerces-%%PORTVERSION%%/data/personal-schema.xml
 share/java/xerces-%%PORTVERSION%%/data/personal.dtd
 share/java/xerces-%%PORTVERSION%%/data/personal.xml
@@ -192,7 +193,6 @@ share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xerces/dom/CharacterDa
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xerces/dom/ChildAndParentNode.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xerces/dom/ChildNode.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xerces/dom/CommentImpl.html
-share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xerces/dom/DOMExceptionImpl.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xerces/dom/DOMImplementationImpl.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xerces/dom/DeepNodeListImpl.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xerces/dom/DeferredAttrImpl.html
@@ -252,7 +252,6 @@ share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xerces/framework/packa
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xerces/framework/package-summary.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xerces/framework/package-tree.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xerces/parsers/DOMParser.html
-share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xerces/parsers/RevalidatingDOMParser.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xerces/parsers/SAXParser.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xerces/parsers/package-frame.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xerces/parsers/package-summary.html
@@ -260,6 +259,7 @@ share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xerces/parsers/package
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xml/serialize/BaseMarkupSerializer.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xml/serialize/DOMSerializer.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xml/serialize/HTMLSerializer.html
+share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xml/serialize/HTMLdtd.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xml/serialize/LineSeparator.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xml/serialize/Method.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xml/serialize/OutputFormat.DTD.html
@@ -363,12 +363,12 @@ share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/w3c/dom/html/package-tree.htm
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/w3c/dom/package-frame.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/w3c/dom/package-summary.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/w3c/dom/package-tree.html
-share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/w3c/dom/range/DocumentRange.html
-share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/w3c/dom/range/Range.html
-share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/w3c/dom/range/RangeException.html
-share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/w3c/dom/range/package-frame.html
-share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/w3c/dom/range/package-summary.html
-share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/w3c/dom/range/package-tree.html
+share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/w3c/dom/ranges/DocumentRange.html
+share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/w3c/dom/ranges/Range.html
+share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/w3c/dom/ranges/RangeException.html
+share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/w3c/dom/ranges/package-frame.html
+share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/w3c/dom/ranges/package-summary.html
+share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/w3c/dom/ranges/package-tree.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/w3c/dom/traversal/DocumentTraversal.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/w3c/dom/traversal/NodeFilter.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/w3c/dom/traversal/NodeIterator.html
@@ -421,9 +421,6 @@ share/java/xerces-%%PORTVERSION%%/docs/apiDocs/package-list
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/packages.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/serialized-form.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/stylesheet.css
-share/java/xerces-%%PORTVERSION%%/docs/design.css
-share/java/xerces-%%PORTVERSION%%/docs/design.dtd
-share/java/xerces-%%PORTVERSION%%/docs/design.xsl
 share/java/xerces-%%PORTVERSION%%/docs/html/api.html
 share/java/xerces-%%PORTVERSION%%/docs/html/caveats.html
 share/java/xerces-%%PORTVERSION%%/docs/html/domcount.html
@@ -534,8 +531,38 @@ share/java/xerces-%%PORTVERSION%%/docs/html/schema.html
 share/java/xerces-%%PORTVERSION%%/docs/html/tree.html
 share/java/xerces-%%PORTVERSION%%/docs/html/treeview.html
 share/java/xerces-%%PORTVERSION%%/docs/html/y2k.html
-share/java/xerces-%%PORTVERSION%%/LICENSE
-@exec mkdir %D/share/java/xerces-%%PORTVERSION%%/docs/dtd
+share/java/xerces-%%PORTVERSION%%/samples/dom/DOMAddLines.java
+share/java/xerces-%%PORTVERSION%%/samples/dom/DOMCount.java
+share/java/xerces-%%PORTVERSION%%/samples/dom/DOMFilter.java
+share/java/xerces-%%PORTVERSION%%/samples/dom/DOMGenerate.java
+share/java/xerces-%%PORTVERSION%%/samples/dom/DOMParserWrapper.java
+share/java/xerces-%%PORTVERSION%%/samples/dom/DOMWriter.java
+share/java/xerces-%%PORTVERSION%%/samples/dom/traversal/IteratorView.java
+share/java/xerces-%%PORTVERSION%%/samples/dom/traversal/NameNodeFilter.java
+share/java/xerces-%%PORTVERSION%%/samples/dom/traversal/TreeWalkerView.java
+share/java/xerces-%%PORTVERSION%%/samples/dom/wrappers/DOMParser.java
+share/java/xerces-%%PORTVERSION%%/samples/sax/DTDReader.java
+share/java/xerces-%%PORTVERSION%%/samples/sax/SAX2Count.java
+share/java/xerces-%%PORTVERSION%%/samples/sax/SAX2Writer.java
+share/java/xerces-%%PORTVERSION%%/samples/sax/SAXCount.java
+share/java/xerces-%%PORTVERSION%%/samples/sax/SAXWriter.java
+share/java/xerces-%%PORTVERSION%%/samples/sax/helpers/AttributeListImpl.java
+share/java/xerces-%%PORTVERSION%%/samples/sax/helpers/AttributesImpl.java
+share/java/xerces-%%PORTVERSION%%/samples/ui/DOMParserSaveEncoding.java
+share/java/xerces-%%PORTVERSION%%/samples/ui/DOMTree.java
+share/java/xerces-%%PORTVERSION%%/samples/ui/DOMTreeFull.java
+share/java/xerces-%%PORTVERSION%%/samples/ui/DefaultImages.java
+share/java/xerces-%%PORTVERSION%%/samples/ui/TreeView.java
+share/java/xerces-%%PORTVERSION%%/samples/ui/TreeViewer.java
+share/java/xerces-%%PORTVERSION%%/samples/util/Arguments.java
+@dirrm share/java/xerces-%%PORTVERSION%%/samples/util
+@dirrm share/java/xerces-%%PORTVERSION%%/samples/ui
+@dirrm share/java/xerces-%%PORTVERSION%%/samples/sax/helpers
+@dirrm share/java/xerces-%%PORTVERSION%%/samples/sax
+@dirrm share/java/xerces-%%PORTVERSION%%/samples/dom/wrappers
+@dirrm share/java/xerces-%%PORTVERSION%%/samples/dom/traversal
+@dirrm share/java/xerces-%%PORTVERSION%%/samples/dom
+@dirrm share/java/xerces-%%PORTVERSION%%/samples
 @dirrm share/java/xerces-%%PORTVERSION%%/docs/html/resources
 @dirrm share/java/xerces-%%PORTVERSION%%/docs/html/graphics
 @dirrm share/java/xerces-%%PORTVERSION%%/docs/html
@@ -545,7 +572,7 @@ share/java/xerces-%%PORTVERSION%%/LICENSE
 @dirrm share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/xml/sax
 @dirrm share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/xml
 @dirrm share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/w3c/dom/traversal
-@dirrm share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/w3c/dom/range
+@dirrm share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/w3c/dom/ranges
 @dirrm share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/w3c/dom/html
 @dirrm share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/w3c/dom/events
 @dirrm share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/w3c/dom
@@ -571,5 +598,5 @@ share/java/xerces-%%PORTVERSION%%/LICENSE
 @dirrm share/java/xerces-%%PORTVERSION%%/docs
 @dirrm share/java/xerces-%%PORTVERSION%%/data
 @dirrm share/java/xerces-%%PORTVERSION%%
-@unexec rmdir %D/share/java/classes > /dev/null 2>&1 || true 
-@unexec rmdir %D/share/java > /dev/null 2>&1 || true 
+@unexec rmdir %D/share/java/classes > /dev/null 2>&1 || true
+@unexec rmdir %D/share/java > /dev/null 2>&1 || true
