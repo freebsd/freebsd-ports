@@ -135,4 +135,3 @@ lib/transcode/export_toolame.la
 lib/transcode/export_af6.conf
 %%WITH_XVID%%lib/transcode/libxvidcore.so
 @dirrm lib/transcode
-
