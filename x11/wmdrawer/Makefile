@@ -16,7 +16,7 @@ DISTFILES=	${EXTRACT_ONLY}:tarball \
 		daemon.png:pixmap
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	josef@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockapp which provides a drawer to launch applications
 
 USE_REINPLACE=	yes
