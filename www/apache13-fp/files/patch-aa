@@ -1,72 +1,50 @@
-*** configure.orig	Thu Sep 17 03:07:53 1998
---- configure	Sat Nov 28 11:33:04 1998
-***************
-*** 810,815 ****
---- 810,816 ----
-  ##
-  ##  determine special configuration parameters
-  ##
-+ conf_user="nobody"
-  conf_group="#-1"
-  conf_port="80"
-  conf_serveradmin="you@your.address"
-***************
-*** 828,833 ****
---- 829,837 ----
-      conf_serveradmin="`$aux/buildinfo.sh -n %u@%h%d`"
-      conf_servername="`$aux/buildinfo.sh -n %h%d`"
-  fi
-+ if [ ".$suexec" = .1 ]; then
-+     conf_user="$suexec_caller"
-+ fi
-   
-  ##
-  ##  determine prefix-relative paths for directories
-***************
-*** 870,877 ****
-      echo "       DEFAULT_PIDLOG: ${runtimedir_relative}httpd.pid"
-      echo "   DEFAULT_SCOREBOARD: ${runtimedir_relative}httpd.scoreboard"
-      echo "     DEFAULT_LOCKFILE: ${runtimedir_relative}httpd.lock"
-!     echo "      DEFAULT_XFERLOG: ${logfiledir_relative}access_log"
-!     echo "     DEFAULT_ERRORLOG: ${logfiledir_relative}error_log"
-      echo "    TYPES_CONFIG_FILE: ${sysconfdir_relative}mime.types"
-      echo "   SERVER_CONFIG_FILE: ${sysconfdir_relative}httpd.conf"
-      echo "   ACCESS_CONFIG_FILE: ${sysconfdir_relative}access.conf"
---- 874,881 ----
-      echo "       DEFAULT_PIDLOG: ${runtimedir_relative}httpd.pid"
-      echo "   DEFAULT_SCOREBOARD: ${runtimedir_relative}httpd.scoreboard"
-      echo "     DEFAULT_LOCKFILE: ${runtimedir_relative}httpd.lock"
-!     echo "      DEFAULT_XFERLOG: ${logfiledir_relative}httpd-access.log"
-!     echo "     DEFAULT_ERRORLOG: ${logfiledir_relative}httpd-error.log"
-      echo "    TYPES_CONFIG_FILE: ${sysconfdir_relative}mime.types"
-      echo "   SERVER_CONFIG_FILE: ${sysconfdir_relative}httpd.conf"
-      echo "   ACCESS_CONFIG_FILE: ${sysconfdir_relative}access.conf"
-***************
-*** 912,917 ****
---- 916,922 ----
-  -e "s%@suexec_uidmin@%$suexec_uidmin%g" \
-  -e "s%@suexec_gidmin@%$suexec_gidmin%g" \
-  -e "s%@suexec_safepath@%$suexec_safepath%g" \
-+ -e "s%@conf_user@%$conf_user%g" \
-  -e "s%@conf_group@%$conf_group%g" \
-  -e "s%@conf_port@%$conf_port%g" \
-  -e "s%@conf_serveradmin@%$conf_serveradmin%g" \
-***************
-*** 935,942 ****
-  echo "echo '-DDEFAULT_PIDLOG=\"${runtimedir_relative}httpd.pid\"'" >>$src/apaci
-  echo "echo '-DDEFAULT_SCOREBOARD=\"${runtimedir_relative}httpd.scoreboard\"'" >>$src/apaci
-  echo "echo '-DDEFAULT_LOCKFILE=\"${runtimedir_relative}httpd.lock\"'" >>$src/apaci
-! echo "echo '-DDEFAULT_XFERLOG=\"${logfiledir_relative}access_log\"'" >>$src/apaci
-! echo "echo '-DDEFAULT_ERRORLOG=\"${logfiledir_relative}error_log\"'" >>$src/apaci
-  echo "echo '-DTYPES_CONFIG_FILE=\"${sysconfdir_relative}mime.types\"'" >>$src/apaci
-  echo "echo '-DSERVER_CONFIG_FILE=\"${sysconfdir_relative}httpd.conf\"'" >>$src/apaci
-  echo "echo '-DACCESS_CONFIG_FILE=\"${sysconfdir_relative}access.conf\"'" >>$src/apaci
---- 940,947 ----
-  echo "echo '-DDEFAULT_PIDLOG=\"${runtimedir_relative}httpd.pid\"'" >>$src/apaci
-  echo "echo '-DDEFAULT_SCOREBOARD=\"${runtimedir_relative}httpd.scoreboard\"'" >>$src/apaci
-  echo "echo '-DDEFAULT_LOCKFILE=\"${runtimedir_relative}httpd.lock\"'" >>$src/apaci
-! echo "echo '-DDEFAULT_XFERLOG=\"${logfiledir_relative}httpd-access.log\"'" >>$src/apaci
-! echo "echo '-DDEFAULT_ERRORLOG=\"${logfiledir_relative}httpd-error.log\"'" >>$src/apaci
-  echo "echo '-DTYPES_CONFIG_FILE=\"${sysconfdir_relative}mime.types\"'" >>$src/apaci
-  echo "echo '-DSERVER_CONFIG_FILE=\"${sysconfdir_relative}httpd.conf\"'" >>$src/apaci
-  echo "echo '-DACCESS_CONFIG_FILE=\"${sysconfdir_relative}access.conf\"'" >>$src/apaci
+--- configure.orig	Sat Jan  2 07:19:41 1999
++++ configure	Mon Jan 18 17:18:16 1999
+@@ -953,6 +953,7 @@
+ ##
+ ##  determine special configuration parameters
+ ##
++conf_user="nobody"
+ conf_group="#-1"
+ conf_port="80"
+ conf_serveradmin="you@your.address"
+@@ -971,6 +972,9 @@
+     conf_serveradmin="`$aux/buildinfo.sh -n %u@%h%d`"
+     conf_servername="`$aux/buildinfo.sh -n %h%d`"
+ fi
++if [ ".$suexec" = .1 ]; then
++    conf_user="$suexec_caller"
++fi
+  
+ ##
+ ##  determine prefix-relative paths for directories
+@@ -1012,8 +1016,8 @@
+     echo "       DEFAULT_PIDLOG: ${runtimedir_relative}${thetarget}.pid"
+     echo "   DEFAULT_SCOREBOARD: ${runtimedir_relative}${thetarget}.scoreboard"
+     echo "     DEFAULT_LOCKFILE: ${runtimedir_relative}${thetarget}.lock"
+-    echo "      DEFAULT_XFERLOG: ${logfiledir_relative}access_log"
+-    echo "     DEFAULT_ERRORLOG: ${logfiledir_relative}error_log"
++    echo "      DEFAULT_XFERLOG: ${logfiledir_relative}httpd-access.log"
++    echo "     DEFAULT_ERRORLOG: ${logfiledir_relative}httpd-error.log"
+     echo "    TYPES_CONFIG_FILE: ${sysconfdir_relative}mime.types"
+     echo "   SERVER_CONFIG_FILE: ${sysconfdir_relative}${thetarget}.conf"
+     echo "   ACCESS_CONFIG_FILE: ${sysconfdir_relative}access.conf"
+@@ -1068,6 +1072,7 @@
+ -e "s%@suexec_uidmin@%$suexec_uidmin%g" \
+ -e "s%@suexec_gidmin@%$suexec_gidmin%g" \
+ -e "s%@suexec_safepath@%$suexec_safepath%g" \
++-e "s%@conf_user@%$conf_user%g" \
+ -e "s%@conf_group@%$conf_group%g" \
+ -e "s%@conf_port@%$conf_port%g" \
+ -e "s%@conf_serveradmin@%$conf_serveradmin%g" \
+@@ -1091,8 +1096,8 @@
+ echo "echo '-DDEFAULT_PIDLOG=\"${runtimedir_relative}${thetarget}.pid\"'" >>$src/apaci
+ echo "echo '-DDEFAULT_SCOREBOARD=\"${runtimedir_relative}${thetarget}.scoreboard\"'" >>$src/apaci
+ echo "echo '-DDEFAULT_LOCKFILE=\"${runtimedir_relative}${thetarget}.lock\"'" >>$src/apaci
+-echo "echo '-DDEFAULT_XFERLOG=\"${logfiledir_relative}access_log\"'" >>$src/apaci
+-echo "echo '-DDEFAULT_ERRORLOG=\"${logfiledir_relative}error_log\"'" >>$src/apaci
++echo "echo '-DDEFAULT_XFERLOG=\"${logfiledir_relative}httpd-access.log\"'" >>$src/apaci
++echo "echo '-DDEFAULT_ERRORLOG=\"${logfiledir_relative}httpd-error.log\"'" >>$src/apaci
+ echo "echo '-DTYPES_CONFIG_FILE=\"${sysconfdir_relative}mime.types\"'" >>$src/apaci
+ echo "echo '-DSERVER_CONFIG_FILE=\"${sysconfdir_relative}${thetarget}.conf\"'" >>$src/apaci
+ echo "echo '-DACCESS_CONFIG_FILE=\"${sysconfdir_relative}access.conf\"'" >>$src/apaci

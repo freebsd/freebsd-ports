@@ -1,437 +1,336 @@
-*** frontpage/version3.0/fp_install.sh.orig	Thu Mar  5 06:00:21 1998
---- frontpage/version3.0/fp_install.sh	Tue Mar 17 21:07:20 1998
-***************
-*** 69,74 ****
---- 69,77 ----
-       IRIX*)           machine="sgi" ;;
-       SunOS*5.*sun4*)  machine="solaris" ;;
-       SunOS*4.*sun4*)  machine="sunos";;
-+      FreeBSD* | \
-+      NetBSD* | \
-+      OpenBSD* | \
-       *BSD/OS?3.0*)    machine="bsdi3" ;;
-       BSD/OS*)         machine="bsdi" ;;
-       SCO_SV*)         machine="sco5" ;;
-***************
-*** 412,418 ****
-   vtfile="fp30.$machine.tar"
-   echo "Platform is $machine." 
-   
-!  vtfilelocation="`pwd`/"
+--- frontpage/version3.0/fp_install.sh.orig	Thu Mar  5 06:00:21 1998
++++ frontpage/version3.0/fp_install.sh	Fri Jan 22 22:58:40 1999
+@@ -50,7 +50,7 @@
+ {
+   VERSION="3.0"
+   PATH=".:/bin:/usr/bin:/sbin:/usr/sbin:/usr/ucb:/etc:/usr/bsd"
+-  INSTALLDIRDEFAULT="/usr/local/frontpage"
++  INSTALLDIRDEFAULT="PREFIX/frontpage"
+ 
+ case "`echo 'x\c'`" in
+    'x\c')   echo="echo -n"    nnl= ;;      #BSD
+@@ -69,6 +69,9 @@
+      IRIX*)           machine="sgi" ;;
+      SunOS*5.*sun4*)  machine="solaris" ;;
+      SunOS*4.*sun4*)  machine="sunos";;
++     FreeBSD* | \
++     NetBSD* | \
++     OpenBSD* | \
+      *BSD/OS?3.0*)    machine="bsdi3" ;;
+      BSD/OS*)         machine="bsdi" ;;
+      SCO_SV*)         machine="sco5" ;;
+@@ -325,7 +328,7 @@
+  echo "link will be created from /usr/local/frontpage/ to the location that" 
+  echo "is chosen." 
+  echo 
+- $echo "FrontPage Extensions directory [/usr/local/frontpage/]:  ${nnl}" 
++ $echo "FrontPage Extensions directory [${INSTALLDIRDEFAULT}]:  ${nnl}" 
+  read installdir
   
-   getextfilename $vtfilelocation $vtfile || return 1
+  if [ "$installdir" = "" ]
+@@ -412,7 +415,7 @@
+  vtfile="fp30.$machine.tar"
+  echo "Platform is $machine." 
   
---- 415,421 ----
-   vtfile="fp30.$machine.tar"
-   echo "Platform is $machine." 
-   
-!  vtfilelocation="/usr/ports/distfiles/"
+- vtfilelocation="`pwd`/"
++ vtfilelocation="/usr/ports/distfiles/"
+ 
+  getextfilename $vtfilelocation $vtfile || return 1
+ 
+@@ -651,10 +654,19 @@
+       *pache*) getHttpDirective $configfile AccessConfig $port
+                if [ "$param" != "" ]
+                then
+-                   file=`basename $param`
+-                   accessconffile="${configfiledir}${file}"
++                   if [ "$param" != "/dev/null" ]
++                   then
++                       file=`basename $param`
++                       accessconffile="${configfiledir}${file}"
++                   else
++                       configError
++                   fi
+                else
+-                   accessconffile="${configfiledir}access.conf"
++                   accessconffile="${configfiledir}conf/access.conf"
++                   if [ ! -f "$accessconffile" ]
++                   then
++                       configError2
++                   fi
+                fi
+ 
+                if [ ! -f "$accessconffile" ]
+@@ -1101,18 +1113,29 @@
+ 
+  webname="/"
+ 
++ defconfigfile="PREFIX/etc/apache/httpd.conf"
++
+  configfile=""
+  while ( [ "$configfile" = "" ] || [ ! -f $configfile ] )
+  do
+-     $echo "Server config filename:  ${nnl}" 
++     $echo "Server config filename: [$defconfigfile] ${nnl}" 
+      read configfile
+- done
++     if [ "$configfile" = "" ]
++     then
++         configfile=$defconfigfile
++     fi
++done
+ 
++ defadmin="fpadmin"
+  admin=""
+  until [ "$admin" != "" ]
+  do
+-     $echo "FrontPage Administrator's user name:  ${nnl}" 
++     $echo "FrontPage Administrator's user name: [$defadmin] ${nnl}" 
+      read admin
++     if [ "$admin" = "" ]
++     then
++         admin=$defadmin
++     fi
+  done
+ 
+  getparam Port $configfile
+@@ -1124,12 +1147,37 @@
+     read port
+  done
+ 
+- getparam User $configfile
+- webowner=$param
+-
+  weconfigfile="${installdir}/we${port}.cnf"
++ getHttpDirective ${configfile} ResourceConfig ${port}
++ if [ "$param" = "/dev/null" ]
++ then
++     configError
++ fi
++ configfiledir=`dirname $configfile`"/"
++ if [ "$param" != "" ]
++ then
++     file=`basename $param`
++     resconffile="${configfiledir}${file}"
++ else
++     resconffile="${configfiledir}conf/srm.conf"
++     if [ ! -f "$resconffile" ]
++     then
++         configError2
++     fi
++ fi
+ 
+- defwebowner=`$lsg ${docroot}${service} | $awk ' { print $3}'`
++ getparam DocumentRoot $resconffile
++ docroot=$param
++
++ getparam User $configfile
++ defwebowner=$param
++
++ if [ "$defwebowner" = "" ]
++ then
++     getparam DocumentRoot $resconffile
++     docroot=$param
++     defwebowner=`$lsg ${docroot}${service} | $awk ' { print $3}'`
++ fi
+ 
+  webowner=""
+  until [ "$webowner" != "" ]
+@@ -1144,6 +1192,12 @@
+ 
+  getparam Group $configfile
+  defgroup=$param
++
++ if [ "$defgroup" = "" ]
++ then
++     defgroup=`$lsg ${docroot}${service} | $awk ' { print $4}'`
++ fi
++
+  webgroup=""
+  until [ "$webgroup" != "" ]
+  do
+@@ -1155,6 +1209,8 @@
+         webgroup=$defgroup
+      fi
+  done
++
++defservertypenum="3"
   
-   getextfilename $vtfilelocation $vtfile || return 1
+  until [ "$servertype" != "" ]
+  do
+@@ -1168,9 +1224,13 @@
+      echo "    7.  netscape-commerce" 
+      echo "    8.  netscape-fasttrack" 
+      echo "    9.  netscape-enterprise" 
+-     $echo "What type of Server is this:  ${nnl}" 
++     $echo "What type of Server is this: [$defservertypenum] ${nnl}" 
+      read servertypenum
+      echo 
++     if [ "$servertypenum" = "" ]
++     then
++        servertypenum=$defservertypenum
++     fi
+ 
+      case $servertypenum in
+           "1") servertype="ncsa" ;;
+@@ -1185,7 +1245,8 @@
+           "7") servertype="netscape-commerce" ;;
+           "8") servertype="netscape-fasttrack" ;;
+           "9") servertype="netscape-enterprise" ;;
+-            *) echo "Invalid option!  Please try again."   ;;
++            *) servertypenum=""
++               echo "Invalid option!  Please try again."   ;;
+      esac 
+  done
+ 
+@@ -1510,6 +1571,8 @@
+         read admin
+     done
+ 
++    defservertypenum="3"
++
+     until [ "$servertype" != "" ]
+     do
+      echo 
+@@ -1522,9 +1585,13 @@
+      echo "    7.  netscape-commerce" 
+      echo "    8.  netscape-fasttrack" 
+      echo "    9.  netscape-enterprise" 
+-     $echo "What type of Server is this:  ${nnl}" 
++     $echo "What type of Server is this: [$defservertypenum] ${nnl}" 
+      read servertypenum
+      echo 
++     if [ "$servertypenum" = "" ]
++     then
++        servertypenum=$defservertypenum
++     fi
+ 
+      case $servertypenum in
+           "1") servertype="ncsa" ;;
+@@ -1539,7 +1606,8 @@
+           "7") servertype="netscape-commerce" ;;
+           "8") servertype="netscape-fasttrack" ;;
+           "9") servertype="netscape-enterprise" ;;
+-            *) echo "Invalid option!  Please try again."   ;;
++            *) servertypenum=""
++               echo "Invalid option!  Please try again."   ;;
+        esac 
+     done
+ 
+@@ -1825,10 +1893,19 @@
+                         *) getHttpDirective $configfile ResourceConfig $port
+                            if [ "$param" != "" ]
+                            then
+-                               file=`basename $param`
+-                               resconffile="${configfiledir}${file}"
++                               if [ "$param" != "/dev/null" ]
++                               then
++                                   file=`basename $param`
++                                   resconffile="${configfiledir}${file}"
++                               else
++                                   configError
++                               fi
+                            else
+-                               resconffile="${configfiledir}srm.conf"
++                               resconffile="${configfiledir}conf/srm.conf"
++                               if [ ! -f "$resconffile" ]
++                               then
++                                   configError2
++                               fi
+                            fi
+ 
+                            if [ ! -f "$resconffile" ]
+@@ -1964,7 +2041,6 @@
+  then
+     getHttpRootDirective $configfile $directive
+  fi 
+-
+ }
+ 
+ getnetscapedocroot()
+@@ -2080,10 +2156,19 @@
+                     getHttpDirective $configfile ResourceConfig $port
+                     if [ "$param" != "" ]
+                     then
+-                        file=`basename $param`
+-                        resconffile="${configfiledir}${file}"
++                        if [ "$param" != "/dev/null" ]
++                        then
++                            file=`basename $param`
++                            resconffile="${configfiledir}${file}"
++                        else
++                            configError
++                        fi
+                     else
+-                        resconffile="${configfiledir}srm.conf"
++                        resconffile="${configfiledir}conf/srm.conf"
++                        if [ ! -f $resconffile ]
++                        then
++                            configError2
++                        fi
+                     fi
+                     echo "Getting DocumentRoot from $resconffile."
+                     getparam DocumentRoot $resconffile
+@@ -2099,10 +2184,19 @@
+                     getHttpDirective $configfile ResourceConfig $port
+                     if [ "$param" != "" ]
+                     then
+-                        file=`basename $param`
+-                        resconffile="${configfiledir}${file}"
++                        if [ "$param" != "/dev/null" ]
++                        then
++                            file=`basename $param`
++                            resconffile="${configfiledir}${file}"
++                        else
++                            configError
++                        fi
+                     else
+-                        resconffile="${configfiledir}srm.conf"
++                        resconffile="${configfiledir}conf/srm.conf"
++                        if [ ! -f "$resconffile" ]
++                        then
++                            configError2
++                        fi
+                     fi
+                     echo "Getting UserDir from $resconffile."
+                     getparam UserDir $resconffile
+@@ -2111,6 +2205,40 @@
+                 ;; 
+  esac
   
-***************
-*** 651,660 ****
-        *pache*) getHttpDirective $configfile AccessConfig $port
-                 if [ "$param" != "" ]
-                 then
-!                    file=`basename $param`
-!                    accessconffile="${configfiledir}${file}"
-                 else
-!                    accessconffile="${configfiledir}access.conf"
-                 fi
-  
-                 if [ ! -f "$accessconffile" ]
---- 654,672 ----
-        *pache*) getHttpDirective $configfile AccessConfig $port
-                 if [ "$param" != "" ]
-                 then
-!                    if [ "$param" != "/dev/null" ]
-!                    then
-!                        file=`basename $param`
-!                        accessconffile="${configfiledir}${file}"
-!                    else
-!                        configError
-!                    fi
-                 else
-!                    accessconffile="${configfiledir}conf/access.conf"
-!                    if [ ! -f "$accessconffile" ]
-!                    then
-!                        configError2
-!                    fi
-                 fi
-  
-                 if [ ! -f "$accessconffile" ]
-***************
-*** 1101,1118 ****
-  
-   webname="/"
-  
-   configfile=""
-   while ( [ "$configfile" = "" ] || [ ! -f $configfile ] )
-   do
-!      $echo "Server config filename:  ${nnl}" 
-       read configfile
-!  done
-  
-   admin=""
-   until [ "$admin" != "" ]
-   do
-!      $echo "FrontPage Administrator's user name:  ${nnl}" 
-       read admin
-   done
-  
-   getparam Port $configfile
---- 1113,1141 ----
-  
-   webname="/"
-  
-+  defconfigfile="/usr/local/etc/apache/httpd.conf"
-+ 
-   configfile=""
-   while ( [ "$configfile" = "" ] || [ ! -f $configfile ] )
-   do
-!      $echo "Server config filename: [$defconfigfile] ${nnl}" 
-       read configfile
-!      if [ "$configfile" = "" ]
-!      then
-!          configfile=$defconfigfile
-!      fi
-! done
-  
-+  defadmin="fpadmin"
-   admin=""
-   until [ "$admin" != "" ]
-   do
-!      $echo "FrontPage Administrator's user name: [$defadmin] ${nnl}" 
-       read admin
-+      if [ "$admin" = "" ]
-+      then
-+          admin=$defadmin
-+      fi
-   done
-  
-   getparam Port $configfile
-***************
-*** 1124,1135 ****
-      read port
-   done
-  
--  getparam User $configfile
--  webowner=$param
-- 
-   weconfigfile="${installdir}/we${port}.cnf"
-  
-!  defwebowner=`$lsg ${docroot}${service} | $awk ' { print $3}'`
-  
-   webowner=""
-   until [ "$webowner" != "" ]
---- 1147,1183 ----
-      read port
-   done
-  
-   weconfigfile="${installdir}/we${port}.cnf"
-+  getHttpDirective ${configfile} ResourceConfig ${port}
-+  if [ "$param" = "/dev/null" ]
-+  then
-+      configError
-+  fi
-+  configfiledir=`dirname $configfile`"/"
-+  if [ "$param" != "" ]
-+  then
-+      file=`basename $param`
-+      resconffile="${configfiledir}${file}"
-+  else
-+      resconffile="${configfiledir}conf/srm.conf"
-+      if [ ! -f "$resconffile" ]
-+      then
-+          configError2
-+      fi
-+  fi
-  
-!  getparam DocumentRoot $resconffile
-!  docroot=$param
-! 
-!  getparam User $configfile
-!  defwebowner=$param
-! 
-!  if [ "$defwebowner" = "" ]
-!  then
-!      getparam DocumentRoot $resconffile
-!      docroot=$param
-!      defwebowner=`$lsg ${docroot}${service} | $awk ' { print $3}'`
-!  fi
-  
-   webowner=""
-   until [ "$webowner" != "" ]
-***************
-*** 1144,1149 ****
---- 1192,1203 ----
-  
-   getparam Group $configfile
-   defgroup=$param
-+ 
-+  if [ "$defgroup" = "" ]
-+  then
-+      defgroup=`$lsg ${docroot}${service} | $awk ' { print $4}'`
-+  fi
-+ 
-   webgroup=""
-   until [ "$webgroup" != "" ]
-   do
-***************
-*** 1155,1160 ****
---- 1209,1216 ----
-          webgroup=$defgroup
-       fi
-   done
-+ 
-+ defservertypenum="3"
-   
-   until [ "$servertype" != "" ]
-   do
-***************
-*** 1168,1176 ****
-       echo "    7.  netscape-commerce" 
-       echo "    8.  netscape-fasttrack" 
-       echo "    9.  netscape-enterprise" 
-!      $echo "What type of Server is this:  ${nnl}" 
-       read servertypenum
-       echo 
-  
-       case $servertypenum in
-            "1") servertype="ncsa" ;;
---- 1224,1236 ----
-       echo "    7.  netscape-commerce" 
-       echo "    8.  netscape-fasttrack" 
-       echo "    9.  netscape-enterprise" 
-!      $echo "What type of Server is this: [$defservertypenum] ${nnl}" 
-       read servertypenum
-       echo 
-+      if [ "$servertypenum" = "" ]
-+      then
-+         servertypenum=$defservertypenum
-+      fi
-  
-       case $servertypenum in
-            "1") servertype="ncsa" ;;
-***************
-*** 1185,1191 ****
-            "7") servertype="netscape-commerce" ;;
-            "8") servertype="netscape-fasttrack" ;;
-            "9") servertype="netscape-enterprise" ;;
-!             *) echo "Invalid option!  Please try again."   ;;
-       esac 
-   done
-  
---- 1245,1252 ----
-            "7") servertype="netscape-commerce" ;;
-            "8") servertype="netscape-fasttrack" ;;
-            "9") servertype="netscape-enterprise" ;;
-!             *) servertypenum=""
-!                echo "Invalid option!  Please try again."   ;;
-       esac 
-   done
-  
-***************
-*** 1510,1515 ****
---- 1571,1578 ----
-          read admin
-      done
-  
-+     defservertypenum="3"
-+ 
-      until [ "$servertype" != "" ]
-      do
-       echo 
-***************
-*** 1522,1530 ****
-       echo "    7.  netscape-commerce" 
-       echo "    8.  netscape-fasttrack" 
-       echo "    9.  netscape-enterprise" 
-!      $echo "What type of Server is this:  ${nnl}" 
-       read servertypenum
-       echo 
-  
-       case $servertypenum in
-            "1") servertype="ncsa" ;;
---- 1585,1597 ----
-       echo "    7.  netscape-commerce" 
-       echo "    8.  netscape-fasttrack" 
-       echo "    9.  netscape-enterprise" 
-!      $echo "What type of Server is this: [$defservertypenum] ${nnl}" 
-       read servertypenum
-       echo 
-+      if [ "$servertypenum" = "" ]
-+      then
-+         servertypenum=$defservertypenum
-+      fi
-  
-       case $servertypenum in
-            "1") servertype="ncsa" ;;
-***************
-*** 1539,1545 ****
-            "7") servertype="netscape-commerce" ;;
-            "8") servertype="netscape-fasttrack" ;;
-            "9") servertype="netscape-enterprise" ;;
-!             *) echo "Invalid option!  Please try again."   ;;
-         esac 
-      done
-  
---- 1606,1613 ----
-            "7") servertype="netscape-commerce" ;;
-            "8") servertype="netscape-fasttrack" ;;
-            "9") servertype="netscape-enterprise" ;;
-!             *) servertypenum=""
-!                echo "Invalid option!  Please try again."   ;;
-         esac 
-      done
-  
-***************
-*** 1825,1834 ****
-                          *) getHttpDirective $configfile ResourceConfig $port
-                             if [ "$param" != "" ]
-                             then
-!                                file=`basename $param`
-!                                resconffile="${configfiledir}${file}"
-                             else
-!                                resconffile="${configfiledir}srm.conf"
-                             fi
-  
-                             if [ ! -f "$resconffile" ]
---- 1893,1911 ----
-                          *) getHttpDirective $configfile ResourceConfig $port
-                             if [ "$param" != "" ]
-                             then
-!                                if [ "$param" != "/dev/null" ]
-!                                then
-!                                    file=`basename $param`
-!                                    resconffile="${configfiledir}${file}"
-!                                else
-!                                    configError
-!                                fi
-                             else
-!                                resconffile="${configfiledir}conf/srm.conf"
-!                                if [ ! -f "$resconffile" ]
-!                                then
-!                                    configError2
-!                                fi
-                             fi
-  
-                             if [ ! -f "$resconffile" ]
-***************
-*** 1964,1970 ****
-   then
-      getHttpRootDirective $configfile $directive
-   fi 
-- 
-  }
-  
-  getnetscapedocroot()
---- 2041,2046 ----
-***************
-*** 2080,2089 ****
-                      getHttpDirective $configfile ResourceConfig $port
-                      if [ "$param" != "" ]
-                      then
-!                         file=`basename $param`
-!                         resconffile="${configfiledir}${file}"
-                      else
-!                         resconffile="${configfiledir}srm.conf"
-                      fi
-                      echo "Getting DocumentRoot from $resconffile."
-                      getparam DocumentRoot $resconffile
---- 2156,2174 ----
-                      getHttpDirective $configfile ResourceConfig $port
-                      if [ "$param" != "" ]
-                      then
-!                         if [ "$param" != "/dev/null" ]
-!                         then
-!                             file=`basename $param`
-!                             resconffile="${configfiledir}${file}"
-!                         else
-!                             configError
-!                         fi
-                      else
-!                         resconffile="${configfiledir}conf/srm.conf"
-!                         if [ ! -f $resconffile ]
-!                         then
-!                             configError2
-!                         fi
-                      fi
-                      echo "Getting DocumentRoot from $resconffile."
-                      getparam DocumentRoot $resconffile
-***************
-*** 2099,2108 ****
-                      getHttpDirective $configfile ResourceConfig $port
-                      if [ "$param" != "" ]
-                      then
-!                         file=`basename $param`
-!                         resconffile="${configfiledir}${file}"
-                      else
-!                         resconffile="${configfiledir}srm.conf"
-                      fi
-                      echo "Getting UserDir from $resconffile."
-                      getparam UserDir $resconffile
---- 2184,2202 ----
-                      getHttpDirective $configfile ResourceConfig $port
-                      if [ "$param" != "" ]
-                      then
-!                         if [ "$param" != "/dev/null" ]
-!                         then
-!                             file=`basename $param`
-!                             resconffile="${configfiledir}${file}"
-!                         else
-!                             configError
-!                         fi
-                      else
-!                         resconffile="${configfiledir}conf/srm.conf"
-!                         if [ ! -f "$resconffile" ]
-!                         then
-!                             configError2
-!                         fi
-                      fi
-                      echo "Getting UserDir from $resconffile."
-                      getparam UserDir $resconffile
-***************
-*** 2111,2116 ****
---- 2205,2244 ----
-                  ;; 
-   esac
-   
-+ }
-+ 
-+ configError()
-+ {
-+      echo
-+      echo "ERROR: ${configfile} invalid"
-+      echo
-+      echo "Change ${configfile} as follows:"
-+      echo
-+      echo "    ResourceConfig ${configfile}"
-+      echo "    AccessConfig ${configfile}"
-+      echo
-+      $echo "hit enter to continue${nnl}"
-+      read continue
-+      echo "Ouch!!!!!!!!!!!!!"
-+      echo
-+      exit 1
-+ }
-+ 
-+ configError2()
-+ {
-+      echo
-+      echo "ERROR: ${configfile} invalid"
-+      echo
-+      echo "Change ${configfile} as follows:"
-+      echo
-+      echo "    ResourceConfig ${configfiledir}srm.conf"
-+      echo "    AccessConfig ${configfiledir}access.conf"
-+      echo
-+      $echo "hit enter to continue${nnl}"
-+      read continue
-+      echo "Ouch!!!!!!!!!!!!!"
-+      echo
-+      exit 1
-  }
-  
-  error()
++}
++
++configError()
++{
++     echo
++     echo "ERROR: ${configfile} invalid"
++     echo
++     echo "Change ${configfile} as follows:"
++     echo
++     echo "    ResourceConfig ${configfile}"
++     echo "    AccessConfig ${configfile}"
++     echo
++     $echo "hit enter to continue${nnl}"
++     read continue
++     echo "Ouch!!!!!!!!!!!!!"
++     echo
++     exit 1
++}
++
++configError2()
++{
++     echo
++     echo "ERROR: ${configfile} invalid"
++     echo
++     echo "Change ${configfile} as follows:"
++     echo
++     echo "    ResourceConfig ${configfiledir}srm.conf"
++     echo "    AccessConfig ${configfiledir}access.conf"
++     echo
++     $echo "hit enter to continue${nnl}"
++     read continue
++     echo "Ouch!!!!!!!!!!!!!"
++     echo
++     exit 1
+ }
+ 
+ error()

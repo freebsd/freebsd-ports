@@ -1,168 +1,136 @@
-*** Makefile.tmpl.orig	Sat Sep 19 07:41:48 1998
---- Makefile.tmpl	Sat Nov 28 10:30:01 1998
-***************
-*** 107,112 ****
---- 107,113 ----
-  runtimedir      = @runtimedir@
-  logfiledir      = @logfiledir@
-  proxycachedir   = @proxycachedir@
-+ doc_prefix	= $(prefix)/share/doc/apache
-  
-  libexecdir_relative   = @libexecdir_relative@
-  
-***************
-*** 119,124 ****
---- 120,126 ----
-  suexec_safepath = @suexec_safepath@
-  
-  #   some substituted configuration parameters
-+ conf_user	 = @conf_user@
-  conf_group       = @conf_group@
-  conf_port        = @conf_port@
-  conf_serveradmin = @conf_serveradmin@
-***************
-*** 166,173 ****
-  			-DUID_MIN=$(suexec_uidmin) \
-  			-DGID_MIN=$(suexec_gidmin) \
-  			-DUSERDIR_SUFFIX=\"$(suexec_userdir)\" \
-! 			-DLOG_EXEC=\"$(logfiledir)/suexec_log\" \
-! 			-DDOC_ROOT=\"$(datadir)/htdocs\" \
-  			-DSAFE_PATH=\"$(suexec_safepath)\" \
-  		' \
-  		suexec; \
---- 168,175 ----
-  			-DUID_MIN=$(suexec_uidmin) \
-  			-DGID_MIN=$(suexec_gidmin) \
-  			-DUSERDIR_SUFFIX=\"$(suexec_userdir)\" \
-! 			-DLOG_EXEC=\"$(logfiledir)/httpd-suexec.log\" \
-! 			-DDOC_ROOT=\"$(datadir)/data\" \
-  			-DSAFE_PATH=\"$(suexec_safepath)\" \
-  		' \
-  		suexec; \
-***************
-*** 224,232 ****
-  	$(MKDIR) $(root)$(mandir)/man1
-  	$(MKDIR) $(root)$(mandir)/man8
-  	$(MKDIR) $(root)$(sysconfdir)
-! 	$(MKDIR) $(root)$(datadir)/htdocs
-  	$(MKDIR) $(root)$(datadir)/icons
-! 	$(MKDIR) $(root)$(datadir)/cgi-bin
-  	$(MKDIR) $(root)$(includedir)
-  	$(MKDIR) $(root)$(runtimedir)
-  	$(MKDIR) $(root)$(logfiledir)
---- 226,234 ----
-  	$(MKDIR) $(root)$(mandir)/man1
-  	$(MKDIR) $(root)$(mandir)/man8
-  	$(MKDIR) $(root)$(sysconfdir)
-! 	$(MKDIR) $(root)$(doc_prefix)
-  	$(MKDIR) $(root)$(datadir)/icons
-! 	$(MKDIR) $(root)$(datadir)/cgi-bin.default
-  	$(MKDIR) $(root)$(includedir)
-  	$(MKDIR) $(root)$(runtimedir)
-  	$(MKDIR) $(root)$(logfiledir)
-***************
-*** 340,364 ****
-  #   icons and distributed CGI scripts.
-  install-data:
-  	@echo "===> [data: Installing initial data files]"
-! 	-@if [ -f $(root)$(datadir)/htdocs/index.html ]; then \
-! 		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(datadir)/htdocs/]"; \
-! 	else \
-! 		echo "Copying tree $(TOP)/htdocs/ -> $(root)$(datadir)/htdocs/"; \
-  		(cd $(TOP)/htdocs/ && $(TAR) cf - *) |\
-! 		(cd $(root)$(datadir)/htdocs/ && $(TAR) xf -); \
-! 		find $(root)$(datadir)/htdocs/ -type d -exec chmod a+rx {} \; ; \
-! 		find $(root)$(datadir)/htdocs/ -type f -exec chmod a+r {} \; ; \
-  	fi
-! 	-@if [ -f $(root)$(datadir)/cgi-bin/printenv ]; then \
-! 		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(datadir)/cgi-bin/]"; \
-! 	else \
-  		for script in printenv test-cgi; do \
-  			cat $(TOP)/cgi-bin/$${script} |\
-  			sed -e 's;^#!/.*perl;#!$(PERL);' \
-          		> $(TOP)/$(SRC)/.apaci.install.tmp; \
-! 			echo "$(INSTALL_DATA) $(TOP)/conf/$${script}[*] $(root)$(datadir)/cgi-bin/$${script}"; \
-! 			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(datadir)/cgi-bin/$${script}; \
-  		done; \
-  	fi
-  	@echo "Copying tree $(TOP)/icons/ -> $(root)$(datadir)/icons/"; \
-  	(cd $(TOP)/icons/ && $(TAR) cf - *) |\
---- 342,373 ----
-  #   icons and distributed CGI scripts.
-  install-data:
-  	@echo "===> [data: Installing initial data files]"
-! #	-@if [ -f $(root)$(datadir)/htdocs/index.html ]; then \
-! #		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(datadir)/htdocs/]"; \
-! #	else \
-! 		echo "Copying tree $(TOP)/htdocs/ -> $(root)$(doc_prefix)/"; \
-  		(cd $(TOP)/htdocs/ && $(TAR) cf - *) |\
-! 		(cd $(root)$(doc_prefix)/ && $(TAR) xf -); \
-! 		find $(root)$(doc_prefix)/ -type d -exec chmod a+rx {} \; ; \
-! 		find $(root)$(doc_prefix)/ -type f -exec chmod a+r {} \; ; \
-! #	fi
-! 	if [ ! -d $(root)$(datadir)/data ]; then \
-! 		$(CP) -rp $(root)$(doc_prefix) $(root)$(datadir)/data; \
-  	fi
-! 	$(LN) -sf $(root)$(doc_prefix) $(root)$(datadir)/data.default
-! #	-@if [ -f $(root)$(datadir)/cgi-bin/printenv ]; then \
-! #		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(datadir)/cgi-bin/]"; \
-! #	else \
-  		for script in printenv test-cgi; do \
-  			cat $(TOP)/cgi-bin/$${script} |\
-  			sed -e 's;^#!/.*perl;#!$(PERL);' \
-          		> $(TOP)/$(SRC)/.apaci.install.tmp; \
-! 			echo "$(INSTALL_DATA) $(TOP)/conf/$${script}[*] $(root)$(datadir)/cgi-bin.default/$${script}"; \
-! 			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(datadir)/cgi-bin.default/$${script}; \
-  		done; \
-+ #	fi
-+ 	if [ ! -d $(root)$(datadir)/cgi-bin ]; then \
-+ 		$(LN) -sf $(root)$(datadir)/cgi-bin.default $(root)$(datadir)/cgi-bin; \
-  	fi
-  	@echo "Copying tree $(TOP)/icons/ -> $(root)$(datadir)/icons/"; \
-  	(cd $(TOP)/icons/ && $(TAR) cf - *) |\
-***************
-*** 378,397 ****
-  		 echo ""; \
-  		 cat $(TOP)/conf/$${conf}-dist ) |\
-  		 sed -e '/# LoadModule/r $(TOP)/$(SRC)/.apaci.install.conf' \
-! 			-e 's;@@ServerRoot@@/htdocs;$(datadir)/htdocs;' \
-  			-e 's;@@ServerRoot@@/icons;$(datadir)/icons;' \
-  			-e 's;@@ServerRoot@@/cgi-bin;$(datadir)/cgi-bin;' \
-  			-e 's;@@ServerRoot@@/proxy;$(proxycachedir);' \
-  			-e 's;@@ServerRoot@@;$(prefix);' \
-  			-e 's;logs/accept.lock;$(runtimedir)/httpd.lock;' \
-  			-e 's;logs/apache_runtime_status;$(runtimedir)/httpd.scoreboard;' \
-  			-e 's;logs/httpd.pid;$(runtimedir)/httpd.pid;' \
-! 			-e 's;logs/access_log;$(logfiledir)/access_log;' \
-! 			-e 's;logs/error_log;$(logfiledir)/error_log;' \
-! 			-e 's;logs/referer_log;$(logfiledir)/referer_log;' \
-! 			-e 's;logs/agent_log;$(logfiledir)/agent_log;' \
-  			-e 's;conf/magic;$(sysconfdir)/magic;' \
-  			-e 's;conf/mime.types;$(sysconfdir)/mime.types;' \
-  			-e 's;Group #-1;Group $(conf_group);' \
-  			-e 's;Port 80;Port $(conf_port);' \
-  			-e 's;ServerAdmin you@your.address;ServerAdmin $(conf_serveradmin);' \
---- 387,409 ----
-  		 echo ""; \
-  		 cat $(TOP)/conf/$${conf}-dist ) |\
-  		 sed -e '/# LoadModule/r $(TOP)/$(SRC)/.apaci.install.conf' \
-! 			-e 's;@@ServerRoot@@/htdocs;$(datadir)/data;' \
-  			-e 's;@@ServerRoot@@/icons;$(datadir)/icons;' \
-  			-e 's;@@ServerRoot@@/cgi-bin;$(datadir)/cgi-bin;' \
-  			-e 's;@@ServerRoot@@/proxy;$(proxycachedir);' \
-+ 			-e 's;@@ServerRoot@@/srm.conf;$(sysconfdir)/srm.conf;' \
-+ 			-e 's;@@ServerRoot@@/access.conf;$(sysconfdir)/access.conf;' \
-  			-e 's;@@ServerRoot@@;$(prefix);' \
-  			-e 's;logs/accept.lock;$(runtimedir)/httpd.lock;' \
-  			-e 's;logs/apache_runtime_status;$(runtimedir)/httpd.scoreboard;' \
-  			-e 's;logs/httpd.pid;$(runtimedir)/httpd.pid;' \
-! 			-e 's;logs/access_log;$(logfiledir)/httpd-access.log;' \
-! 			-e 's;logs/error_log;$(logfiledir)/httpd-error.log;' \
-! 			-e 's;logs/referer_log;$(logfiledir)/httpd-referer.log;' \
-! 			-e 's;logs/agent_log;$(logfiledir)/httpd-agent.log;' \
-  			-e 's;conf/magic;$(sysconfdir)/magic;' \
-  			-e 's;conf/mime.types;$(sysconfdir)/mime.types;' \
-+ 			-e 's;User nobody;User $(conf_user);' \
-  			-e 's;Group #-1;Group $(conf_group);' \
-  			-e 's;Port 80;Port $(conf_port);' \
-  			-e 's;ServerAdmin you@your.address;ServerAdmin $(conf_serveradmin);' \
+--- Makefile.tmpl.orig	Thu Jan  7 05:50:45 1999
++++ Makefile.tmpl	Fri Jan 22 22:24:16 1999
+@@ -110,6 +110,7 @@
+ runtimedir      = @runtimedir@
+ logfiledir      = @logfiledir@
+ proxycachedir   = @proxycachedir@
++doc_prefix      = $(prefix)/share/doc/apache
+ 
+ libexecdir_relative   = @libexecdir_relative@
+ 
+@@ -124,6 +125,7 @@
+ suexec_safepath = @suexec_safepath@
+ 
+ #   some substituted configuration parameters
++conf_user     = @conf_user@
+ conf_group       = @conf_group@
+ conf_port        = @conf_port@
+ conf_serveradmin = @conf_serveradmin@
+@@ -239,9 +241,9 @@
+ 	$(MKDIR) $(root)$(mandir)/man1
+ 	$(MKDIR) $(root)$(mandir)/man8
+ 	$(MKDIR) $(root)$(sysconfdir)
+-	$(MKDIR) $(root)$(datadir)/htdocs
++	$(MKDIR) $(root)$(doc_prefix)
+ 	$(MKDIR) $(root)$(datadir)/icons
+-	$(MKDIR) $(root)$(datadir)/cgi-bin
++	$(MKDIR) $(root)$(datadir)/cgi-bin.default
+ 	$(MKDIR) $(root)$(includedir)
+ 	$(MKDIR) $(root)$(runtimedir)
+ 	$(MKDIR) $(root)$(logfiledir)
+@@ -278,9 +280,11 @@
+ 			file=`echo $${mod} | sed -e 's;^.*/\([^/]*\);\1;'`; \
+ 			echo "$(INSTALL_DSO) $(TOP)/$(SRC)/$${mod} $(root)$(libexecdir)/$${file}"; \
+ 			$(INSTALL_DSO) $(TOP)/$(SRC)/$${mod} $(root)$(libexecdir)/$${file}; \
+-			name=`$(TOP)/$(AUX)/fmn.sh $(TOP)/$(SRC)/$${mod}`; \
+-			echo dummy | awk '{ printf("LoadModule %-18s %s\n", modname, modpath); }' \
+-			modname="$${name}" modpath="$(libexecdir_relative)$${file}" >>$(SRC)/.apaci.install.conf; \
++			if [ "$${file}" != "mod_frontpage.so" ]; then \
++				name=`$(TOP)/$(AUX)/fmn.sh $(TOP)/$(SRC)/$${mod}`; \
++				echo dummy | awk '{ printf("LoadModule %-18s %s\n", modname, modpath); }' \
++				modname="$${name}" modpath="$(libexecdir_relative)$${file}" >>$(SRC)/.apaci.install.conf; \
++			fi; \
+ 		done; \
+ 		echo "" >>$(SRC)/.apaci.install.conf; \
+ 		echo "#  Reconstruction of the complete module list from all available modules" >>$(SRC)/.apaci.install.conf; \
+@@ -288,6 +292,7 @@
+ 		echo "#  [WHENEVER YOU CHANGE THE LOADMODULE SECTION ABOVE UPDATE THIS, TOO]" >>$(SRC)/.apaci.install.conf; \
+ 		echo "ClearModuleList" >>$(SRC)/.apaci.install.conf; \
+ 		egrep "^[ 	]*(Add|Shared)Module" $(SRC)/Configuration.apaci |\
++		egrep -v "mod_frontpage.so" |\
+ 		sed	-e 's:SharedModule:AddModule:' \
+ 			-e 's:modules/[^/]*/::' \
+ 			-e 's:[ 	]lib: mod_:' \
+@@ -308,6 +313,7 @@
+ 	echo "$(INSTALL_SCRIPT) $(TOP)/$(SRC)/support/apachectl[*] $(root)$(sbindir)/$${apachectl}"; \
+ 	sed -e 's;PIDFILE=.*;PIDFILE=$(runtimedir)/$(TARGET).pid;' \
+ 		-e 's;HTTPD=.*;HTTPD=$(sbindir)/$(TARGET);' \
++		-e 's;LD_LIBRARY_PATH=.*;LD_LIBRARY_PATH=/usr/lib\:$(prefix)/lib;' \
+ 		< $(TOP)/$(SRC)/support/apachectl > $(TOP)/$(SRC)/.apaci.install.tmp && \
+ 		$(INSTALL_SCRIPT) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(sbindir)/$${apachectl}; \
+ 	echo "$(INSTALL_DATA) $(TOP)/$(SRC)/support/apachectl.1 $(root)$(mandir)/man1/$${apachectl}.1"; \
+@@ -363,25 +369,32 @@
+ #   icons and distributed CGI scripts.
+ install-data:
+ 	@echo "===> [data: Installing initial data files]"
+-	-@if [ -f $(root)$(datadir)/htdocs/index.html ]; then \
+-		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(datadir)/htdocs/]"; \
+-	else \
+-		echo "Copying tree $(TOP)/htdocs/ -> $(root)$(datadir)/htdocs/"; \
++#	-@if [ -f $(root)$(datadir)/htdocs/index.html ]; then \
++#		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(datadir)/htdocs/]"; \
++#	else \
++		echo "Copying tree $(TOP)/htdocs/ -> $(root)$(doc_prefix)/"; \
+ 		(cd $(TOP)/htdocs/ && $(TAR) -hcf - *) |\
+-		(cd $(root)$(datadir)/htdocs/ && $(TAR) -xf -); \
+-		find $(root)$(datadir)/htdocs/ -type d -exec chmod a+rx {} \; ; \
+-		find $(root)$(datadir)/htdocs/ -type f -exec chmod a+r {} \; ; \
++		(cd $(root)$(doc_prefix) && $(TAR) -xf -); \
++		find $(root)$(doc_prefix) -type d -exec chmod a+rx {} \; ; \
++		find $(root)$(doc_prefix) -type f -exec chmod a+r {} \; ; \
++#	fi
++	if [ ! -d $(root)$(datadir)/data ]; then \
++		$(CP) -rp $(root)$(doc_prefix) $(root)$(datadir)/data; \
+ 	fi
+-	-@if [ -f $(root)$(datadir)/cgi-bin/printenv ]; then \
+-		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(datadir)/cgi-bin/]"; \
+-	else \
++	$(LN) -sf $(root)$(doc_prefix) $(root)$(datadir)/data.default
++#	-@if [ -f $(root)$(datadir)/cgi-bin/printenv ]; then \
++#		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(datadir)/cgi-bin/]"; \
++#	else \
+ 		for script in printenv test-cgi; do \
+ 			cat $(TOP)/cgi-bin/$${script} |\
+ 			sed -e 's;^#!/.*perl;#!$(PERL);' \
+ 			> $(TOP)/$(SRC)/.apaci.install.tmp; \
+-			echo "$(INSTALL_DATA) $(TOP)/conf/$${script}[*] $(root)$(datadir)/cgi-bin/$${script}"; \
+-			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(datadir)/cgi-bin/$${script}; \
+-		done; \
++			echo "$(INSTALL_DATA) $(TOP)/conf/$${script}[*] $(root)$(datadir)/cgi-bin.default/$${script}"; \
++			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(datadir)/cgi-bin.default/$${script}; \
++		done;
++#	fi
++	if [ ! -d $(root)$(datadir)/cgi-bin ]; then \
++		$(LN) -sf $(root)$(datadir)/cgi-bin.default $(root)$(datadir)/cgi-bin; \
+ 	fi
+ 	@echo "Copying tree $(TOP)/icons/ -> $(root)$(datadir)/icons/"; \
+ 	(cd $(TOP)/icons/ && $(TAR) -hcf - *) |\
+@@ -411,20 +424,23 @@
+ 		 echo ""; \
+ 		 cat $(TOP)/conf/$${conf}-dist ) |\
+ 		 sed -e '/# LoadModule/r $(TOP)/$(SRC)/.apaci.install.conf' \
+-			-e 's;@@ServerRoot@@/htdocs;$(datadir)/htdocs;' \
++			-e 's;@@ServerRoot@@/htdocs;$(datadir)/data;' \
+ 			-e 's;@@ServerRoot@@/icons;$(datadir)/icons;' \
+ 			-e 's;@@ServerRoot@@/cgi-bin;$(datadir)/cgi-bin;' \
+ 			-e 's;@@ServerRoot@@/proxy;$(proxycachedir);' \
++			-e 's;@@ServerRoot@@/srm.conf;$(sysconfdir)/srm.conf;' \
++			-e 's;@@ServerRoot@@/access.conf;$(sysconfdir)/access.conf;' \
+ 			-e 's;@@ServerRoot@@;$(prefix);g' \
+ 			-e 's;logs/accept.lock;$(runtimedir)/$(TARGET).lock;' \
+ 			-e 's;logs/apache_runtime_status;$(runtimedir)/$(TARGET).scoreboard;' \
+ 			-e 's;logs/httpd.pid;$(runtimedir)/$(TARGET).pid;' \
+-			-e "s;logs/access_log;$(logfiledir)/$${target_prefix}access_log;" \
+-			-e "s;logs/error_log;$(logfiledir)/$${target_prefix}error_log;" \
+-			-e "s;logs/referer_log;$(logfiledir)/$${target_prefix}referer_log;" \
+-			-e "s;logs/agent_log;$(logfiledir)/$${target_prefix}agent_log;" \
++			-e "s;logs/access_log;$(logfiledir)/httpd-access.log;" \
++			-e "s;logs/error_log;$(logfiledir)/httpd-error.log;" \
++			-e "s;logs/referer_log;$(logfiledir)/httpd-referer.log;" \
++			-e "s;logs/agent_log;$(logfiledir)/httpd-agent.log;" \
+ 			-e 's;conf/magic;$(sysconfdir)/magic;' \
+ 			-e 's;conf/mime.types;$(sysconfdir)/mime.types;' \
++			-e 's;User nobody;User $(conf_user);' \
+ 			-e 's;Group #-1;Group $(conf_group);' \
+ 			-e 's;Port 80;Port $(conf_port);' \
+ 			-e 's;ServerAdmin you@your.address;ServerAdmin $(conf_serveradmin);' \

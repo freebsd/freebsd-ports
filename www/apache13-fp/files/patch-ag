@@ -1,72 +1,108 @@
-*** conf/httpd.conf-dist.orig	Wed May  6 16:12:39 1998
---- conf/httpd.conf-dist	Sat Jun  6 13:08:52 1998
-***************
-*** 50,56 ****
-  #  don't use Group #-1 on these systems!
-  
-  User nobody
-! Group #-1
-  
-  # ServerAdmin: Your address, where problems with the server should be
-  # e-mailed.
---- 50,56 ----
-  #  don't use Group #-1 on these systems!
-  
-  User nobody
-! Group nogroup
-  
-  # ServerAdmin: Your address, where problems with the server should be
-  # e-mailed.
-***************
-*** 65,70 ****
---- 65,80 ----
-  
-  ServerRoot @@ServerRoot@@
-  
-+ # AccessConfig: The name and location of the Access Configuration file
-+ #
-+ 
-+ AccessConfig @@ServerRoot@@/access.conf
-+ 
-+ # ResourceConfig: The name and location of the Resource Configuration file
-+ #
-+ 
-+ ResourceConfig @@ServerRoot@@/srm.conf
-+ 
-  # BindAddress: You can support virtual hosts with this option. This option
-  # is used to tell the server which IP address to listen to. It can either
-  # contain "*", an IP address, or a fully qualified Internet domain name.
-***************
-*** 94,100 ****
-  # The location of the access logfile (Common Logfile Format).
-  # If this does not start with /, ServerRoot is prepended to it.
-  
-! CustomLog logs/access_log common
-  
-  # If you would like to have an agent and referer logfile uncomment the
-  # following directives.
---- 104,110 ----
-  # The location of the access logfile (Common Logfile Format).
-  # If this does not start with /, ServerRoot is prepended to it.
-  
-! #CustomLog logs/access_log common
-  
-  # If you would like to have an agent and referer logfile uncomment the
-  # following directives.
-***************
-*** 105,111 ****
-  # If you prefer a single logfile with access, agent and referer information
-  # (Combined Logfile Format) you can use the following directive.
-  
-! #CustomLog logs/access_log combined
-  
-  # PidFile: The file the server should log its pid to
-  PidFile logs/httpd.pid
---- 115,121 ----
-  # If you prefer a single logfile with access, agent and referer information
-  # (Combined Logfile Format) you can use the following directive.
-  
-! CustomLog logs/access_log combined
-  
-  # PidFile: The file the server should log its pid to
-  PidFile logs/httpd.pid
+--- conf/httpd.conf-dist.orig	Sat Dec 12 11:04:29 1998
++++ conf/httpd.conf-dist	Mon Jan 18 17:18:16 1999
+@@ -97,6 +97,13 @@
+ #ResourceConfig conf/srm.conf
+ #AccessConfig conf/access.conf
+ 
++<IfDefine FRONTPAGE>
++### FrontPage needs these two directives defined, otherwise	###
++### the fpadmsrv.exe program will cause errors.		###
++ResourceConfig @@ServerRoot@@/srm.conf
++AccessConfig @@ServerRoot@@/access.conf
++</IfDefine>
++
+ #
+ # Timeout: The number of seconds before receives and sends time out.
+ #
+@@ -196,6 +203,22 @@
+ # Example:
+ # LoadModule foo_module libexec/mod_foo.so
+ 
++<IfDefine SSL>
++### Uncomment the following if you wish to use SSL and you need RSAREF: ###
++#LoadFile !librsaref.so.2
++LoadFile !libcrypto.so.0
++LoadFile !libssl.so.0
++LoadModule ssl_module libexec/apache/mod_ssl.so
++AddModule mod_ssl.c
++</IfDefine>
++
++<IfDefine FRONTPAGE>
++### We need to check if it matters when the frontpage ###
++### module is loaded, before or after the SSL module? ###
++LoadModule frontpage_module libexec/apache/mod_frontpage.so
++AddModule mod_frontpage.c
++</IfDefine>
++
+ #
+ # ExtendedStatus controls whether Apache will generate "full" status
+ # information (ExtendedStatus On) or just basic information (ExtendedStatus
+@@ -241,7 +264,7 @@
+ #  don't use Group #-1 on these systems!
+ #
+ User nobody
+-Group #-1
++Group nogroup
+ 
+ #
+ # ServerAdmin: Your address, where problems with the server should be
+@@ -269,7 +292,7 @@
+ # documents. By default, all requests are taken from this directory, but
+ # symbolic links and aliases may be used to point to other locations.
+ #
+-DocumentRoot "@@ServerRoot@@/htdocs"
++DocumentRoot @@ServerRoot@@/htdocs
+ 
+ #
+ # Each directory to which Apache has access, can be configured with respect
+@@ -310,7 +333,16 @@
+ # override. Can also be "All", or any combination of "Options", "FileInfo", 
+ # "AuthConfig", and "Limit"
+ #
++<IfDefine !FRONTPAGE>
+     AllowOverride None
++</IfDefine>
++
++<IfDefine FRONTPAGE>
++### These are the Minimum options need by the FrontPage Module.
++### With out these options set the FrontPage Client will not be
++### able to access the server.
++    AllowOverride AuthConfig Limit Indexes Options
++</IfDefine>
+ 
+ #
+ # Controls who can get stuff from this server.
+@@ -342,6 +374,15 @@
+ #    </Limit>
+ #</Directory>
+ 
++### In Order for FrontPage to work in User and Virtual ###
++### Web Directories, they need to be set up as shown:  ###
++<IfDefine FRONTPAGE>
++    <Directory /*/public_html>
++ 	AllowOverride AuthConfig Limit Indexes Options
++	Options ExecCGI
++    </Directory>
++</IfDefine>
++
+ #
+ # DirectoryIndex: Name of the file or files to use as a pre-written HTML
+ # directory index.  Separate multiple entries with spaces.
+@@ -459,7 +500,7 @@
+ # define per-<VirtualHost> access logfiles, transactions will be
+ # logged therein and *not* in this file.
+ #
+-CustomLog logs/access_log common
++#CustomLog logs/access_log common
+ 
+ #
+ # If you would like to have agent and referer logfiles, uncomment the
+@@ -472,7 +513,7 @@
+ # If you prefer a single logfile with access, agent, and referer information
+ # (Combined Logfile Format) you can use the following directive.
+ #
+-#CustomLog logs/access_log combined
++CustomLog logs/access_log combined
+ 
+ #
+ # Optionally add a line containing the server version and virtual host

@@ -1,0 +1,12 @@
+--- src/support/apxs.pl.orig	Fri Jan  1 16:00:15 1999
++++ src/support/apxs.pl	Mon Jan 18 17:18:17 1999
+@@ -393,8 +393,7 @@
+         }
+         my $t = $f;
+         $t =~ s|^.+/([^/]+)$|$1|;
+-        push(@cmds, "cp $f $CFG_LIBEXECDIR/$t");
+-        push(@cmds, "chmod 755 $CFG_LIBEXECDIR/$t");
++        push(@cmds, "install -c -m 555 -o root -g wheel $f $CFG_LIBEXECDIR/$t");
+ 
+         #   determine module symbolname and filename
+         my $filename = '';

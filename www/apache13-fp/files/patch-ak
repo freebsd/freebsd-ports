@@ -1,40 +1,66 @@
-*** src/support/apachectl.orig	Fri Jul 17 01:25:54 1998
---- src/support/apachectl	Fri Jul 24 00:34:59 1998
-***************
-*** 39,44 ****
---- 39,46 ----
-  # --------------------                              --------------------
-  # ||||||||||||||||||||   END CONFIGURATION SECTION  ||||||||||||||||||||
-  
-+ eval `limits -e -C daemon` >/dev/null 2>&1
-+ 
-  ERROR=0
-  ARGV="$@"
-  if [ "x$ARGV" = "x" ] ; then 
-***************
-*** 50,56 ****
-      # check for pidfile
-      if [ -f $PIDFILE ] ; then
-  	PID=`cat $PIDFILE`
-! 	if kill -0 $PID; then
-  	    STATUS="httpd (pid $PID) running"
-  	    RUNNING=1
-  	else
---- 52,58 ----
-      # check for pidfile
-      if [ -f $PIDFILE ] ; then
-  	PID=`cat $PIDFILE`
-! 	if kill -0 $PID > /dev/null 2>&1; then
-  	    STATUS="httpd (pid $PID) running"
-  	    RUNNING=1
-  	else
-***************
-*** 82,87 ****
---- 84,90 ----
-  	fi
-  	if kill $PID ; then
-  	    echo "$0 $ARG: httpd stopped"
-+ 	    rm $PIDFILE
-  	else
-  	    echo "$0 $ARG: httpd could not be stopped"
-  	    ERROR=4
+--- src/support/apachectl.orig	Fri Jan  1 13:05:32 1999
++++ src/support/apachectl	Thu Jan 21 20:14:27 1999
+@@ -27,6 +27,10 @@
+ # the path to your httpd binary, including options if necessary
+ HTTPD='/usr/local/apache/src/httpd'
+ #
++# shared object search path
++LD_LIBRARY_PATH=
++export LD_LIBRARY_PATH
++#
+ # a command that outputs a formatted text version of the HTML at the
+ # url given on the command line.  Designed for lynx, however other
+ # programs may work.  
+@@ -39,6 +43,8 @@
+ # --------------------                              --------------------
+ # ||||||||||||||||||||   END CONFIGURATION SECTION  ||||||||||||||||||||
+ 
++eval `limits -e -C daemon` >/dev/null 2>&1
++
+ ERROR=0
+ ARGV="$@"
+ if [ "x$ARGV" = "x" ] ; then 
+@@ -50,7 +56,7 @@
+     # check for pidfile
+     if [ -f $PIDFILE ] ; then
+ 	PID=`cat $PIDFILE`
+-	if kill -0 $PID; then
++	if kill -0 $PID > /dev/null 2>&1; then
+ 	    STATUS="httpd (pid $PID) running"
+ 	    RUNNING=1
+ 	else
+@@ -75,6 +81,18 @@
+ 	    ERROR=3
+ 	fi
+ 	;;
++    startfp|start_frontpage|start-FP)
++        if [ $RUNNING -eq 1 ]; then
++            echo "$0 $ARG: httpd (pid $PID) already running"
++            continue
++        fi
++        if $HTTPD -DFRONTPAGE; then
++            echo "$0 $ARG: httpd started"
++        else
++            echo "$0 $ARG: httpd could not be started"
++            ERROR=3
++        fi
++        ;;
+     stop)
+ 	if [ $RUNNING -eq 0 ]; then
+ 	    echo "$0 $ARG: $STATUS"
+@@ -82,6 +100,7 @@
+ 	fi
+ 	if kill $PID ; then
+ 	    echo "$0 $ARG: httpd stopped"
++	    rm $PIDFILE
+ 	else
+ 	    echo "$0 $ARG: httpd could not be stopped"
+ 	    ERROR=4
+@@ -153,6 +172,7 @@
+ 	cat <<EOF
+ 
+ start      - start httpd
++startfp    - start httpd with FrontPage Extentions enabled
+ stop       - stop httpd
+ restart    - restart httpd if running by sending a SIGHUP or start if 
+              not running
