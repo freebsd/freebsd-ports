@@ -3635,6 +3635,7 @@ ja-kanjipad	ports/japanese/kanjipad
 ja-kappa20	ports/japanese/kappa20
 ja-kbanner	ports/japanese/kbanner
 ja-kcc		ports/japanese/kcc
+ja-kcode	ports/japanese/kcode
 ja-kde3-i18n	ports/japanese/kde3-i18n
 ja-kdrill	ports/japanese/kdrill
 ja-kinput2-canna	ports/japanese/kinput2-canna
