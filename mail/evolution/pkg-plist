@@ -1,3 +1,4 @@
+bin/csv2vcard
 bin/evolution
 bin/evolution-addressbook
 bin/evolution-addressbook-clean
@@ -173,25 +174,25 @@ include/evolution/shell/evolution-storage-set-view-listener.h
 include/evolution/shell/evolution-storage.h
 include/evolution/shell/evolution-wizard.h
 include/evolution/wombat/wombat-client.h
-lib/evolution/camel-providers/%%VERSION%%/libcamelimap.a
-lib/evolution/camel-providers/%%VERSION%%/libcamelimap.so
-lib/evolution/camel-providers/%%VERSION%%/libcamelimap.urls
-lib/evolution/camel-providers/%%VERSION%%/libcamellocal.a
-lib/evolution/camel-providers/%%VERSION%%/libcamellocal.so
-lib/evolution/camel-providers/%%VERSION%%/libcamellocal.so.0
-lib/evolution/camel-providers/%%VERSION%%/libcamellocal.urls
-lib/evolution/camel-providers/%%VERSION%%/libcamelpop3.a
-lib/evolution/camel-providers/%%VERSION%%/libcamelpop3.so
-lib/evolution/camel-providers/%%VERSION%%/libcamelpop3.so.0
-lib/evolution/camel-providers/%%VERSION%%/libcamelpop3.urls
-lib/evolution/camel-providers/%%VERSION%%/libcamelsendmail.a
-lib/evolution/camel-providers/%%VERSION%%/libcamelsendmail.so
-lib/evolution/camel-providers/%%VERSION%%/libcamelsendmail.so.0
-lib/evolution/camel-providers/%%VERSION%%/libcamelsendmail.urls
-lib/evolution/camel-providers/%%VERSION%%/libcamelsmtp.a
-lib/evolution/camel-providers/%%VERSION%%/libcamelsmtp.so
-lib/evolution/camel-providers/%%VERSION%%/libcamelsmtp.so.0
-lib/evolution/camel-providers/%%VERSION%%/libcamelsmtp.urls
+lib/evolution/camel-providers/1.0/libcamelimap.a
+lib/evolution/camel-providers/1.0/libcamelimap.so
+lib/evolution/camel-providers/1.0/libcamelimap.urls
+lib/evolution/camel-providers/1.0/libcamellocal.a
+lib/evolution/camel-providers/1.0/libcamellocal.so
+lib/evolution/camel-providers/1.0/libcamellocal.so.0
+lib/evolution/camel-providers/1.0/libcamellocal.urls
+lib/evolution/camel-providers/1.0/libcamelpop3.a
+lib/evolution/camel-providers/1.0/libcamelpop3.so
+lib/evolution/camel-providers/1.0/libcamelpop3.so.0
+lib/evolution/camel-providers/1.0/libcamelpop3.urls
+lib/evolution/camel-providers/1.0/libcamelsendmail.a
+lib/evolution/camel-providers/1.0/libcamelsendmail.so
+lib/evolution/camel-providers/1.0/libcamelsendmail.so.0
+lib/evolution/camel-providers/1.0/libcamelsendmail.urls
+lib/evolution/camel-providers/1.0/libcamelsmtp.a
+lib/evolution/camel-providers/1.0/libcamelsmtp.so
+lib/evolution/camel-providers/1.0/libcamelsmtp.so.0
+lib/evolution/camel-providers/1.0/libcamelsmtp.urls
 lib/evolution/evolution-mail-importers/%%VERSION%%/libmbox.a
 lib/evolution/evolution-mail-importers/%%VERSION%%/libmbox.so
 lib/evolution/evolution-mail-importers/%%VERSION%%/libmbox.so.0
@@ -336,7 +337,6 @@ share/gnome/help/evolution/C/config.html
 share/gnome/help/evolution/C/contact-automation-basic.html
 share/gnome/help/evolution/C/contact-search.html
 share/gnome/help/evolution/C/customizing-summary.html
-share/gnome/help/evolution/C/docbook.css
 share/gnome/help/evolution/C/encryption.html
 share/gnome/help/evolution/C/figures/calendar.png
 share/gnome/help/evolution/C/figures/config-cal.png
@@ -387,18 +387,6 @@ share/gnome/help/evolution/C/sgml/usage-mail.sgml
 share/gnome/help/evolution/C/sgml/usage-mainwindow.sgml
 share/gnome/help/evolution/C/sgml/usage-print.sgml
 share/gnome/help/evolution/C/sgml/usage-sync.sgml
-share/gnome/help/evolution/C/stylesheet-images/caution.gif
-share/gnome/help/evolution/C/stylesheet-images/home.gif
-share/gnome/help/evolution/C/stylesheet-images/important.gif
-share/gnome/help/evolution/C/stylesheet-images/next.gif
-share/gnome/help/evolution/C/stylesheet-images/note.gif
-share/gnome/help/evolution/C/stylesheet-images/prev.gif
-share/gnome/help/evolution/C/stylesheet-images/tip.gif
-share/gnome/help/evolution/C/stylesheet-images/toc-blank.gif
-share/gnome/help/evolution/C/stylesheet-images/toc-minus.gif
-share/gnome/help/evolution/C/stylesheet-images/toc-plus.gif
-share/gnome/help/evolution/C/stylesheet-images/up.gif
-share/gnome/help/evolution/C/stylesheet-images/warning.gif
 share/gnome/help/evolution/C/topic.dat
 share/gnome/help/evolution/C/typography.html
 share/gnome/help/evolution/C/ui-intro.html
@@ -436,7 +424,6 @@ share/gnome/help/evolution/no/config.html
 share/gnome/help/evolution/no/contact-automation-basic.html
 share/gnome/help/evolution/no/contact-search.html
 share/gnome/help/evolution/no/customizing-summary.html
-share/gnome/help/evolution/no/docbook.css
 share/gnome/help/evolution/no/encryption.html
 share/gnome/help/evolution/no/figures/calendar.png
 share/gnome/help/evolution/no/figures/config-cal.png
@@ -489,18 +476,6 @@ share/gnome/help/evolution/no/sgml/usage-mail.sgml
 share/gnome/help/evolution/no/sgml/usage-mainwindow.sgml
 share/gnome/help/evolution/no/sgml/usage-print.sgml
 share/gnome/help/evolution/no/sgml/usage-sync.sgml
-share/gnome/help/evolution/no/stylesheet-images/caution.gif
-share/gnome/help/evolution/no/stylesheet-images/home.gif
-share/gnome/help/evolution/no/stylesheet-images/important.gif
-share/gnome/help/evolution/no/stylesheet-images/next.gif
-share/gnome/help/evolution/no/stylesheet-images/note.gif
-share/gnome/help/evolution/no/stylesheet-images/prev.gif
-share/gnome/help/evolution/no/stylesheet-images/tip.gif
-share/gnome/help/evolution/no/stylesheet-images/toc-blank.gif
-share/gnome/help/evolution/no/stylesheet-images/toc-minus.gif
-share/gnome/help/evolution/no/stylesheet-images/toc-plus.gif
-share/gnome/help/evolution/no/stylesheet-images/up.gif
-share/gnome/help/evolution/no/stylesheet-images/warning.gif
 share/gnome/help/evolution/no/topic.dat
 share/gnome/help/evolution/no/typography.html
 share/gnome/help/evolution/no/ui-intro.html
@@ -1154,6 +1129,7 @@ share/locale/it/LC_MESSAGES/evolution.mo
 share/locale/ja/LC_MESSAGES/evolution.mo
 share/locale/ko/LC_MESSAGES/evolution.mo
 share/locale/lt/LC_MESSAGES/evolution.mo
+share/locale/lv/LC_MESSAGES/evolution.mo
 share/locale/nl/LC_MESSAGES/evolution.mo
 share/locale/nn/LC_MESSAGES/evolution.mo
 share/locale/no/LC_MESSAGES/evolution.mo
@@ -1223,7 +1199,7 @@ share/locale/zh_TW/LC_MESSAGES/evolution.mo
 @dirrm share/gnome/evolution
 @dirrm lib/evolution/evolution-mail-importers/%%VERSION%%
 @dirrm lib/evolution/evolution-mail-importers
-@dirrm lib/evolution/camel-providers/%%VERSION%%
+@dirrm lib/evolution/camel-providers/1.0
 @dirrm lib/evolution/camel-providers
 @dirrm lib/evolution
 @dirrm include/evolution/wombat
