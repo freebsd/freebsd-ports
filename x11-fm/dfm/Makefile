@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dfm
-PORTVERSION= 	0.99.8
+PORTVERSION= 	0.99.7
 CATEGORIES=	x11-fm
 MASTER_SITES=   http://dfm.online.de/
 
