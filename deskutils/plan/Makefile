@@ -9,8 +9,7 @@
 PORTNAME=	plan
 PORTVERSION=	1.8.7
 CATEGORIES+=	deskutils
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}  \
-		ftp://plan.ftp.fu-berlin.de/
+MASTER_SITES=	ftp://plan.ftp.fu-berlin.de/
 MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	deischen@freebsd.org
