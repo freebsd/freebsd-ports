@@ -7,7 +7,7 @@
 
 PORTNAME=	automake14
 PORTVERSION=	1.4.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	automake
@@ -42,6 +42,7 @@ pre-configure:
 		${WRKSRC}/aclocal.in
 
 pre-install:
+	${RM} -fr ${PREFIX}/share/automake14
 	${MKDIR} ${PREFIX}/share/automake14
 	${MKDIR} ${PREFIX}/share/aclocal14
 	${MKDIR} ${PREFIX}/libexec/automake14
