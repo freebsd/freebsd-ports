@@ -7576,6 +7576,7 @@ p5-Text-Reflow	ports/textproc/p5-Text-Reflow
 p5-Text-Reform	ports/textproc/p5-Text-Reform
 p5-Text-Repository	ports/textproc/p5-Text-Repository
 p5-Text-Shellwords	ports/textproc/p5-Text-Shellwords
+p5-Text-Similarity	ports/textproc/p5-Text-Similarity
 p5-Text-SimpleTemplate	ports/textproc/p5-Text-SimpleTemplate
 p5-Text-Striphigh	ports/textproc/p5-Text-Striphigh
 p5-Text-Table		ports/textproc/p5-Text-Table
