@@ -1,0 +1,23 @@
+--- mp.man.orig	Sun Aug  1 13:28:21 1993
++++ mp.man	Sat Aug  3 17:11:20 1996
+@@ -82,6 +82,8 @@
+ ] [
+ .B \-wrap
+ ] [
++.B \-F
++] [
+ .I filename .\|.\|.
+ ]
+ .PP
+@@ -250,6 +252,11 @@
+ Instead of printing who the mail article is for, the top header will
+ contain who the mail article is from. A useful option for people with
+ their own personal printer.
++.TP
++.B \-F
++Synonym for
++.B \-from
++for backwards compatiblity with earier versions.
+ .\"======================================
+ .TP      
+ .B \-help   
