@@ -7,11 +7,11 @@
 # $FreeBSD$
 #
 
-DISTNAME=       tin-1.4.1
+DISTNAME=       tin-1.4.2
 CATEGORIES=	news
-MASTER_SITES=   ftp://ftp.tin.org/pub/news/clients/tin/current/ \
-		ftp://nuxi.ucdavis.edu/pub/tin/current/ \
-		ftp://ftp.nuxi.com/pub/tin/current/
+MASTER_SITES=   ftp://ftp.tin.org/pub/news/clients/tin/v1.4/ \
+		ftp://nuxi.ucdavis.edu/pub/tin/v1.4/ \
+		ftp://ftp.nuxi.com/pub/tin/v1.4/
 
 MAINTAINER=     ache@FreeBSD.org
 
