@@ -534,9 +534,8 @@ MASTER_SITE_TEX_CTAN+=  \
 	ftp://ftp.chg.ru/pub/TeX/CTAN/%SUBDIR%/
 
 MASTER_SITE_THEMES+= \
-	ftp://ftp.themes.org/pub/themes/%SUBDIR%/ \
-	ftp://ftp.debian.org/pub/mirrors/themes.org/%SUBDIR%/ \
-	ftp://ftp.chg.ru/pub/X11/themes/%SUBDIR%/
+	http://download.freshmeat.net/themes/%SUBDIR%/ \
+	fttp://gd.tuwien.ac.at/opsys/linux/freshmeat/themes/%SUBDIR%/
 
 MASTER_SITE_VIM+= \
 	ftp://ftp.vim.org/pub/vim/unix/  \
