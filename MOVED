@@ -1326,3 +1326,6 @@ math/ruby-math3d||2004-11-27|deleted due to build failure
 misc/biblereader||2004-11-27|deleted due to fetch failure
 misc/grdb||2004-11-27|depended on GTK1, which is obsolete
 print/acroread|print/acroread5|2004-11-27|removed due to security problems
+java/phpeclipse_phphelp|java/phpeclipse|2004-11-28|merged
+java/phpeclipse_sql|java/phpeclipse|2004-11-28|merged
+java/phpeclipse_tidy|java/phpeclipse|2004-11-28|merged

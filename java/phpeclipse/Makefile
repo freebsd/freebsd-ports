@@ -6,29 +6,23 @@
 #
 
 PORTNAME=	phpeclipse
-PORTVERSION=	1.0.8
-PORTREVISION=	3
+PORTVERSION=	1.1.1
 CATEGORIES=	java editors devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpeclipse
-DISTNAME=	net.sourceforge.phpeclipse_${PORTVERSION}a
+DISTNAME=	PHPEclipse${PORTVERSION}-2004-10-24
 
 MAINTAINER=	rtdean@cytherianage.net
 COMMENT=	PHP Eclipse adds PHP support to the Eclipse IDE Framework
-
-BROKEN=		fix me
 
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 
 NO_BUILD=	yes
 USE_ZIP=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME:S/a$//}
+WRKSRC=		${WRKDIR}
 
 do-install:
-	@${MKDIR} ${PREFIX}/eclipse/plugins/net.sourceforge.phpeclipse
-.for f in phpeclipse.jar plugin.xml plugin.properties
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/eclipse/plugins/net.sourceforge.phpeclipse
-.endfor
-	@${CP} -r ${WRKSRC}/icons ${PREFIX}/eclipse/plugins/net.sourceforge.phpeclipse
+	@${CP} -r ${WRKSRC}/features ${PREFIX}/eclipse
+	@${CP} -r ${WRKSRC}/plugins ${PREFIX}/eclipse
 
 .include <bsd.port.mk>
