@@ -3,7 +3,7 @@
 # Date created:		15 Mar 1998
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id$
+# $Id: Makefile,v 1.3 1998/03/16 07:26:13 steve Exp $
 #
 
 DISTNAME=       hanterm304fonts
@@ -16,9 +16,5 @@ MAINTAINER=	junker@jazz.snu.ac.kr
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES= yes
-
-# to show a warning message to add fontpath for these fonts
-post-install:
-	@${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>
