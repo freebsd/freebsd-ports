@@ -1,0 +1,32 @@
+--- makefile.orig	Sat Mar 11 12:05:21 2000
++++ makefile	Fri Mar 31 09:45:06 2000
+@@ -5,6 +5,8 @@
+ DOC = $(NAME).ABOUT
+ DATA = 1.gif 2.gif 3.gif
+ DOC_OR_DATA = 1
++EBIN = ${PREFIX}/bin
++EROOT = ${PREFIX}/share/enlightenment
+ DATAPATH = ${EROOT}/epplet_data/$(NAME)
+ 
+ all: $(EPPLET)
+@@ -13,10 +15,7 @@
+ 	@make -i -s pack
+ 
+ %.epplet: %.c
+-	@echo Compiling $@
+-	@gcc -Wall -O2 -I/usr/X11R6/include -o $@ $< -lepplet
+-	@strip $@;
+-	@if [ ! -z "`which sstrip`" ]; then sstrip $@; fi;
++	${CC} ${CFLAGS} -I${PREFIX}/include -o $@ $< -L${PREFIX}/lib -lepplet
+ 
+ install: $(EPPLET)
+ 	@if [ -z "${EROOT}" -o -z "${EBIN}" ]; then\
+@@ -52,7 +51,7 @@
+ 	@echo $(NAME) "uninstalled :("
+ 
+ clean:
+-	rm $(EPPLET) *~
++	rm $(EPPLET)
+ 
+ pack: $(EPPLET)
+ 	rm *~
