@@ -8,7 +8,8 @@
 PORTNAME=	commons-primitives
 PORTVERSION=	1.0
 CATEGORIES=	java
-MASTER_SITES=	http://www.apache.org/dist/jakarta/${PORTNAME:S,-,/,}/binaries/
+MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
+MASTER_SITE_SUBDIR=	commons/primitives/binaries
 PKGNAMEPREFIX=	jakarta-
 
 MAINTAINER=	herve.quiroz@esil.univ-mrs.fr
