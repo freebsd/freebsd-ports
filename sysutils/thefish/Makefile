@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thefish
-PORTVERSION=	0.2.2.3
+PORTVERSION=	0.2.2.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://energyhq.homeip.net/files/
 
