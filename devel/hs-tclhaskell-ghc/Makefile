@@ -4,8 +4,9 @@
 #
 # $FreeBSD$
 
-PORTNAME=	tclhaskell-ghc
+PORTNAME=	tclhaskell
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	devel haskell tcl83
 MASTER_SITES=	http://www.dcs.gla.ac.uk/~meurig/TclHaskell/
 PKGNAMEPREFIX=	hs-
@@ -14,20 +15,36 @@ DISTNAME=	TclHaskell1_2
 MAINTAINER=	stolz@i2.informatik.rwth-aachen.de
 COMMENT=	Tcl/Tk binding for Haskell
 
+.if defined(WITH_GHC5)
+GHC=		ghc-5.04.3
+GHCDEP=		ghc
+.else
+GHC=		ghc-6.0.1
+GHCDEP=		ghc6
+.endif
+PKGNAMESUFFIX=	-${GHCDEP}
+
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
-BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
-RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
+BUILD_DEPENDS=	${GHC}:${PORTSDIR}/lang/${GHCDEP}
+RUN_DEPENDS=	${GHC}:${PORTSDIR}/lang/${GHCDEP}
 
 WRKSRC=		${WRKDIR}/TclHaskell1.2/src
 USE_GMAKE=	YES
 USE_REINPLACE=	YES
 
-GHC_VERSION=	`${LOCALBASE}/bin/ghc --numeric-version`
-GHC_LIB=	${LOCALBASE}/lib/ghc-${GHC_VERSION}
+GHC_VERSION=	`${LOCALBASE}/bin/${GHC} --numeric-version`
+GHC_LIB=	${LOCALBASE}/lib/${GHC}
 PLIST_SUB+=	GHC_VERSION="${GHC_VERSION}"
 PKGINSTALL=	${WRKDIR}/pkg-install
 MAKE_ENV+=	INSTALL_DATA="${INSTALL_DATA}" \
-		MKDIR="${MKDIR}"
+		MKDIR="${MKDIR}" GHC="${GHC}"
+
+pre-everything::
+	@${ECHO}
+	@${ECHO} "This port prefers lang/ghc6. To build this port with"
+	@${ECHO} "the Glasgow Haskell Compiler 5.x, restart this build with"
+	@${ECHO} "WITH_GHC5=YES."
+	@${ECHO}
 
 post-patch:
 	${REINPLACE_CMD} -e "s,/local.*tclhaskell,${GHC_LIB}," ${WRKSRC}/Makefile
