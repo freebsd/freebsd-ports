@@ -1,0 +1,44 @@
+PUSHDIVERT(-1)
+# Copyright (c) 1995-1999 Hannah Schroeter <hannah@mamba.pond.sub.org>
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+#  1. Redistributions of source code must retain the above copyright
+#     notice, this list of conditions and the following disclaimer,
+#     either in a separate file included with the distribution, or
+#     copied into the source files.
+#  2. Redistributions in binary form must reproduce the above copyright
+#     notice, this list of conditions and the following disclaimer in the
+#     documentation and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND HIS CONTRIBUTORS ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR HIS CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+#
+
+ifdef(`BSMTP_MAILER_PATH',, `define(`BSMTP_MAILER_PATH', @PRIVBINDIR@/bsmtp)')
+POPDIVERT
+######################################
+###   BSMTP Mailer specification   ###
+######################################
+
+VERSIONID(`$FreeBSD$')
+
+ifdef(`_MAILER_smtp_', `
+Mbsmtp,		P=BSMTP_MAILER_PATH,
+		F=_MODMF_(CONCAT(_DEF_SMTP_MAILER_FLAGS, `n8', SMTP_MAILER_FLAGS), `BSMTP'),
+		S=EnvFromSMTP/HdrFromSMTP,
+		R=ifdef(`_ALL_MASQUERADE_', `EnvToSMTP/HdrFromSMTP', `EnvToSMTP'), E=\n, L=990,
+		_OPTINS(`SMTP_MAILER_MAX', `M=', `, ')_OPTINS(`SMTP_MAILER_MAXMSGS', `m=', `, ')_OPTINS(`SMTP_MAILER_MAXRCPTS', `r=', `, ')_OPTINS(`SMTP_MAILER_CHARSET', `C=', `, ')T=X-UUCP/RFC822/X-Unix,
+		A=bsmtp -f $g $h $u',
+`errprint(`*** MAILER(`smtp') must appear before MAILER(`bsmtp')')
+')

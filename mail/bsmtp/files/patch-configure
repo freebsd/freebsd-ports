@@ -1,0 +1,29 @@
+
+$FreeBSD$
+
+--- configure.orig	Fri Feb 22 17:30:58 2002
++++ configure	Fri Feb 22 17:32:13 2002
+@@ -41,6 +41,10 @@
+   "batcher",
+   "batcher.c",
+   "bsmtp.c",
++  "bsmtp.m4.8.12",
++  "bsmtp.m4.8.11",
++  "bsmtp.m4.8.10",
++  "bsmtp.m4.8.9",
+   "bsmtp.m4.8.9",
+   "bsmtp.m4.8.8",
+   "bsmtp.m4.8.7",
+@@ -198,6 +202,12 @@
+ 	    $default[$i] = '8.8';
+ 	  } elsif ($value{'@SENDMAILVERS@'} =~ /^\s*8\.9(\..*)?\s*$/) {
+ 	    $default[$i] = '8.9';
++	  } elsif ($value{'@SENDMAILVERS@'} =~ /^\s*8\.10(\..*)?\s*$/) {
++	    $default[$i] = '8.10';
++	  } elsif ($value{'@SENDMAILVERS@'} =~ /^\s*8\.11(\..*)?\s*$/) {
++	    $default[$i] = '8.11';
++	  } elsif ($value{'@SENDMAILVERS@'} =~ /^\s*8\.12(\..*)?\s*$/) {
++	    $default[$i] = '8.12';
+ 	  } else {
+ 	    $default[$i] = ''; # Will not be installed
+ 	  }

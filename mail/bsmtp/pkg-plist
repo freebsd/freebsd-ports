@@ -7,16 +7,17 @@ bin/crsmtp
 bin/rcsmtp
 bin/rgsmtp
 bin/rsmtp
-libexec/batcher
-libexec/bsmtp
-libexec/rsmtp
-libexec/transmitter.c-cbsmtp
-libexec/transmitter.c-rcsmtp
-libexec/transmitter.g-rcsmtp
-libexec/transmitter.g-rgsmtp
-libexec/transmitter.n-rsmtp
+libexec/bsmtp/batcher
+libexec/bsmtp/bsmtp
+libexec/bsmtp/rsmtp
+libexec/bsmtp/transmitter.c-cbsmtp
+libexec/bsmtp/transmitter.c-rcsmtp
+libexec/bsmtp/transmitter.g-rcsmtp
+libexec/bsmtp/transmitter.g-rgsmtp
+libexec/bsmtp/transmitter.n-rsmtp
 share/doc/bsmtp/README
 share/sendmail/bsmtp.m4
+@dirrm libexec/bsmtp
 @dirrm share/doc/bsmtp
 @dirrm share/sendmail
 @exec mkdir -pm 770 /var/spool/bsmtp; chown uucp:uucp /var/spool/bsmtp
