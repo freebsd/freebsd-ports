@@ -8500,6 +8500,7 @@ ruby-gst	ports/multimedia/ruby-gst
 ruby-gtk	ports/x11-toolkits/ruby-gtk
 ruby-gtk2	ports/x11-toolkits/ruby-gtk2
 ruby-gtkglext	ports/x11-toolkits/ruby-gtkglext
+ruby-gtkhtml2	ports/www/ruby-gtkhtml2
 ruby-hmac	ports/security/ruby-hmac
 ruby-html-fillinform	ports/textproc/ruby-html-fillinform
 ruby-html-parser	ports/textproc/ruby-html-parser
