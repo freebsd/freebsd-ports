@@ -1,11 +1,39 @@
---- amavisd.orig	Mon Nov 10 01:22:13 2003
-+++ amavisd	Tue Nov 11 22:42:47 2003
-@@ -6279,7 +6279,7 @@
- my($amavisd_path) = find_program_path($0, [split(/:/, $path, -1)], 0);
+--- amavisd.orig	Tue Mar  9 03:21:43 2004
++++ amavisd	Mon Mar 22 20:26:59 2004
+@@ -109,7 +109,7 @@
+ 
+ BEGIN {
+     fetch_modules('REQUIRED BASIC MODULES', 1, qw(
+-	Exporter POSIX Fcntl Socket Errno Carp Carp::Heavy Time::HiRes
++	Exporter POSIX Fcntl Socket Errno Carp Time::HiRes
+ 	IO::File IO::Socket IO::Socket::UNIX IO::Socket::INET
+ 	IO::Handle IO::Wrap IO::Stringy
+ 	Digest::MD5 Unix::Syslog File::Basename File::Copy
+@@ -5358,7 +5358,8 @@
+ 		}
+ 		section_time('parts'); prolong_timer('decoding');
+ 	    }
+-	    if ($any_undecipherable) {  # test if undecipherables are banned
++	    if ($any_undecipherable && $banned_filename_re) { 
++		# test if undecipherables are banned
+ 		my($rn) = 'UNDECIPHERABLE';
+ 		my($result,$patt) = $banned_filename_re->lookup_re($rn);
+ 		if ($result) {
+@@ -5920,7 +5921,7 @@
+ 		$s = $undecipherable_subject_tag;
+ 		do_log(3,"adding $undecipherable_subject_tag, $any_undecipherable, $hold");
+ 	    }
+-	    $s .= $sa_spam_subject_tag;
++	    $s .= $sa_spam_subject_tag if $do_subj;
+ 	    my($entity) = $msginfo->mime_entity;
+ 	    if (defined $entity && defined $entity->head->get('Subject',0)) {
+ 		$hdr_edits->edit_header('Subject',
+@@ -6420,7 +6421,7 @@
+ local($1);
  $amavisd_path = $1 if $amavisd_path=~m{^([A-Za-z0-9/._=+-]+)$(?!\n)}; # untaint
  
 -my($config_file) = '/etc/amavisd.conf';  # default location of config file
 +my($config_file) = '%%PREFIX%%/etc/amavisd.conf';  # default location of config file
  if (@ARGV >= 2 && $ARGV[0] eq '-c') {    # override by command line option -c
      shift @ARGV; $config_file = shift @ARGV;
-     $config_file = $1 if $config_file=~m{^([A-Za-z0-9/._=+-]+)$(?!\n)};# untaint
+     local($1);
