@@ -18,6 +18,7 @@ MAINTAINER=	mi@aldan.algebra.com
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
 
+USE_PERL5_BUILD=yes
 USE_X_PREFIX=	yes
 NO_WRKSUBDIR=	yes
 
