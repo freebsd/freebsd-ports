@@ -19,6 +19,7 @@ INSTALLS_SHLIB=	YES
 USE_GMAKE=	YES
 USE_BZIP2=	YES
 USE_AUTOCONF=	YES
+USE_LIBTOOL=	YES
 WRKSRC=		${WRKDIR}/tng-clean/source
 
 # directories
@@ -49,6 +50,9 @@ MAN8=		browserd.8 lsarpcd.8 netlogond.8 nmbd.8 rpcclient.8 \
 
 .include <bsd.port.pre.mk>
 
+CONFIGURE_ENV=		AUTOCONF=${PREFIX}/bin/${AUTOCONF} \
+			AUTOHEADER=${PREFIX}/bin/${AUTOHEADER}
+
 .if defined(WITH_SYSLOG)
 CONFIGURE_ARGS+=	--with-syslog
 .endif
@@ -73,6 +77,10 @@ LIB_DEPENDS+=		cups.2:${PORTSDIR}/print/cups-base
 CONFIGURE_ENV+=		CPPFLAGS=-I${LOCALBASE}/include \
 			LDFLAGS=-L${LOCALBASE}/lib
 .endif
+
+pre-configure:
+	@${ECHO} ${CONFIGURE_ENV}
+	@${ECHO} ${CONFIGURE_ARGS}
 
 post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/script/samba-init.d ${SAMBA_CONFDIR}/rc.d/samba-tng.sh.sample
