@@ -1,0 +1,16 @@
+--- Makefile.orig	Wed Aug 25 17:55:52 2004
++++ Makefile	Sat Nov  6 20:24:29 2004
+@@ -3,11 +3,11 @@
+ DESTDIR = ${PREFIX}
+ 
+ # optimization cflags
+-CFLAGS = -O2 -Wall -g `gtk-config --cflags` `gdk-pixbuf-config --cflags` -DDESTDIR=\"$(DESTDIR)\"
++CFLAGS += `gtk-config --cflags` `gdk-pixbuf-config --cflags` -DDESTDIR=\"$(DESTDIR)\"
+ 
+ OBJS = hot-babe.o loader.o
+ CC = gcc
+-LIBS = `gtk-config --libs | sed "s/-lgtk//g"` `gdk-pixbuf-config --libs`
++LIBS = `gtk-config --libs` `gdk-pixbuf-config --libs`
+ INSTALL = -m 755
+ 
+ all: hot-babe
