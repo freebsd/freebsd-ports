@@ -9,7 +9,7 @@
 # client.
 
 PORTNAME=	nessus-libraries
-PORTVERSION=	2.0.9
+PORTVERSION=	2.0.10a
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \
