@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd %%DECURS_DIR%%
+exec %%PREFIX%%/bin/decurs-real
