@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.on.cs.keio.ac.jp/~yasu/linux/fonts/ \
 DISTFILES=	kochi-mincho-0.2.${MINCHO_VER}.tar.bz2 \
 		kochi-gothic-0.2.${GOTHIC_VER}.tar.bz2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kanou@khdd.net
 COMMENT=	Free Japanese TrueType fonts named 'Kochi'
 
 USE_X_PREFIX=	yes

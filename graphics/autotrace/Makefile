@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kanou@khdd.net
 COMMENT=	Convert bitmap to vector graphics
 
 LIB_DEPENDS=	jbig.1:${PORTSDIR}/graphics/jbigkit \
