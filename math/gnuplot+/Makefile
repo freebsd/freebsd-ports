@@ -18,6 +18,8 @@ LIB_DEPENDS=    png.3:${PORTSDIR}/graphics/png \
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgd.a:${PORTSDIR}/graphics/gd \
 		${LOCALBASE}/lib/libttf.a:${PORTSDIR}/print/freetype
 
+BROKEN=		gd upgrade
+
 EXTRACT_ONLY=	gnuplot-3.7.tar.gz
 
 USE_XLIB=	yes
