@@ -6,8 +6,6 @@
 # $FreeBSD$
 #
 
-PORTNAME=	vim-lite
-
 LITE=		yes
 
 MASTERDIR=	${.CURDIR}/../vim5
