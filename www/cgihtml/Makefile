@@ -7,6 +7,7 @@
 
 PORTNAME=	cgihtml
 PORTVERSION=	1.69
+PORTREVISION=	1
 CATEGORIES=	www devel
 MASTER_SITES=	ftp://hcs.harvard.edu/pub/web/tools/cgihtml/
 

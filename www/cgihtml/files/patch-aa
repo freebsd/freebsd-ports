@@ -1,0 +1,13 @@
+--- cgi-lib.c	Wed Apr 11 20:03:57 2001
++++ cgi-lib.c	Wed Apr 11 20:04:20 2001
+@@ -529,9 +529,9 @@
+   int numcookies = 0;
+   short NM = 1;
+ 
++  list_create(entries);
+   if (cookies == NULL)
+     return 0;
+-  list_create(entries);
+   window = entries->head;
+   len = strlen(cookies);
+   entry.name = (char *)malloc(sizeof(char) * len + 1);
