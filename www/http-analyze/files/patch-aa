@@ -1,0 +1,36 @@
+--- Makefile.orig	Sun Sep 22 15:59:18 1996
++++ Makefile	Fri Jul 11 06:31:20 1997
+@@ -16,8 +16,8 @@
+ #COMPRESS = compress
+ 
+ # where your gd library and include files reside
+-GDLIB	= /usr/local/lib/libgd.a
+-GDINC	= /usr/local/include/gd
++GDLIB	= ${PREFIX}/lib/libgd.a
++GDINC	= ${PREFIX}/include/gd
+ 
+ # Customization
+ #
+@@ -62,7 +62,8 @@
+ #
+ 
+ #DEFINES = -DCOUNT_EXTRA_BYTES -DUSER_AGENT -DUSE_GETHOSTNAME -DUSE_FGETS
+-DEFINES	= -DUSE_GETHOSTNAME
++DEFINES	= -DNS_FASTTRACK -DCOUNT_EXTRA_BYTES -DUSER_AGENT -DUSE_GETHOSTNAME \
++	  -DTIME_STATS
+ 
+ VERSION	= -DVERSION=\"1.9e\"
+ 
+@@ -71,10 +72,10 @@
+ TARGETS	= http-analyze http-analyze.1
+ 
+ # Compiler flags
+-CC	= cc
++#CC	= cc
+ #CFLAGS	= -O -xansi -fullwarn -wlint,-pui -woff 827,828 $(DEFINES) $(VERSION)
+ #CFLAGS	= -O $(DEFINES) $(VERSION) -DTIME_STATS
+-CFLAGS	= -O $(DEFINES) $(VERSION) 
++CFLAGS	+= $(DEFINES) $(VERSION) 
+ LDFLAGS	= 
+ LINT	= lint -u
+ LIBS	= -lm
