@@ -1,6 +1,6 @@
---- configure.orig	Sat Dec  7 07:54:02 2002
-+++ configure	Mon Dec 16 21:02:31 2002
-@@ -276,7 +276,7 @@
+--- configure.orig	Sun Feb  9 06:29:05 2003
++++ configure	Mon Feb 10 23:20:25 2003
+@@ -294,7 +294,7 @@
  
  
  # 1st pass checking for vital options
@@ -9,19 +9,19 @@
  _ranlib=ranlib
  _cc=gcc
  test "$CC" && _cc="$CC"
-@@ -512,19 +512,10 @@
+@@ -530,19 +530,10 @@
  
  # Try to find the available options for the current CPU
  if x86 || ppc; then
 -  if test -r /proc/cpuinfo ; then
--    # linux with /proc mounted, extract cpu information from it
+-    # Linux with /proc mounted, extract CPU information from it
 -    _cpuinfo="cat /proc/cpuinfo"
 -  elif test -r /compat/linux/proc/cpuinfo ; then
--    # FreeBSD with linux emulation /proc mounted,
--    # extract cpu information from it
+-    # FreeBSD with Linux emulation /proc mounted,
+-    # extract CPU information from it
 -    _cpuinfo="cat /compat/linux/proc/cpuinfo"
 -  elif x86; then
-     # all other OS try to extract cpu information from a small helper
+     # all other OSes try to extract CPU information from a small helper
      # program TOOLS/cpuinfo instead
      $_cc -o TOOLS/cpuinfo TOOLS/cpuinfo.c
      _cpuinfo="TOOLS/cpuinfo"
@@ -29,7 +29,7 @@
  
    pname=`$_cpuinfo | grep 'model name' | cut -d ':' -f 2 | head -1`
    pvendor=`$_cpuinfo | grep 'vendor_id' | cut -d ':' -f 2  | cut -d ' ' -f 2 | head -1`
-@@ -1353,8 +1344,8 @@
+@@ -1394,8 +1385,8 @@
      ;;
  
    *)
@@ -40,7 +40,7 @@
      ;;
  
    esac
-@@ -1364,7 +1355,7 @@
+@@ -1405,7 +1396,7 @@
  test -z "$_bindir" && _bindir="$_prefix/bin"
  test -z "$_datadir" && _datadir="$_prefix/share/mplayer"
  test -z "$_mandir" && _mandir="$_prefix/man"
@@ -49,7 +49,7 @@
  test -z "$_libdir" && _libdir="$_prefix/lib"
  test -z "$_mlibdir" && _mlibdir="$MLIBHOME"
  
-@@ -1784,13 +1775,7 @@
+@@ -1836,13 +1827,7 @@
  
  
  echocheck "memalign()"
@@ -63,7 +63,7 @@
  if test "$_memalign" = yes ; then
   _def_memalign='#define HAVE_MEMALIGN 1'
  else
-@@ -1879,31 +1864,7 @@
+@@ -1931,31 +1916,7 @@
  
  
  echocheck "pthread"
@@ -96,7 +96,7 @@
  echores "yes (using $_ld_pthread)"
  
  
-@@ -4483,7 +4444,7 @@
+@@ -4694,7 +4655,7 @@
    CFLAGS="$CFLAGS -D_REENTRANT"
  elif bsd ; then
    # FIXME bsd needs this so maybe other OS'es

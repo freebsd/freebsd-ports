@@ -9,7 +9,7 @@ bin/mplayer
 %%PORTDOCS%%share/doc/mplayer/encoding.html
 %%PORTDOCS%%share/doc/mplayer/faq.html
 %%PORTDOCS%%share/doc/mplayer/formats.html
-%%PORTDOCS%%share/doc/mplayer/skin-en.html
+%%PORTDOCS%%share/doc/mplayer/skin.html
 %%PORTDOCS%%share/doc/mplayer/sound.html
 %%PORTDOCS%%share/doc/mplayer/video.html
 %%PORTDOCS%%share/doc/mplayer/users_against_developers.html
