@@ -1,8 +1,8 @@
 bin/fpwmake
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/ASCIItoX.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/BaseText.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/BaseUserChar.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/BaseWord.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/CharConv.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/Control.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/EndWord.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/FPWUtils/Copyright.pm
