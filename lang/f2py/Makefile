@@ -17,6 +17,8 @@ COMMENT=	Fortran to Python Interface Generator
 
 RUN_DEPENDS=	${PYNUMERIC}
 
+BROKEN=		Size mismatch
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
