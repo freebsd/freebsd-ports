@@ -1,0 +1,16 @@
+The Text::Striphigh module exports a single function: C<striphigh>. This
+function takes one argument, a string possibly containing high ASCII
+characters in the ISO-8859-1 character set, and transforms this into a
+string containing only 7 bits ASCII characters, by substituting every
+high bit character with a similar looking standard ASCII character, or
+with a sequence of standard ASCII characters.
+
+Because of precisely the deficiency this package tries to offer a workaround
+for is present in some of the things that process pod, there are no
+examples in this manpage. Look at the source or the test script if you
+want examples.
+
+WWW: http://search.cpan.org/dist/Text-Striphigh
+
+	Kai Storbeck
+	kai@xs4all.nl
