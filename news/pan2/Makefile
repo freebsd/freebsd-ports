@@ -7,12 +7,11 @@
 
 PORTNAME=	pan
 PORTVERSION=	0.9.7
+PORTREVISION=	1
 CATEGORIES=	news gnome
 MASTER_SITES=	http://pan.rebelbase.com/download/${PORTVERSION}/
 
 MAINTAINER=	gnome@FreeBSD.org
-
-LIB_DEPENDS=	gtkhtml.10:${PORTSDIR}/www/gtkhtml
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	gnomepm
 PORTVERSION=	0.9.3
+PORTREVISION=	1
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://ftp.one.net/pub/users/dobez/
@@ -14,8 +15,6 @@ MASTER_SITE_SUBDIR=	sobomax
 DISTNAME=	${PORTNAME:S/gnome/gnome-/}-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
-
-LIB_DEPENDS=	ghttp.1:${PORTSDIR}/www/libghttp
 
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
