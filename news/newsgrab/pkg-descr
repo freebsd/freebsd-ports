@@ -1,0 +1,8 @@
+Based on a given regular expression and news group, newsgrab will
+connect to your NNTP server and download all the binaries in articles
+that match the given regexp and uudecode them.
+
+WWW: http://phunkbros.dk/?page=goodiebag
+
+- Pete
+petef@databits.net
