@@ -1,0 +1,14 @@
+bin/sysmond
+bin/sysmon
+etc/sysmon.conf.sample
+%%PORTDOCS%%%%DOCSDIR%%/Changes.html
+%%PORTDOCS%%%%DOCSDIR%%/binaries.html
+%%PORTDOCS%%%%DOCSDIR%%/config.html
+%%PORTDOCS%%%%DOCSDIR%%/docs.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/jclient.jpg
+%%PORTDOCS%%%%DOCSDIR%%/net-example.png
+%%PORTDOCS%%%%DOCSDIR%%/sysmon.conf.man.html
+%%PORTDOCS%%%%DOCSDIR%%/sysmon.jpg
+%%PORTDOCS%%%%DOCSDIR%%/sysmon.man.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

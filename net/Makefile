@@ -654,6 +654,7 @@
     SUBDIR += suckblow
     SUBDIR += sup
     SUBDIR += svnc
+    SUBDIR += sysmon
     SUBDIR += tac_plus-libradius
     SUBDIR += tac_plus4
     SUBDIR += tacshell
