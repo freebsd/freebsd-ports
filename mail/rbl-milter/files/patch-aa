@@ -1,0 +1,19 @@
+*** configure.old	Fri Nov 22 06:30:28 2002
+--- configure	Fri Nov 22 06:30:25 2002
+***************
+*** 1230,1236 ****
+
+  LDFLAGS="$LDFLAGS -L$SENDMAIL_OBJ/libmilter -L$SENDMAIL_OBJ/libsm -L$SENDMAIL_OBJ/libsmutil -L$SENDMAIL_OBJ/lib";
+  CFLAGS="$CFLAGS -Wall -Werror"
+! LIBS="$LIBS -pthread -lpthread"
+
+
+  echo $ac_n "checking for socket in -lsocket""... $ac_c" 1>&6
+--- 1230,1236 ----
+
+  LDFLAGS="$LDFLAGS -L$SENDMAIL_OBJ/libmilter -L$SENDMAIL_OBJ/libsm -L$SENDMAIL_OBJ/libsmutil -L$SENDMAIL_OBJ/lib";
+  CFLAGS="$CFLAGS -Wall -Werror"
+! LIBS="$LIBS -pthread -lc_r"
+
+
+  echo $ac_n "checking for socket in -lsocket""... $ac_c" 1>&6
