@@ -5,3 +5,4 @@ lib/plain2/header.p2
 lib/plain2/header_t.p2
 lib/plain2/jbook.p2
 lib/plain2/supsnum.p2
+@dirrm lib/plain2
