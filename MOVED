@@ -1445,3 +1445,4 @@ net/lmd||2005-03-04|Project dead and disappeared
 net/loadd||2005-03-04|Project dead and disappeared
 games/QNetChess|games/qnetchess|2005-03-09|port name lowercased
 biology/act|biology/artemis|2005-03-12|act is redundant with new artemis
+multimedia/nautilus-media||2005-03-12|Deprecated, and no longer builds
