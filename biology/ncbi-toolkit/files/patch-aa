@@ -6,11 +6,11 @@
  	$(SRC2) $(SRC1) $(OTHERLIBS) -lsocket -lnsl
 +
 +EXE=	Nentrez Psequin \
-+		asn2ff asn2xml asndhuff asntool \
-+		bl2seq blast.REAL blastall blastcl3 blastclust blastpgp \
++		asn2ff asn2gb asn2xml asndhuff asntool \
++		blastall blastcl3 blastclust blastpgp \
 +		cdscan checksub copymat \
-+		ddv dosimple \
-+		entrcmd errhdr fa2htgs fastacmd findspl fmerge formatdb \
++		ddv demo_regexp demo_regexp_grep dosimple \
++		entrcmd entrez2 errhdr fa2htgs fastacmd findspl fmerge formatdb \
 +		getfeat getmesh getpub getseq gil2bin \
 +		idfetch impala indexpub \
 +		makemat makeset megablast \
