@@ -2914,6 +2914,7 @@ hobbes-icons-xpm	ports/graphics/hobbes-icons-xpm
 holyshout	ports/audio/holyshout
 honeyd		ports/net/honeyd
 hope		ports/lang/hope
+horde-passwd	ports/www/horde-passwd
 horde2		ports/www/horde2
 hostsentry	ports/security/hostsentry
 hotjava		ports/www/hotjava
