@@ -7,7 +7,7 @@
 -CFLAGS = -g `gnome-config --cflags gtk gnome gnomeui gtkhtml glibwww oaf` \
 -  `libwww-config --cflags`
 +CFLAGS += `$(X11BASE)/bin/gnome-config --cflags gtk gnome gnomeui gtkhtml glibwww oaf` \
-+  `$(LOCALBASE)/bin/libwww-config --cflags`
++  `$(LOCALBASE)/bin/libwww-config --cflags` `$(X11BASE)/bin/gconf-config --cflags gconf`
  LDFLAGS = 
 -LIBS = `gnome-config --libs gtk gnome gnomeui gtkhtml glibwww oaf` \
 -  `libwww-config --libs` `gconf-config --libs gconf`
