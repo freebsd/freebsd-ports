@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.92 1996/08/02 20:01:52 chuckr Exp $
+# $Id: Makefile,v 1.93 1996/08/03 22:44:15 chuckr Exp $
 #
 
     SUBDIR += FWF
@@ -10,6 +10,7 @@
     SUBDIR += blt
     SUBDIR += color_xterm
     SUBDIR += ctwm
+    SUBDIR += dclock
     SUBDIR += emiclock
     SUBDIR += emu
     SUBDIR += fvwm
