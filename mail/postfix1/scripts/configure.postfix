@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix1/scripts/Attic/configure.postfix,v 1.29 2003-02-24 02:26:52 edwin Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix1/scripts/Attic/configure.postfix,v 1.30 2003-03-03 12:56:05 nectar Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -86,7 +86,7 @@ while [ "$1" ]; do
                                 echo "POSTFIX_AUXLIBS+= \${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz"
                         fi
                         echo ".if exists(/usr/lib/libkrb.a)"
-                        echo "POSTFIX_AUXLIBS+= -lkrb -ldes -lcom_err"
+                        echo "POSTFIX_AUXLIBS+= -lkrb -lcrypto -lcom_err"
                         echo ".endif"
                         SUB_SASL=""
                         ;;
@@ -105,7 +105,7 @@ while [ "$1" ]; do
 				echo "POSTFIX_AUXLIBS+= \${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz"
 			fi
 			echo ".if exists(/usr/lib/libkrb.a)"
-			echo "POSTFIX_AUXLIBS+=	-lkrb -ldes -lcom_err"
+			echo "POSTFIX_AUXLIBS+=	-lkrb -lcrypto -lcom_err"
 			echo ".endif"
 			SUB_SASL=""
 			;;
