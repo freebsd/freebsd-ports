@@ -3216,6 +3216,7 @@ libkvm		src/lib/libkvm
 liblug		ports/graphics/liblug
 libm		src/lib/libm
 libmalloc	ports/devel/libmalloc
+libmcal		ports/misc/libmcal
 libmcrypt	ports/security/libmcrypt
 libmcrypt-nm	ports/security/libmcrypt-nm
 libmd		src/lib/libmd
