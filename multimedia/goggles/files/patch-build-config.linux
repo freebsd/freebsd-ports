@@ -1,5 +1,5 @@
---- build/config.linux.orig	Thu Jul  8 04:56:18 2004
-+++ build/config.linux	Sun Jul 11 03:20:58 2004
+--- build/config.linux.orig	Sat Nov 13 17:30:53 2004
++++ build/config.linux	Sat Nov 13 17:44:09 2004
 @@ -2,7 +2,7 @@
  #-------------------------------------------------------------------------------
  CONFIG_XV=${CONFIG_XV:-1}
@@ -30,10 +30,10 @@
  
  # Libraries we need
  #----------------------------------------------------------------------------------------------------------------
-@@ -85,8 +85,8 @@
+@@ -91,8 +91,8 @@
  
- export CFLAGS="-Wall -O2 -march=i586 -mcpu=i586"
- export CXXFLAGS="-Wall -O2 -march=i586 -mcpu=i586"
+ export CFLAGS="-Wall -O2 -march=i586 -mtune=i586"
+ export CXXFLAGS="-Wall -O2 -march=i586 -mtune=i586"
 -export CPPFLAGS="-I../include $OGLE_INCLUDE $FOX_INCLUDE"
 -export LIBS="$OGLE_LIB $XV_LIBS $FOX_LIB"
 +export CPPFLAGS="-I../include $OGLE_INCLUDE $FOX_INCLUDE -I%%X11BASE%%/include"
