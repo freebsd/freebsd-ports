@@ -16,6 +16,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby Interactive reference
 
+BROKEN=		Does not build
+
 USE_RUBY=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
