@@ -16,11 +16,28 @@ MAINTAINER=	mikeh@FreeBSD.org
 COMMENT=	Linux Infared Remote Control
 
 USE_XLIB=	yes
-USE_GETOPT_LONG=	yes
+USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=	13
+USE_INC_LIBTOOL_VER=13
+USE_REINPLACE=	yes
+
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-driver=any --disable-manage-devices
+CONFIGURE_ARGS=		--disable-manage-devices
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_IRMAN)
+CONFIGURE_ARGS+=	--with-driver=irman
+BUILD_DEPENDS=		${LOCALBASE}/libirman.a:${PORTSDIR}/comms/libirman
+.if ${OSVERSION} >= 500041
+# These are already included in the getopt_long case on < 50041
+CPPFLAGS+=		-I${LOCALBASE}/include
+LDFLAGS+=		-L${LOCALBASE}/lib
+CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+.endif
+.else
+CONFIGURE_ARGS+=	--with-driver=any
+.endif
 
 MAN1=		irexec.1 ircat.1 irpty.1 irrecord.1 irw.1 irxevent.1 \
 		mode2.1 smode2.1 xmode2.1 rc.1
@@ -29,4 +46,11 @@ MAN8=		lircd.8 lircmd.8
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+pre-everything::
+.ifndef(WITH_IRMAN)
+	@${ECHO_CMD}
+	@${ECHO_CMD} "To build with libirman support, restart make and define WITH_IRMAN"
+	@${ECHO_CMD}
+.endif
+
+.include <bsd.port.post.mk>
