@@ -1,0 +1,9 @@
+--- TAO/tao/Valuetype/ValueBase.inl.orig	Sat Apr  4 12:25:24 1970
++++ TAO/tao/Valuetype/ValueBase.inl	Thu Jan 20 09:27:52 2005
+@@ -67,5 +67,5 @@ TAO_OBV_GIOP_Flags::is_block_size (CORBA
+ ACE_INLINE CORBA::Boolean
+ TAO_OBV_GIOP_Flags::is_end_tag (CORBA::ULong tag)
+ {
+-  return (0x80000000L < tag  && tag <= 0xFFFFFFFFL);
++  return (0x80000000L < tag);
+ }

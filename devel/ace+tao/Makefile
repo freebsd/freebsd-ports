@@ -26,9 +26,6 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
-# Code is not 64-bit clean yet
-ONLY_FOR_ARCHS=	i386
-
 TESTS=		"@comment "
 .if defined(WITH_TESTS)
 USE_PERL5_BUILD=	yes
