@@ -18,6 +18,7 @@ MAINTAINER=	ijliao@FreeBSD.org
 
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc
 NO_BUILD=	yes
 
 MAN1=	emirror.1
