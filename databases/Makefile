@@ -15,6 +15,7 @@
     SUBDIR += db41-nocrypto
     SUBDIR += dbXML
     SUBDIR += dbconnect
+    SUBDIR += dbf
     SUBDIR += dbf2mysql
     SUBDIR += dbh
     SUBDIR += dbmetrix
