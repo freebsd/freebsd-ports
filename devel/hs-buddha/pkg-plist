@@ -11,6 +11,9 @@ lib/buddha-%%BUDDHA_VERSION%%/Char_B.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/Complex.i
 lib/buddha-%%BUDDHA_VERSION%%/Complex_B.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/DD.p_hi
+lib/buddha-%%BUDDHA_VERSION%%/Directory.i
+lib/buddha-%%BUDDHA_VERSION%%/DirectoryPrims_B.p_hi
+lib/buddha-%%BUDDHA_VERSION%%/Directory_B.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/EDT.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/GhcInternals.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/Hash.h
@@ -26,6 +29,7 @@ lib/buddha-%%BUDDHA_VERSION%%/Ix_B.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/List.i
 lib/buddha-%%BUDDHA_VERSION%%/List_B.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/Locale.i
+lib/buddha-%%BUDDHA_VERSION%%/LocalePrims_B.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/Locale_B.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/Main.hs
 lib/buddha-%%BUDDHA_VERSION%%/Maybe.i
@@ -33,6 +37,8 @@ lib/buddha-%%BUDDHA_VERSION%%/Maybe_B.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/Meta.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/Monad.i
 lib/buddha-%%BUDDHA_VERSION%%/Monad_B.p_hi
+lib/buddha-%%BUDDHA_VERSION%%/Numeric.i
+lib/buddha-%%BUDDHA_VERSION%%/Numeric_B.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/Partial.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/Prelude.i
 lib/buddha-%%BUDDHA_VERSION%%/Prelude_B.p_hi
@@ -45,9 +51,15 @@ lib/buddha-%%BUDDHA_VERSION%%/Queue.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/Random.i
 lib/buddha-%%BUDDHA_VERSION%%/RandomPrims_B.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/Random_B.p_hi
+lib/buddha-%%BUDDHA_VERSION%%/Ratio.i
+lib/buddha-%%BUDDHA_VERSION%%/RatioPrims_B.p_hi
+lib/buddha-%%BUDDHA_VERSION%%/Ratio_B.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/System.i
 lib/buddha-%%BUDDHA_VERSION%%/SystemPrims_B.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/System_B.p_hi
+lib/buddha-%%BUDDHA_VERSION%%/Time.i
+lib/buddha-%%BUDDHA_VERSION%%/TimePrims_B.p_hi
+lib/buddha-%%BUDDHA_VERSION%%/Time_B.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/TransSupport.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/buddha.pkg.conf
 lib/buddha-%%BUDDHA_VERSION%%/libbuddhaHsBase_p.a
