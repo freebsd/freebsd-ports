@@ -8,7 +8,8 @@
 PORTNAME=	hpack
 PORTVERSION=	0.79a
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://src.doc.ic.ac.uk/Mirrors/sunsite.doc.ic.ac.uk/hpack/
+MASTER_SITES=	ftp://ftp.franken.de/pub/crypt/misc/ \
+		http://ftp.tugraz.at/mirror/crypto/programs/hpack/
 DISTNAME=	hpack79src
 
 MAINTAINER=	ports@FreeBSD.org
