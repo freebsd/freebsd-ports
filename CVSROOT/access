@@ -14,12 +14,12 @@ wollman
 bde
 gibbs
 asami
-joerg freebsd-org@uriah.heep.sax.de
+joerg	freebsd-org@uriah.heep.sax.de
 ache
 pst
 sos
 nate
-karl
+karl	devnull
 csgr
 guido
 martin
@@ -54,7 +54,7 @@ tg
 uhclem
 jdp
 fenner
-wosch bsd@panke.de.freebsd.org
+wosch	bsd@panke.de.freebsd.org
 scrappy
 smpatel
 jhay
@@ -72,7 +72,7 @@ kato
 davidn
 mbarkah
 nsj
-brian freebsd-committers@Awfulhak.org
+brian	freebsd-committers@Awfulhak.org
 darrenr
 tegge
 yokota
@@ -85,7 +85,7 @@ jmb
 jb
 stb
 pds
-tedm
+tedm	devnull
 kjc
 stark
 charnier
@@ -188,7 +188,7 @@ joe
 nbm
 jedgar
 asmodai
-rwatson bb+lists.freebsd.cvs-committers@cyrus.watson.org
+rwatson	bb+lists.freebsd.cvs-committers@cyrus.watson.org
 groudier
 reg
 ade
