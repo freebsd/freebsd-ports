@@ -6,14 +6,16 @@
 #
 
 PORTNAME?=	nmap
-PORTVERSION=	3.50
+PORTVERSION=	${DISTVERSION:L:C/([a-z])[a-z]+/\1/g:C/[^a-z0-9+]+/./g}
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://download.insecure.org/nmap/dist/ \
 		http://www.mirrors.wiretapped.net/security/network-mapping/nmap/
-DISTNAME=	nmap-${PORTVERSION}	# needed for security/nmapfe
+DISTNAME=	nmap-${DISTVERSION}	# needed for security/nmapfe
 
 MAINTAINER=	eik@FreeBSD.org
 COMMENT?=	Port scanning utility for large networks
+
+DISTVERSION=	3.51-TEST3 
 
 USE_BZIP2=	yes
 

@@ -1,4 +1,5 @@
 bin/nmap
+%%DATADIR%%/nmap-mac-prefixes
 %%DATADIR%%/nmap-os-fingerprints
 %%DATADIR%%/nmap-protocols
 %%DATADIR%%/nmap-rpc
