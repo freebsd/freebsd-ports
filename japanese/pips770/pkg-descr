@@ -1,0 +1,22 @@
+Photo Image Print System for Linux is the Printer filter for EPSON
+PM-770C. By using this driver you can print out as high quality as you
+use Windows driver.  See the below URL:
+
+WWW: http://www.epkowa.co.jp/
+
+And this port has a modified filter "filter770.rev" when you print out
+more than one page useful.  For example, if you use it, you add the
+next entry into /etc/printcap.
+
+pm770c|EPSON PM-770C:\
+        :lp=/dev/lpt0:\
+        :sh:\
+        :if=/usr/local/libexec/pips770/filter770.rev:\
+        :sd=/var/spool/lpd/pm770c:\
+        :mx#0:\
+        :lf=/var/log/lpd-errs
+
+*************************************************************
+To run with Japanese messages, you should execute as follows:
+  env LANG=ja_JP pips770 -la JP
+*************************************************************
