@@ -18,6 +18,7 @@ COMMENT=	Internationalized Domain Names command line tool
 LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 BUILD_DEPENDS=	gengetopt:${PORTSDIR}/devel/gengetopt
 
+USE_PERL5_BUILD=	yes
 USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
