@@ -162,7 +162,6 @@ share/afterstep/desktop/icons/16bpp/Publish.xpm
 share/afterstep/desktop/icons/16bpp/RayTracedGear.xpm
 share/afterstep/desktop/icons/16bpp/Recycler.xpm
 share/afterstep/desktop/icons/16bpp/RedFire.xpm
-share/afterstep/desktop/icons/16bpp/ShutDown.xpm
 share/afterstep/desktop/icons/16bpp/Start.xpm
 share/afterstep/desktop/icons/16bpp/Text.xpm
 share/afterstep/desktop/icons/16bpp/WWW.xpm
@@ -177,6 +176,7 @@ share/afterstep/desktop/icons/16bpp/linux-penguin.xpm
 share/afterstep/desktop/icons/16bpp/monalisa.xpm
 share/afterstep/desktop/icons/16bpp/netscape.xpm
 share/afterstep/desktop/icons/16bpp/shutdown.xpm
+share/afterstep/desktop/icons/16bpp/shutdown2.xpm
 share/afterstep/desktop/icons/16bpp/spreadsheet.xpm
 share/afterstep/desktop/icons/16bpp/spreadsheet2.xpm
 share/afterstep/desktop/icons/16bpp/wharf.xpm
@@ -229,7 +229,6 @@ share/afterstep/desktop/icons/8bpp/Publish.xpm
 share/afterstep/desktop/icons/8bpp/RayTracedGear.xpm
 share/afterstep/desktop/icons/8bpp/Recycler.xpm
 share/afterstep/desktop/icons/8bpp/RedFire.xpm
-share/afterstep/desktop/icons/8bpp/ShutDown.xpm
 share/afterstep/desktop/icons/8bpp/Start.xpm
 share/afterstep/desktop/icons/8bpp/Text.xpm
 share/afterstep/desktop/icons/8bpp/WWW.xpm
@@ -244,6 +243,7 @@ share/afterstep/desktop/icons/8bpp/linux-penguin.xpm
 share/afterstep/desktop/icons/8bpp/monalisa.xpm
 share/afterstep/desktop/icons/8bpp/netscape.xpm
 share/afterstep/desktop/icons/8bpp/shutdown.xpm
+share/afterstep/desktop/icons/8bpp/shutdown2.xpm
 share/afterstep/desktop/icons/8bpp/spreadsheet.xpm
 share/afterstep/desktop/icons/8bpp/spreadsheet2.xpm
 share/afterstep/desktop/icons/8bpp/wharf.xpm
