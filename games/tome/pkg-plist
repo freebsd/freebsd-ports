@@ -1,5 +1,7 @@
 bin/tome
+share/tome/apex/.cvsignore
 share/tome/apex/delete.me
+share/tome/apex/scores.raw
 share/tome/bone/bone001.012
 share/tome/bone/bone004.001
 share/tome/bone/bone004.002
@@ -38,6 +40,7 @@ share/tome/dngn/dun1.14
 share/tome/dngn/dun10.0
 share/tome/dngn/dun11.20
 share/tome/dngn/dun11.22
+share/tome/dngn/dun17.15
 share/tome/dngn/dun18.0
 share/tome/dngn/dun18.1
 share/tome/dngn/dun19.11
@@ -45,6 +48,7 @@ share/tome/dngn/dun2.31
 share/tome/dngn/dun22.10
 share/tome/dngn/dun22.5
 share/tome/dngn/dun24.0
+share/tome/dngn/dun29.15
 share/tome/dngn/dun3.18
 share/tome/dngn/dun3.28
 share/tome/dngn/dun3.3
@@ -84,10 +88,12 @@ share/tome/edit/readme.txt
 share/tome/edit/s_crypt.map
 share/tome/edit/s_death.map
 share/tome/edit/s_doom.map
+share/tome/edit/s_factory.map
 share/tome/edit/s_gates.map
 share/tome/edit/s_info.txt
 share/tome/edit/s_name.map
 share/tome/edit/s_orc.map
+share/tome/edit/s_ship.map
 share/tome/edit/set_info.txt
 share/tome/edit/special.txt
 share/tome/edit/spiders.map
@@ -173,137 +179,273 @@ share/tome/file/smeagolr.txt
 share/tome/file/speakpet.txt
 share/tome/file/timefun.txt
 share/tome/file/timenorm.txt
-share/tome/help/TANG.txt
+share/tome/help/ability.html
 share/tome/help/ability.txt
+share/tome/help/advanced.hlp
+share/tome/help/advanced.html
+share/tome/help/attack.html
 share/tome/help/attack.txt
+share/tome/help/automat.html
 share/tome/help/automat.txt
+share/tome/help/birth.html
 share/tome/help/birth.txt
-share/tome/help/bldg.txt
+share/tome/help/c_alchem.html
 share/tome/help/c_alchem.txt
+share/tome/help/c_archer.html
 share/tome/help/c_archer.txt
+share/tome/help/c_assass.html
 share/tome/help/c_assass.txt
+share/tome/help/c_axemas.html
 share/tome/help/c_axemas.txt
+share/tome/help/c_bard.html
 share/tome/help/c_bard.txt
+share/tome/help/c_demono.html
 share/tome/help/c_demono.txt
+share/tome/help/c_druid.html
 share/tome/help/c_druid.txt
+share/tome/help/c_geoman.html
 share/tome/help/c_geoman.txt
+share/tome/help/c_hafted.html
 share/tome/help/c_hafted.txt
+share/tome/help/c_lorema.html
 share/tome/help/c_lorema.txt
+share/tome/help/c_mage.html
 share/tome/help/c_mage.txt
+share/tome/help/c_merch.html
 share/tome/help/c_merch.txt
+share/tome/help/c_mimic.html
 share/tome/help/c_mimic.txt
+share/tome/help/c_mindcr.html
 share/tome/help/c_mindcr.txt
+share/tome/help/c_monk.html
 share/tome/help/c_monk.txt
+share/tome/help/c_necro.html
 share/tome/help/c_necro.txt
+share/tome/help/c_palad.html
 share/tome/help/c_palad.txt
+share/tome/help/c_polear.html
 share/tome/help/c_polear.txt
+share/tome/help/c_posses.html
 share/tome/help/c_posses.txt
+share/tome/help/c_pr_drk.html
 share/tome/help/c_pr_drk.txt
+share/tome/help/c_pr_eru.html
 share/tome/help/c_pr_eru.txt
+share/tome/help/c_pr_man.html
 share/tome/help/c_pr_man.txt
+share/tome/help/c_priest.html
 share/tome/help/c_priest.txt
+share/tome/help/c_ranger.html
 share/tome/help/c_ranger.txt
+share/tome/help/c_rogue.html
 share/tome/help/c_rogue.txt
+share/tome/help/c_runecr.html
 share/tome/help/c_runecr.txt
+share/tome/help/c_sorcer.html
 share/tome/help/c_sorcer.txt
+share/tome/help/c_summon.html
 share/tome/help/c_summon.txt
+share/tome/help/c_swordm.html
 share/tome/help/c_swordm.txt
+share/tome/help/c_symbia.html
 share/tome/help/c_symbia.txt
+share/tome/help/c_thaum.html
 share/tome/help/c_thaum.txt
+share/tome/help/c_unbel.html
 share/tome/help/c_unbel.txt
+share/tome/help/c_warper.html
 share/tome/help/c_warper.txt
+share/tome/help/c_warrio.html
 share/tome/help/c_warrio.txt
+share/tome/help/command.html
 share/tome/help/command.txt
+share/tome/help/corspoil.html
 share/tome/help/corspoil.txt
+share/tome/help/debug.html
+share/tome/help/debug.txt
 share/tome/help/def.aux
+share/tome/help/defines.html
 share/tome/help/defines.txt
+share/tome/help/dungeon.html
 share/tome/help/dungeon.txt
+share/tome/help/dunspoil.html
 share/tome/help/dunspoil.txt
+share/tome/help/essences.html
 share/tome/help/essences.txt
+share/tome/help/experien.hlp
+share/tome/help/experien.html
+share/tome/help/explore.hlp
+share/tome/help/explore.html
+share/tome/help/fatespoi.html
 share/tome/help/fatespoi.txt
 share/tome/help/foot.aux
+share/tome/help/g_eru.html
 share/tome/help/g_eru.txt
+share/tome/help/g_manwe.html
 share/tome/help/g_manwe.txt
+share/tome/help/g_melkor.html
 share/tome/help/g_melkor.txt
+share/tome/help/g_tulkas.html
 share/tome/help/g_tulkas.txt
+share/tome/help/g_yavann.html
 share/tome/help/g_yavann.txt
+share/tome/help/gambling.html
 share/tome/help/gambling.txt
+share/tome/help/general.html
 share/tome/help/general.txt
+share/tome/help/gods.html
 share/tome/help/gods.txt
 share/tome/help/head.aux
 share/tome/help/help.hlp
+share/tome/help/help.html
+share/tome/help/index.html
 share/tome/help/index.txt
+share/tome/help/inscrip.html
 share/tome/help/inscrip.txt
 share/tome/help/lua.hlp
+share/tome/help/lua.html
+share/tome/help/lua_gf.html
 share/tome/help/lua_gf.txt
+share/tome/help/lua_intr.html
 share/tome/help/lua_intr.txt
+share/tome/help/lua_mon.html
 share/tome/help/lua_mon.txt
+share/tome/help/lua_play.html
 share/tome/help/lua_play.txt
+share/tome/help/lua_pow.html
 share/tome/help/lua_pow.txt
+share/tome/help/lua_ques.html
 share/tome/help/lua_ques.txt
+share/tome/help/lua_skil.html
 share/tome/help/lua_skil.txt
+share/tome/help/lua_spel.html
 share/tome/help/lua_spel.txt
+share/tome/help/lua_util.html
 share/tome/help/lua_util.txt
+share/tome/help/luckspoi.html
 share/tome/help/luckspoi.txt
+share/tome/help/m_air.html
 share/tome/help/m_air.txt
+share/tome/help/m_convey.html
 share/tome/help/m_convey.txt
+share/tome/help/m_demono.html
 share/tome/help/m_demono.txt
+share/tome/help/m_divin.html
 share/tome/help/m_divin.txt
+share/tome/help/m_earth.html
 share/tome/help/m_earth.txt
+share/tome/help/m_fire.html
 share/tome/help/m_fire.txt
+share/tome/help/m_geoman.html
 share/tome/help/m_geoman.txt
+share/tome/help/m_mana.html
 share/tome/help/m_mana.txt
+share/tome/help/m_meta.html
 share/tome/help/m_meta.txt
+share/tome/help/m_mimic.html
 share/tome/help/m_mimic.txt
+share/tome/help/m_mind.html
 share/tome/help/m_mind.txt
+share/tome/help/m_mindcr.html
 share/tome/help/m_mindcr.txt
+share/tome/help/m_music.html
 share/tome/help/m_music.txt
+share/tome/help/m_nature.html
 share/tome/help/m_nature.txt
+share/tome/help/m_necrom.html
 share/tome/help/m_necrom.txt
+share/tome/help/m_symbio.html
 share/tome/help/m_symbio.txt
+share/tome/help/m_tempo.html
 share/tome/help/m_tempo.txt
+share/tome/help/m_thaum.html
 share/tome/help/m_thaum.txt
+share/tome/help/m_udun.html
 share/tome/help/m_udun.txt
+share/tome/help/m_water.html
 share/tome/help/m_water.txt
+share/tome/help/macrofaq.html
 share/tome/help/macrofaq.txt
 share/tome/help/magic.hlp
+share/tome/help/magic.html
 share/tome/help/magic.txt
 share/tome/help/newbie.hlp
+share/tome/help/newbie.html
+share/tome/help/option.html
 share/tome/help/option.txt
+share/tome/help/r_beorn.html
 share/tome/help/r_beorn.txt
+share/tome/help/r_deathm.html
 share/tome/help/r_deathm.txt
+share/tome/help/r_drkelf.html
 share/tome/help/r_drkelf.txt
+share/tome/help/r_dunad.html
 share/tome/help/r_dunad.txt
+share/tome/help/r_dwarf.html
 share/tome/help/r_dwarf.txt
+share/tome/help/r_elf.html
 share/tome/help/r_elf.txt
+share/tome/help/r_ent.html
 share/tome/help/r_ent.txt
+share/tome/help/r_gnome.html
 share/tome/help/r_gnome.txt
+share/tome/help/r_hafelf.html
 share/tome/help/r_hafelf.txt
+share/tome/help/r_hafogr.html
 share/tome/help/r_hafogr.txt
+share/tome/help/r_hielf.html
 share/tome/help/r_hielf.txt
+share/tome/help/r_hobbit.html
 share/tome/help/r_hobbit.txt
+share/tome/help/r_human.html
 share/tome/help/r_human.txt
+share/tome/help/r_kobold.html
 share/tome/help/r_kobold.txt
+share/tome/help/r_maia.html
 share/tome/help/r_maia.txt
+share/tome/help/r_orc.html
 share/tome/help/r_orc.txt
+share/tome/help/r_pettyd.html
 share/tome/help/r_pettyd.txt
+share/tome/help/r_rohank.html
 share/tome/help/r_rohank.txt
+share/tome/help/r_thlord.html
 share/tome/help/r_thlord.txt
+share/tome/help/r_troll.html
 share/tome/help/r_troll.txt
+share/tome/help/r_wodelf.html
 share/tome/help/r_wodelf.txt
+share/tome/help/r_yeek.html
 share/tome/help/r_yeek.txt
+share/tome/help/rm_barb.html
 share/tome/help/rm_barb.txt
+share/tome/help/rm_class.html
 share/tome/help/rm_class.txt
+share/tome/help/rm_herm.html
 share/tome/help/rm_herm.txt
+share/tome/help/rm_lsoul.html
 share/tome/help/rm_lsoul.txt
+share/tome/help/rm_skel.html
 share/tome/help/rm_skel.txt
+share/tome/help/rm_spec.html
 share/tome/help/rm_spec.txt
+share/tome/help/rm_vamp.html
 share/tome/help/rm_vamp.txt
+share/tome/help/rm_zomb.html
 share/tome/help/rm_zomb.txt
+share/tome/help/skills.html
 share/tome/help/skills.txt
+share/tome/help/spoil_faq.html
+share/tome/help/spoil_faq.txt
 share/tome/help/spoiler.hlp
+share/tome/help/spoiler.html
+share/tome/help/tome_faq.html
 share/tome/help/tome_faq.txt
+share/tome/help/version.html
 share/tome/help/version.txt
+share/tome/help/whattome.html
+share/tome/help/whattome.txt
+share/tome/help/wishing.html
 share/tome/help/wishing.txt
 share/tome/info/delete.me
 share/tome/mods/.cvsignore
@@ -339,11 +481,13 @@ share/tome/pref/pref-acn.prf
 share/tome/pref/pref-ami.prf
 share/tome/pref/pref-emx.prf
 share/tome/pref/pref-gcu.prf
+share/tome/pref/pref-iso.prf
 share/tome/pref/pref-mac.prf
 share/tome/pref/pref-sdl.prf
 share/tome/pref/pref-win.prf
 share/tome/pref/pref-x11.prf
 share/tome/pref/pref.prf
+share/tome/pref/trap-iso.prf
 share/tome/pref/trap-xxx.prf
 share/tome/pref/user.prf
 share/tome/pref/xtra-gcu.prf
@@ -408,6 +552,7 @@ share/tome/xtra/font/8X13.FON
 share/tome/xtra/font/8X13B.FON
 share/tome/xtra/font/9X15.FON
 share/tome/xtra/font/9X15B.FON
+share/tome/xtra/font/VeraMono.ttf
 share/tome/xtra/font/XM10X17.FNT
 share/tome/xtra/font/XM10X17B.FNT
 share/tome/xtra/font/XM12X20.FNT
@@ -425,29 +570,31 @@ share/tome/xtra/font/xm8x16.fnt
 share/tome/xtra/graf/16x16.bmp
 share/tome/xtra/graf/8x8.bmp
 share/tome/xtra/graf/mask.bmp
+share/tome/xtra/graf/tome-128.png
 share/tome/xtra/music/delete.me
 share/tome/xtra/sound/Sound.cfg
 share/tome/xtra/sound/readme.txt
-@dirrm share/tome/apex
-@dirrm share/tome/bone
-@dirrm share/tome/cmov
-@dirrm share/tome/core
-@dirrm share/tome/data
-@dirrm share/tome/dngn
-@dirrm share/tome/edit
-@dirrm share/tome/file
-@dirrm share/tome/help
-@dirrm share/tome/info
-@dirrm share/tome/mods
-@dirrm share/tome/note
-@dirrm share/tome/patch
-@dirrm share/tome/pref
-@dirrm share/tome/save
-@dirrm share/tome/scpt
-@dirrm share/tome/user
-@dirrm share/tome/xtra/font
-@dirrm share/tome/xtra/graf
-@dirrm share/tome/xtra/music
 @dirrm share/tome/xtra/sound
+@dirrm share/tome/xtra/music
+@dirrm share/tome/xtra/graf
+@dirrm share/tome/xtra/font
 @dirrm share/tome/xtra
+@dirrm share/tome/user
+@dirrm share/tome/scpt
+@dirrm share/tome/save
+@dirrm share/tome/pref
+@dirrm share/tome/plot
+@dirrm share/tome/patch
+@dirrm share/tome/note
+@dirrm share/tome/mods
+@dirrm share/tome/info
+@dirrm share/tome/help
+@dirrm share/tome/file
+@dirrm share/tome/edit
+@dirrm share/tome/dngn
+@dirrm share/tome/data
+@dirrm share/tome/core
+@dirrm share/tome/cmov
+@dirrm share/tome/bone
+@dirrm share/tome/apex
 @dirrm share/tome
