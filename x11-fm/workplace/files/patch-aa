@@ -1,0 +1,16 @@
+--- configure.in.orig	Fri Jan 22 16:21:28 1999
++++ configure.in	Fri Jan 22 16:22:59 1999
+@@ -37,10 +37,10 @@
+ 
+         LDFLAGS="$saved_ldflags $X_LDFLAGS $X_LIBS"
+ 
+-        AC_CHECK_LIB(gtk, gtk_widget_new,
+-                X_LIBS="$X_LIBS -lgtk -lgdk -lglib $x_libs -lm",
++        AC_CHECK_LIB(gtk10, gtk_widget_new,
++                X_LIBS="$X_LIBS -lgtk10 -lgdk10 -lglib10 $x_libs -lm",
+                 [AC_MSG_ERROR(Can not link with gtk/gdk/glib)],
+-                -lgdk -lglib $x_libs -lm)
++                -lgdk10 -lglib10 $x_libs -lm)
+ 
+         CFLAGS="$saved_cflags"
+         LDFLAGS="$saved_ldflags"

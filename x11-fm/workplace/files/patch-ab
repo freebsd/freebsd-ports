@@ -1,0 +1,30 @@
+--- configure.orig	Fri Jan 22 16:21:32 1999
++++ configure	Fri Jan 22 16:23:08 1999
+@@ -1807,14 +1807,14 @@
+ 
+         LDFLAGS="$saved_ldflags $X_LDFLAGS $X_LIBS"
+ 
+-        echo $ac_n "checking for gtk_widget_new in -lgtk""... $ac_c" 1>&6
+-echo "configure:1812: checking for gtk_widget_new in -lgtk" >&5
+-ac_lib_var=`echo gtk'_'gtk_widget_new | sed 'y%./+-%__p_%'`
++        echo $ac_n "checking for gtk_widget_new in -lgtk10""... $ac_c" 1>&6
++echo "configure:1812: checking for gtk_widget_new in -lgtk10" >&5
++ac_lib_var=`echo gtk10'_'gtk_widget_new | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lgtk -lgdk -lglib $x_libs -lm $LIBS"
++LIBS="-lgtk10 -lgdk10 -lglib10 $x_libs -lm $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 1820 "configure"
+ #include "confdefs.h"
+@@ -1842,7 +1842,7 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  X_LIBS="$X_LIBS -lgtk -lgdk -lglib $x_libs -lm"
++  X_LIBS="$X_LIBS -lgtk10 -lgdk10 -lglib10 $x_libs -lm"
+ else
+   echo "$ac_t""no" 1>&6
+ { echo "configure: error: Can not link with gtk/gdk/glib" 1>&2; exit 1; }
