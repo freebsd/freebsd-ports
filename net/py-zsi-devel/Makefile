@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	zsi
-PORTVERSION=	1.1
+PORTVERSION=	1.22.6
 CATEGORIES=	net python
-MASTER_SITES=	http://www.zolera.com/resources/opensrc/zsi/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	pywebsvcs
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
+DISTNAME=	${PORTNAME:U}-${PORTVERSION:C|\.([^.]*)$|-\1|}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	wjv@FreeBSD.org
@@ -19,7 +20,7 @@ RUN_DEPENDS=	${PYXML}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME:U}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME:U}-1.2
 
 pre-install:
 	@ ${SH} ${PKGREQ} INSTALL
@@ -29,6 +30,10 @@ post-install:
 	@ ${MKDIR} ${DOCSDIR}
 .for docfile in CHANGES README doc/zsi.* doc/*.tex
 	@ ${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
+.endfor
+.for subdir in interop samples test
+	@ ${MKDIR} ${EXAMPLESDIR}/${subdir}
+	@ ${INSTALL_DATA} ${WRKSRC}/${subdir}/* ${EXAMPLESDIR}/${subdir}
 .endfor
 .endif
 
