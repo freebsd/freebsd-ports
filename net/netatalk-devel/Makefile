@@ -50,7 +50,7 @@ post-extract:
 		> ${WRKSRC}/netatalk.sh
 
 post-install:
-	@${RM} -f ${PREFIX}/bin/nu ${PREFIX}/bin/lp2pap
+	@${RM} -f ${PREFIX}/bin/nu ${PREFIX}/bin/lp2pap.sh
 	${INSTALL_SCRIPT} ${WRKSRC}/netatalk.sh ${PREFIX}/etc/rc.d/netatalk.sh
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/macusers/macusers \
 		${PREFIX}/bin/macusers
