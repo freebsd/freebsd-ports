@@ -13,8 +13,6 @@ MASTER_SITES=	http://dist.codehaus.org/groovy/distributions/
 MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Agile dynamic language for the JVM
 
-BROKEN=		Incomplete pkg-plist
-
 USE_REINPLACE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
@@ -32,7 +30,7 @@ PORTDOCS=	changelog-report.html cvs-usage.html dependencies.html \
 		pmd-report.html project-info.html style team-list.html xref \
 		xref-test
 .endif
-PLIST_FILES=	${SCRIPTFILES:S,^,bin/,}
+PLIST_FILES=	${SCRIPTFILES:S,^,bin/,} %%JAVAJARDIR%%/${PORTNAME}.jar
 SUB_FILES=	set-groovy_home.sed
 
 do-install:
