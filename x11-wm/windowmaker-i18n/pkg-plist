@@ -62,6 +62,10 @@ GNUstep/Apps/WPrefs.app/tiff/whandling.tiff
 GNUstep/Apps/WPrefs.app/tiff/windowfocus.tiff
 GNUstep/Apps/WPrefs.app/tiff/workspace.tiff
 GNUstep/Apps/WPrefs.app/tiff/xis.tiff
+GNUstep/Apps/WPrefs.app/tiff/tdel.tiff
+GNUstep/Apps/WPrefs.app/tiff/tedit.tiff
+GNUstep/Apps/WPrefs.app/tiff/textr.tiff
+GNUstep/Apps/WPrefs.app/tiff/tnew.tiff
 GNUstep/Apps/WPrefs.app/xpm/advancetonewworkspace.xpm
 GNUstep/Apps/WPrefs.app/xpm/animations.xpm
 GNUstep/Apps/WPrefs.app/xpm/appearance.xpm
@@ -129,6 +133,7 @@ bin/getstyle
 bin/seticons
 bin/setstyle
 bin/wdwrite
+bin/wkdemenu.pl
 bin/wm-oldmenu2new
 bin/wmaker
 bin/wmaker.inst
@@ -136,6 +141,11 @@ bin/wmsetbg
 bin/wsetfont
 bin/wxcopy
 bin/wxpaste
+etc/WindowMaker/WMGLOBAL
+etc/WindowMaker/WMRootMenu
+etc/WindowMaker/WMState
+etc/WindowMaker/WMWindowAttributes
+etc/WindowMaker/WindowMaker
 include/WINGs.h
 include/WINGsP.h
 include/WMaker.h
@@ -150,11 +160,6 @@ share/WINGs/Images.xpm
 share/WINGs/defaultIcon.tiff
 share/WINGs/defaultIcon.xpm
 share/WindowMaker/Backgrounds/BlueImage.jpeg
-share/WindowMaker/Defaults/WMGLOBAL
-share/WindowMaker/Defaults/WMRootMenu
-share/WindowMaker/Defaults/WMState
-share/WindowMaker/Defaults/WMWindowAttributes
-share/WindowMaker/Defaults/WindowMaker
 share/WindowMaker/IconSets/Default.iconset
 share/WindowMaker/Icons/BitchX.tiff
 share/WindowMaker/Icons/BitchX.xpm
@@ -298,10 +303,20 @@ share/WindowMaker/Styles/VioletBlue.style
 share/WindowMaker/Themes/Checker.themed/checker.xpm
 share/WindowMaker/Themes/Checker.themed/style
 share/WindowMaker/Themes/Default.style
+share/WindowMaker/Themes/LeetWM.themed/LeetWM.jpg
+share/WindowMaker/Themes/LeetWM.themed/LeetWMMenutb1.jpg
+share/WindowMaker/Themes/LeetWM.themed/LeetWMMenutb2.jpg
+share/WindowMaker/Themes/LeetWM.themed/LeetWMTile1.jpg
+share/WindowMaker/Themes/LeetWM.themed/LeetWMtb1.jpg
+share/WindowMaker/Themes/LeetWM.themed/LeetWMtb2.jpg
+share/WindowMaker/Themes/LeetWM.themed/style
 share/WindowMaker/Themes/Night.themed/SeaNight.jpeg
 share/WindowMaker/Themes/Night.themed/style
 share/WindowMaker/Themes/OpenStep.style
 share/WindowMaker/Themes/Pastel.style
+share/WindowMaker/Themes/STEP2000.themed/BlueImage2.jpeg
+share/WindowMaker/Themes/STEP2000.themed/style
+share/WindowMaker/Themes/SteelBlueSilk.style
 share/WindowMaker/autostart.sh
 share/WindowMaker/exitscript.sh
 share/WindowMaker/menu
@@ -327,6 +342,7 @@ share/WindowMaker/menu.ru
 share/WindowMaker/menu.se
 share/WindowMaker/menu.sl
 share/WindowMaker/menu.tr
+share/WindowMaker/menu.zh_TW.Big5
 share/WindowMaker/plmenu
 share/WindowMaker/plmenu.fr
 share/WindowMaker/plmenu.hr
@@ -351,18 +367,20 @@ share/locale/pl/LC_MESSAGES/WindowMaker.mo
 share/locale/pt/LC_MESSAGES/WPrefs.mo
 share/locale/pt/LC_MESSAGES/WindowMaker.mo
 share/locale/ru/LC_MESSAGES/WindowMaker.mo
-@dirrm share/WindowMaker/Themes/Checker.themed
+@dirrm share/WindowMaker/Themes/STEP2000.themed
 @dirrm share/WindowMaker/Themes/Night.themed
+@dirrm share/WindowMaker/Themes/LeetWM.themed
+@dirrm share/WindowMaker/Themes/Checker.themed
 @dirrm share/WindowMaker/Themes
 @dirrm share/WindowMaker/Styles
 @dirrm share/WindowMaker/Sounds
 @dirrm share/WindowMaker/Pixmaps
 @dirrm share/WindowMaker/Icons
 @dirrm share/WindowMaker/IconSets
-@dirrm share/WindowMaker/Defaults
 @dirrm share/WindowMaker/Backgrounds
 @dirrm share/WindowMaker
 @dirrm share/WINGs
+@dirrm etc/WindowMaker
 @dirrm GNUstep/Apps/WPrefs.app/xpm
 @dirrm GNUstep/Apps/WPrefs.app/tiff
 @dirrm GNUstep/Apps/WPrefs.app

@@ -5,16 +5,16 @@
 #
 # $Id: Makefile,v 1.52 1999/02/21 21:51:01 billf Exp $
 
-DISTNAME=	WindowMaker-0.51.0
-PKGNAME=	windowmaker-i18n-0.51.0
+DISTNAME=	WindowMaker-0.51.2
+PKGNAME=	windowmaker-i18n-0.51.2
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER} \
-		ftp://muse.brain.riken.go.jp/pub/ja.po/ \
-		http://jgo.local.net/cool_downloads/wm/ \
-		ftp://muse.brain.riken.go.jp/pub/rpm/contrib/
+		ftp://muse.brain.riken.go.jp/pub/ja.po/
 MASTER_SITE_SUBDIR=	beta/srcs
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILES} \
-		WindowMaker-0.51.0ja1.tar.gz
+		${JA_CATALOGFILE}${EXTRACT_SUFX}
+
+JA_CATALOGFILE= WindowMaker-0.51.2ja2
 
 MAINTAINER=	mac@jp.freebsd.org
 
@@ -48,9 +48,9 @@ DATAFILES=	WindowMaker-data.tar.gz
 post-patch:
 	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/WPrefs.app/Paths.c
 	@${PERL} -pi -e "s|%%PERL%%|${PERL}|g" ${WRKSRC}/util/wm-oldmenu2new
-	@${CP} ${WRKDIR}/WindowMaker-0.51.0ja1/WindowMaker.ja.po \
+	@${CP} ${WRKDIR}/${JA_CATALOGFILE}/WindowMaker.ja.po \
 		${WRKSRC}/po/ja.po
-	@${CP} ${WRKDIR}/WindowMaker-0.51.0ja1/WPrefs.ja.po \
+	@${CP} ${WRKDIR}/${JA_CATALOGFILE}/WPrefs.ja.po \
 		${WRKSRC}/WPrefs.app/po/ja.po
 
 post-install:
@@ -58,5 +58,8 @@ post-install:
 	@${INSTALL_DATA} ${WRKDIR}/WindowMaker-data/pixmaps/* \
 		${PREFIX}/share/WindowMaker/Pixmaps/
 	@${MKDIR} ${PREFIX}/share/WindowMaker/Sounds/
+
+pre-build:
+	@cd ${WRKSRC}/WindowMaker/Defaults && ${MAKE} clean
 
 .include <bsd.port.post.mk>
