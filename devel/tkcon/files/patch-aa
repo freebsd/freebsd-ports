@@ -1,0 +1,19 @@
+--- tkcon.tcl.orig	Thu Apr  1 05:49:22 1999
++++ tkcon.tcl	Mon Jun 28 21:35:52 1999
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ # \
+-exec wish "$0" ${1+"$@"}
++if [ X$WISH != X ]; then exec $WISH "$0" -- "$@"; else exec wish8.0 "$0" -- "$@"; fi;
+ 
+ #
+ ## tkcon.tcl
+@@ -133,7 +133,7 @@
+ 	}
+ 	version		1.6
+ 	release		{31 March 1999}
+-	docs		"http://www.purl.org/net/hobbs/tcl/script/tkcon/\nhttp://www.hobbs.wservice.com/tcl/script/tkcon/"
++	docs		"file:/usr/local/share/doc/tkcon/\nhttp://www.hobbs.wservice.com/tcl/script/tkcon/"
+ 	email		{jeff.hobbs@acm.org}
+ 	root		.
+     }

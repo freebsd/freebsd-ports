@@ -1,0 +1,20 @@
+bin/tkcon
+share/doc/tkcon/README.tkcon
+share/doc/tkcon/bindings.html
+share/doc/tkcon/changes.txt
+share/doc/tkcon/demopic.gif
+share/doc/tkcon/dump.html
+share/doc/tkcon/idebug.html
+share/doc/tkcon/index.html
+share/doc/tkcon/license.terms
+share/doc/tkcon/limits.html
+share/doc/tkcon/nontcl.html
+share/doc/tkcon/observe.html
+share/doc/tkcon/perl.txt
+share/doc/tkcon/plugin.html
+share/doc/tkcon/procs.html
+share/doc/tkcon/purpose.html
+share/doc/tkcon/start.html
+share/doc/tkcon/tkcon.html
+share/doc/tkcon/todo.html
+@dirrm share/doc/tkcon
