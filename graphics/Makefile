@@ -72,6 +72,7 @@
     SUBDIR += hppsmtools
     SUBDIR += hpscan
     SUBDIR += icod
+    SUBDIR += imanager
     SUBDIR += imlib
     SUBDIR += jbigkit
     SUBDIR += jgraph
