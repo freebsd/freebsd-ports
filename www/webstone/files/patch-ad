@@ -1,0 +1,11 @@
+--- webclient.c.orig	Wed Sep  4 20:34:36 2002
++++ webclient.c	Wed Sep  4 20:35:02 2002
+@@ -79,7 +79,7 @@
+ char	proxyserver[MAXHOSTNAMELEN];
+ char	debug_filename[MAXPATHLEN];
+ 
+-THREAD FILE	*debugfile = stderr;
++THREAD FILE	*debugfile;
+ THREAD FILE	*logfile;
+ THREAD stats_t	timestat;
+ THREAD rqst_timer_t	timerarray[MAXNUMOFFILES];
