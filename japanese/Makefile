@@ -62,6 +62,7 @@
     SUBDIR += jgv
     SUBDIR += jhd
     SUBDIR += jls
+    SUBDIR += jpilot
     SUBDIR += jtex209-ascii
     SUBDIR += jtex209-both
     SUBDIR += jtex209-ntt
