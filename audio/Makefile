@@ -93,6 +93,7 @@
     SUBDIR += festvox-rab8
     SUBDIR += festvox-tll
     SUBDIR += flac
+    SUBDIR += fluidsynth
     SUBDIR += fmio
     SUBDIR += freebirth
     SUBDIR += funktrackergold
