@@ -60,6 +60,10 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 500030
+BROKEN=		conflicts with new gcc, method definition not in class context
+.endif
+
 .if ${MACHINE_ARCH} == "i386"
 GNU_ARCH=	ix86
 .else
