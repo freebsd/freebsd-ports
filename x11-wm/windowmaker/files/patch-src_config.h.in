@@ -1,0 +1,7 @@
+--- src/config.h.in	2001/01/05 10:30:03	1.1
++++ src/config.h.in	2001/01/05 10:30:18
+@@ -206,3 +206,4 @@
+ /* Version number of package */
+ #undef VERSION
+ 
++#define USE_FREETYPE

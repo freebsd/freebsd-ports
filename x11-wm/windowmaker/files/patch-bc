@@ -1,22 +1,22 @@
---- configure.orig	Thu Mar 30 15:37:36 2000
-+++ configure	Fri Mar 31 00:27:19 2000
-@@ -5866,7 +5866,8 @@
- 	WindowMaker/Pixmaps/Makefile WindowMaker/Styles/Makefile \
- 	WindowMaker/Themes/Makefile \
+--- configure.orig	Thu Jan  4 12:10:11 2001
++++ configure	Thu Jan  4 12:30:57 2001
+@@ -5897,7 +5897,8 @@
+ 	WindowMaker/Icons/Makefile WindowMaker/Pixmaps/Makefile \
+ 	WindowMaker/Styles/Makefile WindowMaker/Themes/Makefile \
  	WPrefs.app/Makefile WPrefs.app/tiff/Makefile WPrefs.app/xpm/Makefile \
 -	WPrefs.app/po/Makefile contrib/WindowMaker.spec  src/config.h" | sed "s/:[^ ]*//g"` conftest*; exit 1' 1 2 15
 +	WPrefs.app/po/Makefile \
-+	libwmfun-0.0.3/libwmfun/Makefile contrib/WindowMaker.spec  src/config.h" | sed "s/:[^ ]*//g"` conftest*; exit 1' 1 2 15
++	plugins/libwmfun/Makefile contrib/WindowMaker.spec  src/config.h" | sed "s/:[^ ]*//g"` conftest*; exit 1' 1 2 15
  EOF
  cat >> $CONFIG_STATUS <<EOF
  
-@@ -5999,7 +6000,8 @@
- 	WindowMaker/Pixmaps/Makefile WindowMaker/Styles/Makefile \
- 	WindowMaker/Themes/Makefile \
+@@ -6030,7 +6031,8 @@
+ 	WindowMaker/Icons/Makefile WindowMaker/Pixmaps/Makefile \
+ 	WindowMaker/Styles/Makefile WindowMaker/Themes/Makefile \
  	WPrefs.app/Makefile WPrefs.app/tiff/Makefile WPrefs.app/xpm/Makefile \
 -	WPrefs.app/po/Makefile contrib/WindowMaker.spec "}
 +	WPrefs.app/po/Makefile \
-+	libwmfun-0.0.3/libwmfun/Makefile contrib/WindowMaker.spec "}
++	plugins/libwmfun/Makefile contrib/WindowMaker.spec "}
  EOF
  cat >> $CONFIG_STATUS <<\EOF
  for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then
