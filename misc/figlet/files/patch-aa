@@ -1,10 +1,12 @@
 --- Makefile.orig	Tue Feb 18 15:02:28 1997
-+++ Makefile	Tue Aug 12 08:34:46 1997
-@@ -10,18 +10,18 @@
++++ Makefile	Fri Apr  5 18:59:04 2002
+@@ -9,19 +9,19 @@
+ # Don't change this even if your shell is different. The only reason
  # for changing this is if sh is not in the same place.
  SHELL = /bin/sh
- CC = gcc
+-CC = gcc
 -CFLAGS = -g
++CC ?= gcc
 +#CFLAGS = -g
  
  # Where the executables should be put
