@@ -1,0 +1,36 @@
+diff -ru Input/cdaudio/cdaudio.c.orig Input/cdaudio/cdaudio.c
+--- Input/cdaudio/cdaudio.c.orig	Wed Jan 28 10:09:39 2004
++++ Input/cdaudio/cdaudio.c	Sun Apr 11 21:24:05 2004
+@@ -333,7 +333,7 @@
+ #elif defined(HAVE_GETMNTINFO)
+  	entries = getmntinfo(&fsp, MNT_NOWAIT);
+  	if (entries < 0)
+- 		return NULL;
++ 		return FALSE;
+ 	
+ 	while (entries-- > 0)
+ 	{
+diff -ru Output/esd/esdout.h.orig Output/esd/esdout.h
+--- Output/esd/esdout.h.orig	Mon Dec  3 13:38:42 2001
++++ Output/esd/esdout.h	Sun Apr 11 21:23:23 2004
+@@ -67,6 +67,7 @@
+ void esdout_fetch_volume(int *l, int *r);
+ void esdout_set_volume(int l, int r);
+ void esdout_mixer_init(void);
++void esdout_reset_playerid(void);
+ 
+ int esdout_playing(void);
+ int esdout_free(void);
+diff -ru libxmms/util.c.orig xmms-1.2.10/libxmms/util.c
+--- libxmms/util.c.orig	Tue May 20 07:22:07 2003
++++ libxmms/util.c	Sun Apr 11 21:18:58 2004
+@@ -80,7 +80,8 @@
+ 	 * before sched_getschedule() (so that we don't get
+ 	 * non-present syscall warnings in kernel log).
+ 	 */
+-	int val = 0, len;
++	int val = 0;
++	size_t len;
+ 
+ 	len = sizeof(val);
+ 	sysctlbyname("p1003_1b.priority_scheduling", &val, &len, NULL, 0);
