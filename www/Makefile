@@ -183,6 +183,7 @@
     SUBDIR += wwwoffle
     SUBDIR += wwwstat
     SUBDIR += xitami
+    SUBDIR += xswallow
     SUBDIR += zope
 
 .include <bsd.port.subdir.mk>
