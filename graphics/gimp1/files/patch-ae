@@ -1,10 +1,11 @@
---- plug-ins/common/plugindetails.c.orig	Sat Mar 27 07:53:38 1999
-+++ plug-ins/common/plugindetails.c	Sat May 22 21:24:31 1999
-@@ -25,6 +25,7 @@
+--- plug-ins/common/plugindetails.c.orig	Fri Jan 14 17:26:07 2000
++++ plug-ins/common/plugindetails.c	Fri Jan 14 17:26:21 2000
+@@ -27,7 +27,7 @@
  #include <stdio.h>
  #include <string.h>
  #include <time.h>
+-
 +#include <sys/types.h>
- #include "gtk/gtk.h"
- #include "libgimp/gimp.h"
+ #include <gtk/gtk.h>
  
+ #include "libgimp/gimp.h"
