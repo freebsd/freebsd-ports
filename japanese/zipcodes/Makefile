@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zipcodes
-PORTVERSION=	20010401
+PORTVERSION=	20010501
 CATEGORIES=	japanese misc
 MASTER_SITES=	http://www.postal.mpt.go.jp/newnumber/lzh/s/
 EXTRACT_SUFX=	.lzh
