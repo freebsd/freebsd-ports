@@ -12,7 +12,7 @@ MASTER_SITES=	http://darkshed.dyndns.org/~mathias/files/c_cpp/fbcmd/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	pav
 
-MAINTAINER=	bogorodskiy@inbox.ru
+MAINTAINER=	novel@FreeBSD.org
 COMMENT=	A commandline utility for controlling fluxbox
 
 RUN_DEPENDS=	fluxbox:${PORTSDIR}/x11-wm/fluxbox-devel

@@ -10,7 +10,7 @@ PORTVERSION=	3.1
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/
 
-MAINTAINER=	bogorodskiy@inbox.ru
+MAINTAINER=	novel@FreeBSD.org
 COMMENT=	An audio mixer for the WindowMaker dock with TV-like OSD
 
 USE_REINPLACE=	yes

@@ -12,7 +12,7 @@ CATEGORIES=	x11-clocks
 MASTER_SITES=	http://perso.wanadoo.fr/alltrax/
 DISTNAME=	${PORTNAME}2_0.2-1
 
-MAINTAINER=	bogorodskiy@inbox.ru
+MAINTAINER=	novel@FreeBSD.org
 COMMENT=	An analog clock plugin for gkrellm2
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2

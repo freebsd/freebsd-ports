@@ -11,7 +11,7 @@ CATEGORIES=	x11-themes
 MASTER_SITES=	http://fluxbox.org/download/themes/sid/
 DISTNAME=	sidpack
 
-MAINTAINER=	bogorodskiy@inbox.ru
+MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Sid themes pack for fluxbox
 
 RUN_DEPENDS=	fluxbox:${PORTSDIR}/x11-wm/fluxbox-devel

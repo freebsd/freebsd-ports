@@ -10,7 +10,7 @@ PORTVERSION=	0.2.2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://dindinx.net/hotbabe/downloads/
 
-MAINTAINER=	bogorodskiy@inbox.ru
+MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Small utility which displays the system activity in a very special way
 
 USE_BZIP2=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.gphpedit.org/download/store/ \
 		http://ftp.ceid.upatras.gr/pub/linux/gentoo/distfiles/ \
 		http://www.jolupatech.info/crux/gphpedit/
 
-MAINTAINER=	bogorodskiy@inbox.ru
+MAINTAINER=	novel@FreeBSD.org
 COMMENT=	PHP, HTML and CSS development environment for GNOME 2.x
 
 USE_GMAKE=	yes

@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	net windowmaker
 MASTER_SITES=	ftp://ftp.enteract.com/users/rneswold/
 
-MAINTAINER=	bogorodskiy@inbox.ru
+MAINTAINER=	novel@FreeBSD.org
 COMMENT=	A network bandwidth monitor intended for the WindowMaker dock
 
 USE_XPM=	yes

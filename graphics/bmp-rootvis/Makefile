@@ -10,7 +10,7 @@ PORTVERSION=	0.0.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.berlios.de/bmp-plugins/
 
-MAINTAINER=	bogorodskiy@inbox.ru
+MAINTAINER=	novel@FreeBSD.org
 COMMENT=	BMP plugin which renders a spectrum analyzer on the root window
 
 LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player

@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://people.freenet.de/thomas-steinke/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	bogorodskiy@inbox.ru
+MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Gkrellm2 plugin which shows the system load as a flame
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2

@@ -12,7 +12,7 @@ CATEGORIES=	x11-clocks
 MASTER_SITES=	http://leftorium.net/software/
 DISTNAME=	osd_clock-${PORTVERSION}
 
-MAINTAINER=	bogorodskiy@inbox.ru
+MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Small clock which uses libxosd to render text to the root window
 
 LIB_DEPENDS=	xosd.4:${PORTSDIR}/misc/xosd
