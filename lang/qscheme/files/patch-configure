@@ -1,5 +1,5 @@
 --- configure.orig	Thu Jun 22 07:09:24 2000
-+++ configure	Sun Oct 19 10:33:16 2003
++++ configure	Mon Feb 16 22:18:46 2004
 @@ -1156,47 +1156,6 @@
    echo "$ac_t""no" 1>&6
  fi
@@ -103,33 +103,6 @@
  echo $ac_n "checking for atan in -lm""... $ac_c" 1>&6
  echo "configure:1342: checking for atan in -lm" >&5
  ac_lib_var=`echo m'_'atan | sed 'y%./+-%__p_%'`
-@@ -1385,14 +1296,14 @@
- { echo "configure: error: needs libm" 1>&2; exit 1; }
- fi
- 
--echo $ac_n "checking for pthread_create in -lpthread""... $ac_c" 1>&6
--echo "configure:1390: checking for pthread_create in -lpthread" >&5
-+echo $ac_n "checking for pthread_create in -lc_r""... $ac_c" 1>&6
-+echo "configure:1390: checking for pthread_create in -lc_r" >&5
- ac_lib_var=`echo pthread'_'pthread_create | sed 'y%./+-%__p_%'`
- if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-   ac_save_LIBS="$LIBS"
--LIBS="-lpthread  $LIBS"
-+LIBS="-lc_r  $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 1398 "configure"
- #include "confdefs.h"
-@@ -1426,7 +1337,7 @@
- #define $ac_tr_lib 1
- EOF
- 
--  LIBS="-lpthread $LIBS"
-+  LIBS="-lc_r $LIBS"
- 
- else
-   echo "$ac_t""no" 1>&6
 @@ -2485,7 +2396,7 @@
  ac_given_srcdir=$srcdir
  ac_given_INSTALL="$INSTALL"
