@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.41 1998/12/12 03:40:59 jseger Exp $
+# $Id: Makefile,v 1.42 1998/12/24 06:53:16 steve Exp $
 #
 
     SUBDIR += atp
@@ -11,6 +11,7 @@
     SUBDIR += inn
     SUBDIR += knews
     SUBDIR += leafnode
+    SUBDIR += leafnode+
     SUBDIR += newsfetch
     SUBDIR += nn
     SUBDIR += nntp
