@@ -1,0 +1,7 @@
+This is a programmable completion library for bash2 users.  It features the
+ability to tab-complete arguments for many common programs.
+
+WWW: http://www.caliban.org/bash/index.shtml
+
+- Kirk Strauser
+kirk@strauser.com
