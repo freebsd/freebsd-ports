@@ -1,0 +1,4 @@
+bin/wmtz
+share/examples/wmtz/wmtzrc
+@dirrm share/examples/wmtz
+
