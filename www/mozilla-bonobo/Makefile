@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=	moz-bonobo
 MAINTAINER=		jylefort@brutele.be
 COMMENT=		A Netscape/Mozilla plugin using Bonobo controls to display files
 
-BUILD_DEPENDS=		${X11BASE}/include/mozilla${HEADERS_SUFX}/gtkembedmoz/gtkmozembed.h:${PORTSDIR}/www/mozilla-headers${HEADERS_SUFX} \
-			${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
+BUILD_DEPENDS=		${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
 RUN_DEPENDS=		${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
 
 MOZILLA=		mozilla-gtk2
