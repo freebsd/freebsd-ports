@@ -15,7 +15,7 @@
 # NOTE: PCRE is enabled by default unless you specifically disable it.
 
 PORTNAME=	postfix
-PORTVERSIONRAW=	2.2-20040919
+PORTVERSIONRAW=	2.2-20041030
 PORTVERSION=	${PORTVERSIONRAW:S/-/./}
 PORTEPOCH=	2
 CATEGORIES=	mail ipv6
@@ -24,6 +24,7 @@ MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
 		ftp://ftp.tux.org/pub/net/postfix/experimental/ \
 		ftp://ftp.utoronto.ca/mirror/packages/postfix/experimental/ \
 		ftp://ftp.samurai.com/pub/postfix/experimental/ \
+		http://people.FreeBSD.org/~seanc/ports/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/postfix/experimental/&,}
 MASTER_SITE_SUBDIR=	. old related/postfix
 DISTNAME=	postfix-${PORTVERSIONRAW}
@@ -44,7 +45,7 @@ MAN1=	mailq.1 newaliases.1 postalias.1 postcat.1 postconf.1 postdrop.1 \
 MAN5=	access.5 aliases.5 canonical.5 cidr_table.5 ldap_table.5 \
 	mysql_table.5 pgsql_table.5 postconf.5 pcre_table.5 \
 	regexp_table.5 relocated.5 tcp_table.5 transport.5 virtual.5 \
-	header_checks.5 body_checks.5
+	header_checks.5 body_checks.5 master.5 nisplus_table.5
 
 MAN8=	anvil.8 bounce.8 cleanup.8 defer.8 error.8 flush.8 lmtp.8 local.8 \
 	master.8 oqmgr.8 pickup.8 pipe.8 proxymap.8 qmgr.8 qmqpd.8 showq.8 \
@@ -104,26 +105,26 @@ post-patch:
 
 pre-patch:
 	${ECHO} "<body>See <A HREF="header_checks.5.html">header_checks.5.html</A></BODY>" > ${WRKSRC}/html/body_checks.5.html
-.for file in ${MAN1}
+.for f in ${MAN1}
 	@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" \
-		${WRKSRC}/man/man1/${file} ${WRKSRC}/html/${file}.html
+		${WRKSRC}/man/man1/${f} ${WRKSRC}/html/${f}.html
 .endfor
-.for file in ${MAN5}
+.for f in ${MAN5}
 	@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" \
-		${WRKSRC}/man/man5/${file} ${WRKSRC}/html/${file}.html
+		${WRKSRC}/man/man5/${f} ${WRKSRC}/html/${f}.html
 .endfor
-.for file in ${MAN8base}
+.for f in ${MAN8base}
 	@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" \
-		${WRKSRC}/man/man8/${file} ${WRKSRC}/html/${file}.html
+		${WRKSRC}/man/man8/${f} ${WRKSRC}/html/${f}.html
 .endfor
-.for file in ${README}
+.for f in ${README}
 	@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" \
-		${WRKSRC}/html/${file}.html
+		${WRKSRC}/html/${f}.html
 	@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" \
-		${WRKSRC}/README_FILES/${file}
+		${WRKSRC}/README_FILES/${f}
 .endfor
-.for file in ${CONF1}
-	@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" ${WRKSRC}/conf/${file}
+.for f in ${CONF1}
+	@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" ${WRKSRC}/conf/${f}
 .endfor
 
 pre-install:
@@ -150,9 +151,9 @@ do-install:
 	 sample_directory=${PREFIX}/etc/postfix \
 	 readme_directory=${READMEDIR}
 
-.for file in ${CONF1}
-	${INSTALL_DATA} ${WRKSRC}/conf/${file} \
-		${PREFIX}/etc/postfix/dist-${file}
+.for f in ${CONF1}
+	${INSTALL_DATA} ${WRKSRC}/conf/${f} \
+		${PREFIX}/etc/postfix/dist-${f}
 .endfor
 
 	@${INSTALL_SCRIPT} \
@@ -160,8 +161,8 @@ do-install:
 		${PREFIX}/bin/rmail
 
 # optional TEST binaries
-.for file in ${BIN1}
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/${file} ${PREFIX}/sbin
+.for f in ${BIN1}
+	@${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${PREFIX}/sbin
 .endfor
 
 .if !defined(NOPORTDOCS)

@@ -167,8 +167,10 @@ bin/mailq
 %%PORTDOCS%%%%DOCSDIR%%/lmtp.8.html
 %%PORTDOCS%%%%DOCSDIR%%/local.8.html
 %%PORTDOCS%%%%DOCSDIR%%/mailq.1.html
+%%PORTDOCS%%%%DOCSDIR%%/master.5.html
 %%PORTDOCS%%%%DOCSDIR%%/master.8.html
 %%PORTDOCS%%%%DOCSDIR%%/mysql_table.5.html
+%%PORTDOCS%%%%DOCSDIR%%/nisplus_table.5.html
 %%PORTDOCS%%%%DOCSDIR%%/newaliases.1.html
 %%PORTDOCS%%%%DOCSDIR%%/oqmgr.8.html
 %%PORTDOCS%%%%DOCSDIR%%/pcre_table.5.html
@@ -181,6 +183,7 @@ bin/mailq
 %%PORTDOCS%%%%DOCSDIR%%/postconf.5.html
 %%PORTDOCS%%%%DOCSDIR%%/postdrop.1.html
 %%PORTDOCS%%%%DOCSDIR%%/postfix-logo.jpg
+%%PORTDOCS%%%%DOCSDIR%%/postfix-manuals.html
 %%PORTDOCS%%%%DOCSDIR%%/postfix-power.png
 %%PORTDOCS%%%%DOCSDIR%%/postfix.1.html
 %%PORTDOCS%%%%DOCSDIR%%/postkick.1.html
