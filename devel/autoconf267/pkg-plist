@@ -5,9 +5,6 @@ bin/autoreconf257
 bin/autoscan257
 bin/autoupdate257
 bin/ifnames257
-info/autoconf.info
-info/dir
-info/standards.info
 share/autoconf257/Autom4te/General.pm
 share/autoconf257/Autom4te/Struct.pm
 share/autoconf257/Autom4te/XFile.pm
@@ -53,4 +50,4 @@ share/autoconf257/mkinstalldirs
 @dirrm share/autoconf257/autoconf
 @dirrm share/autoconf257/Autom4te
 @dirrm share/autoconf257
-@dirrm info
+@unexec rmdir %D/info 2>/dev/null || true
