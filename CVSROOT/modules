@@ -7316,6 +7316,7 @@ ruby-xmlscan	ports/textproc/ruby-xmlscan
 ruby-xmlscan-old	ports/textproc/ruby-xmlscan-old
 ruby-xmms	ports/audio/ruby-xmms
 ruby-xslt	ports/textproc/ruby-xslt
+ruby-xtemplate	ports/textproc/ruby-xtemplate
 ruby-yaml	ports/devel/ruby-yaml
 ruby-zip	ports/archivers/ruby-zip
 ruby-zlib	ports/archivers/ruby-zlib
