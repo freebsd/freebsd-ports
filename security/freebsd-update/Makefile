@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freebsd-update
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	security
 MASTER_SITES=	http://www.daemonology.net/freebsd-update/
 
@@ -18,11 +18,9 @@ RUN_DEPENDS=	bspatch:${PORTSDIR}/misc/bsdiff
 # Under no circumstances should this port ever be modified without approval
 # from the maintainer or security-officer, even for "cosmetic" fixes.
 
-# The RSA code has only been tested on i386; I don't *think* there are
-# any word-size or endian issues, but I'm not sure.  Since nobody is
-# building updates for non-i386 platforms anyway, this won't hurt anyone.
-
-ONLY_FOR_ARCHS=	i386
+# The RSA code has been tested and works on these platforms.  On other
+# platforms, it either doesn't work or hasn't been tested.
+ONLY_FOR_ARCHS=	i386 amd64 alpha
 
 MAN5=		freebsd-update.conf.5
 MAN8=		freebsd-update.8
