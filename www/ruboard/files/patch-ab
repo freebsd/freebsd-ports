@@ -1,0 +1,11 @@
+--- src/Makefile.orig	Sat Aug 11 00:21:57 2001
++++ src/Makefile	Sat Aug 11 00:22:02 2001
+@@ -19,7 +19,7 @@
+ all:		.all rubstub
+ 
+ install:	.install rubstub
+-	install -c -s -m 6511 $(BOWNER) rubstub $(BINDIR)/rubstub
++	install -c -s -m 4511 $(BOWNER) rubstub $(BINDIR)/rubstub
+ 
+ clean:		.clean
+ 	rm -f rubstub rubstub.c
