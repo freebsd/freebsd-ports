@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://artax.karlin.mff.cuni.cz/~brain/0verkill/release/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	zuntum@netbsd.org
+MAINTAINER=	ports@FreeBSD.org
 
 HAS_CONFIGURE=	YES
 
