@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	pflogstats
-PORTVERSION=	20030721
+PORTVERSION=	1.0.0
+PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.aerasec.de/pub/linux/postfix/pflogsumm/pflogstats/
 
 MAINTAINER=	A.J.Caines@halplant.com
 COMMENT=	Postfix Log Statistics Reporter
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/IP.pm:${PORTSDIR}/net/p5-Net-IP \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Proc/ProcessTable.pm:${PORTSDIR}/devel/p5-Proc-ProcessTable \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Number/Format.pm:${PORTSDIR}/textproc/p5-Number-Format
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \
+		${SITE_PERL}/Net/IP.pm:${PORTSDIR}/net/p5-Net-IP \
+		${SITE_PERL}/${PERL_ARCH}/Proc/ProcessTable.pm:${PORTSDIR}/devel/p5-Proc-ProcessTable \
+		${SITE_PERL}/Number/Format.pm:${PORTSDIR}/textproc/p5-Number-Format
 
 NO_BUILD=	yes
 USE_PERL5=	yes
