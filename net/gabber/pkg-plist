@@ -72,7 +72,7 @@ share/gnome/gabber/glade-unlock-key.xpm
 share/gnome/gabber/glade-users.xpm
 share/gnome/gabber/gnome-globe.png
 share/gnome/gabber/gnome-info.png
-share/gnome/gabber/gnome-locksreen.png
+share/gnome/gabber/gnome-lockscreen.png
 share/gnome/gabber/gnome-modem.png
 share/gnome/gabber/gnome-question.png
 share/gnome/gabber/gpg-badsigned.xpm
@@ -81,34 +81,26 @@ share/gnome/gabber/gpg-signed.xpm
 share/gnome/gabber/gpg-unencrypted.xpm
 share/gnome/gabber/gpg-unsigned.xpm
 share/gnome/gabber/offline.xpm
-share/gnome/help/gabber/C/first.html
-share/gnome/help/gabber/C/first.png
-share/gnome/help/gabber/C/gabber.sgml
-share/gnome/help/gabber/C/index.html
-share/gnome/help/gabber/C/intro.html
-share/gnome/help/gabber/C/legalnotice.html
-share/gnome/help/gabber/C/login.png
-share/gnome/help/gabber/C/main-menubar.html
-share/gnome/help/gabber/C/main-status.html
-share/gnome/help/gabber/C/main-toolbar.html
-share/gnome/help/gabber/C/main.html
-share/gnome/help/gabber/C/main.png
-share/gnome/help/gabber/C/msg-normal.png
-share/gnome/help/gabber/C/msg-ooo.png
-share/gnome/help/gabber/C/stylesheet-images/caution.gif
-share/gnome/help/gabber/C/stylesheet-images/home.gif
-share/gnome/help/gabber/C/stylesheet-images/important.gif
-share/gnome/help/gabber/C/stylesheet-images/next.gif
-share/gnome/help/gabber/C/stylesheet-images/note.gif
-share/gnome/help/gabber/C/stylesheet-images/prev.gif
-share/gnome/help/gabber/C/stylesheet-images/tip.gif
-share/gnome/help/gabber/C/stylesheet-images/toc-blank.gif
-share/gnome/help/gabber/C/stylesheet-images/toc-minus.gif
-share/gnome/help/gabber/C/stylesheet-images/toc-plus.gif
-share/gnome/help/gabber/C/stylesheet-images/up.gif
-share/gnome/help/gabber/C/stylesheet-images/warning.gif
+share/gnome/help/gabber/C/agents.xml
+share/gnome/help/gabber/C/figures/first.png
+share/gnome/help/gabber/C/figures/login.png
+share/gnome/help/gabber/C/figures/main.png
+share/gnome/help/gabber/C/figures/msg-normal.png
+share/gnome/help/gabber/C/figures/msg-ooo.png
+share/gnome/help/gabber/C/file.xml
+share/gnome/help/gabber/C/first.xml
+share/gnome/help/gabber/C/gabber.xml
+share/gnome/help/gabber/C/intro.xml
+share/gnome/help/gabber/C/login.xml
+share/gnome/help/gabber/C/main.xml
+share/gnome/help/gabber/C/msg.xml
+share/gnome/help/gabber/C/panel.xml
+share/gnome/help/gabber/C/pref.xml
 share/gnome/help/gabber/C/topic.dat
+share/gnome/help/gabber/C/userinfo.xml
+share/gnome/help/gabber/C/users.xml
 share/gnome/omf/gabber/gabber-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gabber/gabber-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gabber.png
 share/gnome/pixmaps/gabber/away.xpm
 share/gnome/pixmaps/gabber/chat.xpm
@@ -166,7 +158,8 @@ share/locale/zh_TW/LC_MESSAGES/gabber.mo
 @dirrm share/gnome/sounds/gabber
 @dirrm share/gnome/pixmaps/gabber
 @dirrm share/gnome/omf/gabber
-@dirrm share/gnome/help/gabber/C/stylesheet-images
+@dirrm share/gnome/help/gabber/C/figures
 @dirrm share/gnome/help/gabber/C
 @dirrm share/gnome/help/gabber
 @dirrm share/gnome/gabber
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gabber/gabber-C.omf 2>/dev/null || /usr/bin/true
