@@ -73,6 +73,7 @@
     SUBDIR += jaxen
     SUBDIR += jboss2
     SUBDIR += jboss3
+    SUBDIR += jboss4
     SUBDIR += jc
     SUBDIR += jcalendar
     SUBDIR += jcckit
