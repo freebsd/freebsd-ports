@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.225 1999/02/27 18:09:33 billf Exp $
+# $Id: Makefile,v 1.226 1999/03/06 17:43:30 billf Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -113,6 +113,7 @@
     SUBDIR += p5-Archie
     SUBDIR += p5-Net
     SUBDIR += p5-Net-DNS
+    SUBDIR += p5-Net-RawIP
     SUBDIR += p5-Net-Telnet
     SUBDIR += p5-Net-Whois
     SUBDIR += p5-SNMP
