@@ -9,9 +9,7 @@ PORTNAME=	xmlparser
 PORTVERSION=	0.6.1
 PORTREVISION=	1
 CATEGORIES=	textproc ruby
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://www.bekkoame.ne.jp/~yoshidam/
-MASTER_SITE_SUBDIR=	knu
+MASTER_SITES=	http://www.yoshidam.net/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
