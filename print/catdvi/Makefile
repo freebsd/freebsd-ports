@@ -26,10 +26,6 @@ ALL_TARGET=	# empty
 
 MAN1=	catdvi.1
 
-post-patch:
-	@${GREP} -lR "malloc.h" ${WRKSRC} | xargs \
-	  ${PERL} -pi -e "s/malloc.h/stdlib.h/g"
-
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/catdvi
 
