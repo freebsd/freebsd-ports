@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hanmiscutils
-PORTVERSION=	0.1
+PORTVERSION=	0.1.1
 CATEGORIES=	korean
 MASTER_SITES=	http://kldp.org/~bangjy/hangul/
 
