@@ -4956,6 +4956,7 @@ mkultra		ports/x11-wm/mkultra
 mkvtoolnix	ports/multimedia/mkvtoolnix
 mkxvcd		ports/multimedia/mkxvcd
 ml		ports/mail/ml
+ml-pnet		ports/lang/ml-pnet
 mlan		ports/comms/mlan
 mlan3		ports/comms/mlan3
 mlclock		ports/x11-clocks/mlclock
@@ -7288,6 +7289,10 @@ pmars		ports/games/pmars
 pmf		ports/net/pmf
 pmk		ports/devel/pmk
 pmw		ports/x11-toolkits/pmw
+pnet		ports/lang/pnet
+pnet-base	ports/lang/pnet-base
+pnetc		ports/lang/pnetc
+pnetlib		ports/lang/pnetlib
 pnews		ports/www/pnews
 png		ports/graphics/png
 png2html	ports/graphics/png2html
