@@ -1,4 +1,3 @@
-A dummy port to create a package of static Motif libs and include
-files to be used as dependencies from other ports.  Note you need
-Motif already installed, and this port won't do anything for you
-unless you are in the business of building packages.
+This is the Metro Link Open Motif 2.1.30 runtime environment.
+It includes the Motif shared libraries, needed to run applications which
+are dynamically linked against Motif, and the Motif Window Manager, `mwm'.
