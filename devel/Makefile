@@ -80,6 +80,7 @@
     SUBDIR += ddd
     SUBDIR += dia2code
     SUBDIR += diffconvert
+    SUBDIR += dlmalloc
     SUBDIR += dmake
     SUBDIR += dmalloc
     SUBDIR += doc++
