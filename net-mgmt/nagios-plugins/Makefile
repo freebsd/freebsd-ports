@@ -25,10 +25,6 @@ OPTIONS=	QSTAT "Game server query support" off \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 503000
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sbindir=${PREFIX}/share/nagios/cgi-bin \
