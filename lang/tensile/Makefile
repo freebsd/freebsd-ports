@@ -42,10 +42,6 @@ MAN7=		docstrip.7t sl_crypt.7t sl_files.7t sl_fpmath.7t sl_int64.7t \
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 .endif
 
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not install on FreeBSD ${OSVERSION}"
-.endif
-
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|= -module$$|= -module -avoid-version|g'
