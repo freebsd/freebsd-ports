@@ -6,14 +6,13 @@ bin/htags
 info/global.info
 @exec install-info %D/info/global.info %D/info/dir
 @unexec install-info --delete %D/info/global.info %D/info/dir
-share/doc/global/AUTHORS
-share/doc/global/COPYING
-share/doc/global/ChangeLog
-share/doc/global/FAQ
-share/doc/global/INSTALL
-share/doc/global/LICENSE
-share/doc/global/NEWS
-share/doc/global/README
-share/doc/global/THANKS
-share/doc/global/VERSION
-@dirrm share/doc/global
+%%PORTDOCS%%share/doc/global/AUTHORS
+%%PORTDOCS%%share/doc/global/COPYING
+%%PORTDOCS%%share/doc/global/ChangeLog
+%%PORTDOCS%%share/doc/global/FAQ
+%%PORTDOCS%%share/doc/global/INSTALL
+%%PORTDOCS%%share/doc/global/LICENSE
+%%PORTDOCS%%share/doc/global/NEWS
+%%PORTDOCS%%share/doc/global/README
+%%PORTDOCS%%share/doc/global/THANKS
+%%PORTDOCS%%@dirrm share/doc/global
