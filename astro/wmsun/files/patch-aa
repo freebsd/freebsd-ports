@@ -1,0 +1,13 @@
+--- Makefile.orig	Fri Apr 16 15:27:34 1999
++++ Makefile	Fri Apr 16 15:27:56 1999
+@@ -1,6 +1,7 @@
+-CC     = gcc
+-CFLAGS = -O2 -Wall
+-INCDIR = -I/usr/X11R6/include/X11
++CC     ?= gcc
++CFLAGS ?= -O2
++CFLAGS += -Wall
++INCDIR = -I/usr/X11R6/include
+ DESTDIR= /usr/X11R6
+ LIBDIR = -L/usr/X11R6/lib
+ 
