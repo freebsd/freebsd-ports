@@ -1,0 +1,6 @@
+Russian Apache is an apache web-server designed to work on Russian
+market.  This port contains Russian Apache with modssl support.
+
+WWW: http://apache.lexa.ru/
+     http://www.apache.org/
+     http://www.modssl.org/
