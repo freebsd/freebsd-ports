@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.211 1999/05/29 05:00:53 steve Exp $
+# $Id: Makefile,v 1.212 1999/06/07 22:21:19 roger Exp $
 #
 
     SUBDIR += 221upgrade
@@ -90,6 +90,7 @@
     SUBDIR += us-zipcodes
     SUBDIR += vbidecode
     SUBDIR += vera
+    SUBDIR += videotext
     SUBDIR += viz
     SUBDIR += wmcp
     SUBDIR += wmmand
