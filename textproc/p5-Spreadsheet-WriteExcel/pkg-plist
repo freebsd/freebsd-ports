@@ -56,12 +56,16 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Spreadsheet/WriteExcel/.pack
 %%PORTDOCS%%%%EXAMPLESDIR%%/merge1.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/merge2.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/merge3.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/merge4.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/merge5.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/mod_perl.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/panes.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/protection.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/regions.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/repeat.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/republic.bmp
 %%PORTDOCS%%%%EXAMPLESDIR%%/sales.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/sendmail.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/simple.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/stats.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/stats_ext.pl
