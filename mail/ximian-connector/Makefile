@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 WANT_OPENLDAP_VER=	21
 WANT_OPENLDAP_SASL=	yes
-USE_GNOME=	gnomeprefix gnomehack gnometarget
+USE_GNOME=	gnomeprefix intlhack gnomehack gnometarget
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-openldap=${LOCALBASE} \
