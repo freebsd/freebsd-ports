@@ -195,19 +195,20 @@ CONFIGURE_ARGS+=	--with-expsam=${WANT_EXPSAM_MODULES}
 
 # Kerberos5 is necessary for ADS
 .if defined(WANT_KRB5)
-# Relay on PATH
-KRB5_PREFIX!=		krb5-config --prefix
-.if defined(KRB5_PREFIX) && !empty (KRB5_PREFIX)
-CONFIGURE_ARGS+=	--with-krb5=${KRB5_PREFIX}
-.elif defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.a)
+.if defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.a)
 CONFIGURE_ARGS+=	--with-krb5=${KRB5_HOME}
 .elif defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME}/lib/libgssapi.a)
 CONFIGURE_ARGS+=	--with-krb5=${HEIMDAL_HOME}
 .elif ( defined(MAKE_KERBEROS5) || ${OSVERSION} > 500105 ) && exists(/usr/lib/libkrb5.a)
 CONFIGURE_ARGS+=	--with-krb5=${DESTDIR}/usr
 .else
-#BROKEN=		"Kerberos5 is necessary for ADS support. Please, install either Heimdal or MIT-Kerberos"
-LIB_DEPENDS+=		krb5.19:${PORTSDIR}/security/heimdal
+BUILD_DEPENDS+=		krb5-config:${PORTSDIR}/security/heimdal
+KRB5_PREFIX!=		krb5-config --prefix 2>/dev/null || true
+.if defined(KRB5_PREFIX) && !empty (KRB5_PREFIX)
+CONFIGURE_ARGS+=	--with-krb5=${KRB5_PREFIX}
+.else
+BROKEN=			"Kerberos5 is necessary for ADS support. Please, install either Heimdal or MIT-Kerberos"
+.endif
 .endif
 .else
 CONFIGURE_ARGS+=	--without-krb5
