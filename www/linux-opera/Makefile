@@ -17,9 +17,13 @@ RUN_DEPENDS=	/compat/linux/lib/ld.so:${PORTSDIR}/emulators/linux_base
 
 NO_BUILD=	yes
 
+do-configure:
+	${SED} 's|%%PREFIX%%|${PREFIX}|; s|%%DISTNAME%%|${DISTNAME}|' \
+	    <${FILESDIR}/opera.sh >${WRKDIR}/opera.sh
+
 do-install:
 	(cd ${WRKDIR} && \
 	    tar cf - ${DISTNAME} | tar --unlink -xpf - -C ${PREFIX})
-	${INSTALL_SCRIPT} ${FILESDIR}/opera.sh ${PREFIX}/bin/opera
+	${INSTALL_SCRIPT} ${WRKDIR}/opera.sh ${PREFIX}/bin/opera
 
 .include <bsd.port.mk>
