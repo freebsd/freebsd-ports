@@ -24,6 +24,7 @@
     SUBDIR += lbrate
     SUBDIR += lha
     SUBDIR += libarc
+    SUBDIR += libarchive
     SUBDIR += libcabinet
     SUBDIR += libcomprex
     SUBDIR += linux-unace
