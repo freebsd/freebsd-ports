@@ -760,3 +760,11 @@ www/mozilla-headers-devel||2004-01-18|Headers are now installed as part of the m
 misc/sh-utils|sysutils/coreutils|2004-01-21|Merged into sysutils/coreutils port
 sysutils/fileutils|sysutils/coreutils|2004-01-21|Merged into sysutils/coreutils port
 textproc/textutils|sysutils/coreutils|2004-01-21|Merged into sysutils/coreutils port
+x11-toolkits/at-spi|accessibility/at-spi|2004-01-22|Category change
+devel/atk|accessibility/atk|2004-01-22|Category change
+editors/dasher|accessibility/dasher|2004-01-22|Category change
+x11-toolkits/gail|accessibility/gail|2004-01-22|Category change
+x11/gnomemag|accessibility/gnomemag|2004-01-22|Category change
+x11/gnopernicus|accessibility/gnopernicus|2004-01-22|Category change
+sysutils/gok|accessibility/gok|2004-01-22|Category change
+audio/gnomespeech|accessibility/gnomespeech|2004-01-22|Category change
