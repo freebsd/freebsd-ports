@@ -1,0 +1,11 @@
+--- configure.orig	Mon Aug 31 13:09:12 1998
++++ configure	Wed Sep  9 16:33:22 1998
+@@ -3475,7 +3475,7 @@
+ echo "configure:3476: checking "named thread libs:"" >&5
+ if test "$with_named_thread" != "no"
+ then
+-  LIBS="$LIBS $with_named_thread"
++  LIBS="-pthread $LIBS"
+   with_posix_threads="yes"
+   with_mit_threads="no"
+   echo "$ac_t"""$with_named_thread"" 1>&6
