@@ -1,12 +1,12 @@
---- encoder.php.orig	Fri Jul 25 10:21:09 2003
-+++ encoder.php	Mon Jul 28 13:04:19 2003
+--- encoder.php.orig	Mon Dec 27 07:35:20 2004
++++ encoder.php	Wed Jan 19 08:14:49 2005
 @@ -1,10 +1,12 @@
 +#!%%LOCALBASE%%/bin/php -f
 +
  <?php
  $web_error = "";
  
- function mmcache_encoder_usage() {
+ function eaccelerator_encoder_usage() {
 -  echo "Usage:\tphp -q encoder.php [options] source_file_name\n";
 -  echo       "\tphp -q encoder.php [options] source_file_name...\n";
 -  echo       "\tphp -q encoder.php [options] source_directory_name...\n\n";
