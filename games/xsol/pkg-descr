@@ -1,6 +1,6 @@
-xtetris 2.5.2
+xsol 2.1.1
 
-xsol plays  a  solitaire  game  simliar to Klondike.  The playing field is
+xsol plays  a  solitaire  game  similar to Klondike.  The playing field is
 made up of seven slots, where stacks are built in descending value with
 alternating suits.  Aces are built on at the top, and ascending order in the
 same suit.   Kings can be moved to any empty space in the play- ing field.
