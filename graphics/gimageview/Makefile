@@ -6,22 +6,37 @@
 #
 
 PORTNAME=	gimageview
-PORTVERSION=	0.1.100
+PORTVERSION=	0.2.1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtkmmviewer
 
 MAINTAINER=	katsu@iec.hiroshima-u.ac.jp
 
+LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_IMLIB=	yes
+USE_GTK=	yes
 GNU_CONFIGURE=	yes
+WANT_IMLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+
+.include <bsd.port.pre.mk>
+
+.if defined(HAVE_IMLIB)
+USE_IMLIB=	yes
+.endif
 
 post-patch:
 	@${PERL} -pi -e 's/DATADIRNAME=lib/DATADIRNAME=share/g' \
 		${WRKSRC}/configure
 
-.include <bsd.port.mk>
+post-configure:
+.if !defined(USE_IMLIB)
+	@${FIND} ${WRKSRC} -name 'Makefile' | ${XARGS} ${PERL} -pi.orig -e \
+		's/^(GDK_IMLIB_(CFLAGS|LIBS) =).*$$/$${1}/'
+.endif
+
+.include <bsd.port.post.mk>
