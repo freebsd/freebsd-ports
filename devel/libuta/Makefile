@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	oliver@freebsd.org
+MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A Graphical User Interface library for C++
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
@@ -51,10 +51,10 @@ pre-everything::
 
 post-patch:
 .for i in ${SDL11_FILES}
-	${REINPLACE_CMD} -e 's|SDL/|SDL11/|' ${WRKSRC}/$i
+	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|' ${WRKSRC}/$i
 .endfor
 
 pre-configure:
-	${REINPLACE_CMD} -e 's|<freetype/freetype.h>|<freetype1/freetype/freetype.h>|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|<freetype/freetype.h>|<freetype1/freetype/freetype.h>|g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
