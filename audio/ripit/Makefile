@@ -1,12 +1,12 @@
 # New ports collection makefile for:    ripit
-# Version required:     1.2
+# Version required:     1.3
 # Date created:         2 May 1999
 # Whom:                 oyvindmo@initio.no
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/03 03:52:22 steve Exp $
+# $Id: Makefile,v 1.2 1999/05/04 04:35:33 steve Exp $
 #
 
-DISTNAME=	ripit-1.2
+DISTNAME=	ripit-1.3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.netcomuk.co.uk/~squinn/
 
