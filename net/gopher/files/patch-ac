@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat Jan 26 03:10:15 2002
++++ Makefile.in	Sat Jan 26 03:10:23 2002
+@@ -140,7 +140,7 @@
+ objects: object/libgopher.a
+ 
+ gopherd/gopherd: object/libgopher.a $(srcdir)/gopherd/*.c $(srcdir)/gopherd/*.h $(srcdir)/conf.h
+-	(cd gopherd; $(MAKE) $(MFLAGS))
++	(cd gopherd; $(MAKE) $(MFLAGS) all)
+ 
+ # gopher is dependant on conf.h - (as are other things)
+ gopher/gopher: object/libgopher.a conf.h $(srcdir)/gopher/*c $(srcdir)/gopher/*h
