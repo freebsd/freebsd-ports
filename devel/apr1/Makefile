@@ -120,7 +120,12 @@ post-extract:
 	${LN} -s apr-util-APU_0_9_BRANCH apr-util-${PORTVERSION}
 
 pre-configure:
-	${DO_NADA}
+.for d in apr apr-util
+.for f in config.guess config.sub
+	${CP} -f ${TEMPLATES}/${f} ${WRKDIR}/${d}-${PORTVERSION}/build/${f}
+	${CHMOD} a+rx ${WRKDIR}/${d}-${PORTVERSION}/build/${f}
+.endfor
+.endfor
 
 run-autotools:
 	cd ${WRKDIR}/apr-${PORTVERSION}; ${SETENV} ${SCRIPTS_ENV} LIBTOOL_M4=${LIBTOOL_M4} ${SH} ./buildconf
