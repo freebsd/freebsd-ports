@@ -38,7 +38,7 @@ if [ "${ftp}" != 0 ]; then
   mkdir -p bindist/ftp
   cd bindist/ftp
   for i in ${ftpdists}; do
-    /usr/bin/ftp -a "ftp://${ftpserver}/pub/FreeBSD/snapshots/i386/${rel}/$i.??"
+    /usr/bin/ftp -a "ftp://${ftpserver}/pub/FreeBSD/snapshots/${arch}/${rel}/$i.??"
   done
   cd ${here}
 fi
@@ -69,6 +69,13 @@ rm -rf $(cat ${here}/bindist/delete)
 mkdir -p $(cat ${here}/bindist/dirlist)
 (cd ${here}/bindist/files; find -dx . | cpio -dump ${tmpdir})
 
+# Prepare needed packages
+mkdir ${tmpdir}/packages
+if [ "$branch" = 5 ]; then
+	cd ${tmpdir}/packages
+	fetch ftp://${ftpsite}/pub/FreeBSD/ports/${arch}/packages-5-current/Latest/perl.tbz
+fi
+
 # Post-processing of installed world
 
 date '+%Y%m%d' > var/db/port.mkversion
@@ -79,7 +86,9 @@ rm -f /usr/lib/aout/lib*_p.a
 mkdir ${tmpdir}/var/run
 
 chroot ${tmpdir} /sbin/ldconfig /usr/lib
-chroot ${tmpdir} /sbin/ldconfig -aout /usr/lib/aout
+if [ "${arch}" = "i386" ]; then
+	chroot ${tmpdir} /sbin/ldconfig -aout /usr/lib/aout
+fi
 #sed -e "s/%%KERNEL%%/${kernel}/g" ${here}/dokernel > ${tmpdir}/dokernel
 
 # XXX Rebuild kernel for some reason.  No idea why, and
@@ -113,6 +122,7 @@ fi
 
 # Create the tarballs
 mkdir -p ${here}/tarballs
+cd ${tmpdir}
 tar cf ${here}/tarballs/bindist.tar.new .
 mv -f ${here}/tarballs/bindist.tar.new ${here}/tarballs/bindist.tar
 
