@@ -7,6 +7,7 @@
 
 PORTNAME=	preview-latex
 PORTVERSION=	0.7.8
+PORTREVISION=	1
 CATEGORIES=	print elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= ${PORTNAME}
@@ -22,6 +23,8 @@ RUN_DEPENDS=	${LOCALBASE}/${EMACS_SITE_LISPDIR}/auctex/latex.el:${PORTSDIR}/prin
 		mktexlsr:${PORTSDIR}/print/teTeX
 
 EMACS_PORT_NAME?=	emacs21
+
+INFO=		preview-latex
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD} \

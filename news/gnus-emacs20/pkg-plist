@@ -207,36 +207,6 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/gnus/uudecode.el
 %%EMACS_VERSION_SITE_LISPDIR%%/gnus/uudecode.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/gnus/webmail.el
-@unexec install-info --delete %D/%%INFODIR%%/emacs-mime.info %D/%%INFODIR%%/dir
-@unexec test -f %D/%%INFODIR%%/emacs-mime && install-info %D/%%INFODIR%%/emacs-mime %D/%%INFODIR%%/dir
-@unexec install-info --delete %D/%%INFODIR%%/gnus.info %D/%%INFODIR%%/dir
-@unexec test -f %D/%%INFODIR%%/gnus && install-info %D/%%INFODIR%%/gnus %D/%%INFODIR%%/dir
-@unexec install-info --delete %D/%%INFODIR%%/message.info %D/%%INFODIR%%/dir
-@unexec test -f %D/%%INFODIR%%/message && install-info %D/%%INFODIR%%/message %D/%%INFODIR%%/dir
-%%INFODIR%%/emacs-mime.info
-%%INFODIR%%/gnus-1.info
-%%INFODIR%%/gnus-10.info
-%%INFODIR%%/gnus-11.info
-%%INFODIR%%/gnus-12.info
-%%INFODIR%%/gnus-13.info
-%%INFODIR%%/gnus-14.info
-%%INFODIR%%/gnus-15.info
-%%INFODIR%%/gnus-16.info
-%%INFODIR%%/gnus-17.info
-%%INFODIR%%/gnus-18.info
-%%INFODIR%%/gnus-2.info
-%%INFODIR%%/gnus-3.info
-%%INFODIR%%/gnus-4.info
-%%INFODIR%%/gnus-5.info
-%%INFODIR%%/gnus-6.info
-%%INFODIR%%/gnus-7.info
-%%INFODIR%%/gnus-8.info
-%%INFODIR%%/gnus-9.info
-%%INFODIR%%/gnus.info
-%%INFODIR%%/message.info
-@exec install-info %D/%%INFODIR%%/emacs-mime.info %D/%%INFODIR%%/dir
-@exec install-info %D/%%INFODIR%%/gnus.info %D/%%INFODIR%%/dir
-@exec install-info %D/%%INFODIR%%/message.info %D/%%INFODIR%%/dir
 share/doc/gnus-%%EMACS_PORT_NAME%%/ChangeLog
 share/doc/gnus-%%EMACS_PORT_NAME%%/GNUS-NEWS
 share/doc/gnus-%%EMACS_PORT_NAME%%/README
