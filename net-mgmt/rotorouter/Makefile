@@ -9,6 +9,7 @@
 
 PORTNAME=	rotorouter
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	# nada
 DISTFILES=	# nil
