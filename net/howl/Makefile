@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	howl
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.8
 CATEGORIES?=	net devel
 MASTER_SITES=	http://www.porchdogsoft.com/download/
 
@@ -15,8 +15,8 @@ COMMENT=	Zeroconf/Rendezvous implementation
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget pkgconfig
 USE_LIBTOOL_VER=15
-CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
-		LDFLAGS="${PTHREAD_LIBS}"
+CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
+CPPFLAGS+=	${PTHREAD_CFLAGS}
 USE_REINPLACE=	yes
 
 INSTALLS_SHLIB=	yes
@@ -26,9 +26,11 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha"
-BROKEN=		"Does not compile on alpha"
+.if ${ARCH} == "alpha" && ${OSVERSION} < 500000
+CPPFLAGS+=	-D_LP64
 .endif
+
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-pthread||g' ${WRKSRC}/configure
