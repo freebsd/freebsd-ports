@@ -6,12 +6,12 @@
 #
 
 PORTNAME=		dnrd
-PORTVERSION=		2.16.1
+PORTVERSION=		2.17.1
 CATEGORIES=		dns
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dnrd
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		ncopa@users.sourceforge.net
 COMMENT=		A proxy DNS daemon
 
 USE_GMAKE=		yes
@@ -36,9 +36,7 @@ EXAMPLES=		doc/master.sample
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/dnrd|${PREFIX}/etc/dnrd|g' \
-		${WRKSRC}/doc/dnrd.8 ${WRKSRC}/doc/master.sample \
-		${WRKSRC}/doc/README-master ${WRKSRC}/src/common.h \
-		${WRKSRC}/src/master.c ${WRKSRC}/src/main.c
+		${WRKSRC}/doc/master.sample ${WRKSRC}/doc/README-master
 	@${SED} -e 's|%%RC_SUBR%%|${RC_SUBR}|g' -e 's|%%PREFIX%%|${PREFIX}|' \
 		${FILESDIR}/dnrd.sh > ${WRKDIR}/dnrd.sh
 
