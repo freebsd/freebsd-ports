@@ -1,12 +1,12 @@
 # New ports collection makefile for:   sawmill
-# Version required:    0.16
+# Version required:    0.17
 # Date created:        13 September 1999
 # Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	sawmill-0.16
+DISTNAME=	sawmill-0.17
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.dcs.warwick.ac.uk/people/John.Harper/sawmill/
 
@@ -38,18 +38,5 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include\
 		GTK_CONFIG="${GTK_CONFIG}" \
 		GLIB_CONFIG="${GLIB_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib -lxpg4"
-
-pre-build:
-.if !defined(DISPLAY)
-		@${ECHO_MSG} "*********************************************"
-		@${ECHO_MSG} "*                W A R N I N G              *"
-		@${ECHO_MSG} "*********************************************"
-		@${ECHO_MSG} "* You can't build this sawmill port  from   *"
-		@${ECHO_MSG} "* non-X terminal. Please build from xterm,  *"
-		@${ECHO_MSG} "* rxvt, Eterm, kterm or so.                 *"
-		@${ECHO_MSG} "*********************************************"
-		@${ECHO_MSG}
-		@exit 1;
-.endif
 
 .include <bsd.port.mk>
