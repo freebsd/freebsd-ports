@@ -5,8 +5,9 @@ half of that system; it downloads compressed snapshots into
 a ports tree into /usr/ports ("portsnap extract") or update an
 existing tree ("portsnap update").
 
-Portsnap uses bandwidth roughly comparable to CVSup, but operates 
-entirely over HTTP.
+In addition to operating entirely over HTTP, portsnap can use under
+a tenth of the bandwidth required by CVSup if a copy of the ports
+tree is being updated every few days.
 
 WWW: http://www.daemonology.net/portsnap/
 
