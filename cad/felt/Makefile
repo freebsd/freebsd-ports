@@ -3,7 +3,7 @@
 # Date created:		19 October 1996
 # Whom:			Pedro Giffuni
 #
-# $Id: Makefile,v 1.3 1997/01/19 02:47:27 obrien Exp $
+# $Id: Makefile,v 1.4 1997/06/16 05:45:08 max Exp $
 #
 
 DISTNAME=	felt-3.02
@@ -22,10 +22,10 @@ MAN4=		corduroy.4 felt.4
 #DOCS= 		ftp://cs.ucsd.edu/pub/felt/felt-3.02.ps.gz
 
 post-patch:
-	${RM} -f $(WRKSRC)/lib/Geompack/*.c
+	${RM} -f ${WRKSRC}/lib/Geompack/*.c
 
 post-install:
-	$(MKDIR) $(PREFIX)/share/examples/FElt
-	$(CP) $(WRKSRC)/examples/* $(PREFIX)/share/examples/FElt
+	${MKDIR} ${PREFIX}/share/examples/FElt
+	${CP} ${WRKSRC}/examples/* ${PREFIX}/share/examples/FElt
 
 .include <bsd.port.mk>
