@@ -15,6 +15,7 @@
     SUBDIR += apache-jserv
     SUBDIR += arena
     SUBDIR += ashe           # requires Motif
+    SUBDIR += asp2php
     SUBDIR += aswedit
     SUBDIR += bacon
     SUBDIR += bkmrkconv
