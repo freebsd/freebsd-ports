@@ -3,7 +3,7 @@
 # Date created:                         9 May 1998
 # Whom:                                 ache
 #
-# $Id: Makefile,v 1.12 1998/11/13 18:17:37 ache Exp $
+# $Id: Makefile,v 1.13 1998/11/15 15:29:18 ache Exp $
 #
 
 DISTNAME=       w3mir-1.0.5
@@ -21,7 +21,8 @@ MAN1=           w3mir.1 w3mfix.1
 do-configure:
 		@ cd ${WRKSRC}; \
 		${SETENV} ${MAKE_ENV} ${PERL} Makefile.PL PREFIX=${PREFIX} \
-				     INSTALLMAN1DIR=${PREFIX}/man/man1
+				     INSTALLMAN1DIR=${PREFIX}/man/man1 \
+				     INSTALLSCRIPT=${PREFIX}/bin
 post-install:
 		${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755 \
 			${PREFIX}/share/doc/w3mir
