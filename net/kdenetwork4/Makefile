@@ -27,7 +27,7 @@ CONFIGURE_ARGS+=--with-qt-dir=${X11BASE} \
 		--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ENV+=	LIBQT="-lqt2" MOC="${MOC}" LIBQTFILE="libqt2" \
 		CPPFLAGS="-I${LOCALBASE}/include -D_XOPEN_UNIX" \
-		LIBS="-Wl,-export-dynamic -L${LOCALBASE}/lib -lqt2 -ljpeg -lgcc -lstdc++"
+		LIBS="-Wl,-export-dynamic -L${LOCALBASE}/lib -ljpeg -lgcc -lstdc++"
 USE_GMAKE=	yes
 
 pre-configure:
