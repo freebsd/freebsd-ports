@@ -7,6 +7,7 @@
 
 PORTNAME=	bglibs
 PORTVERSION=	1.009
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://untroubled.org/bglibs/
 
@@ -20,7 +21,7 @@ NOT_FOR_ARCHS=	alpha ia64
 DOCS=		NEWS README TODO
 
 pre-build:
-	${ECHO_CMD} ${BGLIBS_ROOT}   > ${WRKSRC}/conf-home
+	${ECHO_CMD} ${PREFIX}        > ${WRKSRC}/conf-home
 	${ECHO_CMD} ${CC} ${CFLAGS}  > ${WRKSRC}/conf-cc
 
 do-install:
