@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pure-ftpd
-PORTVERSION=	0.98.2
+PORTVERSION=	0.98.3
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pureftpd
@@ -33,6 +33,10 @@ CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 MAN8=		pure-ftpd.8 pure-ftpwho.8 pure-mrtginfo.8 pure-uploadscript.8
 
+DOCS=		AUTHORS CONTACT COPYING HISTORY NEWS \
+		README README.Configuration-File README.LDAP README.Netfilter \
+		THANKS
+
 pre-fetch:
 	@${ECHO} "You can use the following additional options:"
 	@${ECHO} "WITH_DMALLOC	- enable use of the dmalloc library;"
@@ -46,9 +50,7 @@ post-install:
 	${CHMOD} 755 ${PREFIX}/sbin/pure-config.pl
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/pure-ftpd
-.for file in COPYING HISTORY NEWS README README.Configuration-File README.LDAP README.Netfilter THANKS
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/pure-ftpd
-.endfor
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/pure-ftpd)
 .endif
 
 .include <bsd.port.mk>
