@@ -1102,6 +1102,7 @@ dia		ports/graphics/dia
 dia2code	ports/devel/dia2code
 diablo		ports/news/diablo
 diacanvas	ports/graphics/diacanvas
+dialog		ports/sysutils/dialog
 dice		ports/lang/dice
 dico		ports/textproc/dico
 dictd		ports/net/dictd
