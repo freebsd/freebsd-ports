@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gato
-PORTVERSION=	0.96.g
+PORTVERSION=	0.98.I
 CATEGORIES=	math python
 MASTER_SITES=	http://www.zpr.uni-koeln.de/~gato/Download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

@@ -1,14 +1,5 @@
 --- GraphUtil.py.orig	Wed May 16 13:16:58 2001
 +++ GraphUtil.py	Mon Sep  3 12:21:49 2001
-@@ -31,7 +31,7 @@
- #
- ################################################################################
- 
--from regsub import split
-+from re import split
- from GatoGlobals import *
- from Graph import Graph
- from DataStructures import Point2D, VertexLabeling, EdgeLabeling, EdgeWeight, VertexWeight, Queue
 @@ -223,13 +223,13 @@
  	    break
  
