@@ -123,6 +123,7 @@
     SUBDIR += extipl
     SUBDIR += fastest_cvsup
     SUBDIR += fcron
+    SUBDIR += fdupes
     SUBDIR += fetchlog
     SUBDIR += ffsrecov
     SUBDIR += file
