@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.189 1998/03/22 05:13:11 jseger Exp $
+# $Id: Makefile,v 1.190 1998/03/27 14:31:19 tg Exp $
 #
 
     SUBDIR += FWF
@@ -41,6 +41,7 @@
     SUBDIR += libdnd
     SUBDIR += libsx
     SUBDIR += lupe
+    SUBDIR += lwm
     SUBDIR += mlclock
     SUBDIR += mlvwm
     SUBDIR += mouseclock
