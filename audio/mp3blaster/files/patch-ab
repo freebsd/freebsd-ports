@@ -1,23 +1,15 @@
---- configure.orig	Wed Jan 24 23:59:05 2001
-+++ configure	Thu Jan 25 23:36:40 2001
-@@ -546,7 +546,6 @@
-   ac_n= ac_c='\c' ac_t=
+--- configure.orig	Fri Jan 26 04:21:29 2001
++++ configure	Fri Feb 16 15:50:41 2001
+@@ -2130,7 +2130,7 @@
  fi
+ done
  
--
- ac_aux_dir=
- for ac_dir in $srcdir $srcdir/.. $srcdir/../..; do
-   if test -f $ac_dir/install-sh; then
-@@ -1545,7 +1544,7 @@
- if test "`uname -s`" = "FreeBSD" ; then
-   echo "FreeBSD detected."
-   FREEBSD=1
--  LDFLAGS="-L/usr/local/lib $LDFLAGS"
-+  LDFLAGS="-L/usr/local/lib -lgnugetopt $LDFLAGS"
-   CPPFLAGS="-I/usr/local/include $CPPFLAGS"
- fi
- 
-@@ -3310,7 +3309,6 @@
+-for ac_hdr in sys/soundcard.h machine/soundcard.h soundcard.h getopt.h
++for ac_hdr in sys/soundcard.h machine/soundcard.h soundcard.h
+ do
+ ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
+ echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
+@@ -3310,7 +3310,6 @@
  
  
  
