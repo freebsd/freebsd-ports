@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snortsnarf
-PORTVERSION=	021017
+PORTVERSION=	021111
 CATEGORIES=	security
 MASTER_SITES=	http://www.silicondefense.com/software/snortsnarf/
 DISTNAME=	SnortSnarf-${PORTVERSION}.1
