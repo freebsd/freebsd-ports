@@ -110,10 +110,8 @@ sub check_version {
 	my $rname;
 	my $version;
 
-	if (! -f $filename) {
-		return(0);	# not present - either removed or let
-				# cvs deal with it.
-	}
+	# not present - either removed or let cvs deal with it.
+	return 0 unless -f $filename;
 
 	open FILE, $filename or die "Cannot open $filename, stopped\n";
 	# requiring the header within the first 'n' lines isn't useful.
@@ -132,12 +130,11 @@ sub check_version {
 		$path = $directory . "/" . $filename;
 		open(EX, "<$exclude") || die("cannot open $exclude: $!");
 		while (<EX>) {
-			chop;
+			chomp;
 			my $ex_entry = $_;
 
-			if ($ex_entry =~ /^#/) {
-				next;
-			}
+			next if $ex_entry =~ /^#/;
+
 			if ($path =~ /$ex_entry/) {
 				close(EX);
 				return(0);
