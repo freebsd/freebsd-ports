@@ -18,5 +18,31 @@ share/mlmmj/listtexts/sub-ok
 share/mlmmj/listtexts/subonlypost
 share/mlmmj/listtexts/unsub-confirm
 share/mlmmj/listtexts/unsub-ok
+%%PERLWEB%%www/mlmmj/perl-admin/htdocs/edit.cgi
+%%PERLWEB%%www/mlmmj/perl-admin/htdocs/index.cgi
+%%PERLWEB%%www/mlmmj/perl-admin/htdocs/save.cgi
+%%PERLWEB%%www/mlmmj/perl-admin/htdocs/dot.htaccess
+%%PERLWEB%%www/mlmmj/perl-admin/templates/index.html
+%%PERLWEB%%www/mlmmj/perl-admin/templates/edit_boolean.html
+%%PERLWEB%%www/mlmmj/perl-admin/templates/edit.html
+%%PERLWEB%%www/mlmmj/perl-admin/templates/edit_list.html
+%%PERLWEB%%www/mlmmj/perl-admin/templates/save.html
+%%PERLWEB%%www/mlmmj/perl-admin/templates/edit_string.html
+%%PERLWEB%%www/mlmmj/perl-admin/conf/config.pl
+%%PERLWEB%%www/mlmmj/perl-admin/conf/tunables.pl
+%%PERLWEB%%www/mlmmj/perl-admin/README
+%%PERLWEB%%www/mlmmj/perl-user/config.pl
+%%PERLWEB%%www/mlmmj/perl-user/example.html
+%%PERLWEB%%www/mlmmj/perl-user/mlmmj.cgi
+%%PHPWEB%%www/mlmmj/php-user/README
+%%PHPWEB%%www/mlmmj/php-user/example.html
+%%PHPWEB%%www/mlmmj/php-user/mlmmj.php
 @dirrm share/mlmmj/listtexts
 @dirrm share/mlmmj
+%%PERLWEB%%@dirrm www/mlmmj/perl-admin/htdocs
+%%PERLWEB%%@dirrm www/mlmmj/perl-admin/templates
+%%PERLWEB%%@dirrm www/mlmmj/perl-admin/conf
+%%PERLWEB%%@dirrm www/mlmmj/perl-admin
+%%PERLWEB%%@dirrm www/mlmmj/perl-user
+%%PHPWEB%%@dirrm www/mlmmj/php-user
+%%WEB%%@dirrm www/mlmmj
