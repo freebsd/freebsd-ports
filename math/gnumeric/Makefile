@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnumeric
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -33,6 +33,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 
 GCONF_SCHEMAS=	gnumeric-dialogs.schemas gnumeric-general.schemas \
 		gnumeric-plugins.schemas
+
+MAN1=		gnumeric.1 ssconvert.1
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
