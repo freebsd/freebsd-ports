@@ -1,0 +1,86 @@
+*** nntp.c.orig	Tue Jan 31 16:37:56 1995
+--- nntp.c	Wed Jun 21 19:33:33 1995
+***************
+*** 73,79 ****
+  }
+  
+  
+! int initNNTP()
+  {
+  	char line[1024];
+  	int err;
+--- 73,79 ----
+  }
+  
+  
+! void initNNTP()
+  {
+  	char line[1024];
+  	int err;
+***************
+*** 101,107 ****
+  
+  	bcopy(*hp->h_addr_list, (char *) &server.sin_addr, hp->h_length);
+  
+! 	err = connect(sock, &server, sizeof(server));
+  
+  	if (err)
+  		Fatal("connect failed");
+--- 101,107 ----
+  
+  	bcopy(*hp->h_addr_list, (char *) &server.sin_addr, hp->h_length);
+  
+! 	err = connect(sock, (struct sockaddr*)&server, sizeof(server));
+  
+  	if (err)
+  		Fatal("connect failed");
+***************
+*** 137,143 ****
+  
+  	if ((x = atoi(line)) != 221)
+  	{
+! 		if (x = 423)			/* then the article just don't exist */
+  			return (0);
+  		else
+  			Fatal("getHeaders: got a bad value: %s", line);
+--- 137,143 ----
+  
+  	if ((x = atoi(line)) != 221)
+  	{
+! 		if (x == 423)			/* then the article just don't exist */
+  			return (0);
+  		else
+  			Fatal("getHeaders: got a bad value: %s", line);
+***************
+*** 184,190 ****
+  	return (fname);
+  }
+  
+! int readNewsrcEntry(newsBox, firstArt, lastArt)
+  	BoxInfo_t *newsBox;
+  	long firstArt;
+  	long lastArt;
+--- 184,190 ----
+  	return (fname);
+  }
+  
+! void readNewsrcEntry(newsBox, firstArt, lastArt)
+  	BoxInfo_t *newsBox;
+  	long firstArt;
+  	long lastArt;
+***************
+*** 289,300 ****
+  	DynObject headerString;
+  	Boolean *beenTouched;
+  {
+- 	int sock, err, len;
+  	char line[1024];
+- 	long ipaddr;
+  	char *from;
+  	char *subject;
+- 	long firstScanArticle;
+  	long firstArticle;
+  	long lastArticle;
+  	long retVal;
+--- 289,297 ----
+[40;1H[K

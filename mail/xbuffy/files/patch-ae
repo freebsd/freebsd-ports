@@ -1,0 +1,46 @@
+*** libdyn/dyn_delete.c.orig	Fri Dec 10 14:56:03 1993
+--- libdyn/dyn_delete.c	Wed Jun 21 16:45:00 1995
+***************
+*** 11,16 ****
+--- 11,17 ----
+   */
+  
+  #include <stdio.h>
++ #include <string.h>
+  
+  #include "dynP.h"
+  
+***************
+*** 45,51 ****
+       else {
+  	  if (obj->debug)
+  	       fprintf(stderr,
+! 		       "dyn: delete: copying %d bytes from %d + %d to + %d.\n",
+  		       obj->el_size*(obj->num_el - index), obj->array,
+  		       (index+1)*obj->el_size, index*obj->el_size);
+  	  
+--- 46,52 ----
+       else {
+  	  if (obj->debug)
+  	       fprintf(stderr,
+! 		       "dyn: delete: copying %d bytes from %p + %d to + %d.\n",
+  		       obj->el_size*(obj->num_el - index), obj->array,
+  		       (index+1)*obj->el_size, index*obj->el_size);
+  	  
+***************
+*** 56,62 ****
+  	  if (obj->paranoid) {
+  	       if (obj->debug)
+  		    fprintf(stderr,
+! 			    "dyn: delete: zeroing %d bytes from %d + %d\n",
+  			    obj->el_size, obj->array,
+  			    obj->el_size*(obj->num_el - 1));
+  	       bzero(obj->array + obj->el_size*(obj->num_el - 1),
+--- 57,63 ----
+  	  if (obj->paranoid) {
+  	       if (obj->debug)
+  		    fprintf(stderr,
+! 			    "dyn: delete: zeroing %d bytes from %p + %d\n",
+  			    obj->el_size, obj->array,
+  			    obj->el_size*(obj->num_el - 1));
+  	       bzero(obj->array + obj->el_size*(obj->num_el - 1),

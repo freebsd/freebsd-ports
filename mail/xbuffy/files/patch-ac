@@ -1,0 +1,29 @@
+*** libdyn/dyn_append.c.orig	Fri Dec 10 14:56:02 1993
+--- libdyn/dyn_append.c	Wed Jun 21 16:45:48 1995
+***************
+*** 11,16 ****
+--- 11,17 ----
+   */
+  
+  #include <stdio.h>
++ #include <string.h>
+  
+  #include "dynP.h"
+  
+***************
+*** 20,26 ****
+     int num;
+  {
+       if (obj->debug)
+! 	  fprintf(stderr, "dyn: append: Writing %d bytes from %d to %d + %d\n",
+  		  obj->el_size*num, els, obj->array, obj->num_el*obj->el_size);
+  
+       if (obj->size < obj->num_el + num) {
+--- 21,27 ----
+     int num;
+  {
+       if (obj->debug)
+! 	  fprintf(stderr, "dyn: append: Writing %d bytes from %p to %p + %d\n",
+  		  obj->el_size*num, els, obj->array, obj->num_el*obj->el_size);
+  
+       if (obj->size < obj->num_el + num) {

@@ -1,0 +1,27 @@
+*** XBuffy.ad.orig	Tue Jan 31 16:37:56 1995
+--- XBuffy.ad	Wed Jun 21 16:37:30 1995
+***************
+*** 1,11 ****
+  !
+  ! Application Defaults file for XBuffy, this is just meant as an example
+  !
+! *nobeep:	FALSE
+! *horiz:		FALSE
+! *names:		FALSE
+! *shortnames:	TRUE
+! *polltime:	30
+! *priority:	15
+! *headertime:	10
+! *mailboxes:	/usr/spool/mail/wfp5p:/home/wfp5p/.Mail/elmProblems
+--- 1,11 ----
+  !
+  ! Application Defaults file for XBuffy, this is just meant as an example
+  !
+! !XBuffy*nobeep:		FALSE
+! !XBuffy*horiz:		TRUE
+! !XBuffy*names:		FALSE
+! !XBuffy*shortnames:	TRUE
+! XBuffy*polltime:	30
+! XBuffy*priority:	15
+! XBuffy*headertime:	10
+! !XBuffy*mailboxes:	/usr/spool/mail/wfp5p:/home/wfp5p/.Mail/elmProblems
