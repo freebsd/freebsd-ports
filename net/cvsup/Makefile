@@ -1,12 +1,12 @@
 # New ports collection makefile for:	cvsup
-# Version required:	15.4
+# Version required:	15.4.2
 # Date created:		7 August 1996
 # Whom:			asami
 #
-# $Id: Makefile,v 1.24 1998/04/28 22:25:03 jdp Exp $
+# $Id: Makefile,v 1.25 1998/06/06 20:33:21 jdp Exp $
 #
 
-DISTNAME=	cvsup-15.4
+DISTNAME=	cvsup-15.4.2
 CATEGORIES=	devel net
 MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/CVSup/ \
 		ftp://ftp.cs.tu-berlin.de/pub/FreeBSD/CVSup/ \
