@@ -99,6 +99,7 @@
     SUBDIR += hashish
     SUBDIR += heimdal
     SUBDIR += hlfl
+    SUBDIR += hmap
     SUBDIR += hostsentry
     SUBDIR += hping
     SUBDIR += hunch
