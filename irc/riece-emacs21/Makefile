@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	liece
-PORTVERSION=	1.4.4
-PORTREVISION=	2
+PORTVERSION=	1.4.6
 CATEGORIES=	irc elisp
 MASTER_SITES=	http://www.unixuser.org/~ueno/liece/dist/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -26,7 +25,6 @@ FLIM_TRUNK=	1.14
 FLIM_COOKIE=	flim-${EMACS_PORT_NAME}-${FLIM_TRUNK}.FreeBSD-packages
 
 EMACS_PORT_NAME?=	emacs21
-CONFIGURE_ARGS+=	--with-emacs=${EMACS_CMD} --datadir=${PREFIX}/${EMACS_ETCDIR}
 
 DIRSECTION?=		"The Emacs editor and associated tools"
 INFOENTRY?=		"* Liece: (liece).		IRC client on Emacsen."
@@ -43,7 +41,11 @@ LISPDIR=		${EMACS_PACKAGESDIR}/lisp
 EMACS_ETCDIR=		${EMACS_PACKAGESDIR}/etc
 EMACS_INFODIR=		${EMACS_PACKAGESDIR}/info
 PKGINFODIR=		${EMACS_PACKAGESDIR}/pkginfo
-CONFIGURE_ARGS+=	--enable-package
+CONFIGURE_ARGS=		--with-xemacs=${EMACS_CMD} \
+			--with-packagedir=${EMACS_PACKAGESDIR} \
+			--datadir=${PREFIX}/${EMACS_ETCDIR}
+ALL_TARGET=		package
+INSTALL_TARGET=		install-package
 XEMACS_ONLY=		""
 EMACS_ONLY=		"@comment "
 .else
@@ -51,13 +53,17 @@ LISPDIR=		${EMACS_VERSION_SITE_LISPDIR}
 EMACS_ETCDIR=		share
 EMACS_INFODIR=		info
 PKGINFODIR=		"@comment "
+CONFIGURE_ARGS=		--with-emacs=${EMACS_CMD} \
+			--with-lispdir=${PREFIX}/${LISPDIR} \
+			--datadir=${PREFIX}/${EMACS_ETCDIR}
 MAKE_ARGS+=		LISPDIR=${PREFIX}/${LISPDIR}
 XEMACS_ONLY=		"@comment "
 EMACS_ONLY=		""
 .endif
 LIECE_ETCDIR=	${EMACS_ETCDIR}/${PORTNAME}
 
-ALL_TARGET=	all sample.dot.emacs
+BUILD_WRKSRC=	${WRKSRC}/lisp
+INSTALL_WRKSRC=	${BUILD_WRKSRC}
 PLIST_SUB=	EMACS_NAME=${EMACS_NAME} \
 		XEMACS_ONLY=${XEMACS_ONLY} EMACS_ONLY=${EMACS_ONLY} \
 		LISPDIR=${LISPDIR}/${PORTNAME} LIECE_ETCDIR=${LIECE_ETCDIR} \
@@ -67,12 +73,18 @@ PLIST_SUB=	EMACS_NAME=${EMACS_NAME} \
 
 DOCS=		AUTHORS lisp/ChangeLog
 
+post-build:
+	(cd ${WRKSRC}/etc/po ; msgfmt -o liece.mo ja.po)
+	(cd ${WRKSRC}/etc ; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} sample.dot.emacs)
 post-install:
+	(cd ${WRKSRC}/etc ; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install)
+	${MKDIR} ${PREFIX}/${LIECE_ETCDIR}/icons
+	${INSTALL_DATA} ${WRKSRC}/etc/icons/*.xpm ${PREFIX}/${LIECE_ETCDIR}/icons
 	${MKDIR} ${PREFIX}/${LIECE_ETCDIR}/po/ja_JP.EUC/LC_MESSAGES
 	${LN} -sf ja_JP.EUC ${PREFIX}/${LIECE_ETCDIR}/po/ja
-	msgfmt -o ${PREFIX}/${LIECE_ETCDIR}/po/ja_JP.EUC/LC_MESSAGES/liece.mo ${WRKSRC}/etc/po/ja.po
+	${INSTALL_DATA} ${WRKSRC}/etc/po/liece.mo ${PREFIX}/${LIECE_ETCDIR}/po/ja_JP.EUC/LC_MESSAGES
 .if !defined(NOPORTDOCS)
-	${INSTALL_DATA} ${WRKSRC}/sample.dot.emacs ${PREFIX}/${LIECE_ETCDIR}/
+#	${INSTALL_DATA} ${WRKSRC}/etc/sample.dot.emacs ${PREFIX}/${LIECE_ETCDIR}/
 	${MKDIR} ${PREFIX}/${LIECE_ETCDIR}/doc
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/${LIECE_ETCDIR}/doc/

@@ -8,10 +8,8 @@
 %%LIECE_ETCDIR%%/icons/encrypt.xpm
 %%LIECE_ETCDIR%%/icons/forward.xpm
 %%LIECE_ETCDIR%%/icons/home.xpm
-%%LIECE_ETCDIR%%/icons/icons.gif
 %%LIECE_ETCDIR%%/icons/icons.xpm
 %%LIECE_ETCDIR%%/icons/key.xpm
-%%LIECE_ETCDIR%%/icons/liece-pointer.xbm
 %%LIECE_ETCDIR%%/icons/liece-pointer.xpm
 %%LIECE_ETCDIR%%/icons/location.xpm
 %%LIECE_ETCDIR%%/icons/naruto.blank.xpm
@@ -23,8 +21,8 @@
 %%LIECE_ETCDIR%%/icons/search.xpm
 %%LIECE_ETCDIR%%/icons/stop.xpm
 %%LIECE_ETCDIR%%/po/ja_JP.EUC/LC_MESSAGES/liece.mo
-@exec ln -sf ja_JP.EUC %D/%%LIECE_ETCDIR%%/po/ja
 %%LIECE_ETCDIR%%/po/ja.po
+@exec ln -sf ja_JP.EUC %D/%%LIECE_ETCDIR%%/po/ja
 %%LIECE_ETCDIR%%/styles/bottom
 %%LIECE_ETCDIR%%/styles/middle
 %%LIECE_ETCDIR%%/styles/top
@@ -46,8 +44,8 @@
 %%XEMACS_ONLY%%%%LISPDIR%%/auto-autoloads.elc
 %%XEMACS_ONLY%%%%LISPDIR%%/custom-load.el
 %%XEMACS_ONLY%%%%LISPDIR%%/custom-load.elc
-%%EMACS_ONLY%%%%LISPDIR%%/bitmap-stipple.el
-%%EMACS_ONLY%%%%LISPDIR%%/bitmap-stipple.elc
+%%LISPDIR%%/bitmap-stipple.el
+%%LISPDIR%%/bitmap-stipple.elc
 %%LISPDIR%%/gettext.el
 %%LISPDIR%%/gettext.elc
 %%LISPDIR%%/liece-000.el

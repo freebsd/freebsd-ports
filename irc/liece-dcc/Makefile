@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	liece-dcc
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.6
 CATEGORIES=	irc
 MASTER_SITES=	http://www.unixuser.org/~ueno/liece/dist/
 DISTNAME=	liece-${PORTVERSION}
 
-MAINTAINER=	yoichi@eken.phys.nagoya-u.ac.jp
+MAINTAINER=	yoichi@FreeBSD.org
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes

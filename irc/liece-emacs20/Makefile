@@ -10,4 +10,4 @@ MASTERDIR=	${.CURDIR}/../liece
 
 EMACS_PORT_NAME=	emacs20
 
-.include <${MASTERDIR}/Makefile>
+.include "${MASTERDIR}/Makefile"
