@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	qt
+PORTNAME?=	qt
 PORTVERSION=	3.1.2
 PORTREVISION?=	1
 CATEGORIES?=	x11-toolkits
@@ -31,10 +31,10 @@ USE_X_PREFIX=	yes
 HAS_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 NO_FILTER_SHLIBS=yes
-CONFIGURE_ARGS=	-system-libpng -system-libjpeg -system-libmng	\
+CONFIGURE_ARGS+=	-system-libpng -system-libjpeg -system-libmng	\
 		-qt-imgfmt-png -qt-imgfmt-jpeg -qt-imgfmt-mng	\
 		-system-zlib -no-nas-sound -sm -qt-gif -thread	\
-		-no-fast -xinerama -no-g++-exceptions -no-stl	\
+		-fast -xinerama -no-g++-exceptions -no-stl	\
 		${CUPS} -shared -prefix ${PREFIX} -datadir ${DATADIR} \
 		-docdir ${DOCSDIR} -plugindir ${PREFIX}/lib/plugins
 
@@ -63,15 +63,13 @@ CUPS=	-cups -L${LOCALBASE}/lib -I${LOCALBASE}/include
 .else
 CUPS=
 .endif
-.endif
 
-.if !defined(BUILD_PLUGIN_ONLY)
 CONFIGURE_ENV=	${ECHO} yes | QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
 MAKE_ENV?=	QTDIR=${WRKSRC} \
 		LD_LIBRARY_PATH=${WRKSRC}/lib \
 		PATH=${WRKSRC}/bin:$$PATH
 ALL_TARGET=	sub-tools
-.endif
+.endif # !defined(BUILD_PLUGIN_ONLY)
 
 .if ${MACHINE_ARCH} == "alpha"
 CFLAGS+=	-O0
@@ -105,18 +103,29 @@ BROKEN=	"The QT ${PORTVERSION} port does not support any XFree86 < 4.x"
 BROKEN=	"You have QT2 headers installed!  Installing this port"
 BROKEN+="will result in conflicts between QT3 and QT2!"
 .endif
-.endif
+.endif # !defined(BUILD_PLUGIN_ONLY)
 
 post-patch:
 .if !defined(BUILD_PLUGIN_ONLY)
 	@${FIND} ${WRKSRC} -name CVS | ${XARGS} ${RM} -fr
-	@${RM} -fr ${WRKSRC}/examples ${WRKSRC}/tutorial
 	@cd ${WRKSRC}/include; \
 		${RM} -f jri.h jri_md.h jritypes.h npapi.h npupp.h
 	@cd ${WRKSRC}/extensions/nsplugin/src; \
 		${RM} -f jri.h jri_md.h jritypes.h npapi.h npupp.h \
 		npunix.c npwin.cpp
+.else
+	${REINPLACE_CMD} -e \
+		"s,-lmysqlclient,-L${LOCALBASE}/lib/mysql -lmysqlclient," \
+		${WRKSRC}/plugins/src/sqldrivers/mysql/mysql.pro
+	@${RM} -fr ${WRKSRC}/extensions ${WRKSRC}/tools \
+		${WRKSRC}/plugins/src/styles \
+		${WRKSRC}/plugins/src/codecs \
+		${WRKSRC}/plugins/src/accessible \
+		${WRKSRC}/plugins/src/imageformats
+	${LN} -s ${X11BASE}/bin/qmake ${WRKSRC}/bin/qmake
+	${ECHO_CMD} "qmake:" > ${WRKSRC}/qmake/GNUmakefile.in
 .endif
+	@${RM} -fr ${WRKSRC}/examples ${WRKSRC}/tutorial
 	@${REINPLACE_CMD} -e 's,-O2,${CXXFLAGS},' \
 		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
 	@${REINPLACE_CMD} -e 's,gcc,${CC},' \
@@ -129,9 +138,9 @@ post-patch:
 		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
 	@${REINPLACE_CMD} -e 's,release,release thread,' \
 		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
+.if !defined(BUILD_PLUGIN_ONLY)
 	@${RM} ${WRKSRC}/mkspecs/freebsd-g++/qmake.conf.bak
 
-.if !defined(BUILD_PLUGIN_ONLY)
 post-build:
 .for tool in makeqpf mergetr msg2qm qembed qvfb
 	cd ${WRKSRC}/tools/${tool}; ${SETENV} ${MAKE_ENV} ${MAKE}
@@ -144,6 +153,6 @@ pre-install:
 .for tool in makeqpf mergetr msg2qm qembed qvfb
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/${tool}/${tool} ${PREFIX}/bin
 .endfor
-.endif
+.endif # !defined(BUILD_PLUGIN_ONLY)
 
 .include <bsd.port.post.mk>
