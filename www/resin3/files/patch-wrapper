@@ -1,8 +1,0 @@
---- bin/wrapper.pl.in.orig	Sat Oct  4 09:45:23 2003
-+++ bin/wrapper.pl.in	Sat Oct  4 09:45:43 2003
-@@ -1,4 +1,4 @@
--#! @PERL@
-+#! %%PERL%%
- #
- # Copyright(c) 1998-2002 Caucho Technology
- #

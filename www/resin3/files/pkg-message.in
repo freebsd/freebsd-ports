@@ -1,8 +1,14 @@
 Resin is now installed in %%APP_HOME%%
 
-You may want to start it using the
-startup script installed as %%PREFIX%%/etc/rc.d/%%APP_NAME%%.sh and then point
-your web browser to the default home page at http://localhost:%%PORT%%/ to read
-the documentation and test the samples.
+You may want to activate it in /etc/rc.conf:
+
+%%APP_NAME%%_enable="YES"
+
+Then start it:
+
+env - %%PREFIX%%/etc/rc.d/%%APP_NAME%%.sh start
+
+And point your web browser to the default home page at
+http://localhost:%%PORT%%/ to read the documentation and test the samples.
 
 Resin configuration is located at %%PREFIX%%/etc/%%APP_NAME%%/resin.xml
