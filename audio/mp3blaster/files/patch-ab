@@ -1,17 +1,17 @@
---- configure.orig	Tue Apr 10 23:19:27 2001
-+++ configure	Fri Jun  8 17:38:18 2001
-@@ -1549,8 +1549,8 @@
+--- configure.orig	Sun Jun 17 18:30:26 2001
++++ configure	Thu Aug 16 04:34:42 2001
+@@ -1557,8 +1557,8 @@
  if test "`uname -s`" = "FreeBSD" ; then
    echo "FreeBSD detected."
    FREEBSD=1
 -  LDFLAGS="-L/usr/local/lib $LDFLAGS"
 -  CPPFLAGS="-I/usr/local/include $CPPFLAGS"
-+  LDFLAGS="$LDFLAGS -L${libdir}"
++  LDFLAGS="-L${libdir} $LDFLAGS"
 +  CPPFLAGS="-I${includedir} $CPPFLAGS"
- 	cat >> confdefs.h <<\EOF
+   cat >> confdefs.h <<\EOF
  #define AUDIO_NONBLOCKING 1
  EOF
-@@ -2195,7 +2195,7 @@
+@@ -2289,7 +2289,7 @@
  fi
  done
  
@@ -20,11 +20,3 @@
  do
  ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
  echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
-@@ -3382,7 +3382,6 @@
- 
- 
- 
--CXXFLAGS="$CXXFLAGS -g -Wall -Wstrict-prototypes -W -fno-strength-reduce "
- SRCDIRS="mpegsound nmixer src doc"
- 
- trap '' 1 2 15
