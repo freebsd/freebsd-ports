@@ -1,0 +1,3 @@
+The logpap package provides four macros for drawing logarithmic-logarithmic,
+logarithmic-linear, linear-logarithmic and (because it was easy to implement)
+linear-linear graph paper with LaTeX.

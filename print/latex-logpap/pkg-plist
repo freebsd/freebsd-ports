@@ -1,0 +1,11 @@
+@comment $FreeBSD$
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/example.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%CLASSDIR%%/example.tex
+%%CLASSDIR%%/logpap.dtx
+%%CLASSDIR%%/logpap.ins
+%%CLASSDIR%%/logpap.sty
+@dirrm %%CLASSDIR%%
+@exec %%MKTEXLSR%%
+@unexec %%MKTEXLSR%%
