@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-MockObject
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
@@ -18,7 +18,7 @@ COMMENT=	Tests remote URLs or local web files
 PERL_CONFIGURE=	yes
 INSTALL_TARGET=	pure_install
 
-MAN3=		Test::MockObject.3
+MAN3=		Test::MockObject.3 Test::MockObject::Extends.3
 
 .include <bsd.port.pre.mk>
 
