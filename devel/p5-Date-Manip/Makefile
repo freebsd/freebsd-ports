@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Date
 PKGNAMEPREFIX=	p5-
 DISTNAME=	DateManip-${PORTVERSION}
 
-MAINTAINER=	port@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module containing date manipulation routines
 
 PERL_CONFIGURE=	YES
