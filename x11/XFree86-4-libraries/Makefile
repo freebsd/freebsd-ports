@@ -27,12 +27,12 @@ COMMENT=	XFree86-4 libraries and headers
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
-CONFLICTS=	libX11-* libGL-* libGLU-* libICE-* libSM-* libXau-* libXaw-* \
-		libXcursor-* libXdmcp-* libXext-* libXfont-* libXi-* \
+CONFLICTS=	Mesa-* libX11-* libGL-* libGLU-* libICE-* libSM-* libXau-* \
+		libXaw-* libXcursor-* libXdmcp-* libXext-* libXfont-* libXi-* \
 		libXinerama-* libXmu-* libXp-* libXpm-* libXrandr-* \
 		libXrender-* libXres-* libXt-* libXv-* libXxf86-* libxkbfile-* \
 		panoramixext-* printext-* randrext-* renderext-* resourceext-* \
-		xextensions-* xf86ext-* xlibs-* xorg-libraries-* xproto-*
+		xextensions-* xf86ext-* xlibs-* xorg-libraries-* xpm-* xproto-*
 
 USE_X_PREFIX=		no
 PREFIX?=		${X11BASE}
