@@ -1,5 +1,5 @@
---- wireless-applet/wireless-applet.c.orig	Sun May 18 11:50:43 2003
-+++ wireless-applet/wireless-applet.c	Fri Aug  8 10:10:53 2003
+--- wireless/wireless-applet.c.orig	Sun May 18 11:50:43 2003
++++ wireless/wireless-applet.c	Fri Aug  8 10:10:53 2003
 @@ -30,12 +30,25 @@
  #include <math.h>
  #include <dirent.h>
