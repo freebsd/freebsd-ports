@@ -3,7 +3,7 @@
 # Date created:				May 9th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.2 1997/06/03 06:11:35 asami Exp $
+#   $Id: Makefile,v 1.3 1998/09/17 10:53:30 asami Exp $
 #
 
 DISTNAME=	rwhois-1.0B9.2
@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.rwhois.net/pub/
 MAINTAINER=	jfitz@FreeBSD.ORG
 
 LIB_DEPENDS=	wrap.7:${PORTSDIR}/security/tcp_wrapper
+
+BROKEN_ELF=	yes
 
 HAS_CONFIGURE=	YES
 CONFIGURE_ARGS=	--prefix=${PREFIX}/lib/rwhois
