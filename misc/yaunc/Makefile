@@ -7,6 +7,7 @@
 
 PORTNAME=	yaunc
 PORTVERSION=	0.06
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.redterror.net/code/yaunc/
 

@@ -1,0 +1,13 @@
+--- Makefile.in.orig	Sat Apr 14 19:35:14 2001
++++ Makefile.in	Sat Apr 14 19:35:43 2001
+@@ -83,8 +83,8 @@
+ # To tell automake that these should go in the tar
+ EXTRA_DIST = $(man_MANS) $(sysconf_DATA) TO-DO
+ 
+-CFLAGS = @CFLAGS@ -Wall -Werror -DSYSCONFDIR=\"$(sysconfdir)\"
+-LDFLAGS = @LDFLAGS@ -Wall -Werror
++CFLAGS = @CFLAGS@ -DSYSCONFDIR=\"$(sysconfdir)\"
++LDFLAGS = @LDFLAGS@
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = config.h
