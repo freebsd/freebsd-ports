@@ -2998,7 +2998,6 @@ gstreamer	ports/multimedia/gstreamer
 gstreamer-editor	ports/multimedia/gstreamer-editor
 gstreamer-ffmpeg	ports/multimedia/gstreamer-ffmpeg
 gstreamer-monkeysaudio	ports/audio/gstreamer-monkeysaudio
-gstreamer-player	ports/multimedia/gstreamer-player
 gstreamer-plugins	ports/multimedia/gstreamer-plugins
 gsubedit	ports/multimedia/gsubedit
 gtar		ports/archivers/gtar
