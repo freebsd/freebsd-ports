@@ -4,8 +4,7 @@ images is troubled because of Unisys' zeal in patent enforcement.
 
 --- gd.h	Tue Feb  6 14:44:01 2001
 +++ gd.h	Fri Jul 27 16:10:38 2001
-@@ -95,2 +95,4 @@
- gdImagePtr gdImageCreate(int sx, int sy);
+@@ -184,1 +184,3 @@
 +gdImagePtr gdImageCreateFromGif(FILE *fd);
 +gdImagePtr gdImageCreateFromGifCtx(gdIOCtxPtr in);
  gdImagePtr gdImageCreateFromPng(FILE *fd);

@@ -16,5 +16,5 @@ include/gd/gdfonts.h
 include/gd/gdfontt.h
 lib/libgd.a
 lib/libgd.so
-lib/libgd.so.2
+lib/libgd.so.3.0
 @dirrm include/gd

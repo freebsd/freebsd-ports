@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gd
-PORTVERSION=	1.8.4
-PORTREVISION=	3
+PORTVERSION=	2.0.1
 CATEGORIES+=	graphics
 MASTER_SITES=	http://www.boutell.com/gd/http/ \
 		ftp://ftp.boutell.com/pub/boutell/gd/ \
@@ -22,26 +21,29 @@ MAINTAINER?=	ports@FreeBSD.org
 .if !exists(/usr/bin/bzip2)
 BUILD_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
 .endif
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		freetype:${PORTSDIR}/print/freetype2
 
 USE_FREETYPE2=	yes
-
-.if defined(WITH_X11)
-USE_XLIB=	yes
+.ifndef WITHOUT_XPM
+# Temporary hack, until X-less XPM building is added to USE_XPM:
+.ifndef WITHOUT_X11
 USE_XPM=	yes
+.else
+LIB_DEPENDS+=	xpm:${PORTSDIR}/graphics/xpm
+.endif
+.else
+MAKE_ARGS+=	-DWITHOUT_XPM
 .endif
 
 INSTALLS_SHLIB=	yes
+MAKEFILE=	${FILESDIR}/Makefile.bsd
+MAKE_ARGS+=	-j2
+.for v in WRKSRC INSTALL_PROGRAM INSTALL_DATA INSTALL_SCRIPT
+MAKE_ARGS+=	$v="${$v}"
+.endfor
 
 post-extract:
 	bzip2 -d < ${_DISTDIR}/gd_gif_in.c.bz2 > ${WRKSRC}/gd_gif_in.c
-
-pre-everything:
-.if !defined(WITH_X11)
-	@${ECHO_MSG} "If you want to compile in X support use "
-	@${ECHO_MSG} "'make -DWITH_X11' instead"
-.endif
 
 .include <bsd.port.mk>

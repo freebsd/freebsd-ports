@@ -1,0 +1,49 @@
+PROGS!=	make -V BIN_PROGRAMS -f ${WRKSRC}/Makefile
+TESTS!=	make -V TEST_PROGRAMS -f ${WRKSRC}/Makefile
+OBJS!=	make -V LIBOBJS -f ${WRKSRC}/Makefile
+OBJS+=	gd_gif_in.o
+LIB=gd
+SHLIB_MAJOR=3
+SHLIB_MINOR=0
+INCS=	gd.h gd_io.h gdcache.h gdfontg.h gdfontl.h gdfontmb.h \
+	gdfonts.h gdfontt.h
+SHLIB_NAME!=	make -V SHLIB_NAME LIB=${LIB} \
+	SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR} -f bsd.lib.mk
+
+CFLAGS+=-I${.CURDIR} -I${LOCALBASE}/include/freetype2/ \
+	-I${LOCALBASE}/include/freetype2/freetype -I${LOCALBASE}/include \
+	-DHAVE_LIBPNG -DHAVE_LIBJPEG -DHAVE_LIBFREETYPE
+LDADD=	-L${LOCALBASE}/lib -lpng -lz -ljpeg -lfreetype -lm
+
+.ifndef WITHOUT_XPM
+CFLAGS+=-I${X11BASE}/include/X11 -DHAVE_XPM
+LDADD+=	-L${X11BASE}/lib -lXpm
+.ifdef WITHOUT_X11
+CFLAGS+=-DXPM_NOX
+.else
+LDADD+=	-lX11
+.endif
+.endif
+
+# The package comes with tests, but without any sort of test-harness,
+# to run them all automaticly. So building tests is disabled here.	-mi
+all: lib${LIB}.a ${SHLIB_NAME} ${PROGS} # ${TESTS}
+
+lib${LIB}.a ${SHLIB_NAME}:
+	make LIB=${LIB} SRCS="${OBJS:.o=.c}" \
+		SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR} \
+		CFLAGS="${CFLAGS}" -ECFLAGS LDADD="${LDADD}" \
+		-f bsd.lib.mk ${.TARGET}
+
+${PROGS} ${TESTS}: ${SHLIB_NAME} lib${LIB}.a
+	make PROG=${.TARGET} NOMAN=1 LDADD="-L. -lgd" \
+		CFLAGS="${CFLAGS}" -ECFLAGS -f bsd.prog.mk
+
+install:
+	mkdir -p ${PREFIX}/include/gd
+	make LIB=${LIB} LIBDIR="${PREFIX}/lib" \
+		SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR} \
+		-f bsd.lib.mk install
+	cd ${.CURDIR} && ${INSTALL_DATA} ${INCS} ${PREFIX}/include/gd
+	cd ${.CURDIR} && ${INSTALL_PROGRAM} ${PROGS} "${PREFIX}/bin/"
+	${INSTALL_SCRIPT} "${.CURDIR}/bdftogd" "${PREFIX}/bin/"
