@@ -26,7 +26,7 @@ LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
 # If it is not present, extract it from the comms/ixj port
 .if !exists(/usr/include/sys/telephony.h)
 .if !exists(/usr/local/include/sys/telephony.h)
-BUILD_DEPENDS=  ${NONEXISTENT}:${PORTSDIR}/comms/ixj:patch
+PATCH_DEPENDS=  ${NONEXISTENT}:${PORTSDIR}/comms/ixj:patch
 .endif
 .endif
 .endif
