@@ -8,7 +8,7 @@
 
 DISTNAME=	wminet-2.0.2
 CATEGORIES=	sysutils windowmaker
-MASTER_SITES=	ftp://ftp.mezaway.org/pub/DockApps/
+MASTER_SITES=	http://www.neotokyo.org/illusion/
 
 MAINTAINER=	sk-ports@vegamuse.org
 
