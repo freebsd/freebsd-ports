@@ -13,6 +13,8 @@ MASTER_SITES=	http://homemade.hypermart.net/dejasearch/ \
 
 MAINTAINER=	kris@FreeBSD.org
 
+FORBIDDEN=	"Does not work with new google deja service"
+
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
 
 MAN1=		dejasearch.1
