@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	swish++
-PORTVERSION=	5.13.5
+PORTVERSION=	5.14.1
 CATEGORIES=	www textproc
 MASTER_SITES=	http://homepage.mac.com/pauljlucas/software/
 
