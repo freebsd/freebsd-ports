@@ -166,6 +166,7 @@
 
 PORTNAME=	vlc
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
 		http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/contrib/:ffmpeg \
@@ -476,7 +477,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libmatroska.a:${PORTSDIR}/multimedia/libmatrosk
 .if !defined(WITHOUT_LIBA52)
 LIB_DEPENDS+=	a52.0:${PORTSDIR}/audio/liba52
 CONFIGURE_ARGS+=--enable-a52 \
-		--with-a52=${LOCALBASE}
+		--with-a52-tree=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--diable-a52
 .endif
@@ -639,6 +640,10 @@ post-patch:
 		s|$$(libdir)/mozilla/components|${FAKEDIR}/mozilla|' \
 			${WRKSRC}/mozilla/Makefile.in
 .endif
+# a52
+	@${REINPLACE_CMD} -e 's|include/a52.h|include/a52dec/a52.h|' \
+		${WRKSRC}/modules/audio_filter/converter/a52tofloat32.c \
+		${WRKSRC}/configure
 # skins2 interface
 	@${REINPLACE_CMD} -e 's|lrint|rint|' \
 		${WRKSRC}/modules/gui/skins2/controls/ctrl_list.cpp
