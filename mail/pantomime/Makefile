@@ -7,6 +7,7 @@
 
 PORTNAME=	pantomime
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.collaboration-world.com/pantomime.data/releases/Stable/ \
 		ftp://ftp.gnustep.org/pub/gnustep/libs/
@@ -24,6 +25,7 @@ USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 ALL_TARGET=
 NO_MTREE=	yes
+USE_GCC=	3.2
 
 BACKBUNDLEDIR=	${PREFIX}/System/Library/Bundles/libgnustep-back.bundle/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu
 
