@@ -91,7 +91,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libonew${INPUT_METHOD}.a:${PORTSDIR}/japanese/o
 FEPOPT+=	-DONEW
 # If we use ONEW libray, then -lonew-* needs appear
 # before the other libraries in ${FEPLIBS}.
-$## 'sed' in the next line cannot be replaced with '${SED}'
+## 'sed' in the next line cannot be replaced with '${SED}'
 FEPLIBS!=	${ECHO_CMD} ${FEPLIBS} | sed 's%^%-lonew${INPUT_METHOD} %'
 FEPOBJS=	feponew.o
 ###
