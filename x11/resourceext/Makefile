@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	resourceext
-PORTVERSION=	1.0.p1
+PORTVERSION=	1.0
 CATEGORIES=	x11
-MASTER_SITES=	http://pdx.freedesktop.org/~anholt/dist/
+MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Resource usage extension headers
@@ -19,6 +19,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-1.0
+USE_GNOME=	gnomehack
 
 .include <bsd.port.mk>
