@@ -1,72 +1,69 @@
+# ex:ts=8	-*-mode: makefile-*-
 # Common file for CUPS ports
 # $FreeBSD$
 
-MASTER_SITES=	\
-    ftp://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/cups/${CUPS_VERSION}/ \
-    ftp://ftp.ntua.gr/pub/gnu/cups/${CUPS_VERSION}/ \
-    ftp://ftp.easysw.com/pub/cups/${CUPS_VERSION}/ \
-    ftp://ftp.fisek.com.tr/pub/cups/${CUPS_VERSION}/ \
-    ftp://ftp.mpg.goe.ni.schule.de/pub/internet/printing/cups/${CUPS_VERSION}/
+CUPS_MASTER_SITES=\
+  ftp://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/cups/${CUPS_VERSION}/ \
+  ftp://ftp.ntua.gr/pub/gnu/cups/${CUPS_VERSION}/ \
+  ftp://ftp.easysw.com/pub/cups/${CUPS_VERSION}/ \
+  ftp://ftp.fisek.com.tr/pub/cups/${CUPS_VERSION}/ \
+  ftp://ftp.mpg.goe.ni.schule.de/pub/internet/printing/cups/${CUPS_VERSION}/
 
-CUPS_VERSION=	1.1.16
+CUPS_VERSION=	1.1.18
 CUPS_REVISION=	0
-
-CUPS_USER=	daemon
-CUPS_GROUP=	daemon
-LOCALSTATEDIR=	/var
-SPOOLDIR=	${LOCALSTATEDIR}/spool/cups
-OPTFLAGS?=	""
-
-.ifdef CUPS_FR
-MANLANG=	"" fr
-.else
-#EXTRA_PATCHES=${.CURDIR}/../../print/cups/files/fr-patch-man-Makefile
-.endif
-
-#EXTRA_PATCHES+=${.CURDIR}/../../print/cups/files/patch-man-Makefile
-#EXTRA_PATCHES+=${.CURDIR}/../../print/cups/files/patch-man-fr-Makefile
-EXTRA_PATCHES+=${.CURDIR}/../../print/cups/files/patch-config-scripts-cups-common.m4
-EXTRA_PATCHES+=${.CURDIR}/../../print/cups/files/patch-Makedefs.in
-
-#protect the base port
-.if ${PORTNAME} != "cups"
-.if ${CUPS_REVISION} == 0
-CUPS_PORTVER=	${CUPS_VERSION}
-DISTNAME=	cups-${CUPS_VERSION}-source
-.else # ${CUPS_REVISION} != 0
 CUPS_PORTVER=	${CUPS_VERSION}.${CUPS_REVISION}
+CUPS_PORTEPOCH=	0
+CUPS_FILESDIR=	${.CURDIR}/../../print/cups/files
+CUPS_DOCSDIR=	${PREFIX}/share/doc/cups-${CUPS_PORTVER}
+CUPS_SPOOLDIR=	/var/spool/cups
+
+# file, dir ownership
+CUPSGRP=	wheel
+CUPSOWN=	daemon
+
+######################################################################
+# The rest of the file is for components (cups-base, cups-lpr) only.
+######################################################################
+
+.if ${PORTNAME} == "cups-base" || ${PORTNAME} == "cups-lpr"
+
+MANLANG=	"" fr
+
+.if ${CUPS_REVISION} < 1
+DISTNAME=	cups-${CUPS_VERSION}-source
+.else
 DISTNAME=	cups-${CUPS_VERSION}-${CUPS_REVISION}-source
-.endif # ${CUPS_REVISION} != 0
+.endif # ${CUPS_REVISION} < 1
+
 DISTFILES=	${DISTNAME}.tar.bz2
 WRKSRC=		${WRKDIR}/cups-${CUPS_VERSION}
-
-USE_BZIP2=	yes
-#Breaks build.. USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-
-AUTOCONF=	autoconf
-BUILD_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf
 
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS}"
-CONFIGURE_ENV+=	CPPFLAGS="-I${PREFIX}/include -I${X11BASE}/include"
-CONFIGURE_ENV+=	DSOFLAGS="-L${PREFIX}/lib -L${X11BASE}/lib"
-CONFIGURE_ENV+=	LDFLAGS="-L${PREFIX}/lib -L${X11BASE}/lib"
+WANT_AUTOCONF_VER=	253
 
-CONFIGURE_ARGS+=							\
-	--localstatedir=${LOCALSTATEDIR}				\
-	--with-cups-user=${CUPS_USER} --with-cups-group=${CUPS_GROUP}	\
-	--with-rcdir=${PREFIX}/etc/rc.d --without-pam
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_PERL5_RUN=	yes
+GNU_CONFIGURE=	yes
 
-post-patch::
-	${RM} -f ${WRKSRC}/man/Makefile ${WRKSRC}/man/Makefile.common
-	${TOUCH} ${WRKSRC}/man/Makefile.common
-	${CP} -f ${.CURDIR}/../../print/cups/Makefile.man \
-		${WRKSRC}/man/Makefile
-	cd ${WRKSRC}; ${AUTOCONF} --force
+CONFIGURE_ARGS+=	--localstatedir=/var		\
+			--disable-pam			\
+			--with-cups-user=${CUPSOWN}	\
+			--with-cups-group=${CUPSGRP}	\
+			--with-docdir=${CUPS_DOCSDIR}	\
+			--with-rcdir=${PREFIX}/etc/rc.d
+
+CONFIGURE_ARGS+=	CPPFLAGS="-I${PREFIX}/include"
+CONFIGURE_ARGS+=	CFLAGS="${CFLAGS} -I${PREFIX}/include"
+CONFIGURE_ARGS+=	CXXFLAGS="${CFLAGS} -I${PREFIX}/include"
+CONFIGURE_ARGS+=	DSOFLAGS="-Wl,-rpath,${PREFIX}/lib -L${PREFIX}/lib"
+CONFIGURE_ARGS+=	LDFLAGS="-L${PREFIX}/lib"
+
+pre-configure::
+	@${ECHO_CMD} Configuring CUPS with options:
+	@${ECHO_CMD} ${CONFIGURE_ARGS} | fmt
 
 .endif # ${PORTNAME} != "cups"
-

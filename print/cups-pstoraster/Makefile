@@ -7,7 +7,7 @@
 
 PORTNAME=	cups-pstoraster
 PORTVERSION=	7.05.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.easysw.com/pub/ghostscript/
@@ -16,8 +16,8 @@ DISTNAME=		espgs-${PORTVERSION}-source
 
 MAINTAINER=	alane@FreeBSD.org
 
-LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base
-RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/fonts.scale:${PORTSDIR}/print/ghostscript-gnu
+LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
+RUN_DEPENDS+=	${LOCALBASE}/share/ghostscript/fonts/fonts.scale:${PORTSDIR}/print/ghostscript-gnu
 
 WRKSRC=		${WRKDIR}/espgs-${PORTVERSION}
 
@@ -48,5 +48,9 @@ do-install:
 		${PREFIX}/etc/cups
 	${INSTALL_SCRIPT} ${WRKSRC}/pstoraster/pstoraster \
 		${PREFIX}/libexec/cups/filter
+	${CHOWN} -R ${CUPSOWN}:${CUPSGRP} \
+		${PREFIX}/etc/cups ${PREFIX}/libexec/cups/filter
 
-.include <bsd.port.mk>
+.include "${.CURDIR}/../../print/cups/Makefile.common"
+.include <bsd.port.pre.mk>
+.include <bsd.port.post.mk>

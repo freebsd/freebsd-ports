@@ -1,16 +1,18 @@
---- man/Makefile.common.orig	Sat Jun  8 01:05:48 2002
-+++ man/Makefile.common	Sat Jun  8 01:08:44 2002
-@@ -26,26 +26,17 @@
+--- man/Makefile.common.orig	Tue Dec 17 13:59:55 2002
++++ man/Makefile.common	Wed Jan 22 07:38:08 2003
+@@ -26,9 +26,8 @@
  # Man pages...
  #
  
 -MAN1	=	backend.man \
+-		cupstestppd.man \
 -		filter.man \
--		lp.man \
-+MAN1	=	lp.man \
++MAN1	=	cupsaddsmb.man\
++		cupstestppd.man\
+ 		lp.man \
  		lpoptions.man \
  		lppasswd.man \
- 		lpq.man \
+@@ -36,50 +35,17 @@
  		lprm.man \
  		lpr.man \
  		lpstat.man
@@ -20,13 +22,48 @@
 -		mime.convs.man \
 -		mime.types.man \
 -		printers.conf.man
-+MAN3	=
-+MAN5	=
  MAN8	=	accept.man \
- 		cupsaddsmb.man \
+-		cupsaddsmb.man \
 -		cups-lpd.man \
 -		cups-polld.man \
 -		cupsd.man \
  		enable.man \
  		lpadmin.man \
  		lpinfo.man \
+ 		lpmove.man \
+ 		lpc.man
+ 
+-CAT1	=	backend.$(CAT1EXT) \
+-		cupstestppd.$(CAT1EXT) \
+-		filter.$(CAT1EXT) \
+-		lp.$(CAT1EXT) \
+-		lpoptions.$(CAT1EXT) \
+-		lppasswd.$(CAT1EXT) \
+-		lpq.$(CAT1EXT) \
+-		lprm.$(CAT1EXT) \
+-		lpr.$(CAT1EXT) \
+-		lpstat.$(CAT1EXT)
+-CAT3	=	cups-config.$(CAT3EXT)
+-CAT5	=	classes.conf.$(CAT5EXT) \
+-		cupsd.conf.$(CAT5EXT) \
+-		mime.convs.$(CAT5EXT) \
+-		mime.types.$(CAT5EXT) \
+-		printers.conf.$(CAT5EXT)
+-CAT8	=	accept.$(CAT8EXT) \
+-		cupsaddsmb.$(CAT8EXT) \
+-		cups-lpd.$(CAT8EXT) \
+-		cups-polld.$(CAT8EXT) \
+-		cupsd.$(CAT8EXT) \
+-		enable.$(CAT8EXT) \
+-		lpadmin.$(CAT8EXT) \
+-		lpinfo.$(CAT8EXT) \
+-		lpmove.$(CAT8EXT) \
+-		lpc.$(CAT8EXT)
+-
++CAT1	=
++CAT3	=
++CAT5	=
++CAT8	=
+ 
+ #
+ # End of "$Id: Makefile.common,v 1.3 2002/12/17 18:59:55 swdev Exp $".

@@ -1,19 +1,12 @@
 bin/cups-config
-etc/rc.d/cupsd.sh.sample
-@unexec if cmp -s %D/etc/cups/classes.conf %D/etc/cups/classes.conf.sample; then rm -f %D/etc/cups/classes.conf; fi
-etc/cups/classes.conf.sample
-@exec test -f %B/classes.conf || cp %B/%f %B/classes.conf
-@unexec if cmp -s %D/etc/cups/client.conf %D/etc/cups/client.conf.sample; then rm -f %D/etc/cups/client.conf; fi
-etc/cups/client.conf.sample
-@exec test -f %B/client.conf || cp %B/%f %B/client.conf
-@unexec if cmp -s %D/etc/cups/cupsd.conf %D/etc/cups/cupsd.conf.sample; then rm -f %D/etc/cups/cupsd.conf; fi
-etc/cups/cupsd.conf.sample
-@exec test -f %B/cupsd.conf || cp %B/%f %B/cupsd.conf
+etc/cups/certs/0
+etc/cups/classes.conf.N
+etc/cups/client.conf.N
+etc/cups/cupsd.conf.N
 etc/cups/mime.convs
 etc/cups/mime.types
-@unexec if cmp -s %D/etc/cups/printers.conf %D/etc/cups/printers.conf.sample; then rm -f %D/etc/cups/printers.conf; fi
-etc/cups/printers.conf.sample
-@exec test -f %B/printers.conf || cp %B/%f %B/printers.conf
+etc/cups/printers.conf.N
+etc/rc.d/cups.sh.sample
 include/cups/cups.h
 include/cups/http.h
 include/cups/image.h
@@ -25,6 +18,7 @@ include/cups/raster.h
 lib/libcups.a
 lib/libcups.so
 lib/libcups.so.2
+lib/libcupsimage.a
 lib/libcupsimage.so
 lib/libcupsimage.so.2
 libexec/cups/backend/http
@@ -86,6 +80,7 @@ share/cups/charsets/windows-874
 share/cups/data/HPGLprolog
 share/cups/data/psglyphs
 share/cups/data/testprint.ps
+share/cups/fonts/Courier
 share/cups/fonts/Courier-Bold
 share/cups/fonts/Courier-BoldOblique
 share/cups/fonts/Courier-Oblique
@@ -120,6 +115,51 @@ share/cups/templates/classes.tmpl
 share/cups/templates/config-printer.tmpl
 share/cups/templates/config-printer2.tmpl
 share/cups/templates/error.tmpl
+share/cups/templates/fr/add-class.tmpl
+share/cups/templates/fr/add-printer.tmpl
+share/cups/templates/fr/admin-op.tmpl
+share/cups/templates/fr/admin.tmpl
+share/cups/templates/fr/choose-device.tmpl
+share/cups/templates/fr/choose-make.tmpl
+share/cups/templates/fr/choose-members.tmpl
+share/cups/templates/fr/choose-model.tmpl
+share/cups/templates/fr/choose-serial.tmpl
+share/cups/templates/fr/choose-uri.tmpl
+share/cups/templates/fr/class-added.tmpl
+share/cups/templates/fr/class-confirm.tmpl
+share/cups/templates/fr/class-deleted.tmpl
+share/cups/templates/fr/class-modified.tmpl
+share/cups/templates/fr/classes.tmpl
+share/cups/templates/fr/config-printer.tmpl
+share/cups/templates/fr/config-printer2.tmpl
+share/cups/templates/fr/error.tmpl
+share/cups/templates/fr/header.tmpl
+share/cups/templates/fr/job-cancel.tmpl
+share/cups/templates/fr/job-hold.tmpl
+share/cups/templates/fr/job-op.tmpl
+share/cups/templates/fr/job-release.tmpl
+share/cups/templates/fr/job-restart.tmpl
+share/cups/templates/fr/jobs.tmpl
+share/cups/templates/fr/modify-class.tmpl
+share/cups/templates/fr/modify-printer.tmpl
+share/cups/templates/fr/option-boolean.tmpl
+share/cups/templates/fr/option-header.tmpl
+share/cups/templates/fr/option-pickmany.tmpl
+share/cups/templates/fr/option-pickone.tmpl
+share/cups/templates/fr/option-trailer.tmpl
+share/cups/templates/fr/printer-accept.tmpl
+share/cups/templates/fr/printer-added.tmpl
+share/cups/templates/fr/printer-configured.tmpl
+share/cups/templates/fr/printer-confirm.tmpl
+share/cups/templates/fr/printer-deleted.tmpl
+share/cups/templates/fr/printer-modified.tmpl
+share/cups/templates/fr/printer-purge.tmpl
+share/cups/templates/fr/printer-reject.tmpl
+share/cups/templates/fr/printer-start.tmpl
+share/cups/templates/fr/printer-stop.tmpl
+share/cups/templates/fr/printers.tmpl
+share/cups/templates/fr/test-page.tmpl
+share/cups/templates/fr/trailer.tmpl
 share/cups/templates/header.tmpl
 share/cups/templates/job-cancel.tmpl
 share/cups/templates/job-hold.tmpl
@@ -130,6 +170,7 @@ share/cups/templates/jobs.tmpl
 share/cups/templates/modify-class.tmpl
 share/cups/templates/modify-printer.tmpl
 share/cups/templates/option-boolean.tmpl
+share/cups/templates/option-conflict.tmpl
 share/cups/templates/option-header.tmpl
 share/cups/templates/option-pickmany.tmpl
 share/cups/templates/option-pickone.tmpl
@@ -147,75 +188,112 @@ share/cups/templates/printer-stop.tmpl
 share/cups/templates/printers.tmpl
 share/cups/templates/test-page.tmpl
 share/cups/templates/trailer.tmpl
-share/doc/cups/cmp.html
-share/doc/cups/cmp.pdf
-share/doc/cups/cups.css
-share/doc/cups/cupsdoc.css
-share/doc/cups/documentation.html
-share/doc/cups/idd.html
-share/doc/cups/idd.pdf
-share/doc/cups/images/accept-jobs.gif
-share/doc/cups/images/add-class.gif
-share/doc/cups/images/add-printer.gif
-share/doc/cups/images/cancel-job.gif
-share/doc/cups/images/cancel-jobs.gif
-share/doc/cups/images/cancel.gif
-share/doc/cups/images/classes.gif
-share/doc/cups/images/config-printer.gif
-share/doc/cups/images/continue.gif
-share/doc/cups/images/cups-block-diagram.gif
-share/doc/cups/images/cups-large.gif
-share/doc/cups/images/cups-medium.gif
-share/doc/cups/images/cups-small.gif
-share/doc/cups/images/delete-class.gif
-share/doc/cups/images/delete-printer.gif
-share/doc/cups/images/draft.gif
-share/doc/cups/images/hold-job.gif
-share/doc/cups/images/left.gif
-share/doc/cups/images/logo.gif
-share/doc/cups/images/manage-classes.gif
-share/doc/cups/images/manage-jobs.gif
-share/doc/cups/images/manage-printers.gif
-share/doc/cups/images/modify-class.gif
-share/doc/cups/images/modify-printer.gif
-share/doc/cups/images/navbar.gif
-share/doc/cups/images/print-test-page.gif
-share/doc/cups/images/printer-idle.gif
-share/doc/cups/images/printer-processing.gif
-share/doc/cups/images/printer-stopped.gif
-share/doc/cups/images/reject-jobs.gif
-share/doc/cups/images/release-job.gif
-share/doc/cups/images/restart-job.gif
-share/doc/cups/images/right.gif
-share/doc/cups/images/show-active.gif
-share/doc/cups/images/show-completed.gif
-share/doc/cups/images/start-class.gif
-share/doc/cups/images/start-printer.gif
-share/doc/cups/images/stop-class.gif
-share/doc/cups/images/stop-printer.gif
-share/doc/cups/index.html
-share/doc/cups/ipp.html
-share/doc/cups/ipp.pdf
-share/doc/cups/overview.html
-share/doc/cups/overview.pdf
-share/doc/cups/sam.html
-share/doc/cups/sam.pdf
-share/doc/cups/sdd.html
-share/doc/cups/sdd.pdf
-share/doc/cups/spm.html
-share/doc/cups/spm.pdf
-share/doc/cups/sps.html
-share/doc/cups/sps.pdf
-share/doc/cups/ssr.html
-share/doc/cups/ssr.pdf
-share/doc/cups/stp.html
-share/doc/cups/stp.pdf
-share/doc/cups/sum.html
-share/doc/cups/sum.pdf
-share/doc/cups/svd.html
-share/doc/cups/svd.pdf
-share/doc/cups/translation.html
-share/doc/cups/translation.pdf
+share/doc/cups-1.1.18.0/cmp.html
+share/doc/cups-1.1.18.0/cmp.pdf
+share/doc/cups-1.1.18.0/cups.css
+share/doc/cups-1.1.18.0/cupsdoc.css
+share/doc/cups-1.1.18.0/documentation.html
+share/doc/cups-1.1.18.0/fr/cups.css
+share/doc/cups-1.1.18.0/fr/cupsdoc.css
+share/doc/cups-1.1.18.0/fr/documentation.html
+share/doc/cups-1.1.18.0/fr/images/accept-jobs.gif
+share/doc/cups-1.1.18.0/fr/images/add-class.gif
+share/doc/cups-1.1.18.0/fr/images/add-printer.gif
+share/doc/cups-1.1.18.0/fr/images/cancel-job.gif
+share/doc/cups-1.1.18.0/fr/images/cancel-jobs.gif
+share/doc/cups-1.1.18.0/fr/images/cancel.gif
+share/doc/cups-1.1.18.0/fr/images/config-printer.gif
+share/doc/cups-1.1.18.0/fr/images/continue.gif
+share/doc/cups-1.1.18.0/fr/images/delete-class.gif
+share/doc/cups-1.1.18.0/fr/images/delete-printer.gif
+share/doc/cups-1.1.18.0/fr/images/hold-job.gif
+share/doc/cups-1.1.18.0/fr/images/manage-classes.gif
+share/doc/cups-1.1.18.0/fr/images/manage-jobs.gif
+share/doc/cups-1.1.18.0/fr/images/manage-printers.gif
+share/doc/cups-1.1.18.0/fr/images/modify-class.gif
+share/doc/cups-1.1.18.0/fr/images/modify-printer.gif
+share/doc/cups-1.1.18.0/fr/images/navbar.gif
+share/doc/cups-1.1.18.0/fr/images/print-test-page.gif
+share/doc/cups-1.1.18.0/fr/images/reject-jobs.gif
+share/doc/cups-1.1.18.0/fr/images/release-job.gif
+share/doc/cups-1.1.18.0/fr/images/restart-job.gif
+share/doc/cups-1.1.18.0/fr/images/show-active.gif
+share/doc/cups-1.1.18.0/fr/images/show-completed.gif
+share/doc/cups-1.1.18.0/fr/images/start-class.gif
+share/doc/cups-1.1.18.0/fr/images/start-printer.gif
+share/doc/cups-1.1.18.0/fr/images/stop-class.gif
+share/doc/cups-1.1.18.0/fr/images/stop-printer.gif
+share/doc/cups-1.1.18.0/fr/index.html
+share/doc/cups-1.1.18.0/fr/overview.html
+share/doc/cups-1.1.18.0/fr/overview.pdf
+share/doc/cups-1.1.18.0/fr/sam.html
+share/doc/cups-1.1.18.0/fr/sam.pdf
+share/doc/cups-1.1.18.0/fr/sum.html
+share/doc/cups-1.1.18.0/fr/sum.pdf
+share/doc/cups-1.1.18.0/idd.html
+share/doc/cups-1.1.18.0/idd.pdf
+share/doc/cups-1.1.18.0/images/accept-jobs.gif
+share/doc/cups-1.1.18.0/images/add-class.gif
+share/doc/cups-1.1.18.0/images/add-printer.gif
+share/doc/cups-1.1.18.0/images/cancel-job.gif
+share/doc/cups-1.1.18.0/images/cancel-jobs.gif
+share/doc/cups-1.1.18.0/images/cancel.gif
+share/doc/cups-1.1.18.0/images/classes.gif
+share/doc/cups-1.1.18.0/images/config-printer.gif
+share/doc/cups-1.1.18.0/images/continue.gif
+share/doc/cups-1.1.18.0/images/cups-block-diagram.gif
+share/doc/cups-1.1.18.0/images/cups-large.gif
+share/doc/cups-1.1.18.0/images/cups-medium.gif
+share/doc/cups-1.1.18.0/images/cups-small.gif
+share/doc/cups-1.1.18.0/images/delete-class.gif
+share/doc/cups-1.1.18.0/images/delete-printer.gif
+share/doc/cups-1.1.18.0/images/draft.gif
+share/doc/cups-1.1.18.0/images/hold-job.gif
+share/doc/cups-1.1.18.0/images/left.gif
+share/doc/cups-1.1.18.0/images/logo.gif
+share/doc/cups-1.1.18.0/images/manage-classes.gif
+share/doc/cups-1.1.18.0/images/manage-jobs.gif
+share/doc/cups-1.1.18.0/images/manage-printers.gif
+share/doc/cups-1.1.18.0/images/modify-class.gif
+share/doc/cups-1.1.18.0/images/modify-printer.gif
+share/doc/cups-1.1.18.0/images/navbar.gif
+share/doc/cups-1.1.18.0/images/print-test-page.gif
+share/doc/cups-1.1.18.0/images/printer-idle.gif
+share/doc/cups-1.1.18.0/images/printer-processing.gif
+share/doc/cups-1.1.18.0/images/printer-stopped.gif
+share/doc/cups-1.1.18.0/images/reject-jobs.gif
+share/doc/cups-1.1.18.0/images/release-job.gif
+share/doc/cups-1.1.18.0/images/restart-job.gif
+share/doc/cups-1.1.18.0/images/right.gif
+share/doc/cups-1.1.18.0/images/show-active.gif
+share/doc/cups-1.1.18.0/images/show-completed.gif
+share/doc/cups-1.1.18.0/images/start-class.gif
+share/doc/cups-1.1.18.0/images/start-printer.gif
+share/doc/cups-1.1.18.0/images/stop-class.gif
+share/doc/cups-1.1.18.0/images/stop-printer.gif
+share/doc/cups-1.1.18.0/index.html
+share/doc/cups-1.1.18.0/ipp.html
+share/doc/cups-1.1.18.0/ipp.pdf
+share/doc/cups-1.1.18.0/overview.html
+share/doc/cups-1.1.18.0/overview.pdf
+share/doc/cups-1.1.18.0/sam.html
+share/doc/cups-1.1.18.0/sam.pdf
+share/doc/cups-1.1.18.0/sdd.html
+share/doc/cups-1.1.18.0/sdd.pdf
+share/doc/cups-1.1.18.0/spm.html
+share/doc/cups-1.1.18.0/spm.pdf
+share/doc/cups-1.1.18.0/sps.html
+share/doc/cups-1.1.18.0/sps.pdf
+share/doc/cups-1.1.18.0/ssr.html
+share/doc/cups-1.1.18.0/ssr.pdf
+share/doc/cups-1.1.18.0/stp.html
+share/doc/cups-1.1.18.0/stp.pdf
+share/doc/cups-1.1.18.0/sum.html
+share/doc/cups-1.1.18.0/sum.pdf
+share/doc/cups-1.1.18.0/svd.html
+share/doc/cups-1.1.18.0/svd.pdf
+share/doc/cups-1.1.18.0/translation.html
+share/doc/cups-1.1.18.0/translation.pdf
 share/locale/C/cups_C
 share/locale/be/cups_be
 share/locale/cs/cups_cs
@@ -231,33 +309,40 @@ share/locale/sv/cups_sv
 share/locale/uk/cups_uk
 share/locale/uk_UA.cp1251/cups_uk_UA.cp1251
 share/locale/zh_CN/cups_zh_CN
-@exec mkdir -p /var/log/cups
-@unexec rmdir /var/log/cups 2>/dev/null || true
-@exec mkdir -p /var/spool/cups/tmp
-@exec chown -R daemon /var/spool/cups
-@exec chmod 700 /var/spool/cups
-@exec chmod 1700 /var/spool/cups/tmp
-@unexec rmdir /var/spool/cups/tmp 2>/dev/null || true
-@unexec rmdir /var/spool/cups 2>/dev/null || true
-@exec mkdir -p %D/etc/cups/certs
-@exec mkdir -p %D/etc/cups/interfaces
-@exec mkdir -p %D/etc/cups/ppd
-@unexec rmdir %D/etc/cups/certs 2>/dev/null || true
-@unexec rmdir %D/etc/cups/interfaces 2>/dev/null || true
-@unexec rmdir %D/etc/cups/ppd 2>/dev/null || true
-@unexec rmdir %D/etc/cups 2>/dev/null || true
-@dirrm include/cups
-@dirrm libexec/cups/backend
-@dirrm libexec/cups/cgi-bin
-@dirrm libexec/cups/daemon
-@dirrm libexec/cups/filter
-@dirrm libexec/cups
-@dirrm share/cups/banners
-@dirrm share/cups/charsets
-@dirrm share/cups/data
-@dirrm share/cups/fonts
-@dirrm share/cups/model
+@dirrm share/locale/zh_CN
+@dirrm share/locale/uk_UA.cp1251
+@dirrm share/locale/uk
+@dirrm share/locale/sv
+@dirrm share/locale/ru_RU.koi8r
+@dirrm share/locale/ru_RU.cp1251
+@dirrm share/locale/it
+@dirrm share/locale/he
+@dirrm share/locale/fr
+@dirrm share/locale/es
+@dirrm share/locale/en
+@dirrm share/locale/de
+@dirrm share/locale/cs
+@dirrm share/locale/be
+@dirrm share/locale/C
+@dirrm share/doc/cups-1.1.18.0/images
+@dirrm share/doc/cups-1.1.18.0/fr/images
+@dirrm share/doc/cups-1.1.18.0/fr
+@dirrm share/doc/cups-1.1.18.0
+@dirrm share/doc
+@dirrm share/cups/templates/fr
 @dirrm share/cups/templates
+@dirrm share/cups/model
+@dirrm share/cups/fonts
+@dirrm share/cups/data
+@dirrm share/cups/charsets
+@dirrm share/cups/banners
 @dirrm share/cups
-@dirrm share/doc/cups/images
-@dirrm share/doc/cups
+@dirrm libexec/cups/filter
+@dirrm libexec/cups/daemon
+@dirrm libexec/cups/cgi-bin
+@dirrm libexec/cups/backend
+@dirrm libexec/cups
+@dirrm include/cups
+@dirrm etc/cups/interfaces
+@dirrm etc/cups/certs
+@dirrm etc/cups

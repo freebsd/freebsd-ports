@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Jun  7 20:09:07 2002
-+++ Makefile	Fri Jun  7 20:14:39 2002
+--- Makefile.orig	Tue Dec 17 13:56:25 2002
++++ Makefile	Wed Jan 22 06:18:57 2003
 @@ -28,8 +28,8 @@
  # Directories to make...
  #
