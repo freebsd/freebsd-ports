@@ -10,7 +10,7 @@ set -e
 
 mkdir -p ${LIBDIR}/
 SKIP=`strings ${DISTDIR}/rt2-demo.run | head -10 | grep ^skip= | cut -d= -f2`
-tail +$SKIP /usr/ports/distfiles/rt2-demo.run | \
+tail +$SKIP ${DISTDIR}/rt2-demo.run | \
 	tar -C ${LIBDIR}/ -xz -f - --exclude rt2_demo --exclude rt2_demo.ppc
 
 brandelf -t Linux ${LIBDIR}/rt2_demo.x86
