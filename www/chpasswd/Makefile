@@ -21,16 +21,10 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}/etc/chpasswd \
 		--enable-language=English \
 		--enable-cgidir=${PREFIX}/www/cgi-bin
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 pre-install:
 	@${MKDIR} ${PREFIX}/www/cgi-bin
 
 post-install:
 	@${ECHO} 'Remember, passwd and log file must be owned by httpd user, or chmod 777'
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
