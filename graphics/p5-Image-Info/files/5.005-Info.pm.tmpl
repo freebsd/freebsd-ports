@@ -1,0 +1,11 @@
+--- Info.pm.tmpl~	Wed Jan  7 13:39:11 2004
++++ Info.pm.tmpl	Mon Mar 22 14:33:37 2004
+@@ -33,7 +33,7 @@
+     }
+     elsif (ref($source) eq "SCALAR") {
+ 	if ($] >= 5.008) {
+-	    open(my $s, "<", $source) or return _os_err("Can't open string");
++	    open(my $s, "<". $source) or return _os_err("Can't open string");
+ 	    $source = $s;
+ 	}
+ 	else {
