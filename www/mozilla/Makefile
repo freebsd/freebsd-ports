@@ -7,7 +7,7 @@
 
 PORTNAME=	mozilla
 PORTVERSION=	0.9.7
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_LOCAL:S,%SUBDIR%,sobomax,} \
@@ -58,6 +58,9 @@ CONFIGURE_ARGS=					\
 		--with-png=${LOCALBASE}		\
 		--with-mng=${LOCALBASE}		\
 		--with-pthreads
+.if !defined(WITHOUT_CHATZILLA)
+CONFIGURE_ARGS+=	--with-extensions=default,irc
+.endif
 CONFIGURE_ENV=	BSD_PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		CFLAGS="" CXXFLAGS="" \
 		MOZ_INTERNAL_LIBART_LGPL=1
