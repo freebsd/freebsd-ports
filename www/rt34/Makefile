@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	rt3
-PORTVERSION=	3.0.3
+PORTVERSION=	3.0.4
 CATEGORIES=	www
 MASTER_SITES?=	http://www.fsck.com/pub/rt/release/ \
-		ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/
+		http://www.fsck.com/pub/rt/devel/ \
+		ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/release/ \
+		ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/devel/
 DISTFILES?=	rt-${PORTVERSION:S/./-/g}.tar.gz
 
 MAINTAINER=	autrijus@autrijus.org
