@@ -1,3 +1,5 @@
+$FreeBSD$
+
 This file documents some of the problems you may encounter when
 upgrading dspam port.  I will try my best to minimize these disruptions,
 but sometimes they are unavoidable.
@@ -11,12 +13,37 @@ in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
 ###########################################################################
+# dspam-devel-3.4.r2.20050305.0930 (this is post RC2A)
+#
+
+- BUGFIX: fix dspamc hanging when using --stdout
+- BUGFIX: fixed TOE auto whitelisting
+- BUGFIX: individual logging
+- BUGFIX: parsetoheaders and daemon mode combo
+- BUGFIX: autodetect bugs in cgi
+- BUGFIXES for stats
+- BUGFIXES for some un-standard mails segfaults
+
+- NEW FEATURES: LMTP delivery, "standard" LMTP inbound support;
+see CHANGELOG, README and dspam.conf for details (tested slightly on BSD)
+
+- note (very late) SBL query support and SBL queue logging support
+(both SBL client and server ports are WIP)
+
+- As of 3.4 Beta 2, the PostgreSQL driver uses BIGINT instead of NUMERIC(20)
+type to store tokens in database (fully backward compatible). This change
+speedup driver and reduce storage space used by dspam. Use:
+dspam_pg2int8 /tmp/dspam_pg_mig.sql
+and follow the instructions.
+
+
+###########################################################################
 # dspam-devel-3.4.r1.20050216.0945
 #
 
 - if dspam --daemon SIGBUS please send your sources date, CFLAGS and other
 relevant information; this version is believed to be working; tested on:
-i386 5.2.1-RELEASE-p1, i386 5.3-STABLE, amd64 5.3-RELEASE with help from Erwin Lansing <erwin@lansing.dk>, 
+i386 5.2.1-RELEASE-p1, i386 5.3-STABLE, amd64 5.3-RELEASE with help from Erwin Lansing <erwin@lansing.dk>,
 "Daniel S. Haischt" <me@daniel.stefan.haischt.name> and Joey Freeland <joeyfreeland@gmail.com>
 - patch dspam.c for bug causing signature to not get written to message
 body (obtained from dspam cvs)
@@ -29,9 +56,6 @@ postgresql ports into a server and a client part"
 ###########################################################################
 # dspam-devel-3.3.4
 #
-
-Users on 4.x are kindly asked to report problems ASAP
-I would like to fix them before the freeze on 31. Thanks !
 
 The daemon mode seems to be completead now, so the port act like it should:
 - if enabled with WITH_DEAMON we install the rc script; to start it at
@@ -63,13 +87,13 @@ TrustedDeliveryAgent, but leave them commented out
 DSPAM_HOME_{GROUP,MODE})
 - USE_MYSQL and have make describe output right
 - add support for exim [2] which we build with the same database back-end
-as dspam if possible ( suggested, incorrectly, in ports/74762 by 
+as dspam if possible ( suggested, incorrectly, in ports/74762 by
 Shahbaz Javeed <sjaveed@adderpit.com> )
 - fix PREF_EXT and BDB4 cases as well in our Makefile
 
 
 #############################################################################
-# dspam-devel=3.3.0.a.20041203.1245_1 (entry added post-factum, it was an 
+# dspam-devel=3.3.0.a.20041203.1245_1 (entry added post-factum, it was an
 #                   automated update approved by me but not under my control)
 #
 
@@ -106,9 +130,9 @@ DATA
 # dspam-devel-3.3.0.a.20041125.0945
 #
 
-- changed the naming scheme because of to many upstream modification in 
-tarball naming - right now it lacks any version (for the same reason the 
-distfile is renamed from snapshot.tar.gz to PKGNAME and sits on my server); 
+- changed the naming scheme because of to many upstream modification in
+tarball naming - right now it lacks any version (for the same reason the
+distfile is renamed from snapshot.tar.gz to PKGNAME and sits on my server);
 \ it is now made up of:
 PORTNAME:		dspam-devel
 next MINOR_VERSION:	3.3.0
@@ -123,9 +147,9 @@ have the 3.3.0 beta's, rc's and release (tested with pkg_version -t)
  MaxMessageSize - specify a maximum message size to process
 \ I suggest setting it somewhere between 100 and 300 KB, it is unlikely the
 spam you are receiving is bigger and this will improve performance as big
-messages won't stuck the databese 
+messages won't stuck the database
 
-- tum mode has been enhanced and it should outperform teft 
+- tum mode has been enhanced and it should outperform teft
 
 ###############################################################################
 # dspam-devel-3.2.0-20041027.0930 (never comited in the cvs, don't ask me why):
@@ -167,7 +191,7 @@ WITH_SIGNATURE_LIFE     SIGNATURE_LIFE
 OPTION                       port default
 ----------------------------------------------
 LOG_DIR                         /var/log/dspam
-WITH_USER_HOMEDIR             
+WITH_USER_HOMEDIR
 DSPAM_HOME_OWNER
 DSPAM_HOME_GROUP
 DSPAM_HOME_MODE
@@ -195,8 +219,8 @@ in dspam port dir with appropiate OPTIONS adn VARs (see changes above)
 - use the appropiate migration script from files dir of dspam port dir
 (if using MySQL 4.1.x or 3.xx you're on your own for now)
 
-5. Back-up and them move the files from the old DSPAM_HOME 
-(defaulted: /usr/loca/etc/dspam) to the new DSPAM_HOME (default /vad/db/dspam) 
+5. Back-up and them move the files from the old DSPAM_HOME
+(defaulted: /usr/loca/etc/dspam) to the new DSPAM_HOME (default /vad/db/dspam)
 or where ever you defined DSPA_HOME in 2 above.
 
 6. Adjust you new dspam.conf according with your setup OPTIONS and VARs defined
@@ -207,8 +231,8 @@ on make / mak install step.
 7. Enable dspam in the MTA setup, but only locally or something and start testing.
 
 If something ain't working is one of:
-- permissions problems (hint: with what UID 
+- permissions problems (hint: with what UID
 is dspam called from your MTA vs. DSPAM_HOME and DSPAM_LOG_DIR)
-- something wrong in dspam.conf (hint: you didn't remove old config files 
+- something wrong in dspam.conf (hint: you didn't remove old config files
 and they are still used ?)
 
