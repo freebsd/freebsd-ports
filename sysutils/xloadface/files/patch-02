@@ -1,0 +1,40 @@
+--- ArrangeBox.c.orig	Tue Apr  2 06:44:19 1991
++++ ArrangeBox.c	Fri Dec  6 14:27:43 1996
+@@ -69,7 +69,7 @@
+ },
+ {
+ /* box_class fields */
+-    /* empty              */	NULL,
++    /* empty              */	0,
+ },
+ {
+ /* ArrangeBox class fields */
+@@ -194,8 +194,8 @@
+ 				       w->core.parent->core.border_width);
+ 			XtResizeWindow(w->core.parent);
+ 		}
+-		XtResizeWidget(w,width,height,w->core.border_width);
+-		XtResizeWindow(w);
++		XtResizeWidget((Widget)w,width,height,w->core.border_width);
++		XtResizeWindow((Widget)w);
+ 	}
+ }
+ 
+@@ -203,15 +203,13 @@
+  * Insert child method
+  */
+ static void
+-InsertChild(w,arg,num_args)
++InsertChild(w)
+ Widget w;
+-ArgList arg;
+-Cardinal *num_args;
+ {
+ 	ArrangeBoxWidget ab;
+ 
+ 	ab = (ArrangeBoxWidget)w->core.parent;
+-	(*((CompositeClassRec*)XtSuperclass(ab))->composite_class.insert_child)(w,arg,num_args);
++	(*((CompositeClassRec*)XtSuperclass(ab))->composite_class.insert_child)(w);
+ 	RearrangeSize(ab);
+ }
+ 	

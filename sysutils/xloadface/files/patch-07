@@ -1,0 +1,11 @@
+--- alive.h.orig	Fri Mar 15 08:49:43 1991
++++ alive.h	Fri Dec  6 14:27:44 1996
+@@ -31,7 +31,7 @@
+ #define	SSIZE	sizeof(u_short)
+ #define	LSIZE	sizeof(u_long)
+ 
+-#define	SPOOLDIR	"/usr/spool/rwho"
++#define	SPOOLDIR	"/var/rwho"
+ #define	ORGAN_FILE	"/etc/host_org"
+ 
+ typedef char	bool;

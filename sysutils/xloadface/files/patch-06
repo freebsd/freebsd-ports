@@ -1,0 +1,20 @@
+--- widgets.c.orig	Tue Feb 18 18:06:34 1992
++++ widgets.c	Fri Dec  6 14:27:45 1996
+@@ -224,7 +224,7 @@
+ 
+ 	/***** Popup Info *****/
+ 	PopupInfo = XtCreatePopupShell("PopupInfo",transientShellWidgetClass,
+-				       Toplevel,NULL,NULL);
++				       Toplevel,NULL,0);
+ 	PopupPane = mkWidget("InfoPane",arrangeBoxWidgetClass,PopupInfo,
+ 			     AiNvertNum, 1,
+ 			     AiNresizeParent, True,
+@@ -236,7 +236,7 @@
+ 
+ 	/***** Popup Help *****/
+ 	helpScreen = XtCreatePopupShell("Help",transientShellWidgetClass,
+-					Toplevel,NULL,NULL);
++					Toplevel,NULL,0);
+ 
+ 	addFaces();
+ 	adjustWindowSize();

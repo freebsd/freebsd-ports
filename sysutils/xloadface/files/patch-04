@@ -1,0 +1,65 @@
+--- LoadFace.c.orig	Fri Jun 12 04:52:31 1992
++++ LoadFace.c	Fri Dec  6 14:27:44 1996
+@@ -2,6 +2,7 @@
+ #include <X11/StringDefs.h>
+ #include "LoadFaceP.h"
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <sys/types.h>
+ #include <netinet/in.h>
+ #include <math.h>
+@@ -47,7 +48,7 @@
+ {AiNinterval, AiCInterval, XtRInt, sizeof(int),
+ 	 LFOffset(interval), XtRString, (caddr_t)"60"},
+ {AiNwhodDirectory, AiCWhodDirectory, XtRString,sizeof(String),
+-	 LFOffset(whod_directory), XtRString, (caddr_t)"/usr/spool/rwho"},
++	 LFOffset(whod_directory), XtRString, (caddr_t)"/var/rwho"},
+ {AiNshuffle, AiCShuffle, XtRBoolean,sizeof(Boolean),
+ 	 LFOffset(shuffle), XtRString, (caddr_t)"TRUE"},
+ {AiNloadBound, AiCLoadBound, AiRLoadBound, sizeof(AiLoadBound),
+@@ -166,7 +167,7 @@
+ {
+ 	LoadFaceWidget w = (LoadFaceWidget)new;
+ 
+-	CALL_SUPER(w,expose,(new));
++	CALL_SUPER(w,expose,(new,NULL,NULL));
+ }
+ 
+ #define HERE(w,tag) (w)->core_class.tag
+@@ -208,14 +209,14 @@
+ 		picture = class->faces_data[0].pixmap;
+ 	}
+ 	AiChangePixmap(w,picture,False,True);
+-	CALL_SUPER(new,initialize,(request,new));
++	CALL_SUPER(new,initialize,(request,new,NULL,NULL));
+ 	if (w->load_face.interval > 0) {
+ 		if (w->load_face.shuffle)
+ 			firstInterval = random()%(w->load_face.interval*2000);
+ 		else
+ 			firstInterval = w->load_face.interval*1000;
+ 		w->load_face.interval_id =
+-			XtAppAddTimeOut(XtWidgetToApplicationContext(w),
++			XtAppAddTimeOut(XtWidgetToApplicationContext((Widget)w),
+ 					firstInterval,
+ 					updateLoad,
+ 					(caddr_t)w);
+@@ -262,7 +263,7 @@
+ 		wd.wd_sendtime = wd.wd_recvtime = 0;
+ 	AiChangeLoad(w,&wd);
+ 	w->load_face.interval_id =
+-		XtAppAddTimeOut(XtWidgetToApplicationContext(w),
++		XtAppAddTimeOut(XtWidgetToApplicationContext((Widget)w),
+ 				w->load_face.interval*1000,
+ 				updateLoad,
+ 				(caddr_t)w);
+@@ -290,8 +291,8 @@
+ 		newFace = FACE(w,newload);
+ 	AiChangePixmap(w,newFace->pixmap,False,False);
+ 
+-	if (XtIsRealized(w) && oldload != newload)
+-		CALL_SELF(w, expose, (w));
++	if (XtIsRealized((Widget)w) && oldload != newload)
++		CALL_SELF(w, expose, (w,NULL,NULL));
+ }
+ 
+ static void
