@@ -2,7 +2,6 @@
 @exec mv %D/lib/mozilla/chrome/all-locales.rdf %D/lib/mozilla/chrome/all-locales.rdf.orig
 @exec mv %D/lib/mozilla/chrome/all-packages.rdf %D/lib/mozilla/chrome/all-packages.rdf.orig
 @exec mv %D/lib/mozilla/chrome/all-skins.rdf %D/lib/mozilla/chrome/all-skins.rdf.orig
-@exec mv %D/lib/mozilla/chrome/user-locales.rdf %D/lib/mozilla/chrome/user-locales.rdf.orig
 @exec mv %D/lib/mozilla/chrome/user-skins.rdf %D/lib/mozilla/chrome/user-skins.rdf.orig
 @exec mv %D/lib/mozilla/chrome/installed-chrome.txt %D/lib/mozilla/chrome/installed-chrome.txt.orig
 @exec mv %D/lib/mozilla/defaults/pref/unix.js %D/lib/mozilla/defaults/pref/unix.js.orig
@@ -94,7 +93,6 @@ lib/mozilla/searchplugins/w3c.src
 @unexec mv %D/lib/mozilla/chrome/all-locales.rdf.orig %D/lib/mozilla/chrome/all-locales.rdf
 @unexec mv %D/lib/mozilla/chrome/all-packages.rdf.orig %D/lib/mozilla/chrome/all-packages.rdf
 @unexec mv %D/lib/mozilla/chrome/all-skins.rdf.orig %D/lib/mozilla/chrome/all-skins.rdf
-@unexec mv %D/lib/mozilla/chrome/user-locales.rdf.orig %D/lib/mozilla/chrome/user-locales.rdf
 @unexec mv %D/lib/mozilla/chrome/user-skins.rdf.orig %D/lib/mozilla/chrome/user-skins.rdf
 @unexec mv %D/lib/mozilla/chrome/installed-chrome.txt.orig %D/lib/mozilla/chrome/installed-chrome.txt
 @unexec mv %D/lib/mozilla/defaults/pref/unix.js.orig %D/lib/mozilla/defaults/pref/unix.js

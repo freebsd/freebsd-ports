@@ -7,14 +7,14 @@
 
 PORTNAME=	mozilla
 PORTVERSION=	0.9.6
-#PORTREVISION=	1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	japanese www
 MASTER_SITES=	http://www.mozilla.gr.jp/jlp/ \
 		http://www.ash.ne.jp/~mal/mozilla/ \
 		http://dev.jp/
 PKGNAMESUFFIX=	-jlp
-DISTNAME=	${PORTNAME}${PORTVERSION}-jajppack-v01a
+DISTNAME=	${PORTNAME}${PORTVERSION}-jajppack-v02
 EXTRACT_SUFX=	.xpi
 
 MAINTAINER=	yatt@msc.biglobe.ne.jp
@@ -85,5 +85,6 @@ do-install:
 	(cd ${PREFIX}/lib/mozilla; \
 	${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regxpcom; \
 	${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regchrome)
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
