@@ -62,6 +62,8 @@ do-install:
 	${RM} ${PREFIX}/firebird/install;				\
 	${RM} ${PREFIX}/firebird/lib/libgds.so.1.0;			\
 	${LN} -fs gds.so ${PREFIX}/firebird/lib/libgds.so.1;		\
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/firebird/lib	\
+	${CHMOD} -R g-w ${PREFIX}/firebird/lib				\
 	cd ${PREFIX}/firebird/examples;					\
 	tar zxf ${DISTDIR}/interbase0.9-4-v5examples.tar.gz;		\
 	${CP} ${FILESDIR}/RELNOTES ${PREFIX}/firebird/			\
