@@ -14,6 +14,7 @@ EXTRACT_SUFX=
 EXTRACT_ONLY=
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Scans files for statically linked zlib (libz) code
 
 PLIST=		${WRKDIR}/pkg-plist
 NO_BUILD=	none

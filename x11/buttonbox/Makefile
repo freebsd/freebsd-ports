@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	trevor
 DISTNAME=	${PORTNAME:S/b/B/g}-${PORTVERSION}
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Xlib-based application launcher
 
 DOCDIR=		share/doc/${PORTNAME}
 DOCS=		COPYING ChangeLog DEDICATION README TODO

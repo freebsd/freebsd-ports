@@ -11,6 +11,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://labdid.if.usp.br/~blanes/arquivos/
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Portuguese derivative of qvwm, simplified to conserve resources
 
 RUN_DEPENDS=	xsetbg:${PORTSDIR}/x11/xloadimage
 

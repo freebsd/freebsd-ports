@@ -12,6 +12,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.mjr.dsl.pipex.com/comp/
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Window manager based on aewm++
 
 BROKEN=		"Does not fetch"
 

@@ -15,6 +15,7 @@ DISTFILES=	gcc-core-${GCC_REV}${EXTRACT_SUFX} \
 		gcc-g++-${GCC_REV}${EXTRACT_SUFX}
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	GNU Compiler Collection
 
 USE_BZIP2=	yes
 

@@ -17,6 +17,7 @@ MASTER_SITES=	http://www.outguess.org/ \
 		http://the25200-1.gw.connect.com.au/security/steganography/
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Steganographic tool
 
 DOCDIR=		share/doc/outguess
 DOCS=		ChangeLog README STIRMARK-README TODO

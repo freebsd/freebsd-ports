@@ -11,6 +11,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://handhelds.org/~mallum/downloadables/matchbox/
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Window manager suitable for low-resolution screens
 
 DOCS=		AUTHORS COPYING ChangeLog NEWS README TODO
 

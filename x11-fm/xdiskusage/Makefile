@@ -12,6 +12,7 @@ MASTER_SITES=	http://xdiskusage.sourceforge.net/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Show where disk space is taken up
 
 BROKEN=		"needs fltk 1.0.10"
 

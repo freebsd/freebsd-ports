@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.kvirc.net/kvirc/${PORTVERSION}/source/ \
 		ftp://kvirc.firenze.linux.it/pub/kvirc/${PORTVERSION}/source/
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	IRC client for X
 
 BROKEN=		"Incorrect pkg-plist"
 

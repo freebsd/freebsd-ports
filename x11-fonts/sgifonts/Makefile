@@ -13,6 +13,7 @@ DISTNAME=	sgi-fonts-1.0-1.src
 EXTRACT_SUFX=	.rpm
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Fonts from the SGI ProPack 1.4 for Linux
 
 BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio \
 		bdftopcf:${PORTSDIR}/x11/XFree86-4-clients

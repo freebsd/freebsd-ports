@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.informatik.hu-berlin.de/~sperling/prog/
 EXTRACT_SUFX=	-src.tgz
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=Window manager for low-memory systems, with title bars and shading
 
 BINS=		swm swmbg swmswitch
 DOCDIR=		share/doc/${PORTNAME}

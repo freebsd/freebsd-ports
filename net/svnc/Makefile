@@ -15,6 +15,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz \
 		vnc-3.3.3r1_unixsrc.tgz:att
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	VNC viewer for SVGAlib
 
 BUILD_DEPENDS=	${X11BASE}/include/X11/keysym.h:${PORTSDIR}/x11/XFree86
 LIB_DEPENDS=	vga.1:${PORTSDIR}/graphics/svgalib

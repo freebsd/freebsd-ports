@@ -18,6 +18,7 @@ PATCH_SITE_SUBDIR=	trevor
 PATCHFILES=	${PKGNAMEPREFIX}linux-${MAJ}-${VER}-generated-files.tar.gz
 
 MAINTAINER?=	trevor@FreeBSD.org
+COMMENT=	Linux Netscape suite
 
 FORBIDDEN=	"security bug--see <URL:http://wp.netscape.com/eng/mozilla/ns7/relnotes/7.html\#psm> and <URL:http://www.xwt.org/sop.txt>"
 

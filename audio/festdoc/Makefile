@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	1.4.1
 DIST_SUBDIR=	festival
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Documentation for Festival
 
 NO_BUILD=	yes
 

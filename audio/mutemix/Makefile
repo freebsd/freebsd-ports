@@ -12,6 +12,7 @@ MASTER_SITES=	http://stud.fbi.fh-darmstadt.de/~koenig/pub/
 EXTRACT_SUFX=	.py
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Adjusts a mixer
 
 RUN_DEPENDS=	aumix:${PORTSDIR}/audio/aumix \
 		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter

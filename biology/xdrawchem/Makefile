@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.prism.gatech.edu/~gte067k/xdrawchem/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Chemical drawing program
 
 MAKE_ENV=	QTDIR="${X11BASE}"
 PLIST=		${WRKDIR}/pkg-plist

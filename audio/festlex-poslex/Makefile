@@ -16,6 +16,7 @@ DISTNAME=	festlex_POSLEX
 DIST_SUBDIR=	festival
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	English lexicon for Festival
 
 RUN_DEPENDS=	festival:${.CURDIR}/../festival
 

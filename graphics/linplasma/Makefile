@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/graphics/hacks/svgalib
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Sinus plasma, an SVGAlib demo
 
 LIB_DEPENDS=	vga.1:${PORTSDIR}/graphics/svgalib
 

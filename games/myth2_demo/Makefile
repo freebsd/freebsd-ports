@@ -16,6 +16,7 @@ EXTRACT_SUFX=	.run
 EXTRACT_ONLY=
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Demo of Myth II: Soulblighter
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

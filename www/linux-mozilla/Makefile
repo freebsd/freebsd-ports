@@ -20,6 +20,7 @@ PATCH_SITE_SUBDIR=	trevor
 PATCHFILES=	linux-mozilla-${PORTVERSION}b-generated-files.tar.gz
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=Browser, HTML editor, MUA and newsreader for use with Linux plugins
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk

@@ -28,6 +28,7 @@ PATCHFILES=	OGIfestpatch-${PORTVERSION}.tar.gz
 .endif
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Multi-lingual speech synthesis system
 
 LIB_DEPENDS=	audio.2:${PORTSDIR}/audio/nas \
 		esd.2:${PORTSDIR}/audio/esound

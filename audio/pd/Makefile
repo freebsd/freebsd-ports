@@ -12,6 +12,7 @@ MASTER_SITES=	http://www-crca.ucsd.edu/~msp/Software/
 DISTNAME=	pd-0.35-test23.linux
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Pure Data, a MIDI-capable real-time audio processor/synthesizer
 
 LIB_DEPENDS=	tcl83:${PORTSDIR}/lang/tcl83 \
 		tk83:${PORTSDIR}/x11-toolkits/tk83

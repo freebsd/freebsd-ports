@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	cmusphinx
 DISTNAME=	sphinx2-0.4
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Speech recognition system
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.pawfal.org/Software/SpiralLoops/dload/
 DISTNAME=	SpiralSynthBaby-${PORTVERSION}
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Synthesizer plugin for SpiralLoops
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 

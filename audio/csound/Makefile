@@ -14,6 +14,7 @@ DISTNAME=	Csound${PORTVERSION}
 DIST_SUBDIR=	csound
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Sound synthesizer
 
 BROKEN=		"Does not fetch"
 

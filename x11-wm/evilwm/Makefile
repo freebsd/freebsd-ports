@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=		${PORTNAME}_${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Minimalist window manager based on 9wm
 
 DOCDIR=		share/doc/${PORTNAME}
 DOCS=		ChangeLog README README.multihead TODO

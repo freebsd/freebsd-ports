@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.cix.co.uk/~mayday/dev86/
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	16-bit assembler and loader (conflicts with devel/bcc)
 
 BINS=		as/as86 ld/ld86 ld/objchop ld/catimage ld/objdump86
 DOCS=		ChangeLog README README-0.4

@@ -13,6 +13,7 @@ MASTER_SITES=		http://www.stearns.org/p0f/
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		trevor@FreeBSD.org
+COMMENT=		Passive OS fingerprinting tool
 
 USE_REINPLACE=		yes
 DOCFILES=		COPYING CREDITS ChangeLog README

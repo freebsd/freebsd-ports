@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Class
 PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		trevor@FreeBSD.org
+COMMENT=		Perl module for creating generic methods
 
 PERL_CONFIGURE=		yes
 

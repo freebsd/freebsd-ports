@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://trier.linux.de/pub/Xclasses/
 DISTNAME=	Xclasses-public-${PORTVERSION}.src
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	C++ layout library for X
 
 INSTALLS_SHLIB=	yes
 PLIST=		${WRKDIR}/pkg-plist

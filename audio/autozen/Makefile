@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.linuxlabs.com/software/download/
 DISTNAME=	AutoZen-${PORTVERSION}
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Adjust brain waves with sound
 
 WRKSRC=		${WRKDIR}/AutoZen-${PORTVERSION}
 

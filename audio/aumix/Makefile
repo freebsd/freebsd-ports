@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Audio mixer for X11, terminal, or command line
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

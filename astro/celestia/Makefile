@@ -12,6 +12,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	celestia
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Scriptable space flight simulator for X
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

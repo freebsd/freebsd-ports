@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.netsw.org/net/ip/filetrans/fsp/
 DISTNAME=	fsp.281-B3
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	FSP daemon
 
 ALL_TARGET=	fspserver
 DOCDIR=		share/doc/${PORTNAME}

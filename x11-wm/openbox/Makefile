@@ -12,6 +12,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://sunsite.dk/projects/openbox/
 
 MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Derived from, and similar to, Blackbox
 
 MAN1=		openbox.1 osetroot.1 osetbg.1
 
