@@ -3,7 +3,7 @@
 # Date created:        31 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.5 1998/08/05 09:30:50 asami Exp $
+# $Id: Makefile,v 1.6 1999/01/12 16:51:11 vanilla Exp $
 #
 
 DISTNAME=	GB
@@ -19,7 +19,7 @@ CONFIGURE_ENV=  X11BASE=${X11BASE}
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/gblist ${PREFIX}/bin
-	@mkdir -p ${PREFIX}/libexec/VGB ${PREFIX}/share/VGB
+	@${MKDIR} ${PREFIX}/libexec/VGB ${PREFIX}/share/VGB
 	@${INSTALL_PROGRAM} ${WRKSRC}/vgb ${PREFIX}/libexec/VGB
 	@${INSTALL_DATA} ${WRKSRC}/CART.GB ${PREFIX}/share/VGB
 	@${INSTALL_SCRIPT} ${WRKSRC}/vgb.sh ${PREFIX}/bin/vgb

@@ -3,7 +3,7 @@
 # Date created: 19 February 1995
 # Whom: hsu
 #
-# $Id: Makefile,v 1.6 1996/11/18 14:01:03 asami Exp $
+# $Id: Makefile,v 1.7 1998/08/05 09:31:14 asami Exp $
 #
 
 DISTNAME=	vcg.1.30
@@ -16,10 +16,10 @@ USE_X_PREFIX=	yes
 MANL=		pbmrot90.l pbmshift.l pbm2hp.l vcgdemomaker.l vcg.l xvcg.l
 
 pre-patch:
-	@mkdir -p ${WRKSRC}/preconf/X11ccFreeBSD
-	@cp ${FILESDIR}/conf ${WRKSRC}/preconf/X11ccFreeBSD
-	@cp ${FILESDIR}/demo.csh ${WRKSRC}/preconf/X11ccFreeBSD
-	@cp ${FILESDIR}/globals.h ${WRKSRC}/preconf/X11ccFreeBSD
-	@cp ${FILESDIR}/tMakefile ${WRKSRC}/preconf/X11ccFreeBSD
+	@${MKDIR} ${WRKSRC}/preconf/X11ccFreeBSD
+	@${CP} ${FILESDIR}/conf ${WRKSRC}/preconf/X11ccFreeBSD
+	@${CP} ${FILESDIR}/demo.csh ${WRKSRC}/preconf/X11ccFreeBSD
+	@${CP} ${FILESDIR}/globals.h ${WRKSRC}/preconf/X11ccFreeBSD
+	@${CP} ${FILESDIR}/tMakefile ${WRKSRC}/preconf/X11ccFreeBSD
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:         5 Dec 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.16 1998/09/17 06:30:34 tg Exp $
+# $Id: Makefile,v 1.17 1999/01/21 18:06:22 vanilla Exp $
 #
 
 DISTNAME=       libpng-1.0.3
@@ -17,7 +17,7 @@ MAN3=           libpng.3 libpngpf.3
 MAN5=           png.5
 
 do-configure:
-	cd ${WRKSRC} && cp scripts/makefile.std Makefile
+	cd ${WRKSRC} && ${CP} scripts/makefile.std Makefile
 
 post-install:
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib

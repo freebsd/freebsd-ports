@@ -3,7 +3,7 @@
 # Date created:		14 Sep 1996
 # Whom:			Hidekazu Kuroki <hidekazu@cs.titech.ac.jp>
 #
-# $Id: Makefile,v 1.5 1998/09/28 02:25:34 steve Exp $
+# $Id: Makefile,v 1.6 1999/08/22 18:58:17 mharo Exp $
 #
 
 DISTNAME=       yamsweeper-1.9
@@ -17,7 +17,7 @@ MAN1=		yamsweeper.1
 
 pre-configure:
 	@mv ${WRKSRC}/Imakefile ${WRKSRC}/Imakefile.old
-	@cp ${FILESDIR}/Imakefile ${WRKSRC}
+	@${CP} ${FILESDIR}/Imakefile ${WRKSRC}
 
 post-install:
 	@${CHOWN} ${BINOWN}.${BINGRP} ${PREFIX}/man/man1/yamsweeper.1.gz

@@ -3,7 +3,7 @@
 # Date created:		Fr   4 Apr 1997 17:45:31 MET DST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.9 1998/03/17 19:55:07 andreas Exp $
+# $Id: Makefile,v 1.10 1999/06/28 19:29:03 billf Exp $
 #
 
 DISTNAME=	mapedit2.3
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PREFIX}/java/bin/java:${PORTSDIR}/java/jdk
 NO_BUILD=	yes
 
 pre-install:
-	@cat ${WRKSRC}/README.TXT
+	@${CAT} ${WRKSRC}/README.TXT
 	@echo ""
 
 do-install:

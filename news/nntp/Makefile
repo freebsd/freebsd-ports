@@ -3,7 +3,7 @@
 # Date created:		29 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.13 1997/12/10 08:57:53 asami Exp $
+# $Id: Makefile,v 1.14 1998/08/30 15:46:06 steve Exp $
 #
 
 DISTNAME=	nntp-t5
@@ -20,6 +20,6 @@ MAN1=		nntpxmit.1
 MAN8=		nntpd.8c mkgrdates.8c
 
 post-extract:
-	@cp ${WRKSRC}/conf.h.dist ${WRKSRC}/conf.h
+	@${CP} ${WRKSRC}/conf.h.dist ${WRKSRC}/conf.h
 
 .include <bsd.port.mk>

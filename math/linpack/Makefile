@@ -3,7 +3,7 @@
 # Date created:         31 October 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.18 1998/12/01 09:55:09 asami Exp $
+# $Id: Makefile,v 1.19 1999/02/03 11:11:53 asami Exp $
 #
 
 DISTNAME=	linpack
@@ -53,7 +53,7 @@ DISTFILES=	${SRCS:.f=.f.gz}
 .include <bsd.port.pre.mk>
 
 pre-build:
-	cp Makefile.lib ${WRKDIR}/Makefile
+	${CP} Makefile.lib ${WRKDIR}/Makefile
 
 post-install:
 	${LDCONFIG} -m ${PREFIX}/lib

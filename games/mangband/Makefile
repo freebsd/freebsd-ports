@@ -3,7 +3,7 @@
 # Version required:    0.5.4
 # Date created:        30 Dec 1998
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/01 03:14:08 ache Exp $
+# $Id: Makefile,v 1.2 1999/08/22 18:57:56 mharo Exp $
 #
 
 DISTNAME=       mangband-054
@@ -22,7 +22,7 @@ MALIB=          ${PREFIX}/lib/mangband
 
 do-install:
 	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 555 ${MALIB}
-	cd ${WRKSRC}/../lib; cp -R -p * ${MALIB}; \
+	cd ${WRKSRC}/../lib; ${CP} -R -p * ${MALIB}; \
 	   cd ${MALIB}; \
 	   touch file/wizards.txt; \
 	   ${CHMOD} 750 *; ${CHOWN} -R games.games *; \

@@ -4,7 +4,7 @@
 # Date created:         26 June 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.51 1998/09/19 00:16:08 hoek Exp $
+# $Id: Makefile,v 1.52 1999/04/07 18:28:33 ache Exp $
 #
 
 DISTNAME=       elm-2.4ME+54
@@ -27,7 +27,7 @@ CONFIGURE_ENV=  PREFIX="${PREFIX}"
 CONFIGURE_ARGS= -S
 
 post-configure:
-	cp ${FILESDIR}/elm.mimecharsets ${WRKSRC}/bin
+	${CP} ${FILESDIR}/elm.mimecharsets ${WRKSRC}/bin
 
 post-install:
 	perl -pi -e 's,/usr/local,${PREFIX},' ${WRKSRC}/nls/LANGS

@@ -2,7 +2,7 @@
 # Date created:         2 Dec 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.4 1998/07/25 12:35:50 asami Exp $
+# $Id: Makefile,v 1.5 1998/12/01 11:29:29 asami Exp $
 #
 
 PKGNAME=        ru-pine-3.96
@@ -20,7 +20,7 @@ do-fetch:
 
 do-install:
 	grep -q -i koi8 ${PREFIX}/etc/pine.conf || \
-		cat ${FILESDIR}/pine.add >> \
+		${CAT} ${FILESDIR}/pine.add >> \
 		${PREFIX}/etc/pine.conf
 
 .include <bsd.port.mk>

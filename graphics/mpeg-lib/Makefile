@@ -3,7 +3,7 @@
 # Date created:		16 November 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.8 1998/03/15 19:43:13 steve Exp $
+# $Id: Makefile,v 1.9 1998/09/19 19:04:26 smace Exp $
 #
 
 DISTNAME=	mpeg_lib-1.2.1
@@ -17,7 +17,7 @@ WRKSRC=		${WRKDIR}/mpeg_lib
 GNU_CONFIGURE= yup
 
 pre-install:
-	@mkdir -p ${PREFIX}/bin ${PREFIX}/lib ${PREFIX}/include
+	@${MKDIR} ${PREFIX}/bin ${PREFIX}/lib ${PREFIX}/include
 
 post-install:
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib

@@ -3,7 +3,7 @@
 # Date created:				28 DEC 1998
 # Whom:					Steven G. Kargl
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/24 22:33:14 obrien Exp $
 #
 
 DISTNAME=	f2c-freebsd.2.0.1
@@ -17,7 +17,7 @@ MAINTAINER=	kargl@troutmask.apl.washington.edu
 
 .if (${ARCH} == "alpha")
 pre-configure:
-	@cp ${FILESDIR}/f2c.h.alpha ${WRKSRC}/f2c/f2c.h
+	@${CP} ${FILESDIR}/f2c.h.alpha ${WRKSRC}/f2c/f2c.h
 .endif
 
 ALL_TARGET=   depend all

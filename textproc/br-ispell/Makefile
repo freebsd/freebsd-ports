@@ -4,7 +4,7 @@
 # Date created:         5 February 1999
 # Whom:                 Joao Carlos Mendes Luis <jonny@jonny.eng.br>
 #
-# $Id: $
+# $Id: Makefile,v 1.1.1.1 1999/04/13 15:28:00 taoka Exp $
 #
 
 DISTNAME=	br.ispell-2.2
@@ -19,6 +19,6 @@ BUILD_DEPENDS=	buildhash:${PORTSDIR}/textproc/ispell
 NO_WRKSUBDIR=	YES
 
 pre-build:
-	@cp ${FILESDIR}/Makefile ${WRKDIR}
+	@${CP} ${FILESDIR}/Makefile ${WRKDIR}
 
 .include <bsd.port.mk>

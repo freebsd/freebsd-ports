@@ -3,7 +3,7 @@
 # Date created:        7 July 1998
 # Whom:                jkoshy
 #
-# $Id: Makefile,v 1.6 1999/02/02 04:18:52 jkoshy Exp $
+# $Id: Makefile,v 1.7 1999/08/22 18:58:55 mharo Exp $
 #
 
 DISTNAME=     110.9.1-bin.x86-unix
@@ -70,7 +70,7 @@ do-install:
 		tar -C ${SML_BASE} -xf -
 	for file in ${WRKDIR}/lib/*; do\
 		${SED} -e "s,${WRKDIR},${SML_BASE}," < $$file > \
-			${SML_LIBDIR}/`basename $$file`; \
+			${SML_LIBDIR}/`${BASENAME} $$file`; \
 	done
 .for file in ${SML_EXES}
 	-${LN} -s ${SML_BINDIR}/${file} ${PREFIX}/bin/${file}

@@ -3,7 +3,7 @@
 # Date created:        11 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.2 1999/01/12 16:51:24 vanilla Exp $
+# $Id: Makefile,v 1.3 1999/08/22 19:01:07 mharo Exp $
 #
 
 DISTNAME=	xmold
@@ -16,7 +16,7 @@ MAINTAINER=	nacai@iname.com
 USE_IMAKE=	yes
 
 do-install:
-	@mkdir -p ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/bin
 	@install -c -s ${WRKSRC}/xmold ${PREFIX}/bin
 	@${CHMOD} 755 ${PREFIX}/bin/xmold
 	@${CHOWN} bin.bin ${PREFIX}/bin/xmold

@@ -3,7 +3,7 @@
 # Date created:		17 December 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.11 1998/10/05 03:13:32 steve Exp $
+# $Id: Makefile,v 1.12 1998/11/14 23:48:08 obrien Exp $
 #
 
 DISTNAME=	mpeg_play-2.4
@@ -18,7 +18,7 @@ USE_IMAKE=	yes
 MAN1=		mpeg_play.1
 
 pre-patch:
-	cp ${WRKSRC}/Imakefile.proto ${WRKSRC}/Imakefile
-	cp ${WRKSRC}/mpeg_play.1 ${WRKSRC}/mpeg_play.man
+	${CP} ${WRKSRC}/Imakefile.proto ${WRKSRC}/Imakefile
+	${CP} ${WRKSRC}/mpeg_play.1 ${WRKSRC}/mpeg_play.man
 
 .include <bsd.port.mk>

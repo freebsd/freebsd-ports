@@ -3,7 +3,7 @@
 # Date created:				24 Apr 1996
 # Whom:					pst
 #
-# $Id: Makefile,v 1.23 1999/01/06 04:49:29 imp Exp $
+# $Id: Makefile,v 1.24 1999/04/25 03:49:17 billf Exp $
 #
 
 DISTNAME=	socks5-v1.0r9
@@ -58,5 +58,5 @@ CONFIGURE_ENV=  LIBS=-lcrypt
 
 .if ${OPSYS} != "OpenBSD" || ${ARCH} != "arc"
 post-install:
-	ldconfig -m ${PREFIX}/lib
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .endif

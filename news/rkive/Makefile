@@ -3,7 +3,7 @@
 # Date created:		03 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.3 1996/12/07 09:28:46 max Exp $
+# $Id: Makefile,v 1.4 1998/07/22 11:33:49 asami Exp $
 #
 
 DISTNAME=	rkive3.1
@@ -17,7 +17,7 @@ MAINTAINER=	torstenb@FreeBSD.ORG
 NO_CDROM=	"Don't make money from it"
 
 pre-patch:
-	@cp ${WRKSRC}/Makefile.dst ${WRKSRC}/Makefile
-	@cp ${WRKSRC}/rkive.h.dst ${WRKSRC}/rkive.h
+	@${CP} ${WRKSRC}/Makefile.dst ${WRKSRC}/Makefile
+	@${CP} ${WRKSRC}/rkive.h.dst ${WRKSRC}/rkive.h
 
 .include <bsd.port.mk>

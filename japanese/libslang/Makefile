@@ -3,7 +3,7 @@
 # Date created:		22 April 1999
 # Whom:			IWASHITA Yoji <shuna@pop16.odn.ne.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.4 1999/05/01 03:28:05 steve Exp $
 #
 
 DISTNAME=	slang1.2.2_j055
@@ -22,7 +22,7 @@ WRKSRC=		${WRKDIR}/slang
 post-install:
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 	${ECHO} "===> Installing documents in ${PREFIX}/share/doc/slang"
-	@mkdir -p ${PREFIX}/share/doc/slang
+	@${MKDIR} ${PREFIX}/share/doc/slang
 	${CP} -R ${WRKSRC}/doc/* ${PREFIX}/share/doc/slang
 	${CP} ${WRKSRC}/slang-j.doc ${PREFIX}/share/doc/slang
 

@@ -3,7 +3,7 @@
 # Date created:		03-Mar-1997
 # Whom:			tenser
 #
-# $Id: Makefile,v 1.7 1998/08/07 23:56:18 asami Exp $
+# $Id: Makefile,v 1.8 1998/10/06 05:18:00 asami Exp $
 #
 
 DISTNAME=	bsvc-2.0
@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 WISH=		wish4.1
 
 pre-patch:
-	@awk ' \
+	@${AWK} ' \
 	{ \
 		if (/^## Makefile/) { \
 			print "## Makefile.FreeBSD - System Dependent Makefile for FreeBSD" \
@@ -31,7 +31,7 @@ pre-patch:
 	}' < ${WRKSRC}/Makefile.ULTRIX > ${WRKSRC}/Makefile
 
 post-patch:
-	@awk ' \
+	@${AWK} ' \
 	{ \
 		if (/PROJECT_BASE/ && /AWK_CHANGE_ME/) { \
 			print "PROJECT_BASE='"${WRKDIR}/${DISTNAME}"'" \

@@ -3,7 +3,7 @@
 # Date created:		28 Oct 1996
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.14 1999/01/28 05:39:19 jdp Exp $
+# $Id: Makefile,v 1.15 1999/08/22 18:58:51 mharo Exp $
 #
 
 DISTNAME=	modula-3-lib-3.6
@@ -154,7 +154,7 @@ do-install:
 	    test -d ${startup_dir} || ${MKDIR} ${startup_dir}; \
 	    echo "#!/bin/sh" > ${startup_script}; \
 	    echo "echo -n ' Modula-3'" >> ${startup_script}; \
-	    echo "/sbin/ldconfig -m ${PREFIX}/lib/m3/FreeBSD2" \
+	    echo "${LDCONFIG} -m ${PREFIX}/lib/m3/FreeBSD2" \
 		>> ${startup_script}; \
 	    ${CHMOD} 755 ${startup_script}; \
 	fi

@@ -3,7 +3,7 @@
 # Date created:         20 Sep 1994
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.19 1996/12/08 01:45:16 max Exp $
+# $Id: Makefile,v 1.20 1999/06/26 21:56:51 mharo Exp $
 #
 
 DISTNAME=       gn-2.24
@@ -26,7 +26,7 @@ pre-build:
 	@ln -fs ${WAISDIR}/bin ${WRKSRC}/waisgn
 
 pre-install:
-	@mkdir -p ${WRKSRC}/etc ${WRKSRC}/libexec ${WRKSRC}/gnroot
+	@${MKDIR} ${WRKSRC}/etc ${WRKSRC}/libexec ${WRKSRC}/gnroot
 	@cd ${WRKSRC}/gnroot; \
 		tar -cf - -C ${WRKSRC} docs | tar xpf - && \
 			mv docs/sample.root.menu menu
@@ -45,7 +45,7 @@ post-install:
 	  fi; \
 	  tar -cf - -C ${WRKSRC} gnroot libexec bin etc | tar xpf - && \
 		(cd gnroot; ${WRKSRC}/bin/mkcache -r); \
-	  awk '$$1 ~ /#*gopher/ && $$6 == "${PREFIX}/libexec/gn" { exit 1 }' \
+	  ${AWK} '$$1 ~ /#*gopher/ && $$6 == "${PREFIX}/libexec/gn" { exit 1 }' \
 		${INETD_CONF} || { \ echo '#'gopher${CONF} >>${INETD_CONF}
 	  }
 

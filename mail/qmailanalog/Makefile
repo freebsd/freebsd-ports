@@ -3,7 +3,7 @@
 # Date created:		29 November 1998
 # Whom:			Neil Blakey-Milner <nbm@rucus.ru.ac.za>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/03 02:46:44 steve Exp $
 
 DISTNAME=	qmailanalog-0.70
 CATEGORIES=	mail
@@ -51,6 +51,6 @@ pre-install:
 	@echo ${QMAIL_DIR} >> ${WRKDIR}/.IPREFIX
 	@diff ${WRKDIR}/.[PI]PREFIX > /dev/null \
 	|| (echo ${DIFF_MSG} && exit 1)
-	@mkdir -p ${QMPREFIX}
+	@${MKDIR} ${QMPREFIX}
 
 .include <bsd.port.mk>

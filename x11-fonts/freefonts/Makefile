@@ -3,7 +3,7 @@
 # Date created:         Thu Aug  1 21:32:14 CDT 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.6 1998/08/05 09:31:42 asami Exp $
+# $Id: Makefile,v 1.7 1998/08/07 22:43:08 asami Exp $
 #
 
 DISTNAME=	freefonts-0.10
@@ -16,6 +16,6 @@ NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
 
 post-install:
-	@cat ${PKGDIR}/DESCR
+	@${CAT} ${PKGDIR}/DESCR
 
 .include <bsd.port.mk>
