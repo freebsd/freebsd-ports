@@ -2,6 +2,7 @@ bin/sa-learn
 bin/spamassassin
 bin/spamc
 bin/spamd
+@unexec if cmp -s %D/etc/mail/spamassassin/init.pre.sample %D/etc/mail/spamassassin/init.pre; then rm -f %D/etc/mail/spamassassin/init.pre; fi
 etc/mail/spamassassin/init.pre.sample
 etc/mail/spamassassin/local.cf.sample
 etc/rc.d/sa-spamd.sh
