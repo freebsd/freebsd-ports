@@ -1,0 +1,10 @@
+AxKit --- XML Delivery Toolkit for Apache
+
+AxKit allows serving XML pages through Apache and mod_perl.  It uses
+XSLT stylesheets to transform pages before sending them to the browser.
+It also allows Perl stylesheets for extra flexibility.
+
+AxKit has good caching of results, and can be up to 80% of the speed of
+Apache when serving from it's cache.
+
+WWW: http://www.axkit.org/

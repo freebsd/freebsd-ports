@@ -201,6 +201,7 @@
     SUBDIR += p5-Apache-SSI
     SUBDIR += p5-Apache-Session
     SUBDIR += p5-Apache-Session-SharedMem
+    SUBDIR += p5-AxKit
     SUBDIR += p5-CGI-Application
     SUBDIR += p5-CGI-ArgChecker
     SUBDIR += p5-CGI-Cache

@@ -1,0 +1,14 @@
+Please consult ``man AxKit'' for instructions on installing AxKit into
+your Apache configuration.
+
+NB: This version of AxKit is only compiled with the ability to use XSLT
+stylesheets.  If you wish to use XPathScript or XSP, you must also
+install the p5-XML-Sablotron port/package.  However, you must also
+recompile your Apache binary to *not* include a builtin version of
+expat.  To see if you need to do this, type in:
+
+	strings `which httpd` | grep XML
+
+If this produces any output, you must recompile apache passing the
+--disable-rule=EXPAT argument to the configure program.  See the FAQ on
+http://axkit.org for full details.
