@@ -88,7 +88,6 @@
     SUBDIR += kappa20
     SUBDIR += kbanner
     SUBDIR += kcc
-    SUBDIR += kdelocale
     SUBDIR += kinput2-canna
     SUBDIR += kinput2-canna+sj3
     SUBDIR += kinput2-canna+sj3+wnn4
