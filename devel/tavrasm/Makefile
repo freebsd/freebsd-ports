@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tavrasm
-PORTVERSION=	1.19
+PORTVERSION=	1.20
 CATEGORIES=	devel
 MASTER_SITES=	http://www.tavrasm.org/:0
 DISTFILES=	${PORTNAME}${EXTRACT_SUFX}:0
@@ -17,7 +17,7 @@ COMMENT=	Tom's AVR Assembler
 EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
-WRKSRC=		${WRKDIR}/tavrasm.119
+WRKSRC=		${WRKDIR}/tavrasm.120
 BUILD_WRKSRC=	${WRKSRC}/src
 
 AVR_INCLUDE=	${PREFIX}/include/avr
