@@ -30,6 +30,7 @@ BROKEN=		"rc5des/dnetc conflict: Please deinstall all rc5des ports/packages firs
 .endif
 
 MAINTAINER=	dbaker@distributed.net
+FORBIDDEN=	"Local buffer overflows yielding user nobody"
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
