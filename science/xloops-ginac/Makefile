@@ -16,7 +16,7 @@ MASTER_SITES=	http://wwwthep.physik.uni-mainz.de/~xloops/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program calculating Feynman diagrams
 
-LIB_DEPENDS=	ginac-1.1.6:${PORTSDIR}/math/GiNaC
+LIB_DEPENDS=	ginac-1.2.3:${PORTSDIR}/math/GiNaC
 
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=13
