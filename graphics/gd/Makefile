@@ -19,11 +19,10 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER?=	billf@FreeBSD.org
 
-BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2 \
-		bzip2:${PORTSDIR}/archivers/bzip2
+USE_FREETYPE2=	yes
+BUILD_DEPENDS=	bzip2:${PORTSDIR}/archivers/bzip2
 LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		freetype:${PORTSDIR}/print/freetype2
 
 .if defined(WITH_X11)
 USE_XLIB=	yes
