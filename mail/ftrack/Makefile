@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	ftrack
-PORTVERSION=	3.01
-PORTREVISION=	2
+PORTVERSION=	3.1
+PORTEPOCH=	1
 CATEGORIES=	mail
-# mastersite disappeared in August 2003
-MASTER_SITES=	# http://gonza.bizhost.ru/ports/
-DISTNAME=	ftr${PORTVERSION:S/.//g}s
+MASTER_SITES=	http://ufm.kgb.ru/files/
+DISTNAME=	ftr${PORTVERSION:S/.//g}sr
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	forsite@spamtest.ru
 COMMENT=	FTN Messages tracker
 
 LIB_DEPENDS=	smapi.2:${PORTSDIR}/news/husky-smapi
@@ -25,17 +24,25 @@ ALL_TARGET=	ftrack
 MAKEFILE=	${WRKSRC}/MakeFiles/FreeBSD/Makefile
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 USE_GCC=	2.95
+USE_PERL5=	yes
 
 PORTDOCS=	ftrack.faq readme report.err
 
 pre-patch:
 	${REINPLACE_CMD} -e "s@-I../../hpp -I../../.. -O3@-Ihpp -I${LOCALBASE}/include ${CFLAGS}@g; \
 			s@../../src/@src/@g; s@g\+\+@${CC}@g; \
-			s@-L../smapi -lsmapibsd@-L${LOCALBASE}/lib -lsmapi@g" ${WRKSRC}/MakeFiles/FreeBSD/Makefile
+			s@-L../../../smapi -lsmapibsd@-L${LOCALBASE}/lib -lsmapi@g" ${WRKSRC}/MakeFiles/FreeBSD/Makefile
+	${REINPLACE_CMD} -e "s@PREFIXGOESHERE@${PREFIX}@g" ${FILESDIR}/patch-hpp::constant.hpp
+	${RM} ${FILESDIR}/patch-hpp::constant.hpp.bak
 .for DIR in MakeFiles/FreeBSD src hpp doc/eng samples/tpl
 	for FILE in ${WRKSRC}/${DIR}/*; do \
 		${TR} -d '\015' < $${FILE} > $${FILE}.new; \
 		${MV} $${FILE}.new $${FILE}; \
+	done
+.endfor
+.for DIR in hpp src
+	for FILE in ${WRKSRC}/${DIR}/*; do \
+		${MV} $${FILE} `${ECHO} $${FILE} | ${TR} "[:upper:]" "[:lower:]"`; \
 	done
 .endfor
 
@@ -43,7 +50,7 @@ pre-configure:
 	${CP} ${WRKSRC}/MakeFiles/FreeBSD/Makefile ${WRKSRC}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ftrack ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/ftrack ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/etc/ftrack
 	${INSTALL_DATA} ${WRKSRC}/samples/node.cfg ${PREFIX}/etc/ftrack/ftrack.cfg-dist
 	${INSTALL_DATA} ${WRKSRC}/samples/tpl/* ${PREFIX}/etc/ftrack
