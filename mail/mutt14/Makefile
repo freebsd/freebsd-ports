@@ -63,7 +63,8 @@ GNU_CONFIGURE=	yes
 USE_AUTOMAKE=	yes	# configure.in is patched by <PATCHFILES>
 USE_REINPLACE=	yes
 CONFIGURE_TARGET=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" LDFLAGS=-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-pop --enable-imap --enable-flock --disable-fcntl \
 		--with-ssl=${OPENSSLBASE} --sysconfdir=${PREFIX}/etc \
 		--with-sharedir=${PREFIX}/share/mutt \
