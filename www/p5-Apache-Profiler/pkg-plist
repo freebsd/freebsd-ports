@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Apache/Profiler.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Profiler/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/Apache 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Profiler
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache 2>/dev/null || true

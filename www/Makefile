@@ -384,6 +384,7 @@
     SUBDIR += p5-Apache-NNTPGateway
     SUBDIR += p5-Apache-PageKit
     SUBDIR += p5-Apache-Peek
+    SUBDIR += p5-Apache-Profiler
     SUBDIR += p5-Apache-Radius
     SUBDIR += p5-Apache-Reload
     SUBDIR += p5-Apache-SSI
