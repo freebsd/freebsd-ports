@@ -1,5 +1,5 @@
-*** config.h.orig	Tue Aug 12 07:42:48 1997
---- config.h	Tue Sep  9 20:18:19 1997
+*** config.h.orig	Fri Sep 12 19:44:00 1997
+--- config.h	Mon Sep 15 09:27:39 1997
 ***************
 *** 72,76 ****
    * See FIXES-2.4-HOBBIT for more information on this option.
@@ -11,5 +11,5 @@
    * See FIXES-2.4-HOBBIT for more information on this option.
    */
   
-! #define SKEY
+! /* #undef SKEY */
   
