@@ -1,0 +1,27 @@
+--- doc/Makefile.in.orig	Sun Apr  1 02:14:05 2001
++++ doc/Makefile.in	Fri Jun 29 03:39:06 2001
+@@ -196,23 +196,9 @@
+ 	$(MAKE) $(AM_MAKEFLAGS) uninstall-man5 uninstall-man6
+ 
+ install-docDATA: $(doc_DATA)
+-	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(docdir)
+-	@list='$(doc_DATA)'; for p in $$list; do \
+-	  if test -f $(srcdir)/$$p; then \
+-	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(docdir)/$$p"; \
+-	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(docdir)/$$p; \
+-	  else if test -f $$p; then \
+-	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(docdir)/$$p"; \
+-	    $(INSTALL_DATA) $$p $(DESTDIR)$(docdir)/$$p; \
+-	  fi; fi; \
+-	done
+ 
+ uninstall-docDATA:
+-	@$(NORMAL_UNINSTALL)
+-	list='$(doc_DATA)'; for p in $$list; do \
+-	  rm -f $(DESTDIR)$(docdir)/$$p; \
+-	done
++
+ tags: TAGS
+ TAGS:
+ 
