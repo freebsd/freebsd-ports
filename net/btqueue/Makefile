@@ -29,7 +29,7 @@ OPTIONS=	PYXML "Add dependency on PyXML (needed for crawler only)" on
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_PYXML)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
+RUN_DEPENDS+=	${PYXML}
 .endif
 
 .include <bsd.port.post.mk>
