@@ -1,6 +1,6 @@
-# New ports collection makefile for:  bfilter
-# Date created:		10.05.2003
-# Whom:                Kirill Ponomarew <ponomarew@oberon.net>
+# New ports collection makefile for:	bfilter
+# Date created:				10.05.2003
+# Whom:					Kirill Ponomarew <ponomarew@oberon.net>
 #
 # $FreeBSD$
 #
