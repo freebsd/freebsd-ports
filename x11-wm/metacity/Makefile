@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	metacity
-PORTVERSION=	2.3.377
-PORTREVISION=	1
+PORTVERSION=	2.3.610
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://people.redhat.com/~hp/metacity/
 DIST_SUBDIR=	gnome2
@@ -15,7 +14,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20 \
-		gconf-2:${PORTSDIR}/devel/gconf2
+		gconf-2:${PORTSDIR}/devel/gconf2 \
+		glade-2.0.0:${PORTSDIR}/devel/libglade2
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
