@@ -1,0 +1,11 @@
+--- ./conf/#post-install~	Fri Jan 18 12:32:54 2002
++++ ./conf/post-install	Fri Jan 18 12:32:54 2002
+@@ -183,7 +183,7 @@
+ 
+ umask 022
+ 
+-PATH=/bin:/usr/bin:/usr/sbin:/usr/etc:/sbin:/etc:/usr/contrib/bin:/usr/gnu/bin:/usr/ucb:/usr/bsd
++PATH=/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin
+ SHELL=/bin/sh
+ IFS=" 	
+ "

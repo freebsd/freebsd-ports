@@ -1,20 +1,41 @@
-*** ./src/global/mail_params.h.orig	Wed May 31 19:18:31 2000
---- ./src/global/mail_params.h	Thu Jun  1 22:17:10 2000
+*** ./src/global/mail_params.h.orig	Thu Jan  3 13:13:37 2002
+--- ./src/global/mail_params.h	Tue Jan  8 22:18:22 2002
 ***************
-*** 155,157 ****
+*** 51,55 ****
+  
+  #define VAR_SGID_GROUP		"setgid_group"
+! #define DEF_SGID_GROUP		"postdrop"
+  extern char *var_sgid_group;
+  extern gid_t var_sgid_gid;
+--- 51,55 ----
+  
+  #define VAR_SGID_GROUP		"setgid_group"
+! #define DEF_SGID_GROUP		"maildrop"
+  extern char *var_sgid_group;
+  extern gid_t var_sgid_gid;
+***************
+*** 170,174 ****
+  #define VAR_PROGRAM_DIR		"program_directory"
   #ifndef DEF_PROGRAM_DIR
 ! #define DEF_PROGRAM_DIR		"/usr/libexec/postfix"
   #endif
---- 155,157 ----
+  
+--- 170,174 ----
+  #define VAR_PROGRAM_DIR		"program_directory"
   #ifndef DEF_PROGRAM_DIR
 ! #define DEF_PROGRAM_DIR		"!!PREFIX!!/libexec/postfix"
   #endif
+  
 ***************
-*** 189,191 ****
+*** 204,208 ****
+  #define VAR_CONFIG_DIR		"config_directory"
   #ifndef DEF_CONFIG_DIR
 ! #define DEF_CONFIG_DIR		"/etc/postfix"
   #endif
---- 189,191 ----
+  extern char *var_config_dir;
+--- 204,208 ----
+  #define VAR_CONFIG_DIR		"config_directory"
   #ifndef DEF_CONFIG_DIR
 ! #define DEF_CONFIG_DIR		"!!PREFIX!!/etc/postfix"
   #endif
+  extern char *var_config_dir;

@@ -14,11 +14,11 @@
   # Specify the types and names of databases to use.  After change,
 ! # run "postmap /etc/postfix/relocated", then "postfix reload".
   #
-! # relocated_maps = hash:/etc/postfix/relocated
+! #relocated_maps = hash:/etc/postfix/relocated
   relocated_maps =
 --- 263,267 ----
   # Specify the types and names of databases to use.  After change,
 ! # run "postmap !!PREFIX!!/etc/postfix/relocated", then "postfix reload".
   #
-! # relocated_maps = hash:!!PREFIX!!/etc/postfix/relocated
+! #relocated_maps = hash:!!PREFIX!!/etc/postfix/relocated
   relocated_maps =
