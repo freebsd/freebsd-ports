@@ -11,12 +11,7 @@ PATCHLEVEL=	319
 PORTVERSION=	6.1.${PATCHLEVEL}
 PORTREVISION?=	0
 CATEGORIES?=	editors
-MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
-		ftp://relay.nuxi.com/pub/vim/unix/ \
-		ftp://ftp.vim.org/pub/vim/unix/  \
-		ftp://ftp.is.co.za/applications/editors/vim/unix/  \
-		ftp://ftp.prz.tu-berlin.de/pub/unix/editors/vim/unix/  \
-		ftp://ftp.mirror.ac.uk/sites/ftp.vim.org/pub/vim/unix/
+MASTER_SITES=	${MASTER_SITE_VIM}
 DISTNAME=	vim-${PORTVERSION:C/\.[0-9]*$//}
 
 PATCH_SITES=	${MASTER_SITES:S/unix/patches/}
