@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- Makefile.orig	Sun Nov 14 17:29:24 1999
-+++ Makefile	Tue Aug 14 13:08:36 2001
+--- Makefile.orig	Mon Nov 15 00:29:24 1999
++++ Makefile	Sat Oct 26 06:02:46 2002
 @@ -29,17 +29,21 @@
  SHELL     = /bin/sh
  MAKEFLAGS = --print-directory
@@ -18,16 +18,17 @@ $FreeBSD$
 -CXX       = g++ 
 -CXXFLAGS  = -I$(incdir) -O2 -Wall -pedantic #-DDEBUG=1 -g3
 -
-+CXX       = g++
++CXX      ?= g++
 +CXXFLAGS+= -I$(fltkinc) -I$(incdir) -Wall -pedantic $(PTHREAD_CFLAGS) #-DDEBUG=1 -g3
  
  # linker settings
- LD        = g++
+-LD        = g++
 -LDFLAGS   = -lfltk -lXext -lX11 -lm
 -LDDIRS    = -L/usr/X11R6/lib -L/usr/lib -L/usr/local/lib
 -
++LD        = $(CXX)
 +LDFLAGS   = -lMesaGL -lfltk -lXext -lX11 -lm $(PTHREAD_LIBS)
-+LDDIRS    = -L$(x11lib) -L/usr/lib -L/usr/local/lib
++LDDIRS    = -L$(x11lib)
  
  # install settings
  INSTALL       = /usr/bin/install
