@@ -10,17 +10,16 @@
 # want fetchmailconf to work, define WITH_X11
 
 PORTNAME=	fetchmail
-PORTVERSION=	6.2.4
-PORTREVISION=	1
+PORTVERSION=	6.2.5
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.catb.org/~esr/fetchmail/ \
 		ftp://ftp.ccil.org/pub/esr/fetchmail/ \
 		ftp://ftp.win.ne.jp/pub/network/mail/fetchmail/
 
-MAINTAINER=	ve@sci.fi
+MAINTAINER=	eikemeier@fillmore-labs.com
 COMMENT=	Batch mail retrieval utility for IMAP/POP2/POP3/APOP/KPOP/ETRN/ODMR
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext
 .if defined(WITH_X11)
 RUN_DEPENDS=	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 .endif
@@ -41,7 +40,7 @@ MAN1=		fetchmail.1
 MLINKS=		fetchmail.1 fetchmailconf.1
 
 FDOC=		${PREFIX}/share/doc/fetchmail
-DOCS=		COPYING FAQ FEATURES NEWS NOTES README \
+DOCS=		FAQ FEATURES NEWS NOTES README \
 		design-notes.html fetchmail-FAQ.html fetchmail-features.html
 
 .include <bsd.port.pre.mk>

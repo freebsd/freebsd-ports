@@ -2,22 +2,22 @@
 bin/fetchmail
 bin/fetchmailconf
 libexec/fetchmailconf.bin
-%%PORTDOCS%%share/doc/fetchmail/COPYING
-%%PORTDOCS%%share/doc/fetchmail/FAQ
-%%PORTDOCS%%share/doc/fetchmail/FEATURES
-%%PORTDOCS%%share/doc/fetchmail/NEWS
-%%PORTDOCS%%share/doc/fetchmail/NOTES
-%%PORTDOCS%%share/doc/fetchmail/README
-%%NTLMDOCS%%share/doc/fetchmail/README.NTLM
-%%SSLDOCS%%share/doc/fetchmail/README.SSL
-%%PORTDOCS%%share/doc/fetchmail/design-notes.html
-%%PORTDOCS%%share/doc/fetchmail/fetchmail-FAQ.html
-%%PORTDOCS%%share/doc/fetchmail/fetchmail-features.html
-%%PORTDOCS%%@dirrm share/doc/fetchmail
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/FEATURES
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/NOTES
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%NTLMDOCS%%%%DOCSDIR%%/README.NTLM
+%%SSLDOCS%%%%DOCSDIR%%/README.SSL
+%%PORTDOCS%%%%DOCSDIR%%/design-notes.html
+%%PORTDOCS%%%%DOCSDIR%%/fetchmail-FAQ.html
+%%PORTDOCS%%%%DOCSDIR%%/fetchmail-features.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 share/locale/ca/LC_MESSAGES/fetchmail.mo
 share/locale/cs/LC_MESSAGES/fetchmail.mo
 share/locale/da/LC_MESSAGES/fetchmail.mo
 share/locale/de/LC_MESSAGES/fetchmail.mo
+share/locale/el/LC_MESSAGES/fetchmail.mo
 share/locale/es/LC_MESSAGES/fetchmail.mo
 share/locale/fr/LC_MESSAGES/fetchmail.mo
 share/locale/gl/LC_MESSAGES/fetchmail.mo
