@@ -106,6 +106,7 @@
     SUBDIR += gtksheet
     SUBDIR += gtranslator
     SUBDIR += gvd
+    SUBDIR += happy
     SUBDIR += i386-rtems-binutils
     SUBDIR += i386-rtems-chill
     SUBDIR += i386-rtems-g77
