@@ -5,13 +5,14 @@ In order to run this port, please add the following lines to
 
 INPUT_MAIL_FILTER(
 	`milter-sender',
-	`S=unix:/usr/local/lib/milter-sender/socket, F=T, T=C:1m;S:30s;R:6m;E:1m'
+	`S=unix:/var/milter-sender/socket, F=T, T=C:1m;S:30s;R:6m;E:1m'
 )dnl
 define(
 	`confMILTER_MACROS_CONNECT', confMILTER_MACROS_CONNECT`,
 	{client_addr}, {client_name}, {client_port}, {client_resolve}'
 )dnl
 
-Don't forget to remake sendmail configuration file after modifying YOUR-CONF.mc
+Don't forget to remake sendmail configuration file after modifying
+YOUR-CONF.mc
 
 ************************************************************************

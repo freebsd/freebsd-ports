@@ -1,19 +1,23 @@
---- milter-sender.sh.in.bak	Mon Sep 29 12:03:36 2003
-+++ milter-sender.sh.in	Sat Oct  4 03:04:19 2003
-@@ -16,12 +16,6 @@
- OPTIONS="-d 127.0.0.1 -s /etc/mail/sendmail.cf -R -u 3 unix:@localstatedir@/lib/@PACKAGE_NAME@/socket"
- REQUIRED_DIR="@localstatedir@/lib/@PACKAGE_NAME@"
- 
+--- milter-sender.sh.in.orig	Sat Oct  4 14:06:30 2003
++++ milter-sender.sh.in	Sun Oct 12 05:46:13 2003
+@@ -13,14 +13,8 @@
+ prefix="@prefix@"
+ exec_prefix="@exec_prefix@"
+ PROGRAM="@sbindir@/@PACKAGE_NAME@"
+-OPTIONS="-d 127.0.0.1 -s /etc/mail/sendmail.cf -R -u 3 unix:@localstatedir@/lib/@PACKAGE_NAME@/socket"
+-REQUIRED_DIR="@localstatedir@/lib/@PACKAGE_NAME@"
+-
 -FG_RED='\033[1;31m'
 -FG_GREEN='\033[1;32m'
 -FG_WHITE='\033[0;37m'
 -FG_BLACK='\033[0;30m'
 -FG_NORMAL=${FG_WHITE}
--
++OPTIONS="-d 127.0.0.1 -s /etc/mail/sendmail.cf -R -u 3 unix:@localstatedir@/@PACKAGE_NAME@/socket"
++REQUIRED_DIR="@localstatedir@/@PACKAGE_NAME@"
+ 
  ##########################################################################
  #	Nothing to be configured below this point.
- ##########################################################################
-@@ -66,34 +60,24 @@
+@@ -68,34 +62,24 @@
  start()
  {
  	NAME=`basename "$PROGRAM"`
@@ -51,7 +55,7 @@
  
  	pid=`getpid "$PROGRAM"`
  	if [ X"$pid" != X ]; then
-@@ -107,12 +91,12 @@
+@@ -109,12 +93,12 @@
  		sleep 2
  		pid=`getpid "$PROGRAM"`
  		if [ X"$pid" != X ]; then
@@ -66,7 +70,7 @@
  }
  
  case "$1" in
-@@ -129,9 +113,9 @@
+@@ -131,9 +115,9 @@
  status)
  	pid=`getpid "$PROGRAM"`
  	if [ X"$pid" != X ]; then
