@@ -1,28 +1,28 @@
-# New ports collection makefile for:	gnomepilot-conduits
-# Date created:		16th March 2000
-# Whom:			Ade Lovett <ade@FreeBSD.org>
+# New ports collection makefile for:	gnomepilot-conduits2
+# Date created:		15 April 2003
+# Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	gnomepilot-conduits
-PORTVERSION=	0.9
+PORTNAME=	gnomepilot-conduits2
+PORTVERSION=	2.0.5
 CATEGORIES=	palm comms gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-pilot-conduits/0.9
+MASTER_SITE_SUBDIR=	sources/gnome-pilot-conduits/2.0
 DISTNAME=	gnome-pilot-conduits-${PORTVERSION}
-DIST_SUBDIR=	gnome
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Additional conduits for gnome-pilot
+COMMENT=	Additional conduits for gnome-pilot2
 
-LIB_DEPENDS=	gpilotd.1:${PORTSDIR}/palm/gnomepilot
+LIB_DEPENDS=	gpilotd.2:${PORTSDIR}/palm/gnomepilot2
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomelibs libglade gnomevfs
+USE_BISON=	yes
+USE_GNOME=	gnomeprefix gnomehack libgnome
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-pisock=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
