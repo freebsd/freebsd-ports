@@ -8,7 +8,7 @@
 PORTNAME=	slib
 PORTVERSION=	2d5
 PORTREVISION=	1
-CATEGORIES=	lang
+CATEGORIES=	lang scheme
 MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/
 DISTNAME=	slib${PORTVERSION}
 

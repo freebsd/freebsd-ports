@@ -8,7 +8,7 @@
 
 PORTNAME=	sxm
 PORTVERSION=	1.1
-CATEGORIES=	lang
+CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.malgil.com/sxm/
 
 MAINTAINER=	ports@FreeBSD.org

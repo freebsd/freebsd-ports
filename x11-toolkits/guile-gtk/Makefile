@@ -7,7 +7,7 @@
 
 PORTNAME=	guile-gtk
 PORTVERSION=	0.31
-CATEGORIES=	x11-toolkits
+CATEGORIES=	x11-toolkits scheme
 MASTER_SITES=	http://savannah.nongnu.org/download/guile-gtk/
 DISTNAME=	${PORTNAME}-1.2-${PORTVERSION}
 

@@ -8,7 +8,7 @@
 PORTNAME=	guile-gobject
 PORTVERSION=	0.4.0
 PORTREVISION=	1
-CATEGORIES=	x11-toolkits
+CATEGORIES=	x11-toolkits scheme
 MASTER_SITES=	http://savannah.nongnu.org/download/guile-gtk/
 
 MAINTAINER=	gnome@FreeBSD.org

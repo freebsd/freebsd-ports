@@ -7,7 +7,7 @@
 
 PORTNAME=	drscheme
 PORTVERSION=	204
-CATEGORIES=	lang
+CATEGORIES=	lang scheme
 MASTER_SITES=	http://download.plt-scheme.org/bundles/${PORTVERSION}/plt/ \
 		http://www.cs.utah.edu/plt/download/${PORTVERSION}/plt/ \
 		ftp://ftp.pasteur.fr/pub/computing/Scheme/plt-scheme/${PORTVERSION}/plt/ \
