@@ -21,6 +21,7 @@ USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_LIBTOOL=	yes
+
 CONFLICTS=	libart-*
 
 .include <bsd.port.mk>
