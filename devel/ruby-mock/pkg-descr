@@ -1,0 +1,6 @@
+Ruby/Mock is an extension to the RUnit framework to make it easy to
+implement Mock Objects.  Information about Mock Objects can be found
+online at http://www.mockobjects.com/.
+
+Author:	Nat Pryce <nat.pryce@b13media.com>
+WWW:	http://www.b13media.com/dev/ruby/mock.html

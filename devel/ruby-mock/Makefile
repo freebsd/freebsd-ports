@@ -1,0 +1,36 @@
+# New ports collection makefile for:	Ruby/Mock
+# Date created:		2 September 2001
+# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	mock
+PORTVERSION=	1.0
+CATEGORIES=	devel ruby
+MASTER_SITES=	http://www.b13media.com/dev/ruby/
+PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
+EXTRACT_SUFX=	.tgz
+DIST_SUBDIR=	ruby
+
+MAINTAINER=	knu@FreeBSD.org
+
+RUN_DEPENDS=	${RUBY_SITELIBDIR}/runit/error.rb:${.CURDIR}/../ruby-unit
+
+USE_RUBY=	yes
+
+NO_BUILD=	yes
+
+post-patch:
+	${RUBY} -i -pe 'sub %q{\.\./mock}, "mock"' ${WRKSRC}/demo/*
+
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/mock.rb ${RUBY_SITELIBDIR}/
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/demo/* ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/README ${RUBY_DOCDIR}/${PORTNAME}/
+.endif
+
+.include <bsd.port.mk>
