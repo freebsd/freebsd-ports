@@ -49,6 +49,7 @@
     SUBDIR += dillo
     SUBDIR += djvuplugin
     SUBDIR += eddie
+    SUBDIR += emacs-w3m-emacs20
     SUBDIR += encompass
     SUBDIR += erwn
     SUBDIR += evg

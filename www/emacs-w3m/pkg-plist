@@ -1,0 +1,28 @@
+%%EMACS_LIBDIR%%/site-lisp/w3m/mew-w3m.el
+@unexec rm -f %D/%%EMACS_LIBDIR%%/site-lisp/w3m/mew-w3m.elc
+%%EMACS_LIBDIR%%/site-lisp/w3m/mime-w3m.el
+@unexec rm -f %D/%%EMACS_LIBDIR%%/site-lisp/w3m/mime-w3m.elc
+%%EMACS_LIBDIR%%/site-lisp/w3m/w3m-antenna.el
+%%EMACS_LIBDIR%%/site-lisp/w3m/w3m-antenna.elc
+%%EMACS_LIBDIR%%/site-lisp/w3m/w3m-bookmark.el
+%%EMACS_LIBDIR%%/site-lisp/w3m/w3m-bookmark.elc
+%%EMACS_LIBDIR%%/site-lisp/w3m/w3m-e21.el
+%%EMACS_LIBDIR%%/site-lisp/w3m/w3m-form.el
+%%EMACS_LIBDIR%%/site-lisp/w3m/w3m-form.elc
+%%EMACS_LIBDIR%%/site-lisp/w3m/w3m-om.el
+%%EMACS_LIBDIR%%/site-lisp/w3m/w3m-search.el
+%%EMACS_LIBDIR%%/site-lisp/w3m/w3m-search.elc
+%%EMACS_LIBDIR%%/site-lisp/w3m/w3m-time.el
+%%EMACS_LIBDIR%%/site-lisp/w3m/w3m-time.elc
+%%EMACS_LIBDIR%%/site-lisp/w3m/w3m-weather.el
+%%EMACS_LIBDIR%%/site-lisp/w3m/w3m-weather.elc
+%%EMACS_LIBDIR%%/site-lisp/w3m/w3m-xmas.el
+%%EMACS_LIBDIR%%/site-lisp/w3m/w3m.elc
+%%EMACS_LIBDIR%%/site-lisp/w3m/w3mhack.el
+%%EMACS_LIBDIR%%/site-lisp/w3m/w3m.el
+share/doc/ja/emacs-w3m/TIPS.ja
+share/doc/ja/emacs-w3m/README.ja
+share/doc/emacs-w3m/README
+@dirrm %%EMACS_LIBDIR%%/site-lisp/w3m
+@dirrm share/doc/ja/emacs-w3m
+@dirrm share/doc/emacs-w3m
