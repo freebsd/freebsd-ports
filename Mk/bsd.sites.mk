@@ -356,7 +356,7 @@ MASTER_SITE_GNOME+=	\
 	ftp://ftp.mirror.ac.uk/sites/ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
 	http://ftp.linux.org.uk/mirrors/ftp.gnome.org/%SUBDIR%/ \
 	http://www.gtlib.cc.gatech.edu/pub/gnome/%SUBDIR%/ \
-	http://public.planetmirror.com/pub/GNOME/%SUBDIR%/ \
+	http://public.planetmirror.com/pub/gnome/%SUBDIR%/ \
 	ftp://ftp.dit.upm.es/linux/gnome/%SUBDIR%/ \
 	ftp://ftp.dataplus.se/pub/linux/gnome/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/X11/gnome/%SUBDIR%/ \
