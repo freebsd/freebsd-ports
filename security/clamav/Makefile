@@ -7,6 +7,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	0.65
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	clamav
@@ -72,7 +73,7 @@ CFLAGS+=	-O
 LDFLAGS+=	-lcipher
 .endif
 
-.if ${OSVERSION} > 501113
+.if ${OSVERSION} > 500023
 # Approximate time libgmp was removed from the base system
 LDFLAGS+=	-L${LOCALBASE}/lib
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
