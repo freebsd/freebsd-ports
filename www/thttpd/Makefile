@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	thttpd-2.11
+DISTNAME=	thttpd-2.13
 CATEGORIES=	www
 MASTER_SITES=	http://www.acme.com/software/thttpd/ \
 		http://www.freenix.no/~anders/
@@ -18,17 +18,17 @@ NO_PACKAGE=     "Group needs to be created for users to have their own web dirs"
 GNU_CONFIGURE=	yes
 
 MAN1=		makeweb.1 htpasswd.1
-MAN8=		thttpd.8 nph-redirect.8 ssi.8 syslogtocern.8
+MAN8=		thttpd.8 redirect.8 ssi.8 syslogtocern.8
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/thttpd ${PREFIX}/sbin/
 	@${INSTALL_MAN} ${WRKSRC}/thttpd.8 ${PREFIX}/man/man8
 	@${INSTALL} -d -o root -g wheel -m 0775 ${PREFIX}/www
 	@${INSTALL} -d -o root -g wheel -m 0755 ${PREFIX}/www/cgi-bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/cgi-src/nph-redirect ${PREFIX}/www/cgi-bin/
+	@${INSTALL_PROGRAM} ${WRKSRC}/cgi-src/redirect ${PREFIX}/www/cgi-bin/
 	@${INSTALL_PROGRAM} ${WRKSRC}/cgi-src/ssi ${PREFIX}/www/cgi-bin/
 	@${INSTALL_PROGRAM} ${WRKSRC}/cgi-src/phf ${PREFIX}/www/cgi-bin/
-	@${INSTALL_MAN} ${WRKSRC}/cgi-src/nph-redirect.8 ${PREFIX}/man/man8
+	@${INSTALL_MAN} ${WRKSRC}/cgi-src/redirect.8 ${PREFIX}/man/man8
 	@${INSTALL_MAN} ${WRKSRC}/cgi-src/ssi.8 ${PREFIX}/man/man8
 	@${INSTALL_PROGRAM} ${WRKSRC}/extras/makeweb ${PREFIX}/bin/
 	@${INSTALL} -c -m 755 -o root -g wheel ${WRKSRC}/extras/syslogtocern ${PREFIX}/bin/
