@@ -4767,6 +4767,7 @@ p5-Data-HexDump	ports/devel/p5-Data-HexDump
 p5-Data-JavaScript	ports/lang/p5-Data-JavaScript
 p5-Data-ShowTable	ports/devel/p5-Data-ShowTable
 p5-Data-TemporaryBag	ports/devel/p5-Data-TemporaryBag
+p5-Data-UUID	ports/devel/p5-Data-UUID
 p5-DataCash	ports/misc/p5-DataCash
 p5-Date-Calc	ports/devel/p5-Date-Calc
 p5-Date-DayOfWeek	ports/devel/p5-Date-DayOfWeek
