@@ -8,11 +8,10 @@
 PORTNAME=	edb
 PORTVERSION=	1.0.3
 CATEGORIES=	databases
-MASTER_SITES=	http://www.ny.us.rasterman.com/files/ \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	enlightenment
 
-MAINTAINER=	ishmael27@home.com
+MAINTAINER=	ishmael27x@yahoo.com
 
 USE_LIBTOOL=	yes
 USE_GTK=	yes
