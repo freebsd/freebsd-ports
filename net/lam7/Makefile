@@ -8,7 +8,8 @@
 PORTNAME=	lam7
 PORTVERSION=	7.0.5
 CATEGORIES=	net parallel
-MASTER_SITES=	http://www.lam-mpi.org/download/files/
+MASTER_SITES=	http://www.lam-mpi.org/download/files/ \
+		http://www.thinkingnerds.com/lam/download/files/
 DISTNAME=	lam-${PORTVERSION}
 
 MAINTAINER=	jan.lentfer@web.de
