@@ -7,7 +7,7 @@
 
 PORTNAME=	jade
 PORTVERSION=	1.2.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.jclark.com/pub/jade/
 
@@ -52,4 +52,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/pubtext/xml* ${PREFIX}/share/xml/jade
 	@${XMLCATMGR} -sc ${CATALOG_PORTS_SGML} add CATALOG ${PORTNAME}/catalog
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# Same problem with textproc/openjade.
+CPPFLAGS:=	-O ${CFLAGS:N-O*:N-m*}
+
+.include <bsd.port.post.mk>
