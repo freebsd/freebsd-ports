@@ -1,0 +1,118 @@
+--- util/fluxbox-generate_menu.in.orig	Mon Nov 17 01:50:53 2003
++++ util/fluxbox-generate_menu.in	Mon Nov 17 02:00:42 2003
+@@ -45,7 +45,7 @@
+ 
+ 
+ WHOAMI=`whoami`
+-[ "$WHOAMI" = root ] && PATH=/bin:/usr/bin/:/usr/local/bin:/usr/X11R6/bin
++[ "$WHOAMI" = root ] && PATH=/bin:/usr/bin/:%%LOCALBASE%%/bin:%%X11BASE%%/bin
+ 
+ # Functions
+ display_usage() {
+@@ -78,8 +78,8 @@
+ 
+   Only for packagers:
+ 
+-    -p  prefix; default is /usr/local
+-    -n  Gnome-prefix; /opt, /usr, /usr/X11R6 and /usr/local autodetected
++    -p  prefix; default is @PREFIX@
++    -n  Gnome-prefix; %%X11BASE%%, %%LOCALBASE%% and /opt autodetected
+     -q  KDE-prefix; idem dito
+ 
+ 
+@@ -592,7 +592,7 @@
+ # Name of the outputfile
+ # MENUFILENAME=${HOME}/.fluxbox/menu
+ 
+-# MENUTITLE=\`fluxbox -version|cut -d " " -f-2\`
++# MENUTITLE=\`fluxbox-devel -version|cut -d " " -f-2\`
+ 
+ # standard url for console-browsers
+ # HOMEPAGE=fluxbox.org
+@@ -604,19 +604,19 @@
+ # FBRUNOPTIONS='-font 10x20 -fg grey -bg black -title run'
+ 
+ # --- PREFIX'es
+-# These are prefixes; So if fluxbox is installed in /usr/bin/fluxbox
+-# your prefix is: /usr
++# These are prefixes; So if fluxbox-devel is installed in @PREFIX@/bin/fluxbox-devel
++# your prefix is: @PREFIX@
+ 
+-# fluxbox-generate already looks in /usr/X11R6, /usr, /usr/local and /opt so
++# fluxbox-generate already looks in %%LOCALBASE%%, %%X11BASE%% and /opt so
+ # there should be no need to specify them.
+ #
+-# PREFIX=/usr
+-# GNOME_PREFIX=/opt/gnome
+-# KDE_PREFIX=/opt/kde
++# PREFIX=@PREFIX@
++# GNOME_PREFIX=%%X11BASE%%
++# KDE_PREFIX=%%LOCALBASE%%
+ 
+ 
+ # Sepparate the list of background-dirs with semicolumns ':'
+-# BACKGROUND_DIRS="${HOME}/.fluxbox/backgrounds/:/usr/local/share/fluxbox/backgrounds/:/usr/share/wallpapers"
++# BACKGROUND_DIRS="${HOME}/.fluxbox/backgrounds/:@PREFIX@/share/fluxbox-devel/backgrounds/:%%X11BASE%%/share/wallpapers"
+ 
+ 
+ # --- Boolean variables.
+@@ -734,12 +734,12 @@
+ # prefix
+ PREFIX="${PREFIX:=@PREFIX@}"
+ if [  -z "${PREFIX}" -o ! -d "${PREFIX}" ]; then
+-    PREFIX=`which fluxbox | sed 's,/bin/fluxbox$,,'`
++    PREFIX=`which fluxbox-devel | sed 's,/bin/fluxbox$,,'`
+ fi
+ 
+ 
+ # gnome prefix
+-for GNOME_PREFIX in "${GNOME_PREFIX}" /usr/local /usr/X11R6 /usr /opt "${PREFIX}"; do
++for GNOME_PREFIX in "${GNOME_PREFIX}" %%X11BASE%% %%LOCALBASE%% /opt "${PREFIX}"; do
+     if [ -n "${GNOME_PREFIX}" -a -d "$GNOME_PREFIX/share/gnome" ]; then
+         break;
+     fi
+@@ -747,7 +747,7 @@
+ # Will remain $PREFIX if all else fails
+ 
+ # kde prefix
+-for KDE_PREFIX in "${KDE_PREFIX}" /usr/local /usr/X11R6 /usr /opt "${PREFIX}"; do
++for KDE_PREFIX in "${KDE_PREFIX}" %%LOCALBASE%% %%X11BASE%% /opt "${PREFIX}"; do
+     if [ -n "${KDE_PREFIX}" -a -d "$KDE_PREFIX/share/applnk" ]; then
+         break;
+     fi
+@@ -755,7 +755,7 @@
+ 
+ # directory for the backgrounds
+ if [ -z "$BACKGROUND_DIRS" ]; then
+-    BACKGROUND_DIRS="${HOME}/.fluxbox/backgrounds/:${PREFIX}/share/fluxbox/backgrounds/"
++    BACKGROUND_DIRS="${HOME}/.fluxbox/backgrounds/:${PREFIX}/share/fluxbox-devel/backgrounds/"
+ fi
+ 
+ # find the default terminal
+@@ -830,7 +830,7 @@
+     links|w3m|lynx)  append "[exec] (${DEFAULT_BROWSERNAME}) {${DEFAULT_TERM} -e ${DEFAULT_BROWSER} ${HOMEPAGE}}" ;;
+     firebird|mozilla|phoenix|galeon|dillo|netscape) append "[exec] (${DEFAULT_BROWSERNAME}) {${DEFAULT_BROWSER}}" ;;
+     konqueror) append "[exec] (konqueror) {kfmclient openProfile webbrowsing}" ;;
+-    opera) append "[exec] (opera) {env QT_XFT=true opera}" ;;
++    opera) append "[exec] (opera) {opera}" ;;
+     MozillaFirebird) append "[exec] (firebird) {MozillaFirebird}" ;;
+     *) append "[exec] ($DEFAULT_BROWSERNAME) {$DEFAULT_BROWSER}" ;;
+ esac
+@@ -846,7 +846,7 @@
+ append_submenu "${NETMENU}"
+     append_submenu "${BROWSERMENU}"
+         normal_find mozilla-firebird MozillaFirebird galeon mozilla dillo netscape
+-        find_it opera       append "[exec]   (opera) {env QT_XFT=true opera}"
++        find_it opera       append "[exec]   (opera) {opera}"
+         find_it konqueror   append "[exec]   (konqueror) {kfmclient openProfile webbrowsing}"
+         find_it links       append "[exec]   (links) {${DEFAULT_TERM} -e links ${HOMEPAGE}}"
+         find_it w3m         append "[exec]   (w3m) {${DEFAULT_TERM} -e w3m ${HOMEPAGE}}"
+@@ -990,7 +990,7 @@
+     append "[config] (${CONFIGUREMENU})"
+ 
+     append_menu "[submenu] (${SYSTEMSTYLES}) {${STYLEMENUTITLE}}"
+-        append "[stylesdir] (${PREFIX}/share/fluxbox/styles)"
++        append "[stylesdir] (${PREFIX}/share/fluxbox-devel/styles)"
+     append_menu_end
+ 
+     append_menu "[submenu] (${USERSTYLES}) {${STYLEMENUTITLE}}"

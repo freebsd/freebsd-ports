@@ -4,4 +4,8 @@ If you want stable use version 0.1.14.
 This is one version of many to come before a stable 1.0.0 release.
 Check out the RoadMap on http://fluxbox.sourceforge.net/roadmap.php
 for more information about upcoming versions.
+
+ATTENTION: As of 0.9.6 the shell script 'startfluxbox-devel' has been added.
+           It should be executed instead of fluxbox itself from
+           ~/.xinitrc or ~/.xsession.
 *******************************************************************************
