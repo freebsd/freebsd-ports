@@ -23,7 +23,7 @@
    file_transport = address_file
    pipe_transport = address_pipe
    reply_transport = address_reply
-+  condition = !match{${rxquote:${home}}}{^/nonexistent}
++  condition = ${if exists{$home/.forward} {yes} {no} }
  
  
  # This router matches local user mailboxes.
