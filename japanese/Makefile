@@ -276,6 +276,7 @@
     SUBDIR += ruby-eb
     SUBDIR += ruby-kakasi
     SUBDIR += ruby-man
+    SUBDIR += ruby-romkan
     SUBDIR += ruby-slang
     SUBDIR += ruby-uconv
     SUBDIR += ruby-tcltklib
