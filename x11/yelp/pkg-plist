@@ -134,8 +134,10 @@ share/gnome/sgml/docbook/yelp/yelp-custom.xsl
 share/gnome/sgml/docbook/yelp/yelp-customization.xsl
 share/gnome/yelp/catalog
 share/gnome/yelp/important_docs.xml
+share/locale/am/LC_MESSAGES/yelp.mo
 share/locale/ar/LC_MESSAGES/yelp.mo
 share/locale/az/LC_MESSAGES/yelp.mo
+share/locale/be/LC_MESSAGES/yelp.mo
 share/locale/bg/LC_MESSAGES/yelp.mo
 share/locale/ca/LC_MESSAGES/yelp.mo
 share/locale/cs/LC_MESSAGES/yelp.mo
@@ -146,6 +148,7 @@ share/locale/es/LC_MESSAGES/yelp.mo
 share/locale/et/LC_MESSAGES/yelp.mo
 share/locale/fr/LC_MESSAGES/yelp.mo
 share/locale/gl/LC_MESSAGES/yelp.mo
+share/locale/he/LC_MESSAGES/yelp.mo
 share/locale/hu/LC_MESSAGES/yelp.mo
 share/locale/it/LC_MESSAGES/yelp.mo
 share/locale/ja/LC_MESSAGES/yelp.mo
@@ -162,7 +165,9 @@ share/locale/ro/LC_MESSAGES/yelp.mo
 share/locale/ru/LC_MESSAGES/yelp.mo
 share/locale/sk/LC_MESSAGES/yelp.mo
 share/locale/sl/LC_MESSAGES/yelp.mo
+share/locale/sq/LC_MESSAGES/yelp.mo
 share/locale/sv/LC_MESSAGES/yelp.mo
+share/locale/ta/LC_MESSAGES/yelp.mo
 share/locale/tr/LC_MESSAGES/yelp.mo
 share/locale/uk/LC_MESSAGES/yelp.mo
 share/locale/vi/LC_MESSAGES/yelp.mo
