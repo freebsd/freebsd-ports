@@ -29,6 +29,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
 USE_X_PREFIX=		no
+USE_REINPLACE=		yes
 PREFIX?=		${X11BASE}
 MTREE_FILE=		/etc/mtree/BSD.x11-4.dist
 INSTALLS_SHLIB=		yes
@@ -78,6 +79,9 @@ PLIST_SUB+=	AMD64:="@comment "
 post-extract:
 	${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/Wraphelp2.gz > \
 		${WRKSRC}/lib/Xdmcp/Wraphelp.c
+	@${REINPLACE_CMD} -e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g ; \
+		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/config/cf/FreeBSD.cf
 
 post-patch:
 	${CP} ${MASTERDIR}/files/nls::Compose::microsoft-cp1251 ${WRKSRC}/nls/Compose/microsoft-cp1251

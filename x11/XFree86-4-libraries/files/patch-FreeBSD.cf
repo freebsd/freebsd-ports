@@ -1,5 +1,34 @@
---- config/cf/FreeBSD.cf	Tue Jan 14 21:52:12 2003
-+++ config/cf/FreeBSD.cf	Sun Nov  2 13:21:24 2003
+--- config/cf/FreeBSD.cf.orig	Tue Jan 14 21:52:12 2003
++++ config/cf/FreeBSD.cf	Thu Feb  5 12:33:53 2004
+@@ -89,14 +89,14 @@
+ # endif
+ # define HasPosixThreads	YES
+ # define ThreadedX		YES
+-# define SystemMTDefines	-D_REENTRANT -D_THREAD_SAFE
++# define SystemMTDefines	%%PTHREAD_CFLAGS%%
+ /*
+  * FreeBSD has tread-safe api but no getpwnam_r yet.
+  */
+ # define HasThreadSafeAPI	YES
+ # define MTSafeAPIDefines	-DXUSE_MTSAFE_API -DXNO_MTSAFE_PWDAPI
+ # if HasLibPthread
+-#  define ThreadsLibraries	-lpthread
++#  define ThreadsLibraries	%%PTHREAD_LIBS%%
+ # else
+ #  if OSRelVersion >= 500043
+ #   define BuildThreadStubLibrary  NO
+@@ -106,9 +106,9 @@
+ #   define NeedUIThrStubs          YES
+ #  endif
+ #  if (OSRelVersion >= 500016)
+-#   define ThreadsLibraries	-lc_r
++#   define ThreadsLibraries	%%PTHREAD_LIBS%%
+ #  else
+-#   define ThreadsLibraries	-pthread
++#   define ThreadsLibraries	%%PTHREAD_LIBS%%
+ #  endif
+ #  define SharedX11Reqs		$(LDPRELIB) $(XTHRSTUBLIB)
+ #  define SharedXtReqs		$(LDPRELIB) $(XLIBONLY) $(SMLIB) $(ICELIB) $(XTHRSTUBLIB)
 @@ -162,11 +162,11 @@
   *    ld: warning: libXThrStub.so.6, needed by libX11.so, not found
   */
