@@ -14,15 +14,17 @@ MASTER_SITES=	http://people.FreeBSD.org/~imura/distfiles/
 DISTNAME=	${PORTNAME}-i586-${PORTVERSION}
 
 PATCH_SITES=	${RPM_MIRRORS:S/__DIR__/${STDDIR}/g}
-PATCHFILES=	${RPM_LIBJPEG} ${RPM_LIBPNG}
+PATCHFILES=	${RPM_LIBPNG}
 
 MAINTAINER=	sanpei@sanpei.org
 
 BUILD_DEPENDS=	rpm:${PORTSDIR}/misc/rpm
-RUN_DEPENDS=    /compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
+RUN_DEPENDS=	${LINUX_BASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base \
+		${LINUX_BASE}/usr/lib/libjpeg.so.62.0.0:${PORTSDIR}/graphics/linux-jpeg
 
 ONLY_FOR_ARCHS=	i386
 DOC_DIR=	${PREFIX}/share/doc/xmovie
+LINUX_BASE=	/compat/linux
 NO_BUILD=	yes
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/xmovie-i586
@@ -37,7 +39,6 @@ RPM_MIRRORS=            \
 	ftp://ftp.is.co.za/linux/distributions/redhat/__DIR__/ \
 	ftp://mirror.aarnet.edu.au/pub/linux/redhat/__DIR__/
 STDDIR=		redhat-6.1/${MACHINE_ARCH}/RedHat/RPMS
-RPM_LIBJPEG=	libjpeg-6b-9.i386.rpm
 RPM_LIBPNG=	libpng-1.0.3-4.i386.rpm
 DBPATH=		/var/lib/rpm
 LINUX_PREFIX=	/compat/linux
