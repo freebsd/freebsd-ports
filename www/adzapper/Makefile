@@ -8,8 +8,7 @@
 PORTNAME=	adzapper
 PORTVERSION=	0.4.0
 CATEGORIES=	www
-MASTER_SITES=	http://www.zipcon.net/~adamf/adzapper/ \
-		ftp://ftp.aquezada.com/pub/distrib/adzapper/
+MASTER_SITES=	http://adzapper.sourceforge.net/
 
 MAINTAINER=	jdunn@aquezada.com
 
