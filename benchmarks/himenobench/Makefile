@@ -16,10 +16,10 @@ DIST_SUBDIR=	himeno
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Himeno bench benchmark, solves Poisson eq. with Jacobi's method
 
-.if defined(WITH_ICC)
+.if defined(USE_ICC)
 BUILD_DEPENDS=	${LOCALBASE}/intel_cc_80/bin/icc:${PORTSDIR}/lang/icc
 .endif
-.if defined(WITH_IFC)
+.if defined(USE_IFC)
 BUILD_DEPENDS=	${LOCALBASE}/intel_fc_80/bin/ifort:${PORTSDIR}/lang/ifc
 .endif
 EXTRACT_DEPENDS=	lha:${PORTSDIR}/archivers/lha
@@ -36,19 +36,19 @@ CXXFLAGS+=	-mfancy-math-387 -mpreferred-stack-boundary=3
 .endif # i386
 .endif
 
-.if defined(WITH_ICC)
+.if defined(USE_ICC)
 CFLAGS_ICC+=	-O3 -tpp7 -xiMKW -Vaxlib
 ICC=		${LOCALBASE}/intel_cc_80/bin/icc
-PLIST_SUB+=	WITH_ICC=""
+PLIST_SUB+=	USE_ICC=""
 .else
-PLIST_SUB+=	WITH_ICC="@comment "
+PLIST_SUB+=	USE_ICC="@comment "
 .endif
-.if defined(WITH_IFC)
+.if defined(USE_IFC)
 FFLAGS_IFC+=	-O3 -tpp7 -xiMKW -Vaxlib -ipo
 IFC=		${LOCALBASE}/intel_fc_80/bin/ifort
-PLIST_SUB+=	WITH_IFC=""
+PLIST_SUB+=	USE_IFC=""
 .else
-PLIST_SUB+=	WITH_IFC="@comment "
+PLIST_SUB+=	USE_IFC="@comment "
 .endif
 
 do-extract:
@@ -71,14 +71,14 @@ do-build:
 	@cd ${WRKSRC} ; ${CC} ${CFLAGS} -DMIDDLE  -o himenobmtxpa_m  himenobmtxpa.c
 	@cd ${WRKSRC} ; ${CC} ${CFLAGS} -DSMALL   -o himenobmtxpa_s  himenobmtxpa.c
 	@cd ${WRKSRC} ; ${CC} ${CFLAGS} -DSSMALL  -o himenobmtxpa_ss himenobmtxpa.c
-.if defined(WITH_IFC)
+.if defined(USE_IFC)
 #	@cd ${WRKSRC} ; ${IFC} ${FFLAGS_IFC} -o himenobmtxp_xl.ifc himenobmtxp_xl.f #Too large
 	@cd ${WRKSRC} ; ${IFC} ${FFLAGS_IFC} -o himenobmtxp_l.ifc  himenobmtxp_l.f
 	@cd ${WRKSRC} ; ${IFC} ${FFLAGS_IFC} -o himenobmtxp_m.ifc  himenobmtxp_m.f
 	@cd ${WRKSRC} ; ${IFC} ${FFLAGS_IFC} -o himenobmtxp_s.ifc  himenobmtxp_s.f
 	@cd ${WRKSRC} ; ${IFC} ${FFLAGS_IFC} -o himenobmtxp.ifc    himenobmtxp.f90
 .endif
-.if defined(WITH_ICC)
+.if defined(USE_ICC)
 #	@cd ${WRKSRC} ; ${ICC} ${CFLAGS_ICC} -DELARGE  -o himenobmtxps_xl.icc himenobmtxps.c #Too large
 	@cd ${WRKSRC} ; ${ICC} ${CFLAGS_ICC} -DLARGE   -o himenobmtxps_l.icc  himenobmtxps.c
 	@cd ${WRKSRC} ; ${ICC} ${CFLAGS_ICC} -DMIDDLE  -o himenobmtxps_m.icc  himenobmtxps.c
@@ -100,13 +100,13 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxps_s          ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxps_ss         ${PREFIX}/bin
 #	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxp_xl.ifc      ${PREFIX}/bin #Too large
-.if defined(WITH_IFC)
+.if defined(USE_IFC)
 	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxp_l.ifc       ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxp_m.ifc       ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxp_s.ifc       ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxp.ifc         ${PREFIX}/bin
 .endif
-.if defined(WITH_ICC)
+.if defined(USE_ICC)
 #	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxps_xl.icc     ${PREFIX}/bin #Too large
 	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxps_l.icc      ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxps_m.icc      ${PREFIX}/bin
