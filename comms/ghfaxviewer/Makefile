@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	halifax
 
 MAINTAINER=	domi@saargate.de
-COMMENT=	a GNOME compliant fax viewer which ist capable of displaying TIFF G3 faxes
+COMMENT=	GNOME compliant fax viewer capable of displaying TIFF G3 faxes
 
 LIB_DEPENDS=	gnomeprint.16:${PORTSDIR}/print/gnomeprint \
 		gconf-1.1:${PORTSDIR}/devel/gconf \
@@ -21,6 +21,7 @@ LIB_DEPENDS=	gnomeprint.16:${PORTSDIR}/print/gnomeprint \
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 USE_GNOME=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -29,10 +30,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAN1=	halifax.1 ghfaxviewer.1
 
 pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
+	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|\(\$$(datadir)/\)gnome/|\1|g ; \
+		 s|\$$(datadir)/locale|$$(prefix)/share/locale|g'
 
 .include <bsd.port.mk>

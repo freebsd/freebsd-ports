@@ -14,6 +14,7 @@ MAINTAINER=	pat@FreeBSD.org
 COMMENT=	A Window Maker dockapp that helps with easy use of pppd
 
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
@@ -25,14 +26,14 @@ CONFIGURE_ARGS=	--x-includes="${X11BASE}/include" \
 MAN1=		yawmppp.1x
 
 pre-patch:
-	@${PERL} -pi -e "s@-g -O2@${CFLAGS}@g; s@-O2 -Wall@${CFLAGS} -Wall@g; \
+	@${REINPLACE_CMD} -e "s@-g -O2@${CFLAGS}@g; s@-O2 -Wall@${CFLAGS} -Wall@g; \
 			s@-O2@${CFLAGS}@g" ${WRKSRC}/*/Makefile.in \
 			${WRKSRC}/configure ${WRKSRC}/*/*/Makefile.in
-	@${PERL} -pi -e 's!\/usr\/local!${PREFIX}!; \
+	@${REINPLACE_CMD} -e 's!\/usr\/local!${PREFIX}!; \
 		s!/usr/bin!${PREFIX}/bin!' ${WRKSRC}/src/ycommon.c
-	@${PERL} -pi.orig -e 's|/etc/ppp/yagetmodemspeed|${PREFIX}/bin/yagetmodemspeed|' \
+	@${REINPLACE_CMD} -e 's|/etc/ppp\(/yagetmodemspeed\)|${PREFIX}/bin\1|' \
 		${WRKSRC}/src/gtksetup/applet.c
-	@${PERL} -pi.orig -e 's|tac|cat|' ${WRKSRC}/src/dockapp/getmodemspeed.c
+	@${REINPLACE_CMD} -e 's|tac|cat|' ${WRKSRC}/src/dockapp/getmodemspeed.c
 
 do-install:
 .for file in dockapp/yagetmodemspeed dockapp/${PORTNAME} gtklog/${PORTNAME}.log \
