@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	icqmail
 MAINTAINER=	never@nevermind.kiev.ua
 COMMENT=	C++ class library for manipulating messages in MIME format
 
+CONFLICTS=	kdenetwork-3.1.*
+
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
