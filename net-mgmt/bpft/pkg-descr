@@ -14,8 +14,8 @@ pseudo-device   bpfilter        4       # Berkeley packet filter
 The number after bpfilter is the number of interfaces that can be
 examined simultaneously. See section 6.1 of the Handbook for details.
 
-On FreeBSD 4.0 or later versions, use the following line instead:
+On FreeBSD 4 or later, use the following line instead:
 
-pseudo-device  bpf     4  # Berkeley packet filter
+device  bpf	# Berkeley packet filter
 
 - oddbjorn <oddbjorn@tricknology.org>
