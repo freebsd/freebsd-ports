@@ -131,6 +131,7 @@ usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/ld.Linux-bad
 usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/ld
 usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/lnxcc
 usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/lnxcc_driver
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/lnxcc_driver.Linux
 usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/probe_linux.sh
 usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/protect_headers_setup.sh
 usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/include/alpha/builtins.h
@@ -178,7 +179,7 @@ usr/lib/compaq/libots-2.2.7/README
 usr/lib/compaq/libots-2.2.7/libots.a
 usr/lib/compaq/libots-2.2.7/libots.so
 usr/lib/libots.a
-usr/lib/libots.so
+@comment usr/lib/libots.so
 @dirrm usr/lib/compaq/libots-2.2.7
 @comment cpml RPM
 usr/doc/cpml-5.1.0/README
@@ -188,7 +189,7 @@ usr/lib/compaq/cpml-5.1.0/cpml.h
 usr/lib/compaq/cpml-5.1.0/libcpml_ev5.a
 usr/lib/compaq/cpml-5.1.0/libcpml_ev5.so
 usr/lib/libcpml.a
-usr/lib/libcpml.so
+@comment usr/lib/libcpml.so
 @dirrm usr/doc/cpml-5.1.0
 @dirrm usr/lib/compaq/cpml-5.1.0
 @dirrm usr/lib/compaq
