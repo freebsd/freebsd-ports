@@ -1,0 +1,11 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SMPP/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Net/smsc.pl
+lib/perl5/site_perl/%%PERL_VER%%/Net/sendmessage.pl
+lib/perl5/site_perl/%%PERL_VER%%/Net/esme-rec.pl
+lib/perl5/site_perl/%%PERL_VER%%/Net/esme-hammer.pl
+lib/perl5/site_perl/%%PERL_VER%%/Net/SMPP.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/esme.pl
+lib/perl5/site_perl/%%PERL_VER%%/Net/bind-hammer.pl
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SMPP
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net 2>/dev/null || true
