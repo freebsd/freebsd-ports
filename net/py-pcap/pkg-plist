@@ -1,6 +1,4 @@
-%%PYTHON_SITELIBDIR%%/pcap.py
-%%PYTHON_SITELIBDIR%%/pcap.pyc
-%%PYTHON_SITELIBDIR%%/pcap.pyo
-%%PYTHON_SITELIBDIR%%/pcapcmodule.so
-%%PORTDOCS%%share/examples/py-pcap/sniff.py
-%%PORTDOCS%%@dirrm share/examples/py-pcap
+lib/%%PYTHON_VERSION%%/site-packages/pcap.py
+lib/%%PYTHON_VERSION%%/site-packages/pcap.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pcap.pyo
+lib/%%PYTHON_VERSION%%/site-packages/pcapcmodule.so
