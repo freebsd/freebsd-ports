@@ -9,6 +9,7 @@
     SUBDIR += c2html
     SUBDIR += catdoc
     SUBDIR += cdif
+    SUBDIR += cdiff
     SUBDIR += chpp
     SUBDIR += cocoon
     SUBDIR += code2html
