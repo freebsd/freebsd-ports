@@ -44,7 +44,7 @@ IGNORE=		may not be automatically fetched due to licensing\
 
 LINPROCFS!=	/sbin/mount | ${GREP} linprocfs | ${AWK} '{print $1}'
 
-pre-everything::
+pre-install:
 .if !empty(LINPROCFS)
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "Check if linprocfs is running: YES"
