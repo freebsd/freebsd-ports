@@ -7,7 +7,6 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${INSTALL_JDK_VERSION}
-PORTREVISION=	3
 CATEGORIES=	java devel
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-sun-
@@ -29,13 +28,15 @@ PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///} PORTVERSION=${PORTVERSION}
 
 NO_BUILD=	yes
 USE_LINUX=	yes
-DL_JDK_VERSION=	1.4.1_03
-INSTALL_JDK_VERSION=	1.4.1
+DL_JDK_VERSION=	1.4.2
+INSTALL_JDK_VERSION=	1.4.2
 ONLY_FOR_ARCHS=	i386
-DOWNLOAD_URL?=	http://java.sun.com/webapps/download/Display?BundleId=8230&Referer=http://java.sun.com/j2se/1.4.1/download.html
+DOWNLOAD_URL?=	http://java.sun.com/webapps/download/Display?BundleId=8590&Referer=http://java.sun.com/j2se/1.4.2/download.html
 PORTTITLE=	Java 2 Development Kit ${INSTALL_JDK_VERSION} for Linux
 APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}${INSTALL_JDK_VERSION}
 CPIO?=		/usr/bin/cpio
+PACKED_JARS=	lib/tools.jar jre/lib/rt.jar jre/lib/jsse.jar jre/lib/charsets.jar jre/lib/ext/localedata.jar jre/lib/plugin.jar jre/javaws/javaws.jar
+UNPACK_CMD=	${APP_HOME}/lib/unpack
 
 .include <bsd.port.pre.mk>
 
@@ -49,7 +50,7 @@ pre-everything::
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@cd ${WRKDIR} \
-	&& ${TAIL} -n 158349 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKDIR}/install.sfx \
+	&& ${TAIL} -n 135464 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKDIR}/install.sfx \
 	&& ${CHMOD} +x ${WRKDIR}/install.sfx \
 	&& ${WRKDIR}/install.sfx > /dev/null
 
@@ -60,6 +61,12 @@ do-install:
 	${MKDIR} ${APP_HOME}
 	cd ${WRKSRC} && ${FIND} . -print \
 	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${APP_HOME}
+	for i in ${PACKED_JARS}; do \
+	  if [ -f ${APP_HOME}/`dirname $$i`/`basename $$i .jar`.pack ]; then \
+	    ${UNPACK_CMD} ${APP_HOME}/`dirname $$i`/`basename $$i .jar`.pack ${APP_HOME}/$$i; \
+	    ${RM} -f ${APP_HOME}/`dirname $$i`/`basename $$i .jar`.pack; \
+	  fi \
+	done
 	${LOCALBASE}/bin/registervm "${APP_HOME}/bin/java # Linux-Sun-JDK${PORTVERSION}"
 
 .include <bsd.port.post.mk>
