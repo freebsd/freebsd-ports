@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	tin
-PORTVERSION=    1.5.4
+PORTVERSION=    1.5.6
 CATEGORIES=	news
 MASTER_SITES=   ftp://ftp.tin.org/pub/news/clients/tin/v1.5/ \
 		ftp://nuxi.ucdavis.edu/pub/tin/v1.5/ \
