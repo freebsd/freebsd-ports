@@ -7,7 +7,7 @@
 
 PORTNAME=	imlib2
 PORTVERSION=	1.2.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	enlightenment
@@ -37,5 +37,9 @@ INSTALLS_SHLIB=	yes
 .if defined(WITH_MMX) && (${ARCH} == "i386")
 CONFIGURE_ARGS+=	--enable-mmx
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|lround|(long int)rint|g' ${WRKSRC}/src/lib/color_helpers.c
 
 .include <bsd.port.post.mk>
