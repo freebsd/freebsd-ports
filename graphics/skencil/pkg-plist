@@ -11,16 +11,21 @@ share/sketch/Pax/Generate/typedefs.pyc
 share/sketch/Pax/X.py
 share/sketch/Pax/X.pyc
 share/sketch/Pax/paxmodule.so
+share/sketch/Pax/paxtkinter.so
 share/sketch/Plugins/Filters/ailoader.py
 share/sketch/Plugins/Filters/ailoader.pyc
 share/sketch/Plugins/Filters/aisaver.py
 share/sketch/Plugins/Filters/aisaver.pyc
+share/sketch/Plugins/Filters/cmxloader.py
+share/sketch/Plugins/Filters/cmxloader.pyc
 share/sketch/Plugins/Filters/gziploader.py
 share/sketch/Plugins/Filters/gziploader.pyc
 share/sketch/Plugins/Filters/skloader.py
 share/sketch/Plugins/Filters/skloader.pyc
 share/sketch/Plugins/Filters/sksaver.py
 share/sketch/Plugins/Filters/sksaver.pyc
+share/sketch/Plugins/Filters/wmfloader.py
+share/sketch/Plugins/Filters/wmfloader.pyc
 share/sketch/Plugins/Filters/xfigloader.py
 share/sketch/Plugins/Filters/xfigloader.pyc
 share/sketch/Plugins/Objects/lcdtext.py
@@ -78,8 +83,12 @@ share/sketch/Resources/Misc/standard.dashes
 share/sketch/Resources/Misc/standard.spl
 share/sketch/Resources/Misc/tkdefaults
 share/sketch/Resources/Misc/www.spl
-share/sketch/Script/mkfontdir.py
-share/sketch/Script/swapbench.py
+share/sketch/Script/__init__.py
+share/sketch/Script/abut_horizontal.py
+share/sketch/Script/abut_vertical.py
+share/sketch/Script/select_same_fill_color.py
+share/sketch/Script/select_same_line_color.py
+share/sketch/Script/usersguide.py
 share/sketch/Sketch/Base/config.py
 share/sketch/Sketch/Base/config.pyc
 share/sketch/Sketch/Base/configutil.py
@@ -298,6 +307,14 @@ share/sketch/Sketch/Pixmaps/fill_tile.xbm
 share/sketch/Sketch/Pixmaps/gradient_conical.xbm
 share/sketch/Sketch/Pixmaps/gradient_linear.xbm
 share/sketch/Sketch/Pixmaps/gradient_radial.xbm
+share/sketch/Sketch/Scripting/__init__.py
+share/sketch/Sketch/Scripting/__init__.pyc
+share/sketch/Sketch/Scripting/registry.py
+share/sketch/Sketch/Scripting/registry.pyc
+share/sketch/Sketch/Scripting/script.py
+share/sketch/Sketch/Scripting/script.pyc
+share/sketch/Sketch/Scripting/wrapper.py
+share/sketch/Sketch/Scripting/wrapper.pyc
 share/sketch/Sketch/UI/__init__.py
 share/sketch/Sketch/UI/__init__.pyc
 share/sketch/Sketch/UI/aligndlg.py
@@ -310,6 +327,8 @@ share/sketch/Sketch/UI/colordlg.py
 share/sketch/Sketch/UI/colordlg.pyc
 share/sketch/Sketch/UI/command.py
 share/sketch/Sketch/UI/command.pyc
+share/sketch/Sketch/UI/converters.py
+share/sketch/Sketch/UI/converters.pyc
 share/sketch/Sketch/UI/cursorstack.py
 share/sketch/Sketch/UI/cursorstack.pyc
 share/sketch/Sketch/UI/curvedlg.py
@@ -374,6 +393,7 @@ share/sketch/Sketch/UI/viewport.py
 share/sketch/Sketch/UI/viewport.pyc
 share/sketch/Sketch/__init__.py
 share/sketch/Sketch/__init__.pyc
+share/sketch/Sketch/VERSION
 share/sketch/finishinst.py
 share/sketch/sk2ps.py
 share/sketch/sketch.py
@@ -474,6 +494,10 @@ share/doc/sketch/Doc/usersguide-17.html
 share/doc/sketch/Doc/usersguide-18.html
 share/doc/sketch/Doc/usersguide-19.html
 share/doc/sketch/Doc/usersguide-2.html
+share/doc/sketch/Doc/usersguide-20.html
+share/doc/sketch/Doc/usersguide-21.html
+share/doc/sketch/Doc/usersguide-22.html
+share/doc/sketch/Doc/usersguide-23.html
 share/doc/sketch/Doc/usersguide-3.html
 share/doc/sketch/Doc/usersguide-4.html
 share/doc/sketch/Doc/usersguide-5.html
@@ -496,6 +520,7 @@ share/examples/sketch/line.sk
 share/examples/sketch/pathtext.sk
 share/examples/sketch/text.sk
 @dirrm share/sketch/Sketch/UI
+@dirrm share/sketch/Sketch/Scripting
 @dirrm share/sketch/Sketch/Pixmaps/New12
 @dirrm share/sketch/Sketch/Pixmaps
 @dirrm share/sketch/Sketch/Modules
