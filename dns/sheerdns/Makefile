@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sheerdns
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.3
 CATEGORIES=	dns
 MASTER_SITES=	http://threading.2038bug.com/sheerdns/
 
