@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glflow
-PORTVERSION=	0.1
+PORTVERSION=	0.1.1
 PORTEPOCH=	1
 CATEGORIES=	net security
 MASTER_SITES=	http://night.rdslink.ro/dudu/glflow/
@@ -20,7 +20,7 @@ PORTDOCS=	README
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-debug
+CONFIGURE_ARGS=	--enable-debug --with-hash=md4
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/glflow ${PREFIX}/bin
