@@ -14,7 +14,7 @@ DISTNAME=		Maelstrom-${PORTVERSION}
 MAINTAINER=		sobomax@altavista.net
 
 LIB_DEPENDS=		Xpm.4:${PORTSDIR}/graphics/xpm \
-			SDL.2:${PORTSDIR}/devel/sdl
+			SDL-1.0.2:${PORTSDIR}/devel/sdl
 
 USE_X_PREFIX=		yes
 GNU_CONFIGURE=		yes
