@@ -1,9 +1,9 @@
---- src/livarot/PathOutline.cpp.orig	Sat Apr 10 04:09:41 2004
-+++ src/livarot/PathOutline.cpp	Sat Apr 10 04:34:35 2004
+--- src/livarot/PathOutline.cpp.orig	Sat Oct 23 12:10:52 2004
++++ src/livarot/PathOutline.cpp	Fri Feb 18 00:28:16 2005
 @@ -9,6 +9,7 @@
- #include "Path.h"
- //#include "MyMath.h"
- #include <math.h>
+ #include "livarot/Path.h"
+ #include "livarot/path-description.h"
+ #include <cmath>
 +#include <algorithm>
  #include <libnr/nr-point-fns.h>
  

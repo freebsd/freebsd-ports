@@ -4,7 +4,7 @@
   * This code is in public domain
   */
  
-+#include <stdio.h>
++#include <cstdio>
  #include "nr-matrix.h"
  
  NRMatrix *
