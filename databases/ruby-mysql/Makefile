@@ -20,6 +20,8 @@ LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
+CONFIGURE_ARGS=	--with-mysql-include-dir="${LOCALBASE}/include/mysql" \
+		--with-mysql-lib-dir="${LOCALBASE}/lib/mysql"
 INSTALL_TARGET=	site-install
 
 post-install:
