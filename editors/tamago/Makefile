@@ -9,17 +9,23 @@ PORTNAME=	tamago
 PORTVERSION=	4.0.6
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.m17n.org/pub/tamago/ \
-		ftp://ftp.kddlabs.co.jp/.6/Japan/m17n.org/tamago/
+		ftp://ftp.kddlabs.co.jp/Japan/m17n.org/tamago/
+PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
+
+PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	kuriyama
+PATCHFILES=	tamago-${PORTVERSION}-20011025.patch.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs20
-RUN_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs20
+BUILD_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/${EMACS_PORT_NAME}
+RUN_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/${EMACS_PORT_NAME}
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-EMACS_PORT_NAME?=	emacs20
+EMACS_PORT_NAME?=	emacs21
 
 ELISPDIR=	${PREFIX}/${EMACS_LIBDIR_WITH_VER}/site-lisp
 PLIST_SUB=	ELISPDIR="${EMACS_LIBDIR_WITH_VER}/site-lisp"
