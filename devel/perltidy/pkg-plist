@@ -1,4 +1,7 @@
 bin/perltidy
+%%PORTDOCS%%share/doc/perltidy/perl2web.html
+%%PORTDOCS%%share/doc/perltidy/perl2web.pod
+%%PORTDOCS%%share/doc/perltidy/perl2web.txt
 %%PORTDOCS%%share/doc/perltidy/perltidy.html
 %%PORTDOCS%%share/doc/perltidy/perltidy.pod
 %%PORTDOCS%%share/doc/perltidy/perltidy.txt

@@ -1,6 +1,6 @@
---- Makefile.orig	Sun Mar  4 19:47:45 2001
-+++ Makefile	Sun Mar  4 19:49:36 2001
-@@ -2,7 +2,7 @@
+--- Makefile.orig	Fri Mar 30 02:32:59 2001
++++ Makefile	Fri Mar 30 02:34:11 2001
+@@ -2,14 +2,14 @@
  
  # Step 1: edit BINDIR to reflect where you want to put perltidy
  # This is fairly standard:
@@ -9,10 +9,9 @@
  
  # Step 2: edit MANDIR to reflect where you want to put the man page, perltidy.1
  # or comment out MANDIR to skip installing a man page.
-@@ -10,7 +10,7 @@
- # Hint: if directory usr/local/man/man1 does not exist,
- # you might find the man path by entering the command
- #   perl '-V:install.*' and looking for the value of 'installman1dir'
+ # (Man pages can be found on the web at http://perltidy.sourceforge.net)
+ #
+ # Note: The value of MANDIR varies a lot, so be sure to check this.
 -MANDIR	= /usr/local/man/man1
 +MANDIR	= %%MANPREFIX%%/man/man1
  
