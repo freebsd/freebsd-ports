@@ -8,7 +8,8 @@
 PORTNAME=	sidplay
 PORTVERSION=	1.0.4
 CATEGORIES=	audio emulators
-MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/packages/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	will
 DISTNAME=	${PORTNAME}-base-${PORTVERSION:S/./_/g}
 EXTRACT_SUFX=	.tgz
 
