@@ -8,7 +8,7 @@
 
 PORTNAME=	rsync
 PORTVERSION=	2.5.5
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://samba.anu.edu.au/pub/rsync/  \
 		ftp://sunsite.auc.dk/pub/unix/rsync/  \
@@ -18,6 +18,11 @@ MASTER_SITES=	ftp://samba.anu.edu.au/pub/rsync/  \
 MAINTAINER=	obraun@informatik.unibw-muenchen.de
 
 GNU_CONFIGURE=	yes
+
+OPTIMIZATION!=	${ECHO} "${CFLAGS}" | grep '\-O[2-6]' || true
+.if empty(OPTIMIZATION)
+CFLAGS+=	-O2
+.endif
 
 .include <bsd.port.pre.mk>
 
