@@ -84,6 +84,7 @@
     SUBDIR += rtty
     SUBDIR += roottail
     SUBDIR += ruby-syslog
+    SUBDIR += safecat
     SUBDIR += sarah
     SUBDIR += sdd
     SUBDIR += setcdboot

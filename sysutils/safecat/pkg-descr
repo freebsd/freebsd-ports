@@ -1,0 +1,20 @@
+From the safecat README:
+
+  safecat is an implementation of D. J. Bernstein's maildir algorithm.
+  It can be used to write mail messages to a qmail-style maildir, or to
+  write data to a "spool" directory reliably. There are no lockfiles with
+  safecat, and nothing is left to chance. If safecat returns a successful
+  exit status, then you can be (practically) 100% sure your data is
+  safely committed to disk. Further, if data is written to a directory
+  using safecat (or other implementations of the maildir algorithm),
+  then every file in that directory is guaranteed to be complete. If
+  safecat fails to write all of the data, there will be no file at all
+  in the destination directory.
+
+  Of course, you know that such a thing cannot be: between UNIX and
+  the different hardware options available, a 100% guarantee is not
+  possible. However, safecat takes every precaution possible in writing
+  your data.
+
+Author:		Len Budney <lbudney@pobox.com>
+WWW:		http://www.nb.net/~lbudney/linux/software/safecat.html
