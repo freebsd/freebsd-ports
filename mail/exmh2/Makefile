@@ -1,12 +1,12 @@
-# New ports collection Makefile for:    exmh
-# Version required:		1.6.9
-# Date released:		10 Oct 96
+# New ports collection Makefile for:    exmh2
+# Version required:		2.0beta
+# Date released:		1 Jan 97
 # Whom:				Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.3 1996/11/10 21:31:21 obrien Exp $
+# $Id: Makefile,v 1.4 1996/11/17 07:42:28 obrien Exp $
 #
 
-DISTNAME=	exmh-1.6.9
+DISTNAME=	exmh-2.0beta
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.sunlabs.com/pub/tcl/exmh/
 EXTRACT_SUFX=	.tar.Z
@@ -26,15 +26,10 @@ RUN_DEPENDS+=	mmencode:${PORTSDIR}/mail/metamail
 # lang/expect
 # misc/glimpse
 # security/pgp
+# mail/faces
+# audio/rplay
 
-# It will use these commands to view faces or play audio, we dont have ports.
-# faces
-# play
-
-MAN1=		exmh-custom.1 exmh-ref.1 exmh-use.1 exmh.1
-
-post-extract:
-	@rm -rf ${WRKSRC}/lib/*.orig
+MAN1=		exmh.1
 
 do-build:
 	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} \

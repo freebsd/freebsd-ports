@@ -1,12 +1,12 @@
 #! /bin/sh
 #
-# $Id$
+# $Id: install,v 1.1.1.1 1996/10/10 15:00:53 peter Exp $
 #
 
 VERSION="`sed -ne 's/^set vers \(.*\)/\1/p' ${WRKSRC}/exmh.install`"
 
 # Rename while installing..
-for i in exmh-custom exmh-ref exmh-use exmh
+for i in exmh
 do
 	echo "install -c -o bin -g bin -m 444 $i.l ${PREFIX}/man/man1/$i.1"
 	install -c -o bin -g bin -m 444 $i.l ${PREFIX}/man/man1/$i.1
@@ -23,8 +23,16 @@ then
 	mkdir ${PREFIX}/lib/exmh-${VERSION}
 fi
 
-LIBFILES='lib/*.tcl lib/*.bitmap lib/help.* lib/*.FAQ lib/tclIndex lib/app-defaults* lib/*.mask lib/*.exp lib/mime.types lib/*.au'
+LIBFILES='lib/*.tcl lib/*.bitmap lib/help.* lib/tclIndex lib/app-defaults* lib/*.mask lib/*.exp lib/mime.types lib/*.au'
 
 echo "install -c -o bin -g bin -m 444 ${LIBFILES} ${PREFIX}/lib/exmh-${VERSION}"
 install -c -o bin -g bin -m 444 ${LIBFILES} ${PREFIX}/lib/exmh-${VERSION}
 
+if [ ! -d ${PREFIX}/lib/exmh-${VERSION}/html ]
+then
+	echo "mkdir ${PREFIX}/lib/exmh-${VERSION}/html"
+	mkdir ${PREFIX}/lib/exmh-${VERSION}/html
+fi
+
+echo "install -c -o bin -g bin -m 444 lib/html/* ${PREFIX}/lib/exmh-${VERSION}/html"
+install -c -o bin -g bin -m 444 lib/html/* ${PREFIX}/lib/exmh-${VERSION}/html
