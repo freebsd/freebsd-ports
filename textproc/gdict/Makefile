@@ -8,7 +8,7 @@
 PORTNAME=	gdict
 PORTVERSION= 	0.7
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.psilord.com/code/gdict/
+MASTER_SITES=	http://www.psilord.com/code/gdict/old/
 
 MAINTAINER=	domi@saargate.de
 
