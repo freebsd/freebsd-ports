@@ -4,7 +4,7 @@
  #define HAVE_I387_REGS
  #include "i386/tm-i386.h"
  
-+#ifndef _SYS_PARAM_H_
++#ifdef HAVE_SYS_PARAM_H
 +#include <sys/param.h>
 +#endif
 +
