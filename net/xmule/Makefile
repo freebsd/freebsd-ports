@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmule
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.2
 CATEGORIES=	net
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xmule
@@ -17,8 +17,6 @@ COMMENT=	Port of eMule eDonkey P2P client using wxWindows class library
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2 \
 		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
-
-BROKEN=	SIGSEGVs too easily. Help to fix it is highly appreciated
 
 USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
@@ -37,11 +35,15 @@ CONFIGURE_ARGS=	--without-included-gettext \
 		--with-wx-config=${WX_CONFIG}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
+MAKE_ENV=	CC="${CC}" CXX="${CXX}"
 
 # for debugging purposes
 STRIP=
 
 WX_CONFIG?=	${X11BASE}/bin/wxgtk2-2.4-config
+
+FILES_ATOLL_PATCH=	src/Preferences.cpp \
+			src/otherfunctions.cpp
 
 post-patch:
 # it works for FreeBSD as well
@@ -59,6 +61,12 @@ post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|cp -p|${INSTALL_DATA}|' \
 		${WRKSRC}/po/Makefile.in.in
+# use correct FreeBSD atoll() prototype
+.for file in ${FILES_ATOLL_PATCH}
+	@${REINPLACE_CMD} -E \
+		-e 's|atoll[[:space:]]*\([[:space:]]*char|atoll(const char|' \
+		${WRKSRC}/${file}
+.endfor
 
 pre-configure:
 	@${FIND} ${WRKSRC} -type f -name "Makefile.in" | \
