@@ -351,20 +351,24 @@ diff -c -r include/vga.h include/vga.h
   
   #define	VGA_FONT_SIZE	128
 diff -c -r kon.cfg kon.cfg
-*** kon.cfg	Mon May  9 22:11:28 1994
---- kon.cfg	Sat Jun 24 12:37:32 1995
+*** kon.cfg.orig	Mon May  9 22:11:28 1994
+--- kon.cfg	Tue Nov 19 16:08:31 1996
 ***************
-*** 55,61 ****
+*** 53,61 ****
+  	79 33
+  VGA:Normal
   	VGA
-  	640 680 776 808 480 491 493 524
+! 	640 680 776 808 480 491 493 524
   	1
 ! 	79 29
   
   # Pels: Pallette value definition for VGA, VGAFM drivers
   
---- 55,61 ----
+--- 53,61 ----
+  	79 33
+  VGA:Normal
   	VGA
-  	640 680 776 808 480 491 493 524
+! 	640 680 768 800 480 491 493 525
   	1
 ! 	79 23
   
@@ -646,8 +650,8 @@ diff -c -r src/display/svga.c src/display/svga.c
   #include	<stdlib.h>
   
 diff -c -r src/display/vga.c src/display/vga.c
-*** src/display/vga.c	Mon Jul  4 14:47:22 1994
---- src/display/vga.c	Sat Jun 24 12:22:30 1995
+*** src/display/vga.c.orig	Mon Jul  4 14:47:22 1994
+--- src/display/vga.c	Tue Nov 19 16:08:43 1996
 ***************
 *** 33,40 ****
 --- 33,47 ----
@@ -667,8 +671,26 @@ diff -c -r src/display/vga.c src/display/vga.c
   #include	<stdlib.h>
   
 ***************
+*** 537,543 ****
+      regGraph.crt[2] = (video->m.hStart>>3) - 1;
+      regGraph.crt[3] = ((video->m.hEnd>>3) & 0x1F) | 0x80;
+      regGraph.crt[4] = video->m.hStart>>3;
+!     regGraph.crt[5] = (((video->m.hEnd>>3) & 0x20) << 2) | (video->m.hEnd & 0x1F);
+      regGraph.crt[6] = (video->m.vTotal - 2) & 0xFF;
+      regGraph.crt[7] = 0x10;
+      regGraph.crt[7] |= (((dInfo.gydim - 1) & 0x100) >> 7)
+--- 544,551 ----
+      regGraph.crt[2] = (video->m.hStart>>3) - 1;
+      regGraph.crt[3] = ((video->m.hEnd>>3) & 0x1F) | 0x80;
+      regGraph.crt[4] = video->m.hStart>>3;
+!     regGraph.crt[5] = (((video->m.hEnd>>3) & 0x20) << 2)
+! 	| ((video->m.hEnd>>3) & 0x1F);
+      regGraph.crt[6] = (video->m.vTotal - 2) & 0xFF;
+      regGraph.crt[7] = 0x10;
+      regGraph.crt[7] |= (((dInfo.gydim - 1) & 0x100) >> 7)
+***************
 *** 567,572 ****
---- 574,580 ----
+--- 575,581 ----
   {
       int	devMem;
   
@@ -678,7 +700,7 @@ diff -c -r src/display/vga.c src/display/vga.c
   	vgaCrtAddr = 0x3B4;
 ***************
 *** 594,599 ****
---- 602,621 ----
+--- 603,622 ----
   	Perror("/dev/mem");
   	return FAILURE;
       }
@@ -701,7 +723,7 @@ diff -c -r src/display/vga.c src/display/vga.c
   	(savePlane3 && (fontBuff2 = malloc(FONT_SIZE)) == NULL)) {
 ***************
 *** 604,613 ****
---- 626,642 ----
+--- 627,643 ----
   				    (caddr_t)gramMem,
   				    dInfo.gsize,
   				    PROT_READ|PROT_WRITE,
@@ -721,7 +743,7 @@ diff -c -r src/display/vga.c src/display/vga.c
   	Perror("mmap");
 ***************
 *** 620,625 ****
---- 649,655 ----
+--- 650,656 ----
   void VgaDetach(void)
   {
       gramHead = 0;
@@ -738,7 +760,7 @@ diff -c -r src/display/vga.c src/display/vga.c
       munmap(gramMem, dInfo.gsize);
       
       SafeFree((void **)&gramMem);
---- 664,671 ----
+--- 665,672 ----
       ioperm(VGAMISC_OUT, 1, 0);
       ioperm(vgaSt1Addr, 1, 0);
       ioperm(VGAPAL_DATA, 1, 0);
