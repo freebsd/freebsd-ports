@@ -18,6 +18,8 @@ BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 RUN_DEPENDS=	${LOCALBASE}/sbin/${AP_TARGET}:${PORTSDIR}/${APACHE_PORT} \
 		${LOCALBASE}/sbin/pwcheck:${PORTSDIR}/security/cyrus-sasl
 
+BROKEN=		Incomplete pkg-plist
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 APACHE_PORT?=	${AP_CATEGORY}/${AP_PORT}
 
