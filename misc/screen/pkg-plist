@@ -1,23 +1,23 @@
 bin/screen
-share/screen/utf8encodings/01
-share/screen/utf8encodings/02
-share/screen/utf8encodings/03
-share/screen/utf8encodings/04
-share/screen/utf8encodings/18
-share/screen/utf8encodings/19
-share/screen/utf8encodings/a1
-share/screen/utf8encodings/bf
-share/screen/utf8encodings/c2
-share/screen/utf8encodings/c3
-share/screen/utf8encodings/c4
-share/screen/utf8encodings/c6
-share/screen/utf8encodings/c7
-share/screen/utf8encodings/c8
-share/screen/utf8encodings/cc
-share/screen/utf8encodings/cd
-share/screen/utf8encodings/d6
+%%DATADIR%%/utf8encodings/01
+%%DATADIR%%/utf8encodings/02
+%%DATADIR%%/utf8encodings/03
+%%DATADIR%%/utf8encodings/04
+%%DATADIR%%/utf8encodings/18
+%%DATADIR%%/utf8encodings/19
+%%DATADIR%%/utf8encodings/a1
+%%DATADIR%%/utf8encodings/bf
+%%DATADIR%%/utf8encodings/c2
+%%DATADIR%%/utf8encodings/c3
+%%DATADIR%%/utf8encodings/c4
+%%DATADIR%%/utf8encodings/c6
+%%DATADIR%%/utf8encodings/c7
+%%DATADIR%%/utf8encodings/c8
+%%DATADIR%%/utf8encodings/cc
+%%DATADIR%%/utf8encodings/cd
+%%DATADIR%%/utf8encodings/d6
 @unexec if cmp -s %D/etc/screenrc %D/etc/screenrc.sample; then rm -f %D/etc/screenrc; else echo If permanently deleting this package, %%PREFIX%%/etc/screenrc must be removed manually; fi
 etc/screenrc.sample
 @exec [ -f %B/screenrc ] || cp %B/%f %B/screenrc
-@dirrm share/screen/utf8encodings
-@dirrm share/screen
+@dirrm %%DATADIR%%/utf8encodings
+@dirrm %%DATADIR%%
