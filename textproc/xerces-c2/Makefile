@@ -9,7 +9,7 @@ PORTNAME=	xerces-c2
 PORTVERSION=	2.3.0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_APACHE_XML}
-MASTER_SITE_SUBDIR=	xerces-c/stable
+MASTER_SITE_SUBDIR=	xerces-c/source
 DISTNAME=	xerces-c-src_${PORTVERSION:S/./_/g}
 
 MAINTAINER=	bzeeb+freebsdports@zabbadoz.net
