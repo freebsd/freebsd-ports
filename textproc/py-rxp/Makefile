@@ -22,14 +22,8 @@ USE_PYDISTUTILS=	yes
 EXAMPLESDIR=	${PREFIX}/share/examples/py-rxp
 DOCSDIR=	${PREFIX}/share/doc/py-rxp
 
-.include <bsd.port.pre.mk>
-
 post-patch:
-.if ${OSVERSION} < 500036
 	@${PERL} -pi -e 's/freebsd4/freebsd4","freebsd5/g' ${WRKSRC}/setup.py
-.else
-	@${SED} -i.orig -e 's/freebsd4/freebsd4","freebsd5/g' ${WRKSRC}/setup.py
-.endif
 
 .if !defined(NOPORTDOCS)
 post-install:
@@ -38,4 +32,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
