@@ -177,7 +177,7 @@ mailer.conf:
 .include <bsd.port.pre.mk>
 
 .if defined(SENDMAIL_WITH_TLS) || defined(WITH_TLS)
-.include <${PORTSDIR}/security/openssl/Makefile.ssl>
+.include "${PORTSDIR}/security/openssl/Makefile.ssl"
 .endif
 
 .if exists(${FILESDIR}/site.config.m4.local)
