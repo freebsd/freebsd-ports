@@ -18,6 +18,7 @@ RUN_DEPENDS=	blackbox:${PORTSDIR}/x11-wm/blackbox
 USE_X_PREFIX=	yes
 USE_GTK=	yes
 USE_GMAKE=	yes
+USE_XPM=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/bbrun
 
 do-install:
