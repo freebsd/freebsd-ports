@@ -4,10 +4,13 @@
 # Whom:			pst
 # Changed:		ats, Nov 16, 1994
 #
-MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/
-CATEGORIES+=	comms
+
 DISTNAME=	cku190
+PKGNAME=	kermit-5a.190
+CATEGORIES+=	comms
+MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/
 EXTRACT_SUFX=	.tar.gz
+
 NO_WRKSUBDIR=
 
 .include <bsd.port.mk>
