@@ -1,7 +1,7 @@
---- Makefile.unx.orig	Fri Nov 10 02:32:50 2000
-+++ Makefile.unx	Wed Nov 22 21:46:33 2000
-@@ -2,9 +2,9 @@
- # Copyright (C) 1996 Willem van Schaik
+--- Makefile.unx.orig	Wed Jul  3 21:31:37 2002
++++ Makefile.unx	Wed Jul  3 21:32:29 2002
+@@ -3,9 +3,9 @@
+ # Copyright 2002 Greg Roelofs
  
  #CC=cc
 -CC=gcc
@@ -13,22 +13,23 @@
  #COPY=cp
  COPY=/bin/cp -p
  DEL=/bin/rm -f
-@@ -56,15 +56,9 @@
+@@ -60,16 +60,9 @@
+ 
  INSTALL=/usr/local
  
- # GRR 19990713:  FAXPECT is a custom conversion option for stretched faxes
--CFLAGS=$(TIFF_VERSION) -DFAXPECT $(MIN_INVERT) $(OPTIMFLAGS) $(DEBUGFLAGS) \
+-CFLAGS=$(TIFF_VERSION) $(OPTION_FLAGS) $(OPTIMFLAGS) $(DEBUGFLAGS) \
 -	-I$(TIFFINC) \
 -	-I$(PNGINC) \
 -	-I$(ZINC)
 -LDFLAGS=-L. \
--	-L$(LIBTIFF)/ \
--	-L$(LIBPNG)/ \
--	-L$(ZLIB)/ \
--	-lpng -lz -ltiff -ljpeg -lm
+-	-L$(LIBTIFF) -ltiff \
+-	-L$(LIBJPEG) -ljpeg \
+-	-L$(LIBPNG) -lpng \
+-	-L$(ZLIB) -lz \
+-	-lm
 +CFLAGS+=$(TIFF_VERSION) -DFAXPECT $(MIN_INVERT) $(OPTIMFLAGS) $(DEBUGFLAGS) \
 +	-I${LOCALBASE}/include
 +LDFLAGS=-L. -L${LOCALBASE}/lib -lpng -lz -ltiff -ljpeg -lm
  SLDFLAGS=-L. \
- 	$(LIBTIFF)/libtiff.a $(LIBJPEG)/libjpeg.a \
- 	$(LIBPNG)/libpng.a \
+ 	$(LIBTIFF)/libtiff.a \
+ 	$(LIBJPEG)/libjpeg.a \
