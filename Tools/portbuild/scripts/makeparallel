@@ -15,16 +15,50 @@ branch=$2
 
 buildenv ${pb} ${arch} ${branch}
 
+# packages that take a long time to build or have very deep dependency
+# trees and tend to stall the rest of the cluster waiting for them.
+# We try to start these as early as possible.
+
+quickports="lang/ghc x11/XFree86-4 editors/openoffice-1.1 x11/gnome2 x11/kde3 editors/openoffice-1.0 chinese/openoffice-1.0-zh_CN chinese/openoffice-1.0-zh_TW editors/openoffice-1.0 editors/openoffice-1.0-ar editors/openoffice-1.0-dk editors/openoffice-1.0-es editors/openoffice-1.0-gr editors/openoffice-1.0-it editors/openoffice-1.0-nl editors/openoffice-1.0-se editors/openoffice-1.0-tr french/openoffice-1.0 german/openoffice-1.0 japanese/openoffice-1.0 korean/openoffice-1.0 polish/openoffice-1.0 portuguese/openoffice-1.0 russian/openoffice-1.0 math/atlas math/atlas-devel java/jdk14"
+
 cd ${PORTSDIR}
 subdir=$(make -V SUBDIR)
 makefile=${pb}/${arch}/${branch}/Makefile
-sufx=${PKGSUFFIX}
-
 rm ${makefile}
 
-for dir in ${subdir}; do
-        echo "all: ${dir}-all" >> ${makefile}
+SUBDIR=$(make -V SUBDIR)
+(for dir in ${SUBDIR}; do
+	[ -r ${dir}/Makefile ] && echo "all: ${dir}-all" || true
 done
-        awk -F '|' "{me=\$1; here=\$2; bdep=\$8; rdep=\$9; split(here, tmp, \"/\"); if (bdep != \"\") { gsub(\"\$\", \"${sufx}\", bdep); gsub(\" \", \"${sufx} \", bdep); } if (rdep != \"\") { gsub(\"\$\", \"${sufx}\", rdep); gsub(\" \", \"${sufx} \", rdep); } print tmp[4] \"-all: \" me \"${sufx}\"; print me \": \" me \"${sufx}\"; print me \"${sufx}: \" bdep \" \" rdep; printf(\"\t@/var/portbuild/scripts/pdispatch ${arch} ${branch} /var/portbuild/scripts/portbuild %s${sufx} %s\",me, here); if (bdep != \"\") printf(\" %s\", bdep); if (rdep != \"\") printf(\" %s\", rdep);printf(\"\n\")}" < ${PORTSDIR}/${INDEXFILE} >> ${makefile}
+env arch=${arch} branch=${branch} awk -F '|' '{me=$1; here=$2; bdep=$8; rdep=$9
+	edep=$11; pdep=$12; fdep=$13
+	sufx=ENVIRON["PKGSUFFIX"]
+	arch=ENVIRON["arch"]
+	branch=ENVIRON["branch"]
+	split(here, tmp, "/")
+	if (edep != "") { gsub("$", sufx, edep); gsub(" ", sufx " ", edep) }
+	if (pdep != "") { gsub("$", sufx, pdep); gsub(" ", sufx " ", pdep) }
+	if (fdep != "") { gsub("$", sufx, fdep); gsub(" ", sufx " ", fdep) }
+	if (bdep != "") { gsub("$", sufx, bdep); gsub(" ", sufx " ", bdep) }
+	if (rdep != "") { gsub("$", sufx, rdep); gsub(" ", sufx " ", rdep) }
+	print tmp[4] "-all: " me sufx
+	print me ": " me sufx
+	print me sufx ": " edep " " pdep " " fdep " "  bdep " " rdep
+	printf("\t@/usr/bin/env XXX=\"\" ")
+	if (edep != "") printf(" ED=\"%s\"", edep)
+	if (pdep != "") printf(" PD=\"%s\"", pdep)
+	if (fdep != "") printf(" FD=\"%s\"", fdep)
+	if (bdep != "") printf(" BD=\"%s\"", bdep)
+	if (rdep != "") printf(" RD=\"%s\"", rdep)
+	printf(" /var/portbuild/scripts/pdispatch %s %s /var/portbuild/scripts/portbuild %s%s %s\n",
+	    arch, branch, me, sufx, here)
+	}' < ${INDEXFILE}) > ${makefile}
 
-
+for i in ${quickports}; do
+  if [ -d $i ]; then
+    quickpkg="$(cd $i; make package-name)${PKGSUFFIX}"
+    echo "quickports: $quickpkg" >> ${makefile}
+  else
+    echo "quick port directory \"$i\" does not exist -- skipping"
+  fi
+done
