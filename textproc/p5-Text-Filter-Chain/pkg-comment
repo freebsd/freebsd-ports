@@ -1,0 +1,1 @@
+Chains multiple Text::Filter objects and runs them in sequence
