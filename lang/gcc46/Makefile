@@ -5,9 +5,7 @@
 #
 # $FreeBSD$
 #
-
-SNAPDATE=	2004-01-07
-#CVS_DATE=	${SNAPDATE} 18:53:04 EDT
+SNAPDATE=	2004-01-14
 
 PORTNAME=	gcc
 PORTVERSION=	3.4.0
@@ -42,6 +40,10 @@ NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == sparc64
+BROKEN=	"libgcj is not supported/packaging is broken on this platform"
+.endif
+
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 
 SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
@@ -52,11 +54,10 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
 CONFIGURE_ARGS=	--disable-nls \
+		--with-system-zlib \
 		--with-libiconv-prefix=${LOCALBASE} \
-		--with-gxx-include-dir=${TARGLIB}/include/c++/${GCC_REV}
-#CONFIGURE_ARGS+=	--program-suffix=34
-#	Java
-CONFIGURE_ARGS+=	--with-system-zlib
+		--program-suffix=34 \
+		--with-gxx-include-dir=${TARGLIB}/include/c++/
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 .if defined(WANT_SHAREDLIBS)
 CONFIGURE_ARGS+=	--enable-shared
@@ -128,28 +129,22 @@ check: build
 	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
 
 post-install:
-	@${RM} -f ${PREFIX}/bin/c++ ${PREFIX}/bin/${CONFIGURE_TARGET}-c++
-.for f in gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh gij jv-scan jcf-dump jv-convert jar grepjar rmic rmiregistry
-	${STRIP_CMD} ${PREFIX}/bin/${f}
-	${MV} -f ${PREFIX}/bin/${f} ${PREFIX}/bin/${f}34
-	( ${TEST} ! -e ${PREFIX}/man/man1/${f}.1 \
+.for f in c++ gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh gij jv-scan jcf-dump jv-convert jar grepjar rmic rmiregistry
+	if [ -e ${PREFIX}/bin/${f}34 ]; then \
+	  ${STRIP_CMD} ${PREFIX}/bin/${f}34; \
+	  ( ${TEST} ! -e ${PREFIX}/man/man1/${f}.1 \
 		|| ${MV} -f ${PREFIX}/man/man1/${f}.1 \
-		${PREFIX}/man/man1/${f}34.1 )
+		${PREFIX}/man/man1/${f}34.1 ); \
+	fi
 .endfor
-.for f in g77
-	${MV} -f ${PREFIX}/bin/${f} ${PREFIX}/bin/${f}-34
-	( ${TEST} ! -e ${PREFIX}/man/man1/${f}.1 \
-		|| ${MV} -f ${PREFIX}/man/man1/${f}.1 \
-		${PREFIX}/man/man1/${f}-34.1 )
-.endfor
-	${MV} -f ${PREFIX}/bin/gccbug ${PREFIX}/bin/gccbug34
-	# These 3 libraries are moved from PREFIX/lib to avoid conflicts
-	# 	with the stock compiler.
+	${MV} -f ${PREFIX}/bin/g7734 ${PREFIX}/bin/g77-34
+	${MV} -f ${PREFIX}/man/man1/g7734.1 ${PREFIX}/man/man1/g77-34.1
+	# These libraries are moved from PREFIX/lib to avoid conflicts with
+	# the stock compiler.
 .for f in libstdc++ libsupc++ libg2c libfrtbegin libobjc ${EXTRA_SHLIB}
 	${MV} -f ${PREFIX}/lib/${f}.* ${TARGLIB}
 .endfor
 	-${MV} -f ${PREFIX}/lib/ieee ${TARGLIB}
-	# Java
 	-${MV} -f ${PREFIX}/lib/libgcj.* ${TARGLIB}
 	${RM} -f ${PREFIX}/lib/libiberty.a
 	${RM} -f ${TARGLIB}/*.la
@@ -160,12 +155,12 @@ post-install:
 .endfor
 	# Handle target libraries and GCJ include files.
 	${RM} -f ${WRKDIR}/PLIST.lib
-.for inc in ${TARGLIB} include/gcj include/gnu include/java include/javax
-	cd ${PREFIX} ;\
-	    ${FIND} ${inc:S/^${PREFIX}\///} -type f -o -type l	\
-	    	>>${WRKDIR}/PLIST.lib ;\
-	    ${FIND} ${inc:S/^${PREFIX}\///} -type d \
-	    	| ${SORT} -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.lib
+.for d in ${TARGLIB:S/^${PREFIX}\///} include/gcj include/gnu include/java include/javax
+	cd ${PREFIX} ; if [ -d $d ]; then \
+	    ${FIND} $d -type f -o -type l >>${WRKDIR}/PLIST.lib ;\
+	    ${FIND} $d -type d | ${SORT} -r \
+	        | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.lib ;\
+	fi
 .endfor
 	(${ECHO_CMD} "@unexec rmdir %D/lib/gcc/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO_CMD} "@unexec rmdir %D/lib/gcc 2>&1 || true") >> ${WRKDIR}/PLIST.lib
 	${ECHO_CMD} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script

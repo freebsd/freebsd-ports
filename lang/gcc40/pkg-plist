@@ -1,14 +1,16 @@
 @comment $FreeBSD$
+bin/c++34
 bin/cpp34
 bin/g++34
 bin/g77-34
 bin/gcc34
 bin/gcov34
+bin/%%GNU_HOST%%-c++34
 bin/%%GNU_HOST%%-gcc-%%GCC_VER%%
 bin/%%GNU_HOST%%-gcc34
 bin/%%GNU_HOST%%-g++34
-bin/%%GNU_HOST%%-gcj
-bin/%%GNU_HOST%%-gcjh
+bin/%%GNU_HOST%%-gcj34
+bin/%%GNU_HOST%%-gcjh34
 bin/gccbug34
 bin/gcj34
 bin/gcjh34
@@ -20,7 +22,7 @@ bin/jar34
 bin/grepjar34
 bin/rmic34
 bin/rmiregistry34
-bin/addr2name.awk
+bin/addr2name.awk34
 include/ffi.h
 include/jni.h
 include/jvmpi.h
