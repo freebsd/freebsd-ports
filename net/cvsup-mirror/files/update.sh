@@ -23,7 +23,7 @@ fi
 
 umask 22
 
-for i in $(/usr/bin/jot ${num_logs} $((num_logs-1)) 0)
+for i in $(/usr/bin/jot ${num_logs} $((${num_logs}-1)) 0)
 do
 	test -f ${log}.$i${gz_ext} && mv -f ${log}.$i${gz_ext} ${log}.$((i+1))${gz_ext}
 done
