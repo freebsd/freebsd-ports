@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	apinger
-PORTVERSION=	0.3
+PORTVERSION=	0.4.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.bnet.pl/~jajcus/apinger/ \
 		${MASTER_SITE_LOCAL}
