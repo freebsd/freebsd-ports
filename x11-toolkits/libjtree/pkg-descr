@@ -1,0 +1,8 @@
+JX is a full-featured application framework and widget library for
+use with the X Window System. It provides support for all facets
+of application development, including distributed applications,
+and aims to combine the best of MacOS and NeXTSTEP. It is built
+directly on top of Xlib and has been carefully optimized for
+performance.
+
+WWW: http://www.newplanetsoftware.com/jx/

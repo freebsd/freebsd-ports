@@ -1,0 +1,20 @@
+include/jtree/JNamedTreeList.h
+include/jtree/JNamedTreeNode.h
+include/jtree/JTree.h
+include/jtree/JTreeLibVersion.h
+include/jtree/JTreeList.h
+include/jtree/JTreeNode.h
+include/jtree/JXNamedTreeListWidget.h
+include/jtree/JXTLWAdjustToTreeTask.h
+include/jtree/JXTreeListWidget.h
+lib/jx/lib/%%PORTNAME%%-%%LIBVERSION%%.a
+lib/jx/lib/%%PORTNAME%%-%%LIBVERSION%%.so
+lib/jx/make/%%EXTRALIBFILES_MAKE_FILES%%
+lib/%%PORTNAME%%-%%LIBVERSION%%.a
+lib/%%PORTNAME%%-%%LIBVERSION%%.so
+lib/%%PORTNAME%%-%%LIBVERSION%%.so.%%LIBNUMBER%%
+%%PORTDOCS:%%share/doc/JX/LICENSE_%%PORTNAME%%
+%%PORTDOCS:%%@unexec rmdir %D/share/doc/JX 2>/dev/null || true
+@dirrm include/%%INCLUDEDIR%%
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
