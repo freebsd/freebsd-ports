@@ -186,7 +186,8 @@ post-patch:	ruby-shebang-patch
 ruby-shebang-patch:
 	@for f in ${RUBY_SHEBANG_FILES}; do \
 	${ECHO_MSG} "===>  Fixing the #! line of $$f"; \
-	${RUBY} -i -p	-e 'if $$. == 1; ' \
+	${RUBY} ${RUBY_FLAGS} -i -p \
+			-e 'if $$. == 1; ' \
 			-e ' if /^#!/; ' \
 			-e '  sub /^#!\s*\S*(\benv\s+)?\bruby/, "#!${RUBY}";' \
 			-e ' else;' \
@@ -195,6 +196,10 @@ ruby-shebang-patch:
 			-e 'end' \
 			$$f; \
 	done
+.endif
+
+.if defined(DEBUG)
+RUBY_FLAGS+=	-d
 .endif
 
 # extconf.rb
@@ -211,12 +216,12 @@ ruby-extconf-configure:
 .for d in ${RUBY_EXTCONF_SUBDIRS}
 	@${ECHO_MSG} "===>  Running ${RUBY_EXTCONF} in ${d} to configure"
 	@cd ${WRKSRC}/${d}; \
-	${SETENV} ${CONFIGURE_ENV} ${RUBY} ${RUBY_EXTCONF} ${CONFIGURE_ARGS}
+	${SETENV} ${CONFIGURE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_EXTCONF} ${CONFIGURE_ARGS}
 .endfor
 .else
 	@${ECHO_MSG} "===>  Running ${RUBY_EXTCONF} to configure"
 	@cd ${WRKSRC}; \
-	${SETENV} ${CONFIGURE_ENV} ${RUBY} ${RUBY_EXTCONF} ${CONFIGURE_ARGS}
+	${SETENV} ${CONFIGURE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_EXTCONF} ${CONFIGURE_ARGS}
 .endif
 .endif
 
@@ -231,21 +236,21 @@ do-configure:	ruby-setup-configure
 ruby-setup-configure:
 	@${ECHO_MSG} "===>  Running ${RUBY_SETUP} to configure"
 	@cd ${WRKSRC}; \
-	${SETENV} ${CONFIGURE_ENV} ${RUBY} ${RUBY_SETUP} config ${CONFIGURE_ARGS}
+	${SETENV} ${CONFIGURE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_SETUP} config ${CONFIGURE_ARGS}
 
 do-build:	ruby-setup-build
 
 ruby-setup-build:
 	@${ECHO_MSG} "===>  Running ${RUBY_SETUP} to build"
 	@cd ${WRKSRC}; \
-	${SETENV} ${MAKE_ENV} ${RUBY} ${RUBY_SETUP} setup
+	${SETENV} ${MAKE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_SETUP} setup
 
 do-install:	ruby-setup-install
 
 ruby-setup-install:
 	@${ECHO_MSG} "===>  Running ${RUBY_SETUP} to install"
 	cd ${WRKSRC}; \
-	${SETENV} ${MAKE_ENV} ${RUBY} ${RUBY_SETUP} install
+	${SETENV} ${MAKE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_SETUP} install
 .endif
 
 .if defined(USE_LIBRUBY)
