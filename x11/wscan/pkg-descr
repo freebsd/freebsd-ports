@@ -1,0 +1,8 @@
+wscan is a small X-based (fltk) program that shows signal strength,
+graphically, for Lucent/Orinoco 802.11 cards.  On FreeBSD, it uses
+the wi0 driver.  
+
+WWW: http://www.cs.pdx.edu/research/SMN 
+
+- Jim Binkley 
+jrb@cs.pdx.edu
