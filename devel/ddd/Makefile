@@ -1,10 +1,10 @@
 # ex:ts=8
 # Ports collection makefile for:  ddd
-# Version required:     	  2.0
+# Version required:     	  3.1.3
 # Date created:			  Tue Jan 28, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.11 1998/12/07 09:17:51 obrien Exp $
+# $Id: Makefile,v 1.12 1999/01/21 12:29:16 obrien Exp $
 #
 
 DISTNAME=	ddd-3.1.3
