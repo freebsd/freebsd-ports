@@ -41,6 +41,7 @@
     SUBDIR += tycoon
     SUBDIR += wdm
     SUBDIR += wmbutton
+    SUBDIR += wmmatrix
     SUBDIR += wterm
     SUBDIR += x3270
     SUBDIR += xaniroc
