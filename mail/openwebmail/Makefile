@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openwebmail
-PORTVERSION?=	2.50
+PORTVERSION?=	2.51
 CATEGORIES=	mail
 MASTER_SITES=	http://openwebmail.org/openwebmail/download/%SUBDIR%/ \
 		http://turtle.ee.ncku.edu.tw/openwebmail/download/%SUBDIR%/
@@ -16,8 +16,7 @@ MAINTAINER?=	leeym@FreeBSD.org
 COMMENT=	A webmail system designed to manage big mail folder files efficiently
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv \
-		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
-		${LOCALBASE}/sbin/lsof:${PORTSDIR}/sysutils/lsof
+		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 
 CONFLICTS?=	${PORTNAME}-devel-[0-9]*
 
@@ -34,14 +33,17 @@ OPTIONS=	ANTIWORD "AntiWord" off \
 		IMAGEMAGICK "ImageMagicK" off \
 		ISPELL "ISpell" off \
 		LEARNSPAM "Learn HAM/SPAM" off \
+		LSOF "lsof" off \
 		PAM "PAM" off \
 		POP3_OVER_SSL "POP3 Over SSL" off \
 		QUOTA "Quota" off \
 		SPAMCHECK "Spam check (Mail::SpamAssassin)" off \
 		SPAMCHECK_ALL "Spam check for all (default: pop3)" off \
 		SPEEDYCGI "SpeedyCGI" on \
+		TNEF "tnef" off \
 		VIRUSCHECK "Virus check (Clam AntiVirus)" off \
 		VIRUSCHECK_ALL "Virus check for all (default: pop3)" off \
+		WGET "wget" off \
 		ZLIB "ZLib" off
 
 .include <bsd.port.pre.mk>
@@ -88,6 +90,10 @@ RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 .endif
 
+.if defined(WITH_LSOF)
+RUN_DEPENDS+	${LOCALBASE}/sbin/lsof:${PORTSDIR}/sysutils/lsof
+.endif
+
 .if defined(WITH_PAM)
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Authen/PAM.pm:${PORTSDIR}/security/p5-Authen-PAM
 .endif
@@ -98,6 +104,10 @@ RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SS
 
 .if defined(WITH_QUOTA)
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Quota.pm:${PORTSDIR}/sysutils/p5-Quota
+.endif
+
+.if defined(WITH_TNEF)
+RUN_DEPENDS+=	${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef
 .endif
 
 .if defined(WITH_SPAMCHECK)
@@ -116,6 +126,10 @@ EXTRA_PATCHES+=	${PATCH_WRKSRC}/misc/patches/suidperl2speedy_suidperl.notmp.patc
 
 .if defined(WITH_VIRUSCHECK)
 RUN_DEPENDS+=	clamdscan:${PORTSDIR}/security/clamav
+.endif
+
+.if defined(WITH_WGET)
+RUN_DEPENDS+=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget-devel
 .endif
 
 .if defined(WITH_ZLIB)
