@@ -1,0 +1,18 @@
+bin/netype
+share/netype/pixmaps/error.xpm
+share/netype/pixmaps/info.xpm
+share/netype/pixmaps/k0.xpm
+share/netype/pixmaps/k1.xpm
+share/netype/pixmaps/k2.xpm
+share/netype/pixmaps/losecat.xpm
+share/netype/pixmaps/quit.xpm
+share/netype/pixmaps/setting.xpm
+share/netype/pixmaps/start.xpm
+share/netype/pixmaps/tohohocat.xpm
+share/netype/pixmaps/wait.xpm
+share/netype/pixmaps/wall.xpm
+share/netype/pixmaps/wall2.xpm
+share/netype/pixmaps/wincat.xpm
+share/netype/pixmaps/wincat2.xpm
+@dirrm share/netype/pixmaps
+@dirrm share/netype
