@@ -6,15 +6,10 @@
 #
 
 PORTNAME=	Sablot
-PORTVERSION=	0.95
-PORTREVISION=	1
+PORTVERSION=	0.96
 CATEGORIES=	textproc
 MASTER_SITES=	http://download-2.gingerall.cz/download/sablot/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} sablot-docs-0.81${EXTRACT_SUFX}
-
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	Sablot-0.95-PHP.patch Sablot-0.95-GlobVars.patch
-PATCH_DIST_STRIP=	-p2
 
 MAINTAINER=	skv@FreeBSD.org
 
@@ -43,12 +38,28 @@ MAN1=	sabcmd.1
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_DISABLE_META)
+.if defined(WITHOUT_ADDING_META)
 CONFIGURE_ARGS+=	--disable-adding-meta
 .endif
 
 .if defined(WITH_ICONV_TYPECAST)
 CONFIGURE_ARGS+=	--enable-iconv-typecast
+.endif
+
+.if defined(WITHOUT_DOM)
+CONFIGURE_ARGS+=	--disable-dom
+.endif
+
+.if defined(WITHOUT_DOCUMENT_ERRORS)
+CONFIGURE_ARGS+=	--disable-document-errors
+.endif
+
+.if defined(WITH_CHECK_LEAKS)
+CONFIGURE_ARGS+=	--enable-check-leaks
+.endif
+
+.if defined(WITH_DEBUGGER)
+CONFIGURE_ARGS+=	--enable-debugger
 .endif
 
 WRKSRCDOC=	${WRKDIR}/sablot-docs

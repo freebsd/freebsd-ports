@@ -1,4 +1,6 @@
 bin/sabcmd
+include/sabcfg.h
+include/sabdbg.h
 include/sablot.h
 include/sdom.h
 include/shandler.h
