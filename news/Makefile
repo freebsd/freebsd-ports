@@ -40,6 +40,7 @@
     SUBDIR += tin
     SUBDIR += trn
     SUBDIR += trn4
+    SUBDIR += ubh
     SUBDIR += unpost
     SUBDIR += xmitbin
     SUBDIR += xvnews
