@@ -21,7 +21,7 @@ RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm \
 		jhead:${PORTSDIR}/graphics/jhead \
 		unzip:${PORTSDIR}/archivers/unzip
 
-USE_PHP=	session
+USE_PHP=	pcre session
 WANT_PHP_WEB=	yes
 
 .if !defined(WITHOUT_NLS)
