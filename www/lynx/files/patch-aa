@@ -1,16 +1,16 @@
-*** Makefile.orig	Mon Feb 12 11:58:22 1996
---- Makefile	Thu Feb 22 05:23:54 1996
+*** Makefile.orig	Fri Jun 28 01:06:34 1996
+--- Makefile	Fri Jul  5 15:02:51 1996
 ***************
 *** 10,29 ****
-  ##change the next line if you want lynx installed somewhere 
+  ##change the next line if you want lynx installed somewhere
   ##besides /usr/local/bin
   
 ! exec= /usr/local/bin
   
   ##change the next line if you want the lynx man file installed somewhere
-  ##besides /usr/man/man1
+  ##besides /usr/local/man/man1
   
-! doc= /usr/man/man1
+! doc= /usr/local/man/man1
   
   ##change the next line if you want the lynx.cfg file installed somewhere
   ##besides /usr/local/lib
@@ -21,15 +21,15 @@
 ! installdoc= install -c -m 444
   
   
-  #set the relative location of the WWW library Implementation directory, 
+  #set the relative location of the WWW library Implementation directory,
 --- 10,29 ----
-  ##change the next line if you want lynx installed somewhere 
+  ##change the next line if you want lynx installed somewhere
   ##besides /usr/local/bin
   
 ! exec= ${PREFIX}/bin
   
   ##change the next line if you want the lynx man file installed somewhere
-  ##besides /usr/man/man1
+  ##besides /usr/local/man/man1
   
 ! doc= ${PREFIX}/man/man1
   
@@ -42,26 +42,26 @@
 ! installdoc= ${INSTALL} -c -m 444 -o ${BINOWN} -g ${BINGRP}
   
   
-  #set the relative location of the WWW library Implementation directory, 
+  #set the relative location of the WWW library Implementation directory,
 ***************
-*** 320,326 ****
-  freebsd-ncurses:  
+*** 394,400 ****
+  freebsd-ncurses:
   	cd WWW/Library/freebsd; make LYFLAGS="$(SITE_LYDEFS)"
   	cd src; make all MCFLAGS="$(CFLAGS) -DFANCY_CURSES -DNCURSES -DUNIX \
 ! 		-DNO_TTYTYPE -DNO_CUSERID -DLOCALE \
   		-I../$(WWWINC) $(SITE_DEFS)" \
-  		LIBS="-lncurses -lmytinfo $(WAISLIB) $(SOCKSLIB)" \
-  		WWWLIB="../WWW/Library/freebsd/libwww.a"
---- 320,326 ----
-  freebsd-ncurses:  
+  		LIBS="-lncurses -lmytinfo \
+  		$(WAISLIB) $(SOCKSLIB) $(SITE_LIBS)" \
+--- 394,400 ----
+  freebsd-ncurses:
   	cd WWW/Library/freebsd; make LYFLAGS="$(SITE_LYDEFS)"
   	cd src; make all MCFLAGS="$(CFLAGS) -DFANCY_CURSES -DNCURSES -DUNIX \
 ! 		-DLYNX_CFG_FILE='\"${PREFIX}/etc/lynx.cfg\"' -DNO_TTYTYPE -DNO_CUSERID -DLOCALE \
   		-I../$(WWWINC) $(SITE_DEFS)" \
-  		LIBS="-lncurses -lmytinfo $(WAISLIB) $(SOCKSLIB)" \
-  		WWWLIB="../WWW/Library/freebsd/libwww.a"
+  		LIBS="-lncurses -lmytinfo \
+  		$(WAISLIB) $(SOCKSLIB) $(SITE_LIBS)" \
 ***************
-*** 644,650 ****
+*** 857,863 ****
   
   install:
   	-mv -f $(exec)/lynx $(exec)/lynx.old
@@ -69,7 +69,7 @@
   	$(installbin) lynx $(exec)/lynx
   	$(installdoc) lynx.man $(doc)/lynx.1
 ! 	$(installdoc) lynx.cfg $(cfg)/lynx.cfg
---- 644,653 ----
+--- 857,866 ----
   
   install:
   	-mv -f $(exec)/lynx $(exec)/lynx.old
