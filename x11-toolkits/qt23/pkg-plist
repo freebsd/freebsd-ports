@@ -1,5 +1,5 @@
 lib/libqt.so
-lib/libqt.so.1
+lib/libqt.so.1.41
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 bin/moc
@@ -234,9 +234,9 @@ man/man3/QDict.3qt.gz
 man/man3/QDictIterator.3qt.gz
 man/man3/QDir.3qt.gz
 man/man3/QDoubleValidator.3qt.gz
-man/man3/QDragMoveEvent.3qt
-man/man3/QDragObject.3qt
-man/man3/QDropEvent.3qt
+man/man3/QDragMoveEvent.3qt.gz
+man/man3/QDragObject.3qt.gz
+man/man3/QDropEvent.3qt.gz
 man/man3/QEvent.3qt.gz
 man/man3/QFile.3qt.gz
 man/man3/QFileDialog.3qt.gz
@@ -363,7 +363,7 @@ man/man3/QToolBar.3qt.gz
 man/man3/QToolButton.3qt.gz
 man/man3/QToolTip.3qt.gz
 man/man3/QToolTipGroup.3qt.gz
-man/man3/QUrlDrag.3qt
+man/man3/QUrlDrag.3qt.gz
 man/man3/QVBoxLayout.3qt.gz
 man/man3/QValidator.3qt.gz
 man/man3/QWMatrix.3qt.gz
@@ -411,9 +411,9 @@ man/man3/qdict.3qt.gz
 man/man3/qdictiterator.3qt.gz
 man/man3/qdir.3qt.gz
 man/man3/qdoublevalidator.3qt.gz
-man/man3/qdragmoveevent.3qt
-man/man3/qdragobject.3qt
-man/man3/qdropevent.3qt
+man/man3/qdragmoveevent.3qt.gz
+man/man3/qdragobject.3qt.gz
+man/man3/qdropevent.3qt.gz
 man/man3/qevent.3qt.gz
 man/man3/qfile.3qt.gz
 man/man3/qfiledialog.3qt.gz
@@ -540,7 +540,7 @@ man/man3/qtoolbar.3qt.gz
 man/man3/qtoolbutton.3qt.gz
 man/man3/qtooltip.3qt.gz
 man/man3/qtooltipgroup.3qt.gz
-man/man3/qurldrag.3qt
+man/man3/qurldrag.3qt.gz
 man/man3/qvalidator.3qt.gz
 man/man3/qvboxlayout.3qt.gz
 man/man3/qwhatsthis.3qt.gz
