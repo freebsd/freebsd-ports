@@ -65,5 +65,7 @@ post-install:
 	# Run package install script
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/pkg-install ${PKGNAME} \
 		POST-INSTALL
+	# Set mudlib ownership
+	-@${CHOWN} -h -R mud:mud ${DATADIR}
 
 .include <bsd.port.mk>
