@@ -69,7 +69,7 @@
     SUBDIR += gforth
     SUBDIR += ghc
     SUBDIR += ghc-doc
-    SUBDIR += ghc6
+    SUBDIR += ghc5
     SUBDIR += ghc6-doc
     SUBDIR += glibstdc++28
     SUBDIR += gnat

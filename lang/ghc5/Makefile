@@ -1,10 +1,10 @@
-# New ports collection makefile for:	ghc
-# Date created:				28 August 1999
-# Whom:					Simon Marlow <simonmar@microsoft.com>
+# New ports collection makefile for:	ghc Date created:
+# 28 August 1999 Whom:					Simon Marlow
+# <simonmar@microsoft.com>
 #
 # $FreeBSD$
 
-PORTNAME=	ghc
+PORTNAME=	ghc5
 PORTVERSION=	5.04.3
 PORTREVISION=	1
 CATEGORIES=	lang haskell
@@ -33,6 +33,7 @@ LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 MAINTAINER=	simonmar@microsoft.com
 COMMENT=	A Compiler for the functional language Haskell
 
+WRKSRC=		${WRKDIR}/ghc-${PORTVERSION}
 USE_PERL5=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
