@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.rtfm.com/ssldump/
 MAINTAINER=	kris@FreeBSD.org
 
 USE_OPENSSL=	YES
+FORBIDDEN=	"Remotely exploitable buffer overflow."
 
 .include <bsd.port.pre.mk>
 
