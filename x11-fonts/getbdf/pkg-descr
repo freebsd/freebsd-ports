@@ -1,0 +1,3 @@
+getbdf will convert anything your X server understands into the bdf format.
+Hence snftobdf, pcftobdf are not necessary.  It is useful to convert a Latin
+font that you work with into bdf so that you may compare and edi.
