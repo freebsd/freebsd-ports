@@ -3,7 +3,7 @@
 # Date created:		18 November 1998
 # Whom:			smace@freebsd.org
 #
-# $Id: Makefile,v 1.1.1.1 1998/11/18 15:50:24 smace Exp $
+# $Id: Makefile,v 1.2 1998/11/23 08:52:12 asami Exp $
 #
 
 DISTNAME=	ppa-0.8.6
@@ -33,7 +33,7 @@ pre-configure:
 .endif
 .if !defined(PAPERSIZE)
 	@${ECHO}
-	@${ECHO} "No PAPERSIZE environment variable found, will default to enscript-A4"
+	@${ECHO} "No PAPERSIZE environment variable found, will default to enscript-letter"
 	@${ECHO}
 .endif
 
