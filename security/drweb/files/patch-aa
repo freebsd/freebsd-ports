@@ -1,5 +1,5 @@
---- usr/local/etc/drweb/drweb32.ini.orig	Thu Oct  9 15:06:27 2003
-+++ usr/local/etc/drweb/drweb32.ini	Thu Nov  6 18:49:39 2003
+--- usr/local/etc/drweb/drweb32.ini.orig	Sat Mar  6 04:06:07 2004
++++ usr/local/etc/drweb/drweb32.ini	Sat Mar  6 21:58:17 2004
 @@ -7,23 +7,23 @@
  ;        also used by the updating module to update the search module. You
  ;        may specify relational path, but it is strongly recommended to make
@@ -87,7 +87,7 @@
  RenameFilesTo = #??
  
  ;UpdatePath = path
- ;       This parameter used bu update script.
+ ;       This parameter is used by update script.
 -UpdatePath = "/var/drweb/updates"
 +UpdatePath = "%INSTALL%/updates"
  
@@ -142,7 +142,7 @@
 @@ -467,5 +468,5 @@
  
  ;UpdatePath = path
- ;       This parameter used bu update script.
+ ;       This parameter is used by update script.
 -UpdatePath = /usr/local/drweb/updates
 +UpdatePath = %INSTALL%/updates
  
