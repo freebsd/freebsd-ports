@@ -7,7 +7,7 @@
 
 PORTNAME=	xdvik
 PORTVERSION=	${VERSION_XDVIK}.${VERSION_JPATCH}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xdvi
@@ -23,12 +23,12 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	DVI Previewer(kpathsearch) for X. + freetype support
 
 BUILD_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
-		${LOCALBASE}/${TEXMF}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
+		${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
 		mktexlsr:${PORTSDIR}/print/teTeX-base
 RUN_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
-		${LOCALBASE}/${TEXMF}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
+		${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
 		mktexlsr:${PORTSDIR}/print/teTeX-base \
-		${LOCALBASE}/${TEXMF}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex-tetex \
+		${LOCALBASE}/${TEXMFDIR}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex-tetex \
 		${X11BASE}/${TTFMINCHO}:${PORTSDIR}/japanese/kochi-ttfonts \
 		${X11BASE}/${TTFGOTHIC}:${PORTSDIR}/japanese/kochi-ttfonts
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
@@ -39,7 +39,7 @@ DIST_SUBDIR=	xdvik
 USE_XLIB=	YES
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
-CONFIGURE_ARGS=	--datadir=${PREFIX}/${TEXMF:S,texmf$,,} \
+CONFIGURE_ARGS=	--datadir=${PREFIX}/${TEXMFDIR:S,texmf$,,} \
 		--enable-a4 --enable-shrink=${SHRINK} \
 		--with-dvifilter=${DVIPS} \
 		--enable-xdviprint=${PREFIX}/libexec/xdviprint \
@@ -65,7 +65,7 @@ PATCH_STRIP=	-p1
 MAN1=		xdvi.1 xdvizilla.1 t1mapper.1
 
 INSTALL_WRKSRC=	${WRKSRC}/texk/xdvik
-PLIST_SUB=	TEXMF=${TEXMF} MKTEXLSR=${MKTEXLSR} \
+PLIST_SUB=	TEXMFDIR=${TEXMFDIR} MKTEXLSR=${MKTEXLSR} \
 		XDVIETCDIR=${XDVIETCDIR}
 
 VERSION_XDVIK=	22.40y1
@@ -73,13 +73,14 @@ VERSION_JPATCH=	1.21
 LIBWWW_PREFIX?=	${LOCALBASE}
 LIBT1_PREFIX?=	${LOCALBASE}
 
-TEXMF=		share/texmf
-TEXMFLOCAL=	share/texmf-local
-TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
-XDVIETCDIR=	${TEXMF}/xdvi-ptex
+TEXMFDIR=	share/texmf
+TEXMFDISTDIR=	share/texmf-dist
+TEXMFLOCALDIR=	share/texmf-local
+TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCALDIR}/ls-R
+XDVIETCDIR=	${TEXMFDIR}/xdvi/ptex
 MKTEXLSR?=	${LOCALBASE}/bin/mktexlsr
 
-CIDFONTDIR=	${TEXMF}/dvipdfm/CIDFont
+CIDFONTDIR=	${TEXMFDIR}/dvipdfm/CIDFont
 TTFMINCHO=	lib/X11/fonts/TrueType/kochi-mincho-subst.ttf
 TTFGOTHIC=	lib/X11/fonts/TrueType/kochi-gothic-subst.ttf
 VFONTCAPFT_SRC=	${WRKSRC}/vfontmap.freetype
