@@ -8,6 +8,7 @@
 
 PORTNAME=	curlpp
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,35 +16,21 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ wrapper for libcurl
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 LIB_DEPENDS=	curl.2:${PORTSDIR}/ftp/curl
 
+USE_GCC=	3.3
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--disable-ewarning
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502000
-BROKEN=		"Does not compile"
-.endif
-
-.if ${OSVERSION} < 500035
-USE_GCC=	3.1
-.else
-CONFIGURE_ENV+=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e "s|^#! /bin/sh|#!${LOCALBASE}/bin/bash|" ${WRKSRC}/configure
-
-.if !defined(NOPORTDOCS)
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}
-	@${CP} ${WRKSRC}/test/README ${EXAMPLESDIR}
-	@${CP} ${WRKSRC}/test/example*.cpp ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/test/README ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/test/example*.cpp ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
