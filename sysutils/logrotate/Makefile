@@ -14,7 +14,7 @@ EXTRACT_SUFX=	-1.src.rpm
 
 MAINTAINER=	ycheng@sinica.edu.tw
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/rpm2cpio:${PORTSDIR}/misc/rpm \
+BUILD_DEPENDS=	${LOCALBASE}/bin/rpm2cpio:${PORTSDIR}/misc/rpm
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_GMAKE=	yes
