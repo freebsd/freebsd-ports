@@ -667,6 +667,7 @@
     SUBDIR += p5-Class-WhiteHole
     SUBDIR += p5-Class-XPath
     SUBDIR += p5-Clone
+    SUBDIR += p5-Commands-Guarded
     SUBDIR += p5-Config-Auto
     SUBDIR += p5-Config-Fast
     SUBDIR += p5-Config-General

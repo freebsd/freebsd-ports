@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Commands/Guarded.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Commands/Guarded/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Commands/Guarded 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Commands 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Commands 2>/dev/null || true

@@ -1,0 +1,6 @@
+This module implements a deterministic, rectifying variant on Dijkstra's
+guarded commands.  Each named step is passed two blocks: an "ensure"
+block that defines a test for a necessary and sufficient condition of
+the step, and a "using" block that will cause that condition to obtain.
+
+WWW: http://search.cpan.org/dist/Commands-Guarded
