@@ -12,7 +12,7 @@ include/qswrapperfactory.h
 lib/libqsa.so
 lib/libqsa.so.1
 lib/libqsa.so.1.1
-lib/libqsa.so.1.1.1
+lib/libqsa.so.1.1.2
 share/doc/qsa/html/addfunction.png
 share/doc/qsa/html/articles.html
 share/doc/qsa/html/classes.html
@@ -218,8 +218,8 @@ share/doc/qsa/html/windowmenu1.png
 share/doc/qsa/html/windowmenu2.png
 share/doc/qsa/html/wrappers.html
 share/qt/mkspecs/features/qsa.prf
-@dirrm share/qt/mkspecs/features
-@dirrm share/qt/mkspecs
-@dirrm share/qt
+@unexec rmdir %D/share/qt/mkspecs/features 2>/dev/null || true
+@unexec rmdir %D/share/qt/mkspecs 2>/dev/null || true
+@unexec rmdir %D/share/qt 2>/dev/null || true
 @dirrm share/doc/qsa/html
 @dirrm share/doc/qsa
