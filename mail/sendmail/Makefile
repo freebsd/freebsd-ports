@@ -32,10 +32,19 @@ PLIST_SUB+=	PREFIX=${PREFIX:S=${PREFIX}/==}
 # SENDMAIL_WITHOUT_IPV6=yes
 # SENDMAIL_WITHOUT_MILTER=yes
 # SENDMAIL_WITH_TLS=yes
+# SENDMAIL_WITH_SMTPS=yes
 # SENDMAIL_WITH_SASL=yes
 # SENDMAIL_WITH_SASL2=yes
 # SENDMAIL_WITH_LDAP=yes
 # SENDMAIL_WITH_PICKY_HELO_CHECK=yes
+
+.if defined(SENDMAIL_WITH_SMTPS)
+.if !defined(SENDMAIL_WITH_TLS) && !defined(WITH_TLS)
+.BEGIN:
+	@${ECHO_CMD} "DEPENDENCY NOTE: SENDMAIL_WITH_TLS will be enabled to support SENDMAIL_WITH_SMTPS"
+SENDMAIL_WITH_TLS=yes
+.endif
+.endif
 
 .if defined(SENDMAIL_WITH_LDAP)
 PKGNAMESUFFIX?=	-ldap
@@ -238,6 +247,9 @@ tls-install:
 SITE+=	${FILESDIR}/site.config.m4.ssl
 .endif
 SITE+=	${FILESDIR}/site.config.m4.tls
+.if defined(SENDMAIL_WITH_SMTPS)
+SITE+=	${FILESDIR}/site.config.m4.smtps
+.endif
 .endif
 
 .if exists(${FILESDIR}/site.config.m4.local)
