@@ -5,11 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	jude_take
-PORTVERSION=	1.3
+PORTNAME=	jude-community
+PORTVERSION=	1.4.3
 CATEGORIES=	devel
-MASTER_SITES=	# you have to answer some enquetes to download
-DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/g}
+MASTER_SITES=	# you have to register yourself as a member to download
+DISTNAME=	${PORTNAME}-${PORTVERSION:S!.!_!g}
 EXTRACT_SUFX=	.zip
 
 MAINTAINER=	mistral@imasy.or.jp
@@ -26,32 +26,35 @@ USE_REINPLACE=	yes
 RESTRICTED=	"See http://objectclub.esm.co.jp/Jude/permission_e.html"
 NO_CDROM=	${RESTRICTED}
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+PLIST_SUB+=	PORTNAME=${PORTNAME}
 
-DOWNLOAD_URL=	http://objectclub.esm.co.jp/Jude/enquete_e.html
+WRKSRC=		${WRKDIR}/${PORTNAME:S!-!_!}
+
+DOWNLOAD_URL=	https://www.objectclub.jp/Jude/enquete_e.html
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	README-e.txt README.txt Release_Note-e.html Release_Note.html
+PORTDOCS=	README-e.txt README.txt ReleaseNote-e.html ReleaseNote.html
 .endif
 
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=	"You must manually fetch the distribution file ${DISTNAME}${EXTRACT_SUFX} from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again"
+IGNORE=	"You must manually fetch the distribution file from ${DOWNLOAD_URL}, then place it in ${DISTDIR} and run make again"
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e "s!%%JAVA_HOME%%!${JAVA_HOME}!" ${WRKSRC}/jude
+	${REINPLACE_CMD} -e "s!%%JAVA_HOME%%!${JAVA_HOME}!; \
+	                     s!%%DATADIR%%!${DATADIR}!" ${WRKSRC}/jude
 
 do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/jude ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/jude-take.jar ${DATADIR}
+	${INSTALL_SCRIPT} ${FILESDIR}/netscape ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.jar ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/JudeDefaultModel.jude ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/jude.ico ${DATADIR}
 	# ExportHTML needs lib/tools.jar to be copied
-	# ExportHTML doesn't work with version 1.3 (Known Problem)
-	#${LN} -s ${JAVA_HOME}/lib/tools.jar ${DATADIR}
+	${LN} -s ${JAVA_HOME}/lib/tools.jar ${DATADIR}
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

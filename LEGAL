@@ -337,7 +337,7 @@ jre*i_ELF.*.tar.gz	ports/java/jre		License doesn't allow distribution
 jre118_v3-glibc-*	ports/java/linux-blackdown-jre11 License doesn't allow
 						distribution with fee
 jsdk20-solaris2-sparc*	ports/java/jsdk		no commercial use
-jude_take*.zip		ports/devel/jude_take	License restrictions.
+jude-comunity-*.zip	ports/devel/jude-community	License restrictions.
 kaffe-1.0*		ports/java/kaffe	Restrictive copyright
 kaffe-1.1*		ports/java/kaffe-devel	Restrictive copyright
 kde-icons-*		ports/x11-themes/kde-icons-* Unclear about licensing

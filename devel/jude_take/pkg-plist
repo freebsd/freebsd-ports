@@ -1,6 +1,0 @@
-bin/jude
-share/jude_take/jude-take.jar
-share/jude_take/JudeDefaultModel.jude
-share/jude_take/jude.ico
-@comment share/jude_take/tools.jar
-@dirrm share/jude_take
