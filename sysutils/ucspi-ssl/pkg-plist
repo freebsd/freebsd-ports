@@ -3,8 +3,8 @@ bin/sslcat
 bin/sslclient
 bin/sslconnect
 bin/sslserver
-share/doc/ucspi-ssl/CHANGES
-share/doc/ucspi-ssl/README
-share/doc/ucspi-ssl/TODO
-share/doc/ucspi-ssl/UCSPI-SSL
-@dirrm share/doc/ucspi-ssl
+%%SSLPERL%%bin/sslperl
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/UCSPI-SSL
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
