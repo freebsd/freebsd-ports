@@ -1,14 +1,13 @@
 # New ports collection makefile for:	xfig
-# Version required:	3.0
+# Version required:	3.1.2
 # Date created:		4 January 1995
 # Whom:			asami
 # Original by:		roberto
 #
-# $Id: Makefile,v 1.1.1.2 1995/01/05 05:41:09 asami Exp $
+# $Id: Makefile,v 1.2 1995/01/13 13:14:22 jkh Exp $
 #
 
-DISTNAME=	xfig.3.0
-EXTRACT_SUFX=	.tar.Z
+DISTNAME=	xfig.3.1.2
 WRKSRC=		${WRKDIR}/xfig
 MASTER_SITES=	ftp://ftp.x.org/contrib/applications/drawing_tools/xfig/ \
 	ftp://crl.dec.com/pub/X11/contrib/applications/drawing_tools/xfig/
