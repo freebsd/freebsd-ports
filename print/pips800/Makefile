@@ -36,7 +36,7 @@ EXPIRATION_DATE=	"August 23, 2004"
 RUN_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base \
 		${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk \
 		pstops:${PORTSDIR}/print/psutils-${PAPERSIZE} \
-		${LINUXBASE}/usr/lib/libpng.so.2:${PORTSDIR}/graphics/linux-png
+		${LINUXBASE}/usr/lib/libpng.so.2:${PORTSDIR}/graphics/linux-png10
 .if ${PORTVERSION} == 2.0 || ${PORTVERSION} == 2.1
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libgnome.so.32:${PORTSDIR}/x11/linux-gnomelibs \
 		${LINUXBASE}/usr/lib/libgdk_imlib.so.1:${PORTSDIR}/graphics/linux-imlib \
