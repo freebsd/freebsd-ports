@@ -102,6 +102,7 @@
     SUBDIR += v
     SUBDIR += vdk
     SUBDIR += vdkbuilder
+    SUBDIR += viewkit
     SUBDIR += whistlerk
     SUBDIR += wxgtk
     SUBDIR += xbae

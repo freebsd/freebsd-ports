@@ -1,0 +1,22 @@
+--- ./Makefile.in.orig	Wed Aug 16 23:51:09 2000
++++ ./Makefile.in	Wed Aug 16 23:24:28 2000
+@@ -32,8 +32,8 @@
+ # HEADERINSTALLDIR -- Directory to install the header files.
+ # FONTINSTALLDIR -- Directory to install the font metric files into
+ #
+-prefix = /usr/local
+-exec_prefix = ${prefix}
++prefix = @prefix@
++exec_prefix = @exec_prefix@
+ 
+ LIBINSTALLDIR= $(exec_prefix)/lib
+ INFOINSTALLDIR= $(prefix)/info
+@@ -134,7 +134,7 @@
+ 	$(RANLIB) $(LIBHELP)
+ 
+ clean::	
+-	-rm -f $(LIB) $(OBJS) *.bak *~
++	-rm -f $(LIBHELP) $(LIB) $(LIBOBJS)  $(COBJS) *.bak *~
+ 
+ extract-srcs:: $(SRCS) $(HDRS)
+ 

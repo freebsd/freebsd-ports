@@ -1,0 +1,14 @@
+--- ./configure.in.orig	Wed Aug 16 23:48:53 2000
++++ ./configure.in	Wed Aug 16 23:26:46 2000
+@@ -14,8 +14,9 @@
+ 
+ AC_STDC_HEADERS
+ 
+-AC_WITH(motif-includes, [ motif_includes=-I$withval ])
+-AC_WITH(motif20, [ AC_DEFINE(USE_MOTIF20) ]) 
++AC_ARG_WITH(motif-includes, [--with-motif-includes=<path> ], [ motif_includes=-I$withval ])
++AC_ARG_WITH(motif20, [--with-motif20 For Motif 2.0 ], [ AC_DEFINE(USE_MOTIF20) ]) 
++AC_ARG_WITH(open-motif,  [--with-open-motif For Open Motif 2.0 ],  [ AC_DEFINE(USE_MOTIF20) AC_DEFINE(OPEN_MOTIF) ]) 
+ AC_SUBST(x_includes)
+ AC_SUBST(motif_includes)
+ AC_OUTPUT(Makefile)

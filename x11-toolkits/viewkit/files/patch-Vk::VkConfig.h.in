@@ -1,0 +1,10 @@
+--- ./Vk/VkConfig.h.in.orig	Wed Aug 16 23:50:47 2000
++++ ./Vk/VkConfig.h.in	Wed Aug 16 23:23:25 2000
+@@ -21,4 +21,7 @@
+ /* Define if you compiled the ViewKit with Motif 2.0 */
+ #undef USE_MOTIF20
+ 
++/* Define if you compiled the ViewKit with Open Motif 2.0 */
++#undef OPEN_MOTIF
++
+ #endif // VKCONFIG_H
