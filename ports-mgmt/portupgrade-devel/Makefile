@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	20011030
+PORTVERSION=	20011101
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.iDaemons.org/distfiles/
@@ -27,16 +27,6 @@ USE_RUBY=	yes
 
 MAKE_ARGS=	PREFIX="${PREFIX}" RUBY="${RUBY}"
 
-RUBY_SHEBANG_FILES=	\
-		${WRKSRC}/bin/pkg_fetch \
-		${WRKSRC}/bin/pkg_glob \
-		${WRKSRC}/bin/pkgdb \
-		${WRKSRC}/bin/portcvsweb \
-		${WRKSRC}/bin/portsclean \
-		${WRKSRC}/bin/portsdb \
-		${WRKSRC}/bin/portupgrade \
-		${WRKSRC}/bin/portversion
-
 MAN1=		pkg_deinstall.1 \
 		pkg_fetch.1 \
 		pkg_glob.1 \
@@ -54,11 +44,6 @@ MANCOMPRESSED=	maybe
 DOCS=		ChangeLog README
 
 DOCSDIR=	${PREFIX}/share/doc/pkgtools
-
-post-patch:
-.for f in pkgdb.rb pkgtools.rb
-	${RUBY} -i~ -pe 'sub %r:/usr/local:, "${LOCALBASE}"' ${WRKSRC}/lib/${f}
-.endfor
 
 post-install:
 	# Remove old database
