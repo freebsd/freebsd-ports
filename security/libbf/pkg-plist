@@ -1,0 +1,9 @@
+bin/bftest
+bin/bfspeed
+include/blowfish.h
+lib/libblowfish.a
+%%PORTDOCS%%share/doc/libbf/COPYRIGHT
+%%PORTDOCS%%share/doc/libbf/README
+%%PORTDOCS%%share/doc/libbf/VERSION
+%%PORTDOCS%%share/doc/libbf/blowfish.doc
+%%PORTDOCS%%@dirrm share/doc/libbf

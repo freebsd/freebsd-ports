@@ -110,6 +110,7 @@
     SUBDIR += labrea
     SUBDIR += lcrzo
     SUBDIR += lcrzoex
+    SUBDIR += libbf
     SUBDIR += libecc
     SUBDIR += libfwbuilder
     SUBDIR += libgcrypt
