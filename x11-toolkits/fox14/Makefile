@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	fox
-PORTVERSION=	1.1.41
+PORTVERSION=	${MAJORVER}.${SHVER}
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 		ftp://ftp.fox-toolkit.org/pub/ \
 		ftp://ftp.cfdrc.com/pub/FOX/ \
-		ftp://SunSITE.Informatik.RWTH-Aachen.DE/pub/Linux/fox/
+		ftp://SunSITE.Informatik.RWTH-Aachen.DE/pub/Linux/fox/ \
+		http://fresh.t-systems-sfr.com/unix/src/misc/
 
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Fast and extensive C++ GUI toolkit
@@ -20,14 +21,20 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
-USE_MESA=	yes
+CONFLICTS=	fox-1.0.*
+
+MAJORVER=	1.1
+SHVER=		42
+PLIST_SUB+=	MAJORVER=${MAJORVER} SHVER=${SHVER}
+
+USE_GL=		yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
-USE_MOTIF=	yes
-GNU_CONFIGURE=	yes
+#USE_MOTIF=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS}" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lXm"
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS+=--with-opengl=mesa --with-x \
 		--enable-xthreads
 
@@ -135,13 +142,4 @@ pre-everything::
 .endif
 	@${ECHO_MSG}
 
-.include <bsd.port.pre.mk>
-
-##
-## Port conflict management
-##
-.if exists(${LOCALBASE}/lib/libFOX-1.0.so)
-IGNORE= Conflict: this port is mutually exclusive with x11-toolkits/fox
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
