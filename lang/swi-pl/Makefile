@@ -25,6 +25,10 @@ PLIST_SUB=	DISTNAME=${DISTNAME} ARCH=${ARCH} OS=${OPSYS:L}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502126
+BROKEN=		"Broken pkg-plist"
+.endif
+
 .if (${ARCH} == "i386")
 PLIST_SUB+=	BITS=32
 .else
