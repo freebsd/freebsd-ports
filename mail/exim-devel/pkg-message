@@ -5,9 +5,7 @@ The following documentation has been installed:
     info 'Exim Filtering'	-> Exim Filter Specification (for end-users)
 
 Postscript, PDF, HTML and plain text versions of these documents, as well
-as a comprehensive FAQ list, are available on the Exim web site:
-
-	http://www.exim.org/
+as a comprehensive FAQ list, are available at http://www.exim.org/ .
 
 To replace sendmail with Exim:
 
@@ -16,3 +14,10 @@ To replace sendmail with Exim:
 3) Adjust mailer.conf(5) and set 'sendmail_enable' and 'sendmail_flags'
    as appropriate in rc.conf(5).
 4) Start exim with appropriate command-line options.
+
+You may also want to configure newsyslog(8) to rotate Exim log files:
+
+# Only HUP Exim once when rejectlog and mainlog are rotated.
+/var/log/exim/mainlog	sendmail:mail 640 7 * @T00 Z /var/run/exim.pid
+/var/log/exim/rejectlog sendmail:mail 640 7 * @T00 Z
+
