@@ -1,4 +1,7 @@
+@comment $FreeBSD$
 bin/bon_csv2html
 bin/bon_csv2txt
 sbin/bonnie++
 sbin/zcav
+share/doc/bonnie++/readme.html
+@dirrm share/doc/bonnie++
