@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	0.6.1
-PORTREVISION=	2
+PORTVERSION=	0.7
 CATEGORIES=	games
 MASTER_SITES=	http://www.wesnoth.org/files/
 
@@ -19,7 +18,7 @@ USE_GNOME=	gnometarget
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 
-MAN6=		wesnoth.6 wesnothd.6
+MAN6=		wesnoth.6 wesnoth_editor.6 wesnothd.6
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
