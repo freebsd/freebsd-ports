@@ -29,7 +29,7 @@ bin/rmdic
 bin/splitword
 bin/syncdic
 bin/wtoc
-etc/rc.d/canna.sh.sample
+etc/rc.d/canna.sh
 include/canna/RK.h
 include/canna/jrkanji.h
 include/canna/keydef.h

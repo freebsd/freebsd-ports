@@ -8,6 +8,7 @@
 
 PORTNAME=	Canna
 PORTVERSION=	3.7p1
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	canna/7449/
@@ -16,6 +17,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 MAINTAINER=	max@FreeBSD.org
 COMMENT=	Kana-Kanji conversion system
 
+USE_RC_SUBR=	yes
 USE_BZIP2=	yes
 USE_IMAKE=	yes
 USE_X_PREFIX=	no
@@ -46,9 +48,10 @@ PORTDOCS=	canna.bib canna.sty Imakefile README.jp Makefile \
 .endif
 
 post-build:
-	@${SED} -e "s,@RM@,${RM},g; s,@TOUCH@,${TOUCH},g; \
+	@${SED} -e "s,@PREFIX@,${PREFIX},g; s,@RC_SUBR@,${RC_SUBR},g; \
+		s,@RM@,${RM},g; s,@TOUCH@,${TOUCH},g; \
 		s,@CHOWN@,${CHOWN},g" ${FILESDIR}/canna.sh.in \
-		> ${WRKDIR}/canna.sh.sample
+		> ${WRKDIR}/canna.sh
 
 post-install:
 .for f in user user/user group
@@ -56,8 +59,8 @@ post-install:
 	@${CHOWN} bin:bin ${PREFIX}/lib/canna/dic/$f
 	@${CHMOD} 775 ${PREFIX}/lib/canna/dic/$f
 .endfor
-	@${ECHO} "Installing a sample startup script as ${PREFIX}/etc/rc.d/canna.sh.sample."
-	@${INSTALL_SCRIPT} ${WRKDIR}/canna.sh.sample ${PREFIX}/etc/rc.d/canna.sh.sample
+	@${ECHO} "Installing a startup script as ${PREFIX}/etc/rc.d/canna.sh."
+	@${INSTALL_SCRIPT} ${WRKDIR}/canna.sh ${PREFIX}/etc/rc.d/canna.sh
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 .if !defined(NOPORTDOCS)
