@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		c2html
-PORTVERSION= 		0.7.2
+PORTVERSION= 		0.9.1
 CATEGORIES=		textproc www
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/www/converters
@@ -18,7 +18,6 @@ USE_AUTOCONF=		yes
 MAN1=			c2html.1
 
 post-install:
-	strip ${PREFIX}/bin/c2html
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/c2html
 .for file in AUTHORS NEWS README

@@ -1,6 +1,6 @@
---- Makefile.in.orig	Mon May 24 14:33:08 1999
-+++ Makefile.in	Wed May 26 12:20:22 1999
-@@ -9,7 +9,7 @@
+--- Makefile.in.orig	Sat Apr 15 17:16:30 2000
++++ Makefile.in	Sun Apr 23 15:46:41 2000
+@@ -27,7 +27,7 @@
  # for gzip because otherwise the load on the web server
  # grows without having big benefits.
  # COMPRESSION = -DCOMPRESSION=4
@@ -9,12 +9,36 @@
  
  # Dont change things beyond this line.
  TARGET          = @PROJECT_NAME@
-@@ -40,7 +40,7 @@
- srcdir          = @srcdir@
+@@ -59,7 +59,7 @@
+ docdir          = @DOCDIR@
  CPPFLAGS        = @CPPFLAGS@
  
 -CFLAGS += -O2 -Wall
 +CFLAGS ?= -O2 -Wall
- ALL_CFLAGS = $(CFLAGS) -I$(srcdir) $(COMPRESSION) 
+ ALL_CFLAGS = $(CFLAGS) -I$(srcdir) -I. $(COMPRESSION) 
  
  all: $(TARGET)
+@@ -70,10 +70,12 @@
+ $(LEXOUTPUT): $(CONFIGS) $(LEXSRCS) $(HDRS)
+ 	$(LEX) $(LEXSRCS)
+ 
+-install: $(TARGET) install-doc
++install: $(TARGET)
+ 	@echo "Installing" $(TARGET) "to" $(bindir)
+ 	-mkdir -p $(bindir)
+ 	$(INSTALL_PROGRAM) $(TARGET) $(bindir)/$(TARGET)
++	-mkdir -p $(man1dir)
++	$(INSTALL_DATA) $(srcdir)/$(MANPAGE) $(man1dir)/$(MANPAGE)
+ 
+ install-strip: $(TARGET) install-doc
+ 	@echo "Installing" $(TARGET) "to" $(bindir)
+@@ -81,8 +83,7 @@
+ 	$(INSTALL_PROGRAM) -s $(TARGET) $(bindir)/$(TARGET)
+ 
+ install-doc: 
+-	-mkdir -p $(man1dir) $(docdir)
+-	$(INSTALL_DATA) $(srcdir)/$(MANPAGE) $(man1dir)/$(MANPAGE)
++	-mkdir -p $(docdir)
+ 	$(INSTALL_DATA) $(srcdir)/AUTHORS $(docdir)/AUTHORS
+ 	$(INSTALL_DATA) $(srcdir)/COPYING $(docdir)/COPYING
+ 	$(INSTALL_DATA) $(srcdir)/NEWS $(docdir)/NEWS
