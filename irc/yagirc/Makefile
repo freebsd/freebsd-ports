@@ -3,7 +3,7 @@
 # Date created:				6 July 1998
 # Whom:					mph
 #
-# $Id: Makefile,v 1.10 1998/09/25 09:55:28 asami Exp $
+# $Id: Makefile,v 1.11 1998/11/10 00:03:17 asami Exp $
 #
 
 DISTNAME=	yagirc-0.65.7
@@ -14,7 +14,7 @@ MAINTAINER=	mph@freebsd.org
 
 LIB_DEPENDS=	gtk11.1:${PORTSDIR}/x11-toolkits/gtk11 \
 		Imlib.1:${PORTSDIR}/graphics/imlib \
-		esd.0:${PORTSDIR}/audio/esound
+		esd.1:${PORTSDIR}/audio/esound
 
 BROKEN=		build
 
