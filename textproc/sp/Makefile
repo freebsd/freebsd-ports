@@ -21,12 +21,6 @@ INSTALLS_SHLIB=	yes
 BROKEN=		"Does not compile on 5.0"
 .endif
 
-post-patch:
-	$(CP) $(WRKSRC)/Makefile $(WRKSRC)/Makefile.sed
-	$(CP) $(WRKSRC)/Makefile.lib $(WRKSRC)/Makefile.lib.sed
-	$(SED) -e "s%/opt/local%$(PREFIX)%" <$(WRKSRC)/Makefile.sed >$(WRKSRC)/Makefile
-	$(SED) -e "s%/opt/local%$(PREFIX)%" <$(WRKSRC)/Makefile.lib.sed >$(WRKSRC)/Makefile.lib
-
 post-install:
 	$(MKDIR) $(PREFIX)/include/sp
 	$(MKDIR) $(PREFIX)/share/doc/sp

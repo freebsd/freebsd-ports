@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Oct 10 04:15:02 1998
-+++ Makefile	Mon Apr 30 01:06:08 2001
+--- Makefile.orig	Sat Oct 10 00:15:02 1998
++++ Makefile	Sun Oct 27 01:05:00 2002
 @@ -1,11 +1,12 @@
  # Copyright (c) 1994, 1995 James Clark
  # See the file COPYING for copying permission.
@@ -60,3 +60,9 @@
  # Uncomment this for SunOS 4.1.3 or FreeBSD
  # (and probably other BSD flavor systems as well)
  #RANLIB=ranlib
+@@ -145,3 +146,5 @@
+ 	rm -fr sp-$$version
+ 
+ FORCE:
++
++.PHONY: FORCE lib
