@@ -5594,6 +5594,7 @@ mupad		ports/math/mupad
 muse		ports/sysutils/muse
 musepack	ports/audio/musepack
 musicbox	ports/audio/musicbox
+musicbox-tag-editor	ports/audio/musicbox-tag-editor
 musicbrainz	ports/audio/musicbrainz
 musiccontrol	ports/audio/musiccontrol
 musicpd		ports/audio/musicpd
