@@ -1,0 +1,5 @@
+bin/gcombust
+share/doc/gcombust/README
+share/doc/gcombust/NEWS
+share/locale/sv/LC_MESSAGES/gcombust.mo
+share/locale/es/LC_MESSAGES/gcombust.mo
