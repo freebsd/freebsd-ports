@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	howm
-PORTVERSION=	1.1.0.1
+PORTVERSION=	1.1.0.3
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.me.ics.saitama-u.ac.jp/~hira/emacs/howm/
 
