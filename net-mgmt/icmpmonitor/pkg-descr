@@ -1,0 +1,5 @@
+The icmpmonitor uses the Internet Control Message Protocol (ICMP) "ECHO"
+facility, monitors several hosts, and notify admin if some of them are
+down.
+
+WWW:	http://www.crocodile.org/software.html
