@@ -1,13 +1,13 @@
 # New ports collection makefile for:    apache HTTPD and HTTPSD
-# Version required:     1.2b2
+# Version required:     1.2b3
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.23 1996/12/11 19:09:59 ache Exp $
+# $Id: Makefile,v 1.24 1996/12/11 21:04:21 markm Exp $
 #
 
-DISTNAME=       apache_1.2b2
-PKGNAME=        apache-1.2b2
+DISTNAME=       apache_1.2b3
+PKGNAME=        apache-1.2b3
 CATEGORIES=	www
 MASTER_SITES=   ftp://www.apache.org/apache/dist/
 
@@ -26,10 +26,10 @@ VERS_ID=        dir/ache
 
 .if defined(VERS_ID)
 post-patch:
-	@cd ${WRKSRC}/src; \
-	mv httpd.h httpd.h.old; \
-	sed 's=SERVER_VERSION *"\(.*\)"=SERVER_VERSION "\1 '"${VERS_ID}"'"=' \
-	< httpd.h.old > httpd.h
+	@cd ${WRKSRC}/src && \
+	mv Configuration Configuration.old && \
+	sed 's;^OPTIM=.*;& -DSERVER_SUBVERSION=\\"${VERS_ID}\\";' \
+	< Configuration.old > Configuration
 .endif
 
 .if defined(SECURE_SERVER)
