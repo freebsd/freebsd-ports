@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	licq
-PORTVERSION=	1.0
+PORTVERSION=	0.85
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.wibble.net/pub/licq/srcs/ \
@@ -14,13 +14,13 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.fanfic.org/pub/licq/srcs/ \
 		ftp://ftp.inter-i.uni-mainz.de/pub/licq/srcs/
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILES}
 
 MAINTAINER=	green@FreeBSD.org
 
 BUILD_DEPENDS=	aclocal:${PORTSDIR}/devel/automake
-LIB_DEPENDS=	qt2:${PORTSDIR}/x11-toolkits/qt22
 
-#USE_QT2=	yes
+USE_QT2=	yes
 USE_GMAKE=	yes
 USE_AUTOCONF=	yes
 USE_NEWGCC=     yes
@@ -29,10 +29,13 @@ USE_PERL5=      yes
 
 CONFIGURE_ARGS=	--with-qt-includes=${X11BASE}/include/qt2
 CONFIGURE_TARGET= $(ARCH)-unknown-freebsdelf$(OSREL)
+DATANAME=       licq-data-1.6
+DATAFILES=	${DATANAME}${EXTRACT_SUFX}
+DATADIR=	${WRKDIR}/${DATANAME}
 
 post-configure:
-	@(cd ${WRKSRC}/plugins/qt-gui-1.0 && ${AUTOCONF})
-	@(cd ${WRKSRC}/plugins/qt-gui-1.0 && \
+	@(cd ${WRKSRC}/plugins/qt-gui && ${AUTOCONF})
+	@(cd ${WRKSRC}/plugins/qt-gui && \
 		if ! ${SETENV} CC="${CC}" CXX="${CXX}" \
 	    CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
 	    INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
@@ -49,7 +52,7 @@ post-configure:
 		fi)
 
 post-build:
-	@(cd ${WRKSRC}/plugins/qt-gui-1.0; \
+	@(cd ${WRKSRC}/plugins/qt-gui;\
 	   ${SETENV} ${MAKE_ENV} \
 	   ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
@@ -58,10 +61,22 @@ pre-install:
 	${MKDIR} -m 700 ${PREFIX}/share/licq
 
 post-install:
-	cd ${WRKSRC}/plugins/qt-gui-1.0; \
+	strip ${PREFIX}/bin/licq
+	cd ${WRKSRC}/plugins/qt-gui;\
 	   ${SETENV} ${MAKE_ENV} \
 	   ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET}
+	${MKDIR} ${PREFIX}/share/licq/contrib
+	${INSTALL_SCRIPT} ${DATADIR}/contrib/licq.* ${PREFIX}/share/licq/contrib
+	${INSTALL_SCRIPT} ${DATADIR}/contrib/*.sh ${PREFIX}/share/licq/contrib
+	${MKDIR} ${PREFIX}/share/licq/sounds/icq
+	${INSTALL_DATA} ${DATADIR}/sounds/*.wav ${PREFIX}/share/licq/sounds
+	${INSTALL_DATA} ${DATADIR}/sounds/icq/*.wav ${PREFIX}/share/licq/sounds/icq
+	${MKDIR} ${PREFIX}/share/licq/translations
+	${INSTALL_DATA} ${DATADIR}/translations/* ${PREFIX}/share/licq/translations
+	${MKDIR} ${PREFIX}/share/licq/qt-gui
+	cd ${DATADIR}/qt-gui && ${TAR} -chf - * | \
+		${TAR} -xf - -C ${PREFIX}/share/licq/qt-gui
 	${CHMOD} -R a-w ${PREFIX}/share/licq
-	${CHMOD} 755 ${PREFIX}/share/licq
+	${CHMOD} 555 ${PREFIX}/share/licq
 
 .include <bsd.port.mk>
