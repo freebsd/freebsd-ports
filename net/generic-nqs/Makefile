@@ -8,16 +8,15 @@
 #
 
 PORTNAME=		Generic-NQS
-PORTVERSION=	3.50.6
+PORTVERSION=	3.50.9
 CATEGORIES=		net
 MASTER_SITES=	http://ftp.gnqs.org/pub/gnqs/source/by-version-number/v3.50/
 
 MAINTAINER=		tony.maher@ebioinformatics.com
 
-FORBIDDEN=		"Local root compromise"
-
 Y2K=			http://www.gnqs.org/Year2000.htm
 
+USE_BZIP2=	yes
 IS_INTERACTIVE=	yes
 NO_PACKAGE=		have to build on site due to the descriptors created in\
 				/var/spool/nqs (default location) and the configuration\
