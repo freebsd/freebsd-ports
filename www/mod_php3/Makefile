@@ -34,6 +34,10 @@ SLAVEDIRS=	lang/php3
 
 GNU_CONFIGURE=	yes
 
+.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
+IS_INTERACTIVE=	yes
+.endif
+
 .if defined(STANDALONE)
 CONFIGURE_ARGS=	--with-config-file-path=${PREFIX}/etc/php.standalone
 .else
