@@ -1,0 +1,13 @@
+--- sdl/Makefile.orig	Sun Sep 22 21:03:26 2002
++++ sdl/Makefile	Tue Oct 22 19:35:05 2002
+@@ -1,8 +1,8 @@
+-SDL_CFLAGS = `sdl-config --cflags`
+-CFLAGS = -Wall -ansi -pedantic -O2 -ffast-math -funroll-loops \
++SDL_CFLAGS = `sdl11-config --cflags`
++CFLAGS += -Wall -ansi -pedantic -ffast-math -funroll-loops \
+ 	-Dstricmp=strcasecmp -Dstrnicmp=strncasecmp -DNDEBUG \
+-	-I. -I.. $(SDL_CFLAGS) -DUSE_SDL -DUSE_NET
++	-I. -I.. $(SDL_CFLAGS) -DUSE_SDL
+
+ OBJS = gfx.o interrpt.o sound.o input.o
+ TARGET = ../sdl.a

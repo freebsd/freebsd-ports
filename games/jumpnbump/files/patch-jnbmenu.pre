@@ -1,0 +1,9 @@
+--- jnbmenu.pre.orig	Tue Oct 22 20:14:28 2002
++++ jnbmenu.pre	Tue Oct 22 20:14:45 2002
+@@ -1,5 +1,4 @@
+-#!/usr/bin/wish
+-#!/usr/bin/wish8.0
++#!%%LOCALBASE%%/bin/wish8.0
+ #############################################################################
+ # Visual Tcl v1.20 Project
+ # Author : Philippe Brochard
