@@ -29,6 +29,7 @@ LIB_DEPENDS+=	xmms.3:${PORTSDIR}/audio/xmms
 .endif
 
 WRKSRC=		${WRKDIR}/BitchX
+USE_PERL5=	yes
 USE_REINPLACE=	yes
 AUTOCONF=	${LOCALBASE}/bin/autoconf
 GNU_CONFIGURE=	yes

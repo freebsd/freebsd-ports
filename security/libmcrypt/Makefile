@@ -20,6 +20,7 @@ LIB_DEPENDS=	ltdl.1:${PORTSDIR}/devel/libtool
 
 RESTRICTED=	"yes - cryptography"
 
+USE_PERL5=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}

@@ -18,6 +18,7 @@ MAINTAINER=	freebsdports@arved.de
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 
 USE_REINPLACE=	yes
+USE_PERL5=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}

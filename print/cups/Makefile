@@ -22,6 +22,7 @@ RUN_DEPENDS?=	espgs:${.CURDIR}/../../print/cups-pstoraster \
 DEPENDS_TARGET="package"
 .endif
 
+USE_PERL5=	yes
 NO_BUILD=	true
 do-install:	# empty
 do-patch:	# empty
