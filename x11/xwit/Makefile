@@ -8,7 +8,8 @@
 PORTNAME=	xwit
 PORTVERSION= 	1.0
 CATEGORIES=	x11
-MASTER_SITES=   ftp://ftp.freebsd.org/pub/FreeBSD/ports/local-distfiles/tg/
+MASTER_SITES=   ${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	tg
 
 MAINTAINER=     tg@FreeBSD.org
 

@@ -8,8 +8,9 @@
 PORTNAME=	tth
 PORTVERSION= 	2.72
 CATEGORIES=	textproc
-MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/ports/local-distfiles/tg/ \
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://hutchinson.belmont.ma.us/tth/tth-noncom/
+MASTER_SITE_SUBDIR=	tg
 DISTNAME=	tth_C
 EXTRACT_SUFX=	.tgz
 
