@@ -6,32 +6,17 @@
 #
 
 PORTNAME=	Term-Screen
-PORTVERSION=	1.00
+PORTVERSION=	1.01
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Term
 PKGNAMEPREFIX=	p5-
-DISTNAME=	Screen-${PORTVERSION}
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-USE_PERL5=	YES
+PERL_CONFIGURE=	yes
 
 MAN3=		Term::Screen.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-POD2MAN?=	pod2man
-
-do-build:
-	@${POD2MAN} ${WRKSRC}/Screen.pm > ${WRKSRC}/${MAN3}
-
-do-install:
-	${INSTALL_MAN} ${WRKSRC}/${MAN3} ${MAN3PREFIX}/man/man3
-	${MKDIR} ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Term
-	${INSTALL_SCRIPT} ${WRKSRC}/Screen.pm ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Term
-	${MKDIR} ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/auto/Term/Screen
-	${ECHO_CMD} '${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Term/Screen.pm' >> \
-		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/auto/Term/Screen/.packlist
-	${ECHO_CMD} '${MAN3PREFIX}/man/man3/${MAN3}' >> \
-		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/auto/Term/Screen/.packlist
 
 .include <bsd.port.mk>
