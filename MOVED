@@ -1438,3 +1438,4 @@ x11-toolkits/bakery_gnomeui||2005-03-17|obsolete/no port need this
 www/konqueror-nsplugins|x11/kdebase3|2005-03-20|moved back into kdebase3
 science/mxp|graphics/mxp|2005-03-25|fix category
 misc/kfile_torrent|net/kdenetwork3|2005-03-27|kfile_torrent included in kdenetwork package
+multimedia/linux-divxplayer||2005-04-02|developer's dropped the application
