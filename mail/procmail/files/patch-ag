@@ -5,7 +5,7 @@
  exit 75 \2fB#\2fP\2fIYOUR_USERNAME\2fP\"");
  #else
 -  ps("FW_content","\"|exec @BINDIR@/procmail\"");
-+  ps("FW_content","|@BINDIR@/procmail");
++  ps("FW_content","\"|exec @BINDIR@/procmail || exit 75\"");
  #endif
  #else
    ps("DOT_FORWARD",".maildelivery");
