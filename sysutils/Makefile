@@ -43,6 +43,7 @@
     SUBDIR += ccze
     SUBDIR += cd-write
     SUBDIR += cd9660_unicode
+    SUBDIR += cdargs
     SUBDIR += cdbakeoven
     SUBDIR += cdbkup
     SUBDIR += cdrdao
