@@ -1,0 +1,4 @@
+       GD.pm is a port of Thomas Boutell's gd graphics library
+       (see below).  GD allows you to create color drawings using
+       a large number of graphics primitives, and emit the
+       drawings as GIF files.
