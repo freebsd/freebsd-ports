@@ -22,5 +22,5 @@ share/pixmaps/logo_grisbi.xpm
 @dirrm share/gnome/help/grisbi/C
 @dirrm share/gnome/help/grisbi/fr
 @dirrm share/gnome/help/grisbi
-@dirrm share/mime-info
-@dirrm share/pixmaps
+@unexec rmdir %D/share/mime-info 2>/dev/null || true
+@unexec rmdir %D/share/pixmaps 2>/dev/null || true
