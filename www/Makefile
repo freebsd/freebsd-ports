@@ -457,6 +457,7 @@
     SUBDIR += squirm
     SUBDIR += squishdot
     SUBDIR += ssserver
+    SUBDIR += suphp
     SUBDIR += surfraw
     SUBDIR += swiggle
     SUBDIR += swish++
