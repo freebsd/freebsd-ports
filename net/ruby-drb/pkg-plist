@@ -1,6 +1,8 @@
 %%RUBY_SITELIBDIR%%/drb.rb
 %%RUBY_SITELIBDIR%%/timerholder.rb
 %%RUBY_SITELIBDIR%%/drb/drb.rb
+%%RUBY_SITELIBDIR%%/drb/extserv.rb
+%%RUBY_SITELIBDIR%%/drb/extservm.rb
 %%RUBY_SITELIBDIR%%/drb/timeridconv.rb
 @dirrm %%RUBY_SITELIBDIR%%/drb
 %%RUBY_EXAMPLESDIR%%/drb/darray.rb
@@ -17,6 +19,7 @@
 %%RUBY_EXAMPLESDIR%%/drb/drbc.rb
 %%RUBY_EXAMPLESDIR%%/drb/drbs-acl.rb
 %%RUBY_EXAMPLESDIR%%/drb/drbs.rb
+%%RUBY_EXAMPLESDIR%%/drb/extserv_test.rb
 %%RUBY_EXAMPLESDIR%%/drb/name.rb
 %%RUBY_EXAMPLESDIR%%/drb/holderc.rb
 %%RUBY_EXAMPLESDIR%%/drb/holders.rb
