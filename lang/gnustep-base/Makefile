@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnustep-base
-PORTVERSION=	1.1.0
+PORTVERSION=	1.3.0
 CATEGORIES=	lang devel
 MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/ \
 		http://ftp.codefactory.se/pub/gnu/gstep/ \
@@ -43,10 +43,11 @@ GNU_ARCH=	${MACHINE_ARCH}
 PLIST_SUB+=	GNU_ARCH=${GNU_ARCH} OPSYS=${OPSYS:L} VERSION=${PORTVERSION} \
 		MAJORVERSION=${PORTVERSION:C/([0-9]).*/\1/1}
 ETCDIR=		${PREFIX}/../etc
-SYSLIBDIR=	${PREFIX}/System/Libraries
+SYSTEMDIR=	${LOCALBASE}/GNUstep/System
+SYSLIBDIR=	${SYSTEMDIR}/Libraries
 
 do-configure:
-	@(cd ${WRKSRC}; . ${PREFIX}/System/Makefiles/GNUstep.sh; \
+	@(cd ${WRKSRC}; . ${SYSTEMDIR}/Makefiles/GNUstep.sh; \
 	    if ! ${SETENV} CC="${CC}" CXX="${CXX}" \
 		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
 		INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
@@ -61,11 +62,11 @@ do-configure:
 	    fi)
 
 do-build:
-	@(cd ${WRKSRC}; . ${PREFIX}/System/Makefiles/GNUstep.sh; \
+	@(cd ${WRKSRC}; . ${SYSTEMDIR}/Makefiles/GNUstep.sh; \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
 
 do-install:
-	@(cd ${WRKSRC}; . ${PREFIX}/System/Makefiles/GNUstep.sh; \
+	@(cd ${WRKSRC}; . ${SYSTEMDIR}/Makefiles/GNUstep.sh; \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 
 post-install:
