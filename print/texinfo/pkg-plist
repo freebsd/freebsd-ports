@@ -1,0 +1,7 @@
+@cd /usr/local
+@owner bin
+@mode 755
+bin/texinfo
+@mode 644
+lib/texmf/fonts/tfm/lcircle10.tfm
+lib/texmf/ini/texinfo.fmt

@@ -1,0 +1,15 @@
+Texinfo is a documentation system that uses a single source file to
+produce both on-line information and printed output.  This means that
+instead of writing two different documents, one for the on-line help
+or other on-line information and the other for a typeset manual or
+other printed work, you need write only one document.  When the work
+is revised, you need revise only one document.  You can read the
+on-line information, known as an "Info file", with an Info
+documentation-reading program.  By convention, Texinfo source file
+names end with a `.texi' or `.texinfo' extension.  Texinfo is
+described in the Texinfo Manual.
+You can write and format Texinfo files into Info files within GNU
+Emacs, and read them using the Emacs Info reader.  If you do not have
+Emacs, you can format Texinfo files into Info files using `makeinfo'
+and read them using `info'.  Use TeX, which is not included in this
+package, to typeset Texinfo files for printing.
