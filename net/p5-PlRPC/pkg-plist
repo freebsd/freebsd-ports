@@ -4,4 +4,8 @@ lib/perl5/site_perl/%%PERL_VER%%/RPC/PlServer.pm
 lib/perl5/site_perl/%%PERL_VER%%/RPC/PlServer/Comm.pm
 lib/perl5/site_perl/%%PERL_VER%%/RPC/PlServer/Test.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RPC/PlServer/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/RPC/PlServer
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RPC/PlServer
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Bundle 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/RPC 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RPC 2>/dev/null || true
