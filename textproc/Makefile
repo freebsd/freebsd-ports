@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.8 1997/08/06 14:49:29 markm Exp $
+# $Id: Makefile,v 1.9 1997/09/19 21:37:44 jfieber Exp $
 #
 
     SUBDIR += agrep
@@ -18,5 +18,6 @@
     SUBDIR += sgmlformat
     SUBDIR += sp
     SUBDIR += unroff
+    SUBDIR += wdiff
 
 .include <bsd.port.subdir.mk>
