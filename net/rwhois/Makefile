@@ -7,6 +7,7 @@
 
 PORTNAME=	rwhois
 PORTVERSION=	1.5.7.3
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.ayamura.org/pub/rwhois/ \
 		ftp://ftp.jp.pgpi.org/pub/rwhois/
@@ -30,22 +31,16 @@ MAN8=		rwhois_indexer.8 rwhoisd.8
 PORTDOCS=	INSTALL.html TODO UPGRADE operations_guide.html \
 		operations_guide.txt rfc2167.txt security.html security.txt
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/rwhois_indexer.8 ${PREFIX}/man/man8
 	${INSTALL_MAN} ${WRKSRC}/doc/rwhoisd.8 ${PREFIX}/man/man8
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/rwhois
+	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${PREFIX}/share/doc/rwhois
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
 .endfor
 .endif
 	@${ECHO_MSG} "Installing ${PREFIX}/etc/rc.d/rwhoisd.sh startup file..."
 	${INSTALL_SCRIPT} -m 751 ${FILESDIR}/rwhoisd.sh ${PREFIX}/etc/rc.d/rwhoisd.sh
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
