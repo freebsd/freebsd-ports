@@ -238,6 +238,10 @@ lib/gcc-lib/i386-rtems/2.95.2/soft-float/libstdc++.a
 lib/gcc-lib/i386-rtems/2.95.2/soft-float/libgcc.a
 lib/gcc-lib/i386-rtems/2.95.2/soft-float/crtbegin.o
 lib/gcc-lib/i386-rtems/2.95.2/soft-float/crtend.o
+lib/gcc-lib/i386-rtems/2.95.2/soft-float/nofp/libstdc++.a
+lib/gcc-lib/i386-rtems/2.95.2/soft-float/nofp/libgcc.a
+lib/gcc-lib/i386-rtems/2.95.2/soft-float/nofp/crtbegin.o
+lib/gcc-lib/i386-rtems/2.95.2/soft-float/nofp/crtend.o
 lib/gcc-lib/i386-rtems/2.95.2/m486/soft-float/libstdc++.a
 lib/gcc-lib/i386-rtems/2.95.2/m486/soft-float/libgcc.a
 lib/gcc-lib/i386-rtems/2.95.2/m486/soft-float/crtbegin.o
@@ -271,6 +275,12 @@ i386-rtems/lib/soft-float/libc.a
 i386-rtems/lib/soft-float/crt0.o
 i386-rtems/lib/soft-float/libg.a
 i386-rtems/lib/soft-float/libiberty.a
+i386-rtems/lib/soft-float/nofp/libm.a
+i386-rtems/lib/soft-float/nofp/libstdc++.a.2.10.0
+i386-rtems/lib/soft-float/nofp/libc.a
+i386-rtems/lib/soft-float/nofp/crt0.o
+i386-rtems/lib/soft-float/nofp/libg.a
+i386-rtems/lib/soft-float/nofp/libiberty.a
 i386-rtems/lib/m486/soft-float/libm.a
 i386-rtems/lib/m486/soft-float/libstdc++.a.2.10.0
 i386-rtems/lib/m486/soft-float/libc.a
@@ -362,6 +372,7 @@ i386-rtems/include/sys/sched.h
 i386-rtems/include/pthread.h
 i386-rtems/include/_G_config.h
 @dirrm lib/gcc-lib/i386-rtems/2.95.2/include
+@dirrm lib/gcc-lib/i386-rtems/2.95.2/soft-float/nofp
 @dirrm lib/gcc-lib/i386-rtems/2.95.2/soft-float
 @dirrm lib/gcc-lib/i386-rtems/2.95.2/m486/soft-float
 @dirrm lib/gcc-lib/i386-rtems/2.95.2/m486
@@ -374,6 +385,7 @@ i386-rtems/include/_G_config.h
 @dirrm i386-rtems/include/machine
 @dirrm i386-rtems/include/sys
 @dirrm i386-rtems/include
+@dirrm i386-rtems/lib/soft-float/nofp
 @dirrm i386-rtems/lib/soft-float
 @dirrm i386-rtems/lib/m486/soft-float
 @dirrm i386-rtems/lib/m486

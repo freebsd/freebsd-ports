@@ -7,13 +7,13 @@
 
 PORTNAME=	gcj
 PORTVERSION=	2.95.2
-PORTREVISION=	11
+PORTREVISION=	22
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.oarcorp.com/pub/rtems/snapshots/c_tools/source/ \
 		http://rtems.thehousleys.net/
 DISTFILES=	${JAVANAME}.tar.gz ${NEWLIBNAME}.tar.gz
-PATCHFILES=	${JAVANAME}-rtems-20001030.diff.gz \
-		${NEWLIBNAME}-rtems-20001027.diff.gz
+PATCHFILES=	${JAVANAME}-rtems-20010221.diff \
+		${NEWLIBNAME}-rtems-20010221.diff
 PATCH_SITES=	ftp://ftp.oarcorp.com/pub/rtems/snapshots/c_tools/source/ \
 		http://rtems.thehousleys.net/
 
@@ -24,7 +24,7 @@ DIST_SUBDIR=	rtems
 LCLTARGET?=	i386-rtems
 
 JAVANAME=	gcc-2.95.2
-NEWLIBNAME=	newlib-1.8.2
+NEWLIBNAME=	newlib-1.9.0
 MASTERDIR=	${.CURDIR}/../i386-rtems-gcj
 PLIST=		${PKGDIR}/pkg-plist.${LCLTARGET}
 
