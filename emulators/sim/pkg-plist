@@ -8,3 +8,4 @@ bin/pdp9
 bin/pdp11
 bin/pdp15
 share/doc/sim/simh_doc.txt
+@rmdir share/doc/sim
