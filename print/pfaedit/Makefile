@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pfaedit
-PORTVERSION=	20011124
+PORTVERSION=	20011219
 CATEGORIES=	print
 MASTER_SITES=	http://pfaedit.sourceforge.net/
 DISTFILES=	${PORTNAME}_src-${DIST_VER}.tgz \
@@ -30,9 +30,9 @@ ALL_TARGET=	pfaedit
 
 MAN1=		pfaedit.1
 
-DIST_VER=	011124
-LIBGDRAW_VER=	011123
-LIBGUNI_VER=	011123
+DIST_VER=	011219
+LIBGDRAW_VER=	011219
+LIBGUNI_VER=	011219
 
 post-patch:
 	${PERL} -pi.orig -e 's,/usr/share/,${PREFIX}/share/,g' \

@@ -1,10 +1,12 @@
 PfaEdit is a PostScript font editor which can create and modify outline
-fonts in Type 1, TrueType, or OpenType format. It can generate bitmaps
-and save in BDF format. 
+fonts in Type 1, CID-Keyed Fonts, TrueType, or OpenType format. It can
+generate bitmaps and save in BDF format or embedded bitmaps in TrueType/
+OpenType fonts. 
 
-If you have installed 'autotrace', you can generate outlines from 
-imported bitmap images.
+If you have installed AutoTrace Version 0.28 (older versions are
+incompatible to this version of PfaEdit), you can generate outlines
+from imported bitmap images. 
 
-For more Information, see 
+For more information, see 
 
 WWW: http://PfaEdit.sourceforge.net/
