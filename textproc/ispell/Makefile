@@ -3,6 +3,7 @@ DISTNAME=	ispell-3.1
 MASTER_SITES=	ftp://ftp.cs.ucla.edu/pub/ispell-3.1/
 CATEGORIES+=	utilities
 MAKE_FLAGS=	TMPDIR=${.CURDIR} -f 
+MAINTAINER=	jmz@FreeBSD.org
 
 # French
 #EXTRA_DICT=	   francais-IREQ-1.3.tar.gz

@@ -5,6 +5,7 @@ CATEGORIES+=	printing
 USE_IMAKE=	yes
 USE_GMAKE=	yes
 IS_INTERACTIVE=	yes
+MAINTAINER=	jmz@FreeBSD.org
 
 .if !defined(BATCH)
 install:

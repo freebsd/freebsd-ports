@@ -3,6 +3,7 @@ DISTNAME=	dvips
 MASTER_SITES=	ftp://ftp.tex.ac.uk/tex-archive/dviware/dvips/
 CATEGORIES+=	printing
 IS_INTERACTIVE=	yes
+MAINTAINER=	jmz@FreeBSD.org
 
 pre-install:
 	@mkdir -p ${PREFIX}/lib/texmf

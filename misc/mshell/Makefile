@@ -3,6 +3,7 @@ DISTFILES=	7432.Z
 MASTER_SITES=	ftp://src.doc.ic.ac.uk/usenet/alt.sources/articles/07000-07999/
 CATEGORIES+=	utilities
 NO_WRKSUBDIR=	yes
+MAINTAINER=	jmz@FreeBSD.org
 
 EXTRACT_COOKIE?=	${.CURDIR}/.extract_done
 

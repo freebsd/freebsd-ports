@@ -6,6 +6,7 @@ EXTRACT_CMD=    ( gzcat | /usr/local/bin/gunshar )
 EXTRACT_ARGS=   <
 NO_WRKSUBDIR=   YES
 EXEC_DEPENDS=   gunshar:${PORTSDIR}/archivers/gshar+gunshar
+MAINTAINER=	jmz@FreeBSD.org
 
 pre-extract: depends
 
