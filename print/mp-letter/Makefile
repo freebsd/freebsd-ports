@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  mp (letter)
-# Version required:		  3.0.1
 # Date created:			  11 July 1996
 # Whom:				  David O'Brien <obrien@cs.ucdavis.edu>
 #

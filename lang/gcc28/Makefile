@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:	gcc
-# Version required:			2.8.1
 # Date created:				17 Jan 1998
 # Whom:					David O'Brien <obrien@NUXI.com>
 #

@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  dlint
-# Version required:		  1.3.2
 # Date created:			  Wed Dec 23, 1998
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #

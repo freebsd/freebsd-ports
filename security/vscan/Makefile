@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  vscan
-# Version required:		  1.0.2
 # Date created:			  Thur Sept 25, 1996
 # Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
 #

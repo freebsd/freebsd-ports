@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  gnucash
-# Version required:     	  1.0.18
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #

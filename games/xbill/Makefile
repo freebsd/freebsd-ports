@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  xbill
-# Version required:		  1.1
 # Date created:			  12 September 1995
 # Whom:				  asami
 #

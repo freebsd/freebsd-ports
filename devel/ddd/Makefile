@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  ddd
-# Version required:		  3.1.3
 # Date created:			  Tue Jan 28, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #

@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  icb
-# Version required:		  5.0.9
 # Date created:			  Tue Feb 03, 1998
 # Whom:				  David O'Brien (obrien@NUXI.ucdavis.edu)
 #

@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  nawk
-# Version required:		  99.04.16
 # Date created:			  29 April 1998
 # Whom:				  Josh Gilliam <josh@quick.net>
 #

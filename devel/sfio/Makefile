@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  sfio
-# Version required:		  1999
 # Date created:			  8 November 1997
 # Whom:				  jraynard
 #

@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  xcpustate
-# Version required:		  2.1
 # Date created:			  31-Dec-1995
 # Whom:				  David O'Brien <obrien@cs.ucdavis.edu>
 #

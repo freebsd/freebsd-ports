@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  osf1_base
-# Version required:		  5.0
 # Date created:			  Mon Feb 03, 1998
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #

@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  Rawio
-# Version required:		  1.0
 # Date created:			  Sun Aug 08, 1999
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #

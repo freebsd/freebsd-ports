@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  Sather
-# Version required:		  1.2.1
 # Date created:			  Mon Oct 31 22:04:12 PST 1994
 # Whom:				  hsu
 #

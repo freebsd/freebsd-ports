@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  aub
-# Version required:		  v2.0.5
 # Date created:			  Sun Oct 12, 1997
 # Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
 #

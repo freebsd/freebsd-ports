@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  agrep
-# Version required:		  2.04
 # Date created:			  Fri May 23, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #

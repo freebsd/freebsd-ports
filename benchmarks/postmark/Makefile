@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  postmark
-# Version required:		  1.11
 # Date created:			  Sat Sep 18, 1999
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #

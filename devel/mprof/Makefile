@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  mprof
-# Version required:		  3.0
 # Date created:			  Sat Nov  5 01:16:33 PST 1994
 # Whom:				  hsu
 #

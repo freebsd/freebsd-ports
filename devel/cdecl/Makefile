@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  cdecl
-# Version required:		  2.5
 # Date created:			  Sat Sep 04, 1999
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #

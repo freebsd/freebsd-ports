@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  ngrep
-# Version required:		  1.35
 # Date created:			  Sat Jan 01, 2000
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #

@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  hc
-# Version required:		  3.0
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #

@@ -1,6 +1,5 @@
 # ex:ts=8 
 # Ports collection makefile for:	egcs 
-# Version required: 			1998-09-14
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #

@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  gag
-# Version required:		  2.9
 # Date created:			  Sun Feb 12, 2000
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #

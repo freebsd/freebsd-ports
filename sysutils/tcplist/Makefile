@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  tcplist
-# Version required:		  2.1
 # Date created:			  Mon Apr 14, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
