@@ -1,4 +1,5 @@
-bin/blender
+bin/blenderplayer
+bin/blenderpublisher
 lib/blender/plugins/sequence/blur.so
 lib/blender/plugins/sequence/scatter.so
 lib/blender/plugins/sequence/showzbuf.so
@@ -6,6 +7,7 @@ lib/blender/plugins/texture/clouds2.so
 lib/blender/plugins/texture/tiles.so
 share/doc/blender/README
 share/doc/blender/copyright.txt
+share/doc/blender/playerlicense.txt
 @dirrm share/doc/blender
 @dirrm lib/blender/plugins/sequence
 @dirrm lib/blender/plugins/texture

@@ -6,22 +6,22 @@
 #
 
 PORTNAME=	blender
-PORTVERSION=	2.20
+PORTVERSION=	2.25
 CATEGORIES=	graphics games
-MASTER_SITES=	ftp://ftp.blender.nl/pub/
-DISTNAME=	blender${PORTVERSION}-freebsd-4.2-i386
+MASTER_SITES=	http://download.blender.org/release/Publisher${PORTVERSION}/
+DISTNAME=	blender-publisher-${PORTVERSION}-freebsd-4.2-i386
 DIST_SUBDIR=	blender
 
 MAINTAINER=	freebsd-admin@blender.nl
 
 USE_X_PREFIX=	YES
-NO_CDROM=	"Commercial distribution prohibited"
 NO_BUILD=	YES
 ONLY_FOR_ARCHS=	i386
 USE_MESA=	YES
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/blender ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/blenderplayer ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/blenderpublisher ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/share/doc/blender
 	${MKDIR} ${PREFIX}/lib/blender/plugins/texture \
 		${PREFIX}/lib/blender/plugins/sequence
@@ -36,5 +36,6 @@ do-install:
 	${MKDIR} ${PREFIX}/share/doc/blender
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/blender
 	${INSTALL_DATA} ${WRKSRC}/copyright.txt ${PREFIX}/share/doc/blender
+	${INSTALL_DATA} ${WRKSRC}/playerlicense.txt ${PREFIX}/share/doc/blender
 
 .include <bsd.port.mk>
