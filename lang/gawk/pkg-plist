@@ -1,8 +1,32 @@
-bin/awk
 bin/gawk
-bin/gawk-3.0.6
+bin/pgawk
+bin/gawk-3.1.0
+bin/igawk
 info/gawk.info
 @exec install-info %D/%F %D/info/dir
 @unexec install-info --delete %D/%F %D/info/dir
+info/gawkinet.info
+@exec install-info %D/%F %D/info/dir
+@unexec install-info --delete %D/%F %D/info/dir
+libexec/awk/pwcat
+libexec/awk/grcat
+share/awk/passwd.awk
+share/awk/group.awk
+share/awk/assert.awk
+share/awk/bits2str.awk
+share/awk/cliff_rand.awk
+share/awk/ctime.awk
+share/awk/ftrans.awk
+share/awk/getopt.awk
+share/awk/gettime.awk
+share/awk/join.awk
+share/awk/libintl.awk
+share/awk/nextfile.awk
+share/awk/noassign.awk
+share/awk/ord.awk
+share/awk/readable.awk
+share/awk/rewind.awk
+share/awk/round.awk
+share/locale/he/LC_MESSAGES/gawk.mo
 @dirrm libexec/awk
 @dirrm share/awk
