@@ -1,0 +1,17 @@
+This module lets you add debugging instructions which look
+like comments and do nothing unless you 'use' this module.
+
+	use Devel::StealthDebug;
+
+	my $foo = 0;
+	# ... Several processing on $foo
+
+	my $bar = 1 / $foo;    #!assert($foo != 0)!
+
+	my %myhash;                    #!watch(%myhash)!
+
+	sub func1 {                    #!emit(Entering func1)!
+	#...
+	}
+
+WWW: http://search.cpan.org/dist/Devel-StealthDebug/
