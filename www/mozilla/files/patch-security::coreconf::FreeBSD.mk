@@ -1,5 +1,5 @@
 --- security/coreconf/FreeBSD.mk.orig	Wed Mar 26 20:17:25 2003
-+++ security/coreconf/FreeBSD.mk	Sun Dec 14 11:38:37 2003
++++ security/coreconf/FreeBSD.mk	Fri Mar 19 15:52:59 2004
 @@ -35,16 +35,18 @@
  
  include $(CORE_DEPTH)/coreconf/UNIX.mk
@@ -27,7 +27,7 @@
  endif
  
 -MKSHLIB			= $(CC) $(DSO_LDOPTS)
-+MKSHLIB			= $(CC) $(DSO_LDOPTS) -o $@
++MKSHLIB			= $(CC) -Wl,-Bsymbolic $(DSO_LDOPTS) -o $@
  ifdef MAPFILE
  # Add LD options to restrict exported symbols to those in the map file
  endif

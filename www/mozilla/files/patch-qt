@@ -1,15 +1,15 @@
---- configure.orig	Thu Dec 11 18:32:02 2003
-+++ configure	Thu Mar 11 00:51:58 2004
-@@ -9181,7 +9181,7 @@
+--- configure.orig	Tue Apr 20 21:39:17 2004
++++ configure	Thu Apr 29 14:01:52 2004
+@@ -9362,7 +9362,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-liconv  $LIBS"
 +LIBS="-L$LOCALBASE/lib -liconv  $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 9187 "configure"
+ #line 9368 "configure"
  #include "confdefs.h"
-@@ -9212,7 +9212,7 @@
+@@ -9393,7 +9393,7 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
@@ -18,16 +18,16 @@
  else
    echo "$ac_t""no" 1>&6
  echo $ac_n "checking for libiconv in -liconv""... $ac_c" 1>&6
-@@ -9222,7 +9222,7 @@
+@@ -9403,7 +9403,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-liconv  $LIBS"
 +LIBS="-L$LOCALBASE/lib -liconv  $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 9228 "configure"
+ #line 9409 "configure"
  #include "confdefs.h"
-@@ -9253,7 +9253,7 @@
+@@ -9434,7 +9434,7 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
@@ -36,12 +36,12 @@
  else
    echo "$ac_t""no" 1>&6
  fi
-@@ -11969,9 +11969,9 @@
+@@ -12298,9 +12298,9 @@
  
  
  
--MOZ_EXTENSIONS_DEFAULT=" cookie wallet content-packs xml-rpc xmlextras help p3p pref transformiix venkman inspector irc universalchardet typeaheadfind webservices spellcheck"
-+MOZ_EXTENSIONS_DEFAULT=" cookie wallet content-packs xml-rpc xmlextras help p3p pref transformiix venkman inspector universalchardet typeaheadfind webservices spellcheck"
+-MOZ_EXTENSIONS_DEFAULT=" cookie wallet content-packs xml-rpc xmlextras help p3p pref transformiix venkman inspector irc universalchardet typeaheadfind webservices spellcheck gnomevfs negotiateauth"
++MOZ_EXTENSIONS_DEFAULT=" cookie wallet content-packs xml-rpc xmlextras help p3p pref transformiix venkman inspector universalchardet typeaheadfind webservices spellcheck gnomevfs negotiateauth"
  
 -MOZ_EXTENSIONS_ALL="$MOZ_EXTENSIONS_DEFAULT xmlterm datetime finger cview layout-debug tasks"
 +MOZ_EXTENSIONS_ALL="$MOZ_EXTENSIONS_DEFAULT irc xmlterm datetime finger cview layout-debug tasks"
