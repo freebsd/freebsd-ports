@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	Tue Nov  5 15:22:08 2002
-+++ src/Makefile.in	Tue Nov  5 15:23:34 2002
-@@ -178,7 +178,7 @@
+--- src/Makefile.in.orig	Thu Feb 20 09:05:39 2003
++++ src/Makefile.in	Thu Feb 20 09:12:13 2003
+@@ -177,7 +177,7 @@
  	$(GNOME_INCLUDEDIR)\
  	$(EXTRA_GNOME_CFLAGS)\
  	$(EXTRA_ORBIT_CFLAGS)\
@@ -9,7 +9,7 @@
  	-I$(srcdir)/../tagmanager/include \
  	-I$(srcdir)/../widgets \
  	-I$(srcdir)/../pixmaps \
-@@ -186,28 +186,8 @@
+@@ -185,31 +185,8 @@
  	-I.. -I. -DPACKAGE_BIN_DIR=\"$(bindir)\"
  
  
@@ -33,14 +33,17 @@
 -	../scintilla/LexBullant.o\
 -	../scintilla/LexAda.o\
 -	../scintilla/LexBaan.o\
--	../scintilla/LexMatlab.o
+-	../scintilla/LexMatlab.o \
+-	../scintilla/LexAsm.o \
+-	../scintilla/LexFortran.o \
+-	../scintilla/LexCSS.o
 -
-+SCILEXERS =             -lscintilla_lexers
-+SCINTILLA =             -lscintilla
++SCILEXERS =		-lscintilla_lexers
++SCINTILLA =		-lscintilla
  
  bin_PROGRAMS = anjuta
  
-@@ -413,10 +393,10 @@
+@@ -413,10 +390,10 @@
  	$(GNOMEUI_LIBS)\
  	$(EXTRA_GNOME_LIBS)\
  	$(EXTRA_ORBIT_LIBS)\
@@ -51,10 +54,10 @@
 +	$(SCINTILLA)\
  	$(SCILEXERS)
  
- subdir = src
-@@ -473,20 +453,7 @@
- 	Gladen-common.$(OBJEXT) glades.$(OBJEXT) Prj-common.$(OBJEXT) \
- 	Gladen-stubs.$(OBJEXT) session.$(OBJEXT)
+ 
+@@ -489,22 +466,7 @@
+ 	defaults.$(OBJEXT) resources.$(OBJEXT) session.$(OBJEXT) \
+ 	widget-registry.$(OBJEXT)
  anjuta_OBJECTS = $(am_anjuta_OBJECTS)
 -anjuta_DEPENDENCIES = $(top_builddir)/scintilla/libscintilla.a \
 -	$(top_builddir)/tagmanager/libctags.a \
@@ -69,7 +72,9 @@
 -	../scintilla/LexCrontab.o ../scintilla/LexEiffel.o \
 -	../scintilla/LexLisp.o ../scintilla/LexRuby.o \
 -	../scintilla/LexBullant.o ../scintilla/LexAda.o \
--	../scintilla/LexBaan.o ../scintilla/LexMatlab.o
+-	../scintilla/LexBaan.o ../scintilla/LexMatlab.o \
+-	../scintilla/LexAsm.o ../scintilla/LexFortran.o \
+-	../scintilla/LexCSS.o
 +anjuta_DEPENDENCIES =
  anjuta_LDFLAGS =
  
