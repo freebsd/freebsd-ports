@@ -11,10 +11,12 @@ bin/gitview
 bin/gitwhich
 bin/gitwipe
 bin/gitxgrep
+@unexec install-info --delete %D/info/git.info %D/info/dir
 info/git.info
 info/git.info-1
 info/git.info-2
 info/git.info-3
+@exec install-info %D/info/git.info %D/info/dir
 share/git/.gitrc.aixterm
 share/git/.gitrc.ansi
 share/git/.gitrc.common
