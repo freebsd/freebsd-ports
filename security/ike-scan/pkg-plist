@@ -1,0 +1,11 @@
+@comment $FreeBSD$
+bin/ike-scan
+share/ike-scan/ike-backoff-patterns
+%%PORTDOCS%%share/doc/ike-scan/AUTHORS
+%%PORTDOCS%%share/doc/ike-scan/COPYING
+%%PORTDOCS%%share/doc/ike-scan/NEWS
+%%PORTDOCS%%share/doc/ike-scan/README
+%%PORTDOCS%%share/doc/ike-scan/TODO
+%%PORTDOCS%%share/doc/ike-scan/udp-backoff-fingerprinting-paper.txt
+%%PORTDOCS%%@dirrm share/doc/ike-scan
+@dirrm share/ike-scan
