@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	Cocoon_1.3.1
-PKGNAME=	cocoon-1.3.1
+DISTNAME=	Cocoon_1.4
+PKGNAME=	cocoon-1.4
 CATEGORIES=	textproc www java
 MASTER_SITES=	http://java.apache.org/cocoon/dist/
 EXTRACT_SUFX=	.jar
@@ -29,12 +29,12 @@ JAVASUBDIR=	jdk1.1.8
 do-install:
 	@${MKDIR} ${PREFIX}/share/java/classes ${PREFIX}/share/java/cocoon
 	@(cd ${WRKSRC}/bin; \
-	  ${INSTALL_DATA} Cocoon.jar openxml.jar xslp.jar \
+	  ${INSTALL_DATA} Cocoon.jar fop.091.jar openxml.106.jar xslp.19990832.jar \
 		${PREFIX}/share/java/classes)
 	@(cd ${WRKSRC}; \
 	 ${CP} -R [L-Rd-i]* ${PREFIX}/share/java/cocoon)
-	@${INSTALL_DATA} ${FILESDIR}/cocoon.properties.default \
-		${PREFIX}/etc/apache
+	@${INSTALL_DATA} ${WRKSRC}/bin/cocoon.properties \
+		${PREFIX}/etc/apache/cocoon.properties.default
 
 post-install:
 	@${CAT} ${PKGDIR}/MESSAGE
