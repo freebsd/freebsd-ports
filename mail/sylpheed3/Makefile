@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sylpheed
-PORTVERSION=	0.7.8
+PORTVERSION=	0.8.0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.good-day.net/sylpheed/
 
@@ -17,6 +17,7 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GTK=	yes
 USE_LIBTOOL=	yes
+USE_REINPLACE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
@@ -84,7 +85,7 @@ pre-everything::
 	@${ECHO} ""
 
 post-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|g; \
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|g; \
 		s|-lresolv||g' ${WRKSRC}/configure
 
 pre-build:
