@@ -40,7 +40,7 @@
 -
 -GTKLIBS=$(shell $(GTKCONFIG) --libs) $(shell $(GLIBCONFIG) --libs)
 -GTKFLAGS=$(shell $(GTKCONFIG) --cflags) $(shell $(GLIBCONFIG) --cflags)
-+GTKLIBS=`${GTK_CONFIG} --libs`
++GTKLIBS=`${GTK_CONFIG} --libs` -lintl
 +GTKFLAGS=`${GTK_CONFIG} --cflags`
  LDFLAGS=$(PTHREAD) $(GTKLIBS)
 -CXXFLAGS += $(GTKFLAGS) $(NLS) -DLOCALE=\"${LOCALEDIR}\"
