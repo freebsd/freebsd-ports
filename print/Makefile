@@ -19,6 +19,7 @@
     SUBDIR += bibview
     SUBDIR += bjfilter850
     SUBDIR += bjfilter860
+    SUBDIR += bjfilter870
     SUBDIR += bjfiltercom
     SUBDIR += c2ps-a4
     SUBDIR += c2ps-letter
