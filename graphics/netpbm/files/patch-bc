@@ -1,50 +1,44 @@
---- Makefile.config.orig	Tue May  9 09:32:59 2000
-+++ Makefile.config	Sat May 20 00:00:00 2000
-@@ -38,12 +38,12 @@
- # The C compiler (including macro preprocessor)
+--- Makefile.config.orig	Fri Jun  2 02:17:32 2000
++++ Makefile.config	Sat Jun  3 00:00:00 2000
+@@ -39,7 +39,7 @@
+ #Tru64:
  #CC =		cc
  #CC =		gcc
--CC =		gcc -fpcc-struct-return
-+CC ?=		gcc -fpcc-struct-return
+-CC =		gcc
++CC ?=		gcc
  
  # The linker.
- #LD = ld
- #LD = cc
--LD = gcc 
-+LD = ${CC}
- 
- # Normally the man pages are installed using "install".  But via this
- # variable, you can use something else, for example a script that
-@@ -51,7 +51,7 @@
+ LD = $(CC)
+@@ -53,7 +53,7 @@
+ # calls compress or pack.  Mantocat, included with Netpbm, is used on
  # systems which use man pages in the "cat" format.
  
- #MANCP = $(SRCDIR)/mantocat
--MANCP =	$(INSTALL) -m$(INSTALL_PERM_MAN)
+-MANCP =	$(INSTALL) -m $(INSTALL_PERM_MAN)
 +MANCP =	${BSD_INSTALL_MAN}
+ #MANCP = $(SRCDIR)/mantocat
  
  # MAKE is set automatically by Make to what was used to invoke Make.
- SHELL =	/bin/sh
-@@ -66,7 +66,7 @@
+@@ -73,7 +73,7 @@
  
- # On DEC Tru64 4.0F (at least), you need -DLONG_32 for ppmtompeg.
- #CFLAGS = -O2 -std1 DLONG_32 $(CDEBUG)
+ # C compiler options
+ 
 -CFLAGS = -pedantic -O2 -Wall -Wno-uninitialized $(CDEBUG)
 +CFLAGS += $(CDEBUG)
+ # On DEC Tru64 4.0F (at least), you need -DLONG_32 for ppmtompeg.
+ #Tru64:
+ #CFLAGS = -O2 -std1 DLONG_32 $(CDEBUG)
+@@ -124,7 +124,7 @@
+ # -fpic works, use it.  If it bombs, go to fPIC).
+ # SunOS and NetBSD require this.
  
- # EXE is a suffix that the linker puts on any executable it generates.
- # In cygwin, this is .exe and most program deal with its existence without
-@@ -113,7 +113,7 @@
- 
- #CFLAGS_SHLIB = -fpic
- #CFLAGS_SHLIB = -fPIC
 -CFLAGS_SHLIB = 
 +CFLAGS_SHLIB = -fPIC -DPIC
+ #CFLAGS_SHLIB = -fpic
+ #CFLAGS_SHLIB = -fPIC
  
- # The netpbm package contains a version of the Tiff library,
- # libtiff.  If you want to use your own, fill in the appropriate paths
-@@ -126,13 +126,13 @@
- # but otherwise will not.
- 
+@@ -142,8 +142,8 @@
+ TIFFHDR_DIR = $(SRCDIR)/libtiff
+ TIFFLIB_DIR = $(SRCDIR)/libtiff
  #NetBSD:
 -#TIFFHDR_DIR = $(LOCALBASE)/include
 -#TIFFLIB_DIR = $(LOCALBASE)/lib
@@ -53,16 +47,14 @@
  # OSF, Tru64:
  #TIFFHDR_DIR = /usr/local1/DEC/include
  #TIFFLIB_DIR = /usr/local1/DEC/lib
--TIFFHDR_DIR = $(SRCDIR)/libtiff
--TIFFLIB_DIR = $(SRCDIR)/libtiff
-+#TIFFHDR_DIR = $(SRCDIR)/libtiff
-+#TIFFLIB_DIR = $(SRCDIR)/libtiff
- 
- # Put the location of your JPEG library here.
- # If you want to build the jpeg converters or tiff
-@@ -151,8 +151,8 @@
+@@ -164,11 +164,11 @@
+ # at least JPEGLIB_DIR here, or the tiff converters will not build at
  # all.
  
+-JPEGLIB_DIR = /usr/lib/jpeg
+-JPEGHDR_DIR = /usr/include/jpeg
++#JPEGLIB_DIR = /usr/lib/jpeg
++#JPEGHDR_DIR = /usr/include/jpeg
  # Netbsd:
 -#JPEGLIB_DIR = ${LOCALBASE}/lib
 -#JPEGHDR_DIR = ${LOCALBASE}/include
@@ -71,29 +63,32 @@
  # OSF, Tru64:
  #JPEGLIB_DIR = /usr/local1/DEC/lib
  #JPEGHDR_DIR = /usr/local1/DEC/include
-@@ -160,8 +160,8 @@
- #JPEGHDR_DIR = /usr/local/include
- #JPEGLIB_DIR = NONE
- #JPEGHDR_DIR = NONE
--JPEGLIB_DIR = /usr/lib/jpeg
--JPEGHDR_DIR = /usr/include/jpeg
-+#JPEGLIB_DIR = /usr/lib/jpeg
-+#JPEGHDR_DIR = /usr/include/jpeg
+@@ -186,11 +186,11 @@
+ # here.  If you do not have the PNG library, and still want to
+ # successully build everything else, put NONE for these.
  
- 
- # Put the location of your PNG library here.  If you want to build the
-@@ -180,10 +180,10 @@
- #PNGLIB_DIR = /usr/local/lib
- #PNGHDR_DIR = /usr/local/include
- # No PNG:
--#PNGLIB_DIR = NONE
--#PNGHDR_DIR = NONE
 -PNGLIB_DIR = /lib
 -PNGHDR_DIR = /usr/include/png
-+PNGLIB_DIR = NONE
-+PNGHDR_DIR = NONE
 +#PNGLIB_DIR = /lib
 +#PNGHDR_DIR = /usr/include/png
- 
+ # NetBSD:
+-#PNGLIB_DIR = $(LOCALBASE)/lib
+-#PNGHDR_DIR = $(LOCALBASE)/include
++PNGLIB_DIR = $(LOCALBASE)/lib
++PNGHDR_DIR = $(LOCALBASE)/include
+ # OSF/Tru64:
+ #PNGLIB_DIR = /usr/local1/DEC/lib
+ #PNGHDR_DIR = /usr/local1/DEC/include
+@@ -204,8 +204,10 @@
  
  # And the Utah Raster Toolkit (aka URT aka RLE) library:
+ 
+-URTHDR_DIR = $(SRCDIR)/urt
+-URTLIB_DIR = $(SRCDIR)/urt
++#URTLIB_DIR = $(SRCDIR)/urt
++#URTHDR_DIR = $(SRCDIR)/urt
++URTLIB_DIR = NONE
++URTHDR_DIR = NONE
+ 
+ # These are -l options to link in the network libraries.  Often, these are
+ # built into the standard C library, so this can be null.  If you don't 

@@ -1,5 +1,5 @@
---- pbm/Makefile.orig	Tue May 16 10:01:33 2000
-+++ pbm/Makefile	Sat May 20 00:00:00 2000
+--- pbm/Makefile.orig	Fri Jun  2 02:17:51 2000
++++ pbm/Makefile	Sat Jun  3 00:00:00 2000
 @@ -4,13 +4,12 @@
  include $(SRCDIR)/Makefile.config
  
@@ -11,22 +11,25 @@
  LIBROOT = pbm
  LIBPBM = lib$(LIBROOT).$(NETPBMLIBSUFFIX)
 -MAJ = 9
--MIN = 2
+-MIN = 3
 +SOVER = 1
  
  LIBLIBS = 
  NETPBMLIBS = $(LIBPBM)
-@@ -37,8 +36,7 @@
+@@ -37,11 +36,10 @@
  
  # Library objects to be built and linked by Makefile.common:
  LIBOBJECTS = libpbm1.o libpbm2.o libpbm3.o libpbm4.o libpbm5.o 
++LIBSOBJECTS = $(patsubst %.o, %.so, $(LIBOBJECTS))
+ ifneq (${VMS}x,x)
+ LIBOBJECTS += libpbmvms.o
+ endif
 -# Library objects to be linked but not built by Makefile.common:
 -LIBOBJECTS_X = $(SRCDIR)/shhopt/shhopt.o
-+LIBSOBJECTS = libpbm1.so libpbm2.so libpbm3.so libpbm4.so libpbm5.so 
  
  MANUALS1 =	$(BINARIES)
  MANUALS3 =	libpbm
-@@ -50,26 +48,21 @@
+@@ -53,26 +51,21 @@
  
  .PHONY: all
  all:		$(BINARIES)
@@ -53,7 +56,7 @@
  
  include $(SRCDIR)/Makefile.common
  
-@@ -77,13 +70,7 @@
+@@ -80,13 +73,7 @@
  ../compile.h: 
  	$(MAKE) -C $(SRCDIR) compile.h
  

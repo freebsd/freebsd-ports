@@ -1,21 +1,10 @@
---- GNUmakefile.orig	Tue May 16 10:15:34 2000
-+++ GNUmakefile	Sat May 20 00:00:00 2000
-@@ -68,8 +68,8 @@
- 
- 
- .PHONY: install
--install: install.bin install.lib install.man 
--install-merge: install.merge install.lib install.man
-+install: install.bin install.lib install.man install.dev
-+install-merge: install.merge install.lib install.man install.dev
- 
- .PHONY: merge
- merge:  compile.h
+--- GNUmakefile.orig	Thu May 25 02:00:10 2000
++++ GNUmakefile	Sat Jun  3 00:00:00 2000
 @@ -79,21 +79,21 @@
  
  .PHONY: install.bin
  install.bin:
--	$(INSTALL) -d -mu=rwx,go=rx $(INSTALLBINARIES)
+-	mkinstalldirs $(INSTALLBINARIES)
 +	-mkdir -p $(INSTALLBINARIES)
  	for i in $(SUBDIRS) ; do \
  	    ( echo install.bin.$$i ; cd $$i ; $(MAKE) install.bin ); \
@@ -23,7 +12,7 @@
  
  .PHONY: install-merge
  install.merge:
--	$(INSTALL) -d -mu=rwx,go=rx $(INSTALLBINARIES)
+-	mkinstalldirs $(INSTALLBINARIES)
 +	-mkdir -p $(INSTALLBINARIES)
  	for i in $(SUBDIRS) ; do \
  	    ( echo install.merge.$$i ; cd $$i ; $(MAKE) install.merge ); \
@@ -31,7 +20,7 @@
  
  .PHONY: install.lib
  install.lib:
--	$(INSTALL) -d -mu=rwx,go=rx $(INSTALLLIBS)
+-	mkinstalldirs $(INSTALLLIBS)
 +	-mkdir -p $(INSTALLLIBS)
  	for i in $(SUBDIRS) ; do \
  	    ( echo install.lib.$$i ; cd $$i ; $(MAKE) install.lib ); \
@@ -40,27 +29,28 @@
  
  .PHONY: install.man
  install.man:
--	$(INSTALL) -d -mu=rwx,go=rx \
+-	mkinstalldirs \
 +	-mkdir -p \
  	    $(INSTALLMANUALS1) $(INSTALLMANUALS3) $(INSTALLMANUALS5)
  	for i in $(SUBDIRS) ; do \
  	    ( echo install.man.$$i ; cd $$i ; $(MAKE) install.man ); \
-@@ -115,8 +115,8 @@
+@@ -115,9 +115,8 @@
  
  .PHONY: install.hdr
  install.hdr:
--	$(INSTALL) -d -mu=rwx,go=rx $(INSTALLHDRS)
--	$(INSTALL) -m$(INSTALL_PERM_HDR) pbmplus.h $(INSTALLHDRS)
+-	mkinstalldirs $(INSTALLHDRS)
+-	$(INSTALL) -c -m$(INSTALL_PERM_HDR) pbmplus.h $(INSTALLHDRS)
+-	$(INSTALL) -c -m$(INSTALL_PERM_HDR) shhopt/shhopt.h $(INSTALLHDRS)
 +	-mkdir -p $(INSTALLHDRS)
 +	${BSD_INSTALL_DATA} pbmplus.h $(INSTALLHDRS)
  	for i in $(SUBDIRS) ; do \
  	    ( echo install.hdr.$$i ; cd $$i ; $(MAKE) install.hdr ); \
  	done
-@@ -127,7 +127,7 @@
+@@ -128,7 +127,7 @@
  
  .PHONY: install.staticlib
  install.staticlib:
--	$(INSTALL) -d -mu=rwx,go=rx $(INSTALLLIBS)
+-	mkinstalldirs $(INSTALLLIBS)
 +	-mkdir -p $(INSTALLLIBS)
  	for i in $(SUBDIRS) ; do \
  	    (echo install.staticlib.$$i; cd $$i; $(MAKE) install.staticlib ); \

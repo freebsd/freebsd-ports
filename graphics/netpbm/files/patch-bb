@@ -1,5 +1,5 @@
---- Makefile.common.orig	Tue May 16 10:14:14 2000
-+++ Makefile.common	Sat May 20 00:00:00 2000
+--- Makefile.common.orig	Fri Jun  2 02:38:14 2000
++++ Makefile.common	Sat Jun  3 00:00:00 2000
 @@ -97,24 +97,20 @@
  # BUILDING NETPBM LIBRARIES
  
@@ -13,90 +13,88 @@
 +SONAME = lib$(LIBROOT).so.$(SOVER)
  
  # The libxxx.so link is needed to link the executables.
--lib$(LIBROOT).so: $(SONAME)
--	rm -f $@
--	ln -s $< $@
+ lib$(LIBROOT).so: $(SONAME)
+ 	rm -f $@
+ 	ln -s $< $@
 -# The $(SONAME) link is only needed to test the programs without
 -# installing the libraries (in that case, you also need to direct the 
 -# dynamic linker to the source directories, e.g. set LD_LIBRARY_PATH).
 -$(SONAME): lib$(LIBROOT).so.$(MAJ).$(MIN)
-+lib$(LIBROOT).so: $(SONAME) lib$(LIBROOT).a
- 	rm -f $@
+-	rm -f $@
 -	ln -s $< $@
 -lib$(LIBROOT).so.$(MAJ).$(MIN): $(LIBOBJECTS) $(LIBOBJECTS_X) $(LIBLIBS) \
 -                                $(LIBOPT)
 -	$(LD) $(LDSHLIB) -o $@ $(LIBOBJECTS) $(LIBOBJECTS_X) \
 -          `$(LIBOPT) $(LIBLIBS)` -lc
-+	ln -sf $< $@
-+$(SONAME): $(LIBSOBJECTS) $(LIBOBJECTS_X) $(LIBLIBS) $(LIBOPT)
++$(SONAME): $(LIBSOBJECTS) $(LIBOBJECTS_X) $(LIBLIBS) $(LIBOPT) lib$(LIBROOT).a
 +	$(LD) $(LDSHLIB) -o $@ $(LIBSOBJECTS) $(LIBOBJECTS_X) \
 +          `$(LIBOPT) $(LIBLIBS)`
  
  # Static library.  Unused by default, but with a small change to make files...
  lib$(LIBROOT).a: $(LIBOBJECTS) $(LIBOBJECTS_X)
-@@ -129,15 +125,14 @@
+@@ -138,7 +134,7 @@
  install.merge.common: $(MERGENAME) $(NOMERGEBINARIES) install.script
  	cd $(INSTALLBINARIES) ; rm -f $(BINARIES) $(MERGE_ALIASES)
  ifneq ($(MERGENAME)x,x)
--	$(INSTALL) -s -m$(INSTALL_PERM_BIN) $(MERGENAME) $(INSTALLBINARIES)
+-	$(INSTALL) -s -m $(INSTALL_PERM_BIN) $(MERGENAME) $(INSTALLBINARIES)
 +	${BSD_INSTALL_PROGRAM} $(MERGENAME) $(INSTALLBINARIES)
  	cd $(INSTALLBINARIES) ; \
  	   for i in $(MERGEBINARIES) $(MERGE_ALIASES) ; \
--             do ln -s $(MERGENAME)$(EXE) $$i ; \
-+             do ln -sf $(MERGENAME)$(EXE) $$i ; \
-              done
+              do ln -s $(MERGENAME)$(EXE) $$i ; \
+@@ -146,7 +142,7 @@
  endif
- ifneq ($(NOMERGEBINARIES)x,x)
--	$(INSTALL) -s -m$(INSTALL_PERM_BIN) \
--	  $(NOMERGEBINARIES) $(INSTALLBINARIES)
-+	${BSD_INSTALL_PROGRAM} $(NOMERGEBINARIES) $(INSTALLBINARIES)
- endif
+ 	for x in $(NOMERGEBINARIES); \
+         do \
+-           $(INSTALL) -c -s -m $(INSTALL_PERM_BIN) $$x $(INSTALLBINARIES); \
++           ${BSD_INSTALL_PROGRAM} $$x $(INSTALLBINARIES); \
+ 	done
  
  # INSTALLING
-@@ -146,12 +141,12 @@
- install.bin.common: $(BINARIES) install.script
- # Note that on Cygwin, the executables are actually pbmmake.exe, etc.
+@@ -157,7 +153,7 @@
  # Make and Install know that pbmmake.exe counts as pbmmake.
--	$(INSTALL) -s -m$(INSTALL_PERM_BIN) $(BINARIES) $(INSTALLBINARIES)
-+	${BSD_INSTALL_PROGRAM} $(BINARIES) $(INSTALLBINARIES)
+ 	for x in $(BINARIES); \
+ 	do \
+-	   $(INSTALL) -c -s -m $(INSTALL_PERM_BIN) $$x $(INSTALLBINARIES); \
++	   ${BSD_INSTALL_PROGRAM} $$x $(INSTALLBINARIES); \
+ 	done
  
  .PHONY: install.script
- install.script: $(SCRIPTS)
+@@ -165,7 +161,7 @@
  ifneq ($(SCRIPTS)x,x)
--	$(INSTALL) -m$(INSTALL_PERM_BIN) $(SCRIPTS) $(INSTALLSCRIPTS)
-+	${BSD_INSTALL_SCRIPT} $(SCRIPTS) $(INSTALLSCRIPTS)
+ 	for x in $(SCRIPTS); \
+ 	do \
+-	   $(INSTALL) -c -m $(INSTALL_PERM_BIN) $$x $(INSTALLSCRIPTS); \
++	   ${BSD_INSTALL_SCRIPT} $$x $(INSTALLSCRIPTS); \
+ 	done
  endif
  
- .PHONY: install.man.common
-@@ -181,8 +176,7 @@
- # compile programs that use the Netpbm libraries.  Alternatively, you may
- # prefer not to "install" them, but just to access the Netpbm source
+@@ -198,7 +194,7 @@
  # directory when you compile your programs.
--	$(INSTALL) -m$(INSTALL_PERM_HDR) \
--	  $(INTERFACE_HEADERS) $(INSTALLHDRS)
-+	${BSD_INSTALL_DATA} $(INTERFACE_HEADERS) $(INSTALLHDRS)
+ 	for x in $(INTERFACE_HEADERS); \
+ 	do \
+-	   $(INSTALL) -c -m $(INSTALL_PERM_HDR) $$x $(INSTALLHDRS); \
++	   ${BSD_INSTALL_DATA} $$x $(INSTALLHDRS); \
+ 	done
  
  # Install a static library 
- #
-@@ -192,16 +186,15 @@
+@@ -209,16 +205,15 @@
  # library, the dependency here will do that.
  .PHONY: install.staticlib
  install.staticlib: lib$(LIBROOT).a
--	$(INSTALL) -m$(INSTALL_PERM_LIBS) $< $(INSTALLLIBS)/$<
-+	${BSD_INSTALL_DATA} $< $(INSTALLLIBS)
+-	$(INSTALL) -c -m $(INSTALL_PERM_LIBS) $< $(INSTALLLIBS)/$<
++	${BSD_INSTALL_DATA} $< $(INSTALLLIBS)/$<
  
  .PHONY: install.lib.common
  ifeq ($(NETPBMLIBSUFFIX),so)
  # install a shared library
 -install.lib.common: lib$(LIBROOT).so.$(MAJ).$(MIN) 
 -	cd $(INSTALLLIBS) ; rm -f lib$(LIBROOT).so.$(MAJ).*
--	$(INSTALL) -m$(INSTALL_PERM_LIBD) $< $(INSTALLLIBS)
--	cd $(INSTALLLIBS) ; rm -f lib$(LIBROOT).so; ln -s $< lib$(LIBROOT).so
--	cd $(INSTALLLIBS) ; rm -f $(SONAME); ln -s $< $(SONAME)
+-	$(INSTALL) -c -m $(INSTALL_PERM_LIBD) $< $(INSTALLLIBS)
 +install.lib.common: $(SONAME)
 +	cd $(INSTALLLIBS) ; rm -f lib$(LIBROOT).so.*
 +	${BSD_INSTALL_DATA} $< $(INSTALLLIBS)
-+	cd $(INSTALLLIBS) ; rm -f lib$(LIBROOT).so; ln -sf $< lib$(LIBROOT).so
+ 	cd $(INSTALLLIBS) ; rm -f lib$(LIBROOT).so; ln -s $< lib$(LIBROOT).so
+-	cd $(INSTALLLIBS) ; rm -f $(SONAME); ln -s $< $(SONAME)
  endif
  
  .PHONY: clean.common
