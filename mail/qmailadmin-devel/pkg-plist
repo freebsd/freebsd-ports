@@ -1,3 +1,4 @@
+share/qmailadmin/html/ChangeLog
 share/qmailadmin/html/add_alias.html
 share/qmailadmin/html/add_alias.html~
 share/qmailadmin/html/add_autorespond.html
@@ -18,10 +19,12 @@ share/qmailadmin/html/del_mailinglist_confirm.html
 share/qmailadmin/html/del_mod.html
 share/qmailadmin/html/del_user_confirm.html
 share/qmailadmin/html/en
+share/qmailadmin/html/en-us
 share/qmailadmin/html/es
 share/qmailadmin/html/footer.html
 share/qmailadmin/html/fr
 share/qmailadmin/html/header.html
+share/qmailadmin/html/hu
 share/qmailadmin/html/it
 share/qmailadmin/html/ja
 share/qmailadmin/html/main_menu.html
