@@ -26,6 +26,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-install-location="${X11BASE}/lib/bluefish" \
 		--disable-nls
 CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
+MAN1=		bluefish.1
 
 post-install:
 	@strip ${PREFIX}/bin/bluefish
