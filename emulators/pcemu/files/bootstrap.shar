@@ -604,11 +604,15 @@ X
 X2. Information about this FreeBSD port
 X
 X
-XThis `port' of pcemu to FreeBSD has been prepared by Jörg Wunsch.
-XIt is an only slightly modified version of David's code, a few
-Xproblems have been fixed for the BSD compilation environment, and
-Xthe location of the default boot file has been moved in order to
-Xget you started with just what you are reading now.
+XThis `port' of pcemu to FreeBSD has been prepared by Jörg Wunsch.  It
+Xis a modified version of David's code, a few problems have been fixed
+Xfor the BSD compilation environment, the location of the default boot
+Xfile has been moved in order to get you started with just what you are
+Xreading now.  Unfortunately David is no longer developing pcemu, so
+Xduring the past years, a number of improvements have been added to the
+XFreeBSD port.  Thanks to Arne Henrik Juul <arnej@math.ntnu.no> who
+Xsubmitted a large patchset, among them fixes to make harddisk access
+Xwork.
 X
 XThe PostScript document David is mentioning under 3. below has
 Xbeen compressed and stored under
@@ -644,9 +648,23 @@ Xkeymap 44=y
 Xkeymap 53=-
 Xkeymap 86=<
 X
+XAnother recent addition to the .pcemurc file was the option to add
+Xfloppy and hard disk defintions dynamically.  (Previously, everything
+Xneeded to be compiled into the emulator.)  The syntax of those entries
+Xis:
 X
-XOnce :-) i will have filed all my modifications back to David, and
-Xperhaps they will be included into the regular distribution as well.
+Xkeyword filename sectors cylinders heads
+X
+XExamples:
+X
+Xfloppydisk /dev/rfd0 18 80 2
+Xharddisk /dev/rad0 255 400 63
+X
+XDrive letters are being assigned in ascending order, where drive A: is
+Xalways reserved for the boot file.  Write permission to the file in
+Xquestion is required by the time pcemu is being started (i. e. any
+Xfloppy media need to be in the drive by that time).  Be careful with
+Xletting DOS tools access your hard disks...
 X
 XShould you wish to contact me regarding this FreeBSD port, you can
 Xreach me as joerg_wunsch@uriah.heep.sax.de.

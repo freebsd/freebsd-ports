@@ -1,0 +1,309 @@
+--- bios.h.orig	Wed Jun 22 16:24:50 1994
++++ bios.h	Mon Feb 21 22:34:26 2000
+@@ -22,6 +22,28 @@
+ 
+ #define BOOT
+ 
++#if defined(BOOT720)
++#       define BOOTSECTORS 9
++#       define BOOTTRACKS 80
++#elif defined(BOOT1_44)
++#       define BOOTSECTORS 18
++#       define BOOTTRACKS 80
++#elif defined(BOOT1_2)
++#       define BOOTSECTORS 15
++#       define BOOTTRACKS 80
++#elif defined(BOOT360)
++#       define BOOTSECTORS 9
++#       define BOOTTRACKS 40
++#endif
++
++#ifndef BOOTFILE
++#define BOOTFILE "DriveA"
++#endif
++
++struct DiskTab;
++extern struct DiskTab *fdisk, *hdisk;
++extern int numfdisks, numhdisks;
++
+ void init_bios(void);
+ void init_timer(void);
+ void bios_off(void);
+@@ -38,5 +60,9 @@
+ 
+ char *set_boot_file(char *);
+ char *set_boot_type(int);
++char *set_floppydisk(char *buf);
++char *set_harddisk(char *buf);
++struct DiskTab *add_disk(struct DiskTab *dt, int *count, const char *fn,
++			 int s, int c, int h);
+ 
+ #endif
+--- bios.c.orig	Mon Feb 21 21:16:21 2000
++++ bios.c	Mon Feb 21 22:37:17 2000
+@@ -17,6 +17,7 @@
+ #include "global.h"
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <fcntl.h>
+ #include <unistd.h>
+ #include <time.h>
+@@ -70,50 +71,17 @@
+ #define update_flag(flag, key, state) \
+        if (state) flag &= ~(key); else flag |= key;
+ 
+-#define MAXHDISKS 2
+-#define MAXFDISKS 2
+-
+-#define NUMHDISKS 0
+-#define NUMFDISKS 1
+-
+-typedef struct
++struct DiskTab
+ {
+     char *name;
+     unsigned sectors;
+     unsigned cylinders;
+     unsigned heads;
+     int fd;
+-} DiskTab;
+-
+-#if defined(BOOT720)
+-#       define BOOTSECTORS 9
+-#       define BOOTTRACKS 80
+-#elif defined(BOOT1_44)
+-#       define BOOTSECTORS 18
+-#       define BOOTTRACKS 80
+-#elif defined(BOOT1_2)
+-#       define BOOTSECTORS 15
+-#       define BOOTTRACKS 80
+-#elif defined(BOOT360)
+-#       define BOOTSECTORS 9
+-#       define BOOTTRACKS 40
+-#endif
+-
+-#ifndef BOOTFILE
+-#define BOOTFILE "DriveA"
+-#endif
+-
+-DiskTab fdisk[MAXFDISKS] =
+-{
+-{ BOOTFILE, BOOTSECTORS, BOOTTRACKS, 2 },
+-{ "/dev/fd0", 18, 80, 2 }
+ };
+ 
+-DiskTab hdisk[MAXHDISKS] =
+-{
+-{ "/dev/wd0", 63, 407, 64 },
+-{ "/some/file", 32, 120, 64 },
+-};
++struct DiskTab *fdisk, *hdisk;
++int numfdisks, numhdisks;
+ 
+ int bootdisk = 0x0;
+ static unsigned pos = INT_ROUTINE_START;
+@@ -133,7 +101,7 @@
+ static unsigned num = 0;
+ 
+ struct vm86_struct vm86s;
+-char tmpdir[] = "/usr/tmp";
++char tmpdir[] = "/var/tmp";
+ 
+ #include "keytabs.h"
+ 
+@@ -207,6 +175,54 @@
+     PutMemW(memory,4*intno+2,seg);
+ }
+ 
++struct DiskTab *add_disk(struct DiskTab *dt, int *count, const char *fn,
++			 int s, int c, int h)
++{
++	struct DiskTab *newdt;
++	int newcount;
++
++	newcount = ++(*count);
++	if ((newdt = realloc(dt, sizeof(struct DiskTab) * newcount)) == 0) {
++	  bailout:
++		fprintf(stderr,
++			"Warning: Insufficient memory to add %s to disktab\n",
++			fn);
++		(*count)--;
++		return dt;
++	}
++	newcount--;
++	if ((newdt[newcount].name = strdup(fn)) == 0)
++		goto bailout;
++	newdt[newcount].sectors = s;
++	newdt[newcount].cylinders = c;
++	newdt[newcount].heads = h;
++
++	return newdt;
++}
++
++char *set_floppydisk(char *buf)
++{
++	char fname[1024];	/* sufficient, read_pcemurc() only has 1024 */
++	int ncyl, nhead, nsec;
++	
++	if(sscanf(buf, " %*s %s %d %d %d", fname, &nsec, &ncyl, &nhead) != 4)
++		return "usage: floppydisk <filename> <nsec> <ncyl> <nhead>";
++	fdisk = add_disk(fdisk, &numfdisks, fname, nsec, ncyl, nhead);
++
++	return 0;
++}
++
++char *set_harddisk(char *buf)
++{
++	char fname[1024];	/* sufficient, read_pcemurc() only has 1024 */
++	int ncyl, nhead, nsec;
++	
++	if(sscanf(buf, " %*s %s %d %d %d", fname, &nsec, &ncyl, &nhead) != 4)
++		return "usage: harddisk <filename> <nsec> <ncyl> <nhead>";
++	hdisk = add_disk(hdisk, &numhdisks, fname, nsec, ncyl, nhead);
++
++	return 0;
++}
+ 
+ static void int_serial(void)
+ {
+@@ -807,16 +823,16 @@
+ }
+ 
+ 
+-static DiskTab *get_disk_tab(int num)
++static struct DiskTab *get_disk_tab(int num)
+ {
+-    if (num >= 0    && num < NUMFDISKS)
++    if (num >= 0    && num < numfdisks)
+         return &fdisk[num];
+-    if (num >= 0x80 && num < 0x80 + NUMHDISKS)
++    if (num >= 0x80 && num < 0x80 + numhdisks)
+ 	return &hdisk[num&0x7f];
+     return NULL;
+ }
+ 
+-static int disk_seek(DiskTab *disk, int cylinder, int head, int sector)
++static int disk_seek(struct DiskTab *disk, int cylinder, int head, int sector)
+ {
+     unsigned pos;
+ 
+@@ -845,7 +861,7 @@
+ {
+     int head, sector, cylinder, res, num;
+     BYTE *buffer;
+-    DiskTab *disk;
++    struct DiskTab *disk;
+ 
+     res = 0;
+ 
+@@ -970,7 +986,7 @@
+                                                  & 0x300) >> 2);
+             *bregs[DH] = (disk->heads -1) | (((disk->cylinders - 1)
+ 					     & 0xc00)>> 4);
+-            *bregs[DL] = *bregs[DL]  < 0x80 ? NUMFDISKS : NUMHDISKS;
++            *bregs[DL] = *bregs[DL]  < 0x80 ? numfdisks : numhdisks;
+             *bregs[AL] = 0;
+             CF = 0;
+         }
+@@ -1182,8 +1198,8 @@
+ 
+     memory[0xf0000+0xfffe] = SYSTEMID;
+ 
+-    if (NUMFDISKS > 0)
+-        equip |= (1 | ((NUMFDISKS-1) << 6));
++    if (numfdisks > 0)
++        equip |= (1 | ((numfdisks-1) << 6));
+     equip |= mono ? 0x30 : 0x20;
+ 
+ 
+@@ -1199,7 +1215,7 @@
+     PutMemB(data_segment, 0x40, 0);
+     PutMemB(data_segment, 0x41, 0);
+     PutMemW(data_segment, 0x72, 0x1234);
+-    PutMemW(data_segment, 0x75, NUMHDISKS);
++    PutMemW(data_segment, 0x75, numhdisks);
+     PutMemW(data_segment, 0x96, 16);            /* 101/102 keyboard */
+     PutMemB(data_segment, 0x17, NUMLOCK);
+ 
+@@ -1251,12 +1267,12 @@
+ void init_bios(void)
+ {
+     int i;
+-    DiskTab *hd;
++    struct DiskTab *hd;
+ #ifdef BOOT
+-    DiskTab *boot;
++    struct DiskTab *boot;
+ #endif
+ 
+-    for (i = 0; i < NUMHDISKS; i++)
++    for (i = 0; i < numhdisks; i++)
+     {
+         if ((hdisk[i].fd = open(hdisk[i].name,O_RDWR)) < 0)
+         {
+@@ -1265,7 +1281,7 @@
+             exit(1);
+         }
+     }
+-    for (i = 0; i < NUMFDISKS; i++)
++    for (i = 0; i < numfdisks; i++)
+     {
+         if ((fdisk[i].fd = open(fdisk[i].name,O_RDWR)) < 0)
+         {
+@@ -1341,11 +1357,6 @@
+ }
+ 
+ 
+-char *set_hd(char *file, int hd)
+-{
+-}
+-
+-
+ char *set_boot_type(int type)
+ {
+     fdisk[0].heads = 2;
+@@ -1379,7 +1390,9 @@
+ void bios_off(void)
+ {
+   int i;
+-    
+-   for (i = 0; i < NUMHDISKS; i++)
++
++  for (i = 0; i < numhdisks; i++)
+        close(hdisk[i].fd);
++  for (i = 0; i < numfdisks; i++)
++       close(fdisk[i].fd);
+ }
+--- main.c.orig	Mon Feb 21 21:04:45 2000
++++ main.c	Mon Feb 21 22:28:47 2000
+@@ -103,6 +103,10 @@
+             check_error(set_cursor_rate(strtol(value, NULL,10)), line);
+ 	else if (strcasecmp(keyword,"keymap") == 0)
+ 		check_error(set_keymap(buffer), line);
++	else if (strcasecmp(keyword,"floppydisk") == 0)
++		check_error(set_floppydisk(buffer), line);
++	else if (strcasecmp(keyword,"harddisk") == 0)
++		check_error(set_harddisk(buffer), line);
+         else
+             check_error("Syntax error in .pcemu file", line);
+     }
+@@ -110,7 +114,7 @@
+ }           
+ 
+ 
+-void main(int argc, char **argv)
++int main(int argc, char **argv)
+ {
+     progname = (progname = strrchr(argv[0],'/')) ? progname : argv[0];
+ 
+@@ -140,6 +144,9 @@
+     fread(memory+0x800,1,MEMORY_SIZE-0x800,f1);
+     fclose(f1);
+ #endif
++
++    /* this needs to be done before parsing .pcemurc */
++    fdisk = add_disk(fdisk, &numfdisks, BOOTFILE, BOOTSECTORS, BOOTTRACKS, 2);
+ 
+     read_pcemurc();
+     disable();
