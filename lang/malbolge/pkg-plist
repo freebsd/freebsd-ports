@@ -1,0 +1,4 @@
+bin/malbolge
+%%PORTDOCS%%share/doc/malbolge/malbolge.txt
+%%PORTDOCS%%share/doc/malbolge/nop.mal
+%%PORTDOCS%%@dirrm share/doc/malbolge

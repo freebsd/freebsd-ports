@@ -64,6 +64,7 @@
     SUBDIR += logo
     SUBDIR += lua
     SUBDIR += m3gdb
+    SUBDIR += malbolge
     SUBDIR += mawk
     SUBDIR += mdk
     SUBDIR += mit-scheme
