@@ -1,0 +1,21 @@
+--- netmap/Makefile.orig	Fri Jun  7 00:12:40 2002
++++ netmap/Makefile	Fri Jun  7 00:12:56 2002
+@@ -1,8 +1,7 @@
+ CFILES   = misc.c hostclass.c netmap.c drawmap.c config.c args.c lookup.c
+ OFILES   = $(CFILES:.c=.o)
+ 
+-CFLAGS = -O -Wall  
+-CC = g++
++CC = ${CXX}
+ 
+ CPPFLAGS = -I../belgolib
+ 
+@@ -34,7 +33,7 @@
+ 	-/bin/rm -f $(OFILES) $(OEXE)
+ 
+ depend: 
+-	makedepend $(CPP_HEADERS)  -D__make_dep__ -- $(CFLAGS) -- $(CFILES)
++	makedepend $(CPP_HEADERS)  -D__make_dep__ -- $(CXXFLAGS) -- $(CFILES)
+ 
+ 
+ # DO NOT DELETE
