@@ -1,0 +1,6 @@
+bin/monopd
+etc/monopd.conf-dist
+share/monopd/games/atlantic.conf
+share/monopd/games/city.conf
+@dirrm share/monopd/games
+@dirrm share/monopd

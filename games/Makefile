@@ -264,6 +264,7 @@
     SUBDIR += mirrormagic
     SUBDIR += miscom
     SUBDIR += monkeybubble
+    SUBDIR += monopd
     SUBDIR += monster-masher
     SUBDIR += moon-buggy
     SUBDIR += moonlander
