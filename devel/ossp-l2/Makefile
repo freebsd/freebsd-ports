@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	l2
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.8
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/l2/
 PKGNAMEPREFIX=	ossp-
@@ -16,9 +16,7 @@ PKGNAMEPREFIX=	ossp-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C library for a flexible and sophisticated Unix logging facility
 
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=	15
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
