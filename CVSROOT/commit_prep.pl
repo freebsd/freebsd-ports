@@ -194,17 +194,17 @@ sub check_version {
 #
 # Suck in the Entries file
 #
-open(ENTRIES, $ENTRIES) || die("Cannot open $ENTRIES.\n");
+open ENTRIES, $ENTRIES or die "Cannot open $ENTRIES.\n";
 while (<ENTRIES>) {
-	chop;
-	next if (/^D/);
-	local($filename, $version, $stamp, $opt, $tag) =
-	    split('/', substr($_, 1));
-	$cvsversion{$filename} = $version;
+	chomp;
+	next if /^D/;
+
+	my ($filename, $ver, $stamp, $opt, $tag) = split '/', substr($_, 1);
+	$cvsversion{$filename} = $ver;
 	$cvstag{$filename} = $tag;
 	$stamp = $opt;	#silence -w
 }
-close(ENTRIES);
+close ENTRIES;
 
 $directory = $ARGV[0];
 shift @ARGV;
