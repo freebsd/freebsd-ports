@@ -1,0 +1,40 @@
+#
+# Perforce FreeBSD configuration file
+#
+#
+# $FreeBSD$
+
+#
+# Perforce ROOT
+#
+PERFORCE_ROOT="@PERFORCE_ROOT@"
+
+#
+# Perforce user (it is recommended to run p4d as a non-root user)
+#
+PERFORCE_USER="@PERFORCE_USER@"
+
+#
+# p4d port (default: 1666)
+#
+PERFORCE_PORT="@PERFORCE_PORT@"
+
+#
+# p4d options (see man p4d)
+#
+PERFORCE_OPTIONS="-d -p $PERFORCE_PORT -v server=1 -L @PERFORCE_LOGS@/p4d.log"
+
+#
+# Uncomment this line to have the server started automatically
+#
+#PERFORCE_START=yes
+
+#
+# p4ftpd options (see p4ftpd -h)
+#
+PERFORCE_FTPD_OPTIONS="-d -p $PERFORCE_PORT -v server=1 -L @PERFORCE_LOGS@/p4ftpd.log"
+
+#
+# Uncomment this line to have the server started automatically
+#
+#PERFORCE_FTPD_START=yes
