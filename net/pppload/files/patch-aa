@@ -1,0 +1,124 @@
+--- Makefile.orig	Wed Sep 11 19:49:33 1996
++++ Makefile	Fri May 24 04:04:33 2002
+@@ -1,24 +1,23 @@
+ ####### Installation
+ RM=rm -f
+ LN=ln -sf
+-INSTALL=install
+-PREFIX=/usr
++INSTALL=install -c
+ BINDIR=$(PREFIX)/bin
+ MANDIR=$(PREFIX)/man/man1
+ 
+ ####### Directories
+ 
+-QTDIR   =   /usr/lib/qt
+-BASEDIR	=	$(QTDIR)
+-INCDIR	=	$(BASEDIR)/include
+-LIBDIR	=	$(BASEDIR)/lib
++INCDIR	=	$(X11BASE)/include/X11/qt1
++LIBDIR	=	$(X11BASE)/lib
+ 
+ ####### Compiler
+ 
+-CFLAGS	=	-pipe -O2 -m486 -Wall
+-LFLAGS	=	-L$(LIBDIR) -lqt
++CFLAGS +=	-Wall
++LFLAGS	=	-L$(LIBDIR) -lqt1
+ LEXTRA	= 	
+-CC		=	g++
++CXX	?=	c++
++CC	=	${CXX}
++MOC	=	${X11BASE}/bin/moc1
+ 
+ #######	Files
+ 
+@@ -75,7 +74,7 @@
+ 
+ doc:
+ 	../h2html-1.0/h2html $(HEADERS)
+-	
++
+ srctar:
+ 	make veryclean
+ 	make doc
+@@ -100,77 +99,7 @@
+ ####### Meta objects
+ 
+ mPPPStats.C: PPPStats.H
+-	moc -o mPPPStats.C PPPStats.H
++	${MOC} -o mPPPStats.C PPPStats.H
+ 	
+ mMainWindow.C: MainWindow.H
+-	moc -o mMainWindow.C MainWindow.H
+-
+-# DO NOT DELETE THIS LINE -- make depend depends on it.
+-
+-pppload.o: /usr/lib/qt/include/qapp.h /usr/lib/qt/include/qwidget.h
+-pppload.o: /usr/lib/qt/include/qwindefs.h /usr/lib/qt/include/qobjdefs.h
+-pppload.o: /usr/lib/qt/include/qglobal.h /usr/lib/qt/include/qobject.h
+-pppload.o: /usr/lib/qt/include/qstring.h /usr/lib/qt/include/qarray.h
+-pppload.o: /usr/lib/qt/include/qgarray.h /usr/lib/qt/include/qshared.h
+-pppload.o: /usr/lib/qt/include/qgeneric.h /usr/include/string.h
+-pppload.o: /usr/include/features.h /usr/include/sys/cdefs.h
+-pppload.o: /usr/lib/gcc-lib/i486-linux/2.7.2/include/stddef.h
+-pppload.o: /usr/lib/qt/include/qevent.h /usr/lib/qt/include/qrect.h
+-pppload.o: /usr/lib/qt/include/qsize.h /usr/lib/qt/include/qpoint.h
+-pppload.o: /usr/lib/qt/include/qpaintd.h /usr/lib/qt/include/qpalette.h
+-pppload.o: /usr/lib/qt/include/qcolor.h /usr/lib/qt/include/qcursor.h
+-pppload.o: /usr/lib/qt/include/qfont.h /usr/lib/qt/include/qfontmet.h
+-pppload.o: /usr/lib/qt/include/qfontinf.h PPPStats.H MainWindow.H
+-pppload.o: /usr/lib/qt/include/qpixmap.h Options.H
+-PPPStats.o: /usr/include/stdlib.h /usr/include/features.h
+-PPPStats.o: /usr/include/sys/cdefs.h
+-PPPStats.o: /usr/lib/gcc-lib/i486-linux/2.7.2/include/stddef.h
+-PPPStats.o: /usr/include/errno.h /usr/include/linux/errno.h
+-PPPStats.o: /usr/include/asm/errno.h /usr/include/alloca.h
+-PPPStats.o: /usr/include/stdio.h /usr/include/libio.h
+-PPPStats.o: /usr/include/_G_config.h /usr/include/sys/ioctl.h
+-PPPStats.o: /usr/include/linux/ioctl.h /usr/include/asm/ioctl.h
+-PPPStats.o: /usr/include/sys/termios.h /usr/include/sys/socketio.h
+-PPPStats.o: /usr/include/linux/sockios.h /usr/include/asm/sockios.h
+-PPPStats.o: /usr/include/sys/socket.h /usr/include/linux/socket.h
+-PPPStats.o: /usr/include/asm/socket.h /usr/include/linux/uio.h
+-PPPStats.o: /usr/include/sys/types.h /usr/include/linux/types.h
+-PPPStats.o: /usr/include/linux/posix_types.h /usr/include/asm/posix_types.h
+-PPPStats.o: /usr/include/asm/types.h /usr/include/sys/bitypes.h
+-PPPStats.o: /usr/include/net/if.h /usr/include/linux/if.h
+-PPPStats.o: /usr/include/linux/ppp_defs.h PPPStats.H
+-PPPStats.o: /usr/lib/qt/include/qobject.h /usr/lib/qt/include/qobjdefs.h
+-PPPStats.o: /usr/lib/qt/include/qglobal.h /usr/lib/qt/include/qstring.h
+-PPPStats.o: /usr/lib/qt/include/qarray.h /usr/lib/qt/include/qgarray.h
+-PPPStats.o: /usr/lib/qt/include/qshared.h /usr/lib/qt/include/qgeneric.h
+-PPPStats.o: /usr/include/string.h /usr/lib/qt/include/qevent.h
+-PPPStats.o: /usr/lib/qt/include/qwindefs.h /usr/lib/qt/include/qrect.h
+-PPPStats.o: /usr/lib/qt/include/qsize.h /usr/lib/qt/include/qpoint.h
+-PPPStats.o: Options.H /usr/lib/qt/include/qcolor.h
+-MainWindow.o: /usr/lib/qt/include/qpainter.h /usr/lib/qt/include/qpaintd.h
+-MainWindow.o: /usr/lib/qt/include/qwindefs.h /usr/lib/qt/include/qobjdefs.h
+-MainWindow.o: /usr/lib/qt/include/qglobal.h /usr/lib/qt/include/qrect.h
+-MainWindow.o: /usr/lib/qt/include/qsize.h /usr/lib/qt/include/qpoint.h
+-MainWindow.o: /usr/lib/qt/include/qcolor.h /usr/lib/qt/include/qfontmet.h
+-MainWindow.o: /usr/lib/qt/include/qfont.h /usr/lib/qt/include/qstring.h
+-MainWindow.o: /usr/lib/qt/include/qarray.h /usr/lib/qt/include/qgarray.h
+-MainWindow.o: /usr/lib/qt/include/qshared.h /usr/lib/qt/include/qgeneric.h
+-MainWindow.o: /usr/include/string.h /usr/include/features.h
+-MainWindow.o: /usr/include/sys/cdefs.h
+-MainWindow.o: /usr/lib/gcc-lib/i486-linux/2.7.2/include/stddef.h
+-MainWindow.o: /usr/lib/qt/include/qfontinf.h /usr/lib/qt/include/qregion.h
+-MainWindow.o: /usr/lib/qt/include/qpen.h /usr/lib/qt/include/qbrush.h
+-MainWindow.o: /usr/lib/qt/include/qpntarry.h /usr/lib/qt/include/qwmatrix.h
+-MainWindow.o: MainWindow.H /usr/lib/qt/include/qwidget.h
+-MainWindow.o: /usr/lib/qt/include/qobject.h /usr/lib/qt/include/qevent.h
+-MainWindow.o: /usr/lib/qt/include/qpalette.h /usr/lib/qt/include/qcursor.h
+-MainWindow.o: /usr/lib/qt/include/qpixmap.h Options.H
+-Options.o: /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h
+-Options.o: Options.H /usr/lib/qt/include/qcolor.h
+-Options.o: /usr/lib/qt/include/qwindefs.h /usr/lib/qt/include/qobjdefs.h
+-Options.o: /usr/lib/qt/include/qglobal.h /usr/lib/qt/include/qstring.h
+-Options.o: /usr/lib/qt/include/qarray.h /usr/lib/qt/include/qgarray.h
+-Options.o: /usr/lib/qt/include/qshared.h /usr/lib/qt/include/qgeneric.h
+-Options.o: /usr/include/string.h /usr/include/features.h
+-Options.o: /usr/include/sys/cdefs.h
+-Options.o: /usr/lib/gcc-lib/i486-linux/2.7.2/include/stddef.h
++	${MOC} -o mMainWindow.C MainWindow.H

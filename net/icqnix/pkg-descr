@@ -1,0 +1,23 @@
+ICQnix is an ICQ client for the X Window System for UNIX based PCs, designed
+to look and feel as much like the Mirabilis ICQ client as possible. ICQnix
+has been developed and tested on Linux, and theoretically should work on 
+other variants of UNIX. It uses the Qt widget set and was originally based on
+Licq v0.41 by Graham Roff. 
+
+Some of it's features include: 
+
+o Send and Receive Online/Offline messages 
+o Send and Receive Online/Offline URLs 
+o Peer to Peer Chat 
+o Message History 
+o Visible/Invisible lists 
+o ICQ Search 
+o View Basic User Info 
+o Event sounds 
+o X-based user installation 
+o Closely resembles the Windows ICQ interface 
+
+WWW: http://icqnix.linuxbox.com/
+
+- Yin-Jieh Chen
+yinjieh@csie.nctu.edu.tw

@@ -1,0 +1,11 @@
+--- ./src/Makefile.in.orig	Fri May 24 04:23:37 2002
++++ ./src/Makefile.in	Fri May 24 04:23:54 2002
+@@ -21,7 +21,7 @@
+ CXXFLAGS = @CXXFLAGS@
+ CPPFLAGS = @CPPFLAGS@ @DEFS@ -DINSTALL_PROG="\"@INSTALL@\"" -DSHARE_DIR="\"@datadir@/@PACKAGE@\"" @X_CFLAGS@ @QT_INCLUDES@ @SOCKS_INCDIR@ -I$(srcdir) -I$(top_srcdir) -Wall
+ LDFLAGS  = @SOCKS_LIBDIR@ @X_LIBS@ @QT_LDFLAGS@
+-LDLIBS   = @SOCKS_LIBS@ -lqt @X_PRE_LIBS@ -lX11 -lXext @XSS_LIBS@ @X_EXTRA_LIBS@
++LDLIBS   = @SOCKS_LIBS@ -lqt1 @X_PRE_LIBS@ -lX11 -lXext @XSS_LIBS@ @X_EXTRA_LIBS@
+ MOC      = @QT_MOC@
+ 
+ OBJECTS	= file.o message.o packet.o socket.o user.o \
