@@ -3,19 +3,19 @@
 # Date created:         29 October 1995
 # Whom:                 piero
 #
-# $Id: Makefile,v 1.6 1996/03/29 05:28:13 asami Exp $
+# $Id: Makefile,v 1.7 1996/10/31 10:45:39 asami Exp $
 #
 
 DISTNAME=	xearth-1.0
-CATEGORIES+=	astro x11
+CATEGORIES=	astro x11
 MASTER_SITES=	ftp://cag.lcs.mit.edu/pub/tuna/
 
 USE_IMAKE=	yes
 
 # Copy the list of FreeBSD sites
 post-install:
-	mkdir -p ${PREFIX}/lib/X11/xearth
-	cp ${FILESDIR}/freebsd.core.markers ${PREFIX}/lib/X11/xearth
-	cp ${FILESDIR}/freebsd.ftp.markers ${PREFIX}/lib/X11/xearth
+	${MKDIR} ${PREFIX}/lib/X11/xearth
+	${CP} ${FILESDIR}/freebsd.core.markers ${PREFIX}/lib/X11/xearth
+	${CP} ${FILESDIR}/freebsd.ftp.markers ${PREFIX}/lib/X11/xearth
 
 .include <bsd.port.mk>
