@@ -10,7 +10,7 @@ PORTVERSION=	1.3.1
 CATEGORIES=	misc
 MASTER_SITES=	http://jaguar.ir.miami.edu/~marcus/
 
-MAINTAINER=	marcus@miami.edu
+MAINTAINER=	marcus@marcuscom.com
 
 MAN1=		gone.1
 GNU_CONFIGURE=	yes
