@@ -41,6 +41,23 @@ LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82 \
 CONFIGURE_TCL=	--with-tcl --with-tclconfig="${LOCALBASE}/lib/tcl8.2 ${LOCALBASE}/lib/tk8.2"
 .endif
 
+# if you want to disable the multibyte support, type:
+#   make -DWITHOUT_MULTIBYTE
+#
+# if you want to set the default encoding for the multibyte support, type:
+#   make DEFAULT_ENCODING=<encoding>
+# where <encoding> is one of these:
+#   SQL_ASCII   LATIN1      LATIN2      LATIN3      LATIN4      LATIN5
+#   EUC_JP      EUC_CN      EUC_KR      EUC_TW      KOI8
+#   UNICODE     MULE_INTERNAL           WIN         ALT
+.if defined(WITHOUT_MULTIBYTE)
+CONFIGURE_MULTIBYTE=	# none
+.elif defined(DEFAULT_ENCODING)
+CONFIGURE_MULTIBYTE=	--enable-multibyte="${DEFAULT_ENCODING}"
+.else
+CONFIGURE_MULTIBYTE=	--enable-multibyte
+.endif
+
 # if you want jdbc, type make -DWITH_JDBC
 # Honors JAVA_HOME if you have it set, and don't want the dependency.
 .if defined(WITH_JDBC)
@@ -60,6 +77,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}/pgsql \
 		--with-template=`uname -s | ${TR} '[A-Z]' '[a-z]'` \
 		--with-includes="${PREFIX}/include ${TCL_INCDIR} ${TK_INCDIR}" \
 		${CONFIGURE_TCL} \
+		${CONFIGURE_MULTIBYTE} \
 		--with-libraries=${PREFIX}/lib
 
 MAN1=		createdb.1 createlang.1 createuser.1 dropdb.1 droplang.1 \
@@ -88,18 +106,34 @@ MANPREFIX=	${PREFIX}/pgsql
 
 pre-fetch:
 	@${ECHO_MSG} "To install and run postgresql you need to compile kernel with:"
-	@${ECHO_MSG} "        options    \"SYSVSHM, SYSVSEM, SYSVMSG\""
+	@${ECHO_MSG} "    options    \"SYSVSHM, SYSVSEM, SYSVMSG\""
 .if !defined(WITH_TCL)
 	@${ECHO_MSG} "To build the \"PostgreSQL to Tcl interface library\", libpgtcl, type:"
 	@${ECHO_MSG} "    make -DWITH_TCL"
 .else
 	@${ECHO_MSG} "Building PostgreSQL with \"libpgtcl\"."
 .endif
-.if !defined(WITH_JDBC)
-	@ ${ECHO_MSG} "To build Java (JDBC) support, type:"
-	@ ${ECHO_MSG} "   make -DWITH_JDBC"
+.if !defined(WITHOUT_MULTIBYTE)
+	@${ECHO_MSG} "To disable multibyte support, type:"
+	@${ECHO_MSG} "    make -DWITHOUT_MULTIBYTE"
+.if !defined(DEFAULT_ENCODING)
+	@${ECHO_MSG} "To set the default encoding for the multibyte support, type:"
+	@${ECHO_MSG} "    make DEFAULT_ENCODING=<encoding>"
+	@${ECHO_MSG} "where <encoding> is one of these:"
+	@${ECHO_MSG} "    SQL_ASCII   LATIN1      LATIN2      LATIN3      LATIN4      LATIN5"
+	@${ECHO_MSG} "    EUC_JP      EUC_CN      EUC_KR      EUC_TW      KOI8"
+	@${ECHO_MSG} "    UNICODE     MULE_INTERNAL           WIN         ALT"
 .else
-	@ ${ECHO_MSG} "Building PostgreSQL with \"postgresql.jar\"."
+	@${ECHO_MSG} "The default encoding is '${DEFAULT_ENCODING}'."
+.endif
+.else
+	@${ECHO_MSG} "Building PostgreSQL without multibyte support."
+.endif
+.if !defined(WITH_JDBC)
+	@${ECHO_MSG} "To build Java (JDBC) support, type:"
+	@${ECHO_MSG} "    make -DWITH_JDBC"
+.else
+	@${ECHO_MSG} "Building PostgreSQL with \"postgresql.jar\"."
 .endif
 
 post-patch:
