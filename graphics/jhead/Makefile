@@ -6,23 +6,19 @@
 #
 
 PORTNAME=	jhead
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.sentex.net/~mwandel/jhead/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Exif Jpeg camera setting parser and thumbnail remover
 
-MAKEFILE=	${WRKSRC}/makefile
-USE_GMAKE=	yes
-MAKE_ENV=	CC="${CC}"
-USE_REINPLACE=	yes
-
 PORTDOCS=	usage.html
 PLIST_FILES=	bin/jhead
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-O3|${CFLAGS}|' ${MAKEFILE}
+do-build:
+	cd ${WRKSRC} && ${CC} ${CFLAGS} exif.c jhead.c jpgfile.c makernote.c \
+		-o jhead -lm
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/jhead ${PREFIX}/bin
