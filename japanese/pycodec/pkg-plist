@@ -93,6 +93,9 @@
 %%PYTHON_SITELIBDIR%%/japanese/ujis.py
 %%PYTHON_SITELIBDIR%%/japanese/ujis.pyc
 %%PYTHON_SITELIBDIR%%/japanese/ujis.pyo
+%%PYTHON_SITELIBDIR%%/japanese/windows_31j.py
+%%PYTHON_SITELIBDIR%%/japanese/windows_31j.pyc
+%%PYTHON_SITELIBDIR%%/japanese/windows_31j.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/japanese/python
 @dirrm %%PYTHON_SITELIBDIR%%/japanese/mappings
 @dirrm %%PYTHON_SITELIBDIR%%/japanese/c
