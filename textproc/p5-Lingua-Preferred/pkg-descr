@@ -1,0 +1,8 @@
+This module provides a way for the user to specify possible languages
+in order of preference, and then to pick the best language of those
+available.  Different 'dialects' given by the 'territory' part of the
+language specifier (such as en, en_GB, and en_US) are also supported.
+
+WWW: http://search.cpan.org/search?dist=Lingua-Preferred
+
+Seamus Venasse <svenasse@polaris.ca>

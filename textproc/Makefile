@@ -111,6 +111,7 @@
     SUBDIR += p5-Lingua-EN-Gender
     SUBDIR += p5-Lingua-EN-Numbers-Ordinate
     SUBDIR += p5-Lingua-Ispell
+    SUBDIR += p5-Lingua-Preferred
     SUBDIR += p5-MARC
     SUBDIR += p5-Number-Format
     SUBDIR += p5-Orchard-Perl
