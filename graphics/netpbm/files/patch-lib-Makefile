@@ -1,5 +1,5 @@
---- lib/Makefile.orig	Wed Oct  9 11:21:57 2002
-+++ lib/Makefile	Sat Oct 12 00:00:00 2002
+--- lib/Makefile.orig	Thu Sep 25 18:23:47 2003
++++ lib/Makefile	Mon Dec  1 14:28:48 2003
 @@ -32,12 +32,14 @@
  # Library objects to be linked but not built by Makefile.common:
  LIBOBJECTS_X = util/shhopt.o util/nstring.o
@@ -10,14 +10,12 @@
  MANUALS5 = pbm pgm ppm pnm pam
  
  INTERFACE_HEADERS =  pm.h pbm.h bitio.h pbmfont.h \
--	pgm.h ppm.h ppm.h ppmcmap.h ppmfloyd.h colorname.h \
--	pnm.h pam.h pammap.h util/shhopt.h util/nstring.h
-+	pgm.h ppm.h ppm.h ppmcmap.h ppmdraw.h ppmfloyd.h colorname.h \
-+	pnm.h pam.h pammap.h util/pm_shhopt.h util/pm_nstring.h
+ 	pgm.h ppm.h ppm.h ppmcmap.h ppmfloyd.h colorname.h \
+ 	pnm.h pam.h pammap.h util/shhopt.h util/nstring.h util/mallocvar.h
  
  DATAFILES = rgb.txt
  
-@@ -69,12 +71,15 @@
+@@ -71,12 +71,15 @@
  
  $(LIBOBJECTS): %.o: %.c $(HEADERLINKS)
  # Note that the user may have configured -I options into CFLAGS.
@@ -29,12 +27,12 @@
  MAJ = $(NETPBM_MAJOR_RELEASE)
  MIN = $(NETPBM_MINOR_RELEASE)
  
--SONAME = libnetpbm.so.$(MAJ)
-+SONAME = libnetpbm.so.$(SOVER)
+-SONAME = libnetpbm.$(NETPBMLIBSUFFIX).$(MAJ)
++SONAME = libnetpbm.$(NETPBMLIBSUFFIX).$(SOVER)
  
  ifeq ($(NETPBMLIBTYPE),irixshared)
  # The libxxx.so link is needed to link the executables.
-@@ -98,11 +103,8 @@
+@@ -101,11 +104,8 @@
  # The $(SONAME) link is needed only to test the programs without
  # installing the libraries (in that case, you also need to direct the 
  # dynamic linker to the source directories, e.g. set LD_LIBRARY_PATH).
@@ -48,7 +46,7 @@
            $(SHLIB_CLIB) $(LADD)
  endif
  
-@@ -180,13 +182,10 @@
+@@ -183,13 +183,10 @@
  .PHONY: install.lib
  ifeq ($(NETPBMLIBTYPE),unixshared)
  # install a Unix-style shared library
@@ -66,7 +64,7 @@
  endif
  ifeq ($(NETPBMLIBTYPE),dll)
  #install a Windows DLL shared library
-@@ -216,23 +215,23 @@
+@@ -219,23 +216,23 @@
  # directory when you compile your programs.
  
  %_installhdr: $(PKGDIR)/include
