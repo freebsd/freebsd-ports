@@ -37,6 +37,7 @@
     SUBDIR += py-serial
     SUBDIR += qico
     SUBDIR += qpage
+    SUBDIR += ruby-serialport
     SUBDIR += ruby-termios
     SUBDIR += scmxx
     SUBDIR += scud
