@@ -15,7 +15,9 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--disable-edf --with-gd-includes=${LOCALBASE}/include/gd
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	-disable-edf --with-gd-includes=${LOCALBASE}/include/gd
 MAN1=		zimg.1
 
 .include <bsd.port.mk>
