@@ -1,0 +1,22 @@
+--- programs/Xserver/hw/xfree86/os-support/bsd/bsd_jstk.c.orig	Tue Mar  4 16:29:48 2003
++++ programs/Xserver/hw/xfree86/os-support/bsd/bsd_jstk.c	Tue Mar  4 16:29:55 2003
+@@ -28,7 +28,7 @@
+ #include <sys/types.h>
+ #include <unistd.h>
+ #include <string.h>
+-#include <machine/joystick.h>
++#include <sys/joystick.h>
+ #include <fcntl.h>
+ 
+ #define JS_RETURN sizeof(struct joystick)
+--- programs/Xserver/hw/xfree86/etc/joycal.c.orig	Tue Mar  4 18:30:16 2003
++++ programs/Xserver/hw/xfree86/etc/joycal.c	Tue Mar  4 18:30:25 2003
+@@ -6,7 +6,7 @@
+ #include <unistd.h>
+ #include <string.h>
+ #if defined (__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
+-#include <machine/joystick.h>
++#include <sys/joystick.h>
+ #define JS_RETURN sizeof(struct joystick)
+ #define JS_DATA_TYPE joystick
+ #define button_down(j) (j.b1 | j.b2)
