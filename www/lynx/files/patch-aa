@@ -1,19 +1,13 @@
-*** makefile.in.bak	Sun Dec 14 02:30:40 1997
---- makefile.in	Mon Dec 15 17:48:54 1997
-***************
-*** 37,43 ****
-  libdir= @libdir@
-  
-  ## Where you want the help-files installed
-! helpdir= @libdir@/lynx_help
-  
-  installbin= @INSTALL_PROGRAM@ -s -m 755
-  installdoc= @INSTALL_DATA@
---- 37,43 ----
-  libdir= @libdir@
-  
-  ## Where you want the help-files installed
-! helpdir= $(prefix)/lib/lynx_help
-  
-  installbin= @INSTALL_PROGRAM@ -s -m 755
-  installdoc= @INSTALL_DATA@
+--- makefile.in.orig	Tue May 25 21:13:02 1999
++++ makefile.in	Tue May 25 23:27:44 1999
+@@ -407,8 +407,8 @@
+ 	PATH=$(srcdir):$$PATH; export PATH; $(SHELL) -c '$(srcdir)/cfg_defs.sh'
+ 
+ install-cfg : $(LIBDIR)
+-	-mv -f $(LIBDIR)/lynx.cfg $(LIBDIR)/lynx.oldcfg
+-	$(INSTALL_DATA) $(srcdir)/lynx.cfg $(LIBDIR)/lynx.cfg
++	$(INSTALL_DATA) $(srcdir)/lynx.cfg $(LIBDIR)/lynx.cfg.default
++	-[ ! -f $(libdir)/lynx.cfg ] && $(INSTALL_DATA) $(srcdir)/lynx.cfg $(libdir)/lynx.cfg
+ 
+ install-lss : $(LIBDIR)
+ 	-mv -f $(LIBDIR)/lynx.lss $(LIBDIR)/lynx.oldlss
