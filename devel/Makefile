@@ -943,6 +943,7 @@
     SUBDIR += p5-Proc-ProcessTable
     SUBDIR += p5-Proc-Reliable
     SUBDIR += p5-Proc-Simple
+    SUBDIR += p5-Project-Gantt
     SUBDIR += p5-Rcs
     SUBDIR += p5-Rcs-Agent
     SUBDIR += p5-ReadLine-Gnu
