@@ -1,6 +1,6 @@
---- compile.sh.orig	Wed Jan  8 12:19:48 2003
-+++ compile.sh	Mon Mar  1 19:15:54 2004
-@@ -69,10 +69,10 @@
+--- compile.sh.orig	Sun Feb 15 01:19:38 2004
++++ compile.sh	Thu Apr  1 11:12:31 2004
+@@ -72,10 +72,10 @@
  ##########################################################################
  if [ "x$force_gcc" = xyes ]; then
    CC=gcc
@@ -12,22 +12,24 @@
 -CFLAGS=
 +#CFLAGS=
  LFLAGS=
+ INCS=
  LIBS="-lGL -lX11"
- 
-@@ -88,9 +88,9 @@
- # Check for X11 libs directory
- ##########################################################################
- echo "Checking for X11 libraries location... " 1>&6
--if [ -r "/usr/X11R6/lib/libX11.so" ]; then
+@@ -99,10 +99,10 @@
+  INCS="-I/usr/X11/include"
+  echo " X11 libraries location: /usr/X11/lib" 1>&6
+ # X11R6 in /usr/X11R6/lib ?
+-elif [ -r "/usr/X11R6/lib" ]; then
 - LFLAGS="$LFLAGS -L/usr/X11R6/lib"
+- INCS="-I/usr/X11R6/include"
 - echo " X11 libraries location: /usr/X11R6/lib" 1>&6
-+if [ -r "${X11BASE}/lib/libX11.so" ]; then
++elif [ -r "${X11BASE}/lib" ]; then
 + LFLAGS="$LFLAGS -L${X11BASE}/lib"
++ INCS="-I${X11BASE}/include"
 + echo " X11 libraries location: ${X11BASE}/lib" 1>&6
- elif [ -r "/usr/X11R5/lib/libX11.so" ]; then
+ # X11R5 in /usr/X11R5/lib ?
+ elif [ -r "/usr/X11R5/lib" ]; then
   LFLAGS="$LFLAGS -L/usr/X11R5/lib"
-  echo " X11 libraries location: /usr/X11R5/lib" 1>&6
-@@ -120,9 +120,9 @@
+@@ -140,9 +140,9 @@
  rm -f conftest*
  
  echo " Using GNU C: ""$use_gcc" 1>&6
@@ -40,7 +42,7 @@
  echo " " 1>&6
  
  
-@@ -139,6 +139,8 @@
+@@ -164,6 +164,8 @@
  int main() {; return 0;}
  EOF
  
@@ -49,20 +51,27 @@
  if { (eval echo $config_script: \"$compile\") 1>&5; (eval $compile) 2>&5; }; then
    rm -rf conftest*
    has_xf86vm=yes
-@@ -279,29 +281,29 @@
- ##########################################################################
- # Check for sysconf support
- ##########################################################################
--echo "Checking for sysconf support... " 1>&6
--echo "$config_script: Checking for sysconf support" >&5
--has_sysconf=no
-+#echo "Checking for sysconf support... " 1>&6
-+#echo "$config_script: Checking for sysconf support" >&5
-+#has_sysconf=no
+@@ -206,7 +208,7 @@
+ 
+ # Try -pthread (e.g. FreeBSD)
+ if [ "x$has_pthread" = xno ]; then
+-  LIBS="$LIBS_OLD -pthread"
++  LIBS="$LIBS_OLD ${PTHREAD_LIBS}"
+   if { (eval echo $config_script: \"$link\") 1>&5; (eval $link) 2>&5; }; then
+     rm -rf conftest*
+     has_pthread=yes
+@@ -364,24 +366,24 @@
+ echo "$config_script: Checking for sysconf support" >&5
+ has_sysconf=no
  
 -cat > conftest.c <<EOF
 +#cat > conftest.c <<EOF
  #include <unistd.h>
+ #ifndef _SC_NPROCESSORS_ONLN
+ #ifndef _SC_NPROC_ONLN
+ #error Neither _SC_NPROCESSORS_ONLN nor _SC_NPROC_ONLN available
+ #endif
+ #endif
 -int main() {long x=sysconf(_SC_ARG_MAX); return 0; }
 -EOF
 +#int main() {long x=sysconf(_SC_ARG_MAX); return 0; }
@@ -85,44 +94,17 @@
 +#fi
 +#rm -f conftest*
  
--echo " sysconf support: ""$has_sysconf" 1>&6
--if [ "x$has_sysconf" = xyes ]; then
--   CFLAGS="$CFLAGS -D_GLFW_HAS_SYSCONF"
--fi
--echo " " 1>&6
-+#echo " sysconf support: ""$has_sysconf" 1>&6
-+#if [ "x$has_sysconf" = xyes ]; then
-+#   CFLAGS="$CFLAGS -D_GLFW_HAS_SYSCONF"
-+#fi
-+#echo " " 1>&6
- 
- 
- ##########################################################################
-@@ -337,17 +339,18 @@
- ##########################################################################
+ echo " sysconf support: ""$has_sysconf" 1>&6
+ if [ "x$has_sysconf" = xyes ]; then
+@@ -424,9 +426,9 @@
  # Post fixups
  ##########################################################################
--if [ "x$CC" = xgcc ]; then
+ if [ "x$use_gcc" = xyes ]; then
 -  CFLAGS_SPEED="-c -I. -I.. $CFLAGS -O3 -ffast-math -Wall"
--  CFLAGS="-c -I. -I.. $CFLAGS -Os -Wall"
--  CFLAGS_LINK="-O3 -ffast-math -Wall"
-+CFLAGS_NO_COMPILE="${CFLAGS}"
-+if [ "x$use_gcc" = xyes ]; then
 +  CFLAGS_SPEED="-c -I. -I.. $CFLAGS -Wall"
-+  CFLAGS="-c -I. -I.. $CFLAGS -Wall"
-+  CFLAGS_LINK="-Wall"
+   CFLAGS="-c -I. -I.. $CFLAGS -Os -Wall"
+-  CFLAGS_LINK="$INCS -O3 -ffast-math -Wall"
++  CFLAGS_LINK="$INCS -Wall"
  else
--  CFLAGS_SPEED="-c -I. -I.. $CFLAGS -O"
--  CFLAGS="-c -I. -I.. $CFLAGS -O"
--  CFLAGS_LINK="-O"
-+  CFLAGS_SPEED="-c -I. -I.. $CFLAGS"
-+  CFLAGS="-c -I. -I.. $CFLAGS"
-+  CFLAGS_LINK=""
- fi
--CFLAGS_LINK="-I../include $CFLAGS_LINK"
--LFLAGS="$LFLAGS -L../lib/x11 -s -lglfw -lGLU $LIBS -lpthread -lm"
-+CFLAGS_LINK="-I../include ${CFLAGS_NO_COMPILE} $CFLAGS_LINK"
-+LFLAGS="$LFLAGS -L../lib/x11 -s -lglfw -lGLU $LIBS ${PTHREAD_LIBS} -lm"
- 
- 
- ##########################################################################
+   CFLAGS_SPEED="-c -I. -I.. $CFLAGS -O"
+   CFLAGS="-c -I. -I.. $CFLAGS -O"

@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	glfw
-PORTVERSION=	2.4
+PORTVERSION=	2.4.2
 CATEGORIES=	graphics
-MASTER_SITES=	http://hem.passagen.se/opengl/glfw/files/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	tiamat@comset.net
 COMMENT=	A portable framework for OpenGL development
