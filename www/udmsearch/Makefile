@@ -9,9 +9,9 @@ PORTNAME=	udmsearch
 PORTVERSION=	3.0.23
 PORTREVISION=	1
 CATEGORIES=	www databases
-MASTER_SITES=	http://mysearch.udm.net/Download/	\
-		ftp://ftp.izhcom.ru/pub/unix/UdmSearch/	\
-		http://mirror.kuenzler.ch/udmsearch/Download/
+MASTER_SITES=	http://search.mnogo.ru/Download/	\
+		http://udmsearch.real-time.com/Download/	\
+		http://www.ghks.de/computer/software/udmsearch/Download/
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Full featured SQL-based hypertext search engine
