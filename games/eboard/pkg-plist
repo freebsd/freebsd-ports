@@ -1,0 +1,17 @@
+bin/eboard
+bin/eboard-addtheme
+bin/eboard-config
+%%PORTDOCS%%share/doc/eboard/Crafty.txt
+%%PORTDOCS%%share/doc/eboard/FICS-Timeseal.txt
+%%PORTDOCS%%share/doc/eboard/GNUChess4.txt
+%%PORTDOCS%%share/doc/eboard/GNUChess5.txt
+%%PORTDOCS%%share/doc/eboard/Scripts.txt
+%%PORTDOCS%%share/doc/eboard/Sjeng.txt
+%%PORTDOCS%%share/doc/eboard/Themes.txt
+share/eboard/basic_g.png
+share/eboard/basic_w.png
+share/eboard/basic_y.png
+share/eboard/rock.png
+share/eboard/eboard_themes.conf
+@dirrm share/eboard
+%%PORTDOCS%%@dirrm share/doc/eboard
