@@ -1,10 +1,10 @@
---- plugin/workbook.c.orig	Thu Apr 11 05:33:44 2002
-+++ plugin/workbook.c	Thu May  2 01:27:51 2002
-@@ -2,6 +2,7 @@
- 
+--- plugin/workbook.c.orig	Fri May 31 22:22:42 2002
++++ plugin/workbook.c	Sat Jul 27 08:45:00 2002
+@@ -24,6 +24,7 @@
  #include <stdio.h>
+ #include <stdlib.h>
  #include <glib.h>
 +#include <wchar.h>
- #include "biff.h"
- #include "importer.h"
  
+ #ifdef G_OS_WIN32
+ # include "../winconfig.h"

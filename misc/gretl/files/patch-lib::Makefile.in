@@ -1,5 +1,5 @@
---- lib/Makefile.in.orig	Mon Apr 22 01:43:31 2002
-+++ lib/Makefile.in	Wed May  1 23:59:51 2002
+--- lib/Makefile.in.orig	Thu Jul 11 00:20:39 2002
++++ lib/Makefile.in	Sat Jul 27 08:40:14 2002
 @@ -11,8 +11,8 @@
  XML_CFLAGS = @XML_CFLAGS@
  XML_LIBS = @XML_LIBS@
@@ -11,7 +11,7 @@
  endif
  ifeq ($(INSTALL_DATA),)
    INSTALL_DATA = $(INSTALL) -m 644
-@@ -27,7 +27,7 @@
+@@ -28,7 +28,7 @@
  
  # General compile options and libs:
  LIBGRETL = libgretl.la
@@ -20,7 +20,7 @@
  
  #### End of system configuration section. ####
  
-@@ -61,14 +61,14 @@
+@@ -65,15 +65,15 @@
  .PHONY: 
  
  install: $(LIBGRETL) install-data
@@ -33,8 +33,9 @@
  
  install-data: installdirs
  	$(INSTALL_DATA) $(srcdir)/*.h $(includedir)
+ 	$(INSTALL_DATA) ../gretl.m4 $(aclocaldir)
 -	$(INSTALL_PROGRAM) ../gretl-config $(bindir)
 +	$(INSTALL_SCRIPT) ../gretl-config $(bindir)
  
  installdirs:
- 	$(topsrc)/tools/mkinstalldirs $(libdir) $(includedir)
+ 	$(topsrc)/tools/mkinstalldirs $(libdir) $(includedir) $(aclocaldir)
