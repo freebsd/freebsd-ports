@@ -23,6 +23,7 @@
     SUBDIR += rox-session
     SUBDIR += systemg
     SUBDIR += tkdesk
+    SUBDIR += twander
     SUBDIR += vide
     SUBDIR += worker
     SUBDIR += workplace

@@ -1,0 +1,4 @@
+bin/twander.py
+%%PORTDOCS%%share/doc/twander/twander-license.txt
+%%PORTDOCS%%share/doc/twander/.twander
+%%PORTDOCS%%@dirrm share/doc/twander
