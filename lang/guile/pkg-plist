@@ -1,8 +1,12 @@
 bin/guile
 bin/guile-config
+bin/guile-doc-snarf
+bin/guile-func-name-check
 bin/guile-snarf
-include/guile/gh.h
+bin/guile-snarf.awk
 include/guile-readline/readline.h
+include/guile/gh.h
+include/libguile.h
 include/libguile/__scm.h
 include/libguile/alist.h
 include/libguile/arbiters.h
@@ -12,6 +16,7 @@ include/libguile/boolean.h
 include/libguile/chars.h
 include/libguile/continuations.h
 include/libguile/coop-defs.h
+include/libguile/debug-malloc.h
 include/libguile/debug.h
 include/libguile/dynl.h
 include/libguile/dynwind.h
@@ -26,16 +31,15 @@ include/libguile/fports.h
 include/libguile/gc.h
 include/libguile/gdb_interface.h
 include/libguile/gdbint.h
-include/libguile/genio.h
 include/libguile/gsubr.h
 include/libguile/guardians.h
 include/libguile/hash.h
 include/libguile/hashtab.h
+include/libguile/hooks.h
 include/libguile/init.h
 include/libguile/ioext.h
 include/libguile/iselect.h
 include/libguile/keywords.h
-include/libguile/kw.h
 include/libguile/lang.h
 include/libguile/list.h
 include/libguile/load.h
@@ -81,18 +85,18 @@ include/libguile/tags.h
 include/libguile/threads.h
 include/libguile/throw.h
 include/libguile/unif.h
+include/libguile/validate.h
 include/libguile/variable.h
 include/libguile/vectors.h
 include/libguile/version.h
 include/libguile/vports.h
 include/libguile/weaks.h
-include/libguile.h
 @unexec install-info --delete %D/info/data-rep.info %D/info/dir
 info/data-rep.info
 @exec install-info %D/info/data-rep.info %D/info/dir
 lib/libguile.a
 lib/libguile.so
-lib/libguile.so.6
+lib/libguile.so.9
 lib/libguilereadline.a
 lib/libguilereadline.so
 lib/libguilereadline.so.0
@@ -100,25 +104,27 @@ lib/libqthreads.a
 lib/libqthreads.so
 lib/libqthreads.so.0
 share/aclocal/guile.m4
-share/aclocal/qthreads.m4
 share/guile/%%GUILE_VER%%/ice-9/and-let*.scm
+share/guile/%%GUILE_VER%%/ice-9/arrays.scm
 share/guile/%%GUILE_VER%%/ice-9/boot-9.scm
 share/guile/%%GUILE_VER%%/ice-9/calling.scm
 share/guile/%%GUILE_VER%%/ice-9/common-list.scm
 share/guile/%%GUILE_VER%%/ice-9/debug.scm
 share/guile/%%GUILE_VER%%/ice-9/debugger.scm
+share/guile/%%GUILE_VER%%/ice-9/documentation.scm
 share/guile/%%GUILE_VER%%/ice-9/emacs.scm
 share/guile/%%GUILE_VER%%/ice-9/expect.scm
 share/guile/%%GUILE_VER%%/ice-9/format.scm
-share/guile/%%GUILE_VER%%/ice-9/getopt-gnu-style.scm
 share/guile/%%GUILE_VER%%/ice-9/getopt-long.scm
 share/guile/%%GUILE_VER%%/ice-9/hcons.scm
 share/guile/%%GUILE_VER%%/ice-9/lineio.scm
 share/guile/%%GUILE_VER%%/ice-9/ls.scm
 share/guile/%%GUILE_VER%%/ice-9/mapping.scm
+share/guile/%%GUILE_VER%%/ice-9/networking.scm
 share/guile/%%GUILE_VER%%/ice-9/optargs.scm
 share/guile/%%GUILE_VER%%/ice-9/poe.scm
 share/guile/%%GUILE_VER%%/ice-9/popen.scm
+share/guile/%%GUILE_VER%%/ice-9/posix.scm
 share/guile/%%GUILE_VER%%/ice-9/psyntax.pp
 share/guile/%%GUILE_VER%%/ice-9/psyntax.ss
 share/guile/%%GUILE_VER%%/ice-9/q.scm
@@ -133,6 +139,7 @@ share/guile/%%GUILE_VER%%/ice-9/string-fun.scm
 share/guile/%%GUILE_VER%%/ice-9/syncase.scm
 share/guile/%%GUILE_VER%%/ice-9/tags.scm
 share/guile/%%GUILE_VER%%/ice-9/threads.scm
+share/guile/guile-procedures.txt
 @dirrm include/guile
 @dirrm include/guile-readline
 @dirrm include/libguile

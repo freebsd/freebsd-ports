@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	guile
-PORTVERSION=	1.3.4
+PORTVERSION=	1.4
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.guile.org/pub/
@@ -19,6 +19,6 @@ INSTALLS_SHLIB=	yes
 LIBTOOLFILES=	configure guile-readline/configure
 CONFIGURE_ARGS=	--with-threads
 
-PLIST_SUB=	GUILE_VER=1.3.4
+PLIST_SUB=	GUILE_VER=${PORTVERSION}
 
 .include <bsd.port.mk>
