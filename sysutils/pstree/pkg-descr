@@ -1,0 +1,5 @@
+This is pstree. It is a small program that shows the ps
+listing as a tree (as the name implies...). It has several options
+to make selection criteria and to change the output style.
+
+For that it uses the output of /bin/ps.
