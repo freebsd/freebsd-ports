@@ -1,13 +1,13 @@
---- configure.orig	Thu Aug  8 23:11:28 2002
-+++ configure	Thu Aug  8 23:12:05 2002
-@@ -1973,8 +1973,8 @@
- if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
-   
+--- configure.orig	Tue May 20 20:29:43 2003
++++ configure	Tue May 20 20:30:35 2003
+@@ -6407,8 +6407,8 @@
+ echo "${ECHO_T}$ac_cv_lib_c_r_pthread_attr_init" >&6
+ if test $ac_cv_lib_c_r_pthread_attr_init = yes; then
+ 
 -                    PTHREAD_CFLAGS="$PTHREAD_CFLAGS -D_THREAD_SAFE"
--                    PTHREAD_LIBS="-pthread" 
+-                    PTHREAD_LIBS="-pthread"
 +                    PTHREAD_CFLAGS="$PTHREAD_CFLAGS %%PTHREAD_CFLAGS%%"
 +                    PTHREAD_LIBS="%%PTHREAD_LIBS%%"
- else
-   echo "$ac_t""no" 1>&6
+ fi
+ 
  fi
