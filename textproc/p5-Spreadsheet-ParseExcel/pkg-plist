@@ -1,0 +1,9 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Spreadsheet/ParseExcel/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/ParseExcel.pm
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/ParseExcel/FmtDefault.pm
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/ParseExcel/FmtJapan.pm
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/ParseExcel/FmtJapan2.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/ParseExcel
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Spreadsheet/ParseExcel
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Spreadsheet 2>/dev/null || true
