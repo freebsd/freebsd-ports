@@ -119,6 +119,7 @@
     SUBDIR += wmavgload
     SUBDIR += wmbattery
     SUBDIR += wmfire
+    SUBDIR += wmfsm
     SUBDIR += wmhm
     SUBDIR += wminet
     SUBDIR += wmlmmon
