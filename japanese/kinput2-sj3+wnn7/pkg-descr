@@ -1,15 +1,20 @@
-Kinput2 is an input server for X11 applications that want Japanese
-text input.
+Kinput2 is an Japanese text input server for X11 applications.
 
-A client that wants kana-kanji conversion service for Japanese text
+A client that require kana-kanji conversion service for Japanese text
 sends a request to kinput2.  Kinput2 receives the request, does
 kana-kanji conversion, and sends the converted text back to the
 client.
 
-The port supports SJ3 and Wnn7(temporary).  Egg key binding is avairable,
-if you run
+The port supports SJ3 and Wnn7(temporary).  Those looking for egg-key-binding
+other than default binding, try as follows:
 
-kinput2 -ccdef ccdef.kinput2.egg
+	% kinput2 -ccdef ccdef.kinput2.egg
+
+Note: 	Current wnn7 support on kinput2 is done by backward-compatibility
+	with wnn6, and you need to add following line to ${WNNENVRC}
+	file or /usr/local/lib/wnn7/ja_JP/wnnenvrc:
+
+	boin_kabusoku FALSE
 
 -- S. Taoka
 <taoka@FreeBSD.org>

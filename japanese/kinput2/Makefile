@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	kinput2
-PORTVERSION=	3.1.b2
+PORTVERSION=	3.1
 PKGNAMESUFFIX=	${INPUT_METHOD}
 CATEGORIES=	japanese x11
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/x11/kinput2/ 
-DISTNAME=	kinput2-v3.1-beta2
+DISTNAME=	kinput2-v3.1
 
 MAINTAINER=	taoka@FreeBSD.org
 
@@ -53,9 +53,9 @@ KINPUT2_DEF+=		-DUseWnn -DUseWnn6 -Dport_WNNINCDIR=$(LOCALBASE)/include/wnn6/wnn
 			-Dport_WNNLIB="-L$(LOCALBASE)/lib -lwnn6 -lcrypt"
 .elif defined(WNN7)
 INPUT_METHOD+=		wnn7
-LIB_INPUT_METHOD+=	wnn6_for_wnn7.1:${PORTSDIR}/japanese/Wnn7-lib
+LIB_INPUT_METHOD+=	wnn7.1:${PORTSDIR}/japanese/Wnn7-lib
 KINPUT2_DEF+=		-DUseWnn -DUseWnn6 -Dport_WNNINCDIR=$(LOCALBASE)/include/wnn7/wnn \
-			-Dport_WNNLIB="-L$(LOCALBASE)/lib -lwnn6_for_wnn7 -lcrypt"
+			-Dport_WNNLIB="-L$(LOCALBASE)/lib -lwnn7 -lcrypt"
 .endif
 #
 # Make a value of INPUT_METHOD
