@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	glib
-PORTVERSION=	1.3.12
-PORTREVISION=	1
+PORTVERSION=	1.3.13
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
+MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,pre-gnome2/releases/gnome-2.0-desktop-alpha2,} \
+		ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/%SUBDIR%/ \
 		http://www.ameth.org/gimp/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/gimp/%SUBDIR%,}
 MASTER_SITE_SUBDIR=	gtk/v${PORTVERSION:R}
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
@@ -23,6 +24,7 @@ RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
 NO_LATEST_LINK=	"Unstable, development version."
 
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes

@@ -1,10 +1,10 @@
 
 $FreeBSD$
 
---- configure.orig	Mon Dec 24 00:50:12 2001
-+++ configure	Fri Jan 18 09:40:30 2002
-@@ -16354,8 +16354,8 @@
-             	        G_THREAD_CFLAGS="$G_THREAD_CFLAGS -mthreads"
+--- configure.orig	Tue Jan 29 18:34:49 2002
++++ configure	Tue Feb 12 10:13:56 2002
+@@ -16378,8 +16378,8 @@
+ rm -f conftest.$ac_objext conftest.$ac_ext
  		fi
  		;;
 -	*-freebsd2.2*)
@@ -14,7 +14,7 @@ $FreeBSD$
  
  		# FreeBSD 2.2.x shiped with gcc 2.7.2.x, which doesn't support
  		# -mthreads flag.
-@@ -16433,13 +16433,13 @@
+@@ -16457,13 +16457,13 @@
             	fi
  		;;
               *)
@@ -31,13 +31,13 @@ $FreeBSD$
  			fi
  			if test x"$have_threads" = xposix; then
  				defattr=0
-@@ -17636,13 +17636,13 @@
+@@ -17660,13 +17660,13 @@
     #
     # Check for libiconv
     #
--   echo "$as_me:17639: checking for libiconv_open in -liconv" >&5
+-   echo "$as_me:17663: checking for libiconv_open in -liconv" >&5
 -echo $ECHO_N "checking for libiconv_open in -liconv... $ECHO_C" >&6
-+   echo "$as_me:17639: checking for libiconv_open in -lgiconv" >&5
++   echo "$as_me:17663: checking for libiconv_open in -lgiconv" >&5
 +echo $ECHO_N "checking for libiconv_open in -lgiconv... $ECHO_C" >&6
  if test "${ac_cv_lib_iconv_libiconv_open+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
@@ -46,9 +46,9 @@ $FreeBSD$
 -LIBS="-liconv  $LIBS"
 +LIBS="-lgiconv  $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
- #line 17647 "configure"
+ #line 17671 "configure"
  #include "confdefs.h"
-@@ -17704,7 +17704,7 @@
+@@ -17728,7 +17728,7 @@
  fi
  
  if test "x$with_libiconv" = "xyes" ; then
