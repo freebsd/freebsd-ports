@@ -283,4 +283,5 @@ i386-mingw32msvc/lib/libwsock32.a
 i386-mingw32msvc/lib/libwst.a
 @dirrm i386-mingw32msvc/include/sys
 @dirrm i386-mingw32msvc/include
+@dirrm i386-mingw32msvc/lib
 @unexec rmdir -p %D/i386-mingw32msvc/lib 2>/dev/null || true
