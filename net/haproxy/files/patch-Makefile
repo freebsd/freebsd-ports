@@ -1,0 +1,61 @@
+--- Makefile.orig	Wed Apr 16 21:43:09 2003
++++ Makefile	Wed Apr 30 17:07:18 2003
+@@ -1,22 +1,18 @@
+ # Select target OS. TARGET must match a system for which COPTS and LIBS are
+ # correctly defined below.
+ # You can set it on make's command line. eg: make TARGET=solaris
+-TARGET = linux24
++#TARGET = linux24
+ #TARGET = linux22
+ #TARGET = solaris
+ #TARGET = solarisv9
+-#TARGET = openbsd
+-
+-CC = gcc
+-LD = gcc
++TARGET = openbsd
+ 
+ # By default, we use libc's regex.
+-REGEX=libc
+ #REGEX=pcre
+ 
+ # This is the directory hosting include/pcre.h and lib/libpcre.* when REGEX=pcre
+-PCREDIR	:= $(shell pcre-config --prefix 2>/dev/null)
+-#PCREDIR=/usr/local
++#PCREDIR	:= $(shell pcre-config --prefix 2>/dev/null)
++PCREDIR=${LOCALBASE}
+ 
+ # This is for Linux 2.4 with netfilter
+ COPTS.linux24 = -O2 -DNETFILTER
+@@ -44,8 +40,8 @@
+ COPTS.pcre=-DUSE_PCRE -I$(PCREDIR)/include
+ LIBS.pcre=-L$(PCREDIR)/lib -lpcreposix -lpcre
+ 
+-#DEBUG =
+-DEBUG = -g
++DEBUG =
++#DEBUG = -g
+ 
+ COPTS=$(COPTS.$(TARGET)) $(COPTS.$(REGEX))
+ LIBS=$(LIBS.$(TARGET)) $(LIBS.$(REGEX))
+@@ -53,16 +49,13 @@
+ # - use -DSTATTIME=0 to disable statistics, else specify an interval in
+ #   milliseconds.
+ # - use -DTPROXY to compile with transparent proxy support.
+-CFLAGS = -Wall $(COPTS) $(DEBUG) -DSTATTIME=0 -DTPROXY
+-LDFLAGS = -g
++CFLAGS+= -Wall $(COPTS) $(DEBUG) -DSTATTIME=$(INTERVAL)
++LDFLAGS+= 
+ 
+ all: haproxy
+ 
+-haproxy: haproxy.o
+-	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS)
+-
+-%.o:	%.c
+-	$(CC) $(CFLAGS) -c -o $@ $<
++haproxy: 
++	$(CC) $(CFLAGS) haproxy.c $(LIBS) $(LDFLAGS) -o haproxy
+ 
+ clean:
+ 	rm -f *.[oas] *~ core haproxy test nohup.out gmon.out

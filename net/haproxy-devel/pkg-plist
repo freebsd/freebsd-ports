@@ -1,0 +1,3 @@
+sbin/haproxy
+etc/haproxy.cfg.sample
+etc/rc.d/haproxy.sh.sample

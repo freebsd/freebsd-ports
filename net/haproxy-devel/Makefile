@@ -1,0 +1,36 @@
+# New ports collection Makefile for:	haproxy
+# Date created:				Apr 30, 2003
+# Whom:					Clement Laforet
+#
+# $FreeBSD$
+#
+
+PORTNAME=	haproxy
+PORTVERSION=	1.1.20
+PORTREVISION=	0
+CATEGORIES=	net www
+MASTER_SITES=	http://w.ods.org/tools/haproxy/ \
+		http://w.ods.org/tools/haproxy/old/
+
+MAINTAINER=	sheepkiller@cultdeadsheep.org
+COMMENT=	High-performance and highly-robust TCP/HTTP load balancer
+
+STATS_INTERVAL= 0
+REGEX_TYPE?=	libc
+
+MAKE_ENV+=	REGEX=${REGEX_TYPE} INTERVAL=${STATS_INTERVAL}
+
+.if defined(WITH_PCRE)
+REGEX_TYPE=	pcre
+PKGNAMESUFFIX=	-pcre
+LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+.endif
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/haproxy ${PREFIX}/sbin
+	${INSTALL_DATA} ${WRKSRC}/examples/haproxy.cfg \
+			${PREFIX}/etc/haproxy.cfg.sample
+	${INSTALL_SCRIPT} ${FILESDIR}/haproxy.sh \
+			${PREFIX}/etc/rc.d/haproxy.sh.sample
+
+.include <bsd.port.mk>
