@@ -16,10 +16,7 @@ MAINTAINER=	pmarquis@pobox.com
 
 USE_KDELIBS_VER=	3
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	KDEDIR=${PREFIX} KDB2HTML=${PREFIX}/bin/kdb2html
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--with-qt-includes=${X11BASE}/include \
-		--with-qt-libraries=${X11BASE}/lib
+CONFIGURE_ENV=	KDB2HTML=${PREFIX}/bin/kdb2html
 USE_GMAKE=	yes
 MAKE_ENV=	${CONFIGURE_ENV}
 
