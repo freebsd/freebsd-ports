@@ -293,6 +293,7 @@ sub change_summary_changed {
 	}
 }
 
+
 #
 # Summarise details of added files.
 #
@@ -314,6 +315,7 @@ sub change_summary_added {
 		&append_line($outfile, "$rev,$delta,new,$rcsfile");
 	}
 }
+
 
 #
 # Summarise details of removed files.
@@ -348,6 +350,7 @@ sub change_summary_removed {
 	}
 }
 
+
 sub build_header {
 	delete $ENV{'TZ'};
 
@@ -363,6 +366,7 @@ sub build_header {
 
 	return @text;
 }
+
 
 # !!! Mailing-list and commitlog history file mappings here !!!
 # This needs pulling out as a configuration block somewhere so
@@ -381,6 +385,7 @@ sub get_log_name {
 	return 'other';
 }    
 
+
 sub do_changes_file {
 	my @text = @_;
 
@@ -398,6 +403,7 @@ sub do_changes_file {
 		close CHANGES;
 	}
 }
+
 
 sub mail_notification {
 	my @text = @_;
@@ -483,6 +489,7 @@ sub mail_notification {
 	close MAIL;
 }
 
+
 # Return the length of the longest value in the list.
 sub longest_value {
 	my @values = @_;
@@ -490,6 +497,7 @@ sub longest_value {
 	my @sorted = sort { $b <=> $a } map { length $_ } @values;
 	return $sorted[0];
 }
+
 
 sub format_summaries {
 	my @filenames = @_;
