@@ -4,12 +4,10 @@ share/gnome/gdesklets/Sensors/RecentlyUsed/AUTHORS
 share/gnome/gdesklets/Sensors/RecentlyUsed/Animator.py
 share/gnome/gdesklets/Sensors/RecentlyUsed/Icon.py
 share/gnome/gdesklets/Sensors/RecentlyUsed/MimeIcon.py
-share/gnome/gdesklets/Sensors/RecentlyUsed/README
 share/gnome/gdesklets/Sensors/RecentlyUsed/RecentFile.py
 share/gnome/gdesklets/Sensors/RecentlyUsed/RecentParser.py
 share/gnome/gdesklets/Sensors/RecentlyUsed/RecentReader.py
 share/gnome/gdesklets/Sensors/RecentlyUsed/RfileSet.py
-share/gnome/gdesklets/Sensors/RecentlyUsed/TODO
 share/gnome/gdesklets/Sensors/RecentlyUsed/TestReader.py
 share/gnome/gdesklets/Sensors/RecentlyUsed/TestRecent.py
 share/gnome/gdesklets/Sensors/RecentlyUsed/TestRfileSet.py
