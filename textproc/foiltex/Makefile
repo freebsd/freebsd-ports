@@ -7,17 +7,17 @@
 
 PORTNAME=	foiltex
 PORTVERSION=	2.1.4a
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	nonfree/macros/latex/contrib/${PORTNAME}
 DISTFILES=	foiltex.dtx foiltex.ins
-EXTRACT_ONLY=	# empty
 
 MAINTAINER=	sw@gegenunendlich.de
 COMMENT=	A collection of LaTeX files for making foils
 
-BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
+BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
 
 NO_CDROM=	redistribution on a not-for-profit basis only
 
@@ -34,9 +34,12 @@ FOIL_FILES=	${WRKDIR}/foil17.clo ${WRKDIR}/foil20.clo \
 		${WRKDIR}/foilshrt.clo ${WRKDIR}/fltfonts.def
 PLIST_SUB=	FOIL_DIR="${FOIL_DIR:S,^${PREFIX}/,,}"
 
+do-extract:
+	${MKDIR} ${WRKDIR}
+	${CP} ${DISTDIR}/foiltex.ins ${WRKDIR}/foiltex.ins
+	${CP} ${DISTDIR}/foiltex.dtx ${WRKDIR}/foiltex.dtx
+
 do-build:
-	@${CP} ${DISTDIR}/foiltex.ins ${WRKDIR}/foiltex.ins
-	@${CP} ${DISTDIR}/foiltex.dtx ${WRKDIR}/foiltex.dtx
 	@cd ${WRKDIR} && ${LATEX_CMD} foiltex.ins && \
 		${LATEX_CMD} foiltex.dtx && \
 		${LATEX_CMD} foiltex.dtx && \
