@@ -20,6 +20,9 @@ lib/tkratlib/print.tcl
 lib/tkratlib/show.tcl
 lib/tkratlib/source.tcl
 lib/tkratlib/tclIndex
+lib/tkratlib/text_balText_en.tcl
+lib/tkratlib/text_balText_it.tcl
+lib/tkratlib/text_balText_sv.tcl
 lib/tkratlib/text_changes_en.tcl
 lib/tkratlib/text_changes_it.tcl
 lib/tkratlib/text_changes_sv.tcl
