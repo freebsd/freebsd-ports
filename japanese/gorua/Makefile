@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gorua
-PORTVERSION=	0.14a
+PORTVERSION=	0.15.p
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.unixuser.org/~haruyama/software/goRua/
-DISTNAME=	goRua-${PORTVERSION}
+DISTNAME=	goRua-${PORTVERSION:S/.p/-pre/}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 
