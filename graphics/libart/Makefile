@@ -10,7 +10,7 @@ PORTVERSION=	2.3.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.artofcode.com/${PORTNAME}/
 
-MAINTAINER=	perky@python.or.kr
+MAINTAINER=	perky@fallin.lv
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_lgpl-${PORTVERSION}
 GNU_CONFIGURE=	yes

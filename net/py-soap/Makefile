@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.pythonware.com/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}lib-${PORTVERSION}-${PORTRELDATE}
 
-MAINTAINER=	perky@python.or.kr
+MAINTAINER=	perky@fallin.lv
 
 PORTRELDATE=	20000621
 USE_PYTHON=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://people.linuxkorea.co.kr/pub/Python/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	python
 
-MAINTAINER=	perky@python.or.kr
+MAINTAINER=	perky@fallin.lv
 
 BUILD_DEPENDS=	${PYDISTUTILS}
 LIB_DEPENDS=	iconv:${PORTSDIR}/converters/iconv
