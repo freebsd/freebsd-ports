@@ -1,0 +1,22 @@
+--- report.c.orig	Wed Aug  2 17:36:49 2000
++++ report.c	Wed Aug  2 17:38:39 2000
+@@ -239,12 +239,16 @@
+     if (len <= 0)
+ 	return;
+ 
+-    for (i = 0; i < len && i < 255; i++) {
++	if(len > 255) len = 255;
++
++    for (i = 0; i < len; ) {
+ 	if (32 <= *p && *p <= 126) {
+ 	    *bufp++ = *p++;
++		i++;
+ 	} else {
+-	    sprintf(bufp, " 0x%x ", *p);
+-	    bufp += strlen(bufp);
++	    int n = snprintf(bufp, len-i, " 0x%x ", *p);
++	    bufp += n;
++		i += n;
+ 	    p++;
+ 	}
+     }
