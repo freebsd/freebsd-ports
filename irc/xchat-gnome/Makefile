@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xchat
-# Version required:		1.3.10
+# Version required:		1.3.11
 # Date created:			17 Nov 1998
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xchat-1.3.10
+DISTNAME=	xchat-1.3.11
 CATEGORIES=	irc
 MASTER_SITES=	http://xchat.org/files/source/1.3/ \
 		http://xchat.linuxpower.org/files/source/1.3/
@@ -20,6 +20,7 @@ LIB_DEPENDS+=	gnome.3:${PORTSDIR}/x11/gnomelibs
 .endif
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
@@ -39,7 +40,12 @@ CONFIGURE_ARGS+= --disable-panel
 CONFIGURE_ARGS+= --disable-gnome
 .endif
 
-CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
+CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}" \
+		GLIB_CONFIG="${GLIB_CONFIG}"
+
+.if defined(USE_GNOME)
+PLIST=		${PKGDIR}/PLIST.gnome
+.endif
 
 post-install:
 	@strip ${PREFIX}/bin/xchat

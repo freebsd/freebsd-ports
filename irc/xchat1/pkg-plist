@@ -1,4 +1,5 @@
 bin/xchat
+bin/xchat-text
 share/doc/xchat/xchat.sgml
 share/doc/xchat/xchat.html
 share/doc/xchat/xchat-1.html
