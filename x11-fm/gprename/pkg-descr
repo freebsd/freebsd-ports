@@ -1,0 +1,9 @@
+from the home page:
+
+	GPRename is a GUI batch file renamer based on Gtk-Perl.
+
+	It can rename files numerically, insert/delete characters at/between
+	specified position(s), replace strings (either using regular
+	expressions or not), and change case.
+
+WWW:  http://gprename.sf.net/
