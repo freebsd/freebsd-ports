@@ -6045,6 +6045,7 @@ php3		ports/lang/php3
 php4		ports/lang/php4
 php4-cgi	ports/www/php4-cgi
 php4-cli	ports/lang/php4-cli
+php5		ports/lang/php4
 phpSysInfo	ports/www/phpSysInfo
 php_doc		ports/lang/php_doc
 phpbb		ports/www/phpbb
