@@ -54,7 +54,7 @@ post-install:
 	(cd ${WRKSRC}/contrib/xmindpath; make install)
 	${GZIP_CMD} ${PREFIX}/man/man1/xmindpath.1
 .if ${XFREE86_VERSION} == 4
-	(cd ${WRKSRC}/contrib/xmindpath;
+	(cd ${WRKSRC}/contrib/xmindpath; \
 	 ${INSTALL_MAN} xmindpath.1.html ${PREFIX}/lib/X11/doc/html)
 .endif
 .if !defined(NOPORTDOCS)
