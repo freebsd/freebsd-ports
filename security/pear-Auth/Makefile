@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Auth
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	security www
 MASTER_SITES=	http://pear.php.net/get/
 PKGNAMEPREFIX=	pear-
@@ -36,11 +36,12 @@ PLIST_SUB=	PEARDIR=${LPHP_LIB}
 MANIFEST=	Auth.php Container Container.php
 
 do-install:
+	@${MKDIR} ${PEARDIR}/Auth
 .for FILE in ${MANIFEST}
-	@${CP} -Rp ${WRKSRC}/${FILE} ${PEARDIR}
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PEARDIR}/${FILE}
+	@${CP} -Rp ${WRKSRC}/${FILE} ${PEARDIR}/Auth
 .endfor
-	@${CHMOD} a-x ${PEARDIR}/Container/LDAP.php
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PEARDIR}/Auth
+	@${CHMOD} -R a-x ${PEARDIR}/Auth/Container/*.php
 
 post-install:
 # Register a new package
