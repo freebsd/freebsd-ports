@@ -24,6 +24,8 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template
 		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		"Missing dependency"
+
 PERL_CONFIGURE=	yes
 
 MAN3=		SVN::Web.3
