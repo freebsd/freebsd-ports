@@ -22,4 +22,10 @@ USE_XPM=	yes
 
 MAN1=		xisp.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=		"Does not compile due to deprecation of varargs.h"
+.endif
+
+.include <bsd.port.post.mk>
