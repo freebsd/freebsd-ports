@@ -1200,6 +1200,7 @@ ebuttons	ports/x11/ebuttons
 ecartis		ports/mail/ecartis
 ecasound	ports/audio/ecasound
 ecawave	ports/audio/ecawave
+ecb		ports/devel/ecb
 ecg2png		ports/graphics/ecg2png
 ecgi		ports/devel/ecgi
 echo		src/bin/echo
