@@ -51,6 +51,12 @@ do-configure:
 	@${ECHO_CMD} "       .." >> ${WRKSRC}/uucp.mtree
 .endif
 
+.if ! exists(${DESTDIR}/${PREFIX}/info/dir)
+pre-install:
+	${INSTALL} -c -o ${INFOOWN} -g ${INFOGRP} -m ${INFOMODE} \
+		${FILESDIR}/dir-tmpl ${DESTDIR}${PREFIX}/info/dir
+.endif
+
 post-install:
 	@${ECHO} "Use the 'make upgrade' command to copy your old configuration"
 	@${ECHO} "files from /etc/uucp to the new location in ${PREFIX}/etc/uucp"
