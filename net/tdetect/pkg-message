@@ -2,5 +2,5 @@
 IMPORTANT!
 
 Dont forget to edit ${PREFIX}/etc/rc.d/tdetect.sh
-and set ethernetdev to the name of the ethernet device you wish to monitor
+and set ETHERNETDEV to the name of the ethernet device you wish to monitor
 
