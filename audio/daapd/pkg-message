@@ -10,7 +10,12 @@ You need to copy this to
 
   %%PREFIX%%/etc/daapd.conf
 
-and edit it to suit your requirements.
+and edit it to suit your requirements. You must also add:
+
+  daapd_enable="YES"
+
+to /etc/rc.conf.
+
 Documentation is installed at:
 
   %%DOCSDIR%%/README
@@ -22,6 +27,11 @@ Once configured, you can start daapd by running:
 daapd keeps its logfile in
 
   %%LOGDIR%%/daapd.log
+
+To advertise the server, you can either use howl, or run net/mDNSResponder
+with a command line like:
+
+  mDNSResponderPosix -p 3689 -t _daap._tcp. -n `hostname`
 
 Enjoy!
 

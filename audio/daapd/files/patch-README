@@ -1,0 +1,11 @@
+--- README.orig	Sat Jun 26 22:25:40 2004
++++ README	Sat Jun 26 22:26:03 2004
+@@ -65,7 +65,7 @@
+ 
+ daapd [-dhqrv] [-c config-file] [-C cache-file] [-n name] [-p port] [-t vbr-limit] [file/directory]...
+ 
+-When called without command line arguments, daapd looks for a configuration file called /etc/daapd.conf. Failing that, it runs with the following default options:
++When called without command line arguments, daapd looks for a configuration file called %%PREFIX%%/etc/daapd.conf. Failing that, it runs with the following default options:
+ 
+ - current directory is scanned for music files
+ - port is 3689 (port registered for DAAP with IANA)

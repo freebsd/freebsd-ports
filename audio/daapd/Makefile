@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	daapd
-PORTVERSION=	0.2.1d
-PORTREVISION=	1
+PORTVERSION=	0.2.2c
 CATEGORIES=	audio
 MASTER_SITES=	http://www.deleet.de/projekte/daap/daapd/
 EXTRACT_SUFX=	.tgz
@@ -23,6 +22,9 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	daapd
+USE_RC_SUBR=	yes
+
+MAN8=		daapd.8
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGINSTALL=	${WRKDIR}/pkg-install
@@ -32,13 +34,32 @@ DAAPD_USER=	daapd
 DAAPD_GROUP=	daapd
 
 LOGDIR=		/var/log
+CACHE=		/var/db/daapd.cache
 FILES_SUB=	USER=${DAAPD_USER} GROUP=${DAAPD_GROUP} \
 		PREFIX=${PREFIX} LOGDIR=${LOGDIR} DOCSDIR=${DOCSDIR} \
-		LOCALBASE=${LOCALBASE}
+		LOCALBASE=${LOCALBASE} CACHE=${CACHE} RC_SUBR=${RC_SUBR}
+
+OPTIONS+=	HOWL "Use howl for Zeroconf/Rendezvous" on
+OPTIONS+=	MPEG4IP "Use mpeg4ip for AAC metadata" on
+
+.include <bsd.port.pre.mk>
+
+.ifdef(WITH_HOWL)
+LIB_DEPENDS+=	howl:${PORTSDIR}/net/howl
+MAKE_ENV+=	HOWL_ENABLE=1 PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS}
+.endif
+
+.ifdef(WITH_MPEG4IP)
+LIB_DEPENDS+=	mp4v2:${PORTSDIR}/multimedia/mpeg4ip
+MAKE_ENV+=	MPEG4_ENABLE=1
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${WRKSRC}/${MAKEFILE}
+		${WRKSRC}/${MAKEFILE} \
+		${WRKSRC}/README \
+		${WRKSRC}/daapd.cc \
+		${WRKSRC}/daapd.8
 
 pre-install:
 	@${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
@@ -63,4 +84,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
