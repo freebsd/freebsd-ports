@@ -7907,6 +7907,7 @@ php4-posix	ports/sysutils/php4-posix
 php4-pspell	ports/textproc/php4-pspell
 php4-readline	ports/devel/php4-readline
 php4-recode	ports/converters/php4-recode
+php4-rrdtool	ports/net/php4-rrdtool
 php4-session	ports/www/php4-session
 php4-shmop	ports/devel/php4-shmop
 php4-snmp	ports/net-mgmt/php4-snmp
