@@ -1,0 +1,11 @@
+--- Makefile.in~	Wed Sep  5 11:06:01 2001
++++ Makefile.in	Tue Oct  9 11:59:26 2001
+@@ -74,7 +74,7 @@
+ 	$(CC) $(LDFLAGS) -o sox sox.o $(LIBS)
+ 
+ soxmix.o: sox.c
+-	$(CC) $(CFLAGS) -DSOXMIX -c -o soxmix.o $<
++	$(CC) $(CFLAGS) -DSOXMIX -c -o soxmix.o sox.c
+ 
+ soxmix: libst.a soxmix.o
+ 	$(CC) $(LDFLAGS) -o soxmix soxmix.o $(LIBS)
