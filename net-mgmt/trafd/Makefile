@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.riss-telecom.ru/pub/dev/trafd/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bms@FreeBSD.org
 COMMENT=	The BPF Traffic Collector
 
 CONFLICTS=	bpft-4.*
