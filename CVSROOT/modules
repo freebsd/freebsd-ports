@@ -1823,7 +1823,6 @@ gdb53		ports/devel/gdb53
 gdbm		ports/databases/gdbm
 gdbmods		ports/devel/gdbmods
 gdcalc		ports/math/gdcalc
-gdcd		ports/audio/gdcd
 gdchart		ports/graphics/gdchart
 gdeskcal	ports/deskutils/gdeskcal
 gdeskcal-skins	ports/deskutils/gdeskcal-skins
