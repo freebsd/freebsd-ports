@@ -1,0 +1,13 @@
+Autocutsel synchronizes the two copy/paste buffers mainly used by X
+applications. It unifies "clipboards" between VNC servers and Windows.
+
+The 'cutsel' binary performs the synchronization whenever it is run.
+The 'autocutsel' binary performs the synchronization continuously.  I
+suggest running it from ~/.vnc/xstartup by adding a line like this at
+the top:
+  exec autocutsel &
+
+WWW: http://www.lepton.fr/tools/autocutsel/
+
+- John Nielsen
+john@jnielsen.net

@@ -3,6 +3,7 @@
 
     SUBDIR += abacus
     SUBDIR += aspostit
+    SUBDIR += autocutsel
     SUBDIR += babytrans
     SUBDIR += basket
     SUBDIR += bigyear
