@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Log/Dispatch/Perl.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Dispatch/Perl/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Dispatch/Perl
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Dispatch 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Log 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Log/Dispatch 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Log 2>/dev/null || true
