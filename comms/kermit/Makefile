@@ -6,31 +6,34 @@
 #
 
 PORTNAME=	kermit
-PORTVERSION=	8.0.200
-PORTREVISION=	1
+PORTVERSION=	8.0.201
 CATEGORIES=	comms
 MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/ \
 		ftp://ftp.icm.edu.pl/pub/kermit/archives/
-DISTNAME=	cku200
+DISTNAME=	cku201
 
 MAINTAINER=	naddy@FreeBSD.org
 
+USE_OPENSSL=	yes
 NO_WRKSUBDIR=	yes
 MAN1=		kermit.1
 
 MAKEFILE=	makefile
-ALL_TARGET=	xermit
+ALL_TARGET=	krbmit
 MAKE_ARGS=	KTARGET=freebsd \
-		CFLAGS="${CFLAGS} -DBSD44 -DCK_NCURSES -DCK_NEWTERM \
+		CFLAGS="${CFLAGS} -I${OPENSSLINC} \
+		-DBSD44 -DCK_NCURSES -DCK_NEWTERM \
 		-DTCPSOCKET -DNOCOTFMC -DFREEBSD4 -DUSE_UU_LOCK -DFNFLOAT \
-		-funsigned-char -DTPUTSARGTYPE=int -DUSE_STRERROR -DCKHTTP" \
-		LIBS="-lncurses -lcrypt -lutil -lm"
+		-funsigned-char -DTPUTSARGTYPE=int -DUSE_STRERROR -DCKHTTP \
+		-DCK_SSL -DCK_AUTHENTICATION -DCK_ENCRYPTION -DCK_DES" \
+		LIBS="-L${OPENSSLLIB} \
+		-lssl -lcrypto -ldes -lncurses -lcrypt -lutil -lm"
 
 DOCDIR=		${PREFIX}/share/doc/kermit
 EXAMPLESDIR=	${PREFIX}/share/examples/kermit
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/wermit ${PREFIX}/bin/kermit
+	${INSTALL_PROGRAM} ${WRKSRC}/krbmit ${PREFIX}/bin/kermit
 	${INSTALL_MAN} ${WRKSRC}/ckuker.nr ${PREFIX}/man/man1/kermit.1
 	@${MKDIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/ckaaaa.txt ${DOCDIR}/READ.ME
