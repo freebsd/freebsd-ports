@@ -1,9 +1,9 @@
 # New ports collection makefile for:	asbutton
 # Version required:		0.3
 # Date created:			10 May 1999
-# Whom:				Jim Mock <jim@blues.ghis.net>
+# Whom:				Jim Mock <jim@FreeBSD.org>
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/10 16:44:06 flathill Exp $
+# $Id: Makefile,v 1.2 1999/08/01 01:59:40 cpiazza Exp $
 #
 
 DISTNAME=	asbutton-0.3
@@ -11,7 +11,7 @@ CATEGORIES=	misc windowmaker afterstep
 MASTER_SITES=	http://www.tigr.net/afterstep/as-apps/download/asbutton/ \
 		ftp://ftp.afterstep.org/apps/asbutton/
 
-MAINTAINER=	jim@blues.ghis.net
+MAINTAINER=	jim@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
