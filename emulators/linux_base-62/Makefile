@@ -201,3 +201,8 @@ post-install:
 	@${ECHO} ''
 
 .include <bsd.port.post.mk>
+
+# XXX - bsd.port.mk defines MD5_FILE unconditionally. Redefine it
+# here so that we pick up the right md5 file. If bsd.port.mk is
+# ever changed, move this to where PLIST is defined.
+MD5_FILE=		${FILESDIR}/md5.${MACHINE_ARCH}
