@@ -33,7 +33,7 @@ BUILD_DEPENDS=	${PERL_BASE}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/
 		${PERL_BASE}/${PERL_ARCH}/Math/Pari.pm:${PORTSDIR}/math/p5-Math-Pari \
 		${PERL_BASE}/${PERL_ARCH}/Math/GMP.pm:${PORTSDIR}/math/p5-Math-GMP \
 		${PERL_BASE}/Data/Buffer.pm:${PORTSDIR}/misc/p5-Data-Buffer \
-		${PERL_BASE}/Net/FTP.pm:${PORTSDIR}/net/p5-libnet \
+		${PERL_BASE}/Net/FTP.pm:${PORTSDIR}/net/p5-Net \
 		${PERL_BASE}/URI.pm:${PORTSDIR}/net/p5-URI \
 		${PERL_BASE}/Digest/BubbleBabble.pm:${PORTSDIR}/security/p5-Digest-BubbleBabble \
 		${PERL_BASE}/Crypt/DSA.pm:${PORTSDIR}/security/p5-Crypt-DSA \
