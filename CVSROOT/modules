@@ -5187,6 +5187,7 @@ p5-Apache-AuthTicket	ports/www/p5-Apache-AuthTicket
 p5-Apache-AuthenCache	ports/www/p5-Apache-AuthenCache
 p5-Apache-AuthenURL	ports/www/p5-Apache-AuthenURL
 p5-Apache-AutoIndex	ports/www/p5-Apache-AutoIndex
+p5-Apache-ConfigFile	ports/www/p5-Apache-ConfigFile
 p5-Apache-DBI	ports/www/p5-Apache-DBI
 p5-Apache-DumpHeaders	ports/www/p5-Apache-DumpHeaders
 p5-Apache-Filter	ports/www/p5-Apache-Filter
