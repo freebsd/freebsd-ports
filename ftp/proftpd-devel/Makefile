@@ -27,6 +27,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var/run \
 		--with-modules=mod_ratio
 
+FORBIDDEN=	security problems
+
 post-configure:
 	@${MV} ${WRKSRC}/src/proftpd.8 ${WRKSRC}/src/proftpd.8.pre_sed
 	@${SED}	-e 's:/etc:${PREFIX}/etc:' \
