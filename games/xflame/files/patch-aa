@@ -1,0 +1,23 @@
+*** Imakefile	Wed Dec 16 17:58:03 1998
+--- Imakefile2	Sat Jan  2 19:16:24 1999
+***************
+*** 29,37 ****
+  CleanTarget()
+  
+  # To get around a messiness in Imake on Solaris
+! LD_RUN_PATH +=
+! install::
+! 	export LD_RUN_PATH
+  
+  InstallProgram(xflame,$(BINDIR))
+  
+--- 29,37 ----
+  CleanTarget()
+  
+  # To get around a messiness in Imake on Solaris
+! #LD_RUN_PATH +=
+! #install::
+! #	export LD_RUN_PATH
+  
+  InstallProgram(xflame,$(BINDIR))
+  
