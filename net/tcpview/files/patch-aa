@@ -87,17 +87,16 @@
 +*/
 +/* unsigned 32-bit integer */
 +#endif
---- mdtype	Mon Feb 17 13:29:48 1992
-+++ mdtype	Tue Feb 25 23:35:31 1997
-@@ -7,10 +7,18 @@
+--- mdtype.orig	Mon Feb 17 13:29:48 1992
++++ mdtype	Fri Mar 14 23:06:11 2003
+@@ -5,12 +5,15 @@
+ #
+ set mach="UNKNOWN"
  if ( -f /bin/arch ) set mach=`/bin/arch`
- if ($mach == "UNKNOWN") then
- 	set temp=`machine`
+-if ($mach == "UNKNOWN") then
+-	set temp=`machine`
 -	if ($temp != "") set mach=$temp
 -endif
-+	if ($temp != "") set mach=$temp 
-+endif 
-+
  # Hack, hack...
  if ($mach == "sparc") set mach=sun4
 +
