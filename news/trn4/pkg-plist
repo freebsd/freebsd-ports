@@ -20,9 +20,6 @@ lib/trn/makedir
 lib/trn/mbox.saver
 lib/trn/newsnews
 lib/trn/norm.saver
-man/man1/Pnews.1.gz
-man/man1/Rnmail.1.gz
-man/man1/trn.1.gz
 @dirrm lib/trn/HelpFiles/samples
 @dirrm lib/trn/HelpFiles
 @dirrm lib/trn

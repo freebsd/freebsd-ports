@@ -2,10 +2,6 @@ bin/lmove
 bin/rpost
 bin/suck
 bin/testhost
-man/man1/lmove.1.gz
-man/man1/rpost.1.gz
-man/man1/suck.1.gz
-man/man1/testhost.1.gz
 share/examples/suck/get.news.innxmit
 share/examples/suck/get.news.rnews
 share/examples/suck/put.news
