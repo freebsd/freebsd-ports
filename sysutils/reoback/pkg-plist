@@ -1,0 +1,5 @@
+bin/reoback.pl
+bin/run_reoback.sh
+etc/reoback/settings.conf.dist
+etc/reoback/files.conf.dist
+@dirrm etc/reoback
