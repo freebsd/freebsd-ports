@@ -5379,7 +5379,6 @@ mod_perl	ports/www/mod_perl
 mod_perl2	ports/www/mod_perl2
 mod_php3	ports/www/mod_php3
 mod_php4	ports/www/mod_php4
-mod_php4-twig	ports/www/mod_php4-twig
 mod_php5	ports/www/mod_php5
 mod_proxy_add_forward	ports/www/mod_proxy_add_forward
 mod_put		ports/www/mod_put
@@ -7697,7 +7696,6 @@ php4-dbase	ports/databases/php4-dbase
 php4-dbx	ports/databases/php4-dbx
 php4-dio	ports/devel/php4-dio
 php4-domxml	ports/textproc/php4-domxml
-php4-dtc	ports/lang/php4-dtc
 php4-exif	ports/graphics/php4-exif
 php4-extensions	ports/lang/php4-extensions
 php4-filepro	ports/databases/php4-filepro
@@ -7705,7 +7703,6 @@ php4-ftp	ports/ftp/php4-ftp
 php4-gd		ports/graphics/php4-gd
 php4-gettext	ports/devel/php4-gettext
 php4-gmp	ports/math/php4-gmp
-php4-horde	ports/lang/php4-horde
 php4-iconv	ports/converters/php4-iconv
 php4-imap	ports/mail/php4-imap
 php4-interbase	ports/databases/php4-interbase
@@ -7720,7 +7717,6 @@ php4-mnogosearch	ports/www/php4-mnogosearch
 php4-mssql	ports/databases/php4-mssql
 php4-mysql	ports/databases/php4-mysql
 php4-ncurses	ports/devel/php4-ncurses
-php4-nms	ports/lang/php4-nms
 php4-odbc	ports/databases/php4-odbc
 php4-openssl	ports/security/php4-openssl
 php4-oracle	ports/databases/php4-oracle
