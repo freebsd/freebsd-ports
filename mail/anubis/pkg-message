@@ -1,0 +1,11 @@
+###########################################################################
+# 
+# Following compile-time options are available:
+# 
+# WITHOUT_OPENSSL=yes	Disable the OpenSSL library support
+# WITHOUT_GPGME=yes	Disable the GnuPG (GPGME library) support
+# WITH_PCRE=yes		Enable the PCRE library support
+# WITH_PAM=yes		Enable the Pluggable Authentication Modules support
+# WITH_TCP_WRAPPERS=yes Enable the libwrap (TCP wrappers) support
+#
+###########################################################################

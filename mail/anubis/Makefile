@@ -69,6 +69,9 @@ CONFIGURE_ARGS+=	--with-tcp-wrappers
 MAN1=	anubis.1
 DOCS=	AUTHORS INSTALL NEWS README THANKS TODO
 
+pre-everything::
+	@${CAT} ${PKGMESSAGE}
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|/etc|${PREFIX}/etc|g" ${WRKSRC}/src/headers.h
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g" ${FILESDIR}/anubis.sh > \
