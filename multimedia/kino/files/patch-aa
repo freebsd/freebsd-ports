@@ -1,11 +1,11 @@
 --- configure.orig	Fri Aug 13 01:15:49 2004
 +++ configure	Fri Aug 13 01:15:35 2004
--@@ -5325,7 +5325,7 @@
+@@ -5325,7 +5325,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-ldv  $LIBS"
-+LIBS="-ldv -pthread $LIBS"
++LIBS="-ldv ${PTHREAD_LIBS} $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
