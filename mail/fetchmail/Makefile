@@ -3,11 +3,11 @@
 # Date created:		26 Oct 1996
 # Whom:			Ville Eerola <ve@sci.fi>
 #
-# $Id: Makefile,v 1.4 1996/11/11 23:31:14 max Exp $
+# $Id: Makefile,v 1.5 1996/11/16 22:54:39 max Exp $
 #
 
-DISTNAME=	fetchmail-1.9
-PKGNAME=	fetchmail-1.9.9
+DISTNAME=	fetchmail-2.0
+PKGNAME=	fetchmail-2.0.0
 CATEGORIES=	mail
 MASTER_SITES=	ftp://locke.ccil.org/pub/esr/
 
