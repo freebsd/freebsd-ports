@@ -165,6 +165,17 @@ EOF
 
     mtree -X /tmp/mtree.exclude -x -f /tmp/mtree -p / | egrep -v '^(usr/local/share/nls/POSIX|usr/local/share/nls/en_US.US-ASCII|etc/shells.bak|etc/services|compat |usr/X11R6 |etc/manpath.config|usr/local/info/dir)' > /tmp/list3
 
+    if [ -s /tmp/list3 ]; then
+      cd /
+     grep ' extra$' /tmp/list3 | awk '{print $1}' | xargs -J % find % -ls > /tmp/list4
+     grep ' missing$' /tmp/list3 > /tmp/list5
+     grep -vE ' (extra|missing)$' /tmp/list3 > /tmp/list6
+      if [ "x${PLISTCHECK}" != "x" ]; then
+        echo "1" > /tmp/status
+      fi
+      echo "================================================================"
+    fi
+
     # BUILD_DEPENDS need to be present at install-time, e.g. gmake
     # Concatenate and remove duplicates
     BRD=$(echo $BD $RD | tr ' ' '\n' | sort -u | tr '\n' ' ')
@@ -175,13 +186,17 @@ EOF
       del_pkg *
     fi
 
-    if [ -s /tmp/list3 ]; then
-      echo "================================================================"
-      echo "list of extra files and directories in /"
-      cat /tmp/list3
-      if [ "x${PLISTCHECK}" != "x" ]; then
-        echo "1" > /tmp/status
-      fi
+    if [ -s /tmp/list4 ]; then
+      echo "list of extra files and directories in / (not present before this port was installed but present after it was deinstalled)"
+      cat /tmp/list4
+    fi
+    if [ -s /tmp/list5 ]; then
+      echo "list of files present before this port was installed but missing after it was deinstalled)"
+      cat /tmp/list5
+    fi
+    if [ -s /tmp/list6 ]; then
+      echo "list of filesystem changes from before and after port installation and deinstallation"
+      cat /tmp/list6
     fi
   else
     cleanup 5
