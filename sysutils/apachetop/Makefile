@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	apachetop
-PORTVERSION=	0.7
+PORTVERSION=	0.8.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://clueful.shagged.org/apachetop/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
