@@ -34,6 +34,10 @@ CFLAGS+=	-DRL_NO_COMPAT -DKGDB
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
+BROKEN=		"Does not build on ia64 or sparc64"
+.endif
+
 .if ${OSVERSION} < 500000
 CFLAGS+=	-include ${FILESDIR}/fbsd4.h
 .endif
