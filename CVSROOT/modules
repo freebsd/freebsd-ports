@@ -3164,6 +3164,7 @@ kldxref		src/usr.sbin/kldxref
 klist		src/eBones/klist
 klondike	ports/games/klondike
 klone		ports/lang/klone
+kludge3d	ports/graphics/kludge3d
 kmago		ports/ftp/kmago
 kmsn		ports/net/kmsn
 kmymoney2	ports/deskutils/kmymoney2
