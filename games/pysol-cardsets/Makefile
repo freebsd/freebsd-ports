@@ -26,7 +26,7 @@ CARDSETS=	1567 1750 1815 1880-delarue 1880-tarot 1890-grimaud aisleriot \
 		hamburg-b hegewald-1770 houbigant hungarian-tarokk jacoby \
 		joan-darc kabale kintengu-small liege little-sorcerer \
 		maritimes melange migeon-costume mughal-ganjifa naylor \
-		nickel-ante ovale-salon oxymoron oxymoron-small penguins \
+		nickel-ante ovale-salon oxymoron-small penguins \
 		prince-charles rangoon-d rangoon-e rangoon-r revolution-1 \
 		revolution-2 revolution-3 rivers-banks spaced spider \
 		spin-dist tensho tksol transformation traugott-1800 \
