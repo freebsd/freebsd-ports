@@ -4,14 +4,14 @@
 # Date created:		9 Jan 1998
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.12 1998/03/17 21:10:40 jdp Exp $
+# $Id: Makefile,v 1.16 1998/04/14 10:17:27 obrien Exp $
 #
 
-DISTNAME=	egcs-980406
+DISTNAME=	egcs-19980502
 CATEGORIES=	lang
-MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/snapshots/1998-04-06/ \
-		ftp://cambridge.cygnus.com/pub/egcs/snapshots/1998-04-06/ \
-		ftp://ftp.fu-berlin.de/unix/languages/egcs/snapshots/1998-04-06/
+MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/snapshots/1998-05-02/ \
+		ftp://cambridge.cygnus.com/pub/egcs/snapshots/1998-05-02/ \
+		ftp://ftp.fu-berlin.de/unix/languages/egcs/snapshots/1998-05-02/
 
 MAINTAINER=	obrien@FreeBSD.org
 
@@ -33,14 +33,15 @@ post-patch:
 
 post-install:
 	@(for prog in ${PREFIX}/bin/gcc ${PREFIX}/bin/g++ ${PREFIX}/bin/c++ \
-	${PREFIX}/bin/c++filt ${PREFIX}/bin/info ${PREFIX}/bin/install-info \
-	${PREFIX}/bin/makeinfo ${PREFIX}/bin/texindex \
-	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.22/cc1 \
-	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.22/cc1obj \
-	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.22/cc1plus \
-	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.22/cpp \
-	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.22/collect2 \
-	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.22/f771 ; \
+	${PREFIX}/bin/c++filt ${PREFIX}/bin/g77 ${PREFIX}/bin/gcov \
+	${PREFIX}/bin/protoize ${PREFIX}/bin/unprotoize \
+	${PREFIX}/bin/i386-unknown-freebsd-gcc \
+	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.26/cc1 \
+	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.26/cc1obj \
+	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.26/cc1plus \
+	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.26/cpp \
+	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.26/collect2 \
+	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.26/f771 ; \
 		do strip $$prog ; \
 		done)
 	if [ ! -f ${PREFIX}/info/dir ]; then \
