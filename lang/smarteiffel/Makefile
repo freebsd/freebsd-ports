@@ -36,25 +36,37 @@ PKGINSTALL=	${WRKDIR}/INSTALL
 # to the actual release directory.
 do-install:
 	@(if ${TEST} -e ${ALIASDIR} ; then \
-	    if ! ${TEST} -L ${ALIASDIR} ; then \
+		if ! ${TEST} -L ${ALIASDIR} ; then \
 		${ECHO} "Make sure ${ALIASDIR} is a symbolic link"; \
 		${ECHO} "or does not exist. This directory will point to "; \
 		${ECHO} "the actual SmartEiffel installation directory."; \
 		exit 1; \
-	    fi; \
-	    ${RM} ${ALIASDIR}; \
+		fi; \
+		${RM} ${ALIASDIR}; \
 	fi; \
 	${LN} -fs ${SEDIR} ${ALIASDIR})
 	@(if ${TEST} -e ${SEDIR} ; then ${RM} -rf ${SEDIR}; fi; \
-	    ${MKDIR} ${SEDIR}; \
-	    ${CP} -pR ${WRKSRC}/* ${SEDIR}; \
-	    ${ECHO_CMD} ./ > ${SEDIR}/sys/loadpath.UNIX; \
-	    ${ECHO_CMD} ${SEDIR}/lib_std/ >> ${SEDIR}/sys/loadpath.UNIX; \
-	    ${ECHO_CMD} ${SEDIR}/lib_iterator/ >> ${SEDIR}/sys/loadpath.UNIX; \
-	    ${ECHO_CMD} ${SEDIR}/lib_random/ >> ${SEDIR}/sys/loadpath.UNIX; \
-	    ${ECHO_CMD} ${SEDIR}/lib_number/ >> ${SEDIR}/sys/loadpath.UNIX; \
-	    ${ECHO_CMD} ${SEDIR}/lib_show/ >> ${SEDIR}/sys/loadpath.UNIX; \
-	    ${ECHO_CMD} ${SEDIR}/lib_se/ >> ${SEDIR}/sys/loadpath.UNIX)
+		${MKDIR} ${SEDIR}; \
+		${CP} -pR ${WRKSRC}/* ${SEDIR}; \
+		${ECHO_CMD} ./ > ${SEDIR}/sys/loadpath.UNIX; \
+		${ECHO_CMD} ${SEDIR}/lib/kernel/ >> ${SEDIR}/sys/loadpath.UNIX; \
+		${ECHO_CMD} ${SEDIR}/lib/base/ >> ${SEDIR}/sys/loadpath.UNIX; \
+		${ECHO_CMD} ${SEDIR}/lib/io/ >> ${SEDIR}/sys/loadpath.UNIX; \
+		${ECHO_CMD} ${SEDIR}/lib/iterator/ >> ${SEDIR}/sys/loadpath.UNIX; \
+		${ECHO_CMD} ${SEDIR}/lib/random/ >> ${SEDIR}/sys/loadpath.UNIX; \
+		${ECHO_CMD} ${SEDIR}/lib/number/ >> ${SEDIR}/sys/loadpath.UNIX; \
+		${ECHO_CMD} ${SEDIR}/lib/sorting/ >> ${SEDIR}/sys/loadpath.UNIX; \
+		${ECHO_CMD} ${SEDIR}/lib/time/ >> ${SEDIR}/sys/loadpath.UNIX; \
+		${ECHO_CMD} ${SEDIR}/lib/scoop/ >> ${SEDIR}/sys/loadpath.UNIX; \
+		${ECHO_CMD} ${SEDIR}/lib/misc/ >> ${SEDIR}/sys/loadpath.UNIX; \
+		${ECHO_CMD} ${SEDIR}/tools/ >> ${SEDIR}/sys/loadpath.UNIX; \
+		${ECHO_CMD} ${SEDIR}/tools/expression/ >> ${SEDIR}/sys/loadpath.UNIX; \
+		${ECHO_CMD} ${SEDIR}/tools/instruction/ >> ${SEDIR}/sys/loadpath.UNIX; \
+		${ECHO_CMD} ${SEDIR}/tools/e_type/ >> ${SEDIR}/sys/loadpath.UNIX; \
+		${ECHO_CMD} ${SEDIR}/tools/feature/ >> ${SEDIR}/sys/loadpath.UNIX; \
+		${ECHO_CMD} ${SEDIR}/tools/run_feature/ >> ${SEDIR}/sys/loadpath.UNIX; \
+		${ECHO_CMD} ${SEDIR}/tools/misc/ >> ${SEDIR}/sys/loadpath.UNIX; \
+		${ECHO_CMD} ${SEDIR}/tutorial/ >> ${SEDIR}/sys/loadpath.UNIX)
 	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" ${PKGDIR}/pkg-message \
 		> ${PKGMESSAGE}
 	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" ${PKGDIR}/pkg-install \
