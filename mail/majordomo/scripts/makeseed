@@ -1,0 +1,14 @@
+#!/usr/bin/perl
+my $file = $ARGV[0];
+my $seed = '';
+my $i;
+my $patt = "./0123456789abcdefghijklmnopqrstuvwxyzQWERTYUIOPASDFGHJKLZXCVBNM";
+die unless $file;
+srand;
+for( $i = 1; $i <= 40; $i++ ) {
+   $seed = $seed . substr( $patt, int( rand() * 64 ), 1 );
+}
+open OUT, ">>$file" || die "Cannot open output file";
+print OUT "\n## Set cookie_seed to value generated during install\n";
+printf OUT '$cookie_seed="%s";'."\n", $seed;
+close( OUT );
