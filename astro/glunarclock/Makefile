@@ -7,6 +7,7 @@
 
 PORTNAME=	glunarclock
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	astro gnome
 MASTER_SITES=	http://www.fortunecity.de/naturpark/bienen/99/download/
 
