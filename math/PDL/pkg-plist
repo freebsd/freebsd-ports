@@ -187,8 +187,10 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Slices.html
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Tests.html
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Tips.html
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Types.html
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/pod2htmd.x~~
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/pod2htmi.x~~
+%%OLD_PERL:%%lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/pod2html-dircache
+%%OLD_PERL:%%lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/pod2html-itemcache
+%%NEW_PERL:%%lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/pod2htmd.x~~
+%%NEW_PERL:%%lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/pod2htmi.x~~
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/IO/Browser.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/IO/FastRaw.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/IO/FlexRaw.pm

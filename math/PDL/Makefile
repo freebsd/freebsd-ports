@@ -43,6 +43,12 @@ pre-extract:
 BROKEN=	test script t/flexraw.t fails all 26 tests
 .endif
 
+.if ${OSVERSION} >= 500007
+PLIST_SUB+=	NEW_PERL:="" OLD_PERL:="@comment "
+.else
+PLIST_SUB+=	NEW_PERL:="@comment " OLD_PERL:=""
+.endif
+
 MAN1=	PDL::Philosophy.1 PDL::Internals.1 PDL::PP.1 PDL::Tips.1 \
 	PDL::Dataflow.1 PDL::Indexing.1 PDL::FAQ.1 PDL::Delta.1 \
 	PDL::Objects.1 PDL::Impatient.1 pdl.1 perldl.1
