@@ -56,6 +56,7 @@
     SUBDIR += rpm4
     SUBDIR += ruby-bz2
     SUBDIR += ruby-zip
+    SUBDIR += rvm
     SUBDIR += sectar
     SUBDIR += squsq
     SUBDIR += star
