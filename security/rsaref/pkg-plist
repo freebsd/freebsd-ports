@@ -9,3 +9,4 @@ include/global.h
 include/rsaref.h
 share/doc/rsaref/info.txt
 share/doc/rsaref/rsaref.txt
+@dirrm share/doc/rsaref
