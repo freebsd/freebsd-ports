@@ -5625,6 +5625,7 @@ pcre++		ports/devel/pcre++
 pcsc-lite	ports/devel/pcsc-lite
 pd		ports/audio/pd
 pdflib		ports/print/pdflib
+pdflib-perl	ports/print/pdflib-perl
 pdflib3		ports/print/pdflib3
 pdfmap		ports/misc/pdfmap
 pdftohtml	ports/textproc/pdftohtml
