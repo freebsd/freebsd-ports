@@ -3,7 +3,7 @@
 # Date created:		20 Oct 1994 (1.4), 18 Dec 1996 (1.5.1)
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.27 1998/02/11 17:58:27 andreas Exp $
+# $Id: Makefile,v 1.28 1998/08/16 18:56:31 hoek Exp $
 #
 
 DISTNAME=	inn-1.7.2
@@ -18,12 +18,12 @@ PGPVERIFY?=	DONT
 # TCL and/or PERL support is needed for writing filters
 # if you want to enable tcl support, set USE_TCL to "DO"
 # if you want to enable perl5 support, set USE_PERL5 to "DO"
-USE_TCL?=	DONT
-USE_PERL5?=	DONT
+#USE_TCL?=	DO
+#USE_PERL5?=	DO
 
 SCRIPTS_ENV=	PGPVERIFY=${PGPVERIFY} USE_TCL=${USE_TCL} \
 		USE_PERL5=${USE_PERL5} PERL_VERSION=${PERL_VERSION}
-		
+
 
 NO_PACKAGE=	"Too many compile-time options"
 MAN1=	convdate.1 getlist.1 grephistory.1 inews.1 innconfval.1 installit.1 \
