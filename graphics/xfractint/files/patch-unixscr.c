@@ -1,17 +1,3 @@
---- soi.c.orig	Mon Sep  6 10:38:10 1999
-+++ soi.c	Fri Oct  8 18:25:33 1999
-@@ -19,7 +19,11 @@
- 
- #define DBLS LDBL
- #define FABS(x)  fabsl(x)
-+#ifdef __FreeBSD__
-+#define FREXP(x,y) frexp(x,y)
-+#else
- #define FREXP(x,y) frexpl(x,y)
-+#endif
- 
- #define TRUE 1
- #define FALSE 0
 --- unixscr.c.orig	Wed Apr 28 23:12:03 1999
 +++ unixscr.c	Fri Oct  8 18:24:15 1999
 @@ -241,7 +241,7 @@
