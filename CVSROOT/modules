@@ -4608,6 +4608,7 @@ openoffice-it	ports/editors/openoffice-it
 openoffice-nl	ports/editors/openoffice-nl
 openoffice-pl	ports/editors/openoffice-pl
 openoffice-pt	ports/editors/openoffice-pt
+openoffice-se	ports/editors/openoffice-se
 openoffice-tr	ports/editors/openoffice-tr
 openquicktime	ports/graphics/openquicktime
 opensched	ports/textproc/opensched
