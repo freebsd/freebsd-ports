@@ -23,6 +23,8 @@ etc/apache/ssl.key/snakeoil-ca.key
 etc/apache/ssl.key/server.key
 etc/rc.d/apache.sh
 include/apache/alloc.h
+include/apache/ap_ctx.h
+include/apache/ap_hook.h
 include/apache/ap.h
 include/apache/ap_compat.h
 include/apache/ap_config.h
@@ -53,17 +55,36 @@ include/apache/util_date.h
 include/apache/util_md5.h
 include/apache/util_script.h
 include/apache/util_uri.h
+libexec/apache/libproxy.so
+libexec/apache/libssl.so
+libexec/apache/mod_access.so
+libexec/apache/mod_actions.so
+libexec/apache/mod_alias.so
+libexec/apache/mod_asis.so
+libexec/apache/mod_auth.so
 libexec/apache/mod_auth_anon.so
 libexec/apache/mod_auth_db.so
+libexec/apache/mod_autoindex.so
 libexec/apache/mod_cern_meta.so
+libexec/apache/mod_cgi.so
 libexec/apache/mod_digest.so
+libexec/apache/mod_dir.so
+libexec/apache/mod_env.so
 libexec/apache/mod_expires.so
 libexec/apache/mod_headers.so
+libexec/apache/mod_imap.so
+libexec/apache/mod_include.so
 libexec/apache/mod_info.so
+libexec/apache/mod_log_config.so
+libexec/apache/mod_mime.so
 libexec/apache/mod_mime_magic.so
+libexec/apache/mod_negotiation.so
 libexec/apache/mod_rewrite.so
+libexec/apache/mod_setenvif.so
 libexec/apache/mod_speling.so
+libexec/apache/mod_status.so
 libexec/apache/mod_unique_id.so
+libexec/apache/mod_userdir.so
 libexec/apache/mod_usertrack.so
 sbin/ab
 sbin/apachectl
@@ -71,7 +92,6 @@ sbin/apxs
 sbin/httpd
 sbin/logresolve
 sbin/rotatelogs
-sbin/ssl_gcache
 share/doc/apache/apache_pb.gif
 share/doc/apache/index.html
 share/doc/apache/manual/LICENSE
@@ -94,7 +114,6 @@ share/doc/apache/manual/images/mod_rewrite_fig1.fig
 share/doc/apache/manual/images/mod_rewrite_fig1.gif
 share/doc/apache/manual/images/mod_rewrite_fig2.fig
 share/doc/apache/manual/images/mod_rewrite_fig2.gif
-share/doc/apache/manual/images/mod_ssl.jpg
 share/doc/apache/manual/images/mod_ssl_sb.gif
 share/doc/apache/manual/images/ssleay.gif
 share/doc/apache/manual/images/sub.gif
@@ -170,11 +189,60 @@ share/doc/apache/manual/mod/mod_rewrite.html
 share/doc/apache/manual/mod/mod_setenvif.html
 share/doc/apache/manual/mod/mod_so.html
 share/doc/apache/manual/mod/mod_speling.html
-share/doc/apache/manual/mod/mod_ssl.html
 share/doc/apache/manual/mod/mod_status.html
 share/doc/apache/manual/mod/mod_unique_id.html
 share/doc/apache/manual/mod/mod_userdir.html
 share/doc/apache/manual/mod/mod_usertrack.html
+share/doc/apache/manual/mod/mod_ssl/index.html
+share/doc/apache/manual/mod/mod_ssl/ssl_compat.gfont000.gif
+share/doc/apache/manual/mod/mod_ssl/ssl_compat.html
+share/doc/apache/manual/mod/mod_ssl/ssl_cover_logo.jpg
+share/doc/apache/manual/mod/mod_ssl/ssl_cover_title.gif
+share/doc/apache/manual/mod/mod_ssl/ssl_faq.gfont000.gif
+share/doc/apache/manual/mod/mod_ssl/ssl_faq.html
+share/doc/apache/manual/mod/mod_ssl/ssl_glossary.html
+share/doc/apache/manual/mod/mod_ssl/ssl_intro.gfont000.gif
+share/doc/apache/manual/mod/mod_ssl/ssl_intro.html
+share/doc/apache/manual/mod/mod_ssl/ssl_intro_fig1.gif
+share/doc/apache/manual/mod/mod_ssl/ssl_intro_fig2.gif
+share/doc/apache/manual/mod/mod_ssl/ssl_intro_fig3.gif
+share/doc/apache/manual/mod/mod_ssl/ssl_overview.gfont000.gif
+share/doc/apache/manual/mod/mod_ssl/ssl_overview.html
+share/doc/apache/manual/mod/mod_ssl/ssl_overview_fig1.gif
+share/doc/apache/manual/mod/mod_ssl/ssl_reference.gfont000.gif
+share/doc/apache/manual/mod/mod_ssl/ssl_reference.html
+share/doc/apache/manual/mod/mod_ssl/ssl_template.head-chapter.gif
+share/doc/apache/manual/mod/mod_ssl/ssl_template.head-num-1.gif
+share/doc/apache/manual/mod/mod_ssl/ssl_template.head-num-2.gif
+share/doc/apache/manual/mod/mod_ssl/ssl_template.head-num-3.gif
+share/doc/apache/manual/mod/mod_ssl/ssl_template.head-num-4.gif
+share/doc/apache/manual/mod/mod_ssl/ssl_template.head-num-5.gif
+share/doc/apache/manual/mod/mod_ssl/ssl_template.head-num-6.gif
+share/doc/apache/manual/mod/mod_ssl/ssl_template.head-num-7.gif
+share/doc/apache/manual/mod/mod_ssl/ssl_template.imgdot-1x1-000000.gif
+share/doc/apache/manual/mod/mod_ssl/ssl_template.imgdot-1x1-transp.gif
+share/doc/apache/manual/mod/mod_ssl/ssl_template.navbut-next-n.gif
+share/doc/apache/manual/mod/mod_ssl/ssl_template.navbut-next-s.gif
+share/doc/apache/manual/mod/mod_ssl/ssl_template.navbut-prev-n.gif
+share/doc/apache/manual/mod/mod_ssl/ssl_template.navbut-prev-s.gif
+share/doc/apache/manual/mod/mod_ssl/ssl_template.title-abstract.gif
+share/doc/apache/manual/mod/mod_ssl/ssl_template.title-compat.gif
+share/doc/apache/manual/mod/mod_ssl/ssl_template.title-faq.gif
+share/doc/apache/manual/mod/mod_ssl/ssl_template.title-gloss.gif
+share/doc/apache/manual/mod/mod_ssl/ssl_template.title-howto.gif
+share/doc/apache/manual/mod/mod_ssl/ssl_template.title-intro.gif
+share/doc/apache/manual/mod/mod_ssl/ssl_template.title-over.gif
+share/doc/apache/manual/mod/mod_ssl/ssl_template.title-preface.gif
+share/doc/apache/manual/mod/mod_ssl/ssl_template.title-ref.gif
+share/doc/apache/manual/mod/mod_ssl/ssl_template.title-toc.gif
+share/doc/apache/manual/mod/mod_ssl/ssl_template.title-tutor.gif
+share/doc/apache/manual/mod/mod_ssl/ssl_compat.wml
+share/doc/apache/manual/mod/mod_ssl/ssl_cover.wml
+share/doc/apache/manual/mod/mod_ssl/ssl_faq.wml
+share/doc/apache/manual/mod/mod_ssl/ssl_glossary.wml
+share/doc/apache/manual/mod/mod_ssl/ssl_intro.wml
+share/doc/apache/manual/mod/mod_ssl/ssl_overview.wml
+share/doc/apache/manual/mod/mod_ssl/ssl_reference.wml
 share/doc/apache/manual/multilogs.html
 share/doc/apache/manual/new_features_1_0.html
 share/doc/apache/manual/new_features_1_1.html
@@ -299,6 +367,7 @@ www/icons/world2.gif
 @dirrm libexec/apache
 @dirrm share/doc/apache/manual/images
 @dirrm share/doc/apache/manual/misc
+@dirrm share/doc/apache/manual/mod/mod_ssl
 @dirrm share/doc/apache/manual/mod
 @dirrm share/doc/apache/manual/vhosts
 @dirrm share/doc/apache/manual
