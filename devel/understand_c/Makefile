@@ -1,6 +1,6 @@
 # New ports collection makefile for:	understand code browser for c/c++
 # Date created:		01 Mar 2001
-# Whom:			Mario Sergio Fujikawa Ferreira <liouxFreeBSD.org>
+# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	devel linux
 MASTER_SITES=	http://www.scitools.com/ftp/pub/download/understand_c/latest/
 DISTNAME=	und_c-14b105-linux
 
-MAINTAINER=	liouxFreeBSD.org
+MAINTAINER=	lioux@FreeBSD.org
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
