@@ -25,16 +25,20 @@ LDCONFIG_DIRS=	%%PREFIX%%/libexec/apache2/
 
 MAN3=		APR::PerlIO.3 APR::Table.3 Apache::Build.3 Apache::Log.3 \
 		Apache::Reload.3 Apache::RequestRec.3 Apache::ServerUtil.3 \
-		Apache::SubProcess.3 Apache::Test.3 Apache::TestConfig.3 \
+		Apache::SubProcess.3 Apache::Test.3 \
 		Apache::TestSmoke.3 Apache::TestTrace.3 Apache::TestUtil.3 \
 		Apache::compat.3 Bundle::ApacheTest.3 ModPerl::Code.3 \
-		ModPerl::Config.3 ModPerl::PerlRun.3 ModPerl::Registry.3 \
+		ModPerl::PerlRun.3 ModPerl::Registry.3 \
 		ModPerl::RegistryCooker.3
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 APACHE2_PORT?=	${PORTSDIR}/www/apache2
 
 .include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} > 500600
+MAN3+=		ModPerl::Config.3 Apache::TestConfig.3
+.endif
 
 ##
 ## this port requires PERL 5.6.x or later
