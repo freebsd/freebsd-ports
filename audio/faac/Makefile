@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	faac
 MAINTAINER=	ahze@ahze.net
 COMMENT=	FAAC is an AAC audio encoder
 
-LIB_DEPENDS=	faad.0:${PORTSDIR}/audio/faad
-
 NO_PACKAGE=	Distribution in binary form is prohibited
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
