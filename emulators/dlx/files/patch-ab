@@ -1,5 +1,23 @@
---- dlxsim/sim.c.orig	Wed May  8 13:37:56 1991
-+++ dlxsim/sim.c	Sat Dec 26 13:08:12 1998
+--- dlxsim/sim.c.orig	Thu May  9 04:37:56 1991
++++ dlxsim/sim.c	Sat Sep 28 02:42:32 2002
+@@ -22,7 +22,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <values.h>
++#include <limits.h>
+ #include <tcl.h>
+ #include "asm.h"
+ #include "dlx.h"
+@@ -2522,7 +2522,7 @@
+     break;
+   }
+     
+-  for (i = 0, soonest = MAXINT; i < num_units; i++) {
++  for (i = 0, soonest = INT_MAX; i < num_units; i++) {
+     if (!(j = machPtr->fp_units[unitType][i])) break;
+     else if (j < soonest) soonest = j;
+   }
 @@ -2833,7 +2833,7 @@
  static char *errstring()
  {
