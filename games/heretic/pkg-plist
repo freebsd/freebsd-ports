@@ -1,12 +1,12 @@
 bin/heretic
 bin/sndserver
-%%PORTDOCS%%share/doc/heretic/AUTHORS
-%%PORTDOCS%%share/doc/heretic/Changelog
-%%PORTDOCS%%share/doc/heretic/End User License Heretic Source Code.txt
-%%PORTDOCS%%share/doc/heretic/Gamekeys.txt
-%%PORTDOCS%%share/doc/heretic/README.opengl
-%%PORTDOCS%%share/doc/heretic/README.txt
-%%PORTDOCS%%share/doc/heretic/SourceReadme.txt
-%%PORTDOCS%%@dirrm share/doc/heretic
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/Changelog
+%%PORTDOCS%%%%DOCSDIR%%/End User License Heretic Source Code.txt
+%%PORTDOCS%%%%DOCSDIR%%/Gamekeys.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.opengl
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/SourceReadme.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%WAD:%%share/heretic/heretic_share.wad
 %%WAD:%%@dirrm share/heretic
