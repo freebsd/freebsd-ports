@@ -3,7 +3,7 @@
 # Date created:		Thu May  1 20:28:44 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.10 1999/07/19 20:21:14 andreas Exp $
+# $Id: Makefile,v 1.11 1999/07/19 20:21:45 andreas Exp $
 #
 
 DISTNAME=		star-1.2
@@ -26,7 +26,7 @@ post-extract:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/star/OBJ/${MACHINE_ARCH}-freebsd-cc/star \
-		${PREFIX}/bin
+		${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/star/star.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
