@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20030705
+PORTVERSION=	20030720
 CATEGORIES=	security
 MASTER_SITES=	http://clamav.elektrapro.com/snapshot/ \
 		http://clamav.essentkabel.com/snapshot/ \
@@ -39,7 +39,7 @@ MAN8=		clamd.8
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 500000
+.if exists(/usr/include/libmilter/mfapi.h)
 CONFIGURE_ARGS+=	--enable-milter
 PLIST_SUB+=	CLAMAV-MILTER:=""
 .else
