@@ -11397,6 +11397,7 @@ w3mir		ports/www/w3mir
 w9wm		ports/x11-wm/w9wm
 wa-aspell	ports/textproc/wa-aspell
 waccess	ports/www/waccess
+wacko		ports/www/wacko
 waimea		ports/x11-wm/waimea
 wais		ports/net/wais
 wait_on		ports/sysutils/wait_on
