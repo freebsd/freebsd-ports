@@ -1,0 +1,17 @@
+Sarien is an open source, portable implementation of the Sierra
+On-Line Adventure Game Interpreter (AGI).  Sarien is able to
+execute Sierra On-Line AGI games at different levels of
+playability. 
+
+Supported games:
+                 Leisure Suit Larry 1
+		 King's Quest I - IV
+		 Mixed-Up Mother Gooose
+                 Space Quest 1 and 2
+		 Police Quest 1
+		 Black Cauldron
+		 Gold Rush
+		 Manhunter
+
+Newer Sierra games are using SCI game engine, which is emulated by
+freesci.
