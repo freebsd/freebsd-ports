@@ -1,0 +1,13 @@
+bin/javac
+bin/javadoc
+bin/kaffe
+bin/kaffeh
+include/kaffe/native.h
+include/kaffe/stubPreamble.h
+lib/libnative.so.0.2
+lib/libnet.so.0.2
+@exec /sbin/ldconfig -m %B
+share/kaffe/classes.zip
+share/kaffe/lib/javac.properties
+share/kaffe/COPYRIGHT
+share/kaffe/license.terms
