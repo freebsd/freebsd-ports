@@ -266,16 +266,16 @@ share/toolbar/viewmag+.xpm
 share/toolbar/viewmag-.xpm
 share/toolbar/viewmag.xpm
 share/toolbar/viewzoom.xpm
-@exec ln -sf libjscript.so %D/lib/libjscript.so.2
-@exec ln -sf libkab.so %D/lib/libkab.so.2
-@exec ln -sf libkdecore.so %D/lib/libkdecore.so.2
-@exec ln -sf libkdeui.so %D/lib/libkdeui.so.2
-@exec ln -sf libkfile.so %D/lib/libkfile.so.2
-@exec ln -sf libkfm.so %D/lib/libkfm.so.2
-@exec ln -sf libkhtmlw.so %D/lib/libkhtmlw.so.2
-@exec ln -sf libkimgio.so %D/lib/libkimgio.so.2
-@exec ln -sf libkspell.so %D/lib/libkspell.so.2
-@exec ln -sf libmediatool.so %D/lib/libmediatool.so.2
+@exec ln -sf %D/lib/libjscript.so.2 libjscript.so
+@exec ln -sf %D/lib/libkab.so.2 libkab.so
+@exec ln -sf %D/lib/libkdecore.so.2 libkdecore.so
+@exec ln -sf %D/lib/libkdeui.so.2 libkdeui.so
+@exec ln -sf %D/lib/libkfile.so.2 libkfile.so
+@exec ln -sf %D/lib/libkfm.so.2 libkfm.so
+@exec ln -sf %D/lib/libkhtmlw.so.2 libkhtmlw.so
+@exec ln -sf %D/lib/libkimgio.so.2 libkimgio.so
+@exec ln -sf %D/lib/libkspell.so.2 libkspell.so
+@exec ln -sf %D/lib/libmediatool.so.2 libmediatool.so
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @dirrm share/toolbar
 @dirrm share/locale/zh_TW.Big5/LC_MESSAGES
