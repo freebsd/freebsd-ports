@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libgphoto2
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gphoto
@@ -26,8 +26,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-MAN3=		gphoto2.3 gphoto2_port.3
+MAN3=		libgphoto2.3 libgphoto2_port.3
 
 post-patch:
 .for file in configure libgphoto2_port/configure
