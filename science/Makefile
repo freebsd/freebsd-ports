@@ -9,6 +9,7 @@
     SUBDIR += chemtool
     SUBDIR += chemtool-devel
     SUBDIR += clhep
+    SUBDIR += dft++
     SUBDIR += euler
     SUBDIR += felt
     SUBDIR += flounder

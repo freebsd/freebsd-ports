@@ -1,0 +1,11 @@
+bin/dft-pw
+bin/dft-wl
+%%EXAMPLESDIR%%/dft.in
+%%EXAMPLESDIR%%/output
+%%EXAMPLESDIR%%/si_psp.tar
+%%EXAMPLESDIR%%/Si/loc.1002.02
+%%EXAMPLESDIR%%/Si/nl.d.501.02
+%%EXAMPLESDIR%%/Si/nl.p.501.02
+%%EXAMPLESDIR%%/Si/si.pot
+@dirrm %%EXAMPLESDIR%%/Si
+@dirrm %%EXAMPLESDIR%%
