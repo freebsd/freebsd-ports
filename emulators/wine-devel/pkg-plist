@@ -1,7 +1,6 @@
 bin/function_grep.pl
 bin/notepad
 bin/progman
-bin/regSet.sh
 bin/regedit
 bin/regsvr32
 bin/uninstaller
@@ -335,6 +334,7 @@ lib/wine/dsound.dll.so
 lib/wine/expand.exe.so
 lib/wine/gdi.exe.so
 lib/wine/gdi32.dll.so
+lib/wine/glut32.dll.so
 lib/wine/icinfo.exe.so
 lib/wine/icmp.dll.so
 lib/wine/imaadp32.acm.so
@@ -377,6 +377,7 @@ lib/wine/libdmsynth.def
 lib/wine/libdmusic.def
 lib/wine/libdmusic32.def
 lib/wine/libdpnhpast.def
+lib/wine/libglut32.def
 lib/wine/libmshtml.def
 lib/wine/libmsvcrtd.def
 lib/wine/libdplay.def
@@ -430,6 +431,7 @@ lib/wine/libsti.def
 lib/wine/libtapi32.def
 lib/wine/libttydrv.def
 lib/wine/libtwain_32.def
+lib/wine/libunicows.def
 lib/wine/liburl.def
 lib/wine/liburlmon.def
 lib/wine/libuser32.def
@@ -505,7 +507,6 @@ lib/wine/qcap.dll.so
 lib/wine/quartz.dll.so
 lib/wine/rasapi16.dll.so
 lib/wine/rasapi32.dll.so
-lib/wine/regapi.exe.so
 lib/wine/regedit.exe.so
 lib/wine/regsvr32.exe.so
 lib/wine/riched32.dll.so
@@ -532,6 +533,7 @@ lib/wine/toolhelp.dll.so
 lib/wine/ttydrv.dll.so
 lib/wine/twain_32.dll.so
 lib/wine/typelib.dll.so
+lib/wine/unicows.dll.so
 lib/wine/uninstaller.exe.so
 lib/wine/url.dll.so
 lib/wine/urlmon.dll.so
@@ -586,21 +588,17 @@ lib/wine/wprocs.dll.so
 lib/wine/ws2_32.dll.so
 lib/wine/wsock32.dll.so
 lib/wine/x11drv.dll.so
-lib/wine/reg/regFixer.pl
-lib/wine/reg/regRestorer.pl
 share/aclocal/wine.m4
 %%DOCSDIR%%/ANNOUNCE
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/LICENSE
 %%DOCSDIR%%/README
-%%DOCSDIR%%/README.regapi
 %%DOCSDIR%%/README.wcmd
 %%DOCSDIR%%/README.winedbg
 %%DOCSDIR%%/README.winedump
 %%PORTDOCS%%@dirrm share/doc/wine
 @unexec if [ -f %D/lib/wine/glu32.dll.so    ]; then rm %D/lib/wine/glu32.dll.so; fi
 @unexec if [ -f %D/lib/wine/opengl32.dll.so ]; then rm %D/lib/wine/opengl32.dll.so; fi
-@dirrm lib/wine/reg
 @dirrm lib/wine
 @dirrm include/wine/msvcrt/sys
 @dirrm include/wine/msvcrt
