@@ -211,6 +211,7 @@
     SUBDIR += linux-q3ademo
     SUBDIR += lm-solve
     SUBDIR += ltris
+    SUBDIR += macopix
     SUBDIR += madbomber
     SUBDIR += maelstrom
     SUBDIR += magiccube4d
