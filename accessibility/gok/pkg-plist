@@ -1,52 +1,72 @@
 bin/gok
-etc/gconf/schemas/gok.schemas
 etc/gconf/gconf.xml.defaults/apps/gok/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gok/layout/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gok/actions/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gok/actions/switch1/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gok/actions/switch2/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gok/actions/switch3/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gok/actions/switch4/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gok/actions/switch5/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gok/actions/dwell/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gok/actions/mousebutton1/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gok/actions/mousebutton2/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gok/actions/mousebutton3/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gok/actions/mousebutton4/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gok/actions/mousebutton5/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gok/actions/mousepointer/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gok/actions/dwell/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gok/actions/switch1/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gok/actions/switch2/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gok/actions/switch3/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gok/actions/switch4/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gok/actions/switch5/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gok/feedbacks/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gok/feedbacks/none/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gok/feedbacks/key_flashing/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gok/feedbacks/goksound1/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gok/feedbacks/goksound2/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gok/feedbacks/key_flashing/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gok/feedbacks/none/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gok/layout/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gok/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gok/layout/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/switch1/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/switch2/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/switch3/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/switch4/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/switch5/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/dwell/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/mousebutton1/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/mousebutton2/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/mousebutton3/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/mousebutton4/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/mousebutton5/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/mousepointer/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/dwell/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/switch1/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/switch2/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/switch3/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/switch4/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/switch5/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gok/feedbacks/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gok/feedbacks/none/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gok/feedbacks/key_flashing/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gok/feedbacks/goksound1/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gok/feedbacks/goksound2/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gok/feedbacks/key_flashing/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gok/feedbacks/none/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gok/layout/%gconf.xml
+etc/gconf/schemas/gok.schemas
 libdata/pkgconfig/gok-1.0.pc
+share/gnome/gok/Keyboard.kbd
+share/gnome/gok/alphabet.kbd
+share/gnome/gok/automatic-scanning.xam
+share/gnome/gok/dictionary.txt
+share/gnome/gok/direct-selection.xam
+share/gnome/gok/dwell-selection.xam
+share/gnome/gok/gok.rc
+share/gnome/gok/goksound1.wav
+share/gnome/gok/goksound2.wav
+share/gnome/gok/inverse-scanning.xam
+share/gnome/gok/launcher.kbd
+share/gnome/gok/main.kbd
+share/gnome/gok/manage.kbd
+share/gnome/gok/move-resize.kbd
+share/gnome/gok/qwerty.kbd
+share/gnome/help/gok/C/gok.xml
+share/gnome/omf/gok/gok-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gok/gok-C.omf
 share/locale/am/LC_MESSAGES/gok.mo
 share/locale/ca/LC_MESSAGES/gok.mo
 share/locale/cs/LC_MESSAGES/gok.mo
+share/locale/da/LC_MESSAGES/gok.mo
 share/locale/de/LC_MESSAGES/gok.mo
 share/locale/es/LC_MESSAGES/gok.mo
 share/locale/fr/LC_MESSAGES/gok.mo
+share/locale/ja/LC_MESSAGES/gok.mo
 share/locale/nl/LC_MESSAGES/gok.mo
 share/locale/no/LC_MESSAGES/gok.mo
 share/locale/pt/LC_MESSAGES/gok.mo
@@ -54,68 +74,50 @@ share/locale/pt_BR/LC_MESSAGES/gok.mo
 share/locale/sv/LC_MESSAGES/gok.mo
 share/locale/uk/LC_MESSAGES/gok.mo
 share/locale/vi/LC_MESSAGES/gok.mo
-share/gnome/help/gok/C/gok.xml
-share/gnome/omf/gok/gok-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gok/gok-C.omf
-share/gnome/gok/main.kbd
-share/gnome/gok/qwerty.kbd
-share/gnome/gok/alphabet.kbd
-share/gnome/gok/manage.kbd
-share/gnome/gok/launcher.kbd
-share/gnome/gok/move-resize.kbd
-share/gnome/gok/direct-selection.xam
-share/gnome/gok/dwell-selection.xam
-share/gnome/gok/automatic-scanning.xam
-share/gnome/gok/inverse-scanning.xam
-share/gnome/gok/dictionary.txt
-share/gnome/gok/gok.rc
-share/gnome/gok/goksound1.wav
-share/gnome/gok/goksound2.wav
-share/gnome/gok/Keyboard.kbd
-@dirrm share/gnome/gok
 @dirrm share/gnome/omf/gok
 @dirrm share/gnome/help/gok/C/figures
 @dirrm share/gnome/help/gok/C
 @dirrm share/gnome/help/gok
+@dirrm share/gnome/gok
 @dirrm share/doc/gok
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok/feedbacks/goksound1
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok/feedbacks/goksound2
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok/feedbacks/key_flashing
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok/layout
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok/feedbacks/none
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok/feedbacks/key_flashing
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok/feedbacks/goksound2
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok/feedbacks/goksound1
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok/feedbacks
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/dwell
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/switch5
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/switch4
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/switch3
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/switch2
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/switch1
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/mousepointer
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/mousebutton5
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/mousebutton4
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/mousebutton3
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/mousebutton2
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/mousebutton1
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/switch5
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/switch4
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/switch3
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/switch2
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/switch1
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions/dwell
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok/actions
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok/layout
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok
-@dirrm etc/gconf/gconf.xml.defaults/apps/gok/feedbacks/goksound1
-@dirrm etc/gconf/gconf.xml.defaults/apps/gok/feedbacks/goksound2
-@dirrm etc/gconf/gconf.xml.defaults/apps/gok/feedbacks/key_flashing
+@dirrm etc/gconf/gconf.xml.defaults/apps/gok/layout
 @dirrm etc/gconf/gconf.xml.defaults/apps/gok/feedbacks/none
+@dirrm etc/gconf/gconf.xml.defaults/apps/gok/feedbacks/key_flashing
+@dirrm etc/gconf/gconf.xml.defaults/apps/gok/feedbacks/goksound2
+@dirrm etc/gconf/gconf.xml.defaults/apps/gok/feedbacks/goksound1
 @dirrm etc/gconf/gconf.xml.defaults/apps/gok/feedbacks
-@dirrm etc/gconf/gconf.xml.defaults/apps/gok/actions/dwell
+@dirrm etc/gconf/gconf.xml.defaults/apps/gok/actions/switch5
+@dirrm etc/gconf/gconf.xml.defaults/apps/gok/actions/switch4
+@dirrm etc/gconf/gconf.xml.defaults/apps/gok/actions/switch3
+@dirrm etc/gconf/gconf.xml.defaults/apps/gok/actions/switch2
+@dirrm etc/gconf/gconf.xml.defaults/apps/gok/actions/switch1
 @dirrm etc/gconf/gconf.xml.defaults/apps/gok/actions/mousepointer
 @dirrm etc/gconf/gconf.xml.defaults/apps/gok/actions/mousebutton5
 @dirrm etc/gconf/gconf.xml.defaults/apps/gok/actions/mousebutton4
 @dirrm etc/gconf/gconf.xml.defaults/apps/gok/actions/mousebutton3
 @dirrm etc/gconf/gconf.xml.defaults/apps/gok/actions/mousebutton2
 @dirrm etc/gconf/gconf.xml.defaults/apps/gok/actions/mousebutton1
-@dirrm etc/gconf/gconf.xml.defaults/apps/gok/actions/switch5
-@dirrm etc/gconf/gconf.xml.defaults/apps/gok/actions/switch4
-@dirrm etc/gconf/gconf.xml.defaults/apps/gok/actions/switch3
-@dirrm etc/gconf/gconf.xml.defaults/apps/gok/actions/switch2
-@dirrm etc/gconf/gconf.xml.defaults/apps/gok/actions/switch1
+@dirrm etc/gconf/gconf.xml.defaults/apps/gok/actions/dwell
 @dirrm etc/gconf/gconf.xml.defaults/apps/gok/actions
-@dirrm etc/gconf/gconf.xml.defaults/apps/gok/layout
 @dirrm etc/gconf/gconf.xml.defaults/apps/gok
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gok/gok-C.omf
