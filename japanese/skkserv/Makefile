@@ -13,18 +13,18 @@ DISTNAME=	skk${PORTVERSION}
 
 MAINTAINER=	matusita@FreeBSD.org
 
-BUILD_DEPENDS=	${NONEXISTENT}:${SKK_MASTERDIR}:configure
-RUN_DEPENDS=	${PREFIX}/share/skk/${SKKJISYO}:${SKK_MASTERDIR}
+RUN_DEPENDS=	${LOCALBASE}/share/skk/${SKKJISYO}:${PORTSDIR}/japanese/skk-jisyo
 
 SKKJISYO_SIZE?=	L
 SKKJISYO?=	SKK-JISYO.${SKKJISYO_SIZE}
-SKK_MASTERDIR=	${.CURDIR}/../../japanese/skk-jisyo
-WRKSRC=		${WRKDIRPREFIX}${SKK_MASTERDIR}/work/skk-${PORTVERSION}
+WRKSRC=		${WRKDIR}/skk-${PORTVERSION}
+GNU_CONFIGURE=	yes
 MAKE_ARGS=	SUBDIRS='skkserv'
-
+CONFIGURE_ARGS+=	--with-jisyo=${SKKJISYO} --libexecdir=${PREFIX}/sbin
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/skkserv.sh
 
-post-install:
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/skkserv/skkserv ${PREFIX}/sbin
 	@if [ ! -f ${STARTUP_SCRIPT} ]; then \
 		${ECHO} "Installing ${STARTUP_SCRIPT} file."; \
 		${ECHO_CMD} "#!/bin/sh" > ${STARTUP_SCRIPT}; \
