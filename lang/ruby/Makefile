@@ -58,7 +58,7 @@ post-patch:
 post-install:
 	strip ${RUBY}
 .if empty(RUBY_SUFFIX)
-	${MV} ${RUBY} ${RUBY}${_RUBY_SUFFIX}
+	${MV} -f ${RUBY} ${RUBY}${_RUBY_SUFFIX}
 	${LN} -fs ${RUBY}${_RUBY_SUFFIX} ${RUBY}
 	${MV} ${PREFIX}/man/man1/ruby.1 ${PREFIX}/man/man1/ruby${_RUBY_SUFFIX}.1
 .else
