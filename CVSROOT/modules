@@ -346,7 +346,7 @@ apr		ports/devel/apr
 apsfilter	ports/print/apsfilter
 aqmoney		ports/finance/aqmoney
 aqsis		ports/graphics/aqsis
-ar-openoffice	ports/editors/openoffice-ar
+ar-openoffice-1.0	ports/editors/openoffice-1.0-ar
 arc		ports/archivers/arc
 arcexplorer	ports/databases/arcexplorer
 arch		ports/devel/arch
@@ -1291,7 +1291,7 @@ djbdns		ports/dns/djbdns
 djbfft		ports/math/djbfft
 djvulibre	ports/graphics/djvulibre
 djvuplugin	ports/www/djvuplugin
-dk-openoffice	ports/editors/openoffice-dk
+dk-openoffice-1.0	ports/editors/openoffice-1.0-dk
 dkimap4		ports/mail/dkimap4
 dlint		ports/dns/dlint
 dlx		ports/emulators/dlx
@@ -1550,7 +1550,7 @@ erwn		ports/www/erwn
 es		ports/shells/es
 es-aspell	ports/textproc/es-aspell
 es-ooodict-ES	ports/editors/ooodict-es_ES
-es-openoffice	ports/editors/openoffice-es
+es-openoffice-1.0	ports/editors/openoffice-1.0-es
 esdl		ports/devel/esdl
 esh		ports/shells/esh
 eshell-emacs20	ports/editors/eshell-emacs20
@@ -2384,7 +2384,7 @@ gqmpeg		ports/audio/gqmpeg
 gqradio		ports/audio/gqradio
 gqview		ports/graphics/gqview
 gqview-devel	ports/graphics/gqview-devel
-gr-openoffice	ports/editors/openoffice-gr
+gr-openoffice-1.0	ports/editors/openoffice-1.0-gr
 grace		ports/math/grace
 gracer		ports/games/gracer
 gracetmpl	ports/math/gracetmpl
@@ -4952,7 +4952,7 @@ njs		ports/lang/njs
 nl-aspell	ports/textproc/nl-aspell
 nl-ispell	ports/textproc/nl-ispell
 nl-ooodict-NL	ports/editors/ooodict-nl_NL
-nl-openoffice	ports/editors/openoffice-nl
+nl-openoffice-1.0	ports/editors/openoffice-1.0-nl
 nload		ports/net/nload
 nltk		ports/textproc/nltk
 nmap		ports/security/nmap
@@ -5119,14 +5119,14 @@ openmcu		ports/net/openmcu
 opennap		ports/audio/opennap
 openoffice-1.0	ports/editors/openoffice-1.0
 openoffice-1.1	ports/editors/openoffice-1.1
-openoffice-ar	ports/editors/openoffice-ar
-openoffice-dk	ports/editors/openoffice-dk
-openoffice-es	ports/editors/openoffice-es
-openoffice-gr	ports/editors/openoffice-gr
-openoffice-it	ports/editors/openoffice-it
-openoffice-nl	ports/editors/openoffice-nl
-openoffice-se	ports/editors/openoffice-se
-openoffice-tr	ports/editors/openoffice-tr
+openoffice-1.0-ar	ports/editors/openoffice-1.0-ar
+openoffice-1.0-dk	ports/editors/openoffice-1.0-dk
+openoffice-1.0-es	ports/editors/openoffice-1.0-es
+openoffice-1.0-gr	ports/editors/openoffice-1.0-gr
+openoffice-1.0-it	ports/editors/openoffice-1.0-it
+openoffice-1.0-nl	ports/editors/openoffice-1.0-nl
+openoffice-1.0-se	ports/editors/openoffice-1.0-se
+openoffice-1.0-tr	ports/editors/openoffice-1.0-tr
 openproducer	ports/graphics/openproducer
 openquicktime	ports/multimedia/openquicktime
 openradius	ports/net/openradius
@@ -7824,7 +7824,7 @@ sdpa		ports/math/sdpa
 sdr		ports/mbone/sdr
 sdts++		ports/devel/sdts++
 se-ispell	ports/textproc/se-ispell
-se-openoffice	ports/editors/openoffice-se
+se-openoffice-1.0	ports/editors/openoffice-1.0-se
 seabattle	ports/games/seabattle
 seahaven	ports/games/seahaven
 seahorse	ports/security/seahorse
@@ -8486,7 +8486,7 @@ tpg		ports/devel/tpg
 tpop3d		ports/mail/tpop3d
 tptest		ports/net/tptest
 tr-ircd		ports/irc/tr-ircd
-tr-openoffice	ports/editors/openoffice-tr
+tr-openoffice-1.0	ports/editors/openoffice-1.0-tr
 tr2latex	ports/print/tr2latex
 tracker		ports/audio/tracker
 tractorgen	ports/games/tractorgen
