@@ -39,6 +39,7 @@ share/doc/mutt/manual_ja.html
 share/doc/mutt/manual_ja.sgml
 share/doc/mutt/manual_ja.tex
 share/doc/mutt/manual_ja.txt
+share/doc/mutt/patch-notes.txt
 share/doc/mutt/samples/Mush.rc
 share/doc/mutt/samples/Pine.rc
 share/doc/mutt/samples/Tin.rc

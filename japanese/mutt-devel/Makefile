@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.emaillab.org/mutt/1.3/ \
 		ftp://ftp.mutt.org/pub/mutt/devel/
 DISTNAME=	${PORTNAME}-${VERSION}i
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${DISTNAME}-ja${JP_VERSION}${EXTRACT_SUFX} \
+		${DISTNAME}-ja.${JP_VERSION}${EXTRACT_SUFX} \
 		manual_ja-${MANUALVERSION}i-0${EXTRACT_SUFX}
 
 MAINTAINER=	shuna@pop16.odn.ne.jp
@@ -29,8 +29,8 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/msgfmt:${PORTSDIR}/devel/gettext
 .endif
 RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview
 
-VERSION=	1.3.23
-JP_VERSION=	0
+VERSION=	1.3.24
+JP_VERSION=	1
 MANUALVERSION=	1.3.23
 
 DIST_SUBDIR=	mutt
@@ -41,7 +41,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${VERSION}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-slang --enable-locales-fix \
-		--with-iconv=${PREFIX} \
+		--with-libiconv-prefix=${PREFIX} \
 		--without-wc-funcs \
 		--enable-flock --disable-fcntl \
 		--sysconfdir=${PREFIX}/etc \
@@ -52,6 +52,7 @@ CONFIGURE_ARGS=	--with-slang --enable-locales-fix \
 CONFIGURE_ARGS+=	--with-included-gettext
 .endif
 
+NOMANCOMPRESS=	yes
 MAN1=		flea.1 mutt.1 muttbug.1 mutt_dotlock.1
 MAN5=		muttrc.5 mbox.5
 
@@ -62,11 +63,12 @@ USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--with-ssl
 .endif
 
-DIFFDIR=	${WRKDIR}/${DISTNAME}-ja${JP_VERSION}
-DIFFNAME=	${DISTNAME}-ja${JP_VERSION}.diff
+DIFFDIR=	${WRKDIR}/${DISTNAME}-ja.${JP_VERSION}
+DIFFNAME=	patch-${VERSION}.tt.ja.${JP_VERSION}
 SRCDOCSDIR=	${WRKDIR}/manual_ja-${MANUALVERSION}
 
 pre-patch:
+	(cd ${DIFFDIR}; ${PATCH} < ${FILESDIR}/prepatch-aa)
 	(cd ${WRKSRC}; ${PATCH} -p1 < ${DIFFDIR}/${DIFFNAME})
 
 pre-configure:
