@@ -7,22 +7,17 @@
 
 PORTNAME=	gturing
 PORTVERSION=	0.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games gnome
 MASTER_SITES=	ftp://ftp.gnome.org/pub/gnome/sources/gturing/0.1/
 
 MAINTAINER=	rael@vectorstar.net
-COMMENT=	A simple turing machine simulator for gnome 2
-
-LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
-		gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui20
+COMMENT=	A simple turing machine simulator for GNOME 2
 
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
+USE_GNOME=	gnomeprefix gnomehack libgnomeui
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
-		--datadir=${PREFIX}/share/gnome
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
@@ -35,13 +30,6 @@ EXAMPLEDIR=	${PREFIX}/share/examples/gturing
 EXAMPLES=	3ones2zeroes.tur  add.tur  bb3.tur  dashnumbers.tur  addbin.tur \
 		bb5.tur  dec2bin.tur  dec2bin_shift.tur  bb2.tur  bin2dec.tur \
 		bin2dec_shift.tur  sort.tur  subst.tur
-
-pre-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${REINPLACE_CMD} -e \
-		's|[(]datadir[)]/gnome/|(datadir)/|g ; \
-		s|[(]datadir[)]/locale|(prefix)/share/locale|g'
 
 post-install:
 	${INSTALL} -d -o root -g wheel -m 0755 ${EXAMPLEDIR}
