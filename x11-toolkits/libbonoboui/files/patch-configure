@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- configure	2002/04/26 11:11:58	1.1
-+++ configure	2002/04/26 11:12:23
-@@ -7013,6 +7013,7 @@
+--- configure.orig	Fri Oct 18 07:23:27 2002
++++ configure	Fri Nov  1 16:08:44 2002
+@@ -7235,6 +7235,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -11,3 +8,11 @@ $FreeBSD$
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -9285,6 +9286,7 @@
+ 		  libbonobo-2.0 >= 2.0.0 \
+ 		  libgnome-2.0 >= 1.116.0 \
+ 		  bonobo-activation-2.0 >= 1.0.0 \
++		  libxml-2.0 >= 2.0 \
+ 		  gconf-2.0 >= 1.1.9 gtk+-2.0 >= 2.0.2"
+ 
+   succeeded=no
