@@ -150,8 +150,8 @@ lib/libwww.a
 lib/libwww.la
 lib/libwww.so
 lib/libwww.so.5.3
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/doc/libwww/User/Applications.html
 share/doc/libwww/User/Architecture/A.gif
 share/doc/libwww/User/Architecture/Alert.html
