@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	will
 
 MAINTAINER=	markp@FreeBSD.org
 
+BROKEN=		"Does not build manpages with XFree86-4"
+
 WRKSRC=		${WRKDIR}/xrot
 USE_IMAKE=	yes
 USE_XPM=	yes
