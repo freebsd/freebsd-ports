@@ -1,0 +1,12 @@
+--- c++/ClFDSolver.cc.orig	Fri Oct  1 18:10:48 1999
++++ c++/ClFDSolver.cc	Fri Oct  1 18:11:19 1999
+@@ -9,6 +9,9 @@
+ //
+ // ClFDSolver.cc
+ 
++#ifdef __FreeBSD__
++#include <stdarg.h>
++#endif
+ 
+ #ifdef HAVE_CONFIG_H
+ #include <cassowary/config.h>

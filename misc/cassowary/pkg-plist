@@ -1,0 +1,57 @@
+bin/cassowary-config
+doc/cassowary-tr.pdf
+doc/cassowary-tr.ps.gz
+include/Cl.h
+include/ClC.h
+include/cassowary/Cassowary.h
+include/cassowary/ClAbstractVariable.h
+include/cassowary/ClConstraint.h
+include/cassowary/ClConstraintHash.h
+include/cassowary/ClDummyVariable.h
+include/cassowary/ClEditConstraint.h
+include/cassowary/ClEditOrStayConstraint.h
+include/cassowary/ClErrors.h
+include/cassowary/ClFDBinaryOneWayConstraint.h
+include/cassowary/ClFDConnectorVariable.h
+include/cassowary/ClFDConstraint.h
+include/cassowary/ClFDSolver.h
+include/cassowary/ClFDVariable.h
+include/cassowary/ClFloatVariable.h
+include/cassowary/ClLinearConstraint.h
+include/cassowary/ClLinearEquation.h
+include/cassowary/ClLinearExpression.h
+include/cassowary/ClLinearExpression_fwd.h
+include/cassowary/ClLinearInequality.h
+include/cassowary/ClMap.h
+include/cassowary/ClObjectiveVariable.h
+include/cassowary/ClPoint.h
+include/cassowary/ClReader.h
+include/cassowary/ClSet.h
+include/cassowary/ClSimplexSolver.h
+include/cassowary/ClSlackVariable.h
+include/cassowary/ClSolver.h
+include/cassowary/ClStayConstraint.h
+include/cassowary/ClStrength.h
+include/cassowary/ClSymbolicWeight.h
+include/cassowary/ClTableau.h
+include/cassowary/ClTypedefs.h
+include/cassowary/ClVariable.h
+include/cassowary/cl_auto_ptr.h
+include/cassowary/config-inline.h
+include/cassowary/debug.h
+include/cassowary/timer.h
+include/cassowary_scm.h
+include/cassowary_scm.hpp
+include/cl-snarf.h
+lib/cassowary/tests/ClTests
+lib/libcassowary.a
+lib/libcassowary.la
+lib/libcassowary.so
+lib/libcassowary.so.0
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@dirrm include/cassowary
+@dirrm lib/cassowary/bench
+@dirrm lib/cassowary/tests
+@dirrm lib/cassowary
+@dirrm share/guile/site/cassowary
