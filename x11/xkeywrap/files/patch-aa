@@ -1,0 +1,21 @@
+*** Makefile~	Sun Jan  2 10:01:41 2000
+--- Makefile	Sun Jan  2 10:02:17 2000
+***************
+*** 6,13 ****
+  ###############################################################################
+  
+  #PREFIX  = /usr/local
+! PREFIX  = /usr/X11R6
+! X11BASE = /usr/X11R6
+  BINDIR  = ${PREFIX}/bin
+  MANDIR  = ${PREFIX}/man/man1
+  PKGNAME = xkeywrap-1.0
+--- 6,13 ----
+  ###############################################################################
+  
+  #PREFIX  = /usr/local
+! #PREFIX  = /usr/X11R6
+! #X11BASE = /usr/X11R6
+  BINDIR  = ${PREFIX}/bin
+  MANDIR  = ${PREFIX}/man/man1
+  PKGNAME = xkeywrap-1.0
