@@ -113,6 +113,16 @@ MAN8+=		ftpdctl.8
 .else
 .endif
 
+.if defined(WITH_QUOTA)
+MODULES:=${MODULES}:mod_quotatab:mod_quotatab_file
+.if defined(WITH_LDAP)
+MODULES:=${MODULES}:mod_quotatab_ldap
+.endif
+.if defined(WITH_POSTGRESQL) || defined(WITH_MYSQL)
+MODULES:=${MODULES}:mod_quotatab_sql
+.endif
+.endif
+
 # Keep this here below, in case similar constructs need to be made
 CONFIGURE_ENV+=	"LIBS=${PROFTPD_LIBS}"
 
