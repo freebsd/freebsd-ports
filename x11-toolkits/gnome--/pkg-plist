@@ -14,6 +14,7 @@ include/gnome--/canvas-image.h
 include/gnome--/canvas-item.h
 include/gnome--/canvas-line.h
 include/gnome--/canvas-polygon.h
+include/gnome--/canvas-property.h
 include/gnome--/canvas-rect-ellipse.h
 include/gnome--/canvas-rect.h
 include/gnome--/canvas-text.h
@@ -117,7 +118,7 @@ include/gnome--/stock.h
 include/gnome--/types.h
 lib/libgnomemm.a
 lib/libgnomemm.so
-lib/libgnomemm.so.6
+lib/libgnomemm.so.9
 share/aclocal/gnome--.m4
 @dirrm include/gnome--/private
 @dirrm include/gnome--
