@@ -8,8 +8,10 @@
 PORTNAME=	mod_cvs
 PORTVERSION=	0.5
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.sub.nu/pub/mod_cvs/ \
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		ftp://ftp.sub.nu/pub/mod_cvs/ \
 		ftp://ftp.isk.kth.se/pub/people/main/mod_cvs/
+MASTER_SITE_SUBDIR=	petef
 
 MAINTAINER=	petef@FreeBSD.org
 
