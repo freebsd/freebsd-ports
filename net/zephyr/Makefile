@@ -3,14 +3,14 @@
 # Date created:		1-Aug-1995
 # Whom:			pst
 #
-# $Id: Makefile,v 1.5 1996/11/18 14:09:56 asami Exp $
+# $Id: Makefile,v 1.6 1996/12/01 01:23:26 obrien Exp $
 #
 
 DISTNAME=	zephyr-2.0.4
 CATEGORIES=	net
 MASTER_SITES=	ftp://athena-dist.mit.edu/pub/ATHENA/zephyr/dist/
 
-MAINTAINER=	pst@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 .if exists(/usr/lib/libkrb.a) && defined(MAKE_EBONES)
 CONFIGURE_ARGS="--with-krb4"

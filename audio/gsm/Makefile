@@ -3,14 +3,14 @@
 # Date created:		5 January 1995
 # Whom:			pst
 #
-# $Id: Makefile,v 1.7 1996/11/15 23:13:44 obrien Exp $
+# $Id: Makefile,v 1.8 1996/11/18 13:56:40 asami Exp $
 #
 
 DISTNAME=       gsm-1.0.10
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/local/kbs/tubmik/gsm/
 
-MAINTAINER=	pst@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=         ${WRKDIR}/gsm-1.0-pl10
 MAN1=		toast.1
