@@ -20,6 +20,7 @@ NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/Tgif ${PREFIX}/lib/X11/app-defaults/
+	${MKDIR} ${PREFIX}/lib/X11/ja_JP.EUC/app-defaults
+	${INSTALL_DATA} ${WRKSRC}/Tgif ${PREFIX}/lib/X11/ja_JP.EUC/app-defaults/
 
 .include <bsd.port.mk>
