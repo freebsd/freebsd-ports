@@ -2,6 +2,7 @@ bin/nsgmls
 bin/sgmlnorm
 bin/spam
 bin/spent
+bin/sx
 include/sp/Allocator.h
 include/sp/ArcEngine.h
 include/sp/Attribute.h
