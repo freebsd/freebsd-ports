@@ -1,0 +1,9 @@
+root:$1$48PMy$Z5Vlux.H5dXWhut4ops5b0:0:0::0:0:Charlie &:/root:/bin/csh
+toor:$1$dCzEfMgs$KkX36eGQiWrnOFtSgmgkx1:0:0::0:0:Bourne-again Superuser:/root:
+rootk:$1$BMeXpPVU$2wjGMUeDAKsXDtmmZ4B2E/:0:0::0:0:Clark Kent,phonebooth,1(800)suprman,unlisted:/home/rootk:/usr/local/bin/bash
+daemon:*:1:31::0:0:Owner of many system processes:/root:
+bin:*:3:7::0:0:Binaries Commands and Source,,,:/:/nonexistent
+user1:$1$KodDB$MS2uwh1xkprFUMzkf/h4S.:114:31::0:0:USER1,UCD Med Center,(916) 752-7900,(916) 753-0000:/home/user1:/usr/local/bin/tcsh
+user2:$1$UvfZtw0d$asMyR1VjVjPxKzXsuHkXW1:150:31::0:0:USER2,EUII 22??:/home/user2:/usr/local/bin/tcsh
+user3:$1$ft0ut3he$6PIIPiKHFP4Ddn0Oq9/9e0:204:31::0:0:Bill:/home/user3:/bin/csh
+obrien:$1$0Pode$PeChMbTN/ZSCRPXDsAsYk/:1765:20::0:0:David E. O'Brien,EU-II 3090 & 2244,,n/a:/home/obrien:/usr/local/bin/bash

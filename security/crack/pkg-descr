@@ -1,0 +1,12 @@
+This is Alec Muffett's Crack.
+
+Crack is a freely available program designed to find encrypted passwords. 
+
+When you would like to crack a 4.4BSD password file:
+
+	Crack -fmt bsd <password_file>
+
+Or, for non-BSD machines:
+
+	Crack <password_file>
+
