@@ -19,6 +19,8 @@ RUN_DEPENDS=	${SITE_PERL}/HTTP/Request/Common.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI
 
 BROKEN=		"Unfetchable"
+DEPRECATED=	"corresponding server software has been switched to an incompatible protocol"
+EXPIRATION_DATE=	"April 7, 2004"
 
 USE_PERL5=	yes
 USE_REINPLACE=	yes
