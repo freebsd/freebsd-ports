@@ -18,11 +18,3 @@
  
  /* The structure we use to hold characters we're supposed to display -- this
   * includes any supported visible attributes. */
-@@ -11318,7 +11318,6 @@
- 						     terminal);
- 		g_object_unref(G_OBJECT(terminal->pvt->pty_reaper));
- 	}
--	terminal->pvt->pty_pid = -1;
- 	terminal->pvt->pty_reaper = NULL;
- 
- 	/* Stop processing input. */
