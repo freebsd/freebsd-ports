@@ -15,8 +15,8 @@ MASTER_SITES=	ftp://ftp.cs.utah.edu/pub/beazley/SWIG/ \
 
 MAINTAINER=	erich@FreeBSD.org
 
-BUILD_DEPENDS=	${PREFIX}/bin/python:${PORTSDIR}/lang/python \
-		${PREFIX}/bin/tclsh8.2:${PORTSDIR}/lang/tcl82
+BUILD_DEPENDS=	${LOCALBASE}/bin/python:${PORTSDIR}/lang/python \
+		${LOCALBASE}/bin/tclsh8.2:${PORTSDIR}/lang/tcl82
 
 USE_PERL5=	YES
 WRKSRC=		${WRKDIR}/SWIG1.1p5
