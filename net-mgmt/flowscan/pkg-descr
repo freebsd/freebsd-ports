@@ -1,5 +1,5 @@
 FlowScan is a tool to monitor and graph flow information from 
-Cisco and Riverstone routers in near real-time. 
+Cisco, Juniper and Riverstone routers in near real-time. 
 
 Amonst many other things, FlowScan can measure and graph traffic
 for applications such as Napster.
