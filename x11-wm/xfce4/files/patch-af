@@ -1,15 +1,24 @@
---- configure.orig	Mon Jun  5 11:35:55 2000
-+++ configure	Mon Jun  5 13:54:52 2000
-@@ -2698,6 +2698,8 @@
- if eval "test \"`echo '$''{'gt_cv_func_gettext_libintl'+set}'`\" = set"; then
-   echo $ac_n "(cached) $ac_c" 1>&6
+--- configure.orig	Mon Aug 14 22:26:34 2000
++++ configure	Tue Aug 22 17:35:12 2000
+@@ -2622,6 +2622,8 @@
+   if test "$cross_compiling" = yes; then
+   ac_cv_func_mmap_fixed_mapped=no
  else
 +  ac_save_LIBS="$LIBS"
 +  LIBS="-lintl  $LIBS"
    cat > conftest.$ac_ext <<EOF
- #line 2703 "configure"
+ #line 2627 "configure"
  #include "confdefs.h"
-@@ -6116,8 +6118,8 @@
+@@ -5551,7 +5553,7 @@
+ 
+ else
+   
+-  GTK_ENGINE_DIR=`gtk-config --prefix`/lib/gtk/themes/engines
++  GTK_ENGINE_DIR=`${GTK_CONFIG} --prefix`/lib/gtk/themes/engines
+ 
+ fi
+ 
+@@ -6611,8 +6613,8 @@
  
  
  
@@ -18,5 +27,5 @@
 +XFCE_DIR=`eval echo $XFCE_DIR`
 +XFCE_CONFDIR=`eval echo $XFCE_CONFDIR`
  sed -e "s%XFCE_DIR%$XFCE_DIR%g" -e "s%XFCE_CONFDIR%$XFCE_CONFDIR%g" scripts/xfce_setup.in > scripts/xfce_setup
+ sed -e "s%XFCE_DIR%$XFCE_DIR%g" -e "s%XFCE_CONFDIR%$XFCE_CONFDIR%g" scripts/xfce_upgrade.in > scripts/xfce_upgrade
  sed -e "s%XFCE_DIR%$XFCE_DIR%g" -e "s%XFCE_CONFDIR%$XFCE_CONFDIR%g" scripts/xfhelp.in > scripts/xfhelp
- sed -e "s%XFCE_DIR%$XFCE_DIR%g" -e "s%XFCE_CONFDIR%$XFCE_CONFDIR%g" scripts/startxfce.in > scripts/startxfce
