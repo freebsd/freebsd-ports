@@ -6,26 +6,29 @@
 #
 
 PORTNAME=	dictfmt
-PORTVERSION=	1.6.1
+PORTVERSION=	1.9.8
 CATEGORIES=	textproc
-MASTER_SITES=	ftp://ftp.dict.org/pub/dict/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-source
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	dict
+DISTNAME=	dictd-${PORTVERSION}
 
-MAINTAINER=	fuyuki@hadaly.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Formats a DICT protocol dictionary database
 
-LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
+BUILD_DEPENDS=	aclocal:${PORTSDIR}/devel/automake
 
-NO_WRKSUBDIR=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
+USE_AUTOCONF=	yes
+WANT_AUTOCONF_VER=	253
+USE_LIBTOOL=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 USE_GMAKE=	yes
+ALL_TARGET=	dictfmt
+INSTALL_TARGET=	install.dictfmt
 
-MAN1=		dictfmt.1
+MAN1=		dictfmt.1 dictfmt_index2suffix.1 dictfmt_index2word.1 \
+		dictunformat.1
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/dictfmt ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/dictfmt.1 ${PREFIX}/man/man1
+post-patch:
+	cd ${WRKSRC}; aclocal; ${AUTOHEADER}
 
 .include <bsd.port.mk>
