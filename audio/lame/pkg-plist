@@ -1,23 +1,10 @@
 bin/lame
-share/doc/lame/advanced.html
-share/doc/lame/basics.html
 share/doc/lame/contributors.html
 share/doc/lame/history.html
 share/doc/lame/index.html
 share/doc/lame/lame.css
-share/doc/lame/node10.html
-share/doc/lame/node11.html
-share/doc/lame/node12.html
-share/doc/lame/node13.html
-share/doc/lame/node14.html
-share/doc/lame/node15.html
-share/doc/lame/node16.html
-share/doc/lame/node17.html
-share/doc/lame/node18.html
 share/doc/lame/node5.html
 share/doc/lame/node6.html
 share/doc/lame/node7.html
-share/doc/lame/node8.html
-share/doc/lame/node9.html
 share/doc/lame/switchs.html
 @dirrm share/doc/lame
