@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	rv@gnu.org
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${ARCH}-freebsd/MD5.pm:${PORTSDIR}/security/p5-MD5
+RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${ARCH}-freebsd/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 
 USE_PERL5=	yes
 NO_BUILD=	yes
