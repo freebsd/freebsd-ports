@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.xfce.org/archive/xfce4-rc2/src/ \
 DISTNAME=	xfwm4-themes-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 window decoration themes for xfwm4
 
 USE_X_PREFIX=	yes

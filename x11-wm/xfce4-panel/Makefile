@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.xfce.org/archive/xfce4-rc2/src/ \
 		http://linux.imp.mx/xfce4/rc2/xfce4-rc2/src/
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 panel module
 
 BUILD_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager

@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.xfce.org/archive/xfce4-rc2/src/ \
 		http://linux.imp.mx/xfce4/rc2/xfce4-rc2/src/
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 settings management library used by most XFce 4 modules
 
 LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util

@@ -16,7 +16,7 @@ MASTER_SITES=	http://www.xfce.org/archive/xfce4-rc2/src/ \
 DISTNAME=	xfdesktop-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 desktop background manager and root menu
 
 BUILD_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager

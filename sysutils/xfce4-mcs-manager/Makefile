@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.xfce.org/archive/xfce4-rc2/src/ \
 DISTNAME=	xfce-mcs-manager-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 settings manager
 
 LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
