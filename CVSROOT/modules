@@ -6340,7 +6340,10 @@ ortep3		ports/biology/ortep3
 ortp		ports/net/ortp
 orville-write	ports/misc/orville-write
 osalp		ports/audio/osalp
+osb-browser	ports/www/osb-browser
 osb-jscore	ports/lang/osb-jscore
+osb-nrcit	ports/www/osb-nrcit
+osb-nrcore	ports/www/osb-nrcore
 oscommerce	ports/www/oscommerce
 osdclock	ports/x11-clocks/osdclock
 osf1_base	ports/emulators/osf1_base
