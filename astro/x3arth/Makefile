@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	X11/desktop
 
 MAINTAINER=	ports@FreeBSD.org
 
+IGNORE=		"FTP directory format changed, can no longer fetch images"
+
 RUN_DEPENDS=	${LOCALBASE}/bin/tclsh8.2:${PORTSDIR}/lang/tcl82 \
 		${X11BASE}/bin/xv:${PORTSDIR}/graphics/xv
 
