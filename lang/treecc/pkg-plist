@@ -1,9 +1,4 @@
 @comment $FreeBSD$
 bin/treecc
 bin/treecc-0.2.4
-@unexec install-info --delete %D/info/treecc.info %D/info/dir
-info/treecc.info
-info/treecc.info-1
-info/treecc.info-2
-@exec install-info %D/info/treecc.info %D/info/dir
 
