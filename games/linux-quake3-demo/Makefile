@@ -21,18 +21,18 @@ EXTRACT_SUFX=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linux 3d shooter from id Software / Loki Software (demo version)
 
-RUN_DEPENDS=	/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
+RUN_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
+
+USE_X_PREFIX=	yes
+USE_GL=		yes
 
 .include <bsd.port.pre.mk>
 
 .if ${X_WINDOW_SYSTEM:L} != xfree86-3
-RUN_DEPENDS +=	/compat/linux/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
+RUN_DEPENDS +=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
 .else
-RUN_DEPENDS +=	/compat/linux/lib/libGL.so:${PORTSDIR}/graphics/linux_glx
+RUN_DEPENDS +=	${LINUXBASE}/lib/libGL.so:${PORTSDIR}/graphics/linux_glx
 .endif
-
-USE_X_PREFIX=	yes
-USE_MESA=	yes
 
 # Linux binary should not be stripped by INSTALL_PROGRAM as it uses /usr/bin/strip which then brands the binary as a FreeBSD ELF one.
 STRIP=
@@ -319,6 +319,7 @@ do-install:
 .endif
 
 post-install:
+	${LN} -fs ${LINUXBASE}/usr/X11R6/lib/libGL.so.1 ${PREFIX}/share/q3ademo/libGL.so
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
