@@ -540,6 +540,7 @@
     SUBDIR += twiki
     SUBDIR += udmsearch
     SUBDIR += ump
+    SUBDIR += urchin5
     SUBDIR += w3
     SUBDIR += w3-4
     SUBDIR += w3c-httpd
