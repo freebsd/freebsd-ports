@@ -71,7 +71,6 @@ taginfo		CVSROOT taginfo
 9term		ports/x11/9term
 9wm		ports/x11-wm/9wm
 AbiWord		ports/editors/AbiWord
-BBBike		ports/german/BBBike
 CaribbeanStud	ports/games/CaribbeanStud
 Cgraph		ports/graphics/Cgraph
 ETHOberonV4	ports/lang/ETHOberonV4
@@ -467,7 +466,6 @@ baudline	ports/audio/baudline
 bayonne		ports/comms/bayonne
 bb		ports/misc/bb
 bbapm		ports/x11-wm/bbapm
-bbbike		ports/german/BBBike
 bbconf		ports/x11-wm/bbconf
 bbdate		ports/x11-clocks/bbdate
 bbdb		ports/databases/bbdb
@@ -1104,6 +1102,7 @@ ddclient	ports/net/ddclient
 ddd		ports/devel/ddd
 ddos_scan	ports/security/ddos_scan
 ddup		ports/net/ddup
+de-BBBike	ports/german/BBBike
 de-citrix_ica	ports/german/citrix_ica
 de-dict		ports/german/dict
 de-ding		ports/german/ding
