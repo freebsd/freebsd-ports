@@ -8,8 +8,7 @@
 PORTNAME=	identify
 PORTVERSION=	0.7
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/ident/tools/ \
-		http://www.scn.rain.com/pub/security/authent/
+MASTER_SITES=	http://www.scn.rain.com/pub/security/authent/
 
 MAINTAINER=	ports@freebsd.org
 COMMENT=	Client side ident protocol daemon wrapper
