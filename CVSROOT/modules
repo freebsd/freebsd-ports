@@ -855,6 +855,7 @@ ca-ooodict-ES	ports/editors/ooodict-ca_ES
 ca-roots	ports/security/ca-roots
 cabextract	ports/archivers/cabextract
 cacti		ports/net/cacti
+cactid		ports/net/cactid
 cadaver		ports/www/cadaver
 cadubi		ports/graphics/cadubi
 cairo		ports/graphics/cairo
