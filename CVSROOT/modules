@@ -3135,6 +3135,7 @@ jrefentry	ports/textproc/jrefentry
 jruby		ports/lang/jruby
 jsdk		ports/java/jsdk
 jslice		ports/graphics/jslice
+juk		ports/audio/juk
 juke		ports/audio/juke
 jump		ports/java/jump
 jumpgate	ports/net/jumpgate
