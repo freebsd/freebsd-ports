@@ -1,24 +1,25 @@
---- Makefile.in.orig	Tue Jan 18 04:52:08 2000
-+++ Makefile.in	Sat Jan  6 11:45:02 2001
-@@ -30,16 +30,16 @@
+--- Makefile.in.orig	Fri Jan 26 00:44:35 2001
++++ Makefile.in	Fri Jan 26 05:00:06 2001
+@@ -30,17 +30,17 @@
  
  # C Compiler
  CC = @CC@ 
 -DEBUG  = -g
 -CPPFLAGS = -DHAVE_CONFIG_H -DPREFIX=\"$(EXEC_PREFIX)\" -DDONT_HIGHLIGHT_WITH_REVERSE 
--CFLAGS = -O2 $(CPPFLAGS) $(DEBUG) -Wall -rdynamic
+-CFLAGS = -O2 $(CPPFLAGS) $(DEBUG) -rdynamic
 +#DEBUG  = -g
 +CPPFLAGS = @CPPFLAGS@ -DHAVE_CONFIG_H -DPREFIX=\"$(EXEC_PREFIX)\" -DDONT_HIGHLIGHT_WITH_REVERSE 
 +CFLAGS = @CFLAGS@ $(CPPFLAGS) $(DEBUG)
  # For Solaris users please use the next 2 lines instead.
  #CPPFLAGS = -DHAVE_CONFIG_H -DPREFIX=\"$(EXEC_PREFIX)\" -DDONT_HIGHLIGHT_WITH_REVERSE -DSOLARIS
- #CFLAGS = -O2 $(CPPFLAGS) $(DEBUG) -Wall
+ #CFLAGS = -O2 $(CPPFLAGS) $(DEBUG)
  
- # Comment out -rdynamic below for Solaris
+ # Comment out for Solaris
 -LDFLAGS = -rdynamic
--LIBRARIES = -lncurses -ldl
 +LDFLAGS = @LDFLAGS@
-+LIBRARIES = @LIBS@
  
- SCREEN_SOURCES = screens/nc_init.c screens/nc_lock.c screens/nc_about.c screens/nc_menus.c screens/nc_misc.c screens/nc_job.c screens/nc_module.c
+-LIBRARIES = -lncurses -ldl
++LIBRARIES = @LIBS@
+ # For Solaris:
+ #LIBRARIES = -lcurses -ldl
  
