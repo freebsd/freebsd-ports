@@ -24,6 +24,12 @@ INSTALL_TARGET=	install data-install
 
 MAN1=		chinput.1
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Build fails on sparc64"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,make,${GMAKE},g' ${WRKSRC}/src/Makefile.in
 	@echo "install:" >> ${WRKSRC}/src/IMdkit/Makefile
@@ -34,4 +40,4 @@ post-patch:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
