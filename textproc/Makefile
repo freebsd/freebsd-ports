@@ -121,6 +121,7 @@
     SUBDIR += htmltolatex
     SUBDIR += iiimf-headers
     SUBDIR += iiimf-protocol-lib
+    SUBDIR += iiimf-server
     SUBDIR += info2html
     SUBDIR += info_to_html
     SUBDIR += intltool
