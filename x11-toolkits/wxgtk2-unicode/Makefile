@@ -8,7 +8,7 @@
 PORTREVISION=	2
 
 MAINTAINER=	fjoe@FreeBSD.org
-COMMENT=	The wxWindows GUI toolkit (Unicode version)
+COMMENT=	The wxWidgets GUI toolkit (Unicode version)
 
 WXGTK_FLAVOR=	gtk2-unicode
 MASTERDIR=	${.CURDIR}/../wxgtk
