@@ -1,5 +1,5 @@
---- Makefile.in.orig	Wed Jun 16 22:28:30 2004
-+++ Makefile.in	Fri Jun 25 16:26:41 2004
+--- Makefile.in.orig	Sun Nov 28 01:33:29 2004
++++ Makefile.in	Sat Dec 11 14:22:50 2004
 @@ -29,9 +29,9 @@
  # OF THE POSSIBILITY OF SUCH DAMAGE.
  #
@@ -7,9 +7,28 @@
 -CFLAGS= 	@CFLAGS@ -D_BSD_SOURCE
 -LDFLAGS=	@LDFLAGS@
 -LIBS= 		@LIBS@
-+CFLAGS= 	@CFLAGS@ -D_BSD_SOURCE -pthread
-+LDFLAGS=	@LDFLAGS@ -pthread
++CFLAGS= 	-O2 -pthread
++LDFLAGS=	-pthread
 +LIBS= 		-lmilter
  prefix=		@prefix@
  exec_prefix=	@exec_prefix@
  SYSCONFDIR=	@sysconfdir@
+@@ -40,15 +40,15 @@
+ MANDIR=		@mandir@
+ USER=		@USER@
+ 
+-CC=		@CC@
++#CC=		@CC@
+ MKDEP=		@MKDEP@
+ RM=		@RM@
+ MV=		@MV@
+ TEST=		@TEST@
+ SED=		@SED@
+ INSTALL=	@INSTALL@
+-LEX=		@LEX@
+-YACC=		@YACC@
++#LEX=		@LEX@
++#YACC=		@YACC@
+ TRUE=		@TRUE@
+ 
+ OBJ= 		milter-greylist.o pending.o except.o sync.o \
