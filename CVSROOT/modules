@@ -6152,6 +6152,7 @@ starplot	ports/astro/starplot
 stars		ports/astro/stars
 startslip	src/sbin/startslip
 stat		ports/sysutils/stat
+staticcharge	ports/net/staticcharge
 sted		ports/editors/sted
 stegdetect	ports/security/stegdetect
 steghide	ports/security/steghide
