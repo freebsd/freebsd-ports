@@ -1,0 +1,11 @@
+------------------------------------------------------------------------
+
+You can activate the driver on /dev/cuaa0 by adding the following
+lines to %%PREFIX%%/etc/reader.conf:
+
+FRIENDLYNAME     "Reflex 62"
+DEVICENAME       GEN_SMART_RDR
+LIBPATH          %%PREFIX%%/pcsc/drivers/libslb_rf60.so
+CHANNELID        0x0103F8
+
+------------------------------------------------------------------------
