@@ -12,6 +12,10 @@ lib/libmk4.so.0
 %%WITH_TCL%%lib/libmk4tcl.a
 %%WITH_TCL%%lib/libmk4tcl.so
 %%WITH_TCL%%lib/libmk4tcl.so.0
+%%WITH_TCLKIT%%lib/libmk4tcl.a
+%%WITH_TCLKIT%%lib/libmk4tcl.so
+%%WITH_TCLKIT%%lib/libmk4tcl.so.0
+%%WITH_TCLKIT%%bin/tclkit
 %%PORTDOCS%%share/doc/metakit/api/c4_Bytes.html
 %%PORTDOCS%%share/doc/metakit/api/c4_BytesProp.html
 %%PORTDOCS%%share/doc/metakit/api/c4_BytesProp_desc.html
