@@ -3,13 +3,16 @@ share/java/cos/readme.html
 share/java/cos/license.html
 share/java/cos/doc/AllNames.html
 share/java/cos/doc/Package-com.oreilly.servlet.html
+share/java/cos/doc/com.oreilly.servlet.Base64Decoder.html
+share/java/cos/doc/com.oreilly.servlet.Base64Encoder.html
 share/java/cos/doc/com.oreilly.servlet.CacheHttpServlet.html
-share/java/cos/doc/com.oreilly.servlet.CacheHttpServletResponse.html
-share/java/cos/doc/com.oreilly.servlet.CacheServletOutputStream.html
+share/java/cos/doc/com.oreilly.servlet.CookieNotFoundException.html
+share/java/cos/doc/com.oreilly.servlet.CookieParser.html
 share/java/cos/doc/com.oreilly.servlet.DaemonHttpServlet.html
 share/java/cos/doc/com.oreilly.servlet.HttpMessage.html
 share/java/cos/doc/com.oreilly.servlet.LocaleNegotiator.html
 share/java/cos/doc/com.oreilly.servlet.LocaleToCharsetMap.html
+share/java/cos/doc/com.oreilly.servlet.MailMessage.html
 share/java/cos/doc/com.oreilly.servlet.MultipartRequest.html
 share/java/cos/doc/com.oreilly.servlet.MultipartResponse.html
 share/java/cos/doc/com.oreilly.servlet.ParameterNotFoundException.html
@@ -17,6 +20,7 @@ share/java/cos/doc/com.oreilly.servlet.ParameterParser.html
 share/java/cos/doc/com.oreilly.servlet.RemoteDaemonHttpServlet.html
 share/java/cos/doc/com.oreilly.servlet.RemoteHttpServlet.html
 share/java/cos/doc/com.oreilly.servlet.ServletUtils.html
+share/java/cos/doc/com.oreilly.servlet.VersionDetector.html
 share/java/cos/doc/images/blue-ball-small.gif
 share/java/cos/doc/images/blue-ball.gif
 share/java/cos/doc/images/class-index.gif
