@@ -1,6 +1,15 @@
---- common/pf.c	1997/08/18 03:11:31	1.3
-+++ common/pf.c	2000/02/20 17:45:33	1.4
-@@ -176,7 +176,8 @@
+--- common/pf.c.orig	Tue Aug  6 07:20:27 1996
++++ common/pf.c	Wed Oct 15 13:02:19 2003
+@@ -56,7 +56,7 @@
+ #include <strings.h>
+ 
+ #include <syslog.h>
+-#include <varargs.h>
++
+ 
+ #include "common/mopdef.h"
+ 
+@@ -174,7 +174,8 @@
  	struct ifreq ifr;
  	int	fd;
  	
@@ -10,7 +19,7 @@
  
  	ifr.ifr_addr.sa_family = AF_UNSPEC;
  	bcopy(addr, ifr.ifr_addr.sa_data, 6);
-@@ -211,7 +212,8 @@
+@@ -209,7 +210,8 @@
  	struct ifreq ifr;
  	int	fd;
  	
