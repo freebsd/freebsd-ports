@@ -40,11 +40,19 @@ CONFIGURE_ARGS=	--enable-ipv6 \
 
 CONFLICTS=	sylpheed-1.[0-8]* sylpheed-gtk2-[0-9]*
 
-.if !defined(WITHOUT_SSL)
-USE_OPENSSL=	yes
-.endif
+OPTIONS=	GPGME		"Enable GnuPG support using GPGME." off \
+		COMPFACE	"Enable X-Face support." off \
+		JPILOT		"Enable JPilot support." off \
+		LDAP		"Enable LDAP support." off \
+		SSL		"Enable OpenSSL support." off
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_SSL)
+# we can't use USE_OPENSSL=yes after including bsd.port.pre.mk
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+CONFIGURE_ARGS+=--enable-ssl
+.endif
 
 .if defined(WITH_GPGME)
 LIB_DEPENDS+=	gpgme.14:${PORTSDIR}/security/gpgme
@@ -82,18 +90,6 @@ MAKEFILES=	Makefile.in ac/Makefile.in faq/Makefile.in faq/de/Makefile.in \
 		faq/en/Makefile.in faq/es/Makefile.in faq/fr/Makefile.in \
 		faq/it/Makefile.in manual/Makefile.in manual/en/Makefile.in \
 		manual/ja/Makefile.in src/Makefile.in
-
-pre-everything::
-	@${ECHO} ""
-	@${ECHO} "You may use the following build options:"
-	@${ECHO} ""
-	@${ECHO} "      WITH_GPGME=yes    Enable GnuPG support using GPGME."
-	@${ECHO} "      WITH_COMPFACE=yes Enable X-Face support."
-	@${ECHO} "      WITH_JPILOT=yes   Enable JPilot support."
-	@${ECHO} "      WITH_LDAP=yes     Enable LDAP support."
-	@${ECHO} ""
-	@${ECHO} "      WITHOUT_SSL=yes   Disable OpenSSL support."
-	@${ECHO} ""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|g; \
