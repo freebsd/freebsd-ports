@@ -1,0 +1,11 @@
+--- resource.c	Sun Apr 23 22:39:03 1995
++++ /home/andy/tmp/wrk/resource.c	Sun Mar 29 23:05:40 1998
+@@ -101,7 +101,7 @@
+       if ((XTRONresources = XrmGetFileDatabase("./.xtronrc")) == NULL)  {
+ 	 if ((XTRONresources = XrmGetFileDatabase("$HOME/xtronrc")) == NULL)  {
+ 	    if ((XTRONresources = XrmGetFileDatabase("$HOME/.xtronrc")) == NULL)  {
+-	       if ((XTRONresources = XrmGetFileDatabase("/usr/X11/lib/X11/app-defaults/xtronrc")) == NULL)  {
++	       if ((XTRONresources = XrmGetFileDatabase("/usr/X11R6/lib/X11/app-defaults/Tron")) == NULL)  {
+ 		  if ((XTRONresources = XrmGetFileDatabase("/usr/X11/lib/X11/app-defaults/.xtronrc")) == NULL)  {
+ 		     fprintf(stderr,"error: unable to open/read resource file xtronrc\n");
+ 		     return(0);

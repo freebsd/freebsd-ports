@@ -1,0 +1,11 @@
+--- xtronrc	Sun Apr 23 22:53:22 1995
++++ /home/andy/tmp/wrk/xtronrc	Sun Mar 29 23:27:25 1998
+@@ -3,7 +3,7 @@
+ # in the user's home directory or in /usr/X11/lib/X11/app-defaults.
+ # you can also rename it .xtronrc if you prefer it to be hidden
+ # make sure that the pixmaps directory has a trailing / at the end
+-xtron.PixmapsDIR:             ./pixmaps/
++xtron.PixmapsDIR:             /usr/X11R6/share/xtron/
+ 
+ # change these key settings for player 1 [RED]
+ xtron.player1UP:              w

@@ -1,0 +1,24 @@
+bin/xtron
+lib/X11/app-defaults/Tron
+share/doc/xtron/CHANGES
+share/doc/xtron/COPYING
+share/doc/xtron/README
+share/xtron/Xtron_icon.xpm
+share/xtron/again.xpm
+share/xtron/againr.xpm
+share/xtron/back.xpm
+share/xtron/comprr.xpm
+share/xtron/computer.xpm
+share/xtron/human.xpm
+share/xtron/humanr.xpm
+share/xtron/p1.xpm
+share/xtron/p2.xpm
+share/xtron/p3.xpm
+share/xtron/pause.xpm
+share/xtron/pauser.xpm
+share/xtron/quit.xpm
+share/xtron/quitr.xpm
+share/xtron/score.xpm
+share/xtron/scorer.xpm
+@dirrm share/doc/xtron
+@dirrm share/xtron
