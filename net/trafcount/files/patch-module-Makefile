@@ -1,0 +1,8 @@
+--- module/Makefile.orig	Fri Jun  1 11:20:26 2001
++++ module/Makefile	Sun Jun 17 18:15:28 2001
+@@ -1,4 +1,5 @@
+ KMOD	=	trafcount
+ SRCS	=	trafcount.c ../include/trafcount.h
++KMODDIR	=	/usr/local/libexec
+ 
+ .include <bsd.kmod.mk>

@@ -1,0 +1,11 @@
+--- client/Makefile.orig	Fri Jun  1 11:58:57 2001
++++ client/Makefile	Sun Jun 17 18:29:15 2001
+@@ -1,6 +1,8 @@
+ PROG	=	trafcount
+ SRCS	=	trafcount.c ../include/trafcount.h
+ BINDIR ?=	/usr/local/bin
++MANDIR	=	/usr/local/man/man
+ CFLAGS += 	-Wall
++NOMANCOMPRESS = yes
+ 
+ .include <bsd.prog.mk>

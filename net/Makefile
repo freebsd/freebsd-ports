@@ -369,6 +369,7 @@
     SUBDIR += tn5250
     SUBDIR += totd
     SUBDIR += traceroute
+    SUBDIR += trafcount
     SUBDIR += trafd
     SUBDIR += trafshow
     SUBDIR += tridiavnc
