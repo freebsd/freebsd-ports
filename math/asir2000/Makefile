@@ -35,6 +35,12 @@ LIB_DATA=	alpi bfct bgk const cyclic defs.h dfff dmul dmul102 \
 	num primdec primdec_lex primdec_mod ratint robot solve sp \
 	sturm sym weight xm
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386" && ${ARCH} != "amd64"
+BROKEN=		"Does not compile on !i386 and !amd64"
+.endif
+
 pre-install:
 	@${MKDIR} ${DATADIR}
 	@${MKDIR} ${DOCSDIR}
@@ -53,4 +59,4 @@ post-install:
 	@${TAR} xfz ${DISTDIR}/${ASIR_DOC} -C ${DOCSDIR}
 	@${INSTALL_MAN} ${DOCSDIR}/${MAN1} ${PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
