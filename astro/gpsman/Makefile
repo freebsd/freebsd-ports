@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gpsman
-PORTVERSION=	6.1.2
+PORTVERSION=	6.2
 CATEGORIES=	astro tk84
 MASTER_SITES=	http://www.ncc.up.pt/gpsman/gpsmanhtml/ \
 		${MASTER_SITE_SUNSITE} \
@@ -43,7 +43,6 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/gpsman
 	${INSTALL_DATA} ${WRKSRC}/manual/*.pdf ${PREFIX}/share/doc/gpsman
-	${INSTALL_DATA} ${WRKSRC}/manual/*.ps ${PREFIX}/share/doc/gpsman
 	@${MKDIR} ${PREFIX}/share/doc/gpsman/html
 	${INSTALL_DATA} ${WRKSRC}/manual/html/*.html ${PREFIX}/share/doc/gpsman/html
 	${RM} ${PREFIX}/share/doc/gpsman/html/index.html
