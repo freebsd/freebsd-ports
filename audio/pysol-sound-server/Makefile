@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	pysol-sound-server
-PORTVERSION=	2.50
+PORTVERSION=	3.00
 CATEGORIES=	audio games
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	sobomax
+MASTER_SITES=	http://www.oberhumer.com/opensource/pysol/download/ \
+		ftp://ftp.is.co.za/linux/distributions/gentoo/distfiles/
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python extension module to play sounds and background music
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
