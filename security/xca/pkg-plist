@@ -2,25 +2,38 @@
 bin/xca
 share/applications/xca.desktop
 share/pixmaps/xca.xpm
+share/xca/aia.txt
 share/xca/bigcert.png
 share/xca/bigcrl.png
 share/xca/bigcsr.png
 share/xca/bigkey.png
 share/xca/bigtemp.png
 share/xca/crl.png
+share/xca/dn.txt
+share/xca/eku.txt
 share/xca/halfkey.png
 share/xca/invalidcert.png
 share/xca/invalidcertkey.png
 share/xca/key.png
 share/xca/netscape.png
+share/xca/oids.txt
 share/xca/req.png
 share/xca/reqkey.png
 share/xca/revoked.png
+share/xca/spki.png
 share/xca/template.png
 share/xca/validcert.png
 share/xca/validcertkey.png
-share/xca/xca_de.qm
-share/xca/xca_es.qm
+share/xca/xca-1.html
+share/xca/xca-10.html
+share/xca/xca-2.html
+share/xca/xca-3.html
+share/xca/xca-4.html
+share/xca/xca-5.html
+share/xca/xca-6.html
+share/xca/xca-7.html
+share/xca/xca-8.html
+share/xca/xca-9.html
+share/xca/xca.html
 @dirrm share/xca
 @dirrm share/pixmaps
-@dirrm share/applications
