@@ -1,0 +1,48 @@
+Index: example/jwhois.conf
+===================================================================
+RCS file: /cvsroot/jwhois/jwhois/example/jwhois.conf,v
+retrieving revision 1.54
+retrieving revision 1.55
+diff -u -r1.54 -r1.55
+--- example/jwhois.conf	8 Dec 2001 17:34:25 -0000	1.54
++++ example/jwhois.conf	13 Jan 2002 14:57:22 -0000	1.55
+@@ -391,8 +391,9 @@
+ 	"www\\.dk-hostmaster\\.dk" {
+ 		http = "true";
+ 		http-method = "GET";
+-		http-action = "/perl/Whois.pl";
++		http-action = "/scripts/whois.php";
+ 		form-element = "query";
++		form-extra = "lang=en";
+ 	}
+ 
+ 	"www\\.nic\\.es" {
+Index: src/rwhois.c
+===================================================================
+RCS file: /cvsroot/jwhois/jwhois/src/rwhois.c,v
+retrieving revision 1.11
+retrieving revision 1.12
+diff -u -r1.11 -r1.12
+--- src/rwhois.c	5 Jan 2002 23:41:30 -0000	1.11
++++ src/rwhois.c	6 Feb 2002 17:32:07 -0000	1.12
+@@ -414,7 +414,7 @@
+ int
+ rwhois_parse_line(const char *reply, char **text)
+ {
+-  char *capab, *tmpptr;
++  char *tmpptr;
+ 
+   tmpptr = (char *)strchr(reply, '\n');
+   if (tmpptr)
+@@ -427,9 +427,10 @@
+     }
+   if (strncasecmp(reply, "%rwhois", 7) == 0) 
+     {
+-      capab = (char *)strchr(reply, ':')+1;
++      char *capab = (char *)strchr(reply, ':');
+       if (!capab)
+ 	return REP_ERROR;
++      capab++; /* skip past first : */
+       tmpptr = (char *)strchr(capab, ':');
+       if (!tmpptr)
+ 	return REP_ERROR;
