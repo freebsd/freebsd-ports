@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mesa3d
 DISTNAME=	MesaDemos-${PORTVERSION}
 
-MAINTAINER=	anholt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphics library similar to SGI's OpenGL
 
 USE_BZIP2=	yes
