@@ -1,8 +1,8 @@
-diskusage is an ANSI C++ program, written for FreeBSD 3.x and higher.
+diskusage is a shell script, written for FreeBSD 3.x and higher.
 
 It is an add on package for FreeBSD's du and du must be present 
 for this program to work.  Shows current users diskusage in
-kilobytes.  Assumes user's home directory is /home/$USER and 
+human readable format.  Assumes user's home directory is /home/$USER and 
 that user's mail directory is /var/mail/$USER
 
 WWW: http://www.maske.org/support/unix/apps/diskusage/
