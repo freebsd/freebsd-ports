@@ -1,9 +1,9 @@
 # New ports collection makefile for: netscape3.language
 # Version required:	3.04
 # Date created:		17 November 1997
-# Whom:			SADA Kenji
+# Whom:			SADA Kenji <sada@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1998/10/06 08:51:37 asami Exp $
+# $Id: Makefile,v 1.3 1998/11/23 07:51:07 asami Exp $
 #
 
 DISTNAME=	ja-netscape-3.04
@@ -14,11 +14,11 @@ DISTFILES=	NLS.tar.gz \
 		Netscape-JPfont \
 		Netscape-v301-ja_euc.ad.gz
 
-MAINTAINER=	sada@e-mail.ne.jp
+MAINTAINER=	sada@FreeBSD.ORG
 
-RUN_DEPENDS=	${PREFIX}/bin/netscape:${PORTSDIR}/www/netscape3 \
-		${X11BASE}/share/doc/k12:${PORTSDIR}/japanese/k12 \
-		${X11BASE}/lib/X11/fonts/local/elisau10.pcf.gz:${PORTSDIR}/japanese/elisa10x8
+RUN_DEPENDS= \
+	${PREFIX}/bin/netscape:${PORTSDIR}/www/netscape3 \
+	${PKG_DBDIR}/ja-netscape-fonts-1.0:${PORTSDIR}/japanese/netscape-fonts
 
 DIST_SUBDIR=	netscape3
 NO_WRKSUBDIR=	YES
@@ -67,17 +67,9 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/Netscape.jp.ad ${RESDIR}/Netscape
 .endif
 
-ISCRIPTS=	${DISTNAME}.setup
-ISDIR=		${PREFIX}/libexec
 DOCDIR=		${PREFIX}/share/doc/${DISTNAME}
 
 post-install:
-	@for i in ${ISCRIPTS}; do \
-		${SED} -e "s;@X11BASE@;${X11BASE};g" -e "s;@PREFIX@;${PREFIX};g" \
-			${FILESDIR}/$${i} >${ISDIR}/$${i}; \
-		chmod +x ${ISDIR}/$${i}; \
-		${ISDIR}/$${i} install; \
-	done
 	@${MKDIR} ${PREFIX}/share/doc/${PKGNAME}
 	@${INSTALL_DATA} ${FILESDIR}/setup.doc ${PREFIX}/share/doc/${PKGNAME}
 .if !defined(NOPORTDOCS)
