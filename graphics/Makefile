@@ -37,7 +37,6 @@
     SUBDIR += cqcam
     SUBDIR += crw
     SUBDIR += cthumb
-    SUBDIR += cybervrml97
     SUBDIR += dataplot
     SUBDIR += dc20ctrl
     SUBDIR += dc20pack

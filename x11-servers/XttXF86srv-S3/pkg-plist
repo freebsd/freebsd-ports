@@ -1,3 +1,0 @@
-bin/XF86_S3.xtt
-@exec /bin/ln -fs %D/%F %B/X
-@unexec ([ -x %B/XF86_S3 ] && /bin/ln -fs %B/XF86_S3 %B/X) || /bin/rm -f %B/X

@@ -1,3 +1,0 @@
-bin/XF86_AGX.xtt
-@exec /bin/ln -fs %D/%F %B/X
-@unexec ([ -x %B/XF86_AGX ] && /bin/ln -fs %B/XF86_AGX %B/X) || /bin/rm -f %B/X

@@ -1,9 +1,0 @@
-Open Application Builder (code generator) for the GTK and/or GNOME.
-
-GLG (Gtk Lo Gafet) lets you to build interactively a complete GTK 
-(or Gnome) application. GLG generates C source for now.
-
-WWW: http://glg.sourceforge.net/
-
-- Olivier Singla
-lo_gafet@users.sourceforge.net

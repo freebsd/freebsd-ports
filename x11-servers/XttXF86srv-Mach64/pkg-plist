@@ -1,3 +1,0 @@
-bin/XF86_Mach64.xtt
-@exec /bin/ln -fs %D/%F %B/X
-@unexec ([ -x %B/XF86_Mach64 ] && /bin/ln -fs %B/XF86_Mach64 %B/X) || /bin/rm -f %B/X

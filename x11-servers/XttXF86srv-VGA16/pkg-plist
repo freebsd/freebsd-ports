@@ -1,3 +1,0 @@
-bin/XF86_VGA16.xtt
-@exec /bin/ln -fs %D/%F %B/X
-@unexec ([ -x %B/XF86_VGA16 ] && /bin/ln -fs %B/XF86_VGA16 %B/X) || /bin/rm -f %B/X

@@ -5,7 +5,6 @@
 
     SUBDIR += MT
     SUBDIR += MT-PM
-    SUBDIR += Mosaic         # requires Motif
     SUBDIR += WebMagick
     SUBDIR += abcache
     SUBDIR += admuser

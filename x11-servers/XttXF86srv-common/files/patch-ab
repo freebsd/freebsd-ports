@@ -1,9 +1,0 @@
---- lib/font/X-TrueType/BIG5ETEN/Imakefile.orig      Fri Nov 26 04:47:12 1999
-+++ lib/font/X-TrueType/BIG5ETEN/Imakefile   Fri Nov 26 04:47:22 1999
-@@ -1,6 +1,6 @@                                                         
- /* code converter: BIG5ETEN */
-
--#define ModuleName BIG5
-+#define ModuleName BIG5ETEN
- SRCS = BIG5ETENtoUCS2.c main.c
- OBJS = BIG5ETENtoUCS2.o main.o
