@@ -499,6 +499,7 @@ lib/gdesklets/utils/xdr.pyo
 share/gnome/applications/gdesklets.desktop
 share/gnome/pixmaps/gdesklets.png
 @exec mkdir -p %D/share/gnome/gdesklets/Displays
+@exec mkdir -p %D/share/gnome/gdesklets/Sensors
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-gdesklets-display.png
 share/locale/ar/LC_MESSAGES/gdesklets.mo
 share/locale/az/LC_MESSAGES/gdesklets.mo
@@ -536,6 +537,7 @@ share/locale/tr/LC_MESSAGES/gdesklets.mo
 share/locale/uk/LC_MESSAGES/gdesklets.mo
 share/mime/application/x-gdesklets-display.xml
 share/mime/packages/gdesklets.xml
+@dirrm share/gnome/gdesklets/Sensors
 @dirrm share/gnome/gdesklets/Displays
 @dirrm share/gnome/gdesklets
 @dirrm lib/gdesklets/utils

@@ -7,6 +7,7 @@
 
 PORTNAME=	gdesklets
 PORTVERSION=	0.33.1
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.pycage.de/download/${PORTNAME}/
 DISTNAME=	gDesklets-${PORTVERSION}
@@ -34,6 +35,7 @@ MAN1=		gdesklets.1
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/gnome/gdesklets/Displays
+	@${MKDIR} ${PREFIX}/share/gnome/gdesklets/Sensors
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/lib/gdesklets/config
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/lib/gdesklets/data
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/lib/gdesklets/desktop
