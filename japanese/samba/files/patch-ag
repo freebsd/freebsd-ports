@@ -1,15 +1,15 @@
---- nmbd/nmbd_winsserver.c.orig	Wed Jul 21 10:25:11 1999
-+++ nmbd/nmbd_winsserver.c	Fri Jul 23 15:14:33 1999
-@@ -152,7 +152,7 @@
-   start_async_dns();
- #endif
+--- nmbd/nmbd_winsserver.c.orig	Fri Aug 11 12:57:48 2000
++++ nmbd/nmbd_winsserver.c	Tue Nov 21 11:16:44 2000
+@@ -182,7 +182,7 @@
+ 
+   add_samba_names_to_subnet(wins_server_subnet);
  
 -  pstrcpy(fname,lp_lockdir());
 +  pstrcpy(fname,"/var/db");
-   trim_string(fname,NULL,"/");
+   trim_string( fname, strlen( fname )+1, NULL, 0, "/", sizeof( "/" ));
    pstrcat(fname,"/");
    pstrcat(fname,WINS_LIST);
-@@ -1551,7 +1551,7 @@
+@@ -1602,7 +1602,7 @@
  	  }
    }
  
