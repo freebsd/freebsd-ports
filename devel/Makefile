@@ -575,6 +575,7 @@
     SUBDIR += p5-DateTime-Precise
     SUBDIR += p5-DateTime-Set
     SUBDIR += p5-DateTime-TimeZone
+    SUBDIR += p5-DateTime-TimeZone-Alias
     SUBDIR += p5-Devel-Constants
     SUBDIR += p5-Devel-DProf
     SUBDIR += p5-Devel-Leak
