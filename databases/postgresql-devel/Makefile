@@ -21,7 +21,6 @@ COMMENT=	Development snapshots of PostgreSQL's latest features
 CONFLICTS=	postgresql7*
 CONFIGURE_ENV+=	DOCBOOKSTYLE=${LOCALBASE}/share/sgml/docbook/3.1/
 USE_BZIP2=	YES
-USE_GETTEXT=	yes
 USE_GMAKE=	YES
 USE_PERL5_BUILD=	YES
 GNU_CONFIGURE=	YES
@@ -48,6 +47,7 @@ USE_GETOPT_LONG=yes
 .if !defined(WITHOUT_GETTEXT)
 CONFIGURE_ARGS+=--enable-nls
 PLIST_SUB+=	GETTEXT=""
+USE_GETTEXT=	yes
 .else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	GETTEXT="@comment "
