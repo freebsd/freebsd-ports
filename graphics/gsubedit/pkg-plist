@@ -1,12 +1,28 @@
 bin/gsubedit
-%%PORTDOCS%%share/doc/gsubedit/AUTHORS
-%%PORTDOCS%%share/doc/gsubedit/ChangeLog
-%%PORTDOCS%%share/doc/gsubedit/INSTALL
-%%PORTDOCS%%share/doc/gsubedit/README
-%%PORTDOCS%%share/doc/gsubedit/TODO
+%%PORTDOCS%%share/doc/GSubEdit/ABOUT-NLS
+%%PORTDOCS%%share/doc/GSubEdit/AUTHORS
+%%PORTDOCS%%share/doc/GSubEdit/COPYING
+%%PORTDOCS%%share/doc/GSubEdit/ChangeLog
+%%PORTDOCS%%share/doc/GSubEdit/INSTALL
+%%PORTDOCS%%share/doc/GSubEdit/README
+%%PORTDOCS%%share/doc/GSubEdit/TODO
 share/gnome/apps/Applications/gsubedit.desktop
 share/gnome/help/gsubedit/C/index.html
 share/gnome/help/gsubedit/C/topic.dat
 share/gnome/pixmaps/gsubedit/gsubedit_icon.png
+share/locale/cs/LC_MESSAGES/gsubedit.mo
+share/locale/ro/LC_MESSAGES/gsubedit.mo
+share/locale/ru/LC_MESSAGES/gsubedit.mo
 share/locale/sv/LC_MESSAGES/gsubedit.mo
-%%PORTDOCS%%@dirrm share/doc/gsubedit
+@unexec %D/share/locale/sv/LC_MESSAGES 2>/dev/null || true
+@unexec %D/share/locale/sv 2>/dev/null || true
+@unexec %D/share/locale/ru/LC_MESSAGES 2>/dev/null || true
+@unexec %D/share/locale/ru 2>/dev/null || true
+@unexec %D/share/locale/ro/LC_MESSAGES 2>/dev/null || true
+@unexec %D/share/locale/ro 2>/dev/null || true
+@unexec %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
+@unexec %D/share/locale/cs 2>/dev/null || true
+@dirrm share/gnome/pixmaps/gsubedit
+@dirrm share/gnome/help/gsubedit/C
+@dirrm share/gnome/help/gsubedit
+%%PORTDOCS%%@dirrm share/doc/GSubEdit
