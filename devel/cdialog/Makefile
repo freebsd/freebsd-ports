@@ -10,7 +10,7 @@
 
 PORTNAME=	cdialog
 PORTVERSION=	0.9b.20030308
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/dialog/
