@@ -1,0 +1,213 @@
+--- Makefile.freebsd.orig	Wed Oct 20 20:46:21 1999
++++ Makefile.freebsd	Sat Jan 24 00:23:32 2004
+@@ -185,196 +185,17 @@
+ 
+ # DO NOT DELETE THIS LINE
+ 
+-dt.o dt.ln: dt.c dt.h /usr/include/stdio.h /usr/include/sys/cdefs.h \
+- /usr/include/machine/ansi.h /usr/include/stdlib.h \
+- /usr/include/string.h /usr/include/fcntl.h /usr/include/sys/types.h \
+- /usr/include/sys/inttypes.h /usr/include/machine/types.h \
+- /usr/include/machine/endian.h /usr/include/termios.h \
+- /usr/include/sys/ttycom.h /usr/include/sys/ioccom.h \
+- /usr/include/sys/ttydefaults.h /usr/include/time.h \
+- /usr/include/sys/_posix.h /usr/include/unistd.h \
+- /usr/include/sys/unistd.h /usr/include/math.h /usr/include/errno.h \
+- /usr/include/sys/times.h /usr/include/sys/stat.h \
+- /usr/include/sys/time.h /usr/include/aio.h /usr/include/sys/signal.h \
+- /usr/include/machine/signal.h /usr/include/ctype.h \
+- /usr/include/runetype.h /usr/include/signal.h \
+- /usr/include/sys/ioctl.h /usr/include/sys/filio.h \
+- /usr/include/sys/sockio.h /usr/include/sys/file.h \
+- /usr/include/sys/fcntl.h /usr/include/sys/param.h \
+- /usr/include/sys/syslimits.h /usr/include/machine/param.h \
+- /usr/include/machine/alpha_cpu.h /usr/include/machine/cpu.h \
+- /usr/include/machine/frame.h /usr/include/machine/limits.h \
+- /usr/include/sys/wait.h
+-dtgen.o dtgen.ln: dtgen.c dt.h /usr/include/stdio.h /usr/include/sys/cdefs.h \
+- /usr/include/machine/ansi.h /usr/include/stdlib.h \
+- /usr/include/string.h /usr/include/fcntl.h /usr/include/sys/types.h \
+- /usr/include/sys/inttypes.h /usr/include/machine/types.h \
+- /usr/include/machine/endian.h /usr/include/termios.h \
+- /usr/include/sys/ttycom.h /usr/include/sys/ioccom.h \
+- /usr/include/sys/ttydefaults.h /usr/include/time.h \
+- /usr/include/sys/_posix.h /usr/include/unistd.h \
+- /usr/include/sys/unistd.h /usr/include/math.h /usr/include/errno.h \
+- /usr/include/sys/times.h /usr/include/sys/stat.h \
+- /usr/include/sys/time.h /usr/include/aio.h /usr/include/sys/signal.h \
+- /usr/include/machine/signal.h /usr/include/sys/file.h \
+- /usr/include/sys/fcntl.h
+-dtinfo.o dtinfo.ln: dtinfo.c dt.h /usr/include/stdio.h /usr/include/sys/cdefs.h \
+- /usr/include/machine/ansi.h /usr/include/stdlib.h \
+- /usr/include/string.h /usr/include/fcntl.h /usr/include/sys/types.h \
+- /usr/include/sys/inttypes.h /usr/include/machine/types.h \
+- /usr/include/machine/endian.h /usr/include/termios.h \
+- /usr/include/sys/ttycom.h /usr/include/sys/ioccom.h \
+- /usr/include/sys/ttydefaults.h /usr/include/time.h \
+- /usr/include/sys/_posix.h /usr/include/unistd.h \
+- /usr/include/sys/unistd.h /usr/include/math.h /usr/include/errno.h \
+- /usr/include/sys/times.h /usr/include/sys/stat.h \
+- /usr/include/sys/time.h /usr/include/aio.h /usr/include/sys/signal.h \
+- /usr/include/machine/signal.h /usr/include/sys/ioctl.h \
+- /usr/include/sys/filio.h /usr/include/sys/sockio.h
+-dtread.o dtread.ln: dtread.c dt.h /usr/include/stdio.h /usr/include/sys/cdefs.h \
+- /usr/include/machine/ansi.h /usr/include/stdlib.h \
+- /usr/include/string.h /usr/include/fcntl.h /usr/include/sys/types.h \
+- /usr/include/sys/inttypes.h /usr/include/machine/types.h \
+- /usr/include/machine/endian.h /usr/include/termios.h \
+- /usr/include/sys/ttycom.h /usr/include/sys/ioccom.h \
+- /usr/include/sys/ttydefaults.h /usr/include/time.h \
+- /usr/include/sys/_posix.h /usr/include/unistd.h \
+- /usr/include/sys/unistd.h /usr/include/math.h /usr/include/errno.h \
+- /usr/include/sys/times.h /usr/include/sys/stat.h \
+- /usr/include/sys/time.h /usr/include/aio.h /usr/include/sys/signal.h \
+- /usr/include/machine/signal.h /usr/include/sys/file.h \
+- /usr/include/sys/fcntl.h
+-dtwrite.o dtwrite.ln: dtwrite.c dt.h /usr/include/stdio.h \
+- /usr/include/sys/cdefs.h /usr/include/machine/ansi.h \
+- /usr/include/stdlib.h /usr/include/string.h /usr/include/fcntl.h \
+- /usr/include/sys/types.h /usr/include/sys/inttypes.h \
+- /usr/include/machine/types.h /usr/include/machine/endian.h \
+- /usr/include/termios.h /usr/include/sys/ttycom.h \
+- /usr/include/sys/ioccom.h /usr/include/sys/ttydefaults.h \
+- /usr/include/time.h /usr/include/sys/_posix.h /usr/include/unistd.h \
+- /usr/include/sys/unistd.h /usr/include/math.h /usr/include/errno.h \
+- /usr/include/sys/times.h /usr/include/sys/stat.h \
+- /usr/include/sys/time.h /usr/include/aio.h /usr/include/sys/signal.h \
+- /usr/include/machine/signal.h /usr/include/sys/file.h \
+- /usr/include/sys/fcntl.h
+-dtstats.o dtstats.ln: dtstats.c dt.h /usr/include/stdio.h \
+- /usr/include/sys/cdefs.h /usr/include/machine/ansi.h \
+- /usr/include/stdlib.h /usr/include/string.h /usr/include/fcntl.h \
+- /usr/include/sys/types.h /usr/include/sys/inttypes.h \
+- /usr/include/machine/types.h /usr/include/machine/endian.h \
+- /usr/include/termios.h /usr/include/sys/ttycom.h \
+- /usr/include/sys/ioccom.h /usr/include/sys/ttydefaults.h \
+- /usr/include/time.h /usr/include/sys/_posix.h /usr/include/unistd.h \
+- /usr/include/sys/unistd.h /usr/include/math.h /usr/include/errno.h \
+- /usr/include/sys/times.h /usr/include/sys/stat.h \
+- /usr/include/sys/time.h /usr/include/aio.h /usr/include/sys/signal.h \
+- /usr/include/machine/signal.h
+-dttty.o dttty.ln: dttty.c dt.h /usr/include/stdio.h /usr/include/sys/cdefs.h \
+- /usr/include/machine/ansi.h /usr/include/stdlib.h \
+- /usr/include/string.h /usr/include/fcntl.h /usr/include/sys/types.h \
+- /usr/include/sys/inttypes.h /usr/include/machine/types.h \
+- /usr/include/machine/endian.h /usr/include/termios.h \
+- /usr/include/sys/ttycom.h /usr/include/sys/ioccom.h \
+- /usr/include/sys/ttydefaults.h /usr/include/time.h \
+- /usr/include/sys/_posix.h /usr/include/unistd.h \
+- /usr/include/sys/unistd.h /usr/include/math.h /usr/include/errno.h \
+- /usr/include/sys/times.h /usr/include/sys/stat.h \
+- /usr/include/sys/time.h /usr/include/aio.h /usr/include/sys/signal.h \
+- /usr/include/machine/signal.h /usr/include/sys/ioctl.h \
+- /usr/include/sys/filio.h /usr/include/sys/sockio.h \
+- /usr/include/sys/file.h /usr/include/sys/fcntl.h \
+- /usr/include/sys/param.h /usr/include/sys/syslimits.h \
+- /usr/include/machine/param.h /usr/include/machine/alpha_cpu.h \
+- /usr/include/machine/cpu.h /usr/include/machine/frame.h \
+- /usr/include/machine/limits.h
+-dtutil.o dtutil.ln: dtutil.c dt.h /usr/include/stdio.h /usr/include/sys/cdefs.h \
+- /usr/include/machine/ansi.h /usr/include/stdlib.h \
+- /usr/include/string.h /usr/include/fcntl.h /usr/include/sys/types.h \
+- /usr/include/sys/inttypes.h /usr/include/machine/types.h \
+- /usr/include/machine/endian.h /usr/include/termios.h \
+- /usr/include/sys/ttycom.h /usr/include/sys/ioccom.h \
+- /usr/include/sys/ttydefaults.h /usr/include/time.h \
+- /usr/include/sys/_posix.h /usr/include/unistd.h \
+- /usr/include/sys/unistd.h /usr/include/math.h /usr/include/errno.h \
+- /usr/include/sys/times.h /usr/include/sys/stat.h \
+- /usr/include/sys/time.h /usr/include/aio.h /usr/include/sys/signal.h \
+- /usr/include/machine/signal.h /usr/include/ctype.h \
+- /usr/include/runetype.h /usr/include/stdarg.h
+-dtusage.o dtusage.ln: dtusage.c dt.h /usr/include/stdio.h \
+- /usr/include/sys/cdefs.h /usr/include/machine/ansi.h \
+- /usr/include/stdlib.h /usr/include/string.h /usr/include/fcntl.h \
+- /usr/include/sys/types.h /usr/include/sys/inttypes.h \
+- /usr/include/machine/types.h /usr/include/machine/endian.h \
+- /usr/include/termios.h /usr/include/sys/ttycom.h \
+- /usr/include/sys/ioccom.h /usr/include/sys/ttydefaults.h \
+- /usr/include/time.h /usr/include/sys/_posix.h /usr/include/unistd.h \
+- /usr/include/sys/unistd.h /usr/include/math.h /usr/include/errno.h \
+- /usr/include/sys/times.h /usr/include/sys/stat.h \
+- /usr/include/sys/time.h /usr/include/aio.h /usr/include/sys/signal.h \
+- /usr/include/machine/signal.h
+-dtprocs.o dtprocs.ln: dtprocs.c dt.h /usr/include/stdio.h \
+- /usr/include/sys/cdefs.h /usr/include/machine/ansi.h \
+- /usr/include/stdlib.h /usr/include/string.h /usr/include/fcntl.h \
+- /usr/include/sys/types.h /usr/include/sys/inttypes.h \
+- /usr/include/machine/types.h /usr/include/machine/endian.h \
+- /usr/include/termios.h /usr/include/sys/ttycom.h \
+- /usr/include/sys/ioccom.h /usr/include/sys/ttydefaults.h \
+- /usr/include/time.h /usr/include/sys/_posix.h /usr/include/unistd.h \
+- /usr/include/sys/unistd.h /usr/include/math.h /usr/include/errno.h \
+- /usr/include/sys/times.h /usr/include/sys/stat.h \
+- /usr/include/sys/time.h /usr/include/aio.h /usr/include/sys/signal.h \
+- /usr/include/machine/signal.h /usr/include/signal.h \
+- /usr/include/sys/wait.h
+-dtmmap.o dtmmap.ln: dtmmap.c dt.h /usr/include/stdio.h /usr/include/sys/cdefs.h \
+- /usr/include/machine/ansi.h /usr/include/stdlib.h \
+- /usr/include/string.h /usr/include/fcntl.h /usr/include/sys/types.h \
+- /usr/include/sys/inttypes.h /usr/include/machine/types.h \
+- /usr/include/machine/endian.h /usr/include/termios.h \
+- /usr/include/sys/ttycom.h /usr/include/sys/ioccom.h \
+- /usr/include/sys/ttydefaults.h /usr/include/time.h \
+- /usr/include/sys/_posix.h /usr/include/unistd.h \
+- /usr/include/sys/unistd.h /usr/include/math.h /usr/include/errno.h \
+- /usr/include/sys/times.h /usr/include/sys/stat.h \
+- /usr/include/sys/time.h /usr/include/aio.h /usr/include/sys/signal.h \
+- /usr/include/machine/signal.h /usr/include/limits.h \
+- /usr/include/machine/limits.h /usr/include/sys/syslimits.h \
+- /usr/include/sys/mman.h
+-dtfifo.o dtfifo.ln: dtfifo.c dt.h /usr/include/stdio.h /usr/include/sys/cdefs.h \
+- /usr/include/machine/ansi.h /usr/include/stdlib.h \
+- /usr/include/string.h /usr/include/fcntl.h /usr/include/sys/types.h \
+- /usr/include/sys/inttypes.h /usr/include/machine/types.h \
+- /usr/include/machine/endian.h /usr/include/termios.h \
+- /usr/include/sys/ttycom.h /usr/include/sys/ioccom.h \
+- /usr/include/sys/ttydefaults.h /usr/include/time.h \
+- /usr/include/sys/_posix.h /usr/include/unistd.h \
+- /usr/include/sys/unistd.h /usr/include/math.h /usr/include/errno.h \
+- /usr/include/sys/times.h /usr/include/sys/stat.h \
+- /usr/include/sys/time.h /usr/include/aio.h /usr/include/sys/signal.h \
+- /usr/include/machine/signal.h
+-dttape.o dttape.ln: dttape.c dt.h /usr/include/stdio.h /usr/include/sys/cdefs.h \
+- /usr/include/machine/ansi.h /usr/include/stdlib.h \
+- /usr/include/string.h /usr/include/fcntl.h /usr/include/sys/types.h \
+- /usr/include/sys/inttypes.h /usr/include/machine/types.h \
+- /usr/include/machine/endian.h /usr/include/termios.h \
+- /usr/include/sys/ttycom.h /usr/include/sys/ioccom.h \
+- /usr/include/sys/ttydefaults.h /usr/include/time.h \
+- /usr/include/sys/_posix.h /usr/include/unistd.h \
+- /usr/include/sys/unistd.h /usr/include/math.h /usr/include/errno.h \
+- /usr/include/sys/times.h /usr/include/sys/stat.h \
+- /usr/include/sys/time.h /usr/include/aio.h /usr/include/sys/signal.h \
+- /usr/include/machine/signal.h /usr/include/sys/ioctl.h \
+- /usr/include/sys/filio.h /usr/include/sys/sockio.h \
+- /usr/include/sys/mtio.h
+-dtaio.o dtaio.ln: dtaio.c dt.h /usr/include/stdio.h /usr/include/sys/cdefs.h \
+- /usr/include/machine/ansi.h /usr/include/stdlib.h \
+- /usr/include/string.h /usr/include/fcntl.h /usr/include/sys/types.h \
+- /usr/include/sys/inttypes.h /usr/include/machine/types.h \
+- /usr/include/machine/endian.h /usr/include/termios.h \
+- /usr/include/sys/ttycom.h /usr/include/sys/ioccom.h \
+- /usr/include/sys/ttydefaults.h /usr/include/time.h \
+- /usr/include/sys/_posix.h /usr/include/unistd.h \
+- /usr/include/sys/unistd.h /usr/include/math.h /usr/include/errno.h \
+- /usr/include/sys/times.h /usr/include/sys/stat.h \
+- /usr/include/sys/time.h /usr/include/aio.h /usr/include/sys/signal.h \
+- /usr/include/machine/signal.h /usr/include/limits.h \
+- /usr/include/machine/limits.h /usr/include/sys/syslimits.h
++dt.o dt.ln: dt.c dt.h
++dtgen.o dtgen.ln: dtgen.c
++dtinfo.o dtinfo.ln: dtinfo.c dt.h
++dtread.o dtread.ln: dtread.c dt.h
++dtwrite.o dtwrite.ln: dtwrite.c dt.h
++dtstats.o dtstats.ln: dtstats.c dt.h
++dttty.o dttty.ln: dttty.c dt.h
++dtutil.o dtutil.ln: dtutil.c dt.h
++dtusage.o dtusage.ln: dtusage.c dt.h
++dtprocs.o dtprocs.ln: dtprocs.c dt.h
++dtmmap.o dtmmap.ln: dtmmap.c dt.h
++dtfifo.o dtfifo.ln: dtfifo.c dt.h
++dttape.o dttape.ln: dttape.c dt.h
++dtaio.o dtaio.ln: dtaio.c dt.h
