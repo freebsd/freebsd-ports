@@ -7,6 +7,7 @@
 
 PORTNAME=	gnucash
 PORTVERSION=	1.6.6
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.gnucash.org/pub/gnucash/sources/stable/ \
 		ftp://ftp.gnucash.org/pub/gnucash/sources/stable/ \
@@ -35,6 +36,7 @@ USE_GMAKE=	yes
 USE_XPM=	yes
 USE_PERL5=	yes
 USE_GNOME=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-glib-config=${GLIB_CONFIG}
@@ -44,11 +46,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 MAN1=		gnc-prices.1 gnucash.1
 
 pre-patch:
-	@${PERL} -pi -e 's^-l(pthread|c_r)^${PTHREAD_LIBS}^g ; \
+	@${REINPLACE_CMD} -e 's^-l(pthread|c_r)^${PTHREAD_LIBS}^g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's^\$\{datadir\}/gnome/^\$\(datadir\)/^g ; \
-		 s^\$\{datadir\}/aclocal^\$\(prefix\)/share/aclocal^g ; \
-		 s^\$\{datadir\}/locale^\$\(prefix\)/share/locale^g'
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${REINPLACE_CMD} -e \
+		's|[{]datadir[}]/gnome/|(datadir)/|g ; \
+		 s|[{]datadir[}]/aclocal|(prefix)/share/aclocal|g ; \
+		 s|[{]datadir[}]/locale|(prefix)/share/locale|g'
 
 .include <bsd.port.mk>
