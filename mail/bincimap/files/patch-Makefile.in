@@ -1,11 +1,11 @@
---- Makefile.in.orig	Tue May 20 21:45:16 2003
-+++ Makefile.in	Wed May 21 03:03:40 2003
-@@ -96,7 +96,7 @@
- install_sh = @install_sh@
+--- Makefile.in.orig	Sun Sep  7 13:24:07 2003
++++ Makefile.in	Sun Sep  7 13:24:25 2003
+@@ -131,7 +131,7 @@
+ target_alias = @target_alias@
  
  #--------------------------------------------------------------------------
--SUBDIRS = conf contrib doc man service src
-+SUBDIRS = man src
+-SUBDIRS = conf contrib doc man service src tests
++SUBDIRS = contrib man src tests
  
  #--------------------------------------------------------------------------
  EXTRA_DIST = bincimap.spec config.h COPYING.OpenSSL config.h.in

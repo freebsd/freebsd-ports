@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/bincimapd
 bin/bincimap-up
 etc/bincimap/bincimap.conf.sample
@@ -11,7 +12,7 @@ etc/bincimap/bincimap.conf.sample
 %%DJB%%%%SSL%%etc/bincimap/imaps.sample/log/run
 %%DJB%%%%SSL%%@dirrm etc/bincimap/imaps.sample/log
 %%DJB%%%%SSL%%@dirrm etc/bincimap/imaps.sample
-@unexec %D/etc/bincimap 2>/dev/null || true
+@unexec rmdir %D/etc/bincimap 2>/dev/null || true
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
