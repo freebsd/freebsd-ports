@@ -97,8 +97,9 @@ CONFIGURE_ENV+=	CXX="${CC}"
 INFO=		mysql
 .endif
 
-RUN_DEPENDS=	mysql:${PORTSDIR}/databases/mysql323-client \
-		${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-Mysql
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-Mysql
+
+CONFLICTS=	mysql-server-4.* mysql-server-5.*
 
 PLIST_SUB=	MYSQL_VERSION=${PORTVERSION}
 
@@ -171,6 +172,8 @@ post-install:
 
 # MySQL-Client part
 .else
+CONFLICTS=	mysql-client-4.* mysql-client-5.*
+
 MAN1=		isamchk.1 isamlog.1 mysql.1 mysql_zap.1 mysqlaccess.1  \
 		mysqladmin.1 mysqld.1 mysqld_multi.1 mysqldump.1 mysqlshow.1 \
 		perror.1 replace.1 safe_mysqld.1

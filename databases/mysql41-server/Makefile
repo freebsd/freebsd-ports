@@ -9,7 +9,7 @@ PORTNAME?=	mysql
 PORTVERSION=	4.1.1
 PORTREVISION?=	0
 CATEGORIES=	databases
-MASTER_SITES=	ftp://planetmirror.com/pub/mysql/Downloads/MySQL-4.0/ \
+MASTER_SITES=	ftp://planetmirror.com/pub/mysql/Downloads/MySQL-4.1/ \
 		http://www.softagency.co.jp/MySQL/Downloads/MySQL-4.1/ \
 		ftp://sunsite.dk/mirrors/mysql/Downloads/MySQL-4.1/ \
 		http://mysql.mediatraffic.fi/Downloads/MySQL-4.1/ \
@@ -101,8 +101,9 @@ CXXFLAGS+=	-fno-exceptions
 .if !defined(CLIENT_ONLY)
 USE_PERL5_RUN=	yes
 
-RUN_DEPENDS=	mysql:${PORTSDIR}/databases/mysql41-client \
-		${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql41
+
+CONFLICTS=	mysql-server-3.* mysql-server-4.[02-9].* mysql-server-5.*
 
 ONLY_FOR_ARCHS=	i386 alpha sparc64
 
@@ -170,6 +171,8 @@ post-install:
 
 # MySQL-Client part
 .else
+CONFLICTS=	mysql-client-3.* mysql-client-4.[02-9].* mysql-client-5.*
+
 MAN1=		isamchk.1 isamlog.1 mysql.1 mysql_zap.1 mysqlaccess.1  \
 		mysqladmin.1 mysqld.1 mysqld_multi.1 mysqld_safe.1 mysqldump.1 \
 		mysql_fix_privilege_tables.1 mysqlshow.1 perror.1 replace.1
