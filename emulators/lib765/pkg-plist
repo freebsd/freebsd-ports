@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+include/765.h
+lib/lib765.a
+lib/lib765.so
+lib/lib765.so.3
+%%PORTDOCS%%%%DOCSDIR%%/765.txt
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
