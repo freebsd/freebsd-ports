@@ -28,3 +28,4 @@ share/gnome/pixmaps/same-gnome/blink-sync.png
 share/gnome/pixmaps/same-gnome/glass.png
 share/gnome/pixmaps/same-gnome/marbles.png
 share/gnome/pixmaps/same-gnome/rotate.png
+@dirrm share/gnome/pixmaps/same-gnome
