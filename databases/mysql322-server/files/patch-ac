@@ -1,11 +1,22 @@
 --- mit-pthreads/config/configure.orig	Tue Mar 10 10:11:25 1998
-+++ mit-pthreads/config/configure	Tue Sep  1 10:57:21 1998
-@@ -1280,7 +1280,7 @@
++++ mit-pthreads/config/configure	Thu Feb  4 23:02:41 1999
+@@ -692,10 +692,6 @@
+ echo "$ac_t""$ac_cv_prog_cc_g" 1>&6
+   if test "$ac_test_CFLAGS" = set; then
+     CFLAGS="$ac_save_CFLAGS"
+-  elif test $ac_cv_prog_cc_g = yes; then
+-    CFLAGS="-g -O2"
+-  else
+-    CFLAGS="-O2"
+   fi
+ else
+   GCC=
+@@ -1280,7 +1276,7 @@
      m68*-*-netbsd*)
  	name=m68000-netbsd
  	;;
 -    i386-*-freebsd2.*)
-+    i386-*-freebsd2.* | i386-*-freebsd3.* | i386-*-freebsd4.*)
++    i386-*-freebsd*)
          name=i386-freebsd-2.0
          sysincludes=freebsd-2.0
          except="fork lseek ftruncate sigsuspend sigprocmask"
