@@ -1,0 +1,5 @@
+This is a port of rubber, which purpose is to make the building of a
+LaTeX document automated, from the source files to the final document
+file, replacing the work of a Makefile.
+
+WWW: http://www.beffara.org
