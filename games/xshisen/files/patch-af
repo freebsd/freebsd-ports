@@ -1,5 +1,8 @@
---- score.C.orig	Tue Jan 23 00:52:09 1996
-+++ score.C	Sat Aug 26 05:10:09 2000
+
+$FreeBSD$
+
+--- score.C.orig
++++ score.C
 @@ -4,31 +4,31 @@
  
  XtResource Score::resources[] = {
@@ -58,6 +61,19 @@
  }
  
  void
+@@ -371,10 +377,10 @@
+     s1 = scoreToRegister / 1000;
+     ms_to_hms(scoreToRegister, h, m, s);
+     pw = getpwuid(getuid());
+-    strcpy(gecos, pw->pw_gecos);
++    strlcpy(gecos, pw->pw_gecos, sizeof(gecos));
+     if ((po = strchr(gecos, ',')) != NULL)
+         *po = 0;
+-    sprintf(namebuf, "%-8.8s (%s)", pw->pw_name, gecos);
++    snprintf(namebuf, sizeof(namebuf), "%-8.8s (%s)", pw->pw_name, gecos);
+     sprintf(myname, "%-28.28s", namebuf);
+     // Always read the latest high score
+     readfile();
 @@ -414,7 +420,7 @@
      strcpy(rec[inspos].name, myname);
      time(&t);
