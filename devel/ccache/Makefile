@@ -7,6 +7,7 @@
 
 PORTNAME=	ccache
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://ccache.samba.org/ftp/ccache/
 
@@ -16,5 +17,16 @@ COMMENT=	A tool to minimize the compile time of C programs
 GNU_CONFIGURE=	yes
 MAN1=		ccache.1
 PLIST_FILES=	bin/ccache
+
+PORTDOCS=	index.html \
+		ccache-man.html
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/web/${i} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
