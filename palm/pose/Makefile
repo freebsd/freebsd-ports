@@ -22,6 +22,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--x-includes=${X11BASE}/include \
 		--x-libraries=${X11BASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
+		LIBS="${PTHREAD_LIBS}"
 
 post-install:
 	${MKDIR} ${PREFIX}/share/pose
