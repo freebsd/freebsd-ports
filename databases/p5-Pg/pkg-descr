@@ -1,0 +1,13 @@
+This is version 1.2.0 of pg95perl5.
+
+Pg95perl5 is an interface between Larry Wall's language perl version 5 and
+the database Postgres95. This has been done by using the Perl 5 application
+program- ming interface for C extensions which calls the Postgres
+programmer's interface LIBQ.
+
+Pg95perl5 is based on the pgperl package from Igor Metz and Robert Withrow.
+Because the perl interface changed, this interface has been rewritten
+following the guidelines from the perlapi manpage. Also the test script
+has been adapted to SQL, which has replaced the query language POSTQUEL.
+
+
