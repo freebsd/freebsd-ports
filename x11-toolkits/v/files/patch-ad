@@ -1,0 +1,12 @@
+diff -ru ./appgen/vgdefs.h ../patched/appgen/vgdefs.h
+--- ./appgen/vgdefs.h	Mon May  4 19:23:46 1998
++++ ../patched/appgen/vgdefs.h	Tue Jun 16 09:25:35 1998
+@@ -23,7 +23,7 @@
+ #ifdef LINUX
+ #define DEF_HOMEV "/usr" // to find libV.a
+ #else
+-#define DEF_HOMEV "/usr/local/v" // to find libV.a
++#define DEF_HOMEV "/usr/X11R6" // to find libV.a
+ #endif
+ 
+ #ifdef Motif
