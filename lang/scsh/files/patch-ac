@@ -1,19 +1,19 @@
-*** configure.in.original       Tue Nov 26 17:10:41 1996
---- configure.in        Tue Nov 26 17:11:07 1996
+*** configure.in.orig	Wed Jan  9 15:54:29 2002
+--- configure.in	Fri Jan 11 12:36:21 2002
 ***************
-*** 220,226 ****
-  fi
-
-  AR=${AR-"ar cq"}
-! TMPDIR=${TMPDIR-"/usr/tmp"}
-
-  case "$host" in
-
---- 220,226 ----
-  fi
-
-  AR=${AR-"ar cq"}
-! TMPDIR=${TMPDIR-"/var/tmp"}
-
-  case "$host" in
-
+*** 226,232 ****
+       fi
+  
+       AR=${AR-"ar cq"}
+!      TMPDIR=${TMPDIR-"/usr/tmp"}
+       case "$host" in
+    ## CX/UX
+    m88k-harris-cxux* )
+--- 226,232 ----
+       fi
+  
+       AR=${AR-"ar cq"}
+!      TMPDIR=${TMPDIR-"/var/tmp"}
+       case "$host" in
+    ## CX/UX
+    m88k-harris-cxux* )

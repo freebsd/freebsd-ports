@@ -1,19 +1,19 @@
-*** configure.original  Tue Nov 26 17:55:51 1996
---- configure   Tue Nov 26 17:55:58 1996
+*** configure.orig	Fri Jan 11 12:38:17 2002
+--- configure	Fri Jan 11 12:38:29 2002
 ***************
-*** 1017,1023 ****
-  fi
-
-  AR=${AR-"ar cq"}
-! TMPDIR=${TMPDIR-"/usr/tmp"}
-
-  case "$host" in
-
---- 1017,1023 ----
-  fi
-
-  AR=${AR-"ar cq"}
-! TMPDIR=${TMPDIR-"/var/tmp"}
-
-  case "$host" in
-
+*** 1299,1305 ****
+       fi
+  
+       AR=${AR-"ar cq"}
+!      TMPDIR=${TMPDIR-"/usr/tmp"}
+       case "$host" in
+    ## CX/UX
+    m88k-harris-cxux* )
+--- 1299,1305 ----
+       fi
+  
+       AR=${AR-"ar cq"}
+!      TMPDIR=${TMPDIR-"/var/tmp"}
+       case "$host" in
+    ## CX/UX
+    m88k-harris-cxux* )

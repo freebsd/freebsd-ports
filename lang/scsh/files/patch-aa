@@ -1,39 +1,55 @@
-*** Makefile.in.original	Tue Nov 26 14:44:19 1996
---- Makefile.in	Thu Nov 28 15:29:24 1996
+*** Makefile.in.orig	Wed Jan  9 21:27:46 2002
+--- Makefile.in	Fri Jan 11 15:05:48 2002
 ***************
-*** 137,143 ****
+*** 31,37 ****
+  mandir = @mandir@/man$(manext)
+  ### End of `configure' section###
   
-  # The following is the first rule and therefore the "make" command's
-  # default target.
-! enough: $(VM) $(IMAGE) script $(LIBCIG) scsh $(LIBSCSH) $(MANPAGE) .notify
+! htmldir = $(prefix)/html
   
-  # The developers are curious to know.  Don't be concerned if this fails.
-  # You may comment these lines out if you wish to be discourteous.
---- 137,143 ----
+  # HP 9000 series, if you don't have gcc
+  #   CC = cc
+--- 31,37 ----
+  mandir = @mandir@/man$(manext)
+  ### End of `configure' section###
   
-  # The following is the first rule and therefore the "make" command's
-  # default target.
-! enough: $(VM) $(IMAGE) script $(LIBCIG) scsh $(LIBSCSH) $(MANPAGE)
+! htmldir = $(libdir)/scsh/doc/html
   
-  # The developers are curious to know.  Don't be concerned if this fails.
-  # You may comment these lines out if you wish to be discourteous.
+  # HP 9000 series, if you don't have gcc
+  #   CC = cc
 ***************
-*** 250,255 ****
---- 250,256 ----
-  	$(RM) -r $(LIB).old
-  	if [ -d $(LIB) ] ; then mv $(LIB) $(LIB).old ; fi
-  	mkdir $(LIB)
-+ 	mkdir $(LIB)/emacs
-  	mkdir $(LIB)/big
-  	mkdir $(LIB)/cig
-  	mkdir $(LIB)/doc
+*** 367,375 ****
+  	done &&									\
+  	for f in $(srcdir)/doc/scsh-manual/html/*.html 				\
+  		$(srcdir)/doc/scsh-manual/html/*.gif 				\
+! 		$(srcdir)/doc/scsh-manual/html/*.css				\
+! 		$(srcdir)/doc/src/manual/*.html					\
+! 		$(srcdir)/doc/html/*.html;					\
+  		do $(INSTALL_DATA) $$f $(htmldir)/;		\
+  	done
+  
+--- 367,373 ----
+  	done &&									\
+  	for f in $(srcdir)/doc/scsh-manual/html/*.html 				\
+  		$(srcdir)/doc/scsh-manual/html/*.gif 				\
+! 		$(srcdir)/doc/scsh-manual/html/*.css;			\
+  		do $(INSTALL_DATA) $$f $(htmldir)/;		\
+  	done
+  
 ***************
-*** 286,291 ****
---- 287,293 ----
-  	      $(LIB)/misc $(LIB)/link $(LIB)/vm $(LIB)/doc
-  	for f in $(srcdir)/rts/*num.scm; \
-  	    do $(INSTALL_DATA) $$f $(LIB)/rts/; done
-+ 	for f in $(srcdir)/emacs/*; do $(INSTALL_DATA) $$f $(LIB)/emacs/; done
-  	for f in $(srcdir)/env/*.scm; do $(INSTALL_DATA) $$f $(LIB)/env/; done
-  	for f in $(srcdir)/big/*.scm; do $(INSTALL_DATA) $$f $(LIB)/big/; done
-  	for f in $(srcdir)/opt/*.scm; do $(INSTALL_DATA) $$f $(LIB)/opt/; done
+*** 399,405 ****
+  	}								\
+  	done &&								\
+  	for dir in								\
+! 		rts env big opt misc link scsh doc/scsh-manual doc/s48-manual cig;	\
+  		do								\
+  		{ mkdir -p $(LIB)/$$dir && [ -w $(LIB)/$$dir ]; } || {		\
+  			echo "$(LIB)/$$dir not a writable directory" >&2; 	\
+--- 397,403 ----
+  	}								\
+  	done &&								\
+  	for dir in								\
+! 		rts env big opt misc link scsh doc/scsh-manual doc/s48-manual;	\
+  		do								\
+  		{ mkdir -p $(LIB)/$$dir && [ -w $(LIB)/$$dir ]; } || {		\
+  			echo "$(LIB)/$$dir not a writable directory" >&2; 	\
