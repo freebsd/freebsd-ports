@@ -7,6 +7,7 @@
     SUBDIR += bakery
     SUBDIR += blt
     SUBDIR += buffy
+    SUBDIR += bwidget
     SUBDIR += clean-theme-gtk
     SUBDIR += colorstep
     SUBDIR += easygtk
