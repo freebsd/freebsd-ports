@@ -1,19 +1,34 @@
-*** Makefile.orig	Thu May 28 15:12:56 1998
---- Makefile	Thu May 28 15:13:31 1998
-***************
-*** 251,257 ****
-  	@ $(MAKE) BINNAME=mpg123m mpg123
-  
-  mpg123-make:
-! 	@ $(MAKE) BINNAME=mpg123 mpg123
-  
-  mpg123: mpg123.o common.o $(OBJECTS) decode_2to1.o decode_4to1.o \
-  		tabinit.o audio.o layer1.o layer2.o layer3.o buffer.o \
---- 251,257 ----
-  	@ $(MAKE) BINNAME=mpg123m mpg123
-  
-  mpg123-make:
-! 	@ $(MAKE) CFLAGS="$(CFLAGS)" BINNAME=mpg123 mpg123
-  
-  mpg123: mpg123.o common.o $(OBJECTS) decode_2to1.o decode_4to1.o \
-  		tabinit.o audio.o layer1.o layer2.o layer3.o buffer.o \
+--- Makefile.orig	Sun Feb  8 18:23:04 1998
++++ Makefile	Sat Oct  3 17:37:02 1998
+@@ -21,6 +21,7 @@
+ 	@echo ""
+ 	@echo "make linux-help     Linux, more help"
+ 	@echo "make freebsd        FreeBSD"
++	@echo "make freebsd-elf    FreeBSD ELF"
+ 	@echo "make solaris        Solaris 2.x (tested: 2.5 and 2.5.1) using SparcWorks cc"
+ 	@echo "make solaris-gcc    Solaris 2.x using GNU cc (somewhat slower)"
+ 	@echo "make sunos          SunOS 4.x (tested: 4.1.4)"
+@@ -145,6 +146,14 @@
+ 			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DOSS' \
+ 		mpg123-make
+ 
++freebsd-elf:
++	$(MAKE) CC=cc LDFLAGS= \
++		OBJECTS='decode_i386.o dct64_i386.o getbits.o audio_oss.o' \
++		CFLAGS='-Wall -ansi -pedantic -O4 -m486 -fomit-frame-pointer \
++			-funroll-all-loops -ffast-math -DROT_I386 \
++			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DOSS' \
++		mpg123-make
++
+ solaris:
+ 	$(MAKE) CC=cc LDFLAGS='-lsocket -lnsl' \
+ 		OBJECTS='decode.o dct64.o audio_sun.o' \
+@@ -251,7 +260,7 @@
+ 	@ $(MAKE) BINNAME=mpg123m mpg123
+ 
+ mpg123-make:
+-	@ $(MAKE) BINNAME=mpg123 mpg123
++	@ $(MAKE) CFLAGS="$(CFLAGS)" BINNAME=mpg123 mpg123
+ 
+ mpg123: mpg123.o common.o $(OBJECTS) decode_2to1.o decode_4to1.o \
+ 		tabinit.o audio.o layer1.o layer2.o layer3.o buffer.o \
