@@ -25,6 +25,7 @@ NO_WRKSUBDIR=	yes
 MAN1=		sconvert.1 nutmeg.1 spice.1
 MAN3=		mfb.3
 MAN5=		mfbcap.5
+MLINKS=		spice.1 spice3.1
 
 post-install:
 .if !defined(NOPORTDOCS)
