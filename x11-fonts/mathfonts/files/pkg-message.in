@@ -1,0 +1,16 @@
+You can start using the fonts by following these instructions:
+
+Make sure that the freetype module is loaded.  If it is not, add the following
+line to the "Modules" section of your X Windows configuration file:
+
+	Load "freetype"
+
+Add the following line to the "Files" section of X Windows configuration file:
+
+	FontPath "%%FONTSDIR%%/"
+
+Note: your X Windows configuration file is typically /etc/X11/XF86Config
+if you are using XFree86, and /etc/X11/xorg.conf if you are using X.Org.
+
+To test your installation, check the following URL:
+<http://swissnet.ai.mit.edu/projects/intelligent-book/mathml/mathml-example.xml>

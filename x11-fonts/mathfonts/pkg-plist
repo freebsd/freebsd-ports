@@ -1,0 +1,27 @@
+@comment $FreeBSD$
+%%FONTSDIR%%/fonts.dir
+%%FONTSDIR%%/fonts.scale
+%%FONTSDIR%%/math1___.ttf
+%%FONTSDIR%%/math1b__.ttf
+%%FONTSDIR%%/math1m__.ttf
+%%FONTSDIR%%/math1mb_.ttf
+%%FONTSDIR%%/math2___.ttf
+%%FONTSDIR%%/math2b__.ttf
+%%FONTSDIR%%/math2m__.ttf
+%%FONTSDIR%%/math2mb_.ttf
+%%FONTSDIR%%/math3___.ttf
+%%FONTSDIR%%/math3b__.ttf
+%%FONTSDIR%%/math3m__.ttf
+%%FONTSDIR%%/math3mb_.ttf
+%%FONTSDIR%%/math4___.ttf
+%%FONTSDIR%%/math4b__.ttf
+%%FONTSDIR%%/math4m__.ttf
+%%FONTSDIR%%/math4mb_.ttf
+%%FONTSDIR%%/math5___.ttf
+%%FONTSDIR%%/math5b__.ttf
+%%FONTSDIR%%/math5m__.ttf
+%%FONTSDIR%%/math5mb_.ttf
+%%ACROREAD%%@exec ln -fs %%LOCALBASE%%/Acrobat5/Resource/Font/Symbol %D/%%FONTSDIR%%
+%%ACROREAD%%@unexec rm %D/%%FONTSDIR%%/Symbol
+@unexec rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || true
+@dirrm %%FONTSDIR%%

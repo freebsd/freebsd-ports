@@ -37,6 +37,7 @@
     SUBDIR += libXft
     SUBDIR += linux-fontconfig
     SUBDIR += linux-urw-fonts
+    SUBDIR += mathfonts
     SUBDIR += mkbold
     SUBDIR += mkbold-mkitalic
     SUBDIR += mkitalic
