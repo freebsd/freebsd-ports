@@ -15,6 +15,5 @@ MAINTAINER=		swallace@FreeBSD.org
 
 WRKSRC=			${WRKDIR}/xchomp
 USE_IMAKE=		yes
-NO_INSTALL_MANPAGES=	yes
 
 .include <bsd.port.mk>
