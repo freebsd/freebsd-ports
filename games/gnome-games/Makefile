@@ -23,7 +23,8 @@ USE_GMAKE=	yes
 USE_GNOME=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
+			  `gdk-pixbuf-config --cflags`" \
 		LIBS="-L${LOCALBASE}/lib" \
 		MSGFMT=${LOCALBASE}/bin/msgfmt-new \
 		XGETTEXT=${LOCALBASE}/bin/xgettext-new

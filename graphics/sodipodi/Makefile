@@ -17,7 +17,8 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
+			  `gdk-pixbuf-config --cflags`" \
 		LIBS="-L${LOCALBASE}/lib"
 
 MAN1=		sodipodi.1
