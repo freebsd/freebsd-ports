@@ -1,0 +1,6 @@
+Imager::Graph is intended to produce good looking graphs with a
+minimum effort on the part of the user.
+
+Currently only the pie graph class, Imager::Graph::Pie, is provided.
+
+WWW: http://search.cpan.org/dist/Imager-Graph/
