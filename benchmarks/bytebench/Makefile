@@ -3,7 +3,7 @@
 # Date created:         28 December 1995
 # Whom:                 se
 #
-# $Id: Makefile,v 1.1.1.1 1996/01/01 22:57:36 se Exp $
+# $Id: Makefile,v 1.3 1996/01/03 00:06:21 se Exp $
 #
 
 DISTNAME=       bytebench-3.1
@@ -17,12 +17,12 @@ do-install:
 		-mkdir -p $(PREFIX)/lib/bytebench
 		for f in Makefile README Run doc pgms results testdir; \
 			do cp -R $(WRKSRC)/$$f $(PREFIX)/lib/bytebench; done
-		echo "#!/bin/sh"		  >  $(PREFIX)/bin/bytebench
-		echo "TMPDIR=/var/tmp"		  >> $(PREFIX)/bin/bytebench
-		echo "RESULTDIR=/tmp"		  >> $(PREFIX)/bin/bytebench
-		echo "export TMPDIR RESULTDIR"	  >> $(PREFIX)/bin/bytebench
-		echo "cd $(PREFIX)/lib/bytebench" >> $(PREFIX)/bin/bytebench
-		echo "exec ./Run"		  >> $(PREFIX)/bin/bytebench
+		echo "#!/bin/sh"		   >  $(PREFIX)/bin/bytebench
+		echo "TMPDIR=\$${TMPDIR-/var/tmp}" >> $(PREFIX)/bin/bytebench
+		echo "RESULTDIR=/tmp"		   >> $(PREFIX)/bin/bytebench
+		echo "export TMPDIR RESULTDIR"	   >> $(PREFIX)/bin/bytebench
+		echo "cd $(PREFIX)/lib/bytebench"  >> $(PREFIX)/bin/bytebench
+		echo "exec ./Run \"\$$@\""	   >> $(PREFIX)/bin/bytebench
 		chmod 755 $(PREFIX)/bin/bytebench
 		chmod 644 $(PREFIX)/lib/bytebench/Makefile
 		chmod 644 $(PREFIX)/lib/bytebench/README
