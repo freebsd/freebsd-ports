@@ -7,6 +7,7 @@
 
 PORTNAME=	pike74
 PORTVERSION=	7.4.31
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
 		ftp://ftp.oav.net/pkg_freebsd/distfiles/ \
@@ -61,7 +62,10 @@ CONFIGURE_ARGS+=	--without-debug \
 		 --without-gnome \
 		 --without-glade \
 		 --without-libglade-config \
+		 --without-machine-code \
 		 --prefix=${PREFIX}
+
+USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -347,6 +351,10 @@ pre-everything::
 
 pre-configure:
 	@${ECHO} ${CONFIGURE_ARGS}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's| -lgmp| -L${LOCALBASE}/lib -lgmp|' \
+		${WRKSRC}/modules/Gmp/configure ${WRKSRC}/modules/_Image_XFace/configure
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}pike ${PREFIX}/bin
