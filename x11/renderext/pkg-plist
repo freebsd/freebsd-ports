@@ -1,11 +1,6 @@
-share/doc/render/library
-share/doc/render/protocol
-lib/pkgconfig/render.pc
 include/X11/extensions/render.h
 include/X11/extensions/renderproto.h
-@exec mkdir -p %D/share/doc/render
-@exec mkdir -p %D/lib/pkgconfig
-@exec mkdir -p %D/include/X11/extensions
-@unexec rmdir %D/include/X11/extensions 2>/dev/null || true
-@unexec rmdir %D/share/lib/pkgconfig 2>/dev/null || true
-@dirrm share/doc/render
+libdata/pkgconfig/render.pc
+%%DOCSDIR%%/library
+%%DOCSDIR%%/protocol
+@dirrm %%DOCSDIR
