@@ -1291,7 +1291,6 @@ lib/xemacs-%%XEMACS_VER%%/lisp/x-win-xfree86.el
 lib/xemacs-%%XEMACS_VER%%/lisp/x-win-xfree86.elc
 @dirrm lib/xemacs/site-lisp
 @dirrm lib/xemacs/site-modules
-@dirrm lib/xemacs
 @dirrm lib/xemacs-%%XEMACS_VER%%/lisp/term
 @dirrm lib/xemacs-%%XEMACS_VER%%/lisp/mule
 @dirrm lib/xemacs-%%XEMACS_VER%%/lisp

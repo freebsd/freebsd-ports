@@ -188,7 +188,7 @@ post-install::
 # Do what PLIST does for pkg_add.
 	${MKDIR} ${PREFIX}/lib/xemacs/site-lisp
 	${CHMOD} 755 ${PREFIX}/lib/xemacs/site-lisp
-	${RM} -f ${PREFIX}/bin/send-pr
+	${RM} -f ${PREFIX}/bin/send-pr ${PREFIX}/bin/xemacs-${XEMACS_VER}-*.dmp
 .if defined(WITH_GTK)
 	@${ECHO_MSG} "Please be aware that GTK support is buggy. Do not report bugs to"
 	@${ECHO_MSG} "the maintainer."
