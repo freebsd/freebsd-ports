@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- src/applications/afs/module/Makefile.in.orig	Fri Oct  1 01:42:15 2004
-+++ src/applications/afs/module/Makefile.in	Fri Oct  1 01:44:57 2004
-@@ -713,7 +713,7 @@
- 	$(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+--- src/applications/afs/module/Makefile.in.orig
++++ src/applications/afs/module/Makefile.in
+@@ -203,7 +203,7 @@
+ 	$(AM_CFLAGS) $(CFLAGS)
  CCLD = $(CC)
  LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
 -	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 +	$(AM_LDFLAGS) $(LDFLAGS) $(LTLIBINTL) -o $@
- CFLAGS = @CFLAGS@
- DIST_SOURCES = $(libgnunetafs_database_bdb_la_SOURCES) \
+ SOURCES = $(libgnunetafs_database_bdb_la_SOURCES) \
  	$(libgnunetafs_database_directory_la_SOURCES) \
+ 	$(libgnunetafs_database_gdbm_la_SOURCES) \

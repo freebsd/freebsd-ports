@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- src/applications/dht/tools/Makefile.in.orig	Sat Oct  2 17:57:30 2004
-+++ src/applications/dht/tools/Makefile.in	Sat Oct  2 17:57:54 2004
-@@ -210,7 +210,7 @@
- 	$(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+--- src/applications/dht/tools/Makefile.in.orig
++++ src/applications/dht/tools/Makefile.in
+@@ -84,7 +84,7 @@
+ 	$(AM_CFLAGS) $(CFLAGS)
  CCLD = $(CC)
  LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
 -	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 +	$(AM_LDFLAGS) $(LDFLAGS) $(LTLIBINTL) -o $@
- CFLAGS = @CFLAGS@
- DIST_SOURCES = $(libgnunetdht_api_la_SOURCES) $(gnunet_dht_join_SOURCES) \
+ SOURCES = $(libgnunetdht_api_la_SOURCES) $(gnunet_dht_join_SOURCES) \
  	$(gnunet_dht_query_SOURCES)
+ DIST_SOURCES = $(libgnunetdht_api_la_SOURCES) \

@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- src/server/Makefile.in.orig	Sat Oct  2 22:42:44 2004
-+++ src/server/Makefile.in	Sat Oct  2 22:43:53 2004
-@@ -265,7 +265,7 @@
- 	$(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+--- src/server/Makefile.in.orig
++++ src/server/Makefile.in
+@@ -108,7 +108,7 @@
+ 	$(AM_CFLAGS) $(CFLAGS)
  CCLD = $(CC)
  LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
 -	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 +	$(AM_LDFLAGS) $(LDFLAGS) $(LTLIBINTL) -o $@
- CFLAGS = @CFLAGS@
- DIST_SOURCES = $(gnunet_peer_info_SOURCES) \
+ SOURCES = $(fragmentationtest_SOURCES) $(gnunet_peer_info_SOURCES) \
  	$(gnunet_transport_check_SOURCES) $(gnunet_update_SOURCES) \
+ 	$(gnunetd_SOURCES)

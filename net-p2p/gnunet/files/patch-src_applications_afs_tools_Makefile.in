@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- src/applications/afs/tools/Makefile.in.orig	Fri Oct  1 01:56:26 2004
-+++ src/applications/afs/tools/Makefile.in	Fri Oct  1 01:57:39 2004
-@@ -241,7 +241,7 @@
- 	$(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+--- src/applications/afs/tools/Makefile.in.orig
++++ src/applications/afs/tools/Makefile.in
+@@ -104,7 +104,7 @@
+ 	$(AM_CFLAGS) $(CFLAGS)
  CCLD = $(CC)
  LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
 -	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 +	$(AM_LDFLAGS) $(LDFLAGS) $(LTLIBINTL) -o $@
- CFLAGS = @CFLAGS@
- DIST_SOURCES = $(gnunet_delete_SOURCES) $(gnunet_directory_SOURCES) \
+ SOURCES = $(gnunet_delete_SOURCES) $(gnunet_directory_SOURCES) \
  	$(gnunet_download_SOURCES) $(gnunet_insert_SOURCES) \
+ 	$(gnunet_pseudonym_SOURCES) $(gnunet_search_SOURCES)
