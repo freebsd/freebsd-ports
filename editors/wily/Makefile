@@ -10,7 +10,7 @@ DISTNAME=	wily-0.13.41
 CATEGORIES=	editors plan9
 MASTER_SITES=	ftp://ftp.northsea.com/pub/plan9_unix/wily/src/ \
 		ftp://ftp.cs.york.ac.uk/pub/mhw/wily/src/ \
-		ftp://ftp.cs.su.oz.au/gary/wily/src/
+		ftp://ftp.cs.su.oz.au/gary/wily/src/old/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jkoshy@freebsd.org
