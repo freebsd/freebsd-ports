@@ -9,9 +9,7 @@ PORTNAME=	gnomepim
 PORTVERSION=	1.4.6
 PORTREVISION=	1
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	http://www.marcuscom.com/downloads/ \
-		http://www.eskil.org/gnome-pilot/download/tarballs/ \
-		${MASTER_SITE_GNOME}
+MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-pim
 DISTNAME=	gnome-pim-${PORTVERSION}
 DIST_SUBDIR=	gnome
