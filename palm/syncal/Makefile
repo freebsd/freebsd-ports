@@ -7,13 +7,14 @@
 
 PORTNAME=	syncal
 PORTVERSION=	0.8.6
+PORTREVISION=	1
 CATEGORIES=	palm comms deskutils
 MASTER_SITES=	http://hopf.math.nwu.edu/syncal/ \
 		ftp://ftp.Uni-Bielefeld.DE/pub/systems/FreeBSD/lkoeller/
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 
-LIB_DEPENDS=	pisock.4:${PORTSDIR}/palm/pilot-link
+LIB_DEPENDS=	pisock.8:${PORTSDIR}/palm/pilot-link
 RUN_DEPENDS=	ical:${PORTSDIR}/deskutils/ical
 
 NO_PACKAGE=	patches installed ical port

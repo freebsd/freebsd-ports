@@ -64,7 +64,7 @@ LIB_DEPENDS+=		pspell.15:${PORTSDIR}/textproc/aspell
 CONFIGURE_ARGS+=	--enable-pspell
 .endif
 .if defined(WITH_JPILOT) || defined(WITH_ALL)
-LIB_DEPENDS+=		pisock.4:${PORTSDIR}/palm/pilot-link
+LIB_DEPENDS+=		pisock.8:${PORTSDIR}/palm/pilot-link
 RUN_DEPENDS+=		jpilot:${PORTSDIR}/palm/jpilot
 CONFIGURE_ARGS+=	--enable-jpilot
 .endif

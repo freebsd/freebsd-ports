@@ -50,7 +50,7 @@ CONFIGURE_ARGS+=--enable-jconv
 CONFIGURE_ARGS+=--disable-jconv
 .endif
 .if defined(WITH_JPILOT)
-LIB_DEPENDS+=	pisock.4:${PORTSDIR}/palm/pilot-link
+LIB_DEPENDS+=	pisock.8:${PORTSDIR}/palm/pilot-link
 RUN_DEPENDS+=	jpilot:${PORTSDIR}/palm/jpilot
 CONFIGURE_ARGS+=--enable-jpilot
 .else

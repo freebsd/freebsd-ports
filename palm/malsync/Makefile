@@ -7,7 +7,7 @@
 
 PORTNAME=	malsync
 PORTVERSION=	2.06
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	palm
 MASTER_SITES=	http://www.tomw.org/malsync/ \
 		${MASTER_SITE_LOCAL}
@@ -16,7 +16,7 @@ DISTNAME=	malsync_2.0.6.src
 
 MAINTAINER=	dirk@FreeBSD.org
 
-LIB_DEPENDS=	pisock.4:${PORTSDIR}/palm/pilot-link
+LIB_DEPENDS=	pisock.8:${PORTSDIR}/palm/pilot-link
 
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/malsync/mal/client/unix
