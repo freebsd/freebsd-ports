@@ -9,7 +9,7 @@
 PORTNAME=	muse
 PORTVERSION=	0.7.2
 CATEGORIES=	audio
-MASTER_SITES=	http://freesoftware.fsf.org/download/muse/ \
+MASTER_SITES=	http://savannah.nongnu.org/download/muse/ \
 		http://muse.dyne.org/releases/
 DISTNAME=	MuSE-${PORTVERSION}
 
