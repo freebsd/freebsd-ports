@@ -1,0 +1,7 @@
+IMAP mailbox names are encoded in a modified UTF7 when names contains
+international characters outside of the printable ASCII range. The
+modified UTF-7 encoding is defined in RFC2060 (section 5.1.3).
+
+WWW: http://search.cpan.org/search?dist=Unicode-IMAPUtf7
+
+Seamus Venasse <svenasse@polaris.ca>
