@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	eterm
-PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTVERSION=	0.9.2
 CATEGORIES+=	x11
 MASTER_SITES=	http://www.eterm.org/download/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -15,8 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	Eterm-${PORTVERSION}
 
 MAINTAINER?=	olgeni@FreeBSD.org
-
-BUILD_DEPENDS=	man2html:${PORTSDIR}/textproc/man2html
 
 LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2 \
 		ast.2:${PORTSDIR}/devel/libast
@@ -42,10 +39,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/Eterm
 	@${INSTALL_DATA} ${WRKSRC}/ReleaseNotes ${PREFIX}/share/doc/Eterm
-	@${INSTALL_DATA} ${WRKSRC}/doc/Eterm.1.html ${PREFIX}/share/doc/Eterm
 	@${INSTALL_DATA} ${WRKSRC}/doc/Eterm_reference.html ${PREFIX}/share/doc/Eterm
-	@${INSTALL_DATA} ${WRKSRC}/doc/Eterm.tcap ${PREFIX}/share/doc/Eterm
-	@${INSTALL_DATA} ${WRKSRC}/doc/Eterm.ti ${PREFIX}/share/doc/Eterm
 .endif
 
 .include <bsd.port.post.mk>

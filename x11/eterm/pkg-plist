@@ -7,6 +7,7 @@ bin/Etsearch
 bin/Ettable
 bin/kEsetroot
 lib/libEterm.a
+lib/libEterm.la
 lib/libEterm.so
 lib/libEterm.so.9
 share/Eterm/pix/bar_horizontal_1.png
@@ -36,30 +37,27 @@ share/Eterm/pix/tile/blackstone.jpg
 share/Eterm/pix/tile/circuit.jpg
 share/Eterm/pix/tile/giger1.jpg
 share/Eterm/pix/tile/nebula.jpg
+share/Eterm/themes/Escreen/menus.cfg
+share/Eterm/themes/Escreen/pixmaps.list
+share/Eterm/themes/Escreen/theme.cfg
 share/Eterm/themes/Eterm/menus.cfg
 share/Eterm/themes/Eterm/pixmaps.list
 share/Eterm/themes/Eterm/theme.cfg
 share/Eterm/themes/auto/menus.cfg
 share/Eterm/themes/auto/pixmaps.list
 share/Eterm/themes/auto/theme.cfg
-share/Eterm/themes/chooser/menus.cfg
-share/Eterm/themes/chooser/pixmaps.list
-share/Eterm/themes/chooser/theme.cfg
 share/Eterm/themes/trans/menus.cfg
 share/Eterm/themes/trans/pixmaps.list
 share/Eterm/themes/trans/theme.cfg
-%%PORTDOCS%%share/doc/Eterm/Eterm.1.html
-%%PORTDOCS%%share/doc/Eterm/Eterm.tcap
-%%PORTDOCS%%share/doc/Eterm/Eterm.ti
 %%PORTDOCS%%share/doc/Eterm/Eterm_reference.html
 %%PORTDOCS%%share/doc/Eterm/ReleaseNotes
-@dirrm share/Eterm/pix/scale
-@dirrm share/Eterm/pix/tile
-@dirrm share/Eterm/pix
-@dirrm share/Eterm/themes/Eterm
-@dirrm share/Eterm/themes/auto
-@dirrm share/Eterm/themes/chooser
 @dirrm share/Eterm/themes/trans
+@dirrm share/Eterm/themes/auto
+@dirrm share/Eterm/themes/Eterm
+@dirrm share/Eterm/themes/Escreen
 @dirrm share/Eterm/themes
+@dirrm share/Eterm/pix/tile
+@dirrm share/Eterm/pix/scale
+@dirrm share/Eterm/pix
 @dirrm share/Eterm
 %%PORTDOCS%%@dirrm share/doc/Eterm
