@@ -123,9 +123,12 @@ share/xfce4/doc/C/xfce4-use.html
 share/xfce4/doc/C/xfce4-install.html
 share/xfce4/doc/xfce.css
 share/xfce4/doc/xfce-mouse.png
+@unexec rmdir %D/etc/xdg/xfce4 2>/dev/null || true
+@unexec rmdir %D/etc/xdg 2>/dev/null || true
 @unexec rmdir %D/etc/xfce4 2>/dev/null || true
 @unexec rmdir %D/lib/xfce4/mcs-plugins 2>/dev/null || true
 @unexec rmdir %D/lib/xfce4 2>/dev/null || true
+@unexec rmdir %D/share/applications 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/C/images 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/C 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/fr/images 2>/dev/null || true

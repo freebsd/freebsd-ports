@@ -3650,7 +3650,7 @@ share/themes/Xfce/xfwm4/top-right-inactive.xpm
 @dirrm share/themes/BBS/xfwm4
 @unexec rmdir %D/share/themes/BBS 2>/dev/null || true
 @dirrm share/themes/Basix/xfwm4
-@unexec share/themes/Basix 2>/dev/null || true
+@unexec rmdir %D/share/themes/Basix 2>/dev/null || true
 @dirrm share/themes/Beastie/xfwm4
 @unexec rmdir %D/share/themes/Beastie 2>/dev/null || true
 @dirrm share/themes/Biz/xfwm4
@@ -3789,3 +3789,4 @@ share/themes/Xfce/xfwm4/top-right-inactive.xpm
 @unexec rmdir %D/share/themes/Variation 2>/dev/null || true
 @dirrm share/themes/Xfce/xfwm4
 @unexec rmdir %D/share/themes/Xfce 2>/dev/null || true
+@unexec rmdir %D/share/themes 2>/dev/null || true
