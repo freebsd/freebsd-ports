@@ -25,7 +25,7 @@ COMMENT=	High performance MTA for Unix systems on the Internet
 .if defined(PKGNAMESUFFIX)
 CONFLICTS+=	${PKGNAMEPREFIX}${PORTNAME}-4*
 .endif
-.for suffix in -ldap2 -mysql -postgesql
+.for suffix in -ldap2 -mysql -postgresql
 .if !defined(PKGNAMESUFFIX) || ${PKGNAMESUFFIX} != ${suffix}
 CONFLICTS+=	${PKGNAMEPREFIX}${PORTNAME}${suffix}*
 .endif
