@@ -1,0 +1,14 @@
+*** ./routines/metanet/loadg.c.old	Sun Jun 22 16:54:55 1997
+--- ./routines/metanet/loadg.c	Sun Jun 22 16:55:26 1997
+***************
+*** 1,5 ****
+--- 1,8 ----
+  #include <stdio.h>
+  #ifndef __MSC__
++ #ifdef __FreeBSD__
++ #include <sys/types.h>
++ #endif
+  #include <dirent.h>
+  #endif
+  #include <string.h>
+
