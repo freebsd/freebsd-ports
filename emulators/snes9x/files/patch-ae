@@ -1,222 +1,6 @@
---- ./fxemu.h	Fri Sep 10 21:43:14 1999
-+++ ../release.new/fxemu.h	Sat Sep 11 19:59:11 1999
-@@ -39,18 +39,7 @@
- #ifndef _FXEMU_H_
- #define _FXEMU_H_ 1
- 
--/* Types used by structures and code */
--#ifndef snes9x_types_defined
--#define snes9x_types_defined
--
--typedef unsigned char uint8;
--typedef unsigned short uint16;
--typedef unsigned long uint32;
--typedef unsigned char bool8;
--typedef signed char int8;
--typedef short int16;
--typedef int int32;
--#endif
-+#include "port.h"
- 
- #ifndef TRUE
- #define TRUE 1
---- ./memmap.cpp	Fri Sep 10 21:43:14 1999
-+++ ../release.new/memmap.cpp	Sat Sep 11 15:26:24 1999
-@@ -39,7 +39,7 @@
- #include <string.h>
- #include <ctype.h>
- 
--#ifdef __linux
-+#if defined(__linux) || defined(__FreeBSD__)
- #include <unistd.h>
- #endif
- 
-@@ -725,7 +725,7 @@
- 	{
- 	    fwrite ((char *) ::SRAM, size, 1, file);
- 	    fclose (file);
--#if defined(__linux)
-+#if defined(__linux) || defined(__FreeBSD__)
- 	    chown (filename, getuid (), getgid ());
- #endif
- 	    return (TRUE);
---- ./port.h	Fri Sep 10 21:43:16 1999
-+++ ../release.new/port.h	Sat Sep 11 15:49:55 1999
-@@ -50,17 +50,17 @@
- 
- #ifndef snes9x_types_defined
- #define snes9x_types_defined
--typedef unsigned char uint8;
--typedef unsigned short uint16;
--typedef unsigned long uint32;
--typedef unsigned char bool8;
--typedef signed char int8;
--typedef short int16;
--typedef int int32;
-+typedef u_int8_t uint8;
-+typedef u_int16_t uint16;
-+typedef u_int32_t uint32;
-+typedef u_int8_t bool8;
-+typedef int8_t int8;
-+typedef int16_t int16;
-+typedef int32_t int32;
- #ifndef _WIN32
- typedef long long int64;
- #else
--typedef __int64 int64;
-+typedef u_int64_t int64;
- #endif
- #endif
- 
-@@ -137,6 +137,10 @@
- 
- #ifdef __linux
- #define TITLE "Snes9X: Linux"
-+#endif
-+
-+#ifdef __FreeBSD__
-+#define TITLE "Snes9X: FreeBSD"
- #endif
- 
- #ifndef TITLE
---- ./unix/unix.cpp	Fri Sep 10 21:43:16 1999
-+++ ../release.new/unix/unix.cpp	Sat Sep 11 15:34:14 1999
-@@ -48,18 +48,21 @@
- #include <sys/types.h>
- #include <ctype.h>
- 
--#if defined(__linux) || defined(__sun)
-+#if defined(__linux) || defined(__sun) || defined(__FreeBSD__)
- #include <unistd.h>
- #include <sys/types.h>
- #include <sys/ioctl.h>
- #include <sys/time.h>
- #include <signal.h>
--#endif
--
--#ifdef __linux
--#include <sys/soundcard.h>
-+#ifndef __sun
-+#ifdef __linux
-+#include <sys/soundcard.h>
-+#else
-+#include <machine/soundcard.h>
-+#endif
- #include <sys/mman.h>
- #endif
-+#endif
- 
- #ifdef __sun
- #ifdef __SVR4
-@@ -73,6 +76,10 @@
- typedef void (*SIG_PF)();
- #endif
- 
-+#if defined(__FreeBSD__)
-+typedef sig_t SIG_PF;
-+#endif
-+
- #include "snes9x.h"
- #include "memmap.h"
- #include "debug.h"
-@@ -149,7 +156,7 @@
- char *rom_filename = NULL;
- char *snapshot_filename = NULL;
- 
--#if defined(__linux) || defined(__sun)
-+#if defined(__linux) || defined(__sun) || defined(__FreeBSD__)
- static void sigbrkhandler(int)
- {
- #ifdef DEBUGGER
-@@ -392,7 +399,7 @@
- #if !defined(__MSDOS) && defined(DEBUGGER)
- #if defined(__unix) && !defined(__NeXT__)
-     struct sigaction sa;
--#if defined(__linux)
-+#if defined(__linux) || defined(__FreeBSD__)
-     sa.sa_handler = sigbrkhandler;
- #else
-     sa.sa_handler = (SIG_PF) sigbrkhandler;
-@@ -1379,7 +1386,7 @@
- }
- #endif
- 
--#if defined(__linux)
-+#if defined(__linux) || defined(__FreeBSD__)
- static int Rates[8] =
- {
-     0, 8192, 11025, 16500, 22050, 29300, 36600, 44000
-@@ -1496,7 +1503,7 @@
- }
- #endif
- 
--#if defined (__linux) || defined (__sun)
-+#if defined (__linux) || defined (__sun) || defined(__FreeBSD__)
- void S9xUnixProcessSound (void)
- {
- }
-@@ -1579,7 +1586,7 @@
- 
- void S9xProcessSound ()
- {
--#ifdef __linux
-+#if defined(__linux) || defined(__FreeBSD__)
-     audio_buf_info info;
-     count_info count;
- 
---- ./unix/xf86.cpp	Tue Sep 22 06:36:50 1998
-+++ ../release.new/unix/xf86.cpp	Sat Sep 11 15:35:30 1999
-@@ -4,16 +4,20 @@
-    Question/comments regarding this file only: maciej@imsa.edu
-  */
- 
--#ifdef __linux
-+#if defined(__linux) || defined(__FreeBSD__)
- //#define USE_XF86VIDMODE
- 
-+#ifdef __linux
- #include <asm/ioctls.h>
-+#endif
-+#include <sys/types.h>
- #include <sys/ioctl.h>
- #include <sys/time.h>
-+#ifdef __linux
- #include <linux/ioctl.h>
-+#endif
- 
- #include <fcntl.h>
--#include <sys/types.h>
- 
- #include <string.h>
- #include <ctype.h>
-@@ -833,4 +837,4 @@
- 	ret = 1;
-     return (ret);
- }
--#endif /* __linux */
-+#endif /* __linux || __FreeBSD__ */
---- ./unzip/unzip.h	Wed Aug 25 05:52:56 1999
-+++ ../release.new/unzip/unzip.h	Sat Sep 11 19:47:56 1999
-@@ -41,13 +41,14 @@
- #ifndef _unz_H
- #define _unz_H
- 
-+#include <sys/types.h>
-+
- #ifdef __cplusplus
- extern "C" {
- #endif
- 
--#ifndef _ZLIB_H
--#include "zlib.h"
--#endif
-+#define ZEXPORT
-+typedef off_t z_off_t;
- 
- #if defined(STRICTUNZIP) || defined(STRICTZIPUNZIP)
- /* like the STRICT of WIN32, we define a pointer that cannot be converted
---- ../release/Makefile	Wed Sep 15 17:22:32 1999
-+++ Makefile	Sun Sep 19 18:50:07 1999
+diff -ruN ./Makefile ../release/Makefile
+--- ./Makefile	Wed Sep 15 17:22:32 1999
++++ ../release/Makefile	Sun Sep 19 18:41:45 1999
 @@ -3,8 +3,8 @@
  #SPC700ASM=1
  NETPLAY=1
@@ -228,12 +12,20 @@
  
  ifdef ZSNESFX
  FXOBJ=i386/fxemu2b.o i386/fxemu2.o i386/fxemu2c.o i386/fxtable.o i386/sfxproc.o i386/zsnes.o
-@@ -73,7 +73,7 @@
+@@ -67,13 +67,13 @@
+ endif
+ 
+ MOC = $(QTDIR)/bin/moc
+-CCC = g++ -fno-rtti
+-CC = gcc
++CCC = ${CXX} -fno-rtti
++CC ?= gcc
+ NASM = nasm
  
  INCLUDES=-I/usr/X11R6/include -I/usr/local/include
  
 -OPTIMISE=-O6 -mpentium -fomit-frame-pointer -fno-exceptions
-+OPTIMISE=-O -fomit-frame-pointer
++OPTIMISE= ${CXXFLAGS} -fomit-frame-pointer
  #OPTIMISE=-g -fno-exceptions 
  #-DMITSHM 
  
@@ -277,8 +69,9 @@
  unix/glide.o: snes9x.h port.h 3d.h
 -unix/x11.o: unix/snes9x_gui.h
  unix/snes9x_gui.o: unix/snes9x_gui.h
---- /dev/null	Sun Sep 19 19:19:09 1999
-+++ Makefile.alpha	Sun Sep 19 19:21:24 1999
+diff -ruN ./Makefile.alpha ../release/Makefile.alpha
+--- ./Makefile.alpha	Wed Dec 31 16:00:00 1969
++++ ../release/Makefile.alpha	Sun Sep 19 18:41:45 1999
 @@ -0,0 +1,232 @@
 +#ZSNESFX=1
 +#ASMCPU=1
@@ -349,13 +142,13 @@
 +endif
 +
 +MOC = $(QTDIR)/bin/moc
-+CCC = g++ -fno-rtti
-+CC = gcc
++CCC = ${CXX} -fno-rtti
++CC ?= gcc
 +NASM = nasm
 +
 +INCLUDES=-I/usr/X11R6/include -I/usr/local/include
 +
-+OPTIMISE=-O -fomit-frame-pointer
++OPTIMISE=${CXXFLAGS} -fomit-frame-pointer
 +#OPTIMISE=-g -fno-exceptions 
 +#-DMITSHM 
 +
@@ -512,3 +305,276 @@
 +unix/x11.o: snes9x.h port.h
 +unix/glide.o: snes9x.h port.h 3d.h
 +unix/snes9x_gui.o: unix/snes9x_gui.h
+diff -ruN ./fxemu.h ../release/fxemu.h
+--- ./fxemu.h	Sat Sep 18 09:18:08 1999
++++ ../release/fxemu.h	Sun Sep 19 18:41:45 1999
+@@ -39,18 +39,7 @@
+ #ifndef _FXEMU_H_
+ #define _FXEMU_H_ 1
+ 
+-/* Types used by structures and code */
+-#ifndef snes9x_types_defined
+-#define snes9x_types_defined
+-
+-typedef unsigned char uint8;
+-typedef unsigned short uint16;
+-typedef unsigned long uint32;
+-typedef unsigned char bool8;
+-typedef signed char int8;
+-typedef short int16;
+-typedef int int32;
+-#endif
++#include "port.h"
+ 
+ #ifndef TRUE
+ #define TRUE 1
+diff -ruN ./i386/offsets.h ../release/i386/offsets.h
+--- ./i386/offsets.h	Sat Sep 18 09:18:08 1999
++++ ../release/i386/offsets.h	Sun Sep 19 18:47:04 1999
+@@ -1,41 +1,3 @@
+-/*
+- * Snes9x - Portable Super Nintendo Entertainment System (TM) emulator.
+- *
+- * (c) Copyright 1996, 1997, 1998, 1999 Gary Henderson (gary@daniver.demon.co.uk) and
+- *                                      Jerremy Koot (jkoot@snes9x.com)
+- *
+- * Super FX C emulator code 
+- * (c) Copyright 1997, 1998, 1999 Ivar (Ivar@snes9x.com) and
+- *                                Gary Henderson.
+- * Super FX assembler emulator code (c) Copyright 1998 zsKnight and _Demo_.
+- *
+- * DSP1 emulator code (c) Copyright 1998 Ivar, _Demo_ and Gary Henderson.
+- * DOS port code contains the works of other authors. See headers in
+- * individual files.
+- *
+- * Snes9x homepage: www.snes9x.com
+- *
+- * Permission to use, copy, modify and distribute Snes9x in both binary and
+- * source form, for non-commercial purposes, is hereby granted without fee,
+- * providing that this license information and copyright notice appear with
+- * all copies and any derived work.
+- *
+- * This software is provided 'as-is', without any express or implied
+- * warranty. In no event shall the authors be held liable for any damages
+- * arising from the use of this software.
+- *
+- * Snes9x is freeware for PERSONAL USE only. Commercial users should
+- * seek permission of the copyright holders first. Commercial use includes
+- * charging money for Snes9x or software derived from Snes9x.
+- *
+- * The copyright holders request that bug fixes and improvements to the code
+- * should be forwarded to them so everyone can benefit from the modifications
+- * in future versions.
+- *
+- * Super NES and Super Nintendo Entertainment System are trademarks of
+- * Nintendo Co., Limited and its subsidiary companies.
+- */
+-
+ #define Flags CPU + 0
+ #define BranchSkip CPU + 4
+ #define NMIActive CPU + 5
+diff -ruN ./memmap.cpp ../release/memmap.cpp
+--- ./memmap.cpp	Sat Sep 18 09:18:08 1999
++++ ../release/memmap.cpp	Sun Sep 19 18:41:45 1999
+@@ -39,7 +39,7 @@
+ #include <string.h>
+ #include <ctype.h>
+ 
+-#ifdef __linux
++#if defined(__linux) || defined(__FreeBSD__)
+ #include <unistd.h>
+ #endif
+ 
+@@ -737,7 +737,7 @@
+ 	{
+ 	    fwrite ((char *) ::SRAM, size, 1, file);
+ 	    fclose (file);
+-#if defined(__linux)
++#if defined(__linux) || defined(__FreeBSD__)
+ 	    chown (filename, getuid (), getgid ());
+ #endif
+ 	    return (TRUE);
+Binary files ./offsets and ../release/offsets differ
+diff -ruN ./port.h ../release/port.h
+--- ./port.h	Sat Sep 18 09:18:08 1999
++++ ../release/port.h	Sun Sep 19 18:41:45 1999
+@@ -50,17 +50,17 @@
+ 
+ #ifndef snes9x_types_defined
+ #define snes9x_types_defined
+-typedef unsigned char uint8;
+-typedef unsigned short uint16;
+-typedef unsigned long uint32;
+-typedef unsigned char bool8;
+-typedef signed char int8;
+-typedef short int16;
+-typedef int int32;
++typedef u_int8_t uint8;
++typedef u_int16_t uint16;
++typedef u_int32_t uint32;
++typedef u_int8_t bool8;
++typedef int8_t int8;
++typedef int16_t int16;
++typedef int32_t int32;
+ #ifndef _WIN32
+ typedef long long int64;
+ #else
+-typedef __int64 int64;
++typedef u_int64_t int64;
+ #endif
+ #endif
+ 
+@@ -137,6 +137,10 @@
+ 
+ #ifdef __linux
+ #define TITLE "Snes9X: Linux"
++#endif
++
++#ifdef __FreeBSD__
++#define TITLE "Snes9X: FreeBSD"
+ #endif
+ 
+ #ifndef TITLE
+Binary files ./s9xserver and ../release/s9xserver differ
+Binary files ./server.o and ../release/server.o differ
+Binary files ./snes9x and ../release/snes9x differ
+diff -ruN ./unix/unix.cpp ../release/unix/unix.cpp
+--- ./unix/unix.cpp	Sat Sep 18 09:18:08 1999
++++ ../release/unix/unix.cpp	Sun Sep 19 18:41:45 1999
+@@ -48,18 +48,21 @@
+ #include <sys/types.h>
+ #include <ctype.h>
+ 
+-#if defined(__linux) || defined(__sun)
++#if defined(__linux) || defined(__sun) || defined(__FreeBSD__)
+ #include <unistd.h>
+ #include <sys/types.h>
+ #include <sys/ioctl.h>
+ #include <sys/time.h>
+ #include <signal.h>
+-#endif
+-
++#ifndef __sun
+ #ifdef __linux
+ #include <sys/soundcard.h>
++#else
++#include <machine/soundcard.h>
++#endif
+ #include <sys/mman.h>
+ #endif
++#endif
+ 
+ #ifdef __sun
+ #ifdef __SVR4
+@@ -73,6 +76,10 @@
+ typedef void (*SIG_PF)();
+ #endif
+ 
++#if defined(__FreeBSD__)
++typedef sig_t SIG_PF;
++#endif
++
+ #include "snes9x.h"
+ #include "memmap.h"
+ #include "debug.h"
+@@ -149,7 +156,7 @@
+ char *rom_filename = NULL;
+ char *snapshot_filename = NULL;
+ 
+-#if defined(__linux) || defined(__sun)
++#if defined(__linux) || defined(__sun) || defined(__FreeBSD__)
+ static void sigbrkhandler(int)
+ {
+ #ifdef DEBUGGER
+@@ -392,7 +399,7 @@
+ #if !defined(__MSDOS) && defined(DEBUGGER)
+ #if defined(__unix) && !defined(__NeXT__)
+     struct sigaction sa;
+-#if defined(__linux)
++#if defined(__linux) || defined(__FreeBSD__)
+     sa.sa_handler = sigbrkhandler;
+ #else
+     sa.sa_handler = (SIG_PF) sigbrkhandler;
+@@ -1379,7 +1386,7 @@
+ }
+ #endif
+ 
+-#if defined(__linux)
++#if defined(__linux) || defined(__FreeBSD__)
+ static int Rates[8] =
+ {
+     0, 8192, 11025, 16500, 22050, 29300, 36600, 44000
+@@ -1496,7 +1503,7 @@
+ }
+ #endif
+ 
+-#if defined (__linux) || defined (__sun)
++#if defined (__linux) || defined (__sun) || defined(__FreeBSD__)
+ void S9xUnixProcessSound (void)
+ {
+ }
+@@ -1579,7 +1586,7 @@
+ 
+ void S9xProcessSound ()
+ {
+-#ifdef __linux
++#if defined(__linux) || defined(__FreeBSD__)
+     audio_buf_info info;
+     count_info count;
+ 
+diff -ruN ./unix/xf86.cpp ../release/unix/xf86.cpp
+--- ./unix/xf86.cpp	Tue Sep 22 06:36:50 1998
++++ ../release/unix/xf86.cpp	Sun Sep 19 18:41:45 1999
+@@ -4,16 +4,20 @@
+    Question/comments regarding this file only: maciej@imsa.edu
+  */
+ 
+-#ifdef __linux
++#if defined(__linux) || defined(__FreeBSD__)
+ //#define USE_XF86VIDMODE
+ 
++#ifdef __linux
+ #include <asm/ioctls.h>
++#endif
++#include <sys/types.h>
+ #include <sys/ioctl.h>
+ #include <sys/time.h>
++#ifdef __linux
+ #include <linux/ioctl.h>
++#endif
+ 
+ #include <fcntl.h>
+-#include <sys/types.h>
+ 
+ #include <string.h>
+ #include <ctype.h>
+@@ -833,4 +837,4 @@
+ 	ret = 1;
+     return (ret);
+ }
+-#endif /* __linux */
++#endif /* __linux || __FreeBSD__ */
+diff -ruN ./unzip/unzip.h ../release/unzip/unzip.h
+--- ./unzip/unzip.h	Wed Aug 25 05:52:56 1999
++++ ../release/unzip/unzip.h	Sun Sep 19 18:47:00 1999
+@@ -41,13 +41,17 @@
+ #ifndef _unz_H
+ #define _unz_H
+ 
++#include <sys/types.h>
++
++#ifndef _ZLIB_H
++#include <zlib.h>
++#endif
++
+ #ifdef __cplusplus
+ extern "C" {
+ #endif
+ 
+-#ifndef _ZLIB_H
+-#include "zlib.h"
+-#endif
++#define ZEXPORT
+ 
+ #if defined(STRICTUNZIP) || defined(STRICTZIPUNZIP)
+ /* like the STRICT of WIN32, we define a pointer that cannot be converted
