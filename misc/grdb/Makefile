@@ -8,7 +8,7 @@
 PORTNAME=	grdb
 PORTVERSION=	0.2.4
 CATEGORIES=	misc gnome
-MASTER_SITES=   http://bucket.pp.ualr.edu/~bit/download/
+MASTER_SITES=	http://www.win.tue.nl/~stijn/grdb/
 
 MAINTAINER=	stijn@win.tue.nl
 
