@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mlterm
-PORTVERSION=	2.9.1
-PORTREVISION=	1
+PORTVERSION=	2.9.2
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -78,10 +77,6 @@ PKGNAMESUFFIX=	-noaa
 CONFIGURE_ARGS+=	--enable-anti-alias
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 .endif
-
-pre-configure:
-	${REINPLACE_CMD} -e "s,%%PERL%%,${PERL}," \
-		${WRKSRC}/tool/w3mmlconfig/Makefile.in
 
 post-configure:
 	${CP} ${WRKSRC}/libtool ${WRKSRC}/kiklib/
