@@ -7,9 +7,13 @@
 #
 
 PORTNAME=	t1lib
-PORTVERSION=	5.0.2
+PORTVERSION=	5.0.1
+PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
+### 5.0.2 seems to cause problems with xpdf
+### 5.0.1 has been vanished from most of ibilio/sunsite mirror sites
+#MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITES=	http://sunsite.rediris.es/sites2/ibiblio.org/linux/%SUBDIR%/
 MASTER_SITE_SUBDIR=	libs/graphics
 
 MAINTAINER=	ports@FreeBSD.org
