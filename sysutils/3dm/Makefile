@@ -34,7 +34,7 @@ SBINMODE=	700
 BINMODE=	700
 
 pre-install:
-	@cd ${WRKDIR}; tar zxf 3dm-help.tgz
+	@cd ${WRKDIR}; ${TAR} zxf 3dm-help.tgz
 
 do-install:
 

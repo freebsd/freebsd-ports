@@ -39,9 +39,9 @@ do-extract:
 	@${MKDIR} ${WRKDIR}
 	@(cd ${WRKDIR}; \
 	  if [ ! -f ${DISTDIR}/${DISTNAME}.tar.gz ]; then \
-	    uudecode -p ${DISTDIR}/${DISTFILES} | tar xzf -; \
+	    uudecode -p ${DISTDIR}/${DISTFILES} | ${TAR} xzf -; \
 	  else \
-	    tar xzf ${DISTDIR}/${DISTNAME}.tar.gz; \
+	    ${TAR} xzf ${DISTDIR}/${DISTNAME}.tar.gz; \
 	  fi)
 
 pre-patch:

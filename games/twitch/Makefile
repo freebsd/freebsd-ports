@@ -24,8 +24,8 @@ do-build:
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/twitch
-	(cd ${WRKSRC}; tar cf - images sound levels twitch.*) | \
-		(cd ${PREFIX}/share/twitch; tar xf -)
+	(cd ${WRKSRC}; ${TAR} cf - images sound levels twitch.*) | \
+		(cd ${PREFIX}/share/twitch; ${TAR} xf -)
 	@printf "#!/bin/sh\ncd ${PREFIX}/share/twitch && \
 		${PYTHON_CMD} ${PREFIX}/share/twitch/twitch.py\n" > ${WRKDIR}/twitch.sh
 	@${INSTALL_SCRIPT} ${WRKDIR}/twitch.sh ${PREFIX}/bin/twitch

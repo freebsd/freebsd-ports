@@ -27,8 +27,8 @@ post-install:
 	@-${RM} -fr ${PREFIX}/share/examples/db2
 	${MKDIR} ${PREFIX}/share/examples/db2
 	cd ${WRKSRC}/..; \
-	    tar -cf - --exclude tags examples/ examples_cxx/ examples_java/. \
-		| ( cd ${PREFIX}/share/examples/db2; tar xf - )
+	    ${TAR} -cf - --exclude tags examples/ examples_cxx/ examples_java/. \
+		| ( cd ${PREFIX}/share/examples/db2; ${TAR} xf - )
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Java support for ${PKGNAME} is *not* built by default, and requires that you"
 	@${ECHO_MSG} "have a working copy of the JDK (v1.1) installed."

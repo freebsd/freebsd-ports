@@ -18,8 +18,8 @@ COMMENT=	CHM Tools package
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-extract:
-		@cd ${WRKSRC} && tar zxvf chmtools.tar.gz
-		@cd ${WRKSRC} && tar zxvf utf-converter-1.0.tar.gz
+		@cd ${WRKSRC} && ${TAR} zxvf chmtools.tar.gz
+		@cd ${WRKSRC} && ${TAR} zxvf utf-converter-1.0.tar.gz
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/chm2html ${PREFIX}/bin

@@ -31,7 +31,7 @@ post-patch:
 
 post-install:
 	cd ${PREFIX}/lib/timidity && \
-	tar zxf ${DISTDIR}/${TIINS} && \
+	${TAR} zxf ${DISTDIR}/${TIINS} && \
 	${CP} goemon.cfg goemon.cfg.bak && \
 	${SED} 's=dir goemon=dir ${PREFIX}/lib/timidity/goemon=' \
 	   < goemon.cfg.bak > goemon.cfg && \

@@ -35,7 +35,7 @@ USE_REINPLACE=	yes
 .include <bsd.port.pre.mk>
 
 pre-patch:
-	@(cd ${WRKSRC}; tar -xzf ${DISTDIR}/${DIST_SUBDIR}/patch.tar.gz)
+	@(cd ${WRKSRC}; ${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/patch.tar.gz)
 
 pre-build:
 	@${REINPLACE_CMD} -e 's+%FC%+${FC}+g ; s+%FFLAGS%+${FFLAGS}+g ; \

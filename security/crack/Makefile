@@ -45,6 +45,6 @@ do-build:
 do-install:
 	@${MKDIR} ${PREFIX}/crack
 	@${RM} -f ${WRKSRC}/Run/*
-	@cd ${WRKSRC} ; tar cf - . | (cd ${PREFIX}/crack; tar xfBp -)
+	@cd ${WRKSRC} ; ${TAR} cf - . | (cd ${PREFIX}/crack; ${TAR} xfBp -)
 
 .include <bsd.port.mk>

@@ -29,7 +29,7 @@ do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
 	@rpm2cpio.pl ${_DISTDIR}${DISTFILES} | (cd ${WRKDIR}; ${CPIO} -i)
-	@tar -xzf ${WRKDIR}/${DISTNAME}.tar.gz -C ${WRKDIR}
+	@${TAR} -xzf ${WRKDIR}/${DISTNAME}.tar.gz -C ${WRKDIR}
 
 pre-patch:
 	@${ECHO_MSG} "===>  Applying distribution patches for ${PKGNAME}"

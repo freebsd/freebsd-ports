@@ -36,6 +36,6 @@ RESOLUTION=	300
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/fonts
-	tar -C ${PREFIX}/lib/fonts -xzf ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES}
+	${TAR} -C ${PREFIX}/lib/fonts -xzf ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES}
 
 .include <bsd.port.mk>
