@@ -49,6 +49,10 @@ cat <<END
  by only compiling the server you will be using.  It will also save you
  considerable compile time.
 END
+if [ X$tkversion != X ]; then
+  echo "*** If you want to use XF86Setup to set the INITIAL configuration,"
+  echo "*** then you must build the VGA server"
+fi
 # force the compilation of the SVGA server.
 echo "#undef XF86SVGAServer"           >>$F
 echo "#define XF86SVGAServer     YES"  >>$F
