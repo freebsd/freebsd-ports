@@ -13,7 +13,6 @@ MASTER_SITES=	http://www.nerdlabs.org/downloads/${PORTNAME}/
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	UDP-based ping programm
 
-USE_SIZE=	yes
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

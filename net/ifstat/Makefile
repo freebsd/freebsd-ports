@@ -16,7 +16,6 @@ COMMENT=	Network interface statistics monitoring tool
 
 LIB_DEPENDS=	netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp
 
-USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 
