@@ -139,6 +139,8 @@ news/etc/storage.conf
 news/etc/subscriptions
 news/include/clibrary.h
 news/include/config.h
+news/include/configdata.h
+news/include/dbz.h
 news/include/libinn.h
 news/include/storage.h
 news/lib/docheckgroups
