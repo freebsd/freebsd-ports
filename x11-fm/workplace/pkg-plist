@@ -65,7 +65,7 @@ share/doc/workplace/AUTHORS
 share/doc/workplace/INSTALL
 share/doc/workplace/README
 share/doc/workplace/TODO
-share/examples/workplace/WPPref.sample
-share/examples/workplace/WPSuffix.sample
+share/examples/workplace/WPPref
+share/examples/workplace/WPSuffix
 @dirrm share/doc/workplace
 @dirrm share/examples/workplace
