@@ -7,6 +7,7 @@
 
 PORTNAME=	gtk-industrial-theme
 PORTVERSION=	0.2.26
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ftp.ximian.com/pub/xd2/redhat-9-i386/source/
 DISTNAME=	ximian-artwork-${PORTVERSION}-${XIMIAN_SUBVERSION}.ximian.${XIMIAN_DISTVERSION}.src
@@ -28,7 +29,8 @@ XIMIAN_SUBVERSION=	0
 XIMIAN_DISTVERSION=	6.1
 THEMES_SUBDIRS= ${WRKSRC}/gtk/gtk1-engine/
 
-.if defined(WITH_GTK2)
+.if !defined(WITHOUT_GTK2)
+WITH_GTK2=	yes
 USE_GNOME+=	gtk20
 THEMES_SUBDIRS+=	${WRKSRC}/gtk/gtk2-engine/
 GTK_VERSION=	2.2.0
@@ -39,10 +41,10 @@ PLIST_SUB+=	GTK2="@comment "
 
 pre-everything::
 	@${ECHO} ""
-	@${ECHO} "By default only gtk-1.2 theme engine will be built."
+	@${ECHO} "By default both the gtk-1.2 and gtk-2 theme engine will be built."
 	@${ECHO} "You may use the following build options:"
 	@${ECHO} ""
-	@${ECHO} "      WITH_GTK2=yes   Build gtk-2 theme"
+	@${ECHO} "      WITHOUT_GTK2=yes   Build only the gtk-1.2 theme"
 	@${ECHO} ""
 
 do-extract:
@@ -56,8 +58,11 @@ do-extract:
 	${CP} ${FILESDIR}/Makefile-gtk2 ${WRKSRC}/gtk/gtk2-engine/Makefile
 
 post-patch:
-	@${REINPLACE_CMD} -e 's#-O2#${CFLAGS}#' ${WRKSRC}/gtk/gtk1-engine/Makefile
-	@${REINPLACE_CMD} -e 's#-O2#${CFLAGS}#' ${WRKSRC}/gtk/gtk2-engine/Makefile
+	@${REINPLACE_CMD} -e 's#-O2#${CFLAGS}#' \
+		${WRKSRC}/gtk/gtk1-engine/Makefile \
+		${WRKSRC}/gtk/gtk2-engine/Makefile
+	@${REINPLACE_CMD} -e 's#/opt/gnome2#${X11BASE}#' \
+		${WRKSRC}/gtk/gtk2-engine/gtk-2.0/gtkrc
 
 do-configure:
 	@${DO_NADA}
