@@ -1,11 +1,10 @@
---- configure.orig	Sat Aug 25 05:52:39 2001
-+++ configure	Sun Sep 23 06:24:47 2001
-@@ -1228,7 +1228,7 @@
- # an executable is not found, even if stderr is redirected.
- # Redirect stdin to placate older versions of autoconf.  Sigh.
- if (makeinfo --version) < /dev/null > /dev/null 2>&1; then
--   MAKEINFO=makeinfo
-+   MAKEINFO="makeinfo --no-split"
-    echo "$as_me:1232: result: found" >&5
- echo "${ECHO_T}found" >&6
- else
+--- configure.org	Fri Apr 26 01:28:25 2002
++++ configure	Fri Apr 26 01:28:59 2002
+@@ -1306,6 +1306,7 @@
+ AUTOHEADER=${AUTOHEADER-"${am_missing_run}autoheader"}
+ 
+ MAKEINFO=${MAKEINFO-"${am_missing_run}makeinfo"}
++MAKEINFO="$MAKEINFO --no-split"
+ 
+ AMTAR=${AMTAR-"${am_missing_run}tar"}
+ 
