@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	samba
-PORTVERSION=	2.2.3a
+PORTVERSION=	2.2.4
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.samba.org/pub/samba/%SUBDIR%/ \
 		ftp://samba.anu.edu.au/pub/samba/%SUBDIR%/ \
@@ -17,10 +17,7 @@ MASTER_SITE_SUBDIR=	. old-versions old
 
 MAINTAINER=	dwcjr@FreeBSD.org
 
-.if defined(WITH_RECYCLE)
-PATCH_SITES+=	http://www.amherst.edu/~bbstone/recycle_bin/2.2.3/
-PATCHFILES+=	proto.h.patch loadparm.c.patch reply.c.patch
-.endif
+USE_BZIP2=	YES
 
 # directories
 VARDIR=		/var
@@ -37,7 +34,8 @@ CONFIGURE_ARGS=	--libdir=${SAMBA_CONFDIR} \
 		--localstatedir=${VARDIR} --with-swatdir=${PREFIX}/share/swat \
 		--with-sambabook=${PREFIX}/share/swat/using_samba \
 		--with-lockdir=${VARDIR}/lock --with-privatedir=${SAMBA_PRIVATE} \
-		--with-pam
+		--with-pam --with-piddir=${VARDIR}/run \
+		--with-logfilebase
 
 .include <bsd.port.pre.mk>
 
