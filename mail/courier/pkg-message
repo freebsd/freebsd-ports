@@ -25,10 +25,25 @@
 	depending on which authentication services you chose to
 	omit.
 
-	Do not forget to update /etc/pam.conf with the contents of
-	%%PREFIX%%/etc/courier/*.authpam. See /etc/pam.conf(8) for
-	further assistance.
+	Do not forget to update /etc/pam.d/ or /etc/pam.conf with
+	the contents of %%PREFIX%%/etc/courier/*.authpam.
+
+	To enable Courier-MTA to start at boot time,
+	set these variables in your /etc/rc.conf file:
+
+		courier_enable="YES"                                
+		sendmail_enable="NONE"                                
+
+	Also, you will want to disable some Sendmail 
+	specific daily maintenance routines in your
+	/etc/periodic.conf file:
+
+		daily_clean_hoststat_enable="NO"
+		daily_status_mail_rejects_enable="NO"                                      
+		daily_status_include_submit_mailq="NO"
+		daily_submit_queuerun="NO"
 
 	Documentation (if installed locally) is located in
 	%%PREFIX%%/share/doc/courier/ otherwise see
 	http://www.Courier-MTA.org/
+

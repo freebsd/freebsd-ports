@@ -13,7 +13,7 @@ features:
    client can optionally require that the remote server's X.509
    certificate is signed by a trusted root CA (a default set of
    root CAs is provided).
- * Mailboxes can be accessed via POP3, IMAP, and HTTP.
+ * Mailboxes can be accessed via POP3, IMAP, SMAP, and HTTP.
  * A faxmail gateway that forwards E-mail messages via fax.
  * Courier includes a mailing list manager.
  * PAM, LDAP, PostgreSQL, or MySQL authentication. 

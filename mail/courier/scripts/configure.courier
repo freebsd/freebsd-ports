@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/courier/scripts/Attic/configure.courier,v 1.10 2003-08-31 01:30:02 edwin Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/courier/scripts/Attic/configure.courier,v 1.11 2004-01-15 15:12:32 sergei Exp $
 
 [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ] && exit
 
@@ -18,13 +18,13 @@ if [ ":${BATCH}" = ':yes' ]; then
 	[ ":${WITH_GNUPG}"	= ':yes' ] && OPTIONS="${OPTIONS} \"GnuPG\""
 	[ ":${WITH_ASPELL}"	= ':yes' ] && OPTIONS="${OPTIONS} \"ASpell\""
 	[ ":${WITH_ISPELL}"	= ':yes' ] && OPTIONS="${OPTIONS} \"ISpell\""
-	[ ":${WITH_LDAP1}"	= ':yes' ] && OPTIONS="${OPTIONS} \"OpenLDAP1\""
-	[ ":${WITH_LDAP2}"	= ':yes' ] && OPTIONS="${OPTIONS} \"OpenLDAP2\""
+	[ ":${WITH_LDAP}"	= ':yes' ] && OPTIONS="${OPTIONS} \"OpenLDAP\""
 	[ ":${WITH_MYSQL}"	= ':yes' ] && OPTIONS="${OPTIONS} \"MySQL\""
 	[ ":${WITH_PGSQL}"	= ':yes' ] && OPTIONS="${OPTIONS} \"PostgreSQL\""
 	[ ":${WITH_VPOPMAIL}"	= ':yes' ] && OPTIONS="${OPTIONS} \"VPopMail\""
 	[ ":${WITH_PROCMAIL}"	= ':yes' ] && OPTIONS="${OPTIONS} \"Procmail\""
 	[ ":${WITH_SENDFAX}"	= ':yes' ] && OPTIONS="${OPTIONS} \"SendFax\""
+	[ ":${WITH_UUCP}"	= ':yes' ] && OPTIONS="${OPTIONS} \"UUCP\""
 	[ ":${WITH_IPV6}"	= ':yes' ] && OPTIONS="${OPTIONS} \"IPv6\""
 	[ -n "${OPTIONS}" ] && set ${OPTIONS}
 else
@@ -55,21 +55,12 @@ else
 	else
 		SET_ISPELL="OFF"
 	fi
-	if [ ":${WITH_LDAP1}" = ':yes' \
-	  -o -f ${LOCALBASE}/lib/libldap.so.1 \
-	  -a -f ${LOCALBASE}/lib/liblber.so.1 ]; then
-		SET_LDAP1="ON"
-		SET_LDAP2="OFF"
-	else
-		SET_LDAP1="OFF"
-	fi
-	if [ ":${WITH_LDAP2}" = ':yes' \
+	if [ ":${WITH_LDAP}" = ':yes' \
 	  -o -f ${LOCALBASE}/lib/libldap.so.2 \
 	  -a -f ${LOCALBASE}/lib/liblber.so.2 ]; then
-		SET_LDAP1="OFF"
-		SET_LDAP2="ON"
+		SET_LDAP="ON"
 	else
-		SET_LDAP2="OFF"
+		SET_LDAP="OFF"
 	fi
 	if [ ":${WITH_MYSQL}" = ':yes' \
 	  -o -f ${LOCALBASE}/lib/mysql/libmysqlclient.so.12 ]; then
@@ -97,7 +88,8 @@ else
 		SET_PROCMAIL="OFF"
 	fi
 	if [ ":${WITH_SENDFAX}" = ':yes' \
-	  -o -x ${LOCALBASE}/bin/pnmscale \
+	  -o -x ${LOCALBASE}/sbin/sendfax \
+	  -a -x ${LOCALBASE}/bin/pnmscale \
 	  -a -x ${LOCALBASE}/bin/giftopnm \
 	  -a -x ${LOCALBASE}/bin/jpegtopnm \
 	  -a -x ${LOCALBASE}/bin/ppmtopgm \
@@ -110,6 +102,13 @@ else
 		SET_SENDFAX="ON"
 	else
 		SET_SENDFAX="OFF"
+	fi
+	if [ ":${WITH_UUCP}" = ':yes' \
+	  -o -x ${LOCALBASE}/bin/uux \
+	  -o -x /usr/bin/uux ]; then
+		SET_UUCP="ON"
+	else
+		SET_UUCP="OFF"
 	fi
 	if [ ":${WITH_IPV6}" = ':yes' ]; then
 		SET_IPV6="ON"
@@ -124,14 +123,14 @@ Expect		"Expect support for WebMail change passwd" ${SET_EXPECT} \
 GnuPG		"GNU Privacy Guard support for WebMail" ${SET_GNUPG} \
 ASpell		"ASpell support for WebMail" ${SET_ASPELL} \
 ISpell		"ISpell support for WebMail" ${SET_ISPELL} \
-OpenLDAP1	"OpenLDAP 1.x authentication support" ${SET_LDAP1} \
-OpenLDAP2	"OpenLDAP 2.x authentication support" ${SET_LDAP2} \
+OpenLDAP	"OpenLDAP 2.x authentication support" ${SET_LDAP} \
 MySQL		"MySQL authentication support" ${SET_MYSQL} \
 PostgreSQL	"PostgreSQL authentication support" ${SET_PGSQL} \
 VPopMail	"VPopMail authentication support" ${SET_VPOPMAIL} \
 Procmail	"Procmail local delivery support" ${SET_PROCMAIL} \
 SendFax		"mgetty+sendfax support" ${SET_SENDFAX} \
-IPv6		"IPv6 support (experimental)" ${SET_IPV6} \
+UUCP		"UUCP support" ${SET_UUCP} \
+IPv6		"IPv6 support" ${SET_IPV6} \
 2> ${tempfile}
 
 	retval=$?
@@ -150,6 +149,8 @@ exec > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 
 echo "PREFIX=	${PREFIX}"
 
+WITH_TRANSPORT="local esmtp dsn"
+WITH_EXPECT="--disable-changepass"
 WITH_ISPELL="--without-ispell"
 WITH_LDAP="--without-authldap"
 WITH_MYSQL="--without-authmysql"
@@ -157,15 +158,19 @@ WITH_PGSQL="--without-authpgsql"
 WITH_VCHKPW="--without-authvchkpw"
 WITH_IPV6="--without-ipv6"
 
+SUB_EXPECT="@comment "
 SUB_FAX="@comment "
 SUB_LDAP="@comment "
 SUB_MYSQL="@comment "
 SUB_PGSQL="@comment "
+SUB_UUCP="@comment "
 
 while [ "$1" ]; do
 	case $1 in
 		\"Expect\")
 			echo "BUILD_DEPENDS+=	expect:\${PORTSDIR}/lang/expect"
+			WITH_EXPECT=""
+			SUB_EXPECT=""
 			;;
 		\"GnuPG\")
 			echo "BUILD_DEPENDS+=	gpg:\${PORTSDIR}/security/gnupg"
@@ -190,33 +195,11 @@ while [ "$1" ]; do
 			WITH_ISPELL="--with-ispell=\${LOCALBASE}/bin/ispell"
 			ISPELL=1
 			;;
-		\"OpenLDAP1\")
-			if [ "$OPENLDAP2" ]; then
-				echo "OpenLDAP1 and OpenLDAP2 are mutually exclusive." > /dev/stderr
-				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-				exit 1
-			fi
-			echo "LIB_DEPENDS+=	ldap.1:\${PORTSDIR}/net/openldap12"
-			CPPFLAGS="${CPPFLAGS} -I\${LOCALBASE}/include"
-			LDFLAGS="${LDFLAGS} -L\${LOCALBASE}/lib"
+		\"OpenLDAP\")
+			echo "USE_OPENLDAP=	yes"
 			WITH_LDAP="--with-authldap"
 			PKGNAMESUFFIX="${PKGNAMESUFFIX}-ldap"
 			SUB_LDAP=""
-			OPENLDAP1=1
-			;;
-		\"OpenLDAP2\")
-			if [ "$OPENLDAP1" ]; then
-				echo "OpenLDAP1 and OpenLDAP2 are mutually exclusive." > /dev/stderr
-				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-				exit 1
-			fi
-			echo "LIB_DEPENDS+=	ldap.2:\${PORTSDIR}/net/openldap21-client"
-			CPPFLAGS="${CPPFLAGS} -I\${LOCALBASE}/include"
-			LDFLAGS="${LDFLAGS} -L\${LOCALBASE}/lib"
-			WITH_LDAP="--with-authldap"
-			PKGNAMESUFFIX="${PKGNAMESUFFIX}-ldap"
-			SUB_LDAP=""
-			OPENLDAP2=1
 			;;
 		\"MySQL\")
 			if [ -f ${LOCALBASE}/vpopmail/lib/libvpopmail.a ]; then
@@ -225,7 +208,7 @@ while [ "$1" ]; do
 				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 				exit 1
 			else
-				echo "USE_MYSQL=	YES"
+				echo "USE_MYSQL=	yes"
 				WITH_MYSQL="--with-authmysql"
 				WITH_MYSQL="${WITH_MYSQL} --with-mysql-libs=\${LOCALBASE}/lib/mysql"
 				WITH_MYSQL="${WITH_MYSQL} --with-mysql-includes=\${LOCALBASE}/include/mysql"
@@ -251,12 +234,7 @@ while [ "$1" ]; do
 			echo "BUILD_DEPENDS+=	procmail:\${PORTSDIR}/mail/procmail"
 			;;
 		\"SendFax\")
-			if [ "x${WITH_GHOSTSCRIPT_AFPL}" = "xyes" ]
-			then
-				echo "BUILD_DEPENDS+=	gs:\${PORTSDIR}/print/ghostscript-afpl"
-			else
-				echo "BUILD_DEPENDS+=	gs:\${PORTSDIR}/print/ghostscript-gnu"
-			fi
+			echo "BUILD_DEPENDS+=	sendfax:\${PORTSDIR}/comms/mgetty+sendfax"
 			echo "BUILD_DEPENDS+=	pnmscale:\${PORTSDIR}/graphics/netpbm"
 			echo "BUILD_DEPENDS+=	giftopnm:\${PORTSDIR}/graphics/netpbm"
 			echo "BUILD_DEPENDS+=	jpegtopnm:\${PORTSDIR}/graphics/netpbm"
@@ -266,7 +244,8 @@ while [ "$1" ]; do
 			echo "BUILD_DEPENDS+=	g3topbm:\${PORTSDIR}/graphics/netpbm"
 			echo "BUILD_DEPENDS+=	pngtopnm:\${PORTSDIR}/graphics/netpbm"
 			echo "BUILD_DEPENDS+=	pnmtopng:\${PORTSDIR}/graphics/netpbm"
-			echo "RUN_DEPENDS+=	gs:\${PORTSDIR}/print/ghostscript-gnu"
+			echo "BUILD_DEPENDS+=	gs:\${PORTSDIR}/\${GSPORT}"
+			echo "RUN_DEPENDS+=	sendfax:\${PORTSDIR}/comms/mgetty+sendfax"
 			echo "RUN_DEPENDS+=	pnmscale:\${PORTSDIR}/graphics/netpbm"
 			echo "RUN_DEPENDS+=	giftopnm:\${PORTSDIR}/graphics/netpbm"
 			echo "RUN_DEPENDS+=	jpegtopnm:\${PORTSDIR}/graphics/netpbm"
@@ -276,9 +255,18 @@ while [ "$1" ]; do
 			echo "RUN_DEPENDS+=	g3topbm:\${PORTSDIR}/graphics/netpbm"
 			echo "RUN_DEPENDS+=	pngtopnm:\${PORTSDIR}/graphics/netpbm"
 			echo "RUN_DEPENDS+=	pnmtopng:\${PORTSDIR}/graphics/netpbm"
-			echo "WITH_FAX=		yes"
+			echo "RUN_DEPENDS+=	gs:\${PORTSDIR}/\${GSPORT}"
+			echo "WITH_FAX=	yes"
 			WITH_TRANSPORT="${WITH_TRANSPORT} fax"
 			SUB_FAX=""
+			;;
+		\"UUCP\")
+			if [ ! -x /usr/bin/uux ]; then
+				echo "BUILD_DEPENDS+=	uux:\${PORTSDIR}/net/freebsd-uucp"
+				echo "RUN_DEPENDS+=	uux:\${PORTSDIR}/net/freebsd-uucp"
+			fi
+			WITH_TRANSPORT="${WITH_TRANSPORT} uucp"
+			SUB_UUCP=""
 			;;
 		\"IPv6\")
 			WITH_IPV6=""
@@ -292,20 +280,20 @@ while [ "$1" ]; do
 	shift
 done
 
-[ -n "${CPPFLAGS}" ]	&& echo "CONFIGURE_ENV+=	CPPFLAGS='${CPPFLAGS}'"
-[ -n "${LDFLAGS}" ]	&& echo "CONFIGURE_ENV+=	LDFLAGS='${LDFLAGS}'"
-[ -n "${LIBS}" ]	&& echo "CONFIGURE_ENV+=	LIBS='${LIBS}'"
-echo "CONFIGURE_ARGS+= ${WITH_ISPELL}"
-echo "CONFIGURE_ARGS+= ${WITH_LDAP}"
-echo "CONFIGURE_ARGS+= ${WITH_MYSQL}"
-echo "CONFIGURE_ARGS+= ${WITH_PGSQL}"
-echo "CONFIGURE_ARGS+= ${WITH_VCHKPW}"
-echo "CONFIGURE_ARGS+= ${WITH_IPV6}"
-echo "CONFIGURE_ARGS+= --with-transport='${WITH_TRANSPORT}'"
+echo "CONFIGURE_ARGS+=${WITH_EXPECT}"
+echo "CONFIGURE_ARGS+=${WITH_ISPELL}"
+echo "CONFIGURE_ARGS+=${WITH_LDAP}"
+echo "CONFIGURE_ARGS+=${WITH_MYSQL}"
+echo "CONFIGURE_ARGS+=${WITH_PGSQL}"
+echo "CONFIGURE_ARGS+=${WITH_VCHKPW}"
+echo "CONFIGURE_ARGS+=${WITH_IPV6}"
+echo "CONFIGURE_ARGS+=--with-transport='${WITH_TRANSPORT}'"
+echo "PLIST_SUB+=	SUB_EXPECT='${SUB_EXPECT}'"
 echo "PLIST_SUB+=	SUB_FAX='${SUB_FAX}'"
 echo "PLIST_SUB+=	SUB_LDAP='${SUB_LDAP}'"
 echo "PLIST_SUB+=	SUB_MYSQL='${SUB_MYSQL}'"
 echo "PLIST_SUB+=	SUB_PGSQL='${SUB_PGSQL}'"
+echo "PLIST_SUB+=	SUB_UUCP='${SUB_UUCP}'"
 [ -n "${PKGNAMESUFFIX}" ] && echo "PKGNAMESUFFIX=	${PKGNAMESUFFIX}"
 
 exit 0

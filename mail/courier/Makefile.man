@@ -71,12 +71,12 @@ MLINKS=	dot-forward.1 dotforward.1 \
 	makeuserdb.8 pw2userdb.8 \
 	makeuserdb.8 vchkpw2userdb.8
 
-.if !defined(NOUUCP)
-MAN8+=	courieruucp.8
-MLINKS+=courieruucp.8 makeuucpneighbors.8
-.endif
-
 .if defined(WITH_FAX) && ${WITH_FAX} == yes
 MAN8+=	courierfax.8
 .endif
 	
+.if defined(WITH_UUCP) && ${WITH_UUCP} == yes
+MAN8+=	courieruucp.8
+MLINKS+=courieruucp.8 makeuucpneighbors.8
+.endif
+
