@@ -1,95 +1,13 @@
-*** Makefile.in.orig	Fri Dec  5 10:44:55 1997
---- Makefile.in	Wed Dec 10 21:52:59 1997
-***************
-*** 107,113 ****
-  # either.
-  #----------------------------------------------------------------
-  
-! CFLAGS =	${CC_OPTS} ${AC_FLAGS} -I. -I${TCLTK_INCLUDE_DIR} ${X_INCLUDE_FLAG}
-  LDFLAGS =	${LD_OPTS}
-  
-  PKGNAME =	tkdesk
---- 107,113 ----
-  # either.
-  #----------------------------------------------------------------
-  
-! CFLAGS =	${CC_OPTS} ${AC_FLAGS} -I. -I${TCLTK_INCLUDE_DIR}/tcl8.0 -I${TCLTK_INCLUDE_DIR}/tk8.0 ${X_INCLUDE_FLAG}
-  LDFLAGS =	${LD_OPTS}
-  
-  PKGNAME =	tkdesk
-*** blt/Makefile.in.orig	Wed Dec 10 21:55:46 1997
---- blt/Makefile.in	Wed Dec 10 21:54:34 1997
-***************
-*** 29,35 ****
-  # either.
-  #----------------------------------------------------------------
-  
-! CFLAGS =	${CC_OPTS} ${AC_FLAGS} -I.. -I. -I${TCLTK_INCLUDE_DIR} ${X_INCLUDE_FLAG}
-  BLT_LIBRARY =	$(LIB_DIR)
-  
-  libname	=	libBLT.a
---- 29,35 ----
-  # either.
-  #----------------------------------------------------------------
-  
-! CFLAGS =	${CC_OPTS} ${AC_FLAGS} -I.. -I. -I${TCLTK_INCLUDE_DIR}/tcl8.0 -I${TCLTK_INCLUDE_DIR}/tk8.0 ${X_INCLUDE_FLAG}
-  BLT_LIBRARY =	$(LIB_DIR)
-  
-  libname	=	libBLT.a
-*** itcl/Makefile.in.orig	Fri Dec  5 10:44:56 1997
---- itcl/Makefile.in	Wed Dec 10 21:57:21 1997
-***************
-*** 26,32 ****
-  # either.
-  #----------------------------------------------------------------
-  
-! CFLAGS =	${CC_OPTS} ${AC_FLAGS} -I.. -I${TCLTK_INCLUDE_DIR}
-  
-  libname	=	libitcl.a
-  
---- 26,32 ----
-  # either.
-  #----------------------------------------------------------------
-  
-! CFLAGS =	${CC_OPTS} ${AC_FLAGS} -I.. -I${TCLTK_INCLUDE_DIR}/tcl8.0 -I${TCLTK_INCLUDE_DIR}/tk8.0
-  
-  libname	=	libitcl.a
-  
-*** libdesk/Makefile.in.orig	Fri Dec  5 10:44:56 1997
---- libdesk/Makefile.in	Wed Dec 10 21:58:10 1997
-***************
-*** 29,35 ****
-  # either.
-  #----------------------------------------------------------------
-  
-! CFLAGS =	${CC_OPTS} ${AC_FLAGS} -I.. -I${TCLTK_INCLUDE_DIR} ${X_INCLUDE_FLAG}
-  
-  libname	=	libdesk.a
-  
---- 29,35 ----
-  # either.
-  #----------------------------------------------------------------
-  
-! CFLAGS =	${CC_OPTS} ${AC_FLAGS} -I.. -I${TCLTK_INCLUDE_DIR}/tcl8.0 -I${TCLTK_INCLUDE_DIR}/tk8.0 ${X_INCLUDE_FLAG}
-  
-  libname	=	libdesk.a
-  
-*** netscape-remote/Makefile.in.orig	Fri Dec  5 10:44:56 1997
---- netscape-remote/Makefile.in	Wed Dec 10 22:00:37 1997
-***************
-*** 29,35 ****
-  # either.
-  #----------------------------------------------------------------
-  
-! CFLAGS =	${CC_OPTS} ${AC_FLAGS} -I.. -I${TCLTK_INCLUDE_DIR} ${X_INCLUDE_FLAG}
-  
-  libname	=	libnetscape.a
-  
---- 29,35 ----
-  # either.
-  #----------------------------------------------------------------
-  
-! CFLAGS =	${CC_OPTS} ${AC_FLAGS} -I.. -I${TCLTK_INCLUDE_DIR}/tcl8.0 -I${TCLTK_INCLUDE_DIR}/tk8.0 ${X_INCLUDE_FLAG}
-  
-  libname	=	libnetscape.a
-  
+--- configure.orig	Fri Feb 27 11:33:27 1998
++++ configure	Fri Feb 27 11:33:54 1998
+@@ -2109,8 +2109,8 @@
+ s%@TCL_LD_SEARCH_FLAGS@%$TCL_LD_SEARCH_FLAGS%g
+ s%@TCL_EXEC_PREFIX@%$TCL_EXEC_PREFIX%g
+ s%@TK_EXEC_PREFIX@%$TK_EXEC_PREFIX%g
+-s%@TCL_INCLUDE_PATH@%$TCL_INCLUDE_PATH%g
+-s%@TK_INCLUDE_PATH@%$TK_INCLUDE_PATH%g
++s%@TCL_INCLUDE_PATH@%$TCL_INCLUDE_PATH/tcl7.6%g
++s%@TK_INCLUDE_PATH@%$TK_INCLUDE_PATH/tk4.2%g
+ s%@TK_XINCLUDES@%$TK_XINCLUDES%g
+ s%@TCL_LIB_SPEC@%$TCL_LIB_SPEC%g
+ s%@TK_LIB_SPEC@%$TK_LIB_SPEC%g

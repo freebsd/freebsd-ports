@@ -1,7 +1,9 @@
 bin/cd-tkdesk
 bin/ed-tkdesk
 bin/od-tkdesk
+bin/op-tkdesk
 bin/pauseme
+bin/pop-tkdesk
 bin/tkdesk
 bin/tkdeskclient
 bin/tkdesksh
@@ -55,10 +57,7 @@ lib/TkDesk/clrpick.tcl
 lib/TkDesk/config.tcl
 lib/TkDesk/configs/AppBar
 lib/TkDesk/configs/AppBar_Be
-lib/TkDesk/configs/AppBar_Be~
 lib/TkDesk/configs/AppBar_Games
-lib/TkDesk/configs/AppBar_Games~
-lib/TkDesk/configs/AppBar~
 lib/TkDesk/configs/ButtonBar
 lib/TkDesk/configs/Commands
 lib/TkDesk/configs/Directories
@@ -196,6 +195,7 @@ lib/TkDesk/images/ficons16/mini-comet.xpm
 lib/TkDesk/images/ficons16/music.xpm
 lib/TkDesk/images/ficons16/parcel.xpm
 lib/TkDesk/images/ficons16/prism.xpm
+lib/TkDesk/images/ficons16/rpm.xpm
 lib/TkDesk/images/ficons16/script.xpm
 lib/TkDesk/images/ficons16/sound.xpm
 lib/TkDesk/images/ficons16/speaker.xpm
@@ -521,7 +521,6 @@ lib/TkDesk/sounds/robot_dead.au
 lib/TkDesk/sounds/start.au
 lib/TkDesk/tclIndex
 lib/TkDesk/tcl_lib/Version
-lib/TkDesk/tcl_lib/Version~
 lib/TkDesk/tcl_lib/init.tcl
 lib/TkDesk/tcl_lib/ldAout.tcl
 lib/TkDesk/tcl_lib/parray.tcl
