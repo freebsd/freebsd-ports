@@ -26,7 +26,7 @@ post-patch:
 		${WRKSRC}/src/Makefile.in
 
 pre-configure:
-	@(cd ${WRKSRC} && ${LOCALBASE}/bin/aclocal)
+	@(cd ${WRKSRC} && ${ACLOCAL})
 
 post-configure:
 	@(cd ${WRKSRC} && ${PERL5} am_edit)
