@@ -13,6 +13,12 @@ MASTER_SITES=	http://www.zeta.org.au/~atrn/ici/distfiles/
 MAINTAINER=	atrn@zeta.org.au
 COMMENT=	An interpretive language with C's overall feel combined with high level data types
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 MAKEFILE=	Makefile.bsd
 MAN1=		ici3.1
 MANCOMPRESSED=	yes
@@ -53,4 +59,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

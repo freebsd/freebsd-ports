@@ -26,6 +26,10 @@ LATEST_LINK=	gcc27
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 GCC_VER=	2.7.2.3
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 PLIST_SUB=	GNUHOST=${CONFIGURE_TARGET} GCC_VER=${GCC_VER}

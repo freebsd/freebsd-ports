@@ -30,6 +30,10 @@ CONFIGURE_ENV=	CC="$(CC) -I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib -L/usr
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 

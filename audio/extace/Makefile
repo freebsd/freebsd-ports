@@ -16,6 +16,12 @@ COMMENT=	An Audio Visualization plugin for the X Window System
 
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gtk12 imlib esound
 USE_REINPLACE=	yes
@@ -28,4 +34,4 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g"  \
 		-e "s|DATADIRNAME=lib|DATADIRNAME=share|g"  ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

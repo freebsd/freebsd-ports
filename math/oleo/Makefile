@@ -19,6 +19,12 @@ BROKEN=		"Does not compile"
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 USE_REINPLACE=	yes
 USE_AUTOCONF_VER=213
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
@@ -48,4 +54,4 @@ post-patch:
 	@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} \
 		${REINPLACE_CMD} -e "s|<malloc.h>|<stdlib.h>|g"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

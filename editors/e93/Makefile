@@ -19,6 +19,12 @@ COMMENT=	A nifty editor based on Tcl/Tk
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82 \
 		tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_X_PREFIX=	yes
 
@@ -50,4 +56,4 @@ do-install:
 	 ${INSTALL_DATA} syntaxmaps/c.tcl ${PREFIX}/lib/e93lib/syntaxmaps; \
 	)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
