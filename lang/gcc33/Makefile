@@ -24,7 +24,7 @@ DISTFILES=	\
 		gcc-objc-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-testsuite-${VERSIONSTRING}${EXTRACT_SUFX}
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	gerald@FreeBSD.org
 COMMENT?=	GNU Compiler Collection 3.3
 
 .if defined (WITH_BOUNDSCHECKING)
