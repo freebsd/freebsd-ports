@@ -3,7 +3,6 @@ bin/xfce
 bin/xfplay
 bin/xfsound
 bin/xfwm
-lib/X11/XFCE/XFce2.logo
 lib/X11/XFCE/backdrops/Anneaux.xpm
 lib/X11/XFCE/backdrops/Arena.xpm
 lib/X11/XFCE/backdrops/Bluedrops.xpm
