@@ -1,0 +1,11 @@
+--- IM/TcpTransaction.pm.orig	Sat Sep  5 08:04:33 1998
++++ IM/TcpTransaction.pm	Wed Sep  9 17:47:55 1998
+@@ -437,7 +437,7 @@
+ }
+ 
+ sub inet6_family () {
+-    return eval '&AF_INET6' || 24;
++    return eval '&AF_INET6' || 28;
+ }
+ 
+ 1;
