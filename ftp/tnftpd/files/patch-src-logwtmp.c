@@ -43,7 +43,7 @@
 +				NI_NUMERICHOST);
 +			host = hostbuf;
 +			if (strlen(host) > UT_HOSTSIZE)
-+				host[UT_HOSTSIZE] = '\0';
++				hostbuf[UT_HOSTSIZE] = '\0';
 +		}
 +	}
  
