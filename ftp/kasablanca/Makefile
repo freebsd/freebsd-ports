@@ -12,6 +12,8 @@ MASTER_SITES=	http://download.berlios.de/kasablanca/
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	Graphical ftp client for KDE
 
+EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
+
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
