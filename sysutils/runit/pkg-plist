@@ -45,3 +45,5 @@ sbin/utmpset
 %%PORTDOCS%%%%DOCSDIR%%/useinit.html
 %%PORTDOCS%%%%DOCSDIR%%/utmpset.8.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm etc/runit/getty-ttyv4
+@dirrm etc/runit
