@@ -10,6 +10,8 @@ bin/crystal
 bin/cynosure
 bin/decayscreen
 bin/deco
+bin/deluxe
+bin/demon
 bin/discrete
 bin/distort
 bin/drift
@@ -39,6 +41,7 @@ bin/lightning
 bin/lisa
 bin/lissie
 bin/lmorph
+bin/loop
 bin/maze
 bin/moire
 bin/moire2
@@ -46,6 +49,7 @@ bin/mountain
 bin/munch
 bin/noseguy
 bin/pedal
+bin/penetrate
 bin/penrose
 bin/pyro
 bin/qix
@@ -62,6 +66,7 @@ bin/spiral
 bin/starfish
 bin/strange
 bin/swirl
+bin/t3d
 bin/triangle
 bin/truchet
 bin/vines
