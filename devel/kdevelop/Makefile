@@ -17,9 +17,6 @@ MAINTAINER?=	kde@FreeBSD.org
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext \
 		autoconf213:${PORTSDIR}/devel/autoconf213 \
 		automake14:${PORTSDIR}/devel/automake14
-.if ${MACHINE_ARCH} == "i386" && !defined(NO_KDE_OBJPRELINK)
-BUILD_DEPENDS+=	objprelink:${PORTSDIR}/devel/objprelink
-.endif
 RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
 .if defined(WITH_OPTIONAL_DEPENDS)
 RUN_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf \
@@ -40,18 +37,8 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= --with-qtdoc-dir=${X11BASE}/share/doc/qt2/html
-.if ${MACHINE_ARCH} == "i386" && !defined(NO_KDE_OBJPRELINK)
-CONFIGURE_ARGS+=--enable-objprelink
-.endif
-.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_FINAL)
-CONFIGURE_ARGS+=--enable-final
-.endif
-.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_NDEBUG)
-CONFIGURE_ARGS+=--disable-debug
-.else
-CONFIGURE_ARGS+=--enable-debug
-STRIP=''
-.endif
+
+.include "${.CURDIR}/../../x11/kde2/Makefile.kde"
 
 pre-everything::
 .if !defined(WITH_OPTIONAL_DEPENDS)

@@ -21,20 +21,13 @@ LIB_DEPENDS=	iconv.2:${PORTSDIR}/converters/iconv
 
 USE_KDELIBS_VER=2
 USE_PYTHON=	yes
-PYTHON_VERSION=	python2.1
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_FINAL)
-CONFIGURE_ARGS+=--enable-final
-.endif
-.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_NDEBUG)
-CONFIGURE_ARGS+=--disable-debug
-.else
-CONFIGURE_ARGS+=--enable-debug
-STRIP=''
-.endif
 USE_GMAKE=	yes
+
+_NO_KDE_OBJPRELINK=	yes
+.include "${.CURDIR}/../../x11/kde2/Makefile.kde"
 
 post-patch:
 	@${PERL} -pi -e "s@Icon=killustrator@Icon=kontour@g" \

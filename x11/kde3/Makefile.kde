@@ -1,0 +1,37 @@
+# This is a simple set of Makefile macros which allow the core kde ports to
+# bring these in automatically since it's tiring to modify all of them to
+# add more of these.  These don't belong in bsd.kde.mk because they aren't
+# very likely to apply outside of KDE core modules.  Nonetheless, also
+# provide variables to remove one or more of these.
+#
+# $FreeBSD$
+
+CONFIGURE_ARGS?=
+
+.if !defined(_NO_KDE_OBJPRELINK)
+.if ${MACHINE_ARCH} == "i386" && !defined(NO_KDE_OBJPRELINK)
+BUILD_DEPENDS+=	objprelink:${PORTSDIR}/devel/objprelink
+CONFIGURE_ARGS+=--enable-objprelink
+.endif
+.endif
+
+.if !defined(_NO_KDE_FINAL)
+.if defined(PARALLEL_PACKAGE_BUILD) || !defined(NO_KDE_FINAL)
+CONFIGURE_ARGS+=--enable-final
+.endif
+.endif
+
+.if !defined(_NO_KDE_NDEBUG)
+.if defined(PARALLEL_PACKAGE_BUILD) || !defined(WANT_KDE_DEBUG)
+CONFIGURE_ARGS+=--disable-debug
+.else
+CONFIGURE_ARGS+=--enable-debug
+STRIP=''
+.endif
+.endif
+
+.if !defined(_NO_KDE_NON_I386_OPTS)
+.if ${MACHINE_ARCH} == "alpha"
+CFLAGS=		-O0 ${KDE_CFLAGS}
+.endif
+.endif
