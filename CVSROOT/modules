@@ -760,7 +760,7 @@ cdpd		ports/net/cdpd
 cdplay		src/usr.sbin/cdplay
 cdplayer.app	ports/audio/cdplayer.app
 cdpr		ports/net/cdpr
-cdrdao		ports/audio/cdrdao
+cdrdao		ports/sysutils/cdrdao
 cdroot		ports/sysutils/cdroot
 cdrtools	ports/sysutils/cdrtools
 cel		ports/lang/cel
