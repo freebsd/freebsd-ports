@@ -1,0 +1,9 @@
+This module allows you to calulate the day, week, period or quarter of a date
+in a fiscal year, given a start date and either a target date or number of
+periods and target date. This is often needed in business, where the fiscal
+year begins and ends on different days than the calendar year. This module is
+based on the Gregorian calendar. Using other DT calendar objects will return
+results, but the behavior is unpredicatable for calendars that have more than
+365 or 366 days.
+
+WWW: http://datetime.perl.org/
