@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	mydns
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.5
 CATEGORIES=	net databases
 MASTER_SITES=	http://mydns.bboy.net/download/
 
 MAINTAINER=	simond@irrelevant.org
-
-LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-confdir=${PREFIX}/etc --without-libiconv-prefix
@@ -26,6 +24,14 @@ DOCS=	AUTHORS COPYING ChangeLog NEWS QUICKSTART README TODO
 
 .include <bsd.port.pre.mk>
 
+.if defined (WITH_PGSQL)
+LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql7
+CONFIGURE_ARGS+=	--without-mysql
+.else
+LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+CONFIGURE_ARGS+=	--without-pgsql
+.endif
+
 .if !defined(NOPORTDOCS)
 USE_PERL5=	yes
 .else
@@ -33,6 +39,9 @@ pre-configure:
 	@${REINPLACE_CMD} -E -e "s|^(all: vars manpages info) html-doc|\1|" \
 		${WRKSRC}/doc/Makefile.in
 .endif
+
+post-build:
+	cd ${WRKSRC}/doc && ${MAKE} html
 
 post-install:
 	@${SED} 's|%%%PREFIX%%%|${PREFIX}|g' < ${FILESDIR}/mydns.sh > ${WRKSRC}/mydns.sh

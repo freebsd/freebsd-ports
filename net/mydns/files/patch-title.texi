@@ -1,11 +1,10 @@
---- doc/texi/title.texi.orig	Sat Sep 21 10:25:27 2002
-+++ doc/texi/title.texi	Sat Sep 21 10:26:04 2002
-@@ -1,3 +1,8 @@
+--- doc/texi/en/title.texi.orig	Fri Nov 15 10:30:48 2002
++++ doc/texi/en/title.texi	Wed Dec 18 15:18:13 2002
+@@ -1,3 +1,7 @@
 +@dircategory Miscellaneous
 +@direntry
 +* mydns: (mydns).               The MySQL based DNS-server.
 +@end direntry
-+
+ 
  @ifinfo
- This is the manual for MyDNS (version @value{PKGVERSION}, @value{PKGDATE}), a MySQL-based DNS server package.
- @value{PKGCOPYRIGHT}
+ This is the manual for MyDNS (version @value{PKGVERSION}, @value{PKGDATE}),
