@@ -19,7 +19,8 @@ LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomehack gtkhtml libpanel
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-messages=/var/log/messages
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -32,11 +33,8 @@ MAN1=	gcalc.1 gcharmap.1 gcolorsel.1 gdialog.1 gdict.1 gdiskfree.1 \
 	stripchart.1
 MAN8=	gshutdown.8
 
-pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
 .include <bsd.port.mk>

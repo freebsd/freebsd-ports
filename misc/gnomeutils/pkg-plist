@@ -764,7 +764,6 @@ share/locale/zh_CN.GB2312/LC_MESSAGES/gnome-utils.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-utils.mo
 @dirrm share/gnome/stripchart
 @dirrm share/gnome/pixmaps/logview
-@dirrm share/gnome/omf/gnome-utils
 @dirrm share/gnome/logview
 @dirrm share/gnome/help/stripchart/es/stylesheet-images
 @dirrm share/gnome/help/stripchart/es/figures
