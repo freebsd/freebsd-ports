@@ -123,7 +123,7 @@ if ($addlchk && -f $portlint) {
 	$passenv = "DISTDIR=\"$distdir\"" if -d $distdir && $myhost ne "freefall.freebsd.org";
 	$passenv = "DISTDIR=\"$tmpdir\"" if $myhost eq "freefall.freebsd.org";
 	$passenv = $passenv . " PORTSDIR=\"$tmpdir\"" if !$nomkdir;
-	push(@commands, "$make clean check-categories");
+	push(@commands, "$make $passenv clean check-categories");
 	push(@commands, "$portlint $plint_args");
 	push(@commands, "$make $passenv FETCH_BEFORE_ARGS='-btA' checksum") if !$nofetch;
 	if ($more_testing) {
@@ -247,7 +247,7 @@ foreach my $thisdir (@dirs) {
 			$tmp = 0; $pkgcomment = "";
 			# Now reassemble the comment string.
 			while ($commentArr[$tmp]) {
-				if ($tmp == $tmp2) {
+				if ($tmp == $tmp2 || $tmp == 0) {
 					$pkgcomment = $pkgcomment . "\n";
 					$pkgcomment = join("", $pkgcomment, $commentArr[$tmp]);
 				} else {
@@ -261,7 +261,7 @@ foreach my $thisdir (@dirs) {
 		$pkgcomment = $pkgcomment . "\n\n" if ($autofill != -1);
 		# Write out the data to the comment file.
 		open(AUTOFILL, "> $tmpdir/commitfile") or die("Can't open $tmpdir/commitfile for writing: $!");
-		print AUTOFILL "Add $portname $portversion,$pkgcomment";
+		print AUTOFILL "Add $portname $portversion, $pkgcomment";
 		print AUTOFILL "PR:		$autofill\n" if ($autofill != -1);
 		print AUTOFILL "Submitted by:	$orig" if ($autofill != -1);
 		close(AUTOFILL);
