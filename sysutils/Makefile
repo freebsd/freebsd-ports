@@ -210,6 +210,7 @@
     SUBDIR += monitord
     SUBDIR += mount.app
     SUBDIR += msyslog
+    SUBDIR += mtxorbd
     SUBDIR += multitail
     SUBDIR += muse
     SUBDIR += nagios-statd
