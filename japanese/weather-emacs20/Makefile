@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	weather
-PORTVERSION=	0.19
+PORTVERSION=	0.26
 CATEGORIES=	japanese elisp
 MASTER_SITES=	ftp://ftp.opaopa.org/pub/elisp/ \
 		ftp://ftp.ring.gr.jp/pub/text/elisp/jaist/ftp.opaopa.org/elisp/ \
