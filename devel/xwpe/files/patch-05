@@ -1,0 +1,24 @@
+--- we_prog.c.orig	Fri Apr  7 05:32:42 1995
++++ we_prog.c	Mon Jan 27 04:16:00 1997
+@@ -22,6 +22,9 @@
+ #include <sys/stat.h>
+ #include <sys/wait.h>
+ #include <signal.h>
++#if (defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__bsdi__))
++#include <sys/param.h>
++#endif
+ 
+ #define NSTR ""
+ 
+@@ -1120,7 +1123,11 @@
+    e_prog.project = e_make_string(e_prog.project, "project.prj");
+    e_prog.exedir = e_make_string(e_prog.exedir, ".");
+    e_prog.sys_include = e_make_string(e_prog.sys_include,
++#if (defined(BSD) && (BSD >= 199306) && defined(__i386__))
++			 "/usr/include:/usr/X11R6/include:/usr/local/include");
++#else
+ 			 "/usr/include:/usr/5include:/usr/include/X11");
++#endif
+    if(e_prog.comp == NULL)
+    e_prog.comp = MALLOC(e_prog.num * sizeof(struct e_s_prog *));
+    else

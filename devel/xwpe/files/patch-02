@@ -1,11 +1,27 @@
 --- Makefile.in.orig	Fri Apr  7 05:23:04 1995
-+++ Makefile.in	Sat Jan 25 00:59:00 1997
-@@ -8,7 +8,7 @@
++++ Makefile.in	Tue Jan 28 20:59:36 1997
+@@ -8,9 +8,12 @@
  #Destination Directory
  prefix=/usr/local
  DESTDIR=	$(prefix)/bin
 -LIBDIR=		$(prefix)/lib
-+LIBDIR=		$(prefix)/share
- WPELIBDIR=	$(LIBDIR)/wpe
+-WPELIBDIR=	$(LIBDIR)/wpe
++LIBSUFX=	share
++LIBDIR=		$(prefix)/$(LIBSUFX)
++WPELIBSUFX=	$(LIBSUFX)/wpe
++WPELIBDIR=	$(prefix)/$(WPELIBSUFX)
  MANDIR=		$(prefix)/man
++INFO_FILE=	$(prefix)/info
+ 
+ LIBS=@LIBS@
+ DEFS=@DEFS@
+@@ -104,7 +107,8 @@
+ 
+ ELIBFLAGS=	$(LSYSV) $(LXWINDOW) $(TLIB) $(LPOSIX) $(XWINLIB) $(LNET) $(EXTLIBS)
+ 
+-ACFLAGS=	$(CFLAGS) $(DEFS) $(ECFLAGS) -D"DESTDIR=\"$(DESTDIR)\""
++ACFLAGS=	$(CFLAGS) $(DEFS) $(ECFLAGS) -D"DESTDIR=\"$(DESTDIR)\""  \
++		-D"WPE_LIB_DIR=\"$(WPELIBSUFX)\"" -D"INFO_FILE=\"$(prefix)/info\""  
+ 
+ LIBFLAGS=	$(LIBS) $(ELIBFLAGS)
  
