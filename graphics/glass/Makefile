@@ -17,9 +17,11 @@ USE_MESA=	yes
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
 
 pre-patch:
-	@${PERL} -pi -e 's|malloc.h|stdlib.h|' ${WRKSRC}/*.c
+	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' \
+		${WRKSRC}/*.c
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/libglass.so.1 ${PREFIX}/lib
