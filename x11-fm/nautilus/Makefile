@@ -70,7 +70,7 @@ post-install:
 	@${ECHO} "To be able view WWW pages and HTML documents from Nautilus please"
 	@${ECHO} "add the following into your environment:"
 	@${ECHO} ""
-	@${ECHO} "	LD_LIBRARY_PATH=${X11BASE}/mozilla-embedded"
+	@${ECHO} "	LD_LIBRARY_PATH=${X11BASE}/lib/mozilla-embedded"
 	@${ECHO} ""
 .endif
 
