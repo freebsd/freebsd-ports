@@ -10,7 +10,7 @@ DISTNAME=	src/usr.bin/ssh
 PKGNAME=	OpenSSH-1.2
 CATEGORIES=	security net
 # ${MASTER_SITES} is only for if CVS won't work, period.
-MASTER_SITES=	ftp://internat.FreeBSD.org/pub/Crypto/misc/
+MASTER_SITES=	ftp://internat.FreeBSD.org/pub/Crypto/OpenSSH/
 
 MAINTAINER=	green@FreeBSD.org
 
