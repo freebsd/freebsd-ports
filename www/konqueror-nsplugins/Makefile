@@ -31,6 +31,8 @@ WRKSRC=		${WRKDIR}/kdebase-${PORTVERSION}
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
+CONFIGURE_ARGS+=--without-java
+
 pre-configure:
 	${ECHO_CMD} "nsplugins" > ${WRKSRC}/inst-apps
 	${REINPLACE_CMD} -e \
