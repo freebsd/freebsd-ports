@@ -1,0 +1,11 @@
+--- mkconfig.h.orig	Fri Jul 14 14:15:02 2000
++++ mkconfig.h	Fri Jul 14 14:15:15 2000
+@@ -27,7 +27,7 @@
+ DOC_DIR=$(LIB_TOPDIR)/lib
+ MANMODE=644
+ # name and header of the library
+-FORMLIB=libforms.a
++FORMLIB=libxforms.a
+ FORMHEADER=forms.h
+ 
+ # make shared lib: $(MKSHLIB) 

@@ -1,0 +1,40 @@
+--- mkconfig.h.orig	Mon Aug  2 01:11:50 1999
++++ mkconfig.h	Fri Jul 14 13:32:19 2000
+@@ -13,7 +13,7 @@
+ 
+ # where the library should be installed
+ 
+-LIB_TOPDIR=/usr/X11R6
++LIB_TOPDIR=$(PREFIX)
+ 
+ LIB_DIR=$(LIB_TOPDIR)/lib
+ LIBMODE=644
+@@ -21,21 +21,21 @@
+ HEADER_DIR=$(LIB_TOPDIR)/include
+ HEADERMODE=644
+ 
+-BIN_DIR=/usr/local/bin
++BIN_DIR=$(PREFIX)/bin
+ BINMODE=711
+ 
+-MAN5_DIR=/usr/man/man5
+-MAN1_DIR=/usr/man/man1
+-DOC_DIR=/usr/local/lib
++MAN5_DIR=$(PREFIX)/man/man5
++MAN1_DIR=$(PREFIX)/man/man1
++DOC_DIR=$(PREFIX)/share/xforms
+ MANMODE=644
+ # name and header of the library
+-FORMLIB=libforms.a
++FORMLIB=libxforms.a
+ FORMHEADER=forms.h
+ 
+ # make shared lib: $(MKSHLIB) 
+ SHARED_LIB=libforms.so.0.89
+-SHARED_NAME=libforms.so
+-SHARED_SO=libforms.so
++SHARED_NAME=libxforms.so.0
++SHARED_SO=libxforms.so
+ MKSHLIB=ld -shared -soname $(SHARED_SO) -o $(SHARED_LIB)\
+      `ls *.o|grep -v glcanvas.o` ulib/*.o ../xpm-3.4k/lib/libXpm.a $(JPEG) -lc
+ 

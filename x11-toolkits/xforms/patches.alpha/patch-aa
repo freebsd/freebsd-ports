@@ -1,0 +1,33 @@
+--- Makefile.orig	Fri Jul 14 13:55:28 2000
++++ Makefile	Fri Jul 14 13:59:34 2000
+@@ -15,12 +15,14 @@
+ SYSLIB=-lX11 -lm
+ SHELL=/bin/sh
+ 
+-FORMHEADER=forms.h
+-FORMLIB=libforms.a
+-
+ .include "mkconfig.h"
+ ##### don't change anything after this line ####
+ 
++all:  link
++
++link:
++	-@mv FORMS/libforms.a FORMS/$(FORMLIB);
++
+ demo: 
+ 	@(cd DEMOS; make) 
+ 
+@@ -40,9 +42,9 @@
+ 	cp FORMS/xforms.5 $(MAN5_DIR);  chmod $(MANMODE) $(MAN5_DIR)/xforms.5
+ 	cp DESIGN/fdesign.1 $(MAN1_DIR); chmod $(MANMODE) $(MAN1_DIR)/fdesign.1
+ 	cp fd2ps/fd2ps.1 $(MAN1_DIR); chmod $(MANMODE) $(MAN1_DIR)/fd2ps.1
+-	@if [ ! -f $(MAN5_DIR)/forms.5 ]; then\
+-          ln -s $(MAN5_DIR)/xforms.5 $(MAN5_DIR)/forms.5;\
+-        fi
++#	@if [ ! -f $(MAN5_DIR)/forms.5 ]; then\
++#          ln -s $(MAN5_DIR)/xforms.5 $(MAN5_DIR)/forms.5;\
++#        fi
+ clean:
+ 	(cd  DEMOS; make $@)
+ empty:
