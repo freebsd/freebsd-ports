@@ -15,6 +15,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	jkoshy@FreeBSD.ORG
 COMMENT=	A literate programming tool for Objective Caml
 
+BROKEN=		"Does not install"
+
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 
