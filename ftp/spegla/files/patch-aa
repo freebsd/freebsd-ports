@@ -1,10 +1,11 @@
---- Makefile.orig	Sat Dec 19 05:03:25 1998
-+++ Makefile	Sat Dec 19 06:16:51 1998
-@@ -1,4 +1,7 @@
- #  $Id: Makefile,v 1.12 1998/11/13 08:46:05 jens Exp $
-+BINDIR=	${PREFIX}/bin
-+MANDIR=	${PREFIX}/man/man
-+
- PROG= spegla
- SRCS= jftp.c parserow.c spegla.c readconfig.c
+--- Makefile.orig	Tue Jun 27 16:54:10 2000
++++ Makefile	Tue Jun 27 16:54:18 2000
+@@ -2,7 +2,7 @@
+ 
+ PREFIX		?= /usr/local
+ BINDIR		 = ${PREFIX}/bin
+-MANDIR		 = ${PREFIX}/man
++MANDIR		 = ${PREFIX}/man/man
+ 
+ HAVE_STRLCPY?= yes
  
