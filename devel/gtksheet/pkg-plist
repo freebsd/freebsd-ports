@@ -1,1 +1,7 @@
-lib/libGtkSheet.a
+lib/libgtksheet.a
+include/gtksheet/gtksheet.h
+include/gtksheet/gtksheetentry.h
+include/gtksheet/gtkbordercombo.h
+include/gtksheet/gtkcolorcombo.h
+include/gtksheet/gtkcombobox.h
+@dirrm include/gtksheet

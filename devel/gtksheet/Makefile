@@ -3,7 +3,7 @@
 # Date created:			Jun 22 1999
 # Whom:				Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/06 17:29:46 steve Exp $
+# $Id: Makefile,v 1.2 1999/06/22 02:19:54 foxfair Exp $
 #
 
 DISTNAME=	gtksheet-7.6
@@ -19,6 +19,8 @@ GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 MAKE_ENV+=	GTK_CONFIG=${GTK_CONFIG}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/libGtkSheet.a ${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/libgtksheet.a ${PREFIX}/lib
+	@${MKDIR} ${PREFIX}/include/gtksheet
+	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/gtksheet
 
 .include <bsd.port.mk>
