@@ -119,6 +119,7 @@ www/data-dist/index.html.ru.ucs4
 www/data-dist/index.html.ru.utf8
 www/data-dist/index.html.se
 www/data-dist/index.html.zh-tw.big5
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.html
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/bind.html.en
 %%PORTDOCS%%%%DOCSDIR%%/bind.html.fr
@@ -297,7 +298,9 @@ www/data-dist/index.html.zh-tw.big5
 %%PORTDOCS%%%%DOCSDIR%%/mod/mod_negotiation.html.html
 %%PORTDOCS%%%%DOCSDIR%%/mod/mod_negotiation.html.ja.jis
 %%PORTDOCS%%%%DOCSDIR%%/mod/mod_proxy.html
-%%PORTDOCS%%%%DOCSDIR%%/mod/mod_rewrite.html
+%%PORTDOCS%%%%DOCSDIR%%/mod/mod_rewrite.html.en
+%%PORTDOCS%%%%DOCSDIR%%/mod/mod_rewrite.html.html
+%%PORTDOCS%%%%DOCSDIR%%/mod/mod_rewrite.html.ja.jis
 %%PORTDOCS%%%%DOCSDIR%%/mod/mod_setenvif.html.en
 %%PORTDOCS%%%%DOCSDIR%%/mod/mod_setenvif.html.html
 %%PORTDOCS%%%%DOCSDIR%%/mod/mod_setenvif.html.ja.jis
