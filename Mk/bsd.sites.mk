@@ -461,7 +461,7 @@ MASTER_SITE_MOZILLA+= \
 	http://ftp.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
 	http://www.gtlib.cc.gatech.edu/pub/mozilla.org/%SUBDIR%/ \
 	ftp://ftp.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
-	ftp://sunsite.utk.edu/pub/netscape-source/mozilla.org/%SUBDIR%/ \
+	ftp://sunsite.utk.edu/pub/netscape-source/%SUBDIR%/ \
 	ftp://ftp.informatik.uni-bonn.de/pub/www/mozilla/%SUBDIR%/ \
 	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/ftp.mozilla.org/pub/%SUBDIR%/ \
 	ftp://ftp.informatik.rwth-aachen.de/pub/mirror/ftp.mozilla.org/pub/%SUBDIR%/ \
