@@ -4,7 +4,7 @@
 # Date created:         15 May 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.10 1998/11/14 09:43:01 asami Exp $
+# $Id: Makefile,v 1.11 1998/12/12 16:23:37 obrien Exp $
 #
 
 DISTNAME=       rarbsd
@@ -18,8 +18,9 @@ MAINTAINER=     ache@FreeBSD.ORG
 NO_PACKAGE=     Only unmodified original package can be distributed
 
 NO_WRKSUBDIR=   yes
-EXTRACT_CMD=
-EXTRACT_BEFORE_ARGS=
+EXTRACT_CMD=		# empty
+EXTRACT_BEFORE_ARGS=	# empty
+EXTRACT_AFTER_ARGS=	# empty
 
 .include <bsd.port.pre.mk>
 

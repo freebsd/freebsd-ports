@@ -3,7 +3,7 @@
 # Date created:         9 May 1997
 # Whom:                 Hironori Ikura <hikura@kaisei.org>
 #
-# $Id: Makefile,v 1.3 1998/10/16 03:26:07 jseger Exp $
+# $Id: Makefile,v 1.4 1998/10/16 03:42:28 jseger Exp $
 #
 
 DISTNAME=	pgp263i-${PGP_LANGUAGE}
@@ -21,7 +21,8 @@ BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	pgp:${PORTSDIR}/security/pgp
 
 EXTRACT_CMD=	unzip
-EXTRACT_ARGS=	-q
+EXTRACT_BEFORE_ARGS=	-q
+EXTRACT_AFTER_ARGS=	# empty
 NO_BUILD=	YES
 
 # version and language specifications

@@ -3,7 +3,7 @@
 # Date created:         98/11/17
 # Whom:                 Satoshi TAOKA <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.7 1998/11/28 02:18:44 asami Exp $
+# $Id: Makefile,v 1.8 1999/01/26 01:01:52 asami Exp $
 #
 
 DISTNAME=	vim
@@ -90,7 +90,8 @@ FEPOPT+=	-DFEPCTRL
 .endif
 
 post-extract:
-	${EXTRACT_CMD} -C ${WRKSRC} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${JPATCH}
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${JPATCH} \
+		${EXTRACT_AFTER_ARGS} -C ${WRKSRC}
 
 pre-patch:
 	cd ${WRKSRC}; ${PATCH} ${PATCH_DIST_ARGS} < ${WRKSRC}/jvim.diff

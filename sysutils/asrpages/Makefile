@@ -3,7 +3,7 @@
 # Date created:		6 Nov 1997
 # Whom:			Sheldon Hearn <axl@iafrica.com>
 #
-# $Id: Makefile,v 1.4 1998/08/17 20:54:47 asami Exp $
+# $Id: Makefile,v 1.5 1998/09/19 05:48:06 steve Exp $
 #
 
 DISTNAME=	asrpages
@@ -14,7 +14,9 @@ DISTFILES=	asr.pages.tar
 
 MAINTAINER=	axl@iafrica.com
 
-EXTRACT_ARGS=	-xf
+EXTRACT_CMD=	${TAR}
+EXTRACT_BEFORE_ARGS=	-xf
+EXTRACT_AFTER_ARGS=	# empty
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 

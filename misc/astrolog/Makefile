@@ -7,7 +7,7 @@
 # Date created:         31 July 1995
 # Whom:                 faulkner@cactus.org
 #
-# $Id: Makefile,v 1.12 1997/08/10 22:31:15 fenner Exp $
+# $Id: Makefile,v 1.13 1998/11/28 05:39:00 asami Exp $
 #
 
 DISTNAME=       ast53unx
@@ -24,7 +24,8 @@ MAINTAINER=     ache@FreeBSD.ORG
 
 USE_XLIB=	yes
 EXTRACT_CMD=    ${SH}
-EXTRACT_ARGS=
+EXTRACT_BEFORE_ARGS=	# empty
+EXTRACT_AFTER_ARGS=	# empty
 DIST_SUBDIR=    astrolog
 ALL_TARGET=     astrolog
 NO_WRKSUBDIR=   Yes

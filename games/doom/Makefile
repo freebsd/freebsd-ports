@@ -3,7 +3,7 @@
 # Date created:         Mon Dec 14 21:03:01 MET 1998
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.8 1999/01/15 02:54:18 jmz Exp $
+# $Id: Makefile,v 1.9 1999/01/18 08:44:41 asami Exp $
 #
 
 DISTNAME=	doomsrc-1.8
@@ -21,7 +21,8 @@ BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 USE_XLIB=	yes
 EXTRACT_CMD=	unzip
-EXTRACT_ARGS=	-q
+EXTRACT_BEFORE_ARGS=	-q
+EXTRACT_AFTER_ARGS=	# empty
 NO_WRKSUBDIR=	yes
 USE_GMAKE=	yes
 

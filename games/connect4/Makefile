@@ -4,7 +4,7 @@
 # Whom:			Joel Sutton <sutton@aardvark.apana.org.au>
 # FreeBSD Version:	2.1.5-RELEASE
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/06/04 03:21:12 asami Exp $
 #
       
 DISTNAME=	connect4
@@ -19,7 +19,8 @@ MAINTAINER=	sutton@aardvark.apana.org.au
 BUILD_DEPENDS=		gunshar:${PORTSDIR}/archivers/gshar+gunshar
 
 EXTRACT_CMD=		gunshar
-EXTRACT_BEFORE_ARGS=	""
+EXTRACT_BEFORE_ARGS=	# empty
+EXTRACT_AFTER_ARGS=	# empty
 NO_WRKSUBDIR=	yes
 MAN6=		connect4.6
 

@@ -3,7 +3,7 @@
 # Date created:				7 May 1998
 # Whom:					Matthew Hunt <mph@FreeBSD.org>
 #
-# $Id: Makefile,v 1.2 1998/06/14 02:26:35 mph Exp $
+# $Id: Makefile,v 1.3 1998/07/05 04:15:04 mph Exp $
 #
 
 DISTNAME=		jzip201g
@@ -18,6 +18,7 @@ BUILD_DEPENDS=		unzip:${PORTSDIR}/archivers/unzip
 
 EXTRACT_CMD=		unzip
 EXTRACT_BEFORE_ARGS=	-qq
+EXTRACT_AFTER_ARGS=	# empty
 
 NO_WRKSUBDIR=		yes
 

@@ -3,7 +3,7 @@
 # Date created:		16 March 1998
 # Whom:			Jun Kuriyama <kuriyama@opt.phys.waseda.ac.jp>
 #
-# $Id: Makefile,v 1.13 1998/12/23 14:21:43 kuriyama Exp $
+# $Id: Makefile,v 1.14 1999/01/16 07:44:13 kuriyama Exp $
 #
 
 DISTNAME=	db133
@@ -24,6 +24,7 @@ RUN_DEPENDS=	${PREFIX}/share/sgml/docbook/3.0/catalog:${PORTSDIR}/textproc/docbo
 
 EXTRACT_CMD=	unzip
 EXTRACT_BEFORE_ARGS=	-a -q -L
+EXTRACT_AFTER_ARGS=	# empty
 NO_MTREE=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/docbook

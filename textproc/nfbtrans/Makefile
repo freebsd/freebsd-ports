@@ -3,7 +3,7 @@
 # Date created:			30 Aug 1998
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/30 02:32:23 max Exp $
+# $Id: Makefile,v 1.2 1998/12/01 09:32:32 obrien Exp $
 #
 
 DISTNAME=	nfbtr750
@@ -21,7 +21,8 @@ BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 RESTRICTED=	"Unclear copyright status"
 EXTRACT_CMD=	unzip
-EXTRACT_ARGS=	-q -a -L -o
+EXTRACT_BEFORE_ARGS=	-q -a -L -o
+EXTRACT_AFTER_ARGS=	# empty
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	freebsd
 MAKEFILE=	makefile

@@ -4,7 +4,7 @@
 # Date created:				10 Dec 1998
 # Whom:					David O'Brien <obrien@NUXI.com>
 #
-# $Id: Makefile,v 1.12 1998/12/14 10:28:21 obrien Exp $
+# $Id: Makefile,v 1.13 1998/12/14 12:07:48 obrien Exp $
 #
 
 DISTNAME=	egcs-1.1.1
@@ -25,14 +25,12 @@ PATCHFILES=	egcs-1.1.1-pgcc-1.1.1.diff.gz
 
 MAINTAINER=	obrien@FreeBSD.org
 
-BUILD_DEPENDS=  bzip2:${PORTSDIR}/archivers/bzip2  \
-		autoconf:${PORTSDIR}/devel/autoconf
+BUILD_DEPENDS=  autoconf:${PORTSDIR}/devel/autoconf
+
+USE_BZIP2=	yes
 
 .include <bsd.port.pre.mk>
 
-EXTRACT_CMD=	bzip2
-EXTRACT_BEFORE_ARGS=	-dc
-EXTRACT_AFTER_ARGS=	| /usr/bin/tar -xf -
 EGCS_REV=	pgcc-2.91.60
 LIBSTDCPP_REV=	2.9.0
 

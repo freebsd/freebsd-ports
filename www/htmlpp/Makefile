@@ -3,7 +3,7 @@
 # Date created:         9 Nov 1997
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1998/09/15 21:31:55 asami Exp $
+# $Id: Makefile,v 1.3 1998/11/29 08:20:30 asami Exp $
 #
 
 DISTNAME=	htmlpp
@@ -17,7 +17,8 @@ MAINTAINER=	dburr@FreeBSD.ORG
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 EXTRACT_CMD=	unzip
-EXTRACT_ARGS=	-qa
+EXTRACT_BEFORE_ARGS=	-qa
+EXTRACT_AFTER_ARGS=	# empty
 
 USE_PERL5=	YES
 

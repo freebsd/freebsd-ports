@@ -3,7 +3,7 @@
 # Date created:				28 June 1998
 # Whom:					Matthew Hunt <mph@FreeBSD.org>
 #
-# $Id: Makefile,v 1.1.1.1 1998/06/28 15:16:05 mph Exp $
+# $Id: Makefile,v 1.2 1999/01/08 00:15:21 mph Exp $
 #
 
 DISTNAME=	inform-6.15
@@ -27,6 +27,7 @@ NO_WRKSUBDIR=	yes
 EXTRACT_ONLY=		inform615_source.zip
 EXTRACT_CMD=		unzip
 EXTRACT_BEFORE_ARGS=	-qq
+EXTRACT_AFTER_ARGS=	# empty
 
 # I can hardly believe it, but the ".c" and ".h" extensions are
 # not present on the source files.

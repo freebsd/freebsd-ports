@@ -3,7 +3,7 @@
 # Date created:         31 October 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.17 1998/11/14 09:43:24 asami Exp $
+# $Id: Makefile,v 1.18 1998/12/01 09:55:09 asami Exp $
 #
 
 DISTNAME=	linpack
@@ -19,7 +19,8 @@ LIB_DEPENDS=    blas.1:${PORTSDIR}/math/blas
 
 EXTRACT_CMD=	${SH} ${SCRIPTDIR}/uncomp
 EXTRACT_SUFX=	.gz
-EXTRACT_ARGS=	${WRKDIR}
+EXTRACT_BEFORE_ARGS=	${WRKDIR}
+EXTRACT_AFTER_ARGS=	# empty
 
 NO_WRKSUBDIR=	yes
 

@@ -3,7 +3,7 @@
 # Date created:		20 July 1997
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
+# $Id: Makefile,v 1.20 1998/10/04 12:54:11 kuriyama Exp $
 #
 
 DISTNAME=	Wnn4.2
@@ -32,8 +32,9 @@ DOC_FROM=	${WRKSRC}/cWnn
 .endif  # kWnn has no manual.
 
 post-extract:
-	${EXTRACT_CMD} -C ${WRKSRC} ${EXTRACT_BEFORE_ARGS} \
-		${_DISTDIR}/Wnn4.2.patch.tar.gz
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+		${_DISTDIR}/Wnn4.2.patch.tar.gz ${EXTRACT_AFTER_ARGS} \
+		-C ${WRKSRC}
 	${LN} -sf Project.tmpl ${WRKSRC}/config/X11.tmpl
 
 pre-patch:

@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.15 1999/01/07 00:51:42 se Exp $
+# $Id: Makefile,v 1.16 1999/01/11 02:13:23 asami Exp $
 #
 
 DISTNAME=	kdesupport
@@ -15,12 +15,7 @@ EXTRACT_SUFX=	-1.1-alpha1.src.tar.bz2
 
 MAINTAINER=	se@freebsd.org
 
-BUILD_DEPENDS=	bzip2:${PORTSDIR}/archivers/bzip2
-
-EXTRACT_CMD=	bzip2
-EXTRACT_BEFORE_ARGS= -cd
-EXTRACT_AFTER_ARGS= | tar xf -
-
+USE_BZIP2=	yes
 USE_QT=		yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	"--prefix=$(PREFIX)" \

@@ -3,7 +3,7 @@
 # Date created:		4 Mar 1997
 # Whom:			Igor Vinokurov <igor@zynaps.ru>
 #
-# $Id: Makefile,v 1.2 1997/09/17 04:51:30 max Exp $
+# $Id: Makefile,v 1.3 1998/01/16 04:06:17 jseger Exp $
 #
 
 DISTNAME=	tac_plus.2.1
@@ -14,7 +14,9 @@ EXTRACT_SUFX=	.tar
 
 MAINTAINER=	igor@zynaps.ru
 
-EXTRACT_BEFORE_ARGS=	-C ${WRKDIR} -xf
+EXTRACT_CMD=		${TAR}
+EXTRACT_BEFORE_ARGS=	-xf
+EXTRACT_AFTER_ARGS=	# empty
 ALL_TARGET=	tac_plus
 MAN8=		tac_plus.8
 EXTRA_PATCH=	patch-ba

@@ -3,7 +3,7 @@
 # Date created:         19 Aug 1995
 # Whom:                 joerg
 #
-# $Id: Makefile,v 1.4 1996/11/18 11:26:27 asami Exp $
+# $Id: Makefile,v 1.5 1998/09/28 02:25:21 steve Exp $
 #
 
 DISTNAME=       pacman10
@@ -19,6 +19,7 @@ BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 NO_WRKSUBDIR=	Does not unpack into subdir.
 EXTRACT_CMD=	unzip
 EXTRACT_BEFORE_ARGS= -x
+EXTRACT_AFTER_ARGS=  # empty
 USE_IMAKE=      yes
 MAN1=		pacman.1
 

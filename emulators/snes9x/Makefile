@@ -3,7 +3,7 @@
 # Date created:         20 July 1997
 # Whom:                 Yukihiro Nakai<Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.5 1999/01/12 07:07:19 flathill Exp $
+# $Id: Makefile,v 1.6 1999/01/12 16:51:07 vanilla Exp $
 #
 
 DISTNAME=	snes116a
@@ -25,7 +25,8 @@ USE_X_PREFIX=	YES
 MAKEFILE=	Makefile.linux
 
 EXTRACT_CMD=	unzip
-EXTRACT_BEFORE_ARGS=
+EXTRACT_BEFORE_ARGS=	# empty
+EXTRACT_AFTER_ARGS=	# empty
 
 WRKSRC=		${WRKDIR}/release
 

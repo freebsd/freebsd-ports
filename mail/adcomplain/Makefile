@@ -4,7 +4,7 @@
 # Date created: 13 Sep 1997
 # Whom:         ache@FreeBSD.org
 #
-# $Id: Makefile,v 1.21 1998/12/14 16:33:07 ache Exp $
+# $Id: Makefile,v 1.22 1999/01/15 00:36:52 ache Exp $
 #
 
 DISTNAME=       adcomplain-3.49
@@ -18,6 +18,7 @@ USE_PERL5=      yes
 
 EXTRACT_CMD=    /usr/bin/uudecode
 EXTRACT_BEFORE_ARGS=    <
+EXTRACT_AFTER_ARGS=	# empty
 NO_WRKSUBDIR=	YES
 NO_BUILD=       YES
 

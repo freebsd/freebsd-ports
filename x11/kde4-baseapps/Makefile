@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.25 1999/01/08 09:54:21 asami Exp $
+# $Id: Makefile,v 1.26 1999/01/21 08:15:38 asami Exp $
 #
 
 DISTNAME=	kdebase
@@ -15,16 +15,12 @@ EXTRACT_SUFX=	-1.1-alpha1.src.tar.bz2
 
 MAINTAINER=	se@freebsd.org
 
-BUILD_DEPENDS=	bzip2:${PORTSDIR}/archivers/bzip2
 LIB_DEPENDS=	gif.3:${PORTSDIR}/graphics/giflib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		kdecore.2:${PORTSDIR}/x11/kdelibs11 \
 		Xpm.4:${PORTSDIR}/graphics/xpm
 
-EXTRACT_CMD=	bzip2
-EXTRACT_BEFORE_ARGS= -cd
-EXTRACT_AFTER_ARGS= | tar xf -
-
+USE_BZIP2=	yes
 USE_QT=		yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	"--prefix=$(PREFIX)" \

@@ -3,7 +3,7 @@
 # Date created:		10 September 1998
 # Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.2 1998/12/02 05:54:52 asami Exp $
+# $Id: Makefile,v 1.3 1998/12/16 11:33:28 flathill Exp $
 #
 
 DISTNAME=	i18n-man-1.1
@@ -23,6 +23,6 @@ ELISPDIR=	${PREFIX}/share/emacs/site-lisp
 do-install:
 	@${MKDIR} ${ELISPDIR}
 	@cd ${WRKSRC}; \
-	${INSTALL_DATA} `${EXTRACT_CMD} tzf ${DISTDIR}/${DISTFILES}` ${ELISPDIR}
+	${INSTALL_DATA} `${TAR} tzf ${DISTDIR}/${DISTFILES}` ${ELISPDIR}
 
 .include <bsd.port.mk>

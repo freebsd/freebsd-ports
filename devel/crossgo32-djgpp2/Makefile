@@ -4,7 +4,7 @@
 # Whom:			Joel Sutton <sutton@aardvark.apana.org.au>
 # FreeBSD Version:	2.2.1-RELEASE
 #
-# $Id: Makefile,v 1.3 1998/08/10 06:26:07 asami Exp $
+# $Id: Makefile,v 1.4 1998/11/08 08:44:59 asami Exp $
 #
 
 DISTNAME=	djcrx201
@@ -23,6 +23,7 @@ BROKEN=		install
 
 EXTRACT_CMD=		unzip
 EXTRACT_BEFORE_ARGS=	-La
+EXTRACT_AFTER_ARGS=	# empty
 
 # Source directories
 #

@@ -3,7 +3,7 @@
 # Date created:		3 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.4 1998/08/05 09:31:42 asami Exp $
+# $Id: Makefile,v 1.5 1998/08/07 22:43:08 asami Exp $
 #
 
 DISTNAME=	non-cjk
@@ -14,7 +14,9 @@ EXTRACT_SUFX=	.tar
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
-EXTRACT_ARGS=	-xf
+EXTRACT_CMD=		${TAR}
+EXTRACT_BEFORE_ARGS=	-xf
+EXTRACT_AFTER_ARGS=	# empty
 USE_X_PREFIX=	yes
 
 post-extract:

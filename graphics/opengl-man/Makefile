@@ -3,27 +3,21 @@
 # Date created:         19990120
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
-# $Id: Makefile,v 1.3 1998/12/08 08:13:31 obrien Exp $
+# $Id: Makefile,v 1.1.1.1 1999/01/20 16:43:22 cracauer Exp $
 #
 
 DISTNAME=       opengl-man-657
 CATEGORIES=     graphics
 MASTER_SITES=   http://www2.cons.org:8000/freebsd-distfiles/ \
 		http://www.freebsd.org/~cracauer/freebsd-distfiles/
-EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	cracauer@cons.org
 
-BUILD_DEPENDS=	bzip2:${PORTSDIR}/archivers/bzip2
-
+USE_BZIP2=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 .include <bsd.port.pre.mk>
-
-EXTRACT_CMD=		bzip2
-EXTRACT_BEFORE_ARGS=	-dc
-EXTRACT_AFTER_ARGS=	| tar -xf -
 
 MAN3=	glDisable.3 glDisableClientState.3 glEdgeFlag.3 \
 	glEdgeFlagPointer.3 glEdgeFlagv.3 glEnable.3 \
