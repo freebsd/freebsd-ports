@@ -8,8 +8,7 @@
 PORTNAME=	gyroscope
 PORTVERSION= 	1.0
 CATEGORIES=	x11
-MASTER_SITES=	http://www.millar.u-net.com/ \
-		http://soupnazi.org/~jim/FreeBSD/distfiles/
+MASTER_SITES=	http://soupnazi.org/FreeBSD/ports/distfiles/
 
 MAINTAINER=	jim@FreeBSD.org
 
