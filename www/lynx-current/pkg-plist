@@ -44,7 +44,7 @@ lib/lynx_help/test/sgml.html
 lib/lynx_help/test/spaces.html
 lib/lynx_help/test/tabtest.html
 lib/lynx_help/test/unicode.html
-@dirrm lib/lynx_help
 @dirrm lib/lynx_help/keystrokes
 @dirrm lib/lynx_help/samples
 @dirrm lib/lynx_help/test
+@dirrm lib/lynx_help
