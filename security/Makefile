@@ -62,6 +62,7 @@
     SUBDIR += fragrouter
     SUBDIR += fressh
     SUBDIR += fsh
+    SUBDIR += ftpmap
     SUBDIR += fuzz
     SUBDIR += fwanalog
     SUBDIR += fwbuilder
