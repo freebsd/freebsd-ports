@@ -1,6 +1,6 @@
 bin/VisualBoyAdvance
 bin/VisualBoyAdvance.cfg-default
-bin/TestEmu
+%%INSTALL_DEBUGGER%%bin/TestEmu
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
