@@ -1343,6 +1343,7 @@ ecb		ports/devel/ecb
 ecb-emacs20	ports/devel/ecb-emacs20
 ecg2png		ports/graphics/ecg2png
 ecgi		ports/devel/ecgi
+echat		ports/net/echat
 echolot		ports/net/echolot
 echoping	ports/net/echoping
 eclipse		ports/java/eclipse
