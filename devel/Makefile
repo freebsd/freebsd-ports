@@ -392,6 +392,7 @@
     SUBDIR += libchipcard
     SUBDIR += libchipcard-kde
     SUBDIR += libcii
+    SUBDIR += libconfuse
     SUBDIR += libcoro
     SUBDIR += libcwd
     SUBDIR += libdict

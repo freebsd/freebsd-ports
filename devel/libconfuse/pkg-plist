@@ -1,0 +1,5 @@
+bin/confuse-config
+include/confuse.h
+lib/libconfuse.a
+lib/libconfuse.so
+lib/libconfuse.so.0
