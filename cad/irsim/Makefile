@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	irsim
-PORTVERSION=	9.4.1
+PORTVERSION=	9.5
 CATEGORIES=	cad
-MASTER_SITES=	ftp://gatekeeper.dec.com/pub/DEC/WRL/projects/magic/6.5/
+MASTER_SITES=	http://mos.stanford.edu/group/magic/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
