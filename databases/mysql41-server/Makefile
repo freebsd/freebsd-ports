@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	${MASTERPORTNAME}
-PORTVERSION=	3.23.32
-PORTREVISION?=	1
+PORTVERSION=	3.23.33
 CATEGORIES=	databases
 MASTER_SITES=	http://www.kernelnotes.de/MySQL/Downloads/%SUBDIR%/ \
 		http://www.mysql.net/Downloads/%SUBDIR%/ \
