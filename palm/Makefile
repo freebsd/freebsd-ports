@@ -19,6 +19,7 @@
     SUBDIR += p5-Palm-PalmDoc
     SUBDIR += palmos-sdk
     SUBDIR += palmpower
+    SUBDIR += pdbar
     SUBDIR += pilot-link
     SUBDIR += pilot_makedoc
     SUBDIR += pilrc
