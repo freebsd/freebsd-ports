@@ -7,16 +7,17 @@
 #
 
 PORTNAME=	cvsps
-PORTVERSION=	1.3.3
-PORTREVISION=	1
+DISTVERSION=	2.0rc1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cobite.com/cvsps/
+PKGNAMESUFFIX?=	-devel
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CVS patchsets
 
+CONFLICTS=	cvsps-1.*
+
 USE_GMAKE=	yes
-ALL_TARGET=	cvsps
 
 MAN1=		cvsps.1
 PLIST_FILES=	bin/cvsps
