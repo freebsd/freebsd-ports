@@ -17,8 +17,11 @@ MAINTAINER=     ports@FreeBSD.org
 
 BUILD_DEPENDS=	$(LOCALBASE)/lib/librle.a:${PORTSDIR}/graphics/urt
 
-BROKEN_ELF=	yes
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 400000
 BROKEN=		build
+.endif
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
@@ -40,4 +43,4 @@ do-install:
 	$(MKDIR) $(PREFIX)/share/examples/rayshade
 	$(INSTALL_DATA) $(WRKSRC)/Examples/* $(PREFIX)/share/examples/rayshade
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
