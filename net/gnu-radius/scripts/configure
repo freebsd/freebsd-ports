@@ -54,13 +54,13 @@ while [ "$1" ]; do
 			echo "CONFIGURE_ARGS+= --enable-dbm=ndbm"
 			;;
 		\"MySQL\")
-			echo "LIB_DEPENDS+=	mysqlclient.10:\${PORTSDIR}/databases/mysql323-client:install"
+			echo "USE_MYSQL=	YES"
 			echo "CONFIGURE_ARGS+= --with-mysql"
 			LIB_PATH="$LIB_PATH:${LOCALBASE}/lib/mysql/"
 			;;
 		\"PostgreSQL\")
-			echo "POSTGRESQL_PORT?=	databases/postgresql7"
-			echo "LIB_DEPENDS+=	pq.3:\${PORTSDIR}/\${POSTGRESQL_PORT}:install"
+			echo "POSTGRESQL_PORT?=	databases/postgresql-client"
+			echo "LIB_DEPENDS+=	pq.3:\${PORTSDIR}/\${POSTGRESQL_PORT}"
 			echo "CONFIGURE_ARGS+= --with-postgres"
 			INCLUDE_PATH="$INCLUDE_PATH:${LOCALBASE}/include/pgsql/"
 			;;
