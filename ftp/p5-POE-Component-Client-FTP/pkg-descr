@@ -1,0 +1,7 @@
+POE::Component::Client::FTP is a POE component for interacting with a
+FTP server.
+
+WWW: http://search.cpan.org/search?dist=POE-Component-Client-FTP
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
