@@ -15,12 +15,12 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GNU spreadsheet for X11 and terminals
 
-BROKEN=		"Does not compile"
-
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
+USE_PERL5_BUILD=	yes
+USE_BISON=	yes
 USE_REINPLACE=	yes
-USE_AUTOCONF_VER=213
+USE_AUTOCONF_VER=	213
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS=	--with-x --without-xlt --without-SciPlot
@@ -37,10 +37,6 @@ CONFIGURE_ARGS+=	--without-motif
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
 
 pre-everything::
 .if !defined(WITH_MOTIF)
