@@ -1,62 +1,5 @@
---- xfer/Makefile.orig	Thu Nov 17 19:15:22 1994
-+++ xfer/Makefile	Sun Jan  9 10:21:54 2000
-@@ -28,7 +28,8 @@
- nntpxfer.o: nntpxfer.c ../conf.h ../server/fakesyslog.h
- 
- install: nntpxfer
--	cp nntpxfer ${BINDIR}
-+	cp nntpxfer ${BINDIR}/nntpxfer
-+	chmod 755 ${BINDIR}/nntpxfer
- 
- clean:
- 	-rm -f *.o nntpxfer make*.out *.BAK *.CKP *~
---- Makefile.orig	Tue Jan  9 08:30:24 1996
-+++ Makefile	Sun Jan  9 09:35:59 2000
-@@ -4,7 +4,7 @@
- # The program that knows how to deal with makefiles. [Uncomment if needed.]
- # MAKE=make
- # set CFLAGS to be -Ipath/to/special/includes if needed
--CFLAGS= -O 
-+CFLAGS= -O -I/usr/local/include
- #Uncomment the following for Solaris (and similiar SVR4 systems)
- #NETLIBS   = -lsocket -lnsl 
- #Uncomment the following if the previous one does not work
-@@ -13,6 +13,7 @@
- #DBLIBS	= -ldbz
- #DBLIBS	= /usr/local/lib/dbz.o #/usr/local/lib/dbzdbm.o
- #DBLIBS	= -ldbm
-+DBLIBS	= /usr/local/lib/libcnews.a -lcrypt -lutil
- # add the resolver library if needed
- #RESLIB = -lresolv
- # add the kmem library if needed 
-@@ -21,9 +21,9 @@
- #Uncomment the following for Solaris (and similiar SVR4 systems)
- #KVMLIB = -lelf
- # Where nntpd is going to live
--ETCDIR = /etc
-+ETCDIR = /usr/local/sbin
- # Where nntpxmit and nntpxfer is going to live
--BINDIR = /usr/local/bin
-+BINDIR = /usr/local/news/cnewsbin
- # Where manual pages live
- MANDIR = /usr/local/man
- #
---- server/common.h.orig	Thu Nov 17 19:15:18 1994
-+++ server/common.h	Sun Jan  9 09:30:03 2000
-@@ -161,7 +161,11 @@
- void debugup(), debugdown();
- #endif
- #ifdef SETPROCTITLE
-+#ifdef HAVE_PROCTITLE
-+#include <libutil.h>
-+#else
- void setproctitle();
-+#endif
- #endif
- 
- extern	char	spooldir[];
---- conf.h.orig	Sun Jan  9 09:30:02 2000
-+++ conf.h	Sun Jan  9 10:02:19 2000
+--- conf.h.orig	Mon Nov  4 04:55:08 2002
++++ conf.h	Mon Nov  4 04:55:43 2002
 @@ -8,10 +8,12 @@
   */
    
@@ -101,15 +44,18 @@
  				batched input (not supported by B-NEWS)  */
  #undef MSGID		/* define this if you want to run msgidd to keep
  				track of recent msgids via daemon */
-@@ -70,7 +72,7 @@
+@@ -70,9 +72,9 @@
  			/* typedefs for u_long */
  #define VOIDSIG		/* Newfangled signal() returns void, old returns int */
  
 -#undef MMAP		/* if your OS supports mmap() */
 +#define MMAP		/* if your OS supports mmap() */
  
- #undef DIRENT		/* If you have <dirent.h> define this */
+-#undef DIRENT		/* If you have <dirent.h> define this */
++#define DIRENT		/* If you have <dirent.h> define this */
  
+ /*
+  * If you DON'T have vfork, make this "#define vfork fork"
 @@ -89,7 +91,8 @@
  /*#define MINFILES  MINFREE/4*/
  			/* NNTP will not allow an XFER if there is less */
@@ -215,172 +161,3 @@
  
  /************************************************************************/
  /* We don't recommend that you make changes in anything after this line */
---- doc/config.sh.orig	Tue Nov  1 06:36:57 1994
-+++ doc/config.sh	Sun Jan  9 09:30:03 2000
-@@ -11,11 +11,11 @@
- # (modify these lines to suit your system)
- #
- # the location of inetd on your system (usually /etc/inetd)
--MINETD=/etc/inetd
-+MINETD=/usr/sbin/inetd
- # the location of the inetd configuration file (usually /etc/inetd.conf)
- MINETDCONFIG=/etc/inetd.conf
- # the location of nntpd following installation (usually /etc/nntpd)
--MNNTPD=/etc/nntpd
-+MNNTPD=/usr/local/sbin/nntpd
- # the location of the hosts file (usually /etc/hosts)
- MHOSTFILE=/etc/hosts
- # the location of the services file (usually /etc/services)
-@@ -23,12 +23,12 @@
- # the location of the networks file (usually /etc/networks)
- MNETWORKFILE=/etc/networks
- # The location of the news spool directory (usually /usr/spool/news)
--MNEWSSPOOL=/usr/spool/news
-+MNEWSSPOOL=/var/news
- # The location of the news library directory (usually /usr/lib/news)
--MNEWSLIB=/usr/lib/news
-+MNEWSLIB=/usr/local/news/lib
- # The location of the file containing the name of the nntp server machine
- # (usually /usr/local/lib/rn/server)
--MSERVERFILE=/usr/local/lib/rn/server
-+MSERVERFILE=/usr/local/etc/nntpserver
- # The location of rn's local library (usually /usr/local/lib/rn)
- MRNLIB=/usr/local/lib/rn
- #
---- server/main.c.orig	Thu Nov 17 19:15:19 1994
-+++ server/main.c	Sun Jan  9 09:30:03 2000
-@@ -35,8 +35,10 @@
- #endif
- 
- #ifdef SETPROCTITLE
-+#ifndef HAVE_PROCTITLE
- char	**Argv = NULL;		/* pointer to argument vector */
- char	*LastArgv = NULL;	/* end of argv */
-+#endif
- #endif /* SETPROCTITLE */
- 
- int
-@@ -81,6 +83,22 @@
- 
- #ifndef EXCELAN
- 	sockt = get_socket();		/* should be fd 4 or 5 */
-+	if ( getuid() == 0 ) {  /* Running as root */
-+
-+		if (setgid((gid_t) NEWS_GID) == -1) {
-+#ifdef SYSLOG
-+			syslog(LOG_ERR, "setgid: %m");
-+#endif
-+			exit(1);
-+		}
-+
-+		if (setuid((uid_t) NEWS_UID) == -1) {
-+#ifdef SYSLOG
-+			syslog(LOG_ERR, "setuid: %m");
-+#endif
-+			exit(1);
-+		}
-+	}
- #ifdef USG
- 	(void) signal(SIGCLD, SIG_IGN);
- #else /* !USG */
-@@ -101,6 +119,7 @@
- #endif /* EXCELAN */
- 
- #ifdef SETPROCTITLE
-+#ifndef HAVE_PROCTITLE
- 	/*
- 	 *  Save start and extent of argv for setproctitle.
- 	 */
-@@ -113,6 +132,7 @@
- 		envp++;
- 	LastArgv = envp[-1] + strlen(envp[-1]);
- #endif /*SDD*/
-+#endif
- #endif /* SETPROCTITLE */
- #if defined(LOAD) && defined(SETPROCTITLE)
- 	/* If LOAD and SETPROCTITLE, display load before first accept() */
-@@ -243,6 +263,7 @@
- 	}
- #endif /* LOAD */
- #ifdef SETPROCTITLE
-+#ifndef HAVE_PROCTITLE
- 	/*
- 	 *  Save start and extent of argv for setproctitle.
- 	 */
-@@ -255,6 +276,7 @@
- 		envp++;
- 	LastArgv = envp[-1] + strlen(envp[-1]);
- #endif /*SDD*/
-+#endif
- #endif /* SETPROCTITLE */
- 
- #ifdef USG
-@@ -271,6 +293,7 @@
-  * stolen from sendmail
-  */
- #ifdef SETPROCTITLE
-+#ifndef HAVE_PROCTITLE
- #if defined(sun) || defined(hpux)
- /*VARARGS*/
- void
-@@ -330,4 +353,5 @@
- 		*p++ = ' ';
- }
- #endif /* hpux */
-+#endif
- #endif /* SETPROCTITLE */
---- xfer/nntpxfer.c.orig	Tue Jan  9 08:28:03 1996
-+++ xfer/nntpxfer.c	Sun Jan  9 09:30:03 2000
-@@ -60,6 +60,9 @@
- #include <sys/time.h>
- #endif
- 
-+#ifdef BSD_44
-+#define _ANSI_SOURCE
-+#endif
- #include <stdio.h>
- #include <errno.h>
- #include <ctype.h>
---- xmit/nntpxmit.c.orig	Sat Dec  3 23:37:58 1994
-+++ xmit/nntpxmit.c	Sun Jan  9 10:13:10 2000
-@@ -64,6 +64,9 @@
- */
- 
- #include "../conf.h"
-+#ifdef BSD_44
-+#define _ANSI_SOURCE
-+#endif
- #include <stdio.h>
- #include <errno.h>
- #include <ctype.h>
---- xmit/nntpxmit.h.orig	Thu Nov  3 04:51:34 1994
-+++ xmit/nntpxmit.h	Sun Jan  9 09:30:04 2000
-@@ -7,6 +7,7 @@
- */
- 
- #ifdef MMAP
-+#include <sys/types.h>
- #include <sys/mman.h>
- #include <sys/stat.h>
- #endif
---- xmit/shlock.c.orig	Tue Nov  1 06:54:32 1994
-+++ xmit/shlock.c	Sun Jan  9 09:30:04 2000
-@@ -28,7 +28,6 @@
- ** Erik E. Fair <fair@apple.com>, November 12, 1989
- */
- 
--#include <stdio.h>
- #include <sys/types.h>
- #include <fcntl.h>			/* Needed on hpux */
- #include <sys/file.h>
-@@ -36,6 +35,10 @@
- #ifdef NNTPSRC
- #include "../conf.h"
- #endif
-+#ifdef BSD_44
-+#define _ANSI_SOURCE
-+#endif
-+#include <stdio.h>
- 
- #define	LOCK_SET	0
- #define	LOCK_FAIL	1
