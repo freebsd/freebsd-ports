@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gedit
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.9
 CATEGORIES=	editors gnome
 MASTER_SITES=	http://download.sourceforge.net/gedit/
 
