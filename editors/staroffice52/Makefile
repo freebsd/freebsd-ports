@@ -183,6 +183,7 @@ post-install:
 	@${CP} ${INSTDB.INS} ${INSTDB.INS}.orig
 	@${SED} -e 's%DefaultDestPath = "${PREFIX}/office52%DefaultDestPath = "office52%' \
 	    < ${INSTDB.INS}.orig > ${INSTDB.INS}
+	@${RM} ${INSTDB.INS}.orig
 
 install-user:
 	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" ${LINUXBASE}/bin/sh -c \
