@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	20020330
+PORTVERSION=	20020405
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.iDaemons.org/distfiles/
@@ -19,7 +19,8 @@ PATCHFILES=	${DISTNAME}-20020327.diff.bz2 \
 		pkgtools-20020327-20020327.1.diff.bz2 \
 		pkgtools-20020327.1-20020327.2.diff.bz2 \
 		pkgtools-20020327.2-20020328.diff.bz2 \
-		pkgtools-20020328-${PORTVERSION}.diff.bz2
+		pkgtools-20020328-20020330.diff.bz2 \
+		pkgtools-20020330-${PORTVERSION}.diff.bz2
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	knu@FreeBSD.org
