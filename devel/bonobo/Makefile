@@ -1,12 +1,12 @@
 # New ports collection makefile for:	bonobo
-# Version required:			0.6
+# Version required:			0.8
 # Date created:				8th October 1999
 # Whom:					Ade Lovett <ade@lovett.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	bonobo-0.6
+DISTNAME=	bonobo-0.8
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/bonobo
@@ -32,8 +32,5 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GLIB_CONFIG="${GLIB_CONFIG}" \
 		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
-
-post-patch:
-	@(cd ${WRKSRC}; ${LN} -s bonobo/bonobo.h)
 
 .include <bsd.port.mk>

@@ -1,29 +1,26 @@
---- Makefile.in.orig	Wed Jan 26 08:49:25 2000
-+++ Makefile.in	Fri Jan 28 10:56:23 2000
-@@ -125,7 +125,7 @@
+--- Makefile.in.orig	Tue Feb 22 00:06:41 2000
++++ Makefile.in	Tue Feb 22 11:13:20 2000
+@@ -134,7 +134,7 @@
  
- SUBDIRS = po intl idl libefs bonobo storage-modules components samples gshell tests
+ SUBDIRS = po intl idl libefs bonobo storage-modules components samples gshell tools tests
  
 -confexecdir = $(libdir)
 +confexecdir = $(sysconfdir)
  confexec_DATA = bonoboConf.sh
  
  EXTRA_DIST = bonoboConf.sh.in bonobo.spec.in
---- components/application-x-gnomine/Makefile.in.orig	Wed Jan 26 08:49:34 2000
-+++ components/application-x-gnomine/Makefile.in	Fri Jan 28 10:59:27 2000
-@@ -124,9 +124,9 @@
+--- components/application-x-gnomine/Makefile.in.orig	Tue Feb 22 00:06:53 2000
++++ components/application-x-gnomine/Makefile.in	Tue Feb 22 11:41:56 2000
+@@ -133,7 +133,7 @@
  l = @l@
  
  scoredir = $(localstatedir)/games
 -Gamesdir = $(datadir)/gnome/apps/Games
 +Gamesdir = $(datadir)/apps/Games
  
--INCLUDES = -I$(top_srcdir)				-I$(top_builddir)				-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	-I$(includedir)				 	$(GNOME_INCLUDEDIR)
-+INCLUDES = -I$(top_srcdir)				-I$(top_builddir)				-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 	-I$(includedir)				 	$(GNOME_INCLUDEDIR)
+ INCLUDES = -I$(top_srcdir)				-I$(top_builddir)				-I$(top_srcdir)/bonobo				-I$(top_builddir)/bonobo			-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	-I$(includedir)				 	$(GNOME_INCLUDEDIR)
  
- 
- #bin_PROGRAMS = gnomine bonobo-application-x-mines
-@@ -154,12 +154,14 @@
+@@ -163,12 +163,14 @@
  EXTRA_DIST = flag.xpm mine.xpm face-cool.xpm face-sad.xpm 	face-smile.xpm face-win.xpm face-worried.xpm 	gnomine.desktop README AUTHORS $(gnorba_DATA)
  
  
@@ -39,20 +36,20 @@
  
  DEFS = @DEFS@ -I. -I$(srcdir) -I../..
  LIBS = @LIBS@
---- components/audio-ulaw/Makefile.in.orig	Wed Jan 26 08:49:38 2000
-+++ components/audio-ulaw/Makefile.in	Fri Jan 28 11:00:35 2000
-@@ -130,7 +130,7 @@
+--- components/audio-ulaw/Makefile.in.orig	Tue Feb 22 00:06:59 2000
++++ components/audio-ulaw/Makefile.in	Tue Feb 22 11:15:23 2000
+@@ -139,7 +139,7 @@
  bonobo_audio_ulaw_SOURCES =  	bonobo-audio-ulaw.c		bonobo-audio-ulaw.h		item-audio.c			item-audio.h			color.c				color.h
  
  
--INCLUDES =          -DGNOMELOCALEDIR=\""$(datadir)/locale"\"        	-I$(srcdir) -I$(top_srcdir) 				-I. 						        -I$(includedir)                                         $(GNOME_INCLUDEDIR)					$(GTK_CFLAGS)
-+INCLUDES =          -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"        	-I$(srcdir) -I$(top_srcdir) 				-I. 						        -I$(includedir)                                         $(GNOME_INCLUDEDIR)					$(GTK_CFLAGS)
+-INCLUDES =          -DGNOMELOCALEDIR=\""$(datadir)/locale"\"        	-I$(srcdir) -I$(top_srcdir) 				-I. -I$(top_srcdir)/bonobo			        -I$(includedir)                                         $(GNOME_INCLUDEDIR)					$(GTK_CFLAGS)
++INCLUDES =          -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"        	-I$(srcdir) -I$(top_srcdir) 				-I. -I$(top_srcdir)/bonobo			        -I$(includedir)                                         $(GNOME_INCLUDEDIR)					$(GTK_CFLAGS)
  
  
  bonobo_audio_ulaw_LDADD =  	$(top_builddir)/bonobo/libbonobo.la		$(GTK_LIBS)					$(GNOME_LIBDIR)					$(GNOMEGNORBA_LIBS)				$(INTLLIBS)
---- components/image-x-png/Makefile.in.orig	Wed Jan 26 08:49:35 2000
-+++ components/image-x-png/Makefile.in	Fri Jan 28 11:02:04 2000
-@@ -123,14 +123,14 @@
+--- components/image-x-png/Makefile.in.orig	Tue Feb 22 00:06:54 2000
++++ components/image-x-png/Makefile.in	Tue Feb 22 11:16:15 2000
+@@ -132,14 +132,14 @@
  cxxflags_set = @cxxflags_set@
  l = @l@
  
@@ -64,47 +61,47 @@
  bonobo_image_x_png_SOURCES =  	bonobo-image-x-png.c
  
  
--INCLUDES =          -DGNOMELOCALEDIR=\""$(datadir)/locale"\"        	-I$(srcdir) -I$(top_srcdir) 				-I. 						        -I$(includedir)                                         $(GNOME_INCLUDEDIR)					$(GTK_CFLAGS)
-+INCLUDES =          -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"        	-I$(srcdir) -I$(top_srcdir) 				-I. 						        -I$(includedir)                                         $(GNOME_INCLUDEDIR)					$(GTK_CFLAGS)
+-INCLUDES =          -DGNOMELOCALEDIR=\""$(datadir)/locale"\"        	-I$(srcdir) -I$(top_srcdir) 				-I. 							-I$(top_srcdir)/bonobo				        -I$(includedir)                                         $(GNOME_INCLUDEDIR)					$(GTK_CFLAGS)
++INCLUDES =          -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"        	-I$(srcdir) -I$(top_srcdir) 				-I. 							-I$(top_srcdir)/bonobo				        -I$(includedir)                                         $(GNOME_INCLUDEDIR)					$(GTK_CFLAGS)
  
  
- bonobo_image_x_png_LDADD =  	$(top_builddir)/bonobo/libbonobo.la		$(GTK_LIBS)					$(GNOME_LIBDIR)					$(GNOMEGNORBA_LIBS)				$(INTLLIBS)					-lpng
---- components/text-plain/Makefile.in.orig	Wed Jan 26 08:49:37 2000
-+++ components/text-plain/Makefile.in	Fri Jan 28 11:04:17 2000
-@@ -128,7 +128,7 @@
+ bonobo_image_x_png_LDADD =  	$(top_builddir)/bonobo/libbonobo.la		$(GTK_LIBS)					$(GNOME_LIBDIR)					$(GNOMEGNORBA_LIBS)				$(INTLLIBS)					-lpng -lz
+--- components/text-plain/Makefile.in.orig	Tue Feb 22 00:06:58 2000
++++ components/text-plain/Makefile.in	Tue Feb 22 11:16:45 2000
+@@ -137,7 +137,7 @@
  bonobo_text_plain_SOURCES =  	bonobo-text-plain.c
  
  
--INCLUDES =          -DGNOMELOCALEDIR=\""$(datadir)/locale"\"        	-I$(srcdir) -I$(top_srcdir) 				-I. 						        -I$(includedir)                                         $(GNOME_INCLUDEDIR)					$(GTK_CFLAGS)
-+INCLUDES =          -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"        	-I$(srcdir) -I$(top_srcdir) 				-I. 						        -I$(includedir)                                         $(GNOME_INCLUDEDIR)					$(GTK_CFLAGS)
+-INCLUDES =          -DGNOMELOCALEDIR=\""$(datadir)/locale"\"        	-I$(srcdir) -I$(top_srcdir) 				-I. -I$(top_srcdir)/bonobo			        -I$(includedir)                                         $(GNOME_INCLUDEDIR)					$(GTK_CFLAGS)
++INCLUDES =          -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"        	-I$(srcdir) -I$(top_srcdir) 				-I. -I$(top_srcdir)/bonobo			        -I$(includedir)                                         $(GNOME_INCLUDEDIR)					$(GTK_CFLAGS)
  
  
  bonobo_text_plain_LDADD =  	$(top_builddir)/bonobo/libbonobo.la		$(GTK_LIBS)					$(GNOME_LIBDIR)					$(GNOMEGNORBA_LIBS)				$(INTLLIBS)
---- samples/compound-doc/Makefile.in.orig	Wed Jan 26 08:49:40 2000
-+++ samples/compound-doc/Makefile.in	Fri Jan 28 11:06:32 2000
-@@ -125,7 +125,7 @@
+--- samples/compound-doc/Makefile.in.orig	Tue Feb 22 00:07:03 2000
++++ samples/compound-doc/Makefile.in	Tue Feb 22 11:17:13 2000
+@@ -134,7 +134,7 @@
+ @OAF_TRUE@bin_PROGRAMS = 
+ @OAF_FALSE@bin_PROGRAMS = paint-component-simple sample-container
  
- bin_PROGRAMS = paint-component-simple sample-container
- 
--INCLUDES =          -DGNOMELOCALEDIR=\""$(datadir)/locale"\"        	-I$(srcdir) -I$(top_srcdir) 				-I. 						        -I$(includedir)                                         $(GNOME_INCLUDEDIR)					$(GTK_CFLAGS)
-+INCLUDES =          -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"        	-I$(srcdir) -I$(top_srcdir) 				-I. 						        -I$(includedir)                                         $(GNOME_INCLUDEDIR)					$(GTK_CFLAGS)
+-INCLUDES =          -DGNOMELOCALEDIR=\""$(datadir)/locale"\"        	-I$(srcdir) -I$(top_srcdir) 				-I. -I$(top_srcdir)/bonobo			        -I$(includedir)                                         $(GNOME_INCLUDEDIR)					$(GTK_CFLAGS)
++INCLUDES =          -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"        	-I$(srcdir) -I$(top_srcdir) 				-I. -I$(top_srcdir)/bonobo			        -I$(includedir)                                         $(GNOME_INCLUDEDIR)					$(GTK_CFLAGS)
  
  
  paint_component_simple_SOURCES =  	paint-component-simple.c
---- samples/controls/Makefile.in.orig	Wed Jan 26 08:49:39 2000
-+++ samples/controls/Makefile.in	Fri Jan 28 11:07:10 2000
-@@ -125,7 +125,7 @@
+--- samples/controls/Makefile.in.orig	Tue Feb 22 00:07:02 2000
++++ samples/controls/Makefile.in	Tue Feb 22 11:17:36 2000
+@@ -134,7 +134,7 @@
+ @OAF_TRUE@bin_PROGRAMS = 
+ @OAF_FALSE@bin_PROGRAMS = sample-control-factory sample-control-container
  
- bin_PROGRAMS = sample-control-factory sample-control-container
- 
--INCLUDES =          -DGNOMELOCALEDIR=\""$(datadir)/locale"\"        	-I$(srcdir) -I$(top_srcdir) 				-I. 						        -I$(includedir)                                         $(GNOME_INCLUDEDIR)					$(GTK_CFLAGS)
-+INCLUDES =          -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"        	-I$(srcdir) -I$(top_srcdir) 				-I. 						        -I$(includedir)                                         $(GNOME_INCLUDEDIR)					$(GTK_CFLAGS)
+-INCLUDES =          -DGNOMELOCALEDIR=\""$(datadir)/locale"\"        	-I$(srcdir) -I$(top_srcdir) 				-I. -I$(top_srcdir)/bonobo			        -I$(includedir)                                         $(GNOME_INCLUDEDIR)					$(GTK_CFLAGS)
++INCLUDES =          -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"        	-I$(srcdir) -I$(top_srcdir) 				-I. -I$(top_srcdir)/bonobo			        -I$(includedir)                                         $(GNOME_INCLUDEDIR)					$(GTK_CFLAGS)
  
  
  sample_control_factory_SOURCES =  	bonobo-clock-control.c					bonobo-clock-control.h					bonobo-calculator-control.c				bonobo-calculator-control.h				sample-control-factory.c
---- storage-modules/Makefile.in.orig	Mon Sep 27 16:22:03 1999
-+++ storage-modules/Makefile.in	Fri Oct  8 13:54:29 1999
-@@ -124,7 +124,7 @@
+--- storage-modules/Makefile.in.orig	Tue Feb 22 00:06:50 2000
++++ storage-modules/Makefile.in	Tue Feb 22 11:22:05 2000
+@@ -132,7 +132,7 @@
  cxxflags_set = @cxxflags_set@
  l = @l@
  
@@ -113,8 +110,8 @@
  
  
  common_ldflags = -avoid-version
---- po/Makefile.in.in.orig	Mon Sep 27 15:26:21 1999
-+++ po/Makefile.in.in	Fri Oct  8 14:08:03 1999
+--- po/Makefile.in.in.orig	Mon Feb 21 23:37:16 2000
++++ po/Makefile.in.in	Tue Feb 22 11:18:13 2000
 @@ -18,8 +18,8 @@
  
  prefix = @prefix@
@@ -126,10 +123,10 @@
  gnulocaledir = $(prefix)/share/locale
  gettextsrcdir = $(prefix)/share/gettext/po
  subdir = po
---- libefs/Makefile.in.orig	Mon Sep 27 16:21:53 1999
-+++ libefs/Makefile.in	Fri Oct  8 14:18:17 1999
-@@ -78,7 +78,7 @@
- USE_SYMBOL_UNDERSCORE = @USE_SYMBOL_UNDERSCORE@
+--- libefs/Makefile.in.orig	Tue Feb 22 00:06:43 2000
++++ libefs/Makefile.in	Tue Feb 22 11:18:33 2000
+@@ -77,7 +77,7 @@
+ RANLIB = @RANLIB@
  VERSION = @VERSION@
  
 -SUBDIRS = src doc
