@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix20/scripts/Attic/configure.postfix,v 1.27 2003-01-19 07:25:46 sada Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix20/scripts/Attic/configure.postfix,v 1.28 2003-02-22 16:14:57 leeym Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -113,8 +113,8 @@ while [ "$1" ]; do
 			echo "MAN8+=		tlsmgr.8"
 			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I/usr/include/openssl"
 			echo "POSTFIX_AUXLIBS+=	-lssl -lcrypto"
-			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.8.13-2.0.1-0.9.7.tar.gz"
-			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.8.13-2.0.1-0.9.7/pfixtls.diff"
+			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.8.13-2.0.3-0.9.7.tar.gz"
+			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.8.13-2.0.3-0.9.7/pfixtls.diff"
 			echo "PATCH_STRIP=	-p1"
 			echo "TLS_SUFFIX=	+tls"
 			SUB_TLS=""
@@ -208,8 +208,8 @@ while [ "$1" ]; do
 			echo "MAN8+=		tlsmgr.8"
 			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I/usr/include/openssl"
 			echo "POSTFIX_AUXLIBS+=	-lssl -lcrypto"
-			echo "PATCH_SITES+=	ftp://ftp.stack.nl/pub/postfix/tls+ipv6/1.11/"
-			echo "PATCHFILES+=	tls+ipv6-1.11-pf-2.0.1.patch.gz"
+			echo "PATCH_SITES+=	ftp://ftp.stack.nl/pub/postfix/tls+ipv6/1.12/"
+			echo "PATCHFILES+=	tls+ipv6-1.12-pf-2.0.3.patch.gz"
 			echo "PATCH_DIST_STRIP=	-p1"
 			echo "TLS_SUFFIX=	+tls+ipv6"
 			SUB_TLS=""

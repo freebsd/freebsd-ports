@@ -13,8 +13,7 @@
 # POSTFIX_OPTIONS can be set in /etc/make.conf also.
 
 PORTNAME=	postfix
-PORTVERSION=	2.0.2
-PORTEPOCH=	1
+PORTVERSION=	2.0.4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
 		ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/%SUBDIR%/ \
