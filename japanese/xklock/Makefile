@@ -8,15 +8,15 @@
 PORTNAME=	xklock
 PORTVERSION=	2.7.1
 CATEGORIES=	japanese x11
-MASTER_SITES=	ftp://ftp.tk.mesh.ad.jp/pub/Linux/JE-sources/X/  \
-		ftp://ftp.biol.tsukuba.ac.jp/pub/X/clients/  \
-		ftp://ftp.kagoshima-u.ac.jp/pub1/PC/linux-j/JE-sources/X/  \
-		ftp://ftp.hitachi.co.jp/pub/linux/colias/pub/linux/JE-0.9.6/sources/X/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	trevor
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}
 
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	${DISTNAME}+lx.diff.gz
 PATCH_DIST_STRIP=	-p1
+
+MAINTAINER=	ports@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
