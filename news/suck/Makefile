@@ -35,10 +35,10 @@ BUILD_DEPENDS+=	${LOCALBASE}/news/lib/libinn.a:${PORTSDIR}/news/inn
 
 .if defined(SUCK_WITH_SSL) || defined(WITH_SSL)
 USE_OPENSSL=	yes
-.if ${OSVERSION} < 430000
+.if ${OSVERSION} < 430000 || exists(${LOCALBASE}/lib/libcrypto.so.3)
 OPENSSLBASE=	/usr/local
 OPENSSLDIR=	${OPENSSLBASE}/openssl
-LIB_DEPENDS+=   ssl.3:${PORTSDIR}/security/openssl
+LIB_DEPENDS+=   crypto.3:${PORTSDIR}/security/openssl
 OPENSSLLIB=	${OPENSSLBASE}/lib
 OPENSSLINC=	${OPENSSLBASE}/include
 .endif
