@@ -23,5 +23,5 @@ lib/rxmathfn.rxlib
 %%PORTDOCS%%share/examples/rexx-imc/rexxtest.rexx
 %%PORTDOCS%%share/examples/rexx-imc/rxmathfn.rexx
 %%PORTDOCS%%share/examples/rexx-imc/shell.rexx
-@dirrm share/examples/rexx-imc
-@dirrm share/doc/rexx-imc
+%%PORTDOCS%%@dirrm share/examples/rexx-imc
+%%PORTDOCS%%@dirrm share/doc/rexx-imc
