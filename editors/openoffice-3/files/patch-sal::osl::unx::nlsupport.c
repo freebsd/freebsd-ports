@@ -1,6 +1,6 @@
---- ../sal/osl/unx/nlsupport.c.orig	Mon Nov 12 21:21:31 2001
-+++ ../sal/osl/unx/nlsupport.c
-@@ -63,7 +63,7 @@
+--- ../sal/osl/unx/nlsupport.c.orig	Sat Mar  9 00:51:17 2002
++++ ../sal/osl/unx/nlsupport.c	Sat Mar  9 01:54:43 2002
+@@ -63,11 +63,17 @@
  #include <osl/diagnose.h>
  #include <osl/process.h>
  
@@ -8,8 +8,18 @@
 +#if defined(LINUX) || defined(SOLARIS) || defined(NETBSD) || defined(FREEBSD)
  #include <pthread.h>
  #include <locale.h>
++#if defined(FREEBSD)
++#if OSVERSION > 500000
  #include <langinfo.h>
-@@ -242,7 +242,7 @@
+ #endif
++#else
++#include <langinfo.h>
++#endif
++#endif
+ 
+ /*****************************************************************************/
+ /* typedefs
+@@ -242,7 +248,7 @@
      return NULL;
  }
          
@@ -18,7 +28,7 @@
  
  /*
   * This implementation of osl_getTextEncodingFromLocale maps 
-@@ -296,7 +296,7 @@
+@@ -296,7 +302,7 @@
  /* XXX MS-874 is an extension to tis620, so this is not
   * really equivalent */
  
@@ -27,7 +37,7 @@
  
  const _pair _nl_language_list[] = {
      { "ANSI_X3.110-1983",           RTL_TEXTENCODING_DONTKNOW   },  /* ISO-IR-99 NAPLPS */
-@@ -477,7 +477,7 @@
+@@ -477,7 +483,7 @@
      { "WIN-SAMI-2",                 RTL_TEXTENCODING_DONTKNOW }     /* WS2 */
  };
  
@@ -36,7 +46,7 @@
  
  static pthread_mutex_t aLocalMutex = PTHREAD_MUTEX_INITIALIZER;
  
-@@ -516,7 +516,13 @@
+@@ -516,7 +522,13 @@
      }
          
      /* get the charset as indicated by the LC_CTYPE locale */
@@ -50,7 +60,7 @@
  
      if ( codeset != NULL )
      {
-@@ -595,7 +599,7 @@
+@@ -595,7 +607,7 @@
      return ret;
  }
  
@@ -59,7 +69,7 @@
  
  /*
   * FIXME: the MacOS X implemetation is missing
-@@ -628,7 +632,7 @@
+@@ -628,7 +640,7 @@
      return 0;
  }
  
@@ -68,7 +78,7 @@
  
  /*
   * This implementation of osl_getTextEncodingFromLocale maps 
-@@ -864,6 +868,6 @@
+@@ -844,6 +856,6 @@
      return 0;
  }
  
