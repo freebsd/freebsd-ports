@@ -8,3 +8,12 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -13797,7 +13798,7 @@
+ }'
+ fi
+ 
+-DEFS=-DHAVE_CONFIG_H
++DEFS="$DEFS -DHAVE_CONFIG_H"
+ 
+ 
+ 
