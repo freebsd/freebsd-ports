@@ -800,6 +800,7 @@
     SUBDIR += pear-HTML_Common
     SUBDIR += pear-HTML_Select_Common
     SUBDIR += pear-HTML_Template_IT
+    SUBDIR += pear-HTML_Template_PHPLIB
     SUBDIR += pear-I18N
     SUBDIR += pear-PEAR
     SUBDIR += pear-XML_Parser
