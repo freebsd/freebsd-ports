@@ -1,0 +1,21 @@
+apps/Archive/.DirIcon
+apps/Archive/AppInfo.xml
+apps/Archive/AppRun
+apps/Archive/Help/COPYING
+apps/Archive/Help/Changes
+apps/Archive/Help/README
+apps/Archive/box.py
+apps/Archive/box.pyc
+apps/Archive/box.pyo
+apps/Archive/findrox.py
+apps/Archive/findrox.pyc
+apps/Archive/findrox.pyo
+apps/Archive/formats.py
+apps/Archive/formats.pyc
+apps/Archive/formats.pyo
+apps/Archive/support.py
+apps/Archive/support.pyc
+apps/Archive/support.pyo
+@dirrm apps/Archive/Help
+@dirrm apps/Archive
+@unexec rmdir %D/apps 2>/dev/null || true

@@ -43,6 +43,7 @@
     SUBDIR += py-bzip2
     SUBDIR += py-tarfile
     SUBDIR += rar
+    SUBDIR += rox-archive
     SUBDIR += rpm
     SUBDIR += rpm2cpio
     SUBDIR += ruby-bz2
