@@ -1,220 +1,12 @@
---- webmagick.in.orig	Sun Oct 17 23:55:14 1999
-+++ webmagick.in	Thu Aug  9 06:19:29 2001
-@@ -127,6 +127,7 @@
-     $opt_dircolorlink,
-     $opt_dircolorvlink,
-     $opt_dirfmt,
-+    $opt_dirhtmlext,
-     $opt_dirindexname,
-     $opt_forcecache,
-     $opt_forcegif,
-@@ -150,12 +151,14 @@
-     $opt_footer,
-     $opt_help,
-     $opt_htimage,
-+    $opt_iconbase,
-     $opt_iconpath,
-     %opt_icons,
-     $opt_ignore,
-     $opt_imgindexname,
-     $opt_indexname,
-     $opt_javascript,
-+    $opt_jpegquality,
-     $opt_mapnetscape,
-     $opt_maptype,
-     $opt_maxgif,
-@@ -164,6 +167,7 @@
-     $opt_metadescription,
-     $opt_metaexpires,
-     $opt_metakeywords,
-+    $opt_nodate,
-     $opt_pageindexname,
-     $opt_prefixpath,
-     $opt_prune,
-@@ -239,7 +243,8 @@
- 				# Not used if local relative paths used
- $opt_iconpath	= '@ICONPATH@';
- 				# Relative path under rootpath / prefixpath
--
-+$opt_iconbase   = '';
-+				# Global icons base URL, if not empty
- #
- # Server-side imagemap settings
- # !!!MAY NEED TO EDIT OR OVERRIDE!!!
-@@ -267,6 +272,7 @@
- $opt_pageindexname	= '.index';	# Base name of secondary index files
- $opt_dirindexname	= '.dirindex';	# Subdirectory Title cross-reference
- 					#  dirname   Directory Title
-+$opt_dirhtmlext         = '.html';      # Use .shtml for SSI
- $opt_imgindexname	= '.imgindex';	# Image name to label cross-reference file
- 
- #
-@@ -309,6 +315,7 @@
- $opt_forcemontage	= 0;	# Force montage (default off)
- $opt_forcegif		= 0;	# Force GIF imagemaps (default off)
- $opt_forcejpeg          = 0;    # Force JPEG imagemaps (default off)
-+$opt_jpegquality        = 70;   # Quality for JPEG imagemaps
- $opt_help		= 0;	# Display usage message
- $opt_version		= 0;	# Display version info
- $opt_htmlext            = '.html'; # Use .shtml for SSI
-@@ -319,6 +326,7 @@
- $opt_title		= '';	# Page title (blank provides default title)
- $opt_address		= '';	# Additonal address info for bottom of
-                                 #    imagemap page
-+$opt_nodate             = 0;    # Don't show updates date
- $opt_pichtml            = 0;    # Write separate HTML for each picture
- $opt_pichtmlext         = '.html'; # Use .shtml for SSI
- $opt_pichtmltarget      = '';
-@@ -572,6 +580,7 @@
- <FONT SIZE=-1>
- ${uphtml}
- ${nexthtml}
-+</FONT>
- </P>
- ${dirhtml}
- ';
-@@ -658,6 +667,7 @@
- 		'dircolorfore=s'	=> \$opt_dircolorfore,
- 		'dircolorlink=s'	=> \$opt_dircolorlink,
- 		'dircolorvlink=s'	=> \$opt_dircolorvlink,
-+		'dirhtmlext=s'          => \$opt_dirhtmlext,
- 		'dirindexname=s'	=> \$opt_dirindexname,
- 		'footer=s'              => \$opt_footer,
- 		'forcecache!'		=> \$opt_forcecache,
-@@ -674,13 +684,16 @@
- 		'help!'			=> \$opt_help,
- 		'htimage=s'		=> \$opt_htimage,
- 		'htmlext=s'             => \$opt_htmlext,
-+		'iconbase=s'            => \$opt_iconbase,
- 		'iconpath=s'		=> \$opt_iconpath,
- 		'imgindexname=s'	=> \$opt_imgindexname,
- 		'indexname=s'		=> \$opt_indexname,
- 		'javascript!'		=> \$opt_javascript,
-+		'jpegquality=i'         => \$opt_jpegquality,
- 		'mapnetscape!'		=> \$opt_mapnetscape,
- 		'maptype=s'		=> \$opt_maptype,
- 		'maxgif=i'		=> \$opt_maxgif,
-+		'nodate!'               => \$opt_nodate,
- 		'pageindexname=s'	=> \$opt_pageindexname,
- 		'pichtml!'              => \$opt_pichtml,
- 		'pichtmlbottom=s'       => \$opt_pichtmlbottom,
-@@ -870,7 +883,7 @@
-     # for each directory ignoring hidden directories
-     use File::Find;
-     print( "Processing directory tree $opt_srcdir ...\n" ) if $opt_debug;
--    finddepth( \&wanted, $opt_srcdir );
-+    find( \&wanted, $opt_srcdir );
- } else {
-     print( "Processing directory $opt_srcdir ...\n" ) if $opt_debug;
-     $sourceDirectory = $opt_srcdir;
-@@ -934,7 +947,7 @@
- sub wanted {
-     my($dev,$ino,$mode,$nlink,$uid,$gid);
-     ($dev,$ino,$mode,$nlink,$uid,$gid) = lstat($_);
--    if ( -d $_ && !/^\..+/ ) {
-+    if ( -d _ && -w _ && !/^\..+/ ) {
-         if( $_ ne '.' && get_rc_var('.', 'opt_prune', 0) ) {
-             $File::Find::prune=1;
- 	    # following funny logic is to avoid warnings about $prune
-@@ -1137,14 +1150,22 @@
-     # 
-     $opt_maptype = "\L${opt_maptype}";
- 
--    #
--    # Compute URL to top of icon directory
--    #
--    # Attempt to convert to relative URL
--    $icon_base_url = relative( $currentDirectory, $icon_dir_path);
--    if ( $icon_base_url =~ m|^/| ) {
--        # If did not convert to relative URL then convert to absolute URL
--        $icon_base_url = escapeurl( abs_path_to_url($icon_dir_path));
-+    if ($opt_iconbase) {
-+	if ($opt_iconbase =~ !/^\//) {
-+	    die("$0: Iconbase must start with '/', use prefixpath to make it non-root related\n");
-+	} else {
-+	    $icon_base_url = "${opt_prefixpath}${opt_iconbase}";
-+	}
-+    } else {
-+	#
-+	# Compute URL to top of icon directory
-+	#
-+	# Attempt to convert to relative URL
-+	$icon_base_url = relative( $currentDirectory, $icon_dir_path);
-+	if ( $icon_base_url =~ m|^/| ) {
-+	    # If did not convert to relative URL then convert to absolute URL
-+	    $icon_base_url = escapeurl( abs_path_to_url($icon_dir_path));
-+	}
-     }
- 
-     #
-@@ -1425,6 +1446,7 @@
- 	 'dircolorfore'		=> $opt_dircolorfore,
- 	 'dircolorlink'		=> $opt_dircolorlink,
- 	 'dircolorvlink'	=> $opt_dircolorvlink,
-+	 'dirhtmlext'           => $opt_dirhtmlext,
- 	 'dirindexname'		=> $opt_dirindexname,
- 	 'footer'               => $opt_footer,
- 	 'framemarginwidth'	=> $opt_framemarginwidth,
-@@ -1434,6 +1456,7 @@
- 	 'framestyle'		=> $opt_framestyle,
- 	 'header'		=> $opt_header,
- 	 'htmlext'              => $opt_htmlext,
-+	 'iconbase'             => $opt_iconbase,
- 	 'imgindexname'		=> $opt_imgindexname,
- 	 'indexname'		=> $opt_indexname,
- 	 'jsdirindex'		=> $fileNames{'jsDirIndex'},
-@@ -1450,7 +1473,7 @@
- 	 'readme'		=> $opt_readme,
- 	 'readmepresent'	=> $haveReadme,
- 	 'readmevisible'	=> $opt_readmevisible,
--	 'dateText'		=> "Page updated on $calendarMonths[$dateMonth] $dateDay, $dateYear",
-+	 'dateText'             => $opt_nodate ? "" : "Page updated on $calendarMonths[$dateMonth] $dateDay, $dateYear",
- 	 'subdirectories'	=> join(' ',@dirNames),
- 	 'title'		=> $pageTitle,
- 	 'version'		=> $webmagickInfo{'version'},
-@@ -1694,7 +1717,7 @@
- sub writeTopIndexes {
- 
-     print( STDERR "Writing Index Files ${opt_indexname} & ",
--                "${opt_pageindexname}dir.html ...\n" )
-+		"${opt_pageindexname}dir${opt_dirhtmlext} ...\n" )
-                 if $opt_debug;
- 
-     #---- Generate the Variables for Format Options ----
-@@ -1805,7 +1828,7 @@
-     # Pull README into thumbnail frame if it exists, and is
-     # either marked always visible or there are no images.
-     #
--    $dirframelink = "${opt_pageindexname}dir.html";
-+    $dirframelink = "${opt_pageindexname}dir${opt_dirhtmlext}";
- 
-     if( $opt_framefmt_frames{$opt_framestyle} <= 2 ) {
- 	if( $haveReadme && ( $opt_readmevisible || ! $haveImages ) ) {
-@@ -1923,8 +1946,8 @@
- 
-     # ----- Output Frame Directory File (usally ".indexdir.html") ------
-     #
--    open( INDEX, ">${opt_pageindexname}dir.html")
--	|| die("$0: Failed to open file \"${opt_pageindexname}dir.html\"",
-+    open( INDEX, ">${opt_pageindexname}dir${opt_dirhtmlext}")
-+	|| die("$0: Failed to open file \"${opt_pageindexname}dir${opt_dirhtmlext}\"",
-                 " for output\n$@\n");
-     print( INDEX "<HTML>\n<HEAD>\n" );
-     print( INDEX "  <TITLE>${pageTitle}</TITLE>\n" );
-@@ -1985,24 +2008,32 @@
- 
-     # --- readme link ---
-     if ( $haveReadme ) {
--	$indexbar .= "<A HREF=\"${opt_readme}\" TARGET=\"$frameTargets{'readmeview'}\"
--    ><IMG SRC=\"$iconImageUrls{'help'}\" $iconImageSizes{'help'} ALT=\"ReadMe\" BORDER=0></A>\n";
-+	$indexbar .= "<A HREF=\"${opt_readme}\" TARGET=\"$frameTargets{'readmeview'}\"><IMG
-+	SRC=\"$iconImageUrls{'help'}\" $iconImageSizes{'help'} ALT=\"ReadMe\" BORDER=0></A>\n";
+--- webmagick.in.bak	Sat Jul 14 01:35:08 2001
++++ webmagick.in	Thu Aug  9 06:51:38 2001
+@@ -2109,9 +2109,17 @@
      }
      # --- prev link ---
      if( $pageNumber == 1 ) {
 -        # Go to base index page if on first page
--        $indexbar .= "<A HREF=\"${opt_indexname}\" TARGET=\"$opt_frame_name_top\"
--     ><IMG SRC=\"$iconImageUrls{'prev'}\" $iconImageSizes{'prev'} ALT=\"Prev\" BORDER=0></A>\n";
+-	$indexbar .= "<A HREF=\"${opt_indexname}\" TARGET=\"$opt_frame_name_top\"><IMG
+-	SRC=\"$iconImageUrls{'prev'}\" $iconImageSizes{'prev'} ALT=\"Prev\" BORDER=0></A>\n";
 +	my $indexname = get_rc_var('..', 'opt_indexname', $opt_indexname);
 +
 +	if ( !$haveReadme && $indexname ne 'NOLINK' ) {
@@ -228,39 +20,8 @@
 +	}
      } else {
          # Go to preceding page
--        $indexbar .= "<A HREF=\"$fileNames{'htmlPrevIndex'}\" TARGET=\"$frameTargets{'thumbview'}\"
--    ><IMG SRC=\"$iconImageUrls{'prev'}\" $iconImageSizes{'prev'} ALT=\"Prev\" BORDER=0></A>\n";
-+	$indexbar .= "<A HREF=\"$fileNames{'htmlPrevIndex'}\" TARGET=\"$frameTargets{'thumbview'}\"><IMG
-+	SRC=\"$iconImageUrls{'prev'}\" $iconImageSizes{'prev'} ALT=\"Prev\" BORDER=0></A>\n";
-     }
-     # --- next link ---
-     if( $numPages > 1 ) {
- 	if( $pageNumber < $numPages ) {
--	    $indexbar .= "<A HREF=\"$fileNames{'htmlNextIndex'}\" TARGET=\"$frameTargets{'thumbview'}\"
--    ><IMG SRC=\"$iconImageUrls{'next'}\" $iconImageSizes{'next'} ALT=\"Next\" BORDER=0></A>\n";
-+	    $indexbar .= "<A HREF=\"$fileNames{'htmlNextIndex'}\" TARGET=\"$frameTargets{'thumbview'}\"><IMG
-+	    SRC=\"$iconImageUrls{'next'}\" $iconImageSizes{'next'} ALT=\"Next\" BORDER=0></A>\n";
- 	} else {
- 	    # Print a grayed out arrow to maintain alignment
- 	    $indexbar .= "<IMG SRC=\"$iconImageUrls{'next_gray'}\" $iconImageSizes{'next_gray'} ALT=\"\" BORDER=0>\n";
-@@ -2058,7 +2089,7 @@
- 	# Total HACK!!!
- 	if( $opt_framestyle == 1 ) {
- 	    print( INDEX "<p><FONT SIZE=-1>Index of files \"$imageNames[$pageNumber - 1][0]\" through",
--		  " \"$imageNames[$pageNumber - 1][$numimages-1]\"</p>\n" );
-+		  " \"$imageNames[$pageNumber - 1][$numimages-1]\"</FONT></p>\n" );
- 	}
- 	print( INDEX "\n$indexbar<BR>\n\n" );
- 
-@@ -2143,6 +2174,7 @@
- 		 ">WebMagick</A>" );
- 	   print( INDEX " $webmagickInfo{version}</NOBR>, <NOBR>Copyright &copy;</NOBR> <NOBR>Bob Friesenhahn</NOBR>\n" );
-        }
-+       print( INDEX "</FONT>\n" );
-        print( INDEX "</ADDRESS>\n" );
-     }
- 
-@@ -2484,7 +2516,7 @@
+ 	$indexbar .= "<A HREF=\"$fileNames{'htmlPrevIndex'}\" TARGET=\"$frameTargets{'thumbview'}\"><IMG
+@@ -2700,7 +2708,7 @@
  		    # available in PerlMagick 1.12 and beyond.  If the
  		    # feature is not supported then undefined values
  		    # should be returned.
@@ -269,50 +30,12 @@
  		    if( defined($base_columns) && defined($base_rows) ) {
  			$width = $base_columns;
  			$height = $base_rows;
-@@ -2740,8 +2772,6 @@
- 	if( ! $opt_forcejpeg ) {
- 	print( STDERR "Writing $fileNames{'montageGIF'} ...\n" ) if $opt_debug;
- 	$status = $image->Write(
--				colors=>256,
--				colorspace=>'YUV',
- 				dither=>'True',
- 				filename=>"GIF:$fileNames{'montageGIF'}",
- 				interlace=>'Line'
-@@ -2762,7 +2792,7 @@
- 		$status = $montage->Write(
- 					  filename=>"JPEG:$fileNames{'montageJPEG'}",
- 					  interlace=>'Plane',
--					  quality=>70
-+					  quality=>$opt_jpegquality
- 					  );
- 		handleMagickError( __FILE__, __LINE__, $fileNames{'montageJPEG'}, $status) if "$status";
- 		last MONTAGE if "$status";
-@@ -3346,6 +3376,7 @@
- 
- Paths:
-   --iconpath	     Relative path under rootdir to webmagick icons
-+  --iconbase         Global base URL for webmagick icons
-   --prefixpath       Path to prepend to generated URLs (e.g. /~username)
-   --rootpath	     Absolute path to server root (NCSA DocumentRoot)
- 
-@@ -3369,6 +3400,8 @@
- 
- Montage:
-   --forcegif         Force imagemap to be in GIF format
-+  --forcejpeg        Force imagemap to be in JPEG format
-+  --jpegquality      Quality of JPEG imagemaps
-   --maxgif           Maximum size of GIF imagemap before trying JPEG
-   --columns	     Montage columns
-   --rows	     Montage rows (max)
-@@ -3408,9 +3441,11 @@
-   --dircolorfore     Foreground color (directory frame)
-   --dircolorlink     Link (unvisited) color (directory frame)
-   --dircolorvlink    Link (visited) color (directory frame)
-+  --dirhtmlext       Extension for directory frame
- 
-   --javascript	     Enable JavaScript output
-   --header           Page header (imagemap frame)
-+  --nodate           Don't print updates date
-   --title            Page title
-   --pichtml          Per-image HTML file generation
-   --pichtmlext       Per-image HTML file extension (default .html)
+@@ -2971,8 +2979,6 @@
+ 		if( ! $opt_forcejpeg ) {
+ 		print( STDERR "Writing $fileNames{'montageGIF'} ...\n" ) if $opt_debug;
+ 		$status = $image->Write(
+-					colors=>256,
+-					colorspace=>'YUV',
+ 					dither=>'True',
+ 					filename=>"GIF:$fileNames{'montageGIF'}",
+ 					interlace=>'Line'
