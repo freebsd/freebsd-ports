@@ -25,7 +25,7 @@ CONFIGURE_ENV=	GLIB_CONFIG=${LOCALBASE}/bin/glib12-config \
 CONFIGURE_ARGS+= --with-hangul-keyboard=2
 
 # gnome panel applet support
-#.if defined(WITH_GNOME_APPLET)
+.if defined(WITH_GNOME_APPLET)
 PKGNAMESUFFIX=	-gnome
 RUN_DEPENDS+=	panel:${PORTSDIR}/x11/gnomecore
 CONFIGURE_ARGS+= --enable-gnome-applet
