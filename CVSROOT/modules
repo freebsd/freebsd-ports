@@ -2157,6 +2157,7 @@ gconf-editor	ports/sysutils/gconf-editor
 gconf2		ports/devel/gconf2
 gconfmm		ports/devel/gconfmm
 gctpc		ports/misc/gctpc
+gcursor		ports/x11/gcursor
 gcvs		ports/devel/gcvs
 gd		ports/graphics/gd
 gd1		ports/graphics/gd1
