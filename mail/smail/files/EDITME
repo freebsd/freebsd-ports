@@ -45,7 +45,7 @@
 #   please let me know.  For now, if you get core dumps when using the
 #   bind router on SCO, try compiling without -O.
 
-CFLAGS=-O				# common
+CFLAGS=-O2				# common
 
 # CC - the C compiler to use for compiling smail
 #
@@ -408,8 +408,6 @@ ARCH_TYPE=32bit					# common
 #HAVE=NDBM				# have the new DBM functions
 #HAVE=DBM				# have the old DBM functions
 #HAVE=HDB_UUCP:NDBM			# new DBM and HoneyDanBer UUCP
-HAVE=BIND
-
 
 # UUCP_ZONE - this host is within the UUCP zone
 #
@@ -505,7 +503,7 @@ HAVE=BIND
 # in this file.  The value of the "domains" variable in the config
 # file can be changed without recompiling smail.
 
-DOMAINS=uucp					# common
+#DOMAINS=uucp					# common
 #DOMAINS=ussr.comm:uucp				# example only
 
 
