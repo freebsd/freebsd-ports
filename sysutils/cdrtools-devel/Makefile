@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	cdrtools
-CDRTLSVERSION=	2.01a28
+CDRTLSVERSION=	2.01a29
 PORTVERSION?=	${CDRTLSVERSION}
 PORTREVISION?=	0
 CATEGORIES?=	sysutils audio
@@ -43,6 +43,7 @@ USE_REINPLACE=	yes
 MAKE_ENV=	CCOM=${CC} LANG=C
 #CFLAGS+=	-DSOURCE_MODIFIED
 WRKSRC=		${WRKDIR}/${DISTNAME:C/a(.+)$//}
+CDRTLSTARGET=	${ARCH}-freebsd-${CC}
 
 .if defined(MKISOFS)
 DOCSSRC=	${WRKSRC}/${PORTNAME}
@@ -80,13 +81,13 @@ post-extract:
 	@${CP} ${PORTSDIR}/Templates/${i} ${WRKSRC}/conf
 	@${CP} ${PORTSDIR}/Templates/${i} ${WRKSRC}/cdda2wav
 .endfor
-.if ${MACHINE_ARCH} != "i386" || ${CC} != "cc"
+.if ${ARCH} != "i386" || ${CC} != "cc"
 	@${LN} -sf ${WRKSRC}/RULES/i386-freebsd-cc.rul \
-		${WRKSRC}/RULES/${MACHINE_ARCH}-freebsd-${CC}.rul
+		${WRKSRC}/RULES/${CDRTLSTARGET}.rul
 .endif
 
 post-patch:
-	@${RM} ${WRKSRC}/TARGETS/85man
+	@${RM} ${WRKSRC}/TARGETS/55scgskeleton ${WRKSRC}/TARGETS/85man
 .if defined(MKISOFS)
 .for i in 45libedc 45libparanoia 55cdda2wav 55cdrecord 55readcd 55rscsi \
 	55scgcheck
@@ -116,29 +117,29 @@ post-patch:
 
 do-install:
 .if defined(MKISOFS)
-	@${INSTALL_PROGRAM} ${WRKSRC}/mkisofs/OBJ/${ARCH}-freebsd-cc/mkisofs \
+	@${INSTALL_PROGRAM} ${WRKSRC}/mkisofs/OBJ/${CDRTLSTARGET}/mkisofs \
 		${PREFIX}/bin
 	@${LN} -sf mkisofs ${PREFIX}/bin/mkhybrid
 .for i in devdump isodebug isodump isoinfo isovfy
-	@${INSTALL_PROGRAM} ${WRKSRC}/mkisofs/diag/OBJ/${ARCH}-freebsd-cc/${i} \
+	@${INSTALL_PROGRAM} ${WRKSRC}/mkisofs/diag/OBJ/${CDRTLSTARGET}/${i} \
 		${PREFIX}/bin
 .endfor
 	@${INSTALL_MAN} ${WRKSRC}/mkisofs/mkisofs.8 ${PREFIX}/man/man8
 	@${INSTALL_MAN} ${WRKSRC}/mkisofs/diag/isoinfo.8 ${PREFIX}/man/man8
 .else
-	@${INSTALL_PROGRAM} ${WRKSRC}/cdda2wav/OBJ/${ARCH}-freebsd-cc/cdda2wav \
+	@${INSTALL_PROGRAM} ${WRKSRC}/cdda2wav/OBJ/${CDRTLSTARGET}/cdda2wav \
 		${PREFIX}/bin
 	@${LN} -sf cdda2wav ${PREFIX}/bin/list_audio_tracks
-	@${INSTALL_PROGRAM} ${WRKSRC}/cdrecord/OBJ/${ARCH}-freebsd-cc/cdrecord \
+	@${INSTALL_PROGRAM} ${WRKSRC}/cdrecord/OBJ/${CDRTLSTARGET}/cdrecord \
 		${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/readcd/OBJ/${ARCH}-freebsd-cc/readcd \
+	@${INSTALL_PROGRAM} ${WRKSRC}/readcd/OBJ/${CDRTLSTARGET}/readcd \
 		${PREFIX}/bin
 .if defined(WITH_RSCSI)
-	@${INSTALL_PROGRAM} ${WRKSRC}/rscsi/OBJ/${ARCH}-freebsd-cc/rscsi \
+	@${INSTALL_PROGRAM} ${WRKSRC}/rscsi/OBJ/${CDRTLSTARGET}/rscsi \
 		${PREFIX}/sbin
 	@${CHMOD} u+s ${PREFIX}/sbin/rscsi
 .endif
-	@${INSTALL_PROGRAM} ${WRKSRC}/scgcheck/OBJ/${ARCH}-freebsd-cc/scgcheck \
+	@${INSTALL_PROGRAM} ${WRKSRC}/scgcheck/OBJ/${CDRTLSTARGET}/scgcheck \
 		${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/cdda2wav/cdda2wav.1 ${PREFIX}/man/man1
 	@${INSTALL_MAN} ${WRKSRC}/cdrecord/cdrecord.1 ${PREFIX}/man/man1
