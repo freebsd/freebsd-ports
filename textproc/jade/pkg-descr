@@ -18,5 +18,7 @@ Note: This port is a superset of the sp port.  If you have sp
 installed, it is recommended that you remove it before installing
 jade.
 
+WWW: http://www.jclark.com/jade/
+
 John Fieber
 jfieber@FreeBSD.org
