@@ -1,0 +1,30 @@
+--- gui/Makefile.orig	Fri Mar  2 08:39:03 2001
++++ gui/Makefile	Mon Aug 20 11:16:35 2001
+@@ -1,21 +1,21 @@
+ HEADERS =  starplot.h gtkviewer.h menu.h ../classes/stararray.h \
+ 		../classes/star.h ../classes/greek.h ../classes/specclass.h \
+ 		../classes/stringops.h ../classes/mathops.h ../classes/viewer.h
+-DATADEF = -DDATADIR=\"$(DATADIR)\"
+-DOCDEF  = -DDOCDIR=\"$(DOCDIR)\"
++DATADEF = -DDATADIR=\"${DATADIR}\"
++DOCDEF  = -DDOCDIR=\"${DOCSDIR}\"
++CFLAGS	+=	`${GTK_CONFIG} --cflags`
+ 
+ all:	starplot.o menuops.o filedialogs.o infodialogs.o chartdialogs.o \
+ 		hrdiagram.o
+ 
+ %.o:	%.cc $(HEADERS)
+-	$(CXX) -c $< `gtk-config --cflags` $(CFLAGS) $(DATADEF)
++	$(CXX) -c $< $(CFLAGS) $(DATADEF)
+ 
+ menuops.o:	menuops.cc $(HEADERS) xpmdata.h ../version.h
+-	$(CXX) -c menuops.cc `gtk-config --cflags` $(CFLAGS) \
+-		$(DATADEF) $(DOCDEF)
++	$(CXX) -c menuops.cc $(CFLAGS) $(DATADEF) $(DOCDEF)
+ 
+ starplot.o:	starplot.cc $(HEADERS) ../version.h
+-	$(CXX) -c starplot.cc `gtk-config --cflags` $(CFLAGS) $(DATADEF)
++	$(CXX) -c starplot.cc $(CFLAGS) $(DATADEF)
+ 
+ clean:
+ 	rm -f *.o *.cc~ *.h~

@@ -25,6 +25,7 @@
     SUBDIR += setiathome
     SUBDIR += spacechart
     SUBDIR += sscalc
+    SUBDIR += starplot
     SUBDIR += stars
     SUBDIR += sunclock
     SUBDIR += tkseti
