@@ -1,0 +1,5 @@
+mod_blosxom.c is the Apache module which builds the extremely lightweight
+Weblog environment. mod_blosxom.c has inherited the function of 'Blosxom'
+and can share the same data and the same template.
+
+WWW: http://mod-blosxom.sourceforge.net/cgi-bin/blosxom

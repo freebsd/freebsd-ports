@@ -174,6 +174,7 @@
     SUBDIR += mod_auth_pwcheck
     SUBDIR += mod_backhand
     SUBDIR += mod_bf
+    SUBDIR += mod_blosxom
     SUBDIR += mod_blowchunks
     SUBDIR += mod_bunzip2
     SUBDIR += mod_cgi_debug
