@@ -7,6 +7,7 @@
 
 PORTNAME=		linux_base
 PORTVERSION=		7.1
+PORTREVISION=		1
 CATEGORIES=		emulators linux
 MASTER_SITES=		${RPM_MIRRORS:S/__DIR__/${STDDIR}/g}
 DISTFILES=		${RPM_GLIBC_COMMON} \
@@ -24,6 +25,7 @@ DISTFILES=		${RPM_GLIBC_COMMON} \
 			bash-2.04-21.${MACHINE_ARCH}.rpm \
 			${RPM_BZIP2} \
 			${RPM_LIBSTDCXX} \
+			${RPM_COMPAT_LIBSTDCXX} \
 			ncurses-5.2-8.${MACHINE_ARCH}.rpm \
 			info-4.0-20.${MACHINE_ARCH}.rpm \
 			fileutils-4.0.36-4.${MACHINE_ARCH}.rpm \
@@ -78,6 +80,7 @@ RPM_GDBM=		gdbm-1.8.0-5.i386.rpm
 RPM_GLIBC=		glibc-2.2.2-10.i386.rpm
 RPM_GLIBC_COMMON=	glibc-common-2.2.2-10.i386.rpm
 RPM_LIBSTDCXX=
+RPM_COMPAT_LIBSTDCXX=	compat-libstdc++-6.2-2.9.0.14.i386.rpm
 RPM_SETSERIAL=		setserial-2.17-2.i386.rpm
 RPM_SETUP=		setup-2.4.7-1.noarch.rpm
 RPM_XFREE86_LIBS=	XFree86-libs-4.0.3-5.i386.rpm
@@ -89,6 +92,7 @@ RPM_GDBM=		gdbm-1.8.0-6.alpha.rpm
 RPM_GLIBC=		glibc-2.2.3-11.alpha.rpm
 RPM_GLIBC_COMMON=	glibc-common-2.2.3-11.alpha.rpm
 RPM_LIBSTDCXX=		libstdc++-2.96-87.alpha.rpm
+RPM_COMPAT_LIBSTDCXX=	
 RPM_SETSERIAL=		setserial-2.17-3.alpha.rpm
 RPM_SETUP=		setup-2.4.7-2.noarch.rpm
 RPM_XFREE86_LIBS=	XFree86-libs-4.0.3-21.alpha.rpm
@@ -165,13 +169,6 @@ do-install:
 		${RM} -f ${LINUXBASE}/$$F; \
 	done
 	@${LN} -s /var/tmp ${LINUXBASE}/usr/tmp
-#
-# kludge for pre-compiled Netscape 6 and Mozilla
-#
-.if (${MACHINE_ARCH} == "i386")
-	@cd ${LINUXBASE}/usr/lib && \
-		${LN} -fs libstdc++-3-libc6.2-2-2.10.0.so libstdc++-libc6.1-1.so.2
-.endif
 
 post-install:
 	@${ECHO} ''
