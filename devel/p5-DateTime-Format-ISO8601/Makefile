@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	DateTime-Format-ISO8601
-PORTVERSION=	0.03
-PORTREVISION=	1
+PORTVERSION=	0.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DateTime
@@ -25,4 +24,12 @@ PERL_CONFIGURE=	yes
 MAN3=		DateTime::Format::ISO8601.3
 
 .include "../../devel/p5-Module-Build/inc.build.mk"
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+post-patch:
+	@${PERL} -pi -e '$$_ = "" if /use warnings/;' \
+		 ${WRKSRC}/lib/DateTime/Format/ISO8601.pm
+.endif
+
+.include <bsd.port.post.mk>
