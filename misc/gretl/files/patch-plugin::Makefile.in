@@ -1,17 +1,17 @@
---- plugin/Makefile.in.orig	Tue Apr 22 00:29:01 2003
-+++ plugin/Makefile.in	Sun May  4 03:14:38 2003
-@@ -7,6 +7,10 @@
- MAKE = @MAKE@
+--- plugin/Makefile.in.orig	Sun Oct 19 23:15:51 2003
++++ plugin/Makefile.in	Sun Oct 26 10:24:36 2003
+@@ -8,6 +8,10 @@
  INSTALL = @INSTALL@
  LN = @LN_S@
-+ 
+ 
 +CPPFLAGS = @CPPFLAGS@
 +LDFLAGS = @LDFLAGS@
 +INTL_LIBS = @LTLIBINTL@
- 
++
  have_gtk = @have_gtk@
  have_gmp = @have_gmp@
-@@ -38,8 +42,8 @@
+ 
+@@ -35,8 +39,8 @@
  override CFLAGS += -I.. -DHAVE_CONFIG_H
  
  LIBTOOL = ../libtool
@@ -22,16 +22,7 @@
  
  GRETLINC = -I$(topsrc)/lib/src
  GRETLLIB = ../lib/libgretl-1.0.la
-@@ -48,7 +52,7 @@
-   GTK_CFLAGS += -DGTK_DISABLE_DEPRECATED
-   GRETL_LIBOLE2_CFLAGS := -I$(topsrc)/plugin $(shell pkg-config --cflags glib-2.0)
- else
--  GRETL_LIBOLE2_CFLAGS := -I$(topsrc)/plugin $(shell glib-config --cflags)
-+  GRETL_LIBOLE2_CFLAGS := -I$(topsrc)/plugin $(shell $(GLIB_CONFIG) --cflags)
- endif  
- 
- SRCS = excel_import.c gnumeric_import.c gretl_matrix.c import_common.c \
-@@ -129,11 +133,11 @@
+@@ -136,11 +140,11 @@
  .PHONY: 
  
  install: $(GRETLLIB) $(PLUGINS) installdirs
