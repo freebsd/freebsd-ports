@@ -167,6 +167,7 @@
     SUBDIR += portscanner
     SUBDIR += portsentry
     SUBDIR += ppgen
+    SUBDIR += proxytunnel
     SUBDIR += pscan
     SUBDIR += py-amkCrypto
     SUBDIR += py-fchksum
