@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libc
-PORTVERSION=	1.0.20031011
+PORTVERSION=	1.0.20031202
 CATEGORIES=	devel
 MASTER_SITES=	http://lev.serebryakov.spb.ru/download/msp430/
 PKGNAMEPREFIX=	msp430-
@@ -32,7 +32,7 @@ post-configure:
 
 post-install:
 	@${MKDIR} ${PREFIX}/${PKGNAMEPREFIX:S/-$//}/share/mspgcc
-	@tar --exclude CVS -C ${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME} -cf - examples doc | \
+	@tar --exclude CVS -C ${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME} -cf - doc | \
 		tar -xf - -C ${PREFIX}/${PKGNAMEPREFIX:S/-$//}/share/mspgcc
 	@tar --exclude CVS -C ${WRKDIR} -cf - examples | \
 		tar -xf - -C ${PREFIX}/${PKGNAMEPREFIX:S/-$//}/share/mspgcc
