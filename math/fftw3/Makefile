@@ -22,6 +22,7 @@ USE_GMAKE=	yes
 USE_INC_LIBTOOL_VER=15
 USE_GNOME=	gnomehack gnomeprefix gnometarget lthack pkgconfig
 USE_REINPLACE=	yes
+USE_PERL5_BUILD=yes
 INSTALLS_SHLIB=	yes
 
 MAN1=	fftw-wisdom-to-conf.1 fftw-wisdom.1 fftwf-wisdom.1
