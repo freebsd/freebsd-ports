@@ -25,6 +25,8 @@ USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
+BROKEN=		"Does not compile with libdar-2.2"
+
 post-patch:
 	${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
 
