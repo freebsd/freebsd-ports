@@ -86,6 +86,7 @@
     SUBDIR += hobbes-icons-xpm
     SUBDIR += hppsmtools
     SUBDIR += icod
+    SUBDIR += icontact
     SUBDIR += imagesort
     SUBDIR += imanager
     SUBDIR += imlib
