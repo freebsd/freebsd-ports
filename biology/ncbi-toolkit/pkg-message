@@ -1,8 +1,6 @@
-
-The data files are installed in "%%PREFIX%%/share/ncbi-tookit".
+The data files are installed in "%%PREFIX%%/share/ncbi-toolkit".
 To use them you need to create a .ncbirc file in your home directory
 with the following lines:
 
 [NCBI]
 Data=%%PREFIX%%/share/ncbi-toolkit/
-

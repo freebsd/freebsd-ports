@@ -1,12 +1,12 @@
---- make/makeall.unx.orig	Thu Apr  5 09:24:30 2001
-+++ make/makeall.unx	Tue Sep 18 14:49:24 2001
-@@ -851,3 +851,51 @@
+--- make/makeall.unx.orig	Thu Mar 21 06:01:20 2002
++++ make/makeall.unx	Sat Jun  8 20:16:09 2002
+@@ -859,3 +859,46 @@
  	#load $(LDFLAGS) getmuid.c medutil.c \
  	$(SRC11) $(SRC8) $(SRC7) $(SRC6) $(SRC5) $(SRC3) \
  	$(SRC2) $(SRC1) $(OTHERLIBS) -lsocket -lnsl
 +
 +EXE=	Nentrez Psequin \
-+		asn2fast asn2ff asn2xml asndhuff asntool \
++		asn2ff asn2xml asndhuff asntool \
 +		bl2seq blast.REAL blastall blastcl3 blastclust blastpgp \
 +		cdscan checksub copymat \
 +		ddv dosimple \
@@ -21,13 +21,6 @@
 +		udv vecscreen
 +
 +
-+LIB=	libncbi.a		libncbicdr.a	libncbimla.a	libncbitxc2.a \
-+		libnetentr.a	libncbiCacc.a	libncbicn3d.a	libncbimmdb.a \
-+		libnetblast.a	libvibgif.a		libncbiNacc.a	libncbidesk.a \
-+		libncbiobj.a	libnetcli.a		libvibnet.a		libncbiacc.a \
-+		libncbiid1.a	libncbitool.a	libnetcli_.a	libvibrant.a
-+
-+
 +MKDIR=	/bin/mkdir -p
 +INSTALL_PROGRAM=	/usr/bin/install -c
 +
@@ -37,7 +30,9 @@
 +
 +linstall: $(LIB)
 +	${MKDIR} ${PREFIX}/lib/ncbi
-+	${INSTALL_PROGRAM} $? ${PREFIX}/lib/ncbi
++	for file in *.a; do \
++		${INSTALL_PROGRAM} $$file ${PREFIX}/lib/ncbi; \
++	done
 +
 +iinstall::
 +	${MKDIR} ${PREFIX}/include/ncbi/connect
