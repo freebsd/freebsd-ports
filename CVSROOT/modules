@@ -7757,6 +7757,7 @@ php5-iconv	ports/converters/php5-iconv
 php5-mbstring	ports/converters/php5-mbstring
 php5-pcre	ports/devel/php5-pcre
 php5-pear	ports/devel/php5-pear
+php5-recode	ports/converters/php5-recode
 php5-xml	ports/textproc/php5-xml
 php5-zlib	ports/archivers/php5-zlib
 phpSysInfo	ports/www/phpSysInfo
