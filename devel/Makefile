@@ -86,6 +86,7 @@
     SUBDIR += cccc
     SUBDIR += ccdoc
     SUBDIR += cdecl
+    SUBDIR += cdialog
     SUBDIR += cdk
     SUBDIR += cdoc
     SUBDIR += cflow
