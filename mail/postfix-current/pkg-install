@@ -109,8 +109,8 @@ if [ x"$2" = xPRE-INSTALL ]; then
 fi
 
 if [ x"$2" = xPOST-INSTALL ]; then
-	CONF1="main.cf master.cf access aliases canonical cidr_table \
-	pcre_table regexp_table relocated tcp_table transport virtual"
+	CONF1="main.cf master.cf access aliases canonical \
+	header_checks relocated transport virtual"
 
 	for file in $CONF1
 	do
