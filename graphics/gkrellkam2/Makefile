@@ -13,7 +13,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=		${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	jylefort@brutele.be
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GKrellM plugin that display thumbnails of periodically updated images
 
 BROKEN=		"Conflicting dependencies (gkrellm and gkrellm2)"

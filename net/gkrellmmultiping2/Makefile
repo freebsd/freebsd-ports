@@ -13,7 +13,7 @@ MASTER_SITES=	http://kmlinux.fjfi.cvut.cz/~makovick/gkrellm/
 DISTNAME=	gkrellm-multiping-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jylefort@brutele.be
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GKrellM multiping plugin
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2

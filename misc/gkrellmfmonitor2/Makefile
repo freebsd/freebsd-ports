@@ -13,7 +13,7 @@ MASTER_SITES=	http://kmlinux.fjfi.cvut.cz/~makovick/gkrellm/
 DISTNAME=	gkrellm-fmonitor-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jylefort@brutele.be
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GKrellM FMonitor plugin
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
