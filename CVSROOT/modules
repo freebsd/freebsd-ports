@@ -6778,6 +6778,7 @@ p5-JUNOScript	ports/net-mgmt/p5-JUNOScript
 p5-Jabber-Connection	ports/net/p5-Jabber-Connection
 p5-Kwiki	ports/www/p5-Kwiki
 p5-Kwiki-RecentChanges	ports/www/p5-Kwiki-RecentChanges
+p5-Kwiki-RecentChangesRSS	ports/www/p5-Kwiki-RecentChangesRSS
 p5-Kwiki-Revisions	ports/www/p5-Kwiki-Revisions
 p5-Kwiki-Search	ports/www/p5-Kwiki-Search
 p5-Kwiki-UserPreferences	ports/www/p5-Kwiki-UserPreferences
