@@ -1,0 +1,20 @@
+This module provides a interface between HTML::Mason and Apache::Session, in
+effect, providing full session and cooking handling from within HTML::Mason.
+
+When run under the ApacheHandler module, this module attempts to first use
+Apache::Cookie for cookie-handling.  Otherwise it uses CGI::Cookie as a
+fallback.
+
+This module accepts quite a number of parameters, most of which are simply
+passed through to Apache::Session.  For this reason, you are advised to
+familiarize yourself with the Apache::Session documentation before
+attempting to configure this module.
+
+Use 'perldoc MasonX::Request::WithApacheSession' for information on how to
+use the module. 
+
+MasonX::Request::WithApacheSession was written by Dave Rolsky.
+
+
+-- Nick Hilliard
+nick@foobar.org
