@@ -1,6 +1,9 @@
+bin/freebcp
+bin/tsql
 @unexec if cmp -s %D/etc/freetds.conf.dist %D/etc/freetds.conf; then rm -f %D/etc/freetds.conf; fi
 etc/freetds.conf.dist
 @exec if [ ! -f %D/etc/freetds.conf ]; then cp %D/etc/%f %D/etc/freetds.conf; fi
+etc/locales.conf
 etc/freetds/interfaces
 include/bkpublic.h
 include/cspublic.h
@@ -8,6 +11,7 @@ include/cstypes.h
 include/ctlib.h
 include/ctpublic.h
 include/dblib.h
+include/freebcp.h
 include/sqldb.h
 include/sqlfront.h
 include/sybdb.h
