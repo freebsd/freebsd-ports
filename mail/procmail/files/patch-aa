@@ -49,20 +49,6 @@
  echo							>>_Makefile
  
  MANSS=""
---- src/autoconf.bak	Mon Apr 10 14:28:22 1995
-+++ src/autoconf	Sat Apr 22 17:11:23 1995
-@@ -959,6 +959,11 @@
-   grepfor setregid '#define NOsetregid' &&
-    grepfor setresgid '#define NOsetresgid'
- fi
-+echo '#ifdef __FreeBSD___' >>$ACONF
-+echo '#define NOsetrgid' >>$ACONF
-+echo '#define NOsetregid' >>$ACONF
-+echo '#define NOsetresgid' >>$ACONF
-+echo '#endif' >>$ACONF
- grepfor pow '#define NOpow'
- grepfor mkdir '#define NOmkdir'
- grepfor fstat '#define NOfstat'
 --- src/recommend.c.bak	Thu Aug 18 08:45:20 1994
 +++ src/recommend.c	Sat Apr 22 17:11:23 1995
 @@ -52,8 +52,10 @@
