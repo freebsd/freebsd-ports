@@ -7,12 +7,11 @@
 #
 
 PORTNAME=	libmal
-PORTVERSION=	0.31
-PORTREVISION=	1
+PORTVERSION=	0.40
 CATEGORIES=	palm
 MASTER_SITES=	http://jasonday.home.att.net/code/libmal/
 
-MAINTAINER=	groot@kde.org
+MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	A library encapsulating malsync
 
 LIB_DEPENDS=	pisock.8:${PORTSDIR}/palm/pilot-link
@@ -20,6 +19,7 @@ LIB_DEPENDS=	pisock.8:${PORTSDIR}/palm/pilot-link
 USE_GMAKE=	YES
 USE_LIBTOOL_VER=13
 HAS_CONFIGURE=	YES
-INSTALLS_SHLIB=	libmal
+INSTALLS_SHLIB=	YES
+CONFLICTS=	malsync-*
 
 .include <bsd.port.mk>

@@ -1,3 +1,4 @@
+bin/malsync
 include/libmal/AGArray.h
 include/libmal/AGBase64.h
 include/libmal/AGBufferReader.h
@@ -53,5 +54,5 @@ include/libmal/libmal.h
 lib/libmal.a
 lib/libmal.la
 lib/libmal.so
-lib/libmal.so.0
+lib/libmal.so.1
 @dirrm include/libmal
