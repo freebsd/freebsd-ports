@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	bugbuddy2
-PORTVERSION=	2.4.2
-PORTREVISION=	1
+PORTVERSION=	2.6.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/bug-buddy/2.4
+MASTER_SITE_SUBDIR=	sources/bug-buddy/2.6
 DISTNAME=	bug-buddy-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -19,9 +18,10 @@ COMMENT=	A bug reporting tool for GNOME 2
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	13
-USE_GNOME=	gnomeprefix gnomehack gnomedesktop intlhack
+USE_LIBTOOL_VER=13
+USE_GNOME=	gnomeprefix gnomehack intlhack lthack gnomedesktop
 GNOME_DESKTOP_VERSION=2
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

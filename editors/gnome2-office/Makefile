@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnome2-office
-PORTVERSION=	2.4.2
+PORTVERSION=	2.6.0
 CATEGORIES=	editors gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -19,17 +19,12 @@ RUN_DEPENDS=	gnumeric:${PORTSDIR}/math/gnumeric2 \
 		planner:${PORTSDIR}/deskutils/planner \
 		dia:${PORTSDIR}/graphics/dia \
 		glabels:${PORTSDIR}/deskutils/glabels \
-		evolution:${PORTSDIR}/mail/evolution \
+		evolution-1.5:${PORTSDIR}/mail/evolution \
+		AbiWord-2.2:${PORTSDIR}/editors/AbiWord2 \
 		mergeant:${PORTSDIR}/databases/mergeant
 
 NO_BUILD=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386"
-RUN_DEPENDS+=	AbiWord-2.0:${PORTSDIR}/editors/AbiWord2
-.endif
-
 do-install:	# empty
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

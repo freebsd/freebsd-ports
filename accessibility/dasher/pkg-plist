@@ -12,6 +12,7 @@ share/gnome/dasher/alphabet.hungarianLowerCase.xml
 share/gnome/dasher/alphabet.ipa.xml
 share/gnome/dasher/alphabet.italian.xml
 share/gnome/dasher/alphabet.korean.xml
+share/gnome/dasher/alphabet.mongolian.xml
 share/gnome/dasher/alphabet.polish.xml
 share/gnome/dasher/alphabet.portuguese.xml
 share/gnome/dasher/alphabet.russian.xml
@@ -28,6 +29,7 @@ share/gnome/dasher/training_german_DE.txt
 share/gnome/dasher/training_hiragana60_JP.txt
 share/gnome/dasher/training_hiragana83_JP.txt
 share/gnome/dasher/training_italian_IT.txt
+share/gnome/dasher/training_mongolian_MN.txt
 share/gnome/dasher/training_portuguese_BR.txt
 share/gnome/dasher/training_russian_RU.txt
 share/gnome/help/dasher/C/dasher.xml
@@ -44,8 +46,10 @@ share/gnome/omf/dasher/dasher-C.omf
 share/locale/ar/LC_MESSAGES/dasher.mo
 share/locale/az/LC_MESSAGES/dasher.mo
 share/locale/be/LC_MESSAGES/dasher.mo
+share/locale/bn/LC_MESSAGES/dasher.mo
 share/locale/ca/LC_MESSAGES/dasher.mo
 share/locale/cs/LC_MESSAGES/dasher.mo
+share/locale/cy/LC_MESSAGES/dasher.mo
 share/locale/da/LC_MESSAGES/dasher.mo
 share/locale/de/LC_MESSAGES/dasher.mo
 share/locale/el/LC_MESSAGES/dasher.mo
@@ -68,11 +72,18 @@ share/locale/nl/LC_MESSAGES/dasher.mo
 share/locale/no/LC_MESSAGES/dasher.mo
 share/locale/pl/LC_MESSAGES/dasher.mo
 share/locale/pt/LC_MESSAGES/dasher.mo
+share/locale/pt_BR/LC_MESSAGES/dasher.mo
+share/locale/ro/LC_MESSAGES/dasher.mo
+share/locale/ru/LC_MESSAGES/dasher.mo
 share/locale/sk/LC_MESSAGES/dasher.mo
 share/locale/sq/LC_MESSAGES/dasher.mo
 share/locale/sr/LC_MESSAGES/dasher.mo
 share/locale/sr@Latn/LC_MESSAGES/dasher.mo
 share/locale/sv/LC_MESSAGES/dasher.mo
+share/locale/tr/LC_MESSAGES/dasher.mo
+share/locale/uk/LC_MESSAGES/dasher.mo
+share/locale/zh_CN/LC_MESSAGES/dasher.mo
+share/locale/zh_TW/LC_MESSAGES/dasher.mo
 @dirrm share/gnome/omf/dasher
 @dirrm share/gnome/help/dasher/C/figures
 @dirrm share/gnome/help/dasher/C

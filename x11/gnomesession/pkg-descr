@@ -1,2 +1,2 @@
-Session component for the GNOME 2.0 desktop.  This package contains the 
-commands needed to start GNOME 2.0.
+This provides session management for the GNOME 2 desktop, and
+provides the tools used to start the desktop.

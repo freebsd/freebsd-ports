@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	libgnomeprint
-PORTVERSION=	2.4.2
-PORTREVISION=	1
+PORTVERSION=	2.6.0
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.4
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.6
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -20,7 +19,8 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier libbonobo libartlgpl2 gtk20
+USE_GNOME=	gnomeprefix intlhack gnomehack gnomehier libbonobo libartlgpl2 \
+		gtk20 lthack
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

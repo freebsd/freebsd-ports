@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnome2-fifth-toe
-PORTVERSION=	2.4.2
+PORTVERSION=	2.6.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -25,16 +25,17 @@ RUN_DEPENDS=	pan:${PORTSDIR}/news/pan2 \
 		tsclient:${PORTSDIR}/net/tsclient \
 		galeon:${PORTSDIR}/www/galeon2 \
 		seahorse:${PORTSDIR}/security/seahorse \
-		${X11BASE}/lib/gtk-2.0/2.2.0/engines/libindustrial.so:${PORTSDIR}/x11-toolkits/gnome-themes-extras \
+		${X11BASE}/lib/gtk-2.0/2.4.0/engines/libindustrial.so:${PORTSDIR}/x11-toolkits/gnome-themes-extras \
 		bluefish:${PORTSDIR}/www/bluefish-devel \
 		gossip:${PORTSDIR}/net/gossip \
 		inkscape:${PORTSDIR}/graphics/inkscape \
 		straw:${PORTSDIR}/net/straw \
 		liferea:${PORTSDIR}/net/liferea \
-		rhythmbox:${PORTSDIR}/audio/rhythmbox \
-		jamboree:${PORTSDIR}/audio/jamboree \
+		gnotime:${PORTSDIR}/deskutils/gnotime \
 		sound-juicer:${PORTSDIR}/audio/sound-juicer \
-		gnotime:${PORTSDIR}/deskutils/gnotime
+		rhythmbox:${PORTSDIR}/audio/rhythmbox
+# not yet buildable under GNOME 2.5
+#		jamboree:${PORTSDIR}/audio/jamboree
 
 .if !defined(PACKAGE_BUILDING) && !defined(PARALLEL_PACKAGE_BUILD)
 RUN_DEPENDS+=	totem:${PORTSDIR}/multimedia/totem

@@ -1,10 +1,21 @@
---- configure.orig	Thu Jul 11 15:51:47 2002
-+++ configure	Thu Jul 11 15:51:57 2002
-@@ -6731,6 +6731,7 @@
- 
- # This can be used to rebuild libtool when needed
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
- 
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+--- configure.orig	Tue Mar 16 20:32:36 2004
++++ configure	Tue Mar 16 20:41:00 2004
+@@ -41192,7 +41192,8 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-laudio $X_LIBS $LIBS"
++#xxx fix the non x case is er niet...
++LIBS="-laudio -lm -lXt $X_LIBS $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -44483,7 +44484,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ltheora  $LIBS"
++LIBS="-ltheora  -logg $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */

@@ -1,14 +1,11 @@
-
-$FreeBSD$
-
---- Makefile.in	2002/02/12 13:29:11	1.1
-+++ Makefile.in	2002/02/12 13:29:28
-@@ -168,7 +168,7 @@
- ms_librarian = @ms_librarian@
- xinput_progs = @xinput_progs@
+--- Makefile.in.orig	Thu Jan 22 19:40:10 2004
++++ Makefile.in	Thu Jan 22 19:40:52 2004
+@@ -286,7 +286,7 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
  
 -SRC_SUBDIRS = gdk-pixbuf gdk gtk modules demos tests contrib
-+SRC_SUBDIRS = gdk-pixbuf gdk gtk modules contrib
- SUBDIRS = po $(SRC_SUBDIRS) docs build m4macros
++SRC_SUBDIRS = gdk-pixbuf gdk gtk modules demos contrib
+ SUBDIRS = po po-properties $(SRC_SUBDIRS) docs build m4macros
  
  # require automake 1.4

@@ -32,6 +32,8 @@ etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L00K13/%gconf
 etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L00K14/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L00K15/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L01K01/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L01K02/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L01K03/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L01K12/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L03K01/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L03K02/%gconf.xml
@@ -85,6 +87,15 @@ etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L08K07/%gconf
 etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L08K08/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L08K09/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L08K10/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L08K13/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L09K01/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L09K03/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L09K04/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L09K06/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L10K01/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L10K02/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L10K03/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L10K04/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/user_key/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnopernicus/config/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnopernicus/config/brlmon/%gconf.xml
@@ -130,6 +141,8 @@ etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/command_map/keyboard/L00K1
 etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/command_map/keyboard/L00K14/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/command_map/keyboard/L00K15/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/command_map/keyboard/L01K01/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/command_map/keyboard/L01K02/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/command_map/keyboard/L01K03/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/command_map/keyboard/L01K12/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/command_map/keyboard/L03K01/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/command_map/keyboard/L03K02/%gconf.xml
@@ -188,6 +201,10 @@ etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/command_map/keyboard/L09K0
 etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/command_map/keyboard/L09K03/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/command_map/keyboard/L09K04/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/command_map/keyboard/L09K06/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/command_map/keyboard/L10K01/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/command_map/keyboard/L10K02/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/command_map/keyboard/L10K03/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/command_map/keyboard/L10K04/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/command_map/user_key/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/config/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/config/brlmon/%gconf.xml
@@ -274,29 +291,48 @@ share/gnome/gnopernicus/glade/gnopi_files/gnopi.glade2
 share/gnome/gnopernicus/glade/gnopi_files/keyboard.xpm
 share/gnome/gnopernicus/glade/gnopi_files/monitor.png
 share/gnome/gnopernicus/glade/gnopi_files/start_up.png
+share/gnome/gnopernicus/presentation/default.xml
+share/gnome/gnopernicus/presentation/verbose.xml
 share/gnome/help/brlmonitor/C/brlmonitor.xml
 share/gnome/help/brlmonitor/C/legal.xml
 share/gnome/help/gnopernicus/C/gnopernicus.xml
 share/gnome/help/gnopernicus/C/legal.xml
+share/gnome/help/brlmonitor/es/brlmonitor.xml
+share/gnome/help/brlmonitor/es/legal.xml
+share/gnome/help/gnopernicus/es/gnopernicus.xml
+share/gnome/help/gnopernicus/es/legal.xml
 share/gnome/omf/gnopernicus/brlmonitor-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnopernicus/brlmonitor-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnopernicus/gnopernicus-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnopernicus/gnopernicus-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnopernicus/brlmonitor-es.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnopernicus/brlmonitor-es.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnopernicus/gnopernicus-es.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnopernicus/gnopernicus-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gnopernicus.png
+share/locale/ar/LC_MESSAGES/gnopernicus.mo
 share/locale/az/LC_MESSAGES/gnopernicus.mo
 share/locale/be/LC_MESSAGES/gnopernicus.mo
+share/locale/ca/LC_MESSAGES/gnopernicus.mo
 share/locale/cs/LC_MESSAGES/gnopernicus.mo
 share/locale/cy/LC_MESSAGES/gnopernicus.mo
 share/locale/da/LC_MESSAGES/gnopernicus.mo
 share/locale/de/LC_MESSAGES/gnopernicus.mo
 share/locale/el/LC_MESSAGES/gnopernicus.mo
+share/locale/en_CA/LC_MESSAGES/gnopernicus.mo
+share/locale/en_GB/LC_MESSAGES/gnopernicus.mo
 share/locale/es/LC_MESSAGES/gnopernicus.mo
+share/locale/eu/LC_MESSAGES/gnopernicus.mo
+share/locale/fi/LC_MESSAGES/gnopernicus.mo
 share/locale/fr/LC_MESSAGES/gnopernicus.mo
 share/locale/ga/LC_MESSAGES/gnopernicus.mo
 share/locale/hi/LC_MESSAGES/gnopernicus.mo
+share/locale/hr/LC_MESSAGES/gnopernicus.mo
 share/locale/it/LC_MESSAGES/gnopernicus.mo
 share/locale/ja/LC_MESSAGES/gnopernicus.mo
 share/locale/ko/LC_MESSAGES/gnopernicus.mo
+share/locale/lt/LC_MESSAGES/gnopernicus.mo
+share/locale/mn/LC_MESSAGES/gnopernicus.mo
 share/locale/ms/LC_MESSAGES/gnopernicus.mo
 share/locale/nl/LC_MESSAGES/gnopernicus.mo
 share/locale/no/LC_MESSAGES/gnopernicus.mo
@@ -308,12 +344,16 @@ share/locale/sq/LC_MESSAGES/gnopernicus.mo
 share/locale/sr/LC_MESSAGES/gnopernicus.mo
 share/locale/sr@Latn/LC_MESSAGES/gnopernicus.mo
 share/locale/sv/LC_MESSAGES/gnopernicus.mo
+share/locale/uk/LC_MESSAGES/gnopernicus.mo
 share/locale/zh_CN/LC_MESSAGES/gnopernicus.mo
 @dirrm share/gnome/omf/gnopernicus
+@dirrm share/gnome/help/gnopernicus/es
 @dirrm share/gnome/help/gnopernicus/C
 @dirrm share/gnome/help/gnopernicus
+@dirrm share/gnome/help/brlmonitor/es
 @dirrm share/gnome/help/brlmonitor/C
 @dirrm share/gnome/help/brlmonitor
+@dirrm share/gnome/gnopernicus/presentation
 @dirrm share/gnome/gnopernicus/glade/gnopi_files/User_Properties
 @dirrm share/gnome/gnopernicus/glade/gnopi_files/Speech_Settings
 @dirrm share/gnome/gnopernicus/glade/gnopi_files/Screen_Review
@@ -355,6 +395,10 @@ share/locale/zh_CN/LC_MESSAGES/gnopernicus.mo
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/config/brlmon
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/config
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/command_map/user_key
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/command_map/keyboard/L10K04
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/command_map/keyboard/L10K03
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/command_map/keyboard/L10K02
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/command_map/keyboard/L10K01
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/command_map/keyboard/L09K06
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/command_map/keyboard/L09K04
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/command_map/keyboard/L09K03
@@ -413,6 +457,8 @@ share/locale/zh_CN/LC_MESSAGES/gnopernicus.mo
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/command_map/keyboard/L03K02
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/command_map/keyboard/L03K01
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/command_map/keyboard/L01K12
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/command_map/keyboard/L01K03
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/command_map/keyboard/L01K02
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/command_map/keyboard/L01K01
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/command_map/keyboard/L00K15
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnopernicus/command_map/keyboard/L00K14
@@ -458,6 +504,15 @@ share/locale/zh_CN/LC_MESSAGES/gnopernicus.mo
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnopernicus/config/brlmon
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnopernicus/config
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/user_key
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L10K04
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L10K03
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L10K02
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L10K01
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L09K06
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L09K04
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L09K03
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L09K01
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L08K13
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L08K10
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L08K09
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L08K08
@@ -511,6 +566,8 @@ share/locale/zh_CN/LC_MESSAGES/gnopernicus.mo
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L03K02
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L03K01
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L01K12
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L01K03
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L01K02
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L01K01
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L00K15
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnopernicus/command_map/keyboard/L00K14
@@ -544,3 +601,5 @@ share/locale/zh_CN/LC_MESSAGES/gnopernicus.mo
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnopernicus
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnopernicus/brlmonitor-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnopernicus/gnopernicus-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnopernicus/brlmonitor-es.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnopernicus/gnopernicus-es.omf 2>/dev/null || /usr/bin/true

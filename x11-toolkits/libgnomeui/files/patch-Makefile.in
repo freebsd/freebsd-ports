@@ -1,11 +1,11 @@
---- Makefile.in.orig	Sat Nov  9 02:33:58 2002
-+++ Makefile.in	Sat Nov  9 02:36:36 2002
-@@ -122,7 +122,7 @@
- cxxflags_set = @cxxflags_set@
+--- Makefile.in.orig	Mon Mar 22 00:31:40 2004
++++ Makefile.in	Mon Mar 22 00:32:06 2004
+@@ -139,7 +139,7 @@
+ YACC = @YACC@
  gnomelocaledir = @gnomelocaledir@
  
--SUBDIRS = libgnomeui glade images demos test-gnome doc po #tests
-+SUBDIRS = libgnomeui glade images demos doc po #tests
+-SUBDIRS = libgnomeui file-chooser glade images demos test-gnome doc po #tests
++SUBDIRS = libgnomeui file-chooser glade images demos doc po #tests
+ 
+ EXTRA_DIST = COPYING.LIB NEWS
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = config.h

@@ -1,5 +1,5 @@
---- src/daemon/io.c.orig	Tue Sep  9 09:51:15 2003
-+++ src/daemon/io.c	Tue Sep  9 10:07:10 2003
+--- src/daemon/io.c.orig	Sun Oct 19 12:54:32 2003
++++ src/daemon/io.c	Mon Dec  1 13:50:25 2003
 @@ -21,6 +21,7 @@
     Boston, MA 02111-1307, USA.
  */

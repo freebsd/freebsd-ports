@@ -1,9 +1,9 @@
---- Makefile.in.orig	Sat Jun 14 04:47:53 2003
-+++ Makefile.in	Sat Jun 14 04:48:13 2003
-@@ -192,7 +192,7 @@
- sharedstatedir = @sharedstatedir@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
+--- Makefile.in.orig	Fri Jan 16 13:17:47 2004
++++ Makefile.in	Fri Jan 16 13:18:13 2004
+@@ -146,7 +146,7 @@
+ am__quote = @am__quote@
+ gnomelocaledir = @gnomelocaledir@
+ install_sh = @install_sh@
 -SUBDIRS = bonobo glade samples tests po doc
 +SUBDIRS = bonobo glade samples po doc
  

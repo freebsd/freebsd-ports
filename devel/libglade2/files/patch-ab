@@ -1,20 +1,29 @@
---- Makefile.in.orig	Wed Apr  3 01:58:07 2002
-+++ Makefile.in	Wed Apr  3 01:59:13 2002
-@@ -34,7 +34,7 @@
- includedir = @includedir@
- oldincludedir = /usr/include
+--- Makefile.in.orig	Wed Jan 14 17:20:11 2004
++++ Makefile.in	Wed Jan 14 17:23:52 2004
+@@ -18,7 +18,7 @@
+ top_srcdir = @top_srcdir@
+ VPATH = @srcdir@
  pkgdatadir = $(datadir)/@PACKAGE@
 -pkglibdir = $(libdir)/@PACKAGE@
 +pkglibdir = $(prefix)/libdata/pkgconfig
  pkgincludedir = $(includedir)/@PACKAGE@
  top_builddir = .
  
-@@ -104,7 +104,7 @@
- am__include = @am__include@
- am__quote = @am__quote@
- install_sh = @install_sh@
+@@ -169,7 +169,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
 -SUBDIRS = glade doc tests
 +SUBDIRS = glade doc
  
  INCLUDES = $(LIBGLADE_CFLAGS)
  
+@@ -188,7 +188,7 @@
+ 
+ 
+ # handling of the XML catalog
+-XMLCATALOG = /etc/xml/catalog
++XMLCATALOG = $(LOCALBASE)/share/xml/catalog.ports
+ 
+ xmldir = $(datadir)/xml/libglade
+ xml_DATA = glade-2.0.dtd

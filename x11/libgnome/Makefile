@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	libgnome
-PORTVERSION=	2.4.0
-PORTREVISION=	4
+PORTVERSION=	2.6.0
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.4
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.6
 DIST_SUBDIR=	gnome2
 
 MAINTAINER?=	gnome@FreeBSD.org
@@ -23,7 +22,8 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier esound gnomevfs2 libxslt
+USE_GNOME=	gnomeprefix gnomehack gnomehier intlhack esound gnomevfs2 \
+		libxslt
 USE_BISON=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=13

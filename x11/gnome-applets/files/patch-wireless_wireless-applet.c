@@ -1,5 +1,5 @@
---- wireless/wireless-applet.c.orig	Mon Oct 27 15:52:14 2003
-+++ wireless/wireless-applet.c	Fri Jan 16 16:47:14 2004
+--- wireless/wireless-applet.c.orig	Tue Oct 21 19:06:53 2003
++++ wireless/wireless-applet.c	Sat Jan  3 19:26:43 2004
 @@ -30,6 +30,15 @@
  #include <math.h>
  #include <dirent.h>
@@ -72,7 +72,7 @@
  
  	wireless_applet_draw (applet, percent);
  }
-@@ -235,22 +260,180 @@
+@@ -235,22 +260,179 @@
  	}
  }
  
@@ -116,7 +116,7 @@
 +static void
 +get_wi_data (WirelessApplet *applet, char *device, long int *level)
 +{
-+	struct wi_req	wreq;
++    	struct wi_req wreq;
 +	long int signal_strength;
 +
 +	bzero((char *)&wreq, sizeof(wreq));
@@ -156,9 +156,9 @@
 +
 +	if (ioctl(s, SIOCGAIRONET, &ifr) == -1) {
 +		gtk_tooltips_set_tip (applet->tips,
-+			GTK_WIDGET (applet),
-+			"ioctl Error",
-+			NULL);
++				GTK_WIDGET (applet),
++				"ioctl Error",
++				NULL);
 +		return 0;
 +	}
 +
@@ -169,7 +169,7 @@
 +static void
 +get_an_data (WirelessApplet *applet, char *device, long int *level)
 +{
-+	struct an_req	areq;
++    	struct an_req areq;
 +	struct an_ltv_status *sts;
 +#ifdef AN_RID_RSSI_MAP
 +	struct an_ltv_rssi_map an_rssimap;
@@ -192,13 +192,13 @@
 +#ifdef AN_RID_RSSI_MAP
 +	if (rssimap_valid)
 +	    signal_strength = (long int)(an_rssimap.an_entries[
-+	    	    sts->an_normalized_strength].an_rss_pct);
++		    sts->an_normalized_strength].an_rss_pct);
 +	else
 +	    signal_strength = (long int)(sts->an_normalized_strength);
 +#else
 +	signal_strength = (long int)(sts->an_normalized_rssi);
 +#endif
-+
++	
 +	memcpy(level, &signal_strength, sizeof(level));
 +}
 +#endif
@@ -230,14 +230,14 @@
  	/* Here we begin to suck... */
  	do {
 +#ifdef __FreeBSD__
-+		if (ifs == NULL || ifs->if_name == NULL) {
++	    	if (ifs == NULL || ifs->if_name == NULL) {
 +		    break;
 +		}
-+		strlcpy(device, ifs->if_name, 6);
++	    	strlcpy(device, ifs->if_name, 6);
 +		if (g_strncasecmp(device, "an", 2)==0) {
 +			applet->devices = g_list_prepend (applet->devices, g_strdup (device));
 +			if (g_strcasecmp(applet->device, device)==0) {
-+				get_an_data(applet, device, &level);
++		    		get_an_data(applet, device, &level);
 +				wireless_applet_update_state (applet, device, 0, level, 0);
 +			}
 +		}
@@ -245,17 +245,16 @@
 +		if (g_strncasecmp(device, "wi", 2)==0 || g_strncasecmp(device, "ath", 3)==0) {
 +			applet->devices = g_list_prepend (applet->devices, g_strdup (device));
 +			if (g_strcasecmp(applet->device, device)==0) {
-+				get_wi_data(applet, device, &level);
++		    		get_wi_data(applet, device, &level);
 +				wireless_applet_update_state (applet, device, 0, level, 0);
 +			}
 +		}
 +		ifs++;
 +#else
-+
  		char *ptr;
  
  		fgets (line, 256, applet->file);
-@@ -283,6 +466,7 @@
+@@ -283,6 +465,7 @@
  				wireless_applet_update_state (applet, device, link, level, noise);
  			}
  		}
@@ -263,7 +262,7 @@
  	} while (1);
  
  	if (g_list_length (applet->devices)==1) {
-@@ -294,17 +478,23 @@
+@@ -294,17 +477,23 @@
  	}
  
  	/* rewind the /proc/net/wireless file */
@@ -287,7 +286,7 @@
  
  	wireless_applet_read_device_state (applet);
  
-@@ -351,6 +541,7 @@
+@@ -351,6 +540,7 @@
  static void
  start_file_read (WirelessApplet *applet)
  {
@@ -295,7 +294,7 @@
  	applet->file = fopen ("/proc/net/wireless", "rt");
  	if (applet->file == NULL) {
  		gtk_tooltips_set_tip (applet->tips,
-@@ -359,6 +550,7 @@
+@@ -359,6 +549,7 @@
  				NULL);
  		show_error_dialog (_("There doesn't seem to be any wireless devices configured on your system.\nPlease verify your configuration if you think this is incorrect."));
  	}
@@ -303,7 +302,7 @@
  }
  
  static void
-@@ -646,8 +838,10 @@
+@@ -646,8 +837,10 @@
  		applet->prefs = NULL;
  	}
  

@@ -1,5 +1,5 @@
-Bonobo is a set of language and system independant CORBA interfaces
-for creating reusable components, controls and creating compound
-documents.
+Bonobo is a set of language- and system-independant CORBA interfaces
+for creating reusable components and controls, and for creating
+compound documents.
 
 WWW: http://www.gnome.org/

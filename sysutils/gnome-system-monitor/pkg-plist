@@ -13,6 +13,7 @@ share/gnome/help/gnome-system-monitor/C/figures/addColumn.png
 share/gnome/help/gnome-system-monitor/C/figures/changePriority.png
 share/gnome/help/gnome-system-monitor/C/figures/colorPanel.png
 share/gnome/help/gnome-system-monitor/C/figures/columnContextMenu.png
+share/gnome/help/gnome-system-monitor/C/figures/gnome-system-monitor_window.png
 share/gnome/help/gnome-system-monitor/C/figures/memoryMaps.png
 share/gnome/help/gnome-system-monitor/C/figures/moreInfo.png
 share/gnome/help/gnome-system-monitor/C/figures/processListing.png
@@ -38,6 +39,7 @@ share/locale/cy/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/da/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/de/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/el/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/en_CA/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/es/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/fa/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/fi/LC_MESSAGES/gnome-system-monitor.mo
@@ -46,12 +48,14 @@ share/locale/ga/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/gl/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/he/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/hi/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/hr/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/hu/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/id/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/it/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ja/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ko/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/li/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/lt/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/lv/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/mk/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ml/LC_MESSAGES/gnome-system-monitor.mo
@@ -70,6 +74,7 @@ share/locale/sr/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/sr@Latn/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/sv/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/sq/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/ta/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/tr/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/uk/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/vi/LC_MESSAGES/gnome-system-monitor.mo

@@ -1,11 +1,11 @@
---- docs/reference/Makefile.in	2000/11/20 09:49:25	1.1
-+++ docs/reference/Makefile.in	2000/11/20 09:50:55
-@@ -106,7 +106,7 @@
- STRIP_END = @STRIP_END@
- VERSION = @VERSION@
- 
+--- docs/reference/Makefile.in.orig	Fri Oct 24 18:05:32 2003
++++ docs/reference/Makefile.in	Fri Oct 24 18:06:00 2003
+@@ -226,7 +226,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
 -SUBDIRS = glib gobject
 +SUBDIRS = #glib gobject
+ subdir = docs/reference
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = ../../config.h
- CONFIG_CLEAN_FILES = 
+ CONFIG_HEADER = $(top_builddir)/config.h

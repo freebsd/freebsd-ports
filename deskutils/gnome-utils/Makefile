@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	gnomeutils2
-PORTVERSION=	2.4.1
-PORTREVISION=	1
+PORTVERSION=	2.6.0
 PORTEPOCH=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-utils/2.4
+MASTER_SITE_SUBDIR=	sources/gnome-utils/2.6
 DISTNAME=	gnome-utils-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -20,10 +19,11 @@ COMMENT=	GNOME 2 support utilities
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNOME_DESKTOP_VERSION=2
-USE_GNOME=	gnomeprefix gnomehack gnomehier gnomepanel
-USE_LIBTOOL_VER=	13
+USE_GNOME=	gnomeprefix gnomehack lthack intlhack gnomehier gnomepanel
+USE_LIBTOOL_VER=13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

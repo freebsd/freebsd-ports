@@ -1,6 +1,15 @@
---- configure.orig	Sat Sep 27 14:13:57 2003
-+++ configure	Sat Sep 27 14:18:37 2003
-@@ -8173,7 +8173,7 @@
+--- configure.orig	Thu Feb 26 14:03:31 2004
++++ configure	Thu Feb 26 14:03:31 2004
+@@ -21858,7 +21858,7 @@
+ 
+ 
+   EXP_VAR=LOCALEDIR
+-  FROM_VAR=$datadir/locale
++  FROM_VAR=$prefix/share/locale
+ 
+     prefix_save=$prefix
+   exec_prefix_save=$exec_prefix
+@@ -21961,7 +21961,7 @@
  echo $ECHO_N "checking to see if compiler understands -Werror... $ECHO_C" >&6
  
    save_CFLAGS="$CFLAGS"
@@ -8,8 +17,8 @@
 +  CFLAGS="$CFLAGS"
  
    cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
-@@ -8214,7 +8214,7 @@
+ /* confdefs.h.  */
+@@ -22011,7 +22011,7 @@
    CFLAGS="$save_CFLAGS"
  
    if test "X$flag_ok" = Xyes ; then
@@ -17,13 +26,4 @@
 +    GST_ERROR="$GST_ERROR"
      true
    else
- 
-@@ -9607,7 +9607,7 @@
-     :
- fi
- 
--if test "$ac_cv_check_mcsc" == "yes"; then
-+if test "$ac_cv_check_mcsc" = "yes"; then
- 
- cat >>confdefs.h <<_ACEOF
- #define HAVE_MAKECONTEXT $HAVE_MAKECONTEXT
+     GST_ERROR="$GST_ERROR"

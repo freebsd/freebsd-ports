@@ -1,14 +1,14 @@
---- lib/read.c.orig	Fri May  7 07:09:24 1999
-+++ lib/read.c	Tue Sep  9 10:02:54 2003
-@@ -21,6 +21,7 @@
-    Boston, MA 02111-1307, USA.
+--- lib/read.c.orig	Mon Oct 20 11:19:41 2003
++++ lib/read.c	Fri Nov 14 14:37:00 2003
+@@ -22,6 +22,7 @@
  */
  
+ #include <config.h>
 +#include <errno.h>
  #include <glibtop/read.h>
+ #include <libgnome/gnome-i18n.h>
  
- /* Reads some data from server. */
-@@ -65,12 +66,16 @@
+@@ -68,12 +69,16 @@
  	fprintf (stderr, "LIBRARY: really reading %d bytes.\n", size);
  #endif
  

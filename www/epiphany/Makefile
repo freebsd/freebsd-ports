@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	epiphany
-PORTVERSION=	1.0.8
+PORTVERSION=	1.2.2
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.0
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -27,10 +27,10 @@ HEADERS_SUFX=
 MOZILLA=	mozilla
 HEADERS_SUFX=
 .else
-.if ${WITH_MOZILLA}=="mozilla-devel-gtk2" || ${WITH_MOZILLA}=="mozilla-devel"
+.if ${WITH_MOZILLA}=="mozilla-devel" || ${WITH_MOZILLA}=="mozilla-devel-gtk2"
 MOZILLA=	mozilla-devel
 HEADERS_SUFX=	-devel
-MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="trunk"
+MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.7b"
 .else
 MOZILLA=	mozilla
 HEADERS_SUFX=
@@ -39,7 +39,7 @@ HEADERS_SUFX=
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui
+USE_GNOME=	gnomeprefix gnomehack intlhack lthack libgnomeui
 WANT_GNOME=	yes
 USE_LIBTOOL_VER=13
 USE_GMAKE=	yes
@@ -53,6 +53,13 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_C
 FLASHPLAYER=	${LOCALBASE}/lib/libflashplayer.so.1
 XXX_FILES=	EphyAutomation-common.c EphyAutomation-stubs.c \
 	   	EphyAutomation-skels.c EphyAutomation.h
+PLIST_SUB+=	EPHY_VERSION="${PORTVERSION:C/\.[0-9]+$//}"
+
+.if defined(PACKAGE_BUILDING) || defined(PARALLEL_PACKAGE_BUILD)
+.undef WITHOUT_GNOME
+.undef WITHOUT_ALL
+WITH_GNOME=	yes
+.endif
 
 .include <bsd.port.pre.mk>
 

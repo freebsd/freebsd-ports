@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	gnomenetstatus
-PORTVERSION=	0.13
-PORTREVISION=	1
+PORTVERSION=	2.6.0.1
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-netstatus/0.13
+MASTER_SITE_SUBDIR=	sources/gnome-netstatus/2.6
 DISTNAME=	gnome-netstatus-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
