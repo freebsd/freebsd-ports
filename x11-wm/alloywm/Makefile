@@ -18,11 +18,13 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
 WANT_GNOME=	yes
+USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i'' -E
 SCRIPTS=	${WRKSRC}/scriptdir
 
 pre-configure:
 	${FIND} ${WRKSRC} \( -name '*.in' -or -name configure \) -exec \
-		${PERL} -pi -e 's:bash:sh:g ; \
+		${REINPLACE_CMD} 's:bash:sh:g ; \
 		s:gtk-config:${GTK_CONFIG}:g' {} \;
 	${RM} -f ${WRKSRC}/*/Makefile
 	${CHMOD} +x ${WRKSRC}/configure
@@ -39,9 +41,9 @@ do-build:
 
 pre-install:
 	cd ${WRKSRC} && ${FIND} * -type f -perm 755 | cut -f 2 -d / | \
-		${PERL} -pi -e "s:^:bin/:g" > ${PLIST}
+		${SED} "s:^:bin/:g" > ${PLIST}
 	${FIND} ${SCRIPTS} \! -name '*in' -type f | \
-		${PERL} -pi -e "s:^${SCRIPTS}:bin:g" >> ${PLIST}
+		${SED} "s:^${SCRIPTS}:bin:g" >> ${PLIST}
 .if !defined(NOPORTDOCS)
 .for i in Changelog README
 	${ECHO_CMD} share/doc/alloywm/${i} >> ${PLIST}
