@@ -1,3 +1,8 @@
+%%PORTDOCS%%share/doc/martel/HISTORY
+%%PORTDOCS%%share/doc/martel/README
+%%PORTDOCS%%share/doc/martel/intro.txt
+%%PORTDOCS%%share/doc/martel/tech_description.txt
+%%PORTDOCS%%share/doc/martel/writing_a_format.txt
 lib/%%PYTHON_VERSION%%/site-packages/Martel/Expression.py
 lib/%%PYTHON_VERSION%%/site-packages/Martel/Expression.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Martel/Expression.pyo
@@ -172,3 +177,4 @@ share/examples/martel/toxml.pyo
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Martel/test
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Martel/formats
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Martel
+%%PORTDOCS%%@dirrm share/doc/martel
