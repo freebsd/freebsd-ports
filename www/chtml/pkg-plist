@@ -1,0 +1,7 @@
+man/man1/chtml.1
+lib/libchtml.a
+bin/chtml
+include/chtml.h
+lib/siod/chtml.scm
+lib/siod/chtml-cmp.c-bin
+lib/perl5/site_perl/chtml.pl
