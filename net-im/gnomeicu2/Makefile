@@ -3,7 +3,7 @@
 # Date created:				03/16/1999
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.7 1999/03/18 22:32:38 nectar Exp $
+# $Id: Makefile,v 1.8 1999/03/19 22:29:54 asami Exp $
 #
 
 DISTNAME=		gnomeicu-0.62a
@@ -13,7 +13,7 @@ MASTER_SITES=		ftp://gnomeicu.gdev.net/pub/gnomeicu/          \
 
 MAINTAINER=		nectar@FreeBSD.ORG
 
-LIB_DEPENDS=		gnome.1:${PORTSDIR}/x11/gnomelibs              \
+LIB_DEPENDS=		panel_applet.1:${PORTSDIR}/x11/gnomecore       \
 			gdk_imlib.3:${PORTSDIR}/graphics/imlib
 
 USE_X_PREFIX=		YES
