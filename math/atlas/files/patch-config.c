@@ -1,5 +1,5 @@
 --- config.c.orig	Sun May  4 06:09:23 2003
-+++ config.c	Tue Jun 10 13:12:30 2003
++++ config.c	Wed Jun 11 12:01:08 2003
 @@ -697,7 +697,7 @@
           else if (mach == IA64Itan || MachIsUS(mach) ||
                    mach == Dec21164 || mach == Dec21264)
@@ -15,12 +15,24 @@
     case OSOSX:  /* don't know answer */
 -   case OSFreeBSD:  /* don't know answer */
 +   case OSFreeBSD:
-+     if (THREADS) strcpy(LIBS, "-pthread -lm");
++     if (THREADS) strcpy(LIBS, "%%PTHREAD_LIBS%% -lm");
 +     break;
     case OSLinux:
        break;
     case OSSunOS:
-@@ -2104,7 +2106,10 @@
+@@ -1240,6 +1242,11 @@
+                "-mcpu=ultrasparc -mtune=ultrasparc -fomit-frame-pointer -O3");
+       }
+       if (OS == OSFreeBSD && F77) strcpy(F77, "f77");
++      if (OS == OSFreeBSD && THREADS) { 
++              strcat(F77FLAGS, "%%PTHREAD_CFLAGS%%");
++              strcat(CCFLAGS, "%%PTHREAD_CFLAGS%%");
++              strcat(MMFLAGS, "%%PTHREAD_CFLAGS%%");
++     }
+       break;
+    case OSSunOS:
+       np = 3;
+@@ -2104,7 +2111,10 @@
           if (!CmndOneLine(targ, "sysctl hw.model", ln))
           {
              if (strstr(ln, "433au")) mach = Dec21164;
@@ -31,7 +43,7 @@
           }
           break;
        case LAIA64: /* don't know */
-@@ -2113,14 +2118,22 @@
+@@ -2113,14 +2123,22 @@
           if (!CmndOneLine(targ, "sysctl hw.model", ln))
           {
              if (strstr(ln, "Pentium Pro")) mach = IntPPRO;
@@ -54,7 +66,7 @@
           }
           break;
        default:;
-@@ -3124,6 +3137,9 @@
+@@ -3124,6 +3142,9 @@
     }
     if (USEWINF77) strcpy(F77, "$(BINdir)/winf77.exe");
  
