@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Digest-SHA1
-PORTVERSION=	2.04
+PORTVERSION=	2.05
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Digest
@@ -17,7 +17,6 @@ COMMENT=	Perl interface to the SHA-1 Algorithm
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Digest::SHA1.3
 
 .include <bsd.port.mk>
