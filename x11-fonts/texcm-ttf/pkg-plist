@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+%%FONTSDIR%%/fonts.dir
+%%FONTSDIR%%/fonts.scale
+%%FONTSDIR%%/cmsy10.ttf
+%%FONTSDIR%%/cmr10.ttf
+%%FONTSDIR%%/cmmi10.ttf
+%%FONTSDIR%%/cmex10.ttf
+%%FONTSDIR%%/license.txt
+@unexec rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || true
+@dirrm %%FONTSDIR%%

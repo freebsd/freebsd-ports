@@ -1,0 +1,6 @@
+TeX's Computer Modern Fonts, to be used for example with a Xft enabled
+version of Mozilla or Firefox, in order to display MathML webpages.
+
+With this port, you should also install the port x11-fonts/mathfonts.
+
+WWW: http://www.mozilla.org/projects/mathml/fonts/
