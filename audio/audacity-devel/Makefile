@@ -6,18 +6,18 @@
 
 PORTNAME=	audacity
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}-2
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	arved@FreeBSD.org
-COMMENT=	"Audacity is a GUI editor for digital audio waveforms"
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Audacity is a GUI editor for digital audio waveforms
 
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	wx_gtk-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk-devel \
+LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2 \
 		mad.1:${PORTSDIR}/audio/mad
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
@@ -27,7 +27,8 @@ USE_X_PREFIX=	yes
 AUDACITY_HELP_DIR=	${PREFIX}/share/doc/audacity
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		CFLAGS="-DAUDACITY_HELP_DIR=${AUDACITY_HELP_DIR} ${PTHREAD_CFLAGS}"
+		CFLAGS="-DAUDACITY_HELP_DIR=${AUDACITY_HELP_DIR} ${PTHREAD_CFLAGS}" \
+		WX_CONFIG=${X11BASE}/bin/wxgtk2-2.4-config
 CONFIGURE_ARGS+=	--with-id3=no --with-libmad=yes
 
 .include <bsd.port.pre.mk>
@@ -44,7 +45,7 @@ LIB_DEPENDS+=	vorbis.2:${PORTSDIR}/audio/libvorbis
 
 pre-everything::
 .if !defined(WITHOUT_VORBIS)
-	@${ECHO_MSG} "You can disable support for vorbis by defining WITHOUT_VORBIS.MSG."
+	@${ECHO_MSG} "You can disable support for vorbis by defining WITHOUT_VORBIS."
 .endif
 .if !defined(WITH_ARTS)
 	@${ECHO_MSG} "You can use artsd instead of OSS for output by defining WITH_ARTS."
