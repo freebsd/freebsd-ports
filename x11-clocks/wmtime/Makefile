@@ -3,11 +3,11 @@
 # Date created:        1 July 1998
 # Whom:                Rich Neswold <rneswold@mcs.net>
 #
-# $Id: Makefile,v 1.4 1998/09/17 00:32:54 asami Exp $
+# $Id: Makefile,v 1.5 1998/09/21 21:23:41 steve Exp $
 #
 
 DISTNAME=	wmtime-1.0b2
-CATEGORIES=	x11-clock
+CATEGORIES=	x11-clocks
 MASTER_SITES=	ftp://ftp.mezaway.org/pub/
 
 MAINTAINER=	rneswold@mcs.net
