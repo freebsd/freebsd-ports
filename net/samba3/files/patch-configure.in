@@ -1,0 +1,11 @@
+--- configure.in.orig	Sat Jan 31 04:40:54 2004
++++ configure.in	Sat Jan 31 04:43:23 2004
+@@ -4037,6 +4037,8 @@
+ 		# the Linux version.
+ 		WINBIND_NSS_EXTRA_OBJS="nsswitch/winbind_nss_freebsd.o \
+ 		    nsswitch/winbind_nss_linux.o"
++		WINBIND_NSS="nsswitch/nss_winbind.$SHLIBEXT"
++		WINBIND_WINS_NSS="nsswitch/nss_wins.$SHLIBEXT"
+ 		;;
+ 	*irix*)
+ 		# IRIX has differently named shared libraries
