@@ -1,6 +1,5 @@
 bin/metacity
 bin/metacity-message
-bin/metacity-properties
 bin/metacity-theme-viewer
 bin/metacity-window-demo
 etc/gconf/gconf.xml.defaults/apps/metacity/%gconf.xml
@@ -8,14 +7,25 @@ etc/gconf/gconf.xml.defaults/apps/metacity/general/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/metacity/global_keybindings/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/metacity/keybinding_commands/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/metacity/window_keybindings/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/metacity/workspace_names/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/metacity/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/metacity/general/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/metacity/global_keybindings/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/metacity/keybinding_commands/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/metacity/window_keybindings/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/metacity/workspace_names/%gconf.xml
 etc/gconf/schemas/metacity.schemas
+include/metacity-1/metacity-private/common.h
+include/metacity-1/metacity-private/gradient.h
+include/metacity-1/metacity-private/preview-widget.h
+include/metacity-1/metacity-private/theme-parser.h
+include/metacity-1/metacity-private/theme.h
+include/metacity-1/metacity-private/util.h
+lib/libmetacity-private.a
+lib/libmetacity-private.so
+lib/libmetacity-private.so.0
+libdata/pkgconfig/libmetacity-private.pc
 libexec/metacity-dialog
-share/gnome/control-center-2.0/capplets/metacity-properties.desktop
 share/gnome/metacity/glade/metacity-properties.glade
 share/gnome/metacity/icons/metacity-window-demo.png
 share/gnome/pixmaps/metacity-properties.png
@@ -41,6 +51,7 @@ share/gnome/themes/Crux/metacity-1/active-menu-button-prelight.png
 share/gnome/themes/Crux/metacity-1/active-menu-button-pressed.png
 share/gnome/themes/Crux/metacity-1/active-menu-button.png
 share/gnome/themes/Crux/metacity-1/active-minimize-button.png
+share/gnome/themes/Crux/metacity-1/active-restore-button.png
 share/gnome/themes/Crux/metacity-1/active-right-border.png
 share/gnome/themes/Crux/metacity-1/active-right-top-border-shaded.png
 share/gnome/themes/Crux/metacity-1/active-right-top-border.png
@@ -73,6 +84,7 @@ share/gnome/themes/Crux/metacity-1/inactive-menu-button-prelight.png
 share/gnome/themes/Crux/metacity-1/inactive-menu-button-pressed.png
 share/gnome/themes/Crux/metacity-1/inactive-menu-button.png
 share/gnome/themes/Crux/metacity-1/inactive-minimize-button.png
+share/gnome/themes/Crux/metacity-1/inactive-restore-button.png
 share/gnome/themes/Crux/metacity-1/inactive-right-border.png
 share/gnome/themes/Crux/metacity-1/inactive-right-top-border-shaded.png
 share/gnome/themes/Crux/metacity-1/inactive-right-top-border.png
@@ -101,20 +113,25 @@ share/gnome/themes/AgingGorilla/metacity-1/inactive-minimize-button.png
 share/gnome/themes/AgingGorilla/metacity-1/metacity-theme-1.xml
 share/gnome/themes/Metabox/metacity-1/metacity-theme-1.xml
 share/gnome/wm-properties/metacity.desktop
+share/locale/am/LC_MESSAGES/metacity.mo
 share/locale/az/LC_MESSAGES/metacity.mo
+share/locale/bg/LC_MESSAGES/metacity.mo
 share/locale/ca/LC_MESSAGES/metacity.mo
 share/locale/cs/LC_MESSAGES/metacity.mo
 share/locale/da/LC_MESSAGES/metacity.mo
 share/locale/de/LC_MESSAGES/metacity.mo
 share/locale/el/LC_MESSAGES/metacity.mo
 share/locale/es/LC_MESSAGES/metacity.mo
+share/locale/fi/LC_MESSAGES/metacity.mo
 share/locale/fr/LC_MESSAGES/metacity.mo
 share/locale/gl/LC_MESSAGES/metacity.mo
+share/locale/he/LC_MESSAGES/metacity.mo
 share/locale/hu/LC_MESSAGES/metacity.mo
 share/locale/it/LC_MESSAGES/metacity.mo
 share/locale/ja/LC_MESSAGES/metacity.mo
 share/locale/ko/LC_MESSAGES/metacity.mo
 share/locale/lv/LC_MESSAGES/metacity.mo
+share/locale/mk/LC_MESSAGES/metacity.mo
 share/locale/ms/LC_MESSAGES/metacity.mo
 share/locale/no/LC_MESSAGES/metacity.mo
 share/locale/pl/LC_MESSAGES/metacity.mo
@@ -145,11 +162,15 @@ share/locale/zh_TW/LC_MESSAGES/metacity.mo
 @dirrm share/gnome/metacity/icons
 @dirrm share/gnome/metacity/glade
 @dirrm share/gnome/metacity
+@dirrm include/metacity-1/metacity-private
+@dirrm include/metacity-1
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/metacity/workspace_names
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/metacity/window_keybindings
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/metacity/keybinding_commands
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/metacity/global_keybindings
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/metacity/general
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/metacity
+@dirrm etc/gconf/gconf.xml.defaults/apps/metacity/workspace_names
 @dirrm etc/gconf/gconf.xml.defaults/apps/metacity/window_keybindings
 @dirrm etc/gconf/gconf.xml.defaults/apps/metacity/keybinding_commands
 @dirrm etc/gconf/gconf.xml.defaults/apps/metacity/global_keybindings

@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	metacity
-PORTVERSION=	2.4.3
+PORTVERSION=	2.4.13
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/metacity/2.4
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.4
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20 \
-		gconf-2:${PORTSDIR}/devel/gconf2 \
+LIB_DEPENDS=	gconf-2:${PORTSDIR}/devel/gconf2 \
+		startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
 		glade-2.0.0:${PORTSDIR}/devel/libglade2
 
 USE_BZIP2=	yes
