@@ -8,6 +8,7 @@
     SUBDIR += libsvm
     SUBDIR += mayavi
     SUBDIR += mpqc
+    SUBDIR += oases
     SUBDIR += p5-Chemistry-Elements
     SUBDIR += vis5d+
     SUBDIR += xmakemol
