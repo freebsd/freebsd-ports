@@ -16,11 +16,13 @@ EXTRACT_SUFX=	.tgz
 PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	flathill
 PATCHFILES=	${DISTNAME}-jp.patch
-PATCH_DIST_STRIP= -p1
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	flathill@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
+
+FORBIDDEN=	"ftp://ftp.FreeBSD.org/pub/FreeBSD/CERT/advisories/FreeBSD-SA-01:14.micq.asc "
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/micq ${PREFIX}/bin
