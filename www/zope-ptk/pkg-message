@@ -1,11 +1,15 @@
-Zope-PTK
+Zope-CMF
 
-        This port has placed a PTK demo in your Zope import
-        directory %%PREFIX%%/Zope/import/ with the following file:
+	To complete the installation of the Zope Content Management
+	Framework (CMF):
 
-        DemoPortal.zexp
+	- Restart Zope.  This may be done from the Zope Control Panel.
 
-        This is a demo.  You can't add the demo as the Zope superuser;
-        add it as your Zope user instead.  The demo is not required for
-        use of Zope-PTK.
+	- Verify that the three CMF products loaded properly by examining
+	  them in Control_Panel/Products.
+
+	You may now create a "CMF Site" object.  For further installation and
+	troubleshooting instructions, see:
+
+	  http://cmf.zope.org/download/CMF-1.1/README.txt
 
