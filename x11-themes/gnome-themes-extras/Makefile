@@ -25,8 +25,6 @@ USE_GNOME=	gnomehack libgnomeui intlhack
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-CONFLICTS=	gtk-smooth-engine-*
-
 PLIST_SUB=	GTK_VERSION="2.4.0"
 
 post-patch:
