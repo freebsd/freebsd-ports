@@ -13,20 +13,11 @@ MASTER_SITES=  \
 	ftp://www.unimelb.edu.au/pub/cwis/servers/unix/squid/squid-2/STABLE/ \
 	ftp://sunsite.auc.dk/pub/infosystems/squid/squid-2/STABLE/ \
 	ftp://ftp.net.lut.ac.uk/squid/squid-2/STABLE/
-DISTNAME=	squid-2.3.STABLE2
+DISTNAME=	squid-2.3.STABLE3
 EXTRACT_SUFX=	-src.tar.gz
 
-PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.3/bugs/
-PATCHFILES=	squid-2.3.stable2-EOF_in_cf.data.pre.patch \
-		squid-2.3.stable2-USE_DNSSERVER.patch \
-		squid-2.3.stable2-USE_DNSSERVER_part2.patch \
-		squid-2.3.stable2-hostname_whitespace.patch \
-		squid-2.3.stable2-netdb_exchange_loop.patch \
-		squid-2.3.stable2-getMyHostname.patch \
-		squid-2.3.stable2-redirected_username_logging.patch \
-		squid-2.3.stable2-snmp-problems.patch \
-		squid-2.3.stable2-getpwnam_return_value.patch \
-		squid-2.3.stable2-mimeGetIconURL_returns_NULL.patch
+#PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.3/bugs/
+#PATCHFILES=	
 
 MAINTAINER=	peter@freebsd.org
 
