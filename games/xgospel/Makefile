@@ -20,6 +20,12 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--with-x --with-xpm --with-xaw3d
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/relay ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/rport ${PREFIX}/bin
@@ -33,4 +39,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -17,10 +17,16 @@ COMMENT=	Knife on X
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/xbloody
 	@${INSTALL_DATA} ${WRKSRC}/README.sjis ${PREFIX}/share/doc/xbloody
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

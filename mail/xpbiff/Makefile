@@ -28,6 +28,12 @@ YOUBINBINDIR=	${PREFIX}
 YOUBINBINDIR=	${LOCALBASE}
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
@@ -56,4 +62,4 @@ post-patch:
 	@${MV} ${WRKSRC}/config.h ${WRKSRC}/config.h.org
 	@${SED} "s=%YOUBINBINDIR%=${YOUBINBINDIR}/bin=" < ${WRKSRC}/config.h.org > ${WRKSRC}/config.h
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
