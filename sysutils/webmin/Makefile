@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.100
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -25,7 +25,9 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
-WEBMIN_MODULES=	dhcpd-1.100-1.wbm.gz \
+WEBMIN_MODULES=	apache-1.100-1.wbm.gz \
+		dhcpd-1.100-1.wbm.gz \
+		file-1.100-1.wbm.gz \
 		mysql-1.100-1.wbm.gz
 
 WEBMIN_THEMES=
