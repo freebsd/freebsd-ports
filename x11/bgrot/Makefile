@@ -9,7 +9,7 @@ PORTNAME=	bgrot
 PORTVERSION=	1.30
 CATEGORIES=	x11
 MASTER_SITES=	http://www.over-yonder.net/~fullermd/projects/bgrot/ \
-		http://www.linc-it.com/~matt.fuller/mirrors/bgrot/
+		http://www.linc-it.com/~fullermd/distfiles/
 
 MAINTAINER=	fullermd@over-yonder.net
 COMMENT=	A program to handle your X background to prevent boredom
