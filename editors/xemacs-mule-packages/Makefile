@@ -23,12 +23,12 @@ DISTFILES=	\
 		mule-base-1.32-pkg.tar.gz	locale-1.14-pkg.tar.gz \
 		apel-1.15-pkg.tar.gz 		mew-1.08-pkg.tar.gz \
 		skk-1.14-pkg.tar.gz		elib-1.05-pkg.tar.gz \
-		egg-its-1.20-pkg.tar.gz
-#		ps-print-ja-1.01-pkg.tar.gz
+		egg-its-1.20-pkg.tar.gz		ps-print-ja-1.01-pkg.tar.gz
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
 
 DIST_SUBDIR=	xemacs
+MASTER_SITE_SUBDIR=${DIST_SUBDIR}
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
