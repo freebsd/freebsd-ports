@@ -28,7 +28,7 @@ pref("network.search.url","http://cgi.netscape.com/cgi-bin/url_search.cgi?search
 pref("keyword.URL", "http://keyword.netscape.com/keyword/");
 pref("keyword.enabled", true);
 pref("general.useragent.locale", "chrome://navigator/locale/navigator.properties");
-pref("general.useragent.misc", "rv:0.9.1");
+pref("general.useragent.misc", "rv:0.9.2");
 
 pref("general.startup.browser",             true);
 pref("general.startup.mail",                false);
@@ -52,13 +52,14 @@ pref("browser.cache.enable",                true);
 pref("browser.cache.disk.enable",           true);
 pref("browser.cache.memory_cache_size",     4096);
 pref("browser.cache.disk_cache_ssl",        false);
-pref("browser.cache.check_doc_frequency",   0);
+// 0 = once-per-session, 1 = each-time, 2 = never, 3 = when-appropriate/automatically
+pref("browser.cache.check_doc_frequency",   3);
 
 pref("browser.display.use_document_fonts",  1);  // 0 = never, 1 = quick, 2 = always
 pref("browser.display.use_document_colors", true);
-pref("browser.display.use_system_colors",true);
+pref("browser.display.use_system_colors",   false);
 pref("browser.display.foreground_color",    "#000000");
-pref("browser.display.background_color",    "#C0C0C0");
+pref("browser.display.background_color",    "#FFFFFF");
 pref("browser.anchor_color",                "#0000EE");
 pref("browser.visited_color",               "#551A8B");
 pref("browser.underline_anchors",           true);
@@ -79,6 +80,8 @@ pref("browser.toolbars.showbutton.mynetscape", true);
 pref("browser.toolbars.showbutton.net2phone", true);
 pref("browser.toolbars.showbutton.print",   true);
 pref("browser.toolbars.showbutton.search",  true);
+
+pref("browser.helperApps.alwaysAsk.force",  false);
 
 pref("accessibility.browsewithcaret", false);
 pref("accessibility.usetexttospeech", "");
@@ -120,6 +123,9 @@ pref("browser.target_new_blocked", false);
 
 // loading and rendering of framesets and iframes
 pref("browser.frames.enabled", true);
+
+// form submission
+pref("browser.forms.submit.backwards_compatible", true);
 
 // view source
 pref("view_source.syntax_highlight", true);
@@ -275,8 +281,10 @@ pref("network.http.keep-alive.max-connections-per-server", 8);
 pref("network.http.connect.timeout",  30);	// in seconds
 pref("network.http.request.timeout", 120);	// in seconds
 
-// Accept header
+// Headers
 pref("network.http.accept.default", "text/xml, application/xml, application/xhtml+xml, text/html;q=0.9, image/png, image/jpeg, image/gif;q=0.2, text/plain;q=0.8, text/css, */*;q=0.1");
+
+pref("network.http.sendRefererHeader",      2); // 0=don't send any, 1=send only on clicks, 2=send on image requests as well
 
 // Enable http compression: comment this out in case of problems with 1.1
 pref("network.http.accept-encoding" ,"gzip,deflate,compress,identity");
@@ -334,7 +342,6 @@ pref("network.foreign_cookies",             0); // 0 = Accept, 1 = Don't accept
 pref("network.cookie.cookieBehavior",       0); // 0-Accept, 1-dontAcceptForeign, 2-dontUse
 pref("network.cookie.warnAboutCookies",     false);
 pref("signon.rememberSignons",              true);
-pref("network.sendRefererHeader",           2); // 0=don't send any, 1=send only on clicks, 2=send on image requests as well
 pref("network.enablePad",                   false); // Allow client to do proxy autodiscovery
 pref("converter.html2txt.structs",          true); // Output structured phrases (strong, em, code, sub, sup, b, i, u)
 pref("converter.html2txt.header_strategy",  1); // 0 = no indention; 1 = indention, increased with header level; 2 = numbering and slight indention
@@ -346,6 +353,12 @@ pref("wallet.Samples",                      "chrome://navigator/locale/navigator
 pref("wallet.version",                      "1");
 pref("wallet.enabled",                      true);
 pref("wallet.crypto",                       false);
+pref("wallet.namePanel.hide",               false);
+pref("wallet.addressPanel.hide",            false);
+pref("wallet.phonePanel.hide",              false);
+pref("wallet.creditPanel.hide",             false);
+pref("wallet.employPanel.hide",             false);
+pref("wallet.miscPanel.hide",               false);
 pref("imageblocker.enabled",                true);
 pref("intl.accept_languages",               "chrome://navigator/locale/navigator.properties");
 pref("intl.accept_charsets",                "iso-8859-1,*,utf-8");
