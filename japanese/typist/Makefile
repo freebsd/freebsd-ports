@@ -3,7 +3,7 @@
 # Date created:			26 May 1997
 # Whom:				Satoshi TAOKA
 #
-# $Id: Makefile,v 1.1.1.1 1997/06/24 05:29:02 max Exp $
+# $Id: Makefile,v 1.2 1997/09/14 21:36:12 max Exp $
 #
 
 DISTNAME=	typist2.0
@@ -12,7 +12,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	ftp://tuba.csedu.kobe-u.ac.jp/pub/UNIX/
 EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	taoka@infonets.hiroshima-u.ac.jp
+MAINTAINER=	taoka@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAN1=		typist.1

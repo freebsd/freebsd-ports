@@ -1,9 +1,9 @@
 # New ports collection makefile for:	Wnn6
 # Version required:	97.6.6
 # Date created:		15 July 1997
-# Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
+# Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.21 1998/12/31 22:23:13 obrien Exp $
+# $Id: Makefile,v 1.22 1999/01/18 02:41:07 steve Exp $
 #
 
 DISTNAME=	OMRONWnn6
@@ -11,7 +11,7 @@ PKGNAME=	ja-Wnn6-97.6.6
 CATEGORIES=	japanese
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	taoka@infonets.hiroshima-u.ac.jp
+MAINTAINER=	taoka@FreeBSD.org
 
 IGNOREFILES=	${DISTFILES}
 WRKSRC=		${WRKDIR}

@@ -20,4 +20,4 @@ symbolic links are made:
 "/usr/local/lib/wnn6" to "${PKG_PREFIX}/OMRONWnn6/wnn6fbsd".
 
 - S. Taoka
-taoka@infonets.hiroshima-u.ac.jp
+taoka@FreeBSD.org

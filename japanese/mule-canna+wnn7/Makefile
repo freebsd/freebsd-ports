@@ -1,9 +1,9 @@
 # New ports collection makefile for:	mule 2.3@19.34 with Canna and Wnn6
 # Version required:	2.3@19.34
 # Date created:		7 July 1997
-# Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
+# Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.4 1998/12/01 01:05:15 asami Exp $
+# $Id: Makefile,v 1.5 1998/12/01 03:06:09 asami Exp $
 #
 
 PKGNAME=	ja-mule-canna+wnn6-2.3

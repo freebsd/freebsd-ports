@@ -1,9 +1,9 @@
 # New ports collection makefile for:    jvim3
 # Version required:     3.0-j1.3j
 # Date created:         98/11/17
-# Whom:                 Satoshi TAOKA <taoka@infonets.hiroshima-u.ac.jp>
+# Whom:                 Satoshi TAOKA <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.9 1999/02/03 11:11:48 asami Exp $
+# $Id: Makefile,v 1.10 1999/03/06 13:03:36 taoka Exp $
 #
 
 DISTNAME=	vim
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://dutepp0.et.tudelft.nl/pub/Unix/Editors/ \
 		http://hp.vector.co.jp/authors/VA003457/vim/vim3/1.3j/
 DISTFILES=	vim-3.0.tar.gz ${JPATCH}
 
-MAINTAINER=	taoka@infonets.hiroshima-u.ac.jp
+MAINTAINER=	taoka@FreeBSD.org
 
 USE_XLIB=	yes
 

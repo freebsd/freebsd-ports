@@ -3,7 +3,7 @@
 # Date created:		6 Jun 1997
 # Whom:			Satoshi TAOKA
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/07/01 22:06:10 max Exp $
 #
 
 DISTNAME=	xco
@@ -11,7 +11,7 @@ PKGNAME=	xco-1.3
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.cs.purdue.edu:/pub/bingle/
 
-MAINTAINER=	taoka@infonets.hiroshima-u.ac.jp
+MAINTAINER=	taoka@FreeBSD.org
 
 USE_IMAKE=	yes
 MAN1=		xco.1

@@ -1,9 +1,9 @@
 # New ports collection makefile for:	head files and libraries of Wnn6
 # Version required:	99.10.28
 # Date created:		11 July 1997
-# Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
+# Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.20 1998/06/27 05:18:58 asami Exp $
+# $Id: Makefile,v 1.21 1998/12/01 01:05:09 asami Exp $
 #
 
 DISTNAME=	Wnn6-SDK-sources
@@ -11,7 +11,7 @@ PKGNAME=	ja-Wnn6-lib-98.10.28
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.omronsoft.co.jp/pub/Wnn6/sdk_source/
 
-MAINTAINER=	taoka@infonets.hiroshima-u.ac.jp
+MAINTAINER=	taoka@FreeBSD.org
 
 BUILD_DEPENDS=	imake:${PORTSDIR}/x11/XFree86
 

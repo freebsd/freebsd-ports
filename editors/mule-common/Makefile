@@ -1,9 +1,9 @@
 # New ports collection makefile for:	files except executables for mule 2.3@19.34
 # Version required:	2.3@19.34
 # Date created:		7 July 1997
-# Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
+# Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.38 1999/03/08 07:28:24 asami Exp $
+# $Id: Makefile,v 1.39 1999/03/29 07:50:59 asami Exp $
 #
 
 DISTNAME=	mule-2.3
@@ -19,7 +19,7 @@ PATCH_SITES=	ftp://etlport.etl.go.jp/pub/mule/
 PATCHFILES=	mule-23-1934-alpha01.diff.gz
 PATCH_DIST_STRIP= -p1
 
-MAINTAINER=	taoka@infonets.hiroshima-u.ac.jp
+MAINTAINER=	taoka@FreeBSD.org
 
 .for dir in 	chinese/mule-wnn4 \
 		editors/mule \

@@ -1,9 +1,9 @@
 # New ports collection makefile for:	Wnn for Korea
 # Version required:	4.2
 # Date created:		20 July 1997
-# Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
+# Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.5 1997/09/23 02:18:00 max Exp $
+# $Id: Makefile,v 1.6 1998/12/01 03:06:25 asami Exp $
 #
 
 PKGNAME=	ko-Wnn-4.2
