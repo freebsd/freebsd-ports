@@ -4,7 +4,7 @@
 # Whom:			Joel Sutton <sutton@aardvark.apana.org.au>
 # FreeBSD Version:	2.1.5-RELEASE
 #
-# $Id$
+# $Id: Makefile,v 1.3 1997/06/09 20:21:17 chuckr Exp $
 #
 
 # This is the stable release of the xgs emulator. Sound support is
@@ -14,15 +14,14 @@
 #      
 DISTNAME=	xgs-0.50-src
 PKGNAME=	xgs-0.50
-EXTRACT_SUFX=	.tar.gz
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.optera.com/pub/xgs/ \
 		ftp://ftp.apple.asimov.net/pub/apple_II/emulators/rom_images/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} xgs.rom
 
 MAINTAINER=	sutton@aardvark.apana.org.au
 
 DIST_SUBDIR=	xgs
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} xgs.rom
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 RESTRICTED=	"xgs.rom copyright is owned by Apple and cannot be distributed"
 NO_PACKAGE=	${RESTRICTED}
