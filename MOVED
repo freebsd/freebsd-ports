@@ -1221,3 +1221,4 @@ devel/automake|devel/automake15|2004-08-03|autotools cleanup
 mail/balsa2|mail/balsa|2004-08-06|Balsa 2.x has been moved to the balsa port
 net/pdtpd|net/squall|2004-08-08|The project has been renamed
 sysutils/fastresolve|dns/fastresolve|2004-08-08|Move to the right category
+audio/p5-dapple|audio/p5-Net-DAAP-Client|2004-08-09|Module renamed
