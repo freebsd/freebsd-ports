@@ -179,16 +179,49 @@ share/Yap/logtalk/yap430.config
 share/Yap/logtalk.yap
 share/Yap/ordsets.yap
 share/Yap/pillow.pl
+share/Yap/pl/arith.yap
+share/Yap/pl/arrays.yap
+share/Yap/pl/boot.yap
+share/Yap/pl/callcount.yap
+share/Yap/pl/checker.yap
+share/Yap/pl/consult.yap
+share/Yap/pl/corout.yap
+share/Yap/pl/debug.yap
+share/Yap/pl/depth_bound.yap
+share/Yap/pl/directives.yap
+share/Yap/pl/errors.yap
+share/Yap/pl/grammar.yap
+share/Yap/pl/ground.yap
+share/Yap/pl/init.yap
+share/Yap/pl/listing.yap
+share/Yap/pl/load_foreign.yap
+share/Yap/pl/modules.yap
+share/Yap/pl/preds.yap
+share/Yap/pl/profile.yap
+share/Yap/pl/protect.yap
+share/Yap/pl/setof.yap
+share/Yap/pl/signals.yap
+share/Yap/pl/sockets.yap
+share/Yap/pl/sort.yap
+share/Yap/pl/statistics.yap
+share/Yap/pl/strict_iso.yap
+share/Yap/pl/tabling.yap
+share/Yap/pl/threads.yap
+share/Yap/pl/utils.yap
+share/Yap/pl/yapor.yap
+share/Yap/pl/yio.yap
 share/Yap/prandom.yap
 share/Yap/queues.yap
 share/Yap/random.yap
 share/Yap/regexp.yap
+share/Yap/splay.yap
 share/Yap/system.yap
 share/Yap/terms.yap
 share/Yap/timeout.yap
 share/Yap/trees.yap
 share/Yap/tries.yap
 share/Yap/ugraphs.yap
+@dirrm share/Yap/pl
 @dirrm share/Yap/logtalk
 @dirrm share/Yap/clpr
 @dirrm share/Yap/clpqr/examples/monash
