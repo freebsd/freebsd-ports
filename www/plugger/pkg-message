@@ -1,15 +1,37 @@
-
-**************************************************
-**************************************************
+*****************************************************************
+*****************************************************************
 NOTE:
 
-Be sure to create a /usr/local/etc/pluggerrc file; use
-/usr/local/etc/pluggerrc.sample as a starting point. 
-It should work fine as is.
+Edit the /usr/X11R6/etc/pluggerrc file as needed. It should work
+fine as is. If you had a previous /usr/X11R6/etc/pluggerrc file,
+it will be renamed /usr/X11R6/etc/pluggerrc.old.
 
-Also note that you will need the various external viewers
-(splay, xanim, etc) in order to view embedded web content.
+This Plugger port will install a default set of multimedia utilities
+that I have found to work well. Other combinations may work also.
+Look at the pluggerrc file for details.
 
-**************************************************
-**************************************************
+Plugger searches for pluggerrc files in the following order:
 
+~/.netscape/pluggerrc
+~/.mozilla/pluggerrc
+$MOZILLA_HOME/pluggerrc  (MOZILLA_HOME is usually equal to HOME)
+/usr/local/netscape/pluggerrc
+/etc/pluggerrc
+/usr/etc/pluggerrc
+/usr/local/etc/pluggerrc
+./pluggerrc
+
+Whichever pluggerrc is found first in the above order will be
+used, no merging of other pluggerrc's occurs. You have been warned.
+
+NOTES on Sound:
+
+Remember, you have to have the Timidity patch files installed for
+it to work.
+
+Also, some of the frequency settings are extremely sound-card
+dependent. If you get no sound, adjust the frequency settings in
+your pluggerrc to be compatible with your sound card. See the
+documentation for the various sound utilities for details.
+*****************************************************************
+*****************************************************************

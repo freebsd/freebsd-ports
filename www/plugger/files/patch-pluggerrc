@@ -1,0 +1,26 @@
+--- pluggerrc	Tue Mar  6 17:02:41 2001
++++ pluggerrc.new	Thu Aug  9 16:39:02 2001
+@@ -1,4 +1,4 @@
+-# Configure file for plugger version 3.0
++# Configure file for plugger version 3.3
+ # Commands which are not installed on your system will not
+ # be used.
+ #
+@@ -29,7 +29,7 @@
+ audio/x-mid: midi,mid: MIDI audio file
+ audio/midi: midi,mid: MIDI audio file
+ audio/x-midi: midi,mid: MIDI audio file
+-	many: timidity -s 65000 -a -idqqqqqqq $file
++	many: timidity -s 44100 -a -idqqqqqqq $file
+ 	: playmidi "$file"
+ 
+ audio/mod: mod: Soundracker audio Module
+@@ -38,7 +38,7 @@
+ 	: xmp --nocmd "$file" 2>/dev/null
+ 	loop: nspmod -r "$file" 2>/dev/null 1>/dev/null
+ 	repeat: nspmod -l $repeat "$file" 2>/dev/null 1>/dev/null
+-	: tracker -q -frequency 65000 "$file"
++	: tracker -q -frequency 44100 "$file"
+ 	loop: mikmod -i -r "$file" 2>/dev/null 1>/dev/null
+ 	: mikmod -i "$file" 2>/dev/null 1>/dev/null
+ 
