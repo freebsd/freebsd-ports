@@ -3,7 +3,7 @@
 # Date created:		1 Jun 1998
 # Whom:			Peter Mutsaers
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/08/09 01:17:19 steve Exp $
 #
 
 DISTNAME=	wwwoffle-2.1
@@ -12,8 +12,6 @@ MASTER_SITES=	ftp://ftp.demon.co.uk/pub/unix/httpd/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/www/servers
 EXTRACT_SUFX=	.tgz
-
-MAINTAINER=	plm@xs4all.nl
 
 USE_GMAKE=	yes
 
