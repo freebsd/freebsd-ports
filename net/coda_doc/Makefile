@@ -3,7 +3,7 @@
 # Date created:				19 June 1998
 # Whom:					Robert V. Baron <rvb@cs.cmu.edu>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/10/05 19:23:42 rvb Exp $
 #
 
 DISTNAME=	coda-doc-4.6.5-3
@@ -13,9 +13,6 @@ MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/coda/doc/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	rvb@cs.cmu.edu
-
-#NO_DEPENDS=
-#NO_CONFIGURE=
 
 do-build:
 	@${ECHO} "At present, Coda documentation is distributed in html, man, ps, and ppt forms"
