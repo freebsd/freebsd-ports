@@ -27,9 +27,10 @@ CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--with-x=${X11BASE} --disable-debug
 
 post-patch:
+# remove -pedantic where possible to fix build errors on -CURRENT
 # remove optimizations
 	@${REINPLACE_CMD} -e \
-		's|-O2||' \
+		's|-O2||; s|-pedantic ||' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 # do not try to roll our own mimetypes
 	@${REINPLACE_CMD} -E -e \
