@@ -1,6 +1,42 @@
---- configure.orig	Wed Oct 30 12:26:42 2002
-+++ configure	Wed Oct 30 20:59:10 2002
-@@ -5749,9 +5749,6 @@
+--- configure.orig	Fri Feb  7 12:02:43 2003
++++ configure	Thu Feb 13 16:57:29 2003
+@@ -5399,7 +5399,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldv -lm $LIBS"
++LIBS="-ldv -lm $LIBPTHREAD $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -5452,7 +5452,7 @@
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_DV 1
+ _ACEOF
+- FOUND_DV="yes"; LIBDV="-ldv -lm"
++ FOUND_DV="yes"; LIBDV="-ldv -lm $LIBPTHREAD $LIBS"
+ fi
+ 
+ else
+@@ -5466,7 +5466,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lquicktime -ldl -lglib $LIBPTHREAD $LIBS"
++LIBS="-lquicktime -lglib12 $LIBPTHREAD $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -5527,7 +5527,7 @@
+ fi
+ QTLIBS=""
+ if test "$FOUND_LQT" = "yes"; then
+-    QTLIBS="-lquicktime -ldl -lglib -lm"
++    QTLIBS="-lquicktime -lglib12 $LIBPTHREAD $LIBS"
+ fi
+ 
+ 
+@@ -6062,9 +6062,6 @@
  echo "$as_me:$LINENO: checking for X11 config directory" >&5
  echo $ECHO_N "checking for X11 config directory... $ECHO_C" >&6
  x11conf=/usr/X11R6/lib/X11
@@ -10,7 +46,7 @@
  echo "$as_me:$LINENO: result: $x11conf" >&5
  echo "${ECHO_T}$x11conf" >&6
  
-@@ -5759,9 +5756,6 @@
+@@ -6072,9 +6069,6 @@
  echo "$as_me:$LINENO: checking for X11 app-defaults directory" >&5
  echo $ECHO_N "checking for X11 app-defaults directory... $ECHO_C" >&6
  resdir=/usr/X11R6/lib/X11

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xawtv
-PORTVERSION=	3.83
+PORTVERSION=	3.85
 CATEGORIES=	graphics
 MASTER_SITES=	http://bytesex.org/xawtv/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -27,7 +27,7 @@ USE_GMAKE=	yes
 USE_XPM=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
-
+CONFIGURE_ENV=	LIBS="-L${PREFIX}/lib -L${LOCALBASE}/lib"
 MAKE_ENV=	verbose=yes
 
 FILES_LIBJPEG=	console/Subdir.mk debug/Subdir.mk x11/Subdir.mk
@@ -41,11 +41,44 @@ MAN8=		v4l-conf.8
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_LIBDV)
+LIB_DEPENDS+=	dv.3:${PORTSDIR}/multimedia/libdv
+CONFIGURE_ARGS+=--enable-dv
+PLIST_SUB+=	DV=
+.else
+CONFIGURE_ARGS+=--enable-dv=no
+PLIST_SUB+=	DV="@comment "
+.endif
+
+.if defined(WITH_MMX)
+CONFIGURE_ARGS+=--enable-mmx
+CFLAGS+=	-DMMX=1
+.endif
+
+.if defined(WITH_LIBQTIME)
+CONFIGURE_ARGS+=--enable-quicktime
+LIB_DEPENDS+=	quicktime.0:${PORTSDIR}/graphics/libquicktime
+PLIST_SUB+=	QT=
+.else
+CONFIGURE_ARGS+=--enable-quicktime=no
+PLIST_SUB+=	QT="@comment "
+.endif
+
 PLIST_SUB+=	X11PREFIX=${X11BASE}
+
+pre-everything::
+	@${ECHO} ""
+	@${ECHO} "You may use the following build options:"
+	@${ECHO} ""
+	@${ECHO} "	WITH_LIBDV=yes    Enable reading/writing raw dv files"
+	@${ECHO} "	WITH_LIBQTIME=yes Enable quicktime support"
+	@${ECHO} "	WITH_MMX=yes      Enable mmx support"
+	@${ECHO} ""
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/X11R6|${X11BASE}|g" \
-		-e "s|/usr/local|${LOCALBASE}|g" ${WRKSRC}/configure
+		-e "s|/usr/local|${LOCALBASE}|g" \
+		-e "s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
 
 .for i in ${FILES_LIBJPEG}
 	@${REINPLACE_CMD} -e "s|-ljpeg|-L${LOCALBASE}/lib -ljpeg|g" ${WRKSRC}/$i
