@@ -15,12 +15,12 @@ MAINTAINER=	knu@FreeBSD.org
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 BUILD_DEPENDS=	${PM_BASE}/File/MMagic.pm:${PORTSDIR}/devel/p5-File-MMagic \
-		${PM_BASE}/${PERL_ARCH}/Text/Kakasi.pm:${PORTSDIR}/japanese/p5-Text-Kakasi \
-		${PM_BASE}/${PERL_ARCH}/NKF.pm:${PORTSDIR}/japanese/p5-nkf
-RUN_DEPENDS=	${PM_BASE}/File/MMagic.pm:${PORTSDIR}/devel/p5-File-MMagic \
-		${PM_BASE}/${PERL_ARCH}/Text/Kakasi.pm:${PORTSDIR}/japanese/p5-Text-Kakasi \
 		${PM_BASE}/${PERL_ARCH}/NKF.pm:${PORTSDIR}/japanese/p5-nkf \
-		xlHtml:${PORTSDIR}/textproc/xlhtml
+		${DEPEND_WAKATI}
+RUN_DEPENDS=	${PM_BASE}/File/MMagic.pm:${PORTSDIR}/devel/p5-File-MMagic \
+		${PM_BASE}/${PERL_ARCH}/NKF.pm:${PORTSDIR}/japanese/p5-nkf \
+		${DEPEND_WAKATI} \
+		${DEPEND_MSOFFICE}
 
 PM_BASE=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 
@@ -31,9 +31,14 @@ MAN1=		namazu.1 mknmz.1
 INSTALLS_SHLIB=	yes
 
 .if defined(WITH_CHASEN)
-DEPENDS=	
+DEPEND_WAKATI=	${PM_BASE}/${PERL_ARCH}/Text/ChaSen.pm:${PORTSDIR}/japanese/chasen
 .else
+DEPEND_WAKATI=	${PM_BASE}/${PERL_ARCH}/Text/Kakasi.pm:${PORTSDIR}/japanese/p5-Text-Kakasi
+.endif
 
+.if !defined(WITHOUT_MSOFFICE)
+DEPEND_MSOFFICE=	xlHtml:${PORTSDIR}/textproc/xlhtml \
+			wvHtml:${PORTSDIR}/textproc/wv
 .endif
 
 post-install:
