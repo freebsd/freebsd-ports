@@ -1,0 +1,26 @@
+The Virtual Paper software centers around the notion of a document, which
+generally corresponds to a single paper, report, or book. A document is
+stored as a single file, in a format that we call a "Lectern document". The
+application "BuildLectern" constructs these documents, and "Lectern" lets you
+view them on your computer. 
+
+A Lectern document contains images of each page of the document (at several
+scales), text for the pages (for searching, not for viewing), and global
+information about the document (such as a copy of a PostScript version of the
+document, if available). 
+
+A Lectern document has a fairly simple internal structure. There's an
+internal directory, and a set of components. The components each contain the
+bytes for some part of the overall document: a single page image at a
+particular scale, or the text for a single page, or the PostScript that was
+used to create the document. 
+
+BuildLectern generates a single Lectern document. Its input can be a
+PostScript file, or parts of previously built Lectern documents. Or its
+input can be original raster-based images (such as a set of TIFF files),
+typically at a moderate resolution such as 300 DPI. Finally, BuildLectern's
+input can be a combination of all of these. 
+
+For more information, please see:
+
+	http://www.research.digital.com:80/SRC/virtualpaper
