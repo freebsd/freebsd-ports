@@ -1,0 +1,10 @@
+--- src/door.c.orig    Sat Mar  3 02:30:49 2001
++++ src/door.c Sat Mar  3 02:31:15 2001
+@@ -6,6 +6,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
++#include <sys/types.h>
+ #include <sys/socket.h>
+ #include <unistd.h>
+ 
