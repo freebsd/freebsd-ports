@@ -1,26 +1,35 @@
-# New ports collection makefile for:	namazu
-# Version required:	1.3.0.11
-# Date created:		17 March 1998
-# Whom:			Seiichirou Hiraoka
+# New ports collection makefile for:	namazu2
+# Version required:	2.0
+# Date created:		25 February 2000
+# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	namazu-1.3.0.11
-PKGNAME=	ja-namazu-1.3.0.11
+DISTNAME=	namazu-2.0
+PKGNAME=	ja-namazu-2.0
 CATEGORIES=	japanese textproc
-MASTER_SITES=	http://openlab.ring.gr.jp/namazu/release/
+MASTER_SITES=	http://www.namazu.org/stable/
 
-MAINTAINER=	flathill@FreeBSD.org
+MAINTAINER=	knu@idaemons.org
 
-BUILD_DEPENDS=	kakasi:${PORTSDIR}/japanese/kakasi \
-		nkf:${PORTSDIR}/japanese/nkf
-RUN_DEPENDS=	kakasi:${PORTSDIR}/japanese/kakasi \
-		nkf:${PORTSDIR}/japanese/nkf
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	${PM_BASE}/File/MMagic.pm:${PORTSDIR}/devel/p5-File-MMagic \
+		${PM_BASE}/${PERL_ARCH}/Text/Kakasi.pm:${PORTSDIR}/japanese/p5-Text-Kakasi \
+		${PM_BASE}/${PERL_ARCH}/NKF.pm:${PORTSDIR}/japanese/p5-nkf
+RUN_DEPENDS=	${PM_BASE}/File/MMagic.pm:${PORTSDIR}/devel/p5-File-MMagic \
+		${PM_BASE}/${PERL_ARCH}/Text/Kakasi.pm:${PORTSDIR}/japanese/p5-Text-Kakasi \
+		${PM_BASE}/${PERL_ARCH}/NKF.pm:${PORTSDIR}/japanese/p5-nkf
+
+PM_BASE=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 
-WRKSRC=		${WRKDIR}/namazu-1.3.0.11/src
+MAN1=		namazu.1 mknmz.1
+
+post-install:
+	${LN} -sf ${PREFIX}/lib/libnmz.so.3 ${PREFIX}/lib/libnmz.so
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

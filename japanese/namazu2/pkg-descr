@@ -1,12 +1,7 @@
-Namazu is a search engine software intended for easy use. Not only it
-works as a CGI program for the small or medium scale WWW search
-engine, but also works as a personal use such as search system for local
-HDDs. Currently, search clients for Mule, Tcl/Tk, JAVA and Win32 are
-available. 
+Namazu is a full-text search system intended for easy use. Not only it works
+as a CGI program for a small or medium scale Web search engine, but also works
+as a personal use search system for your pile of emails. 
 
 (The Japanese word `Namazu' means `catfish' in English) 
 
-WWW: http://openlab.ring.gr.jp/namazu/
-
-- Seiichirou Hiraoka
-flathill@FreeBSD.ORG
+WWW: http://www.namazu.org/
