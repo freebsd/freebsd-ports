@@ -1,9 +1,9 @@
---- ../../tcsh-6.07.06/nls/Makefile	Sun Jun 21 10:45:27 1998
-+++ nls/Makefile	Sun Jun 21 11:38:16 1998
+--- nls/Makefile.orig	Wed Aug 19 14:21:20 1998
++++ nls/Makefile	Wed Aug 19 14:23:51 1998
 @@ -1,5 +1,5 @@
  
 -SUBDIRS=	C german french greek spanish ja.roomi ja.koshiki ja
-+SUBDIRS=	C ja ja_s ja.roomi ja.roomi_s ja.koshiki ja.koshiki_s
++SUBDIRS=	C
  #GENCAT=	gencat -new
  GENCAT=		gencat
  
