@@ -8,7 +8,7 @@
 PORTNAME=	tractorgen
 PORTVERSION=	0.31.7
 CATEGORIES=	games
-MASTER_SITES=	http://heidi.vergenet.net/~conrad/software/tractorgen/dl/
+MASTER_SITES=	http://www.vergenet.net/~conrad/software/tractorgen/dl/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	elfrink@introcom.nl
