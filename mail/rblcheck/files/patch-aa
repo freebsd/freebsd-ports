@@ -1,0 +1,138 @@
+--- rblcheck.c.orig	Thu Aug 20 14:47:03 1998
++++ rblcheck.c	Sun Oct 18 00:42:57 1998
+@@ -79,6 +79,7 @@
+ #include <sys/types.h>
+ #include <netinet/in.h>
+ #include <arpa/nameser.h>
++#include <arpa/inet.h>
+ #include <resolv.h>
+ #include <netdb.h>
+ 
+@@ -203,7 +204,7 @@
+  * domain. If "txt" is non-zero, we perform a TXT record lookup. We
+  * return the text returned from a TXT match, or an empty string, on
+  * a successful match, or NULL on an unsuccessful match. */
+-char * rblcheck( int a, int b, int c, int d, char * rbldomain, int txt )
++char * rblcheck( struct in_addr a, char * rbldomain, int txt )
+ {
+ 	char * domain;
+ 	char * result = NULL;
+@@ -214,12 +215,15 @@
+ 	const u_char * cend;
+ 	const u_char * rend;
+ 	int len;
++	u_char *p;
++	int i, j;
+ 
+ 	/* 16 characters max in a dotted-quad address, plus 1 for null */
+ 	domain = ( char * )malloc( 17 + strlen( rbldomain ) );
+ 
++	p = (u_char *)&a;
+ 	/* Create a domain name, in reverse. */
+-	sprintf( domain, "%d.%d.%d.%d.%s", d, c, b, a, rbldomain );
++	sprintf( domain, "%d.%d.%d.%d.%s", p[3], p[2], p[1], p[0], rbldomain );
+ 
+ 	/* Make our DNS query. */
+ 	res_init();
+@@ -261,8 +265,8 @@
+ 	cp = answer + sizeof( HEADER );
+ 	while( *cp != '\0' )
+ 	{
+-		a = *cp++;
+-		while( a-- )
++		i = *cp++;
++		while( i-- )
+ 			cp++;
+ 	}
+ 
+@@ -277,8 +281,8 @@
+ 	cp += ( NS_INT16SZ * 2 ) + NS_INT32SZ;
+ 
+ 	/* Get the length and end of the buffer. */
+-	NS_GET16( c, cp );
+-	cend = cp + c;
++	NS_GET16( i, cp );
++	cend = cp + i;
+ 
+ 	/* Iterate over any multiple answers we might have. In
+ 	   this context, it's unlikely, but anyway. */
+@@ -286,10 +290,10 @@
+ 	rend = result + RESULT_SIZE - 1;
+ 	while( cp < cend && rp < rend )
+ 	{
+-		a = *cp++;
+-		if( a != 0 )
+-			for( b = a; b > 0 && cp < cend && rp < rend;
+-			  b-- )
++		i = *cp++;
++		if( i != 0 )
++			for( j = i; j > 0 && cp < cend && rp < rend;
++			  j-- )
+ 			{
+ 				if( *cp == '\n' || *cp == '"' ||
+ 				  *cp == '\\' )
+@@ -308,23 +312,26 @@
+ 	char **argv;
+ {
+ 	extern int optind;
+-	int a, b, c, d;
++	struct hostent *ent;
++	struct in_addr a;
+ 	int quiet = 0;
+ 	int txt = 0;
+ 	int rblfiltered = 0;
+ 	char * response;
+ 	struct rbl * rblsites = NULL;
+ 	struct rbl * ptr;
++	int fail;
++	int c;
+ 
+ 	/* Add more sites you want in the default list of RBL-alike
+ 	   systems here. ### An easier way to change this is needed. ### */
+ 	rblsites = togglesite( "rbl.maps.vix.com", rblsites );
+-	rblsites = togglesite( "rbl.dorkslayers.com", rblsites );
++	rblsites = togglesite( "orbs.dorkslayers.com", rblsites );
+ 
+ 	progname = argv[ 0 ];
+ 
+-	while( ( a = getopt( argc, argv, "qtls:c?hv" ) ) != EOF )
+-		switch( a )
++	while( ( c = getopt( argc, argv, "qtls:c?hv" ) ) != EOF )
++		switch( c )
+ 		{
+ 			case 'q':
+ 				/* Quiet */
+@@ -372,10 +379,20 @@
+ 		return -1;
+ 	}
+ 
+-	if( sscanf( argv[ optind ], "%d.%d.%d.%d", &a, &b, &c, &d ) != 4 ||
+-	  a < 0 || a > 255 || b < 0 || b > 255 || c < 0 || c > 255 ||
+-	  d < 0 || d > 255 )
+-	{
++	fail = 0;
++	if (ent = gethostbyname(argv[optind])) {
++		memcpy(&a, ent->h_addr_list[0], sizeof(a));
++		if (ent->h_addr_list[1]) {
++			fprintf(stderr, "%s resolved to mutiple addresses: ",
++				argv[optind]);
++		}
++		fprintf(stderr, "checking %s\n", inet_ntoa(a));
++	} else {
++		if (!inet_aton(argv[optind], &a))
++			fail++;
++	}
++
++	if (fail) {
+ 		fprintf( stderr, "%s: invalid IP address\n", progname );
+ 		usage();	
+ 		return -1;
+@@ -383,7 +400,7 @@
+ 
+ 	for( ptr = rblsites; ptr != NULL; ptr = ptr->next )
+ 	{
+-		response = rblcheck( a, b, c, d, ptr->site, txt );
++		response = rblcheck( a, ptr->site, txt );
+ 		printf( "%s%s%s%s%s%s", !quiet && !response ? "not " : "",
+ 		  !quiet ? "RBL filtered by " : "", !quiet ? ptr->site : "",
+ 		  txt && response && strlen( response ) && !quiet ? ": " : "",
