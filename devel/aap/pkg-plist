@@ -1,4 +1,6 @@
 bin/aap
+lib/aap/Exec-%%PORTVERSION%%/AapVersion.py
+lib/aap/Exec-%%PORTVERSION%%/AapVersion.pyc
 lib/aap/Exec-%%PORTVERSION%%/Action.py
 lib/aap/Exec-%%PORTVERSION%%/Action.pyc
 lib/aap/Exec-%%PORTVERSION%%/Args.py
@@ -71,8 +73,6 @@ lib/aap/Exec-%%PORTVERSION%%/VersCont.py
 lib/aap/Exec-%%PORTVERSION%%/VersCont.pyc
 lib/aap/Exec-%%PORTVERSION%%/VersContCvs.py
 lib/aap/Exec-%%PORTVERSION%%/VersContCvs.pyc
-lib/aap/Exec-%%PORTVERSION%%/AapVersion.py
-lib/aap/Exec-%%PORTVERSION%%/AapVersion.pyc
 lib/aap/Exec-%%PORTVERSION%%/Work.py
 lib/aap/Exec-%%PORTVERSION%%/Work.pyc
 lib/aap/Exec-%%PORTVERSION%%/__init__.py
@@ -85,8 +85,6 @@ lib/aap/Exec-%%PORTVERSION%%/aapnetrc.pyc
 lib/aap/Exec-%%PORTVERSION%%/aapre.py
 lib/aap/Exec-%%PORTVERSION%%/aapre.pyc
 lib/aap/Exec-%%PORTVERSION%%/default.aap
-lib/aap/Exec-%%PORTVERSION%%/popenerr.py
-lib/aap/Exec-%%PORTVERSION%%/popenerr.pyc
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/exec.pdf
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/appendix.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/exec.html
@@ -137,11 +135,15 @@ lib/aap/Exec-%%PORTVERSION%%/popenerr.pyc
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/user-variant.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/user-version.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/user.html
+lib/aap/Exec-%%PORTVERSION%%/import_re.py
+lib/aap/Exec-%%PORTVERSION%%/import_re.pyc
 lib/aap/Exec-%%PORTVERSION%%/modules/d.aap
 lib/aap/Exec-%%PORTVERSION%%/modules/kde.aap
 lib/aap/Exec-%%PORTVERSION%%/modules/libtool.aap
 lib/aap/Exec-%%PORTVERSION%%/modules/qt.aap
 lib/aap/Exec-%%PORTVERSION%%/modules/rectest.aap
+lib/aap/Exec-%%PORTVERSION%%/popenerr.py
+lib/aap/Exec-%%PORTVERSION%%/popenerr.pyc
 lib/aap/Exec-%%PORTVERSION%%/tools/__init__.py
 lib/aap/Exec-%%PORTVERSION%%/tools/__init__.pyc
 lib/aap/Exec-%%PORTVERSION%%/tools/bcc.py
@@ -157,8 +159,8 @@ lib/aap/Exec-%%PORTVERSION%%/tools/mingw.pyc
 lib/aap/Exec-%%PORTVERSION%%/tools/msvc.py
 lib/aap/Exec-%%PORTVERSION%%/tools/msvc.pyc
 %%PORTDOCS%%share/doc/aap
-@dirrm lib/aap/Exec-%%PORTVERSION%%/modules
 @dirrm lib/aap/Exec-%%PORTVERSION%%/tools
+@dirrm lib/aap/Exec-%%PORTVERSION%%/modules
 %%PORTDOCS%%@dirrm lib/aap/Exec-%%PORTVERSION%%/doc/html
 %%PORTDOCS%%@dirrm lib/aap/Exec-%%PORTVERSION%%/doc
 @dirrm lib/aap/Exec-%%PORTVERSION%%
