@@ -1,0 +1,9 @@
+============================================================
+
+Installation tips
+
+You can find an emacs mode for Erlang here:
+
+    ${LOCALBASE}/lib/erlang/lib/tools-2.1/emacs
+
+============================================================
