@@ -3,7 +3,7 @@
 # Date created: 	Tue Nov 14 18:29:48 MET 1995
 # Whom: 		Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.25 1999/03/01 16:17:38 andreas Exp $
+# $Id: Makefile,v 1.26 1999/05/23 16:16:21 andreas Exp $
 #
 
 DISTNAME=	apsfilter-5.1.0
@@ -26,7 +26,7 @@ WRKSRC=		${WRKDIR}/apsfilter
 
 # make a2ps port happy in this early stage
 .if defined(BATCH)
-	@${SETENV} PAPERSIZE=a4
+	@${SETENV} PAPERSIZE=letter
 .endif
 .if ${PAPERSIZE} != a4 && ${PAPERSIZE} != letter && ${PAPERSIZE} != letterdj
 .BEGIN:
