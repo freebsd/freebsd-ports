@@ -6,7 +6,6 @@ bin/qmtpfront-qmail
 bin/smtpfront-echo
 bin/smtpfront-qmail
 bin/smtpfront-reject
-%%PORTDOCS%%%%DOCSDIR%%/ANNOUNCEMENT
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
