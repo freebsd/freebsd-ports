@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.37b13.2
+PORTVERSION?=	0.37b14.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/ \
 		ftp://ftp.kaupp.cx/pub/xmame/ \
@@ -51,7 +51,6 @@ SPOOLGAMES?=	/var/games
 # Docs list
 GENERALDOCS=	changes.unix \
 		liesmich.unix \
-		credits.txt \
 		multiplayer-readme.txt \
 		xmame-doc-1.html \
 		xmame-doc-2.html \
@@ -72,8 +71,10 @@ XMESSDOCS=	changes.mess \
 		gamelist.mess \
 		readme.mess \
 		messold.txt \
-		messroms.txt
-PINMAMEDOCS=	pinmame/simulation.txt \
+		messroms.txt \
+		credits.txt
+PINMAMEDOCS=	credits.txt \
+		pinmame/simulation.txt \
 		pinmame/whatsnew.txt \
 		pinmame/pinmame.txt \
 		pinmame/gamelist.txt \
@@ -93,7 +94,7 @@ ALLDOCS=	${GENERALDOCS} ${PINMAMEDOCS}
 # CPS-2 patches - this enables extra games in MAME.
 .if ${MAMEMESS} == "mame"
 .if defined(WITH_CPS2) && ${WITH_CPS2} == "yes"
-CPS2VERSION=	20010415
+CPS2VERSION=	20010422
 
 PATCH_SITES+=	http://www.win.tue.nl/~stijn/xmame/
 PATCHFILES+=	${DISTNAME}-cps2-${CPS2VERSION}.patch.gz
@@ -125,9 +126,11 @@ post-extract:
 		unzip -q ${DISTDIR}/${DIST_SUBDIR}/cheat.zip cheat.dat
 .else
 PLIST_SUB+=	DATFILES="@comment "
+.if !defined(WITH_DATFILES)
 pre-everything::
 	@${ECHO_MSG} "===> If you want to install additional information with MAME (such as game"
 	@${ECHO_MSG} "     history, cheats, and highscores) use \"make WITH_DATFILES=yes\""
+.endif
 .endif
 .endif
 
@@ -183,6 +186,16 @@ DISPLAY_METHOD=	x11
 .endif
 .endif
 
+# USB joysticks - only enabled on -STABLE because of conflicting USB
+# prototypes in -STABLE & -CURRENT.
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+JOYUSBCOMMENT=\#\ 
+.else
+JOYUSBCOMMENT=
+.endif
+
 # Some simple patches that don't warrant a separate patch
 post-patch:
 	${PERL} -pi -e 's@SDL/@SDL11/@' ${WRKSRC}/src/unix/video-drivers/SDL.c
@@ -202,7 +215,7 @@ do-configure:
 		-e "s@-g bin@-g wheel@g" \
 		-e "s@ARCH  = linux@ARCH  = freebsd@g" \
 		-e "s@# X11_DGA@X11_DGA@g" \
-		-e "s@# JOY_USB@JOY_USB@g" \
+		-e "s@# JOY_USB@${JOYUSBCOMMENT}JOY_USB@g" \
 		-e "s@= x11@= ${DISPLAY_METHOD}@g" \
 		-e "s@= mame@= ${MAMEMESS}@g" \
 		-e "s@# X86_ASM@${ASM_COMMENT}X86_ASM@g" \
@@ -250,4 +263,4 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/cheat.dat ${PREFIX}/share/xmame
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
