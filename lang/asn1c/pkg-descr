@@ -1,7 +1,7 @@
 The asn1c compiles ASN.1 (Abstract Syntax Notation One) specifications into
 the C source code. This compiler supports automatic constraints checking code
 generation, parametrization, basic support for Information Object Classes.
-The produced C code contains the codecs for BER & DER encoding rules.
+The produced C code contains the codecs for BER/DER/CER/XER encoding rules.
 
 See asn1c-usage.pdf and asn1c(1) manual page for details.
 
