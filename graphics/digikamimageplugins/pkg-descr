@@ -1,0 +1,22 @@
+DigikamImagePlugins are a collection of plugins for Digikam Image Editor. These
+plugins add new image treatment options like color management, filters, or 
+special effects.
+
+Image improvements: 
+- Adjust levels : a plugin to adjust the image histogram levels manually. 
+- Despeckle : A noise reduction filter (using on Gimp 2.0 algorithm). 
+- Unsharp : An unsharped mask image filter (using on Gimp 2.0 algorithm). 
+
+Special effects: 
+- SolarizeImage : a plugin to solarize an image. 
+- OilPaint : an oil painting effect filter (using Pieter Voloshyn algorithm). 
+- Emboss : an embossed image effect filter (using Pieter Voloshyn algorithm). 
+- Raindrops : adding the visual effect of raindrops to an image (using Pieter 
+  Voloshyn algorithm). 
+- Charcoal : a charcoal drawing image effect filter. 
+- FilmGrain : simulate film grain to an image.
+
+WWW: http://extragear.kde.org/apps/digikamimageplugins.php
+
+- Arjan
+avleeuwen@piwebs.com
