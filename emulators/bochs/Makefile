@@ -29,7 +29,7 @@ RUN_DEPENDS+=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 USE_XLIB=	yes
 USE_GMAKE=	yes
 
-GNU_CONFIGURE=	yes
+USE_AUTOCONF=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-cdrom \
 		--disable-split-hd
@@ -61,6 +61,10 @@ CONFIGURE_ARGS+=	--enable-debugger --enable-disasm
 
 .if defined(WITH_BOCHS_X86_DEBUGGER)
 CONFIGURE_ARGS+=	--enable-x86-debugger
+.endif
+
+.if defined(WITH_NE2000)
+CONFIGURE_ARGS+=	--enable-ne2000
 .endif
 
 .if defined(WITH_SOUND)
@@ -107,6 +111,11 @@ pre-everything::
 .if !defined(WITH_BOCHS_X86_DEBUGGER)
 	@${ECHO_MSG} "If you want to compile with x86 hardware debugger support."
 	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_BOCHS_X86_DEBUGGER=yes\""
+	@${ECHO_MSG}
+.endif
+.if !defined(WITH_NE2000)
+	@${ECHO_MSG} "If you want to compile with networking (ne2000) support."
+	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_NE2000=yes\""
 	@${ECHO_MSG}
 .endif
 .if !defined(WITH_SOUND)

@@ -1,0 +1,21 @@
+--- configure.in.orig	Wed Mar 27 17:20:32 2002
++++ configure.in	Thu May 30 21:32:01 2002
+@@ -101,8 +101,16 @@
+ AC_CHECK_FUNCS(usleep, AC_DEFINE(BX_HAVE_USLEEP))
+ AC_CHECK_FUNCS(nanosleep, AC_DEFINE(BX_HAVE_NANOSLEEP))
+ AC_CHECK_FUNCS(abort, AC_DEFINE(BX_HAVE_ABORT))
+-AC_CHECK_TYPE(socklen_t, AC_DEFINE(BX_HAVE_SOCKLEN_T), , [#include <sys/socket.h>])
+-
++AC_MSG_CHECKING(for socklen_t)
++AC_TRY_COMPILE([#include <sys/types.h>
++      #include <sys/socket.h>], 
++    [socklen_t x], 
++    [
++      AC_DEFINE(BX_HAVE_SOCKLEN_T)
++      AC_MSG_RESULT(yes)
++    ],
++      AC_MSG_RESULT(no)
++    )
+ AC_MSG_CHECKING(for struct timeval)
+ AC_TRY_COMPILE([#include <sys/time.h>],
+     [struct timeval x;], 
