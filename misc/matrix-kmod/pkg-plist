@@ -1,0 +1,3 @@
+lib/matrix/modules/matrix_saver.ko
+@dirrm lib/matrix/modules
+@dirrm lib/matrix

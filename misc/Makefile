@@ -90,6 +90,7 @@
     SUBDIR += lv
     SUBDIR += magicpoint
     SUBDIR += man.el
+    SUBDIR += matrix-kmod
     SUBDIR += mc
     SUBDIR += metatheme
     SUBDIR += mgp-mode.el
