@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Mar 25 00:19:43 2004
++++ Makefile.in	Sat Apr  3 21:35:46 2004
+@@ -75,7 +75,7 @@
+ install_sh = @install_sh@
+ local_rsync = @local_rsync@
+ 
+-CXXFLAGS = -g -Wall
++CXXFLAGS = @CXXFLAGS@
+ 
+ bin_PROGRAMS = rvm
+ 
