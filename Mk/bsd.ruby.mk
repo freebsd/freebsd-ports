@@ -182,7 +182,14 @@ post-patch:	ruby-shebang-patch
 ruby-shebang-patch:
 	@for f in ${RUBY_SHEBANG_FILES}; do \
 	${ECHO_MSG} "===>  Fixing the #! line of $$f"; \
-	${RUBY} -i -pe '$$. == 1 and sub /^#!\s*\S*(\benv\s+)?\bruby/, "#!${RUBY}"' $$f; \
+	${RUBY} -i -p	-e 'if $$. == 1; ' \
+			-e ' if /^#!/; ' \
+			-e '  sub /^#!\s*\S*(\benv\s+)?\bruby/, "#!${RUBY}";' \
+			-e ' else;' \
+			-e '  $$_ = "#!${RUBY}\n" + $$_;' \
+			-e ' end;' \
+			-e 'end' \
+			$$f; \
 	done
 .endif
 
