@@ -1,0 +1,3 @@
+bin/bnbt
+@exec mkdir -p %D/etc/bnbt
+@unexec rmdir %D/etc/bnbt 2>/dev/null || true

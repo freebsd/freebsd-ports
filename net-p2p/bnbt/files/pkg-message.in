@@ -1,12 +1,9 @@
 ************************************************************
-
 Bnbt has been successfully installed.
 
 In order to run bnbt, add the following lines to /etc/rc.conf:
   bnbt_enable="YES"
 
-Then start the server with
-  %%PREFIX%%/etc/rc.d/bnbt.sh start
+Then start the server with %%PREFIX%%/etc/rc.d/bnbt.sh start
 or reboot.
-
 ************************************************************
