@@ -1,0 +1,11 @@
+--- tkman.tcl.orig	Fri Nov  8 00:12:03 1996
++++ tkman.tcl	Sun Nov 10 20:57:01 1996
+@@ -5340,7 +5340,7 @@
+ 
+ # versions of supporting binaries, if those binaries happen to be used
+ set manx(bin-versregexp) {([0-9]+\.[0-9]+)([^ ,;]+)?} ;#(\.[0-9]+)?
+-set manx(bin-versioned) {{rman "-v" 2.4} {glimpse "-V" 2.1} {glimpseindex "-V" 2.1}}
++set manx(bin-versioned) {{rman "-v" 2.4} {glimpse "-V" 2.1}}
+ set manx(modes) {man help section txt apropos super info}
+ # bug}
+ set manx(mode-desc) {"manual pages seen" "references to help page" "volume listings invoked" "text files seen" "apropos listings" "Glimpse full-text searches" "ganders at this page"}

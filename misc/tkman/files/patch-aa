@@ -5,10 +5,10 @@
  ### you need to localize the paths on these lines
  
 -WISH = /usr/sww/tcl-7.5/bin/wish
--WISH = /home/orodruin/h/bair/phelps/bin/sun4/wish4.1
+-#WISH = /home/orodruin/h/bair/phelps/bin/sun4/wish4.2
 -#WISH = /usr/local/bin/wish
 +#WISH = /usr/sww/tcl-7.5/bin/wish
-+#WISH = /home/orodruin/h/bair/phelps/bin/sun4/wish4.1
++#WISH = /home/orodruin/h/bair/phelps/bin/sun4/wish4.2
 +WISH = ${PREFIX}/bin/wish4.1
  
  
@@ -45,19 +45,6 @@
  # Ultrix users should uncomment the following line
  #manformat = {tbl | nroff -man }
  # for BSDI
-@@ -129,10 +129,10 @@
- 
- 
- # pick a printing pipeline for which your platform has all the constituants
--manprint = {tbl | eqn | troff -man -t | lpr -t}
-+#manprint = {tbl | eqn | troff -man -t | lpr -t}
- # alternatives
- #manprint = {tbl | eqn | psroff -man}
--#manprint = {groff -man -Tps -te -l}
-+manprint = {groff -mandoc -Tps -te -l}
- #manprint = {groff -man -Tascii -te -l}
- # printing string for preformatted pages without [tn]roff source
- catprint = lpr
 @@ -159,12 +159,12 @@
  # (Even if your pages aren't compressed, this speeds up searching dramatically,
  # which is why it's the default.)
