@@ -7,6 +7,7 @@
 
 PORTNAME=	suphp
 PORTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.suphp.org/download/
 
@@ -14,7 +15,7 @@ MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	suPHP is a combination which provides a wrapper for PHP
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
-RUN_DEPENDS=	${LOCALBASE}/bin/php:${PORTSDIR}/lang/php4-cli
+RUN_DEPENDS=	${LOCALBASE}/bin/php:${PORTSDIR}/www/php4-cgi
 
 USE_REINPLACE=	yes
 
@@ -28,7 +29,7 @@ PHP_PATH?=	${LOCALBASE}/bin/php
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/libexec/apache/libphp4.so)
-IGNORE="suPHP conflicts with mod_php4. It works only with php4-cli"
+IGNORE="suPHP conflicts with mod_php4. It works only with php4-cgi"
 .endif
 
 pre-configure:
