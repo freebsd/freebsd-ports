@@ -1581,6 +1581,7 @@ fontconfig	ports/x11-fonts/fontconfig
 fontedit	ports/sysutils/fontedit
 fontilus	ports/x11-fonts/fontilus
 foobillard	ports/games/foobillard
+foomatic-db	ports/print/foomatic-db
 fooseti		ports/astro/fooseti
 fop		ports/textproc/fop
 forg		ports/net/forg
