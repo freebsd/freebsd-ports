@@ -13,7 +13,8 @@ MASTER_SITES=	http://www.hibernaculum.net/download/
 MAINTAINER=	pat@FreeBSD.org
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/gbase ${PREFIX}/bin
