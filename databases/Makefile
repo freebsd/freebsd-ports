@@ -202,6 +202,7 @@
     SUBDIR += pear-DB_Pager
     SUBDIR += pear-MDB
     SUBDIR += pear-sqlite
+    SUBDIR += pecl-memcache
     SUBDIR += pgaccess
     SUBDIR += pgadmin3
     SUBDIR += pgbash
