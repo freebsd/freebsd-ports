@@ -7,6 +7,7 @@
 
 PORTNAME=	metis-edf
 PORTVERSION=	3
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/metis/
 
@@ -16,10 +17,22 @@ COMMENT=	Meshes partionning tool used by Code_Aster
 CONFLICTS=	metis-[0-9]*
 
 ALL_TARGET=	default
-MAKE_ENV+=	CC="${CC}" AR="${AR}" LD="${LD}" F77="${F77}"
+MAKE_ENV+=	CC="${CC}" AR="${AR}" F77="${F77}" FFLAGS="${FFLAGS}"
 USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i ""
 
 F77?=		f77
+FFLAGS?=	-O2
+
+post-patch:
+.if ${MACHINE_ARCH} != "i386"
+	@${FIND} ${WRKSRC} -type f -name "*.c" -o -name "*.h" | ${XARGS}	\
+		${REINPLACE_CMD} -e "s|long int|int|g"				\
+			-e "s|long|int|g"					\
+			-e "s|\(%[[:digit:]]\)ld|\1d|g"				\
+			-e "s|\(%[[:digit:]]\.[[:digit:]]\)le|\1e|g"		\
+			-e "s|%ld|%d|g"
+.endif
 
 do-install:
 	@${CP} ${WRKSRC}/CONFIG/onmetis.in ${WRKSRC}/onmetis
