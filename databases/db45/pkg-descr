@@ -1,0 +1,5 @@
+Version 2.0.6 of the Berkeley DB library. This version uses an incompatible
+underlying database than v1.85 and a different API. Utilities are included in
+the distribution to convert v1.85 databases to v2.0.6.
+
+For more information, refer to http://www.bostic.com/db/index.html
