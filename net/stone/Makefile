@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stone
-PORTVERSION=	2.2a
+PORTVERSION=	2.2b
 CATEGORIES=	net
 MASTER_SITES=	http://www.gcd.org/sengoku/stone/
 
