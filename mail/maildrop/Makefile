@@ -16,6 +16,8 @@
 #			If undefined, these values default to "root" and "mail"
 #			respectively, which should be suitable for most
 #			systems.
+# NO_MAILWRAPPER	If defined, let configure guess which sendmail binary
+#			to use
 
 PORTNAME=	maildrop
 PORTVERSION=	1.5.2
@@ -45,6 +47,10 @@ CONFIGURE_ARGS+=	--enable-syslog=1 \
 		--with-etcdir="${PREFIX}/etc" \
 		--enable-maildrop-uid="${MAILDROP_SUID}" \
 		--enable-maildrop-gid="${MAILDROP_SGID}"
+
+.if !defined(NO_MAILWRAPPER)
+CONFIGURE_ARGS+=	--enable-sendmail=/usr/sbin/sendmail
+.endif
 
 .if defined(WITH_MAILDIRQUOTA)
 CONFIGURE_ARGS+=	--enable-maildirquota
