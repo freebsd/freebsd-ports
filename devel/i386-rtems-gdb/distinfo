@@ -1,2 +1,2 @@
-MD5 (rtems/gdb-5.0.tar.gz) = 9511b69b6b5a3b38c62ad207b3c94673
-MD5 (rtems/gdb-5.0-rtems-20000718.diff.gz) = ba6ab55fbf2758b3efe64f99e31fc11e
+MD5 (gdb-5.0.tar.gz) = 9511b69b6b5a3b38c62ad207b3c94673
+MD5 (gdb-5.0-rtems-20010314.diff) = 97941a78d16763bf401e537062f90dec
