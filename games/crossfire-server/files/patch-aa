@@ -1,5 +1,5 @@
---- config/crosssite.def.orig	Mon Sep 30 07:54:14 1996
-+++ config/crosssite.def	Sun Oct 27 15:43:06 1996
+--- config/crosssite.def.orig	Sat Jan 25 12:16:24 1997
++++ config/crosssite.def	Sat Jan 25 12:20:45 1997
 @@ -38,7 +38,7 @@
  
  /*
@@ -30,8 +30,8 @@
     standard location for manual pages on your machine.*/
  /* #define CManPath Concat(CTop,/man) */
 -#define CManSuffix 6
-+/* #define CManSuffix 6 */
 +#define CManPath /usr/local/man
++/* #define CManSuffix 6 */
  
  
  /* Force CC to use the specified options instead of the default
@@ -40,7 +40,7 @@
   */
  /*define ForceCCOPTIONS -O -g -Wall */
 -#undef ForceCCOPTIONS
-+#define ForceCCOPTIONS -pipe -O
++#define ForceCCOPTIONS -pipe -O2
  
  /* Extra_Flags are added onto the compilers default options.  Can be
   * quite useful if you just want to add another flag or two, and not
