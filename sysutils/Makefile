@@ -219,6 +219,7 @@
     SUBDIR += psmisc
     SUBDIR += pstack
     SUBDIR += pstree
+    SUBDIR += pwd_unmkdb
     SUBDIR += pwg
     SUBDIR += pwgen
     SUBDIR += pyfind
