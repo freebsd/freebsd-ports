@@ -363,6 +363,7 @@
     SUBDIR += videotext
     SUBDIR += vifm
     SUBDIR += viz
+    SUBDIR += voltcraft304
     SUBDIR += whichman
     SUBDIR += wmScoreBoard
     SUBDIR += wmcalendar
