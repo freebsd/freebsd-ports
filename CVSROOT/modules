@@ -5909,6 +5909,7 @@ sa		src/usr.sbin/sa
 sablotron	ports/textproc/sablotron
 safecat		ports/sysutils/safecat
 saferpay	ports/security/saferpay
+safesh		ports/security/safesh
 sail		src/games/sail
 saint		ports/security/saint
 salias		ports/misc/salias
