@@ -7413,6 +7413,7 @@ qtez		ports/devel/qtez
 qtfw		ports/security/qtfw
 qtk		ports/devel/qtk
 qtools		ports/mail/qtools
+qtpcr		ports/comms/qtpcr
 qtpixmap	ports/x11-toolkits/qtpixmap
 qtpkg		ports/sysutils/qtpkg
 qtutils		ports/graphics/qtutils
