@@ -4,7 +4,7 @@
 -PREFIX = /usr/local
 -CFLAGS = `get-wraster-flags --cflags` `libcdaudio-config --cflags`
 +#PREFIX = /usr/local
-+CFLAGS += `get-wraster-flags --cflags` `libcdaudio-config --cflags`
++CFLAGS += `get-wraster-flags --cflags` `libcdaudio-config --cflags` -I${X11BASE}/include/WINGs
  LDFLAGS = `get-wraster-flags --ldflags` `libcdaudio-config --ldadd`
  LIBS = `get-wraster-flags --libs` `libcdaudio-config --libs`
 -CC = gcc -O2
