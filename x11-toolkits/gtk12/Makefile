@@ -31,6 +31,15 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=		gtk12-config.1
 
+.if defined(WITH_XINPUT)
+CONFIGURE_ARGS+=	--with-xinput=xfree
+.endif
+
+pre-extract:
+.if !defined(WITH_XINPUT)
+	@${ECHO_MSG} "You can enable support for XInput by defining WITH_XINPUT."
+.endif
+
 pre-build:
 	${RM} -rf ${WRKSRC}/docs/gtk.info*
 
