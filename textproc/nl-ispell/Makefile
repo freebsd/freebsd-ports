@@ -7,9 +7,10 @@
 
 MAINTAINER=	alex@FreeBSD.org
 
-ISPELL_NO=	yes
+ISPELL_NL=	yes
 PORTNAME=	nl-ispell
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 MASTERDIR=	${.CURDIR}/../ispell
 
 .include        "${MASTERDIR}/Makefile"
