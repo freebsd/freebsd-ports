@@ -12,6 +12,7 @@
     SUBDIR += dailystrips
     SUBDIR += dlume
     SUBDIR += dragstack
+    SUBDIR += fusenshi
     SUBDIR += gaddr
     SUBDIR += gcal
     SUBDIR += gdeskcal
