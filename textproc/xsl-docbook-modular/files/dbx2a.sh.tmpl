@@ -1,0 +1,206 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+JDKVERSION=${JDKVERSION:-%%JDKVERSION%%}
+
+PREFIX=%%PREFIX%%
+JAVABINDIR=${PREFIX}/jdk${JDKVERSION}/bin
+CLASSDIR=${PREFIX}/share/java/classes
+DBXSLDIR=${PREFIX}/share/xml/docbook/xsl/modular
+DBXSL_HTML=${DBXSLDIR}/html/docbook.xsl
+DBXSL_FO=${DBXSLDIR}/fo/docbook.xsl
+
+DBXSL_CLASSPATH=${CLASSDIR}/xt.jar:${CLASSDIR}/xerces.jar
+JAVAPARSEARG='-Dcom.jclark.xsl.sax.parser=org.apache.xerces.parsers.SAXParser com.jclark.xsl.sax.Driver'
+
+cmd=`basename $0`
+tmprfx=`mktemp -t ${cmd}` || exit 1
+rm -f ${tmprfx}
+
+msg()
+{
+    echo "===>[${cmd}]: $1"
+}
+error()
+{
+    if [ -z "${ignore_flag}" ]; then
+	echo "*** ERROR[${cmd}]: $1"
+	exit 1
+    fi
+}
+usage()
+{
+    cat <<EOF
+${cmd} [options] [file_name1, file_name2, ...]
+	-c		: check xml syntax but do not anything else
+	-p		: translate into PDF
+	-w		: translate into HTML
+	-f		: force to translate
+	-i		: ignore errors and continue
+	-j		: check java version
+	-v		: verbose output
+	-d		: debug mode. no execute but show commandlines.
+	-h		: show this message
+	file_name	: XML DocBook documents. wirdcard allows.
+EOF
+    exit 0
+}
+
+while [ -z "`getopts "c p w f i j v d h" opt \
+	> ${tmprfx}:getopt_err.log`" \
+	-a X"${opt}" != "X?" ]; do
+    case ${opt} in
+	c)
+	    check_flag="yes"
+	    ;;
+	p)
+	    pdf_flag="yes"
+	    ;;
+	w)
+	    html_flag="yes"
+	    ;;
+	f)
+	    force_flag="yes"
+	    ;;
+	i)
+	    ignore_flag="yes"
+	    ;;
+	j)
+	    java_flag="yes"
+	    ;;
+	v)
+	    verbose_flag="yes"
+	    ;;
+	d)
+	    ECHO="echo "
+	    debug_flag="yes"
+	    ;;
+	h)
+	    usage
+	    ;;
+	*)
+	    ;;
+    esac
+done
+if [ -s ${tmprfx}:getopt_err.log ]; then
+    cat ${tmprfx}:getopt_err.log
+    rm -f ${tmprfx}:getopt_err.log
+    exit 1
+fi
+rm -f ${tmprfx}:getopt_err.log
+
+shift `expr ${OPTIND} - 1`
+
+if [ -z "${pdf_flag}" -a -z "${html_flag}" \
+	-a -z "${check_flag}" -a -z "${java_flag}" ]; then
+    error "need \`-c', \`-j', \`-p' or \`-w' option."
+fi
+if [ -n "${java_flag}" ]; then
+    path="`ls ${PREFIX}/jdk*/bin/java 2> /dev/null`"
+    for p in ${path}; do
+	jv="`echo ${p}|\
+	    perl -ne 'print $1 if m,^.*/jdk([0-9.]+)/bin/java$,'` ${jv}"
+    done
+    echo "JDK Version: ${jv} available"
+    echo "If you use another JDK version, set above version to JDKVERSION:"
+    echo "    env JDKVERSION=jdk_version_no dbxa dbxa_options xml_file"
+elif [ -z "$1" ]; then
+    usage
+else
+    files="$*"
+fi
+
+if [ -n "${check_flag}" ]; then
+    export CLASSPATH=${DBXSL_CLASSPATH}:${CLASSPATH}
+    for f in ${files}; do
+	fbase=`echo ${f}|grep \.xml$ `
+	if [ -n "${fbase}" ]; then
+	    fbase=`basename ${fbase} .xml`
+	else
+	    continue
+	fi
+	if [ -f ${f} ]; then
+	    if [ -n "${verbose_flag}" ]; then
+		msg "tring to parse \`${f}'"
+	    fi
+	    if [ -n "${debug_flag}" -o -n "${verbose_flag}" ]; then
+		echo ${JAVABINDIR}/java ${JAVAPARSEARG} ${f} ${DBXSL_HTML} \
+		    '>' /dev/null
+	    fi
+	    if [ -z "${debug_flag}" ]; then
+		${JAVABINDIR}/java ${JAVAPARSEARG} ${f} ${DBXSL_HTML} \
+		    > /dev/null
+		if [ $? -ne 0 ]; then
+		    error "failed to parse ${f}"
+		fi
+	    fi
+	fi
+    done
+fi
+if [ -n "${pdf_flag}" ]; then
+    export CLASSPATH=${DBXSL_CLASSPATH}:${CLASSDIR}/fop.jar:${CLASSDIR}/svg-w3c.jar:${CLASSPATH}
+    for f in ${files}; do
+	fbase=`echo ${f}|grep \.xml$ `
+	if [ -n "${fbase}" ]; then
+	    fbase=`basename ${fbase} .xml`
+	else
+	    continue
+	fi
+	if [ -f ${f} -a \( ! -s ${fbase}.pdf -o -n "${force_flag}" \) ]; then
+	    if [ -n "${verbose_flag}" ]; then
+		msg "tring to make \`${f} -> ${fbase}.pdf'"
+	    fi
+	    if [ -n "${debug_flag}" -o -n "${verbose_flag}" ]; then
+		echo ${JAVABINDIR}/java ${JAVAPARSEARG} ${f} ${DBXSL_FO} \
+		    '>' ${fbase}.fo
+	    fi
+	    if [ -z "${debug_flag}" ]; then
+		${JAVABINDIR}/java ${JAVAPARSEARG} ${f} ${DBXSL_FO} \
+		    > ${fbase}.fo
+		if [ $? -ne 0 ]; then
+		    error "failed to put ${fbase}.fo"
+		fi
+	    fi
+	    if [ -n "${debug_flag}" -o -n "${verbose_flag}" ]; then
+		echo ${JAVABINDIR}/java  org.apache.fop.apps.CommandLine \
+		    ${fbase}.fo ${fbase}.pdf
+	    fi
+	    if [ -z "${debug_flag}" ]; then
+		${JAVABINDIR}/java  org.apache.fop.apps.CommandLine \
+		    ${fbase}.fo ${fbase}.pdf
+		if [ $? -ne 0 ]; then
+		    error "failed to put ${fbase}.pdf"
+		fi
+	    fi
+	fi
+    done
+fi
+if [ -n "${html_flag}" ]; then
+    export CLASSPATH=${DBXSL_CLASSPATH}:${CLASSPATH}
+    for f in ${files}; do
+	fbase=`echo ${f}|grep \.xml$ `
+	if [ -n "${fbase}" ]; then
+	    fbase=`basename ${fbase} .xml`
+	else
+	    continue
+	fi
+	if [ -f ${f} -a \( ! -s ${fbase}.html -o -n "${force_flag}" \) ]; then
+	    if [ -n "${verbose_flag}" ]; then
+		msg "tring to make \`${f} -> ${fbase}.html'"
+	    fi
+	    if [ -n "${debug_flag}" -o -n "${verbose_flag}" ]; then
+		echo ${JAVABINDIR}/java ${JAVAPARSEARG} ${f} ${DBXSL_HTML} \
+		    '>' ${fbase}.html
+	    fi
+	    if [ -z "${debug_flag}" ]; then
+		${JAVABINDIR}/java ${JAVAPARSEARG} ${f} ${DBXSL_HTML} \
+		    > ${fbase}.html
+		if [ $? -ne 0 ]; then
+		    error "failed to put ${fbase}.html"
+		fi
+	    fi
+	fi
+    done
+fi

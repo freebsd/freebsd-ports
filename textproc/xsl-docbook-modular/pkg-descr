@@ -1,0 +1,14 @@
+These are XSL stylesheets for the DocBook DTD by Norm Walsh. Use them
+with a java through XSLT (such as XT, XP and FOP) to convert documents
+marked up as DocBook to HTML and FDF.
+
+To make translate DocBook XML dcouments HTML or PDF, use dbx2a script as
+follows:
+
+        dbx2a -w foo.xml (DocBook XML -> HTML)
+        dbx2a -p foo.xml (DocBook XML -> PDF)
+
+You can see usage for dbx2a by `dbx2a -h'.
+For more information about XSL DocBook Stylesheets, see below:
+
+WWW: http://nwalsh.com/docbook/xsl/
