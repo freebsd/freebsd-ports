@@ -3,7 +3,7 @@
 # Date created:		15 April 1998
 # Whom:			Taguchi Takeshi <taguchi@tohoku.iij.ad.jp>
 #
-# $Id: Makefile,v 1.4 1998/12/01 03:06:42 asami Exp $
+# $Id: Makefile,v 1.5 1999/01/02 19:11:09 sada Exp $
 #
 
 DISTNAME=	xc
@@ -12,7 +12,7 @@ CATEGORIES=	x11
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
-RUN_DEPENDS=	mkfontdir.pl:${.CURDIR}/../XttXF86srv-common
+LIB_DEPENDS=	font.1:${.CURDIR}/../XttXF86srv-common
 
 SERVER=		XF86_Mach8
 

@@ -80,10 +80,16 @@ initialize::
 InputExtCheck:: initialize
 .if defined(BUILDXINPUTEXT) && ${BUILDXINPUTEXT} == YES
 	@( \
+	${ECHO} "#ifdef BuildXInputExt" >> ${CONFFILE}; \
+	${ECHO} "#undef BuildXInputExt" >> ${CONFFILE}; \
+	${ECHO} "#endif" >> ${CONFFILE}; \
 	${ECHO} "#define BuildXInputExt YES" >> ${CONFFILE}; \
 	${ECHO_MSG} "   Using BuildXInputExt." )
 .else
 	@( \
+	${ECHO} "#ifdef JoystickSupport" >> ${CONFFILE}; \
+	${ECHO} "#undef JoystickSupport" >> ${CONFFILE}; \
+	${ECHO} "#endif" >> ${CONFFILE}; \
 	${ECHO} "#define JoystickSupport YES" >> ${CONFFILE}; \
 	${ECHO_MSG} "   Using JoystickSupport." )
 .endif
@@ -91,6 +97,9 @@ InputExtCheck:: initialize
 pexCheck:: initialize
 .if defined(BUILDPEXEXT) && ${BUILDPEXEXT} == YES
 	@( \
+	${ECHO} "#ifdef BuildPexExt" >> ${CONFFILE}; \
+	${ECHO} "#undef BuildPexExt" >> ${CONFFILE}; \
+	${ECHO} "#endif" >> ${CONFFILE}; \
 	${ECHO} "#define BuildPexExt YES" >> ${CONFFILE}; \
 	${ECHO_MSG} "   Using BuildPexExt." )
 .else
@@ -101,6 +110,9 @@ pexCheck:: initialize
 xieCheck:: initialize
 .if defined(BUILDXIE) && ${BUILDXIE} == YES
 	@( \
+	${ECHO} "#ifdef BuildXIE" >> ${CONFFILE}; \
+	${ECHO} "#undef BuildXIE" >> ${CONFFILE}; \
+	${ECHO} "#endif" >> ${CONFFILE}; \
 	${ECHO} "#define BuildXIE YES" >> ${CONFFILE}; \
 	${ECHO_MSG} "   Using BuildXIE." )
 .else
@@ -120,7 +132,10 @@ ELFCheck:: initialize
 SecureRPCCheck:: initialize
 .if defined(HASSECURERPC) && ${HASSECURERPC} == YES
 	@( \
-	${ECHO} "#define HasSecureRPC ${HASSECURERPC}" >> ${CONFFILE}; \
+	${ECHO} "#ifdef HasSecureRPC" >> ${CONFFILE}; \
+	${ECHO} "#undefine HasSecureRPC" >> ${CONFFILE}; \
+	${ECHO} "#endif" >> ${CONFFILE}; \
+	${ECHO} "#define HasSecureRPC YES" >> ${CONFFILE}; \
 	${ECHO_MSG} "   Using Secure RPC"; \
 	)
 .else
@@ -135,10 +150,16 @@ XdmAuthCheck:: initialize
 	   if [ -f ${DISTDIR}/xc/Wraphelp.c ]; then \
 		${ECHO_MSG} "     Whaphelp.c found in DISTDIR directory, copying it to source tree." ; \
 		${CP} ${DISTDIR}/xc/Wraphelp.c ${WRKDIR}/xc/lib/Xdmcp/ ; \
+		${ECHO} "#ifdef HasXdmAuth" >> ${CONFFILE} ; \
+		${ECHO} "#undef HasXdmAuth" >> ${CONFFILE} ; \
+		${ECHO} "#endif" >> ${CONFFILE}; \
 		${ECHO} "#define HasXdmAuth ${HASXDMAUTH}" >> ${CONFFILE} ; \
 	   elif [ -f ${FILESDIR}/Wraphelp.c ]; then \
 		${ECHO_MSG} "     Whaphelp.c found in FILESDIR directory, copying it to source tree." ; \
 		${CP} ${FILESDIR}/Wraphelp.c ${WRKDIR}/xc/lib/Xdmcp/ ; \
+		${ECHO} "#ifdef HasXdmAuth" >> ${CONFFILE} ; \
+		${ECHO} "#undef HasXdmAuth" >> ${CONFFILE} ; \
+		${ECHO} "#endif" >> ${CONFFILE}; \
 		${ECHO} "#define HasXdmAuth ${HASXDMAUTH}" >> ${CONFFILE} ; \
 	   else \
 		${ECHO_MSG} "Wraphelp.c not found. You can not use XDM-AUTHORIZATION-1!" ; \
