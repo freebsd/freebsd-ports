@@ -1,5 +1,5 @@
 --- src/ipopd/ipop3d.c.orig	Fri Jan 17 18:17:58 2003
-+++ src/ipopd/ipop3d.c	Mon May 19 22:18:28 2003
++++ src/ipopd/ipop3d.c	Mon Jun  2 02:47:10 2003
 @@ -28,6 +28,11 @@
  #include <time.h>
  #include "c-client.h"
@@ -80,6 +80,15 @@
  /* Main program */
  
  int main (int argc,char *argv[])
+@@ -101,7 +158,7 @@
+     (((s = strrchr (argv[0],'/')) || (s = strrchr (argv[0],'\\'))) ?
+      s+1 : argv[0]) : "ipop3d";
+ 				/* set service name before linkage */
+-  mail_parameters (NIL,SET_SERVICENAME,(void *) "pop");
++  mail_parameters (NIL,SET_SERVICENAME,(void *) "pop3");
+ #include "linkage.c"
+ 				/* initialize server */
+   server_init (pgmname,"pop3","pop3s",clkint,kodint,hupint,trmint);
 @@ -209,9 +266,13 @@
  	      syslog (LOG_INFO,"AUTHENTICATE %s failure host=%.80s",s,
  		      tcp_clienthost ());

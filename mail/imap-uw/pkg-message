@@ -10,11 +10,11 @@ something like the following lines to /etc/pam.conf (PAM authentication is
 default):
 
 imap	auth	required	pam_unix.so
-imap	account	required	pam_unix.so			try_first_pass
-imap	session	required	pam_deny.so
+imap	account	required	pam_unix.so
+imap	session	required	pam_unix.so
 pop3	auth	required	pam_unix.so
-pop3	account	required	pam_unix.so			try_first_pass
-pop3	session	required	pam_deny.so
+pop3	account	required	pam_unix.so
+pop3	session	required	pam_unix.so
 
 The pam_unix module does not have session support, so we do not use it for
 session management. Be sure to read up on pam.conf(5).
