@@ -1,0 +1,11 @@
+lib/gauche/%%GAUCHE_VERSION%%/%%TARGET%%/gauche-sdl-image.so
+lib/gauche/%%GAUCHE_VERSION%%/%%TARGET%%/gauche-sdl-mixer.so
+lib/gauche/%%GAUCHE_VERSION%%/%%TARGET%%/gauche-sdl-ttf.so
+lib/gauche/%%GAUCHE_VERSION%%/%%TARGET%%/gauche-sdl.so
+share/gauche/%%GAUCHE_VERSION%%/lib/sdl.scm
+share/gauche/%%GAUCHE_VERSION%%/lib/sdl/color.scm
+share/gauche/%%GAUCHE_VERSION%%/lib/sdl/gfx.scm
+share/gauche/%%GAUCHE_VERSION%%/lib/sdl/image.scm
+share/gauche/%%GAUCHE_VERSION%%/lib/sdl/mixer.scm
+share/gauche/%%GAUCHE_VERSION%%/lib/sdl/ttf.scm
+@dirrm share/gauche/%%GAUCHE_VERSION%%/lib/sdl

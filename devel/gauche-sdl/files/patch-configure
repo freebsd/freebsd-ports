@@ -1,0 +1,20 @@
+--- configure.orig	Sun Feb 15 16:47:50 2004
++++ configure	Sun Feb 15 16:49:38 2004
+@@ -777,6 +777,8 @@
+ fi
+ done
+ 
++MYLAMEOLDCPPFLAGS="${CPPFLAGS}"
++CPPFLAGS="${CPPFLAGS} %%SDL_CFLAGS%%"
+ 
+ for ac_hdr in SDL/SDL_framerate.h
+ do
+@@ -944,7 +946,7 @@
+ fi
+ done
+ 
+-
++CPPFLAGS="${MYLAMEOLDCPPFLAGS}"
+ 
+ # Sets the default value of INSTALL_TYPE macro.
+ 
