@@ -1,0 +1,30 @@
+#! /bin/sh
+
+# use a subshell to support new -CURRENT rc.d structure
+(
+daemon=pppoe-relay
+daemon_path=/usr/local/sbin
+daemon_flags=
+
+case $1 in
+    start)
+        if [ -x ${daemon_path}/$daemon ]; then
+            ${daemon_path}/$daemon $daemon_flags
+            echo -n " $daemon"
+        fi
+        ;;
+    stop)
+        killall $daemon && echo -n " $daemon"
+        ;;
+    restart)
+        $0 stop
+        sleep 1
+        $0 start
+        ;;
+    *)
+        echo "Usage: `basename $0` {start|stop|restart}" >&2
+        exit 64
+        ;;
+esac
+exit 0
+)

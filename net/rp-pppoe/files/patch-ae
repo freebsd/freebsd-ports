@@ -1,0 +1,16 @@
+--- relay.h.orig	Mon Jul  8 20:38:24 2002
++++ relay.h	Wed Mar 10 15:50:51 2004
+@@ -51,8 +51,13 @@
+ 
+ /* Function prototypes */
+ 
++#if defined(__FreeBSD__)
++void relayGotSessionPacket(PPPoEInterface const *iface, PPPoEPacket *packet, int size);
++void relayGotDiscoveryPacket(PPPoEInterface const *iface, PPPoEPacket *packet, int size);
++#else
+ void relayGotSessionPacket(PPPoEInterface const *i);
+ void relayGotDiscoveryPacket(PPPoEInterface const *i);
++#endif
+ PPPoEInterface *findInterface(int sock);
+ unsigned int hash(unsigned char const *mac, UINT16_t sesNum);
+ SessionHash *findSession(unsigned char const *mac, UINT16_t sesNum);

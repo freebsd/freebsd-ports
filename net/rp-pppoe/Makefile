@@ -7,6 +7,7 @@
 
 PORTNAME=	rp-pppoe
 PORTVERSION=	3.5
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.roaringpenguin.com/penguin/pppoe/
 
@@ -15,6 +16,7 @@ COMMENT=	"The popular Roaring Penguin's PPPoE software"
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+PATCH_WRKSRC=	${WRKSRC}/src
 CONFIGURE_WRKSRC=	${WRKSRC}/src
 BUILD_WRKSRC=	${WRKSRC}/src
 
@@ -50,7 +52,7 @@ post-patch:
 
 do-install:
 # Binaries
-.for f in pppoe pppoe-server
+.for f in pppoe pppoe-server pppoe-relay
 	@${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${f} ${PREFIX}/sbin
 .endfor
 # Configurations
@@ -59,10 +61,6 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/configs/${f} \
 		${PREFIX}/etc/ppp/${f}.sample
 .endfor
-.if !exists(${PREFIX}/etc/ppp/pppoe.conf)
-	${INSTALL_SCRIPT} ${PREFIX}/etc/ppp/pppoe.conf.sample \
-		${PREFIX}/etc/ppp/pppoe.conf
-.endif
 # Manual pages
 	@${MKDIR} ${MAN5PREFIX}/man/man5
 .for f in ${MAN5}
@@ -76,6 +74,11 @@ do-install:
 .for f in ${SCRIPT_FILES}
 	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/${f} ${PREFIX}/sbin
 .endfor
+# Startup scripts
+.for f in 04pppoe-relay.sh.sample 04pppoe-server.sh.sample
+	@${INSTALL_SCRIPT} ${FILESDIR}/${f} ${PREFIX}/etc/rc.d/
+.endfor
+
 # Documentation
 .ifndef (NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
