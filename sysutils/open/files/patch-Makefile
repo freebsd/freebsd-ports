@@ -1,0 +1,25 @@
+--- Makefile.orig	Fri Jul 19 07:32:07 1996
++++ Makefile	Wed Feb 11 05:18:21 2004
+@@ -1,6 +1,7 @@
+ 
+-CC=gcc
+-CFLAGS=-O2 -Wall -ansi
++CC?=gcc
++CFLAGS?=-O2 -Wall -ansi
++CFLAGS+=-Wall
+ LDFLAGS=$(CFLAGS) -s 
+ 
+ SRC1=open.c
+@@ -20,10 +21,10 @@
+ 
+ 
+ open: $(OBJ1) 
+-	$(CC) $(LDLAGS) -o $@ $<
++	$(CC) $(LDLAGS) -o $@ $>
+ 
+ switchto: $(OBJ2) 
+-	$(CC) $(LDLAGS) -o $@ $<
++	$(CC) $(LDLAGS) -o $@ $>
+ 
+ open.o: open.h
+ 
