@@ -5437,6 +5437,7 @@ p5-Getargs-Long	ports/devel/p5-Getargs-Long
 p5-Getopt-ArgvFile	ports/devel/p5-Getopt-ArgvFile
 p5-Getopt-Declare	ports/devel/p5-Getopt-Declare
 p5-Getopt-Long	ports/devel/p5-Getopt-Long
+p5-Getopt-Mixed	ports/devel/p5-Getopt-Mixed
 p5-Gimp		ports/graphics/p5-Gimp
 p5-Glade	ports/x11-toolkits/p5-Glade
 p5-Glade-Perl	ports/devel/p5-Glade-Perl
