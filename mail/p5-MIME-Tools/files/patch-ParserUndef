@@ -1,0 +1,43 @@
+--- lib/MIME/Parser.pm	Tue Aug 31 18:54:05 2004
++++ lib/MIME/Parser.pm	Tue Aug 31 18:53:33 2004
+@@ -708,6 +710,7 @@
+ 	
+ 	### Parse the next part, and add it to the entity...
+ 	my $part = $self->process_part($in, $part_rdr, Retype=>$retype);
++        return undef unless defined($part);
+ 	$ent->add_part($part);
+ 
+ 	### ...and look at how we finished up:
+@@ -944,6 +954,7 @@
+ 
+     ### Parse the message:
+     my $msg = $self->process_part($in, $rdr);
++    return undef unless defined($msg);
+ 
+     ### How to handle nested messages?
+     if ($self->extract_nested_messages eq 'REPLACE') {
+@@ -1005,14 +1024,14 @@
+ 
+     ### Handle, according to the MIME type:
+     if ($type eq 'multipart') {
+-	$self->process_multipart($in, $rdr, $ent);
++        return undef unless defined($self->process_multipart($in, $rdr, $ent));
+     }
+     elsif (("$type/$subtype" eq "message/rfc822" ||
+             "$type/$subtype" eq "message/external-body" ||
+ 	    ("$type/$subtype" eq "message/partial" && $head->mime_attr("content-type.number") == 1)) && 
+ 	    $self->extract_nested_messages) {
+ 	$self->debug("attempting to process a nested message");
+-	$self->process_message($in, $rdr, $ent);
++	return undef unless defined($self->process_message($in, $rdr, $ent));
+     }
+     else {                     
+ 	$self->process_singlepart($in, $rdr, $ent);
+@@ -1080,7 +1080,6 @@
+ =back
+ 
+ Returns the parsed MIME::Entity on success.  
+-Throws exception on failure.
+ 
+ =cut
+ 
