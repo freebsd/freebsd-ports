@@ -4,6 +4,7 @@ lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/Base.pm
 lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/DocumentLocator.pm
 lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/Exception.pm
 lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/Intro.pod
+lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/ParserDetails.ini
 lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/ParserFactory.pm
 lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl.pm
 lib/perl5/site_perl/%%PERL_VER%%/XML/SAX/PurePerl/DTDDecls.pm
