@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/Makefile.in	2001/01/26 18:52:53	1.1
++++ src/Makefile.in	2001/01/26 18:53:41
+@@ -112,7 +112,7 @@
+ lpe_LDFLAGS = @lpe_LDFLAGS@
+ lpe_DEPENDENCIES = @lpe_DEPS@ @INTLDEPS@
+ @USE_INCLUDED_LIBINTL_TRUE@CPPFLAGS =  -DLOCALEDIR=\"$(datadir)/@DATADIRNAME@\" -I$(top_srcdir)/intl
+-@USE_INCLUDED_LIBINTL_FALSE@CPPFLAGS = -DLOCALEDIR=\"$(datadir)/locale\"
++@USE_INCLUDED_LIBINTL_FALSE@CPPFLAGS = -DLOCALEDIR=\"$(datadir)/locale\" @CPPFLAGS@
+ 
+ EXTRA_DIST = templ.c templ.h
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
