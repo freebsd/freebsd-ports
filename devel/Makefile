@@ -573,6 +573,7 @@
     SUBDIR += rpc2
     SUBDIR += rtems-gcc
     SUBDIR += ruby-amstd
+    SUBDIR += ruby-aspectr
     SUBDIR += ruby-avl
     SUBDIR += ruby-bsearch
     SUBDIR += ruby-byaccr
