@@ -1,6 +1,6 @@
 MD5 (xv/xv-3.10a.tar.gz) = 2d4fbeec1561304362781cc8e2f7f72d
 MD5 (xv/xv310a-jp-extension-rev5.3.3.tar.gz) = 60654c008c493cf42bbf46442d63f444
-MD5 (xv/jp-ext-bzip2.patch) = 543f6747bf85ad9d9a9837a9d1e821fa
+MD5 (xv/jp-ext-bzip2-1.1.patch) = e9be65fe83f96def4d5c6310513e4fef
 MD5 (xv/longname.patch) = 04f2f162a2f66c8eca6bd6e2e1e9777d
 MD5 (xv/xv-png-1.2d.patch) = 37a80e90ee07c94010af8a128f98788d
 MD5 (xv/xvpng-1.2d-fix3.patch) = af1e6be96aeb7351fce390a48f6d29bd
