@@ -1,5 +1,7 @@
 @unexec if cmp -s %D/etc/vtund.conf.example %D/etc/vtund.conf; then rm -f %D/etc/vtund.conf; fi
 etc/vtund.conf.example
+etc/rc.d/vtunclient.sh
+etc/rc.d/vtund.sh
 sbin/vtund
 share/doc/vtund/FAQ
 share/doc/vtund/README
