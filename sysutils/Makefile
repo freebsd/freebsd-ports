@@ -51,6 +51,7 @@
     SUBDIR += muse
     SUBDIR += no-login
     SUBDIR += npadmin
+    SUBDIR += nut
     SUBDIR += obliterate
     SUBDIR += pib
     SUBDIR += prips
