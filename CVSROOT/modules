@@ -9302,6 +9302,7 @@ tgif2tex	ports/print/tgif2tex
 thcrut		ports/net/thcrut
 the		ports/editors/the
 thefish		ports/sysutils/thefish
+thevalley	ports/games/thevalley
 thinice		ports/x11-toolkits/thinice
 thoteditor	ports/editors/thoteditor
 threeDS		ports/graphics/threeDS
