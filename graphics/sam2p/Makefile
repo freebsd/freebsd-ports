@@ -14,9 +14,15 @@ MASTER_SITES=	http://www.inf.bme.hu/~pts/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts raster (bitmap) image formats into PS or PDF files
 
+.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
+GSPORT?=	print/ghostscript-afpl
+.else
+GSPORT?=	print/ghostscript-gnu
+.endif
+
 BUILD_DEPENDS=	tif22pnm:${PORTSDIR}/graphics/tif22pnm \
 		tifftopnm:${PORTSDIR}/graphics/netpbm \
-		gs:${PORTSDIR}/print/ghostscript-gnu \
+		gs:${PORTSDIR}/${GSPORT} \
 		zip:${PORTSDIR}/archivers/zip \
 		bash:${PORTSDIR}/shells/bash2
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
