@@ -1,29 +1,34 @@
 # New ports collection makefile for:	webalizer
-# Version required:	1.22
+# Version required:	1.30.*
 # Date created:		02.Jun 1998
 # Whom:			dirk.meyer@dinoex.sub.org
 #
 # $FreeBSD$
 
-DISTNAME=	webalizer-1.22-06-src
-PKGNAME=	de-webalizer-1.22.6
+DISTNAME=	webalizer-1.30-04-src
+PKGNAME=	de-webalizer-1.30.4
 CATEGORIES=	german www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/ \
-		ftp://ftp.dinoex.sub.de/pub/approved/
+		ftp://ftp.lan-ks.de/pub/approved/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dirk.meyer@dinoex.sub.org
 
-BUILD_DEPENDS=	${PREFIX}/lib/libgd.a:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.0:${PORTSDIR}/graphics/gd
 
 WEBALIZER_LANG= german
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --with-language=${WEBALIZER_LANG}
+CONFIGURE_ARGS+=	--with-gdlib=${PREFIX}/lib \
+			--with-gd=${PREFIX}/include/gd \
+			--with-language=${WEBALIZER_LANG}
 BIN1=		de-webalizer
 MAN1=		de-webalizer.1
 DOC1=		CHANGES COPYING Copyright INSTALL \
 		README country-codes.txt webalizer.LSM
-WRKSRC=		${WRKDIR}/webalizer-1.22-06
+WRKSRC=		${WRKDIR}/${DISTNAME:S/-src$//}
+
+pre-configure:
+	@${PERL5} -pi -e "s=/etc=${PREFIX}/etc=" ${WRKSRC}/webalizer.c
 
 do-install:
 .for i in ${BIN1}
