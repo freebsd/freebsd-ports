@@ -54,12 +54,14 @@ CACHEOWNER?=	bin
 # set WITHOUT_SENTRENAME to turn off periodic renaming of the Sent folder
 # set WITHOUT_IMAP if you don't use the Courier IMAP server
 # set WITHOUT_GZIP for not using gzip to compress messages
+# set WITH_AUTOPURGE to something other than 7 days
+# set WITH_MAXPURGE to something other than 90 days
 #
 # The following settings are in bytes:
 # set WITH_MAXMSGSIZE to max size of messages (including attachments)
 # set WITH_MAXARGSIZE to max size of a text message (excluding attachments)
 # set WITH_MAXFORMARGSIZE to max size of attachments
-# 
+#
 # set WITH_CHARSET=chset,chset,... to enable charsets.
 # Set it to "all" will enable all unicode charset mappings.
 # "iconv -l" may give you an idea of some usable character sets, although
@@ -162,6 +164,14 @@ CONFIGURE_ARGS+=	--enable-unicode
 .else
 CONFIGURE_ARGS+=	--enable-unicode=${WITH_CHARSET}
 .endif
+.endif
+
+.if defined(WITH_AUTOPURGE)
+CONFIGURE_ARGS+=        --enable-autopurge=${WITH_AUTOPURGE}
+.endif
+
+.if defined(WITH_MAXPURGE)
+CONFIGURE_ARGS+=        --enable-maxpurge=${WITH_MAXPURGE}
 .endif
 
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
