@@ -1,8 +1,11 @@
 bin/dosmod
+bin/function_grep.pl
+bin/specmaker
 bin/fnt2bdf
 bin/wine
 bin/winebuild
 bin/wineclipsrv
+bin/winedbg.so
 bin/winedbg
 bin/winelauncher
 bin/winemaker
@@ -44,6 +47,7 @@ include/wine/lmcons.h
 include/wine/lzexpand.h
 include/wine/mapi.h
 include/wine/mapidefs.h
+include/wine/mciavi.h
 include/wine/mcx.h
 include/wine/mmreg.h
 include/wine/mmsystem.h
