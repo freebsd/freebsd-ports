@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libxml2
-PORTVERSION=	2.5.6
+PORTVERSION=	2.5.7
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.5
@@ -54,10 +54,6 @@ CONFIGURE_ARGS+=	--with-mem-debug
 CONFIGURE_ARGS+=	--with-history
 .endif
 
-.if defined(WITH_THREADS)
-CONFIGURE_ARGS+=	--with-threads
-.endif
-
 .if defined(WITH_THREAD_ALLOC)
 CONFIGURE_ARGS+=	--with-thread-alloc
 .endif
@@ -70,12 +66,13 @@ pre-everything::
 	@${ECHO_MSG} "		WITH_SCHEMA=yes		Turns on XML Schema support"
 	@${ECHO_MSG} "		WITH_MEM_DEBUG=yes	Turns on memory debugging"
 	@${ECHO_MSG} "		WITH_XMLLINT_HIST=yes	Turns on history for xmllint"
-	@${ECHO_MSG} "		WITH_THREADS=yes	Turns on multi-threading support"
 	@${ECHO_MSG} "		WITH_THREAD_ALLOC=yes	Turns on per-thread memory"
 	@${ECHO_MSG} ""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/catalog.c ${WRKSRC}/xmlcatalog.c
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
