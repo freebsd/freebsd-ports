@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ncftpd
-PORTVERSION=	2.7.3
+PORTVERSION=	2.8.1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.ncftp.com/ncftpd/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd${BINVER}-${ARCH}-export
@@ -19,12 +19,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	YES
 LICENSE=	shareware
-RESTRICTED=	"30 day evaluation license"
+xRESTRICTED=	"30 day evaluation license"
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500000
-BINVER=		5.0
+BINVER=		5.2.1
 .elif ${OSVERSION} >= 480000
 BINVER=		4.8
 .elif ${OSVERSION} >= 350000
@@ -52,6 +52,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README.freebsd ${PREFIX}/share/doc/ncftpd
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/ncftpd
 .endif
-	${SED} -e 's,%%PREFIX%%,${PREFIX},' ${PKGMESSAGE}
+	@${SED} -e 's,%%PREFIX%%,${PREFIX},' ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
