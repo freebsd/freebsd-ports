@@ -174,6 +174,7 @@
     SUBDIR += xferstats
     SUBDIR += xicq
     SUBDIR += xipmsg
+    SUBDIR += xisp
     SUBDIR += xwhois
     SUBDIR += ytalk
     SUBDIR += zebra
