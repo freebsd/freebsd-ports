@@ -1,0 +1,19 @@
+--- pf/pf_norm.c	3 Jul 2003 02:40:10 -0000	1.2.16.1
++++ pf/pf_norm.c	14 Jul 2003 07:11:17 -0000	1.2.16.2
+@@ -1050,12 +1050,12 @@
+ 		goto bad;
+ 	}
+ 
+-	max = fragoff + ip_len;
+ 	/* Respect maximum length */
+-	if (max > IP_MAXPACKET) {
+-		DPFPRINTF(("max packet %d\n", max));
++	if (fragoff + ip_len > IP_MAXPACKET) {
++		DPFPRINTF(("max packet %d\n", fragoff + ip_len));
+ 		goto bad;
+ 	}
++	max = fragoff + ip_len;
+ 
+ 	if ((r->rule_flag & (PFRULE_FRAGCROP|PFRULE_FRAGDROP)) == 0) {
+ 		/* Fully buffer all of the fragments */
+
