@@ -11,7 +11,7 @@ FLAGS	       = %%CFLAGS%%
                     # name (absolute or relative) of the compiler: cc, /bin/cc
 C_COMPILER     = %%CC%%
                     # various defines:
-DEFINES        = -DSYSV_TIME -DVOID_SIGNALS
+DEFINES        = -DSYSV_TIME -DVOID_SIGNALS -DDO_NOT_REDEFINE_MALLOC
                     # other linker -specific flags
 LFLAGS         =
                     # unix command to apply to executable after link 
