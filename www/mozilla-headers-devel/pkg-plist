@@ -1642,7 +1642,6 @@ include/mozilla/shistory/nsISHistoryInternal.h
 include/mozilla/shistory/nsISHistoryListener.h
 include/mozilla/sidebar/nsISidebar.h
 include/mozilla/string/nsAFlatString.h
-include/mozilla/string/nsAPromiseString.h
 include/mozilla/string/nsASingleFragmentString.h
 include/mozilla/string/nsAString.h
 include/mozilla/string/nsAStringGenerator.h
