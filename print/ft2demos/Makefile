@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ft2demos
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.4
 CATEGORIES=	print
 MASTER_SITES=	ftp://freetype.sourceforge.net/pub/freetype/%SUBDIR%/ \
 		${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,freetype,} \
@@ -19,18 +19,17 @@ MASTER_SITE_SUBDIR=	freetype2
 
 MAINTAINER=	kanou@mil.allnet.ne.jp
 
+BUILD_DEPENDS+=	libtool:${PORTSDIR}/devel/libtool
 BUILD_DEPENDS+=	${PORTSDIR}/print/freetype2/work/freetype-${PORTVERSION}/config.mk:${PORTSDIR}/print/freetype2:build
 LIB_DEPENDS=	freetype.7:${PORTSDIR}/print/freetype2
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
 MAKE_ENV=	TOP="${PORTSDIR}/print/freetype2/work/freetype-${PORTVERSION}"
 
-FT_PROGRAMS=	ftdump ftlint ftmulti ftstring fttimer ftview
+FT_PROGRAMS=	ftdump ftlint ftmulti ftstring fttimer ftview ftmemchk
 
 do-install:
 	@(cd ${WRKSRC}/bin/.libs/ ; ${INSTALL_PROGRAM} ${FT_PROGRAMS} ${PREFIX}/bin)
-	@(cd ${WRKSRC}/bin/.libs/ ; ${INSTALL_PROGRAM} memtest ${PREFIX}/bin/ftmemtest)
 
 .include <bsd.port.mk>
