@@ -272,7 +272,6 @@
     SUBDIR += source-highlight
     SUBDIR += sp
     SUBDIR += tclExpat
-    SUBDIR += tclxml
     SUBDIR += tdtd.el
     SUBDIR += tex2im
     SUBDIR += texi2html
