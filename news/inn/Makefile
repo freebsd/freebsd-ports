@@ -3,7 +3,7 @@
 # Date created:		20 Oct 1994 (1.4), 18 Dec 1996 (1.5.1)
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.25 1998/01/25 21:41:01 torstenb Exp $
+# $Id: Makefile,v 1.26 1998/02/10 06:05:23 andreas Exp $
 #
 
 DISTNAME=	inn-1.7.2
@@ -16,15 +16,10 @@ MAINTAINER=	torstenb@FreeBSD.ORG
 # If you want PGP verification of control messages set PGPVERIFY to "DO"
 PGPVERIFY?=	DONT
 
-# FreeBSD 2.2 comes with tcl in the base system, so it's enabled by default
-# if you want to disable tcl support, set USE_TCL to "DONT"
+# TCL and/or PERL support is needed for writing filters
+# if you want to enable tcl support, set USE_TCL to "DO"
 # if you want to enable perl5 support, set USE_PERL5 to "DO"
-# For FreeBSD-current (3.x) you have to manually fine tune scripts/configure,
-# a) if you got rid of the tcl support in the base OS for ports
-#    "backward compatibility"
-# b) so tcl80 from the ports collection has to be used and paths slightly
-#    change
-USE_TCL?=	DO
+USE_TCL?=	DONT
 USE_PERL5?=	DONT
 
 SCRIPTS_ENV+= PGPVERIFY=${PGPVERIFY} USE_TCL=${USE_TCL} USE_PERL5=${USE_PERL5}
