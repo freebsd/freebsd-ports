@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snmp
-PORTVERSION=	3.3.2
+PORTVERSION=	3.3.5
 CATEGORIES=	net python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pysnmp
@@ -18,8 +18,8 @@ COMMENT=	SNMP framework for Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-EXAMPLESDIR=	${PREFIX}/share/examples/py-snmp
-DOCSDIR=	${PREFIX}/share/doc/py-snmp
+EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
 .if !defined(NOPORTDOCS)
 post-install:

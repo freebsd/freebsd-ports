@@ -118,6 +118,15 @@
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/api/__init__.py
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/api/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/api/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha/__init__.py
+%%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha/rfc1157.py
+%%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha/rfc1157.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha/rfc1157.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha/rfc1905.py
+%%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha/rfc1905.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha/rfc1905.pyo
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/api/error.py
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/api/error.pyc
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/api/error.pyo
@@ -130,12 +139,6 @@
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/api/generic/rfc1905.py
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/api/generic/rfc1905.pyc
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/api/generic/rfc1905.pyo
-%%PYTHON_SITELIBDIR%%/pysnmp/proto/api/generic/v1.py
-%%PYTHON_SITELIBDIR%%/pysnmp/proto/api/generic/v1.pyc
-%%PYTHON_SITELIBDIR%%/pysnmp/proto/api/generic/v1.pyo
-%%PYTHON_SITELIBDIR%%/pysnmp/proto/api/generic/v2c.py
-%%PYTHON_SITELIBDIR%%/pysnmp/proto/api/generic/v2c.pyc
-%%PYTHON_SITELIBDIR%%/pysnmp/proto/api/generic/v2c.pyo
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/cli/__init__.py
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/cli/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/cli/__init__.pyo
@@ -181,6 +184,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/proto/cli/ucd
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/proto/cli
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/proto/api/generic
+@dirrm %%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/proto/api
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/proto
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/mapping/udp
@@ -193,124 +197,122 @@
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/asn1/encoding
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/asn1
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp
-%%PORTDOCS%%share/examples/py-snmp/asyncmgr.py
-%%PORTDOCS%%share/examples/py-snmp/snmpagent.py
-%%PORTDOCS%%share/examples/py-snmp/snmpbulk.py
-%%PORTDOCS%%share/examples/py-snmp/snmpbulkwalk.py
-%%PORTDOCS%%share/examples/py-snmp/snmpget.py
-%%PORTDOCS%%share/examples/py-snmp/snmpset.py
-%%PORTDOCS%%share/examples/py-snmp/snmptrap.py
-%%PORTDOCS%%share/examples/py-snmp/snmptrapd.py
-%%PORTDOCS%%share/examples/py-snmp/snmpwalk.py
-%%PORTDOCS%%share/doc/py-snmp/asn1/encoding/ber/base-fixed-objects.html
-%%PORTDOCS%%share/doc/py-snmp/asn1/encoding/ber/base-simple-objects.html
-%%PORTDOCS%%share/doc/py-snmp/asn1/encoding/ber/base-variable-objects.html
-%%PORTDOCS%%share/doc/py-snmp/asn1/encoding/ber/base.html
-%%PORTDOCS%%share/doc/py-snmp/asn1/encoding/ber/error.html
-%%PORTDOCS%%share/doc/py-snmp/asn1/encoding/ber/intro.html
-%%PORTDOCS%%share/doc/py-snmp/asn1/encoding/ber/univ.html
-%%PORTDOCS%%share/doc/py-snmp/asn1/encoding/error.html
-%%PORTDOCS%%share/doc/py-snmp/asn1/encoding/intro.html
-%%PORTDOCS%%share/doc/py-snmp/asn1/base-asn1-objects.html
-%%PORTDOCS%%share/doc/py-snmp/asn1/base-choicetypeasn1-objects.html
-%%PORTDOCS%%share/doc/py-snmp/asn1/base-recordtypeasn1-objects.html
-%%PORTDOCS%%share/doc/py-snmp/asn1/base-simpleasn1-objects.html
-%%PORTDOCS%%share/doc/py-snmp/asn1/base-variabletypeasn1-objects.html
-%%PORTDOCS%%share/doc/py-snmp/asn1/base.html
-%%PORTDOCS%%share/doc/py-snmp/asn1/error.html
-%%PORTDOCS%%share/doc/py-snmp/asn1/intro.html
-%%PORTDOCS%%share/doc/py-snmp/asn1/univ-boolean-objects.html
-%%PORTDOCS%%share/doc/py-snmp/asn1/univ-choice-example.html
-%%PORTDOCS%%share/doc/py-snmp/asn1/univ-integer-example.html
-%%PORTDOCS%%share/doc/py-snmp/asn1/univ-integer-objects.html
-%%PORTDOCS%%share/doc/py-snmp/asn1/univ-oid-example.html
-%%PORTDOCS%%share/doc/py-snmp/asn1/univ.html
-%%PORTDOCS%%share/doc/py-snmp/asn1/univ-oid-objects.html
-%%PORTDOCS%%share/doc/py-snmp/asn1/univ-sequence-example.html
-%%PORTDOCS%%share/doc/py-snmp/asn1/univ-sequenceof-example.html
-%%PORTDOCS%%share/doc/py-snmp/asn1/univ-string-example.html
-%%PORTDOCS%%share/doc/py-snmp/asn1/univ-string-objects.html
-%%PORTDOCS%%share/doc/py-snmp/compat/snmpy/intro.html
-%%PORTDOCS%%share/doc/py-snmp/compat/intro.html
-%%PORTDOCS%%share/doc/py-snmp/mapping/udp/asynrole-objects-agent.html
-%%PORTDOCS%%share/doc/py-snmp/mapping/udp/asynrole-objects-manager.html
-%%PORTDOCS%%share/doc/py-snmp/mapping/udp/asynrole.html
-%%PORTDOCS%%share/doc/py-snmp/mapping/udp/bulkrole-manager-objects.html
-%%PORTDOCS%%share/doc/py-snmp/mapping/udp/bulkrole.html
-%%PORTDOCS%%share/doc/py-snmp/mapping/udp/error.html
-%%PORTDOCS%%share/doc/py-snmp/mapping/udp/intro.html
-%%PORTDOCS%%share/doc/py-snmp/mapping/udp/role-agent-objects.html
-%%PORTDOCS%%share/doc/py-snmp/mapping/udp/role-manager-objects.html
-%%PORTDOCS%%share/doc/py-snmp/mapping/udp/role.html
-%%PORTDOCS%%share/doc/py-snmp/mapping/error.html
-%%PORTDOCS%%share/doc/py-snmp/mapping/intro.html
-%%PORTDOCS%%share/doc/py-snmp/proto/api/generic/error.html
-%%PORTDOCS%%share/doc/py-snmp/proto/api/generic/intro.html
-%%PORTDOCS%%share/doc/py-snmp/proto/api/generic/rfc1157-getrequestpdu-objects.html
-%%PORTDOCS%%share/doc/py-snmp/proto/api/generic/rfc1157-getresponsepdu-objects.html
-%%PORTDOCS%%share/doc/py-snmp/proto/api/generic/rfc1157-trappdu-objects.html
-%%PORTDOCS%%share/doc/py-snmp/proto/api/generic/rfc1157.html
-%%PORTDOCS%%share/doc/py-snmp/proto/api/generic/rfc1905-getbulkrequestpdu-objects.html
-%%PORTDOCS%%share/doc/py-snmp/proto/api/generic/rfc1905-getrequestpdu-objects.html
-%%PORTDOCS%%share/doc/py-snmp/proto/api/generic/rfc1905-responsepdu-objects.html
-%%PORTDOCS%%share/doc/py-snmp/proto/api/generic/rfc1905.html
-%%PORTDOCS%%share/doc/py-snmp/proto/api/generic/v1-message-objects.html
-%%PORTDOCS%%share/doc/py-snmp/proto/api/generic/v1.html
-%%PORTDOCS%%share/doc/py-snmp/proto/api/generic/v2c-message-objects.html
-%%PORTDOCS%%share/doc/py-snmp/proto/api/generic/v2c.html
-%%PORTDOCS%%share/doc/py-snmp/proto/api/error.html
-%%PORTDOCS%%share/doc/py-snmp/proto/api/intro.html
-%%PORTDOCS%%share/doc/py-snmp/proto/cli/ucd/error.html
-%%PORTDOCS%%share/doc/py-snmp/proto/cli/ucd/intro.html
-%%PORTDOCS%%share/doc/py-snmp/proto/cli/ucd/rfc1157-getrequestpdu-objects.html
-%%PORTDOCS%%share/doc/py-snmp/proto/cli/ucd/rfc1157-setrequestpdu-objects.html
-%%PORTDOCS%%share/doc/py-snmp/proto/cli/ucd/rfc1157-trappdu-objects.html
-%%PORTDOCS%%share/doc/py-snmp/proto/cli/ucd/rfc1157.html
-%%PORTDOCS%%share/doc/py-snmp/proto/cli/ucd/rfc1905-getrequestpdu-objects.html
-%%PORTDOCS%%share/doc/py-snmp/proto/cli/ucd/rfc1905-setrequestpdu-objects.html
-%%PORTDOCS%%share/doc/py-snmp/proto/cli/ucd/rfc1905-trappdu-objects.html
-%%PORTDOCS%%share/doc/py-snmp/proto/cli/ucd/rfc1905.html
-%%PORTDOCS%%share/doc/py-snmp/proto/cli/ucd/v1-message-objects.html
-%%PORTDOCS%%share/doc/py-snmp/proto/cli/ucd/v1.html
-%%PORTDOCS%%share/doc/py-snmp/proto/cli/ucd/v2c-message-objects.html
-%%PORTDOCS%%share/doc/py-snmp/proto/cli/ucd/v2c.html
-%%PORTDOCS%%share/doc/py-snmp/proto/cli/error.html
-%%PORTDOCS%%share/doc/py-snmp/proto/cli/intro.html
-%%PORTDOCS%%share/doc/py-snmp/proto/error.html
-%%PORTDOCS%%share/doc/py-snmp/proto/intro.html
-%%PORTDOCS%%share/doc/py-snmp/proto/rfc1155-example.html
-%%PORTDOCS%%share/doc/py-snmp/proto/rfc1155.html
-%%PORTDOCS%%share/doc/py-snmp/proto/rfc1157-errorstatus-objects.html
-%%PORTDOCS%%share/doc/py-snmp/proto/rfc1157-generictrap-objects.html
-%%PORTDOCS%%share/doc/py-snmp/proto/rfc1157.html
-%%PORTDOCS%%share/doc/py-snmp/proto/rfc1902-example.html
-%%PORTDOCS%%share/doc/py-snmp/proto/rfc1902.html
-%%PORTDOCS%%share/doc/py-snmp/proto/rfc1905-errorstatus-objects.html
-%%PORTDOCS%%share/doc/py-snmp/proto/rfc1905.html
-%%PORTDOCS%%share/doc/py-snmp/proto/v1-getrequest-example.html
-%%PORTDOCS%%share/doc/py-snmp/proto/v1-getrequest-objects.html
-%%PORTDOCS%%share/doc/py-snmp/proto/v1-getresponse-example.html
-%%PORTDOCS%%share/doc/py-snmp/proto/v1.html
-%%PORTDOCS%%share/doc/py-snmp/proto/v1-request-example.html
-%%PORTDOCS%%share/doc/py-snmp/proto/v2c-getrequest-example.html
-%%PORTDOCS%%share/doc/py-snmp/proto/v2c-getrequest-objects.html
-%%PORTDOCS%%share/doc/py-snmp/proto/v2c-request-example.html
-%%PORTDOCS%%share/doc/py-snmp/proto/v2c-response-example.html
-%%PORTDOCS%%share/doc/py-snmp/proto/v2c.html
-%%PORTDOCS%%share/doc/py-snmp/error-objects.html
-%%PORTDOCS%%share/doc/py-snmp/error.html
-%%PORTDOCS%%share/doc/py-snmp/intro.html
-%%PORTDOCS%%@dirrm share/doc/py-snmp/proto/cli/ucd
-%%PORTDOCS%%@dirrm share/doc/py-snmp/proto/cli
-%%PORTDOCS%%@dirrm share/doc/py-snmp/proto/api/generic
-%%PORTDOCS%%@dirrm share/doc/py-snmp/proto/api
-%%PORTDOCS%%@dirrm share/doc/py-snmp/proto
-%%PORTDOCS%%@dirrm share/doc/py-snmp/mapping/udp
-%%PORTDOCS%%@dirrm share/doc/py-snmp/mapping
-%%PORTDOCS%%@dirrm share/doc/py-snmp/compat/snmpy
-%%PORTDOCS%%@dirrm share/doc/py-snmp/compat
-%%PORTDOCS%%@dirrm share/doc/py-snmp/asn1/encoding/ber
-%%PORTDOCS%%@dirrm share/doc/py-snmp/asn1/encoding
-%%PORTDOCS%%@dirrm share/doc/py-snmp/asn1
-%%PORTDOCS%%@dirrm share/doc/py-snmp
-%%PORTDOCS%%@dirrm share/examples/py-snmp
+%%PORTDOCS%%%%EXAMPLESDIR%%/asyncmgr.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/snmpagent.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/snmpbulk.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/snmpbulkwalk.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/snmpget.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/snmpset.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/snmptrap.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/snmptrapd.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/snmpwalk.py
+%%PORTDOCS%%%%DOCSDIR%%/asn1/base-asn1-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/asn1/base-choicetypeasn1-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/asn1/base-recordtypeasn1-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/asn1/base-simpleasn1-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/asn1/base-variabletypeasn1-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/asn1/base.html
+%%PORTDOCS%%%%DOCSDIR%%/asn1/encoding/ber/base-fixed-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/asn1/encoding/ber/base-simple-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/asn1/encoding/ber/base-variable-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/asn1/encoding/ber/base.html
+%%PORTDOCS%%%%DOCSDIR%%/asn1/encoding/ber/error.html
+%%PORTDOCS%%%%DOCSDIR%%/asn1/encoding/ber/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/asn1/encoding/ber/univ.html
+%%PORTDOCS%%%%DOCSDIR%%/asn1/encoding/error.html
+%%PORTDOCS%%%%DOCSDIR%%/asn1/encoding/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/asn1/error.html
+%%PORTDOCS%%%%DOCSDIR%%/asn1/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/asn1/univ-boolean-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/asn1/univ-choice-example.html
+%%PORTDOCS%%%%DOCSDIR%%/asn1/univ-integer-example.html
+%%PORTDOCS%%%%DOCSDIR%%/asn1/univ-integer-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/asn1/univ-oid-example.html
+%%PORTDOCS%%%%DOCSDIR%%/asn1/univ-oid-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/asn1/univ-sequence-example.html
+%%PORTDOCS%%%%DOCSDIR%%/asn1/univ-sequenceof-example.html
+%%PORTDOCS%%%%DOCSDIR%%/asn1/univ-string-example.html
+%%PORTDOCS%%%%DOCSDIR%%/asn1/univ-string-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/asn1/univ.html
+%%PORTDOCS%%%%DOCSDIR%%/compat/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/compat/snmpy/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/error-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/error.html
+%%PORTDOCS%%%%DOCSDIR%%/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/mapping/error.html
+%%PORTDOCS%%%%DOCSDIR%%/mapping/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/mapping/udp/asynrole-objects-agent.html
+%%PORTDOCS%%%%DOCSDIR%%/mapping/udp/asynrole-objects-manager.html
+%%PORTDOCS%%%%DOCSDIR%%/mapping/udp/asynrole.html
+%%PORTDOCS%%%%DOCSDIR%%/mapping/udp/bulkrole-manager-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/mapping/udp/bulkrole.html
+%%PORTDOCS%%%%DOCSDIR%%/mapping/udp/error.html
+%%PORTDOCS%%%%DOCSDIR%%/mapping/udp/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/mapping/udp/role-agent-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/mapping/udp/role-manager-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/mapping/udp/role.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/api/error.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/api/generic/error.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/api/generic/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/api/generic/rfc1157-getrequestpdu-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/api/generic/rfc1157-getresponsepdu-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/api/generic/rfc1157-message-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/api/generic/rfc1157-trappdu-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/api/generic/rfc1157.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/api/generic/rfc1905-getbulkrequestpdu-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/api/generic/rfc1905-getrequestpdu-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/api/generic/rfc1905-message-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/api/generic/rfc1905-responsepdu-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/api/generic/rfc1905.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/api/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/cli/error.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/cli/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/cli/ucd/error.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/cli/ucd/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/cli/ucd/rfc1157-getrequestpdu-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/cli/ucd/rfc1157-setrequestpdu-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/cli/ucd/rfc1157-trappdu-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/cli/ucd/rfc1157.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/cli/ucd/rfc1905-getrequestpdu-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/cli/ucd/rfc1905-setrequestpdu-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/cli/ucd/rfc1905-trappdu-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/cli/ucd/rfc1905.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/cli/ucd/v1-message-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/cli/ucd/v1.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/cli/ucd/v2c-message-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/cli/ucd/v2c.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/error.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/rfc1155-example.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/rfc1155.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/rfc1157-errorstatus-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/rfc1157-generictrap-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/rfc1157.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/rfc1902-example.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/rfc1902.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/rfc1905-errorstatus-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/rfc1905.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/v1-getrequest-example.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/v1-getrequest-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/v1-getresponse-example.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/v1-request-example.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/v1.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/v2c-getrequest-example.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/v2c-getrequest-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/v2c-request-example.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/v2c-response-example.html
+%%PORTDOCS%%%%DOCSDIR%%/proto/v2c.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/proto/cli/ucd
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/proto/cli
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/proto/api/generic
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/proto/api
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/proto
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/mapping/udp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/mapping
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/compat/snmpy
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/compat
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/asn1/encoding/ber
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/asn1/encoding
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/asn1
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
