@@ -15,7 +15,9 @@ DISTNAME=	${PORTNAME}-2.01-06-src
 
 MAINTAINER=	dirk.meyer@dinoex.sub.org
 
+.if !defined(LIB_DEPENDS)
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
+.endif
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
