@@ -7,7 +7,7 @@
 
 PORTNAME=	dasher
 PORTVERSION=	3.2.2
-CATEGORIES=	editors x11 gnome accessibility
+CATEGORIES=	accessibility editors x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/3.2
 DIST_SUBDIR=	gnome2
