@@ -3,7 +3,7 @@
 # Date created:         Sat Aug 10, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.5 1997/09/22 17:48:26 max Exp $
+# $Id: Makefile,v 1.6 1997/10/10 06:53:47 obrien Exp $
 #
 
 DISTNAME=	cless-290
@@ -22,7 +22,7 @@ MAN1=		cless.1 clesskey.1
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} -p ${PREFIX}/share/doc/cless
+	${MKDIR} ${PREFIX}/share/doc/cless
 	${INSTALL_DATA} ${WRKSRC}/README.CLESS ${PREFIX}/share/doc/cless
 .endif
 
