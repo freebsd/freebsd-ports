@@ -7,8 +7,8 @@
 # $Id: Makefile,v 1.57 1997/09/05 15:12:49 ache Exp $
 #
 
-DISTNAME=       lynx2.7.1ac-0.61
-PKGNAME=        lynx-2.7.1ac-0.61
+DISTNAME=       lynx2.7.1ac-0.63
+PKGNAME=        lynx-2.7.1ac-0.63
 CATEGORIES=	www
 MASTER_SITES=   http://sol.slcc.edu/lynx/current/
 
@@ -16,9 +16,7 @@ MAINTAINER=	ache@FreeBSD.ORG
 
 WRKSRC=         ${WRKDIR}/lynx2-7-1
 GNU_CONFIGURE=  YES
-CONFIGURE_ARGS= --with-screen=ncurses --with-zlib \
-		--with-cfg-file="${PREFIX}/etc/lynx.cfg"
-MAKE_FLAGS=     libdir="${PREFIX}/etc" -f
+CONFIGURE_ARGS= --with-screen=ncurses --with-zlib --libdir="${PREFIX}/etc"
 MAKEFILE=       makefile
 MAN1=		lynx.1
 
