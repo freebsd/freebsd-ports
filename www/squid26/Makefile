@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	squid
-PORTVERSION=	2.4
-PORTREVISION=	10
+PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=  \
 	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -16,25 +16,29 @@ MASTER_SITES=  \
 	ftp://ftp.net.lut.ac.uk/squid/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,}
 MASTER_SITE_SUBDIR=	squid-2/STABLE
-DISTNAME=	squid-2.4.STABLE7
-EXTRACT_SUFX=	-src.tar.gz
+DISTNAME=	squid-2.5.STABLE1
+EXTRACT_SUFX=	.tar.gz
 
-PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.4/bugs/
+PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.5/bugs/
 PATCHFILES=	
 
 MAINTAINER=	adrian@freebsd.org
 
-DIST_SUBDIR=	squid2.4
+DIST_SUBDIR=	squid2.5
 PATCH_DIST_STRIP= -p0
 GNU_CONFIGURE=	yes
 # Follow the apache port's lead...
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  --sysconfdir=${PREFIX}/etc/squid \
+		--datadir=${PREFIX}/etc/squid/ \
 		--localstatedir=${PREFIX}/squid \
 		--enable-storeio="ufs diskd null" \
 		--enable-removal-policies="lru heap" \
+		--enable-auth=basic --enable-basic-auth-helpers="NCSA PAM YP" \
+		--enable-external-acl-helpers="ip_user unix_group" \
+		--enable-underscores
 
 STRIP=		# won't install scripts correctly otherwise.
-MAKEFILE=	makefile
+MAKEFILE=	Makefile
 
 # Some other configure options..
 #  - Compile and use the malloc package from Doug Lea
