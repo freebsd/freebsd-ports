@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		xml
-PORTVERSION=		0.6.6
+PORTVERSION=		0.7
 CATEGORIES=		textproc python
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pyxml
@@ -28,7 +28,7 @@ USE_PYTHON=		yes
 CPIO=			cpio --quiet -pdum -R
 DOCSDIR=		${PREFIX}/share/doc/py-xml
 EXAMPLESDIR=		${PREFIX}/share/examples/py-xml
-.if ${PYTHON_VERSION} == "python1.5"
+.if ${PYTHON_REL} < 200
 PLIST_SUB+=		PACKAGE_DIR=xml
 .else
 PLIST_SUB+=		PACKAGE_DIR=_xmlplus
