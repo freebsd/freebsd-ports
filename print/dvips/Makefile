@@ -3,12 +3,12 @@
 # Date created:         30 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.7 1995/04/20 02:03:21 jmz Exp $
+# $Id: Makefile,v 1.8 1995/04/22 16:49:58 jmz Exp $
 #
 
 DISTNAME=	dvips
 PKGNAME=	dvips-5.58
-CATEGORIES+=	printing
+CATEGORIES+=	print
 MASTER_SITES=	ftp://ftp.tex.ac.uk/tex-archive/dviware/dvips/
 DISTFILES=	dvips558.tar.gz
 

@@ -3,12 +3,12 @@
 # Date created:         12 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.6 1995/04/19 19:42:24 jmz Exp $
+# $Id: Makefile,v 1.7 1995/04/21 00:21:15 jmz Exp $
 #
 
 DISTNAME=	makeindex
 PKGNAME=	makeindex-3.0.8
-CATEGORIES+=	printing
+CATEGORIES+=	print
 MASTER_SITES=	ftp://ftp.th-darmstadt.de/pub/tex/src/makeindex/BETA/
 DISTFILES=	makeindex-3.0.8.tar.Z
 

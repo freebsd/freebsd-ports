@@ -3,13 +3,13 @@
 # Date created:         14 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.7 1995/04/21 00:21:02 jmz Exp $
+# $Id: Makefile,v 1.8 1995/11/15 03:31:36 asami Exp $
 #
 
 DISTNAME=	dvi2xx
 PKGNAME=	dvi2xx-0.51a9
 DISTFILES=	dvi2xx.tar.gz
-CATEGORIES+=	printing
+CATEGORIES+=	print
 
 MAINTAINER=	jmz@FreeBSD.ORG
 

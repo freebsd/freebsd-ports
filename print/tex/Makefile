@@ -3,12 +3,12 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.17 1995/10/03 21:19:24 jmz Exp $
+# $Id: Makefile,v 1.18 1995/10/05 17:31:06 jmz Exp $
 #
 
 DISTNAME=	web2c-6.1
 PKGNAME=	tex-3.1415
-CATEGORIES+=	printing
+CATEGORIES+=	print
 DISTFILES=	web2c.tar.gz web.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
 		mf_lib.tar.gz cm_mf.tar.gz      modes.mf 
 

@@ -3,12 +3,12 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.18 1995/09/23 20:23:18 jmz Exp $
+# $Id: Makefile,v 1.19 1995/10/03 21:17:33 jmz Exp $
 #
 VERSION=	95.06
 DISTNAME=	latex
 PKGNAME=	latex2e-${VERSION}
-CATEGORIES+=	printing
+CATEGORIES+=	print
 DISTFILES=	latex_mf-${VERSION}.tar.gz latex_tfm-${VERSION}.tar.gz \
 		latex_base-${VERSION}.tar.gz latex_tools-${VERSION}.tar.gz
 

@@ -3,12 +3,12 @@
 # Date created:         6 November 1994
 # Whom:                 jmz
 #
-# $Id$
+# $Id: Makefile,v 1.4 1995/04/15 04:33:31 asami Exp $
 #
 
 DISTNAME=	a2ps
 PKGNAME=	a2ps-4.3
-CATEGORIES+=	printing
+CATEGORIES+=	print
 MASTER_SITES=	ftp://ftp.imag.fr/archive/postscript/
 DISTFILES=	a2ps.V4.3.tar.gz
 

@@ -3,12 +3,12 @@
 # Date created:         1 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.15 1995/06/13 20:59:04 jmz Exp $
+# $Id: Makefile,v 1.16 1995/06/20 07:46:44 asami Exp $
 #
 
 DISTNAME=	xdvi-20
 PKGNAME=	xdvi-pl20
-CATEGORIES+=	printing
+CATEGORIES+=	print
 MASTER_SITES=	ftp://ftp.x.org/contrib/applications/	\
 		ftp://crl.dec.com/pub/X11/contrib/applications/
 EXTRACT_SUFX=	.tar.Z
