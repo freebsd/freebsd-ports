@@ -154,6 +154,10 @@ WITH_XVID=	yes
 
 .endif
 
+.if defined(WITH_MATROSKA)
+WITH_LIBMATROSKA=yes
+.endif
+
 .if defined(WITH_DVD_DEVICE)
 DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
 .else
@@ -239,7 +243,6 @@ CONFIGURE_ARGS+=--disable-dvbpsi
 
 .if defined(WITH_LIBMATROSKA) && !defined(WITHOUT_LIBMATROSKA)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libmatroska.a:${PORTSDIR}/multimedia/libmatroska
-PLIST_FILES+=	lib/vlc/demux/libmkv_plugin.so
 .endif
 
 # After libmpeg2 release 0.3.2
