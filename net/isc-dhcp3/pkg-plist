@@ -10,6 +10,4 @@ man/cat8/dhcrelay.8.gz
 sbin/dhclient
 sbin/dhcpd
 sbin/dhcrelay
-sbin/statmsg
-sbin/sysconfd
 @exec touch /var/db/dhcpd.leases
