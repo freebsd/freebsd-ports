@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- ../../dj2se/make/tools/pack-unpack/unpack/Makefile.orig	Thu Nov 13 13:07:59 2003
++++ ../../dj2se/make/tools/pack-unpack/unpack/Makefile1	Thu Nov 13 13:07:43 2003
+@@ -50,7 +50,7 @@
+ ifeq ($(PLATFORM), bsd)
+ OBJOUTPUT = -o #Caution:the space after the -o is significant!.
+ LNKOUTPUT = $(OBJOUTPUT)
+-LINK = $(CXX)
++LINK = g++
+ else
+ OBJOUTPUT = -o #Caution:the space after the -o is significant!.
+ LNKOUTPUT = $(OBJOUTPUT)
