@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	Webfrontend for managing accounts stored in an OpenLDAP server
 
-RUN_DEPENDS=	${LOCALBASE}/${MOD_DIR}/libphp4.so:${PORTSDIR}/www/apache2 \
+RUN_DEPENDS=	${LOCALBASE}/${MOD_DIR}/libphp4.so:${PORTSDIR}/lang/php4-horde \
 		${SITE_PERL}/${PERL_ARCH}/Quota.pm:${PORTSDIR}/sysutils/p5-Quota\
 		${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
 
