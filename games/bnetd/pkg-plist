@@ -1,4 +1,5 @@
-bin/bnclient
+bin/bnchat
+bin/bnftp
 bin/bnpass
 sbin/bnetd
 etc/rc.d/bnetd.sh
