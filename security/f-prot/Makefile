@@ -19,7 +19,7 @@ NO_PACKAGE=	Free for personal use only
 NO_CDROM=	Free for personal use only
 RESTRICTED=	Free for personal use only
 
-WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}-${PORTNAME}
+WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}
 NO_BUILD=	yes
 
 MAN1=		f-prot.1
