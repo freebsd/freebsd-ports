@@ -17,11 +17,25 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A TeX to HTML translator
 
-RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu \
+.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
+GSPORT?=	print/ghostscript-afpl
+.else
+GSPORT?=	print/ghostscript-gnu
+.endif
+
+RUN_DEPENDS=	gs:${PORTSDIR}/${GSPORT} \
 		latex:${PORTSDIR}/print/teTeX \
 		ppmtogif:${PORTSDIR}/graphics/netpbm
 
 MAN1=		tth.1
+
+pre-fetch:
+.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
+	@${ECHO} ""
+	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
+	@${ECHO} "      AFPL Postscript interpreter instead of GNU one"
+	@${ECHO} ""
+.endif
 
 do-build:
 	cd ${WRKSRC}; ${CC} ${CFLAGS} tth.c -o tth -ll
