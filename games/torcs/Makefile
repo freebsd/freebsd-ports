@@ -90,6 +90,10 @@ PLIST_SUB+=	K1999="@comment "
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not build on amd64 (needs to link to shared libraries)"
+.endif
+
 .if ${OSVERSION} < 500041
 CPPFLAGS+=	-I${X11BASE}/include -fPIC
 .else
