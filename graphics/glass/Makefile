@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glass
-PORTVERSION=	1.1.5
+PORTVERSION=	1.2.1
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,10 +24,10 @@ pre-patch:
 		${WRKSRC}/*.c
 
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/libglass.so.1 ${PREFIX}/lib
-	@${LN} -sf ${PREFIX}/lib/libglass.so.1 ${PREFIX}/lib/libglass.so
+	@${INSTALL_DATA} ${WRKSRC}/libglass.so.${PORTVERSION} ${PREFIX}/lib
+	@${LN} -sf ${PREFIX}/lib/libglass.so.${PORTVERSION} ${PREFIX}/lib/libglass.so
+	@${LN} -sf ${PREFIX}/lib/libglass.so ${PREFIX}/lib/libglass.so.1
 	@${INSTALL_DATA} ${WRKSRC}/glass.h ${PREFIX}/include
-	@${INSTALL_DATA} ${WRKSRC}/glass_types.h ${PREFIX}/include
 
 post-install:
 .if !defined(NOPORTDOCS)
