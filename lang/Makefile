@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.140 1999/06/28 01:46:09 billf Exp $
+# $Id: Makefile,v 1.141 1999/07/06 01:28:42 cpiazza Exp $
 #
 
     SUBDIR += ETHOberonV4
@@ -38,6 +38,7 @@
     SUBDIR += icon
     SUBDIR += intel2gas
     SUBDIR += intercal
+    SUBDIR += irb
     SUBDIR += itcl
     SUBDIR += lcc
     SUBDIR += libobjects
