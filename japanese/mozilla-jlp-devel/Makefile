@@ -6,22 +6,22 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	0.9.6
-PORTREVISION=	1
+PORTVERSION=	0.9.8
+#PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	japanese www
 MASTER_SITES=	http://www.mozilla.gr.jp/jlp/ \
 		http://www.ash.ne.jp/~mal/mozilla/ \
 		http://dev.jp/
 PKGNAMESUFFIX=	-jlp
-DISTNAME=	${PORTNAME}${PORTVERSION}-jajppack-v02
+DISTNAME=	${PORTNAME}${PORTVERSION}-jajppack-v0.1
 EXTRACT_SUFX=	.xpi
 
 MAINTAINER=	yatt@msc.biglobe.ne.jp
 
 BUILD_DEPENDS=	${X11BASE}/lib/mozilla/regxpcom:${MOZILLA_PORT}
 RUN_DEPENDS=	mozilla:${MOZILLA_PORT} \
-		${PKG_DBDIR}/ja-netscape-fonts-1.0:${PORTSDIR}/japanese/netscape-fonts
+		${PKG_DBDIR}/ja-bdf-fonts-1.0:${PORTSDIR}/japanese/bdf-fonts
 
 WRKSRC=		${WRKDIR}/bin
 
@@ -60,11 +60,7 @@ do-build:
 
 do-install:
 	(cd ${PREFIX}/lib/mozilla/chrome; \
-	${MV} -f all-locales.rdf all-locales.rdf.orig; \
-	${MV} -f all-packages.rdf all-packages.rdf.orig; \
-	${MV} -f all-skins.rdf all-skins.rdf.orig; \
-	${MV} -f user-locales.rdf user-locales.rdf.orig; \
-	${MV} -f user-skins.rdf user-skins.rdf.orig; \
+	${MV} -f chrome.rdf chrome.rdf.orig; \
 	${MV} -f installed-chrome.txt installed-chrome.txt.orig)
 	(cd ${PREFIX}/lib/mozilla/defaults/pref; \
 	${MV} -f unix.js unix.js.orig)

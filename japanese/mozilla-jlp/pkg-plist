@@ -1,27 +1,20 @@
 @exec mv %D/bin/mozilla %D/bin/mozilla.orig
-@exec mv %D/lib/mozilla/chrome/all-locales.rdf %D/lib/mozilla/chrome/all-locales.rdf.orig
-@exec mv %D/lib/mozilla/chrome/all-packages.rdf %D/lib/mozilla/chrome/all-packages.rdf.orig
-@exec mv %D/lib/mozilla/chrome/all-skins.rdf %D/lib/mozilla/chrome/all-skins.rdf.orig
-@exec mv %D/lib/mozilla/chrome/user-skins.rdf %D/lib/mozilla/chrome/user-skins.rdf.orig
+@exec mv %D/lib/mozilla/chrome/chrome.rdf %D/lib/mozilla/chrome/chrome.rdf.orig
 @exec mv %D/lib/mozilla/chrome/installed-chrome.txt %D/lib/mozilla/chrome/installed-chrome.txt.orig
 @exec mv %D/lib/mozilla/defaults/pref/unix.js %D/lib/mozilla/defaults/pref/unix.js.orig
 @exec mv %D/lib/mozilla/searchplugins/google.gif %D/lib/mozilla/searchplugins/google.gif.orig
 @exec mv %D/lib/mozilla/searchplugins/google.src %D/lib/mozilla/searchplugins/google.src.orig
 bin/mozilla
 lib/mozilla/chrome/JP.jar
-lib/mozilla/chrome/all-locales.rdf
-lib/mozilla/chrome/all-packages.rdf
-lib/mozilla/chrome/all-skins.rdf
+lib/mozilla/chrome/chrome.rdf
 lib/mozilla/chrome/installed-chrome.txt
 lib/mozilla/chrome/ja-JP.jar
 lib/mozilla/chrome/ja-mac.jar
 lib/mozilla/chrome/ja-unix.jar
 lib/mozilla/chrome/ja-win.jar
-lib/mozilla/chrome/user-locales.rdf
-lib/mozilla/chrome/user-skins.rdf
 lib/mozilla/defaults/pref/unix.js
-lib/mozilla/defaults/profile/JP/chrome/userChrome.css
-lib/mozilla/defaults/profile/JP/chrome/userContent.css
+lib/mozilla/defaults/profile/JP/chrome/userChrome-example.css
+lib/mozilla/defaults/profile/JP/chrome/userContent-example.css
 lib/mozilla/defaults/profile/JP/bookmarks.html
 lib/mozilla/defaults/profile/JP/localstore.rdf
 lib/mozilla/defaults/profile/JP/mimeTypes.rdf
@@ -90,10 +83,7 @@ lib/mozilla/searchplugins/rakuten_auction.src
 lib/mozilla/searchplugins/w3c.png
 lib/mozilla/searchplugins/w3c.src
 @unexec mv %D/bin/mozilla.orig %D/bin/mozilla
-@unexec mv %D/lib/mozilla/chrome/all-locales.rdf.orig %D/lib/mozilla/chrome/all-locales.rdf
-@unexec mv %D/lib/mozilla/chrome/all-packages.rdf.orig %D/lib/mozilla/chrome/all-packages.rdf
-@unexec mv %D/lib/mozilla/chrome/all-skins.rdf.orig %D/lib/mozilla/chrome/all-skins.rdf
-@unexec mv %D/lib/mozilla/chrome/user-skins.rdf.orig %D/lib/mozilla/chrome/user-skins.rdf
+@unexec mv %D/lib/mozilla/chrome/chrome.rdf.orig %D/lib/mozilla/chrome/chrome.rdf
 @unexec mv %D/lib/mozilla/chrome/installed-chrome.txt.orig %D/lib/mozilla/chrome/installed-chrome.txt
 @unexec mv %D/lib/mozilla/defaults/pref/unix.js.orig %D/lib/mozilla/defaults/pref/unix.js
 @unexec mv %D/lib/mozilla/searchplugins/google.gif.orig %D/lib/mozilla/searchplugins/google.gif
