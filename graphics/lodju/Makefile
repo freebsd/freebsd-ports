@@ -17,7 +17,7 @@ RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf \
 		gtk12-config:${PORTSDIR}/x11-toolkits/gtk12 \
 		${LOCALBASE}/include/libintl.h:${PORTSDIR}/devel/gettext
-LIB_DEPENDS=	glade-gnome.4:${PORTSDIR}/x11-toolkits/rep-gtk \
+LIB_DEPENDS=	glade-gnome:${PORTSDIR}/x11-toolkits/rep-gtk \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 
 MAN1=		lodju-create.1 lodju-gallery.1 lodju.1
