@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	RPC-XML
-PORTVERSION=	0.27
+PORTVERSION=	0.53
 CATEGORIES=	net www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	RPC
@@ -15,23 +15,28 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	dom@happygiraffe.net
 COMMENT=	XML-RPC client and server library for Perl
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
+		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN1=		make_method.1
 MAN3=		Apache::RPC::Server.3 \
+		Apache::RPC::Status.3 \
 		RPC::XML.3 \
 		RPC::XML::Client.3 \
-		RPC::XML::Parser.3
+		RPC::XML::Function.3 \
+		RPC::XML::Method.3 \
+		RPC::XML::Parser.3 \
+		RPC::XML::Procedure.3 \
+		RPC::XML::Server.3
 
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
-BUILD_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
 .endif # ${PERL_LEVEL} < 500601
 
 .include <bsd.port.post.mk>
