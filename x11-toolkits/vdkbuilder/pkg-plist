@@ -12,6 +12,7 @@ include/vdkb2/vdkb_clipdlg.h
 include/vdkb2/vdkb_clistdlg.h
 include/vdkb2/vdkb_clistdlg_gui.h
 include/vdkb2/vdkb_combo.h
+include/vdkb2/vdkb_comboentry.h
 include/vdkb2/vdkb_compodb.h
 include/vdkb2/vdkb_custombutton.h
 include/vdkb2/vdkb_customlist.h
@@ -104,7 +105,12 @@ include/vdkb2/waitcursor.h
 lib/libvdkbcalendar.a
 lib/libvdkbcalendar.so
 lib/libvdkbcalendar.so.2
+lib/libvdkbcomboentry.a
+lib/libvdkbcomboentry.so
+lib/libvdkbcomboentry.so.2
 lib/libvdkbdclock.a
+lib/libvdkbdclock.so
+lib/libvdkbdclock.so.2
 lib/libvdkbdrawarea.a
 lib/libvdkbdrawarea.so
 lib/libvdkbdrawarea.so.2
