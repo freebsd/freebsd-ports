@@ -214,6 +214,7 @@
     SUBDIR += screem
     SUBDIR += sitecopy
     SUBDIR += skipstone
+    SUBDIR += smb2www
     SUBDIR += smb_auth
     SUBDIR += snarf
     SUBDIR += squid22

@@ -1,0 +1,35 @@
+www/smb2www/bin/smbclient
+www/smb2www/images/archive.gif
+www/smb2www/images/share.gif
+www/smb2www/images/search.gif
+www/smb2www/images/printer.gif
+www/smb2www/images/network.gif
+www/smb2www/images/message.gif
+www/smb2www/images/help.gif
+www/smb2www/images/group.gif
+www/smb2www/images/folder.gif
+www/smb2www/images/file.gif
+www/smb2www/images/computer.gif
+www/smb2www/images/cloud.gif
+www/smb2www/images/world.gif
+www/smb2www/cgi-bin/smbfile.pl
+www/smb2www/cgi-bin/smbtar.pl
+www/smb2www/cgi-bin/smbhelp.pl
+www/smb2www/cgi-bin/smbshr.pl
+www/smb2www/cgi-bin/smbdir.pl
+www/smb2www/cgi-bin/smbgrp.pl
+www/smb2www/cgi-bin/smb2www.pl
+www/smb2www/cgi-bin/smbmsg.pl
+www/smb2www/cgi-bin/smb2www.pm
+www/smb2www/etc/smb2www.conf
+www/smb2www/etc/finnish_help.lang
+www/smb2www/etc/finnish.lang
+www/smb2www/etc/english_help.lang
+www/smb2www/etc/english.lang
+www/smb2www/etc/dutch_help.lang
+www/smb2www/etc/dutch.lang
+@dirrm www/smb2www/images
+@dirrm www/smb2www/cgi-bin
+@dirrm www/smb2www/bin
+@dirrm www/smb2www/etc
+@dirrm www/smb2www
