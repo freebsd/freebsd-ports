@@ -1,4 +1,3 @@
-share/xsb
 XSB/etc/CVS/Root
 XSB/etc/CVS/Repository
 XSB/etc/CVS/Entries
@@ -42,11 +41,13 @@ XSB/config/%%MACHINE_ARCH%%-unknown-%%OPSYS%%%%OSREL%%/saved.o/pathname_xsb.o
 XSB/config/%%MACHINE_ARCH%%-unknown-%%OPSYS%%%%OSREL%%/saved.o/private_builtin.o
 XSB/config/%%MACHINE_ARCH%%-unknown-%%OPSYS%%%%OSREL%%/saved.o/psc_xsb.o
 XSB/config/%%MACHINE_ARCH%%-unknown-%%OPSYS%%%%OSREL%%/saved.o/random_xsb.o
+XSB/config/%%MACHINE_ARCH%%-unknown-%%OPSYS%%%%OSREL%%/saved.o/remove_unf.o
 XSB/config/%%MACHINE_ARCH%%-unknown-%%OPSYS%%%%OSREL%%/saved.o/residual.o
 XSB/config/%%MACHINE_ARCH%%-unknown-%%OPSYS%%%%OSREL%%/saved.o/scc_xsb.o
 XSB/config/%%MACHINE_ARCH%%-unknown-%%OPSYS%%%%OSREL%%/saved.o/slgdelay.o
 XSB/config/%%MACHINE_ARCH%%-unknown-%%OPSYS%%%%OSREL%%/saved.o/socket_xsb.o
 XSB/config/%%MACHINE_ARCH%%-unknown-%%OPSYS%%%%OSREL%%/saved.o/string_xsb.o
+XSB/config/%%MACHINE_ARCH%%-unknown-%%OPSYS%%%%OSREL%%/saved.o/storage_xsb.o
 XSB/config/%%MACHINE_ARCH%%-unknown-%%OPSYS%%%%OSREL%%/saved.o/struct_manager.o
 XSB/config/%%MACHINE_ARCH%%-unknown-%%OPSYS%%%%OSREL%%/saved.o/sub_delete.o
 XSB/config/%%MACHINE_ARCH%%-unknown-%%OPSYS%%%%OSREL%%/saved.o/subp.o
@@ -112,16 +113,16 @@ XSB/examples/XSB_calling_c/second_foreign.mak
 XSB/examples/XSB_calling_c/simple_foreign.H
 XSB/examples/XSB_calling_c/simple_foreign.c
 XSB/examples/XSB_calling_c/simple_foreign.mak
-XSB/examples/xmc/Sieve/CVS/Root
-XSB/examples/xmc/Sieve/CVS/Repository
-XSB/examples/xmc/Sieve/CVS/Entries
-XSB/examples/xmc/Sieve/CVS/Tag
-XSB/examples/xmc/Sieve/.cvsignore
-XSB/examples/xmc/Sieve/sieve.xl
-XSB/examples/xmc/Sieve/test.sh
-XSB/examples/xmc/Sieve/test_new
-XSB/examples/xmc/Sieve/test_old
-XSB/examples/xmc/Sieve/test.P
+XSB/examples/xmc/Rether/CVS/Root
+XSB/examples/xmc/Rether/CVS/Repository
+XSB/examples/xmc/Rether/CVS/Entries
+XSB/examples/xmc/Rether/CVS/Tag
+XSB/examples/xmc/Rether/.cvsignore
+XSB/examples/xmc/Rether/rether.xl
+XSB/examples/xmc/Rether/test.sh
+XSB/examples/xmc/Rether/test_new
+XSB/examples/xmc/Rether/test_old
+XSB/examples/xmc/Rether/test.P
 XSB/examples/xmc/ABP/CVS/Root
 XSB/examples/xmc/ABP/CVS/Repository
 XSB/examples/xmc/ABP/CVS/Entries
@@ -133,6 +134,51 @@ XSB/examples/xmc/ABP/test.P
 XSB/examples/xmc/ABP/test.sh
 XSB/examples/xmc/ABP/test_new
 XSB/examples/xmc/ABP/test_old
+XSB/examples/xmc/Tests/CVS/Root
+XSB/examples/xmc/Tests/CVS/Repository
+XSB/examples/xmc/Tests/CVS/Entries
+XSB/examples/xmc/Tests/CVS/Tag
+XSB/examples/xmc/Tests/.cvsignore
+XSB/examples/xmc/Tests/temp.P
+XSB/examples/xmc/Tests/test1.xl
+XSB/examples/xmc/Tests/test2.xl
+XSB/examples/xmc/Tests/test3.xl
+XSB/examples/xmc/Sieve/CVS/Root
+XSB/examples/xmc/Sieve/CVS/Repository
+XSB/examples/xmc/Sieve/CVS/Entries
+XSB/examples/xmc/Sieve/CVS/Tag
+XSB/examples/xmc/Sieve/.cvsignore
+XSB/examples/xmc/Sieve/sieve.xl
+XSB/examples/xmc/Sieve/test.sh
+XSB/examples/xmc/Sieve/test_new
+XSB/examples/xmc/Sieve/test_old
+XSB/examples/xmc/Sieve/test.P
+XSB/examples/xmc/Leader/CVS/Root
+XSB/examples/xmc/Leader/CVS/Repository
+XSB/examples/xmc/Leader/CVS/Entries
+XSB/examples/xmc/Leader/CVS/Tag
+XSB/examples/xmc/Leader/.cvsignore
+XSB/examples/xmc/Leader/leader.xl
+XSB/examples/xmc/Leader/test.sh
+XSB/examples/xmc/Leader/test_new
+XSB/examples/xmc/Leader/test_old
+XSB/examples/xmc/Leader/test.P
+XSB/examples/xmc/Needham/CVS/Root
+XSB/examples/xmc/Needham/CVS/Repository
+XSB/examples/xmc/Needham/CVS/Entries
+XSB/examples/xmc/Needham/CVS/Tag
+XSB/examples/xmc/Needham/needham.xl
+XSB/examples/xmc/Metalock/CVS/Root
+XSB/examples/xmc/Metalock/CVS/Repository
+XSB/examples/xmc/Metalock/CVS/Entries
+XSB/examples/xmc/Metalock/CVS/Tag
+XSB/examples/xmc/Metalock/.cvsignore
+XSB/examples/xmc/Metalock/metalock.xl
+XSB/examples/xmc/Metalock/nomutext_out
+XSB/examples/xmc/Metalock/test.P
+XSB/examples/xmc/Metalock/test.sh
+XSB/examples/xmc/Metalock/test_new
+XSB/examples/xmc/Metalock/test_old
 XSB/examples/xmc/CVS/Root
 XSB/examples/xmc/CVS/Repository
 XSB/examples/xmc/CVS/Entries
@@ -147,46 +193,6 @@ XSB/examples/xmc/Iproto/test.sh
 XSB/examples/xmc/Iproto/test_new
 XSB/examples/xmc/Iproto/test_old
 XSB/examples/xmc/Iproto/test.P
-XSB/examples/xmc/Rether/CVS/Root
-XSB/examples/xmc/Rether/CVS/Repository
-XSB/examples/xmc/Rether/CVS/Entries
-XSB/examples/xmc/Rether/CVS/Tag
-XSB/examples/xmc/Rether/.cvsignore
-XSB/examples/xmc/Rether/rether.xl
-XSB/examples/xmc/Rether/test.sh
-XSB/examples/xmc/Rether/test_new
-XSB/examples/xmc/Rether/test_old
-XSB/examples/xmc/Rether/test.P
-XSB/examples/xmc/Metalock/CVS/Root
-XSB/examples/xmc/Metalock/CVS/Repository
-XSB/examples/xmc/Metalock/CVS/Entries
-XSB/examples/xmc/Metalock/CVS/Tag
-XSB/examples/xmc/Metalock/.cvsignore
-XSB/examples/xmc/Metalock/metalock.xl
-XSB/examples/xmc/Metalock/nomutext_out
-XSB/examples/xmc/Metalock/test.P
-XSB/examples/xmc/Metalock/test.sh
-XSB/examples/xmc/Metalock/test_new
-XSB/examples/xmc/Metalock/test_old
-XSB/examples/xmc/Leader/CVS/Root
-XSB/examples/xmc/Leader/CVS/Repository
-XSB/examples/xmc/Leader/CVS/Entries
-XSB/examples/xmc/Leader/CVS/Tag
-XSB/examples/xmc/Leader/.cvsignore
-XSB/examples/xmc/Leader/leader.xl
-XSB/examples/xmc/Leader/test.sh
-XSB/examples/xmc/Leader/test_new
-XSB/examples/xmc/Leader/test_old
-XSB/examples/xmc/Leader/test.P
-XSB/examples/xmc/Tests/CVS/Root
-XSB/examples/xmc/Tests/CVS/Repository
-XSB/examples/xmc/Tests/CVS/Entries
-XSB/examples/xmc/Tests/CVS/Tag
-XSB/examples/xmc/Tests/.cvsignore
-XSB/examples/xmc/Tests/temp.P
-XSB/examples/xmc/Tests/test1.xl
-XSB/examples/xmc/Tests/test2.xl
-XSB/examples/xmc/Tests/test3.xl
 XSB/examples/xmc/testsuite.sh
 XSB/examples/xmc/testall.sh
 XSB/examples/xmc/test.P
@@ -298,6 +304,7 @@ XSB/examples/dyn_examples.P
 XSB/examples/farmer.H
 XSB/docs/userman/manual1.ps
 XSB/docs/userman/manual2.ps
+XSB/docs/userman/xsb.1
 XSB/packages/regmatch/CVS/Root
 XSB/packages/regmatch/CVS/Repository
 XSB/packages/regmatch/CVS/Entries
@@ -306,10 +313,10 @@ XSB/packages/regmatch/cc/CVS/Root
 XSB/packages/regmatch/cc/CVS/Repository
 XSB/packages/regmatch/cc/CVS/Entries
 XSB/packages/regmatch/cc/CVS/Tag
-XSB/packages/regmatch/cc/xsb_re_match.H
 XSB/packages/regmatch/cc/.cvsignore
 XSB/packages/regmatch/cc/NMakefile.mak
 XSB/packages/regmatch/cc/xsb_re_match.c
+XSB/packages/regmatch/cc/xsb_re_match.H
 XSB/packages/regmatch/cc/xsb_re_match.O
 XSB/packages/regmatch/.cvsignore
 XSB/packages/regmatch/Makefile
@@ -320,10 +327,11 @@ XSB/packages/xsbdoc/CVS/Repository
 XSB/packages/xsbdoc/CVS/Entries
 XSB/packages/xsbdoc/CVS/Tag
 XSB/packages/xsbdoc/.cvsignore
-XSB/packages/xsbdoc/basic_props.P
+XSB/packages/xsbdoc/Makefile
 XSB/packages/xsbdoc/full_ciao_ops.P
 XSB/packages/xsbdoc/pretty_print.P
 XSB/packages/xsbdoc/usage_message.P
+XSB/packages/xsbdoc/basic_props.P
 XSB/packages/xmc/GUI/CVS/Root
 XSB/packages/xmc/GUI/CVS/Repository
 XSB/packages/xmc/GUI/CVS/Entries
@@ -360,7 +368,6 @@ XSB/packages/xmc/gui.H
 XSB/packages/xmc/gui.P
 XSB/packages/xmc/justify.H
 XSB/packages/xmc/justify.P
-XSB/packages/xmc/lex.yy.c
 XSB/packages/xmc/main.c
 XSB/packages/xmc/models_rule.P
 XSB/packages/xmc/mucalculus.H
@@ -385,33 +392,12 @@ XSB/packages/xmc/typecheck.P
 XSB/packages/xmc/util.H
 XSB/packages/xmc/util.P
 XSB/packages/xmc/xl.l
-XSB/packages/xmc/xl.tab.c
-XSB/packages/xmc/xl.tab.h
 XSB/packages/xmc/xl.y
 XSB/packages/xmc/xlparse.H
 XSB/packages/xmc/xlparse.c
 XSB/packages/xmc/xmc.H
 XSB/packages/xmc/xmc.P
 XSB/packages/xmc/xmc-gui
-XSB/packages/xmc/driver.o
-XSB/packages/xmc/main.o
-XSB/packages/xmc/xl.tab.o
-XSB/packages/xmc/lex.yy.o
-XSB/packages/xmc/parse
-XSB/packages/xmc/libxlp.a
-XSB/packages/xmc/xlparse.O
-XSB/packages/xmc/xlparse.so
-XSB/packages/xmc/comp.O
-XSB/packages/xmc/count.O
-XSB/packages/xmc/formula.O
-XSB/packages/xmc/mucalculus.O
-XSB/packages/xmc/quad.O
-XSB/packages/xmc/typecheck.O
-XSB/packages/xmc/util.O
-XSB/packages/xmc/xmc.O
-XSB/packages/xmc/justify.O
-XSB/packages/xmc/navigate.O
-XSB/packages/xmc/gui.O
 XSB/packages/xmc/.cvsignore
 XSB/packages/wildmatch/CVS/Root
 XSB/packages/wildmatch/CVS/Repository
@@ -421,10 +407,10 @@ XSB/packages/wildmatch/cc/CVS/Root
 XSB/packages/wildmatch/cc/CVS/Repository
 XSB/packages/wildmatch/cc/CVS/Entries
 XSB/packages/wildmatch/cc/CVS/Tag
-XSB/packages/wildmatch/cc/xsb_wildmatch.H
 XSB/packages/wildmatch/cc/.cvsignore
 XSB/packages/wildmatch/cc/NMakefile.mak
 XSB/packages/wildmatch/cc/xsb_wildmatch.c
+XSB/packages/wildmatch/cc/xsb_wildmatch.H
 XSB/packages/wildmatch/cc/xsb_wildmatch.O
 XSB/packages/wildmatch/.cvsignore
 XSB/packages/wildmatch/Makefile
@@ -442,7 +428,6 @@ XSB/packages/sModels/CVS/Root
 XSB/packages/sModels/CVS/Repository
 XSB/packages/sModels/CVS/Entries
 XSB/packages/sModels/CVS/Tag
-XSB/packages/sModels/Makefile
 XSB/packages/sModels/.cvsignore
 XSB/packages/sModels/ex7num.H
 XSB/packages/sModels/ex7num.P
@@ -459,6 +444,7 @@ XSB/packages/sModels/smodelsops.H
 XSB/packages/sModels/smodelsops.P
 XSB/packages/sModels/teste.H
 XSB/packages/sModels/teste.P
+XSB/packages/sModels/Makefile
 XSB/packages/clpqr/CVS/Root
 XSB/packages/clpqr/CVS/Repository
 XSB/packages/clpqr/CVS/Entries
@@ -487,40 +473,22 @@ XSB/packages/clpqr/printf.P
 XSB/packages/clpqr/project.P
 XSB/packages/clpqr/redund.P
 XSB/packages/clpqr/store.P
-XSB/packages/clpqr/arith.O
-XSB/packages/clpqr/arith_r.O
-XSB/packages/clpqr/bv.O
-XSB/packages/clpqr/class.O
-XSB/packages/clpqr/clpr.O
-XSB/packages/clpqr/ineq.O
-XSB/packages/clpqr/itf3.O
-XSB/packages/clpqr/fourmotz.O
-XSB/packages/clpqr/nf.O
-XSB/packages/clpqr/ordering.O
-XSB/packages/clpqr/project.O
-XSB/packages/clpqr/redund.O
-XSB/packages/clpqr/store.O
-XSB/packages/clpqr/dump.O
-XSB/packages/perlmatch/cc/CVS/Root
-XSB/packages/perlmatch/cc/CVS/Repository
-XSB/packages/perlmatch/cc/CVS/Entries
-XSB/packages/perlmatch/cc/CVS/Tag
-XSB/packages/perlmatch/cc/xsbpattern.H
-XSB/packages/perlmatch/cc/.cvsignore
-XSB/packages/perlmatch/cc/perlpattern.c
-XSB/packages/perlmatch/cc/xsbpattern.c
-XSB/packages/perlmatch/cc/xsbpattern.O
-XSB/packages/perlmatch/cc/interface.h
 XSB/packages/perlmatch/CVS/Root
 XSB/packages/perlmatch/CVS/Repository
 XSB/packages/perlmatch/CVS/Entries
 XSB/packages/perlmatch/CVS/Tag
+XSB/packages/perlmatch/cc/CVS/Root
+XSB/packages/perlmatch/cc/CVS/Repository
+XSB/packages/perlmatch/cc/CVS/Entries
+XSB/packages/perlmatch/cc/CVS/Tag
+XSB/packages/perlmatch/cc/.cvsignore
+XSB/packages/perlmatch/cc/interface.h
+XSB/packages/perlmatch/cc/perlpattern.c
+XSB/packages/perlmatch/cc/xsbpattern.c
+XSB/packages/perlmatch/.cvsignore
 XSB/packages/perlmatch/Makefile
 XSB/packages/perlmatch/plmchconfig.P
 XSB/packages/perlmatch/plmchshell.P
-XSB/packages/perlmatch/plmchconfig.O
-XSB/packages/perlmatch/plmchshell.O
-XSB/packages/perlmatch/.cvsignore
 XSB/packages/libwww/cc/CVS/Root
 XSB/packages/libwww/cc/CVS/Repository
 XSB/packages/libwww/cc/CVS/Entries
@@ -547,59 +515,84 @@ XSB/packages/libwww/configure.in
 XSB/packages/libwww/http_liberr.P
 XSB/packages/libwww/libwww_init.in
 XSB/packages/libwww/libwwwconfig.P
-XSB/packages/libwww/config.log
-XSB/packages/libwww/config.cache
-XSB/packages/libwww/Installation_summary
-XSB/packages/libwww/config.status
-XSB/packages/libwww/libwwwconfig.O
-XSB/packages/libwww/libwww_init.P
-XSB/packages/libwww/libwww_init.O
 XSB/packages/libwww/.cvsignore
 XSB/packages/CVS/Root
 XSB/packages/CVS/Repository
 XSB/packages/CVS/Entries
 XSB/packages/CVS/Tag
-XSB/packages/flora2/lib/CVS/Root
-XSB/packages/flora2/lib/CVS/Repository
-XSB/packages/flora2/lib/CVS/Entries
-XSB/packages/flora2/lib/CVS/Tag
-XSB/packages/flora2/lib/.cvsignore
-XSB/packages/flora2/lib/Makefile
-XSB/packages/flora2/lib/NMakefile.mak
-XSB/packages/flora2/lib/README
-XSB/packages/flora2/lib/flrio.flr
-XSB/packages/flora2/lib/flrprettyprint.flr
-XSB/packages/flora2/lib/flrprettyprint.P
-XSB/packages/flora2/lib/flrio.P
-XSB/packages/flora2/lib/flrprettyprint_pp.O
-XSB/packages/flora2/lib/flrio_io.O
+XSB/packages/flora2/headerinc/CVS/Root
+XSB/packages/flora2/headerinc/CVS/Repository
+XSB/packages/flora2/headerinc/CVS/Entries
+XSB/packages/flora2/headerinc/CVS/Tag
+XSB/packages/flora2/headerinc/flrdefinition_inc.flh
+XSB/packages/flora2/headerinc/flreqltrailer_inc.flh
+XSB/packages/flora2/headerinc/flrheader_inc.flh
+XSB/packages/flora2/headerinc/flrindex_P_inc.flh
+XSB/packages/flora2/headerinc/flrpatch_inc.flh
+XSB/packages/flora2/headerinc/flrpreddef_inc.flh
+XSB/packages/flora2/headerinc/flrscalareql_inc.flh
+XSB/packages/flora2/headerinc/flrtrailer_inc.flh
+XSB/packages/flora2/CVS/Root
+XSB/packages/flora2/CVS/Repository
+XSB/packages/flora2/CVS/Entries
+XSB/packages/flora2/CVS/Tag
+XSB/packages/flora2/demos/CVS/Root
+XSB/packages/flora2/demos/CVS/Repository
+XSB/packages/flora2/demos/CVS/Entries
+XSB/packages/flora2/demos/CVS/Tag
+XSB/packages/flora2/demos/.cvsignore
+XSB/packages/flora2/demos/CompileChangedFiles.sh
+XSB/packages/flora2/demos/Makefile
+XSB/packages/flora2/demos/NMakefile.mak
+XSB/packages/flora2/demos/aggregate.flr
+XSB/packages/flora2/demos/benchmark.flr
+XSB/packages/flora2/demos/btupdates.flr
+XSB/packages/flora2/demos/default.flr
+XSB/packages/flora2/demos/family_obj.flr
+XSB/packages/flora2/demos/family_rel.flr
+XSB/packages/flora2/demos/flogic_basics.flr
+XSB/packages/flora2/demos/metavar.flr
+XSB/packages/flora2/demos/mix.flr
+XSB/packages/flora2/demos/mod1.flr
+XSB/packages/flora2/demos/mod2.flr
+XSB/packages/flora2/demos/module1.flr
+XSB/packages/flora2/demos/module2.flr
+XSB/packages/flora2/demos/mono_inherit.flr
+XSB/packages/flora2/demos/nonmono_inherit.flr
+XSB/packages/flora2/demos/pps.flr
+XSB/packages/flora2/demos/pretty.flr
+XSB/packages/flora2/demos/pretty_data.flr
+XSB/packages/flora2/demos/rel_ops.flr
+XSB/packages/flora2/demos/tree_traversal.flr
 XSB/packages/flora2/debugger/CVS/Root
 XSB/packages/flora2/debugger/CVS/Repository
 XSB/packages/flora2/debugger/CVS/Entries
 XSB/packages/flora2/debugger/CVS/Tag
 XSB/packages/flora2/debugger/.cvsignore
 XSB/packages/flora2/debugger/Makefile
-XSB/packages/flora2/debugger/NMakefile.mak
 XSB/packages/flora2/debugger/dynamic_data.in
 XSB/packages/flora2/debugger/flrdebugger.P
 XSB/packages/flora2/debugger/static_data.in
-XSB/packages/flora2/debugger/static_data.dat
-XSB/packages/flora2/debugger/flrdebugger.O
-XSB/packages/flora2/debugger/dynamic_data.dat
+XSB/packages/flora2/debugger/NMakefile.mak
 XSB/packages/flora2/docs/CVS/Root
 XSB/packages/flora2/docs/CVS/Repository
 XSB/packages/flora2/docs/CVS/Entries
 XSB/packages/flora2/docs/CVS/Tag
 XSB/packages/flora2/docs/.cvsignore
+XSB/packages/flora2/docs/Makefile
+XSB/packages/flora2/docs/NMakefile.mak
 XSB/packages/flora2/docs/architecture.eps
 XSB/packages/flora2/docs/architecture.fig
 XSB/packages/flora2/docs/architecture.jpg
 XSB/packages/flora2/docs/flora2.tex
+XSB/packages/flora2/docs/technical.txt
 XSB/packages/flora2/emacs/CVS/Root
 XSB/packages/flora2/emacs/CVS/Repository
 XSB/packages/flora2/emacs/CVS/Entries
 XSB/packages/flora2/emacs/CVS/Tag
 XSB/packages/flora2/emacs/.cvsignore
+XSB/packages/flora2/emacs/Makefile
+XSB/packages/flora2/emacs/NMakefile.mak
 XSB/packages/flora2/emacs/README
 XSB/packages/flora2/emacs/flora.el
 XSB/packages/flora2/flrincludes/CVS/Root
@@ -615,26 +608,11 @@ XSB/packages/flora2/genincludes/CVS/Entries
 XSB/packages/flora2/genincludes/CVS/Tag
 XSB/packages/flora2/genincludes/.cvsignore
 XSB/packages/flora2/genincludes/Makefile
-XSB/packages/flora2/genincludes/README
-XSB/packages/flora2/genincludes/flrpatch.fli
-XSB/packages/flora2/genincludes/flrpatch.flh
 XSB/packages/flora2/genincludes/NMakefile.mak
-XSB/packages/flora2/headerinc/CVS/Root
-XSB/packages/flora2/headerinc/CVS/Repository
-XSB/packages/flora2/headerinc/CVS/Entries
-XSB/packages/flora2/headerinc/CVS/Tag
-XSB/packages/flora2/headerinc/flrdefinition_inc.flh
-XSB/packages/flora2/headerinc/flreqltrailer_inc.flh
-XSB/packages/flora2/headerinc/flrpatch_inc.flh
-XSB/packages/flora2/headerinc/flrscalareql_inc.flh
-XSB/packages/flora2/headerinc/flrtrailer_inc.flh
-XSB/packages/flora2/headerinc/flrheader_inc.flh
-XSB/packages/flora2/includes/CVS/Root
-XSB/packages/flora2/includes/CVS/Repository
-XSB/packages/flora2/includes/CVS/Entries
-XSB/packages/flora2/includes/CVS/Tag
-XSB/packages/flora2/includes/flrdefinition.flh
-XSB/packages/flora2/includes/flrheader.flh
+XSB/packages/flora2/genincludes/README
+XSB/packages/flora2/genincludes/flrindex_P.fli
+XSB/packages/flora2/genincludes/flrpatch.fli
+XSB/packages/flora2/genincludes/flrpreddef.fli
 XSB/packages/flora2/closure/includes/CVS/Root
 XSB/packages/flora2/closure/includes/CVS/Repository
 XSB/packages/flora2/closure/includes/CVS/Entries
@@ -651,22 +629,37 @@ XSB/packages/flora2/closure/flrcommon.fli
 XSB/packages/flora2/closure/flreqltrailer.fli
 XSB/packages/flora2/closure/flrscalareql.fli
 XSB/packages/flora2/closure/flrtrailer.fli
-XSB/packages/flora2/closure/flrcommon.flh
-XSB/packages/flora2/closure/flrtrailer.flh
-XSB/packages/flora2/closure/flreqltrailer.flh
-XSB/packages/flora2/closure/flrscalareql.flh
 XSB/packages/flora2/closure/.cvsignore
+XSB/packages/flora2/includes/CVS/Root
+XSB/packages/flora2/includes/CVS/Repository
+XSB/packages/flora2/includes/CVS/Entries
+XSB/packages/flora2/includes/CVS/Tag
+XSB/packages/flora2/includes/flrdefinition.flh
+XSB/packages/flora2/includes/flrheader.flh
+XSB/packages/flora2/lib/CVS/Root
+XSB/packages/flora2/lib/CVS/Repository
+XSB/packages/flora2/lib/CVS/Entries
+XSB/packages/flora2/lib/CVS/Tag
+XSB/packages/flora2/lib/.cvsignore
+XSB/packages/flora2/lib/Makefile
+XSB/packages/flora2/lib/NMakefile.mak
+XSB/packages/flora2/lib/README
+XSB/packages/flora2/lib/flrio.flr
+XSB/packages/flora2/lib/flrprettyprint.flr
+XSB/packages/flora2/lib/flrstorage.flr
+XSB/packages/flora2/lib/flrsystem.flr
 XSB/packages/flora2/libinc/CVS/Root
 XSB/packages/flora2/libinc/CVS/Repository
 XSB/packages/flora2/libinc/CVS/Entries
 XSB/packages/flora2/libinc/CVS/Tag
 XSB/packages/flora2/libinc/flrio_inc.flh
 XSB/packages/flora2/libinc/flrprettyprint_inc.flh
+XSB/packages/flora2/libinc/flrstorage_inc.flh
+XSB/packages/flora2/libinc/flrsystem_inc.flh
 XSB/packages/flora2/p2h/CVS/Root
 XSB/packages/flora2/p2h/CVS/Repository
 XSB/packages/flora2/p2h/CVS/Entries
 XSB/packages/flora2/p2h/CVS/Tag
-XSB/packages/flora2/p2h/p2h_config.O
 XSB/packages/flora2/p2h/.cvsignore
 XSB/packages/flora2/p2h/Makefile
 XSB/packages/flora2/p2h/NMakefile.mak
@@ -714,25 +707,6 @@ XSB/packages/flora2/syslib/flrload.P
 XSB/packages/flora2/syslib/flrmetaops.P
 XSB/packages/flora2/syslib/flrshdirect.P
 XSB/packages/flora2/syslib/flrstorage.P
-XSB/packages/flora2/syslib/flranswer.O
-XSB/packages/flora2/syslib/flrcontrol.O
-XSB/packages/flora2/syslib/flrdisplay.O
-XSB/packages/flora2/syslib/flrload.O
-XSB/packages/flora2/syslib/flraggavg.O
-XSB/packages/flora2/syslib/flraggcolbag.O
-XSB/packages/flora2/syslib/flraggcolset.O
-XSB/packages/flora2/syslib/flraggcount.O
-XSB/packages/flora2/syslib/flraggmax.O
-XSB/packages/flora2/syslib/flraggmin.O
-XSB/packages/flora2/syslib/flraggsum.O
-XSB/packages/flora2/syslib/flrstorage.O
-XSB/packages/flora2/syslib/flrdbop.O
-XSB/packages/flora2/syslib/flrbtdbop.O
-XSB/packages/flora2/syslib/flrshdirect.O
-XSB/packages/flora2/syslib/flrdynmod.O
-XSB/packages/flora2/syslib/flrequality.O
-XSB/packages/flora2/syslib/flrimport.O
-XSB/packages/flora2/syslib/flrexpunge.O
 XSB/packages/flora2/syslibinc/CVS/Root
 XSB/packages/flora2/syslibinc/CVS/Repository
 XSB/packages/flora2/syslibinc/CVS/Entries
@@ -764,82 +738,8 @@ XSB/packages/flora2/trailer/.cvsignore
 XSB/packages/flora2/trailer/Makefile
 XSB/packages/flora2/trailer/NMakefile.mak
 XSB/packages/flora2/trailer/README
-XSB/packages/flora2/trailer/standard.P
-XSB/packages/flora2/trailer/standard.O
-XSB/packages/flora2/trailer/eqlbasic.P
-XSB/packages/flora2/trailer/eqlbasic.O
-XSB/packages/flora2/trailer/eqlflogic.P
-XSB/packages/flora2/trailer/eqlflogic.O
-XSB/packages/flora2/trailer/patch.P
-XSB/packages/flora2/trailer/patch.O
-XSB/packages/flora2/demos/CVS/Root
-XSB/packages/flora2/demos/CVS/Repository
-XSB/packages/flora2/demos/CVS/Entries
-XSB/packages/flora2/demos/CVS/Tag
-XSB/packages/flora2/demos/.cvsignore
-XSB/packages/flora2/demos/CompileChangedFiles.sh
-XSB/packages/flora2/demos/Makefile
-XSB/packages/flora2/demos/NMakefile.mak
-XSB/packages/flora2/demos/aggregate.flr
-XSB/packages/flora2/demos/benchmark.flr
-XSB/packages/flora2/demos/default.flr
-XSB/packages/flora2/demos/family_obj.flr
-XSB/packages/flora2/demos/family_rel.flr
-XSB/packages/flora2/demos/flogic_basics.flr
-XSB/packages/flora2/demos/metavar.flr
-XSB/packages/flora2/demos/mix.flr
-XSB/packages/flora2/demos/mod1.flr
-XSB/packages/flora2/demos/mod2.flr
-XSB/packages/flora2/demos/module1.flr
-XSB/packages/flora2/demos/module2.flr
-XSB/packages/flora2/demos/mono_inherit.flr
-XSB/packages/flora2/demos/nonmono_inherit.flr
-XSB/packages/flora2/demos/pps.flr
-XSB/packages/flora2/demos/rel_ops.flr
-XSB/packages/flora2/demos/tree_traversal.flr
-XSB/packages/flora2/demos/aggregate.P
-XSB/packages/flora2/demos/aggregate.fdb
-XSB/packages/flora2/demos/benchmark.P
-XSB/packages/flora2/demos/aggregate_main.O
-XSB/packages/flora2/demos/benchmark.fdb
-XSB/packages/flora2/demos/default.P
-XSB/packages/flora2/demos/benchmark_main.O
-XSB/packages/flora2/demos/default.fdb
-XSB/packages/flora2/demos/family_obj.P
-XSB/packages/flora2/demos/default_main.O
-XSB/packages/flora2/demos/family_obj.fdb
-XSB/packages/flora2/demos/family_rel.P
-XSB/packages/flora2/demos/family_obj_main.O
-XSB/packages/flora2/demos/family_rel.fdb
-XSB/packages/flora2/demos/metavar.P
-XSB/packages/flora2/demos/family_rel_main.O
-XSB/packages/flora2/demos/flogic_basics.P
-XSB/packages/flora2/demos/flogic_basics.fdb
-XSB/packages/flora2/demos/metavar.fdb
-XSB/packages/flora2/demos/flogic_basics_main.O
-XSB/packages/flora2/demos/mix.P
-XSB/packages/flora2/demos/metavar_main.O
-XSB/packages/flora2/demos/mix.fdb
-XSB/packages/flora2/demos/mod1.P
-XSB/packages/flora2/demos/mix_main.O
-XSB/packages/flora2/demos/module1.P
-XSB/packages/flora2/demos/module1.fdb
-XSB/packages/flora2/demos/mod1.fdb
-XSB/packages/flora2/demos/module1_main.O
-XSB/packages/flora2/demos/mod1_main.O
-XSB/packages/flora2/demos/mono_inherit.P
-XSB/packages/flora2/demos/mono_inherit.fdb
-XSB/packages/flora2/demos/rel_ops.P
-XSB/packages/flora2/demos/mono_inherit_main.O
-XSB/packages/flora2/demos/rel_ops.fdb
-XSB/packages/flora2/demos/rel_ops_main.O
-XSB/packages/flora2/demos/tree_traversal.P
-XSB/packages/flora2/demos/tree_traversal.fdb
-XSB/packages/flora2/demos/tree_traversal_main.O
-XSB/packages/flora2/CVS/Root
-XSB/packages/flora2/CVS/Repository
-XSB/packages/flora2/CVS/Entries
-XSB/packages/flora2/CVS/Tag
+XSB/packages/flora2/flrfirstorder.P
+XSB/packages/flora2/flrlexer.H
 XSB/packages/flora2/flrlexer.P
 XSB/packages/flora2/flrlibman.H
 XSB/packages/flora2/flrlibman.P
@@ -847,47 +747,32 @@ XSB/packages/flora2/flrnodefp.H
 XSB/packages/flora2/flrnodefp.P
 XSB/packages/flora2/flrnowsp.H
 XSB/packages/flora2/flrnowsp.P
+XSB/packages/flora2/flrparser.H
 XSB/packages/flora2/flroperator.H
 XSB/packages/flora2/flroperator.P
-XSB/packages/flora2/TODO
-XSB/packages/flora2/flrparser.H
 XSB/packages/flora2/flrparser.P
+XSB/packages/flora2/flrprettyprint.P
 XSB/packages/flora2/flrprint.H
 XSB/packages/flora2/flrprint.P
 XSB/packages/flora2/flrprolog.H
 XSB/packages/flora2/flrprolog.P
 XSB/packages/flora2/flrshell.H
 XSB/packages/flora2/flrshell.P
-XSB/packages/flora2/flrundefhook.H
 XSB/packages/flora2/flrundefhook.P
+XSB/packages/flora2/flrundefined.H
+XSB/packages/flora2/flrundefined.P
 XSB/packages/flora2/flrutils.H
 XSB/packages/flora2/flrutils.P
 XSB/packages/flora2/flrwraparound.H
 XSB/packages/flora2/flrwraparound.P
 XSB/packages/flora2/flrwrapper.H
 XSB/packages/flora2/flrwrapper.P
-XSB/packages/flora2/flrutils.O
-XSB/packages/flora2/flroperator.O
-XSB/packages/flora2/flrnodefp.O
-XSB/packages/flora2/flrnowsp.O
-XSB/packages/flora2/flrarguments.O
-XSB/packages/flora2/flrprolog.O
-XSB/packages/flora2/flrfirstorder.O
-XSB/packages/flora2/flrprint.O
-XSB/packages/flora2/flrlibman.O
-XSB/packages/flora2/flrlexer.O
-XSB/packages/flora2/flrcomposer.O
-XSB/packages/flora2/flrparser.O
-XSB/packages/flora2/flrcompiler.O
-XSB/packages/flora2/flrcoder.O
-XSB/packages/flora2/flrwrapper.O
-XSB/packages/flora2/flrwraparound.O
-XSB/packages/flora2/flrundefhook.O
-XSB/packages/flora2/flrshell.O
+XSB/packages/flora2/flrundefhook.H
 XSB/packages/flora2/.cvsignore
 XSB/packages/flora2/CompileChangedFiles.sh
 XSB/packages/flora2/Makefile
 XSB/packages/flora2/NMakefile.mak
+XSB/packages/flora2/TODO
 XSB/packages/flora2/flrarguments.H
 XSB/packages/flora2/flrarguments.P
 XSB/packages/flora2/flrcoder.H
@@ -896,9 +781,9 @@ XSB/packages/flora2/flrcompiler.H
 XSB/packages/flora2/flrcompiler.P
 XSB/packages/flora2/flrcomposer.H
 XSB/packages/flora2/flrcomposer.P
+XSB/packages/flora2/flrdependency.H
+XSB/packages/flora2/flrdependency.P
 XSB/packages/flora2/flrfirstorder.H
-XSB/packages/flora2/flrfirstorder.P
-XSB/packages/flora2/flrlexer.H
 XSB/packages/flora/lib/CVS/Root
 XSB/packages/flora/lib/CVS/Repository
 XSB/packages/flora/lib/CVS/Entries
@@ -1018,11 +903,10 @@ XSB/packages/gap/CVS/Entries
 XSB/packages/gap/CVS/Tag
 XSB/packages/gap/.cvsignore
 XSB/packages/gap/Makefile
-XSB/packages/gap/README
 XSB/packages/gap/gapaux.P
 XSB/packages/gap/gapexamps.P
 XSB/packages/gap/gapmeta.P
-XSB/packages/gap/gapmeta.O
+XSB/packages/gap/README
 XSB/packages/xmc.O
 XSB/packages/xmc.H
 XSB/packages/xmc.P
@@ -1073,7 +957,6 @@ XSB/build/gppMakefile.in
 XSB/build/makexsb.in
 XSB/build/modMakefile.in
 XSB/build/private_builtin.in
-XSB/build/register.sh.orig
 XSB/build/smoMakefile.in
 XSB/build/topMakefile.in
 XSB/build/wxsb.in
@@ -1083,6 +966,7 @@ XSB/build/xsb.in
 XSB/build/xsb_configuration.in
 XSB/build/xsb_configuration_wind.in
 XSB/build/config.guess
+XSB/build/config.guess.orig
 XSB/build/config.sub
 XSB/build/MSVC.sh
 XSB/build/clean_pkgs.sh
@@ -1102,10 +986,11 @@ XSB/build/configure.in.orig
 XSB/build/makexsb.in.orig
 XSB/build/topMakefile.in.orig
 XSB/build/config.log
+XSB/build/register.sh.orig
 XSB/build/.apkgs.tmp
 XSB/build/config.status
-XSB/build/makexsb
 XSB/build/Installation_summary
+XSB/build/makexsb
 XSB/build/.xsb_cmplib_warn.tmp
 XSB/build/.xsb_syslib_warn.tmp
 XSB/build/acconfig.h
@@ -1159,6 +1044,9 @@ XSB/emu/chatsched_xsb_i.h
 XSB/emu/choice.h
 XSB/emu/cinterf.c
 XSB/emu/cinterf.h
+XSB/emu/complete_local.h
+XSB/emu/com_0002fxsb_0002finterprolog_0002fNativeEngine.h
+XSB/emu/com_xsb_interprolog_NativeEngine.h
 XSB/emu/complete_xsb_i.h
 XSB/emu/conget_xsb_i.h
 XSB/emu/cut_xsb.h
@@ -1183,10 +1071,14 @@ XSB/emu/export.h
 XSB/emu/file_modes_xsb.h
 XSB/emu/findall.c
 XSB/emu/findall.h
-XSB/emu/proc.mk
 XSB/emu/flag_defs_xsb.h
 XSB/emu/flags_xsb.h
 XSB/emu/function.c
+XSB/emu/gc_copy.h
+XSB/emu/gc_mark.h
+XSB/emu/gc_print.h
+XSB/emu/gc_profile.h
+XSB/emu/gc_slide.h
 XSB/emu/hash_xsb.c
 XSB/emu/hash_xsb.h
 XSB/emu/heap_defs_xsb.h
@@ -1195,19 +1087,22 @@ XSB/emu/heap_xsb.h
 XSB/emu/init_xsb.c
 XSB/emu/inst_xsb.c
 XSB/emu/inst_xsb.h
+XSB/emu/interprolog_xsb.h
+XSB/emu/io_defs_xsb.h
+XSB/emu/interprolog_callback.c
+XSB/emu/interprolog_xsb_i.h
 XSB/emu/io_builtins_xsb.c
 XSB/emu/io_builtins_xsb.h
 XSB/emu/io_builtins_xsb_i.h
-XSB/emu/io_defs_xsb.h
 XSB/emu/loader_xsb.c
 XSB/emu/loader_xsb.h
 XSB/emu/macro_xsb.h
 XSB/emu/main_xsb.c
 XSB/emu/memory_xsb.c
 XSB/emu/memory_xsb.h
+XSB/emu/odbc_string.h
 XSB/emu/odbc_xsb.c
 XSB/emu/odbc_xsb.h
-XSB/emu/odbc_string.h
 XSB/emu/odbc_xsb_i.h
 XSB/emu/oracle_xsb.h
 XSB/emu/oracle_xsb_i.h
@@ -1217,6 +1112,7 @@ XSB/emu/orient_xsb.c
 XSB/emu/orient_xsb.h
 XSB/emu/pathname_xsb.c
 XSB/emu/private_builtin.c
+XSB/emu/proc.mk
 XSB/emu/psc_defs.h
 XSB/emu/psc_xsb.c
 XSB/emu/psc_xsb.h
@@ -1225,18 +1121,20 @@ XSB/emu/random_xsb.c
 XSB/emu/random_xsb.h
 XSB/emu/realloc.h
 XSB/emu/register.h
+XSB/emu/remove_unf.c
+XSB/emu/remove_unf.h
 XSB/emu/residual.c
 XSB/emu/residual.h
 XSB/emu/scc_xsb.c
 XSB/emu/scc_xsb.h
-XSB/emu/sig_xsb.h
 XSB/emu/schedrev_xsb_i.h
 XSB/emu/setjmp_xsb.h
+XSB/emu/sig_xsb.h
 XSB/emu/slgdelay.c
 XSB/emu/slgdelay.h
 XSB/emu/slginsts_xsb_i.h
-XSB/emu/socket_defs_xsb.h
 XSB/emu/socket_xsb.c
+XSB/emu/socket_defs_xsb.h
 XSB/emu/socket_xsb.h
 XSB/emu/sp_unify_xsb_i.h
 XSB/emu/sql.h
@@ -1244,6 +1142,9 @@ XSB/emu/sqlext.h
 XSB/emu/sqltypes.h
 XSB/emu/std_cases_xsb_i.h
 XSB/emu/std_pred_xsb_i.h
+XSB/emu/storage_xsb.c
+XSB/emu/storage_xsb.h
+XSB/emu/storage_xsb_defs.h
 XSB/emu/string_xsb.c
 XSB/emu/struct_manager.c
 XSB/emu/struct_manager.h
@@ -1253,6 +1154,7 @@ XSB/emu/subinst.h
 XSB/emu/subp.c
 XSB/emu/subp.h
 XSB/emu/sw_envs.h
+XSB/emu/tries.c
 XSB/emu/syscall_xsb.h
 XSB/emu/system_defs_xsb.h
 XSB/emu/system_xsb.c
@@ -1275,10 +1177,9 @@ XSB/emu/tr_delay.h
 XSB/emu/tr_utils.c
 XSB/emu/tr_utils.h
 XSB/emu/trace_xsb.c
-XSB/emu/trassert.h
-XSB/emu/trie_internals.h
 XSB/emu/trie_lookup.c
-XSB/emu/tries.c
+XSB/emu/trie_internals.h
+XSB/emu/trie_search.c
 XSB/emu/tries.h
 XSB/emu/tst_aux.h
 XSB/emu/tst_insert.c
@@ -1294,16 +1195,19 @@ XSB/emu/wfs_xsb_i.h
 XSB/emu/wind2unix.h
 XSB/emu/wsipx.h
 XSB/emu/xsb.def
-XSB/emu/xsb_time.h
 XSB/emu/xsb_inst_list.h
-XSB/emu/trie_search.c
-XSB/emu/README
+XSB/emu/xsb_time.h
+XSB/emu/trassert.h
 XSB/emu/.cvsignore
 XSB/emu/CODING_GUIDELINES
+XSB/emu/README
+XSB/syslib/CVS/Root
+XSB/syslib/CVS/Repository
+XSB/syslib/CVS/Entries
+XSB/syslib/CVS/Tag
 XSB/syslib/objfiles.saved/xcallxsb.O
 XSB/syslib/objfiles.saved/atts.O
 XSB/syslib/objfiles.saved/basics.O
-XSB/syslib/objfiles.saved/consult.O
 XSB/syslib/objfiles.saved/curr_sym.O
 XSB/syslib/objfiles.saved/dbclause.O
 XSB/syslib/objfiles.saved/dcg.O
@@ -1311,9 +1215,10 @@ XSB/syslib/objfiles.saved/debugger.O
 XSB/syslib/objfiles.saved/domain.O
 XSB/syslib/objfiles.saved/eval.O
 XSB/syslib/objfiles.saved/file_io.O
-XSB/syslib/objfiles.saved/file_op.O
 XSB/syslib/objfiles.saved/gensym.O
 XSB/syslib/objfiles.saved/hilogsym.O
+XSB/syslib/objfiles.saved/loader.O
+XSB/syslib/objfiles.saved/machine.O
 XSB/syslib/objfiles.saved/num_vars.O
 XSB/syslib/objfiles.saved/push_io.O
 XSB/syslib/objfiles.saved/setof.O
@@ -1323,15 +1228,8 @@ XSB/syslib/objfiles.saved/sysinitrc.O
 XSB/syslib/objfiles.saved/tables.O
 XSB/syslib/objfiles.saved/term_exp.O
 XSB/syslib/objfiles.saved/unix.O
-XSB/syslib/objfiles.saved/x_interp.O
 XSB/syslib/objfiles.saved/xsb_hook.O
-XSB/syslib/objfiles.saved/xsb_read.O
-XSB/syslib/objfiles.saved/xsb_writ.O
 XSB/syslib/objfiles.saved/assert.O
-XSB/syslib/CVS/Root
-XSB/syslib/CVS/Repository
-XSB/syslib/CVS/Entries
-XSB/syslib/CVS/Tag
 XSB/syslib/CompileChangedFiles.sh
 XSB/syslib/Makefile
 XSB/syslib/README
@@ -1406,8 +1304,8 @@ XSB/syslib/string.O
 XSB/syslib/string.P
 XSB/syslib/subsumes.H
 XSB/syslib/subsumes.O
-XSB/syslib/unix.O
 XSB/syslib/subsumes.P
+XSB/syslib/unix.O
 XSB/syslib/sysinitrc.O
 XSB/syslib/sysinitrc.P
 XSB/syslib/tables.H
@@ -1420,7 +1318,6 @@ XSB/syslib/unix.P
 XSB/syslib/x_interp.H
 XSB/syslib/x_interp.O
 XSB/syslib/x_interp.P
-XSB/syslib/xcallxsb.H
 XSB/syslib/xcallxsb.O
 XSB/syslib/xcallxsb.P
 XSB/syslib/xsb_hook.H
@@ -1432,13 +1329,13 @@ XSB/syslib/xsb_read.P
 XSB/syslib/xsb_writ.H
 XSB/syslib/xsb_writ.O
 XSB/syslib/xsb_writ.P
+XSB/syslib/xcallxsb.H
 XSB/syslib/.cvsignore
 XSB/cmplib/objfiles.saved/writeasm.O
 XSB/cmplib/objfiles.saved/asm_inst.O
 XSB/cmplib/objfiles.saved/asm_opt.O
 XSB/cmplib/objfiles.saved/asmpass2.O
 XSB/cmplib/objfiles.saved/auxlry.O
-XSB/cmplib/objfiles.saved/compile.O
 XSB/cmplib/objfiles.saved/config.O
 XSB/cmplib/objfiles.saved/cp_opt.O
 XSB/cmplib/objfiles.saved/cutcheck.O
@@ -1448,7 +1345,6 @@ XSB/cmplib/objfiles.saved/listutil.O
 XSB/cmplib/objfiles.saved/makemode.O
 XSB/cmplib/objfiles.saved/modeinf.O
 XSB/cmplib/objfiles.saved/modes.O
-XSB/cmplib/objfiles.saved/parse.O
 XSB/cmplib/objfiles.saved/peephole.O
 XSB/cmplib/objfiles.saved/pre_cond.O
 XSB/cmplib/objfiles.saved/preproc.O
@@ -1459,16 +1355,14 @@ XSB/cmplib/objfiles.saved/singlton.O
 XSB/cmplib/objfiles.saved/spec.O
 XSB/cmplib/objfiles.saved/suppltab.O
 XSB/cmplib/objfiles.saved/symtab.O
+XSB/cmplib/objfiles.saved/tprog.O
 XSB/cmplib/objfiles.saved/tabdef.O
 XSB/cmplib/objfiles.saved/ti_mod.O
 XSB/cmplib/objfiles.saved/tp_comp.O
 XSB/cmplib/objfiles.saved/tp_cond.O
-XSB/cmplib/objfiles.saved/tp_eval.O
 XSB/cmplib/objfiles.saved/tp_goal.O
 XSB/cmplib/objfiles.saved/tp_index.O
-XSB/cmplib/objfiles.saved/tp_var.O
 XSB/cmplib/objfiles.saved/tpinline.O
-XSB/cmplib/objfiles.saved/tprog.O
 XSB/cmplib/objfiles.saved/useinfer.O
 XSB/cmplib/objfiles.saved/varproc.O
 XSB/cmplib/objfiles.saved/asm.O
@@ -1603,6 +1497,7 @@ XSB/cmplib/tp_comp.P
 XSB/cmplib/tp_cond.D
 XSB/cmplib/tp_cond.H
 XSB/cmplib/tp_cond.O
+XSB/cmplib/tprog.D
 XSB/cmplib/tp_cond.P
 XSB/cmplib/tp_eval.D
 XSB/cmplib/tp_eval.H
@@ -1624,7 +1519,6 @@ XSB/cmplib/tpinline.D
 XSB/cmplib/tpinline.H
 XSB/cmplib/tpinline.O
 XSB/cmplib/tpinline.P
-XSB/cmplib/tprog.D
 XSB/cmplib/tprog.H
 XSB/cmplib/tprog.O
 XSB/cmplib/tprog.P
@@ -1645,7 +1539,6 @@ XSB/lib/CVS/Root
 XSB/lib/CVS/Repository
 XSB/lib/CVS/Entries
 XSB/lib/CVS/Tag
-XSB/lib/packaging.O
 XSB/lib/.cvsignore
 XSB/lib/Makefile
 XSB/lib/README
@@ -1687,6 +1580,7 @@ XSB/lib/write_term.P
 XSB/lib/xnmr.H
 XSB/lib/xnmr.P
 XSB/lib/xsb_ciao.P
+XSB/lib/packaging.O
 XSB/lib/aggregs.O
 XSB/lib/array.O
 XSB/lib/array1.O
@@ -1725,6 +1619,7 @@ XSB/Makefile.orig
 XSB/INSTALL_PROBLEMS
 XSB/INSTALL
 XSB/Makefile
+share/xsb
 
 @exec mkdir %D/XSB/site
 @exec mkdir %D/XSB/site/lib
@@ -1732,164 +1627,166 @@ XSB/Makefile
 @exec mkdir %D/XSB/site/config/%%MACHINE_ARCH%%-unknown-%%OPSYS%%%%OSREL%%
 @exec mkdir %D/XSB/site/config/%%MACHINE_ARCH%%-unknown-%%OPSYS%%%%OSREL%%/lib
 
-@dirrm XSB/site/config/%%MACHINE_ARCH%%-unknown-%%OPSYS%%%%OSREL%%/lib
-@dirrm XSB/site/config/%%MACHINE_ARCH%%-unknown-%%OPSYS%%%%OSREL%%
-@dirrm XSB/site/config
-@dirrm XSB/site/lib
-@dirrm XSB/site
-@dirrm XSB/gpp/CVS
-@dirrm XSB/gpp
-@dirrm XSB/lib/CVS
-@dirrm XSB/lib
-@dirrm XSB/cmplib/CVS
-@dirrm XSB/cmplib/objfiles.saved
-@dirrm XSB/cmplib
-@dirrm XSB/syslib/CVS
-@dirrm XSB/syslib/objfiles.saved
-@dirrm XSB/syslib
-@dirrm XSB/emu/orastuff/CVS
-@dirrm XSB/emu/orastuff
-@dirrm XSB/emu/debugs/CVS
-@dirrm XSB/emu/debugs
-@dirrm XSB/emu/CVS
-@dirrm XSB/emu/dde/CVS
-@dirrm XSB/emu/dde
-@dirrm XSB/emu
-@dirrm XSB/build
-@dirrm XSB/prolog_includes/CVS
-@dirrm XSB/prolog_includes
-@dirrm XSB/packages/gap/CVS
-@dirrm XSB/packages/gap
-@dirrm XSB/packages/flora/syslib/CVS
-@dirrm XSB/packages/flora/syslib
-@dirrm XSB/packages/flora/docs/CVS
-@dirrm XSB/packages/flora/docs
-@dirrm XSB/packages/flora/emacs/CVS
-@dirrm XSB/packages/flora/emacs
-@dirrm XSB/packages/flora/homepage/CVS
-@dirrm XSB/packages/flora/homepage
-@dirrm XSB/packages/flora/includes/CVS
-@dirrm XSB/packages/flora/includes
-@dirrm XSB/packages/flora/demos/CVS
-@dirrm XSB/packages/flora/demos
-@dirrm XSB/packages/flora/p2h/CVS
-@dirrm XSB/packages/flora/p2h
-@dirrm XSB/packages/flora/pkgs/CVS
-@dirrm XSB/packages/flora/pkgs
-@dirrm XSB/packages/flora/CVS
-@dirrm XSB/packages/flora/closure/CVS
-@dirrm XSB/packages/flora/closure
-@dirrm XSB/packages/flora/lib/CVS
-@dirrm XSB/packages/flora/lib
-@dirrm XSB/packages/flora
-@dirrm XSB/packages/flora2/CVS
-@dirrm XSB/packages/flora2/demos/CVS
-@dirrm XSB/packages/flora2/demos
-@dirrm XSB/packages/flora2/trailer/CVS
-@dirrm XSB/packages/flora2/trailer
-@dirrm XSB/packages/flora2/syslibinc/CVS
-@dirrm XSB/packages/flora2/syslibinc
-@dirrm XSB/packages/flora2/syslib/CVS
-@dirrm XSB/packages/flora2/syslib
-@dirrm XSB/packages/flora2/pkgs/CVS
-@dirrm XSB/packages/flora2/pkgs
-@dirrm XSB/packages/flora2/p2h/CVS
-@dirrm XSB/packages/flora2/p2h
-@dirrm XSB/packages/flora2/libinc/CVS
-@dirrm XSB/packages/flora2/libinc
-@dirrm XSB/packages/flora2/closure/CVS
-@dirrm XSB/packages/flora2/closure/includes/CVS
-@dirrm XSB/packages/flora2/closure/includes
-@dirrm XSB/packages/flora2/closure
-@dirrm XSB/packages/flora2/includes/CVS
-@dirrm XSB/packages/flora2/includes
-@dirrm XSB/packages/flora2/headerinc/CVS
-@dirrm XSB/packages/flora2/headerinc
-@dirrm XSB/packages/flora2/genincludes/CVS
-@dirrm XSB/packages/flora2/genincludes
-@dirrm XSB/packages/flora2/flrincludes/CVS
-@dirrm XSB/packages/flora2/flrincludes
-@dirrm XSB/packages/flora2/emacs/CVS
-@dirrm XSB/packages/flora2/emacs
-@dirrm XSB/packages/flora2/docs/CVS
-@dirrm XSB/packages/flora2/docs
-@dirrm XSB/packages/flora2/debugger/CVS
-@dirrm XSB/packages/flora2/debugger
-@dirrm XSB/packages/flora2/lib/CVS
-@dirrm XSB/packages/flora2/lib
-@dirrm XSB/packages/flora2
-@dirrm XSB/packages/CVS
-@dirrm XSB/packages/libwww/CVS
-@dirrm XSB/packages/libwww/cc/CVS
-@dirrm XSB/packages/libwww/cc
-@dirrm XSB/packages/libwww
+@dirrm XSB/etc/CVS
+@dirrm XSB/etc/images/CVS
+@dirrm XSB/etc/images
+@dirrm XSB/etc
+@dirrm XSB/bin
+@dirrm XSB/config/%%MACHINE_ARCH%%-unknown-%%OPSYS%%%%OSREL%%/lib
+@dirrm XSB/config/%%MACHINE_ARCH%%-unknown-%%OPSYS%%%%OSREL%%/saved.o
+@dirrm XSB/config/%%MACHINE_ARCH%%-unknown-%%OPSYS%%%%OSREL%%/bin
+@dirrm XSB/config/%%MACHINE_ARCH%%-unknown-%%OPSYS%%%%OSREL%%
+@dirrm XSB/config
+@dirrm XSB/examples/c_calling_XSB/CVS
+@dirrm XSB/examples/c_calling_XSB
+@dirrm XSB/examples/CVS
+@dirrm XSB/examples/XSB_calling_c/CVS
+@dirrm XSB/examples/XSB_calling_c
+@dirrm XSB/examples/xmc/Rether/CVS
+@dirrm XSB/examples/xmc/Rether
+@dirrm XSB/examples/xmc/ABP/CVS
+@dirrm XSB/examples/xmc/ABP
+@dirrm XSB/examples/xmc/Tests/CVS
+@dirrm XSB/examples/xmc/Tests
+@dirrm XSB/examples/xmc/Sieve/CVS
+@dirrm XSB/examples/xmc/Sieve
+@dirrm XSB/examples/xmc/Leader/CVS
+@dirrm XSB/examples/xmc/Leader
+@dirrm XSB/examples/xmc/Needham/CVS
+@dirrm XSB/examples/xmc/Needham
+@dirrm XSB/examples/xmc/Metalock/CVS
+@dirrm XSB/examples/xmc/Metalock
+@dirrm XSB/examples/xmc/CVS
+@dirrm XSB/examples/xmc/Iproto/CVS
+@dirrm XSB/examples/xmc/Iproto
+@dirrm XSB/examples/xmc
+@dirrm XSB/examples/libwww/CVS
+@dirrm XSB/examples/libwww/files/CVS
+@dirrm XSB/examples/libwww/files
+@dirrm XSB/examples/libwww
+@dirrm XSB/examples/socket/select/CVS
+@dirrm XSB/examples/socket/select
+@dirrm XSB/examples/socket/CVS
+@dirrm XSB/examples/socket
+@dirrm XSB/examples/subprocess/CVS
+@dirrm XSB/examples/subprocess
+@dirrm XSB/examples
+@dirrm XSB/docs/userman
+@dirrm XSB/docs
+@dirrm XSB/packages/regmatch/CVS
+@dirrm XSB/packages/regmatch/cc/CVS
+@dirrm XSB/packages/regmatch/cc
+@dirrm XSB/packages/regmatch
+@dirrm XSB/packages/xsbdoc/CVS
+@dirrm XSB/packages/xsbdoc
+@dirrm XSB/packages/xmc/GUI/CVS
+@dirrm XSB/packages/xmc/GUI
+@dirrm XSB/packages/xmc/CVS
+@dirrm XSB/packages/xmc
+@dirrm XSB/packages/wildmatch/CVS
+@dirrm XSB/packages/wildmatch/cc/CVS
+@dirrm XSB/packages/wildmatch/cc
+@dirrm XSB/packages/wildmatch
+@dirrm XSB/packages/slx/CVS
+@dirrm XSB/packages/slx
+@dirrm XSB/packages/sModels/CVS
+@dirrm XSB/packages/sModels
+@dirrm XSB/packages/clpqr/CVS
+@dirrm XSB/packages/clpqr
 @dirrm XSB/packages/perlmatch/CVS
 @dirrm XSB/packages/perlmatch/cc/CVS
 @dirrm XSB/packages/perlmatch/cc
 @dirrm XSB/packages/perlmatch
-@dirrm XSB/packages/clpqr/CVS
-@dirrm XSB/packages/clpqr
-@dirrm XSB/packages/sModels/CVS
-@dirrm XSB/packages/sModels
-@dirrm XSB/packages/slx/CVS
-@dirrm XSB/packages/slx
-@dirrm XSB/packages/wildmatch/cc/CVS
-@dirrm XSB/packages/wildmatch/cc
-@dirrm XSB/packages/wildmatch/CVS
-@dirrm XSB/packages/wildmatch
-@dirrm XSB/packages/xmc/CVS
-@dirrm XSB/packages/xmc/GUI/CVS
-@dirrm XSB/packages/xmc/GUI
-@dirrm XSB/packages/xmc
-@dirrm XSB/packages/xsbdoc/CVS
-@dirrm XSB/packages/xsbdoc
-@dirrm XSB/packages/regmatch/cc/CVS
-@dirrm XSB/packages/regmatch/cc
-@dirrm XSB/packages/regmatch/CVS
-@dirrm XSB/packages/regmatch
+@dirrm XSB/packages/libwww/cc/CVS
+@dirrm XSB/packages/libwww/cc
+@dirrm XSB/packages/libwww/CVS
+@dirrm XSB/packages/libwww
+@dirrm XSB/packages/CVS
+@dirrm XSB/packages/flora2/headerinc/CVS
+@dirrm XSB/packages/flora2/headerinc
+@dirrm XSB/packages/flora2/CVS
+@dirrm XSB/packages/flora2/demos/CVS
+@dirrm XSB/packages/flora2/demos
+@dirrm XSB/packages/flora2/debugger/CVS
+@dirrm XSB/packages/flora2/debugger
+@dirrm XSB/packages/flora2/docs/CVS
+@dirrm XSB/packages/flora2/docs
+@dirrm XSB/packages/flora2/emacs/CVS
+@dirrm XSB/packages/flora2/emacs
+@dirrm XSB/packages/flora2/flrincludes/CVS
+@dirrm XSB/packages/flora2/flrincludes
+@dirrm XSB/packages/flora2/genincludes/CVS
+@dirrm XSB/packages/flora2/genincludes
+@dirrm XSB/packages/flora2/closure/includes/CVS
+@dirrm XSB/packages/flora2/closure/includes
+@dirrm XSB/packages/flora2/closure/CVS
+@dirrm XSB/packages/flora2/closure
+@dirrm XSB/packages/flora2/includes/CVS
+@dirrm XSB/packages/flora2/includes
+@dirrm XSB/packages/flora2/lib/CVS
+@dirrm XSB/packages/flora2/lib
+@dirrm XSB/packages/flora2/libinc/CVS
+@dirrm XSB/packages/flora2/libinc
+@dirrm XSB/packages/flora2/p2h/CVS
+@dirrm XSB/packages/flora2/p2h
+@dirrm XSB/packages/flora2/pkgs/CVS
+@dirrm XSB/packages/flora2/pkgs
+@dirrm XSB/packages/flora2/syslib/CVS
+@dirrm XSB/packages/flora2/syslib
+@dirrm XSB/packages/flora2/syslibinc/CVS
+@dirrm XSB/packages/flora2/syslibinc
+@dirrm XSB/packages/flora2/trailer/CVS
+@dirrm XSB/packages/flora2/trailer
+@dirrm XSB/packages/flora2
+@dirrm XSB/packages/flora/lib/CVS
+@dirrm XSB/packages/flora/lib
+@dirrm XSB/packages/flora/closure/CVS
+@dirrm XSB/packages/flora/closure
+@dirrm XSB/packages/flora/CVS
+@dirrm XSB/packages/flora/pkgs/CVS
+@dirrm XSB/packages/flora/pkgs
+@dirrm XSB/packages/flora/p2h/CVS
+@dirrm XSB/packages/flora/p2h
+@dirrm XSB/packages/flora/demos/CVS
+@dirrm XSB/packages/flora/demos
+@dirrm XSB/packages/flora/includes/CVS
+@dirrm XSB/packages/flora/includes
+@dirrm XSB/packages/flora/homepage/CVS
+@dirrm XSB/packages/flora/homepage
+@dirrm XSB/packages/flora/emacs/CVS
+@dirrm XSB/packages/flora/emacs
+@dirrm XSB/packages/flora/docs/CVS
+@dirrm XSB/packages/flora/docs
+@dirrm XSB/packages/flora/syslib/CVS
+@dirrm XSB/packages/flora/syslib
+@dirrm XSB/packages/flora
+@dirrm XSB/packages/gap/CVS
+@dirrm XSB/packages/gap
 @dirrm XSB/packages
-@dirrm XSB/docs/userman
-@dirrm XSB/docs
-@dirrm XSB/examples/subprocess/CVS
-@dirrm XSB/examples/subprocess
-@dirrm XSB/examples/socket/CVS
-@dirrm XSB/examples/socket/select/CVS
-@dirrm XSB/examples/socket/select
-@dirrm XSB/examples/socket
-@dirrm XSB/examples/libwww/files/CVS
-@dirrm XSB/examples/libwww/files
-@dirrm XSB/examples/libwww/CVS
-@dirrm XSB/examples/libwww
-@dirrm XSB/examples/xmc/Tests/CVS
-@dirrm XSB/examples/xmc/Tests
-@dirrm XSB/examples/xmc/Leader/CVS
-@dirrm XSB/examples/xmc/Leader
-@dirrm XSB/examples/xmc/Metalock/CVS
-@dirrm XSB/examples/xmc/Metalock
-@dirrm XSB/examples/xmc/Rether/CVS
-@dirrm XSB/examples/xmc/Rether
-@dirrm XSB/examples/xmc/Iproto/CVS
-@dirrm XSB/examples/xmc/Iproto
-@dirrm XSB/examples/xmc/CVS
-@dirrm XSB/examples/xmc/ABP/CVS
-@dirrm XSB/examples/xmc/ABP
-@dirrm XSB/examples/xmc/Sieve/CVS
-@dirrm XSB/examples/xmc/Sieve
-@dirrm XSB/examples/xmc
-@dirrm XSB/examples/XSB_calling_c/CVS
-@dirrm XSB/examples/XSB_calling_c
-@dirrm XSB/examples/CVS
-@dirrm XSB/examples/c_calling_XSB/CVS
-@dirrm XSB/examples/c_calling_XSB
-@dirrm XSB/examples
-@dirrm XSB/config/%%MACHINE_ARCH%%-unknown-%%OPSYS%%%%OSREL%%/bin
-@dirrm XSB/config/%%MACHINE_ARCH%%-unknown-%%OPSYS%%%%OSREL%%/saved.o
-@dirrm XSB/config/%%MACHINE_ARCH%%-unknown-%%OPSYS%%%%OSREL%%/lib
-@dirrm XSB/config/%%MACHINE_ARCH%%-unknown-%%OPSYS%%%%OSREL%%
-@dirrm XSB/config
-@dirrm XSB/bin
-@dirrm XSB/etc/images/CVS
-@dirrm XSB/etc/images
-@dirrm XSB/etc/CVS
-@dirrm XSB/etc
+@dirrm XSB/prolog_includes/CVS
+@dirrm XSB/prolog_includes
+@dirrm XSB/build
+@dirrm XSB/emu/dde/CVS
+@dirrm XSB/emu/dde
+@dirrm XSB/emu/CVS
+@dirrm XSB/emu/debugs/CVS
+@dirrm XSB/emu/debugs
+@dirrm XSB/emu/orastuff/CVS
+@dirrm XSB/emu/orastuff
+@dirrm XSB/emu
+@dirrm XSB/syslib/CVS
+@dirrm XSB/syslib/objfiles.saved
+@dirrm XSB/syslib
+@dirrm XSB/cmplib/objfiles.saved
+@dirrm XSB/cmplib/CVS
+@dirrm XSB/cmplib
+@dirrm XSB/lib/CVS
+@dirrm XSB/lib
+@dirrm XSB/gpp/CVS
+@dirrm XSB/gpp
+@dirrm XSB/site/lib
+@dirrm XSB/site/config/%%MACHINE_ARCH%%-unknown-%%OPSYS%%%%OSREL%%/lib
+@dirrm XSB/site/config/%%MACHINE_ARCH%%-unknown-%%OPSYS%%%%OSREL%%
+@dirrm XSB/site/config
+@dirrm XSB/site
 @dirrm XSB

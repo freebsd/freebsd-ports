@@ -1,5 +1,5 @@
---- makexsb.in.old	Sun Jul 29 15:37:36 2001
-+++ makexsb.in	Sun Jul 29 16:18:20 2001
+--- makexsb.in.orig	Sat Apr 27 11:23:44 2002
++++ makexsb.in	Sat Apr 27 11:23:32 2002
 @@ -74,9 +74,9 @@
  
  if test -r "$makefile" ; then

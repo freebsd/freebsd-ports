@@ -1,0 +1,20 @@
+--- config.guess.orig	Tue Jun 18 11:40:04 2002
++++ config.guess	Tue Jun 18 11:40:48 2002
+@@ -79,7 +79,7 @@
+ fi
+ 
+ 
+-dummy=dummy-$$
++dummy=/tmp/dummy-$$
+ trap 'rm -f $dummy.c $dummy.o $dummy; exit 1' 1 2 15
+ 
+ # Use $HOST_CC if defined. $CC may point to a cross-compiler
+@@ -92,7 +92,7 @@
+     else
+       echo 'int dummy(){}' >$dummy.c
+       for c in cc c89 gcc; do 
+-	($c $dummy.c -c) >/dev/null 2>&1
++	($c $dummy.c -c -o $dummy.o) >/dev/null 2>&1
+ 	if test $? = 0; then
+ 	  CC_FOR_BUILD="$c"; break
+ 	fi
