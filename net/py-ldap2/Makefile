@@ -15,10 +15,9 @@ DISTNAME=	Python-LDAP-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 
 LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap2
-BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
-RUN_DEPENDS=	python:${PORTSDIR}/lang/python
 
 USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S=-src==}
 
 #class = OpenLDAP2
@@ -32,11 +31,5 @@ do-configure:
 		-e "s=/usr/local/openldap2/include=${LOCALBASE}/include=" \
 		${WRKSRC}/setup.cfg
 	@${PERL5} -pi -e "s=lber ldap resolv=lber ldap=" ${WRKSRC}/setup.cfg
-
-do-build:
-	cd ${WRKSRC} && ${PYTHON_CMD} setup.py build
-
-do-install:
-	cd ${WRKSRC} && ${PYTHON_CMD} setup.py install
 
 .include <bsd.port.mk>

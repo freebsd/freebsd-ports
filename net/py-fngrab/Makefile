@@ -19,14 +19,7 @@ BUILD_DEPENDS=	${PYXML}
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
-
-SETUP_CMD=	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py
-
-do-build:
-	@${SETUP_CMD} build
-
-do-install:
-	@${SETUP_CMD} install
+USE_PYDISTUTILS=	yes
 
 post-install:
 	@${MV} ${PREFIX}/bin/fngrab.py ${PREFIX}/bin/fngrab

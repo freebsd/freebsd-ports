@@ -19,6 +19,6 @@ MAINTAINER=	perky@fallin.lv
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/SWIG
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS= yes
+USE_PYDISTUTILS=	yes
 
 .include <bsd.port.mk>
