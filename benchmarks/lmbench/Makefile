@@ -9,7 +9,6 @@ PORTNAME=	lmbench
 PORTVERSION=	1.1
 CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://ftp.deva.net/pub/sources/system/benchmarks/ \
-		ftp://ftp.kuis.kyoto-u.ac.jp/misc/benchmarks/ \
 		ftp://ftp.netlab.is.tsukuba.ac.jp/pub/utils/benchmark/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
