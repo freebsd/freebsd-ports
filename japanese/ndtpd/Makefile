@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ndtpd
-PORTVERSION=	3.1.2
+PORTVERSION=	3.1.3
 CATEGORIES=	japanese ipv6
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/net/ndtp/ndtpd/
 
