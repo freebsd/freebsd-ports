@@ -1,0 +1,48 @@
+#!/bin/sh
+#
+# To be run on the client, this script looks for chroot directories that have not been
+# used in 20 minutes, as well as directories listed as 'in use' that have not been touched
+# in 24 hours (corresponding to port builds that have timed out or shut down uncleanly)
+# and prunes them to reclaim space.
+
+pb=/var/portbuild
+arch=$(cat /etc/arch)
+
+. ${pb}/${arch}/portbuild.conf
+
+old=$(find ${scratchdir}/*/chroot/* -prune -mmin +20 2> /dev/null)
+
+if [ -z "${old}" ]; then
+	exit 0
+fi
+
+# Prune out chroots with active builds
+for i in ${old}; do
+	if [ ! -d ${i}/used ]; then
+		old2="${i} ${old2}"
+	# Also remove "in use" chroots that were set up more than 24 hours ago
+	elif [ ! -z "`find $i/used -prune -mmin +1440`" ]; then
+		echo "cleanup-chroots: Found old files on `hostname`:"
+		ls -l ${i}/tmp ${i}/used
+		echo "${i} allegedly in use but >24 hours old"
+		old2="${i} ${old2}"
+	fi
+done
+
+if [ -z "${old2}" ]; then
+	exit 0
+fi
+
+# cleanup old NFS and devfs mounts
+for i in ${old2}; do
+	mounts=$(mount | grep $i | awk '{print $3}')
+	if [ ! -z "${mounts}" ]; then
+		umount -f ${mounts}
+	fi
+done
+
+mkdir -p ${scratchdir}/old
+mv ${old2} ${scratchdir}/old
+rm -rf ${scratchdir}/old 2> /dev/null
+chflags -R noschg ${scratchdir}/old
+rm -rf ${scratchdir}/old
