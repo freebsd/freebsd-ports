@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Spoon/.packlist
 %%SITE_PERL%%/Spoon.pm
 %%SITE_PERL%%/Spoon/Base.pm
 %%SITE_PERL%%/Spoon/CGI.pm
@@ -10,10 +9,11 @@
 %%SITE_PERL%%/Spoon/Hub.pm
 %%SITE_PERL%%/Spoon/Installer.pm
 %%SITE_PERL%%/Spoon/MetadataObject.pm
+%%SITE_PERL%%/Spoon/Plugin.pm
+%%SITE_PERL%%/Spoon/Registry.pm
 %%SITE_PERL%%/Spoon/Template.pm
 %%SITE_PERL%%/Spoon/Template/TT2.pm
-%%SITE_PERL%%/Spoon/Registry.pm
-%%SITE_PERL%%/Spoon/Plugin.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Spoon/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spoon
 @dirrm %%SITE_PERL%%/Spoon/Template
 @dirrm %%SITE_PERL%%/Spoon
