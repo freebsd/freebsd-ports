@@ -1,0 +1,42 @@
+--- nfs.c.orig	Tue Mar 12 21:44:19 2002
++++ nfs.c	Thu Mar 14 07:51:43 2002
+@@ -321,6 +321,14 @@
+ 	int retries;
+ 	long *p;
+ 
++	static int tokens=0;
++	/*
++	 * Try to implement something similar to a window protocol in
++	 * terms of response to losses. On successful receive, increment
++	 * the number of tokens by 1 (cap at 256). On failure, halve it.
++	 * When the number of tokens is >= 2, use a very short timeout.
++	 */
++
+ 	id = rpc_id++;
+ 	buf.u.call.id = htonl(id);
+ 	buf.u.call.type = htonl(MSG_CALL);
+@@ -336,9 +344,14 @@
+ 	*p++ = 0;		/* unused parameter */
+ 	for (retries = 0; retries < MAX_RPC_RETRIES; retries++) {
+ 		long timeout = rfc2131_sleep_interval(TIMEOUT, retries);
++		if (tokens >= 2)
++			timeout = TICKS_PER_SEC/2;
++
+ 		udp_transmit(arptable[server].ipaddr.s_addr, sport, port,
+ 			(char *)p - (char *)&buf, &buf);
+ 		if (await_reply(AWAIT_RPC, sport, &id, timeout)) {
++			if (tokens < 256)
++				tokens++;
+ 			rpc = (struct rpc_t *)&nic.packet[ETH_HLEN];
+ 			if (rpc->u.reply.rstatus || rpc->u.reply.verifier ||
+ 			    rpc->u.reply.astatus || rpc->u.reply.data[0]) {
+@@ -355,7 +368,8 @@
+ 			} else {
+ 				return 0;
+ 			}
+-		}
++		} else
++			tokens >>= 1;
+ 	}
+ 	return -1;
+ }
