@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	csv
-PORTVERSION=	0.5
+PORTVERSION=	1.0
 CATEGORIES=	textproc python
-MASTER_SITES=	http://object-craft.com.au/projects/csv/
+MASTER_SITES=	http://object-craft.com.au/projects/csv/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wjv@FreeBSD.org
@@ -16,6 +16,5 @@ COMMENT=	A Python module to parse or write comma-separated value (CSV) files
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.mk>
