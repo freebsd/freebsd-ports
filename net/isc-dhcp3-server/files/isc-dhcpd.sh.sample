@@ -30,7 +30,9 @@ dhcpd_withgroup=${dhcpd_withgroup:-${name}}		# group name to run as
 
 dhcpd_chroot_enable=${dhcpd_chroot_enable:-"NO"}	# runs chrooted?
 dhcpd_devfs_enable=${dhcpd_devfs_enable:-"YES"}		# devfs if available?
+dhcpd_makedev_enable=${dhcpd_makedev_enable:-"NO"}	# MAKEDEV instead of devfs?
 dhcpd_rootdir=${dhcpd_rootdir:-/var/db/${name}}		# directory to run in
+dhcpd_includedir=${dhcpd_includedir:-}			# directory for included config files
 
 # untested
 dhcpd_jail_enable=${dhcpd_jail_enable:-"NO"}		# runs imprisoned?
@@ -221,7 +223,8 @@ mounted ()	# dir...
 	local _rc
 
 	_rc=1
-	if checkyesno dhcpd_devfs_enable; then
+	if checkyesno dhcpd_devfs_enable ||
+	   checkyesno dhcpd_jail_enable; then
 		mount -t devfs | awk '
 		    BEGIN { n = ARGC; ARGC = 2 }
 		    { for (i = 2; i != n; i++) if ($3 == ARGV[i]) exit 1 }
@@ -343,13 +346,26 @@ check_chroot ()
 				err 1 "dhcpd_rootdir must be set" \
 				      "if dhcpd_chroot_enable is enabled"
 			fi
-			if ! ( type mount_devfs ) > /dev/null 2>&1; then
+			if checkyesno dhcpd_devfs_enable &&
+			   checkyesno dhcpd_makedev_enable; then
+				err 1 "dhcpd_devfs_enable and dhcpd_makedev_enable" \
+				      "are mutually exclusive. enable only one!"
+			fi
+			if checkyesno dhcpd_devfs_enable &&
+			   ! ( type mount_devfs ) > /dev/null 2>&1; then
 				warn "dhcpd_devfs_enable disabled" \
 				     "-- not available"
 				dhcpd_devfs_enable=NO
 			fi
+			if checkyesno dhcpd_makedev_enable &&
+			   ! [ -x ${__dhcpd_devdir}/MAKEDEV ]; then
+				warn "dhcpd_makedev_enable disabled" \
+				     "-- not available"
+				dhcpd_makedev_enable=NO
+			fi
 		else
 			dhcpd_devfs_enable=NO
+			dhcpd_makedev_enable=NO
 		fi
 	else
 		if checkyesno dhcpd_chroot_enable; then
@@ -357,6 +373,7 @@ check_chroot ()
 			dhcpd_chroot_enable=NO
 		fi
 		dhcpd_devfs_enable=NO
+		dhcpd_makedev_enable=NO
 	fi
 }
 
@@ -384,6 +401,7 @@ rcvar_chroot ()
 		dhcpd_rootdir=
 	elif checkyesno paranoia && checkyesno dhcpd_chroot_enable; then
 		dhcpd_devdir=${__dhcpd_devdir}
+		dhcpd_etcdir=${__dhcpd_etcdir}
 	fi
 }
 
@@ -403,7 +421,9 @@ rcvar_rooted ()
 {
 	_dhcpd_rootdir=${dhcpd_rootdir}
 	_dhcpd_devdir=${dhcpd_rootdir}${dhcpd_devdir}
+	_dhcpd_etcdir=${dhcpd_rootdir}${dhcpd_etcdir}
 	_dhcpd_confdir=${dhcpd_rootdir}${dhcpd_confdir}
+	_dhcpd_includedir=${dhcpd_rootdir}${dhcpd_includedir}
 	_dhcpd_piddir=${dhcpd_rootdir}${dhcpd_piddir}
 	_dhcpd_leasesdir=${dhcpd_rootdir}${dhcpd_leasesdir}
 	_dhcpd_conffile=${dhcpd_rootdir}${dhcpd_conffile}
@@ -441,15 +461,39 @@ setup_umask ()
 
 setup_chroot ()
 {
+	local _mdev _hconf _hosts _ltime _rconf
+
+	_mdev=MAKEDEV
+	_hconf=host.conf
+	_hosts=hosts
+	_ltime=localtime
+	_rconf=resolv.conf
+
 	if checkyesno paranoia && checkyesno dhcpd_chroot_enable; then
-		safe_mkdir ${_dhcpd_rootdir} ${_dhcpd_devdir}/_ ${_dhcpd_confdir}
-		# XXX /_ hack! so, .../dev is root owned.
+		if ! mounted ${_dhcpd_devdir}; then
+			safe_mkdir ${_dhcpd_devdir}/_
+			# XXX /_ hack! so, .../dev is root owned.
+		fi
+		safe_mkdir ${_dhcpd_rootdir} ${_dhcpd_etcdir}/_ ${_dhcpd_confdir}
+		# XXX /_ hack! so, .../etc is root owned.
 		if checkyesno dhcpd_devfs_enable; then
 			safe_mount ${_dhcpd_devdir}
+		elif checkyesno dhcpd_makedev_enable; then
+			safe_copy ${dhcpd_devdir}/$_mdev ${_dhcpd_devdir}/$_mdev
+			safe_run 0 sh -c "cd ${_dhcpd_devdir} && ./$_mdev jail bpf4"
 		else
 			safe_copy ${dhcpd_devdir} ${_dhcpd_devdir}
 		fi
 		safe_copy ${dhcpd_conffile} ${_dhcpd_conffile}
+		safe_copy ${dhcpd_etcdir}/$_hconf ${_dhcpd_etcdir}/$_hconf
+		safe_copy ${dhcpd_etcdir}/$_hosts ${_dhcpd_etcdir}/$_hosts
+		safe_copy ${dhcpd_etcdir}/$_ltime ${_dhcpd_etcdir}/$_ltime
+		safe_copy ${dhcpd_etcdir}/$_rconf ${_dhcpd_etcdir}/$_rconf
+		# copy dhcpd_includedir if defined and available
+		if [ -d "${dhcpd_includedir}" ]; then
+			safe_mkdir ${_dhcpd_includedir}
+			safe_copy ${dhcpd_includedir} ${_dhcpd_includedir}
+		fi
 	fi
 }
 
@@ -537,14 +581,19 @@ remove_chuser ()
 remove_chroot ()
 {
 	if checkyesno paranoia && checkyesno dhcpd_chroot_enable; then
-		safe_remove ${_dhcpd_conffile}
+		safe_remove ${_dhcpd_conffile} ${_dhcpd_includedir} \
+			${_dhcpd_etcdir}
 		if checkyesno dhcpd_devfs_enable; then
 			safe_umount ${_dhcpd_devdir}
 			safe_rmdir ${_dhcpd_devdir}/_ # XXX /_ hack!
+		elif checkyesno dhcpd_jail_enable; then
+			if ! mounted ${_dhcpd_devdir}; then
+				safe_remove ${_dhcpd_devdir}
+			fi
 		else
 			safe_remove ${_dhcpd_devdir}
 		fi
-		safe_rmdir ${_dhcpd_confdir} ${_dhcpd_rootdir}
+		safe_rmdir ${_dhcpd_confdir} ${_dhcpd_rootdir} # XXX /_ hack!
 	fi
 }
 
@@ -650,6 +699,7 @@ load_rc_config ${name}
 
 __dhcpd_uninstall="NO"			# internal use only
 __dhcpd_devdir=/dev			# devices directory
+__dhcpd_etcdir=/etc			# etc directory
 __dhcpd_piddir=/var/run			# pid file directory
 __dhcpd_leasesdir=/var/db		# leases file directory
 #__dhcpd_rootdir=/var/db/${name}	# root directory

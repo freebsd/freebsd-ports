@@ -1,6 +1,6 @@
---- client/dhclient.c.orig	Sat Apr 26 23:51:39 2003
-+++ client/dhclient.c	Wed Mar  3 16:21:02 2004
-@@ -47,6 +47,13 @@
+--- client/dhclient.c.orig	Wed Nov 24 18:39:14 2004
++++ client/dhclient.c	Tue Mar  8 14:06:59 2005
+@@ -38,6 +38,13 @@
  #include "dhcpd.h"
  #include "version.h"
  
@@ -11,10 +11,10 @@
 +#include <net80211/ieee80211.h>
 +#endif
 +
- TIME cur_time;
  TIME default_lease_time = 43200; /* 12 hours... */
  TIME max_lease_time = 86400; /* 24 hours... */
-@@ -82,8 +89,11 @@
+ 
+@@ -72,8 +79,11 @@
  struct string_list *client_env=NULL;
  int client_env_count=0;
  int onetry=0;
@@ -27,7 +27,7 @@
  
  static void usage PROTO ((void));
  
-@@ -184,6 +194,9 @@
+@@ -174,6 +184,9 @@
  		} else if (!strcmp (argv [i], "-q")) {
  			quiet = 1;
  			quiet_interface_discovery = 1;
@@ -37,7 +37,7 @@
  		} else if (!strcmp (argv [i], "-s")) {
  			if (++i == argc)
  				usage ();
-@@ -197,6 +210,19 @@
+@@ -187,6 +200,19 @@
  		} else if (!strcmp (argv [i], "-n")) {
  			/* do not start up any interfaces */
  			interfaces_requested = 1;
@@ -57,7 +57,7 @@
  		} else if (!strcmp (argv [i], "-w")) {
  			/* do not exit if there are no broadcast interfaces. */
  			persist = 1;
-@@ -225,7 +251,16 @@
+@@ -215,7 +241,16 @@
  		    if (strlen (argv [i]) > sizeof tmp -> name)
  			    log_fatal ("%s: interface name too long (max %ld)",
  				       argv [i], (long)strlen (argv [i]));
@@ -75,7 +75,7 @@
  		    if (interfaces) {
  			    interface_reference (&tmp -> next,
  						 interfaces, MDL);
-@@ -385,6 +420,16 @@
+@@ -375,6 +410,16 @@
  					     INTERFACE_AUTOMATIC)) !=
  			     INTERFACE_REQUESTED))
  				continue;
@@ -92,7 +92,7 @@
  			script_init (ip -> client,
  				     "PREINIT", (struct string_list *)0);
  			if (ip -> client -> alias)
-@@ -427,8 +472,13 @@
+@@ -417,8 +462,13 @@
  				client -> state = S_INIT;
  				/* Set up a timeout to start the initialization
  				   process. */
@@ -106,7 +106,7 @@
  			}
  		}
  	}
-@@ -486,9 +536,9 @@
+@@ -476,9 +526,9 @@
  	log_info (arr);
  	log_info (url);
  
@@ -119,7 +119,7 @@
  		   "[-pf pid-file] [-e VAR=val]");
  	log_fatal ("                [-sf script-file] [interface]");
  }
-@@ -876,6 +926,15 @@
+@@ -881,6 +931,15 @@
  	/* Write out the new lease. */
  	write_client_lease (client, client -> new, 0, 0);
  
@@ -135,7 +135,7 @@
  	/* Replace the old active lease with the new one. */
  	if (client -> active)
  		destroy_client_lease (client -> active);
-@@ -890,6 +949,12 @@
+@@ -895,6 +954,12 @@
  	      piaddr (client -> active -> address),
  	      (long)(client -> active -> renewal - cur_time));
  	client -> state = S_BOUND;
@@ -148,7 +148,7 @@
  	reinitialize_interfaces ();
  	go_daemon ();
  	if (client -> config -> do_forward_update) {
-@@ -1352,6 +1417,11 @@
+@@ -1359,6 +1424,11 @@
  	int interval;
  	int increase = 1;
  
@@ -160,7 +160,7 @@
  	/* Figure out how long it's been since we started transmitting. */
  	interval = cur_time - client -> first_sending;
  
-@@ -1457,6 +1527,9 @@
+@@ -1464,6 +1534,9 @@
  	struct client_lease *loop;
  	struct client_lease *lp;
  
@@ -170,7 +170,7 @@
  	loop = lp = client -> active;
  
  	log_info ("No DHCPOFFERS received.");
-@@ -1489,6 +1562,10 @@
+@@ -1496,6 +1569,10 @@
  				log_info ("bound: renewal in %ld %s.",
  					  (long)(client -> active -> renewal -
  						 cur_time), "seconds");
@@ -181,7 +181,7 @@
  				add_timeout (client -> active -> renewal,
  					     state_bound, client, 0, 0);
  			    } else {
-@@ -1496,6 +1573,11 @@
+@@ -1503,6 +1580,11 @@
  				log_info ("bound: immediate renewal.");
  				state_bound (client);
  			    }
@@ -193,7 +193,7 @@
  			    reinitialize_interfaces ();
  			    go_daemon ();
  			    return;
-@@ -1541,6 +1623,12 @@
+@@ -1548,6 +1630,12 @@
  	}
  
  	log_info ("No working leases in persistent database - sleeping.");
@@ -206,7 +206,7 @@
  	script_init (client, "FAIL", (struct string_list *)0);
  	if (client -> alias)
  		script_write_params (client, "alias_", client -> alias);
-@@ -1681,6 +1769,18 @@
+@@ -1689,6 +1777,18 @@
  			client -> packet.secs = htons (65535);
  	}
  
@@ -225,7 +225,7 @@
  	log_info ("DHCPREQUEST on %s to %s port %d",
  	      client -> name ? client -> name : client -> interface -> name,
  	      inet_ntoa (destination.sin_addr),
-@@ -1702,6 +1802,16 @@
+@@ -1710,6 +1810,16 @@
  				      from, &destination,
  				      (struct hardware *)0);
  
@@ -242,7 +242,7 @@
  	add_timeout (cur_time + client -> interval,
  		     send_request, client, 0, 0);
  }
-@@ -2597,6 +2707,13 @@
+@@ -2607,6 +2717,13 @@
  			wstatus = 0;
  		}
  	} else {
@@ -256,7 +256,7 @@
  		execve (scriptName, argv, envp);
  		log_error ("execve (%s, ...): %m", scriptName);
  		exit (0);
-@@ -2783,8 +2900,10 @@
+@@ -2793,8 +2910,10 @@
  			      case S_STOPPED:
  				break;
  			}
@@ -267,7 +267,7 @@
  		}
  	}
  }
-@@ -3010,7 +3129,9 @@
+@@ -3022,7 +3141,9 @@
  		    break;
  
  		  case server_awaken:
@@ -277,7 +277,7 @@
  		    break;
  		}
  	    }
-@@ -3147,3 +3268,265 @@
+@@ -3160,3 +3281,265 @@
  	data_string_forget (&ddns_dhcid, MDL);
  	return rcode;
  }
