@@ -7,6 +7,7 @@
 
 PORTNAME=	openssh
 PORTVERSION=	3.3p1
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/ \
 		ftp://ftp.op.net/pub/OpenBSD/OpenSSH/portable/ \
@@ -23,6 +24,7 @@ MAN8=	sftp-server.8 sshd.8 ssh-keysign.8
 CRYPTOLIBS=	-L${OPENSSLLIB} -lcrypto
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --with-md5-passwords
+CONFIGURE_ARGS+=	--with-privsep-path=${PREFIX}/empty
 CLEAN=		etc/ssh_config etc/sshd_config etc/moduli \
 		etc/ssh_host_key etc/ssh_host_key.pub \
 		etc/ssh_host_dsa_key etc/ssh_host_dsa_key.pub \
@@ -77,6 +79,12 @@ pre-configure:
                 ${AUTOCONF_ARGS})
 	(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOCONF_ENV} ${AUTOHEADER})
 .endif
+
+pre-install:
+	if ! pw groupshow sshd; then pw groupadd sshd -g 22; fi
+	if ! pw usershow sshd; then pw useradd sshd -g sshd -u 22 \
+		-h - -d ${PREFIX}/empty -s /nonexistent -c "sshd privilege separation"; fi
+	${MKDIR} ${PREFIX}/empty
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

@@ -11,3 +11,4 @@ sbin/sshd
 share/Ssh.bin
 libexec/sftp-server
 libexec/ssh-keysign
+@dirrm empty
