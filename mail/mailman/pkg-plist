@@ -165,8 +165,6 @@ mailman/Mailman/pythonlib/__init__.py
 mailman/Mailman/pythonlib/__init__.pyc
 mailman/Mailman/pythonlib/cgi.py
 mailman/Mailman/pythonlib/cgi.pyc
-mailman/Mailman/pythonlib/getpass.py
-mailman/Mailman/pythonlib/getpass.pyc
 mailman/Mailman/pythonlib/nntplib.py
 mailman/Mailman/pythonlib/nntplib.pyc
 mailman/Mailman/pythonlib/rfc822.py
@@ -209,6 +207,7 @@ mailman/cgi-bin/options
 mailman/cgi-bin/private
 mailman/cgi-bin/roster
 mailman/cgi-bin/subscribe
+mailman/cron/bumpdigests
 mailman/cron/checkdbs
 mailman/cron/crontab.in
 mailman/cron/gate_news
