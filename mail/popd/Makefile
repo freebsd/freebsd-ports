@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	popd
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp3.za.freebsd.org/pub/popd/
 
