@@ -4,6 +4,7 @@ bin/POST
 bin/lwp-mirror
 bin/lwp-request
 bin/lwp-rget
+bin/lwp-download
 lib/perl5/man/man3/File::CounterFile.3.gz
 lib/perl5/man/man3/File::Listing.3.gz
 lib/perl5/man/man3/Font::AFM.3.gz
@@ -25,6 +26,7 @@ lib/perl5/man/man3/HTTP::Negotiate.3.gz
 lib/perl5/man/man3/HTTP::Request.3.gz
 lib/perl5/man/man3/HTTP::Response.3.gz
 lib/perl5/man/man3/HTTP::Status.3.gz
+lib/perl5/man/man3/HTTP::Daemon.3.gz
 lib/perl5/man/man3/LWP.3.gz
 lib/perl5/man/man3/LWP::Debug.3.gz
 lib/perl5/man/man3/LWP::IO.3.gz
@@ -76,6 +78,7 @@ lib/perl5/site_perl/HTTP/Negotiate.pm
 lib/perl5/site_perl/HTTP/Request.pm
 lib/perl5/site_perl/HTTP/Response.pm
 lib/perl5/site_perl/HTTP/Status.pm
+lib/perl5/site_perl/HTTP/Daemon.pm
 lib/perl5/site_perl/LWP.pm
 lib/perl5/site_perl/LWP/Debug.pm
 lib/perl5/site_perl/LWP/IO.pm
@@ -88,6 +91,7 @@ lib/perl5/site_perl/LWP/Protocol/gopher.pm
 lib/perl5/site_perl/LWP/Protocol/http.pm
 lib/perl5/site_perl/LWP/Protocol/mailto.pm
 lib/perl5/site_perl/LWP/Protocol/nntp.pm
+lib/perl5/site_perl/LWP/Protocol/data.pm
 lib/perl5/site_perl/LWP/RobotUA.pm
 lib/perl5/site_perl/LWP/Simple.pm
 lib/perl5/site_perl/LWP/Socket.pm
@@ -100,6 +104,7 @@ lib/perl5/site_perl/URI/Escape.pm
 lib/perl5/site_perl/URI/URL.pm
 lib/perl5/site_perl/URI/URL/_generic.pm
 lib/perl5/site_perl/URI/URL/_login.pm
+lib/perl5/site_perl/URI/URL/data.pm
 lib/perl5/site_perl/URI/URL/file.pm
 lib/perl5/site_perl/URI/URL/finger.pm
 lib/perl5/site_perl/URI/URL/ftp.pm
@@ -132,6 +137,7 @@ lib/perl5/site_perl/auto/LWP/UserAgent/proxy.al
 lib/perl5/site_perl/auto/URI/URL/_generic/_netloc_elem.al
 lib/perl5/site_perl/auto/URI/URL/_generic/abs.al
 lib/perl5/site_perl/auto/URI/URL/_generic/autosplit.ix
+lib/perl5/site_perl/auto/URI/URL/_generic/crack.al
 lib/perl5/site_perl/auto/URI/URL/_generic/eparams.al
 lib/perl5/site_perl/auto/URI/URL/_generic/epath.al
 lib/perl5/site_perl/auto/URI/URL/_generic/eq.al
@@ -151,6 +157,7 @@ lib/perl5/site_perl/auto/URI/URL/as_string.al
 lib/perl5/site_perl/auto/URI/URL/autosplit.ix
 lib/perl5/site_perl/auto/URI/URL/bad_method.al
 lib/perl5/site_perl/auto/URI/URL/base.al
+lib/perl5/site_perl/auto/URI/URL/crack.al
 lib/perl5/site_perl/auto/URI/URL/eq.al
 lib/perl5/site_perl/auto/URI/URL/escape.al
 lib/perl5/site_perl/auto/URI/URL/file/autosplit.ix
