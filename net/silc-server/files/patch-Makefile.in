@@ -1,5 +1,5 @@
---- Makefile.in.orig	Thu Oct 16 00:22:13 2003
-+++ Makefile.in	Mon Oct 27 12:19:58 2003
+--- Makefile.in.orig	Fri Oct 31 17:15:11 2003
++++ Makefile.in	Fri Oct 31 18:14:57 2003
 @@ -702,8 +702,6 @@
  
  install-dirs:
@@ -39,7 +39,7 @@
  
  toolkit-install:
  	-mkdir -p $(docdir)/toolkit/
-@@ -767,13 +761,13 @@
+@@ -767,13 +761,14 @@
  	-cp -R $(srcdir)/tutorial $(prefix)
  
  examples-install:
@@ -48,6 +48,7 @@
 -	-$(INSTALL_DATA) $(srcdir)/doc/examples/silc* $(docdir)/examples/
 +	-mkdir -p $(prefix)/share/examples/silc
 +	-$(INSTALL_DATA) $(srcdir)/doc/examples/README $(prefix)/share/examples/silc
++	-$(INSTALL_DATA) $(srcdir)/doc/examples/cell* $(prefix)/share/examples/silc
  
  generate-server-key:
  	-@if test '!' -f $(etcdir)/silcd.pub ; then \

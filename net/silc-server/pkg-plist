@@ -5,6 +5,10 @@ sbin/silcd
 etc/rc.d/silcd.sh-dist
 @exec [ -f %B/silcd.sh ] || ( cp %B/%f %B/silcd.sh; chmod 755 %B/silcd.sh )
 %%PORTDOCS%%%%EXAMPLESDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/cell_backup.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/cell_router.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/cell_server1.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/cell_server2.conf
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @unexec rmdir %D/etc/silc 2>/dev/null || true
-@unexec rmdir /var/log/silc 2>/dev/null || true
+@unexec rmdir %D/var/log/silc 2>/dev/null || true
