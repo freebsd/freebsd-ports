@@ -114,6 +114,7 @@
     SUBDIR += php-sqlrelay
     SUBDIR += phpmyadmin
     SUBDIR += phppgadmin
+    SUBDIR += postgresql-devel
     SUBDIR += postgresql-docs
     SUBDIR += postgresql-jdbc
     SUBDIR += postgresql-odbc
