@@ -2,6 +2,7 @@ bin/ttfinfo
 bin/ttfm.sh
 share/doc/ttfm/README
 share/doc/ttfm/USAGE
+share/ttfm/abiword.ttfm
 share/ttfm/chitex.ttfm.nop
 share/ttfm/ghostscript6.ttfm
 share/ttfm/ttf2pk.ttfm.nop
