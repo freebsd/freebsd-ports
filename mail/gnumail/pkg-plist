@@ -230,11 +230,3 @@ Local/Library/GNUMail/Viewing.prefs/stamp.make
 @dirrm Local/Applications/GNUMail.app/Resources
 @dirrm Local/Applications/GNUMail.app
 @dirrm Local/Applications
-@cwd /root
-GNUstep/Defaults/.GNUstepDefaults
-GNUstep/Services/.GNUstepServices
-GNUstep/Services/.GNUstepAppList
-@dirrm GNUstep/Defaults
-@dirrm GNUstep/Library
-@dirrm GNUstep/Services
-@dirrm GNUstep

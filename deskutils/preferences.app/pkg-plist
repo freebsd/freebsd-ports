@@ -68,8 +68,3 @@ System/Library/Preferences/Keyboard.prefs/stamp.make
 @dirrm System/Library/Preferences/Keyboard.prefs/%%GNU_ARCH%%
 @dirrm System/Library/Preferences/Keyboard.prefs
 @dirrm System/Library/Preferences
-@cwd /root
-GNUstep/Defaults/.GNUstepDefaults
-@dirrm GNUstep/Defaults
-@dirrm GNUstep/Library
-@dirrm GNUstep

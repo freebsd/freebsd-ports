@@ -312,11 +312,3 @@ System/Applications/GormTest.app/stamp.make
 @dirrm System/Applications/Gorm.app/Resources/0Menus.palette
 @dirrm System/Applications/Gorm.app/Resources
 @dirrm System/Applications/Gorm.app
-@cwd /root
-GNUstep/Defaults/.GNUstepDefaults
-GNUstep/Services/.GNUstepServices
-GNUstep/Services/.GNUstepAppList
-@dirrm GNUstep/Defaults
-@dirrm GNUstep/Library
-@dirrm GNUstep/Services
-@dirrm GNUstep

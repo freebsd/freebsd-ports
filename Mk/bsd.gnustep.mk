@@ -193,6 +193,9 @@ RUN_DEPENDS+=	${SYSMAKEDIR}/GNUstep.sh:${PORTSDIR}/${GNUSTEP_MAKE_PORT}
 do-install:
 	@(cd ${WRKSRC}; . ${SYSMAKEDIR}/GNUstep.sh; \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
+.if defined(PARALLEL_PACKAGE_BUILD) || defined(BATCH) || defined(CLEAN_ROOT)
+	rm -rf /root/GNUstep
+.endif
 
 .endif
 

@@ -52,8 +52,3 @@ Local/Applications/Gomoku.app/stamp.make
 @dirrm Local/Applications/Gomoku.app/Resources
 @dirrm Local/Applications/Gomoku.app
 @dirrm Local/Applications
-@cwd /root
-GNUstep/Defaults/.GNUstepDefaults
-@dirrm GNUstep/Defaults
-@dirrm GNUstep/Library
-@dirrm GNUstep
