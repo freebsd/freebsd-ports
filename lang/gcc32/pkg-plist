@@ -7,7 +7,7 @@ bin/gcc32
 bin/gcov32
 bin/%%GNU_HOST%%-gcc32
 bin/%%GNU_HOST%%-g++32
-bin/gccbug-%%SNAPVER%%
+bin/gccbug-%%PORTVERSION%%
 bin/gcj32
 bin/gcjh32
 bin/jv-scan32

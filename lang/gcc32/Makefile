@@ -6,12 +6,8 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2003-03-26
-SNAPVER=	${SNAPDATE:S/-//g}
-
 PORTNAME=	gcc
-PORTVERSION=	3.2.2
-PORTREVISION=	${SNAPVER}
+PORTVERSION=	3.2.3
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC} \
 		http://web.inter.NL.net/hcc/Haj.Ten.Brugge/:bc
@@ -24,7 +20,7 @@ DISTFILES=	gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
 		gcc-objc-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER?=	gerald@FreeBSD.org
-COMMENT?=	GNU Compiler Collection 3.2.2
+COMMENT?=	GNU Compiler Collection 3.2.3
 
 .if defined (WITH_BOUNDSCHECKING)
 # Fetch another file, but don't extract it.  Also add another patchfile.
@@ -57,7 +53,7 @@ SRCDIR=		${WRKDIR}/gcc-${GCC_REV}
 WRKSRC=		${WRKDIR}/build
 TARGLIB=	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}
 PLIST_SUB=	GCC_REV=${GCC_REV} GNU_HOST=${CONFIGURE_TARGET}  \
-		SNAPVER=${PORTVERSION}
+		PORTVERSION=${PORTVERSION}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
