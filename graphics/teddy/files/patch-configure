@@ -1,0 +1,11 @@
+--- configure.orig	Mon Dec  2 15:48:44 2002
++++ configure	Tue Apr 13 09:54:17 2004
+@@ -1552,7 +1552,7 @@
+ fi
+ 
+ if test "x$PKG_CONFIG" != "xno" ; then
+-    PKGDIR="`which pkg-config | sed s/bin\\\\/pkg-/lib\\\\/pkg/`"
++    PKGDIR="`which pkg-config | sed s/bin\\\\/pkg-/libdata\\\\/pkg/`"
+ else
+     PKGDIR="${prefix}/lib/pkgconfig"
+     if test "x$lib_do_shared" = "xyes"; then
