@@ -6,11 +6,15 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTVERSION=	1.0.5
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.asterisk.org/pub/telephony/asterisk/ \
 		ftp://ftp.asterisk.org/pub/telephony/asterisk/old-releases/
+
+PATCHFILES=	${PORTNAME}-${PORTVERSION}-${BRIVER}.patch.gz
+PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	fjoe
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	An Open Source PBX and telephony toolkit
@@ -22,6 +26,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql
 
 ONLY_FOR_ARCHS=	i386 sparc64
 
+BRIVER=		bristuff-0.2.0-RC7f
 GNU_CONFIGURE=	yes
 CONFIGURE_WRKSRC=	${WRKSRC}/editline
 USE_GMAKE=	yes
@@ -57,6 +62,7 @@ PLIST_SUB+=	WITH_H323=""
 MAKE_ENV+=	WITHOUT_ZAPTEL=1
 PLIST_SUB+=	WITH_ZAPTEL="@comment "
 .else
+LIB_DEPENDS+=	pri.1:${PORTSDIR}/misc/libpri
 BUILD_DEPENDS+=	${LOCALBASE}/include/zaptel.h:${PORTSDIR}/misc/zaptel
 RUN_DEPENDS+=	${LOCALBASE}/include/zaptel.h:${PORTSDIR}/misc/zaptel
 PLIST_SUB+=	WITH_ZAPTEL=""

@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- channels/Makefile.orig
-+++ channels/Makefile
+--- channels/Makefile.orig	Tue Aug 31 23:33:00 2004
++++ channels/Makefile	Mon Feb 28 00:48:27 2005
 @@ -57,10 +57,10 @@
  
  endif
@@ -18,7 +15,7 @@ $FreeBSD$
  endif
  ifeq (${OSARCH},NetBSD)
  PTLIB=-lpt_NetBSD_x86_r
-@@ -72,8 +72,10 @@
+@@ -72,19 +72,21 @@
  endif
  
  CHANNEL_LIBS+=$(shell [ -f /usr/include/linux/ixjuser.h ] && echo chan_phone.so)
@@ -31,8 +28,13 @@ $FreeBSD$
  
  CFLAGS+=-Wno-missing-prototypes -Wno-missing-declarations
  CFLAGS+=$(shell [ ! -f /usr/include/linux/if_wanpipe.h ] && echo " -DOLD_SANGOMA_API")
-@@ -84,7 +86,7 @@
- ZAPPRI=$(shell [ -f /usr/lib/libpri.so.1 ] && echo "-lpri")
+ CHANNEL_LIBS+=$(shell [ -f /usr/include/alsa/asoundlib.h ] && echo "chan_alsa.so")
+-CFLAGS+=$(shell [ -f /usr/lib/libpri.so.1 ] && echo " -DZAPATA_PRI")
++CFLAGS+=$(shell [ -f $(LOCALBASE)/lib/libpri.so.1 ] && echo " -DZAPATA_PRI")
+ CFLAGS+=$(shell [ -f /usr/lib/libmfcr2.so.1 ] && echo " -DZAPATA_R2")
+ CFLAGS+=$(shell [ -f alsa-monitor.h ] && echo " -DALSA_MONITOR")
+-ZAPPRI=$(shell [ -f /usr/lib/libpri.so.1 ] && echo "-lpri")
++ZAPPRI=$(shell [ -f $(LOCALBASE)/lib/libpri.so.1 ] && echo "-lpri")
  ZAPR2=$(shell [ -f /usr/lib/libmfcr2.so.1 ] && echo "-lmfcr2")
  CFLAGS+=$(shell [ -f /usr/include/linux/zaptel.h ] && echo "-DIAX_TRUNKING")
 -CFLAGS+=$(shell [ -f /usr/local/include/zaptel.h ] && echo "-DIAX_TRUNKING")
