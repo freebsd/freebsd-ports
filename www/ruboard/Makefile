@@ -13,4 +13,7 @@ MASTER_SITES=	ftp://ftp.amsoft.ru/software/ruboard/
 
 MAINTAINER=	am@amsoft.ru
 
+USE_PERL5_BUILD=yes
+USE_PERL5_RUN	=yes
+
 .include <bsd.port.mk>
