@@ -1,1 +1,3 @@
 bin/geekcode
+share/doc/geekcode/geekcode.txt
+@dirrm share/doc/geekcode
