@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	icecast2
-PORTVERSION=	2.0.b.2
+PORTVERSION=	2.0.0
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio net ipv6
 MASTER_SITES=	http://www.icecast.org/files/
-DISTNAME=	icecast-2.0-beta-2
+DISTNAME=	icecast-${PORTVERSION}
 
 MAINTAINER=	lofi@freebsd.org
 COMMENT=	A streaming mp3/ogg-vorbis audio server
@@ -25,6 +25,6 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	OGG_PREFIX=${LOCALBASE}
 
-WRKSRC=		${WRKDIR}/icecast-2.0-beta-2
+WRKSRC=		${WRKDIR}/icecast-${PORTVERSION}
 
 .include <bsd.port.mk>
