@@ -36,6 +36,7 @@
     SUBDIR += aslookup
     SUBDIR += aspathtree
     SUBDIR += asterisk
+    SUBDIR += atmsupport
     SUBDIR += ayttm
     SUBDIR += b2bua
     SUBDIR += balance

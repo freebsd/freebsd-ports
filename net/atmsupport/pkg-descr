@@ -1,0 +1,5 @@
+This port contains a number of libraries and tools to test
+the NgATM sub-system. The easiest way to run these tests
+are the scripts in /usr/src/tools/regression/atm.
+
+harti@freebsd.org
