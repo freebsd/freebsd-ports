@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	zabbix
-PORTVERSION=	1.0b10
-PORTREVISION=	2
+PORTVERSION=	1.0b12
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=${PORTNAME}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S|b|beta|}
 
 MAINTAINER=	asa@gascom.ru
@@ -33,11 +33,11 @@ USE_RC_SUBR=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include
 
-ZABBIX_BINARIES=zabbix_agent zabbix_agentd zabbix_sender
-ZABBIX_CONFIGS=	zabbix_agent.conf zabbix_agentd.conf
+ZABBIX_BINARIES=	zabbix_agent zabbix_agentd zabbix_sender
+ZABBIX_CONFIGS=		zabbix_agent.conf zabbix_agentd.conf
 .ifndef(ZABBIX_AGENT_ONLY)
-ZABBIX_BINARIES+=zabbix_suckerd zabbix_trapper zabbix_trapperd
-ZABBIX_CONFIGS+=zabbix_suckerd.conf zabbix_trapper.conf zabbix_trapperd.conf
+ZABBIX_BINARIES+=	zabbix_suckerd zabbix_trapper zabbix_trapperd
+ZABBIX_CONFIGS+=	zabbix_suckerd.conf zabbix_trapper.conf zabbix_trapperd.conf
 .endif
 
 SCRIPT_REGEX=	-e 's|%PREFIX%|${PREFIX}|g' -e 's|%LOCALBASE%|${LOCALBASE}|g'
