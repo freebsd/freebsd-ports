@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	xneko
-PORTVERSION=	4.4
+PORTVERSION=	1.0
+PORTEPOCH=	1
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.freesoftware.com/pub/4.4BSD-Lite/4.4BSD-Lite/usr/src/games/
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	../R5contrib
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	markm@FreeBSD.org
 
+NO_WRKSUBDIR=	yes
+USE_IMAKE=	yes
 MAN6=		xneko.6
-MANCOMPRESSED=	maybe
-
-USE_X_PREFIX=	yes
-IGNOREFILES=	${DISTFILES}
-WRKSRC=		${WRKDIR}/pub/bsd-sources/4.4BSD-Lite/usr/src/games/xneko
 
 .include <bsd.port.mk>

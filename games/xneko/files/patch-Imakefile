@@ -1,0 +1,10 @@
+--- Imakefile.orig	Sun Sep  2 05:28:44 1990
++++ Imakefile	Wed Sep 12 16:54:29 2001
+@@ -1,5 +1,7 @@
+ LOCAL_LIBRARIES = -lX11 -lm
+ 
++MANSUFFIX = 6
++
+ SimpleProgramTarget(xneko)
+ 
+ install:: install.man
