@@ -15,7 +15,7 @@ MASTER_SITES=   ftp://ftp.samba.org/pub/samba/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/unix/utilities/samba/%SUBDIR%/
 MASTER_SITE_SUBDIR=pam_smb
 
-MAINTAINER=	nsayer
+MAINTAINER=	nsayer@FreeBSD.org
 
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
