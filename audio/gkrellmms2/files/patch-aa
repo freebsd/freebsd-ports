@@ -1,8 +1,8 @@
 Index: Makefile
 diff -u Makefile.orig Makefile
---- Makefile.orig	Mon Aug 26 18:11:28 2002
-+++ Makefile	Sat Aug 31 00:06:01 2002
-@@ -3,25 +3,24 @@
+--- Makefile.orig	Thu Nov  7 01:52:54 2002
++++ Makefile	Sat Nov  9 17:11:17 2002
+@@ -3,17 +3,17 @@
  # You may want to rename the binary-file.
  BIN_FILENAME = gkrellmms
  
@@ -17,18 +17,26 @@ diff -u Makefile.orig Makefile
  PLUGIN_DIR ?= /usr/local/lib/gkrellm2/plugins
  
 -FLAGS = -O2 -Wall -fPIC $(GTK_INCLUDE) $(IMLIB_INCLUDE) $(XMMS_INCLUDE)
-+CFLAGS = -fPIC $(GTK_INCLUDE) $(IMLIB_INCLUDE) $(XMMS_INCLUDE)
++CFLAGS = -Wall -fPIC $(GTK_INCLUDE) $(IMLIB_INCLUDE) $(XMMS_INCLUDE)
  LIBS = $(GTK_LIB) $(IMLIB_LIB) $(XMMS_LIB)
 -LFLAGS = -shared -lpthread
--
--CC ?= gcc 
--CC += $(CFLAGS) $(FLAGS)
 +LFLAGS = -shared
  
- OBJS = gkrellmms.o options.o playlist.o
+ LOCALEDIR ?= /usr/share/locale
+ ifeq ($(enable_nls),1)
+@@ -24,9 +24,6 @@
+ FLAGS += -DPACKAGE="\"$(PACKAGE)\"" 
+ export PACKAGE LOCALEDIR
  
-+all:	$(BIN_FILENAME).so
-+
+-CC ?= gcc 
+-CC += $(CFLAGS) $(FLAGS)
+-
+ INSTALL = install -c
+ INSTALL_PROGRAM = $(INSTALL) -s
+ 
+@@ -36,7 +33,7 @@
+ 	(cd po && ${MAKE} all )
+ 
  $(BIN_FILENAME).so: $(OBJS)
 -	$(CC) $(OBJS) -o $(BIN_FILENAME).so $(LFLAGS) $(LIBS)
 +	$(CC) $(CFLAGS) $(OBJS) -o $(BIN_FILENAME).so $(LFLAGS) $(LIBS)

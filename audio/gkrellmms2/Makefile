@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gkrellmms
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.4
 CATEGORIES=	audio
 MASTER_SITES=	http://gkrellm.luon.net/files/
 
@@ -19,7 +19,10 @@ RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 WRKSRC=		${WRKDIR}/gkrellmms
 
 USE_X_PREFIX=	yes
+USE_GMAKE=	yes
 
-MAKE_ENV+=	PLUGIN_DIR=${PREFIX}/libexec/gkrellm2/plugins
+MAKE_ENV+=	PLUGIN_DIR=${PREFIX}/libexec/gkrellm2/plugins \
+		LOCALEDIR=${PREFIX}/share/locale \
+		enable_nls=1
 
 .include <bsd.port.mk>
