@@ -1,6 +1,7 @@
 bin/xml2-config
 bin/xmllint
 etc/xml2Conf.sh
+include/libxml2/libxml/DOCBparser.h
 include/libxml2/libxml/HTMLparser.h
 include/libxml2/libxml/HTMLtree.h
 include/libxml2/libxml/SAX.h
@@ -28,6 +29,7 @@ include/libxml2/libxml/xpointer.h
 lib/libxml2.a
 lib/libxml2.so
 lib/libxml2.so.5
+libdata/pkgconfig/libxml-2.0.pc
 share/aclocal/libxml.m4
 share/doc/libxml2/html/DOM.gif
 share/doc/libxml2/html/FAQ.html

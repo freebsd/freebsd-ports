@@ -21,24 +21,6 @@ $FreeBSD$
  confexec_DATA = xml2Conf.sh
  
  CLEANFILES = xml2Conf.sh
-@@ -205,7 +205,7 @@
- MANS = $(man_MANS)
- 
- NROFF = nroff
--DATA =  $(confexec_DATA) $(m4data_DATA) $(pkgconfig_DATA)
-+DATA =  $(confexec_DATA) $(m4data_DATA)
- 
- DIST_COMMON =  README ./stamp-h.in AUTHORS COPYING COPYING.LIB ChangeLog \
- INSTALL Makefile.am Makefile.in NEWS TODO acconfig.h acinclude.m4 \
-@@ -825,7 +825,7 @@
- 		install-binSCRIPTS install-confexecDATA
- install-exec: install-exec-recursive
- 
--install-data-am: install-man install-m4dataDATA install-pkgconfigDATA
-+install-data-am: install-man install-m4dataDATA
- install-data: install-data-recursive
- 
- install-am: all-am
 @@ -836,7 +836,7 @@
  		uninstall-confexecDATA uninstall-m4dataDATA \
  		uninstall-pkgconfigDATA
@@ -48,12 +30,3 @@ $FreeBSD$
  		config.h
  all-redirect: all-recursive-am
  install-strip:
-@@ -846,7 +846,7 @@
- 	$(mkinstalldirs)  $(DESTDIR)$(libdir) $(DESTDIR)$(bindir) \
- 		$(DESTDIR)$(bindir) $(DESTDIR)$(mandir)/man1 \
- 		$(DESTDIR)$(mandir)/man4 $(DESTDIR)$(confexecdir) \
--		$(DESTDIR)$(m4datadir) $(DESTDIR)$(pkgconfigdir)
-+		$(DESTDIR)$(m4datadir)
- 
- 
- mostlyclean-generic:
