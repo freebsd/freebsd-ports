@@ -3,7 +3,7 @@
 # Date created:					June 2nd 1997
 # Whom:						jfitz
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/06/02 19:52:11 jfitz Exp $
 #
 
 DISTNAME=	diablo-1.09
@@ -11,7 +11,7 @@ CATEGORIES=	news
 MASTER_SITES=	http://www.backplane.com/diablo/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINTER=	jfitz@FreeBSD.ORG
+MAINTAINER=	jfitz@FreeBSD.ORG
 
 BUILD_DEPENDS=	xmake:${PORTSDIR}/devel/xmake
 
