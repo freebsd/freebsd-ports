@@ -16,7 +16,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NO_BUILD=	yes
 USE_PERL5=	yes
-POD2TEXT?=	/usr/bin/pod2text
+POD2TEXT?=	pod2text
 
 post-patch:
 	@${PERL} -pi -e "s,#!/usr/bin/perl,#!${PERL}," ${WRKSRC}/cvspadm
