@@ -97,6 +97,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<name>fidogate</name>
 	<range><lt>4.4.9_3</lt></range>
       </package>
+      <package>
+	<name>fidogate-ds</name>
+	<range><lt>5.1.1_1</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
