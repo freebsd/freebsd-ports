@@ -55,6 +55,7 @@
     SUBDIR += libdnd
     SUBDIR += libhelp
     SUBDIR += libsx
+    SUBDIR += linux-gnomelibs
     SUBDIR += login.app
     SUBDIR += lupe
     SUBDIR += mgapdesk
