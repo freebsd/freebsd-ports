@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ldap2
-PORTVERSION=	2.0.0pre21
+PORTVERSION=	2.0.6
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	python-ldap
@@ -21,9 +21,9 @@ USE_OPENLDAP=	yes
 USE_REINPLACE=	yes
 
 do-configure:
-	@${REINPLACE_CMD} -e "s=/usr/local/openldap-REL_ENG_2_1/lib=${LOCALBASE}/lib=" \
-		-e "s=/usr/local/openldap-REL_ENG_2_1/include=${LOCALBASE}/include=" \
-		-e "s=ldap_r lber sasl2 ssl crypto=ldap_r lber ssl crypto=" \
+	@${REINPLACE_CMD} -e "s=/usr/local/openldap-OPENLDAP_REL_ENG_2_2/lib=${LOCALBASE}/lib=" \
+		-e "s=/usr/local/openldap-OPENLDAP_REL_ENG_2_2/include=${LOCALBASE}/include=" \
+		-e "s=ldap_r lber ssl crypto sasl2=ldap_r lber ssl crypto=" \
 		${WRKSRC}/setup.cfg
 
 .include <bsd.port.mk>
