@@ -3,13 +3,13 @@
 # Date created:				12 Jul 1996
 # Whom:					searle
 #
-# $Id: Makefile,v 1.1.1.1 1996/08/09 21:25:54 chuckr Exp $
+# $Id: Makefile,v 1.2 1996/11/18 10:35:57 asami Exp $
 #
 
 DISTNAME=	flying-6.20
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	games/x11
+MASTER_SITE_SUBDIR=	games/arcade
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	searle@longacre.demon.co.uk
