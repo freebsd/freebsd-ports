@@ -17,6 +17,8 @@ COMMENT=	Tools for testing the ATM subsystem
 
 LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
 
+BROKEN=		Broken pkg-plist
+
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=13
 CONFIGURE_ARGS+=	--with-tcldir=${LOCALBASE}
