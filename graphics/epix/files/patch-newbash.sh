@@ -1,11 +1,11 @@
---- newbash.sh.orig	Tue Sep  3 01:50:01 2002
-+++ newbash.sh	Sat Jan 11 15:16:11 2003
+--- newbash.sh.orig	Sat Apr 26 09:34:50 2003
++++ newbash.sh	Thu Jun 19 13:08:48 2003
 @@ -1,10 +1,10 @@
  #!/bin/sh
  #
  for FILE in elaps laps make_header post-uninst.sh pre-install.sh prepix \
--	samples.sh samples/makefigs Makefile
-+	helpfiles.sh samples/makefigs Makefile
+-	samples/sample.sh samples/makefigs Makefile
++	helpfiles.sh samples/sample.sh samples/makefigs Makefile
  do
  	mv $FILE $FILE.orig
 -	sed 's+/bin/bash+/usr/local/bin/bash+g' $FILE.orig > $FILE
