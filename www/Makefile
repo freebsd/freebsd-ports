@@ -474,6 +474,7 @@
     SUBDIR += p5-Kwiki-RecentChangesRSS
     SUBDIR += p5-Kwiki-Revisions
     SUBDIR += p5-Kwiki-Search
+    SUBDIR += p5-Kwiki-UserName
     SUBDIR += p5-Kwiki-UserPreferences
     SUBDIR += p5-LWP-Authen-Wsse
     SUBDIR += p5-MasonX-Apache2Handler
