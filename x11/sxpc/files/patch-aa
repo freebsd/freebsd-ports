@@ -1,0 +1,19 @@
+*** sxpc.c.orig	Wed Mar 22 12:50:31 1995
+--- sxpc.c	Wed Mar 22 12:51:04 1995
+***************
+*** 925,931 ****
+      }
+  
+  #ifdef DOFORK
+! #if defined(_POSIX_SOURCE) || defined(_IBMR2) || defined(__hpux) || defined(hpux) || defined(FreeBSD)
+      setpgid(0, 0);
+  #else
+      setpgrp(getpid());
+--- 925,931 ----
+      }
+  
+  #ifdef DOFORK
+! #if defined(_POSIX_SOURCE) || defined(_IBMR2) || defined(__hpux) || defined(hpux) || defined(__FreeBSD__)
+      setpgid(0, 0);
+  #else
+      setpgrp(getpid());

@@ -1,0 +1,15 @@
+The Simple X Protocol Compressor
+
+This program provides compression of the X protocol stream. 
+It is intended to be used to improve the performance of X applications 
+over a slow internet connection.  (e.g. slip,cslip. or term)  It assumes 
+a Unix operating system at  both ends of the link.  Transferring large 
+bitmaps or images through sxpc may be slower than not using it. 
+The algorithms used are geared primarily for the data exchanged 
+during interactive use where the same data may be sent several times 
+with only small changes.  (e.g. editing) 
+
+ WARNING WARNING  DANGER DANGER 
+ If you use this program use xauth to provide SECURITY, since 
+ host-based security will be BYPASSED.   See README.xauth in the work
+ sub-directory.
