@@ -338,6 +338,7 @@
     SUBDIR += p5-HTTPD-Tools
     SUBDIR += p5-ParallelUA
     SUBDIR += p5-Sledge
+    SUBDIR += p5-Sledge-Plugin-Download
     SUBDIR += p5-Template-Toolkit
     SUBDIR += p5-URI-Sequin
     SUBDIR += p5-WWW-Automate
