@@ -6,22 +6,29 @@
 #
 
 PORTNAME=	pcre
-PORTVERSION=	4.3
+PORTVERSION=	4.4
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/programming/%SUBDIR%/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	dom@happygiraffe.net
+MAINTAINER=	eikemeier@fillmore-labs.com
 COMMENT=	Perl Compatible Regular Expressions library
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=	\
+		14	
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
 
 .if defined(WITH_UTF8)
-CONFIGURE_ARGS+= --enable-utf8
+CONFIGURE_ARGS+=	\
+		--enable-utf8
 .endif
+
+CONFIGURE_TARGET=	\
+		--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		pcregrep.1 pcretest.1
 MAN3=		pcre.3 pcre_compile.3 pcre_config.3 \
@@ -46,6 +53,10 @@ HTMLDOC=	index pcre pcre_compile \
 		pcrecompat pcregrep pcrepattern \
 		pcreperform pcreposix pcresample \
 		pcretest
+
+pre-configure:
+	@${REINPLACE_CMD} -e '/^LIBTOOL=/s,\$$(top_builddir)/libtool,${LIBTOOL},g' \
+		${WRKSRC}/configure
 
 post-install:
 	@${STRIP_CMD} ${STRIP} ${PREFIX}/bin/pcregrep
