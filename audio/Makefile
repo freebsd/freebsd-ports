@@ -364,6 +364,7 @@
     SUBDIR += xmms-osssurround
     SUBDIR += xmms-pipe
     SUBDIR += xmms-quix3dn
+    SUBDIR += xmms-real-random
     SUBDIR += xmms-shn
     SUBDIR += xmms-sid
     SUBDIR += xmms-sndfile
