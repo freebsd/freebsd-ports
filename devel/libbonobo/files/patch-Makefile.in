@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.in	2002/02/14 09:30:47	1.1
++++ Makefile.in	2002/02/14 09:30:57
+@@ -122,7 +122,7 @@
+ YACC = @YACC@
+ cxxflags_set = @cxxflags_set@
+ 
+-SUBDIRS = idl bonobo monikers samples tests po doc
++SUBDIRS = idl bonobo monikers samples po doc
+ 
+ libincludedir = $(includedir)/libbonobo-2.0
+ libinclude_HEADERS =  	libbonobo.h
