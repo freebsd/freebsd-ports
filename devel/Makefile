@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.91 1998/02/11 07:46:59 tg Exp $
+# $Id: Makefile,v 1.92 1998/02/24 09:00:07 tg Exp $
 #
 
     SUBDIR += ElectricFence
@@ -63,6 +63,7 @@
     SUBDIR += p5-File-BasicFlock
     SUBDIR += p5-File-Lock
     SUBDIR += p5-File-Slurp
+    SubDIR += p5-File-Sync
     SUBDIR += p5-File-Tools
     SUBDIR += p5-Filter
     SUBDIR += p5-FreezeThaw
