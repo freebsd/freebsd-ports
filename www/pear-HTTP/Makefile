@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
 
 do-install:
 	@${CP} ${WRKSRC}/HTTP.php ${PEARDIR}

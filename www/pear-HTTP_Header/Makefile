@@ -17,7 +17,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${PEARDIR}/HTTP.php:${PORTSDIR}/www/pear-HTTP
 
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
