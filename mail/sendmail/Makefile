@@ -50,15 +50,17 @@ PKGMESSAGE=	${WRKSRC}/pkg-message
 # SENDMAIL_WITH_SASL2=yes
 # SENDMAIL_WITH_LDAP=yes
 # SENDMAIL_WITH_SOCKETMAP=yes
+# SENDMAIL_WITH_CYRUSLOOKUP=yes
 # SENDMAIL_WITH_PICKY_HELO_CHECK=yes
 # SENDMAIL_WITH_CONNECTION_RATE=yes
 
-.if defined(SENDMAIL_WITH_SMTPS)
-.if !defined(SENDMAIL_WITH_TLS) && !defined(WITH_TLS)
+.if defined(SENDMAIL_WITH_SMTPS) && !defined(SENDMAIL_WITH_TLS) && !defined(WITH_TLS)
 SENDMAIL_WITH_TLS=yes
-pre-configure:
-	@${ECHO_CMD} "DEPENDENCY NOTE: SENDMAIL_WITH_TLS will be enabled to support SENDMAIL_WITH_SMTPS"
+AUTO_ENABLED_TLS=yes
 .endif
+.if defined(SENDMAIL_WITH_CYRUSLOOKUP)  && !defined(SENDMAIL_WITH_SOCKETMAP)
+SENDMAIL_WITH_SOCKETMAP=yes
+AUTO_ENABLED_SOCKETMAP=yes
 .endif
 
 .if defined(SENDMAIL_WITH_LDAP)
@@ -105,6 +107,9 @@ CONFLICTS+=	sendmail*+sasl2*-8.*
 .endif
 .if defined(SENDMAIL_WITH_SOCKETMAP)
 EXTRA_PATCHES+=	${FILESDIR}/socketmap.patch
+.endif
+.if defined(SENDMAIL_WITH_CYRUSLOOKUP)
+EXTRA_PATCHES+=	${FILESDIR}/cyruslookup.patch
 .endif
 .if defined(SENDMAIL_WITH_TLS) || defined(WITH_TLS)
 TLS_SUFFIX?=	+tls
@@ -159,6 +164,14 @@ post-extract:
 		-e "s=%%LOCALBASE%%=${LOCALBASE}=g" \
 		-e "s=%%PORTSDIR%%=${PORTSDIR}=g" \
 		${PKGDIR}/pkg-message > ${WRKSRC}/pkg-message
+
+pre-configure:
+.if defined(AUTO_ENABLED_TLS)
+	@${ECHO_CMD} "DEPENDENCY NOTE: SENDMAIL_WITH_TLS will be enabled to support SENDMAIL_WITH_SMTPS"
+.endif
+.if defined(AUTO_ENABLED_SOCKETMAP)
+	@${ECHO_CMD} "DEPENDENCY NOTE: SENDMAIL_WITH_SOCKETMAP will be enabled to support SENDMAIL_WITH_CYRUSLOOKUP"
+.endif
 
 do-configure:
 	@${MV} ${WRKSRC}/devtools/OS/FreeBSD ${WRKSRC}/devtools/OS/FreeBSD.sed
@@ -222,6 +235,9 @@ pre-install:
 .if defined(SENDMAIL_WITH_CONNECTION_RATE)
 	@${ECHO_CMD} "share/doc/sendmail/CONNECTION_RATE_CONTROL" >>${PLIST}
 .endif
+.if defined(SENDMAIL_WITH_CYRUSLOOKUP)
+	@${ECHO_CMD} "share/doc/sendmail/CYRUS_LOOKUP" >>${PLIST}
+.endif
 	@${ECHO_CMD} "@dirrm %%DOCSDIR%%" >>${PLIST}
 .endif
 
@@ -280,6 +296,9 @@ post-install:
 .if defined(SENDMAIL_WITH_CONNECTION_RATE)
 	${INSTALL_DATA} ${FILESDIR}/CONNECTION_RATE_CONTROL \
 		 ${DOCSDIR}/CONNECTION_RATE_CONTROL
+.endif
+.if defined(SENDMAIL_WITH_CYRUSLOOKUP)
+	${INSTALL_DATA} ${FILESDIR}/CYRUS_LOOKUP ${DOCSDIR}/CYRUS_LOOKUP
 .endif
 .endif
 .if exists(${DESTDIR}/etc/mail/mailer.conf)

@@ -1,0 +1,80 @@
+
+       CYRUS MAILBOX LOOKUP FOR SENDMAIL
+       ---------------------------------
+
+You have enabled modifications for sendmail for looking up
+whether a cyrus (2.2.3+) mailbox exists and is under quota
+before accepting any mail to be relayed to cyrus.
+
+They are based on the idea and work by
+
+Andrzej Filip
+
+published at
+
+http://anfi.homeunix.net/sendmail/rtcyrus2.html.
+
+Please, use this url to learn all configuration details
+(although a quick recipe is provided below) and may be to give
+credits to the author.
+
+******************************************************************
+
+HOW TO :
+---------
+
+0.  Build the `mail/sendmail' sendmail port with
+	SENDMAIL_WITH_SOCKETMAP=yes SENDMAIL_WITH_CYRUSLOOKUP=yes
+    This is what you've just obviously done, unless you are just browsing the
+    ports tree. To stick with these settings, you can place something like 
+    the following in your `/etc/make.conf'.
+   
+PORTSDIR?=	/usr/ports
+.if ${.CURDIR} == ${PORTSDIR}/mail/sendmail
+SENDMAIL_WITH_CYRUSLOOKUP=	yes
+SENDMAIL_WITH_SOCKETMAP=	yes
+# possibly other sendmail knobs here too.
+.endif
+
+    You should have also installed and configured Cyrus IMAP server, 
+    version 2.2.3 or higher. Not the worst idea is to utilize the 
+    `mail/cyrus-imapd22' port.
+
+1.  Insert the following lines to the SERVICES sections of `cyrus.conf'. 
+    By default, the port installs it to `/usr/local/etc'.
+   
+    # Sendmail socket map smmapd(8)
+    smmap        cmd="smmapd"  listen="/var/imap/socket/smmapd" prefork=0
+
+    A SIGHUP would make the Cyrus master(8) process catch this change 
+    on-the-fly. Please, also note, that if sendmail and cyrus run on
+    separate machines, you will obviously need to modify this line
+    and a couple of others.
+
+2.  As per the `install-configure' from Cyrus IMAP server's documentation,
+    in the simplest case, you add:
+    
+    define(`confLOCAL_MAILER', `cyrusv2')dnl
+    MAILER(`cyrusv2')dnl
+    
+    to your sendmail's .mc file to make local delivery to Cyrus mailboxes.    
+    Per the instructions, provided by Andrzej Filip (see the above URL),
+    these lines should become:
+    
+    define(`LOCAL_RELAY',`mrs_cyrus_user:stripdom')dnl
+    FEATURE(`mrs')dnl
+    FEATURE(`mrs_cyrus')dnl
+    MODIFY_MAILER_FLAGS(`CYRUSV2',`-A5')dnl
+    MAILER(`cyrusv2')dnl
+    
+    for sendmail to start rejecting local addresses for nonexisting and 
+    full mailboxes. Rebuild your sendmail.cf, restart sendmail, and enjoy!
+    
+    If your configuration is more complicated than the above two lines,
+    read Andrzej's article. It contains more examples.
+    
+******************************************************************
+
+2004, April 8th
+Michael O. Boev,
+mike@tric.ru.
