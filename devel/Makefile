@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.75 1997/09/01 16:06:49 andreas Exp $
+# $Id: Makefile,v 1.76 1997/09/01 16:45:48 max Exp $
 #
 
     SUBDIR += SWIG
@@ -45,6 +45,7 @@
     SUBDIR += p5-Curses
     SUBDIR += p5-Data-Dumper
     SUBDIR += p5-Data-Flow
+    SUBDIR += p5-Data-ShowTable
     SUBDIR += p5-Date-Manip
     SUBDIR += p5-Devel-DProf
     SUBDIR += p5-Devel-Peek
@@ -55,6 +56,7 @@
     SUBDIR += p5-File-Slurp
     SUBDIR += p5-File-Tools
     SUBDIR += p5-Filter
+    SUBDIR += p5-FreezeThaw
     SUBDIR += p5-Include
     SUBDIR += p5-IniConf
     SUBDIR += p5-Ioctl
