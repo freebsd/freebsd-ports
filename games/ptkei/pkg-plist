@@ -28,6 +28,8 @@ share/ptkei/scripts/dummyfunc.pyc
 share/ptkei/scripts/snapshot
 share/ptkei/scripts/stript
 share/ptkei/scripts/untab
+share/ptkei/scripts/updateDB.py
+share/ptkei/scripts/updateDB.pyc
 share/ptkei/src/CenWin.py
 share/ptkei/src/CenWin.pyc
 share/ptkei/src/ChangeLog
@@ -37,7 +39,7 @@ share/ptkei/src/MapWin.py
 share/ptkei/src/MapWin.pyc
 share/ptkei/src/OutWin.py
 share/ptkei/src/OutWin.pyc
-share/ptkei/src/Pmw.py 
+share/ptkei/src/Pmw.py
 share/ptkei/src/Pmw.pyc
 share/ptkei/src/PmwBlt.py
 share/ptkei/src/PmwBlt.pyc
