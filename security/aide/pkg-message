@@ -1,0 +1,10 @@
+If you want to finish setting up AIDE, don't forget to create your own
+aide.conf based on ${PREFIX}/etc/aide.conf.sample and then copy it to
+the /var/adm/aide/ directory. You will also need to run the following
+commands:
+
+	cd /var/adm/aide
+	aide --init
+	mv databases/aide.db.new databases/aide.db
+
+You may want to change the permissions of the /var/adm/aide/ directory tree.
