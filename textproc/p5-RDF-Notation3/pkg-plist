@@ -2,11 +2,16 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RDF/Notation3/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/RDF/Notation3.pm
 lib/perl5/site_perl/%%PERL_VER%%/RDF/Notation3.pod
 lib/perl5/site_perl/%%PERL_VER%%/RDF/Notation3/PrefTriples.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDF/Notation3/RDFCore.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDF/Notation3/RDFStore.pm
 lib/perl5/site_perl/%%PERL_VER%%/RDF/Notation3/ReaderFile.pm
 lib/perl5/site_perl/%%PERL_VER%%/RDF/Notation3/ReaderString.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDF/Notation3/SAX.pm
 lib/perl5/site_perl/%%PERL_VER%%/RDF/Notation3/Template/TReader.pm
 lib/perl5/site_perl/%%PERL_VER%%/RDF/Notation3/Template/TTriples.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDF/Notation3/Template/TXML.pm
 lib/perl5/site_perl/%%PERL_VER%%/RDF/Notation3/Triples.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDF/Notation3/XML.pm
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/RDF/Notation3/Template
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/RDF/Notation3
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/RDF 2>/dev/null || true
