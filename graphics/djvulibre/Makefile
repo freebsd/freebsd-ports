@@ -11,7 +11,7 @@ CATEGORIES=	graphics www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	djvu
 
-MAINTAINER=	coop9211@uidaho.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DjVu viewers, encoders, browser plugin, and utilities
 
 .ifndef WITHOUT_X11

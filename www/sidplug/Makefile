@@ -11,7 +11,7 @@ CATEGORIES=	www audio
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/packages/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	coop9211@uidaho.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Commodore 64 psid audio plugin for Mozilla or Opera
 
 RUN_DEPENDS=	xsidplay:${PORTSDIR}/audio/xsidplay

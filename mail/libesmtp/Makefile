@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.stafford.uklinux.net/libesmtp/ \
 		http://www.borgsdemons.com/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}r1
 
-MAINTAINER=	coop9211@uidaho.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for posting electronic mail
 
 USE_BZIP2=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	http://users.comlab.ox.ac.uk/ian.collier/distribution/ \
 		ftp://ftp.sai.msu.su/pub/unix/rexx/ \
 		ftp://crydee.sai.msu.ru/zeus/unix/rexx/
 
-MAINTAINER=	coop9211@uidaho.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A procedural programming language designed by IBM's UK Laboratories
 
 CONFLICTS=	rexx-regina-*

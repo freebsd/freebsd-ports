@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.go-mono.com/archive/${PORTVERSION}/
 
-MAINTAINER=	coop9211@uidaho.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An open source implementation of .NET Development Framework
 
 USE_REINPLACE=	yes

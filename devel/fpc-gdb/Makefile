@@ -23,7 +23,7 @@ PATCH_SITES=	ftp://ftp.freepascal.org/fpc/contrib/libgdb/v5.2.1 \
 PATCH_SITE_SUBDIR=	obrien
 PATCHFILES=	gdb521.dif gdb521_xfree-loadmod.diff
 
-MAINTAINER=	coop9211@uidaho.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU GDB 5.2.1 modified for Free Pascal
 
 BROKEN=		"Does not compile"

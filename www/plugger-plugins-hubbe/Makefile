@@ -13,7 +13,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	coop9211@uidaho.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Meta package installing all author-recommended Plugger plugins
 
 RUN_DEPENDS=	sidplay:${PORTSDIR}/audio/sidplay \
