@@ -1,6 +1,6 @@
---- Makefile.orig	Sat Aug 26 18:29:55 2000
-+++ Makefile	Sat Aug 26 18:31:42 2000
-@@ -1,8 +1,14 @@
+--- Makefile.orig	Tue Apr 13 10:22:49 1999
++++ Makefile	Fri May 25 02:57:38 2001
+@@ -1,6 +1,12 @@
  PIC= -fPIC
 -CFLAGS= -g -DUSE_SEMAPHORE $(PIC)
 -LIBS= -lpthread
@@ -16,26 +16,25 @@
 -prefix=/usr
 +prefix=$(PREFIX)
  BIN_INSTALL_DIR= $(prefix)/bin
- LIB_INSTALL_DIR= $(prefix)/lib
- MAN_INSTALL_DIR= $(prefix)/man/man3
-@@ -54,16 +60,16 @@
- 	$(AR) crv libefence.a $(OBJECTS)
- 
+@@ -22,3 +28,3 @@
+ 	@ echo "After the last test, it should print that the test has PASSED."
+-	./eftest
++	EF_PROTECT_BELOW= && EF_PROTECT_FREE= && EF_ALIGNMENT= && ./eftest
+ 	./tstheap 3072
+@@ -56,4 +62,4 @@
  libefence.so.0.0: $(OBJECTS)
 -	gcc -g -shared -Wl,-soname,libefence.so.0 -o libefence.so.0.0 \
 -		$(OBJECTS) -lpthread -lc 
 +	$(CC) $(CFLAGS) -shared -Wl,-soname,libefence.so.0 -o libefence.so.0.0 \
 +		$(OBJECTS) $(LIB_PTHREADS)
  
- tstheap: libefence.a tstheap.o
+@@ -61,3 +67,3 @@
  	- rm -f tstheap
 -	$(CC) $(CFLAGS) tstheap.o libefence.a -o tstheap $(LIBS)
 +	$(CC) $(CFLAGS) tstheap.o libefence.a -o tstheap $(LIB_PTHREADS)
  
- eftest: libefence.a eftest.o
+@@ -65,3 +71,3 @@
  	- rm -f eftest
 -	$(CC) $(CFLAGS) eftest.o libefence.a -o eftest $(LIBS)
 +	$(CC) $(CFLAGS) eftest.o libefence.a -o eftest $(LIB_PTHREADS)
- 
- $(OBJECTS) tstheap.o eftest.o: efence.h
  
