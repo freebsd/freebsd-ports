@@ -10,7 +10,7 @@ PORTVERSION=	2.1.0
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	oli@isnic.is
 COMMENT=	An authoritative only non-recursive high performance name server
 
 GNU_CONFIGURE=	yes
