@@ -348,6 +348,8 @@ libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/endpwent.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/expm.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/fft.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/fft2.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/fftn.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/fftw_wisdom.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/filter.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/find.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/fsolve.oct
@@ -365,6 +367,7 @@ libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/gmtime.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/hess.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/ifft.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/ifft2.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/ifftn.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/inv.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/inverse.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/kron.oct
@@ -477,15 +480,18 @@ share/octave/%%OCTAVE_VERSION%%/m/control/obsolete/syschnames.m
 share/octave/%%OCTAVE_VERSION%%/m/control/obsolete/unpacksys.m
 share/octave/%%OCTAVE_VERSION%%/m/control/system/__abcddims__.m
 share/octave/%%OCTAVE_VERSION%%/m/control/system/__syschnamesl__.m
+share/octave/%%OCTAVE_VERSION%%/m/control/system/__sysconcat__.m
 share/octave/%%OCTAVE_VERSION%%/m/control/system/__syscont_disc__.m
 share/octave/%%OCTAVE_VERSION%%/m/control/system/__sysdefioname__.m
 share/octave/%%OCTAVE_VERSION%%/m/control/system/__sysdefstname__.m
 share/octave/%%OCTAVE_VERSION%%/m/control/system/__sysgroupn__.m
 share/octave/%%OCTAVE_VERSION%%/m/control/system/__tf2sysl__.m
+share/octave/%%OCTAVE_VERSION%%/m/control/system/__tfl__.m
 share/octave/%%OCTAVE_VERSION%%/m/control/system/__zp2ssg2__.m
 share/octave/%%OCTAVE_VERSION%%/m/control/system/abcddim.m
 share/octave/%%OCTAVE_VERSION%%/m/control/system/buildssic.m
 share/octave/%%OCTAVE_VERSION%%/m/control/system/c2d.m
+share/octave/%%OCTAVE_VERSION%%/m/control/system/cellidx.m
 share/octave/%%OCTAVE_VERSION%%/m/control/system/d2c.m
 share/octave/%%OCTAVE_VERSION%%/m/control/system/dmr2d.m
 share/octave/%%OCTAVE_VERSION%%/m/control/system/fir2sys.m
@@ -505,6 +511,7 @@ share/octave/%%OCTAVE_VERSION%%/m/control/system/moddemo.m
 share/octave/%%OCTAVE_VERSION%%/m/control/system/ord2.m
 share/octave/%%OCTAVE_VERSION%%/m/control/system/packedform.m
 share/octave/%%OCTAVE_VERSION%%/m/control/system/parallel.m
+share/octave/%%OCTAVE_VERSION%%/m/control/system/ss.m
 share/octave/%%OCTAVE_VERSION%%/m/control/system/ss2sys.m
 share/octave/%%OCTAVE_VERSION%%/m/control/system/ss2tf.m
 share/octave/%%OCTAVE_VERSION%%/m/control/system/ss2zp.m
@@ -536,11 +543,13 @@ share/octave/%%OCTAVE_VERSION%%/m/control/system/sysscale.m
 share/octave/%%OCTAVE_VERSION%%/m/control/system/syssetsignals.m
 share/octave/%%OCTAVE_VERSION%%/m/control/system/syssub.m
 share/octave/%%OCTAVE_VERSION%%/m/control/system/sysupdate.m
+share/octave/%%OCTAVE_VERSION%%/m/control/system/tf.m
 share/octave/%%OCTAVE_VERSION%%/m/control/system/tf2ss.m
 share/octave/%%OCTAVE_VERSION%%/m/control/system/tf2sys.m
 share/octave/%%OCTAVE_VERSION%%/m/control/system/tf2zp.m
 share/octave/%%OCTAVE_VERSION%%/m/control/system/tfout.m
 share/octave/%%OCTAVE_VERSION%%/m/control/system/ugain.m
+share/octave/%%OCTAVE_VERSION%%/m/control/system/zp.m
 share/octave/%%OCTAVE_VERSION%%/m/control/system/zp2ss.m
 share/octave/%%OCTAVE_VERSION%%/m/control/system/zp2sys.m
 share/octave/%%OCTAVE_VERSION%%/m/control/system/zp2tf.m
@@ -604,6 +613,7 @@ share/octave/%%OCTAVE_VERSION%%/m/general/cart2pol.m
 share/octave/%%OCTAVE_VERSION%%/m/general/cart2sph.m
 share/octave/%%OCTAVE_VERSION%%/m/general/columns.m
 share/octave/%%OCTAVE_VERSION%%/m/general/common_size.m
+share/octave/%%OCTAVE_VERSION%%/m/general/deal.m
 share/octave/%%OCTAVE_VERSION%%/m/general/diff.m
 share/octave/%%OCTAVE_VERSION%%/m/general/fliplr.m
 share/octave/%%OCTAVE_VERSION%%/m/general/flipud.m
@@ -684,7 +694,6 @@ share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/etime.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/fileparts.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/flops.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/fullfile.m
-share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/horzcat.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/ispc.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/isunix.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/is_leap_year.m
@@ -703,7 +712,6 @@ share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/tic.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/toc.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/unix.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/version.m
-share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/vertcat.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/xor.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/PKG_ADD
 share/octave/%%OCTAVE_VERSION%%/m/plot/__axis_label__.m
@@ -1009,8 +1017,8 @@ share/octave/%%OCTAVE_VERSION%%/m/time/ctime.m
 share/octave/%%OCTAVE_VERSION%%/m/time/date.m
 share/octave/ls-R
 share/octave/site/m/startup/octaverc
-@dirrm share/octave/site/api-v4/m
-@dirrm share/octave/site/api-v4
+@dirrm share/octave/site/api-v8/m
+@dirrm share/octave/site/api-v8
 @dirrm share/octave/site/m/startup
 @dirrm share/octave/site/m
 @dirrm share/octave/site
@@ -1051,8 +1059,8 @@ share/octave/site/m/startup/octaverc
 @dirrm share/octave/%%OCTAVE_VERSION%%
 @dirrm share/octave
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm libexec/octave/site/oct/api-v4/%%GNU_HOST%%
-@dirrm libexec/octave/site/oct/api-v4
+@dirrm libexec/octave/site/oct/api-v8/%%GNU_HOST%%
+@dirrm libexec/octave/site/oct/api-v8
 @dirrm libexec/octave/site/oct/%%GNU_HOST%%
 @dirrm libexec/octave/site/oct
 @dirrm libexec/octave/site/exec/%%GNU_HOST%%
