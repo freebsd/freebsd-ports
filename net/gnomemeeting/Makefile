@@ -8,7 +8,7 @@
 PORTNAME=	gnomemeeting
 PORTVERSION=	0.10
 CATEGORIES=	net gnome
-MASTER_SITES=	http://130.104.229.225/gnomemeeting/downloads/ \
+MASTER_SITES=	http://130.104.229.225/gnomemeeting/downloads/0.10/sources/ \
 		ftp://telepresence.dmem.strath.ac.uk/pub/openh323/
 
 MAINTAINER=	roger@FreeBSD.org
