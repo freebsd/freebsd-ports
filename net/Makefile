@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.276 1999/06/21 01:20:35 cpiazza Exp $
+# $Id: Makefile,v 1.277 1999/06/22 23:42:24 sada Exp $
 #
 
     SUBDIR += IglooFTP
@@ -49,6 +49,7 @@
     SUBDIR += dnswalk
     SUBDIR += dnsutl
     SUBDIR += domtools
+    SUBDIR += downloader
     SUBDIR += echoping
     SUBDIR += epic4
     SUBDIR += etherboot
