@@ -1,13 +1,13 @@
 # New ports collection makefile for:	e93
-# Version required:	1.0r2X
+# Version required:	1.0r3X
 # Date created:		21 June 1995
 # Whom:			Satoshi Asami (asami)
 #
-# $Id: Makefile,v 1.18 1995/04/23 10:33:33 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1995/06/21 11:08:23 asami Exp $
 #
 
-DISTNAME=	e93-1.0r2X
-PKGNAME=	e93-1.0.2
+DISTNAME=	e93-1.0r3X
+PKGNAME=	e93-1.0.3
 CATEGORIES+=	editors
 MASTER_SITES=	ftp://ftp.x.org/contrib/editors/ \
 		ftp://crl.dec.com/pub/X11/contrib/editors/
