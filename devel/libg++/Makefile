@@ -16,10 +16,11 @@ MASTER_SITES=	http://www.m-hollstein.de/libgxx/  \
 		ftp://ftp.ninemoons.com/pub/mirrors/egcs/infrastructure/  \
 		${MASTER_SITE_GNU}
 
-PATCH_SITES=	http://www.m-hollstein.de/libgxx/  \
-		${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	obrien
-PATCHFILES=	${DISTNAME}-20000312.diff.gz
+PATCH_SITES=	http://www.cygnus.com/~manfredh/libgxx/  \
+PATCHFILES=	${DISTNAME}-20000312.diff.gz  \
+		${DISTNAME}-20000419.diff.gz  \
+		${DISTNAME}-20000816.diff.gz  \
+		${DISTNAME}-20000914.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	obrien@FreeBSD.org
@@ -27,8 +28,6 @@ MAINTAINER=	obrien@FreeBSD.org
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 PLIST_SUB=	GCC28SUBDIR=${GCC28DIR}
 USE_NEWGCC=	yes
-
-BROKEN=		"Does not build - compiler error"
 
 pre-configure:
 	@${CP} -p ${FILESDIR}/Makefile.libg++ ${WRKSRC}/Makefile
