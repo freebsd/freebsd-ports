@@ -15,6 +15,7 @@ DISTNAME=	${RUBY_DBI_DISTNAME}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	SQLRelay driver for DBI-for-Ruby
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/dbi.rb:${RUBY_DBI_PORTDIR} \
 		${RUBY_SITEARCHLIBDIR}/sqlrelay.so:${.CURDIR}/../ruby-sqlrelay

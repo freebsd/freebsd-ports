@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Ruby module for accessing MySQL databases with a C API like interface
 
 # Supports MySQL 4.0 too
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client

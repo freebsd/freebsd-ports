@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTFILES=	# none
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby extension to GDBM library
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${RUBY_PORT}:patch
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
