@@ -1,9 +1,0 @@
---- /dev/null	Tue Nov 21 12:27:45 2000
-+++ open_excl.c	Tue Nov 21 11:17:15 2000
-@@ -0,0 +1,6 @@
-+#include <sys/types.h>
-+#include <fcntl.h>
-+#include "open.h"
-+
-+int open_excl(fn) char *fn;
-+{ return open(fn,O_WRONLY | O_EXCL | O_CREAT,0644); }
