@@ -5,7 +5,8 @@
 # $FreeBSD$
 
 PORTNAME=	latex-lineno
-PORTVERSION=	3.10.20031112
+PORTVERSION=	4.1.20041026
+PORTREVISION=	0
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.ctan.org/tex-archive/%SUBDIR%/ \
 		${MASTER_SITE_TEX_CTAN}
@@ -30,8 +31,10 @@ MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}
 WRKSRC=		${WRKDIR}/${PORTNAME:S/^latex-//}
 
-CLASS_FILES=	lineno.sty lineno.tex ulineno.tex
-DOC_FILES=	README
+CLASS_FILES=	lineno.sty edtable.sty ednmath0.sty
+DOC_FILES=	README.txt CHANGES.txt \
+		ulineno.tex ulineno.pdf \
+		lineno.tex lineno.pdf
 
 do-extract:
 	${MKDIR} ${WRKSRC}
