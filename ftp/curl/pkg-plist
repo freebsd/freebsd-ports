@@ -10,8 +10,8 @@ include/curl/types.h
 lib/libcurl.a
 lib/libcurl.so
 lib/libcurl.so.%%SHLIB_VER%%
-%%DATADIR%%/curl-ca-bundle.crt
-@dirrm %%DATADIR%%
+%%SSL%%%%DATADIR%%/curl-ca-bundle.crt
+%%SSL%%@dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/BINDINGS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTE

@@ -7,6 +7,7 @@
 
 PORTNAME=	curl
 PORTVERSION=	7.11.0
+PORTREVISION=	1
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		${MASTER_SITE_SOURCEFORGE} \
@@ -53,8 +54,10 @@ USE_OPENSSL=	yes
 
 .if !defined(WITHOUT_SSL)
 CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE}
+PLIST_SUB+=	SSL=""
 .else
 CONFIGURE_ARGS=	--without-ssl
+PLIST_SUB+=	SSL="@comment "
 .endif
 
 .if exists(/usr/lib/libkrb.a) && defined(WITH_KERBEROS4)
