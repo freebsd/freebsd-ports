@@ -7,14 +7,15 @@
 
 PORTNAME=	man
 PORTVERSION=	1.1j
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://daemon.jp.freebsd.org/pub/FreeBSD-jp/man-jp/ \
 		${MASTER_SITE_PORTS_JP}
 DISTNAME=	jp-${PORTNAME}-${PORTVERSION}
 
 PATCH_SITES=	ftp://daemon.jp.freebsd.org/pub/FreeBSD-jp/man-jp/
-PATCHFILES=	jp-man-1.1j-ex-20010827.patch
+PATCHFILES=	jp-man-1.1j-ex-20020115.patch
+PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
@@ -22,7 +23,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/groff:${PORTSDIR}/japanese/groff \
 		jless:${PORTSDIR}/japanese/less
 
 MAKE_ENV=	GZCAT=${GZCAT} GZIP_CMD="${GZIP_CMD}"
-PATCH_DIST_STRIP=-p1
 
 MANLANG=	"" ja
 MAN1=		jman.1 jmanpath.1 japropos.1 \
