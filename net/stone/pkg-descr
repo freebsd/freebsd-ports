@@ -1,0 +1,23 @@
+Stone is a TCP/IP packet repeater in the application layer.  It
+repeats TCP and UDP packets from inside to outside of a firewall, or
+from outside to inside.
+
+Stone has following features:
+
+1.  Simple.
+        Stone's source code is only 3000 lines long (written in C
+        language), so you can minimize the risk of security
+        holes.
+
+2.  Stone supports SSL.
+        Using OpenSSL (http://www.openssl.org/), stone can
+        encrypt/decrypt packets.
+
+3.  Stone is a http proxy.
+        Stone can also be a tiny http proxy.
+
+4.  POP -> APOP conversion.
+        With stone and a mailer that does not support APOP, you can
+        access to an APOP server.
+
+WWW: http://www.gcd.org/sengoku/stone/

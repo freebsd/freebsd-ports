@@ -1,0 +1,11 @@
+--- Makefile.orig	Thu Apr 26 15:28:17 2001
++++ Makefile	Thu Apr 26 15:28:05 2001
+@@ -19,7 +19,7 @@
+ SSL_LIBS=	-L/usr/local/ssl/lib -lssl -lcrypto
+ 
+ POP_FLAGS=	-DUSE_POP
+-POP_LIBS=	md5c.o
++POP_LIBS=	-lmd
+ 
+ all:
+ 	@echo "run make with one of the following arguments"

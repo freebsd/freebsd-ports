@@ -333,6 +333,7 @@
     SUBDIR += spat
     SUBDIR += ssldump
     SUBDIR += sting
+    SUBDIR += stone
     SUBDIR += suckblow
     SUBDIR += sup
     SUBDIR += svnc
