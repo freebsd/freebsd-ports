@@ -1,0 +1,19 @@
+--- programs/xterm/termcap.orig	Mon May 10 15:10:04 1999
++++ programs/xterm/termcap	Mon Sep 27 02:32:32 1999
+@@ -32,7 +32,7 @@
+ 	:k;=\E[21~:F1=\E[23~:F2=\E[24~:\
+ 	:kn#12:\
+ 	:kH=\E[4~::@7=\E[4~:kh=\E[1~:\
+-	:@0=\E[1~:kI=\E[2~:kD=^?:\ 
++	:@0=\E[1~:kI=\E[2~:kD=^?:\
+ 	:*6=\E[4~:kP=\E[5~:kN=\E[6~:\
+ 	:km:\
+ 	:kb=^H:ku=\EOA:kd=\EOB:kr=\EOC:kl=\EOD:\
+@@ -125,6 +125,6 @@
+ # This is the only entry which you should have to customize, since "xterm"
+ # is widely used for a variety of incompatible terminal emulations including
+ # color_xterm and rxvt.
+-v0|xterm|X11 terminal emulator:\ 
++v0|xterm|X11 terminal emulator:\
+ 	:tc=xterm-xfree86:
+ #	:tc=xterm-r6:
