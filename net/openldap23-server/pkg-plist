@@ -1,97 +1,83 @@
-@comment -----------------------------------------
-@comment BUILD_CLIENTS
-@comment -----------------------------------------
-%%NO_CLIENTS%%bin/ldapadd
-%%NO_CLIENTS%%bin/ldapcompare
-%%NO_CLIENTS%%bin/ldapdelete
-%%NO_CLIENTS%%bin/ldapmodify
-%%NO_CLIENTS%%bin/ldapmodrdn
-%%NO_CLIENTS%%bin/ldappasswd
-%%NO_CLIENTS%%bin/ldapsearch
-%%NO_CLIENTS%%bin/ldapwhoami
-%%NO_CLIENTS%%@unexec if cmp -s %D/etc/openldap/ldap.conf %D/etc/openldap/ldap.conf.default; then rm -f %D/etc/openldap/ldap.conf; fi
-%%NO_CLIENTS%%etc/openldap/ldap.conf.default
-%%NO_CLIENTS%%@exec [ -f %B/ldap.conf ] || cp %B/%f %B/ldap.conf
-@comment
-%%NO_CLIENTS%%include/lber.h
-%%NO_CLIENTS%%include/lber_types.h
-%%NO_CLIENTS%%include/ldap.h
-%%NO_CLIENTS%%include/ldap_cdefs.h
-%%NO_CLIENTS%%include/ldap_features.h
-%%NO_CLIENTS%%include/ldap_schema.h
-%%NO_CLIENTS%%include/ldap_utf8.h
-@comment
-%%NO_CLIENTS%%lib/liblber.a
-%%NO_CLIENTS%%lib/liblber.so
-%%NO_CLIENTS%%lib/liblber.so.2
-%%NO_CLIENTS%%lib/libldap.a
-%%NO_CLIENTS%%lib/libldap.so
-%%NO_CLIENTS%%lib/libldap.so.2
-%%NO_CLIENTS%%lib/libldap_r.a
-%%NO_CLIENTS%%lib/libldap_r.so
-%%NO_CLIENTS%%lib/libldap_r.so.2
-@comment using USE_LIBTOOL make openldap to no longer to compile, so intall these 3 :(
-%%NO_CLIENTS%%lib/liblber.la
-%%NO_CLIENTS%%lib/libldap.la
-%%NO_CLIENTS%%lib/libldap_r.la
-@comment
-%%NO_CLIENTS%%share/openldap/ucdata/case.dat
-%%NO_CLIENTS%%share/openldap/ucdata/cmbcl.dat
-%%NO_CLIENTS%%share/openldap/ucdata/comp.dat
-%%NO_CLIENTS%%share/openldap/ucdata/ctype.dat
-%%NO_CLIENTS%%share/openldap/ucdata/decomp.dat
-%%NO_CLIENTS%%share/openldap/ucdata/num.dat
-%%NO_CLIENTS%%share/openldap/ucdata/kdecomp.dat
-%%NO_CLIENTS%%@dirrm share/openldap/ucdata
-%%NO_CLIENTS%%@dirrm share/openldap
-@comment -----------------------------------------
-@comment BUILD_SLURPD
-@comment -----------------------------------------
-%%NO_SLUPRD%%etc/rc.d/slurpd.sh.sample
-%%NO_SLUPRD%%libexec/slurpd
-%%NO_SLUPRD%%@exec [ -d /var/db/openldap-slurp ] || /bin/mkdir /var/db/openldap-slurp
-%%NO_SLUPRD%%@unexec /bin/rmdir /var/db/openldap-slurp 2>/dev/null || true
-@comment
-@comment -----------------------------------------
-@comment BUILD_SLAPD
-@comment -----------------------------------------
-%%NO_SLAPD%%etc/rc.d/slapd.sh.sample
-%%NO_SLAPD%%libexec/slapd
-%%NO_SLAPD%%sbin/slapadd
-%%NO_SLAPD%%sbin/slapcat
-%%NO_SLAPD%%sbin/slapindex
-%%NO_SLAPD%%sbin/slappasswd
-%%NO_SLAPD%%@unexec if cmp -s %D/etc/openldap/slapd.conf %D/etc/openldap/slapd.conf.default; then rm -f %D/etc/openldap/slapd.conf; fi
-%%NO_SLAPD%%etc/openldap/slapd.conf.default
-%%NO_SLAPD%%@exec [ -f %B/slapd.conf ] || cp %B/%f %B/slapd.conf
-%%NO_SLAPD%%@unexec if cmp -s %D/etc/openldap/schema/corba.schema %D/etc/openldap/schema/corba.schema.default; then rm -f %D/etc/openldap/schema/corba.schema; fi
-%%NO_SLAPD%%etc/openldap/schema/README
-%%NO_SLAPD%%etc/openldap/schema/corba.schema.default
-%%NO_SLAPD%%@exec [ -f %B/corba.schema ] || cp %B/%f %B/corba.schema
-%%NO_SLAPD%%@unexec if cmp -s %D/etc/openldap/schema/core.schema %D/etc/openldap/schema/core.schema.default; then rm -f %D/etc/openldap/schema/core.schema; fi
-%%NO_SLAPD%%etc/openldap/schema/core.schema.default
-%%NO_SLAPD%%@exec [ -f %B/core.schema ] || cp %B/%f %B/core.schema
-%%NO_SLAPD%%@unexec if cmp -s %D/etc/openldap/schema/cosine.schema %D/etc/openldap/schema/cosine.schema.default; then rm -f %D/etc/openldap/schema/cosine.schema; fi
-%%NO_SLAPD%%etc/openldap/schema/cosine.schema.default
-%%NO_SLAPD%%@exec [ -f %B/cosine.schema ] || cp %B/%f %B/cosine.schema
-%%NO_SLAPD%%@unexec if cmp -s %D/etc/openldap/schema/inetorgperson.schema %D/etc/openldap/schema/inetorgperson.schema.default; then rm -f %D/etc/openldap/schema/inetorgperson.schema; fi
-%%NO_SLAPD%%etc/openldap/schema/inetorgperson.schema.default
-%%NO_SLAPD%%@exec [ -f %B/inetorgperson.schema ] || cp %B/%f %B/inetorgperson.schema
-%%NO_SLAPD%%@unexec if cmp -s %D/etc/openldap/schema/java.schema %D/etc/openldap/schema/java.schema.default; then rm -f %D/etc/openldap/schema/java.schema; fi
-%%NO_SLAPD%%etc/openldap/schema/java.schema.default
-%%NO_SLAPD%%@exec [ -f %B/java.schema ] || cp %B/%f %B/java.schema
-%%NO_SLAPD%%@unexec if cmp -s %D/etc/openldap/schema/misc.schema %D/etc/openldap/schema/misc.schema.default; then rm -f %D/etc/openldap/schema/misc.schema; fi
-%%NO_SLAPD%%etc/openldap/schema/misc.schema.default
-%%NO_SLAPD%%@exec [ -f %B/misc.schema ] || cp %B/%f %B/misc.schema
-%%NO_SLAPD%%@unexec if cmp -s %D/etc/openldap/schema/nis.schema %D/etc/openldap/schema/nis.schema.default; then rm -f %D/etc/openldap/schema/nis.schema; fi
-%%NO_SLAPD%%etc/openldap/schema/nis.schema.default
-%%NO_SLAPD%%@exec [ -f %B/nis.schema ] || cp %B/%f %B/nis.schema
-%%NO_SLAPD%%@unexec if cmp -s %D/etc/openldap/schema/openldap.schema %D/etc/openldap/schema/openldap.schema.default; then rm -f %D/etc/openldap/schema/openldap.schema; fi
-%%NO_SLAPD%%etc/openldap/schema/openldap.schema.default
-%%NO_SLAPD%%@exec [ -f %B/openldap.schema ] || cp %B/%f %B/openldap.schema
-%%NO_SLAPD%%@unexec /bin/rmdir %D/etc/openldap/schema 2>/dev/null || true
-%%NO_SLAPD%%@unexec /bin/rmdir %D/etc/openldap 2>/dev/null || true
-%%NO_SLAPD%%@exec [ -d /var/db/openldap-data ] || /bin/mkdir /var/db/openldap-data
-%%NO_SLAPD%%@unexec /bin/rmdir /var/db/openldap-data 2>/dev/null || true
-%%NO_SLAPD%%@exec [ -d /var/run/ldap ] || /bin/mkdir /var/run/ldap
-%%NO_SLAPD%%@unexec /bin/rmdir /var/run/ldap 2>/dev/null || true
+bin/ldapadd
+bin/ldapcompare
+bin/ldapdelete
+bin/ldapmodify
+bin/ldapmodrdn
+bin/ldappasswd
+bin/ldapsearch
+bin/ldapwhoami
+%%SERVER%%@unexec %D/etc/rc.d/slapd.sh stop 2>/dev/null || true
+%%SERVER%%@unexec %D/etc/rc.d/slurpd.sh stop 2>/dev/null || true
+@unexec if cmp -s %D/etc/openldap/ldap.conf %D/etc/openldap/ldap.conf.default; then rm -f %D/etc/openldap/ldap.conf; fi
+etc/openldap/ldap.conf.default
+@exec [ -f %B/ldap.conf ] || cp %B/%f %B/ldap.conf
+%%SERVER%%etc/openldap/schema/README
+%%SERVER%%@unexec if cmp -s %D/etc/openldap/schema/corba.schema %D/etc/openldap/schema/corba.schema.default; then rm -f %D/etc/openldap/schema/corba.schema; fi
+%%SERVER%%etc/openldap/schema/corba.schema.default
+%%SERVER%%@exec [ -f %B/corba.schema ] || cp %B/%f %B/corba.schema
+%%SERVER%%@unexec if cmp -s %D/etc/openldap/schema/core.schema %D/etc/openldap/schema/core.schema.default; then rm -f %D/etc/openldap/schema/core.schema; fi
+%%SERVER%%etc/openldap/schema/core.schema.default
+%%SERVER%%@exec [ -f %B/core.schema ] || cp %B/%f %B/core.schema
+%%SERVER%%@unexec if cmp -s %D/etc/openldap/schema/cosine.schema %D/etc/openldap/schema/cosine.schema.default; then rm -f %D/etc/openldap/schema/cosine.schema; fi
+%%SERVER%%etc/openldap/schema/cosine.schema.default
+%%SERVER%%@exec [ -f %B/cosine.schema ] || cp %B/%f %B/cosine.schema
+%%SERVER%%@unexec if cmp -s %D/etc/openldap/schema/inetorgperson.schema %D/etc/openldap/schema/inetorgperson.schema.default; then rm -f %D/etc/openldap/schema/inetorgperson.schema; fi
+%%SERVER%%etc/openldap/schema/inetorgperson.schema.default
+%%SERVER%%@exec [ -f %B/inetorgperson.schema ] || cp %B/%f %B/inetorgperson.schema
+%%SERVER%%@unexec if cmp -s %D/etc/openldap/schema/java.schema %D/etc/openldap/schema/java.schema.default; then rm -f %D/etc/openldap/schema/java.schema; fi
+%%SERVER%%etc/openldap/schema/java.schema.default
+%%SERVER%%@exec [ -f %B/java.schema ] || cp %B/%f %B/java.schema
+%%SERVER%%@unexec if cmp -s %D/etc/openldap/schema/misc.schema %D/etc/openldap/schema/misc.schema.default; then rm -f %D/etc/openldap/schema/misc.schema; fi
+%%SERVER%%etc/openldap/schema/misc.schema.default
+%%SERVER%%@exec [ -f %B/misc.schema ] || cp %B/%f %B/misc.schema
+%%SERVER%%@unexec if cmp -s %D/etc/openldap/schema/nis.schema %D/etc/openldap/schema/nis.schema.default; then rm -f %D/etc/openldap/schema/nis.schema; fi
+%%SERVER%%etc/openldap/schema/nis.schema.default
+%%SERVER%%@exec [ -f %B/nis.schema ] || cp %B/%f %B/nis.schema
+%%SERVER%%@unexec if cmp -s %D/etc/openldap/schema/openldap.schema %D/etc/openldap/schema/openldap.schema.default; then rm -f %D/etc/openldap/schema/openldap.schema; fi
+%%SERVER%%etc/openldap/schema/openldap.schema.default
+%%SERVER%%@exec [ -f %B/openldap.schema ] || cp %B/%f %B/openldap.schema
+%%SERVER%%@unexec if cmp -s %D/etc/openldap/slapd.conf %D/etc/openldap/slapd.conf.default; then rm -f %D/etc/openldap/slapd.conf; fi
+%%SERVER%%etc/openldap/slapd.conf.default
+%%SERVER%%@exec [ -f %B/slapd.conf ] || cp %B/%f %B/slapd.conf
+%%SERVER%%@unexec /bin/rmdir %D/etc/openldap/schema 2>/dev/null || true
+@unexec /bin/rmdir %D/etc/openldap 2>/dev/null || true
+%%SERVER%%etc/rc.d/slapd.sh
+%%SERVER%%etc/rc.d/slurpd.sh
+include/lber.h
+include/lber_types.h
+include/ldap.h
+include/ldap_cdefs.h
+include/ldap_features.h
+include/ldap_schema.h
+include/ldap_utf8.h
+include/slapi-plugin.h
+lib/liblber.a
+lib/liblber.so
+lib/liblber.so.2
+lib/libldap.a
+lib/libldap.so
+lib/libldap.so.2
+lib/libldap_r.a
+lib/libldap_r.so
+lib/libldap_r.so.2
+%%SLAPI%%lib/libslapi.a
+%%SLAPI%%lib/libslapi.so
+%%SLAPI%%lib/libslapi.so.2
+%%SERVER%%libexec/slapd
+%%SERVER%%libexec/slurpd
+%%SERVER%%sbin/slapadd
+%%SERVER%%sbin/slapcat
+%%SERVER%%sbin/slapindex
+%%SERVER%%sbin/slappasswd
+share/openldap/ucdata/case.dat
+share/openldap/ucdata/cmbcl.dat
+share/openldap/ucdata/comp.dat
+share/openldap/ucdata/ctype.dat
+share/openldap/ucdata/decomp.dat
+share/openldap/ucdata/kdecomp.dat
+share/openldap/ucdata/num.dat
+@dirrm share/openldap/ucdata
+@dirrm share/openldap
+%%SERVER%%@unexec /bin/rmdir %%LOCALSTATEDIR%%/openldap-slurp 2>/dev/null || true
+%%SERVER%%@unexec /bin/rmdir %%LOCALSTATEDIR%%/openldap-data 2>/dev/null || true
+%%SERVER%%@unexec /bin/rmdir %%LDAP_RUN_DIR%% 2>/dev/null || true

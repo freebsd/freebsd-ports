@@ -1,10 +1,15 @@
-OpenLDAP is a suite of Lightweight Directory Access Protocol(LDAP)
-servers, clients, utilities and development tools.
+OpenLDAP is a suite of Lightweight Directory Access Protocol (v3) servers,
+clients, utilities and development tools.
 
-OpenLDAP is derived from the University of Michigan LDAP release 3.3 
-and is distributed under an open source license.
+This release includes the following major components:
 
-WWW: http://www.openldap.org/
+ * slapd - a stand-alone LDAP directory server
+ * slurpd - a stand-alone LDAP replication server
+ * -lldap - a LDAP client library
+ * -llber - a lightweight BER/DER encoding/decoding library
+ * LDIF tools - data conversion tools for use with slapd
+ * LDAP tools - A collection of command line LDAP utilities
 
-Bjoern A. Zeeb
-bzeeb+freebsdports@zabbadoz.net
+WWW: http://www.OpenLDAP.org/
+
+Lachlan O'Dea, Oliver Eikemeier
