@@ -1,11 +1,11 @@
---- src/Makefile.in.orig	Mon Feb  7 21:50:25 2000
-+++ src/Makefile.in	Mon Feb  7 21:51:29 2000
-@@ -120,7 +120,7 @@
+--- src/Makefile.in.orig	Wed Aug 29 03:23:38 2001
++++ src/Makefile.in	Fri Sep  7 00:29:05 2001
+@@ -123,7 +123,7 @@
  
+ EXTRA_libEterm_la_SOURCES = $(MMX_SRCS)
  
- libEterm_la_DEPENDENCIES = $(top_builddir)/libmej/libmej.la feature.h
 -libEterm_la_LDFLAGS = -release $(VERSION)
 +libEterm_la_LDFLAGS = -version-info 9:9:9
- 
- bin_PROGRAMS = Eterm
- Eterm_SOURCES = main.c
+ @HAVE_MMX_TRUE@libEterm_la_DEPENDENCIES = feature.h $(MMX_OBJS)
+ @HAVE_MMX_FALSE@libEterm_la_DEPENDENCIES = feature.h
+ @HAVE_MMX_TRUE@libEterm_la_LIBADD = $(MMX_OBJS)
