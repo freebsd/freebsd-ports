@@ -70,6 +70,7 @@
     SUBDIR += wmpinboard
     SUBDIR += xcalendar
     SUBDIR += xchm
+    SUBDIR += xfce4-notes
     SUBDIR += xinvest
     SUBDIR += xmaddressbook
     SUBDIR += xmdiary
