@@ -1,0 +1,40 @@
+--- Makefile.in.orig	Fri Dec 17 00:31:01 1999
++++ Makefile.in	Sat May 20 15:02:47 2000
+@@ -16,7 +16,7 @@
+ 
+ SHELL=/bin/sh
+ 
+-INSTALL = @INSTALL@
++INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_DATA = @INSTALL_DATA@
+ 
+ INCLUDEDIR = @includedir@
+@@ -28,7 +28,7 @@
+ libdir = @libdir@
+ mandir = @mandir@
+ 
+-CFLAGS = @CFLAGS@ @DEFS@ -I. @XPM_CFLAGS@ -I./libxfig -I./libdib -I./xgd-1.7.3 @TTF_CFLAGS@
++CFLAGS = @CFLAGS@ @DEFS@ -I. @XPM_CFLAGS@ -I./libxfig -I./libdib -I./xgd-1.7.3 @TTF_CFLAGS@ @CPPFLAGS@
+ 
+ MKINSTALLDIRS = $(srcdir)/mkinstalldirs
+ 
+@@ -134,9 +134,9 @@
+ 	$(libdir)
+ 
+ install: all installdirs installsub
+-	$(INSTALL) $(srcdir)/xwmf $(bindir)/xwmf
+-	$(INSTALL) $(srcdir)/wmftopng $(bindir)/wmftopng
+-	$(INSTALL) $(srcdir)/wmftofig $(bindir)/wmftofig
++	$(INSTALL_PROGRAM) $(srcdir)/xwmf $(bindir)/xwmf
++	$(INSTALL_PROGRAM) $(srcdir)/wmftopng $(bindir)/wmftopng
++	$(INSTALL_PROGRAM) $(srcdir)/wmftofig $(bindir)/wmftofig
+ 	$(INSTALL_DATA) $(srcdir)/libwmf.a $(libdir)/libwmf.a
+ 	$(INSTALL_DATA) $(srcdir)/libgdwmf.a $(libdir)/libgdwmf.a
+ 	$(INSTALL_DATA) $(srcdir)/libXwmf.a $(libdir)/libXwmf.a
+@@ -144,5 +144,6 @@
+ 	$(INSTALL_DATA) wmfapi.h $(INCLUDEDIR)/wmfapi.h
+ 	$(INSTALL_DATA) gdwmfapi.h $(INCLUDEDIR)/gdwmfapi.h
+ 	$(INSTALL_DATA) Xwmfapi.h $(INCLUDEDIR)/Xwmfapi.h
++	$(INSTALL_DATA) xgdttf.h $(INCLUDEDIR)/xgdttf.h
+ 
+ #  DO  NOT  DELETE THIS LINE -- make depend depends on it.

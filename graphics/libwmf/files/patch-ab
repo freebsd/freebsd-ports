@@ -1,0 +1,50 @@
+--- xgd-1.7.3/Makefile.in.orig	Fri Dec 17 00:31:47 1999
++++ xgd-1.7.3/Makefile.in	Sat May 20 15:04:39 2000
+@@ -29,14 +29,14 @@
+ 
+ #If you don't have FreeType and/or Xpm installed, including the
+ #header files, uncomment this (default).
+-CFLAGS=@CFLAGS@ @DEFS@ -I../ @ZLIB_CFLAGS@ @TTF_CFLAGS@ @XPM_CFLAGS@
++CFLAGS=@CFLAGS@ @DEFS@ -I../ @ZLIB_CFLAGS@ @TTF_CFLAGS@ @XPM_CFLAGS@ @CPPFLAGS@
+ #If you do have FreeType and/or Xpm fully installed, uncomment a
+ #variation of this and comment out the line above. See also LIBS below.
+ #CFLAGS=-O -DHAVE_XPM -DHAVE_LIBTTF
+ 
+ #If you don't have FreeType and/or Xpm fully installed, uncomment this
+ #(default).
+-LIBS= -lxgd @LIB_PNG@ @ZLIB_LIBS@ @TTF_LIBS@ @XPM_LIBS@ @X_LIBS@ @X11@ @X_EXTRA_LIBS@ -lm
++LIBS= -lxgd @LIB_PNG@ @ZLIB_LIBS@ @TTF_LIBS@ @XPM_LIBS@ @X_LIBS@ @X11@ @X_EXTRA_LIBS@ @LIBS@ -lm
+ 
+ #If you do have FreeType and/or Xpm fully installed, uncomment a 
+ #variation of this and comment out the line above. Note that
+@@ -80,26 +80,11 @@
+ BIN_PROGRAMS=pngtogd pngtogd2 gdtopng gd2topng gd2copypal gdparttopng webpng
+ TEST_PROGRAMS=gdtest gddemo gd2time gdtestttf
+ 
+-all: libxgd.a $(PROGRAMS)
++all: libxgd.a
+ 
+-install: libxgd.a $(BIN_PROGRAMS)
+-	$(INSTALL) libxgd.a $(INSTALL_LIB)/libxgd.a
+-	$(INSTALL) pngtogd $(INSTALL_BIN)/pngtogd
+-	$(INSTALL) pngtogd2 $(INSTALL_BIN)/pngtogd2
+-	$(INSTALL) gdtopng $(INSTALL_BIN)/gdtopng
+-	$(INSTALL) gd2topng $(INSTALL_BIN)/gd2topng
+-	$(INSTALL) gd2copypal $(INSTALL_BIN)/gd2copypal
+-	$(INSTALL) gdparttopng $(INSTALL_BIN)/gdparttopng
+-	$(INSTALL) webpng $(INSTALL_BIN)/webpng
+-	$(INSTALL) bdftogd $(INSTALL_BIN)/bdftogd
+-	$(INSTALL_DATA) gd.h $(INSTALL_INCLUDE)/gd.h
+-	$(INSTALL_DATA) gdcache.h $(INSTALL_INCLUDE)/gdcache.h
+-	$(INSTALL_DATA) gd_io.h $(INSTALL_INCLUDE)/gd_io.h
+-	$(INSTALL_DATA) gdfontg.h $(INSTALL_INCLUDE)/gdfontg.h
+-	$(INSTALL_DATA) gdfontl.h $(INSTALL_INCLUDE)/gdfontl.h
+-	$(INSTALL_DATA) gdfontmb.h $(INSTALL_INCLUDE)/gdfontmb.h
+-	$(INSTALL_DATA) gdfonts.h $(INSTALL_INCLUDE)/gdfonts.h
+-	$(INSTALL_DATA) gdfontt.h $(INSTALL_INCLUDE)/gdfontt.h
++install: libxgd.a
++	$(INSTALL_DATA) libxgd.a $(INSTALL_LIB)/libxgd.a
++	$(INSTALL_DATA) gd.h $(INSTALL_INCLUDE)/xgd.h
+ 
+ gddemo: gddemo.o libxgd.a
+ 	$(CC) gddemo.o -o gddemo	$(LIBDIRS) $(LIBS)
