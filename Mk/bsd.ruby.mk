@@ -96,7 +96,7 @@ Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 # RUBY_ELISPDIR		- Installation path for emacs lisp files.
 #
 
-.if ${ARCH} == alpha || ${ARCH} == sparc64 || ${ARCH} == ia64
+.if ${ARCH} == alpha || ${ARCH} == sparc64 || ${ARCH} == amd64 || ${ARCH} == ia64
 RUBY_DEFAULT_VER?=	1.8
 .else
 RUBY_DEFAULT_VER?=	1.6
