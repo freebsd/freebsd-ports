@@ -8,7 +8,8 @@
 
 DISTNAME=	intlfonts-1.2
 CATEGORIES=	x11-fonts
-MASTER_SITES=	ftp://ftp.etl.go.jp/pub/mule/
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	intlfonts
 
 MAINTAINER=	taoka@FreeBSD.org
 
