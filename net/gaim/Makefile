@@ -7,6 +7,7 @@
 
 PORTNAME=	gaim
 PORTVERSION=	0.59.4
+PORTREVISION=	1
 CATEGORIES?=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +19,7 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gnomeprefix gnomehack gtk12 esound
+USE_GNOME=	gnomeprefix gnomehack gtk12
 WANT_GNOME=	yes
 USE_PERL5=	yes
 USE_LIBTOOL=	yes
@@ -44,6 +45,17 @@ CONFIGURE_ARGS+=	--enable-panel
 PKGNAMESUFFIX=	-gnome
 .else
 CONFIGURE_ARGS+=	--disable-gnome
+.endif
+
+.if ${HAVE_GNOME:Mesound}!=""
+USE_GNOME+=	esound
+.if defined(PKGNAMESUFFIX)
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-esound
+.else
+PKGNAMESUFFIX=	-esound
+.endif
+.else
+CONFIGURE_ARGS+=	--disable-esd
 .endif
 
 post-patch:
