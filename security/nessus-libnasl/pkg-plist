@@ -1,0 +1,6 @@
+lib/libnasl.a
+lib/libnasl.la
+lib/libnasl.so
+lib/libnasl.so.99
+include/nessus/nasl.h
+bin/nasl-config
