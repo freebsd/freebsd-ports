@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	neon
-PORTVERSION=	0.18.5
+PORTVERSION=	0.19.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/neon/
 
@@ -14,7 +14,7 @@ MAINTAINER=	olgeni@FreeBSD.org
 
 LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml
 
-.ifndef NO_OPENSSL
+.ifndef WITHOUT_OPENSSL
 USE_OPENSSL=	yes
 .endif
 
