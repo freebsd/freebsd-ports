@@ -6,41 +6,55 @@
 
 PORTNAME=	qextmdi
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.geocities.com/gigafalk/qextmdi/
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	jesse@cs.uni-magdeburg.de
+MAINTAINER=	roland.jesse@gmx.net
 
+.if defined(WITH_KDE)
+USE_KDELIBS_VER=	3
+.else
+USE_QT_VER=	3
+.endif
 WRKSRC=		${WRKDIR}/${PORTNAME}
 BUILD_WRKSRC=	${WRKSRC}/qextmdi
-USE_QT_VER=	3
-USE_X_PREFIX=	yes
-.if defined(WITH_KDE)
-USE_KDEBASE_VER=	3
-# The name of this option is misleading. It uses either KDE2 or KDE3.
-CONFIGURE_ARGS+=	-kde2
-.endif
-MAKE_ENV+=	QTDIR=${QT_PREFIX} QMAKESPEC=freebsd-g++
+MAKE_ENV+=	QTDIR=${QT_PREFIX} QMAKESPEC=freebsd-g++ KDE2DIR=${LOCALBASE}
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_KDE)
+LIBNAME=	kextmdi
+.else
+LIBNAME=	qextmdi
+.endif
+PLIST_SUB+=	LIBNAME=${LIBNAME}
+
 pre-configure:
 	@cd ${WRKSRC} && ${REINPLACE_CMD} -e 's|tmake|qmake|g' configure
-	@cd ${WRKSRC}/qextmdi && ${PERL} -e 's|warn_on|warn_on thread|g' *.pro
+	@cd ${WRKSRC}/qextmdi && ${REINPLACE_CMD} -e 's|warn_on|warn_on thread|g' *.pro
+.if !defined(WITH_KDE)
+	@${ECHO_CMD}
+	@${ECHO_CMD} "Note: The QextMDI library can be build with KDE support."
+	@${ECHO_CMD} "      Please specify WITH_KDE in case you want to do so."
+	@${ECHO_CMD}
+.endif
 
-# define this here to prevent any "--with-qt-includes" or similar:
 do-configure:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIG_ARGS}
+	cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} qmake ${LIBNAME}.pro
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/lib/libqextmdi.so.2.0.2 ${PREFIX}/lib/libqextmdi.so.2
-	${LN} ${PREFIX}/lib/libqextmdi.so.2 ${PREFIX}/lib/libqextmdi.so
-	${INSTALL_DATA} ${WRKSRC}/include/*.h  ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/lib/lib${LIBNAME}.so.2.0.2 ${PREFIX}/lib/lib${LIBNAME}.so.2
+	${LN} ${PREFIX}/lib/lib${LIBNAME}.so.2 ${PREFIX}/lib/lib${LIBNAME}.so
+	${MKDIR} ${PREFIX}/include/qextmdi
+	${INSTALL_DATA} ${WRKSRC}/include/*.h  ${PREFIX}/include/qextmdi
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/qextmdi
 	@cd ${WRKSRC}/doc && ${TAR} cf - * | (cd ${PREFIX}/share/doc/qextmdi && ${TAR} xf -)
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
