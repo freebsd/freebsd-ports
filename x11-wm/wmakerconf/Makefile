@@ -18,8 +18,7 @@ LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		png.4:${PORTSDIR}/graphics/png \
-		wraster.4:${PORTSDIR}/x11-wm/windowmaker \
-		wmfun.1:${PORTSDIR}/x11-wm/windowmaker
+		wraster.4:${PORTSDIR}/x11-wm/windowmaker
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
