@@ -35,6 +35,9 @@ lib/gbottler-%%VERSION%%/queryluid.pyo
 lib/gbottler-%%VERSION%%/script.py
 lib/gbottler-%%VERSION%%/script.pyc
 lib/gbottler-%%VERSION%%/script.pyo
+lib/gbottler-%%VERSION%%/svgmanager.py
+lib/gbottler-%%VERSION%%/svgmanager.pyc
+lib/gbottler-%%VERSION%%/svgmanager.pyo
 lib/gbottler-%%VERSION%%/textmanager.py
 lib/gbottler-%%VERSION%%/textmanager.pyc
 lib/gbottler-%%VERSION%%/textmanager.pyo
