@@ -19,4 +19,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Set::Object.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} <= 500503
+BROKEN=		"Does not compile with this version of perl"
+.endif
+
+.include <bsd.port.post.mk>
