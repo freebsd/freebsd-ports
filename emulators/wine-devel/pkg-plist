@@ -340,6 +340,7 @@ lib/wine/dswave.dll.so
 lib/wine/expand.exe.so
 lib/wine/gdi.exe.so
 lib/wine/gdi32.dll.so
+lib/wine/glu32.dll.so
 lib/wine/glut32.dll.so
 lib/wine/iccvid.dll.so
 lib/wine/icinfo.exe.so
@@ -519,6 +520,7 @@ lib/wine/oledlg.dll.so
 lib/wine/olepro32.dll.so
 lib/wine/olesvr.dll.so
 lib/wine/olesvr32.dll.so
+lib/wine/opengl32.dll.so
 lib/wine/progman.exe.so
 lib/wine/psapi.dll.so
 lib/wine/qcap.dll.so
@@ -617,8 +619,6 @@ share/aclocal/wine.m4
 %%DOCSDIR%%/README.winedbg
 %%DOCSDIR%%/README.winedump
 %%PORTDOCS%%@dirrm share/doc/wine
-@unexec if [ -f %D/lib/wine/glu32.dll.so    ]; then rm -f %D/lib/wine/glu32.dll.so; fi
-@unexec if [ -f %D/lib/wine/opengl32.dll.so ]; then rm -f %D/lib/wine/opengl32.dll.so; fi
 @dirrm lib/wine
 @dirrm include/wine/msvcrt/sys
 @dirrm include/wine/msvcrt
