@@ -35,7 +35,6 @@ include/sp/EntityManager.h
 include/sp/ErrnoMessageArg.h
 include/sp/ErrorCountEventHandler.h
 include/sp/Event.h
-include/sp/EventGenerator.h
 include/sp/EventsWanted.h
 include/sp/ExtendEntityManager.h
 include/sp/ExternalId.h
@@ -93,7 +92,6 @@ include/sp/Owner.h
 include/sp/OwnerTable.cxx
 include/sp/OwnerTable.h
 include/sp/ParserApp.h
-include/sp/ParserEventGeneratorKit.h
 include/sp/ParserOptions.h
 include/sp/PointerTable.cxx
 include/sp/PointerTable.h
@@ -104,7 +102,6 @@ include/sp/RangeMap.cxx
 include/sp/RangeMap.h
 include/sp/Resource.h
 include/sp/RewindStorageObject.h
-include/sp/SGMLApplication.h
 include/sp/SJISCodingSystem.h
 include/sp/SOEntityCatalog.h
 include/sp/Sd.h
@@ -131,11 +128,11 @@ include/sp/UnivCharsetDesc.h
 include/sp/Vector.cxx
 include/sp/Vector.h
 include/sp/Win32CodingSystem.h
-include/sp/WinInetStorage.h
 include/sp/WinApp.h
+include/sp/WinInetStorage.h
+include/sp/XMLCodingSystem.h
 include/sp/XcharMap.cxx
 include/sp/XcharMap.h
-include/sp/XMLCodingSystem.h
 include/sp/config.h
 include/sp/constant.h
 include/sp/macros.h
@@ -143,21 +140,26 @@ include/sp/rtti.h
 include/sp/sptchar.h
 include/sp/types.h
 include/sp/xnew.h
-lib/libsp.a
-@comment lib/libsp.so.1.4
-share/doc/jade/TeX.htm
+lib/libgrove.la
+lib/libgrove.so
+lib/libgrove.so.1.3
+lib/libsp.la
+lib/libsp.so
+lib/libsp.so.1.3
+lib/libspgrove.la
+lib/libspgrove.so
+lib/libspgrove.so.1.3
+lib/libstyle.la
+lib/libstyle.so
+lib/libstyle.so.1.3
 share/doc/jade/archform.htm
 share/doc/jade/build.htm
 share/doc/jade/catalog.htm
 share/doc/jade/charset.htm
-share/doc/jade/copying.txt
-share/doc/jade/dsssl2.htm
 share/doc/jade/features.htm
 share/doc/jade/generic.htm
 share/doc/jade/ideas.htm
 share/doc/jade/index.htm
-share/doc/jade/jade.htm
-share/doc/jade/mif.htm
 share/doc/jade/new.htm
 share/doc/jade/nsgmls.htm
 share/doc/jade/sgmldecl.htm
@@ -168,20 +170,28 @@ share/doc/jade/spent.htm
 share/doc/jade/sx.htm
 share/doc/jade/sysdecl.htm
 share/doc/jade/sysid.htm
-share/doc/jade/transform.htm
 share/doc/jade/xml.htm
-share/sgml/jade/Makefile.jadetex
-share/sgml/jade/catalog
-share/sgml/jade/demo.dsl
-share/sgml/jade/demo.sgm
-share/sgml/jade/dsssl.dtd
-share/sgml/jade/fot.dtd
-share/sgml/jade/style-sheet.dtd
-share/sgml/jade/jadetex.dtx
-share/sgml/jade/jadetex.ini
-share/sgml/jade/jadetex.ins
-share/sgml/jade/pdfjadetex.ini
-@comment @exec /sbin/ldconfig -m %D/lib
+share/sgml/jade/archform.htm
+share/sgml/jade/build.htm
+share/sgml/jade/catalog.htm
+share/sgml/jade/charset.htm
+share/sgml/jade/features.htm
+share/sgml/jade/generic.htm
+share/sgml/jade/ideas.htm
+share/sgml/jade/index.htm
+share/sgml/jade/new.htm
+share/sgml/jade/nsgmls.htm
+share/sgml/jade/sgmldecl.htm
+share/sgml/jade/sgmlnorm.htm
+share/sgml/jade/sgmlsout.htm
+share/sgml/jade/spam.htm
+share/sgml/jade/spent.htm
+share/sgml/jade/sx.htm
+share/sgml/jade/sysdecl.htm
+share/sgml/jade/sysid.htm
+share/sgml/jade/xml.htm
 @dirrm include/sp
 @dirrm share/doc/jade
 @dirrm share/sgml/jade
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
