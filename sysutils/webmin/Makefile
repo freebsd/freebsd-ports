@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	0.84
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://webadmin.sourceforge.net/webmin/updates/ \
 		http://webadmin.sourceforge.net/webmin/download/
@@ -23,12 +23,16 @@ NO_BUILD=	yes
 IS_INTERACTIVE=	yes
 USE_PERL5=	yes
 
+.if defined(WITH_UPDATES)
 WEBMIN_MODULES=	apache.wbm.gz mysql.wbm.gz status.wbm.gz file.wbm.gz
+.endif
 
 post-extract:
+.if defined(WITH_UPDATES)
 	@for webmin_module in ${WEBMIN_MODULES}; do \
 		${TAR} xfz ${DISTDIR}/$${webmin_module} -C ${WRKSRC}; \
 	done
+.endif
 	@find ${WRKSRC} -name "*.bak" | xargs ${RM}
 
 post-patch:
