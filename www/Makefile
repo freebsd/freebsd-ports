@@ -104,6 +104,7 @@
     SUBDIR += gnujsp
     SUBDIR += grail
     SUBDIR += gtkhtml
+    SUBDIR += gtkhtml3
     SUBDIR += guile-www
     SUBDIR += harvest
     SUBDIR += horde2
