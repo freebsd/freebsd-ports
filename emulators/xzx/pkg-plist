@@ -1,13 +1,8 @@
 bin/xzx
 lib/xzx/spectrum.rom
-lib/xzx/128-0.rom
-lib/xzx/128-1.rom
-lib/xzx/pl2-0.rom
-lib/xzx/pl2-1.rom
-lib/xzx/pl3-0.rom
-lib/xzx/pl3-1.rom
-lib/xzx/pl3-2.rom
-lib/xzx/pl3-3.rom
+lib/xzx/128.rom
+lib/xzx/plus2.rom
+lib/xzx/plus3.rom
 lib/xzx/if1-v1.rom
 lib/xzx/if1-v2.rom
 lib/xzx/keyboard.scr

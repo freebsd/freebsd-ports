@@ -23,4 +23,4 @@ Put documentation in share/doc/xzx instead of lib/xzx:
 -	  $(INSTALL_DATA) $$f $(pkglibdir); \
 +	  $(INSTALL_DATA) $$f $(pkgdocdir); \
  	done
- 	$(INSTALL_DATA) Xzx @XAPPLOADDIR@
+ 	$(INSTALL_DATA) Xzx @XAPPLOADDIR@/Xzx
