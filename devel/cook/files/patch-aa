@@ -1,0 +1,20 @@
+diff -ru Makefile.in.orig Makefile.in
+--- Makefile.in.orig	Tue Oct 16 00:15:43 2001
++++ Makefile.in	Sat Nov 17 14:15:06 2001
+@@ -46,6 +46,7 @@
+ #
+ INSTALL = @INSTALL@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
++INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ INSTALL_DATA = @INSTALL_DATA@
+ 
+ #
+@@ -4018,7 +4019,7 @@
+ 
+ $(bindir)/$(PROGRAM_PREFIX)cook_rsh$(PROGRAM_SUFFIX)$(EXEEXT): \
+ 		bin/cook_rsh$(EXEEXT) .bindir
+-	$(INSTALL_PROGRAM) bin/cook_rsh$(EXEEXT) $@
++	$(INSTALL_SCRIPT) bin/cook_rsh$(EXEEXT) $@
+ 
+ t0001a: test/00/t0001a.sh all
+ 	CC=$(CC) $(SH) test/00/t0001a.sh
