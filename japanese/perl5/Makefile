@@ -49,12 +49,14 @@ CONFIGURE_ARGS=		-sde -Dprefix=${PREFIX} -Duseshrplib \
 JPERL_VER=	5.005
 JPERL_VER_PL=	03
 JPERL_VERSION=	${JPERL_VER}${JPERL_VER_PL}
+JPERL_ARCH=	${ARCH}-freebsd
 .if ${PORTOBJFORMAT} == "aout"
 PERL_SHLIBVER=	1.0
 .else
 PERL_SHLIBVER=	1
 .endif
-PLIST_SUB=	JPERL_VERSION=${JPERL_VERSION} JPERL_VER=${JPERL_VER}
+PLIST_SUB=	JPERL_VERSION=${JPERL_VERSION} JPERL_VER=${JPERL_VER} \
+		JPERL_ARCH=${JPERL_ARCH}
 
 MAN1= 	a2p.1 c2ph.1 h2ph.1 h2xs.1 perl.1 perl5004delta.1 \
 	perlapio.1 perlbook.1 perlbot.1 perlbug.1 perlcall.1 \
