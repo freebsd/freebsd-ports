@@ -1,18 +1,13 @@
---- gc_priv.h.orig	Wed Aug 20 16:22:54 1997
-+++ gc_priv.h	Mon Apr  6 03:25:55 1998
-@@ -49,6 +49,10 @@
- #   include "gc_hdrs.h"
+--- gc_priv.h.orig	Mon Mar 22 11:44:53 1999
++++ gc_priv.h	Tue Jul 20 02:31:51 1999
+@@ -50,8 +50,13 @@
  # endif
  
+ typedef int GC_bool;
 +# ifdef __cplusplus
 +#	define TRUE true
 +#	define FALSE false
 +# else
- # if !defined(bool) && !defined(__cplusplus)
-     typedef int bool;
-     /* This is problematic with C++ implementations that do not define bool. */
-@@ -67,6 +71,7 @@
- # endif
  # define TRUE 1
  # define FALSE 0
 +# endif

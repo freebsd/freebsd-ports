@@ -1,10 +1,11 @@
---- Makefile.orig	Wed Aug 20 17:17:10 1997
-+++ Makefile	Mon Apr  6 03:21:15 1998
-@@ -15,7 +15,33 @@
- #  Under Irix 6, you will have to specify the ABI for as if you specify
- #  it for the C compiler.
+--- Makefile.orig	Tue Jul 20 02:13:46 1999
++++ Makefile	Tue Jul 20 02:17:01 1999
+@@ -16,8 +16,35 @@
+ #  Under Irix 6, you will have to specify the ABI (-o32, -n32, or -64)
+ #  if you use something other than the default ABI on your machine.
  
--CFLAGS= -O -DNO_SIGNALS -DALL_INTERIOR_POINTERS -DATOMIC_UNCOLLECTABLE -DNO_EXECUTE_PERMISSION -DSILENT
+-CFLAGS= -O -DATOMIC_UNCOLLECTABLE -DNO_SIGNALS -DNO_EXECUTE_PERMISSION -DALL_INTERIOR_POINTERS -DSILENT
+ 
 +# We want this to be a drop-in linkable library, hence the -DREDIRECT.
 +# The new c++-t and c++-nt (test and notest) are because we don't want
 +# to fill anyone's log with leak messages! - MMCG
@@ -32,19 +33,20 @@
 +	${INSTALL_DATA} libleak.a libgc.a ${PREFIX}/lib
 +	${INSTALL_DATA} gc.h gc_cpp.h ${PREFIX}/include
 +	${INSTALL_MAN} gc.man ${PREFIX}/man/man3/gc.3
++ 
+ # For dynamic library builds, it may be necessary to add flags to generate
+ # PIC code, e.g. -fPIC on Linux.
  
- # Setjmp_test may yield overly optimistic results when compiled
- # without optimization.
-@@ -162,8 +188,6 @@
+@@ -183,8 +210,6 @@
  # not time-critical anyway.
  # Set SPECIALCFLAGS to -q nodirect_code on Encore.
  
 -all: gc.a gctest
 -
- pcr: PCR-Makefile gc_private.h gc_hdrs.h gc.h config.h mach_dep.o $(SRCS)
+ pcr: PCR-Makefile gc_private.h gc_hdrs.h gc.h gcconfig.h mach_dep.o $(SRCS)
  	make -f PCR-Makefile depend
  	make -f PCR-Makefile
-@@ -210,13 +234,18 @@
+@@ -222,13 +247,18 @@
  	./if_mach HP_PA "" $(CXX) $(CXXFLAGS) -o test_cpp $(srcdir)/test_cpp.cc gc_cpp.o gc.a -ldld
  	./if_not_there test_cpp $(CXX) $(CXXFLAGS) -o test_cpp $(srcdir)/test_cpp.cc gc_cpp.o gc.a `./threadlibs`
  
@@ -55,11 +57,11 @@
 +	@echo "Use ./test_cpp 1 to test the leak library"
 +
  c++: gc_cpp.o $(srcdir)/gc_cpp.h test_cpp
- 	rm -f on_sparc_sunos5
- 	./if_mach SPARC SUNOS5 touch on_sparc_sunos5
+ 	rm -f on_sparc_sunos5_4
+ 	./if_mach SPARC SUNOS5 touch on_sparc_sunos5_4
  	./if_mach SPARC SUNOS5 $(AR) rus gc.a gc_cpp.o
- 	./if_not_there on_sparc_sunos5 $(AR) ru gc.a gc_cpp.o
- 	./if_not_there on_sparc_sunos5 $(RANLIB) gc.a || cat /dev/null
+ 	./if_not_there on_sparc_sunos5_4 $(AR) ru gc.a gc_cpp.o
+ 	./if_not_there on_sparc_sunos5_4 $(RANLIB) gc.a || cat /dev/null
 -	./test_cpp 1
  	echo > c++
  
