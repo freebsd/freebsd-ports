@@ -7,6 +7,7 @@
     SUBDIR += bobot++
     SUBDIR += dancer-ircd
     SUBDIR += dancer-services
+    SUBDIR += darkbot
     SUBDIR += dcc
     SUBDIR += dircproxy
     SUBDIR += epic4
