@@ -24,7 +24,7 @@ DISTFILES=	gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
 		gcc-objc-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	gerald@FreeBSD.org
-COMMENT=	GNU Compiler Collection 3.2.2
+COMMENT?=	GNU Compiler Collection 3.2.2
 
 .if defined (WITH_BOUNDSCHECKING)
 # Fetch another file, but don't extract it.  Also add another patchfile.
@@ -68,6 +68,9 @@ CONFIGURE_ARGS+=	--with-system-zlib --includedir=${TARGLIB}/include/Java
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 .if defined(WANT_SHAREDLIBS)
 CONFIGURE_ARGS+=	--enable-shared
+INSTALLS_SHLIB=		yes
+LDCONFIG_DIRS=	%%PREFIX%%/lib ${TARGLIB}
+EXTRA_SHLIB=	libgcc_s
 .else
 CONFIGURE_ARGS+=	--disable-shared
 .endif
@@ -173,7 +176,7 @@ post-install:
 	${MV} -f ${PREFIX}/bin/gccbug ${PREFIX}/bin/gccbug-${PORTVERSION}
 	# These 3 libraries are moved from PREFIX/lib to avoid conflicts
 	# 	with the stock compiler.
-.for file in libstdc++ libsupc++ libg2c libfrtbegin libobjc
+.for file in libstdc++ libsupc++ libg2c libfrtbegin libobjc ${EXTRA_SHLIB}
 	${MV} -f ${PREFIX}/lib/${file}.* ${TARGLIB}
 .endfor
 	-${MV} -f ${PREFIX}/lib/ieee ${TARGLIB}
