@@ -1,0 +1,8 @@
+bkmrkconv converts Netscape-generated bookmarks.html
+into a nice tree of files that you can navigate using
+your favorite browser.
+
+WWW: http://www.dcs.warwick.ac.uk/~csube/bkmrkconv/
+Author: Andrew Flegg <jaffa@eh.org>
+
+--Will <andrews@technologist.com>
