@@ -1,14 +1,28 @@
 bin/x3270
 bin/x3270if
-lib/X11/fonts/local/3270.pcf.gz
-lib/X11/fonts/local/3270b.pcf.gz
+etc/x3270/ibm_hosts
 lib/X11/fonts/local/3270-12.pcf.gz
 lib/X11/fonts/local/3270-12b.pcf.gz
 lib/X11/fonts/local/3270-20.pcf.gz
 lib/X11/fonts/local/3270-20b.pcf.gz
-lib/X11/fonts/local/3270d.pcf.gz
-lib/X11/fonts/local/3270h.pcf.gz
-lib/X11/fonts/local/3270gt8.pcf.gz
+lib/X11/fonts/local/3270.pcf.gz
+lib/X11/fonts/local/3270b.pcf.gz
+lib/X11/fonts/local/3270e-12.pcf.gz
+lib/X11/fonts/local/3270e-12b.pcf.gz
+lib/X11/fonts/local/3270e-20.pcf.gz
+lib/X11/fonts/local/3270e-20b.pcf.gz
+lib/X11/fonts/local/3270e.pcf.gz
+lib/X11/fonts/local/3270eb.pcf.gz
+lib/X11/fonts/local/3270egt12.pcf.gz
+lib/X11/fonts/local/3270egt12b.pcf.gz
+lib/X11/fonts/local/3270egt16.pcf.gz
+lib/X11/fonts/local/3270egt16b.pcf.gz
+lib/X11/fonts/local/3270egt24.pcf.gz
+lib/X11/fonts/local/3270egt24b.pcf.gz
+lib/X11/fonts/local/3270egt32.pcf.gz
+lib/X11/fonts/local/3270egt32b.pcf.gz
+lib/X11/fonts/local/3270egt8.pcf.gz
+lib/X11/fonts/local/3270gr.pcf.gz
 lib/X11/fonts/local/3270gt12.pcf.gz
 lib/X11/fonts/local/3270gt12b.pcf.gz
 lib/X11/fonts/local/3270gt16.pcf.gz
@@ -17,11 +31,15 @@ lib/X11/fonts/local/3270gt24.pcf.gz
 lib/X11/fonts/local/3270gt24b.pcf.gz
 lib/X11/fonts/local/3270gt32.pcf.gz
 lib/X11/fonts/local/3270gt32b.pcf.gz
-lib/X11/x3270/ibm_hosts
+lib/X11/fonts/local/3270gt8.pcf.gz
+lib/X11/fonts/local/3270h.pcf.gz
+man/man1/x3270if.1
+man/man1/x3270-script.1
+man/man5/ibm_hosts.5
 @exec /bin/chmod u+w %D/lib/X11/fonts/local %D/lib/X11/fonts/local/fonts.dir
 @exec %D/bin/mkfontdir %D/lib/X11/fonts/local
 @exec /bin/chmod u=rwx,go=rx %D/lib/X11/fonts/local
 @exec /bin/chmod a=r %D/lib/X11/fonts/local/fonts.dir
 @unexec %D/bin/mkfontdir %D/lib/X11/fonts/local
 @unexec if [ `wc -c %D/lib/X11/fonts/local/fonts.dir | awk '{print $1}'` = 2 ]; then rm -f %D/lib/X11/fonts/local/fonts.dir; fi
-@dirrm lib/X11/x3270
+@dirrm etc/x3270

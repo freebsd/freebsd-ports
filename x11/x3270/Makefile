@@ -6,23 +6,30 @@
 #
 
 PORTNAME=	x3270
-PORTVERSION=	3.1.1.6
-CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	applications
+PORTVERSION=	3.3.2p1
+CATEGORIES=	x11 net
+MASTER_SITES=	http://x3270.bgp.nu/download/
+EXTRACT_SUFX=	.tgz
+DISTFILES=	${PORTNAME}-332p1${EXTRACT_SUFX}
 
-MAINTAINER=	onatan@gmail.com
+MAINTAINER=	Yonatan@xpert.com
 COMMENT=	3270 Terminal emulator
 
 BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
 RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
 
 USE_IMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--without-pr3287 --with-fontdir=local --disable-dbcs
+.if defined(WITHOUT_OPENSSL)
+CONFIGURE_ARGS+=	--disable-ssl
+.else
+USE_OPENSSL=	yes
+.endif
 
-WRKSRC=		${WRKDIR}/x3270-3.1.1
-MAN1=		x3270.1 x3270if.1 x3270-script.1 ibm_hosts.1
+WRKSRC=		${WRKDIR}/x3270-3.3
+MAN1=		x3270.1
 MANCOMPRESSED=	yes
-USE_REINPLACE=	yes
 
 pre-install:
 .if !exists(${X11BASE}/lib/X11/fonts/local)
@@ -32,15 +39,5 @@ pre-install:
 	@${ECHO} "in /etc/XF86Config."
 	@${ECHO} "*********************************************************"
 .endif
-
-#
-# This patch is to make sure that mkversion.sh can be ran on FreeBSD 4-STABLE
-# which will get $(CLIENTENVSETUP) in its CC macro.
-#
-post-configure:
-	${REINPLACE_CMD} \
-	    -e 's,sh \./mkversion\.sh $$(CC),$$(CLIENTENVSETUP) sh ./mkversion.sh %%CC%%,' \
-	    -e 's,%%CC%%,${CC},' \
-	    ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
