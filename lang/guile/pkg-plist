@@ -119,10 +119,10 @@ lib/libguilereadline-v-12.a
 lib/libguilereadline-v-12.la
 lib/libguilereadline-v-12.so
 lib/libguilereadline-v-12.so.15
-lib/libqthreads.a
-lib/libqthreads.la
-lib/libqthreads.so
-lib/libqthreads.so.15
+%%THREADS:%%lib/libqthreads.a
+%%THREADS:%%lib/libqthreads.la
+%%THREADS:%%lib/libqthreads.so
+%%THREADS:%%lib/libqthreads.so.15
 share/aclocal/guile.m4
 %%DATADIR%%/%%GUILE_VER%%/guile-procedures.txt
 %%DATADIR%%/%%GUILE_VER%%/ice-9/and-let*.scm
