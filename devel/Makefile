@@ -498,6 +498,7 @@
     SUBDIR += linux_kdump
     SUBDIR += linuxthreads
     SUBDIR += log4c
+    SUBDIR += log4cplus
     SUBDIR += log4cpp
     SUBDIR += log4j
     SUBDIR += lwp
