@@ -5731,6 +5731,7 @@ p5-Crypt-TripleDES	ports/security/p5-Crypt-TripleDES
 p5-Crypt-Twofish	ports/security/p5-Crypt-Twofish
 p5-Crypt-Twofish2	ports/security/p5-Crypt-Twofish2
 p5-Crypt-UnixCrypt	ports/security/p5-Crypt-UnixCrypt
+p5-Crypt-xDBM_File	ports/security/p5-Crypt-xDBM_File
 p5-Cstools	ports/converters/p5-Cstools
 p5-Curses	ports/devel/p5-Curses
 p5-Curses-Application	ports/devel/p5-Curses-Application
@@ -6070,6 +6071,7 @@ p5-Lingua-EN-Sentence	ports/textproc/p5-Lingua-EN-Sentence
 p5-Lingua-EN-Squeeze	ports/textproc/p5-Lingua-EN-Squeeze
 p5-Lingua-EN-Summarize	ports/textproc/p5-Lingua-EN-Summarize
 p5-Lingua-EN-Syllable	ports/textproc/p5-Lingua-EN-Syllable
+p5-Lingua-EN-Tagger	ports/textproc/p5-Lingua-EN-Tagger
 p5-Lingua-Ident	ports/textproc/p5-Lingua-Ident
 p5-Lingua-Ispell	ports/textproc/p5-Lingua-Ispell
 p5-Lingua-Preferred	ports/textproc/p5-Lingua-Preferred
@@ -6405,6 +6407,7 @@ p5-Spreadsheet-ParseExcel	ports/textproc/p5-Spreadsheet-ParseExcel
 p5-Spreadsheet-WriteExcel	ports/textproc/p5-Spreadsheet-WriteExcel
 p5-Stat-lsMode	ports/sysutils/p5-Stat-lsMode
 p5-Statistics-ChiSquare	ports/math/p5-Statistics-ChiSquare
+p5-Statistics-Contingency	ports/math/p5-Statistics-Contingency
 p5-Statistics-Descriptive	ports/math/p5-Statistics-Descriptive
 p5-Statistics-Distributions	ports/math/p5-Statistics-Distributions
 p5-Statistics-LTU	ports/math/p5-Statistics-LTU
