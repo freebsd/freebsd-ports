@@ -15,6 +15,8 @@ PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	cjh@FreeBSD.org
 
+BROKEN=		"Broken by master port update"
+
 LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
 
 MASTERDIR=	${.CURDIR}/../../net/gaim
