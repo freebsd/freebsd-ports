@@ -135,6 +135,7 @@
     SUBDIR += cvsplot
     SUBDIR += cvsps
     SUBDIR += cvsstat
+    SUBDIR += cvstrac
     SUBDIR += cvsutils
     SUBDIR += cvsweb
     SUBDIR += cvswrap
