@@ -31,13 +31,13 @@ BIBL | blas   | ?   | OPT_BLAS
 BIBL | tcl    | 8.3 | OPT_TCL
 BIBL | tk     | 8.3 | OPT_TK
 BIBL | X11    | ?   | OPT_X11
-BIBL | sys    | ?   | -Xlinker -export-dynamic PTHREAD -lutil -lm -lz
+BIBL | sys    | ?   | -Xlinker -export-dynamic PTHREAD -lutil -lm -lz -lg2c
 #
 INCL | python | 2.1 | -IHOME_PYTHON/include/pythonPYTHON_VERSION
 #
 PYTHON | python | 2.1 | HOME_PYTHON/bin/PYTHON_BIN
 #
-LINK | link | ? | %%F77%%
+LINK | link | ? | %%CC%% -v
 #
 OPTL | f90    | ?   | -v  
 #

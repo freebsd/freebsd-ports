@@ -48,6 +48,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Gnuplot:${PORTSDIR}/math/py-gnuplot \
 EXTRACT_CMD=	${TAR}
 EXTRACT_BEFORE_ARGS=	-xf
 EXTRACT_AFTER_ARGS=	# empty
+USE_GCC=	3.2
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
@@ -59,10 +60,6 @@ PKGMESSAGE=	${PKGDIR}/pkg-message.sans-astk
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-#BROKEN=		Does not build on systems prior 5.x - work in progress...
-.endif
 
 .if defined(WITH_BLAS)
 LIB_DEPENDS=	blas.1:${PORTSDIR}/math/blas
@@ -106,7 +103,11 @@ PLIST_SUB+=	HOMARD="@comment " HOMARDDIR=""
 RUN_DEPENDS+=	${PYNUMERIC}
 .endif
 
+.if ${OSVERSION} < 500039
+F77=		g77-${USE_GCC:C/\.//}
+.else
 F77?=		f77
+.endif
 FFLAGS?=	-O2
 
 TK_VER?=	8.3
