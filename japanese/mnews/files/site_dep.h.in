@@ -1,0 +1,51 @@
+/*
+ *
+ *  System      : Mini News Reader
+ *  Sub system  : Site depend define
+ *  File        : site_dep.h
+ *  Version     : 1.19
+ *
+ *  NOTE:
+ *   This file made by config.sh program.
+ *   If you want to change this file, please execute
+ *   config.sh program again.
+ *
+ */
+
+/*
+ * If you define DOMAIN_NAME, DOMAIN_NAME used in
+ * executable file, and DOMAIN_FILE does not need.
+ */
+/*
+#define	DOMAIN_NAME	"aslm.rim.or.jp"
+*/
+#define	DOMAIN_FILE	"@PREFIX@/lib/mnews/default-domain"
+#define	SERVER_FILE	"@PREFIX@/lib/mnews/default-server"
+#define	MAIL_SERVER_FILE "@PREFIX@/lib/mnews/default-mailsv"
+#define	EXT_PAGER	"@PREFIX@/bin/less"
+#define	PRINT_CODE	JIS_CODE
+#define	DEFAULT_CODE	ASCII_CODE
+#define	SAVE_CODE	JIS_CODE
+#define	EDIT_CODE	EUC_CODE
+#define	INPUT_CODE	ASCII_CODE
+#define	FCC_CODE	ASCII_CODE
+#define	PIPE_CODE	ASCII_CODE
+#define	EDITOR_COMMAND	"@PREFIX@/bin/mule -nw"
+#define	SEND_COMMAND	"/usr/sbin/sendmail -t -om -oi"
+#define	POST_COMMAND	"/usr/lib/news/inews -h"
+#define	MH_COMMAND_PATH	"@PREFIX@/bin"
+#define	JNAMES_DB	"@PREFIX@/lib/mnews/jnames"
+#define	NEWS_SPOOL	"/var/spool/news"
+#define	NEWS_LIB	"@PREFIX@/news/lib"
+#define	MAIL_SPOOL	"/var/mail"
+#define	BOARD_SPOOL	"/var/spool/board"
+#define	TMP_DIR		"/tmp"
+
+#define	NSPL_MODE	0
+#define	JAPANESE	1
+#define	X_NSUBJ_MODE	1
+#define	INEWS_SIG_MODE	1
+#define	JST_MODE	0
+#define	DNAS_MODE	0
+#define	NEWS_THREAD_MODE	1
+#define	MAIL_THREAD_MODE	1
