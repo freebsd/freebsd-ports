@@ -3,20 +3,68 @@
 # Date created:		4 December 1996
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.2 1996/12/07 23:15:48 asami Exp $
+# $Id: Makefile,v 1.3 1996/12/12 08:35:36 asami Exp $
 #
 
 DISTNAME=	jp-man-1.1
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://ftp.noc.titech.ac.jp/pub/tmp/aki/in.coming/PORTS/
+MASTER_SITES=	ftp://jaz.jp.freebsd.org/pub/FreeBSD-jp/man-jp/ \
+		ftp://ports.jp.freebsd.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
 
 MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
 
 RUN_DEPENDS=	${PREFIX}/bin/groff:${PORTSDIR}/japanese/groff \
 		jless:${PORTSDIR}/japanese/less
 
+# XPG4LIBPATH specifies the path name of the xpg4 library.
+# The xpg4 library include setlocale() function and etc. for I18N,
+# when using EUC code(e.g. ja_JP.EUC). At version 2.1.5 of FreeBSD or older,
+# there isn't the xpg4 library in system, because include C library.
+# But 2.2.0 or newer, the set of code for xpg4 was removed from C library,
+# and included in new created xpg4 libray(/usr/lib/libxpg4*) .
+# If your system have xpg4 library(libxpg4*) in /usr/lib, this patch 
+# automatically apply to srource file. If your system have xpg4 library 
+# in other directory, you must define XPG4LIBPATH. And if you don't want to
+# use xpg4 library, you must define NOUSE_XPG4LIB. At default, you don't 
+# have to define XPG4LIBPATH and NOUSE_XPG4LIB.
+# See a make rule of target pre-patch for details.
+# 
+XPG4LIBPATH?=		/usr/lib
+XPG4PATCHFILEORG=	patch-xpg4_org
+NOXPG4PATCHFILEORG=	patch-noxpg4_org
+XPG4PATCHFILE=		patch-xpg4
+XPG4PATCHSUFX=		xpg4
+
+pre-patch:
+	@rm -f ${PATCHDIR}/patch-${XPG4PATCHSUFX}
+.if !defined(NOUSE_XPG4LIB)
+	@${SED} -e "s,%xpg4_lib_path%,${XPG4LIBPATH},g" < ${FILESDIR}/${XPG4PATCHFILEORG} > ${FILESDIR}/${XPG4PATCHFILE}
+.if defined(PATCH_DEBUG)
+	@(for libfile in ${XPG4LIBPATH}/libxpg4*; do \
+		if [ ! "$$libfile" = "" ]; then \
+			${ECHO_MSG} "===>  Finding the xpg4 library in /usr/lib"; \
+			ln -sf ${FILESDIR}/${XPG4PATCHFILE} ${PATCHDIR}/patch-${XPG4PATCHSUFX}; \
+			${ECHO_MSG} "===>  Adding on a patch for to use the xpg4 libray when linking"; \
+			break 1; \
+		fi; \
+	done)
+.else
+	@(for libfile in ${XPG4LIBPATH}/libxpg4*; do \
+		if [ ! "$$libfile" = "" ]; then \
+			ln -sf ${FILESDIR}/${XPG4PATCHFILE} ${PATCHDIR}/patch-${XPG4PATCHSUFX}; \
+			break 1; \
+		fi; \
+	done)
+.endif
+.else
+	@${CP} ${FILESDIR}/${NOXPG4PATCHFILEORG} ${FILESDIR}/${XPG4PATCHFILE}
+	@ln -sf ${FILESDIR}/${XPG4PATCHFILE} ${PATCHDIR}/patch-${XPG4PATCHSUFX}
+.endif
+
 post-install:
-	@${INSTALL_DATA} /usr/share/tmac/tmac.an ${PREFIX}/share/groff/tmac
-	@${INSTALL_DATA} /usr/share/tmac/tmac.groff_an ${PREFIX}/share/groff/tmac
+	@${SETENV} CP=${CP} PKG_PREFIX=${PREFIX} /bin/sh ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+
+pre-clean:
+	@rm -f ${FILESDIR}/${XPG4PATCHFILE} ${PATCHDIR}/patch-${XPG4PATCHSUFX}
 
 .include <bsd.port.mk>
