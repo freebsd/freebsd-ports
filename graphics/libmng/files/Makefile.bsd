@@ -1,4 +1,5 @@
 LIB=	mng
+LDADD=	-lm
 
 NOPROFILE=	yes
 SHLIB_MAJOR?=	1
