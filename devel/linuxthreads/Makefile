@@ -7,7 +7,7 @@
 
 PORTNAME=	linuxthreads
 PORTVERSION=	2.2.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glibc
@@ -33,13 +33,21 @@ WRKSRC=		${WRKDIR}/${PKGNAME}
 SRC_BASE=	/usr/src
 LIBSRC_BASE=	${SRC_BASE}/lib
 
-.if !defined(WITH_CONDWAIT_PATCH)
 pre-fetch:
+.if !defined(WITH_CONDWAIT_PATCH)
 	@${ECHO}
 	@${ECHO} You can use an experimental patch to reduce the number of
 	@${ECHO} condition variable triggered context switches by defining
 	@${ECHO} WITH_CONDWAIT_PATCH
+	@${ECHO}
 .endif
+	@if test -f /usr/src/gnu/lib/libgcc/Makefile; then \
+          : ; \
+        else \
+          ${ECHO_MSG} ">>The linuxthreads port needs source code for libgcc"; \
+          ${ECHO_MSG} ">>Please install FreeBSD source code in /usr/src"; \
+	  false; \
+	fi
 
 post-extract:
 	@mv ${WRKDIR}/linuxthreads ${WRKSRC}

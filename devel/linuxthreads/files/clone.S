@@ -1,6 +1,10 @@
 	.file	"clone.S"
 #include <sys/syscall.h>
+#ifdef __FreeBSD__ >= 5
+#include <machine/asm.h>
+#else		
 #include "DEFS.h"
+#endif
 #include "SYS.h"
 #define KERNEL
 #define _KERNEL
