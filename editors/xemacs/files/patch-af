@@ -1,6 +1,6 @@
---- configure.orig	Wed Feb  9 10:41:00 2000
-+++ configure	Wed Feb 16 14:41:50 2000
-@@ -1040,6 +1040,7 @@
+--- configure.orig	Thu Apr 20 08:10:55 2000
++++ configure	Sun Jun  4 23:41:55 2000
+@@ -1041,6 +1041,7 @@
  
  case "$canonical" in
    *-*-linux*    ) opsys=linux ;;
@@ -8,12 +8,12 @@
    *-*-netbsd*   ) opsys=netbsd ;;
    *-*-openbsd*	) opsys=openbsd ;;
    *-*-nextstep* ) opsys=nextstep ;;
-@@ -11180,7 +11181,7 @@
+@@ -11308,7 +11309,7 @@
  if test "$with_database_berkdb" != "no"; then
    echo $ac_n "checking for Berkeley db.h""... $ac_c" 1>&6
- echo "configure:11183: checking for Berkeley db.h" >&5
+ echo "configure:11311: checking for Berkeley db.h" >&5
 -  for path in "db/db.h" "db.h"; do
 +  for path in "/usr/include/db.h" "db/db.h" "db.h"; do
      cat > conftest.$ac_ext <<EOF
- #line 11186 "configure"
+ #line 11314 "configure"
  #include "confdefs.h"
