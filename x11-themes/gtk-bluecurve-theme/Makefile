@@ -28,7 +28,7 @@ RH_SUBVERSION=	1
 THEMES_SUBDIRS= ${WRKSRC}/art/gtk/Bluecurve1
 
 .if defined(WITH_GTK2)
-LIB_DEPENDS+=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
+USE_GNOME+=	gtk20
 THEMES_SUBDIRS+=	${WRKSRC}/art/gtk/Bluecurve
 PLIST_SUB+=	GTK2="" GTKVERSION="2.2.0"
 .else
