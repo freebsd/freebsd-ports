@@ -28,7 +28,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_INC_LIBTOOL_VER=13
 USE_REINPLACE=	yes
-USE_SDL=	yes
+WANT_SDL=	yes
 
 CONFIGURE_ARGS=	--with-mp4v2 --with-drm
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
@@ -42,6 +42,7 @@ INSTALLS_SHLIB=	yes
 PLIST_SUB+=	WITHOUT_MPEG4IP="" PLUGIN="@comment "
 .else
 LIB_DEPENDS+=	mp4.0:${PORTSDIR}/multimedia/mpeg4ip
+USE_SDL=	sdl
 PLIST_SUB+=	WITHOUT_MPEG4IP="@comment " PLUGIN=""
 .endif
 
@@ -67,8 +68,10 @@ post-patch:
 		${SETENV} ${SCRIPTS_ENV} ${LIBTOOLIZE} --automake
 	@${REINPLACE_CMD} -e 's|$$lt_target|$$host|' \
 		${WRKSRC}/aclocal.m4
+.if !defined(WITHOUT_MPEG4IP)
 	@${REINPLACE_CMD} -e 's|<SDL|<SDL11|' \
 		${WRKSRC}/plugins/mpeg4ip/faad2.cpp
+.endif
 	@${ECHO_CMD} "SUBDIRS = libfaad common frontend plugins" > \
 		${WRKSRC}/Makefile.am
 .if ${OSVERSION} < 500000
