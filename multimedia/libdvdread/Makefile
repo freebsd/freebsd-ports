@@ -16,6 +16,7 @@ LIB_DEPENDS=	dvdcss.${DVDCSS_LIBVERSION}:${PORTSDIR}/graphics/libdvdcss
 
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 DOC_FILES=	AUTHORS COPYING NEWS README TODO
@@ -27,11 +28,11 @@ DVDCSS_LIBVERSION=	2
 
 post-patch:
 .for p in Makefile.in dvdread/Makefile.in src/Makefile.in
-	@${PERL} -pi -e 's|cd \$$\(top_srcdir\) && \$$\(AUTOMAKE\)|\#|; \
+	@${REINPLACE_CMD} -E -e 's|cd \$$\(top_srcdir\) && \$$\(AUTOMAKE\)|\#|; \
 		s|cd \$$\(srcdir\) && \$$\(ACLOCAL\)|\#|' ${WRKSRC}/${p}
 .endfor
 # update this in sync with libdvdcss shared library version
-	@${PERL} -pi -e 's|(libdvdcss.so).2|\1.${DVDCSS_LIBVERSION}|' \
+	@${REINPLACE_CMD} -E -e 's|(libdvdcss.so).2|\1.${DVDCSS_LIBVERSION}|' \
 		${WRKSRC}/dvdread/dvd_input.c
 
 post-configure:

@@ -18,6 +18,7 @@ LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
 
 USE_GTK=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --with-m4data-prefix=${PREFIX}/share
 CONFIGURE_ENV=  SDL_CONFIG="${SDL_CONFIG}" \
@@ -28,10 +29,10 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 SDL_CONFIG?=    ${LOCALBASE}/bin/sdl11-config
 
 post-patch:
-	@${PERL} -pi -e 's|SDL/|SDL11/|' \
+	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|' \
 		${WRKSRC}/rtjpeg/rtjshow.c \
 		${WRKSRC}/movtar_play.c
-	@${PERL} -pi -e 's|^(LIBS="-ljpeg )|\1 -L${LOCALBASE}/lib|; \
+	@${REINPLACE_CMD} -E -e 's|^(LIBS="-ljpeg )|\1 -L${LOCALBASE}/lib|; \
 		s|(LIBS -ljpeg)"|\1 -L${LOCALBASE}/lib"|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 

@@ -18,6 +18,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 USE_GNOMELIBS=	yes
 USE_GTK=	yes
+USE_REINPLACE=	yes
 USE_XLIB=	yes
 XFREE86_VERSION=	4
 GNU_CONFIGURE=	yes
@@ -52,21 +53,20 @@ pre-everything::
 	@${ECHO_MSG} '===>'
 
 post-patch:
-	@${PERL} -pi -e 's|(pkgconfigdir =).+?(/pkgconfig)|\1 ${LOCALBASE}/libdata\2|' \
+	@${REINPLACE_CMD} -E \
+		-e 's|(pkgconfigdir =).+(/pkgconfig)|\1 ${LOCALBASE}/libdata\2|' \
 		${WRKSRC}/Makefile.in
-	@${PERL} -pi -e 's|(-lXv)|\1 -lXext -L${X11BASE}/lib|; \
+	@${REINPLACE_CMD} -E -e 's|(-lXv)|\1 -lXext -L${X11BASE}/lib|; \
 		s@(PKG_CONFIG --(cflags|libs) )"\$$REQUIRES"@\1 gtk@' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-	@${PERL} -pi -e 's|stdint.h|sys/types.h|' \
+	@${REINPLACE_CMD} -e 's|stdint.h|sys/types.h|' \
 		${WRKSRC}/libdv/dv_types.h \
 		${WRKSRC}/libdv/encode.c
-	@${PERL} -pi -e 's|void\s+swab.+||' ${WRKSRC}/libdv/encode.c
-	@${PERL} -pi -e 's|SDL/|SDL11/|' ${WRKSRC}/playdv/display.h
-	@${PERL} -pi -e 's|malloc.h|stdlib.h|' ${WRKSRC}/encodedv/dvavi.c \
+	@${REINPLACE_CMD} -E -e 's|^void swab.+$$||' ${WRKSRC}/libdv/encode.c
+	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|' ${WRKSRC}/playdv/display.h
+	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/encodedv/dvavi.c \
 		${WRKSRC}/encodedv/dvconnect.c
-	@${PERL} -pi -e 's|(^.+?<sys/mman.h>)|#include <sys/types.h>\n\1|' \
-		${WRKSRC}/encodedv/dvconnect.c
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|' \
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' \
 		${WRKSRC}/encodedv/Makefile.in
 
 post-install:

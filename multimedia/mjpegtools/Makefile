@@ -20,6 +20,7 @@ LIB_DEPENDS=	aviplay-0.7.0:${PORTSDIR}/graphics/avifile \
 
 USE_GLIB=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=  CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS}" \
@@ -122,25 +123,25 @@ pre-everything::
 .endif
 
 post-patch:
-	@${PERL} -pi -e 's|^(pkgconfigdir = )\$$\(libdir\)/(pkgconfig)|\1${PREFIX}/libdata/\2|' \
+	@${REINPLACE_CMD} -E -e 's|^(pkgconfigdir = )\$$\(libdir\)/(pkgconfig)|\1${PREFIX}/libdata/\2|' \
 		${WRKSRC}/Makefile.in
-	@${PERL} -pi -e 's|stdint.h|sys/types.h|' \
+	@${REINPLACE_CMD} -e 's|stdint.h|sys/types.h|' \
 		${WRKSRC}/lavtools/lav2divx.cpp \
 		${WRKSRC}/lavtools/yuv2divx.cpp \
 		${WRKSRC}/lavtools/divxdec.cpp
-	@${PERL} -pi -e 's@(-l(jpeg|openquicktime|png))@-L${LOCALBASE}/lib \1@; \
+	@${REINPLACE_CMD} -E -e 's@(-l(jpeg|openquicktime|png))@-L${LOCALBASE}/lib \1@; \
 		s|(-I) (\$$with_quicktime)|\1\2/include/openquicktime|; \
 		s|(with_quicktime/)(openquicktime)(.h)|\1include/\2/\2\3|; \
 		s|-ldl||; \
 		s|(-ldv)|-L${LOCALBASE}/lib \1 ${PTHREAD_LIBS:S/"//g}|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-	@${PERL} -pi -e 's|SDL/|SDL11/|' \
+	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|' \
 		${WRKSRC}/lavtools/liblavplay.c \
 		${WRKSRC}/lavtools/yuvplay.c
 .ifdef(WITH_QUICKTIME)
-	@${PERL} -pi -e 's|^(have_openquicktime=).+|\1true|' \
+	@${REINPLACE_CMD} -E -e 's|^(have_openquicktime=).+|\1true|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-	@${PERL} -pi -e 's|HAVE_OPENQUICKTIME|__FreeBSD__|' \
+	@${REINPLACE_CMD} -e 's|HAVE_OPENQUICKTIME|__FreeBSD__|' \
 		${WRKSRC}/lavtools/lav_io.h
 .endif
 
