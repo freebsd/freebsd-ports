@@ -3,7 +3,7 @@
 # Date created:		August 31, 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.18 1999/01/23 07:05:29 vanilla Exp $
+# $Id: Makefile,v 1.19 1999/02/18 17:57:37 vanilla Exp $
 
 DISTNAME=	wdm-1.0
 CATEGORIES=	x11 windowmaker
@@ -27,7 +27,7 @@ USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	X11BASE=${X11BASE} CPPFLAGS=-I${PREFIX}/include \
 		CFLAGS="${CFLAGS} -DHAS_SETUSERCONTEXT"
-CONFIGURE_ARGS=	--with-gfx-libs="-L${PREFIX}/lib -L${LOCALBASE}/lib -lgif" \
+CONFIGURE_ARGS=	--with-gfx-libs="-L${PREFIX}/lib -L${LOCALBASE}/lib -lgif -lXpm -lpng -ltiff" \
 	--with-gfx-incs="-I${LOCALBASE}/include" \
 	--with-tiff-libs="-ljpeg" \
 	--with-logdir=/var/log --with-runlockdir=/var/run \
