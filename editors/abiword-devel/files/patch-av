@@ -1,0 +1,11 @@
+--- config/platforms/freebsd.mk.orig	Sun Jan  7 01:04:09 2001
++++ config/platforms/freebsd.mk	Sun Jan  7 01:07:26 2001
+@@ -57,7 +57,7 @@
+ endif
+ 
+ # Includes
+-OS_INCLUDES		= -I/usr/local/include
++OS_INCLUDES		= -I/usr/local/include -I$(ABI_ROOT)/../libiconv/include
+ G++INCLUDES		= -I/usr/include/g++
+ 
+ # Compiler flags

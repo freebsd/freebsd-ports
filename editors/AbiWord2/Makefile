@@ -15,14 +15,14 @@ CATEGORIES=	editors
 MASTER_SITES=	http://download.abisource.com/releases/${PORTVERSION}/src/
 DISTNAME=	abi-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} expat.tar.gz unixfonts.tar.gz \
-		wv.tar.gz abidistfiles.tar.gz
+		wv.tar.gz abidistfiles.tar.gz libiconv.tar.gz
 
 MAINTAINER=	wolman@cs.washington.edu
 
 # unzip is needed during the installation process
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
-		iconv.2:${PORTSDIR}/converters/iconv
+LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
+#		iconv.2:${PORTSDIR}/converters/iconv
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
 DIST_SUBDIR=	AbiWord
