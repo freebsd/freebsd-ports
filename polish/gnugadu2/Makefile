@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	gnugadu2
-PORTVERSION=	2.0.p7
+PORTVERSION=	2.0.p8
 CATEGORIES=	polish net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ggadu
-DISTNAME=	gg2-${PORTVERSION:S/.p7/pre7/}
+DISTNAME=	gg2-${PORTVERSION:S/.p/pre/}
 
 MAINTAINER=	smyru@heron.pl
 COMMENT=	GTK2 based Gadu-Gadu client for X11
@@ -26,6 +26,7 @@ USE_LIBTOOL_VER=13
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 WANT_GNOME=	yes
+CONFLICTS=	qhacc-*
 
 CONFIGURE_ARGS=	--with-gui \
 		--with-gadu \
@@ -40,6 +41,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 .if (${HAVE_GNOME:Mesound}!="")
 WITH_ESOUND=	yes
+.endif
+
+.if defined(WITH_GTKSPELL)
+CONFIGURE_ARGS+=	--with-gtkspell
+LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2
 .endif
 
 .if defined(WITH_DOCKLET)
