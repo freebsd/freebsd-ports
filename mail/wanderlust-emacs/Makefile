@@ -3,7 +3,7 @@
 # Date created:		7 Apr 1999
 # Whom: 		MANTANI Nobutaka <nobutaka@nobutaka.com>
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/23 19:54:50 sada Exp $
+# $Id: Makefile,v 1.2 1999/08/14 22:41:06 sada Exp $
 #
 
 DISTNAME=	wl-1.0.3
@@ -24,7 +24,7 @@ EMACS_VER=	19.34
 EMACS_LIBDIR=	share/emacs
 .endif
 
-EMACS_CMD=	${EMACS_NAME}-${EMACS_VER}
+EMACS_CMD=	${PREFIX}/bin/${EMACS_NAME}-${EMACS_VER}
 
 .if !defined(HAVE_COMMON_PORT)
 HAVE_COMMON_PORT=	no
