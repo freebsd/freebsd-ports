@@ -21,6 +21,7 @@ COMMENT=	EGCS enhanced version of the GNU compiler suite
 
 USE_BZIP2=	yes
 ONLY_FOR_ARCHS=	i386 alpha
+NO_CDROM=	'old version, not worth the cost in real estate'
 
 DEPRECATED=	"This port is no longer in use by anything in the ports collection and will be removed in the future.  Use a later release of gcc instead"
 
@@ -28,6 +29,9 @@ DEPRECATED=	"This port is no longer in use by anything in the ports collection a
 
 .if ${OSVERSION} >= 500113
 BROKEN=		"Does not compile (bad C++ code)"
+.endif
+.if ${OSVERSION} >= 500039
+WITHOUT_CPU_CFLAGS=	yes
 .endif
 
 EGCS_REV=	egcs-2.91.66
