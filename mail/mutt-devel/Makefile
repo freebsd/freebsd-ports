@@ -96,6 +96,8 @@ PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
 MAINTAINER?=	udo.schweigert@siemens.com
 COMMENT?=	The Mongrel of Mail User Agents (part Elm, Pine, Mush, mh, etc.)
 
+CONFLICTS=	mutt-[0-9]*
+
 DIST_SUBDIR=	mutt
 DOCSDIR?=	${PREFIX}/share/doc/mutt
 EXAMPLESDIR?=	${PREFIX}/share/examples/mutt
@@ -123,7 +125,6 @@ SCRIPTS_ENV=	WRKDIR="${WRKDIR}"
 
 CD_IFDEF_PATCH_VERSION=	1.5.4
 DW_PATCH_VERSION=	1.5.5
-DW_MBOX_PATCH_VERSION=	1.5.4
 .if !defined(VVV_PATCH_VERSION)
 VVV_PATCH_VERSION=	${PORTVERSION}
 .endif
