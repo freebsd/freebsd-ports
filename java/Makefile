@@ -16,6 +16,7 @@
     SUBDIR += jad
     SUBDIR += jaf
     SUBDIR += jakarta-bcel
+    SUBDIR += jakarta-commons-beanutils
     SUBDIR += jakarta-commons-cli
     SUBDIR += jakarta-commons-collections
     SUBDIR += jakarta-commons-lang
