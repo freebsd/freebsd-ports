@@ -1,9 +1,17 @@
 
 $FreeBSD$
 
---- configure.orig	Wed Mar 20 16:45:48 2002
-+++ configure	Mon Mar 25 15:05:17 2002
-@@ -7189,9 +7189,9 @@
+--- configure.orig	Thu Jun  6 14:27:24 2002
++++ configure	Fri Jun  7 19:30:22 2002
+@@ -6430,6 +6430,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -7396,9 +7397,9 @@
  
    rm -f conf.glibtest
  
@@ -15,7 +23,7 @@ $FreeBSD$
  
  for ac_prog in 'bison -y' byacc
  do
-@@ -9037,9 +9037,11 @@
+@@ -9244,9 +9245,11 @@
  
  fi
  
@@ -29,8 +37,8 @@ $FreeBSD$
  EOF
  
  else
-@@ -9047,29 +9049,23 @@
- #line 9047 "configure"
+@@ -9254,29 +9257,23 @@
+ #line 9254 "configure"
  #include "confdefs.h"
  
 -#include <fcntl.h>
@@ -72,9 +80,9 @@ $FreeBSD$
  }
  
  _ACEOF
-@@ -9084,18 +9080,16 @@
+@@ -9291,18 +9288,16 @@
    ac_status=$?
-   echo "$as_me:9085: \$? = $ac_status" >&5
+   echo "$as_me:9292: \$? = $ac_status" >&5
    (exit $ac_status); }; }; then
 -  :
 +  MAXIOV=`cat conftestval`
@@ -94,7 +102,7 @@ $FreeBSD$
  
  #######################
  # type alignment test #
-@@ -10493,7 +10487,7 @@
+@@ -10700,7 +10695,7 @@
  s,@LIB_WRAP@,$LIB_WRAP,;t t
  s,@HAVE_HOSTS_ACCESS_TRUE@,$HAVE_HOSTS_ACCESS_TRUE,;t t
  s,@HAVE_HOSTS_ACCESS_FALSE@,$HAVE_HOSTS_ACCESS_FALSE,;t t
