@@ -1,0 +1,15 @@
+This patch make the FreeBSD port build obey the host's local settings
+for C, C++ compiler and (optimization) flags.
+--- nsprpub/config/FreeBSD.mk.orig	Wed Apr 21 17:37:37 1999
++++ nsprpub/config/FreeBSD.mk	Mon Oct 11 13:49:41 1999
+@@ -24,2 +23,0 @@
+-CC			= gcc
+-CCC			= g++
+@@ -26,0 +25,5 @@
++CCC			= ${CXX}
++
++# During FreeBSD port build, CFLAGS contains all of the optimizations
++# flags desired...
++OPTIMIZER		=
+@@ -31 +33,0 @@
+-OS_REL_CFLAGS		= -mno-486 -Di386

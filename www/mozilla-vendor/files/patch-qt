@@ -1,0 +1,8 @@
+This patch is not neccessary, since the Qt support in Mozilla appears
+broken anyway (Perhaps, it needs Qt-2?). But it should stir the
+configure to the right direction...
+--- configure.orig	Tue Sep 28 17:46:31 1999
++++ configure	Mon Oct 11 15:12:52 1999
+@@ -5342 +5342 @@
+-    QT_CFLAGS="-I${QTDIR}/include/qt"
++    QT_CFLAGS="-I${QTDIR}/include/X11/qt"
