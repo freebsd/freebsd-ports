@@ -8,7 +8,8 @@
 PORTNAME=	xalf
 PORTVERSION=	0.11
 CATEGORIES=	devel
-MASTER_SITES=	http://www.lysator.liu.se/~astrand/projects/xalf/
+MASTER_SITES=	http://www.lysator.liu.se/~astrand/projects/xalf/ \
+		http://www.lysator.liu.se/~astrand/projects/xalf/old
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ade@FreeBSD.org
