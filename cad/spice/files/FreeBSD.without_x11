@@ -1,0 +1,11 @@
+# FreeBSD config exception file (non-x11 version)
+
+MAKE		= /usr/bin/make
+INTERFACE_OPTS	= -DWANT_MFB
+CC		= @CC@
+CC_OPT		+= @CFLAGS@
+LDFLAGS		+= -lm -ltermcap
+SYS_CFLAGS	= -Dbsd
+X_DIR		=
+INCX		=
+LIBX		=

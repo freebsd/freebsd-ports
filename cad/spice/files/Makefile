@@ -1,11 +1,18 @@
 #
 # $FreeBSD$
 #
+
+.ifdef WITHOUT_X11
+CONFIG=	FreeBSD.without_x11
+.else
+CONFIG=	FreeBSD
+.endif
+
 all:
-	util/build FreeBSD default
+	util/build ${CONFIG} default
 
 install:
-	util/build FreeBSD install 
+	util/build ${CONFIG} install 
 	chmod a+rx ${PREFIX}/bin/spice3 ${PREFIX}/bin/nutmeg \
 	  ${PREFIX}/bin/sconvert ${PREFIX}/bin/help	\
 	  ${PREFIX}/bin/proc2mod ${PREFIX}/bin/multidec
