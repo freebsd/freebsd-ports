@@ -1,0 +1,11 @@
+--- docs/Makefile.in.orig	Mon Nov 25 18:38:32 2002
++++ docs/Makefile.in	Mon Nov 25 18:38:42 2002
+@@ -3,7 +3,7 @@
+ srcdir = @srcdir@
+ VPATH = @srcdir@
+ 
+-all:   boa.html boa.dvi boa.info boa.txt
++all:   boa.html boa.info boa.txt
+ 
+ boa.info:	boa.texi
+ 	makeinfo --number-sections @ALLSOURCES@
