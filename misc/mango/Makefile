@@ -9,7 +9,8 @@ PORTNAME=	mango
 PORTVERSION=	0.3
 PORTREVISION=	2
 CATEGORIES=	misc
-MASTER_SITES=	http://prdownloads.sourceforge.net/mango/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=mango
 
 MAINTAINER=	jesse@cs.uni-magdeburg.de
 
