@@ -1,13 +1,13 @@
 # New ports collection makefile for: p5-PGP-Sign
-# Version required: 0.08
-# Date created: January 2, 1998
-# Whom: Don Croyle <croyle@gelemna.ft-wayne.in.us>
+# Version required:	0.09
+# Date created:		January 2, 1998
+# Whom:			Don Croyle <croyle@gelemna.ft-wayne.in.us>
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/04 03:50:45 mph Exp $
+# $Id: Makefile,v 1.2 1998/08/23 13:32:58 jseger Exp $
 #
 
-DISTNAME=	PGP-Sign-0.08
-PKGNAME=	p5-PGP-Sign-0.08
+DISTNAME=	PGP-Sign-0.09
+PKGNAME=	p5-PGP-Sign-0.09
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	PGP
