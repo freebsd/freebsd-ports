@@ -55,34 +55,10 @@ CONFIGURE_ARGS+=	--enable-popauth-file=${POPAUTH_FILE}
 
 MAN8=		teapop.8
 
-.include <bsd.port.pre.mk>
-
 ## Authentication backend
-##   WITH_LDAP: add support for authentication through OpenLDAP server
-##   WITH_LDAP_VER: OpenLDAP version to use (can be: 20 for 2.0, 21 for 2.1, 22 for 2.2 ; default 21)
+##   WITH_OPENLDAP: add support for authentication through OpenLDAP server
 ##   WITH_MYSQL: enable support for authentication from MySQL database
-##   WITH_MYSQL_VER: MySQL version to use (can be: 323 for 3.23, 40 for 4.0, 4.1 for 4.1 ; default 323)
 ##   WITH_PGSQL: enable support for authentication from PostgreSQL database
-
-MYSQL323_LIBVER=10
-MYSQL40_LIBVER=	12
-MYSQL41_LIBVER=	14
-WITH_LDAP_VER?=	21
-
-# MySQL deps hack (revision 2)
-.if defined(WITH_MYSQL_VER)
-MYSQL_VER=	${WITH_MYSQL_VER}
-.elif exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.${MYSQL_323_LIBVER})
-MYSQL_VER=	323
-.elif exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.${MYSQL40_LIBVER})
-MYSQL_VER=	40
-.elif exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.${MYSQL41_LIBVER})
-MYSQL_VER=	41
-.else
-MYSQL_VER=	323
-.endif
-
-LDAP_VER=	${WITH_LDAP_VER}
 
 .if defined(WITH_PGSQL)
 CONFIGURE_ARGS+=	--with-pgsql
@@ -90,13 +66,13 @@ LIB_DEPENDS+=		pq:${PORTSDIR}/databases/postgresql7
 .endif
 
 .if defined(WITH_MYSQL)
+USE_MYSQL=		YES
 CONFIGURE_ARGS+=	--with-mysql
-LIB_DEPENDS+=		mysqlclient.${MYSQL${MYSQL_VER}_LIBVER}:${PORTSDIR}/databases/mysql${MYSQL_VER}-client
 .endif
 
-.if defined(WITH_LDAP)
+.if defined(WITH_OPENLDAP)
+USE_OPENLDAP=		YES
 CONFIGURE_ARGS+=	--with-ldap=openldap
-LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap${LDAP_VER}-client
 .endif
 
 show-options:
@@ -110,4 +86,4 @@ post-install:
 	@${ECHO} "------------------------------------------------------------------------"
 	@${ECHO} ""
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
