@@ -90,6 +90,7 @@
     SUBDIR += cweb
     SUBDIR += cxref
     SUBDIR += ddd
+    SUBDIR += devtodo
     SUBDIR += dia2code
     SUBDIR += diffconvert
     SUBDIR += dmake
