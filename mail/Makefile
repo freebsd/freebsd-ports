@@ -17,6 +17,7 @@
     SUBDIR += elm
     SUBDIR += elm+ME
     SUBDIR += emil
+    SUBDIR += evolution
     SUBDIR += exim
     SUBDIR += exmh
     SUBDIR += exmh2

@@ -1,0 +1,35 @@
+--- camel/providers/mbox/Makefile.in.orig	Fri Jun  2 15:48:47 2000
++++ camel/providers/mbox/Makefile.in	Wed Jun 28 18:54:19 2000
+@@ -167,3 +167,3 @@
+ 
+-libcamelmbox_la_LDFLAGS = -version-info 0:0:0 -rpath $(libdir) 
++libcamelmbox_la_LDFLAGS = -avoid-version -rpath $(libdir) 
+ 
+--- camel/providers/pop3/Makefile.in.orig	Fri Jun  2 15:48:48 2000
++++ camel/providers/pop3/Makefile.in	Wed Jun 28 18:54:35 2000
+@@ -167,3 +167,3 @@
+ 
+-libcamelpop3_la_LDFLAGS = $(KRB4_LDFLAGS) -version-info 0:0:0 -rpath $(libdir) 
++libcamelpop3_la_LDFLAGS = $(KRB4_LDFLAGS) -avoid-version -rpath $(libdir) 
+ 
+--- camel/providers/sendmail/Makefile.in.orig	Fri Jun  2 15:48:49 2000
++++ camel/providers/sendmail/Makefile.in	Wed Jun 28 18:54:52 2000
+@@ -167,3 +167,3 @@
+ 
+-libcamelsendmail_la_LDFLAGS = -version-info 0:0:0 -rpath $(libdir) 
++libcamelsendmail_la_LDFLAGS = -avoid-version -rpath $(libdir) 
+ 
+--- camel/providers/smtp/Makefile.in.orig	Fri Jun  2 15:48:49 2000
++++ camel/providers/smtp/Makefile.in	Wed Jun 28 18:55:06 2000
+@@ -167,3 +167,3 @@
+ 
+-libcamelsmtp_la_LDFLAGS = -version-info 0:0:0 -rpath $(libdir) 
++libcamelsmtp_la_LDFLAGS = -avoid-version -rpath $(libdir) 
+ 
+--- camel/providers/vee/Makefile.in.orig	Fri Jun  2 15:48:50 2000
++++ camel/providers/vee/Makefile.in	Wed Jun 28 18:55:19 2000
+@@ -167,3 +167,3 @@
+ 
+-libcamelvee_la_LDFLAGS = -version-info 0:0:0 -rpath $(libdir) 
++libcamelvee_la_LDFLAGS = -avoid-version -rpath $(libdir) 
+ 
