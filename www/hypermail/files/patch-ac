@@ -1,0 +1,14 @@
+diff -r -u ../hypermail-orig/Makefile.in ./Makefile.in
+--- Makefile.in	Thu Aug 20 23:12:36 1998
++++ Makefile.in	Tue Jan  5 06:52:58 1988
+@@ -22,7 +22,7 @@
+ # Compiler to use
+ CC=@CC@
+  
+-CFLAGS=@CFLAGS@
++CFLAGS?=@CFLAGS@
+ LDFLAGS=@LDFLAGS@
+ 
+ all:   hypermail support 
+
+diff -r -u ../hypermail-orig/configure ./configure

@@ -1,0 +1,30 @@
+diff -r -u ../hypermail-orig/archive/Makefile.in archive/Makefile.in
+--- ../hypermail-orig/archive/Makefile.in	Thu Aug 20 23:12:36 1998
++++ archive/Makefile.in	Tue Jan  5 08:21:50 1988
+@@ -11,7 +11,7 @@
+ 
+ CC=@CC@
+  
+-CFLAGS=@CFLAGS@
++CFLAGS?=@CFLAGS@
+ 
+ ###################################################
+ #
+@@ -24,7 +24,7 @@
+ # This is a SAMPLE file.
+ 
+ # PROGS = hmail hrdmsg isnmail isn-rdmsg wuftpdmail wu-rdmsg nu-mail nu-rdmsg na-mail na-rdmsg
+-PROGS = htestmail htestrdmsg 
++PROGS = 
+ 
+ all: $(PROGS) 
+ 
+@@ -75,7 +75,7 @@
+ 	lint $(LINT_FLAGS) $(SOURCE) | tee Lint.out
+ 
+ #install: $(bindir)/isnmail $(bindir)/isn-rdmsg
+-install: $(bindir)/hmail $(bindir)/hrdmsg
++install: 
+ 
+ install_all: \
+ 	$(bindir)/hmail \

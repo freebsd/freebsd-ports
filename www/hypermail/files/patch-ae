@@ -1,0 +1,22 @@
+diff -r -u ../hypermail-orig/src/Makefile.in ./src/Makefile.in
+--- src/Makefile.in	Thu Aug 20 23:12:36 1998
++++ src/Makefile.in	Tue Jan  5 06:53:02 1988
+@@ -16,7 +16,7 @@
+ 
+ CC=@CC@
+  
+-CFLAGS=@CFLAGS@
++CFLAGS?=@CFLAGS@
+ LDFLAGS=@LDFLAGS@
+  
+ NETLIBS=@LIBS@
+@@ -50,7 +50,7 @@
+ 
+ $(OBJS): Makefile $(INCS)
+ 
+-install: all
++install: 
+ 	install -c -m 0755 hypermail $(bindir)
+ 
+ mail.install:
+
