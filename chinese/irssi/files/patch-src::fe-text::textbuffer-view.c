@@ -1,45 +1,35 @@
---- src/fe-text/textbuffer-view.c.orig	Fri Feb 15 22:10:10 2002
-+++ src/fe-text/textbuffer-view.c	Sun Mar  3 10:10:42 2002
-@@ -194,7 +194,7 @@
+--- src/fe-text/textbuffer-view.c.orig	Tue Oct 15 02:45:08 2002
++++ src/fe-text/textbuffer-view.c	Sat Nov 23 18:04:04 2002
+@@ -199,8 +199,14 @@
+ 		}
+ 
+ 		if (!view->utf8) {
+-			next_ptr = ptr+1;
++			/* MH */
+ 			char_len = 1;
++			if(ptr[1] != '\0' && is_big5(ptr[0], ptr[1]))
++			{
++			  char_len = 2;
++			}
++			next_ptr = ptr+char_len;
++			/*    */
+ 		} else {
+ 			char_len = 1;
+ 			while (ptr[char_len] != '\0' && char_len < 6)
+@@ -251,7 +257,15 @@
  			continue;
  		}
  
--		if (xpos == view->width && sub != NULL &&
-+		if (xpos >= view->width && sub != NULL &&
- 		    (last_space <= indent_pos || last_space <= 10) &&
- 		    view->longword_noindent) {
-                         /* long word, remove the indentation from this line */
-@@ -202,7 +202,7 @@
-                         sub->indent = 0;
- 		}
- 
--		if (xpos == view->width) {
-+		if (xpos >= view->width) {
- 			xpos = indent_func == NULL ? indent_pos :
- 				indent_func(view, line, -1);
- 
-@@ -233,12 +233,21 @@
- 		if (view->utf8)
- 			get_utf8_char(&ptr, 6);
- 
--		xpos++;
--		if (*ptr++ == ' ') {
-+		/* set line-wrap data with big5 charset */
-+		xpos ++;
-+		if (ptr[1] != '\0' && is_big5(ptr[0], ptr[1])) {
- 			last_space = xpos-1;
-+			xpos ++;
-+			if (xpos < view->width)
-+				ptr += 2;
+-		if (*ptr == ' ') {
++		/* MH */
++		if (!view->utf8 && char_len > 1)
++		{
++			last_space = xpos;
++			last_space_ptr = next_ptr;
++			last_color = color;
++		}
++		/*    */
++		else if (*ptr == ' ') {
+ 			last_space = xpos;
  			last_space_ptr = ptr;
  			last_color = color;
--		}
-+		} else if (*ptr == ' ') {
-+			last_space = xpos-1;
-+			last_space_ptr = ++ptr;
-+			last_color = color;
-+		} else
-+			ptr++;
- 	}
- 
- 	rec = g_malloc(sizeof(LINE_CACHE_REC)-sizeof(LINE_CACHE_SUB_REC) +
