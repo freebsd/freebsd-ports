@@ -1,0 +1,6 @@
+This Class::DBI plugin combines the functionality from
+Class::DBI::Plugin::CountSearch (counting objects without having
+to use an array or an iterator), and Class::DBI::AbstractSearch,
+which allows complex where-clauses a la SQL::Abstract.
+
+WWW: http://search.cpan.org/dist/Class-DBI-Plugin-AbstractCount
