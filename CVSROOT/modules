@@ -3166,6 +3166,7 @@ inkscape	ports/graphics/inkscape
 inn		ports/news/inn
 inn-current	ports/news/inn-current
 inn-stable	ports/news/inn-stable
+inplace		ports/misc/inplace
 installwatch	ports/sysutils/installwatch
 instant-server	ports/misc/instant-server
 instant-workstation	ports/misc/instant-workstation
