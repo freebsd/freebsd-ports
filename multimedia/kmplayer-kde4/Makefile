@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kmplayer
-PORTVERSION=	0.8.3.r2
+PORTVERSION=	0.8.3.r4
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	http://www.xs4all.nl/%7Ejjvrieze/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.r/rc/}
@@ -17,7 +17,6 @@ COMMENT=	KDE frontend to mplayer
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
 USE_BZIP2=	yes
-WRKSRC=		${WRKDIR}/kmplayer
 USE_KDEBASE_VER=3
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
