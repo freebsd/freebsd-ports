@@ -1,6 +1,5 @@
-@comment $FreeBSD$
-bin/MozillaFirebird
 bin/firebird
+bin/MozillaFirebird
 bin/firebird-config
 bin/firebird.rb
 lib/firebird/bin/MozillaFirebird
@@ -631,19 +630,6 @@ lib/firebird/include/mozilla-1.5/imglib2/imgILoader.h
 lib/firebird/include/mozilla-1.5/imglib2/imgIRequest.h
 lib/firebird/include/mozilla-1.5/intl/nsIStringBundle.h
 lib/firebird/include/mozilla-1.5/intl/nsIStringBundleOverride.h
-lib/firebird/include/mozilla-1.5/ipcd/ipcIClientObserver.h
-lib/firebird/include/mozilla-1.5/ipcd/ipcIClientQueryHandler.h
-lib/firebird/include/mozilla-1.5/ipcd/ipcILockNotify.h
-lib/firebird/include/mozilla-1.5/ipcd/ipcILockService.h
-lib/firebird/include/mozilla-1.5/ipcd/ipcIMessageObserver.h
-lib/firebird/include/mozilla-1.5/ipcd/ipcIService.h
-lib/firebird/include/mozilla-1.5/ipcd/ipcITransactionObserver.h
-lib/firebird/include/mozilla-1.5/ipcd/ipcITransactionService.h
-lib/firebird/include/mozilla-1.5/ipcd/ipcMessageReader.h
-lib/firebird/include/mozilla-1.5/ipcd/ipcMessageWriter.h
-lib/firebird/include/mozilla-1.5/ipcd/ipcModule.h
-lib/firebird/include/mozilla-1.5/ipcd/ipcModuleUtil.h
-lib/firebird/include/mozilla-1.5/ipcd/tmIPCModule.h
 lib/firebird/include/mozilla-1.5/jar/nsIJAR.h
 lib/firebird/include/mozilla-1.5/jar/nsIZipReader.h
 lib/firebird/include/mozilla-1.5/jar/zipfile.h
@@ -1180,7 +1166,6 @@ lib/firebird/include/mozilla-1.5/profile/nsIProfile.h
 lib/firebird/include/mozilla-1.5/profile/nsIProfileChangeStatus.h
 lib/firebird/include/mozilla-1.5/profile/nsIProfileInternal.h
 lib/firebird/include/mozilla-1.5/profile/nsIProfileStartupListener.h
-lib/firebird/include/mozilla-1.5/profilesharingsetup/nsIProfileSharingSetup.h
 lib/firebird/include/mozilla-1.5/progressDlg/nsIProgressDialog.h
 lib/firebird/include/mozilla-1.5/rdf/nsILocalStore.h
 lib/firebird/include/mozilla-1.5/rdf/nsIRDFCompositeDataSource.h
@@ -1216,10 +1201,6 @@ lib/firebird/include/mozilla-1.5/shistory/nsISHistory.h
 lib/firebird/include/mozilla-1.5/shistory/nsISHistoryInternal.h
 lib/firebird/include/mozilla-1.5/shistory/nsISHistoryListener.h
 lib/firebird/include/mozilla-1.5/sidebar/nsISidebar.h
-lib/firebird/include/mozilla-1.5/spellchecker/mozIPersonalDictionary.h
-lib/firebird/include/mozilla-1.5/spellchecker/mozISpellCheckingEngine.h
-lib/firebird/include/mozilla-1.5/spellchecker/mozISpellI18NManager.h
-lib/firebird/include/mozilla-1.5/spellchecker/mozISpellI18NUtil.h
 lib/firebird/include/mozilla-1.5/string/nsAFlatString.h
 lib/firebird/include/mozilla-1.5/string/nsASingleFragmentString.h
 lib/firebird/include/mozilla-1.5/string/nsAString.h
@@ -1324,14 +1305,6 @@ lib/firebird/include/mozilla-1.5/view/nsIView.h
 lib/firebird/include/mozilla-1.5/view/nsIViewManager.h
 lib/firebird/include/mozilla-1.5/view/nsIViewObserver.h
 lib/firebird/include/mozilla-1.5/view/nsViewsCID.h
-lib/firebird/include/mozilla-1.5/wallet/nsCPassword.h
-lib/firebird/include/mozilla-1.5/wallet/nsIKeyedStreamGenerator.h
-lib/firebird/include/mozilla-1.5/wallet/nsIPassword.h
-lib/firebird/include/mozilla-1.5/wallet/nsIPasswordSink.h
-lib/firebird/include/mozilla-1.5/wallet/nsIWalletService.h
-lib/firebird/include/mozilla-1.5/walletviewers/nsISignonViewer.h
-lib/firebird/include/mozilla-1.5/walletviewers/nsIWalletEditor.h
-lib/firebird/include/mozilla-1.5/walletviewers/nsIWalletPreview.h
 lib/firebird/include/mozilla-1.5/webbrowserpersist/nsCWebBrowserPersist.h
 lib/firebird/include/mozilla-1.5/webbrowserpersist/nsIWebBrowserPersist.h
 lib/firebird/include/mozilla-1.5/webbrwsr/nsCTooltipTextProvider.h
@@ -1748,7 +1721,6 @@ lib/firebird/lib/mozilla-1.5/components/history.xpt
 lib/firebird/lib/mozilla-1.5/components/htmlparser.xpt
 lib/firebird/lib/mozilla-1.5/components/imglib2.xpt
 lib/firebird/lib/mozilla-1.5/components/intl.xpt
-lib/firebird/lib/mozilla-1.5/components/ipcd.xpt
 lib/firebird/lib/mozilla-1.5/components/jar.xpt
 lib/firebird/lib/mozilla-1.5/components/jsconsole-clhandler.js
 lib/firebird/lib/mozilla-1.5/components/jsconsole.xpt
@@ -1762,6 +1734,7 @@ lib/firebird/lib/mozilla-1.5/components/libautoconfig.so
 lib/firebird/lib/mozilla-1.5/components/libbrowsercomps.so
 lib/firebird/lib/mozilla-1.5/components/libcaps.so
 lib/firebird/lib/mozilla-1.5/components/libchrome.so
+lib/firebird/lib/mozilla-1.5/components/libcomposer.so
 lib/firebird/lib/mozilla-1.5/components/libcookie.so
 lib/firebird/lib/mozilla-1.5/components/libdocshell.so
 lib/firebird/lib/mozilla-1.5/components/libeditor.so
@@ -1776,12 +1749,10 @@ lib/firebird/lib/mozilla-1.5/components/libgkplugin.so
 lib/firebird/lib/mozilla-1.5/components/libhtmlpars.so
 lib/firebird/lib/mozilla-1.5/components/libi18n.so
 lib/firebird/lib/mozilla-1.5/components/libimglib2.so
-lib/firebird/lib/mozilla-1.5/components/libipcdc.so
 lib/firebird/lib/mozilla-1.5/components/libjar50.so
 lib/firebird/lib/mozilla-1.5/components/libjsdom.so
 lib/firebird/lib/mozilla-1.5/components/libmork.so
 lib/firebird/lib/mozilla-1.5/components/libmozfind.so
-lib/firebird/lib/mozilla-1.5/components/libmyspell.so
 lib/firebird/lib/mozilla-1.5/components/libnecko.so
 lib/firebird/lib/mozilla-1.5/components/libnecko2.so
 lib/firebird/lib/mozilla-1.5/components/libnsappshell.so
@@ -1794,7 +1765,6 @@ lib/firebird/lib/mozilla-1.5/components/libpippki.so
 lib/firebird/lib/mozilla-1.5/components/libpref.so
 lib/firebird/lib/mozilla-1.5/components/libprofile.so
 lib/firebird/lib/mozilla-1.5/components/librdf.so
-lib/firebird/lib/mozilla-1.5/components/libspellchecker.so
 lib/firebird/lib/mozilla-1.5/components/libsystem-pref.so
 lib/firebird/lib/mozilla-1.5/components/libtoolkitcomps.so
 lib/firebird/lib/mozilla-1.5/components/libtransformiix.so
@@ -1803,8 +1773,6 @@ lib/firebird/lib/mozilla-1.5/components/libtypeaheadfind.so
 lib/firebird/lib/mozilla-1.5/components/libuconv.so
 lib/firebird/lib/mozilla-1.5/components/libucvmath.so
 lib/firebird/lib/mozilla-1.5/components/libuniversalchardet.so
-lib/firebird/lib/mozilla-1.5/components/libwallet.so
-lib/firebird/lib/mozilla-1.5/components/libwalletviewers.so
 lib/firebird/lib/mozilla-1.5/components/libwebbrwsr.so
 lib/firebird/lib/mozilla-1.5/components/libwebsrvcs.so
 lib/firebird/lib/mozilla-1.5/components/libwidget_gtk2.so
@@ -1819,8 +1787,6 @@ lib/firebird/lib/mozilla-1.5/components/lwbrk.xpt
 lib/firebird/lib/mozilla-1.5/components/mimetype.xpt
 lib/firebird/lib/mozilla-1.5/components/mozbrwsr.xpt
 lib/firebird/lib/mozilla-1.5/components/mozfind.xpt
-lib/firebird/lib/mozilla-1.5/components/myspell/en-US.aff
-lib/firebird/lib/mozilla-1.5/components/myspell/en-US.dic
 lib/firebird/lib/mozilla-1.5/components/necko.xpt
 lib/firebird/lib/mozilla-1.5/components/necko_about.xpt
 lib/firebird/lib/mozilla-1.5/components/necko_cache.xpt
@@ -1858,7 +1824,6 @@ lib/firebird/lib/mozilla-1.5/components/pref.xpt
 lib/firebird/lib/mozilla-1.5/components/prefetch.xpt
 lib/firebird/lib/mozilla-1.5/components/prefmigr.xpt
 lib/firebird/lib/mozilla-1.5/components/profile.xpt
-lib/firebird/lib/mozilla-1.5/components/profilesharingsetup.xpt
 lib/firebird/lib/mozilla-1.5/components/progressDlg.xpt
 lib/firebird/lib/mozilla-1.5/components/proxyObjInst.xpt
 lib/firebird/lib/mozilla-1.5/components/rdf.xpt
@@ -1867,8 +1832,6 @@ lib/firebird/lib/mozilla-1.5/components/satchel.xpt
 lib/firebird/lib/mozilla-1.5/components/search.xpt
 lib/firebird/lib/mozilla-1.5/components/shistory.xpt
 lib/firebird/lib/mozilla-1.5/components/sidebar.xpt
-lib/firebird/lib/mozilla-1.5/components/signonviewer.xpt
-lib/firebird/lib/mozilla-1.5/components/spellchecker.xpt
 lib/firebird/lib/mozilla-1.5/components/timebomb.xpt
 lib/firebird/lib/mozilla-1.5/components/txmgr.xpt
 lib/firebird/lib/mozilla-1.5/components/txtsvc.xpt
@@ -1878,9 +1841,6 @@ lib/firebird/lib/mozilla-1.5/components/uconv.xpt
 lib/firebird/lib/mozilla-1.5/components/unicharutil.xpt
 lib/firebird/lib/mozilla-1.5/components/uriloader.xpt
 lib/firebird/lib/mozilla-1.5/components/util.xpt
-lib/firebird/lib/mozilla-1.5/components/wallet.xpt
-lib/firebird/lib/mozilla-1.5/components/walleteditor.xpt
-lib/firebird/lib/mozilla-1.5/components/walletpreview.xpt
 lib/firebird/lib/mozilla-1.5/components/webBrowser_core.xpt
 lib/firebird/lib/mozilla-1.5/components/webbrowserpersist.xpt
 lib/firebird/lib/mozilla-1.5/components/webshell_idls.xpt
@@ -1907,7 +1867,6 @@ lib/firebird/lib/mozilla-1.5/defaults/autoconfig/prefcalls.js
 lib/firebird/lib/mozilla-1.5/defaults/pref/all.js
 lib/firebird/lib/mozilla-1.5/defaults/pref/editor.js
 lib/firebird/lib/mozilla-1.5/defaults/pref/mailnews.js
-lib/firebird/lib/mozilla-1.5/defaults/pref/non-shared.txt
 lib/firebird/lib/mozilla-1.5/defaults/pref/security-prefs.js
 lib/firebird/lib/mozilla-1.5/defaults/pref/unix.js
 lib/firebird/lib/mozilla-1.5/defaults/pref/xpinstall.js
@@ -1925,22 +1884,12 @@ lib/firebird/lib/mozilla-1.5/defaults/profile/localstore.rdf
 lib/firebird/lib/mozilla-1.5/defaults/profile/mimeTypes.rdf
 lib/firebird/lib/mozilla-1.5/defaults/profile/panels.rdf
 lib/firebird/lib/mozilla-1.5/defaults/profile/search.rdf
-lib/firebird/lib/mozilla-1.5/defaults/wallet/DistinguishedSchema.tbl
-lib/firebird/lib/mozilla-1.5/defaults/wallet/FieldSchema.tbl
-lib/firebird/lib/mozilla-1.5/defaults/wallet/PositionalSchema.tbl
-lib/firebird/lib/mozilla-1.5/defaults/wallet/SchemaConcat.tbl
-lib/firebird/lib/mozilla-1.5/defaults/wallet/SchemaStrings.tbl
-lib/firebird/lib/mozilla-1.5/defaults/wallet/StateSchema.tbl
-lib/firebird/lib/mozilla-1.5/defaults/wallet/VcardSchema.tbl
 lib/firebird/lib/mozilla-1.5/icons/mozicon16.xpm
 lib/firebird/lib/mozilla-1.5/icons/mozicon50.xpm
-lib/firebird/lib/mozilla-1.5/ipc/modules/liblockmodule.so
-lib/firebird/lib/mozilla-1.5/ipc/modules/libtransmngr.so
 lib/firebird/lib/mozilla-1.5/libgkgfx.so
 lib/firebird/lib/mozilla-1.5/libgtkembedmoz.so
 lib/firebird/lib/mozilla-1.5/libgtkxtbin.so
 lib/firebird/lib/mozilla-1.5/libjsj.so
-lib/firebird/lib/mozilla-1.5/liblockmodule.so
 lib/firebird/lib/mozilla-1.5/libmozjs.so
 lib/firebird/lib/mozilla-1.5/libnspr4.so
 lib/firebird/lib/mozilla-1.5/libnss3.so
@@ -1952,16 +1901,15 @@ lib/firebird/lib/mozilla-1.5/libsmime3.so
 lib/firebird/lib/mozilla-1.5/libsoftokn3.chk
 lib/firebird/lib/mozilla-1.5/libsoftokn3.so
 lib/firebird/lib/mozilla-1.5/libssl3.so
-lib/firebird/lib/mozilla-1.5/libtransmngr.so
 lib/firebird/lib/mozilla-1.5/libxlibrgb.so
 lib/firebird/lib/mozilla-1.5/libxpcom.so
 lib/firebird/lib/mozilla-1.5/libxpcom_compat.so
 lib/firebird/lib/mozilla-1.5/libxpistub.so
 lib/firebird/lib/mozilla-1.5/mozilla-xremote-client
-lib/firebird/lib/mozilla-1.5/mozipcd
 lib/firebird/lib/mozilla-1.5/plugins/libnullplugin.so
 lib/firebird/lib/mozilla-1.5/regchrome
 lib/firebird/lib/mozilla-1.5/regxpcom
+lib/firebird/lib/mozilla-1.5/res/EditorOverride.css
 lib/firebird/lib/mozilla-1.5/res/arrow.gif
 lib/firebird/lib/mozilla-1.5/res/arrowd.gif
 lib/firebird/lib/mozilla-1.5/res/broken-image.gif
@@ -1989,6 +1937,7 @@ lib/firebird/lib/mozilla-1.5/res/fonts/mathfontMath4.properties
 lib/firebird/lib/mozilla-1.5/res/fonts/mathfontPUA.properties
 lib/firebird/lib/mozilla-1.5/res/fonts/mathfontSymbol.properties
 lib/firebird/lib/mozilla-1.5/res/forms.css
+lib/firebird/lib/mozilla-1.5/res/grabber.gif
 lib/firebird/lib/mozilla-1.5/res/html.css
 lib/firebird/lib/mozilla-1.5/res/html/gopher-audio.gif
 lib/firebird/lib/mozilla-1.5/res/html/gopher-binary.gif
@@ -2091,6 +2040,24 @@ lib/firebird/lib/mozilla-1.5/res/samples/treeTest1.xul
 lib/firebird/lib/mozilla-1.5/res/samples/widgets.xul
 lib/firebird/lib/mozilla-1.5/res/samples/xpmenu.xul
 lib/firebird/lib/mozilla-1.5/res/samples/xulTest.css
+lib/firebird/lib/mozilla-1.5/res/table-add-column-after-active.gif
+lib/firebird/lib/mozilla-1.5/res/table-add-column-after-hover.gif
+lib/firebird/lib/mozilla-1.5/res/table-add-column-after.gif
+lib/firebird/lib/mozilla-1.5/res/table-add-column-before-active.gif
+lib/firebird/lib/mozilla-1.5/res/table-add-column-before-hover.gif
+lib/firebird/lib/mozilla-1.5/res/table-add-column-before.gif
+lib/firebird/lib/mozilla-1.5/res/table-add-row-after-active.gif
+lib/firebird/lib/mozilla-1.5/res/table-add-row-after-hover.gif
+lib/firebird/lib/mozilla-1.5/res/table-add-row-after.gif
+lib/firebird/lib/mozilla-1.5/res/table-add-row-before-active.gif
+lib/firebird/lib/mozilla-1.5/res/table-add-row-before-hover.gif
+lib/firebird/lib/mozilla-1.5/res/table-add-row-before.gif
+lib/firebird/lib/mozilla-1.5/res/table-remove-column-active.gif
+lib/firebird/lib/mozilla-1.5/res/table-remove-column-hover.gif
+lib/firebird/lib/mozilla-1.5/res/table-remove-column.gif
+lib/firebird/lib/mozilla-1.5/res/table-remove-row-active.gif
+lib/firebird/lib/mozilla-1.5/res/table-remove-row-hover.gif
+lib/firebird/lib/mozilla-1.5/res/table-remove-row.gif
 lib/firebird/lib/mozilla-1.5/res/throbber/anim.gif
 lib/firebird/lib/mozilla-1.5/res/throbber/anims00.gif
 lib/firebird/lib/mozilla-1.5/res/throbber/anims01.gif
@@ -2155,19 +2122,7 @@ lib/firebird/share/idl/mozilla-1.5/imgIDecoderObserver.idl
 lib/firebird/share/idl/mozilla-1.5/imgILoad.idl
 lib/firebird/share/idl/mozilla-1.5/imgILoader.idl
 lib/firebird/share/idl/mozilla-1.5/imgIRequest.idl
-lib/firebird/share/idl/mozilla-1.5/ipcIClientObserver.idl
-lib/firebird/share/idl/mozilla-1.5/ipcIClientQueryHandler.idl
-lib/firebird/share/idl/mozilla-1.5/ipcILockNotify.idl
-lib/firebird/share/idl/mozilla-1.5/ipcILockService.idl
-lib/firebird/share/idl/mozilla-1.5/ipcIMessageObserver.idl
-lib/firebird/share/idl/mozilla-1.5/ipcIService.idl
-lib/firebird/share/idl/mozilla-1.5/ipcITransactionObserver.idl
-lib/firebird/share/idl/mozilla-1.5/ipcITransactionService.idl
 lib/firebird/share/idl/mozilla-1.5/mozIJSSubScriptLoader.idl
-lib/firebird/share/idl/mozilla-1.5/mozIPersonalDictionary.idl
-lib/firebird/share/idl/mozilla-1.5/mozISpellCheckingEngine.idl
-lib/firebird/share/idl/mozilla-1.5/mozISpellI18NManager.idl
-lib/firebird/share/idl/mozilla-1.5/mozISpellI18NUtil.idl
 lib/firebird/share/idl/mozilla-1.5/mozITXTToHTMLConv.idl
 lib/firebird/share/idl/mozilla-1.5/nsCDefaultURIFixup.idl
 lib/firebird/share/idl/mozilla-1.5/nsCDocShell.idl
@@ -2633,7 +2588,6 @@ lib/firebird/share/idl/mozilla-1.5/nsIJVMAuthTools.idl
 lib/firebird/share/idl/mozilla-1.5/nsIJVMConfigManager.idl
 lib/firebird/share/idl/mozilla-1.5/nsIJVMManager.idl
 lib/firebird/share/idl/mozilla-1.5/nsIJVMPluginInstance.idl
-lib/firebird/share/idl/mozilla-1.5/nsIKeyedStreamGenerator.idl
 lib/firebird/share/idl/mozilla-1.5/nsIKeygenThread.idl
 lib/firebird/share/idl/mozilla-1.5/nsILDAPSyncQuery.idl
 lib/firebird/share/idl/mozilla-1.5/nsILanguageAtom.idl
@@ -2679,7 +2633,6 @@ lib/firebird/share/idl/mozilla-1.5/nsIPKIParamBlock.idl
 lib/firebird/share/idl/mozilla-1.5/nsIPassword.idl
 lib/firebird/share/idl/mozilla-1.5/nsIPasswordManager.idl
 lib/firebird/share/idl/mozilla-1.5/nsIPasswordManagerInternal.idl
-lib/firebird/share/idl/mozilla-1.5/nsIPasswordSink.idl
 lib/firebird/share/idl/mozilla-1.5/nsIPermission.idl
 lib/firebird/share/idl/mozilla-1.5/nsIPermissionManager.idl
 lib/firebird/share/idl/mozilla-1.5/nsIPersistentProperties2.idl
@@ -2727,7 +2680,6 @@ lib/firebird/share/idl/mozilla-1.5/nsIProcess.idl
 lib/firebird/share/idl/mozilla-1.5/nsIProfile.idl
 lib/firebird/share/idl/mozilla-1.5/nsIProfileChangeStatus.idl
 lib/firebird/share/idl/mozilla-1.5/nsIProfileInternal.idl
-lib/firebird/share/idl/mozilla-1.5/nsIProfileSharingSetup.idl
 lib/firebird/share/idl/mozilla-1.5/nsIProfileStartupListener.idl
 lib/firebird/share/idl/mozilla-1.5/nsIProgrammingLanguage.idl
 lib/firebird/share/idl/mozilla-1.5/nsIProgressDialog.idl
@@ -2852,7 +2804,6 @@ lib/firebird/share/idl/mozilla-1.5/nsISerializable.idl
 lib/firebird/share/idl/mozilla-1.5/nsIServiceManager.idl
 lib/firebird/share/idl/mozilla-1.5/nsISidebar.idl
 lib/firebird/share/idl/mozilla-1.5/nsISignatureVerifier.idl
-lib/firebird/share/idl/mozilla-1.5/nsISignonViewer.idl
 lib/firebird/share/idl/mozilla-1.5/nsISimpleEnumerator.idl
 lib/firebird/share/idl/mozilla-1.5/nsISimpleStreamListener.idl
 lib/firebird/share/idl/mozilla-1.5/nsISocketProvider.idl
@@ -2933,9 +2884,6 @@ lib/firebird/share/idl/mozilla-1.5/nsIWSDL.idl
 lib/firebird/share/idl/mozilla-1.5/nsIWSDLLoader.idl
 lib/firebird/share/idl/mozilla-1.5/nsIWSDLSOAPBinding.idl
 lib/firebird/share/idl/mozilla-1.5/nsIWSPInterfaceInfoService.idl
-lib/firebird/share/idl/mozilla-1.5/nsIWalletEditor.idl
-lib/firebird/share/idl/mozilla-1.5/nsIWalletPreview.idl
-lib/firebird/share/idl/mozilla-1.5/nsIWalletService.idl
 lib/firebird/share/idl/mozilla-1.5/nsIWeakReference.idl
 lib/firebird/share/idl/mozilla-1.5/nsIWebBrowser.idl
 lib/firebird/share/idl/mozilla-1.5/nsIWebBrowserChrome.idl
@@ -3003,10 +2951,11 @@ lib/firebird/share/idl/mozilla-1.5/xpccomponents.idl
 lib/firebird/share/idl/mozilla-1.5/xpcexception.idl
 lib/firebird/share/idl/mozilla-1.5/xpcjsid.idl
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/US/locale/US/browser-region || true
-@exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/US/locale/US/communicator-region/wallet || true
+@exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/US/locale/US/communicator-region || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/US/locale/US/global-region || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/US/locale/US/navigator-region || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/browser/content/browser/bookmarks || true
+@exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/browser/content/browser/cookieviewer || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/browser/content/browser/downloads || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/browser/content/browser/history || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/browser/content/browser/pref || true
@@ -3042,6 +2991,8 @@ lib/firebird/share/idl/mozilla-1.5/xpcjsid.idl
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/classic/skin/classic/messenger/icons || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/classic/skin/classic/messenger/messengercompose || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/classic/skin/classic/messenger/smime/icons || true
+@exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/classic/skin/classic/mozapps/downloads || true
+@exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/classic/skin/classic/mozapps/pref || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/classic/skin/classic/navigator/btn1 || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/classic/skin/classic/navigator/icons || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/comm/content/autoconfig || true
@@ -3057,7 +3008,6 @@ lib/firebird/share/idl/mozilla-1.5/xpcjsid.idl
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/comm/content/communicator/search || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/comm/content/communicator/sidebar || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/comm/content/communicator/timebomb || true
-@exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/comm/content/communicator/wallet || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/comm/content/communicator/xml || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/comm/content/communicator/xpinstall || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/comm/content/cookie || true
@@ -3066,13 +3016,13 @@ lib/firebird/share/idl/mozilla-1.5/xpcjsid.idl
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/comm/content/navigator-region || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/comm/content/necko || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/comm/content/p3p || true
-@exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/comm/content/wallet || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/comm/content/xbl-marquee || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/embed-sample/content/embed || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/embed-sample/locale/en-US/embed || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/embed-sample/skin/classic/embed || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/autoconfig || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/browser/bookmarks || true
+@exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/browser/cookieviewer || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/browser/downloads || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/browser/history || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/browser/pref || true
@@ -3086,17 +3036,18 @@ lib/firebird/share/idl/mozilla-1.5/xpcjsid.idl
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/communicator/security || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/communicator/sidebar || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/communicator/timebomb || true
-@exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/communicator/wallet || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/communicator/webservices || true
+@exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/communicator/xml || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/communicator/xpinstall || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/cookie || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/global || true
+@exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/mozapps/downloads || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/navigator || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/necko || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/p3p || true
+@exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/passwordmgr || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/pipnss || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/pippki || true
-@exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/wallet || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/en-mac/locale/en-US/communicator-platform/pref || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/en-mac/locale/en-US/global-platform || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/en-mac/locale/en-US/navigator-platform || true
@@ -3112,6 +3063,10 @@ lib/firebird/share/idl/mozilla-1.5/xpcjsid.idl
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/toolkit/content/global-platform || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/toolkit/content/global-region || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/toolkit/content/global/widgets || true
+@exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/toolkit/content/mozapps/downloads || true
+@exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/toolkit/content/passwordmgr || true
+@unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/toolkit/content/passwordmgr || true
+@unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/toolkit/content/mozapps/downloads || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/toolkit/content/global/widgets || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/toolkit/content/global-region || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/toolkit/content/global-platform || true
@@ -3127,17 +3082,18 @@ lib/firebird/share/idl/mozilla-1.5/xpcjsid.idl
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/en-mac/locale/en-US/navigator-platform || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/en-mac/locale/en-US/global-platform || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/en-mac/locale/en-US/communicator-platform/pref || true
-@unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/wallet || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/pippki || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/pipnss || true
+@unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/passwordmgr || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/p3p || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/necko || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/navigator || true
+@unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/mozapps/downloads || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/global || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/cookie || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/communicator/xpinstall || true
+@unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/communicator/xml || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/communicator/webservices || true
-@unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/communicator/wallet || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/communicator/timebomb || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/communicator/sidebar || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/communicator/security || true
@@ -3151,13 +3107,13 @@ lib/firebird/share/idl/mozilla-1.5/xpcjsid.idl
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/browser/pref || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/browser/history || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/browser/downloads || true
+@unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/browser/cookieviewer || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/browser/bookmarks || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/autoconfig || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/embed-sample/skin/classic/embed || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/embed-sample/locale/en-US/embed || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/embed-sample/content/embed || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/comm/content/xbl-marquee || true
-@unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/comm/content/wallet || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/comm/content/p3p || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/comm/content/necko || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/comm/content/navigator-region || true
@@ -3166,7 +3122,6 @@ lib/firebird/share/idl/mozilla-1.5/xpcjsid.idl
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/comm/content/cookie || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/comm/content/communicator/xpinstall || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/comm/content/communicator/xml || true
-@unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/comm/content/communicator/wallet || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/comm/content/communicator/timebomb || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/comm/content/communicator/sidebar || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/comm/content/communicator/search || true
@@ -3182,6 +3137,8 @@ lib/firebird/share/idl/mozilla-1.5/xpcjsid.idl
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/comm/content/autoconfig || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/classic/skin/classic/navigator/icons || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/classic/skin/classic/navigator/btn1 || true
+@unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/classic/skin/classic/mozapps/pref || true
+@unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/classic/skin/classic/mozapps/downloads || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/classic/skin/classic/messenger/smime/icons || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/classic/skin/classic/messenger/messengercompose || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/classic/skin/classic/messenger/icons || true
@@ -3217,10 +3174,11 @@ lib/firebird/share/idl/mozilla-1.5/xpcjsid.idl
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/browser/content/browser/pref || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/browser/content/browser/history || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/browser/content/browser/downloads || true
+@unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/browser/content/browser/cookieviewer || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/browser/content/browser/bookmarks || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/US/locale/US/navigator-region || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/US/locale/US/global-region || true
-@unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/US/locale/US/communicator-region/wallet || true
+@unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/US/locale/US/communicator-region || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/US/locale/US/browser-region || true
 @dirrm lib/firebird/share/idl/mozilla-1.5
 @dirrm lib/firebird/share/idl
@@ -3239,10 +3197,7 @@ lib/firebird/share/idl/mozilla-1.5/xpcjsid.idl
 @dirrm lib/firebird/lib/mozilla-1.5/res/builtin
 @dirrm lib/firebird/lib/mozilla-1.5/res
 @dirrm lib/firebird/lib/mozilla-1.5/plugins
-@dirrm lib/firebird/lib/mozilla-1.5/ipc/modules
-@dirrm lib/firebird/lib/mozilla-1.5/ipc
 @dirrm lib/firebird/lib/mozilla-1.5/icons
-@dirrm lib/firebird/lib/mozilla-1.5/defaults/wallet
 @dirrm lib/firebird/lib/mozilla-1.5/defaults/profile/chrome
 @dirrm lib/firebird/lib/mozilla-1.5/defaults/profile/US/chrome
 @dirrm lib/firebird/lib/mozilla-1.5/defaults/profile/US
@@ -3250,10 +3205,7 @@ lib/firebird/share/idl/mozilla-1.5/xpcjsid.idl
 @dirrm lib/firebird/lib/mozilla-1.5/defaults/pref
 @dirrm lib/firebird/lib/mozilla-1.5/defaults/autoconfig
 @dirrm lib/firebird/lib/mozilla-1.5/defaults
-@dirrm lib/firebird/lib/mozilla-1.5/components/myspell
 @dirrm lib/firebird/lib/mozilla-1.5/components
-@dirrm lib/firebird/lib/mozilla-1.5/chrome/toolkit/content/passwordmgr
-@dirrm lib/firebird/lib/mozilla-1.5/chrome/toolkit/content/mozapps/downloads
 @dirrm lib/firebird/lib/mozilla-1.5/chrome/toolkit/content/mozapps
 @dirrm lib/firebird/lib/mozilla-1.5/chrome/toolkit/content/global
 @dirrm lib/firebird/lib/mozilla-1.5/chrome/toolkit/content
@@ -3280,12 +3232,8 @@ lib/firebird/share/idl/mozilla-1.5/xpcjsid.idl
 @dirrm lib/firebird/lib/mozilla-1.5/chrome/en-mac/locale/en-US
 @dirrm lib/firebird/lib/mozilla-1.5/chrome/en-mac/locale
 @dirrm lib/firebird/lib/mozilla-1.5/chrome/en-mac
-@dirrm lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/passwordmgr
-@dirrm lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/mozapps/downloads
 @dirrm lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/mozapps
-@dirrm lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/communicator/xml
 @dirrm lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/communicator
-@dirrm lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/browser/cookieviewer
 @dirrm lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US/browser
 @dirrm lib/firebird/lib/mozilla-1.5/chrome/en-US/locale/en-US
 @dirrm lib/firebird/lib/mozilla-1.5/chrome/en-US/locale
@@ -3300,8 +3248,6 @@ lib/firebird/share/idl/mozilla-1.5/xpcjsid.idl
 @dirrm lib/firebird/lib/mozilla-1.5/chrome/comm/content
 @dirrm lib/firebird/lib/mozilla-1.5/chrome/comm
 @dirrm lib/firebird/lib/mozilla-1.5/chrome/classic/skin/classic/navigator
-@dirrm lib/firebird/lib/mozilla-1.5/chrome/classic/skin/classic/mozapps/pref
-@dirrm lib/firebird/lib/mozilla-1.5/chrome/classic/skin/classic/mozapps/downloads
 @dirrm lib/firebird/lib/mozilla-1.5/chrome/classic/skin/classic/mozapps
 @dirrm lib/firebird/lib/mozilla-1.5/chrome/classic/skin/classic/messenger/smime
 @dirrm lib/firebird/lib/mozilla-1.5/chrome/classic/skin/classic/messenger/addressbook
@@ -3314,11 +3260,9 @@ lib/firebird/share/idl/mozilla-1.5/xpcjsid.idl
 @dirrm lib/firebird/lib/mozilla-1.5/chrome/classic/skin/classic
 @dirrm lib/firebird/lib/mozilla-1.5/chrome/classic/skin
 @dirrm lib/firebird/lib/mozilla-1.5/chrome/classic
-@dirrm lib/firebird/lib/mozilla-1.5/chrome/browser/content/browser/cookieviewer
 @dirrm lib/firebird/lib/mozilla-1.5/chrome/browser/content/browser
 @dirrm lib/firebird/lib/mozilla-1.5/chrome/browser/content
 @dirrm lib/firebird/lib/mozilla-1.5/chrome/browser
-@dirrm lib/firebird/lib/mozilla-1.5/chrome/US/locale/US/communicator-region
 @dirrm lib/firebird/lib/mozilla-1.5/chrome/US/locale/US
 @dirrm lib/firebird/lib/mozilla-1.5/chrome/US/locale
 @dirrm lib/firebird/lib/mozilla-1.5/chrome/US
@@ -3344,8 +3288,6 @@ lib/firebird/share/idl/mozilla-1.5/xpcjsid.idl
 @dirrm lib/firebird/include/mozilla-1.5/webshell
 @dirrm lib/firebird/include/mozilla-1.5/webbrwsr
 @dirrm lib/firebird/include/mozilla-1.5/webbrowserpersist
-@dirrm lib/firebird/include/mozilla-1.5/walletviewers
-@dirrm lib/firebird/include/mozilla-1.5/wallet
 @dirrm lib/firebird/include/mozilla-1.5/view
 @dirrm lib/firebird/include/mozilla-1.5/util
 @dirrm lib/firebird/include/mozilla-1.5/uriloader
@@ -3366,14 +3308,12 @@ lib/firebird/share/idl/mozilla-1.5/xpcjsid.idl
 @dirrm lib/firebird/include/mozilla-1.5/toolkitcomps
 @dirrm lib/firebird/include/mozilla-1.5/system-pref
 @dirrm lib/firebird/include/mozilla-1.5/string
-@dirrm lib/firebird/include/mozilla-1.5/spellchecker
 @dirrm lib/firebird/include/mozilla-1.5/sidebar
 @dirrm lib/firebird/include/mozilla-1.5/shistory
 @dirrm lib/firebird/include/mozilla-1.5/satchel
 @dirrm lib/firebird/include/mozilla-1.5/rdfutil
 @dirrm lib/firebird/include/mozilla-1.5/rdf
 @dirrm lib/firebird/include/mozilla-1.5/progressDlg
-@dirrm lib/firebird/include/mozilla-1.5/profilesharingsetup
 @dirrm lib/firebird/include/mozilla-1.5/profile
 @dirrm lib/firebird/include/mozilla-1.5/profdirserviceprovider
 @dirrm lib/firebird/include/mozilla-1.5/prefmigr
@@ -3405,7 +3345,6 @@ lib/firebird/share/idl/mozilla-1.5/xpcjsid.idl
 @dirrm lib/firebird/include/mozilla-1.5/js
 @dirrm lib/firebird/include/mozilla-1.5/java
 @dirrm lib/firebird/include/mozilla-1.5/jar
-@dirrm lib/firebird/include/mozilla-1.5/ipcd
 @dirrm lib/firebird/include/mozilla-1.5/intl
 @dirrm lib/firebird/include/mozilla-1.5/imglib2
 @dirrm lib/firebird/include/mozilla-1.5/htmlparser
