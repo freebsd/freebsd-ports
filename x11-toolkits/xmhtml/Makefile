@@ -3,11 +3,10 @@
 # Date created:		18 Feb 1999
 # Whom:			Peter Hawkins <thepish@freebsd.org>
 #
-# $Id: Makefile,v 1.3 1999/02/18 15:02:42 thepish Exp $
+# $Id: Makefile,v 1.1.1.1 1999/02/21 03:22:20 thepish Exp $
 #
 
 DISTNAME=	XmHTML-1.1.0
-
 CATEGORIES=	x11 www
 MASTER_SITES=	ftp://crl.nmsu.edu/pub/XmHTML/ \
 		ftp://ftp.ist.co.uk/pub/motif/XmHTML/ \
@@ -24,7 +23,6 @@ USE_IMAKE=	yes
 EXMP_DIR=	${PREFIX}/share/examples/${DISTNAME}/
 DOCS_DIR=	${PREFIX}/share/doc/${DISTNAME}/
 
-
 pre-install:
 	${ECHO} "installing examples into ${EXMP_DIR}"
 	@ ${MKDIR} ${EXMP_DIR}
@@ -35,6 +33,5 @@ pre-install:
 
 post-install:
 	@ ${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
-
 
 .include <bsd.port.mk>
