@@ -1,12 +1,12 @@
 # New ports collection makefile for:	yafc
-# Version required:	0.5.1
 # Date created:		10 June 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	yafc-0.5.1
+PORTNAME=	yafc
+PORTVERSION=	0.5.1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://mayer.physto.se/pub/yafc/
 

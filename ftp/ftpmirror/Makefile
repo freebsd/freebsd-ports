@@ -1,12 +1,12 @@
 # New ports collection makefile for:	ftpmirror
-# Version required:	1.96
 # Date created:		10 January 1999
 # Whom:			Yasuhiro Fukuma <yasuf@big.or.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ftpmirror-1.96
+PORTNAME=	ftpmirror
+PORTVERSION=	1.96
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.intec.co.jp/pub/utils/ftpmirror/beta/
 

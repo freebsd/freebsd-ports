@@ -1,11 +1,12 @@
 # New ports collection makefile for:	curl
-# Version required:     6.5.2
 # Date created:		12 December 1998
 # Whom:			Neil Blakey-Milner <nbm@rucus.ru.ac.za>
 #
 # $FreeBSD$
+#
 
-DISTNAME=	curl-6.5.2
+PORTNAME=	curl
+PORTVERSION=	6.5.2
 CATEGORIES=	ftp www
 MASTER_SITES=	http://curl.haxx.nu/stuff/ \
 		ftp://ftp.rhrz.uni-bonn.de/pub-koeln/net/inet/ \

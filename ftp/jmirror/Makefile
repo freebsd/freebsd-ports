@@ -1,12 +1,12 @@
 # New ports collection makefile for:	jmirror
-# Version required:	1.0b
 # Date Created:		4 Febuary 1999
 # Whom:			Justin Robinson
 #
 # $FreeBSD$
 #
 
-DISTNAME=	jmirror-1.0b
+PORTNAME=	jmirror
+PORTVERSION=	1.0b
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.ruin.org/pub/All/
 

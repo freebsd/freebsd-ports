@@ -1,19 +1,19 @@
 # New ports collection makefile for:    ncftp2
-# Version required:     2.4.3
 # Date created:         4 Nov 1994
 # Whom:                 ache
 #
 # $FreeBSD$
 #
 
-DISTNAME=       ncftp-2.4.3
+PORTNAME=	ncftp
+PORTVERSION=	2.4.3
 CATEGORIES=	ftp
-MASTER_SITES=   ftp://ftp.ncftp.com/ncftp/
+MASTER_SITES=	ftp://ftp.ncftp.com/ncftp/
 
 MAINTAINER=	ache@FreeBSD.org
 
-GNU_CONFIGURE=  yes
-CONFIGURE_ENV=  ac_cv_func_getmaxyx=yes ac_cv_lib_readline=yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	ac_cv_func_getmaxyx=yes ac_cv_lib_readline=yes
 MAN1=		ncftp2.1
 
 do-install:

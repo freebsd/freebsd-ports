@@ -1,19 +1,19 @@
 # New ports collection makefile for:    omi
 # http://fromme.com/omi/
-# Version required:     alpha
 # Date created:		19 August 1995
 # Whom:                 ache
 #
 # $FreeBSD$
 #
 
-DISTNAME=       omi-alpha-9
+PORTNAME=	omi
+PORTVERSION=	alpha-9
 CATEGORIES=	ftp
-MASTER_SITES=   http://dorifer.heim3.tu-clausthal.de/~olli/omi/
+MASTER_SITES=	http://dorifer.heim3.tu-clausthal.de/~olli/omi/
 
-MAINTAINER=     ache@FreeBSD.org
+MAINTAINER=	ache@FreeBSD.org
 
-ALL_TARGET=     freebsd
+ALL_TARGET=	freebsd
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/omi ${PREFIX}/bin

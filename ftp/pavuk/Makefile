@@ -1,19 +1,19 @@
 # New ports collection makefile for:	pavuk
-# Version required:			0.9pl18
 # Date created:				19 March 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=		pavuk-0.9pl18
-PKGNAME=		pavuk-0.9.18
+PORTNAME=		pavuk
+PORTVERSION=		0.9.18
 CATEGORIES=		ftp www
 MASTER_SITES=		${MASTER_SITE_SUNSITE} \
 			ftp://ftp.idata.sk/pub/unix/www/ \
 			ftp://ftp.phacka.sk/pub/pavuk/ \
 			http://www.idata.sk/~ondrej/sw/
 MASTER_SITE_SUBDIR=	X11/gtkbuffet/apps/pavuk
+DISTNAME=		${PORTNAME}-0.9pl18
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		ports@FreeBSD.org

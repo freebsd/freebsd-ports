@@ -1,18 +1,18 @@
 # New ports collection makefile for:	proftpd
-# Version required:	1.2.0pl10
 # Date created:		26 January 1998
 # Whom:			Stephane Legrand
 #
 # $FreeBSD$
 #
 
-DISTNAME=	proftpd-1.2.0pre10
-PKGNAME=	proftpd-1.2.0p10
+PORTNAME=	proftpd
+PORTVERSION=	1.2.0p10
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.tos.net/pub/proftpd/ \
 		ftp://ftp.stikman.com/pub/proftpd/ \
 		ftp://ftp.linux.co.uk/pub/packages/proftpd/ \
 		ftp://ftp.drenik.net/linux/ftp/proftpd/
+DISTNAME=	${PORTNAME}-1.2.0pre10
 
 MAINTAINER=	mharo@FreeBSD.org
 

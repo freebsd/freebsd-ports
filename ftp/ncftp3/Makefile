@@ -1,16 +1,16 @@
 # ex:ts=8
 # Ports collection makefile for:  ncftp3
-# Version required: 0.0
 # Date created:			  4 Nov 1994
 # Whom:				  ache
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ncftp-3.0.1-src
-PKGNAME=	ncftp3-3.0.1
+PORTNAME=	ncftp3
+PORTVERSION=	3.0.1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.ncftp.com/ncftp/
+DISTNAME=	ncftp-${PORTVERSION}-src
 
 MAINTAINER=	obrien@FreeBSD.org
 
