@@ -39,6 +39,7 @@ include/pi-appinfo.hxx
 include/pi-args.h
 include/pi-cmp.h
 include/pi-config.h
+include/pi-config-win32.h
 include/pi-datebook.h
 include/pi-datebook.hxx
 include/pi-dlp.h
@@ -61,6 +62,7 @@ include/pi-slp.h
 include/pi-socket.h
 include/pi-source.h
 include/pi-sockaddr.h
+include/pi-sockaddr-win32.h
 include/pi-sync.h
 include/pi-syspkt.h
 include/pi-todo.h
