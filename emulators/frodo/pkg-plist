@@ -1,0 +1,44 @@
+bin/frodo
+libexec/frodo/Frodo
+libexec/frodo/1541 ROM
+libexec/frodo/Basic ROM
+libexec/frodo/Char ROM
+libexec/frodo/Kernal ROM
+libexec/frodo/Frodo Logo
+libexec/frodo/TkGui.tcl
+libexec/frodo/64prgs/3fff
+libexec/frodo/64prgs/colorbars
+libexec/frodo/64prgs/d011h3
+libexec/frodo/64prgs/dadb
+libexec/frodo/64prgs/de00all
+libexec/frodo/64prgs/dycp
+libexec/frodo/64prgs/fld
+libexec/frodo/64prgs/lrborder
+libexec/frodo/64prgs/sprsync
+libexec/frodo/64prgs/stretch
+libexec/frodo/64prgs/tech-tech
+libexec/frodo/64prgs/text26
+@dirrm libexec/frodo/64prgs
+@dirrm libexec/frodo
+share/doc/frodo/CHANGES
+share/doc/frodo/Main.html
+share/doc/frodo/author.html
+share/doc/frodo/bugreports.html
+share/doc/frodo/demoprograms.html
+share/doc/frodo/emulwindow.html
+share/doc/frodo/files.html
+share/doc/frodo/flavours.html
+share/doc/frodo/future.html
+share/doc/frodo/history.html
+share/doc/frodo/installation.html
+share/doc/frodo/kernal.html
+share/doc/frodo/keyboard.html
+share/doc/frodo/legalmush.html
+share/doc/frodo/overview.html
+share/doc/frodo/sam.html
+share/doc/frodo/settings.html
+share/doc/frodo/systemspecific.html
+share/doc/frodo/technicalinfo.html
+share/doc/frodo/thanks.html
+share/doc/frodo/whatsnew.html
+@dirrm share/doc/frodo
