@@ -5,23 +5,4 @@ program that downloads and analyzes radio telescope data.  There's a
 small but captivating possibility that your computer will detect the
 faint murmur of a civilization beyond Earth.
 
-This package includes an interactive install script which allows you to
-set up a working directory under /var/db/setiathome, register with or
-log in to SETI@home, and arranges for setiathome to be started at
-system start-up.  In this case, setiathome will be executed as user
-`nobody'.
-
-setiathome will run at nice level 1 by default, with a single process.
-If you are running a SMP system and therefore would like to run one
-process per CPU, or would like setiathome to run under another user ID,
-you have to set it up manually.
-
-setiathome requires about 0.5 MBytes disk space in its working
-directory, and about 12 MBytes of memory.  If you have ample physical
-memory, it's work load should be almost undetectable.
-
-setiathome is a binary distribution currently available for FreeBSD
-2.2.6, 2.2.7, 2.2.8, 3.1, and 4.0.  Newer versions of FreeBSD should be able
-to run older binaries.
-
 WWW: http://setiathome.ssl.berkeley.edu/

@@ -35,9 +35,9 @@ case $1 in
 					"unable to start: ${seti_wrkdir}/${i} is missing."
 				exit 72
 			fi
-			if [ ! -f ${seti_wrkdir}/${i}/user_info.txt ]; then
+			if [ ! -f ${seti_wrkdir}/${i}/user_info.sah ]; then
 				logger -sp daemon.err -t setiathome \
-					"unable to start: please log in to SETI@home first. (${seti_wrkdir}/${i}/user_info.txt is missing.)"
+					"unable to start: please log in to SETI@home first. (${seti_wrkdir}/${i}/user_info.sah is missing.)"
 				exit 72
 			fi
 		done
@@ -57,7 +57,7 @@ case $1 in
 		mkdir -p ${seti_wrkdir}
 		chown ${seti_user} ${seti_wrkdir}
 		chmod u=Xrw,g=Xr,o=Xr ${seti_wrkdir}
-		if [ -f ${seti_wrkdir}/user_info.txt ]; then
+		if [ -f ${seti_wrkdir}/user_info.sah ]; then
 			echo "      It seems you have already registered with SETI@home.  Would you like"
 			echo -n "      to repeat the procedure? [Y/n] "
 			read a
@@ -78,8 +78,8 @@ case $1 in
 				chown ${seti_user} ${seti_wrkdir}/${i}
 				chmod 755 ${seti_wrkdir}/${i}
 				# Assume the user want's all processes to run with the same registration
-				rm -f ${seti_wrkdir}/${i}/user_info.txt
-				ln -sf ../user_info.txt ${seti_wrkdir}/${i}
+				rm -f ${seti_wrkdir}/${i}/user_info.sah
+				ln -sf ../user_info.sah ${seti_wrkdir}/${i}
 				i=`expr ${i} - 1`
 			done
 		fi

@@ -1,0 +1,80 @@
+.\" $FreeBSD$
+.Dd Feb 13, 2000
+.Dt xsetiathome 1 LOCAL
+.Os FreeBSD
+.Sh NAME
+.Nm xsetiathome
+.Nd display SETI data under X Windows
+.Sh SYNOPSIS
+.Nm
+.Op Fl fullscreen
+.Sh DESCRIPTION
+.Nm
+is a graphical display for
+.Xr setiathome 1 .
+To use it you must run
+.Xr setiathome 1
+with the
+.Fl graphics
+flag. 
+.Pp
+A typical invocation of
+.Nm
+will look like this:
+.Bd -literal -offset indent
+% setiathome -graphics &
+% xsetiathome
+.Ed
+.Pp
+Alternatively,
+.Nm
+can be executed in screensaver mode,
+which requires an external application such as
+.Xr xautolock 1 .
+.Sh OPTIONS
+.Bl -tag -width fullscreenx
+.It Fl fullscreen
+Take over the entire display.
+When running in this mode, any mouse presses will exit the application.
+.El
+.Sh SEE ALSO
+.Xr setiathome 1
+.Sh BUGS
+Please note, this
+.Nm
+binary is an initial experiment.
+We are fully aware that it may have some significant bugs and
+we are continuing to work on it.
+Please do not report bugs on this binary at this time.
+.Pp
+Only one instance of
+.Ic setiathome -graphics
+can be operating at any one time on a system.
+There is no conflict resolution with the allocated shared memory
+segments and semaphores.
+Therefore, only one instance of
+.Nm
+is practical.
+.Pp
+Outstanding shared memory segments and semaphores may be left
+active in case of an abnormal exit of the
+.Ic setiathome -graphics
+process.
+These can prevent any future invocation of
+.Ic setiathome -graphics .
+To resolve this problem, use
+.Xr ipcs 1
+and
+.Xr ipcrm 1
+to remove shared memory segments and semaphores that
+are not associated with a process.
+This behavior may vary depending upon how your
+.Ux
+system handles this situation.
+.Pp
+The
+.Nm
+process may affect system performance adversely.
+This behavior may vary depending upon your version of the
+X11 Window System client libraries and/or your X server
+and its operating mode/visual depth.
