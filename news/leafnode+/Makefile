@@ -3,7 +3,7 @@
 # Date created:		19 November 1998
 # Whom:			Tom Hukins <tom@FreeBSD.org>
 #
-# $Id: Makefile,v 1.6 1999/04/22 00:17:13 scrappy Exp $
+# $Id: Makefile,v 1.7 1999/07/04 19:40:32 sada Exp $
 #
 
 DISTNAME=	leafnode+-2.6
@@ -47,10 +47,11 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/leafnode+
 .endfor
 .endif
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 post-install:
-	@test -d /var/spool/news -a -d ${PREFIX}/lib/leafnode || \
-		${CAT} ${PKGDIR}/MESSAGE
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@if test \( ! -d ${LEAFSPOOLDIR} \) -o \( ! -d ${LEAFLIBDIR} \) ; then \
+		${CAT} ${PKGDIR}/MESSAGE; \
+	fi
 
 .include <bsd.port.mk>
