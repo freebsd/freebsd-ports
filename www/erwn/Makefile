@@ -12,7 +12,7 @@ MASTER_SITES=	http://lisas.de/erwin/
 DISTNAME=	erwin-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Simple (at the moment) html editor based on GTK+
+COMMENT=	Simple GTK+-2 HTML editor
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
