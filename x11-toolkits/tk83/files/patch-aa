@@ -27,15 +27,17 @@
  LIB_RUNTIME_DIR='${LIB_RUNTIME_DIR}'
  
  # If Tcl and Tk are installed in different places, adjust the library
-@@ -2450,7 +2452,7 @@
+@@ -2450,8 +2452,8 @@
  if test "$ok" = "yes" -a "${SHLIB_SUFFIX}" != ""; then
      TK_SHARED_BUILD=1
      TK_SHLIB_CFLAGS="${SHLIB_CFLAGS}"
 -    TK_LIB_FILE=libtk${TCL_SHARED_LIB_SUFFIX}
+-    MAKE_LIB="\${SHLIB_LD} -o \${TK_LIB_FILE} \${OBJS} \$(TK_LD_SEARCH_FLAGS) ${TCL_BUILD_STUB_LIB_SPEC} \${LIBS}"
 +    TK_LIB_FILE=${TK_LIB_FILE}
-     MAKE_LIB="\${SHLIB_LD} -o \${TK_LIB_FILE} \${OBJS} \$(TK_LD_SEARCH_FLAGS) ${TCL_BUILD_STUB_LIB_SPEC} \${LIBS}"
++    MAKE_LIB="\${SHLIB_LD} -o \${TK_LIB_FILE} \${OBJS} \$(TK_LD_SEARCH_FLAGS) ${TCL_STUB_LIB_SPEC} \${LIBS}"
      RANLIB=":"
  
+     TCL_STUB_FLAGS="-DUSE_TCL_STUBS"
 @@ -2729,6 +2731,7 @@
  s%@TCL_BIN_DIR@%$TCL_BIN_DIR%g
  s%@TCL_BUILD_STUB_LIB_SPEC@%$TCL_BUILD_STUB_LIB_SPEC%g
