@@ -7,7 +7,7 @@
 
 PORTNAME=	squirrelmail
 PORTVERSION?=	1.4.3a
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	squirrelmail
@@ -17,7 +17,7 @@ COMMENT?=	A webmail system which accesses mail over IMAP
 
 CONFLICTS?=	ja-squirrelmail-1.*
 
-USE_PHP=	session mhash gettext mbstring pcre openssl
+USE_PHP=	session mhash gettext mbstring pcre openssl xml
 WANT_PHP_WEB=	yes
 
 USE_BZIP2=	yes
