@@ -6,4 +6,6 @@ admin.name: HOGE
 admin.notify.email: HOGE@EXAMPLE.JP
 html.stylesheet: http://EXAMPLE.JP/~HOGE/wiki/wiki.css
 user.timezone: JST
-
+#param.RssPage.channel.description: RssPage
+#memorycache.type: memcached
+#memcached.servers: 127.0.0.1:11211
