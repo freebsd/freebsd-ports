@@ -451,8 +451,6 @@ pike/%%PORTVERSION%%/include/pike/aclocal.m4
 @unexec rm -rf %D/pike/%%PORTVERSION%%/lib/tools
 @unexec rm -rf %D/pike/%%PORTVERSION%%/include/pike
 @dirrm pike/%%PORTVERSION%%/include
-@dirrm pike/%%PORTVERSION%%/man/man1
-@dirrm pike/%%PORTVERSION%%/man
 @dirrm pike/%%PORTVERSION%%/bin
 @dirrm pike/%%PORTVERSION%%/lib
 @dirrm pike/%%PORTVERSION%%

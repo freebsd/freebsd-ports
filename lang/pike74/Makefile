@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pike74
-PORTVERSION=	7.4.31
-PORTREVISION=	2
+PORTVERSION=	7.4.43
 CATEGORIES=	lang
 MASTER_SITES=	ftp://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
 		ftp://ftp.oav.net/pkg_freebsd/distfiles/ \
@@ -21,14 +20,15 @@ DISTNAME=	Pike-v${PORTVERSION}
 MAINTAINER=	kiwi@oav.net
 COMMENT=	A dynamic programming language with a syntax similar to C++
 
-BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison/
-.if (${MACHINE} == "i386")
-BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm/
-.endif
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		gdbm.3:${PORTSDIR}/databases/gdbm \
 		fftw.2:${PORTSDIR}/math/fftw
+
+OPTIONS=	TTF "Add FreeType 1 support" on \
+		FREETYPE "Add FreeType 2 support" on \
+		OPT_CFLAGS "Enable additional compilation optimizations" on \
+		MYSQL "Add MySQL support" on
 
 MAN1=		pike.1
 
@@ -37,7 +37,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src/
 WANT_MESA=	yes
 
 GNU_CONFIGURE=	yes
-
+CONFIGURE_ENV=	LDFLAGS+=${PTHREAD_LIBS} CPPFLAGS+=${PTHREAD_CFLAGS}
 CONFIGURE_ARGS+=	--without-debug \
 		 --with-double-precision \
 		 --with-long-double-precision \
@@ -53,7 +53,7 @@ CONFIGURE_ARGS+=	--without-debug \
 		 --with-zlib \
 		 --with-threads \
 		 --with-readline \
-		 --with-jpeg=${PREFIX} \
+		 --with-jpeg \
 		 --with-tiff \
 		 --with-gdbm \
 		 --without-java \
@@ -66,12 +66,10 @@ CONFIGURE_ARGS+=	--without-debug \
 		 --prefix=${PREFIX}
 
 USE_REINPLACE=	yes
+USE_GETTEXT=	yes
+USE_BISON=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502102
-FORBIDDEN=	"Does not respect PTHREAD_{CFLAGS,LIBS}"
-.endif
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
@@ -90,6 +88,9 @@ CONFIGURE_ARGS+=	--without-perl
 
 .if exists(${LOCALBASE}/lib/libavcodec.so.0)
 WITH_FFMPEG=	yes
+OPTIONS+=	FFMPEG "Add FFmpeg support" on
+.else
+OPTIONS+=	FFMPEG "Add FFmpeg support" off
 .endif
 
 .if exists(${LOCALBASE}/lib/libttf.so.4)
@@ -100,32 +101,32 @@ WITH_TTF=	yes
 WITH_FREETYPE=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.10)
-WITH_MYSQL=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.12)
-WITH_MYSQL40=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.14)
-WITH_MYSQL41=	yes
-.endif
-
 .if exists(${LOCALBASE}/lib/libpq.so.3)
 WITH_POSTGRES=	yes
+OPTIONS+=	POSTGRES "Add Postgres SQL support" on
+.else
+OPTIONS+=	POSTGRES "Add Postgres SQL support" off
 .endif
 
 .if exists(${LOCALBASE}/lib/libodbc.so.1)
 WITH_UNIXODBC=	yes
+OPTIONS+=	UNIXODBC "Add UnixODBC support (incompatible with IODBC)" on
+.else
+OPTIONS+=	UNIXODBC "Add UnixODBC support (incompatible with IODBC)" off
 .endif
 
 .if exists(${LOCALBASE}/lib/libiodbc.so.2)
 WITH_IODBC=	yes
+OPTIONS+=       IODBC "Add iODBC support (incompatible with UnixODBC)" on
+.else
+OPTIONS+=       IODBC "Add iODBC support (incompatible with UnixODBC)" off
 .endif
 
 .if exists(${LOCALBASE}/lib/libsane.so.1)
 WITH_SANE=	yes
+OPTIONS+=	SANE "Add SANE support" on
+.else
+OPTIONS+=	SANE "Add SANE support" off
 .endif
 
 .if exists(${LOCALBASE}/lib/libgtkgl.so.5)
@@ -134,19 +135,23 @@ WITH_MESA=	yes
 
 .if exists(${LOCALBASE}/lib/libpdf.so.6) || exists(${LOCALBASE}/lib/libpanda.so.0)
 WITH_PDF=	yes
+OPTIONS+=	PDF "Add PDF support" on
+.else
+OPTIONS+=	PDF "Add PDF support" off
 .endif
 
 .if exists(${LOCALBASE}/lib/librsvg-2.so.2)
 WITH_SVG2=	yes
+OPTIONS+=	SVG2 "Add SVG2 support" on
+.else
+OPTIONS+=	SVG2 "Add SVG2 support" off
 .endif
 
 .if exists(${LOCALBASE}/lib/libct.so.1)
 WITH_TDS=	yes
-.endif
-
-.if defined(WITH_MOST)
-WITH_TTF=	yes
-WITH_FREETYPE=	yes
+OPTIONS+=	TDS "Add FreeTDS (Sybase and MSSQL) support" on
+.else
+OPTIONS+=	TDS "Add FreeTDS (Sybase and MSSQL) support" off
 .endif
 
 .if defined(WITHOUT_RELOCATABLE_DUMPED_MODULES)
@@ -166,7 +171,7 @@ CONFIGURE_ARGS+= --with-computed-goto \
 		 --with-new-multisets
 .endif
 
-.if defined(WITH_OPTIMIZED_CFLAGS)
+.if defined(WITH_OPT_CFLAGS)
 .if (${MACHINE} == "i386")
 CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
 .else
@@ -196,28 +201,14 @@ CONFIGURE_ARGS+= --without-freetype
 .endif
 
 .if defined(WITH_MYSQL)
-LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-CONFIGURE_ARGS+= --with-mysql=${PREFIX}
-.else
-CONFIGURE_ARGS+= --without-mysql
-.endif
-
-.if defined(WITH_MYSQL40)
-LIB_DEPENDS+=	mysqlclient.12:${PORTSDIR}/databases/mysql40-client
-CONFIGURE_ARGS+= --with-mysql=${PREFIX}
-.else
-CONFIGURE_ARGS+= --without-mysql
-.endif
-
-.if defined(WITH_MYSQL41)
-LIB_DEPENDS+=	mysqlclient.14:${PORTSDIR}/databases/mysql41-client
+USE_MYSQL=	yes
 CONFIGURE_ARGS+= --with-mysql=${PREFIX}
 .else
 CONFIGURE_ARGS+= --without-mysql
 .endif
 
 .if defined(WITH_POSTGRES)
-LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql7
+LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql7-client
 CONFIGURE_ARGS+= --with-pgsql=${PREFIX}
 .else
 CONFIGURE_ARGS+= --without-pgsql
@@ -283,75 +274,7 @@ CONFIGURE_ARGS+= --with-GL --with-GLUT
 CONFIGURE_ARGS+= --without-GL --without-GLUT
 .endif
 
-#.if (${MACHINE} == "i386")
-#CONFIGURE_ARGS+= --with-poll
-#.else
-## Alpha seems to have problems with poll() with pike... :/
-#CONFIGURE_ARGS+= --without-poll
-#.endif
-
 USE_GMAKE=	yes
-
-pre-everything::
-.if !defined(WITH_OPTIMIZED_CFLAGS)
-	@${ECHO_MSG} "You can enable additional compilation optimizations"
-	@${ECHO_MSG} "by defining WITH_OPTIMIZED_CFLAGS"
-.endif
-.if !defined(WITH_FFMPEG)
-	@${ECHO_MSG} "You can enable FFmpeg support by defining WITH_FFMPEG."
-.endif
-.if !defined(WITH_TTF) && !defined(WITH_MOST)
-	@${ECHO_MSG} "You can enable _Image_TTF support by defining WITH_TTF."
-.endif
-.if !defined(WITH_FREETYPE) && !defined(WITH_MOST)
-	@${ECHO_MSG} "You can enable _Image_FreeType support by defining WITH_FREETYPE."
-.endif
-.if !defined(WITH_MYSQL)
-	@${ECHO_MSG} "You can enable MySQL 3.23 support by defining WITH_MYSQL."
-.endif
-.if !defined(WITH_MYSQL40)
-	@${ECHO_MSG} "You can enable MySQL 4.0 support by defining WITH_MYSQL40."
-.endif
-.if !defined(WITH_MYSQL41)
-	@${ECHO_MSG} "You can enable MySQL 4.1 support by defining WITH_MYSQL41."
-.endif
-.if !defined(WITH_POSTGRES)
-	@${ECHO_MSG} "You can enable PostGres support by defining WITH_POSTGRES."
-.endif
-.if !defined(WITH_UNIXODBC) && !defined(WITH_IODBC)
-	@${ECHO_MSG} "You can enable unixODBC support by defining WITH_UNIXODBC."
-	@${ECHO_MSG} "You can enable iodbc support by defining WITH_IODBC."
-	@${ECHO_MSG} "Note that you can support only ONE of these two ODBC libs."
-.endif
-.if !defined(WITH_SANE)
-	@${ECHO_MSG} "You can enable Sane support by defining WITH_SANE."
-.endif
-.if !defined(WITH_SANE) || !defined(HAVE_MESA)
-	@${ECHO_MSG} "You can enable MesaGL support by defining WITH_MESA."
-.endif
-.if !defined(WITH_PDF)
-	@${ECHO_MSG} "You can enable PDF support by defining WITH_PDF."
-.endif
-.if !defined(WITH_MOST)
-	@${ECHO_MSG} "You can enable most of the features here except Sane,"
-	@${ECHO_MSG} "MesaGLi and SQL support by defining WITH_MOST."
-.endif
-.if !defined(WITH_SVG2)
-	@${ECHO_MSG} "You can enable SVG2 image support by "
-	@${ECHO_MSG} "defining WITH_SVG2."
-.endif
-.if !defined(WITHOUT_RELOCATABLE_DUMPED_MODULES)
-	@${ECHO_MSG} "You can disable relocatable dumped modules by "
-	@${ECHO_MSG} "defining WITHOUT_RELOCATABLE_DUMPED_MODULES."
-.endif
-.if !defined(WITH_EXPIREMENTAL_FEATURES)
-	@${ECHO_MSG} "You can enable experemental features and optimization "
-	@${ECHO_MSG} "at you own risk by defining WITH_EXPIREMENTAL_FEATURES."
-.endif
-.if !defined(WITH_TDS)
-	@${ECHO_MSG} "You can enable direct access to Sybase and MS-SQL "
-	@${ECHO_MSG} "database using FreeTDS be defining WITH_TDS."
-.endif
 
 pre-configure:
 	@${ECHO} ${CONFIGURE_ARGS}
@@ -359,6 +282,10 @@ pre-configure:
 post-patch:
 	@${REINPLACE_CMD} -e 's| -lgmp| -L${LOCALBASE}/lib -lgmp|' \
 		${WRKSRC}/modules/Gmp/configure ${WRKSRC}/modules/_Image_XFace/configure
+	@${REINPLACE_CMD} -e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|' \
+		${WRKSRC}/configure
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}pike ${PREFIX}/bin
