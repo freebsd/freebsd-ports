@@ -32,6 +32,49 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ca9ce879-5ebb-11d9-a01c-0050569f0001">
+    <topic>exim -- two relatively minor security issues</topic>
+    <affects>
+      <package>
+        <name>exim</name>
+        <range><le>4.43+28_1</le></range>
+      </package>
+      <package>
+        <name>exim-ldap2</name>
+        <range><le>4.43+28_1</le></range>
+      </package>
+      <package>
+        <name>exim-mysql</name>
+        <range><le>4.43+28_1</le></range>
+      </package>
+      <package>
+        <name>exim-postgresql</name>
+        <range><le>4.43+28_1</le></range>
+      </package>
+      <package>
+        <name>exim-sa-exim</name>
+        <range><le>4.43+28_1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>1. The function host_aton() can overflow a buffer
+	   if it is presented with an illegal IPv6 address
+	   that has more than 8 components.</p>
+	<p>2. The second report described a buffer overflow
+	   in the function spa_base64_to_bits(), which is part
+	   of the code for SPA authentication.</p>
+      </body>
+    </description>
+    <references>
+      <mlist msgid="Pine.SOC.4.61.0501041452540.1114@draco.cus.cam.ac.uk">http://www.exim.org/mail-archives/exim-announce/2005/msg00000.html</mlist>
+    </references>
+    <dates>
+      <discovery>2005-01-05</discovery>
+      <entry>2005-01-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="877e918e-5362-11d9-96d4-00065be4b5b6">
     <topic>mpg123 -- playlist processing buffer overflow vulnerability</topic>
     <affects>
