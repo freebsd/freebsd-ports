@@ -1,0 +1,16 @@
+#!/bin/sh
+
+case "${1}" in
+	start)
+		echo -n "zabbix "
+		zabbix_suckerd
+		zabbix_trapperd
+		;;
+	stop)
+		killall zabbix_suckerd
+		killall zabbix_trapperd
+		;;
+	*)
+		echo Usage: `basename ${0}` "{start|stop}"
+		;;
+esac

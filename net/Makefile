@@ -760,6 +760,7 @@
     SUBDIR += yptransitd
     SUBDIR += ysm
     SUBDIR += ytalk
+    SUBDIR += zabbix
     SUBDIR += zabbix-agent
     SUBDIR += zebra
     SUBDIR += zebra-devel
