@@ -5,7 +5,7 @@
 PKGNAME=$1
 ACTION=$2
 
-FILES_DELETE="pluggerrc-5.0.old"
+FILES_DELETE="pluggerrc-5.1.2.old"
 
 ETCDIR=${PKG_PREFIX}/etc
 
@@ -16,8 +16,8 @@ ECHO=/bin/echo
 case "$ACTION" in
 
 POST-INSTALL)
-	if [ ! -f ${ETCDIR}/pluggerrc-5.0 ]; then
-		${CP} ${ETCDIR}/pluggerrc-5.0.sample ${ETCDIR}/pluggerrc-5.0
+	if [ ! -f ${ETCDIR}/pluggerrc-5.1.2 ]; then
+		${CP} ${ETCDIR}/pluggerrc-5.1.2.sample ${ETCDIR}/pluggerrc-5.1.2
 	fi
 	;;
 
@@ -32,18 +32,21 @@ DEINSTALL)
 
 PRE-INSTALL)
 	${ECHO}
-	${ECHO} "Run ''make local-install'' as user to locally"
+	${ECHO} "Run ''make local-mozilla-install'' as user to locally"
 	${ECHO} "install plugger for Mozilla"
 	${ECHO}
 	${ECHO} "Run ''make local-opera-install'' as user to locally"
 	${ECHO} "install plugger for Opera"
+	${ECHO}
+	${ECHO} "NOTE:  For plugger-oohelper to work, [o|s]office must be"
+	${ECHO} "in the PATH."
 	${ECHO}
 	;;
 
 POST-DEINSTALL)
 	${ECHO}
 	${ECHO} "If you are permanently removing this port,"
-	${ECHO} "you should do a ''rm -f ${ETCDIR}/pluggerrc-5.0''"
+	${ECHO} "you should do a ''rm -f ${ETCDIR}/pluggerrc-5.1.2''"
 	${ECHO} "to remove it."
 	${ECHO}
 	;;

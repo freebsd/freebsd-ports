@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	plugger
-PORTVERSION=	5.0
-PORTREVISION=	2
+PORTVERSION=	5.1.2
 CATEGORIES=	www audio graphics multimedia
 MASTER_SITES=	http://fredrik.hubbe.net/plugger/
 
@@ -16,26 +15,14 @@ COMMENT=	A multimedia front-end plugin for Mozilla or Opera
 
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
 
 MAN7=		plugger.7
-ALL_TARGET=	freebsd-elf
 PKGDEINSTALL=	${PKGINSTALL}
 
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local/|${PREFIX}/|g' \
-		${WRKSRC}/plugger.c
-	@${REINPLACE_CMD} -e 's|CC=gcc|CC=${CC}|g' \
-		-e 's|LD=gcc|LD=${CC}|g' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|/usr/X11R6/|${X11BASE}|g' \
-		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|oowriter|openoffice-1.1-swriter|g' \
-		-e 's|oocalc|openoffice-1.1-scalc|g' \
-		-e 's|ooimpress|openoffice-1.1-simpress|g' \
-		-e 's|oodraw|openoffice-1.1-sdraw|g' \
-		-e 's|oomath|openoffice-1.1-smath|g' \
-		${WRKSRC}/pluggerrc
 	@${REINPLACE_CMD} -e \
 	's|/usr/X11R6/lib/xscreensaver|${X11BASE}/bin/xscreensaver-hacks|g' \
 		${WRKSRC}/pluggerrc
@@ -47,11 +34,11 @@ pre-install:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/plugger-${PORTVERSION} \
 		${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/lib/browser_plugins
-	@${INSTALL_PROGRAM} ${WRKSRC}/plugger-${PORTVERSION} \
-		${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/plugger-controller \
 		${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/plugger-oohelper \
+		${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/lib/browser_plugins
 	@${INSTALL_PROGRAM} ${WRKSRC}/plugger.so \
 		${PREFIX}/lib/browser_plugins/npplugger.so
 	@if [ -f ${PREFIX}/etc/pluggerrc-${PORTVERSION} ]; then \
@@ -63,32 +50,29 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/plugger.7 ${MANPREFIX}/man/man7
 
 local-install:
+	@${MKDIR} ${HOME}/.plugger
+	@${INSTALL_PROGRAM} ${WRKSRC}/plugger-${PORTVERSION} \
+		${HOME}/.plugger
+	@${INSTALL_PROGRAM} ${WRKSRC}/plugger-controller \
+		${HOME}/.plugger
+	@${INSTALL_SCRIPT} ${WRKSRC}/plugger-oohelper \
+		${HOME}/.plugger
+	@if [ -f ${HOME}/.plugger/pluggerrc-${PORTVERSION} ]; then \
+		${MV} ${HOME}/.plugger/pluggerrc-${PORTVERSION} \
+			${HOME}/.plugger/pluggerrc-${PORTVERSION}.old; \
+	fi
+	@${INSTALL_DATA} ${WRKSRC}/pluggerrc \
+		${HOME}/.plugger/pluggerrc-${PORTVERSION}
+
+local-mozilla-install: local-install
 	@${MKDIR} ${HOME}/.mozilla/plugins
 	@${INSTALL_PROGRAM} ${WRKSRC}/plugger.so \
 		${HOME}/.mozilla/plugins/npplugger.so
-	@${INSTALL_PROGRAM} ${WRKSRC}/plugger-${PORTVERSION} \
-		${HOME}/.mozilla
-	@${INSTALL_PROGRAM} ${WRKSRC}/plugger-controller \
-		${HOME}/.mozilla
-	@if [ -f ${HOME}/.mozilla/pluggerrc-${PORTVERSION} ]; then \
-		${MV} ${HOME}/.mozilla/pluggerrc-${PORTVERSION} \
-			${HOME}/.mozilla/pluggerrc-${PORTVERSION}.old; \
-	fi
-	@${INSTALL_DATA} ${WRKSRC}/pluggerrc \
-		${HOME}/.mozilla/pluggerrc-${PORTVERSION}
 
-local-opera-install:
+local-opera-install: local-install
 	@${MKDIR} ${HOME}/.opera/plugins
 	@${INSTALL_PROGRAM} ${WRKSRC}/plugger.so \
 		${HOME}/.opera/plugins/npplugger.so
-	@${INSTALL_PROGRAM} ${WRKSRC}/plugger-${PORTVERSION} \
-		${HOME}/.opera
-	@if [ -f ${HOME}/.opera/pluggerrc-${PORTVERSION} ]; then \
-		${MV} ${HOME}/.opera/pluggerrc-${PORTVERSION} \
-			${HOME}/.opera/pluggerrc-${PORTVERSION}.old; \
-	fi
-	@${INSTALL_DATA} ${WRKSRC}/pluggerrc \
-		${HOME}/.opera/pluggerrc-${PORTVERSION}
 
 post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \

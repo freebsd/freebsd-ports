@@ -1,5 +1,6 @@
-bin/plugger-5.0
+bin/plugger-5.1.2
 bin/plugger-controller
-etc/pluggerrc-5.0.sample
+bin/plugger-oohelper
+etc/pluggerrc-5.1.2.sample
 lib/browser_plugins/npplugger.so
-@dirrm lib/browser_plugins
+@unexec rmdir %D/lib/browser_plugins 2>/dev/null || true
