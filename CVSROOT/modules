@@ -6624,6 +6624,7 @@ ucpp		ports/devel/ucpp
 ucspi-tcp	ports/sysutils/ucspi-tcp
 ude		ports/x11-wm/ude
 udmsearch	ports/www/udmsearch
+udptunnel	ports/net/udptunnel
 uds		ports/devel/uds
 uemacs		ports/editors/uemacs
 uf-view		ports/misc/uf-view
