@@ -39,6 +39,7 @@ sbin/swat
 %%PORTDOCS%%share/doc/samba/THANKS
 %%PORTDOCS%%share/doc/samba/WHATSNEW.txt
 %%PORTDOCS%%share/doc/samba/announce
+%%PORTDOCS%%share/doc/samba/faq/README
 %%PORTDOCS%%share/doc/samba/faq/Samba-Server-FAQ-1.html
 %%PORTDOCS%%share/doc/samba/faq/Samba-Server-FAQ-2.html
 %%PORTDOCS%%share/doc/samba/faq/Samba-Server-FAQ.html
@@ -134,7 +135,7 @@ sbin/swat
 %%PORTDOCS%%share/doc/samba/textdocs/RoutedNetworks.txt
 %%PORTDOCS%%share/doc/samba/textdocs/SCO.txt
 %%PORTDOCS%%share/doc/samba/textdocs/SMBTAR.notes
-%%PORTDOCS%%share/doc/samba/textdocs/Samba-OpenSSL.txt
+%%PORTDOCS%%share/doc/samba/textdocs/Solaris-Winbind-HOWTO.txt
 %%PORTDOCS%%share/doc/samba/textdocs/Speed.txt
 %%PORTDOCS%%share/doc/samba/textdocs/Speed2.txt
 %%PORTDOCS%%share/doc/samba/textdocs/Tracing.txt
@@ -154,6 +155,7 @@ share/examples/samba/VFS/block/samba-block.conf
 share/examples/samba/VFS/block/smb.conf
 share/examples/samba/VFS/audit.c
 share/examples/samba/VFS/skel.c
+share/examples/samba/VFS/recycle.c
 share/examples/samba/LDAP/README
 share/examples/samba/LDAP/export2_smbpasswd.pl
 share/examples/samba/LDAP/export_smbpasswd.pl
@@ -162,6 +164,9 @@ share/examples/samba/LDAP/import_smbpasswd.pl
 share/examples/samba/LDAP/ldapchpasswd
 share/examples/samba/LDAP/ldapsync.pl
 share/examples/samba/LDAP/samba.schema
+share/examples/samba/LDAP/samba-schema-netscapeds4.x
+share/examples/samba/LDAP/samba-schema-netscapeds5.x
+share/examples/samba/LDAP/samba-schema.IBMSecureWay
 share/examples/samba/appliance/Makefile
 share/examples/samba/appliance/README
 share/examples/samba/appliance/appliance.spec

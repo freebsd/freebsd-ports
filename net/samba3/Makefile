@@ -6,13 +6,9 @@
 #
 
 PORTNAME=	samba
-PORTVERSION=	3.0a17
+PORTVERSION=	3.0a18
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.samba.org/pub/samba/%SUBDIR%/ \
-		ftp://samba.anu.edu.au/pub/samba/%SUBDIR%/ \
-		ftp://de.samba.org/pub/mirror/samba/%SUBDIR%/ \
-		ftp://se.samba.org/pub/samba/%SUBDIR%/ \
-		ftp://ftp.sunet.se/pub/unix/utilities/samba/%SUBDIR%/
+MASTER_SITES=	http://us4.samba.org/samba/ftp/%SUBDIR%/
 MASTER_SITE_SUBDIR=	alpha old
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/a/-alpha/}
 
@@ -46,7 +42,8 @@ CONFIGURE_ARGS=	--libdir=${SAMBA_CONFDIR} \
 		--localstatedir=${VARDIR} --with-swatdir=${PREFIX}/share/swat \
 		--with-sambabook=${PREFIX}/share/swat/using_samba \
 		--with-lockdir=${VARDIR}/lock --with-privatedir=${SAMBA_PRIVATE} \
-		--exec-prefix=${PREFIX} --with-pam --without-manpages-langs
+		--exec-prefix=${PREFIX} --with-pam --without-manpages-langs \
+		--with-piddir=${VARDIR}/run
 
 .include <bsd.port.pre.mk>
 
