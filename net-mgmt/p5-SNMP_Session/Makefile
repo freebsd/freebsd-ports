@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SNMP_Session
-PORTVERSION=	1.06
+PORTVERSION=	1.07
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	http://www.switch.ch/misc/leinen/snmp/perl/dist/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
