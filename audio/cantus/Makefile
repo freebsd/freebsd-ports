@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cantus
-PORTVERSION=	1.05
+PORTVERSION=	1.07
 CATEGORIES=	audio
 MASTER_SITES=	http://sam.homeunix.com/software.manicsadness.com-step3/releases/cantus/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
@@ -17,7 +17,7 @@ COMMENT=	Tool for tagging and renaming MP3 and OGG/Vorbis files
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomelibs gnomehack
-WRKSRC=		${WRKDIR}/cantus-1.05
+WRKSRC=		${WRKDIR}/${DISTNAME:S/-1$//}
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
