@@ -7,11 +7,18 @@
 
 PORTNAME=	db43
 PORTVERSION=	4.3.27
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	ftp://sleepycat1.inetu.net/releases/
 PKGNAMESUFFIX?=
 DISTNAME?=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
+
+PATCH_SITES=	http://www.sleepycat.com/update/4.3.27/
+PATCHFILES=	patch.4.3.27.1
+# patch.4.3.27.1 affects C++ DbEnv::ref_elect
+# patch.4.3.27.2 is Windows-specific
+PATCH_DIST_STRIP=	-d ..
 
 MAINTAINER=	matthias.andree@gmx.de
 COMMENT=	The Berkeley DB package, revision 4.3

@@ -1,7 +1,6 @@
 --- ../dist/configure.orig	Wed Dec  5 13:14:02 2001
 +++ ../dist/configure	Wed Dec  5 13:24:01 2001
-@@ -8794,10 +8794,10 @@
- INSTALLER="\$(LIBTOOL) --mode=install cp"
+@@ -20867,8 +20867,8 @@
  
  MAKEFILE_CC="\$(LIBTOOL) --mode=compile ${MAKEFILE_CC}"
 -MAKEFILE_SOLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CCLINK} -avoid-version"
@@ -12,4 +11,3 @@
 +MAKEFILE_XSOLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CXXLINK} -version-info 0:0:0"
  MAKEFILE_CXXLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CXXLINK}"
  
- # Configure for shared libraries, static libraries, or both.  If both are
