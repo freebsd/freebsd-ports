@@ -70,4 +70,5 @@ share/locale/zh_TW/LC_MESSAGES/texinfo.mo
 @unexec rmdir %D/%%TEXMFLOCAL%%/tex/generic/dvips 2>/dev/null || true
 @unexec rmdir %D/%%TEXMFLOCAL%%/pdftex/plain/misc 2>/dev/null || true
 @unexec rmdir %D/%%TEXMFLOCAL%%/pdftex/plain 2>/dev/null || true
+@unexec rmdir %D/%%TEXMFLOCAL%%/pdftex 2>/dev/null || true
 @unexec rmdir %D/share/texinfo 2>/dev/null || true

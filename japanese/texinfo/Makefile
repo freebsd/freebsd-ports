@@ -7,7 +7,7 @@
 
 PORTNAME=	texinfo
 PORTVERSION=	4.7
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,7 @@ PATCH_SITES=	ftp://jupiter.fsci.fuk.kindai.ac.jp/pub/ptex/utils/ \
 PATCHFILES=	${DISTNAME}-j.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	mitsuru@riken.go.jp
+MAINTAINER=	mitsuru@riken.jp
 COMMENT=	Typeset Texinfo files for printing. Uses TeX
 
 RUN_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex-tetex
