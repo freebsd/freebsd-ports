@@ -45,7 +45,7 @@
  
  # You can put any system dependent flags here.
 -ExtraCFLAGS = 
-+ExtraCFLAGS = -m486 -O2
++ExtraCFLAGS = -O2 -pipe -fno-strength-reduce
  
  # System specific or configuration parameters.  Define according to your
  # environment and desires.
