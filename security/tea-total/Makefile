@@ -7,9 +7,10 @@
 
 PORTNAME=	tea-total
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.linuxhacker.org/pub/tea-total/  \
-		http://www.linuxhacker.org/tea-total/
+		http://www.linuxhacker.org/pub/tea-total/
 
 MAINTAINER=	ports@FreeBSD.org
 

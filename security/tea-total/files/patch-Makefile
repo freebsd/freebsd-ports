@@ -1,20 +1,24 @@
---- Makefile.orig	Tue Jan  2 05:04:34 2001
-+++ Makefile	Fri Jan 12 02:18:24 2001
-@@ -1,5 +1,5 @@
+--- Makefile.orig	Tue Jan  2 22:04:34 2001
++++ Makefile	Fri Oct 25 03:32:00 2002
+@@ -1,6 +1,6 @@
  include config.inc
  
 -CC = $(CROSS_PREFIX)gcc
 +#CC = $(CROSS_PREFIX)gcc
  CP = cp -f
  RM = rm -f
-@@ -9,5 +9,5 @@
+ LN = ln -sf
+@@ -8,7 +8,7 @@
+ CD = cd
  MKDIR = mkdir -p
  CMP = cmp
 -CFLAGS = -O2 -Wall -DARCH_$(ARCH)
-+CFLAGS += -O2 -Wall -DARCH_$(ARCH)
++CFLAGS += -DARCH_$(ARCH)
  LDFLAGS =
  BINDIR = $(PREFIX)/bin
-@@ -27,4 +27,9 @@
+ TEATOTAL = teatotal
+@@ -26,6 +26,11 @@
+ ifeq ($(ARCH), OPENBSD)
  MANDIR = $(PREFIX)/share/man/man1
  RANDOM_DEVICE = \"/dev/srandom\"
 +else
@@ -24,3 +28,19 @@
 +endif
  endif
  endif
+ 
+@@ -115,12 +120,12 @@
+ 
+ install: all
+ 	$(MKDIR) $(BINDIR)
+-	$(CP) $(TEATOTAL) $(BINDIR)
++	${BSD_INSTALL_PROGRAM} $(TEATOTAL) $(BINDIR)
+ 	$(LN) $(TEATOTAL) $(BINDIR)/$(TEA)
+ 	$(LN) $(TEATOTAL) $(BINDIR)/$(UNTEA)
+ 	$(LN) $(TEATOTAL) $(BINDIR)/$(TEA-KGEN)
+ 	$(MKDIR) $(MANDIR)
+-	$(CP) $(MANPAGES) $(MANDIR)
++	${BSD_INSTALL_MAN} $(MANPAGES) $(MANDIR)
+ 
+ clean:
+ 	$(RM) core *.o $(PROGRAMS) testout.tea test.out test2.key test3.key \
