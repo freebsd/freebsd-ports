@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sat Jun 22 17:56:55 2002
-+++ Makefile.in	Thu Jan  2 16:41:37 2003
+--- Makefile.in.orig	Thu Sep 25 09:54:22 2003
++++ Makefile.in	Thu Sep 25 09:58:23 2003
 @@ -21,7 +21,7 @@
  man1dir = $(mandir)/man1
  man3dir = $(mandir)/man3
@@ -8,13 +8,13 @@
 +docdir = $(datadir)/doc/neon
  includedir = @includedir@
  neonincludes = $(includedir)/neon
+ pkgconfigdir = $(libdir)/pkgconfig
+@@ -132,7 +132,7 @@
+ 	@echo "ERROR: purposes only; this copy of neon must not be installed."
+ 	@false
  
-@@ -115,7 +115,7 @@
- 	for m in $(srcdir)/doc/man/*.1; do \
- 	 $(INSTALL_DATA) $$m $(DESTDIR)$(man1dir); done
- 
--install: subdirs install-headers install-lib install-config install-docs
-+install: subdirs install-headers install-lib install-config
+-install-yes: install-lib install-headers install-config install-docs
++install-yes: install-lib install-headers install-config
  
  # libtool does all the necessary magic here
- install-lib: src/libneon.la
+ install-lib: subdirs
