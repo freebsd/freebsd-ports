@@ -1,5 +1,5 @@
 bin/eperl
-www/cgi-bin/nph-eperl
+@comment www/cgi-bin/nph-eperl
 man/man1/eperl.1.gz
 @exec echo "AddType  application/x-httpd-eperl  .phtml .eperl .epl" >>%D/etc/apache/srm.conf
 @exec echo "Action   application/x-httpd-eperl  /cgi-bin/nph-eperl" >>%D/etc/apache/srm.conf
