@@ -1,15 +1,41 @@
---- autoconf/fbsd.in.orig	Tue Jun 29 10:21:27 2004
-+++ autoconf/fbsd.in	Tue Jun 29 10:23:52 2004
-@@ -43,48 +43,37 @@
+--- autoconf/fbsd.in.orig	Sun Feb 20 07:25:10 2005
++++ autoconf/fbsd.in	Wed Mar  2 15:21:28 2005
+@@ -21,16 +21,15 @@
+ 		 logrotate.dansguardian dansguardianf1.conf
+ 
+ PASSVARS = -DPROXYUSER=\"${PROXYUSER}\"
+-#PASSVARS += -DLOGLOCATION=\"${LOGLOCATION}access.log\"
++PASSVARS += -DLOGLOCATION=\"${LOGLOCATION}dansguardian.log\"
+ PASSVARS += -DCONFFILELOCATION=\"${CONFFILELOCATION}dansguardian.conf\"
+-#PASSVARS += -DPIDDIR=\"${PIDDIR}\"
++PASSVARS += -DPIDDIR=\"${PIDDIR}\"
+ 
+ #Some advanced options:
+ #WARNING = -Wall
+-#OPTIMISE = -O2
+-OPTIMISE = ${CXXFLAGS}
+ #DEBUG += -DDGDEBUG
+ #STATIC = -static
++OPTIMISE = ${CXXFLAGS}
+ 
+ I = $(INSTALLPREFIX)
+ CFLAGS = $(OPTIMISE) $(WARNING)
+@@ -39,53 +38,43 @@
+ .cpp.o:
+ 	$(CPP) $(DEBUG) $(CFLAGS) -c $<
+ 
+-all:	$(OBJ) 
++all:	$(OBJ)
  	$(CPP) -o dansguardian $(DGCFLAGS) $(DEBUG) $(OBJ) $(LIBS) dansguardian.cpp
  
  install:
--	@test -d $I$(SYSVLOCATION) || install -d $I$(SYSVLOCATION)
+ 	@test -d $I$(SYSVLOCATION) || install -d $I$(SYSVLOCATION)
  	@test -d $I$(CONFFILELOCATION) || install -d $I$(CONFFILELOCATION)
 -	@test -d $I$(CONFFILELOCATION)phraselists || install -d $I$(CONFFILELOCATION)phraselists
--	@test -d $I$(CONFFILELOCATION)languages || install -d $I$(CONFFILELOCATION)languages
+ 	@test -d $I$(CONFFILELOCATION)languages || install -d $I$(CONFFILELOCATION)languages
++	@test -d $I$(CONFFILELOCATION)samples || install -d $I$(CONFFILELOCATION)samples
  	@test -d $I$(CGIBINLOCATION) || install -d $I$(CGIBINLOCATION)
--	@test -d $I$(MANUALFILES)man8/ || install -d $I$(MANUALFILES)man8/
+ 	@test -d $I$(MANUALFILES)man8/ || install -d $I$(MANUALFILES)man8/
 -	@test -d $I$(LOGLOCATION) || install -d $I$(LOGLOCATION)
  	@test -d $I$(BINARYLOCATION) || install -d $I$(BINARYLOCATION)
 -	cp -f ./filtergroupslist $I$(CONFFILELOCATION)filtergroupslist
@@ -44,36 +70,35 @@
 -	cp -f ./dansguardian.8.gz $I$(MANUALFILES)man8/dansguardian.8.gz
 -	chown -R $(PROXYUSER):$(PROXYGROUP) $I$(LOGLOCATION)
 -	chmod -R u+wr $I$(LOGLOCATION)
+-	chmod -R og-w $I$(LOGLOCATION)
 -	chmod u+wrx $I$(LOGLOCATION)
 -	if [ -d $(LOGROTATELOCATION) ]; then cp -f ./logrotate.dansguardian $I$(LOGROTATELOCATION)dansguardian; fi
-+	@test -d $I$(CONFFILELOCATION)languages || install -d $I$(CONFFILELOCATION)languages
-+	cp -fR ./languages/* $I$(CONFFILELOCATION)languages/
-+	install -o root -g wheel -m 644 ./filtergroupslist $I$(CONFFILELOCATION)filtergroupslist.dist
-+	install -o root -g wheel -m 644 ./dansguardianf1.conf $I$(CONFFILELOCATION)dansguardianf1.conf.dist
 +	install -o root -g wheel -m 755 ./dansguardian $I$(BINARYLOCATION)dansguardian
-+	install -o root -g wheel -m 644 ./dansguardian.conf $I$(CONFFILELOCATION)dansguardian.conf.dist
-+	install -o root -g wheel -m 644 ./bannedphraselist $I$(CONFFILELOCATION)bannedphraselist.dist
-+	install -o root -g wheel -m 644 ./exceptionphraselist $I$(CONFFILELOCATION)exceptionphraselist.dist
-+	install -o root -g wheel -m 644 ./weightedphraselist $I$(CONFFILELOCATION)weightedphraselist.dist
-+	install -o root -g wheel -m 644 ./bannediplist $I$(CONFFILELOCATION)bannediplist.dist
-+	install -o root -g wheel -m 644 ./banneduserlist $I$(CONFFILELOCATION)banneduserlist.dist
-+	install -o root -g wheel -m 644 ./bannedextensionlist $I$(CONFFILELOCATION)bannedextensionlist.dist
-+	install -o root -g wheel -m 644 ./bannedmimetypelist $I$(CONFFILELOCATION)bannedmimetypelist.dist
-+	install -o root -g wheel -m 644 ./bannedurllist $I$(CONFFILELOCATION)bannedurllist.dist
-+	install -o root -g wheel -m 644 ./bannedregexpurllist $I$(CONFFILELOCATION)bannedregexpurllist.dist
-+	install -o root -g wheel -m 644 ./bannedsitelist $I$(CONFFILELOCATION)bannedsitelist.dist
-+	install -o root -g wheel -m 644 ./contentregexplist $I$(CONFFILELOCATION)contentregexplist.dist
-+	install -o root -g wheel -m 644 ./greysitelist $I$(CONFFILELOCATION)greysitelist.dist
-+	install -o root -g wheel -m 644 ./greyurllist $I$(CONFFILELOCATION)greyurllist.dist
-+	install -o root -g wheel -m 644 ./exceptionsitelist $I$(CONFFILELOCATION)exceptionsitelist.dist
-+	install -o root -g wheel -m 644 ./exceptionurllist $I$(CONFFILELOCATION)exceptionurllist.dist
-+	install -o root -g wheel -m 644 ./exceptionuserlist $I$(CONFFILELOCATION)exceptionuserlist.dist
-+	install -o root -g wheel -m 644 ./exceptioniplist $I$(CONFFILELOCATION)exceptioniplist.dist
-+	install -o root -g wheel -m 644 ./pics $I$(CONFFILELOCATION)pics.dist
-+	install -o root -g wheel -m 644 ./transparent1x1.gif $I$(CONFFILELOCATION)transparent1x1.gif
-+	install -o root -g wheel -m 755 ./dansguardian.pl $I$(CGIBINLOCATION)dansguardian.pl.dist
++	install -o root -g wheel -m 644 ./filtergroupslist $I$(CONFFILELOCATION)samples/filtergroupslist
++	install -o root -g wheel -m 644 ./dansguardianf1.conf $I$(CONFFILELOCATION)samples/dansguardianf1.conf
++	install -o root -g wheel -m 644 ./dansguardian.conf $I$(CONFFILELOCATION)samples/dansguardian.conf
++	install -o root -g wheel -m 644 ./bannedphraselist $I$(CONFFILELOCATION)samples/bannedphraselist
++	install -o root -g wheel -m 644 ./exceptionphraselist $I$(CONFFILELOCATION)samples/exceptionphraselist
++	install -o root -g wheel -m 644 ./weightedphraselist $I$(CONFFILELOCATION)samples/weightedphraselist
++	install -o root -g wheel -m 644 ./bannediplist $I$(CONFFILELOCATION)samples/bannediplist
++	install -o root -g wheel -m 644 ./banneduserlist $I$(CONFFILELOCATION)samples/banneduserlist
++	install -o root -g wheel -m 644 ./bannedextensionlist $I$(CONFFILELOCATION)samples/bannedextensionlist
++	install -o root -g wheel -m 644 ./bannedmimetypelist $I$(CONFFILELOCATION)samples/bannedmimetypelist
++	install -o root -g wheel -m 644 ./bannedurllist $I$(CONFFILELOCATION)samples/bannedurllist
++	install -o root -g wheel -m 644 ./bannedregexpurllist $I$(CONFFILELOCATION)samples/bannedregexpurllist
++	install -o root -g wheel -m 644 ./bannedsitelist $I$(CONFFILELOCATION)samples/bannedsitelist
++	install -o root -g wheel -m 644 ./contentregexplist $I$(CONFFILELOCATION)samples/contentregexplist
++	install -o root -g wheel -m 644 ./greysitelist $I$(CONFFILELOCATION)samples/greysitelist
++	install -o root -g wheel -m 644 ./greyurllist $I$(CONFFILELOCATION)samples/greyurllist
++	install -o root -g wheel -m 644 ./exceptionsitelist $I$(CONFFILELOCATION)samples/exceptionsitelist
++	install -o root -g wheel -m 644 ./exceptionurllist $I$(CONFFILELOCATION)samples/exceptionurllist
++	install -o root -g wheel -m 644 ./exceptionuserlist $I$(CONFFILELOCATION)samples/exceptionuserlist
++	install -o root -g wheel -m 644 ./exceptioniplist $I$(CONFFILELOCATION)samples/exceptioniplist
++	install -o root -g wheel -m 644 ./pics $I$(CONFFILELOCATION)samples/pics
++	install -o root -g wheel -m 644 ./transparent1x1.gif $I$(CONFFILELOCATION)samples/transparent1x1.gif
++	install -o root -g wheel -m 755 ./dansguardian.pl $I$(CONFFILELOCATION)samples/dansguardian.pl
 +	install -o root -g wheel -m 644 ./dansguardian.8 $I$(MANUALFILES)man8/dansguardian.8
-+	install -o nobody -g nogroup -m 644 /dev/null $I$(LOGLOCATION)dansguardian.log
++	cp -Rf ./languages/* $I$(CONFFILELOCATION)languages/
  
  uninstall:
  	rm -f $(BINARYLOCATION)dansguardian

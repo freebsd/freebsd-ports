@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dansguardian
-PORTVERSION=	2.8.0.2
+PORTVERSION=	2.8.0.4
 CATEGORIES=	www
 MASTER_SITES=	# empty, see below
 DISTNAME=	${PORTNAME}-${PORTVERSION}.source
@@ -32,7 +32,9 @@ CONFIGURE_ARGS=	--bindir=/sbin/ \
 		--logdir=/var/log/ \
 		--cgidir=/www/cgi-bin/ \
 		--piddir=/var/run/
+
 MAN8=		dansguardian.8
+NOMANCOMPRESSED=	yes
 
 OPTIONS=	DG_GCC3 "Compile using GCC 3.3 on FreeBSD 4.x." off \
 		DG_PHRASELISTS "Install new phraselists. (Overwrites existing.)" off
