@@ -42,7 +42,6 @@ include/udm_word.h
 include/udm_xmalloc.h
 include/udmsearch.h
 lib/libudmsearch.a
-lib/libudmsearch.la
 lib/libudmsearch-3.1.so
 @exec ln -sf %f %B/libudmsearch.so
 @unexec rm -f %B/libudmsearch.so
