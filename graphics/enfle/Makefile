@@ -8,8 +8,7 @@
 PORTNAME=	enfle
 PORTVERSION=	20010130
 CATEGORIES=	graphics
-MASTER_SITES=	http://enfle.fennel.org/ \
-		http://www3.big.or.jp/~sian/linux/products/enfle/ \
+MASTER_SITES=	http://enfle.fennel.org/files/stable/ \
 		ftp://ftp.goldmoon.org/pub/FreeBSD/ports/distfiles/
 
 MAINTAINER=	samy@goldmoon.org
@@ -32,6 +31,10 @@ CONFIGURE_ARGS=	--enable-all-plugins \
 		--disable-static
 
 MAN1=		enfle.1
+
+post-patch:
+	${PERL} -pi -e 's/^(.*_la_LDFLAGS = -module)$$/\1 -avoid-version/' \
+		${WRKSRC}/plugins/*/*/Makefile.in
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/enfle.1 ${PREFIX}/man/man1
