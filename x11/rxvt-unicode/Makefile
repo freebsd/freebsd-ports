@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rxvt-unicode
-PORTVERSION=	3.7
+PORTVERSION=	3.9
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.schmorp.de/rxvt-unicode/
 MASTER_SITE_SUBDIR=	. Attic
@@ -21,7 +21,7 @@ USE_PERL5_BUILD=	yes
 USE_X_PREFIX=		yes
 USE_XPM=		yes
 USE_LIBTOOL_VER=	15
-CONFIGURE_ARGS=		--enable-shared --enable-everything
+CONFIGURE_ARGS=		--enable-shared --enable-everything --with-term=rxvt
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=		yes
 USE_BZIP2=		yes
@@ -31,7 +31,7 @@ CONFLICTS=	rxvt-devel-2*
 MAN1=		urxvt.1 urxvtc.1 urxvtd.1
 MAN7=		urxvt.7
 
-PORTDOCS1=	README.unicode Changes
+PORTDOCS1=	Changes
 PORTDOCS=	README.menu ${PORTDOCS1}
 EXAMPLES=	example.menu jedmenu.sl menu rxvt.menu rxvt.zh-menu terminal.menu
 
@@ -109,13 +109,6 @@ CONFIGURE_ARGS+=	--disable-smart-resize
 CONFIGURE_ARGS+=	--enable-smart-resize
 .endif
 
-# add support for 256 colours rather than the base 16 colours
-.if defined(WITHOUT_256_COLORS)
-CONFIGURE_ARGS+=	--disable-256-color
-.else
-CONFIGURE_ARGS+=	--enable-256-color
-.endif
-
 CONFIGURE_ENV+=		LIBS="-lutil"
 
 .include <bsd.port.pre.mk>
@@ -164,7 +157,6 @@ pre-everything::
 	@${ECHO_MSG} "WITHOUT_LINESPACE		disable support for line-spacing"
 	@${ECHO_MSG} "WITHOUT_MOUSEWHEEL	disable support for scrolling via mouse wheel"
 	@${ECHO_MSG} "WITHOUT_SMART_RESIZE	disable smart growth/shrink behaviour"
-	@${ECHO_MSG} "WITHOUT_256_COLORS	disable smart growth/shrink behaviour"
 	@${ECHO_MSG}
 .ifndef(WITH_ENCODING)
 	@${ECHO_MSG} "==> You can compile in support for additional codeset groups by setting the WITH_ENCODING variable"
