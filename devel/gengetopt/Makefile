@@ -19,4 +19,12 @@ USE_GMAKE=	yes
 
 MAN1=		gengetopt.1
 
+.if defined(NOPORTDOCS)
+do-install:
+	@cd ${INSTALL_WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${GMAKE} \
+		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install
+	@cd ${INSTALL_WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${GMAKE} \
+		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install-man
+.endif
+
 .include <bsd.port.mk>

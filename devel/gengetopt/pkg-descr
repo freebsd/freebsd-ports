@@ -3,7 +3,7 @@ the command line options, validate them and fill a struct.
 
 Thus your program can now handle options such as:
 
-myprog --input foo.c -o foo.o --no-tabs -i 100 *.class
+	myprog --input foo.c -o foo.o --no-tabs -i 100 *.class
 
 And both long options (those that start with --) and short options (start
 with - and consist of only one character) can be handled. For standards
