@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- shell/Makefile.in	2002/01/13 17:29:15	1.1
++++ shell/Makefile.in	2002/01/13 17:29:32
+@@ -186,7 +186,7 @@
+ 
+ SUBDIRS = glade importer
+ 
+-INCLUDES = -O								\
++INCLUDES =								\
+ 	-I$(top_srcdir)/widgets						\
+ 	-I$(top_srcdir)/widgets/misc					\
+ 	-I$(top_srcdir)							\

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	evolution
-PORTVERSION=	1.0
-PORTREVISION=	8
+PORTVERSION=	1.0.1
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.sleepycat.com/update/3.1.17/ \
 		${MASTER_SITE_GNOME}
@@ -53,6 +52,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${DB3_WRKSRC} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 PLIST_SUB+=	VERSION=${PORTVERSION}
+
+MAN1=		evolution.1
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
