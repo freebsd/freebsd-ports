@@ -1,0 +1,4 @@
+bin/frotz
+share/doc/frotz/Readme.unix
+share/doc/frotz/Todo
+@dirrm share/doc/frotz
