@@ -1,0 +1,102 @@
+*** 1.14        1995/04/08 21:29:53
+--- faxd/ClassModem.c++ 1995/06/21 14:44:41
+***************
+*** 910,915 ****
+--- 910,919 ----
+   * the syntax specified in the "standard".  Try looking
+   * at some of the responses given by rev ~4.04 of the
+   * ZyXEL firmware (for example)!
++  *
++  * NB: We accept alphanumeric items but don't return them
++  *     in the parsed range so that modems like the ZyXEL 2864
++  *     that indicate they support ``Class Z'' are handled.
+   */
+  fxBool
+  ClassModem::vparseRange(const char* cp, int nargs ... )
+***************
+*** 926,935 ****
+  	    matchc = CPAREN;
+  	    acceptList = TRUE;
+  	    cp++;
+! 	} else if (isdigit(cp[0])) {			// <item>
+  	    matchc = COMMA;
+  	    acceptList = (nargs == 0);
+! 	} else {
+  	    b = FALSE;
+  	    break;
+  	}
+--- 930,939 ----
+  	    matchc = CPAREN;
+  	    acceptList = TRUE;
+  	    cp++;
+! 	} else if (isalnum(cp[0])) {			// <item>
+  	    matchc = COMMA;
+  	    acceptList = (nargs == 0);
+! 	} else {					// skip to comma
+  	    b = FALSE;
+  	    break;
+  	}
+***************
+*** 939,952 ****
+  		cp++;
+  		continue;
+  	    }
+! 	    if (!isdigit(cp[0])) {
+  		b = FALSE;
+  		goto done;
+  	    }
+! 	    int v = 0;
+! 	    do {
+! 		v = v*10 + (cp[0] - '0');
+! 	    } while (isdigit((++cp)[0]));
+  	    int r = v;
+  	    if (cp[0] == '-') {				// <low>-<high>
+  		cp++;
+--- 943,963 ----
+  		cp++;
+  		continue;
+  	    }
+! 	    if (!isalnum(cp[0])) {
+  		b = FALSE;
+  		goto done;
+  	    }
+! 	    int v;
+! 	    if (isdigit(cp[0])) {
+! 		v = 0;
+! 		do {
+! 		    v = v*10 + (cp[0] - '0');
+! 		} while (isdigit((++cp)[0]));
+! 	    } else {
+! 		v = -1;					// XXX skip item below
+! 		while (isalnum((++cp)[0]))
+! 		    ;
+! 	    }
+  	    int r = v;
+  	    if (cp[0] == '-') {				// <low>-<high>
+  		cp++;
+***************
+*** 964,972 ****
+  		    cp++;
+  		v++, r++;				// XXX 2.0 -> 3
+  	    }
+! 	    // expand range or list
+! 	    for (; v <= r; v++)
+! 		mask |= 1<<v;
+  	    if (acceptList && cp[0] == COMMA)		// (<item>,<item>...)
+  		cp++;
+  	}
+--- 975,984 ----
+  		    cp++;
+  		v++, r++;				// XXX 2.0 -> 3
+  	    }
+! 	    if (v != -1) {				// expand range or list
+! 		for (; v <= r; v++)
+! 		    mask |= 1<<v;
+! 	    }
+  	    if (acceptList && cp[0] == COMMA)		// (<item>,<item>...)
+  		cp++;
+  	}
+
+
+
+
