@@ -4560,6 +4560,7 @@ mshell		ports/misc/mshell
 msp430-binutils		ports/devel/msp430-binutils
 msp430-gcc		ports/devel/msp430-gcc
 msp430-gdb		ports/devel/msp430-gdb
+msp430-libc		ports/devel/msp430-libc
 msql		ports/databases/msql
 msrc0		ports/devel/msrc0
 msun		src/lib/msun
