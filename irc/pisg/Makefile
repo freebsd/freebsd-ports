@@ -18,6 +18,16 @@ USE_REINPLACE=	YES
 USE_PERL5=	YES
 NO_BUILD=	YES
 
+OPTIONS=	LOGCHARSET "Character set for logfiles" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_LOGCHARSET)
+RUN_DEPENDS+=	${SITE_PERL}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv
+.endif
+
+do-build:
+
 pre-patch:
 	@${REINPLACE_CMD} -e 's|lang.txt|${PREFIX}/share/pisg/lang.txt|; \
 		s|layout/|${PREFIX}/share/pisg/layout/|' \
@@ -55,4 +65,4 @@ post-install:
 	@${ECHO_MSG}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
