@@ -12,6 +12,8 @@ MASTER_SITES=	http://members.home.com/housel/
 
 MAINTAINER=	roger@freebsd.org
 
+LIB_DEPENDS=    pbm:${PORTSDIR}/graphics/netpbm
+
 # The port does not understand 'make all' or 'make install'
 # so change the 'all_target' to be empty and use our own do-install handler.
 
