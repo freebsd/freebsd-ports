@@ -8,7 +8,8 @@
 PORTNAME=	gnumail
 PORTVERSION=	1.0.3
 CATEGORIES=	mail
-MASTER_SITES=	http://extrovert.screwdriver.net/~extra/
+MASTER_SITES=	http://www.collaboration-world.com/gnumail.data/releases/Stable/ \
+		ftp://ftp.gnustep.org/pub/gnustep/usr-apps/
 DISTNAME=	GNUMail-${PORTVERSION}
 .if defined(GNUSTEP_GUI_DEVEL)
 PKGNAMESUFFIX?=	-devel
