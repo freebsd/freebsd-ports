@@ -1,0 +1,3 @@
+bin/pxinfo
+bin/pxsqldump
+bin/pxcsvdump
