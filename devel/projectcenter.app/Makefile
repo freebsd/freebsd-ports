@@ -53,7 +53,9 @@ post-extract:
 # Quick workaround until I find out how to set the real path in the code
 post-patch:
 .for file in PCLib/PCBundleLoader.m ProjectCenter/PCAppController.m
-	${PERL} -pi -e "s:@\"/usr/GNUstep:@\"${PREFIX}:g" ${WRKSRC}/${file}
+	@${MV} ${WRKSRC}/${file} ${WRKSRC}/${file}.sed
+	${SED} -e "s=@\"/usr/GNUstep=@\"${PREFIX}=g" \
+		${WRKSRC}/${file}.sed > ${WRKSRC}/${file}
 .endfor
 
 do-build:
