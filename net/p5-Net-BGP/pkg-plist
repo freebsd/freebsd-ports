@@ -1,0 +1,11 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/BGP4/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Net/BGP4.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/BGP4/Notification.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/BGP4/Peer.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/BGP4/Process.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/BGP4/RIB.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/BGP4/Update.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/BGP4
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/BGP4
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
