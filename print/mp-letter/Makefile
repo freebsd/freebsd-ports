@@ -3,7 +3,7 @@
 # Date created:         11 July 1996
 # Whom:                 David O'Brien <obrien@cs.ucdavis.edu>
 #
-# $Id: Makefile,v 1.5 1997/10/10 06:53:32 obrien Exp $
+# $Id: Makefile,v 1.6 1997/11/10 11:23:29 asami Exp $
 #
 
 DISTNAME=	mp-3.0.1
@@ -16,7 +16,6 @@ MAINTAINER=	obrien@FreeBSD.org
 
 MANUAL_PACKAGE_BUILD=	PAPERSIZE has to be set to letter a4
 WRKSRC=		${WRKDIR}/mp
-USE_GMAKE=	yes
 MAN1=		mp.1
 
 .if !defined(PAPERSIZE)

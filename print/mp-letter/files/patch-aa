@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Aug 10 02:48:14 1996
-+++ Makefile	Sat Aug 10 02:53:07 1996
+--- Makefile.orig	Wed Jul 29 21:33:32 1998
++++ Makefile	Wed Jul 29 21:35:09 1998
 @@ -45,11 +45,14 @@
  #  Default locations where mp files will be installed.
  #  You might wish to alter these values.
@@ -18,15 +18,23 @@
  #---------------------------------------------------------------------
  #  Alternate names for the mailp frontend
  #
-@@ -62,6 +65,7 @@
+@@ -58,11 +61,13 @@
+ #  Compilation flags and standard macro definitions.
+ #
+ CDEFS	 = $(GECOSFIELDS) $(GECOSLENGTH) $(PROLOGUE)
+-CCOMP	 = -O
++#CCOMP	 = -l
++CCOMP	 = $(CFLAGS)
  CCFLAGS  = $(CCOMP) $(CDEFS)
  LDFLAGS  =
  
+-CCC	 = g++
 +CXXFLAGS = $(CCFLAGS)	# needed for gmake's implicit rule
- CCC	 = g++
++CCC	 = $(CXX)
  #=================================================================
  
-@@ -107,10 +111,10 @@
+ .KEEPSTATE:
+@@ -107,10 +112,10 @@
  	   @echo "**IMPORTANT NOTE**"
  	   @echo
  	   @echo "Mp is setup by default to work with US Letter sized paper."
@@ -39,7 +47,7 @@
  	   @echo
  
  common-install: $(BINARIES)
-@@ -122,6 +126,8 @@
+@@ -122,6 +127,8 @@
  	   -cp mp.1 $(MPMANDIR)/mp.$(MPMANSECT)
  	   -chmod 644 $(MPMANDIR)/mp.$(MPMANSECT)
  #                                                     mp.common.ps
