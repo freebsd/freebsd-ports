@@ -6,6 +6,12 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040429:
+  AFFECTS: users of sysutils/smartmontools
+
+  The smartmontools port must now be enabled / disabled and configured in
+  rc.conf.  See the pkg-message or script for details.
+
 20040420:
   AFFECTS: users of sysutils/cdrtools
 
