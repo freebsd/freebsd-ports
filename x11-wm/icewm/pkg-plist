@@ -49,6 +49,61 @@ lib/X11/icewm/taskbar/start.xpm
 lib/X11/icewm/taskbar/unreadmail.xpm
 lib/X11/icewm/taskbar/windows.xpm
 lib/X11/icewm/taskbar/xfreeos2.xpm
+lib/X11/icewm/themes/gtk/closeA.xpm
+lib/X11/icewm/themes/gtk/closeI.xpm
+lib/X11/icewm/themes/gtk/default.theme
+lib/X11/icewm/themes/gtk/dframeAB.xpm
+lib/X11/icewm/themes/gtk/dframeABL.xpm
+lib/X11/icewm/themes/gtk/dframeABR.xpm
+lib/X11/icewm/themes/gtk/dframeAL.xpm
+lib/X11/icewm/themes/gtk/dframeAR.xpm
+lib/X11/icewm/themes/gtk/dframeAT.xpm
+lib/X11/icewm/themes/gtk/dframeATL.xpm
+lib/X11/icewm/themes/gtk/dframeATR.xpm
+lib/X11/icewm/themes/gtk/dframeIB.xpm
+lib/X11/icewm/themes/gtk/dframeIBL.xpm
+lib/X11/icewm/themes/gtk/dframeIBR.xpm
+lib/X11/icewm/themes/gtk/dframeIL.xpm
+lib/X11/icewm/themes/gtk/dframeIR.xpm
+lib/X11/icewm/themes/gtk/dframeIT.xpm
+lib/X11/icewm/themes/gtk/dframeITL.xpm
+lib/X11/icewm/themes/gtk/dframeITR.xpm
+lib/X11/icewm/themes/gtk/frameAB.xpm
+lib/X11/icewm/themes/gtk/frameABL.xpm
+lib/X11/icewm/themes/gtk/frameABR.xpm
+lib/X11/icewm/themes/gtk/frameAL.xpm
+lib/X11/icewm/themes/gtk/frameAR.xpm
+lib/X11/icewm/themes/gtk/frameAT.xpm
+lib/X11/icewm/themes/gtk/frameATL.xpm
+lib/X11/icewm/themes/gtk/frameATR.xpm
+lib/X11/icewm/themes/gtk/frameIB.xpm
+lib/X11/icewm/themes/gtk/frameIBL.xpm
+lib/X11/icewm/themes/gtk/frameIBR.xpm
+lib/X11/icewm/themes/gtk/frameIL.xpm
+lib/X11/icewm/themes/gtk/frameIR.xpm
+lib/X11/icewm/themes/gtk/frameIT.xpm
+lib/X11/icewm/themes/gtk/frameITL.xpm
+lib/X11/icewm/themes/gtk/frameITR.xpm
+lib/X11/icewm/themes/gtk/maximizeA.xpm
+lib/X11/icewm/themes/gtk/maximizeI.xpm
+lib/X11/icewm/themes/gtk/menuButtonA.xpm
+lib/X11/icewm/themes/gtk/menuButtonAN.xpm
+lib/X11/icewm/themes/gtk/menuButtonAP.xpm
+lib/X11/icewm/themes/gtk/menuButtonI.xpm
+lib/X11/icewm/themes/gtk/minimizeA.xpm
+lib/X11/icewm/themes/gtk/minimizeI.xpm
+lib/X11/icewm/themes/gtk/restoreA.xpm
+lib/X11/icewm/themes/gtk/restoreI.xpm
+lib/X11/icewm/themes/gtk/titleAB.xpm
+lib/X11/icewm/themes/gtk/titleAL.xpm
+lib/X11/icewm/themes/gtk/titleAM.xpm
+lib/X11/icewm/themes/gtk/titleAR.xpm
+lib/X11/icewm/themes/gtk/titleAT.xpm
+lib/X11/icewm/themes/gtk/titleIB.xpm
+lib/X11/icewm/themes/gtk/titleIL.xpm
+lib/X11/icewm/themes/gtk/titleIM.xpm
+lib/X11/icewm/themes/gtk/titleIR.xpm
+lib/X11/icewm/themes/gtk/titleIT.xpm
 lib/X11/icewm/themes/metal/closeA.xpm
 lib/X11/icewm/themes/metal/closeI.xpm
 lib/X11/icewm/themes/metal/default.theme
@@ -187,6 +242,7 @@ lib/X11/icewm/themes/win95/restore.xpm
 @dirrm lib/X11/icewm/icons
 @dirrm lib/X11/icewm/ledclock
 @dirrm lib/X11/icewm/taskbar
+@dirrm lib/X11/icewm/themes/gtk
 @dirrm lib/X11/icewm/themes/metal
 @dirrm lib/X11/icewm/themes/motif
 @dirrm lib/X11/icewm/themes/nice
