@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kdbg
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.4
 CATEGORIES=	devel kde
 MASTER_SITES=	http://download.sourceforge.net/kdbg/ \
 		${MASTER_SITE_KDE}
