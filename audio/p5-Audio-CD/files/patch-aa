@@ -5,8 +5,8 @@
  	  CVSROOT => 'modperl.com:/local/cvs_repository',
      },
 -    'LIBS'	=> ["-lcdaudio"],
-+    'INC'	=> "-I$ENV{'PREFIX'}/include",
-+    'LIBS'	=> "-L$ENV{'PREFIX'}/lib -lcdaudio",
++    'INC'	=> "-I\${PREFIX}/include",
++    'LIBS'	=> "-L\${PREFIX}/lib -lcdaudio",
      DEFINE => '-g',
      OBJECT => 'cddb_lookup.o CD.o',
  );
