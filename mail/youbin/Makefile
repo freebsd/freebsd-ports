@@ -25,7 +25,7 @@ MAN8=		youbind.8
 
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/youbind.sh.sample
 
-pre-fetch:
+pre-build:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGDIR}/REQ ${PKGNAME} BUILD
 
 pre-install:
