@@ -1,0 +1,4 @@
+bin/smtpscan
+share/smtpscan/fingerprints
+share/smtpscan/tests
+@dirrm share/smtpscan

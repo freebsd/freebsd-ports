@@ -1,0 +1,8 @@
+smtpscan is a remote SMTP server version detector. It can
+be used to guess which mail software is used on	a remote
+server, that may hide its SMTP banner.
+
+WWW: http://www.greyhats.org/outils/smtpscan/
+
+- Hubert Tournier
+hubert@frbsd.org

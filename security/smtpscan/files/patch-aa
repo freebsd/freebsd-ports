@@ -1,0 +1,77 @@
+--- configure.orig	Sun Dec  1 19:13:29 2002
++++ configure	Sun Dec  1 19:17:43 2002
+@@ -9,42 +9,51 @@
+ BINDIR="$DESTDIR/bin"
+ MANDIR="$DESTDIR/man/man1"
+ 
+-echo "Installing smtpscan..."
+-echo " Using directory $DESTDIR"
++#echo "Installing smtpscan..."
++#echo " Using directory $DESTDIR"
+ 
+-echo -n " Checking for Net::DNS ... "
+-perl -MNet::DNS -e '' >/dev/null 2>&1
+-if [ $? != 0 ] 
+-then
+-  echo ""
+-  echo ""
+-  echo "   !!! ERROR !!!"
+-  echo "   Net::DNS not found"
+-  echo "   You are strongly adviced to install it !"
+-
+-  echo "   Net::DNS is included in the smtpscan distribution"
+-  echo "   To install it, just make :"
+-  echo "     # tar zxvf Net-DNS-0.29.tar.gz"
+-  echo "     # cd Net-DNS-0.29"
+-  echo "     # perl Makefile.PL"
+-  echo "     # make"
+-  echo "     # make install"
+-  exit
+-fi
++#echo -n " Checking for Net::DNS ... "
++#perl -MNet::DNS -e '' >/dev/null 2>&1
++#if [ $? != 0 ] 
++#then
++#  echo ""
++#  echo ""
++#  echo "   !!! ERROR !!!"
++#  echo "   Net::DNS not found"
++#  echo "   You are strongly adviced to install it !"
++#
++#  echo "   Net::DNS is included in the smtpscan distribution"
++#  echo "   To install it, just make :"
++#  echo "     # tar zxvf Net-DNS-0.29.tar.gz"
++#  echo "     # cd Net-DNS-0.29"
++#  echo "     # perl Makefile.PL"
++#  echo "     # make"
++#  echo "     # make install"
++#  exit
++#fi
+ 
+-echo "Ok"
++#echo "Ok"
+ 
++if [ "$1" = "install" ]
++then
+ install -m 755 -d "$SHAREDIR/smtpscan"
+ install -m 755 -d "$BINDIR"
+ install -m 755 -d "$MANDIR"
+ 
+ install -m 444 ./src/fingerprints "$SHAREDIR/smtpscan/fingerprints"
+ install -m 444 ./src/tests "$SHAREDIR/smtpscan/tests"
++fi
+ 
++if [ "$1" = "build" ]
++then
+ perl -i -pe "s{(\\\$LOCAL_SHARE\s+=\s+)'/usr/local/share';}{\$1'$SHAREDIR';};" ./src/smtpscan
+ perl -i -pe "s{\\@prefix\\@}{$DESTDIR};" ./docs/man/smtpscan.1
++fi
+ 
++if [ "$1" = "install" ]
++then
+ install -m 755 ./src/smtpscan "$BINDIR/smtpscan"
+ install -m 644 ./docs/man/smtpscan.1 "$DESTDIR/man/man1"
++fi
+ 
+-echo "Installation Ok"
++#echo "Installation Ok"
