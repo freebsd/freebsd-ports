@@ -1,5 +1,5 @@
 --- session.c.orig	Wed Jun 26 15:51:06 2002
-+++ session.c	Wed Jun 26 18:20:35 2002
++++ session.c	Sun Jun 30 21:24:32 2002
 @@ -64,6 +64,13 @@
  #define is_winnt       (GetVersion() < 0x80000000)
  #endif
@@ -250,9 +250,12 @@
  	struct passwd *pw = s->pw;
  
  	/* Initialize the environment. */
-@@ -954,13 +1103,30 @@
+@@ -953,13 +1102,18 @@
+ 	copy_environment(environ, &env, &envsize);
  #endif
  
++	if (getenv("TZ"))
++		child_set_env(&env, &envsize, "TZ", getenv("TZ"));
  	if (!options.use_login) {
 +#ifdef HAVE_LOGIN_CAP
 +		char *var;
@@ -264,25 +267,32 @@
  		child_set_env(&env, &envsize, "HOME", pw->pw_dir);
  #ifdef HAVE_LOGIN_CAP
 -		(void) setusercontext(lc, pw, pw->pw_uid, LOGIN_SETPATH);
+ 		child_set_env(&env, &envsize, "PATH", getenv("PATH"));
+ #else /* HAVE_LOGIN_CAP */
+ # ifndef HAVE_CYGWIN
+@@ -984,9 +1138,19 @@
+ 
+ 		/* Normal systems set SHELL by default. */
+ 		child_set_env(&env, &envsize, "SHELL", shell);
++#ifdef HAVE_LOGIN_CAP
 +		senv = environ;
 +		environ = xmalloc(sizeof(char *));
 +		*environ = NULL;
-+		(void) setusercontext(lc, pw, pw->pw_uid,
-+		    LOGIN_SETENV|LOGIN_SETPATH);
++		if (setusercontext(lc, pw, pw->pw_uid,
++			LOGIN_SETENV|LOGIN_SETPATH) < 0) {
++			perror("unable to set user context enviroment");
++		}
 +		copy_environment(environ, &env, &envsize);
 +		xfree(environ);
 +		environ = senv;
- 		child_set_env(&env, &envsize, "PATH", getenv("PATH"));
-+		var= login_getcapstr(lc, "lang", NULL, NULL);
-+		if ( var ) child_set_env(&env, &envsize, "LANG", var);
-+		var= login_getcapstr(lc, "charset", NULL, NULL);
-+		if ( var ) child_set_env(&env, &envsize, "MM_CHARSET", var);
-+		var= login_getcapstr(lc, "timezone", NULL, NULL);
-+		if ( var ) child_set_env(&env, &envsize, "TZ", var);
- #else /* HAVE_LOGIN_CAP */
- # ifndef HAVE_CYGWIN
- 		/*
-@@ -1174,7 +1340,7 @@
++#endif /* HAVE_LOGIN_CAP */
+ 	}
+-	if (getenv("TZ"))
+-		child_set_env(&env, &envsize, "TZ", getenv("TZ"));
+ 
+ 	/* Set custom environment options from RSA authentication. */
+ 	if (!options.use_login) {
+@@ -1174,7 +1338,7 @@
  		setpgid(0, 0);
  #endif
  		if (setusercontext(lc, pw, pw->pw_uid,
@@ -291,7 +301,7 @@
  			perror("unable to set user context");
  			exit(1);
  		}
-@@ -1325,7 +1491,7 @@
+@@ -1325,7 +1489,7 @@
  	 * initgroups, because at least on Solaris 2.3 it leaves file
  	 * descriptors open.
  	 */
@@ -300,7 +310,7 @@
  		close(i);
  
  	/*
-@@ -1355,6 +1521,31 @@
+@@ -1355,6 +1519,31 @@
  			exit(1);
  #endif
  	}
