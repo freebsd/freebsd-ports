@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fhist
-PORTVERSION=	1.6
+PORTVERSION=	1.8
 CATEGORIES=	devel
 MASTER_SITES=	http://www.canb.auug.org.au/~millerp/		\
 		ftp://ftp.agso.gov.au/pub/Aegis/ 		\
