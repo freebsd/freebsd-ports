@@ -38,7 +38,7 @@ pre-install:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${CP} ${WRKSRC}/doc/* ${DOCSDIR}
+	${CP} -R ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 	@${SED} -e "s#%PREFIX%#${PREFIX}#" ${FILESDIR}/ircd.sh \
 		> ${WRKDIR}/ircd.sh
