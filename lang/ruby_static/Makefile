@@ -7,6 +7,7 @@
 
 PORTNAME=	ruby_static
 PORTVERSION=	${RUBY_PORTVERSION}
+PORTREVISION=	1
 CATEGORIES=	lang ruby ipv6
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -19,8 +20,8 @@ USE_RUBY=	yes
 
 USE_AUTOCONF=	yes
 
-# Beware, you can't statically link Ruby with GPL'ed libraries,
-# which means you can't link such modules as ruby-gdbm within.
+# Beware, because gdbm is under GPL, you must treat the whole binary
+# as GPL says.
 EXT_PORTS=	archivers/ruby-zlib \
 		devel/ruby-strscan \
 		sysutils/ruby-syslog
@@ -41,11 +42,19 @@ DESCR=		${_RUBY_PORTDIR}/pkg-descr
 
 .include <bsd.port.pre.mk>
 
+# You can build a totally statically linked binary by defining STATIC,
+# although it is not capable of loading dynamic modules.
+
 CONFIGURE_ENV=	XLDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS!=	cd ${_RUBY_PORTDIR} && ${MAKE} -V CONFIGURE_ARGS
+.if defined(STATIC)
 CONFIGURE_ARGS:=	${CONFIGURE_ARGS:N--enable-shared:M-*} \
 			--with-static-linked-ext=yes \
 			--with-opt-dir="${LOCALBASE}"
+.else
+CONFIGURE_ARGS:=	${CONFIGURE_ARGS:M-*} \
+			--with-opt-dir="${LOCALBASE}"
+.endif
 
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
 IF_DEFAULT=	""
@@ -58,20 +67,26 @@ PLIST_SUB+=	IF_DEFAULT=${IF_DEFAULT}
 do-fetch:
 	@${DO_NADA}
 
+.if defined(STATIC)
 post-patch:
 	${RUBY} -i -pe 'gsub /-rdynamic/, "-static"' ${WRKSRC}/configure.in
+.endif
 
 do-extract:
 	${MKDIR} ${WRKDIR}
 	${LN} -sf `cd ${_RUBY_PORTDIR} && ${MAKE} -V WRKSRC` ${WRKSRC}
 .for p in ${EXT_PORTS}
 	wrksrc=$$(cd ${_PORTSDIR}/${p} && ${MAKE} -V WRKSRC) ; \
-	extdir=$$(find $$wrksrc -name extconf.rb); \
+	extdir=$$(find -L $$wrksrc -name extconf.rb); \
 	extdir=$${extdir%/extconf.rb}; \
 	${CP} -RPp $$extdir ${WRKSRC}/ext/
 .endfor
+.if defined(STATIC)
+	${ECHO} "option nodynamic" > ${WRKSRC}/ext/Setup
+.else
+	${ECHO} "#option nodynamic" > ${WRKSRC}/ext/Setup
+.endif
 	(cd ${WRKSRC}/ext && \
-	${ECHO} "option nodynamic" > Setup; \
 	for x in *; do [ -d $$x ] && echo $$x >> Setup; done)
 
 do-install:
