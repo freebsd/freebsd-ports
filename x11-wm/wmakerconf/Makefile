@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	wmakerconf
-PORTVERSION=	2.8.1
-PORTREVISION=	1
+PORTVERSION=	2.9.1
 CATEGORIES=	x11-wm
-MASTER_SITES=	${MASTER_SITE_NETBSD}
+MASTER_SITES=	http://www.starplot.org/wmakerconf/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A configuration tool for Window Maker
@@ -18,34 +17,40 @@ RUN_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 .if !exists(/usr/bin/bzip2)
 RUN_DEPENDS+=	bunzip2:${PORTSDIR}/archivers/bzip2
 .endif
-LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		png.5:${PORTSDIR}/graphics/png \
 		wraster.4:${PORTSDIR}/x11-wm/windowmaker
 
-USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+USE_GNOME=	gnomehier gnometarget imlib
 USE_PERL5=	yes
-USE_GMAKE=	yes
 USE_XPM=	yes
-USE_GNOME=	imlib
-WANT_GNOME=	yes
+USE_REINPLACE=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wmakerdir="${X11BASE}/share/WindowMaker"
 
-.include <bsd.port.pre.mk>
+MAN1=		mkpreview.1 wmakerconf.1
 
-.if defined(HAVE_GNOME)
-BUILD_DEPENDS+=	gnome2wmaker:${PORTSDIR}/x11-wm/gnome2wmaker
-RUN_DEPENDS+=	gnome2wmaker:${PORTSDIR}/x11-wm/gnome2wmaker
-PLIST_SUB+=	GNOME:=""
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .else
-PLIST_SUB+=	GNOME:="@comment "
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
 .endif
 
-post-configure:
-	@${PERL} -pi -e 's|%%X11BASE%%|${X11BASE}| ; s|%%LOCALBASE%%|${LOCALBASE}|' \
-		${WRKSRC}/data/WMWmakerconf.gettext ${WRKSRC}/data/WMWmakerconf
+pre-configure:
+	@${PERL} -pi -e 's|lynx wget|lynx fetch|g' ${WRKSRC}/configure
+	@${PERL} -pi -e 's|: install-data-local|:|g' ${WRKSRC}/Makefile.in
+.for file in WMWmakerconf.gettext WMWmakerconf
+	@${PERL} -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g ; \
+		 s|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/data/${file}
+.endfor
 
-.include <bsd.port.post.mk>
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/wmakerconf.desktop \
+		${PREFIX}/share/gnome/apps/Settings
+
+.include <bsd.port.mk>
