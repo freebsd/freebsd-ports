@@ -93,7 +93,7 @@
     SUBDIR += gnomeiconedit
     SUBDIR += gozer
     SUBDIR += gpaint
-    SUBDIR += gphoto
+    SUBDIR += gphoto2
     SUBDIR += gplot
     SUBDIR += gqview
     SUBDIR += gracula

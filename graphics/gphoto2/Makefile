@@ -5,29 +5,41 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gphoto
-PORTVERSION=	0.4.3
+PORTNAME=	gphoto2
+PORTVERSION=	2.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.gphoto.net/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 
-RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv \
+		intl.1:${PORTSDIR}/devel/gettext \
+		usb-0.1.5:${PORTSDIR}/devel/libusb \
+		aa.1:${PORTSDIR}/graphics/aalib \
+		jpeg.9:${PORTSDIR}/graphics/jpeg
+BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
+RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
-USE_IMLIB=	yes
-USE_LIBTOOL=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--without-cdk --without-exif --without-fig2dev \
+		--with-doc-dir=${DOCSDIR}
 INSTALLS_SHLIB=	yes
 
-MAN1=		gphoto.1
+MAN1=		gphoto2.1
 
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/gphoto
-.for file in ChangeLog FAQ NEWS PROGRAMMERS README THANKS THEMES TODO
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/gphoto
+INSTALL_CMD=	/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}
+
+post-patch:
+.for file in configure libgphoto2_port/configure
+	@${PERL} -pi -e 's|<iconv.h>|<giconv.h>|g ; \
+		 s|-liconv|-lgiconv|g ; \
+		 s|-g -Wall||g' ${WRKSRC}/${file}
 .endfor
-.endif
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's|\@INSTALL\@|${INSTALL_CMD}|g ; \
+		 s|AUTHORS COPYING README|AUTHORS README|g'
 
 .include <bsd.port.mk>
