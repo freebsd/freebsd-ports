@@ -14,7 +14,8 @@ MAINTAINER=	ports@FreeBSD.org
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 
 MAN1=		gtimer.1

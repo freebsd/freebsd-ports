@@ -14,7 +14,9 @@ MASTER_SITE_SUBDIR=	loserjabber
 MAINTAINER=	ryan@manunkind.org
 
 GNU_CONFIGURE=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
+
 MAN1=		loserjabber.1
 MANCOMPRESSED=	no
 

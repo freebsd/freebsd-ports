@@ -13,14 +13,14 @@ MASTER_SITES=	http://www.cse.unl.edu/~cluening/gaddr/
 MAINTAINER=	jim@FreeBSD.org
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
-WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
+USE_GNOMENG=	yes
+WANT_GNOME=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_GNOME)
-USE_GNOME=	yes
+.if ${HAVE_GNOME:Mgnomelibs}!=""
+USE_GNOME=	gtk12
 CONFIGURE_ARGS+= --enable-gnome
 .endif
 
