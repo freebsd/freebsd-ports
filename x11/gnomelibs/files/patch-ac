@@ -1,26 +1,26 @@
---- gnome-config.in.orig	Sat Sep 11 03:25:18 1999
-+++ gnome-config.in	Mon Oct 18 11:43:01 1999
+--- gnome-config.in.orig	Thu Jan 13 13:36:11 2000
++++ gnome-config.in	Thu Jan 13 13:42:44 2000
 @@ -19,7 +19,7 @@
  pkglibdir=${libdir}/@PACKAGE@
  pkgincludedir=${includedir}/@PACKAGE@
  MODULE_VERSION=@PACKAGE@-@VERSION@
 -module_dirs="$libdir"
-+module_dirs="$sysconfdir"
++module_dirs="$sysconfdir:/usr/local/etc"
  
  # stolen from autoconf
  if (echo "testing\c"; echo 1,2,3) | grep c >/dev/null; then
-@@ -65,18 +65,18 @@
+@@ -65,20 +65,21 @@
  
  Known values for LIBRARY are:
  
 -    glib	(calls glib-config)
-+    glib	(calls GLIB_CONFIG)
++    glib	(calls glib12-config)
      idl         (to be used with orbit-idl)
      gnome
      gnomeui
      gnorba
 -    gtk		(calls gtk-config)
-+    gtk		(calls GTK_CONFIG)
++    gtk		(calls gtk12-config)
      gtkxmhtml	(only --libs)
      zvt		(only --libs)
  
@@ -28,10 +28,14 @@
      
 -    ${libdir}/<LIBRARY>Conf.sh
 +    ${sysconfdir}/<LIBRARY>Conf.sh
++and /usr/local/etc/<LIBRARY>Conf.sh
  
- is looked in for the necessary information.  Those currently installed 
+-is looked in for the necessary information.  Those currently installed 
++are looked in for the necessary information.  Those currently installed 
  appear to be:
-@@ -161,19 +161,19 @@
+ 
+ EOF
+@@ -161,19 +162,19 @@
  	usage 1
  	;;
      glib)
