@@ -8,6 +8,7 @@
     SUBDIR += aub
     SUBDIR += bgrab
     SUBDIR += c-nocem
+    SUBDIR += cg
     SUBDIR += cleanfeed
     SUBDIR += cleanscore
     SUBDIR += cnews
