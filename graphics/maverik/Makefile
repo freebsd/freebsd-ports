@@ -31,6 +31,10 @@ MANCOMPRESSED=	no
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386"
+BROKEN=		"does not compile on ${ARCH}"
+.endif
+
 .if defined(WITH_PNG)
 LIB_DEPENDS+=	png:${PORTSDIR}/graphics/png
 
