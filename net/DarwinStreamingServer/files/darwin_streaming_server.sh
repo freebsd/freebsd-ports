@@ -24,7 +24,10 @@ start)
 stop)
 	case ${darwin_streaming_server_enable} in
 	[Yy][Ee][Ss])
-		/usr/bin/killall DarwinStreamingS && echo -n ' DarwinStreamingServer'
+		if [ -f /var/run/DarwinStreamingServer.pid ]; then
+			/bin/kill `/bin/cat /var/run/DarwinStreamingServer.pid`
+			echo -n ' DarwinStreamingServer'
+		fi
 		;;
 	esac
 	;;
