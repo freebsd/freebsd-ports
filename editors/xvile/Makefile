@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xvile
-PORTVERSION=	9.3n
+PORTVERSION=	9.3o
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.phred.org/pub/vile/ \
 		ftp://dickey.his.com/vile/
@@ -27,7 +27,8 @@ PATCHFILES=	vile-9.3a.patch.gz \
 		vile-9.3k.patch.gz \
 		vile-9.3l.patch.gz \
 		vile-9.3m.patch.gz \
-		vile-9.3n.patch.gz
+		vile-9.3n.patch.gz \
+		vile-9.3o.patch.gz
 
 MAINTAINER=	gj@FreeBSD.org
 COMMENT=	VI Like Emacs, X11 version -- a fully "X aware" vi work-alike
@@ -97,9 +98,6 @@ post-install:
 	@if ! [ -d ${PREFIX}/share/xvile/macros ]; then ${MKDIR} ${PREFIX}/share/xvile/macros; fi
 	${INSTALL_DATA} ${WRKSRC}/macros/*.rc ${PREFIX}/share/xvile/macros
 	${INSTALL_SCRIPT} ${WRKSRC}/macros/vile-pager ${PREFIX}/share/xvile/macros
-.if defined(WITH_PERL)
-	${INSTALL_DATA} ${WRKSRC}/*.doc ${PREFIX}/share/doc/xvile
-.endif
 	@${ECHO_MSG} "Look in ${PREFIX}/share/doc/xvile for documentation."
 	@${ECHO_MSG} "Look in ${PREFIX}/share/xvile/macros for macros."
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vile
-PORTVERSION=	9.3n
+PORTVERSION=	9.3o
 CATEGORIES=	editors
 MASTER_SITES=   ftp://ftp.phred.org/pub/vile/ \
 		ftp://dickey.his.com/vile/
@@ -27,7 +27,8 @@ PATCHFILES=	vile-9.3a.patch.gz \
 		vile-9.3k.patch.gz \
 		vile-9.3l.patch.gz \
 		vile-9.3m.patch.gz \
-		vile-9.3n.patch.gz
+		vile-9.3n.patch.gz \
+		vile-9.3o.patch.gz
 
 MAINTAINER=	gj@FreeBSD.org
 COMMENT=	VI Like Emacs.  a vi "workalike", with many additional features
@@ -74,9 +75,6 @@ post-install:
 	@if ! [ -d ${PREFIX}/share/vile/macros ]; then ${MKDIR} ${PREFIX}/share/vile/macros; fi
 	${INSTALL_DATA} ${WRKSRC}/macros/*.rc ${PREFIX}/share/vile/macros
 	${INSTALL_SCRIPT} ${WRKSRC}/macros/vile-pager ${PREFIX}/share/vile/macros
-.if defined(WITH_PERL)
-	${INSTALL_DATA} ${WRKSRC}/*.doc ${PREFIX}/share/doc/vile
-.endif
 	@${ECHO_MSG} "Look in ${PREFIX}/share/doc/vile for documentation."
 	@${ECHO_MSG} "Look in ${PREFIX}/share/vile/macros for macros."
 

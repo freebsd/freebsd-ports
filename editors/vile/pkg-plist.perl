@@ -73,7 +73,6 @@ share/doc/vile/modes.doc
 share/doc/vile/oleauto.doc
 share/doc/vile/perl.doc
 share/doc/vile/visvile.doc
-share/doc/vile/vile-perl-api.doc
 @dirrm share/doc/vile
 share/vile/perl/Vile/Exporter.pm
 share/vile/perl/Vile/Manual.pm
