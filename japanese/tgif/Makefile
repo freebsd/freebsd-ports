@@ -3,15 +3,18 @@
 # Date created:		8 Dec 1995
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.11 1998/12/24 12:49:47 flathill Exp $
+# $Id: Makefile,v 1.12 1999/02/12 18:06:15 flathill Exp $
 #
 
 DISTNAME=	tgif-3.0.18
 PKGNAME=	ja-tgif-3.0.18
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://bourbon.cs.umd.edu/pub/tgif/ \
-		${MASTER_SITE_XCONTRIB}
+		${MASTER_SITE_XCONTRIB} \
+		${MASTER_SITE_PORTS_JP} \
+		http://www.sunbit.or.jp/users/shin/software/
 MASTER_SITE_SUBDIR=	applications/tgif
+DISTFILES=	tgif-3.0.18.tar.gz tgif-3.0J0.12-p18-PSJISr1.gz
 
 PATCH_SITES=	http://www.venus.dti.ne.jp/~iisaka/
 PATCHFILES=	tgif-3.0J0.12-p18-patch.gz
@@ -28,5 +31,11 @@ RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm \
 
 USE_IMAKE=	yes
 MAN1=			tgif.1 prtgif.1
+EXTRACT_ONLY=	tgif-3.0.18.tar.gz
+FETCH_CMD=	/usr/bin/fetch -Ab
+
+post-patch:
+	 ${SETENV} DISTDIR="${DISTDIR}" GZCAT="${GZCAT}" \
+	 PATCH="${PATCH}" PATCH_DIST_ARGS="${PATCH_DIST_ARGS}" ${SH} ${FILESDIR}/setup.sh
 
 .include <bsd.port.mk>
