@@ -1,0 +1,10 @@
+--- test/iohb.c.orig	Mon Aug 18 22:04:00 2003
++++ test/iohb.c	Mon Aug 18 22:04:22 2003
+@@ -219,7 +219,6 @@
+ #include<stdlib.h>
+ #include<string.h>
+ #include<math.h>
+-#include<malloc.h>
+ 
+ char* substr(const char* S, const int pos, const int len);
+ void upcase(char* S);
