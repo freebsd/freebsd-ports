@@ -14,7 +14,7 @@ This package contains ...
 . runtime support for FreeBSD, Linux, DOS, Coherent, etc.
 . a Tcode disassembler
 . misc. tools
-. documentation in HTML (/usr/local/t3x/r6/doc/T3X.html)
+. documentation in HTML (/usr/local/t3x/r7/doc/T3X.html)
 . an online help system in structured document format
 
 WWW: http://www.t3x.org/
