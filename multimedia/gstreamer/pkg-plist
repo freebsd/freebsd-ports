@@ -174,4 +174,8 @@ share/locale/uk/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 @dirrm include/gstreamer-%%VERSION%%/gst/bytestream
 @dirrm include/gstreamer-%%VERSION%%/gst
 @dirrm include/gstreamer-%%VERSION%%
+@dirrm share/gnome/doc/gstreamer-%%VERSION%%/pwg
+@dirrm share/gnome/doc/gstreamer-%%VERSION%%/manual
+@dirrm share/gnome/doc/gstreamer-%%VERSION%%/faq
+@dirrm share/gnome/doc/gstreamer-%%VERSION%%
 @exec %D/bin/gst-register 2>/dev/null || true
