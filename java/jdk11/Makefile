@@ -34,5 +34,7 @@ do-install:
 	${MKDIR} ${PREFIX}/jdk${JDK_VERSION}
 	(cd ${WRKSRC} && ${TAR} -c -f - .) \
 		| (cd ${PREFIX}/jdk${JDK_VERSION} && ${TAR} --unlink -x -f -)
+	${MKDIR} ${PREFIX}/share/java/classes
+	${MKDIR} ${PREFIX}/share/doc/java
 
 .include <bsd.port.post.mk>
