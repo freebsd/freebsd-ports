@@ -28,7 +28,6 @@
     SUBDIR += ftptool
     SUBDIR += gftp
     SUBDIR += greed
-    SUBDIR += gtm
     SUBDIR += hsftp
     SUBDIR += jftp
     SUBDIR += jftpgw

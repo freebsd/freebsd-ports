@@ -8,7 +8,6 @@
     SUBDIR += dfm
     SUBDIR += endeavour
     SUBDIR += ezfm
-    SUBDIR += file_menu_applet
     SUBDIR += filerunner
     SUBDIR += fsv
     SUBDIR += gentoo

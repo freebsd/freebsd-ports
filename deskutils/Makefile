@@ -5,7 +5,6 @@
     SUBDIR += aspostit
     SUBDIR += babytrans
     SUBDIR += bigyear
-    SUBDIR += bulb
     SUBDIR += cal
     SUBDIR += cbb
     SUBDIR += checkrdf
