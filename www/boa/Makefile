@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.boa.org/
 
 MAINTAINER=	ports@FreeBSD.org
 
+FORBIDDEN=	"Remote users can access files outside the document root"
+
 FETCH_BEFORE_ARGS=	-b
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
