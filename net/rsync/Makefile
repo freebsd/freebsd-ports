@@ -4,7 +4,7 @@
 # Date created:         Sat Aug 3, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.18 1998/11/08 09:54:45 obrien Exp $
+# $Id: Makefile,v 1.19 1998/12/08 21:40:06 billf Exp $
 #
 
 DISTNAME=	rsync-2.2.1
