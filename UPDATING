@@ -6,6 +6,12 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040514:
+  AFFECTS: users of audio/faad
+
+  If the compilation of faad fails, please manually delete older
+  installed version of faad and reinstall from port.
+
 20040512:
   AFFECTS: users of print/teTeX
 
