@@ -1,9 +1,10 @@
---- Imakefile.orig	Sat May 11 16:06:00 1996
-+++ Imakefile	Sat Jan 15 04:54:08 2000
-@@ -1,14 +1,14 @@
+--- Imakefile.orig	Sat May 11 00:06:00 1996
++++ Imakefile	Wed Aug 16 04:24:28 2000
+@@ -1,14 +1,15 @@
 -BINDIR = /usr/local/games
 +XCOMM BINDIR = /usr/local/games
  PAD = # -DUSE_PAD
++CHOWN = /usr/sbin/chown
  CHMOD = /bin/chmod
  MKDIR = /bin/mkdir
  
@@ -19,7 +20,7 @@
  LOCAL_LIBRARIES = $(XLIB)
  TAR = /bin/tar
  
-@@ -27,7 +27,7 @@
+@@ -27,11 +28,12 @@
  
  install::
  	@if [ -d $(DATADIR) ]; then echo cosmodir exists, not created.;\
@@ -28,3 +29,9 @@
  	$(CHMOD) 711 $(DATADIR)
  	@if [ -f $(DATAFILE) ]; then echo ranking file exists, not created.;\
  	 else echo > $(DATAFILE); fi
+-	$(CHMOD) 666 $(DATAFILE)
++	$(CHOWN) root:games $(DATAFILE)
++	$(CHMOD) 664 $(DATAFILE)
+ 
+ pack::
+ 	$(TAR) cfz cosmo.tgz *.c *.h Imakefile chara.dat *.doc

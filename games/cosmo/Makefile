@@ -26,5 +26,7 @@ NO_INSTALL_MANPAGES=	yes
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/cosmorc ${PREFIX}/lib/X11/cosmo
 	${INSTALL_DATA} ${_DISTDIR}/moon.tif.gz ${PREFIX}/lib/X11/cosmo
+	${CHOWN} root:games ${PREFIX}/bin/cosmo
+	${CHMOD} g+s ${PREFIX}/bin/cosmo
 
 .include <bsd.port.mk>
