@@ -37,6 +37,7 @@
     SUBDIR += kbiff
     SUBDIR += knewmail
     SUBDIR += lbdb
+    SUBDIR += listmanager
     SUBDIR += mailagent
     SUBDIR += mailcrypt
     SUBDIR += maildrop

@@ -1,0 +1,17 @@
+Listmanager is a new UNIX-based mailing list management service
+designed and implemented for efficient, flexible operation of
+mailing lists of all sizes. It has been under constant development,
+improvement and revision since its inception in 1994. 
+
+Some features include:
+	* automatic mail alias table updates 
+	* moderated, private, invite-only and "hidden" lists 
+	* list archiving, with access controls and lifetime limits 
+	* subscription confirmation 
+	* ability to send headers and footers on each message or periodically 
+	[...]
+
+WWW: http://www.listmanager.org/
+Author: Murray S. Kucherawy <msk@blackops.org>
+
+- Will <andrews@technologist.com>
