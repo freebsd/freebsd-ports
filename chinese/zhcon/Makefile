@@ -26,7 +26,6 @@ ONLY_FOR_ARCHS=	i386
 MAN1=		zhcon.1
 
 post-patch:
-	${REINPLACE_CMD} -e 's,${LOCALBASE}/share/locale,${PREFIX}/share/locale,g' \
-		${WRKSRC}/*
+	${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
