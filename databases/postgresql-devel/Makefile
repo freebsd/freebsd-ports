@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	7.4.b5.2003.10.23
+PORTVERSION?=	7.4.rc2.2003.11.15
 CATEGORIES?=	databases
 MASTER_SITES=	http://freebsd.sean.chittenden.org/ports/ \
 		http://people.freebsd.org/~seanc/ports/
@@ -34,7 +34,7 @@ MD5_FILE=	${.CURDIR}/../postgresql-devel/distinfo
 ## The rest of this file is for normal base installation
 INSTALLS_SHLIB=	YES
 
-BUILD_DEPENDS+=	bison:${PORTSDIR}/devel/bison1875
+BUILD_DEPENDS+=	bison1875:${PORTSDIR}/devel/bison1875
 CONFIGURE_ARGS=	--with-libraries=${LOCALBASE}/lib \
 		--with-includes=${LOCALBASE}/include \
 		--with-docdir=${LOCALBASE}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
