@@ -18,6 +18,8 @@ BUILD_DEPENDS=		doxygen:${PORTSDIR}/devel/doxygen
 LIB_DEPENDS=		portaudio.0:${PORTSDIR}/audio/portaudio \
 			sndfile.1:${PORTSDIR}/audio/libsndfile
 
+BROKEN=			Incomplete pkg-plist
+
 CONFIGURE_ENV=		LIBS="${PTHREAD_LIBS}" LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include" \
 			CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
