@@ -43,7 +43,7 @@ CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
 .endif
 
 # do not require Gcc 3.1 to compile -- or we have an infinate loop on RELENG_4.
-USE_GCC=	X
+USE_GCC=	2.7+
 NOMANCOMPRESS=	yes	# to hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
