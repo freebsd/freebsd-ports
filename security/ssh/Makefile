@@ -3,13 +3,15 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.2 1995/10/07 13:08:35 torstenb Exp $
+# $Id: Makefile,v 1.3 1995/10/10 17:02:24 ache Exp $
 #
 
 DISTNAME=	ssh-1.2.10
 CATEGORIES=	security networking
 MASTER_SITES=	ftp://ftp.funet.fi/pub/unix/security/ \
 		ftp://ftp.cs.hut.fi/pub/ssh/snapshots/
+
+MAINTAINER=	torstenb@FreeBSD.ORG
 
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
 DISTFILES=	${DISTNAME}.tar.gz rsaref2.tar.gz
