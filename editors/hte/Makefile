@@ -17,13 +17,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A file editor/viewer/analyzer for executables
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-release
-CONFIGURE_ENV=	CPPFLAGS+="-I${X11BASE}/include" \
-		LIBS+="-L${X11BASE}/lib"
 
 .include <bsd.port.pre.mk>
 
@@ -31,9 +29,18 @@ CONFIGURE_ENV=	CPPFLAGS+="-I${X11BASE}/include" \
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 .endif
 
+.if defined(WITHOUT_X11)
+PKGNAMESUFFIX=	-nox11
+CONFIGURE_ARGS+=	--disable-x11-textmode
+.else
+USE_XLIB=	yes
+CPPFLAGS=	-I${X11BASE}/include
+LDFLAGS=	-L${X11BASE}/lib
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|$$FLAGS_PIPE $$FLAGS_ALL|$$CFLAGS|g' \
+	@${REINPLACE_CMD} -e 's|$$FLAGS_PIPE $$FLAGS_ALL|$$CFLAGS|g ; \
+		 s|-L/usr/X11/lib -L/usr/X11R6/lib|$$LDFLAGS|g' \
 			${WRKSRC}/configure
 
 post-install:
