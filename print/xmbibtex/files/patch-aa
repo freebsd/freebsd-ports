@@ -1,0 +1,11 @@
+--- Imakefile.orig	Sat Jun 28 11:49:29 1997
++++ Imakefile	Thu Nov  6 11:19:22 1997
+@@ -1,6 +1,6 @@
+-SYS_LIBRARIES = -lXm -lXt -lSM -lICE -lX11 -lXpm -lXext
++SYS_LIBRARIES = ${MOTIFLIB} -lXt -lSM -lICE -lX11 -lXpm -lXext
+ CC            = g++
+-INCLUDES      = -I/usr/include/g++
++XCOMM INCLUDES      = -I/usr/include/g++
+ 
+ SRCS = biblio.cc mybiblio.cc refman.cc load_cb.cc save_cb.cc print_cb.cc c_refform.cc mystrstr.cc searchall_cb.cc ovid.cc spirs.cc inspec.cc pubmed.cc
+ OBJS = biblio.o  mybiblio.o  refman.o  load_cb.o  save_cb.o  print_cb.o  c_refform.o  mystrstr.o  searchall_cb.o  ovid.o  spirs.o  inspec.o  pubmed.o
