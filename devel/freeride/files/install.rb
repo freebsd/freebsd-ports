@@ -11,16 +11,24 @@ $srcdir = CONFIG["srcdir"]
 $version = CONFIG["MAJOR"]+"."+CONFIG["MINOR"]
 $libdir = File.join(CONFIG["libdir"], "ruby", $version)
 $archdir = File.join($libdir, CONFIG["arch"])
-$site_libdir = $:.find {|x| x =~ /site_ruby$/}
-if !$site_libdir
-  $site_libdir = File.join($libdir, "site_ruby")
-elsif $site_libdir !~ Regexp.quote($version)
-  $site_libdir = File.join($site_libdir, $version)
-end
+$site_libdir = CONFIG["sitelibdir"]
 
 $libdir = ["config", "plugins", "redist"]
-$libdir_excl = /i686-mswin32/
+$libdir_excl = [ /i[36]86-mswin32/ ]
 $libdir_subst = [ [/i686-linux/, CONFIG["arch"] ] ]
+
+class Array
+  def contains?
+	return false unless defined?( yield )
+	each { |e| return true if yield( e ) }
+	return false
+  end
+
+  def include_like?( pattern )
+    return include?( pattern ) unless pattern.kind_of?( Regexp )
+    return contains? { |v| ( v.kind_of?( String ) and (v =~ pattern) ) }
+  end
+end
 
 class File
   def File.libdirPath( f )
@@ -43,7 +51,7 @@ def install_rb(noharm = false, srcdir = nil)
       next unless FileTest.file?(f)
       next if (f = f[ld.length+1..-1]) == nil
       next if (/CVS$/ =~ File.dirname(f))
-      next if f =~ libdir_excl
+      next if libdir_excl.contains? { |p| (f =~ p) }
       path.push File.join( ld, f )
       dir |= [File.join( ld, File.dirname(f) )]
     end
@@ -66,19 +74,6 @@ def install_rb(noharm = false, srcdir = nil)
       File::install( f, ofn, 0644, true)
     end
     $stderr.flush
-  end
-end
-
-class Array
-  def include_like?( pattern )
-    return include?( pattern ) unless pattern.kind_of?( Regexp )
-    ans = false
-    each { |v|
-      if v.kind_of?( String ) then
-        break if (ans |= (v =~ pattern) )
-      end
-    }
-    ans
   end
 end
 
