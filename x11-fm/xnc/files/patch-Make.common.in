@@ -1,0 +1,11 @@
+--- Make.common.in.orig	Thu Jan  9 13:02:52 2003
++++ Make.common.in	Thu Jan  9 13:03:11 2003
+@@ -44,7 +44,7 @@
+ INSTDIR=$(bindir)
+ INSTMAN=$(mandir)/man$(manext)
+ INSTPLUG=$(libdir)/xnc
+-INSTDOCDIR = ${prefix}/share/doc/xnc-$(XNCVERSION)
++INSTDOCDIR = ${prefix}/share/doc/xnc
+ INSTICONDIR = $(datadir)/pixmaps
+ INSTDESKDIR1= $(datadir)/gnome/apps/Applications
+ INSTDESKDIR2= $(datadir)/applnk/System
