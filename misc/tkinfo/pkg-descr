@@ -1,0 +1,17 @@
+tkInfo is a tk script to read GNU "info" files and display them.
+tkInfo can be used stand alone (via WISH), or embeded within an
+application to provide integrated, on-line help.
+
+Info files provide a robust hyper-text capability that is ideal for
+on-line help.  The format is suitable for both tty-based systems and
+graphical systems.  In addition, the same document source can produce
+both a "nice" hardcopy manual and Info files.  Note that most GNU tools
+are documented in this way (via texinfo).
+
+Info files can be created manually with any text editor, with the
+support of the emacs "info" package, with the GNU "makeinfo" program,
+or with the emacs scripts for latexinfo.  The makeinfo program produces
+a set of info files from TeX source that use the GNU texinfo style (the
+one that uses "@" everywhere).  Similarly, the latexinfo package (like
+texinfo, but with latex commands and syntax) provides emacs scripts for
+producing info files.
