@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	7.7.3
+PORTVERSION=	7.8
 CATEGORIES=	ftp www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		http://download.sourceforge.net/curl/ \
@@ -22,6 +22,7 @@ MAN3=		curl_easy_cleanup.3 curl_easy_getinfo.3 curl_easy_init.3 \
 		curl_escape.3 curl_unescape.3 \
 		curl_formparse.3 curl_formfree.3 \
 		curl_getdate.3 curl_getenv.3 \
+		curl_global_init.3 curl_global_cleanup.3 \
 		curl_mprintf.3 \
 		curl_slist_append.3 curl_slist_free_all.3 \
 		curl_strequal.3 curl_strnequal.3 \
@@ -43,7 +44,9 @@ CONFIGURE_ARGS += --with-krb4=/usr
 .endif
 
 GNU_CONFIGURE=	yes
-USE_AUTOMAKE=	yes
+# Disable this for the present - curl breaks with automake 1.4 :(
+# (and besides, the pregenerated configure script will DTRT anyway)
+# USE_AUTOMAKE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKEFILES=	Makefile src/Makefile
