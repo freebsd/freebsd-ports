@@ -45,10 +45,10 @@ post-install:
 		${ECHO_CMD} ${PREFIX}/bin/fdsh) > /etc/shells; \
 		${RM} -f /etc/shells.bak
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
+	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${PREFIX}/share/doc/ja/${PORTNAME}
 	@for i in ${DOCS_EN}; do \
-		${INSTALL_DATA} ${WRKSRC}/$$i ${PREFIX}/share/doc/${PORTNAME}; \
+		${INSTALL_DATA} ${WRKSRC}/$$i ${DOCSDIR}; \
 	done
 	@for i in ${DOCS_JA}; do \
 		${INSTALL_DATA} ${WRKSRC}/$$i ${PREFIX}/share/doc/ja/${PORTNAME}; \

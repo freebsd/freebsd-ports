@@ -14,9 +14,9 @@ etc/fd2rc.sample
 %%PORTDOCS%%share/doc/ja/fd/TECHKNOW
 %%PORTDOCS%%share/doc/ja/fd/ToAdmin
 %%PORTDOCS%%@dirrm share/doc/ja/fd
-%%PORTDOCS%%share/doc/fd/FAQ.eng
-%%PORTDOCS%%share/doc/fd/LICENSES.eng
-%%PORTDOCS%%share/doc/fd/README.eng
-%%PORTDOCS%%share/doc/fd/TECHKNOW.eng
-%%PORTDOCS%%share/doc/fd/ToAdmin.eng
-%%PORTDOCS%%@dirrm share/doc/fd
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.eng
+%%PORTDOCS%%%%DOCSDIR%%/LICENSES.eng
+%%PORTDOCS%%%%DOCSDIR%%/README.eng
+%%PORTDOCS%%%%DOCSDIR%%/TECHKNOW.eng
+%%PORTDOCS%%%%DOCSDIR%%/ToAdmin.eng
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
