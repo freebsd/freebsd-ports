@@ -1,0 +1,9 @@
+This module converts currencies. It has built in the fixed
+exchange rates for all Euro currencies (as of November
+2000). If you wish to use other / more currencies, you can
+automatically fetch their exchange rates from the internet
+and (optionally) store them in a file for later reference.
+
+WWW: http://search.cpan.org/search?dist=Finance-Currency-Convert
+
+Seamus Venasse <svenasse@polaris.ca>
