@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sat Apr  6 04:36:06 2002
-+++ Makefile.in	Thu Apr 18 09:22:29 2002
-@@ -33,23 +33,28 @@
+--- Makefile.in.orig	Sun Apr 28 16:41:25 2002
++++ Makefile.in	Tue May  7 19:05:12 2002
+@@ -33,23 +33,27 @@
  	@test -d $(sysconfdir) || $(MKINSTALLDIRS) $(sysconfdir)
  	@cd $(top_srcdir)/docs/conf; \
  	for i in mime.types magic; do \
@@ -11,8 +11,8 @@
  	done; \
  	for j in $(top_srcdir)/docs/conf $(top_builddir)/docs/conf ; do \
  		cd $$j ; \
- 	for i in *-std* ssl.conf; do \
- 		[ -f $$i ] || continue; \
+ 	for i in *-std*.conf ssl.conf; do \
+-		[ -f $$i ] || continue; \
 +		[ -f `echo "$$i"|sed 's,\.in$$,_nonex,g'` ] || continue; \
  		( \
  			n_lm=`awk 'BEGIN {n=0} /@@LoadModule@@/ {n+=1} END {print n}' < $$i`; \
@@ -30,7 +30,7 @@
  					-e 'p' \
  					< $$i; \
  				for j in $(DSO_MODULES) "^EOL^"; do \
-@@ -57,7 +62,7 @@
+@@ -57,7 +61,7 @@
  						echo "<IfDefine SSL>"; \
  					fi; \
  					if test $$j != "^EOL^"; then \
@@ -39,7 +39,7 @@
  					fi; \
  					if test "x$$j" = "xssl"; then \
  						echo "</IfDefine>"; \
-@@ -106,11 +111,14 @@
+@@ -106,12 +110,14 @@
  
  install-htdocs:
  	@echo Installing HTML documents
@@ -52,12 +52,13 @@
  	@test -d $(manualdir) || $(MKINSTALLDIRS) $(manualdir)
  	@test -d $(top_srcdir)/docs/manual && (cd $(top_srcdir)/docs/manual && cp -rp * $(manualdir))
 -	@test "x$(htdocsdir)" != "x" && cd $(htdocsdir) && find . -name "CVS" -print | xargs rm -rf {} \;
+-
 +.endif
 +	@test "x$(htdocsdir)" != "x" && cd $(htdocsdir).default && find . -name "CVS" -print | xargs rm -rf {} \;
- 
  install-error:
  	@echo Installing error documents
-@@ -126,9 +134,10 @@
+ 	@test -d $(errordir) || $(MKINSTALLDIRS) $(errordir)
+@@ -126,9 +132,10 @@
  
  install-cgi:
  	@echo Installing CGIs
