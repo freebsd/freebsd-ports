@@ -1,0 +1,23 @@
+--- Makefile.orig	Sat Oct  6 15:46:35 2001
++++ Makefile	Sat Oct  6 18:52:19 2001
+@@ -1,13 +1,15 @@
+-CC     = gcc
+-CFLAGS = -O2 -Wall -fomit-frame-pointer -s 
+-INCDIR = -I/usr/X11R6/include/X11
+-DESTDIR= /usr/bin
+-LIBDIR = -L/usr/X11R6/lib
++INCDIR = -I${X11BASE}/include/X11 -I${X11BASE}/include
++LIBDIR = -L${X11BASE}/lib
+ LIBS   = -ldockapp -lX11 -lXext -lXpm
+ OBJS   = wmzazof.o
+ 
++all: wmzazof
++
+ wmzazof: $(OBJS) 
+ 	$(CC) $(CFLAGS) $(OBJS) -o wmzazof $(INCDIR) $(LIBDIR) $(LIBS)
++
++.c.o:
++	$(CC) -c -o wmzazof.o wmzazof.c $(CFLAGS) $(INCDIR)
+ 
+ install: wmzazof
+ 	strip wmzazof
