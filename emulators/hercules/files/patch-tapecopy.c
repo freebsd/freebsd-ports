@@ -1,6 +1,5 @@
-diff -uNr tapecopy.c
---- tapecopy.c	Thu Nov 29 07:53:46 2001
-+++ tapecopy.c	Thu Jan 17 14:04:09 2002
+--- tapecopy.c.orig	Mon Sep  2 11:00:59 2002
++++ tapecopy.c	Mon Sep  2 11:03:21 2002
 @@ -32,6 +32,7 @@
  static BYTE hdrlbl[] = "\xC8\xC4\xD9";  /* EBCDIC characters "HDR"   */
  static BYTE eoflbl[] = "\xC5\xD6\xC6";  /* EBCDIC characters "EOF"   */
@@ -46,7 +45,7 @@ diff -uNr tapecopy.c
  
      return 0;
  } /* end function print_status */
-@@ -174,6 +180,7 @@
+@@ -188,6 +194,7 @@
          exit (7);
      }
  
@@ -54,7 +53,7 @@ diff -uNr tapecopy.c
      /* Display tape status information */
      for (i = 0; tapeinfo[i].t_type != 0
                  && tapeinfo[i].t_type != stblk.mt_type; i++);
-@@ -201,6 +208,7 @@
+@@ -215,6 +222,7 @@
  
      /* Set the tape device to process variable length blocks */
      opblk.mt_op = MTSETBLK;
