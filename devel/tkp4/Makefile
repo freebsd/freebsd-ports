@@ -20,13 +20,9 @@ do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.tcl ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/tkp4 ${PREFIX}/bin
-.ifndef NOPORTDOCS
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/[A-Z]* ${DOCSDIR}
-.else
-
-PKGNAMESUFFIX=	-nodocs
-.endif
+	${INSTALL_DATA} ${WRKSRC}/CHANGES ${WRKSRC}/P4WINdifferences \
+		${WRKSRC}/UsingTkP4 ${DOCSDIR}
 
 .include <bsd.port.pre.mk>
 

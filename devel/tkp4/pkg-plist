@@ -3,8 +3,7 @@ bin/tkp4
 %%SCRIPTS%%/tkp4.tcl
 %%SCRIPTS%%/tree.tcl
 @dirrm %%SCRIPTS%%
-%%PORTDOCS%%%%DOCS%%/CHANGES
-%%PORTDOCS%%%%DOCS%%/P4WINdifferences
-%%PORTDOCS%%%%DOCS%%/README
-%%PORTDOCS%%%%DOCS%%/UsingTkP4
-%%PORTDOCS%%@dirrm %%DOCS%%
+%%DOCS%%/CHANGES
+%%DOCS%%/P4WINdifferences
+%%DOCS%%/UsingTkP4
+@dirrm %%DOCS%%
