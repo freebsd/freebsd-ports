@@ -123,7 +123,7 @@ EMACS_SITELISPDIR=	${EMACS_LISPDIR}
 SITE_STARTUP_FILE=	mew-xemacs-startup.el
 .elif (${EMACS_PORT_NAME} == "xemacs21")
 EMACS_NAME=		xemacs
-EMACS_VER=		21.1.7
+EMACS_VER=		21.1.8
 EMACS_MAJOR_VER=	21
 EMACS_CMD=		${EMACS_NAME}-${EMACS_VER}
 EMACS_LIBDIR=		lib/${EMACS_NAME}
@@ -137,7 +137,7 @@ EMACS_PKG_PKGINFODIR=	${EMACS_PKGDIR}/pkginfo
 EMACS_ETCDIR=		${EMACS_PKG_ETCDIR}
 EMACS_LISPDIR=		${EMACS_PKG_LISPDIR}
 EMACS_INFODIR=		${EMACS_PKG_INFODIR}
-.elif (${EMACS_PORT_NAME} == "xemacs-mule")
+.elif (${EMACS_PORT_NAME} == "xemacs21-mule")
 EMACS_NAME=		xemacs
 EMACS_VER=		21.1.8
 EMACS_MAJOR_VER=	21
@@ -165,7 +165,7 @@ INST_TARGET_LIST=	install install-info
 REQUIRE=		(require \'${SITE_STARTUP_FILE:S/^mew-/&${EMACS_PORT_NAME}-/:S/.el$//})
 .endif
 .if (${EMACS_PORT_NAME} == "emacs20") || (${EMACS_PORT_NAME} == "mule") || \
-    (${EMACS_PORT_NAME} == "xemacs-mule")
+    (${EMACS_PORT_NAME} == "xemacs21-mule")
 INST_TARGET_LIST+=	install-jinfo
 .endif
 
