@@ -37,8 +37,14 @@ RPMFLAGS=	--ignoreos --root ${PREFIX} --dbpath ${DBPATH} \
 		--nodeps --replacepkgs
 RPMDIR=		${DISTDIR}/${DIST_SUBDIR}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+BROKEN=		"Unfetchable"
+.endif
+
 do-install:
 	@${LOCALBASE}/bin/rpm -U ${RPMFLAGS} ${RPMDIR}/${DISTFILES}
 	@${LDCONFIG_LINUX}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
