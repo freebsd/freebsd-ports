@@ -16,11 +16,11 @@ DIST_SUBDIR=	gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Xml internationalization support for GNOME, and others
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_ICONV=	yes
 USE_PERL5=	yes
 USE_GNOME=	gnometarget
 USE_REINPLACE=	yes

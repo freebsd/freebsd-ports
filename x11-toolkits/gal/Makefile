@@ -16,14 +16,14 @@ DIST_SUBDIR=	gnome
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT=	A collection of widgets taken from GNOME gnumeric and evolution
 
-LIB_DEPENDS=	unicode.0:${PORTSDIR}/devel/libunicode \
-		iconv.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	unicode.0:${PORTSDIR}/devel/libunicode
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomehier libglade gnomevfs
+USE_ICONV=	yes
 GNOME_HTML_DIR=	${PREFIX}/share/doc/gal
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=13

@@ -16,8 +16,7 @@ DISTNAME=	${PORTNAME}v${PORTVERSION:S/./_/g}
 MAINTAINER=	aquatique@rusunix.org
 COMMENT=	Command line ICQ client with ICQ2000 and recoding support
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
+USE_ICONV=	yes
 USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes

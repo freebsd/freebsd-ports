@@ -30,7 +30,7 @@ MAN7=		micq.7
 .if defined(WITHOUT_LIBICONV)
 CONFIGURE_ARGS+=	--disable-iconv
 .else
-LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
+USE_ICONV=	yes
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib -liconv
 .endif

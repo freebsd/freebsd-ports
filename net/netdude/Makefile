@@ -16,10 +16,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NETwork DUmp data Displayer and Editor for tcpdump tracefiles
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		ltdl.4:${PORTSDIR}/devel/libltdl
+LIB_DEPENDS=	ltdl.4:${PORTSDIR}/devel/libltdl
 
 USE_GETTEXT=	yes
+USE_ICONV=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	glib12 gtk12
 USE_LIBTOOL_VER=13

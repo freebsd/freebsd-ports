@@ -47,6 +47,6 @@ LIB_DEPENDS+=		Xft.2:${PORTSDIR}/x11-fonts/libXft
 .if defined (WITHOUT_ICONV)
 CONFIGURE_ARGS+=	WITH_ICONV=0
 .else
-LIB_DEPENDS+=		iconv.3:${PORTSDIR}/converters/libiconv
+USE_ICONV=	yes
 .endif
 .endif

@@ -10,12 +10,12 @@ PORTVERSION=	2.0.18
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yaz/
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		xml2.5:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Z39.50/SR client and API library
 
+USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-shared
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \

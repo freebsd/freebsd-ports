@@ -16,7 +16,6 @@ MAINTAINER=	lofi@freebsd.org
 COMMENT=	Prerelease package of GnuPG extensions for GnuPG 2.0
 
 LIB_DEPENDS=	gcrypt.6:${PORTSDIR}/security/libgcrypt \
-		iconv.3:${PORTSDIR}/converters/libiconv \
 		ksba.7:${PORTSDIR}/security/libksba \
 		pth.20:${PORTSDIR}/devel/pth
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
@@ -27,6 +26,7 @@ USE_AUTOCONF_VER=253
 USE_LIBTOOL_VER=13
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
+USE_ICONV=	yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib

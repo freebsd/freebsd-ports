@@ -32,7 +32,7 @@ MAN7=		gnupg.7
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_LIBICONV) || exists(${PREFIX}/lib/libiconv.so)
-LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
+USE_ICONV=	yes
 .endif
 .if defined(WITH_LDAP) || exists(${PREFIX}/lib/libldap.so.2)
 USE_OPENLDAP=	yes

@@ -14,9 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	A Perl interface to the Sablotron XSLT processor
 
-LIB_DEPENDS=	sablot.70:${PORTSDIR}/textproc/sablotron \
-		iconv.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	sablot.70:${PORTSDIR}/textproc/sablotron
 
+USE_ICONV=	yes
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	LIBS='-L${LOCALBASE}/lib -lexpat -lsablot -liconv' \
 		INC='-I${LOCALBASE}/include' \

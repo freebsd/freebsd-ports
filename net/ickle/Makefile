@@ -17,12 +17,12 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	ICQ2000 protocol implementation
 
 LIB_DEPENDS=	gtkmm:${PORTSDIR}/x11-toolkits/gtk-- \
-		iconv.3:${PORTSDIR}/converters/libiconv \
 		icq2000.5:${PORTSDIR}/net/libicq2000
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 WANT_GNOME=	yes
+USE_ICONV=	yes
 USE_REINPLACE=	yes
 USE_SIZE=	yes
 GNU_CONFIGURE=	yes

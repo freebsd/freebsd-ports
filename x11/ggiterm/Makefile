@@ -19,7 +19,7 @@ COMMENT=	A terminal emulator for GGI
 LIB_DEPENDS=	ggi.2:${PORTSDIR}/graphics/libggi
 .if !defined(WITHOUT_FREETYPE)
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
-LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
+USE_ICONV=	yes
 .endif
 
 USE_GMAKE=	yes

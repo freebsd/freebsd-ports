@@ -16,11 +16,10 @@ MASTER_SITE_SUBDIR=	ahh
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Tool to wake up Wake-On-LAN compliant computers
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
 GNU_CONFIGURE=		yes
 USE_GETOPT_LONG=	yes
 USE_GETTEXT=		yes
+USE_ICONV=		yes
 CPPFLAGS=		-I${LOCALBASE}/include
 LDFLAGS=		-L${LOCALBASE}/lib
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

@@ -17,10 +17,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A ultra lightweight xml-rpc library written in C++
 
-LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2 \
-		iconv.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
 USE_BZIP2=	yes
+USE_ICONV=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \

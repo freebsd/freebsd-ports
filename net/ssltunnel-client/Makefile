@@ -18,7 +18,7 @@ PKGNAMESUFFIX=	-client
 MAINTAINER=	at@rominet.net
 COMMENT=	PPP over SSL virtual private networking (client part)
 
-LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
+USE_ICONV=	yes
 
 MAN1=		pppclient.1
 MAN5=		ssltunnelrc.5

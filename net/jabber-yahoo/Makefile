@@ -17,10 +17,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jabber Yahoo Transport module
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/jabberd:${PORTSDIR}/net/jabber
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_GNOME=	glib12
 USE_GMAKE=	yes
+USE_ICONV=	yes
 
 WRKSRC=		${WRKDIR}/yahoo-transport-${PORTVERSION}
 

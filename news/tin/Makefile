@@ -18,12 +18,12 @@ MAINTAINER?=	ache@FreeBSD.org
 COMMENT=	Easy-to-use threaded newsreader with NOV/NNTP support
 
 LIB_DEPENDS=	uu.3:${PORTSDIR}/converters/uulib \
-		iconv.3:${PORTSDIR}/converters/libiconv \
 		pcre.0:${PORTSDIR}/devel/pcre
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
+USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 TIN_EDITOR?=	/usr/bin/ee
 
