@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	irc
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	irc ruby
-MASTER_SITES=	http://www.ueda.info.waseda.ac.jp/~igarashi/ruby/
+MASTER_SITES=	http://www.ruby-lang.org/~knu/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
@@ -21,7 +21,7 @@ NO_BUILD=	yes
 
 DOCS_EN=	BUGS		ChangeLog	MANIFEST \
 		NEWS		README		TODO
-DOCS_JA=	MEMO.ja		README.ja
+DOCS_JA=	MEMO.ja		README.ja	doc.ja/*
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/localize.rb ${RUBY_SITELIBDIR}
@@ -35,14 +35,12 @@ do-install:
 .for f in ${DOCS_JA}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/irc/ja/
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${RUBY_DOCDIR}/irc/ja/
 	${MKDIR} ${RUBY_EXAMPLESDIR}/irc/cpi
 	${MKDIR} ${RUBY_EXAMPLESDIR}/irc/ja/cpi
-	cd ${WRKSRC}/cpi && \
-	for f in *.cpi; do ${INSTALL_DATA} $${f} ${RUBY_EXAMPLESDIR}/irc/cpi/; done; \
-	for f in *.cpi.orig; do ${INSTALL_DATA} $${f} ${RUBY_EXAMPLESDIR}/irc/ja/cpi/$${f%.orig}; done
+	${INSTALL_DATA} ${WRKSRC}/cpi/*.cpi ${RUBY_EXAMPLESDIR}/irc/cpi/
+	${INSTALL_DATA} ${WRKSRC}/cpi.ja/*.cpi ${RUBY_EXAMPLESDIR}/irc/ja/cpi/
 	${INSTALL_DATA} ${WRKSRC}/bot.rb ${RUBY_EXAMPLESDIR}/irc/
-	${INSTALL_DATA} ${WRKSRC}/bot.rb.orig ${RUBY_EXAMPLESDIR}/irc/ja/bot.rb
+	${INSTALL_DATA} ${WRKSRC}/bot.ja.rb ${RUBY_EXAMPLESDIR}/irc/ja/bot.rb
 	${MKDIR} ${RUBY_EXAMPLESDIR}/irc/log
 	${MKDIR} ${RUBY_EXAMPLESDIR}/irc/ja/log
 .endif
