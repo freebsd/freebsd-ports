@@ -14,8 +14,8 @@ DISTNAME=	Pyrex${PORTVERSION}
 
 MAINTAINER=	perky@FreeBSD.org
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Plex/__init__.py:${PORTSDIR}/textproc/py-plex
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Plex/__init__.py:${PORTSDIR}/textproc/py-plex
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Plex/__init__.py:${PORTSDIR}/devel/py-plex
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Plex/__init__.py:${PORTSDIR}/devel/py-plex
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
