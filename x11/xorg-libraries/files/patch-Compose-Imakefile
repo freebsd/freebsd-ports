@@ -1,0 +1,10 @@
+--- nls/Compose/Imakefile.orig	Mon Jun  3 22:19:43 2002
++++ nls/Compose/Imakefile	Sat Jan 11 01:00:46 2003
+@@ -54,6 +54,7 @@
+ ComposeTarget(koi8-r)
+ ComposeTarget(koi8-u)
+ ComposeTarget(koi8-c)
++ComposeTarget(microsoft-cp1251)
+ ComposeTarget(mulelao-1)
+ ComposeTarget(vi_VN.tcvn)
+ ComposeTarget(vi_VN.viscii)

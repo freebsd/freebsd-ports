@@ -1,0 +1,17 @@
+--- lib/Xdmcp/Imakefile.orig	Thu May 27 23:35:23 2004
++++ lib/Xdmcp/Imakefile	Thu May 27 23:36:09 2004
+@@ -6,12 +6,13 @@
+ XCOMM $XFree86: xc/lib/Xdmcp/Imakefile,v 3.4 1999/04/17 09:08:12 dawes Exp $
+ 
+ #define DoNormalLib NormalLibXdmcp
+-#define DoSharedLib SharedLibXdmcp
++#define DoSharedLib YES
+ #define DoExtraLib SharedLibXdmcp
+ #define DoDebugLib DebugLibXdmcp
+ #define DoProfileLib ProfileLibXdmcp
+ #define LibName Xdmcp
+ #define SoRev SOXDMCPREV
++SOXDMCPREV = 0.0
+ #define IncSubdir X11
+ 
+ #if HasXdmAuth

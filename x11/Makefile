@@ -219,6 +219,7 @@
     SUBDIR += xmx
     SUBDIR += xnee
     SUBDIR += xnodecor
+    SUBDIR += xorg-libraries
     SUBDIR += xprompt
     SUBDIR += xproto
     SUBDIR += xrestop

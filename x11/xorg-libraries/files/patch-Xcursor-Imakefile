@@ -1,0 +1,11 @@
+--- lib/Xcursor/Imakefile.orig	Fri May 28 11:20:24 2004
++++ lib/Xcursor/Imakefile	Fri May 28 11:20:43 2004
+@@ -87,7 +87,7 @@
+ 	RemoveFile($@)
+ 	sh config-subst $(SUBSTVARS) < xcursor.pc.in > $@
+ 
+-InstallNonExecFile(xcursor.pc,$(USRLIBDIR)/pkgconfig)
++InstallNonExecFile(xcursor.pc,$(PROJECTROOT)/libdata/pkgconfig)
+ 
+ clean::
+ 	RemoveFile(xcursor.pc)
