@@ -30,6 +30,7 @@ OPTIONS=	CDPARANOIA "Ripper: Enable cdparanoia support" on \
 		CDDA2WAV "Ripper: cdda2wav: Install sysutils/cdrtools" off \
 		LAME "Encoder: lame: Install audio/lame" on \
 		BLADEENC "Encoder: bladeenc: Install audio/bladeenc" off \
+		FAAC "Encoder: faac: Install audio/faac" off \
 		FLAC "Encoder: flac: Install audio/flac" off \
 		GOGO "Encoder: gogo: Install audio/gogo" off \
 		MP3ENCODE "Encoder: mp3encode: Install audio/mp3encode" off \
@@ -60,6 +61,10 @@ RUN_DEPENDS+=	cdda2wav:${PORTSDIR}/sysutils/cdrtools
 
 .if defined(WITH_BLADEENC)
 RUN_DEPENDS+=	bladeenc:${PORTSDIR}/audio/bladeenc
+.endif
+
+.if defined(WITH_FAAC)
+RUN_DEPENDS+=	faac:${PORTSDIR}/audio/faac
 .endif
 
 .if defined(WITH_FLAC)
@@ -97,7 +102,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|' \
 		${WRKSRC}/src/grip.c
 	@${REINPLACE_CMD} -e 's|{"xingmp3enc","-B %b -Q %w","mp3"},||; \
-		s|{"l3enc","-br %b %w %m","mp3"},||; \
+		s|{"l3enc","-br %b %w %m","mp3"},|"faac","-w -b %b %w -o %m", "m4a"},|; \
 		s|mp3encode|encode|' \
 		${WRKSRC}/src/gripcfg.c
 
