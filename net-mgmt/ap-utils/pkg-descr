@@ -1,10 +1,10 @@
-Wireless Access Point Utilites for Unix are a set of tools to
-configure and monitor several popular wireless access points using
-SNMP. Among other things, they allow access restrictions, MAC
-authorization and WEP encryption for access points by Linksys,
-Netgear, SMC, and D-Link.
+A set of utilities to configure and monitor several popular
+wireless access points using SNMP. Among other things, they
+allow access restrictions, MAC authorization and WEP encryption
+for access points and "wireless gateways" by Linksys, Netgear,
+SMC, and D-Link.
 
 WWW: http://ap-utils.polesye.net/
 
-- Dan Pelleg
+ -- Dan Pelleg
 daniel+aputils@pelleg.org
