@@ -7,11 +7,11 @@
 
 PORTNAME=	mh
 PORTVERSION=	${VERSION}.j${JP_VERSION}
-PORTREVISION=	1
 CATEGORIES=	japanese mail
-MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://komadori.planet.sci.kobe-u.ac.jp/pub/MH/ \
 		ftp://ftp.chem.eng.himeji-tech.ac.jp/pub/net/mh/
+MASTER_SITES_SUBDIR=	motoyuki
 DISTNAME=	${PORTNAME}-${VERSION}-JP-${JP_VERSION}
 
 MAINTAINER=	motoyuki@freebsd.org
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	jless:${PORTSDIR}/japanese/less
 RUN_DEPENDS=	jless:${PORTSDIR}/japanese/less
 
 VERSION=	6.8.4
-JP_VERSION=	3.03
+JP_VERSION=	3.05
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-batchmode \
