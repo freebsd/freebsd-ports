@@ -22,3 +22,6 @@ of the kernel, gives a 2D and a 3D graphical representation of the neural
 networks and controls the kernel during the simulation run. In addition, the
 2D user interface has an integrated network editor which can be used to
 directly create, manipulate and visualize neural nets in various ways.
+
+WWW: http://www-ra.informatik.uni-tuebingen.de/SNNS/
+
