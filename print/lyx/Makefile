@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	lyx
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.2.3
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		ftp://ftp.sdsc.edu/pub/other/lyx/stable/ \
 		ftp://gd.tuwien.ac.at/publishing/tex/lyx/stable/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	flynn@energyhq.homeip.net
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		latex:${PORTSDIR}/print/teTeX
@@ -27,10 +26,11 @@ USE_REINPLACE=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_AUTOMAKE_VER=	15
-AUTOMAKE=	${WRKSRC}/autogen.sh
-AUTOCONF=	${TRUE}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-extra-lib="${LOCALBASE}/lib" \
 		--with-extra-inc="${LOCALBASE}/include"
+MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
+		AUTOHEADER="${TRUE}"
 MAN1=		lyx.1 reLyX.1
 
 .if defined(WITH_ASPELL)
@@ -59,12 +59,13 @@ pre-everything::
 	@${ECHO_MSG}
 .endif
 
-post-extract:
-	@${CP} -f ${FILESDIR}/xforms.m4 ${WRKSRC}/config
-
 post-patch:
-	@${FIND} ${WRKSRC} -name "configure.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|AC_CHECK_LIB(c,|AC_CHECK_FUNC(|g ; \
-		 s|^INSTALL_SCRIPT=|#INSTALL_SCRIPT=|g'
+.for file in src/Makefile.am src/frontends/Makefile.am
+	@${REINPLACE_CMD} -e 's|LIBS +=|LDFLAGS = @LDFLAGS@|g' ${WRKSRC}/${file}
+.endfor
+.for file in configure.in lib/reLyX/configure.in
+	@${REINPLACE_CMD} -e 's|AC_CHECK_LIB(c,|AC_CHECK_FUNC(|g ; \
+		 s|^INSTALL_SCRIPT=|#INSTALL_SCRIPT=|g' ${WRKSRC}/${file}
+.endfor
 
 .include <bsd.port.mk>
