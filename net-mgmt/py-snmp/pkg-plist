@@ -207,6 +207,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/asn1/encoding/ber
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/asn1/encoding
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/asn1
+@dirrm %%PYTHON_SITELIBDIR%%/pysnmp
 %%PORTDOCS%%%%DOCSDIR%%/asn1/base-asn1-objects.html
 %%PORTDOCS%%%%DOCSDIR%%/asn1/base-choicetypeasn1-objects.html
 %%PORTDOCS%%%%DOCSDIR%%/asn1/base-recordtypeasn1-objects.html

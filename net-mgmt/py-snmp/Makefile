@@ -1,6 +1,6 @@
 # New ports collection makefile for:	py-snmp
 # Date created:		26 March 2002
-# Whom:			Hye-Shik Chang <perky@fallin.lv>
+# Whom:			Hye-Shik Chang
 #
 # $FreeBSD$
 #
