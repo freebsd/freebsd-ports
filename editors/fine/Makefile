@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://razor.fer.uni-lj.si/pub/software/bojank/fine/
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
+USE_NEWGCC=	yes
 USE_GMAKE=	yes
 USE_QT=		yes
 WRKSRC=		${WRKDIR}/fine
