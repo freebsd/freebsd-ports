@@ -1,15 +1,14 @@
---- lib/sysdep/generic/unix/vio.c	Fri Mar  3 11:08:20 2000
-+++ lib/sysdep/generic/unix/vio.c	Sat Mar  4 15:36:46 2000
-@@ -32,8 +32,11 @@
- #define VMAX_Y 100
+--- lib/sysdep/generic/unix/vio.c.orig	Fri Apr 14 15:02:21 2000
++++ lib/sysdep/generic/unix/vio.c	Mon Apr 17 23:49:05 2000
+@@ -71,7 +71,11 @@
+ #endif
  
- #ifdef HAVE_NCURSES
--
+ #ifdef	_CURSES_
 +#if defined(__FreeBSD_version) && __FreeBSD_version < 400010
 +#include <ncurses/curses.h>
 +#else
  #include <curses.h>
 +#endif
- 
- const static int __ncurses_color[8] = {
-     COLOR_BLACK,
+ #define _bg(x)	(((x) >> 4) & 7)
+ #define _fg(x)	((x) & 7)
+ #define _2cpair(x) (_bg(x) * 010 + _fg(x))
