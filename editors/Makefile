@@ -125,14 +125,6 @@
     SUBDIR += vim-lite
     SUBDIR += vim5
     SUBDIR += vim6+ruby
-#   SUBDIR += wemi-emacs
-#   SUBDIR += wemi-emacs-current
-    SUBDIR += wemi-emacs20
-#   SUBDIR += wemi-emacs20-current
-#   SUBDIR += wemi-mule
-#   SUBDIR += wemi-mule-current
-    SUBDIR += wemi-xemacs21-mule
-#   SUBDIR += wemi-xemacs21-mule-current
     SUBDIR += wily
     SUBDIR += wordperfect
     SUBDIR += xcoral
