@@ -264,6 +264,7 @@
     SUBDIR += vertex
     SUBDIR += vid
     SUBDIR += view3ds
+    SUBDIR += vlc
     SUBDIR += vterrain-sdk
     SUBDIR += whirlgif
     SUBDIR += win32-codecs
