@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/ \
 
 MAINTAINER=	ycheng@sinica.edu.tw
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.5
 

@@ -17,7 +17,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${TGIF_PORT}:build
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

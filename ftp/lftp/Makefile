@@ -22,7 +22,7 @@ MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/ \
 
 MAINTAINER=	fm@astral.ntu-kpi.kiev.ua
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
 
 USE_BZIP2=	yes
 USE_OPENSSL=	yes

@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	stable/sources/mc
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
 .if defined(WITH_NCURSES_PORT)
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 .elif defined(WITH_SLANG)

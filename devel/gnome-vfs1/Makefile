@@ -15,7 +15,7 @@ DISTNAME=	gnome-vfs-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 
-BUILD_DEPENDS=	msgfmt-new:${PORTSDIR}/devel/gettext-devel \
+BUILD_DEPENDS=	msgfmt-new:${PORTSDIR}/devel/gettext \
 		${X11BASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc:${PORTSDIR}/misc/gnomemimedata
 LIB_DEPENDS=	gconf-1.1:${PORTSDIR}/devel/gconf
 .if !exists(/usr/bin/bzip2)

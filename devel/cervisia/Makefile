@@ -19,7 +19,7 @@ QT_VER=		""
 USE_KDELIBS_VER=2
 QT_VER=		2
 .endif
-LIB_DEPENDS+=	intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS+=	intl.1:${PORTSDIR}/devel/gettext-old
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

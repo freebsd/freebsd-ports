@@ -15,7 +15,7 @@ DISTNAME=	gnome-core-${PORTVERSION}
 
 MAINTAINER?=	gnome@FreeBSD.org
 
-BUILD_DEPENDS=	msgfmt-new:${PORTSDIR}/devel/gettext-devel
+BUILD_DEPENDS=	msgfmt-new:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	gtkhtml.21:${PORTSDIR}/www/gtkhtml
 RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/login.wav:${PORTSDIR}/audio/gnomeaudio
 

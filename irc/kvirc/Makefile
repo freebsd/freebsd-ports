@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.kvirc.net/kvirc/${PORTVERSION}/source/ \
 
 MAINTAINER=	trevor@FreeBSD.org
 
-BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext-old
 
 ALL_TARGET=	kvirc
 INSTALLS_SHLIB=	yes

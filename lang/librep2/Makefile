@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	stable/sources/librep
 MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm \
-		intl.1:${PORTSDIR}/devel/gettext
+		intl.1:${PORTSDIR}/devel/gettext-old
 .if !exists(/usr/lib/libgmp.so)
 LIB_DEPENDS+=	gmp.3:${PORTSDIR}/math/libgmp
 .endif

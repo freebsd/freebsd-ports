@@ -14,7 +14,7 @@ DIST_SUBDIR=	KDE
 
 MAINTAINER?=	kde@FreeBSD.org
 
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext \
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext-old \
 		autoconf213:${PORTSDIR}/devel/autoconf213 \
 		automake14:${PORTSDIR}/devel/automake14
 RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake

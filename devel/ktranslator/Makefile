@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Attic/old/1.1.2/apps/utils
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext-old
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_KDELIBS_VER=1

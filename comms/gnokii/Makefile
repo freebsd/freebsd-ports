@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.gnokii.org/pub/gnokii/ \
 
 MAINTAINER=	anders@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
 
 USE_GMAKE=	yes
 USE_AUTOCONF=	yes

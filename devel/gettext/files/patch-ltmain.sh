@@ -1,5 +1,5 @@
 
-$FreeBSD$
+$FreeBSD: /tmp/pcvs/ports/devel/gettext/files/Attic/patch-ltmain.sh,v 1.1 2002-03-15 19:43:48 ade Exp $
 
 --- ltmain.sh	2001/08/27 09:51:26	1.1
 +++ ltmain.sh	2001/08/27 09:51:42

@@ -14,7 +14,7 @@ DISTNAME=	gnome-utils-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 
-BUILD_DEPENDS=	msgfmt-new:${PORTSDIR}/devel/gettext-devel
+BUILD_DEPENDS=	msgfmt-new:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop
 
 USE_X_PREFIX=	yes

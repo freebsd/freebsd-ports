@@ -13,7 +13,7 @@ DISTNAME=       ${PORTNAME}2.8.5dev.7
 
 MAINTAINER=	ache@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
 
 WRKSRC=		${WRKDIR}/${PORTNAME}2-8-5
 USE_BZIP2=	yes

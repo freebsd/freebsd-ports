@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	unstable/apps/games
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext-old
 
 USE_KDELIBS_VER=2
 USE_AUTOCONF=	yes

@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ryan@sasknow.com
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang \
-		intl.1:${PORTSDIR}/devel/gettext
+		intl.1:${PORTSDIR}/devel/gettext-old
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes

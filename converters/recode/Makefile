@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	recode
 
 MAINTAINER=	demon@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

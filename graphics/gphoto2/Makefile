@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.gphoto.net/dist/
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv \
-		intl.1:${PORTSDIR}/devel/gettext \
+		intl.1:${PORTSDIR}/devel/gettext-old \
 		usb-0.1.5:${PORTSDIR}/devel/libusb \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg

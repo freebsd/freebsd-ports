@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext-old
 
 USE_KDEBASE_VER=1
 USE_LIBTOOL=	yes

@@ -23,7 +23,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 #
 #-----------------------------------------------------------------------
 
-LIB_DEPENDS+=	intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS+=	intl.1:${PORTSDIR}/devel/gettext-old
 .if !defined(WITHOUT_MCAL)
 LIB_DEPENDS+=	mcal.0:${PORTSDIR}/misc/libmcal
 .endif

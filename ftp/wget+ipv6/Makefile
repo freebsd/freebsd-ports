@@ -23,7 +23,7 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sf@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
 BUILD_DEPENDS=	giconv:${PORTSDIR}/converters/libiconv
 
 .if !defined(WITHOUT_SSL)

@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}kb
 
 MAINTAINER=	demon@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
 
 USE_KDEBASE_VER=2
 USE_GMAKE=	yes

@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-2.5.4
 
 MAINTAINER=	jkoshy@freebsd.org
 
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext-old
 
 USE_XLIB=	YES
 CONFIGURE_ENV=	LC_ALL=

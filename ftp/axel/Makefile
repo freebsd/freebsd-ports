@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.lintux.cx/downloads/
 
 MAINTAINER=	lintux@debian.org
 
-LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext-old
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes

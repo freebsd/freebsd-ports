@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	sobomax
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 USE_GMAKE=	yes

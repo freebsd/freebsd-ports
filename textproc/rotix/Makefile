@@ -13,7 +13,7 @@ MASTER_SITES=	http://elektron.its.tudelft.nl/~hemmin98/
 
 MAINTAINER=	lintux@debian.org
 
-LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext-old
 
 USE_GMAKE=	yes
 

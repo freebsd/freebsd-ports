@@ -37,7 +37,7 @@ PATCHES=	pastel.diff
 
 .include <bsd.port.pre.mk>
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 FREETYPE_CONFIG?=    ${LOCALBASE}/bin/freetype-config

@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	msgfmt-new:${PORTSDIR}/devel/gettext-devel
+BUILD_DEPENDS=	msgfmt-new:${PORTSDIR}/devel/gettext
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

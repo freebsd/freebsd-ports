@@ -27,10 +27,10 @@ MAINTAINER=	shuna@pop16.odn.ne.jp
 
 LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang
 .if !defined(WITH_GETTEXT)
-LIB_DEPENDS+=	intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS+=	intl.1:${PORTSDIR}/devel/gettext-old
 .endif
 .if defined(WITH_GETTEXT)
-BUILD_DEPENDS=	${LOCALBASE}/bin/msgfmt:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	${LOCALBASE}/bin/msgfmt:${PORTSDIR}/devel/gettext-old
 .endif
 RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview
 

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 XML_CONFIG?=	${LOCALBASE}/bin/xml2-config

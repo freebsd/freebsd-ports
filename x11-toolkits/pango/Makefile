@@ -19,7 +19,7 @@ MAINTAINER=	gnome@FreeBSD.org
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
 LIB_DEPENDS=	glib-2.0.0:${PORTSDIR}/devel/glib20 \
 		freetype.9:${PORTSDIR}/print/freetype2 \
-		intl.1:${PORTSDIR}/devel/gettext
+		intl.1:${PORTSDIR}/devel/gettext-old
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

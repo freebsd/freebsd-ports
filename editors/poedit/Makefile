@@ -17,7 +17,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old \
 		wx_gtk.2:${PORTSDIR}/x11-toolkits/wxgtk-devel \
 		db3:${PORTSDIR}/databases/db3 \
 		giconv:${PORTSDIR}/converters/libiconv

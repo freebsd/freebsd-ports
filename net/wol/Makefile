@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	ahh
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext-old \
 		giconv:${PORTSDIR}/converters/libiconv \
 		gnugetopt:${PORTSDIR}/devel/libgnugetopt
 

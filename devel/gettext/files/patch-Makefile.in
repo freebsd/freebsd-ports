@@ -1,5 +1,5 @@
 
-$FreeBSD$
+$FreeBSD: /tmp/pcvs/ports/devel/gettext/files/Attic/patch-Makefile.in,v 1.1 2002-03-15 19:43:48 ade Exp $
 
 --- Makefile.in	2001/05/29 09:22:43	1.1
 +++ Makefile.in	2001/05/29 09:23:01

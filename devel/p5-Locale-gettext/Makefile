@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE}

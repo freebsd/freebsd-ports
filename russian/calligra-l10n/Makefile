@@ -17,7 +17,7 @@ MAINTAINER=	demon@FreeBSD.org
 
 BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
 		automake14:${PORTSDIR}/devel/automake14
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
 RUN_DEPENDS=	koshell:${PORTSDIR}/editors/koffice
 
 USE_KDELIBS_VER=2

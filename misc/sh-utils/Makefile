@@ -16,7 +16,7 @@ MAINTAINER=	cyrille.lefevre@laposte.net
 # Global variables
 #
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g

@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	yoichi@FreeBSD.org
 
 BUILD_DEPENDS+=	${LOCALBASE}/share/flim/${FLIM_COOKIE}:${PORTSDIR}/editors/flim${DEPPORT_SUFFIX} \
-		${LOCALBASE}/bin/msgfmt:${PORTSDIR}/devel/gettext
+		${LOCALBASE}/bin/msgfmt:${PORTSDIR}/devel/gettext-old
 RUN_DEPENDS+=	${LOCALBASE}/share/flim/${FLIM_COOKIE}:${PORTSDIR}/editors/flim${DEPPORT_SUFFIX} \
 		${LOCALBASE}/bin/ldcc:${PORTSDIR}/irc/liece-dcc
 

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	ktexshell
 
 MAINTAINER=	demon@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
 
 USE_KDELIBS_VER=2
 USE_GMAKE=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	http://soribada.kldp.org/
 
 MAINTAINER=	cjh@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
 
 USE_X_PREFIX=	yes
 USE_GTK=	yes

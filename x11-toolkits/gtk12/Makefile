@@ -15,7 +15,7 @@ DISTNAME=	gtk+-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
 
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
