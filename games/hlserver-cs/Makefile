@@ -31,7 +31,11 @@ ONLY_FOR_ARCHS=	i386
 USE_LINUX_PREFIX=	yes
 NO_CDROM=	"Size; the data set is much too big"
 NO_BUILD=	yes
+.if (${PORTNAME}==cs)
 WRKSRC?=		${WRKDIR}/cstrike
+.else
+WRKSRC?=		${WRKDIR}/${PORTNAME}
+.endif
 PLIST_SUB+=	${PLIST_SUB_MASTER}
 
 INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
@@ -47,7 +51,7 @@ pre-patch:
 .for file in *.cfg */*.cfg *.gam */*.gam *.htm */*.htm \
 	*.inf */*.inf *.lst */*.lst *.sc */*.sc \
 	*.scr */*.scr *.txt */*.txt
-	@${PERL} -pi -ne 's!\r\n!\n!' ${WRKDIR}/${file} >/dev/null 2>/dev/null
+	@${PERL} -pi -ne 's!\r\n!\n!' ${WRKSRC}/${file} >/dev/null 2>/dev/null
 .endfor
 
 # if you change the PLIST, please re-think the following
