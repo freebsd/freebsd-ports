@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	c2hs
-PORTVERSION=	0.11.5
-PORTREVISION=	1
+PORTVERSION=	0.12.0
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.cse.unsw.edu.au/~chak/haskell/c2hs/
 PKGNAMEPREFIX=	hs-
@@ -15,8 +14,8 @@ PKGNAMEPREFIX=	hs-
 MAINTAINER=	obraun@FreeBSD.org
 COMMENT=	C->Haskell, an Interface Generator for Haskell
 
-BUILD_DEPENDS=	ghc-5.04.3:${PORTSDIR}/lang/ghc5
-RUN_DEPENDS=	ghc-5.04.3:${PORTSDIR}/lang/ghc5
+BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
+RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
 USE_SIZE=	yes
 HAS_CONFIGURE=	yes
