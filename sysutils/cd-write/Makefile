@@ -23,7 +23,7 @@ WRKSRC=		${WRKDIR}/cd-write
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 300000
-BROKEN=		CAM
+IGNORE=		"FreeBSD 3.X or greater is required to support this port"
 .endif
 
 pre-build:
