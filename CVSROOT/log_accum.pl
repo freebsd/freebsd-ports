@@ -21,6 +21,8 @@
 require 5.003;		# might work with older perl5
 
 use strict;
+use Text::Tabs;
+
 use lib $ENV{CVSROOT};
 use CVSROOT::cfg;
 
@@ -690,16 +692,18 @@ while (<STDIN>) {
 &append_line($TAGS_FILE, $tag);
 
 #
-# Strip leading and trailing blank lines from the log message.  Also
-# compress multiple blank lines in the body of the message down to a
+# Strip leading and trailing blank lines from the log message.
+# Compress multiple blank lines in the body of the message down to a
 # single blank line.
+# Convert tabs to spaces, so that when we indent the email message and
+# log file everything still lines up.
 # (Note, this only does the mail and changes log, not the rcs log).
 #
 my $log_message = join "\n", @log_lines;
 $log_message =~ s/\n{3,}/\n\n/g;
 $log_message =~ s/^\n+//;
 $log_message =~ s/\n+$//;
-@log_lines = split /\n/, $log_message;
+@log_lines = expand(split /\n/, $log_message);
 
 
 #
