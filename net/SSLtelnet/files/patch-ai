@@ -1,6 +1,6 @@
 --- telnet/Makefile.orig	Sat Aug  2 01:30:16 1997
-+++ telnet/Makefile	Tue Feb  1 09:16:29 2000
-@@ -6,17 +6,11 @@
++++ telnet/Makefile	Sun Feb 20 17:28:27 2000
+@@ -6,17 +6,12 @@
  PROG=	telnet
  
  
@@ -9,7 +9,8 @@
 -	-I../lib/libbsd/include -I../lib \
 -	-I$(SSLTOP)/include
 +CFLAGS+= -DKLUDGELINEMODE -DUSE_TERMIO -DAUTHENTICATE -DUSE_SSL \
-+	-DFILIO_H -I../lib -I../lib/libbsd/include -I$(OPENSSLINC)/openssl
++	-DFILIO_H -I../lib -I../lib/libbsd/include -I$(OPENSSLINC)/openssl \
++	-I$(OPENSSLINC)
  
  
 -LIBS=   ../lib/libtelnet/libtelnet.a \
