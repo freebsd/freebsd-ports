@@ -15,7 +15,13 @@ MAINTAINER=	fjoe@FreeBSD.org
 
 LIB_DEPENDS=	fidoconfig.0:${PORTSDIR}/news/husky-fidoconf
 
+USE_REINPLACE=	yes
+
 MAN1=		htick.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's^/fido/etc/config^${PREFIX}/etc/fido/config^' \
+		${WRKSRC}/man/htick.1
 
 post-build:
 	@cd ${WRKSRC}/doc && ${GMAKE}
