@@ -27,6 +27,8 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 BROKEN=		"Does not compile"
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes

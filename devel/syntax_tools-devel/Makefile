@@ -21,6 +21,8 @@ BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 
 BROKEN=		Checksum mismatch
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 CONFLICTS=	syntax_tools-1.2*
 

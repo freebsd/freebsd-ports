@@ -20,6 +20,8 @@ MAINTAINER=	user@unknown.nu
 COMMENT=	The Internet Movie Database package
 
 BROKEN=		Does not build
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 IGNOREFILES=	actors.list.gz actresses.list.gz aka-names.list.gz \
 	aka-titles.list.gz alternate-versions.list.gz biographies.list.gz \

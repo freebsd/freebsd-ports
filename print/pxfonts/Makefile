@@ -32,6 +32,8 @@ NO_BUILD=	YES
 PLIST_SUB=	TEXMF=${TEXMF} MKTEXLSR=${MKTEXLSR}
 
 IGNORE=		"pxfonts already included in the teTeX distribution"
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${IGNORE}
 
 TEXMF=		share/texmf
 TEXFONTSDIR=	${PREFIX}/${TEXMF}/fonts

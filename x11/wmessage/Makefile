@@ -15,6 +15,8 @@ MAINTAINER=	pat@FreeBSD.org
 COMMENT=	A WINGs based message viewer similar to xmessage
 
 BROKEN=		"Does not build with new version of windowmaker"
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 BUILD_DEPENDS=	get-wraster-flags:${PORTSDIR}/x11-wm/windowmaker
 

@@ -19,6 +19,8 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby interface to libcurl
 
 BROKEN=		"Does not compile"
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 

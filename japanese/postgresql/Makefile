@@ -17,6 +17,8 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	A robust, next generation, object-relational DBMS plus Multibyte-patch
 
 BROKEN=		"Does not compile"
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 NO_LATEST_LINK=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

@@ -31,6 +31,8 @@ EXTRACT_AFTER_ARGS=	-d ${TXPATCHDIR}
 NO_BUILD=	yes
 
 IGNORE=		is already included in the teTeX distribution
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	"${IGNORE}"
 
 TEXFONTSDIR=	${PREFIX}/share/texmf/fonts
 LATEXMACRODIR=	${PREFIX}/share/texmf/tex/latex

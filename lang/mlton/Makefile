@@ -22,6 +22,8 @@ MAINTAINER=	MLton@mlton.org
 COMMENT=	An optimizing Standard ML compiler
 
 BROKEN=		Size mismatch
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2		\
 		hevea:${PORTSDIR}/textproc/hevea 	\

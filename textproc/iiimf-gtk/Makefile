@@ -21,6 +21,8 @@ LIB_DEPENDS=	iiimp.0:${PORTSDIR}/textproc/iiimf-protocol-lib \
 		iiimcf.2:${PORTSDIR}/textproc/iiimf-client-lib
 
 BROKEN=		Does not compile
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes

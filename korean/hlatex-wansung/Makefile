@@ -19,6 +19,8 @@ COMMENT=	HLaTeX extension to use Wansung(KSX1001) fonts
 RUN_DEPENDS=	${LOCALBASE}/share/texmf/doc/latex/hlatex/uhc.ks:${PORTSDIR}/korean/hlatex
 
 BROKEN=		"Does not build"
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 TEXMF=		${PREFIX}/share/texmf
 WRKSRC=		${WRKDIR}/wansung

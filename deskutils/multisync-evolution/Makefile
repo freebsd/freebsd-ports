@@ -14,6 +14,8 @@ RUN_DEPENDS=	multisync:${PORTSDIR}/deskutils/multisync \
 		evolution:${PORTSDIR}/mail/evolution
 
 IGNORE=		does not support Evolution 2. New plugin is in the works and can be obtained from Multisync CVS
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	"${IGNORE}"
 
 MD5_FILE=	${MASTERDIR}/distinfo
 PATCHDIR=	${.CURDIR}/files

@@ -14,6 +14,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3D block-dropping game
 
 BROKEN=		Missing dependency
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 BUILD_DEPENDS=	imake:${X_IMAKE_PORT}
 

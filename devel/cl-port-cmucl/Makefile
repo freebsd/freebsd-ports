@@ -28,6 +28,8 @@ RUN_DEPENDS=		${LOCALBASE}/lib/common-lisp/port/port.asd:${PORTSDIR}/devel/cl-po
 			lisp:${PORTSDIR}/lang/cmucl
 
 BROKEN=			"Broken pkg-plist"
+EXPIRATION_DATE=	2005-02-18
+DEPRECATED=		${BROKEN}
 
 do-build:
 	WRKSRC=${WRKSRC}/ FBSD_ASDF_COMPILE_PORT=t\

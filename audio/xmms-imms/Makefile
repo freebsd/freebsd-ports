@@ -24,6 +24,8 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		tag.4:${PORTSDIR}/audio/taglib
 
 BROKEN=		"Does not compile"
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

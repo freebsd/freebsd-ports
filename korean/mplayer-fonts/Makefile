@@ -21,6 +21,8 @@ MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Korean font pack for the mplayer OSD, SUB and SMI
 
 BROKEN=		"Size mismatch"
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libiconv.so.3:${PORTSDIR}/converters/libiconv \
 		${FREETYPE_CONFIG}:${PORTSDIR}/print/freetype2 \

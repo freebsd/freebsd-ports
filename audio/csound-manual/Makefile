@@ -20,6 +20,8 @@ MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Manuals for Csound
 
 BROKEN=		Checksum mismatch
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 RUN_DEPENDS=	csound:${PORTSDIR}/audio/csound
 

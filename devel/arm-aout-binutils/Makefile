@@ -18,6 +18,8 @@ MAINTAINER=	pbecke@javagear.com
 COMMENT=	FSF Binutils for embedded ARM cross-development
 
 BROKEN=		Incomplete pkg-plist
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

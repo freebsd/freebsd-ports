@@ -14,6 +14,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High quality music typesetting program
 
 BROKEN=		Unfetchable
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 

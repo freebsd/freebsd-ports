@@ -16,6 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A bible interface utilizing the sword framework
 
 BROKEN=		Configure fails
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 BUILD_DEPENDS=	${X11BASE}/lib/gnome-spell/libgnome-spell-component-0.3.so:${PORTSDIR}/textproc/gnomespell
 LIB_DEPENDS=	sword.4:${PORTSDIR}/misc/sword

@@ -28,5 +28,7 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${X11BASE}/include"
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 IGNORE=		will not work until xmms and arts will use the same glib version. Use xmms-arts_output port instead
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	"${IGNORE}"
 
 .include <bsd.port.mk>

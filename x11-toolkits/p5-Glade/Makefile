@@ -33,5 +33,7 @@ IGNORE=		This port requires perl 5.6.0 or later. Install lang/perl5 then try aga
 .else
 BROKEN=		"Build fails"
 .endif
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 .include <bsd.port.post.mk>

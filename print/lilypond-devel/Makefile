@@ -29,6 +29,8 @@ INFO=		lilypond lilypond-internals \
 CONFLICTS=	lilypond-2.*
 
 BROKEN=		"Build fails"
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 #INSTALLS_SHLIB not needed for phyton library midi.so
 

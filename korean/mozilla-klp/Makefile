@@ -22,6 +22,8 @@ BUILD_DEPENDS=	${X11BASE}/lib/mozilla/regxpcom:${PORTSDIR}/www/mozilla
 RUN_DEPENDS=	mozilla:${PORTSDIR}/www/mozilla
 
 BROKEN=		"Does not build"
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 WRKSRC=		${WRKDIR}/bin
 

@@ -23,6 +23,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
 
 BROKEN=		"Does not build"
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 USE_BZIP2=	yes
 USE_BISON=	yes

@@ -16,6 +16,8 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A web application server using dRuby and ERB2
 
 BROKEN=		Does not build
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	drb erb

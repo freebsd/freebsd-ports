@@ -18,6 +18,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An OCaml interface to the SDL
 
 BROKEN=		Configure fails
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib \

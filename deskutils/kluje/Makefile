@@ -21,6 +21,8 @@ GNU_CONFIGURE=		yes
 USE_REINPLACE=		yes
 
 BROKEN=		"Does not compile"
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' -e 's|-lpthread|${PTHREAD_LIBS}|g' \

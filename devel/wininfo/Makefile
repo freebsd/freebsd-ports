@@ -15,6 +15,8 @@ MAINTAINER=		jylefort@brutele.be
 COMMENT=		A window information utility
 
 BROKEN=			Checksum mismatch
+EXPIRATION_DATE=	2005-02-18
+DEPRECATED=		${BROKEN}
 
 USE_X_PREFIX=		yes
 USE_GNOME=		gtk20 gnomeprefix

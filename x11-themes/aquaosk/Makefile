@@ -16,6 +16,8 @@ MAINTAINER=	brian@quynh-and-brian.org
 COMMENT=	An Acqua-like native window decoration for KDE 3
 
 BROKEN=		Does not build since KDE 3.2
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 INSTALLS_SHLIB=	yes

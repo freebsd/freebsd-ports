@@ -21,6 +21,8 @@ LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut \
 		smpeg.1:${PORTSDIR}/multimedia/smpeg \
 
 BROKEN=		Broken pkg-plist
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 USE_SDL=	mixer sdl
 USE_FREETYPE=	yes

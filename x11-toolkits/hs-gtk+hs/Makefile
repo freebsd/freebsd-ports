@@ -18,6 +18,8 @@ OPTIONS=	GHC5 "Build for ghc5" off \
 		IHASKELL "Build with iHaskell" off
 
 BROKEN=		"Build fails"
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 USE_GNOME=	glib12 gtk12
 

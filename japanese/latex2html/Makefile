@@ -21,6 +21,8 @@ MAINTAINER=	ixtl@utmc.or.jp
 COMMENT=	Japanese LaTeX2HTML with JA patch
 
 BROKEN=		"Conflicting dependencies (ja-ptex-base and teTeX)"
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 RUN_DEPENDS=	platex:${PORTSDIR}/japanese/ptex \
 		dvips:${PORTSDIR}/japanese/dvipsk \

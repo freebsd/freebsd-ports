@@ -15,6 +15,8 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A pLaTeX package for OpenType font support
 
 BROKEN=		Unfetchable
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 BUILD_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
 		mktexlsr:${PORTSDIR}/japanese/ptex-tetex \

@@ -14,5 +14,7 @@ MASTERDIR=	${.CURDIR}/../../editors/xemacs-devel-mule
 CANNA=		yes
 
 BROKEN=		"Aborts during build"
+EXPIRATION_DATE=2005-02-18
+DEPRECATED=	${BROKEN}
 
 .include	"${MASTERDIR}/Makefile"
