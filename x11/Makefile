@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.156 1997/09/30 07:54:42 asami Exp $
+# $Id: Makefile,v 1.157 1997/10/07 04:30:56 obrien Exp $
 #
 
     SUBDIR += FWF
@@ -27,6 +27,7 @@
     SUBDIR += fvwm2-english
     SUBDIR += fvwm95
     SUBDIR += getbdf
+    SUBDIR += gtk
     SUBDIR += gwm
     SUBDIR += iv
     SUBDIR += lesstif
