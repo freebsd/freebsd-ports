@@ -1,8 +1,5 @@
-tdetect  A simple  C library for portable packet creation 
-
-  If you're interested to detect all attempts to make "traceroute your-host"
-or "traceroute host.your-network", you can try to use this simple program.  
-The idea is simple - to detect UDP (Unix traceroute) or ICMP ECHO (Windows  
+tdetect detects someone running traceroute against your system.
+It does this by detecting UDP (Unix traceroute) or ICMP ECHO (Windows
 traceroute) packets with TTL fields == 1.                                   
 
 WWW: http://sb.123.org/
