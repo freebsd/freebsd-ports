@@ -22,6 +22,8 @@ DISTFILES=	gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	GNU Compiler Collection 3.2.3
 
+NOT_FOR_ARCHS=	amd64
+
 LATEST_LINK?=	gcc32${PKGNAMESUFFIX}
 
 USE_BZIP2=	yes
