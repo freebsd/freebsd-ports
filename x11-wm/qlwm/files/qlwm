@@ -3,6 +3,8 @@ PREFIX=%PREFIX%
 if ! test -e $HOME/.qlwm
 then
 	mkdir -p $HOME/.qlwm
-	cp ${PREFIX}/lib/qlwm/files/{defaults,appdefaults,menuconfig} $HOME/.qlwm
+	for i in defaults appdefaults menuconfig; \
+		do cp -v ${PREFIX}/lib/qlwm/files/$i $HOME/.qlwm; \
+	done
 fi
 exec ${PREFIX}/lib/qlwm/qlwm "$@"

@@ -8,28 +8,32 @@
 #
 
 PORTNAME=	qlwm
-PORTVERSION=	2.3
+PORTVERSION=	2.6
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.netcologne.de/~nc-lindenal/qlwm/
 
 MAINTAINER=	trevor@FreeBSD.org
 
-DOCDIR=		share/doc/qlwm
+DOCDIR=		share/doc/${PORTNAME}
 DOCS=		CHANGES README
-LIBDIR=		lib/qlwm
+LIBDIR=		lib/${PORTNAME}
 PLIST=		${WRKDIR}/pkg-plist
 MAN1=		qlwm.1
 USE_QT_VER=	2
 USE_X_PREFIX=	yes
 
-MAKE_ENV=	LFLAGS="-L${X11BASE}/lib -L${X11BASE}/lib/qt2" \
-		QTDIR=${X11BASE} \
-		DEST=${PREFIX}/${LIBDIR}
+MAKE_ENV=	DEST="${PREFIX}/${LIBDIR}" INCPATH="${QTCPPFLAGS}" \
+		LIBS="${QTCFGLIBS} -l${QTNAME}" LINK="${CXX}" MOC="${MOC}"
 
 post-patch:
-	${PERL} -pi -e "s:/usr/local/qlwm:${PREFIX}/${LIBDIR}:g" ${WRKSRC}/Makefile
-	${PERL} -pi -e "s:-lqt:-lqt2:g ; s:bin/moc:bin/moc2:g" \
-		${WRKSRC}/*/Makefile
+	find ${WRKSRC} -name "Makefile" | xargs ${PERL} -pi -e \
+        	's|/usr/local/qlwm|${PREFIX}/${LIBDIR}|g ; \
+		 s|^CXX|#CXX|g ; \
+		 s|^INCPATH|#INCPATH|g ; \
+		 s|^LFLAGS|#LFLAGS|g ; \
+		 s|^LIBS|#LIBS|g ; \
+		 s|^LINK|#LINK|g ; \
+		 s|^MOC|#MOC|g'
 
 pre-install:
 	${ECHO} bin/qlwm > ${PLIST}
