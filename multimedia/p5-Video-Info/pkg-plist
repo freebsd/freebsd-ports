@@ -1,0 +1,17 @@
+%%SITE_PERL%%/Video/Info/RIFF.pm
+%%SITE_PERL%%/Video/Info/FOO.pm
+%%SITE_PERL%%/Video/Info/Magic.pm
+%%SITE_PERL%%/Video/Info/MPEG.pm
+%%SITE_PERL%%/Video/Info/ASF.pm
+%%SITE_PERL%%/Video/Info/Quicktime.pm
+%%SITE_PERL%%/Video/Info/MPEG/Constants.pm
+%%SITE_PERL%%/Video/Info/MPEG/Audio.pm
+%%SITE_PERL%%/Video/Info/MPEG/System.pm
+%%SITE_PERL%%/Video/Info/MPEG/Video.pm
+%%SITE_PERL%%/Video/Info.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Video/Info/.packlist
+@dirrm %%SITE_PERL%%/Video/Info/MPEG
+@dirrm %%SITE_PERL%%/Video/Info
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Video/Info
+@unexec rmdir %D/%%SITE_PERL%%/Video 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Video 2>/dev/null || true

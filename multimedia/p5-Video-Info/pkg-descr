@@ -1,0 +1,10 @@
+Video::Info is a factory class for working with video files. When you create
+a new Video::Info object, something like this will happen:
+   1) open file, determine type. See Video::Info::Magic.
+   2) attempt to create object of appropriate class (ie, MPEG::Info for MPEG
+      files, RIFF::Info for AVI files).
+   3) Probe the file for various attributes
+   4) return the created object, or a Video::Info object if the appropriate
+      class is unavailable.
+
+WWW: http://search.cpan.org/dist/Video-Info/
