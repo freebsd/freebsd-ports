@@ -1,7 +1,39 @@
 #!/bin/sh
 
-if [ "$2" = "POST-INSTALL" -o -n "${PACKAGE_BUILDING}" ]; then
-  exit 0
+if [ -n "${PACKAGE_BUILDING}" ]; then
+	exit 0
+fi
+
+if [ "$2" = "POST-INSTALL" ]; then
+	USER=gdm
+	GROUP=${USER}
+	UID=91
+	GID=${UID}
+
+	if pw group show "${GROUP}" 2>/dev/null; then
+		echo "You already have a group \"${GROUP}\", so I will use it."
+	else
+		if pw groupadd ${GROUP} -g ${GID}; then
+			echo "Added group \"${GROUP}\"."
+		else
+			echo "Adding group \"${GROUP}\" failed..."
+			exit 1
+		fi
+	fi
+
+	if pw user show "${USER}" 2>/dev/null; then
+		echo "You already have a user \"${USER}\", so I will use it."
+	else
+		if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
+			-d "/nonexistent" -s /sbin/nologin -c "GNOME Display Manager"
+		then
+			echo "Added user \"${USER}\"."
+		else
+			echo "Adding user \"${USER}\" failed..."
+			exit 1
+		fi
+	fi
+	exit 0
 fi
 
 /usr/bin/dialog --yesno "GDM may contain vulnerabilities leading local root compromise, and it is reported widely with various security sites and groups. It is not recommended that this port be installed in public environment. Do you wish to accept the security risk and build GDM anyway?" 10 60 || /usr/bin/false
