@@ -16,6 +16,8 @@ COMMENT=	Emacs lisp modules for the Ruby language
 
 EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${RUBY_PORT}:patch
 
+BROKEN=		"Missing BUILD_DEPENDS"
+
 USE_RUBY=	yes
 RUBY_VER=	1.8
 RUBY_NO_BUILD_DEPENDS=	yes
