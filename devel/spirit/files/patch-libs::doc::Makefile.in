@@ -1,0 +1,11 @@
+--- libs/doc/Makefile.in.orig	Sun Nov  4 18:11:20 2001
++++ libs/doc/Makefile.in	Sun Nov  4 18:11:29 2001
+@@ -64,7 +64,7 @@
+ 
+ SUBDIRS = theme
+ 
+-htmldir = $(prefix)/doc/spirit
++htmldir = $(prefix)/share/doc/spirit
+ 
+ EXTRA_DIST =  annotations.html character_sets.html debugging.html directives.html error_handling.html future_directions.html index.html introduction.html iterators_and_parsing.html loops.html numerics.html operators.html parametric_parsers.html primitives.html reference_wrappers.html references.html semantic_actions.html specialized_actions.html symbols.html the_multi_pass.html the_parser.html the_rule.html the_scanner.html wrap_up.html
+ 

@@ -1,0 +1,15 @@
+Spirit is an object oriented recursive descent parser generator framework
+implemented using template meta-programming techniques. Expression templates
+allow us to approximate the syntax of Extended Backus Normal Form (EBNF)
+completely in C++. Parser objects are composed through operator overloading
+and the result is a backtracking LL(inf) parser that is capable of parsing
+rather ambiguous grammars.
+
+The Spirit framework enables a target grammar to be written exclusively in
+C++. Inline EBNF grammar specifications can mix freely with other C++ code
+and, thanks to the generative power of C++ templates, are immediately
+executable. In retrospect, conventional compiler-compilers or parser-
+generators have to perform an additional translation step from the source
+EBNF code to C or C++ code.
+
+WWW: http://spirit.sourceforge.net/

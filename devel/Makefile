@@ -557,6 +557,7 @@
     SUBDIR += sparc-rtems-gcj
     SUBDIR += sparc-rtems-gdb
     SUBDIR += sparc-rtems-objc
+    SUBDIR += spirit
     SUBDIR += st
     SUBDIR += stlport
     SUBDIR += str
