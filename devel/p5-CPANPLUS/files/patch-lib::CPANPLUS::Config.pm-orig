@@ -1,0 +1,26 @@
+--- lib/CPANPLUS/Config.pm-orig.orig	Sat Feb 12 01:06:15 2005
++++ lib/CPANPLUS/Config.pm-orig	Sat Feb 12 01:06:32 2005
+@@ -29,6 +29,11 @@
+                              'hosts' => [
+                                           {
+                                             'scheme' => 'ftp',
++                                            'path' => '/pub/languages/perl/CPAN/',
++                                            'host' => 'ftp.funet.fi'
++                                          },
++                                          {
++                                            'scheme' => 'ftp',
+                                             'path' => '/pub/CPAN/',
+                                             'host' => 'ftp.cpan.org'
+                                           },
+@@ -47,11 +52,6 @@
+                                             'path' => '/pub/CPAN/',
+                                             'host' => 'cpan.valueclick.com'
+                                           },
+-                                          {
+-                                            'scheme' => 'ftp',
+-                                            'path' => '/pub/languages/perl/CPAN/',
+-                                            'host' => 'ftp.funet.fi'
+-                                          }
+                                         ],
+                              'timeout' => 300,
+                              'verbose' => 0,
