@@ -46,10 +46,10 @@ diff -udr ../nmh-0.19.ORIG/configure.in ./configure.in
  config files install path : ${nmhsysconf2}
  man page install path     : ${nmhman}"
  echo ""
-diff -udr ../nmh-0.19.ORIG/support/general/Makefile.in ./support/general/Makefile.in
---- ../nmh-0.19.ORIG/support/general/Makefile.in	Tue Dec 23 14:05:49 1997
-+++ ./support/general/Makefile.in	Mon Jan  5 20:22:42 1998
-@@ -13,11 +13,12 @@
+diff -udr ../nmh-0.26.ORIG/etc/Makefile.in ./etc/Makefile.in
+--- ../nmh-0.26.ORIG/etc/Makefile.in	Sat May 16 21:05:03 1998
++++ ./etc/Makefile.in	Mon Jun  1 21:05:45 1998
+@@ -13,13 +13,14 @@
  prefix      = @prefix@
  exec_prefix = @exec_prefix@
  bindir      = @bindir@
@@ -57,13 +57,15 @@ diff -udr ../nmh-0.19.ORIG/support/general/Makefile.in ./support/general/Makefil
 +libexecdir  = @libexecdir@
  etcdir      = @sysconfdir@
  
+ mailspool    = @mailspool@
+ 
  INSTALL         = @INSTALL@
  INSTALL_PROGRAM = @INSTALL_PROGRAM@
 +INSTALL_SCRIPT  = @INSTALL_SCRIPT@
  INSTALL_DATA    = @INSTALL_DATA@
  
  # Path to search for programs to display content
-@@ -77,9 +78,9 @@
+@@ -86,9 +87,9 @@
  	done
  
  install-scripts:
@@ -75,7 +77,7 @@ diff -udr ../nmh-0.19.ORIG/support/general/Makefile.in ./support/general/Makefil
  	done
  
  uninstall: uninstall-files uninstall-scripts
-@@ -91,7 +92,7 @@
+@@ -100,7 +101,7 @@
  
  uninstall-scripts:
  	for script in $(SCRIPTS); do \
