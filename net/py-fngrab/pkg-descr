@@ -1,0 +1,11 @@
+Freenet Grab (fngrab.py) is a GPL'd replacement for the official Freenet
+Project's freenet_request (Un*x) and frequest.exe (Windows). Freenet Grab has
+several features freenet_request/frequest doesn't have:
+
+   - Retrying failed requests with incremental hops to live.
+   - New: Multiple simultaneous downloads (multi-threading)
+   - Better support for in-Freenet key index searching.
+   - Specify a file containing a list of keys to download.
+   - Verifying a list of keys in a file.
+
+WWW: http://freebbs.sourceforge.net/
