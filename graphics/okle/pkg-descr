@@ -1,0 +1,11 @@
+This is a Graphical Interface for Ogle.
+
+It is oKle is a KDE frontend to the Ogle DVD player both visually
+and functionally resembling the one from graphics/ogle-gui port.
+
+It is very helpful if you would rather use a KDE based frontend
+than the ogle-gui Glade (which incidently installs Gnome Libraries)
+based one.
+
+Author: Martin Piskernig <martin.piskernig@univie.ac.at>
+WWW: http://okle.sourceforge.net/

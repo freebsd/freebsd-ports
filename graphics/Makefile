@@ -230,6 +230,7 @@
     SUBDIR += nurbs++
     SUBDIR += ogle
     SUBDIR += ogle-gui
+    SUBDIR += okle
     SUBDIR += opendis
     SUBDIR += opendx
     SUBDIR += opendx-samples
