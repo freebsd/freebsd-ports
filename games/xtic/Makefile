@@ -3,14 +3,14 @@
 # Date created:         22 June 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.4 1995/04/11 00:20:39 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1995/06/23 04:35:56 asami Exp $
 #
 
 DISTNAME=       xtic1.12
 PKGNAME=	xtic-1.12
-CATEGORIES+=	games
-MASTER_SITES=	ftp://ftp.x.org/contrib/games/ \
-		ftp://crl.dec.com/pub/X11/contrib/games/
+CATEGORIES=	games
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	games
 
 MAINTAINER=	asami@FreeBSD.ORG
 

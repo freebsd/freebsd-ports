@@ -3,12 +3,12 @@
 # Date created:		9 November 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.0 1994/11/09 00:00:00 smace Exp $
+# $Id: Makefile,v 1.10 1996/11/12 07:08:28 tg Exp $
 #
 
 DISTNAME=       xlockmore-3.11
-MASTER_SITES+=  ftp://crl.dec.com/pub/X11/contrib/applications/
-MASTER_SITES+=	ftp://ftp.x.org/contrib/applications/
+MASTER_SITES=  ${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	applications
 
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	${DISTNAME}.patches

@@ -3,12 +3,13 @@
 # Date created:		31 January 1995
 # Whom:			janek
 #
-# $Id$
+# $Id: Makefile,v 1.6 1995/04/08 05:06:13 asami Exp $
 
 DISTNAME=	xboing2.3
 PKGNAME=	xboing-2.3
-CATEGORIES+=	games
-MASTER_SITES=	ftp://crl.dec.com/pub/X11/contrib/games/
+CATEGORIES=	games
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	games
 EXTRACT_SUFX=	.tar.gz
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm

@@ -3,12 +3,13 @@
 # Date created:		19 December 1994
 # Whom:			janek
 #
-# $Id: Makefile,v 1.9 1996/10/11 20:35:59 erich Exp $
+# $Id: Makefile,v 1.10 1996/10/15 18:25:56 erich Exp $
 #
 
 DISTNAME=	moxftp-2.2
-CATEGORIES+=	net
-MASTER_SITES=	ftp://ftp.x.org/contrib/applications/
+CATEGORIES=	net
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	applications
 EXTRACT_SUFX=	.tar.Z
 
 HAS_CONFIGURE=	yes

@@ -3,14 +3,14 @@
 # Date created:		06 September 1995
 # Whom:			thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1995/11/09 06:49:26 asami Exp $
 #
 
 DISTNAME=	xbmbrowser5.1
 PKGNAME=	xbmbrowser-5.1
-CATEGORIES+=	graphics
-MASTER_SITES=	ftp://crl.dec.com/pub/X11/contrib/utilities/ \
-		ftp://ftp.th-darmstadt.de/pub/X11/contrib/utilities/
+CATEGORIES=	graphics
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	utilities
 
 MAINTAINER=	thomas@ghpc8.ihf.rwth-aachen.de
 

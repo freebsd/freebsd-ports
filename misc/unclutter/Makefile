@@ -3,16 +3,13 @@
 # Date created:		03 Aug 1996
 # Whom:			shanee@rabbit.augusta.de
 #
-# $Id: Makefile,v 1.2 1996/08/24 17:02:29 chuckr Exp $
+# $Id: Makefile,v 1.3 1996/11/11 05:50:19 obrien Exp $
 #
 
 DISTNAME=	unclutter-8
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.cs.umn.edu/packages/X11/contrib/utilities/ \
-		ftp://csg.uwaterloo.ca/pub/lhf/net/ \
-		ftp://ftp.univ-angers.fr/pub2/X11/contrib/utilities/ \
-		ftp://ftp.huji.ac.il/mirror/X11/contrib/utilities/ \
-		ftp://ftp.rz.uni-wuerzburg.de/pub/X11/contrib/utilities/
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	utilities
 
 MAINTAINER=	shanee@rabbit.augusta.de
 

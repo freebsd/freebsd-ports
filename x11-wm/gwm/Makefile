@@ -3,11 +3,11 @@
 # Date created:		14 November 1996
 # Whom:			markm
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/14 20:03:50 markm Exp $
+# $Id: Makefile,v 1.2 1996/11/15 04:51:00 asami Exp $
 #
 
 DISTNAME=	gwm-1.8c
-CATEGORIES+=	x11
+CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	window_managers/gwm
 

@@ -3,12 +3,13 @@
 # Date created:         		26th April 1995
 # Whom:                 		gpalmer
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1995/04/26 11:49:41 gpalmer Exp $
 #
 
 DISTNAME=		xdtm-2.5.5
-CATEGORIES+=		x11
-MASTER_SITES=		ftp://ftp.x.org/contrib/applications/xdtm/
+CATEGORIES=		x11
+MASTER_SITES=		${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	applications/xdtm
 
 MAINTAINER=		gpalmer@FreeBSD.ORG
 

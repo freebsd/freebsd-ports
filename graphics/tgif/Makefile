@@ -3,15 +3,14 @@
 # Date created:         10 Oct 1996
 # Whom:                 bmc@WillsCreek.COM
 #
-# $Id$
+# $Id: Makefile,v 1.2 1996/10/19 02:20:05 chuckr Exp $
 #
 
 DISTNAME=	tgif-3.0-p9
 PKGNAME=	tgif-3.0.9
-CATEGORIES+=	graphics x11
-MASTER_SITES=	ftp://ftp.x.org/contrib/applications/tgif/ \
-		ftp://ftp.cs.ucla.edu/pub/tgif/ \
-		ftp://bourbon.cs.columbia.edu/pub/tgif/
+CATEGORIES=	graphics x11
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	applications/tgif
 
 MAINTAINER=	bmc@WillsCreek.COM
 

@@ -3,12 +3,13 @@
 # Date created:				10th February 1995
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.2 1995/04/01 12:51:18 jkh Exp $
+# $Id: Makefile,v 1.3 1995/04/12 20:31:51 asami Exp $
 #
 
 DISTNAME=	xdaliclock-2.05
-CATEGORIES+=	x11
-MASTER_SITES=	ftp://ftp.x.org/contrib/applications/
+CATEGORIES=	x11
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	applications
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	gpalmer@FreeBSD.ORG

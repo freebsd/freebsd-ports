@@ -3,13 +3,14 @@
 # Date created:		18 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.11 1996/11/01 13:43:14 asami Exp $
+# $Id: Makefile,v 1.12 1996/11/11 10:12:21 max Exp $
 #
 
 DISTNAME=	kterm-6.2.0
 PKGNAME=	jp-kterm-6.2.0
 CATEGORIES=	japanese x11
-MASTER_SITES=	ftp://ftp.x.org/contrib/applications/
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	asami@FreeBSD.ORG
 

@@ -3,14 +3,14 @@
 # Date created:		21 June 1995
 # Whom:			Satoshi Asami (asami)
 #
-# $Id: Makefile,v 1.8 1996/11/11 05:07:03 obrien Exp $
+# $Id: Makefile,v 1.9 1996/11/17 07:01:21 obrien Exp $
 #
 
 DISTNAME=	e93-1.2r6X
 PKGNAME=	e93-1.2.6
 CATEGORIES=	editors
-MASTER_SITES=	ftp://ftp.x.org/contrib/editors/ \
-		ftp://crl.dec.com/pub/X11/contrib/editors/
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	editors
 
 MAINTAINER=	asami@FreeBSD.ORG
 

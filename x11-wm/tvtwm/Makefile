@@ -3,13 +3,14 @@
 # Date created:		5th December 1994
 # Whom:			gpalmer
 #
-# $Id: Makefile,v 1.7 1995/04/12 20:31:45 asami Exp $
+# $Id: Makefile,v 1.8 1995/04/22 11:59:12 asami Exp $
 #
 
 DISTNAME=	tvtwm
 PKGNAME=	tvtwm-pl11
-CATEGORIES+=	x11
-MASTER_SITES=	ftp://ftp.x.org/contrib/window_managers/
+CATEGORIES=	x11
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	window_managers
 DISTFILES=	tvtwm.pl11.tar.gz
 
 MAINTAINER=	gpalmer@FreeBSD.ORG
