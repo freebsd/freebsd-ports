@@ -32,21 +32,16 @@
 #
 # MAINTAINER=	eik@FreeBSD.org
 #
-# PORTVERSION auditing script
+# PORTVERSION and PKGORIGIN auditing script
 #
-# For many port tools to work correctly, it is of utmost importance that
-# PORTVERSION/-REVISION/-EPOCH of a port is a monotonic increasing sequence
-# over time. See also
-#   <http://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/makefile-naming.html>
-# for more information. Tools that won't work include pkg_version, portupgrade
-# and portaudit. One common example is an accidentially deleted PORTEPOCH.
+# This scripts compares version numbers with previously known ones, and
+# checks ports for a correct PKGORIGIN. It is primarily intended to be run
+# from a (non-root) cron job.
 #
-# This scripts compares version numbers with previously known ones, and is
-# primarily intended to be run from a (non-root) cron job.
-#
-# If you simply call it, it will compare all ports with their INDEX entry
-# and complain if version numbers have gone backwards. You need and old
-# INDEX for this, of course. An up-to-date INDEX will accomplish nothing.
+# If you just call it with no preparation, it will compare all port versions
+# with their INDEX entries and complain if they have gone backwards. You need
+# You need an old INDEX for this, of course. An up-to-date INDEX will accomplish
+# nothing.
 #
 # To use the script as intended, do the following (assuming you want to
 # run the script as user `ports'):
@@ -56,6 +51,9 @@
 #  chown -R ports /var/db/chkversion
 # and enter chkversions.pl into the crontab of ports, or run it by hand
 # if you can spare the time.
+#
+# If the environment variable CVSBLAME is set and the ports tree is checked
+# out by CVS, every entry is listed with a record of the last CVS commit.
 #
 
 require 5.005;
@@ -67,51 +65,77 @@ my $portsdir   = $ENV{PORTSDIR}   ? $ENV{PORTSDIR}   : '/usr/ports';
 my $versiondir = $ENV{VERSIONDIR} ? $ENV{VERSIONDIR} : '/var/db/chkversion';
 my $cvsblame   = $ENV{CVSBLAME}   ? 1                : 0;
 
+my $make        = '/usr/bin/make';
+my $cvs         = '/usr/bin/cvs';
 my $pkg_version =
-  -x '/usr/local/sbin/pkg_version'
-   ? '/usr/local/sbin/pkg_version'
-   : '/usr/sbin/pkg_version';
+    $ENV{PKG_VERSION} && -x $ENV{PKG_VERSION} ? $ENV{PKG_VERSION}
+  : -x '/usr/local/sbin/pkg_version' ? '/usr/local/sbin/pkg_version'
+  : '/usr/sbin/pkg_version';
 
--d "$portsdir" or die "Can't find ports tree at $portsdir.\n";
+-d $portsdir or die "Can't find ports tree at $portsdir.\n";
 $portsdir = abs_path($portsdir);
 
-my $useindex = !-w "$versiondir";
+my $versionfile = "$versiondir/VERSIONS";
+my $useindex    = !-w $versiondir;
 
-my $versionfile =
-  $useindex
-  ? "$portsdir/".`cd $portsdir; /usr/bin/make -VINDEXFILE`
-  : "$versiondir/VERSIONS";
-chomp $versionfile;
+sub readfrom {
+    my $dir = shift;
 
-my %cachedenv = ('WITH_OPENSSL_BASE' => 'yes');
-foreach (qw(ARCH OPSYS OSREL OSVERSION PKGINSTALLVER PORTOBJFORMAT UID)) {
-    $cachedenv{$_} = `cd $portsdir; /usr/bin/make -V$_`;
-    chomp $cachedenv{$_};
+    if (!open CHILD, '-|') {
+        open STDERR, '>/dev/null';
+        chdir $dir if $dir;
+        exec @_;
+        die;
+    }
+    my @childout = <CHILD>;
+    close CHILD;
+
+    map { chomp } @childout;
+
+    return wantarray ? @childout : $childout[0];
 }
-my $makeenv = join ' ', '/usr/bin/env', map { "$_='$cachedenv{$_}'" } keys %cachedenv;
+
+foreach (qw(ARCH OPSYS OSREL OSVERSION PKGINSTALLVER PORTOBJFORMAT UID)) {
+    my @cachedenv = readfrom $portsdir, $make, "-V$_";
+    $ENV{$_} = $cachedenv[0];
+}
+$ENV{WITH_OPENSSL_BASE} = 'yes';
 
 my %pkgname;
+my %pkgorigin;
 
 sub wanted {
-    !-d
-    || (/^CVS$/
+    return
+      if !-d;
+
+    if (/^CVS$/
         || $File::Find::name =~
           m"^$portsdir/(?:Mk|Templates|Tools|distfiles|packages)$"os
-        || $File::Find::name =~ m"^$portsdir/[^/]+/pkg$"os
-    )
-      && ($File::Find::prune = 1)
-    || $File::Find::name =~ m"^$portsdir/([^/]+/[^/]+)$"os
-      && ($File::Find::prune = 1)
-      && (
-        $pkgname{$1} =
-          `cd "$File::Find::name"; $makeenv /usr/bin/make -VPKGNAME 2>/dev/null`,
-        chomp $pkgname{$1}
-      );
+        || $File::Find::name =~ m"^$portsdir/[^/]+/pkg$"os)
+    {
+        $File::Find::prune = 1;
+    }
+    elsif ($File::Find::name =~ m"^$portsdir/([^/]+/[^/]+)$"os) {
+        my @makevar = readfrom $File::Find::name, $make, '-VPKGORIGIN',
+          '-VPKGNAME';
+
+        $pkgorigin{$1} = $makevar[0]
+          if $makevar[0] && $1 ne $makevar[0];
+        $pkgname{$1} = $makevar[1]
+          if $makevar[1];
+
+        $File::Find::prune = 1;
+    }
 }
 
 find(\&wanted, $portsdir);
 
 my %backwards;
+
+if ($useindex) {
+    my $indexname = readfrom $portsdir, $make, '-VINDEXFILE';
+    $versionfile = "$portsdir/$indexname";
+}
 
 open VERSIONS, "<$versionfile";
 
@@ -133,8 +157,8 @@ while (<VERSIONS>) {
         $newversion =~ s/^.*-//;
         $oldversion =~ s/^.*-//;
 
-        my $result = `$pkg_version -t '$newversion' '$oldversion'`;
-        chomp $result;
+        my $result = readfrom '', $pkg_version, '-t', $newversion,
+          $oldversion;
         if ($result eq '<') {
             $backwards{$origin} = "$pkgname{$origin} < $version";
             $pkgname{$origin}   = $version;
@@ -147,7 +171,7 @@ while (<VERSIONS>) {
 close VERSIONS;
 
 if (!$useindex) {
-    system "mv -f '$versionfile' '$versionfile.bak'";
+    system 'mv', '-f', $versionfile, "$versionfile.bak";
 
     open VERSIONS, ">$versionfile";
     print VERSIONS join("\n", map("$_\t$pkgname{$_}", sort keys %pkgname)),
@@ -155,15 +179,42 @@ if (!$useindex) {
     close VERSIONS;
 }
 
-if (%backwards) {
-    print "Package versions going backwards:\n";
-    foreach (sort keys %backwards) {
-        print " - $_: $backwards{$_}\n";
-        if ($cvsblame && -d "$portsdir/$_/CVS") {
-            my @cvslog =
-              `cd "$portsdir/$_"; /usr/bin/cvs -R log -N -r. Makefile`;
-            print map "\t" . $_, grep /^-/ .. /^=/, @cvslog;
-            print "\n";
+sub blame {
+    my ($msg, $ports) = @_;
+
+    if (%{$ports}) {
+        print "$msg\n";
+        foreach (sort keys %{$ports}) {
+            print "- $_: $ports->{$_}\n";
+            if ($cvsblame && -d "$portsdir/$_/CVS") {
+                my @cvslog = readfrom "$portsdir/$_", $cvs, '-R', 'log', '-N',
+                  '-r.', 'Makefile';
+                print "  ", join("\n  " , grep(/^-/ .. /^=/, @cvslog)), "\n\n";
+            }
         }
+        print "\n";
     }
 }
+
+blame
+  "** The following ports have a wrong PKGORIGIN **\n\n"
+  . " PKGORIGIN connects packaged or installed ports to the directory they\n"
+  . " originated from. This is essential for tools like pkg_version or\n"
+  . " portupgrade to work correctly.\n" . "\n"
+  . " Wrong PKGORIGINs are often caused by a wrong order of CATEGORIES after\n"
+  . " a repocopy. While it is normal that ports are broken for a short period\n"
+  . " after every repocopy, note that they can be installed even when they are\n"
+  . " not yet connected to the build (via an entry in its category's Makefile),\n"
+  . " therefore it is important that these are fixed as soon as possible.\n",
+  \%pkgorigin;
+
+blame
+  "** The following ports have a version number that sorts before a previous one **\n\n"
+  . " For many package tools to work correctly, it is of utmost importance that\n"
+  . " version numbers of a port form a monotonic increasing sequence over time.\n"
+  . " Refer to the FreeBSD Porter's Handbook, 'Package Naming Conventions' for\n"
+  . " more information. Tools that won't work include pkg_version, portupgrade\n"
+  . " and portaudit. A common problem is an accidental deletion of PORTEPOCH.\n",
+  \%backwards;
+
+exit((%pkgorigin || %backwards) ? 1 : 0);
