@@ -1,62 +1,19 @@
---- include/s_err.h.old	Sun Jun  7 07:01:12 1998
-+++ include/s_err.h	Sun Jun  7 07:06:27 1998
-@@ -23,9 +23,9 @@
- #ifdef CUSTOM_ERR
- static	Numeric	local_replies[] = {
- /* 000 */	0, (char *)NULL,
--/* 001 */	RPL_WELCOME, ":Welcome to EFNet IRC - the Internet Relay Chat Network %s",
-+/* 001 */	RPL_WELCOME, ":Welcome to BSDnet IRC - the Internet Relay Chat Network %s",
- /* 002 */	RPL_YOURHOST, ":Your host is %s, running version %s",
--/* 003 */	RPL_CREATED, ":This server rose from the ashes %s",
-+/* 003 */	RPL_CREATED, ":This server was hatched %s",
- /* 004 */	RPL_MYINFO, "%s %s oiwszcrkfydn biklmnopstv",
- 		0, (char *)NULL
- };
-@@ -90,7 +90,7 @@
- /* 461 */	ERR_NEEDMOREPARAMS, "%s :Not enough parameters",
- /* 462 */	ERR_ALREADYREGISTRED, ":You may not reregister",
- /* 463 */	ERR_NOPERMFORHOST, ":Your host isn't among the privileged.",
--/* 464 */	ERR_PASSWDMISMATCH, ":BZZZT!! Wrong password, homez. Are you sure you know what you're doing??",
-+/* 464 */	ERR_PASSWDMISMATCH, ":BZZZT!! Wrong password, dewd. Are you sure you know what you're doing?",
- /* 465 */	ERR_YOUREBANNEDCREEP, ":You are BANNED from this server- %s",
- /* 466 */	ERR_YOUWILLBEBANNED, (char *)NULL,
- /* 467 */	ERR_KEYSET, "%s :Channel key already set. Pay attention.",
-@@ -104,9 +104,9 @@
- 		0, (char *)NULL, 0, (char *)NULL, 0, (char *)NULL,
- 		0, (char *)NULL,
- /* 481 */	ERR_NOPRIVILEGES,
--		":UHHH, I don't THINK so, homez... you ain't got what it takes. (IRC Operator)",
-+		":UHHH, I don't THINK so, dewd... you ain't got those mad l33+ sk1llz. (IRC Operator)",
- /* 482 */	ERR_CHANOPRIVSNEEDED, "%s :You can't do that thing, when you don't have that swing (You're not channel operator)",
--/* 483 */	ERR_CANTKILLSERVER, ":Don't be an idiot -  you can't kill a SERVER, fool.",
-+/* 483 */	ERR_CANTKILLSERVER, ":Don't be an idiot -  you can't kill a SERVER.",
- /* 484 */	0, (char *)NULL,
- 		0, (char *)NULL,
- 		0, (char *)NULL,
-@@ -124,7 +124,7 @@
- 		0, (char *)NULL,
- 		0, (char *)NULL,
- 		0, (char *)NULL,
--/* 501 */	ERR_UMODEUNKNOWNFLAG, ":Unknown MODE flag - you smokin' something?",
-+/* 501 */	ERR_UMODEUNKNOWNFLAG, ":Unknown MODE flag",
- /* 502 */	ERR_USERSDONTMATCH, ":You can't change user modes for other users, silly - check that nickname again.",
- /* 503 */	ERR_GHOSTEDCLIENT, ":Message could not be delivered to %s",
- /* LAST */	ERR_LAST_ERR_MSG, ":Last Error Message",
-@@ -143,7 +143,7 @@
- 		0, (char *)NULL,
- /* 311 */	RPL_WHOISUSER, "%s %s %s * :%s",
- /* 312 */	RPL_WHOISSERVER, "%s %s :%s",
--/* 313 */	RPL_WHOISOPERATOR, "%s :is an IRC Janitor (IRC Operator)",
-+/* 313 */	RPL_WHOISOPERATOR, "%s :really likes to twist and shout -IRC Operator-",
- /* 314 */	RPL_WHOWASUSER, "%s %s %s * :%s",
- /* 315 */	RPL_ENDOFWHO, "%s :End of /WHO list.",
- /* 316 */	RPL_WHOISCHANOP, (char *)NULL,
-@@ -216,7 +216,7 @@
- 		0, (char *)NULL,
- 		0, (char *)NULL, 0, (char *)NULL,
- 		0, (char *)NULL,
--/* 381 */	RPL_YOUREOPER, ":You are now one bad motherfucker - Go /kill someone.",
-+/* 381 */	RPL_YOUREOPER, ":You have the phorce.  Use it wisely.",
- /* 382 */	RPL_REHASHING, "%s :it slices, dices, and even reloads config files!  Rehashing config file, mang.",
- /* 383 */	0, (char *)NULL,
- /* 384 */	RPL_MYPORTIS, "%d :Port to local server is\r\n",
+diff -Nru ircd-hybrid-6.2.orig/autoconf/configure.in ircd-hybrid-6.2/autoconf/configure.in
+--- ircd-hybrid-6.2.orig/autoconf/configure.in	Sun Oct  7 14:39:21 2001
++++ ircd-hybrid-6.2/autoconf/configure.in	Sun Oct  7 15:32:51 2001
+@@ -6,7 +6,7 @@
+ AC_CONFIG_HEADER(include/setup.h zlib/setup.h)
+ 
+ PACKAGE=ircd-hybrid
+-VERSION=6.0
++VERSION=6.2
+ AC_SUBST(PACKAGE)
+ AC_SUBST(VERSION)
+ 
+@@ -180,5 +180,5 @@
+ *) AC_MSG_RESULT(nothing special required) ;;
+ esac
+ 
+-AC_OUTPUT(Makefile src/Makefile tools/Makefile zlib/Makefile)
++AC_OUTPUT(Makefile src/Makefile tools/Makefile zlib/Makefile include/config.h tools/install_ircd)
+ 

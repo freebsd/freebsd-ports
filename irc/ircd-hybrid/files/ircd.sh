@@ -1,18 +1,14 @@
 #!/bin/sh
-
-case "$1" in
-start)
-	[ -x /usr/local/sbin/ircd ] \
-	&& /usr/local/sbin/ircd >/dev/null 2>&1 \
-	&& echo -n " ircd"
-	;;
-stop)
-	killall ircd && echo -n ' ircd'
-	;;
-*)
-	echo "Usage: `basename $0` {start|stop}" >&2
-	exit 64
-	;;
-esac
-
-exit 0
+if [ $# -eq 0 -o x$1 = xstart ]; then
+  if [ -x %PREFIX%/bin/ircd ]; then
+    su -fm ircd -c %PREFIX%/bin/ircd && echo ' ircd'
+  fi
+fi
+if [ x$1 = xstop ]; then
+  if [ -f %PREFIX%/etc/ircd.pid ]; then
+    kill `cat %PREFIX%/etc/ircd.pid`
+  else
+    # oh well
+    killall ircd
+  fi
+fi
