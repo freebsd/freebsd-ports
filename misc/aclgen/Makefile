@@ -8,21 +8,19 @@
 PORTNAME=	aclgen
 PORTVERSION=	2.02
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.sztaki.hu/pub/private/kissg/aclgen/
-DISTNAME=	aclgen-202
+MASTER_SITES=	ftp://gatling.ikk.sztaki.hu/pub/aclgen/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Optimize Cisco routers ip access lists
 
 NO_WRKSUBDIR=	YES
+MAKEFILE=	${FILESDIR}/Makefile
 
 MAN1=		aclgen.1
 
-post-extract:
-	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/aclgen ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/aclgen.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/aclgen.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
