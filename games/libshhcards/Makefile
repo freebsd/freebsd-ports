@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://shh.thathost.com/pub-unix/files/
 DISTNAME=	shhcards-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	martin@raq.cx
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
