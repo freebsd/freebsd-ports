@@ -1,0 +1,24 @@
+# New ports collection makefile for:  numlockx
+# Whom:                               Jean-Baptiste Quenot <jb.quenot@caraldi.com>
+# Date Created:                       2003-09-09 16:05:29
+#
+# $FreeBSD$
+#
+
+PORTNAME=	numlockx
+PORTVERSION=	1.0
+CATEGORIES=	x11
+MASTER_SITES=	http://dforce.sh.cvut.cz/~seli/en/numlockx/
+
+MAINTAINER=	jb.quenot@caraldi.com
+COMMENT=	This little thingy allows you to start X with NumLock turned on
+
+HAS_CONFIGURE=	yes
+USE_X_PREFIX=	yes
+
+# Needed for the "configure" program to find XTest and XKB header files
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include"
+
+.include <bsd.port.mk>
+
+# ex:ts=18
