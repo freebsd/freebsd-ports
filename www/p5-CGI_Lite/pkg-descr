@@ -1,13 +1,8 @@
-CGI Lite v1.62 - Perl 5.0 module to process and decode WWW form information.
+You can use this module to decode form and query information, including file
+uploads, as well as cookies in a very simple manner; you need not concern
+yourself with the actual details behind the decoding process.
 
-       The module can be used to handle and decode WWW form
-       information. Both GET and POST requests can be processed.
-       In the case of POST requests, the information can be one
-       of two possible MIME types:
+WWW: http://search.cpan.org/dist/CGI-Lite
 
-           application/x-www-form-urlencoded
-           multipart/form-data
-
-       This module is very light-weight, and can be thought of as
-       an enhanced version of the old cgi-lib.pl library for Perl
-       4.0 by Steven Brenner (S.E.Brenner@bioc.cam.ac.uk).          
+- Lars Thegler
+lars@thegler.dk

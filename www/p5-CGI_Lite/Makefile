@@ -6,18 +6,30 @@
 #
 
 PORTNAME=	CGI-Lite
-PORTVERSION=	2.001
+PORTVERSION=	2.02
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	CGI
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION}-emergencyrelease
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Perl5 module to process and decode WWW form information
+MAINTAINER=	lars@thegler.dk
+COMMENT=	Process and decode WWW forms and cookies
 
 PERL_CONFIGURE=	yes
 
 MAN3=		CGI::Lite.3
+
+DOCS=		CHANGES README TODO
+EXAMPLES=	cookies get_post print upload file post reference
+
+post-install:
+.ifndef(NOPORTDOCS)
+	@${ECHO_MSG} "===>   Installing docs for ${PKGNAME}"
+	${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
+	${MKDIR} ${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${INSTALL_SCRIPT} ${EXAMPLES} ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>
