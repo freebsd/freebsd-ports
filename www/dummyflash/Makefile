@@ -21,8 +21,14 @@ BUILD_WRKSRC=	${WRKSRC}/PluginSDK30b5/examples/UnixTemplate/Unix
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile.freebsd
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64" || ${ARCH} == "amd64"
+BROKEN=		"Does not build on ia64 or amd64"
+.endif
+
 do-install:
 	@${MKDIR} ${PREFIX}/lib/browser_plugins
 	${INSTALL_DATA} ${BUILD_WRKSRC}/dummyflash.so ${PREFIX}/lib/browser_plugins
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
