@@ -7,16 +7,18 @@
 
 PORTNAME=	evolution
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/evolution
 
 MAINTAINER=	gnome@FreeBSD.org
 
+BUILD_DEPENDS=	${X11BASE}/lib/gnome-pilot/conduits/libemail_conduit.so:${PORTSDIR}/palm/gnomepilot-conduits
 LIB_DEPENDS=	bonobo_conf.0:${PORTSDIR}/devel/bonobo-conf
 #ldap.1:${PORTSDIR}/net/openldap <- avoid extra dependency until
 #						   it actually works
+RUN_DEPENDS=	${X11BASE}/lib/gnome-pilot/conduits/libemail_conduit.so:${PORTSDIR}/palm/gnomepilot-conduits
 
 #BROKEN=		"Out of sync with latest gal"
 
@@ -29,8 +31,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-db3-libs=${LOCALBASE}/lib \
 		--with-html-dir=${PREFIX}/share/gnome/html \
 		--with-openssl-includes=${OPENSSLBASE}/include \
-		--with-openssl-libs=${OPENSSLBASE}/lib
-# --with-pisock=${LOCALBASE}/pilot --enable-pilot-conduits=yes
+		--with-openssl-libs=${OPENSSLBASE}/lib \
+		--with-pisock=${LOCALBASE}/pilot --enable-pilot-conduits=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
