@@ -6,13 +6,10 @@
 #
 
 PORTNAME=	phpnuke
-PORTVERSION=	5.0
+PORTVERSION=	5.0.1
 CATEGORIES=	www
-MASTER_SITES=	ftp://carroll.cac.psu.edu/pub/linux/distributions/mandrake-devel/projects/phpnuke/ \
-		ftp://ftp.rpmfind.net/linux/Mandrake-devel/projects/phpnuke/ \
-		ftp://gd.tuwien.ac.at/pub/linux/Mandrake-devel/projects/phpnuke/ \
-		ftp://mandrake.redbox.cz/Mandrake-devel/projects/phpnuke/ \
-		ftp://ftp.proxad.net/pub/Distributions_Linux/Mandrake-devel/projects/phpnuke/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	PHP-Nuke-${PORTVERSION}
 
 MAINTAINER=	pat@databits.net
@@ -36,11 +33,13 @@ pre-everything:
 .endif
 
 do-install:
-	${MKDIR} ${PREFIX}/www/phpnuke/html
-	${CP} -Rp ${WRKDIR}/html ${WRKDIR}/sql ${PREFIX}/www/phpnuke
+	@${MKDIR} ${PREFIX}/www/phpnuke
+	@${MKDIR} ${PREFIX}/www/phpnuke/html
+	@${MKDIR} ${PREFIX}/www/phpnuke/sql
+	@${CP} -Rp ${WRKDIR}/html ${WRKDIR}/sql ${PREFIX}/www/phpnuke
 .if !defined(NOPORTDOCS)
 .for FILE in ${DOCS}
-	${INSTALL_DATA} ${WRKDIR}/${FILE} ${PREFIX}/www/phpnuke
+	@${INSTALL_DATA} ${WRKDIR}/${FILE} ${PREFIX}/www/phpnuke
 .endfor
 .endif
 
