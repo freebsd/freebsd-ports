@@ -23,6 +23,10 @@ RUBY_VER?=	1.6
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+BROKEN=		"Configure fails on amd64"
+.endif
+
 # Beware, because gdbm is under GPL, you must treat the whole binary
 # as GPL says if you include gdbm in it.
 EXT_PORTS=	databases/ruby-bdb1
