@@ -30,6 +30,33 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5f29c2e4-9f6a-11d8-abbc-00e08110b673">
+    <topic>exim buffer overflow when verify = header_syntax is used</topic>
+    <affects>
+      <package>
+        <name>exim{,-ldap2,-mysql,-postgresql}</name>
+        <range>
+          <lt>exim-4.33+20_1</lt>
+        </range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>A remote exploitable buffer overflow has been discovered
+          in exim when verify = header_syntax is used in the
+          configuration file. This does not affect the default
+          configuration.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.guninski.com/exim1.html</url>
+      <cvename>CAN-2004-0400</cvename>
+    </references>
+    <dates>
+      <discovery>2004-05-06</discovery>
+      <entry>2004-05-06</entry>
+    </dates>
+  </vuln>
   <vuln vid="a56a72bb-9f72-11d8-9585-0020ed76ef5a">
     <topic>phpBB session table exhaustion</topic>
     <affects>
