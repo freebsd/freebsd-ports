@@ -48,7 +48,7 @@
     SUBDIR += py-xml
     SUBDIR += rand
     SUBDIR += rman
-    SUBDIR += sar
+    SUBDIR += sarep
     SUBDIR += sgmlformat
     SUBDIR += sgrep
     SUBDIR += sp
