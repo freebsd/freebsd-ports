@@ -1,11 +1,10 @@
---- src/Makefile.in.orig	Tue Mar 26 05:42:18 2002
-+++ src/Makefile.in	Mon Apr  8 12:00:19 2002
-@@ -161,7 +161,7 @@
- INCLUDES =  	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	-I$(top_srcdir) 	-I$(top_srcdir)/libbalsa
- 
- 
--balsa_LDADD =  	$(top_builddir)/libbalsa/libbalsa.a		$(top_builddir)/libmutt/imap/libimap.a		$(top_builddir)/libmutt/libmutt.a		$(top_builddir)/libinit_balsa/libinit_balsa.a 	-lpspell 	-lltdl		$(GDBM_LIBS) 	$(INTLLIBS) 	$(PCRE_LIBS) 	$(PTHREAD_LIB)
-+balsa_LDADD =  	$(top_builddir)/libbalsa/libbalsa.a		$(top_builddir)/libmutt/imap/libimap.a		$(top_builddir)/libmutt/libmutt.a		$(top_builddir)/libinit_balsa/libinit_balsa.a 	-lpspell 		$(GDBM_LIBS) 	$(INTLLIBS) 	$(PCRE_LIBS) 	$(PTHREAD_LIB)
- 
- 
- idldir = $(datadir)/idl
+--- src/Makefile.in.orig	Wed Apr 24 06:01:26 2002
++++ src/Makefile.in	Fri Apr 26 00:40:50 2002
+@@ -230,7 +230,6 @@
+ 	$(top_builddir)/libmutt/libmutt.a	\
+ 	$(top_builddir)/libinit_balsa/libinit_balsa.a \
+ 	-lpspell \
+-	-lltdl	\
+ 	$(GDBM_LIBS) \
+ 	$(INTLLIBS) \
+ 	$(PCRE_LIBS) \
