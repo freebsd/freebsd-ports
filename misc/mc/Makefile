@@ -33,4 +33,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAN1=		midc.1
 MAN8=		mcserv.8
 
+post-patch:
+	${PERL} -i -p -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/vfs/extfs/uzip.in
+
 .include <bsd.port.mk>
