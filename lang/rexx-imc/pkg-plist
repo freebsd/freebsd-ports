@@ -5,6 +5,7 @@ bin/rxmathfn.rxfn
 bin/rxmathfn.rxlib
 lib/librexx.a
 lib/librexx.so.1.6.4
+include/rexxsaa.h
 @exec ldconfig -m %B
 share/doc/rexx-imc/README
 share/doc/rexx-imc/README.avail
