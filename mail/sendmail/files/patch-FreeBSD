@@ -3,6 +3,6 @@
 @@ -5,4 +5,5 @@
  define(`confLD', `cc')
  define(`confMTLDOPTS', `-pthread')
-+define(`confMTCCOPTS', `-pthread')
++define(`confMTCCOPTS', `-D_THREAD_SAFE')
  define(`confLDOPTS_SO', `-shared')
  define(`confCCOPTS_SO', `-fPIC')
