@@ -10,7 +10,7 @@ PORTVERSION=	0.1.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://capsi.cx/src/fortunelock/
 
-MAINTAINER=	dannyboy@subdimension.com
+MAINTAINER=	dannyboy@FreeBSD.org
 
 USE_BZIP2=	yes
 
