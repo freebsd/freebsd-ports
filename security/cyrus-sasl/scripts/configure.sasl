@@ -25,7 +25,7 @@ if [ "${BATCH}" ]; then
 		OPTIONS="${OPTIONS} \"OpenLDAP1\""
 	fi
 	if [ "${OPTIONS}" != "x" ]; then
-		OPTIONS="${OPTIONS} \"PWCHECK\""
+		OPTIONS="${OPTIONS} \"SASLAUTHD\""
 		set ${OPTIONS}
 	fi
 else
@@ -65,8 +65,9 @@ JAVA		"JavaSASL [Experimental]" ${SET_JAVA} \
 MySQL		"MySQL password Authentication" ${SET_MYSQL} \
 OpenLDAP1	"OpenLDAP 1.x password Authentication" ${SET_LDAP1} \
 OpenLDAP2	"OpenLDAP 2.x password Authentication w/TLS" ${SET_LDAP2} \
-PWCHECK		"Use pwcheck for password Authentication" ON \
-PAMPWCHECK      "Use pwcheck_pam for password Authentication" OFF \
+PWCHECK		"Use pwcheck for password Authentication" OFF \
+PAMPWCHECK	"Use pwcheck_pam for password Authentication" OFF \
+SASLAUTHD	"Use saslauthd for password Authentication" ON \
 2> $tempfile
 
 	retval=$?
@@ -172,6 +173,12 @@ while [ "$1" ]; do
 				PWCHECK=1
 			fi
 			;;
+		\"SASLAUTHD\")
+			if [ "$PWCHECK" ]; then
+				echo "SASLAUTHD is preferred over PWCHECK: Enabling saslauthd and disabling pwcheck in rc.d scripts" > /dev/stderr
+			fi
+			SASLAUTHD=1
+			;;
 		*)
 			echo "Invalid option(s): $*" > /dev/stderr
 			rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
@@ -181,12 +188,24 @@ while [ "$1" ]; do
 	shift
 done
 
-if [ "$PWCHECK" ]; then
-	echo "PWCHECK_SUB+=	-e \"s;%%ENABLEPWCHECK%%;yes;g\""
-else
-	echo "PWCHECK_SUB+=	-e \"s;%%PWCHECK%%;pwcheck;g\" \\"
-	echo "			-e \"s;%%ENABLEPWCHECK%%;no;g\""
+if [ ! "${PWCHECK}" ]; then
+	echo "PWCHECK_SUB+=	-e \"s;%%PWCHECK%%;pwcheck;g\""
 fi
+
+if [ "$SASLAUTHD" ]; then
+	echo "PWCHECK_SUB+=	-e \"s;%%ENABLEPWCHECK%%;no;g\""
+	echo "PWCHECK_METHOD=	saslauthd"
+	echo "SASLAUTHD_SUB+=	-e \"s;%%ENABLESASLAUTHD%%;yes;g\""
+else
+	if [ "$PWCHECK" ]; then
+		echo "PWCHECK_SUB+=	-e \"s;%%ENABLEPWCHECK%%;yes;g\""
+	else
+		echo "PWCHECK_SUB+=	-e \"s;%%ENABLEPWCHECK%%;no;g\""
+	fi
+	echo "PWCHECK_METHOD+=	pwcheck"
+	echo "SASLAUTHD_SUB+=	-e \"s;%%ENABLESASLAUTHD%%;no;g\""
+fi
+
 if [ ! "${DEFJAVA}" ]; then
 	echo "PLIST_SUB+=	JAVASASL=\"@comment \""
 fi

@@ -7,7 +7,7 @@
 
 PORTNAME=	cyrus-sasl
 PORTVERSION=	1.5.27
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
 		http://www.surf.org.uk/downloads/ \
@@ -42,7 +42,7 @@ MAN3=		sasl.3 sasl_authorize_t.3 sasl_callbacks.3 sasl_checkpass.3 \
 		sasl_listmech.3 sasl_log_t.3 sasl_server_init.3 \
 		sasl_server_new.3 sasl_server_start.3 sasl_server_step.3 \
 		sasl_setprop.3 sasl_usererr.3
-MAN8=		sasldblistusers.8 saslpasswd.8
+MAN8=		sasldblistusers.8 saslpasswd.8 saslauthd.8
 
 USE_AUTOMAKE_VER=14
 USE_LIBTOOL=	YES
@@ -54,6 +54,8 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--includedir=${PREFIX}/include/sasl1 \
 		--enable-static \
 		--enable-login \
+		--with-saslauthd=/var/state/saslauthd1 \
+		--enable-auth-sasldb \
 		--with-pwcheck=/var/pwcheck \
 		--with-rc4=openssl
 
@@ -68,8 +70,8 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		WITH_LDAP1="${WITH_LDAP1}" \
 		WITH_LDAP2="${WITH_LDAP2}"
 
-JAVADIR=	jdk1.3.1
-JAVALIBDIR=	${PREFIX}/${JAVADIR}/lib/i386/green_threads/
+JAVADIR?=	jdk1.3.1
+JAVALIBDIR?=	${PREFIX}/${JAVADIR}/lib/i386/green_threads/
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
 CONFIGURE_ARGS+=	--enable-gssapi=${KRB5_HOME}
@@ -124,13 +126,15 @@ post-extract:
 pre-patch:
 	@(cd ${WRKSRC} && ${PATCH} -p1 < ${WRKDIR}/${LDAP_MYSQL_PATCH})
 
-# Fix sasldb name in pkg-install/deinstall scripts
+# Fix pkg-{install/deinstall/messages}
 post-patch:
 	@${SED} -e "s;%%SASLDB%%;${SASLDB_NAME};g" \
+		-e "s;%%PWCHECK_METHOD%%;${PWCHECK_METHOD};g" \
 		${.CURDIR}/pkg-install > ${PKGINSTALL}
 	@${SED} -e "s;%%SASLDB%%;${SASLDB_NAME};g" \
+		-e "s;%%PWCHECK_METHOD%%;${PWCHECK_METHOD};g" \
 		${.CURDIR}/pkg-deinstall > ${PKGDEINSTALL}
-	@${SED} -e "s;%%SASLDB%%;${SASLDB_NAME};g" \
+	@${SED} -e "s;%%PWCHECK_METHOD%%;${PWCHECK_METHOD};g" \
 		-e "s;%%PREFIX%%;${PREFIX};g" \
 		${.CURDIR}/pkg-message > ${PKGMESSAGE}
 .ifdef LDAP_MYSQL_MSG
@@ -144,12 +148,19 @@ pre-configure:
 # Create Cyrus user and group
 pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@if [ -f ${PREFIX}/sbin/saslauthd ]; then \
+		mv ${PREFIX}/sbin/saslauthd ${PREFIX}/sbin/saslauthd2; \
+	fi
 
 post-install:
 	@${SED} -e "s;%%PREFIX%%;${PREFIX};g" ${PWCHECK_SUB} \
 		${FILESDIR}/pwcheck.sh > ${PREFIX}/etc/rc.d/pwcheck.sh
 	@${CHMOD} 755 ${PREFIX}/etc/rc.d/pwcheck.sh
 	${INSTALL} -d -m 770 -o cyrus -g cyrus /var/pwcheck
+	@${SED} -e "s;%%PREFIX%%;${PREFIX};g" ${SASLAUTHD_SUB} \
+		${FILESDIR}/saslauthd.sh > ${PREFIX}/etc/rc.d/saslauthd1.sh
+	@${CHMOD} 755 ${PREFIX}/etc/rc.d/saslauthd1.sh
+	${INSTALL} -d -m 770 -o cyrus -g cyrus /var/state/saslauthd1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${DOCS}
@@ -162,6 +173,10 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/java/doc/draft-weltman-java-sasl-02.txt ${DOCSDIR}
 	@${INSTALL_DATA} ${FILESDIR}/Sendmail.README ${DOCSDIR}
 .endif
+	@mv ${PREFIX}/sbin/saslauthd ${PREFIX}/sbin/saslauthd1
+	@if [ -f ${PREFIX}/sbin/saslauthd2 ]; then \
+		mv ${PREFIX}/sbin/saslauthd2 ${PREFIX}/sbin/saslauthd; \
+	fi
 	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 

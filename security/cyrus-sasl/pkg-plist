@@ -1,5 +1,9 @@
+@comment The following makes sure that the pwcheck and saslauthd
+@comment daemons are stopped before removing the files.
 @unexec if [ -f /var/run/pwcheck.pid ] ; then %D/etc/rc.d/pwcheck.sh stop ; echo " stopped." ; fi
+@unexec if [ -f /var/state/saslauthd1/mux.pid ] ; then %D/etc/rc.d/saslauthd1.sh stop ; echo " stopped." ; fi
 etc/rc.d/pwcheck.sh
+etc/rc.d/saslauthd1.sh
 include/sasl1/hmac-md5.h
 include/sasl1/md5.h
 include/sasl1/md5global.h
@@ -38,6 +42,7 @@ sbin/sasldblistusers
 sbin/saslpasswd
 sbin/pwcheck
 sbin/pwcheck_pam
+sbin/saslauthd1
 %%JAVASASL%%share/java/classes/sasl/CyrusSasl/ClientFactory.class
 %%JAVASASL%%share/java/classes/sasl/CyrusSasl/GenericClient.class
 %%JAVASASL%%share/java/classes/sasl/CyrusSasl/GenericCommon.class
@@ -91,4 +96,11 @@ sbin/pwcheck_pam
 @comment This file gets created by the pwcheck program
 @unexec rm -f %D/pwcheck/pwcheck
 @dirrm pwcheck
+@mode ug=rwx,o=
+@exec mkdir -p /var/state/saslauthd1
+@exec chown -R cyrus:cyrus state
+@exec chmod -R o= state
+@comment This file gets created by the state/saslauthd program
+@unexec rm -fr /var/state/saslauthd1
+@unexec rmdir /var/state
 @cwd %%PREFIX%%

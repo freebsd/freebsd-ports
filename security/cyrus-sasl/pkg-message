@@ -1,12 +1,19 @@
 
-You may need to start the pwcheck daemon for authentication with
-the system password files:
+You may need to start the pwcheck or saslauthd daemon for authentication
+with the system password files:
 
 	%%PREFIX%%/etc/rc.d/pwcheck.sh start
+or
+	%%PREFIX%%/etc/rc.d/saslauthd1.sh start
 
 or you can use sasldb for authentication, to add users use:
 
 	saslpasswd -c username
 
-How to enable SMTP AUTH with system Sendmail 8.11 - Sendmail.README
+If you want to enable SMTP AUTH with the system Sendmail, read Sendmail.README
+
+NOTE: This port has been compiled with a default pwcheck_method of
+      %%PWCHECK_METHOD%%. Set sasl_pwcheck_method to %%PWCHECK_METHOD%%,
+      after installing the Cyrus-IMAPd 1.6.24 port.  You should also check
+      the %%PREFIX%%/lib/sasl/*.conf files for the correct pwcheck_method.
 

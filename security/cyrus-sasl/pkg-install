@@ -67,12 +67,6 @@ create_user() {
 		fi
 		echo "*** Updated user \`${USER}'."
 	fi
-# Don't know why we need the daemon user in the cyrus group
-# hopefully this doesn't affect anyone. It's a leftover from
-# the pre-SASL cyrus-imapd server.
-#	if ! ${PW} group mod ${GROUP} -m daemon; then
-#		echo "*** can't add user \`daemon' to group \`${GROUP}'"
-#	fi
 }
 
 create_sasldb() {
@@ -92,7 +86,7 @@ create_sasldb() {
 
 sendmail_conf() {
 	if [ ! -f ${PKG_PREFIX}/lib/sasl/Sendmail.conf ]; then
-		echo "pwcheck_method: pwcheck" > ${PKG_PREFIX}/lib/sasl/Sendmail.conf
+		echo "pwcheck_method: %%PWCHECK_METHOD%%" > ${PKG_PREFIX}/lib/sasl/Sendmail.conf
 	fi
 }
 
