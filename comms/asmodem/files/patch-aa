@@ -1,16 +1,18 @@
---- asmodem-0.6/asmodem.c	Mon May 11 15:38:04 1998
-+++ asmodem.c	Mon May 11 15:58:52 1998
-@@ -22,8 +22,7 @@
- #include <sys/ioctl.h>
+--- asmodem.c.orig	Mon Oct  5 04:56:57 1998
++++ asmodem.c	Thu Sep 30 05:30:03 1999
+@@ -25,9 +25,8 @@
  #include <sys/socket.h>
  #include <net/if.h>
+ 
+-#include <asm/types.h>
+-#include <linux/types.h>
 -#include <linux/ppp_defs.h>
--
++#include <machine/types.h>
 +#include <net/if_ppp.h>
  
+ 
  /* XPM struct and icons ******************************************************/
- typedef struct _XpmIcon {
-@@ -58,7 +57,7 @@
+@@ -63,7 +62,7 @@
  #define DEFINTERVAL 3		/* Default interval 2 sec */
  #define TRUE 1;
  #define FALSE 0;
@@ -19,7 +21,7 @@
  
  int	withdrawn= FALSE;
  Display	*Disp;	 
-@@ -109,8 +108,8 @@
+@@ -114,8 +113,8 @@
  	fprintf(stderr,"options:\n");
          fprintf(stderr,"        -w               withdrawn mode (For WindowMaker's Dock)\n");  
  	fprintf(stderr,"        -s               transparent edge mode\n");
@@ -30,52 +32,41 @@
  	fprintf(stderr,"        -u <sec>         update frequency (default 5 sec)\n");	
  	fprintf(stderr,"        -p [+|-]x[+|-]y  position of asmodem\n");
  	fprintf(stderr,"        -d <program>     program to execute on click while disconnected (dial?)\n");
-@@ -293,7 +292,7 @@
+@@ -298,7 +297,7 @@
  {
  	XEvent Event;            
  	XpmIcon Prev;
 -	struct 	ifreq     ifreq;
-+	struct  ifpppstatsreq ifreq;
++	struct 	ifpppstatsreq     ifreq;
  	struct 	ppp_stats stats;
  	int  	rb, tb;
  			      
-@@ -309,13 +308,14 @@
- 		}
+@@ -315,12 +314,12 @@
  		//fprintf(stderr, "x ");
  		if (CarrierOn) {
--			memset(&ifreq, 0, sizeof(ifreq));
+ 			memset(&ifreq, 0, sizeof(ifreq));
 -			strcpy(ifreq.ifr_ifrn.ifrn_name, "ppp0");
 -			ifreq.ifr_ifru.ifru_data = (caddr_t)&stats;
 -			if ((ioctl(sock,SIOCDEVPRIVATE,(caddr_t)&ifreq) < 0)){
-+			memset(&ifreq, 0, sizeof(ifreq)); 
-+			
-+			strcpy(ifreq.ifr_name, "ppp0");   
++			strcpy(ifreq.ifr_name, "ppp0");
 +			if ((ioctl(sock,SIOCGPPPSTATS,&ifreq) < 0)){
  				fprintf(stderr, "asmodem: ioctl f*cked\n");
  				prb = ptb = 0;
  			} else {
-+			        stats = ifreq.stats;
++				stats = ifreq.stats;
  				rb = stats.p.ppp_ibytes;
  				tb = stats.p.ppp_obytes;
  				if (rb > prb) {
-@@ -398,14 +398,14 @@
- /****************************************************************************/
- int IsNewMail(char *Mbox)
- {
-+
- 	FILE* MailFile;
- 	int Ret = 0;
- 	char Buffer[30] = "";
+@@ -409,7 +408,7 @@
  	int WasStatus = 1;
  	int NewMailn = 0;
  
 -	MailFile = fopen(Mbox, "r");
--
 +/*	MailFile = fopen(Mbox, "r");
+ 
  	while(!feof(MailFile))
  	{
- 		fgets(Buffer, 29, MailFile);
-@@ -420,6 +420,8 @@
+@@ -425,6 +424,8 @@
  	fclose(MailFile);
  
  	return (NewMailn||!WasStatus);
@@ -84,26 +75,22 @@
  }
  
  /****************************************************************************/
-@@ -427,8 +429,9 @@
- {
+@@ -433,7 +434,7 @@
  	FILE* MailFile = 0;
  	int Ret = 0;            
-+	
-+/*	MailFile = fopen(Mbox, "r");	
  
 -	MailFile = fopen(Mbox, "r");	
++/*	MailFile = fopen(Mbox, "r");	
  	if(MailFile == 0)
  		Ret = 0;
  	else
-@@ -441,7 +444,15 @@
+@@ -447,6 +448,14 @@
  	}
- 	fclose(MailFile);
  
--	return Ret;    
-+	return Ret;
+ 	return Ret;    
 +*/
 +
-+ 	if ((MailFile=fopen(Mbox,"r"))==NULL)
++	if ((MailFile=fopen(Mbox,"r"))==NULL)
 +	  return 0;
 +	else {
 +	  fclose(MailFile);

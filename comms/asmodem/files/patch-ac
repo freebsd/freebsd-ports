@@ -1,0 +1,17 @@
+--- Imakefile.orig	Sat Mar  1 09:48:45 1997
++++ Imakefile	Fri Oct  1 02:09:36 1999
+@@ -1,12 +1,12 @@
+ 
+-XPMLIB = -L/usr/lib/X11 -lXpm   
++XPMLIB = -lXpm   
+ DEPLIBS = $(DEPXLIB) 
+ 
+ LOCAL_LIBRARIES = $(XPMLIB) $(XLIB)  
+ 
+ LINTLIBS = $(LINTXLIB)
+ 
+-SRCS = asmodem.cpp
++SRCS = asmodem.c
+ OBJS = asmodem.o
+ 
+ ComplexProgramTarget(asmodem)
