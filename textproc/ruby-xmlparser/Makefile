@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xmlparser
-PORTVERSION=	0.6.5
-PORTREVISION=	1
+PORTVERSION=	0.6.8
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.yoshidam.net/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -33,6 +32,7 @@ INSTALL_TARGET=	site-install
 
 post-extract:
 	${RM} -r ${WRKSRC}/samples/expat-1.2
+	${FIND} ${WRKSRC} -name CVS -type d -exec ${RM} -r {} ';' -prune
 
 post-patch:
 	${RUBY} -i -pe 'gsub /%%PREFIX%%/, "${PREFIX}"' ${WRKSRC}/lib/wget.rb
