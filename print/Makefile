@@ -54,6 +54,7 @@
     SUBDIR += gnomeprint
     SUBDIR += gp
     SUBDIR += gsfonts
+    SUBDIR += guitartex
     SUBDIR += gv
     SUBDIR += hp2xx
     SUBDIR += html2latex
