@@ -1,0 +1,24 @@
+*** /usr/ports/lang/squeak/work/Squeak-1.18/src/Makefile	Sun Jan 19 00:29:00 1997
+--- Makefile	Fri Apr 25 18:12:29 1997
+***************
+*** 23,32 ****
+  
+  CC=		gcc
+  LD=		gcc
+! CCFLAGS=	-O3 -funroll-loops -g
+  LDFLAGS=
+! LIBS=		-lX11 -lm
+! INCLUDE=
+  
+  # top-level targets -- default is to build just the VM
+  
+--- 23,32 ----
+  
+  CC=		gcc
+  LD=		gcc
+! CCFLAGS=	-O2 -funroll-loops
+  LDFLAGS=
+! LIBS=		-L${X11BASE}/lib -lX11 -lm
+! INCLUDE=	-I${X11BASE}/include
+  
+  # top-level targets -- default is to build just the VM
