@@ -3,7 +3,7 @@
 # Date created:		01 May 1996
 # Whom:			masafumi
 #
-# $Id: Makefile,v 1.5 1996/09/20 23:04:17 asami Exp $
+# $Id: Makefile,v 1.6 1996/10/27 00:20:24 max Exp $
 #
 
 DISTNAME=	pine3.95
@@ -43,7 +43,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/pico.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/pilot.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/pine.1 ${PREFIX}/man/man1
-	     ${MKDIR} -p ${PREFIX}/lib/pine
+	${MKDIR} ${PREFIX}/lib/pine
 	${INSTALL_DATA} ${WRKSRC}/pine/pine.hlp ${PREFIX}/lib/pine
 	${INSTALL_DATA} ${WRKSRC}/pine/pine.ndx ${PREFIX}/lib/pine
 	${INSTALL_DATA} ${WRKSRC}/pine/pine_ja.hlp ${PREFIX}/lib/pine
@@ -53,12 +53,10 @@ do-install:
 	ldconfig -vm /usr/local/lib
 
 post-install:
-.if !defined(NOMANCOMPRESS)
-	gzip -9nf ${PREFIX}/man/man1/pine.1
-	gzip -9nf ${PREFIX}/man/man1/pilot.1
-	gzip -9nf ${PREFIX}/man/man1/pico.1
-	gzip -9nf ${PREFIX}/man/man8/imapd.8c
-	gzip -9nf ${PREFIX}/man/man8/ipopd.8c
-.endif
+	${COMPRESS_MAN} ${PREFIX}/man/man1/pine.1
+	${COMPRESS_MAN} ${PREFIX}/man/man1/pilot.1
+	${COMPRESS_MAN} ${PREFIX}/man/man1/pico.1
+	${COMPRESS_MAN} ${PREFIX}/man/man8/imapd.8c
+	${COMPRESS_MAN} ${PREFIX}/man/man8/ipopd.8c
 
 .include <bsd.port.mk>
