@@ -1,13 +1,10 @@
-
-$FreeBSD$
-
---- galeon-config-tool.in.orig	Sat Sep 15 14:58:19 2001
-+++ galeon-config-tool.in	Thu Sep 27 18:10:38 2001
+--- galeon-config-tool.in.orig	Thu Mar 14 02:41:26 2002
++++ galeon-config-tool.in	Sun Apr 21 18:11:28 2002
 @@ -4,7 +4,7 @@
  
  clean () {
  
--    if ps hu -C galeon-bin | grep $USER &>/dev/null 2>&1; then
+-    if ps hu -C galeon-bin | grep `id -un` >/dev/null 2>&1; then
 +    if ps | awk '{print $5}' | grep -q galeon-bin; then
      echo "Sorry, this script won't work while galeon is running"
  
