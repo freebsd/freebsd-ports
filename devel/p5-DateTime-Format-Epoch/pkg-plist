@@ -1,7 +1,14 @@
 %%SITE_PERL%%/DateTime/Format/Epoch.pm
+%%SITE_PERL%%/DateTime/Format/Epoch/ActiveDirectory.pm
 %%SITE_PERL%%/DateTime/Format/Epoch/DotNet.pm
+%%SITE_PERL%%/DateTime/Format/Epoch/JD.pm
+%%SITE_PERL%%/DateTime/Format/Epoch/Lilian.pm
+%%SITE_PERL%%/DateTime/Format/Epoch/MJD.pm
 %%SITE_PERL%%/DateTime/Format/Epoch/MacOS.pm
+%%SITE_PERL%%/DateTime/Format/Epoch/RJD.pm
+%%SITE_PERL%%/DateTime/Format/Epoch/RataDie.pm
 %%SITE_PERL%%/DateTime/Format/Epoch/TAI64.pm
+%%SITE_PERL%%/DateTime/Format/Epoch/TJD.pm
 %%SITE_PERL%%/DateTime/Format/Epoch/Unix.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format/Epoch/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format/Epoch
