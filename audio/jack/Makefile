@@ -14,9 +14,10 @@ DISTNAME=		jack-audio-connection-kit-${PORTVERSION}
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A low-latency audio server
 
-BUILD_DEPENDS=		doxygen:${PORTSDIR}/devel/doxygen
 LIB_DEPENDS=		portaudio.0:${PORTSDIR}/audio/portaudio \
 			sndfile.1:${PORTSDIR}/audio/libsndfile
+
+OPTIONS=		DOCS "Build HTML documentation. Requires doxygen/TeX." off
 
 LATEST_LINK=		jack
 CONFIGURE_ENV=		LIBS="${PTHREAD_LIBS}" LDFLAGS="-L${LOCALBASE}/lib" \
@@ -33,8 +34,32 @@ MAN1=	jackd.1 jackstart.1
 
 .include <bsd.port.pre.mk>
 
+.if exists(${LOCALBASE}/bin/doxygen)
+.	if !defined(WITH_GNOKII)
+DOCS_OVERRIDE=	yes
+WITH_DOCS=	yes
+.	endif
+.endif
+
+.if defined(WITH_DOCS) || defined(PACKAGE_BUILDING)
+BUILD_DEPENDS+=		doxygen:${PORTSDIR}/devel/doxygen
+PLIST_SUB+=		DOCS=""
+.elseif defined(WITHOUT_DOCS)
+CONFIGURE_ENV+=		ac_cv_prog_HAVE_DOXYGEN="false"
+PLIST_SUB+=		DOCS="@comment "
+.endif
+
 .if (${OSVERSION} > 500000 ) && (${OSVERSION} < 502102 )
 BROKEN=		"Does not compile"
+.endif
+
+pre-everything::
+.if defined(DOCS_OVERRIDE)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "**********************************************************"
+	@${ECHO_MSG} "* Doxygen has been detected, documentation will be built *"
+	@${ECHO_MSG} "**********************************************************"
+	@${ECHO_MSG}
 .endif
 
 post-patch:
