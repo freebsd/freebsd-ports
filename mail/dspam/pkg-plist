@@ -8,10 +8,10 @@ bin/dspam_crc
 bin/dspam_genaliases
 bin/dspam_merge
 bin/dspam_ngstats
-bin/dspam_purge
-bin/dspam_purge.libdb4
+%%DB4%%bin/dspam_purge
+%%DB4%%bin/dspam_purge.libdb4
 bin/dspam_stats
-bin/libdb4_purge
+%%DB4%%bin/libdb4_purge
 lib/libdspam.so
 lib/libdspam.so.4
 lib/libdspam.a
