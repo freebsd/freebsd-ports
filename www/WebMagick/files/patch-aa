@@ -1,0 +1,116 @@
+Index: webmagick.in
+===================================================================
+RCS file: /cvsroot/webmagick/WebMagick/webmagick.in,v
+retrieving revision 1.117
+retrieving revision 1.118
+diff -u -r1.117 -r1.118
+--- webmagick.in	23 Oct 2002 16:14:47 -0000	1.117
++++ webmagick.in	29 Jan 2003 23:52:55 -0000	1.118
+@@ -1,6 +1,6 @@
+ #! @PERL@ 
+ #
+-# $Id: webmagick.in,v 1.117 2002/10/23 16:14:47 clindell Exp $
++# $Id: webmagick.in,v 1.118 2003/01/29 23:52:55 ache Exp $
+ #
+ # You are looking at the main PERL script for WebMagick, a package to
+ # intelligently create HTML and JavaScript index files and imagemaps
+@@ -2173,17 +2173,14 @@
+     print( INDEX $framespechtml );
+     print( INDEX "<NOFRAMES>\n" );
+     print( INDEX "<BODY\n" );
+-    unless ("$opt_stylesheet" ne '')
+-    {
+-	    print( INDEX "  TEXT=\"${opt_colorfore}\"\n" );
+-	    print( INDEX "  BGCOLOR=\"${opt_colorback}\"\n" )
+-		if $opt_colorback ne 'false';
+-	    print( INDEX "  BACKGROUND=\"$iconImageUrls{background}\"\n" )
+-		if defined $iconImageUrls{background};
+-	    print( INDEX "  LINK=\"${opt_colorlink}\"\n" );
+-	    print( INDEX "  VLINK=\"${opt_colorvlink}\"\n" );
+-	    print( INDEX "  ALINK=\"${opt_coloralink}\"");
+-    }
++    print( INDEX "  TEXT=\"${opt_colorfore}\"\n" );
++    print( INDEX "  BGCOLOR=\"${opt_colorback}\"\n" )
++	if $opt_colorback ne 'false';
++    print( INDEX "  BACKGROUND=\"$iconImageUrls{background}\"\n" )
++	if defined $iconImageUrls{background};
++    print( INDEX "  LINK=\"${opt_colorlink}\"\n" );
++    print( INDEX "  VLINK=\"${opt_colorvlink}\"\n" );
++    print( INDEX "  ALINK=\"${opt_coloralink}\"");
+     print( INDEX ">\n" );
+     print( INDEX $indexhtml );
+     print( INDEX "</BODY>\n</NOFRAMES>\n</HTML>" );
+@@ -2242,17 +2239,14 @@
+     
+     print( INDEX "</HEAD>\n" );
+     print( INDEX "<BODY\n" );
+-    unless ("$opt_stylesheet" ne '')
+-    {
+-	    print( INDEX "  TEXT=\"${opt_dircolorfore}\"\n" );
+-	    print( INDEX "  BGCOLOR=\"${opt_dircolorback}\"\n" )
+-		if $opt_dircolorback ne 'false';
+-	    print( INDEX "  BACKGROUND=\"$iconImageUrls{dirbackground}\"\n" )
+-		if defined $iconImageUrls{dirbackground};
+-	    print( INDEX "  LINK=\"${opt_dircolorlink}\"\n" );
+-	    print( INDEX "  VLINK=\"${opt_dircolorvlink}\"\n" );
+-	    print( INDEX "  ALINK=\"${opt_dircoloralink}\"" );
+-	}
++    print( INDEX "  TEXT=\"${opt_dircolorfore}\"\n" );
++    print( INDEX "  BGCOLOR=\"${opt_dircolorback}\"\n" )
++	if $opt_dircolorback ne 'false';
++    print( INDEX "  BACKGROUND=\"$iconImageUrls{dirbackground}\"\n" )
++	if defined $iconImageUrls{dirbackground};
++    print( INDEX "  LINK=\"${opt_dircolorlink}\"\n" );
++    print( INDEX "  VLINK=\"${opt_dircolorvlink}\"\n" );
++    print( INDEX "  ALINK=\"${opt_dircoloralink}\"" );
+     print( INDEX ">\n");
+     print( INDEX $pagedirhtml );
+     print( INDEX "</BODY></HTML>\n" );
+@@ -2379,16 +2373,13 @@
+ 
+     print( INDEX "</HEAD>\n" );
+     print( INDEX "<BODY\n" );
+-    unless ("$opt_stylesheet" ne '')
+-    {
+-	    print( INDEX "  TEXT=\"${opt_colorfore}\"\n" );
+-	    print( INDEX "  BGCOLOR=\"${opt_colorback}\"\n" );
+-	    print( INDEX "  BACKGROUND=\"$iconImageUrls{background}\"\n" )
+-		if defined $iconImageUrls{background};
+-	    print( INDEX "  LINK=\"${opt_colorlink}\"\n" );
+-	    print( INDEX "  VLINK=\"${opt_colorvlink}\"\n" );
+-	    print( INDEX "  ALINK=\"${opt_coloralink}\"" );
+-    }
++    print( INDEX "  TEXT=\"${opt_colorfore}\"\n" );
++    print( INDEX "  BGCOLOR=\"${opt_colorback}\"\n" );
++    print( INDEX "  BACKGROUND=\"$iconImageUrls{background}\"\n" )
++	if defined $iconImageUrls{background};
++    print( INDEX "  LINK=\"${opt_colorlink}\"\n" );
++    print( INDEX "  VLINK=\"${opt_colorvlink}\"\n" );
++    print( INDEX "  ALINK=\"${opt_coloralink}\"" );
+     print( INDEX ">\n");
+ 
+     print( INDEX "${opt_header}\n" ) if ("$opt_header" ne '');
+@@ -2469,16 +2460,13 @@
+ 
+ 			print( PICHTML "</HEAD>\n" );
+ 			print( PICHTML "<BODY\n" );
+-			unless ("$opt_stylesheet" ne '')
+-	    		{
+-				print( PICHTML "  TEXT=\"${opt_colorfore}\"\n" );
+-				print( PICHTML "  BGCOLOR=\"${opt_colorback}\"\n" );
+-				print( PICHTML "  BACKGROUND=\"$iconImageUrls{background}\"\n" )
+-				    if defined $iconImageUrls{background};
+-				print( PICHTML "  LINK=\"${opt_colorlink}\"\n" );
+-				print( PICHTML "  VLINK=\"${opt_colorvlink}\"\n" );
+-				print( PICHTML "  ALINK=\"${opt_coloralink}\"");
+-			}
++			print( PICHTML "  TEXT=\"${opt_colorfore}\"\n" );
++			print( PICHTML "  BGCOLOR=\"${opt_colorback}\"\n" );
++			print( PICHTML "  BACKGROUND=\"$iconImageUrls{background}\"\n" )
++			    if defined $iconImageUrls{background};
++			print( PICHTML "  LINK=\"${opt_colorlink}\"\n" );
++			print( PICHTML "  VLINK=\"${opt_colorvlink}\"\n" );
++			print( PICHTML "  ALINK=\"${opt_coloralink}\"");
+ 			print( PICHTML ">\n" );
+ 
+ 			print( PICHTML "$opt_pichtmltop") if ("$opt_pichtmltop" ne '');
