@@ -1,0 +1,18 @@
+--- xmine.c.orig	Sat Feb 19 20:50:19 2000
++++ xmine.c	Sat Feb 19 21:00:46 2000
+@@ -1407,7 +1407,6 @@
+ 	str = XawDialogGetValueString(w);
+ 	if (!str) return;
+ 	if (atoi(str)) *val = atoi(str);
+-	XawAsciiSourceFreeString(w);
+ }
+ 
+ /* ARGSUSED */
+@@ -1688,7 +1687,6 @@
+ 		sc->times[level] = timer;
+ 		write_scores(sc);
+ 	}
+-	if (str) XawAsciiSourceFreeString(pane);
+ 	best_times(NULL, NULL, NULL);
+ }
+ 
