@@ -51,6 +51,7 @@ sbin/ndc
 %%PORTDOCS%%%%DOCSDIR%%/conf/workstation/named.conf
 %%PORTDOCS%%%%DOCSDIR%%/conf/workstation/pri/127.0.0
 %%PORTDOCS%%%%DOCSDIR%%/conf/workstation/pri/localhost
+%%PORTDOCS%%%%DOCSDIR%%/conf/workstation/pri/localhost.ip6.arpa
 %%PORTDOCS%%%%DOCSDIR%%/conf/workstation/root.cache
 %%PORTDOCS%%%%DOCSDIR%%/conf/workstation/stub/README
 %%PORTDOCS%%%%DOCSDIR%%/html/acl.html
