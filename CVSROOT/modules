@@ -148,6 +148,7 @@ XFree86-4-manuals			ports/x11/XFree86-4-manuals
 XFree86-aoutlibs	ports/x11/XFree86-aoutlibs
 XFree86-contrib	ports/x11/XFree86-contrib
 Xaw3d		ports/x11-toolkits/Xaw3d
+XawPlus		ports/x11-toolkits/XawPlus
 Xfstt		ports/x11-servers/Xfstt
 Xft		ports/x11-fonts/Xft
 Xg		ports/x11-fonts/Xg
