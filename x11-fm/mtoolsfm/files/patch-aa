@@ -1,0 +1,62 @@
+--- MToolsFM.1.orig	Sat Dec 23 23:28:00 2000
++++ MToolsFM.1	Mon Jan 22 21:41:04 2001
+@@ -1,8 +1,8 @@
+ .TH MTOOLSFM 1 "23 December 2000"
+ .SH NAME
+-MToolsFM \- graphical user interface to the mtools diskette package for UNIX
++mtoolsfm \- graphical user interface to the mtools diskette package for UNIX
+ .SH SYNOPSIS
+-.B MToolsFM
++.B mtoolsfm
+ .RB [ \-\-nosysconf ]
+ .RB [ \-\-nouserconf ]
+ .RB [ \-\-nosave ]
+@@ -10,7 +10,7 @@
+ .RB [ \-\-debug ]
+ .SH DESCRIPTION
+ The
+-.I MToolsFM
++.I mtoolsfm
+ is a gtk-based graphical user interface for the
+ .IR mtools (1)
+ package for reading and writing DOS-format diskettes on UNIX systems.
+@@ -20,7 +20,7 @@
+ .TP
+ .B \-\-nosysconf
+ Do not attempt to read system-wide configuration in
+-.IR /etc/mtoolsfm.conf .
++.IR %%PREFIX%%/etc/mtoolsfm.conf .
+ .TP
+ .B \-\-nouserconf
+ Do not read user config file in
+@@ -38,7 +38,7 @@
+ Print debugging messages to stdout.
+ .SH "CONFIGURATION FILE"
+ User-based and system-wide configuration files control the behavior of
+-.IR MToolsFM .
++.IR mtoolsfm .
+ The values in this file are set by selecting "Options -> Configure MToolsFM/..."
+ from the control var at the top of the tool. 
+ You can set references to the diskette drives available on the local system,
+@@ -47,10 +47,10 @@
+ binaries.
+ .SH FILES
+ .TP
+-/usr/X11R6/bin/MToolsFM
++%%PREFIX%%/bin/mtoolsfm
+ executable
+ .TP
+-/usr/bin
++%%LOCALBASE%%/bin
+ directory containing
+ .IR mtools (1)
+ binaries
+@@ -58,7 +58,7 @@
+ ~/.mtoolsfm
+ User-based initialization file
+ .TP
+-/etc/mtoolsfm.conf
++%%PREFIX%%/etc/mtoolsfm.conf
+ System-wide initialization file
+ .SH DIAGNOSTICS
+ Diagnostics appear in a little textfield at the bottom of the main window.
