@@ -93,7 +93,7 @@ post-install:
 			${WRKDIR}/${DISTNAME}/docs/history ; do		\
 		${INSTALL_DATA} $$i ${PREFIX}/share/doc/samba ;		\
 	done
-	for i in faq htmldocs manpages textdocs yodldocs ; do		\
+	for i in faq htmldocs textdocs yodldocs ; do			\
 		${MKDIR} ${PREFIX}/share/doc/samba/$$i ;		\
 		for j in ${WRKDIR}/${DISTNAME}/docs/$$i/* ; do		\
 			${INSTALL_DATA} $$j ${PREFIX}/share/doc/samba/$$i ;\

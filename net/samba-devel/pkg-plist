@@ -135,27 +135,6 @@ share/doc/samba/htmldocs/swat.8.html
 share/doc/samba/htmldocs/testparm.1.html
 share/doc/samba/htmldocs/testprns.1.html
 share/doc/samba/htmldocs/wfw_slip.htm
-share/doc/samba/manpages/lmhosts.5
-share/doc/samba/manpages/make_smbcodepage.1
-share/doc/samba/manpages/nmbd.8
-share/doc/samba/manpages/nmblookup.1
-share/doc/samba/manpages/samba.7
-share/doc/samba/manpages/smb.conf.5
-share/doc/samba/manpages/smbclient.1
-share/doc/samba/manpages/smbd.8
-share/doc/samba/manpages/smbmnt.8
-share/doc/samba/manpages/smbmount.8
-share/doc/samba/manpages/smbpasswd.5
-share/doc/samba/manpages/smbpasswd.8
-share/doc/samba/manpages/smbspool.8
-share/doc/samba/manpages/smbrun.1
-share/doc/samba/manpages/smbsh.1
-share/doc/samba/manpages/smbstatus.1
-share/doc/samba/manpages/smbtar.1
-share/doc/samba/manpages/smbumount.8
-share/doc/samba/manpages/swat.8
-share/doc/samba/manpages/testparm.1
-share/doc/samba/manpages/testprns.1
 share/doc/samba/textdocs/Application_Serving.txt
 share/doc/samba/textdocs/BROWSING-Config.txt
 share/doc/samba/textdocs/BROWSING.txt
@@ -228,7 +207,6 @@ share/doc/samba/yodldocs/testparm.1.yo
 share/doc/samba/yodldocs/testprns.1.yo
 @dirrm share/doc/samba/faq
 @dirrm share/doc/samba/htmldocs
-@dirrm share/doc/samba/manpages
 @dirrm share/doc/samba/textdocs
 @dirrm share/doc/samba/yodldocs
 @dirrm share/doc/samba
