@@ -1,71 +1,60 @@
-*** makefile.orig	Mon Jan 24 23:28:24 2000
---- makefile	Wed Jun  7 04:25:36 2000
-***************
-*** 12,19 ****
-  #
-  #	Disregard compiler warnings on rdmolf.f
-  #
-! CC = cc
-! LIBS =  -lX11 -lm
-  
-  # Ultrix, Dec Alpha, Linux ( and best start for Unix other than below )
-  #
---- 12,37 ----
-  #
-  #	Disregard compiler warnings on rdmolf.f
-  #
-! #CC = cc
-! #LIBS =  -lX11 -lm
-! 
-! ###
-! # FreeBSD
-! #CC = gcc
-! CFLAGS += -c -DDOBACK -DHASTIMER -I/usr/X11R6/include
-! #FC = f77
-! .if ${MACHINE_ARCH} == i386
-! FFLAGS += -malign-double
-! CFLAGS += -malign-double
-! .endif
-! .if ${OSVERSION} < 400005
-! FFLAGS += -Nn802 -Nx400
-! .else
-! FFLAGS += -Wno-globals -fno-globals
-! .endif
-! LIBS =  -L/usr/X11R6/lib -lX11 -lm
-! LDR = f77
-! ###
-  
-  # Ultrix, Dec Alpha, Linux ( and best start for Unix other than below )
-  #
-***************
-*** 49,57 ****
-  
-  
-  # Silicon Graphics
-! CFLAGS = -c -DDOBACK -DHASTIMER -DCOLOR_OFFSET=0.0
-! FFLAGS =   
-! LDR = f77 
-  
-  # AIX
-  #
---- 67,75 ----
-  
-  
-  # Silicon Graphics
-! #CFLAGS = -c -DDOBACK -DHASTIMER -DCOLOR_OFFSET=0.0
-! #FFLAGS =   
-! #LDR = f77 
-  
-  # AIX
-  #
-***************
-*** 138,143 ****
---- 156,163 ----
-  # on linux with older Mesa installations try:
-  #LIBSG = -L/usr/X11R6/lib -lglut -lMesaGLU -lMesaGL -lXmu -lXi -lX11 -lm
-  #
-+ 
-+ all: molden
-  
-  molden:	$(OBJS) $(SOBJ) mpdum.o xwin.o 
-  	$(LDR) -o molden $(OBJS) $(SOBJ) mpdum.o xwin.o $(LIBS)
+
+$FreeBSD$
+
+--- makefile.orig	Tue Nov  5 04:43:01 2002
++++ makefile	Fri Jan 17 16:04:35 2003
+@@ -12,13 +12,31 @@
+ #
+ #	Disregard compiler warnings on rdmolf.f
+ #
+-CC = cc
+-LIBS =  -lX11 -lm
++#CC = cc
++#LIBS =  -lX11 -lm
++
++###
++# FreeBSD
++#CC = gcc
++CFLAGS += -c -DDOBACK -DHASTIMER -I/usr/X11R6/include
++#FC = f77
++.if ${MACHINE_ARCH} == i386
++FFLAGS += -malign-double
++CFLAGS += -malign-double
++.endif
++.if ${OSVERSION} < 400005
++FFLAGS += -Nn802 -Nx400
++.else
++FFLAGS += -Wno-globals -fno-globals
++.endif
++LIBS =  -L/usr/X11R6/lib -lX11 -lm
++LDR = f77
++###
+ 
+ # Silicon Graphics
+-CFLAGS = -c -DDOBACK -DHASTIMER -DCOLOR_OFFSET=0.0
+-FFLAGS =   
+-LDR = f77 
++#CFLAGS = -c -DDOBACK -DHASTIMER -DCOLOR_OFFSET=0.0
++#FFLAGS =   
++#LDR = f77 
+ 
+ # Ultrix, Dec Alpha, Linux ( and best start for Unix other than below )
+ #
+@@ -160,7 +178,7 @@
+ # For The OpenGL Graphics library molden helper 'moldenogl'
+ # (make moldenogl)
+ #
+-LIBSG = -lglut -lGLU -lGL -lXmu -lX11 -lm
++LIBSG = -L${X11BASE}/lib -lglut -lGLU -lGL -lXmu -lX11 -lm
+ #
+ # on linux :
+ #
+@@ -170,6 +188,8 @@
+ #
+ #LIBSG = -L/usr/X11R6/lib -lglut -lMesaGLU -lMesaGL -lXmu -lXi -lX11 -lm
+ #
++
++all: molden moldenogl
+ 
+ molden:	$(OBJS) $(SOBJ) mpdum.o xwin.o 
+ 	$(LDR) -o molden $(OBJS) $(SOBJ) mpdum.o xwin.o $(LIBS)
