@@ -1,20 +1,72 @@
---- Common.mk.in.orig	Sun Dec  6 21:47:30 1998
-+++ Common.mk.in	Fri Aug 27 09:29:10 1999
-@@ -97,7 +97,7 @@
+--- Common.mk.in.orig	Sun Feb  6 18:54:02 2000
++++ Common.mk.in	Thu Jul 13 13:54:11 2000
+@@ -36,8 +36,7 @@
+ #------------------------------------------------------------------------------
+ # Programs and options used by build
+ #
+-CC           = @CC@
+-CFLAGS       = @CFLAGS@ @TCL_EXTRA_CFLAGS@
++CFLAGS      += @TCL_EXTRA_CFLAGS@
+ SYSCFLAGS    = @SYSCFLAGS@
+ RANLIB       = @RANLIB@
+ AR           = ar
+@@ -115,6 +114,7 @@
+ #------------------------------------------------------------------------------
+ # Configuration information from tclConfig.sh.
+ #
++TCL_PREFIX	     = @TCL_PREFIX@
+ TCL_BIN_DIR          = @TCL_BIN_DIR@
+ TCL_SRC_DIR          = @TCL_SRC_DIR@
+ TCL_LIB_DIR          = @TCL_BIN_DIR@
+@@ -128,18 +128,19 @@
  TCL_SHLIB_LD         = @TCL_SHLIB_LD@
  TCL_SHLIB_LD_LIBS    = @TCL_SHLIB_LD_LIBS@
  TCL_DBGX             = @TCL_DBGX@
 -TCL_BUILD_LIB_SPEC   = @TCL_BUILD_LIB_SPEC@
 +TCL_BUILD_LIB_SPEC   = @TCL_LIB_SPEC@
  TCL_LIB_SPEC         = @TCL_LIB_SPEC@
+-TCL_BUILD_STUB_LIB_SPEC   = @TCL_BUILD_STUB_LIB_SPEC@
++TCL_BUILD_STUB_LIB_SPEC   = @TCL_STUB_LIB_SPEC@
+ TCL_STUB_LIB_SPEC         = @TCL_STUB_LIB_SPEC@
  TCL_LD_SEARCH_FLAGS  = @TCL_LD_SEARCH_FLAGS@
  
-@@ -107,7 +107,7 @@
+-TCL_GENERIC_DIR      = ${TCL_SRC_DIR}/generic
+-TCL_UNIX_DIR	     = ${TCL_SRC_DIR}/unix
++TCL_GENERIC_DIR      = ${TCL_PREFIX}/include/tcl${TCL_VERSION}/generic
++TCL_UNIX_DIR	     = ${TCL_PREFIX}/include/tcl${TCL_VERSION}/unix
+ 
+ #------------------------------------------------------------------------------
+ # Configuration information from tkConfig.sh.
+ #
++TK_PREFIX	     = @TK_PREFIX@
+ TK_BIN_DIR           = @TK_BIN_DIR@
+ TK_SRC_DIR           = @TK_SRC_DIR@
+ TK_LIB_DIR           = @TK_BIN_DIR@
+@@ -150,23 +151,18 @@
  TK_XINCLUDES         = @TK_XINCLUDES@
  TK_XLIBSW            = @TK_XLIBSW@
  TK_DBGX              = @TK_DBGX@
 -TK_BUILD_LIB_SPEC    = @TK_BUILD_LIB_SPEC@
 +TK_BUILD_LIB_SPEC    = @TK_LIB_SPEC@
  TK_LIB_SPEC          = @TK_LIB_SPEC@
+-TK_BUILD_STUB_LIB_SPEC    = @TK_BUILD_STUB_LIB_SPEC@
++TK_BUILD_STUB_LIB_SPEC    = @TK_STUB_LIB_SPEC@
+ TK_STUB_LIB_SPEC          = @TK_STUB_LIB_SPEC@
  TK_LD_SEARCH_FLAGS   = @TK_LD_SEARCH_FLAGS@
  
+-TK_GENERIC_DIR       = ${TK_SRC_DIR}/generic
+-TK_UNIX_DIR	     = ${TK_SRC_DIR}/unix
++TK_GENERIC_DIR       = ${TK_PREFIX}/include/tk${TK_VERSION}/generic
++TK_UNIX_DIR	     = ${TK_PREFIX}/include/tk${TK_VERSION}/unix
+ 
+ #------------------------------------------------------------------------------
+ # Location of directories in TclX source and build trees.
+ #
+-TCL_GENERIC_DIR    = ${TCL_SRC_DIR}/generic
+-TCL_UNIX_DIR       = ${TCL_SRC_DIR}/unix
+-TCL_LIBRARY_DIR    = ${TCL_SRC_DIR}/library
+-TK_GENERIC_DIR     = ${TK_SRC_DIR}/generic
+-TK_UNIX_DIR        = ${TK_SRC_DIR}/unix
+ 
+ TCLX_GENERIC_DIR   = ${srcbasedir}/tcl/generic
+ TCLX_UNIX_SRC_DIR  = ${srcbasedir}/tcl/unix

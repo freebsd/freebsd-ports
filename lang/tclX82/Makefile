@@ -6,20 +6,22 @@
 #
 
 PORTNAME=	tclX
-PORTVERSION=	8.0.4
-CATEGORIES=	lang tcl80 tk80
+PORTVERSION=	8.2.0
+CATEGORIES=	lang tcl82 tk82
 MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/tclx-distrib/
-DISTNAME=	tclX8.0.4
+DISTNAME=	tclX8.2.0
 
 MAINTAINER=	jseger@FreeBSD.org
 
-LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
+LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --enable-shared --with-tk
-PLIST_SUB=	TCLX_LONG_VER=8.0.4 TCLX_SHORT_VER=804
+CONFIGURE_ARGS= --enable-shared \
+		--with-tcl="${LOCALBASE}/lib/tcl8.2" \
+		--with-tk="${LOCALBASE}/lib/tk8.2"
+PLIST_SUB=	TCLX_LONG_VER=8.2 TCLX_SHORT_VER=82
 
 MAN3=   CmdWrite.3 Handles.3 Keylist.3 ObjCmdWrite.3 TclXInit.3 \
 	TclCommandWriting.3 \
@@ -27,7 +29,7 @@ MAN3=   CmdWrite.3 Handles.3 Keylist.3 ObjCmdWrite.3 TclXInit.3 \
 	TclX_KeyedListSet.3 TclX_Main.3 TclX_NewKeyedListObj.3 \
 	Tcl_HandleAlloc.3 Tcl_HandleFree.3 Tcl_HandleTblInit.3 \
 	Tcl_HandleTblRelease.3 Tcl_HandleTblUseCount.3 Tcl_HandleWalk.3 \
-	Tcl_HandleXlate.3  Tclx_Init.3  Tclxcmd_Init.3 TkX_Main.3 Tkx_Init.3 
+	Tcl_HandleXlate.3  Tclx_Init.3  Tclxcmd_Init.3 TkX_Main.3 Tkx_Init.3
 
 MANN=   Memory.n TclX.n Tcl_DisplayMemory.n Tcl_InitMemory.n \
 	Tcl_ValidateAllMemory.n ckalloc.n ckfree.n memory.n
@@ -35,12 +37,12 @@ MANN=   Memory.n TclX.n Tcl_DisplayMemory.n Tcl_InitMemory.n \
 .include <bsd.port.pre.mk>
 
 post-install:
-	$(INSTALL_MAN) $(WRKSRC)/../doc/CmdWrite.3 $(PREFIX)/man/man3
-	$(INSTALL_MAN) $(WRKSRC)/../doc/Handles.3 $(PREFIX)/man/man3
-	$(INSTALL_MAN) $(WRKSRC)/../doc/Keylist.3 $(PREFIX)/man/man3
-	$(INSTALL_MAN) $(WRKSRC)/../doc/ObjCmdWrite.3 $(PREFIX)/man/man3
-	$(INSTALL_MAN) $(WRKSRC)/../doc/TclXInit.3 $(PREFIX)/man/man3
-	$(INSTALL_MAN) $(WRKSRC)/../doc/Memory.n $(PREFIX)/man/mann
-	$(INSTALL_MAN) $(WRKSRC)/../doc/TclX.n $(PREFIX)/man/mann
+	${INSTALL_MAN} ${WRKSRC}/../doc/CmdWrite.3 ${PREFIX}/man/man3
+	${INSTALL_MAN} ${WRKSRC}/../doc/Handles.3 ${PREFIX}/man/man3
+	${INSTALL_MAN} ${WRKSRC}/../doc/Keylist.3 ${PREFIX}/man/man3
+	${INSTALL_MAN} ${WRKSRC}/../doc/ObjCmdWrite.3 ${PREFIX}/man/man3
+	${INSTALL_MAN} ${WRKSRC}/../doc/TclXInit.3 ${PREFIX}/man/man3
+	${INSTALL_MAN} ${WRKSRC}/../doc/Memory.n ${PREFIX}/man/mann
+	${INSTALL_MAN} ${WRKSRC}/../doc/TclX.n ${PREFIX}/man/mann
 
 .include <bsd.port.post.mk>

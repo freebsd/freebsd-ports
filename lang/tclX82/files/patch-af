@@ -1,0 +1,63 @@
+--- tools/bldmanhelp.tcl.orig	Sun Feb  6 19:54:02 2000
++++ tools/bldmanhelp.tcl	Thu Feb 24 17:03:26 2000
+@@ -13,6 +13,5 @@
+ #
+-#   bldmanhelp docdir maninfo helpdir
++#   bldmanhelp maninfo helpdir
+ #
+ # Where:
+-#    o docdir is the directory containing the manual pages.
+ #    o maninfo is the path to a file that when sources returns a list of
+@@ -64,5 +63,14 @@
+ 
+-    set stat [catch {
+-        open $manPage
+-    } fh]
++    set section [lindex [split $manPage .] end]
++    set manPage [file rootname $manPage]
++    set manPage [split [exec man -w $section $manPage] ":)"]
++    if {[llength $manPage] > 1} { # Get the source, not from cat
++	set manPage [string trim [lindex $manPage 1]]
++    }
++    
++    if {[string match *.gz $manPage]} {
++	set stat [catch {open "|gzip -d -c $manPage"} fh]
++    } else {
++	set stat [catch {open $manPage} fh]
++    }
+     if {$stat != 0} {
+@@ -70,3 +75,3 @@
+         set gotErrors 1
+-        puts stderr "can't open \"$manPage\" $fh"
++        puts stderr "can't open \"$manPage\" $fh. (cwd is [pwd])"
+         return
+@@ -114,3 +119,3 @@
+ 
+-proc GenInputFile {docDir manInfoTbl tmpFile} {
++proc GenInputFile {manInfoTbl tmpFile} {
+ 
+@@ -118,3 +123,2 @@
+    set cwd [pwd]
+-   cd $docDir
+ 
+@@ -132,4 +136,4 @@
+ 
+-if {[llength $argv] != 4} {
+-    puts stderr "wrong # args: bldmanhelp docdir maninfo helpdir brief"
++if {[llength $argv] != 3} {
++    puts stderr "wrong # args: bldmanhelp maninfo helpdir brief"
+     exit 1
+@@ -139,9 +143,8 @@
+ 
+-set docDir [lindex $argv 0]
+-set manInfoTbl [source [lindex $argv 1]]
+-set helpDir [lindex $argv 2]
+-set brief [lindex $argv 3]
++set manInfoTbl [source [lindex $argv 0]]
++set helpDir [lindex $argv 1]
++set brief [lindex $argv 2]
+ 
+ puts stdout "Begin preprocessing UCB manual files"
+-GenInputFile $docDir $manInfoTbl $tmpFile
++GenInputFile $manInfoTbl $tmpFile
+ 
