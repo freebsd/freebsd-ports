@@ -1,13 +1,13 @@
 # New ports collection makefile for:	proftpd
-# Version required:	1.2.0pl7
+# Version required:	1.2.0pl8
 # Date created:		26 January 1998
 # Whom:			Stephane Legrand
 #
 # $FreeBSD$
 #
 
-DISTNAME=	proftpd-1.2.0pre7
-PKGNAME=	proftpd-1.2.0p7
+DISTNAME=	proftpd-1.2.0pre8
+PKGNAME=	proftpd-1.2.0p8
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.tos.net/pub/proftpd/
 
