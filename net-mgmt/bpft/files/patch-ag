@@ -1,0 +1,228 @@
+--- trafd.orig/main.c	Sun Jun  6 08:54:09 1999
++++ trafd/main.c	Sun Jun  6 08:53:33 1999
+@@ -53,6 +53,17 @@
+ int pflag;	/* don't put the interface into promiscuous mode */
+ int rflag;	/* attempt to resume data from safe file if exist */
+ 
++int Iflag = 0;  /* don't destinguish packets by port/protocol -> only by IP */
++int Dflag = 1;  /* do daemonize */
++
++#define MAX_ACC_ADDRESSES	256
++
++struct AccRecord AccAddr[MAX_ACC_ADDRESSES];
++int    		 AccRecNum = 0;
++
++struct AccRecord AggAddr[MAX_ACC_ADDRESSES];
++int    		 AggRecNum = 0;
++
+ /* Global interrupts flags */
+ int flag_hup;	/* SIGHUP - drop collected data to tempfile */
+ int flag_int;	/* SIGINT - append collected data to savefile */
+@@ -80,7 +91,52 @@
+ 
+ static int if_fd = -1;
+ 
+-void
++int getnet(char *s, struct AccRecord *ar)
++{
++  int rc;
++  char *r;
++  r = strchr(s, '/');
++  if (r) *r++ = '\0';
++  rc = inet_aton(s, (struct in_addr *)&ar->network);
++  if (rc != 1 || !r || !atoi(r)) {
++	fprintf(stderr, "Incorrect parametr '%s' must be in XXX.XXX.XXX.XXX/MASKLEN form\n", s);
++	exit(1);
++  }
++  ar->netmask = htonl(~(0xFFFFFFFF >> atoi(r)));
++  ar->network &= ar->netmask;
++  return(0);
++}
++
++void AccAdd(char *s, struct AccRecord *ar, int *ap) {
++  if (isdigit(*s)) { /* network */
++    if (*ap + 1 >= MAX_ACC_ADDRESSES) {
++      fprintf( stderr, "too many '-S/-A' flags, only %d allowed for each\n", MAX_ACC_ADDRESSES );
++      exit(1);
++    } 
++    getnet(optarg, &ar[(*ap)++]);
++  } else { /* file */
++    char buf[256];
++    FILE *f = fopen(s, "r");
++    if (!f) {
++    	perror("can't open file");
++    	exit(1);
++    }
++    while(fgets(buf, sizeof(buf)-1, f)) {
++	char *ent;
++	if (*ap + 1 >= MAX_ACC_ADDRESSES) {
++          fprintf(  stderr, "too many entries in %s, only %d allowed for each\n", s, MAX_ACC_ADDRESSES );
++          exit(1);
++	}    
++        ent = buf;
++	while(*ent && isspace(*ent)) ent++;
++	if (!*ent || *ent == '#') continue;
++    	getnet(buf, &ar[(*ap)++]);
++    }
++    fclose(f);
++  }
++}
++
++int
+ main(argc, argv)
+ 	int argc;
+ 	char **argv;
+@@ -100,7 +156,7 @@
+ 	program_name = stripdir(argv[0]);
+ 
+ 	opterr = 0;
+-	while ((op = getopt(argc, argv, "c:df:F:i:Opr")) != EOF)
++	while ((op = getopt(argc, argv, "c:df:F:i:OprIS:A:D")) != EOF)
+ 		switch (op) {
+ 		case 'c':
+ 			cnt = atoi(optarg);
+@@ -126,6 +182,18 @@
+ 		case 'r':
+ 			++rflag;
+ 			break;
++		case 'I':
++			Iflag = 1;
++			break;
++		case 'D':
++			Dflag = 0;
++			break; 
++		case 'S':
++			AccAdd(optarg, AccAddr, &AccRecNum);
++			break;
++		case 'A':
++			AccAdd(optarg, AggAddr, &AggRecNum);
++			break;
+ 		default:
+ 			usage();
+ 		}
+@@ -185,7 +253,9 @@
+ 		      device_name);
+ 
+ 	/* Jump to background */
+-	daemon(1, 0);
++	if (Dflag)
++		daemon(1, 0);
++		
+ 	if ((fd = fopen(file_pid, "w")) == NULL)
+ 		exit(1);
+ 
+@@ -207,6 +277,7 @@
+ 	(void)syslog(LOG_ERR, "(%s) traffic collector aborted: %m",
+ 		     device_name);
+ 	exit(1);
++	return(1);
+ }
+ 
+ /* make a clean exit on interrupts */
+@@ -284,6 +355,22 @@
+ 	fprintf(stderr, "trafd v%s - tcp/udp data traffic collector daemon\n",
+ 		version);
+ 	fprintf(stderr,
+-"Usage: %s [-dOpr] [-c count] [-i iface] [-f ext] [-F file | expr]\n", program_name);
++		"Usage: %s [<flags>] [-F file | expr]\n"
++		"flags:\n"
++		"\t-d\t\tdump packet-matching code\n"
++		"\t-O\t\tdon't run the packet-matching code optimizer\n"
++		"\t-p\t\tdon't put the interface into promiscuous mode\n"
++		"\t-r\t\tattempt to resume data from safe file if exist\n"
++		"\t-I\t\tdon't destinguish ports and protocols\n"
++		"\t-D\t\trun in foreground\n"
++		"\t-c <N>\t\taccount only <N> packets\n"
++		"\t-i <iface>\tlisten interface <iface>\n"
++		"\t-S <net/mlen>\tdo accounting only for this address range\n"
++		"\t-S <filename>\t--\"\"--, read address ranges from file\n"
++		"\t-A <net/mlen>\taggregate addreses from this range to one\n"
++		"\t-A <filename>\t--\"\"--, read address range from file\n"
++		"\t-f <ext>\tuse <ext> as interface name for data files\n"
++		"\n", 
++		program_name);
+ 	exit(-1);
+ }
+diff -u -N -r trafd.orig/trafd.h trafd/trafd.h
+--- trafd.orig/trafd.h	Sun Jun  6 08:54:09 1999
++++ trafd/trafd.h	Sun Jun  6 08:16:50 1999
+@@ -32,3 +32,15 @@
+ extern void traf_save();
+ extern void traf_pipe();
+ extern void traf_clear();
++
++struct AccRecord {
++  unsigned int network;
++  unsigned int netmask;
++};
++ 
++extern struct AccRecord AccAddr[];
++extern int    		AccRecNum;
++
++extern struct AccRecord AggAddr[];
++extern int    		AggRecNum;
++    
+\ No newline at end of file
+diff -u -N -r trafd.orig/traffic.c trafd/traffic.c
+--- trafd.orig/traffic.c	Sun Jun  6 08:54:09 1999
++++ trafd/traffic.c	Sun Jun  6 08:53:33 1999
+@@ -138,6 +138,9 @@
+ 	return -2;
+ }
+ 
++
++extern int Iflag;
++extern struct bpf_program *Scode;
+ /*
+  * Insert entry.
+  */
+@@ -146,8 +149,48 @@
+ 	register p_entry e;
+ /* return -1 if success digit if already in table or -2 if table full */ 
+ {
+-	register int ec = findentry(e);
++	register int ec;
+ 	register unsigned inx;
++	
++	if (Iflag) { /* don't match/store protocol&ports */
++		e->ip_protocol = 0;
++		e->who_srv = 0;
++		e->p_port  = 0;
++	}
++		
++	if (AccRecNum) {
++		int i;
++		int src = 0, dst = 0;
++		for(i = 0; i < AccRecNum; i++) {
++			if ((e->in_ip.s_addr & AccAddr[i].netmask) == 
++			    AccAddr[i].network) src = 1;
++			if ((e->out_ip.s_addr & AccAddr[i].netmask) == 
++			    AccAddr[i].network) dst = 1;
++		}
++		if (!src) e->in_ip.s_addr  = 0xFFFFFFFF;
++		if (!dst) e->out_ip.s_addr = 0xFFFFFFFF;
++	}
++
++	if (AggRecNum) {
++		int i;
++		int src = 0, dst = 0;
++		for(i = 0; i < AggRecNum; i++) {
++			if (!src &&
++			    (e->in_ip.s_addr & AggAddr[i].netmask) == 
++			    AggAddr[i].network) {
++			    	src = 1;
++			    	e->in_ip.s_addr = (e->in_ip.s_addr & AggAddr[i].netmask);
++			}
++			if (!dst && 
++			    (e->out_ip.s_addr & AggAddr[i].netmask) == 
++			    AggAddr[i].network) {
++			    	dst = 1;
++			    	e->out_ip.s_addr = (e->out_ip.s_addr & AggAddr[i].netmask);
++			}
++		}
++	}
++
++	ec = findentry(e);
+ 	if (ec != -1)
+ 		return ec;
+ 	inx = hash(e);
