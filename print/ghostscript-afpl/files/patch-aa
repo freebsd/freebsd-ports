@@ -1,11 +1,10 @@
---- unix-gcc.mak.orig	Thu Sep 17 08:06:06 1998
-+++ unix-gcc.mak	Mon Nov 30 13:11:05 1998
-@@ -48,12 +48,10 @@
+--- src/unix-gcc.mak.orig	Fri Mar 17 20:13:40 2000
++++ src/unix-gcc.mak	Tue Mar 21 01:03:57 2000
+@@ -52,11 +52,10 @@
  # the directories also define the default search path for the
  # initialization files (gs_*.ps) and the fonts.
  
--# If your system has installbsd, change install to installbsd in the next line.
--INSTALL = install -c
+-INSTALL = $(GLSRCDIR)/instcopy -c
 -INSTALL_PROGRAM = $(INSTALL) -m 755
 -INSTALL_DATA = $(INSTALL) -m 644
 +INSTALL_PROGRAM = $(BSD_INSTALL_SCRIPT)
@@ -16,7 +15,7 @@
  exec_prefix = $(prefix)
  bindir = $(exec_prefix)/bin
  scriptdir = $(bindir)
-@@ -141,7 +139,7 @@
+@@ -153,7 +152,7 @@
  # what its name is.
  # See gs.mak and Make.htm for more information.
  
@@ -25,7 +24,7 @@
  LIBPNG_NAME=png
  
  # Define the directory where the zlib sources are stored.
-@@ -153,7 +151,7 @@
+@@ -165,7 +164,7 @@
  # what its name is (usually libz, but sometimes libgz).
  # See gs.mak and Make.htm for more information.
  
@@ -34,7 +33,7 @@
  #ZLIB_NAME=gz
  ZLIB_NAME=z
  
-@@ -172,7 +170,7 @@
+@@ -180,7 +179,7 @@
  
  # Define the name of the C compiler.
  
@@ -43,7 +42,7 @@
  
  # Define the name of the linker for the final link step.
  # Normally this is the same as the C compiler.
-@@ -205,7 +203,7 @@
+@@ -213,7 +212,7 @@
  #   gcc to accept ANSI-style function prototypes and function definitions.
  XCFLAGS=
  
@@ -52,7 +51,7 @@
  
  # Define platform flags for ld.
  # SunOS 4.n may need -Bstatic.
-@@ -214,7 +212,7 @@
+@@ -222,7 +221,7 @@
  #	-R /usr/local/xxx/lib:/usr/local/lib
  # giving the full path names of the shared library directories.
  # XLDFLAGS can be set from the command line.
@@ -61,7 +60,16 @@
  
  LDFLAGS=$(XLDFLAGS) -fno-common
  
-@@ -234,7 +232,7 @@
+@@ -242,7 +241,7 @@
+ # All reasonable platforms require -lm, but Rhapsody and perhaps one or
+ # two others fold libm into libc and don't require any additional library.
+ 
+-STDLIBS=-lpthread -lm
++STDLIBS= -lm
+ 
+ # Define the include switch(es) for the X11 header files.
+ # This can be null if handled in some other way (e.g., the files are
+@@ -252,7 +251,7 @@
  # Note that x_.h expects to find the header files in $(XINCLUDE)/X11,
  # not in $(XINCLUDE).
  
@@ -70,7 +78,7 @@
  
  # Define the directory/ies and library names for the X11 library files.
  # XLIBDIRS is for ld and should include -L; XLIBDIR is for LD_RUN_PATH
-@@ -246,12 +244,12 @@
+@@ -264,12 +263,12 @@
  # Solaris and other SVR4 systems with dynamic linking probably want
  #XLIBDIRS=-L/usr/openwin/lib -R/usr/openwin/lib
  # X11R6 (on any platform) may need
@@ -82,61 +90,81 @@
 +XLIBDIRS=-L$(X11BASE)/lib
  XLIBDIR=
 -XLIBS=Xt Xext X11
-+#XLIBS=Xt X11
++#XLIBS=Xt Xext X11
  
  # Define whether this platform has floating point hardware:
  #	FPU_TYPE=2 means floating point is faster than fixed point.
-@@ -292,27 +290,6 @@
+@@ -345,27 +344,27 @@
+ #DEVICE_DEVS14=
+ #DEVICE_DEVS15=
  
- FILE_IMPLEMENTATION=stdio
+-DEVICE_DEVS1=$(DD)bmpmono.dev $(DD)bmpgray.dev $(DD)bmpsep1.dev $(DD)bmpsep8.dev $(DD)bmp16.dev $(DD)bmp256.dev $(DD)bmp16m.dev $(DD)bmp32b.dev
+-DEVICE_DEVS2=$(DD)bmpamono.dev $(DD)bmpasep1.dev $(DD)bmpasep8.dev $(DD)bmpa16.dev $(DD)bmpa256.dev $(DD)bmpa16m.dev $(DD)bmpa32b.dev
+-DEVICE_DEVS3=$(DD)deskjet.dev $(DD)djet500.dev $(DD)laserjet.dev $(DD)ljetplus.dev $(DD)ljet2p.dev $(DD)ljet3.dev $(DD)ljet3d.dev $(DD)ljet4.dev $(DD)ljet4d.dev $(DD)lj5mono.dev $(DD)lj5gray.dev
+-DEVICE_DEVS4=$(DD)cdeskjet.dev $(DD)cdjcolor.dev $(DD)cdjmono.dev $(DD)cdj550.dev $(DD)pj.dev $(DD)pjxl.dev $(DD)pjxl300.dev
+-DEVICE_DEVS5=$(DD)uniprint.dev
+-DEVICE_DEVS6=$(DD)bj10e.dev $(DD)bj200.dev $(DD)bjc600.dev $(DD)bjc800.dev
+-DEVICE_DEVS7=$(DD)faxg3.dev $(DD)faxg32d.dev $(DD)faxg4.dev
+-DEVICE_DEVS8=$(DD)pcxmono.dev $(DD)pcxgray.dev $(DD)pcx16.dev $(DD)pcx256.dev $(DD)pcx24b.dev $(DD)pcxcmyk.dev
+-DEVICE_DEVS9=$(DD)pbm.dev $(DD)pbmraw.dev $(DD)pgm.dev $(DD)pgmraw.dev $(DD)pgnm.dev $(DD)pgnmraw.dev $(DD)pnm.dev $(DD)pnmraw.dev $(DD)ppm.dev $(DD)ppmraw.dev $(DD)pkm.dev $(DD)pkmraw.dev $(DD)pksm.dev $(DD)pksmraw.dev
+-DEVICE_DEVS10=$(DD)tiffcrle.dev $(DD)tiffg3.dev $(DD)tiffg32d.dev $(DD)tiffg4.dev $(DD)tifflzw.dev $(DD)tiffpack.dev
+-DEVICE_DEVS11=$(DD)tiff12nc.dev $(DD)tiff24nc.dev
+-DEVICE_DEVS12=$(DD)psmono.dev $(DD)psgray.dev $(DD)psrgb.dev $(DD)bit.dev $(DD)bitrgb.dev $(DD)bitcmyk.dev
+-DEVICE_DEVS13=$(DD)pngmono.dev $(DD)pnggray.dev $(DD)png16.dev $(DD)png256.dev $(DD)png16m.dev
+-DEVICE_DEVS14=$(DD)jpeg.dev $(DD)jpeggray.dev
+-DEVICE_DEVS15=$(DD)pdfwrite.dev $(DD)pswrite.dev $(DD)epswrite.dev $(DD)pxlmono.dev $(DD)pxlcolor.dev
+-
+-DEVICE_DEVS16=
+-DEVICE_DEVS17=
+-DEVICE_DEVS18=
+-DEVICE_DEVS19=
+-DEVICE_DEVS20=$(DD)cljet5.dev $(DD)cljet5c.dev
++#DEVICE_DEVS1=$(DD)bmpmono.dev $(DD)bmpgray.dev $(DD)bmpsep1.dev $(DD)bmpsep8.dev $(DD)bmp16.dev $(DD)bmp256.dev $(DD)bmp16m.dev $(DD)bmp32b.dev
++#DEVICE_DEVS2=$(DD)bmpamono.dev $(DD)bmpasep1.dev $(DD)bmpasep8.dev $(DD)bmpa16.dev $(DD)bmpa256.dev $(DD)bmpa16m.dev $(DD)bmpa32b.dev
++#DEVICE_DEVS3=$(DD)deskjet.dev $(DD)djet500.dev $(DD)laserjet.dev $(DD)ljetplus.dev $(DD)ljet2p.dev $(DD)ljet3.dev $(DD)ljet3d.dev $(DD)ljet4.dev $(DD)ljet4d.dev $(DD)lj5mono.dev $(DD)lj5gray.dev
++#DEVICE_DEVS4=$(DD)cdeskjet.dev $(DD)cdjcolor.dev $(DD)cdjmono.dev $(DD)cdj550.dev $(DD)pj.dev $(DD)pjxl.dev $(DD)pjxl300.dev
++#DEVICE_DEVS5=$(DD)uniprint.dev
++#DEVICE_DEVS6=$(DD)bj10e.dev $(DD)bj200.dev $(DD)bjc600.dev $(DD)bjc800.dev
++#DEVICE_DEVS7=$(DD)faxg3.dev $(DD)faxg32d.dev $(DD)faxg4.dev
++#DEVICE_DEVS8=$(DD)pcxmono.dev $(DD)pcxgray.dev $(DD)pcx16.dev $(DD)pcx256.dev $(DD)pcx24b.dev $(DD)pcxcmyk.dev
++#DEVICE_DEVS9=$(DD)pbm.dev $(DD)pbmraw.dev $(DD)pgm.dev $(DD)pgmraw.dev $(DD)pgnm.dev $(DD)pgnmraw.dev $(DD)pnm.dev $(DD)pnmraw.dev $(DD)ppm.dev $(DD)ppmraw.dev $(DD)pkm.dev $(DD)pkmraw.dev $(DD)pksm.dev $(DD)pksmraw.dev
++#DEVICE_DEVS10=$(DD)tiffcrle.dev $(DD)tiffg3.dev $(DD)tiffg32d.dev $(DD)tiffg4.dev $(DD)tifflzw.dev $(DD)tiffpack.dev
++#DEVICE_DEVS11=$(DD)tiff12nc.dev $(DD)tiff24nc.dev
++#DEVICE_DEVS12=$(DD)psmono.dev $(DD)psgray.dev $(DD)psrgb.dev $(DD)bit.dev $(DD)bitrgb.dev $(DD)bitcmyk.dev
++#DEVICE_DEVS13=$(DD)pngmono.dev $(DD)pnggray.dev $(DD)png16.dev $(DD)png256.dev $(DD)png16m.dev
++#DEVICE_DEVS14=$(DD)jpeg.dev $(DD)jpeggray.dev
++#DEVICE_DEVS15=$(DD)pdfwrite.dev $(DD)pswrite.dev $(DD)epswrite.dev $(DD)pxlmono.dev $(DD)pxlcolor.dev
++
++#DEVICE_DEVS16=
++#DEVICE_DEVS17=
++#DEVICE_DEVS18=
++#DEVICE_DEVS19=
++#DEVICE_DEVS20=$(DD)cljet5.dev $(DD)cljet5c.dev
  
--# Choose the device(s) to include.  See devs.mak for details,
--# devs.mak and contrib.mak for the list of available devices.
--
--DEVICE_DEVS=x11.dev x11alpha.dev x11cmyk.dev x11gray2.dev x11gray4.dev x11mono.dev
--#DEVICE_DEVS1=bmpmono.dev bmpamono.dev posync.dev
--DEVICE_DEVS1=
--DEVICE_DEVS2=
--DEVICE_DEVS3=deskjet.dev djet500.dev laserjet.dev ljetplus.dev ljet2p.dev ljet3.dev ljet4.dev
--DEVICE_DEVS4=cdeskjet.dev cdjcolor.dev cdjmono.dev cdj550.dev pj.dev pjxl.dev pjxl300.dev
--DEVICE_DEVS5=uniprint.dev
--DEVICE_DEVS6=bj10e.dev bj200.dev bjc600.dev bjc800.dev
--DEVICE_DEVS7=faxg3.dev faxg32d.dev faxg4.dev
--DEVICE_DEVS8=pcxmono.dev pcxgray.dev pcx16.dev pcx256.dev pcx24b.dev pcxcmyk.dev
--DEVICE_DEVS9=pbm.dev pbmraw.dev pgm.dev pgmraw.dev pgnm.dev pgnmraw.dev pnm.dev pnmraw.dev ppm.dev ppmraw.dev pkm.dev pkmraw.dev
--DEVICE_DEVS10=tiffcrle.dev tiffg3.dev tiffg32d.dev tiffg4.dev tifflzw.dev tiffpack.dev
--DEVICE_DEVS11=tiff12nc.dev tiff24nc.dev
--DEVICE_DEVS12=psmono.dev psgray.dev psrgb.dev bit.dev bitrgb.dev bitcmyk.dev
--DEVICE_DEVS13=pngmono.dev pnggray.dev png16.dev png256.dev png16m.dev
--DEVICE_DEVS14=jpeg.dev jpeggray.dev
--DEVICE_DEVS15=pdfwrite.dev pswrite.dev epswrite.dev pxlmono.dev pxlcolor.dev
--
  # ---------------------------- End of options --------------------------- #
  
- # Define the name of the partial makefile that specifies options --
-@@ -320,16 +297,10 @@
+@@ -379,13 +378,13 @@
+ # detect whether we're running a version of gcc with the const optimization
+ # bug.
  
- MAKEFILE=$(GLSRC)unix-gcc.mak
- 
--# Define the ANSI-to-K&R dependency.  There isn't one, but we do have to
--# detect whether we're running a version of gcc with the const optimization
--# bug.
--
 -AK=$(GLGENDIR)/cc.tr
--
++#AK=$(GLGENDIR)/cc.tr
+ 
  # Define the compilation rules and flags.
  
  CCFLAGS=$(GENOPT) $(CFLAGS)
 -CC_=$(CC) `cat $(AK)` $(CCFLAGS)
+-CCAUX=$(CC) `cat $(AK)`
 +CC_=$(CC) $(CCFLAGS)
- CCAUX=$(CC)
- #We can't use -fomit-frame-pointer with -pg....
- #CC_LEAF=$(CC_)
-@@ -350,7 +321,3 @@
- include $(GLSRC)unixtail.mak
- include $(GLSRC)unix-end.mak
- include $(GLSRC)unixinst.mak
--
--# This has to come last so it won't be taken as the default target.
++CCAUX=$(CC)
+ CC_LEAF=$(CC_) -fomit-frame-pointer
+ # gcc can't use -fomit-frame-pointer with -pg.
+ CC_LEAF_PG=$(CC_)
+@@ -412,5 +411,5 @@
+ include $(GLSRCDIR)/unixinst.mak
+ 
+ # This has to come last so it won't be taken as the default target.
 -$(AK):
--	if ( gcc --version | grep "2.7.[01]" >/dev/null || test `gcc --version` = 2.7.2 ); then echo -Dconst= >$(AK); else echo -Wcast-qual -Wwrite-strings >$(AK); fi
+-	if ( $(CC) --version | egrep "^2\.7\.([01]|2(\.[^1-9]|$$))" >/dev/null ); then echo -Dconst= >$(AK); else echo -Wcast-qual -Wwrite-strings >$(AK); fi
++#$(AK):
++#	if ( $(CC) --version | egrep "^2\.7\.([01]|2(\.[^1-9]|$$))" >/dev/null ); then echo -Dconst= >$(AK); else echo -Wcast-qual -Wwrite-strings >$(AK); fi
