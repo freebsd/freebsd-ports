@@ -1,6 +1,6 @@
 --- gnats/gnats-edit-pr.sh.orig	Tue Apr 20 16:17:07 1999
 +++ gnats/gnats-edit-pr.sh	Sun May 28 09:27:12 2000
-@@ -124,15 +124,18 @@
+@@ -124,15 +124,20 @@
  
       *)
         if [ "`echo $1 | grep /`" != "" ]; then
@@ -16,12 +16,29 @@
     shift
  done
  
++chng_msg="/tmp/chng.$$"
++
 +for pr_id in $prs ; do
 +
  # set command here to always pass host and port, and directory if supplied
  if [ "$mode" = "network" ]; then
      prog="nedit-pr"
-@@ -192,7 +195,7 @@
+@@ -149,12 +154,12 @@
+ fi
+ 
+ # These traps take care of deleting all the /tmp files
+-trap 'rm -f $new $new.old $change_msg ; exit 0' 0
++trap 'rm -f $new $new.old $change_msg $chng_msg; exit 0' 0
+ trap 'if [ "$locked" != "" ]; then \
+         $PR_EDIT --unlock $pr_id ; \
+ 	locked= ; \
+       fi ; \
+-      rm -f $new $new.old $change_msg ; exit 1' 1 2 3 13 15
++      rm -f $new $new.old $change_msg $chng_msg; exit 1' 1 2 3 13 15
+ 
+ # find a user name
+ if [ "$USER" != "" ]; then
+@@ -192,7 +197,7 @@
  if cmp -s $new.old $new ; then
    echo "$prog: PR not changed"
    $PR_EDIT --unlock $pr_id
@@ -30,7 +47,7 @@
  fi
  
  # error-check output by calling pr-edit --check; if mistakes exist,
-@@ -229,6 +232,8 @@
+@@ -229,6 +234,8 @@
  new_resp="`sed -n '/^>Responsible:/{s,^>[-a-zA-Z]*: *,,;s, *(.*,,g;p;q;}' $new`"
  old_synopsis="`sed -n '/^>Synopsis:/{s,^>[-a-zA-Z]*: *,,;p;q;}' $new.old`"
  new_synopsis="`sed -n '/^>Synopsis:/{s,^>[-a-zA-Z]*: *,,;p;q;}' $new`"
@@ -39,7 +56,7 @@
  full_id="`sed -n '/^>Category:/{s,^>[-a-zA-Z]*: *,,;p;q;}' $new`/$pr_id"
  
  # If you can read this, you may have a future in sed(1) programming.
-@@ -256,8 +261,12 @@
+@@ -256,8 +263,12 @@
  if [ "$old_resp" != "$new_resp" ]; then
    resp_change=yes
  fi
@@ -53,23 +70,23 @@
    # we've got a change
    mail_to="$me"
    if [ ! -z "$state_change" ]; then
-@@ -266,14 +275,38 @@
+@@ -266,14 +277,38 @@
      echo State-Changed-By: $me >> $change_msg
      echo State-Changed-When: $DATE >> $change_msg
      echo "State-Changed-Why: " >> $change_msg
 -    echo 'Why did the state change? (Ctrl-D to end)'
 -    cat >> $change_msg
-+    if [ -e /tmp/chng.$$ ]; then
++    if [ -e $chng_msg ]; then
 +	echo "Re-use last message (y/n)?"
 +	read yesno
 +	if [ "$yesno" != "y" ]; then
-+	    cat /home/gnats/gnats-adm/edit-pr-msg > /tmp/chng.$$
++	    cat /home/gnats/gnats-adm/edit-pr-msg > $chng_msg
 +	fi
 +    else
-+	cat /home/gnats/gnats-adm/edit-pr-msg > /tmp/chng.$$
++	cat /home/gnats/gnats-adm/edit-pr-msg > $chng_msg
 +    fi
-+    $VISUAL /tmp/chng.$$
-+    sed '/^GNATS:/d' /tmp/chng.$$ >> $change_msg
++    $VISUAL $chng_msg
++    sed '/^GNATS:/d' $chng_msg >> $change_msg
      to_old=1
      to_subm=1
 +    if [ ! -z "$class_change" ] || [ ! -z "$resp_change" ]; then
@@ -97,7 +114,7 @@
    fi
    if [ ! -z "$resp_change" ]; then
      $debug_print "Doing responsible change."
-@@ -287,6 +320,9 @@
+@@ -287,6 +322,9 @@
      to_new=1
    fi
  
@@ -107,7 +124,7 @@
    if [ -n "$to_subm" ]; then mail_to="${reply_to}, ${mail_to}" ; fi
    if [ -n "$x_gnats_notify" ]; then mail_to="${x_gnats_notify}, ${mail_to}" ; fi
    if [ -n "$to_old" ] ; then mail_to="${mail_to}, `$PR_ADDR ${old_resp}`" ; fi
-@@ -303,7 +339,7 @@
+@@ -303,7 +341,7 @@
    $MAIL_AGENT << __EOF__
  To: $mail_to
  From: $me
@@ -116,11 +133,13 @@
  
  `if [ "$old_synopsis" != "$new_synopsis" ]; then
  	echo Old Synopsis: "$old_synopsis"
-@@ -321,5 +357,7 @@
+@@ -321,5 +359,9 @@
  # call PR_EDIT on the new file and clean up
  $PR_EDIT < $new
  $PR_EDIT --unlock $pr_id
 +
 +done
++
++rm -f $chng_msg
  
  exit 0
