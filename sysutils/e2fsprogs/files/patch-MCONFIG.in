@@ -1,15 +1,10 @@
-
-$FreeBSD$
-
---- MCONFIG.in.orig	Sat Jun 23 07:25:59 2001
-+++ MCONFIG.in	Tue Jul  3 18:29:41 2001
-@@ -57,15 +57,15 @@
- # Library definitions
+--- MCONFIG.in.orig	Mon Feb 25 05:03:57 2002
++++ MCONFIG.in	Sun Aug  4 15:15:37 2002
+@@ -57,14 +57,14 @@
  #
  LIB = $(top_builddir)/lib
--LIBSS = $(LIB)/libss@LIB_EXT@
+ LIBSS = $(LIB)/libss@LIB_EXT@
 -LIBCOM_ERR = $(LIB)/libcom_err@LIB_EXT@
-+LIBSS = /usr/lib/libss.so
 +LIBCOM_ERR = /usr/lib/libcom_err.so
  LIBE2P = $(LIB)/libe2p@LIB_EXT@
  LIBEXT2FS = $(LIB)/libext2fs@LIB_EXT@
@@ -18,7 +13,7 @@ $FreeBSD$
  
 -STATIC_LIBSS = $(LIB)/libss@STATIC_LIB_EXT@
 -STATIC_LIBCOM_ERR = $(LIB)/libcom_err@STATIC_LIB_EXT@
-+STATIC_LIBSS = /usr/lib/libss.a
++STATIC_LIBSS = STATIC_LIBSS = $(LIB)/libss@STATIC_LIB_EXT@
 +STATIC_LIBCOM_ERR = /usr/lib/libcom_err.a
  STATIC_LIBE2P = $(LIB)/libe2p@STATIC_LIB_EXT@
  STATIC_LIBEXT2FS = $(LIB)/libext2fs@STATIC_LIB_EXT@
