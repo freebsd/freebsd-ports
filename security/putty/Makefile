@@ -16,6 +16,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Secure shell and telnet client
 
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 MAKEFILE=	Makefile.gtk
 CFLAGS+=	-DBSD_PTYS -DOMIT_UTMP
@@ -32,6 +33,9 @@ PLIST_FILES+=	bin/pterm bin/putty bin/puttygen bin/puttytel
 MAN1+=		pterm.1 putty.1 puttygen.1 puttytel.1
 MAKE_ENV+=	PUTTY_WITH_GTK=yes
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's,gtk-config,${GTK_CONFIG},' ${WRKSRC}/${MAKEFILE}
 
 .include <bsd.port.pre.mk>
 
