@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20041128:
+  AFFECTS: users of mail/dspam and mail/dspam-devel
+  AUTHOR: itetcu@people.tecnik93.com
+
+  When upgradng from previous version, read mail/dspam/files/UPDATING
+  and adjust your options.
+
 20041121:
   AFFECTS: users of news/rawdog
   AUTHOR: tim@bishnet.net
