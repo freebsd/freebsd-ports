@@ -2,8 +2,5 @@ bin/lisp
 lib/cmucl/lib/lisp.core
 lib/cmucl/lib/site-init.lisp
 lib/cmucl/lib/load-foreign.csh
-lib/cmucl/lib/config.lisp
-lib/cmucl/lib/config
-lib/cmucl/README
 @dirrm lib/cmucl/lib
 @dirrm lib/cmucl
