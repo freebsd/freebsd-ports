@@ -1,0 +1,15 @@
+--- Makefile.orig	Sat Nov  1 17:15:35 2003
++++ Makefile	Sat Nov  1 17:16:01 2003
+@@ -20,9 +20,9 @@
+ endif
+ 
+ # Compiler & flags
+-CC=gcc
+-CFLAGS=-O2 -Wall
+-DEBUG_FLAGS=-Wall -g
++CC?=gcc
++CFLAGS?=-O2 -Wall
++DEBUG_FLAGSi?=-Wall -g
+ 
+ all: crfile sesslog
+ 
