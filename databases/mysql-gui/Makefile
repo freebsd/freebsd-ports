@@ -41,6 +41,8 @@ remove-inc:
 .endfor
 
 pre-patch: copy-inc
+	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+		${WRKSRC}/Fl_Help.cc
 
 copy-inc:
 .for file in ${NEW_FILES}

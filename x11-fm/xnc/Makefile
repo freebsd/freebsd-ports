@@ -35,6 +35,12 @@ INSTALLS_SHLIB=	yes
 
 MAN1=		es.1 ives.1 vs.1 xjpegroot.1 xnc.1 xnlaunch.1
 
+pre-patch:
+	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+		${WRKSRC}/image/picinfo.h ${WRKSRC}/jpeg/jmemdos.c \
+		${WRKSRC}/libpng/ansi2knr.c ${WRKSRC}/libpng/pngconf.h \
+		${WRKSRC}/zlib/zutil.h
+
 post-install:
 .if !defined(NOPORTDOCS)
 		@${MKDIR} ${DOCSDIR}
