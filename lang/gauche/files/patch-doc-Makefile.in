@@ -1,14 +1,5 @@
---- doc/Makefile.in.orig	Sun Sep  8 12:25:49 2002
-+++ doc/Makefile.in	Mon Sep 23 23:24:03 2002
-@@ -22,7 +22,7 @@
- 	  $(INSTALL) -m 444 $$m $(mandir)/; \
- 	done
- 	if test ! -d $(infodir); then $(INSTALL) -d $(infodir); fi
--	if test -f gauche-refe.info.gz -o -f gauche-refj.info.gz; then \
-+	if test -f gauche-refe.info -o -f gauche-refj.info; then \
- 	  for info in *.info*; do \
- 	    $(INSTALL) -m 444 $$info $(infodir)/; \
- 	  done; \
+--- doc/Makefile.in.orig	Tue Oct 15 05:28:00 2002
++++ doc/Makefile.in	Tue Nov 19 07:46:49 2002
 @@ -48,7 +48,7 @@
  
  pdf : gauche-refe.pdf
@@ -24,12 +15,11 @@
  
 -gauche-refe.info.gz : gauche-refe.texi
 -	if test X$(MAKEINFO) != X -a X$(GZIP_PROGRAM) != X; then \
--	  $(MAKEINFO) --no-warn gauche-refe.texi; \
++gauche-refe.info : gauche-refe.texi
++	if test X$(MAKEINFO); then \
+ 	  $(MAKEINFO) --no-warn gauche-refe.texi; \
 -	  rm -rf gauche-refe.info*.gz; \
 -	  $(GZIP_PROGRAM) gauche-refe.info gauche-refe.info-[0-9]*; \
-+gauche-refe.info : gauche-refe.texi
-+	if test X$(MAKEINFO) != X ; then \
-+	  $(MAKEINFO) --no-split --no-warn gauche-refe.texi; \
  	fi
  
  gauche-refj.html : gauche-refj.texi
@@ -39,12 +29,11 @@
  
 -gauche-refj.info.gz : gauche-refj.texi
 -	if test X$(MAKEINFO) != X -a X$(GZIP_PROGRAM) != X; then \
--	  $(MAKEINFO) --no-warn gauche-refj.texi; \
++gauche-refj.info : gauche-refj.texi
++	if test X$(MAKEINFO) != X; then \
+ 	  $(MAKEINFO) --no-warn gauche-refj.texi; \
 -	  rm -rf gauche-refj.info*.gz; \
 -	  $(GZIP_PROGRAM) gauche-refj.info gauche-refj.info-[0-9]*; \
-+gauche-refj.info : gauche-refj.texi
-+	if test X$(MAKEINFO) != X ; then \
-+	  $(MAKEINFO) --no-split --no-warn gauche-refj.texi; \
  	fi
  
  clean:
