@@ -1,0 +1,12 @@
+--- cdecl.c.orig	Mon Jan 15 19:54:46 1996
++++ cdecl.c	Sat Sep  4 20:02:59 1999
+@@ -67,6 +67,9 @@
+ # include <stddef.h>
+ # include <string.h>
+ # include <stdarg.h>
++# ifndef DOS
++#  include <errno.h>  /* only M$-DOS environments have ``errno'' in stdlib.h */
++# endif /* ndef DOS */
+ #else
+ # ifndef NOVARARGS
+ #  include <varargs.h>

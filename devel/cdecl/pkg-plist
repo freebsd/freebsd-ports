@@ -1,0 +1,4 @@
+bin/cdecl
+bin/c++decl
+share/doc/cdecl/testset
+share/doc/cdecl/testset++
