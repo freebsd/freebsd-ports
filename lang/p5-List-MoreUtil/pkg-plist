@@ -1,0 +1,29 @@
+%%SITE_PERL%%/List/MoreUtil.pm
+%%SITE_PERL%%/auto/List/MoreUtil/after.al
+%%SITE_PERL%%/auto/List/MoreUtil/after_incl.al
+%%SITE_PERL%%/auto/List/MoreUtil/all.al
+%%SITE_PERL%%/auto/List/MoreUtil/any.al
+%%SITE_PERL%%/auto/List/MoreUtil/autosplit.ix
+%%SITE_PERL%%/auto/List/MoreUtil/before.al
+%%SITE_PERL%%/auto/List/MoreUtil/before_incl.al
+%%SITE_PERL%%/auto/List/MoreUtil/each_array.al
+%%SITE_PERL%%/auto/List/MoreUtil/each_arrayref.al
+%%SITE_PERL%%/auto/List/MoreUtil/first_index.al
+%%SITE_PERL%%/auto/List/MoreUtil/first_value.al
+%%SITE_PERL%%/auto/List/MoreUtil/indexes.al
+%%SITE_PERL%%/auto/List/MoreUtil/last_index.al
+%%SITE_PERL%%/auto/List/MoreUtil/last_value.al
+%%SITE_PERL%%/auto/List/MoreUtil/max.al
+%%SITE_PERL%%/auto/List/MoreUtil/maxs.al
+%%SITE_PERL%%/auto/List/MoreUtil/mesh.al
+%%SITE_PERL%%/auto/List/MoreUtil/min.al
+%%SITE_PERL%%/auto/List/MoreUtil/mins.al
+%%SITE_PERL%%/auto/List/MoreUtil/natatime.al
+%%SITE_PERL%%/auto/List/MoreUtil/none.al
+%%SITE_PERL%%/auto/List/MoreUtil/pairwise.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/List/MoreUtil/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/List/MoreUtil
+@unexec rmdir %D/%%SITE_PERL%%/auto/List/MoreUtil 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/List 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/auto/List 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/List 2>/dev/null || true

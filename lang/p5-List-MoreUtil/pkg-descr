@@ -1,0 +1,6 @@
+This module is a loose collection of miscellaneous list/array utility
+functions that were written over the years.  The only common thread
+between these functions is that they all operate on lists of variables
+- tranforming them, selecting from them, looping over them.
+
+WWW: http://search.cpan.org/dist/List-MoreUtil

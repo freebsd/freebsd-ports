@@ -161,6 +161,7 @@
     SUBDIR += p5-Error
     SUBDIR += p5-Expect
     SUBDIR += p5-F77
+    SUBDIR += p5-List-MoreUtil
     SUBDIR += p5-Scalar-List-Utils
     SUBDIR += p5-Switch
     SUBDIR += p5-Tcl
