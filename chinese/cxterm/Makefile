@@ -28,6 +28,8 @@ RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
 WRKSRC=		${WRKDIR}/cxterm-5.0
 USE_IMAKE=	yes
 
+PORTDOCS=	CXTERM.FAQ input.doc
+
 MAN1=		cit2tit.1 cxterm.1 hzimctrl.1 tit2cit.1
 MANCOMPRESSED=	yes
 
@@ -41,18 +43,14 @@ BROKEN=		"Coredump during build on ia64"
 .endif
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/CXterm.sh  \
-			${PREFIX}/bin/CXterm
+	${INSTALL_SCRIPT} ${WRKDIR}/CXterm.sh ${PREFIX}/bin/CXterm
 	# standard X11 place
-	${INSTALL_DATA} ${WRKDIR}/CXterm.ad  \
-			${PREFIX}/lib/X11/app-defaults/CXterm
+	${INSTALL_DATA} ${WRKDIR}/CXterm.ad ${PREFIX}/lib/X11/app-defaults/CXterm
 	# standard CXterm place
-	${INSTALL_DATA} ${WRKDIR}/CXterm.ad  \
-			${PREFIX}/lib/X11/cxterm.dic/
+	${INSTALL_DATA} ${WRKDIR}/CXterm.ad ${PREFIX}/lib/X11/cxterm.dic/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/cxterm
-	${INSTALL_DATA} ${WRKSRC}/Doc/CXTERM.FAQ ${PREFIX}/share/doc/cxterm
-	${INSTALL_DATA} ${WRKSRC}/Doc/input.doc ${PREFIX}/share/doc/cxterm
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC}/Doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>

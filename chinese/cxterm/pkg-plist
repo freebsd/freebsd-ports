@@ -43,11 +43,10 @@ lib/X11/cxterm.dic/ks/QJ.cit
 lib/X11/fonts/chinese/hku16et.pcf.gz
 lib/X11/fonts/chinese/fonts.dir
 lib/X11/fonts/chinese/fonts.alias
+lib/X11/fonts/chinese/fonts.scale
 lib/X11/app-defaults/CXterm
 lib/X11/cxterm.dic/CXterm.ad
-%%PORTDOCS%%share/doc/cxterm/CXTERM.FAQ
-%%PORTDOCS%%share/doc/cxterm/input.doc
-%%PORTDOCS%%@dirrm share/doc/cxterm
+@dirrm lib/X11/fonts/chinese
 @dirrm lib/X11/cxterm.dic/big5
 @dirrm lib/X11/cxterm.dic/gb
 @dirrm lib/X11/cxterm.dic/jis
