@@ -1,11 +1,11 @@
---- interfaces/Makefile.in.orig	Fri Oct  4 19:25:02 2002
-+++ interfaces/Makefile.in	Tue Nov 12 02:34:53 2002
-@@ -180,7 +180,7 @@
+--- interfaces/Makefile.in.orig	Mon Aug 23 10:00:40 2004
++++ interfaces/Makefile.in	Mon Aug 23 10:00:45 2004
+@@ -225,7 +225,7 @@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
- 
+ xsb_includes = @xsb_includes@
 -SUBDIRS = C Prolog
 +SUBDIRS = C
- subdir = interfaces
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = $(top_builddir)/config.h
+ all: all-recursive
+ 
+ .SUFFIXES:

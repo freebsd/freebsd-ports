@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	ppl
-PORTVERSION=	0.5
-PORTREVISION=	1
+PORTVERSION=	0.6.1
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cs.unipr.it/pub/ppl/releases/%SUBDIR%/ \
 		http://www.cs.unipr.it/ppl/Download/ftp/releases/%SUBDIR%/
@@ -20,9 +20,8 @@ COMMENT=	The Parma Polyhedra Library
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
 USE_GMAKE=	yes
+USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
-USE_LIBTOOL_VER=	13
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-debugging \
 		--enable-optimization \
 		--with-cflags="${CFLAGS}" \
@@ -30,6 +29,7 @@ CONFIGURE_ARGS=	--disable-debugging \
 		--with-gmp-includes="${LOCALBASE}/include" \
 		--with-gmp-dir="${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
+PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 

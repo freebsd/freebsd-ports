@@ -1,12 +1,14 @@
+bin/ppl_lcdd
 include/ppl.hh
 include/ppl_c.h
 include/pwl.hh
 lib/libppl.a
 lib/libppl.so
-lib/libppl.so.2
+lib/libppl.so.3
 lib/libppl_c.a
 lib/libppl_c.so
 lib/libppl_c.so.1
 lib/libpwl.a
+lib/libpwl.la
 lib/libpwl.so
-lib/libpwl.so.1
+lib/libpwl.so.2
