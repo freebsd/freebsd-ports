@@ -100,6 +100,7 @@
     SUBDIR += latex-bytefield
     SUBDIR += latex-caption
     SUBDIR += latex-feynmf
+    SUBDIR += latex-index
     SUBDIR += latex-keystroke
     SUBDIR += latex-layouts
     SUBDIR += latex-mathabx
