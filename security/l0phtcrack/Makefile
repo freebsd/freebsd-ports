@@ -8,7 +8,7 @@
 PORTNAME=	l0phtcrack
 PORTVERSION=	1.5
 CATEGORIES=	security
-MASTER_SITES=	http://www.l0pht.com/l0phtcrack/dist/
+MASTER_SITES=	http://www.securitysoftwaretech.com/l0phtcrack/dist/
 DISTNAME=	lcsrc
 DIST_SUBDIR=	${PORTNAME}
 
