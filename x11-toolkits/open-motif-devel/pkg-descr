@@ -1,0 +1,4 @@
+A dummy port to create a package of static Motif libs and include
+files to be used as dependencies from other ports.  Note you need
+Motif already installed, and this port won't do anything for you
+unless you are in the business of building packages.

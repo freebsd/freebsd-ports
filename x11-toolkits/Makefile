@@ -1,7 +1,8 @@
-# $Id: Makefile,v 1.11 1998/12/12 12:43:29 vanilla Exp $
+# $Id: Makefile,v 1.12 1998/12/23 01:19:55 steve Exp $
 #
 
     SUBDIR += FWF
+    SUBDIR += Motif-dummy
     SUBDIR += Xaw3d
     SUBDIR += auis
     SUBDIR += blt
