@@ -1,0 +1,9 @@
+Exim is a mail transfer agent for Unix systems connected to the Internet.
+It is a monolithic MTA designed to be a command line compatible drop-in
+replacement for Sendmail.
+
+Exim is an excellent mailer for an ISP, as its control and flexibility
+are very good and its requeing and retry algorithms are very powerful.
+Exim's configuration syntax is simple and well documented.
+
+WWW: http://www.exim.org/
