@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libapreq2
-PORTVERSION=	2.03r04
+PORTVERSION=	2.04r03
 CATEGORIES=	www perl5 devel
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 MASTER_SITE_SUBDIR=libapreq
@@ -16,26 +16,23 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/_/}-dev
 MAINTAINER=	autrijus@autrijus.org
 COMMENT=	Generic Apache2 Request Library
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache2:${PORTSDIR}/www/mod_perl2 \
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache2/ModPerl/Config.pm:${PORTSDIR}/www/mod_perl2 \
 		${SITE_PERL}/ExtUtils/XSBuilder:${PORTSDIR}/devel/p5-ExtUtils-XSBuilder \
 		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache2:${PORTSDIR}/www/mod_perl2
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache2/ModPerl/Config.pm:${PORTSDIR}/www/mod_perl2
 
 CONFLICTS=	p5-libapreq
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--enable-perl-glue --with-apache2-apxs=${LOCALBASE}/sbin/apxs
+CONFIGURE_ARGS+=--enable-perl-glue --with-apache2-apxs=${APXS}
 USE_PERL5=	yes
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-WRKSRC=		${WRKDIR}/${DISTNAME:S/_04//}
+USE_APACHE=	yes
+WRKSRC=		${WRKDIR}/${DISTNAME:C/_[0-9]+//}
 
-MAN3=		Apache::Cookie.3 Apache::Request.3
+post-configure:
+	cd ${CONFIGURE_WRKSRC}/glue/perl && \
+		${PERL5} Makefile.PL -apxs ${APXS} && \
+		${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Broken pkg-plist"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

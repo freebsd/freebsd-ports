@@ -1,11 +1,13 @@
---- src/Makefile.in.orig	Sun Nov 16 12:04:20 2003
-+++ src/Makefile.in	Fri Jun 11 14:15:04 2004
-@@ -110,7 +110,7 @@
- am__quote = @am__quote@
- install_sh = @install_sh@
- INCLUDES = @APR_INCLUDES@ @APU_INCLUDES@
+--- src/Makefile.in.orig       Thu Sep 23 17:02:24 2004
++++ src/Makefile.in    Thu Sep 23 17:02:55 2004
+@@ -106,8 +106,8 @@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
+ 
+-INCLUDES = @APR_INCLUDES@ @APU_INCLUDES@
 -LIBS = @APR_LTLIBS@ @APU_LTLIBS@
++INCLUDES = @APR_INCLUDES@ @APU_INCLUDES@ -I$(prefix)/include/apache2/modules/perl
 +LIBS = @APR_LTLIBS@ @APU_LTLIBS@ -L$(prefix)/lib
+ LDFLAGS = @APR_LDFLAGS@ @APU_LDFLAGS@
+ EXTRA_DIST = groups.dox.in
  BUILT_SOURCES = @APR_LA@ @APU_LA@
- lib_LTLIBRARIES = lib@APREQ_LIBNAME@.la
- lib@APREQ_LIBNAME@_la_SOURCES = apreq.c apreq_version.c apreq_cookie.c \
