@@ -1,10 +1,16 @@
---- cftypes.cpp.orig	Sat Oct 23 23:13:29 1999
-+++ cftypes.cpp	Sun Aug 31 06:07:25 2003
-@@ -10,7 +10,15 @@
+--- cftypes.cpp.orig	Sun Oct 24 08:13:29 1999
++++ cftypes.cpp	Wed Sep  3 14:24:13 2003
+@@ -10,11 +10,20 @@
  #ifndef __CFTYPES_CPP__
  #define __CFTYPES_CPP__
  
 -#include <values.h>
++#include <inttypes.h>
++#include <limits.h>
+ #include <fstream.h>
+ #include "zlib.h"
+ #include "cftypes.h"
+ 
 +#ifndef MAXSHORT
 +#define BITSPERBYTE 8
 +#define BITS(type)  (BITSPERBYTE * (int)sizeof(type))
@@ -13,11 +19,10 @@
 +#define MAXSHORT    ((int16_t)~MINSHORT)
 +#endif
 +
-+#include <limits.h>
- #include <fstream.h>
- #include "zlib.h"
- #include "cftypes.h"
-@@ -138,15 +146,20 @@
+ /******************************************************************************/
+ 
+ int convert_z_error_code(int code)
+@@ -138,15 +147,20 @@
  
  int io_read(istream& in, byte* buf, word len)
  {
@@ -43,7 +48,7 @@
  		? (in.fail()) ? READ_ERROR : UNEXPECTED_EOF : OK;
  }
  
-@@ -154,14 +167,19 @@
+@@ -154,14 +168,19 @@
  
  int io_write(ostream& out, const byte* buf, word len)
  {
