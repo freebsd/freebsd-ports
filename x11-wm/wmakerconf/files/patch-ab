@@ -1,0 +1,11 @@
+--- configure.orig	Thu Jun 29 10:44:12 2000
++++ configure	Thu Jun 29 10:44:16 2000
+@@ -964,7 +964,7 @@
+ 	echo $ac_n "checking for GNOME apps directory""... $ac_c" 1>&6
+ echo "configure:966: checking for GNOME apps directory" >&5
+ 	GNOMEAPPS=`$gnomecfg --datadir`
+-	GNOMEAPPS="$GNOMEAPPS/gnome/apps/Settings"
++	GNOMEAPPS="$GNOMEAPPS/apps/Settings"
+ 	GNOMEAPP="wmakerconf.desktop"
+         echo "$ac_t""$GNOMEAPPS" 1>&6
+ fi

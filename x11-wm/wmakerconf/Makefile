@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmakerconf
-PORTVERSION= 	2.6.1
+PORTVERSION= 	2.6.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://ulli.linuxave.net/wmakerconf/
 
@@ -34,5 +34,12 @@ USE_BZIP2=	yes
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 USE_X_PREFIX=	yes
 CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
+
+.if exists(${X11BASE}/bin/gnome-config)
+RUN_DEPENDS+=	gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter
+PLIST_SUB+=	GNOME:=""
+.else
+PLIST_SUB+=	GNOME:="@comment "
+.endif
 
 .include <bsd.port.mk>
