@@ -3,3 +3,6 @@ stability, in particular while doing heavy duty work such as encoding
 music the system can freeze under certain conditions!
 
 Don't use this software in production or mission-critical environments!
+
+Also note that this software is supposed to be used with AMD Athlon (XP) an
+AMD Duron processors only!
