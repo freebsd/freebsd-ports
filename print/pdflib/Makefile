@@ -7,7 +7,8 @@
 
 PORTNAME=	pdflib
 PORTVERSION=	4.0.3
-PORTREVISION=	1
+PORTREVISION?=	1
+PORTEPOCH?=	0
 CATEGORIES=	print
 MASTER_SITES=	http://www.pdflib.com/pdflib/download/
 
@@ -16,6 +17,7 @@ COMMENT=	A C library for dynamically generating PDF
 
 RESTRICTED=	"many odd restrictions on usage and distribution"
 
+LATEST_LINK?=	${PORTNAME}
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
