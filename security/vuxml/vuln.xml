@@ -49,6 +49,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<name>linux-blackdown-jdk</name>
 	<range><ge>1.3.0</ge><le>1.4.2</le></range>
       </package>
+      <package>
+	<name>linux-ibm-jdk</name>
+	<range><ge>1.3.0</ge><le>1.4.2</le></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
