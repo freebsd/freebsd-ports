@@ -19,11 +19,13 @@ include/gretl/genstack.h
 include/gretl/graphing.h
 include/gretl/gretl_commands.h
 include/gretl/gretl_errors.h
+include/gretl/gretl_list.h
 include/gretl/gretl_matrix.h
 include/gretl/gretl_matrix_private.h
 include/gretl/gretl_model.h
 include/gretl/gretl_paths.h
 include/gretl/gretl_private.h
+include/gretl/gretl_restrict.h
 include/gretl/gretl_string_table.h
 include/gretl/gretl_utils.h
 include/gretl/gretl_win32.h
@@ -32,6 +34,7 @@ include/gretl/libgretl.h
 include/gretl/libprob.h
 include/gretl/libset.h
 include/gretl/modelprint.h
+include/gretl/modelspec.h
 include/gretl/monte_carlo.h
 include/gretl/nls.h
 include/gretl/nonparam.h
@@ -63,7 +66,7 @@ lib/gretl-gtk2/pca.so
 lib/gretl-gtk2/progress_bar.so
 lib/gretl-gtk2/range-mean.so
 lib/gretl-gtk2/stats_tables.so
-lib/gretl-gtk2/sur.so
+lib/gretl-gtk2/sysest.so
 lib/gretl-gtk2/tobit.so
 lib/gretl-gtk2/tramo-x12a.so
 lib/libgretl-1.0.a
@@ -229,6 +232,7 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/scripts/misc/longley.inp
 %%DATADIR%%/scripts/misc/ps_descriptions
 %%DATADIR%%/scripts/misc/pscoin.inp
+%%DATADIR%%/scripts/misc/restrict.inp
 %%DATADIR%%/scripts/misc/sw_ch12.inp
 %%DATADIR%%/scripts/misc/sw_ch14.inp
 %%DATADIR%%/scripts/ps10-1.inp
@@ -326,6 +330,7 @@ libdata/pkgconfig/gretl.pc
 %%GNOME:%%share/gnome/help/gretl/C/chapters/nls.xml
 %%GNOME:%%share/gnome/help/gretl/C/chapters/optarg.xml
 %%GNOME:%%share/gnome/help/gretl/C/chapters/panel.xml
+%%GNOME:%%share/gnome/help/gretl/C/chapters/sampling.xml
 %%GNOME:%%share/gnome/help/gretl/C/chapters/starting.xml
 %%GNOME:%%share/gnome/help/gretl/C/chapters/trouble.xml
 %%GNOME:%%share/gnome/help/gretl/C/figures/adf1.png
@@ -380,6 +385,7 @@ share/locale/es/LC_MESSAGES/gretl.mo
 share/locale/fr/LC_MESSAGES/gretl.mo
 share/locale/it/LC_MESSAGES/gretl.mo
 share/locale/ja/LC_MESSAGES/gretl.mo
+share/locale/pl/LC_MESSAGES/gretl.mo
 %%GNOME:%%@dirrm share/gnome/omf/gretl
 %%GNOME:%%@dirrm share/gnome/help/gretl/C/figures
 %%GNOME:%%@dirrm share/gnome/help/gretl/C/chapters
