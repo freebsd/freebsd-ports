@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	totem
-PORTVERSION=	0.99.1
+PORTVERSION=	0.99.2
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/..$//}
@@ -23,7 +23,7 @@ USE_GNOME=	gnomeprefix gnomehack gnomedesktop
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-	       	LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+	       	LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lXrandr"
 
 .include <bsd.port.pre.mk>
 
