@@ -38,7 +38,6 @@ ac_add_options --with-pthreads
 ac_add_options --enable-xft
 ac_add_options --enable-reorder
 ac_add_options --enable-strip
-#ac_add_options --enable-crash-on-assert
 ######################################################################
 # disable unneeded to speed up and/or save space
 ac_add_options --disable-auto-deps
@@ -46,7 +45,12 @@ ac_add_options --disable-bidi
 ac_add_options --disable-dtd-debug
 ac_add_options --disable-jsd
 ac_add_options --disable-ldap
-ac_add_options --disable-logging
 ac_add_options --disable-pedantic
 ac_add_options --disable-xinerama
+if test -n "$WITH_DEBUG"; then
+    ac_add_options --enable-debug
+    ac_add_options --enable-logging
+else
+    ac_add_options --disable-logging
+fi # test -n "$WITH_DEBUG"
 ######################################################################
