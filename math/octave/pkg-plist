@@ -19,7 +19,6 @@ include/octave-%%OCTAVE_VERSION%%/octave/Array3.h
 include/octave-%%OCTAVE_VERSION%%/octave/ArrayN-idx.h
 include/octave-%%OCTAVE_VERSION%%/octave/ArrayN.cc
 include/octave-%%OCTAVE_VERSION%%/octave/ArrayN.h
-include/octave-%%OCTAVE_VERSION%%/octave/BaseSLList.h
 include/octave-%%OCTAVE_VERSION%%/octave/Bounds.h
 include/octave-%%OCTAVE_VERSION%%/octave/CColVector.h
 include/octave-%%OCTAVE_VERSION%%/octave/CDiagMatrix.h
@@ -46,7 +45,6 @@ include/octave-%%OCTAVE_VERSION%%/octave/DASRT-opts.h
 include/octave-%%OCTAVE_VERSION%%/octave/DASRT.h
 include/octave-%%OCTAVE_VERSION%%/octave/DASSL-opts.h
 include/octave-%%OCTAVE_VERSION%%/octave/DASSL.h
-include/octave-%%OCTAVE_VERSION%%/octave/DLList.h
 include/octave-%%OCTAVE_VERSION%%/octave/DiagArray2.cc
 include/octave-%%OCTAVE_VERSION%%/octave/DiagArray2.h
 include/octave-%%OCTAVE_VERSION%%/octave/EIG.h
@@ -63,7 +61,6 @@ include/octave-%%OCTAVE_VERSION%%/octave/MArray2.cc
 include/octave-%%OCTAVE_VERSION%%/octave/MArray2.h
 include/octave-%%OCTAVE_VERSION%%/octave/MDiagArray2.cc
 include/octave-%%OCTAVE_VERSION%%/octave/MDiagArray2.h
-include/octave-%%OCTAVE_VERSION%%/octave/Map.h
 include/octave-%%OCTAVE_VERSION%%/octave/Matrix.h
 include/octave-%%OCTAVE_VERSION%%/octave/NLConst.h
 include/octave-%%OCTAVE_VERSION%%/octave/NLEqn-opts.h
@@ -77,16 +74,13 @@ include/octave-%%OCTAVE_VERSION%%/octave/ODESFunc.h
 include/octave-%%OCTAVE_VERSION%%/octave/ODESSA-opts.h
 include/octave-%%OCTAVE_VERSION%%/octave/ODESSA.h
 include/octave-%%OCTAVE_VERSION%%/octave/Objective.h
-include/octave-%%OCTAVE_VERSION%%/octave/Pix.h
 include/octave-%%OCTAVE_VERSION%%/octave/QP.h
 include/octave-%%OCTAVE_VERSION%%/octave/Quad-opts.h
 include/octave-%%OCTAVE_VERSION%%/octave/Quad.h
 include/octave-%%OCTAVE_VERSION%%/octave/Range.h
-include/octave-%%OCTAVE_VERSION%%/octave/SLList.h
-include/octave-%%OCTAVE_VERSION%%/octave/SLStack.h
-include/octave-%%OCTAVE_VERSION%%/octave/Stack.h
 include/octave-%%OCTAVE_VERSION%%/octave/base-dae.h
 include/octave-%%OCTAVE_VERSION%%/octave/base-de.h
+include/octave-%%OCTAVE_VERSION%%/octave/base-list.h
 include/octave-%%OCTAVE_VERSION%%/octave/base-lu.cc
 include/octave-%%OCTAVE_VERSION%%/octave/base-lu.h
 include/octave-%%OCTAVE_VERSION%%/octave/base-min.h
@@ -131,6 +125,8 @@ include/octave-%%OCTAVE_VERSION%%/octave/gripes.h
 include/octave-%%OCTAVE_VERSION%%/octave/help.h
 include/octave-%%OCTAVE_VERSION%%/octave/idx-vector.h
 include/octave-%%OCTAVE_VERSION%%/octave/input.h
+include/octave-%%OCTAVE_VERSION%%/octave/kpse-xfns.h
+include/octave-%%OCTAVE_VERSION%%/octave/kpse.cc
 include/octave-%%OCTAVE_VERSION%%/octave/lex.h
 include/octave-%%OCTAVE_VERSION%%/octave/lo-error.h
 include/octave-%%OCTAVE_VERSION%%/octave/lo-ieee.h
@@ -167,6 +163,7 @@ include/octave-%%OCTAVE_VERSION%%/octave/mx-m-cm.h
 include/octave-%%OCTAVE_VERSION%%/octave/mx-m-cs.h
 include/octave-%%OCTAVE_VERSION%%/octave/mx-m-dm.h
 include/octave-%%OCTAVE_VERSION%%/octave/mx-op-defs.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ops.h
 include/octave-%%OCTAVE_VERSION%%/octave/mx-s-cdm.h
 include/octave-%%OCTAVE_VERSION%%/octave/mx-s-cm.h
 include/octave-%%OCTAVE_VERSION%%/octave/mx-s-dm.h
@@ -181,13 +178,13 @@ include/octave-%%OCTAVE_VERSION%%/octave/oct-gperf.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-group.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-hist.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-iostrm.h
-include/octave-%%OCTAVE_VERSION%%/octave/oct-kpse.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-lvalue.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-map.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-obj.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-passwd.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-prcstrm.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-procbuf.h
+include/octave-%%OCTAVE_VERSION%%/octave/oct-rand.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-rl-edit.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-rl-hist.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-shlib.h
@@ -213,6 +210,7 @@ include/octave-%%OCTAVE_VERSION%%/octave/ov-complex.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-cs-list.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-cx-mat.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-dld-fcn.h
+include/octave-%%OCTAVE_VERSION%%/octave/ov-fcn-handle.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-fcn.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-file.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-list.h
@@ -247,6 +245,7 @@ include/octave-%%OCTAVE_VERSION%%/octave/pt-const.h
 include/octave-%%OCTAVE_VERSION%%/octave/pt-decl.h
 include/octave-%%OCTAVE_VERSION%%/octave/pt-except.h
 include/octave-%%OCTAVE_VERSION%%/octave/pt-exp.h
+include/octave-%%OCTAVE_VERSION%%/octave/pt-fcn-handle.h
 include/octave-%%OCTAVE_VERSION%%/octave/pt-id.h
 include/octave-%%OCTAVE_VERSION%%/octave/pt-idx.h
 include/octave-%%OCTAVE_VERSION%%/octave/pt-jump.h
@@ -260,6 +259,7 @@ include/octave-%%OCTAVE_VERSION%%/octave/pt-stmt.h
 include/octave-%%OCTAVE_VERSION%%/octave/pt-unop.h
 include/octave-%%OCTAVE_VERSION%%/octave/pt-walk.h
 include/octave-%%OCTAVE_VERSION%%/octave/pt.h
+include/octave-%%OCTAVE_VERSION%%/octave/quit.h
 include/octave-%%OCTAVE_VERSION%%/octave/sighandlers.h
 include/octave-%%OCTAVE_VERSION%%/octave/siglist.h
 include/octave-%%OCTAVE_VERSION%%/octave/statdefs.h
@@ -474,6 +474,9 @@ share/octave/%%OCTAVE_VERSION%%/m/deprecated/is_stream.m
 share/octave/%%OCTAVE_VERSION%%/m/deprecated/is_struct.m
 share/octave/%%OCTAVE_VERSION%%/m/deprecated/is_symmetric.m
 share/octave/%%OCTAVE_VERSION%%/m/deprecated/is_vector.m
+share/octave/%%OCTAVE_VERSION%%/m/deprecated/setstr.m
+share/octave/%%OCTAVE_VERSION%%/m/deprecated/struct_contains.m
+share/octave/%%OCTAVE_VERSION%%/m/deprecated/struct_elements.m
 share/octave/%%OCTAVE_VERSION%%/m/elfun/acot.m
 share/octave/%%OCTAVE_VERSION%%/m/elfun/acoth.m
 share/octave/%%OCTAVE_VERSION%%/m/elfun/acsc.m
@@ -548,6 +551,7 @@ share/octave/%%OCTAVE_VERSION%%/m/image/rgb2hsv.m
 share/octave/%%OCTAVE_VERSION%%/m/image/rgb2ind.m
 share/octave/%%OCTAVE_VERSION%%/m/image/rgb2ntsc.m
 share/octave/%%OCTAVE_VERSION%%/m/image/saveimage.m
+share/octave/%%OCTAVE_VERSION%%/m/io/beep.m
 share/octave/%%OCTAVE_VERSION%%/m/io/printf.m
 share/octave/%%OCTAVE_VERSION%%/m/io/puts.m
 share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/commutation_matrix.m
@@ -559,6 +563,7 @@ share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/duplication_matrix.m
 share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/housh.m
 share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/krylov.m
 share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/krylovb.m
+share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/logm.m
 share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/norm.m
 share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/null.m
 share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/orth.m
@@ -573,7 +578,9 @@ share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/comma.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/cputime.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/dump_prefs.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/etime.m
+share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/fileparts.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/flops.m
+share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/fullfile.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/is_leap_year.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/list_primes.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/menu.m
@@ -582,11 +589,14 @@ share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/paren.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/path.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/popen2.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/semicolon.m
+share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/tempdir.m
+share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/tempname.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/texas_lotto.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/tic.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/toc.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/version.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/xor.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/PKG_ADD
 share/octave/%%OCTAVE_VERSION%%/m/plot/__axis_label__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__errcomm__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__errplot__.m
@@ -606,6 +616,7 @@ share/octave/%%OCTAVE_VERSION%%/m/plot/__pltopt__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/axis.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/bar.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/bottom_title.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/close.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/contour.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/errorbar.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/figure.m
@@ -888,6 +899,9 @@ share/octave/%%OCTAVE_VERSION%%/m/time/clock.m
 share/octave/%%OCTAVE_VERSION%%/m/time/ctime.m
 share/octave/%%OCTAVE_VERSION%%/m/time/date.m
 share/octave/ls-R
+share/octave/site/m/sndfile_load.m
+share/octave/site/m/sndfile_play.m
+share/octave/site/m/sndfile_save.m
 share/octave/site/m/startup/octaverc
 @dirrm include/octave-%%OCTAVE_VERSION%%/octave
 @dirrm include/octave-%%OCTAVE_VERSION%%
