@@ -22,7 +22,7 @@
 +freebsd-elf:
 +	$(MAKE) CC=cc LDFLAGS= \
 +		OBJECTS='decode_i386.o dct64_i386.o getbits.o audio_oss.o' \
-+		CFLAGS='-Wall -ansi -pedantic -fomit-frame-pointer \
++		CFLAGS+='-Wall -ansi -pedantic -fomit-frame-pointer \
 +			-funroll-all-loops -ffast-math -DROT_I386 -DREAD_MMAP \
  			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DOSS' \
  		mpg123-make
