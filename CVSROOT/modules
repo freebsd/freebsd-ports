@@ -79,7 +79,6 @@ taginfo		CVSROOT taginfo
 9menu		ports/x11-wm/9menu
 9term		ports/x11/9term
 9wm		ports/x11-wm/9wm
-AbiWord		ports/editors/AbiWord
 AbiWord2	ports/editors/AbiWord2
 CaribbeanStud	ports/games/CaribbeanStud
 Cgraph		ports/graphics/Cgraph
