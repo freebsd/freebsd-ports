@@ -17,6 +17,7 @@ DISTNAME=	inn-STABLE-${SNAPSHOT}
 MAINTAINER=	des@FreeBSD.org
 
 USE_GMAKE=YES
+USE_PERL5=	yes
 
 .if exists(/var/news)
 INN_NEWSSPOOL?=/var/news
