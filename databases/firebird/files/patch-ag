@@ -1,0 +1,11 @@
+--- Configure.sh.orig	Tue Nov 20 05:00:25 2001
++++ Configure.sh	Fri Dec 28 19:11:50 2001
+@@ -515,7 +515,7 @@
+ BuildBootFlg="No"
+ BuildHostType=""
+ BuildBuildType="PROD"
+-MasterSourceDir="`pwd`/refDatabases"
++MasterSourceDir="$REFDBPATH"
+ BuildIOsize=32
+ 
+ export BuildHostType

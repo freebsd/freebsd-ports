@@ -1,0 +1,10 @@
+--- jrd/common.h.orig	Sat Nov 17 20:07:00 2001
++++ jrd/common.h	Sun Nov 18 18:54:26 2001
+@@ -137,6 +137,7 @@
+ /* FreeBSD for Intel platforms */
+ #ifdef FREEBSD
+
++#define UNIX_64_BIT_IO
+ #define FB_ALIGN(n,b) ((n + b - 1) & ~(b - 1))
+ #define ALIGNMENT     4
+ #define DOUBLE_ALIGN  4
