@@ -12,10 +12,32 @@ share/tome/bone/bone004.008
 share/tome/bone/bone004.009
 share/tome/bone/bone004.010
 share/tome/cmov/delete.me
-share/tome/data/delete.me
+share/tome/core/auto.lua
+share/tome/core/building.lua
+share/tome/core/crpt_aux.lua
+share/tome/core/dungeon.lua
+share/tome/core/gen_idx.lua
+share/tome/core/gods.lua
+share/tome/core/help.lua
+share/tome/core/init.lua
+share/tome/core/load.lua
+share/tome/core/load2.lua
+share/tome/core/mimc_aux.lua
+share/tome/core/monsters.lua
+share/tome/core/objects.lua
+share/tome/core/player.lua
+share/tome/core/powers.lua
+share/tome/core/quests.lua
+share/tome/core/s_aux.lua
+share/tome/core/stores.lua
+share/tome/core/util.lua
+share/tome/core/xml.lua
 share/tome/data/.cvsignore
+share/tome/data/delete.me
 share/tome/dngn/dun1.14
 share/tome/dngn/dun10.0
+share/tome/dngn/dun11.20
+share/tome/dngn/dun11.22
 share/tome/dngn/dun18.0
 share/tome/dngn/dun18.1
 share/tome/dngn/dun19.11
@@ -28,13 +50,18 @@ share/tome/dngn/dun3.28
 share/tome/dngn/dun3.3
 share/tome/dngn/dun5.0
 share/tome/dngn/dun5.14
+share/tome/dngn/dun6.0
 share/tome/edit/a_info.txt
+share/tome/edit/ab_info.txt
 share/tome/edit/al_info.txt
 share/tome/edit/ba_info.txt
 share/tome/edit/between.map
 share/tome/edit/d_info.txt
+share/tome/edit/dragons.map
 share/tome/edit/e_info.txt
+share/tome/edit/evil.map
 share/tome/edit/f_info.txt
+share/tome/edit/haunted.map
 share/tome/edit/k_info.txt
 share/tome/edit/maeglin.map
 share/tome/edit/misc.txt
@@ -87,6 +114,7 @@ share/tome/edit/volcano.txt
 share/tome/edit/w_info.txt
 share/tome/edit/wf_info.txt
 share/tome/edit/wights.map
+share/tome/edit/wolves.map
 share/tome/file/book-0.txt
 share/tome/file/book-1.txt
 share/tome/file/book-10.txt
@@ -147,6 +175,7 @@ share/tome/file/speakpet.txt
 share/tome/file/timefun.txt
 share/tome/file/timenorm.txt
 share/tome/help/TANG.txt
+share/tome/help/ability.txt
 share/tome/help/attack.txt
 share/tome/help/automat.txt
 share/tome/help/birth.txt
@@ -155,11 +184,11 @@ share/tome/help/c_alchem.txt
 share/tome/help/c_archer.txt
 share/tome/help/c_assass.txt
 share/tome/help/c_axemas.txt
+share/tome/help/c_bard.txt
 share/tome/help/c_demono.txt
 share/tome/help/c_druid.txt
-share/tome/help/c_elemen.txt
+share/tome/help/c_geoman.txt
 share/tome/help/c_hafted.txt
-share/tome/help/c_harper.txt
 share/tome/help/c_lorema.txt
 share/tome/help/c_mage.txt
 share/tome/help/c_merch.txt
@@ -223,10 +252,13 @@ share/tome/help/m_demono.txt
 share/tome/help/m_divin.txt
 share/tome/help/m_earth.txt
 share/tome/help/m_fire.txt
+share/tome/help/m_geoman.txt
 share/tome/help/m_mana.txt
 share/tome/help/m_meta.txt
+share/tome/help/m_mimic.txt
 share/tome/help/m_mind.txt
 share/tome/help/m_mindcr.txt
+share/tome/help/m_music.txt
 share/tome/help/m_nature.txt
 share/tome/help/m_necrom.txt
 share/tome/help/m_symbio.txt
@@ -235,6 +267,7 @@ share/tome/help/m_thaum.txt
 share/tome/help/m_udun.txt
 share/tome/help/m_water.txt
 share/tome/help/macrofaq.txt
+share/tome/help/magic.hlp
 share/tome/help/magic.txt
 share/tome/help/newbie.hlp
 share/tome/help/option.txt
@@ -275,7 +308,13 @@ share/tome/help/tome_faq.txt
 share/tome/help/version.txt
 share/tome/help/wishing.txt
 share/tome/info/delete.me
+share/tome/mods/.cvsignore
+share/tome/mods/mods_aux.lua
+share/tome/mods/modules.lua
+share/tome/module.lua
 share/tome/note/delete.me
+share/tome/patch/.cvsignore
+share/tome/patch/delete.me
 share/tome/pref/422color.prf
 share/tome/pref/colors.prf
 share/tome/pref/font-ami.prf
@@ -313,32 +352,29 @@ share/tome/pref/xtra-gcu.prf
 share/tome/pref/xtra-new.prf
 share/tome/pref/xtra-xxx.prf
 share/tome/save/delete.me
-share/tome/scpt/auto.lua
+share/tome/scpt/.cvsignore
 share/tome/scpt/bounty.lua
-share/tome/scpt/building.lua
 share/tome/scpt/corrupt.lua
-share/tome/scpt/crpt_aux.lua
-share/tome/scpt/dungeon.lua
+share/tome/scpt/drunk.lua
 share/tome/scpt/fireprof.lua
-share/tome/scpt/gen_idx.lua
 share/tome/scpt/god.lua
 share/tome/scpt/help.lua
 share/tome/scpt/init.lua
 share/tome/scpt/intro.lua
-share/tome/scpt/monsters.lua
-share/tome/scpt/objects.lua
+share/tome/scpt/joke.lua
+share/tome/scpt/library.lua
+share/tome/scpt/mimic.lua
+share/tome/scpt/mkeys.lua
 share/tome/scpt/player.lua
 share/tome/scpt/powers.lua
-share/tome/scpt/quests.lua
-share/tome/scpt/quests2.lua
 share/tome/scpt/s_air.lua
-share/tome/scpt/s_aux.lua
 share/tome/scpt/s_convey.lua
 share/tome/scpt/s_demon.lua
 share/tome/scpt/s_divin.lua
 share/tome/scpt/s_earth.lua
 share/tome/scpt/s_eru.lua
 share/tome/scpt/s_fire.lua
+share/tome/scpt/s_geom.lua
 share/tome/scpt/s_mana.lua
 share/tome/scpt/s_manwe.lua
 share/tome/scpt/s_melkor.lua
@@ -355,17 +391,12 @@ share/tome/scpt/s_yavann.lua
 share/tome/scpt/spells.lua
 share/tome/scpt/stores.lua
 share/tome/scpt/test.lua
-share/tome/scpt/util.lua
-share/tome/scpt/xml.lua
 share/tome/user/automat.atm
 share/tome/user/delete.me
 share/tome/xtra/ang16.bdf
 share/tome/xtra/angband.fnt
 share/tome/xtra/font/10X20.FON
 share/tome/xtra/font/12X24.FON
-share/tome/xtra/font/12x24-blah-jis.hex
-share/tome/xtra/font/18x25-b&h-lucidatypewriter.hex
-share/tome/xtra/font/3x5.hex
 share/tome/xtra/font/5X8.FON
 share/tome/xtra/font/6X10.FON
 share/tome/xtra/font/6X12.FON
@@ -376,7 +407,6 @@ share/tome/xtra/font/7X13.FON
 share/tome/xtra/font/7X13B.FON
 share/tome/xtra/font/8X13.FON
 share/tome/xtra/font/8X13B.FON
-share/tome/xtra/font/8x16kana-jisx0201.1976.hex
 share/tome/xtra/font/9X15.FON
 share/tome/xtra/font/9X15B.FON
 share/tome/xtra/font/XM10X17.FNT
@@ -389,16 +419,6 @@ share/tome/xtra/font/XM5X8.FNT
 share/tome/xtra/font/XM6X12.FNT
 share/tome/xtra/font/XM6X12B.FNT
 share/tome/xtra/font/XM8X16B.FNT
-share/tome/xtra/font/comic20x24.hex
-share/tome/xtra/font/def8x16.hex
-share/tome/xtra/font/jmk8x12-modd-bold-r-semicond.hex
-share/tome/xtra/font/marumoji-8x14.hex
-share/tome/xtra/font/misc5x7.hex
-share/tome/xtra/font/misc6x13.hex
-share/tome/xtra/font/nethack10x19-10.hex
-share/tome/xtra/font/symbadobe.hex
-share/tome/xtra/font/vga11x19.hex
-share/tome/xtra/font/vga8x16.hex
 share/tome/xtra/font/xm4x6.fnt
 share/tome/xtra/font/xm8x13.fnt
 share/tome/xtra/font/xm8x13b.fnt
@@ -412,13 +432,16 @@ share/tome/xtra/sound/readme.txt
 @dirrm share/tome/apex
 @dirrm share/tome/bone
 @dirrm share/tome/cmov
+@dirrm share/tome/core
 @dirrm share/tome/data
 @dirrm share/tome/dngn
 @dirrm share/tome/edit
 @dirrm share/tome/file
 @dirrm share/tome/help
 @dirrm share/tome/info
+@dirrm share/tome/mods
 @dirrm share/tome/note
+@dirrm share/tome/patch
 @dirrm share/tome/pref
 @dirrm share/tome/save
 @dirrm share/tome/scpt

@@ -1,5 +1,5 @@
---- makefile.std.orig	Sun Nov 24 15:42:24 2002
-+++ makefile.std	Thu Jan 16 18:04:47 2003
+--- makefile.std.orig	Mon Apr 21 15:44:23 2003
++++ makefile.std	Sat Jul  5 18:53:04 2003
 @@ -81,18 +81,19 @@
  # Sysadmins of commercial Unix and/or BSD might prefer this
  #LIBDIR = /usr/local/lib/tome/
@@ -30,9 +30,9 @@
 -CC = gcc
 +CC ?= cc
  
- #
- # Standard version (see main-x11.c and main-gcu.c)
-@@ -148,12 +149,12 @@
+ # Profiling options
+ # PROFILECOPTS = -pg
+@@ -152,14 +153,12 @@
  # including "USE_GETCH" and "USE_CURS_SET".  Note that "config.h" will
  # attempt to "guess" at many of these flags based on your system.
  #
@@ -42,22 +42,24 @@
 +INCLUDES = -I$(X11BASE)/include
  DEFINES = -DUSE_X11 -DUSE_GCU \
  	-DUSE_EGO_GRAPHICS -DUSE_TRANSPARENCY -DSUPPORT_GAMMA \
-         -DUSE_PRECISE_CMOVIE -DUSE_UNIXSOCK
+ 	-DUSE_PRECISE_CMOVIE -DUSE_UNIXSOCK
 -LIBS = -lX11 -lcurses -L/usr/X11R6/lib
+-
+-
 +LIBS = -lX11 -lcurses -L$(X11BASE)/lib
  
- 
  ##
-@@ -369,7 +370,7 @@
+ ## Variation -- Only support "main-gtk.c" (not "main-gcu.c, main-x11.c")
+@@ -383,7 +382,7 @@
  # Compiler options
  #
  
--CFLAGS = $(COPTS) $(INCLUDES) $(DEFINES) -DDEFAULT_PATH=\"$(LIBDIR)\"
+-CFLAGS = $(COPTS) $(PROFILECOPTS) $(INCLUDES) $(DEFINES) -DDEFAULT_PATH=\"$(LIBDIR)\"
 +CFLAGS += $(COPTS) $(INCLUDES) $(DEFINES) -DDEFAULT_PATH=\"$(LIBDIR)\"
  
  
  #
-@@ -443,10 +444,12 @@
+@@ -457,10 +456,12 @@
  	[ -d $(DESTDIR)$(LIBDIR) ] || mkdir -p $(DESTDIR)$(LIBDIR)
  	[ -d $(DESTDIR)$(BINDIR) ] || mkdir -p $(DESTDIR)$(BINDIR)
  	cp -r ../lib/* $(DESTDIR)$(LIBDIR)
