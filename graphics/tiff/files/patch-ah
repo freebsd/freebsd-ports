@@ -1,0 +1,1158 @@
+diff -uprk.orig libtiff/tif_aux.c libtiff/tif_aux.c
+--- libtiff/tif_aux.c	2003-12-07 14:58:36 +0300
++++ libtiff/tif_aux.c	2004-10-03 00:20:41 +0400
+@@ -33,36 +33,59 @@
+ #include "tif_predict.h"
+ #include <math.h>
+ 
+-static void
++static int
+ TIFFDefaultTransferFunction(TIFFDirectory* td)
+ {
+ 	uint16 **tf = td->td_transferfunction;
+-	long i, n = 1<<td->td_bitspersample;
++	tsize_t i, n, nbytes;
+ 
+-	tf[0] = (uint16 *)_TIFFmalloc(n * sizeof (uint16));
++	tf[0] = tf[1] = tf[2] = 0;
++	if (td->td_bitspersample >= sizeof(tsize_t) * 8 - 2)
++		return 0;
++
++	n = 1<<td->td_bitspersample;
++	nbytes = n * sizeof (uint16);
++	if (!(tf[0] = (uint16 *)_TIFFmalloc(nbytes)))
++		return 0;
+ 	tf[0][0] = 0;
+ 	for (i = 1; i < n; i++) {
+ 		double t = (double)i/((double) n-1.);
+ 		tf[0][i] = (uint16)floor(65535.*pow(t, 2.2) + .5);
+ 	}
++
+ 	if (td->td_samplesperpixel - td->td_extrasamples > 1) {
+-		tf[1] = (uint16 *)_TIFFmalloc(n * sizeof (uint16));
+-		_TIFFmemcpy(tf[1], tf[0], n * sizeof (uint16));
+-		tf[2] = (uint16 *)_TIFFmalloc(n * sizeof (uint16));
+-		_TIFFmemcpy(tf[2], tf[0], n * sizeof (uint16));
++		if (!(tf[1] = (uint16 *)_TIFFmalloc(nbytes)))
++			goto bad;
++		_TIFFmemcpy(tf[1], tf[0], nbytes);
++		if (!(tf[2] = (uint16 *)_TIFFmalloc(nbytes)))
++			goto bad;
++		_TIFFmemcpy(tf[2], tf[0], nbytes);
+ 	}
++	return 1;
++
++bad:
++	if (tf[0])
++		_TIFFfree(tf[0]);
++	if (tf[1])
++		_TIFFfree(tf[1]);
++	if (tf[2])
++		_TIFFfree(tf[2]);
++	tf[0] = tf[1] = tf[2] = 0;
++	return 0;
+ }
+ 
+-static void
++static int
+ TIFFDefaultRefBlackWhite(TIFFDirectory* td)
+ {
+ 	int i;
+ 
+-	td->td_refblackwhite = (float *)_TIFFmalloc(6*sizeof (float));
++	if (!(td->td_refblackwhite = (float *)_TIFFmalloc(6*sizeof (float))))
++		return 0;
+ 	for (i = 0; i < 3; i++) {
+ 	    td->td_refblackwhite[2*i+0] = 0;
+ 	    td->td_refblackwhite[2*i+1] = (float)((1L<<td->td_bitspersample)-1L);
+ 	}
++	return 1;
+ }
+ 
+ /*
+@@ -155,6 +178,8 @@ TIFFVGetFieldDefaulted(TIFF* tif, ttag_t
+ 		if (!td->td_ycbcrcoeffs) {
+ 			td->td_ycbcrcoeffs = (float *)
+ 			    _TIFFmalloc(3*sizeof (float));
++			if (!td->td_ycbcrcoeffs)
++				return (0);
+ 			/* defaults are from CCIR Recommendation 601-1 */
+ 			td->td_ycbcrcoeffs[0] = 0.299f;
+ 			td->td_ycbcrcoeffs[1] = 0.587f;
+@@ -173,6 +198,8 @@ TIFFVGetFieldDefaulted(TIFF* tif, ttag_t
+ 		if (!td->td_whitepoint) {
+ 			td->td_whitepoint = (float *)
+ 				_TIFFmalloc(2 * sizeof (float));
++			if (!td->td_whitepoint)
++				return (0);
+ 			/* TIFF 6.0 specification says that it is no default
+ 			   value for the WhitePoint, but AdobePhotoshop TIFF
+ 			   Technical Note tells that it should be CIE D50. */
+@@ -184,8 +211,11 @@ TIFFVGetFieldDefaulted(TIFF* tif, ttag_t
+ 		*va_arg(ap, float **) = td->td_whitepoint;
+ 		return (1);
+ 	case TIFFTAG_TRANSFERFUNCTION:
+-		if (!td->td_transferfunction[0])
+-			TIFFDefaultTransferFunction(td);
++		if (!td->td_transferfunction[0] &&
++		    !TIFFDefaultTransferFunction(td)) {
++			TIFFError(tif->tif_name, "No space for \"TransferFunction\" tag");
++			return (0);
++		}
+ 		*va_arg(ap, uint16 **) = td->td_transferfunction[0];
+ 		if (td->td_samplesperpixel - td->td_extrasamples > 1) {
+ 			*va_arg(ap, uint16 **) = td->td_transferfunction[1];
+@@ -193,8 +223,8 @@ TIFFVGetFieldDefaulted(TIFF* tif, ttag_t
+ 		}
+ 		return (1);
+ 	case TIFFTAG_REFERENCEBLACKWHITE:
+-		if (!td->td_refblackwhite)
+-			TIFFDefaultRefBlackWhite(td);
++		if (!td->td_refblackwhite && !TIFFDefaultRefBlackWhite(td))
++			return (0);
+ 		*va_arg(ap, float **) = td->td_refblackwhite;
+ 		return (1);
+ 	}
+diff -uprk.orig libtiff/tif_compress.c libtiff/tif_compress.c
+--- libtiff/tif_compress.c	2002-04-09 21:51:29 +0400
++++ libtiff/tif_compress.c	2004-10-03 00:20:41 +0400
+@@ -210,9 +210,11 @@ TIFFRegisterCODEC(uint16 scheme, const c
+ 		cd->info->init = init;
+ 		cd->next = registeredCODECS;
+ 		registeredCODECS = cd;
+-	} else
++	} else {
+ 		TIFFError("TIFFRegisterCODEC",
+ 		    "No space to register compression scheme %s", name);
++		return NULL;
++	}
+ 	return (cd->info);
+ }
+ 
+diff -uprk.orig libtiff/tif_dir.c libtiff/tif_dir.c
+--- libtiff/tif_dir.c	2003-12-26 14:56:25 +0300
++++ libtiff/tif_dir.c	2004-10-03 00:20:41 +0400
+@@ -40,26 +40,33 @@
+ #define DATATYPE_UINT		2       /* !unsigned integer data */
+ #define DATATYPE_IEEEFP		3       /* !IEEE floating point data */
+ 
+-void
+-_TIFFsetByteArray(void** vpp, void* vp, long n)
++static void
++setByteArray(void** vpp, void* vp, size_t nmemb, size_t elem_size)
+ {
+ 	if (*vpp)
+ 		_TIFFfree(*vpp), *vpp = 0;
+-	if (vp && (*vpp = (void*) _TIFFmalloc(n)))
+-		_TIFFmemcpy(*vpp, vp, n);
++	if (vp) {
++		tsize_t	bytes = nmemb * elem_size;
++		if (elem_size && bytes / elem_size == nmemb)
++			*vpp = (void*) _TIFFmalloc(bytes);
++		if (*vpp)
++			_TIFFmemcpy(*vpp, vp, bytes);
++	}
+ }
++void _TIFFsetByteArray(void** vpp, void* vp, long n)
++    { setByteArray(vpp, vp, n, 1); }
+ void _TIFFsetString(char** cpp, char* cp)
+-    { _TIFFsetByteArray((void**) cpp, (void*) cp, (long) (strlen(cp)+1)); }
++    { setByteArray((void**) cpp, (void*) cp, strlen(cp)+1, 1); }
+ void _TIFFsetNString(char** cpp, char* cp, long n)
+-    { _TIFFsetByteArray((void**) cpp, (void*) cp, n); }
++    { setByteArray((void**) cpp, (void*) cp, n, 1); }
+ void _TIFFsetShortArray(uint16** wpp, uint16* wp, long n)
+-    { _TIFFsetByteArray((void**) wpp, (void*) wp, n*sizeof (uint16)); }
++    { setByteArray((void**) wpp, (void*) wp, n, sizeof (uint16)); }
+ void _TIFFsetLongArray(uint32** lpp, uint32* lp, long n)
+-    { _TIFFsetByteArray((void**) lpp, (void*) lp, n*sizeof (uint32)); }
++    { setByteArray((void**) lpp, (void*) lp, n, sizeof (uint32)); }
+ void _TIFFsetFloatArray(float** fpp, float* fp, long n)
+-    { _TIFFsetByteArray((void**) fpp, (void*) fp, n*sizeof (float)); }
++    { setByteArray((void**) fpp, (void*) fp, n, sizeof (float)); }
+ void _TIFFsetDoubleArray(double** dpp, double* dp, long n)
+-    { _TIFFsetByteArray((void**) dpp, (void*) dp, n*sizeof (double)); }
++    { setByteArray((void**) dpp, (void*) dp, n, sizeof (double)); }
+ 
+ /*
+  * Install extra samples information.
+@@ -521,14 +528,21 @@ _TIFFVSetField(TIFF* tif, ttag_t tag, va
+              */
+             if( tv == NULL )
+             {
+-                td->td_customValueCount++;
+-                if( td->td_customValueCount > 1 )
+-                    td->td_customValues = (TIFFTagValue *)
+-                        _TIFFrealloc(td->td_customValues,
+-                                     sizeof(TIFFTagValue) * td->td_customValueCount);
+-                else
+-                    td->td_customValues = (TIFFTagValue *)
+-                        _TIFFmalloc(sizeof(TIFFTagValue));
++		TIFFTagValue	*new_customValues;
++		
++		td->td_customValueCount++;
++		new_customValues = (TIFFTagValue *)
++			_TIFFrealloc(td->td_customValues,
++				     sizeof(TIFFTagValue) * td->td_customValueCount);
++		if (!new_customValues) {
++			TIFFError(module,
++		"%s: Failed to allocate space for list of custom values",
++				  tif->tif_name);
++			status = 0;
++			goto end;
++		}
++
++		td->td_customValues = new_customValues;
+ 
+                 tv = td->td_customValues + (td->td_customValueCount-1);
+                 tv->info = fip;
+@@ -584,6 +598,8 @@ _TIFFVSetField(TIFF* tif, ttag_t tag, va
+             TIFFSetFieldBit(tif, _TIFFFieldWithTag(tif, tag)->field_bit);
+             tif->tif_flags |= TIFF_DIRTYDIRECT;
+ 	}
++
++end:
+ 	va_end(ap);
+ 	return (status);
+ badvalue:
+diff -uprk.orig libtiff/tif_dirinfo.c libtiff/tif_dirinfo.c
+--- libtiff/tif_dirinfo.c	2003-12-22 11:22:15 +0300
++++ libtiff/tif_dirinfo.c	2004-10-03 00:20:41 +0400
+@@ -31,6 +31,8 @@
+  */
+ #include "tiffiop.h"
+ #include <stdlib.h>
++#include <assert.h>
++#include <stdio.h>
+ 
+ /*
+  * NB: NB: THIS ARRAY IS ASSUMED TO BE SORTED BY TAG.
+@@ -309,6 +311,7 @@ _TIFFMergeFieldInfo(TIFF* tif, const TIF
+ 		tif->tif_fieldinfo = (TIFFFieldInfo**)
+ 		    _TIFFmalloc(n * sizeof (TIFFFieldInfo*));
+ 	}
++	assert(tif->tif_fieldinfo != NULL);
+ 	tp = &tif->tif_fieldinfo[tif->tif_nfields];
+ 	for (i = 0; i < n; i++)
+ 		tp[i] = (TIFFFieldInfo*) &info[i];	/* XXX */
+@@ -376,7 +379,7 @@ TIFFDataWidth(TIFFDataType type)
+ TIFFDataType
+ _TIFFSampleToTagType(TIFF* tif)
+ {
+-	int bps = (int) TIFFhowmany(tif->tif_dir.td_bitspersample, 8);
++	uint32 bps = TIFFhowmany8(tif->tif_dir.td_bitspersample);
+ 
+ 	switch (tif->tif_dir.td_sampleformat) {
+ 	case SAMPLEFORMAT_IEEEFP:
+@@ -422,9 +425,6 @@ _TIFFFindFieldInfo(TIFF* tif, ttag_t tag
+ 	return ((const TIFFFieldInfo *)0);
+ }
+ 
+-#include <assert.h>
+-#include <stdio.h>
+-
+ const TIFFFieldInfo*
+ _TIFFFieldWithTag(TIFF* tif, ttag_t tag)
+ {
+@@ -460,6 +460,8 @@ _TIFFCreateAnonFieldInfo(TIFF *tif, ttag
+     TIFFFieldInfo *fld;
+ 
+     fld = (TIFFFieldInfo *) _TIFFmalloc(sizeof (TIFFFieldInfo));
++    if (fld == NULL)
++	return NULL;
+     _TIFFmemset( fld, 0, sizeof(TIFFFieldInfo) );
+ 
+     fld->field_tag = tag;
+@@ -470,6 +472,10 @@ _TIFFCreateAnonFieldInfo(TIFF *tif, ttag
+     fld->field_oktochange = TRUE;
+     fld->field_passcount = TRUE;
+     fld->field_name = (char *) _TIFFmalloc(32);
++    if (fld->field_name == NULL) {
++	_TIFFfree(fld);
++	return NULL;
++    }
+ 
+     /* note that this name is a special sign to TIFFClose() and
+      * _TIFFSetupFieldInfo() to free the field
+--- libtiff/tif_dirread.c	Wed Oct 13 15:11:03 2004
++++ libtiff/tif_dirread.c	Wed Oct 13 15:11:32 2004
+@@ -62,11 +62,17 @@
+ static	void ChopUpSingleUncompressedStrip(TIFF*);
+ 
+ static char *
+-CheckMalloc(TIFF* tif, tsize_t n, const char* what)
++CheckMalloc(TIFF* tif, size_t nmemb, size_t elem_size, const char* what)
+ {
+-	char *cp = (char*)_TIFFmalloc(n);
++	char	*cp = NULL;
++	tsize_t	bytes = nmemb * elem_size;
++
++	if (elem_size && bytes / elem_size == nmemb)
++		cp = (char*)_TIFFmalloc(bytes);
++
+ 	if (cp == NULL)
+ 		TIFFError(tif->tif_name, "No space %s", what);
++	
+ 	return (cp);
+ }
+ 
+@@ -93,6 +99,7 @@
+ 	toff_t nextdiroff;
+ 	char* cp;
+ 	int diroutoforderwarning = 0;
++	toff_t* new_dirlist;
+ 
+ 	tif->tif_diroff = tif->tif_nextdiroff;
+ 	if (tif->tif_diroff == 0)		/* no more directories */
+@@ -108,14 +115,15 @@
+ 			return (0);
+ 	}
+ 	tif->tif_dirnumber++;
+-	tif->tif_dirlist = _TIFFrealloc(tif->tif_dirlist,
+-					tif->tif_dirnumber * sizeof(toff_t));
+-	if (!tif->tif_dirlist) {
++	new_dirlist = _TIFFrealloc(tif->tif_dirlist,
++				   tif->tif_dirnumber * sizeof(toff_t));
++	if (!new_dirlist) {
+ 		TIFFError(module,
+ 			  "%.1000s: Failed to allocate space for IFD list",
+ 			  tif->tif_name);
+ 		return (0);
+ 	}
++	tif->tif_dirlist = new_dirlist;
+ 	tif->tif_dirlist[tif->tif_dirnumber - 1] = tif->tif_diroff;
+ 
+ 	/*
+@@ -140,7 +148,7 @@
+ 		if (tif->tif_flags & TIFF_SWAB)
+ 			TIFFSwabShort(&dircount);
+ 		dir = (TIFFDirEntry *)CheckMalloc(tif,
+-		    dircount * sizeof (TIFFDirEntry), "to read TIFF directory");
++		    dircount, sizeof (TIFFDirEntry), "to read TIFF directory");
+ 		if (dir == NULL)
+ 			return (0);
+ 		if (!ReadOK(tif, dir, dircount*sizeof (TIFFDirEntry))) {
+@@ -167,7 +175,7 @@
+ 		if (tif->tif_flags & TIFF_SWAB)
+ 			TIFFSwabShort(&dircount);
+ 		dir = (TIFFDirEntry *)CheckMalloc(tif,
+-		    dircount * sizeof (TIFFDirEntry), "to read TIFF directory");
++		    dircount, sizeof (TIFFDirEntry), "to read TIFF directory");
+ 		if (dir == NULL)
+ 			return (0);
+ 		if (off + dircount*sizeof (TIFFDirEntry) > tif->tif_size) {
+@@ -175,9 +183,10 @@
+                                   "%.1000s: Can not read TIFF directory",
+                                   tif->tif_name);
+ 			goto bad;
+-		} else
++		} else {
+ 			_TIFFmemcpy(dir, tif->tif_base + off,
+-			    dircount*sizeof (TIFFDirEntry));
++				    dircount*sizeof (TIFFDirEntry));
++		}
+ 		off += dircount* sizeof (TIFFDirEntry);
+ 		if (off + sizeof (uint32) <= tif->tif_size)
+ 			_TIFFmemcpy(&nextdiroff, tif->tif_base+off, sizeof (uint32));
+@@ -390,6 +399,11 @@
+ 		td->td_nstrips = TIFFNumberOfTiles(tif);
+ 		tif->tif_flags |= TIFF_ISTILED;
+ 	}
++	if (!td->td_nstrips) {
++		TIFFError(module, "%s: cannot handle zero number of %s",
++			  tif->tif_name, isTiled(tif) ? "tiles" : "strips");
++		goto bad;
++	}
+ 	td->td_stripsperimage = td->td_nstrips;
+ 	if (td->td_planarconfig == PLANARCONFIG_SEPARATE)
+ 		td->td_stripsperimage /= td->td_samplesperpixel;
+@@ -466,7 +480,7 @@
+ 					break;
+ 			}
+ 			v *= sizeof (uint16);
+-			cp = CheckMalloc(tif, dp->tdir_count * sizeof (uint16),
++			cp = CheckMalloc(tif, dp->tdir_count, sizeof (uint16),
+ 			    "to read \"TransferFunction\" tag");
+ 			if (cp != NULL) {
+ 				if (TIFFFetchData(tif, dp, cp)) {
+@@ -573,8 +587,10 @@
+ 		if(EstimateStripByteCounts(tif, dir, dircount) < 0)
+ 		    goto bad;
+ 	}
+-	if (dir)
++	if (dir) {
+ 		_TIFFfree((char *)dir);
++		dir = NULL;
++	}
+ 	if (!TIFFFieldSet(tif, FIELD_MAXSAMPLEVALUE))
+ 		td->td_maxsamplevalue = (uint16)((1L<<td->td_bitspersample)-1);
+ 	/*
+@@ -601,8 +617,29 @@
+ 	tif->tif_curstrip = (tstrip_t) -1;
+ 	tif->tif_col = (uint32) -1;
+ 	tif->tif_curtile = (ttile_t) -1;
+-	tif->tif_tilesize = TIFFTileSize(tif);
++	tif->tif_tilesize = (tsize_t) -1;
++
+ 	tif->tif_scanlinesize = TIFFScanlineSize(tif);
++	if (!tif->tif_scanlinesize) {
++		TIFFError(module, "%s: cannot handle zero scanline size",
++			  tif->tif_name);
++		return (0);
++	}
++
++	if (isTiled(tif)) {
++		tif->tif_tilesize = TIFFTileSize(tif);
++		if (!tif->tif_tilesize) {
++			TIFFError(module, "%s: cannot handle zero tile size",
++				  tif->tif_name);
++			return (0);
++		}
++	} else {
++		if (!TIFFStripSize(tif)) {
++			TIFFError(module, "%s: cannot handle zero strip size",
++				  tif->tif_name);
++			return (0);
++		}
++	}
+ 	return (1);
+ bad:
+ 	if (dir)
+@@ -622,7 +659,7 @@
+ 	if (td->td_stripbytecount)
+ 		_TIFFfree(td->td_stripbytecount);
+ 	td->td_stripbytecount = (uint32*)
+-	    CheckMalloc(tif, td->td_nstrips * sizeof (uint32),
++	    CheckMalloc(tif, td->td_nstrips, sizeof (uint32),
+ 		"for \"StripByteCounts\" array");
+ 	if (td->td_compression != COMPRESSION_NONE) {
+ 		uint32 space = (uint32)(sizeof (TIFFHeader)
+@@ -931,7 +968,7 @@
+ 	uint32* l;
+ 
+ 	l = (uint32*)CheckMalloc(tif,
+-	    dir->tdir_count*TIFFDataWidth((TIFFDataType) dir->tdir_type),
++	    dir->tdir_count, TIFFDataWidth((TIFFDataType) dir->tdir_type),
+ 	    "to fetch array of rationals");
+ 	if (l) {
+ 		if (TIFFFetchData(tif, dir, (char *)l)) {
+@@ -1087,35 +1124,35 @@
+ 		case TIFF_SBYTE:
+ 			/* NB: always expand BYTE values to shorts */
+ 			cp = CheckMalloc(tif,
+-			    dp->tdir_count * sizeof (uint16), mesg);
++			    dp->tdir_count, sizeof (uint16), mesg);
+ 			ok = cp && TIFFFetchByteArray(tif, dp, (uint16*) cp);
+ 			break;
+ 		case TIFF_SHORT:
+ 		case TIFF_SSHORT:
+ 			cp = CheckMalloc(tif,
+-			    dp->tdir_count * sizeof (uint16), mesg);
++			    dp->tdir_count, sizeof (uint16), mesg);
+ 			ok = cp && TIFFFetchShortArray(tif, dp, (uint16*) cp);
+ 			break;
+ 		case TIFF_LONG:
+ 		case TIFF_SLONG:
+ 			cp = CheckMalloc(tif,
+-			    dp->tdir_count * sizeof (uint32), mesg);
++			    dp->tdir_count, sizeof (uint32), mesg);
+ 			ok = cp && TIFFFetchLongArray(tif, dp, (uint32*) cp);
+ 			break;
+ 		case TIFF_RATIONAL:
+ 		case TIFF_SRATIONAL:
+ 			cp = CheckMalloc(tif,
+-			    dp->tdir_count * sizeof (float), mesg);
++			    dp->tdir_count, sizeof (float), mesg);
+ 			ok = cp && TIFFFetchRationalArray(tif, dp, (float*) cp);
+ 			break;
+ 		case TIFF_FLOAT:
+ 			cp = CheckMalloc(tif,
+-			    dp->tdir_count * sizeof (float), mesg);
++			    dp->tdir_count, sizeof (float), mesg);
+ 			ok = cp && TIFFFetchFloatArray(tif, dp, (float*) cp);
+ 			break;
+ 		case TIFF_DOUBLE:
+ 			cp = CheckMalloc(tif,
+-			    dp->tdir_count * sizeof (double), mesg);
++			    dp->tdir_count, sizeof (double), mesg);
+ 			ok = cp && TIFFFetchDoubleArray(tif, dp, (double*) cp);
+ 			break;
+ 		case TIFF_ASCII:
+@@ -1124,7 +1161,7 @@
+ 			 * Some vendors write strings w/o the trailing
+ 			 * NULL byte, so always append one just in case.
+ 			 */
+-			cp = CheckMalloc(tif, dp->tdir_count+1, mesg);
++			cp = CheckMalloc(tif, dp->tdir_count+1, 1, mesg);
+ 			if( (ok = (cp && TIFFFetchString(tif, dp, cp))) != 0 )
+ 				cp[dp->tdir_count] = '\0';	/* XXX */
+ 			break;
+@@ -1226,8 +1263,9 @@
+ 		uint16* v = buf;
+ 
+ 		if (samples > NITEMS(buf))
+-			v = (uint16*) _TIFFmalloc(samples * sizeof (uint16));
+-		if (TIFFFetchShortArray(tif, dir, v)) {
++			v = (uint16*) CheckMalloc(tif, samples, sizeof (uint16),
++						  "to fetch per-sample values");
++		if (v && TIFFFetchShortArray(tif, dir, v)) {
+ 			int i;
+ 			for (i = 1; i < samples; i++)
+ 				if (v[i] != v[0]) {
+@@ -1240,7 +1278,7 @@
+ 			status = 1;
+ 		}
+ 	bad:
+-		if (v != buf)
++		if (v && v != buf)
+ 			_TIFFfree((char*) v);
+ 	}
+ 	return (status);
+@@ -1262,8 +1300,9 @@
+ 		double* v = buf;
+ 
+ 		if (samples > NITEMS(buf))
+-			v = (double*) _TIFFmalloc(samples * sizeof (double));
+-		if (TIFFFetchAnyArray(tif, dir, v)) {
++			v = (double*) CheckMalloc(tif, samples, sizeof (double),
++						  "to fetch per-sample values");
++		if (v && TIFFFetchAnyArray(tif, dir, v)) {
+ 			int i;
+ 			for (i = 1; i < samples; i++)
+ 				if (v[i] != v[0]) {
+@@ -1276,7 +1315,7 @@
+ 			status = 1;
+ 		}
+ 	bad:
+-		if (v != buf)
++		if (v && v != buf)
+ 			_TIFFfree(v);
+ 	}
+ 	return (status);
+@@ -1301,7 +1340,7 @@
+ 	 */
+ 	if (*lpp == NULL &&
+ 	    (*lpp = (uint32 *)CheckMalloc(tif,
+-	      nstrips * sizeof (uint32), "for strip array")) == NULL)
++	      nstrips, sizeof (uint32), "for strip array")) == NULL)
+ 		return (0);
+ 	lp = *lpp;
+         memset( lp, 0, sizeof(uint32) * nstrips );
+@@ -1311,7 +1350,7 @@
+ 		 * Handle uint16->uint32 expansion.
+ 		 */
+ 		uint16* dp = (uint16*) CheckMalloc(tif,
+-		    dir->tdir_count* sizeof (uint16), "to fetch strip tag");
++		    dir->tdir_count, sizeof (uint16), "to fetch strip tag");
+ 		if (dp == NULL)
+ 			return (0);
+ 		if( (status = TIFFFetchShortArray(tif, dir, dp)) != 0 ) {
+@@ -1328,7 +1367,7 @@
+             /* Special case to correct length */
+ 
+             uint32* dp = (uint32*) CheckMalloc(tif,
+-		    dir->tdir_count* sizeof (uint32), "to fetch strip tag");
++		    dir->tdir_count, sizeof (uint32), "to fetch strip tag");
+             if (dp == NULL)
+                 return (0);
+ 
+@@ -1360,8 +1399,12 @@
+ 	uint16* v = buf;
+ 	int status;
+ 
+-	if (dir->tdir_count > NITEMS(buf))
+-		v = (uint16*) _TIFFmalloc(dir->tdir_count * sizeof (uint16));
++	if (dir->tdir_count > NITEMS(buf)) {
++		v = (uint16*) CheckMalloc(tif, dir->tdir_count, sizeof (uint16),
++					  "to fetch extra samples");
++		if (!v)
++			return (0);
++	}
+ 	if (dir->tdir_type == TIFF_BYTE)
+ 		status = TIFFFetchByteArray(tif, dir, v);
+ 	else
+@@ -1390,10 +1433,10 @@
+ 	/*
+ 	 * Handle LONG's for backward compatibility.
+ 	 */
+-	cp = CheckMalloc(tif, dir->tdir_count * sizeof (uint32), mesg);
++	cp = CheckMalloc(tif, dir->tdir_count, sizeof (uint32), mesg);
+ 	if( (ok = (cp && TIFFFetchLongArray(tif, dir, (uint32*) cp))) != 0) {
+ 		float* fp = (float*)
+-		    CheckMalloc(tif, dir->tdir_count * sizeof (float), mesg);
++		    CheckMalloc(tif, dir->tdir_count, sizeof (float), mesg);
+ 		if( (ok = (fp != NULL)) != 0 ) {
+ 			uint32 i;
+ 			for (i = 0; i < dir->tdir_count; i++)
+@@ -1444,9 +1487,9 @@
+ 	if (rowsperstrip >= td->td_rowsperstrip)
+ 		return;
+ 	nstrips = (tstrip_t) TIFFhowmany(bytecount, stripbytes);
+-	newcounts = (uint32*) CheckMalloc(tif, nstrips * sizeof (uint32),
++	newcounts = (uint32*) CheckMalloc(tif, nstrips, sizeof (uint32),
+ 				"for chopped \"StripByteCounts\" array");
+-	newoffsets = (uint32*) CheckMalloc(tif, nstrips * sizeof (uint32),
++	newoffsets = (uint32*) CheckMalloc(tif, nstrips, sizeof (uint32),
+ 				"for chopped \"StripOffsets\" array");
+ 	if (newcounts == NULL || newoffsets == NULL) {
+ 	        /*
+diff -uprk.orig libtiff/tif_dirwrite.c libtiff/tif_dirwrite.c
+--- libtiff/tif_dirwrite.c	2003-12-22 11:22:15 +0300
++++ libtiff/tif_dirwrite.c	2004-10-03 00:20:41 +0400
+@@ -692,8 +692,14 @@ TIFFWritePerSampleShorts(TIFF* tif, ttag
+ 	uint16* w = buf;
+ 	int i, status, samples = tif->tif_dir.td_samplesperpixel;
+ 
+-	if (samples > NITEMS(buf))
++	if (samples > NITEMS(buf)) {
+ 		w = (uint16*) _TIFFmalloc(samples * sizeof (uint16));
++		if (w == NULL) {
++			TIFFError(tif->tif_name,
++			    "No space to write per-sample shorts");
++			return (0);
++		}
++	}
+ 	TIFFGetField(tif, tag, &v);
+ 	for (i = 0; i < samples; i++)
+ 		w[i] = v;
+@@ -717,8 +723,14 @@ TIFFWritePerSampleAnys(TIFF* tif,
+ 	int i, status;
+ 	int samples = (int) tif->tif_dir.td_samplesperpixel;
+ 
+-	if (samples > NITEMS(buf))
++	if (samples > NITEMS(buf)) {
+ 		w = (double*) _TIFFmalloc(samples * sizeof (double));
++		if (w == NULL) {
++			TIFFError(tif->tif_name,
++			    "No space to write per-sample values");
++			return (0);
++		}
++	}
+ 	TIFFGetField(tif, tag, &v);
+ 	for (i = 0; i < samples; i++)
+ 		w[i] = v;
+@@ -840,6 +852,11 @@ TIFFWriteRationalArray(TIFF* tif,
+ 	dir->tdir_type = (short) type;
+ 	dir->tdir_count = n;
+ 	t = (uint32*) _TIFFmalloc(2*n * sizeof (uint32));
++	if (t == NULL) {
++		TIFFError(tif->tif_name,
++		    "No space to write RATIONAL array");
++		return (0);
++	}
+ 	for (i = 0; i < n; i++) {
+ 		float fv = v[i];
+ 		int sign = 1;
+@@ -910,8 +927,14 @@ TIFFWriteAnyArray(TIFF* tif,
+ 	char* w = buf;
+ 	int i, status = 0;
+ 
+-	if (n * TIFFDataWidth(type) > sizeof buf)
++	if (n * TIFFDataWidth(type) > sizeof buf) {
+ 		w = (char*) _TIFFmalloc(n * TIFFDataWidth(type));
++		if (w == NULL) {
++			TIFFError(tif->tif_name,
++			    "No space to write array");
++			return (0);
++		}
++	}
+ 	switch (type) {
+ 	case TIFF_BYTE:
+ 		{ uint8* bp = (uint8*) w;
+diff -uprk.orig libtiff/tif_extension.c libtiff/tif_extension.c
+--- libtiff/tif_extension.c	2003-12-22 11:22:15 +0300
++++ libtiff/tif_extension.c	2004-10-03 00:20:41 +0400
+@@ -32,6 +32,7 @@
+  */
+ 
+ #include "tiffiop.h"
++#include <assert.h>
+ 
+ int TIFFGetTagListCount( TIFF *tif )
+ 
+@@ -100,8 +101,10 @@ void TIFFSetClientInfo( TIFF *tif, void 
+     */
+ 
+     link = (TIFFClientInfoLink *) _TIFFmalloc(sizeof(TIFFClientInfoLink));
++    assert (link != NULL);
+     link->next = tif->tif_clientinfo;
+     link->name = (char *) _TIFFmalloc(strlen(name)+1);
++    assert (link->name != NULL);
+     strcpy(link->name, name);
+     link->data = data;
+ 
+diff -uprk.orig libtiff/tif_fax3.c libtiff/tif_fax3.c
+--- libtiff/tif_fax3.c	2003-11-06 11:22:13 +0300
++++ libtiff/tif_fax3.c	2004-10-03 00:20:41 +0400
+@@ -437,6 +437,21 @@ _TIFFFax3fillruns(u_char* buf, uint32* r
+ #undef	ZERO
+ #undef	FILL
+ 
++static char *
++CheckMalloc(TIFF* tif, size_t nmemb, size_t elem_size, const char* what)
++{
++	char	*cp = NULL;
++	tsize_t	bytes = nmemb * elem_size;
++
++	if (elem_size && bytes / elem_size == nmemb)
++		cp = (char*) _TIFFmalloc(bytes);
++
++	if (cp == NULL)
++		TIFFError(tif->tif_name, "No space %s", what);
++	
++	return (cp);
++}
++
+ /*
+  * Setup G3/G4-related compression/decompression state
+  * before data is processed.  This routine is called once
+@@ -481,13 +496,10 @@ Fax3SetupState(TIFF* tif)
+ 
+ 	nruns = needsRefLine ? 2*TIFFroundup(rowpixels,32) : rowpixels;
+ 
+-	dsp->runs = (uint32*) _TIFFmalloc((2*nruns+3)*sizeof (uint32));
+-	if (dsp->runs == NULL) {
+-		TIFFError("Fax3SetupState",
+-		    "%s: No space for Group 3/4 run arrays",
+-		    tif->tif_name);
++	dsp->runs = (uint32*) CheckMalloc(tif, 2*nruns+3, sizeof (uint32),
++					  "for Group 3/4 run arrays");
++	if (dsp->runs == NULL)
+ 		return (0);
+-	}
+ 	dsp->curruns = dsp->runs;
+ 	if (needsRefLine)
+ 		dsp->refruns = dsp->runs + (nruns>>1);
+diff -uprk.orig libtiff/tiffiop.h libtiff/tiffiop.h
+--- libtiff/tiffiop.h	2003-12-26 14:56:25 +0300
++++ libtiff/tiffiop.h	2004-10-03 00:20:41 +0400
+@@ -198,8 +198,9 @@ struct tiff {
+ #endif
+ 
+ /* NB: the uint32 casts are to silence certain ANSI-C compilers */
+-#define	TIFFhowmany(x, y) ((((uint32)(x))+(((uint32)(y))-1))/((uint32)(y)))
+-#define	TIFFroundup(x, y) (TIFFhowmany(x,y)*((uint32)(y)))
++#define TIFFhowmany(x, y) ((((uint32)(x))+(((uint32)(y))-1))/((uint32)(y)))
++#define TIFFhowmany8(x) (((x)&0x07)?((uint32)(x)>>3)+1:(uint32)(x)>>3)
++#define	TIFFroundup(x, y) (TIFFhowmany(x,y)*(y))
+ 
+ #define TIFFmax(A,B) ((A)>(B)?(A):(B))
+ #define TIFFmin(A,B) ((A)<(B)?(A):(B))
+diff -uprk.orig libtiff/tif_getimage.c libtiff/tif_getimage.c
+--- libtiff/tif_getimage.c	2003-12-22 11:22:15 +0300
++++ libtiff/tif_getimage.c	2004-10-03 00:20:41 +0400
+@@ -565,6 +565,7 @@ gtTileContig(TIFFRGBAImage* img, uint32*
+ 	TIFFError(TIFFFileName(tif), "No space for tile buffer");
+ 	return (0);
+     }
++    _TIFFmemset(buf, 0, TIFFTileSize(tif));
+     TIFFGetField(tif, TIFFTAG_TILEWIDTH, &tw);
+     TIFFGetField(tif, TIFFTAG_TILELENGTH, &th);
+ 
+@@ -664,6 +665,7 @@ gtTileSeparate(TIFFRGBAImage* img, uint3
+ 	TIFFError(TIFFFileName(tif), "No space for tile buffer");
+ 	return (0);
+     }
++    _TIFFmemset(buf, 0, 4*tilesize);
+     r = buf;
+     g = r + tilesize;
+     b = g + tilesize;
+@@ -727,9 +729,7 @@ gtTileSeparate(TIFFRGBAImage* img, uint3
+                 (*put)(img, raster+y*w+col, col, y,
+                        npix, nrow, fromskew, toskew + fromskew, 
+                        r + pos, g + pos, b + pos, a + pos);
+-            } 
+-            else 
+-            {
++            } else {
+                 (*put)(img, raster+y*w+col, col, y,
+                        tw, nrow, 0, toskew, r + pos, g + pos, b + pos, a + pos);
+             }
+@@ -783,13 +783,13 @@ gtStripContig(TIFFRGBAImage* img, uint32
+ 	TIFFError(TIFFFileName(tif), "No space for strip buffer");
+ 	return (0);
+     }
++    _TIFFmemset(buf, 0, TIFFStripSize(tif));
+ 
+     flip = setorientation(img);
+     if (flip & FLIP_VERTICALLY) {
+ 	    y = h - 1;
+ 	    toskew = -(int32)(w + w);
+-    }
+-    else {
++    } else {
+ 	    y = 0;
+ 	    toskew = -(int32)(w - w);
+     }
+@@ -865,6 +865,7 @@ gtStripSeparate(TIFFRGBAImage* img, uint
+ 	TIFFError(TIFFFileName(tif), "No space for tile buffer");
+ 	return (0);
+     }
++    _TIFFmemset(buf, 0, 4*stripsize);
+     g = r + stripsize;
+     b = g + stripsize;
+     a = b + stripsize;
+diff -uprk.orig libtiff/tif_luv.c libtiff/tif_luv.c
+--- libtiff/tif_luv.c	2003-11-27 18:08:10 +0300
++++ libtiff/tif_luv.c	2004-10-03 00:20:41 +0400
+@@ -1161,6 +1161,17 @@ LogL16GuessDataFmt(TIFFDirectory *td)
+ 	return (SGILOGDATAFMT_UNKNOWN);
+ }
+ 
++static uint32
++multiply(size_t m1, size_t m2)
++{
++	uint32	bytes = m1 * m2;
++
++	if (m1 && bytes / m1 != m2)
++		bytes = 0;
++
++	return bytes;
++}
++
+ static int
+ LogL16InitState(TIFF* tif)
+ {
+@@ -1189,9 +1200,9 @@ LogL16InitState(TIFF* tif)
+ 		    "No support for converting user data format to LogL");
+ 		return (0);
+ 	}
+-	sp->tbuflen = td->td_imagewidth * td->td_rowsperstrip;
+-	sp->tbuf = (tidata_t*) _TIFFmalloc(sp->tbuflen * sizeof (int16));
+-	if (sp->tbuf == NULL) {
++	sp->tbuflen = multiply(td->td_imagewidth, td->td_rowsperstrip);
++	if (multiply(sp->tbuflen, sizeof (int16)) == 0 ||
++	    (sp->tbuf = (tidata_t*) _TIFFmalloc(sp->tbuflen * sizeof (int16))) == NULL) {
+ 		TIFFError(module, "%s: No space for SGILog translation buffer",
+ 		    tif->tif_name);
+ 		return (0);
+@@ -1287,9 +1298,9 @@ LogLuvInitState(TIFF* tif)
+ 		    "No support for converting user data format to LogLuv");
+ 		return (0);
+ 	}
+-	sp->tbuflen = td->td_imagewidth * td->td_rowsperstrip;
+-	sp->tbuf = (tidata_t*) _TIFFmalloc(sp->tbuflen * sizeof (uint32));
+-	if (sp->tbuf == NULL) {
++	sp->tbuflen = multiply(td->td_imagewidth, td->td_rowsperstrip);
++	if (multiply(sp->tbuflen, sizeof (uint32)) == 0 ||
++	    (sp->tbuf = (tidata_t*) _TIFFmalloc(sp->tbuflen * sizeof (uint32))) == NULL) {
+ 		TIFFError(module, "%s: No space for SGILog translation buffer",
+ 		    tif->tif_name);
+ 		return (0);
+diff -uprk.orig libtiff/tif_pixarlog.c libtiff/tif_pixarlog.c
+--- libtiff/tif_pixarlog.c	2003-07-08 10:50:09 +0400
++++ libtiff/tif_pixarlog.c	2004-10-03 00:20:41 +0400
+@@ -630,11 +630,23 @@ PixarLogGuessDataFmt(TIFFDirectory *td)
+ 	return guess;
+ }
+ 
++static uint32
++multiply(size_t m1, size_t m2)
++{
++	uint32	bytes = m1 * m2;
++
++	if (m1 && bytes / m1 != m2)
++		bytes = 0;
++
++	return bytes;
++}
++
+ static int
+ PixarLogSetupDecode(TIFF* tif)
+ {
+ 	TIFFDirectory *td = &tif->tif_dir;
+ 	PixarLogState* sp = DecoderState(tif);
++	tsize_t tbuf_size;
+ 	static const char module[] = "PixarLogSetupDecode";
+ 
+ 	assert(sp != NULL);
+@@ -647,8 +659,13 @@ PixarLogSetupDecode(TIFF* tif)
+ 
+ 	sp->stride = (td->td_planarconfig == PLANARCONFIG_CONTIG ?
+ 	    td->td_samplesperpixel : 1);
+-	sp->tbuf = (uint16 *) _TIFFmalloc(sp->stride * 
+-		td->td_imagewidth * td->td_rowsperstrip * sizeof(uint16));
++	tbuf_size = multiply(multiply(multiply(sp->stride, td->td_imagewidth),
++				      td->td_rowsperstrip), sizeof(uint16));
++	if (tbuf_size == 0)
++		return (0);
++	sp->tbuf = (uint16 *) _TIFFmalloc(tbuf_size);
++	if (sp->tbuf == NULL)
++		return (0);
+ 	if (sp->user_datafmt == PIXARLOGDATAFMT_UNKNOWN)
+ 		sp->user_datafmt = PixarLogGuessDataFmt(td);
+ 	if (sp->user_datafmt == PIXARLOGDATAFMT_UNKNOWN) {
+@@ -798,6 +815,7 @@ PixarLogSetupEncode(TIFF* tif)
+ {
+ 	TIFFDirectory *td = &tif->tif_dir;
+ 	PixarLogState* sp = EncoderState(tif);
++	tsize_t tbuf_size;
+ 	static const char module[] = "PixarLogSetupEncode";
+ 
+ 	assert(sp != NULL);
+@@ -806,8 +824,13 @@ PixarLogSetupEncode(TIFF* tif)
+ 
+ 	sp->stride = (td->td_planarconfig == PLANARCONFIG_CONTIG ?
+ 	    td->td_samplesperpixel : 1);
+-	sp->tbuf = (uint16 *) _TIFFmalloc(sp->stride * 
+-		td->td_imagewidth * td->td_rowsperstrip * sizeof(uint16));
++	tbuf_size = multiply(multiply(multiply(sp->stride, td->td_imagewidth),
++				      td->td_rowsperstrip), sizeof(uint16));
++	if (tbuf_size == 0)
++		return (0);
++	sp->tbuf = (uint16 *) _TIFFmalloc(tbuf_size);
++	if (sp->tbuf == NULL)
++		return (0);
+ 	if (sp->user_datafmt == PIXARLOGDATAFMT_UNKNOWN)
+ 		sp->user_datafmt = PixarLogGuessDataFmt(td);
+ 	if (sp->user_datafmt == PIXARLOGDATAFMT_UNKNOWN) {
+diff -uprk.orig libtiff/tif_strip.c libtiff/tif_strip.c
+--- libtiff/tif_strip.c	2003-11-11 18:43:10 +0300
++++ libtiff/tif_strip.c	2004-10-03 00:20:41 +0400
+@@ -31,6 +31,32 @@
+  */
+ #include "tiffiop.h"
+ 
++static uint32
++summarize(TIFF* tif, size_t summand1, size_t summand2, const char* where)
++{
++	uint32	bytes = summand1 + summand2;
++
++	if (bytes - summand1 != summand2) {
++		TIFFError(tif->tif_name, "Integer overflow in %s", where);
++		bytes = 0;
++	}
++
++	return (bytes);
++}
++
++static uint32
++multiply(TIFF* tif, size_t nmemb, size_t elem_size, const char* where)
++{
++	uint32	bytes = nmemb * elem_size;
++
++	if (elem_size && bytes / elem_size != nmemb) {
++		TIFFError(tif->tif_name, "Integer overflow in %s", where);
++		bytes = 0;
++	}
++
++	return (bytes);
++}
++
+ /*
+  * Compute which strip a (row,sample) value is in.
+  */
+@@ -66,7 +92,8 @@ TIFFNumberOfStrips(TIFF* tif)
+ 	     (td->td_imagelength != 0 ? 1 : 0) :
+ 	     TIFFhowmany(td->td_imagelength, td->td_rowsperstrip));
+ 	if (td->td_planarconfig == PLANARCONFIG_SEPARATE)
+-		nstrips *= td->td_samplesperpixel;
++		nstrips = multiply(tif, nstrips, td->td_samplesperpixel,
++				   "TIFFNumberOfStrips");
+ 	return (nstrips);
+ }
+ 
+@@ -100,15 +127,20 @@ TIFFVStripSize(TIFF* tif, uint32 nrows)
+                               ycbcrsubsampling + 1 );
+ 
+ 		w = TIFFroundup(td->td_imagewidth, ycbcrsubsampling[0]);
+-		scanline = TIFFhowmany(w*td->td_bitspersample, 8);
++		scanline = TIFFhowmany8(multiply(tif, w, td->td_bitspersample,
++						 "TIFFVStripSize"));
+ 		samplingarea = ycbcrsubsampling[0]*ycbcrsubsampling[1];
+ 		nrows = TIFFroundup(nrows, ycbcrsubsampling[1]);
+ 		/* NB: don't need TIFFhowmany here 'cuz everything is rounded */
++		scanline = multiply(tif, nrows, scanline, "TIFFVStripSize");
+ 		return ((tsize_t)
+-		    (nrows*scanline + 2*(nrows*scanline / samplingarea)));
++		    summarize(tif, scanline,
++			      multiply(tif, 2, scanline / samplingarea,
++				       "TIFFVStripSize"), "TIFFVStripSize"));
+ 	} else
+ #endif
+-		return ((tsize_t)(nrows * TIFFScanlineSize(tif)));
++		return ((tsize_t) multiply(tif, nrows, TIFFScanlineSize(tif),
++					   "TIFFVStripSize"));
+ }
+ 
+ 
+@@ -189,10 +221,12 @@ TIFFScanlineSize(TIFF* tif)
+ 	TIFFDirectory *td = &tif->tif_dir;
+ 	tsize_t scanline;
+ 	
+-	scanline = td->td_bitspersample * td->td_imagewidth;
++	scanline = multiply (tif, td->td_bitspersample, td->td_imagewidth,
++			     "TIFFScanlineSize");
+ 	if (td->td_planarconfig == PLANARCONFIG_CONTIG)
+-		scanline *= td->td_samplesperpixel;
+-	return ((tsize_t) TIFFhowmany(scanline, 8));
++		scanline = multiply (tif, scanline, td->td_samplesperpixel,
++				     "TIFFScanlineSize");
++	return ((tsize_t) TIFFhowmany8(scanline));
+ }
+ 
+ /*
+@@ -207,11 +241,14 @@ TIFFRasterScanlineSize(TIFF* tif)
+ 	TIFFDirectory *td = &tif->tif_dir;
+ 	tsize_t scanline;
+ 	
+-	scanline = td->td_bitspersample * td->td_imagewidth;
++	scanline = multiply (tif, td->td_bitspersample, td->td_imagewidth,
++			     "TIFFRasterScanlineSize");
+ 	if (td->td_planarconfig == PLANARCONFIG_CONTIG) {
+-		scanline *= td->td_samplesperpixel;
+-		return ((tsize_t) TIFFhowmany(scanline, 8));
++		scanline = multiply (tif, scanline, td->td_samplesperpixel,
++				     "TIFFRasterScanlineSize");
++		return ((tsize_t) TIFFhowmany8(scanline));
+ 	} else
+-		return ((tsize_t)
+-		    TIFFhowmany(scanline, 8)*td->td_samplesperpixel);
++		return ((tsize_t) multiply (tif, TIFFhowmany8(scanline),
++					    td->td_samplesperpixel,
++					    "TIFFRasterScanlineSize"));
+ }
+diff -uprk.orig libtiff/tif_tile.c libtiff/tif_tile.c
+--- libtiff/tif_tile.c	2003-11-11 18:43:10 +0300
++++ libtiff/tif_tile.c	2004-10-03 00:20:41 +0400
+@@ -31,6 +31,32 @@
+  */
+ #include "tiffiop.h"
+ 
++static uint32
++summarize(TIFF* tif, size_t summand1, size_t summand2, const char* where)
++{
++	uint32	bytes = summand1 + summand2;
++
++	if (bytes - summand1 != summand2) {
++		TIFFError(tif->tif_name, "Integer overflow in %s", where);
++		bytes = 0;
++	}
++
++	return (bytes);
++}
++
++static uint32
++multiply(TIFF* tif, size_t nmemb, size_t elem_size, const char* where)
++{
++	uint32	bytes = nmemb * elem_size;
++
++	if (elem_size && bytes / elem_size != nmemb) {
++		TIFFError(tif->tif_name, "Integer overflow in %s", where);
++		bytes = 0;
++	}
++
++	return (bytes);
++}
++
+ /*
+  * Compute which tile an (x,y,z,s) value is in.
+  */
+@@ -119,11 +145,13 @@ TIFFNumberOfTiles(TIFF* tif)
+ 	if (dz == (uint32) -1)
+ 		dz = td->td_imagedepth;
+ 	ntiles = (dx == 0 || dy == 0 || dz == 0) ? 0 :
+-	    (TIFFhowmany(td->td_imagewidth, dx) *
+-	     TIFFhowmany(td->td_imagelength, dy) *
+-	     TIFFhowmany(td->td_imagedepth, dz));
++	    multiply(tif, multiply(tif, TIFFhowmany(td->td_imagewidth, dx),
++				   TIFFhowmany(td->td_imagelength, dy),
++				   "TIFFNumberOfTiles"),
++		     TIFFhowmany(td->td_imagedepth, dz), "TIFFNumberOfTiles");
+ 	if (td->td_planarconfig == PLANARCONFIG_SEPARATE)
+-		ntiles *= td->td_samplesperpixel;
++		ntiles = multiply(tif, ntiles, td->td_samplesperpixel,
++				  "TIFFNumberOfTiles");
+ 	return (ntiles);
+ }
+ 
+@@ -138,10 +166,12 @@ TIFFTileRowSize(TIFF* tif)
+ 	
+ 	if (td->td_tilelength == 0 || td->td_tilewidth == 0)
+ 		return ((tsize_t) 0);
+-	rowsize = td->td_bitspersample * td->td_tilewidth;
++	rowsize = multiply(tif, td->td_bitspersample, td->td_tilewidth,
++			   "TIFFTileRowSize");
+ 	if (td->td_planarconfig == PLANARCONFIG_CONTIG)
+-		rowsize *= td->td_samplesperpixel;
+-	return ((tsize_t) TIFFhowmany(rowsize, 8));
++		rowsize = multiply(tif, rowsize, td->td_samplesperpixel,
++				   "TIFFTileRowSize");
++	return ((tsize_t) TIFFhowmany8(rowsize));
+ }
+ 
+ /*
+@@ -170,16 +200,24 @@ TIFFVTileSize(TIFF* tif, uint32 nrows)
+ 		 */
+ 		tsize_t w =
+ 		    TIFFroundup(td->td_tilewidth, td->td_ycbcrsubsampling[0]);
+-		tsize_t rowsize = TIFFhowmany(w*td->td_bitspersample, 8);
++		tsize_t rowsize =
++		    TIFFhowmany8(multiply(tif, w, td->td_bitspersample,
++					  "TIFFVTileSize"));
+ 		tsize_t samplingarea =
+ 		    td->td_ycbcrsubsampling[0]*td->td_ycbcrsubsampling[1];
+ 		nrows = TIFFroundup(nrows, td->td_ycbcrsubsampling[1]);
+ 		/* NB: don't need TIFFhowmany here 'cuz everything is rounded */
+-		tilesize = nrows*rowsize + 2*(nrows*rowsize / samplingarea);
++		tilesize = multiply(tif, nrows, rowsize, "TIFFVTileSize");
++		tilesize = summarize(tif, tilesize,
++				     multiply(tif, 2, tilesize / samplingarea,
++					      "TIFFVTileSize"),
++				     "TIFFVTileSize");
+ 	} else
+ #endif
+-		tilesize = nrows * TIFFTileRowSize(tif);
+-	return ((tsize_t)(tilesize * td->td_tiledepth));
++		tilesize = multiply(tif, nrows, TIFFTileRowSize(tif),
++				    "TIFFVTileSize");
++	return ((tsize_t)
++	    multiply(tif, tilesize, td->td_tiledepth, "TIFFVTileSize"));
+ }
+ 
+ /*
+diff -uprk.orig libtiff/tif_write.c libtiff/tif_write.c
+--- libtiff/tif_write.c	2003-08-05 12:49:13 +0400
++++ libtiff/tif_write.c	2004-10-03 00:20:41 +0400
+@@ -597,21 +597,30 @@ TIFFWriteBufferSetup(TIFF* tif, tdata_t 
+ static int
+ TIFFGrowStrips(TIFF* tif, int delta, const char* module)
+ {
+-	TIFFDirectory *td = &tif->tif_dir;
++	TIFFDirectory	*td = &tif->tif_dir;
++	uint32		*new_stripoffset, *new_stripbytecount;
+ 
+ 	assert(td->td_planarconfig == PLANARCONFIG_CONTIG);
+-	td->td_stripoffset = (uint32*)_TIFFrealloc(td->td_stripoffset,
+-	    (td->td_nstrips + delta) * sizeof (uint32));
+-	td->td_stripbytecount = (uint32*)_TIFFrealloc(td->td_stripbytecount,
+-	    (td->td_nstrips + delta) * sizeof (uint32));
+-	if (td->td_stripoffset == NULL || td->td_stripbytecount == NULL) {
++	new_stripoffset = (uint32*)_TIFFrealloc(td->td_stripoffset,
++		(td->td_nstrips + delta) * sizeof (uint32));
++	new_stripbytecount = (uint32*)_TIFFrealloc(td->td_stripbytecount,
++		(td->td_nstrips + delta) * sizeof (uint32));
++	if (new_stripoffset == NULL || new_stripbytecount == NULL) {
++		if (new_stripoffset)
++			_TIFFfree(new_stripoffset);
++		if (new_stripbytecount)
++			_TIFFfree(new_stripbytecount);
+ 		td->td_nstrips = 0;
+ 		TIFFError(module, "%s: No space to expand strip arrays",
+-		    tif->tif_name);
++			  tif->tif_name);
+ 		return (0);
+ 	}
+-	_TIFFmemset(td->td_stripoffset+td->td_nstrips, 0, delta*sizeof (uint32));
+-	_TIFFmemset(td->td_stripbytecount+td->td_nstrips, 0, delta*sizeof (uint32));
++	td->td_stripoffset = new_stripoffset;
++	td->td_stripbytecount = new_stripbytecount;
++	_TIFFmemset(td->td_stripoffset + td->td_nstrips,
++		    0, delta*sizeof (uint32));
++	_TIFFmemset(td->td_stripbytecount + td->td_nstrips,
++		    0, delta*sizeof (uint32));
+ 	td->td_nstrips += delta;
+ 	return (1);
+ }
+
+--xHFwDpU9dbj6ez1V--
