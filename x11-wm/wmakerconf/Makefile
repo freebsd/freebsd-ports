@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	wmakerconf-2.4
+DISTNAME=	wmakerconf-2.5
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://ulli.linuxbox.com/wmakerconf/
 
