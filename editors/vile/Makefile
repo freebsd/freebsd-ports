@@ -3,7 +3,7 @@
 # Date created:         Fri Jun 21, 1996
 # Whom:                 pgf
 #
-# $Id: Makefile,v 1.6 1996/06/25 03:44:52 gpalmer Exp $
+# $Id: Makefile,v 1.7 1996/10/01 02:33:39 gpalmer Exp $
 #
 
 DISTNAME=       vile-6.1
@@ -14,6 +14,8 @@ MAKEFILE=	makefile
 GNU_CONFIGURE=	yes
 
 post-install:
+.if !defined(NOMANCOMPRESS)
 	gzip -9nf ${PREFIX}/man/man1/vile.1
+.endif
 
 .include <bsd.port.mk>
