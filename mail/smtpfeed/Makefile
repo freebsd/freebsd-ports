@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smtpfeed
-PORTVERSION=	1.05
+PORTVERSION=	1.13
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.kyoto.wide.ad.jp/pub/mail/smtpfeed/ \
 		ftp://ftp.kyoto.wide.ad.jp/pub/mail/sendmail/ \
