@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	toasty@dragondata.com
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
 BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
 WRKSRC=			${WRKDIR}/elm${PORTVERSION}

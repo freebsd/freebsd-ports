@@ -13,7 +13,7 @@ EXTRACT_SUFX=	-src.tar.gz
 MAINTAINER=	midom@dammit.lt
 
 LIB_DEPENDS=	tds.0:${PORTSDIR}/databases/freetds \
-		intl.1:${PORTSDIR}/devel/gettext
+		intl.1:${PORTSDIR}/devel/gettext-old
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash1
 
 GNU_CONFIGURE=	yes

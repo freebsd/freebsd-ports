@@ -16,8 +16,8 @@ PKGNAMESUFFIX=	-nls
 
 MAINTAINER=	one@netlab.is.tsukuba.ac.jp
 
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
 RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm
 
 USE_IMAKE=	yes

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	mad
 
 MAINTAINER=	jason@mastaler.com
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
 
 WANT_ESOUND=	yes
 

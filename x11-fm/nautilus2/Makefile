@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	stable/sources/nautilus
 MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2 \
-		msgfmt-new:${PORTSDIR}/devel/gettext-devel
+		msgfmt-new:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	medusa.0:${PORTSDIR}/sysutils/medusa \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		eel.0:${PORTSDIR}/x11-toolkits/eel

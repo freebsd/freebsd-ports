@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.Informatik.Uni-Oldenburg.DE/~bigboss/kappdock/
 MAINTAINER=	jeremy@external.org
 
 LIB_DEPENDS=	kdeui.4:${PORTSDIR}/x11/kdelibs2 \
-		intl.1:${PORTSDIR}/devel/gettext
+		intl.1:${PORTSDIR}/devel/gettext-old
 
 INSTALLS_SHLIB=	yes
 USE_XLIB=	yes

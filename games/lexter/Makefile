@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	games/arcade
 
 MAINTAINER=	markp@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include' \

@@ -20,7 +20,7 @@ MAINTAINER=	voland@catpipe.net
 
 WRKSRC=		${WRKDIR}/afbackup-3.3.5
 PLIST=		${WRKSRC}/pkg-plist
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext-old
 
 .if ! defined(NO_DES)
 USE_OPENSSL=	yes

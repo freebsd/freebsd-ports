@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	stable/sources/bonobo
 
 MAINTAINER=	gnome@FreeBSD.org
 
-BUILD_DEPENDS=	msgfmt-new:${PORTSDIR}/devel/gettext-devel
+BUILD_DEPENDS=	msgfmt-new:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	gnomeprint.16:${PORTSDIR}/print/gnomeprint
 
 USE_X_PREFIX=	yes

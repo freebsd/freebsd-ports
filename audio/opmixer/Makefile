@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	optronic
 MAINTAINER=	trevor@FreeBSD.org
 
 LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk-- \
-		intl.1:${PORTSDIR}/devel/gettext
+		intl.1:${PORTSDIR}/devel/gettext-old
 
 DOCDIR=		share/doc/${PORTNAME}
 USE_BZIP2=	yes

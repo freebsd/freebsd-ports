@@ -14,7 +14,7 @@ MASTER_SITES=	http://home.pages.at/kingleo/development/
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	LeoArg.2:${PORTSDIR}/devel/leoarg \
-		intl.1:${PORTSDIR}/devel/gettext
+		intl.1:${PORTSDIR}/devel/gettext-old
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

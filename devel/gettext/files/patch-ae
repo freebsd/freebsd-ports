@@ -1,6 +1,9 @@
---- configure.orig	Fri May  1 01:48:25 1998
-+++ configure	Tue Jan  1 07:05:49 2002
-@@ -837,52 +837,52 @@
+
+$FreeBSD$
+
+--- configure.orig	Sat Sep 15 03:47:29 2001
++++ configure	Mon Nov 26 13:56:11 2001
+@@ -1220,13 +1220,13 @@
  # Run test in a subshell; some versions of sh will print an error if
  # an executable is not found, even if stderr is redirected.
  # Redirect stdin to placate older versions of autoconf.  Sigh.
@@ -18,25 +21,8 @@
 +#fi
  
  echo $ac_n "checking for working autoconf""... $ac_c" 1>&6
- echo "configure:850: checking for working autoconf" >&5
- # Run test in a subshell; some versions of sh will print an error if
- # an executable is not found, even if stderr is redirected.
- # Redirect stdin to placate older versions of autoconf.  Sigh.
--if (autoconf --version) < /dev/null > /dev/null 2>&1; then
--   AUTOCONF=autoconf
--   echo "$ac_t""found" 1>&6
--else
-+#if (autoconf --version) < /dev/null > /dev/null 2>&1; then
-+#   AUTOCONF=autoconf
-+#   echo "$ac_t""found" 1>&6
-+#else
-    AUTOCONF="$missing_dir/missing autoconf"
-    echo "$ac_t""missing" 1>&6
--fi
-+#fi
- 
- echo $ac_n "checking for working automake""... $ac_c" 1>&6
- echo "configure:863: checking for working automake" >&5
+ echo "configure:1233: checking for working autoconf" >&5
+@@ -1246,13 +1246,13 @@
  # Run test in a subshell; some versions of sh will print an error if
  # an executable is not found, even if stderr is redirected.
  # Redirect stdin to placate older versions of autoconf.  Sigh.
@@ -54,35 +40,8 @@
 +#fi
  
  echo $ac_n "checking for working autoheader""... $ac_c" 1>&6
- echo "configure:876: checking for working autoheader" >&5
- # Run test in a subshell; some versions of sh will print an error if
- # an executable is not found, even if stderr is redirected.
- # Redirect stdin to placate older versions of autoconf.  Sigh.
--if (autoheader --version) < /dev/null > /dev/null 2>&1; then
--   AUTOHEADER=autoheader
--   echo "$ac_t""found" 1>&6
--else
-+#if (autoheader --version) < /dev/null > /dev/null 2>&1; then
-+#   AUTOHEADER=autoheader
-+#   echo "$ac_t""found" 1>&6
-+#else
-    AUTOHEADER="$missing_dir/missing autoheader"
-    echo "$ac_t""missing" 1>&6
--fi
-+#fi
- 
- echo $ac_n "checking for working makeinfo""... $ac_c" 1>&6
- echo "configure:889: checking for working makeinfo" >&5
-@@ -3958,7 +3958,7 @@
-    fi
-    
- 
--      l=
-+      l=l
-    
- 
-          test -d po || mkdir po
-@@ -4004,7 +4004,7 @@
+ echo "configure:1259: checking for working autoheader" >&5
+@@ -8375,7 +8375,7 @@
    ;;
  esac
  fi
@@ -91,3 +50,18 @@
  if test -n "$EMACS"; then
    echo "$ac_t""$EMACS" 1>&6
  else
+@@ -8677,10 +8677,10 @@
+ s%@INSTALL_DATA@%$INSTALL_DATA%g
+ s%@PACKAGE@%$PACKAGE%g
+ s%@VERSION@%$VERSION%g
+-s%@ACLOCAL@%$ACLOCAL%g
+-s%@AUTOCONF@%$AUTOCONF%g
+-s%@AUTOMAKE@%$AUTOMAKE%g
+-s%@AUTOHEADER@%$AUTOHEADER%g
++s%@ACLOCAL@%/usr/bin/true%g
++s%@AUTOCONF@%/usr/bin/true%g
++s%@AUTOMAKE@%/usr/bin/true%g
++s%@AUTOHEADER@%/usr/bin/true%g
+ s%@MAKEINFO@%$MAKEINFO%g
+ s%@SET_MAKE@%$SET_MAKE%g
+ s%@CC@%$CC%g

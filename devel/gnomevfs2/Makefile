@@ -15,7 +15,7 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-BUILD_DEPENDS=	msgfmt-new:${PORTSDIR}/devel/gettext-devel \
+BUILD_DEPENDS=	msgfmt-new:${PORTSDIR}/devel/gettext \
 		${X11BASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc:${PORTSDIR}/misc/gnomemimedata
 LIB_DEPENDS=	gconf-2.5:${PORTSDIR}/devel/gconf2 \
 		bonobo-2.0:${PORTSDIR}/devel/libbonobo

@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	apps/editors/X/cooledit
 
 MAINTAINER=	brett@peloton.runet.edu
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old \
 		vga.1:${PORTSDIR}/graphics/svgalib
 
 USE_LIBTOOL=	yes

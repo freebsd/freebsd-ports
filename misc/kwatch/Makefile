@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	unstable/apps/utils
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext-old
 
 USE_KDELIBS_VER=	2
 GNU_CONFIGURE=	yes

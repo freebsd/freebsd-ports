@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-0.2.7b-BETA
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

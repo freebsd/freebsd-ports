@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ijliao@FreeBSD.org
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
-		intl:${PORTSDIR}/devel/gettext \
+		intl:${PORTSDIR}/devel/gettext-old \
 		guile:${PORTSDIR}/lang/guile
 
 USE_X_PREFIX=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.geocities.com/gfslicer/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext-old
 
 USE_X_PREFIX=	yes
 USE_GTK=	yes

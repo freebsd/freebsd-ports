@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.geocities.com/bilibao/
 
 MAINTAINER=	kevlo@FreeBSD.org
 
-BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext-old
 
 USE_KDELIBS_VER=2
 GNU_CONFIGURE=	yes

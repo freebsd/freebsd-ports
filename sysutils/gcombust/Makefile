@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.abo.fi/~jmunsin/gcombust/
 
 MAINTAINER=	mcdouga9@msu.edu
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
 RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
 		mkisofs:${PORTSDIR}/sysutils/mkisofs \
 		cdlabelgen:${PORTSDIR}/print/cdlabelgen

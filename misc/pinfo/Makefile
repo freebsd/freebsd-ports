@@ -13,7 +13,7 @@ MASTER_SITES=	http://zeus.polsl.gliwice.pl/~pborys/stable-version/
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv \
-		intl.1:${PORTSDIR}/devel/gettext
+		intl.1:${PORTSDIR}/devel/gettext-old
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

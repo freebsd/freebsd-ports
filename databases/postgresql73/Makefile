@@ -56,7 +56,7 @@ LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 .if defined(WITH_GETTEXT)
 CONFIGURE_ARGS+=--enable-nls
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
-BUILD_DEPENDS+= ${LOCALBASE}/bin/msgfmt:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS+= ${LOCALBASE}/bin/msgfmt:${PORTSDIR}/devel/gettext-old
 PLIST_SUB+=	GETTEXT=""
 .else
 PLIST_SUB+=	GETTEXT="@comment "

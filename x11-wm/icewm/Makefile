@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-2
 MAINTAINER=	nakai@FreeBSD.org
 
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old \
 		giconv.2:${PORTSDIR}/converters/libiconv
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

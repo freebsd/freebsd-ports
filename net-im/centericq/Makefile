@@ -13,7 +13,7 @@ MASTER_SITES=	http://konst.org.ua/download/
 
 MAINTAINER=	ijliao@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old \
 		sigc.1:${PORTSDIR}/devel/libsigc++
 
 USE_GMAKE=	yes

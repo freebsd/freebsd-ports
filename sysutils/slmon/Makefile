@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	slang:${PORTSDIR}/devel/libslang \
 		gtop:${PORTSDIR}/devel/libgtop \
-		intl:${PORTSDIR}/devel/gettext \
+		intl:${PORTSDIR}/devel/gettext-old \
 		gnugetopt:${PORTSDIR}/devel/libgnugetopt
 
 GNU_CONFIGURE=	yes

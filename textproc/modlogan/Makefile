@@ -15,7 +15,7 @@ MAINTAINER=	Alexander@Leidinger.net
 
 LIB_DEPENDS=	adns.1:${PORTSDIR}/net/adns \
 		gd.2:${PORTSDIR}/graphics/gd \
-		intl.1:${PORTSDIR}/devel/gettext \
+		intl.1:${PORTSDIR}/devel/gettext-old \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		ltdl.1:${PORTSDIR}/devel/libtool

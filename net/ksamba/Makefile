@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_KDE} \
 		http://www.kneschke.de/projekte/ksamba/download/
 MASTER_SITE_SUBDIR=	unstable/apps/network
 
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext-old
 
 USE_KDELIBS_VER=1
 USE_GMAKE=	yes

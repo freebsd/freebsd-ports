@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	gnupg
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
 
 #RESTRICTED=	"Crypto; export-controlled"
 GNU_CONFIGURE=	YES

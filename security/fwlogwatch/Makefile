@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.kyb.uni-stuttgart.de/boris/sw/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext-old
 
 INSTALL_TARGET=	install install-config install-i18n
 MANCOMPRESSES=	no

@@ -17,7 +17,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} chewing-2001Nov01-snapshot.tar.gz
 MAINTAINER=	keith@FreeBSD.org
 
 LIB_DEPENDS=	tabe.0:${PORTSDIR}/chinese/libtabe \
-		intl.1:${PORTSDIR}/devel/gettext \
+		intl.1:${PORTSDIR}/devel/gettext-old \
 		db2.0:${PORTSDIR}/databases/db
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/kc15f.pcf.gz:${PORTSDIR}/chinese/kcfonts \
 		${LOCALBASE}/share/tabe/libtabe-0.2.2:${PORTSDIR}/chinese/libtabe

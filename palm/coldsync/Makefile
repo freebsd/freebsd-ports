@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.ooblick.com/software/coldsync/
 
 MAINTAINER=	arensb+freebsd-ports@ooblick.com
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Palm/PDB.pm:${PORTSDIR}/palm/p5-Palm
 
 GNU_CONFIGURE=	yes

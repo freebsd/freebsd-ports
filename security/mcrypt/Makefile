@@ -18,7 +18,7 @@ MAINTAINER=	trevor@FreeBSD.org
 
 LIB_DEPENDS=	mcrypt.6:${PORTSDIR}/security/libmcrypt/ \
 		mhash.2:${PORTSDIR}/security/mhash/ \
-		intl.1:${PORTSDIR}/devel/gettext/
+		intl.1:${PORTSDIR}/devel/gettext-old
 
 post-patch:
 	${RM} -f ${WRKSRC}/configure
