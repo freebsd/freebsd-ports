@@ -9,9 +9,10 @@ bin/apple_cp
 bin/apple_mv
 bin/apple_rm
 bin/cleanappledouble.pl
+bin/cnid2_create
+bin/cnid_maint
 bin/getzones
 bin/macusers
-bin/makecode
 bin/megatron
 @unexec rm -f %B/unbin
 @unexec rm -f %B/unhex
@@ -29,7 +30,6 @@ bin/megatron
 @exec cd %B && ln -s megatron macbinary
 @exec cd %B && ln -s megatron binheader
 @exec cd %B && ln -s megatron nadheader
-%%NETATALKCNID%%bin/cnid_maint
 bin/nbplkup
 bin/nbprgstr
 bin/nbpunrgstr
@@ -37,36 +37,9 @@ bin/netatalk-config
 bin/netatalkshorternamelinks.pl
 bin/pap
 bin/papstatus
-bin/parsecode
 bin/psorder
 bin/timeout
-sbin/afpd
-sbin/atalkd
-sbin/etc2ps.sh
-sbin/ifmpap
-sbin/ifmpaprev
-sbin/ifpap
-sbin/ifpaprev
-sbin/ifwmpap
-sbin/ifwmpaprev
-sbin/ifwpap
-sbin/ifwpaprev
-sbin/ofmpap
-sbin/ofpap
-sbin/ofwmpap
-sbin/ofwpap
-sbin/papd
-sbin/psa
-sbin/psf
-sbin/tfmpap
-sbin/tfmpaprev
-sbin/tfpap
-sbin/tfpaprev
-sbin/tfwmpap
-sbin/tfwmpaprev
-sbin/tfwpap
-sbin/tfwpaprev
-%%TIMELORD%%sbin/timelord
+bin/uniconv
 @unexec if cmp -s %D/etc/AppleVolumes.default %D/etc/AppleVolumes.default.dist; then rm -f %D/etc/AppleVolumes.default; fi
 etc/AppleVolumes.default.dist
 @exec [ ! -f %B/AppleVolumes.default ] && cp %B/%f %B/AppleVolumes.default
@@ -82,11 +55,6 @@ etc/atalkd.conf.dist
 @unexec if cmp -s %D/etc/papd.conf %D/etc/papd.conf.dist; then rm -f %D/etc/papd.conf; fi
 etc/papd.conf.dist
 @exec [ ! -f %B/papd.conf ] && cp %B/%f %B/papd.conf
-etc/nls/maccode.437
-etc/nls/maccode.850
-etc/nls/maccode.iso8859-1
-etc/nls/maccode.iso8859-1.adapted
-etc/nls/maccode.koi8-r
 etc/rc.d/netatalk.sh.sample
 etc/uams/uams_clrtxt.so
 etc/uams/uams_dhx.so
@@ -102,8 +70,6 @@ etc/uams/uams_passwd.so
 etc/uams/uams_passwd.a
 etc/uams/uams_randnum.so
 etc/uams/uams_randnum.a
-@dirrm etc/nls
-@dirrm etc/uams
 include/atalk/adouble.h
 include/atalk/aep.h
 include/atalk/afp.h
@@ -114,6 +80,7 @@ include/atalk/cnid.h
 include/atalk/compat.h
 include/atalk/ddp.h
 include/atalk/dsi.h
+include/atalk/list.h
 include/atalk/logger.h
 include/atalk/nbp.h
 include/atalk/netddp.h
@@ -121,6 +88,7 @@ include/atalk/pap.h
 include/atalk/paths.h
 include/atalk/rtmp.h
 include/atalk/server_child.h
+include/atalk/tdb.h
 include/atalk/uam.h
 include/atalk/util.h
 include/atalk/zip.h
@@ -137,9 +105,39 @@ include/netatalk/ddp_input.c
 include/netatalk/ddp_output.c
 include/netatalk/ddp_usrreq.c
 include/netatalk/phase2.h
-@dirrm include/atalk
-@dirrm include/netatalk
 lib/libatalk.a
+libexec/etc2ps.sh
+libexec/ifmpap
+libexec/ifmpaprev
+libexec/ifpap
+libexec/ifpaprev
+libexec/ifwmpap
+libexec/ifwmpaprev
+libexec/ifwpap
+libexec/ifwpaprev
+libexec/ofmpap
+libexec/ofpap
+libexec/ofwmpap
+libexec/ofwpap
+libexec/psa
+libexec/psf
+libexec/tfmpap
+libexec/tfmpaprev
+libexec/tfpap
+libexec/tfpaprev
+libexec/tfwmpap
+libexec/tfwmpaprev
+libexec/tfwpap
+libexec/tfwpaprev
+sbin/afpd
+sbin/atalkd
+sbin/cnid_dbd
+sbin/cnid_metad
+sbin/papd
+%%TIMELORD%%sbin/timelord
 share/aclocal/netatalk.m4
 share/netatalk/pagecount.ps
 @dirrm share/netatalk
+@dirrm include/netatalk
+@dirrm include/atalk
+@dirrm etc/uams

@@ -1,25 +1,25 @@
---- ltmain.sh.orig	Sat Nov 29 08:54:27 2003
-+++ ltmain.sh	Sun Dec  7 13:32:36 2003
-@@ -1286,7 +1286,7 @@
+--- ltmain.sh.orig	Mon Mar 22 19:21:52 2004
++++ ltmain.sh	Sat Jun  5 21:54:11 2004
+@@ -1061,7 +1061,7 @@
  	  esac
- 	elif test "X$arg" = "X-lc_r"; then
- 	 case $host in
+ 	 elif test "X$arg" = "X-lc_r"; then
+ 	  case $host in
 -	 *-*-openbsd* | *-*-freebsd*)
 +	 *-*-openbsd* | *-*-freebsd4*)
- 	   # Do not include libc_r directly, use -pthread flag.
- 	   continue
- 	   ;;
-@@ -1913,6 +1913,9 @@
- 	      finalize_deplibs="$deplib $finalize_deplibs"
- 	    fi
+ 	    # Do not include libc_r directly, use -pthread flag.
+ 	    continue
+ 	    ;;
+@@ -2372,6 +2372,9 @@
+ 	    # problems, so we reset it completely
+ 	    verstring=""
  	    ;;
 +	  *-*-freebsd*)
 +	    # FreeBSD doesn't need this...
 +	    ;;
  	  *)
- 	    $echo "$modename: warning: \`-L' is ignored for archives/objects" 1>&2
+ 	    verstring="0.0"
  	    ;;
-@@ -5474,10 +5477,12 @@
+@@ -4302,10 +4305,12 @@
  	fi
  
  	# Install the pseudo-library for information purposes.
