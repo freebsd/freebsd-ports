@@ -1,0 +1,35 @@
+bin/qterm
+lib/qterm/cursor/downArrow.bmp
+lib/qterm/cursor/leftArrow.bmp
+lib/qterm/cursor/m_downArrow.bmp
+lib/qterm/cursor/m_leftArrow.bmp
+lib/qterm/cursor/m_rightArrow.bmp
+lib/qterm/cursor/m_upArrow.bmp
+lib/qterm/cursor/rightArrow.bmp
+lib/qterm/cursor/upArrow.bmp
+lib/qterm/pic/addr.bmp
+lib/qterm/pic/anti.bmp
+lib/qterm/pic/beep.bmp
+lib/qterm/pic/blink.bmp
+lib/qterm/pic/color.bmp
+lib/qterm/pic/colorcopy.bmp
+lib/qterm/pic/copy.bmp
+lib/qterm/pic/disconnect.bmp
+lib/qterm/pic/document.xpm
+lib/qterm/pic/down.bmp
+lib/qterm/pic/font.bmp
+lib/qterm/pic/message.bmp
+lib/qterm/pic/mouse.bmp
+lib/qterm/pic/paste.bmp
+lib/qterm/pic/quick.bmp
+lib/qterm/pic/quicklogin.bmp
+lib/qterm/pic/reconnect.bmp
+lib/qterm/pic/refresh.bmp
+lib/qterm/pic/reply.bmp
+lib/qterm/pic/retangle.bmp
+lib/qterm/pic/set.bmp
+lib/qterm/pic/tabpic.bmp
+lib/qterm/qterm.cfg
+@dirrm lib/qterm/cursor/
+@dirrm lib/qterm/pic/
+@dirrm lib/qterm/

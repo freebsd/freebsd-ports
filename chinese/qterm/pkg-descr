@@ -1,0 +1,10 @@
+QTerm is a BBS client in Unix. Our original goal is to make it
+a practical tool like CTerm and STerm in Windows.
+
+Features:
+1.support mouse in Firebird BBS
+2.copy and paste
+3.article download
+4.address book
+
+WWW: http://qterm.gnuchina.org/index.html
