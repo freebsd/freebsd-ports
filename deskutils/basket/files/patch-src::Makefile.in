@@ -1,0 +1,19 @@
+--- src/Makefile.in.orig	Sat Oct 18 12:27:01 2003
++++ src/Makefile.in	Sat Oct 18 12:31:59 2003
+@@ -264,7 +264,7 @@
+ # the application source, library search path, and link libraries
+ basket_SOURCES = main.cpp basket.cpp basketcontainer.cpp basketitem.cpp basketitemproperties.cpp configaction.cpp debugwindow.cpp uibasketproperties.cpp additemdialog.cpp variouswidgets.cpp
+ basket_LDFLAGS = $(KDE_RPATH) $(all_libraries)
+-basket_LDADD = $(LIB_KDEUI)
++basket_LDADD = -lkio $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_QT) $(LIBSOCKET)
+ 
+ # this is where the desktop file will go 
+ shelldesktopdir = $(kde_appsdir)/Utilities
+@@ -274,7 +274,6 @@
+ shellrcdir = $(kde_datadir)/basket
+ shellrc_DATA = basketui.rc
+ 
+-AM_CXXFLAGS = -lkio
+ subdir = src
+ mkinstalldirs = $(SHELL) $(top_srcdir)/admin/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/config.h
