@@ -2848,6 +2848,7 @@ lib/X11/fonts/misc/6x9.pcf.gz
 lib/X11/fonts/misc/7x13-ISO8859-1.pcf.gz
 lib/X11/fonts/misc/7x13-ISO8859-10.pcf.gz
 lib/X11/fonts/misc/7x13-ISO8859-13.pcf.gz
+lib/X11/fonts/misc/7x13-ISO8859-14.pcf.gz
 lib/X11/fonts/misc/7x13-ISO8859-15.pcf.gz
 lib/X11/fonts/misc/7x13-ISO8859-2.pcf.gz
 lib/X11/fonts/misc/7x13-ISO8859-3.pcf.gz
@@ -3515,6 +3516,7 @@ man/man3/GLwCreateMDrawingArea.3.gz
 man/man3/GLwDrawingArea.3.gz
 man/man3/GLwDrawingAreaMakeCurrent.3.gz
 man/man3/GLwDrawingAreaSwapBuffers.3.gz
+man/man3/GLwMDrawingArea.3.gz
 man/man3/HeightMMOfScreen.3.gz
 man/man3/HeightOfScreen.3.gz
 man/man3/ImageByteOrder.3.gz
