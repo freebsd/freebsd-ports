@@ -493,6 +493,7 @@
     SUBDIR += ruby-fileutils
     SUBDIR += ruby-flex_rb
     SUBDIR += ruby-fnmatch
+    SUBDIR += ruby-gconf
     SUBDIR += ruby-gemfinder
     SUBDIR += ruby-gnustep
     SUBDIR += ruby-intl
