@@ -41,6 +41,12 @@ CONFIGURE_ENV=	\
 CONFIGURE_ARGS+=	--without-gtk
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 pre-patch:
 	${REINPLACE_CMD} -e \
 's:-O2::g; s:-Wall::g; s:-ffast-math::g; s:-fexpensive-optimizations::g; s:! /bin/sh:! ${LOCALBASE}/bin/bash:g' \
@@ -106,4 +112,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/textures/medres/*.??? \
 		${DATADIR}/textures/medres/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
