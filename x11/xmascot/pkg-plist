@@ -1,4 +1,5 @@
 bin/xmascot
+lib/X11/app-defaults/XMascot
 lib/X11/xmascot/pin.mag
 lib/X11/xmascot/chain.mag
 lib/X11/xmascot/mail_r.mag
