@@ -1,20 +1,21 @@
-# New ports collection makefile for:   pwgen
-# Date created:        22 July 2000
-# Whom:                Oddbjorn Steffensen <oddbjorn@tricknology.org>
+# New ports collection makefile for:	pwgen
+# Date created:		22 July 2000
+# Whom:			Oddbjorn Steffensen <oddbjorn@tricknology.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=      pwgen
-PORTVERSION=   1.15
-CATEGORIES=    sysutils
-MASTER_SITES=  http://www.tricknology.org/ports/
+PORTNAME=	pwgen
+PORTVERSION=	1.15
+CATEGORIES=	sysutils
+MASTER_SITES=	http://www.tricknology.org/ports/
 
-MAINTAINER=    oddbjorn@tricknology.org
+MAINTAINER=	oddbjorn@tricknology.org
 
-BUILD_DEPENDS= ${LOCALBASE}/include/getopt.h:${PORTSDIR}/devel/libgnugetopt
+LIB_DEPENDS=	getopt.1:${PORTSDIR}/devel/libgnugetopt
 
-MAN1=          pwgen.1
-WRKSRC=        ${WRKDIR}/pwgen-1
+WRKSRC=		${WRKDIR}/${PORTNAME}-1
+
+MAN1=		pwgen.1
 
 .include <bsd.port.mk>
