@@ -1211,6 +1211,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-applets-2.0.mo
 @dirrm share/gnome/pixmaps/stickynotes
 @dirrm share/gnome/pixmaps/mixer
 @dirrm share/gnome/pixmaps/accessx-status-applet
+@dirrm share/gnome/help/wireless/C
+@dirrm share/gnome/help/wireless
 @dirrm share/gnome/help/stickynotes_applet/C
 @dirrm share/gnome/help/stickynotes_applet
 @dirrm share/gnome/help/modemlights/C/figures
