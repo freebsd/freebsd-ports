@@ -4,7 +4,7 @@
  	int		 dbfhandle;
  	FILE		*output = NULL;
  	int		 header_length, record_length, i;
--	const char	*filename, *export_filename;
+-	const char	*filename = NULL, *export_filename = NULL;
 +	const char	*filename, *export_filename = NULL;
  	headerMethod	 writeHeader = NULL;
  	lineMethod	 writeLine = printDBF;
@@ -14,15 +14,15 @@
  
  	if (argc < 2) {
  		fprintf(stderr, "Usage: %s [option][argument] dbf-file, -h for help\n", *argv);
-@@ -342,7 +342,7 @@
+@@ -342,7 +342,4 @@
  	if (verbosity > 0)
  		banner();
  
--	if(0 == strcmp(export_filename, "-"))
-+	if(!export_filename || (0 == strcmp(export_filename, "-")))
- 		output = stdout;
- 	else
- 		output = export_open(export_filename);
+-	if(export_filename && 0 == strcmp(export_filename, "-"))
+-		output = stdout;
+-	else
+-		output = export_open(export_filename);
++	output = export_open(export_filename);
 @@ -372,12 +372,7 @@
  		/* At this point we look if the following data set is deleted */
  		lseek(dbfhandle, rotate2b(db->header_length), SEEK_SET);
