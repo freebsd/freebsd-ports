@@ -1,0 +1,9 @@
+bin/ssh
+bin/scp
+bin/ssh-add
+bin/ssh-agent
+bin/ssh-keygen
+bin/ssh-keyscan
+bin/sftp
+sbin/sshd
+libexec/sftp-server
