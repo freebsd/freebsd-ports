@@ -18,6 +18,7 @@
     SUBDIR += clips
     SUBDIR += clisp
     SUBDIR += cmucl
+    SUBDIR += cmucl-extra
     SUBDIR += compaq-cc
     SUBDIR += crossgo32-f77
     SUBDIR += cu-prolog

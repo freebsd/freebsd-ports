@@ -1,0 +1,12 @@
+lib/cmucl/lib/mh-scan
+lib/cmucl/lib/hemlock11.mask
+lib/cmucl/lib/hemlock11.cursor
+lib/cmucl/lib/XKeysymDB
+lib/cmucl/lib/spell-dictionary.bin
+lib/cmucl/lib/motifd
+lib/cmucl/lib/subsystems/hemlock-library.x86f
+lib/cmucl/lib/subsystems/clx-library.x86f
+lib/cmucl/lib/subsystems/clm-library.x86f
+@dirrm lib/cmucl/lib/subsystems
+@dirrm lib/cmucl/lib
+@dirrm lib/cmucl
