@@ -1,0 +1,8 @@
+Trueprint is a general purpose printing program.  It tries to produce
+everything that anybody could need in a program printout without
+the need for large numbers of switches or pipelines.  Trueprint can
+currently handle C, C++, Java, Perl, Verilog, shell (including ksh), Pascal,
+pseudo C, report files (trueprint report files), listing files, text files.
+
+Dmitry Sivachenko,
+dima@Chg.RU
