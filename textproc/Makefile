@@ -378,6 +378,7 @@
     SUBDIR += p5-XML-NodeFilter
     SUBDIR += p5-XML-Parser
     SUBDIR += p5-XML-Parser-EasyTree
+    SUBDIR += p5-XML-Parser-Style-Elemental
     SUBDIR += p5-XML-Quote
     SUBDIR += p5-XML-RAI
     SUBDIR += p5-XML-RSS
