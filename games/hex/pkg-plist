@@ -1,0 +1,17 @@
+bin/hex
+share/hex/levels/Level1
+share/hex/graphics/ball0.png
+share/hex/graphics/ball1.png
+share/hex/graphics/ball2.png
+share/hex/graphics/ball3.png
+share/hex/graphics/ball4.png
+share/hex/graphics/ball5.png
+share/hex/graphics/ball6.png
+share/hex/graphics/ball7.png
+share/hex/graphics/ball8.png
+share/hex/README
+share/hex/TODO
+share/hex/HISTORY
+@dirrm share/hex/levels
+@dirrm share/hex/graphics
+@dirrm share/hex
