@@ -15,10 +15,14 @@ DISTFILES=
 MAINTAINER=	eik@FreeBSD.org
 COMMENT=	Message digest wrapper utility
 
+CONFLICTS=	nss-[0-9]* emboss-[0-9]*
+
 GNU_CONFIGURE=	yes
 NO_WRKSUBDIR=	yes
 
 MAN1=		digest.1
+
+PLIST_FILES=	bin/digest
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
