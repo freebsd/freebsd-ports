@@ -23,4 +23,4 @@ Features
     * Pixmap output (all Qt supported formats)
     * Vector output (PostScript,  EPS and PDF) via gl2ps 
 
-WWW: http://qwtploted.sourceforge.net/
+WWW: http://qwtplot3d.sourceforge.net/
