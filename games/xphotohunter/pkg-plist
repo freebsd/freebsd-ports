@@ -1,5 +1,8 @@
 bin/xphotohunter
 share/locale/zh_TW.Big5/LC_MESSAGES/xphotohunter.mo
+share/xphotohunter/locale/zh_TW.Big5/xphotohunter.po
+share/xphotohunter/locale/zh_TW.Big5/Rule.txt
+share/xphotohunter/locale/zh_TW.Big5/License.txt
 share/xphotohunter/Picture/0.ppp
 share/xphotohunter/Picture/0a.jpg
 share/xphotohunter/Picture/0b.jpg
@@ -64,12 +67,12 @@ share/xphotohunter/Yes.wav
 share/xphotohunter/README.chinese
 share/xphotohunter/README.english
 share/xphotohunter/License.txt
-share/xphotohunter/License.txt.english
 share/xphotohunter/Rule.txt
-share/xphotohunter/Rule.txt.english
 share/xphotohunter/GPL
 share/xphotohunter/xphotohunter.dat
 share/xphotohunter/xphotohunter.rc
 share/xphotohunter/xphotohunter.po
+@dirrm share/xphotohunter/locale/zh_TW.Big5
+@dirrm share/xphotohunter/locale
 @dirrm share/xphotohunter/Picture
 @dirrm share/xphotohunter

@@ -1,31 +1,25 @@
---- Makefile.orig	Sat Jul 17 01:24:06 1999
-+++ Makefile	Fri Aug 13 01:07:41 1999
-@@ -5,17 +5,17 @@
- # if you want to install executive files in another directory, edit the following line. 
+--- Makefile.orig	Sat Sep 25 00:57:55 1999
++++ Makefile	Fri Oct  8 03:09:28 1999
+@@ -5,19 +5,19 @@
+ # If you want to install executive files in another directory, edit the following line. 
  BINDIR=/usr/local/bin
- # where your locale dir is
+ # Where your locale dir is
 -LOCALEDIR=/usr/share/locale
 +LOCALEDIR=/usr/local/share/locale
  
+ SHELL=sh
  CC=gcc 
- DEFS=-DDEFAULT_DIR=\"$(DATADIR)\"
+ DEFS=-DDATA_DIR=\"$(DATADIR)\"
  #INCLUDES=-I./ -I/usr/include -I/usr/lib/glib/include -I/usr/X11R6/include -I/usr/local/include
--#INCLUDES=-I./ -I/usr/include -I/usr/X11R6/include -I/usr/local/include `gtk-config --cflags`  
+ #INCLUDES=-I./ -I/usr/include -I/usr/X11R6/include -I/usr/local/include `gtk-config --cflags`  
 -INCLUDES=`gtk-config --cflags`
-+#INCLUDES=-I./ -I/usr/include -I/usr/X11R6/include -I/usr/local/include `gtk12-config --cflags`  
 +INCLUDES=`gtk12-config --cflags`
- # the sequence of the "-l" is important when you compile staticly. 
- #LIBS=-L/usr/lib -L/usr/X11R6/lib -L/usr/local/lib -lgtk -lgdk_imlib -lgdk -lglib -ljpeg -ltiff -lpng -lz -lgif  -lXi -lXext -lX11 -lm
--#LIBS=-L/usr/lib -L/usr/X11R6/lib -L/usr/local/lib `gtk-config --libs`
+ # The sequence of the "-l" is important when you compile staticly. 
+ #LIBS=-L/usr/lib -L/usr/X11R6/lib -L/usr/local/lib -lgtk -lgdk_imlib -lgdk -lglib -ljpeg -ltiff -lpng \
+ #           -lz -lgif  -lXi -lXext -lX11 -lm
+ #LIBS=-L/usr/lib -L/usr/X11R6/lib -L/usr/local/lib `gtk-config --libs`
 -LIBS=-lgdk_imlib -ljpeg -ltiff -lpng -lz -lgif  `gtk-config --libs` -lXi -lXext -lX11 -lm
-+#LIBS=-L/usr/lib -L/usr/X11R6/lib -L/usr/local/lib `gtk12-config --libs`
 +LIBS=-lgdk_imlib -ljpeg -ltiff -lpng -lz -lgif  `gtk12-config --libs` -lXi -lXext -lX11 -lm
  CFLAGS= -g -O2 -Wall 
  
  INSTALL = /usr/bin/install -c
-@@ -66,4 +66,4 @@
- 	$(RM) $(OBJS) $(DYNAMIC)
- clean-all: clean clean-dynamic
- 
--	
-+	
