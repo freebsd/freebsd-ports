@@ -3,7 +3,7 @@
 # Date created:		22 November 1994
 # Whom:			Satoshi Asami (asami)
 #
-# $Id: $
+# $Id: Makefile,v 1.1.1.1 1994/11/22 23:59:13 asami Exp $
 #
 
 DISTNAME=	mule-2.1
@@ -34,7 +34,7 @@ pre-patch:
 # I took these two files from emacs-19.28 and added -lcrypt
 	cp ${FILESDIR}/unexsunos4.c ${WRKSRC}/src
 	cp ${FILESDIR}/freebsd.h ${WRKSRC}/src/s
-	@echo "===> Applying emacs -> mule patch"
+	@echo "===>  Applying emacs -> mule patch"
 	@for file in ${PATCHFILES}; do \
 		gzip -c -d ${DISTDIR}/$$file | patch -d ${WRKSRC} -p1 -s; \
 	done
