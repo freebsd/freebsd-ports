@@ -30,7 +30,7 @@ do-extract:
 		@ unzip -q -o ${DISTDIR}/quake106.zip -d ${WRKDIR} resource.*
 		@ ${CAT} ${WRKDIR}/resource.dat ${WRKDIR}/resource.1 > ${WRKDIR}/resource.exe
 		@ cd ${WRKDIR}; lha xfq resource.exe id1/pak0.pak
-		@ cd ${WRKDIR}; tar zxf ${DISTDIR}/unixded-${PORTVERSION}-i386-unknown-bsdi3.0.tar.gz
+		@ cd ${WRKDIR}; ${TAR} zxf ${DISTDIR}/unixded-${PORTVERSION}-i386-unknown-bsdi3.0.tar.gz
 
 do-configure:
 		@ ${CP} ${FILESDIR}/readme.port ${WRKSRC}

@@ -40,8 +40,8 @@ pre-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rocksndiamonds ${PREFIX}/bin
 	@${MKDIR} ${GAME_DIR}
-	@cd ${WRKSRC}; tar cpf - graphics levels scores sounds | \
-		(cd ${GAME_DIR}; tar xpf -)
+	@cd ${WRKSRC}; ${TAR} cpf - graphics levels scores sounds | \
+		(cd ${GAME_DIR}; ${TAR} xpf -)
 	@${CHMOD} 777 ${GAME_DIR}/scores
 .if !defined(NOPPORTDOCS)
 	@${MKDIR} ${DOC_DIR}

@@ -41,6 +41,6 @@ do-install:
 
 tarup:
 	cd ${WRKSRC} ; rm * USD.doc/*
-	cd ${WRKSRC} ; tar cvyf /tmp/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
+	cd ${WRKSRC} ; ${TAR} cvyf /tmp/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 .include <bsd.port.mk>

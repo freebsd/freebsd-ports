@@ -33,7 +33,7 @@ post-configure:
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/nil
-	@cd ${WRKSRC}/..; tar cf - gfx | \
+	@cd ${WRKSRC}/..; ${TAR} cf - gfx | \
 		(cd ${PREFIX}/share/nil ; ${TAR} --unlink -xf - )
 	@${INSTALL_MAN} ${WRKSRC}/../docs/NiL-HOWTO.txt ${PREFIX}/share/nil/README
 	@${ECHO_MSG} ""
