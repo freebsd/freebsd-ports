@@ -3,10 +3,11 @@
 # Date created:         Mon Dec 14 21:03:01 MET 1998
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.4 1998/12/18 12:26:09 asami Exp $
+# $Id: Makefile,v 1.8 1999/01/15 02:54:18 jmz Exp $
 #
 
 DISTNAME=	doomsrc-1.8
+PKGNAME=	doom-1.8
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/source/ \
 		ftp://ftp.stomped.com/pub/idmirror/idstuff/source/ \
