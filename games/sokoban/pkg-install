@@ -6,4 +6,4 @@ FILE="/var/games/sokoban"
 echo "===>   Creating initial high score file $FILE"
 dd if=/dev/zero of=$FILE bs=1 count=2
 chmod 664 $FILE
-chown root.games $FILE
+chown root:games $FILE
