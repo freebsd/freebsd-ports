@@ -1,0 +1,8 @@
+Russian-speaking users!
+Please run licq in this way to force russian messages display correctly
+
+env LANG=ru_RU.KOI8-R MM_CHARSET=KOI8-R licq
+
+also change font in ~/.licq/licq_osd.conf
+to something like this:
+Font=-*-*-bold-r-*-*-25-*-*-*-*-*-koi8-*                                        
