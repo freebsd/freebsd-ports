@@ -7,7 +7,7 @@
 
 PORTNAME=	py-gnome
 PORTVERSION=	1.99.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-python/1.99
@@ -17,9 +17,9 @@ DIST_SUBDIR=	gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A set of Python bindings for GNOME 2
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/_gtkmodule.so:${PORTSDIR}/x11-toolkits/py-gtk2 \
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/_gtk.so:${PORTSDIR}/x11-toolkits/py-gtk2 \
 		${PYTHON_SITELIBDIR}/ORBit.so:${PORTSDIR}/devel/py-orbit2
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/_gtkmodule.so:${PORTSDIR}/x11-toolkits/py-gtk2 \
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/_gtk.so:${PORTSDIR}/x11-toolkits/py-gtk2 \
 		${PYTHON_SITELIBDIR}/ORBit.so:${PORTSDIR}/devel/py-orbit2
 
 LATEST_LINK=	py-gnome2
