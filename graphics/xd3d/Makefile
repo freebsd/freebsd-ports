@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xd3d
-PORTVERSION=	8.2.0
+PORTVERSION=	8.2.1
 CATEGORIES=	graphics math
 MASTER_SITES=	http://www.cmap.polytechnique.fr/~jouve/xd3d/
 
