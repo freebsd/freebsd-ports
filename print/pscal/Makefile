@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pscal
-PORTVERSION=	1.13
+PORTVERSION=	1.14
 CATEGORIES=	print
 MASTER_SITES=	http://www.panix.com/~mbh/pscal/
 
