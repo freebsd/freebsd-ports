@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvsync
-PORTVERSION=	0.24.5
+PORTVERSION=	0.24.6
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.cvsync.org/pub/cvsync/ \
 		ftp://ftp.allbsd.org/pub/cvsync/
@@ -18,7 +18,8 @@ USE_GMAKE=	yes
 
 MAN1=		cvscan.1 cvsync.1 cvsyncd.1 rcscan.1 rcscmp.1
 DOCS=		doc/COPYRIGHT doc/ChangeLog doc/FAQ doc/TODO
-EXAMPLES=	samples/cvsync.conf samples/cvsyncd.conf
+EXAMPLES=	samples/cvsync.conf samples/cvsyncd.conf \
+		samples/cvsyncd-NetBSD.conf samples/cvsyncd-OpenBSD.conf
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
