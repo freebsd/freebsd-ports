@@ -16,6 +16,7 @@
     SUBDIR += minicom
     SUBDIR += mlan
     SUBDIR += mserver
+    SUBDIR += mwavem
     SUBDIR += plp
     SUBDIR += pr
     SUBDIR += qico

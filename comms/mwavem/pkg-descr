@@ -1,0 +1,6 @@
+This port includes a loadable kernel module and a user executable to 
+allow FreeBSD to use the DSP modem in IBM ThinkPad 600 and 700 series
+laptop computers.
+
+- R. Kevin Oberman
+oberman@es.net
