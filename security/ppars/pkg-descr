@@ -1,0 +1,24 @@
+Welcome to the Proactive Abuse Reporting System.
+
+In an effort to be proactive in doing my part to stop the massive 
+quantities of internet traffic probing for open ports or more 
+specifically the probing for known ports that ms/windows spy ware, 
+Trojans, and what ever other ms/windows ports are commonly probed 
+which result in increasing my bandwidth usage changes, I wrote this 
+perl application for reporting that abuse to the senders ISP, with 
+the hopes they will monitor the abuser and terminate the abuser's 
+internet account and or take legal action.
+
+Script is installed into /usr/local/sbin where you can edit the 
+defaults to meet your requirements. Issue rehash command to enable.
+Run abuse.Reporting.system.pl script for complete overview description
+of system.
+
+6/1/2004 Author: Joe Barbish, I bequeath these perl scripts to public
+domain. It can be copied and distributed for free by anyone to anyone 
+by any manner.
+
+WWW: http://www.dshield.org/linux_clients.php#freebsd
+
+Joe Barbish
+fbsd_user@a1poweruser.com
