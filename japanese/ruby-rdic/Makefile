@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	rdic
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
 CATEGORIES=	japanese ruby
 MASTER_SITES=	http://www.yasgursfarm.us/download/
-PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	morishita@skywing.org
@@ -43,24 +42,35 @@ DOCS_EN=	ChangeLog.rdic \
 DOCS_JA=	README.jp \
 		xselection.html.ja \
 		${RUBY_RD_FILES:Mxselection.rd.jp}
+DOCS_ETC=	eliminate.default \
+		keymap.default \
+		rdic.conf.sample
 
-pre-install:
-	${CP} ${WRKSRC}/rdic ${PREFIX}/bin/rdic
-	${CP} ${WRKSRC}/cnv2alc.rb ${PREFIX}/bin/cnv2alc
-	${CP} ${WRKSRC}/cnv2jisx0213.rb ${PREFIX}/bin/cnv2jisx0213
-	${CP} ${WRKSRC}/cnv2rdic.rb ${PREFIX}/bin/cnv2rdic
+.include <bsd.port.pre.mk>
 
-post-install: doc-install
+PKGNAMEPREFIX:= ${PKGNAMEPREFIX}${RUBY_PKGNAMEPREFIX}
 
-.include <bsd.port.mk>
+post-install: rb-install doc-install
+
+rb-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/rdic ${PREFIX}/bin/rdic
+	${INSTALL_SCRIPT} ${WRKSRC}/cnv2alc.rb ${PREFIX}/bin/cnv2alc
+	${INSTALL_SCRIPT} ${WRKSRC}/cnv2jisx0213.rb ${PREFIX}/bin/cnv2jisx0213
+	${INSTALL_SCRIPT} ${WRKSRC}/cnv2rdic.rb ${PREFIX}/bin/cnv2rdic
 
 doc-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}/ja
+	${MKDIR} ${RUBY_MODDOCDIR}/etc
 .for f in ${DOCS_EN}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .for f in ${DOCS_JA}
-	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
+.endfor
+.for f in ${DOCS_ETC}
+	${INSTALL_DATA} ${WRKSRC}/etc/${f} ${RUBY_MODDOCDIR}/etc/
 .endfor
 .endif
+
+.include <bsd.port.post.mk>
