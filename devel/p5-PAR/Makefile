@@ -18,7 +18,6 @@ COMMENT=	Perl Archive Toolkit
 
 BUILD_DEPENDS=	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
 		${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
-		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
 		${SITE_PERL}/Module/ScanDeps/DataFeed.pm:${PORTSDIR}/devel/p5-Module-ScanDeps \
 		${SITE_PERL}/Module/Signature.pm:${PORTSDIR}/security/p5-Module-Signature \
 		${SITE_PERL}/PAR/Dist.pm:${PORTSDIR}/devel/p5-PAR-Dist \
@@ -36,7 +35,10 @@ MAN3=		App::Packer::PAR.3 PAR.3 \
 
 .include <bsd.port.pre.mk>
 
-pre-everything::
+.if ${PERL_LEVEL} < 500800
+BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
+.endif
+
 .if ${PERL_LEVEL} < 500601
 IGNORE=		p5-PAR only supports the ports versions of Perl.
 IGNORE+=If you have installed a Perl port, and are getting this message,

@@ -21,7 +21,6 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-X
 		${SITE_PERL}/IPC/Run3.pm:${PORTSDIR}/devel/p5-IPC-Run3 \
 		${SITE_PERL}/Pod/Links.pm:${PORTSDIR}/www/p5-PodToHTML \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
-		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
 		${SITE_PERL}/Regexp/Shellish.pm:${PORTSDIR}/devel/p5-Regexp-Shellish \
 		${SITE_PERL}/BFD.pm:${PORTSDIR}/devel/p5-BFD \
 		${SITE_PERL}/Text/Table.pm:${PORTSDIR}/textproc/p5-Text-Table \
@@ -104,8 +103,11 @@ MAN3=		RevML::Doctype.3 \
 
 .include <bsd.port.pre.mk>
 
+.if ${PERL_LEVEL} < 500800
+BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 .if ${PERL_LEVEL} < 500600
 BROKEN=		"Does not compile with perl ${PERL_VERSION}"
+.endif
 .endif
 
 .include <bsd.port.post.mk>

@@ -29,7 +29,6 @@ PM_DEPENDS+=	${SITE_PERL}/Class/Singleton.pm:${PORTSDIR}/devel/p5-Class-Singleto
 PM_DEPENDS+=	${SITE_PERL}/Class/Trigger.pm:${PORTSDIR}/devel/p5-Class-Trigger
 PM_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
 PM_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1
-PM_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 PM_DEPENDS+=	${SITE_PERL}/HTML/FillInForm.pm:${PORTSDIR}/www/p5-HTML-FillInForm
 PM_DEPENDS+=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template
 PM_DEPENDS+=	${SITE_PERL}/HTML/StickyQuery.pm:${PORTSDIR}/www/p5-HTML-StickyQuery
@@ -51,9 +50,12 @@ MAN3=		Bundle::Sledge.3
 
 .include <bsd.port.pre.mk>
 
+.if ${PERL_LEVEL} < 500800
+PM_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 .if ${PERL_LEVEL} < 500601
 PM_DEPENDS+=	${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
 PM_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+.endif
 .endif
 
 .include <bsd.port.post.mk>

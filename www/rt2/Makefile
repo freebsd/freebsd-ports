@@ -38,8 +38,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl \
 		${SITE_PERL}/Text/Template.pm:${PORTSDIR}/textproc/p5-Text-Template \
 		${SITE_PERL}/Text/Wrapper.pm:${PORTSDIR}/textproc/p5-Text-Wrapper \
 		${SITE_PERL}/Tie/IxHash.pm:${PORTSDIR}/devel/p5-Tie-IxHash \
-		${SITE_PERL}/CGI/Cookie.pm:${PORTSDIR}/www/p5-CGI.pm \
-		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
+		${SITE_PERL}/CGI/Cookie.pm:${PORTSDIR}/www/p5-CGI.pm
 
 WRKSRC=		${WRKDIR}/rt-${RT_VERSION}
 RT_VERSION=	${PORTVERSION:C/\./-/g}
@@ -155,9 +154,11 @@ post-install:
 BROKEN=		"Broken pkg-plist"
 .endif
 
+.if ${PERL_LEVEL} < 500800
+BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 .if ${PERL_LEVEL} < 500601
 BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
-RUN_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+.endif
 .endif
 
 .include <bsd.port.post.mk>

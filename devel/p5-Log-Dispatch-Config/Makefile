@@ -22,7 +22,6 @@ PM_DEPENDS=	${SITE_PERL}/Log/Dispatch.pm:${PORTSDIR}/devel/p5-Log-Dispatch
 PM_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 PM_DEPENDS+=	${SITE_PERL}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig
 PM_DEPENDS+=	${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy
-PM_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 
 PERL_CONFIGURE=	yes
 
@@ -30,4 +29,10 @@ PERL_CONFIGURE=	yes
 #		Log::Dispatch::Configurator.3 \
 #		Log::Dispatch::Configurator::AppConfig.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+PM_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
+.endif
+
+.include <bsd.port.post.mk>

@@ -36,7 +36,7 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GCC=	3.3
 .endif
 
-.if ${PERL_LEVEL} < 500600
+.if ${PERL_LEVEL} < 500800
 BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 .endif
 

@@ -23,8 +23,7 @@ RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
 		uncompface:${PORTSDIR}/mail/faces \
 		convert:${PORTSDIR}/graphics/ImageMagick \
 		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
-		${SITE_PERL}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv \
-		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
+		${SITE_PERL}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv
 .if defined(WITH_CUPS)
 RUN_DEPENDS+=	cupstestppd:${PORTSDIR}/print/cups-lpr \
 		espgs:${PORTSDIR}/print/cups-pstoraster
@@ -33,6 +32,7 @@ RUN_DEPENDS+=	cupstestppd:${PORTSDIR}/print/cups-lpr \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
+BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 LIB_DEPENDS+=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 MAKE_ENV+=	CCFLAGS="-I${PREFIX}/include"
 PLIST_SUB+=	LANGINFO=""
