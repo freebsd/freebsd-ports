@@ -85,6 +85,8 @@ include/kpathsea/variable.h
 include/kpathsea/win32lib.h                              
 include/kpathsea/xopendir.h                              
 include/kpathsea/xstat.h                                 
+@unexec install-info --delete %D/info/kpathsea.info %D/info/dir
+@unexec install-info --delete %D/info/web2c.info %D/info/dir
 info/kpathsea.info
 info/kpathsea.info-1
 info/kpathsea.info-2
@@ -95,6 +97,8 @@ info/web2c.info-1
 info/web2c.info-2
 info/web2c.info-3
 info/web2c.info-4
+@exec install-info %D/info/kpathsea.info %D/info/dir
+@exec install-info %D/info/web2c.info %D/info/dir
 lib/libkpathsea.a
 share/texmf/fontname/adobe.map
 share/texmf/fontname/apple.map
@@ -336,5 +340,3 @@ share/texmf/web2c/texmf.cnf
 @dirrm share/texmf/tex
 @dirrm share/texmf/web2c
 @dirrm share/texmf
-@unexec install-info --delete %D/info/kpathsea.info %D/info/dir
-@unexec install-info --delete %D/info/web2c.info %D/info/dir
