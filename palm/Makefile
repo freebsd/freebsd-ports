@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += imgvtopgm
     SUBDIR += kpilot
     SUBDIR += pilot-link
     SUBDIR += pilot_makedoc
