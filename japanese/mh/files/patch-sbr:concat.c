@@ -54,7 +54,3 @@ diff -u sbr/concat.c.orig sbr/concat.c
  
      return dp;
  }
--- 
-’Çß’ËÜ ’È¥ ’¡÷ ’¥¤’¥ó’¥¿’¡¼’¥Í’¥Ã’¥È’¸ß’½õ’²ñ’²£’ÉÍ  http://www.imasy.org/~ume/
-ume@mahoroba.org  ume@bisd.hitachi.co.jp  ume@{,jp.}FreeBSD.org
-’¥×’¥í’¥°’¥é’¥à’¤Ï’½ñ’¤¤’¤¿’¿Í’¤Î’°Õ’¿Þ’¤Ç’¤Ï’¤Ê’¤¯’½ñ’¤«’¤ì’¤¿’ÄÌ’¤ê’Æ°’¤¯  I hate Modula-3 :-)
