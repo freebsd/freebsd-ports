@@ -1,0 +1,8 @@
+Text::Glob implements glob(3) style matching that can be used to match
+against text, rather than fetching names from a filesystem.  If you want
+to do full file globbing use the File::Glob module instead.
+
+WWW: http://search.cpan.org/dist/Text-Glob/
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
