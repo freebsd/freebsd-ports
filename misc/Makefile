@@ -1,9 +1,6 @@
 # $FreeBSD$
 #
 
-    SUBDIR += 40upgrade
-    SUBDIR += 41upgrade
-    SUBDIR += 42upgrade
     SUBDIR += 44bsd-more
     SUBDIR += GeoIP
     SUBDIR += Howto

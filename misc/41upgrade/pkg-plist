@@ -1,6 +1,0 @@
-etc/mtree/BSD.x11-4.dist
-usr/sbin/pkg_add
-usr/sbin/pkg_create
-usr/sbin/pkg_delete
-usr/sbin/pkg_info
-usr/sbin/pkg_version
