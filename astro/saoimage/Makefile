@@ -3,12 +3,12 @@
 # Date created:		21 Feb 1998
 # Whom:			giffunip@asme.org
 #
-# $Id: Makefile,v 1.3 1998/08/05 09:30:41 asami Exp $
+# $Id: Makefile,v 1.4 1998/09/24 18:54:22 jseger Exp $
 #
 
 DISTNAME=       saoimage-1.22
 CATEGORIES=	astro
-MASTER_SITES=	ftp://cfa-ftp.harvard.edu/pub/gsc/SAOimage/Old
+MASTER_SITES=	ftp://cfa-ftp.harvard.edu/pub/gsc/SAOimage/Old/
 
 MAINTAINER=	giffunip@asme.org
 
@@ -16,15 +16,13 @@ MAKEFILE=	makefile
 ALL_TARGET=	FreeBSD
 INSTALL_TARGET= -f makefile.$(ALL_TARGET) install_saobin install_saoman
 
-BROKEN_ELF=	build
-
 MANL=		saoimage.l
 USE_X_PREFIX=	yes
 
 pre-patch:
 	$(CP) $(WRKSRC)/makefile.sun $(WRKSRC)/makefile.$(ALL_TARGET)
 pre-build:
-	 @(cd ${WRKSRC}; ${MAKE} ${MAKEFILE} clean )
+	@(cd ${WRKSRC}/btnlib; ${MAKE})
 post-install:
 	strip $(PREFIX)/bin/saoimage
 
