@@ -6145,6 +6145,7 @@ pear-Net_Socket	ports/net/pear-Net_Socket
 pear-Net_URL	ports/net/pear-Net_URL
 pear-PEAR	ports/devel/pear-PEAR
 pear-XML_Parser	ports/devel/pear-XML_Parser
+pear-XML_Serializer	ports/devel/pear-XML_Serializer
 pear-XML_Tree	ports/devel/pear-XML_Tree
 pear-XML_Util	ports/devel/pear-XML_Util
 pear-XML_XPath	ports/devel/pear-XML_XPath
