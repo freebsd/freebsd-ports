@@ -1,7 +1,6 @@
 # New ports collection makefile for:    astrolog
-#
+# See some useful stuff at:
 # http://rpkalf2.mach.uni-karlsruhe.de/~ferber/astrolog/
-# http://www.magitech.com/~cruiser1/astrolog.htm
 #
 # Date created:         31 July 1995
 # Whom:                 faulkner@cactus.org
@@ -11,6 +10,7 @@
 
 PORTNAME=	astrolog
 PORTVERSION=	5.40
+PORTREVISION=   1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.astrolog.org/ftp/ephem/ \
 		http://www.astrolog.org/ftp/ \

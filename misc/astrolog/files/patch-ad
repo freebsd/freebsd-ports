@@ -1,0 +1,11 @@
+--- general.c.bak	Wed Dec 23 23:29:21 1998
++++ general.c	Fri May 25 20:59:09 2001
+@@ -922,7 +922,7 @@
+ int *mon, *day, *yea;
+ real *tim, zon;
+ {
+-  dword curtimer;
++  time_t curtimer;
+   int min, sec;
+   real hr;
+ 
