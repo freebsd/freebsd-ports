@@ -8055,6 +8055,7 @@ shapelib	ports/devel/shapelib
 shared-mime-info	ports/misc/shared-mime-info
 sharefonts	ports/x11-fonts/sharefonts
 sharity-light	ports/net/sharity-light
+shftool		ports/converters/shftool
 shishi		ports/security/shishi
 shlock		ports/sysutils/shlock
 shmap		ports/devel/shmap
