@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://openmotif.opengroup.org/pub/openmotif/R2.1.30/binaries/metro
 		ftp://ftp.opengroup.org/pub/openmotif/R2.1.30/binaries/metrolink/  \
 		ftp://ftp.isca.uiowa.edu/pub/mirrors/openmotif/binaries/metrolink/  \
 		ftp://ftp.kddlabs.co.jp:/X11/openmotif/binaries/metrolink/
-DISTNAME=	openmotif-${PORTVERSION}-1_MLI
+DISTNAME=	openmotif-devel-${PORTVERSION}-4_MLI
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	obrien@FreeBSD.org
