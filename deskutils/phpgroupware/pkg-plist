@@ -1,831 +1,831 @@
 @comment remember to leave header.inc.php out of this list (data file)
-www/data/phpgroupware/about.php
-www/data/phpgroupware/header.inc.php.template
-www/data/phpgroupware/index.php
-www/data/phpgroupware/login.php
-www/data/phpgroupware/logout.php
-www/data/phpgroupware/notify.php
-www/data/phpgroupware/version.inc.php
-www/data/phpgroupware/addressbook/delete.php
-www/data/phpgroupware/addressbook/add.php
-www/data/phpgroupware/addressbook/inc/functions.inc.php
-www/data/phpgroupware/addressbook/inc/hook_addressbook_add_def_pref.inc.php
-www/data/phpgroupware/addressbook/inc/hook_preferences.inc.php
-www/data/phpgroupware/addressbook/edit.php
-www/data/phpgroupware/addressbook/index.php
-www/data/phpgroupware/addressbook/parsecard.php
-www/data/phpgroupware/addressbook/preferences.php
-www/data/phpgroupware/addressbook/vcardin.php
-www/data/phpgroupware/addressbook/vcardout.php
-www/data/phpgroupware/addressbook/version.inc.php
-www/data/phpgroupware/addressbook/view.php
-www/data/phpgroupware/addressbook/templates/default/images/navbar.gif
-www/data/phpgroupware/addressbook/templates/verdilak/images/navbar.gif
-www/data/phpgroupware/admin/accesslog.php
-www/data/phpgroupware/admin/accounts.php
-www/data/phpgroupware/admin/applications.php
-www/data/phpgroupware/admin/currentusers.php
-www/data/phpgroupware/admin/deleteaccount.php
-www/data/phpgroupware/admin/deleteapplication.php
-www/data/phpgroupware/admin/deletegroup.php
-www/data/phpgroupware/admin/editaccount.php
-www/data/phpgroupware/admin/editapplication.php
-www/data/phpgroupware/admin/editgroup.php
-www/data/phpgroupware/admin/groups.php
-www/data/phpgroupware/admin/index.php
-www/data/phpgroupware/admin/killsession.php
-www/data/phpgroupware/admin/mainscreen_message.php
-www/data/phpgroupware/admin/navbar-create.php
-www/data/phpgroupware/admin/navbar-sel.php
-www/data/phpgroupware/admin/newaccount.php
-www/data/phpgroupware/admin/newapplication.php
-www/data/phpgroupware/admin/newgroup.php
-www/data/phpgroupware/admin/version.inc.php
-www/data/phpgroupware/admin/viewaccount.php
-www/data/phpgroupware/admin/inc/accounts_ldap.inc.php
-www/data/phpgroupware/admin/inc/accounts_sql.inc.php
-www/data/phpgroupware/admin/inc/hook_admin.inc.php
-www/data/phpgroupware/admin/inc/hook_admin_add_def_pref.inc.php
-www/data/phpgroupware/admin/setup/config.inc.php
-www/data/phpgroupware/admin/templates/default/images/navbar.gif
-www/data/phpgroupware/admin/templates/default/accesslog.tpl
-www/data/phpgroupware/admin/templates/default/accesslog_row.tpl
-www/data/phpgroupware/admin/templates/default/account_form.tpl
-www/data/phpgroupware/admin/templates/default/account_view.tpl
-www/data/phpgroupware/admin/templates/default/account_view_row.tpl
-www/data/phpgroupware/admin/templates/default/accounts.tpl
-www/data/phpgroupware/admin/templates/default/accounts_row.tpl
-www/data/phpgroupware/admin/templates/default/application_form.tpl
-www/data/phpgroupware/admin/templates/default/application_form_row.tpl
-www/data/phpgroupware/admin/templates/default/applications.tpl
-www/data/phpgroupware/admin/templates/default/applications_row.tpl
-www/data/phpgroupware/admin/templates/default/currentusers.tpl
-www/data/phpgroupware/admin/templates/default/currentusers_row.tpl
-www/data/phpgroupware/admin/templates/default/delete_common.tpl
-www/data/phpgroupware/admin/templates/default/groups.tpl
-www/data/phpgroupware/admin/templates/default/groups_form.tpl
-www/data/phpgroupware/admin/templates/default/nntp.tpl
-www/data/phpgroupware/admin/templates/default/groups_row.tpl
-www/data/phpgroupware/admin/templates/default/mainscreen_message.tpl
-www/data/phpgroupware/admin/templates/default/mainscreen_message_row.tpl
-www/data/phpgroupware/admin/templates/default/mainscreen_message_row_2.tpl
-www/data/phpgroupware/admin/templates/verdilak/images/navbar.gif
-www/data/phpgroupware/admin/templates/verdilak/accesslog.tpl
-www/data/phpgroupware/admin/templates/verdilak/accesslog_row.tpl
-www/data/phpgroupware/admin/templates/verdilak/account_form.tpl
-www/data/phpgroupware/admin/templates/verdilak/account_view.tpl
-www/data/phpgroupware/admin/templates/verdilak/account_view_row.tpl
-www/data/phpgroupware/admin/templates/verdilak/accounts.tpl
-www/data/phpgroupware/admin/templates/verdilak/accounts_row.tpl
-www/data/phpgroupware/admin/templates/verdilak/application_form.tpl
-www/data/phpgroupware/admin/templates/verdilak/application_form_row.tpl
-www/data/phpgroupware/admin/templates/verdilak/applications.tpl
-www/data/phpgroupware/admin/templates/verdilak/applications_row.tpl
-www/data/phpgroupware/admin/templates/verdilak/currentusers.tpl
-www/data/phpgroupware/admin/templates/verdilak/currentusers_row.tpl
-www/data/phpgroupware/admin/templates/verdilak/delete_common.tpl
-www/data/phpgroupware/admin/templates/verdilak/groups.tpl
-www/data/phpgroupware/admin/templates/verdilak/groups_form.tpl
-www/data/phpgroupware/admin/templates/verdilak/nntp.tpl
-www/data/phpgroupware/admin/templates/verdilak/groups_row.tpl
-www/data/phpgroupware/admin/templates/verdilak/mainscreen_message.tpl
-www/data/phpgroupware/admin/templates/verdilak/mainscreen_message_row.tpl
-www/data/phpgroupware/admin/templates/verdilak/mainscreen_message_row_2.tpl
-www/data/phpgroupware/calendar/delete.php
-www/data/phpgroupware/calendar/day.php
-www/data/phpgroupware/calendar/edit_entry.php
-www/data/phpgroupware/calendar/edit_entry_handler.php
-www/data/phpgroupware/calendar/index.php
-www/data/phpgroupware/calendar/matrixselect.php
-www/data/phpgroupware/calendar/preferences.php
-www/data/phpgroupware/calendar/search.php
-www/data/phpgroupware/calendar/version.inc.php
-www/data/phpgroupware/calendar/view.php
-www/data/phpgroupware/calendar/viewmatrix.php
-www/data/phpgroupware/calendar/week.php
-www/data/phpgroupware/calendar/year.php
-www/data/phpgroupware/calendar/inc/footer.inc.php
-www/data/phpgroupware/calendar/inc/functions.inc.php
-www/data/phpgroupware/calendar/inc/header.inc.php
-www/data/phpgroupware/calendar/inc/hook_calendar_add_def_pref.inc.php
-www/data/phpgroupware/calendar/inc/hook_home.inc.php
-www/data/phpgroupware/calendar/inc/hook_preferences.inc.php
-www/data/phpgroupware/calendar/setup/create_tables.inc.php
-www/data/phpgroupware/calendar/setup/droptables.inc.php
-www/data/phpgroupware/calendar/setup/newtables.inc.php
-www/data/phpgroupware/calendar/templates/default/day_cal.tpl
-www/data/phpgroupware/calendar/templates/default/day.tpl
-www/data/phpgroupware/calendar/templates/default/images/arrow.gif
-www/data/phpgroupware/calendar/templates/default/images/circle.gif
-www/data/phpgroupware/calendar/templates/default/images/month.gif
-www/data/phpgroupware/calendar/templates/default/images/navbar.gif
-www/data/phpgroupware/calendar/templates/default/images/new.gif
-www/data/phpgroupware/calendar/templates/default/images/pix.gif
-www/data/phpgroupware/calendar/templates/default/images/rpt.gif
-www/data/phpgroupware/calendar/templates/default/images/today.gif
-www/data/phpgroupware/calendar/templates/default/images/view.gif
-www/data/phpgroupware/calendar/templates/default/images/week.gif
-www/data/phpgroupware/calendar/templates/default/images/year.gif
-www/data/phpgroupware/calendar/templates/default/day_row.tpl
-www/data/phpgroupware/calendar/templates/default/day_row_99.tpl
-www/data/phpgroupware/calendar/templates/default/edit.tpl
-www/data/phpgroupware/calendar/templates/default/form_button_script.tpl
-www/data/phpgroupware/calendar/templates/default/hr.tpl
-www/data/phpgroupware/calendar/templates/default/index.tpl
-www/data/phpgroupware/calendar/templates/default/list.tpl
-www/data/phpgroupware/calendar/templates/default/matrix_query.tpl
-www/data/phpgroupware/calendar/templates/default/mini_cal.tpl
-www/data/phpgroupware/calendar/templates/default/mini_day.tpl
-www/data/phpgroupware/calendar/templates/default/mini_week.tpl
-www/data/phpgroupware/calendar/templates/default/overlap.tpl
-www/data/phpgroupware/calendar/templates/default/search.tpl
-www/data/phpgroupware/calendar/templates/default/search_list.tpl
-www/data/phpgroupware/calendar/templates/default/view.tpl
-www/data/phpgroupware/calendar/templates/default/week.tpl
-www/data/phpgroupware/calendar/templates/verdilak/day_cal.tpl
-www/data/phpgroupware/calendar/templates/verdilak/day.tpl
-www/data/phpgroupware/calendar/templates/verdilak/images/arrow.gif
-www/data/phpgroupware/calendar/templates/verdilak/images/circle.gif
-www/data/phpgroupware/calendar/templates/verdilak/images/mini-calendar-bar.gif
-www/data/phpgroupware/calendar/templates/verdilak/images/mini_day_block.gif
-www/data/phpgroupware/calendar/templates/verdilak/images/month.gif
-www/data/phpgroupware/calendar/templates/verdilak/images/navbar.gif
-www/data/phpgroupware/calendar/templates/verdilak/images/new.gif
-www/data/phpgroupware/calendar/templates/verdilak/images/pix.gif
-www/data/phpgroupware/calendar/templates/verdilak/images/rpt.gif
-www/data/phpgroupware/calendar/templates/verdilak/images/today.gif
-www/data/phpgroupware/calendar/templates/verdilak/images/view.gif
-www/data/phpgroupware/calendar/templates/verdilak/images/week.gif
-www/data/phpgroupware/calendar/templates/verdilak/images/year.gif
-www/data/phpgroupware/calendar/templates/verdilak/day_row.tpl
-www/data/phpgroupware/calendar/templates/verdilak/day_row_99.tpl
-www/data/phpgroupware/calendar/templates/verdilak/edit.tpl
-www/data/phpgroupware/calendar/templates/verdilak/form_button_script.tpl
-www/data/phpgroupware/calendar/templates/verdilak/hr.tpl
-www/data/phpgroupware/calendar/templates/verdilak/index.tpl
-www/data/phpgroupware/calendar/templates/verdilak/list.tpl
-www/data/phpgroupware/calendar/templates/verdilak/matrix_query.tpl
-www/data/phpgroupware/calendar/templates/verdilak/mini_cal.tpl
-www/data/phpgroupware/calendar/templates/verdilak/mini_day.tpl
-www/data/phpgroupware/calendar/templates/verdilak/mini_week.tpl
-www/data/phpgroupware/calendar/templates/verdilak/overlap.tpl
-www/data/phpgroupware/calendar/templates/verdilak/search.tpl
-www/data/phpgroupware/calendar/templates/verdilak/search_list.tpl
-www/data/phpgroupware/calendar/templates/verdilak/view.tpl
-www/data/phpgroupware/calendar/templates/verdilak/week.tpl
-www/data/phpgroupware/doc/CHANGELOG
-www/data/phpgroupware/doc/CREDITS
-www/data/phpgroupware/doc/LICENSE
-www/data/phpgroupware/doc/README
-www/data/phpgroupware/doc/SECURITY
-www/data/phpgroupware/doc/index.html
-www/data/phpgroupware/doc/index.txt
-www/data/phpgroupware/doc/sgml/FAQ.sgml
-www/data/phpgroupware/doc/sgml/about.sgml
-www/data/phpgroupware/doc/sgml/index.sgml
-www/data/phpgroupware/doc/sgml/install.sgml
-www/data/phpgroupware/doc/sgml/installation.sgml
-www/data/phpgroupware/doc/sgml/introduction.sgml
-www/data/phpgroupware/doc/sgml/requirements.sgml
-www/data/phpgroupware/doc/sgml/trouble.sgml
-www/data/phpgroupware/email/action.php
-www/data/phpgroupware/email/addressbook.php
-www/data/phpgroupware/email/attach_file.php
-www/data/phpgroupware/email/compose.php
-www/data/phpgroupware/email/create_table_user_mailservers.mysql
-www/data/phpgroupware/email/folder.php
-www/data/phpgroupware/email/get_attach.php
-www/data/phpgroupware/email/index.php
-www/data/phpgroupware/email/message.php
-www/data/phpgroupware/email/message_calendar.php
-www/data/phpgroupware/email/preferences.php
-www/data/phpgroupware/email/send_message.php
-www/data/phpgroupware/email/version.inc.php
-www/data/phpgroupware/email/view_image.php
-www/data/phpgroupware/email/inc/functions.inc.php
-www/data/phpgroupware/email/inc/hook_email_add_def_pref.inc.php
-www/data/phpgroupware/email/inc/hook_home.inc.php
-www/data/phpgroupware/email/inc/hook_preferences.inc.php
-www/data/phpgroupware/email/inc/msg_imap.inc.php
-www/data/phpgroupware/email/inc/msg_nntp.inc.php
-www/data/phpgroupware/email/inc/msg_pop3.inc.php
-www/data/phpgroupware/email/setup/config.inc.php
-www/data/phpgroupware/email/templates/default/images/check.gif
-www/data/phpgroupware/email/templates/default/images/navbar.gif
-www/data/phpgroupware/email/templates/default/images/refresh.gif
-www/data/phpgroupware/email/templates/default/images/sm_delete.gif
-www/data/phpgroupware/email/templates/default/images/sm_envelope.gif
-www/data/phpgroupware/email/templates/default/images/sm_forward.gif
-www/data/phpgroupware/email/templates/default/images/sm_reply.gif
-www/data/phpgroupware/email/templates/default/images/sm_reply_all.gif
-www/data/phpgroupware/email/templates/default/addressbook.tpl
-www/data/phpgroupware/filemanager/about.php
-www/data/phpgroupware/filemanager/index.php
-www/data/phpgroupware/filemanager/new_index.php
-www/data/phpgroupware/filemanager/version.inc.php
-www/data/phpgroupware/filemanager/templates/default/images/folder_close.gif
-www/data/phpgroupware/filemanager/templates/default/images/folder_open.gif
-www/data/phpgroupware/filemanager/templates/default/images/navbar.gif
-www/data/phpgroupware/files/groups/dont_delete_me
-www/data/phpgroupware/files/users/dont_delete_me
-www/data/phpgroupware/manual/addressbook.php
-www/data/phpgroupware/manual/admin_account.php
-www/data/phpgroupware/manual/admin_headline.php
-www/data/phpgroupware/manual/admin_other.php
-www/data/phpgroupware/manual/admin_session.php
-www/data/phpgroupware/manual/administration.php
-www/data/phpgroupware/manual/bookmarks.php
-www/data/phpgroupware/manual/cal_add.php
-www/data/phpgroupware/manual/cal_edit_delete.php
-www/data/phpgroupware/manual/cal_view.php
-www/data/phpgroupware/manual/calendar.php
-www/data/phpgroupware/manual/chat.php
-www/data/phpgroupware/manual/email.php
-www/data/phpgroupware/manual/email_notes.php
-www/data/phpgroupware/manual/email_other.php
-www/data/phpgroupware/manual/email_reply.php
-www/data/phpgroupware/manual/email_viewing.php
-www/data/phpgroupware/manual/filemanager.php
-www/data/phpgroupware/manual/headlines.php
-www/data/phpgroupware/manual/home.php
-www/data/phpgroupware/manual/hr.php
-www/data/phpgroupware/manual/index.php
-www/data/phpgroupware/manual/inv.php
-www/data/phpgroupware/manual/mymenu.txt
-www/data/phpgroupware/manual/nntp.php
-www/data/phpgroupware/manual/overview.php
-www/data/phpgroupware/manual/preferences.php
-www/data/phpgroupware/manual/prefs_other.php
-www/data/phpgroupware/manual/prefs_settings.php
-www/data/phpgroupware/manual/todo.php
-www/data/phpgroupware/manual/todo_add.php
-www/data/phpgroupware/manual/todo_other.php
-www/data/phpgroupware/manual/tts.php
-www/data/phpgroupware/manual/tts_create.php
-www/data/phpgroupware/manual/tts_edit_close.php
-www/data/phpgroupware/manual/tts_view.php
-www/data/phpgroupware/manual/version.inc.php
-www/data/phpgroupware/manual/inc/footer.inc.php
-www/data/phpgroupware/manual/inc/functions.inc.php
-www/data/phpgroupware/manual/inc/header.inc.php
-www/data/phpgroupware/manual/templates/default/images/addevent.gif
-www/data/phpgroupware/manual/templates/default/images/addressbook.gif
-www/data/phpgroupware/manual/templates/default/images/admin.gif
-www/data/phpgroupware/manual/templates/default/images/bookmarks.gif
-www/data/phpgroupware/manual/templates/default/images/calendar.gif
-www/data/phpgroupware/manual/templates/default/images/chat.gif
-www/data/phpgroupware/manual/templates/default/images/circle.gif
-www/data/phpgroupware/manual/templates/default/images/docs.gif
-www/data/phpgroupware/manual/templates/default/images/email.gif
-www/data/phpgroupware/manual/templates/default/images/filemanager.gif
-www/data/phpgroupware/manual/templates/default/images/headlines.gif
-www/data/phpgroupware/manual/templates/default/images/headlinesscreen.gif
-www/data/phpgroupware/manual/templates/default/images/home.gif
-www/data/phpgroupware/manual/templates/default/images/hr.gif
-www/data/phpgroupware/manual/templates/default/images/inv.gif
-www/data/phpgroupware/manual/templates/default/images/month.gif
-www/data/phpgroupware/manual/templates/default/images/mt.gif
-www/data/phpgroupware/manual/templates/default/images/navbar.gif
-www/data/phpgroupware/manual/templates/default/images/nntp.gif
-www/data/phpgroupware/manual/templates/default/images/pgw.jpg
-www/data/phpgroupware/manual/templates/default/images/preferences.gif
-www/data/phpgroupware/manual/templates/default/images/sm_delete.gif
-www/data/phpgroupware/manual/templates/default/images/sm_forward.gif
-www/data/phpgroupware/manual/templates/default/images/sm_reply.gif
-www/data/phpgroupware/manual/templates/default/images/sm_reply_all.gif
-www/data/phpgroupware/manual/templates/default/images/title_addressbook.gif
-www/data/phpgroupware/manual/templates/default/images/title_administration.gif
-www/data/phpgroupware/manual/templates/default/images/title_bookmarks.gif
-www/data/phpgroupware/manual/templates/default/images/title_calendar.gif
-www/data/phpgroupware/manual/templates/default/images/title_chat.gif
-www/data/phpgroupware/manual/templates/default/images/title_docs.gif
-www/data/phpgroupware/manual/templates/default/images/title_email.gif
-www/data/phpgroupware/manual/templates/default/images/title_filemanager.gif
-www/data/phpgroupware/manual/templates/default/images/title_ftp.gif
-www/data/phpgroupware/manual/templates/default/images/title_headlines.gif
-www/data/phpgroupware/manual/templates/default/images/title_home.gif
-www/data/phpgroupware/manual/templates/default/images/title_hr.gif
-www/data/phpgroupware/manual/templates/default/images/title_inv.gif
-www/data/phpgroupware/manual/templates/default/images/title_inventory.gif
-www/data/phpgroupware/manual/templates/default/images/title_nntp.gif
-www/data/phpgroupware/manual/templates/default/images/title_overview.gif
-www/data/phpgroupware/manual/templates/default/images/title_todo.gif
-www/data/phpgroupware/manual/templates/default/images/title_preferences.gif
-www/data/phpgroupware/manual/templates/default/images/title_tts.gif
-www/data/phpgroupware/manual/templates/default/images/today.gif
-www/data/phpgroupware/manual/templates/default/images/todo.gif
-www/data/phpgroupware/manual/templates/default/images/tree_collapse.gif
-www/data/phpgroupware/manual/templates/default/images/tree_end.gif
-www/data/phpgroupware/manual/templates/default/images/tree_expand.gif
-www/data/phpgroupware/manual/templates/default/images/tree_leaf.gif
-www/data/phpgroupware/manual/templates/default/images/tree_space.gif
-www/data/phpgroupware/manual/templates/default/images/tree_split.gif
-www/data/phpgroupware/manual/templates/default/images/tree_vertline.gif
-www/data/phpgroupware/manual/templates/default/images/tts.gif
-www/data/phpgroupware/manual/templates/default/images/vuurwerk.gif
-www/data/phpgroupware/manual/templates/default/images/week.gif
-www/data/phpgroupware/manual/templates/default/images/year.gif
-www/data/phpgroupware/manual/templates/verdilak/images/navbar.gif
-www/data/phpgroupware/nntp/admin.php
-www/data/phpgroupware/nntp/index.php
-www/data/phpgroupware/nntp/monitor.php
-www/data/phpgroupware/nntp/preferences.php
-www/data/phpgroupware/nntp/read_article.php
-www/data/phpgroupware/nntp/version.inc.php
-www/data/phpgroupware/nntp/view_attachment.php
-www/data/phpgroupware/nntp/viewgroup.php
-www/data/phpgroupware/nntp/inc/decode.inc.php
-www/data/phpgroupware/nntp/inc/functions.inc.php
-www/data/phpgroupware/nntp/inc/hook_admin.inc.php
-www/data/phpgroupware/nntp/inc/hook_preferences.inc.php
-www/data/phpgroupware/nntp/inc/mail.inc.php
-www/data/phpgroupware/nntp/inc/message.inc.php
-www/data/phpgroupware/nntp/templates/default/images/navbar.gif
-www/data/phpgroupware/nntp/templates/default/images/sm_delete.gif
-www/data/phpgroupware/nntp/templates/default/images/sm_envelope.gif
-www/data/phpgroupware/nntp/templates/default/images/sm_forward.gif
-www/data/phpgroupware/nntp/templates/default/images/sm_reply.gif
-www/data/phpgroupware/nntp/templates/default/images/sm_reply_all.gif
-www/data/phpgroupware/nntp/templates/default/index.tpl
-www/data/phpgroupware/nntp/templates/default/index_list_c.tpl
-www/data/phpgroupware/nntp/templates/default/index_list_d.tpl
-www/data/phpgroupware/nntp/templates/default/index_list_f.tpl
-www/data/phpgroupware/nntp/templates/default/index_list_h.tpl
-www/data/phpgroupware/nntp/templates/default/msg.tpl
-www/data/phpgroupware/nntp/templates/default/msg_attach.tpl
-www/data/phpgroupware/nntp/templates/default/msg_header_data.tpl
-www/data/phpgroupware/nntp/templates/default/msg_header_footer.tpl
-www/data/phpgroupware/nntp/templates/default/msg_header_label.tpl
-www/data/phpgroupware/nntp/templates/default/msg_misc.tpl
-www/data/phpgroupware/nntp/templates/default/msg_misc_action.tpl
-www/data/phpgroupware/nntp/templates/default/msg_misc_bar.tpl
-www/data/phpgroupware/nntp/templates/default/nntp.tpl
-www/data/phpgroupware/nntp/templates/default/view_group.tpl
-www/data/phpgroupware/nntp/templates/verdilak/images/navbar.gif
-www/data/phpgroupware/nntp/templates/verdilak/images/sm_delete.gif
-www/data/phpgroupware/nntp/templates/verdilak/images/sm_envelope.gif
-www/data/phpgroupware/nntp/templates/verdilak/images/sm_forward.gif
-www/data/phpgroupware/nntp/templates/verdilak/images/sm_reply.gif
-www/data/phpgroupware/nntp/templates/verdilak/images/sm_reply_all.gif
-www/data/phpgroupware/nntp/templates/verdilak/index.tpl
-www/data/phpgroupware/nntp/templates/verdilak/index_list_c.tpl
-www/data/phpgroupware/nntp/templates/verdilak/index_list_d.tpl
-www/data/phpgroupware/nntp/templates/verdilak/index_list_f.tpl
-www/data/phpgroupware/nntp/templates/verdilak/index_list_h.tpl
-www/data/phpgroupware/nntp/templates/verdilak/msg.tpl
-www/data/phpgroupware/nntp/templates/verdilak/msg_attach.tpl
-www/data/phpgroupware/nntp/templates/verdilak/msg_header_data.tpl
-www/data/phpgroupware/nntp/templates/verdilak/msg_header_footer.tpl
-www/data/phpgroupware/nntp/templates/verdilak/msg_header_label.tpl
-www/data/phpgroupware/nntp/templates/verdilak/msg_misc.tpl
-www/data/phpgroupware/nntp/templates/verdilak/msg_misc_action.tpl
-www/data/phpgroupware/nntp/templates/verdilak/msg_misc_bar.tpl
-www/data/phpgroupware/nntp/templates/verdilak/nntp.tpl
-www/data/phpgroupware/nntp/templates/verdilak/view_group.tpl
-www/data/phpgroupware/notes/delete.php
-www/data/phpgroupware/notes/TODO
-www/data/phpgroupware/notes/add.php
-www/data/phpgroupware/notes/edit.php
-www/data/phpgroupware/notes/index.php
-www/data/phpgroupware/notes/preferences.php
-www/data/phpgroupware/notes/search.php
-www/data/phpgroupware/notes/version.inc.php
-www/data/phpgroupware/notes/view.php
-www/data/phpgroupware/notes/inc/functions.inc.php
-www/data/phpgroupware/notes/inc/hook_notes_add_def_pref.inc.php
-www/data/phpgroupware/notes/inc/hook_preferences.inc.php
-www/data/phpgroupware/notes/templates/default/images/navbar.gif
-www/data/phpgroupware/phpgwapi/cron/clean_database.pl
-www/data/phpgroupware/phpgwapi/cron/stalesessions.php
-www/data/phpgroupware/phpgwapi/cron/stalesessions.pl
-www/data/phpgroupware/phpgwapi/doc/CHANGELOG
-www/data/phpgroupware/phpgwapi/doc/CREDITS
-www/data/phpgroupware/phpgwapi/doc/LICENSE
-www/data/phpgroupware/phpgwapi/doc/README
-www/data/phpgroupware/phpgwapi/doc/RELEASE-NOTES
-www/data/phpgroupware/phpgwapi/doc/SECURITY
-www/data/phpgroupware/phpgwapi/doc/index.html
-www/data/phpgroupware/phpgwapi/doc/index.lyx
-www/data/phpgroupware/phpgwapi/doc/index.pdf
-www/data/phpgroupware/phpgwapi/doc/index.txt
-www/data/phpgroupware/phpgwapi/version.inc.php
-www/data/phpgroupware/phpgwapi/inc/footer.inc.php
-www/data/phpgroupware/phpgwapi/inc/phpgw.inc.php
-www/data/phpgroupware/phpgwapi/inc/phpgw_accounts_ldap.inc.php
-www/data/phpgroupware/phpgwapi/inc/phpgw_accounts_shared.inc.php
-www/data/phpgroupware/phpgwapi/inc/phpgw_accounts_sql.inc.php
-www/data/phpgroupware/phpgwapi/inc/phpgw_auth_http.inc.php
-www/data/phpgroupware/phpgwapi/inc/phpgw_auth_ldap.inc.php
-www/data/phpgroupware/phpgwapi/inc/phpgw_auth_mail.inc.php
-www/data/phpgroupware/phpgwapi/inc/phpgw_auth_sql.inc.php
-www/data/phpgroupware/phpgwapi/inc/phpgw_categories.inc.php
-www/data/phpgroupware/phpgwapi/inc/phpgw_common.inc.php
-www/data/phpgroupware/phpgwapi/inc/phpgw_crypto.inc.php
-www/data/phpgroupware/phpgwapi/inc/phpgw_db_msql.inc.php
-www/data/phpgroupware/phpgwapi/inc/phpgw_db_mssql.inc.php
-www/data/phpgroupware/phpgwapi/inc/phpgw_db_mysql.inc.php
-www/data/phpgroupware/phpgwapi/inc/phpgw_db_odbc.inc.php
-www/data/phpgroupware/phpgwapi/inc/phpgw_db_oracle.inc.php
-www/data/phpgroupware/phpgwapi/inc/phpgw_db_pgsql.inc.php
-www/data/phpgroupware/phpgwapi/inc/phpgw_db_sybase.inc.php
-www/data/phpgroupware/phpgwapi/inc/phpgw_info.inc.php
-www/data/phpgroupware/phpgwapi/inc/phpgw_lang_sql.inc.php
-www/data/phpgroupware/phpgwapi/inc/phpgw_mime.types
-www/data/phpgroupware/phpgwapi/inc/phpgw_network.inc.php
-www/data/phpgroupware/phpgwapi/inc/phpgw_nextmatchs.inc.php
-www/data/phpgroupware/phpgwapi/inc/phpgw_send.inc.php
-www/data/phpgroupware/phpgwapi/inc/phpgw_session.inc.php
-www/data/phpgroupware/phpgwapi/inc/phpgw_template.inc.php
-www/data/phpgroupware/phpgwapi/inc/phpgw_utilities.inc.php
-www/data/phpgroupware/phpgwapi/inc/phpgw_utilities_clientsniffer.inc.php
-www/data/phpgroupware/phpgwapi/inc/phpgw_utilities_http.inc.php
-www/data/phpgroupware/phpgwapi/inc/phpgw_utilities_matrixview.inc.php
-www/data/phpgroupware/phpgwapi/inc/phpgw_utilities_menutree.inc.php
-www/data/phpgroupware/phpgwapi/inc/phpgw_utilities_portalbox.inc.php
-www/data/phpgroupware/phpgwapi/inc/phpgw_utilities_rssparse.inc.php
-www/data/phpgroupware/phpgwapi/inc/phpgw_utilities_sbox.inc.php
-www/data/phpgroupware/phpgwapi/inc/phpgw_vfs.inc.php
-www/data/phpgroupware/phpgwapi/setup/config.inc.php
-www/data/phpgroupware/phpgwapi/templates/default/images/about.gif
-www/data/phpgroupware/phpgwapi/templates/default/images/attach.gif
-www/data/phpgroupware/phpgwapi/templates/default/images/bar-10.jpg
-www/data/phpgroupware/phpgwapi/templates/default/images/down.gif
-www/data/phpgroupware/phpgwapi/templates/default/images/first-grey.gif
-www/data/phpgroupware/phpgwapi/templates/default/images/first.gif
-www/data/phpgroupware/phpgwapi/templates/default/images/home.gif
-www/data/phpgroupware/phpgwapi/templates/default/images/last-grey.gif
-www/data/phpgroupware/phpgwapi/templates/default/images/last.gif
-www/data/phpgroupware/phpgwapi/templates/default/images/left-grey.gif
-www/data/phpgroupware/phpgwapi/templates/default/images/left.gif
-www/data/phpgroupware/phpgwapi/templates/default/images/logo.gif
-www/data/phpgroupware/phpgwapi/templates/default/images/logout.gif
-www/data/phpgroupware/phpgwapi/templates/default/images/print.gif
-www/data/phpgroupware/phpgwapi/templates/default/images/right-grey.gif
-www/data/phpgroupware/phpgwapi/templates/default/images/right.gif
-www/data/phpgroupware/phpgwapi/templates/default/images/tabs-bg0.gif
-www/data/phpgroupware/phpgwapi/templates/default/images/tabs-bg1.gif
-www/data/phpgroupware/phpgwapi/templates/default/images/tabs-end0.gif
-www/data/phpgroupware/phpgwapi/templates/default/images/tabs-end1.gif
-www/data/phpgroupware/phpgwapi/templates/default/images/tabs-ext.gif
-www/data/phpgroupware/phpgwapi/templates/default/images/tabs-l0.gif
-www/data/phpgroupware/phpgwapi/templates/default/images/tabs-l1.gif
-www/data/phpgroupware/phpgwapi/templates/default/images/tabs-r0.gif
-www/data/phpgroupware/phpgwapi/templates/default/images/tabs-r1.gif
-www/data/phpgroupware/phpgwapi/templates/default/images/tabs-sepl.gif
-www/data/phpgroupware/phpgwapi/templates/default/images/tabs-sepm.gif
-www/data/phpgroupware/phpgwapi/templates/default/images/tabs-sepr.gif
-www/data/phpgroupware/phpgwapi/templates/default/images/tabs-start0.gif
-www/data/phpgroupware/phpgwapi/templates/default/images/tabs-start1.gif
-www/data/phpgroupware/phpgwapi/templates/default/images/up.gif
-www/data/phpgroupware/phpgwapi/templates/default/about.tpl
-www/data/phpgroupware/phpgwapi/templates/default/about_unknown.tpl
-www/data/phpgroupware/phpgwapi/templates/default/footer.tpl
-www/data/phpgroupware/phpgwapi/templates/default/frames.tpl
-www/data/phpgroupware/phpgwapi/templates/default/frames_body.tpl
-www/data/phpgroupware/phpgwapi/templates/default/frames_navbar.tpl
-www/data/phpgroupware/phpgwapi/templates/default/head.inc.php
-www/data/phpgroupware/phpgwapi/templates/default/head.tpl
-www/data/phpgroupware/phpgwapi/templates/default/login.tpl
-www/data/phpgroupware/phpgwapi/templates/default/login_denylogin.tpl
-www/data/phpgroupware/phpgwapi/templates/default/login_selectdomain.tpl
-www/data/phpgroupware/phpgwapi/templates/default/navbar.inc.php
-www/data/phpgroupware/phpgwapi/templates/default/navbar.tpl
-www/data/phpgroupware/phpgwapi/templates/default/navbar_app.tpl
-www/data/phpgroupware/phpgwapi/templates/default/portal_linkbox.tpl
-www/data/phpgroupware/phpgwapi/templates/default/portal_linkbox_footer.tpl
-www/data/phpgroupware/phpgwapi/templates/default/portal_linkbox_header.tpl
-www/data/phpgroupware/phpgwapi/templates/default/portal_main.tpl
-www/data/phpgroupware/phpgwapi/templates/justweb/images/attach.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/bar-10.jpg
-www/data/phpgroupware/phpgwapi/templates/justweb/images/bg_filler.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/blue_filler.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/bottom_bar_bg.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/bottom_bar_left.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/bottom_bar_right.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/down-grey.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/down.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/first-grey.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/first.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/greybar.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/greybar.jpg
-www/data/phpgroupware/phpgwapi/templates/justweb/images/help.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/last-grey.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/last.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/left-grey.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/left.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/logo.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/logo_reversed.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/logout-grey.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/logout-red.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/menu_bar_bg.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/menu_bar_left.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/menu_bar_right.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/menu_filler.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/navbar_filler.jpg
-www/data/phpgroupware/phpgwapi/templates/justweb/images/preferences-grey.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/preferences-red.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/preferences.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/print.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/right-grey.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/right.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/side_bar_bg.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/side_bar_bottom.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/side_bar_top.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/spacer.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/tab_help.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/tab_home.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/tab_logout.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/tab_prefs.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/tabs-bg0.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/tabs-bg1.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/tabs-end0.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/tabs-end1.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/tabs-ext.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/tabs-l0.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/tabs-l1.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/tabs-r0.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/tabs-r1.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/tabs-sepl.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/tabs-sepm.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/tabs-sepr.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/tabs-start0.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/tabs-start1.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/up-grey.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/images/up.gif
-www/data/phpgroupware/phpgwapi/templates/justweb/about.tpl
-www/data/phpgroupware/phpgwapi/templates/justweb/about_unknown.tpl
-www/data/phpgroupware/phpgwapi/templates/justweb/footer.tpl
-www/data/phpgroupware/phpgwapi/templates/justweb/head.inc.php
-www/data/phpgroupware/phpgwapi/templates/justweb/head.tpl
-www/data/phpgroupware/phpgwapi/templates/justweb/login.tpl
-www/data/phpgroupware/phpgwapi/templates/justweb/login_denylogin.tpl
-www/data/phpgroupware/phpgwapi/templates/justweb/login_selectdomain.tpl
-www/data/phpgroupware/phpgwapi/templates/justweb/navbar.inc.php
-www/data/phpgroupware/phpgwapi/templates/justweb/navbar.tpl
-www/data/phpgroupware/phpgwapi/templates/justweb/navbar_app.tpl
-www/data/phpgroupware/phpgwapi/templates/justweb/navcond.js
-www/data/phpgroupware/phpgwapi/templates/justweb/portal_linkbox.tpl
-www/data/phpgroupware/phpgwapi/templates/justweb/portal_linkbox_footer.tpl
-www/data/phpgroupware/phpgwapi/templates/justweb/portal_linkbox_header.tpl
-www/data/phpgroupware/phpgwapi/templates/justweb/portal_main.tpl
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/attach.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/bar-10.jpg
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/bg_filler.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/down-grey.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/down.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/endbar.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/first-grey.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/first.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/greybar.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/greybar.jpg
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/help.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/last-grey.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/last.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/left-grey.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/left.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/logo.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/logo_reversed.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/logout-grey.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/logout-red.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/navbar_filler.jpg
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/preferences-grey.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/preferences-red.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/preferences.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/print.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/right-grey.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/right.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/tabs-bg0.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/tabs-bg1.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/tabs-end0.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/tabs-end1.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/tabs-ext.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/tabs-l0.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/tabs-l1.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/tabs-r0.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/tabs-r1.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/tabs-sepl.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/tabs-sepm.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/tabs-sepr.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/tabs-start0.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/tabs-start1.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/up-grey.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/up.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/welcome-grey.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/images/welcome-red.gif
-www/data/phpgroupware/phpgwapi/templates/verdilak/about.tpl
-www/data/phpgroupware/phpgwapi/templates/verdilak/about_unknown.tpl
-www/data/phpgroupware/phpgwapi/templates/verdilak/footer.tpl
-www/data/phpgroupware/phpgwapi/templates/verdilak/head.inc.php
-www/data/phpgroupware/phpgwapi/templates/verdilak/head.tpl
-www/data/phpgroupware/phpgwapi/templates/verdilak/login.tpl
-www/data/phpgroupware/phpgwapi/templates/verdilak/login_denylogin.tpl
-www/data/phpgroupware/phpgwapi/templates/verdilak/login_selectdomain.tpl
-www/data/phpgroupware/phpgwapi/templates/verdilak/navbar.inc.php
-www/data/phpgroupware/phpgwapi/templates/verdilak/navbar.tpl
-www/data/phpgroupware/phpgwapi/templates/verdilak/navbar_app.tpl
-www/data/phpgroupware/phpgwapi/templates/verdilak/portal_linkbox.tpl
-www/data/phpgroupware/phpgwapi/templates/verdilak/portal_linkbox_footer.tpl
-www/data/phpgroupware/phpgwapi/templates/verdilak/portal_linkbox_header.tpl
-www/data/phpgroupware/phpgwapi/templates/verdilak/portal_main.tpl
-www/data/phpgroupware/phpgwapi/themes/black.theme
-www/data/phpgroupware/phpgwapi/themes/blue.theme
-www/data/phpgroupware/phpgwapi/themes/brown.theme
-www/data/phpgroupware/phpgwapi/themes/darkblue.theme
-www/data/phpgroupware/phpgwapi/themes/darkgreen.theme
-www/data/phpgroupware/phpgwapi/themes/default.theme
-www/data/phpgroupware/phpgwapi/themes/fancy.theme
-www/data/phpgroupware/phpgwapi/themes/greys.theme
-www/data/phpgroupware/phpgwapi/themes/heaven.theme
-www/data/phpgroupware/phpgwapi/themes/lightblue.theme
-www/data/phpgroupware/phpgwapi/themes/lightbrown.theme
-www/data/phpgroupware/phpgwapi/themes/mojo.theme
-www/data/phpgroupware/phpgwapi/themes/purple.theme
-www/data/phpgroupware/phpgwapi/themes/red.theme
-www/data/phpgroupware/phpgwapi/themes/rose.theme
-www/data/phpgroupware/phpgwapi/themes/submarine.theme
-www/data/phpgroupware/phpgwapi/themes/template2theme.pl
-www/data/phpgroupware/phpgwapi/themes/theme.template
-www/data/phpgroupware/phpgwapi/themes/theme2template.pl
-www/data/phpgroupware/phpgwapi/themes/yellows.theme
-www/data/phpgroupware/preferences/changepassword.php
-www/data/phpgroupware/preferences/changeprofile.php
-www/data/phpgroupware/preferences/index.php
-www/data/phpgroupware/preferences/settings.php
-www/data/phpgroupware/preferences/version.inc.php
-www/data/phpgroupware/preferences/inc/hook_preferences.inc.php
-www/data/phpgroupware/preferences/setup/config.inc.php
-www/data/phpgroupware/preferences/templates/default/images/navbar.gif
-www/data/phpgroupware/preferences/templates/verdilak/images/navbar.gif
-www/data/phpgroupware/setup/inc/functions.inc.php
-www/data/phpgroupware/setup/inc/phpgw_schema_proc.inc.php
-www/data/phpgroupware/setup/inc/phpgw_schema_proc_array.inc.php
-www/data/phpgroupware/setup/inc/phpgw_schema_proc_mysql.inc.php
-www/data/phpgroupware/setup/inc/phpgw_schema_proc_pgsql.inc.php
-www/data/phpgroupware/setup/inc/phpgw_setup.inc.php
-www/data/phpgroupware/setup/inc/phpgw_template.inc.php
-www/data/phpgroupware/setup/sql/common_default_records.inc.php
-www/data/phpgroupware/setup/sql/common_main.inc.php
-www/data/phpgroupware/setup/sql/default_applications.inc.php
-www/data/phpgroupware/setup/sql/default_applications_plus.inc.php
-www/data/phpgroupware/setup/sql/mysql_droptables.inc.php
-www/data/phpgroupware/setup/sql/mysql_newtables.inc.php
-www/data/phpgroupware/setup/sql/mysql_upgrade_beta.inc.php
-www/data/phpgroupware/setup/sql/mysql_upgrade_prebeta.inc.php
-www/data/phpgroupware/setup/sql/pgsql_droptables.inc.php
-www/data/phpgroupware/setup/sql/pgsql_newtables.inc.php
-www/data/phpgroupware/setup/sql/pgsql_upgrade_beta.inc.php
-www/data/phpgroupware/setup/sql/pgsql_upgrade_prebeta.inc.php
-www/data/phpgroupware/setup/config.php
-www/data/phpgroupware/setup/index.php
-www/data/phpgroupware/setup/lang.php
-www/data/phpgroupware/setup/ldap.php
-www/data/phpgroupware/setup/manageheader.php
-www/data/phpgroupware/setup/phpgw_br.lang
-www/data/phpgroupware/setup/phpgw_cs.lang
-www/data/phpgroupware/setup/phpgw_da.lang
-www/data/phpgroupware/setup/phpgw_de.lang
-www/data/phpgroupware/setup/phpgw_en.lang
-www/data/phpgroupware/setup/phpgw_es.lang
-www/data/phpgroupware/setup/phpgw_fr.lang
-www/data/phpgroupware/setup/phpgw_it.lang
-www/data/phpgroupware/setup/phpgw_ko.lang
-www/data/phpgroupware/setup/phpgw_nl.lang
-www/data/phpgroupware/setup/phpgw_no.lang
-www/data/phpgroupware/setup/phpgw_sv.lang
-www/data/phpgroupware/setup/setup_demo.php
-www/data/phpgroupware/setup/test.php
-www/data/phpgroupware/setup/templates/default/images/completed.gif
-www/data/phpgroupware/setup/templates/default/images/incomplete.gif
-www/data/phpgroupware/todo/delete.php
-www/data/phpgroupware/todo/add.php
-www/data/phpgroupware/todo/edit.php
-www/data/phpgroupware/todo/graphview.php
-www/data/phpgroupware/todo/index.php
-www/data/phpgroupware/todo/version.inc.php
-www/data/phpgroupware/todo/inc/about.inc.php
-www/data/phpgroupware/todo/inc/hook_todo_about.inc.php
-www/data/phpgroupware/todo/templates/default/images/navbar.gif
-www/data/phpgroupware/todo/templates/default/images/pix.gif
-www/data/phpgroupware/todo/templates/default/delete.tpl
-www/data/phpgroupware/todo/templates/default/form.tpl
-www/data/phpgroupware/todo/templates/default/list.tpl
-www/data/phpgroupware/todo/templates/default/row.tpl
-www/data/phpgroupware/todo/templates/verdilak/images/navbar.gif
-www/data/phpgroupware/todo/templates/verdilak/delete.tpl
-www/data/phpgroupware/todo/templates/verdilak/form.tpl
-www/data/phpgroupware/todo/templates/verdilak/list.tpl
-www/data/phpgroupware/todo/templates/verdilak/row.tpl
-www/data/phpgroupware/transy/addsingle.php
-www/data/phpgroupware/transy/createnewlangset.php
-www/data/phpgroupware/transy/generatelangfile.php
-www/data/phpgroupware/transy/importlang.php
-www/data/phpgroupware/transy/index.php
-www/data/phpgroupware/transy/pharses.php
-www/data/phpgroupware/transy/searchmissing.php
-www/data/phpgroupware/transy/version.inc.php
-www/data/phpgroupware/transy/templates/default/images/navbar.gif
-www/data/phpgroupware/transy/templates/default/import.tpl
-www/data/phpgroupware/transy/templates/default/import_row.tpl
-www/data/phpgroupware/transy/templates/default/singleform.tpl
-www/data/phpgroupware/transy/templates/verdilak/images/navbar.gif
-@dirrm www/data/phpgroupware/transy/templates/verdilak/images
-@dirrm www/data/phpgroupware/transy/templates/verdilak
-@dirrm www/data/phpgroupware/transy/templates/default/images
-@dirrm www/data/phpgroupware/transy/templates/default
-@dirrm www/data/phpgroupware/transy/templates
-@dirrm www/data/phpgroupware/transy
-@dirrm www/data/phpgroupware/todo/templates/verdilak/images
-@dirrm www/data/phpgroupware/todo/templates/verdilak
-@dirrm www/data/phpgroupware/todo/templates/default/images
-@dirrm www/data/phpgroupware/todo/templates/default
-@dirrm www/data/phpgroupware/todo/templates
-@dirrm www/data/phpgroupware/todo/inc
-@dirrm www/data/phpgroupware/todo
-@dirrm www/data/phpgroupware/setup/templates/default/images
-@dirrm www/data/phpgroupware/setup/templates/default
-@dirrm www/data/phpgroupware/setup/templates
-@dirrm www/data/phpgroupware/setup/sql
-@dirrm www/data/phpgroupware/setup/inc
-@dirrm www/data/phpgroupware/setup
-@dirrm www/data/phpgroupware/preferences/templates/verdilak/images
-@dirrm www/data/phpgroupware/preferences/templates/verdilak
-@dirrm www/data/phpgroupware/preferences/templates/default/images
-@dirrm www/data/phpgroupware/preferences/templates/default
-@dirrm www/data/phpgroupware/preferences/templates
-@dirrm www/data/phpgroupware/preferences/setup
-@dirrm www/data/phpgroupware/preferences/inc
-@dirrm www/data/phpgroupware/preferences
-@dirrm www/data/phpgroupware/phpgwapi/themes
-@dirrm www/data/phpgroupware/phpgwapi/templates/verdilak/images
-@dirrm www/data/phpgroupware/phpgwapi/templates/verdilak
-@dirrm www/data/phpgroupware/phpgwapi/templates/justweb/images
-@dirrm www/data/phpgroupware/phpgwapi/templates/justweb
-@dirrm www/data/phpgroupware/phpgwapi/templates/default/images
-@dirrm www/data/phpgroupware/phpgwapi/templates/default
-@dirrm www/data/phpgroupware/phpgwapi/templates
-@dirrm www/data/phpgroupware/phpgwapi/setup
-@dirrm www/data/phpgroupware/phpgwapi/inc
-@dirrm www/data/phpgroupware/phpgwapi/doc
-@dirrm www/data/phpgroupware/phpgwapi/cron
-@dirrm www/data/phpgroupware/phpgwapi
-@dirrm www/data/phpgroupware/notes/templates/default/images
-@dirrm www/data/phpgroupware/notes/templates/default
-@dirrm www/data/phpgroupware/notes/templates
-@dirrm www/data/phpgroupware/notes/inc
-@dirrm www/data/phpgroupware/notes
-@dirrm www/data/phpgroupware/nntp/templates/verdilak/images
-@dirrm www/data/phpgroupware/nntp/templates/verdilak
-@dirrm www/data/phpgroupware/nntp/templates/default/images
-@dirrm www/data/phpgroupware/nntp/templates/default
-@dirrm www/data/phpgroupware/nntp/templates
-@dirrm www/data/phpgroupware/nntp/inc
-@dirrm www/data/phpgroupware/nntp
-@dirrm www/data/phpgroupware/manual/templates/verdilak/images
-@dirrm www/data/phpgroupware/manual/templates/verdilak
-@dirrm www/data/phpgroupware/manual/templates/default/images
-@dirrm www/data/phpgroupware/manual/templates/default
-@dirrm www/data/phpgroupware/manual/templates
-@dirrm www/data/phpgroupware/manual/inc
-@dirrm www/data/phpgroupware/manual
-@dirrm www/data/phpgroupware/filemanager/templates/default/images
-@dirrm www/data/phpgroupware/filemanager/templates/default
-@dirrm www/data/phpgroupware/filemanager/templates
-@dirrm www/data/phpgroupware/filemanager
-@dirrm www/data/phpgroupware/email/templates/default/images
-@dirrm www/data/phpgroupware/email/templates/default
-@dirrm www/data/phpgroupware/email/templates
-@dirrm www/data/phpgroupware/email/setup
-@dirrm www/data/phpgroupware/email/inc
-@dirrm www/data/phpgroupware/email
-@dirrm www/data/phpgroupware/doc/sgml
-@dirrm www/data/phpgroupware/doc
-@dirrm www/data/phpgroupware/calendar/templates/verdilak/images
-@dirrm www/data/phpgroupware/calendar/templates/verdilak
-@dirrm www/data/phpgroupware/calendar/templates/default/images
-@dirrm www/data/phpgroupware/calendar/templates/default
-@dirrm www/data/phpgroupware/calendar/templates
-@dirrm www/data/phpgroupware/calendar/setup
-@dirrm www/data/phpgroupware/calendar/inc
-@dirrm www/data/phpgroupware/calendar
-@dirrm www/data/phpgroupware/admin/templates/verdilak/images
-@dirrm www/data/phpgroupware/admin/templates/verdilak
-@dirrm www/data/phpgroupware/admin/templates/default/images
-@dirrm www/data/phpgroupware/admin/templates/default
-@dirrm www/data/phpgroupware/admin/templates
-@dirrm www/data/phpgroupware/admin/setup
-@dirrm www/data/phpgroupware/admin/inc
-@dirrm www/data/phpgroupware/admin
-@dirrm www/data/phpgroupware/addressbook/templates/verdilak/images
-@dirrm www/data/phpgroupware/addressbook/templates/verdilak
-@dirrm www/data/phpgroupware/addressbook/templates/default/images
-@dirrm www/data/phpgroupware/addressbook/templates/default
-@dirrm www/data/phpgroupware/addressbook/templates
-@dirrm www/data/phpgroupware/addressbook/inc
-@dirrm www/data/phpgroupware/addressbook
-@exec chmod 707 %D/www/data/phpgroupware/files
-@exec chmod 707 %D/www/data/phpgroupware/files/users
-@exec chmod 707 %D/www/data/phpgroupware/files/groups
-@unexec rmdir %D/www/data/phpgroupware/files/users 2>/dev/null || true
-@unexec rmdir %D/www/data/phpgroupware/files/groups 2>/dev/null || true
-@unexec rmdir %D/www/data/phpgroupware/files 2>/dev/null || true
-@unexec rmdir %D/www/data/phpgroupware 2>/dev/null || true
+www/data.default/phpgroupware/about.php
+www/data.default/phpgroupware/header.inc.php.template
+www/data.default/phpgroupware/index.php
+www/data.default/phpgroupware/login.php
+www/data.default/phpgroupware/logout.php
+www/data.default/phpgroupware/notify.php
+www/data.default/phpgroupware/version.inc.php
+www/data.default/phpgroupware/addressbook/delete.php
+www/data.default/phpgroupware/addressbook/add.php
+www/data.default/phpgroupware/addressbook/inc/functions.inc.php
+www/data.default/phpgroupware/addressbook/inc/hook_addressbook_add_def_pref.inc.php
+www/data.default/phpgroupware/addressbook/inc/hook_preferences.inc.php
+www/data.default/phpgroupware/addressbook/edit.php
+www/data.default/phpgroupware/addressbook/index.php
+www/data.default/phpgroupware/addressbook/parsecard.php
+www/data.default/phpgroupware/addressbook/preferences.php
+www/data.default/phpgroupware/addressbook/vcardin.php
+www/data.default/phpgroupware/addressbook/vcardout.php
+www/data.default/phpgroupware/addressbook/version.inc.php
+www/data.default/phpgroupware/addressbook/view.php
+www/data.default/phpgroupware/addressbook/templates/default/images/navbar.gif
+www/data.default/phpgroupware/addressbook/templates/verdilak/images/navbar.gif
+www/data.default/phpgroupware/admin/accesslog.php
+www/data.default/phpgroupware/admin/accounts.php
+www/data.default/phpgroupware/admin/applications.php
+www/data.default/phpgroupware/admin/currentusers.php
+www/data.default/phpgroupware/admin/deleteaccount.php
+www/data.default/phpgroupware/admin/deleteapplication.php
+www/data.default/phpgroupware/admin/deletegroup.php
+www/data.default/phpgroupware/admin/editaccount.php
+www/data.default/phpgroupware/admin/editapplication.php
+www/data.default/phpgroupware/admin/editgroup.php
+www/data.default/phpgroupware/admin/groups.php
+www/data.default/phpgroupware/admin/index.php
+www/data.default/phpgroupware/admin/killsession.php
+www/data.default/phpgroupware/admin/mainscreen_message.php
+www/data.default/phpgroupware/admin/navbar-create.php
+www/data.default/phpgroupware/admin/navbar-sel.php
+www/data.default/phpgroupware/admin/newaccount.php
+www/data.default/phpgroupware/admin/newapplication.php
+www/data.default/phpgroupware/admin/newgroup.php
+www/data.default/phpgroupware/admin/version.inc.php
+www/data.default/phpgroupware/admin/viewaccount.php
+www/data.default/phpgroupware/admin/inc/accounts_ldap.inc.php
+www/data.default/phpgroupware/admin/inc/accounts_sql.inc.php
+www/data.default/phpgroupware/admin/inc/hook_admin.inc.php
+www/data.default/phpgroupware/admin/inc/hook_admin_add_def_pref.inc.php
+www/data.default/phpgroupware/admin/setup/config.inc.php
+www/data.default/phpgroupware/admin/templates/default/images/navbar.gif
+www/data.default/phpgroupware/admin/templates/default/accesslog.tpl
+www/data.default/phpgroupware/admin/templates/default/accesslog_row.tpl
+www/data.default/phpgroupware/admin/templates/default/account_form.tpl
+www/data.default/phpgroupware/admin/templates/default/account_view.tpl
+www/data.default/phpgroupware/admin/templates/default/account_view_row.tpl
+www/data.default/phpgroupware/admin/templates/default/accounts.tpl
+www/data.default/phpgroupware/admin/templates/default/accounts_row.tpl
+www/data.default/phpgroupware/admin/templates/default/application_form.tpl
+www/data.default/phpgroupware/admin/templates/default/application_form_row.tpl
+www/data.default/phpgroupware/admin/templates/default/applications.tpl
+www/data.default/phpgroupware/admin/templates/default/applications_row.tpl
+www/data.default/phpgroupware/admin/templates/default/currentusers.tpl
+www/data.default/phpgroupware/admin/templates/default/currentusers_row.tpl
+www/data.default/phpgroupware/admin/templates/default/delete_common.tpl
+www/data.default/phpgroupware/admin/templates/default/groups.tpl
+www/data.default/phpgroupware/admin/templates/default/groups_form.tpl
+www/data.default/phpgroupware/admin/templates/default/nntp.tpl
+www/data.default/phpgroupware/admin/templates/default/groups_row.tpl
+www/data.default/phpgroupware/admin/templates/default/mainscreen_message.tpl
+www/data.default/phpgroupware/admin/templates/default/mainscreen_message_row.tpl
+www/data.default/phpgroupware/admin/templates/default/mainscreen_message_row_2.tpl
+www/data.default/phpgroupware/admin/templates/verdilak/images/navbar.gif
+www/data.default/phpgroupware/admin/templates/verdilak/accesslog.tpl
+www/data.default/phpgroupware/admin/templates/verdilak/accesslog_row.tpl
+www/data.default/phpgroupware/admin/templates/verdilak/account_form.tpl
+www/data.default/phpgroupware/admin/templates/verdilak/account_view.tpl
+www/data.default/phpgroupware/admin/templates/verdilak/account_view_row.tpl
+www/data.default/phpgroupware/admin/templates/verdilak/accounts.tpl
+www/data.default/phpgroupware/admin/templates/verdilak/accounts_row.tpl
+www/data.default/phpgroupware/admin/templates/verdilak/application_form.tpl
+www/data.default/phpgroupware/admin/templates/verdilak/application_form_row.tpl
+www/data.default/phpgroupware/admin/templates/verdilak/applications.tpl
+www/data.default/phpgroupware/admin/templates/verdilak/applications_row.tpl
+www/data.default/phpgroupware/admin/templates/verdilak/currentusers.tpl
+www/data.default/phpgroupware/admin/templates/verdilak/currentusers_row.tpl
+www/data.default/phpgroupware/admin/templates/verdilak/delete_common.tpl
+www/data.default/phpgroupware/admin/templates/verdilak/groups.tpl
+www/data.default/phpgroupware/admin/templates/verdilak/groups_form.tpl
+www/data.default/phpgroupware/admin/templates/verdilak/nntp.tpl
+www/data.default/phpgroupware/admin/templates/verdilak/groups_row.tpl
+www/data.default/phpgroupware/admin/templates/verdilak/mainscreen_message.tpl
+www/data.default/phpgroupware/admin/templates/verdilak/mainscreen_message_row.tpl
+www/data.default/phpgroupware/admin/templates/verdilak/mainscreen_message_row_2.tpl
+www/data.default/phpgroupware/calendar/delete.php
+www/data.default/phpgroupware/calendar/day.php
+www/data.default/phpgroupware/calendar/edit_entry.php
+www/data.default/phpgroupware/calendar/edit_entry_handler.php
+www/data.default/phpgroupware/calendar/index.php
+www/data.default/phpgroupware/calendar/matrixselect.php
+www/data.default/phpgroupware/calendar/preferences.php
+www/data.default/phpgroupware/calendar/search.php
+www/data.default/phpgroupware/calendar/version.inc.php
+www/data.default/phpgroupware/calendar/view.php
+www/data.default/phpgroupware/calendar/viewmatrix.php
+www/data.default/phpgroupware/calendar/week.php
+www/data.default/phpgroupware/calendar/year.php
+www/data.default/phpgroupware/calendar/inc/footer.inc.php
+www/data.default/phpgroupware/calendar/inc/functions.inc.php
+www/data.default/phpgroupware/calendar/inc/header.inc.php
+www/data.default/phpgroupware/calendar/inc/hook_calendar_add_def_pref.inc.php
+www/data.default/phpgroupware/calendar/inc/hook_home.inc.php
+www/data.default/phpgroupware/calendar/inc/hook_preferences.inc.php
+www/data.default/phpgroupware/calendar/setup/create_tables.inc.php
+www/data.default/phpgroupware/calendar/setup/droptables.inc.php
+www/data.default/phpgroupware/calendar/setup/newtables.inc.php
+www/data.default/phpgroupware/calendar/templates/default/day_cal.tpl
+www/data.default/phpgroupware/calendar/templates/default/day.tpl
+www/data.default/phpgroupware/calendar/templates/default/images/arrow.gif
+www/data.default/phpgroupware/calendar/templates/default/images/circle.gif
+www/data.default/phpgroupware/calendar/templates/default/images/month.gif
+www/data.default/phpgroupware/calendar/templates/default/images/navbar.gif
+www/data.default/phpgroupware/calendar/templates/default/images/new.gif
+www/data.default/phpgroupware/calendar/templates/default/images/pix.gif
+www/data.default/phpgroupware/calendar/templates/default/images/rpt.gif
+www/data.default/phpgroupware/calendar/templates/default/images/today.gif
+www/data.default/phpgroupware/calendar/templates/default/images/view.gif
+www/data.default/phpgroupware/calendar/templates/default/images/week.gif
+www/data.default/phpgroupware/calendar/templates/default/images/year.gif
+www/data.default/phpgroupware/calendar/templates/default/day_row.tpl
+www/data.default/phpgroupware/calendar/templates/default/day_row_99.tpl
+www/data.default/phpgroupware/calendar/templates/default/edit.tpl
+www/data.default/phpgroupware/calendar/templates/default/form_button_script.tpl
+www/data.default/phpgroupware/calendar/templates/default/hr.tpl
+www/data.default/phpgroupware/calendar/templates/default/index.tpl
+www/data.default/phpgroupware/calendar/templates/default/list.tpl
+www/data.default/phpgroupware/calendar/templates/default/matrix_query.tpl
+www/data.default/phpgroupware/calendar/templates/default/mini_cal.tpl
+www/data.default/phpgroupware/calendar/templates/default/mini_day.tpl
+www/data.default/phpgroupware/calendar/templates/default/mini_week.tpl
+www/data.default/phpgroupware/calendar/templates/default/overlap.tpl
+www/data.default/phpgroupware/calendar/templates/default/search.tpl
+www/data.default/phpgroupware/calendar/templates/default/search_list.tpl
+www/data.default/phpgroupware/calendar/templates/default/view.tpl
+www/data.default/phpgroupware/calendar/templates/default/week.tpl
+www/data.default/phpgroupware/calendar/templates/verdilak/day_cal.tpl
+www/data.default/phpgroupware/calendar/templates/verdilak/day.tpl
+www/data.default/phpgroupware/calendar/templates/verdilak/images/arrow.gif
+www/data.default/phpgroupware/calendar/templates/verdilak/images/circle.gif
+www/data.default/phpgroupware/calendar/templates/verdilak/images/mini-calendar-bar.gif
+www/data.default/phpgroupware/calendar/templates/verdilak/images/mini_day_block.gif
+www/data.default/phpgroupware/calendar/templates/verdilak/images/month.gif
+www/data.default/phpgroupware/calendar/templates/verdilak/images/navbar.gif
+www/data.default/phpgroupware/calendar/templates/verdilak/images/new.gif
+www/data.default/phpgroupware/calendar/templates/verdilak/images/pix.gif
+www/data.default/phpgroupware/calendar/templates/verdilak/images/rpt.gif
+www/data.default/phpgroupware/calendar/templates/verdilak/images/today.gif
+www/data.default/phpgroupware/calendar/templates/verdilak/images/view.gif
+www/data.default/phpgroupware/calendar/templates/verdilak/images/week.gif
+www/data.default/phpgroupware/calendar/templates/verdilak/images/year.gif
+www/data.default/phpgroupware/calendar/templates/verdilak/day_row.tpl
+www/data.default/phpgroupware/calendar/templates/verdilak/day_row_99.tpl
+www/data.default/phpgroupware/calendar/templates/verdilak/edit.tpl
+www/data.default/phpgroupware/calendar/templates/verdilak/form_button_script.tpl
+www/data.default/phpgroupware/calendar/templates/verdilak/hr.tpl
+www/data.default/phpgroupware/calendar/templates/verdilak/index.tpl
+www/data.default/phpgroupware/calendar/templates/verdilak/list.tpl
+www/data.default/phpgroupware/calendar/templates/verdilak/matrix_query.tpl
+www/data.default/phpgroupware/calendar/templates/verdilak/mini_cal.tpl
+www/data.default/phpgroupware/calendar/templates/verdilak/mini_day.tpl
+www/data.default/phpgroupware/calendar/templates/verdilak/mini_week.tpl
+www/data.default/phpgroupware/calendar/templates/verdilak/overlap.tpl
+www/data.default/phpgroupware/calendar/templates/verdilak/search.tpl
+www/data.default/phpgroupware/calendar/templates/verdilak/search_list.tpl
+www/data.default/phpgroupware/calendar/templates/verdilak/view.tpl
+www/data.default/phpgroupware/calendar/templates/verdilak/week.tpl
+www/data.default/phpgroupware/doc/CHANGELOG
+www/data.default/phpgroupware/doc/CREDITS
+www/data.default/phpgroupware/doc/LICENSE
+www/data.default/phpgroupware/doc/README
+www/data.default/phpgroupware/doc/SECURITY
+www/data.default/phpgroupware/doc/index.html
+www/data.default/phpgroupware/doc/index.txt
+www/data.default/phpgroupware/doc/sgml/FAQ.sgml
+www/data.default/phpgroupware/doc/sgml/about.sgml
+www/data.default/phpgroupware/doc/sgml/index.sgml
+www/data.default/phpgroupware/doc/sgml/install.sgml
+www/data.default/phpgroupware/doc/sgml/installation.sgml
+www/data.default/phpgroupware/doc/sgml/introduction.sgml
+www/data.default/phpgroupware/doc/sgml/requirements.sgml
+www/data.default/phpgroupware/doc/sgml/trouble.sgml
+www/data.default/phpgroupware/email/action.php
+www/data.default/phpgroupware/email/addressbook.php
+www/data.default/phpgroupware/email/attach_file.php
+www/data.default/phpgroupware/email/compose.php
+www/data.default/phpgroupware/email/create_table_user_mailservers.mysql
+www/data.default/phpgroupware/email/folder.php
+www/data.default/phpgroupware/email/get_attach.php
+www/data.default/phpgroupware/email/index.php
+www/data.default/phpgroupware/email/message.php
+www/data.default/phpgroupware/email/message_calendar.php
+www/data.default/phpgroupware/email/preferences.php
+www/data.default/phpgroupware/email/send_message.php
+www/data.default/phpgroupware/email/version.inc.php
+www/data.default/phpgroupware/email/view_image.php
+www/data.default/phpgroupware/email/inc/functions.inc.php
+www/data.default/phpgroupware/email/inc/hook_email_add_def_pref.inc.php
+www/data.default/phpgroupware/email/inc/hook_home.inc.php
+www/data.default/phpgroupware/email/inc/hook_preferences.inc.php
+www/data.default/phpgroupware/email/inc/msg_imap.inc.php
+www/data.default/phpgroupware/email/inc/msg_nntp.inc.php
+www/data.default/phpgroupware/email/inc/msg_pop3.inc.php
+www/data.default/phpgroupware/email/setup/config.inc.php
+www/data.default/phpgroupware/email/templates/default/images/check.gif
+www/data.default/phpgroupware/email/templates/default/images/navbar.gif
+www/data.default/phpgroupware/email/templates/default/images/refresh.gif
+www/data.default/phpgroupware/email/templates/default/images/sm_delete.gif
+www/data.default/phpgroupware/email/templates/default/images/sm_envelope.gif
+www/data.default/phpgroupware/email/templates/default/images/sm_forward.gif
+www/data.default/phpgroupware/email/templates/default/images/sm_reply.gif
+www/data.default/phpgroupware/email/templates/default/images/sm_reply_all.gif
+www/data.default/phpgroupware/email/templates/default/addressbook.tpl
+www/data.default/phpgroupware/filemanager/about.php
+www/data.default/phpgroupware/filemanager/index.php
+www/data.default/phpgroupware/filemanager/new_index.php
+www/data.default/phpgroupware/filemanager/version.inc.php
+www/data.default/phpgroupware/filemanager/templates/default/images/folder_close.gif
+www/data.default/phpgroupware/filemanager/templates/default/images/folder_open.gif
+www/data.default/phpgroupware/filemanager/templates/default/images/navbar.gif
+www/data.default/phpgroupware/files/groups/dont_delete_me
+www/data.default/phpgroupware/files/users/dont_delete_me
+www/data.default/phpgroupware/manual/addressbook.php
+www/data.default/phpgroupware/manual/admin_account.php
+www/data.default/phpgroupware/manual/admin_headline.php
+www/data.default/phpgroupware/manual/admin_other.php
+www/data.default/phpgroupware/manual/admin_session.php
+www/data.default/phpgroupware/manual/administration.php
+www/data.default/phpgroupware/manual/bookmarks.php
+www/data.default/phpgroupware/manual/cal_add.php
+www/data.default/phpgroupware/manual/cal_edit_delete.php
+www/data.default/phpgroupware/manual/cal_view.php
+www/data.default/phpgroupware/manual/calendar.php
+www/data.default/phpgroupware/manual/chat.php
+www/data.default/phpgroupware/manual/email.php
+www/data.default/phpgroupware/manual/email_notes.php
+www/data.default/phpgroupware/manual/email_other.php
+www/data.default/phpgroupware/manual/email_reply.php
+www/data.default/phpgroupware/manual/email_viewing.php
+www/data.default/phpgroupware/manual/filemanager.php
+www/data.default/phpgroupware/manual/headlines.php
+www/data.default/phpgroupware/manual/home.php
+www/data.default/phpgroupware/manual/hr.php
+www/data.default/phpgroupware/manual/index.php
+www/data.default/phpgroupware/manual/inv.php
+www/data.default/phpgroupware/manual/mymenu.txt
+www/data.default/phpgroupware/manual/nntp.php
+www/data.default/phpgroupware/manual/overview.php
+www/data.default/phpgroupware/manual/preferences.php
+www/data.default/phpgroupware/manual/prefs_other.php
+www/data.default/phpgroupware/manual/prefs_settings.php
+www/data.default/phpgroupware/manual/todo.php
+www/data.default/phpgroupware/manual/todo_add.php
+www/data.default/phpgroupware/manual/todo_other.php
+www/data.default/phpgroupware/manual/tts.php
+www/data.default/phpgroupware/manual/tts_create.php
+www/data.default/phpgroupware/manual/tts_edit_close.php
+www/data.default/phpgroupware/manual/tts_view.php
+www/data.default/phpgroupware/manual/version.inc.php
+www/data.default/phpgroupware/manual/inc/footer.inc.php
+www/data.default/phpgroupware/manual/inc/functions.inc.php
+www/data.default/phpgroupware/manual/inc/header.inc.php
+www/data.default/phpgroupware/manual/templates/default/images/addevent.gif
+www/data.default/phpgroupware/manual/templates/default/images/addressbook.gif
+www/data.default/phpgroupware/manual/templates/default/images/admin.gif
+www/data.default/phpgroupware/manual/templates/default/images/bookmarks.gif
+www/data.default/phpgroupware/manual/templates/default/images/calendar.gif
+www/data.default/phpgroupware/manual/templates/default/images/chat.gif
+www/data.default/phpgroupware/manual/templates/default/images/circle.gif
+www/data.default/phpgroupware/manual/templates/default/images/docs.gif
+www/data.default/phpgroupware/manual/templates/default/images/email.gif
+www/data.default/phpgroupware/manual/templates/default/images/filemanager.gif
+www/data.default/phpgroupware/manual/templates/default/images/headlines.gif
+www/data.default/phpgroupware/manual/templates/default/images/headlinesscreen.gif
+www/data.default/phpgroupware/manual/templates/default/images/home.gif
+www/data.default/phpgroupware/manual/templates/default/images/hr.gif
+www/data.default/phpgroupware/manual/templates/default/images/inv.gif
+www/data.default/phpgroupware/manual/templates/default/images/month.gif
+www/data.default/phpgroupware/manual/templates/default/images/mt.gif
+www/data.default/phpgroupware/manual/templates/default/images/navbar.gif
+www/data.default/phpgroupware/manual/templates/default/images/nntp.gif
+www/data.default/phpgroupware/manual/templates/default/images/pgw.jpg
+www/data.default/phpgroupware/manual/templates/default/images/preferences.gif
+www/data.default/phpgroupware/manual/templates/default/images/sm_delete.gif
+www/data.default/phpgroupware/manual/templates/default/images/sm_forward.gif
+www/data.default/phpgroupware/manual/templates/default/images/sm_reply.gif
+www/data.default/phpgroupware/manual/templates/default/images/sm_reply_all.gif
+www/data.default/phpgroupware/manual/templates/default/images/title_addressbook.gif
+www/data.default/phpgroupware/manual/templates/default/images/title_administration.gif
+www/data.default/phpgroupware/manual/templates/default/images/title_bookmarks.gif
+www/data.default/phpgroupware/manual/templates/default/images/title_calendar.gif
+www/data.default/phpgroupware/manual/templates/default/images/title_chat.gif
+www/data.default/phpgroupware/manual/templates/default/images/title_docs.gif
+www/data.default/phpgroupware/manual/templates/default/images/title_email.gif
+www/data.default/phpgroupware/manual/templates/default/images/title_filemanager.gif
+www/data.default/phpgroupware/manual/templates/default/images/title_ftp.gif
+www/data.default/phpgroupware/manual/templates/default/images/title_headlines.gif
+www/data.default/phpgroupware/manual/templates/default/images/title_home.gif
+www/data.default/phpgroupware/manual/templates/default/images/title_hr.gif
+www/data.default/phpgroupware/manual/templates/default/images/title_inv.gif
+www/data.default/phpgroupware/manual/templates/default/images/title_inventory.gif
+www/data.default/phpgroupware/manual/templates/default/images/title_nntp.gif
+www/data.default/phpgroupware/manual/templates/default/images/title_overview.gif
+www/data.default/phpgroupware/manual/templates/default/images/title_todo.gif
+www/data.default/phpgroupware/manual/templates/default/images/title_preferences.gif
+www/data.default/phpgroupware/manual/templates/default/images/title_tts.gif
+www/data.default/phpgroupware/manual/templates/default/images/today.gif
+www/data.default/phpgroupware/manual/templates/default/images/todo.gif
+www/data.default/phpgroupware/manual/templates/default/images/tree_collapse.gif
+www/data.default/phpgroupware/manual/templates/default/images/tree_end.gif
+www/data.default/phpgroupware/manual/templates/default/images/tree_expand.gif
+www/data.default/phpgroupware/manual/templates/default/images/tree_leaf.gif
+www/data.default/phpgroupware/manual/templates/default/images/tree_space.gif
+www/data.default/phpgroupware/manual/templates/default/images/tree_split.gif
+www/data.default/phpgroupware/manual/templates/default/images/tree_vertline.gif
+www/data.default/phpgroupware/manual/templates/default/images/tts.gif
+www/data.default/phpgroupware/manual/templates/default/images/vuurwerk.gif
+www/data.default/phpgroupware/manual/templates/default/images/week.gif
+www/data.default/phpgroupware/manual/templates/default/images/year.gif
+www/data.default/phpgroupware/manual/templates/verdilak/images/navbar.gif
+www/data.default/phpgroupware/nntp/admin.php
+www/data.default/phpgroupware/nntp/index.php
+www/data.default/phpgroupware/nntp/monitor.php
+www/data.default/phpgroupware/nntp/preferences.php
+www/data.default/phpgroupware/nntp/read_article.php
+www/data.default/phpgroupware/nntp/version.inc.php
+www/data.default/phpgroupware/nntp/view_attachment.php
+www/data.default/phpgroupware/nntp/viewgroup.php
+www/data.default/phpgroupware/nntp/inc/decode.inc.php
+www/data.default/phpgroupware/nntp/inc/functions.inc.php
+www/data.default/phpgroupware/nntp/inc/hook_admin.inc.php
+www/data.default/phpgroupware/nntp/inc/hook_preferences.inc.php
+www/data.default/phpgroupware/nntp/inc/mail.inc.php
+www/data.default/phpgroupware/nntp/inc/message.inc.php
+www/data.default/phpgroupware/nntp/templates/default/images/navbar.gif
+www/data.default/phpgroupware/nntp/templates/default/images/sm_delete.gif
+www/data.default/phpgroupware/nntp/templates/default/images/sm_envelope.gif
+www/data.default/phpgroupware/nntp/templates/default/images/sm_forward.gif
+www/data.default/phpgroupware/nntp/templates/default/images/sm_reply.gif
+www/data.default/phpgroupware/nntp/templates/default/images/sm_reply_all.gif
+www/data.default/phpgroupware/nntp/templates/default/index.tpl
+www/data.default/phpgroupware/nntp/templates/default/index_list_c.tpl
+www/data.default/phpgroupware/nntp/templates/default/index_list_d.tpl
+www/data.default/phpgroupware/nntp/templates/default/index_list_f.tpl
+www/data.default/phpgroupware/nntp/templates/default/index_list_h.tpl
+www/data.default/phpgroupware/nntp/templates/default/msg.tpl
+www/data.default/phpgroupware/nntp/templates/default/msg_attach.tpl
+www/data.default/phpgroupware/nntp/templates/default/msg_header_data.tpl
+www/data.default/phpgroupware/nntp/templates/default/msg_header_footer.tpl
+www/data.default/phpgroupware/nntp/templates/default/msg_header_label.tpl
+www/data.default/phpgroupware/nntp/templates/default/msg_misc.tpl
+www/data.default/phpgroupware/nntp/templates/default/msg_misc_action.tpl
+www/data.default/phpgroupware/nntp/templates/default/msg_misc_bar.tpl
+www/data.default/phpgroupware/nntp/templates/default/nntp.tpl
+www/data.default/phpgroupware/nntp/templates/default/view_group.tpl
+www/data.default/phpgroupware/nntp/templates/verdilak/images/navbar.gif
+www/data.default/phpgroupware/nntp/templates/verdilak/images/sm_delete.gif
+www/data.default/phpgroupware/nntp/templates/verdilak/images/sm_envelope.gif
+www/data.default/phpgroupware/nntp/templates/verdilak/images/sm_forward.gif
+www/data.default/phpgroupware/nntp/templates/verdilak/images/sm_reply.gif
+www/data.default/phpgroupware/nntp/templates/verdilak/images/sm_reply_all.gif
+www/data.default/phpgroupware/nntp/templates/verdilak/index.tpl
+www/data.default/phpgroupware/nntp/templates/verdilak/index_list_c.tpl
+www/data.default/phpgroupware/nntp/templates/verdilak/index_list_d.tpl
+www/data.default/phpgroupware/nntp/templates/verdilak/index_list_f.tpl
+www/data.default/phpgroupware/nntp/templates/verdilak/index_list_h.tpl
+www/data.default/phpgroupware/nntp/templates/verdilak/msg.tpl
+www/data.default/phpgroupware/nntp/templates/verdilak/msg_attach.tpl
+www/data.default/phpgroupware/nntp/templates/verdilak/msg_header_data.tpl
+www/data.default/phpgroupware/nntp/templates/verdilak/msg_header_footer.tpl
+www/data.default/phpgroupware/nntp/templates/verdilak/msg_header_label.tpl
+www/data.default/phpgroupware/nntp/templates/verdilak/msg_misc.tpl
+www/data.default/phpgroupware/nntp/templates/verdilak/msg_misc_action.tpl
+www/data.default/phpgroupware/nntp/templates/verdilak/msg_misc_bar.tpl
+www/data.default/phpgroupware/nntp/templates/verdilak/nntp.tpl
+www/data.default/phpgroupware/nntp/templates/verdilak/view_group.tpl
+www/data.default/phpgroupware/notes/delete.php
+www/data.default/phpgroupware/notes/TODO
+www/data.default/phpgroupware/notes/add.php
+www/data.default/phpgroupware/notes/edit.php
+www/data.default/phpgroupware/notes/index.php
+www/data.default/phpgroupware/notes/preferences.php
+www/data.default/phpgroupware/notes/search.php
+www/data.default/phpgroupware/notes/version.inc.php
+www/data.default/phpgroupware/notes/view.php
+www/data.default/phpgroupware/notes/inc/functions.inc.php
+www/data.default/phpgroupware/notes/inc/hook_notes_add_def_pref.inc.php
+www/data.default/phpgroupware/notes/inc/hook_preferences.inc.php
+www/data.default/phpgroupware/notes/templates/default/images/navbar.gif
+www/data.default/phpgroupware/phpgwapi/cron/clean_database.pl
+www/data.default/phpgroupware/phpgwapi/cron/stalesessions.php
+www/data.default/phpgroupware/phpgwapi/cron/stalesessions.pl
+www/data.default/phpgroupware/phpgwapi/doc/CHANGELOG
+www/data.default/phpgroupware/phpgwapi/doc/CREDITS
+www/data.default/phpgroupware/phpgwapi/doc/LICENSE
+www/data.default/phpgroupware/phpgwapi/doc/README
+www/data.default/phpgroupware/phpgwapi/doc/RELEASE-NOTES
+www/data.default/phpgroupware/phpgwapi/doc/SECURITY
+www/data.default/phpgroupware/phpgwapi/doc/index.html
+www/data.default/phpgroupware/phpgwapi/doc/index.lyx
+www/data.default/phpgroupware/phpgwapi/doc/index.pdf
+www/data.default/phpgroupware/phpgwapi/doc/index.txt
+www/data.default/phpgroupware/phpgwapi/version.inc.php
+www/data.default/phpgroupware/phpgwapi/inc/footer.inc.php
+www/data.default/phpgroupware/phpgwapi/inc/phpgw.inc.php
+www/data.default/phpgroupware/phpgwapi/inc/phpgw_accounts_ldap.inc.php
+www/data.default/phpgroupware/phpgwapi/inc/phpgw_accounts_shared.inc.php
+www/data.default/phpgroupware/phpgwapi/inc/phpgw_accounts_sql.inc.php
+www/data.default/phpgroupware/phpgwapi/inc/phpgw_auth_http.inc.php
+www/data.default/phpgroupware/phpgwapi/inc/phpgw_auth_ldap.inc.php
+www/data.default/phpgroupware/phpgwapi/inc/phpgw_auth_mail.inc.php
+www/data.default/phpgroupware/phpgwapi/inc/phpgw_auth_sql.inc.php
+www/data.default/phpgroupware/phpgwapi/inc/phpgw_categories.inc.php
+www/data.default/phpgroupware/phpgwapi/inc/phpgw_common.inc.php
+www/data.default/phpgroupware/phpgwapi/inc/phpgw_crypto.inc.php
+www/data.default/phpgroupware/phpgwapi/inc/phpgw_db_msql.inc.php
+www/data.default/phpgroupware/phpgwapi/inc/phpgw_db_mssql.inc.php
+www/data.default/phpgroupware/phpgwapi/inc/phpgw_db_mysql.inc.php
+www/data.default/phpgroupware/phpgwapi/inc/phpgw_db_odbc.inc.php
+www/data.default/phpgroupware/phpgwapi/inc/phpgw_db_oracle.inc.php
+www/data.default/phpgroupware/phpgwapi/inc/phpgw_db_pgsql.inc.php
+www/data.default/phpgroupware/phpgwapi/inc/phpgw_db_sybase.inc.php
+www/data.default/phpgroupware/phpgwapi/inc/phpgw_info.inc.php
+www/data.default/phpgroupware/phpgwapi/inc/phpgw_lang_sql.inc.php
+www/data.default/phpgroupware/phpgwapi/inc/phpgw_mime.types
+www/data.default/phpgroupware/phpgwapi/inc/phpgw_network.inc.php
+www/data.default/phpgroupware/phpgwapi/inc/phpgw_nextmatchs.inc.php
+www/data.default/phpgroupware/phpgwapi/inc/phpgw_send.inc.php
+www/data.default/phpgroupware/phpgwapi/inc/phpgw_session.inc.php
+www/data.default/phpgroupware/phpgwapi/inc/phpgw_template.inc.php
+www/data.default/phpgroupware/phpgwapi/inc/phpgw_utilities.inc.php
+www/data.default/phpgroupware/phpgwapi/inc/phpgw_utilities_clientsniffer.inc.php
+www/data.default/phpgroupware/phpgwapi/inc/phpgw_utilities_http.inc.php
+www/data.default/phpgroupware/phpgwapi/inc/phpgw_utilities_matrixview.inc.php
+www/data.default/phpgroupware/phpgwapi/inc/phpgw_utilities_menutree.inc.php
+www/data.default/phpgroupware/phpgwapi/inc/phpgw_utilities_portalbox.inc.php
+www/data.default/phpgroupware/phpgwapi/inc/phpgw_utilities_rssparse.inc.php
+www/data.default/phpgroupware/phpgwapi/inc/phpgw_utilities_sbox.inc.php
+www/data.default/phpgroupware/phpgwapi/inc/phpgw_vfs.inc.php
+www/data.default/phpgroupware/phpgwapi/setup/config.inc.php
+www/data.default/phpgroupware/phpgwapi/templates/default/images/about.gif
+www/data.default/phpgroupware/phpgwapi/templates/default/images/attach.gif
+www/data.default/phpgroupware/phpgwapi/templates/default/images/bar-10.jpg
+www/data.default/phpgroupware/phpgwapi/templates/default/images/down.gif
+www/data.default/phpgroupware/phpgwapi/templates/default/images/first-grey.gif
+www/data.default/phpgroupware/phpgwapi/templates/default/images/first.gif
+www/data.default/phpgroupware/phpgwapi/templates/default/images/home.gif
+www/data.default/phpgroupware/phpgwapi/templates/default/images/last-grey.gif
+www/data.default/phpgroupware/phpgwapi/templates/default/images/last.gif
+www/data.default/phpgroupware/phpgwapi/templates/default/images/left-grey.gif
+www/data.default/phpgroupware/phpgwapi/templates/default/images/left.gif
+www/data.default/phpgroupware/phpgwapi/templates/default/images/logo.gif
+www/data.default/phpgroupware/phpgwapi/templates/default/images/logout.gif
+www/data.default/phpgroupware/phpgwapi/templates/default/images/print.gif
+www/data.default/phpgroupware/phpgwapi/templates/default/images/right-grey.gif
+www/data.default/phpgroupware/phpgwapi/templates/default/images/right.gif
+www/data.default/phpgroupware/phpgwapi/templates/default/images/tabs-bg0.gif
+www/data.default/phpgroupware/phpgwapi/templates/default/images/tabs-bg1.gif
+www/data.default/phpgroupware/phpgwapi/templates/default/images/tabs-end0.gif
+www/data.default/phpgroupware/phpgwapi/templates/default/images/tabs-end1.gif
+www/data.default/phpgroupware/phpgwapi/templates/default/images/tabs-ext.gif
+www/data.default/phpgroupware/phpgwapi/templates/default/images/tabs-l0.gif
+www/data.default/phpgroupware/phpgwapi/templates/default/images/tabs-l1.gif
+www/data.default/phpgroupware/phpgwapi/templates/default/images/tabs-r0.gif
+www/data.default/phpgroupware/phpgwapi/templates/default/images/tabs-r1.gif
+www/data.default/phpgroupware/phpgwapi/templates/default/images/tabs-sepl.gif
+www/data.default/phpgroupware/phpgwapi/templates/default/images/tabs-sepm.gif
+www/data.default/phpgroupware/phpgwapi/templates/default/images/tabs-sepr.gif
+www/data.default/phpgroupware/phpgwapi/templates/default/images/tabs-start0.gif
+www/data.default/phpgroupware/phpgwapi/templates/default/images/tabs-start1.gif
+www/data.default/phpgroupware/phpgwapi/templates/default/images/up.gif
+www/data.default/phpgroupware/phpgwapi/templates/default/about.tpl
+www/data.default/phpgroupware/phpgwapi/templates/default/about_unknown.tpl
+www/data.default/phpgroupware/phpgwapi/templates/default/footer.tpl
+www/data.default/phpgroupware/phpgwapi/templates/default/frames.tpl
+www/data.default/phpgroupware/phpgwapi/templates/default/frames_body.tpl
+www/data.default/phpgroupware/phpgwapi/templates/default/frames_navbar.tpl
+www/data.default/phpgroupware/phpgwapi/templates/default/head.inc.php
+www/data.default/phpgroupware/phpgwapi/templates/default/head.tpl
+www/data.default/phpgroupware/phpgwapi/templates/default/login.tpl
+www/data.default/phpgroupware/phpgwapi/templates/default/login_denylogin.tpl
+www/data.default/phpgroupware/phpgwapi/templates/default/login_selectdomain.tpl
+www/data.default/phpgroupware/phpgwapi/templates/default/navbar.inc.php
+www/data.default/phpgroupware/phpgwapi/templates/default/navbar.tpl
+www/data.default/phpgroupware/phpgwapi/templates/default/navbar_app.tpl
+www/data.default/phpgroupware/phpgwapi/templates/default/portal_linkbox.tpl
+www/data.default/phpgroupware/phpgwapi/templates/default/portal_linkbox_footer.tpl
+www/data.default/phpgroupware/phpgwapi/templates/default/portal_linkbox_header.tpl
+www/data.default/phpgroupware/phpgwapi/templates/default/portal_main.tpl
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/attach.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/bar-10.jpg
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/bg_filler.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/blue_filler.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/bottom_bar_bg.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/bottom_bar_left.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/bottom_bar_right.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/down-grey.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/down.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/first-grey.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/first.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/greybar.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/greybar.jpg
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/help.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/last-grey.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/last.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/left-grey.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/left.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/logo.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/logo_reversed.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/logout-grey.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/logout-red.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/menu_bar_bg.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/menu_bar_left.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/menu_bar_right.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/menu_filler.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/navbar_filler.jpg
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/preferences-grey.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/preferences-red.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/preferences.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/print.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/right-grey.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/right.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/side_bar_bg.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/side_bar_bottom.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/side_bar_top.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/spacer.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/tab_help.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/tab_home.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/tab_logout.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/tab_prefs.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/tabs-bg0.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/tabs-bg1.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/tabs-end0.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/tabs-end1.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/tabs-ext.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/tabs-l0.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/tabs-l1.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/tabs-r0.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/tabs-r1.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/tabs-sepl.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/tabs-sepm.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/tabs-sepr.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/tabs-start0.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/tabs-start1.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/up-grey.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/images/up.gif
+www/data.default/phpgroupware/phpgwapi/templates/justweb/about.tpl
+www/data.default/phpgroupware/phpgwapi/templates/justweb/about_unknown.tpl
+www/data.default/phpgroupware/phpgwapi/templates/justweb/footer.tpl
+www/data.default/phpgroupware/phpgwapi/templates/justweb/head.inc.php
+www/data.default/phpgroupware/phpgwapi/templates/justweb/head.tpl
+www/data.default/phpgroupware/phpgwapi/templates/justweb/login.tpl
+www/data.default/phpgroupware/phpgwapi/templates/justweb/login_denylogin.tpl
+www/data.default/phpgroupware/phpgwapi/templates/justweb/login_selectdomain.tpl
+www/data.default/phpgroupware/phpgwapi/templates/justweb/navbar.inc.php
+www/data.default/phpgroupware/phpgwapi/templates/justweb/navbar.tpl
+www/data.default/phpgroupware/phpgwapi/templates/justweb/navbar_app.tpl
+www/data.default/phpgroupware/phpgwapi/templates/justweb/navcond.js
+www/data.default/phpgroupware/phpgwapi/templates/justweb/portal_linkbox.tpl
+www/data.default/phpgroupware/phpgwapi/templates/justweb/portal_linkbox_footer.tpl
+www/data.default/phpgroupware/phpgwapi/templates/justweb/portal_linkbox_header.tpl
+www/data.default/phpgroupware/phpgwapi/templates/justweb/portal_main.tpl
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/attach.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/bar-10.jpg
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/bg_filler.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/down-grey.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/down.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/endbar.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/first-grey.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/first.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/greybar.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/greybar.jpg
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/help.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/last-grey.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/last.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/left-grey.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/left.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/logo.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/logo_reversed.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/logout-grey.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/logout-red.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/navbar_filler.jpg
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/preferences-grey.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/preferences-red.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/preferences.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/print.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/right-grey.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/right.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/tabs-bg0.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/tabs-bg1.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/tabs-end0.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/tabs-end1.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/tabs-ext.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/tabs-l0.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/tabs-l1.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/tabs-r0.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/tabs-r1.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/tabs-sepl.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/tabs-sepm.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/tabs-sepr.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/tabs-start0.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/tabs-start1.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/up-grey.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/up.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/welcome-grey.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/images/welcome-red.gif
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/about.tpl
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/about_unknown.tpl
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/footer.tpl
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/head.inc.php
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/head.tpl
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/login.tpl
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/login_denylogin.tpl
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/login_selectdomain.tpl
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/navbar.inc.php
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/navbar.tpl
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/navbar_app.tpl
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/portal_linkbox.tpl
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/portal_linkbox_footer.tpl
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/portal_linkbox_header.tpl
+www/data.default/phpgroupware/phpgwapi/templates/verdilak/portal_main.tpl
+www/data.default/phpgroupware/phpgwapi/themes/black.theme
+www/data.default/phpgroupware/phpgwapi/themes/blue.theme
+www/data.default/phpgroupware/phpgwapi/themes/brown.theme
+www/data.default/phpgroupware/phpgwapi/themes/darkblue.theme
+www/data.default/phpgroupware/phpgwapi/themes/darkgreen.theme
+www/data.default/phpgroupware/phpgwapi/themes/default.theme
+www/data.default/phpgroupware/phpgwapi/themes/fancy.theme
+www/data.default/phpgroupware/phpgwapi/themes/greys.theme
+www/data.default/phpgroupware/phpgwapi/themes/heaven.theme
+www/data.default/phpgroupware/phpgwapi/themes/lightblue.theme
+www/data.default/phpgroupware/phpgwapi/themes/lightbrown.theme
+www/data.default/phpgroupware/phpgwapi/themes/mojo.theme
+www/data.default/phpgroupware/phpgwapi/themes/purple.theme
+www/data.default/phpgroupware/phpgwapi/themes/red.theme
+www/data.default/phpgroupware/phpgwapi/themes/rose.theme
+www/data.default/phpgroupware/phpgwapi/themes/submarine.theme
+www/data.default/phpgroupware/phpgwapi/themes/template2theme.pl
+www/data.default/phpgroupware/phpgwapi/themes/theme.template
+www/data.default/phpgroupware/phpgwapi/themes/theme2template.pl
+www/data.default/phpgroupware/phpgwapi/themes/yellows.theme
+www/data.default/phpgroupware/preferences/changepassword.php
+www/data.default/phpgroupware/preferences/changeprofile.php
+www/data.default/phpgroupware/preferences/index.php
+www/data.default/phpgroupware/preferences/settings.php
+www/data.default/phpgroupware/preferences/version.inc.php
+www/data.default/phpgroupware/preferences/inc/hook_preferences.inc.php
+www/data.default/phpgroupware/preferences/setup/config.inc.php
+www/data.default/phpgroupware/preferences/templates/default/images/navbar.gif
+www/data.default/phpgroupware/preferences/templates/verdilak/images/navbar.gif
+www/data.default/phpgroupware/setup/inc/functions.inc.php
+www/data.default/phpgroupware/setup/inc/phpgw_schema_proc.inc.php
+www/data.default/phpgroupware/setup/inc/phpgw_schema_proc_array.inc.php
+www/data.default/phpgroupware/setup/inc/phpgw_schema_proc_mysql.inc.php
+www/data.default/phpgroupware/setup/inc/phpgw_schema_proc_pgsql.inc.php
+www/data.default/phpgroupware/setup/inc/phpgw_setup.inc.php
+www/data.default/phpgroupware/setup/inc/phpgw_template.inc.php
+www/data.default/phpgroupware/setup/sql/common_default_records.inc.php
+www/data.default/phpgroupware/setup/sql/common_main.inc.php
+www/data.default/phpgroupware/setup/sql/default_applications.inc.php
+www/data.default/phpgroupware/setup/sql/default_applications_plus.inc.php
+www/data.default/phpgroupware/setup/sql/mysql_droptables.inc.php
+www/data.default/phpgroupware/setup/sql/mysql_newtables.inc.php
+www/data.default/phpgroupware/setup/sql/mysql_upgrade_beta.inc.php
+www/data.default/phpgroupware/setup/sql/mysql_upgrade_prebeta.inc.php
+www/data.default/phpgroupware/setup/sql/pgsql_droptables.inc.php
+www/data.default/phpgroupware/setup/sql/pgsql_newtables.inc.php
+www/data.default/phpgroupware/setup/sql/pgsql_upgrade_beta.inc.php
+www/data.default/phpgroupware/setup/sql/pgsql_upgrade_prebeta.inc.php
+www/data.default/phpgroupware/setup/config.php
+www/data.default/phpgroupware/setup/index.php
+www/data.default/phpgroupware/setup/lang.php
+www/data.default/phpgroupware/setup/ldap.php
+www/data.default/phpgroupware/setup/manageheader.php
+www/data.default/phpgroupware/setup/phpgw_br.lang
+www/data.default/phpgroupware/setup/phpgw_cs.lang
+www/data.default/phpgroupware/setup/phpgw_da.lang
+www/data.default/phpgroupware/setup/phpgw_de.lang
+www/data.default/phpgroupware/setup/phpgw_en.lang
+www/data.default/phpgroupware/setup/phpgw_es.lang
+www/data.default/phpgroupware/setup/phpgw_fr.lang
+www/data.default/phpgroupware/setup/phpgw_it.lang
+www/data.default/phpgroupware/setup/phpgw_ko.lang
+www/data.default/phpgroupware/setup/phpgw_nl.lang
+www/data.default/phpgroupware/setup/phpgw_no.lang
+www/data.default/phpgroupware/setup/phpgw_sv.lang
+www/data.default/phpgroupware/setup/setup_demo.php
+www/data.default/phpgroupware/setup/test.php
+www/data.default/phpgroupware/setup/templates/default/images/completed.gif
+www/data.default/phpgroupware/setup/templates/default/images/incomplete.gif
+www/data.default/phpgroupware/todo/delete.php
+www/data.default/phpgroupware/todo/add.php
+www/data.default/phpgroupware/todo/edit.php
+www/data.default/phpgroupware/todo/graphview.php
+www/data.default/phpgroupware/todo/index.php
+www/data.default/phpgroupware/todo/version.inc.php
+www/data.default/phpgroupware/todo/inc/about.inc.php
+www/data.default/phpgroupware/todo/inc/hook_todo_about.inc.php
+www/data.default/phpgroupware/todo/templates/default/images/navbar.gif
+www/data.default/phpgroupware/todo/templates/default/images/pix.gif
+www/data.default/phpgroupware/todo/templates/default/delete.tpl
+www/data.default/phpgroupware/todo/templates/default/form.tpl
+www/data.default/phpgroupware/todo/templates/default/list.tpl
+www/data.default/phpgroupware/todo/templates/default/row.tpl
+www/data.default/phpgroupware/todo/templates/verdilak/images/navbar.gif
+www/data.default/phpgroupware/todo/templates/verdilak/delete.tpl
+www/data.default/phpgroupware/todo/templates/verdilak/form.tpl
+www/data.default/phpgroupware/todo/templates/verdilak/list.tpl
+www/data.default/phpgroupware/todo/templates/verdilak/row.tpl
+www/data.default/phpgroupware/transy/addsingle.php
+www/data.default/phpgroupware/transy/createnewlangset.php
+www/data.default/phpgroupware/transy/generatelangfile.php
+www/data.default/phpgroupware/transy/importlang.php
+www/data.default/phpgroupware/transy/index.php
+www/data.default/phpgroupware/transy/pharses.php
+www/data.default/phpgroupware/transy/searchmissing.php
+www/data.default/phpgroupware/transy/version.inc.php
+www/data.default/phpgroupware/transy/templates/default/images/navbar.gif
+www/data.default/phpgroupware/transy/templates/default/import.tpl
+www/data.default/phpgroupware/transy/templates/default/import_row.tpl
+www/data.default/phpgroupware/transy/templates/default/singleform.tpl
+www/data.default/phpgroupware/transy/templates/verdilak/images/navbar.gif
+@dirrm www/data.default/phpgroupware/transy/templates/verdilak/images
+@dirrm www/data.default/phpgroupware/transy/templates/verdilak
+@dirrm www/data.default/phpgroupware/transy/templates/default/images
+@dirrm www/data.default/phpgroupware/transy/templates/default
+@dirrm www/data.default/phpgroupware/transy/templates
+@dirrm www/data.default/phpgroupware/transy
+@dirrm www/data.default/phpgroupware/todo/templates/verdilak/images
+@dirrm www/data.default/phpgroupware/todo/templates/verdilak
+@dirrm www/data.default/phpgroupware/todo/templates/default/images
+@dirrm www/data.default/phpgroupware/todo/templates/default
+@dirrm www/data.default/phpgroupware/todo/templates
+@dirrm www/data.default/phpgroupware/todo/inc
+@dirrm www/data.default/phpgroupware/todo
+@dirrm www/data.default/phpgroupware/setup/templates/default/images
+@dirrm www/data.default/phpgroupware/setup/templates/default
+@dirrm www/data.default/phpgroupware/setup/templates
+@dirrm www/data.default/phpgroupware/setup/sql
+@dirrm www/data.default/phpgroupware/setup/inc
+@dirrm www/data.default/phpgroupware/setup
+@dirrm www/data.default/phpgroupware/preferences/templates/verdilak/images
+@dirrm www/data.default/phpgroupware/preferences/templates/verdilak
+@dirrm www/data.default/phpgroupware/preferences/templates/default/images
+@dirrm www/data.default/phpgroupware/preferences/templates/default
+@dirrm www/data.default/phpgroupware/preferences/templates
+@dirrm www/data.default/phpgroupware/preferences/setup
+@dirrm www/data.default/phpgroupware/preferences/inc
+@dirrm www/data.default/phpgroupware/preferences
+@dirrm www/data.default/phpgroupware/phpgwapi/themes
+@dirrm www/data.default/phpgroupware/phpgwapi/templates/verdilak/images
+@dirrm www/data.default/phpgroupware/phpgwapi/templates/verdilak
+@dirrm www/data.default/phpgroupware/phpgwapi/templates/justweb/images
+@dirrm www/data.default/phpgroupware/phpgwapi/templates/justweb
+@dirrm www/data.default/phpgroupware/phpgwapi/templates/default/images
+@dirrm www/data.default/phpgroupware/phpgwapi/templates/default
+@dirrm www/data.default/phpgroupware/phpgwapi/templates
+@dirrm www/data.default/phpgroupware/phpgwapi/setup
+@dirrm www/data.default/phpgroupware/phpgwapi/inc
+@dirrm www/data.default/phpgroupware/phpgwapi/doc
+@dirrm www/data.default/phpgroupware/phpgwapi/cron
+@dirrm www/data.default/phpgroupware/phpgwapi
+@dirrm www/data.default/phpgroupware/notes/templates/default/images
+@dirrm www/data.default/phpgroupware/notes/templates/default
+@dirrm www/data.default/phpgroupware/notes/templates
+@dirrm www/data.default/phpgroupware/notes/inc
+@dirrm www/data.default/phpgroupware/notes
+@dirrm www/data.default/phpgroupware/nntp/templates/verdilak/images
+@dirrm www/data.default/phpgroupware/nntp/templates/verdilak
+@dirrm www/data.default/phpgroupware/nntp/templates/default/images
+@dirrm www/data.default/phpgroupware/nntp/templates/default
+@dirrm www/data.default/phpgroupware/nntp/templates
+@dirrm www/data.default/phpgroupware/nntp/inc
+@dirrm www/data.default/phpgroupware/nntp
+@dirrm www/data.default/phpgroupware/manual/templates/verdilak/images
+@dirrm www/data.default/phpgroupware/manual/templates/verdilak
+@dirrm www/data.default/phpgroupware/manual/templates/default/images
+@dirrm www/data.default/phpgroupware/manual/templates/default
+@dirrm www/data.default/phpgroupware/manual/templates
+@dirrm www/data.default/phpgroupware/manual/inc
+@dirrm www/data.default/phpgroupware/manual
+@dirrm www/data.default/phpgroupware/filemanager/templates/default/images
+@dirrm www/data.default/phpgroupware/filemanager/templates/default
+@dirrm www/data.default/phpgroupware/filemanager/templates
+@dirrm www/data.default/phpgroupware/filemanager
+@dirrm www/data.default/phpgroupware/email/templates/default/images
+@dirrm www/data.default/phpgroupware/email/templates/default
+@dirrm www/data.default/phpgroupware/email/templates
+@dirrm www/data.default/phpgroupware/email/setup
+@dirrm www/data.default/phpgroupware/email/inc
+@dirrm www/data.default/phpgroupware/email
+@dirrm www/data.default/phpgroupware/doc/sgml
+@dirrm www/data.default/phpgroupware/doc
+@dirrm www/data.default/phpgroupware/calendar/templates/verdilak/images
+@dirrm www/data.default/phpgroupware/calendar/templates/verdilak
+@dirrm www/data.default/phpgroupware/calendar/templates/default/images
+@dirrm www/data.default/phpgroupware/calendar/templates/default
+@dirrm www/data.default/phpgroupware/calendar/templates
+@dirrm www/data.default/phpgroupware/calendar/setup
+@dirrm www/data.default/phpgroupware/calendar/inc
+@dirrm www/data.default/phpgroupware/calendar
+@dirrm www/data.default/phpgroupware/admin/templates/verdilak/images
+@dirrm www/data.default/phpgroupware/admin/templates/verdilak
+@dirrm www/data.default/phpgroupware/admin/templates/default/images
+@dirrm www/data.default/phpgroupware/admin/templates/default
+@dirrm www/data.default/phpgroupware/admin/templates
+@dirrm www/data.default/phpgroupware/admin/setup
+@dirrm www/data.default/phpgroupware/admin/inc
+@dirrm www/data.default/phpgroupware/admin
+@dirrm www/data.default/phpgroupware/addressbook/templates/verdilak/images
+@dirrm www/data.default/phpgroupware/addressbook/templates/verdilak
+@dirrm www/data.default/phpgroupware/addressbook/templates/default/images
+@dirrm www/data.default/phpgroupware/addressbook/templates/default
+@dirrm www/data.default/phpgroupware/addressbook/templates
+@dirrm www/data.default/phpgroupware/addressbook/inc
+@dirrm www/data.default/phpgroupware/addressbook
+@exec chmod 707 %D/www/data.default/phpgroupware/files
+@exec chmod 707 %D/www/data.default/phpgroupware/files/users
+@exec chmod 707 %D/www/data.default/phpgroupware/files/groups
+@unexec rmdir %D/www/data.default/phpgroupware/files/users 2>/dev/null || true
+@unexec rmdir %D/www/data.default/phpgroupware/files/groups 2>/dev/null || true
+@unexec rmdir %D/www/data.default/phpgroupware/files 2>/dev/null || true
+@unexec rmdir %D/www/data.default/phpgroupware 2>/dev/null || true
