@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://ftp.iteration.net/pub/patch_chinese/
 DISTNAME=	zh-tw-skel-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	keichii@iteration.net
+MAINTAINER=	keichii@freebsd.org
 
 # The zh_TW.big5 in the linux-gtk section is not a typo.
 RUN_DEPENDS=	${X11BASE}/lib/aout/zh-XFree86-aoutlibs-3.3.6:${PORTSDIR}/chinese/XFree86-aoutlibs \

@@ -21,7 +21,7 @@ PORTREVISION=	1
 #.include <bsd.port.pre.mk>
 PKGNAMEPREFIX:= ${PKGNAMEPREFIX}tw-
 
-MAINTAINER=	keichii@iteration.net
+MAINTAINER=	keichii@freebsd.org
 
 CONFIGURE_ARGS+= \
 		--enable-xim --enable-big5 \
