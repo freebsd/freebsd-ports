@@ -18,6 +18,7 @@ USE_LIBTOOL=	yes
 USE_NEWGCC=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-libplotter --enable-libxmi
+MAN1=		ode.1 plot.1 spline.1 tek2plot.1
 
 .ifdef HAVE_MOTIF
 CONFIGURE_ARGS+=	--with-motif
