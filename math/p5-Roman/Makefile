@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Roman
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	philip@paeps.cx
+MAINTAINER=	philip@FreeBSD.org
 COMMENT=	Perl module to convert between Arabic and Roman numerals
 
 NO_BUILD=	yes
@@ -21,11 +21,8 @@ USE_PERL5_RUN=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} >= 500800
-BROKEN=		"Does not install"
-.endif
-
 do-install:
+	${MKDIR} ${SITE_PERL}
 	${CP} ${WRKSRC}/Roman.pm ${SITE_PERL}
 
 .include <bsd.port.post.mk>
