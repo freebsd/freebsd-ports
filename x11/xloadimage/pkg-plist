@@ -6,5 +6,5 @@ bin/xloadimage
 bin/xview
 bin/xsetbg
 @mode 644
-app-defaults/Xloadimage
+lib/X11/app-defaults/Xloadimage
 man/man1/xloadimage.1.gz
