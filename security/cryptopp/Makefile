@@ -7,6 +7,7 @@
 
 PORTNAME=		cryptopp
 PORTVERSION=		5.2.1
+PORTREVISION=		1
 CATEGORIES=		security
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE} \
 			http://www.eskimo.com/~weidai/ \
@@ -24,6 +25,7 @@ USE_ZIP=		yes
 EXTRACT_BEFORE_ARGS=	-aq
 USE_GMAKE=		yes
 MAKEFILE=		GNUmakefile
+CXXFLAGS+=		-fPIC
 
 .include <bsd.port.pre.mk>
 
