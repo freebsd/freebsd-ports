@@ -1,0 +1,16 @@
+--- src/Makefile.in.orig	Wed Jul  4 10:27:43 2001
++++ src/Makefile.in	Fri Jul  6 10:34:56 2001
+@@ -16,10 +16,10 @@
+ endif
+ 
+ CXXFLAGS = @CXXFLAGS@
+-INCLUDE_DIRS = $(QTDIR)/include 
++INCLUDE_DIRS = %%X11BASE%%/include/qt2 %%LOCALBASE%%/include
+ IFLAGS = $(addprefix -I,$(INCLUDE_DIRS))
+-LIBRARIES = qt Xext X11 m
+-LIB_DIRS  = $(QTDIR)/lib /usr/X11R6/lib
++LIBRARIES = qt2 Xext X11 m gnugetopt
++LIB_DIRS  = $(QTDIR)/lib /usr/X11R6/lib %%LOCALBASE%%/lib
+ LFLAGS = $(addprefix -L,$(LIB_DIRS)) $(addprefix -l,$(LIBRARIES))
+ 
+ CXX_SRC = $(wildcard *.cpp)
