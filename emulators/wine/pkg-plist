@@ -272,6 +272,7 @@ lib/wine/ctl3d.dll.so
 lib/wine/ctl3d32.dll.so
 lib/wine/ctl3dv2.dll.so
 lib/wine/d3d8.dll.so
+lib/wine/d3dim.dll.so
 lib/wine/d3dx8.dll.so
 lib/wine/dciman32.dll.so
 lib/wine/ddeml.dll.so
@@ -308,6 +309,7 @@ lib/wine/libcrtdll.def
 lib/wine/libcrypt32.def
 lib/wine/libctl3d32.def
 lib/wine/libd3d8.def
+lib/wine/libd3dim.def
 lib/wine/libd3dx8.def
 lib/wine/libdciman32.def
 lib/wine/libddraw.def
@@ -451,6 +453,7 @@ lib/wine/shfolder.dll.so
 lib/wine/shlwapi.dll.so
 lib/wine/snmpapi.dll.so
 lib/wine/sound.dll.so
+lib/wine/start.exe.so
 lib/wine/sti.dll.so
 lib/wine/storage.dll.so
 lib/wine/stress.dll.so
