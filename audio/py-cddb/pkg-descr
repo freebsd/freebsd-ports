@@ -1,0 +1,7 @@
+This is actually a set of three modules to access the CDDB online
+database of audio CD track titles and information. It includes a
+C extension module to fetch track lengths under Linux, FreeBSD,
+OpenBSD, Solaris, and Win32, which is easily ported to other
+operating systems.
+
+WWW: http://cddb-py.sourceforge.net/
