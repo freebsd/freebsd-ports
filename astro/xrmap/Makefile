@@ -8,7 +8,7 @@
 PORTNAME=	xrmap
 PORTVERSION=	2.03
 CATEGORIES=	misc
-MASTER_SITES=	# need
+MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/geosciences/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	petef@FreeBSD.org
