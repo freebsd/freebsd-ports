@@ -46,6 +46,7 @@
     SUBDIR += gxedit
     SUBDIR += hexedit
     SUBDIR += jed
+    SUBDIR += jext
     SUBDIR += joe
     SUBDIR += jove
     SUBDIR += le
@@ -78,6 +79,7 @@
     SUBDIR += staroffice
     SUBDIR += staroffice5
     SUBDIR += sted
+    SUBDIR += tamago
     SUBDIR += textedit
     SUBDIR += the
     SUBDIR += thoteditor
