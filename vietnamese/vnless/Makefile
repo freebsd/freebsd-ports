@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	obrien@FreeBSD.org
 
+PORTCOMMENT=	A pager utility that speaks Vietnamese
+
 ALL_TARGET=	clobber all
 MAN1=		vnless.1 vnlesskey.1
 

@@ -14,6 +14,8 @@ DISTNAME=	xorg-1
 
 MAINTAINER=	obrien@FreeBSD.org
 
+PORTCOMMENT=	An xterm that speaks Vietnamese
+
 USE_IMAKE=	yes
 
 .include <bsd.port.pre.mk>
