@@ -3,7 +3,7 @@
 # Date created:         Nov 26 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.6 1998/10/12 18:53:09 jseger Exp $
+# $Id: Makefile,v 1.7 1998/10/13 02:20:19 jseger Exp $
 #
 
 DISTNAME=	linux_devel-0.2
@@ -19,8 +19,7 @@ NO_FILTER_SHLIBS=	yes
 PREFIX=		/compat/linux
 NO_MTREE=	yes
 NO_BUILD=	yes
-NO_EXTRACT=	yes
-NO_WRKDIR=	yes
+EXTRACT_ONLY=	# empty
 
 MANPREFIX=	${PREFIX}/usr
 MANCOMPRESSED=	yes
