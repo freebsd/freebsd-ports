@@ -8,7 +8,8 @@
 
 DISTNAME=	wmbutton-0.4
 CATEGORIES=	x11 windowmaker
-MASTER_SITES=	http://www-personal.ksu.edu/~ehflora/wmbutton/
+MASTER_SITES=	http://www.cs.mun.ca/~gstarkes/wmaker/dockapps/files/ \
+		http://people.FreeBSD.org/~jim/distfiles/
 
 MAINTAINER=	jim@FreeBSD.org
 
@@ -17,16 +18,16 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 USE_X_PREFIX=	yes
 
 do-build:
-	(cd ${WRKSRC} && make)
+	@(cd ${WRKSRC} && make)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/wmbutton ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/wmbutton ${PREFIX}/bin
 
 post-install:
 	@${ECHO} "===>   Installing .wmbutton as ${PREFIX}/share/examples/wmbutton/wmbutton"
 	@${ECHO} "===>   Modify if you wish and copy to ~/.wmbutton"
 	@${MKDIR} ${PREFIX}/share/examples/wmbutton && ${CHMOD} a+rx ${PREFIX}/share/examples/wmbutton
-	${INSTALL_DATA} ${WRKSRC}/.wmbutton ${PREFIX}/share/examples/wmbutton/wmbutton
+	@${INSTALL_DATA} ${WRKSRC}/.wmbutton ${PREFIX}/share/examples/wmbutton/wmbutton
 	@${ECHO} "===>   Installing README in ${PREFIX}/share/doc/wmbutton"
 	@${ECHO} "===>   Please read it for usage instructions"
 	@${MKDIR} ${PREFIX}/share/doc/wmbutton && ${CHMOD} a+rx ${PREFIX}/share/doc/wmbutton
