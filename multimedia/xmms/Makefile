@@ -100,7 +100,7 @@ post-extract:
 .endif
 
 pre-extract:
-.if !defined(WITHOUT_MIKMOD) || !defined(WITHOUT_VORBIS) || ( !defined(WITHOUT_3DNOW) && ${OSVERSION} >= 400021 )
+.if !defined(WITHOUT_MIKMOD) || !defined(WITHOUT_VORBIS) || ( !defined(WITHOUT_3DNOW) && ${OSVERSION} >= 400021 ) || ${HAVE_GNOME:Mesound}!=""
 	@${ECHO_MSG}
 .if !defined(WITHOUT_MIKMOD)
 	@${ECHO_MSG} "You can disable support for mikmod by defining WITHOUT_MIKMOD."
@@ -110,6 +110,9 @@ pre-extract:
 .endif
 .if !defined(WITHOUT_3DNOW) && ${OSVERSION} >= 400021
 	@${ECHO_MSG} "You can disable 3DNow! optimized decoding routines by defining WITHOUT_3DNOW."
+.endif
+.if ${HAVE_GNOME:Mesound}!=""
+	@${ECHO_MSG} "You can disable support for esound by defining WITHOUT_GNOME=esound."
 .endif
 	@${ECHO_MSG}
 .endif
