@@ -1,8 +1,14 @@
 @cwd %%LOCALBASE%%
 etc/rc.d/wyvern.sh
 sbin/wyvern
-sbin/wyvernctl
 wyvern/bin/wpasswd
+wyvern/include/functions.h
+wyvern/include/mesg.h
+wyvern/include/module.h
+wyvern/include/status.h
+wyvern/include/version.h
+wyvern/include/wpath.h
+wyvern/include/wyvern.h
 wyvern/cgi-bin/README.html
 wyvern/cgi-bin/dic-tools.cgi
 wyvern/cgi-bin/file-upload.cgi
@@ -89,12 +95,11 @@ wyvern/icons/unknown.gif
 wyvern/icons/uuencoded.gif
 wyvern/images/mwx-wyvern-banner.png
 wyvern/images/wyvern-banner.png
-wyvern/manual/access.html
+wyvern/manual/Wyvern-Manual.png
 wyvern/manual/acknowledgement.html
 wyvern/manual/appendix-A.html
-wyvern/manual/authentication.html
+wyvern/manual/appendix-B.html
 wyvern/manual/bibliography.html
-wyvern/manual/cgi.html
 wyvern/manual/commercial.html
 wyvern/manual/conclusion.html
 wyvern/manual/contents.html
@@ -102,31 +107,39 @@ wyvern/manual/copyright.html
 wyvern/manual/dbm.html
 wyvern/manual/faq.html
 wyvern/manual/features.html
-wyvern/manual/howto.html
 wyvern/manual/index.html
 wyvern/manual/install.html
 wyvern/manual/introduction.html
 wyvern/manual/license.html
-wyvern/manual/logformat.html
 wyvern/manual/mwx-wyvern-banner.png
+wyvern/manual/module.html
+wyvern/manual/mod_access.html
+wyvern/manual/mod_auth.html
+wyvern/manual/mod_autoindex.html
+wyvern/manual/mod_cgi.html
+wyvern/manual/mod_env.html
+wyvern/manual/mod_gzip.html
+wyvern/manual/mod_log.html
+wyvern/manual/mod_md5.html
+wyvern/manual/mod_ssi.html
 wyvern/manual/setup.html
-wyvern/manual/ssi.html
+wyvern/manual/security.html
 wyvern/manual/ssl.html
-wyvern/manual/syslog.html
+wyvern/manual/vhost.html
 wyvern/manual/wyvern-manual.png
 wyvern/manual/wyvern.css
 wyvern/manual/wyvern.html
-wyvern/modules/access.mod
-wyvern/modules/auth.mod
-wyvern/modules/cgi.mod
-wyvern/modules/dir.mod
-wyvern/modules/gzip.mod
-wyvern/modules/ident.mod
-wyvern/modules/log.mod
-wyvern/modules/moredir.mod
-wyvern/modules/newdir.mod
-wyvern/modules/newlog.mod
-wyvern/modules/ssi.mod
+wyvern/modules/mod_access.so
+wyvern/modules/mod_auth_db.so
+wyvern/modules/mod_auth_dbm.so
+wyvern/modules/mod_autoindex.so
+wyvern/modules/mod_cgi.so
+wyvern/modules/mod_env.so
+wyvern/modules/mod_gzip.so
+wyvern/modules/mod_log.so
+wyvern/modules/mod_md5.so
+wyvern/modules/mod_rcgi.so
+wyvern/modules/mod_ssi.so
 wyvern/samples/dot.waccess
 wyvern/samples/dot.wpasswd
 wyvern/samples/hosts.allow
@@ -134,6 +147,7 @@ wyvern/samples/missing.html
 wyvern/style/default.css
 wyvern/sbin/wyvern
 wyvern/sbin/wyvernctl
+wyvern/sbin/suexec
 @comment @dirrm wyvern/bin
 @comment @dirrm wyvern/cache
 @comment @dirrm wyvern/cgi-bin
@@ -143,6 +157,7 @@ wyvern/sbin/wyvernctl
 @comment @dirrm wyvern/htdocs
 @comment @dirrm wyvern/icons
 @comment @dirrm wyvern/images
+@comment @dirrm wyvern/include
 @comment @dirrm wyvern/libexec
 @comment @dirrm wyvern/logs
 @comment @dirrm wyvern/manual
