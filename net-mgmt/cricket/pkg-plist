@@ -22,6 +22,7 @@ cricket/cricket-%%VERSION%%/doc/inst-mapping.html
 cricket/cricket-%%VERSION%%/doc/intro.html
 cricket/cricket-%%VERSION%%/doc/modperl.html
 cricket/cricket-%%VERSION%%/doc/monitor-thresholds.html
+cricket/cricket-%%VERSION%%/doc/monitor.gif
 cricket/cricket-%%VERSION%%/doc/neta-paper/fig1.gif
 cricket/cricket-%%VERSION%%/doc/neta-paper/fig2.gif
 cricket/cricket-%%VERSION%%/doc/neta-paper/paper.html
@@ -115,6 +116,7 @@ cricket/cricket-%%VERSION%%/util/generate-statics
 cricket/cricket-%%VERSION%%/util/get-collector-stats
 cricket/cricket-%%VERSION%%/util/getFormat.c
 cricket/cricket-%%VERSION%%/util/listInterfaces
+cricket/cricket-%%VERSION%%/util/metaQuery.pl
 cricket/cricket-%%VERSION%%/util/newsstats
 cricket/cricket-%%VERSION%%/util/perfInfo.pl
 cricket/cricket-%%VERSION%%/util/pmlines.pl
