@@ -222,6 +222,7 @@
     SUBDIR += glui
     SUBDIR += gmake
     SUBDIR += gnome-devel
+    SUBDIR += gnome-vfsmm
     SUBDIR += gnome2-devel
     SUBDIR += gnomebuild
     SUBDIR += gnomecommon
