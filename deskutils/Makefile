@@ -123,6 +123,7 @@
     SUBDIR += sliderule
     SUBDIR += splashsetter
     SUBDIR += superkaramba
+    SUBDIR += taskjuggler
     SUBDIR += teapot
     SUBDIR += timer-applet
     SUBDIR += treeline
