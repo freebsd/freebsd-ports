@@ -1,0 +1,13 @@
+--- info.display.orig	Fri Oct 24 12:31:48 2003
++++ info.display	Fri Nov 21 23:35:34 2003
+@@ -6,8 +6,8 @@
+ 		version="0.2.1"
+ 		description="Shows the uptime,kernel version, CPU load, user name and hostname (needs the Theme,CPU,FontSelector,External sensors)"/>
+ 	
+-	<sensor id="uptime" module="External,uptime|tr -s ' ' '\t' |cut -f 4|cut -d \, -f 1,60000"/>
+-	<sensor id="kernel" module="External,cat /proc/version|cut -d ' ' -f 1-3,0"/>
++	<sensor id="uptime" module="External,uptime| sed -e 's@.*up @@'|cut -d \, -f 1,60000"/>
++	<sensor id="kernel" module="External,uname -r,0"/>
+ 	<sensor id="CPU" module="CPU,1000"/>
+ 	<sensor id="who" module="External,whoami,0"/>
+ 	<sensor id="hostname" module="External,hostname|cut -d . -f 1,0"/>
