@@ -99,9 +99,13 @@ do-install:
 	${PERL} -pi -e "s:chmod 444 :chmod 444 ${HORDEDIR}/:g" ${HORDESBIN}/horde_setup.sh
 	${CHMOD} u+x ${HORDESBIN}/horde_secure.sh
 	${CHMOD} u+x ${HORDESBIN}/horde_setup.sh
-	${PERL} -pi -e "s:go to the top level directory for your installation and run:run:g" ${HORDEDIR}/setup.php3
+	${PERL} -pi -e "s:go to the top level directory for your installation and run:run:g"	\
+		${HORDEDIR}/setup.php3
 	${PERL} -pi -e "s:sh ./install.sh:${HORDESBIN}/horde_setup.sh:g" ${HORDEDIR}/setup.php3
-	${PERL} -pi -e "s:sh ./install.sh:${HORDESBIN}/horde_setup.sh:g" ${HORDEDIR}/templates/index/horde_notconfigured.inc
+	${PERL} -pi -e "s:sh ./install.sh:${HORDESBIN}/horde_setup.sh:g"	\
+		${HORDEDIR}/templates/index/horde_notconfigured.inc
+	${PERL} -pi -e "s:sh ./secure.sh:${HORDESBIN}/horde_secure.sh:g"	\
+		${HORDEDIR}/templates/setup/imp/write_file.inc
 	${CP}     ${HORDEDIR}/config/horde.php3.dist ${HORDEDIR}/config/horde.php3
 	${CHMOD}  444 ${HORDEDIR}/config/horde.php3
 	${CHMOD}  444 ${HORDEDIR}/setup.php3

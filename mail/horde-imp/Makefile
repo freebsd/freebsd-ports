@@ -186,8 +186,6 @@ do-install:
 			${IMPDIR}/templates/index/imp_notconfigured.inc
 	${PERL} -pi -e "s:sh ./install.sh:${HORDESBIN}/horde_setup.sh:g" \
 			${IMPDIR}/templates/index/imp_notconfigured.inc
-	${PERL} -pi -e "s:sh ./secure.sh:${HORDESBIN}/horde_secure.sh:g" \
-			${HORDEDIR}/templates/setup/imp/write_file.inc
 	@if [ ! -f ${IMPDIR}/config/defaults.php3 ]; then \
 	    ${CP}     ${IMPDIR}/config/defaults.php3.dist ${IMPDIR}/config/defaults.php3; \
 	fi
