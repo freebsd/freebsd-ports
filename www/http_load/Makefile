@@ -7,6 +7,7 @@
 
 PORTNAME=	http_load
 PORTVERSION=	20020104
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.acme.com/software/http_load/
 DISTNAME=	${PORTNAME}-04jan2002

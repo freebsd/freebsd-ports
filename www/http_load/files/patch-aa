@@ -1,0 +1,27 @@
+--- http_load.c.old	Tue Dec  9 02:22:07 2003
++++ http_load.c	Tue Dec  9 03:43:39 2003
+@@ -825,6 +825,7 @@
+     ClientData client_data;
+     int flags;
+     int sip_num;
++    int rcv_bytes, error;
+ 
+     /* Start filling in the connection slot. */
+     connections[cnum].url_num = url_num;
+@@ -863,6 +864,16 @@
+ 	perror( urls[url_num].url_str );
+ 	(void) close( connections[cnum].conn_fd );
+ 	return;
++	}
++
++    /* Shrink the recieve window to better imitate a slow connection. */
++    if ( do_throttle )
++	{
++	rcv_bytes = 2048;
++	error = setsockopt(connections[cnum].conn_fd, SOL_SOCKET, SO_RCVBUF,
++		(void *)&rcv_bytes, sizeof(rcv_bytes));
++	if (error)
++		perror("Setsockopt problem:");
+ 	}
+ 
+     if ( num_sips > 0 )
