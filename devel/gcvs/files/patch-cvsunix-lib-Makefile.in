@@ -1,0 +1,10 @@
+--- cvsunix/lib/Makefile.in.orig	Thu Nov  7 19:29:36 2002
++++ cvsunix/lib/Makefile.in	Tue Jul  1 04:38:17 2003
+@@ -200,6 +200,7 @@
+ regex.o: regex.h
+ md5.o: md5.h
+ argmatch.o: cvsgui.h
++hostname.o: cvsgui.h
+ 
+ xlint:
+ 	@echo xlint does nothing

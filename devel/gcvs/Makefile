@@ -38,12 +38,4 @@ MAN8=		cvsbug.8
 #USE_AUTOMAKE_VER=	14
 #USE_AUTOCONF_VER=	213
 
-.include <bsd.port.pre.mk>
-
-.if exists(/usr/include/krb5.h) || exists(/usr/include/gssapi.h)
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
