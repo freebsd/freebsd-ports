@@ -244,6 +244,7 @@
     SUBDIR += libshhopt
     SUBDIR += libsigc++
     SUBDIR += libslang
+    SUBDIR += libstocks
     SUBDIR += libstrfunc
     SUBDIR += libtai
     SUBDIR += libtar

@@ -1,0 +1,16 @@
+PREFIX?=/usr/local
+LIBDIR=	${PREFIX}/lib
+INCDIR=	${PREFIX}/include
+
+LIB=	stocks
+SHLIB_MAJOR=0
+SHLIB_MINOR=5
+
+NOPROFILE=	True	# to avoid building profiled library
+
+SRCS!=	${MAKE} -f ${.CURDIR}/Makefile.in -V libstocks_a_SOURCES
+INCS!=	${MAKE} -f ${.CURDIR}/Makefile.in -V include_HEADERS
+
+build:	all
+
+.include <bsd.lib.mk>
