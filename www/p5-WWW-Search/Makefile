@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Search
-PORTVERSION=	2.36
+PORTVERSION=	2.37
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
@@ -19,6 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/LWP.pm:${PORTSDIR}/w
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/URI.pm:${PORTSDIR}/net/p5-URI \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Test/Inline.pm:${PORTSDIR}/devel/p5-Test-Inline \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/File/Spec/Functions.pm:${PORTSDIR}/devel/p5-File-Spec \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/User.pm:${PORTSDIR}/sysutils/p5-User \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
@@ -31,25 +32,12 @@ MAN1=		AutoSearch.1 \
 		WebSearch.1
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		WWW::Search.3 \
-		WWW::Search::Crawler.3 \
-		WWW::Search::ExciteForWebServers.3 \
-		WWW::Search::Fireball.3 \
-		WWW::Search::FolioViews.3 \
-		WWW::Search::Gopher.3 \
-		WWW::Search::HotFiles.3 \
-		WWW::Search::Livelink.3 \
-		WWW::Search::MSIndexServer.3 \
-		WWW::Search::MetaCrawler.3 \
-		WWW::Search::Metapedia.3 \
-		WWW::Search::NetFind.3 \
+		WWW::SearchResult.3 \
 		WWW::Search::Null.3 \
-		WWW::Search::PLweb.3 \
-		WWW::Search::SFgate.3 \
-		WWW::Search::Search97.3 \
+		WWW::Search::Null::Count.3 \
+		WWW::Search::Null::Empty.3 \
+		WWW::Search::Null::Error.3 \
 		WWW::Search::Simple.3 \
-		WWW::Search::Test.3 \
-		WWW::Search::Verity.3 \
-		WWW::Search::VoilaFr.3 \
-		WWW::SearchResult.3
+		WWW::Search::Test.3
 
 .include <bsd.port.mk>

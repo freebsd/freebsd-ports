@@ -1,29 +1,16 @@
 bin/AutoSearch
 bin/WebSearch
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WWW/Search/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search.pm.rej
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Crawler.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/ExciteForWebServers.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Fireball.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/FolioViews.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Gopher.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/HotFiles.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Livelink.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/MSIndexServer.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/MetaCrawler.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Metapedia.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/NetFind.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Null.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/PLweb.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Null/Count.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Null/Empty.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Null/Error.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/SearchResult.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Result.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/SFgate.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Search97.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Simple.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Test.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Verity.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/VoilaFr.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WWW/Search/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WWW/Search
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Search
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Null
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WWW/Search 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WWW 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/WWW/Search 2>/dev/null || true
