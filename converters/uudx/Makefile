@@ -2,7 +2,7 @@
 # Version required:	2.99
 # Date created:		2 June 1996
 # Whom:			ABURAYER Rewsirow <pcs51674@asciinet.or.jp>
-# $Id$
+# $Id: Makefile,v 1.2 1996/11/12 02:17:54 obrien Exp $
 #
 
 DISTNAME=	uudx_299
@@ -12,7 +12,8 @@ MASTER_SITES=	ftp://ftp.ae.keio.ac.jp/pub/msdos/archivers/uu/
 
 MAINTAINER=	pcs51674@asciinet.or.jp
 
-BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha
+BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
+		nkf:${PORTSDIR}/japanese/nkf
 
 EXTRACT_CMD=	lha
 EXTRACT_SUFX=	.lzh
