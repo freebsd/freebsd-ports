@@ -1,5 +1,5 @@
---- Makefile.set.orig	Thu Mar 19 11:50:30 1998
-+++ Makefile.set	Mon May 18 15:42:02 1998
+--- src/port/freebsd/Makefile.set.orig Mon Jun 16 23:30:35 1997
++++ src/port/freebsd/Makefile.set      Tue Nov 25 18:51:41 1997
 @@ -1,12 +1,14 @@
  'CC=cc'
 -'CDEBUG=-O2 -g'
