@@ -5,27 +5,47 @@
 # $FreeBSD$
 #
 
+VERSION=	4.1
+REVISION=	6
+
 PORTNAME=	xloadimage
-PORTVERSION=	4.1
-CATEGORIES=	x11
+PORTVERSION=	${VERSION}.${REVISION}
+CATEGORIES=	x11 graphics
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/ \
 		ftp://ftp.freesoftware.com/pub/X11/R5contrib/
-DISTNAME=	${PORTNAME}.${PORTVERSION}
+DISTNAME=	${PORTNAME}.${VERSION}
+PATCH_SITES=	ftp://ftp.debian.org/debian/pool/main/x/xloadimage/ \
+		ftp://ftp.de.debian.org/debian/pool/main/x/xloadimage/
+PATCHFILES=	xloadimage_${VERSION}-${REVISION}.diff.gz
+PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	jmz@FreeBSD.org
 
-USE_X_PREFIX=	yes
-ALL_TARGET=
-MAN1=		xloadimage.1 uufilter.1
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.4:${PORTSDIR}/graphics/png \
+		tiff.4:${PORTSDIR}/graphics/tiff
 
-do-configure:
-	cd ${WRKSRC} && ${MAKE} configure </dev/null
-	cd ${WRKSRC} && ${ECHO} SYSPATHFILE=${PREFIX}/lib/X11/app-defaults/Xloadimage >> Makefile
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \
+		LDFLAGS=-L${LOCALBASE}/lib
+
+MAN1=		xloadimage.1 uufilter.1
+MLINKS=		xloadimage.1 xsetbg.1 \
+		xloadimage.1 xview.1
+
+post-patch:
+	@chmod a+rx ${WRKSRC}/configure
 
 do-install:
-	cd ${WRKSRC} && ${INSTALL_PROGRAM} xloadimage uufilter ${PREFIX}/bin
-	cd ${WRKSRC} && ${INSTALL_DATA} xloadimagerc ${PREFIX}/lib/X11/app-defaults/Xloadimage
-	cd ${WRKSRC} && ${SED} -e s:/usr/lib/X11/Xloadimage:${PREFIX}/lib/X11/app-defaults/Xloadimage: < xloadimage.man >${PREFIX}/man/man1/xloadimage.1
+	${INSTALL_PROGRAM} ${WRKSRC}/xloadimage ${PREFIX}/bin
+	@cd ${PREFIX}/bin && \
+		ln -sf xloadimage xsetbg && \
+		ln -sf xloadimage xview
+	${INSTALL_PROGRAM} ${WRKSRC}/uufilter ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/xloadimage.man ${PREFIX}/man/man1/xloadimage.1
 	${INSTALL_MAN} ${WRKSRC}/uufilter.man ${PREFIX}/man/man1/uufilter.1
+	mkdir -p ${PREFIX}/share/examples/xloadimage
+	${INSTALL_DATA} ${WRKSRC}/xloadimagerc \
+		${PREFIX}/share/examples/xloadimage/xloadimagerc
 
 .include <bsd.port.mk>

@@ -1,3 +1,7 @@
+@comment $FreeBSD$
 bin/uufilter
 bin/xloadimage
-lib/X11/app-defaults/Xloadimage
+bin/xsetbg
+bin/xview
+share/examples/xloadimage/xloadimagerc
+@dirrm share/examples/xloadimage
