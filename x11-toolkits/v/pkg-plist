@@ -260,3 +260,4 @@ share/doc/v/wvtools.tex
 @dirrm share/doc/v/fig
 @dirrm share/doc/v/html
 @dirrm share/doc/v
+@dirrm include/v
