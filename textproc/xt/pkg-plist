@@ -1,4 +1,5 @@
 bin/xt-xml4j
+bin/xt-xp
 share/java/classes/sax.jar
 share/java/classes/xt.jar
 share/java/xt/copying.txt
