@@ -3,7 +3,7 @@
 # Date created:		8 September 1998
 # Whom:			chuckr@freebsd.org
 #
-# $Id: Makefile,v 1.15 1998/05/20 02:17:06 chuckr Exp $
+# $Id: Makefile,v 1.16 1998/09/08 14:32:30 chuckr Exp $
 #
 
 DISTNAME=	octave-2.0.13
@@ -14,6 +14,8 @@ MAINTAINER=	chuckr@FreeBSD.ORG
 
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
+OCTAVE_VERSION=	2.0.13
+PLIST_SUB=	OCTAVE_VERSION=${OCTAVE_VERSION}
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	${SETENV} "INSTALL_DATA=$(INSTALL_DATA)" "INSTALL_PROGRAM=$(INSTALL_SCRIPT)"
 CONFIGURE_ARGS=	--prefix=${PREFIX} --exec-prefix=${PREFIX} --with-f2c --disable-shared --host=i386-unknown-freebsd
