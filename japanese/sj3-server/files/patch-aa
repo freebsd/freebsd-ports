@@ -195,7 +195,7 @@ diff -arcN ../sj3-2.0.1.13.org/dict/dict/Imakefile ./dict/dict/Imakefile
   #endif
 ! INSTFLAGS	= -o root -g $(INSTGROUP) -m 444
   
-  all:		$(OBJS)
+! all:		$(OBJS)
   
 --- 49,57 ----
   #if SystemV4 || SystemV
@@ -205,7 +205,7 @@ diff -arcN ../sj3-2.0.1.13.org/dict/dict/Imakefile ./dict/dict/Imakefile
   #endif
 ! INSTFLAGS	= -o bin -g $(INSTGROUP) -m 444
   
-  all:		$(OBJS)
+! all::		$(OBJS)
   
 diff -arcN ../sj3-2.0.1.13.org/dict/tool/Imakefile ./dict/tool/Imakefile
 *** ../sj3-2.0.1.13.org/dict/tool/Imakefile	Fri Dec  9 20:27:05 1994
