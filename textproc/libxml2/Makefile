@@ -7,6 +7,7 @@
 
 PORTNAME=	libxml2
 PORTVERSION=	2.4.22
+PORTREVISION=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/libxml
@@ -49,5 +50,9 @@ pre-extract:
 pre-patch:
 	@find ${WRKSRC} -name Makefile.in | xargs ${PERL} -pi -e \
 		's|\$\(libdir\)/pkgconfig|\$\(prefix\)/libdata/pkgconfig|g'
+
+post-patch:
+	@${PERL} -pi -e 's|\%\%LOCALBASE\%\%|${LOCALBASE}|g' \
+		${WRKSRC}/catalog.c ${WRKSRC}/xmlcatalog.c
 
 .include <bsd.port.mk>
