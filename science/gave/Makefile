@@ -25,7 +25,7 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray \
 USE_RUBY=	yes
 NO_BUILD=	yes
 
-.if !defined(WITHOUT_GETTEXT)
+.if !defined(WITHOUT_NLS)
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/gettext/_locale.so:${PORTSDIR}/devel/ruby-gettext
 .endif
 
