@@ -4,8 +4,8 @@
      if (STYLE(SS->cfinfo, 'h')) {
        char argbuf[MAXHOSTNAMELEN+30];
        char *s;
--      snprintf(argbuf, sizeof(argbuf), "%s %s", SS->rhostname,
-+      sprintf(argbuf,"%s %s", SS->rhostname,
+-      sprintf(argbuf,"%s %s", SS->rhostname,
++      snprintf(argbuf, sizeof(argbuf), "%s %s", SS->rhostname,
  	      ((SS->ihostaddr && (SS->ihostaddr[0] != '\0'))
  	       ? SS->ihostaddr : "[0.0.0.0]"));
        if ((s = router(SS, RKEY_HELLO, 1, argbuf, strlen(argbuf))) == NULL)
