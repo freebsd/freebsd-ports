@@ -1,0 +1,3 @@
+lib/%%PYTHON_VERSION%%/site-packages/POW.so
+%%PORTDOCS%%share/doc/pow/POW.pdf
+%%PORTDOCS%%@dirrm share/doc/pow

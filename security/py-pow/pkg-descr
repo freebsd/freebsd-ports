@@ -1,0 +1,3 @@
+Python OpenSSL Wrappers(POW) is a set of comprehensive wrappers for Python of
+the OpenSSL libraries. POW will provide a 'slim' interface which will still
+enable Python developers to fully utilise OpenSSL.
