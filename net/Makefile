@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.183 1998/10/10 04:42:07 steve Exp $
+# $Id: Makefile,v 1.184 1998/10/19 14:37:31 vanilla Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -96,6 +96,7 @@
     SUBDIR += pmf
     SUBDIR += pppload
     SUBDIR += proftpd
+    SUBDIR += queso
     SUBDIR += radius
     SUBDIR += radiusd-cistron
     SUBDIR += ratoolset
