@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	afterstep
-PORTVERSION=	2.00.00
+PORTVERSION=	2.00.01
 CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -73,6 +73,10 @@ post-patch:
 .endfor
 .for file in libAfterBase/configure libAfterImage/configure
 	${PERL} -pi.orig -e 's,="-O3",="$$CFLAGS",g' \
+		${WRKSRC}/${file}
+.endfor
+.for file in libAfterStep/afterstep-config.in
+	${PERL} -pi -e 's,ft_version,libafterstep_version,g' \
 		${WRKSRC}/${file}
 .endfor
 
