@@ -73,5 +73,7 @@ do-install:
 	cd ${WRKSRC}							\
 	    ; ccc -c ${FILESDIR}/*.c					\
 	    ; ar vq /usr/lib/compaq/cpml-5.1.0/libcpml_ev5.a *.o
+# cpio creates directories with stupid permissions
+	find ${PREFIX}/usr/lib/compaq -type d | xargs ${CHMOD} 755
 
 .include <bsd.port.mk>
