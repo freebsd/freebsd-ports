@@ -157,7 +157,6 @@ share/apps/kde/pics/stopsign.xpm
 share/apps/khtmlw/pics/khtmlw_dnd.xpm
 share/config/charsets
 share/config/kdebug.areas
-share/doc/HTML/default
 share/doc/HTML/en/kdelibs/kdebug.html
 share/doc/HTML/en/kfiledialog/back.gif
 share/doc/HTML/en/kfiledialog/bottom.gif
@@ -189,6 +188,8 @@ share/locale/eo/LC_MESSAGES/kde.mo
 share/locale/eo/charset
 share/locale/es/LC_MESSAGES/kde.mo
 share/locale/es/charset
+share/locale/et/LC_MESSAGES/kde.mo
+share/locale/et/charset
 share/locale/fi/LC_MESSAGES/kde.mo
 share/locale/fi/charset
 share/locale/fr/LC_MESSAGES/kde.mo
@@ -202,6 +203,7 @@ share/locale/hu/charset
 share/locale/is/LC_MESSAGES/kde.mo
 share/locale/is/charset
 share/locale/it/LC_MESSAGES/kde.mo
+share/locale/it/charset
 share/locale/ko/LC_MESSAGES/kde.mo
 share/locale/mk/LC_MESSAGES/kde.mo
 share/locale/nl/LC_MESSAGES/kde.mo
@@ -212,6 +214,7 @@ share/locale/pl/charset
 share/locale/pt/LC_MESSAGES/kde.mo
 share/locale/pt/charset
 share/locale/pt_BR/LC_MESSAGES/kde.mo
+share/locale/pt_BR/charset
 share/locale/ro/LC_MESSAGES/kde.mo
 share/locale/ro/charset
 share/locale/ru/LC_MESSAGES/kde.mo
@@ -225,14 +228,25 @@ share/locale/sv/charset
 share/locale/tr/LC_MESSAGES/kde.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/kde.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/kde.mo
+share/toolbar/add_point.xpm
+share/toolbar/airbrush.xpm
 share/toolbar/back.xpm
+share/toolbar/blend.xpm
 share/toolbar/bottom.xpm
+share/toolbar/centrejust.xpm
+share/toolbar/circle_select.xpm
 share/toolbar/configure.xpm
 share/toolbar/contents.xpm
+share/toolbar/context_help.xpm
+share/toolbar/delete.xpm
 share/toolbar/down.xpm
+share/toolbar/droplet.xpm
+share/toolbar/dropper.xpm
+share/toolbar/edit_point.xpm
 share/toolbar/editcopy.xpm
 share/toolbar/editcut.xpm
 share/toolbar/editpaste.xpm
+share/toolbar/eraser.xpm
 share/toolbar/exclamation.xpm
 share/toolbar/exit.xpm
 share/toolbar/filefloppy.xpm
@@ -241,31 +255,48 @@ share/toolbar/filenew.xpm
 share/toolbar/filenew2.xpm
 share/toolbar/fileopen.xpm
 share/toolbar/fileprint.xpm
+share/toolbar/find.xpm
 share/toolbar/finish.xpm
 share/toolbar/flag.xpm
 share/toolbar/forward.xpm
 share/toolbar/help.xpm
 share/toolbar/home.xpm
 share/toolbar/idea.xpm
+share/toolbar/knife.xpm
+share/toolbar/lassoo.xpm
+share/toolbar/leftjust.xpm
 share/toolbar/lock.xpm
+share/toolbar/move.xpm
 share/toolbar/next.xpm
 share/toolbar/openbook.xpm
 share/toolbar/page.xpm
+share/toolbar/paintbrush.xpm
 share/toolbar/paintbucket.xpm
+share/toolbar/pencil.xpm
 share/toolbar/prev.xpm
+share/toolbar/print_preview.xpm
+share/toolbar/rectangle_select.xpm
+share/toolbar/redo.xpm
 share/toolbar/reload.xpm
 share/toolbar/rightjust.xpm
+share/toolbar/search.xpm
 share/toolbar/send.xpm
+share/toolbar/smart_select.xpm
 share/toolbar/spellcheck.xpm
+share/toolbar/stamp.xpm
 share/toolbar/start.xpm
 share/toolbar/stop.xpm
+share/toolbar/text.xpm
 share/toolbar/tick.xpm
 share/toolbar/top.xpm
+share/toolbar/transform.xpm
+share/toolbar/undo.xpm
 share/toolbar/up.xpm
 share/toolbar/viewmag+.xpm
 share/toolbar/viewmag-.xpm
 share/toolbar/viewmag.xpm
 share/toolbar/viewzoom.xpm
+@exec ln -sf en %D/share/doc/HTML/default
 @exec ln -sf libjscript.so.2 %D/lib/libjscript.so
 @exec ln -sf libkab.so.2 %D/lib/libkab.so
 @exec ln -sf libkdecore.so.2 %D/lib/libkdecore.so
@@ -322,6 +353,8 @@ share/toolbar/viewzoom.xpm
 @dirrm share/locale/fr
 @dirrm share/locale/fi/LC_MESSAGES
 @dirrm share/locale/fi
+@dirrm share/locale/et/LC_MESSAGES
+@dirrm share/locale/et
 @dirrm share/locale/es/LC_MESSAGES
 @dirrm share/locale/es
 @dirrm share/locale/eo/LC_MESSAGES
@@ -360,4 +393,5 @@ share/toolbar/viewzoom.xpm
 @unexec rm -f %D/lib/libkimgio.so
 @unexec rm -f %D/lib/libkspell.so
 @unexec rm -f %D/lib/libmediatool.so
+@unexec rm -f %D/share/doc/HTML/default
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

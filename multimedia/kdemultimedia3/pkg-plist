@@ -25,9 +25,10 @@ share/apps/kmedia/pics/poweroff.xbm
 share/apps/kmedia/pics/prevtrk.xbm
 share/apps/kmedia/pics/rew.xbm
 share/apps/kmedia/pics/stop.xbm
-share/apps/kmid/IfICantHaveYou.kar
-share/apps/kmid/SinDocumentos.kar
-share/apps/kmid/Waterloo.kar
+share/apps/kmid/AnotherGlitchInTheCall.kar
+share/apps/kmid/OFortuna.kar
+share/apps/kmid/StopInTheNameOfLove.kar
+share/apps/kmid/TheGirlFromIpanema.kar
 share/apps/kmid/fm/drums.o3
 share/apps/kmid/fm/drums.sb
 share/apps/kmid/fm/std.o3
@@ -183,6 +184,7 @@ share/locale/eo/LC_MESSAGES/kscd.mo
 share/locale/es/LC_MESSAGES/kmedia.mo
 share/locale/es/LC_MESSAGES/kmid.mo
 share/locale/es/LC_MESSAGES/kmix.mo
+share/locale/es/LC_MESSAGES/kscd.mo
 share/locale/fi/LC_MESSAGES/kmedia.mo
 share/locale/fi/LC_MESSAGES/kmid.mo
 share/locale/fi/LC_MESSAGES/kmix.mo
@@ -194,6 +196,8 @@ share/locale/hr/LC_MESSAGES/kmedia.mo
 share/locale/hr/LC_MESSAGES/kmid.mo
 share/locale/hr/LC_MESSAGES/kmix.mo
 share/locale/hr/LC_MESSAGES/kscd.mo
+share/locale/is/LC_MESSAGES/kmedia.mo
+share/locale/is/LC_MESSAGES/kmid.mo
 share/locale/is/LC_MESSAGES/kmix.mo
 share/locale/is/LC_MESSAGES/kscd.mo
 share/locale/it/LC_MESSAGES/kmedia.mo
@@ -206,6 +210,7 @@ share/locale/nl/LC_MESSAGES/kmedia.mo
 share/locale/nl/LC_MESSAGES/kscd.mo
 share/locale/no/LC_MESSAGES/kmedia.mo
 share/locale/no/LC_MESSAGES/kmid.mo
+share/locale/no/LC_MESSAGES/kmidi.mo
 share/locale/no/LC_MESSAGES/kmix.mo
 share/locale/no/LC_MESSAGES/kscd.mo
 share/locale/pl/LC_MESSAGES/kmedia.mo
@@ -217,7 +222,9 @@ share/locale/pt/LC_MESSAGES/kmid.mo
 share/locale/pt/LC_MESSAGES/kmix.mo
 share/locale/pt/LC_MESSAGES/kscd.mo
 share/locale/pt_BR/LC_MESSAGES/kmedia.mo
+share/locale/pt_BR/LC_MESSAGES/kmid.mo
 share/locale/pt_BR/LC_MESSAGES/kmix.mo
+share/locale/pt_BR/LC_MESSAGES/kscd.mo
 share/locale/ro/LC_MESSAGES/kmedia.mo
 share/locale/ro/LC_MESSAGES/kmix.mo
 share/locale/sk/LC_MESSAGES/kmedia.mo
@@ -228,6 +235,10 @@ share/locale/sv/LC_MESSAGES/kmedia.mo
 share/locale/sv/LC_MESSAGES/kmid.mo
 share/locale/sv/LC_MESSAGES/kmix.mo
 share/locale/sv/LC_MESSAGES/kscd.mo
+share/locale/tr/LC_MESSAGES/kmedia.mo
+share/locale/tr/LC_MESSAGES/kmid.mo
+share/locale/tr/LC_MESSAGES/kmix.mo
+share/locale/tr/LC_MESSAGES/kscd.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/kmedia.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/kmid.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/kmix.mo

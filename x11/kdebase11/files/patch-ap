@@ -17,16 +17,6 @@
 ! 
   $(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4) 
   	cd $(top_srcdir) && $(AUTOMAKE) --foreign --include-deps kwmmodules/kpager/Makefile
-***************
-*** 419,425 ****
-  mostlyclean distclean maintainer-clean
-  
-- 
-- %.moc: %.h
-- 	$(MOC) $< -o $@
-  
-  kpager.cpp:kpager.moc
---- 423,426 ----
 *** kdm/Makefile.in~	Fri Jul 10 20:35:33 1998
 --- kdm/Makefile.in	Fri Oct 30 20:34:51 1998
 ***************
