@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amsn
-PORTVERSION=	0.90
+PORTVERSION=	0.91
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,6 +18,7 @@ COMMENT=	MSN Messenger
 LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib
 BUILD_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
 		convert:${PORTSDIR}/graphics/ImageMagick \
+		${LOCALBASE}/lib/tls/tls.tcl:${PORTSDIR}/devel/tcltls \
 		${LOCALBASE}/lib/tcllib1.6/base64/base64.tcl:${PORTSDIR}/devel/tcllib
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
