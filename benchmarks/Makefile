@@ -9,6 +9,7 @@
     SUBDIR += bytebench
     SUBDIR += dbench
     SUBDIR += dbs
+    SUBDIR += dkftpbench
     SUBDIR += forkbomb
     SUBDIR += himenobench
     SUBDIR += hpl
