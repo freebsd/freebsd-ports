@@ -20,6 +20,8 @@ COMMENT=	XFree86-4 default bitmap fonts
 BUILD_DEPENDS=	ucs2any:${PORTSDIR}/x11/XFree86-4-clients
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/encodings/encodings.dir:${PORTSDIR}/x11-fonts/XFree86-4-fontEncodings
 
+CONFLICTS=	xorg-fonts-miscbitmaps-*
+
 XFREE86_VERSION=	4
 USE_IMAKE=		YES
 PROJECTROOT=		-DProjectRoot=${PREFIX}
