@@ -32,6 +32,47 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="bd9fc2bf-5ffe-11d9-a11a-000a95bc6fae">
+    <topic>vim -- vulnerabilities in modeline handling</topic>
+    <affects>
+      <package>
+	<name>vim</name>
+	<name>vim-lite</name>
+	<name>vim+ruby</name>
+	<range><lt>6.3.45</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ciaran McCreesh discovered news ways in which a VIM modeline
+	  can be used to trojan a text file.  The patch by Bram
+	  Moolenaar reads:</p>
+	<blockquote cite="">
+	  <p>Problem: Unusual characters in an option value may cause
+	    unexpected behavior, especially for a modeline. (Ciaran
+	    McCreesh)</p>
+	  <p>Solution: Don't allow setting termcap options or
+	    'printdevice' or 'titleold' in a modeline. Don't list
+	    options for "termcap" and "all" in a modeline. Don't allow
+	    unusual characters in 'filetype', 'syntax', 'backupext',
+	    'keymap', 'patchmode' and 'langmenu'.</p>
+	</blockquote>
+	<p><strong>Note:</strong> It is generally recommended that VIM
+	  users use <code>set nomodeline</code> in
+	  <code>~/.vimrc</code> to avoid the possibility of trojaned
+	  text files.</p>
+      </body>
+    </description>
+    <references>
+      <url>ftp://ftp.vim.org/pub/vim/patches/6.3/6.3.045</url>
+      <mlist>http://groups.yahoo.com/group/vimdev/message/38084</mlist>
+    </references>
+    <dates>
+      <discovery>2004-12-09</discovery>
+      <entry>2005-01-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="58fc2752-5f74-11d9-a9e7-0001020eed82">
     <topic>pcal -- buffer overflow vulnerabilities</topic>
     <affects>
