@@ -6,19 +6,24 @@
 #
 
 PORTNAME=	sidplay
-PORTVERSION=	1.36.38
+PORTVERSION=	1.0.4
 CATEGORIES=	audio emulators
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/packages/
-DISTNAME=	lib${PORTNAME}-${PORTVERSION:S/./_/g}
+DISTNAME=	${PORTNAME}-base-${PORTVERSION:S/./_/g}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sec@42.org
 
-WRKSRC=		${WRKDIR}/lib${PKGNAME}
-USE_XLIB=	yes
+LIB_DEPENDS=	sidplay.1:${PORTSDIR}/audio/libsidplay
+
+CONFIGURE_ARGS=	--with-sidplay-includes=${LOCALBASE}/include \
+		--with-sidplay-library=${LOCALBASE}/lib
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-base-${PORTVERSION}
 USE_LIBTOOL=	yes
-INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
-USE_NEWGCC=	yes
+
+post-install:
+	strip ${PREFIX}/bin/sidplay ${PREFIX}/bin/sid2wav ${PREFIX}/bin/sidcon
 
 .include <bsd.port.mk>

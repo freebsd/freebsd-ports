@@ -1,14 +1,3 @@
-include/sidplay/compconf.h
-include/sidplay/emucfg.h
-include/sidplay/fformat.h
-include/sidplay/myendian.h
-include/sidplay/mytypes.h
-include/sidplay/player.h
-include/sidplay/sidtune.h
-include/sidplay/version.h
-include/sidplay/fixpoint.h
-include/sidplay/libcfg.h
-lib/libsidplay.a
-lib/libsidplay.so.1
-lib/libsidplay.so
-@dirrm include/sidplay
+bin/sidplay
+bin/sid2wav
+bin/sidcon
