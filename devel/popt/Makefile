@@ -6,21 +6,20 @@
 #
 
 PORTNAME=	popt
-PORTVERSION=	1.6.4
-PORTREVISION=	2
+PORTVERSION=	1.7
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-4.0.x/ \
-		ftp://ftp.mirror.ac.uk/sites/ftp.rpm.org/pub/rpm/dist/rpm-4.0.x/
+MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-4.1.x/ \
+		ftp://ftp.mirror.ac.uk/sites/ftp.rpm.org/pub/rpm/dist/rpm-4.1.x/
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A getopt(3) like library with a number of enhancements, from Redhat
 
 USE_GETTEXT=	yes
 USE_LIBTOOL_VER=	13
 USE_REINPLACE=	yes
-USE_SIZE=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE}
+CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
+		--program-prefix=""
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
