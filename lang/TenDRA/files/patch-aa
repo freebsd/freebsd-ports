@@ -1,0 +1,189 @@
+--- INSTALL.orig	Fri Mar 27 11:47:29 1998
++++ INSTALL	Wed Jun  3 14:22:38 1998
+@@ -185,7 +185,7 @@
+ if [ ! -f ${BASE_DIR}/COPYRIGHT ]
+ then
+     ${COMMENT} "Please set BASE_DIR in the INSTALL script"
+-    exit 1
++    exit 2
+ fi
+ 
+ cat ${BASE_DIR}/COPYRIGHT
+@@ -204,7 +204,7 @@
+ TUNAME=${TEMP_DIR}/tuname_$$${EXEC_SUFFIX}
+ MACH_HEADER=${TEMP_DIR}/mach_$$.h
+ SRC=${BASE_DIR}/src/utilities/tuname
+-cd ${TEMP_DIR} || exit 1
++cd ${TEMP_DIR} || exit 2
+ make -f ${SRC}/Makefile CC="${CC}" ${TCCOPTS}\
+     BASE=${BASE_DIR} NAME=${TUNAME} all
+ if [ -f ${TUNAME} ]
+@@ -218,11 +218,11 @@
+     if [ "X${MACH_OS}X" = "XunknownX" ]
+     then
+ 	${COMMENT} Unknown machine type
+-	exit 1
++	exit 2
+     fi
+ else
+     ${COMMENT} Unknown machine type
+-    exit 1
++    exit 2
+ fi
+ 
+ ${COMMENT}
+@@ -307,7 +307,7 @@
+     if [ ! -d ${DIR} ]
+     then
+ 	${COMMENT} creating ${DIR} ...
+-	mkdir ${DIR} || exit 1
++	mkdir ${DIR} || exit 2
+     fi
+ done
+ 
+@@ -344,9 +344,9 @@
+ 	if [ ! -d ${MACH_WORK}/${NAME} ]
+ 	then
+ 	    ${COMMENT} creating ${MACH_WORK}/${NAME} ...
+-	    mkdir ${MACH_WORK}/${NAME} || exit 1
++	    mkdir ${MACH_WORK}/${NAME} || exit 2
+ 	fi
+-	cd ${MACH_WORK}/${NAME} || exit 1
++	cd ${MACH_WORK}/${NAME} || exit 2
+ 	EXEC=${MACH_BASE}/bin/${NAME}${EXEC_SUFFIX}
+ 	make -f ${SRC}/Makefile CC="${CC} ${CCOPTS}" ${TCCOPTS}\
+ 	    BASE=${BASE_DIR} NAME=${EXEC} all || BUILD_OK=false
+@@ -398,7 +398,7 @@
+     SRC=${BASE_DIR}/src/lib/machines/${MACH_OS}/${MACH_CPU}/src
+     if [ -f ${SRC}/Makefile ]
+     then
+-	cd ${MACH_BASE}/lib/sys || exit 1
++	cd ${MACH_BASE}/lib/sys || exit 2
+ 	make -f ${SRC}/Makefile CC="${CC} ${CCOPTS}" ${TCCOPTS}\
+ 	    BASE=${BASE_DIR} pre || BUILD_OK=false
+ 	${COMMENT}
+@@ -433,7 +433,7 @@
+ 1,\$s%-TMPDIR-%${TEMP_DIR}%g
+ EOF
+ 
+-    cd ${MACH_BASE}/env || exit 1
++    cd ${MACH_BASE}/env || exit 2
+     SRC=${BASE_DIR}/src/lib/env
+     ENVIRON_DIRS="${SRC}/common\
+ 		  ${SRC}/${MACH_OS}/common/common\
+@@ -523,10 +523,10 @@
+ if ${BUILD_COMMON}
+ then
+     ${COMMENT} installing start-up files ...
+-    cd ${BASE_DIR}/src/lib || exit 1
++    cd ${BASE_DIR}/src/lib || exit 2
+     rm -f ${MACH_WORK}/startup.tar
+     tar cvf ${MACH_WORK}/startup.tar startup
+-    cd ${COMMON_DIR} || exit 1
++    cd ${COMMON_DIR} || exit 2
+     rm -rf startup
+     tar xvf ${MACH_WORK}/startup.tar
+     rm -f ${MACH_WORK}/startup.tar
+@@ -568,10 +568,10 @@
+     SRC=${BASE_DIR}/src/lib/machines/${MACH_OS}/${MACH_CPU}
+     if [ -d ${SRC} ]
+     then
+-	cd ${SRC} || exit 1
++	cd ${SRC} || exit 2
+ 	rm -f ${MACH_WORK}/machine.tar
+ 	tar cvf ${MACH_WORK}/machine.tar include startup
+-	cd ${MACH_BASE} || exit 1
++	cd ${MACH_BASE} || exit 2
+ 	rm -rf include
+ 	rm -rf startup
+ 	tar xvf ${MACH_WORK}/machine.tar
+@@ -596,7 +596,7 @@
+     SRC=${BASE_DIR}/src/lib/machines/${MACH_OS}/${MACH_CPU}/src
+     if [ -f ${SRC}/Makefile ]
+     then
+-	cd ${MACH_BASE}/lib/sys || exit 1
++	cd ${MACH_BASE}/lib/sys || exit 2
+ 	make -f ${SRC}/Makefile CC="${CC} ${CCOPTS}" ${TCCOPTS}\
+ 	    BASE=${BASE_DIR} all || BUILD_OK=false
+     fi
+@@ -644,7 +644,7 @@
+ 	if [ ! -d ${MACH_WORK}/${LIBDIR} ]
+ 	then
+ 	    ${COMMENT} creating ${MACH_WORK}/${LIBDIR} ...
+-	    mkdir ${MACH_WORK}/${LIBDIR} || exit 1
++	    mkdir ${MACH_WORK}/${LIBDIR} || exit 2
+ 	fi
+ 	for API in `cat ${BASE_DIR}/src/build/APIS` ansi cpp
+ 	do
+@@ -652,14 +652,14 @@
+ 	    if [ ! -d ${MACH_WORK}/${LIBDIR}/${API_NAME} ]
+ 	    then
+ 		${COMMENT} creating ${MACH_WORK}/${LIBDIR}/${API_NAME} ...
+-		mkdir ${MACH_WORK}/${LIBDIR}/${API_NAME} || exit 1
++		mkdir ${MACH_WORK}/${LIBDIR}/${API_NAME} || exit 2
+ 	    fi
+ 	done
+ 
+ 	SRC=${BASE_DIR}/src/lib/machines/${MACH_OS}/${MACH_CPU}/tokens
+ 	if [ -d ${SRC} ]
+ 	then
+-	    cd ${MACH_WORK}/${LIBDIR}/ansi || exit 1
++	    cd ${MACH_WORK}/${LIBDIR}/ansi || exit 2
+ 	    make -f ${SRC}/Makefile TCC="${DIAG_CC}" BASE=${BASE_DIR}\
+ 		basic || BUILD_OK=false
+ 	fi
+@@ -669,7 +669,7 @@
+ 	if [ -d ${SRC} ]
+ 	then
+ 	    ${COMMENT} building basic C++ token definitions${DIAG_MSG} ...
+-	    cd ${MACH_WORK}/${LIBDIR}/cpp || exit 1
++	    cd ${MACH_WORK}/${LIBDIR}/cpp || exit 2
+ 	    make -f ${SRC}/Makefile TCC="${DIAG_CC}" BASE=${BASE_DIR}\
+ 		all || BUILD_OK=false
+ 	    ${COMMENT}
+@@ -683,7 +683,7 @@
+ 
+     if ${BUILD_MACHINE}
+     then
+-	cd ${MACH_WORK}/${LIBDIR} || exit 1
++	cd ${MACH_WORK}/${LIBDIR} || exit 2
+ 	for API in `cat ${BASE_DIR}/src/build/APIS`
+ 	do
+ 	    API_NAME=`echo ${API} | sed -e 's%/%_%g'`
+@@ -726,7 +726,7 @@
+ 	then
+ 	    ${COMMENT} building TDF standard token library${DIAG_MSG} ...
+ 	    LIB=${MACH_BASE}/${LIBDIR}/target_tok.tl
+-	    cd ${MACH_WORK}/${LIBDIR}/ansi || exit 1
++	    cd ${MACH_WORK}/${LIBDIR}/ansi || exit 2
+ 	    make -f ${SRC}/Makefile LIB=${LIB} TCC="${DIAG_CC}"\
+ 		BASE=${BASE_DIR} all || BUILD_OK=false
+ 	    ${COMMENT}
+@@ -757,7 +757,7 @@
+     if [ -f ${SRC}/Makefile ]
+     then
+ 	${COMMENT} building crtp_n.o ...
+-	cd ${MACH_BASE}/lib/sys || exit 1
++	cd ${MACH_BASE}/lib/sys || exit 2
+ 	make -f ${SRC}/Makefile BASE=${BASE_DIR} all || BUILD_OK=false
+ 	${COMMENT}
+     fi
+@@ -771,9 +771,9 @@
+ 	    if [ ! -d ${MACH_WORK}/${NAME} ]
+ 	    then
+ 		${COMMENT} creating ${MACH_WORK}/${NAME} ...
+-		mkdir ${MACH_WORK}/${NAME} || exit 1
++		mkdir ${MACH_WORK}/${NAME} || exit 2
+ 	    fi
+-	    cd ${MACH_WORK}/${NAME} || exit 1
++	    cd ${MACH_WORK}/${NAME} || exit 2
+ 	    LIB=${MACH_BASE}/lib/sys/lib${NAME}.a
+ 	    make -f ${SRC}/Makefile BASE=${BASE_DIR} NAME=${LIB}\
+ 		MACHOPTS="${LIBOPTS}" RANLIB="${RANLIB}" all || BUILD_OK=false
+@@ -799,5 +799,6 @@
+     ${COMMENT} installation completed successfully
+ else
+     ${COMMENT} installation completed with errors
++    exit 1
+ fi
+ exit 0
