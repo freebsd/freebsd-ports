@@ -1,9 +1,9 @@
 # New ports collection makefile for:    licq
-# Version required:                     0.34
+# Version required:                     0.61
 # Date created:                         2 July 1998
 # Whom:                                 Brian Feldman
 #
-# $Id: Makefile,v 1.5 1998/11/02 04:04:40 steve Exp $
+# $Id: Makefile,v 1.6 1999/05/02 20:21:28 mharo Exp $
 #
 
 DISTNAME=	licq-0.61
