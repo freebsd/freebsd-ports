@@ -26,7 +26,7 @@ USE_REINPLACE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500000
-BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
+BUILD_DEPENDS+=	ghc-5.04.3:${PORTSDIR}/lang/ghc5
 .endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
