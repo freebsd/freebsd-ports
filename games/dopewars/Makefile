@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dopewars
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.1
 CATEGORIES=	games
 MASTER_SITES=	http://dopewars.sourceforge.net/ \
 		http://bellatrix.pcl.ox.ac.uk/~ben/dopewars/
@@ -20,8 +20,7 @@ USE_X_PREFIX=	yes
 
 CONFIGURE_ARGS=	--enable-nls
 
-post-install:
-	@${ECHO} "===>   Documentation is installed in ${PREFIX}/share/doc/dopewars"
-	@${ECHO} "===>   Run 'dopewars -h' for usage options."
+DOPEWARS=	${PKGNAME}
+PLIST_SUB=	DOPEWARS=${DOPEWARS}
 
 .include <bsd.port.mk>
