@@ -1,8 +1,19 @@
---- GNUmakefile.am.orig	Fri Sep 12 09:18:10 2003
-+++ GNUmakefile.am	Thu May 20 01:35:58 2004
-@@ -7,11 +7,11 @@
- libpng_peerdir=@LIBPNG_PEERDIR@
- libpopt_peerdir=$(top_builddir)/../popt
+--- GNUmakefile.in.orig	Mon Jun  7 14:59:52 2004
++++ GNUmakefile.in	Mon Jun  7 15:01:41 2004
+@@ -156,17 +156,17 @@
+ 
+ SUBDIRS = src
+ 
+-expat_peerdir = $(top_builddir)/../expat
+-wv_peerdir = $(top_builddir)/../wv
+-libiconv_peerdir = $(top_builddir)/../libiconv
+-libpng_peerdir = @LIBPNG_PEERDIR@
+-libpopt_peerdir = $(top_builddir)/../popt
++#expat_peerdir = $(top_builddir)/../expat
++#wv_peerdir = $(top_builddir)/../wv
++#libiconv_peerdir = $(top_builddir)/../libiconv
++#libpng_peerdir = @LIBPNG_PEERDIR@
++#libpopt_peerdir = $(top_builddir)/../popt
  
 -desktop_DATA = abiword.desktop
 -desktopdir = $(datadir)/applications
@@ -10,13 +21,13 @@
 +#desktopdir = $(datadir)/applications
  
 -icon_DATA = abiword_48.png
--icondir= $(datadir)/icons
+-icondir = $(datadir)/icons
 +#icon_DATA = abiword_48.png
-+#icondir= $(datadir)/icons
++#icondir = $(datadir)/icons
  
- # Hack: make sure that the PEERS stuff is build first
- # We can not use the all target, because on parallel builds there is no
-@@ -82,7 +82,6 @@
+ @BIGENDIAN_TRUE@dictionary = $(top_srcdir)/../abidistfiles/dictionary/BigEndian32.american.hash
+ @BIGENDIAN_FALSE@dictionary = $(top_srcdir)/../abidistfiles/dictionary/LittleEndian32.american.hash
+@@ -586,7 +586,6 @@
  
  # Install the datafiles. This is quick-and-dirty.
  install-data-local:
@@ -24,7 +35,7 @@
  	if test -d $(top_srcdir)/../abidistfiles ; then \
  	  for dir in `cd $(top_srcdir)/../abidistfiles; find . -type d ! -name CVS` ; do \
  	    $(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/$$dir ;\
-@@ -95,11 +94,7 @@
+@@ -599,11 +598,7 @@
  	      for file in $(top_srcdir)/../abidistfiles/$$dir/* ; do \
  	        if test -f $$file ; then \
  		  sfile=`echo "$$file" | sed 's/\.[^.]*$$//'`; \
