@@ -109,15 +109,16 @@ QTCPPFLAGS?=
 QTCGFLIBS?=
 
 # Qt 3.x common stuff
-MOC?=			${X11BASE}/bin/moc
+QT_PREFIX?=		${X11BASE}/qt
+MOC?=			${QT_PREFIX}/bin/moc
 LIB_DEPENDS+=	qt:${PORTSDIR}/x11-toolkits/qt-copy
 USE_NEWGCC=		yes
 QTCPPFLAGS+=	-I/usr/include -I${LOCALBASE}/include -I${PREFIX}/include \
-				-I${X11BASE}/include/qt
+				-I${QT_PREFIX}/include/qt
 QTCFGLIBS+=		-Wl,-export-dynamic -L${LOCALBASE}/lib -L${X11BASE}/lib -ljpeg \
-				-lqt
+				-L${QT_PREFIX}/lib
 .if !defined(QT_NONSTANDARD)
-CONFIGURE_ARGS+=--with-qt-includes=${X11BASE}/include/qt \
+CONFIGURE_ARGS+=--with-qt-includes=${QT_PREFIX}/include \
 				--with-qt-libraries=${X11BASE}/lib \
 				--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ENV+=	MOC="${MOC}" CPPFLAGS="${QTCPPFLAGS}" LIBS="${QTCFGLIBS}"
