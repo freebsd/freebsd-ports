@@ -19,7 +19,7 @@ EXTRACT_SUFX=	.tgz
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	openbsd28_${PORTVERSION}.patch
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenBSD's secure shell client and server (remote login program)
 
 CONFLICTS?=	openssh-portable-* openssh-gssapi-* ssh-1.* ssh2-3.*
