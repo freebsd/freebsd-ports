@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log-Log4perl
-PORTVERSION=	0.38
+PORTVERSION=	0.39
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Log
@@ -22,8 +22,11 @@ MAN3=		Log::Log4perl.3 \
 		Log::Log4perl::Appender::DBI.3 \
 		Log::Log4perl::Appender::File.3 \
 		Log::Log4perl::Appender::Screen.3 \
+		Log::Log4perl::Appender::Socket.3 \
+		Log::Log4perl::Appender::Synchronized.3 \
 		Log::Log4perl::Appender::TestArrayBuffer.3 \
 		Log::Log4perl::Appender::TestBuffer.3 \
+		Log::Log4perl::Appender::TestFileCreeper.3 \
 		Log::Log4perl::Config.3 \
 		Log::Log4perl::Config::DOMConfigurator.3 \
 		Log::Log4perl::Config::PropertyConfigurator.3 \

@@ -4,8 +4,11 @@
 %%SITE_PERL%%/Log/Log4perl/Appender/DBI.pm
 %%SITE_PERL%%/Log/Log4perl/Appender/File.pm
 %%SITE_PERL%%/Log/Log4perl/Appender/Screen.pm
+%%SITE_PERL%%/Log/Log4perl/Appender/Socket.pm
+%%SITE_PERL%%/Log/Log4perl/Appender/Synchronized.pm
 %%SITE_PERL%%/Log/Log4perl/Appender/TestArrayBuffer.pm
 %%SITE_PERL%%/Log/Log4perl/Appender/TestBuffer.pm
+%%SITE_PERL%%/Log/Log4perl/Appender/TestFileCreeper.pm
 %%SITE_PERL%%/Log/Log4perl/Config.pm
 %%SITE_PERL%%/Log/Log4perl/Config/DOMConfigurator.pm
 %%SITE_PERL%%/Log/Log4perl/Config/PropertyConfigurator.pm
