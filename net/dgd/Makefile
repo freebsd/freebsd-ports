@@ -8,16 +8,13 @@
 PORTNAME=	dgd
 PORTVERSION=	1.2p1
 CATEGORIES=	net lang
-MASTER_SITES=	ftp://ftp.dworkin.nl/pub/dgd/ \
-		ftp://ftp.imaginary.com/pub/LPC/servers/DGD/ \
-		ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/ \
-		ftp://ftp.veda.is/pub/mud/dgd/ \
-		ftp://ftp.dreamlabs.com/pub/mud/dgd/
+MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|glewis/dgd|} \
+		ftp://ftp.dworkin.nl/pub/dgd/ \
+		ftp://ftp.imaginary.com/pub/LPC/servers/DGD/
 
-PATCH_SITES=	ftp://ftp.imaginary.com/pub/LPC/servers/DGD/patches/ \
-		ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/patches/ \
-		ftp://ftp.veda.is/pub/mud/dgd/patches/ \
-		ftp://ftp.dreamlabs.com/pub/mud/dgd/patches/
+PATCH_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|glewis/dgd/patches|} \
+		ftp://ftp.dworkin.nl/pub/dgd/patches \
+		ftp://ftp.imaginary.com/pub/LPC/servers/DGD/patches/
 
 MAINTAINER=	glewis@FreeBSD.org
 
