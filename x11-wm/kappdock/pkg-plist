@@ -1,6 +1,2 @@
 bin/kappdock
-lib/libappdockapplet.la
-lib/libappdockapplet.so
-lib/libappdockapplet.so.1
 share/applnk/Utilities/kappdock.desktop
-share/apps/kicker/applets/appdockapplet.desktop
