@@ -1,0 +1,8 @@
+--- scripts/drivers/nag_tasks.sql.orig	Tue Dec 11 14:47:41 2001
++++ scripts/drivers/nag_tasks.sql	Sat Dec 15 00:42:13 2001
+@@ -13,4 +13,4 @@
+ 	primary key (task_owner, task_id)
+ );
+ 
+-grant select, insert, update, delete on nag_tasks to horde;
++grant select, insert, update, delete on nag_tasks to hordemgr;

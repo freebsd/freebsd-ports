@@ -33,6 +33,7 @@
     SUBDIR += mhc-xemacs21-mule
     SUBDIR += moneydance
     SUBDIR += mrproject
+    SUBDIR += nag
     SUBDIR += narval
     SUBDIR += notebook
     SUBDIR += offix-trash
