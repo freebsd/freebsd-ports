@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtm
-PORTVERSION=	0.4.5
+PORTVERSION=	0.4.9
 CATEGORIES=	ftp gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,6 +22,8 @@ USE_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+
+MAN1=		gtm.1 gtm_applet.1
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
