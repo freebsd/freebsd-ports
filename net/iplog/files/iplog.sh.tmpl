@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+
+umask 022
+arg=${1:-start}
+
+test -x PREFIX/sbin/iplog || exit 1
+echo -n " iplog"
+
+case $arg in
+start)
+	PREFIX/sbin/iplog -d -z;;
+stop)
+	killall iplog;;
+esac

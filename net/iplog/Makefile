@@ -39,6 +39,10 @@ post-install:
 	@${ECHO_MSG} "See ${PREFIX}/etc/example-iplog.conf for an example"
 	@${ECHO_MSG} "============================================================================"
 	@${ECHO_MSG}
+	@${ECHO_MSG} "Installing ${PREFIX}/etc/rc.d/iplog.sh.sample file."
+	@${CAT} ${FILESDIR}/iplog.sh.tmpl | \
+		${SED} -e 's;PREFIX;${PREFIX};' \
+		> ${PREFIX}/etc/rc.d/iplog.sh.sample
 .endif
 
 .include <bsd.port.post.mk>
