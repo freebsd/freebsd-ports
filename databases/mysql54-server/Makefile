@@ -1,13 +1,13 @@
 # ports collection makefile for:	mySQL
-# Version required:			v3.21.26-gamma
+# Version required:			v3.21.29-gamma
 # Date created:				26 Jan 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.19 1998/03/28 18:50:58 asami Exp $
+# $Id: Makefile,v 1.20 1998/03/29 01:31:41 steve Exp $
 #
 
-DISTNAME=	mysql-3.21.26-gamma
-PKGNAME=	mysql-3.21.26g
+DISTNAME=	mysql-3.21.29-gamma
+PKGNAME=	mysql-3.21.29g
 CATEGORIES=	databases
 MASTER_SITES=	http://www.buoy.com/mysql/Downloads/MySQL-3.21/ \
 		http://mysql.polaris.ca/Downloads/MySQL-3.21/ \
