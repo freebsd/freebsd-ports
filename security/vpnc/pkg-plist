@@ -2,4 +2,6 @@ sbin/vpnc
 etc/vpnc.conf.sample
 etc/rc.d/vpnc.sh.sample
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

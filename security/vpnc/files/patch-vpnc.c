@@ -5,7 +5,7 @@
        read_config_file (argv[i], config, 0);
  
 -  read_config_file ("/etc/vpnc.conf", config, 1);
-+  read_config_file ("/usr/local/etc/vpnc.conf", config, 1);
++  read_config_file ("%%PREFIX%%/etc/vpnc.conf", config, 1);
  
    if (!config[CONFIG_IKE_DH])
      config[CONFIG_IKE_DH] = "dh2";
