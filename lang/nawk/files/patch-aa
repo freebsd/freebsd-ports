@@ -1,22 +1,18 @@
---- makefile.orig	Thu May 25 10:55:45 2000
-+++ makefile	Fri Nov  3 01:56:39 2000
-@@ -22,13 +22,13 @@
- # THIS SOFTWARE.
- # ****************************************************************/
- 
+--- makefile.orig	Tue Jan  1 06:50:28 2002
++++ makefile	Mon Feb 18 01:45:54 2002
+@@ -25,3 +25,3 @@
 -CFLAGS = -g
 -CFLAGS = -O2
 -CFLAGS =
 +#CFLAGS = -g
++#CFLAGS = -O2
 +CFLAGS ?= -O
-+#CFLAGS =
- 
+@@ -29,4 +29,4 @@
 -CC = gcc -Wall -g
+-CC = /opt/SUNWspro/bin/cc
 -CC = /opt/pure/purify/purify cc
 -CC = cc
-+#CC = cc -Wall -g
++#CC = gcc -Wall -g
++#CC = /opt/SUNWspro/bin/cc
 +#CC = /opt/pure/purify/purify cc
 +CC ?= cc
- 
- YACC = bison -y
- YACC = yacc
