@@ -8580,6 +8580,7 @@ rosegarden	ports/audio/rosegarden
 rot		ports/textproc/rot
 rotate		ports/sysutils/rotate
 rotix		ports/textproc/rotix
+rotorouter	ports/net-mgmt/rotorouter
 rottdc		ports/games/rottdc
 roundup		ports/www/roundup
 rox-archive	ports/archivers/rox-archive
