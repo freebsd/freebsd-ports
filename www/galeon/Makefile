@@ -6,25 +6,34 @@
 #
 
 PORTNAME=	galeon
-PORTVERSION=	1.2.5
-PORTREVISION=	1
+PORTVERSION=	1.2.6
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	gnome@FreeBSD.org
 
-BUILD_DEPENDS=	${X11BASE}/include/mozilla/gtkembedmoz/gtkmozembed.h:${PORTSDIR}/www/mozilla-headers \
+BUILD_DEPENDS=	${X11BASE}/include/mozilla${HEADERS_SUFX}/gtkembedmoz/gtkmozembed.h:${PORTSDIR}/www/mozilla-headers${HEADERS_SUFX} \
 		${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
 
 WITH_FULL_MOZILLA=	"Problems with SSL, general performance, and usability"
 
+.if defined(WITH_MOZILLA_DEVEL)
+HEADERS_SUFX=	-devel
+.if !defined(WITH_FULL_MOZILLA)
+MOZILLA=	mozilla-embedded-devel
+.else
+MOZILLA=	mozilla-devel
+.endif
+.else
+HEADERS_SUFX=
 .if !defined(WITH_FULL_MOZILLA)
 MOZILLA=	mozilla-embedded
 .else
 MOZILLA=	mozilla
+.endif
 .endif
 
 USE_X_PREFIX=	yes
@@ -32,13 +41,16 @@ USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack bonobo libglade gnomevfs
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
-CONFIGURE_ARGS=	--with-mozilla-includes="${X11BASE}/include/mozilla" \
+CONFIGURE_ARGS=	--with-mozilla-includes="${X11BASE}/include/mozilla${HEADERS_SUFX}" \
 		--with-mozilla-libs="${X11BASE}/lib/${MOZILLA}" \
-		--enable-nautilus-view \
-		--with-mozilla-snapshot="trunk"
+		--enable-nautilus-view
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include -D_REENTRANT ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
+
+.if !defined(WITH_MOZILLA_DEVEL)
+CONFIGURE_ARGS+=	--with-mozilla-snapshot="1.0"
+.endif
 
 MAN1=		galeon.1
 
@@ -62,8 +74,10 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in*" | xargs ${REINPLACE_CMD} -e \
+	@${FIND} ${WRKSRC} -name "Makefile.in*" | xargs ${REINPLACE_CMD} -e \
 		 's|-lpthread|${PTHREAD_LIBS}|g'
+	@${FIND} ${WRKSRC} -name "*.cpp" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|malloc\.h|stdlib.h|g'
 	@${MKDIR} ${WRKSRC}/src/libnautilus
 
 post-configure:
