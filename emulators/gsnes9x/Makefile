@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gsnes9x
-PORTVERSION=	3.10
+PORTVERSION=	3.12
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,32 +17,19 @@ COMMENT=	A GTK front-end for the Snes9X SNES emulator
 
 RUN_DEPENDS=	snes9x:${PORTSDIR}/emulators/snes9x
 
-GNU_CONFIGURE=	yes
-USE_GNOME=	gnomelibs
-USE_GMAKE=	yes
 USE_X_PREFIX=	yes
+USE_GNOME=	gnomehack gnomeprefix gnomelibs
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
+		AUTOHEADER="${TRUE}"
 
-CONFIGURE_ARGS=	--without-included-gettext \
-		--with-esd
-
-.if defined(NOPORTDOCS)
-
-PLIST=	${FILESDIR}/PLIST.nodocs
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/GSnes9x ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/gnome \
-		  ${PREFIX}/share/gnome/apps \
-		  ${PREFIX}/share/gnome/apps/Games \
-		  ${PREFIX}/share/gnome/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/gsnes9x.desktop \
-			${PREFIX}/share/gnome/apps/Games/gsnes9x.desktop
-	${INSTALL_DATA} ${WRKSRC}/pixmaps/gsnesdefault.png \
-			${PREFIX}/share/gnome/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/pixmaps/gsnes9x-icon.png \
-			${PREFIX}/share/gnome/pixmaps
-.else
-PLIST=	${FILESDIR}/PLIST.docs
-.endif
+post-patch:
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|^SUBDIRS = intl|SUBDIRS =|g ; \
+		 s|@INTLLIBS@|-lintl|g ; \
+		 s|@INTLDEPS@||g'
 
 .include <bsd.port.mk>
