@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	tensile
-PORTVERSION=	0.9p7
+PORTVERSION=	0.9p8
 CATEGORIES=	lang
 MASTER_SITES=	http://savannah.gnu.org/download/nsl/ \
 		http://iling.nw.ru/~artem/downloads/ \
