@@ -33,7 +33,10 @@ BINARY=		xaheretic
 .if defined(WITH_SDL)
 ALL_TARGET=	sdl
 BINARY=		sdlheretic
+SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
 LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl10
+MAKE_ENV+=	SDL_CONFIG="${SDL_CONFIG}"
+CFLAGS+=	`${SDL_CONFIG} --cflags`
 .endif
 
 .if defined(WITHOUT_WAD)
