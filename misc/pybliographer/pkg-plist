@@ -159,6 +159,9 @@ share/gnome/pybliographer/Pyblio/Format/Refer.pyo
 share/gnome/pybliographer/Pyblio/Format/__init__.py
 share/gnome/pybliographer/Pyblio/Format/__init__.pyc
 share/gnome/pybliographer/Pyblio/Format/__init__.pyo
+share/gnome/pybliographer/Pyblio/Format/isifile.py
+share/gnome/pybliographer/Pyblio/Format/isifile.pyc
+share/gnome/pybliographer/Pyblio/Format/isifile.pyo
 share/gnome/pybliographer/Pyblio/Formatter.py
 share/gnome/pybliographer/Pyblio/Formatter.pyc
 share/gnome/pybliographer/Pyblio/Formatter.pyo
@@ -258,6 +261,9 @@ share/gnome/pybliographer/Pyblio/Style/Parser.pyo
 share/gnome/pybliographer/Pyblio/Style/Utils.py
 share/gnome/pybliographer/Pyblio/Style/Utils.pyc
 share/gnome/pybliographer/Pyblio/Style/Utils.pyo
+share/gnome/pybliographer/Pyblio/Style/apa4e.py
+share/gnome/pybliographer/Pyblio/Style/apa4e.pyc
+share/gnome/pybliographer/Pyblio/Style/apa4e.pyo
 share/gnome/pybliographer/Pyblio/Style/__init__.py
 share/gnome/pybliographer/Pyblio/Style/__init__.pyc
 share/gnome/pybliographer/Pyblio/Style/__init__.pyo
@@ -281,7 +287,11 @@ share/gnome/pybliographer/Pyblio/version.pyc
 share/gnome/pybliographer/Pyblio/version.pyo
 share/gnome/pybliographer/Styles/Abbrev.xml
 share/gnome/pybliographer/Styles/Alpha.xml
+share/gnome/pybliographer/Styles/apa4e.xml
 share/gnome/pybliographer/Styles/bibstyle.dtd
+share/gnome/pybliographer/Pyblio/Query.py
+share/gnome/pybliographer/Pyblio/Query.pyc
+share/gnome/pybliographer/Pyblio/Query.pyo
 share/gnome/pybliographer/pybcheck.py
 share/gnome/pybliographer/pybcheck.pyc
 share/gnome/pybliographer/pybcheck.pyo

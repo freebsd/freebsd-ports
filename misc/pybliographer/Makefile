@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pybliographer
-PORTVERSION=	1.0.8
-PORTREVISION=	1
+PORTVERSION=	1.0.11
 CATEGORIES=	misc python gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/pybliographer/1.0
@@ -20,10 +19,8 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/_gnomemodule.so:${PORTSDIR}/x11-tool
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome \
 		recode:${PORTSDIR}/converters/recode
 
-BROKEN=		"Needs GNU Recode c.5 or later"
-
 USE_GNOMENG=	yes
-USE_GNOME=	glib12
+USE_GNOME=	glib12 gnomehack gnomeprefix
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
