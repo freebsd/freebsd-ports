@@ -427,6 +427,7 @@
     SUBDIR += ruby-opengl
     SUBDIR += ruby-pgplot
     SUBDIR += ruby-rmagick
+    SUBDIR += ruby-rsvg2
     SUBDIR += ruby-svg
     SUBDIR += ruby-tgif
     SUBDIR += rubyphoto
