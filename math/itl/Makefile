@@ -26,9 +26,9 @@ NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(WANT_MPI) || exists(${LOCALBASE}/bin/hcp)
-BUILD_DEPENDS+=	${LOCALBASE}/bin/hcp:${PORTSDIR}/parallel/lam
-RUN_DEPENDS+=	${LOCALBASE}/bin/hcp:${PORTSDIR}/parallel/lam
+.if defined(WITH_MPI) || exists(${LOCALBASE}/bin/hcp)
+BUILD_DEPENDS+=	${LOCALBASE}/bin/hcp:${PORTSDIR}/net/lam
+RUN_DEPENDS+=	${LOCALBASE}/bin/hcp:${PORTSDIR}/net/lam
 CONFIGURE_ARGS+=--with-mpi=lam
 .endif
 
