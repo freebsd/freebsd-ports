@@ -192,6 +192,7 @@ MASTER_SITE_GNOME+=	\
 	ftp://ftp.tuwien.ac.at/linux/gnome.org/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/gnome/&,} \
 	ftp://ftp.cse.buffalo.edu/pub/Gnome/%SUBDIR%/ \
+	http://ftp.gnome.org/pub/GNOME/%SUBDIR%/
 
 MASTER_SITE_GNU+=	\
 	ftp://ftp.gnu.org/gnu/%SUBDIR%/ \
