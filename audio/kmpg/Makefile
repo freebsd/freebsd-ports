@@ -3,14 +3,14 @@
 # Date created:        23 May 1998
 # Whom:                Hans Petter Bieker <hanspb@persbraten.vgs.no>
 #
-# $Id: Makefile,v 1.9 1999/03/08 20:11:49 fenner Exp $
+# $Id: Makefile,v 1.10 1999/03/09 06:22:44 fenner Exp $
 #
 
 DISTNAME=	kmpg-0.4.3a
 CATEGORIES=	audio kde
-MASTER_SITES=	http://www.rhrk.uni-kl.de/~mvogt/linux/kmpg/download/
+MASTER_SITES=	http://www.freebsd.org/~tom/distfiles/
 
-MAINTAINER=	tom@eborcom.com
+MAINTAINER=	tom@FreeBSD.ORG
 
 LIB_DEPENDS=	kdecore.1:${PORTSDIR}/x11/kdelibs \
 		kdeui.1:${PORTSDIR}/x11/kdelibs
