@@ -1,0 +1,9 @@
+@comment $FreeBSD$
+@unexec if cmp -s %D/etc/grenouillerc %D/etc/grenouillerc.sample; then rm -f %D/etc/grenouillerc; fi
+etc/grenouillerc.sample
+@comment no @exec: see pkg-install/+INSTALL for details.
+etc/rc.d/plgrenouille.sh
+libexec/plgrenouille
+%%PORTDOCS%%share/doc/plgrenouille/FAQ
+%%PORTDOCS%%share/doc/plgrenouille/README
+%%PORTDOCS%%@dirrm share/doc/plgrenouille

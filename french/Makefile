@@ -12,6 +12,7 @@
     SUBDIR += ooodict-fr_FR
     SUBDIR += openoffice
     SUBDIR += php_doc
+    SUBDIR += plgrenouille
     SUBDIR += staroffice52
 
 .include <bsd.port.subdir.mk>
