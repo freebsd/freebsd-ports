@@ -1,0 +1,47 @@
+--- portcheckout.pl--	Tue Oct 24 13:04:07 2000
++++ portcheckout.pl	Tue Oct 24 13:04:35 2000
+@@ -94,14 +94,14 @@
+   PORTSDIR="/tmp/ports"; export PORTSDIR
+   
+   # checkout FreeBSD ports system Makefiles
+-  cvs checkout  ports/Mk
++  cvs checkout -P  ports/Mk
+   
+   ##################################################
+   # checkout port: de-dict-1.1
+-  cvs checkout  ports/german/dict
++  cvs checkout -P  ports/german/dict
+   
+   # de-dict-1.1 depend on port: agrep-2.04
+-  cvs checkout  ports/textproc/agrep
++  cvs checkout -P  ports/textproc/agrep
+   
+   ##################################################
+   # Compile and install de-dict-1.1
+@@ -328,7 +328,7 @@
+ #print qq{DISTDIR="/usr/ports/distfiles"; export DISTDIR\n};
+ 
+ print "\n# checkout FreeBSD ports system Makefiles\n";
+-print "cvs checkout $release ports/Mk\n\n";
++print "cvs checkout -P $release ports/Mk\n\n";
+ 
+ 
+ # list of dependings ports
+@@ -338,7 +338,7 @@
+ 
+     print "#" x 50, "\n";
+     print "# checkout port: $distributionname\n";
+-    print "cvs checkout $release ", $obj->{$distributionname}{portpath}, "\n\n";
++    print "cvs checkout -P $release ", $obj->{$distributionname}{portpath}, "\n\n";
+ 
+     $ports_depends{$distributionname} = 1;
+     foreach my $depends (
+@@ -355,7 +355,7 @@
+ 	$ports_depends{$depends} = 1;
+ 
+ 	print "# $distributionname depend on port: $depends\n";
+-	print "cvs checkout $release ", $obj->{$depends}{portpath}, "\n\n";
++	print "cvs checkout -P $release ", $obj->{$depends}{portpath}, "\n\n";
+     }
+ }
+ 
