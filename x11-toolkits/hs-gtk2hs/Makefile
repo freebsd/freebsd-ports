@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtk2hs
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.4
 CATEGORIES=	x11-toolkits haskell
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,5 +24,8 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-c2hs=no
 USE_GMAKE=	yes
 MAKE_ENV+=	BUILDDOCS=no
+
+GHC_VERSION=	`${LOCALBASE}/bin/ghc --numeric-version`
+PLIST_SUB+=	GHC_VERSION="${GHC_VERSION}"
 
 .include <bsd.port.mk>
