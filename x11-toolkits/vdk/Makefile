@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	vdk
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.5
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://download.sourceforge.net/vdkbuilder/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	vdkbuilder
 
 MAINTAINER=	nakai@FreeBSD.org
 
