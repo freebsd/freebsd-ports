@@ -1,29 +1,125 @@
-*** /dev/null	Tue Aug 23 17:16:08 1994
---- ./include/setup.h	Tue Aug 23 17:42:49 1994
+*** include/config.h.orig	Tue Jan 31 19:46:22 1995
+--- include/config.h	Tue Jan 31 19:53:55 1995
 ***************
-*** 0 ****
---- 1,24 ----
-+ #ifndef __setup_include__
-+ #define __setup_include__
-+ #define	PARAMH
-+ #define	UNISTDH
-+ #define	STRINGH
-+ #define	STRINGSH
-+ #define	STDLIBH
-+ #define	STDDEFH
-+ #define	SYSSYSLOGH
-+ #undef	NOINDEX
-+ #undef	NEED_STRERROR
-+ #define	NEED_STRTOKEN
-+ #undef	NEED_STRTOK
-+ #undef	NEED_INET_ADDR
-+ #undef	NEED_INET_NTOA
-+ #undef	NEED_INET_NETOF
-+ #define	GETTIMEOFDAY
-+ #undef	LRAND48
-+ #undef	MALLOCH
-+ #define	NBLOCK_POSIX
-+ #define	BSD_RELIABLE_SIGNALS
-+ #undef	TIMES_2
-+ #define	GETRUSAGE_2
-+ #endif
+*** 61,67 ****
+   * If your host supports varargs and has vsprintf(), vprintf() and vscanf()
+   * C calls in its library, then you can define USE_VARARGS to use varargs
+   * instead of imitation variable arg passing.
+! #undef	USE_VARARGS
+   * NOTE: with current server code, varargs doesn't survive because it can't
+   *       be used in a chain of 3 or more funtions which all have a variable
+   *       number of params.  If anyone has a solution to this, please notify
+--- 61,67 ----
+   * If your host supports varargs and has vsprintf(), vprintf() and vscanf()
+   * C calls in its library, then you can define USE_VARARGS to use varargs
+   * instead of imitation variable arg passing.
+! #define	USE_VARARGS
+   * NOTE: with current server code, varargs doesn't survive because it can't
+   *       be used in a chain of 3 or more funtions which all have a variable
+   *       number of params.  If anyone has a solution to this, please notify
+***************
+*** 90,96 ****
+   * then remove it before starting the server.
+   * The file is for request save/backup.
+   */
+! #define NPATH "/usr/lib/irc/.ircdnote"
+  #endif
+  
+  /*
+--- 90,96 ----
+   * then remove it before starting the server.
+   * The file is for request save/backup.
+   */
+! #define NPATH "!!PREFIX!!/lib/ircd/.ircdnote"
+  #endif
+  
+  /*
+***************
+*** 98,105 ****
+   * these are only the recommened names and paths. Change as needed.
+   * You must define these to something, even if you don't really want them.
+   */
+! #define	DPATH	"/scratch/avalon/ircd"	/* dir where all ircd stuff is */
+! #define	SPATH	"/scratch/avalon/ircd/bin/ircd"
+  #define	CPATH	"ircd.conf"	/* server configuration file */
+  #define	MPATH	"ircd.motd"	/* server MOTD file */
+  #define	LPATH	"/tmp/ircd.log" /* Where the debug file lives, if DEBUGMODE */
+--- 98,105 ----
+   * these are only the recommened names and paths. Change as needed.
+   * You must define these to something, even if you don't really want them.
+   */
+! #define	DPATH	"!!PREFIX!!/lib/ircd"	/* dir where all ircd stuff is */
+! #define	SPATH	"!!PREFIX!!/bin/ircd"
+  #define	CPATH	"ircd.conf"	/* server configuration file */
+  #define	MPATH	"ircd.motd"	/* server MOTD file */
+  #define	LPATH	"/tmp/ircd.log" /* Where the debug file lives, if DEBUGMODE */
+***************
+*** 112,119 ****
+   * FNAME_USERLOG just logs user connections, FNAME_OPERLOG logs every
+   * successful use of /oper.  These are either full paths or files within DPATH.
+   */
+! #define FNAME_USERLOG "/usr/local/lib/ircd/users" /* */
+! #define FNAME_OPERLOG "/usr/local/lib/ircd/opers" /* */
+  
+  /* CHROOTDIR
+   *
+--- 112,119 ----
+   * FNAME_USERLOG just logs user connections, FNAME_OPERLOG logs every
+   * successful use of /oper.  These are either full paths or files within DPATH.
+   */
+! #define FNAME_USERLOG "!!PREFIX!!/lib/ircd/users" /* */
+! #define FNAME_OPERLOG "!!PREFIX!!/lib/ircd/opers" /* */
+  
+  /* CHROOTDIR
+   *
+***************
+*** 150,156 ****
+   * mode "i" (i == invisible). Invisibility means people dont showup in
+   * WHO or NAMES unless they are on the same channel as you.
+   */
+! #undef	NO_DEFAULT_INVISIBLE
+  
+  /* OPER_KILL
+   *
+--- 150,156 ----
+   * mode "i" (i == invisible). Invisibility means people dont showup in
+   * WHO or NAMES unless they are on the same channel as you.
+   */
+! #define	NO_DEFAULT_INVISIBLE
+  
+  /* OPER_KILL
+   *
+***************
+*** 211,217 ****
+   * to a leaf which just has 1 server (typically the uplink). Define this
+   * correctly for performance reasons.
+   */
+! #define	HUB
+  
+  /* R_LINES:  The conf file now allows the existence of R lines, or
+   * restrict lines.  These allow more freedom in the ability to restrict
+--- 211,217 ----
+   * to a leaf which just has 1 server (typically the uplink). Define this
+   * correctly for performance reasons.
+   */
+! #undef	HUB
+  
+  /* R_LINES:  The conf file now allows the existence of R lines, or
+   * restrict lines.  These allow more freedom in the ability to restrict
+***************
+*** 252,258 ****
+   * The server will then call m4 each time it reads the ircd.conf file,
+   * reading m4 output as the server's ircd.conf file.
+   */
+! #define	M4_PREPROC
+  
+  /*
+   * If you wish to have the server send 'vital' messages about server
+--- 252,258 ----
+   * The server will then call m4 each time it reads the ircd.conf file,
+   * reading m4 output as the server's ircd.conf file.
+   */
+! #undef	M4_PREPROC
+  
+  /*
+   * If you wish to have the server send 'vital' messages about server
