@@ -42,12 +42,6 @@ post-install:
 	${CP} -Rp '${WRKSRC:H}/doc/html' '${DOCSDIR}'
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH}=="alpha"
-CXXFLAGS+=	-mieee
-.endif
-
 post-patch:
 	@${RM} -fr ${WRKSRC}/examples ${WRKSRC}/tutorial
 	@${REINPLACE_CMD} -e 's,-O2,${CXXFLAGS},' \
@@ -69,4 +63,4 @@ do-configure:
 	${LN} ${WRKSRC}/qconfig.h ${WRKSRC}/qmodules.h
 	${LN} -s . ${WRKDIR}/${DISTNAME}/src/tools/private
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
