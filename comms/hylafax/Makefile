@@ -3,7 +3,7 @@
 # Date created:		19 Apr 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.16 1998/06/27 09:02:35 asami Exp $
+# $Id: Makefile,v 1.17 1998/09/15 11:45:48 asami Exp $
 #
 
 DISTNAME=	hylafax-v4.0pl2
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
 # no dependency on ghostscript because we don't know which
 # version the user prefers
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
-LIB_DEPENDS=	tiff34\\.1\\.:${PORTSDIR}/graphics/tiff34 \
+LIB_DEPENDS=	tiff34.1:${PORTSDIR}/graphics/tiff34 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_GMAKE=	yes
