@@ -6,16 +6,20 @@
 #
 
 PORTNAME=	pike
-PORTVERSION=	7.0.78
+PORTVERSION=	7.0.361
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.roxen.com/pub/pike/all/${PORTVERSION}/
-DISTNAME=	Pike-v${PORTVERSION}
+MASTER_SITES=	ftp://ftp.oav.net/pike/7.0/	\
+		ftp://ftp.oav.net/caudium/pkg/FreeBSD/distfiles/ \
+		ftp://ftp.caudium.net/caudium/snapshots/pike/7.0/ \
+		http://grendel.firewall.com/caudium-pkg/
+DISTNAME=	pike-${PORTVERSION}
 
-MAINTAINER=	vns@delta.odessa.ua
+MAINTAINER=	kiwi@oav.net
+
+BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison/
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src/
 
-USE_SUBMAKE=	yes
 IS_INTERACTIVE=	yes
 GNU_CONFIGURE=  yes
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
@@ -29,7 +33,7 @@ CONFIGURE_ARGS?= \
 	--without-msql \
 	--without-jpeg
 .endif
-CONFIGURE_ARGS+= --with-poll
+CONFIGURE_ARGS+= --without-debug --with-poll --with-oob --with-max-fds=10000 --without-GTK
 
 pre-fetch:
 .if !defined(BATCH)
@@ -45,7 +49,5 @@ pre-clean:
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}pike ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}hilfe ${PREFIX}/bin
-	${CHOWN} ${SHAREOWN}:${SHAREGRP} ${PREFIX}/include/pike/*.h
-	${CHMOD} ${SHAREMODE} ${PREFIX}/include/pike/*.h
 
 .include <bsd.port.mk>

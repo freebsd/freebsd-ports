@@ -77,9 +77,9 @@ while [ "$1" ]; do
 			MySQL=1
 			;;
 		\"PostgreSQL\")
-			echo "BUILD_DEPENDS+=		\${PREFIX}/bin/psql:\${PORTSDIR}/databases/postgresql7" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo "BUILD_DEPENDS+=		\${PREFIX}/pgsql/bin/psql:\${PORTSDIR}/databases/postgresql7" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			echo "CONFIGURE_ARGS+=	--with-pgsql=\${PREFIX}/pgsql" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-			PostgreSQL=1
+			PostgresSQL=1
 			;;
 		\"mSQL\")
 			echo "BUILD_DEPENDS+=		msql:\${PORTSDIR}/databases/msql" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
