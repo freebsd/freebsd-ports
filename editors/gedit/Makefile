@@ -6,15 +6,12 @@
 #
 
 PORTNAME=	gedit
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.6
 CATEGORIES=	editors gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gedit
 
 MAINTAINER=	ade@FreeBSD.org
-
-LIB_DEPENDS=	gnomeprint.13:${PORTSDIR}/print/gnomeprint \
-		glade.4:${PORTSDIR}/devel/libglade
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

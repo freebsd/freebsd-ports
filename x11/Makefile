@@ -32,6 +32,7 @@
     SUBDIR += gdm
     SUBDIR += gmessage
     SUBDIR += gnome
+    SUBDIR += gnome-fifth-toe
     SUBDIR += gnomeapplets
     SUBDIR += gnomecore
     SUBDIR += gnomelibs

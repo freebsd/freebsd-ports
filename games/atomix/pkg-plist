@@ -91,14 +91,19 @@ share/gnome/help/atomix/C/ln7.html
 share/gnome/help/atomix/C/menubar.html
 share/gnome/help/atomix/C/preferences.html
 share/gnome/help/atomixed/C/atomixed.html
+share/gnome/help/atomixed/C/authors.html
 share/gnome/help/atomixed/C/docbook.css
 share/gnome/help/atomixed/C/images/ed_mainwin.png
 share/gnome/help/atomixed/C/images/ed_themeeditorwin.png
 share/gnome/help/atomixed/C/images/ed_themewin.png
 share/gnome/help/atomixed/C/leveleditor.html
+share/gnome/help/atomixed/C/ln7.html
+share/gnome/help/atomixed/C/menus.html
 share/gnome/help/atomixed/C/overview.html
 share/gnome/help/atomixed/C/themeeditor.html
 share/gnome/pixmaps/atomix/atomix-logo.png
+share/locale/it/LC_MESSAGES/atomix.mo
+share/locale/sv/LC_MESSAGES/atomix.mo
 @dirrm share/gnome/pixmaps/atomix
 @dirrm share/gnome/help/atomixed/C/images
 @dirrm share/gnome/help/atomixed/C

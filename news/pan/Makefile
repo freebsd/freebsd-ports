@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	pan
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.6
 CATEGORIES=	news gnome
 MASTER_SITES=	http://pan.rebelbase.com/download/${PORTVERSION}/
 
 MAINTAINER=	ade@FreeBSD.org
 
-LIB_DEPENDS=	gnomeprint.13:${PORTSDIR}/print/gnomeprint \
-		gtkhtml.8:${PORTSDIR}/www/gtkhtml
+LIB_DEPENDS=	gtkhtml.10:${PORTSDIR}/www/gtkhtml
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

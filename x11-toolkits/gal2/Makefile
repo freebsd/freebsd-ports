@@ -6,17 +6,14 @@
 #
 
 PORTNAME=	gal
-PORTVERSION=	0.5
+PORTVERSION=	0.7
 CATEGORIES?=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/gal
 
 MAINTAINER?=	ade@FreeBSD.org
 
-LIB_DEPENDS=	gnomeprint.13:${PORTSDIR}/print/gnomeprint \
-		glade.4:${PORTSDIR}/devel/libglade \
-		unicode.0:${PORTSDIR}/devel/libunicode \
-		gnomevfs.0:${PORTSDIR}/devel/gnomevfs \
+LIB_DEPENDS=	unicode.0:${PORTSDIR}/devel/libunicode \
 		giconv.2:${PORTSDIR}/converters/libiconv
 
 USE_X_PREFIX=	yes

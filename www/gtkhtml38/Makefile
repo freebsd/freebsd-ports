@@ -6,19 +6,16 @@
 #
 
 PORTNAME=	gtkhtml
-PORTVERSION=	0.8.2
+PORTVERSION=	0.9.2
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/gtkhtml
 
 MAINTAINER=	ade@FreeBSD.org
 
-LIB_DEPENDS=	bonobo.2:${PORTSDIR}/devel/bonobo \
-		ghttp.1:${PORTSDIR}/www/libghttp \
-		wwwzip.1:${PORTSDIR}/www/libwww \
-		gconf-1.1:${PORTSDIR}/devel/gconf \
+LIB_DEPENDS=	glibwww.1:${PORTSDIR}/www/glibwww \
 		pspell.4:${PORTSDIR}/textproc/pspell \
-		gal.4:${PORTSDIR}/x11-toolkits/gal
+		gal.6:${PORTSDIR}/x11-toolkits/gal
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

@@ -1,31 +1,31 @@
---- configure.orig	Thu Feb  8 13:54:31 2001
-+++ configure	Fri Feb  9 10:46:57 2001
-@@ -5017,5 +5017,5 @@
+--- configure.orig	Mon Apr 16 17:12:51 2001
++++ configure	Thu Apr 19 11:45:12 2001
+@@ -5026,5 +5026,5 @@
  CFLAGS="$CFLAGS $ICONV_CFLAGS"
 -LDFLAGS="$LDFLAGS $ICONV_LIBS -liconv"
 -echo $ac_n "checking for iconv in -liconv""... $ac_c" 1>&6
--echo "configure:5021: checking for iconv in -liconv" >&5
+-echo "configure:5030: checking for iconv in -liconv" >&5
 +LDFLAGS="$LDFLAGS $ICONV_LIBS -lgiconv"
 +echo $ac_n "checking for iconv in -lgiconv""... $ac_c" 1>&6
-+echo "configure:5021: checking for iconv in -lgiconv" >&5
++echo "configure:5030: checking for iconv in -lgiconv" >&5
  if eval "test \"`echo '$''{'ac_cv_libiconv'+set}'`\" = set"; then
-@@ -5027,3 +5027,3 @@
+@@ -5036,3 +5036,3 @@
  
 -#include <iconv.h>
 +#include <giconv.h>
  
-@@ -5050,3 +5050,3 @@
+@@ -5059,3 +5059,3 @@
  if test $ac_cv_libiconv = yes; then
 -	ICONV_LIBS="$ICONV_LIBS -liconv"
 +	ICONV_LIBS="$ICONV_LIBS -lgiconv"
  	have_iconv=yes
-@@ -5176,3 +5176,3 @@
+@@ -5185,3 +5185,3 @@
  
 -#include <iconv.h>
 +#include <giconv.h>
  #include <stdlib.h>
-@@ -5302,4 +5302,4 @@
- echo "configure:5303: checking for GTK >= 1.2.7" >&5
+@@ -5311,4 +5311,4 @@
+ echo "configure:5312: checking for GTK >= 1.2.7" >&5
 -if gtk-config --version > /dev/null 2>&1; then 
 -        vers=`gtk-config --version | awk 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
 +if $GTK_CONFIG --version > /dev/null 2>&1; then 

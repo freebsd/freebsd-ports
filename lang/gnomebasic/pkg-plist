@@ -1,5 +1,6 @@
 bin/gb
 etc/gbConf.sh
+include/gb/gb-class.h
 include/gb/gb-constants.h
 include/gb/gb-eval.h
 include/gb/gb-expr.h
@@ -30,6 +31,16 @@ lib/libgb.so.0
 lib/libgbrun.a
 lib/libgbrun.so
 lib/libgbrun.so.0
+share/locale/az/LC_MESSAGES/gb.mo
+share/locale/da/LC_MESSAGES/gb.mo
+share/locale/el/LC_MESSAGES/gb.mo
+share/locale/fr/LC_MESSAGES/gb.mo
+share/locale/no/LC_MESSAGES/gb.mo
+share/locale/ru/LC_MESSAGES/gb.mo
+share/locale/sk/LC_MESSAGES/gb.mo
+share/locale/sv/LC_MESSAGES/gb.mo
+share/locale/tr/LC_MESSAGES/gb.mo
+share/locale/uk/LC_MESSAGES/gb.mo
 @dirrm include/gbrun/objects
 @dirrm include/gbrun
 @dirrm include/gb

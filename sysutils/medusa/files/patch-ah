@@ -1,0 +1,28 @@
+--- search-service/medusa-file-search-daemon.c.orig	Wed Feb 21 01:33:37 2001
++++ search-service/medusa-file-search-daemon.c	Fri Mar  2 16:11:21 2001
+@@ -204,2 +204,17 @@
+ 
++#ifdef __FreeBSD__
++#include <sys/wait.h>
++
++static void
++grim_reaper(int signo)
++{
++	pid_t pid;
++	int stat;
++
++ 	while ((pid = waitpid(-1, &stat, WNOHANG)) > 0)
++		;
++	return;
++}
++#endif 
++
+ int main (int argc, char *argv[])
+@@ -273,3 +288,7 @@
+            in the Unix Environment", page 280) */
++#ifdef __FreeBSD__
++	signal (SIGCHLD, grim_reaper);
++#else
+         signal (SIGCLD, SIG_IGN);
++#endif
+ 
