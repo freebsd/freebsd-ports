@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	commons-collections
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	java
 MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-commons/release/${PORTNAME}/v${PORTVERSION}/
 PKGNAMEPREFIX=	jakarta-
