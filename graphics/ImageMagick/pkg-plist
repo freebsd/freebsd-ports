@@ -405,6 +405,6 @@ share/ImageMagick/QuickStart.txt
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Image
 %%MODULES%%@dirrm lib/ImageMagick/modules/coders
 %%MODULES%%@dirrm lib/ImageMagick/modules
-%%MODULES%%@dirrm lib/ImageMagick
+@dirrm lib/ImageMagick
 @dirrm include/magick
 @dirrm include/Magick++
