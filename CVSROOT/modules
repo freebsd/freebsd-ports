@@ -3465,6 +3465,7 @@ libiconv	ports/converters/libiconv
 libicq		ports/net/libicq
 libicq2000	ports/net/libicq2000
 libident	ports/security/libident
+libijs		ports/print/libijs
 libimg		ports/graphics/libimg
 libio		src/lib/libio
 libiodbc	ports/databases/libiodbc
