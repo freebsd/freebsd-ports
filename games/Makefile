@@ -328,6 +328,7 @@
     SUBDIR += phalanx
     SUBDIR += phpua-bf
     SUBDIR += phpua-engine
+    SUBDIR += phpua-hl
     SUBDIR += pinball
     SUBDIR += pipenightdreams
     SUBDIR += pmars
