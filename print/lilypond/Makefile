@@ -36,7 +36,7 @@ CFLAGS+=	-D__GNU_LIBRARY__
 
 .include <bsd.port.pre.mk>
 .if !defined(WITHOUT_PFA_FONTS)
-BUILD_DEPENDS+=	${PREFIX}/bin/mftrace:${PORTSDIR}/print/pktrace
+BUILD_DEPENDS+=	${PREFIX}/bin/mftrace:${PORTSDIR}/print/mftrace
 MAKE_ENV+=	MAKE_PFA_FILES=1
 ALL_TARGET=	all	# XXX pfa-fonts
 .endif
