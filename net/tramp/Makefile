@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tramp
-PORTVERSION=	0.0.20020121
+PORTVERSION=	0.0.20020130
 CATEGORIES=	net elisp
 MASTER_SITES=	http://tramp.sourceforge.net/download/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -17,6 +17,7 @@ MAINTAINER=	yoichi@FreeBSD.org
 EMACS_PORT_NAME?=	emacs21
 
 BUILD_WRKSRC=	${WRKSRC}/lisp
+USE_GMAKE=	yes
 
 TRAMP_LISPDIR=	${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 DIRSECTION=	"The Emacs editor and associated tools"
@@ -41,14 +42,14 @@ PLIST_SUB+=	EMACS20_ONLY="@comment "
 
 pre-build:
 .if ${EMACS_PORT_NAME} == emacs20
-	(cd ${WRKSRC}/contrib; ${MAKE} EMACS=${EMACS_CMD} format-spec.elc)
+	(cd ${WRKSRC}/contrib; ${GMAKE} EMACS=${EMACS_CMD} format-spec.elc)
 	(${CP} ${WRKSRC}/contrib/format-spec.el ${WRKSRC}/contrib/format-spec.elc ${BUILD_WRKSRC})
 .endif
 post-build:
 .if !defined(NOPORTDOCS)
-	(cd ${WRKSRC}/texi; ${MAKE} EMACS=${EMACS_CMD} MAKEINFO=makeinfo tramp.info)
+#	(cd ${WRKSRC}/texi; ${GMAKE} EMACS=${EMACS_CMD} MAKEINFO=makeinfo tramp.info)
 .if defined(JAPANESE_INFO)
-	(cd ${WRKSRC}/texi; ${MAKE} EMACS=${EMACS_CMD} MAKEINFO=jmakeinfo tramp_ja.info)
+	(cd ${WRKSRC}/texi; ${GMAKE} EMACS=${EMACS_CMD} MAKEINFO=jmakeinfo tramp_ja.info)
 .endif
 .endif
 
