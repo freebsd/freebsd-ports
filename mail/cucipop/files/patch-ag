@@ -1,0 +1,20 @@
+--- makevpopdb.8.bak	Sun May 10 16:57:40 1998
++++ makevpopdb.8	Mon Mar 29 01:51:22 1999
+@@ -48,7 +48,7 @@
+ .SH NAME
+ makevpopdb \- Creates the vpop database for cucipop
+ .SH SYNOPSIS
+-.B /usr/sbin/makevpopdb
++.B !!PREFIX!!/sbin/makevpopdb
+ .I dbasefile
+ .ad
+ .SH DESCRIPTION
+@@ -71,7 +71,7 @@
+ .SH FILES
+ .TP 2.3i
+ .TP
+-.B /etc/mail/vpop.db
++.B !!PREFIX!!/etc/vpop.db
+ typical virtual host authentication database used by
+ .BR cucipop (8)
+ .SH "SEE ALSO"

@@ -1,0 +1,11 @@
+--- makevpopdb.c.bak	Tue May 12 04:50:53 1998
++++ makevpopdb.c	Mon Mar 29 04:30:00 1999
+@@ -49,7 +49,7 @@
+    }
+   dbname=argv[1];
+   memset(&dbenv,0,sizeof dbenv);
+-  if(!db_appinit(0,0,&dbenv,0))
++  if(db_appinit(0,0,&dbenv,0))
+      fprintf(stderr,"makedb2: Can't init db subsystem\n"),retval=EX_CANTCREAT;
+   else
+    { if(db_open(dbname,DB_HASH,DB_CREATE|DB_TRUNCATE,0666,&dbenv,(void*)0,&db))

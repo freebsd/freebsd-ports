@@ -1,0 +1,11 @@
+--- dbops.c.bak	Wed May 13 20:57:39 1998
++++ dbops.c	Mon Mar 29 01:24:41 1999
+@@ -117,7 +117,7 @@
+      if(lastcheck!=curt)
+       { lastcheck=curt;
+ 	if(!cs)
+-	 { db->cursor(db,0,&cs);d.data="";d.size=1;
++	 { db->cursor(db,0,&cs,0);d.data="";d.size=1;
+ 	   if(!db->get(db,0,&d,&k,0))
+ 	      cs->c_get(cs,&k,&d,DB_SET);
+ 	 }

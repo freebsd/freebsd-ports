@@ -1,0 +1,18 @@
+--- authenticate.c.orig	Wed May 13 20:57:39 1998
++++ authenticate.c	Mon Mar 29 03:11:18 1999
+@@ -39,12 +39,14 @@
+ 
+ #define VIRTUALSERVER	/**/
+ 
++#ifndef SENDMAILLIB
+ #define SENDMAILLIB	"/etc/mail"
++#endif
+ #define VIRTUALHOSTDB	"vpop.db"
+ #define VIRTUALUSER	"vpop"
+ 
+ #ifndef MAILSPOOLDIR
+-#define MAILSPOOLDIR	"/var/spool/mail/"	     /* watch the trailing / */
++#define MAILSPOOLDIR	"/var/mail/"	     /* watch the trailing / */
+ #endif
+ #ifndef MAILSPOOLHASH
+ #define MAILSPOOLHASH	0      /* 2 would deliver to /var/spool/mail/b/a/bar */
