@@ -25,6 +25,7 @@ PKGNAMESUFFIX=	-${SLAVE_PORT_MPM}
 .   if ${WITH_MPM} != "prefork"
 PKGNAMESUFFIX=		-${WITH_MPM:L}
 WITH_THREADS=		yes
+WITHOUT_MODULES+=	cgi
 .      if ${WITH_MPM:L} == "worker"
 PLIST_SUB+=	PREFORK="@comment " WORKER="" THREADPOOL="@comment "
 .      elif  ${WITH_MPM:L} == "perchild"
