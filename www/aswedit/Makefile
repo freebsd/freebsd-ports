@@ -19,7 +19,6 @@ COMMENT=	An easy to use HTML and text editor
 
 RESTRICTED=	"Commercial software"
 NO_BUILD=	yes
-NO_PACKAGE=	${RESTRICTED}
 
 ONLY_FOR_ARCHS=	i386
 
