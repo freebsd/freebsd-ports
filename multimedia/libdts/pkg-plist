@@ -1,0 +1,6 @@
+bin/dtsdec
+bin/extract_dts
+include/dts.h
+lib/libdts.a
+lib/libdts_pic.a
+libdata/pkgconfig/libdts.pc
