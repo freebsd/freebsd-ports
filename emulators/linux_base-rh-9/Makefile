@@ -1,71 +1,71 @@
-# New ports collection makefile for:	linux_base-8
-# Date created:				2003-06-02
-# Whom:					trevor
-# based on ports/emulators/linux_base by Marcel Moolenaar and others
+# New ports collection makefile for:	linux_base-rh-9
+# Date created:				2004-11-15
+# Whom:					Xin Li
+# based on linux_base-8 port by Marcel Moolenaar, Trevor Johnson and others
 #
 # $FreeBSD$
 #
 
-PORTNAME=		linux_base-8
-PORTVERSION=		8.0
-PORTREVISION=		4
-CATEGORIES=		emulators linux
-MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX} \
-			${MASTER_SITE_REDHAT_LINUX:S/$/:new/}
-MASTER_SITE_SUBDIR=    \
-			${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}/RedHat/RPMS \
-			updates/${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}/:new
-DISTFILES=		redhat-release-8.0-8.noarch.rpm \
-			glibc-common-2.3.2-4.80.8.${MACHINE_ARCH}.rpm:new \
-			glibc-2.3.2-4.80.8.${MACHINE_ARCH}.rpm:new \
-			setup-2.5.20-1.noarch.rpm \
-			filesystem-2.1.6-5.noarch.rpm \
-			basesystem-8.0-1.noarch.rpm \
-			libattr-2.0.8-3.${MACHINE_ARCH}.rpm \
-			libacl-2.0.11-2.${MACHINE_ARCH}.rpm \
-			libelf-0.8.2-2.${MACHINE_ARCH}.rpm \
-			bzip2-libs-1.0.2-5.${MACHINE_ARCH}.rpm \
-			termcap-11.0.1-13.noarch.rpm \
-			compat-db-3.3.11-2.${MACHINE_ARCH}.rpm \
-			db4-4.0.14-14.${MACHINE_ARCH}.rpm \
-			gdbm-1.8.0-18.${MACHINE_ARCH}.rpm \
-			glib-1.2.10-8.${MACHINE_ARCH}.rpm \
-			libtermcap-2.0.8-31.${MACHINE_ARCH}.rpm \
-			bash-2.05b-5.${MACHINE_ARCH}.rpm \
-			bzip2-1.0.2-5.${MACHINE_ARCH}.rpm \
-			compat-libstdc++-7.3-2.96.110.${MACHINE_ARCH}.rpm \
-			ncurses-5.2-28.${MACHINE_ARCH}.rpm \
-			info-4.2-5.${MACHINE_ARCH}.rpm \
-			grep-2.5.1-4.${MACHINE_ARCH}.rpm \
-			fileutils-4.1.9-11.${MACHINE_ARCH}.rpm \
-			popt-1.7-1.06.${MACHINE_ARCH}.rpm \
-			readline-4.3-3.${MACHINE_ARCH}.rpm \
-			setserial-2.17-9.${MACHINE_ARCH}.rpm \
-			libstdc++-3.2-7.${MACHINE_ARCH}.rpm \
-			slang-1.4.5-11.${MACHINE_ARCH}.rpm \
-			sh-utils-2.0.12-3.${MACHINE_ARCH}.rpm \
-			rpm-4.1-1.06.${MACHINE_ARCH}.rpm \
-			libgcc-3.2-7.${MACHINE_ARCH}.rpm \
-			freetype-2.1.2-7.${MACHINE_ARCH}.rpm \
-			zlib-1.1.4-8.8x.${MACHINE_ARCH}.rpm:new
+PORTNAME=	linux_base-rh
+PORTVERSION=	9
+CATEGORIES=	emulators linux
+MASTER_SITES=	${MASTER_SITE_REDHAT_LINUX} \
+		${MASTER_SITE_REDHAT_LINUX:S/$/:new/}
+MASTER_SITE_SUBDIR=	\
+		${PORTVERSION}/${LANG}/os/i386/RedHat/RPMS \
+		updates/${PORTVERSION}/${LANG}/os/i386/:new
+DISTFILES=	glibc-2.3.2-27.9.7.i386.rpm:new \
+		glibc-common-2.3.2-27.9.7.i386.rpm:new \
+		redhat-release-9-3.i386.rpm \
+		setup-2.5.25-1.noarch.rpm \
+		filesystem-2.2.1-3.i386.rpm \
+		basesystem-8.0-2.noarch.rpm \
+		zlib-1.1.4-8.i386.rpm \
+		libattr-2.2.0-1.i386.rpm \
+		libacl-2.2.3-1.i386.rpm \
+		elfutils-libelf-0.76-3.i386.rpm \
+		bzip2-libs-1.0.2-8.i386.rpm \
+		termcap-11.0.1-16.noarch.rpm \
+		db4-4.0.14-20.i386.rpm \
+		gdbm-1.8.0-20.i386.rpm \
+		glib-1.2.10-10.i386.rpm \
+		libtermcap-2.0.8-35.i386.rpm \
+		bash-2.05b-20.1.i386.rpm:new \
+		bzip2-1.0.2-8.i386.rpm \
+		compat-libstdc++-7.3-2.96.118.i386.rpm \
+		ncurses-5.3-4.i386.rpm \
+		info-4.3-5.i386.rpm \
+		pcre-3.9-10.i386.rpm \
+		findutils-4.1.7-9.i386.rpm \
+		grep-2.5.1-7.i386.rpm \
+		coreutils-4.5.3-19.0.2.i386.rpm:new \
+		popt-1.8-0.69.i386.rpm \
+		readline-4.3-5.i386.rpm \
+		setserial-2.17-12.i386.rpm \
+		libstdc++-3.2.2-5.i386.rpm \
+		slang-1.4.5-16.i386.rpm \
+		glibc-utils-2.3.2-11.9.i386.rpm \
+		rpm-4.2-0.69.i386.rpm \
+		libgcc-3.2.2-5.i386.rpm \
+		freetype-2.1.3-6.i386.rpm
 
-MAINTAINER=		trevor@FreeBSD.org
+MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Base set of packages needed in Linux mode (only for i386)
 
 EXTRACT_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 
-CONFLICTS=cle_base-* linux_base-6* linux_base-7* linux_base-deb* linux_base-gen*
+CONFLICTS=		linux_base-6* linux_base-7* linux_base-8* \
+			linux_base-debian* linux_base-gentoo* linux_base-suse*
 RESTRICTED=		"binaries under GNU GPL without accompanying source"
-ONLY_FOR_ARCHS=		i386 amd64
-DIST_SUBDIR=		rpm/${MACHINE_ARCH}/${PORTVERSION}
+ONLY_FOR_ARCHS=		amd64 i386
+DIST_SUBDIR=		rpm/i386/rh9
 PREFIX=			${LINUXBASE}
 NO_BUILD=		yes
 NO_FILTER_SHLIBS=	yes
 NO_MTREE=		yes
 PLIST=			${WRKDIR}/pkg-plist
-MD5_FILE=		${MASTERDIR}/distinfo.${MACHINE_ARCH}
 
-# Let's avoid hardcoding 'en' as the language.
+# Red Hat Linux 9 is only available in English.
 LANG=			en
 
 .ifdef USE_LINUX
@@ -87,17 +87,13 @@ REMOVE_FILES=		bin/df bin/su etc/exports etc/group etc/localtime \
 BRAND_FILES=		bin/rpm sbin/ldconfig sbin/sln
 
 .if (${ARCH} == "amd64")
-LATEST_LINK:=	${LATEST_LINK:C/linux/linux32/}
-MACHINE_ARCH=		i386
+LATEST_LINK:=		${LATEST_LINK:C/linux/linux32/}
 FALLBACK_ELF_MIB=	kern.elf32.fallback_brand
 .else
 FALLBACK_ELF_MIB=	kern.fallback_elf_brand
 .endif
 LINUX_ELF=		3
 PREVIOUS_ELF!=		/sbin/sysctl -n ${FALLBACK_ELF_MIB}
-
-do-patch:
-	@${DO_NADA}
 
 do-extract:
 #
@@ -123,7 +119,7 @@ do-extract:
 		${RPM} -U ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
 	@for F in ${BRAND_FILES}; do \
-		brandelf -t Linux ${WRKSRC}/$$F; \
+		${BRANDELF} -t Linux ${WRKSRC}/$$F; \
 	done
 	@/sbin/sysctl -w ${FALLBACK_ELF_MIB}=${PREVIOUS_ELF}
 #
