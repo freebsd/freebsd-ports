@@ -1,0 +1,15 @@
+@comment $FreeBSD$
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%CLASSDIR%%/key-test.pdf
+%%CLASSDIR%%/key-test.tex
+%%CLASSDIR%%/keystroke.sty
+%%CLASSDIR%%/keystroke_left.eps
+%%CLASSDIR%%/keystroke_left.pdf
+%%CLASSDIR%%/keystroke_middle.eps
+%%CLASSDIR%%/keystroke_middle.pdf
+%%CLASSDIR%%/keystroke_right.eps
+%%CLASSDIR%%/keystroke_right.pdf
+@dirrm %%CLASSDIR%%
+@exec %%MKTEXLSR%%
+@unexec %%MKTEXLSR%%
