@@ -9,8 +9,7 @@ PORTNAME=	aafid2
 PORTVERSION=	0.10
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.rge.com/pub/security/cerias/tools/unix/ids/AAFID/ \
-		ftp://ftp.sunsite.org.uk/Mirrors/coast.cs.purdue.edu/pub/COAST/tools/AAFID/ \
-		ftp://ftp.auscert.org.au/pub/coast/COAST/tools/AAFID/
+		ftp://ftp.cerias.purdue.edu/pub/tools/unix/ids/AAFID/
 EXTRACT_ONLY=
 
 MAINTAINER=	se@FreeBSD.org
