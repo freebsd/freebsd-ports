@@ -19,6 +19,8 @@ LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
+CFLAGS+=	${PTHREAD_CFLAGS}
+
 DOC_FILES=	fdt-example.xml flute-sdp-example.sdp
 
 pre-patch:
