@@ -22,9 +22,7 @@ MAINTAINER=	hendrik@scholz.net
 COMMENT=	A small and fast window manager based on BlackBox
 
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
-RUN_DEPENDS=	bsetbg:${PORTSDIR}/x11-wm/boxtools \
-		xterm:${PORTSDIR}/x11/XFree86-4-clients
-BUILD_DEPENDS=	xterm:${PORTSDIR}/x11/XFree86-4-clients
+RUN_DEPENDS=	bsetbg:${PORTSDIR}/x11-wm/boxtools
 .if defined(WITH_REMEMBER)
 WANT_AUTOMAKE_VER=14
 .endif
