@@ -8,13 +8,11 @@
 PORTNAME=	algotutor
 PORTVERSION=	0.7
 CATEGORIES=	math
-MASTER_SITES=	http://www.ofset.org/~ckhung/dl/
+MASTER_SITES=	http://www.cyut.edu.tw/~ckhung/dl/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	An interactive tutorial for algorithms and data structures
-
-BROKEN=		Unfetchable
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
 RUN_DEPENDS=	${BUILD_DEPENDS}
