@@ -44,6 +44,7 @@ CONFIGURE_ARGS?=--with-clash-detection \
 		--site-includes=${LOCALBASE}/include \
 		--site-libraries=${LOCALBASE}/lib \
 		--with-ldap=no \
+		--with-postgresql=no \
 		--with-site-lisp \
 		--with-database=berkdb \
 		${WITH_XFACE} ${WITH_DIALOGS} ${WITH_OFFIX} ${WITH_GTK}
