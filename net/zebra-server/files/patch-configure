@@ -1,15 +1,15 @@
---- configure.orig	Sat Aug 17 14:52:11 2002
-+++ configure	Sat Aug 17 14:53:16 2002
-@@ -697,7 +697,7 @@
+--- configure.orig	Sat Jan  4 16:33:07 2003
++++ configure	Sat Jan  4 16:33:58 2003
+@@ -705,7 +705,7 @@
  fi
  
  
--PACKAGE=zebra
+-PACKAGE=idzebra
 +PACKAGE=zebra-server
  
- VERSION=1.3.0
+ VERSION=1.3.4
  
-@@ -2005,6 +2005,7 @@
+@@ -2329,6 +2329,7 @@
  s%@DEFS@%$DEFS%g
  s%@LDFLAGS@%$LDFLAGS%g
  s%@LIBS@%$LIBS%g
