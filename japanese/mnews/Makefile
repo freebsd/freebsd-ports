@@ -3,7 +3,7 @@
 # Date created:			23 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1996/10/27 00:20:23 max Exp $
+# $Id: Makefile,v 1.4 1996/10/27 06:16:35 max Exp $
 #
 
 DISTNAME=	mnews119
@@ -30,16 +30,17 @@ do-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mnews ${PREFIX}/bin
-	${MKDIR} -p ${PREFIX}/lib/mnews
+	${MKDIR} ${PREFIX}/lib/mnews
 	${INSTALL_DATA} ${WRKSRC}/jnames.fj ${PREFIX}/lib/mnews/jnames
-	${MKDIR} -p ${PREFIX}/share/doc/mnews
+	${MKDIR} ${PREFIX}/share/doc/mnews
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/share/doc/mnews
 .endfor
-	${MKDIR} -p ${PREFIX}/share/examples/mnews
+	${MKDIR} ${PREFIX}/share/examples/mnews
 .for f in ${SAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/share/examples/mnews
 .endfor
+
 post-install:
 .if !defined(BATCH)
 	@(while [ X$$domain = X ]; do					\
