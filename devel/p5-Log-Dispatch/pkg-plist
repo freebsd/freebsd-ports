@@ -5,6 +5,7 @@ lib/perl5/site_perl/%%PERL_VER%%/Log/Dispatch/Base.pm
 lib/perl5/site_perl/%%PERL_VER%%/Log/Dispatch/Email.pm
 lib/perl5/site_perl/%%PERL_VER%%/Log/Dispatch/Email/MIMELite.pm
 lib/perl5/site_perl/%%PERL_VER%%/Log/Dispatch/Email/MailSend.pm
+lib/perl5/site_perl/%%PERL_VER%%/Log/Dispatch/Email/MailSender.pm
 lib/perl5/site_perl/%%PERL_VER%%/Log/Dispatch/Email/MailSendmail.pm
 lib/perl5/site_perl/%%PERL_VER%%/Log/Dispatch/File.pm
 lib/perl5/site_perl/%%PERL_VER%%/Log/Dispatch/Handle.pm

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log-Dispatch
-PORTVERSION=	2.00
+PORTVERSION=	2.01
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Log
@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
 
+BUILD_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_SUBMAKE=	yes
@@ -25,6 +26,7 @@ MAN3=	Log::Dispatch.3 \
 	Log::Dispatch::Email.3 \
 	Log::Dispatch::Email::MIMELite.3 \
 	Log::Dispatch::Email::MailSend.3 \
+	Log::Dispatch::Email::MailSender.3 \
 	Log::Dispatch::Email::MailSendmail.3 \
 	Log::Dispatch::File.3 \
 	Log::Dispatch::Handle.3 \
