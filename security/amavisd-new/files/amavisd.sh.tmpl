@@ -17,9 +17,6 @@ start)
 		if [ -e $MILTERFLAG ]; then
 			su %%AMAVISUSER%% -c "${PREFIX}/sbin/amavis-milter -D -p $DIR/amavis-milter.sock"
 		fi
-		export LANG="C"
-		export LC_ALL="C"
-		export LC_TIME="C"
 		su %%AMAVISUSER%% -c "${PREFIX}/sbin/amavisd > /dev/null 2>&1" && echo -n ' amavisd'
 	fi
 	;;
