@@ -40,6 +40,9 @@ CONFIGURE_ENV=	LDFLAGS=-static
 .else
 CONFIGURE_ARGS+= --enable-static-link=no
 .endif
+.if defined(DEBUG)
+CONFIGURE_ARGS+= --debug
+.endif
 MAN1=		bash.1 bashbug.1
 
 post-patch:
