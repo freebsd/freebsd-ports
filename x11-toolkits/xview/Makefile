@@ -7,51 +7,46 @@
 
 PORTNAME=	xview
 PORTVERSION=	3.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_LOCAL}	\
-		${MASTER_SITE_XCONTRIB}
-# former for ${MASTER_SITE_LOCAL}, latter for ${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS libraries
+MASTER_SITES=	ftp://ftp.efd.lth.se/pub/X11/ \
+		ftp://ftp.uni-heidelberg.de/pub/X11/contrib/libraries/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	pav
 DISTNAME=	xview3.2p1-X11R6
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X Window-System-based Visual/Integrated Environment for Workstations
 
+USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i ""
 USE_IMAKE=	yes
 INSTALLS_SHLIB=	yes
 IMAKEINCLUDE=	"-I${X11BASE}/lib/X11/config -I${WRKSRC}/config"
 MAKE_ENV+=	IMAKEINCLUDE=${IMAKEINCLUDE}
-XMKMF=		${SETENV} IMAKEINCLUDE=${IMAKEINCLUDE} xmkmf -a
 ALL_TARGET=	World
-USE_REINPLACE=	yes
-REINPLACE_ARGS=     -i ""
 
 MAN1=		msgfmt.1 xgettext.1 xview.1
 
-post-configure:
-	${CP} ${FILESDIR}/wait.h.in ${WRKSRC}/build/include/wait.h
-	${CP} ${FILESDIR}/types.h.in ${WRKSRC}/build/include/types.h
+post-patch:
+	@${REINPLACE_CMD} -e 's+/usr/X11R6+${PREFIX}+;' \
+	  ${WRKSRC}/config/XView.cf
+	@${REINPLACE_CMD} -e 's+/usr/X11/+${X11BASE}/+g;' \
+	  ${WRKSRC}/clients/olwm/screen.c
+	@${REINPLACE_CMD} -e 's+/usr/lib+${PREFIX}/lib+g;' \
+	  ${WRKSRC}/clients/olwmslave/help_file.c \
+	  ${WRKSRC}/lib/libxview/help/help_file.c \
+	  ${WRKSRC}/lib/libxview/misc/gettext.h \
+	  ${WRKSRC}/lib/libxview/textsw/txt_e_menu.c
+
+pre-configure:
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \
+	's|^#endif.*$$|#endif|;s|^#else.*$$|#else|;\
+	s|^/\*\*/#*|XCOMM |'
 
 post-install:
-
-	${INSTALL_DATA} ${WRKSRC}/build/include/wait.h ${X11BASE}/include/xview/
-	${INSTALL_DATA} ${WRKSRC}/build/include/types.h ${X11BASE}/include/xview/
-.if !defined(NOPORTDOCS)
-	@(cd $(WRKSRC); $(MAKE) -k 'SUBDIRS=doc' install)
+.if !defined{NOPORTDOCS}
+	@(cd ${WRKSRC}; ${MAKE} -k 'SUBDIRS=doc' install)
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501102
-BROKEN=		"Fails to compile due to imake"
-.endif
-
-.if ${OSVERSION} >= 500000
-post-patch:
-	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \
-	's|#include <sys/types.h>|#include "types.h"|;\
-	s|^#endif.*$$|#endif|;s|^#else.*$$|#else|'
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

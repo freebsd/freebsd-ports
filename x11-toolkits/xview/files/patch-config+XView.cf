@@ -1,0 +1,47 @@
+--- config/XView.cf.orig	Sun Jun 26 21:09:19 1994
++++ config/XView.cf	Sat Oct  4 12:37:28 2003
+@@ -101,7 +101,7 @@
+  *	the appropriate value.
+  */
+ #ifndef XVDestDir
+-#define XVDestDir /usr/X11/xview
++#define XVDestDir /usr/X11R6
+ #endif
+ /*
+  *	Command to add object modules to the library.
+@@ -139,7 +139,7 @@
+  *	installed in $(DESTDIR)/lib/X11/config (aka $(CONFIGDIR)).
+  */ 
+ #ifndef OnlyNeedsNewXViewConfigInstalled 
+-#define OnlyNeedsNewXViewConfigInstalled NO 
++#define OnlyNeedsNewXViewConfigInstalled YES
+ #endif 
+ /*
+  *	If you would like the XView man pages to be installed in 
+@@ -195,7 +195,7 @@
+ # if PreR4Server
+ # define LibXViewDefines -DPRE_R4_ICCCM
+ # else
+-# define LibXViewDefines -DFULL_R5 -I$(OPENWINHOME)/include -DSUNOS41 -DX11R6
++#   define LibXViewDefines -I$(OPENWINHOME)/include -DSUNOS41 -DX11R6 
+ # endif
+ #endif
+ /*
+@@ -259,7 +259,7 @@
+  *	following variable to YES.  
+  */
+ #ifndef InstallAllImages
+-#define InstallAllImages NO
++#define InstallAllImages YES
+ #endif
+ /*
+  *	If you do not already have the textsw extras menu installed in
+@@ -360,7 +360,7 @@
+  *    	be defined as -PIC
+  */
+ #ifndef PositionIndependentCodeFlag
+-#define PositionIndependentCodeFlag -PIC
++#define PositionIndependentCodeFlag -fPIC
+ #endif
+ 
+ /*

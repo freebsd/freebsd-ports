@@ -1,0 +1,11 @@
+--- lib/libxview/base/Imakefile.orig	Wed Oct  1 23:53:39 2003
++++ lib/libxview/base/Imakefile	Wed Oct  1 23:53:39 2003
+@@ -37,7 +37,7 @@
+ 	drawable.o\
+ 	xv_debug.o\
+ 	xv_parse.o\
+-	xv_list.o\ 
++	xv_list.o\
+ 	xv_error.o
+ 
+ SRCS=\

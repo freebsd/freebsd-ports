@@ -1,0 +1,11 @@
+--- ./lib/libxview/menu/Imakefile.orig	Tue Jun 29 07:16:27 1993
++++ ./lib/libxview/menu/Imakefile	Sat Apr  1 18:25:24 2000
+@@ -28,7 +28,7 @@ DATA_OBJS = om_data.o
+ TEXT_OBJS =\
+ 	omi.o\
+ 	om_public.o\
+-	om_render.o\ 
++	om_render.o\
+ 	om_set.o\
+ 	om_get.o\
+ 	om_compat.o

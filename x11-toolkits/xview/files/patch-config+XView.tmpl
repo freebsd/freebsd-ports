@@ -1,0 +1,95 @@
+--- config/XView.tmpl.orig	Mon Sep 29 00:02:17 2003
++++ config/XView.tmpl	Mon Sep 29 00:02:17 2003
+@@ -96,7 +96,7 @@
+  *      Work around small conflict with Project.tmpl file
+  */
+ #if UseInstalled
+-              MKDIRHIER = BourneShell BinDir/mkdirhier
++              MKDIRHIER = mkdirhier
+ #endif
+ 
+ #if OsHasLocale
+@@ -192,14 +192,6 @@
+                      AS = as
+  */
+ /*
+- *	use the same trick X11R5 does for defining rules for installed libs
+- */
+-#ifdef UseInstalled
+-#define _Use(a,b) a
+-#else
+-#define _Use(a,b) b
+-#endif
+-/*
+  *	Temporary directory used during build process before the include
+  *	files are installed.  This is just a place where symbolic links are
+  *	placed to point back to the actual files in the build hierarchy to
+@@ -224,7 +216,7 @@
+  *	afterwards.
+  */
+ #ifndef XVIncludeDirName
+-#define XVIncludeDirName /include
++#define XVIncludeDirName include
+ #endif
+                  INCDIR = XVIncludeDirName
+ /*
+@@ -356,10 +348,10 @@
+ 
+ #if SystemV4
+              SYSV_CLIENT_LIB = -lintl -ldl
+-	     XVCLIENTSYSDEFINES = -DSVR4 -DSYSV
++             XVCLIENTSYSDEFINES = -DSVR4 -DSYSV
+ #else
+              SYSV_CLIENT_LIB =
+-	     XVCLIENTSYSDEFINES = -DSUNOS41
++             XVCLIENTSYSDEFINES = -DSUNOS41
+ #endif
+ 
+ /*
+@@ -371,16 +363,16 @@
+  */
+ 
+ #if XvI18nLevel == 4
+-	XVCLIENTI18NDEFINES = -DOW_I18N_L4 -DOW_I18N_L3 -DOW_I18N -DFULL_R5
+-	XVCLIENTMISCLIB = -lw
+-	XVCLIENTINCLUDES = -I$(OPENWINHOME)/include
++        XVCLIENTI18NDEFINES = -DOW_I18N_L4 -DOW_I18N_L3 -DOW_I18N -DFULL_R5
++        XVCLIENTMISCLIB = -lw
++        XVCLIENTINCLUDES = -I$(OPENWINHOME)/include
+ #else
+-	XVCLIENTI18NDEFINES = -DOW_I18N_L3
+-	XVCLIENTMISCLIB = 
+-	XVCLIENTINCLUDES = 
++        XVCLIENTI18NDEFINES = -DOW_I18N_L3
++        XVCLIENTMISCLIB = 
++        XVCLIENTINCLUDES = 
+ #endif
+ 
+-	XVCLIENTDEFINES = $(XVCLIENTSYSDEFINES) $(XVCLIENTI18NDEFINES)
++        XVCLIENTDEFINES = $(XVCLIENTSYSDEFINES) $(XVCLIENTI18NDEFINES)
+ 
+ /*
+  *	Define libraries for XView clients
+@@ -410,7 +402,7 @@
+  */
+ #if SharedLibXView
+ # ifndef SharedXViewRev
+-#if SystemV4
++#if SystemV4 || UseElfFormat
+ # define SharedXViewRev 3
+ #else
+ # define SharedXViewRev 3.2
+@@ -449,12 +441,8 @@
+  *	Include the XView specific makefile macros.
+  */
+ 
+-/*  This is just needed here because X11 is installed with gcc as
+-    a default compiler.
+-	lumpi@dobag.in-berlin.de
+-
+ #undef CcCmd
+ #define CcCmd cc
+-#define LibraryCcCmd cc */
++#define LibraryCcCmd cc
+ #include <XView.rules>
+ #endif
