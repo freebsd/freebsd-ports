@@ -7,7 +7,8 @@
 PORTNAME=	vice
 PORTVERSION=	1.15
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://ftp.funet.fi/pub/cbm/crossplatform/emulators/VICE/
+MASTER_SITES=	ftp://ftp.funet.fi/pub/cbm/crossplatform/emulators/VICE/ \
+		http://distfiles.opendarwin.org/
 PKGNAMESUFFIX?=	${GNOME_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
