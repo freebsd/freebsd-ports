@@ -1,8 +1,0 @@
-# Build extensions shared:
-*shared*
-#
-
-#
-# mxStack module
-#
-mxStack mxStack.c

@@ -1,6 +1,0 @@
-The package contains a collection of useful functions that aid in
-common tasks like iterating over objects or applying functions to
-sets of parameters. The functions contained in the package auto-install
-themselves as builtins when the package is imported.
-
-WWW: http://starship.skyport.net/~lemburg/mxTools.html
