@@ -1,12 +1,10 @@
 bin/b2g.pl
 bin/g2b.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/Encode/HanConvert.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Encode/HanConvert/Perl.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Encode/HanConvert/Perl.pm-orig
+%%SITE_PERL%%/Encode/HanConvert.pm
+%%SITE_PERL%%/Encode/HanConvert.pm.orig
+%%SITE_PERL%%/Encode/HanConvert/Perl.pm
+%%SITE_PERL%%/Encode/HanConvert/Perl.pm-orig
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/HanConvert/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/HanConvert/HanConvert.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/HanConvert/HanConvert.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/HanConvert
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Encode/HanConvert
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Encode
+@dirrm %%SITE_PERL%%/Encode/HanConvert
+@dirrm %%SITE_PERL%%/Encode
