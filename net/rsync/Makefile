@@ -17,7 +17,11 @@ MASTER_SITES=	ftp://samba.anu.edu.au/pub/rsync/  \
 
 MAINTAINER=	obraun@informatik.unibw-muenchen.de
 
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
+
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
 
