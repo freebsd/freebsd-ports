@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	apinger
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	net
 MASTER_SITES=	http://www.bnet.pl/~jajcus/apinger/ 
 
