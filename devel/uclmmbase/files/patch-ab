@@ -1,5 +1,14 @@
---- configure.orig	Fri Oct 15 18:31:00 1999
-+++ configure	Fri Jan 28 03:52:54 2000
+--- configure.orig	Fri Oct 15 04:31:00 1999
++++ configure	Sat Feb 19 10:37:29 2000
+@@ -53,7 +53,7 @@
+ 
+ echo "Configuring common code library v$VERSION for $OSTYPE"
+ 
+-GCCWFLAGS="-W -Wall -Wbad-function-cast -Wmissing-prototypes -Werror"
++GCCWFLAGS="-W -Wall -Wbad-function-cast -Wmissing-prototypes"
+ DEFS=""
+ 
+ AR="ar"
 @@ -99,13 +99,13 @@
  	    PROFILE="-pg"
  	    ECHO="echo -e"
