@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	argus
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	net security
 MASTER_SITES=	http://qosient.com/argus/src/ \
 		ftp://qosient.com/pub/argus/src/
