@@ -1,5 +1,5 @@
-bin/ruby
 bin/%%RUBY_NAME%%
+@unexec if [ -f %D/bin/ruby ]; then rm %D/bin/ruby; fi
 lib/lib%%RUBY_NAME%%.so
 lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_ARCHLIBDIR%%/config.h
