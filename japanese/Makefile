@@ -299,6 +299,7 @@
     SUBDIR += plain2
     SUBDIR += plan
     SUBDIR += platex-jsclasses
+    SUBDIR += platex-otf
     SUBDIR += platex209
     SUBDIR += postgresql
     SUBDIR += postgresql-tcltk
