@@ -28,6 +28,8 @@ libexec/rep/%%VERSION%%/%%GNUHOST%%/gettext.la
 libexec/rep/%%VERSION%%/%%GNUHOST%%/gettext.so
 libexec/rep/%%VERSION%%/%%GNUHOST%%/readline.la
 libexec/rep/%%VERSION%%/%%GNUHOST%%/readline.so
+libexec/rep/%%VERSION%%/%%GNUHOST%%/record-profile.la
+libexec/rep/%%VERSION%%/%%GNUHOST%%/record-profile.so
 libexec/rep/%%VERSION%%/%%GNUHOST%%/sdbm.la
 libexec/rep/%%VERSION%%/%%GNUHOST%%/sdbm.so
 libexec/rep/%%VERSION%%/%%GNUHOST%%/tables.la
@@ -100,6 +102,8 @@ share/rep/%%VERSION%%/lisp/pwd-prompt.jl
 share/rep/%%VERSION%%/lisp/pwd-prompt.jlc
 share/rep/%%VERSION%%/lisp/queues.jl
 share/rep/%%VERSION%%/lisp/queues.jlc
+share/rep/%%VERSION%%/lisp/profiler.jl
+share/rep/%%VERSION%%/lisp/profiler.jlc
 share/rep/%%VERSION%%/lisp/records.jl
 share/rep/%%VERSION%%/lisp/records.jlc
 share/rep/%%VERSION%%/lisp/remote-ftp.jl
