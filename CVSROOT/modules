@@ -8031,6 +8031,7 @@ pear-File_Passwd	ports/security/pear-File_Passwd
 pear-HTML_BBCodeParser	ports/devel/pear-HTML_BBCodeParser
 pear-HTML_Common	ports/devel/pear-HTML_Common
 pear-HTML_Form	ports/devel/pear-HTML_Form
+pear-HTML_Javascript	ports/devel/pear-HTML_Javascript
 pear-HTML_QuickForm	ports/devel/pear-HTML_QuickForm
 pear-HTML_QuickForm_Controller	ports/devel/pear-HTML_QuickForm_Controller
 pear-HTML_Select	ports/devel/pear-HTML_Select
