@@ -7,18 +7,19 @@
 #
 
 PORTNAME=	sxm
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.malgil.com/sxm/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_GMAKE=	yes
 ALL_TARGET=	all image Formlist
 
 MAN1=		sxm.1 sxi.1
 
-post-extract:
-	@${PERL} -pi -e "s|/usr/local|${PREFIX}|g" ${WRKSRC}/Makefile
+post-patch:
+	@${PERL} -pi -e "s|/usr/local|${PREFIX}|g ; \
+		s,^CC,#CC,g" ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
