@@ -1,14 +1,15 @@
 # New ports collection makefile for:    cdrecord
-# Version required:     1.5
+# Version required:     1.6a12
 # Date created:         2 November 1997
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.1 1997/11/05 15:22:36 jmz Exp $
+# $Id: Makefile,v 1.2 1997/11/05 23:55:31 asami Exp $
 #
 
-DISTNAME=	cdrecord-1.5
+DISTNAME=	cdrecord-1.6a12
+PKGNAME=	cdrecord-1.6
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/
+MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/alpha/
 
 MAINTAINER=	jmz@FreeBSD.org
 
@@ -16,15 +17,15 @@ RUN_DEPENDS=	mkisofs:${PORTSDIR}/sysutils/mkisofs
 
 MAN1=		cdrecord.1
 USE_GMAKE=	yes
+WRKSRC=		${WRKDIR}/${PKGNAME}
 
 do-build:
 	@cd ${WRKSRC}/lib && ../Gmake
-	@cd ${WRKSRC}/cdrecord && ../Gmake
+	@cd ${WRKSRC}/cdrecord && ../Gmake COPTX=-DBSD_SCSI_SENSE_BUG
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/cdrecord/OBJ/i386-freebsd-cc/cdrecord \
 	 ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/cdrecord/cdrecord.1 ${PREFIX}/man/man1
-	@cd /dev && ln -sf /dev/rworm0.ctl sgx
 
 .include <bsd.port.mk>
