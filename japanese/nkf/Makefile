@@ -7,10 +7,11 @@
 
 PORTNAME=	nkf
 PORTVERSION=	1.92
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.ie.u-ryukyu.ac.jp/pub/software/kono/
-EXTRACT_SUFX=	.shar
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
+EXTRACT_SUFX=	.shar
 
 MAINTAINER=	max@FreeBSD.org
 
