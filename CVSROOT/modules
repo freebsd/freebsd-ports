@@ -4848,6 +4848,7 @@ libmpeg2	ports/multimedia/libmpeg2
 libmspack	ports/archivers/libmspack
 libmt_client	ports/games/libmt_client
 libmtrie	ports/devel/libmtrie
+libmusepack	ports/audio/libmusepack
 libmusicbrainz	ports/audio/libmusicbrainz
 libnet		ports/net/libnet
 libnet-devel	ports/net/libnet-devel
