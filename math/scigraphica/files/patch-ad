@@ -1,0 +1,10 @@
+--- zvt/subshell.c	2000/08/31 07:45:08	1.1
++++ zvt/subshell.c	2000/08/31 07:46:53
+@@ -24,6 +24,7 @@
+ #include <sys/time.h>
+ #include <sys/resource.h>
+ #include <sys/stat.h>
++#include <sys/param.h>
+ #include <limits.h>
+ #include <unistd.h>
+ #include <string.h>
