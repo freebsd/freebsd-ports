@@ -1,0 +1,22 @@
+
+$FreeBSD$
+
+--- libgnome/gnome-util.c	2002/03/19 17:16:21	1.1
++++ libgnome/gnome-util.c	2002/03/19 17:21:31
+@@ -67,11 +67,11 @@
+ 	static char *shells [] = {
+ 		/* Note that on some systems shells can also
+ 		 * be installed in /usr/bin */
+-		"/bin/bash", "/usr/bin/bash",
+-		"/bin/zsh", "/usr/bin/zsh",
+-		"/bin/tcsh", "/usr/bin/tcsh",
+-		"/bin/ksh", "/usr/bin/ksh",
+-		"/bin/csh", "/bin/sh", 0
++		"/bin/csh", "/bin/sh",
++		LOCALBASE "/bin/bash",
++		LOCALBASE "/bin/zsh",
++		LOCALBASE "/bin/ksh",
++		0
+ 	};
+ 
+ 	if (geteuid () == getuid () &&

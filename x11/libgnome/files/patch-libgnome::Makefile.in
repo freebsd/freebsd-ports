@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- libgnome/Makefile.in.orig	Tue Mar 19 19:15:47 2002
-+++ libgnome/Makefile.in	Thu Mar 28 13:32:17 2002
-@@ -147,7 +147,7 @@
+--- libgnome/Makefile.in.orig	Fri Apr 26 13:14:03 2002
++++ libgnome/Makefile.in	Fri Apr 26 13:14:03 2002
+@@ -149,7 +149,7 @@
  
  libgnomeincludedir = $(includedir)/libgnome-2.0/libgnome
  
@@ -12,21 +12,3 @@ $FreeBSD$
  
  
  libgnome_2_la_SOURCES =  	libgnometypebuiltins.h		libgnometypebuiltins.c		gnome-config.c			gnome-sound.c			gnome-triggers.c		gnome-triggersP.h		gnome-program.c			gnome-help.c			gnome-exec.c			gnome-gconf.c			gnome-gconfP.h			gnome-i18n.c			gnome-i18nP.h			gnome-url.c			gnome-util.c			gnome-score.c			gnome-init.c
-@@ -171,7 +171,7 @@
- libgnome_2_la_LIBADD =  	$(LIBGNOME_LIBS)
- 
- 
--noinst_PROGRAMS =  	test-libgnome
-+noinst_PROGRAMS =  	
- 
- 
- test_libgnome_SOURCES = test-libgnome.c
-@@ -193,7 +193,7 @@
- gnome-sound.lo gnome-triggers.lo gnome-program.lo gnome-help.lo \
- gnome-exec.lo gnome-gconf.lo gnome-i18n.lo gnome-url.lo gnome-util.lo \
- gnome-score.lo gnome-init.lo
--noinst_PROGRAMS =  test-libgnome$(EXEEXT)
-+noinst_PROGRAMS =  
- PROGRAMS =  $(noinst_PROGRAMS)
- 
- test_libgnome_OBJECTS =  test-libgnome.$(OBJEXT)
