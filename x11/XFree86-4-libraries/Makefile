@@ -7,6 +7,7 @@
 
 PORTNAME=	libraries
 PORTVERSION=	4.2.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE} \
 		ftp://psych.psy.uq.oz.au/pub/X11R5/:wrap \
@@ -17,6 +18,11 @@ PKGNAMEPREFIX=	XFree86-
 EXTRACT_ONLY=	X${PORTVERSION:S/.//g}src-1.tgz
 DISTFILES=	X${PORTVERSION:S/.//g}src-1.tgz Wraphelp.c:wrap
 IGNOREFILES=	Wraphelp.c
+
+PATCH_SITES=		${MASTER_SITE_XFREE:S/source//g}
+PATCH_SITE_SUBDIR=	${PORTVERSION}/fixes
+PATCHFILES=		4.2.0-xlib-i18n-module.patch
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
