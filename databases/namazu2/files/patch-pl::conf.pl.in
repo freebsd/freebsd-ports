@@ -1,0 +1,33 @@
+--- pl/conf.pl.in.orig	Thu Aug 23 17:19:52 2001
++++ pl/conf.pl.in	Sat Oct 13 05:34:48 2001
+@@ -173,17 +173,17 @@
+ #
+ # Network Kanji Filter nkf v1.62 or later
+ #
+-$NKF = "@NKF@"; 
++$NKF = "module_nkf"; 
+ 
+ #
+ # KAKASI
+ #
+-$KAKASI = "@DO_KAKASI@";
++$KAKASI = "module_kakasi";
+ 
+ #
+ # ChaSen 1.51 or later (simple wakatigaki)
+ #
+-$CHASEN = "@DO_CHASEN@";
++$CHASEN = "module_chasen";
+ 
+ #
+ # ChaSen 1.51 or later (with noun words extraction)
+@@ -193,7 +193,8 @@
+ #
+ # Default Japanese processer: KAKASI or ChaSen.
+ #
+-$WAKATI  = $@OPT_WAKATI_DEFAULT@;
++$WAKATI  = $KAKASI;
++$WAKATI  = $CHASEN;
+ 
+ 
+ #===================================================================
