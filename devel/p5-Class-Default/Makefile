@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-Default
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -18,8 +18,11 @@ COMMENT=	Static calls apply to a default instantiation
 BUILD_DEPENDS=	${SITE_PERL}/Class/Inspector.pm:${PORTSDIR}/devel/p5-Class-Inspector
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		Class::Default.3
+
+post-patch:
+	@${PERL} -pi -e 's/^auto_install.*$$//' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
