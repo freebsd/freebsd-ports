@@ -11,6 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	q-lang
 PKGNAMEPREFIX=	q-
+DISTNAME=	${PKGNAME}
 
 MAINTAINER=	ag@muwiinfa.geschichte.uni-mainz.de
 COMMENT=	Q-Audio -- digital audio interface for the Q language
