@@ -1,0 +1,12 @@
+--- libefs/libefs-config.in.orig	Thu Aug 24 18:39:10 2000
++++ libefs/libefs-config.in	Mon Oct  9 17:56:10 2000
+@@ -55,3 +55,3 @@
+     --cflags)
+-       	echo -I@includedir@
++       	echo -I@includedir@ @GLIB_CFLAGS@
+        	;;
+@@ -59,3 +59,3 @@
+     --libs)
+-       	echo -L@libdir@ -lefs -lglib -lz -lcrypt
++       	echo -L@libdir@ -lefs @GLIB_LIBS@ -lz -lcrypt
+        	;;
