@@ -21,7 +21,6 @@
 # Skip all ports files except for Makefiles.
 ^ports/.*(?<!/Makefile)$
 
-^src/contrib/.*/FREEBSD-Xlist
 ^src/contrib/nvi/catalog
 ^src/crypto/openssh/
 ^src/etc/minfree
