@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	tkmoo
-PORTVERSION=	0.3.23
-CATEGORIES=	games tk82
+PORTVERSION=	0.3.28
+CATEGORIES=	games tk83
 MASTER_SITES=	http://www.awns.com/tkMOO-light/Source/
 DISTNAME=	tkMOO-light-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-RUN_DEPENDS=	${WISH82}:${PORTSDIR}/x11-toolkits/tk82
+RUN_DEPENDS=	${WISH83}:${PORTSDIR}/x11-toolkits/tk83
 
-WISH82?=	${LOCALBASE}/bin/wish8.2
+WISH83?=	${LOCALBASE}/bin/wish8.3
 MAKE_ENV+=	TKMOO_LIB_DIR="${PREFIX}/share/tkmoo" \
-		TKMOO_BIN_DIR="${PREFIX}/bin" WISH8.2="${WISH82}"
+		TKMOO_BIN_DIR="${PREFIX}/bin" WISH8.3="${WISH83}"
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/tkmoo/plugins
