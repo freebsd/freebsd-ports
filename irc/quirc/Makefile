@@ -1,13 +1,12 @@
 # New ports collection makefile for:	QuIRC
-# Version required:	0.9.77
+# Version required:	0.9.79
 # Date created:		21 May 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
-# $Id: Makefile,v 1.2 1999/06/19 08:25:54 cpiazza Exp $
+# $Id: Makefile,v 1.3 1999/06/28 02:20:53 billf Exp $
 #
 
-DISTNAME=	quirc
-PKGNAME=	quirc-0.9.77
+DISTNAME=	quirc-0.9.79
 CATEGORIES=	irc tk80
 MASTER_SITES=	http://www.quirc.org/ \
 		http://patearl.powersurfr.com/quirc/
@@ -18,8 +17,13 @@ LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
+ALL_TARGET=	all quirc.inst
+
+pre-install:
+	@${MKDIR} ${PREFIX}/share/doc/quirc/doc
 
 post-install:
+	@${INSTALL_SCRIPT} ${WRKSRC}/quirc.inst ${PREFIX}/bin
 	@strip ${PREFIX}/bin/quirc
 
 .include <bsd.port.mk>

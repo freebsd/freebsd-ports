@@ -1,5 +1,14 @@
 bin/quirc
 bin/quirc.inst
+share/doc/quirc/AUTHORS
+share/doc/quirc/COPYING
+share/doc/quirc/ChangeLog
+share/doc/quirc/FAQ
+share/doc/quirc/INSTALL
+share/doc/quirc/NEWS
+share/doc/quirc/README
+share/doc/quirc/doc/color.txt
+share/doc/quirc/doc/rfc1459.txt
 share/quirc/VERSION
 share/quirc/country.tcl
 share/quirc/dal.tcl
@@ -7,14 +16,18 @@ share/quirc/default.tcl
 share/quirc/fun.tcl
 share/quirc/global.tcl
 share/quirc/killjpq.tcl
+share/quirc/listfile.tcl
 share/quirc/mircservers.tcl
 share/quirc/newserver.tcl
 share/quirc/notify.tcl
 share/quirc/popups.tcl
+share/quirc/quedit
 share/quirc/qwidgets.tcl
 share/quirc/servers
 share/quirc/style.tcl
 share/quirc/translate.tcl
 share/quirc/variables.tcl
 share/quirc/winpopup.tcl
+@dirrm share/doc/quirc/doc
+@dirrm share/doc/quirc
 @dirrm share/quirc
