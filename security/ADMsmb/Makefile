@@ -9,7 +9,8 @@ PORTNAME=	ADMsmb
 PORTVERSION=	0.3
 CATEGORIES=	security
 MASTER_SITES=	http://www.geocities.com/bofn1001/ \
-		http://adm.freelsd.net/ADM/
+		${MASTER_SITE_PACKETSTORM}
+MASTER_SITE_SUBDIR=	groups/ADM
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
