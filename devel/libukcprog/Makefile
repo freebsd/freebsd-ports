@@ -9,8 +9,8 @@ PORTNAME=	libukcprog
 PORTVERSION=	1.0.2
 PORTREVISION=	3
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.mirror.ac.uk/sites/ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
-		http://www.mirror.ac.uk/sites/ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
+MASTER_SITES=	ftp://ftp.mirrorservice.org/sites/ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
+		http://www.mirrorservice.org/sites/ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
 		ftp://ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
 		http://www.i-scream.org/pub/i-scream/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
