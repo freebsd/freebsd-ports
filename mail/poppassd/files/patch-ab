@@ -1,5 +1,5 @@
---- poppassd.c.orig	Sun Jul  6 03:40:55 2003
-+++ poppassd.c	Sun Jul  6 03:41:49 2003
+--- poppassd.c.orig	Mon Jul  7 15:15:03 2003
++++ poppassd.c	Mon Jul  7 15:17:46 2003
 @@ -13,11 +13,11 @@
   * 
   * Doesn't actually change any passwords itself.  It simply listens for
@@ -32,42 +32,37 @@
   * back to the client in the final 500 response, and a new version of the
   * code to find the next free pty, is by Norstad.
   *        
-@@ -145,14 +145,17 @@
+@@ -145,8 +145,11 @@
  static char *P1[] =
     {"Old password:",
      "Changing password for *.\nOld password:",
 +    "Changing local password for *.\nOld password:",
++    "Changing local password for *\nOld Password:",
      "Changing password for * on *.\nOld password:",
--    "Changing NIS password for * on *.\nOld password:",
+     "Changing NIS password for * on *.\nOld password:",
 +    "Changing NIS password for * on *.\nOld Password:",
      "Changing password for *\n*'s Old password:",
-+    "Changing local password for *\nOld Password:",
      ""};
  
- static char *P2[] =
-    {"\nNew password:",
-     "\n*'s New password:",
-+    "\nNew Password:",
-     ""};
- 
- static char *P3[] =
-@@ -161,11 +164,15 @@
-     "\nEnter the new password again:",
-     "\n*Re-enter *'s new password:",
-     "\nVerify:",
-+    "\nRetype New Password:",
-     ""};
+@@ -165,7 +168,10 @@
      
  static char *P4[] =
     {"\n",
 +    "\npasswd: rebuilding the database...\npasswd: done\n",
-+	"\npasswd: updating the database...\npasswd: done\n",
++    "\npasswd: updating the database...\npasswd: done\n",
      "NIS entry changed on *\n",
 +    "\n\nNIS password has been changed on *.\n",
      ""};
  
  
-@@ -186,11 +193,7 @@
+@@ -180,17 +186,14 @@
+      char emess[BUFSIZE];
+      char *slavedev;
+      struct passwd *pw, *getpwnam();
++     struct termios stermios;
+      int c, master;
+      pid_t pid, wpid;
+      int wstat;
       
       *user = *oldpass = *newpass = 0;
       
@@ -98,43 +93,161 @@
  	  WriteToClient ("500 Old password is incorrect.");
  	  exit(1);
       }
-@@ -264,28 +271,28 @@
- 
- 	  if ((wpid = waitpid (pid, &wstat, 0)) < 0)
- 	  {
--	       syslog (LOG_ERR, "wait for /bin/passwd child failed: %m");
-+	       syslog (LOG_ERR, "wait for /usr/bin/passwd child failed: %m");
- 	       WriteToClient ("500 Server error (wait failed), get help!");
- 	       exit (1);
- 	  }
- 
- 	  if (pid != wpid)
- 	  {
--	       syslog (LOG_ERR, "wrong child (/bin/passwd waited for!");
-+	       syslog (LOG_ERR, "wrong child (/usr/bin/passwd) waited for!");
- 	       WriteToClient ("500 Server error (wrong child), get help!");
- 	       exit (1);
- 	  }
- 
- 	  if (WIFEXITED (wstat) == 0)
- 	  {
--	       syslog (LOG_ERR, "child (/bin/passwd) killed?");
-+	       syslog (LOG_ERR, "child (/usr/bin/passwd) killed?");
- 	       WriteToClient ("500 Server error (funny wstat), get help!");
- 	       exit (1);
- 	  }
- 
- 	  if (WEXITSTATUS (wstat) != 0)
- 	  {
--	       syslog (LOG_ERR, "child (/bin/passwd) exited abnormally");
-+	       syslog (LOG_ERR, "child (/usr/bin/passwd) exited abnormally");
- 	       WriteToClient ("500 Server error (abnormal exit), get help!");
- 	       exit (1);
- 	  }
-@@ -304,17 +311,19 @@
+@@ -232,99 +239,96 @@
+ 	  WriteToClient ("500 New password required.");
+ 	  exit(1);
       }
-      else      /* Child */
-      {
+-     /* get pty to talk to password program */
+-     if ((master = findpty (&slavedev)) < 0)
+-     {
+-	  syslog (LOG_ERR, "can't find pty");
+-          WriteToClient("500 Server busy - try again later.");
+-	  exit (1);
+-     }
+-	 
+-     /* fork child process to talk to password program */
+-     if ((pid = fork()) < 0)     /* Error, can't fork */
+-     {
+-	  syslog (LOG_ERR, "can't fork for passwd: %m");
+-	  WriteToClient ("500 Server error (can't fork passwd), get help!");
+-	  exit (1);
+-     }
+ 
+-     if (pid)   /* Parent */
+-     {
+-	  sleep (1);    /* Make sure child is ready.  Is this really needed? */
+-	  if (talktochild (master, user, oldpass, newpass, emess) == FAILURE)
+-	  {
+-	       syslog (LOG_ERR, "failed attempt by %s", user);
+-	       if (*emess == '\0') {
+-	          WriteToClient ("500 Unable to change password." );
+-               } else {
+-		  WriteToClient ("500 %s", emess);
+-               }
+-	       exit(1);
+-	  }
+-
+-	  if ((wpid = waitpid (pid, &wstat, 0)) < 0)
+-	  {
+-	       syslog (LOG_ERR, "wait for /bin/passwd child failed: %m");
+-	       WriteToClient ("500 Server error (wait failed), get help!");
+-	       exit (1);
+-	  }
+-
+-	  if (pid != wpid)
+-	  {
+-	       syslog (LOG_ERR, "wrong child (/bin/passwd waited for!");
+-	       WriteToClient ("500 Server error (wrong child), get help!");
+-	       exit (1);
+-	  }
+-
+-	  if (WIFEXITED (wstat) == 0)
+-	  {
+-	       syslog (LOG_ERR, "child (/bin/passwd) killed?");
+-	       WriteToClient ("500 Server error (funny wstat), get help!");
+-	       exit (1);
+-	  }
+-
+-	  if (WEXITSTATUS (wstat) != 0)
+-	  {
+-	       syslog (LOG_ERR, "child (/bin/passwd) exited abnormally");
+-	       WriteToClient ("500 Server error (abnormal exit), get help!");
+-	       exit (1);
+-	  }
+-
+-	  syslog (LOG_ERR, "password changed for %s", user);
+-	  WriteToClient ("200 Password changed, thank-you.");
+-
+-          ReadFromClient (line);
+-	  if (strncmp(line, "quit", 4) != 0) {
+-	  	WriteToClient("500 Quit required.");
++	/* we need a pty to run passwd on but we have to make sure it is set up
++	   as we like it - no echo, canonical input processing, no map NL to CR/NL
++	   on outputs - otherwise our expect function will be confused */
++	(void)memset((void *)&stermios, 0, sizeof(stermios));
++	stermios.c_lflag &= ~(ECHO | ECHOE | ECHOK | ECHONL);
++	stermios.c_lflag |= ICANON;
++	stermios.c_oflag &= ~(ONLCR);
++
++	/* get a pty and fork */
++	switch(pid = forkpty(&master, NULL, &stermios, NULL)) {
++	case -1:
++		/* failure - can't get pty, can't fork etc */
++		WriteToClient("500 Server Error - Contact Your Administrator");
++		exit(1);
++		break;
++	case 0:
++		/* slave/child */
++		/* Set login name */
++		if (setlogin(user) < 0) {
++			syslog(LOG_ERR, "setlogin failed: %m");
++			WriteToClient("500 Server Error - Contact Your Administrator");
++			return(0);
++		}
++		setuid (pw->pw_uid);
++		setgid (pw->pw_gid);
++		dochild (master, NULL, user);
++		break;
++	default:
++		/* master/parent */
++		sleep (1);    /* Make sure child is ready.  Is this really needed? */
++		if (talktochild (master, user, oldpass, newpass, emess) == FAILURE)
++		{
++			syslog (LOG_ERR, "failed attempt by %s", user);
++			if (*emess == '\0') {
++				WriteToClient ("500 Unable to change password." );
++			} else {
++				WriteToClient ("500 %s", emess);
++			}
++			exit(1);
++		}
++		
++		break;
++	}
++
++	if ((wpid = waitpid (pid, &wstat, 0)) < 0)
++	{
++		syslog (LOG_ERR, "wait for /usr/bin/passwd child failed: %m");
++		WriteToClient ("500 Server error (wait failed), get help!");
++		exit (1);
++	}
++
++	if (pid != wpid)
++	{
++	     syslog (LOG_ERR, "wrong child (/usr/bin/passwd) waited for!");
++	     WriteToClient ("500 Server error (wrong child), get help!");
++	     exit (1);
++	}
++
++	if (WIFEXITED (wstat) == 0)
++	{
++	     syslog (LOG_ERR, "child (/usr/bin/passwd) killed?");
++	     WriteToClient ("500 Server error (funny wstat), get help!");
++	     exit (1);
++	}
++
++	if (WEXITSTATUS (wstat) != 0)
++	{
++	     syslog (LOG_ERR, "child (/usr/bin/passwd) exited abnormally");
++	     WriteToClient ("500 Server error (abnormal exit), get help!");
++	     exit (1);
++	}
++
++	syslog (LOG_ERR, "password changed for %s", user);
++	WriteToClient ("200 Password changed, thank-you.");
++
++    ReadFromClient (line);
++	if (strncmp(line, "quit", 4) != 0) {
++		WriteToClient("500 Quit required.");
+ 		exit (1);
+-	  }
++	}
+ 	  
+-	  WriteToClient("200 Bye.");
+-	  exit (0);
+-     }
+-     else      /* Child */
+-     {
 -	  /*
 -	   * Become the user trying who's password is being changed.  We're
 -	   * about to exec /bin/passwd with is setuid root anyway, but this
@@ -146,23 +259,14 @@
 -	   * else's password, you can complain to your vendor about security
 -	   * holes, not to me!
 -	   */
-+          /* Start new session - gets rid of controlling terminal. */
-+   
-+          if (setsid() < 0) {
-+               syslog(LOG_ERR, "setsid failed: %m");
-+               return(0);
-+	  }
-+
-+	  /* Set login name */
-+
-+	  if (setlogin(user) < 0) {
-+	       syslog(LOG_ERR, "setlogin failed: %m");
-+	       return(0);
-+          }
- 	  setuid (pw->pw_uid);
- 	  setgid (pw->pw_gid);
- 	  dochild (master, slavedev, user);
-@@ -324,7 +333,7 @@
+-	  setuid (pw->pw_uid);
+-	  setgid (pw->pw_gid);
+-	  dochild (master, slavedev, user);
+-     }
++	WriteToClient("200 Bye.");
++	exit (0);
+ }
+ 
  /*
   * dochild
   *
@@ -171,9 +275,13 @@
   *
   * Code adapted from "Advanced Programming in the UNIX Environment"
   * by W. Richard Stevens.
-@@ -338,13 +347,6 @@
-    int slave;
-    struct termios stermios;
+@@ -335,105 +339,14 @@
+ int master;
+ char *slavedev, *user;
+ {
+-   int slave;
+-   struct termios stermios;
++   /* Fork /usr/bin/passwd. */
  
 -   /* Start new session - gets rid of controlling terminal. */
 -   
@@ -182,16 +290,50 @@
 -      return(0);
 -   }
 -
-    /* Open slave pty and acquire as new controlling terminal. */
- 
-    if ((slave = open(slavedev, O_RDWR)) < 0) {
-@@ -387,10 +389,10 @@
-       return(0);
-    }
- 
+-   /* Open slave pty and acquire as new controlling terminal. */
+-
+-   if ((slave = open(slavedev, O_RDWR)) < 0) {
+-      syslog(LOG_ERR, "can't open slave pty: %m");
+-      return(0);
+-   }
+-
+-   /* Close master. */
+-
+-   close(master);
+-
+-   /* Make slave stdin/out/err of child. */
+-
+-   if (dup2(slave, STDIN_FILENO) != STDIN_FILENO) {
+-      syslog(LOG_ERR, "dup2 error to stdin: %m");
+-      return(0);
+-   }
+-   if (dup2(slave, STDOUT_FILENO) != STDOUT_FILENO) {
+-      syslog(LOG_ERR, "dup2 error to stdout: %m");
+-      return(0);
+-   }
+-   if (dup2(slave, STDERR_FILENO) != STDERR_FILENO) {
+-      syslog(LOG_ERR, "dup2 error to stderr: %m");
+-      return(0);
+-   }
+-   if (slave > 2) close(slave);
+-
+-   /* Set proper terminal attributes - no echo, canonical input processing,
+-      no map NL to CR/NL on output. */
+-
+-   if (tcgetattr(0, &stermios) < 0) {
+-      syslog(LOG_ERR, "tcgetattr error: %m");
+-      return(0);
+-   }
+-   stermios.c_lflag &= ~(ECHO | ECHOE | ECHOK | ECHONL);
+-   stermios.c_lflag |= ICANON;
+-   stermios.c_oflag &= ~(ONLCR);
+-   if (tcsetattr(0, TCSANOW, &stermios) < 0) {
+-      syslog(LOG_ERR, "tcsetattr error: %m");
+-      return(0);
+-   }
+-
 -   /* Fork /bin/passwd. */
-+   /* Fork /usr/bin/passwd. */
- 
+-
 -   if (execl("/bin/passwd", "passwd", user, (char*)0) < 0) {
 -      syslog(LOG_ERR, "can't exec /bin/passwd: %m");
 +   if (execl("/usr/bin/passwd", "passwd", user, (char*)0) < 0) {
@@ -199,29 +341,50 @@
        return(0);
     }
  }
-@@ -408,15 +410,20 @@
-  *
-  * Modified by Norstad to remove assumptions about number of pty's allocated
-  * on this UNIX box.
-+ *
-+ * Modified by Stephen Melvin to allocate local space for static character
-+ * array, rather than local space to pointer to constant string, which is
-+ * not kosher and was crashing FreeBSD 1.1.5.1.
-  */
- findpty (slave)
- char **slave;
- {
-    int master;
--   static char *line = "/dev/ptyXX";
-+   static char line[11];
-    DIR *dirp;
-    struct dirent *dp;
  
-+   strcpy(line,"/dev/ptyXX");
-    dirp = opendir("/dev");
-    while ((dp = readdir(dirp)) != NULL) {
-       if (strncmp(dp->d_name, "pty", 3) == 0 && strlen(dp->d_name) == 5) {
-@@ -485,8 +492,10 @@
+-
+-/*
+- * findpty()
+- *
+- * Finds the first available pseudo-terminal master/slave pair.  The master
+- * side is opened and a fd returned as the function value.  A pointer to the
+- * name of the slave side (i.e. "/dev/ttyp0") is returned in the argument,
+- * which should be a char**.  The name itself is stored in a static buffer.
+- *
+- * A negative value is returned on any sort of error.
+- *
+- * Modified by Norstad to remove assumptions about number of pty's allocated
+- * on this UNIX box.
+- */
+-findpty (slave)
+-char **slave;
+-{
+-   int master;
+-   static char *line = "/dev/ptyXX";
+-   DIR *dirp;
+-   struct dirent *dp;
+-
+-   dirp = opendir("/dev");
+-   while ((dp = readdir(dirp)) != NULL) {
+-      if (strncmp(dp->d_name, "pty", 3) == 0 && strlen(dp->d_name) == 5) {
+-         line[8] = dp->d_name[3];
+-         line[9] = dp->d_name[4];
+-         if ((master = open(line, O_RDWR)) >= 0) {
+-            line[5] = 't';
+-            *slave = line;
+-            closedir(dirp);
+-            return (master);
+-         }
+-      }
+-   }
+-   closedir(dirp);
+-   return (-1);
+-}
+-
+ /*
+  * writestring()
+  *
+@@ -485,8 +398,10 @@
       }
  
       writestring(master, pswd);
@@ -230,6 +393,6 @@
       if (!expect(master, P4, buf)) return FAILURE;
 +
 +     close(master);
-
+ 
       return SUCCESS;
  }
