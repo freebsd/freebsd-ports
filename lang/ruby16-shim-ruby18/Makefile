@@ -15,6 +15,7 @@ DISTNAME=	shim-ruby16_18-${PORTVERSION:S/.p/-preview/}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A set of Ruby modules to provide Ruby 1.8 functionalities
 
 USE_BZIP2=	yes
 

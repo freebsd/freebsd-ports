@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	High-performance non-validating XML parser written in 100% pure Ruby
 
 USE_RUBY=	yes
 

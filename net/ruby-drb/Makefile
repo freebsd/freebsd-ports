@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Distributed Ruby
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/acl.rb:${PORTSDIR}/security/ruby-acl
 

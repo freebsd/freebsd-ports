@@ -14,6 +14,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby library which implements the HMAC algorithm
 
 USE_RUBY=	yes
 

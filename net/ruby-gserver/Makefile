@@ -14,6 +14,7 @@ DISTNAME=	GServer
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby module which provides generic-server facilities
 
 USE_ZIP=	yes
 USE_RUBY=	yes

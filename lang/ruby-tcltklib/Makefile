@@ -12,6 +12,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 
 MAINTAINER?=	knu@FreeBSD.org
+COMMENT?=	A Ruby interface to Tcl/Tk libraries
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${RUBY_PORT}:patch
 LIB_DEPENDS=	${TCL_LIB}.1:${PORTSDIR}/${TCL_CATEGORY}/tcl${TCL_VERSION} \

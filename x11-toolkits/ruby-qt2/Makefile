@@ -15,6 +15,7 @@ DISTNAME=	${RUBY_QT2_DISTNAME}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Qt2 extension for Ruby
 
 USE_QT_VER=	2
 USE_RUBY=	yes

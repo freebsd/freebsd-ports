@@ -15,6 +15,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Ruby interface to LBL Packet Capture library (libpcap)
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

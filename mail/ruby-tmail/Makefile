@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-all
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A RFC2822/MIME compliant mail manipulating library for Ruby
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes

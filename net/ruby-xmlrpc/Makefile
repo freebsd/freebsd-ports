@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}4r-${PORTVERSION:S/./_/g}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Ruby interface to XML-RPC
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/xmlparser.so:${PORTSDIR}/textproc/ruby-xmlparser \
 		${RUBY_SITELIBDIR}/TCPSocketPipe.rb:${PORTSDIR}/net/ruby-tcpsocketpipe \

@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby library for approximate string matching and searching
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes

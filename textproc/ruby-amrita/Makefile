@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	An HTML/XHTML template library for Ruby
 
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	strscan

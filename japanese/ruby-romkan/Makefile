@@ -13,6 +13,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Romaji <-> Kana conversion library for Ruby
 
 USE_RUBY=	yes
 

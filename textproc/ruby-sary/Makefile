@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby interface to the Sary library
 
 LIB_DEPENDS=	sary.8:${PORTSDIR}/textproc/sary
 

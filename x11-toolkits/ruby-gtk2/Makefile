@@ -15,6 +15,7 @@ DISTNAME=	${RUBY_GNOME_DISTNAME}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Ruby binding for GTK+2
 
 LIB_DEPENDS=    gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2 \

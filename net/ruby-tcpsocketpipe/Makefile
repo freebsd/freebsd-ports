@@ -14,6 +14,7 @@ DISTNAME=	TCPSocketPipe-${PORTVERSION:S/./_/g}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby library to create I/O pipes for TCP socket tunneling
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/application.rb:${PORTSDIR}/sysutils/ruby-devel-logger \
 		${RUBY_SITELIBDIR}/dump.rb:${PORTSDIR}/converters/ruby-dump.rb

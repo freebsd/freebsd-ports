@@ -15,6 +15,7 @@ DISTNAME=	ruby${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Ruby bind of EB library
 
 LIB_DEPENDS=	eb.6:${PORTSDIR}/japanese/eb
 

@@ -15,6 +15,7 @@ DISTNAME=	r${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A pipe-based interface to the gnuplot package for Ruby
 
 RUN_DEPENDS=	${LOCALBASE}/bin/gnuplot:${PORTSDIR}/math/gnuplot \
 		${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray

@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby interface binding to aspell
 
 LIB_DEPENDS=	aspell.15:${PORTSDIR}/textproc/aspell
 

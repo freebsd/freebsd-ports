@@ -14,6 +14,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	FastCGI library for Ruby
 
 LIB_DEPENDS=	fcgi.0:${PORTSDIR}/www/fcgi
 

@@ -15,6 +15,7 @@ DISTNAME=	${RUBY_GNOME_DISTNAME}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby binding for GNOME panel-applet library
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk.so:${PORTSDIR}/x11-toolkits/ruby-gtk \
 		${RUBY_SITEARCHLIBDIR}/gnome.so:${PORTSDIR}/x11/ruby-gnome

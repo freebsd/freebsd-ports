@@ -14,6 +14,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby interface to Google's SOAP-driven Web API
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/soap/wsdlDriver.rb:${PORTSDIR}/net/ruby-soap
 

@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	An HTTP server toolkit for Ruby
 
 # optional dependencies
 #RUN_DEPENDS=	${RUBY_SITELIBDIR}/erb/erb.rb:${PORTSDIR}/textproc/ruby-erb \

@@ -15,6 +15,7 @@ DISTNAME=	ruby${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby extension to make Lua script language as a class
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/liblua.a:${PORTSDIR}/lang/lua
 

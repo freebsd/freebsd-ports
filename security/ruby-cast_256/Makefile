@@ -14,6 +14,7 @@ DISTNAME=	ruby_${PORTNAME}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby extension library which implements CAST-256 encryption
 
 RESTRICTED=	"Crypto; export-controlled"
 

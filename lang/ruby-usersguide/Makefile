@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME:S/usersguide/uguide/}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Ruby users guide, in HTML format
 
 USE_RUBY=	yes
 RUBY_NO_BUILD_DEPENDS=	yes

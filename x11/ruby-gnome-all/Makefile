@@ -14,6 +14,7 @@ DISTFILES=	# none
 EXTRACT_ONLY=	# none
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	The "meta-port" for Ruby/GNOME
 
 #RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/gtk.so:${PORTSDIR}/x11-toolkits/ruby-gtk
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/lglade.so:${PORTSDIR}/devel/ruby-libglade

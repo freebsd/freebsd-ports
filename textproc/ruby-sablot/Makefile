@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Ruby interface to the Sablotron XSLT processor
 
 LIB_DEPENDS=	sablot.69:${PORTSDIR}/textproc/sablotron \
 		iconv.3:${PORTSDIR}/converters/libiconv \

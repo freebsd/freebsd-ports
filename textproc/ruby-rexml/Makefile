@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A pure Ruby XML processor inspired by the Electric XML for Java
 
 USE_RUBY=	yes
 

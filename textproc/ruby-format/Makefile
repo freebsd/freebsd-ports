@@ -15,6 +15,7 @@ DISTNAME=	FormatR.${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Perl like formats for Ruby
 
 USE_RUBY=	yes
 

@@ -15,6 +15,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Ruby extension library for embedding Python in Ruby
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PYTHON_PORTSDIR}:-DWITHOUT_THREADS
 

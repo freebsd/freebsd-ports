@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Ruby module to access James Clark's XML Parser ToolKit ("expat")
 
 BUILD_DEPENDS=	${PERL_ARCHLIB}/XML/Parser/Expat.pm:${PORTSDIR}/textproc/p5-XML-Parser
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2

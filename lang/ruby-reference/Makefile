@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Ruby Class and Module Reference, in HTML format
 
 USE_RUBY=	yes
 RUBY_NO_BUILD_DEPENDS=	yes

@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby extension module to use the functions of Perl from Ruby
 
 USE_PERL5=	yes
 USE_RUBY=	yes

@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}4r-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	An XSLT processor in pure Ruby
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/xpathtree.rb:${PORTSDIR}/textproc/ruby-xmlscan-old
 
