@@ -1,0 +1,10 @@
+Psiconv is a file conversion utility that converts between Psion 5(MX) files
+and more commonly-used *nux file formats. It can read Psion Word, TextEd,
+Sketch, MBM, and Clipart files, and outputs HTML 3.2, HTML 4, ASCII, and
+almost any graphical format. The libpsiconv library can also read Sheet files
+and output Word and TextEd files for use in other programs. Included is full
+documentation on several Psion 5(MX) file formats. This information is not
+available from Psion (it has been reverse-engineered from Psion files), and
+it's free for anybody to use.
+
+WWW: http://huizen.dds.nl/~frodol/psiconv/
