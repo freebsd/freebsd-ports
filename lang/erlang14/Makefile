@@ -50,6 +50,10 @@ USE_GMAKE=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 
+.if defined(WITH_ERLANG_THREADS)
+CONFIGURE_ARGS+=	--enable-threads
+.endif
+
 .if !defined(WITHOUT_JAVA)
 # The Java applications that are part of the Erlang distribution are
 # not strictly necessary - it is included for completeness sake. A
@@ -71,6 +75,11 @@ SCRIPT_ENV+=    PATH=${PATH}:${JAVABINDIR}
 # set to "../../../../[...]"
 post-patch:
 	@cd ${WRKSRC} && ${CAT} ${FILESDIR}/post-patch-configure | ${PATCH}
+
+pre-extract:
+.if !defined(WITH_ERLANG_THREADS)
+	@${ECHO_MSG} "You can enable support for threaded I/O by defining WITH_ERLANG_THREADS."
+.endif
 
 pre-configure:
 # Regenerate erts configuration script
