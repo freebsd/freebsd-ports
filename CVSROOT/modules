@@ -1618,10 +1618,10 @@ emacs-w3m		ports/www/emacs-w3m
 emacs-w3m-emacs20	ports/www/emacs-w3m-emacs20
 emacs-w3m-xemacs21-mule	ports/www/emacs-w3m-xemacs21-mule
 emacs-wget	ports/ftp/emacs-wget
+emacs19		ports/editors/emacs19
 emacs20		ports/editors/emacs20
 emacs20-dl	ports/editors/emacs20-dl
 emacs20-mule-devel	ports/editors/emacs20-mule-devel
-emacs21		ports/editors/emacs21
 emboss		ports/biology/emboss
 emc2		ports/math/emc2
 emelfm2		ports/x11-fm/emelfm2
