@@ -1,23 +1,20 @@
 Portupgrade is a tool to upgrade installed packages via ports or
 packages.  It upgrades installed packages without reinstalling
 depending or dependent packages by directly updating the package
-registry database located under /var/db/pkg.  It can also trace
+registry database located under /var/db/pkg, while it can also trace
 dependency chains up and down and upgrade packages recursively.
 
-This package also includes the following utilities:
-portinstall:	This helps you install new ports in a handy way.
+This package also includes the following utilities (and more!):
+portinstall:	Helps you install new ports in a handy way.
 		Equivalent to `portupgrade -N'.
-portversion:	This is a replacement of pkg_version(8), which runs
-		faster than pkg_version and is cooperative with
-		portupgrade.
-portsdb:	This is a tool to create, update or look up ports
-		database, which is made from the ports index file.
-pkg_deinstall:	This is a package deinstaller with wildcards and
-		dependency recursion support.
-pkg_glob:	This is a package glob expander with wildcards and
-		dependency recursion support.
-pkgdepfix:	This is an interactive tool to fix /var/db/pkg's
-		@pkgdep vs. +REQUIRED_BY discrepancies, and stale or
-		missing origins, optionally.
+portcvsweb:	Instantly browses a history via CVSweb.
+portversion:	Replaces pkg_version(8).  This runs much faster and is
+		cooperative with portupgrade.
+portsclean:	Cleans workdir's and unreferenced distfiles.
+portsdb:	Creates binary database from the ports INDEX.
+pkg_deinstall:	A wrapper of pkg_delete with wildcards and dependency
+		recursion support and some more.
+pkg_glob:	Expands package globs.
+pkgdepfix:	Fixes the /var/db/pkg registry interactively.
 
 Author: Akinori MUSHA <knu@FreeBSD.org>
