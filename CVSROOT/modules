@@ -1572,6 +1572,7 @@ expect		ports/lang/expect
 explosions	ports/misc/explosions
 extace		ports/audio/extace
 extipl		ports/sysutils/extipl
+extract-xiso	ports/emulators/extract-xiso
 exult		ports/games/exult
 eyeclock	ports/x11-clocks/eyeclock
 ez-ipupdate	ports/dns/ez-ipupdate
