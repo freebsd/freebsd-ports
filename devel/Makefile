@@ -158,6 +158,7 @@
     SUBDIR += gaa
     SUBDIR += gcc-6811
     SUBDIR += gconf
+    SUBDIR += gconf2
     SUBDIR += gcvs
     SUBDIR += gdb51
     SUBDIR += gengameng

@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- gconf/gconf-internals.c	2001/11/07 11:27:13	1.1
-+++ gconf/gconf-internals.c	2001/11/07 11:27:52
-@@ -28,6 +28,9 @@
+--- gconf/gconf-internals.c	2002/02/15 19:13:07	1.1
++++ gconf/gconf-internals.c	2002/02/15 19:13:32
+@@ -26,6 +26,9 @@
  #include <string.h>
  #include <sys/stat.h>
  #include <sys/types.h>
