@@ -10,7 +10,6 @@ PORTVERSION=	5.4.8.3
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://imagemagick.sourceforge.net/http/ \
-		ftp://ftp.yggdrasil.com/mirrors/site/ftp.simplesystems.org/pub/%SUBDIR%/ \
 		ftp://gd.tuwien.ac.at/pub/graphics/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/multimedia/graphics/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/ImageMagick,} \

@@ -8,8 +8,7 @@
 PORTNAME=	arena-i18n
 PORTVERSION=	beta3b
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.yggdrasil.com/pub/dist/web/arena/ \
-		ftp://ftp.w3.org/pub/Arena/beta-3/
+MASTER_SITES=	ftp://ftp.w3.org/pub/Arena/beta-3/
 DISTNAME=	arena-CJK-beta3a
 
 MAINTAINER=	ports@FreeBSD.org
