@@ -4124,6 +4124,7 @@ linux-mozilla	ports/www/linux-mozilla
 linux-mozilla-devel	ports/www/linux-mozilla-devel
 linux-mozillafirebird	ports/www/linux-mozillafirebird
 linux-nwserver	ports/games/linux-nwserver
+linux-opengroupware	ports/misc/linux-opengroupware
 linux-openmotif	ports/x11-toolkits/linux-openmotif
 linux-opera	ports/www/linux-opera
 linux-p4v	ports/devel/linux-p4v
