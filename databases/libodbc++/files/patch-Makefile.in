@@ -6,14 +6,13 @@
 
 
 
---- Makefile.in.orig	Wed Dec 13 03:14:07 2000
-+++ Makefile.in	Tue Oct  2 17:19:45 2001
-@@ -114,7 +114,7 @@
+--- Makefile.in.orig	Wed Nov  7 17:09:47 2001
++++ Makefile.in	Wed Nov 14 13:09:03 2001
+@@ -123,7 +123,6 @@
+ src \
+ @SUBDIR_TESTS@ \
+ @SUBDIR_QTSQLXX@ \
+-doc \
+ @SUBDIR_ISQLXX@ \
+ win32
  
- AUTOMAKE_OPTIONS = foreign
- 
--SUBDIRS =  include src @SUBDIR_QT@ @SUBDIR_TESTS@ @SUBDIR_QTSQLXX@ doc @SUBDIR_ISQLXX@ win32
-+SUBDIRS =  include src @SUBDIR_QT@ @SUBDIR_TESTS@ @SUBDIR_QTSQLXX@ @SUBDIR_ISQLXX@ win32
- 
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
