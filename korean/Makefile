@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.19 1998/03/19 06:06:30 obrien Exp $
+# $Id: Makefile,v 1.20 1998/05/05 14:23:02 kuriyama Exp $
 #
 
     SUBDIR += Wnn
@@ -20,6 +20,7 @@
     SUBDIR += johabfonts
     SUBDIR += kaistfonts
     SUBDIR += linuxdoc-sgml
+    SUBDIR += mizifont
     SUBDIR += mule-wnn4
     SUBDIR += netscape3
     SUBDIR += nh2ps
