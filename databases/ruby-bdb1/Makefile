@@ -19,8 +19,6 @@ USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 USE_RUBY_RDOC=		yes
 
-NOT_FOR_ARCHS=	sparc64
-
 INSTALL_TARGET=	site-install
 
 DOCS=		Changes \
