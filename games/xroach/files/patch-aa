@@ -1,0 +1,32 @@
+diff -cdNr ../xroach.BSD/Makefile ./Makefile
+*** ../xroach.BSD/Makefile	Wed Jun  9 04:12:04 1993
+--- ./Makefile	Fri Dec 22 19:52:19 1995
+***************
+*** 1,9 ****
+! #	@(#)Makefile	8.1 (Berkeley) 6/8/93
+  
+  PROG=	xroach
+! MAN6=	xroach.0
+! CFLAGS+= -I${.CURDIR}/bitmaps
+! DPADD=	${LIBX} ${LIBM}
+! LDADD=	-lX11/X11 -lm
+  
+  .include <bsd.prog.mk>
+--- 1,17 ----
+! #	@(#)Makefile	8.1 (Berkeley) 5/31/93
+  
+  PROG=	xroach
+! MAN6=	xroach.6
+! 
+! DPADD+=		${X11BASE}/lib/libX11.a ${LIBM}
+! CFLAGS+=	-I${X11BASE}/include -I${.CURDIR}/bitmaps
+! LDDESTDIR+=	-L${X11BASE}/lib
+! LDADD+=		-lX11 -lm
+! 
+! MANDIR=        ${X11BASE}/man/man
+! 
+! BINOWN=        bin
+! BINDIR=        ${X11BASE}/bin
+! BINMODE=       755
+  
+  .include <bsd.prog.mk>
