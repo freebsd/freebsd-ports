@@ -34,7 +34,6 @@
     SUBDIR += nvi-big5
     SUBDIR += nvi-euc-cn
     SUBDIR += nvi-euc-tw
-    SUBDIR += pine3
     SUBDIR += pine4
     SUBDIR += pyDict
     SUBDIR += rxvt
