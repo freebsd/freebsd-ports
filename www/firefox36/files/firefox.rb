@@ -33,7 +33,7 @@
   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   POSSIBILITY OF SUCH DAMAGE.
 
-  $Id: firebird.rb,v 1.2 2003/05/31 17:24:19 marcus Exp $
+  $Id: firefox.rb,v 1.1 2004/09/30 06:27:21 marcus Exp $
 
   2002-12-16 Alan Eldridge <alane@geeksrus.net>
 

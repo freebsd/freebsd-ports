@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	firefox
-PORTVERSION=	0.9.3
+PORTVERSION=	1.0.1.p
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${PORTVERSION}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-source
+MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${REALVERSION}
+DISTNAME=	${PORTNAME}-1.0PR-source
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
@@ -19,15 +19,14 @@ COMMENT=	Web browser based on the browser portion of Mozilla
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		mng.1:${PORTSDIR}/graphics/libmng \
-		freetype.9:${PORTSDIR}/print/freetype2 \
-		nspr4.1:${PORTSDIR}/devel/nspr
+		freetype.9:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		freetype-config:${PORTSDIR}/print/freetype2
 
 ALL_TARGET=	default
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 FAKEDIR=	${WRKDIR}/fake
-FAKESUBDIR=	${FAKEDIR}/lib/${PORTNAME}
+REALVERSION=	0.10.1
 HAS_CONFIGURE=	yes
 ESD_LIB=	libesd.so.2
 LOCAL_PREFIX=	${PREFIX}/lib/${PORTNAME}
@@ -54,11 +53,12 @@ JPI_LIST?=\
 	${LOCALBASE}/jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so
 
 OPTIONS=	DEBUG "Build a debugging image" off \
-		HEADERS "Install headers and IDL files" off \
+		HEADERS "Install headers and IDL files" on \
 		LOGGING "Enable additional log messages" off \
 		OPTIMIZED_CFLAGS "Enable some additional optimizations" off \
 		XFT "Enable support for anti-aliased fonts" on \
-		SMB "Enable smb:// URI support using gnomevfs" off
+		SMB "Enable smb:// URI support using gnomevfs" off \
+		NEW_ICON "Install the new Firefox branding icon" off
 
 .include <bsd.port.pre.mk>
 
@@ -160,19 +160,16 @@ pre-install:
 # package, replacing the traditional pkg-plist file.
 	@${RM} -rf ${FAKEDIR} ${PLIST}
 	@${MKDIR} ${FAKEDIR}/lib/browser_plugins
-	@${MKDIR} ${FAKEDIR}/lib/${PORTNAME}/lib/${PORTNAME}-${PORTVERSION}/extensions.port
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		Makefile ${MAKE_ARGS} install
 .for ii in mac win
 .for jj in / .jar
-	@${RM} -rf ${FAKEDIR}/lib/${PORTNAME}/lib/${PORTNAME}-${PORTVERSION}/chrome/en-${ii}${jj}
+	@${RM} -rf ${FAKEDIR}/lib/${PORTNAME}/lib/${PORTNAME}-${REALVERSION}/chrome/en-${ii}${jj}
 .endfor
 .endfor
-	@${INSTALL_DATA} ${FILESDIR}/Extensions.rdf \
-		${FAKEDIR}/lib/${PORTNAME}/lib/${PORTNAME}-${PORTVERSION}/extensions.port
-	@${SED} -e 's|%%MOZDIR%%|${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}|g' \
+	@${SED} -e 's|%%MOZDIR%%|${LOCAL_PREFIX}/lib/${PORTNAME}-${REALVERSION}|g' \
 		< ${MASTERDIR}/pkg-install.in > ${PKGINSTALL}
-	@${SED} -e 's|%%MOZDIR%%|${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}|g' \
+	@${SED} -e 's|%%MOZDIR%%|${LOCAL_PREFIX}/lib/${PORTNAME}-${REALVERSION}|g' \
 		< ${MASTERDIR}/pkg-deinstall.in > ${PKGDEINSTALL}
 
 .if !defined (WITH_HEADERS)
@@ -221,5 +218,9 @@ post-install:
 			fi; \
 		done; \
 	fi
+.if defined(WITH_NEW_ICON)
+	${INSTALL_DATA} ${WRKSRC}/other-licenses/branding/firefox/default.xpm \
+		${LOCAL_PREFIX}/lib/${PORTNAME}-${REALVERSION}/chrome/icons/default/default.xpm
+.endif # defined(WITH_NEW_ICON)
 
 .include <bsd.port.post.mk>
