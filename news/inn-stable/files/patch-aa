@@ -1,0 +1,13 @@
+--- Makefile.orig	Sun Mar 11 01:59:11 2001
++++ Makefile	Sun Mar 11 01:59:56 2001
+@@ -81,7 +81,9 @@
+ directories:
+ 	@chmod +x support/install-sh
+ 	for D in $(INSTDIRS) ; do \
+-	    support/install-sh $(OWNER) -m 0755 -d $$D ; \
++	    if [ ! -d $$D ] ; then \
++		support/install-sh $(OWNER) -m 0755 -d $$D ; \
++	    fi ; \
+ 	done
+ 	support/install-sh $(OWNER) -m 0750 -d $(PATHRUN)
+ 
