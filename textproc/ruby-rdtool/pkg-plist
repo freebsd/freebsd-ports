@@ -37,7 +37,6 @@ bin/rmi2html.rb
 @dirrm %%RUBY_SITELIBDIR%%/rd
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rd/dot.rd2rc
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/rd
-%%PORTDOCS%%@comment %%RUBY_DOCDIR%%/amstd/ja/amstd-ja.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rd/README.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rd/rd-draft.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rd/rd-draft.rd
