@@ -1,19 +1,19 @@
-*** Makefile.in.bak	Wed Dec 18 22:57:21 1996
---- Makefile.in	Fri Dec 27 14:20:11 1996
+*** l	Wed Apr 14 15:38:05 1999
+--- Makefile.in	Wed Apr 14 15:38:21 1999
 ***************
-*** 499,505 ****
+*** 550,556 ****
   
   install:	.made installdirs
-  	$(INSTALL_PROGRAM) $(Program) $(bindir)/$(Program)
-! 	$(INSTALL_PROGRAM) bashbug $(bindir)/bashbug
+  	$(INSTALL_PROGRAM) $(INSTALLMODE) $(Program) $(bindir)/$(Program)
+! 	$(INSTALL_PROGRAM) $(INSTALLMODE) bashbug $(bindir)/bashbug
   	-( cd $(DOCDIR) ; $(MAKE) $(MFLAGS) \
   		man1dir=$(man1dir) man1ext=$(man1ext) \
   		man3dir=$(man3dir) man3ext=$(man3ext) \
---- 499,505 ----
+--- 550,556 ----
   
   install:	.made installdirs
-  	$(INSTALL_PROGRAM) $(Program) $(bindir)/$(Program)
-! 	$(INSTALL) -m 555 bashbug $(bindir)/bashbug
+  	$(INSTALL_PROGRAM) $(INSTALLMODE) $(Program) $(bindir)/$(Program)
+! 	$(INSTALL) $(INSTALLMODE) bashbug $(bindir)/bashbug
   	-( cd $(DOCDIR) ; $(MAKE) $(MFLAGS) \
   		man1dir=$(man1dir) man1ext=$(man1ext) \
   		man3dir=$(man3dir) man3ext=$(man3ext) \
