@@ -1,0 +1,20 @@
+%%DOCSDIR%%/cvsbook.html
+%%DOCSDIR%%/cvsbook.pdf
+%%DOCSDIR%%/cvsbook.ps
+@unexec install-info --delete %D/info/cvsbook.info %D/info/dir
+info/cvsbook.info
+info/cvsbook.info-1
+info/cvsbook.info-10
+info/cvsbook.info-11
+info/cvsbook.info-12
+info/cvsbook.info-13
+info/cvsbook.info-2
+info/cvsbook.info-3
+info/cvsbook.info-4
+info/cvsbook.info-5
+info/cvsbook.info-6
+info/cvsbook.info-7
+info/cvsbook.info-8
+info/cvsbook.info-9
+@exec install-info %D/info/cvsbook.info %D/info/dir
+@dirrm %%DOCSDIR%%
