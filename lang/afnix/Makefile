@@ -24,7 +24,7 @@ INSTALLS_SHLIB=	yes
 
 PLIST_SUB=	PORTVER=${PORTVERSION:R}
 
-MAN1=	aleph.1
+MAN1=	aleph.1 axc.1 axl.1
 
 do-configure:
 	@(cd ${WRKSRC}; ./cnf/bin/aleph-setup -o)
