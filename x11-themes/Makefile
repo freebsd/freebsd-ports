@@ -10,6 +10,7 @@
     SUBDIR += gnome-icons-refined
     SUBDIR += gnome-icons-slick
     SUBDIR += gnome-icons-snow-apple
+    SUBDIR += gnome-icons-stylish
     SUBDIR += kde-icons-amaranth
     SUBDIR += kde-icons-amaranth-althaea
     SUBDIR += kde-icons-crystalosx
