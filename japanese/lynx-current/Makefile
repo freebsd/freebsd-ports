@@ -7,7 +7,7 @@
 
 PORTNAME=	lynx
 PORTVERSION=	${VERSION}.${MINOR_VERSION:S/.//}
-CATEGORIES=	japanese www
+CATEGORIES=	japanese www ipv6
 MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
 		${MASTER_SITE_LOCAL} \
 		http://lynx.isc.org/current/
@@ -30,7 +30,8 @@ CONFIGURE_ARGS=	--with-screen=ncurses --with-zlib \
 		--disable-nls --enable-default-colors \
 		--enable-nsl-fork --enable-persistent-cookies \
 		--enable-cjk --enable-file-upload --enable-justify-elts \
-		--enable-libjs --enable-read-eta --enable-source-cache
+		--enable-libjs --enable-read-eta --enable-source-cache \
+		--enable-ipv6
 .if (WITH_LYNX_EXPERIMENTAL_OPTS)
 # experimental optional configure args
 CONFIGURE_ARGS+=	--enable-prettysrc --enable-color-style \
