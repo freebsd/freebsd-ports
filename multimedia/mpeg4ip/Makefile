@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mpeg4ip
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.7
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,18 +14,21 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	lioux@FreeBSD.org
 
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool \
-		nasm:${PORTSDIR}/devel/nasm
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+		nasm:${PORTSDIR}/devel/nasm \
+		pkg-config:${PORTSDIR}/devel/pkgconfig
 
-USE_GNOMENG=	yes
-USE_GNOME=	gtk12
+LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
+		glib-2.0.0:${PORTSDIR}/devel/glib20 \
+		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
+		gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
+
 USE_GMAKE=	yes
+USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--with-glib-prefix=${LOCALBASE} \
-		--with-gtk-prefix=${LOCALBASE} \
+		--with-gtk-prefix=${X11BASE} \
 		--program-transform-name=''
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
@@ -93,18 +96,22 @@ post-patch:
 		${REINPLACE_CMD} -e \
 		's|stdint\.h|inttypes.h|;s|malloc\.h|stdlib.h|'
 # replacing distfile's libs with ports' versions
-	@${REINPLACE_CMD} -E -e 's|(SUBDIRS.+)SDL|\1|' \
-		${WRKSRC}/lib/Makefile.in
+# CFLAGS safeness
 	@${REINPLACE_CMD} -E -e 's|lib/SDL/sdl-config|${SDL_CONFIG}|; \
 		s|^(SDL_LIBS=).+$$|\1"`${SDL_CONFIG} --libs`"|' \
 		${CONFIGURE_WRKSRC}/configure
 	@${FIND} ${WRKSRC} -type f -name "Makefile.in" | ${XARGS} \
 		-n 10 ${REINPLACE_CMD} -E -e \
 		's|-I[^ ]+lib/SDL/include|-I${LOCALBASE}/include/SDL11|; \
+		s|-O[0-3]|-O|; \
 		s|\$$[^ ]+/lib/SDL/src/main/libSDLmain.a|${LOCALBASE}/lib/libSDLmain-1.1.a|'
 	@${REINPLACE_CMD} -E -e \
 		's!SDL_(AudioDelayMsec|HasAudioDelayMsec).*;$$!0;!' \
 		${WRKSRC}/player/src/audio_sdl.cpp
+# use libgnugetopt
+	@${REINPLACE_CMD} -E -e \
+		s'|(-lm)|\1 -lgnugetopt|' \
+		${WRKSRC}/util/iptv/Makefile.in
 
 post-configure:
 # disable GNU auto* tools
@@ -126,7 +133,7 @@ post-install:
 
 .if ${ARCH} != "i386"
 WITHOUT_MMX=	yes
-.else 
+.else
 . if (defined(MACHINE_CPU) && ${MACHINE_CPU:Mi486} == "i486")
 WITH_OPTIMIZED_BYTESWAP=yes
 . endif
@@ -144,6 +151,10 @@ CONFIGURE_ARGS+=	--enable-ipv6
 CONFIGURE_ARGS+=	--disable-mmx
 .endif
 
+.if defined(WITH_OPTIMIZED_CFLAGS)
+CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
+.endif
+
 pre-everything::
 .ifndef(WITHOUT_IPV6)
 	@${ECHO_MSG} '===> Define WITHOUT_IPV6 if you want to disable IPv6 support'
@@ -157,6 +168,10 @@ pre-everything::
 	@${ECHO_MSG} '===> routines. This works only in the i386 architecture, and'
 	@${ECHO_MSG} '===> only with 486 processors and above.'
 .endif
-
+.if !defined(WITH_OPTIMIZED_CFLAGS)
+	@${ECHO_MSG}
+	@${ECHO_MSG} '===> You can enable additional compilation optimizations'
+	@${ECHO_MSG} '===> by defining WITH_OPTIMIZED_CFLAGS'
+.endif
 
 .include <bsd.port.post.mk>

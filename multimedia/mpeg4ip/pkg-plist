@@ -2,6 +2,7 @@ bin/avi2raw
 bin/avidump
 bin/faac
 bin/gmp4player
+bin/iptv_prog
 bin/lboxcrop
 bin/mp4creator
 bin/mp4dump
@@ -9,6 +10,7 @@ bin/mp4encode
 bin/mp4extract
 bin/mp4info
 bin/mp4player
+bin/mp4trackdump
 bin/mp4venc
 bin/rgb2yuv
 bin/xvidenc
@@ -47,6 +49,14 @@ lib/mp4player_plugin/celp_plugin.a
 lib/mp4player_plugin/celp_plugin.la
 lib/mp4player_plugin/celp_plugin.so
 lib/mp4player_plugin/celp_plugin.so.0
+lib/mp4player_plugin/h261_plugin.a
+lib/mp4player_plugin/h261_plugin.la
+lib/mp4player_plugin/h261_plugin.so
+lib/mp4player_plugin/h261_plugin.so.0
+lib/mp4player_plugin/h261_rtp_plugin.a
+lib/mp4player_plugin/h261_rtp_plugin.la
+lib/mp4player_plugin/h261_rtp_plugin.so
+lib/mp4player_plugin/h261_rtp_plugin.so.0
 lib/mp4player_plugin/isma_rtp_plugin.a
 lib/mp4player_plugin/isma_rtp_plugin.la
 lib/mp4player_plugin/isma_rtp_plugin.so

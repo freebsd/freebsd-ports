@@ -1,0 +1,11 @@
+--- lib/Makefile.in.orig	Wed Jan  1 21:46:28 2003
++++ lib/Makefile.in	Wed Jan  1 21:47:39 2003
+@@ -106,7 +106,7 @@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
+ 
+-SUBDIRS = avi bitstream config_file fposrec gnu mp4 mp4v2 mp4av msg_queue rtp sdp SDL xvid mpeg2t SDL_VisualC
++SUBDIRS = avi bitstream config_file fposrec gnu mp4 mp4v2 mp4av msg_queue rtp sdp xvid mpeg2t
+ subdir = lib
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/config.h
