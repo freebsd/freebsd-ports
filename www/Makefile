@@ -153,6 +153,7 @@
     SUBDIR += p5-Apache-Language
     SUBDIR += p5-Apache-Peek
     SUBDIR += p5-Apache-Radius
+    SUBDIR += p5-Apache-Reload
     SUBDIR += p5-Apache-Session
     SUBDIR += p5-CGI
     SUBDIR += p5-CGI_Lite
