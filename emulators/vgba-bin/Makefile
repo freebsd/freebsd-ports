@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vgba
-PORTVERSION=	2.1
+PORTVERSION=	3.0
 CATEGORIES=	emulators
 MASTER_SITES=	http://fms.komkon.org/VGBA/
 PKGNAMESUFFIX=	-bin
@@ -32,8 +32,8 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500000
-LIB_DEPENDS+=	c_r.4:${PORTSDIR}/misc/compat4x
+.if ${OSVERSION} < 502100
+IGNORE=		Does not work for FreeBSD versions prior to 5.2.1R
 .endif
 
 .include <bsd.port.post.mk>

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vgb
-PORTVERSION=	2.2
+PORTVERSION=	3.0
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://fms.komkon.org/VGB/
@@ -26,7 +26,6 @@ INSTALL_DIR=	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP}
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/vgb ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/vgb-debug ${PREFIX}/bin
 	@${INSTALL_DIR} ${PREFIX}/share/vgb
 	@${INSTALL_DATA} ${WRKSRC}/CART.GB ${PREFIX}/share/vgb
 .if !defined(NOPORTDOCS)
@@ -36,8 +35,8 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500000
-LIB_DEPENDS+=	c_r.4:${PORTSDIR}/misc/compat4x
+.if ${OSVERSION} < 502100
+IGNORE=		Does not work for FreeBSD versions prior to 5.2.1R
 .endif
 
 .include <bsd.port.post.mk>
