@@ -29,6 +29,7 @@
     SUBDIR += kermit
     SUBDIR += kpsk
     SUBDIR += libticables
+    SUBDIR += lirc
     SUBDIR += lrzsz
     SUBDIR += ltmdm
     SUBDIR += mgetty+sendfax

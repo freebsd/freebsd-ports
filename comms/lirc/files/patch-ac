@@ -1,0 +1,46 @@
+--- configure.orig	Sun Oct  6 05:22:41 2002
++++ configure	Sat Jan  4 21:23:16 2003
+@@ -9410,7 +9410,7 @@
+ echo "$as_me:9410: result: " >&5
+ echo "${ECHO_T}" >&6
+ 
+-possible_drivers="(none) (udp) (dsp) (remotemaster) (pctv) (logitech) \
++possible_drivers="(none) (dsp) (remotemaster) (pctv) (logitech) \
+ 	(slinke) (silitek) (mediafocusI) (irreal)"
+ 
+ if test x${no_kernel} != xyes; then
+@@ -9698,11 +9698,11 @@
+   esac
+   done
+   #remove duplicates
+-  #hw_module=`echo ${hw_module}| tr ' ' '\n' | sort -u | tr '\n' ' '`
+-  hw_module=`echo ${hw_module}| sed \
+-  			-e':again' \
+-			-e's/\(.*\)\(\<.*\) \(.*\) \2\(.*\)$/\1\2 \3\4/' \
+-			-e'tagain'`
++  hw_module=`echo ${hw_module}| tr ' ' '\n' | sort -u | tr '\n' ' '`
++  #hw_module=`echo ${hw_module}| sed \
++  #			-e':again' \
++  #  		-e's/\(.*\)\(\<.*\) \(.*\) \2\(.*\)$/\1\2 \3\4/' \
++  #			-e'tagain'`
+ fi
+ 
+ if test "$driver" = "irman"; then
+--- daemons/hw-types.c.orig	Sat Jul 27 03:58:40 2002
++++ daemons/hw-types.c	Sat Jan  4 21:13:11 2003
+@@ -15,7 +15,6 @@
+ extern struct hardware hw_silitek;
+ extern struct hardware hw_slinke;
+ extern struct hardware hw_dsp;
+-extern struct hardware hw_udp;
+ 
+ #ifndef HW_DEFAULT
+ # define HW_DEFAULT hw_default
+@@ -54,7 +53,6 @@
+ 	&hw_silitek,
+ 	&hw_slinke,
+ 	&hw_dsp,
+-	&hw_udp,
+ 	&hw_null,
+ #else
+ 	&HW_DEFAULT,

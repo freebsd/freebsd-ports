@@ -1,0 +1,40 @@
+--- daemons/Makefile.in.orig	Sun Oct  6 05:24:53 2002
++++ daemons/Makefile.in	Sat Jan  4 21:28:01 2003
+@@ -231,7 +231,7 @@
+ DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+-LIBS = @LIBS@
++LIBS = @LIBS@ -L$(LOCALBASE)/lib -lgnugetopt
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ @AMDEP_TRUE@DEP_FILES = $(DEPDIR)/config_file.Po \
+ @AMDEP_TRUE@	$(DEPDIR)/dump_config.Po $(DEPDIR)/hw-types.Po \
+@@ -265,7 +265,7 @@
+ CCLD = $(CC)
+ LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+-CFLAGS = @CFLAGS@
++CFLAGS = @CFLAGS@ -I$(LOCALBASE)/include
+ DIST_SOURCES = $(irrecord_SOURCES) $(EXTRA_irrecord_SOURCES) \
+ 	$(lircd_SOURCES) $(EXTRA_lircd_SOURCES) $(lircd_simrec_SOURCES) \
+ 	$(lircd_simsend_SOURCES) $(lircmd_SOURCES) $(slinke_SOURCES)
+--- tools/Makefile.in.orig	Sat Jan  4 22:02:21 2003
++++ tools/Makefile.in	Sat Jan  4 22:03:09 2003
+@@ -192,7 +192,7 @@
+ DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+-LIBS = @LIBS@
++LIBS = @LIBS@ -L$(LOCALBASE)/lib -lgnugetopt
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ @AMDEP_TRUE@DEP_FILES = $(DEPDIR)/ircat.Po $(DEPDIR)/irexec.Po \
+ @AMDEP_TRUE@	$(DEPDIR)/irpty.Po $(DEPDIR)/irw.Po \
+@@ -206,7 +206,7 @@
+ CCLD = $(CC)
+ LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+-CFLAGS = @CFLAGS@
++CFLAGS = @CFLAGS@ -I$(LOCALBASE)/include
+ DIST_SOURCES = $(liblirc_client_la_SOURCES) $(ircat_SOURCES) \
+ 	$(irexec_SOURCES) $(irpty_SOURCES) $(irw_SOURCES) \
+ 	$(irxevent_SOURCES) $(mode2_SOURCES) $(rc_SOURCES) \
