@@ -1,6 +1,7 @@
 bin/imgsize
 lib/perl5/site_perl/%%PERL_VER%%/Image/Size.pm
 lib/perl5/site_perl/%%PERL_VER%%/auto/Image/Size/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/auto/Image/Size/bmpsize.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/Image/Size/gifsize.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/Image/Size/jpegsize.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/Image/Size/pngsize.al
