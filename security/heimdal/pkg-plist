@@ -8,6 +8,7 @@ bin/kinit
 bin/klist
 bin/kpasswd
 bin/login
+bin/mk_cmds
 bin/otp
 bin/otpprint
 bin/pfrom
