@@ -1,3 +1,6 @@
 bin/ines
-bin/dasm
+bin/ines-debug
 share/ines/iNES.doc
+share/ines/headers.tgz
+share/ines/CART.ASM
+share/ines/CART.NES
