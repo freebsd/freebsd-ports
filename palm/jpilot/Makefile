@@ -17,7 +17,8 @@ MAINTAINER?=	varju@webct.com
 LIB_DEPENDS=	pisock.4:${PORTSDIR}/palm/pilot-link \
 		intl.4:${PORTSDIR}/devel/gettext
 
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/jpilot/plugins
