@@ -3,14 +3,13 @@
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.32 1999/02/12 16:01:22 sada Exp $
+# $Id: Makefile,v 1.33 1999/04/25 13:34:56 markm Exp $
 #
 
-DISTNAME=	netscape-${BROWSER}-${BROWSER_VER}
+DISTNAME?=	netscape-${BROWSER}-${BROWSER_VER}
 CATEGORIES=	www
 MASTER_SITES?=	ftp://ftp.netscape.com/pub/communicator/4.08/english/unix/unsupported/freebsd/professional_edition/
-DISTFILES?=	communicator-v408-export.x86-unknown-freebsd.tar.gz ${AUTOADMIN}
-AUTOADMIN=	autoadmin-v408.x86-unknown-freebsd.tar.gz
+DISTFILES?=	communicator-v408-export.x86-unknown-freebsd.tar.gz
 
 MAINTAINER=     ache@FreeBSD.ORG
 
@@ -18,13 +17,17 @@ Y2K=		http://home.netscape.com/products/year2000/faq/client.html
 
 ONLY_FOR_ARCHS=	i386
 
+NO_BUILD=	yes
 NO_FILTER_SHLIBS=	yes
-WRKSRC?=	${WRKDIR}/${BROWSER}-v408.x86-unknown-freebsd
-NO_BUILD=	Yes
 STRIP=
+WRKSRC?=	${WRKDIR}/${BROWSER}-v408.x86-unknown-freebsd
+FILESDIR=	${.CURDIR}/files
+PKGDIR=		${.CURDIR}/pkg
+PKGREQ=		${MASTERDIR}/pkg/REQ
 
+AUTOADMIN?=	autoadmin-v408.x86-unknown-freebsd.tar.gz
 BROWSER?=	communicator
-BROWSER_VER=	4.08
+BROWSER_VER?=	4.08
 NDIR=		${PREFIX}/${NSUBDIR}
 NSUBDIR=	lib/netscape
 BINDIR=		${PREFIX}/bin
@@ -35,7 +38,11 @@ MAILCAP=	${MASTERDIR}/files/mailcap
 PLIST_SUB=	BROWSER=${BROWSER} BROWSER_VER=${BROWSER_VER} \
 		NSUBDIR=${NSUBDIR}
 
-.if defined(USE_128BIT)
+.if (${BROWSER} == "communicator") && !defined(NO_AUTOADMIN)
+DISTFILES+=	${AUTOADMIN}
+.endif
+
+.if defined(USE_128BIT) && !defined(NO_FORTIFY)
 MASTER_SITES+=	ftp://ftp.fortify.net/pub/Fortify/ \
 		ftp://ftp.za.freebsd.org/pub/Fortify/
 DISTFILES+=	Fortify-1.4.1-unix-x86.tar.gz
@@ -44,12 +51,12 @@ RESTRICTED=     "Contains strong cryptography"
 
 .SILENT:
 
-.if !defined(USE_128BIT)
+.if !defined(USE_128BIT) && !defined(NO_FORTIFY)
 pre-extract:
 	${ECHO} "You can make Netscape use 128-bit encryption by defining USE_128BIT"
 .endif
 
-do-configure:
+post-configure:
 	${SED}	-e "s;@PREFIX@;${PREFIX};g" -e "s;@NSUBDIR@;${NSUBDIR};g" \
 		-e "s;@BROWSER@;${BROWSER};g" \
 		-e "s;@BROWSER_VER@;${BROWSER_VER};g" \
@@ -77,10 +84,11 @@ do-install:
 		${INSTALL_DATA} ${MAILCAP} ${NDIR}; \
 	fi
 	${RM} -rf ${NDIR}/movemail-src
-.if (${BROWSER} == "communicator")
+.if (${BROWSER} == "communicator") && !defined(NO_AUTOADMIN)
 	tar zxf ${DISTDIR}/${AUTOADMIN} -C ${NDIR}
 .endif
-.if defined(USE_128BIT) && defined(USA_RESIDENT) && ${USA_RESIDENT} == NO
+.if defined(USE_128BIT) && defined(USA_RESIDENT) && ${USA_RESIDENT} == NO \
+ && !defined(NO_FORTIFY)
 	cd ${WRKDIR}/Fortify-1.4.1-unix-x86 && \
 		(${ECHO} yes ; ${ECHO} no ; ${ECHO} no) \
 		| ./Fortify.sh ${NDIR}/${BROWSER}-${BROWSER_VER}.bin
