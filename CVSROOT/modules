@@ -46,6 +46,7 @@ cvswrappers	CVSROOT cvswrappers
 editinfo	CVSROOT editinfo
 log_accum	CVSROOT log_accum.pl
 loginfo		CVSROOT loginfo
+mod_accesscookie	ports/www/mod_accesscookie
 modules		CVSROOT modules
 rcsinfo		CVSROOT rcsinfo
 rcstemplate	CVSROOT rcstemplate
