@@ -9,7 +9,8 @@ PORTNAME=	fooseti
 PORTVERSION=	0.6.6
 PORTREVISION=	3
 CATEGORIES=	astro
-MASTER_SITES=	http://www-personal.engin.umich.edu/~agorski/fooseti/
+# mastersite disappeared February 2003
+MASTER_SITES=	# http://www-personal.engin.umich.edu/~agorski/fooseti/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ frontend to SETI@Home
