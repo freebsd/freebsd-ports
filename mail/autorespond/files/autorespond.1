@@ -1,0 +1,50 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\"
+.\" $FreeBSD$
+.\"
+.Dd "September 11, 2001"
+.Dt AUTORESPOND 1
+.Os FreeBSD
+.Sh NAME
+.Nm autorespond
+.Nd simple autoresponder for qmail
+.Sh SYNOPSIS
+.Nm
+.Ar time num message dir
+.Sh DESCRIPTION
+This manual page documents briefly the
+.Nm
+command.
+This manual page was written for the
+.Nm Debian GNU/Linux
+distribution
+because the original program does not have a manual page.
+.Pp
+.Nm
+sends an automatically generated response to emails for
+given address(es).
+It catches simple situations such as mail from a
+mailer-daemon, empty envelope sender, bulk precedence headers, etc.
+.Bl -tag -width indent
+.It Ar time
+amount of time to consider a message (in secs)
+.It Ar num
+maximum number of messages to allow within time secs
+.It Ar message
+the filename of the message to send
+.It Ar dir
+the directory to hold the log of messages
+.Sh AUTHOR
+This manual page was written by
+.An Sam Johnston Aq samj@debian.org ,
+for the
+.Nm Debian GNU/Linux
+system (but may be used by others).
+It was converted to
+.Xr mdoc 7
+format by
+.An Peter Pentchev Aq roam@FreeBSD.org
+for use by the
+.Fx
+port of
+.Nm .
