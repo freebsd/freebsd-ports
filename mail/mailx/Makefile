@@ -8,12 +8,10 @@
 PORTNAME=	mailx
 PORTVERSION=	0.5
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
-		ftp://ftp.noc.titech.ac.jp/pub/tmp/aki/FreeBSD/mailx/
+MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 DISTFILES=	mail-2.2.8.tar.gz mailx-memo-2.2.8R
 
-PATCH_SITES=	${MASTER_SITE_PORTS_JP} \
-		ftp://ftp.noc.titech.ac.jp/pub/tmp/aki/FreeBSD/mailx/
+PATCH_SITES=	${MASTER_SITE_PORTS_JP}
 PATCHFILES=	mailx.v05.patch.gz
 PATCH_DIST_STRIP=	-p1
 
