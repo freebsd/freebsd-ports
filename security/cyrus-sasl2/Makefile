@@ -1,4 +1,4 @@
-# New ports collection makefile for:	cyrus-sasl
+# New ports collection makefile for:	cyrus-sasl2
 # Date created:				Nov 1 1999
 # Whom:					hetzels@westbend.net
 #
@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	cyrus-sasl
-PORTVERSION=	2.1.7
-PORTREVISION=	3
+PORTVERSION=	2.1.8
+#PORTREVISION=	0
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.westbend.net/pub/cyrus-mail/ \
@@ -39,7 +39,7 @@ MAN3=		sasl.3 sasl_authorize_t.3 sasl_auxprop.3 \
 		sasl_user_exists.3 sasl_verifyfile_t.3
 MAN8=		saslauthd.8 sasldblistusers2.8 saslpasswd2.8
 
-USE_LIBTOOL=	YES
+GNU_CONFIGURE=	YES
 
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-plugindir=${PREFIX}/lib/sasl2 \
@@ -123,6 +123,7 @@ post-patch:
 	@${SED} -e "s;%%PWCHECK_METHOD%%;${PWCHECK_METHOD};g" \
 		-e "s;%%PREFIX%%;${PREFIX};g" \
 		${.CURDIR}/pkg-message > ${PKGMESSAGE}
+	@${CP} ${FILESDIR}/staticopen.h ${WRKSRC}/lib
 
 # Create Cyrus user and group
 pre-install:
