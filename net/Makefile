@@ -468,6 +468,7 @@
     SUBDIR += py-pcap
     SUBDIR += py-rrdpipe
     SUBDIR += py-rrdtool
+    SUBDIR += py-rrdtool_lgpl
     SUBDIR += py-rt
     SUBDIR += py-smb
     SUBDIR += py-snmp
