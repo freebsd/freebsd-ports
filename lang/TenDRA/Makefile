@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://alph.dera.gov.uk/pub/TenDRA/
 
 MAINTAINER=	rnordier@FreeBSD.org
 
+BROKEN=		"Does not compile."
+
 ONLY_FOR_ARCHS=	i386
 OSRELEASE!=	uname -r
 PLIST_SUB=	OSRELEASE=${OSRELEASE}
