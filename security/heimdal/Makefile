@@ -7,7 +7,7 @@
 
 PORTNAME=		heimdal
 PORTVERSION=	0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=		security ipv6
 MASTER_SITES=	ftp://ftp.pdc.kth.se/pub/heimdal/src/ \
 				ftp://ftp.replay.com/pub/replay/crypto/APPS/kerberos/heimdal/ \
@@ -29,7 +29,7 @@ USE_LIBTOOL=		no	# Uses included version.
 USE_OPENSSL=		yes
 GNU_CONFIGURE=		yes
 INSTALLS_SHLIB=		yes
-CONFIGURE_ARGS+=	--enable-shared
+CONFIGURE_ARGS+=	--enable-shared --without-krb4
 .if defined(WITH_LDAP)
 CONFIGURE_ARGS+=	--with-openldap=${LOCALBASE}
 .endif
@@ -46,13 +46,6 @@ USE_XLIB=			yes
 CONFIGURE_ARGS+=	--with-x
 .else
 CONFIGURE_ARGS+=	--without-x
-.endif
-
-.if exists(/usr/lib/libkrb.a) && !defined(WITHOUT_KRB4)
-CONFIGURE_ENV+=		LIBS="-lcom_err"
-CONFIGURE_ARGS+=	--with-krb4-include=/usr/include --with-krb4-lib=/usr/lib
-.elif !defined(KRB5_KRB4_COMPAT)
-CONFIGURE_ARGS+=	--without-krb4
 .endif
 
 INFO=				heimdal
@@ -78,9 +71,6 @@ post-build:
 
 pre-install:
 	@${CP} ${PKGDIR}/pkg-plist ${PLIST}
-.if exists(/usr/lib/libkrb.a) && !defined(WITHOUT_KRB4)
-	@${CAT} ${PKGDIR}/pkg-plist.krb4 >> ${PLIST}
-.endif
 .if defined(USE_XLIB)
 	@${CAT} ${PKGDIR}/pkg-plist.x11 >> ${PLIST}
 .endif
