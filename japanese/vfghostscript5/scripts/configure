@@ -4,7 +4,7 @@
 
 if [ ! "X"${BATCH} = "X" ] ; then
 
-PRINTER_JAPAN=' epag.dev mjc180.dev mjc360.dev mjc720.dev mj500c.dev lips3.dev lips4.dev lips4c.dev rpdlA3.dev rpdlA4.dev rpdlB4.dev rpdlB5.dev bj10v.dev bj10vh.dev dmprt.dev npdl.dev'
+PRINTER_JAPAN=' epag.dev mjc180.dev mjc360.dev mjc720.dev mj500c.dev lips3.dev lips4.dev lips4c.dev rpdlA3.dev rpdlA4.dev rpdlB4.dev rpdlB5.dev bj10v.dev bj10vh.dev dmprt.dev npdl.dev alps.dev'
 
 sed -e "s;XINCLUDE=-I/usr/local/X/include;XINCLUDE=-I/usr/X11R6/include;" \
     -e "s;XLIBDIRS=-L/usr/X11/lib;XLIBDIRS=-L/usr/X11R6/lib;" \
@@ -64,6 +64,7 @@ Have fun with this new configuration style !     -andreas \n\n\
    "x11cmyk"  "X masquer. as 1-bit-per-plane CMYK device" ON \
    "x11gray2" "X masquer. as device with 2-bit gray-scale device" ON \
    "x11mono"  "X masquer. as black-and-white device" ON \
+   "alps"     "ALPS MD5000 monochrome driver" ON \
    "ap3250"   "Epson AP3250" OFF \
    "appledmp" "Apple Dot Matrix Printer / Imagewriter" OFF \
    "bj10e"    "Canon BubbleJet BJ10e" ON \
