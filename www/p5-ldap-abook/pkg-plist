@@ -1,0 +1,33 @@
+www/ldap-abook/html/ball.gray.gif
+www/ldap-abook/html/getting_started
+www/ldap-abook/html/index.html
+www/ldap-abook/examples/default/AddressBook.conf
+www/ldap-abook/examples/default/README
+www/ldap-abook/examples/default/abookperson.schema
+www/ldap-abook/examples/default/slapd.conf.v2
+www/ldap-abook/examples/default/abookPerson.oc.conf
+www/ldap-abook/examples/default/setup.pm
+www/ldap-abook/examples/default/slapd.conf.v1
+www/ldap-abook/examples/default/abook.ldif
+www/ldap-abook/cgi-bin/abook.cgi
+www/ldap-abook/t/01-ldap_bind.t
+www/ldap-abook/t/02-abookentry.t
+www/ldap-abook/t/03-abooksearch.t
+www/ldap-abook/t/04-abooknew.t
+www/ldap-abook/t/05-base_check.t
+www/ldap-abook/INSTALL
+www/ldap-abook/ChangeLog
+www/ldap-abook/COPYING
+www/ldap-abook/Artistic
+www/ldap-abook/README
+www/ldap-abook/Makefile.PL
+www/ldap-abook/MANIFEST
+@unexec if cmp -s %D/etc/AddressBook.conf %D/etc/AddressBook.conf-dist; then rm -f %D/etc/AddressBook.conf; fi
+etc/AddressBook.conf-dist
+@exec [ -f %B/AddressBook.conf ] || cp %B/%f %B/AddressBook.conf
+@dirrm www/ldap-abook/html
+@dirrm www/ldap-abook/examples/default
+@dirrm www/ldap-abook/examples
+@dirrm www/ldap-abook/cgi-bin
+@dirrm www/ldap-abook/t
+@dirrm www/ldap-abook
