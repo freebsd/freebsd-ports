@@ -1,12 +1,12 @@
 # New ports collection makefile for:	aumix
-# Version required:    1.22
+# Version required:    1.22.1
 # Date created:        21 May 1999
 # Whom:                Chris Piazza <cpiazza@FreeBSD.org>
 #
-# $Id: Makefile,v 1.4 1999/06/12 05:50:00 mharo Exp $
+# $Id: Makefile,v 1.5 1999/06/19 08:24:37 cpiazza Exp $
 #
 
-DISTNAME=	aumix-1.22
+DISTNAME=	aumix-1.22.1
 CATEGORIES=	audio
 MASTER_SITES=	http://jpj.net/~trevor/aumix/ \
 		${MASTER_SITE_SUNSITE}
