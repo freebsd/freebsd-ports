@@ -1,4 +1,4 @@
-# New ports collection makefile for:	abuse_data
+# New ports collection makefile for:	abuse
 # Date created:				11 May 2002
 # Whom:					des
 #
@@ -7,6 +7,7 @@
 
 PORTNAME=	abuse
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.labyrinth.net.au/~trandor/abuse/files/
 DISTFILES=	abuse_datafiles.tar.gz
