@@ -24,6 +24,7 @@ USE_PERL5=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
+CFLAGS+=	-fPIC
 
 CONFIGURE_ARGS+= --enable-shared --with-mib-modules="host ucd-snmp/diskio" \
 		 --with-gnu-ld --with-libwrap --with-libs="-ldevstat"
