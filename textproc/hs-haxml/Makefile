@@ -55,7 +55,7 @@ PLIST_SUB+=	GHC="@comment "
 pre-everything:
 	@${ECHO_CMD} ""
 .if defined(WITH_GHC) && !defined(WITHOUT_NHC98)
-	@${ECHO_CMD} " HaXml will be installed for both nhc98 and ghc.
+	@${ECHO_CMD} " HaXml will be installed for both nhc98 and ghc."
 .elif defined(WITHOUT_NHC98)
 	@${ECHO_CMD} " HaXml will be installed for ghc only."
 .else
