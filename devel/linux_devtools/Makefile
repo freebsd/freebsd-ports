@@ -35,6 +35,8 @@ COMMENT=		Packages needed for doing development in Linux mode
 
 BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 
+RESTRICTED=		"binaries under GNU GPL without accompanying source"
+
 USE_LINUX?=		yes
 NO_LATEST_LINK=		yes
 ONLY_FOR_ARCHS=		i386
