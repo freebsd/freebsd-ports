@@ -110,7 +110,7 @@ MOC?=			${QT_PREFIX}/bin/moc
 BUILD_DEPENDS+=	${QT_PREFIX}/bin/moc:${PORTSDIR}/x11-toolkits/qt30
 RUN_DEPENDS+=	${QT_PREFIX}/bin/moc:${PORTSDIR}/x11-toolkits/qt30
 QTCPPFLAGS+=	-I${LOCALBASE}/include -I${PREFIX}/include \
-				-I${QT_PREFIX}/include
+				-I${QT_PREFIX}/include -D_GETOPT_H
 QTCFGLIBS+=		-Wl,-export-dynamic -L${LOCALBASE}/lib -L${X11BASE}/lib -ljpeg \
 				-L${QT_PREFIX}/lib
 .if !defined(QT_NONSTANDARD)
