@@ -35,6 +35,7 @@ CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
 		LIBS=-L${LOCALBASE}/lib
 
 MAN1=		wget.1
+INFO=		wget
 
 post-patch:
 	${RM} -f ${WRKSRC}/doc/wget.info*
