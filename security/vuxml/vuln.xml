@@ -32,6 +32,29 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="85edfb6a-43a5-11d9-a9e7-0001020eed82">
+    <topic>sudoscript -- signal delivery vulnerability</topic>
+    <affects>
+      <package>
+	<name>sudoscript</name>
+	<range><lt>2.1.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>If non-root access is enabled in sudoscript, any member of
+	  the ssers group can send a SIGHUP signal to any process.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://egbok.com/sudoscript/archives/2004/11/sudoscript_212.html</url>
+    </references>
+    <dates>
+      <discovery>2004-11-14</discovery>
+      <entry>2004-12-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="553224e7-4325-11d9-a3d5-000c6e8f12ef">
     <topic>jabberd -- remote buffer overflow vulnerability</topic>
     <affects>
