@@ -1,0 +1,9 @@
+lib/common-lisp/meta/package.lisp
+lib/common-lisp/meta/meta.lisp
+lib/common-lisp/meta/meta.asd
+lib/common-lisp/system-registry/meta.asd
+%%PORTDOCS%%share/doc/cl-meta/Prag-Parse.html
+%%PORTDOCS%%share/doc/cl-meta/Prag-Parse.ps
+%%PORTDOCS%%share/doc/cl-meta/README
+%%PORTDOCS%%@dirrm share/doc/cl-meta
+@dirrm lib/common-lisp/meta
