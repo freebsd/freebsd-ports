@@ -132,6 +132,17 @@ share/apps/kppp/Provider/United_Kingdom/Demon%032Green%0322120666
 share/apps/kppp/Provider/United_Kingdom/Demon%032Purple%0322121666
 share/apps/kppp/Provider/United_Kingdom/Demon%032Red%0320798666
 share/apps/kppp/Provider/United_Kingdom/FreeServe
+share/apps/kppp/Provider/Yugoslavia/BeoTelNet
+share/apps/kppp/Provider/Yugoslavia/CG.yu
+share/apps/kppp/Provider/Yugoslavia/DrenikNet
+share/apps/kppp/Provider/Yugoslavia/EUnet
+share/apps/kppp/Provider/Yugoslavia/EUnetlite
+share/apps/kppp/Provider/Yugoslavia/InfoSKY
+share/apps/kppp/Provider/Yugoslavia/PTT
+share/apps/kppp/Provider/Yugoslavia/SCnet
+share/apps/kppp/Provider/Yugoslavia/Sezampro
+share/apps/kppp/Provider/Yugoslavia/VeratNet
+share/apps/kppp/Provider/Yugoslavia/YUBCnet
 share/apps/kppp/Rules/Argentina/Argentina_0610.rst
 share/apps/kppp/Rules/Argentina/Argentina_Local.rst
 share/apps/kppp/Rules/Australia/Local.rst
@@ -185,12 +196,15 @@ share/apps/kppp/Rules/England/BirminghamCable_SameTelco.rst
 share/apps/kppp/Rules/England/BritishTelecom_Local.rst
 share/apps/kppp/Rules/England/BritishTelecom_National.rst
 share/apps/kppp/Rules/England/BritishTelecom_Regional.rst
+share/apps/kppp/Rules/Estonia/Eesti_Telefon.rst
 share/apps/kppp/Rules/France/France_Telecom_Local.rst
 share/apps/kppp/Rules/France/France_Telecom_Local_Area.rst
 share/apps/kppp/Rules/France/France_Telecom_Local_Primaliste_Internet.rst
 share/apps/kppp/Rules/France/France_Telecom_National.rst
 share/apps/kppp/Rules/Germany/AddCom_by_Call.rst
 share/apps/kppp/Rules/Germany/Addcom.rst
+share/apps/kppp/Rules/Germany/Callino_Surf_Basic.rst
+share/apps/kppp/Rules/Germany/Callino_Surf_Plus.rst
 share/apps/kppp/Rules/Germany/CallOkaynet.rst
 share/apps/kppp/Rules/Germany/City_Activ_Plus_Option.rst
 share/apps/kppp/Rules/Germany/Freenet_Enterprise.rst
@@ -388,15 +402,18 @@ share/apps/ksirc/tester.pl
 share/config/ksircrc
 share/config/protocols/vnc.desktop
 share/doc/HTML/en/keystone/.anchors
+share/doc/HTML/en/keystone/common
 share/doc/HTML/en/keystone/index.docbook
 share/doc/HTML/en/keystone/index.html
 share/doc/HTML/en/keystone/introduction.html
 share/doc/HTML/en/kit/.anchors
+share/doc/HTML/en/kit/common
 share/doc/HTML/en/kit/index.docbook
 share/doc/HTML/en/kit/index.html
 share/doc/HTML/en/kit/introduction.html
 share/doc/HTML/en/kmail/.anchors
 share/doc/HTML/en/kmail/appearancetab.html
+share/doc/HTML/en/kmail/common
 share/doc/HTML/en/kmail/composertab.html
 share/doc/HTML/en/kmail/copyright.html
 share/doc/HTML/en/kmail/documentation.html
@@ -425,6 +442,7 @@ share/doc/HTML/en/kmail/thecomposerwindow.html
 share/doc/HTML/en/kmail/thecomposerwindow2.html
 share/doc/HTML/en/knode/.anchors
 share/doc/HTML/en/knode/commands.html
+share/doc/HTML/en/knode/common
 share/doc/HTML/en/knode/compilation.html
 share/doc/HTML/en/knode/configuration.html
 share/doc/HTML/en/knode/credits.html
@@ -473,6 +491,7 @@ share/doc/HTML/en/knode/update-installation.html
 share/doc/HTML/en/knode/usenet-slang.html
 share/doc/HTML/en/knode/using-knode.html
 share/doc/HTML/en/korn/.anchors
+share/doc/HTML/en/korn/common
 share/doc/HTML/en/korn/index.docbook
 share/doc/HTML/en/korn/index.html
 share/doc/HTML/en/korn/introduction.html
@@ -486,6 +505,7 @@ share/doc/HTML/en/kppp/accounting.html
 share/doc/HTML/en/kppp/appendix.html
 share/doc/HTML/en/kppp/autoconfigurehostname.html
 share/doc/HTML/en/kppp/cb.html
+share/doc/HTML/en/kppp/common
 share/doc/HTML/en/kppp/compilationandinstallation.html
 share/doc/HTML/en/kppp/configuringanaccount.html
 share/doc/HTML/en/kppp/costsgraphs.fig
@@ -529,6 +549,7 @@ share/doc/HTML/en/ksirc/.anchors
 share/doc/HTML/en/ksirc/addingfilehandlestothemainselectloop.html
 share/doc/HTML/en/ksirc/bots.html
 share/doc/HTML/en/ksirc/colournumbers.html
+share/doc/HTML/en/ksirc/common
 share/doc/HTML/en/ksirc/examplesfilters.html
 share/doc/HTML/en/ksirc/examplessetcolors.html
 share/doc/HTML/en/ksirc/filters.html
@@ -547,6 +568,7 @@ share/doc/HTML/en/ksirc/setvariables.html
 share/doc/HTML/en/ksirc/timers.html
 share/doc/HTML/en/ksirc/userhostrequests.html
 share/doc/HTML/en/ktalkd/.anchors
+share/doc/HTML/en/ktalkd/common
 share/doc/HTML/en/ktalkd/compilationandinstallation.html
 share/doc/HTML/en/ktalkd/copyright.html
 share/doc/HTML/en/ktalkd/howdoigetdebugoutputfromktalkd.html
@@ -632,6 +654,7 @@ share/sounds/ktalkd.wav
 @dirrm share/apps/kppp/Rules/Greece
 @dirrm share/apps/kppp/Rules/Germany
 @dirrm share/apps/kppp/Rules/France
+@dirrm share/apps/kppp/Rules/Estonia
 @dirrm share/apps/kppp/Rules/England
 @dirrm share/apps/kppp/Rules/Denmark
 @dirrm share/apps/kppp/Rules/Czechia
@@ -647,6 +670,7 @@ share/sounds/ktalkd.wav
 @dirrm share/apps/kppp/Rules/Australia
 @dirrm share/apps/kppp/Rules/Argentina
 @dirrm share/apps/kppp/Rules
+@dirrm share/apps/kppp/Provider/Yugoslavia
 @dirrm share/apps/kppp/Provider/United_Kingdom
 @dirrm share/apps/kppp/Provider/Taiwan
 @dirrm share/apps/kppp/Provider/Portugal

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	koffice
-PORTVERSION=	2.0
+PORTVERSION=	2.0.1
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/src
@@ -22,8 +22,7 @@ USE_BZIP2=	yes
 USE_NEWGCC=	yes
 INSTALLS_SHLIB=	yes
 USE_AUTOCONF=	yes
-CONFIGURE_ARGS+=--with-qt-dir=${X11BASE} \
-		--with-qt-includes=${X11BASE}/include/qt2 \
+CONFIGURE_ARGS+=--with-qt-includes=${X11BASE}/include/qt2 \
 		--with-qt-libraries=${X11BASE}/lib \
 		--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ENV+= LIBQT="-lqt2" MOC="${MOC}" LIBQTFILE="libqt2" \

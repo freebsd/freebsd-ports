@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	kdeutils
-PORTVERSION=	2.0
+PORTVERSION=	2.0.1
 CATEGORIES=	misc kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/src
 
 MAINTAINER=	kevlo@FreeBSD.org
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		kdecore.4:${PORTSDIR}/x11/kdelibs2
+LIB_DEPENDS=	kdecore.4:${PORTSDIR}/x11/kdelibs2
 
 USE_QT2=	yes
 MOC?=		${X11BASE}/bin/moc2

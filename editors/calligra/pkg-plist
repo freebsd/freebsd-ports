@@ -77,20 +77,27 @@ lib/libhtmlimport.so
 lib/libkchartpart.la
 lib/libkchartpart.so
 lib/libkformula.la
+lib/libkformula.so
 lib/libkformula.so.3
 lib/libkillustratorpart.la
 lib/libkillustratorpart.so
 lib/libkochart.la
+lib/libkochart.so
 lib/libkochart.so.1
 lib/libkodocinfopropspage.la
+lib/libkodocinfopropspage.so
 lib/libkodocinfopropspage.so.0
 lib/libkofficecore.la
+lib/libkofficecore.so
 lib/libkofficecore.so.1
 lib/libkofficeui.la
+lib/libkofficeui.so
 lib/libkofficeui.so.1
 lib/libkoml.la
+lib/libkoml.so
 lib/libkoml.so.1
 lib/libkoscript.la
+lib/libkoscript.so
 lib/libkoscript.so.1
 lib/libkpresenterpart.la
 lib/libkpresenterpart.so
@@ -101,6 +108,7 @@ lib/libkspreadcalc.so
 lib/libkspreadpart.la
 lib/libkspreadpart.so
 lib/libkstore.la
+lib/libkstore.so
 lib/libkstore.so.1
 lib/libkwordpart.la
 lib/libkwordpart.so
@@ -603,6 +611,7 @@ share/doc/HTML/en/killustrator/bezier.png
 share/doc/HTML/en/killustrator/blend_dialog.png
 share/doc/HTML/en/killustrator/changing-the-standard-parameters.html
 share/doc/HTML/en/killustrator/colour.png
+share/doc/HTML/en/killustrator/common
 share/doc/HTML/en/killustrator/compilation-and-installation.html
 share/doc/HTML/en/killustrator/copyright.html
 share/doc/HTML/en/killustrator/drawing-2d-primitives.html
@@ -644,6 +653,7 @@ share/doc/HTML/en/killustrator/working-with-files.html
 share/doc/HTML/en/killustrator/zoom-tool.html
 share/doc/HTML/en/killustrator/zoom.png
 share/doc/HTML/en/koffice/.anchors
+share/doc/HTML/en/koffice/common
 share/doc/HTML/en/koffice/compilingproblems.html
 share/doc/HTML/en/koffice/customgui.html
 share/doc/HTML/en/koffice/customization.html
@@ -669,6 +679,7 @@ share/doc/HTML/en/koffice/whoreads.html
 share/doc/HTML/en/kpresenter/.anchors
 share/doc/HTML/en/kpresenter/addshadow.html
 share/doc/HTML/en/kpresenter/appendix.html
+share/doc/HTML/en/kpresenter/common
 share/doc/HTML/en/kpresenter/credits.html
 share/doc/HTML/en/kpresenter/guides.html
 share/doc/HTML/en/kpresenter/index.docbook
@@ -685,6 +696,7 @@ share/doc/HTML/en/kpresenter/todo.html
 share/doc/HTML/en/kpresenter/tutorial.html
 share/doc/HTML/en/kspread/.anchors
 share/doc/HTML/en/kspread/appendix.html
+share/doc/HTML/en/kspread/common
 share/doc/HTML/en/kspread/compilingproblems.html
 share/doc/HTML/en/kspread/credits.html
 share/doc/HTML/en/kspread/dragdrop.html
@@ -776,6 +788,7 @@ share/doc/HTML/en/kword/close.png
 share/doc/HTML/en/kword/colin.png
 share/doc/HTML/en/kword/colout.png
 share/doc/HTML/en/kword/columns.html
+share/doc/HTML/en/kword/common
 share/doc/HTML/en/kword/conventions.html
 share/doc/HTML/en/kword/credits.html
 share/doc/HTML/en/kword/ctab.png
@@ -1096,6 +1109,7 @@ share/servicetypes/kotool.desktop
 @dirrm share/doc/HTML/en/kpresenter
 @dirrm share/doc/HTML/en/koffice
 @dirrm share/doc/HTML/en/killustrator
+@dirrm share/doc/HTML/en/doc
 @dirrm share/apps/kword/templates/Publishing/.source
 @dirrm share/apps/kword/templates/Publishing/.icon
 @dirrm share/apps/kword/templates/Publishing
@@ -1105,6 +1119,8 @@ share/servicetypes/kotool.desktop
 @dirrm share/apps/kword/templates
 @dirrm share/apps/kword/icons/locolor/22x22/actions
 @dirrm share/apps/kword/icons/locolor/22x22
+@dirrm share/apps/kword/icons/locolor
+@dirrm share/apps/kword/icons
 @dirrm share/apps/kword/dtd
 @dirrm share/apps/kword
 @dirrm share/apps/kspread/tablestyles
@@ -1112,6 +1128,9 @@ share/servicetypes/kotool.desktop
 @dirrm share/apps/kspread/icons/locolor/22x22/actions
 @dirrm share/apps/kspread/icons/locolor/22x22
 @dirrm share/apps/kspread/icons/locolor/16x16/actions
+@dirrm share/apps/kspread/icons/locolor/16x16
+@dirrm share/apps/kspread/icons/locolor
+@dirrm share/apps/kspread/icons
 @dirrm share/apps/kspread/extensions
 @dirrm share/apps/kspread/dtd
 @dirrm share/apps/kspread
@@ -1126,6 +1145,8 @@ share/servicetypes/kotool.desktop
 @dirrm share/apps/kpresenter/pics
 @dirrm share/apps/kpresenter/icons/locolor/22x22/actions
 @dirrm share/apps/kpresenter/icons/locolor/22x22
+@dirrm share/apps/kpresenter/icons/locolor
+@dirrm share/apps/kpresenter/icons
 @dirrm share/apps/kpresenter/dtd
 @dirrm share/apps/kpresenter/autoforms/Connections
 @dirrm share/apps/kpresenter/autoforms/Arrows
@@ -1137,10 +1158,13 @@ share/servicetypes/kotool.desktop
 @dirrm share/apps/koffice/icons/locolor/22x22
 @dirrm share/apps/koffice/icons/locolor/16x16/actions
 @dirrm share/apps/koffice/icons/locolor/16x16
+@dirrm share/apps/koffice/icons/locolor
 @dirrm share/apps/koffice/icons/hicolor/32x32/actions
 @dirrm share/apps/koffice/icons/hicolor/32x32
 @dirrm share/apps/koffice/icons/hicolor/22x22/actions
 @dirrm share/apps/koffice/icons/hicolor/22x22
+@dirrm share/apps/koffice/icons/hicolor
+@dirrm share/apps/koffice/icons
 @dirrm share/apps/koffice
 @dirrm share/apps/killustrator/templates/Simple/.source
 @dirrm share/apps/killustrator/templates/Simple/.icon
@@ -1152,4 +1176,7 @@ share/servicetypes/kotool.desktop
 @dirrm share/apps/kchart/icons/locolor/22x22/actions
 @dirrm share/apps/kchart/icons/locolor/22x22
 @dirrm share/apps/kchart/icons/locolor/16x16/actions
+@dirrm share/apps/kchart/icons/locolor/16x16
+@dirrm share/apps/kchart/icons/locolor
+@dirrm share/apps/kchart/icons
 @dirrm share/apps/kchart

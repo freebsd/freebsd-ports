@@ -160,6 +160,7 @@ include/kdesu/defaults.h
 include/kdesu/kcookie.h
 include/kdesu/kdesu_pty.h
 include/kdesu/process.h
+include/kdesu/pty.h
 include/kdesu/ssh.h
 include/kdesu/stub.h
 include/kdesu/su.h
@@ -383,20 +384,6 @@ include/progressbase.h
 include/qconfigDB.h
 include/qxembed.h
 include/statusbarprogress.h
-lib/Arts/Synth_ADD.mcopclass
-lib/Arts/Synth_AMAN_PLAY.mcopclass
-lib/Arts/Synth_AMAN_RECORD.mcopclass
-lib/Arts/Synth_BUS_DOWNLINK.mcopclass
-lib/Arts/Synth_BUS_UPLINK.mcopclass
-lib/Arts/Synth_FREQUENCY.mcopclass
-lib/Arts/Synth_MUL.mcopclass
-lib/Arts/Synth_MULTI_ADD.mcopclass
-lib/Arts/Synth_PLAY.mcopclass
-lib/Arts/Synth_PLAY_WAV.mcopclass
-lib/Arts/Synth_RECORD.mcopclass
-lib/Arts/Synth_WAVE_SIN.mcopclass
-lib/Arts/WavPlayObject.mcopclass
-lib/Arts/X11GlobalComm.mcopclass
 lib/b3style.la
 lib/b3style.so
 lib/basicstyle.la
@@ -480,7 +467,6 @@ lib/libkdeui.so.4
 lib/libkfile.la
 lib/libkfile.so
 lib/libkfile.so.4
-lib/libkformula.so
 lib/libkhtml.la
 lib/libkhtml.so
 lib/libkhtml.so.4
@@ -526,6 +512,20 @@ lib/libsoundserver_idl.so.0
 lib/libx11globalcomm.la
 lib/libx11globalcomm.so
 lib/libx11globalcomm.so.0
+lib/mcop/Arts/Synth_ADD.mcopclass
+lib/mcop/Arts/Synth_AMAN_PLAY.mcopclass
+lib/mcop/Arts/Synth_AMAN_RECORD.mcopclass
+lib/mcop/Arts/Synth_BUS_DOWNLINK.mcopclass
+lib/mcop/Arts/Synth_BUS_UPLINK.mcopclass
+lib/mcop/Arts/Synth_FREQUENCY.mcopclass
+lib/mcop/Arts/Synth_MUL.mcopclass
+lib/mcop/Arts/Synth_MULTI_ADD.mcopclass
+lib/mcop/Arts/Synth_PLAY.mcopclass
+lib/mcop/Arts/Synth_PLAY_WAV.mcopclass
+lib/mcop/Arts/Synth_RECORD.mcopclass
+lib/mcop/Arts/Synth_WAVE_SIN.mcopclass
+lib/mcop/Arts/WavPlayObject.mcopclass
+lib/mcop/Arts/X11GlobalComm.mcopclass
 share/apps/LICENSES/ARTISTIC
 share/apps/LICENSES/BSD
 share/apps/LICENSES/GPL_V2
@@ -1087,6 +1087,7 @@ share/doc/HTML/en/common/warning.png
 share/doc/HTML/en/common/x11-licence.html
 share/doc/HTML/en/common/xml.dcl
 share/doc/HTML/en/kspell/.anchors
+share/doc/HTML/en/kspell/common
 share/doc/HTML/en/kspell/configuration-dialog-.html
 share/doc/HTML/en/kspell/contact-information.html
 share/doc/HTML/en/kspell/encodings.html
@@ -2094,6 +2095,7 @@ share/servicetypes/krop.desktop
 share/servicetypes/krwp.desktop
 share/servicetypes/ktexteditor.desktop
 share/servicetypes/kurifilterplugin.desktop
+@dirrm share/doc/HTML/en/kspell
 @dirrm share/apps/kstyle/themes
 @dirrm share/apps/kstyle/pixmaps
 @dirrm share/apps/kstyle
@@ -2152,18 +2154,30 @@ share/servicetypes/kurifilterplugin.desktop
 @dirrm share/apps/ksgmltools/ca/entities
 @dirrm share/apps/ksgmltools/ca
 @dirrm share/apps/ksgmltools
+@dirrm share/apps/kssl
 @dirrm share/apps/kjava
 @dirrm share/apps/kio_uiserver/icons/locolor/16x16/apps
+@dirrm share/apps/kio_uiserver/icons/locolor/16x16
+@dirrm share/apps/kio_uiserver/icons/locolor
+@dirrm share/apps/kio_uiserver/icons
+@dirrm share/apps/kio_uiserver
 @dirrm share/apps/khtml/icons/locolor/16x16/actions
+@dirrm share/apps/khtml/icons/locolor/16x16
+@dirrm share/apps/khtml/icons/locolor
 @dirrm share/apps/khtml/icons/hicolor/32x32/actions
+@dirrm share/apps/khtml/icons/hicolor/32x32
 @dirrm share/apps/khtml/icons/hicolor/22x22/actions
+@dirrm share/apps/khtml/icons/hicolor/22x22
+@dirrm share/apps/khtml/icons/hicolor
+@dirrm share/apps/khtml/icons
 @dirrm share/apps/khtml/css
 @dirrm share/apps/khtml
 @dirrm share/apps/kdeui/pics
 @dirrm share/apps/kdeui
 @dirrm share/apps/kab
 @dirrm share/apps/LICENSES
-@dirrm lib/Arts
+@dirrm lib/mcop/Arts
+@dirrm lib/mcop
 @dirrm include/libkmid
 @dirrm include/kparts
 @dirrm include/kjs

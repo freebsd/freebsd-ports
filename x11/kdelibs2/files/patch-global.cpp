@@ -1,5 +1,5 @@
---- kio/global.cpp.orig	Mon Sep 18 07:24:44 2000
-+++ kio/global.cpp	Thu Nov  2 11:37:24 2000
+--- kio/global.cpp.orig	Thu Dec  7 14:52:15 2000
++++ kio/global.cpp	Thu Dec  7 14:52:29 2000
 @@ -28,6 +28,12 @@
  #include <string.h>
  #include <unistd.h>
@@ -52,4 +52,3 @@
      return result;
  }
  
-
