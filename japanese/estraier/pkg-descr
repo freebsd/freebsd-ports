@@ -1,0 +1,7 @@
+Estraier is a full-text search system for personal use. Full-text search means
+functions to search lots of documents for some documents including specified
+words. The principal purpose of Estraier is to realize a full-text search
+system of a web site. It functions similarly to Google, but for a personal
+web site or sites in an intranet.
+
+WWW:	http://estraier.sourceforge.net/
