@@ -67,7 +67,7 @@ CONFIGURE_ARGS+= --without-idea
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 500023
-LIB_DEPENDS+=	gmp.4:${PORTSDIR}/math/libgmp3
+LIB_DEPENDS+=	gmp.3:${PORTSDIR}/math/libgmp-freebsd
 MAKE_ENV+=	GMPINCDIR="${LOCALBASE}/include" \
 		GMPLIBDIR="${LOCALBASE}/lib"
 .endif
