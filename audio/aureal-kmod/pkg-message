@@ -1,10 +1,21 @@
 -------------------------------------------------------------------------------
-You can load the module by typing (as root of course):
+To use the driver, make a copy of %%PREFIX%%/etc/rc.d/aureal.sh.sample under 
+%%PREFIX%%/etc/rc.d/aureal.sh and do: chmod +x %%PREFIX%%/etc/rc.d/aureal.sh.
 
-# kldload %%PREFIX%%/lib/au88x0/snd_au88X0.ko
+To load the driver run (as root):
 
-where X is 1, 2 or 3 depending on which Aureal chipset do you have - au8810
-(Vortex Advantage), au8820 (Vortex 1) or au8830 (Vortex 2) correspondingly.
+# %%PREFIX%%/etc/rc.d/aureal.sh start
+
+To unload it:
+
+# %%PREFIX%%/etc/rc.d/aureal.sh stop
+
+It'll also load the driver automatically when the system is started.
+
+In case it fails to detect the type of your Vortex soundcard correctly,
+edit this script and set "CARD=" to 88X0 where X is 1, 2 or 3 depending 
+on which Aureal chipset you have - au8810 (Vortex Advantage), au8820 
+(Vortex 1) or au8830 (Vortex 2) correspondingly.
 
 Please note that you also need to have a `snd_pcm.ko' module either already
 loaded or placed into appropriate location for modules on your system (default
@@ -13,9 +24,7 @@ install snd_pcm by doing:
 
 # cd /sys/modules/sound/pcm/ && make all install
 
-Please also note that module for 4.1-STABLE system is untested, so please use it
-with caution and if possible please report if it works for you to
-Alexander Matey <matey@cis.ohio-state.edu>.
+Report problems to Alexander Matey <lx@matey.org>.
 
 Thanks and enjoy!
 
