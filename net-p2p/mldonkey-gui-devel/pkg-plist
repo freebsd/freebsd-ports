@@ -1,7 +1,2 @@
-bin/kill_mldonkey
-bin/mldonkey
-bin/mldonkey-real
 bin/mldonkey_gui
-bin/mldonkey_previewer
-%%PORTDOCS%%share/doc/mldonkey/Readme.txt
-%%PORTDOCS%%@dirrm share/doc/mldonkey
+bin/mldonkey_gui2
