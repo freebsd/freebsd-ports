@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mailgraph
-PORTVERSION=	0.20
+PORTVERSION=	0.21
 PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	http://people.ee.ethz.ch/~dws/software/mailgraph/pub/
