@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon May 17 01:26:53 2004
++++ Makefile.in	Wed May 26 18:31:08 2004
+@@ -138,7 +138,7 @@
+ 
+ SUBDIRS = data po src
+ 
+-giftuidocdir = $(prefix)/doc/giftui
++giftuidocdir = $(prefix)/share/doc/giftui
+ giftuidoc_DATA = \
+ 	README \
+ 	COPYING \
