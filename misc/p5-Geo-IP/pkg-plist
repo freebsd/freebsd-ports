@@ -3,7 +3,6 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Geo/Mirror.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Geo/IP/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Geo/IP/IP.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Geo/IP/IP.so
-lib/perllocal.pod
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Geo/IP
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Geo
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Geo
