@@ -18,8 +18,10 @@ USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmtz
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+MAN1=		wmtz.1
 
 post-install:
+	@${INSTALL_MAN} ${WRKSRC}/wmtz.1 ${PREFIX}/man/man1/
 	@${ECHO} "===>   Installing wmtzrc.default in ${PREFIX}/etc."
 	@${ECHO} "===>   Copy it to ~/.wmtzrc or ${PREFIX}/etc/wmtzrc and modify it."
 	@${INSTALL_DATA} ${WRKSRC}/wmtzrc ${PREFIX}/etc/wmtzrc.default
