@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	tilp
 MAINTAINER=	tijl@ulyssis.org
 COMMENT=	TI calculator file types library
 
+BROKEN=		Broken pkg-plist
+
 BUILD_DEPENDS=  pkg-config:${PORTSDIR}/devel/pkgconfig
 RUN_DEPENDS=    pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
