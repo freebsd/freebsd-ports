@@ -29,7 +29,7 @@ TIN_EDITOR?=	/usr/bin/ee
 
 # --with-mime-default-charset=US-ASCII needed to build tin in the non-ascii
 # national environment.
-CONFIGURE_ARGS=	--with-nntp-default-server=news \
+CONFIGURE_ARGS+=--with-nntp-default-server=news \
 		--with-spooldir=/var/news \
 		--with-libdir=${PREFIX}/news/lib \
 		--with-defaults-dir=${PREFIX}/etc \
