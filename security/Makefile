@@ -411,8 +411,8 @@
     SUBDIR += vpnc
     SUBDIR += vpnd
     SUBDIR += vscan
-    SUBDIR += vuxml
     SUBDIR += vulnerability-test-port
+    SUBDIR += vuxml
     SUBDIR += vxquery
     SUBDIR += xca
     SUBDIR += xinetd
