@@ -9,14 +9,13 @@
 DISTNAME=	lzo-1.04
 CATEGORIES=	archivers devel
 MASTER_SITES= 	${MASTER_SITE_SUNSITE} \
-		ftp://wildsau.idv.uni-linz.ac.at/pub/mfx/lzo/
+		http://wildsau.idv.uni-linz.ac.at/mfx/lzo-download/
 MASTER_SITE_SUBDIR=	libs/compression
 
 MAINTAINER=	ports@FreeBSD.org
 
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS+= 	--enable-shared=yes \
-  			--enable-asm=yes
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/lzo
