@@ -10,28 +10,38 @@ DISTNAME=	cvsweb-1.0
 CATEGORIES=	devel www
 MASTER_SITES=	http://people.FreeBSD.org/~fenner/cvsweb/
 
-MAINTAINER=	sada@FreeBSD.org
+MAINTAINER=	knu@idaemons.org
 
 NO_BUILD=	yes
 
-# could be overridden.
-CVSROOT?=	'/home/ncvs'
-CVSWEB_CVSROOT?= ${CVSROOT}
-CVSWEB_TITLE?=	'My CVS Tree'
-.if defined(PACKAGE_BUILDING)
-CVSWEB_CVSROOT=	/home/ncvs
+# Specify where your repository belongs.
+# (You can reconfigure it after installation anyway)
+.if defined(PACKAGE_BUILDING) || !defined(CVSROOT) || empty(CVSROOT)
+CVSROOT=	/home/ncvs
 .endif
+
+# Specify the title of your cvsweb site.
+TITLE?=		My CVS Repository
+
+# Specify the cgi-bin directory in relative paths to ${PREFIX}.
+CGIDIR?=	share/apache/cgi-bin
+
+PLIST_SUB=	CGIDIR="${CGIDIR}"
 
 do-configure:
-	@${SED} -e "s;@@CVSROOT@@;${CVSWEB_CVSROOT};g" \
-		-e "s;@@TITLE@@;${CVSWEB_TITLE};g" \
-		${WRKSRC}/cvsweb > ${WRKDIR}/cvsweb
+	${SED}	-e "s;!!CVSROOT!!;${CVSROOT};g" \
+		-e "s;!!TITLE!!;${TITLE};g" \
+		${WRKSRC}/cvsweb > ${WRKSRC}/cvsweb.cgi
 
 do-install:
-.if !defined(PACKAGE_BUILDING)
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGREQ} ${PKGNAME} INSTALL
+	${MKDIR} ${PREFIX}/${CGIDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/cvsweb.cgi ${PREFIX}/${CGIDIR}/
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/cvsweb
+	cd ${WRKSRC} && ${INSTALL_DATA} README ${PREFIX}/share/doc/cvsweb/
 .endif
-	@${MKDIR} ${PREFIX}/share/apache/cgi-bin
-	@${INSTALL_SCRIPT} ${WRKDIR}/cvsweb ${PREFIX}/share/apache/cgi-bin/
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
