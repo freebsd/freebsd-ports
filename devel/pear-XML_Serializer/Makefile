@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML_Serializer
-PORTVERSION=	0.12.0
+PORTVERSION=	0.13.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
@@ -22,8 +22,8 @@ EXAMPLES=	example.xml serializeArrayWithObjects.php serializeEmptyArray.php	\
 		serializeIndexedArray.php serializeObject.php serializeRDF.php		\
 		serializeWithAttributes.php serializeWithAttributes2.php		\
 		serializeWithDtd.php serializeWithIndentedAttributes.php		\
-		unserializeAnyXML.php unserializeEnum.php unserializeObject.php		\
-		unserializeRDF.php unserializeWithAttributes.php
+		serializeWithTagMap.php unserializeAnyXML.php unserializeEnum.php	\
+		unserializeObject.php unserializeRDF.php unserializeWithAttributes.php
 DOCS=		todo.txt
 _DOCSDIR=	doc
 
