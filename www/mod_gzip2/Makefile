@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_gzip
-PORTVERSION=	1.3.19.2a
+PORTVERSION=	1.3.26.1a
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mod-gzip
@@ -21,5 +21,13 @@ APXS?=		${LOCALBASE}/sbin/apxs
 APACHE_PORT?=	${PORTSDIR}/www/apache13
 
 ALL_TARGET=	build
+
+post-install:
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/docs/mod_gzip.conf.sample ${EXAMPLESDIR}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/docs/manual/english/* ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
