@@ -12,7 +12,7 @@
 #************************************************************************
 
 PORTNAME=	xscreensaver
-PORTVERSION=	4.15
+PORTVERSION=	4.16
 CATEGORIES?=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 
@@ -75,6 +75,7 @@ MAN1=	anemone.1 ant.1 apollonian.1 atlantis.1 attraction.1 blaster.1 \
 	glknots.1 blocktube.1 flipflop.1 antspotlight.1 polytopes.1 ljlatest.1 \
 	apple2.1 blinkbox.1 fontglide.1 gleidescope.1 mirrorblob.1 pong.1 \
 	xanalogtv.1 mismunch.1 noof.1 pacman.1 wormhole.1 \
+	antinspect.1 fuzzyflakes.1 polyhedra.1 providence.1 \
 	xscreensaver-command.1 xscreensaver-demo.1 \
 	xscreensaver-getimage-file.1 xscreensaver-getimage-video.1 \
 	xscreensaver-getimage.1 xscreensaver-gl-helper.1 xscreensaver.1
