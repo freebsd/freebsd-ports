@@ -6,8 +6,7 @@ if [ -z "${vuxml_file}" ]; then
   exit 1
 fi
 
-tmp="`mktemp -t vuxml`"
-[ "$?" -eq 0 ] || exit 1
+tmp="`mktemp ${TMPDIR:-/tmp}/vuxml.XXXXXXXXXX`" || exit 1
 doclean="yes"
 cleanup() {
   if [ "${doclean}" = "yes" ]; then
@@ -16,13 +15,13 @@ cleanup() {
 }
 trap cleanup EXIT 1 2 13 15
 
-set errexit
 vid="`uuidgen | tr '[:upper:]' '[:lower:]'`"
-discovery="`date -u '+%Y-%m'`-FIXME"
-entry="`date -u '+%Y-%m-%d'`"
+[ -z "$vid" ] && exit 1
+discovery="`date -u '+%Y-%m'`-FIXME" || exit 1
+entry="`date -u '+%Y-%m-%d'`" || exit 1
 
-awk '/^<\?/,/^<vuxml/ { print }' "${vuxml_file}" >> "${tmp}"
-cat << EOF >> "${tmp}"
+awk '/^<\?/,/^<vuxml/ { print }' "${vuxml_file}" >> "${tmp}" || exit 1
+cat << EOF >> "${tmp}" || exit 1
   <vuln vid="${vid}">
     <topic> -- </topic>
     <affects>
@@ -48,14 +47,11 @@ cat << EOF >> "${tmp}"
   </vuln>
 
 EOF
-awk '/^[[:space:]]+<vuln /,/^NONE$/ { print }' "${vuxml_file}" >> "${tmp}"
-
-set noerrexit
+awk '/^[[:space:]]+<vuln /,/^NONE$/ { print }' \
+  "${vuxml_file}" >> "${tmp}" || exit 1
 
 if cp "${tmp}" "${vuxml_file}"; then
-  exec >&2
-  echo "Template entry added.  Please edit \`${vuxml_file}'."
-  exit 0
+  exec "${EDITOR:-vi}" "${vuxml_file}"
 else
   doclean="no"
   exec >&2
