@@ -1,7 +1,16 @@
---- src/reader.cpp.orig	Fri Jul  6 10:40:46 2001
-+++ src/reader.cpp	Fri Jul  6 10:40:58 2001
-@@ -283,7 +283,7 @@
- #ifdef __GNUC__
+--- src/reader.cpp.orig	Sat Jul  7 04:16:01 2001
++++ src/reader.cpp	Sun Feb 23 00:46:53 2003
+@@ -227,7 +227,7 @@
+     // free the page which is the furthest away from the page we are loading
+ 
+     // this could be trouble if off_t is unsigned!
+-    if( abs(_firstPage - pageIdx) > abs(_lastPage - pageIdx) ) 
++    if( abs((long int)(_firstPage - pageIdx)) > abs((long int)(_lastPage - pageIdx)) ) 
+       while(!freePage(_firstPage++));
+     else
+       while(!freePage(_lastPage--));
+@@ -285,7 +285,7 @@
+ #ifdef LFHEX_IOS_BASE_FMTFLAGS
  ostream& operator<< (ostream&out, const ReadBuffer& buff)
  {
 -  ios_base::fmtflags old_flags = out.flags();
