@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libukcprog
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 CATEGORIES=	devel
 MASTER_SITES=	http://snapshots.i-scream.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
