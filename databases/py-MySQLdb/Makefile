@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MySQLdb
-PORTVERSION=	1.0.1
+PORTVERSION=	1.2.0
 PORTREVISION=	0
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -28,8 +28,6 @@ pre-fetch:
 	@${ECHO} "You may use the following build options:"
 	@${ECHO} ""
 	@${ECHO} "	WITH_MYSQLCLIENT_R=yes	Use mysqlclient_r lib"
-	@${ECHO} "	WITH_MYSQLSSL=yes	Use SSL support"
-	@${ECHO} "	WITH_MYSQLCRYPTO=yes	Use CRYPTO support"
 	@${ECHO} ""
 
 .if defined(WITH_MYSQLCLIENT_R)
@@ -38,32 +36,27 @@ MAKE_ENV+=	mysqlclient="mysqlclient_r"
 MAKE_ENV+=	mysqlclient="mysqlclient"
 .endif
 
-.if defined(WITH_MYSQLSSL)
-.if defined(WITH_MYSQLCRYPTO)
-MAKE_ENV+=	mysqloptlibs="ssl crypto"
-.else
-MAKE_ENV+=	mysqloptlibs="ssl"
-.endif
-.else
-.if defined(WITH_MYSQLCRYPTO)
-MAKE_ENV+=	mysqloptlibs="crypto"
-.else
-MAKE_ENV+=	mysqloptlibs=""
-.endif
-.endif
-
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
 .endif
 
-.if !defined(NOPORTDOCS)
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/MANIFEST ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.for FILE in ${WRKSRC}/doc/*
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
-.endfor
+	@${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/*.css ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/doc
+	@${INSTALL_DATA} ${WRKSRC}/doc/doc/*.html ${DOCSDIR}/doc
+	@${INSTALL_DATA} ${WRKSRC}/doc/doc/*.css ${DOCSDIR}/doc
+	@${MKDIR} ${DOCSDIR}/doc/public
+	@${INSTALL_DATA} ${WRKSRC}/doc/doc/public/* ${DOCSDIR}/doc/public
+	@${MKDIR} ${DOCSDIR}/doc/private
+	@${INSTALL_DATA} ${WRKSRC}/doc/doc/private/* ${DOCSDIR}/doc/private
+	@${MKDIR} ${DOCSDIR}/public
+	@${INSTALL_DATA} ${WRKSRC}/doc/public/* ${DOCSDIR}/public
+	@${MKDIR} ${DOCSDIR}/private
+	@${INSTALL_DATA} ${WRKSRC}/doc/private/* ${DOCSDIR}/private
 .endif
 
 .include <bsd.port.mk>
