@@ -1,6 +1,5 @@
-diff -u -r1.1 fig2dev/Imakefile
---- 1.1	1995/01/25 20:55:22
-+++ fig2dev/Imakefile	1995/01/25 21:26:14
+--- fig2dev/Imakefile.orig	Thu Aug 17 20:13:51 1995
++++ fig2dev/Imakefile	Fri Aug  9 21:46:00 1996
 @@ -32,10 +32,10 @@
  XCOMM the XPM (color pixmap) package and you would like to allow XPM files.
  XCOMM You need version 3.4c of the XPM package.
@@ -16,12 +15,30 @@ diff -u -r1.1 fig2dev/Imakefile
  
  XCOMM For Linux machines or any machines that have a separate library for
  XCOMM the database management routines, uncomment the following line
-@@ -73,7 +73,7 @@
- 	arrow.o bound.o free.o read.o read1_3.o latex_line.o $(STRSTRO) \
- 	dev/libtransfig.a
+@@ -67,7 +67,7 @@
+ XCOMM set JPEGLIBDIR after the #else to the directory where you have the source
+ XCOMM for jpeg.
  
+-XCOMM #define USEINSTALLEDJPEG
++#define USEINSTALLEDJPEG
+ 
+ #define IHaveSubdirs
+ #define PassCDebugFlags 'CDEBUGFLAGS=$(CDEBUGFLAGS)'
+@@ -78,7 +78,7 @@
+ 
+ #ifdef USEINSTALLEDJPEG
+ JPEGLIBDIR = /usr/local/lib
+-JPEGINCDIR = /usr/include/X11
++JPEGINCDIR = /usr/local/include
+ #else
+ JPEGLIBDIR = ../../jpeg
+ XCOMM You shouldn't need to change JPEGINCDIR here.
+@@ -95,7 +95,7 @@
+ EXTRA_INCLUDES = $(XPMINCDIR)
+ 
+ LOCAL_LIBRARIES = $(LIBTRANSFIG) -L$(JPEGLIBDIR) -ljpeg
 -SYS_LIBRARIES = $(XPMLIB) $(DBMLIB) -lm
-+SYS_LIBRARIES = $(XPMLIB) $(DBMLIB) -lm  -lcompat
++SYS_LIBRARIES = $(XPMLIB) $(DBMLIB) -lm -lcompat
+ DEPLIBS = $(LIBTRANSFIG)
  
- MakeSubdirs($(SUBDIRS))
- DependSubdirs($(SUBDIRS))
+ SRCS = fig2dev.c psfonts.c iso2tex.c arrow.c bound.c\
