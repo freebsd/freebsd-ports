@@ -20,7 +20,7 @@ PATCHFILES=	tmp_patch_R6B0.2.txt tmp_patch_R6B0.3.txt \
 		tmp_patch_R6B0.4.txt tmp_patch_R6B0.5.txt \
 		tmp_patch_R6B0.7.txt tmp_patch_R6B0.8.txt
 
-MAINTAINER=	seb@strollo.org
+MAINTAINER=	seb@bluetail.com
 
 # Make sure jdk is available (see use below)
 BUILD_DEPENDS=  ${JAVABINDIR}/javac:${PORTSDIR}/java/jdk
