@@ -1,15 +1,14 @@
 XCmail/converters/elm2xcmail
 XCmail/converters/ns2xcmail
-XCmail/plugins/babelfish_pl.o
 XCmail/plugins/binhex_encoding_pl.o
 XCmail/plugins/check_new_release_pl.o
+XCmail/plugins/dateresend_pl.o
 XCmail/plugins/dictionary_pl.o
 XCmail/plugins/js_code_pl.o
 XCmail/plugins/mhstyle_pl.o
 XCmail/plugins/rot13_encoding_pl.o
 XCmail/plugins/search_pl.o
 XCmail/plugins/simple_filter_pl.o
-XCmail/plugins/spam_bouncer_pl.o
 XCmail/plugins/test_pl.o
 XCmail/plugins/trashmgr_pl.o
 bin/xc-mail
