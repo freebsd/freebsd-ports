@@ -16,9 +16,9 @@ etc/clamav.conf.default
 etc/rc.d/clamd%%RC_SUFX%%
 @owner clamav
 @group clamav
+%%DATADIR%%/daily.cvd
+%%DATADIR%%/main.cvd
 %%DATADIR%%/mirrors.txt
-%%DATADIR%%/viruses.db
-%%DATADIR%%/viruses.db2
 @exec chown clamav:clamav %B
 @dirrm %%DATADIR%%
 @unexec rmdir /var/run/clamav 2>/dev/null || true

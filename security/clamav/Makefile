@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	0.60
-PORTREVISION=	4
+PORTVERSION=	0.65
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	clamav
@@ -36,9 +35,9 @@ CONFIGURE_ARGS=	--with-dbdir=${DATADIR} \
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	${PTHREAD_LIBS}
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
-MAN1=		clamscan.1 freshclam.1 sigtool.1 clamdscan.1 clamav-milter.1
+MAN1=		clamscan.1 freshclam.1 sigtool.1 clamdscan.1
 MAN5=		clamav.conf.5
-MAN8=		clamd.8
+MAN8=		clamd.8 clamav-milter.8
 
 CLAMD_SOCKET?=	/var/run/clamav/clamd
 
