@@ -768,6 +768,7 @@ clean-theme-gtk	ports/x11-toolkits/clean-theme-gtk
 cleanfeed	ports/news/cleanfeed
 clementine	ports/x11-wm/clementine
 clhep		ports/science/clhep
+cli		ports/lang/cli
 clibpdf		ports/print/clibpdf
 click		ports/net/click
 clig		ports/devel/clig
