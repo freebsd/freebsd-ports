@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.ee.ncku.edu.tw/pub/ftplocate/
 
 MAINTAINER=	tung@turtle.ee.ncku.edu.tw
 
+BROKEN=		"Incorrect pkg-plist"
+
 BUILD_DEPENDS=  ${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	glimpse:${PORTSDIR}/textproc/glimpse \
 		unzip:${PORTSDIR}/archivers/unzip
