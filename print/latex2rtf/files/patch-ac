@@ -1,0 +1,13 @@
+--- doc/latex2rtf.info.orig	Wed Apr 28 12:14:05 2004
++++ doc/latex2rtf.info	Wed Apr 28 12:14:44 2004
+@@ -16,6 +16,10 @@
+ manual into another language, under the above conditions for modified
+ versions, except that this permission notice may be stated in a
+ translation approved by the Free Software Foundation.   
++INFO-DIR-SECTION TeX
++START-INFO-DIR-ENTRY
++* latex2rtf: (latex2rtf).      Translate LaTeX documents to RTF.
++END-INFO-DIR-ENTRY
+ 
+ 
+ File: latex2rtf.info,  Node: Top,  Next: Introduction,  Up: (dir)
