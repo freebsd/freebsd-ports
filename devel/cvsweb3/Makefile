@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	cvsweb
-PORTVERSION=	1.80
+PORTVERSION=	1.85
 CATEGORIES=	devel www
-MASTER_SITES=	http://stud.fh-heilbronn.de/~zeller/download/
+MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/local-distfiles/knu/ \
+		http://people.FreeBSD.org/~knu/ports/distfiles/
 
 MAINTAINER=	knu@FreeBSD.org
 
@@ -29,7 +30,7 @@ ICONSDIR?=	share/apache/icons
 
 PLIST_SUB=	CGIDIR="${CGIDIR}" ICONSDIR="${ICONSDIR}"
 
-WRKSRC=		${WRKDIR}/cvsweb
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-configure:
 	cd ${WRKSRC} && ${PERL} -i -pe "\
