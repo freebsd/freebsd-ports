@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.76 1997/09/01 16:45:48 max Exp $
+# $Id: Makefile,v 1.77 1997/09/13 17:50:04 jfitz Exp $
 #
 
     SUBDIR += SWIG
@@ -25,6 +25,7 @@
     SUBDIR += gindent
     SUBDIR += gmake
     SUBDIR += id-utils
+    SUBDIR += ilu
     SUBDIR += lclint
     SUBDIR += libdlmalloc
     SUBDIR += libmalloc
