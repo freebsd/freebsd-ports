@@ -19,6 +19,7 @@ COMMENT=	Adaptec ASR RAID Management Software
 ONLY_FOR_ARCHS=	i386
 
 NO_WRKSUBDIR=	yes
+USE_XLIB=	yes
 BINS=		dptcom dpteng dptscom dptsig raidutil dptmgr
 
 do-build:
