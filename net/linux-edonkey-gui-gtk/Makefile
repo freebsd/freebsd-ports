@@ -20,6 +20,8 @@ COMMENT=	Linux GTK GUI to eDonkey2000 'core' command line client
 RUN_DEPENDS=	donkey:${PORTSDIR}/net/linux-edonkey-core \
 		${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
 
+BROKEN=		Unfetchable
+
 ONLY_FOR_ARCHS=	i386
 PREFIX?=	${X11BASE}
 NO_WRKSUBDIR=	yes

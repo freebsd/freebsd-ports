@@ -17,6 +17,8 @@ COMMENT=	Human-oriented programming language for writing/using Java classes
 
 RUN_DEPENDS=	${LOCALBASE}/bin/rexx:${PORTSDIR}/lang/rexx-imc
 
+BROKEN=		Unfetchable
+
 NO_BUILD=	yes
 USE_ZIP=	yes
 USE_JAVA=	yes
