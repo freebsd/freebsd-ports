@@ -3,7 +3,7 @@
 # Date created:        11 August 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.1.1.1 1998/11/17 20:46:44 billf Exp $
+# $Id: Makefile,v 1.2 1998/11/18 21:29:23 billf Exp $
 #
 
 DISTNAME=	PortScanner-1.0
@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.ameth.org/~veilleux/ \
 
 MAINTAINER=	billf@FreeBSD.org
 
-WRKSRC=		${WRKDIR}
+NO_WRKSUBDIR=	yes
 
 do-build:
 
