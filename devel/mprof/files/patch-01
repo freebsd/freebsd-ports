@@ -154,7 +154,7 @@
 + #	ranlib libc_mp.a
 + 
 + test: $(TEST_OBJS) test1-demo test2-demo
-+ 	
++ 
 + mprof-mon-lint:
 + 	lint $(LINTFLAGS) $(MPROF_MON_SRCS) > mprof.lint
 + 
