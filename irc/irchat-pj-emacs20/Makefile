@@ -41,5 +41,8 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/${f} ${PREFIX}/${ETCDIR}
 .endfor
 .endif
+.if (${EMACS_PORT_NAME} == "xemacs21-mule")
+	${RMDIR} ${PREFIX}/${EMACS_LIBDIR}/site-packages/etc/irchat-pj
+.endif
 
 .include <bsd.port.mk>
