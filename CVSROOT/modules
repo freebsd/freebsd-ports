@@ -7776,6 +7776,7 @@ php5-mcrypt	ports/security/php5-mcrypt
 php5-mcve	ports/devel/php5-mcve
 php5-mhash	ports/security/php5-mhash
 php5-ming	ports/graphics/php5-ming
+php5-mnogosearch	ports/www/php5-mnogosearch
 php5-mssql	ports/databases/php5-mssql
 php5-mysql	ports/databases/php5-mysql
 php5-mysqli	ports/databases/php5-mysqli
