@@ -1,8 +1,9 @@
-# $Id: Makefile,v 1.21 1999/05/19 13:11:31 taoka Exp $
+# $Id: Makefile,v 1.22 1999/05/29 04:59:52 steve Exp $
 #
 
     SUBDIR += aish
     SUBDIR += btoa
+    SUBDIR += fconv
     SUBDIR += i18ntools
     SUBDIR += ish
     SUBDIR += kdesupport11
