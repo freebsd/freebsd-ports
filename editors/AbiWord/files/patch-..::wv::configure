@@ -1,38 +1,53 @@
 
 $FreeBSD$
 
---- ../wv/configure.orig	Fri Aug 10 16:54:41 2001
-+++ ../wv/configure	Thu Aug 16 10:49:37 2001
-@@ -2351,7 +2351,7 @@
+--- ../wv/configure.orig	Tue Sep 18 20:24:33 2001
++++ ../wv/configure	Tue Oct  2 09:43:27 2001
+@@ -6008,7 +6008,7 @@
  #               LIBXML2_LIBS="-lxml" ]))
  
  # Extract the first word of "glib-config", so it can be a program name with args.
 -set dummy glib-config; ac_word=$2
 +set dummy glib12-config; ac_word=$2
  echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
- echo "configure:2357: checking for $ac_word" >&5
+ echo "configure:6014: checking for $ac_word" >&5
  if eval "test \"`echo '$''{'ac_cv_path_GLIB_CONFIG'+set}'`\" = set"; then
-@@ -2930,15 +2930,15 @@
+@@ -6586,16 +6586,16 @@
+ if eval "test \"`echo '$ac_cv_func_'iconv`\" = yes"; then
    echo "$ac_t""yes" 1>&6
    
- 		ac_safe=`echo "iconv.h" | sed 'y%./+-%__p_%'`
+-		ac_safe=`echo "iconv.h" | sed 'y%./+-%__p_%'`
 -echo $ac_n "checking for iconv.h""... $ac_c" 1>&6
--echo "configure:2935: checking for iconv.h" >&5
+-echo "configure:6592: checking for iconv.h" >&5
++		ac_safe=`echo "giconv.h" | sed 'y%./+-%__p_%'`
 +echo $ac_n "checking for giconv.h""... $ac_c" 1>&6
-+echo "configure:2935: checking for giconv.h" >&5
++echo "configure:6592: checking for giconv.h" >&5
  if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    cat > conftest.$ac_ext <<EOF
- #line 2940 "configure"
+ #line 6597 "configure"
  #include "confdefs.h"
 -#include <iconv.h>
 +#include <giconv.h>
  EOF
  ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
- { (eval echo configure:2945: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
-@@ -2981,11 +2981,11 @@
- 			ICONV_LIBS="-L$LIBICONV_DIR/lib/.libs -liconv"
+ { (eval echo configure:6602: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+@@ -6620,7 +6620,7 @@
+ 		
+ else
+   echo "$ac_t""no" 1>&6
+-	{ echo "configure: error: * * * I found system iconv but can't find iconv.h header! * * *" 1>&2; exit 1; }
++	{ echo "configure: error: * * * I found system iconv but can't find giconv.h header! * * *" 1>&2; exit 1; }
+ 		
+ fi
+ 
+@@ -6635,30 +6635,30 @@
+ 	if  test "x$LIBICONV_DIR" != "x" ; then
+ 		if  test "$use_peer_libiconv" != "no" ; then
+ 			ICONV_CFLAGS="-I$LIBICONV_DIR/include"
+-			ICONV_LIBS="-L$LIBICONV_DIR/lib/.libs -liconv"
++			ICONV_LIBS="-L$LIBICONV_DIR/lib/.libs -lgiconv"
  		else
  			ICONV_CFLAGS="-I$LIBICONV_DIR/include"
 -			ICONV_LIBS="-L$LIBICONV_DIR/lib -liconv"
@@ -45,52 +60,55 @@ $FreeBSD$
  	fi
  
  	CPPFLAGS="${CPPFLAGS} $ICONV_CFLAGS"
-@@ -2993,15 +2993,15 @@
+ 	LDFLAGS="${LDFLAGS} $ICONV_LIBS"
  
  	if  test "$use_peer_libiconv" = "abi" ; then
- 								ac_safe=`echo "iconv.h" | sed 'y%./+-%__p_%'`
+-								ac_safe=`echo "iconv.h" | sed 'y%./+-%__p_%'`
 -echo $ac_n "checking for iconv.h""... $ac_c" 1>&6
--echo "configure:2998: checking for iconv.h" >&5
+-echo "configure:6655: checking for iconv.h" >&5
++								ac_safe=`echo "giconv.h" | sed 'y%./+-%__p_%'`
 +echo $ac_n "checking for giconv.h""... $ac_c" 1>&6
-+echo "configure:2998: checking for giconv.h" >&5
++echo "configure:6655: checking for giconv.h" >&5
  if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    cat > conftest.$ac_ext <<EOF
- #line 3003 "configure"
+ #line 6660 "configure"
  #include "confdefs.h"
 -#include <iconv.h>
 +#include <giconv.h>
  EOF
  ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
- { (eval echo configure:3008: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
-@@ -3027,15 +3027,15 @@
+ { (eval echo configure:6665: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+@@ -6683,16 +6683,16 @@
+ fi
  
  	else
- 		ac_safe=`echo "iconv.h" | sed 'y%./+-%__p_%'`
+-		ac_safe=`echo "iconv.h" | sed 'y%./+-%__p_%'`
 -echo $ac_n "checking for iconv.h""... $ac_c" 1>&6
--echo "configure:3032: checking for iconv.h" >&5
+-echo "configure:6689: checking for iconv.h" >&5
++		ac_safe=`echo "giconv.h" | sed 'y%./+-%__p_%'`
 +echo $ac_n "checking for giconv.h""... $ac_c" 1>&6
-+echo "configure:3032: checking for giconv.h" >&5
++echo "configure:6689: checking for giconv.h" >&5
  if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    cat > conftest.$ac_ext <<EOF
- #line 3037 "configure"
+ #line 6694 "configure"
  #include "confdefs.h"
 -#include <iconv.h>
 +#include <giconv.h>
  EOF
  ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
- { (eval echo configure:3042: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
-@@ -3055,14 +3055,14 @@
+ { (eval echo configure:6699: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+@@ -6712,14 +6712,14 @@
  if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
    echo "$ac_t""yes" 1>&6
    
 -			echo $ac_n "checking for iconv_open in -liconv""... $ac_c" 1>&6
--echo "configure:3060: checking for iconv_open in -liconv" >&5
+-echo "configure:6717: checking for iconv_open in -liconv" >&5
 +			echo $ac_n "checking for iconv_open in -lgiconv""... $ac_c" 1>&6
-+echo "configure:3060: checking for iconv_open in -lgiconv" >&5
++echo "configure:6717: checking for iconv_open in -lgiconv" >&5
  ac_lib_var=`echo iconv'_'iconv_open | sed 'y%./+-%__p_%'`
  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
@@ -99,16 +117,16 @@ $FreeBSD$
 -LIBS="-liconv  $LIBS"
 +LIBS="-lgiconv  $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 3068 "configure"
+ #line 6725 "configure"
  #include "confdefs.h"
-@@ -3095,14 +3095,14 @@
+@@ -6752,14 +6752,14 @@
  			
  else
    echo "$ac_t""no" 1>&6
 -	echo $ac_n "checking for libiconv_open in -liconv""... $ac_c" 1>&6
--echo "configure:3100: checking for libiconv_open in -liconv" >&5
+-echo "configure:6757: checking for libiconv_open in -liconv" >&5
 +	echo $ac_n "checking for libiconv_open in -lgiconv""... $ac_c" 1>&6
-+echo "configure:3100: checking for libiconv_open in -lgiconv" >&5
++echo "configure:6757: checking for libiconv_open in -lgiconv" >&5
  ac_lib_var=`echo iconv'_'libiconv_open | sed 'y%./+-%__p_%'`
  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
@@ -117,10 +135,19 @@ $FreeBSD$
 -LIBS="-liconv  $LIBS"
 +LIBS="-lgiconv  $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 3108 "configure"
+ #line 6765 "configure"
  #include "confdefs.h"
-@@ -3168,7 +3168,7 @@
- #line 3169 "configure"
+@@ -6792,7 +6792,7 @@
+ 				
+ else
+   echo "$ac_t""no" 1>&6
+-	{ echo "configure: error: * * * I found iconv.h header but no working library! * * *" 1>&2; exit 1; }
++	{ echo "configure: error: * * * I found giconv.h header but no working library! * * *" 1>&2; exit 1; }
+ 				
+ fi
+ 
+@@ -6825,7 +6825,7 @@
+ #line 6826 "configure"
  #include "confdefs.h"
  
 -#include <iconv.h>

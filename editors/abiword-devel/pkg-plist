@@ -1,6 +1,7 @@
 bin/AbiWord
 bin/AbiWord_d
 bin/AbiWord_s
+bin/abiword
 share/AbiSuite/AbiWord/help/de-DE/about.html
 share/AbiSuite/AbiWord/help/de-DE/aboutabi.html
 share/AbiSuite/AbiWord/help/de-DE/aboutos.html
@@ -364,7 +365,6 @@ share/AbiSuite/AbiWord/help/images/wedge_l.gif
 share/AbiSuite/AbiWord/help/images/zoom.png
 share/AbiSuite/AbiWord/help/index.html
 share/AbiSuite/AbiWord/readme.txt
-share/AbiSuite/AbiWord/sample/en-US/Latin1.abw
 share/AbiSuite/AbiWord/scripts/abw2html.pl
 share/AbiSuite/AbiWord/strings/ca-ES.strings
 share/AbiSuite/AbiWord/strings/cs-CZ.strings
@@ -390,6 +390,7 @@ share/AbiSuite/AbiWord/strings/pl-PL.strings
 share/AbiSuite/AbiWord/strings/pt-BR.strings
 share/AbiSuite/AbiWord/strings/pt-PT.strings
 share/AbiSuite/AbiWord/strings/ru-RU.strings
+share/AbiSuite/AbiWord/strings/sk.strings
 share/AbiSuite/AbiWord/strings/sl-SI.strings
 share/AbiSuite/AbiWord/strings/sv-SE.strings
 share/AbiSuite/AbiWord/strings/uk-UA.strings
@@ -560,8 +561,6 @@ share/AbiSuite/icons/abiword_logo.xpm
 @dirrm share/AbiSuite/clipart
 @dirrm share/AbiSuite/AbiWord/strings
 @dirrm share/AbiSuite/AbiWord/scripts
-@dirrm share/AbiSuite/AbiWord/sample/en-US
-@dirrm share/AbiSuite/AbiWord/sample
 @dirrm share/AbiSuite/AbiWord/help/images
 @dirrm share/AbiSuite/AbiWord/help/fr-FR/images
 @dirrm share/AbiSuite/AbiWord/help/fr-FR
