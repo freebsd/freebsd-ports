@@ -63,5 +63,4 @@ do-install:
 	@${ECHO_CMD}
 .endif
 
-
 .include <bsd.port.post.mk>
