@@ -1,9 +1,9 @@
 # New ports collection makefile for:    mgetty+sendfax
-# Version required:     0.98
+# Version required:     0.99
 # Date created:         21 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.9 1996/03/13 00:36:40 jmz Exp $
+# $Id: Makefile,v 1.10 1996/09/13 23:51:51 jmz Exp $
 #
 
 DISTNAME=	mgetty-0.99
