@@ -1488,6 +1488,7 @@ fr-staroffice52	ports/french/staroffice52
 fractorama	ports/graphics/fractorama
 fragrouter	ports/security/fragrouter
 freeamp		ports/audio/freeamp
+freebirth	ports/audio/freebirth
 freebsd-uucp	ports/net/freebsd-uucp
 freecell-solver	ports/games/freecell-solver
 freeciv		ports/games/freeciv
