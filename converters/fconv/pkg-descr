@@ -1,0 +1,3 @@
+   As well as being a work-alike for the BSDI utility mentioned in the
+doscmd man page, dos2bsd (and bsd2dos), fconv supports conversion to
+and from Macintosh type files (which use only '\r'). 
