@@ -15,8 +15,9 @@ MASTER_SITE_SUBDIR=	pll
 MAINTAINER=	kiwi@oav.net
 COMMENT=	LMTP server compliant with RFC 2033 and Maildir++
 
-LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
-BUILD_DEPENDS=	${LOCALBASE}/lib/libhome.a:${PORTSDIR}/misc/libhome
+LIB_DEPENDS=	home.1:${PORTSDIR}/misc/libhome
+
+USE_ICONV=	yes
 
 OPTIONS=	PCRE "Support for PCRE" on
 OPTIONS+=	MYSQL "Support for MySQL Queries and Logs" on
