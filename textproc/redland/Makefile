@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	redland
-PORTVERSION=	0.9.18
+PORTVERSION=	0.9.19
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://www.redland.opensource.ac.uk/dist/source/
+		http://librdf.org/dist/source/
 MASTER_SITE_SUBDIR=	librdf
 
 MAINTAINER=	ports@FreeBSD.org
