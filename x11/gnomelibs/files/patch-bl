@@ -1,5 +1,5 @@
---- gnome-init.c.orig	Tue May 14 06:32:19 2002
-+++ gnome-init.c	Tue Jul 16 00:33:12 2002
+--- libgnomeui/gnome-init.c.orig	Tue May 14 06:32:19 2002
++++ libgnomeui/gnome-init.c	Tue Jul 16 00:33:12 2002
 @@ -205,32 +205,8 @@
  	switch(reason) {
  	case POPT_CALLBACK_REASON_PRE:
