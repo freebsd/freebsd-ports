@@ -16,6 +16,7 @@
     SUBDIR += gsnes9x
     SUBDIR += hfs
     SUBDIR += hfsutils
+    SUBDIR += ia64sim
     SUBDIR += ines
     SUBDIR += ksnes9x
     SUBDIR += linux-vmware-toolbox
