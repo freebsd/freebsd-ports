@@ -7,6 +7,7 @@
 
 PORTNAME=	molden
 PORTVERSION=	3.6
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.caos.kun.nl/pub/molgraph/molden/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -45,6 +46,7 @@ pre-build:
 	@${ECHO_MSG} "********************"
 	@${ECHO_MSG} "**  set ORIGINALBINARY=yes or MYBINARY=yes"
 	@${ECHO_MSG} "********************"
+	@exit 1
 .endif
 
 do-build:
