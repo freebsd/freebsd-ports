@@ -1,0 +1,42 @@
+bin/mmucl
+@unexec install-info --delete %D/info/mmucl.info %D/info/dir
+info/mmucl.info
+@exec install-info %D/info/mmucl.info %D/info/dir
+lib/mmucl/images/action.gif
+lib/mmucl/images/alias.gif
+lib/mmucl/images/bind.gif
+lib/mmucl/images/char.gif
+lib/mmucl/images/connect.gif
+lib/mmucl/images/help.gif
+lib/mmucl/images/load.gif
+lib/mmucl/images/mmucl.gif
+lib/mmucl/images/quit.gif
+lib/mmucl/images/save.gif
+lib/mmucl/images/send.gif
+lib/mmucl/images/sub.gif
+@dirrm lib/mmucl/images
+lib/mmucl/interface/console.tcl
+lib/mmucl/interface/gtk.tcl
+lib/mmucl/interface/text.tcl
+lib/mmucl/interface/tk.tcl
+lib/mmucl/interface/xterm.tcl
+@dirrm lib/mmucl/interface
+lib/mmucl/lib/balloon.tcl
+lib/mmucl/lib/misc.tcl
+lib/mmucl/lib/mmucl.tcl
+lib/mmucl/lib/mmucl_tk.tcl
+lib/mmucl/lib/ntkinfo.tcl
+lib/mmucl/lib/term.tcl
+lib/mmucl/lib/tkconf.tcl
+@dirrm lib/mmucl/lib
+lib/mmucl/.tkconf
+@dirrm lib/mmucl
+share/doc/mmucl-1.4.0/examples/Arithon
+share/doc/mmucl-1.4.0/examples/edit.tcl
+share/doc/mmucl-1.4.0/examples/map.tcl
+share/doc/mmucl-1.4.0/examples/mmucl.rc
+@dirrm share/doc/mmucl-1.4.0/examples
+share/doc/mmucl-1.4.0/CHANGES
+share/doc/mmucl-1.4.0/FAQ
+share/doc/mmucl-1.4.0/README
+@dirrm share/doc/mmucl-1.4.0
