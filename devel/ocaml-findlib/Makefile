@@ -18,8 +18,6 @@ COMMENT=	OCaml package manager
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
-BROKEN=		Broken pkg-plist
-
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 
@@ -29,9 +27,9 @@ MAN1=	ocamlfind.1
 MAN5=	META.5 findlib.conf.5 site-lib.5
 
 post-install:
-	@${FIND} ${PREFIX}/lib/ocaml -type f | \
+	@${FIND} ${PREFIX}/lib/ocaml/site-lib/findlib -type f | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/lib/ocaml -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${PREFIX}/lib/ocaml/site-lib/findlib -type d | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
