@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	hexcurse
-PORTVERSION=	1.21
+PORTVERSION=	1.22
 CATEGORIES=	editors
 MASTER_SITES=	http://jewfish.net/downloads/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 
