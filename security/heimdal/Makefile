@@ -18,7 +18,7 @@ MAINTAINER=		nectar@FreeBSD.ORG
 RESTRICTED=             "Crypto; export-controlled"
 
 MAN1=			ftp.1 kdestroy.1 kgetcred.1 kinit.1 klist.1 kpasswd.1 \
-			telnet.1
+			telnet.1 kx.1 rxtelnet.1 rxterm.1 tenletxr.1
 MAN3=			editline.3 krb5_425_conv_principal.3 kafs.3 \
 			krb5_build_principal.3 krb5_free_principal.3 \
 			krb5_openlog.3 krb5_parse_name.3 \
@@ -26,14 +26,10 @@ MAN3=			editline.3 krb5_425_conv_principal.3 kafs.3 \
 			krb5_warn.3
 MAN5=			ftpusers.5 krb5.conf.5
 MAN8=			ftpd.8 hprop.8 hpropd.8 kdc.8 kpasswdd.8 kstash.8 \
-			ktutil.8 push.8 telnetd.8
+			ktutil.8 push.8 telnetd.8 kxd.8
 
 USE_LIBTOOL=		YES
 CONFIGURE_ARGS=		--prefix=${PREFIX} --enable-shared
-
-.if !defined(KRB5_KRB4_COMPAT) || ${KRB5_KRB4_COMPAT} == "NO"
-CONFIGURE_ARGS+=	--without-krb4
-.endif
 
 .if defined(HEIMDAL_HOME)
 PREFIX=                        ${HEIMDAL_HOME}
@@ -57,7 +53,7 @@ WITH_KRB4=		yes
 
 .if defined(WITH_KRB4)
 CONFIGURE_ARGS+=	--with-krb4
-.else
+.elif !defined(KRB5_KRB4_COMPAT) || ${KRB5_KRB4_COMPAT} == "NO"
 CONFIGURE_ARGS+=	--without-krb4
 .endif
 
@@ -71,6 +67,12 @@ pre-install:
 .if defined(USE_XLIB)
 	@${CAT} ${PKGDIR}/PLIST.X11 >> ${PLIST}
 .endif
+
+# awful hack to avoid running automake after patching configure
+pre-configure:
+	@find ${WRKSRC} -name Makefile.in -exec ${TOUCH} {} \;
+	@${TOUCH} ${WRKSRC}/include/stamp-h.in
+	@${TOUCH} ${WRKSRC}/include/config.h.in
 
 post-install:
 	install-info ${PREFIX}/info/heimdal.info ${PREFIX}/info/dir
