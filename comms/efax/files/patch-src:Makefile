@@ -1,6 +1,19 @@
---- Makefile.orig	Thu Jun 29 11:01:22 2000
-+++ Makefile	Sat May 11 13:02:46 2002
-@@ -15,8 +15,8 @@
+--- Makefile.orig	Wed Jun 28 19:01:22 2000
++++ Makefile	Sun Oct 20 03:06:13 2002
+@@ -3,20 +3,17 @@
+ # Change the following to the name of your ANSI C compiler
+ # (normally gcc).
+ 
+-CC=gcc
++CC?=cc
+ 
+ # Compile/load options. Add -DNO_STRERROR to CFLAGS if _strerror
+ # is undefined
+ 
+-CFLAGS=
+-LDFLAGS=
+-
+ # Change the following to the destination directories for
  # binaries and man pages. Probably /usr/bin and /usr/man on
  # Linux, /usr/local/{bin,man} on other systems.
  
@@ -11,7 +24,7 @@
  
  .c.o:
  	$(CC) $(CFLAGS) -c $<
-@@ -32,11 +32,9 @@
+@@ -32,11 +29,9 @@
  	strip efix
  
  install:
