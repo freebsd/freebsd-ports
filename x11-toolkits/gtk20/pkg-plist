@@ -115,15 +115,15 @@ info/gtk.info
 lib/libgdk.a
 lib/libgdk.la
 lib/libgdk.so
-lib/libgdk.so.1.3
+lib/libgdk.so.1.4
 lib/libglib.a
 lib/libglib.la
 lib/libglib.so
-lib/libglib.so.1.3
+lib/libglib.so.1.4
 lib/libgtk.a
 lib/libgtk.la
 lib/libgtk.so
-lib/libgtk.so.1.3
+lib/libgtk.so.1.4
 man/man1/gtk-config.1.gz
 @unexec /sbin/ldconfig -R
 @exec /sbin/ldconfig -m %D/lib
