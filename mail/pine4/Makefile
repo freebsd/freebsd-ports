@@ -14,7 +14,7 @@ CATEGORIES=	mail news
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/
 DISTNAME?=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	petef@databits.net
 
 MAN1=		pine.1 pico.1 pilot.1
 
