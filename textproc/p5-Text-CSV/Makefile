@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	markm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Composition and decomposition of comma-separated values
 
 PERL_CONFIGURE=	yes
