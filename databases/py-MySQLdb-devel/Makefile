@@ -7,6 +7,7 @@
 
 PORTNAME=	MySQLdb
 PORTVERSION=	1.1.10
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mysql-python
@@ -27,12 +28,13 @@ pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "You may use the following build options:"
 	@${ECHO} ""
-	@${ECHO} "	WITH_MYSQLCLIENT_R=yes	Use mysqlclient_r lib"
+	@${ECHO} "	WITHOUT_MYSQLCLIENT_R=yes	Don't use mysqlclient_r lib"
+	@${ECHO} "					but is not guarantee thread-safe."
+	@${ECHO} ""
+	@${ECHO} "	Default use mysqlclient_r"
 	@${ECHO} ""
 
-.if defined(WITH_MYSQLCLIENT_R)
-MAKE_ENV+=	mysqlclient="mysqlclient_r"
-.else
+.if defined(WITHOUT_MYSQLCLIENT_R)
 MAKE_ENV+=	mysqlclient="mysqlclient"
 .endif
 
@@ -40,20 +42,23 @@ MAKE_ENV+=	mysqlclient="mysqlclient"
 PORTDOCS=	*
 .endif
 
-.if !defined(NOPORTDOCS)
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for FILE in ${WRKSRC}/doc/*.html ${WRKSRC}/doc/*.txt ${WRKSRC}/doc/*.css
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
-.endfor
+	@${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/*.css ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/doc
+	@${INSTALL_DATA} ${WRKSRC}/doc/doc/*.html ${DOCSDIR}/doc
+	@${INSTALL_DATA} ${WRKSRC}/doc/doc/*.css ${DOCSDIR}/doc
+	@${MKDIR} ${DOCSDIR}/doc/public
+	@${INSTALL_DATA} ${WRKSRC}/doc/doc/public/* ${DOCSDIR}/doc/public
+	@${MKDIR} ${DOCSDIR}/doc/private
+	@${INSTALL_DATA} ${WRKSRC}/doc/doc/private/* ${DOCSDIR}/doc/private
 	@${MKDIR} ${DOCSDIR}/public
-.for FILE in ${WRKSRC}/doc/public/*
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}/public
-.endfor
+	@${INSTALL_DATA} ${WRKSRC}/doc/public/* ${DOCSDIR}/public
 	@${MKDIR} ${DOCSDIR}/private
-.for FILE in ${WRKSRC}/doc/private/*
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}/private
-.endfor
+	@${INSTALL_DATA} ${WRKSRC}/doc/private/* ${DOCSDIR}/private
 .endif
 
 .include <bsd.port.mk>
