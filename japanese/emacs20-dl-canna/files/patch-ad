@@ -1,0 +1,11 @@
+--- CANNA-CFG.~1~	Fri Jan 16 17:51:11 1998
++++ CANNA-CFG	Wed Feb 23 17:27:42 2000
+@@ -38,7 +38,7 @@
+ ;;(setq PREFIX "~/")
+ 
+ ;; Please specify prefix for ``CANNA'' [optional]
+-(setq CANNA_PREFIX "")
++(setq CANNA_PREFIX "canna")
+ 
+ 
+ 
