@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	keychain
-PORTVERSION=	1.7
+PORTVERSION=	1.9
 CATEGORIES=	security
 MASTER_SITES=	http://www.ibiblio.org/gentoo/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
-
-RUN_DEPENDS=	pidof:${PORTSDIR}/sysutils/psmisc
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
