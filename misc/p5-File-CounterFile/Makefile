@@ -21,7 +21,7 @@ MAN3=		File::CounterFile.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500601
+.if ${PERL_LEVEL} <= 500503
 # make PREFIX-clean under perl 5.005_03
 post-configure:
 	${PERL} -pi -e 's,/usr/local/,\$$(PREFIX)/,g' ${WRKSRC}/Makefile
