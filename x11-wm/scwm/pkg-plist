@@ -2,6 +2,7 @@ bin/cpp-sed-nl
 bin/run-renamed
 bin/scwm
 bin/scwm-conf
+bin/scwm-doc-snarf
 bin/scwmexec
 bin/scwmrepl
 bin/startscwm
@@ -69,8 +70,12 @@ share/scwm/modules/app/scwm/base.scm
 share/scwm/modules/app/scwm/basic-styles.scm
 share/scwm/modules/app/scwm/bincomm.scm
 share/scwm/modules/app/scwm/cascade.scm
+share/scwm/modules/app/scwm/constraint-animation.scm
+share/scwm/modules/app/scwm/constraint-investigator.scm
 share/scwm/modules/app/scwm/constraints.scm
 share/scwm/modules/app/scwm/corba.scm
+share/scwm/modules/app/scwm/cursor.scm
+share/scwm/modules/app/scwm/debianapps-menu.scm
 share/scwm/modules/app/scwm/decor.scm
 share/scwm/modules/app/scwm/defoption.scm
 share/scwm/modules/app/scwm/describe.scm
@@ -88,8 +93,11 @@ share/scwm/modules/app/scwm/fvwm-compat.scm
 share/scwm/modules/app/scwm/fvwm-eval.scm
 share/scwm/modules/app/scwm/fvwm-module.scm
 share/scwm/modules/app/scwm/gnome-hints.scm
+share/scwm/modules/app/scwm/gnome-panel-menus.scm
 share/scwm/modules/app/scwm/group.scm
+share/scwm/modules/app/scwm/gtk-about.scm
 share/scwm/modules/app/scwm/gtk-menu.scm
+share/scwm/modules/app/scwm/gtk-message.scm
 share/scwm/modules/app/scwm/gtk.scm
 share/scwm/modules/app/scwm/highlight-current-window.scm
 share/scwm/modules/app/scwm/hooks.scm
@@ -129,6 +137,7 @@ share/scwm/modules/app/scwm/prompting-shell.scm
 share/scwm/modules/app/scwm/property-respond.scm
 share/scwm/modules/app/scwm/quote.scm
 share/scwm/modules/app/scwm/rectangle.scm
+share/scwm/modules/app/scwm/reexport.scm
 share/scwm/modules/app/scwm/reflection.scm
 share/scwm/modules/app/scwm/register.scm
 share/scwm/modules/app/scwm/report-usage.scm
@@ -139,6 +148,7 @@ share/scwm/modules/app/scwm/shove-window.scm
 share/scwm/modules/app/scwm/shutdown-opts.scm
 share/scwm/modules/app/scwm/simple-constraints.scm
 share/scwm/modules/app/scwm/simplebiff.scm
+share/scwm/modules/app/scwm/snap-constraints.scm
 share/scwm/modules/app/scwm/snap.scm
 share/scwm/modules/app/scwm/sort.scm
 share/scwm/modules/app/scwm/stacking.scm
@@ -159,13 +169,13 @@ share/scwm/modules/app/scwm/ui-constraints-buttons.scm
 share/scwm/modules/app/scwm/ui-constraints-classes.scm
 share/scwm/modules/app/scwm/ui-constraints-composition.scm
 share/scwm/modules/app/scwm/ui-constraints-gdk-drawing.scm
-share/scwm/modules/app/scwm/ui-constraints-gtk-toggle-menu.scm
 share/scwm/modules/app/scwm/ui-constraints-toggle-menu.scm
 share/scwm/modules/app/scwm/ui-constraints.scm
 share/scwm/modules/app/scwm/undo.scm
 share/scwm/modules/app/scwm/viavoice-smrc.scm
 share/scwm/modules/app/scwm/viavoice.scm
 share/scwm/modules/app/scwm/virtual.scm
+share/scwm/modules/app/scwm/visibility-reporter.scm
 share/scwm/modules/app/scwm/wavplay.scm
 share/scwm/modules/app/scwm/window-configuration.scm
 share/scwm/modules/app/scwm/window-locations.scm
@@ -197,6 +207,7 @@ share/scwm/pixmaps/cn-right-left-even.xpm
 share/scwm/pixmaps/cn-strict-relative-pos.xpm
 share/scwm/pixmaps/cn-window-height-sum.xpm
 share/scwm/pixmaps/cn-window-width-sum.xpm
+share/scwm/pixmaps/composition.xpm
 share/scwm/pixmaps/cursor.xpm
 share/scwm/pixmaps/iconify.xpm
 share/scwm/pixmaps/kill.xpm
@@ -204,6 +215,7 @@ share/scwm/pixmaps/lambda-rwb.xpm
 share/scwm/pixmaps/lambda.xpm
 share/scwm/pixmaps/move.xpm
 share/scwm/pixmaps/nonant-keys.xpm
+share/scwm/pixmaps/record-composition.xpm
 share/scwm/pixmaps/resize_br.xpm
 share/scwm/pixmaps/resize_h.xpm
 share/scwm/pixmaps/resize_tr.xpm
@@ -213,6 +225,7 @@ share/scwm/pixmaps/scwm-logo-orange-bg.xpm
 share/scwm/pixmaps/scwm-logo.xpm
 share/scwm/pixmaps/scwm-name.xpm
 share/scwm/pixmaps/small-anchor.xpm
+share/scwm/pixmaps/stop-composition.xpm
 share/scwm/pixmaps/win-pos-center.xpm
 share/scwm/pixmaps/win-pos-e.xpm
 share/scwm/pixmaps/win-pos-n.xpm
@@ -248,9 +261,9 @@ share/scwm/themes/woven.tar.gz
 @dirrm lib/scwm/modules/app
 @dirrm lib/scwm/modules
 @dirrm lib/scwm
-@dirrm share/scwm/ViaVoice
 @dirrm share/scwm/modules/app/scwm
 @dirrm share/scwm/modules/app
 @dirrm share/scwm/modules
+@dirrm share/scwm/pixmaps
 @dirrm share/scwm/scwmrc
 @dirrm share/scwm/themes
