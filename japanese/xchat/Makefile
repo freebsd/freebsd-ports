@@ -8,7 +8,7 @@
 PORTNAME=	xchat
 PORTVERSION=	1.4.3
 PORTREVISION=	2
-CATEGORIES=	japanese irc gnome ipv6
+CATEGORIES=	japanese irc gnome
 MASTER_SITES=	http://xchat.org/files/source/1.4/ \
 		http://xchat.linuxpower.org/files/source/1.4/
 
@@ -27,7 +27,7 @@ PLIST=		${.CURDIR}/pkg-plist
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--enable-japanese-conv --enable-ipv6
+CONFIGURE_ARGS=	--enable-japanese-conv
 MAKE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -liconv -lintl"
 
@@ -43,6 +43,11 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-python
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 400014
+CATEGORIES+=	ipv6
+CONFIGURE_ARGS+=--enable-ipv6
+.endif
 
 .if defined(WITH_SOCKS)
 # Assign with `+=' for slave ports
