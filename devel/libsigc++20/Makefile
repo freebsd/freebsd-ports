@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libsigc++
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.9
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_GNOME}
@@ -23,8 +23,8 @@ USE_GCC=	3.4
 USE_GMAKE=	yes
 LATEST_LINK=	libsigc++20
 INSTALLS_SHLIB=	yes
-USE_GNOME=	gnomehack lthack gnometarget pkgconfig
-USE_INC_LIBTOOL_VER=13
+USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_LIBTOOL_VER=15
 
 PLIST_SUB=	VERSION="2.0" API_VERSION="2.0"
 
