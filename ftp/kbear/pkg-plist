@@ -44,10 +44,18 @@ share/apps/kbear/kpartplugins/kbeartoolsplugin.rc
 share/apps/kbear/sitemanager.xml
 share/apps/kbear/tips
 share/apps/kbearfilesyspart/kbearfilesyspart.rc
+share/doc/HTML/cs/kbear/index.cache.bz2
 share/doc/HTML/cs/kbear/index.docbook
+share/doc/HTML/cs/kbear/common
+share/doc/HTML/en/kbear/index.cache.bz2
 share/doc/HTML/en/kbear/index.docbook
+share/doc/HTML/en/kbear/common
+share/doc/HTML/fr/kbear/index.cache.bz2
 share/doc/HTML/fr/kbear/index.docbook
+share/doc/HTML/fr/kbear/common
+share/doc/HTML/sv/kbear/index.cache.bz2
 share/doc/HTML/sv/kbear/index.docbook
+share/doc/HTML/sv/kbear/common
 share/icons/hicolor/16x16/actions/kbearsitemanager.png
 share/icons/hicolor/16x16/actions/kbearsitemanagerdb.png
 share/icons/hicolor/16x16/apps/kbear.png
@@ -77,17 +85,6 @@ share/services/kbearoldimportfilter.desktop
 share/services/kbearwincommanderimportfilter.desktop
 share/services/kbearws_ftpimportfilter.desktop
 share/servicetypes/kbearimportfilter.desktop
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32/actions
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor/22x22/actions
-@dirrm share/icons/hicolor/22x22
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16/actions
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/hicolor
 @dirrm share/doc/HTML/sv/kbear
 @dirrm share/doc/HTML/sv
 @dirrm share/doc/HTML/fr/kbear
