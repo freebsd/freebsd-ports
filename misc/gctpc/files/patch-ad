@@ -1,0 +1,10 @@
+--- ORIG/gctp.c	Fri Feb 24 16:06:16 1995
++++ gctp.c	Thu Apr 26 18:42:52 2001
+@@ -95,7 +95,6 @@
+ double lon;		/* longitude					*/
+ double lat;		/* latitude					*/
+ double temp;		/* dummy variable				*/
+-double sign();
+ double pakr2dm();
+ long i,j;		/* loop counters				*/
+ long ininit_flag;	/* input initilization flag			*/
