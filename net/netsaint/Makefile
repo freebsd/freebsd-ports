@@ -15,7 +15,7 @@ MASTER_SITES=	http://netsaint.sourceforge.net/download/ \
 MASTER_SITE_SUBDIR=dwcjr
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} netsaint-graphics.tar.gz
 
-MAINTAINER=	blaz@si.FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
