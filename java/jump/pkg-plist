@@ -5,6 +5,7 @@
 %%T%%/build/apidocs/index-all.html
 %%T%%/build/apidocs/index.html
 %%T%%/build/apidocs/org/znerd/math/AbstractCompositeNumber.html
+%%T%%/build/apidocs/org/znerd/math/BasicDigitSet.html
 %%T%%/build/apidocs/org/znerd/math/BasicRationalNumber.html
 %%T%%/build/apidocs/org/znerd/math/BigIntegerNumber.html
 %%T%%/build/apidocs/org/znerd/math/CanNotCompareException.html
@@ -21,6 +22,7 @@
 %%T%%/build/apidocs/org/znerd/math/SmallIntegerNumber.html
 %%T%%/build/apidocs/org/znerd/math/Sum.html
 %%T%%/build/apidocs/org/znerd/math/class-use/AbstractCompositeNumber.html
+%%T%%/build/apidocs/org/znerd/math/class-use/BasicDigitSet.html
 %%T%%/build/apidocs/org/znerd/math/class-use/BasicRationalNumber.html
 %%T%%/build/apidocs/org/znerd/math/class-use/BigIntegerNumber.html
 %%T%%/build/apidocs/org/znerd/math/class-use/CanNotCompareException.html
@@ -47,6 +49,7 @@
 %%T%%/build/apidocs/stylesheet.css
 %%T%%/build/classes/examples/org/znerd/math/examples/simple/SimpleExample.class
 %%T%%/build/classes/main/org/znerd/math/AbstractCompositeNumber.class
+%%T%%/build/classes/main/org/znerd/math/BasicDigitSet.class
 %%T%%/build/classes/main/org/znerd/math/BasicRationalNumber.class
 %%T%%/build/classes/main/org/znerd/math/BasicRoundingMode.class
 %%T%%/build/classes/main/org/znerd/math/BigIntegerNumber.class
@@ -67,6 +70,7 @@
 %%T%%/build/classes/main/org/znerd/math/Sum.class
 %%T%%/build/jump.jar
 %%T%%/build/src/main/org/znerd/math/AbstractCompositeNumber.java
+%%T%%/build/src/main/org/znerd/math/BasicDigitSet.java
 %%T%%/build/src/main/org/znerd/math/BasicRationalNumber.java
 %%T%%/build/src/main/org/znerd/math/BasicRoundingMode.java
 %%T%%/build/src/main/org/znerd/math/BigIntegerNumber.java
@@ -87,6 +91,7 @@
 %%T%%/build/src/main/org/znerd/math/Sum.java
 %%T%%/src/examples/org/znerd/math/examples/simple/SimpleExample.java
 %%T%%/src/main/org/znerd/math/AbstractCompositeNumber.java
+%%T%%/src/main/org/znerd/math/BasicDigitSet.java
 %%T%%/src/main/org/znerd/math/BasicRationalNumber.java
 %%T%%/src/main/org/znerd/math/BasicRoundingMode.java
 %%T%%/src/main/org/znerd/math/BigIntegerNumber.java
@@ -137,10 +142,5 @@
 @dirrm %%T%%/build/classes/examples/org
 @dirrm %%T%%/build/classes/examples
 @dirrm %%T%%/build/classes
-@dirrm %%T%%/build/web/homepage
-@dirrm %%T%%/build/web/apidocs
-@dirrm %%T%%/build/web/apidocs-current-redirect
-@dirrm %%T%%/build/web/apidocs-release-redirect
-@dirrm %%T%%/build/web
 @dirrm %%T%%/build
 @dirrm %%T%%

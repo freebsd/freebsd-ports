@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jump
-PORTVERSION=	0.3
+PORTVERSION=	0.4.1
 CATEGORIES=	java math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.metaverse.nl/~ernst/
@@ -21,7 +21,7 @@ USE_JAVA=	1.2+
 PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
 TARGET_DIR?=	${PREFIX}/share/java/${PORTNAME}-${PORTVERSION}
 ANT?=		${LOCALBASE}/bin/ant
-ANT_TARGET=	jar javadoc
+ANT_TARGET=	jar apidocs
 
 do-build:
 	@cd ${WRKSRC} && ${ANT} ${ANT_TARGET}
