@@ -111,6 +111,7 @@
     SUBDIR += xmangekyou
     SUBDIR += xmascot
     SUBDIR += xmold
+    SUBDIR += xmotd
     SUBDIR += xmove
     SUBDIR += xmsg
     SUBDIR += xmx
