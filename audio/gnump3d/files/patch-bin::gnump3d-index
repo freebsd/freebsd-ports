@@ -1,12 +1,6 @@
---- bin/gnump3d-index.orig	Thu Jul  3 05:44:16 2003
-+++ bin/gnump3d-index	Tue Aug 19 17:34:25 2003
-@@ -1,4 +1,4 @@
--#!/usr/bin/perl -w -- -*- cperl -*-
-+#!/usr/bin/perl -w # -*- cperl -*- #
- #
- #  gnump3d-index - Create a database of all tag information for audio files.
- #
-@@ -54,9 +54,9 @@
+--- bin/gnump3d-index.orig	Fri Mar 26 03:49:02 2004
++++ bin/gnump3d-index	Fri Mar 26 12:54:24 2004
+@@ -68,9 +68,9 @@
  {
      $CONFIG_FILE = $ENV{"HOME"} . "/.gnump3drc";
  }
