@@ -15,18 +15,16 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	alexs@snark.rinet.ru
 COMMENT=	General knowledge base and commonsense reasoning engine
 
-BROKEN=		Broken pkg-plist
-EXPIRATION_DATE=2004-08-20
-DEPRECATED=	${BROKEN}
-
 NO_BUILD=	yes
 USE_LINUX=	yes
 
-BRANDELF=	/usr/bin/brandelf
+PLIST_SUB=	PORTVERSION="${PORTVERSION}"
+
+post-extract:
+	cd ${WRKSRC}/doc && ${RM} '#migration.txt#' 'package-list.~1~' '.#faq' '.#migration.txt'
 
 pre-patch:
 	@${BRANDELF} -t Linux ${WRKSRC}/run/bin/latest.bin
-	@${RM} ${WRKSRC}/doc/.#*
 
 do-install:
 	@${CP} -PRpf ${WRKSRC} ${PREFIX}
