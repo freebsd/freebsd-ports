@@ -1,6 +1,6 @@
---- configure.orig	Sun May 18 13:52:38 2003
-+++ configure	Sun May 18 13:53:02 2003
-@@ -7319,6 +7319,8 @@
+--- configure.orig	Wed Nov  3 23:41:09 2004
++++ configure	Thu Nov  4 13:35:03 2004
+@@ -8456,6 +8456,8 @@
  echo "${ECHO_T}Found GNOME - installing terminatorX.desktop." >&6
  		OPTION_GNOME="yes"
      	else
@@ -9,3 +9,12 @@
     		echo "$as_me:$LINENO: result: GNOME not found." >&5
  echo "${ECHO_T}GNOME not found." >&6
      	fi
+@@ -8594,7 +8596,7 @@
+ 
+ 
+ if test "$prefix" != "NONE"; then
+-	xml_man="\\\"$datadir/terminatorX/doc/terminatorX-manual/C/terminatorX-manual.xml\\\""
++	xml_man="\\\"$datadir/help/terminatorX/C/terminatorX.xml\\\""
+ else
+ 	xml_man="\\\"/usr/local/share/terminatorX/doc/terminatorX-manual/C/terminatorX-manual.xml\\\""
+ fi
