@@ -5,9 +5,9 @@ include/pthread.h
 lib/libpth.a
 lib/libpth.la
 lib/libpth.so
-lib/libpth.so.13
+lib/libpth.so.14
 lib/libpthread.a
 lib/libpthread.la
 lib/libpthread.so
-lib/libpthread.so.13
+lib/libpthread.so.14
 share/aclocal/pth.m4
