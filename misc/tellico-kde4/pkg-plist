@@ -1,0 +1,45 @@
+bin/bookcase
+share/applnk/Applications/bookcase.desktop
+share/apps/bookcase/bibtexml2bookcase.xsl
+share/apps/bookcase/bookcase-by-author.xsl
+share/apps/bookcase/bookcase-by-title.xsl
+share/apps/bookcase/bookcase-printing.xsl
+share/apps/bookcase/bookcase.dtd
+share/apps/bookcase/bookcase2bibtex.xsl
+share/apps/bookcase/bookcase2bibtexml.xsl
+share/apps/bookcase/bookcaseui.rc
+share/apps/bookcase/pics/book.png
+share/apps/bookcase/pics/bookcase.png
+share/apps/bookcase/pics/person-open.png
+share/apps/bookcase/pics/person.png
+share/doc/HTML/en/bookcase-apidocs/common
+share/doc/HTML/en/bookcase/common
+share/doc/HTML/en/bookcase/index.cache.bz2
+share/doc/HTML/en/bookcase/index.docbook
+share/icons/hicolor/16x16/apps/bookcase.png
+share/icons/hicolor/32x32/apps/bookcase.png
+share/locale/de/LC_MESSAGES/bookcase.mo
+share/locale/hu/LC_MESSAGES/bookcase.mo
+share/locale/it/LC_MESSAGES/bookcase.mo
+share/locale/nb/LC_MESSAGES/bookcase.mo
+share/locale/ro/LC_MESSAGES/bookcase.mo
+share/mimelnk/application/x-bookcase.desktop
+@unexec rmdir %D/share/mimelnk/application || true
+@unexec rmdir %D/share/mimelnk || true
+@unexec rmdir %D/share/icons/hicolor/32x32/apps || true
+@unexec rmdir %D/share/icons/hicolor/32x32 || true
+@unexec rmdir %D/share/icons/hicolor/16x16/apps || true
+@unexec rmdir %D/share/icons/hicolor/16x16 || true
+@unexec rmdir %D/share/icons/hicolor || true
+@unexec rmdir %D/share/icons || true
+@dirrm share/doc/HTML/en/bookcase-apidocs/src/html
+@dirrm share/doc/HTML/en/bookcase-apidocs/src
+@dirrm share/doc/HTML/en/bookcase-apidocs
+@dirrm share/doc/HTML/en/bookcase
+@unexec rmdir %D/share/doc/HTML/en || true
+@unexec rmdir %D/share/doc/HTML || true
+@dirrm share/apps/bookcase/pics
+@dirrm share/apps/bookcase
+@unexec rmdir %D/share/apps || true
+@unexec rmdir %D/share/applnk/Applications || true
+@unexec rmdir %D/share/applnk || true
