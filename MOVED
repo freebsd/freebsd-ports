@@ -1,0 +1,18 @@
+#
+# MOVED - a list of (recently) moved or removed ports
+#
+# $FreeBSD$
+#
+# Each entry consists of a single line containing the following four
+# fields in the order named, separated with the pipe (`|') character:
+#
+#     Port:	a port that was moved (category/portname)
+#     Moved to:	where the port was moved to (category/portname),
+#		or blank when deleted
+#     Date:	when the moving or the removal was done (YYYY-MM-DD)
+#     Why:	the reason why the port was moved or removed
+#
+# Keep this list sorted in the chronological order.  New entries must
+# be added at the tail.
+#
+# Port|Moved to|Date|Why
