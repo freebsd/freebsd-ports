@@ -18,6 +18,10 @@ COMMENT=	Use and update adzap patterns with squirm
 
 RUN_DEPENDS=	squirm:${PORTSDIR}/www/squirm
 
+SQUID_UID?=	squid
+SQUID_GID?=	squid
+MAKE_ENV+=	SQUID_UID=${SQUID_UID} SQUID_GID=${SQUID_GID}
+
 USE_REINPLACE=	yes
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
