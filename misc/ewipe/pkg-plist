@@ -1,4 +1,5 @@
 bin/ewipe
+lib/ewipe/definefont.tcl
 lib/ewipe/edittable.tcl
 lib/ewipe/setpointer.tcl
 lib/ewipe/viewer.tcl
@@ -12,8 +13,7 @@ share/doc/ewipe/sample/a3.gif
 share/doc/ewipe/sample/a4.gif
 share/doc/ewipe/sample/blue1.gif
 share/doc/ewipe/sample/sample.ewp
-share/doc/ewipe/sample/sample2.ewp
-share/doc/ewipe/sample/sample3.ewp
+share/doc/ewipe/sample/test.ewp
 share/doc/ewipe/sample/tutorial.ewp
 @dirrm lib/ewipe
 @dirrm share/doc/ewipe/sample
