@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A POV-Ray oriented modeller
 
 USE_X_PREFIX=	yes
-USE_PERL5_BUUID=	yes
+USE_PERL5_BUILD=	yes
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
