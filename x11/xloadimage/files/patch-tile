@@ -1,0 +1,31 @@
+--- merge.c~	Thu Oct 21 22:28:39 1993
++++ merge.c	Mon Jun 18 02:23:58 2001
+@@ -244,6 +244,7 @@
+      int x, y;
+      unsigned int width, height, verbose;
+ { Image *base, *tmp;
++  int nx, ny;
+ 
+   if (verbose) {
+     printf("  Tiling...");
+@@ -259,16 +260,14 @@
+   else
+     base = newTrueImage(width, height);
+ 
+-  while (x < base->width) {
+-    while(y < base->height) {
+-      tmp = merge(base, image, x, y, 0);
++  for (nx = x; nx < base->width; nx += image->width) {
++    for(ny = y; ny < base->height; ny += image->height) {
++      tmp = merge(base, image, nx, ny, 0);
+       if (tmp != base) {
+ 	freeImage(base);
+ 	base = tmp;
+       }
+-      y += image->width;
+     }
+-    x += image->width;
+   }
+   printf("done.\n");
+   return(base);
+
