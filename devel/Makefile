@@ -285,6 +285,7 @@
     SUBDIR += libbonobo
     SUBDIR += libcache
     SUBDIR += libcapsinetwork
+    SUBDIR += libchipcard
     SUBDIR += libcii
     SUBDIR += libcoro
     SUBDIR += libdlmalloc
