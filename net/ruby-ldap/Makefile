@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ldap
-PORTVERSION=	0.2
+PORTVERSION=	0.2.1
 CATEGORIES=	net ruby
 MASTER_SITES=	http://kt-www.jaist.ac.jp:8000/~ttate/ftp/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -21,6 +21,8 @@ LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/openldap
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
+
+WRKSRC=	${WRKDIR}/ruby-${PORTNAME}
 
 # Configure options:
 #   --with-ldap		specify the ldap directory
