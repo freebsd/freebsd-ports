@@ -479,6 +479,7 @@
     SUBDIR += pchar
     SUBDIR += pcnfsd
     SUBDIR += pdtpd
+    SUBDIR += pear-Net_DIME
     SUBDIR += pear-Net_NNTP
     SUBDIR += pear-Net_SMTP
     SUBDIR += pear-Net_Sieve
