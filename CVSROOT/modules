@@ -64,6 +64,7 @@ taginfo		CVSROOT taginfo
 44bsd-more	ports/misc/44bsd-more
 44bsd-rdist	ports/net/44bsd-rdist
 4va		ports/graphics/4va
+54321		ports/games/54321
 6tunnel		ports/net/6tunnel
 8hz-mp3		ports/audio/8hz-mp3
 9e		ports/archivers/9e
