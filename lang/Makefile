@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.91 1998/01/11 00:36:56 andreas Exp $
+# $Id: Makefile,v 1.92 1998/01/16 10:17:20 obrien Exp $
 #
 
     SUBDIR += Gofer
@@ -56,6 +56,7 @@
     SUBDIR += tcl75
     SUBDIR += tcl76
     SUBDIR += tcl80
+    SUBDIR += tcl81
     SUBDIR += tclX75
     SUBDIR += tclplugin
     SUBDIR += xpl
