@@ -1,0 +1,27 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/EasyTCP/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Net/EasyTCP.pm
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/EasyTCP/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/EasyTCP/callback.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/EasyTCP/clients.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/EasyTCP/close.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/EasyTCP/compression.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/EasyTCP/data.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/EasyTCP/disconnect.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/EasyTCP/encryption.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/EasyTCP/mode.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/EasyTCP/new.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/EasyTCP/receive.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/EasyTCP/remoteip.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/EasyTCP/remoteport.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/EasyTCP/running.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/EasyTCP/send.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/EasyTCP/serial.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/EasyTCP/setcallback.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/EasyTCP/socket.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/EasyTCP/start.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/EasyTCP/stop.al
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Net/EasyTCP 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Net 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/EasyTCP 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
