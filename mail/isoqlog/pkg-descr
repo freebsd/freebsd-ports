@@ -6,7 +6,7 @@ with Days Top Domain, Top Users values for per day, per month, and years.
 
 Features:
 --------
-* Multi MTA support(qmail (multilog and syslog), postfix, sendmail)
+* Multi MTA support(qmail (multilog and syslog), postfix, sendmail, exim)
 * Multi-domain support: Shows quite detailed statistics for not only your main 
 domain, but also, any domain you want.
 * Displays statistics for common mail delivery errors.
@@ -16,8 +16,7 @@ based statistics for users.
 of incoming mail, for domain  and its users.
 * All days', all months', all years' activities ( above ones ) are stored for 
 future inspection.
-* Multi-language Support ( Turkish, English, German,Portuguese,Spanish ,
-Italian, French, Finnish, Swedish, Dutch, Polish, Norwegian, Russian)
+* Multi-language Support (17 languages supported as of isoqlog 2.1.1!)
 
 WWW: http://www.enderunix.org/isoqlog
 - EnderUNIX SDT @ Turkey

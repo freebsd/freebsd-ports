@@ -5,22 +5,22 @@ etc/isoqlog.conf-dist
 @unexec if cmp -s %D/etc/isoqlog.domains %D/etc/isoqlog.domains-dist; then rm -f %D/etc/isoqlog.domains; fi
 etc/isoqlog.domains-dist
 @exec [ -f %B/isoqlog.domains ] || cp %B/%f %B/isoqlog.domains
-share/doc/isoqlog/AUTHORS
-share/doc/isoqlog/ChangeLog
-share/doc/isoqlog/COPYING
-share/doc/isoqlog/EnderUNIX
-share/doc/isoqlog/FAQ
-share/doc/isoqlog/INSTALL
-share/doc/isoqlog/NEWS
-share/doc/isoqlog/README
-share/doc/isoqlog/README.Turkish
-share/doc/isoqlog/TODO
-share/doc/isoqlog/tr/BENIOKU
-share/doc/isoqlog/tr/DEGISIKLIKLER
-share/doc/isoqlog/tr/HABERLER
-share/doc/isoqlog/tr/KOPYALAMA
-share/doc/isoqlog/tr/KURULUM
-share/doc/isoqlog/tr/YAZARLAR
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/EnderUNIX
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.Turkish
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/tr/BENIOKU
+%%PORTDOCS%%%%DOCSDIR%%/tr/DEGISIKLIKLER
+%%PORTDOCS%%%%DOCSDIR%%/tr/HABERLER
+%%PORTDOCS%%%%DOCSDIR%%/tr/KOPYALAMA
+%%PORTDOCS%%%%DOCSDIR%%/tr/KURULUM
+%%PORTDOCS%%%%DOCSDIR%%/tr/YAZARLAR
 share/isoqlog/htmltemp/daily.html
 share/isoqlog/htmltemp/days.html
 share/isoqlog/htmltemp/domain.html
@@ -36,6 +36,9 @@ share/isoqlog/htmltemp/images/isoqlog.gif
 share/isoqlog/htmltemp/images/pk.gif
 share/isoqlog/htmltemp/images/up.gif
 share/isoqlog/htmltemp/library/isoqlog.css
+share/isoqlog/lang/bulgarian
+share/isoqlog/lang/czech
+share/isoqlog/lang/danish
 share/isoqlog/lang/dutch
 share/isoqlog/lang/english
 share/isoqlog/lang/french
@@ -46,11 +49,12 @@ share/isoqlog/lang/norwegian
 share/isoqlog/lang/russian
 share/isoqlog/lang/polish
 share/isoqlog/lang/portuguese
+share/isoqlog/lang/romana
 share/isoqlog/lang/spanish
 share/isoqlog/lang/swedish
 share/isoqlog/lang/turkish
-@dirrm share/doc/isoqlog/tr
-@dirrm share/doc/isoqlog
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tr
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/isoqlog/htmltemp/images
 @dirrm share/isoqlog/htmltemp/library
 @dirrm share/isoqlog/htmltemp
