@@ -7,10 +7,12 @@
 
 PORTNAME=	commons-cli
 PORTVERSION=	1.0
+PORTEPOCH=	1
 CATEGORIES=	java
-MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-commons/release/${PORTNAME}/v${PORTVERSION}/
+MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
+MASTER_SITE_SUBDIR=	commons/cli/source
 PKGNAMEPREFIX=	jakarta-
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+DISTNAME=	cli-${PORTVERSION}-src
 
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Java library for command line arguments and options
