@@ -7440,11 +7440,11 @@ slush		ports/security/slush
 sma		ports/mail/sma
 smacx		ports/games/smacx
 smail		ports/mail/smail
-smalleiffel	ports/lang/smalleiffel
 smalltalk	ports/lang/smalltalk
 smapi		ports/mail/smapi
 smartdoc	ports/textproc/smartdoc
 smartdoc-devel	ports/textproc/smartdoc-devel
+smarteiffel	ports/lang/smarteiffel
 smarty		ports/www/smarty
 smb2www		ports/www/smb2www
 smb_auth	ports/www/smb_auth
