@@ -1,19 +1,11 @@
-*** xprtfltr.c.orig	Fri Jan  8 17:58:37 1999
---- xprtfltr.c	Fri Jan  8 17:58:50 1999
-***************
-*** 187,193 ****
-        return FALSE;
-     }
-     pTgEFInfo->pSharedLibHandle = OPEN_DL(pszSharedLibPath,
-!          RTLD_NOW|RTLD_GLOBAL);
-     if (pTgEFInfo->pSharedLibHandle == NULL) {
-        sprintf(gszMsgBox, "Fail to load shared lib '%s'.", pszSharedLibPath);
-        MsgBox(gszMsgBox, TOOL_NAME, INFO_MB);
---- 187,193 ----
-        return FALSE;
-     }
-     pTgEFInfo->pSharedLibHandle = OPEN_DL(pszSharedLibPath,
-!          RTLD_NOW);
-     if (pTgEFInfo->pSharedLibHandle == NULL) {
-        sprintf(gszMsgBox, "Fail to load shared lib '%s'.", pszSharedLibPath);
-        MsgBox(gszMsgBox, TOOL_NAME, INFO_MB);
+--- tgif.man.orig	Sun Feb 28 13:21:16 1999
++++ tgif.man	Fri Mar  5 19:51:06 1999
+@@ -8,7 +8,7 @@
+ .\"
+ .\"
+ .\"
+-.TH tgif n "Version 4.0 Patchlevel 15 and Above" "Tgif"
++.TH tgif 1L "Version 4.0 Patchlevel 15 and Above" "Tgif"
+ .\"
+ .SH NAME
+ .\"
