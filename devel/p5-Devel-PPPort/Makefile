@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Devel-PPPort
-PORTVERSION=	3.03
+PORTVERSION=	3.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Devel/MHX
+MASTER_SITE_SUBDIR=	Devel
 PKGNAMEPREFIX=	p5-
 #DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/_\1/}
 
@@ -20,5 +20,14 @@ PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	INSTALLDIRS=site
 
 MAN3=		Devel::PPPort.3
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	Changes README HACKERS TODO
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
 
 .include <bsd.port.mk>
