@@ -4,21 +4,32 @@
 # Date created:			  Sat Feb 28, 1998
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.2 1998/03/03 09:53:37 asami Exp $
+# $Id: Makefile,v 1.3 1998/03/03 09:56:10 asami Exp $
 #
 
 DISTNAME=	vp-bro-0.3-alpha
 PKGNAME=	bro-0.3a
 CATEGORIES=	security net
-MASTER_SITES=	ftp://ee.lbl.gov/  \
-		ftp://ftp.nuxi.com/pub/misc/
+MASTER_SITES=	ftp://ee.lbl.gov/
 
-MAINTAINER=     obrien@NUXI.com
+MAINTAINER=     obrien@FreeBSD.org
 
-NO_PACKAGE=	libbind.a compiled without optimization
+RESTRICTED=	"Author wishes Alpha releases not to be distrubted."
+
 WRKSRC=		${WRKDIR}/bro-0.3
 CONFIGURE_ARGS= --libdir=${PREFIX}/share
 GNU_CONFIGURE=	yes
+
+do-fetch:
+	@if [ ! -f ${DISTDIR}/vp-bro-0.3-alpha${EXTRACT_SUFX} ]; then \
+	  echo ""; \
+	  echo "Please contact Vern Paxson <vern@ee.lbl.gov>"; \
+	  echo "to obtain the obtain the Bro source.  Put it in"; \
+	  echo "${DISTDIR} as vp-bro-0.3-alpha${EXTRACT_SUFX}"; \
+	  echo "and run make again"; \
+	  echo ""; \
+	  exit 1;\
+	fi
 
 post-patch:
 	@${MV} ${WRKSRC}/util.cc ${WRKSRC}/util.cc.in
