@@ -1,0 +1,20 @@
+XSL is a language for expressing stylesheets. It consists of two parts:
+
+   1.  XSLT is a language for transforming XML documents into other XML
+     documents, and
+   2.  an XML vocabulary for specifying formatting semantics (called
+     Formatting Objects).
+
+The Lotus XSL Processor implements only the first part of XSL, the April 21
+XSL Transformations (XSLT) Draft Specification.
+
+An XSLT stylesheet specifies the transformation of a class of XML documents
+by describing how an instance of the class is transformed into another XML
+tree of nodes.
+
+LotusXSL uses Version 1.1.16 or 2.0.9 of IBM's XML for Java (called "XML4J")
+to parse an input XML document, or it can be adapted to other DOM-producing
+mechanisms. LotusXSL produces SAX events, an output DOM, or XML result
+document based on the transformations specified in the XSL stylesheet.
+
+WWW: http://www.alphaworks.ibm.com/formula/lotusxsl/
