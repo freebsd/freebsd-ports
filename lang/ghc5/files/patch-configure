@@ -1,0 +1,19 @@
+*** configure~	Fri Nov  2 12:49:24 2001
+--- configure	Thu Jan 24 21:51:56 2002
+***************
+*** 2593,2599 ****
+        test ${h1} -lt ${h2}
+      )
+  then 
+!   { echo "configure: error: Happy version 1.9 or later is required to compile GHC." 1>&2; exit 1; }
+  
+  fi
+  fi
+--- 2593,2599 ----
+        test ${h1} -lt ${h2}
+      )
+  then 
+! #  { echo "configure: error: Happy version 1.9 or later is required to compile GHC." 1>&2; exit 1; }
+  
+  fi
+  fi
