@@ -3,7 +3,7 @@
 ***************
 *** 32,46 ****
   	$(MKDIR) $(DESTDIR)$(scriptdir)
-  
+
   install: installdirs
 ! 	$(INSTALL_SCRIPT) startmysql $(DESTDIR)$(scriptdir)/startmysql
 ! 	$(INSTALL_SCRIPT) stopmysql $(DESTDIR)$(scriptdir)/stopmysql
@@ -14,22 +14,21 @@
 ! 	$(INSTALL_SCRIPT) mtx-changer $(DESTDIR)$(scriptdir)/mtx-changer
 ! 	$(INSTALL_DATA)   btraceback.gdb $(DESTDIR)$(scriptdir)/btraceback.gdb
 ! 	$(INSTALL_SCRIPT) btraceback $(DESTDIR)$(sbindir)/btraceback
-  
+
   uninstall:
   	(cd $(DESTDIR)$(scriptdir); $(RMF) startmysql)
 --- 32,46 ----
   	$(MKDIR) $(DESTDIR)$(scriptdir)
-  
+
   install: installdirs
 ! #	$(INSTALL_SCRIPT) startmysql $(DESTDIR)$(scriptdir)/startmysql
 ! #	$(INSTALL_SCRIPT) stopmysql $(DESTDIR)$(scriptdir)/stopmysql
 ! #	$(INSTALL_SCRIPT) bconsole $(DESTDIR)$(scriptdir)/bconsole
 ! #	$(INSTALL_SCRIPT) gconsole $(DESTDIR)$(scriptdir)/gconsole
 ! 	$(INSTALL_SCRIPT) bacula $(DESTDIR)$(sysconfdir)/rc.d/bacula.sh.sample
-! 	$(INSTALL_SCRIPT) fd $(DESTDIR)$(sysconfdir)/rc.d/fd.sh.sample
 ! #	$(INSTALL_SCRIPT) mtx-changer $(DESTDIR)$(scriptdir)/mtx-changer
 ! #	$(INSTALL_DATA)   btraceback.gdb $(DESTDIR)$(scriptdir)/btraceback.gdb
 ! #	$(INSTALL_SCRIPT) btraceback $(DESTDIR)$(sbindir)/btraceback
-  
+
   uninstall:
   	(cd $(DESTDIR)$(scriptdir); $(RMF) startmysql)
