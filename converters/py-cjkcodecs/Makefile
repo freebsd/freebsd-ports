@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Python Unicode Codecs for Chinese, Japanese and Korean encodings
 
-USE_PYTHON=	yes
+USE_PYTHON=	2.1+
 USE_PYDISTUTILS=	yes
 
 post-install:
