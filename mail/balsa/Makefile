@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	balsa
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://balsa.gnome.org/ \
 		http://www.theochem.kth.se/~pawsa/balsa/ \
