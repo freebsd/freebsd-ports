@@ -43,8 +43,5 @@ do-install:
 
 post-install:
 	${LOCALBASE}/bin/registervm "${PREFIX}/jdk${JDK_VERSION}/bin/java # JDK${JDK_VERSION}"
-.if ${OSVERSION} > 400000
-	${ECHO} "You will need to install the compat3x libraries to use this port."
-.endif
-  
+
 .include <bsd.port.post.mk>
