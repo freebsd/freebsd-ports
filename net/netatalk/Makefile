@@ -35,7 +35,7 @@ FILES=		AppleVolumes.default AppleVolumes.system afpd.conf \
 		atalkd.conf netatalk.conf netatalk.pamd papd.conf
 LINKS=		unbin unhex unsingle hqx2bin single2bin macbinary \
 		binheader nadheader
-MAN1=		achefile.1 aecho.1 afile.1 afppasswd.1 getzones.1 \
+MAN1=		achfile.1 aecho.1 afile.1 afppasswd.1 getzones.1 \
 		megatron.1 nbp.1 pap.1 psorder.1 hqx2bin.1 macbinary.1 \
 		nbplkup.1 nbprgstr.1 nbpunrgstr.1 papstatus.1 \
 		single2bin.1 unbin.1 unhex.1 unsingle.1
