@@ -7,7 +7,7 @@
 
 PORTNAME?=	aspell
 PORTVERSION=	0.50.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	textproc
 MASTER_SITES=	http://aspell.net/	\
 		${MASTER_SITE_GNU}
@@ -43,9 +43,9 @@ DESCR=		${.CURDIR}/pkg-descr
 
 CONF_DICT_ENV=	ASPELL="${PREFIX}/bin/aspell"	\
 		WORD_LIST_COMPRESS="${PREFIX}/bin/word-list-compress"
-AVAIL_DICT=	af bg br ca cs cy da de el en eo es fo fr hr ia id it ga gl is mi \
+AVAIL_DICT=	af bg br ca cs cy da de el en eo es fo fr hr ia id it ga gd gl gv is mi \
 		ms mt nb nl nn pl pt ro ru sk sl sv sw tn tr uk wa zu
-SPECDICTS=	af bg cs cy da el en fo fr ga gl hr ia id is it mi ms mt nb nn pl \
+SPECDICTS=	af bg cs cy da el en fo fr ga gd gl gv hr ia id is it mi ms mt nb nn pl \
 		sk sl sv sw tn tr uk wa zu
 DICTVERSION=	0.50-2
 DICTVER_AF=	0.50-0
@@ -57,20 +57,22 @@ DICTVER_EL=	0.50-3
 DICTVER_EN=	0.51-1
 DICTVER_FO=	0.51-0
 DICTVER_FR=	0.50-3
-DICTVER_GA=	0.50-4
+DICTVER_GA=	0.50.1-0
+DICTVER_GD=	0.50-0
 DICTVER_GL=	0.50-0
-DICTVER_HR=	0.50-0
+DICTVER_GV=	0.50-0
+DICTVER_HR=	0.51-0
 DICTVER_IA=	0.50-1
-DICTVER_ID=	0.50-0
+DICTVER_ID=	0.50.1-0
 DICTVER_IS=	0.51-0
-DICTVER_IT=	0.52-0
+DICTVER_IT=	0.53-0
 DICTVER_MI=	0.50-0
 DICTVER_MS=	0.50-0
 DICTVER_MT=	0.50-0
 DICTVER_NB=	0.50.1-0
 DICTVER_NN=	0.50.1-1
 DICTVER_PL=	0.51-0
-DICTVER_SK=	0.51-1
+DICTVER_SK=	0.52-0
 DICTVER_SL=	0.50-0
 DICTVER_SV=	0.51-0
 DICTVER_SW=	0.50-0
@@ -136,12 +138,14 @@ DICTS+=		${LG}
 	@${ECHO_MSG} '*  - Maori                        ASPELL_MI=yes         *'
 	@${ECHO_MSG} '*  - Malay                        ASPELL_MS=yes         *'
 	@${ECHO_MSG} '*  - Maltese                      ASPELL_MT=yes         *'
+	@${ECHO_MSG} '*  - Manx Gaelic                  ASPELL_GV=yes         *'
 	@${ECHO_MSG} '*  - Norwegian Bokmal             ASPELL_NB=yes         *'
 	@${ECHO_MSG} '*  - Norwegian Nynorsk            ASPELL_NN=yes         *'
 	@${ECHO_MSG} '*  - Polish                       ASPELL_PL=yes         *'
 	@${ECHO_MSG} '*  - Portuguese                   ASPELL_PT=yes         *'
 	@${ECHO_MSG} '*  - Romanian                     ASPELL_RO=yes         *'
 	@${ECHO_MSG} '*  - Russian                      ASPELL_RU=yes         *'
+	@${ECHO_MSG} '*  - Scottish Gaelic              ASPELL_GD=yes         *'
 	@${ECHO_MSG} '*  - Slovak                       ASPELL_SK=yes         *'
 	@${ECHO_MSG} '*  - Slovenian                    ASPELL_SL=yes         *'
 	@${ECHO_MSG} '*  - Swahili                      ASPELL_SW=yes         *'
