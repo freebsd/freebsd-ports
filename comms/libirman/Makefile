@@ -9,7 +9,7 @@ PORTNAME=	libirman
 PORTVERSION=	0.4.2
 PORTREVISION=	1
 CATEGORIES=	comms
-MASTER_SITES=	http://mars.wiwi.uni-halle.de/lirc/software/snapshots/
+MASTER_SITES=	http://lirc.sourceforge.net/software/snapshots/
 
 MAINTAINER=	rand@meridian-enviro.com
 COMMENT=	Library for Evation's Irman infrared reciever
