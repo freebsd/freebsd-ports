@@ -30,6 +30,7 @@
     SUBDIR += fetchmail
     SUBDIR += gbuffy
     SUBDIR += gensig
+    SUBDIR += gkrellmmailwatch
     SUBDIR += glacier
     SUBDIR += glbiff
     SUBDIR += grepmail
