@@ -6,20 +6,21 @@
 #
 
 PORTNAME=	perl-ldap
-PORTVERSION=	0.25
+PORTVERSION=	0.27.01
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-0.2701
 
 MAINTAINER=	scrappy@FreeBSD.org
 COMMENT=	A Client interface to LDAP servers
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Convert/ASN1.pm:${PORTSDIR}/converters/p5-Convert-ASN1 \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/URI/ldap.pm:${PORTSDIR}/net/p5-URI \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
+BUILD_DEPENDS=	${SITE_PERL}/Convert/ASN1.pm:${PORTSDIR}/converters/p5-Convert-ASN1 \
+		${SITE_PERL}/URI/ldap.pm:${PORTSDIR}/net/p5-URI \
+		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
+		${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
+		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 
 PERL_CONFIGURE=	yes
 
@@ -28,7 +29,6 @@ MAN3=		Net::LDAP::Control::VLVResponse.3 \
 		Net::LDAP::Entry.3 \
 		Net::LDAP::Control::Sort.3 \
 		Net::LDAP::Util.3 \
-		Authen::SASL.3 \
 		Bundle::Net::LDAP.3 \
 		Net::LDAP::Search.3 \
 		Net::LDAP::Security.3 \
