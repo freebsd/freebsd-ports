@@ -6,16 +6,13 @@
 #
 
 PORTNAME=      birthday
-PORTVERSION=   1.4
+PORTVERSION=   1.5
 CATEGORIES=    misc
-MASTER_SITES=  ftp://ftp.nl.debian.org/debian/pool/main/b/birthday/
-DISTNAME=	birthday_1.4
+MASTER_SITES=  http://users.zetnet.co.uk/mortia/source/
 
 MAINTAINER=    niek@bergboer.net
 
 MAN1=          birthday.1
 MANCOMPRESSED= no
-
-WRKSRC=	${WRKDIR}/birthday-1.4
 
 .include <bsd.port.mk>
