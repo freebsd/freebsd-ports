@@ -3,12 +3,12 @@
 # Date created:				21 June 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/02 06:42:45 tg Exp $
 #
 
 DISTNAME=	xroads-v0.1.5
 PKGNAME=	xroads-0.1.5
-CATEGORIES=	games x11
+CATEGORIES=	games
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Way/1795/ \
 		http://www.autobahn.mb.ca/~foxtrot/ \
 		http://supernova.dyn.ml.org/
