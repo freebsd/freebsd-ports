@@ -7,6 +7,7 @@
 
 PORTNAME=	xmlparser
 PORTVERSION=	0.5.19
+PORTREVISION=	1
 CATEGORIES=	textproc ruby
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.bekkoame.ne.jp/~yoshidam/
@@ -27,7 +28,7 @@ USE_RUBY_EXTCONF=	yes
 USE_RUBY_RD=	yes
 .endif
 
-PERL_ARCHLIB=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/mach
+PERL_ARCHLIB=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 INSTALL_TARGET=	site-install
