@@ -384,6 +384,7 @@ share/doc/apache/manual/mod/index.html.fr
 share/doc/apache/manual/mod/index.html.html
 share/doc/apache/manual/mod/index.html.ja.jis
 share/doc/apache/manual/mod/mod_access.html
+share/doc/apache/manual/mod/mod_access.html.ja.jis
 share/doc/apache/manual/mod/mod_actions.html
 share/doc/apache/manual/mod/mod_alias.html
 share/doc/apache/manual/mod/mod_asis.html
