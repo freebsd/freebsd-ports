@@ -98,6 +98,7 @@
     SUBDIR += mei
     SUBDIR += memtest
     SUBDIR += mgeupsd
+    SUBDIR += mixer
     SUBDIR += mkisofs
     SUBDIR += mksunbootcd
     SUBDIR += monitord
