@@ -7,6 +7,7 @@ include/fastdb/container.h
 include/fastdb/cursor.h
 include/fastdb/database.h
 include/fastdb/datetime.h
+include/fastdb/exception.h
 include/fastdb/fastdb.h
 include/fastdb/file.h
 include/fastdb/harray.h
@@ -16,6 +17,7 @@ include/fastdb/reference.h
 include/fastdb/stdtp.h
 include/fastdb/sync.h
 include/fastdb/sync_unix.h
+include/fastdb/timeseries.h
 include/fastdb/ttree.h
 include/fastdb/wwwapi.h
 lib/libcli_r.a
