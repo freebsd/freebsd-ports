@@ -11158,6 +11158,7 @@ transcalc	ports/cad/transcalc
 transcode	ports/multimedia/transcode
 transfig	ports/print/transfig
 translate	ports/misc/translate
+translator	ports/misc/translator
 transproxy	ports/www/transproxy
 tree		ports/sysutils/tree
 tree-widget	ports/editors/tree-widget
