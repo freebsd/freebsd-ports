@@ -7,6 +7,7 @@
 
 PORTNAME=	party
 PORTVERSION=	2.12
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://www.vocito.com/downloads/software/party/ \
 		ftp://ftp.vocito.com/pub/vocito.com/software/party/
