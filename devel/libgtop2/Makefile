@@ -31,14 +31,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 INFO=		libgtop2
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-CONFIGURE_ARGS+=	--without-x
-.endif
-
 post-install:
 	@${CHGRP} kmem ${PREFIX}/bin/libgtop_server2
 	@${CHMOD} 2555 ${PREFIX}/bin/libgtop_server2
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
