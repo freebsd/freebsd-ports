@@ -68,5 +68,14 @@ include/openhbci/value.h
 lib/libopenhbci.a
 lib/libopenhbci.la
 lib/libopenhbci.so
+lib/libopenhbci.so.13
+lib/openhbci/plugins/13/media/rdhfile.so.0
+lib/openhbci/plugins/13/media/rdhfile.so
+lib/openhbci/plugins/13/media/rdhfile.la
+lib/openhbci/plugins/13/media/rdhfile.a
 share/aclocal/openhbci.m4
+@dirrm lib/openhbci/plugins/13/media
+@dirrm lib/openhbci/plugins/13
+@dirrm lib/openhbci/plugins
+@dirrm lib/openhbci
 @dirrm include/openhbci
