@@ -62,6 +62,10 @@ USE_GNOME+=	esound
 CONFIGURE_ARGS+=--enable-sound
 .endif
 
+.if defined(WITH_SSL)
+USE_OPENSSL=		yes
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha" || ${ARCH} == "ia64"
@@ -69,7 +73,6 @@ BROKEN="Dumps core on startup"
 .endif
 
 .if defined(WITH_IPV6)
-USE_IPV6=	yes
 CONFIGURE_ARGS+=--enable-ipv6
 .endif
 
@@ -89,7 +92,6 @@ CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"
 .endif
 
 .if defined(WITH_SSL)
-USE_OPENSSL=		yes
 CONFIGURE_ARGS+=	--with-ssl
 .endif
 
