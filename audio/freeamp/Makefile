@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://www.freeamp.org/download/src/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 
 BROKEN=		"incompatibility with release versions of musicbrainz API."
 
