@@ -6177,7 +6177,9 @@ sex		ports/games/sex
 seyon		ports/comms/seyon
 sfio		ports/devel/sfio
 sfront		ports/audio/sfront
-sftp		ports/ftp/sftp
+sftp		src/secure/usr.bin/sftp
+sftp-server	src/secure/libexec/sftp-server
+sftp_port	ports/ftp/sftp
 sgf2tex		ports/print/sgf2tex
 sgml		src/share/sgml
 sgmlfmt		src/usr.bin/sgmlfmt
