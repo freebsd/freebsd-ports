@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	pngquant
-PORTVERSION=	0.95
+PORTVERSION=	1.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libpng.org/pub/png/src/ \
 		ftp://ftp.libpng.org/pub/png/src/ \
 		ftp://swrinde.nde.swri.edu/pub/png/applications/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
