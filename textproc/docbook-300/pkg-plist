@@ -1,0 +1,13 @@
+share/sgml/docbook/3.0/30chg.txt
+share/sgml/docbook/3.0/40issues.txt
+share/sgml/docbook/3.0/announce.txt
+share/sgml/docbook/3.0/cals-tbl.dtd
+share/sgml/docbook/3.0/dbgenent.mod
+share/sgml/docbook/3.0/dbhier.mod
+share/sgml/docbook/3.0/dbpool.mod
+share/sgml/docbook/3.0/docbook.cat
+share/sgml/docbook/3.0/docbook.dcl
+share/sgml/docbook/3.0/docbook.dtd
+share/sgml/docbook/3.0/catalog
+@dirrm share/sgml/docbook/3.0
+@dirrm share/sgml/docbook
