@@ -66,6 +66,7 @@ Have fun with this new configuration style !     -andreas \n\n\
   "alc8500"  "Epson AL-C8500 color laser printer [EPLASER]" ON \
   "alc2000"  "Epson AL-C2000 color laser printer [EPLASER]" ON \
   "alc4000"  "Epson AL-C4000 color laser printer [EPLASER]" ON \
+  "lp9500c"  "Epson LP-9500C color laser printer [EPLASER]" ON \
   "lp8800c"  "Epson LP-8800C color laser printer [EPLASER]" ON \
   "lp8300c"  "Epson LP-8300C color laser printer [EPLASER]" ON \
   "lp8500c"  "Epson LP-8500C color laser printer [EPLASER]" ON \

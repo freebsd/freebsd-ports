@@ -1,15 +1,14 @@
 --- eplaser/gdevesmv.c.orig	Fri Dec 14 10:50:14 2001
 +++ eplaser/gdevesmv.c	Sat Apr 27 13:46:31 2002
-@@ -34,8 +34,7 @@
+@@ -34,8 +34,6 @@
  
   */
  
 -#include <stdlib.h>
 -#include <unistd.h>
-+#include <string.h>
+ #include <string.h>
  
  #include "math_.h"
- #include "gx.h"
 @@ -1799,13 +1798,13 @@
  
  /* Process the next piece of an image. */

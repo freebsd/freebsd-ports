@@ -1,15 +1,14 @@
 --- eplaser/gdevescv.c.orig	Fri Dec 21 15:50:22 2001
 +++ eplaser/gdevescv.c	Sat Apr 27 13:45:53 2002
-@@ -37,8 +37,7 @@
+@@ -37,8 +37,6 @@
  
   */
  
 -#include <stdlib.h>
 -#include <unistd.h>
-+#include <string.h>
+ #include <string.h>
  
  #include "math_.h"
- #include "gx.h"
 @@ -1760,13 +1759,13 @@
  
  /* Process the next piece of an image. */
