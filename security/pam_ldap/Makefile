@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pam_ldap
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.7
 CATEGORIES=	security net
 MASTER_SITES=	http://www.padl.com/download/ \
 		ftp://ftp.padl.com/pub/
@@ -22,10 +22,11 @@ LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/openldap \
 		lber.1:${PORTSDIR}/net/openldap
 .endif
 
-USE_AUTOCONF=	yes
-USE_AUTOMAKE=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ldap-lib=openldap \
-		--with-ldap-dir=${LOCALBASE}
+		--with-ldap-dir=${LOCALBASE} \
+		--with-ldap-conf-file=${PREFIX}/etc/ldap.conf
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 USE_GMAKE=	yes
 

@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sat May 26 16:07:21 2001
-+++ Makefile.in	Sat May 26 17:09:57 2001
-@@ -380,17 +380,15 @@
+--- Makefile.in.orig	Sun Feb  3 15:36:48 2002
++++ Makefile.in	Sun Feb  3 15:39:06 2002
+@@ -357,17 +357,13 @@
  
  install-exec-local: pam_ldap.so
  	@$(NORMAL_INSTALL)
@@ -9,9 +9,7 @@
 -@EXTENSION_SO_FALSE@	$(INSTALL_PROGRAM) -o root -g root pam_ldap.so $(DESTDIR)$(libdir)/security/pam_ldap.so.1
 -@EXTENSION_SO_FALSE@	-rm -f $(DESTDIR)$(libdir)/security/pam_ldap.so
 -@EXTENSION_SO_FALSE@	-ln -s $(DESTDIR)$(libdir)/security/pam_ldap.so.1 $(DESTDIR)$(libdir)/security/pam_ldap.so
-+	$(mkinstalldirs) $(DESTDIR)$(libdir)
-+@EXTENSION_SO_TRUE@	$(INSTALL_PROGRAM) -o root -g wheel pam_ldap.so $(DESTDIR)$(libdir)/pam_ldap.so
-+@EXTENSION_SO_FALSE@	$(INSTALL_PROGRAM) -o root -g wheel pam_ldap.so $(DESTDIR)$(libdir)/pam_ldap.so
++	$(INSTALL_PROGRAM) -o root -g wheel pam_ldap.so $(DESTDIR)$(libdir)/pam_ldap.so
  
  install-data-local:
  	@$(NORMAL_INSTALL)
