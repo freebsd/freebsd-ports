@@ -17,6 +17,8 @@ COMMENT=	KDE Software Development Kit
 
 LIB_DEPENDS=	db41:${PORTSDIR}/databases/db41
 
+CONFLICTS=	umbrello-*
+
 USE_KDEBASE_VER=3
 PREFIX=		${KDE_PREFIX}
 
