@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.200 1998/12/01 12:00:32 obrien Exp $
+# $Id: Makefile,v 1.201 1998/12/01 22:12:56 billf Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -149,6 +149,7 @@
     SUBDIR += wais
     SUBDIR += wget
     SUBDIR += wide-dhcp
+    SUBDIR += wmnet
     SUBDIR += wxftp
     SUBDIR += wu-ftpd
     SUBDIR += xarchie
