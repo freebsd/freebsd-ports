@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri Feb  7 22:14:28 2003
++++ Makefile.in	Fri Feb  7 22:16:50 2003
+@@ -149,7 +150,7 @@
+ modulesconfdir = $(sysconfdir)/gnome-vfs-2.0/modules
+ modulesconf_DATA = extra-modules.conf
+ 
+-desktopdir = $(datadir)/network
++desktopdir = $(datadir)/apps/Applications
+ desktop_in_files = smb.desktop.in
+ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
+ 

@@ -1,0 +1,28 @@
+--- configure.orig	Thu Feb  6 11:37:10 2003
++++ configure	Sun Feb  9 21:03:39 2003
+@@ -7129,6 +7129,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -7751,7 +7752,7 @@
+ echo "${ECHO_T}$with_rio500" >&6
+ 
+ LDFLAGS="-L$with_rio500/lib -L/usr/local/lib $LDFLAGS"
+-CPPFLAGS="-I$with_rio500/include/rio500 -I/usr/local/include/rio500 $CFLAGS"
++CPPFLAGS="-I$with_rio500/include/rio500 -I/usr/local/include/rio500 $CPPFLAGS $CFLAGS"
+ 
+ else
+ 
+@@ -7759,7 +7760,7 @@
+ echo "${ECHO_T}none" >&6
+ 
+ LDFLAGS="-L/usr/local/lib $LDFLAGS"
+-CPPFLAGS="-I/usr/include/rio500 -I/usr/local/include/rio500 $CFLAGS"
++CPPFLAGS="-I/usr/include/rio500 -I/usr/local/include/rio500 $CPPFLAGS $CFLAGS"
+ 
+ fi;
+ 
