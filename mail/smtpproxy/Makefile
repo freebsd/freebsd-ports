@@ -6,29 +6,32 @@
 #
 
 PORTNAME=	smtpproxy
-PORTVERSION=	1.1.3
+PORTVERSION=	1.3.3
 CATEGORIES=	mail
-MASTER_SITES=	http://www.quietsche-entchen.de/download/
+MASTER_SITES=	http://quietsche-entchen.de/cgi-bin/wiki.cgi/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SMTP proxy server
 
 USE_REINPLACE=	yes
 MAKEFILE=	makefile
+DISABLE_SIZE=	yes
 
 MAN1=		smtp.proxy.1
-
-FORBIDDEN=	"format string vulnerability"
+PLIST_FILES=	libexec/smtp.proxy
+PORTDOCS=	README rfc821.txt
+CFLAGS+=	-DVERSION=\'\"${PORTVERSION}\"\'
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,CC =,CC ?=,; s,CFLAGS =,CFLAGS +=,; \
-		s,/usr/local/sbin,${PREFIX}/libexec,; s,/usr/local,${PREFIX},' \
+	@${REINPLACE_CMD} -e 's,CC =,CC ?=,; /^CFLAGS/d ;\
+		s,/usr/local,${PREFIX}, ' \
 		${WRKSRC}/makefile
+	@${REINPLACE_CMD} -e 's,<wait.h>,<sys/wait.h>,' ${WRKSRC}/acp.c
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in README rfc821.txt
+.for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
