@@ -1,0 +1,706 @@
+diff -ubwr ./grabber-meteor.cc /home/old_wd0f/ports/mbone/vic/work.luigi/vic-2.8-luigi/grabber-meteor.cc
+--- ./grabber-meteor.cc	Fri May 29 17:06:00 1998
++++ /home/old_wd0f/ports/mbone/vic/work.luigi/vic-2.8-luigi/grabber-meteor.cc	Mon Apr 13 20:47:54 1998
+@@ -59,6 +59,7 @@
+ #include "bsd-endian.h"
+ 
+ #include <machine/ioctl_meteor.h>
++#include <machine/ioctl_bt848.h>
+ 
+ /*XXX*/
+ #define NTSC_WIDTH 320
+@@ -92,6 +93,7 @@
+ 	u_int baseheight_;	/* Width of frame to be captured */
+ 	u_int decimate_;	/* division of base sizes */
+ 	volatile u_int* pyuv_;	/* pointer to yuv data */
++	int tuner_ ;		/* tuner device... */
+ };
+ 
+ class Meteor422Grabber : public MeteorGrabber {
+@@ -131,24 +133,16 @@
+ 
+ MeteorScanner::MeteorScanner(const int n)
+ {
+-	char*	devname_template  = "/dev/meteor%d";
+-	char*	nickname_template = "Matrox Meteor %d";
+-	char*	devname_template1  = "/dev/bktr%d";
+-	char*	nickname_template1 = "BrookTree848 %d";
+-
+-
++    static char *d[] = { "/dev/bktr%d", "/dev/meteor%d", NULL };
++    char *nickname_template = "meteor-%d";
+ 
+ 	for(int i = 0; i < n; i++) {
+-		char	*devname  = new char[strlen(devname_template)  + 3];
++	for (int j = 0 ; d[j] != NULL ; j++) {
++	    char *devname  = new char[strlen(d[j]) + 3];
+ 		char	*nickname = new char[strlen(nickname_template) + 3];
+-		char	*devname1  = new char[strlen(devname_template1)  + 3];
+-		char	*nickname1 = new char[strlen(nickname_template1) + 3];
+ 
++	    sprintf(devname, d[j], i);
+ 		sprintf(nickname, nickname_template, i + 1);
+-		sprintf(devname, devname_template, i);
+-
+-		sprintf(nickname1, nickname_template1, i + 1);
+-		sprintf(devname1, devname_template1, i);
+ 		if(access(devname, R_OK) == 0) {
+ 			int fd = open(devname, O_RDONLY);
+ 			if(fd < 0) {
+@@ -161,29 +155,17 @@
+ 			delete nickname;
+ 			delete devname;
+ 		}
+-
+-		if(access(devname1, R_OK) == 0) {
+-			int fd = open(devname1, O_RDONLY);
+-			if(fd < 0) {
+-				new MeteorDevice(nickname1, devname1, 0);
+-			} else {
+-				(void)close(fd);
+-				new MeteorDevice(nickname1, devname1, 1);
+ 			}
+-		} else {
+-			delete nickname1;
+-			delete devname1;
+ 		}
+ 	}
+ 
+-}
+-
+ MeteorDevice::MeteorDevice(const char* nickname, const char *devname, int free):
+ 					InputDevice(nickname), name_(devname)
+ {
+ 	if(free)
+ 		attributes_ = "\
+ format {422 411} \
++type {pal ntsc secam auto} \
+ size {large normal small cif} \
+ port {RCA Port-1 Port-2 Port-3 S-Video RGB}";
+ 	else
+@@ -208,6 +190,7 @@
+ 
+ MeteorGrabber::MeteorGrabber(const char* name)
+ {
++	tuner_ = open("/dev/tuner", O_RDONLY);
+ 	dev_ = open(name, O_RDONLY);
+ 	if (dev_ == -1) {
+ 		status_ = -1;
+@@ -230,6 +213,8 @@
+ 	if (dev_ != -1) {
+ 		close(dev_);
+ 	}
++	if (tuner_ != -1)
++		close(tuner_);
+ }
+ 
+ void MeteorGrabber::set_size_meteor(int w, int h)
+@@ -245,23 +230,14 @@
+ 	 * means do so.
+ 	 */
+ 	unsigned short status;
+-	ioctl(dev_, METEORSTATUS, &status);
+-	if(status & METEOR_STATUS_HCLK) {
+-		/* No source, assume ntsc */
++	// ioctl(dev_, METEORSTATUS, &status);
++	if ( video_format_ == METEOR_FMT_NTSC ) {
+ 		if(geom.rows <= NTSC_HEIGHT && geom.columns <= NTSC_WIDTH)
+ 			geom.oformat |= METEOR_GEO_EVEN_ONLY;
+ 	} else {
+-		/* is it pal or ntsc? */
+-		if(status & METEOR_STATUS_FIDT) {
+-						/* 60 hz */
+-			if(geom.rows<=NTSC_HEIGHT && geom.columns<=NTSC_WIDTH)
+-				geom.oformat |= METEOR_GEO_EVEN_ONLY;
+-		} else {			/* 50 hz */
+ 			if(geom.rows<=PAL_HEIGHT && geom.columns<=PAL_WIDTH)
+ 				geom.oformat |= METEOR_GEO_EVEN_ONLY;
+ 		}
+-	}
+-
+ 	if(ioctl(dev_, METEORSETGEO, &geom) < 0) 
+ 		perror("vic: METERSETGEO: ");
+ }
+@@ -326,7 +302,7 @@
+ void MeteorGrabber::fps(int f)
+ {
+ 	u_short met_fps = (u_short)f;
+-	(void)ioctl(dev_, METEORSFPS, &met_fps);
++	// (void)ioctl(dev_, METEORSFPS, &met_fps);
+ 
+ 	Grabber::fps(f);
+ }
+@@ -367,6 +343,28 @@
+ 			}
+ 			return (TCL_OK);	
+ 		}
++		if (strcmp(argv[1], "freeze") == 0) {
++			int cmd = METEOR_CAP_CONTINOUS ;
++			if ( atoi(argv[2]) != 0 )
++			    cmd = METEOR_CAP_STOP_CONT;
++			ioctl(dev_, METEORCAPTUR, (char*)&cmd);
++			return (TCL_OK);
++		}
++		if (strcmp(argv[1], "chan") == 0) {
++			int p = port_;
++			int c = atoi(argv[2]);
++			if (c > 0 && c < 199)
++			    p = METEOR_INPUT_DEV1 ;
++			else
++			    p = METEOR_INPUT_DEV0 ;
++			if (p != port_) {
++				port_ = p;
++				ioctl(dev_, METEORSINPUT, &port_);
++			}
++			if (p == METEOR_INPUT_DEV1)
++			    ioctl(dev_, TVTUNER_SETCHNL, &c);
++			return (TCL_OK);	
++		}
+ 		if (strcmp(argv[1], "format") == 0 ||
+ 			   strcmp(argv[1], "type") == 0) {
+ 			if (strcmp(argv[2], "auto") == 0)
+@@ -437,7 +435,7 @@
+ 		if (strcmp(argv[1], "brightness") == 0) {
+ 			u_char val;
+ 			ioctl(dev_, METEORGBRIG, &val);
+-			tcl.resultf("%d", (int)val);
++			tcl.resultf("%d", (unsigned int)val);
+ 			return (TCL_OK);
+ 		}
+ 		if (strcmp(argv[1], "contrast") == 0) {
+@@ -507,10 +505,10 @@
+ 		return 0;
+ 
+ 	int istride = inw_ * 2;
+-	suppress((u_char*)pyuv_, istride);
+-	saveblks((u_char*)pyuv_, istride);
++	suppress((u_char*)pyuv_, istride); // compute which ones to send
++	saveblks((u_char*)pyuv_, istride); // save copied blocks
+ 	u_int32_t ts = media_ts();
+-	YuvFrame f(ts, frame_, crvec_, outw_, outh_);
++	YuvFrame f(ts, frame_, crvec_, outw_, outh_); // new obj.
+ 	return (target_->consume(&f));
+ }
+ 
+@@ -724,6 +722,7 @@
+ 	u_char* chm = lum + off;
+ 	off >>= 2;
+ 
++int to_send = 0 ;
+ 	crv += vstart_ * blkw_ + hstart_;
+ 	lum += vstart_ * outw_ * 16 + hstart_ * 16;
+ 	chm += vstart_ * (outw_ >> 1) * 8 + hstart_ * 8;
+@@ -734,9 +733,10 @@
+ 		const u_char* nin = in;
+ 		for (int x = hstart_; x < hstop_; ++x) {
+ 			int s = *crv++;
+-			if ((s & CR_SEND) != 0)
++			if ((s & CR_SEND) != 0) {
+ 				saveblk(in, lum, chm, chm + off, outw_, is);
+-
++				to_send++ ;
++			}
+ 			in += 32;
+ 			lum += 16;
+ 			chm += 8;
+@@ -746,4 +746,5 @@
+ 		chm += 7 * (outw_ >> 1) + skip * 8;
+ 		in = nin + 16 * is;
+ 	}
++	// fprintf(stderr, "this time send %d\n", to_send);
+ }
+diff -ubwr ./grabber.cc /home/old_wd0f/ports/mbone/vic/work.luigi/vic-2.8-luigi/grabber.cc
+--- ./grabber.cc	Tue Feb  6 00:02:00 1996
++++ /home/old_wd0f/ports/mbone/vic/work.luigi/vic-2.8-luigi/grabber.cc	Fri Apr 10 15:36:42 1998
+@@ -69,6 +69,7 @@
+ 	  hstart_(0), hstop_(0),
+ 	  framebase_(0), frame_(0),
+ 	  inw_(0), inh_(0), outw_(0), outh_(0),
++	  threshold_(48),
+ 	  target_(0), tx_(0)
+ {
+ 	bps(128);
+@@ -122,6 +123,10 @@
+ 			}
+ 			return (TCL_OK);
+ 		}
++		if (strcmp(argv[1], "threshold") == 0) {
++			threshold_ = 8*atoi(argv[2]);
++			return (TCL_OK);
++		}
+ 		if (strcmp(argv[1], "fps") == 0) {
+ 			/*XXX assume value in range */
+ 			fps(atoi(argv[2]));
+@@ -194,11 +199,14 @@
+  * favoring the more restrictive metric.  If we're more than
+  * 200ms behind (e.g., the cpu is saturated or we've been
+  * suspended), give up and reset the frame clock.
++ * The argument passed is the number of bytes transmitted.
+  */
+ double Grabber::tick(int n)
+ {
++	// how much it took to send the data (microseconds)
+ 	double frametime = 8e6 * double(n) / double(bps_);
+ 	if (frametime < frametime_) {
++		// took less than one frame...
+ 		if (frametime * 2. < frametime_)
+ 			delta_ += (frametime - delta_) * .25;
+ 		else
+@@ -207,6 +215,7 @@
+ 	} else
+ 		delta_ = frametime;
+ 
++	// when to get next frame (not earlier than now!
+ 	frameclock_ += frametime;
+ 	double now = gettimeofday();
+ 	double delta = frameclock_ - now;
+diff -ubwr ./grabber.h /home/old_wd0f/ports/mbone/vic/work.luigi/vic-2.8-luigi/grabber.h
+--- ./grabber.h	Tue Feb  6 00:02:00 1996
++++ /home/old_wd0f/ports/mbone/vic/work.luigi/vic-2.8-luigi/grabber.h	Fri Apr 10 15:37:28 1998
+@@ -87,6 +87,7 @@
+ 	int vstop_;
+ 	int hstart_;
+ 	int hstop_;
++	int threshold_ ; // when a block is changed ? (was constant 48)
+ 
+ 	u_int framesize_;
+ 	u_char* framebase_;
+@@ -160,19 +161,19 @@
+ 			rb -= _rs << 3; \
+  \
+ 			int center = 0; \
+-			if (left >= 48 && x > 0) { \
++			if (left >= threshold_ && x > 0) { \
+ 				crv[-1] = CR_MOTION|CR_SEND; \
+ 				center = 1; \
+ 			} \
+-			if (right >= 48 && x < w - 1) { \
++			if (right >= threshold_ && x < w - 1) { \
+ 				crv[1] = CR_MOTION|CR_SEND; \
+ 				center = 1; \
+ 			} \
+-			if (bottom >= 48 && y < blkh_ - 1) { \
++			if (bottom >= threshold_ && y < blkh_ - 1) { \
+ 				crv[w] = CR_MOTION|CR_SEND; \
+ 				center = 1; \
+ 			} \
+-			if (top >= 48 && y > 0) { \
++			if (top >= threshold_ && y > 0) { \
+ 				crv[-w] = CR_MOTION|CR_SEND; \
+ 				center = 1; \
+ 			} \
+diff -ubwr ./ui-ctrlmenu.tcl /home/old_wd0f/ports/mbone/vic/work.luigi/vic-2.8-luigi/ui-ctrlmenu.tcl
+--- ./ui-ctrlmenu.tcl	Thu Jun 27 01:27:48 1996
++++ /home/old_wd0f/ports/mbone/vic/work.luigi/vic-2.8-luigi/ui-ctrlmenu.tcl	Fri Apr 10 16:39:04 1998
+@@ -124,6 +124,7 @@
+ 	catch "wm resizable $w false false"
+ 
+ 	frame $w.session
++	# luigi - move next 2 lines to ui-main
+ 	frame $w.cb
+ 	build.xmit $w.cb
+ 	frame $w.encoder
+@@ -139,9 +140,12 @@
+ 		-relief raised -anchor c \
+ 		-command "toggle_window $w" -font [mediumfont]
+ 
++	# luigi $w.cb goes into main menu
+ 	pack $w.cb $w.encoder $w.decoder $w.session -padx 6 -fill x
++	# pack $w.encoder $w.decoder $w.session -padx 6 -fill x
+ 	pack $w.dismiss -anchor c -pady 4
+ 
++	# luigi - move next 3 lines to ui-main (must check something)
+ 	if [have_transmit_permission] {
+ 		selectInitialDevice
+ 	}
+@@ -390,11 +394,15 @@
+ 		-relief raised -command transmit \
+ 		-anchor w -variable transmitButtonState -font $f \
+ 		-state disabled -highlightthickness 0
++	checkbutton $w.freeze -text "Freeze" \
++		-relief raised -command "grabber freeze \$freeze" \
++		-anchor w -variable freeze -font $f \
++		-highlightthickness 0
+ 	button $w.release -text "Release" \
+ 		-relief raised -command release_device \
+ 		-font $f -highlightthickness 0
+ 
+-	pack $w.send $w.release -fill both
++	pack $w.send $w.release $w.freeze -fill both
+ }
+ 
+ proc doNothing { args } {
+@@ -434,8 +442,9 @@
+ 	
+ 	frame $w.bps
+ 	scale $w.bps.scale -orient horizontal -font $f \
+-		-showvalue 0 -from 10 -to [option get . maxbw Vic] \
++		-showvalue 0 -from 1 -to [option get . maxbw Vic] \
+ 		-command "set_bps $w.bps.value" -width 12 \
++		-sliderlength 20 \
+ 		-relief groove
+ 	label $w.bps.value -font $f -width 8 -anchor w
+ 
+@@ -443,6 +452,7 @@
+ 	scale $w.fps.scale -font $f -orient horizontal \
+ 		-showvalue 0 -from 1 -to 30 \
+ 		-command "set_fps $w.fps.value" -width 12 \
++		-sliderlength 20 \
+ 		-relief groove
+ 	label $w.fps.value -font $f -width 8 -anchor w
+ 
+@@ -564,7 +574,7 @@
+ proc select_device device {
+ 	global transmitButton sizeButtons portButton formatButtons \
+ 		videoFormat defaultFormat lastDevice defaultPort inputPort \
+-		transmitButtonState
++		transmitButtonState typeButton
+ 
+ 	#
+ 	# Remember settings of various controls for previous device
+@@ -607,6 +617,11 @@
+ 	} else {
+ 		$portButton configure -state disabled
+ 	}
++	if [device_supports $device type *] {
++		$typeButton configure -state normal
++	} else {
++		$typeButton configure -state disabled
++	}
+ 
+ 	insert_grabber_panel [$device nickname]
+ 
+@@ -765,7 +780,7 @@
+ 		-value secam -variable inputType -font $f
+ 
+ 	global inputType typeButton
+-	set inputType auto
++	set inputType pal ; # auto
+ 	set typeButton $w
+ }
+ 
+@@ -774,7 +789,8 @@
+ 	build.encoder_options $w.options
+ 	build.device $w.device
+ 	build.port $w.port
+-	pack $w.device $w.port $w.options -fill x
++	build.type $w.type
++	pack $w.device $w.port $w.type $w.options -fill x
+ }
+ 
+ proc build.encoder_options w {
+@@ -1172,6 +1188,9 @@
+ 	global inputPort inputType portButton typeButton
+ 	if { [$portButton cget -state] == "normal" } {
+ 		$grabber port $inputPort
++	}
++	if { [$typeButton cget -state] == "normal" } {
++		$grabber type $inputType
+ 	}
+ 	setFillRate
+ 	update
+diff -ubwr ./ui-grabber.tcl /home/old_wd0f/ports/mbone/vic/work.luigi/vic-2.8-luigi/ui-grabber.tcl
+--- ./ui-grabber.tcl	Fri Jun 21 04:39:35 1996
++++ /home/old_wd0f/ports/mbone/vic/work.luigi/vic-2.8-luigi/ui-grabber.tcl	Fri Apr 10 13:54:42 1998
+@@ -39,65 +39,93 @@
+ # called foo-1, foo-2, etc. and you'll only need build.foo
+ #
+ 
++proc build.meteor w {
++#
++# The meteor has the same controls as the slicvideo, so just call that
++# routine to build the controls.
++
++	build.slicvideo $w
++}
++
++proc build.bktr w {
++	build.slicvideo $w
++}
++
+ proc build.slicvideo w {
+ 	set f [smallfont]
++#	set f  "-*-helvetica-medium-r-normal--*-100-75-75-*-*-*-*"
+ 	label $w.title -text "Grabber"
+ 	frame $w.f -relief sunken -borderwidth 2
+ 
+ 	frame $w.f.h -relief flat
+        
+-	label $w.f.h.label  -font $f -anchor e -text "Hue"
+-       
+-	scale $w.f.h.scale -orient horizontal -width 12 -length 20 \
+-		           -relief groove -showvalue 0 -from -128 -to 127 \
+-                          -command "grabber set HUE"
+-	pack  $w.f.h.label $w.f.h.scale -side left -fill x -expand 1
+-
+-	frame $w.f.ll -relief flat 
+-       
+-	label $w.f.ll.label  -font $f -text "Luma" -anchor s
+-       
+-	label $w.f.ll.clabel -font $f -text "Contrast" -anchor s
+-      
+-	label $w.f.ll.blabel -font $f -text "Brightness" -anchor s
+-	pack  $w.f.ll.clabel $w.f.ll.label $w.f.ll.blabel \
++	frame $w.f.h.c
++	label $w.f.h.c.l1  -font $f -anchor e -text "Chan:"
++	mk.entry $w.f.h.c  do_chan "20"
++	$w.f.h.c.entry configure -relief sunken -width 5
++	bind $w.f.h.c.entry <Return> "grabber chan \[$w.f.h.c.entry get\]"
++	pack $w.f.h.c.l1 $w.f.h.c.entry -side top
++
++	global ths
++	scale $w.f.h.ths \
++-orient horizontal -width 12 -length 60 -relief groove -sliderlength 6 \
++	    -showvalue 0 -from 1 -to 10 \
++	    -command "grabber threshold" -label Thre
++	$w.f.h.ths set 6
++	# the actual scale is multiplied by 8
++	scale $w.f.h.scale \
++-orient horizontal -width 12 -length 100 -relief groove \
++	    -showvalue 0 -from -128 -to 127 \
++	    -command "grabber hue" -label Hue
++	pack  $w.f.h.c \
++		$w.f.h.ths \
++		$w.f.h.scale \
+ 			     -side left -fill x -expand 1
+ 
++#	frame $w.f.ll -relief flat 
++#	label $w.f.ll.label  -font $f -text "Luma" -anchor s
++#	label $w.f.ll.clabel -font $f -text "Contrast" -anchor s
++#	label $w.f.ll.blabel -font $f -text "Brightness" -anchor s
++#	pack  $w.f.ll.clabel $w.f.ll.label $w.f.ll.blabel \
++#			     -side left -fill x -expand 1
++
+ 	frame $w.f.l  -relief flat
+        
+-	scale $w.f.l.cscale   -orient horizontal -width 12 -relief groove \
++	scale $w.f.l.cscale \
++-orient horizontal -width 12 -length 100 -relief groove \
+                               -showvalue 0 -from 0 -to 127 \
+-                              -command "grabber set LUMA_CONTRAST"
++	  -label "Contrast" \
++	  -command "grabber contrast"
+        
+-	scale $w.f.l.bscale -orient horizontal -width 12 -relief groove \
++	scale $w.f.l.bscale \
++-orient horizontal -width 12 -length 100 -relief groove \
+                             -showvalue 0 -from 0 -to 255 \
+-                            -command "grabber set LUMA_BRIGHTNESS"
++	    -command "grabber brightness" -label "Brightness"
+ 	pack  $w.f.l.cscale $w.f.l.bscale  -side left -fill x -expand 1
+ 
+-	frame $w.f.cl  -relief flat
+-
+-	label $w.f.cl.label  -font $f -text "Chroma" -anchor n
+-       
+-	label $w.f.cl.glabel -font $f -text "Gain" -anchor n
+-       
+-	label $w.f.cl.slabel -font $f -text "Saturation" -anchor n
+-	pack  $w.f.cl.glabel $w.f.cl.label $w.f.cl.slabel \
+-			     -side left -fill x -expand 1
++#	frame $w.f.cl  -relief flat
++#	label $w.f.cl.label  -font $f -text "Chroma" -anchor n
++#	label $w.f.cl.glabel -font $f -text "Gain" -anchor n
++#	label $w.f.cl.slabel -font $f -text "Saturation" -anchor n
++#	pack  $w.f.cl.glabel $w.f.cl.label $w.f.cl.slabel \
++#			     -side left -fill x -expand 1
+ 
+ 	frame $w.f.c -relief flat
+        
+-	scale $w.f.c.gscale -orient horizontal -width 12 -relief groove \
++	scale $w.f.c.gscale \
++-orient horizontal -width 12 -length 100 -relief groove \
+                              -showvalue 0 -from 0 -to 255 \
+-                             -command "grabber set CHROMA_GAIN"
++	     -command "grabber uvgain" -label "Chr.  Gain"
+        
+-	scale $w.f.c.sscale -orient horizontal -width 12 -relief groove \
++	scale $w.f.c.sscale \
++-orient horizontal -width 12 -length 100 -relief groove \
+                             -showvalue 0 -from 0 -to 127 \
+-                            -command "grabber set CHROMA_SATURATION"
++	    -command "grabber saturation" -label "Saturation"
+ 	pack  $w.f.c.gscale $w.f.c.sscale -side left -fill x -expand 1
+ 
+      
+-	pack  $w.f.h $w.f.ll $w.f.l $w.f.c $w.f.cl \
+-	      -fill x -expand 1 -padx 1m 
++	# pack  $w.f.h $w.f.ll $w.f.l $w.f.c $w.f.cl
++	pack  $w.f.h $w.f.l $w.f.c -fill x -expand 1 -padx 1m 
+ 
+ 
+ 	pack $w.title $w.f -fill x -expand 1
+@@ -109,6 +137,10 @@
+ 	$w.f.c.sscale set 64
+ }
+ 
++#
++# STILL image-grabber (?)
++#
++
+ proc build.still w {
+ 
+     set f [smallfont]
+@@ -131,6 +163,10 @@
+     $lastDevice file $s
+ }
+ 
++#
++# quickcam grabber
++#
++
+ proc build.qcam {w} {
+     global qcamwindow
+ 
+@@ -190,3 +226,118 @@
+     set qcamwindow(setwbal) "$w.f.s.s.wbal.scale set"
+     set qcamwindow(setbpp) "set qcambpp"
+ }
++
++#
++# X11 Grabber controls
++#
++proc x11grabUpdatePos {x y w h} {
++
++    global x11grabcontrols
++    set w $x11grabcontrols
++
++    if {[string compare $x [$w.x11grab.row1.pos.x.e get]] != 0} {
++	$w.x11grab.row1.pos.x.e delete 0 end
++	$w.x11grab.row1.pos.x.e insert 0 $x
++    }
++    if {[string compare $y [$w.x11grab.row1.pos.y.e get]] != 0} {
++	$w.x11grab.row1.pos.y.e delete 0 end
++	$w.x11grab.row1.pos.y.e insert 0 $y
++    }
++    if {[string compare $w [$w.x11grab.row1.pos.w.e get]] != 0} {
++	$w.x11grab.row1.pos.w.e delete 0 end
++	$w.x11grab.row1.pos.w.e insert 0 $w
++    }
++    if {[string compare $h [$w.x11grab.row1.pos.h.e get]] != 0} {
++	$w.x11grab.row1.pos.h.e delete 0 end
++	$w.x11grab.row1.pos.h.e insert 0 $h
++    }
++}
++
++proc x11cmd.update.geo w {
++    grabber fixed [$w.row.x get]  [$w.row.y get]
++}
++
++proc x11cmd.fixed {} {
++    global x11Source x11grabcontrols
++    set w $x11grabcontrols
++    $w.label configure -text "$x11Source"
++    if [winfo exists $w.row] {
++	destroy $w.row
++    }
++    frame $w.row
++    pack append $w.row \
++	[label $w.row.xl -text "X:" -width 2 -anchor e] {left filly} \
++	[entry $w.row.x -relief flat -width 4] {left filly} \
++	[label $w.row.yl -text "Y:" -width 2 -anchor e] {left filly} \
++	[entry $w.row.y -relief flat -width 4] {left filly}
++    bind $w.row.x <Return> "x11cmd.update.geo $w"
++    bind $w.row.y <Return> "x11cmd.update.geo $w"
++
++    pack $w.row -after $w.label
++}
++
++proc x11cmd.pointer {} {
++    global x11Source x11grabcontrols
++    set w $x11grabcontrols
++    $w.label configure -text "$x11Source"
++    if [winfo exists $w.row] {
++	destroy $w.row
++    }
++    frame $w.row
++    pack append $w.row \
++	[button $w.row.s -text "Follow pointer" ] { left filly }
++    pack $w.row -after $w.label
++}
++
++proc x11cmd.window {} {
++	global x11Source x11grabcontrols
++	puts "x11cmd -- x11Source $x11Source"
++	set w $x11grabcontrols
++	$w.label configure -text "$x11Source"
++	if [winfo exists $w.row] {
++	    destroy $w.row
++	}
++	frame $w.row
++	pack append $w.row \
++	    [button $w.row.s -text "Select window" ] { left filly }
++	pack $w.row -after $w.label
++}
++
++proc build.x11 w {
++	global x11grabcontrols x11Source
++	set f [smallfont] 
++
++	label $w.title -text "X11 Grabber controls"
++	frame $w.x11grab -relief sunken -borderwidth 2
++	set x11grabcontrols $w.x11grab
++	set x11Source "Fixed"
++	set w1 $w.x11grab
++
++	
++	# luigi
++	set m $w1.menu
++	set m1 $m.m1
++	menubutton $w1.menu -menu $m1 -text "Source:" \
++		-relief raised -width 7 -font $f
++	label $w1.label -width 6 -font $f
++	frame $w1.row
++	menu $m1
++	$m1 add radiobutton -label Fixed \
++		-state active \
++		-command "x11cmd.fixed" -font $f -variable x11Source
++#	$m1 add radiobutton -label Pointer \
++#		-command "x11cmd.pointer" -font $f -variable x11Source
++#	$m1 add radiobutton -label Window \
++#		-command "x11cmd.window" -font $f -variable x11Source
++
++	pack append $w1 \
++		$w1.menu {left} \
++		$w1.label {left} \
++		$w1.row {left}
++	
++	pack $w $w.title $w1 -fill x -expand 1
++
++	x11cmd.fixed
++}
++
++### end of file ###
+diff -ubwr ./ui-resource.tcl /home/old_wd0f/ports/mbone/vic/work.luigi/vic-2.8-luigi/ui-resource.tcl
+--- ./ui-resource.tcl	Wed Apr  3 02:33:56 1996
++++ /home/old_wd0f/ports/mbone/vic/work.luigi/vic-2.8-luigi/ui-resource.tcl	Fri Apr 10 21:11:56 1998
+@@ -140,7 +140,7 @@
+ 	option add Vic.useHardwareDecode false startupFile
+ 	option add Vic.infoHighlightColor LightYellow2 startupFile
+ 	option add Vic.useJPEGforH261 false startupFile
+-	option add Vic.stillGrabber false startupFile
++	option add Vic.stillGrabber true startupFile ; # XXX was false
+ 	option add Vic.siteDropTime "300" startupFile
+ 
+ 	#
+diff -ubwr ./ui-util.tcl /home/old_wd0f/ports/mbone/vic/work.luigi/vic-2.8-luigi/ui-util.tcl
+--- ./ui-util.tcl	Tue Feb  6 00:02:20 1996
++++ /home/old_wd0f/ports/mbone/vic/work.luigi/vic-2.8-luigi/ui-util.tcl	Fri Apr 10 20:49:56 1998
+@@ -64,7 +64,7 @@
+ 	global created$w
+ 	if { ! [info exists created$w] } {
+ 		set created$w 1
+-		wm transient $w .
++		# wm transient $w .
+ 		update idletasks
+ 		set x [winfo rootx .]
+ 		set y [winfo rooty .]
+@@ -103,7 +103,7 @@
+ 	}
+ 	set title [resource iconPrefix]$title
+ 	wm withdraw $w
+-	wm transient $w .
++	# wm transient $w .
+ 	wm title $w $title
+ 	wm iconname $w $title
+ 	bind $w <Enter> "focus $w"
