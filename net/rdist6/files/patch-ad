@@ -1,0 +1,28 @@
+*** Makefile.local.orig	Fri Feb 18 08:43:55 1994
+--- Makefile.local	Sat Aug 19 20:56:46 1995
+***************
+*** 8,17 ****
+  # BIN_DIR variable, you would uncomment the following line
+  # or add your own line.
+  #
+! #BIN_DIR	= /usr/bin
+  
+  #
+! # Add any local definetions you want pass to the compiler to DEFS_LOCAL
+  # below.  This includes those items found in "config/config.h".
+  #
+  DEFS_LOCAL	=
+--- 8,20 ----
+  # BIN_DIR variable, you would uncomment the following line
+  # or add your own line.
+  #
+! BIN_DIR	=	/usr/local/bin
+! OPT =		-O -s
+! MAN_1_DIR =	/usr/local/man/man1
+! MAN_8_DIR =	/usr/local/man/man8
+  
+  #
+! # Add any local definitions you want pass to the compiler to DEFS_LOCAL
+  # below.  This includes those items found in "config/config.h".
+  #
+  DEFS_LOCAL	=

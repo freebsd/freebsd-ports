@@ -1,0 +1,5 @@
+@cwd /usr/local
+bin/rdist
+bin/rdistd
+man/man1/rdist.1
+man/man8/rdistd.8
