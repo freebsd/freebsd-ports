@@ -27,8 +27,7 @@ SAMBA_LOGDIR=	${VARDIR}/log
 SAMBA_PRIVATE=	${PREFIX}/private
 SAMBA_CONFDIR=	${PREFIX}/etc
 
-CONFIGURE_ARGS=	--libdir=${PREFIX}/lib \
-		--localstatedir=${VARDIR}/lock \
+CONFIGURE_ARGS=	--localstatedir=${VARDIR}/lock \
 		--with-privatedir=${SAMBA_PRIVATE} --with-pam \
 		--with-logdir=${VARDIR}/log --with-tmpdir=${VARDIR}/run
 
