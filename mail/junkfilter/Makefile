@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	junkfilter
-PORTVERSION=	20010529
+PORTVERSION=	20020519
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://junkfilter.zer0.org/pkg/${PORTVERSION}/
@@ -22,15 +22,16 @@ RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
 NO_BUILD=	yes
 BINDIR=		${PREFIX}/etc/${PORTNAME}
 
-JFFILES=	LICENSE README TODO addresses bodychk dialups headers ip jf \
-		jf-addresses jf-bodychk jf-dialups jf-domains jf-headers \
-		jf-ip jf-white junkfilter junkfilter.bodychk \
+JFFILES=	LICENSE Makefile README TODO addresses bodychk dialups \
+		headers ip jf jf-addresses jf-bodychk jf-dialups jf-domains \
+		jf-headers jf-ip jf-white junkfilter junkfilter.bodychk \
 		junkfilter.config junkfilter.four junkfilter.lists \
 		junkfilter.match junkfilter.one junkfilter.opt \
-		junkfilter.three junkfilter.two junkfilter.user-default \
-		junkfilter.white procmailrc.sample white
+		junkfilter.stats junkfilter.three junkfilter.two \
+		junkfilter.user-default junkfilter.white procmailrc.sample \
+		white
 
-JFDOMFILES=	assorted general gulf-blocks harrismkt thehitman tsf-fannin
+JFDOMFILES=	general
 
 do-install:
 	${MKDIR} ${BINDIR}/domains
