@@ -1,0 +1,6 @@
+rc5pipe is a security program for encrypting and decrypting text via UNIX
+pipes. It uses the 128-bit RC5 encryption algorithm and takes advantage of
+padding, and is especially useful if combined with netcat.
+
+- Frerich Raabe
+frerich.raabe@gmx.de
