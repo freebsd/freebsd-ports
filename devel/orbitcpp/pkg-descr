@@ -1,0 +1,4 @@
+orbitcpp provides C++ bindings for ORBit, an open source CORBA
+2.2-compliant Object Request Broker.
+
+WWW: http://orbitcpp.sourceforge.net/
