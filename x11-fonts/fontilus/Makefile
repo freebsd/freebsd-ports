@@ -12,16 +12,13 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.4
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	marcus@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A font view for Nautilus
 
-LIB_DEPENDS=	nautilus.2:${PORTSDIR}/x11-fm/nautilus2
-
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack gnomeprefix
+USE_GNOME=	gnomehack gnomeprefix nautilus2
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 .include <bsd.port.mk>
