@@ -18,6 +18,8 @@ DIST_SUBDIR=	mingw
 MAINTAINER=	doc@hisio.safenet.pl
 COMMENT=	FSF gcc-2.95.2 for Windows cross-development
 
+BROKEN=		Broken pkg-plist
+
 BUILD_DEPENDS=	${LOCALBASE}/i386-mingw32msvc/bin/as:${PORTSDIR}/devel/mingw-binutils \
 		${LOCALBASE}/bin/mingwm10.dll:${PORTSDIR}/devel/mingw-bin-msvcrt \
 		autoheader:${PORTSDIR}/devel/autoconf

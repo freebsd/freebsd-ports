@@ -17,6 +17,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	thomas@cuivre.fr.eu.org
 COMMENT=	GNAT implementation of the Ada Semantic Interface Specification
 
+BROKEN=		Broken pkg-plist
+
 BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
 
 USE_GMAKE=	yes
