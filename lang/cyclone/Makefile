@@ -17,7 +17,7 @@ MASTER_SITES=	http://www.cs.cornell.edu/projects/cyclone/software/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 		${PORTNAME}-${PORTVERSION}-docs.tar.gz
 
-MAINTAINER=	freebsd-ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_GMAKE=	yes
 NO_PACKAGE=	'Neither CC nor CFLAGS safe.'
