@@ -15,6 +15,10 @@ MASTER_SITES=	ftp://ftp.cs.ruu.nl/pub/MIDI/PROGRAMS/
 MAINTAINER=	shanee@augusta.de
 COMMENT=	A language designed for creating and editing standard MIDI files
 
+.if ${MACHINE_ARCH} == "ia64" || ${MACHINE_ARCH} == "sparc64"
+IGNORE=		"ignored due to cast from pointer to integer of different size"
+.endif
+
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
 
 MAKE_ENV=	TCL_GENERIC_DIR=${LOCALBASE}/include/tcl8.2
