@@ -1,0 +1,15 @@
+*** file.c~	Fri Apr  4 22:08:01 1997
+--- file.c	Fri Apr 18 04:51:07 1997
+***************
+*** 201,208 ****
+--- 201,210 ----
+  #ifdef HAVE_TZSET
+  	{
+  #ifndef ultrix
++ #ifndef __FreeBSD__
+  		/* Ultrix defines this to be a different type */
+  		extern long timezone;
++ #endif
+  #endif
+  		tzset();
+  		tzone = (long) timezone;
