@@ -432,6 +432,246 @@ slash/themes/metalist/htdocs/article.pl
 slash/themes/metalist/htdocs/about.shtml
 slash/themes/metalist/htdocs/404.pl
 slash/themes/metalist/THEME
+slash/themes/Elixss/tasks/spamarmor.pl
+slash/themes/Elixss/tasks/counthits.pl
+slash/themes/Elixss/tasks/daily.pl
+slash/themes/Elixss/tasks/daily_archive.pl
+slash/themes/Elixss/tasks/daily_forget.pl
+slash/themes/Elixss/tasks/expire.pl
+slash/themes/Elixss/tasks/flush_formkeys.pl
+slash/themes/Elixss/tasks/freshenup.pl
+slash/themes/Elixss/tasks/new_headfoot.pl
+slash/themes/Elixss/tasks/new_motd.pl
+slash/themes/Elixss/tasks/open_backend.pl
+slash/themes/Elixss/tasks/p2f_hof_topics.pl
+slash/themes/Elixss/tasks/refresh_authors_cache.pl
+slash/themes/Elixss/tasks/run_moderatord.pl
+slash/themes/Elixss/tasks/run_portald.pl
+slash/themes/Elixss/tasks/set_recent_topics.pl
+slash/themes/Elixss/tasks/adminmail.pl
+slash/themes/Elixss/htdocs/images/topics/topicbug.jpg
+slash/themes/Elixss/htdocs/images/topics/topiceditorial.gif
+slash/themes/Elixss/htdocs/images/topics/topiclinux.gif
+slash/themes/Elixss/htdocs/images/topics/topicnews.gif
+slash/themes/Elixss/htdocs/images/topics/topicslash.gif
+slash/themes/Elixss/htdocs/images/topics/topicslashdot.gif
+slash/themes/Elixss/htdocs/images/zen-blossoms.jpg
+slash/themes/Elixss/htdocs/images/zen-paper-bg.jpg
+slash/themes/Elixss/htdocs/images/zen-bg.jpg
+slash/themes/Elixss/htdocs/images/bsb.gif
+slash/themes/Elixss/htdocs/images/bsbr.gif
+slash/themes/Elixss/htdocs/images/bsr.gif
+slash/themes/Elixss/htdocs/images/cl.gif
+slash/themes/Elixss/htdocs/images/cr.gif
+slash/themes/Elixss/htdocs/images/gl.gif
+slash/themes/Elixss/htdocs/images/gr.gif
+slash/themes/Elixss/htdocs/images/greendot.gif
+slash/themes/Elixss/htdocs/images/icondiv.gif
+slash/themes/Elixss/htdocs/images/icondiv2.gif
+slash/themes/Elixss/htdocs/images/leftbar.gif
+slash/themes/Elixss/htdocs/images/line-bg.gif
+slash/themes/Elixss/htdocs/images/line-corner.gif
+slash/themes/Elixss/htdocs/images/mainbar.gif
+slash/themes/Elixss/htdocs/images/pix.gif
+slash/themes/Elixss/htdocs/images/portalmap.gif
+slash/themes/Elixss/htdocs/images/660000.gif
+slash/themes/Elixss/htdocs/images/rightbar.gif
+slash/themes/Elixss/htdocs/images/sbs.gif
+slash/themes/Elixss/htdocs/images/sdlogo.gif
+slash/themes/Elixss/htdocs/images/sl.gif
+slash/themes/Elixss/htdocs/images/slashhead.gif
+slash/themes/Elixss/htdocs/images/slashlogo.gif
+slash/themes/Elixss/htdocs/images/slashslogan.gif
+slash/themes/Elixss/htdocs/images/slr.gif
+slash/themes/Elixss/htdocs/images/sr.gif
+slash/themes/Elixss/htdocs/images/srs.gif
+slash/themes/Elixss/htdocs/images/wl.gif
+slash/themes/Elixss/htdocs/images/wl_cccccc.gif
+slash/themes/Elixss/htdocs/images/wr.gif
+slash/themes/Elixss/htdocs/images/wr_cccccc.gif
+slash/themes/Elixss/htdocs/images/potshead_grey.gif
+slash/themes/Elixss/htdocs/images/admin_bracket.gif
+slash/themes/Elixss/htdocs/about.shtml
+slash/themes/Elixss/htdocs/article.pl
+slash/themes/Elixss/htdocs/authors.pl
+slash/themes/Elixss/htdocs/comments.pl
+slash/themes/Elixss/htdocs/default.css
+slash/themes/Elixss/htdocs/faq.shtml
+slash/themes/Elixss/htdocs/index.pl
+slash/themes/Elixss/htdocs/metamod.pl
+slash/themes/Elixss/htdocs/moderation.shtml
+slash/themes/Elixss/htdocs/pollBooth.pl
+slash/themes/Elixss/htdocs/sections.pl
+slash/themes/Elixss/htdocs/slashguide.shtml
+slash/themes/Elixss/htdocs/submit.pl
+slash/themes/Elixss/htdocs/topics.pl
+slash/themes/Elixss/htdocs/users.pl
+slash/themes/Elixss/htdocs/SetStyle.js
+slash/themes/Elixss/htdocs/admin.css
+slash/themes/Elixss/htdocs/common.css
+slash/themes/Elixss/htdocs/elixss.css
+slash/themes/Elixss/htdocs/styles-autrijus.css
+slash/themes/Elixss/htdocs/styles-clean.css
+slash/themes/Elixss/htdocs/404.pl
+slash/themes/Elixss/htdocs/styles-elixus.css
+slash/themes/Elixss/htdocs/styles-geogiablue.css
+slash/themes/Elixss/htdocs/styles-gettysburg.css
+slash/themes/Elixss/htdocs/styles-hcchien.css
+slash/themes/Elixss/htdocs/styles-hidaka.css
+slash/themes/Elixss/htdocs/styles-hlb.css
+slash/themes/Elixss/htdocs/styles-ilyagram.css
+slash/themes/Elixss/htdocs/styles-ipagram.css
+slash/themes/Elixss/htdocs/styles-jedi.css
+slash/themes/Elixss/htdocs/styles-mt-new.css
+slash/themes/Elixss/htdocs/styles-narya.css
+slash/themes/Elixss/htdocs/styles-nenya.css
+slash/themes/Elixss/htdocs/styles-rusty.css
+slash/themes/Elixss/htdocs/styles-slashdot.css
+slash/themes/Elixss/htdocs/styles-stormy.css
+slash/themes/Elixss/htdocs/styles-trendy.css
+slash/themes/Elixss/htdocs/styles-twblog.css
+slash/themes/Elixss/htdocs/styles-vilya.css
+slash/themes/Elixss/htdocs/styles-winsoncafe.css
+slash/themes/Elixss/htdocs/styles-zonble.css
+slash/themes/Elixss/htdocs/styles-csszen.css
+slash/themes/Elixss/misc/spamarmors
+slash/themes/Elixss/misc/extract.pl
+slash/themes/Elixss/misc/messages.po
+slash/themes/Elixss/misc/zh_cn.po
+slash/themes/Elixss/misc/zh_tw.po
+slash/themes/Elixss/templates/yourPendingSubs;submit;default
+slash/themes/Elixss/templates/changePasswd;users;default
+slash/themes/Elixss/templates/comment_submit;comments;default
+slash/themes/Elixss/templates/currentAdminUsers;misc;default
+slash/themes/Elixss/templates/data;article;default
+slash/themes/Elixss/templates/data;comments;default
+slash/themes/Elixss/templates/data;index;default
+slash/themes/Elixss/templates/data;metamod;default
+slash/themes/Elixss/templates/data;misc;default
+slash/themes/Elixss/templates/data;pollBooth;default
+slash/themes/Elixss/templates/data;sections;default
+slash/themes/Elixss/templates/data;submit;default
+slash/themes/Elixss/templates/data;topics;default
+slash/themes/Elixss/templates/delSectCancel;sections;default
+slash/themes/Elixss/templates/dispComment;misc;light
+slash/themes/Elixss/templates/delSectConfirm;sections;default
+slash/themes/Elixss/templates/delSection;sections;default
+slash/themes/Elixss/templates/del_message;comments;default
+slash/themes/Elixss/templates/deleted_cids;comments;default
+slash/themes/Elixss/templates/discreate;comments;default
+slash/themes/Elixss/templates/discuss_list;comments;default
+slash/themes/Elixss/templates/dispComment;misc;default
+slash/themes/Elixss/templates/dispLinkComment;misc;default
+slash/themes/Elixss/templates/dispStory;misc;default
+slash/themes/Elixss/templates/dispStory;misc;light
+slash/themes/Elixss/templates/dispTheComments;metamod;default
+slash/themes/Elixss/templates/display;article;default
+slash/themes/Elixss/templates/displayForm;submit;default
+slash/themes/Elixss/templates/editComm;users;default
+slash/themes/Elixss/templates/displayForm;users;default
+slash/themes/Elixss/templates/displayThread;misc;default
+slash/themes/Elixss/templates/editHome;users;default
+slash/themes/Elixss/templates/editKey;users;default
+slash/themes/Elixss/templates/editMiscOpts;users;default
+slash/themes/Elixss/templates/editSection;sections;default
+slash/themes/Elixss/templates/editUser;users;default
+slash/themes/Elixss/templates/edit_comment;comments;default
+slash/themes/Elixss/templates/editpoll;pollBooth;default
+slash/themes/Elixss/templates/errors;comments;default
+slash/themes/Elixss/templates/errors;users;default
+slash/themes/Elixss/templates/fancybox;misc;default
+slash/themes/Elixss/templates/fancybox;misc;light
+slash/themes/Elixss/templates/footer;misc;admin
+slash/themes/Elixss/templates/footer;misc;default
+slash/themes/Elixss/templates/footer;misc;light
+slash/themes/Elixss/templates/formLabel;misc;default
+slash/themes/Elixss/templates/formbox;misc;default
+slash/themes/Elixss/templates/formkeyErrors;misc;default
+slash/themes/Elixss/templates/genQuickies;submit;default
+slash/themes/Elixss/templates/getOlderStories;misc;default
+slash/themes/Elixss/templates/getUserAdmin;users;default
+slash/themes/Elixss/templates/header;misc;admin
+slash/themes/Elixss/templates/header;misc;default
+slash/themes/Elixss/templates/header;misc;light
+slash/themes/Elixss/templates/html-header;misc;default
+slash/themes/Elixss/templates/html-redirect;misc;default
+slash/themes/Elixss/templates/index;index;default
+slash/themes/Elixss/templates/index;index;light
+slash/themes/Elixss/templates/linkStory;misc;default
+slash/themes/Elixss/templates/isEligible;metamod;default
+slash/themes/Elixss/templates/linkComment;misc;default
+slash/themes/Elixss/templates/linkCommentPages;misc;default
+slash/themes/Elixss/templates/listAbuses;admin;default
+slash/themes/Elixss/templates/listBanned;users;default
+slash/themes/Elixss/templates/listReadOnly;users;default
+slash/themes/Elixss/templates/listSections;sections;default
+slash/themes/Elixss/templates/listTopics;topics;default
+slash/themes/Elixss/templates/listpolls;pollBooth;default
+slash/themes/Elixss/templates/lockTest;misc;default
+slash/themes/Elixss/templates/loginForm;users;default
+slash/themes/Elixss/templates/main;404;default
+slash/themes/Elixss/templates/main;authors;default
+slash/themes/Elixss/templates/mainmenu;misc;default
+slash/themes/Elixss/templates/motd;misc;default
+slash/themes/Elixss/templates/messages;users;default
+slash/themes/Elixss/templates/metaModerate;metamod;default
+slash/themes/Elixss/templates/miniAdminMenu;users;default
+slash/themes/Elixss/templates/modCommentLog;misc;default
+slash/themes/Elixss/templates/mod_footer;comments;default
+slash/themes/Elixss/templates/mod_header;comments;default
+slash/themes/Elixss/templates/moderation;comments;default
+slash/themes/Elixss/templates/netIDInfo;users;default
+slash/themes/Elixss/templates/newUserForm;users;default
+slash/themes/Elixss/templates/newdiscussion;comments;default
+slash/themes/Elixss/templates/organisation;misc;default
+slash/themes/Elixss/templates/pollbooth;misc;default
+slash/themes/Elixss/templates/portalboxtitle;misc;default
+slash/themes/Elixss/templates/portalmap;misc;default
+slash/themes/Elixss/templates/previewForm;submit;default
+slash/themes/Elixss/templates/previewSlashbox;users;default
+slash/themes/Elixss/templates/preview_comm;comments;default
+slash/themes/Elixss/templates/printCommComments;misc;default
+slash/themes/Elixss/templates/printCommNoArchive;misc;default
+slash/themes/Elixss/templates/printCommentsMain;misc;default
+slash/themes/Elixss/templates/reRegisterMail;messages;default
+slash/themes/Elixss/templates/recentTopics;misc;default
+slash/themes/Elixss/templates/regResult;users;default
+slash/themes/Elixss/templates/rereg_mail;messages;default
+slash/themes/Elixss/templates/saveSub;submit;default
+slash/themes/Elixss/templates/savepoll;pollBooth;default
+slash/themes/Elixss/templates/select;misc;default
+slash/themes/Elixss/templates/sectionindexd;misc;default
+slash/themes/Elixss/templates/sectionisolate;misc;default
+slash/themes/Elixss/templates/selectThreshLabel;misc;default
+slash/themes/Elixss/templates/sendPasswdForm;users;default
+slash/themes/Elixss/templates/showInfoConflict;users;default
+slash/themes/Elixss/templates/ssifoot;misc;default
+slash/themes/Elixss/templates/ssihead;misc;default
+slash/themes/Elixss/templates/storylink;index;default
+slash/themes/Elixss/templates/storylink;index;light
+slash/themes/Elixss/templates/subEdAdmin;submit;default
+slash/themes/Elixss/templates/subEdTable;submit;default
+slash/themes/Elixss/templates/subEdUser;submit;default
+slash/themes/Elixss/templates/three;misc;default
+slash/themes/Elixss/templates/tildeEd;users;default
+slash/themes/Elixss/templates/titlebar;misc;default
+slash/themes/Elixss/templates/titlebar;misc;light
+slash/themes/Elixss/templates/titles;users;default
+slash/themes/Elixss/templates/topAbusers;users;default
+slash/themes/Elixss/templates/topTopics;topics;default
+slash/themes/Elixss/templates/topics;menu;default
+slash/themes/Elixss/templates/undo_mod;comments;default
+slash/themes/Elixss/templates/userInfo;users;default
+slash/themes/Elixss/templates/userlogin;misc;default
+slash/themes/Elixss/templates/users;menu;default
+slash/themes/Elixss/templates/vote;pollBooth;default
+slash/themes/Elixss/templates/admin;menu;default
+slash/themes/Elixss/sql/mysql/datadump.sql
+slash/themes/Elixss/sql/mysql/prep.sql
+slash/themes/Elixss/sql/postgresql/datadump.sql
+slash/themes/Elixss/sql/postgresql/prep.sql
+slash/themes/Elixss/THEME
+slash/themes/Elixss/Anchor.pm.patched
 slash/sql/postgresql/schema.sql
 slash/sql/oracle/schema.sql
 slash/sql/mysql/schema.sql
@@ -454,7 +694,6 @@ slash/plugins/Wiki/templates/footer;wiki;default
 slash/plugins/Wiki/templates/fancybox;wiki;default
 slash/plugins/Wiki/sql/wiki_schema.sql
 slash/plugins/Wiki/sql/wiki_dump.sql
-slash/plugins/Wiki/WikiFormat.pm
 slash/plugins/Wiki/PLUGIN
 slash/plugins/Wiki/Makefile.old
 slash/plugins/Wiki/Makefile.PL
@@ -474,29 +713,62 @@ slash/plugins/Search/Makefile.old
 slash/plugins/Search/Makefile.PL
 slash/plugins/Search/MANIFEST
 slash/plugins/Search/Changes
+slash/plugins/RSS2Story/sql/rss2story_schema.sql
+slash/plugins/RSS2Story/sql/rss2story_dump.sql
+slash/plugins/RSS2Story/tasks/rss2story.pl
+slash/plugins/RSS2Story/templates/category;rss2story;default
+slash/plugins/RSS2Story/templates/schedule;rss2story;default
+slash/plugins/RSS2Story/templates/source;rss2story;default
+slash/plugins/RSS2Story/RSS2Story.pm
+slash/plugins/RSS2Story/PLUGIN
+slash/plugins/RSS2Story/rss2story.pl
 slash/plugins/PubKey/templates/data;pubkey;default
 slash/plugins/PubKey/pubkey.pl
 slash/plugins/PubKey/PLUGIN
-slash/plugins/OurNet/templates/navigation;ournet;default
-slash/plugins/OurNet/templates/main;ournet;default
-slash/plugins/OurNet/templates/header;ournet;default
-slash/plugins/OurNet/templates/group;ournet;default
-slash/plugins/OurNet/templates/footer;ournet;default
-slash/plugins/OurNet/templates/data;ournet;default
-slash/plugins/OurNet/templates/board;ournet;default
-slash/plugins/OurNet/templates/article;ournet;default
+slash/plugins/OurNet/templates/elixus/navigation;ournet;default
+slash/plugins/OurNet/templates/elixus/main;ournet;default
+slash/plugins/OurNet/templates/elixus/header;ournet;default
+slash/plugins/OurNet/templates/elixus/group;ournet;default
+slash/plugins/OurNet/templates/elixus/footer;ournet;default
+slash/plugins/OurNet/templates/elixus/data;ournet;default
+slash/plugins/OurNet/templates/elixus/board;ournet;default
+slash/plugins/OurNet/templates/elixus/article;ournet;default
+slash/plugins/OurNet/templates/music543/navigation;ournet;default
+slash/plugins/OurNet/templates/music543/main;ournet;default
+slash/plugins/OurNet/templates/music543/header;ournet;default
+slash/plugins/OurNet/templates/music543/group;ournet;default
+slash/plugins/OurNet/templates/music543/footer;ournet;default
+slash/plugins/OurNet/templates/music543/data;ournet;default
+slash/plugins/OurNet/templates/music543/board;ournet;default
+slash/plugins/OurNet/templates/music543/article;ournet;default
 slash/plugins/OurNet/t/use.t
 slash/plugins/OurNet/ournet.pl
 slash/plugins/OurNet/ournet.conf
 slash/plugins/OurNet/po/en.po
+slash/plugins/OurNet/po/zh_cn.po
 slash/plugins/OurNet/po/zh_tw.po
-slash/plugins/OurNet/images/ournet.gif
+slash/plugins/OurNet/images/archive.png
+slash/plugins/OurNet/images/cash_sq.gif
+slash/plugins/OurNet/images/folder.gif
+slash/plugins/OurNet/images/icon_folder.gif
 slash/plugins/OurNet/images/elix.png
 slash/plugins/OurNet/images/archive.gif
 slash/plugins/OurNet/README
 slash/plugins/OurNet/PLUGIN
-slash/plugins/OurNet/OurNet.pm
+slash/plugins/OurNet/inc/ExtUtils/AutoInstall.pm
+slash/plugins/OurNet/inc/Module/Install/AutoInstall.pm
+slash/plugins/OurNet/inc/Module/Install/Base.pm
+slash/plugins/OurNet/inc/Module/Install/Include.pm
+slash/plugins/OurNet/inc/Module/Install/Makefile.pm
+slash/plugins/OurNet/inc/Module/Install/Metadata.pm
+slash/plugins/OurNet/inc/Module/Install/WriteAll.pm
+slash/plugins/OurNet/inc/Module/Install.pm
+slash/plugins/OurNet/lib/Slash/OurNet.pm
+slash/plugins/OurNet/lib/Slash/OurNet/Standalone.pm
+slash/plugins/OurNet/trapped.pl
 slash/plugins/OurNet/Makefile.PL
+slash/plugins/OurNet/Makefile.old
+slash/plugins/OurNet/META.yml
 slash/plugins/OurNet/MANIFEST
 slash/plugins/OurNet/SIGNATURE
 slash/plugins/OurNet/Changes
@@ -605,7 +877,6 @@ slash/plugins/Admin/templates/editFilter;admin;default
 slash/plugins/Admin/templates/data;admin;default
 slash/plugins/Admin/templates/colorEdit;admin;default
 slash/plugins/Admin/templates/blockEdit;admin;default
-slash/plugins/Admin/templates/authorEdit;admin;default
 slash/plugins/Admin/templates/adminLoginForm;admin;default
 slash/plugins/Admin/dump
 slash/plugins/Admin/admin.pl
@@ -625,6 +896,7 @@ slash/bin/install-plugin
 slash/bin/chkuser
 slash/bin/bitchslap
 slash/bin/backup-blocks
+etc/rc.d/slash.sh
 @dirrm slash/themes/slashcode/templates
 @dirrm slash/themes/slashcode/tasks
 @dirrm slash/themes/slashcode/sql/postgresql
@@ -644,29 +916,50 @@ slash/bin/backup-blocks
 @dirrm slash/themes/metalist/sql
 @dirrm slash/themes/metalist/misc
 @dirrm slash/themes/metalist/htdocs/images/topics
-@dirrm slash/themes/metalist/htdocs/images/.xvpics
 @dirrm slash/themes/metalist/htdocs/images
 @dirrm slash/themes/metalist/htdocs
 @dirrm slash/themes/metalist
+@dirrm slash/themes/Elixss/templates
+@dirrm slash/themes/Elixss/tasks
+@dirrm slash/themes/Elixss/sql/postgresql
+@dirrm slash/themes/Elixss/sql/mysql
+@dirrm slash/themes/Elixss/sql
+@dirrm slash/themes/Elixss/misc
+@dirrm slash/themes/Elixss/htdocs/images/topics
+@dirrm slash/themes/Elixss/htdocs/images
+@dirrm slash/themes/Elixss/htdocs
+@dirrm slash/themes/Elixss
 @dirrm slash/themes
 @dirrm slash/sql/postgresql
 @dirrm slash/sql/oracle
 @dirrm slash/sql/mysql
 @dirrm slash/sql
-@dirrm slash/site
 @dirrm slash/sbin
 @dirrm slash/plugins/Wiki/templates
 @dirrm slash/plugins/Wiki/sql
 @dirrm slash/plugins/Wiki
 @dirrm slash/plugins/Search/templates
 @dirrm slash/plugins/Search
+@dirrm slash/plugins/RSS2Story/templates
+@dirrm slash/plugins/RSS2Story/tasks
+@dirrm slash/plugins/RSS2Story/sql
+@dirrm slash/plugins/RSS2Story
+@dirrm slash/plugins/OurNet/templates/music543
+@dirrm slash/plugins/OurNet/templates/elixus
+@dirrm slash/plugins/OurNet/templates
+@dirrm slash/plugins/OurNet/po
+@dirrm slash/plugins/OurNet/lib/Slash/OurNet
+@dirrm slash/plugins/OurNet/lib/Slash
+@dirrm slash/plugins/OurNet/lib
+@dirrm slash/plugins/OurNet/inc/Module/Install
+@dirrm slash/plugins/OurNet/inc/Module
+@dirrm slash/plugins/OurNet/inc/ExtUtils
+@dirrm slash/plugins/OurNet/inc
+@dirrm slash/plugins/OurNet/images
+@dirrm slash/plugins/OurNet/t
+@dirrm slash/plugins/OurNet
 @dirrm slash/plugins/PubKey/templates
 @dirrm slash/plugins/PubKey
-@dirrm slash/plugins/OurNet/templates
-@dirrm slash/plugins/OurNet/t
-@dirrm slash/plugins/OurNet/nls
-@dirrm slash/plugins/OurNet/images
-@dirrm slash/plugins/OurNet
 @dirrm slash/plugins/Messages/templates
 @dirrm slash/plugins/Messages/DB/MySQL
 @dirrm slash/plugins/Messages/DB

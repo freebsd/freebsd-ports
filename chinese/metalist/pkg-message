@@ -7,12 +7,15 @@
   
   mysqladmin -u root create slash           # "slash" is your database name
   echo "Include %%LOCALBASE%%/slash/httpd/slash.conf" \
-    >> %%LOCALBASE%%/etc/apache/httpd.conf     # or manually insert this line
+    >> %%LOCALBASE%%/etc/%%APACHE%%/httpd.conf     # or manually insert this line
   cd %%LOCALBASE%%/slash                       # change to the slash directory
   bin/install-slashsite -u slash       	    # "slash" is virtual user's name
   apachectl restart                         # restarts the apache server
+  %%LOCALBASE%%/etc/rc.d/slash.sh start        # start the "slashd" daemon
   
-  Note that the "install-slashsite" script will ask you of a "theme"; if you
-  are going to run a Traditional Chinese site, please answer "metalist".
+  Note that the "install-slashsite" script will ask you of a "theme";
+  we recommend the CSS-based, fully internationalized "Elixss" theme.
+  However, if your site uses Traditional Chinese only, the "metalist"
+  theme will also do.
 
 ##############################################################################
