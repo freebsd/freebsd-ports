@@ -27,7 +27,6 @@ etc/wine.conf.sample
 include/wine/debug.h
 include/wine/exception.h
 include/wine/library.h
-include/wine/obj_base.h
 include/wine/obj_cache.h
 include/wine/obj_comcat.h
 include/wine/obj_commdlgbrowser.h
@@ -39,10 +38,8 @@ include/wine/obj_dragdrop.h
 include/wine/obj_dragdrophelper.h
 include/wine/obj_enumguid.h
 include/wine/obj_enumidlist.h
-include/wine/obj_errorinfo.h
 include/wine/obj_extracticon.h
 include/wine/obj_inplace.h
-include/wine/obj_oleaut.h
 include/wine/obj_olefont.h
 include/wine/obj_oleobj.h
 include/wine/obj_oleundo.h
@@ -61,6 +58,7 @@ include/wine/msvcrt/conio.h
 include/wine/msvcrt/crtdbg.h
 include/wine/msvcrt/ctype.h
 include/wine/msvcrt/direct.h
+include/wine/msvcrt/dirent.h
 include/wine/msvcrt/dos.h
 include/wine/msvcrt/eh.h
 include/wine/msvcrt/errno.h
@@ -82,8 +80,10 @@ include/wine/msvcrt/sys/locking.h
 include/wine/msvcrt/sys/stat.h
 include/wine/msvcrt/sys/timeb.h
 include/wine/msvcrt/sys/types.h
+include/wine/msvcrt/sys/unistd.h
 include/wine/msvcrt/sys/utime.h
 include/wine/msvcrt/time.h
+include/wine/msvcrt/unistd.h
 include/wine/msvcrt/wchar.h
 include/wine/msvcrt/wctype.h
 include/wine/windows/accctrl.h
@@ -263,6 +263,9 @@ lib/wine/compobj.dll.so
 lib/wine/control.exe.so
 lib/wine/crtdll.dll.so
 lib/wine/crypt32.dll.so
+lib/wine/ctl3d.dll.so
+lib/wine/ctl3d32.dll.so
+lib/wine/ctl3dv2.dll.so
 lib/wine/d3d8.dll.so
 lib/wine/d3dx8.dll.so
 lib/wine/dciman32.dll.so
@@ -298,6 +301,7 @@ lib/wine/libcomctl32.def
 lib/wine/libcomdlg32.def
 lib/wine/libcrtdll.def
 lib/wine/libcrypt32.def
+lib/wine/libctl3d32.def
 lib/wine/libd3d8.def
 lib/wine/libd3dx8.def
 lib/wine/libdciman32.def
@@ -468,6 +472,7 @@ lib/wine/windebug.dll.so
 lib/wine/winealsa.drv.so
 lib/wine/winearts.drv.so
 lib/wine/wineaudioio.drv.so
+lib/wine/wineboot.exe.so
 lib/wine/wineconsole.exe.so
 lib/wine/winedbg.exe.so
 lib/wine/winedos.dll.so
@@ -479,7 +484,7 @@ lib/wine/wineoss.drv.so
 lib/wine/winenas.drv.so
 lib/wine/winepath.exe.so
 lib/wine/wineps.dll.so
-lib/wine/wineps16.dll.so
+lib/wine/wineps16.drv.so
 lib/wine/wing.dll.so
 lib/wine/winhelp.exe.so
 lib/wine/wininet.dll.so
