@@ -3,7 +3,7 @@
 # Date created:               9 Oct 1996
 # Whom:                 Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/11/03 21:11:08 jfitz Exp $
 #
 
 DISTNAME=       xshisen-1.35
@@ -13,9 +13,10 @@ MASTER_SITES=	ftp://ftp.iis.u-tokyo.ac.jp/pub1/X/contrib/games/
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
-USE_X11=	yes
 
-GNU_CONFIGURE=	yes
+IS_INTERACTIVE=	YES	# Has to create an app-defaults file
+USE_X11=	YES
+GNU_CONFIGURE=	YES
 #CONFIGURE_ARGS=--enable-japanese=euc	#Japanese char set euc, jis sjis
 
 post-install:
