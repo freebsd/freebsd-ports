@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	drweb_sendmail
-PORTVERSION=    4.29.12d
+PORTVERSION=    4.29.12f
 CATEGORIES=	security mail
 MASTER_SITES=   ftp://ftp.drweb.ru/pub/unix/
-DISTNAME=       drweb-clients-4.29.12-D-sources
+DISTNAME=       drweb-clients-4.29.12-F-sources
 
 MAINTAINER=	anton@chelcom.ru
 COMMENT=	Sendmail message filter for virus processing through DrWeb daemon
