@@ -16,6 +16,10 @@ MAINTAINER=	flynn@energyhq.homeip.net
 BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake \
 		autoconf:${PORTSDIR}/devel/autoconf
 
+.if !defined(REALLY_OVERWRITE_KDE_WITH_KERAMIK)
+BROKEN=		"Overwrites KDE base install"
+.endif
+
 WRKSRC= 	${WRKDIR}/${PORTNAME}
 
 GNU_CONFIGURE=	yes
