@@ -342,6 +342,7 @@
     SUBDIR += magictun
     SUBDIR += mars_nwe
     SUBDIR += mbrowse
+    SUBDIR += memcached
     SUBDIR += merlinmon
     SUBDIR += micq
     SUBDIR += mldonkey
