@@ -15,4 +15,7 @@ etc/dact.conf
 %%DATADIR%%/comp_snibble.so
 %%DATADIR%%/comp_text.so
 %%DATADIR%%/comp_zlib.so
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/dact.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
