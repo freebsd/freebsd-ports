@@ -1,7 +1,7 @@
 bin/cob-config
 bin/cobc
-etc/libcob.conf
 include/libcob.h
+include/libcob/byteswap.h
 include/libcob/call.h
 include/libcob/common.h
 include/libcob/exception.def
@@ -15,4 +15,13 @@ lib/libcob.a
 lib/libcob.so
 lib/libcob.so.1
 %%NLS%%share/locale/ja/LC_MESSAGES/open-cobol.mo
+%%DATADIR%%/config/cobol2002.conf
+%%DATADIR%%/config/cobol85.conf
+%%DATADIR%%/config/default.conf
+%%DATADIR%%/config/ibm.conf
+%%DATADIR%%/config/mf.conf
+%%DATADIR%%/config/mvs.conf
+%%DATADIR%%/config/v023.conf
+@dirrm %%DATADIR%%/config
+@dirrm %%DATADIR%%
 @dirrm include/libcob
