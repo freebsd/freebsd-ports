@@ -134,7 +134,7 @@ post-install:
 	do \
 		${STRIP_CMD} $$prog ; \
 	done )
-.for f in gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh jv-scan jcf-dump jv-convert jar grepjar rmic rmiregistry
+.for f in gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh gij jv-scan jcf-dump jv-convert jar grepjar rmic rmiregistry
 	# gij and jv-convert, for example, are not built on all platforms.
 	if [ -e ${PREFIX}/bin/${f} ]; then \
 	  ${STRIP_CMD} ${PREFIX}/bin/${f}; \
