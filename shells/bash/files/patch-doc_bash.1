@@ -1,0 +1,16 @@
+
+$FreeBSD$
+
+--- doc/bash.1.orig	Tue Nov 13 18:55:59 2001
++++ doc/bash.1	Tue Nov 20 23:52:45 2001
+@@ -2473,6 +2473,10 @@
+ .B nullglob
+ option is set, and no matches are found,
+ the word is removed.
++If the 
++.B failglob
++option is set, and no matches are found, an error message is printed
++and the command is not executed.
+ If the shell option
+ .B nocaseglob
+ is enabled, the match is performed without regard to the case
