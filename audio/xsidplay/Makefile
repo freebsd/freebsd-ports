@@ -41,6 +41,7 @@ pre-patch:
 	@${PERL} -pi -e 's|/usr/share|${PREFIX}|g' ${WRKSRC}/xsidplay.1
 
 do-install:
+	@${MKDIR} ${PREFIX}/share/pixmaps
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/xsidplay ${PREFIX}/bin
 	@${INSTALL_DATA} ${WRKSRC}/xsidplay.xpm ${PREFIX}/share/pixmaps
 	@${INSTALL_MAN} ${WRKSRC}/xsidplay.1 ${MANPREFIX}/man/man1
