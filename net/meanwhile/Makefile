@@ -7,7 +7,7 @@
 
 PORTNAME=	meanwhile
 PORTVERSION=	0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,8 +16,8 @@ MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Open Source implementation of the Lotus Sametime protocol
 
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack lthack glib20
+USE_GNOME=	gnomehack glib20
 INSTALLS_SHLIB=	yes
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 
 .include <bsd.port.mk>
