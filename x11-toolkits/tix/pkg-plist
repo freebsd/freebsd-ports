@@ -1,8 +1,9 @@
-bin/tixwish4.1.4.1
+bin/tixwish4.1.7.5
 @exec ln -s %D/%F %B/tixwish
 @unexec rm %B/tixwish
 include/tix.h
 include/tix/generic/tix.h
+include/tix/generic/tixBitmaps.h
 include/tix/generic/tixDef.h
 include/tix/generic/tixForm.h
 include/tix/generic/tixGrData.h
@@ -11,12 +12,11 @@ include/tix/generic/tixHList.h
 include/tix/generic/tixImgXpm.h
 include/tix/generic/tixInt.h
 include/tix/generic/tixItcl.h
-include/tix/generic/tixPatchLevel.h
 include/tix/generic/tixPort.h
 include/tix/generic/tixTList.h
 include/tix/unix/tixUnixInt.h
 include/tix/unix/tixUnixPort.h
-lib/libtix4141.so.1.0
+lib/libtix4175.so.1.0
 @exec /sbin/ldconfig -m %B
 man/mann/BtnBox.n.gz
 man/mann/Balloon.n.gz
@@ -170,6 +170,7 @@ share/tix4.1/demos/bitmaps/select.xpm
 share/tix4.1/demos/bitmaps/tix.gif
 share/tix4.1/demos/bitmaps/underlin.xbm
 share/tix4.1/demos/samples/AllSampl.tcl
+share/tix4.1/demos/samples/ArrowBtn.tcl
 share/tix4.1/demos/samples/Balloon.tcl
 share/tix4.1/demos/samples/BtnBox.tcl
 share/tix4.1/demos/samples/CObjView.tcl
@@ -186,6 +187,7 @@ share/tix4.1/demos/samples/DirTree.tcl
 share/tix4.1/demos/samples/DragDrop.tcl
 share/tix4.1/demos/samples/DynTree.tcl
 share/tix4.1/demos/samples/EFileDlg.tcl
+share/tix4.1/demos/samples/EditGrid.tcl
 share/tix4.1/demos/samples/FileDlg.tcl
 share/tix4.1/demos/samples/FileEnt.tcl
 share/tix4.1/demos/samples/HList1.tcl
@@ -293,4 +295,5 @@ share/tix4.1/Verify.tcl
 share/tix4.1/Version.tcl
 share/tix4.1/WInfo.tcl
 share/tix4.1/WinFile.tcl
+share/tix4.1/pkgIndex.tcl
 share/tix4.1/tclIndex
