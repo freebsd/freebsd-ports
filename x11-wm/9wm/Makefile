@@ -3,12 +3,12 @@
 # Date created:         Sun Aug 13 12:36:14 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.2 1995/10/28 20:27:20 erich Exp $
+# $Id: Makefile,v 1.3 1996/11/12 02:19:35 obrien Exp $
 #
 
 DISTNAME=	9wm-1.1
 CATEGORIES=	plan9
-MASTER_SITES=	ftp://ftp.ecf.toronto.edu/pub/plan9/arnold/
+MASTER_SITES=	ftp://ftp.mathcs.emory.edu/pub/arnold/
 EXTRACT_SUFX=	.shar.gz
 
 MAINTAINER=	erich@FreeBSD.org
