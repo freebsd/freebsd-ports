@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.156 1998/11/04 15:27:00 kuriyama Exp $
+# $Id: Makefile,v 1.157 1998/11/07 10:49:41 asami Exp $
 #
 
     SUBDIR += Canna
@@ -123,6 +123,7 @@
     SUBDIR += onew-wnn6
     SUBDIR += p5-jcode.pl
     SUBDIR += p5-manual
+    SUBDIR += p5-mkres
     SUBDIR += perl5
     SUBDIR += pgp.language
     SUBDIR += pine
