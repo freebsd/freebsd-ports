@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- buildall	2002/04/16 15:44:18	1.1
++++ buildall	2002/04/16 15:44:34
+@@ -17,6 +17,8 @@
+ # Make command errors fatal
+ set -e
+ 
++. env.sh
++
+ if test X"${TARGETCOMPLUS}" = "X" 
+ then
+ echo "ERROR: The TARGETCOMPLUS environment variable isn't set."
