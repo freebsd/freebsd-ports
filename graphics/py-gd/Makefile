@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gd
-PORTVERSION=	0.26
+PORTVERSION=	0.30
 CATEGORIES=	graphics python
 MASTER_SITES=	http://newcenturycomputers.net/projects/download.cgi/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,26 +15,19 @@ MAINTAINER=	perky@FreeBSD.org
 
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 
-USE_PYTHON=	yes
-USE_REINPLACE=  yes
-PLIST_SUB=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S,^${LOCALBASE}/,,g} \
-		EXAMPLE_DIR=${EXAMPLE_DIR:S,^${PREFIX}/,,g}
-EXAMPLE_DIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
-
-.if !defined(WITHOUT_X11)
 USE_XPM=	yes
-.endif
+USE_REINPLACE=  yes
+USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
+USE_PYTHON_PREFIX=	yes
+PYSETUP=	Setup.py
+EXAMPLE_DIR=	${PREFIX}/share/examples/py-gd
 
 post-patch:
-	${REINPLACE_CMD} -e 's,^\(gd.*\)$$,\1 -I${LOCALBASE}/include/gd\
-		-L${LOCALBASE}/lib,g' -e 's,-lttf,,g' \
-		-e 's,/usr/X11R6,${X11BASE},g' ${WRKSRC}/Setup
-.if defined(WITHOUT_X11)
-	${REINPLACE_CMD} -e 's,-lX11 -lXpm,,g' ${WRKSRC}/Setup
-.endif
-
-pre-build:
-	cd ${WRKSRC} && ${MAKE} -f Makefile.pre.in boot
+	${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
+		-e 's,/usr/X11R6,${X11BASE},g' \
+		-e 's,/usr/include/X11,${LOCALBASE}/include/gd,g' \
+		${WRKSRC}/${PYSETUP}
 
 post-install:
 .if !defined(NOPORTDOCS)

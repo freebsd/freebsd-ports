@@ -1,3 +1,6 @@
-%%PYTHON_SITELIBDIR%%/gdmodule.so
-%%PORTDOCS%%%%EXAMPLE_DIR%%/gddemo.py
-%%PORTDOCS%%@dirrm %%EXAMPLE_DIR%%
+%%PYTHON_SITELIBDIR%%/_gd.so
+%%PYTHON_SITELIBDIR%%/gd.py
+%%PYTHON_SITELIBDIR%%/gd.pyc
+%%PYTHON_SITELIBDIR%%/gd.pyo
+%%PORTDOCS%%share/examples/py-gd/gddemo.py
+%%PORTDOCS%%@dirrm share/examples/py-gd
