@@ -1,3 +1,0 @@
-pcnfsd(8) is an authentication and support server to be used by NFS clients that
-don't have their own authentication system (e.g. DOS PC's, Macintoshes,
-fileserver translators...)

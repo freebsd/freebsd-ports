@@ -1,9 +1,0 @@
-cd ${WRKDIR}
-patch -s <2.4.5/diffs
-find . -name '*.orig' | xargs rm
-rm -r ACCESS.* OBJ_DUMP doc/previous_object *.log log 2.4.5/diff*
-mv 2.4.5/dgd .
-cp -pr 2.4.5/doc . && rm -r 2.4.5/doc
-mkdir -p lpmud.245/log
-mv [A-Za-km-z]* lpmud.245
-mv 2.4.5/hname.c 2.4.5/lpmud .

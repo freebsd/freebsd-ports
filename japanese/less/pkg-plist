@@ -1,6 +1,0 @@
-@cwd ${PREFIX}
-bin/jless
-bin/jlesskey
-share/jless.hlp
-man/man1/jless.1.gz
-man/man1/jlesskey.1.gz

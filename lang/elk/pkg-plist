@@ -1,5 +1,0 @@
-@cwd /usr/local
-bin/elk
-lib/elk
-include/elk
-man/man1/elk.1.gz

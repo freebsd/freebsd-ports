@@ -1,4 +1,0 @@
-@cwd /usr/local
-lib/libmpeg.a
-lib/libmpeg.so.1.1
-include/mpeg.h

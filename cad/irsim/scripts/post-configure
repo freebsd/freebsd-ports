@@ -1,6 +1,0 @@
-#!/bin/sh
-#
-# $Id: post-configure,v 1.2 1994/10/04 15:12:51 jkh Exp $
-#
-
-cp ${CURDIR}/files/Makefile ${WRKSRC}

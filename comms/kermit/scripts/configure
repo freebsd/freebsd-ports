@@ -1,8 +1,0 @@
-#!/bin/sh
-#
-# shuffle things around for bmake to work right
-#
-mv ${WRKDIR}/makefile  ${WRKDIR}/makefile.dist
-mv ${WRKDIR}/ckuker.nr ${WRKDIR}/kermit.1
-sed -e "s@%%PREFIX%%@${PREFIX}@" < ${FILESDIR}/Makefile.sed > ${WRKDIR}/Makefile
-cp ${FILESDIR}/dot.kermrc ${WRKDIR}
