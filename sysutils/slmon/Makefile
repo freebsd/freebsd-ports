@@ -19,6 +19,7 @@ COMMENT=	S-Lang System Monitor
 LIB_DEPENDS=	gtop-2.0.2:${PORTSDIR}/devel/libgtop2 \
 		slang.1:${PORTSDIR}/devel/libslang
 
+USE_REINPLACE=	yes
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -28,16 +29,15 @@ MAN1=		slmon.1
 PLIST_FILES=	bin/slmon
 
 CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib -lncurses
-
-IGNORE=		Needs update for libgtop2
-EXPIRATION_DATE=2004-08-20
-DEPRECATED=	${IGNORE}
+LDFLAGS=	-L${LOCALBASE}/lib -lncurses -lm
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 400010
 LIB_DEPENDS+=	ncurses:${PORTSDIR}/devel/ncurses
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/glibtop_free/g_free/g' ${WRKSRC}/draw.c ${WRKSRC}/stat.c
 
 .include <bsd.port.post.mk>
