@@ -67,6 +67,7 @@
     SUBDIR += automake14
     SUBDIR += automake17
     SUBDIR += automake18
+    SUBDIR += avalon-framework
     SUBDIR += avarice
     SUBDIR += avltree
     SUBDIR += avr-binutils
