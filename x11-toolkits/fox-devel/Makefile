@@ -25,60 +25,69 @@ CONFLICTS=	fox-1.0.*
 
 LATEST_LINK=	fox-devel
 
-MAJORVER=	1.1
-SHVER=		42
+MAJORVER=	1.2
+SHVER=		1
 PLIST_SUB+=	MAJORVER=${MAJORVER} SHVER=${SHVER}
 
+USE_GNOME=	lthack
 USE_GL=		yes
-INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
-#USE_MOTIF=	yes
-USE_LIBTOOL_VER=13
-CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS}" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-CONFIGURE_ARGS+=--with-opengl=mesa --with-x \
-		--enable-xthreads
+USE_LIBTOOL_VER=	13
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--with-opengl --with-x --enable-threadsafe
+INSTALLS_SHLIB=	yes
 
-MAN1=	reswrap.1
+MAN1=		shutterbug.1 reswrap.1
+
+CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
+
+.include <bsd.port.pre.mk>
 
 ##
 ## Additional Options
 ##
 #
-.if defined(WITHOUT_SHM)
-CONFIGURE_ARGS+=--with-shm=no
+.if ${XFREE86_VERSION} < 4 || defined(WITHOUT_XFT)
+CONFIGURE_ARGS+=	--with-xft=no
 .else
-CONFIGURE_ARGS+=--with-shm=yes
+CONFIGURE_ARGS+=	--with-xft=yes
+CPPFLAGS+=	`freetype-config --cflags`
+LDFLAGS+=	`freetype-config --libs`
+.endif
+#
+.if defined(WITHOUT_SHM)
+CONFIGURE_ARGS+=	--with-xshm=no
+.else
+CONFIGURE_ARGS+=	--with-xshm=yes
 .endif
 #
 .if defined(WITH_CUPS)
-CONFIGURE_ARGS+=--enable-cups
+CONFIGURE_ARGS+=	--enable-cups
 .else
-CONFIGURE_ARGS+=--disable-cups
+CONFIGURE_ARGS+=	--disable-cups
 .endif
 #
 .if defined(WITH_DEBUG)
-CONFIGURE_ARGS+=--enable-debug
+CONFIGURE_ARGS+=	--enable-debug
 .else
-CONFIGURE_ARGS+=--enable-release
+CONFIGURE_ARGS+=	--enable-release
 .endif
 #
 .if defined(WITH_FOX_APPLICATIONS)
+MAN1+=		PathFinder.1 adie.1 calculator.1
 PLIST_SUB+=	APPS=""
-
-MAN1+=	PathFinder.1 adie.1 calculator.1
 .else
 PLIST_SUB+=	APPS="@comment "
 .endif
 #
 .if defined(WITH_OPTIMIZED_CXXFLAGS)
 # turn distribution-recommended optimization flags back on
-CXXFLAGS+=	-Wuninitialized -ffast-math -finline-functions -fomit-frame-pointer -fexpensive-optimizations
+CXXFLAGS+=	-O2 -Wuninitialized -ffast-math -finline-functions -fomit-frame-pointer -fexpensive-optimizations
 .endif
 #
 .if defined(WITH_PROFILING)
-CONFIGURE_ARGS+=--with-profiling=gprof
+CONFIGURE_ARGS+=	--with-profiling=gprof
 .endif
 #
 .if defined(NOPORTDOCS)
@@ -89,15 +98,11 @@ MAKE_ARGS+=	DOC=doc
 
 post-patch:
 # CXXFLAGS safeness
-.if !defined(WITH_OPTIMIZED_CXXFLAGS)
 	@${REINPLACE_CMD} -E -e \
-		's|-O2|${CXXFLAGS}|g' \
+		's|-O2|${CXXFLAGS}|g ; \
+		 s|-lc_r|${PTHREAD_LIBS}|g ; \
+		 s|FOX_INTERFACE_VERSION=0|FOX_INTERFACE_VERSION=${SHVER}|g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-.else
-	@${REINPLACE_CMD} -E -e \
-		's|-O2|-O2 ${CXXFLAGS}|g' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-.endif
 # doc prefix safeness
 	@${REINPLACE_CMD} -E -e \
 		's|^(htmldir).*$$|\1=${DOCSDIR}/html|' \
@@ -142,6 +147,10 @@ pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} 'You can disable Shared Memory support by defining WITHOUT_SHM'
 .endif
+.if !defined(WITHOUT_XFT)
+	@${ECHO_MSG}
+	@${ECHO_MSG} 'You can disable Xft support by defining WITHOUT_XFT'
+.endif
 	@${ECHO_MSG}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
