@@ -1,0 +1,22 @@
+Gringotts is an application to store sensitive data like passwords, pincodes,
+credit card numbers, etc. Features:
+
+* Fast, light GTK2 interface.
+* Good integration with GNOME, as well as all the other window managers.
+* High stress on safety & security.
+* Not only "normal" string passwords can be used, but any file can be the
+password to your data.
+* 8 encryption algorythms are available through the mcrypt library:
+RIJNDAEL-128 (AES), RIJNDAEL-256, SERPENT, TWOFISH, CAST 256, SAFER+, LOKI97,
+3DES.
+* 2 160-bit hash algorythms, used to generate the key: SHA1, RIPEMD160.
+* 2 compression types, with 4 compression levels each: ZLib, BZip2.
+* Complete & easy management of entries' order.
+* Complete Search function.
+* Very intuitive usability, you won't need any manual.
+* It comes with a thread-safe C library, libGringotts, that can be used in any
+other project to save data in files in a simple and safe way.
+
+WWW: http://devel.pluto.linux.it/projects/Gringotts/
+
+- Anders Nordby <anders@fix.no>

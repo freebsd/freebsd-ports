@@ -1,0 +1,16 @@
+--- Makefile.in.orig	Sun Jun 16 19:04:42 2002
++++ Makefile.in	Fri Jul  5 18:39:27 2002
+@@ -440,10 +440,10 @@
+ 	@echo
+ 	@echo
+ 	@echo ----------------------------------------------------------------------
+-	@echo   md5sum of relevant files:
++	@echo   md5 checksum of relevant files:
+ 	@echo
+-	@md5sum $(DESTDIR)$(bindir)/gringotts-bin|(read A B; echo $$B ": " $$A)
+-	@md5sum $(DESTDIR)$(libdir)/libgringotts.so|(read A B; echo $$B ": " $$A)
++	@md5 $(DESTDIR)$(bindir)/gringotts-bin|(read A B; echo $$B ": " $$A)
++	@md5 $(DESTDIR)$(libdir)/libgringotts.so|(read A B; echo $$B ": " $$A)
+ 	@echo
+ 	@echo use these values to check program integrity at any time
+ 	@echo ----------------------------------------------------------------------
