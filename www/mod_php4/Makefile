@@ -1,9 +1,9 @@
 # New ports collection makefile for:	Apache / PHP
-# Version required:	1.3* / 3.0*
+# Version required:	1.3* / 4.0*
 # Date created:		So  21 Jun 1998 16:09:39 CEST
 # Whom:			Stefan Herrmann <stefan@asterix.webaffairs.net>
 #
-# $Id: Makefile,v 1.86 1999/08/17 09:58:49 dirk Exp $
+# $Id: Makefile,v 1.87 1999/08/18 15:42:03 dirk Exp $
 #
 
 DISTNAME=	apache_${VERSION_APACHE}
@@ -11,30 +11,41 @@ PKGNAME=	apache+php-${VERSION_APACHE}+${VERSION_PHP}
 CATEGORIES=	www
 MASTER_SITES=	http://www.apache.org/dist/ \
 		http://www.rge.com/pub/infosystems/apache/dist/ \
+		http://www.php.net/${PHP_DISTDIR}/ \
+		http://us.php.net/${PHP_DISTDIR}/ \
+		http://www.modssl.org/source/ \
+		ftp://ftp.modssl.org/source/ \
 		http://www.apache.de/dist/ \
-		http://www.php.net/version4/downloads/ \
-		http://us.php.net/version4/downloads/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/ \
+		http://php.he.net/${PHP_DISTDIR}/ \
+		http://www.php3.de/${PHP_DISTDIR}/ \
+		ftp://ftp.ecrc.net/pub/security/mod_ssl/ \
+		ftp://ftp.nvg.ntnu.no/pub/unix/mod_ssl/ \
 		ftp://apache.compuex.com/pub/apache/dist/ \
-		http://php.he.net/version4/downloads/ \
-		http://www.php3.de/version4/downloads/ \
 		ftp://apache.arctic.org/pub/apache/dist/ \
+		http://au.php.net:81/${PHP_DISTDIR}/ \
+		http://at.php.net/${PHP_DISTDIR}/ \
+		ftp://ftp.ulpgc.es/pub/mod_ssl/ \
+		ftp://glock.missouri.edu/pub/mod_ssl/ \
 		ftp://ftp.epix.net/pub/apache/dist/ \
 		ftp://ftp.ameth.org/pub/mirrors/ftp.apache.org/apache/dist/ \
+		http://br.php.net/${PHP_DISTDIR}/ \
+		http://php.easydns.com/${PHP_DISTDIR}/ \
+		ftp://ftp.infoscience.co.jp/pub/Crypto/SSL/mod_ssl/ \
+		ftp://ftp.uni-trier.de/pub/unix/security/mod_ssl/ \
 		ftp://ftp.connectnet.com/pub/www/apache/ \
 		ftp://apache.technomancer.com/mirrors/apache/dist/ \
-		ftp://ftp.raver.net/pub/ftp.apache.org/ \
-		ftp://www3.service.digital.com/apache/dist/ \
-		ftp://galileo.galilei.com/pub/apache/ \
-		ftp://ftp.mtnranch.net/pub/apache/dist/ \
-		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/ \
-		ftp://apache.nextpath.com/pub/apache/dist/
-#DISTFILES=	apache_${VERSION_APACHE}.tar.gz php-${VERSION_PHP}.tar.gz
-DISTFILES=	php-${VERSION_PHP}.tar.gz
+		http://www.php.cz/${PHP_DISTDIR}/ \
+		http://php3.globe.de/${PHP_DISTDIR}/ \
+		ftp://ftp.blatzheim.com/pub/mod_ssl/ \
+		ftp://ftp.fu-berlin.de/unix/security/mod_ssl/ \
+DISTFILES=	apache_${VERSION_APACHE}.tar.gz php-${VERSION_PHP}.tar.gz
 
 MAINTAINER=	dirk@FreeBSD.org
 
 Y2K=		http://www.php.net/y2k.php3
+
+PHP_DISTDIR=	version4/downloads
 
 VERSION_APACHE=	1.3.6
 VERSION_PHP=	4.0b2

@@ -108,17 +108,6 @@ while [ "$1" ]; do
 		\"modssl\")
 			cat << EOF
 PKGNAME=	apache+php+mod_ssl-\${VERSION_APACHE}+\${VERSION_PHP}+\${VERSION_MODSSL}
-MASTER_SITES+=	http://www.modssl.org/source/ \\
-		ftp://ftp.modssl.org/source/ \\
-		ftp://ftp.ecrc.net/pub/security/mod_ssl/ \\
-		ftp://ftp.nvg.ntnu.no/pub/unix/mod_ssl/ \\
-		ftp://ftp.ulpgc.es/pub/mod_ssl/ \\
-		ftp://glock.missouri.edu/pub/mod_ssl/ \\
-		ftp://ftp.infoscience.co.jp/pub/Crypto/SSL/mod_ssl/ \\
-		ftp://ftp.uni-trier.de/pub/unix/security/mod_ssl/ \\
-		ftp://ftp.blatzheim.com/pub/mod_ssl/ \\
-		ftp://ftp.fu-berlin.de/unix/security/mod_ssl/ \\
-		ftp://ftp.ntrl.net/pub/mirror/ralfsw/mod_ssl/
 DISTFILES+=	mod_ssl-\${VERSION_MODSSL}-\${VERSION_APACHE}\${EXTRACT_SUFX}
 
 BUILD_DEPENDS+=	openssl:\${PORTSDIR}/security/openssl \\
