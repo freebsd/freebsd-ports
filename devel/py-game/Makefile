@@ -28,12 +28,12 @@ SETUP_CMD=	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD}
 MAKE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 
 do-configure:
-	${SETUP_CMD} config.py
+	@${SETUP_CMD} config.py
 
 do-build:
-	${SETUP_CMD} setup.py build
+	@${SETUP_CMD} setup.py build
 
 do-install:
-	${SETUP_CMD} setup.py install
+	@${SETUP_CMD} setup.py install
 
 .include <bsd.port.mk>

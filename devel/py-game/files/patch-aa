@@ -1,5 +1,8 @@
+
+$FreeBSD$
+
 --- config_unix.py.orig	Sat Jan  6 19:18:37 2001
-+++ config_unix.py	Tue Jan  9 19:37:48 2001
++++ config_unix.py	Tue Feb 20 14:26:38 2001
 @@ -4,8 +4,12 @@
  import os, sys, shutil
  from glob import glob
@@ -14,6 +17,15 @@
  
  class Dependency:
      def __init__(self, name, checkhead, checklib, lib):
+@@ -29,7 +33,7 @@
+ 
+ 
+ DEPS = [
+-    Dependency('SDL', 'SDL.h', 'libSDL.so', 'SDL'),
++    Dependency('SDL', 'SDL.h', 'libSDL-1.1.so', 'SDL-1.1'),
+     Dependency('FONT', 'SDL_ttf.h', 'libSDL_ttf.so', 'SDL_ttf'),
+     Dependency('IMAGE', 'SDL_image.h', 'libSDL_image.so', 'SDL_image'),
+     Dependency('MIXER', 'SDL_mixer.h', 'libSDL_mixer.so', 'SDL_mixer'),
 @@ -57,12 +61,16 @@
  flags have been used, which will likely require a little editing."""
  
