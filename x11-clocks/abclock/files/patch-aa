@@ -1,33 +1,14 @@
---- Makefile.orig	Tue Aug 15 08:44:37 2000
-+++ Makefile	Fri Aug 18 09:06:02 2000
-@@ -1,24 +1,24 @@
+--- Makefile.orig	Wed Aug 27 06:58:14 2003
++++ Makefile	Sat Oct  4 21:28:54 2003
+@@ -1,9 +1,9 @@
  
  .SUFFIXES:
+ 
+-CC = gcc
++CC ?= gcc
  
 -OPT = -s -Wall
 +OPT = $(CFLAGS) -I$(X11BASE)/include
  
- all: abclock abc_img
- 
- abclock: abclock.o abclib.o
--	gcc $(OPT) -o abclock abclock.o abclib.o -lX11
-+	$(CC) $(OPT) -o abclock abclock.o abclib.o -lX11 -L$(X11BASE)/lib
- 
- abc_img: abc_img.o abclib.o
--	gcc $(OPT) -o abc_img abc_img.o abclib.o
-+	$(CC) $(OPT) -o abc_img abc_img.o abclib.o
- 
- abclib.o: abclib.c abclib.h
--	gcc -c $(OPT) -o abclib.o abclib.c
-+	$(CC) -c $(OPT) -o abclib.o abclib.c
- 
- abclock.o: abclock.c abclib.h
--	gcc -c $(OPT) -o abclock.o abclock.c
-+	$(CC) -c $(OPT) -o abclock.o abclock.c
- 
- abc_img.o: abc_img.c abclib.h
--	gcc -c $(OPT) -o abc_img.o abc_img.c
-+	$(CC) -c $(OPT) -o abc_img.o abc_img.c
- 
- clean:
- 	rm -f *.o
+ XLIBDIR = -L/usr/X11/lib -L/usr/X11R6/lib -L/usr/X11R5/lib -L/usr/X11R4/lib \
+ 	-L/usr/lib/X11 -L/usr/lib/X11R6 -L/usr/lib/X11R5 -L/usr/lib/X11R4
