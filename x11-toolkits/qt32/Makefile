@@ -8,15 +8,15 @@
 PORTNAME=	qt
 PORTVERSION=	20000724A
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	snapshots/current
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	will
 
 MAINTAINER=	will@FreeBSD.org
 
-LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-copy
 USE_BZIP2=	yes
 NO_LATEST_LINK=	yes
 USE_GMAKE=	yes
@@ -24,11 +24,16 @@ USE_X_PREFIX=	yes
 USE_NEWGCC=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-system-zlib -system-libpng -system-jpeg -sm \
-		-gif -I${LOCALBASE}/include -L${LOCALBASE}/lib
+		-I${LOCALBASE}/include -L${LOCALBASE}/lib
 CONFIGURE_ENV=	QTDIR=${WRKSRC}
 MAKE_ENV=	QTDIR=${WRKSRC}
 
 CONFIG=		${WRKSRC}/configs/freebsd-g++-shared
+
+.if defined(QT_GIF_AVAILABLE) || defined(HAVE_UNISYS_LICENSE)
+CONFIGURE_ARGS+=-gif
+RESTRICTED=	"Requires a license from UNISYS"
+.endif
 
 .if !defined(NOPORTDOCS)
 .include "${.CURDIR}/files/manpages"
@@ -70,8 +75,8 @@ do-install:
 	${INSTALL_DATA} include/*.h ${PREFIX}/include/qt2 ; \
 	${INSTALL_DATA} lib/libqgl.a ${PREFIX}/lib ; \
 	${INSTALL_DATA} lib/libqxt.a ${PREFIX}/lib ; \
-	${INSTALL_DATA} lib/libqt2.so.3 ${PREFIX}/lib )
-	${LN} -sf libqt2.so.3 ${PREFIX}/lib/libqt2.so
+	${INSTALL_DATA} lib/libqt2.so.4 ${PREFIX}/lib )
+	${LN} -sf libqt2.so.4 ${PREFIX}/lib/libqt2.so
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/qt2/html
