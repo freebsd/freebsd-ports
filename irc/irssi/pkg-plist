@@ -1,8 +1,12 @@
 bin/irssi
 bin/irssi-bot
+bin/irssi-text
 lib/irssi/plugins/libexternal.a
 lib/irssi/plugins/libexternal.so
 lib/irssi/plugins/libexternal.so.0
+lib/irssi/plugins/libproxy.a
+lib/irssi/plugins/libproxy.so
+lib/irssi/plugins/libproxy.so.0
 lib/irssi/plugins/libsample.a
 lib/irssi/plugins/libsample.so
 lib/irssi/plugins/libsample.so.0
