@@ -183,8 +183,6 @@ lib/kde3/libkaboodlepart.la
 lib/kde3/libkaboodlepart.so
 lib/kde3/libkmidpart.la
 lib/kde3/libkmidpart.so
-lib/kde3/libkrecexport_mp3.la
-lib/kde3/libkrecexport_mp3.so
 lib/kde3/libkrecexport_ogg.la
 lib/kde3/libkrecexport_ogg.so
 lib/kde3/libkrecexport_wave.la
@@ -1045,7 +1043,6 @@ share/services/kfile_mp3.desktop
 share/services/kfile_ogg.desktop
 share/services/kfile_wav.desktop
 share/services/kmixctrl_restore.desktop
-share/services/krec_exportmp3.desktop
 share/services/krec_exportogg.desktop
 share/services/krec_exportwave.desktop
 share/servicetypes/audiomidi.desktop

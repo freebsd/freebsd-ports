@@ -130,7 +130,6 @@
 @dirrm lib/mcop
 @dirrm lib/kde3
 @dirrm include/noatun
-@dirrm include/mpeglib_artsplug
 @dirrm include/mpeglib/util/yaf/yafxplayer
 @dirrm include/mpeglib/util/yaf/yafcore
 @dirrm include/mpeglib/util/yaf
