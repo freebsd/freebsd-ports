@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		torcs
-PORTVERSION=		1.2.2
-PORTREVISION=		1
+PORTVERSION=		1.2.3
 CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,15 +15,15 @@ EXTRACT_SUFX=		.tgz
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}			\
 			${EXTRADIST}
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}			\
-			${DISTNAME}-robots-base${EXTRACT_SUFX}		\
-			${DISTNAME}-robots-astigot${EXTRACT_SUFX}
+			${DISTNAME}-robots-base${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Open Racing Car Simulator
 
-BUILD_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
+BUILD_DEPENDS=	${LOCALBASE}/lib/libpub.a:${PORTSDIR}/devel/publib	\
+		${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -32,16 +31,16 @@ USE_REINPLACE=	yes
 USE_GETOPT_LONG=yes
 REINPLACE_ARGS=	-i ""
 CONFIGURE_ARGS=	--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 ALL_TARGET=	default
 
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib -lpub
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 TARBALL=	${PORTNAME:U}-${PORTVERSION}
 DATANAME=	${TARBALL}-data
 EXTRADIST=	${DATANAME}${EXTRACT_SUFX}				\
 		${DISTNAME}-robots-base${EXTRACT_SUFX}			\
-		${DISTNAME}-robots-astigot${EXTRACT_SUFX}		\
 		${DATANAME}-tracks-dirt${EXTRACT_SUFX}			\
 		${DATANAME}-tracks-oval${EXTRACT_SUFX}			\
 		${DATANAME}-tracks-road${EXTRACT_SUFX}			\
@@ -65,14 +64,6 @@ PLIST_SUB+=	BERNIW=""
 PLIST_SUB+=	BERNIW="@comment "
 .endif
 
-.if !defined(WITHOUT_BILLY)
-DISTFILES+=	${DISTNAME}-robots-billy${EXTRACT_SUFX}
-EXTRACT_ONLY+=	${DISTNAME}-robots-billy${EXTRACT_SUFX}
-PLIST_SUB+=	BILLY=""
-.else
-PLIST_SUB+=	BILLY="@comment "
-.endif
-
 .if !defined(WITHOUT_BT)
 DISTFILES+=	${DISTNAME}-robots-bt${EXTRACT_SUFX}
 EXTRACT_ONLY+=	${DISTNAME}-robots-bt${EXTRACT_SUFX}
@@ -81,34 +72,38 @@ PLIST_SUB+=	BT=""
 PLIST_SUB+=	BT="@comment "
 .endif
 
-.if !defined(WITHOUT_K1999)
-DISTFILES+=	${DISTNAME}-robots-K1999${EXTRACT_SUFX}
-EXTRACT_ONLY+=	${DISTNAME}-robots-K1999${EXTRACT_SUFX}
-PLIST_SUB+=	K1999=""
+.if !defined(WITHOUT_OLETHROS)
+DISTFILES+=	${DISTNAME}-robots-olethros${EXTRACT_SUFX}
+EXTRACT_ONLY+=	${DISTNAME}-robots-olethros${EXTRACT_SUFX}
+PLIST_SUB+=	OLETHROS=""
 .else
-PLIST_SUB+=	K1999="@comment "
+PLIST_SUB+=	OLETHROS="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=	"Does not compile on FreeBSD-4."
+.endif
+
 .if ${OSVERSION} < 500041
-CPPFLAGS+=	-I${X11BASE}/include -fPIC
+CPPFLAGS+=	-I${X11BASE}/include
 .else
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -DHAVE_DECL_GETOPT -fPIC" \
-		LDFLAGS="-L${LOCALBASE}/lib" CXXFLAGS="-fPIC" CFLAGS="-fPIC"
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -DHAVE_DECL_GETOPT" \
+		LDFLAGS="${LDFLAGS}"
 .endif
 
 .if !defined(WITHOUT_FREEGLUT)
 LIB_DEPENDS+=	glut.11:${PORTSDIR}/x11-toolkits/freeglut
 .else
-USE_MESA=	yes
+USE_GL=		yes
 .endif
 
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "	You might define these options:"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "	- WITHOUT_BERNIW, WITHOUT_BILLY, WITHOUT_BT and WITHOUT_K1999:"
+	@${ECHO_MSG} "	- WITHOUT_BERNIW, WITHOUT_BT and WITHOUT_OLETHROS:"
 	@${ECHO_MSG} "	  do not install optional robots."
 	@${ECHO_MSG} ""
 
