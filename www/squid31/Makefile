@@ -7,7 +7,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -27,6 +27,7 @@ PATCHFILES=	squid-2.5.STABLE4-reconfigure_message.patch \
 		squid-2.5.STABLE4-fqdnnegcache.patch \
 		pam_auth-2.2.patch \
 		squid-2.5.STABLE4_auth_param_doc.patch \
+		squid-2.5.STABLE4-errorpages.patch \
 		squid-2.5.STABLE4-error_load_text.patch \
 		squid-2.5.STABLE4-xpi_mime.patch \
 		squid-2.5.STABLE4-size_overflow.patch \
@@ -51,7 +52,8 @@ PATCHFILES=	squid-2.5.STABLE4-reconfigure_message.patch \
 		squid-2.5.STABLE4-russian.patch \
 		squid-2.5.STABLE4-redirlog.patch \
 		squid-2.5.STABLE4-pinger.patch \
-		squid-2.5.STABLE4-partial_reload.patch
+		squid-2.5.STABLE4-partial_reload.patch \
+		squid-2.5.STABLE4-ldap_tls.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
@@ -169,5 +171,10 @@ post-install:
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/squid.sh startup file."; \
 		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/squid.sh ${PREFIX}/etc/rc.d/squid.sh; \
 	fi
+
+# Work around the fact that the errorpages.patch creates files in
+# an "Attic" subdir:
+	@${FIND} ${WRKSRC}/errors/Lithuanian/Attic -type f \
+	-exec ${INSTALL_DATA} {} ${PREFIX}/etc/squid/errors/Lithuanian/ \;
 
 .include <bsd.port.mk>
