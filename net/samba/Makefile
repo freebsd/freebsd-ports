@@ -4,7 +4,7 @@
 #
 # $FreeBSD$
 #
-n
+
 PORTNAME=	samba
 PORTVERSION=	2.0.10
 CATEGORIES=	net
