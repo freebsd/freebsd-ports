@@ -16,7 +16,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analyse des structures et thermo-mécanique
 
 
-if ${OSVERSION} < 500000
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
 BROKEN=   "Does not build on systems prior 5.x - work in progress..."
 .endif
 
@@ -60,8 +62,6 @@ PLIST_SUB=	ASTERDIR=${PORTNAME}/${vaster}
 .if defined(WITHOUT_ASTK) || defined(WITHOUT_ASTK_CLI)
 PKGMESSAGE=	${PKGDIR}/pkg-message.sans-astk
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_ASTK)
 RUN_DEPENDS+=	${LOCALBASE}/ASTK/ASTK_SERV:${PORTSDIR}/cad/astk-serveur
