@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- configure.orig	Fri Sep 28 13:40:57 2001
-+++ configure	Fri Sep 28 13:43:29 2001
-@@ -9255,7 +9255,7 @@
+--- configure.orig	Fri Dec 14 14:08:27 2001
++++ configure	Fri Dec 14 14:17:45 2001
+@@ -9253,7 +9253,7 @@
  
  CPPFLAGS_save="$CPPFLAGS"
  CPPFLAGS="$DB3_CFLAGS $CPPFLAGS"
@@ -12,7 +12,7 @@ $FreeBSD$
  do
  ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
  echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
-@@ -9329,7 +9329,7 @@
+@@ -9327,7 +9327,7 @@
    echo "configure: failed program was:" >&5
    cat conftest.$ac_ext >&5
    rm -rf conftest*
@@ -21,17 +21,17 @@ $FreeBSD$
  fi
  rm -f conftest*
  
-@@ -9349,7 +9349,7 @@
+@@ -9347,7 +9347,7 @@
  	ac_cv_db3_ldadd=""
  
  	for name in db db3 db-3.1; do
 -		LIBS="$LIBS_save $with_db3_libs/lib${name}.a"
 +		LIBS="$LIBS_save $with_db3_libs/lib${name}.so"
  		cat > conftest.$ac_ext <<EOF
- #line 9355 "configure"
+ #line 9353 "configure"
  #include "confdefs.h"
-@@ -9370,7 +9370,7 @@
- if { (eval echo configure:9371: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+@@ -9368,7 +9368,7 @@
+ if { (eval echo configure:9369: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
    rm -rf conftest*
    
 -			ac_cv_db3_ldadd="$with_db3_libs/lib${name}.a"
@@ -39,7 +39,7 @@ $FreeBSD$
  			break
  		
  else
-@@ -9440,7 +9440,7 @@
+@@ -9438,7 +9438,7 @@
  
  echo "$ac_t""$ac_cv_db3_lib_version_match" 1>&6
  if test "$ac_cv_db3_lib_version_match" = no; then
@@ -48,7 +48,16 @@ $FreeBSD$
  fi
  
  CPPFLAGS="$CPPFLAGS_save"
-@@ -12738,10 +12738,10 @@
+@@ -11059,7 +11059,7 @@
+ 	size_t utf8_real_len = strlen (utf8);
+ 	char *pstring;	
+ 
+-	if (convert_ToPilotChar ("UTF8", utf8, utf8_real_len, &pstring) == -1)
++	if (convert_ToPilotChar ("UTF-8", utf8, utf8_real_len, &pstring) == -1)
+ 	        exit (1);
+ 
+ 	exit (0);
+@@ -12680,10 +12680,10 @@
        *) # Relative path.
          ac_sub_cache_file="$ac_dots$cache_file" ;;
        esac

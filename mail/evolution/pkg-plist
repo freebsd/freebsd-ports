@@ -198,6 +198,12 @@ lib/evolution/evolution-mail-importers/%%VERSION%%/libmbox.so.0
 lib/evolution/evolution-mail-importers/%%VERSION%%/liboutlook.a
 lib/evolution/evolution-mail-importers/%%VERSION%%/liboutlook.so
 lib/evolution/evolution-mail-importers/%%VERSION%%/liboutlook.so.0
+lib/gnome-pilot/conduits/libeaddress_conduit.a
+lib/gnome-pilot/conduits/libeaddress_conduit.so
+lib/gnome-pilot/conduits/libecalendar_conduit.a
+lib/gnome-pilot/conduits/libecalendar_conduit.so
+lib/gnome-pilot/conduits/libetodo_conduit.a
+lib/gnome-pilot/conduits/libetodo_conduit.so
 lib/libcal-client.a
 lib/libcal-client.so
 lib/libcal-client.so.0
@@ -316,6 +322,9 @@ share/gnome/evolution/views/mail/galview.xml
 share/gnome/evolution/views/tasks/Tasks.galview
 share/gnome/evolution/views/tasks/With_Category.galview
 share/gnome/evolution/views/tasks/galview.xml
+share/gnome/gnome-pilot/conduits/e-address.conduit
+share/gnome/gnome-pilot/conduits/e-calendar.conduit
+share/gnome/gnome-pilot/conduits/e-todo.conduit
 share/gnome/help/evolution/C/apx-gloss.html
 share/gnome/help/evolution/C/authors.html
 share/gnome/help/evolution/C/bugs.html
