@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	superlu
-PORTVERSION=	3.0.20040401
+PORTVERSION=	3.0.20040410
 CATEGORIES=	math
 MASTER_SITES=	http://crd.lbl.gov/~xiaoye/SuperLU/ \
 		http://crd.lbl.gov/~xiaoye/
@@ -21,8 +21,6 @@ MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A library of routines for performing sparse factorization
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libf77blas.a:${PORTSDIR}/math/atlas
-
-BROKEN=		Size mismatch
 
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/SuperLU_3.0
