@@ -1,0 +1,16 @@
+gEdit is a text editor for X using the GTK+ and GNOME libraries.
+It is being developed by Alex Roberts, Evan Lawrence and Chris Lahey
+(among others).
+
+This version is quite a neat text editor, it contains the following
+features:
+	* Opening/Saving/Creating of files;
+	* Cut/Copy/Paste and Select All text;
+	* Search and Replace;
+	* A complete preferences interface;
+	* Dynamically loading fonts;
+	* Splitscreen Mode;
+	* Printing support; 
+	* Configurable Plugins system.
+
+WWW: http://gedit.pn.org
