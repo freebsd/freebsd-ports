@@ -27,8 +27,26 @@ NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 
+pre-install:
+	@${ECHO_CMD} -n ">> Removing ${PLIST}..."
+	@${RM} -f ${PLIST}
+	@${TOUCH} ${PLIST}
+	@${ECHO_CMD} " [ DONE ]"
+ 
 do-install:
-	${MKDIR} ${TARGET_DIR}
-	${CP} -r ${WRKSRC}/* ${TARGET_DIR}
+	@${ECHO_CMD} -n ">> Creating directory ${TARGET_DIR}..."
+	@${MKDIR} ${TARGET_DIR}
+	@${ECHO_CMD} " [ DONE ]"
+
+	@${ECHO_CMD} -n ">> Copying files..."
+	@${CP} -r ${WRKSRC}/* ${TARGET_DIR}
+	@${ECHO_CMD} " [ DONE ]"
+
+	@${ECHO_CMD} -n ">> Creating packing list..."
+	@${FIND} ${TARGET_DIR} -type f -print | \
+		${SED} "s,${PREFIX}/*,," >> ${PLIST}
+	@${FIND} ${TARGET_DIR} -type d -print | sort -r | \
+		${SED} -e "s,${PREFIX}/*,," -e "s,^,@dirrm ,g" >> ${PLIST}
+	@${ECHO_CMD} " [ DONE ]"
 
 .include <bsd.port.post.mk>
