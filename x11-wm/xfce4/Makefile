@@ -31,7 +31,7 @@ WITH_GDM=	yes
 .endif
 
 .if defined(WITH_GDM)
-RUN_DEPENDS+=	${X11BASE}/bin/gdm:${PORTSDIR}/x11/gdm2
+RUN_DEPENDS+=	${X11BASE}/bin/gdm:${PORTSDIR}/x11/gdm
 PLIST_SUB+=	GDM=""
 .else
 PLIST_SUB+=	GDM="@comment "

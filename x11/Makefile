@@ -53,7 +53,7 @@
     SUBDIR += gcursor
     SUBDIR += gdesklets-tasklist
     SUBDIR += gdkxft
-    SUBDIR += gdm2
+    SUBDIR += gdm
     SUBDIR += ggiterm
     SUBDIR += gmessage
     SUBDIR += gmrun
