@@ -30,14 +30,21 @@ INFO=		gnubiff
 CONFIGURE_ARGS+=	--with-password
 .endif
 
-.if defined(WITH_GNUBIFF_GNOME)
+# This application can dock in the GNOME panel, or it can not.
+# Only install support if gnomepanel is already installed.
+WANT_GNOME=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${HAVE_GNOME:Mgnomepanel}!=""
 CONFIGURE_ARGS+=	--with-gnome
 USE_GNOME+=		gnomepanel gconf2 gnomeprefix gnomehack
-PLIST_SUB+=		WITH_GNUBIFF_GNOME=""
+PKGNAMESUFFIX=		-gnome
 PLIST_SUB+=		SHAREDIR="share/gnome"
+PLIST_SUB+=		WITH_GNOME=""
 .else
-PLIST_SUB+=		WITH_GNUBIFF_GNOME="@comment "
 PLIST_SUB+=		SHAREDIR="share"
+PLIST_SUB+=		WITH_GNOME="@comment "
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
