@@ -30,6 +30,31 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="da6f265b-8f3d-11d8-8b29-0020ed76ef5a">
+    <topic>kdepim exploitable buffer overflow in VCF reader</topic>
+    <affects>
+      <package>
+	<name>kdepim</name>
+	<range><ge>3.1.0</ge><lt>3.1.4_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>A buffer overflow is present in some versions of the KDE
+          personal information manager (kdepim) which may be triggered
+          when processing a specially crafted VCF file.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0988</cvename>
+      <url>http://www.kde.org/info/security/advisory-20040114-1.txt</url>
+    </references>
+    <dates>
+      <discovery>2004-01-14</discovery>
+      <entry>2004-04-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="84237895-8f39-11d8-8b29-0020ed76ef5a">
     <topic>neon format string vulnerabilities</topic>
     <affects>
