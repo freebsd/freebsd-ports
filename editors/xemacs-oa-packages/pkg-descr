@@ -1,0 +1,9 @@
+Starting with release 21, xemacs does not come with lisp packages
+any more. Instead, they are distributed separately from the main
+sources.
+
+This port attempts to provide a subset of the available packages that
+should be useful for most users.
+
+To install additional packages, use the "Manage Packages" menu
+in the "Options" menu of your xemacs' menubar.
