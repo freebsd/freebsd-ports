@@ -1,11 +1,8 @@
 Verlihub is a Linux/Unix Direct Connect protocol server (Hub).
 It is written in c++, has relatively low CPU and RAM usage,
 and has many useful features. It also uses a MySQL Database.
-
-These are plugins that can be used to provide additional
-functionality not present in the Verlihub base. They work
-similarly to 'bots' which have been developed for other hub
-servers, without the need for uncompiled scripts.
+Additional functionality is available through a versatile
+'plugin' system.
  
 WWW: http://verlihub.sourceforge.net
 
