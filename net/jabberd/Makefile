@@ -20,6 +20,7 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --localstatedir=/var \
 		--with-libiconv-prefix=${LOCALBASE} \
+		--with-openssl=/usr \
 		--enable-storage='${STORAGE}' \
 		--enable-authreg='${AUTHREG}'
 
