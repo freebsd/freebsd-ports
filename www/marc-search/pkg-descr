@@ -1,0 +1,9 @@
+Searches e-mail archives created by Earl Hood's MHonArc.  Search
+options include "From," "Subject," "Date," and "Message Body."
+Returns results in a visually useful format, with matches printed
+in bold. Search terms can be treated as a literal phrase or as
+words to be joined by 'AND' or 'OR' booleans. The full suite of
+Perl5 regular expressions is allowed.  Allows user to set a limit
+for the number of records to return on each page, with an option
+to continue the search or start a new one. NOTE: searches are
+non-indexed and therefore inefficient.

@@ -1,0 +1,40 @@
+--- marc-search.cgi.orig	Fri Apr  4 22:06:42 1997
++++ marc-search.cgi	Sat Nov 28 17:59:27 1998
+@@ -1,3 +1,3 @@
+-#!/dcs/bin/perl5 -w
++#!/usr/local/bin/perl
+ ##------------------------------------------------------------------------##
+ ##  File:
+@@ -15,14 +15,13 @@
+ ## Configurable options - described in great detail in the POD - READ IT!
+ 
+-my $server = 'http://eee.uci.edu';
+-my $help = $server . '/toolbox/marc-search.html';
+-my $doc_root = '/Web/doc';
+-my $script = $server . '/cgi-bin/marc-search.edf.cgi';
+-my $usersubdir = 'public_html';         # Tells which subdirectory of
+-                                        # a user's home directory
+-                                        # (file system) corresponds to
+-                                        # http://server/~user/ . (Only
+-                                        # needed if marc-search
+-                                        # supports URLs with tildes.)
++require AppCfg;
++
++my ($server, $help, $doc_root, $script, $usersubdir);
++my $my_config = new AppCfg "/usr/local/etc/marc-search.conf";
++$server = $my_config->get_scalar("server");
++$help = $my_config->get_scalar("help");
++$doc_root = $my_config->get_scalar("doc_root");
++$script = $my_config->get_scalar("script");
++$usersubdir = $my_config->get_scalar("usersubdir");
+ 
+ ##------------------------------------------------------------------------##
+@@ -30,6 +29,6 @@
+ 
+ # This next line tells perl where the CGI_Lite module was installed.
+-use lib '/users/asc/friedman/www/cgi-bin';
+-use lib '/Web/httpd/cgi-bin';
++use lib '/usr/local/lib/perl5/site_perl/5.005';
++use lib '/usr/local/lib/perl5/site_perl/5.005/Marc';
+ use CGI_Lite;  # Substitute other CGI libraries if need be (see next section)
+ use strict;

@@ -1,0 +1,9 @@
+www/cgi-bin/marc-search.cgi
+www/data/marc-search.html
+etc/marc-search.conf
+share/doc/marc-search/README
+lib/perl5/site_perl/%%PERL_VER%%/Marc.pm
+lib/perl5/site_perl/%%PERL_VER%%/Marc/Form.pm
+lib/perl5/site_perl/%%PERL_VER%%/Marc/Search.pm
+@dirrm share/doc/marc-search
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Marc
