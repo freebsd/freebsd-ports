@@ -1,6 +1,6 @@
---- bb/main.C	Thu Oct  9 16:03:25 1997
-+++ /home/andy/tmp/wrk/bb/main.C	Wed Dec 16 23:34:59 1998
-@@ -16,6 +16,9 @@
+--- bb/main.C	Thu Sep  2 22:25:19 1999
++++ bb/main.C.new	Sun Apr 16 17:23:35 2000
+@@ -11,6 +11,9 @@
  #include <stdio.h>       // to get sprintf()
  #include <string.h>      // to get strncpy()
  #include <time.h>        // to get time(time_t *)
@@ -8,15 +8,15 @@
 +#include <floatingpoint.h>
 +#endif
  #include "bb.h"
+ #include "bbgfxtarget.h"
  #include "player.h"
- 
-@@ -818,6 +821,9 @@
+@@ -803,6 +806,9 @@
+ /*=========================================================================*/
  // A long and complicated main() function!
- 
  main (int argc, char *argv[]) {
 +#ifdef __FreeBSD__
 +  fpsetmask(0);
 +#endif
-   battleBall bb(argc,argv);
-   bb.Play();
- }
+   bb= new battleBall(argc,argv);
+   bb->Play();
+   delete bb;
