@@ -3,13 +3,13 @@
 # Date Created:				24 Dec 1998
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1999/03/09 01:09:04 nectar Exp $
+# $Id: Makefile,v 1.6 1999/03/25 02:38:27 nectar Exp $
 #
 
 DISTNAME=	libghttp-1.0.2
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	gnome-1.0/sources
+MASTER_SITE_SUBDIR=	libghttp
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 

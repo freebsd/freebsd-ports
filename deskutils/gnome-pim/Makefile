@@ -3,14 +3,14 @@
 # Date created:				17 Jan 1999
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1999/02/19 04:30:03 vanilla Exp $
+# $Id: Makefile,v 1.5 1999/03/09 01:08:48 nectar Exp $
 #
 
 DISTNAME=	gnome-pim-1.0.1
 PKGNAME=	gnomepim-1.0.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	gnome-1.0/sources
+MASTER_SITE_SUBDIR=	gnome-pim
 
 MAINTAINER=	nacai@iname.com
 
