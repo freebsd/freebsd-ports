@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sec@42.org
 
+FETCH_CMD=	/usr/bin/fetch
 WRKSRC=		${WRKDIR}/${PKGNAME}
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
