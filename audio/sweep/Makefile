@@ -25,7 +25,6 @@ LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehier gnomehack gtk12
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -37,9 +36,5 @@ CONFIGURE_ARGS=	--with-extralibdir=${LOCALBASE}/lib \
 		--with-ogg=${LOCALBASE}/include/ogg
 
 MAN1=		sweep.1
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
