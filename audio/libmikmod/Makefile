@@ -7,6 +7,7 @@
 
 PORTNAME=	libmikmod
 PORTVERSION=	3.1.10
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.mikmod.org/files/libmikmod/
