@@ -18,7 +18,7 @@
 -#define HAVE_COMPFACE	0
 +#define HAVE_JPEG	1
 +#define HAVE_PNG	1
-+#define HAVE_COMPFACE	1
++#define HAVE_COMPFACE	0
  
  
  
