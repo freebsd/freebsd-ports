@@ -1,0 +1,10 @@
+--- ascd/misc/config.h.default.orig	Thu Apr 22 20:21:56 1999
++++ ascd/misc/config.h.default	Thu Apr 22 20:22:21 1999
+@@ -1,5 +1,5 @@
+ #define PACKAGE "ascd"
+ #define DEFAULT_COLOR "#2FAFAF"
+ #define DEFAULT_BGCOLOR "#000000"
+-#define DEFAULTDEVICE "/dev/cdrom"
+-#define THDIR "/usr/local/share/AScd"
++#define DEFAULTDEVICE "/dev/wcd0c"
++#define THDIR "/usr/X11R6/share/ascd"
