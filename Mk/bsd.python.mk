@@ -4,16 +4,16 @@
 # $FreeBSD$
 #
 
-.if !defined(Python_Include)
+.if !defined(_POSTMKINCLUDED) && !defined(Python_Pre_Include)
 
-Python_Include=				bsd.python.mk
+Python_Pre_Include=			bsd.python.mk
 Python_Include_MAINTAINER=	tg@FreeBSD.org
 
 # This file contains some variable definitions that are supposed to
 # make your life easier when dealing with ports related to the Python
-# language. It's automatically included when USE_PYTHON or PYTHON_VERSION
-# is defined in the ports' makefile. Define PYTHON_VERSION to override the
-# defaults that USE_PYTHON would give you.
+# language. It's automatically included when USE_PYTHON, PYTHON_VERSION or
+# USE_PYDISTUTILS is defined in the ports' makefile. Define PYTHON_VERSION
+# to override the defaults that USE_PYTHON would give you.
 #
 # The variables:
 #
@@ -71,6 +71,17 @@ Python_Include_MAINTAINER=	tg@FreeBSD.org
 #
 # PYXML:		Dependency line for the XML entension. As of Python-2.0,
 #				this extension is in the base distribution.
+#
+# USE_PYDISTUTILS:	Use distutils as do-build and do-install target.
+#
+# PYDISTUTILS_BUILDARGS:	Arguments to build with distutils.
+#							default: <empty>
+#
+# PYDISTUTILS_INSTALLARGS:	Arguments to install with distutils.
+#							default: -c -O1 --prefix=${PREFIX}
+#
+# PYSETUP:		Name of the setup script used by the distutils package.
+#				default: setup.py
 
 # XXX Ugly hack, but running python is the best way to determine the
 # currently installed version. If Python is not installed, a default 
@@ -161,6 +172,9 @@ PYTHON_LIBDIR=			${LOCALBASE}/lib/${PYTHON_VERSION}
 PYTHON_PKGNAMEPREFIX=	py${PYTHON_SUFFIX}-
 PYTHON_PLATFORM!=		expr ${OPSYS:L}${OSREL} : '\(.*\)\.'
 PYTHON_SITELIBDIR=		${PYTHON_LIBDIR}/site-packages
+PYSETUP?=				setup.py
+PYDISTUTILS_BUILDARGS?=
+PYDISTUTILS_INSTALLARGS?=	-c -O1 --prefix=${PREFIX}
 
 # dependencies
 PYTHON_NO_DEPENDS?=		NO
@@ -168,7 +182,11 @@ PYTHON_NO_DEPENDS?=		NO
 .if ${PYTHON_NO_DEPENDS} == "NO"
 BUILD_DEPENDS+=	${PYTHON_CMD}:${PYTHON_PORTSDIR}
 RUN_DEPENDS+=	${PYTHON_CMD}:${PYTHON_PORTSDIR}
+
+.if defined(USE_PYDISTUTILS) && ${PYTHON_REL} < 200
+BUILD_DEPENDS+=	${PYDISTUTILS}
 .endif
+.endif		# ${PYTHON_NO_DEPENDS} == "NO"
 
 # pkg/PLIST substrings
 PLIST_SUB+=		PYTHON_VERSION=${PYTHON_VERSION} \
@@ -176,4 +194,23 @@ PLIST_SUB+=		PYTHON_VERSION=${PYTHON_VERSION} \
 
 # XXX Hm, should I export some of the variables above to *_ENV?
 
-.endif		# !defined(Python_Include)
+.endif		# !defined(_POSTMKINCLUDED) && !defined(Python_Pre_Include)
+
+.if defined(_POSTMKINCLUDED) && !defined(Python_Post_Include)
+
+Python_Post_Include=			bsd.python.mk
+
+# py-distutils support
+.if defined(USE_PYDISTUTILS)
+.if !target(do-build)
+do-build:
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} build ${PYDISTUTILS_BUILDARGS})
+.endif
+
+.if !target(do-install)
+do-install:
+	@(cd ${INSTALL_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} install ${PYDISTUTILS_INSTALLARGS})
+.endif
+.endif		# defined(USE_PYDISTUTILS)
+
+.endif		# defined(_POSTMKINCLUDED) && !defined(Python_Post_Include)
