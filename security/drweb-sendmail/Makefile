@@ -7,7 +7,7 @@
 
 PORTNAME=	drweb_sendmail
 PORTVERSION=    4.26
-PORTREVISION=   10
+PORTREVISION=   11
 CATEGORIES=	security mail
 MASTER_SITES=	http://www.drweb.ru/ftp/web_pub/
 DISTNAME=	drwebd-${PORTVERSION}-freebsd4
@@ -120,6 +120,7 @@ do-install:
 	fi
 
 post-install:
+	PKG_PREFIX=${PREFIX} ./pkg-install ${PKGNAME} POST-INSTALL
 	@echo
 	@${CAT} pkg-message
 	@echo
