@@ -6,53 +6,49 @@
 #
 
 PORTNAME=	jdom
-PORTVERSION=	1.0b9
-PORTREVISION=	1
-CATEGORIES=	java
+PORTVERSION=	1.0b10
+CATEGORIES=	java textproc
 MASTER_SITES=	http://www.jdom.org/dist/source/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/[0-9]*\.[0-9]*//}
 
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Java library for accessing and manipulating XML documents
 
-BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant
-RUN_DEPENDS=	${JAVAJARDIR}/jaxen-jdom.jar:${PORTSDIR}/java/jaxen
+RUN_DEPENDS=	${LOCAL_JAVAJARDIR}/jaxen-jdom.jar:${PORTSDIR}/java/jaxen
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
+USE_ANT=	yes
+USE_JIKES=	no
 
+LOCAL_JAVAJARDIR=	${JAVAJARDIR:S,^${PREFIX},${LOCALBASE},}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/[0-9]*\.[0-9]*//}
-ANT?=		${LOCALBASE}/bin/ant
-ANT_TARGET=	package
+ALL_TARGET=	package
 .if !defined(NOPORTDOCS)
-ANT_TARGET+=	javadoc
+ALL_TARGET+=	javadoc
 OTHERDOCS=	README.txt TODO.txt CHANGES.txt COMMITTERS.txt LICENSE.txt
 PORTDOCS=	apidocs ${OTHERDOCS}
 .endif
 
-PLIST_FILES=	${JAVAJARDIR:S,^${PREFIX}/,,}/jdom.jar
+MAKE_ENV+=	CLASSPATH=${LOCAL_JAVAJARDIR}/jaxen-jdom.jar
 
-do-build:
-	@cd ${WRKSRC} && ${ANT} ${ANT_TARGET}
+PLIST_FILES=	%%JAVAJARDIR%%/jdom.jar
 
 do-install:
-	@${ECHO} -n ">> Installing JAR in ${JAVAJARDIR}..."
+	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/jdom.jar..."
 	@${MKDIR} ${JAVAJARDIR}
-	@${CP} ${WRKSRC}/build/jdom.jar ${JAVAJARDIR}/
-	@${ECHO} " jdom.jar [ DONE ]"
+	@${INSTALL_DATA} ${WRKSRC}/build/jdom.jar ${JAVAJARDIR}/
+	@${ECHO_MSG} " [ DONE ]"
 .if !defined(NOPORTDOCS)
-	@${ECHO} -n ">> Installing samples in ${EXAMPLESDIR}..."
-	@${MKDIR} ${EXAMPLESDIR}
-	@${CP} -r ${WRKSRC}/samples/* ${EXAMPLESDIR}/
-	@${ECHO} " [ DONE ]"
-	@${ECHO} -n ">> Installing documentation in ${DOCSDIR}..."
-	@${MKDIR} ${DOCSDIR}
-.for PORTDOC in ${OTHERDOCS}
-	@${CP} ${WRKSRC}/${PORTDOC} ${DOCSDIR}/
-	@${ECHO} -n " ${PORTDOC}"
-.endfor
-	@${CP} -r ${WRKSRC}/build/apidocs ${DOCSDIR}/
-	@${ECHO} " apidocs [ DONE ]"
+	@${ECHO_MSG} -n ">> Installing samples in ${EXAMPLESDIR}..."
+	@cd ${WRKSRC}/build/samples/ && ${FIND} . \
+	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR} > /dev/null 2>&1
+	@${ECHO_MSG} " [ DONE ]"
+	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
+	@cd ${WRKSRC}/build/ && ${FIND} apidocs \
+	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1
+	@${INSTALL_DATA} ${OTHERDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
+	@${ECHO_MSG} " [ DONE ]"
 .endif
 
 .include <bsd.port.mk>
