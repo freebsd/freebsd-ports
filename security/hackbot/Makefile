@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hackbot
-PORTVERSION=	2.20
+PORTVERSION=	2.21
 CATEGORIES=	security
 MASTER_SITES=	http://ws.obit.nl/hackbot/
 EXTRACT_SUFX=   .tgz
@@ -20,13 +20,13 @@ NO_BUILD=	YES
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 pre-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local/etc/|${PREFIX}/etc/hackbot/|' ${WRKSRC}/hackbot.pl
+	@${REINPLACE_CMD} -e 's|/usr/local/etc/|${DATADIR}/hackbot/|' ${WRKSRC}/hackbot.pl
 
 do-install:
-	${MKDIR} ${PREFIX}/etc/hackbot
-	${INSTALL_DATA} ${WRKSRC}/google.db ${PREFIX}/etc/hackbot/google.db
-	${INSTALL_DATA} ${WRKSRC}/fingerprint.db ${PREFIX}/etc/hackbot/fingerprint.db
-	${INSTALL_DATA} ${WRKSRC}/cgi.db ${PREFIX}/etc/hackbot/cgi.db
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/google.db ${DATADIR}/google.db
+	${INSTALL_DATA} ${WRKSRC}/fingerprint.db ${DATADIR}/fingerprint.db
+	${INSTALL_DATA} ${WRKSRC}/cgi.db ${DATADIR}/cgi.db
 	${INSTALL_SCRIPT} ${WRKSRC}/hackbot.pl ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/hackbot.1.gz ${PREFIX}/man/man1/
 
