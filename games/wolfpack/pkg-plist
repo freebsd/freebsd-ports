@@ -339,3 +339,5 @@ etc/rc.d/wolfpack.sh
 @dirrm wolfpack/info.nr
 @dirrm wolfpack/doc
 @dirrm wolfpack/data
+@dirrm wolfpack/bin
+@dirrm wolfpack
