@@ -43,6 +43,8 @@ share/mysql/germany/errmsg.sys
 share/mysql/germany/errmsg.txt
 share/mysql/swedish/errmsg.sys
 share/mysql/swedish/errmsg.txt
+share/mysql/czech/errmsg.sys
+share/mysql/czech/errmsg.txt
 @dirrm include/mysql
 @dirrm lib/mysql
 @dirrm share/doc/mysql
@@ -50,4 +52,5 @@ share/mysql/swedish/errmsg.txt
 @dirrm share/mysql/french
 @dirrm share/mysql/germany
 @dirrm share/mysql/swedish
+@dirrm share/mysql/czech
 @dirrm share/mysql
