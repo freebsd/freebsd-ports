@@ -1,6 +1,6 @@
-share/aspell/wa.dat
+lib/aspell-%%VER%%/wa_phonet.dat
+lib/aspell-%%VER%%/wa.dat
 share/aspell/wa.multi
-share/aspell/wa_phonet.dat
 share/aspell/wa.rws
 share/aspell/walloon.alias
 share/aspell/walon.alias

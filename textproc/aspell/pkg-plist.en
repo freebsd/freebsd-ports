@@ -1,3 +1,6 @@
+lib/aspell-%%VER%%/en.dat
+lib/aspell-%%VER%%/en_affix.dat
+lib/aspell-%%VER%%/en_phonet.dat
 share/aspell/american-w_accents.alias
 share/aspell/american-wo_accents.alias
 share/aspell/american.alias
@@ -22,7 +25,6 @@ share/aspell/en-variant_2.multi
 share/aspell/en-variant_2.rws
 share/aspell/en-w_accents.multi
 share/aspell/en-wo_accents.multi
-share/aspell/en.dat
 share/aspell/en.multi
 share/aspell/en_CA-w_accents-only.rws
 share/aspell/en_CA-w_accents.multi
@@ -47,7 +49,6 @@ share/aspell/en_US-w_accents.multi
 share/aspell/en_US-wo_accents-only.rws
 share/aspell/en_US-wo_accents.multi
 share/aspell/en_US.multi
-share/aspell/en_phonet.dat
 share/aspell/english-variant_0.alias
 share/aspell/english-variant_1.alias
 share/aspell/english-variant_2.alias

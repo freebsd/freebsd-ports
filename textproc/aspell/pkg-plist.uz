@@ -1,0 +1,6 @@
+lib/aspell-%%VER%%/l-uz.cmap
+lib/aspell-%%VER%%/l-uz.cset
+lib/aspell-%%VER%%/uz.dat
+share/aspell/uz.multi
+share/aspell/uz.rws
+share/aspell/uzbek.alias

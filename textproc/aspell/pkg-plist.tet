@@ -1,0 +1,5 @@
+lib/aspell-%%VER%%/tet.dat
+share/aspell/tet.multi
+share/aspell/tet.rws
+share/aspell/tetum.alias
+share/aspell/tetun.alias

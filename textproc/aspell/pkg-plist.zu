@@ -1,4 +1,4 @@
-share/aspell/zu.dat
+lib/aspell-%%VER%%/zu.dat
 share/aspell/zu.multi
 share/aspell/zu.rws
 share/aspell/zulu.alias

@@ -1,6 +1,6 @@
-share/aspell/ga.dat
+lib/aspell-%%VER%%/ga_phonet.dat
+lib/aspell-%%VER%%/ga.dat
 share/aspell/ga.multi
 share/aspell/ga.rws
-share/aspell/ga_phonet.dat
 share/aspell/gaeilge.alias
 share/aspell/irish.alias

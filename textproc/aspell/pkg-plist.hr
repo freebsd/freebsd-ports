@@ -1,4 +1,4 @@
-share/aspell/hr.dat
+lib/aspell-%%VER%%/hr.dat
 share/aspell/hr.multi
 share/aspell/hr.rws
 share/aspell/croatian.alias

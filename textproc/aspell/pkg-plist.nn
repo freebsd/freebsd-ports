@@ -1,4 +1,4 @@
-share/aspell/nn.dat
+lib/aspell-%%VER%%/nn.dat
 share/aspell/nn.multi
 share/aspell/nn.rws
 share/aspell/nynorsk.alias

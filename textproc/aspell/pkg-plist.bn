@@ -1,0 +1,6 @@
+lib/aspell-%%VER%%/u-beng.cmap
+lib/aspell-%%VER%%/u-beng.cset
+lib/aspell-%%VER%%/bn.dat
+share/aspell/bengali.alias
+share/aspell/bn.multi
+share/aspell/bn.rws

@@ -1,4 +1,4 @@
-share/aspell/ro.dat
+lib/aspell-%%VER%%/ro.dat
 share/aspell/ro.multi
 share/aspell/ro.rws
 share/aspell/romaneste.alias

@@ -1,11 +1,11 @@
+lib/aspell-%%VER%%/de_phonet.dat
+lib/aspell-%%VER%%/de.dat
 share/aspell/de-only.rws
-share/aspell/de.dat
 share/aspell/de.multi
 share/aspell/de_CH-only.rws
 share/aspell/de_CH.multi
 share/aspell/de_DE-only.rws
 share/aspell/de_DE.multi
-share/aspell/de_phonet.dat
 share/aspell/deutsch.alias
 share/aspell/german.alias
 share/aspell/swiss.alias
