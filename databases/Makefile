@@ -10,7 +10,6 @@
     SUBDIR += gtksql
     SUBDIR += interbase4
     SUBDIR += msql
-    SUBDIR += mysql321
     SUBDIR += mysql322-client
     SUBDIR += mysql322-server
     SUBDIR += mysqltutor
