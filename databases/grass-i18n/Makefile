@@ -14,7 +14,9 @@ DISTNAME=	grass5.0beta8_src
 
 MAINTAINER=	reg@FreeBSD.org
 
-LIB_DEPENDS=    tiff.4:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
+		png.4:${PORTSDIR}/graphics/png \
+		jpeg.9:${PORTSDIR}/graphics/jpeg
 BUILD_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
 RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
 
