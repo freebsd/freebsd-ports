@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	oregano
-PORTVERSION=	0.40.2
+PORTVERSION=	0.40.3
 CATEGORIES=	cad
-MASTER_SITES=	http://gforge.lug.fi.uba.ar/frs/download.php/54/
+MASTER_SITES=	http://gforge.lug.fi.uba.ar/frs/download.php/56/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Schematic capture and simulation of electrical circuits
