@@ -14,6 +14,7 @@
     SUBDIR += nautilus
     SUBDIR += offix-files
     SUBDIR += rox-base
+    SUBDIR += rox-filer
     SUBDIR += systemg
     SUBDIR += tkdesk
     SUBDIR += vide
