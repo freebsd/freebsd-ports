@@ -101,6 +101,7 @@
     SUBDIR += holyshout
     SUBDIR += icecast
     SUBDIR += icecast2
+    SUBDIR += ices
     SUBDIR += id3ed
     SUBDIR += id3el
     SUBDIR += id3lib
