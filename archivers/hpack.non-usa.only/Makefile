@@ -24,4 +24,7 @@ post-patch:
 	@${PERL} -pi -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/${f}
 .endfor
 
+post-install:
+	@${CP} ${WRKSRC}/docs/hpack.cfg ${PREFIX}/etc/hpack.cfg.dist
+
 .include <bsd.port.mk>
