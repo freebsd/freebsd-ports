@@ -1,0 +1,13 @@
+--- Makefile.orig	Thu Jul  6 00:07:45 2000
++++ Makefile	Sat Apr  5 22:53:49 2003
+@@ -5,8 +5,8 @@
+ 
+ all: scimark2 
+ 
+-CC = cc
+-CFLAGS = -O
++#CC = cc
++#CFLAGS = -O
+ LDFLAGS = 
+ 
+ OBJS = FFT.o kernel.o Stopwatch.o Random.o SOR.o SparseCompRow.o \
