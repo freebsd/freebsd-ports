@@ -1,0 +1,53 @@
+*** ../../configure	Sat Dec  1 19:51:44 2001
+--- configure	Sat Dec  1 19:53:05 2001
+***************
+*** 4327,4333 ****
+    echo $ac_n "(cached) $ac_c" 1>&6
+  else
+    ac_save_LIBS="$LIBS"
+! LIBS="-lmenu  $LIBS"
+  cat > conftest.$ac_ext <<EOF
+  #line 4333 "configure"
+  #include "confdefs.h"
+--- 4327,4333 ----
+    echo $ac_n "(cached) $ac_c" 1>&6
+  else
+    ac_save_LIBS="$LIBS"
+! LIBS="-lmenu -lcurses $LIBS"
+  cat > conftest.$ac_ext <<EOF
+  #line 4333 "configure"
+  #include "confdefs.h"
+***************
+*** 4368,4374 ****
+    echo $ac_n "(cached) $ac_c" 1>&6
+  else
+    ac_save_LIBS="$LIBS"
+! LIBS="-lform  $LIBS"
+  cat > conftest.$ac_ext <<EOF
+  #line 4374 "configure"
+  #include "confdefs.h"
+--- 4368,4374 ----
+    echo $ac_n "(cached) $ac_c" 1>&6
+  else
+    ac_save_LIBS="$LIBS"
+! LIBS="-lform -lcurses $LIBS"
+  cat > conftest.$ac_ext <<EOF
+  #line 4374 "configure"
+  #include "confdefs.h"
+***************
+*** 4409,4415 ****
+    echo $ac_n "(cached) $ac_c" 1>&6
+  else
+    ac_save_LIBS="$LIBS"
+! LIBS="-lpanel  $LIBS"
+  cat > conftest.$ac_ext <<EOF
+  #line 4415 "configure"
+  #include "confdefs.h"
+--- 4409,4415 ----
+    echo $ac_n "(cached) $ac_c" 1>&6
+  else
+    ac_save_LIBS="$LIBS"
+! LIBS="-lpanel -lcurses $LIBS"
+  cat > conftest.$ac_ext <<EOF
+  #line 4415 "configure"
+  #include "confdefs.h"

@@ -1,0 +1,54 @@
+# New ports collection makefile for:	apcupsd
+# Date created:		1.12.2001
+# Whom:			Lars Köller <Lars.Koeller@Uni-Bielefeld.DE>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	apcupsd
+PORTVERSION=	3.8.3
+CATEGORIES=	sysutils
+MASTER_SITES=	ftp://ftp.apcupsd.org/pub/apcupsd/stable/tar/
+
+MAINTAINER=	Lars.Koeller@Uni-Bielefeld.de
+
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+
+STARTUP_SCRIPT=	apcupsd.sh.sample
+PLIST_SUB=	STARTUP_SCRIPT=${STARTUP_SCRIPT}
+
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX} --sbindir=${PREFIX}/sbin \
+		--enable-nls \
+		--sysconfdir=${PREFIX}/etc/apcupsd \
+		--with-serial-dev=/dev/usv \
+		--enable-cgi --with-cgi-bin=${PREFIX}/etc/apcupsd/cgi
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		CFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
+
+.include <bsd.port.pre.mk>
+
+# Cause FreeBSD 3.X misses libmenu, libforms and libpanel (curses)
+.if ${OSVERSION} > 400000
+CONFIGURE_ARGS+=--enable-powerflute
+PLIST_SUB+=	POWERFL=""
+.else
+PLIST_SUB+=	POWERFL="@comment "
+.endif
+
+MAN8=		"apcupsd.8"
+
+PORTDOCS=	doc/manual/apcupsd.pdf
+
+post-install:
+	${INSTALL_SCRIPT} ${FILESDIR}/${STARTUP_SCRIPT} \
+			  ${PREFIX}/etc/rc.d/${STARTUP_SCRIPT}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
+
+.include <bsd.port.post.mk>

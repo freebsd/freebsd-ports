@@ -1,0 +1,27 @@
+sbin/apcupsd
+sbin/apcaccess
+sbin/apcnisd
+%%POWERFL%%sbin/powerflute
+etc/apcupsd/apccontrol
+@unexec if [ -f %D/etc/apcupsd/apcupsd.conf ]; then cmp -s %D/etc/apcupsd/apcupsd.conf.sample %D/etc/apcupsd/apcupsd.conf && rm -f %D/etc/apcupsd/apcupsd.conf || echo "If you are permanently removing this port, you should do a ``rm ${PKG_PREFIX}/etc/apcupsd/apcupsd.conf`` to remove config files left." | fmt ; fi
+etc/apcupsd/apcupsd.conf.sample
+etc/apcupsd/changeme
+etc/apcupsd/commfailure
+etc/apcupsd/commok
+etc/apcupsd/onbattery
+etc/apcupsd/mainsback
+@unexec if [ -f %D/etc/apcupsd/hosts.conf ]; then cmp -s %D/etc/apcupsd/hosts.conf.sample %D/etc/apcupsd/hosts.conf && rm -f %D/etc/apcupsd/hosts.conf || echo "If you are permanently removing this port, you should do a ``rm ${PKG_PREFIX}/etc/apcupsd/hosts.conf`` to remove config files left." | fmt ; fi
+etc/apcupsd/hosts.conf.sample
+@unexec if [ -f %D/etc/apcupsd/multimon.conf ]; then cmp -s %D/etc/apcupsd/multimon.conf.sample %D/etc/apcupsd/multimon.conf && rm -f %D/etc/apcupsd/multimon.conf || echo "If you are permanently removing this port, you should do a ``rm ${PKG_PREFIX}/etc/apcupsd/multimon.conf`` to remove config files left." | fmt ; fi
+etc/apcupsd/multimon.conf.sample
+etc/apcupsd/cgi/multimon.cgi
+etc/apcupsd/cgi/multimoncss.cgi
+etc/apcupsd/cgi/upsfstats.cgi
+etc/apcupsd/cgi/upsimage.cgi
+etc/apcupsd/cgi/upsstats.cgi
+etc/rc.d/%%STARTUP_SCRIPT%%
+share/locale/it/LC_MESSAGES/apcupsd.mo
+%%PORTDOCS%%share/doc/apcupsd/apcupsd.pdf
+@dirrm etc/apcupsd/cgi
+@dirrm etc/apcupsd
+%%PORTDOCS%%@dirrm share/doc/apcupsd

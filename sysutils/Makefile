@@ -5,6 +5,7 @@
     SUBDIR += abck
     SUBDIR += afio
     SUBDIR += anteater
+    SUBDIR += apcupsd
     SUBDIR += asapm
     SUBDIR += ascpu
     SUBDIR += asfsm
