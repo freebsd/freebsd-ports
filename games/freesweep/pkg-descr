@@ -1,0 +1,4 @@
+Minesweeper-type game for text-mode terminals. Features
+include boards up to 1024x1024 and saving and loading the boards.
+
+WWW: http://www.upl.cs.wisc.edu/~hartmann/sweep/
