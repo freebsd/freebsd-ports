@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun Apr 27 10:22:31 2003
++++ Makefile.in	Wed Oct  8 04:56:22 2003
+@@ -62,7 +62,7 @@
+ PERL_INSTALLDIRS=@PERL_INSTALLDIRS@
+ 
+ # Genereal paths for all filter scripts
+-EXEC_PATH=/usr/local/bin:/usr/bin:/bin
++EXEC_PATH=${LOCALBASE}/bin:/usr/bin:/bin
+ LOG_PATH=/tmp
+ 
+ # Paths for LPD and LPRng
