@@ -14,8 +14,10 @@ MASTER_SITE_SUBDIR=	stable/sources/ghex
 MAINTAINER=	ade@FreeBSD.org
 
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
-		gnomeprint.9:${PORTSDIR}/print/gnomeprint
+		gnomeprint.12:${PORTSDIR}/print/gnomeprint
 RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
+
+BROKEN=		"Uses internals from gnomeprint that are no longer present"
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
