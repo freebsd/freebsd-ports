@@ -7411,6 +7411,7 @@ ruby-radius	ports/net/ruby-radius
 ruby-raspell	ports/textproc/ruby-raspell
 ruby-rbbr	ports/devel/ruby-rbbr
 ruby-rbison	ports/devel/ruby-rbison
+ruby-rbprof	ports/devel/ruby-rbprof
 ruby-rbtree	ports/devel/ruby-rbtree
 ruby-rd-mode.el	ports/textproc/ruby-rd-mode.el
 ruby-rdbc1	ports/databases/ruby-rdbc1
