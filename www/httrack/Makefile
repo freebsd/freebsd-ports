@@ -1,4 +1,4 @@
-ports# New ports collection makefile for:	httrack
+# New ports collection makefile for:	httrack
 # Date created:		Sun Jun 17 10:28:52 CEST 2001
 # Whom:			Dirk Froemberg <dirk@FreeBSD.org>
 #
