@@ -1,11 +1,11 @@
---- milter-sender/configure.bak	Fri Sep 19 20:40:23 2003
-+++ configure	Mon Sep 22 02:08:38 2003
-@@ -1447,7 +1447,7 @@
- 	COMPILE='$(CC) $(CFLAGS) $(CC_O)$*$O -c $<'
+--- configure.orig	Wed Nov  5 23:30:58 2003
++++ configure	Sat Nov 15 05:23:57 2003
+@@ -1466,7 +1466,7 @@
  	STARTUP_SCRIPT='/usr/local/etc/rc.d'
  
--	CFLAGS="$CFLAGS -pthread"
-+#       CFLAGS="$CFLAGS -pthread"
+ 	# Assume GCC.
+-	CFLAGS="$CFLAGS -pthread -Wall"
++	CFLAGS="$CFLAGS -Wall"
  elif test "$OS" = 'SunOS'; then
  	# This used to be -I{}, but I've seen two different SunOS 5.8
  	# systems in two different parts of the world with man pages
