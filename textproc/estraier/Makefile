@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	estraier
-PORTVERSION=	1.2.25
-PORTREVISION=	3
+PORTVERSION=	1.2.26
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -29,7 +28,7 @@ CONFIGURE_ARGS=	--with-sysqdbm \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/include ${PTHREAD_LIBS}"
 
-OPTIONS=	CHASEN "Japanese Morphological Analysis Support" On \
+OPTIONS=	CHASEN "Japanese Morphological Analysis Support" Off \
 		MECAB "Part-of-Speech and Morphological Analyzer" Off \
 		KAKASI "Language processing filter/converter" On
 
