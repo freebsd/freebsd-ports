@@ -1,0 +1,14 @@
+--- kicq/extra/kicq-upgrade.orig	Sun Jul 30 15:56:14 2000
++++ kicq/extra/kicq-upgrade	Tue Aug 15 12:54:27 2000
+@@ -1,9 +1,9 @@
+-#!/bin/bash
++#!/bin/sh
+ # $Id: kicq-upgrade,v 1.1 2000/07/30 18:56:36 denis Exp $
+ # This script will upgrade 0.3.0-like configuration and contact list
+ # to the new 1.0.0 version
+ 
+-AWK=/bin/awk
++AWK=/usr/bin/awk
+ MV=/bin/mv
+ RM=/bin/rm
+ MKDIR=/bin/mkdir
