@@ -52,3 +52,4 @@ lib/X11/fonts/non-cjk/etl40-latin1.pcf.Z
 lib/X11/fonts/non-cjk/etl48-latin1.pcf.Z
 lib/X11/fonts/non-cjk/fonts.alias
 lib/X11/fonts/non-cjk/fonts.dir
+@dirrm lib/X11/fonts/non-cjk
