@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.inter7.com/vpopmail/
 
-MAINTAINER=	nbm@FreeBSD.org
+MAINTAINER=	roam@FreeBSD.org
 
 BUILD_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail \
 		${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
