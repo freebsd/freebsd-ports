@@ -2475,6 +2475,7 @@ hs-HOpenGL	ports/graphics/hs-HOpenGL
 hs-alex		ports/devel/hs-alex
 hs-buddha	ports/devel/hs-buddha
 hs-c2hs		ports/devel/hs-c2hs
+hs-crypto	ports/devel/hs-crypto
 hs-drift	ports/devel/hs-drift
 hs-frantk	ports/x11-toolkits/hs-frantk
 hs-green-card	ports/devel/hs-green-card
