@@ -9,7 +9,7 @@ PORTNAME=	lomboz
 PORTVERSION=	3.0.1
 PORTREVISION=	2
 CATEGORIES=	java
-MASTER_SITES=	http://download.forge.objectweb.org/lomboz/ \
+MASTER_SITES=	http://download.fr2.forge.objectweb.org/lomboz/ \
 		http://download.us.forge.objectweb.org/lomboz/ \
 		http://download.forge.objectweb.org/lomboz/
 PKGNAMEPREFIX=	eclipse-
@@ -19,9 +19,7 @@ DIST_SUBDIR=	eclipse
 MAINTAINER=	sugimura@jp.FreeBSD.ORG
 COMMENT=	A J2EE developer tool build as a plugin for the eclipse platform
 
-RUN_DEPENDS+=	${LOCALBASE}/eclipse/features/org.eclipse.emf_2.0.0/feature.xml:${PORTSDIR}/java/eclipse-emf
-
-BROKEN=		Broken dependency
+RUN_DEPENDS+=	${LOCALBASE}/eclipse/features/org.eclipse.emf_2.0.1/feature.xml:${PORTSDIR}/java/eclipse-emf
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
