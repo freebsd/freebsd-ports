@@ -1,5 +1,6 @@
 %%RUBY_SITELIBDIR%%/webunit/assert.rb
 %%RUBY_SITELIBDIR%%/webunit/cookie.rb
+%%RUBY_SITELIBDIR%%/webunit/domwalker.rb
 %%RUBY_SITELIBDIR%%/webunit/exception.rb
 %%RUBY_SITELIBDIR%%/webunit/form.rb
 %%RUBY_SITELIBDIR%%/webunit/frame.rb
@@ -14,7 +15,6 @@
 %%RUBY_SITELIBDIR%%/webunit/testcase.rb
 %%RUBY_SITELIBDIR%%/webunit/utils.rb
 %%RUBY_SITELIBDIR%%/webunit/webunit.rb
-%%RUBY_SITELIBDIR%%/webunit/xmldocument.rb
 @dirrm %%RUBY_SITELIBDIR%%/webunit
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webunit/cgi/assert.html
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webunit/cgi/auth/.htaccess
@@ -54,6 +54,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webunit/sample/conv/test_digit_view.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webunit/test/test_assert.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webunit/test/test_cookie.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webunit/test/test_domwalker.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webunit/test/test_form.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webunit/test/test_frame.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webunit/test/test_htmlelem.rb
@@ -66,7 +67,6 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webunit/test/test_table.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webunit/test/test_utils.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webunit/test/test_webunit.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webunit/test/test_xmldocument.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/webunit/test
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/webunit/sample/conv
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/webunit/sample
