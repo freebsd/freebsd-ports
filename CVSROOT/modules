@@ -2070,6 +2070,7 @@ gdeskcal	ports/deskutils/gdeskcal
 gdeskcal-skins	ports/deskutils/gdeskcal-skins
 gdesklets	ports/deskutils/gdesklets
 gdesklets-clock	ports/x11-clocks/gdesklets-clock
+gdesklets-cornerxmms	ports/audio/gdesklets-cornerxmms
 gdesklets-goodweather	ports/astro/gdesklets-goodweather
 gdesklets-imapmail	ports/mail/gdesklets-imapmail
 gdesklets-multitail	ports/sysutils/gdesklets-multitail
