@@ -3,18 +3,20 @@
 # Date created:		5 Dec 1997
 # Whom:			Kazuyuki IENAGA <ienaga@jsys.co.jp>
 #
-# $Id: Makefile,v 1.8 1998/09/21 02:00:37 steve Exp $
+# $Id: Makefile,v 1.9 1998/09/21 22:33:22 steve Exp $
 #
 
 DISTNAME=	xemacs-20.4
 PKGNAME?=	xemacs-mule-20.4
 CATEGORIES?=	editors
-MASTER_SITES+=	ftp://unipro.jsys.co.jp/pub/editor/xemacs/20.4/ \
+MASTER_SITES=	ftp://unipro.jsys.co.jp/pub/editor/xemacs/20.4/ \
 		ftp://ftp.lab.kdd.co.jp/xemacs/xemacs-20.4/ \
 		ftp://ftp.xemacs.org/pub/xemacs-20.4/ \
-		ftp://ftp2.xemacs.org/pub/xemacs/xemacs-20.4/
-DISTFILES+=	xemacs-20.4.tar.gz xemacs-20.4-elc.tar.gz \
-		xemacs-20.4-info.tar.gz xemacs-20.4-mule.tar.gz
+		ftp://ftp2.xemacs.org/pub/xemacs/xemacs-20.4/ \
+		ftp://ftp.jpl.org/pub/elisp/alpha/
+DISTFILES=	xemacs-20.4.tar.gz xemacs-20.4-elc.tar.gz \
+		xemacs-20.4-info.tar.gz xemacs-20.4-mule.tar.gz \
+		ps-print-jp.el.gz
 
 MAINTAINER?=	kiri@kiri.toba-cmt.ac.jp
 
@@ -24,7 +26,7 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		png.2:${PORTSDIR}/graphics/png \
 		compface.1:${PORTSDIR}/mail/faces \
 		${LIB_INPUT_METHOD}
-RUN_DEPENDS=	${PREFIX}/lib/xemacs-20.4/etc/BABYL:${PORTSDIR}/editors/xemacs-mule-common
+RUN_DEPENDS=	${PREFIX}/lib/xemacs-mule-20.4/etc/BABYL:${PORTSDIR}/editors/xemacs-mule-common
 
 EXTRACT_ONLY=	xemacs-20.4.tar.gz xemacs-20.4-elc.tar.gz \
 		xemacs-20.4-info.tar.gz xemacs-20.4-mule.tar.gz 
@@ -36,28 +38,26 @@ INSTALL_COOKIE=	${WRKDIR}/.install_done-${PKGNAME}
 PACKAGE_COOKIE=	${WRKDIR}/.package_done-${PKGNAME}
 GNU_CONFIGURE=	yes
 USE_AUTOCONF=	yes
-CONFIGURE_ARGS=	i386-unknown-freebsd --with-x11 --with-mule \
-		--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib \
-		${MISC_OPTIONS} ${WITH_INPUT_METHOD} ${WITH_WIDGETS} \
-		--site-libraries='${SITE_LIBRARIES}' --site-includes='${SITE_INCLUDES}' \
-		--infopath=/usr/local/lib/xemacs/info:/usr/local/info:/usr/X11R6/info:/usr/info:/usr/local/lib/texmf/doc/info:/usr/lib/texmf/doc:/usr/share/info
+CONFIGURE_ARGS=	i386-unknown-freebsd \
+		--with-clash-detection \
+		--lockdir=/var/run/emacs/lock \
+		--with-x11 \
+		--with-mule \
+		--x-includes=${X11BASE}/include \
+		--x-libraries=${X11BASE}/lib \
+		--site-libraries='${SITE_LIBRARIES}' \
+		--site-includes='${SITE_INCLUDES}' \
+		--sitelispdir=${PREFIX}/lib/xemacs-20.4/lisp:${PREFIX}/lib/xemacs-20.4/site-lisp:${PREFIX}/lib/xemacs/site-lisp:${PREFIX}/share/emacs/site-lisp \
+		--infopath=${PREFIX}/lib/xemacs/info:${PREFIX}/info:${X11BASE}/info:/usr/info:${PREFIX}/lib/texmf/doc/info:/usr/lib/texmf/doc:/usr/share/info \
+		${MISC_OPTIONS} ${WITH_INPUT_METHOD} ${WITH_WIDGETS}
 
 STRIP=
 
 INSTALL_TARGET=	install-arch-dep
 
-SCRIPTS_ENV=	AWK=${AWK} CAT=${CAT} CP=${CP} ECHO=${ECHO} GREP=${GREP} MKDIR="${MKDIR}" \
-		MV=${MV} RM=${RM} SED=${SED} TOUCH=${TOUCH} \
-		SITESTARTFILE=${SITESTARTFILE} DEFAULTFILE=${DEFAULTFILE} \
-		TMPL_FILES="${TMPL_FILES}" \
-		ELISPDIR=${ELISPDIR} PATCHDIR=${PATCHDIR} PKGDIR=${PKGDIR} PKGLDIR=${PKGLDIR} \
-		LANGUAGE=${LANGUAGE}
+PLIST_SUB=	XEMACS_DIR=xemacs-20.4
 
-ELISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 PKGLDIR=	${.CURDIR}/../../editors/xemacs-mule/pkg
-SITESTARTFILE=	site-start.el
-DEFAULTFILE=	default.el
-TMPL_FILES=	INSTALL DEINSTALL
 
 .if defined(WNN4)
 SITE_INCLUDES=		${X11BASE}/include
@@ -85,9 +85,19 @@ WITH_INPUT_METHOD+=	--with-canna=no
 WITH_WIDGETS=	--with-menubars=lucid --with-scrollbars=lucid --with-dialogs=athena
 MISC_OPTIONS=	--with-xface --with-xpm --with-sound=native --with-pop --with-xfs
 
+LANGUAGE?=
+.if (${LANGUAGE} == "Japanese")
+PLIST=	${PKGLDIR}/PLIST-ja
+.else
+PLIST=	${PKGLDIR}/PLIST
+.endif
+
 pre-build:
 	@find ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
 	@${RM} -f ${WRKSRC}/lib-src/DOC* ${WRKSRC}/src/xemacs
+.if (${LANGUAGE} == "Japanese")
+	@${GZCAT} ${DISTDIR}/ps-print-jp.el.gz > ${WRKSRC}/lisp/packages/ps-print.el
+.endif
 
 post-install::
 .for file in b2m ctags etags gnuclient xemacs-20.4
@@ -102,8 +112,5 @@ post-install::
 post-package:
 	@${TOUCH} ${TOUCH_FLAGS} ${PACKAGE_COOKIE}
 
-pre-clean:
-	@(cd ${FILESDIR}; ${RM} -f ${TMPL_FILES})
-	@(cd ${PKGDIR}; ${RM} -f PLIST ${TMPL_FILES})
-
 .include <bsd.port.mk>
+
