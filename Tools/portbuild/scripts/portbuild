@@ -174,7 +174,7 @@ cleandirs="/usr/local /usr/X11R6 /compat /var/db/pkg"
 export FTP_TIMEOUT=900
 export HTTP_TIMEOUT=900
 
-export PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/X11R6/bin
+export PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/X11R6/bin
 
 echo "building $pkgname in $chroot"
 
