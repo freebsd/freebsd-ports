@@ -1,6 +1,6 @@
 # New ports collection makefile for:	bbrun
 # Date created:				3 August 2001
-# Whom:					Adam Weinberger
+# Whom:					Adam Weinberger <adam@vectors.cx>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	1.4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.dwave.net/~jking/bbrun/
 
-MAINTAINER=	monkey@crackula.com
+MAINTAINER=	adam@vectors.cx
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 RUN_DEPENDS=	blackbox:${PORTSDIR}/x11-wm/blackbox

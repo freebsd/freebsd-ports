@@ -1,6 +1,6 @@
 # New ports collection makefile for:	icemc
 # Date created:				31 December 2001
-# Whom:					Adam Weinberger
+# Whom:					Adam Weinberger <adam@vectors.cx>
 #
 # $FreeBSD$
 #
@@ -11,11 +11,11 @@ PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.algorithm.at/comp/icemc/
 
-MAINTAINER=	monkey@crackula.com
-
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	icemc-0.2.2.patch.tar.gz
 PATCH_DIST_STRIP=	-p1
+
+MAINTAINER=	adam@vectors.cx
 
 USE_X_PREFIX=	yes
 USE_QT_VER=	2
