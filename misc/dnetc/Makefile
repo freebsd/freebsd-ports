@@ -7,6 +7,7 @@
 
 PORTNAME=	dnetc
 PORTVERSION=	2.8010.462
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.distributed.net/pub/dcti/%SUBDIR%/ \
@@ -72,7 +73,7 @@ do-install:
 	fi
 
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
-
+	${INSTALL} -c -m 644 -o ${CLIENTUID} -g ${CLIENTGID} ${WRKDIR}/dnetc.ini ${BINDIR}/dnetc.ini.default
 .if !exists(${BINDIR}/dnetc.ini)
 	@echo ""
 	@echo ""
