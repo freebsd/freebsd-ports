@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- config.dat.orig	Mon Jul 26 09:22:03 2004
++++ config.dat	Mon Jul 26 09:22:36 2004
+@@ -4,7 +4,7 @@
+ 
+ ##########################################################################
+ ### installation prefix directory of netwib [should not need to be modified]
+-NETWIBDEF_INSTPREFIX=/usr/local
++NETWIBDEF_INSTPREFIX=%%PREFIX%%
+ 
+ ##########################################################################
+ ### installation destination directory [should not need to be modified]

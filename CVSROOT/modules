@@ -4430,7 +4430,6 @@ lbreakout2	ports/games/lbreakout2
 lc		ports/misc/lc
 lcdproc		ports/sysutils/lcdproc
 lcms		ports/graphics/lcms
-lcrzoex		ports/security/lcrzoex
 ldap-account-manager	ports/sysutils/ldap-account-manager
 ldap2dns	ports/net/ldap2dns
 ldapbrowser	ports/net/ldapbrowser
@@ -5791,6 +5790,7 @@ nettle		ports/security/nettle
 nettoe		ports/games/nettoe
 netustad	ports/net-mgmt/netustad
 netwib		ports/net/netwib
+netwox		ports/net-mgmt/netwox
 neverball	ports/games/neverball
 newfile		ports/devel/newfile
 newmail		ports/mail/newmail
