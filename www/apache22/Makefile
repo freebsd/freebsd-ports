@@ -3,7 +3,7 @@
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 ache@nagual.pp.ru
 #
-# $Id: Makefile,v 1.60 1998/09/20 23:55:38 ache Exp $
+# $Id: Makefile,v 1.61 1998/09/24 01:06:18 ache Exp $
 #
 
 DISTNAME=       apache_1.3.2
@@ -28,12 +28,14 @@ CONFIGURE_ARGS= \
 		 --datadir=${PREFIX}/www \
 		 --proxycachedir=${PREFIX}/www/proxy \
 		 --libexecdir=${PREFIX}/libexec/apache \
-		 --with-perl=${PERL5} \
 		 --without-confadjust \
 		 --enable-shared=remain \
 		 --enable-module=most \
 		 --enable-module=auth_db \
 		 --disable-module=auth_dbm
+
+# Currently perl version don't matter
+#                 --with-perl=${PERL5}
 
 OPTIM=-DHARD_SERVER_LIMIT=512 \
 -DDOCUMENT_LOCATION=\\"${PREFIX}/www/data/\\" \
