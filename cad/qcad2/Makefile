@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	qcad
-PORTVERSION=	1.4.7
+PORTVERSION=	1.4.14
 CATEGORIES=	cad
-MASTER_SITES=	http://www.qcad.org/archives/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_XLIB=	yes
 USE_QT_VER=	2
-MAKE_ENV=	QTDIR="${X11BASE}"
+MAKE_ENV=	MOC="${MOC}" LIBQT="-l${QTNAME}" \
+		QTCPPFLAGS="${QTCPPFLAGS}" QTCFGLIBS="${QTCFGLIBS}"
 
 .include <bsd.port.pre.mk>
 
@@ -28,19 +29,19 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qcad ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/qcad
+	@${MKDIR} ${DATADIR}
 .for dir in cur fonts hatches libraries messages xpm
 	${TAR} -C ${WRKSRC} -cf - ${dir} | \
-		${TAR} -C ${PREFIX}/share/qcad --unlink -xf -
+		${TAR} -C ${DATADIR} --unlink -xf -
 .endfor
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/examples/qcad
-	${TAR} -C ${WRKSRC}/examples -cf - . | \
-		${TAR} -C ${PREFIX}/share/examples/qcad --unlink -xf -
-	@${MKDIR} ${PREFIX}/share/doc/qcad
+	@${MKDIR} ${DOCSDIR}
 	${TAR} -C ${WRKSRC}/doc -cf - . | \
-		${TAR} -C ${PREFIX}/share/doc/qcad --unlink -xf -
-	@${LN} -sf ${PREFIX}/share/doc/qcad ${PREFIX}/share/qcad/doc
+		${TAR} -C ${DOCSDIR} --unlink -xf -
+	@${LN} -sf ${DOCSDIR} ${DATADIR}/doc
+	@${MKDIR} ${EXAMPLESDIR}
+	${TAR} -C ${WRKSRC}/examples -cf - . | \
+		${TAR} -C ${EXAMPLESDIR} --unlink -xf -
 .endif
 
 .include <bsd.port.post.mk>
