@@ -9,8 +9,8 @@
 PORTNAME=	lsof
 PORTVERSION=	4.69.1
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/  \
-		ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/NEW/ \
+MASTER_SITES=	ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/  \
+		ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/NEW/ \
 		ftp://ftp.ayamura.org/pub/lsof/ \
 		ftp://ftp.ayamura.org/pub/lsof/NEW/ \
 		ftp://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/lsof/ \
