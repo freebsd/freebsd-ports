@@ -1,0 +1,14 @@
+bin/kmp3
+bin/kmp3player
+share/applnk/Multimedia/KMp3.kdelnk
+share/apps/kmp3/pics/dock_idle.xpm
+share/apps/kmp3/pics/dock_playing.xpm
+share/apps/kmp3/pics/logo.xpm
+share/icons/kmp3.xpm
+share/icons/mini/kmp3.xpm
+share/locale/de/LC_MESSAGES/kmp3.mo
+share/locale/es/LC_MESSAGES/kmp3.mo
+share/locale/fr/LC_MESSAGES/kmp3.mo
+share/locale/is/LC_MESSAGES/kmp3.mo
+@dirrm share/apps/kmp3/pics
+@dirrm share/apps/kmp3
