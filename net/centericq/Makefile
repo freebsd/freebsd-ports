@@ -15,13 +15,11 @@ MASTER_SITES=	http://konst.org.ua/download/
 MAINTAINER=	ijliao@FreeBSD.org
 
 LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext \
+		iconv.3:${PORTSDIR}/converters/libiconv \
 		sigc.1:${PORTSDIR}/devel/libsigc++
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lintl -liconv"
-CONFIGURE_ARGS=	--without-included-gettext
 
 MAN1=	centericq.1
 
@@ -29,12 +27,6 @@ MAN1=	centericq.1
 
 .if ${OSVERSION} < 400010
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
-CFLAGS+=	-nostdinc -I${LOCALBASE}/include/ncurses \
-		-I${LOCALBASE}/include -I/usr/include
 .endif
-
-post-patch:
-	@${PERL} -pi -e "s,\$\(pkgdatadir\),\$\(mandir\),g ; \
-		s,intl,,g" ${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>
