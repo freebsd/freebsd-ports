@@ -20,7 +20,7 @@ MAINTAINER=	nakaji@tutrp.tut.ac.jp
 
 LIB_DEPENDS=    png.3:${PORTSDIR}/graphics/png \
 		VFlib2.24:${PORTSDIR}/japanese/vflib
-.if defined(USE_JP)
+.if defined(WITH_JP)
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgd.a:${PORTSDIR}/japanese/gd \
 		${LOCALBASE}/lib/libttf.a:${PORTSDIR}/print/freetype
 .else
@@ -59,10 +59,10 @@ GP_DOCS=	${WRKSRC}/Copyright.plus \
 		${WRKSRC}/gp+/plus.tex
 
 pre-fetch:
-.ifndef USE_JP
-	@echo "*********************************************************"
-	@echo "If you want handle Japanese TrueType font, define USE_JP."
-	@echo "*********************************************************"
+.ifndef WITH_JP
+	@echo "**********************************************************"
+	@echo "If you want handle Japanese TrueType font, define WITH_JP."
+	@echo "**********************************************************"
 .endif
 
 post-extract:

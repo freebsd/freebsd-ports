@@ -15,7 +15,7 @@ MAINTAINER=	reg@FreeBSD.org
 
 LIB_DEPENDS=	glib12.3:${PORTSDIR}/devel/glib12 \
 		intl.1:${PORTSDIR}/devel/gettext
-.if defined(USE_NCURSES_PORT)
+.if defined(WITH_NCURSES_PORT)
 LIB_DEPENDS+=	ncurses.4:${PORTSDIR}/devel/ncurses
 .elif defined(WITH_SLANG)
 LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang

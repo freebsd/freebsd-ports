@@ -46,7 +46,7 @@ PLIST_SUB=	BROWSER=${BROWSER_ARC} BROWSER_VER=${BROWSER_VER} \
 DISTFILES+=	${AUTOADMIN}
 .endif
 
-.if defined(USE_128BIT) && !defined(NO_FORTIFY)
+.if defined(WITH_128BIT) && !defined(NO_FORTIFY)
 MASTER_SITES+=	ftp://ftp.fortify.net/pub/Fortify/ \
 		ftp://ftp.za.freebsd.org/pub/Fortify/
 DISTFILES+=	${FORTIFY}.tar.gz
@@ -65,9 +65,9 @@ RUN_DEPENDS=	${X11BASE}/lib/aout/libX11.so.6.1:${PORTSDIR}/x11/XFree86-aoutlibs
 
 .SILENT:
 
-.if !defined(USE_128BIT) && !defined(NO_FORTIFY)
+.if !defined(WITH_128BIT) && !defined(NO_FORTIFY)
 pre-extract:
-	${ECHO} "You can make Netscape use 128-bit encryption by defining USE_128BIT"
+	${ECHO} "You can make Netscape use 128-bit encryption by defining WITH_128BIT"
 .endif
 
 post-configure:
@@ -103,7 +103,7 @@ do-install:
 .if (${BROWSER} == "communicator") && !defined(NO_AUTOADMIN)
 	tar zxf ${DISTDIR}/${AUTOADMIN} -C ${NDIR}
 .endif
-.if defined(USE_128BIT) && !defined(NO_FORTIFY)
+.if defined(WITH_128BIT) && !defined(NO_FORTIFY)
 	cd ${WRKDIR}/${FORTIFY} \
 	&& (${ECHO}; ${ECHO} yes; ${ECHO} no; ${ECHO} no) \
 	| ./Fortify.sh ${NDIR}/${BROWSER_ARC}-${BROWSER_VER}.bin

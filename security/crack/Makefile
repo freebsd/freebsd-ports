@@ -22,7 +22,7 @@ RESTRICTED=	"contains crypto (libdes)"
 WRKSRC=		${WRKDIR}/c50a
 
 pre-configure:
-.if !defined(USE_DES)
+.if !defined(WITH_DES)
 	@${MV} -f ${WRKSRC}/src/libdes ${WRKSRC}/src/libdes.notused
 	@${MV} -f ${WRKSRC}/src/util/elcid.c ${WRKSRC}/src/util/elcid.c.orig
 	@${CP} -p ${WRKSRC}/src/util/elcid.c,bsd ${WRKSRC}/src/util/elcid.c
@@ -38,7 +38,7 @@ pre-build:
 do-build:
 	cd ${WRKSRC} ; ./Crack -makeonly
 	cd ${WRKSRC} ; ./Crack -makedict
-.if !defined(USE_DES)
+.if !defined(WITH_DES)
 	@#(cd ${WRKSRC} ; ./Crack -fgnd -fmt bsd ${FILESDIR}/pw-md5.test)
 .endif
 

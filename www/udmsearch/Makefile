@@ -22,11 +22,11 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--bindir=${PREFIX}/bin/udmsearch \
 		--sysconfdir=${PREFIX}/etc/udmsearch
 
-.if defined(USE_POSTGRESQL)
+.if defined(WITH_POSTGRESQL)
 LIB_DEPENDS=		pq.2:${PORTSDIR}/databases/postgresql
 CONFIGURE_ARGS+=	--with-pgsql
 
-.elif defined(USE_MSQL)
+.elif defined(WITH_MSQL)
 BUILD_DEPENDS=		${PREFIX}/lib/libmsql.a:${PORTSDIR}/databases/msql
 CONFIGURE_ARGS+=	--with-msql
 
@@ -36,14 +36,14 @@ CONFIGURE_ARGS+=	--with-msql
 LIB_DEPENDS=		mysqlclient.6:${PORTSDIR}/databases/mysql322-client
 CONFIGURE_ARGS+=	--with-mysql
 
-.if !defined(USE_MYSQL)
+.if !defined(WITH_MYSQL)
 pre-fetch:
 	@${ECHO}
 	@${ECHO} "Defaulting to udmsearch with mysql support."
 	@${ECHO}
 	@${ECHO} "You may alternately build udmsearch with either msql or"
-	@${ECHO} "postgresql support by invoking make with USE_MSQL=yes or"
-	@${ECHO} "USE_POSTGRESQL=yes respectively."
+	@${ECHO} "postgresql support by invoking make with WITH_MSQL=yes or"
+	@${ECHO} "WITH_POSTGRESQL=yes respectively."
 	@${ECHO}
 .endif
 

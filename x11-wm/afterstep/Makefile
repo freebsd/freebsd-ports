@@ -44,12 +44,12 @@ post-install:
 		@ ${MKDIR} ${PREFIX}/lib/X11/afterstep/sounds/
 		${INSTALL_DATA} ${WRKSRC}/sounds/* ${PREFIX}/lib/X11/afterstep/sounds/
 		@ ${MKDIR} ${PREFIX}/include/X11/pixmaps/
-.if defined(USE_HICOLOR_ICONS)
+.if defined(WITH_HICOLOR_ICONS)
 		${INSTALL_DATA} ${WRKSRC}/icons/*.xpm ${PREFIX}/include/X11/pixmaps/
 .else
 .if !defined(BATCH)
 		@${ECHO_MSG} "===>  Note: to use the hi-color icons,"
-		@${ECHO_MSG} "      reinstall this port with -DUSE_HICOLOR_ICONS"
+		@${ECHO_MSG} "      reinstall this port with -DWITH_HICOLOR_ICONS"
 		@${ECHO_MSG} "      defined"
 .endif
 		@for file in AFstep.xpm penguin.xpm monitor_bsd.xpm; do \

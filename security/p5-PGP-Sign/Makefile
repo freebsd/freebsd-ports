@@ -20,22 +20,22 @@ MAN3=		PGP::Sign.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 # You can either define one of these on the command line or accept the
-# default (USE_PGP2).  You can also predefine the values for PGP (or
+# default (WITH_PGP2).  You can also predefine the values for PGP (or
 # PGPS and PGPV) and PGPSTYLE if you don't like what this makefile
 # would assign.
-# USE_PGP2 - use PGP 2.6.* or a reasonable facsimile thereof
-# USE_PGP5 - use PGP 5 or a work-alike
-# USE_GPG  - use Gnu Privacy Guard
+# WITH_PGP2 - use PGP 2.6.* or a reasonable facsimile thereof
+# WITH_PGP5 - use PGP 5 or a work-alike
+# WITH_GPG  - use Gnu Privacy Guard
 
-.if !defined(USE_PGP5) && !defined(USE_GPG)
-USE_PGP2?=	yes
+.if !defined(WITH_PGP5) && !defined(WITH_GPG)
+WITH_PGP2?=	yes
 RUN_DEPENDS=	pgp:${PORTSDIR}/security/pgp
 .ifndef PGP
 PGP!=	which pgp || ${ECHO} ${PREFIX}/bin/pgp
 .endif
 PGPSTYLE?=	PGP2
 .else
-.ifdef USE_PGP5
+.ifdef WITH_PGP5
 RUN_DEPENDS=	pgps:${PORTSDIR}/security/pgp5
 .ifndef PGPS
 PGPS!=	which pgps || ${ECHO} ${PREFIX}/bin/pgps
@@ -45,7 +45,7 @@ PGPV!=	which pgpv || ${ECHO} ${PREFIX}/bin/pgpv
 .endif
 PGPSTYLE?=	PGP5
 .endif
-.ifdef USE_GPG
+.ifdef WITH_GPG
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 .ifndef PGP
 PGP!=	which gpg || ${ECHO} ${PREFIX}/bin/gpg

@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	sumikawa@FreeBSD.org
 
 USE_IMAKE=      yes
-USE_X11_PREFIX=	yes
+USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/xbattbar
 MAN1=		xbattbar.1
 

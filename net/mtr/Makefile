@@ -31,10 +31,10 @@ CONFIGURE_ARGS+=--disable-ipv6
 #.endif
 
 pre-patch:
-.if !defined(USE_GTK)
+.if !defined(WITH_GTK)
 	@${ECHO} ""
 	@${ECHO} "If you want to compile with GTK support,"
-	@${ECHO} "hit Ctrl-C right now and use \"make USE_GTK=yes\" "
+	@${ECHO} "hit Ctrl-C right now and use \"make WITH_GTK=yes\" "
 	@${ECHO} ""
 CONFIGURE_ARGS+=--with-gtk-prefix=/nopath
 .else

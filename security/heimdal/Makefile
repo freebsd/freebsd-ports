@@ -35,11 +35,8 @@ CONFIGURE_ARGS=		--prefix=${PREFIX} --enable-shared
 PREFIX=                        ${HEIMDAL_HOME}
 .endif
 
-.if exists(${X11BASE}/lib/libX11.a) && !defined(NO_X11)
+.if exists(${X11BASE}/lib/libX11.a) && !defined(WITHOUT_X11)
 USE_XLIB=		yes
-.endif
-
-.if defined(USE_XLIB)
 MAN1+=			kx.1 rxtelnet.1 rxterm.1 tenletxr.1
 MAN8+=			kxd.8
 CONFIGURE_ARGS+=	--with-x
@@ -47,13 +44,9 @@ CONFIGURE_ARGS+=	--with-x
 CONFIGURE_ARGS+=	--without-x
 .endif
 
-.if exists(/usr/lib/libkrb.a) && !defined(NO_KRB4)
-WITH_KRB4=		yes
-.endif
-
-.if defined(WITH_KRB4)
+.if exists(/usr/lib/libkrb.a) && !defined(WITHOUT_KRB4)
 CONFIGURE_ARGS+=	--with-krb4
-.elif !defined(KRB5_KRB4_COMPAT) || ${KRB5_KRB4_COMPAT} == "NO"
+.elif !defined(KRB5_KRB4_COMPAT)
 CONFIGURE_ARGS+=	--without-krb4
 .endif
 
@@ -61,7 +54,7 @@ PLIST:=			${WRKDIR}/PLIST
 
 pre-install:
 	@${CP} ${PKGDIR}/PLIST ${PLIST}
-.if defined(WITH_KRB4)
+.if exists(/usr/lib/libkrb.a) && !defined(WITHOUT_KRB4)
 	@${CAT} ${PKGDIR}/PLIST.KRB4 >> ${PLIST}
 .endif
 .if defined(USE_XLIB)

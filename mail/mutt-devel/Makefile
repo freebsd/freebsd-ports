@@ -38,9 +38,9 @@ BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 BUILD_DEPENDS+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
 .endif
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
-.elif defined(USE_NCURSES_PORT)
+.elif defined(WITH_NCURSES_PORT)
 LIB_DEPENDS=	ncurses.4:${PORTSDIR}/devel/ncurses
-.elif defined(USE_SLANG)
+.elif defined(WITH_SLANG)
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 .endif
 .if defined(PACKAGE_BUILDING)
@@ -53,9 +53,9 @@ CONFIGURE_TARGET=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS= --enable-pop --enable-imap --enable-flock --disable-fcntl  \
 		--with-sharedir=${PREFIX}/share/mutt \
 		--with-docdir=${PREFIX}/share/doc/mutt
-.if defined(BATCH) || defined(USE_SLANG)
+.if defined(BATCH) || defined(WITH_SLANG)
 CONFIGURE_ARGS+=	--with-slang=${PREFIX}
-.elif defined(USE_NCURSES_PORT)
+.elif defined(WITH_NCURSES_PORT)
 CONFIGURE_ARGS+=	--with-curses=${PREFIX}
 .endif
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}

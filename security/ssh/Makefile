@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 # Maximal ssh package requires YES values for
-# USE_PERL, USE_TCPWRAP
+# WITH_PERL, WITH_TCPWRAP
 #
 
 PORTNAME=	ssh
@@ -56,19 +56,15 @@ CONFIGURE_ARGS+=--with-kerberos5=${KRB5_HOME} --enable-kerberos-tgt-passing \
 
 # Include support for the SecureID card
 # Warning: untested !
-.if defined(USE_SECUREID) && ${USE_SECUREID} == YES
+.if defined(WITH_SECUREID)
 CONFIGURE_ARGS+= --with-secureid
 .endif
 
 # Don't use IDEA. IDEA can be freely used for non-commercial use. However,
 # commercial use may require a licence in a number of countries
 # Warning: untested !
-.if defined(DONT_USE_IDEA) && ${DONT_USE_IDEA} == YES
+.if defined(WITHOUT_IDEA)
 CONFIGURE_ARGS+= --without-idea
-.endif
-
-.if !exists(${X11BASE}/bin/xauth)
-CONFIGURE_ARGS+= --without-x
 .endif
 
 MAN1=		scp1.1 ssh-add1.1 ssh-agent1.1 ssh-keygen1.1 ssh1.1 \
@@ -115,8 +111,7 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if defined(USE_PERL) && ${USE_PERL} == YES || \
-    exists(${PERL5}) && (!defined(USE_PERL) || ${USE_PERL} != NO)
+.if defined(WITH_PERL) || (exists(${PERL5}) && (!defined(WITHOUT_PERL))
 USE_PERL5=	yes
 CONFIGURE_ENV+= PERL=${PERL5}
 .else
@@ -127,9 +122,8 @@ CONFIGURE_ENV+= PERL=/replace_it_with_PERL_path
 .if exists(/usr/include/tcpd.h)
 CONFIGURE_ARGS+= --with-libwrap
 .else
-.if defined(USE_TCPWRAP) && ${USE_TCPWRAP} == YES || \
-    exists(${PREFIX}/lib/libwrap.a) && \
-    (!defined(USE_TCPWRAP) || ${USE_TCPWRAP} != NO)
+.if defined(WITH_TCPWRAP) || (exists(${PREFIX}/lib/libwrap.a) \
+    && !defined(WITHOUT_TCPWRAP))
 CONFIGURE_ENV+= LDFLAGS=-L${PREFIX}/lib CFLAGS="${CFLAGS} -I${PREFIX}/include"
 CONFIGURE_ARGS+= --with-libwrap
 LIB_DEPENDS+=   wrap.7:${PORTSDIR}/security/tcp_wrapper
@@ -138,25 +132,29 @@ LIB_DEPENDS+=   wrap.7:${PORTSDIR}/security/tcp_wrapper
 
 # Original IPv6 patches were obtained from ftp://ftp.kyoto.wide.ad.jp/IPv6/ssh/
 # ssh-1.2.27-IPv6-1.5-patch.gz
-# We still use USE_INET6 here and try to support pre 4.0 machines with kame
+# We still use WITH_INET6 here and try to support pre 4.0 machines with kame
 # IPv6 stack
-.if ${OSVERSION} >= 400014 || ( ${OSVERSION} < 400014 && defined(USE_INET6) )
+.if ${OSVERSION} >= 400014 || ( ${OSVERSION} < 400014 && defined(WITH_INET6) )
 CONFIGURE_ARGS+=	--enable-ipv6
 .else
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 # Include SOCKS firewall support
-.if defined(USE_SOCKS) && ${USE_SOCKS} == YES
+.if defined(WITH_SOCKS)
 CONFIGURE_ARGS+= --with-socks="-L${PREFIX}/lib -lsocks5" --with-socks5
 .endif
 
 # Include extra files if X11 is installed
-.if exists(${X11BASE}/lib/libX11.a)
+.if defined(WITH_X11) || (exists(${X11BASE}/lib/libX11.a) \
+    && !defined(WITHOUT_X11))
+USE_XLIB=	yes
 PLIST:=         ${WRKDIR}/PLIST
 pre-install:
 	@${CAT} ${PKGDIR}/PLIST.X11 > ${PLIST}
 	@${CAT} ${PKGDIR}/PLIST >> ${PLIST}
+.else
+CONFIGURE_ARGS+= --without-x
 .endif
 
 .include <bsd.port.post.mk>

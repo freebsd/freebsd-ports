@@ -15,41 +15,43 @@ DISTFILES=	exim-3.13.tar.gz exim-texinfo-3.10.tar.gz
 
 MAINTAINER=	sheldonh@FreeBSD.org
 
-# If USE_XLIB is defined, the eximon monitor, which requires X, will be
-# built. Comment it out unless you have or want XFree86 installed!
-USE_XLIB=	YES
+# If WITHOUT_X11 is not defined, the eximon monitor, which requires X, will
+# be built. Comment it out unless you have or want XFree86 installed!
+.if !defined(WITHOUT_X11)
+USE_XLIB=	yes
+.endif
 
-USE_PERL5=	YES
+USE_PERL5=	yes
 
 MAKE_ENV+=	OSTYPE=${OPSYS} ARCHTYPE=${MACHINE_ARCH}
 
-# Uncomment the USE_MYSQL and USE_PAM definitions to link against
+# Uncomment the WITH_MYSQL and WITH_PAM definitions to link against
 # libmysqlclient and libpam respectively.  The libpam linkage is
 # required for SMTP AUTH support.
-#USE_MYSQL=	YES
-#USE_PAM=	YES
+#WITH_MYSQL=	yes
+#WITH_PAM=	yes
 
-# If USE_PAM==YES then one or more of USE_CRAM_MD5 and USE_PLAINTEXT
+# If WITH_PAM==yes then one or more of PAM_CRAM_MD5 and PAM_PLAINTEXT
 # must be left uncommented.
-PAM_CRAM_MD5=	YES
-PAM_PLAINTEXT=	YES
+PAM_CRAM_MD5=	yes
+PAM_PLAINTEXT=	yes
 
 # Uncomment to compile support for non-standard mailbox formats.
-#USE_MAILDIR=	YES
-#USE_MAILSTORE=	YES
-#USE_MBX=	YES
+#WITH_MAILDIR=	yes
+#WITH_MAILSTORE=	yes
+#WITH_MBX=	yes
 
 # You should not need to fiddle with anything below this point.
 
 SEDLIST=	-e 's,XX_PREFIX_XX,${PREFIX},' \
 		-e 's,XX_BINOWN_XX,${BINOWN},'
-.if !defined(USE_XLIB) || ${USE_XLIB} != YES
+.if !defined(USE_XLIB)
 SEDLIST+=	-e 's/^EXIM_MONITOR/\#EXIM_MONITOR/'
 .endif
 
-# BROKEN: the USE_LDAP stuff will not work until the openldap port
+# BROKEN: the WITH_LDAP stuff will not work until the openldap port
 # builds a shared liblber.
-.if defined(USE_LDAP) && ${USE_LDAP} == YES
+.if defined(WITH_LDAP)
 LIB_DEPENDS+=	lber.1:${PORTSDIR}/net/openldap
 SEDLIST+=	-e 's,XX_LDAP_LIBS_XX,-L${PREFIX}/lib -llber -lldap,' \
 		-e 's,XX_LDAP_INCLUDE_XX,-I${PREFIX}/include,' \
@@ -60,7 +62,7 @@ SEDLIST+=	-e 's,XX_LDAP_[^ ]*_XX,,' \
 		-e 's,^LDAP_LIB_TYPE,\#LDAP_LIB_TYPE,'
 .endif
 
-.if defined(USE_MYSQL) && ${USE_MYSQL} == YES
+.if defined(WITH_MYSQL)
 LIB_DEPENDS+=	mysqlclient.6:${PORTSDIR}/databases/mysql322-client
 SEDLIST+=	-e 's,XX_MYSQL_LIBS_XX,-L${PREFIX}/lib/mysql -lmysqlclient,' \
 		-e 's,XX_MYSQL_INCLUDE_XX,-I${PREFIX}/include/mysql,' \
@@ -69,35 +71,33 @@ SEDLIST+=	-e 's,XX_MYSQL_LIBS_XX,-L${PREFIX}/lib/mysql -lmysqlclient,' \
 SEDLIST+=	-e 's,XX_MYSQL_[^ ]*_XX,,'
 .endif
 
-.if ( !defined(USE_MYSQL) || ${USE_MYSQL} != YES )
+.if !defined(WITH_MYSQL)
 SEDLIST+=	-e 's/^LOOKUP_LIBS/\#LOOKUP_LIBS/' \
 		-e 's/^LOOKUP_INCLUDE/\#LOOKUP_INCLUDE/'
 .endif
 
-.if ( !defined(USE_PAM) || ${USE_PAM} != YES )
+.if !defined(WITH_PAM)
 SEDLIST+=	-e 's/^SUPPORT_PAM/\#SUPPORT_PAM/' \
 		-e 's/^PAM_LIBS/\#PAM_LIBS/'
 .endif
 
-.if ( !defined(USE_PAM) || ${USE_PAM} != YES ) || \
-    ( !defined(PAM_CRAM_MD5) || ${PAM_CRAM_MD5} != YES )
+.if !defined(WITH_PAM) || !defined(PAM_CRAM_MD5)
 SEDLIST+=	-e 's/^AUTH_CRAM_MD5/\#AUTH_CRAM_MD5/'
 .endif
 
-.if ( !defined(USE_PAM) || ${USE_PAM} != YES ) || \
-    ( !defined(PAM_PLAINTEXT) || ${PAM_PLAINTEXT} != YES )
+.if !defined(WITH_PAM) || !defined(PAM_PLAINTEXT)
 SEDLIST+=	-e 's/^AUTH_PLAINTEXT/\#AUTH_PLAINTEXT/'
 .endif
 
-.if defined(USE_MAILDIR) && ${USE_MAILDIR} == YES
+.if defined(WITH_MAILDIR)
 SEDLIST+=	-e 's/^\# SUPPORT_MAILDIR/SUPPORT_MAILDIR/'
 .endif
 
-.if defined(USE_MAILSTORE) && ${USE_MAILSTORE} == YES
+.if defined(WITH_MAILSTORE)
 SEDLIST+=	-e 's/^\# SUPPORT_MAILSTORE/SUPPORT_MAILSTORE/'
 .endif
 
-.if defined(USE_MBX) && ${USE_MBX} == YES
+.if defined(WITH_MBX)
 SEDLIST+=	-e 's/^\# SUPPORT_MBX/SUPPORT_MBX/'
 .endif
 

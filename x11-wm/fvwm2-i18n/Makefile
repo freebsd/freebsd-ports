@@ -16,7 +16,7 @@ PATCHFILES=	fvwm-${PORTVERSION}-I18N_MB-${FVWM_PATCHVER}.patch
 
 MAINTAINER=	matusita@jp.freebsd.org
 
-.if !defined(USE_XPM) || ${USE_XPM} != NO
+.if !defined(WITHOUT_XPM)
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 .endif
 
@@ -61,9 +61,8 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if defined(USE_RPLAY) && ${USE_RPLAY} == YES || \
-    exists(${LOCALBASE}/lib/librplay.a) && \
-    (!defined(USE_RPLAY) || ${USE_RPLAY} != NO)
+.if defined(WITH_RPLAY) || (exists(${LOCALBASE}/lib/librplay.a) && \
+    !defined(WITHOUT_RPLAY))
 BUILD_DEPENDS=  rplay:${PORTSDIR}/audio/rplay
 .endif
 
