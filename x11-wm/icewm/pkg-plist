@@ -49,6 +49,7 @@ lib/X11/icewm/menu
 lib/X11/icewm/preferences
 lib/X11/icewm/taskbar/bsd-daemon.xpm
 lib/X11/icewm/taskbar/linux.xpm
+lib/X11/icewm/taskbar/linux20.xpm
 lib/X11/icewm/taskbar/start.xpm
 lib/X11/icewm/taskbar/windows.xpm
 lib/X11/icewm/taskbar/xfreeos2.xpm
@@ -112,6 +113,63 @@ lib/X11/icewm/themes/TechnologicEnvy/titleIL.xpm
 lib/X11/icewm/themes/TechnologicEnvy/titleIM.xpm
 lib/X11/icewm/themes/TechnologicEnvy/titleIR.xpm
 lib/X11/icewm/themes/TechnologicEnvy/titleIT.xpm
+lib/X11/icewm/themes/Wigren/icons/app_16x16.xpm
+lib/X11/icewm/themes/Wigren/icons/app_32x32.xpm
+lib/X11/icewm/themes/Wigren/taskbar/linux.xpm
+lib/X11/icewm/themes/Wigren/taskbar/windows.xpm
+lib/X11/icewm/themes/Wigren/closeA.xpm
+lib/X11/icewm/themes/Wigren/closeI.xpm
+lib/X11/icewm/themes/Wigren/default.theme
+lib/X11/icewm/themes/Wigren/dframeAB.xpm
+lib/X11/icewm/themes/Wigren/dframeABL.xpm
+lib/X11/icewm/themes/Wigren/dframeABR.xpm
+lib/X11/icewm/themes/Wigren/dframeAL.xpm
+lib/X11/icewm/themes/Wigren/dframeAR.xpm
+lib/X11/icewm/themes/Wigren/dframeAT.xpm
+lib/X11/icewm/themes/Wigren/dframeATL.xpm
+lib/X11/icewm/themes/Wigren/dframeATR.xpm
+lib/X11/icewm/themes/Wigren/dframeIB.xpm
+lib/X11/icewm/themes/Wigren/dframeIBL.xpm
+lib/X11/icewm/themes/Wigren/dframeIBR.xpm
+lib/X11/icewm/themes/Wigren/dframeIL.xpm
+lib/X11/icewm/themes/Wigren/dframeIR.xpm
+lib/X11/icewm/themes/Wigren/dframeIT.xpm
+lib/X11/icewm/themes/Wigren/dframeITL.xpm
+lib/X11/icewm/themes/Wigren/dframeITR.xpm
+lib/X11/icewm/themes/Wigren/frameAB.xpm
+lib/X11/icewm/themes/Wigren/frameABL.xpm
+lib/X11/icewm/themes/Wigren/frameABR.xpm
+lib/X11/icewm/themes/Wigren/frameAL.xpm
+lib/X11/icewm/themes/Wigren/frameAR.xpm
+lib/X11/icewm/themes/Wigren/frameAT.xpm
+lib/X11/icewm/themes/Wigren/frameATL.xpm
+lib/X11/icewm/themes/Wigren/frameATR.xpm
+lib/X11/icewm/themes/Wigren/frameIB.xpm
+lib/X11/icewm/themes/Wigren/frameIBL.xpm
+lib/X11/icewm/themes/Wigren/frameIBR.xpm
+lib/X11/icewm/themes/Wigren/frameIL.xpm
+lib/X11/icewm/themes/Wigren/frameIR.xpm
+lib/X11/icewm/themes/Wigren/frameIT.xpm
+lib/X11/icewm/themes/Wigren/frameITL.xpm
+lib/X11/icewm/themes/Wigren/frameITR.xpm
+lib/X11/icewm/themes/Wigren/maximizeA.xpm
+lib/X11/icewm/themes/Wigren/maximizeI.xpm
+lib/X11/icewm/themes/Wigren/menuButtonA.xpm
+lib/X11/icewm/themes/Wigren/menuButtonI.xpm
+lib/X11/icewm/themes/Wigren/minimizeA.xpm
+lib/X11/icewm/themes/Wigren/minimizeI.xpm
+lib/X11/icewm/themes/Wigren/restoreA.xpm
+lib/X11/icewm/themes/Wigren/restoreI.xpm
+lib/X11/icewm/themes/Wigren/titleAB.xpm
+lib/X11/icewm/themes/Wigren/titleAL.xpm
+lib/X11/icewm/themes/Wigren/titleAM.xpm
+lib/X11/icewm/themes/Wigren/titleAR.xpm
+lib/X11/icewm/themes/Wigren/titleAT.xpm
+lib/X11/icewm/themes/Wigren/titleIB.xpm
+lib/X11/icewm/themes/Wigren/titleIL.xpm
+lib/X11/icewm/themes/Wigren/titleIM.xpm
+lib/X11/icewm/themes/Wigren/titleIR.xpm
+lib/X11/icewm/themes/Wigren/titleIT.xpm
 lib/X11/icewm/themes/aesthetech-big/closeA.xpm
 lib/X11/icewm/themes/aesthetech-big/closeI.xpm
 lib/X11/icewm/themes/aesthetech-big/default.theme
@@ -398,59 +456,17 @@ lib/X11/icewm/themes/fvwm/titleIL.xpm
 lib/X11/icewm/themes/fvwm/titleIM.xpm
 lib/X11/icewm/themes/fvwm/titleIR.xpm
 lib/X11/icewm/themes/fvwm/titleIT.xpm
-lib/X11/icewm/themes/gtk/closeA.xpm
-lib/X11/icewm/themes/gtk/closeI.xpm
-lib/X11/icewm/themes/gtk/default.theme
-lib/X11/icewm/themes/gtk/dframeAB.xpm
-lib/X11/icewm/themes/gtk/dframeABL.xpm
-lib/X11/icewm/themes/gtk/dframeABR.xpm
-lib/X11/icewm/themes/gtk/dframeAL.xpm
-lib/X11/icewm/themes/gtk/dframeAR.xpm
-lib/X11/icewm/themes/gtk/dframeAT.xpm
-lib/X11/icewm/themes/gtk/dframeATL.xpm
-lib/X11/icewm/themes/gtk/dframeATR.xpm
-lib/X11/icewm/themes/gtk/dframeIB.xpm
-lib/X11/icewm/themes/gtk/dframeIBL.xpm
-lib/X11/icewm/themes/gtk/dframeIBR.xpm
-lib/X11/icewm/themes/gtk/dframeIL.xpm
-lib/X11/icewm/themes/gtk/dframeIR.xpm
-lib/X11/icewm/themes/gtk/dframeIT.xpm
-lib/X11/icewm/themes/gtk/dframeITL.xpm
-lib/X11/icewm/themes/gtk/dframeITR.xpm
-lib/X11/icewm/themes/gtk/frameAB.xpm
-lib/X11/icewm/themes/gtk/frameABL.xpm
-lib/X11/icewm/themes/gtk/frameABR.xpm
-lib/X11/icewm/themes/gtk/frameAL.xpm
-lib/X11/icewm/themes/gtk/frameAR.xpm
-lib/X11/icewm/themes/gtk/frameAT.xpm
-lib/X11/icewm/themes/gtk/frameATL.xpm
-lib/X11/icewm/themes/gtk/frameATR.xpm
-lib/X11/icewm/themes/gtk/frameIB.xpm
-lib/X11/icewm/themes/gtk/frameIBL.xpm
-lib/X11/icewm/themes/gtk/frameIBR.xpm
-lib/X11/icewm/themes/gtk/frameIL.xpm
-lib/X11/icewm/themes/gtk/frameIR.xpm
-lib/X11/icewm/themes/gtk/frameIT.xpm
-lib/X11/icewm/themes/gtk/frameITL.xpm
-lib/X11/icewm/themes/gtk/frameITR.xpm
-lib/X11/icewm/themes/gtk/maximizeA.xpm
-lib/X11/icewm/themes/gtk/maximizeI.xpm
-lib/X11/icewm/themes/gtk/menuButtonA.xpm
-lib/X11/icewm/themes/gtk/menuButtonI.xpm
-lib/X11/icewm/themes/gtk/minimizeA.xpm
-lib/X11/icewm/themes/gtk/minimizeI.xpm
-lib/X11/icewm/themes/gtk/restoreA.xpm
-lib/X11/icewm/themes/gtk/restoreI.xpm
-lib/X11/icewm/themes/gtk/titleAB.xpm
-lib/X11/icewm/themes/gtk/titleAL.xpm
-lib/X11/icewm/themes/gtk/titleAM.xpm
-lib/X11/icewm/themes/gtk/titleAR.xpm
-lib/X11/icewm/themes/gtk/titleAT.xpm
-lib/X11/icewm/themes/gtk/titleIB.xpm
-lib/X11/icewm/themes/gtk/titleIL.xpm
-lib/X11/icewm/themes/gtk/titleIM.xpm
-lib/X11/icewm/themes/gtk/titleIR.xpm
-lib/X11/icewm/themes/gtk/titleIT.xpm
+lib/X11/icewm/themes/gtk2/closeA.xpm
+lib/X11/icewm/themes/gtk2/closeI.xpm
+lib/X11/icewm/themes/gtk2/default.theme
+lib/X11/icewm/themes/gtk2/maximizeA.xpm
+lib/X11/icewm/themes/gtk2/maximizeI.xpm
+lib/X11/icewm/themes/gtk2/menuButtonA.xpm
+lib/X11/icewm/themes/gtk2/menuButtonI.xpm
+lib/X11/icewm/themes/gtk2/minimizeA.xpm
+lib/X11/icewm/themes/gtk2/minimizeI.xpm
+lib/X11/icewm/themes/gtk2/restoreA.xpm
+lib/X11/icewm/themes/gtk2/restoreI.xpm
 lib/X11/icewm/themes/jaywalk/ledclock/a.xpm
 lib/X11/icewm/themes/jaywalk/ledclock/colon.xpm
 lib/X11/icewm/themes/jaywalk/ledclock/dot.xpm
@@ -754,6 +770,9 @@ lib/X11/icewm/winoptions
 @dirrm lib/X11/icewm/themes/TechnologicEnvy/mailbox
 @dirrm lib/X11/icewm/themes/TechnologicEnvy/taskbar
 @dirrm lib/X11/icewm/themes/TechnologicEnvy
+@dirrm lib/X11/icewm/themes/Wigren/icons
+@dirrm lib/X11/icewm/themes/Wigren/taskbar
+@dirrm lib/X11/icewm/themes/Wigren
 @dirrm lib/X11/icewm/themes/aesthetech
 @dirrm lib/X11/icewm/themes/aesthetech-big
 @dirrm lib/X11/icewm/themes/bluePlastic/ledclock
@@ -764,7 +783,7 @@ lib/X11/icewm/winoptions
 @dirrm lib/X11/icewm/themes/blueice/taskbar
 @dirrm lib/X11/icewm/themes/blueice
 @dirrm lib/X11/icewm/themes/fvwm
-@dirrm lib/X11/icewm/themes/gtk
+@dirrm lib/X11/icewm/themes/gtk2
 @dirrm lib/X11/icewm/themes/jaywalk/ledclock
 @dirrm lib/X11/icewm/themes/jaywalk/mailbox
 @dirrm lib/X11/icewm/themes/jaywalk/taskbar
