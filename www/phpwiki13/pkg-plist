@@ -193,6 +193,11 @@
 %%PHPWIKI%%/templates/editlinks.html
 %%PHPWIKI%%/templates/editpage.html
 %%PHPWIKI%%/templates/message.html
+%%PHPWIKI%%/admin/.htaccess
+%%PHPWIKI%%/lib/.htaccess
+%%PHPWIKI%%/locale/.htaccess
+%%PHPWIKI%%/schemas/.htaccess
+%%PHPWIKI%%/templates/.htaccess
 @dirrm %%PHPWIKI%%/admin
 @dirrm %%PHPWIKI%%/images
 @dirrm %%PHPWIKI%%/lib
