@@ -1,7 +1,4 @@
 bin/muine
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/muine.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/muine.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/muine.schemas > /dev/null || /usr/bin/true
 lib/muine/AmazonSearchService.dll
 lib/muine/libmuine.a
 lib/muine/libmuine.so
