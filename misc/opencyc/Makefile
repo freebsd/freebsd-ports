@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	alexs@snark.rinet.ru
 COMMENT=	General knowledge base and commonsense reasoning engine
 
+BROKEN=		Broken pkg-plist
+
 NO_BUILD=	yes
 USE_LINUX=	yes
 
