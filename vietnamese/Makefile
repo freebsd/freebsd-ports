@@ -3,6 +3,7 @@
 
     SUBDIR += libviet
     SUBDIR += unicode-uhoai
+    SUBDIR += vi2vn
     SUBDIR += vis2u
     SUBDIR += vn7to8
     SUBDIR += vnconvert

@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+bin/vi2vn
+@comment Insert PLIST.share here
+@comment -=[ begin PLIST.share ]=-
+@comment -=[ end PLIST.share ]=-
