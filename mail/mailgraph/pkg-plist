@@ -1,2 +1,3 @@
+etc/rc.d/mailgraph.sh.sample
 www/cgi-bin/mailgraph.cgi
 www/cgi-bin/mailgraph.pl
