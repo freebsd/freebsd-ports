@@ -3,7 +3,7 @@
 # Date created:				29 June 1998
 # Whom:					scrappy
 #
-# $Id: Makefile,v 1.2 1998/07/02 06:46:32 asami Exp $
+# $Id: Makefile,v 1.3 1998/08/23 04:18:46 scrappy Exp $
 #
 
 DISTNAME=	xicq-071298-snapshot.src
@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.xtrophy.dk/xicq/
 MAINTAINER=	scrappy@freebsd.org
 
 WRKSRC=		${WRKDIR}/xicq-071298
+
+BROKEN=		build
 
 USE_GMAKE=	yes
 
