@@ -1,10 +1,11 @@
-# $Id: Makefile,v 1.146 1998/06/12 08:52:05 tg Exp $
+# $Id: Makefile,v 1.147 1998/07/11 18:27:48 steve Exp $
 #
 
     SUBDIR += acron
     SUBDIR += amanda
     SUBDIR += amanda24
     SUBDIR += astrolog
+    SUBDIR += bb
     SUBDIR += cal
     SUBDIR += cbb
     SUBDIR += chord
