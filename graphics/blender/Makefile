@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	blender
-PORTVERSION=	2.14
+PORTVERSION=	2.20
 CATEGORIES=	graphics games
 MASTER_SITES=	ftp://ftp.blender.nl/pub/
 DISTNAME=	blender${PORTVERSION}-freebsd-4.2-i386
