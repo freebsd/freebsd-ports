@@ -53,12 +53,16 @@ WRITE-DEFAULTS-FIRSTTIME)
 		${SU} -l ${OGO} -c "${DW} NSGlobalDomain skyrix_id ${ME}" >/dev/null 2>&1
 		${SU} -l ${OGO} -c "${DW} NSGlobalDomain LSAdaptor PostgreSQL72" >/dev/null 2>&1
 		${SU} -l ${OGO} -c "${DW} NSGlobalDomain LSModelName OpenGroupware.org_PostgreSQL" >/dev/null 2>&1
+		${SU} -l ${OGO} -c "${DW} NSGlobalDomain LSMaxSearchCount 500" >/dev/null 2>&1
 		${SU} -l ${OGO} -c "${DW} NSGlobalDomain LSConnectionDictionary '{hostName=localhost; userName=ogo; password=\"\"; port=5432; databaseName=ogo}'" >/dev/null 2>&1
 		${SU} -l ${OGO} -c "${DW} NSGlobalDomain LSAttachmentPath \"/compat/linux/opt/opengroupware.org/documents\"" >/dev/null 2>&1
 		${SU} -l ${OGO} -c "${DW} NSGlobalDomain LSNewsImagesPath \"/compat/linux/opt/opengroupware.org/news\"" >/dev/null 2>&1
 		${SU} -l ${OGO} -c "${DW} NSGlobalDomain LSNewsImagesUrl \"/ArticleImages\"" >/dev/null 2>&1
 		${SU} -l ${OGO} -c "${DW} NSGlobalDomain NGBundlePath \"/compat/linux/opt/opengroupware.org/Library/OpenGroupware.org\"" >/dev/null 2>&1
 		${SU} -l ${OGO} -c "${DW} NSGlobalDomain XMLReader libxmlSAXDriver" >/dev/null 2>&1
+		${SU} -l ${OGO} -c "${DW} NSGlobalDomain WOPort localhost:19999" >/dev/null 2>&1
+		${SU} -l ${OGO} -c "${DW} NSGlobalDomain TimeZoneName GMT" >/dev/null 2>&1
+		${SU} -l ${OGO} -c "${DW} NSGlobalDomain Languages '{English}'" >/dev/null 2>&1
 
 		${SU} -l ${OGO} -c "${DW} " >/dev/null 2>&1
 		echo "done."
@@ -69,10 +73,15 @@ WRITE-DEFAULTS-FIRSTTIME)
 	;;
 
 COPY-TEMPLATES)
+
+	INSTALL='/usr/bin/install'
+	OGO_USER='ogo'
+	OGO_GROUP='skyrix'
+
 	if [ ! -e /compat/linux/opt/opengroupware.org/.libFoundation/Defaults/OpenGroupware.plist ] 2>/dev/null; then
 		echo "OpenGroupware.plist not found..."
 		echo "thus I am using the one coming with the port."
-		cp files/OpenGroupware.plist.tmpl /compat/linux/opt/opengroupware.org/.libFoundation/Defaults/OpenGroupware.plist >/dev/null 2>&1
+		${INSTALL} -m 640 -o ${OGO_USER} -g ${OGO_GROUP}  files/OpenGroupware.plist.tmpl /compat/linux/opt/opengroupware.org/.libFoundation/Defaults/OpenGroupware.plist >/dev/null 2>&1
 	else
 		echo "OpenGroupware.plist is already in place!"
 	fi
@@ -80,9 +89,26 @@ COPY-TEMPLATES)
 	if [ ! -e /compat/linux/opt/opengroupware.org/.libFoundation/Defaults/ZideStore.plist ] 2>/dev/null; then
 		echo "ZideStore.plist not found..."
 		echo "thus I am using the one coming with the port."
-		cp files/ZideStore.plist.tmpl /compat/linux/opt/opengroupware.org/.libFoundation/Defaults/ZideStore.plist >/dev/null 2>&1
+		${INSTALL} -m 640 -o ${OGO_USER} -g ${OGO_GROUP} files/ZideStore.plist.tmpl /compat/linux/opt/opengroupware.org/.libFoundation/Defaults/ZideStore.plist >/dev/null 2>&1
 	else
 		echo "ZideStore.plist is already in place!"
 	fi
+
+	if [ ! -e /compat/linux/opt/opengroupware.org/.libFoundation/Defaults/xmlrpcd.plist ] 2>/dev/null; then
+		echo "xmlrpcd.plist not found..."
+		echo "thus I am using the one coming with the port."
+		${INSTALL} -m 640 -o ${OGO_USER} -g ${OGO_GROUP} files/xmlrpcd.plist.tmpl /compat/linux/opt/opengroupware.org/.libFoundation/Defaults/xmlrpcd.plist >/dev/null 2>&1
+	else
+		echo "xmlrpcd.plist is already in place!"
+	fi
+
+	if [ ! -e /compat/linux/opt/opengroupware.org/.libFoundation/Defaults/skyaptnotify.plist ] 2>/dev/null; then
+		echo "skyaptnotify.plist not found..."
+		echo "thus I am using the one coming with the port."
+		${INSTALL} -m 640 -o ${OGO_USER} -g ${OGO_GROUP} files/skyaptnotify.plist.tmpl /compat/linux/opt/opengroupware.org/.libFoundation/Defaults/skyaptnotify.plist >/dev/null 2>&1
+	else
+		echo "skyaptnotify.plist is already in place!"
+	fi
+
 	;;
 esac
