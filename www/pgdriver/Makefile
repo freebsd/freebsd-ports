@@ -13,8 +13,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jkoshy@freebsd.org
 
-BUILD_DEPENDS=	${LOCALBASE}/aolserver/bin/nsd:${PORTSDIR}/www/aolserver \
-		${LOCALBASE}/bin/postmaster:${PORTSDIR}/databases/postgresql7
+LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql7
+BUILD_DEPENDS=	${LOCALBASE}/aolserver/bin/nsd:${PORTSDIR}/www/aolserver
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAKEFILE=	makefile
