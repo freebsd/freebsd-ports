@@ -25,12 +25,6 @@ share/texmf/doc/latex/styles/preview.dvi
 %%EMACS_VERSION_SITE_LISPDIR%%/preview/prevwork.xbm
 %%EMACS_VERSION_SITE_LISPDIR%%/preview/prevwork.xpm
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/preview
-@unexec install-info --delete %D/info/preview-latex.info %D/info/dir
-info/preview-latex.info
-info/preview-latex.info-1
-info/preview-latex.info-2
-info/preview-latex.info-3
-@exec install-info %D/info/preview-latex.info %D/info/dir
 %%PORTDOCS%%share/doc/preview-latex/ChangeLog
 %%PORTDOCS%%share/doc/preview-latex/INSTALL
 %%PORTDOCS%%share/doc/preview-latex/PROBLEMS
