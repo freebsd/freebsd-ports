@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- configure.orig	Mon Mar 11 14:42:53 2002
-+++ configure	Tue Mar 12 16:33:49 2002
+--- configure.orig	Wed Mar 20 16:45:48 2002
++++ configure	Mon Mar 25 15:05:17 2002
 @@ -7189,9 +7189,9 @@
  
    rm -f conf.glibtest
@@ -15,22 +15,22 @@ $FreeBSD$
  
  for ac_prog in 'bison -y' byacc
  do
-@@ -9298,39 +9298,33 @@
+@@ -9037,9 +9037,11 @@
  
  fi
  
--if test "$cross_compiling" = yes; then
--  cat >>confdefs.h <<\EOF
--#define HAVE_LIMITED_WRITEV 1
--EOF
 +echo $ac_n "checking how many vectors writev is capable to handle""... $ac_c" 1>&6
 +echo "configure:3761: checking how many vectors writev is capable to handle" >&5
- 
-+if test "$cross_compiling" = yes; then
++
+ if test "$cross_compiling" = yes; then
+-  cat >>confdefs.h <<\EOF
+-#define HAVE_LIMITED_WRITEV 1
 +  MAXIOV=16
+ EOF
+ 
  else
-   cat >conftest.$ac_ext <<_ACEOF
- #line 9308 "configure"
+@@ -9047,29 +9049,23 @@
+ #line 9047 "configure"
  #include "confdefs.h"
  
 -#include <fcntl.h>
@@ -57,25 +57,24 @@ $FreeBSD$
 -	if(writev(fd, iovecs, NIOVECS) < 0)
 -		return 1;
 -
--	close(fd);
++	FILE *f;
++	int fd, i;
++	static struct iovec iovecs[4097];
++	if ((f = fopen("conftestval", "w")) == NULL || \
++	(fd = open("/dev/null", O_WRONLY)) < 0)
++		exit(1);
++	for (i = 1; i < 4098 && writev(fd, iovecs, i) >= 0; i++);
++	fprintf(f, "%d\n", i - 1);
++	fclose(f);
+ 	close(fd);
 -	return 0;
-+        FILE *f;
-+        int fd, i;
-+        static struct iovec iovecs[4097];
-+        if ((f = fopen("conftestval", "w")) == NULL || \
-+            (fd = open("/dev/null", O_WRONLY)) < 0)
-+                exit(1);
-+        for (i = 1; i < 4098 && writev(fd, iovecs, i) >= 0; i++);
-+        fprintf(f, "%d\n", i - 1);
-+        fclose(f);
-+        close(fd);
-+        exit(0);
++	exit(0);
  }
  
  _ACEOF
-@@ -9345,18 +9339,16 @@
+@@ -9084,18 +9080,16 @@
    ac_status=$?
-   echo "$as_me:9346: \$? = $ac_status" >&5
+   echo "$as_me:9085: \$? = $ac_status" >&5
    (exit $ac_status); }; }; then
 -  :
 +  MAXIOV=`cat conftestval`
@@ -95,7 +94,7 @@ $FreeBSD$
  
  #######################
  # type alignment test #
-@@ -10755,7 +10747,7 @@
+@@ -10493,7 +10487,7 @@
  s,@LIB_WRAP@,$LIB_WRAP,;t t
  s,@HAVE_HOSTS_ACCESS_TRUE@,$HAVE_HOSTS_ACCESS_TRUE,;t t
  s,@HAVE_HOSTS_ACCESS_FALSE@,$HAVE_HOSTS_ACCESS_FALSE,;t t
