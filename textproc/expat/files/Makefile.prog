@@ -1,0 +1,13 @@
+# $FreeBSD$
+
+PROG=		xmlwf
+SRCS=		xmlwf.c \
+		xmlfile.c \
+		codepage.c \
+		unixfilemap.c
+CFLAGS+=	-I${.CURDIR}/xmltok -I${.CURDIR}/xmlparse
+LDADD=		-L${.CURDIR} -lexpat
+NOMAN=		YES
+BINDIR=		${LOCALBASE}/bin
+
+.include <bsd.prog.mk>

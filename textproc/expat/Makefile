@@ -6,27 +6,34 @@
 #
 
 PORTNAME=	expat
-PORTVERSION= 	1.1
+PORTVERSION= 	1.2
 CATEGORIES=	textproc
-MASTER_SITES=	ftp://ftp.jclark.com/pub/xml/ \
-		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
-DISTNAME=	${PORTNAME}
+MASTER_SITES=	ftp://ftp.jclark.com/pub/xml/
 
-MAINTAINER=	dirk@FreeBSD.org
-
-USE_ZIP=	yes
+MAINTAINER=	knu@FreeBSD.org
 
 SHLIB_MAJOR=	1
 
+MAKEFILES=	Makefile.lib Makefile.prog
+MAKE_ARGS=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 
+do-build:
+.for f in ${MAKEFILES}
+	${CP} ${FILESDIR}/${f} ${WRKSRC}/
+.endfor
+	${MV} ${WRKSRC}/xmlwf/* ${WRKSRC}/
+	${RMDIR} ${WRKSRC}/xmlwf
+.for f in ${MAKEFILES}
+	@(cd ${WRKSRC}; \
+	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${f} ${MAKE_ARGS} ${ALL_TARGET})
+.endfor
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xmlwf/xmlwf ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/include/xml
-	${INSTALL_DATA} ${WRKSRC}/xmlparse/xmlparse.h ${PREFIX}/include/xml
-	${INSTALL_DATA} ${WRKSRC}/xmltok/xmltok.h ${PREFIX}/include/xml
-	${INSTALL_DATA} ${WRKSRC}/libexpat.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/libexpat.so ${PREFIX}/lib/libexpat.so.${SHLIB_MAJOR}
-	${LN} -s libexpat.so.${SHLIB_MAJOR} ${PREFIX}/lib/libexpat.so
+.for f in ${MAKEFILES}
+	@(cd ${WRKSRC}; \
+	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${f} ${MAKE_ARGS} ${INSTALL_TARGET})
+.endfor
 
 .include <bsd.port.mk>
