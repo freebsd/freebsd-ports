@@ -1,0 +1,11 @@
+--- Imakefile.orig	Wed Nov  1 07:26:10 2000
++++ Imakefile	Wed Nov  1 07:27:21 2000
+@@ -118,7 +118,7 @@
+ 
+ SYS_LIBRARIES = $(OTHERLIBS) $(XMLIB) $(XMULIB) $(XTOOLLIB) $(XEXTLIB) $(XLIB) 
+ 
+-ComplexProgramTarget(ml)
++ComplexProgramTargetNoMan(ml)
+ 
+ InstallAppDefaultsLong(../lib/ML,ML)
+ 
