@@ -1,0 +1,565 @@
+eclipse/features/org.eclipse.cdt_2.0.0/cpl-v10.html
+eclipse/features/org.eclipse.cdt_2.0.0/eclipse_update_120.jpg
+eclipse/features/org.eclipse.cdt_2.0.0/feature.properties
+eclipse/features/org.eclipse.cdt_2.0.0/feature.xml
+eclipse/features/org.eclipse.cdt_2.0.0/license.html
+eclipse/plugins/org.eclipse.cdt.core.linux_2.0.0/cdt_linux.jar
+eclipse/plugins/org.eclipse.cdt.core.linux_2.0.0/fragment.xml
+eclipse/plugins/org.eclipse.cdt.core.linux_2.0.0/os/linux/ppc/libpty.so
+eclipse/plugins/org.eclipse.cdt.core.linux_2.0.0/os/linux/ppc/libspawner.so
+eclipse/plugins/org.eclipse.cdt.core.linux_2.0.0/os/linux/x86/libpty.so
+eclipse/plugins/org.eclipse.cdt.core.linux_2.0.0/os/linux/x86/libspawner.so
+eclipse/plugins/org.eclipse.cdt.core_2.0.0/about.html
+eclipse/plugins/org.eclipse.cdt.core_2.0.0/cdtcore.jar
+eclipse/plugins/org.eclipse.cdt.core_2.0.0/cdtparser.jar
+eclipse/plugins/org.eclipse.cdt.core_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.cdt.core_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.cdt.core_2.0.0/template/cpp_headers
+eclipse/plugins/org.eclipse.cdt.debug.core_2.0.0/about.html
+eclipse/plugins/org.eclipse.cdt.debug.core_2.0.0/cdtdebugcore.jar
+eclipse/plugins/org.eclipse.cdt.debug.core_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.cdt.debug.core_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.cdt.debug.mi.core_2.0.0/about.html
+eclipse/plugins/org.eclipse.cdt.debug.mi.core_2.0.0/cdtmicore.jar
+eclipse/plugins/org.eclipse.cdt.debug.mi.core_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.cdt.debug.mi.core_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.cdt.debug.mi.ui_2.0.0/about.html
+eclipse/plugins/org.eclipse.cdt.debug.mi.ui_2.0.0/cdtmiui.jar
+eclipse/plugins/org.eclipse.cdt.debug.mi.ui_2.0.0/icons/full/clcl16/auto_solib_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.mi.ui_2.0.0/icons/full/dlcl16/auto_solib_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.mi.ui_2.0.0/icons/full/elcl16/auto_solib_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.mi.ui_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.cdt.debug.mi.ui_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/about.html
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/cdtdebugui.jar
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/clcl16/auto_refresh_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/clcl16/casttotype_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/clcl16/change_reg_value_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/clcl16/debugger_console.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/clcl16/disabled_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/clcl16/disassembly.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/clcl16/enabled_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/clcl16/instr_step.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/clcl16/jump_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/clcl16/load_all_symbols_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/clcl16/load_symbols_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/clcl16/memory_clear.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/clcl16/memory_update.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/clcl16/refresh_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/clcl16/restart.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/clcl16/runtoline_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/clcl16/show_ascii.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/clcl16/show_paths.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/clcl16/showasarray_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/clcl16/signal0_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/clcl16/signal_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/clcl16/tnames_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/clcl16/watch_globals.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/ctool16/adddirsource_wiz.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/ctool16/addprjsource_wiz.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/cview16/disassembly_view.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/cview16/memory_view.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/cview16/sharedlibraries_view.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/cview16/signals_view.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/dlcl16/auto_refresh_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/dlcl16/casttotype_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/dlcl16/change_reg_value_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/dlcl16/debugger_console.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/dlcl16/disabled_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/dlcl16/disassembly.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/dlcl16/enabled_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/dlcl16/instr_step.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/dlcl16/jump_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/dlcl16/load_all_symbols_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/dlcl16/load_symbols_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/dlcl16/memory_clear.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/dlcl16/memory_update.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/dlcl16/refresh_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/dlcl16/rem_all_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/dlcl16/rem_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/dlcl16/restart.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/dlcl16/runtoline_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/dlcl16/show_ascii.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/dlcl16/show_paths.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/dlcl16/showasarray_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/dlcl16/signal0_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/dlcl16/signal_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/dlcl16/tnames_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/dlcl16/watch_globals.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/dtool16/adddirsource_wiz.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/dtool16/addprjsource_wiz.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/dtool16/watch_exp.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/elcl16/auto_refresh_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/elcl16/casttotype_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/elcl16/change_reg_value_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/elcl16/debugger_console.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/elcl16/disabled_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/elcl16/disassembly.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/elcl16/enabled_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/elcl16/function_brkpt_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/elcl16/instr_step.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/elcl16/jump_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/elcl16/load_all_symbols_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/elcl16/load_symbols_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/elcl16/memory_clear.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/elcl16/memory_update.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/elcl16/refresh_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/elcl16/rem_all_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/elcl16/rem_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/elcl16/restart.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/elcl16/runtoline_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/elcl16/show_ascii.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/elcl16/show_parents.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/elcl16/showasarray_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/elcl16/signal0_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/elcl16/signal_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/elcl16/tnames_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/elcl16/watch_globals.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/elcl16/watchpoint_co.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/etool16/adddirsource_wiz.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/etool16/addprjsource_wiz.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/etool16/watch_exp.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/eview16/memory_view.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/eview16/sharedlibraries_view.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/eview16/signals_view.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/addrbrkp_obj.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/addrbrkpd_obj.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/brkp_obj.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/brkpd_obj.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/cproject_obj.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/disassembly_obj.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/expression_obj.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/ext_file_obj.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/filenotfound_obj.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/folder_obj.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/funbrkp_obj.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/funbrkpd_obj.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/inst_ptr.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/inst_ptr_top.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/library_obj.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/library_syms_obj.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/prj_file_obj.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/project_obj.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/read_obj.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/read_obj_disabled.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/readwrite_obj.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/readwrite_obj_disabled.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/register_obj.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/registergroup_obj.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/showpaths_obj.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/signal_obj.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/var_aggr.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/var_env.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/var_global.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/var_global_aggr.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/var_pointer.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/var_simple.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/var_simple_aggr.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/var_static.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/var_static_aggr.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/var_string.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/vard_aggr.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/vard_pointer.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/vard_simple.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/write_obj.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16/write_obj_disabled.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/ovr16/address_ovr.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/ovr16/address_ovr_disabled.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/ovr16/argument_ovr.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/ovr16/castarray_ovr.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/ovr16/casttype_ovr.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/ovr16/conditional_ovr.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/ovr16/conditional_ovr_disabled.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/ovr16/error_ovr.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/ovr16/function_ovr.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/ovr16/function_ovr_disabled.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/ovr16/global_ovr.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/ovr16/installed_ovr.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/ovr16/installed_ovr_disabled.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/ovr16/symbols_ovr.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/ovr16/warning_ovr.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/wizban/add_dir_source_location_wiz.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/wizban/add_prj_source_location_wiz.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/wizban/add_source_location_wiz.gif
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.cdt.doc.user_2.0.0/contexts_CDT.xml
+eclipse/plugins/org.eclipse.cdt.doc.user_2.0.0/contexts_CDT_DEBUGGER.xml
+eclipse/plugins/org.eclipse.cdt.doc.user_2.0.0/contexts_CDT_DEBUGGER_MI.xml
+eclipse/plugins/org.eclipse.cdt.doc.user_2.0.0/contexts_CDT_LAUNCH.xml
+eclipse/plugins/org.eclipse.cdt.doc.user_2.0.0/contexts_CDT_make.xml
+eclipse/plugins/org.eclipse.cdt.doc.user_2.0.0/doc.zip
+eclipse/plugins/org.eclipse.cdt.doc.user_2.0.0/help.css
+eclipse/plugins/org.eclipse.cdt.doc.user_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.cdt.doc.user_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.cdt.doc.user_2.0.0/toc.xml
+eclipse/plugins/org.eclipse.cdt.doc.user_2.0.0/topics_Concepts.xml
+eclipse/plugins/org.eclipse.cdt.doc.user_2.0.0/topics_Getting_Started.xml
+eclipse/plugins/org.eclipse.cdt.doc.user_2.0.0/topics_Reference.xml
+eclipse/plugins/org.eclipse.cdt.doc.user_2.0.0/topics_Tasks.xml
+eclipse/plugins/org.eclipse.cdt.launch_2.0.0/about.html
+eclipse/plugins/org.eclipse.cdt.launch_2.0.0/cdtlaunch.jar
+eclipse/plugins/org.eclipse.cdt.launch_2.0.0/icons/c_app.gif
+eclipse/plugins/org.eclipse.cdt.launch_2.0.0/icons/obj16/exec_obj.gif
+eclipse/plugins/org.eclipse.cdt.launch_2.0.0/icons/tabs/arguments_tab.gif
+eclipse/plugins/org.eclipse.cdt.launch_2.0.0/icons/tabs/debugger_tab.gif
+eclipse/plugins/org.eclipse.cdt.launch_2.0.0/icons/tabs/environment_tab.gif
+eclipse/plugins/org.eclipse.cdt.launch_2.0.0/icons/tabs/main_tab.gif
+eclipse/plugins/org.eclipse.cdt.launch_2.0.0/icons/tabs/source_tab.gif
+eclipse/plugins/org.eclipse.cdt.launch_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.cdt.launch_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.cdt.make.core_2.0.0/about.html
+eclipse/plugins/org.eclipse.cdt.make.core_2.0.0/builtin/gnu.mk
+eclipse/plugins/org.eclipse.cdt.make.core_2.0.0/builtin/posix.mk
+eclipse/plugins/org.eclipse.cdt.make.core_2.0.0/cdtmakecore.jar
+eclipse/plugins/org.eclipse.cdt.make.core_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.cdt.make.core_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/about.html
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/cdtmakeui.jar
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/actions/build_menu.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/ctool16/alphab_sort_co.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/ctool16/convert-normal.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/ctool16/make.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/ctool16/makefile.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/ctool16/newc_app.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/ctool16/newcc_app.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/ctool16/segment_edit.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/ctool16/target_add.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/ctool16/target_build.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/ctool16/target_delete.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/ctool16/target_edit.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/ctool16/update_old.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/cview16/make_target.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/dtool16/alphab_sort_co.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/dtool16/segment_edit.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/dtool16/target_add.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/dtool16/target_build.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/dtool16/target_delete.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/dtool16/target_edit.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/etool16/alphab_sort_co.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/etool16/segment_edit.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/etool16/target_add.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/etool16/target_build.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/etool16/target_delete.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/etool16/target_edit.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/obj16/command_obj.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/obj16/error_obj.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/obj16/include_obj.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/obj16/irule_obj.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/obj16/macro_obj.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/obj16/relation_obj.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/obj16/target_obj.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/obj16/trule_obj.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/wizban/newcprj_wiz.gif
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.cdt.managedbuilder.core_2.0.0/about.html
+eclipse/plugins/org.eclipse.cdt.managedbuilder.core_2.0.0/mngbuildcore.jar
+eclipse/plugins/org.eclipse.cdt.managedbuilder.core_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.cdt.managedbuilder.core_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.cdt.managedbuilder.ui_2.0.0/about.html
+eclipse/plugins/org.eclipse.cdt.managedbuilder.ui_2.0.0/icons/full/build16/action-buildconfig.gif
+eclipse/plugins/org.eclipse.cdt.managedbuilder.ui_2.0.0/icons/full/build16/action-deleteconfig.gif
+eclipse/plugins/org.eclipse.cdt.managedbuilder.ui_2.0.0/icons/full/build16/action-editconfig.gif
+eclipse/plugins/org.eclipse.cdt.managedbuilder.ui_2.0.0/icons/full/build16/action-newconfig.gif
+eclipse/plugins/org.eclipse.cdt.managedbuilder.ui_2.0.0/icons/full/build16/build_configs.gif
+eclipse/plugins/org.eclipse.cdt.managedbuilder.ui_2.0.0/icons/full/build16/config-category.gif
+eclipse/plugins/org.eclipse.cdt.managedbuilder.ui_2.0.0/icons/full/build16/config-compiler.gif
+eclipse/plugins/org.eclipse.cdt.managedbuilder.ui_2.0.0/icons/full/build16/config-debug.gif
+eclipse/plugins/org.eclipse.cdt.managedbuilder.ui_2.0.0/icons/full/build16/config-librarian.gif
+eclipse/plugins/org.eclipse.cdt.managedbuilder.ui_2.0.0/icons/full/build16/config-linker.gif
+eclipse/plugins/org.eclipse.cdt.managedbuilder.ui_2.0.0/icons/full/build16/config-preprocessor.gif
+eclipse/plugins/org.eclipse.cdt.managedbuilder.ui_2.0.0/icons/full/build16/config-profile.gif
+eclipse/plugins/org.eclipse.cdt.managedbuilder.ui_2.0.0/icons/full/build16/config-release.gif
+eclipse/plugins/org.eclipse.cdt.managedbuilder.ui_2.0.0/icons/full/build16/config-tool.gif
+eclipse/plugins/org.eclipse.cdt.managedbuilder.ui_2.0.0/icons/full/list/list-add.gif
+eclipse/plugins/org.eclipse.cdt.managedbuilder.ui_2.0.0/icons/full/list/list-delete.gif
+eclipse/plugins/org.eclipse.cdt.managedbuilder.ui_2.0.0/icons/full/list/list-edit.gif
+eclipse/plugins/org.eclipse.cdt.managedbuilder.ui_2.0.0/icons/full/list/list-movedown.gif
+eclipse/plugins/org.eclipse.cdt.managedbuilder.ui_2.0.0/icons/full/list/list-moveup.gif
+eclipse/plugins/org.eclipse.cdt.managedbuilder.ui_2.0.0/icons/full/wizban/newmngc_app.gif
+eclipse/plugins/org.eclipse.cdt.managedbuilder.ui_2.0.0/icons/full/wizban/newmngcc_app.gif
+eclipse/plugins/org.eclipse.cdt.managedbuilder.ui_2.0.0/mgdbuildui.jar
+eclipse/plugins/org.eclipse.cdt.managedbuilder.ui_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.cdt.managedbuilder.ui_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/about.html
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/cdtui.jar
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/build16/action-buildconfig.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/build16/action-deleteconfig.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/build16/action-editconfig.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/build16/action-newconfig.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/build16/build_configs.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/build16/config-category.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/build16/config-compiler.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/build16/config-debug.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/build16/config-librarian.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/build16/config-linker.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/build16/config-preprocessor.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/build16/config-profile.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/build16/config-release.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/build16/config-tool.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/clcl16/alphab_sort_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/clcl16/clear_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/clcl16/collapseall.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/clcl16/fields_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/clcl16/lock_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/clcl16/metharg_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/clcl16/open_incl.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/clcl16/public_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/clcl16/refresh_nav.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/clcl16/search_sortmatch.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/clcl16/segment_edit.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/clcl16/shift_l_edit.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/clcl16/shift_r_edit.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/clcl16/static_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/clcl16/synced.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/ctool16/convert-normal.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/ctool16/newc_app.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/ctool16/newc_lib.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/ctool16/newcc_app.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/ctool16/newcc_lib.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/ctool16/newclass_wiz.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/ctool16/newcprj_wiz.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/ctool16/newfile_wiz.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/ctool16/newfolder_wiz.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/ctool16/next_error_nav.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/ctool16/prev_error_nav.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/ctool16/prj_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/ctool16/prop_edt.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/cview16/buildconsole.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/cview16/c_pers.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/cview16/cbrowsing_pers.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/cview16/cview.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/dlcl16/alphab_sort_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/dlcl16/clear_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/dlcl16/collapseall.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/dlcl16/fields_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/dlcl16/lock_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/dlcl16/metharg_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/dlcl16/open_incl.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/dlcl16/public_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/dlcl16/refresh_nav.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/dlcl16/segment_edit.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/dlcl16/shift_l_edit.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/dlcl16/shift_r_edit.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/dlcl16/static_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/dlcl16/synced.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/dtool16/newclass_wiz.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/dtool16/newcprj_wiz.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/dtool16/newfile_wiz.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/dtool16/next_error_nav.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/dtool16/prev_error_nav.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/elcl16/alphab_sort_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/elcl16/clear_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/elcl16/collapseall.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/elcl16/fields_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/elcl16/lock_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/elcl16/metharg_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/elcl16/open_incl.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/elcl16/public_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/elcl16/refresh_nav.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/elcl16/segment_edit.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/elcl16/shift_l_edit.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/elcl16/shift_r_edit.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/elcl16/static_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/elcl16/synced.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/etool16/newclass_wiz.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/etool16/newcprj_wiz.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/etool16/newfile_wiz.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/etool16/next_error_nav.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/etool16/prev_error_nav.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/eview16/buildconsole.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/eview16/c_pers.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/eview16/cbrowsing_pers.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/eview16/cprojects.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/eview16/members.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/eview16/namespaces.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/eview16/types.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/ar_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/bin_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/breakpoint.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/breakpoint_active.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/breakpoint_disabled.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/build_menu.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/c_file_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/c_resource_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/cdeclaration_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/cfolder_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/change.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/class_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/composite_change.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/container_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/core_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/cp_order_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/cprojects.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/csearch_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/cu_change.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/define_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/enum_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/enumerator_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/error_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/exclusion_filter_attrib.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/exec_dbg_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/exec_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/fatalerror_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/field_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/field_private_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/field_protected_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/field_public_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/file_change.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/fldr_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/function_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/h_file_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/hfolder_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/include_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/includes_container.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/info_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/keyword_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/lib_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/method_private_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/method_protected_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/method_public_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/namespace_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/output_folder_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/output_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/quickfix_error_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/quickfix_warning_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/s_file_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/search_decl_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/search_ref_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/search_sortmatch.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/shlib_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/source_attach_attrib.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/sroot_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/struct_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/template_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/text_edit.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/typedef_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/union_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/unknown_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/unknown_type_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/var_declaration_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/variable_local_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/variable_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16/warning_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/opentype16/opentype.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/ovr16/c_ovr.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/ovr16/error_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/ovr16/path_inherit_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/ovr16/static_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/ovr16/template_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/ovr16/volatile_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/ovr16/warning_co.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/wizban/addpath_wiz.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/wizban/c_app_wiz.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/wizban/fieldrefact_wiz.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/wizban/methrefact_wiz.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/wizban/newclass_wiz.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/wizban/newcprj_wiz.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/wizban/newmngc_app.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/wizban/newmngcc_app.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/wizban/prj_obj.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/wizban/typerefact_wiz.gif
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.cdt.ui_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.cdt_2.0.0/about.html
+eclipse/plugins/org.eclipse.cdt_2.0.0/about.ini
+eclipse/plugins/org.eclipse.cdt_2.0.0/about.mappings
+eclipse/plugins/org.eclipse.cdt_2.0.0/about.properties
+eclipse/plugins/org.eclipse.cdt_2.0.0/cheatsheets/HelloWorld.xml
+eclipse/plugins/org.eclipse.cdt_2.0.0/cpl-v10.html
+eclipse/plugins/org.eclipse.cdt_2.0.0/css/graphics/obj_48/capp_obj.gif
+eclipse/plugins/org.eclipse.cdt_2.0.0/css/graphics/obj_48/capphov_obj.gif
+eclipse/plugins/org.eclipse.cdt_2.0.0/css/graphics/obj_48/cdtdev_obj.gif
+eclipse/plugins/org.eclipse.cdt_2.0.0/css/graphics/obj_48/cdtdevhov_obj.gif
+eclipse/plugins/org.eclipse.cdt_2.0.0/css/overview.css
+eclipse/plugins/org.eclipse.cdt_2.0.0/css/swt.properties
+eclipse/plugins/org.eclipse.cdt_2.0.0/eclipse32.gif
+eclipse/plugins/org.eclipse.cdt_2.0.0/notice.html
+eclipse/plugins/org.eclipse.cdt_2.0.0/overviewExtensionContent.xml
+eclipse/plugins/org.eclipse.cdt_2.0.0/plugin.properties
+eclipse/plugins/org.eclipse.cdt_2.0.0/plugin.xml
+eclipse/plugins/org.eclipse.cdt_2.0.0/samplesExtensionContent.xml
+eclipse/plugins/org.eclipse.cdt_2.0.0/tutorialsExtensionContent.xml
+eclipse/plugins/org.eclipse.cdt_2.0.0/whatsNewExtensionContent.xml
+share/nls/POSIX
+share/nls/en_US.US-ASCII
+%%WITH_GTK%%@dirrm etc/gconf/gconf.xml.defaults
+%%WITH_GTK%%@dirrm etc/gconf
+@dirrm eclipse/plugins/org.eclipse.cdt_2.0.0/css/graphics/obj_48
+@dirrm eclipse/plugins/org.eclipse.cdt_2.0.0/css/graphics
+@dirrm eclipse/plugins/org.eclipse.cdt_2.0.0/css
+@dirrm eclipse/plugins/org.eclipse.cdt_2.0.0/cheatsheets
+@dirrm eclipse/plugins/org.eclipse.cdt_2.0.0
+@dirrm eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/wizban
+@dirrm eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/ovr16
+@dirrm eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/opentype16
+@dirrm eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/obj16
+@dirrm eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/eview16
+@dirrm eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/etool16
+@dirrm eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/elcl16
+@dirrm eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/dtool16
+@dirrm eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/dlcl16
+@dirrm eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/cview16
+@dirrm eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/ctool16
+@dirrm eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/clcl16
+@dirrm eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full/build16
+@dirrm eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons/full
+@dirrm eclipse/plugins/org.eclipse.cdt.ui_2.0.0/icons
+@dirrm eclipse/plugins/org.eclipse.cdt.ui_2.0.0
+@dirrm eclipse/plugins/org.eclipse.cdt.managedbuilder.ui_2.0.0/icons/full/wizban
+@dirrm eclipse/plugins/org.eclipse.cdt.managedbuilder.ui_2.0.0/icons/full/list
+@dirrm eclipse/plugins/org.eclipse.cdt.managedbuilder.ui_2.0.0/icons/full/build16
+@dirrm eclipse/plugins/org.eclipse.cdt.managedbuilder.ui_2.0.0/icons/full
+@dirrm eclipse/plugins/org.eclipse.cdt.managedbuilder.ui_2.0.0/icons
+@dirrm eclipse/plugins/org.eclipse.cdt.managedbuilder.ui_2.0.0
+@dirrm eclipse/plugins/org.eclipse.cdt.managedbuilder.core_2.0.0
+@dirrm eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/wizban
+@dirrm eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/obj16
+@dirrm eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/etool16
+@dirrm eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/dtool16
+@dirrm eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/cview16
+@dirrm eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/ctool16
+@dirrm eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons/actions
+@dirrm eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0/icons
+@dirrm eclipse/plugins/org.eclipse.cdt.make.ui_2.0.0
+@dirrm eclipse/plugins/org.eclipse.cdt.make.core_2.0.0/builtin
+@dirrm eclipse/plugins/org.eclipse.cdt.make.core_2.0.0
+@dirrm eclipse/plugins/org.eclipse.cdt.launch_2.0.0/icons/tabs
+@dirrm eclipse/plugins/org.eclipse.cdt.launch_2.0.0/icons/obj16
+@dirrm eclipse/plugins/org.eclipse.cdt.launch_2.0.0/icons
+@dirrm eclipse/plugins/org.eclipse.cdt.launch_2.0.0
+@dirrm eclipse/plugins/org.eclipse.cdt.doc.user_2.0.0
+@dirrm eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/wizban
+@dirrm eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/ovr16
+@dirrm eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/obj16
+@dirrm eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/eview16
+@dirrm eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/etool16
+@dirrm eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/elcl16
+@dirrm eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/dtool16
+@dirrm eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/dlcl16
+@dirrm eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/cview16
+@dirrm eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/ctool16
+@dirrm eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full/clcl16
+@dirrm eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons/full
+@dirrm eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0/icons
+@dirrm eclipse/plugins/org.eclipse.cdt.debug.ui_2.0.0
+@dirrm eclipse/plugins/org.eclipse.cdt.debug.mi.ui_2.0.0/icons/full/elcl16
+@dirrm eclipse/plugins/org.eclipse.cdt.debug.mi.ui_2.0.0/icons/full/dlcl16
+@dirrm eclipse/plugins/org.eclipse.cdt.debug.mi.ui_2.0.0/icons/full/clcl16
+@dirrm eclipse/plugins/org.eclipse.cdt.debug.mi.ui_2.0.0/icons/full
+@dirrm eclipse/plugins/org.eclipse.cdt.debug.mi.ui_2.0.0/icons
+@dirrm eclipse/plugins/org.eclipse.cdt.debug.mi.ui_2.0.0
+@dirrm eclipse/plugins/org.eclipse.cdt.debug.mi.core_2.0.0
+@dirrm eclipse/plugins/org.eclipse.cdt.debug.core_2.0.0
+@dirrm eclipse/plugins/org.eclipse.cdt.core_2.0.0/template
+@dirrm eclipse/plugins/org.eclipse.cdt.core_2.0.0
+@dirrm eclipse/plugins/org.eclipse.cdt.core.linux_2.0.0/os/linux/x86
+@dirrm eclipse/plugins/org.eclipse.cdt.core.linux_2.0.0/os/linux/ppc
+@dirrm eclipse/plugins/org.eclipse.cdt.core.linux_2.0.0/os/linux
+@dirrm eclipse/plugins/org.eclipse.cdt.core.linux_2.0.0/os
+@dirrm eclipse/plugins/org.eclipse.cdt.core.linux_2.0.0
+@dirrm eclipse/plugins
+@dirrm eclipse/features/org.eclipse.cdt_2.0.0
+@dirrm eclipse/features
+@dirrm eclipse
