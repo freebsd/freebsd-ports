@@ -1,0 +1,52 @@
+bin/kebook
+share/applnk/Utilities/kebook.kdelnk
+share/apps/kebook/pics/config-search.xpm
+share/apps/kebook/pics/copyright_btn.xpm
+share/apps/kebook/pics/dictionaries.xpm
+share/apps/kebook/pics/keyboard.xpm
+share/apps/kebook/pics/match-exactly.xpm
+share/apps/kebook/pics/match-head.xpm
+share/apps/kebook/pics/match-tail.xpm
+share/apps/kebook/pics/menu_btn.xpm
+share/doc/HTML/en/kebook/commands.html
+share/doc/HTML/en/kebook/common/logotp3.png
+share/doc/HTML/en/kebook/compilation.html
+share/doc/HTML/en/kebook/configuration.html
+share/doc/HTML/en/kebook/credits.html
+share/doc/HTML/en/kebook/faq.html
+share/doc/HTML/en/kebook/index.html
+share/doc/HTML/en/kebook/installation.html
+share/doc/HTML/en/kebook/introduction.html
+share/doc/HTML/en/kebook/kde.css
+share/doc/HTML/en/kebook/requirements.html
+share/doc/HTML/en/kebook/using-kebook.html
+share/doc/HTML/ja/kebook/commands.html
+share/doc/HTML/ja/kebook/common/logotp3.png
+share/doc/HTML/ja/kebook/compilation.html
+share/doc/HTML/ja/kebook/configuration.html
+share/doc/HTML/ja/kebook/credits.html
+share/doc/HTML/ja/kebook/faq.html
+share/doc/HTML/ja/kebook/index.html
+share/doc/HTML/ja/kebook/installation.html
+share/doc/HTML/ja/kebook/introduction.html
+share/doc/HTML/ja/kebook/kde.css
+share/doc/HTML/ja/kebook/requirements.html
+share/doc/HTML/ja/kebook/using-kebook.html
+share/icons/kebook.xpm
+share/icons/mini/kebook.xpm
+share/locale/ja/LC_MESSAGES/kebook.mo
+%%DOCDIR%%/AUTHORS
+%%DOCDIR%%/COPYING
+%%DOCDIR%%/ChangeLog
+%%DOCDIR%%/INSTALL
+%%DOCDIR%%/INSTALL.euc-jp
+%%DOCDIR%%/NEWS
+%%DOCDIR%%/README
+%%DOCDIR%%/README.euc-jp
+@dirrm %%DOCDIR%%
+@dirrm share/apps/kebook/pics
+@dirrm share/apps/kebook
+@dirrm share/doc/HTML/en/kebook/common
+@dirrm share/doc/HTML/en/kebook
+@dirrm share/doc/HTML/ja/kebook/common
+@dirrm share/doc/HTML/ja/kebook
