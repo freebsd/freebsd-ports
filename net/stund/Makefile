@@ -20,8 +20,14 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GMAKE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/server ${LOCALBASE}/sbin/stund
 	${INSTALL_PROGRAM} ${WRKSRC}/client ${LOCALBASE}/bin/stun_client
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
