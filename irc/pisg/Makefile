@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pisg
-PORTVERSION=	0.49
+PORTVERSION=	0.50
 CATEGORIES=	irc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -38,6 +38,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/modules/Pisg/Parser/*.pm ${SITE_PERL}/Pisg/Parser
 	${INSTALL_DATA} ${WRKSRC}/modules/Pisg/Parser/Format/*.pm ${SITE_PERL}/Pisg/Parser/Format
 	${INSTALL_SCRIPT} ${WRKSRC}/pisg ${PREFIX}/bin
+
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/pisg-doc.txt ${DOCSDIR}/pisg-doc.txt
+.endif
 
 post-install:
 .if !defined(BATCH)
