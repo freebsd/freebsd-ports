@@ -1,12 +1,12 @@
 # New ports collection makefile for:	wmpccard
-# Version required:		1.3
 # Date created:			00/02/5
 # Whom:				Satoshi Taoka <taoka@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	wmpccard-1.3
+PORTNAME=	wmpccard
+PORTVERSION= 	1.3
 CATEGORIES=	misc windowmaker
 MASTER_SITES=	http://www.sra.co.jp/people/m-kasahr/wmpccard/src/
 

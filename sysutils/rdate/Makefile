@@ -1,12 +1,12 @@
 # New ports collection makefile for: rdate
-# Version required:     ....
 # Date created:         19980128
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
 # $FreeBSD$
 #
 
-DISTNAME=	rdate-1.0
+PORTNAME=	rdate
+PORTVERSION= 	1.0
 CATEGORIES=     sysutils
 MASTER_SITES=   http://www2.cons.org:8000/freebsd-distfiles/ \
 		http://people.FreeBSD.org/~cracauer/freebsd-distfiles/

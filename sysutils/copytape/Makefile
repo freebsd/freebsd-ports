@@ -1,16 +1,16 @@
 # New ports collection makefile for: copytape
-# Version required:	1.0
 # Date created:		23 October 1998
 # Whom:			Stephen J. Roznowski <sjr@home.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=		copytape
-PKGNAME=		copytape-1.0
+PORTNAME=		copytape
+PORTVERSION= 		1.0
 CATEGORIES=		sysutils
 MASTER_SITES=		${MASTER_SITE_COMP_SOURCES}
 MASTER_SITE_SUBDIR=	unix/volume10
+DISTNAME=		copytape
 EXTRACT_SUFX=		.Z
 
 MAINTAINER=		ports@FreeBSD.org

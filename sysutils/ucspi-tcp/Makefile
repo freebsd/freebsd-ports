@@ -1,12 +1,12 @@
 # New ports collection makefile for:	ucspi-tcp
-# Version required:     0.84
 # Date created:		12 June 1998
 # Whom:			Dom Mitchell <dom@myrddin.demon.co.uk>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ucspi-tcp-0.84
+PORTNAME=	ucspi-tcp
+PORTVERSION= 	0.84
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://cr.yp.to/software/
 

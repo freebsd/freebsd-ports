@@ -1,11 +1,12 @@
 # New ports collection makefile for:    stat
-# Version required:     1.3
 # Date created:         16 Februar 1996
 # Whom:                 wosch
 #
 # $FreeBSD$
+#
 
-DISTNAME=       stat-1.3
+PORTNAME=	stat
+PORTVERSION= 	1.3
 CATEGORIES=	sysutils
 MASTER_SITES=   http://www.de.freebsd.org/~wosch/src/
 

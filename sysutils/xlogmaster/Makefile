@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xlogmaster
-# Version required:	1.6.0
 # Date created:		1 August 1998
 # Whom:			Adrian Wontroba <aw1@stade.co.uk>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xlogmaster-1.6.0
+PORTNAME=	xlogmaster
+PORTVERSION= 	1.6.0
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://sunsite.doc.ic.ac.uk/packages/gnu/\
 		${MASTER_SITE_GNU}\

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	bchunk
-# Version required:		1.0.0
 # Date created:			9 Jan 1999
 # Whom:				bsdx
 #
 # $FreeBSD$
 #
 
-DISTNAME=	bchunk-1.0.0
+PORTNAME=	bchunk
+PORTVERSION= 	1.0.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://hes.iki.fi/bchunk/ \
 		${MASTER_SITE_SUNSITE}

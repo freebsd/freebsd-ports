@@ -1,14 +1,14 @@
 # New ports collection makefile for:	asfsm
-# Version required:	asfsm-1.0pre15
 # Date created:		4 June 1999
 # Whom:				jack
 #
 # $FreeBSD$
 
-DISTNAME=	asfsm-1.0pre15
-PKGNAME=	asfsm-1.0p15
+PORTNAME=	asfsm
+PORTVERSION=	1.0.p15
 CATEGORIES=	sysutils afterstep
 MASTER_SITES=	http://www.tigr.net/afterstep/as-apps/download/asfsm/
+DISTNAME=	asfsm-1.0pre15
 
 MAINTAINER=	jack@germanium.xtalwind.net
 

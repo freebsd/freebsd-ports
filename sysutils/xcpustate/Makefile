@@ -1,13 +1,13 @@
 # ex:ts=8
 # Ports collection makefile for:  xcpustate
-# Version required: 0.0
 # Date created:			  31-Dec-1995
 # Whom:				  David O'Brien <obrien@cs.ucdavis.edu>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xcpustate-2.5
+PORTNAME=	xcpustate
+PORTVERSION= 	2.5
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/jdd/xcpustate/  \
 		${MASTER_SITE_XCONTRIB}

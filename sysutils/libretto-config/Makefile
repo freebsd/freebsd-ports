@@ -1,30 +1,29 @@
 # New ports collection makefile for:	libretto-config
-# Version required:	1.0
 # Date created:		19 Nov 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	libapm-linux-1.0beta5
-PKGNAME=	${PROGRAM_NAME}-1.0b5
+PORTNAME=	libretto-config
+PORTVERSION=	1.0.b5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://club.pep.ne.jp/~ishioka/Software/Linux/libapm/
+DISTNAME=	libapm-linux-1.0beta5
 
 MAINTAINER=	shige@FreeBSD.org
 
 ONLY_FOR_ARCHS=	i386
 
 WRKSRC=		${WRKDIR}/libapm
-PROGRAM_NAME=	libretto-config
-DOCDIR=		${PREFIX}/share/doc/${PROGRAM_NAME}
+DOCDIR=		${PREFIX}/share/doc/${PORT_NAME}
 
-MAN8=		${PROGRAM_NAME}.8
+MAN8=		${PORT_NAME}.8
 MANLANG=	. ja
 
 post-install:
 # install japanese manpage also :-)
-	@${INSTALL_MAN} ${WRKSRC}/libapm-j.man ${PREFIX}/man/ja/man8/${PROGRAM_NAME}.8
+	@${INSTALL_MAN} ${WRKSRC}/libapm-j.man ${PREFIX}/man/ja/man8/${PORT_NAME}.8
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README-e.1st ${DOCDIR}/README.1st

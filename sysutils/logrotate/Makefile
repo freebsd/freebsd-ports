@@ -1,12 +1,12 @@
 # New ports collection makefile for:	logrotate
-# Version required:			3.3
 # Date Created:				29 Dec 1999
 # Whom:					Yuan-Chen Cheng <ycheng@sinica.edu.tw>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	logrotate-3.3
+PORTNAME=	logrotate
+PORTVERSION=	3.3
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.redhat.com/pub/redhat/current/SRPMS/SRPMS/ \
 		ftp://ftp.cdrom.com/pub/linux/redhat/current/SRPMS/SRPMS/

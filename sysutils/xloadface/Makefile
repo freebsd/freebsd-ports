@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xloadface
-# Version required:	1.6.1
 # Date created:		4 February 1998
 # Whom:			FURUSAWA,Kazuhisa <kazu@jp.freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xloadface-1.6.1
+PORTNAME=	xloadface
+PORTVERSION= 	1.6.1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.waseda.ac.jp/pub/X11others/
 

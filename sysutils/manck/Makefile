@@ -1,12 +1,12 @@
 # New ports collection makefile for:    manck
-# Version required:     1.0
 # Date created:         10 September 1995
 # Whom:                 joerg
 #
 # $FreeBSD$
 #
 
-DISTNAME=       manck-1.2
+PORTNAME=	manck
+PORTVERSION= 	1.2
 CATEGORIES=	sysutils
 MASTER_SITES=   http://www.de.freebsd.org/~wosch/src/
 

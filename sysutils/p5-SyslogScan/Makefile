@@ -1,16 +1,16 @@
 # New ports collection makefile for:    p5-SyslogScan
-# Version required:		0.32
 # Date created:			26 December 1999
 # Whom:	      			Dmitry Sivachenko <dima@Chg.RU>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	SyslogScan-0.32
-PKGNAME=	p5-SyslogScan-0.32
+PORTNAME=	p5-SyslogScan
+PORTVERSION= 	0.32
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	SyslogScan
+DISTNAME=	SyslogScan-${PORTVERSION}
 
 MAINTAINER=	dima@Chg.RU
 

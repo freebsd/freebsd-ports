@@ -1,17 +1,17 @@
 # New ports collection makefile for:	mkisofs
-# Version required:	1.12 (from cdrecord-1.8)
 # Date created:		07 Aug 1996
 # Whom:			jhk
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cdrecord-1.8
-PKGNAME=	mkisofs-1.12
+PORTNAME=	mkisofs
+PORTVERSION= 	1.12
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/cdrecord/ \
 		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/
+DISTNAME=	cdrecord-1.8
 
 MAINTAINER=	dirk@FreeBSD.org
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	asfsm
-# Version required:	asmon-0.60
 # Date created:		27 Sep 1999
 # Whom:			jack
 #
 # $FreeBSD$
 #
 
-DISTNAME=	asmon-0.60
+PORTNAME=	asmon
+PORTVERSION= 	0.60
 CATEGORIES=	sysutils afterstep
 MASTER_SITES=	ftp://ftp.afterstep.org/apps/asmon/ \
 		http://www.tigr.net/afterstep/as-apps/download/asmon/

@@ -1,12 +1,12 @@
 # New ports collection makefile for:   wmhm
-# Version required:    1.42
 # Date created:        21 September 1999
 # Whom:                Mike Muir <mmuir@es.co.nz>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	wmhm-1.42
+PORTNAME=	wmhm
+PORTVERSION= 	1.42
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://www.es.co.nz/~mmuir/ \
 		http://muir.dhis.net/wmhm/

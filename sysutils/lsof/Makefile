@@ -1,14 +1,13 @@
 # ex:ts=8
 # Ports collection makefile for:  lsof
-# Version required: 0.0
 # Date created:			  Sat July 20, 1996
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	lsof_4.49_W
-PKGNAME=	lsof-4.49
+PORTNAME=	lsof
+PORTVERSION= 	4.49
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/NEW/ \
@@ -16,6 +15,7 @@ MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://ftp.auscert.org.au/pub/mirrors/vic.cc.purdue.edu/lsof/  \
 		ftp://ftp.web.ad.jp/pub/UNIX/tools/lsof/  \
 		ftp://ftp.sunet.se/pub/unix/admin/lsof/
+DISTNAME=	${PORTNAME}_${PORTVERSION}_W
 
 MAINTAINER=	obrien@FreeBSD.org
 

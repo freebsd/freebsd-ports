@@ -1,12 +1,12 @@
 # New ports collection makefile for:	asapm
-# Version required:	2.7
 # Date created:		6 Aug 1998
 # Whom:			Brian Handy <handy@physics.montana.edu>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	asapm-2.7
+PORTNAME=	asapm
+PORTVERSION= 	2.7
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.afterstep.org/apps/asapm/ \
 		http://www.tigr.net/afterstep/as-apps/download/asapm/

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gkrellm
-# Version required:	0.9.7
 # Date Created:		Mar 4 2000
 # Whom:			Hajimu UMEMOTO <ume@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gkrellm-0.9.7
+PORTNAME=	gkrellm
+PORTVERSION= 	0.9.7
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://web.wt.net/~billw/gkrellm/ \
 		http://people.FreeBSD.org/~ume/gkrellm/

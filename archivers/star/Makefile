@@ -1,12 +1,12 @@
 # New ports collection makefile for:	star
-# Version required: 0.0
 # Date created:		Thu May  1 20:28:44 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=		star-1.2
+PORTNAME=		star
+PORTVERSION= 		1.2
 CATEGORIES=		sysutils
 MASTER_SITES=		ftp://ftp.fokus.gmd.de/pub/unix/star/ \
 			${MASTER_SITE_SUNSITE}

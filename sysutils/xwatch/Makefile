@@ -1,12 +1,12 @@
 # New ports collection makefile for:   	xwatch
-# Version required:			0.1.0
 # Date created:				17 July 1998
 # Whom:					mph
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xwatch-0.1.0
+PORTNAME=	xwatch
+PORTVERSION= 	0.1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://hem.passagen.se/osk/
 
