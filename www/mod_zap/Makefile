@@ -7,19 +7,23 @@
 
 PORTNAME=	mod_zap
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.indexdata.dk/pub/zap/
 DISTNAME=	zap-${PORTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
+BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13 \
+		${LOCALBASE}/bin/tclsh8.3:${PORTSDIR}/lang/tcl83
 LIB_DEPENDS=	yaz.1:${PORTSDIR}/net/yaz
-RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
+RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13 \
+		${LOCALBASE}/bin/tclsh8.3:${PORTSDIR}/lang/tcl83
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-yazconfig=${LOCALBASE}/bin \
-		--with-apxs=${LOCALBASE}/sbin/apxs
+		--with-apxs=${LOCALBASE}/sbin/apxs \
+		--with-tclconfig=${LOCALBASE}/lib/tcl8.3
 
 post-install:
 		@${MKDIR} ${PREFIX}/share/mod_zap
