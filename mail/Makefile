@@ -32,6 +32,7 @@
     SUBDIR += hbiff
     SUBDIR += im
     SUBDIR += imap-uw
+    SUBDIR += junkfilter
     SUBDIR += kbiff
     SUBDIR += knewmail
     SUBDIR += lbdb

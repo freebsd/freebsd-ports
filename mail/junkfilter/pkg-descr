@@ -1,0 +1,16 @@
+junkfilter is a set of interlaced procmail scripts whose purpose is
+to filter spam, or junk email.  It requires nothing other than 
+procmail, and takes no overt action upon classifying a message.  All
+action is left up to the user, although examples are provided.
+
+Modules include:
+	numerous header checks
+	a phrase checker for the message body
+	an address filter
+	a dialup filter
+	a domain filter
+	an IP filter
+
+WWW: http://junkfilter.zer0.org/
+
+-Greg <gsutter@zer0.org>
