@@ -5,6 +5,7 @@
     SUBDIR += Wnn
     SUBDIR += acroread-chsfont
     SUBDIR += acroread-chtfont
+    SUBDIR += arphicttf
     SUBDIR += aterm
     SUBDIR += bg5ps
     SUBDIR += big5con
