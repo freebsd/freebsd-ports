@@ -9,7 +9,7 @@ PORTNAME=	gnomeprint
 PORTVERSION=	0.37
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-print/0.36
+MASTER_SITE_SUBDIR=	sources/gnome-print/0.37
 DISTNAME=	gnome-print-${PORTVERSION}
 DIST_SUBDIR=	gnome
 
