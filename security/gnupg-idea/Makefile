@@ -7,6 +7,7 @@
 
 PORTNAME=	gnupg-rsa
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=   ftp://ftp.gnupg.org/pub/gcrypt/contrib/
 
@@ -33,6 +34,10 @@ pre-fetch:
 .if ${USA_RESIDENT} == NO
 DISTFILES=	rsa.c idea.c
 CONTRIB=	rsa idea
+.else
+DISTFILES=	rsa.c
+CONTRIB=	rsa
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -56,13 +61,5 @@ do-install:
 .include <bsd.port.post.mk>
 
 .else
-pre-fetch:
-	@${ECHO_MSG}
-	@${ECHO_MSG} rsaref is not supported in this port
-	@${FALSE}
-
-.include <bsd.port.mk>
-
-.endif
 
 .endif
