@@ -7,11 +7,12 @@
 #
 
 PORTNAME=	nmap
-PORTVERSION=	2.53
+PORTVERSION=	2.54.b22
 CATEGORIES=	security
 MASTER_SITES=	http://www.insecure.org/nmap/dist/  \
 		ftp://nuxi.ucdavis.edu/pub/misc/  \
 		http://www.mobis.com/ajax/projects/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/BETA/}
 EXTRACT_SUFX=	.tgz
 
 #PATCH_SITES=	http://www.mobis.com/ajax/projects/
