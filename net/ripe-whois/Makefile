@@ -7,6 +7,7 @@
 
 PORTNAME=	ripe-whois
 PORTVERSION=	3.1.1v6
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.ripe.net/tools/
 
