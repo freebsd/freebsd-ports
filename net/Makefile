@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.122 1997/10/30 11:23:28 jseger Exp $
+# $Id: Makefile,v 1.123 1997/11/05 04:19:36 asami Exp $
 #
 
     SUBDIR += archie
@@ -8,6 +8,7 @@
     SUBDIR += bing
     SUBDIR += cap
     SUBDIR += choparp
+    SUBDIR += clog
     SUBDIR += cvsup
     SUBDIR += cvsup-mirror
     SUBDIR += delegate
@@ -67,6 +68,7 @@
     SUBDIR += strobe
     SUBDIR += sup
     SUBDIR += tac_plus
+    SUBDIR += tcpshow
     SUBDIR += tcptrace
     SUBDIR += telnetx
     SUBDIR += tintin++
