@@ -1,6 +1,7 @@
 bin/goRua.rb
 bin/goRua_bookmarks_translator.rb
 bin/goRua_cache_clean.rb
+bin/goRua_url_updator.rb
 bin/new_2ch_bbsmenu.rb
 %%RUBY_SITELIBDIR%%/goRua_color_table.rb
 %%RUBY_SITELIBDIR%%/connect2ch.rb

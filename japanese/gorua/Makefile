@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	gorua
-PORTVERSION=	0.16
-PORTREVISION=	1
+PORTVERSION=	0.17
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.unixuser.org/~haruyama/software/goRua/
-DISTNAME=	goRua-${PORTVERSION:S/.p/-pre/}
+DISTNAME=	goRua-${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Gtk+ on Ruby User Agent for 2ch BBS
@@ -30,6 +29,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/goRua.rb ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/goRua_bookmarks_translator.rb ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/goRua_cache_clean.rb ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/goRua_url_updator.rb ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/new_2ch_bbsmenu.rb ${PREFIX}/bin
 
 	${INSTALL_DATA} ${WRKSRC}/goRua_color_table.rb ${RUBY_SITELIBDIR}
