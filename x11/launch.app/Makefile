@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	launch.app
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://stepmaker.sourceforge.net/launch/
 DISTNAME=	${PORTNAME:S/l/L/}-${PORTVERSION}
