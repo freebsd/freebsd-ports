@@ -1,21 +1,23 @@
 %%PYTHON_INCLUDEDIR%%/numarray/arrayobject.h
 %%PYTHON_INCLUDEDIR%%/numarray/cfunc.h
+%%PYTHON_INCLUDEDIR%%/numarray/ieeespecial.h
 %%PYTHON_INCLUDEDIR%%/numarray/libnumarray.h
-%%PYTHON_INCLUDEDIR%%/numarray/ndarrayinfo.h
+%%PYTHON_INCLUDEDIR%%/numarray/libteacup.h
 %%PYTHON_INCLUDEDIR%%/numarray/numarray.h
 %%PYTHON_INCLUDEDIR%%/numarray/numcomplex.h
 %%PYTHON_INCLUDEDIR%%/numarray/numconfig.h
-%%PYTHON_INCLUDEDIR%%/numarray/numdeprecated.h
-%%PYTHON_INCLUDEDIR%%/numarray/numpy_compat.h
+%%PYTHON_INCLUDEDIR%%/numarray/nummacro.h
+%%PYTHON_INCLUDEDIR%%/numarray/tc.h
 %%PYTHON_SITELIBDIR%%/numarray.pth
 %%PYTHON_SITELIBDIR%%/numarray/_bytes.so
 %%PYTHON_SITELIBDIR%%/numarray/_chararray.so
 %%PYTHON_SITELIBDIR%%/numarray/_conv.so
+%%PYTHON_SITELIBDIR%%/numarray/_converter.so
+%%PYTHON_SITELIBDIR%%/numarray/_ndarray.so
 %%PYTHON_SITELIBDIR%%/numarray/_numarray.so
+%%PYTHON_SITELIBDIR%%/numarray/_operator.so
 %%PYTHON_SITELIBDIR%%/numarray/_sort.so
-%%PYTHON_SITELIBDIR%%/numarray/_ufunc.py
-%%PYTHON_SITELIBDIR%%/numarray/_ufunc.pyc
-%%PYTHON_SITELIBDIR%%/numarray/_ufunc.pyo
+%%PYTHON_SITELIBDIR%%/numarray/_ufunc.so
 %%PYTHON_SITELIBDIR%%/numarray/_ufuncBool.so
 %%PYTHON_SITELIBDIR%%/numarray/_ufuncComplex32.so
 %%PYTHON_SITELIBDIR%%/numarray/_ufuncComplex64.so
@@ -23,9 +25,14 @@
 %%PYTHON_SITELIBDIR%%/numarray/_ufuncFloat64.so
 %%PYTHON_SITELIBDIR%%/numarray/_ufuncInt16.so
 %%PYTHON_SITELIBDIR%%/numarray/_ufuncInt32.so
+%%PYTHON_SITELIBDIR%%/numarray/_ufuncInt64.so
 %%PYTHON_SITELIBDIR%%/numarray/_ufuncInt8.so
 %%PYTHON_SITELIBDIR%%/numarray/_ufuncUInt16.so
+%%PYTHON_SITELIBDIR%%/numarray/_ufuncUInt32.so
 %%PYTHON_SITELIBDIR%%/numarray/_ufuncUInt8.so
+%%PYTHON_SITELIBDIR%%/numarray/_ufuncall.py
+%%PYTHON_SITELIBDIR%%/numarray/_ufuncall.pyc
+%%PYTHON_SITELIBDIR%%/numarray/_ufuncall.pyo
 %%PYTHON_SITELIBDIR%%/numarray/arrayprint.py
 %%PYTHON_SITELIBDIR%%/numarray/arrayprint.pyc
 %%PYTHON_SITELIBDIR%%/numarray/arrayprint.pyo
@@ -35,6 +42,9 @@
 %%PYTHON_SITELIBDIR%%/numarray/codegenerator.py
 %%PYTHON_SITELIBDIR%%/numarray/codegenerator.pyc
 %%PYTHON_SITELIBDIR%%/numarray/codegenerator.pyo
+%%PYTHON_SITELIBDIR%%/numarray/ieeespecial.py
+%%PYTHON_SITELIBDIR%%/numarray/ieeespecial.pyc
+%%PYTHON_SITELIBDIR%%/numarray/ieeespecial.pyo
 %%PYTHON_SITELIBDIR%%/numarray/libnumarray.so
 %%PYTHON_SITELIBDIR%%/numarray/memmap.py
 %%PYTHON_SITELIBDIR%%/numarray/memmap.pyc
@@ -55,7 +65,6 @@
 %%PYTHON_SITELIBDIR%%/numarray/numinclude.py
 %%PYTHON_SITELIBDIR%%/numarray/numinclude.pyc
 %%PYTHON_SITELIBDIR%%/numarray/numinclude.pyo
-%%PYTHON_SITELIBDIR%%/numarray/numpy_compat.so
 %%PYTHON_SITELIBDIR%%/numarray/numtest.py
 %%PYTHON_SITELIBDIR%%/numarray/numtest.pyc
 %%PYTHON_SITELIBDIR%%/numarray/numtest.pyo
@@ -65,6 +74,12 @@
 %%PYTHON_SITELIBDIR%%/numarray/recarray.py
 %%PYTHON_SITELIBDIR%%/numarray/recarray.pyc
 %%PYTHON_SITELIBDIR%%/numarray/recarray.pyo
+%%PYTHON_SITELIBDIR%%/numarray/teacup.py
+%%PYTHON_SITELIBDIR%%/numarray/teacup.pyc
+%%PYTHON_SITELIBDIR%%/numarray/teacup.pyo
+%%PYTHON_SITELIBDIR%%/numarray/template.py
+%%PYTHON_SITELIBDIR%%/numarray/template.pyc
+%%PYTHON_SITELIBDIR%%/numarray/template.pyo
 %%PYTHON_SITELIBDIR%%/numarray/testdata.py
 %%PYTHON_SITELIBDIR%%/numarray/testdata.pyc
 %%PYTHON_SITELIBDIR%%/numarray/testdata.pyo
@@ -91,22 +106,29 @@
 %%PORTDOCS%%share/doc/py-numarray/manual/arraybasics.tex
 %%PORTDOCS%%share/doc/py-numarray/manual/arrayfunctions.tex
 %%PORTDOCS%%share/doc/py-numarray/manual/arraymethods.tex
+%%PORTDOCS%%share/doc/py-numarray/manual/convolve.tex
 %%PORTDOCS%%share/doc/py-numarray/manual/copyright.tex
 %%PORTDOCS%%share/doc/py-numarray/manual/extending.tex
+%%PORTDOCS%%share/doc/py-numarray/manual/fft.tex
 %%PORTDOCS%%share/doc/py-numarray/manual/glossary.tex
 %%PORTDOCS%%share/doc/py-numarray/manual/installation.tex
 %%PORTDOCS%%share/doc/py-numarray/manual/introduction.tex
+%%PORTDOCS%%share/doc/py-numarray/manual/linearalgebra.tex
 %%PORTDOCS%%share/doc/py-numarray/manual/ma.tex
 %%PORTDOCS%%share/doc/py-numarray/manual/mklinks
 %%PORTDOCS%%share/doc/py-numarray/manual/numarray.tex
 %%PORTDOCS%%share/doc/py-numarray/manual/overview.tex
 %%PORTDOCS%%share/doc/py-numarray/manual/pseudoindices.tex
+%%PORTDOCS%%share/doc/py-numarray/manual/randomarray.tex
+%%PORTDOCS%%share/doc/py-numarray/manual/table.py
 %%PORTDOCS%%share/doc/py-numarray/manual/ufuncs.tex
+%%PORTDOCS%%share/doc/py-numarray/manual/webpage/update.py
 %%PORTDOCS%%share/doc/py-numarray/sitecustomize.py
 %%PORTDOCS%%share/doc/py-numarray/unittest.py
 %%PORTDOCS%%share/examples/py-numarray/ChangeLog
 %%PORTDOCS%%share/examples/py-numarray/README
 %%PORTDOCS%%share/examples/py-numarray/__init__.py
+%%PORTDOCS%%share/examples/py-numarray/bench.py
 %%PORTDOCS%%share/examples/py-numarray/convolve/ChangeLog
 %%PORTDOCS%%share/examples/py-numarray/convolve/README
 %%PORTDOCS%%share/examples/py-numarray/convolve/__init__.py
@@ -115,12 +137,18 @@
 %%PORTDOCS%%share/examples/py-numarray/convolve/convtest.py
 %%PORTDOCS%%share/examples/py-numarray/convolve/element_wisemodule.c
 %%PORTDOCS%%share/examples/py-numarray/convolve/high_levelmodule.c
+%%PORTDOCS%%share/examples/py-numarray/convolve/lineshape.py
+%%PORTDOCS%%share/examples/py-numarray/convolve/numpy_compat2.c
 %%PORTDOCS%%share/examples/py-numarray/convolve/numpy_compatmodule.c
 %%PORTDOCS%%share/examples/py-numarray/convolve/one_dimensionalmodule.c
+%%PORTDOCS%%share/examples/py-numarray/convolve/testlite.c
+%%PORTDOCS%%share/examples/py-numarray/pstats.py
 %%PORTDOCS%%share/examples/py-numarray/setup.py
+%%PORTDOCS%%share/examples/py-numarray/sortperf.py
 %%PORTDOCS%%share/examples/py-numarray/testall.py
 %%PORTDOCS%%@dirrm share/examples/py-numarray/convolve
 %%PORTDOCS%%@dirrm share/examples/py-numarray
+%%PORTDOCS%%@dirrm share/doc/py-numarray/manual/webpage
 %%PORTDOCS%%@dirrm share/doc/py-numarray/manual
 %%PORTDOCS%%@dirrm share/doc/py-numarray
 @dirrm %%PYTHON_SITELIBDIR%%/numarray
