@@ -1,0 +1,16 @@
+IsReal analyzes image files to guess the type of image contained:
+real, realistic or unreal.
+
+WWW: http://www.striker.ottawa.on.ca/~aland/isreal/
+
+IsReal is distributed under the following license:
+
+Copyright (c) 1999 Alan DeKok <aland@ox.org>
+
+All rights reserved.
+
+Redistribution and use in source and binary forms are permitted
+provided that the above copyright notice and this paragraph are
+duplicated in all such forms and that any documentation, advertising
+materials, and other materials related to such distribution and use,
+acknowledge that the software was developed by Alan DeKok.

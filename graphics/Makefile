@@ -90,6 +90,7 @@
     SUBDIR += imlib
     SUBDIR += imlib2
     SUBDIR += ipe
+    SUBDIR += isreal
     SUBDIR += jbigkit
     SUBDIR += jgraph
     SUBDIR += jgv

@@ -1,0 +1,11 @@
+--- isreal.c.orig	Sat Mar 31 19:06:30 2001
++++ isreal.c	Sat Mar 31 19:06:37 2001
+@@ -20,7 +20,7 @@
+ #include <X11/Xutil.h>
+ #include <Imlib.h>
+ #include <math.h>
+-#include <getopt.h>
++#include <unistd.h>
+ #include <errno.h>
+ 
+ #ifndef FALSE

@@ -1,0 +1,22 @@
+--- Makefile.orig	Thu Jan  6 08:09:10 2000
++++ Makefile	Sat Mar 31 19:46:20 2001
+@@ -3,13 +3,14 @@
+ #
+ LIBS	= -L/usr/X11R6/lib -L/usr/local/lib -lX11 -lXext \
+-		-ljpeg -lpng -ltiff -lz -lgif -lm -lImlib 
+-CFLAGS	= -g -Wall -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align \
+-	-Wwrite-strings -Wconversion -Waggregate-return -Wstrict-prototypes \
+-	-Wmissing-prototypes -Wmissing-declarations -Wnested-externs
++		-ljpeg -lpng -ltiff -lz -lungif -lm -lImlib 
++
++CFLAGS	+= -I/usr/X11R6/include
+ 
+ VERSION=2.0
+ 
++all: isreal
++
+ isreal: isreal.o
+-	$(CC) $^ $(LIBS) -o $@
++	$(CC) isreal.o $(LIBS) -o $@
+ 
+ clean:
