@@ -25,7 +25,8 @@ MASTER_SITES=	ftp://ftp3.us.postgresql.org/pub/postgresql/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
 DISTFILES=	postgresql-base-${PORTVERSION}${EXTRACT_SUFX} \
 		postgresql-opt-${PORTVERSION}${EXTRACT_SUFX} \
-		postgresql-test-${PORTVERSION}${EXTRACT_SUFX}
+		postgresql-test-${PORTVERSION}${EXTRACT_SUFX} \
+		postgresql-doc-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER?=	girgen@pingpong.net
 
