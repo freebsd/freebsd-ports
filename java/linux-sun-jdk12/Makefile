@@ -42,8 +42,16 @@ IGNORE=You must manually fetch the Sun Java 2 Standard Edition SDK ${JDK_VERSION
 .endif
 
 do-install:
-	${MKDIR} ${APP_HOME}
-	${CP} -R ${WRKSRC}/* ${APP_HOME}
-	${LOCALBASE}/bin/registervm "${APP_HOME}/bin/java # Sun-JDK${PORTVERSION}_${PORTREVISION}"
+	@${ECHO} -n "Creating destination directory ${APP_HOME}..."
+	@${MKDIR} ${APP_HOME}
+	@${ECHO} " [ DONE ]"
+
+	@${ECHO} -n "Copying files..."
+	@${CP} -R ${WRKSRC}/* ${APP_HOME}
+	@${ECHO} " [ DONE ]"
+
+	@${ECHO} -n "Registering with javavm..."
+	@${LOCALBASE}/bin/registervm "${APP_HOME}/bin/java # Sun-JDK${PORTVERSION}_${PORTREVISION}"
+	@${ECHO} " [ DONE ]"
 
 .include <bsd.port.post.mk>
