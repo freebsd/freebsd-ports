@@ -35,6 +35,8 @@ cfs-*			ports/security/cfs	Crypto; export-controlled
 contool-*		ports/sysutils/contool	Don't incorporate the source
 						code into a product which is
 						subsequently sold.
+cos-*			ports/java/cos		Special conditions apply for
+						commercial use.
 cosmo/*			ports/games/cosmo	Possible copyright infringement
 cscope			ports/devel/cscope	Redistribution license from Lucent Technologies required
 crack-5.0		ports/security/crack	Crypto; export-controlled
