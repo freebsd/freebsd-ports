@@ -47,7 +47,9 @@ post-patch:
 		${WRKSRC}/gnome-config.in ${WRKSRC}/libgnome/gnome-util.c
 
 # need to make launched gnome-terminals appear in utmp/wtmp
+.if !target(post-install)
 post-install:
 	@${CHMOD} u+s ${PREFIX}/bin/gnome-pty-helper
+.endif
 
 .include <bsd.port.mk>
