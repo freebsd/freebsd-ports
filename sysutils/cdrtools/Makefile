@@ -12,6 +12,7 @@ CATEGORIES?=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/ \
 		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/cdrecord/
+DISTNAME=	cdrtools-2.0
 
 MAINTAINER=	dirk@FreeBSD.org
 
