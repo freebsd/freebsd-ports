@@ -26,6 +26,12 @@ PATCH_DIST_ARGS=	-d ${WRKDIR} -E ${PATCH_DIST_STRIP}
 PATCH_DIST_ARGS=	-d ${WRKDIR} --forward --quiet -E ${PATCH_DIST_STRIP}
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 pre-patch:
 	@${LN} -s dgd ${WRKDIR}/dgd+net
 	@${MKDIR} ${WRKDIR}/dgd/bin
@@ -43,4 +49,4 @@ do-install:
 	@${TAR} -C ${WRKDIR} -cf - `${GREP} '^dgd/' ${PLIST}` \
 		| ${TAR} -C ${PREFIX} -xpf -
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
