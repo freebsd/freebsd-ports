@@ -7445,6 +7445,7 @@ p5-IO-Digest	ports/devel/p5-IO-Digest
 p5-IO-INET6	ports/net/p5-IO-INET6
 p5-IO-Interface	ports/net/p5-IO-Interface
 p5-IO-Multiplex	ports/devel/p5-IO-Multiplex
+p5-IO-Pager	ports/devel/p5-IO-Pager
 p5-IO-Socket-Multicast	ports/net/p5-IO-Socket-Multicast
 p5-IO-Socket-SSL	ports/security/p5-IO-Socket-SSL
 p5-IO-String	ports/devel/p5-IO-String
