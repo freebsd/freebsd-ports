@@ -18,4 +18,9 @@ WRKSRC=		${WRKDIR}/hello-1.3
 
 GNU_CONFIGURE=	YES
 
+post-install:
+	@install-info --dir-file=${PREFIX}/info/dir \
+	    --entry="* Hello: (hello).		Hello Reference Manual." \
+	    ${PREFIX}/info/hello.info
+
 .include <bsd.port.mk>

@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Wed Dec 29 21:53:22 1999
++++ Makefile.in	Wed Dec 29 21:53:39 1999
+@@ -31,7 +31,7 @@
+ DEFS = @DEFS@
+ LIBS = @LIBS@
+ 
+-CFLAGS = -g
++CFLAGS ?= -g
+ LDFLAGS = -g
+ 
+ prefix = /usr/local

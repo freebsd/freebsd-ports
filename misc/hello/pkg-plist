@@ -1,4 +1,4 @@
 bin/hello
 @unexec install-info --delete %D/info/hello.info %D/info/dir
 info/hello.info
-@exec install-info %D/info/hello.info %D/info/dir
+@exec install-info --dir-file=%D/info/dir --entry="* Hello: (hello).		Hello Reference Manual." %D/info/hello.info
