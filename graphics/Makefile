@@ -189,6 +189,7 @@
     SUBDIR += libmorph
     SUBDIR += libmovtar
     SUBDIR += libmpeg2
+    SUBDIR += libquicktime
     SUBDIR += librsvg
     SUBDIR += librsvg2
     SUBDIR += libungif
