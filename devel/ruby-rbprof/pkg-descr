@@ -1,0 +1,6 @@
+This package is a faster profiler than the bulitin Ruby profiler and
+allows Ruby developers to focus on the methods that are hand-written.
+
+WWW: http://aspectr.sourceforge.net/rbprof/
+
+- Sean Chittenden <sean@chittenden.org>
