@@ -6,6 +6,7 @@
 %%RUBY_SITELIBDIR%%/tmail/loader.rb
 %%RUBY_SITELIBDIR%%/tmail/parsemail.rb
 %%RUBY_SITELIBDIR%%/tmail/port.rb
+%%RUBY_SITELIBDIR%%/tmail/rmails.rb
 %%RUBY_SITELIBDIR%%/tmail/scanmail.rb
 %%RUBY_SITELIBDIR%%/tmail/tmail.rb
 @dirrm %%RUBY_SITELIBDIR%%/tmail
