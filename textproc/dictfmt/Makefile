@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dictfmt
-PORTVERSION=	1.9.8
+PORTVERSION=	1.9.9
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dict
@@ -15,20 +15,19 @@ DISTNAME=	dictd-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Formats a DICT protocol dictionary database
 
-BUILD_DEPENDS=	aclocal:${PORTSDIR}/devel/automake
+LIB_DEPENDS=	ltdl.1:${PORTSDIR}/devel/libtool
 
-USE_AUTOCONF=	yes
-WANT_AUTOCONF_VER=	253
-USE_LIBTOOL=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 USE_GMAKE=	yes
+USE_AUTOCONF_VER=	253
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
+		AUTOHEADER="${TRUE}"
 ALL_TARGET=	dictfmt
 INSTALL_TARGET=	install.dictfmt
 
 MAN1=		dictfmt.1 dictfmt_index2suffix.1 dictfmt_index2word.1 \
 		dictunformat.1
-
-post-patch:
-	cd ${WRKSRC}; aclocal; ${AUTOHEADER}
 
 .include <bsd.port.mk>
