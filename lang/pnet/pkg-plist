@@ -58,20 +58,22 @@ lib/libILEngine.a
 lib/libILLink.a
 lib/libILCodeGen.a
 lib/cscc/plugins/cscc-cs
+lib/cscc/plugins/cscc-c-s
 lib/cscc/plugins/cscc-csharp
-lib/cscc/lib/cstest.dll
-lib/cscc/lib/mscorlib.dll
+lib/cscc/lib/I18N-handlers.def
 lib/cscc/lib/I18N.CJK.dll
-lib/cscc/lib/I18N.dll
 lib/cscc/lib/I18N.MidEast.dll
 lib/cscc/lib/I18N.Other.dll
 lib/cscc/lib/I18N.Rare.dll
 lib/cscc/lib/I18N.West.dll
-lib/cscc/lib/I18N-handlers.def
+lib/cscc/lib/I18N.dll
+lib/cscc/lib/OpenSystem.C.dll
 lib/cscc/lib/System.dll
 lib/cscc/lib/System.Xml.dll
+lib/cscc/lib/cstest.dll
+lib/cscc/lib/mscorlib.dll
 lib/cscc/lib/pnetlib.here
-@dirrm include/pnet
-@dirrm lib/cscc/plugins
 @dirrm lib/cscc/lib
+@dirrm lib/cscc/plugins
 @dirrm lib/cscc
+@dirrm include/pnet
