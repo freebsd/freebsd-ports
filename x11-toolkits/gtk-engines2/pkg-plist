@@ -79,23 +79,15 @@ share/themes/Pixmap/gtk/vline.png
 share/themes/Redmond95/ICON.png
 share/themes/Redmond95/README.html
 share/themes/Redmond95/gtk/gtkrc
-share/themes/engines/libmetal.la
 share/themes/engines/libmetal.so
-share/themes/engines/libmetal.so.0
-share/themes/engines/libnotif.la
 share/themes/engines/libnotif.so
-share/themes/engines/libnotif.so.0
-share/themes/engines/libpixmap.la
 share/themes/engines/libpixmap.so
-share/themes/engines/libpixmap.so.0
-share/themes/engines/libredmond95.la
 share/themes/engines/libredmond95.so
-share/themes/engines/libredmond95.so.0
-@dirrm share/themes/Metal/gtk
-@dirrm share/themes/Metal
-@dirrm share/themes/Notif/gtk
-@dirrm share/themes/Notif
-@dirrm share/themes/Pixmap/gtk
-@dirrm share/themes/Pixmap
 @dirrm share/themes/Redmond95/gtk
 @dirrm share/themes/Redmond95
+@dirrm share/themes/Pixmap/gtk
+@dirrm share/themes/Pixmap
+@dirrm share/themes/Notif/gtk
+@dirrm share/themes/Notif
+@dirrm share/themes/Metal/gtk
+@dirrm share/themes/Metal
