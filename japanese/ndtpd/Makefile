@@ -6,21 +6,20 @@
 #
 
 PORTNAME=	ndtpd
-PORTVERSION=	2.3.8
+PORTVERSION=	3.1.1
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/net/ndtp/ndtpd/
 
 PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	${DISTNAME}+2.diff
+PATCHFILES=	${DISTNAME}+.diff
 
 MAINTAINER=	takamune@avrl.mei.co.jp
 
-LIB_DEPENDS=	eb.3:${PORTSDIR}/japanese/eb
+LIB_DEPENDS=	eb.6:${PORTSDIR}/japanese/eb
+BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 
-USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--localstatedir=${RUNDIR} --with-logdir=${LOGDIR} \
-		--with-eb --with-eb-includes=${PREFIX}/include \
-		--with-zlib --with-eb-libraries=${PREFIX}/lib
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--localstatedir=${RUNDIR} --with-logdir=${LOGDIR}
 
 .if !defined(PACKAGE_BUILDING)
 IS_INTERACTIVE=	Maybe_interactive_at_install_stage
@@ -29,11 +28,10 @@ IS_INTERACTIVE=	Maybe_interactive_at_install_stage
 # Local variables
 LOGDIR=		/var/log
 RUNDIR=		/var/run
-STARTUP_SCRIPT=	ndtpd.sh.sample
+STARTUP_SCRIPT=	${PORTNAME}.sh.sample
 
-post-extract:
-	cd ${WRKSRC} && ${RM} -rf eb
-
+pre-configure:
+	cd ${WRKSRC}; autoconf
 post-build:
 	${SED} "s,@prefix@,${PREFIX},; s,@rundir@,${RUNDIR},"\
 	  ${FILESDIR}/${STARTUP_SCRIPT} > ${WRKDIR}/${STARTUP_SCRIPT}

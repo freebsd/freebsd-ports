@@ -5,16 +5,17 @@ bin/ebrefile
 bin/ebunzip
 bin/ebzip
 bin/ebzipinfo
+etc/eb.conf
 include/eb/appendix.h
+include/eb/binary.h
 include/eb/defs.h
 include/eb/eb.h
 include/eb/error.h
 include/eb/font.h
-include/eb/language.h
 include/eb/text.h
+include/eb/zio.h
 @dirrm include/eb
 @unexec install-info --delete %D/info/eb-ja.info %D/info/dir
-@unexec install-info --delete %D/info/eb.info %D/info/dir
 @unexec install-info --delete %D/info/ebfont-ja.info %D/info/dir
 @unexec install-info --delete %D/info/ebfont.info %D/info/dir
 @unexec install-info --delete %D/info/ebinfo-ja.info %D/info/dir
@@ -24,7 +25,6 @@ include/eb/text.h
 @unexec install-info --delete %D/info/ebzip-ja.info %D/info/dir
 @unexec install-info --delete %D/info/ebzip.info %D/info/dir
 info/eb-ja.info
-info/eb.info
 info/ebfont-ja.info
 info/ebfont.info
 info/ebinfo-ja.info
@@ -34,7 +34,6 @@ info/ebrefile.info
 info/ebzip-ja.info
 info/ebzip.info
 @exec install-info %D/info/eb-ja.info %D/info/dir
-@exec install-info %D/info/eb.info %D/info/dir
 @exec install-info %D/info/ebfont-ja.info %D/info/dir
 @exec install-info %D/info/ebfont.info %D/info/dir
 @exec install-info %D/info/ebinfo-ja.info %D/info/dir
@@ -44,8 +43,9 @@ info/ebzip.info
 @exec install-info %D/info/ebzip-ja.info %D/info/dir
 @exec install-info %D/info/ebzip.info %D/info/dir
 lib/libeb.a
+lib/libeb.la
 lib/libeb.so
-lib/libeb.so.3
+lib/libeb.so.6
 share/eb/appendix/LIST
 share/eb/appendix/LIST-ja
 share/eb/appendix/cencro-1.0/catalog
@@ -203,6 +203,9 @@ share/eb/appendix/superdic98-1.0/kanjigen.app
 share/eb/appendix/superdic98-1.0/kanjigen/data/furoku
 share/eb/appendix/superdic98-1.0/koujien.app
 share/eb/appendix/superdic98-1.0/koujien/data/furoku
+share/eb/eb3.m4
+share/locale/ja/LC_MESSAGES/eb.mo
+share/locale/ja/LC_MESSAGES/ebutils.mo
 @dirrm share/eb/appendix/cencro-1.0/cencro
 @dirrm share/eb/appendix/cencro-1.0
 @dirrm share/eb/appendix/genius-1.0/genius
