@@ -39,7 +39,7 @@ post-extract:
 # Please don't delete the following line - this link used by ghostscript* ports
 	@${LN} -sf ${WRKSRC} ${WRKDIR}/libpng
 
-pre-install:
+pre-su-install:
 	@[ -d ${PREFIX}/include/libpng ] || ${MKDIR} ${PREFIX}/include/libpng
 	@[ -d ${PREFIX}/libdata/pkgconfig ] || \
 		${MKDIR} ${PREFIX}/libdata/pkgconfig
