@@ -3,12 +3,17 @@ bin/nana-c++lg
 bin/nana-clg
 bin/nana-run
 bin/nana-trace
+bin/nana-libtrace
+bin/nana-sfg
+bin/nana-sfdir
 include/DI.h
 include/DL.h
 include/GDB.h
 include/I.h
 include/L.h
 include/L_buffer.h
+include/L_times.h
+include/cycles.h
 include/Q.h
 include/Qstl.h
 include/calls.h

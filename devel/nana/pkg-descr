@@ -20,4 +20,4 @@ using GDB. In particular it provides:
 	o Support for the quantifiers of predicate calculus (forall, exists).
 	o Support for before and after state saving and checking (x, x').
 
-Phil Maker <pjm@cs.ntu.edu.au>
+Phil Maker <pjm@gnu.org>
