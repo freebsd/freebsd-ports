@@ -7,7 +7,6 @@
 %%HLDSDIR%%ns/512_textscheme.txt
 %%HLDSDIR%%ns/640_textscheme.txt
 %%HLDSDIR%%ns/800_textscheme.txt
-%%HLDSDIR%%ns/ResetGamma.exe
 %%HLDSDIR%%ns/bot.cfg
 %%HLDSDIR%%ns/cached.wad
 %%HLDSDIR%%ns/cl_dlls/client.dll
@@ -397,6 +396,7 @@
 %%HLDSDIR%%ns/models/w_welderT.mdl
 %%HLDSDIR%%ns/motd.txt
 %%HLDSDIR%%ns/ns.fgd
+%%PORTDOCS%%%%HLDSDIR%%ns/ns.ico
 %%HLDSDIR%%ns/ns.ps
 %%HLDSDIR%%ns/ns.qrk
 %%HLDSDIR%%ns/ns.wad
@@ -407,6 +407,7 @@
 %%HLDSDIR%%ns/ns_tanith.wad
 %%HLDSDIR%%ns/ns_tex.qrk
 %%HLDSDIR%%ns/nshulls.txt
+%%PORTDOCS%%%%HLDSDIR%%ns/patch-readme.txt
 %%PORTDOCS%%%%HLDSDIR%%ns/readme.txt
 %%HLDSDIR%%ns/server.cfg
 %%HLDSDIR%%ns/settings.scr
@@ -1106,6 +1107,7 @@
 %%HLDSDIR%%ns/sprites/xspark4.spr
 %%HLDSDIR%%ns/titles.txt
 %%HLDSDIR%%ns/ui.txt
+%%HLDSDIR%%ns/user.scr
 %%HLDSDIR%%ns/wall_lab.wad
 @dirrm %%HLDSDIR%%ns/sprites/techtree
 @dirrm %%HLDSDIR%%ns/sprites/ns_tanith
