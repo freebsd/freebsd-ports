@@ -19,6 +19,7 @@
     SUBDIR += bbrun
     SUBDIR += blackbox
     SUBDIR += blwm
+    SUBDIR += boxtools
     SUBDIR += clementine
     SUBDIR += ctwm
     SUBDIR += e16utils

@@ -1,0 +1,5 @@
+This port is used by the blackbox window manager, as well as various spinoffs
+like fluxbox, openbox and others, to ensure that styles will be interoperable
+between the various window managers.
+
+WWW: http://blackboxwm.sourceforge.net/
