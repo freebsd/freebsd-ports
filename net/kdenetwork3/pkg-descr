@@ -1,1 +1,6 @@
 KDE provides an integrated X11 based environment, much like CDE.
+This particular port installs the networking components of KDE,
+which includes applications for Internet things like email, web,
+irc, and so forth.  Note that this is for KDE2, not KDE 1.x.
+
+WWW: http://www.kde.org/

@@ -1,42 +1,30 @@
-# New ports collection makefile for:   kdenetwork
-# Date created:        28 October 1997
-# Whom:                Stefan Eßer <se@freebsd.org>
+# New ports collection makefile for:	kdenetwork2
+# Date created:				Sun May 14 00:55:45
+# Whom:					Will Andrews <will@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	kdenetwork
-PORTVERSION=	1.1.2
+PORTVERSION=	1.90
 CATEGORIES=	net news kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
-MASTER_SITE_SUBDIR= stable/1.1.2/distribution/tar/generic/source/bz2
+MASTER_SITE_SUBDIR=	unstable/distribution/tar/src
 
-MAINTAINER=	se@freebsd.org
+MAINTAINER=	will@FreeBSD.org
 
-BUILD_DEPENDS=	${PREFIX}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.3:${PORTSDIR}/graphics/png \
-		uu.1:${PORTSDIR}/converters/uulib \
-		kdecore.3:${PORTSDIR}/x11/kdelibs11 \
-		QwSpriteField.7:${PORTSDIR}/converters/kdesupport11 \
-		js.3:${PORTSDIR}/converters/kdesupport11 \
-		mimelib.2:${PORTSDIR}/converters/kdesupport11 \
-		rdb.56:${PORTSDIR}/converters/kdesupport11
+LIB_DEPENDS=	uu.1:${PORTSDIR}/converters/uulib \
+		kdecore.4:${PORTSDIR}/x11/kdelibs2 \
+		QwSpriteField.8:${PORTSDIR}/converters/kdesupport2
 
+MOC?=		${X11BASE}/bin/moc2
 USE_BZIP2=	yes
-USE_QT=		yes
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	"--prefix=$(PREFIX)"
-CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)" \
-		INSTALL_SCRIPT="install -c -m 555"
+USE_QT2=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--with-qt-dir=${X11BASE} \
+		--with-qt-includes=${X11BASE}/include/qt2 \
+		--with-qt-libraries=${X11BASE}/lib
+CONFIGURE_ENV+=	MOC="${MOC}"
 USE_GMAKE=	yes
-CFLAGS+=	"-I${PREFIX}/include"
 
-.include <bsd.port.pre.mk>
-
-# ksirc needs egcs
-.if ${OSVERSION} < 400004
-PLIST=	${PKGDIR}/PLIST.noksirc
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
