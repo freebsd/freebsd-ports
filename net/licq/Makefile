@@ -31,6 +31,12 @@ CONFIGURE_ARGS+=--with-socks5-inc=${LOCALBASE}/include
 CONFIGURE_ENV+=	LDFLAGS=-L${LOCALBASE}/lib
 .endif
 
+.if !defined(WITHOUT_OPENSSL)
+USE_OPENSSL=	yes
+CONFIGURE_ARGS+=--with-openssl-inc=${OPENSSLINC}
+CONFIGURE_ARGS+=--with-openssl-lib=${OPENSSLLIB}
+.endif
+
 pre-configure:
 	@${MV} ${WRKSRC}/src/licq.conf.h ${WRKSRC}/src/licq.conf.h.sed
 	${SED} -e "s=/usr/share/licq=${PREFIX}/share/licq=" \
@@ -45,9 +51,5 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
-CONFIGURE_ARGS+=--with-openssl-inc=${OPENSSLINC}
-CONFIGURE_ARGS+=--with-openssl-lib=${OPENSSLLIB}
-
 .include "${LICQ_PORT}/Makefile.inc"
 .include <bsd.port.post.mk>

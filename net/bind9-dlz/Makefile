@@ -62,6 +62,14 @@ CONFIGURE_ARGS+=	--with-dlz-filesystem
 CONFIGURE_ARGS+=	--with-dlz-stub
 .endif
 
+.if defined(WITH_OPENSSL)
+.if !defined(WITHOUT_OPENSSL)
+USE_OPENSSL=	yes
+CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
+.endif
+.endif
+
+
 WRKSRC=		${WRKDIR}/bind-${ISCVERSION}
 EXTRA_PATCHES=	${WRKDIR}/dlz.patch
 PLIST=		${WRKDIR}/.PLIST.more
@@ -174,13 +182,6 @@ post-clean:
 	@ ${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_OPENSSL)
-.if !defined(WITHOUT_OPENSSL)
-.include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
-CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
-.endif
-.endif
 
 .if ${OSVERSION} > 500030
 CONFIGURE_ARGS+=	--enable-threads
