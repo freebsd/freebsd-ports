@@ -7,4 +7,4 @@ bin/gtkdoc-mkhtml
 bin/gtkdoc-mkman
 bin/gtkdoc-fixxref
 share/gtk-doc/gtk-doc.dsl
-# rmdir share/gtk-doc
+@comment rmdir share/gtk-doc
