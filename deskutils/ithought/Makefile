@@ -6,19 +6,17 @@
 #
 
 PORTNAME=	ithought
-PORTVERSION=	a4
+PORTVERSION=	a5
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ithought
 
 MAINTAINER=	nbm@FreeBSD.org
 
-LIB_DEPENDS=    xml.5:${PORTSDIR}/textproc/libxml
+LIB_DEPENDS=    xml2.5:${PORTSDIR}/textproc/libxml2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/libexec
-
-ALL_TARGET=	ithought
 
 USE_GTK=	yes
 
