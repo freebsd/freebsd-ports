@@ -1,0 +1,13 @@
+--- configure.orig     Tue Dec  5 14:14:47 2000
++++ configure  Tue Dec  5 14:19:49 2000
+@@ -744,6 +744,10 @@
+   nativecccompopts="$nativecccompopts -D_REENTRANT"
+   case "$host" in
+     *-*-solaris*) pthread_link="-cclib -lpthread -cclib -lposix4";;
++    *-*-freebsd*) pthread_link="-cclib -pthread"
++                bytecccompopts="$bytecccompopts -pthread"
++                nativecccompopts="$nativecccompopts -pthread"
++              ;;
+                *) pthread_link="-cclib -lpthread";;
+   esac
+   echo "Options for linking with POSIX threads: $pthread_link"
