@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	C++ embedded database engine, supports Python and Tcl
 
+BROKEN=		"Checksum mismatch"
+
 .if defined(METAKIT_WITH_TCL83)
 LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83
 .endif

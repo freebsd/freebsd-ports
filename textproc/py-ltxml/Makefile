@@ -16,6 +16,8 @@ DISTNAME=	PyLTXML-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python bindings to the LT XML toolkit
 
+BROKEN=		"Checksum mismatch"
+
 BUILD_DEPENDS=	${LOCALBASE}/include/ltxml12/lt-safe.h:${PORTSDIR}/textproc/ltxml
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
