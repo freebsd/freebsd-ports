@@ -12,7 +12,8 @@ MASTER_SITES=	http://sites.inka.de/~bigred/sw/ \
 
 MAINTAINER=	dirk.meyer@dinoex.sub.org
 
-BUILD_DEPENDS=	${WRKDIRPREFIX}${PORTSDIR}/news/cnews/work/conf/substitutions:${PORTSDIR}/news/cnews:configure
+BUILD_DEPENDS=	${WRKDIRPREFIX}${PORTSDIR}/news/cnews/work/conf/substitutions:${PORTSDIR}/news/cnews:configure \
+		gpg:${PORTSDIR}/security/gnupg
 
 WRKSRC=		${WRKDIR}/c-nocem
 USE_GMAKE=	yes
