@@ -1,0 +1,20 @@
+--- ui/font.cxx.orig	Sun Feb 27 11:49:09 2000
++++ ui/font.cxx	Sun Feb 27 11:51:34 2000
+@@ -60,7 +60,7 @@
+                                       // Local id zero is always in use.
+ #endif
+ 
+-static const DEFAULT_POINT_SIZE  = 11;
++static const int DEFAULT_POINT_SIZE  = 11;
+ static const double PTS_PER_INCH = 72.24;
+ 
+ #if defined (__MS_WINDOWS__) || defined(__MS_WIN32__)
+@@ -217,7 +217,7 @@
+         static XtResource resources[] = {
+             { "font", "Font", XtRString, sizeof (String),
+                XtOffset (Value*, font ), 
+-               XtRString, "fixed" }
++               XtRString, (void *)"fixed" }
+         };
+         Widget shell = YACLApp()->Controller().RootShell();
+         if (shell)

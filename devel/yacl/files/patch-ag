@@ -1,0 +1,11 @@
+--- ui/scrolwin.cxx.orig	Sun Feb 27 11:52:49 2000
++++ ui/scrolwin.cxx	Sun Feb 27 11:53:15 2000
+@@ -50,7 +50,7 @@
+ };
+ 
+ #if defined(__X_MOTIF__)
+-static const SCROLL_BAR_WIDTH = 12;
++static const int SCROLL_BAR_WIDTH = 12;
+ #endif
+ 
+ UIPriv_Scroller::UIPriv_Scroller (UI_ScrollableWindow* parent,

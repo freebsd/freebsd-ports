@@ -1,0 +1,15 @@
+--- apps/bmpview/menudrv.cxx.orig	Sun Feb 27 11:56:29 2000
++++ apps/bmpview/menudrv.cxx	Sun Feb 27 11:57:27 2000
+@@ -39,9 +39,9 @@
+     MenuBinding::MethodPtr method;
+     UI_EventType           event;
+ } FAR dispatch [] = {
+-    {ID_OPEN,     MenuDriver::OpenFile,       Event_Select}      
+-  , {ID_ABOUT,    MenuDriver::About,          Event_Select}           
+-  , {ID_QUIT,     MenuDriver::Quit,           Event_Select}
++    {ID_OPEN,     &MenuDriver::OpenFile,       Event_Select}      
++  , {ID_ABOUT,    &MenuDriver::About,          Event_Select}           
++  , {ID_QUIT,     &MenuDriver::Quit,           Event_Select}
+ };
+ 
+ 

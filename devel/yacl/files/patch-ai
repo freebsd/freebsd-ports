@@ -1,0 +1,67 @@
+--- apps/dlged/menudrv.cxx.orig	Sun Feb 27 12:05:50 2000
++++ apps/dlged/menudrv.cxx	Sun Feb 27 12:06:36 2000
+@@ -47,37 +47,37 @@
+     MenuBinding::MethodPtr method;
+     UI_EventType           event;
+ } FAR dispatch [] = {
+-    {ID_NEW,      MenuDriver::CatchAll,   Event_Select}
+-  , {ID_OPEN,     MenuDriver::CatchAll,   Event_Select}
+-  , {ID_SAVEAS,   MenuDriver::CatchAll,   Event_Select}
+-  , {ID_FONT,     MenuDriver::CatchAll,   Event_Select}
+-  , {ID_TESTDLG,  MenuDriver::CatchAll,   Event_Select}
+-  , {ID_QUIT,     MenuDriver::Quit,       Event_Select}
++    {ID_NEW,      &MenuDriver::CatchAll,   Event_Select}
++  , {ID_OPEN,     &MenuDriver::CatchAll,   Event_Select}
++  , {ID_SAVEAS,   &MenuDriver::CatchAll,   Event_Select}
++  , {ID_FONT,     &MenuDriver::CatchAll,   Event_Select}
++  , {ID_TESTDLG,  &MenuDriver::CatchAll,   Event_Select}
++  , {ID_QUIT,     &MenuDriver::Quit,       Event_Select}
+ 
+-  , {ID_CUT,      MenuDriver::CatchAll,   Event_Select}
+-  , {ID_COPY,     MenuDriver::CatchAll,   Event_Select}
+-  , {ID_PASTE,    MenuDriver::CatchAll,   Event_Select}
+-  , {ID_DELETE,   MenuDriver::CatchAll,   Event_Select}
+-  , {ID_REPL,     MenuDriver::CatchAll,   Event_Select}
+-  , {ID_ALIGN,    MenuDriver::CatchAll,   Event_Select}
+-  , {ID_SIZE,     MenuDriver::CatchAll,   Event_Select}
+-  , {ID_PROP,     MenuDriver::CatchAll,   Event_Select}
++  , {ID_CUT,      &MenuDriver::CatchAll,   Event_Select}
++  , {ID_COPY,     &MenuDriver::CatchAll,   Event_Select}
++  , {ID_PASTE,    &MenuDriver::CatchAll,   Event_Select}
++  , {ID_DELETE,   &MenuDriver::CatchAll,   Event_Select}
++  , {ID_REPL,     &MenuDriver::CatchAll,   Event_Select}
++  , {ID_ALIGN,    &MenuDriver::CatchAll,   Event_Select}
++  , {ID_SIZE,     &MenuDriver::CatchAll,   Event_Select}
++  , {ID_PROP,     &MenuDriver::CatchAll,   Event_Select}
+ 
+ 
+-  , {ID_LABEL,    MenuDriver::Choose,     Event_Select}
+-  , {ID_PUSHBN,   MenuDriver::Choose,     Event_Select}
+-  , {ID_STRVW,    MenuDriver::Choose,     Event_Select}
+-  , {ID_STRED,    MenuDriver::Choose,     Event_Select}
+-  , {ID_TGLBN,    MenuDriver::Choose,     Event_Select}
+-  , {ID_COMBO,    MenuDriver::Choose,     Event_Select}
+-  , {ID_HSCRL,    MenuDriver::Choose,     Event_Select}
+-  , {ID_VSCRL,    MenuDriver::Choose,     Event_Select}
+-  , {ID_TEXT,     MenuDriver::Choose,     Event_Select}
+-  , {ID_ORGRP,    MenuDriver::Choose,     Event_Select}
+-  , {ID_XRGRP,    MenuDriver::Choose,     Event_Select}
+-  , {ID_XRTGL,    MenuDriver::Choose,     Event_Select}
++  , {ID_LABEL,    &MenuDriver::Choose,     Event_Select}
++  , {ID_PUSHBN,   &MenuDriver::Choose,     Event_Select}
++  , {ID_STRVW,    &MenuDriver::Choose,     Event_Select}
++  , {ID_STRED,    &MenuDriver::Choose,     Event_Select}
++  , {ID_TGLBN,    &MenuDriver::Choose,     Event_Select}
++  , {ID_COMBO,    &MenuDriver::Choose,     Event_Select}
++  , {ID_HSCRL,    &MenuDriver::Choose,     Event_Select}
++  , {ID_VSCRL,    &MenuDriver::Choose,     Event_Select}
++  , {ID_TEXT,     &MenuDriver::Choose,     Event_Select}
++  , {ID_ORGRP,    &MenuDriver::Choose,     Event_Select}
++  , {ID_XRGRP,    &MenuDriver::Choose,     Event_Select}
++  , {ID_XRTGL,    &MenuDriver::Choose,     Event_Select}
+     
+-  , {ID_ABOUT,    MenuDriver::About,     Event_Select}
++  , {ID_ABOUT,    &MenuDriver::About,     Event_Select}
+ 
+ };
+ 
