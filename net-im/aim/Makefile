@@ -29,10 +29,10 @@ STRIP=
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/usr/bin/aim ${PREFIX}/libexec
 	(cd ${WRKSRC}/usr/lib;exec ${TAR} --exclude aim/source -cf - *)|(cd ${PREFIX}/lib;exec ${TAR} -xpf -)
-	@{ECHO_CMD} "#!/bin/sh" >${PREFIX}/bin/aim
-	@{ECHO_CMD} "ulimit -Sc 0" >>${PREFIX}/bin/aim
-	@{ECHO_CMD} -n "exec ${PREFIX}/libexec/aim --install_dir ${PREFIX}/lib/aim" >>${PREFIX}/bin/aim
-	@{ECHO_CMD} ' "$$@"' >>${PREFIX}/bin/aim
+	@${ECHO_CMD} "#!/bin/sh" >${PREFIX}/bin/aim
+	@${ECHO_CMD} "ulimit -Sc 0" >>${PREFIX}/bin/aim
+	@${ECHO_CMD} -n "exec ${PREFIX}/libexec/aim --install_dir ${PREFIX}/lib/aim" >>${PREFIX}/bin/aim
+	@${ECHO_CMD} ' "$$@"' >>${PREFIX}/bin/aim
 	${CHMOD} ${BINMODE} ${PREFIX}/bin/aim
 
 post-install:
