@@ -25,6 +25,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		PTHREADINCLUDES="${PTHREAD_CFLAGS}" \
 		PTHREADLIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	${SQLRELAY_CONFIGURE_ARGS} \
+		--disable-tcl \
 		--without-java-prefix \
 		--without-perl-prefix \
 		--without-php-prefix \
@@ -39,25 +40,14 @@ POSTGRESQL_PORT?=	databases/postgresql7
 
 .include "${.CURDIR}/Makefile.common"
 
-.if defined(PACKAGE_BUILDING) || defined(BATCH)
 WITH_SQLITE?=		no
 WITH_MYSQL?=		yes
 WITH_MSQL?=		no
 WITH_POSTGRESQL?=	no
 WITH_ODBC?=		no
 WITH_FREETDS?=		no
-WITH_GTK?=		no
 WITH_INTERBASE?=	no
-.else
-WITH_SQLITE?=		no
-WITH_MYSQL?=		yes
-WITH_MSQL?=		no
-WITH_POSTGRESQL?=	no
-WITH_ODBC?=		no
-WITH_FREETDS?=		no
 WITH_GTK?=		no
-WITH_INTERBASE?=	no
-.endif
 
 .if defined(WITH_SQLITE) && ${WITH_SQLITE:L} != no
 LIB_DEPENDS+=		gdbm.3:${PORTSDIR}/databases/gdbm \
