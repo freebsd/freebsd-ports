@@ -31,7 +31,7 @@ DOC1=		CHANGES COPYING Copyright INSTALL \
 SUPP_LANG=	catalan chinese czech danish dutch english estonian \
 		finnish french german greek hungarian indonesian italian \
 		korean polish portuguese portuguese_brazil romanian \
-		russain slovak spanish swedish
+		russian slovak spanish swedish
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src$//}
 MAKE_ARGS+=	CFLAGS="${CFLAGS}"
 
