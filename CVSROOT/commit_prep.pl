@@ -53,23 +53,28 @@ $ENTRIES       = "CVS/Entries";
 $HEADER        = 'FreeBSD';	# Our RCS header is '$ FreeBSD $', 
 				# (without the spaces.)
 
-$NoId = "
+############################################################
+#
+# Error messages
+#
+############################################################
+my $NoId = "
 %s - Does not contain a line with the keyword \"\$$HEADER:\".\n";
 
 # Protect string from substitution by RCS.
-$NoName = "
+my $NoName = "
 %s - The ID line should contain only \$$HEADER\$ for a newly created file.\n";
 
 #$DelPath = "
 #%s - The old path and version has been deleted from \$$HEADER\$.\n";
 
-$BadId = "%s - The \$$HEADER\$ is mangled.\n";
+my $BadId = "%s - The \$$HEADER\$ is mangled.\n";
 
-$BadName = "
+my $BadName = "
 %s - The pathname '%s'
     in the \$$HEADER\$ line does not match the actual filename.\n";
 
-$BadVersion = "
+my $BadVersion = "
 %s - GRRR!!  You spammed your copy of the file
     which was based upon version %s, with a different version based
     upon %s.  Please move your '%s' out of the way,
