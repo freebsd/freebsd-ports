@@ -31,7 +31,8 @@ USE_BZIP2=		yes
 USE_GMAKE=		yes
 #USE_AUTOCONF_VER=	213
 GNU_CONFIGURE=		yes
-
+CFLAGS+=		${PTHREAD_CFLAGS}
+LIBS+=			${PTHREAD_LIBS}
 WRKSRC=			${WRKDIR}/mozilla
 
 .include <bsd.port.pre.mk>
@@ -41,7 +42,9 @@ WRKSRC=			${WRKDIR}/mozilla
 .endif
 
 post-extract:
-	${SED} -e 's|@X11BASE@|${X11BASE}|'		\
+	${SED} -e 's|@CFLAGS@|${CFLAGS}|'		\
+		-e 's|@LIBS@|${LIBS}|'			\
+		-e 's|@X11BASE@|${X11BASE}|'		\
 		-e 's|@LOCALBASE@|${LOCALBASE}|'	\
 		<${FILESDIR}/mozconfig.in >${WRKSRC}/.mozconfig
 
