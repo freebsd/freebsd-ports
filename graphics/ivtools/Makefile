@@ -18,6 +18,13 @@ COMMENT=	Drawing editors derived from idraw
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == alpha || ${ARCH} == sparc64
+BROKEN=		"fails to configure on ${ARCH}"
+.endif
+.if ${ARCH} == i386 && ${OSVERSION} > 500000
+BROKEN=		"fails to configure on ${ARCH} with FreeBSD version ${OSVERSION}"
+.endif
+
 .if ${XFREE86_VERSION} == 3
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
 .else
