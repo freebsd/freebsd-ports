@@ -90,3 +90,4 @@ lib/X11/twm/images/xrn.xpm
 lib/X11/twm/images/xterm.xpm
 lib/X11/twm/system.ctwmrc
 @dirrm lib/X11/twm/images
+%%NEWMTREE%%@unexec rmdir %D/lib/X11/twm 2>/dev/null || true

@@ -1,0 +1,73 @@
+--- programs/Xserver/hw/xfree86/drivers/ati/atimode.c.orig	Fri Apr 23 19:26:46 2004
++++ programs/Xserver/hw/xfree86/drivers/ati/atimode.c	Sun Feb 13 05:55:05 2005
+@@ -1,4 +1,4 @@
+-/* $XFree86: xc/programs/Xserver/hw/xfree86/drivers/ati/atimode.c,v 1.18 2004/01/05 16:42:03 tsi Exp $ */
++/* $XFree86: xc/programs/Xserver/hw/xfree86/drivers/ati/atimode.c,v 1.20tsi Exp $ */
+ /*
+  * Copyright 2000 through 2004 by Marc Aurele La France (TSI @ UQV), tsi@xfree86.org
+  *
+@@ -646,7 +646,7 @@
+                             SetBits(pMode->CrtcVDisplay, CRTC_V_DISP);
+                     pATIHW->crtc_v_sync_strt_wid =
+                         SetBits(pMode->CrtcVSyncStart, CRTC_V_SYNC_STRT) |
+-                            SetBits(pMode->CrtcVSyncEnd, CRTC_V_SYNC_WID);
++                            SetBits(pMode->CrtcVSyncEnd, CRTC_V_SYNC_END_VGA);
+                     if (pMode->Flags & V_NVSYNC)
+                         pATIHW->crtc_v_sync_strt_wid |= CRTC_V_SYNC_POL;
+                 }
+--- programs/Xserver/hw/xfree86/drivers/ati/atipreinit.c.orig	Wed Dec 15 07:58:15 2004
++++ programs/Xserver/hw/xfree86/drivers/ati/atipreinit.c	Sun Feb 13 05:55:05 2005
+@@ -1,4 +1,4 @@
+-/* $XFree86: xc/programs/Xserver/hw/xfree86/drivers/ati/atipreinit.c,v 1.74 2003/12/22 17:48:09 tsi Exp $ */
++/* $XFree86: xc/programs/Xserver/hw/xfree86/drivers/ati/atipreinit.c,v 1.79tsi Exp $ */
+ /*
+  * Copyright 1999 through 2004 by Marc Aurele La France (TSI @ UQV), tsi@xfree86.org
+  *
+@@ -1902,10 +1902,10 @@
+                 VDisplay = GetBits(pATIHW->crtc_v_total_disp, CRTC_V_DISP);
+                 VSyncStart =
+                     GetBits(pATIHW->crtc_v_sync_strt_wid, CRTC_V_SYNC_STRT);
+-                VSyncEnd = (VSyncStart & ~MaxBits(CRTC_V_SYNC_WID)) |
+-                    GetBits(pATIHW->crtc_v_sync_strt_wid, CRTC_V_SYNC_WID);
++                VSyncEnd = (VSyncStart & ~MaxBits(CRTC_V_SYNC_END_VGA)) |
++                    GetBits(pATIHW->crtc_v_sync_strt_wid, CRTC_V_SYNC_END_VGA);
+                 if (VSyncStart > VSyncEnd)
+-                    VSyncEnd += MaxBits(CRTC_V_SYNC_WID) + 1;
++                    VSyncEnd += MaxBits(CRTC_V_SYNC_END_VGA) + 1;
+                 VTotal = GetBits(pATIHW->crtc_v_total_disp, CRTC_V_TOTAL);
+ 
+                 VBlankStart = (VDisplay & ~0x03FFU) |
+@@ -2177,7 +2177,7 @@
+                 if ((pATIHW->horz_stretching &
+                     (HORZ_STRETCH_EN | AUTO_HORZ_RATIO)) !=
+                     (HORZ_STRETCH_EN | AUTO_HORZ_RATIO))
+-                    xf86DrvMsg(pScreenInfo->scrnIndex, X_WARNING,
++                    xf86DrvMsgVerb(pScreenInfo->scrnIndex, X_WARNING, 4,
+                         "Inconsistent panel horizontal dimension:"
+                         "  %d and %d.\n", pATI->LCDHorizontal, HDisplay);
+                 HDisplay = pATI->LCDHorizontal;
+@@ -2193,7 +2193,7 @@
+             {
+                 if (!(pATIHW->vert_stretching & VERT_STRETCH_EN) ||
+                     !(pATIHW->ext_vert_stretch & AUTO_VERT_RATIO))
+-                    xf86DrvMsg(pScreenInfo->scrnIndex, X_WARNING,
++                    xf86DrvMsgVerb(pScreenInfo->scrnIndex, X_WARNING, 4,
+                         "Inconsistent panel vertical dimension:  %d and %d.\n",
+                         pATI->LCDVertical, VDisplay);
+                 VDisplay = pATI->LCDVertical;
+--- programs/Xserver/hw/xfree86/drivers/ati/atiregs.h.orig	Fri Jul 23 05:36:14 2004
++++ programs/Xserver/hw/xfree86/drivers/ati/atiregs.h	Sun Feb 13 05:55:05 2005
+@@ -1,4 +1,4 @@
+-/* $XFree86: xc/programs/Xserver/hw/xfree86/drivers/ati/atiregs.h,v 1.24 2003/04/23 21:51:30 tsi Exp $ */
++/* $XFree86: xc/programs/Xserver/hw/xfree86/drivers/ati/atiregs.h,v 1.26tsi Exp $ */
+ /*
+  * Copyright 1994 through 2004 by Marc Aurele La France (TSI @ UQV), tsi@xfree86.org
+  *
+@@ -551,6 +551,7 @@
+ #define CRTC_V_SYNC_STRT		0x000007fful
+ /*	?				0x0000f800ul */
+ #define CRTC_V_SYNC_WID			0x001f0000ul
++#define CRTC_V_SYNC_END_VGA		0x000f0000ul
+ #define CRTC_V_SYNC_POL			0x00200000ul
+ /*	?				0xffc00000ul */
+ #define CRTC_VLINE_CRNT_VLINE	IOPortTag(0x04u, 0x04u)

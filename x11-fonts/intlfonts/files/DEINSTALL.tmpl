@@ -15,4 +15,6 @@ if [ "x$2" = "xPOST-DEINSTALL" ]; then
 	[ `wc -c ${PKG_PREFIX}/%%T1_FONTSDIR%%/fonts.scale | awk '{print $1}'` = 2 ] && rm -f ${PKG_PREFIX}/%%T1_FONTSDIR%%/fonts.scale
 # Remove a backup file made by type1inst
 	rm -f ${PKG_PREFIX}/%%T1_FONTSDIR%%/fonts.scale.bak
+	[ "%%XWINSYS%%" = "xorg" ] && \
+	    (rmdir ${PKG_PREFIX}/%%T1_FONTSDIR%% 2>/dev/null || true)
 fi

@@ -55,6 +55,7 @@ do-build:
 			-e 's,%%T1_FONTSDIR%%,${T1_FONTSDIR},g' \
 			-e 's,%%TT_FONTSDIR%%,${TT_FONTSDIR},g' \
 			-e 's,%%LOCALBASE%%,${LOCALBASE},g' \
+			-e 's,%%XWINSYS%%,${X_WINDOW_SYSTEM:L},g' \
 			< ${FILESDIR}/$${file}.tmpl > ${WRKDIR}/$${file}; \
 	done
 

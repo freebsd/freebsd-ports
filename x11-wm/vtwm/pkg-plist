@@ -1,2 +1,3 @@
 bin/vtwm
 lib/X11/twm/system.vtwmrc
+%%NEWMTREE%%@unexec rmdir %D/lib/X11/twm 2>/dev/null || true

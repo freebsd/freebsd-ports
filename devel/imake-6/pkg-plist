@@ -121,3 +121,5 @@ lib/X11/config/xfree86.cf
 lib/X11/config/xorg.cf
 lib/X11/config/xorg.tmpl
 lib/X11/config/xorgsite.def
+lib/X11/config/xorgversion.def
+@dirrm lib/X11/config

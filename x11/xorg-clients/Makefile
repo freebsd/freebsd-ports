@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	xorg-clients
-PORTVERSION=	6.8.1
-PORTREVISION=	1
+PORTVERSION=	6.8.2
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XORG}
-MASTER_SITE_SUBDIR=	X11R6.8.1/tars
+MASTER_SITE_SUBDIR=	X11R${PORTVERSION}/src
 DISTFILES=	X11R${PORTVERSION}-src1.tar.gz \
 		X11R${PORTVERSION}-src2.tar.gz \
 		X11R${PORTVERSION}-src3.tar.gz
@@ -54,6 +53,7 @@ post-install:
 	${CHOWN} root:wheel ${PREFIX}/bin/luit
 	${CHMOD} 04711 ${PREFIX}/bin/luit
 .endif
+	${MKDIR} ${PREFIX}/lib/X11/xinit
 	${INSTALL_DATA} ${WRKSRC}/programs/xinit/xinitrc \
 		${PREFIX}/lib/X11/xinit/xinitrc.default
 .for i in ${XDMCONFDATA}

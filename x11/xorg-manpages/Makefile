@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	xorg-manpages
-PORTVERSION=	6.8.1
+PORTVERSION=	6.8.2
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XORG}
-MASTER_SITE_SUBDIR=	X11R6.8.1/tars
+MASTER_SITE_SUBDIR=	X11R${PORTVERSION}/src
+DISTNAME=	X11R${PORTVERSION}-src
 DISTFILES=	X11R${PORTVERSION}-src1.tar.gz \
 		X11R${PORTVERSION}-src3.tar.gz
 EXTRACT_ONLY=	X11R${PORTVERSION}-src1.tar.gz
@@ -26,7 +27,7 @@ XINCLUDE_DIRS=	${XMAN_DIRS}
 
 post-extract:
 	(cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-		${DISTDIR}/${DIST_SUBDIR}/X11R6.8.1-src3.tar.gz | \
+		${DISTDIR}/${DIST_SUBDIR}/X11R${PORTVERSION}-src3.tar.gz | \
 		${TAR} -xf - xc/programs/Xserver);
 
 .include "${.CURDIR}/../../x11-servers/xorg-server/Makefile.inc"

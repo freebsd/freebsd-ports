@@ -4,7 +4,6 @@ bin/mgpembed
 bin/mgpnet
 bin/xwintoppm
 bin/xmindpath
-lib/X11/doc/html/xmindpath.1.html
 lib/X11/mgp/default.mgp
 lib/X11/mgp/mgp1.jpg
 lib/X11/mgp/mgp2.jpg

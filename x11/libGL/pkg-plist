@@ -9,3 +9,4 @@ include/GL/glxtokens.h
 lib/libGL.a
 lib/libGL.so
 lib/libGL.so.1
+@dirrm include/GL

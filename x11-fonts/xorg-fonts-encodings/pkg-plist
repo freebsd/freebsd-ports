@@ -3,6 +3,7 @@ lib/X11/fonts/encodings/adobe-standard.enc.gz
 lib/X11/fonts/encodings/adobe-symbol.enc.gz
 lib/X11/fonts/encodings/ansi-1251.enc
 lib/X11/fonts/encodings/armscii-8.enc
+lib/X11/fonts/encodings/ascii-0.enc
 lib/X11/fonts/encodings/dec-special.enc
 lib/X11/fonts/encodings/encodings.dir
 lib/X11/fonts/encodings/ibm-cp437.enc
@@ -48,3 +49,5 @@ lib/X11/fonts/encodings/suneu-greek.enc
 lib/X11/fonts/encodings/tcvn-0.enc
 lib/X11/fonts/encodings/tis620-2.enc
 lib/X11/fonts/encodings/viscii1.1-1.enc.gz
+@unexec rmdir %D/lib/X11/fonts/encodings/large 2>/dev/null || true
+@unexec rmdir %D/lib/X11/fonts/encodings 2>/dev/null || true

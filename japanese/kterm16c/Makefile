@@ -38,6 +38,12 @@ USE_XPM=	yes
 
 DOCDIR=		${PREFIX}/share/doc/kterm16c
 
+.if ${X_WINDOW_SYSTEM:L} == xorg
+PLIST_SUB+=	NEWMTREE=""
+.else
+PLIST_SUB+=	NEWMTREE="@comment "
+.endif
+
 post-extract:
 	@${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
 		${DISTDIR}/${DIST_SUBDIR}/pcemu1.01alpha.tar.gz \
@@ -69,6 +75,7 @@ post-patch:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/kterm ${PREFIX}/bin/kterm16c
 	@${INSTALL_DATA} ${WRKSRC}/KTerm.ad ${PREFIX}/lib/X11/app-defaults/KTerm
+	@${MKDIR} ${PREFIX}/lib/X11/fonts/misc
 	@${INSTALL_DATA} ${WRKDIR}/pcemu1.01alpha/vga.pcf.gz \
 		${PREFIX}/lib/X11/fonts/misc
 	@mkfontdir ${PREFIX}/lib/X11/fonts/misc

@@ -511,7 +511,9 @@ lib/X11/xkb/rules/sgi.lst
 lib/X11/xkb/rules/sun
 lib/X11/xkb/rules/sun.lst
 lib/X11/xkb/rules/xfree86
+lib/X11/xkb/rules/xfree86-it.lst
 lib/X11/xkb/rules/xfree86.lst
+lib/X11/xkb/rules/xfree86.xml
 lib/X11/xkb/rules/xorg
 lib/X11/xkb/rules/xorg-it.lst
 lib/X11/xkb/rules/xorg.lst
@@ -752,14 +754,6 @@ lib/X11/xkb/types/pc
 lib/X11/xkb/xkbcomp
 lib/X11/xman.help
 lib/X11/xsm/system.xsm
-@dirrm lib/X11/icons/redglass/cursors
-@dirrm lib/X11/icons/redglass
-@dirrm lib/X11/icons/whiteglass/cursors
-@dirrm lib/X11/icons/whiteglass
-@dirrm lib/X11/icons/handhelds/cursors
-@dirrm lib/X11/icons/handhelds
-@dirrm lib/X11/icons/default
-@dirrm lib/X11/xkb/geometry/ibm
 
 @comment xterm workaround
 bin/resize
@@ -768,3 +762,56 @@ bin/xterm
 lib/X11/app-defaults/UXTerm
 lib/X11/app-defaults/XTerm-color
 lib/X11/app-defaults/XTerm
+
+@dirrm include/X11/PM
+@dirrm lib/X11/proxymngr
+@dirrm lib/X11/rstart/commands/x11r6
+@dirrm lib/X11/rstart/commands
+@dirrm lib/X11/rstart/contexts
+@dirrm lib/X11/rstart
+@dirrm lib/X11/twm
+@dirrm lib/X11/x11perfcomp
+@dirrm lib/X11/xdm/pixmaps
+@dirrm lib/X11/xdm
+@dirrm lib/X11/xedit/lisp/progmodes
+@dirrm lib/X11/xedit/lisp
+@dirrm lib/X11/xedit
+@dirrm lib/X11/xkb/compat
+@dirrm lib/X11/xkb/geometry/digital
+@dirrm lib/X11/xkb/geometry/ibm
+@dirrm lib/X11/xkb/geometry/sgi
+@dirrm lib/X11/xkb/geometry
+@dirrm lib/X11/xkb/keycodes/digital
+@dirrm lib/X11/xkb/keycodes/sgi
+@dirrm lib/X11/xkb/keycodes
+@dirrm lib/X11/xkb/keymap/digital
+@dirrm lib/X11/xkb/keymap/sgi
+@dirrm lib/X11/xkb/keymap/sun
+@dirrm lib/X11/xkb/keymap
+@dirrm lib/X11/xkb/semantics
+@dirrm lib/X11/xkb/symbols/hp
+@dirrm lib/X11/xkb/symbols/digital
+@dirrm lib/X11/xkb/symbols/fujitsu
+@dirrm lib/X11/xkb/symbols/macintosh
+@dirrm lib/X11/xkb/symbols/nec
+@dirrm lib/X11/xkb/symbols/sgi
+@dirrm lib/X11/xkb/symbols/sony
+@dirrm lib/X11/xkb/symbols/sun
+@dirrm lib/X11/xkb/symbols/xfree68
+@dirrm lib/X11/xkb/symbols/pc
+@dirrm lib/X11/xkb/symbols
+@dirrm lib/X11/xkb/types
+@dirrm lib/X11/xkb/compiled
+@dirrm lib/X11/xkb/rules
+@dirrm lib/X11/xkb
+@dirrm lib/X11/xsm
+@dirrm lib/X11/icons/default
+@dirrm lib/X11/icons/redglass/cursors
+@dirrm lib/X11/icons/redglass
+@dirrm lib/X11/icons/whiteglass/cursors
+@dirrm lib/X11/icons/whiteglass
+@dirrm lib/X11/icons/handhelds/cursors
+@dirrm lib/X11/icons/handhelds
+@dirrm lib/X11/icons
+@dirrm lib/X11/xinit
+@unexec rmdir %D/lib/X11/fonts/util 2>/dev/null || true

@@ -1,0 +1,22 @@
+--- programs/Xserver/hw/xfree86/input/keyboard/kbd.c.orig	Wed Feb 23 23:28:28 2005
++++ programs/Xserver/hw/xfree86/input/keyboard/kbd.c	Thu Feb 24 00:12:20 2005
+@@ -571,6 +571,19 @@
+      }
+   }
+ 
++#if defined(__sparc__) && defined(__FreeBSD__)
++  /*
++   * Taken from xf86Events.c:
++   * I really don't know what's wrong here, but passing the real
++   * scanCode offsets by one from XKB's point of view.
++   *
++   * (ecd@skynet.be, 980405)
++   */
++  if (pKbd->sunKbd) {
++    scanCode--;
++  }
++#endif
++
+ #ifndef TERMINATE_FALLBACK
+ #define TERMINATE_FALLBACK 1
+ #endif

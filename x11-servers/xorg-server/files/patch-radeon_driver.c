@@ -1,19 +1,10 @@
---- programs/Xserver/hw/xfree86/drivers/ati/radeon_driver.c.orig	Tue Aug 24 17:30:41 2004
-+++ programs/Xserver/hw/xfree86/drivers/ati/radeon_driver.c	Thu Jan 13 14:34:17 2005
-@@ -4471,10 +4471,12 @@
- 
-     RADEONSave(pScrn);
- 
--    if (xf86ReturnOptValBool(info->Options, OPTION_DYNAMIC_CLOCKS, FALSE)) {
--	RADEONSetDynamicClock(pScrn, 1);
--    } else {
--	RADEONSetDynamicClock(pScrn, 0);
-+    if ((!info->IsSecondary) && info->IsMobility) {
-+        if (xf86ReturnOptValBool(info->Options, OPTION_DYNAMIC_CLOCKS, FALSE)) {
-+	    RADEONSetDynamicClock(pScrn, 1);
-+        } else {
-+	    RADEONSetDynamicClock(pScrn, 0);
-+        }
+--- programs/Xserver/hw/xfree86/drivers/ati/radeon_driver.c.orig	Thu Feb 17 13:15:22 2005
++++ programs/Xserver/hw/xfree86/drivers/ati/radeon_driver.c	Thu Feb 17 13:21:09 2005
+@@ -7159,7 +7159,6 @@
+ 	RADEONDoAdjustFrame(pScrn, x, y, FALSE);
      }
  
-     if (info->FBDev) {
+-    RADEONSetFBLocation (pScrn);
+ #ifdef XF86DRI
+ 	if (info->CPStarted) DRIUnlock(pScrn->pScreen);
+ #endif

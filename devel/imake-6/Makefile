@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	imake
-PORTVERSION=	6.8.1
+PORTVERSION=	6.8.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_XORG}
-MASTER_SITE_SUBDIR=	X11R${PORTVERSION}/tars
+MASTER_SITE_SUBDIR=	X11R${PORTVERSION}/src
 DISTFILES=	X11R${PORTVERSION}-src1.tar.gz \
 		X11R${PORTVERSION}-src3.tar.gz
 
@@ -28,10 +28,9 @@ USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
-NO_LATEST_LINK=	yes
 DIST_SUBDIR=	xorg
 WRKSRC=		${WRKDIR}/xc/config
-MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
+MTREE_FILE=	${PORTSDIR}/x11-servers/xorg-server/files/BSD.x11-xorg.dist
 MAN1=		ccmakedep.1 \
 		cleanlinks.1 \
 		gccmakedep.1 \

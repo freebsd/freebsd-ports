@@ -185,3 +185,9 @@ lib/modules/libxf8_32bpp.a
 %%SPARC64_NA%%lib/modules/v10002d.uc
 %%SPARC64_NA%%lib/modules/v20002d.uc
 @dirrm lib/X11/getconfig
+@dirrm lib/modules/fonts
+@dirrm lib/modules/extensions
+@dirrm lib/modules/freebsd
+@dirrm lib/modules/drivers
+@dirrm lib/modules/input
+@unexec rmdir %D/lib/X11/doc 2>/dev/null || true

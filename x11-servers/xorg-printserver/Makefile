@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	xorg-printserver
-PORTVERSION=	6.8.1
+PORTVERSION=	6.8.2
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XORG}
-MASTER_SITE_SUBDIR=	X11R${PORTVERSION}/tars
+MASTER_SITE_SUBDIR=	X11R${PORTVERSION}/src
 DISTFILES=	X11R${PORTVERSION}-src1.tar.gz \
 		X11R${PORTVERSION}-src3.tar.gz
 
@@ -26,7 +26,7 @@ XBUILD_DIRS=	lib/font programs/Xserver
 XINCLUDE_DIRS=	lib/xtrans
 XMAN_DIRS=	programs/Xserver
 
-MAN7=		Xprint.7
+MAN1=		Xprt.1
 
 .include "${.CURDIR}/../../x11-servers/xorg-server/Makefile.inc"
 .include <bsd.port.pre.mk>

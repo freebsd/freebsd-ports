@@ -43,6 +43,7 @@ post-extract:
 		xc/programs/Xserver/GL)
 
 post-install:
+	${MKDIR} ${PREFIX}/include/GL
 .for i in ${GLHEADERS}
 	${INSTALL_DATA} ${WRKSRC}/include/GL/${i} ${PREFIX}/include/GL
 .endfor
