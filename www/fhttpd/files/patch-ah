@@ -1,0 +1,11 @@
+--- fhttpd-log.cc.orig	Sun Aug  6 17:59:14 2000
++++ fhttpd-log.cc	Sun Aug  6 17:59:53 2000
+@@ -211,7 +211,7 @@
+ int argc1;
+ char **argv1;
+ int i,human=1;
+-long t_sec,t_usec;
++time_t t_sec,t_usec;
+ __s32 requestid,clientid,instid,
+   nrequestid,nclientid,ninstid,n_t_sec,n_t_usec;
+ char *configfile=FHTTPD_CONFIG_FILE;
