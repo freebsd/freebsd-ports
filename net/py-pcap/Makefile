@@ -23,9 +23,11 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
 
-PCAPTEST!=	grep PCAP_IF_LOOPBACK /usr/include/pcap.h || true
-.if empty(PCAPTEST)
-BROKEN=		"needs libpcap 0.7 or higher"
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 460001 || \
+	( ${OSVERSION} >= 500000 && ${OSVERSION} < 500038 )
+IGNORE=		"needs libpcap 0.7 or higher"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
