@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ap-utils
-PORTVERSION=	1.0.4
+PORTVERSION=	1.1.1
 CATEGORIES=	net
 MASTER_SITES=	http://ap-utils.polesye.net/files/ \
 		http://web.cs.cmu.edu/~dpelleg/download/
@@ -21,8 +21,9 @@ MAN8=		ap-trapd.8 ap-mrtg.8 ap-atmel.8 ap-nwn.8
 
 .if !defined(NOPORTDOCS)
 post-install:
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Documentation/FAQ ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR} ${DOCSDIR}/uk
+	@cd ${WRKSRC}/Documentation && ${INSTALL_DATA} FAQ ${DOCSDIR}
+	@cd ${WRKSRC}/Documentation/uk && ${INSTALL_DATA} INSTALL README.atmel ${DOCSDIR}/uk
 .endif
 
 .include <bsd.port.mk>
