@@ -3,12 +3,12 @@
 # Date created:		14 January 1995
 # Whom:			mr (original)
 #
-# $Id: Makefile,v 1.13 1996/10/04 00:38:34 jfitz Exp $
+# $Id: Makefile,v 1.14 1996/11/17 03:18:30 obrien Exp $
 #
 
 DISTNAME=	msql-1.0.16
 CATEGORIES=	databases
-MASTER_SITES=	ftp://bond.edu.au/pub/Minerva/msql/
+MASTER_SITES=	http://hughes.com.au/software/msql1/
 
 MAINTAINTER=	jfitz@FreeBSD.ORG
 
