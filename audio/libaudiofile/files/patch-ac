@@ -1,0 +1,11 @@
+--- libaudiofile/Makefile.in.orig	Fri Jun  2 20:19:43 2000
++++ libaudiofile/Makefile.in	Fri Jun  2 20:20:08 2000
+@@ -88,7 +88,7 @@
+ 
+ include_HEADERS = audiofile.h aupvlist.h af_vfs.h
+ 
+-CFLAGS = -Wall -g
++CFLAGS = @CFLAGS@
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 
