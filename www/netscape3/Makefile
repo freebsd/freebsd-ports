@@ -3,7 +3,7 @@
 # Date created:		21 August 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.14 1996/11/18 11:41:39 asami Exp $
+# $Id: Makefile,v 1.15 1996/11/30 10:50:22 asami Exp $
 #
 
 DISTNAME=       netscape-3.01
@@ -18,7 +18,7 @@ DISTFILES=      netscape-v301-export.x86-unknown-bsd.tar.gz
 
 MAINTAINER=     ache@FreeBSD.ORG
 
-RESTRICTED=	"Commercial software."
+RESTRICTED=	"Commercial software"
 NO_WRKSUBDIR=	yes
 
 pre-fetch:
@@ -29,6 +29,6 @@ pre-fetch:
 .endif
 
 post-install:
-	@cat ${PKGDIR}/DESCR
+	@${CAT} ${PKGDIR}/DESCR
 
 .include <bsd.port.mk>
