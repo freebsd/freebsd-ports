@@ -4,7 +4,7 @@
  sysdeps_dir = @sysdeps_dir@
  sysdeps_suid_lib = @sysdeps_suid_lib@
  
--supportexecincludedir = $(pkglibdir)/include
+-supportexecincludedir = $(includedir)/gnome/$(GNOME_INTERFACE_VERSION)
 +supportexecincludedir = $(includedir)/libgtop-2.0
  
  INCLUDES = -D_GNU_SOURCE

@@ -1,14 +1,5 @@
 --- ltmain.sh.orig	Sun Aug 24 18:53:15 2003
 +++ ltmain.sh	Sun Aug 24 18:57:42 2003
-@@ -1050,7 +1050,7 @@
- 	  esac
- 	 elif test "X$arg" = "X-lc_r"; then
- 	  case $host in
--	  *-*-openbsd*)
-+	  *-*-openbsd* | *-*-freebsd4*)
- 	    # Do not include libc_r directly, use -pthread flag.
- 	    continue
- 	    ;;
 @@ -1060,8 +1060,16 @@
  	continue
  	;;
