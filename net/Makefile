@@ -61,6 +61,7 @@
     SUBDIR += ctrace
     SUBDIR += cvsup
     SUBDIR += cvsup-mirror
+    SUBDIR += cvsup-without-gui
     SUBDIR += cvsupit
     SUBDIR += dante
     SUBDIR += datapipe
