@@ -1,38 +1,35 @@
 #!/bin/sh
+#
 
-if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/jabberd\.sh\$"); then
-    echo "$0: Cannot determine the PREFIX" >&2
-    exit 1
-fi
+# PROVIDE: jabber
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
 
-USER="jabber"
-RUNDIR="/var/tmp"
+#
+# Add the following lines to /etc/rc.conf to enable rsyncd:
+#
+#jabber_enable="YES"
+#
+
+. /usr/local/etc/rc.subr
+
+name=jabber
+rcvar=`set_rcvar`
+
+command=/usr/local/sbin/jabberd
+required_files=/usr/local/etc/${name}.xml
+
 HOSTNAME=`/bin/hostname`
 
-test -x ${PREFIX}/sbin/jabberd || exit 1
+# set defaults
 
-export PATH=/sbin:/bin:/usr/bin:${PREFIX}/bin:${PREFIX}/sbin
-umask 077
+jabber_enable=${jabber_enable:-"NO"}
+jabber_pidfile=${jabber_pidfile:-"/var/spool/jabber/${name}.pid"}
+jabber_flags=${jabber_flags:-"-B -h ${HOSTNAME} -c ${required_files}"}
+jabber_user=${jabber_user:-"jabber"}
+jabber_group=${jabber_group:-"jabber"}
 
-echo -n " jabberd "
-cd ${RUNDIR} || exit
+pidfile=${jabber_pidfile}
 
-case ${1:-start} in
-start)
-    if [ -f jabber.pid ]; then
-        pid=`cat jabber.pid`
-        if [ ! -z "$pid" ] && kill -0 -- "$pid"; then
-            echo "A pidfile already exists at the specified location."
-            echo "Check to ensure another copy of the server is not running, or remove the existing file."
-            exit 1
-        fi
-
-        rm -f ${RUNDIR}/jabber.pid;
-    fi
-
-    su -f -m ${USER} -c "jabberd -B -h ${HOSTNAME} -c ${PREFIX}/etc/jabber.xml"
-    ;;
-stop)
-    killall -SIGKILL -u ${USER} jabberd;
-    rm -f ${RUNDIR}/jabber.pid;
-esac
+load_rc_config ${name}
+run_rc_command "$1"
