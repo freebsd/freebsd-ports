@@ -2,7 +2,7 @@ bin/dnet-config
 sbin/dnet
 lib/libdnet.a
 lib/libdnet.so
-lib/libdnet.so.0
+lib/libdnet.so.1
 include/dnet/addr.h
 include/dnet/arp.h
 include/dnet/blob.h
@@ -16,6 +16,7 @@ include/dnet/os.h
 include/dnet/rand.h
 include/dnet/route.h
 include/dnet/tcp.h
+include/dnet/tun.h
 include/dnet/udp.h
 include/dnet.h
 @dirrm include/dnet
