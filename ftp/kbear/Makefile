@@ -17,6 +17,7 @@ MAINTAINER=		arved@FreeBSD.org
 WRKSRC=			${WRKDIR}/${DISTNAME:S/.src//}
 INSTALLS_SHLIB=		yes
 USE_KDELIBS_VER=	3
+USE_REINPLACE=		yes
 USE_BZIP2=		yes
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
@@ -24,4 +25,7 @@ CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=		XML2POT=${TRUE} PO2XML=${TRUE}
 
+post-patch:
+	${REINPLACE_CMD} -e 's,305,306,' ${WRKSRC}/kbear/kbear.cpp \
+		${WRKSRC}/kbear/parts/filesyspart/kbeardirlister.cpp
 .include <bsd.port.mk>
