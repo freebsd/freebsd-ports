@@ -16,14 +16,19 @@ COMMENT=	Update your host name on any dynamic DNS service
 USE_RC_SUBR=	yes
 GNU_CONFIGURE=	yes
 
+post-build:
+	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
+		-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
+		${FILESDIR}/${PORTNAME}.sh >${WRKDIR}/${PORTNAME}.sh
+
 post-install:
-	${MKDIR} ${PREFIX}/share/examples/ez-ipupdate
+	${MKDIR} ${PREFIX}/share/examples/${PORTNAME}
 	for f in ${WRKSRC}/example-*.conf; \
 	do \
-		${INSTALL_DATA} $$f ${PREFIX}/share/examples/ez-ipupdate/; \
+		${INSTALL_DATA} $$f ${PREFIX}/share/examples/${PORTNAME}/; \
 	done
 	${INSTALL_DATA} ${WRKSRC}/example.conf \
-			${PREFIX}/etc/ez-ipupdate.conf.sample
-	${INSTALL_SCRIPT} ${FILESDIR}/ez-ipupdate.sh ${PREFIX}/etc/rc.d
+			${PREFIX}/etc/${PORTNAME}.conf.sample
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/etc/rc.d/
 
 .include <bsd.port.mk>
