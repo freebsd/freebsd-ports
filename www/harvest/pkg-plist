@@ -37,7 +37,6 @@ brokers/skeleton/Makefile.in
 brokers/skeleton/Query.cgi.in
 brokers/skeleton/RunBroker.in
 brokers/skeleton/admin/Collection.conf.in
-brokers/skeleton/admin/admin.html.in
 brokers/skeleton/admin/broker.conf.in
 brokers/skeleton/query-glimpse-modern.html.de.in
 brokers/skeleton/query-glimpse-modern.html.es.in
@@ -64,7 +63,7 @@ brokers/zquery/contact.html
 brokers/zquery/help.html
 brokers/zquery/index.html
 brokers/zquery/register.html
-cgi-bin/BrokerAdmin.pl.cgi
+cgi-bin/brokerAdmin.cgi
 cgi-bin/displaySOIF.cgi
 cgi-bin/lib/Sample.cf
 cgi-bin/lib/classic.cf
@@ -112,6 +111,9 @@ gatherers/example-5/RunGatherer
 gatherers/example-5/example-5.cf
 gatherers/example-5/mydomain-host-filter
 gatherers/example-5/mydomain-url-filter
+gatherers/template/RunGatherd
+gatherers/template/RunGatherer
+gatherers/template/gather.cf
 lib/broker/BrokerRestart
 lib/broker/agrep
 lib/broker/brkclient
@@ -228,6 +230,7 @@ lib/gatherer/folddb
 lib/gatherer/ftpenum
 lib/gatherer/ftpenum.pl
 lib/gatherer/gatherd
+lib/gatherer/gather_option.pl
 lib/gatherer/gdbmutil
 lib/gatherer/gifinfo
 lib/gatherer/gopherenum-breadth
@@ -395,6 +398,7 @@ share/idzebra/tab/var1.var
 share/idzebra/tab/wais-b.est
 share/idzebra/tab/wais-variant.est
 share/idzebra/tab/wais.abs
+share/idzebra/tab/xsoif.abs
 @dirrm bin
 @dirrm lib/gatherer/sgmls-lib/html-4.0
 @dirrm lib/gatherer/sgmls-lib/html-4.01
@@ -425,6 +429,7 @@ share/idzebra/tab/wais.abs
 @dirrm gatherers/example-4/lib
 @dirrm gatherers/example-4
 @dirrm gatherers/example-5
+@dirrm gatherers/template
 @dirrm gatherers
 @dirrm share/curl
 @dirrm share/idzebra/tab
