@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sat Jun 29 10:17:51 2002
-+++ Makefile.in	Sat Jun 29 10:19:57 2002
-@@ -39,15 +39,16 @@
+--- Makefile.static.in.orig	Thu Oct 24 03:34:40 2002
++++ Makefile.static.in	Sat Oct 26 01:55:17 2002
+@@ -39,15 +39,15 @@
  	mkdir -p $(bindir)
  	mkdir -p $(mandir)/man1
  	mkdir -p $(sharedir)
@@ -9,7 +9,6 @@
 -	cp pfaedit/pfaedit-*.ui $(sharedir)
 +	${BSD_INSTALL_PROGRAM} pfaedit/pfaedit $(bindir)
 +	${BSD_INSTALL_PROGRAM} pfaedit/sfddiff $(bindir)
-+	${BSD_INSTALL_PROGRAM} pfaedit/acorn2sfd $(bindir)
 +	${BSD_INSTALL_DATA} pfaedit/pfaedit-*.ui $(sharedir)
  #The next line will fail for most installs. If you have downloaded the cidmaps
  # this will install them. If you haven't it won't. You only need the cidmaps
@@ -17,9 +16,9 @@
 -	-cp $(srcdir)/cidmap/*.cidmap $(sharedir) >/dev/null 2>&1
 -	cp $(srcdir)/pfaedit/pfaedit.1 $(mandir)/man1
 -	cp $(srcdir)/pfaedit/sfddiff.1 $(mandir)/man1
-+	${BSD_INSTALL_DATA} $(srcdir)/cidmap/*.cidmap $(sharedir) >/dev/null 2>&1
-+	${BSD_INSTALL_MAN} $(srcdir)/pfaedit/pfaedit.1 $(mandir)/man1
-+	${BSD_INSTALL_MAN} $(srcdir)/pfaedit/sfddiff.1 $(mandir)/man1
++	${BSD_INSTALL_MAN}  $(srcdir)/cidmap/*.cidmap $(sharedir) >/dev/null 2>&1
++	${BSD_INSTALL_MAN}  $(srcdir)/pfaedit/pfaedit.1 $(mandir)/man1
++	${BSD_INSTALL_MAN}  $(srcdir)/pfaedit/sfddiff.1 $(mandir)/man1
  
  uninstall:
  	-rm $(bindir)/pfaedit

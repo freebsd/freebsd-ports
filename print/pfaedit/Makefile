@@ -26,6 +26,7 @@ USE_GMAKE=	yes
 USE_XLIB=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_SCRIPT=	configure.static
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 	CFLAGS="$(CFLAGS) -I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2"
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -33,11 +34,11 @@ ALL_TARGET=	pfaedit
 
 MAN1=		pfaedit.1 sfddiff.1
 
-DIST_VER=	020829
+DIST_VER=	021025
 EXTRACT_ONLY=	${PORTNAME}_full-${DIST_VER}.tgz cidmaps.tgz
 
 .if !defined(NOPORTDOCS)
-DOC_VER=	020818
+DOC_VER=	020910
 DOCFILE=	${PORTNAME}_htdocs-${DOC_VER}.tgz
 .endif
 
@@ -49,7 +50,7 @@ post-extract:
 	${MV} ${WRKDIR}/*.cidmap ${WRKSRC}/cidmap
 .endif
 
-post-patch:
+xxxpost-patch:
 	${REINPLACE_CMD} -e \
 		's,/usr/include/freetype2,${PREFIX}/include/freetype2 -I${PREFIX}/include,g' \
 		${WRKSRC}/configure ${WRKSRC}/configure.in \
