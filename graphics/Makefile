@@ -142,6 +142,7 @@
     SUBDIR += libaux
     SUBDIR += libdivxdecore
     SUBDIR += libdivxdecore-devel
+    SUBDIR += libdivxencore
     SUBDIR += libdjvu++
     SUBDIR += libdv
     SUBDIR += libdvdcss
