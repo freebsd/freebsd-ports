@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmcube
-PORTVERSION=	0.98p1
+PORTVERSION=	0.98p2
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/
 PKGNAMESUFFIX=	-gdk
