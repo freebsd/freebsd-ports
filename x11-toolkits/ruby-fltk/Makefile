@@ -21,6 +21,7 @@ LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
+RUBY_WITH_PTHREAD=	yes
 
 USE_MESA=	yes
 
