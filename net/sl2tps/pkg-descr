@@ -1,0 +1,7 @@
+sl2tps is a simple, statically configured L2TP server for FreeBSD.
+It is based on the PPP stack in libpdel(3), which uses netgraph(4)
+to handle configuration and negotiation in user land, while routing
+all data packets strictly in the kernel. It is configured via an
+XML configuration file.
+
+WWW: http://www.dellroad.org/sl2tps
