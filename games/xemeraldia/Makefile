@@ -3,7 +3,7 @@
 # Date created:         22 Mar 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.9 1995/04/20 18:21:06 asami Exp $
+# $Id: Makefile,v 1.10 1996/11/18 11:25:25 asami Exp $
 #
 
 DISTNAME=       xemeraldia-0.3
@@ -29,5 +29,8 @@ do-extract:
 post-install:
 	touch ${PREFIX}/lib/X11/.xemeraldia.scores
 	chmod 666 ${PREFIX}/lib/X11/.xemeraldia.scores
+
+pre-clean:
+	@rm -f ${DISTDIR}/${DISTNAME}.tar.gz
 
 .include <bsd.port.mk>
