@@ -8,8 +8,8 @@
 
 DISTNAME=	qcread-0.3
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://phobos.illtel.denver.co.us/pub/qcread/ \
-		http://phobos.illtel.denver.co.us/pub/qcread/
+MASTER_SITES=	ftp://mars.illtel.denver.co.us/pub/qcread/ \
+		http://mars.illtel.denver.co.us/pub/qcread/
 
 MAINTAINER=	billf@FreeBSD.org
 
@@ -17,7 +17,7 @@ ONLY_FOR_ARCHS=	i386
 
 post-extract:
 
-	${CP} -r ${WRKSRC}/gnu-getopt/. ${WRKSRC}
+	@${CP} -r ${WRKSRC}/gnu-getopt/. ${WRKSRC}
 
 do-install:
 
