@@ -995,6 +995,10 @@ share/doc/HTML/es/ksnapshot/window.png
 share/doc/HTML/es/ksokoban/common
 share/doc/HTML/es/ksokoban/index.cache.bz2
 share/doc/HTML/es/ksokoban/index.docbook
+share/doc/HTML/es/kspaceduel/common
+share/doc/HTML/es/kspaceduel/index.cache.bz2
+share/doc/HTML/es/kspaceduel/index.docbook
+share/doc/HTML/es/kspaceduel/kspaceduel3.png
 share/doc/HTML/es/kspell/common
 share/doc/HTML/es/kspell/index.cache.bz2
 share/doc/HTML/es/kspell/index.docbook
@@ -1814,6 +1818,7 @@ share/locale/es/flag.png
 @dirrm share/doc/HTML/es/ksysguard
 @dirrm share/doc/HTML/es/kstars
 @dirrm share/doc/HTML/es/kspell
+@dirrm share/doc/HTML/es/kspaceduel
 @dirrm share/doc/HTML/es/ksokoban
 @dirrm share/doc/HTML/es/ksnapshot
 @dirrm share/doc/HTML/es/ksnake
