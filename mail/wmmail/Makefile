@@ -1,20 +1,35 @@
 # New ports collection makefile for:  wmmail
-# Version required:    0.59
+# Version required:    0.62
 # Date created:        7 Jun 1998
 # Whom:                rom
 #
-# $Id: Makefile,v 1.6 1998/11/23 03:29:10 steve Exp $
+# $Id: Makefile,v 1.7 1999/01/18 06:43:00 asami Exp $
 #
 
-DISTNAME=	wmmail-0.59
+DISTNAME=	WMMail.app-0.62
+PKGNAME=	wmmail-0.62
 CATEGORIES=	mail windowmaker
-MASTER_SITES=	http://earth.gaianet.net/~scorpio/
+MASTER_SITES=	http://www.eecg.utoronto.ca/~chanb/
 
 MAINTAINER=	jim@phrantic.phear.net
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
+		PropList.1:${PORTSDIR}/devel/libPropList
 
-USE_IMAKE=	yes
-MAN1=		wmmail.1
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--with-PL-libs="-L${LOCALBASE}/lib" \
+		--with-PL-incs="-I${LOCALBASE}/include"
+WRKSRC=	${WRKDIR}/WMMail.app-0.62
+USE_X_PREFIX=	yes
+
+post-install:
+	@${ECHO} "		"
+	@${ECHO} "---------------------------------------------------------------------"
+	@${ECHO} "===>	Installing WMMail.defaults in ${PREFIX}/share/doc/WMMail"
+	@${ECHO} "===>	Modify to your config and copy to ~/GNUstep/Defaults/WMMail"
+	@${ECHO} "---------------------------------------------------------------------"
+	@${ECHO} "		"
+	@${MKDIR} ${PREFIX}/share/doc/WMMail && chmod a+rx ${PREFIX}/share/doc/WMMail
+	${INSTALL_DATA} ${WRKSRC}/WMMail.defaults ${PREFIX}/share/doc/WMMail
 
 .include <bsd.port.mk>
