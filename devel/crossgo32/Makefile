@@ -1,7 +1,7 @@
-# New ports collection makefile for:    crossgo32
-# Version required:     1.3
-# Date created:         6 Mar 97
-# Whom:                 Pedro Giffuni <giffunip@asme.org>
+# New ports collection makefile for:	crossgo32
+# Version required:	1.3
+# Date created:		6 Mar 97
+# Whom:			Pedro Giffuni <giffunip@asme.org>
 # Date updated: 	Sun Jun 22 16:11:40 EST 1997
 # Whom:			Joel Sutton <sutton@aardvark.apana.org.au>
 #
@@ -12,8 +12,10 @@ DISTNAME=	crosstree-1.3
 PKGNAME=	crossgo32-1.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		ftp://ftp.cygnus.com/pub/embedded/crossgcc/
+		ftp://sourceware.cygnus.com/pub/crossgcc/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} dosrel-1.0${EXTRACT_SUFX}
+
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=${TARGET}
@@ -26,8 +28,8 @@ MAN1=	i386-go32-ar.1 i386-go32-nm.1 i386-go32-objdump.1\
 	i386-go32-g++.1 i386-go32-gcc.1 cccp.1\
 	i386-go32-c++filt.1 configure.1 i386-go32-as.1 i386-go32-ld.1
 
-DOCDIR=	${PREFIX}/share/doc/crossgo32
-GO32DIR=${PREFIX}/share/crossgo32
+DOCDIR=		${PREFIX}/share/doc/crossgo32
+GO32DIR=	${PREFIX}/share/crossgo32
 
 post-extract:
 	${MV} ${WRKDIR}/dosrel-1.0/ ${WRKSRC}
@@ -37,7 +39,7 @@ post-patch:
 
 post-build:
 	@cd ${WRKSRC}/dosrel-1.0 ;\
-	 make coff2exe
+	 ${MAKE} coff2exe
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dosrel-1.0/coff2exe \
@@ -45,12 +47,12 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "===>  Installing documentation into ${DOCDIR}"
 	${MKDIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/FAQ-0.8 ${DOCDIR}/
-	${INSTALL_DATA} ${PKGDIR}/DESCR ${DOCDIR}/Readme.FreeBSD
+	${INSTALL_DATA} ${WRKSRC}/FAQ-0.8 ${DOCDIR}
+	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${DOCDIR}
 .endif
 	@${ECHO_MSG} "===>  Installing DJGPP exe files into ${GO32DIR}"
 	${MKDIR} ${GO32DIR}
-	${INSTALL_DATA} ${WRKSRC}/dosrel-1.0/go32.exe ${GO32DIR}/
-	${INSTALL_DATA} ${WRKSRC}/dosrel-1.0/emu387 ${GO32DIR}/
+	${INSTALL_DATA} ${WRKSRC}/dosrel-1.0/go32.exe ${GO32DIR}
+	${INSTALL_DATA} ${WRKSRC}/dosrel-1.0/emu387 ${GO32DIR}
 
 .include <bsd.port.mk>
