@@ -8,7 +8,7 @@
 PORTNAME=	shapelib
 PORTVERSION=	1.2.10
 CATEGORIES=	devel
-MASTER_SITES=	http://dl1.maptools.org/dl/shapelib/
+MASTER_SITES=	http://dl.maptools.org/dl/shapelib/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C API for reading and writing ArcView Shapefiles
