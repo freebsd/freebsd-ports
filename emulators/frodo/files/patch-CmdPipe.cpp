@@ -1,6 +1,17 @@
+
+$FreeBSD$
+
 --- CmdPipe.cpp.orig	Wed Aug  6 20:56:26 1997
-+++ CmdPipe.cpp	Sat Mar 10 19:19:59 2001
-@@ -16,9 +16,11 @@
++++ CmdPipe.cpp	Sat Nov 30 01:29:18 2002
+@@ -9,16 +9,18 @@
+ 
+ 
+ extern "C" {
+-	#include <string.h>
++	#include <stdlib.h>
+ 	#include <unistd.h>
+ 	#include <sys/wait.h>
+ 	#include <sys/types.h>
  	#include <string.h>
  	#include <signal.h>
  
