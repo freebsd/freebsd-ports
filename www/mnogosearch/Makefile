@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mnogosearch
-PORTVERSION=    3.1.13
+PORTVERSION=    3.1.14
 CATEGORIES=	www databases
 MASTER_SITES=	http://search.mnogo.ru/Download/
 
