@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	xnited
+PORTNAME=	xinted
 PORTVERSION= 	2.1.8.8p2
 CATEGORIES=	security
 MASTER_SITES=	http://synack.net/xinetd/
