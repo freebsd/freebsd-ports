@@ -6909,6 +6909,7 @@ ruby-tcpsocketpipe	ports/net/ruby-tcpsocketpipe
 ruby-tcpwrap	ports/security/ruby-tcpwrap
 ruby-termios	ports/comms/ruby-termios
 ruby-testunit	ports/devel/ruby-testunit
+ruby-text-format	ports/textproc/ruby-text-format
 ruby-textbuf	ports/devel/ruby-textbuf
 ruby-tgif	ports/graphics/ruby-tgif
 ruby-tk		ports/x11-toolkits/ruby-tk
