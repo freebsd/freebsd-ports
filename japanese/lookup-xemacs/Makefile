@@ -13,5 +13,9 @@ EMACS=		xemacs
 ELISPDIR=	${PREFIX}/lib/xemacs/site-lisp/lookup
 PORTINFODIR=	${PREFIX}/lib/xemacs/info
 
+.if defined(PARALLEL_PACKAGE_BUILD)
+FORBIDDEN=	hang
+.endif
+
 .include	"${MASTERDIR}/Makefile"
 
