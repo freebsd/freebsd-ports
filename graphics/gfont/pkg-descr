@@ -7,7 +7,7 @@
 
   gFONT -- Create GIF image rendered with TeX-available Font
 
-  Version 1.0.1 (09-09-1997)
+  Version 1.0.2 (16-09-1997)
 
   The gFONT program creates a GIF image for a given ASCII string
   by the use of an arbitrary TeX-available font (Postscript or
