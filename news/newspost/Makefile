@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	newspost
-PORTVERSION=	2.1
+PORTVERSION=	2.1.1
 CATEGORIES=	news
 MASTER_SITES=	http://newspost.unixcab.org/download/
 
