@@ -43,7 +43,6 @@ ${BUILD_COOKIE}:
 	@(cd ${WRKSRC}/web2c; make triptrap)
 	@(cd ${WRKSRC}/web2c; make run-triptrap)
 	@(cd ${WRKSRC}/web2c; make clean-triptrap)
-
 	@(cd ${WRKSRC}; make CFLAGS="${CFLAGS}" programs)
 	@(cd ${WRKSRC}; MFINPUTS=${WRKDIR}/mf; export MFINPUTS;\
 		make bases="${BASES}" bases)
