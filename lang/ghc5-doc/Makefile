@@ -16,7 +16,7 @@ DISTFILES=      building.html.tar.gz building.ps.gz hslibs.html.tar.gz \
 DIST_SUBDIR=	ghc
 EXTRACT_ONLY=
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Documentation (HTML, PS) for the Glasgow Haskell Compiler
 
 NO_BUILD=	yes
