@@ -14,7 +14,7 @@ MASTER_SITES=	http://ftp.ost.eltele.no/pub/www/proxy/squidGuard/ \
 MAINTAINER=	ports@tyfon.net
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdb2.a:${PORTSDIR}/databases/db
-RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid23
+RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid24
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-db-inc=${PREFIX}/include/db2 \
