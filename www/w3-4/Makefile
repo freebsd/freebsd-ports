@@ -5,59 +5,35 @@
 # $FreeBSD$
 #
 
-PORTNAME=	w3
-PORTVERSION=	4.0.p46
+PORTNAME=	w3-${EMACS_PORT_NAME}
+PORTVERSION=	4.0.p47
 CATEGORIES+=	www elisp
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	emacs-w3
-DISTNAME=	w3-4.0pre.46
+DISTNAME=	w3-4.0pre.47
 
-MAINTAINER=	kiri@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WWW browser based on emacs/mule
-
-BUILD_DEPENDS?=	emacs-20.7:${PORTSDIR}/editors/emacs20
-RUN_DEPENDS?=	emacs-20.7:${PORTSDIR}/editors/emacs20
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-emacs=yes
+INSTALL_TARGET=	install dotemacs
+
+EMACS_PORT_NAME?=	emacs21
+
 INFO=		w3-faq w3
 
-MAKE_ENV+=	EMACSCMD=${EMACSCMD} ELISPDIR=${ELISPDIR} \
-		MKDIR="${MKDIR}" CP=${CP} \
-		INFODIR=${INFODIR} \
-		INSTALL_DATA="${INSTALL_DATA}"
+.include <bsd.port.pre.mk>
 
-PORTSDOCDIR=	${PREFIX}/share/doc/w3
-SAMPLEDIR=	${PREFIX}/share/examples/w3
+PLIST_SUB+=	EMACS_VERSION_SITE_LISPDIR=${EMACS_VERSION_SITE_LISPDIR}
 
-post-build:
-.for f in dot.emacs user-install
-	@${SED} -e "s,%VERSION%,${VERSION},g" \
-		-e "s,%PREFIX%,${PREFIX},g" \
-		-e "s,%INFODIR%,${INFODIR},g" \
-		-e "s,%ELISPDIR%,${ELISPDIR},g" \
-		-e "s,%INFOFILE%,${INFOFILE},g" \
-		-e "s,%ADDIR%,${ADDIR},g" \
-		-e "s,%TOUCH%,${TOUCH},g" \
-		-e "s,%MKDIR%,${MKDIR},g" \
-		-e "s,%SAMPLEDIR%,${SAMPLEDIR},g" \
-		-e "s,%DIRSECTION%,${DIRSECTION},g" \
-		< ${FILESDIR}/${f}.tmpl > ${WRKDIR}/${f}
-.endfor
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PORTSDOCDIR}
-	@${MKDIR} ${SAMPLEDIR}
-.for f in dot.mosaic-hotlist-default
-	@${INSTALL_DATA} ${FILESDIR}/${f} ${SAMPLEDIR}
-.endfor
-.for f in dot.emacs
-	@${INSTALL_DATA} ${WRKDIR}/${f} ${SAMPLEDIR}
-.endfor
-	@${INSTALL_SCRIPT} ${WRKDIR}/user-install ${SAMPLEDIR}
-
+.if (${EMACS_NAME} == "xemacs")
+CONFIGURE_ARGS=	--with-xemacs=${EMACS_NAME}
+.else
+CONFIGURE_ARGS=	--with-emacs=${EMACS_NAME}
 .endif
-	@${CAT} ${PKGMESSAGE}
+CONFIGURE_ARGS+=	--enable-site-install \
+			--with-lispdir=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/w3
+CONFIGURE_ENV+=	MAKEINFO='makeinfo --no-split'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
