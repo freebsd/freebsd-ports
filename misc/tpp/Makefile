@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	tpp
-PORTVERSION=	1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	misc
 MASTER_SITES=	http://synflood.at/tpp/
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text presentation program
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/ncurses.rb:${PORTSDIR}/devel/ruby-ncurses \

@@ -3,6 +3,8 @@ bin/tpp
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/contrib/tpp.vim
 %%PORTDOCS%%%%DOCSDIR%%/examples/ac-am.tpp
 %%PORTDOCS%%%%DOCSDIR%%/examples/bold.tpp
 %%PORTDOCS%%%%DOCSDIR%%/examples/center-et-al.tpp
@@ -17,5 +19,6 @@ bin/tpp
 %%PORTDOCS%%%%DOCSDIR%%/examples/slidein.tpp
 %%PORTDOCS%%%%DOCSDIR%%/examples/source.tpp
 %%PORTDOCS%%%%DOCSDIR%%/examples/test.tpp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
