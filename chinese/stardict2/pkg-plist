@@ -1,0 +1,49 @@
+bin/stardict
+share/pixmaps/stardict.png
+share/stardict/dic/cdict-big5.dict
+share/stardict/dic/cdict-big5.idx.gz
+share/stardict/dic/cedict-big5.dict
+share/stardict/dic/cedict-big5.idx.gz
+share/stardict/dic/xdict-big5.dict
+share/stardict/dic/xdict-big5.idx.gz
+share/stardict/dic/xdict-ce-big5.dict
+share/stardict/dic/xdict-ce-big5.idx.gz
+share/stardict/skins/default/about_menu.png
+share/stardict/skins/default/docklet_normal.png
+share/stardict/skins/default/docklet_scan.png
+share/stardict/skins/default/docklet_stop.png
+share/stardict/skins/default/phonetic.png
+share/stardict/skins/default/skin.inf
+share/gnome/help/stardict/C/legal.xml
+share/gnome/help/stardict/C/stardict.xml
+share/gnome/help/stardict/C/figures/stardict_float_window.png
+share/gnome/help/stardict/C/figures/stardict_main_window.png
+share/gnome/help/stardict/C/figures/stardict_notification_area.png
+share/gnome/help/stardict/zh_CN/legal.xml
+share/gnome/help/stardict/zh_CN/stardict.xml
+share/gnome/help/stardict/zh_CN/figures/stardict_float_window.png
+share/gnome/help/stardict/zh_CN/figures/stardict_main_window.png
+share/gnome/help/stardict/zh_CN/figures/stardict_notification_area.png
+share/omf/stardict/stardict-C.omf
+share/omf/stardict/stardict-zh_CN.omf
+share/applications/stardict.desktop
+etc/gconf/schemas/stardict.schemas
+lib/bonobo/servers/GNOME_Stardict.server
+etc/gconf/gconf.xml.defaults/apps/stardict/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/stardict/float_window/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/stardict/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/stardict/float_window/%gconf.xml
+@dirrm share/gnome/help/stardict/zh_CN/figures
+@dirrm share/gnome/help/stardict/zh_CN
+@dirrm share/gnome/help/stardict/C/figures
+@dirrm share/gnome/help/stardict/C
+@dirrm share/gnome/help/stardict
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/stardict/float_window
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/stardict
+@dirrm etc/gconf/gconf.xml.defaults/apps/stardict/float_window
+@dirrm etc/gconf/gconf.xml.defaults/apps/stardict
+@dirrm share/omf/stardict
+@dirrm share/stardict/dic
+@dirrm share/stardict/skins/default
+@dirrm share/stardict/skins
+@dirrm share/stardict

@@ -92,6 +92,7 @@
     SUBDIR += rxvt-big5
     SUBDIR += rxvt-gb
     SUBDIR += stardict
+    SUBDIR += stardict2
     SUBDIR += tcl83
     SUBDIR += telnet
     SUBDIR += tin
