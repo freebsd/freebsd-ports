@@ -13,6 +13,10 @@ DISTNAME=       ssh-1.2.27
 CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.cs.hut.fi/pub/ssh/
 
+PATCH_SITES=	http://www.ssh.fi/sshprotocols2/patches/
+PATCHFILES=	patch-${DISTNAME}-bsd.tty.chown
+PATCH_DIST_STRIP= -p1
+
 MAINTAINER=	torstenb@FreeBSD.org
 
 # You can set USA_RESIDENT appropriately in /etc/make.conf if this bugs you..
