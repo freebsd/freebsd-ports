@@ -2,7 +2,7 @@ fooseti is a small GTK+ frontend to SETI@Home.  It can display your total
 CPU time, number of packets completed and the average time to complete them,
 as well as the status of the current packet.
 
-WWW: http://www-personal.engin.umich.edu/~agorski/fooseti
+WWW: http://www-personal.engin.umich.edu/~agorski/fooseti/
 
 - Pete
 petef@databits.net

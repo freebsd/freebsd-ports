@@ -9,7 +9,7 @@ for more information.
 
 Refer to the README for details on usage
 
-WWW: http://people.FreeBSD.org/~rhh/fxtv
+WWW: http://people.FreeBSD.org/~rhh/fxtv/
 
 Note on Bt848/Bt878 bktr driver:
 FXTV 1.00 requires release 1.66 (or later) of the Bt848/Bt878 driver.

@@ -2,4 +2,4 @@ This is nullmailer, a sendmail/qmail/etc replacement MTA for hosts which
 relay to a fixed set of smart relays.  It is designed to be simple to
 configure, secure, and easily extendable.
 
-WWW: http://untroubled.org/nullmailer
+WWW: http://untroubled.org/nullmailer/

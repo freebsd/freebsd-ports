@@ -6,4 +6,4 @@ can handle subcommands that take their own options. clo++ is itself
 written in C++ and uses a command line option parser that it
 generated.
 
-WWW: http://pmade.org/~pjones/software/clo++
+WWW: http://pmade.org/~pjones/software/clo++/

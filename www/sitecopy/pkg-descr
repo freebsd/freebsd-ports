@@ -11,7 +11,7 @@ server - it simply keeps a record of what it THINKS is in on the remote
 server, and works from that. WebDAV can be used to maintain remote sites
 as well as FTP.
 
-WWW: http://www.lyra.org/sitecopy
+WWW: http://www.lyra.org/sitecopy/
 
 - Nik
 nik@FreeBSD.ORG
