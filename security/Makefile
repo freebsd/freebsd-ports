@@ -68,6 +68,7 @@
     SUBDIR += rid
     SUBDIR += rsaref
     SUBDIR += saint
+    SUBDIR += seahorse
     SUBDIR += skip
     SUBDIR += slurpie
     SUBDIR += slush
