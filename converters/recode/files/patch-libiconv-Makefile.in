@@ -1,0 +1,13 @@
+--- libiconv/Makefile.in.orig	Fri Oct  5 01:32:06 2001
++++ libiconv/Makefile.in	Fri Oct  5 01:33:06 2001
+@@ -112,8 +112,8 @@
+ EXTRA_DIST = encodings.def encodings_local.def config.charset ref-add.sin ref-del.sin
+ 
+ 
+-charset_alias = $(DESTDIR)$(libdir)/charset.alias
+-charset_tmp = $(DESTDIR)$(libdir)/charset.tmp
++charset_alias = $(DESTDIR)$(prefix)/libdata/charset.alias
++charset_tmp = $(DESTDIR)$(prefix)/libdata/charset.tmp
+ 
+ SUFFIXES = .sed .sin
+ 
