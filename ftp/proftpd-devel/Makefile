@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}-1.2.0pre10
 
 MAINTAINER=	mharo@FreeBSD.org
 
+FORBIDDEN=	"Remote root hole, exploitable anonymously"
+
 MAN1=	ftpcount.1 ftpwho.1
 MAN5=	xferlog.5
 MAN8=	proftpd.8 ftpshut.8
