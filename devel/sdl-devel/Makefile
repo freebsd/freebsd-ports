@@ -24,7 +24,9 @@ INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	NASM="${LOCALBASE}/bin/nasm"
 CONFIGURE_ARGS=	--enable-video-aalib \
-		--enable-video-svga
+		--enable-video-svga \
+		--disable-arts \
+		--disable-nas
 
 CFLAGS+=	-D_THREAD_SAFE
 
