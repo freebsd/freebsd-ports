@@ -408,6 +408,7 @@
     SUBDIR += py-ming
     SUBDIR += py-opengl
     SUBDIR += py-paint
+    SUBDIR += py-pydot
     SUBDIR += q-graph
     SUBDIR += qcamview
     SUBDIR += qcread
