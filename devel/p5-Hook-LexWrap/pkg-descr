@@ -1,0 +1,4 @@
+Hook::LexWrap allows you to install a pre- or post-wrapper (or both)
+around an existing subroutine.
+
+WWW: http://search.cpan.org/dist/Hook-LexWrap/
