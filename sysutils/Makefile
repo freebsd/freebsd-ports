@@ -312,6 +312,7 @@
     SUBDIR += userinfo
     SUBDIR += userlist
     SUBDIR += usermin
+    SUBDIR += userneu
     SUBDIR += utcount
     SUBDIR += uwatch
     SUBDIR += vcp
