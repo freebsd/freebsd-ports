@@ -9,11 +9,14 @@ PORTNAME=	cel
 PORTVERSION=	0.8.5
 PORTREVISION=	1
 CATEGORIES=	lang
-MASTER_SITES=	http://www.redwoodsoft.com/cel/
+MASTER_SITES=	# none
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small, simple prototype-based OO language
+
+DEPRECATED=	"probable abandonware: mastersite disappeared Jan 2004\; only works on i386"
+EXPIRATION_DATE=	"May 5, 2004"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
