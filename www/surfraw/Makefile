@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	surfraw
-PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTVERSION=	1.0.7
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/proff/ \
 		ftp://ftp.funet.fi/pub/NetBSD/misc/proff/
