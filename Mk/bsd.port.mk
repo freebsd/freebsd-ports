@@ -1,7 +1,7 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
 #
-#	$Id: bsd.port.mk,v 1.312 1999/05/06 12:07:57 asami Exp $
+#	$Id: bsd.port.mk,v 1.313 1999/05/10 23:11:07 asami Exp $
 #	$NetBSD: $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
@@ -346,6 +346,8 @@ OpenBSD_MAINTAINER=	imp@OpenBSD.ORG
 #				  GNU_CONFIGURE is set, empty otherwise).
 # CONFIGURE_ENV - Pass these env (shell-like) to configure if
 #				  ${HAS_CONFIGURE} is set.
+# CONFIGURE_LOG - The name of configure log file (default: config.log).
+#				  It will be printed to the screen if configure fails.
 #
 # For build and install:
 #
@@ -605,7 +607,11 @@ BUILD_DEPENDS+=		${X11BASE}/lib/libXm.a:${PORTSDIR}/x11-toolkits/Motif-dummy
 
 PKG_IGNORE_DEPENDS?=		'(XFree86-3\.3\.3\.1|Motif-2\.1\.10)'
 
+.if ${OSVERSION} >= 300000
 PERL_VERSION=	5.00503
+.else
+PERL_VERSION=	5.00502
+.endif
 PERL_VER=		5.005
 PERL_ARCH=		${ARCH}-freebsd
 PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
@@ -1053,6 +1059,7 @@ PKGLATESTFILE?=		${PKGLATESTREPOSITORY}/${PKGBASE}${PKG_SUFX}
 
 CONFIGURE_SCRIPT?=	configure
 CONFIGURE_TARGET?=	${MACHINE_ARCH}--freebsd${OSREL}
+CONFIGURE_LOG?=		config.log
 
 .if defined(GNU_CONFIGURE)
 CONFIGURE_ARGS+=	--prefix=${PREFIX} ${CONFIGURE_TARGET}
@@ -1195,7 +1202,7 @@ IGNORE=	": You have an old file \(${file}\) that could cause problems for some p
 
 .if ${OSVERSION} >= 300000
 # You need an upgrade kit or make world newer than this
-BSDPORTMKVERSION=	19990327
+BSDPORTMKVERSION=	19990501
 .if exists(/var/db/port.mkversion)
 VERSIONFILE=	/var/db/port.mkversion
 .else
@@ -1533,13 +1540,19 @@ do-configure:
 		  ${SCRIPTDIR}/configure; \
 	fi
 .if defined(HAS_CONFIGURE)
-	@(cd ${WRKSRC} && CC="${CC}" CXX="${CXX}" \
+	@(cd ${WRKSRC} && \
+		if ! ${SETENV} CC="${CC}" CXX="${CXX}" \
 	    CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
 	    INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
 	    INSTALL_DATA="${INSTALL_DATA}" \
 	    INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 	    INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
-	    ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
+	    ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}; then \
+			${ECHO} "===>  Script \"${CONFIGURE_SCRIPT}\" failed: here are the contents of \"${CONFIGURE_LOG}\""; \
+			${CAT} ${CONFIGURE_LOG}; \
+			${ECHO} "(end of \"${CONFIGURE_LOG}\")"; \
+			${FALSE}; \
+		fi)
 .endif
 .if defined(USE_IMAKE)
 	@(cd ${WRKSRC} && ${XMKMF})
@@ -1924,8 +1937,7 @@ delete-distfiles:
 .if !target(delete-distfiles-list)
 delete-distfiles-list:
 	@${ECHO} "# ${PKGNAME}"
-	@if [ "X${DISTFILES}${PATCHFILES}" != "X" -a -d ${_DISTDIR} ]; then \
-		cd ${_DISTDIR}; \
+	@if [ "X${DISTFILES}${PATCHFILES}" != "X" ]; then \
 		for file in ${DISTFILES} ${PATCHFILES}; do \
 			${ECHO} ${RM} -f ${_DISTDIR}/$$file; \
 		done; \
