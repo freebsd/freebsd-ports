@@ -9,7 +9,7 @@
 DISTNAME=	gtk-engines-0.8
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gtk-engines
+MASTER_SITE_SUBDIR=	stable/sources/gtk-engines
 
 MAINTAINER=	vanilla@FreeBSD.org
 

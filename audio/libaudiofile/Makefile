@@ -10,7 +10,7 @@ DISTNAME=	audiofile-0.1.9
 PKGNAME=	libaudiofile-0.1.9
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/audiofile
+MASTER_SITE_SUBDIR=	stable/sources/audiofile
 
 MAINTAINER=	vanilla@FreeBSD.org
 

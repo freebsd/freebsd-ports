@@ -9,7 +9,7 @@
 DISTNAME=	mc-4.5.40
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/mc
+MASTER_SITE_SUBDIR=	stable/sources/mc
 
 MAINTAINER=	reg@shale.csir.co.za
 

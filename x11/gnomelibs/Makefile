@@ -10,7 +10,7 @@ DISTNAME=	gnome-libs-1.0.54
 PKGNAME=	gnomelibs-1.0.54
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-libs
+MASTER_SITE_SUBDIR=	stable/sources/gnome-libs
 
 MAINTAINER=	nakai@FreeBSD.org
 

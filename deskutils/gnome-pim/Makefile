@@ -10,7 +10,7 @@ DISTNAME=	gnome-pim-1.0.55
 PKGNAME=	gnomepim-1.0.55
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-pim
+MASTER_SITE_SUBDIR=	stable/sources/gnome-pim
 
 MAINTAINER=	nakai@FreeBSD.org
 

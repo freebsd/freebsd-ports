@@ -10,7 +10,7 @@ DISTNAME=	gnome-utils-1.0.50
 PKGNAME=	gnomeutils-1.0.50
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-utils
+MASTER_SITE_SUBDIR=	stable/sources/gnome-utils
 
 MAINTAINER=	nakai@FreeBSD.org
 

@@ -10,7 +10,7 @@ DISTNAME=	ee-0.3.11
 PKGNAME=	electriceyes-0.3.11
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/ee
+MASTER_SITE_SUBDIR=	stable/sources/ee
 
 MAINTAINER=	nakai@FreeBSD.org
 

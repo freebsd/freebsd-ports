@@ -10,7 +10,7 @@ DISTNAME=	control-center-1.0.51
 PKGNAME=	gnomecontrolcenter-1.0.51
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/control-center
+MASTER_SITE_SUBDIR=	stable/sources/control-center
 
 MAINTAINER=	vanilla@FreeBSD.org
 

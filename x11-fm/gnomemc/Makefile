@@ -10,7 +10,7 @@ DISTNAME=	mc-4.5.41
 PKGNAME=	gnomemc-4.5.41
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/mc
+MASTER_SITE_SUBDIR=	stable/sources/mc
 
 MAINTAINER=	reg@shale.csir.co.za
 

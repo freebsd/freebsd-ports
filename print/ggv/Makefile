@@ -9,7 +9,7 @@
 DISTNAME=	ggv-0.70
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/ggv
+MASTER_SITE_SUBDIR=	stable/sources/ggv
 
 MAINTAINER=	nakai@FreeBSD.org
 

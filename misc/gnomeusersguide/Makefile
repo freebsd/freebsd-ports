@@ -10,7 +10,7 @@ DISTNAME=	users-guide-1.0.72
 PKGNAME=	gnomeusersguide-1.0.72
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/users-guide
+MASTER_SITE_SUBDIR=	stable/sources/users-guide
 
 MAINTAINER=	nakai@FreeBSD.org
 

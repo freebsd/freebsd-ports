@@ -9,7 +9,7 @@
 DISTNAME=	bonobo-0.4
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/bonobo
+MASTER_SITE_SUBDIR=	unstable/sources/bonobo
 
 MAINTAINER=	ade@lovett.com
 

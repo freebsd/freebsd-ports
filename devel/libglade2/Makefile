@@ -9,7 +9,7 @@
 DISTNAME=	libglade-0.9
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/libglade
+MASTER_SITE_SUBDIR=	stable/sources/libglade
 
 MAINTAINER=	ade@lovett.com
 

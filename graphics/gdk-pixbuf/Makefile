@@ -9,7 +9,7 @@
 DISTNAME=	gdk-pixbuf-0.4
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gdk-pixbuf
+MASTER_SITE_SUBDIR=	stable/sources/gdk-pixbuf
 
 MAINTAINER=	ade@lovett.com
 

@@ -10,7 +10,7 @@ DISTNAME=	gnome-core-1.0.54
 PKGNAME=	gnomecore-1.0.54
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-core
+MASTER_SITE_SUBDIR=	stable/sources/gnome-core
 
 MAINTAINER=	nakai@FreeBSD.org
 
