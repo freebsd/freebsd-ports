@@ -6391,6 +6391,7 @@ swapon		src/sbin/swapon
 swarm		ports/devel/swarm
 swatch		ports/security/swatch
 sweep		ports/audio/sweep
+swftools	ports/graphics/swftools
 swi-pl		ports/lang/swi-pl
 swigruby	ports/devel/swigruby
 swish++		ports/www/swish++
