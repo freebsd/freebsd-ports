@@ -19,7 +19,7 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
-USE_GNOME=	gnomehack gnomeprefix gnometarget glib20
+USE_GNOME=	gnomehack gnometarget glib20
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
