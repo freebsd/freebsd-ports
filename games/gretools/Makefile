@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gretools
-PORTVERSION=	1.1
+PORTVERSION=	1.2.1
 CATEGORIES=	games
-MASTER_SITES=	http://theory.cs.iitm.ernet.in/~arvindn/gretools/${PORTVERSION}/
+MASTER_SITES=	http://theory.cs.iitm.ernet.in/~arvindn/gretools/${PORTVERSION:R}/
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	GTK2 vocabulary builder

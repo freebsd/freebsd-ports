@@ -5,7 +5,6 @@ bin/gretools
 %%PYTHON_SITELIBDIR%%/gretools/gretools.pyo
 share/gnome/applications/gretools.desktop
 share/gnome/help/gretools/C/figures/gretools_start_window.png
-share/gnome/help/gretools/C/figures/synonym.png
 share/gnome/help/gretools/C/gretools.xml
 share/gnome/help/gretools/C/legal.xml
 share/gnome/gretools/glade/gretools.glade
