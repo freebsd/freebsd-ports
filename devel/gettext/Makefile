@@ -31,7 +31,8 @@ CONFIGURE_ARGS=	--with-libexpat-prefix=${LOCALBASE}/lib \
 		--mandir=${PREFIX}/man
 INSTALLS_SHLIB=	yes
 
-OPTIONS=	EXAMPLES "install example files" off
+OPTIONS=	EXAMPLES "install example files" off \
+		HTMLMAN "install man pages in HTML format" off
 PLIST=		${WRKDIR}/plist
 PLISTU=		${WRKDIR}/plist-unsorted
 PLIST_SUB=	LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} \
@@ -74,6 +75,16 @@ post-build:
 pre-install:
 	@${RM} -f ${PLISTU}
 	@${TOUCH} ${PLISTU}
+.if !defined (NOPORTDOCS)
+.for ii in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 foot toc
+	${ECHO_CMD} %%DOCSDIR%%/gettext_${ii}.html >> ${PLISTU}
+.endfor
+.endif
+.if defined (WITH_HTMLMAN)
+.for ii in ${MAN1} ${MAN3}
+	${ECHO_CMD} %%DOCSDIR%%/${ii}.html >> ${PLISTU}
+.endfor
+.endif
 .if defined (WITH_EXAMPLES)
 	cd ${WRKSRC}/gettext-tools && \
 		${FIND} -s examples -type f | ${GREP} -vw examples/po | \
@@ -93,8 +104,16 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/gettext-tools/misc/${f} ${PREFIX}/share/emacs/site-lisp
 .endfor
 	${MKDIR} ${X11BASE}/share/locale
+	cd ${WRKSRC}/gettext-tools/doc && make install-info-am
+.if !defined (NOPORTDOCS)
+	cd ${WRKSRC}/gettext-tools/doc && make install-data-local
+.endif
 .if defined (WITH_EXAMPLES)
 	cd ${WRKSRC}/gettext-tools/examples && make install
+.endif
+.if !defined (WITH_HTMLMAN)
+	cd ${WRKSRC}/gettext-runtime/man && make uninstall-html
+	cd ${WRKSRC}/gettext-tools/man && make uninstall-html
 .endif
 
 .include <bsd.port.post.mk>
