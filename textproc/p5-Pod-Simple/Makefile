@@ -5,10 +5,10 @@
 #
 
 PORTNAME=	Pod-Simple
-PORTVERSION=	0.97
+PORTVERSION=	2.03
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Pod
+MASTER_SITE_SUBDIR=	Pod/SBURKE
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mat@FreeBSD.org
@@ -30,4 +30,11 @@ MAN3=		Pod::Simple.3 Pod::Simple::Checker.3 Pod::Simple::Debug.3 \
 		Pod::Simple::Text.3 Pod::Simple::TextContent.3 \
 		Pod::Simple::XMLOutStream.3 perlpod.3 perlpodspec.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# utf8 stuffs
+.if ${PERL_LEVEL} < 500600
+IGNORE=		Port requires perl 5.6.x or later. Install lang/perl5 then try again
+.endif
+
+.include <bsd.port.post.mk>
