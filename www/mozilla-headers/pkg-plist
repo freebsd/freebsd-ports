@@ -1710,8 +1710,6 @@ include/mozilla/webshell/nsILinkHandler.h
 include/mozilla/webshell/nsIRefreshURI.h
 include/mozilla/webshell/nsIWebShell.h
 include/mozilla/webshell/nsIWebShellServices.h
-include/mozilla/webshell_tests/nsIWindowListener.h
-include/mozilla/webshell_tests/nsIXPBaseWindow.h
 include/mozilla/widget/gdksuperwin.h
 include/mozilla/widget/gtkmozarea.h
 include/mozilla/widget/gtkmozbox.h
@@ -1863,7 +1861,6 @@ include/mozilla/xpcom/nsIPtr.h
 include/mozilla/xpcom/nsIRegistry.h
 include/mozilla/xpcom/nsIRegistryUtils.h
 include/mozilla/xpcom/nsIRunnable.h
-include/mozilla/xpcom/nsISample.h
 include/mozilla/xpcom/nsIScriptableInputStream.h
 include/mozilla/xpcom/nsISeekableStream.h
 include/mozilla/xpcom/nsISerializable.h
@@ -1883,7 +1880,6 @@ include/mozilla/xpcom/nsISupportsIterators.h
 include/mozilla/xpcom/nsISupportsObsolete.h
 include/mozilla/xpcom/nsISupportsPrimitives.h
 include/mozilla/xpcom/nsISupportsUtils.h
-include/mozilla/xpcom/nsITestProxy.h
 include/mozilla/xpcom/nsIThread.h
 include/mozilla/xpcom/nsIThreadPool.h
 include/mozilla/xpcom/nsITimelineService.h
@@ -1951,16 +1947,6 @@ include/mozilla/xpconnect/xpc_map_end.h
 include/mozilla/xpconnect/xpccomponents.h
 include/mozilla/xpconnect/xpcexception.h
 include/mozilla/xpconnect/xpcjsid.h
-include/mozilla/xpconnect_tests/xpctest.h
-include/mozilla/xpconnect_tests/xpctest2.h
-include/mozilla/xpconnect_tests/xpctest_attributes.h
-include/mozilla/xpconnect_tests/xpctest_calljs.h
-include/mozilla/xpconnect_tests/xpctest_const.h
-include/mozilla/xpconnect_tests/xpctest_domstring.h
-include/mozilla/xpconnect_tests/xpctest_in.h
-include/mozilla/xpconnect_tests/xpctest_inout.h
-include/mozilla/xpconnect_tests/xpctest_multiple.h
-include/mozilla/xpconnect_tests/xpctest_out.h
 include/mozilla/xpinstall/InstallCleanupDefines.h
 include/mozilla/xpinstall/nsIDOMInstallTriggerGlobal.h
 include/mozilla/xpinstall/nsIDOMInstallVersion.h
@@ -1990,7 +1976,6 @@ include/mozilla/xultmpl/nsIXULTemplateBuilder.h
 @dirrm include/mozilla/xul
 @dirrm include/mozilla/xremoteservice
 @dirrm include/mozilla/xpinstall
-@dirrm include/mozilla/xpconnect_tests
 @dirrm include/mozilla/xpconnect
 @dirrm include/mozilla/xpcom
 @dirrm include/mozilla/xmlextras
@@ -1998,7 +1983,6 @@ include/mozilla/xultmpl/nsIXULTemplateBuilder.h
 @dirrm include/mozilla/xlibrgb
 @dirrm include/mozilla/windowwatcher
 @dirrm include/mozilla/widget
-@dirrm include/mozilla/webshell_tests
 @dirrm include/mozilla/webshell
 @dirrm include/mozilla/webbrwsr
 @dirrm include/mozilla/webbrowserpersist
@@ -2038,7 +2022,6 @@ include/mozilla/xultmpl/nsIXULTemplateBuilder.h
 @dirrm include/mozilla/nspr/obsolete
 @dirrm include/mozilla/nspr/md
 @dirrm include/mozilla/nspr
-@dirrm include/mozilla/npsimple
 @dirrm include/mozilla/nkcache
 @dirrm include/mozilla/necko2
 @dirrm include/mozilla/necko
