@@ -1,6 +1,5 @@
 # $FreeBSD$
 #
-    SUBDIR += unzip
 
     SUBDIR += FreeWnn-lib
     SUBDIR += FreeWnn-server
@@ -68,5 +67,6 @@
     SUBDIR += qt31
     SUBDIR += texinfo
     SUBDIR += uniksc
+    SUBDIR += unzip
 
 .include <bsd.port.subdir.mk>
