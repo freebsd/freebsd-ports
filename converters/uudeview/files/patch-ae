@@ -1,0 +1,28 @@
+--- configure.orig	Tue Apr  2 02:06:35 2002
++++ configure	Sat Oct 19 03:14:05 2002
+@@ -1099,25 +1099,6 @@
+ 
+ echo $ac_n "checking compiler flags""... $ac_c" 1>&6
+ echo "configure:1102: checking compiler flags" >&5
+-if test "$optimize" = "yes" ; then
+-CFLAGS=`echo $CFLAGS | sed 's/-g//g'`
+-case $CFLAGS in
+-	*"-O"*)
+-		;;
+-	*)
+-		CFLAGS="$CFLAGS -O"
+-		;;
+-esac
+-else
+-CFLAGS=`echo $CFLAGS | sed 's/-O[0-9]*//g'`
+-case $CFLAGS in
+-	*"-g"*)
+-		;;
+-	*)
+-		CFLAGS="$CFLAGS -g"
+-		;;
+-esac
+-fi
+ echo "$ac_t""$CFLAGS" 1>&6
+ 
+ if test "$wi_cv_prototypes" = no ; then
