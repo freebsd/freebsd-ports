@@ -3,13 +3,13 @@
 # Date created:		Mon Aug  5 10:54:25 CDT 1996
 # Whom:			erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.3 1996/11/15 23:14:56 obrien Exp $
+# $Id: Makefile,v 1.4 1996/11/18 09:52:33 asami Exp $
 #
 
 DISTNAME=	xmmix-1.2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	applications/xmmix
+MASTER_SITE_SUBDIR=	applications/
 
 MAINTAINER=	erich@FreeBSD.org
 
