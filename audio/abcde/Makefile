@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	abcde
-PORTVERSION=	2.1.5
+PORTVERSION=	2.1.6
 CATEGORIES=	audio
 MASTER_SITES=	http://www.hispalinux.es/~data/files/
-DISTNAME= 	abcde_${PORTVERSION}.orig
+DISTNAME=	abcde_${PORTVERSION}.orig
 
 MAINTAINER=	chopra@soulwax.net
-COMMENT=	Front-end shell script to encode CDs in ogg, mp3 or flac format
+COMMENT=	Front-end shell script to encode CDs in flac/mp3/ogg/speex format
 
 RUN_DEPENDS=	cd-discid:${PORTSDIR}/audio/cd-discid \
 		cdparanoia:${PORTSDIR}/audio/cdparanoia \
