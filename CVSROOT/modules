@@ -515,6 +515,7 @@ bladeenc	ports/audio/bladeenc
 blas		ports/math/blas
 blast		ports/x11/blast
 blender		ports/graphics/blender
+blimitd		ports/sysutils/blimitd
 block		ports/games/block
 blockade	ports/games/blockade
 blt		ports/x11-toolkits/blt
