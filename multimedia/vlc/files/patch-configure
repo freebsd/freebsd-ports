@@ -1,19 +1,10 @@
---- configure.orig	Fri May 21 14:09:58 2004
-+++ configure	Mon Sep 27 06:22:50 2004
-@@ -5050,7 +5050,6 @@
+--- configure.orig	Wed Nov  3 08:47:13 2004
++++ configure	Wed Nov  3 08:50:12 2004
+@@ -4967,7 +4967,6 @@
      ;;
-   *bsd*)
-     SYS="${target_os}"
+   bsdi*)
+     SYS=bsdi
 -    CFLAGS_save="${CFLAGS_save} -pthread"; CFLAGS="${CFLAGS_save}"
-     ;;
-   darwin*)
-     SYS=darwin
-@@ -35442,7 +35441,7 @@
  
- VLC_CONFIG="top_builddir=\"\$(top_builddir)\" \$(top_builddir)/vlc-config"
- 
--CPPFLAGS_save="${CPPFLAGS_save} -I\$(top_srcdir)/include"
-+CPPFLAGS_save="-I\$(top_srcdir)/include ${CPPFLAGS_save}"
- 
- 
-   CPPFLAGS="${CPPFLAGS_save}"
+   for element in dvd dvdcss vcd cdda vcdx cddax; do
+     eval "LDFLAGS_${element}="'"'"-ldvd "'$'"{LDFLAGS_${element}} "'"'
