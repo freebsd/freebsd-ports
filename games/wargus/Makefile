@@ -7,7 +7,7 @@
 
 PORTNAME=	wargus
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,34 +25,42 @@ USE_REINPLACE=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|^\(CC\)|#\1|; \
+		s|^\(CFLAGS =\)|\1 ${CFLAGS}|; \
+		s|\/usr\/local\(\/cross\)|${PREFIX}\1|; \
+		s|\(-I\)\/usr\/local|\1${LOCALBASE}|; \
+		s|\(-L\)\/usr\/local|\1${LOCALBASE}|' \
+		${WRKSRC}/Makefile
+
 do-install:
-	${MKDIR} ${PREFIX}/share/wargus
-	${MKDIR} ${PREFIX}/share/wargus/campaigns
-	${MKDIR} ${PREFIX}/share/wargus/campaigns/human
-	${MKDIR} ${PREFIX}/share/wargus/campaigns/human-exp
-	${MKDIR} ${PREFIX}/share/wargus/campaigns/orc
-	${MKDIR} ${PREFIX}/share/wargus/campaigns/orc-exp
-	${MKDIR} ${PREFIX}/share/wargus/contrib
-	${MKDIR} ${PREFIX}/share/wargus/maps
-	${MKDIR} ${PREFIX}/share/wargus/maps/multi
-	${MKDIR} ${PREFIX}/share/wargus/scripts
-	${MKDIR} ${PREFIX}/share/wargus/scripts/ai
-	${MKDIR} ${PREFIX}/share/wargus/scripts/human
-	${MKDIR} ${PREFIX}/share/wargus/scripts/orc
-	${MKDIR} ${PREFIX}/share/wargus/scripts/tilesets
-	${INSTALL_DATA} ${WRKSRC}/campaigns/human/* ${PREFIX}/share/wargus/campaigns/human
-	${INSTALL_DATA} ${WRKSRC}/campaigns/human-exp/* ${PREFIX}/share/wargus/campaigns/human-exp
-	${INSTALL_DATA} ${WRKSRC}/campaigns/orc/* ${PREFIX}/share/wargus/campaigns/orc
-	${INSTALL_DATA} ${WRKSRC}/campaigns/orc-exp/* ${PREFIX}/share/wargus/campaigns/orc-exp
-	${INSTALL_DATA} ${WRKSRC}/contrib/* ${PREFIX}/share/wargus/contrib
-	${INSTALL_DATA} ${WRKSRC}/maps/multi/* ${PREFIX}/share/wargus/maps/multi
-	${INSTALL_DATA} ${WRKSRC}/scripts/*.lua ${PREFIX}/share/wargus/scripts
-	${INSTALL_DATA} ${WRKSRC}/scripts/ai/* ${PREFIX}/share/wargus/scripts/ai
-	${INSTALL_DATA} ${WRKSRC}/scripts/human/* ${PREFIX}/share/wargus/scripts/human
-	${INSTALL_DATA} ${WRKSRC}/scripts/orc/* ${PREFIX}/share/wargus/scripts/orc
-	${INSTALL_DATA} ${WRKSRC}/scripts/tilesets/* ${PREFIX}/share/wargus/scripts/tilesets
-	${INSTALL_SCRIPT} ${WRKSRC}/build.sh ${PREFIX}/share/wargus/build.sh
-	${INSTALL_PROGRAM} ${WRKSRC}/wartool ${PREFIX}/share/wargus/wartool
+	${MKDIR} ${DATADIR}
+	${MKDIR} ${DATADIR}/campaigns
+	${MKDIR} ${DATADIR}/campaigns/human
+	${MKDIR} ${DATADIR}/campaigns/human-exp
+	${MKDIR} ${DATADIR}/campaigns/orc
+	${MKDIR} ${DATADIR}/campaigns/orc-exp
+	${MKDIR} ${DATADIR}/contrib
+	${MKDIR} ${DATADIR}/maps
+	${MKDIR} ${DATADIR}/maps/multi
+	${MKDIR} ${DATADIR}/scripts
+	${MKDIR} ${DATADIR}/scripts/ai
+	${MKDIR} ${DATADIR}/scripts/human
+	${MKDIR} ${DATADIR}/scripts/orc
+	${MKDIR} ${DATADIR}/scripts/tilesets
+	${INSTALL_DATA} ${WRKSRC}/campaigns/human/* ${DATADIR}/campaigns/human
+	${INSTALL_DATA} ${WRKSRC}/campaigns/human-exp/* ${DATADIR}/campaigns/human-exp
+	${INSTALL_DATA} ${WRKSRC}/campaigns/orc/* ${DATADIR}/campaigns/orc
+	${INSTALL_DATA} ${WRKSRC}/campaigns/orc-exp/* ${DATADIR}/campaigns/orc-exp
+	${INSTALL_DATA} ${WRKSRC}/contrib/* ${DATADIR}/contrib
+	${INSTALL_DATA} ${WRKSRC}/maps/multi/* ${DATADIR}/maps/multi
+	${INSTALL_DATA} ${WRKSRC}/scripts/*.lua ${DATADIR}/scripts
+	${INSTALL_DATA} ${WRKSRC}/scripts/ai/* ${DATADIR}/scripts/ai
+	${INSTALL_DATA} ${WRKSRC}/scripts/human/* ${DATADIR}/scripts/human
+	${INSTALL_DATA} ${WRKSRC}/scripts/orc/* ${DATADIR}/scripts/orc
+	${INSTALL_DATA} ${WRKSRC}/scripts/tilesets/* ${DATADIR}/scripts/tilesets
+	${INSTALL_SCRIPT} ${WRKSRC}/build.sh ${DATADIR}/build.sh
+	${INSTALL_PROGRAM} ${WRKSRC}/wartool ${DATADIR}/wartool
 	${INSTALL_SCRIPT} ${WRKDIR}/wargus ${PREFIX}/bin/wargus
 
 post-build:
