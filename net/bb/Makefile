@@ -3,7 +3,7 @@
 # Date created:         So  17 Nov 1996 16:59:23 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.23 1998/05/18 21:52:00 andreas Exp $
+# $Id: Makefile,v 1.24 1998/05/18 21:54:12 andreas Exp $
 #
 
 DISTNAME=	bb-1.06c
@@ -11,8 +11,6 @@ CATEGORIES=	net
 MASTER_SITES=	http://freefall.freebsd.org/~andreas/download/
 
 MAINTAINER=	andreas@FreeBSD.ORG
-
-RUN_DEPENDS=	kermit:${PORTSDIR}/comms/kermit
 
 # The FreeBSD Ports Team has permission to include this in our CDROM
 # from the author, but others who wish to do likewise will have to
@@ -109,6 +107,7 @@ do-install:
 	@echo "d) configure -> ${PREFIX}/bb/etc/bbinc.sh"
 	@echo ""
 	@echo "e) You need to have a running WWW server (apache)"
+	@echo "f) You need kermit or qpage for pager functionality"
 	@echo ""
 	@echo "After that, you can startup the big brother service by typing"
 	@echo "        ${PREFIX}/bb/runbb.sh &"
