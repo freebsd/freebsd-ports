@@ -26,6 +26,7 @@
     SUBDIR += gtm
     SUBDIR += hsftp
     SUBDIR += jftpgw
+    SUBDIR += jigdo
     SUBDIR += jmirror
     SUBDIR += junglemonkey
     SUBDIR += kbear

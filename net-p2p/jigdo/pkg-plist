@@ -1,0 +1,16 @@
+bin/jigdo-file
+bin/jigdo-lite
+bin/jigdo-mirror
+%%SUB_GUI%%bin/jigdo
+share/jigdo/debian-mirrors.jigdo
+@dirrm share/jigdo
+%%SUB_GUI%%share/jigdo/pixmaps/button-cross.xpm
+%%SUB_GUI%%share/jigdo/pixmaps/button-pause.xpm
+%%SUB_GUI%%share/jigdo/pixmaps/button-play.xpm
+%%SUB_GUI%%share/jigdo/pixmaps/jigdo-logo.xpm
+%%SUB_GUI%%share/jigdo/pixmaps/new.xpm
+%%SUB_GUI%%share/jigdo/pixmaps/preferences.xpm
+%%SUB_GUI%%share/jigdo/pixmaps/progress051.xpm
+%%SUB_GUI%%share/jigdo/pixmaps/quit.xpm
+%%SUB_GUI%%share/jigdo/COPYING
+%%SUB_GUI%%@dirrm share/jigdo/pixmaps

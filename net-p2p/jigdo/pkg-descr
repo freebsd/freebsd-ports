@@ -1,0 +1,24 @@
+This is a port of Jigsaw Download (AKA jigdo) which is a tool designed to
+ease the distribution of very large files over the Internet, for example
+CD or DVD images.
+
+Main features:
+    - The large images does not need to be stored on the server, instead only
+      the small files contained in the images (works with CD, DVD images,
+      uncompressed zip files, tar archives...)
+    - In spite of the above, jigdo creates a bit-exact copy of the image on the
+      user's machine (to achieve this, the directory data, boot block, etc. of
+      the image is stored in a special .template file which is distributes
+      alongside the .jigdo file)
+    - There is full control over where jigdo-lite will download the individual
+      parts. It is possible to define mirrors, so users can choose the nearest
+      one.
+    - jigdo relies on standard HTTP/FTP, no special protocols needed.
+    - jigdo-lite supports resuming aborted downloads, or continuing the
+      download with another mirror if the current one is slow.
+    - It is possible to "upgrade" the CD image, only the changed data will be
+      downloaded.
+
+WWW: http://www.atterer.net/jigdo/
+
+Attila Nagy <bra@fsn.hu>
