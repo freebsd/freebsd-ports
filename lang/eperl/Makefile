@@ -1,12 +1,12 @@
 # New ports collection makefile for:	eperl
-# Version required:	2.2.13
+# Version required:	2.2.14
 # Date created:		03-Sep-1997
 # Whom:			Ralf S. Engelschall <rse@engelschall.com>
 #
-# $Id: Makefile,v 1.26 1997/12/31 09:25:38 rse Exp $
+# $Id: Makefile,v 1.27 1998/07/10 09:11:31 rse Exp $
 #
 
-DISTNAME=	eperl-2.2.13
+DISTNAME=	eperl-2.2.14
 CATEGORIES=	lang www perl5
 MASTER_SITES=	http://www.engelschall.com/sw/eperl/distrib/ \
 		ftp://ftp.engelschall.com/sw/eperl/ \
