@@ -19,8 +19,8 @@ RUN_DEPENDS=		python:${PORTSDIR}/lang/python
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 400018
-FORBIDDEN= requires kqueue (added post-4.0-RELEASE)
+.if ( ${OSVERSION} < 400018 || ${OSVERSION} == 500000 )
+FORBIDDEN= requires kqueue
 .endif
 
 # NO_WRKSUBDIR=		yes
