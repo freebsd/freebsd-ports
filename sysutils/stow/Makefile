@@ -17,12 +17,13 @@ COMMENT=	GNU version of Carnegie Mellon's "Depot" program
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-# PREFIX isn't honored. force it w/ prefix.
-MAKE_ARGS=	prefix="${PREFIX}"
+USE_PERL5=	yes
+
+INSTALL_INFO?=	install-info
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/stow ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/stow.info ${PREFIX}/info
-	@install-info ${PREFIX}/info/stow.info ${PREFIX}/info/dir
+	@${INSTALL_INFO} ${PREFIX}/info/stow.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
