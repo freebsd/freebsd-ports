@@ -21,6 +21,7 @@ share/fuhquake/fuhquake/pak0.pak
 share/fuhquake/qw/fragfile.dat
 share/fuhquake/qw/qwprogs.dat
 share/fuhquake/qw/spprogs.dat
+%%SKYBOXES%%share/fuhquake/qw/pak0.pak
 @dirrm share/fuhquake/qw
 %%SHAREWARE%%@dirrm share/fuhquake/id1
 @dirrm share/fuhquake/fuhquake

@@ -7,9 +7,13 @@
 
 PORTNAME=	fuhquake
 PORTVERSION=	0.31
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.fuhquake.net/files/releases/v${PORTVERSION}/:q \
+		http://www.fuhquake.net/files/extras/:s \
 		ftp://gibbage.mine.nu/clients/fuhquake/releases/v${PORTVERSION}/:q \
+		http://gamefiles.blueyonder.co.uk/blueyondergames/quake/quakeworld/clients/fuhquake/source/:q \
+		http://gamefiles.blueyonder.co.uk/blueyondergames/quake/quakeworld/clients/fuhquake/addons/:s \
 		http://danfe.machos.ru/distfiles/qw/:p \
 		http://freebsd.nsu.ru/distfiles/qw/:p
 DISTNAME=	${PORTNAME}-source-v${PORTVERSION}
@@ -28,6 +32,14 @@ DISTFILES+=	q1-shareware-pak0.pak:p
 PLIST_SUB+=	SHAREWARE=""
 .else
 PLIST_SUB+=	SHAREWARE="@comment "
+.endif
+
+.if defined(WITH_SKYBOXES)
+DISTFILES+=	${PORTNAME}-skyboxes${EXTRACT_SUFX}:s
+EXTRACT_ONLY+=	${PORTNAME}-skyboxes${EXTRACT_SUFX}
+PLIST_SUB+=	SKYBOXES=""
+.else
+PLIST_SUB+=	SKYBOXES="@comment "
 .endif
 
 .if exists(${LOCALBASE}/lib/libvga.so.1)
@@ -92,8 +104,11 @@ pre-everything::
 .if !defined(WITHOUT_GLX)
 	@${ECHO_MSG} "Define WITHOUT_GLX to disable building of GLX client"
 .endif
-.if defined(WITH_SHAREWARE_DATA)
+.if !defined(WITH_SHAREWARE_DATA)
 	@${ECHO_MSG} "Define WITH_SHAREWARE_DATA to install demo version game data"
+.endif
+.if !defined(WITH_SKYBOXES)
+	@${ECHO_MSG} "Define WITH_SKYBOXES to install additional skyboxes pak"
 .endif
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 	@${ECHO_MSG} "Define WITH_OPTIMIZED_CFLAGS to enable extra optimization options"
@@ -137,6 +152,9 @@ do-install:
 	@${MKDIR} ${DATADIR}/id1
 	${INSTALL_DATA} ${_DISTDIR}/q1-shareware-pak0.pak \
 		${DATADIR}/id1/pak0.pak
+.endif
+.if defined(WITH_SKYBOXES)
+	${INSTALL_DATA} ${WRKDIR}/pakX.pak ${DATADIR}/qw/pak0.pak
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
