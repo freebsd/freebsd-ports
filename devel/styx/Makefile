@@ -8,7 +8,7 @@
 
 PORTNAME=	styx
 PORTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.speculate.de/styx/
 EXTRACT_SUFX=	.tgz
@@ -17,22 +17,25 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
-USE_LIBTOOL=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${PREFIX}/include ${PTHREAD_FLAGS}" \
-		LIBS="-L${PREFIX}/lib -liconv ${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--includedir=${PREFIX}/include/styx \
-		--datadir=${PREFIX}/share/doc/styx
-
 USE_GMAKE=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_FLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib -liconv ${PTHREAD_LIBS}"
 INSTALLS_SHLIB=	yes
 
+post-extract:
+	@${RM} -f ${WRKSRC}/config.cache
+
 post-patch:
-.for file in config.h.in libbase/styconf0.h libbase/gstream.c
-	@${PERL} -pi -e "s,ICONV_H,GICONV_H,g" ${WRKSRC}/${file}
-.endfor
 	@${PERL} -pi -e "s,-lrt,${PTHREAD_LIBS},g" ${WRKSRC}/configure
 
-pre-configure:
-	@${RM} -f ${WRKSRC}/config.cache
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${TAR} -C ${WRKSRC} -cf - doc tutorial | \
+		${TAR} -C ${DOCSDIR} --unlink -xf -
+	@${FIND} ${DOCSDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+	@${FIND} ${DOCSDIR} | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+.endif
 
 .include <bsd.port.mk>
