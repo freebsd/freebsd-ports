@@ -306,6 +306,7 @@
     SUBDIR += m68k-rtems-objc
     SUBDIR += make++
     SUBDIR += makedepend
+    SUBDIR += mico
     SUBDIR += mime
     SUBDIR += mingw
     SUBDIR += mingw-bin-msvcrt
