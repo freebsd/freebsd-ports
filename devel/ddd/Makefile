@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= ddd
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Data Display Debugger -- a common graphical front-end for GDB/DBX/XDB
 
 LIB_DEPENDS=	iberty.1:${PORTSDIR}/devel/freelibiberty
