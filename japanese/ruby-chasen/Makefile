@@ -7,6 +7,7 @@
 
 PORTNAME=	chasen
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	japanese ruby
 MASTER_SITES=	http://www.itlb.te.noda.sut.ac.jp/~ikarashi/ruby/
 DISTNAME=	${PORTNAME}${PORTVERSION}

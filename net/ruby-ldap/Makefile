@@ -7,6 +7,7 @@
 
 PORTNAME=	ldap
 PORTVERSION=	0.3.7
+PORTREVISION=	1
 CATEGORIES=	net ruby
 MASTER_SITES=	http://kt-www.jaist.ac.jp/~ttate/ftp/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

@@ -6,6 +6,7 @@
 
 PORTNAME=	gdchart
 PORTVERSION=	0.0.1
+PORTREVISION=	1
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://www.aragorn.demon.nl/lib/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

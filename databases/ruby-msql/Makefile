@@ -7,6 +7,7 @@
 
 PORTNAME=	msql
 PORTVERSION=	0.2.4a
+PORTREVISION=	1
 CATEGORIES=	databases ruby
 MASTER_SITES=	http://www.isc.meiji.ac.jp/~ce11725/ruby/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

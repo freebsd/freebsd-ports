@@ -7,6 +7,7 @@
 
 PORTNAME=	iconv
 PORTVERSION=	0.4.4
+PORTREVISION=	1
 CATEGORIES=	converters ruby
 MASTER_SITES=	http://member.nifty.ne.jp/nokada/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

@@ -7,6 +7,7 @@
 
 PORTNAME=	audiofile
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	audio ruby
 MASTER_SITES=	http://%SUBDIR%.sourceforge.net/download/
 #MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}

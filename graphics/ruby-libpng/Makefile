@@ -7,7 +7,7 @@
 
 PORTNAME=	libpng
 PORTVERSION=	0.3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics ruby
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 #		http://www.isc.meiji.ac.jp/~ee77038/ruby/program/

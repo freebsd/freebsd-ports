@@ -7,6 +7,7 @@
 
 PORTNAME=	textbuf
 PORTVERSION=	0.3.8
+PORTREVISION=	1
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.loveruby.net/archive/
 MASTER_SITE_SUBDIR=	knu

@@ -7,6 +7,7 @@
 
 PORTNAME=	pgplot
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://www.ir.isas.ac.jp/~masa/ruby/dist/
 MASTER_SITE_SUBDIR=	knu

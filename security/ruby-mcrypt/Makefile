@@ -7,6 +7,7 @@
 
 PORTNAME=	mcrypt
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	security ruby
 MASTER_SITES=	http://www.rubylinks.de/download/ \
 		http://www.no.rubylinks.de/download/ \

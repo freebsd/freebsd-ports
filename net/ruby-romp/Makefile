@@ -7,6 +7,7 @@
 
 PORTNAME=	romp
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	net ruby
 MASTER_SITES=	http://rm-f.net/~cout/ruby/romp/ \
 		${MASTER_SITE_LOCAL}

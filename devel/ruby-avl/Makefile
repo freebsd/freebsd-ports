@@ -7,6 +7,7 @@
 
 PORTNAME=	avl
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES+=	devel ruby
 MASTER_SITES=	http://bocks.dhs.org/~pizman/avl/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

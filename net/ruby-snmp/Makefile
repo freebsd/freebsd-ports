@@ -7,6 +7,7 @@
 
 PORTNAME=	snmp
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	net ruby
 MASTER_SITES=	http://w3cic.riken.go.jp/~tsuruoka/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

@@ -7,6 +7,7 @@
 
 PORTNAME=	pdflib
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	print ruby
 MASTER_SITES=	http://www-nh.scphys.kyoto-u.ac.jp/~thitoshi/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

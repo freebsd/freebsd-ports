@@ -7,6 +7,7 @@
 
 PORTNAME=	opengl
 PORTVERSION=	0.32a
+PORTREVISION=	1
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://www2.giganet.net/~yoshi/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
