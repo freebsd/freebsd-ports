@@ -11,8 +11,7 @@
 # you can generally build it cleanly from the source. - Doug
 
 PORTNAME=	bind
-PORTVERSION=	8.3.3
-PORTREVISION=	1
+PORTVERSION=	8.3.4
 CATEGORIES?=	net
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	bind/src/${PORTVERSION}
