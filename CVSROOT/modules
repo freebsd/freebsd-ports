@@ -8928,6 +8928,7 @@ xlhtml		ports/textproc/xlhtml
 xli		ports/graphics/xli
 xlife		ports/games/xlife
 xlifegame	ports/games/xlifegame
+xlines		ports/games/xlines
 xlint		src/usr.bin/xlint
 xlispstat	ports/math/xlispstat
 xloadface	ports/sysutils/xloadface
