@@ -1,3 +1,4 @@
 sbin/slurp
 sbin/slurpie
-share/doc/slurpie/README
+%%PORTDOCS%%share/doc/slurpie/README
+%%PORTDOCS%%@dirrm share/doc/slurpie
