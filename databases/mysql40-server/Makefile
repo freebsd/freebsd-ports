@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	4.0.16
+PORTVERSION=	4.0.17
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	ftp://planetmirror.com/pub/mysql/Downloads/MySQL-4.0/ \
@@ -73,10 +73,10 @@ CONFIGURE_ARGS+=-D_THREAD_SAFE -I${LOCALBASE}/include/pthread/linuxthreads
 CFLAGS+=	-D__USE_UNIX98 -D_REENTRANT -D_THREAD_SAFE
 CFLAGS+=	-I${LOCALBASE}/include/pthread/linuxthreads
 .if ${OSVERSION} > 500000
-LIB_DEPENDS+=   lthread.3:${PORTSDIR}/devel/linuxthreads
+LIB_DEPENDS+=	lthread.3:${PORTSDIR}/devel/linuxthreads
 CONFIGURE_ARGS+=-L${LOCALBASE}/lib -llthread -llgcc_r -llstdc++ -llsupc++'
 .else
-LIB_DEPENDS+=   lthread.2:${PORTSDIR}/devel/linuxthreads
+LIB_DEPENDS+=	lthread.2:${PORTSDIR}/devel/linuxthreads
 CONFIGURE_ARGS+=-L${LOCALBASE}/lib -llthread -llgcc_r'
 .endif
 .endif
@@ -107,6 +107,8 @@ PLIST_SUB=	MYSQL_VERSION=${PORTVERSION}
 ONLY_FOR_ARCHS=	i386 alpha sparc64
 
 DOCS=		manual.html manual.txt manual_toc.html
+
+INFO=		mysql
 
 pre-fetch:
 	@${ECHO} ""
@@ -162,9 +164,9 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/Docs/${doc} ${DOCSDIR}
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/Docs/Flags/*.gif ${DOCSDIR}/Flags
+.endif
 	@${INSTALL_DATA} ${WRKSRC}/Docs/mysql.info ${PREFIX}/info
 	@install-info ${PREFIX}/info/mysql.info ${PREFIX}/info/dir
-.endif
 
 # MySQL-Client part
 .else
