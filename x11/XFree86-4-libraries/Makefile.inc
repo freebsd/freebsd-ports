@@ -26,13 +26,6 @@ MAKE_ENV+=	FBSDCC="${CC}" FBSDCXX="${CXX}"
 XINSTALL_DIRS?=	${XBUILD_DIRS}
 _XINCLUDE_DIRS=	include ${XBUILD_DIRS} ${XINCLUDE_DIRS}
 
-pre-everything::
-	@if [ "x${XFREE86_VERSION}" != "x4" ]; then \
-		${ECHO_MSG} "If you use the XFree86-4 ports you must have XFREE86_VERSION=4"; \
-		${ECHO_MSG} "set in your /etc/make.conf."; \
-		${FALSE}; \
-	fi;
-
 .if !target(pre-configure)
 pre-configure:
 	@${REINPLACE_CMD} -e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g ; \
