@@ -10,7 +10,7 @@ DISTNAME=	X11/xc/programs/ssh-askpass
 PKGNAME=	OpenSSH-askpass-1.2.2
 CATEGORIES=	security
 # ${MASTER_SITES} is only for if CVS won't work, period.
-MASTER_SITES=	http://www.freebsd.org/~kris/distfiles/
+MASTER_SITES=	http://people.FreeBSD.org/~kris/distfiles/
 
 MAINTAINER=	kris@FreeBSD.org
 
