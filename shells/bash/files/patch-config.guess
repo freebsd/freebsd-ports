@@ -1,0 +1,10 @@
+--- support/config.guess.orig	Wed Apr  3 16:47:14 2002
++++ support/config.guess	Fri May 16 19:42:58 2003
+@@ -782,4 +782,7 @@
+ 	echo ${UNAME_MACHINE}-unknown-bsdi${UNAME_RELEASE}
+ 	exit 0 ;;
++    amd64:FreeBSD:*:*)
++	echo x86_64-unknown-freebsd
++	exit 0 ;;
+     *:FreeBSD:*:*)
+ 	echo ${UNAME_MACHINE}-unknown-freebsd`echo ${UNAME_RELEASE}|sed -e 's/[-(].*//'`
