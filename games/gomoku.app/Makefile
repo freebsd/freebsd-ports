@@ -6,16 +6,20 @@
 #
 
 PORTNAME=	gomoku.app
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.6
 CATEGORIES=	games
 MASTER_SITES=	http://www.gnustep.it/nicola/Applications/Gomoku/
 DISTNAME=	Gomoku-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 
-BUILD_DEPENDS=	${XGPSBUNDLEDIR}/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu/libgnustep-xgps:${PORTSDIR}/x11-toolkits/gnustep-xgps
-RUN_DEPENDS=	${XGPSBUNDLEDIR}/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu/libgnustep-xgps:${PORTSDIR}/x11-toolkits/gnustep-xgps
+.if defined(GNUSTEP_GUI_DEVEL)
+BUILD_DEPENDS=	${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
+RUN_DEPENDS=	${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
+.else
+BUILD_DEPENDS=	${XGPSBUNDLEDIR}/libgnustep-xgps:${PORTSDIR}/x11-toolkits/gnustep-xgps
+RUN_DEPENDS=	${XGPSBUNDLEDIR}/libgnustep-xgps:${PORTSDIR}/x11-toolkits/gnustep-xgps
+.endif
 
 PREFIX=		${LOCALBASE}/GNUstep
 USE_GMAKE=	yes
@@ -23,7 +27,8 @@ MAKEFILE=	GNUmakefile
 ALL_TARGET=
 NO_MTREE=	yes
 
-XGPSBUNDLEDIR=	${PREFIX}/System/Library/Bundles/libgnustep-xgps.bundle
+BACKBUNDLEDIR=	${PREFIX}/System/Library/Bundles/libgnustep-back.bundle/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu
+XGPSBUNDLEDIR=	${PREFIX}/System/Library/Bundles/libgnustep-xgps.bundle/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu
 
 .include <bsd.port.pre.mk>
 
