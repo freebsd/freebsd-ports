@@ -8,7 +8,8 @@
 PORTNAME=	gtklp
 PORTVERSION=	0.9m
 CATEGORIES=	print
-MASTER_SITES=	http://www.stud.uni-hannover.de/~sirtobi/gtklp/files/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	gtklp
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	martin.klaffenboeck@gmx.at
