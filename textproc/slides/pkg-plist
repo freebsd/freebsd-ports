@@ -1,0 +1,165 @@
+%%PORTDOCS%%%%EXAMPLESDIR%%/ChangeLog
+%%PORTDOCS%%%%EXAMPLESDIR%%/catalog.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/dbgentext.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/minimal.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/test-full.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/test.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/testcust.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/testfull.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/testhtml.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/tr-862918.xml
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/param.html
+%%PORTDOCS%%%%DOCSDIR%%/slides.xml
+share/xsl/slides/browser/CTOCWidget.js
+share/xsl/slides/browser/ChangeLog
+share/xsl/slides/browser/overlay.js
+share/xsl/slides/browser/slides-default.css
+share/xsl/slides/browser/slides-frames.css
+share/xsl/slides/browser/slides-plain.css
+share/xsl/slides/browser/slides-table.css
+share/xsl/slides/browser/slides-w3c.css
+share/xsl/slides/browser/slides.css
+share/xsl/slides/browser/slides.js
+share/xsl/slides/browser/ua.js
+share/xsl/slides/browser/xbCollapsibleLists.js
+share/xsl/slides/browser/xbDOM.js
+share/xsl/slides/browser/xbDebug.js
+share/xsl/slides/browser/xbLibrary.js
+share/xsl/slides/browser/xbStyle-css.js
+share/xsl/slides/browser/xbStyle-nn4.js
+share/xsl/slides/browser/xbStyle-not-supported.js
+share/xsl/slides/browser/xbStyle.js
+share/xsl/slides/graphics/ChangeLog
+share/xsl/slides/graphics/active/ChangeLog
+share/xsl/slides/graphics/active/arr-next.png
+share/xsl/slides/graphics/active/arr-prev.png
+share/xsl/slides/graphics/active/but-fforward.png
+share/xsl/slides/graphics/active/but-info.png
+share/xsl/slides/graphics/active/but-next.png
+share/xsl/slides/graphics/active/but-prev.png
+share/xsl/slides/graphics/active/but-rewind.png
+share/xsl/slides/graphics/active/nav-home.png
+share/xsl/slides/graphics/active/nav-next.png
+share/xsl/slides/graphics/active/nav-prev.png
+share/xsl/slides/graphics/active/nav-toc.png
+share/xsl/slides/graphics/active/nav-up.png
+share/xsl/slides/graphics/active/w3c-next.png
+share/xsl/slides/graphics/active/w3c-prev.png
+share/xsl/slides/graphics/active/w3c-toc.png
+share/xsl/slides/graphics/arrow.gif
+share/xsl/slides/graphics/blank.gif
+share/xsl/slides/graphics/blank.png
+share/xsl/slides/graphics/hidetoc.gif
+share/xsl/slides/graphics/inactive/ChangeLog
+share/xsl/slides/graphics/inactive/but-fforward.png
+share/xsl/slides/graphics/inactive/but-info.png
+share/xsl/slides/graphics/inactive/but-next.png
+share/xsl/slides/graphics/inactive/but-prev.png
+share/xsl/slides/graphics/inactive/but-rewind.png
+share/xsl/slides/graphics/inactive/nav-home.png
+share/xsl/slides/graphics/inactive/nav-next.png
+share/xsl/slides/graphics/inactive/nav-prev.png
+share/xsl/slides/graphics/inactive/nav-toc.png
+share/xsl/slides/graphics/inactive/nav-up.png
+share/xsl/slides/graphics/inactive/w3c-next.png
+share/xsl/slides/graphics/inactive/w3c-prev.png
+share/xsl/slides/graphics/inactive/w3c-toc.png
+share/xsl/slides/graphics/plus.gif
+share/xsl/slides/graphics/pointer.png
+share/xsl/slides/graphics/showtoc.gif
+share/xsl/slides/graphics/toc/ChangeLog
+share/xsl/slides/graphics/toc/bullet.png
+share/xsl/slides/graphics/toc/closed.png
+share/xsl/slides/graphics/toc/open.png
+share/xsl/slides/schema/ChangeLog
+share/xsl/slides/schema/dtd/ChangeLog
+share/xsl/slides/schema/dtd/slides-custom.dtd
+share/xsl/slides/schema/dtd/slides-full.dtd
+share/xsl/slides/schema/dtd/slides.dtd
+share/xsl/slides/schema/dtd/slides.mod
+share/xsl/slides/schema/rng/full/calstblx.rnc
+share/xsl/slides/schema/rng/full/calstblx.rng
+share/xsl/slides/schema/rng/full/dbhierx.rnc
+share/xsl/slides/schema/rng/full/dbhierx.rng
+share/xsl/slides/schema/rng/full/dbnotnx.rnc
+share/xsl/slides/schema/rng/full/dbnotnx.rng
+share/xsl/slides/schema/rng/full/dbpoolx.rnc
+share/xsl/slides/schema/rng/full/dbpoolx.rng
+share/xsl/slides/schema/rng/full/docbookx.rnc
+share/xsl/slides/schema/rng/full/docbookx.rng
+share/xsl/slides/schema/rng/full/htmltblx.rnc
+share/xsl/slides/schema/rng/full/htmltblx.rng
+share/xsl/slides/schema/rng/full/slides-full.rnc
+share/xsl/slides/schema/rng/full/slides-full.rng
+share/xsl/slides/schema/rng/full/slides.rnc
+share/xsl/slides/schema/rng/full/slides.rng
+share/xsl/slides/schema/rng/slides.rnc
+share/xsl/slides/schema/rng/slides.rng
+share/xsl/slides/schema/xsd/full/calstblx.xsd
+share/xsl/slides/schema/xsd/full/dbhierx.xsd
+share/xsl/slides/schema/xsd/full/dbnotnx.xsd
+share/xsl/slides/schema/xsd/full/dbpoolx.xsd
+share/xsl/slides/schema/xsd/full/docbookx.xsd
+share/xsl/slides/schema/xsd/full/htmltblx.xsd
+share/xsl/slides/schema/xsd/full/slides-full.xsd
+share/xsl/slides/schema/xsd/full/slides.xsd
+share/xsl/slides/schema/xsd/full/xml.xsd
+share/xsl/slides/schema/xsd/slides.xsd
+share/xsl/slides/schema/xsd/xml.xsd
+share/xsl/slides/xsl/ChangeLog
+share/xsl/slides/xsl/fo/ChangeLog
+share/xsl/slides/xsl/fo/plain-titlepage.xml
+share/xsl/slides/xsl/fo/plain-titlepage.xsl
+share/xsl/slides/xsl/fo/plain.xsl
+share/xsl/slides/xsl/html/ChangeLog
+share/xsl/slides/xsl/html/css.xsl
+share/xsl/slides/xsl/html/default.xsl
+share/xsl/slides/xsl/html/flat.xsl
+share/xsl/slides/xsl/html/frames.xsl
+share/xsl/slides/xsl/html/graphics.xsl
+share/xsl/slides/xsl/html/jscript.xsl
+share/xsl/slides/xsl/html/param.xml
+share/xsl/slides/xsl/html/param.xsl
+share/xsl/slides/xsl/html/param.xweb
+share/xsl/slides/xsl/html/plain.xsl
+share/xsl/slides/xsl/html/slides-common.xsl
+share/xsl/slides/xsl/html/tables.xsl
+share/xsl/slides/xsl/html/vslides.xsl
+share/xsl/slides/xsl/html/w3c.xsl
+share/xsl/slides/xsl/xhtml/ChangeLog
+share/xsl/slides/xsl/xhtml/css.xsl
+share/xsl/slides/xsl/xhtml/default.xsl
+share/xsl/slides/xsl/xhtml/flat.xsl
+share/xsl/slides/xsl/xhtml/frames.xsl
+share/xsl/slides/xsl/xhtml/graphics.xsl
+share/xsl/slides/xsl/xhtml/html2xhtml.xsl
+share/xsl/slides/xsl/xhtml/jscript.xsl
+share/xsl/slides/xsl/xhtml/param.xsl
+share/xsl/slides/xsl/xhtml/plain.xsl
+share/xsl/slides/xsl/xhtml/slides-common.xsl
+share/xsl/slides/xsl/xhtml/tables.xsl
+share/xsl/slides/xsl/xhtml/vslides.xsl
+share/xsl/slides/xsl/xhtml/w3c.xsl
+share/xsl/slides/VERSION
+@unexec rm -f %D/share/xsl/slides/catalog 2>&1 >/dev/null || true
+@dirrm share/xsl/slides/browser
+@dirrm share/xsl/slides/graphics/active
+@dirrm share/xsl/slides/graphics/inactive
+@dirrm share/xsl/slides/graphics/toc
+@dirrm share/xsl/slides/graphics
+@dirrm share/xsl/slides/schema/dtd
+@dirrm share/xsl/slides/schema/rng/full
+@dirrm share/xsl/slides/schema/rng
+@dirrm share/xsl/slides/schema/xsd/full
+@dirrm share/xsl/slides/schema/xsd
+@dirrm share/xsl/slides/schema
+@dirrm share/xsl/slides/xsl/fo
+@dirrm share/xsl/slides/xsl/html
+@dirrm share/xsl/slides/xsl/xhtml
+@dirrm share/xsl/slides/xsl
+@dirrm share/xsl/slides
+@unexec test -d %D/share/xsl && rmdir %D/share/xsl 2>/dev/null || true
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
