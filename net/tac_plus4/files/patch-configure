@@ -1,0 +1,11 @@
+--- configure.orig	Sun Apr  3 01:20:37 2005
++++ configure	Sun Apr  3 01:20:48 2005
+@@ -1758,7 +1758,7 @@
+ 	#CPPFLAGS="$CFLAGS -I/usr/pkg/include"; export CPPFLAGS
+ 	#LDFLAGS="$LDFLAGS -L/usr/pkg/lib -Xlinker -rpath -Xlinker /usr/pkg/lib"
+ 	#export LDFLAGS
+-	LIBS="-lcrypt"; export LIBS
++	LIBS="-lcrypt $LIBS"; export LIBS
+         cat >>confdefs.h <<\_ACEOF
+ #define FREEBSD 1
+ _ACEOF

@@ -1,0 +1,48 @@
+--- Makefile.in.orig	Wed May 21 18:22:50 2003
++++ Makefile.in	Sun Apr  3 01:16:29 2005
+@@ -153,7 +153,7 @@
+ 	config.c        expire.c     programs.c \
+ 	default_fn.c    pw.c         utils.c \
+ 	default_v0_fn.c hash.c       pwlib.c \
+-	do_acct.c       maxsess.c    regexp.c
++	do_acct.c       maxsess.c    regexp.c opie_fn.c
+ 
+ tac_plus_LDADD = $(WRAPLIBS)
+ LDADD = @PROFLIBS@
+@@ -166,7 +166,7 @@
+ 
+ 
+ man_gen_MANS = tac_plus.8 tac_plus.conf.5
+-man_nogen_MANS = regexp.3 tac_pwd.8
++man_nogen_MANS = tac_pwd.8
+ 
+ man_MANS = $(man_gen_MANS) $(man_nogen_MANS)
+ 
+@@ -200,7 +200,8 @@
+ 	config.$(OBJEXT) expire.$(OBJEXT) programs.$(OBJEXT) \
+ 	default_fn.$(OBJEXT) pw.$(OBJEXT) utils.$(OBJEXT) \
+ 	default_v0_fn.$(OBJEXT) hash.$(OBJEXT) pwlib.$(OBJEXT) \
+-	do_acct.$(OBJEXT) maxsess.$(OBJEXT) regexp.$(OBJEXT)
++	do_acct.$(OBJEXT) maxsess.$(OBJEXT) regexp.$(OBJEXT) \
++	opie_fn.$(OBJEXT)
+ tac_plus_OBJECTS = $(am_tac_plus_OBJECTS)
+ tac_plus_DEPENDENCIES =
+ tac_plus_LDFLAGS =
+@@ -227,7 +228,8 @@
+ @AMDEP_TRUE@	./$(DEPDIR)/regexp.Po ./$(DEPDIR)/report.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/sendauth.Po ./$(DEPDIR)/sendpass.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/skey_fn.Po ./$(DEPDIR)/tac_plus.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/tac_pwd.Po ./$(DEPDIR)/utils.Po
++@AMDEP_TRUE@	./$(DEPDIR)/tac_pwd.Po ./$(DEPDIR)/utils.Po \
++@AMDEP_TRUE@	./$(DEPDIR)/opie_fn.Po
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+ 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+@@ -357,6 +359,7 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sendauth.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sendpass.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/skey_fn.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/opie_fn.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tac_plus.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tac_pwd.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/utils.Po@am__quote@

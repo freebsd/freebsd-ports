@@ -16,15 +16,15 @@ user=fred {
     member = admin
 
     expires = "May 23 2005"
- 
+
     service = exec {
         # When Fred starts an exec, his connection access list is 5
         acl = 5
- 
+
         # We require this autocmd to be done at startup
         autocmd = "telnet foo"
     }
- 
+
     # All commands except telnet 131.108.13.* are denied for Fred
     cmd = telnet {
         # Fred can run the following telnet command
@@ -32,19 +32,19 @@ user=fred {
 
         deny .*
     }
- 
+
     service = ppp protocol = ip {
-        # Fred can run ip over ppp only if he uses one 
+        # Fred can run ip over ppp only if he uses one
         # of the following mandatory addresses If he supplies no
         # address, the first one here will be mandated
         addr=131.108.12.11
         addr=131.108.12.12
         addr=131.108.12.13
         addr=131.108.12.14
- 
+
         # Fred's mandatory input access list number is 101
         inacl=101
- 
+
         # We will suggest an output access list of 102, but Fred may
         # choose to ignore or override it
         optional outacl=102
@@ -56,7 +56,7 @@ user=fred {
         inacl=101
         outacl=102
     }
- 
+
     # set a timeout in the lcp layer of ppp
     service = ppp protocol = lcp {
         timeout = 10
@@ -69,12 +69,12 @@ user = wilma {
     # password expiry date
     member = admin
 }
- 
+
 group = admin {
     # group members who don't have their own password will be looked
     # up in /etc/passwd
     login = file /etc/passwd
- 
+
     # group members who have no expiry date set will use this one
     expires = "Jan 1 1998"
 }

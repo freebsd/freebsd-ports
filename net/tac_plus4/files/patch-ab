@@ -1,13 +1,5 @@
 --- tac_plus.h.orig	Sun Jun 18 13:26:54 2000
 +++ tac_plus.h	Sun Dec  8 15:24:27 2002
-@@ -137,6 +137,7 @@
- #ifdef FREEBSD
- #define CONST_SYSERRLIST
- #define STDLIB_MALLOC
-+#define NO_PWAGE
- #define VOIDSIG
- #define NO_PWAGE
- #endif
 @@ -701,6 +702,7 @@
  extern int default_fn();
  extern int default_v0_fn();

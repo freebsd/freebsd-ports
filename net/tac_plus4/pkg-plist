@@ -1,7 +1,7 @@
-bin/generate_passwd
+bin/tac_plus
+bin/tac_pwd
 etc/rc.d/tac_plus.sh
 etc/tac_plus.conf.example
-sbin/tac_plus
-share/doc/tac_plus/users_guide
-share/doc/tac_plus/convert.pl
-@dirrm share/doc/tac_plus
+%%PORTDOCS%%%%DOCSDIR%%/convert.pl
+%%PORTDOCS%%%%DOCSDIR%%/users_guide
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
