@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Text-RecordParser
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN1=		tablify.1
+MAN1=		tablify.1 tabmerge.1
 MAN3=		Text::RecordParser.3
 
 .include <bsd.port.pre.mk>
