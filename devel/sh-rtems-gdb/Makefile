@@ -14,4 +14,5 @@ CONFIGURE_ARGS=	--verbose --enable-sim
 
 MAN1=		${LCLTARGET}-run.1
 
+MASTERDIR=	${.CURDIR}/../i386-rtems-gdb
 .include "${.CURDIR}/../i386-rtems-gdb/Makefile"

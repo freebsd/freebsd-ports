@@ -11,4 +11,5 @@ MAINTAINER=	jeh@FreeBSD.org
 
 LCLTARGET=	sparc-rtems
 
+MASTERDIR=	${.CURDIR}/../i386-rtems-gdb
 .include "${.CURDIR}/../i386-rtems-gdb/Makefile"

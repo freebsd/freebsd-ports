@@ -7,7 +7,7 @@
 
 PORTNAME=	gdb
 PORTVERSION=	5.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gdb
@@ -26,7 +26,6 @@ PATCH_SITES=	ftp://ftp.rtems.com/pub/rtems/snapshots/c_tools/source/ \
 LCLTARGET?=	i386-rtems
 
 GDBNAME=	gdb-5.2
-MASTERDIR=	${.CURDIR}/../i386-rtems-gdb
 PLIST=		${PKGDIR}/pkg-plist.${LCLTARGET}
 
 BUILD_DEPENDS=	${LCLTARGET}-as:${PORTSDIR}/devel/${LCLTARGET}-binutils \
