@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amazon
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.5
 CATEGORIES=	www ruby
 MASTER_SITES=	http://www.caliban.org/files/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

@@ -13,6 +13,8 @@
 @dirrm %%RUBY_SITELIBDIR%%/amazon/search/exchange
 @dirrm %%RUBY_SITELIBDIR%%/amazon/search
 @dirrm %%RUBY_SITELIBDIR%%/amazon
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cart
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rcart
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/search
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/NEWS
