@@ -9,7 +9,7 @@ PORTVERSION=	0.7
 CATEGORIES=	graphics
 MASTER_SITES=	http://sam.zoy.org/projects/libcaca/
 
-MAINTAINER=	vinc@FreeBSD-fr.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphics library that outputs text instead of pixels
 
 GNU_CONFIGURE=	yes
