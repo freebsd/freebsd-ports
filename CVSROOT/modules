@@ -7992,6 +7992,7 @@ wwwstat		ports/www/wwwstat
 wxbasic		ports/lang/wxbasic
 wxgtk		ports/x11-toolkits/wxgtk
 wxgtk-devel	ports/x11-toolkits/wxgtk-devel
+wxgtk-docs	ports/x11-toolkits/wxgtk-docs
 wy60		ports/comms/wy60
 wyvern		ports/www/wyvern
 wzip		ports/archivers/wzip
