@@ -6,6 +6,7 @@ bin/Xtract
 %%NHC98%%include/nhc98/HaXml/Text/ParserCombinators/HuttonMeijerWallace.hi
 %%NHC98%%include/nhc98/HaXml/Text/PrettyPrint/HughesPJ.hi
 %%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Combinators.hi
+%%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Escape.hi
 %%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Haskell2Xml.hi
 %%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Html/Generate.hi
 %%NHC98%%include/nhc98/HaXml/Text/XML/HaXml/Html/Parse.hi
@@ -27,6 +28,7 @@ bin/Xtract
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/pkg.conf
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/ParserCombinators/HuttonMeijerWallace.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Combinators.hi
+%%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Escape.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Haskell2Xml.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Html/Generate.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml/Html/Parse.hi
@@ -46,86 +48,30 @@ bin/Xtract
 %%GHC%%lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML/HaXml.hi
 %%GHC%%lib/ghc-%%GHC_VERSION%%/HSHaXml.o
 %%GHC%%lib/ghc-%%GHC_VERSION%%/libHSHaXml.a
+%%HUGS%%lib/hugs/libraries/Text/ParserCombinators/HuttonMeijerWallace.hs
+%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/Combinators.hs
+%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/DtdToHaskell/Convert.hs
+%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/DtdToHaskell/Instance.hs
+%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/DtdToHaskell/TypeDef.hs
+%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/Escape.hs
+%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/Haskell2Xml.hs
+%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/Html/Generate.hs
+%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/Html/Parse.hs
+%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/Html/Pretty.hs
+%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/Lex.hs
+%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/OneOfN.hs
+%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/Parse.hs
+%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/Pretty.hs
+%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/Types.hs
+%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/Validate.hs
+%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/Verbatim.hs
+%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/Wrappers.hs
+%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/Xml2Haskell.hs
+%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/Xtract/Combinators.hs
+%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/Xtract/Lex.hs
+%%HUGS%%lib/hugs/libraries/Text/XML/HaXml/Xtract/Parse.hs
+%%HUGS%%lib/hugs/libraries/Text/XML/HaXml.hs
 %%PORTDOCS%%%%DOCSDIR%%/Combinators.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/Text.ParserCombinators.HuttonMeijerWallace.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/Text.PrettyPrint.HughesPJ.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/Text.XML.HaXml.Combinators.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/Text.XML.HaXml.DtdToHaskell.Convert.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/Text.XML.HaXml.DtdToHaskell.Instance.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/Text.XML.HaXml.DtdToHaskell.TypeDef.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/Text.XML.HaXml.Haskell2Xml.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/Text.XML.HaXml.Html.Generate.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/Text.XML.HaXml.Html.Parse.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/Text.XML.HaXml.Html.Pretty.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/Text.XML.HaXml.Lex.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/Text.XML.HaXml.OneOfN.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/Text.XML.HaXml.Parse.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/Text.XML.HaXml.Pretty.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/Text.XML.HaXml.Types.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/Text.XML.HaXml.Validate.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/Text.XML.HaXml.Verbatim.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/Text.XML.HaXml.Wrappers.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/Text.XML.HaXml.Xml2Haskell.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/Text.XML.HaXml.Xtract.Combinators.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/Text.XML.HaXml.Xtract.Lex.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/Text.XML.HaXml.Xtract.Parse.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/Text.XML.HaXml.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-tA.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-tB.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-tC.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-tD.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-tE.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-tF.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-tG.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-tH.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-tI.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-tJ.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-tK.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-tL.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-tM.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-tN.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-tO.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-tP.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-tQ.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-tR.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-tS.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-tT.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-tU.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-tV.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-tW.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-tX.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-tY.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-tZ.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-vA.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-vB.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-vC.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-vD.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-vE.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-vF.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-vG.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-vH.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-vI.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-vJ.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-vK.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-vL.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-vM.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-vN.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-vO.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-vP.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-vQ.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-vR.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-vS.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-vT.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-vU.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-vV.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-vW.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-vX.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-vY.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index-vZ.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/doc-index.html
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/haddock.css
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/haskell_icon.gif
-%%PORTDOCS%%%%DOCSDIR%%/HaXml/index.html
 %%PORTDOCS%%%%DOCSDIR%%/Haskell2Xml.html
 %%PORTDOCS%%%%DOCSDIR%%/Xml2Haskell.html
 %%PORTDOCS%%%%DOCSDIR%%/Xtract.html
@@ -150,7 +96,11 @@ bin/Xtract
 %%GHC%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text/XML
 %%GHC%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/HaXml/Text
 %%GHC%%@dirrm lib/ghc-%%GHC_VERSION%%/imports/HaXml
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/HaXml
+%%HUGS%%@dirrm lib/hugs/libraries/Text/XML/HaXml/DtdToHaskell
+%%HUGS%%@dirrm lib/hugs/libraries/Text/XML/HaXml/Html
+%%HUGS%%@dirrm lib/hugs/libraries/Text/XML/HaXml/Xtract
+%%HUGS%%@dirrm lib/hugs/libraries/Text/XML/HaXml
+%%HUGS%%@dirrm lib/hugs/libraries/Text/XML
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%GHC%%@exec %D/bin/ghc-pkg -a < %D/lib/ghc-%%GHC_VERSION%%/imports/HaXml/pkg.conf
 %%GHC%%@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
