@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	rt3
-PORTVERSION=    3.0.1
-CATEGORIES=     www
-MASTER_SITES?=   http://www.fsck.com/pub/rt/release/
-DISTFILES?=      rt-3-0-1.tar.gz
+PORTVERSION=	3.0.1
+CATEGORIES=	www
+MASTER_SITES?=	http://www.fsck.com/pub/rt/release/ \
+		ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/
+DISTFILES?=	rt-3-0-1.tar.gz
 
-MAINTAINER=     autrijus@autrijus.org
+MAINTAINER=	autrijus@autrijus.org
 COMMENT?=	RT is an industrial-grade ticketing system written in Perl
 
-BUILD_DEPENDS=  ${APXS}:${APACHE_PORT} \
+BUILD_DEPENDS=	${APXS}:${APACHE_PORT} \
 		${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI \
 		${SITE_PERL}/Apache/Mason.pm:${PORTSDIR}/www/p5-HTML-Mason \
 		${SITE_PERL}/Apache/Session.pm:${PORTSDIR}/www/p5-Apache-Session \
@@ -53,14 +54,14 @@ BUILD_DEPENDS=  ${APXS}:${APACHE_PORT} \
 		${ARCH_PERL}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 		${SITE_PERL}/Time/ParseDate.pm:${PORTSDIR}/devel/p5-Time-modules \
 		${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize
-RUN_DEPENDS=    ${BUILD_DEPENDS}
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
-WRKSRC=         ${WRKDIR}/rt-3-0-1
-HAS_CONFIGURE=  yes
+WRKSRC=		${WRKDIR}/rt-3-0-1
+HAS_CONFIGURE=	yes
 NO_BUILD=	yes
 NO_PACKAGE=	Executes scripts in post-install phase
 
-CONFIGURE_ARGS= --prefix=${RT_PATH} \
+CONFIGURE_ARGS=	--prefix=${RT_PATH} \
 		--enable-layout=${LAYOUT} \
 		--with-web-user=${WEB_USER} \
 		--with-web-group=${WEB_GROUP} \
@@ -71,29 +72,29 @@ CONFIGURE_ARGS= --prefix=${RT_PATH} \
 		--with-db-dba=${DB_DBA_USER}
 
 .if defined(WITH_APACHE2)
-APACHE_PORT?=   ${PORTSDIR}/www/apache2
-BUILD_DEPENDS+= ${LOCALBASE}/libexec/apache2/mod_perl.so:${PORTSDIR}/www/mod_perl2
+APACHE_PORT?=	${PORTSDIR}/www/apache2
+BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_perl.so:${PORTSDIR}/www/mod_perl2
 .else
-APACHE_PORT?=   ${PORTSDIR}/www/apache13
-BUILD_DEPENDS+= ${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl
+APACHE_PORT?=	${PORTSDIR}/www/apache13
+BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl
 .endif
 
-APXS?=          ${LOCALBASE}/sbin/apxs
+APXS?=		${LOCALBASE}/sbin/apxs
 
-DB_TYPE?=  mysql
+DB_TYPE?=	mysql
 
 .if ${DB_TYPE} == "Pg"
-BUILD_DEPENDS+= ${LOCALBASE}/bin/psql:${PORTSDIR}/databases/postgresql7
+BUILD_DEPENDS+=	${LOCALBASE}/bin/psql:${PORTSDIR}/databases/postgresql7
 .else
-DB_TYPE=        mysql
-BUILD_DEPENDS+= ${LOCALBASE}/bin/mysql_config:${PORTSDIR}/databases/mysql40-server \
+DB_TYPE=	mysql
+BUILD_DEPENDS+=	${LOCALBASE}/bin/mysql_config:${PORTSDIR}/databases/mysql40-server \
 		${ARCH_PERL}/Mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
 SITE_PERL:=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 ARCH_PERL=	${SITE_PERL}/${PERL_ARCH}/
-USE_PERL5=      yes
-RT_PATH?=       ${PREFIX}/rt3
+USE_PERL5=	yes
+RT_PATH?=	${PREFIX}/rt3
 LAYOUT?=	RT3
 
 DB_DBA_USER?=	root
