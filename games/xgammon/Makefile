@@ -3,7 +3,7 @@
 # Date created:		02 January 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/01/03 08:15:44 tg Exp $
 #
 
 DISTNAME=	xgammon-0.98
@@ -15,6 +15,8 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tg@FreeBSD.ORG
 
+BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/misc/rpm
+
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
 
@@ -25,8 +27,7 @@ do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
 .endif
-	@dd if=${_DISTDIR}${DISTFILES} bs=1706 skip=1 | gzip -cd | \
-		(cd ${WRKDIR}; cpio -i)
+	@rpm2cpio ${_DISTDIR}${DISTFILES} | (cd ${WRKDIR}; cpio -i)
 	@tar -xzf ${WRKDIR}/${DISTNAME}.tar.gz -C ${WRKDIR}
 
 pre-patch:
