@@ -1,4 +1,4 @@
-@cwd /usr/X11R6/
+@cwd ${X11BASE}
 @mode 2755
 @owner bin
 @group dialer
