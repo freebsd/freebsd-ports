@@ -16,7 +16,6 @@ MAINTAINER=	nakai@FreeBSD.org
 
 USE_IMAKE=	yes
 USE_XPM=	yes
-NO_INSTALL_MANPAGES=	yes
 
 post-install:
 	@${CHMOD} 755 ${PREFIX}/bin/xeyes+
