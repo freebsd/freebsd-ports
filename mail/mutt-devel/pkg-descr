@@ -6,10 +6,6 @@ Features include color support, message threading, MIME support (including
 RFC1522 support for encoded headers), customizable key bindings, POP3,
 Delivery Status Notification (DSN) support, and PGP/MIME.
 
-Warning, this is beta software.  While it is fairly stable and quite
-usable, core dumps do happen.  Use at your own risk.  New versions are
-usually released every Friday.
-
 WWW: http://www.mutt.org/
 Mutt User Information:	http://www.math.fu-berlin.de/~guckes/mutt/
 
