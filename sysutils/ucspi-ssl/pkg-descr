@@ -1,0 +1,14 @@
+sslserver and sslclient are command-line tools for building SSL
+client-server applications. They conform to the UNIX Client-Server
+Program Interface, UCSPI.
+
+sslserver listens for connections, and runs a program for each
+connection it accepts. The program environment includes variables that
+hold the local and remote host names, IP addresses, and port numbers.
+sslserver offers a concurrency limit on acceptance of new connections,
+and selective handling of connections based on client identity.
+
+sslclient requests a connection to a TCP socket, and runs a program. The
+program environment includes the same variables as for sslserver.
+
+WWW:	http://www.superscript.com/ucspi-ssl/intro.html

@@ -300,6 +300,7 @@
     SUBDIR += tree
     SUBDIR += ttyload
     SUBDIR += tua
+    SUBDIR += ucspi-ssl
     SUBDIR += ucspi-tcp
     SUBDIR += udesc_dump
     SUBDIR += unquote

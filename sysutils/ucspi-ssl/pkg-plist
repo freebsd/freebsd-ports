@@ -1,0 +1,10 @@
+bin/https@
+bin/sslcat
+bin/sslclient
+bin/sslconnect
+bin/sslserver
+share/doc/ucspi-ssl/CHANGES
+share/doc/ucspi-ssl/README
+share/doc/ucspi-ssl/TODO
+share/doc/ucspi-ssl/UCSPI-SSL
+@dirrm share/doc/ucspi-ssl
