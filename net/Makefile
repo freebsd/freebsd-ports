@@ -347,6 +347,7 @@
     SUBDIR += merlinmon
     SUBDIR += mgen
     SUBDIR += micq
+    SUBDIR += minder
     SUBDIR += minisapserver
     SUBDIR += mldonkey
     SUBDIR += mldonkey-core

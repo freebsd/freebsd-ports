@@ -1,0 +1,20 @@
+--- Makefile.orig	Sat Jan 15 23:23:22 2005
++++ Makefile	Sat Jan 15 23:27:38 2005
+@@ -4,7 +4,7 @@
+ CFLAGS =	-Wall -g -O2 $(INCLUDE) -MD
+ CPPFLAGS =	$(CFLAGS)
+ LIBS =		-L/usr/devel/lib -lSockets \
+-		-lssl -lcrypto -luuid -lpthread
++		-lSockets -lssl -lcrypto
+ 
+ PROGS =		minder 
+ all:		$(PROGS)
+@@ -19,7 +19,7 @@
+ 		rm -f *.o *~ *.d slask $(PROGS)
+ 
+ install:	all
+-		install --strip $(PROGS) /usr/local/bin
++		@${BSD_INSTALL_PROGRAM} $(PROGS) /usr/local/bin
+ 
+ -include	*.d
+ 
