@@ -91,6 +91,7 @@
     SUBDIR += icegradient
     SUBDIR += inti
     SUBDIR += inti-gconf
+    SUBDIR += inti-gl
     SUBDIR += itk
     SUBDIR += iwidgets
     SUBDIR += jx
