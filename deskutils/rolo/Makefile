@@ -16,7 +16,6 @@ COMMENT=	Text-based contact management software
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libvc.a:${PORTSDIR}/devel/libvc
 
-USE_SIZE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${PREFIX}/include \

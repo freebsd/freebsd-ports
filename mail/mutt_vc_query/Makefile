@@ -17,7 +17,6 @@ COMMENT=	A vCard query utility for mutt
 RUN_DEPENDS=	${LOCALBASE}/lib/libvc.so:${PORTSDIR}/devel/libvc
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-USE_SIZE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${PREFIX}/include \

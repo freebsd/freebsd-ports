@@ -16,7 +16,6 @@ DISTNAME=	HaXml-${PORTVERSION}
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A collection of utilities for using Haskell and XML together
 
-USE_SIZE=	yes
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes

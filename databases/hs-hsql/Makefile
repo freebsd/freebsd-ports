@@ -27,7 +27,6 @@ ALL_TARGET=	all docs
 .endif
 
 WRKSRC=	${WRKDIR}/HSQL
-USE_SIZE=	yes
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}/lib --enable-postgres

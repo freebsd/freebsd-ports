@@ -28,7 +28,6 @@ PLIST_SUB=	HINT="@comment "
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_SIZE=	yes
 USE_GMAKE=	yes
 
 .if !defined(WITH_HINT)

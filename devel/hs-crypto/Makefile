@@ -23,7 +23,6 @@ RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 BUILD_DEPENDS=	haddock:${PORTSDIR}/devel/hs-haddock
 .endif
 
-USE_SIZE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

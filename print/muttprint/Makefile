@@ -30,7 +30,6 @@ RUN_DEPENDS+=	cupstestppd:${PORTSDIR}/print/cups-lpr \
 		espgs:${PORTSDIR}/print/cups-pstoraster
 .endif
 
-USE_SIZE=	yes
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 USE_GMAKE=	yes
