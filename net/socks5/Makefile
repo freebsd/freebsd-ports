@@ -1,19 +1,17 @@
 # New ports collection makefile for:	socks5
-# Version required:			v1.0r7
+# Version required:			v1.0r8
 # Date created:				24 Apr 1996
 # Whom:					pst
 #
-# $Id: Makefile,v 1.21 1999/01/05 19:02:32 obrien Exp $
+# $Id: Makefile,v 1.22 1999/01/06 03:59:14 obrien Exp $
 #
 
-DISTNAME=	socks5-v1.0r7
-PKGNAME=	socks5-1.0.7
+DISTNAME=	socks5-v1.0r8
+PKGNAME=	socks5-1.0.8
 CATEGORIES=	net security
 EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	imp@freebsd.org
-
-BROKEN=	"socks5-v1.0r7 is not available at NEC's website.  Latest is v1.0r8"
 
 NO_CDROM=	"NEC has a funky license for this software"
 RESTRICTED=	"no commercial use"
