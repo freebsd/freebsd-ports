@@ -7,7 +7,7 @@
 
 PORTNAME=	python
 PORTVERSION=	2.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang python
 MASTER_SITES=	http://www.python.org/ftp/python/${PORTVERSION}/ \
 		${MASTER_SITE_SOURCEFORGE} \
