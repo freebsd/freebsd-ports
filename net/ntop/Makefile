@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S|.r|-rc|}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	wjv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 # Besides the required dependencies listed here, this port can optionally
 # make use of sysutils/lsof and security/nmap if installed.
