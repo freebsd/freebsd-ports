@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	highlight
-PORTVERSION=	2.0.16
+PORTVERSION=	2.0.17
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.andre-simon.de/zip/
@@ -17,6 +17,7 @@ COMMENT=	Customizable syntax highlighter
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
+USE_GCC=	3.2
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
