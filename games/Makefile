@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.197 1999/04/08 18:00:48 steve Exp $
+# $Id: Makefile,v 1.198 1999/04/13 09:47:37 jseger Exp $
 #
 
     SUBDIR += 3dc
@@ -38,6 +38,7 @@
     SUBDIR += freeciv
     SUBDIR += frotz
     SUBDIR += galaxis
+    SUBDIR += garith
     SUBDIR += gemdropx
     SUBDIR += gleyes
     SUBDIR += gnomegames
