@@ -53,6 +53,7 @@
     SUBDIR += xfed
     SUBDIR += xfontselector
     SUBDIR += xmbdfed
+    SUBDIR += xorg-fonts-100dpi
     SUBDIR += xorg-fonts-encodings
     SUBDIR += xorg-fonts-type1
 
