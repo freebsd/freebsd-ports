@@ -1,0 +1,17 @@
+--- common.c.orig	Thu Aug 31 22:24:49 2000
++++ common.c	Thu Aug 31 22:26:01 2000
+@@ -179,10 +179,10 @@
+       memcpy(&address->sin_addr.s_addr, ent->h_addr, (unsigned)ent->h_length);
+       ip = ntohl (address->sin_addr.s_addr);
+       log_annoying ("set_address: host = %d.%d.%d.%d",
+-		     ip >> 24,
+-		    (ip >> 16) & 0xff,
+-		    (ip >>  8) & 0xff,
+-		     ip        & 0xff);
++		     ntohl(ip) >> 24,
++		    (ntohl(ip) >> 16) & 0xff,
++		    (ntohl(ip) >>  8) & 0xff,
++		     ntohl(ip)        & 0xff);
+     }
+ 
+   return 0;
