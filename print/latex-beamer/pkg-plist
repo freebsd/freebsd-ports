@@ -17,6 +17,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/doc/themelined2.pdf
 %%PORTDOCS%%%%DOCSDIR%%/doc/themeplain.pdf
 %%PORTDOCS%%%%DOCSDIR%%/doc/themeplain2.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/themeshadow.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/themeshadow2.pdf
 %%PORTDOCS%%%%DOCSDIR%%/doc/themesidebar.pdf
 %%PORTDOCS%%%%DOCSDIR%%/doc/themesidebar2.pdf
 %%PORTDOCS%%%%DOCSDIR%%/doc/themesidebardark.pdf
@@ -51,13 +53,17 @@
 %%CLASSDIR%%/base/beamerbaseboxes.sty
 %%CLASSDIR%%/base/beamerbasecolor.sty
 %%CLASSDIR%%/base/beamerbasecompatibility.sty
+%%CLASSDIR%%/base/beamerbasedecode.sty
 %%CLASSDIR%%/base/beamerbasefont.sty
 %%CLASSDIR%%/base/beamerbaseframe.sty
 %%CLASSDIR%%/base/beamerbaseframecomponents.sty
 %%CLASSDIR%%/base/beamerbaselocalstructure.sty
+%%CLASSDIR%%/base/beamerbasemodes.sty
 %%CLASSDIR%%/base/beamerbasemisc.sty
+%%CLASSDIR%%/base/beamerbasenotes.sty
 %%CLASSDIR%%/base/beamerbasenavigation.sty
 %%CLASSDIR%%/base/beamerbaseoverlay.sty
+%%CLASSDIR%%/base/beamerbaseoptions.sty
 %%CLASSDIR%%/base/beamerbasesection.sty
 %%CLASSDIR%%/base/beamerbasetemplates.sty
 %%CLASSDIR%%/base/beamerbasetitle.sty
@@ -91,22 +97,31 @@
 %%CLASSDIR%%/examples/beamerexample5.tex
 %%CLASSDIR%%/examples/beamerexample6.pdf
 %%CLASSDIR%%/examples/beamerexample6.tex
-%%CLASSDIR%%/examples/computer.jpg
-%%CLASSDIR%%/examples/computerred.jpg
-%%CLASSDIR%%/examples/computer.mask.jpg
-%%CLASSDIR%%/examples/g4.jpg
-%%CLASSDIR%%/examples/g4red.jpg
-%%CLASSDIR%%/examples/g4.mask.jpg
-%%CLASSDIR%%/examples/ram.jpg
-%%CLASSDIR%%/examples/ram.mask.jpg
-%%CLASSDIR%%/examples/tu-logo.jpg
-%%CLASSDIR%%/examples/ur-logo.jpg
-%%CLASSDIR%%/examples/tu-logo.mask.jpg
-%%CLASSDIR%%/examples/ur-logo.mask.jpg
+%%CLASSDIR%%/examples/beamer-computer.jpg
+%%CLASSDIR%%/examples/beamer-computerred.jpg
+%%CLASSDIR%%/examples/beamer-computer-mask.jpg
+%%CLASSDIR%%/examples/beamer-g4.jpg
+%%CLASSDIR%%/examples/beamer-g4red.jpg
+%%CLASSDIR%%/examples/beamer-g4-mask.jpg
+%%CLASSDIR%%/examples/beamer-ram.jpg
+%%CLASSDIR%%/examples/beamer-ram-mask.jpg
+%%CLASSDIR%%/examples/beamer-tu-logo.jpg
+%%CLASSDIR%%/examples/beamer-ur-logo.jpg
+%%CLASSDIR%%/examples/beamer-tu-logo-mask.jpg
+%%CLASSDIR%%/examples/beamer-ur-logo-mask.jpg
 @dirrm %%CLASSDIR%%/examples
-%%CLASSDIR%%/lyx/doc/beamerlyxguide.lyx
-%%CLASSDIR%%/lyx/doc/beamerlyxguide.pdf
-@dirrm %%CLASSDIR%%/lyx/doc
+%%CLASSDIR%%/lyx/examples/beamerlyxexample1.lyx
+%%CLASSDIR%%/lyx/examples/beamerlyxexample1.pdf
+%%CLASSDIR%%/lyx/examples/beamer-icsi-logo.pdf
+%%CLASSDIR%%/lyx/examples/beamer-knight1.png
+%%CLASSDIR%%/lyx/examples/beamer-knight1-mask.png
+%%CLASSDIR%%/lyx/examples/beamer-knight2.png
+%%CLASSDIR%%/lyx/examples/beamer-knight2-mask.png
+%%CLASSDIR%%/lyx/examples/beamer-knight3.png
+%%CLASSDIR%%/lyx/examples/beamer-knight3-mask.png
+%%CLASSDIR%%/lyx/examples/beamer-knight4.png
+%%CLASSDIR%%/lyx/examples/beamer-knight4-mask.png
+@dirrm %%CLASSDIR%%/lyx/examples
 %%CLASSDIR%%/lyx/layouts/beamer.layout
 @dirrm %%CLASSDIR%%/lyx/layouts
 %%CLASSDIR%%/lyx/templates/beamerpresentation.lyx
