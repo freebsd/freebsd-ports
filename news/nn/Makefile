@@ -3,7 +3,7 @@
 # Date created:		24 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.9 1996/11/18 11:37:47 asami Exp $
+# $Id: Makefile,v 1.10 1996/11/18 14:10:33 asami Exp $
 #
 
 DISTNAME=	nn-6.5.0.b3
@@ -23,10 +23,10 @@ pre-build:
 	@cp ${.CURDIR}/files/s-freebsd.h ${WRKSRC}/conf
 
 pre-install:
-	[ -r /usr/local/lib/news/inews ] || ( cd ${WRKSRC}/inews; ${MAKE} all )
-	[ -r /usr/local/lib/news/inews ] || ( cd ${WRKSRC}/inews; ${MAKE} install )
+	[ -r /usr/local/news/lib/inews ] || ( cd ${WRKSRC}/inews; ${MAKE} all )
+	[ -r /usr/local/news/lib/inews ] || ( cd ${WRKSRC}/inews; ${MAKE} install )
 
 post-install:
-	@echo Put your NNTP host into ${PREFIX}/lib/news/nntp_server file
+	@echo Put your NNTP host into ${PREFIX}/etc/nntpserver file
 
 .include <bsd.port.mk>

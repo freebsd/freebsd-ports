@@ -1,5 +1,5 @@
 lib/nn
-lib/news/inews
+news/lib/inews
 bin/nn
 bin/nnusage
 bin/nngrab
