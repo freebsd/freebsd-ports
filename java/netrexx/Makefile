@@ -12,7 +12,7 @@ CATEGORIES=	java lang
 MASTER_SITES=	http://www.ibm.com/technology/NetRexx/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	${PREFIX}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk
 

@@ -18,7 +18,7 @@ PATCH_SITES=	http://www.hylafax.org/patches/
 PATCHFILES=	gcc-2.8.x.patch
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
 		${PREFIX}/lib/afm/Courier:${PORTSDIR}/print/afm
