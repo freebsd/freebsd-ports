@@ -81,6 +81,7 @@
     SUBDIR += lbdb
     SUBDIR += liamail
     SUBDIR += libesmtp
+    SUBDIR += libetpan
     SUBDIR += liboe
     SUBDIR += librfc822
     SUBDIR += listar
