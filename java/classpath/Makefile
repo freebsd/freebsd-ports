@@ -26,6 +26,10 @@ PLIST_FILES=	lib/security/classpath.security
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502126
+BROKEN=		"Configure fails on FreeBSD >= 5.x"
+.endif
+
 post-install:
 .for dir in ${PREFIX}/share/classpath ${PREFIX}/lib/classpath
 	@${FIND} ${dir} ! -type d | \
