@@ -57,7 +57,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/dbmail.conf ${PREFIX}/etc/dbmail.conf-dist
 	@${MKDIR} ${DATADIR}/sql
 	@${INSTALL_DATA} ${WRKSRC}/sql/${DATABASE}/* ${DATADIR}/sql
-.if !(NOPORTSDOC)
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for docs in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
