@@ -20,6 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
 # Note: stegdetect includes a modified version of jpeg-6b linked statically
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_REINPLACE=	yes
 MAN1=		stegdetect.1 stegbreak.1
 
 .if defined(WITHOUT_X11)
@@ -32,10 +33,10 @@ PLIST_SUB+=	X11=""
 .endif
 
 post-patch:
-	@${PERL} -pi -e 's@\$$\(JPEGLIB\)@\$$\(JPEGLIB\) \-lcrypto@' \
+	${REINPLACE_CMD} 's/$$(JPEGLIB)/$$(JPEGLIB) -lcrypto/' \
 		${WRKSRC}/Makefile.in
 .if defined(WITHOUT_X11)
-	@${PERL} -pi -e 's/gtk-config//g' ${WRKSRC}/configure
+	${REINPLACE_CMD} 's/gtk-config//g' ${WRKSRC}/configure
 .endif
 
 .include <bsd.port.mk>
