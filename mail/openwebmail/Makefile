@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openwebmail
-PORTVERSION=	2.40
+PORTVERSION=	2.41
 CATEGORIES=	mail
 MASTER_SITES=	http://openwebmail.org/openwebmail/download/release/ \
 		http://turtle.ee.ncku.edu.tw/openwebmail/download/release/
@@ -20,8 +20,8 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5-T
 USE_PERL5=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-OWCGIDIR?=	${PREFIX}/www/cgi-bin/openwebmail
-OWDATADIR?=	${PREFIX}/www/data/openwebmail
+OWCGIDIR=	${PREFIX}/www/cgi-bin/openwebmail
+OWDATADIR=	${PREFIX}/www/data/openwebmail
 PATCH_WRKSRC=	${WRKSRC}/cgi-bin/openwebmail
 PATCH_STRIP=	-p1
 PLIST=		${WRKDIR}/.PLIST.${PKGNAME}
@@ -41,6 +41,14 @@ OPTIONS=	ANTIWORD "AntiWord" off \
 		ZLIB "ZLib" off
 
 .include <bsd.port.pre.mk>
+
+# WITH_SPEEDYCGI needs suidperl enabled under perl5.8
+PERL_V!=	${PERL} -V
+.if ${PERL_LEVEL} > 500800 && ${PERL_V:M*dosuid*} == "" && defined(WITH_SPEEDYCGI)
+DISABLE_SPEEDYCGI=yes
+WITHOUT_SPEEDYCGI=yes
+.undef WITH_SPEEDYCGI
+.endif
 
 .if ${PERL_LEVEL} < 500800
 RUN_DEPENDS+=	${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
@@ -103,6 +111,14 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p
 .endif
 
 post-patch:
+.if defined(DISABLE_SPEEDYCGI)
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "WARNING:"
+	@${ECHO_MSG} "Your perl doesn't support SUID, so SpeedyCGI support is disabled automatically."
+	@${ECHO_MSG} "If you want SpeedyCGI support, please reinstall perl with ENABLE_SUIDPERL=yes,"
+	@${ECHO_MSG} "and reinstall ${PORTNAME} again."
+	@${ECHO_MSG} ""
+.endif
 	@${MV} ${PATCH_WRKSRC}/etc/openwebmail.conf ${PATCH_WRKSRC}/etc/openwebmail.conf-dist
 	@${PERL} -pi.bak -e 's,${LOCALBASE}/www/cgi-bin/openwebmail,${OWCGIDIR},g' ${PATCH_WRKSRC}/etc/openwebmail.conf-dist
 	@${PERL} -pi.bak -e 's,${LOCALBASE}/www/data/openwebmail,${OWDATADIR},g' ${PATCH_WRKSRC}/etc/openwebmail.conf-dist
@@ -122,7 +138,6 @@ post-patch:
 	@${ECHO} "viruscheck_source_allowed	all" >> ${PATCH_WRKSRC}/etc/openwebmail.conf-dist
 .endif
 .if defined(WITH_SPEEDYCGI)
-	@${PERL} -pi.bak -e 's,speedy_suidperl -T,speedy_suidperl,g' ${PATCH_WRKSRC}/openwebmail*pl
 	@${ECHO} "has_savedsuid_support	no" >> ${PATCH_WRKSRC}/etc/openwebmail.conf-dist
 .else
 	@${PERL} -pi.bak -e 's,/usr/bin/suidperl,${PERL},g' ${PATCH_WRKSRC}/openwebmail*pl
