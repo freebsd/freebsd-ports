@@ -16,8 +16,6 @@ MAINTAINER=	green@FreeBSD.org
 
 LIB_DEPENDS=	crypto.1:${PORTSDIR}/security/openssl
 
-RESTRICTED=	"Links with cryptographic code."
-
 .include <bsd.port.pre.mk>
 CAT?=		/bin/cat
 DISTFILES!=	${CAT} ${FILESDIR}/distfiles
