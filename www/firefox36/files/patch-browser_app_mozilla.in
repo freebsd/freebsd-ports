@@ -13,7 +13,7 @@
  done #last arg
  
 -if [ `expr "${_optLast}" : '.*:/.*'` -eq 0 -a \( -f "${_optLast}" -o -d "${_optLast}" \) ]; then
-+if [ `expr -- "${_optLast}" : '.*:/.*'` -eq 0 -a \( -f "${_optLast}" -o -d "${_optLast}" \) ]; then
++if [ `expr X"${_optLast}" : 'X.*:/.*'` -eq 0 -a \( -f "${_optLast}" -o -d "${_optLast}" \) ]; then
  	# Last argument seems to be a local file/directory
  	# Check, if it is absolutely specified (ie. /home/foo/file vs. ./file)
  	# If it is just "relatively" (./file) specified, make it absolutely
