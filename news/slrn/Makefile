@@ -49,6 +49,11 @@ USE_OPENSSL=	YES
 CONFIGURE_ARGS+=	--with-ssl
 .endif
 
+.if defined(WITH_DEVIEW)
+LIB_DEPENDS+=	uu.3:${PORTSDIR}/converters/uulib
+CONFIGURE_ARGS+=	--with-uudeview
+.endif
+
 ALL_TARGET=	all
 
 MAN1=		slrn.1 slrnpull.1
