@@ -7,7 +7,7 @@
 
 PORTNAME=	autotrace
 PORTVERSION=	0.31.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,7 +23,7 @@ LIB_DEPENDS=	jbig.1:${PORTSDIR}/graphics/jbigkit \
 		png.5:${PORTSDIR}/graphics/png \
 		ming.3:${PORTSDIR}/graphics/ming \
 		wmf.2:${PORTSDIR}/graphics/libwmf \
-		Magick.6:${PORTSDIR}/graphics/ImageMagick \
+		Magick.7:${PORTSDIR}/graphics/ImageMagick \
 		pstoedit.0:${PORTSDIR}/graphics/pstoedit
 .if !exists(/usr/bin/bzip2)
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
