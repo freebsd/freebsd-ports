@@ -1,0 +1,4 @@
+bin/solitaire
+share/doc/solitaire/sol.pl
+share/doc/solitaire/sol-test.txt
+@dirrm share/doc/solitaire
