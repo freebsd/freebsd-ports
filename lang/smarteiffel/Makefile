@@ -7,6 +7,7 @@
 
 PORTNAME=	smarteiffel
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.loria.fr/pub/loria/SmartEiffel/Oldies/
 DISTNAME=	se-${PORTVERSION}
@@ -47,26 +48,16 @@ do-install:
 	${LN} -fs ${SEDIR} ${ALIASDIR})
 	@(if ${TEST} -e ${SEDIR} ; then ${RM} -rf ${SEDIR}; fi; \
 		${MKDIR} ${SEDIR}; \
-		${CP} -pR ${WRKSRC}/* ${SEDIR}; \
-		${ECHO_CMD} ./ > ${SEDIR}/sys/loadpath.UNIX; \
-		${ECHO_CMD} ${SEDIR}/lib/kernel/ >> ${SEDIR}/sys/loadpath.UNIX; \
-		${ECHO_CMD} ${SEDIR}/lib/base/ >> ${SEDIR}/sys/loadpath.UNIX; \
-		${ECHO_CMD} ${SEDIR}/lib/io/ >> ${SEDIR}/sys/loadpath.UNIX; \
-		${ECHO_CMD} ${SEDIR}/lib/iterator/ >> ${SEDIR}/sys/loadpath.UNIX; \
-		${ECHO_CMD} ${SEDIR}/lib/random/ >> ${SEDIR}/sys/loadpath.UNIX; \
-		${ECHO_CMD} ${SEDIR}/lib/number/ >> ${SEDIR}/sys/loadpath.UNIX; \
-		${ECHO_CMD} ${SEDIR}/lib/sorting/ >> ${SEDIR}/sys/loadpath.UNIX; \
-		${ECHO_CMD} ${SEDIR}/lib/time/ >> ${SEDIR}/sys/loadpath.UNIX; \
-		${ECHO_CMD} ${SEDIR}/lib/scoop/ >> ${SEDIR}/sys/loadpath.UNIX; \
-		${ECHO_CMD} ${SEDIR}/lib/misc/ >> ${SEDIR}/sys/loadpath.UNIX; \
-		${ECHO_CMD} ${SEDIR}/tools/ >> ${SEDIR}/sys/loadpath.UNIX; \
-		${ECHO_CMD} ${SEDIR}/tools/expression/ >> ${SEDIR}/sys/loadpath.UNIX; \
-		${ECHO_CMD} ${SEDIR}/tools/instruction/ >> ${SEDIR}/sys/loadpath.UNIX; \
-		${ECHO_CMD} ${SEDIR}/tools/e_type/ >> ${SEDIR}/sys/loadpath.UNIX; \
-		${ECHO_CMD} ${SEDIR}/tools/feature/ >> ${SEDIR}/sys/loadpath.UNIX; \
-		${ECHO_CMD} ${SEDIR}/tools/run_feature/ >> ${SEDIR}/sys/loadpath.UNIX; \
-		${ECHO_CMD} ${SEDIR}/tools/misc/ >> ${SEDIR}/sys/loadpath.UNIX; \
-		${ECHO_CMD} ${SEDIR}/tutorial/ >> ${SEDIR}/sys/loadpath.UNIX)
+		${CP} -pR ${WRKSRC}/* ${SEDIR})
+	@${SED} -i .orig -e "s,${WRKSRC},${SEDIR},g" ${SEDIR}/sys/system.se
+	@${RM} ${SEDIR}/sys/system.se.orig
+	@${SED} -i .orig -e "s,${WRKSRC},${SEDIR},g" ${SEDIR}/lib/loadpath.se
+	@${RM} ${SEDIR}/lib/loadpath.se.orig
+	@${SED} -i .orig -e "s,${WRKSRC},${SEDIR},g" ${SEDIR}/tools/loadpath.se
+	@${RM} ${SEDIR}/tools/loadpath.se.orig
+	@${SED} -i .orig -e "s,${WRKSRC},${SEDIR},g" ${SEDIR}/tutorial/loadpath.se
+	@${RM} ${SEDIR}/tutorial/loadpath.se.orig
+
 	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" ${PKGDIR}/pkg-message \
 		> ${PKGMESSAGE}
 	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" ${PKGDIR}/pkg-install \

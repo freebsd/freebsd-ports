@@ -988,7 +988,6 @@ smarteiffel-%%PORTVERSION%%/sys/runtime/SmartEiffelRuntime$DirectoryStream.class
 smarteiffel-%%PORTVERSION%%/sys/gc
 smarteiffel-%%PORTVERSION%%/sys/READ_ME
 smarteiffel-%%PORTVERSION%%/sys/system.se
-smarteiffel-%%PORTVERSION%%/sys/loadpath.UNIX
 smarteiffel-%%PORTVERSION%%/tutorial/basic_directory/example1.e
 smarteiffel-%%PORTVERSION%%/tutorial/basic_directory/example2.e
 smarteiffel-%%PORTVERSION%%/tutorial/basic_directory/example3.e
