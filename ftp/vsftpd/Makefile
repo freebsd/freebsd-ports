@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	vsftpd
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.0
 CATEGORIES=	ftp
-MASTER_SITES=	ftp://ferret.lmh.ox.ac.uk/pub/linux/
+MASTER_SITES=	ftp://vsftpd.beasts.org/users/cevans/
 
 MAINTAINER=	nbm@FreeBSD.org
 
@@ -21,7 +21,7 @@ MAN8=		vsftpd.8
 post-patch:
 	@${PERL} -pi -e 's@/etc/vsftpd.conf@${PREFIX}/etc/vsftpd.conf@' \
 		${WRKSRC}/defs.h
-	@${PERL} -pi -e 's@ -ldl@@; s@^CFLAGS.*$$@@' ${WRKSRC}/Makefile
+	@${PERL} -pi -e 's@ -ldl@@; s@^CFLAGS.*$$@CFLAGS= -D"atoll(x)=strtol(x, (char **)NULL, 10)"@' ${WRKSRC}/Makefile
 	@${ECHO_CMD} "secure_chroot_dir=${PREFIX}/share/vsftpd/empty" >> \
 		${WRKSRC}/vsftpd.conf
 
