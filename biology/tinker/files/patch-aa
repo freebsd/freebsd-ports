@@ -1,0 +1,218 @@
+*** ../make/Makefile.orig	Sat Apr 11 11:38:14 1998
+--- ../make/Makefile	Sat Nov 14 02:05:02 1998
+***************
+*** 9,16 ****
+  ##
+  ##   1. make all              Build all the TINKER executables
+  ##   2. make rename           Move the executables to BINDIR
+! ##   3. make remove_links     Create soft links in LINKDIR
+! ##   4. make create_links     Remove soft links from LINKDIR
+  ##   6. make listing          Concatenate source to tinker.txt
+  ##   5. make clean            Delete objects and executables
+  ##
+--- 9,16 ----
+  ##
+  ##   1. make all              Build all the TINKER executables
+  ##   2. make rename           Move the executables to BINDIR
+! ##   3. make remove_links     Remove soft links in LINKDIR
+! ##   4. make create_links     Create soft links from LINKDIR
+  ##   6. make listing          Concatenate source to tinker.txt
+  ##   5. make clean            Delete objects and executables
+  ##
+***************
+*** 30,38 ****
+  ##  LINKDIR      Linked Copies of TINKER Executables
+  ##
+  
+! TINKERDIR = /user/ponder/tinker
+! BINDIR = $(TINKERDIR)/bin
+! LINKDIR = /usr/local/bin
+  
+  ####################################################################
+  ##  Known Machine Types; Uncomment One of the Following Sections  ##
+--- 30,38 ----
+  ##  LINKDIR      Linked Copies of TINKER Executables
+  ##
+  
+! TINKERDIR = ${WRKDIR}
+! BINDIR = ${PREFIX}/bin
+! #LINKDIR = /usr/local/bin
+  
+  ####################################################################
+  ##  Known Machine Types; Uncomment One of the Following Sections  ##
+***************
+*** 45,57 ****
+  ##  Compiler: DEC Fortran 77/90, V4.1
+  ##
+  
+! F77 = /usr/bin/f77
+! RM = /sbin/rm
+! LIBS =
+! F77FLAGS = -c
+! OPTFLAGS = -fast -tune host
+! LIBFLAGS = -rlv
+! LINKFLAGS = -fast -non_shared -om -WL,-om_no_inst_sched
+  
+  ##
+  ##  Machine:  Silicon Graphics
+--- 45,57 ----
+  ##  Compiler: DEC Fortran 77/90, V4.1
+  ##
+  
+! #F77 = /usr/bin/f77
+! #RM = /sbin/rm
+! #LIBS =
+! #F77FLAGS = -c
+! #OPTFLAGS = -fast -tune host
+! #LIBFLAGS = -rlv
+! #LINKFLAGS = -fast -non_shared -om -WL,-om_no_inst_sched
+  
+  ##
+  ##  Machine:  Silicon Graphics
+***************
+*** 104,109 ****
+--- 104,134 ----
+  #diagq.o:
+  #	${F77} ${F77FLAGS} -ffast-math diagq.f
+  
++ ##
++ ##  Machine: IntelPC
++ ##  CPU Type:        Pentium Pro
++ ##  Oper Sys:        FreeBSD 3.0
++ ##  Compiler:        f77(f2c/gcc version 2.7.2.1) || egcs g77
++ ##
++ 
++ F77 = ${FC}
++ RM = /bin/rm
++ 
++ .if ${FC}==f77
++ LIBS = -lU77
++ F77FLAGS = -NL400 -c
++ LINKFLAGS = -L${PREFIX}/lib
++ .elseif ${FC}==g77
++ LIBS=
++ F77FLAGS = -Wno-globals -fno-globals -c
++ LINKFLAGS =
++ .endif
++ 
++ OPTFLAGS = ${FFLAGS} -ffast-math -malign-double
++ LIBFLAGS = -rcuv
++ diagq.o:
++ 	${F77} ${F77FLAGS} -ffast-math diagq.f
++ 
+  #################################################################
+  ##  Should not be Necessary to Change Things Below this Point  ##
+  #################################################################
+***************
+*** 766,771 ****
+--- 791,797 ----
+          volume2.o \
+          writeout.o \
+          xyzatm.o
++ 	ranlib libtinker.a
+  
+  alchemy.x:
+  	${F77} ${LINKFLAGS} -o alchemy.x alchemy.o libtinker.a ${LIBS}
+***************
+*** 857,906 ****
+  	${F77} ${LINKFLAGS} -o xyzsybyl.x xyzsybyl.o libtinker.a ${LIBS}
+  
+  rename:
+! 	mv  alchemy.x    $(BINDIR)/alchemy
+! 	mv  analyze.x    $(BINDIR)/analyze
+! 	mv  anneal.x     $(BINDIR)/anneal
+! 	mv  archive.x    $(BINDIR)/archive
+! 	mv  correlate.x  $(BINDIR)/correlate
+! 	mv  crystal.x    $(BINDIR)/crystal
+! 	mv  distgeom.x   $(BINDIR)/distgeom
+! 	mv  document.x   $(BINDIR)/document
+! 	mv  dynamic.x    $(BINDIR)/dynamic
+! 	mv  gda.x        $(BINDIR)/gda
+! 	mv  intedit.x    $(BINDIR)/intedit
+! 	mv  intxyz.x     $(BINDIR)/intxyz
+! 	mv  minimize.x   $(BINDIR)/minimize
+! 	mv  minirot.x    $(BINDIR)/minirot
+! 	mv  newton.x     $(BINDIR)/newton
+! 	mv  newtrot.x    $(BINDIR)/newtrot
+! 	mv  optimize.x   $(BINDIR)/optimize
+! 	mv  optirot.x    $(BINDIR)/optirot
+! 	mv  optrigid.x   $(BINDIR)/optrigid
+! 	mv  path.x       $(BINDIR)/path
+! 	mv  pdbxyz.x     $(BINDIR)/pdbxyz
+! 	mv  protein.x    $(BINDIR)/protein
+! 	mv  pss.x        $(BINDIR)/pss
+! 	mv  pssrigid.x   $(BINDIR)/pssrigid
+! 	mv  pssrot.x     $(BINDIR)/pssrot
+! 	mv  saddle.x     $(BINDIR)/saddle
+! 	mv  sniffer.x    $(BINDIR)/sniffer
+! 	mv  spacefill.x  $(BINDIR)/spacefill
+! 	mv  superpose.x  $(BINDIR)/superpose
+! 	mv  sybylxyz.x   $(BINDIR)/sybylxyz
+! 	mv  testgrad.x   $(BINDIR)/testgrad
+! 	mv  testhess.x   $(BINDIR)/testhess
+! 	mv  testlight.x  $(BINDIR)/testlight
+! 	mv  testrot.x    $(BINDIR)/testrot
+! 	mv  timer.x      $(BINDIR)/timer
+! 	mv  timerot.x    $(BINDIR)/timerot
+! 	mv  vibrate.x    $(BINDIR)/vibrate
+! 	mv  vibrot.x     $(BINDIR)/vibrot
+! 	mv  xtalfit.x    $(BINDIR)/xtalfit
+! 	mv  xtalmin.x    $(BINDIR)/xtalmin
+! 	mv  xyzedit.x    $(BINDIR)/xyzedit
+! 	mv  xyzint.x     $(BINDIR)/xyzint
+! 	mv  xyzpdb.x     $(BINDIR)/xyzpdb
+! 	mv  xyzsybyl.x   $(BINDIR)/xyzsybyl
+  
+  remove_links:
+  	rm -f $(LINKDIR)/alchemy
+--- 883,932 ----
+  	${F77} ${LINKFLAGS} -o xyzsybyl.x xyzsybyl.o libtinker.a ${LIBS}
+  
+  rename:
+! 	${INSTALL} -s  alchemy.x    $(BINDIR)/alchemy
+! 	${INSTALL} -s  analyze.x    $(BINDIR)/analyze
+! 	${INSTALL} -s  anneal.x     $(BINDIR)/anneal
+! 	${INSTALL} -s  archive.x    $(BINDIR)/archive
+! 	${INSTALL} -s  correlate.x  $(BINDIR)/correlate
+! 	${INSTALL} -s  crystal.x    $(BINDIR)/crystal
+! 	${INSTALL} -s  distgeom.x   $(BINDIR)/distgeom
+! 	${INSTALL} -s  document.x   $(BINDIR)/document
+! 	${INSTALL} -s  dynamic.x    $(BINDIR)/dynamic
+! 	${INSTALL} -s  gda.x        $(BINDIR)/gda
+! 	${INSTALL} -s  intedit.x    $(BINDIR)/intedit
+! 	${INSTALL} -s  intxyz.x     $(BINDIR)/intxyz
+! 	${INSTALL} -s  minimize.x   $(BINDIR)/minimize
+! 	${INSTALL} -s  minirot.x    $(BINDIR)/minirot
+! 	${INSTALL} -s  newton.x     $(BINDIR)/newton
+! 	${INSTALL} -s  newtrot.x    $(BINDIR)/newtrot
+! 	${INSTALL} -s  optimize.x   $(BINDIR)/optimize
+! 	${INSTALL} -s  optirot.x    $(BINDIR)/optirot
+! 	${INSTALL} -s  optrigid.x   $(BINDIR)/optrigid
+! 	${INSTALL} -s  path.x       $(BINDIR)/path
+! 	${INSTALL} -s  pdbxyz.x     $(BINDIR)/pdbxyz
+! 	${INSTALL} -s  protein.x    $(BINDIR)/protein
+! 	${INSTALL} -s  pss.x        $(BINDIR)/pss
+! 	${INSTALL} -s  pssrigid.x   $(BINDIR)/pssrigid
+! 	${INSTALL} -s  pssrot.x     $(BINDIR)/pssrot
+! 	${INSTALL} -s  saddle.x     $(BINDIR)/saddle
+! 	${INSTALL} -s  sniffer.x    $(BINDIR)/sniffer
+! 	${INSTALL} -s  spacefill.x  $(BINDIR)/spacefill
+! 	${INSTALL} -s  superpose.x  $(BINDIR)/superpose
+! 	${INSTALL} -s  sybylxyz.x   $(BINDIR)/sybylxyz
+! 	${INSTALL} -s  testgrad.x   $(BINDIR)/testgrad
+! 	${INSTALL} -s  testhess.x   $(BINDIR)/testhess
+! 	${INSTALL} -s  testlight.x  $(BINDIR)/testlight
+! 	${INSTALL} -s  testrot.x    $(BINDIR)/testrot
+! 	${INSTALL} -s  timer.x      $(BINDIR)/timer
+! 	${INSTALL} -s  timerot.x    $(BINDIR)/timerot
+! 	${INSTALL} -s  vibrate.x    $(BINDIR)/vibrate
+! 	${INSTALL} -s  vibrot.x     $(BINDIR)/vibrot
+! 	${INSTALL} -s  xtalfit.x    $(BINDIR)/xtalfit
+! 	${INSTALL} -s  xtalmin.x    $(BINDIR)/xtalmin
+! 	${INSTALL} -s  xyzedit.x    $(BINDIR)/xyzedit
+! 	${INSTALL} -s  xyzint.x     $(BINDIR)/xyzint
+! 	${INSTALL} -s  xyzpdb.x     $(BINDIR)/xyzpdb
+! 	${INSTALL} -s  xyzsybyl.x   $(BINDIR)/xyzsybyl
+  
+  remove_links:
+  	rm -f $(LINKDIR)/alchemy

@@ -1,0 +1,19 @@
+*** ../doc/license.txt.orig    Fri Aug 28 23:47:07 1998
+--- ../doc/license.txt Fri Aug 28 23:49:13 1998
+***************
+*** 1,7 ****
+!         TINKER ­  Software Tools for Molecular Design
+  
+                   Version 3.6   February 1998  
+!          Copyright © 1990-1998   Jay William Ponder
+  
+  TINKER is a modular program package for molecular mechanics-
+  based potential energy calculations, molecular dynamics 
+--- 1,7 ----
+!         TINKER -- Software Tools for Molecular Design
+  
+                   Version 3.6   February 1998  
+!          Copyright 1990-1998   Jay William Ponder
+  
+  TINKER is a modular program package for molecular mechanics-
+  based potential energy calculations, molecular dynamics 

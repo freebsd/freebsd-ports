@@ -1,0 +1,7 @@
+*** ../bench/crystal.run.orig  Sat Aug 29 21:56:20 1998
+--- ../bench/crystal.run       Sat Aug 29 21:56:30 1998
+***************
+*** 1 ****
+! ../bin/timer < crystal.input
+--- 1 ----
+! timer < crystal.input
