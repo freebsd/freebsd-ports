@@ -1,0 +1,17 @@
+Collection of files providing support for Cyrillic
+PostScript Fonts in TeX documents.
+
+Final output is PostScript or PDF.
+
+The following fonts are included:
+Roman family:		AcademyPSCyr, AntiquaPSCyr, HandbookPSCyr, CollegePSCyr,
+			JournalPSCyr, Lazurski, TimesNewRomanPSMT;
+Sans Serif family:	ArialMT, TextbookPSCyr, MagazinePSCyr;
+Typewriter family:	CourierNewPSMT, ERKurierPSCyr;
+Decorative:		CooperPSCyr, AdvertisementPSCyr.
+
+The package provides 71 different font shapes altogether.
+
+WWW: ftp://mch5.chem.msu.su/pub/russian/psfonts/
+
+-- Alex Kapranoff <kapr@crosswinds.net>

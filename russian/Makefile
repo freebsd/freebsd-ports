@@ -15,6 +15,7 @@
     SUBDIR += p5-Lingua-RU-Charset
     SUBDIR += pgp.language
     SUBDIR += pine.language
+    SUBDIR += pscyr
     SUBDIR += rispell
     SUBDIR += rus-ispell
     SUBDIR += wmcyrx
