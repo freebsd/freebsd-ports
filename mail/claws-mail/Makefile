@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sylpheed-claws
-PORTVERSION=	0.7.8
+PORTVERSION=	0.8.0
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -28,6 +28,8 @@ USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
 USE_GTK=	yes
 USE_REINPLACE=	yes
+
+MAN1=		sylpheed-claws.1
 
 CONFIGURE_ARGS=	--program-suffix="-claws" --enable-ipv6
 
@@ -107,7 +109,7 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
 		${WRKSRC}/tools/README.sylprint ${WRKSRC}/tools/sylprint.pl
-	@${REINPLACE_CMD} -e "s|po intl libkcc|po libkcc|" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s|po intl src|po src|" ${WRKSRC}/Makefile.in
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's|src manual faq tools|src tools|' ${WRKSRC}/Makefile.in
 .endif
@@ -117,7 +119,7 @@ pre-build:
 
 post-install:
 .if !defined(NOPORTDOCS)
-.for i in NEWS README README.jp README.claws ReleaseNotes.claws TODO TODO.jp tools/README.sylprint
+.for i in NEWS README README.jp README.claws RELEASE_NOTES.claws TODO TODO.jp tools/README.sylprint
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/tools/README ${DOCSDIR}/README.tools

@@ -8,7 +8,7 @@ etc/sylprint.rc.example
 %%PORTDOCS%%share/doc/sylpheed-claws/README.jp
 %%PORTDOCS%%share/doc/sylpheed-claws/README.sylprint
 %%PORTDOCS%%share/doc/sylpheed-claws/README.tools
-%%PORTDOCS%%share/doc/sylpheed-claws/ReleaseNotes.claws
+%%PORTDOCS%%share/doc/sylpheed-claws/RELEASE_NOTES.claws
 %%PORTDOCS%%share/doc/sylpheed-claws/TODO
 %%PORTDOCS%%share/doc/sylpheed-claws/TODO.jp
 %%PORTDOCS%%share/doc/sylpheed-claws/faq/de/sylpheed-faq-1.html
