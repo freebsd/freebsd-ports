@@ -1,0 +1,12 @@
+--- nxclient-wizard.desktop.orig	Wed Sep  1 18:18:13 2004
++++ nxclient-wizard.desktop	Wed Sep  1 18:18:39 2004
+@@ -1,6 +1,7 @@
+ [Desktop Entry]
+ Comment=Launch connection wizard
+-Exec=/usr/NX/bin/nxclient -wizard
+-Icon=/usr/NX/share/icons/nxclient-wizard.png
++Exec=nxclient -wizard
++Icon=nxclient-wizard.png
+ Name=NX Connection Wizard
+ Type=Application
++Categories=Application;Network;

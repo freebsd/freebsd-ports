@@ -1,0 +1,12 @@
+--- nxclient.desktop.orig	Wed Sep  1 18:18:13 2004
++++ nxclient.desktop	Wed Sep  1 18:18:44 2004
+@@ -1,6 +1,7 @@
+ [Desktop Entry]
+ Comment=Client for connection to a remote NX server
+-Exec=/usr/NX/bin/nxclient
+-Icon=/usr/NX/share/icons/nx.png
++Exec=nxclient
++Icon=nx.png
+ Name=NX Client for Linux
+ Type=Application
++Categories=Application;Network;

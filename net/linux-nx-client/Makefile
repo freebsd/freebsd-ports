@@ -1,0 +1,71 @@
+# New ports collection makefile for:	linux-nx-client
+# Date created:			01 Sep 2004
+# Whom:				Jean-Yves Lefort <jylefort@brutele.be>
+#
+# $FreeBSD$
+#
+
+PORTNAME=		linux-nx-client
+PORTVERSION=		1.3.2.7
+CATEGORIES=		net
+MASTER_SITES=		http://www.nomachine.com/download/nxclient/${PORTVERSION:R}/Linux-Static-Tar/
+DISTNAME=		nxclient-${PORTVERSION:R}-${PORTVERSION:E}.i386
+
+MAINTAINER=		jylefort@brutele.be
+COMMENT=		The NoMachine NX client
+
+RUN_DEPENDS=		${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg
+
+WRKSRC=			${WRKDIR}/nxclient-install
+USE_X_PREFIX=		yes
+USE_LINUX=		yes
+ONLY_FOR_ARCHS=		i386
+NO_BUILD=		yes
+
+NXSRC=			${WRKSRC}/NX
+NXDST=			${PREFIX}/lib/linux-nx-client
+ICONS3232=		nx.png nxclient-admin.png nxclient-wizard.png
+
+# Linux binary should not be stripped by INSTALL_PROGRAM
+# because as a side effect it brands the binary as FreeBSD.
+STRIP=
+
+post-extract:
+	${CP} ${NXSRC}/share/applnk/NX\ Client\ for\ Linux/* ${WRKSRC}
+
+do-install:
+	${MKDIR} ${NXDST}/bin
+	${INSTALL_PROGRAM} ${NXSRC}/bin/* ${NXDST}/bin
+	${MKDIR} ${NXDST}/lib
+	${INSTALL_DATA} ${NXSRC}/lib/libXcomp.so.${PORTVERSION:R} ${NXDST}/lib
+	${LN} -sf libXcomp.so.${PORTVERSION:R} ${NXDST}/lib/libXcomp.so
+	${LN} -sf libXcomp.so.${PORTVERSION:R} ${NXDST}/lib/libXcomp.so.1
+	${MKDIR} ${NXDST}/share
+	${INSTALL_DATA} ${NXSRC}/share/client.id_dsa.key ${NXDST}/share
+	${MKDIR} ${NXDST}/share/images
+	${INSTALL_DATA} ${NXSRC}/share/images/* ${NXDST}/share/images
+
+	${MKDIR} ${PREFIX}/share/gnome/applications
+	${INSTALL_DATA} ${WRKSRC}/*.desktop ${PREFIX}/share/gnome/applications
+	${MKDIR} ${PREFIX}/share/gnome/pixmaps
+	${INSTALL_DATA} ${NXSRC}/share/icons/* ${PREFIX}/share/gnome/pixmaps
+	${MKDIR} ${LOCALBASE}/share/applnk/Internet
+	${INSTALL_DATA} ${WRKSRC}/*.desktop ${LOCALBASE}/share/applnk/Internet
+	${MKDIR} ${LOCALBASE}/share/icons/crystalsvg/48x48 \
+		${LOCALBASE}/share/icons/crystalsvg/32x32
+	${INSTALL_DATA} ${NXSRC}/share/icons/nx-desktop.png \
+		${LOCALBASE}/share/icons/crystalsvg/48x48
+.for FILE in ${ICONS3232}
+	${INSTALL_DATA} ${NXSRC}/share/icons/${FILE} \
+		${LOCALBASE}/share/icons/crystalsvg/32x32
+.endfor
+
+	${MKDIR} ${PREFIX}/bin
+.for f in nxclient nxproxy nxssh
+	${ECHO_CMD} "#!/bin/sh" > ${WRKSRC}/${f}
+	${ECHO_CMD} "export NXDIR=${NXDST}" >> ${WRKSRC}/${f}
+	${ECHO_CMD} "exec \$$NXDIR/bin/${f} \"\$$@\"" >> ${WRKSRC}/${f}
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${PREFIX}/bin
+.endfor
+
+.include <bsd.port.mk>

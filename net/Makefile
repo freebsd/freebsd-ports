@@ -310,6 +310,7 @@
     SUBDIR += linux-edonkey-gui-gtk
     SUBDIR += linux-edonkey-server
     SUBDIR += linux-jigdo
+    SUBDIR += linux-nx-client
     SUBDIR += linux-ymessenger
     SUBDIR += linuxigd
     SUBDIR += liveMedia
