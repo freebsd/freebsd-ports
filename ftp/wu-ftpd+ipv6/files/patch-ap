@@ -1,0 +1,11 @@
+--- src/glob.c.dist	Tue Oct  5 11:54:42 1999
++++ src/glob.c	Thu Oct 21 19:51:03 1999
+@@ -107,7 +107,7 @@
+ 
+     fixpath(v);
+     if (v[0] == '\0')
+-	v = "*";
++	v = ".";
+     else if ((strlen(v) > 1) && (v[strlen(v) - 1] == '/'))
+ 	v[strlen(v) - 1] = '\0';
+ 
