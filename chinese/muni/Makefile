@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	chinese
 MASTER_SITES=	http://www.whizkidtech.redprince.net/i18n/muni/
 
-MAINTAINER=	adam@whizkidtech.net
+MAINTAINER=	adam@redprince.net
 COMMENT=	Find Unicode values for Chinese characters
 
 do-install:
