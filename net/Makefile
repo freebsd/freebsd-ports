@@ -502,6 +502,7 @@
     SUBDIR += poptop
     SUBDIR += pork
     SUBDIR += portfwd
+    SUBDIR += pppd23
     SUBDIR += pppload
     SUBDIR += pppoa
     SUBDIR += ppptraf
