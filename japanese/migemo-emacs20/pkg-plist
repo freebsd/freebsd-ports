@@ -5,36 +5,36 @@ lib/perl5/site_perl/%%PERL_VER%%/Lingua/romrom.pl
 lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Lingua/Romkan/.packlist
 %%EMACS_LIBDIR%%/site-lisp/migemo.el
 %%EMACS_LIBDIR%%/site-lisp/migemo.elc
-share/migemo/doc/english-1.png
-share/migemo/doc/english-2.png
-share/migemo/doc/english-3.png
-share/migemo/doc/english-4.png
-share/migemo/doc/english-5.png
-share/migemo/doc/english-6.png
-share/migemo/doc/kanji-1.png
-share/migemo/doc/kanji-2.png
-share/migemo/doc/kanji-3.png
-share/migemo/doc/kanji-4.png
-share/migemo/doc/katakana-1.png
-share/migemo/doc/katakana-2.png
-share/migemo/doc/katakana-3.png
-share/migemo/doc/katakana-4.png
-share/migemo/doc/katakana-5.png
-share/migemo/doc/line-across-1.png
-share/migemo/doc/line-across-2.png
-share/migemo/doc/line-across-3.png
-share/migemo/doc/line-across-4.png
-share/migemo/doc/line-across-5.png
-share/migemo/doc/migemo.html
-share/migemo/doc/zenkaku-1.png
-share/migemo/doc/zenkaku-2.png
-share/migemo/doc/zenkaku-3.png
-share/migemo/doc/zenkaku-4.png
+share/doc/migemo/english-1.png
+share/doc/migemo/english-2.png
+share/doc/migemo/english-3.png
+share/doc/migemo/english-4.png
+share/doc/migemo/english-5.png
+share/doc/migemo/english-6.png
+share/doc/migemo/kanji-1.png
+share/doc/migemo/kanji-2.png
+share/doc/migemo/kanji-3.png
+share/doc/migemo/kanji-4.png
+share/doc/migemo/katakana-1.png
+share/doc/migemo/katakana-2.png
+share/doc/migemo/katakana-3.png
+share/doc/migemo/katakana-4.png
+share/doc/migemo/katakana-5.png
+share/doc/migemo/line-across-1.png
+share/doc/migemo/line-across-2.png
+share/doc/migemo/line-across-3.png
+share/doc/migemo/line-across-4.png
+share/doc/migemo/line-across-5.png
+share/doc/migemo/migemo.html
+share/doc/migemo/zenkaku-1.png
+share/doc/migemo/zenkaku-2.png
+share/doc/migemo/zenkaku-3.png
+share/doc/migemo/zenkaku-4.png
 share/migemo/migemo-cache.pl
 share/migemo/migemo-dict
 share/migemo/migemo.pl
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Lingua
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Lingua/Romkan
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Lingua
-@dirrm share/migemo/doc
+@dirrm share/doc/migemo
 @dirrm share/migemo

@@ -7,20 +7,34 @@
 
 PORTNAME=	migemo
 PORTVERSION=	0.21
+PORTREVISION=	1
 CATEGORIES=	japanese elisp
 MASTER_SITES=   http://migemo.namazu.org/stable/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	nobutaka@nobutaka.com
 
-BUILD_DEPENDS=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME} \
-		${NONEXISTENT}:${SKK_PORT_DIR}:extract
+EMACS_PORT_NAME?=	emacs20
+
+.if (${EMACS_PORT_NAME} == "xemacs21-mule")
+EMACS_PACKAGESDIR=	lib/xemacs/site-packages
+
+BUILD_DEPENDS=	${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/apel/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
+RUN_DEPENDS=	${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/apel/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
+.else
+BUILD_DEPENDS=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
 RUN_DEPENDS=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
+.endif
+BUILD_DEPENDS+=	${NONEXISTENT}:${SKK_PORT_DIR}:extract
 
 USE_PERL5=	yes
-USE_AUTOCONF=	yes
+USE_AUTOMAKE=	yes
 
-EMACS_PORT_NAME=emacs20
+CONFIGURE_ARGS=		--with-emacs=${EMACS_CMD}
+.if (${EMACS_PORT_NAME} == "xemacs21-mule")
+CONFIGURE_ARGS+=	--with-lispdir=${PREFIX}/${EMACS_LIBDIR}/site-lisp
+.endif
+
 SKK_PORT_DIR=	${PORTSDIR}/japanese/skk-jisyo
 
 .include <bsd.port.pre.mk>
