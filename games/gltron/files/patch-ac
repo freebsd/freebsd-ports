@@ -1,0 +1,44 @@
+--- file.c	Mon Jan  3 19:05:10 2000
++++ file.c.new	Sun Feb 13 02:22:14 2000
+@@ -1,13 +1,16 @@
+ #include "gltron.h"
++#ifndef SHARE1
++#define SHARE1 "\"/usr/local/share/gltron\""
++#endif
++#ifndef SHARE2
++#define SHARE2 "\"/usr/X11R6/share/gltron\""
++#endif
+ 
+ char* getFullPath(char *filename) {
+   char *path;
+   FILE *fp = NULL;
+   char *base;
+ 
+-  char *share1 = "/usr/share/games/gltron";
+-  char *share2 = "/usr/local/share/games/gltron";
+-
+   /* check a few directories for the files and */
+   /* return the full path. */
+   
+@@ -43,8 +46,8 @@
+     printf("unsuccessful\n");
+   }
+ 
+-  path = malloc(strlen(share1) + 1 + strlen(filename) + 1);
+-  sprintf(path, "%s%c%s", share1, SEPERATOR, filename);
++  path = malloc(strlen(SHARE1) + 1 + strlen(filename) + 1);
++  sprintf(path, "%s%c%s", SHARE1, SEPERATOR, filename);
+ 
+   printf("checking '%s'", path);
+   fp = fopen(path, "r");
+@@ -56,8 +59,8 @@
+   free(path);
+   printf("unsuccessful\n");
+ 
+-  path = malloc(strlen(share2) + 1 + strlen(filename) + 1);
+-  sprintf(path, "%s%c%s", share2, SEPERATOR, filename);
++  path = malloc(strlen(SHARE2) + 1 + strlen(filename) + 1);
++  sprintf(path, "%s%c%s", SHARE2, SEPERATOR, filename);
+   
+   printf("checking '%s'", path);
+   fp = fopen(path, "r");
