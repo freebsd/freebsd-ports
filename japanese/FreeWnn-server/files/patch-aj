@@ -1,0 +1,28 @@
+--- ./Wnn/jlib.V3/Imakefile.orig	Wed Aug 17 10:10:13 1994
++++ ./Wnn/jlib.V3/Imakefile	Fri Aug  1 14:11:09 1997
+@@ -19,6 +19,10 @@
+ OBJ3= sstrings.o
+ SRCS= $(SRC1) $(SRC2) $(SRC3)
+ OBJS= $(OBJ1) $(OBJ2) $(OBJ3)
++SRC4= $(WNNETCSRC)/xutoj.c
++OBJ4= xutoj.o
++SRCS= $(SRC1) $(SRC2) $(SRC3) $(SRC4)
++OBJS= $(OBJ1) $(OBJ2) $(OBJ3) $(OBJ4)
+ 
+ LibraryObjectRule()
+ 
+@@ -31,7 +35,7 @@
+ 
+ LintLibraryTarget(jd,$(SRCS))
+ InstallLibrary(jd,$(WNNLIBDIR))
+-InstallNonExecFile($(WNNINCLUDESRC)/jlib.h,$(JWNNINCDIR))
++InstallNonExecFile(jlib.h,$(JWNNINCDIR))
+ 
+ #if DebugLibJd
+ DebuggedLibraryTarget(jd,$(OBJS))
+@@ -42,4 +46,5 @@
+ 
+ WnnSpecialObjectRule($(OBJ2),$(SRC2),$(WNNETCSRC),)
+ WnnSpecialObjectRule($(OBJ3),$(SRC3),$(WNNETCSRC),)
++WnnSpecialObjectRule($(OBJ4),$(SRC4),$(WNNETCSRC),)
+ DependTarget()

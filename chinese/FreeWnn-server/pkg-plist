@@ -1,4 +1,5 @@
-@cwd /usr/local
+@cwd %%LOCALBASE%%
+etc/rc.d/cWnn.sh
 lib/wnn/zh_CN/cserverrc
 lib/wnn/zh_CN/cixing.data
 lib/wnn/zh_CN/uum.msg
@@ -113,12 +114,14 @@ lib/wnn/zh_TW/rk_z/2A_CTRL
 @dirrm lib/wnn/zh_CN/rk_p
 @dirrm lib/wnn/zh_CN/rk
 @dirrm lib/wnn/zh_CN/dic/sys
+@dirrm lib/wnn/zh_CN/dic/usr
 @dirrm lib/wnn/zh_CN/dic
 @dirrm lib/wnn/zh_CN
 @dirrm lib/wnn/zh_TW/rk_z
 @dirrm lib/wnn/zh_TW/rk_p
 @dirrm lib/wnn/zh_TW/rk
 @dirrm lib/wnn/zh_TW/dic/sys
+@dirrm lib/wnn/zh_TW/dic/usr
 @dirrm lib/wnn/zh_TW/dic
 @dirrm lib/wnn/zh_TW
 @dirrm lib/wnn
@@ -134,7 +137,73 @@ bin/cWnn4/catod
 bin/cWnn4/catof
 bin/cWnn4/cwnntouch
 @dirrm bin/cWnn4
-@cwd /usr/X11R6
+share/doc/cn-Wnn/manual/README
+share/doc/cn-Wnn/manual/app
+share/doc/cn-Wnn/manual/chap1
+share/doc/cn-Wnn/manual/chap2
+share/doc/cn-Wnn/manual/chap3
+share/doc/cn-Wnn/manual/chap4
+share/doc/cn-Wnn/manual/chap5
+share/doc/cn-Wnn/manual/chap6
+share/doc/cn-Wnn/manual/chap7
+share/doc/cn-Wnn/manual/chap8
+share/doc/cn-Wnn/manual/contents
+share/doc/cn-Wnn/manual/glossary
+share/doc/cn-Wnn/manual/index
+share/doc/cn-Wnn/manual/preface
+share/doc/cn-Wnn/manual.en/README
+share/doc/cn-Wnn/manual.en/Table-a-2.1.Z
+share/doc/cn-Wnn/manual.en/Table-a-2.2.Z
+share/doc/cn-Wnn/manual.en/Table-a-2.3.Z
+share/doc/cn-Wnn/manual.en/Table-a-3.1.Z
+share/doc/cn-Wnn/manual.en/Table-a-3.2.Z
+share/doc/cn-Wnn/manual.en/Table-a-3.3.Z
+share/doc/cn-Wnn/manual.en/Table-a-4.1.Z
+share/doc/cn-Wnn/manual.en/Table-a-4.2.Z
+share/doc/cn-Wnn/manual.en/Table-a-4.3.Z
+share/doc/cn-Wnn/manual.en/Table-a-4.4.Z
+share/doc/cn-Wnn/manual.en/Table-a-6.1.Z
+share/doc/cn-Wnn/manual.en/Table-a-6.2.Z
+share/doc/cn-Wnn/manual.en/Table-c-2.1.Z
+share/doc/cn-Wnn/manual.en/Table-c-2.2.Z
+share/doc/cn-Wnn/manual.en/Table-c-2.3.Z
+share/doc/cn-Wnn/manual.en/Table-c-2.4.Z
+share/doc/cn-Wnn/manual.en/Table-c-2.5.Z
+share/doc/cn-Wnn/manual.en/Table-c-2.6.Z
+share/doc/cn-Wnn/manual.en/Table-c-2.7.Z
+share/doc/cn-Wnn/manual.en/app
+share/doc/cn-Wnn/manual.en/chap1
+share/doc/cn-Wnn/manual.en/Table-c-2.8.Z
+share/doc/cn-Wnn/manual.en/Table-c-3.1.Z
+share/doc/cn-Wnn/manual.en/Table-c-3.2.Z
+share/doc/cn-Wnn/manual.en/Table-c-3.3.Z
+share/doc/cn-Wnn/manual.en/Table-c-3.4.Z
+share/doc/cn-Wnn/manual.en/Table-c-3.5.Z
+share/doc/cn-Wnn/manual.en/Table-c-5.1.Z
+share/doc/cn-Wnn/manual.en/Table-c-6.1.Z
+share/doc/cn-Wnn/manual.en/Table-c-6.2.Z
+share/doc/cn-Wnn/manual.en/Table-c-6.3.Z
+share/doc/cn-Wnn/manual.en/Table-c-6.4.Z
+share/doc/cn-Wnn/manual.en/Table-c-6.5.Z
+share/doc/cn-Wnn/manual.en/Table-c-6.6.Z
+share/doc/cn-Wnn/manual.en/Table-c-6.7.Z
+share/doc/cn-Wnn/manual.en/Table-c-6.8.Z
+share/doc/cn-Wnn/manual.en/Table-c-7.1.Z
+share/doc/cn-Wnn/manual.en/Table-c-7.2.Z
+share/doc/cn-Wnn/manual.en/chap2
+share/doc/cn-Wnn/manual.en/chap3
+share/doc/cn-Wnn/manual.en/chap4
+share/doc/cn-Wnn/manual.en/chap5
+share/doc/cn-Wnn/manual.en/chap6
+share/doc/cn-Wnn/manual.en/chap7
+share/doc/cn-Wnn/manual.en/content
+share/doc/cn-Wnn/manual.en/cover
+share/doc/cn-Wnn/manual.en/index
+share/doc/cn-Wnn/manual.en/preface
+@dirrm share/doc/cn-Wnn/manual.en
+@dirrm share/doc/cn-Wnn/manual
+@dirrm share/doc/cn-Wnn
+@cwd %%X11BASE%%
 lib/libcwnn.a
 include/cwnn/jllib.h
 include/cwnn/jslib.h

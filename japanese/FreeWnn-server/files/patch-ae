@@ -1,0 +1,14 @@
+--- ./Contrib/dic/gerodic/Makefile.orig	Sun Jun 27 00:09:13 1993
++++ ./Contrib/dic/gerodic/Makefile	Tue Jul 29 12:06:28 1997
+@@ -4,8 +4,9 @@
+ #	Jun. 26th '93 Wnn Consortium
+ #
+ 
+-WNNBINDIR=/usr/local/bin/Wnn4
+-WNNWNNDIR=/usr/local/lib/wnn
++PREFIX = /usr/local
++WNNBINDIR=${PREFIX}/bin/Wnn4
++WNNWNNDIR=${PREFIX}/lib/wnn
+ 
+ WNNOWNER=wnn
+ 

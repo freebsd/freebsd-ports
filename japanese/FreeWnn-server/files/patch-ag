@@ -1,0 +1,11 @@
+--- ./kWnn/kd/uumrc.orig	Tue Jun 28 11:29:51 1994
++++ ./kWnn/kd/uumrc	Sat Jul 19 02:48:17 1997
+@@ -8,7 +8,7 @@
+ setconvenv	@LIBDIR/@LANG/wnnenvrc
+ setkankanaenv	@LIBDIR/@LANG/wnnenvrc_R
+ 
+-setjishopath    @LIBDIR/@LANG/dic/pubdic/
++setjishopath    @LIBDIR/@LANG/dic/sys/
+ sethindopath    @LIBDIR/@LANG/dic/usr/@USR/
+ 
+ setuumkey	@LIBDIR/@LANG/uumkey

@@ -1,5 +1,5 @@
-@cwd /usr/local
-@exec mkdir -p %D/lib/wnn/ja_JP/dic/usr
+@cwd %%LOCALBASE%%
+etc/rc.d/Wnn.sh
 lib/wnn/ja_JP/dic/pubdic/bio.dic
 lib/wnn/ja_JP/dic/pubdic/chimei.dic
 lib/wnn/ja_JP/dic/pubdic/computer.dic
@@ -108,9 +108,266 @@ bin/Wnn4/atod
 bin/Wnn4/atof
 bin/Wnn4/wnntouch
 @dirrm bin/Wnn4
-@cwd /usr/X11R6
+share/doc/jp-Wnn/manual/0/contents
+share/doc/jp-Wnn/manual/1.intro/Intro1
+share/doc/jp-Wnn/manual/1.intro/Intro2
+share/doc/jp-Wnn/manual/1.intro/Intro3
+share/doc/jp-Wnn/manual/2.env/Intro
+share/doc/jp-Wnn/manual/2.env/dic/pubdic
+share/doc/jp-Wnn/manual/2.env/dic/usr_dic
+share/doc/jp-Wnn/manual/2.env/dic/ujis_dic
+share/doc/jp-Wnn/manual/2.env/wnn/2a_ctrl
+share/doc/jp-Wnn/manual/2.env/wnn/2b_romkana
+share/doc/jp-Wnn/manual/2.env/wnn/cvt_key
+share/doc/jp-Wnn/manual/2.env/wnn/fzk.data
+share/doc/jp-Wnn/manual/2.env/wnn/fzk.u
+share/doc/jp-Wnn/manual/2.env/wnn/hinsi_data
+share/doc/jp-Wnn/manual/2.env/wnn/jserverrc
+share/doc/jp-Wnn/manual/2.env/wnn/mode
+share/doc/jp-Wnn/manual/2.env/wnn/serverdefs
+share/doc/jp-Wnn/manual/2.env/wnn/uumkey
+share/doc/jp-Wnn/manual/2.env/wnn/uumrc
+share/doc/jp-Wnn/manual/2.env/wnn/wnnenvrc
+share/doc/jp-Wnn/manual/3.libwnn/Intro
+share/doc/jp-Wnn/manual/3.libwnn/include
+share/doc/jp-Wnn/manual/3.libwnn/j_intro
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/TITLE.DOC
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/bun_suu
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/c_zenkouho
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/close
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/connect
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/connect_lang
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/dai_top
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/dic_add
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/dic_comment_se
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/dic_delete
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/dic_list
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/dic_save
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/dic_use
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/disconnect
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/env
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/env_set
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/env_sticky
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/fuzokugo_get
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/fuzokugo_set
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/get_kanji
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/get_zenkouho_k
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/hinsi_dicts
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/hinsi_list
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/hinsi_name
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/hinsi_number
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/inspect
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/isconnect
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/jiri_len
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/kanji_len
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/kill
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/next
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/nobi_conv
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/open
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/open_lang
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/param_get
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/ren_conv
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/set_env_wnnrc
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/set_jikouho
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/tan_conv
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/update_hindo
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/word_add
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/word_comment_s
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/word_delete
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/word_info
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/word_search
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/word_use
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/zenkouho
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/zenkouho_bun
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/zenkouho_dai
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/zenkouho_daip
+share/doc/jp-Wnn/manual/3.libwnn/jl_lib/zenkouho_suu
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/TITLE.DOC
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/access
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/close
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/connect
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/dic_add
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/dic_creat
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/dic_creat_cl
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/dic_delete
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/dic_info
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/dic_list
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/dic_list_all
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/dic_use
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/disconnect
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/env_exist
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/env_list
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/env_sticky
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/file_comment_s
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/file_discard
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/file_info
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/file_list
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/file_list_all
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/file_loaded
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/file_loaded_lo
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/file_passwd_s
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/kanren
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/file_read
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/file_receive
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/file_remove
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/file_remove_cl
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/file_send
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/file_stat
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/file_write
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/fuzokugo_get
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/fuzokugo_set
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/hindo_creat
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/hindo_creat_cl
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/hindo_set
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/hinsi_dicts
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/hinsi_list
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/hinsi_name
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/hinsi_number
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/hinsi_table_s
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/isconnect
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/kantan_dai
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/kantan_sho
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/kanzen_sho
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/kanzen_dai
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/kill
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/who
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/mkdir
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/open
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/open_lang
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/param_get
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/set_lang
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/version
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/word_add
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/word_comment_s
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/word_delete
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/word_info
+share/doc/jp-Wnn/manual/3.libwnn/js_lib/word_search
+share/doc/jp-Wnn/manual/3.libwnn/rk_lib/romkan_clear
+share/doc/jp-Wnn/manual/3.libwnn/rk_lib/romkan_dispmod
+share/doc/jp-Wnn/manual/3.libwnn/rk_lib/romkan_getc
+share/doc/jp-Wnn/manual/3.libwnn/rk_lib/romkan_init
+share/doc/jp-Wnn/manual/3.libwnn/rk_lib/romkan_next
+share/doc/jp-Wnn/manual/3.libwnn/rk_lib/romkan_ungetc
+share/doc/jp-Wnn/manual/3.libwnn/rk_lib/Intro
+share/doc/jp-Wnn/manual/3.libwnn/misc_lib/msg_close
+share/doc/jp-Wnn/manual/3.libwnn/misc_lib/msg_get
+share/doc/jp-Wnn/manual/3.libwnn/misc_lib/msg_open
+share/doc/jp-Wnn/manual/4.cmd/uum
+share/doc/jp-Wnn/manual/4.cmd/wnnkill
+share/doc/jp-Wnn/manual/4.cmd/wnnstat
+share/doc/jp-Wnn/manual/4.cmd/jserver
+share/doc/jp-Wnn/manual/5.op/Intro
+share/doc/jp-Wnn/manual/5.op/op1.1
+share/doc/jp-Wnn/manual/5.op/op1.2
+share/doc/jp-Wnn/manual/5.op/op1.3
+share/doc/jp-Wnn/manual/5.op/op2.1
+share/doc/jp-Wnn/manual/5.op/op2.2
+share/doc/jp-Wnn/manual/5.op/op2.2.1
+share/doc/jp-Wnn/manual/5.op/op2.3
+share/doc/jp-Wnn/manual/5.op/op2.4
+share/doc/jp-Wnn/manual/5.op/op3.1
+share/doc/jp-Wnn/manual/5.op/op3.3
+share/doc/jp-Wnn/manual/5.op/op3.5
+share/doc/jp-Wnn/manual/5.op/op3.7
+share/doc/jp-Wnn/manual/5.op/op3.8
+share/doc/jp-Wnn/manual/5.op/op3.83
+share/doc/jp-Wnn/manual/5.op/op3.85
+share/doc/jp-Wnn/manual/5.op/op3.87
+share/doc/jp-Wnn/manual/5.op/op3.88
+share/doc/jp-Wnn/manual/6.jutil/Intro
+share/doc/jp-Wnn/manual/6.jutil/atod
+share/doc/jp-Wnn/manual/6.jutil/atof
+share/doc/jp-Wnn/manual/6.jutil/dictionary
+share/doc/jp-Wnn/manual/6.jutil/dtoa
+share/doc/jp-Wnn/manual/6.jutil/wddel
+share/doc/jp-Wnn/manual/6.jutil/wdreg
+share/doc/jp-Wnn/manual/6.jutil/wnntouch
+share/doc/jp-Wnn/manual/6.jutil/oldatonewa
+share/doc/jp-Wnn/manual/intro
+share/doc/jp-Wnn/manual/v3tov4/v3tov4
+share/doc/jp-Wnn/manual/7.Protocol/KKTP
+share/doc/jp-Wnn/manual.en/2.env/wnn/serverdefs
+share/doc/jp-Wnn/manual.en/2.env/wnn/jserverrc
+share/doc/jp-Wnn/manual.en/2.env/wnn/uumrc
+share/doc/jp-Wnn/manual.en/2.env/wnn/wnnenvrc
+share/doc/jp-Wnn/manual.en/2.env/wnn/uumkey
+share/doc/jp-Wnn/manual.en/2.env/wnn/mode
+share/doc/jp-Wnn/manual.en/2.env/wnn/2a_ctrl
+share/doc/jp-Wnn/manual.en/2.env/wnn/2b_romkana
+share/doc/jp-Wnn/manual.en/2.env/wnn/full.fzk
+share/doc/jp-Wnn/manual.en/4.cmd/jserver
+share/doc/jp-Wnn/manual.en/4.cmd/uum
+share/doc/jp-Wnn/manual.en/4.cmd/wnnkill
+share/doc/jp-Wnn/manual.en/4.cmd/wnnstat
+share/doc/jp-Wnn/manual.en/5.op/README.en
+share/doc/jp-Wnn/manual.en/5.op/README.ja
+share/doc/jp-Wnn/manual.en/5.op/contents
+share/doc/jp-Wnn/manual.en/5.op/contents.2
+share/doc/jp-Wnn/manual.en/5.op/op1
+share/doc/jp-Wnn/manual.en/5.op/fig2.2.1.Z
+share/doc/jp-Wnn/manual.en/5.op/op2.1
+share/doc/jp-Wnn/manual.en/5.op/op2.2
+share/doc/jp-Wnn/manual.en/5.op/op2.3
+share/doc/jp-Wnn/manual.en/5.op/op2.4
+share/doc/jp-Wnn/manual.en/5.op/op2.5
+share/doc/jp-Wnn/manual.en/5.op/op2.6
+share/doc/jp-Wnn/manual.en/5.op/op2.7
+share/doc/jp-Wnn/manual.en/5.op/op2.8
+share/doc/jp-Wnn/manual.en/5.op/op2.9
+share/doc/jp-Wnn/manual.en/5.op/op3.1
+share/doc/jp-Wnn/manual.en/5.op/op3.2
+share/doc/jp-Wnn/manual.en/5.op/op3.3
+share/doc/jp-Wnn/manual.en/5.op/op3.4
+share/doc/jp-Wnn/manual.en/5.op/op3.5
+share/doc/jp-Wnn/manual.en/5.op/op3.6
+share/doc/jp-Wnn/manual.en/5.op/op3.7
+share/doc/jp-Wnn/manual.en/5.op/op3.8
+share/doc/jp-Wnn/manual.en/5.op/op3.9
+share/doc/jp-Wnn/manual.en/5.op/fig2.2.2.Z
+share/doc/jp-Wnn/manual.en/5.op/fig2.3.1.Z
+share/doc/jp-Wnn/manual.en/5.op/fig2.3.11.Z
+share/doc/jp-Wnn/manual.en/5.op/fig2.3.18.Z
+share/doc/jp-Wnn/manual.en/5.op/fig2.3.3.Z
+share/doc/jp-Wnn/manual.en/5.op/fig2.3.4.Z
+share/doc/jp-Wnn/manual.en/5.op/table2.2.1.Z
+share/doc/jp-Wnn/manual.en/6.jutil/atod
+share/doc/jp-Wnn/manual.en/6.jutil/wdreg
+share/doc/jp-Wnn/manual.en/6.jutil/dtoa
+share/doc/jp-Wnn/manual.en/6.jutil/atof
+share/doc/jp-Wnn/manual.en/6.jutil/wnntouch
+share/doc/jp-Wnn/manual.en/6.jutil/wddel
+@dirrm share/doc/jp-Wnn/manual/v3tov4
+@dirrm share/doc/jp-Wnn/manual/7.Protocol
+@dirrm share/doc/jp-Wnn/manual/6.jutil
+@dirrm share/doc/jp-Wnn/manual/5.op
+@dirrm share/doc/jp-Wnn/manual/4.cmd
+@dirrm share/doc/jp-Wnn/manual/3.libwnn/rk_lib
+@dirrm share/doc/jp-Wnn/manual/3.libwnn/misc_lib
+@dirrm share/doc/jp-Wnn/manual/3.libwnn/js_lib
+@dirrm share/doc/jp-Wnn/manual/3.libwnn/jl_lib
+@dirrm share/doc/jp-Wnn/manual/3.libwnn
+@dirrm share/doc/jp-Wnn/manual/2.env/wnn
+@dirrm share/doc/jp-Wnn/manual/2.env/dic
+@dirrm share/doc/jp-Wnn/manual/2.env
+@dirrm share/doc/jp-Wnn/manual/1.intro
+@dirrm share/doc/jp-Wnn/manual/0
+@dirrm share/doc/jp-Wnn/manual.en/6.jutil
+@dirrm share/doc/jp-Wnn/manual.en/5.op
+@dirrm share/doc/jp-Wnn/manual.en/4.cmd
+@dirrm share/doc/jp-Wnn/manual.en/3.libwnn
+@dirrm share/doc/jp-Wnn/manual.en/2.env/wnn
+@dirrm share/doc/jp-Wnn/manual.en/2.env/dic
+@dirrm share/doc/jp-Wnn/manual.en/2.env
+@dirrm share/doc/jp-Wnn/manual.en/1.intro
+@dirrm share/doc/jp-Wnn/manual.en/0
+@dirrm share/doc/jp-Wnn/manual.en
+@dirrm share/doc/jp-Wnn/manual
+@dirrm share/doc/jp-Wnn
+@cwd %%X11BASE%%
 lib/libwnn.a
+lib/libjd.a
 include/wnn/jllib.h
+include/wnn/jlib.h
 include/wnn/jslib.h
 include/wnn/rk_spclval.h
 include/wnn/wnnerror.h
