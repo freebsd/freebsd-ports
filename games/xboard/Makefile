@@ -1,12 +1,12 @@
 # New ports collection makefile for:    xboard
-# Version required:     4.0.0
+# Version required:     4.0.2
 # Date created:         5 Jan 1997
 # Whom:                 xaa@stack.nl
 #
-# $Id: Makefile,v 1.16 1998/11/28 01:59:34 asami Exp $
+# $Id: Makefile,v 1.17 1999/01/27 07:41:13 fenner Exp $
 #
 
-DISTNAME=       xboard-4.0.0
+DISTNAME=       xboard-4.0.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	xboard
