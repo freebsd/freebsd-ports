@@ -6,22 +6,19 @@
 #
 
 PORTNAME=	File_Find
-PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTVERSION=	0.3.0
 CATEGORIES=	sysutils www pear
-MASTER_SITES=	http://pear.php.net/get/
-PKGNAMEPREFIX=	pear-
-EXTRACT_SUFX=	.tgz
-DIST_SUBDIR=	PEAR
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A PEAR Class to facilitate the search of filesystems
+MAINTAINER=	antonio@php.net
+COMMENT=	PEAR class that facillitates the search of filesystems
 
-BUILD_DEPENDS=	${PEARDIR}/File.php:${PORTSDIR}/sysutils/pear-File
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	File
 FILES=		Find.php
+TESTS=		setup.php 01glob.phpt 02maptree.phpt 03maptreemultiple.phpt \
+		04search.phpt bug2773.phpt
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
