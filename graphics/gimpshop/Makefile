@@ -1,32 +1,24 @@
 # New ports collection makefile for:    Gimp
-# Version required:     0.99.28
+# Version required:     1.0.0
 # Date created:         Mon Nov 18 21:28:43 CST 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.32 1998/05/21 21:28:51 mph Exp $
+# $Id: Makefile,v 1.33 1998/05/27 18:36:01 vanilla Exp $
 #
 
-MAJOR=	0
-MINOR=	99
-MICRO=	31
-
-VERSION=	${MAJOR}.${MINOR}.${MICRO}
-MM_VERSION=	${MAJOR}.${MINOR}
-
-DISTNAME=	gimp-${VERSION}
-DISTFILES=	${DISTNAME}.tar.gz
-DISTFILES+=	gimp-data-extras-${MM_VERSION}a.tar.gz
-
+DISTNAME=	gimp-1.0.0
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/v${MAJOR}.${MINOR}/v${VERSION}/ \
-	ftp://ftp.cs.umn.edu/pub/gimp/gimp/v${MAJOR}.${MINOR}/v${VERSION}/
+MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/v1.0/v1.0.0/ \
+		ftp://ftp.cs.umn.edu/pub/gimp/gimp/v1.0/v1.0.0/ \
+		http://www.ameth.org/gimp/pub/gimp/v1.0/v1.0.0/
+DISTFILES=	gimp-1.0.0.tar.gz gimp-data-extras-1.0.0.tar.gz
 
 MAINTAINER=	erich@FreeBSD.org
 
 LIB_DEPENDS+=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 LIB_DEPENDS+=	aa\\.1\\.:${PORTSDIR}/graphics/aalib
 LIB_DEPENDS+=	jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg
-LIB_DEPENDS+=	gtk\\.1\\.3:${PORTSDIR}/x11/gtk
+LIB_DEPENDS+=	gtk\\.1\\.4:${PORTSDIR}/x11/gtk
 LIB_DEPENDS+=	mpeg\\.1\\.2:${PORTSDIR}/graphics/mpeg-lib
 LIB_DEPENDS+=	png\\.2\\.:${PORTSDIR}/graphics/png
 LIB_DEPENDS+=	tiff34\\.1\\.:${PORTSDIR}/graphics/tiff34
@@ -46,8 +38,8 @@ MAN3=		gpc.3
 DATASTUFF=  brushes palettes gradients patterns
 
 post-install:
-	mkdir -p ${PREFIX}/share/gimp/;
-	cd ${WRKDIR}/gimp-data-extras-${MM_VERSION}a; \
+	${MKDIR} ${PREFIX}/share/gimp/;
+	cd ${WRKDIR}/gimp-data-extras-1.0.0; \
 	tar -cf - --exclude '*Makefile*' ${DATASTUFF} |\
 	(cd ${PREFIX}/share/gimp/; tar -xvf -)
 

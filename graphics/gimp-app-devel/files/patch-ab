@@ -1,20 +1,13 @@
-
-*****
-***** patches for plug-ins
-*****
-
---- /a/gimp-0.99.6/plug-ins/url/url.c	Mon Mar 10 04:57:12 1997
-+++ plug-ins/url/url.c	Wed Mar 12 21:56:39 1997
+--- plug-ins/url/url.c.orig	Sat May 30 15:32:36 1998
++++ plug-ins/url/url.c	Sun Jun  7 10:09:34 1998
 @@ -146,8 +146,8 @@
      }
    else if (pid == 0)
      {
 -      execlp ("wget", "wget", filename, "-O", tmpname, NULL);
--      g_warning ("url: exec failed: wget: %s\n", g_strerror(errno));
+-      g_message ("url: exec failed: wget: %s\n", g_strerror(errno));
 +      execlp ("fetch", "fetch", filename, "-p -o", tmpname, NULL);
-+      g_warning ("url: exec failed: fetch: %s\n", g_strerror(errno));
++      g_message ("url: exec failed: fetch: %s\n", g_strerror(errno));
        _exit(127);
      }
    else
-
-
