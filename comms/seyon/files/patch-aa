@@ -1,0 +1,87 @@
+Only in seyon: Makefile
+diff -c SePort.c seyon.new/SePort.c
+*** SePort.c	Wed Apr 21 15:38:31 1993
+--- seyon.new/SePort.c	Sun Oct  2 23:05:25 1994
+***************
+*** 627,645 ****
+  #endif
+        break;
+  #if USE_NONSTD_BAUD
+- #ifdef linux
+      case 57600:
+        baudrate = B38400;
+        ser_io.flags &= ~ASYNC_SPD_MASK;
+        ser_io.flags |= ASYNC_SPD_HI;
+        break;
+      case 115200:
+        baudrate = B38400;
+        ser_io.flags &= ~ASYNC_SPD_MASK;
+        ser_io.flags |= ASYNC_SPD_VHI;
+        break;
+  #endif
+- #endif
+      default:
+        return (-1);
+      }
+--- 627,651 ----
+  #endif
+        break;
+  #if USE_NONSTD_BAUD
+      case 57600:
++ #ifdef linux
+        baudrate = B38400;
+        ser_io.flags &= ~ASYNC_SPD_MASK;
+        ser_io.flags |= ASYNC_SPD_HI;
++ #else
++ 		baudrate = B57600;
++ #endif 
+        break;
+      case 115200:
++ #ifdef linux
+        baudrate = B38400;
+        ser_io.flags &= ~ASYNC_SPD_MASK;
+        ser_io.flags |= ASYNC_SPD_VHI;
++ #else
++ 		baudrate = B115200;
++ #endif 
+        break;
+  #endif
+      default:
+        return (-1);
+      }
+***************
+*** 691,696 ****
+--- 697,710 ----
+  #endif
+  #endif
+        return 38400;
++ #if USE_NONSTD_BAUD
++ #ifndef linux
++   case B57600:
++ 		return(57600);
++   case B115200:
++ 		return(115200);
++ #endif 
++ #endif 
+    }
+  
+    SeError("Consistency error in baud rate");
+diff -c config.h seyon.new/config.h
+*** config.h	Wed Apr 21 14:47:48 1993
+--- seyon.new/config.h	Sun Oct  2 23:03:53 1994
+***************
+*** 81,86 ****
+--- 81,92 ----
+  #define HAVE_USLEEP         YES
+  #endif
+  
++ #ifdef __FreeBSD__
++ #define USE_NONSTD_BAUD     YES
++ #define LF_PATH				"/var/spool/lock"
++ #define LF_PREFIX           "LCK.."
++ #endif 
++ 
+  #ifdef SVR4
+  #define HAVE_TERMIOS        YES
+  #define HAVE_MODEM_CONTROL  YES
+  
