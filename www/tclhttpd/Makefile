@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	tclhttpd
-PORTVERSION=	3.3
-PORTREVISION=	1
-CATEGORIES=	www tcl${TCL_VER}
+PORTVERSION=	3.4.2
+CATEGORIES=	www tcl83
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR=	httpd
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -16,10 +15,10 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	An http-server implemented in TCL
 
-RUN_DEPENDS=	${LOCALBASE}/lib/tcllib1.2/pkgIndex.tcl:${PORTSDIR}/devel/tcllib
+RUN_DEPENDS=	${LOCALBASE}/lib/tcllib1.3/pkgIndex.tcl:${PORTSDIR}/devel/tcllib
 LIB_DEPENDS=	tcl${TCL_VER}:${PORTSDIR}/lang/tcl${TCL_VER}
 
-TCL_DVER?=	8.3
+TCL_DVER?=	8.4
 TCL_VER=	${TCL_DVER:S/.//}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl="${LOCALBASE}/lib/tcl${TCL_DVER}" \
