@@ -8,9 +8,9 @@
 PORTNAME=	xmms-musepack
 PORTVERSION=	1.8.0
 CATEGORIES=	audio
-MASTER_SITES=	http://www.musepack.info/dl/
+MASTER_SITES=	http://dl.slik.org/musepack/
 
-MAINTAINER=	walter@binity.com
+MAINTAINER=	wh@slik.org
 
 LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms
 
