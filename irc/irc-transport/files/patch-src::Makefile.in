@@ -1,0 +1,19 @@
+--- src/Makefile.in.orig	Thu Feb  8 02:31:02 2001
++++ src/Makefile.in	Mon Feb 12 09:32:49 2001
+@@ -31,6 +31,7 @@
+ mandir = @mandir@
+ includedir = @includedir@
+ oldincludedir = /usr/include
++localincludedir = /usr/local/include
+ 
+ DESTDIR =
+ 
+@@ -72,7 +73,7 @@
+ VERSION = @VERSION@
+ 
+ CFLAGS = -g -fPIC -shared
+-INCLUDES = -I$(JABBERD_INC) -I$(top_builddir)/include
++INCLUDES = -I$(JABBERD_INC) -I$(top_builddir)/include -I$(oldincludedir) -I$(localincludedir)
+ bin_PROGRAMS = irc_transport.so
+ 
+ irc_transport_so_SOURCES =  	util.c 	init.c     irc_in.c     irc_out.c 
