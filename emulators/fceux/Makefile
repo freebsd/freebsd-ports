@@ -7,6 +7,7 @@
 
 PORTNAME=	fceu
 PORTVERSION=	0.96
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://fceultra.sourceforge.net/files/
 DISTNAME=	fceu${PORTVERSION:S/.//}src
@@ -16,6 +17,7 @@ COMMENT=	A portable NES/Famicom emulator based on Bero's original FCE
 
 LIB_DEPENDS=	SDL-1.1:${PORTSDIR}/devel/sdl12
 
+MAN6=		fceu.6
 WRKSRC=		${WRKDIR}/fceu
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
@@ -32,7 +34,7 @@ TECHPPUDOCS=	"2C02\technical\operation.TXT" loopy1.txt loopy2.txt
 .if defined(WITH_OPTIMIZED_FLAGS)
 CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double
 .if (${MACHINE_ARCH} == "i386")
-CFLAGS+=        -mfancy-math-387
+CFLAGS+=	-mfancy-math-387
 .endif # i386
 .endif
 
@@ -63,6 +65,9 @@ post-patch:
 .endif
 .endif
 
+pre-build:
+	@${CP} ${WRKSRC}/Documentation/fceu-sdl.6 ${WRKSRC}/Documentation/fceu.6
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fceu ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
@@ -72,6 +77,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/Documentation/${docs} ${DOCSDIR}
 .endfor
 .endif
+.if !defined(NOPORTDOCS)
+	${INSTALL_MAN} ${WRKSRC}/Documentation/fceu.6 ${PREFIX}/man/man6
 .if defined(TECH_DOC_INSTALL)
 	@${MKDIR} ${DOCSDIR}/tech
 .for docs in ${TECHDOCS}
@@ -92,6 +99,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/Documentation/tech/ppu/${docs:S/\\/ /g} \
 			${DOCSDIR}/tech/ppu
 .endfor
+.endif
 .endif
 .endif
 
