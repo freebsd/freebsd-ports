@@ -6,7 +6,7 @@ bin/gnunet-dht-join
 bin/gnunet-dht-query
 bin/gnunet-directory
 bin/gnunet-download
-bin/gnunet-download-manager.scm
+%%WITH_GUILE%%bin/gnunet-download-manager.scm
 bin/gnunet-gtk
 bin/gnunet-insert
 bin/gnunet-peer-info
