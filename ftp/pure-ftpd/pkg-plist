@@ -1,6 +1,7 @@
-sbin/mrtginfo
+sbin/pure-mrtginfo
 sbin/pure-ftpd
 sbin/pure-ftpwho
+sbin/pure-uploadscript
 sbin/pure-config.pl
 etc/pureftpd-ldap.conf.sample
 etc/pure-ftpd.conf.sample

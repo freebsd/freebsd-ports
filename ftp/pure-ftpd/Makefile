@@ -6,17 +6,10 @@
 #
 
 PORTNAME=	pure-ftpd
-PORTVERSION=	0.97.7
+PORTVERSION=	0.98
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pureftpd
-
-# These shall probably be incorporated in the next version.
-PATCHFILES=	pure-ftpd-0.97.7-polish.patch.gz \
-		pure-ftpd-0.97.7-config.pl.patch.gz
-PATCH_SITES=	http://people.FreeBSD.org/~roam/ports/patches/ftp/ \
-		${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	roam/ftp
 
 MAINTAINER=	j@4u.net
 
@@ -26,7 +19,8 @@ LIB_DEPENDS+=	dmalloc.1:${PORTSDIR}/devel/dmalloc
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-pam --with-cookie --with-throttling \
-			--with-ratios --with-ftpwho --with-largefile
+			--with-ratios --with-ftpwho --with-largefile \
+			--with-uploadscript
 # language support requested?
 .if defined(WITH_LANG)
 CONFIGURE_ARGS+=	--with-language="${WITH_LANG}"
@@ -37,13 +31,13 @@ CONFIGURE_ARGS+=	--with-dmalloc
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 .endif
 
-MAN8=		pure-ftpd.8 pure-ftpwho.8 mrtginfo.8
+MAN8=		pure-ftpd.8 pure-ftpwho.8 pure-mrtginfo.8 pure-uploadscript.8
 
 pre-fetch:
 	@${ECHO} "You can use the following additional options:"
 	@${ECHO} "WITH_DMALLOC	- enable use of the dmalloc library;"
 	@${ECHO} "WITH_LANG=lang	- enable compilation of language support, lang is one of"
-	@${ECHO} "		  english, german, romanian, french or polish."
+	@${ECHO} "		  english, german, romanian, french, polish or spanish."
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/pureftpd-ldap.conf ${PREFIX}/etc/pureftpd-ldap.conf.sample
