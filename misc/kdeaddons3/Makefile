@@ -15,7 +15,6 @@ DIST_SUBDIR=	KDE
 MAINTAINER?=	kde@FreeBSD.org
 
 LIB_DEPENDS+=	noatun.0:${PORTSDIR}/audio/kdemultimedia3 \
-		kdenetwork.2:${PORTSDIR}/net/kdenetwork3 \
 		SDL-1.1.4:${PORTSDIR}/devel/sdl12
 
 WITH_SDL=	yes
