@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Nov 15 22:20:34 1999
-+++ Makefile	Sun Dec 19 14:52:58 1999
+--- Makefile.orig	Mon Nov 15 12:20:34 1999
++++ Makefile	Fri Jul  7 00:35:00 2000
 @@ -49,6 +49,7 @@
  # art	AIX 2.2.1 for RT
  # asv	Altos SVR4
@@ -8,7 +8,34 @@
  # bs3	BSD/i386 3.0 and higher
  # bsd	generic BSD 4.3 (as in ancient 1980s version)
  # bsf	FreeBSD
-@@ -293,7 +294,7 @@
+@@ -244,12 +245,12 @@
+ #	gradually-increasing intervals, starting at 2800-2900, and becoming
+ #	permanent at 48,300.
+ 
+-EXTRACFLAGS=
++EXTRACFLAGS=-I$(PREFIX)/include/c-client
+ 
+ 
+ # Extra linker flags (additional/alternative libraries, etc.)
+ 
+-EXTRALDFLAGS=
++EXTRALDFLAGS=-L$(PREFIX)/lib -lc-client4
+ 
+ 
+ # Special make flags (e.g. to override make environment variables)
+@@ -285,15 +286,15 @@
+ 
+ all:	c-client rebuild bundled
+ 
+-c-client:
+-	@echo Not processed yet.  In a first-time build, you must specify
+-	@echo the system type so that the sources are properly processed.
+-	@false
++#c-client:
++#	@echo Not processed yet.  In a first-time build, you must specify
++#	@echo the system type so that the sources are properly processed.
++#	@false
+ 
  
  # Note on SCO you may have to set LN to "ln".
  

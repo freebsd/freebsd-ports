@@ -1,5 +1,5 @@
---- src/imapd/Makefile.orig	Sat Nov 21 05:26:03 1998
-+++ src/imapd/Makefile	Sat Feb 27 17:19:33 1999
+--- src/imapd/Makefile.orig	Wed Nov  3 23:50:56 1999
++++ src/imapd/Makefile	Fri Jul  7 00:31:53 2000
 @@ -31,9 +31,9 @@
  # WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  
@@ -12,34 +12,29 @@
  SHELL= /bin/sh
  
  #  The "Manage Mail" menu item of Netscape Messager puts up an error message
-@@ -56,7 +56,7 @@
+@@ -54,21 +54,16 @@
+ # Get local definitions from c-client directory
+ 
+ C = ../c-client
+-CCLIENTLIB = $C/c-client.a
++#CCLIENTLIB = $C/c-client.a
  CC = `cat $C/CCTYPE`
- CFLAGS = -I$C `cat $C/CFLAGS` $(EXTRACFLAGS) -DANOFILE=\"$(ANO)\" \
+-CFLAGS = -I$C `cat $C/CFLAGS` $(EXTRACFLAGS) -DANOFILE=\"$(ANO)\" \
++CFLAGS = `cat $C/CFLAGS` $(EXTRACFLAGS) -DANOFILE=\"$(ANO)\" \
  	-DALERTFILE=\"$(ALERT)\" -DUSERALERTFILE=\"$(USERALERT)\"
 -LDFLAGS = $(CCLIENTLIB) `cat $C/LDFLAGS`
-+LDFLAGS = -L$C -l$(SHLIBBASE) `cat $C/LDFLAGS`
++LDFLAGS = $(EXTRALDFLAGS) `cat $C/LDFLAGS`
  
  all:	imapd
  
---- src/ipopd/Makefile.orig	Wed Apr 15 01:41:55 1998
-+++ src/ipopd/Makefile	Sat Oct 10 21:48:00 1998
-@@ -39,7 +39,7 @@
+-imapd: $(CCLIENTLIB) imapd.o
++imapd: imapd.o
+ 	$(CC) $(CFLAGS) -o imapd imapd.o $(LDFLAGS)
+-
+-imapd.o: $C/mail.h $C/misc.h $C/osdep.h
+-
+-$(CCLIENTLIB):
+-	cd $C;make
  
- CC = `cat $C/CCTYPE`
- CFLAGS = -I$C `cat $C/CFLAGS`
--LDFLAGS = $(CCLIENTLIB) `cat $C/LDFLAGS`
-+LDFLAGS = -L$C -l$(SHLIBBASE) `cat $C/LDFLAGS`
- 
- ipopd: ipop2d ipop3d
- 
---- src/mtest/Makefile.orig	Wed Apr 15 01:42:04 1998
-+++ src/mtest/Makefile	Sat Oct 10 21:48:18 1998
-@@ -39,7 +39,7 @@
- 
- CC = `cat $C/CCTYPE`
- CFLAGS = -I$C `cat $C/CFLAGS`
--LDFLAGS = $(CCLIENTLIB) `cat $C/LDFLAGS`
-+LDFLAGS = -L$C -l$(SHLIBBASE) `cat $C/LDFLAGS`
- 
- all:	mtest
- 
+ clean:
+ 	rm -f *.o imapd || true
