@@ -14,6 +14,7 @@ share/locale/es/LC_MESSAGES/knowit.mo
 share/locale/fr/LC_MESSAGES/knowit.mo
 share/locale/hu/LC_MESSAGES/knowit.mo
 share/locale/pl/LC_MESSAGES/knowit.mo
+share/locale/ru/LC_MESSAGES/knowit.mo
 share/locale/sk/LC_MESSAGES/knowit.mo
 share/locale/zh_CN/LC_MESSAGES/knowit.mo
 @dirrm share/icons/hicolor/32x32/apps
