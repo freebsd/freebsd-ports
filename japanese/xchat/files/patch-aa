@@ -1,0 +1,10 @@
+--- src/common/cfgfiles.c.orig	Mon Jun 25 18:23:57 2001
++++ src/common/cfgfiles.c	Mon Jul  2 20:25:35 2001
+@@ -17,6 +17,7 @@
+  */
+ 
+ #include <fcntl.h>
++#include <locale.h>
+ #include <unistd.h>
+ #include <stdlib.h>
+ #ifdef HAVE_STRINGS_H
