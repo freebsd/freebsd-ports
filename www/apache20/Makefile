@@ -3,7 +3,7 @@
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 ache@nagual.pp.ru
 #
-# $Id: Makefile,v 1.44 1998/02/20 11:08:40 ache Exp $
+# $Id: Makefile,v 1.45 1998/02/25 06:23:55 asami Exp $
 #
 
 DISTNAME=       apache_1.3b5
@@ -11,9 +11,9 @@ PKGNAME=        apache-1.3b5
 CATEGORIES=	www
 MASTER_SITES=   ftp://www.apache.org/apache/dist/
 
+# bsd.port.mk can't handle different base directory per dist patch yet
 #PATCH_SITES=    ftp://www.apache.org/apache/dist/patches/apply_to_1.3b5/
-#PATCHFILES=
-#PATCH_DIST_ARGS= -d ${WRKSRC}/src/main -E -p0
+#PATCHFILES=     PR1847.patch PR1850.patch PR1889.patch
 
 MAINTAINER=     ache@freebsd.org
 
