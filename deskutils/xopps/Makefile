@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 
 ALL_TARGET=
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_MOTIF=	yes
 MAKE_ENV=	'MACH=${OPSYS}'
@@ -25,6 +26,6 @@ post-extract:
 	@${CP} ${WRKSRC}/Defines.spr ${WRKSRC}/Defines.${OPSYS}
 
 post-patch:
-	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/*.c
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/*.c
 
 .include <bsd.port.mk>
