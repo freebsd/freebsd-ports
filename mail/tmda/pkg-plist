@@ -51,6 +51,10 @@ bin/tmda-sendmail
 %%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/base64MIME.pyc
 %%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/quopriMIME.py
 %%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/quopriMIME.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/Address.py
+%%PYTHON_SITELIBDIR%%/TMDA/Address.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/Auth.py
+%%PYTHON_SITELIBDIR%%/TMDA/Auth.pyc
 %%PYTHON_SITELIBDIR%%/TMDA/AutoResponse.py
 %%PYTHON_SITELIBDIR%%/TMDA/AutoResponse.pyc
 %%PYTHON_SITELIBDIR%%/TMDA/Cookie.py
@@ -67,6 +71,8 @@ bin/tmda-sendmail
 %%PYTHON_SITELIBDIR%%/TMDA/HMAC.pyc
 %%PYTHON_SITELIBDIR%%/TMDA/MTA.py
 %%PYTHON_SITELIBDIR%%/TMDA/MTA.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/Pending.py
+%%PYTHON_SITELIBDIR%%/TMDA/Pending.pyc
 %%PYTHON_SITELIBDIR%%/TMDA/MessageLogger.py
 %%PYTHON_SITELIBDIR%%/TMDA/MessageLogger.pyc
 %%PYTHON_SITELIBDIR%%/TMDA/SMTP.py
@@ -113,6 +119,8 @@ bin/tmda-sendmail
 %%PORTDOCS%%share/doc/tmda/htdocs/requirements.html
 %%PORTDOCS%%share/doc/tmda/htdocs/resources.html
 %%PORTDOCS%%share/doc/tmda/htdocs/results.html
+%%PORTDOCS%%share/doc/tmda/htdocs/support-commercial.html 
+%%PORTDOCS%%share/doc/tmda/htdocs/tmda-cgi.html
 %%PORTDOCS%%share/doc/tmda/htdocs/tmda-ofmipd.html
 %%PORTDOCS%%share/doc/tmda/htdocs/trouble.html
 share/tmda/bounce.txt
