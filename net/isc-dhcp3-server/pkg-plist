@@ -40,6 +40,6 @@ sbin/dhcrelay
 @dirrm include/omapip
 @dirrm include/isc-dhcp
 @exec [ -f /var/db/dhclient.leases ] || touch /var/db/dhclient.leases
-@unexec [ -s /var/db/dhclient.leases ] || rm -f /var/db/dhclient.leases
+@unexec [ ! -s /var/db/dhclient.leases ] || rm -f /var/db/dhclient.leases
 @exec [ -f /var/db/dhcpd.leases ] || touch /var/db/dhcpd.leases
-@unexec [ -s /var/db/dhcpd.leases ] || rm -f /var/db/dhcpd.leases
+@unexec [ ! -s /var/db/dhcpd.leases ] || rm -f /var/db/dhcpd.leases
