@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://mirror.crc.net.nz/pub/srg/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	lslarry@gmail.com
+MAINTAINER=	ds@tic-tac.ru
 COMMENT=	A Squid Report Generator
 
 USE_GMAKE=	yes
