@@ -32,6 +32,7 @@
     SUBDIR += dia
     SUBDIR += diacanvas
     SUBDIR += divx4linux
+    SUBDIR += divxcalc
     SUBDIR += djvulibre
     SUBDIR += dore
     SUBDIR += drm-kmod

@@ -1,0 +1,4 @@
+bin/divxcalc
+share/divxcalc/pixmaps/divxcalc.xpm
+@dirrm share/divxcalc/pixmaps
+@dirrm share/divxcalc
