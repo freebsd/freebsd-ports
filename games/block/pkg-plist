@@ -1,7 +1,9 @@
 bin/block
 bin/bed
-share/block/another.block
-share/block/complex.block
-share/block/default.block
-share/block/pyramid.block
+share/block/1.block
+share/block/2.block
+share/block/3.block
+share/block/4.block
+share/block/5.block
+share/block/6.block
 @dirrm share/block
