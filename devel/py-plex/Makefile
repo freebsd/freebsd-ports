@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plex
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.cosc.canterbury.ac.nz/~greg/python/Plex/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,6 @@ MAINTAINER=	perky@FreeBSD.org
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
-WRKSRC=		${WRKDIR}
 DOCDIR=		share/doc/py-plex
 EXAMPLESDIR=	share/examples/py-plex
 
