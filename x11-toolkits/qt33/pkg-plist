@@ -421,13 +421,13 @@ lib/libqui.so
 lib/libqui.so.1
 lib/libqui.so.1.0
 lib/libqui.so.1.0.0
-lib/pkgconfig/qt-mt.pc
 lib/plugins/designer/libcppeditor.so
 lib/plugins/designer/libdlgplugin.so
 lib/plugins/designer/libgladeplugin.so
 lib/plugins/designer/libkdevdlgplugin.so
 lib/plugins/designer/librcplugin.so
 lib/plugins/designer/libwizards.so
+libdata/pkgconfig/qt-mt.pc
 share/doc/qt/html/3rdparty.html
 share/doc/qt/html/aboutqt.html
 share/doc/qt/html/abstract-connections.png
@@ -2392,5 +2392,5 @@ translations/qt_sk.qm
 @dirrm share/doc/qt
 @dirrm lib/plugins/designer
 @dirrm lib/plugins
-@dirrm lib/pkgconfig
+@dirrm libdata/pkgconfig
 @dirrm include/private
