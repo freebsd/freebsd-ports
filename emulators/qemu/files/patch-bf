@@ -1,13 +1,4 @@
 Index: qemu/slirp/slirp_config.h
-@@ -61,7 +61,7 @@
- #define HAVE_STDLIB_H
- 
- /* Define if you have sys/ioctl.h */
--#undef HAVE_SYS_IOCTL_H
-+#define HAVE_SYS_IOCTL_H
- 
- /* Define if you have sys/filio.h */
- #undef HAVE_SYS_FILIO_H
 @@ -86,7 +86,7 @@
  #undef BAD_SPRINTF
  
@@ -35,15 +26,6 @@ Index: qemu/slirp/slirp_config.h
  
  /* Define if you have sys/stropts.h */
  #undef HAVE_SYS_STROPTS_H
-@@ -162,7 +162,7 @@
- #define HAVE_MEMMOVE
- 
- /* Define if you have <termios.h> */
--#undef HAVE_TERMIOS_H
-+#define HAVE_TERMIOS_H
- 
- /* Define if you have gethostid */
- #undef HAVE_GETHOSTID
 @@ -180,7 +180,7 @@
  #undef HAVE_GRANTPT
  

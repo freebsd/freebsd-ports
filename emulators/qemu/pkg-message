@@ -16,4 +16,6 @@ is 100...  The linux 2.6 kernel uses 1000 by default btw.)  Enabling
 patch to emulators/rtc.)
 - using physical media doesn't work on 4.x hosts (missing DIOCGMEDIASIZE
 ioctl)
+- leaving X grab with shift-ctrl now often leaves shift or ctrl `pressed'
+for the guest, hitting it once fixes that
 ====
