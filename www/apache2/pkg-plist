@@ -88,6 +88,7 @@ include/apache2/ap_release.h
 %%PORTS_APR%%include/apache2/apu_version.h
 %%PORTS_APR%%include/apache2/apu_want.h
 %%WORKER%%include/apache2/fdqueue.h
+%%THREADPOOL%%include/apache2/pod.h
 include/apache2/http_config.h
 include/apache2/http_connection.h
 include/apache2/http_core.h

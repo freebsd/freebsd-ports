@@ -14,7 +14,8 @@
 ##   Apache-related
 ##      WITH_MPM:                 prefork (default)
 ##                                worker
-##                                perchild
+##                                perchild (deprecated)
+##                                threadpool (testing purpose only)
 ##      WITH_HTTP_PORT:           default: 80
 ##      WITH_LDAP:                Enable LDAP support (mod_auth_ldap)
 ##      WITHOUT_PROXY:            Disable proxy support
@@ -22,20 +23,28 @@
 ##      WITHOUT_AUTH:             Disable auth modules
 ##          WITH_CUSTOM_AUTH:     Let you choose which auth modules you wish
 ##      WITHOUT_DAV:              Disable DAV support
-##      WITH_IPV6_V6ONLY:         Don't allow IPv6 sockets to handle IPv4 connections
+##      WITH_IPV6_V6ONLY:         Don't allow IPv6 sockets to handle IPv4 
+##                                connections
 ##      WITHOUT_SSL:              Disable SSL support
 ##      WITH_THREADS:             Enable threads support !! USE IT WITH CARE !!
 ##           WITH_CUSTOM_THREADS: Let you choose which threaded modules you want
-##      WITH_DBM:                 Choose your DBM: bdb (Berkeley DB), gdbm or ndbm (default)
-##          WITH_BERKELEYDB:      Choose your BerkeleyDB version: db2, db3, db4, db41, db42 or FreeBSD (1.85)(default)
+##      WITH_DBM:                 Choose your DBM: bdb (Berkeley DB), gdbm or
+##                                ndbm (default)
+##          WITH_BERKELEYDB:      Choose your BerkeleyDB version: db2, db3,
+##                                db4, db41, db42 or FreeBSD (1.85)(default)
 ##      WITH_STATIC_SUPPORT:      Build statically linked support binaries
-##      WITH_STATIC_APACHE:       Build a static version of httpd (implies WITH_STATIC_MODULES)
+##      WITH_STATIC_APACHE:       Build a static version of httpd (implies 
+##                                WITH_STATIC_MODULES)
 ##      WITH_ALL_STATIC_MODULES:  All modules will be statically linked.
-##      WITH_STATIC_MODULES:      List of modules to build modules statics (usefull for slave ports)
-##                                (They must be already enabled (i.e. WITH_MODULES or with default configuration
-##                                use 'make show-modules', to check if they are enabled)
+##      WITH_STATIC_MODULES:      List of modules to build modules statics
+##                                (usefull for slave ports)
+##                                (They must be already enabled (i.e.
+##                                WITH_MODULES or with default configuration
+##                                use 'make show-modules', to check if they are
+##                                enabled)
 ##      WITH_EXPERIMENTAL:        Build and install experimental modules
-##      WITH_EXTRA_MODULES:       Use this to support additional modules (plist entry is NOT currently supported)
+##      WITH_EXTRA_MODULES:       Use this to support additional modules (plist
+##                                entry is NOT yet supported)
 ##      WITH_MODULES:             List of your own modules
 ##      WITHOUT_MODULES:          Disable listed modules
 ##      WITH_SUEXEC:              Enable suExec support
@@ -44,20 +53,28 @@
 ##            SUEXEC_SAFEPATH:    Set the safepath
 ##            SUEXEC_UIDMIN:      Minimal allowed UID (default 1000)
 ##            SUEXEC_GIDMIN:      Minimal allowed GID (default 1000)
-##            SUEXEC_CALLER:      User allowed to call SuExec (default ${WWWOWN} (www))
+##            SUEXEC_CALLER:      User allowed to call SuExec (default
+##                                ${WWWOWN} (www))
+##	WITH_DEBUG:               Build a debug versoin of apache (set CFLAGS
+##                                to "-O0 -g -ggdb3" too)
 ##
 ##   Port-related:
-##      WITHOUT_WWW:              Implies NO_CGI, NO_WWWDATA, NO_ICONS and NO_ERROR
-##           WITH_CUSTOM_WWW:     Let you choose your ${LOCALBASE}/www components: [cgi|errordocs|icons|wwwdata]
-##      WITH_APR_FROM_PORTS:      Utilise apr and apr-utils from ${PORTSDIR}/devel/apr
+##      WITHOUT_WWW:              Implies NO_CGI, NO_WWWDATA, NO_ICONS and
+##                                NO_ERROR
+##           WITH_CUSTOM_WWW:     Let you choose your ${LOCALBASE}/www components
+##                                [cgi|errordocs|icons|wwwdata]
+##      WITH_APR_FROM_PORTS:      Utilise apr and apr-utils from 
+##                                ${PORTSDIR}/devel/apr
 ##
 ## Available make targets:
 ##      show-options:             prints this message
 ##      show-modules:             prints list of available modules
 ##
 ## Examples:
-##      make WITHOUT_SSL=yes WITH_EXTRA_MODULES="bucketeer case_filter case_filter_in" WITHOUT_PROXY=yes
-##      make WITH_STATIC_MODULES="ssl rewrite include" WITH_EXPERIMENTAL=yes WITH_CUSTOM_AUTH="auth auth_dbm"
+##      make WITHOUT_SSL=yes WITH_EXTRA_MODULES="bucketeer case_filter \
+##           case_filter_in" WITHOUT_PROXY=yes
+##      make WITH_STATIC_MODULES="ssl rewrite include" WITH_EXPERIMENTAL=yes \
+##           WITH_CUSTOM_AUTH="auth auth_dbm"
 ##      make WITH_EXPERIMENTAL=yes WITHOUT_MODULES="access speling status"
 ##      make WITH_MODULES="include rewrite auth"
 ##

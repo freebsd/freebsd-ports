@@ -1,0 +1,19 @@
+         ***********************************
+         * !!!!!!!!!!! WARNING !!!!!!!!!!! *
+         ***********************************
+Since 2.0.49_2, apache startup script is now enabled/disabled via 
+rc.subr.
+Available variables:
+- apache2_enable (bool):      Set to "NO" by default.
+                              Set it to "YES" to enable apache2
+- apache2ssl_enable (bool):   Set to "NO" by default.
+                              Set it to "YES" to start apache with SSL 
+                              (if <IfDefined SSL> exists in httpd.conf)
+- apache2limits_enable (bool):Set to "NO" by default.
+                              Set it to yes to run `limits $limits_args`
+                              just before apache starts.
+- apache2_flags (str):        Set to "" by default.
+                              Extra flags passed to start command
+- apache2limits_args (str):   Default to "-e -U %%WWWOWN%%"
+                              Arguments of pre-start limits run.
+
