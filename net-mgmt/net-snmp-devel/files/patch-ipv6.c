@@ -1,5 +1,5 @@
 --- agent/mibgroup/mibII/ipv6.c.orig	Fri Feb 28 18:13:36 2003
-+++ agent/mibgroup/mibII/ipv6.c	Tue Nov 18 12:09:09 2003
++++ agent/mibgroup/mibII/ipv6.c	Wed Nov 19 00:16:27 2003
 @@ -1238,6 +1238,7 @@
      if (!auto_nlist("udb6", (char *) &udb6, sizeof(udb6)))
          return NULL;
@@ -75,7 +75,15 @@
          j = (int) vp->namelen;
          for (i = 0; i < sizeof(struct in6_addr); i++)
              newname[j++] = in6pcb.in6p_laddr.s6_addr[i];
-@@ -1646,11 +1656,7 @@
+@@ -1590,6 +1600,7 @@
+ #if defined(__FreeBSD__) && __FreeBSD__ >= 3
+     char           *sysctl_buf;
+     struct xinpgen *xig, *oxig;
++    struct xtcpcb *xp;
+ #endif                          /* defined(__FreeBSD__) && __FreeBSD__ >= 3 */
+ 
+     if (!initialized) {
+@@ -1646,11 +1657,7 @@
          DEBUGMSGTL(("mibII/ipv6", "looping: p=%x\n", p));
  
  #if !(defined(__FreeBSD__) && __FreeBSD__ >= 3)
@@ -88,13 +96,13 @@
              DEBUGMSGTL(("mibII/ipv6", "klookup fail for in6pcb at %x\n",
                          p));
              break;
-@@ -1662,6 +1668,14 @@
+@@ -1662,6 +1669,14 @@
                          in6pcb.in6p_ppcb));
              break;
          }
 +#else
 +        in6pcb = ((struct xinpcb *) xig)->xi_inp;
-+	struct xtcpcb *xp = (struct xtcpcb *)xig;
++	xp = (struct xtcpcb *)xig;
 +	tcp6cb = xp->xt_tp;
 +	if (!(in6pcb.inp_vflag & 0x02)) { /* Skip non-IPv6 pcb */
 +	  goto skip;
