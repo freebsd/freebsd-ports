@@ -17,7 +17,7 @@ COMMENT=	Free real-time logfile analyzer to get advanced web statistics
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
-RUN_DEPENDS+=	${SITE_PERL}/Net/XWhois.pm:${PORTDIR}/p5-Net-XWhois
+RUN_DEPENDS+=	${SITE_PERL}/Net/XWhois.pm:${PORTSDIR}/net/p5-Net-XWhois
 
 do-install:
 	@${MKDIR} ${PREFIX}/www/cgi-bin/lang
