@@ -1,0 +1,11 @@
+--- pl/tcl/Makefile.orig	Sun Apr 30 02:45:42 2000
++++ pl/tcl/Makefile	Fri May 12 21:31:07 2000
+@@ -66,7 +66,7 @@
+ # Instead use TCL's CFLAGS plus necessary -I directives.
+ 
+ # Can choose either TCL_CFLAGS_OPTIMIZE or TCL_CFLAGS_DEBUG here, as needed
+-CFLAGS= $(TCL_CFLAGS_OPTIMIZE)
++CFLAGS+= $(TCL_CFLAGS_OPTIMIZE)
+ 
+ CFLAGS+= $(TCL_SHLIB_CFLAGS) $(TCL_DEFS)
+ 
