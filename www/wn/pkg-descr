@@ -1,7 +1,0 @@
-WN is an HTTP server.  Among its features are the ability to serve
-up specified parts of files, the ability to use any external command
-as a filter (in place of CGI, which is also supported), SSL, built-in
-searching, and server-side includes which may be conditional.
-
-WWW:  http://www.wnserver.org/
-      http://hopf.math.northwestern.edu/
