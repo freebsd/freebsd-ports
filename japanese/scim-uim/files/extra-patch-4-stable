@@ -1,0 +1,10 @@
+--- src/scim_uim_imengine.cpp.orig	Thu Nov 11 20:27:26 2004
++++ src/scim_uim_imengine.cpp	Thu Nov 11 20:28:09 2004
+@@ -36,6 +36,7 @@
+ 
+ #include <scim.h>
+ #include "scim_uim_imengine.h"
++#include <cstdio>
+ 
+ #define scim_module_init uim_LTX_scim_module_init
+ #define scim_module_exit uim_LTX_scim_module_exit

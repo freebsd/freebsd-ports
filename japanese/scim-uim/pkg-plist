@@ -1,0 +1,6 @@
+lib/scim-1.0/IMEngine/uim.so
+lib/scim-1.0/IMEngine/uim.la
+lib/scim-1.0/IMEngine/uim.a
+share/scim/icons/scim-uim.png
+@unexec rmdir %D/lib/scim-1.0/IMEngine 2>/dev/null || true
+@unexec rmdir %D/lib/scim-1.0/icons 2>/dev/null || true
