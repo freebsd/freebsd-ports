@@ -1,0 +1,6 @@
+bin/mctoolamed
+%%PORTDOCS%%%%DOCSDIR%%%%PKGNAMESUFFIX%%/html/default.html
+%%PORTDOCS%%%%DOCSDIR%%%%PKGNAMESUFFIX%%/html/history.html
+%%PORTDOCS%%%%DOCSDIR%%%%PKGNAMESUFFIX%%/html/readme.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%%%PKGNAMESUFFIX%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%%%PKGNAMESUFFIX%%
