@@ -3,7 +3,7 @@
 # Date created:		22 November 1994
 # Whom:			Satoshi Asami (asami)
 #
-# $Id: Makefile,v 1.13 1995/04/01 12:44:49 jkh Exp $
+# $Id: Makefile,v 1.14 1995/04/09 06:11:12 asami Exp $
 #
 
 DISTNAME=	mule-2.2.2
@@ -23,7 +23,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	asami@FreeBSD.ORG
 
 .if !exists(/usr/X11R6/lib/libwnn.a)
-DEPENDS=	${PORTSDIR}/utils/Wnn
+DEPENDS=	${PORTSDIR}/japanese/Wnn
 .endif
 
 WRKSRC=		${WRKDIR}/emacs-19.28
