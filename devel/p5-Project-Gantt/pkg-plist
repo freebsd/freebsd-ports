@@ -9,6 +9,7 @@
 %%SITE_PERL%%/Project/Gantt/Task.pm
 %%SITE_PERL%%/Project/Gantt/TextUtils.pm
 %%SITE_PERL%%/Project/Gantt/TimeSpan.pm
+%%SITE_PERL%%/Project/Gantt/Vera.ttf
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Project/Gantt/.packlist
 @dirrm %%SITE_PERL%%/Project/Gantt
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Project/Gantt
