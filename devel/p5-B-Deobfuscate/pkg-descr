@@ -1,0 +1,8 @@
+B::Deobfuscate is a backend module for the Perl compiler that generates perl
+source code, based on the internal compiled structure that perl itself creates
+after parsing a program. It adds symbol renaming functions to the B::Deparse
+module. An obfuscated program is already parsed and interpreted correctly by
+the B::Deparse program. Unfortunately, if the obfuscation involved variable
+renaming then the resulting program also has obfuscated symbols.
+
+WWW: http://search.cpan.org/dist/B-Deobfuscate/
