@@ -1,6 +1,6 @@
---- bin/gnump3d2.orig	Tue Apr 29 06:18:15 2003
-+++ bin/gnump3d2	Tue Apr 29 06:21:39 2003
-@@ -2234,9 +2234,9 @@
+--- bin/gnump3d2.orig	Fri May  2 18:56:50 2003
++++ bin/gnump3d2	Sat May  3 00:11:54 2003
+@@ -2457,9 +2457,9 @@
    {
        $CONFIG_FILE = $ENV{"HOME"} . "/.gnump3drc";
    }
@@ -12,7 +12,7 @@
    }
    elsif ( -e "gnump3d.conf" )
    {
-@@ -2371,8 +2371,8 @@
+@@ -2599,8 +2599,8 @@
    $PORT          = getConfig( "port", 8888 );
    $bind_address  = getConfig( "binding_host", "" );
    $host          = getConfig( "hostname", "localhost" );
@@ -23,15 +23,14 @@
    $always_stream = getConfig( "always_stream", 1 );
    $access_log    = getConfig( "logfile", "/var/log/gnump3d/access.log" );
    $error_log     = getConfig( "errorlog", "/var/log/gnump3d/error.log" );
-@@ -2380,11 +2380,11 @@
+@@ -2608,10 +2608,10 @@
    $client_host   = getConfig( "use_client_host", 1 );
    $default_theme = getConfig( "theme", "default" );
    $TIMEOUT       = getConfig( "read_time", 10 );
 -  $STATSPROG     = getConfig( "stats_program", "/usr/bin/gnump3d-top" );
 +  $STATSPROG     = getConfig( "stats_program", "%%PREFIX%%/bin/gnump3d-top" );
    $STATSARGS     = getConfig( "stats_arguments", "" );
-   $play_all      = getConfig( "play_all_text", "Play All" );
-   $play_rec      = getConfig( "play_recursively_text",  "Play Recursively" );
+   $play_rec      = getConfig( "play_recursively_text",  "Play" );
 -  $mime_file     = getConfig( "mime_file",  "/etc/gnump3d/mime.types" );
 +  $mime_file     = getConfig( "mime_file",  "%%PREFIX%%/etc/gnump3d/mime.types" );
    $enable_browse = getConfig( "enable_browsing", 1 );
