@@ -26,6 +26,8 @@ BUILD_DEPENDS=	${PERLBASE}/${PERL_ARCH}/Crypt/DES.pm:${PORTSDIR}/security/p5-Cry
 		${PERLBASE}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		${PERLBASE}/${PERL_ARCH}/Math/Pari.pm:${PORTSDIR}/math/p5-Math-Pari \
 		${PERLBASE}/Data/Buffer.pm:${PORTSDIR}/misc/p5-Data-Buffer
+		${PERLBASE}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+		${PERLBASE}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 
 RESTRICTED=	"Crypto; export-controlled"
 
