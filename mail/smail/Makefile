@@ -1,18 +1,17 @@
 # New ports collection makefile for:	smail
-# Version required:	3.1.28
+# Version required:	3.1.29
 # Date created:		16 Oct 1994
 # Whom:			torstenb
 #
-# $Id:$
+# $Id: Makefile,v 1.1.1.1 1994/10/23 01:22:34 torstenb Exp $
 #
 
-DISTNAME=	smail-3.1.28
+DISTNAME=	smail-3.1.29
 MASTER_SITES=	ftp://ftp.uu.net/networking/mail/smail/
 .if !exists(/usr/local/bin/bash)
 DEPENDS=	${PORTSDIR}/shells/bash
 .endif
 MAKE_FLAGS=	"SHELL=/usr/local/bin/bash"
-EXTRACT_SUFX=	.tar.Z
 
 pre-install:
 	@mkdir -p ${PREFIX}/bin
