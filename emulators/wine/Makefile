@@ -3,7 +3,7 @@
 # Date created:         Fri Oct  6 23:43:28 MET 1995
 # Whom:			se
 #
-# $Id: Makefile,v 1.10 1995/10/05 20:50:32 hsu Exp $
+# $Id: Makefile,v 1.11 1995/10/07 00:25:10 se Exp $
 #
 
 DATE=		951003
@@ -27,7 +27,7 @@ pre-configure:
 	@echo "WINE_INI_GLOBAL \"${PREFIX}/etc/wine.conf\"" \
 		>> ${WRKSRC}/autoconf.h
 
-install:
+do-install:
 	install -cs ${WRKSRC}/wine ${PREFIX}/bin
 	-@mkdir ${PREFIX}/etc 2>/dev/null
 	[ -f ${PREFIX}/etc/wine.conf ] \
