@@ -1,5 +1,4 @@
 # New ports collection makefile for:	qpage
-# Version required:	3.2
 # Date created:		02 Aug 1997
 # Whom:			joes@seaport.net
 #

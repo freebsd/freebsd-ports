@@ -1,5 +1,4 @@
 # New ports collection makefile for:    xpipeman
-# Version required:	something real old
 # Date created:         2 Jan 1995
 # Whom:                 swallace
 #

@@ -1,5 +1,4 @@
 # New ports collection makefile for:	nmh
-# Version required:     1.0.3
 # Date created:		07 Feb 1999
 # Whom:			Scott Blachowicz <Scott.Blachowicz@seaslug.org>
 #

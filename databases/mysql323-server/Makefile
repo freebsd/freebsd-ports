@@ -1,5 +1,4 @@
 # ports collection makefile for:	MySQL-server
-# Version required:			v3.22.x
 # Date created:				26 Jan 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
