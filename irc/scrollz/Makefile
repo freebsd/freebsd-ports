@@ -11,7 +11,7 @@ CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.du.se/pub/mirrors/ScrollZ/source/
 DISTNAME=	ScrollZ-${PORTVERSION}
 
-MAINTAINER=	damm@fpsn.net
+MAINTAINER=	damm@yazzy.org
 COMMENT=	Enhanced ircII client that supports scripts, colors, and more
 
 USE_GMAKE= yes
