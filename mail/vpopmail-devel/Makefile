@@ -10,6 +10,8 @@ PORTVERSION=	5.3.9
 CATEGORIES=	mail
 MASTER_SITES=	http://www.inter7.com/devel/
 
+FORBIDDEN=	'Checksum mismatch, new features investigated'
+
 MAINTAINER=	roam@FreeBSD.org
 
 BUILD_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail \
