@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	samplicator
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.switch.ch/tf-tant/floma/sw/samplicator/
 
@@ -15,8 +15,9 @@ MAINTAINER=	lyngbol@wheel.dk
 GNU_CONFIGURE=	yes
 
 post-install:
-	${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/NEWS ${PREFIX}/share/doc/${PORTNAME}/
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/${PORTNAME}/
+	${MKDIR} ${DOCSDIR}
+.for file in NEWS README
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>
