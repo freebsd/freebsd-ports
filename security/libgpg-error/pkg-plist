@@ -1,0 +1,13 @@
+@comment $FreeBSD$
+bin/gpg-error-config
+include/gpg-error.h
+lib/libgpg-error.so.1
+lib/libgpg-error.so
+lib/libgpg-error.la
+lib/libgpg-error.a
+share/aclocal/gpg-error.m4
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

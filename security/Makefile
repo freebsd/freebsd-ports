@@ -145,6 +145,7 @@
     SUBDIR += libecc
     SUBDIR += libfwbuilder
     SUBDIR += libgcrypt
+    SUBDIR += libgpg-error
     SUBDIR += libgringotts
     SUBDIR += libidea
     SUBDIR += libident
