@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	yonatan@xpert.com
 COMMENT=	Free Hebrew Type1 fonts
 
-BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+BUILD_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
 
 USE_X_PREFIX=	yes
 NO_BUILD=	yes

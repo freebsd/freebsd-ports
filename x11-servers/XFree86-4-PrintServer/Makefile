@@ -40,4 +40,8 @@ do-install:
 	$(INSTALL_PROGRAM) ${WRKSRC}/programs/Xserver/Xprt ${PREFIX}/bin/Xprt
 
 .include "${.CURDIR}/../../x11/XFree86-4-libraries/Makefile.inc"
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${X_WINDOW_SYSTEM:L} != xfree86-4
+IGNORE= is part of XFree86-4
+.endif
+.include <bsd.port.post.mk>

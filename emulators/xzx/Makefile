@@ -20,7 +20,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ZX Spectrum (48K/128K/+3) Emulator for X11
 
 # xmkmf is used in configure script; USE_IMAKE makes the build unhappy
-BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake-4
+BUILD_DEPENDS=	xmkmf:${X_IMAKE_PORT}
 
 USE_MOTIF=	yes
 USE_X_PREFIX=	yes

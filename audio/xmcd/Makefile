@@ -45,7 +45,7 @@ post-patch:
 		-e 's|_CFLAGS= -pthread|_CFLAGS= ${PTHREAD_CFLAGS}|g; \
 		s|_LDFLAGS= -pthread|_LDFLAGS= ${PTHREAD_LIBS}|g'
 
-.if ${XFREE86_VERSION} == 4
+.if ${X_WINDOW_SYSTEM:L} != xfree86-3
 post-build:
 	(cd ${WRKSRC}; \
 	 for i in xmcd cda; do \
@@ -62,7 +62,7 @@ post-install:
 	@${STRIP_CMD} ${LIBBINDIR}/xmcd
 	@${CAT} ${PKGMESSAGE}
 	@${CP} ${WRKSRC}/xmcd_d/XMcd.ad ${PREFIX}/lib/X11/app-defaults/XMcd
-.if ${XFREE86_VERSION} == 4
+.if ${X_WINDOW_SYSTEM:L} != xfree86-3
 	(cd ${WRKSRC}; \
 	 for i in xmcd cda; do \
 		${INSTALL_MAN} $${i}.1.html ${PREFIX}/lib/X11/doc/html; \

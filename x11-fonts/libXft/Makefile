@@ -27,8 +27,8 @@ MAN3=		Xft.3
 
 .include <bsd.port.pre.mk>
 
-.if ${XFREE86_VERSION} == 3
-BROKEN=	Xft requires XFree86 4.x to build.
+.if ${X_WINDOW_SYSTEM:L} == xfree86-3
+IGNORE=	Xft requires Render extension headers/library to build.
 .endif
 
 .include <bsd.port.post.mk>

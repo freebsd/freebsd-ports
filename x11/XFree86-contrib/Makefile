@@ -28,7 +28,7 @@ MAN1=		ico.1 listres.1 showfont.1 viewres.1 xbiff.1 xcalc.1 \
 
 .include <bsd.port.pre.mk>
 
-.if ${XFREE86_VERSION} != 3
+.if ${X_WINDOW_SYSTEM:L} != xfree86-3
 IGNORE=		"Only for XFree86 version 3"
 .endif
 

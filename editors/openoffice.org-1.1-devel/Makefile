@@ -113,7 +113,7 @@ BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk14 \
 		${ANT}:${PORTSDIR}/devel/apache-ant \
 		${X11BASE}/lib/libXft.so:${PORTSDIR}/x11-fonts/libXft
 .if !defined(DISPLAY)
-BUILD_DEPENDS+= Xvfb:${PORTSDIR}/x11-servers/XFree86-4-VirtualFramebufferServer
+BUILD_DEPENDS+= Xvfb:${X_VFBSERVER_PORT}
 .endif
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

@@ -48,7 +48,7 @@ LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 ## Additional Options
 ##
 #
-.if ${XFREE86_VERSION} < 4 || defined(WITHOUT_XFT)
+.if ${X_WINDOW_SYSTEM:L} == xfree86-3 || defined(WITHOUT_XFT)
 CONFIGURE_ARGS+=	--with-xft=no
 .else
 CONFIGURE_ARGS+=	--with-xft=yes

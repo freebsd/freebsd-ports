@@ -60,6 +60,9 @@ DebuggableLibraries?=	NO
 
 .include "Makefile.inc"
 .include <bsd.port.pre.mk>
+.if ${X_WINDOW_SYSTEM:L} != xfree86-4
+IGNORE= is part of XFree86-4
+.endif
 
 # BuildXF86DRI is false for FreeBSD < 4.1
 .if ${OSVERSION} < 410000

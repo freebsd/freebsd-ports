@@ -20,7 +20,6 @@ BUILD_DEPENDS=	ucs2any:${PORTSDIR}/x11/XFree86-4-clients
 
 CONFLICTS=	xorg-fonts-encodings-*
 
-XFREE86_VERSION=	4
 USE_IMAKE=		YES
 PROJECTROOT=		-DProjectRoot=${PREFIX}
 DIST_SUBDIR=		xc
@@ -35,4 +34,8 @@ do-configure:
 	 ${MAKE} includes ; \
 	 ${MAKE} depend)
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${X_WINDOW_SYSTEM:L} != xfree86-4
+IGNORE= is part of XFree86-4
+.endif
+.include <bsd.port.post.mk>

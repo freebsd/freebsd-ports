@@ -20,7 +20,9 @@ COMMENT=	X11 ${PKGNAMESUFFIX}-dot kanji font
 
 EXTRACT_DEPENDS=	gunshar:${PORTSDIR}/archivers/sharutils
 BUILD_DEPENDS=	mkbold:${PORTSDIR}/x11-fonts/mkbold \
-		mkitalic:${PORTSDIR}/x11-fonts/mkitalic
+		mkitalic:${PORTSDIR}/x11-fonts/mkitalic \
+		bdftopcf:${X_CLIENTS_PORT}
+RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
 
 DIST_SUBDIR=	${DISTNAME}
 FONTSDIR=	lib/X11/fonts/local
@@ -28,11 +30,6 @@ NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 4
-BUILD_DEPENDS+=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-.endif
 
 EXTRACT_CMD=		zcat
 EXTRACT_BEFORE_ARGS=

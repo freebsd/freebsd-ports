@@ -19,18 +19,13 @@ MAINTAINER=	yoichi@FreeBSD.org
 COMMENT=	Japanese jisx0213 fonts
 
 BUILD_DEPENDS=	mkbold:${PORTSDIR}/x11-fonts/mkbold \
-		mkitalic:${PORTSDIR}/x11-fonts/mkitalic
+		mkitalic:${PORTSDIR}/x11-fonts/mkitalic \
+		bdftopcf:${X_CLIENTS_PORT}
+RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
 
 NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
 FONTSDIR=	lib/X11/fonts/local
-
-.include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 4
-BUILD_DEPENDS+=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-.endif
 
 EXTRACT_CMD=		${CP}
 EXTRACT_BEFORE_ARGS=	-p
@@ -50,4 +45,4 @@ pre-install:
 post-install:
 	@(cd ${PREFIX}/${FONTSDIR}; mkfontdir)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

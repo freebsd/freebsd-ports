@@ -25,7 +25,7 @@ RUN_DEPENDS=	/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 
 .include <bsd.port.pre.mk>
 
-.if ${XFREE86_VERSION} == 4
+.if ${X_WINDOW_SYSTEM:L} != xfree86-3
 RUN_DEPENDS +=	/compat/linux/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
 .else
 RUN_DEPENDS +=	/compat/linux/lib/libGL.so:${PORTSDIR}/graphics/linux_glx

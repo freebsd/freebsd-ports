@@ -34,7 +34,7 @@ USE_X_PREFIX=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${XFREE86_VERSION} == 3
+.if ${X_WINDOW_SYSTEM:L} == xfree86-3
 RUN_DEPENDS=	xfstt:${PORTSDIR}/x11-servers/Xfstt
 .endif
 
@@ -54,7 +54,7 @@ PLIST_SUB=	PKG_OLDXF86=${PKG_OLDXF86} \
 MSG_FILE=	${PKGDIR}/pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-.if ${XFREE86_VERSION} == 3
+.if ${X_WINDOW_SYSTEM:L} == xfree86-3
 OLDXF86=
 .else
 OLDXF86=	"@comment "
@@ -179,7 +179,7 @@ install-fonts:
 post-install: truetype-link display-message
 
 truetype-link:
-.if ${XFREE86_VERSION} == 3
+.if ${X_WINDOW_SYSTEM:L} == xfree86-3
 	${LN} -fs ${FONTSDIR} ${TTFONTSDIR}/${FONTNAME}
 .endif
 

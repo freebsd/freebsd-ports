@@ -16,13 +16,9 @@ DISTNAME=	hanyang-font-pcf
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	Hanyang Hangul fonts for X11
 
+RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+
 USE_X_PREFIX=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 4
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-.endif
 
 NO_WRKSUBDIR=   yes
 
@@ -44,4 +40,4 @@ do-install:
 	done; \
 	mkfontdir ${PREFIX}/lib/X11/fonts/local
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

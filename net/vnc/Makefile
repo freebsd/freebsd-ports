@@ -32,8 +32,8 @@ MAN1=		vncviewer.1 \
 MAN1+=		Xvnc.1 \
 		vncserver.1
 
-RUN_DEPENDS+=	xauth:${PORTSDIR}/x11/XFree86-4-clients \
-${X11BASE}/lib/X11/fonts/misc/6x13-ISO8859-1.pcf.gz:${PORTSDIR}/x11-fonts/XFree86-4-fontDefaultBitmaps
+RUN_DEPENDS=	xauth:${X_CLIENTS_PORT} \
+		${X11BASE}/lib/X11/fonts/misc/6x13-ISO8859-1.pcf.gz:${X_FONTS_MISC_PORT}
 
 USE_PERL5_RUN=	yes
 .endif

@@ -17,14 +17,10 @@ DISTNAME=	pinetree.precomposed-${PORTVERSION}-bdf
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	Hangul fonts for X11(pinetree, KSC5601-1987-0 encoding)
 
+BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
+RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+
 USE_X_PREFIX=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 4
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-.endif
 
 WRKSRC=		${WRKDIR}/pinetree.precomposed/bdf
 
@@ -46,4 +42,4 @@ do-install:
 	done; \
 	mkfontdir ${PREFIX}/lib/X11/fonts/local
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -27,4 +27,8 @@ XBUILD_DIRS=	fonts/encodings fonts/scaled/Type1
 XINSTALL_DIRS=	fonts/scaled/Type1
 
 .include "${.CURDIR}/../../x11-servers/xorg-server/Makefile.inc"
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${X_WINDOW_SYSTEM:L} != xorg
+IGNORE= is part of X.Org
+.endif
+.include <bsd.port.post.mk>

@@ -16,11 +16,11 @@ EXTRACT_ONLY=
 MAINTAINER=	mdodd@freebsd.org
 COMMENT=	The Linux "A Tale in the Desert" (ATITD) client
 
-RUN_DEPENDS=	${X11BASE}/bin/xhost:${PORTSDIR}/x11/XFree86-4-clients
+RUN_DEPENDS=	${X11BASE}/bin/xhost:${X_CLIENTS_PORT}
 
 .include <bsd.port.pre.mk>
 
-.if ${XFREE86_VERSION} == 4
+.if ${X_WINDOW_SYSTEM:L} != xfree86-3
 RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
 .else
 RUN_DEPENDS+=	${LINUXBASE}/lib/libGL.so:${PORTSDIR}/graphics/linux_glx

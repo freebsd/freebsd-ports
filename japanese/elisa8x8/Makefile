@@ -14,13 +14,11 @@ DISTNAME=	elisat10
 MAINTAINER=	toshi@tea.forus.or.jp
 COMMENT=	X11 8-dot kanji font 'elisa font'
 
+RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+
 USE_X_PREFIX=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 4
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-.endif
 
 NO_WRKSUBDIR=	yes
 

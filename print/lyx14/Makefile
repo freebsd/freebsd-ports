@@ -18,7 +18,7 @@ COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG)
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		latex:${PORTSDIR}/print/teTeX \
-		makepsres:${PORTSDIR}/x11/XFree86-4-clients
+		makepsres:${X_CLIENTS_PORT}
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		latex:${PORTSDIR}/print/teTeX
 

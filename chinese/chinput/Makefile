@@ -16,12 +16,10 @@ DISTNAME=	zh-chinput-2.1
 MAINTAINER=	phj@cn.FreeBSD.org
 COMMENT=	Chinese GB2312,BIG5,Japanese code input server
 
-USE_XLIB=	yes
+BUILD_DEPENDS=	xmkmf:${X_IMAKE_PORT} \
+		mkfontdir:${X_CLIENTS_PORT}
 
-.if defined(XFREE86_VERSION) && ${XFREE86_VERSION} == 4
-BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake-4 \
-		mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-.endif
+USE_XLIB=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

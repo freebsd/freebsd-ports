@@ -14,14 +14,10 @@ MASTER_SITE_SUBDIR=	applications
 MAINTAINER=	Yonatan@xpert.com
 COMMENT=	3270 Terminal emulator
 
+BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
+RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+
 USE_IMAKE=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 4
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-.endif
 
 WRKSRC=		${WRKDIR}/x3270-3.1.1
 MAN1=		x3270.1 x3270if.1 x3270-script.1 ibm_hosts.1
@@ -47,4 +43,4 @@ post-configure:
 	    -e 's,%%CC%%,${CC},' \
 	    ${WRKSRC}/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

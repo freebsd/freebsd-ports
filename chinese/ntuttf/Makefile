@@ -24,7 +24,7 @@ SHAREMODE=	644
 USE_XLIB=	yes
 FONTDIR=	${PREFIX}/share/fonts/TrueType
 XFONTDIR=	${X11BASE}/lib/X11/fonts/TrueType
-INSTALL_ENV=	PKG_PREFIX=${PREFIX} XFREE86_VERSION=${XFREE86_VERSION} \
+INSTALL_ENV=	PKG_PREFIX=${PREFIX} \
 		WANT_CJK=${WANT_CJK} WANT_GS=${WANT_GS} \
 		WITHOUT_X=${WITHOUT_X}
 
@@ -35,9 +35,6 @@ RUN_DEPENDS+=	bg5latex:${PORTSDIR}/chinese/CJK
 .endif
 .if defined(WANT_GS)
 RUN_DEPENDS+=	${LOCALBASE}/share/ghostscript/Resource/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps
-.endif
-.if ${XFREE86_VERSION} == 3 && !defined(WITHOUT_X)
-RUN_DEPENDS+=	mkfontdir.pl:${PORTSDIR}/x11-servers/XttXF86srv-common
 .endif
 
 pre-fetch:

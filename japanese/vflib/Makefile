@@ -16,7 +16,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	mita@FreeBSD.org
 COMMENT=	Japanese Vector font library
 
-BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake-4
+BUILD_DEPENDS=	xmkmf:${X_IMAKE_PORT}
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/TrueType/kochi-mincho-subst.ttf:${PORTSDIR}/japanese/kochi-ttfonts
 
 VFLIB_VERSION=	2.25.6

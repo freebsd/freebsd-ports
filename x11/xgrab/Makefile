@@ -17,13 +17,10 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	jmz@FreeBSD.org
 COMMENT=	An X11 image grabber
 
+BUILD_DEPENDS=	xrdb:${X_CLIENTS_PORT}
+
 USE_X_PREFIX=	yes
 USE_IMAKE=	yes
-
-.include <bsd.port.pre.mk>
-.if ${XFREE86_VERSION} == 4
-BUILD_DEPENDS=	xrdb:${PORTSDIR}/x11/XFree86-4-clients
-.endif
 
 MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 \
 		XAPPLOADDIR=${PREFIX}/lib/X11/app-defaults  -f
@@ -36,4 +33,4 @@ IGNORE=		Requires an active X session (and DISPLAY variable) to run xrdb.  Pleas
 
 MAN1=		xgrab.1 xgrabsc.1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -21,7 +21,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vector font library with free vector font, BIG5 and GB supported
 
-BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake-4
+BUILD_DEPENDS=	xmkmf:${X_IMAKE_PORT}
 
 VFLIB_VERSION=	2.25.1
 PLIST_SUB=	VFLIB_VERSION=${VFLIB_VERSION}

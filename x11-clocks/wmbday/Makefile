@@ -12,7 +12,7 @@ MASTER_SITES=	http://buzzinhornetz.ath.cx/wmbday/files/
 MAINTAINER=	q@uni.de
 COMMENT=	Window Maker dock app that will remind you of birthdays
 
-BUILD_DEPENDS=	${X11BASE}/bin/xmessage:${PORTSDIR}/x11/XFree86-4-clients
+BUILD_DEPENDS=	${X11BASE}/bin/xmessage:${X_CLIENTS_PORT}
 
 HAS_CONFIGURE=	yes
 USE_XLIB=	yes

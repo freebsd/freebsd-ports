@@ -51,7 +51,7 @@ post-configure:
 
 post-build:
 	(cd ${WRKSRC}/contrib/xmindpath; make)
-.if ${XFREE86_VERSION} == 4
+.if ${X_WINDOW_SYSTEM:L} != xfree86-3
 	(cd ${WRKSRC}/contrib/xmindpath; \
 	 ${RM} -f xmindpath.1.html xmindpath-1.html; \
 	 ${X11BASE}/bin/rman -f HTML < xmindpath.1 > xmindpath-1.html && \
@@ -62,7 +62,7 @@ post-build:
 post-install:
 	(cd ${WRKSRC}/contrib/xmindpath; make install)
 	${GZIP_CMD} ${PREFIX}/man/man1/xmindpath.1
-.if ${XFREE86_VERSION} == 4
+.if ${X_WINDOW_SYSTEM:L} != xfree86-3
 	(cd ${WRKSRC}/contrib/xmindpath; \
 	 ${INSTALL_MAN} xmindpath.1.html ${PREFIX}/lib/X11/doc/html)
 .endif

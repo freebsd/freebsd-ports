@@ -7,7 +7,6 @@
 
 PORTNAME=	xorg
 PORTVERSION=	6.7.0
-PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -54,4 +53,8 @@ DEPENDS_TARGET="package"
 
 do-install:	# empty
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${X_WINDOW_SYSTEM:L} != xorg
+IGNORE= is part of X.Org
+.endif
+.include <bsd.port.post.mk>

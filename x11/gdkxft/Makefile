@@ -33,7 +33,7 @@ MAN8=		gdkxft_sysinstall.8
 
 .include <bsd.port.pre.mk>
 
-.if ${XFREE86_VERSION} < 4
+.if ${X_WINDOW_SYSTEM:L} == xfree86-3
 IGNORE=		"requires XFree86-4.x or later to run"
 .endif
 

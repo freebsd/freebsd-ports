@@ -17,7 +17,7 @@ MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Fonts from the SGI ProPack 1.4 (originally for Linux)
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
+BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
 
 PLIST=		${WRKDIR}/pkg-plist
 PLIST_DIRS=	lib/X11/fonts/local/sgi

@@ -17,7 +17,6 @@ DISTFILES=	X430src-1.tgz \
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XFree86-4 documentation
 
-XFREE86_VERSION=	4
 USE_IMAKE=		YES
 PROJECTROOT=		-DProjectRoot=${PREFIX}
 DIST_SUBDIR=		xc
@@ -36,4 +35,8 @@ do-configure:
 	 ${MAKE} includes ; \
 	 ${MAKE} depend)
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${X_WINDOW_SYSTEM:L} != xfree86-4
+IGNORE= is part of XFree86-4
+.endif
+.include <bsd.port.post.mk>

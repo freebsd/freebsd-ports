@@ -18,7 +18,6 @@ COMMENT=	XFree86-4 man pages
 
 CONFLICTS=	xorg-manpages-*
 
-XFREE86_VERSION=	4
 USE_IMAKE=		YES
 EXTRACT_TARGET=		xc/doc/man \
 			xc/extras/ogl-sample/main/doc/man
@@ -37,5 +36,11 @@ do-configure:
 	 ${MAKE} depend)
 
 .include <bsd.port.pre.mk>
+
+.if ${X_WINDOW_SYSTEM:L} != xfree86-4
+IGNORE= is part of XFree86-4
+.endif
+
 .include "${FILESDIR}/manpages"
+
 .include <bsd.port.post.mk>

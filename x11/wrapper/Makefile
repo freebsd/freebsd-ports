@@ -30,4 +30,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Xwrapper-4 ${PREFIX}/bin
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${X_WINDOW_SYSTEM:L} != xfree86-4
+IGNORE= is part of XFree86-4
+.endif
+.include <bsd.port.post.mk>

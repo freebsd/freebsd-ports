@@ -20,11 +20,9 @@ USE_IMAKE=	yes
 
 .include <bsd.port.pre.mk>
 
-BUILD_DEPENDS=  ${LOCALBASE}/lib/libviqr.a:${PORTSDIR}/vietnamese/libviet
+BUILD_DEPENDS=  ${LOCALBASE}/lib/libviqr.a:${PORTSDIR}/vietnamese/libviet \
+		mkfontdir:${X_CLIENTS_PORT}
 RUN_DEPENDS=	${PREFIX}/lib/X11/fonts/vietnamese/fonts.dir:${PORTSDIR}/vietnamese/vnxfonts
-.if ${XFREE86_VERSION} == 4
-BUILD_DEPENDS+=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-.endif
 
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - xc/programs/xterm
 WRKSRC=		${WRKDIR}/xc/programs/xterm

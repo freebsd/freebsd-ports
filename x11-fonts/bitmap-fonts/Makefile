@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${BITMAP_FONTS_VER}
 MAINTAINER=	shige@FreeBSD.org
 COMMENT=	Bitmap font, (6x12, 7x14, 8x16, 12x24) dots bitmap font
 
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86
+BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
 
 # distfile version
 BITMAP_FONTS_VER=	1.0
@@ -28,14 +28,6 @@ WRKSRC=		${WRKDIR}
 USE_X_PREFIX=	yes
 
 PLIST_SUB=	FONTSDIR=${FONTSDIR}
-
-.include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 3
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86
-.elif ${XFREE86_VERSION} == 4
-RUN_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
-.endif
 
 do-build:
 	@(cd ${WRKSRC}; \
@@ -64,4 +56,4 @@ post-install:
 	@${SETENV} PKG_PREFIX=${X11BASE} \
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -54,7 +54,7 @@ ALL_TARGET=	depend all
 
 .include <bsd.port.pre.mk>
 
-.if ${XFREE86_VERSION} > 3
+.if ${X_WINDOW_SYSTEM:L} != xfree86-3
 IGNORE=		"Requires XFree86 3.3.* - will not work with XFree86 4.*"
 .endif
 

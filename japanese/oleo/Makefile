@@ -22,7 +22,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Spreadsheet Program + Japanese patches
 
 # xmkmf is for configure script, not for USE_IMAKE.
-BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake-4
+BUILD_DEPENDS=	xmkmf:${X_IMAKE_PORT}
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"

@@ -11,12 +11,9 @@ MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/gugod/
 MAINTAINER=	gugod@gugod.org
 COMMENT=	A pretty font modifyed from X11 schumacher-clean that match kcfonts
 
-USE_X_PREFIX=	yes
-.include <bsd.port.pre.mk>
+RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
 
-.if ${XFREE86_VERSION} == 4
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-.endif
+USE_X_PREFIX=	yes
 
 FONTFILES=	gugod16.bdf gugod18.bdf gugod20.bdf gugod22.bdf
 
@@ -32,4 +29,4 @@ do-install:
 .endfor
 	@cd ${XFONTDIR} ; mkfontdir
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -14,13 +14,7 @@ DISTNAME=	Wnn6-SDK
 MAINTAINER=	taoka@FreeBSD.org
 COMMENT=	Include files and a library of Wnn6
 
-.include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 3
-BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
-.else
-BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
-.endif
+BUILD_DEPENDS=	imake:${X_IMAKE_PORT}
 
 WRKSRC=		${WRKDIR}/src/contrib/im/Xsi
 DOCDIR=		${PREFIX}/share/doc/ja-Wnn6-lib
@@ -30,6 +24,8 @@ INSTALLS_SHLIB=	yes
 # Warning: we cannot use USE_IMAKE.
 do-build:
 	( cd ${WRKSRC} ; make World -f Makefile.ini )
+
+.include <bsd.port.pre.mk>
 
 post-install:
 .if ${PORTOBJFORMAT} == "aout"

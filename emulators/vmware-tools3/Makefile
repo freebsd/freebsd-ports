@@ -42,7 +42,7 @@ UMOUNT=		/sbin/umount
 
 .include <bsd.port.pre.mk>
 
-.if ${XFREE86_VERSION} == 3
+.if ${X_WINDOW_SYSTEM:L} == xfree86-3
 PLIST_SUB+=	INSTALLXSERVER:=""
 .else
 PLIST_SUB+=	INSTALLXSERVER:="@comment "
@@ -82,7 +82,7 @@ post-extract:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vmware-toolbox ${PREFIX}/bin
-.if ${XFREE86_VERSION} == 3
+.if ${X_WINDOW_SYSTEM:L} == xfree86-3
 	${INSTALL_PROGRAM} ${WRKSRC}/XF86_VMware ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/XF86Config.dist ${PREFIX}/etc/XF86Config_VMware
 	@${ECHO} ""

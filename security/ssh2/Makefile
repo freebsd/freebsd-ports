@@ -92,10 +92,8 @@ EXTRA_PATCHES+=		${FILESDIR}/kerberos-patch-apps::ssh::ssh2_config \
 .endif
 
 .if !defined(WITHOUT_X11)
-.if ${XFREE86_VERSION} == 4
-BUILD_DEPENDS+=		${X11BASE}/bin/xauth:${PORTSDIR}/x11/XFree86-4-clients
-RUN_DEPENDS+=		${X11BASE}/bin/xauth:${PORTSDIR}/x11/XFree86-4-clients 
-.endif
+BUILD_DEPENDS+=		${X11BASE}/bin/xauth:${X_CLIENTS_PORT}
+RUN_DEPENDS+=		${X11BASE}/bin/xauth:${X_CLIENTS_PORT} 
 USE_XLIB=		yes
 PLIST_SUB+=		WITH_X11:=""
 .else

@@ -63,6 +63,10 @@ NOT_FOR_ARCHS=	ia64
 .include "${.CURDIR}/../../x11-servers/xorg-server/Makefile.inc"
 .include <bsd.port.pre.mk>
 
+.if ${X_WINDOW_SYSTEM:L} != xorg
+IGNORE= is part of X.Org
+.endif
+
 .if ${ARCH} == ia64
 PLIST_SUB+=	IA64_NA="@comment "
 .else

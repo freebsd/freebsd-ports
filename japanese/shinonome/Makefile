@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	. old
 MAINTAINER=	yoichi@FreeBSD.org
 COMMENT=	Japanese 12,14,16 dot fonts
 
+BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
+RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -24,11 +27,6 @@ DOCSDIR=	share/doc/shinonome
 CONFIGURE_ARGS=	--with-fontdir=${PREFIX}/${FONTSDIR} --enable-compress
 
 .include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 4
-BUILD_DEPENDS+=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-.endif
 
 FONTNAMES=\
 	shnm6x12a    shnm6x12ab   shnm6x12ai   shnm6x12abi   \

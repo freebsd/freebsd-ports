@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced version of VNC
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/misc/10x20.pcf.gz:${X_FONTS_MISC_PORT}
 
 WRKSRC=		${WRKDIR}/vnc_unixsrc
 
@@ -34,10 +35,6 @@ MAN1=		Xvnc.1 vncviewer.1 vncpasswd.1 vncconnect.1 vncserver.1
 
 .if ${ARCH} != "i386"
 BROKEN=		"Does not compile on !i386"
-.endif
-
-.if ${XFREE86_VERSION} >= 4
-RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/misc/10x20.pcf.gz:${PORTSDIR}/x11-fonts/XFree86-4-fontDefaultBitmaps
 .endif
 
 .if exists(${X11BASE}/share/vnc/classes/index.vnc)

@@ -20,13 +20,9 @@ NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
 NO_BUILD=	taken care of in do-install target
 
-.include <bsd.port.pre.mk>
-
-BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir
-.if ${XFREE86_VERSION} == 4
-BUILD_DEPENDS+=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-.endif
+BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir \
+		bdftopcf:${X_CLIENTS_PORT}
+RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/X11/fonts/TrueType
@@ -35,6 +31,6 @@ do-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
 
 EXTRACT_BEFORE_ARGS+=	-L

@@ -22,18 +22,14 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An xterm that speaks Chinese
 
+BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
+RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+
 WRKSRC=		${WRKDIR}/cxterm-5.0
 USE_IMAKE=	yes
 
 MAN1=		cit2tit.1 cxterm.1 hzimctrl.1 tit2cit.1
 MANCOMPRESSED=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 4
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-.endif
 
 XMKMF=		xmkmf
 ALL_TARGET=	xrelease Makefiles includes all
@@ -53,4 +49,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/Doc/input.doc ${PREFIX}/share/doc/cxterm
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

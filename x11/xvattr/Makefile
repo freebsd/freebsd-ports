@@ -26,8 +26,8 @@ MAN1=		xvattr.1
 
 .include <bsd.port.pre.mk>
 
-.if ${XFREE86_VERSION} == 3
-IGNORE=		"Require Xv Extension"
+.if ${X_WINDOW_SYSTEM:L} == xfree86-3
+IGNORE=		"Requires Xv Extension"
 .endif
 
 .include <bsd.port.post.mk>

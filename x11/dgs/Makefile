@@ -37,7 +37,7 @@ MANN=		dpsexec.man makepsres.man xepsf.man
 
 .include <bsd.port.pre.mk>
 
-.if ${XFREE86_VERSION} > 3
+.if ${X_WINDOW_SYSTEM:L} != xfree86-3
 IGNORE=		"is included in XFree86 4.x and above"
 .endif
 

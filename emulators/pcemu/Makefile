@@ -26,14 +26,10 @@ DISTNAME=	pcemu1.01alpha
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	An 8086 PC emulator, by David Hedley
 
-.include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 4
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-.endif
+BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
+RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
 
 USE_XLIB=	yes
 MAKE_ENV=	FILESDIR=${FILESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

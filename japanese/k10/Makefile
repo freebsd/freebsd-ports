@@ -16,16 +16,13 @@ MAINTAINER=	usagi@clave.gr.jp
 COMMENT=	X11 10-dot kanji font 'naga10 font'
 
 BUILD_DEPENDS=	mkbold:${PORTSDIR}/x11-fonts/mkbold \
-		mkitalic:${PORTSDIR}/x11-fonts/mkitalic
+		mkitalic:${PORTSDIR}/x11-fonts/mkitalic \
+		bdftopcf:${X_CLIENTS_PORT}
+RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
 
 USE_X_PREFIX=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 4
-BUILD_DEPENDS+=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-.endif
 
 FONTSDIR=	lib/X11/fonts/local
 MAKE_ENV=	FONTSDIR=${FONTSDIR}
