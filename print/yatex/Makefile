@@ -3,7 +3,7 @@
 # Date created:		98/11/17
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.4 1998/11/15 12:21:56 kuriyama Exp $
+# $Id: Makefile,v 1.5 1998/11/20 18:19:09 itojun Exp $
 #
 
 DISTNAME=	yatex1.66
@@ -14,10 +14,6 @@ MASTER_SITES=	http://www.comp.ae.keio.ac.jp/~yuuji/yatex/ \
 
 MAINTAINER=	taoka@infonets.hiroshima-u.ac.jp
 
-PATCHDIR=	${.CURDIR}/../../print/yatex/patches
-FILESDIR=	${.CURDIR}/../../print/yatex/files
-PKGDIR=		${.CURDIR}/../../print/yatex/pkg
-PLIST=		${.CURDIR}/pkg/PLIST
 WRKSRC=		${WRKDIR}/yatex${VERSION}
 .if defined(XEMACS-MULE)
 BUILD_DEPENDS=	xemacs:${PORTSDIR}/editors/xemacs-mule \

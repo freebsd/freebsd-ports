@@ -3,20 +3,17 @@
 # Date created:		6 Mar 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.13 1998/09/21 22:33:24 steve Exp $
+# $Id: Makefile,v 1.14 1998/11/19 04:46:44 itojun Exp $
 #
 
-# can't use PORTSDIR here, since we haven't included bsd.port.mk
-FILESDIR=	${.CURDIR}/../../editors/nvi-m17n/files
-PATCHDIR=	${.CURDIR}/../../editors/nvi-m17n/patches
-PKGDIR=		${.CURDIR}/../../editors/nvi-m17n/pkg
+PKGNAME=	ja-nvi-eucjp-1.79.19981119
+
+MASTERDIR=	${.CURDIR}/../../editors/nvi-m17n
 COMMENT=	${.CURDIR}/pkg/COMMENT
 
 LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/Canna
 
-PKGNAME=	ja-nvi-eucjp-1.79.19981119
-
-.include <${.CURDIR}/../../editors/nvi-m17n/Makefile>
+.include	"${MASTERDIR}/Makefile"
 
 CATEGORIES=	japanese editors
 

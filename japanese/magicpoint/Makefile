@@ -3,20 +3,17 @@
 # Date created:		25 Dec 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.4 1998/09/06 13:48:20 itojun Exp $
+# $Id: Makefile,v 1.5 1998/10/07 06:11:41 asami Exp $
 #
 
-# can't use PORTSDIR here, since we haven't included bsd.port.mk
-FILESDIR=	${.CURDIR}/../../misc/magicpoint/files
-PATCHDIR=	${.CURDIR}/../../misc/magicpoint/patches
-PKGDIR=		${.CURDIR}/../../misc/magicpoint/pkg
+MASTERDIR=	${.CURDIR}/../../misc/magicpoint
 COMMENT=	${.CURDIR}/pkg/COMMENT
 
 LIB_DEPENDS=	VFlib2.23:${PORTSDIR}/japanese/vflib
 
 PKGNAME=	ja-magicpoint-1.04a
 
-.include <${.CURDIR}/../../misc/magicpoint/Makefile>
+.include "${MASTERDIR}/Makefile"
 
 CATEGORIES=	japanese misc
 

@@ -3,10 +3,12 @@
 # Date created:		5 Sep 1997
 # Whom:			Satoshi TAOKA <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/08 22:05:47 kuriyama Exp $
 #
 
 PKGNAME=	ja-onew-wnn6-2.2.10
 WNN6=		yes
 
-.include "${.CURDIR}/../onew-wnn4/Makefile"
+MASTERDIR=	${.CURDIR}/../onew-wnn4
+
+.include	"${MASTERDIR}/Makefile"

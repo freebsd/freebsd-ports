@@ -3,7 +3,7 @@
 # Date created:		15 April 1997
 # Whom:			Kiriyama Kazuhiko<kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.7 1998/06/04 18:28:10 itojun Exp $
+# $Id: Makefile,v 1.8 1998/08/24 01:04:42 steve Exp $
 #
 
 PKGNAME=	ja-gp-2.5p2
@@ -11,4 +11,7 @@ CATEGORIES=	japanese print
 
 LANGUAGE=	Japanese
 
-.include "${.CURDIR}/../../print/gp/Makefile"
+MASTERDIR=	${.CURDIR}/../../print/gp
+PKGDIR=		${.CURDIR}/pkg
+
+.include "${MASTERDIR}/Makefile"

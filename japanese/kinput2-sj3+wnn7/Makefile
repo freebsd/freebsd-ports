@@ -3,11 +3,14 @@
 # Date created:		19 Dec 1997
 # Whom:			Satoshi TAOKA <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/06/29 14:19:02 kuriyama Exp $
 #
 
 PKGNAME=	ja-kinput2-sj3+wnn6-2.0.4
 SJ3=		yes
 WNN6=		yes
 
-.include "${.CURDIR}/../kinput2-wnn4/Makefile"
+MASTERDIR=	${.CURDIR}/../kinput2-wnn4/
+PKGDIR=		${.CURDIR}/pkg
+
+.include "${MASTERDIR}/Makefile"

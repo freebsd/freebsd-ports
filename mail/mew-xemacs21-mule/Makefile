@@ -3,7 +3,7 @@
 # Date created:		17 January 1998
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/11/05 22:11:54 kuriyama Exp $
 #
 
 PKGNAME=	mew-xemacs-mule-1.93
@@ -15,4 +15,7 @@ DIRENTRY=	"* Mew::		Messaging in the Emacs World (English)." \
 INFOFILE=	mew.info \
 		mew.jis.info
 
-.include "${.CURDIR}/../../mail/mew-common/Makefile"
+MASTERDIR=	${.CURDIR}/../../mail/mew-common
+PKGDIR=		${.CURDIR}/pkg
+
+.include	"${MASTERDIR}/Makefile"

@@ -3,7 +3,7 @@
 # Date created:		06 November 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.17 1998/11/25 05:06:25 jseger Exp $
+# $Id: Makefile,v 1.18 1998/11/25 09:01:22 asami Exp $
 #
 
 DISTNAME=	tk8.0p2
@@ -21,6 +21,7 @@ LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80 \
 		Xpm.4:${PORTSDIR}/graphics/xpm \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff34
+FILE_DEPENDS=	${PORTSDIR}/x11-toolkits/tk80
 
 FETCH_BEFORE_ARGS=	-b
 PATCH_DIST_ARGS=	-p1 -d ${WRKDIR}/tk8.0 -E --quiet

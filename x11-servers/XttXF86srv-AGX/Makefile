@@ -3,7 +3,7 @@
 # Date created:		15 April 1998
 # Whom:			Taguchi Takeshi <taguchi@tohoku.iij.ad.jp>
 #
-# $Id: Makefile,v 1.2 1998/09/01 13:41:03 asami Exp $
+# $Id: Makefile,v 1.3 1998/10/10 04:22:03 steve Exp $
 #
 
 DISTNAME=	xc
@@ -16,4 +16,7 @@ RUN_DEPENDS=	mkfontdir.pl:${.CURDIR}/../XttXF86srv-common
 
 SERVER=		XF86_AGX
 
-.include "${.CURDIR}/../XttXF86srv-common/Makefile"
+MASTERDIR=	${.CURDIR}/../XttXF86srv-common
+PKGDIR=		${.CURDIR}/pkg
+
+.include	"${MASTERDIR}/Makefile"

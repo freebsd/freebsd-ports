@@ -3,7 +3,7 @@
 # Date created:		19 August 1998
 # Whom:			Issei Suzuki <issei@jp.FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/30 21:27:34 max Exp $
+# $Id: Makefile,v 1.2 1998/10/10 03:57:28 steve Exp $
 #
 
 DISTNAME=	tcsh-6.08.00.add
@@ -13,7 +13,9 @@ MASTER_SITES=	http://www2.wbs.ne.jp/~znc/tcsh/
 
 MAINTAINER=	issei@jp.FreeBSD.ORG
 
-PLIST=		../tcsh-nls-generic/pkg/PLIST
+MASTERDIR=	${.CURDIR}/../tcsh-nls-generic
+PKGDIR=		${.CURDIR}/pkg
+PLIST=		${MASTERDIR}/pkg/PLIST
 NLSSRC=		${DISTNAME}/nls/ja.asuka
 
-.include "../tcsh-nls-generic/Makefile"
+.include	"${MASTERDIR}/Makefile"

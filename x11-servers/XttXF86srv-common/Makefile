@@ -3,7 +3,7 @@
 # Date created:		15 April 1998
 # Whom:			Taguchi Takeshi <taguchi@tohoku.iij.ad.jp>
 #
-# $Id: Makefile,v 1.7 1998/10/22 00:25:53 steve Exp $
+# $Id: Makefile,v 1.8 1998/11/14 09:43:38 asami Exp $
 #
 
 DISTNAME=	xc
@@ -41,8 +41,6 @@ PREFIX=		${X11BASE}
 MTREE_FILE=	/etc/mtree/BSD.x11.dist
 WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/../XttXF86srv-common/work
 WRKSRC=		${WRKDIR}/xc
-PATCHDIR=	${.CURDIR}/../XttXF86srv-common/patches
-FILESDIR=	${.CURDIR}/../XttXF86srv-common/files
 XTTDIR=		${WRKDIR}/xtt-1.0
 DOCDIR=		${PREFIX}/share/doc/Xtt
 DIST_SUBDIR=		xc
