@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME applet that displays the current phase of the Moon
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gail gnomehack gnomepanel gnomeprefix gnometarget
+USE_GNOME=	gail gnomehack gnomepanel gnomeprefix gnometarget intlhack
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=	15
