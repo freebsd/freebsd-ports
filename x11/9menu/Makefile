@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://freefriends.org/arnold/Source/ \
 		${MASTER_SITE_NETBSD}
 EXTRACT_SUFX=	.shar.gz
 
-MAINTAINER=	gagnon_s@sympatico.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple menu patterened after plan9
 
 PLIST_FILES=		bin/9menu
