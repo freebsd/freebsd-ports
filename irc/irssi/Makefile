@@ -19,7 +19,7 @@ USE_GLIB=	yes
 GNU_CONFIGURE=	yes
 # `+=' is for slave ports
 CONFIGURE_ARGS+=	--without-socks --without-bot --with-textui \
-		--with-perl-lib=${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+		--with-perl-lib=site
 
 .include <bsd.port.pre.mk>
 
