@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	mecab
-PORTVERSION=	0.75
+PORTNAME=	${MECAB_PORTNAME}
+PORTVERSION=	${MECAB_PORTVERSION}
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://cl.aist-nara.ac.jp/~taku-ku/software/mecab/src/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -22,6 +22,8 @@ USE_PERL=	yes
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
+
+.include "${.CURDIR}/Makefile.common"
 
 MAN1=		mecab.1
 
