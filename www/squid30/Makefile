@@ -7,7 +7,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=  \
 	ftp://ftp.squid-cache.org/pub/squid-2/STABLE/ \
@@ -22,7 +22,8 @@ PATCHFILES=	squid-2.4.stable1-wrong_sign_on_timestamp_check.patch \
 		squid-2.4.stable1-high_cpu_with_peers.patch \
 		squid-2.4.stable1-force_valid_blksize.patch \
 		squid-2.4.stable1-kill_parent_on_child_sigkill.patch \
-		squid-2.4.stable1-htcp_assertion_fix.patch
+		squid-2.4.stable1-htcp_assertion_fix.patch \
+		squid-2.4.stable1-diskd_fixed_path.patch
 
 MAINTAINER=	adrian@freebsd.org
 

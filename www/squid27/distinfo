@@ -4,3 +4,4 @@ MD5 (squid2.4/squid-2.4.stable1-high_cpu_with_peers.patch) = f358cc67f07ba9e9904
 MD5 (squid2.4/squid-2.4.stable1-force_valid_blksize.patch) = d6bd16c8059ea16da1cb276331119bf3
 MD5 (squid2.4/squid-2.4.stable1-kill_parent_on_child_sigkill.patch) = a1ad2ff574a0d0973af36a10e0333cab
 MD5 (squid2.4/squid-2.4.stable1-htcp_assertion_fix.patch) = 8332039c0bab696c0ffc244cf6d7f1f8
+MD5 (squid2.4/squid-2.4.stable1-diskd_fixed_path.patch) = 487d5827ed5ab3619a03368206362b36
