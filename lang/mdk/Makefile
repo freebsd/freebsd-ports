@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mdk
-PORTVERSION=	0.3.5
+PORTVERSION=	0.4.2
 CATEGORIES=	lang gnome
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		${MASTER_SITE_SOURCEFORGE}
@@ -15,12 +15,14 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ijliao@FreeBSD.org
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
+		intl:${PORTSDIR}/devel/gettext
 
 USE_GNOME=	yes
 USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS}" LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
 
 USE_GMAKE=	yes
 
