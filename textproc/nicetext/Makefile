@@ -7,8 +7,8 @@
 
 DISTNAME=	nicetext-0.9
 CATEGORIES=	textproc
-#MASTER_SITES=	ftp://ctgi.net/pub/ctgi/nicetext/src/ \
-#		ftp://nicetext.com/pub/nicetext/src/
+MASTER_SITES=	ftp://ctgi.net/pub/ctgi/nicetext/src/ \
+		ftp://nicetext.com/pub/nicetext/src/
 
 MAINTAINER=	markc@ctgi.net
 
