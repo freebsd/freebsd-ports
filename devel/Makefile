@@ -17,6 +17,7 @@
     SUBDIR += bison
     SUBDIR += boehm-gc
     SUBDIR += bonobo
+    SUBDIR += bugbuddy
     SUBDIR += cccc
     SUBDIR += cdecl
     SUBDIR += cdk
