@@ -15,12 +15,15 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LaTeX Development Environment
 
+BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
+
 USE_BZIP2=	yes
 USE_QT_VER=	3
 
 do-build:
 	@cd ${WRKSRC} && \
-	 qmake -makefile -unix "LIBS+=-lm -lqt-mt" texmaker.pro && \
+	 qmake -makefile -spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
+		-unix "LIBS+=-lm -lqt-mt" texmaker.pro && \
 	 ${SETENV} QTDIR=${X11BASE} make
 
 do-install:
