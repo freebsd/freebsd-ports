@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	micq
-PORTVERSION=	0.4.11
-PORTREVISION=	1
+PORTVERSION=	0.4.12
 CATEGORIES=	net
 MASTER_SITES=	http://micq.org/source/ \
 		http://micq.alpha345.com/source/ \
@@ -18,6 +17,7 @@ MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Text-based ICQ implementation
 
 USE_GMAKE=	yes
+USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
