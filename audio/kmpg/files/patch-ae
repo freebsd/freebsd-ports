@@ -1,0 +1,10 @@
+--- lib/yaflib/yaf/frontend/signal/toolkit/eventQueue.cpp.orig	Sun Jan 23 16:55:57 2000
++++ lib/yaflib/yaf/frontend/signal/toolkit/eventQueue.cpp	Sun Jan 23 16:56:32 2000
+@@ -12,6 +12,7 @@
+ 
+ 
+ #include <signal/toolkit/eventQueue.h>
++#include <unistd.h>
+ 
+ 
+ 

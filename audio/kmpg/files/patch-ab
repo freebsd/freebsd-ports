@@ -1,0 +1,11 @@
+--- lib/yaflib/players/splay/mpeglayer3.cc.orig	Sun Jan 23 16:50:48 2000
++++ lib/yaflib/players/splay/mpeglayer3.cc	Sun Jan 23 16:50:50 2000
+@@ -767,7 +767,7 @@
+   for(i=0;i<e;)
+   {
+     const HUFFMANCODETABLE *h;
+-    register end;
++    register int end;
+       
+     if     (i<region1Start)
+     {

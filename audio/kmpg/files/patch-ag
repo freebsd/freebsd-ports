@@ -1,0 +1,10 @@
+--- lib/kmpglib/lib/ipc/ipcCom.cpp.orig	Sun Jan 23 17:02:49 2000
++++ lib/kmpglib/lib/ipc/ipcCom.cpp	Sun Jan 23 17:02:58 2000
+@@ -12,6 +12,7 @@
+ 
+ 
+ #include <ipc/ipcCom.h>
++#include <unistd.h>
+ 
+ 
+ static void *readerThread(void *arg){
