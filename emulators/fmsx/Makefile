@@ -29,7 +29,7 @@ OPTIONS=	BPP16 "With BPP16" Off \
 .include <bsd.port.pre.mk>
 
 post-patch:
-.ifdef(WITH_BPP32)
+.ifdef(WITH_BPP32) || defined(PACKAGE_BUILDING) || defined(BATCH)
 	${REINPLACE_CMD} -e 's/%%BPP%%/BPP32/' ${WRKSRC}/Makefile
 .endif
 .ifdef(WITH_BPP24)
