@@ -1,45 +1,43 @@
---- configure.orig	Sat Dec  9 07:00:06 2000
-+++ configure	Sat Feb 24 16:02:38 2001
-@@ -837,13 +837,13 @@
-   CFLAGS="$ac_save_CFLAGS"
+--- configure.orig	Mon Nov 25 17:38:38 2002
++++ configure	Sun Jan  5 15:03:00 2003
+@@ -1212,7 +1212,7 @@
+ FL_MINOR_VERSION=1
+ FL_PATCH_VERSION=2
+ FL_RELEASE_VERSION=
+-FL_API_VERSION=${FL_MAJOR_VERSION}.${FL_MINOR_VERSION}
++FL_API_VERSION=${FL_MAJOR_VERSION}
+ 
+ 
+ 
+@@ -2045,13 +2045,13 @@
+   CFLAGS=$ac_save_CFLAGS
  elif test $ac_cv_prog_cc_g = yes; then
    if test "$GCC" = yes; then
 -    CFLAGS="-g -O2"
-+    CFLAGS="-g"
++#    CFLAGS="-g -O2"
    else
      CFLAGS="-g"
    fi
  else
    if test "$GCC" = yes; then
 -    CFLAGS="-O2"
-+    CFLAGS=""
++#    CFLAGS="-O2"
    else
      CFLAGS=
    fi
-@@ -980,13 +980,13 @@
-   CXXFLAGS="$ac_save_CXXFLAGS"
+@@ -2395,13 +2395,13 @@
+   CXXFLAGS=$ac_save_CXXFLAGS
  elif test $ac_cv_prog_cxx_g = yes; then
    if test "$GXX" = yes; then
 -    CXXFLAGS="-g -O2"
-+    CXXFLAGS="-g"
++#    CXXFLAGS="-g -O2"
    else
      CXXFLAGS="-g"
    fi
  else
    if test "$GXX" = yes; then
 -    CXXFLAGS="-O2"
-+    CXXFLAGS=""
++#    CXXFLAGS="-O2"
    else
      CXXFLAGS=
    fi
-@@ -2750,8 +2750,8 @@
- 	# WAS: I removed the -fforce-mem, -fforce-addr, -fcaller-saves
- 	#      They all seemed to make either no difference or enlarged
- 	#      the code by a few hundred bytes.
--        CFLAGS="-O2 $CFLAGS"
--        CXXFLAGS="-O2 $CXXFLAGS"
-+#        CFLAGS="-O2 $CFLAGS"
-+#        CXXFLAGS="-O2 $CXXFLAGS"
-     fi
-     if test $PICFLAG = 1; then
-     	CFLAGS="-fPIC $CFLAGS"

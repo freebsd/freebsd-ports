@@ -1,0 +1,17 @@
+--- documentation/Makefile.orig	Sun Jan  5 15:43:13 2003
++++ documentation/Makefile	Sun Jan  5 15:43:32 2003
+@@ -230,14 +230,6 @@
+ 	$(CP) $(HTMLFILES) *.gif *.jpg index.html $(docdir)
+ 	$(CHMOD) 644 $(docdir)/*
+ 	echo "Installing man pages in $(mandir)..."
+-	-$(MKDIR) $(mandir)/cat1
+-	$(CP) fluid.$(CAT1EXT) $(mandir)/cat1
+-	$(CHMOD) 644 $(mandir)/cat1/fluid.$(CAT1EXT)
+-	$(CP) fltk-config.$(CAT1EXT) $(mandir)/cat1
+-	$(CHMOD) 644 $(mandir)/cat1/fltk-config.$(CAT1EXT)
+-	-$(MKDIR) $(mandir)/cat3
+-	$(CP) fltk.$(CAT3EXT) $(mandir)/cat3
+-	$(CHMOD) 644 $(mandir)/cat3/fltk.$(CAT3EXT)
+ 	-$(MKDIR) $(mandir)/man1
+ 	$(CP) fluid.man $(mandir)/man1/fluid.1
+ 	$(CHMOD) 644 $(mandir)/man1/fluid.1
