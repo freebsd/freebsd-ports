@@ -38,6 +38,3 @@ share/java/libgcj-%%GCC_VER%%.jar
 @comment Insert PLIST.lib here
 @comment -=[ begin PLIST.lib ]=-
 @comment -=[ end PLIST.lib ]=-
-@comment Insert PLIST.gcj-inc here
-@comment -=[ begin PLIST.gcj-inc ]=-
-@comment -=[ end PLIST.gcj-inc ]=-
