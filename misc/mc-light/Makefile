@@ -20,6 +20,7 @@ RUN_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk
 CONFLICTS=	mc-4.6*
 
 USE_GMAKE=	yes
+USE_ICONV=	yes
 USE_GNOME=	pkgconfig gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-included-slang \
