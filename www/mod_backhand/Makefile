@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	mod_backhand
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.cnds.jhu.edu/pub/backhand/
+MASTER_SITES=	http://people.FreeBSD.org/~seanc/ports/mod_backhand/
 
 MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	Apache module that allows seamless redirection and load balancing of HTTP requests
