@@ -3104,7 +3104,6 @@ kvirc		ports/irc/kvirc
 kvm_mkdb	src/usr.sbin/kvm_mkdb
 kwatch		ports/misc/kwatch
 kwebget		ports/ftp/kwebget
-kwebsearch	ports/www/kwebsearch
 kwebwatch	ports/www/kwebwatch
 kwix		ports/x11-wm/kwix
 kworldwatch	ports/x11/kworldwatch
