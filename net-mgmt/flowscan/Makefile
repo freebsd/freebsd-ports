@@ -9,6 +9,7 @@ PORTNAME=	flowscan
 PORTVERSION=    1.006
 CATEGORIES=	net
 MASTER_SITES=	http://net.doit.wisc.edu/~plonka/FlowScan/
+DISTFILES=	FlowScan-${PORTVERSION}.tar.gz
 
 MAINTAINER=	andreas@freebsd.org
 
