@@ -1,0 +1,18 @@
+--- src/SoundPaths.c.orig	Sun May 30 00:08:59 1999
++++ src/SoundPaths.c	Sun May 30 00:13:22 1999
+@@ -82,6 +82,7 @@
+ 	    wwarning(_("bad value in option SoundPath. Using default path list"));
+ 	addPathToList(panel->sndL, -1, "~/GNUstep/Library/WindowMaker/Sounds");
+ 	addPathToList(panel->sndL, -1, "/usr/local/share/WindowMaker/Sounds");
++	addPathToList(panel->sndL, -1, "/usr/X11R6/share/WindowMaker/Sounds");
+     } else {
+ 	for (i=0; i<PLGetNumberOfElements(array); i++) {
+ 	    val = PLGetArrayElement(array, i);
+@@ -95,6 +96,7 @@
+ 	    wwarning(_("bad value in option SoundSetPath. Using default path list"));
+ 	addPathToList(panel->sndsetL, -1, "~/GNUstep/Library/WindowMaker/SoundSets");
+ 	addPathToList(panel->sndsetL, -1, "/usr/local/share/WindowMaker/SoundSets");
++	addPathToList(panel->sndsetL, -1, "/usr/X11R6/share/WindowMaker/SoundSets");
+     } else {
+ 	for (i=0; i<PLGetNumberOfElements(array); i++) {
+ 	    val = PLGetArrayElement(array, i);
