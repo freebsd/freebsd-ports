@@ -1,5 +1,5 @@
-*** Makefile.in.orig	Fri Jan 29 22:10:45 1999
---- Makefile.in	Fri Jan 29 22:11:13 1999
+*** Makefile.in.orig	Mon Mar 29 14:31:37 1999
+--- Makefile.in	Mon May 10 18:00:33 1999
 ***************
 *** 9,15 ****
   first_rule: all
@@ -7,7 +7,7 @@
   
 ! subdirs = src doc rclock src/graphics
   
-  DIST =	INSTALL README.configure configure Makefile Makefile.in
+  DIST =	INSTALL README.configure configure Makefile Makefile.in ChangeLog
   
 --- 9,15 ----
   first_rule: all
@@ -15,5 +15,5 @@
   
 ! subdirs = src doc
   
-  DIST =	INSTALL README.configure configure Makefile Makefile.in
+  DIST =	INSTALL README.configure configure Makefile Makefile.in ChangeLog
   

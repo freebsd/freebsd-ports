@@ -1,7 +1,7 @@
-*** src/command.c.orig	Sun Jan 24 14:39:54 1999
---- src/command.c	Fri Jan 29 22:57:48 1999
+*** src/command.c.orig	Mon May 10 09:32:21 1999
+--- src/command.c	Mon May 10 17:55:44 1999
 ***************
-*** 289,295 ****
+*** 303,309 ****
       ttydev = tty_name;
   
   # define PTYCHAR1	"pqrstuvwxyz"
@@ -9,7 +9,7 @@
       for (c1 = PTYCHAR1; *c1; c1++) {
   	ptydev[len] = ttydev[len] = *c1;
   	for (c2 = PTYCHAR2; *c2; c2++) {
---- 289,295 ----
+--- 303,309 ----
       ttydev = tty_name;
   
   # define PTYCHAR1	"pqrstuvwxyz"
