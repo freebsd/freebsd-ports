@@ -10,7 +10,7 @@ PORTVERSION=	3.06
 CATEGORIES=	astro tk83
 MASTER_SITES=	http://www.cuug.ab.ca/~macdonal/tkseti/
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83 \
 		${LOCALBASE}/sbin/setiathome:${PORTSDIR}/astro/setiathome
