@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mlterm
-PORTVERSION=	2.1.2
+PORTVERSION=	2.2.0
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,6 +28,12 @@ MAN1=	mlterm.1
 PKGNAMESUFFIX=	-noaa
 .else
 CONFIGURE_ARGS+=	--enable-anti-alias
+.endif
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/ja/mlterm
+	${INSTALL_DATA} ${WRKSRC}/doc/ja/README.ja ${PREFIX}/share/doc/ja/mlterm
 .endif
 
 .include <bsd.port.post.mk>
