@@ -1,30 +1,34 @@
 # New ports collection makefile for:	eb
-# Version required:		2.2
+# Version required:		2.3.2
 # Date created:			20 Jan 1999
 # Whom:				Motoyuki Kasahara <m-kasahr@sra.co.jp>
 #
-# $Id: Makefile,v 1.2 1999/03/13 07:35:40 taoka Exp $
+# $Id: Makefile,v 1.3 1999/06/05 22:29:54 mharo Exp $
 #
 
-DISTNAME=	eb-2.2.2
-PKGNAME=	ja-eb-2.2.2
+DISTNAME=	eb-2.3.2
+PKGNAME=	ja-eb-2.3.2
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/appendix/ \
 		ftp://ftp.sra.co.jp/pub/misc/eb/appendix/old/ \
 		ftp://ftp.sra.co.jp/pub/misc/eb/ \
-		ftp://ftp.sra.co.jp/pub/misc/eb/old/
+		ftp://ftp.sra.co.jp/pub/misc/eb/old/ \
+		ftp://ftp.mei.co.jp/free/others/Dictionary/eb/appendix/ \
+		ftp://ftp.mei.co.jp/free/others/Dictionary/eb/
 DISTFILES=	${EBFILES} ${APPENDIXFILES}
 
 MAINTAINER=	takamune@avrl.mei.co.jp
 
 EBFILES=	${DISTNAME}.tar.gz
-APPENDIXFILES=	chujiten-2.3.tar.gz \
+APPENDIXFILES=	cencro-1.0.tar.gz \
+		chujiten-2.3.tar.gz \
 		chujiten2-2.0.tar.gz \
 		chujiten6-2.3.tar.gz \
 		colloc-2.0.tar.gz \
 		crownfj-2.0.tar.gz \
 		daijirin-2.0.tar.gz \
 		dd75-2.0.tar.gz \
+		genius-1.0.tar.gz \
 		global-2.0.tar.gz \
 		heritage-2.2.tar.gz \
 		izumi-2.0.tar.gz \
@@ -39,11 +43,12 @@ APPENDIXFILES=	chujiten-2.3.tar.gz \
 		plus-2.0.tar.gz \
 		readers-2.2.tar.gz \
 		readers2-2.0.tar.gz
+LISTFILES=	LIST LIST-ja
 
 EXTRACT_ONLY=	${EBFILES}
 
 DIST_SUBDIR=	eb
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-zlib
 CONFIGURE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 		INSTALL_DATA="${INSTALL_DATA}"
@@ -51,16 +56,11 @@ CONFIGURE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 APPENDIXDIR=	${PREFIX}/share/eb/appendix
 
 post-install:
-	for i in ${APPENDIXFILES}; do \
-	    dir="`echo $$i | ${SED} 's/\.tar\.gz$$//'`"; \
-	    ${RM} -rf ${APPENDIXDIR}/$$dir; \
-	    (cd ${APPENDIXDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-		${DISTDIR}/${DIST_SUBDIR}/$$i ${EXTRACT_AFTER_ARGS}); \
-	done
-	${INSTALL_DATA} ${FILESDIR}/LIST ${APPENDIXDIR}/LIST
-	${INSTALL_DATA} ${FILESDIR}/LIST-ja ${APPENDIXDIR}/LIST-ja
-.for info in eb ebinfo ebfont ebrefile ebzip
-	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
+.for file in ${APPENDIXFILES}
+	${TAR} -C ${APPENDIXDIR} -zxmf ${DISTDIR}/${DIST_SUBDIR}/${file}
+.endfor
+.for file in ${LISTFILES}
+	${INSTALL_DATA} ${FILESDIR}/${file} ${APPENDIXDIR}
 .endfor
 
 .include <bsd.port.mk>

@@ -1,0 +1,15 @@
+#!/bin/sh -
+#
+# NDTPD: rc-file for FreeBSD.
+#
+
+### NDTPD options: ###
+ndtpd_program=@prefix@/sbin/ndtpd	# path to ndtpd.
+ndtpd_enable=YES			# Run ndtpd (or NO).
+ndtpd_flags=				# Flags to ndtpd (if enabled).
+### End of NDTPD options: ###
+
+if [ "x${ndtpd_enable}" = xYES -a -x ${ndtpd_program} ]; then
+    echo -n " ndtpd"
+    ${ndtpd_program} ${ndtpd_flags}
+fi

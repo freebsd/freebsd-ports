@@ -1,12 +1,15 @@
-sbin/ndtpd
+etc/ndtpd.conf.sample
+etc/rc.d/ndtpd.sh.sample
+@unexec install-info --delete %D/info/ndtpd-ja.info %D/info/dir
+@unexec install-info --delete %D/info/ndtpd.info %D/info/dir
+info/ndtpd-ja.info
+info/ndtpd.info
+@exec install-info %B/ndtpd-ja.info %B/dir
+@exec install-info %B/ndtpd.info %B/dir
+libexec/ndtpstat
 sbin/ndtpcheck
 sbin/ndtpcontrol
+sbin/ndtpd
 sbin/ndtpdaily
-libexec/ndtpstat
-etc/ndtpd.sample
-@unexec install-info --delete %D/info/ndtpd.info %D/info/dir
-@unexec install-info --delete %D/info/ndtpd-ja.info %D/info/dir
-info/ndtpd.info
-info/ndtpd-ja.info
-@exec install-info %D/info/ndtpd.info %D/info/dir
-@exec install-info %D/info/ndtpd-ja.info %D/info/dir
+@exec install -d -o %%OWNER%% -g %%GROUP%% -m %%MODE%% %%VARDIR%%/ndtpd
+@unexec rm -rf %%VARDIR%%/ndtpd
