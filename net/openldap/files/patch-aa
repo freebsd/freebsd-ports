@@ -1,0 +1,20 @@
+--- servers/slapd/add.c.orig	Fri Jan 29 00:11:49 1999
++++ servers/slapd/add.c	Sat Oct 23 13:31:43 1999
+@@ -180,6 +180,9 @@
+ 		bv.bv_len = strlen( bv.bv_val );
+ 	}
+ 	attr_merge( e, "creatorsname", bvals );
++	/* Netscape Communicator 4.5 seems to expect modification information
++	   to be present within newly created items. */
++	attr_merge( e, "modifiersname", bvals );
+ 
+ 	ldap_pvt_thread_mutex_lock( &currenttime_mutex );
+ #ifndef LDAP_LOCALTIME
+@@ -194,4 +197,7 @@
+ 	bv.bv_val = buf;
+ 	bv.bv_len = strlen( bv.bv_val );
+ 	attr_merge( e, "createtimestamp", bvals );
++	/* Netscape Communicator 4.5 seems to expect modification information
++	   to be present within newly created items. */
++	attr_merge( e, "modifytimestamp", bvals );
+ }
