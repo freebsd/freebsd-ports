@@ -33,7 +33,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="67710833-1626-11d9-bc4a-000c41e2cdad">
-    <topic></topic>
+    <topic>Boundary checking errors in syscons</topic>
     <affects>
       <system>
 	<name>FreeBSD</name>
