@@ -1,5 +1,5 @@
---- lib/viewcvs.py.orig        Tue Jan 15 10:35:55 2002
-+++ lib/viewcvs.py     Fri Apr 25 19:18:22 2003
+--- lib/viewcvs.py.orig	Tue Jan 15 09:35:55 2002
++++ lib/viewcvs.py	Sun Jan  9 13:35:45 2005
 @@ -174,6 +174,10 @@
      # parse the query params into a dictionary (and use defaults)
      query_dict = default_settings.copy()
@@ -11,11 +11,10 @@
        query_dict[name] = values[0]
  
      # set up query strings, prefixed by question marks and ampersands
-@@ -228,6 +232,77 @@
-     self.branch = branch
+@@ -229,6 +233,77 @@
      self.taginfo = taginfo
  
-+
+ 
 +def _validate_param(name, value):
 +  """Validate whether the given value is acceptable for the param name.
 +
@@ -86,6 +85,25 @@
 +  'rev'           : _re_validate_revnum,
 +  'content-type'  : _re_validate_mimetype,
 +  }
- 
++
  class LogEntry:
    "Hold state for each revision entry in an 'rlog' output."
+   def __init__(self, rev, date, author, state, changed, log):
+@@ -478,7 +553,7 @@
+ def markup_stream_enscript(lang, fp):
+   sys.stdout.flush()
+   enscript = popen.pipe_cmds([(os.path.normpath(os.path.join(cfg.options.enscript_path,'enscript')),
+-                               '--color', '-W', 'html', '-E' + lang, '-o',
++                               '--color', '--language=html', '-E' + lang, '-o',
+                                '-', '-'),
+                               ('sed', '-n', '/^<PRE>$/,/<\\/PRE>$/p')])
+ 
+@@ -494,7 +569,7 @@
+   except IOError, v:
+     print "<h3>Failure during use of an external program:</h3>"
+     print "<pre>"
+-    print os.path.normpath(os.path.join(cfg.options.enscript_path,'enscript')) + " --color -W html -E"+lang+" -o - -"
++    print os.path.normpath(os.path.join(cfg.options.enscript_path,'enscript')) + " --color --language=html -E"+lang+" -o - -"
+     print "</pre>"
+     raise
+ 
