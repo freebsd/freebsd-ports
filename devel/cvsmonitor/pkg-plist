@@ -34,27 +34,25 @@
 %%CVSMON%%/modules/CVSMonitor.pm
 %%CVSMON%%/modules/AppLib/CGI.pm
 %%CVSMON%%/modules/AppLib/Error.pm
-%%CVSMON%%/modules/AppLib/HTML.pm
 %%CVSMON%%/modules/AppLib/Interface.pm
 %%CVSMON%%/modules/AppLib/Page.pm
 %%CVSMON%%/modules/AppLib/PageFactory.pm
 %%CVSMON%%/modules/AppLib/Parser.pm
 %%CVSMON%%/modules/AppLib/String.pm
-%%CVSMON%%/modules/AppLib/CGI/FatalsToBrowser.pm
-%%CVSMON%%/modules/AppLib/HTML/Form.pm
-%%CVSMON%%/modules/AppLib/HTML/Table.pm
 %%CVSMON%%/modules/AppLib/Interface/Page.pm
 %%CVSMON%%/modules/CVSMonitor/Annotation.pm
 %%CVSMON%%/modules/CVSMonitor/AuthorTotals.pm
+%%CVSMON%%/modules/CVSMonitor/Backend.pm
 %%CVSMON%%/modules/CVSMonitor/Config.pm
-%%CVSMON%%/modules/CVSMonitor/DataCache.pm
 %%CVSMON%%/modules/CVSMonitor/DateDepth.pm
 %%CVSMON%%/modules/CVSMonitor/Graph.pm
+%%CVSMON%%/modules/CVSMonitor/HTML.pm
 %%CVSMON%%/modules/CVSMonitor/MetaData.pm
 %%CVSMON%%/modules/CVSMonitor/Plugin.pm
 %%CVSMON%%/modules/CVSMonitor/Range.pm
 %%CVSMON%%/modules/CVSMonitor/Security.pm
 %%CVSMON%%/modules/CVSMonitor/Statistics.pm
+%%CVSMON%%/modules/CVSMonitor/Util.pm
 %%CVSMON%%/modules/CVSMonitor/VersionNumber.pm
 %%CVSMON%%/modules/CVSMonitor/Graph/Files.pm
 %%CVSMON%%/modules/CVSMonitor/Graph/Karma.pm
@@ -72,17 +70,12 @@
 %%CVSMON%%/modules/CVSMonitor/MetaData/Abstract/Delta.pm
 %%CVSMON%%/modules/CVSMonitor/MetaData/Abstract/Source.pm
 %%CVSMON%%/setup/All.pm
-%%CVSMON%%/setup/Autouse.pm
-%%CVSMON%%/setup/Default.pm
 %%CVSMON%%/setup/Error.pm
-%%CVSMON%%/setup/Flat.pm
 %%CVSMON%%/setup/Page.pm
 %%CVSMON%%/setup/PageFactory.pm
 %%CVSMON%%/setup/Parser.pm
 %%CVSMON%%/setup/Table.pm
 %%CVSMON%%/setup/Tests.pm
-%%CVSMON%%/setup/Tiny.pm
-%%CVSMON%%/setup/Which.pm
 %%CVSMON%%/setup/html/Conclusion.html
 %%CVSMON%%/setup/html/Error.html
 %%CVSMON%%/setup/html/ErrorConfig.html
@@ -109,8 +102,6 @@
 @dirrm %%CVSMON%%/html/Error
 @dirrm %%CVSMON%%/html/Search
 @dirrm %%CVSMON%%/html
-@dirrm %%CVSMON%%/modules/AppLib/CGI
-@dirrm %%CVSMON%%/modules/AppLib/HTML
 @dirrm %%CVSMON%%/modules/AppLib/Interface
 @dirrm %%CVSMON%%/modules/AppLib
 @dirrm %%CVSMON%%/modules/CVSMonitor/Graph
