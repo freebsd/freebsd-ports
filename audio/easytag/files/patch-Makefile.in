@@ -1,11 +1,10 @@
---- Makefile.in.orig   Wed Sep 24 10:54:31 2003
-+++ Makefile.in        Wed Sep 24 10:54:42 2003
-@@ -518,7 +518,7 @@
-       uninstall-info-am uninstall-info-recursive uninstall-recursive \
-       uninstall-textDATA
+--- Makefile.orig	Sun Feb  8 13:00:52 2004
++++ Makefile.in	Sun Feb  8 13:00:58 2004
+@@ -518,7 +518,6 @@
+ 	uninstall-info-am uninstall-info-recursive uninstall-recursive \
+ 	uninstall-textDATA
  
 -dnl gnome_menudir=$(shell gnome-config --datadir)/gnome/apps/Multimedia
-+gnome_menudir=$(shell gnome-config --datadir)/gnome/apps/Multimedia
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
  .NOEXPORT:

@@ -1,6 +1,7 @@
 bin/easytag
 share/easytag/ChangeLog
 share/easytag/EasyTAG_logo.xpm
+share/gnome/apps/Multimedia/easytag.desktop
 share/locale/cs/LC_MESSAGES/easytag.mo
 share/locale/de/LC_MESSAGES/easytag.mo
 share/locale/es/LC_MESSAGES/easytag.mo
@@ -15,4 +16,7 @@ share/locale/ru/LC_MESSAGES/easytag.mo
 share/locale/sv/LC_MESSAGES/easytag.mo
 share/locale/uk/LC_MESSAGES/easytag.mo
 share/pixmaps/EasyTAG.xpm
+@unexec rmdir %D/share/gnome/apps/Multimedia 2>/dev/null || true
+@unexec rmdir %D/share/gnome/apps 2>/dev/null || true
+@unexec rmdir %D/share/gnome 2>/dev/null || true
 @dirrm share/easytag
