@@ -60,6 +60,9 @@ share/emacs/site-lisp/po-mode.el
 @dirrm share/gettext/intl
 @dirrm share/gettext/po
 @dirrm share/gettext
+@unexec rmdir %D/share/locale/*/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/* 2>/dev/null || true
 @unexec rmdir %D/share/locale 2>/dev/null || true
+@unexec rmdir %D/share/aclocal 2>/dev/null || true
 @exec mkdir -p %%X11BASE%%/share/locale
 @unexec rmdir %%X11BASE%%/share/locale 2>/dev/null || true
