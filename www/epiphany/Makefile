@@ -25,12 +25,16 @@ HEADERS_SUFX=
 MOZILLA=	mozilla
 HEADERS_SUFX=
 .else
+.if ${WITH_MOZILLA}=="firefox"
+MOZILLA=	firefox
+.else
 .if ${WITH_MOZILLA}=="mozilla-devel" || ${WITH_MOZILLA}=="mozilla-devel-gtk2"
 MOZILLA=	mozilla-devel
 HEADERS_SUFX=	-devel
 .else
 MOZILLA=	mozilla
 HEADERS_SUFX=
+.endif
 .endif
 .endif
 
@@ -42,8 +46,7 @@ USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 INSTALLS_OMF=	yes
-CONFIGURE_ARGS=	--with-mozilla-includes="${X11BASE}/include/mozilla${HEADERS_SUFX}" \
-		--with-mozilla-libs="${X11BASE}/lib/${MOZILLA}"
+CONFIGURE_ARGS=	--with-mozilla=${MOZILLA}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
@@ -73,6 +76,7 @@ pre-everything::
 	@${ECHO_MSG} " By default epiphany uses www/mozilla for html rendering, but you can"
 	@${ECHO_MSG} " change this by defining WITH_MOZILLA to one of the following values:"
 	@${ECHO_MSG}
+	@${ECHO_MSG} "  firefox       "
 	@${ECHO_MSG} "  mozilla-devel "
 	@${ECHO_MSG} ""
 
