@@ -3,7 +3,7 @@
 # Date created:		14 July 1995
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.2 1995/07/16 18:43:21 jkh Exp $
+# $Id: Makefile,v 1.3 1995/07/16 20:57:41 ats Exp $
 #
 
 DISTNAME=	fwf-3.8
@@ -16,7 +16,6 @@ USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/FWF
 PATCH_STRIP=	-p1
 XMKMF=		env X11BASE=${X11BASE} WRKSRC=${WRKSRC} ${FILESDIR}/xmkmf
-X_NO_MAKE_MAKEFILES=yes
 
 post-install:
 	ldconfig -m ${PREFIX}/lib
