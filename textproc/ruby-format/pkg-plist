@@ -9,5 +9,6 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/format/test/6
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/format/test/7
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/format/test/8
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/format/test/10
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/format/test
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/format

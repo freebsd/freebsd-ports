@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	format
-PORTVERSION=	1.03
+PORTVERSION=	1.04
 CATEGORIES=	textproc ruby
-MASTER_SITES=	http://www.crhc.uiuc.edu/~rubel/
+MASTER_SITES=	http://www.crhc.uiuc.edu/~rubel/FormatR/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	FormatR.${PORTVERSION}
 DIST_SUBDIR=	ruby
