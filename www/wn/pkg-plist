@@ -2,7 +2,7 @@
 etc/wn_mime.types
 libexec/wn
 sbin/swn
-sbin/wndex
+bin/wndex
 wn/docs
 wn/index
 @cwd ./wn
