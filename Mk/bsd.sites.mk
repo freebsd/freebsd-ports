@@ -443,22 +443,7 @@ MASTER_SITE_ISC+=	\
 	ftp://ftp.metu.edu.tr/pub/mirrors/ftp.isc.org/%SUBDIR%/
 
 MASTER_SITE_KDE+=	\
-	http://mirrors.isc.org/pub/kde/%SUBDIR%/ \
-	ftp://ftp.us.kde.org/pub/kde/%SUBDIR%/ \
-	ftp://ftp.kde.org/pub/kde/%SUBDIR%/ \
-	ftp://ibiblio.org/pub/packages/desktops/kde/%SUBDIR%/ \
-	ftp://ftp.gtlib.cc.gatech.edu/pub/kde/%SUBDIR%/ \
-	ftp://mirrors.midco.net/pub/kde/%SUBDIR%/ \
-	ftp://ftp.oregonstate.edu/pub/kde/%SUBDIR%/ \
-	ftp://download.uk.kde.org/pub/kde/%SUBDIR%/ \
-	ftp://download.au.kde.org/pub/kde/%SUBDIR%/ \
-	ftp://download.at.kde.org/pub/kde/%SUBDIR%/ \
-	ftp://ftp.eu.uu.net/pub/kde/%SUBDIR%/ \
-	ftp://ftp.tiscali.nl/pub/mirrors/kde/%SUBDIR%/ \
-	ftp://ftp.roedu.net/pub/mirrors/ftp.kde.org/%SUBDIR%/ \
-	ftp://ftp.rediris.es/mirror/kde/%SUBDIR%/ \
-	ftp://ftp.du.se/pub/mirrors/kde/%SUBDIR%/ \
-	ftp://download.tw.kde.org/pub/kde/%SUBDIR%/ \
+	ftp://download.kde.org/pub/kde/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/kde/&,}
 
 MASTER_SITE_MOZILLA+= \
