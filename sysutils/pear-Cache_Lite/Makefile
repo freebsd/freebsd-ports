@@ -7,8 +7,8 @@
 
 PORTNAME=	Cache_Lite
 PORTVERSION=	1.4.0
+PORTEPOCH=	1
 CATEGORIES=	sysutils www pear
-DISTNAME=	${PORTNAME}-${PORTVERSION}beta1
 
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR fast and safe little cache system
@@ -19,8 +19,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 CATEGORY=	Cache
 FILES=		Lite/Output.php Lite/Function.php Lite.php
 DOCS=		docs/technical docs/examples LICENSE TODO
-TESTS=		readme test.php test2.php test3.php bench.php \
-		bench2.php bench3.php
+TESTS=		test.php test2.php test3.php bench.php bench2.php bench3.php readme
 _DOCSDIR=	.
 
 .include <bsd.port.pre.mk>
