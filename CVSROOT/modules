@@ -1379,6 +1379,7 @@ dcc-dccd	ports/mail/dcc-dccd
 dcdflib		ports/math/dcdflib
 dcetest		ports/security/dcetest
 dcfldd		ports/sysutils/dcfldd
+dcl		ports/science/dcl
 dclib		ports/net/dclib
 dclock		ports/x11-clocks/dclock
 dcraw		ports/graphics/dcraw
