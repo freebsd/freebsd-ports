@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.22 1996/12/27 05:29:44 obrien Exp $
+# $Id: Makefile,v 1.23 1996/12/29 04:45:38 obrien Exp $
 #
 
     SUBDIR += bpl+
@@ -8,9 +8,10 @@
     SUBDIR += lrzsz
     SUBDIR += mgetty+sendfax
     SUBDIR += minicom
-    SUBDIR += zmtx-zmrx
     SUBDIR += rzsz
     SUBDIR += seyon
+    SUBDIR += snooper
     SUBDIR += xcept
+    SUBDIR += zmtx-zmrx
 
 .include <bsd.port.subdir.mk>
