@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--exec-prefix=${PREFIX} \
 		--libdir=${LOCALBASE}/lib \
 		--with-x --without-linux-vga \
 		--with-gd=${LOCALBASE}/lib \
-		--with-gnu-readline --with-lasergnu --with-png
+		--with-readline=gnu --with-lasergnu --with-png
 
 post-install:
 	${MKDIR} ${PREFIX}/share/doc/gnuplot
