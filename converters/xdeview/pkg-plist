@@ -1,5 +1,5 @@
-share/doc/xdeview/HOWTO
-share/doc/xdeview/porting.notes
 bin/uuwish
 bin/xdeview
-@dirrm share/doc/xdeview
+%%PORTDOCS%%share/doc/xdeview/HOWTO
+%%PORTDOCS%%share/doc/xdeview/porting.notes
+%%PORTDOCS%%@dirrm share/doc/xdeview
