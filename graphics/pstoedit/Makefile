@@ -27,9 +27,9 @@ INSTALLS_SHLIB=	yes
 
 MAN1=	pstoedit.1
 
-CPPFLAGS+=	-I${LOCALBASE}/include/ming -I${LOCALBASE}/include \
+CPPFLAGS=	-I${LOCALBASE}/include/ming -I${LOCALBASE}/include \
 		-I${X11BASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib
+LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/pstoedit.1 ${MANPREFIX}/man/man1

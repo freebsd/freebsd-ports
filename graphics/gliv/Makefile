@@ -24,8 +24,8 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		gliv.1
 
-CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib -lXext -lX11 ${PTHREAD_LIBS}
+CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib -lXext -lX11 ${PTHREAD_LIBS}
 
 .if !exists(/usr/include/getopt.h)
 LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt

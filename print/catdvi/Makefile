@@ -24,8 +24,8 @@ ALL_TARGET=	# empty
 
 MAN1=	catdvi.1
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 .if !exists(/usr/include/getopt.h)
 LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt

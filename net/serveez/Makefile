@@ -31,8 +31,8 @@ INSTALLS_SHLIB=	yes
 
 MAN1=	serveez.1
 
-CPPFLAGS+=	`${GUILE_CONFIG} compile`
-LDFLAGS+=	`${GUILE_CONFIG} link`
+CPPFLAGS=	`${GUILE_CONFIG} compile`
+LDFLAGS=	`${GUILE_CONFIG} link`
 
 .if !exists(/usr/include/getopt.h)
 LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
