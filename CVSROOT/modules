@@ -2150,6 +2150,7 @@ gsmlib		ports/comms/gsmlib
 gsnes9x		ports/emulators/gsnes9x
 gspoof		ports/net/gspoof
 gstreamer	ports/multimedia/gstreamer
+gstreamer-editor	ports/multimedia/gstreamer-editor
 gstreamer-player	ports/multimedia/gstreamer-player
 gstreamer-plugins	ports/multimedia/gstreamer-plugins
 gsubedit	ports/multimedia/gsubedit
