@@ -1,0 +1,12 @@
+mod_fcgid -- an alternative FastCGI module for Apache2
+
+mod_fcgid has a new process management strategy, which concentrates on
+reducing the number of fastcgi server, and kick out the corrupt
+fastcgi server as soon as possible.
+
+The bad news is that it does not currently support suEXEC, and the
+good news is that it has PHP support.  Check out the web site for
+details.
+
+Licence: GPL
+WWW: http://fastcgi.coremail.cn/
