@@ -1,6 +1,6 @@
---- configure.orig	Mon Mar 24 23:43:20 2003
-+++ configure	Wed Mar 26 17:00:43 2003
-@@ -9004,13 +9004,13 @@
+--- configure.orig	Wed Jul  7 18:16:55 2004
++++ configure	Wed Jul  7 18:16:55 2004
+@@ -20976,13 +20976,13 @@
  else
  
  
@@ -16,9 +16,9 @@
 -LIBS="-lpspell -lstdc++ -lpspell-modules $LIBS"
 +LIBS="-lpspell -lstdc++ $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -9025,11 +9025,11 @@
+ _ACEOF
+@@ -20996,11 +20996,11 @@
  #endif
  /* We use char because int might match the return type of a gcc2
     builtin and then its argument prototype would still apply.  */
@@ -32,41 +32,16 @@
    ;
    return 0;
  }
-@@ -9046,19 +9046,19 @@
-   ac_status=$?
-   echo "$as_me:$LINENO: \$? = $ac_status" >&5
-   (exit $ac_status); }; }; then
--  ac_cv_lib_pspell_new_pspell_manager=yes
-+   ac_cv_lib_pspell_new_aspell_speller=yes
- else
-   echo "$as_me: failed program was:" >&5
- sed 's/^/| /' conftest.$ac_ext >&5
- 
--ac_cv_lib_pspell_new_pspell_manager=no
-+ ac_cv_lib_pspell_new_aspell_speller=no
- fi
- rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
- LIBS=$ac_check_lib_save_LIBS
- fi
--echo "$as_me:$LINENO: result: $ac_cv_lib_pspell_new_pspell_manager" >&5
--echo "${ECHO_T}$ac_cv_lib_pspell_new_pspell_manager" >&6
--if test $ac_cv_lib_pspell_new_pspell_manager = yes; then
-+ echo "$as_me:$LINENO: result: $ac_cv_lib_pspell_new_aspell_speller" >&5
-+ echo "${ECHO_T}$ac_cv_lib_pspell_new_aspell_speller" >&6
-+ if test $ac_cv_lib_pspell_new_aspell_speller = yes; then
-   cat >>confdefs.h <<_ACEOF
- #define HAVE_LIBPSPELL 1
- _ACEOF
-@@ -10491,7 +10491,7 @@
+@@ -23045,7 +23045,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lldap -llber -lresolv $LIBS"
 +LIBS="-lldap -llber $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -10545,7 +10545,7 @@
+ _ACEOF
+@@ -23109,7 +23109,7 @@
  #define ENABLE_LDAP 1
  _ACEOF
  
