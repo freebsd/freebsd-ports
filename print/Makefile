@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.91 1999/05/11 02:02:02 taoka Exp $
+# $Id: Makefile,v 1.92 1999/05/17 10:43:58 foxfair Exp $
 #
 
     SUBDIR += a2ps-a4
@@ -7,6 +7,7 @@
     SUBDIR += a2ps43-a4
     SUBDIR += a2ps43-letter
     SUBDIR += acroread
+    SUBDIR += acroread-commfont
     SUBDIR += acroread4
     SUBDIR += afm
     SUBDIR += amspsfnt
