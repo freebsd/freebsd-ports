@@ -1732,6 +1732,7 @@ fluxbg		ports/x11/fluxbg
 fluxbox		ports/x11-wm/fluxbox
 fluxbox-devel	ports/x11-wm/fluxbox-devel
 fluxconf	ports/x11-wm/fluxconf
+fluxspace	ports/x11-wm/fluxspace
 fluxter		ports/x11-wm/fluxter
 flvw		ports/x11-toolkits/flvw
 flwm		ports/x11-wm/flwm
