@@ -4623,6 +4623,7 @@ p5-Religion	ports/devel/p5-Religion
 p5-Resources	ports/devel/p5-Resources
 p5-SETI-Stats	ports/astro/p5-SETI-Stats
 p5-SNMP		ports/net/p5-SNMP
+p5-SNMP-MIB-Compiler	ports/net/p5-SNMP-MIB-Compiler
 p5-SNMP-Util	ports/net/p5-SNMP-Util
 p5-SNMP_Session	ports/net/p5-SNMP_Session
 p5-SOAP		ports/net/p5-SOAP
