@@ -1,0 +1,13 @@
+From the README:
+
+SoXt is an open source implementation of the SGI InventorXt library, which
+is a GUI binding for using Open Inventor with Xt/Motif.  While SoXt has
+been developed for use with Coin, it is also possible to compile it against
+Open Inventor from SGI or TGS.  A goal is to eventually become 100% source
+code compatible with the InventorXt library, which is still way off,
+especially when it comes to creating derived classes.
+
+When using SoXt, bear in mind that SoXt is in its alpha release phase,
+so expect the worst...
+
+WWW: http://www.coin3d.org/

@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += SoXt
     SUBDIR += Xaw3d
     SUBDIR += at-spi
     SUBDIR += bakery
