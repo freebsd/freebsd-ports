@@ -182,6 +182,7 @@
     SUBDIR += sml-nj
     SUBDIR += sml-nj-devel
     SUBDIR += snobol
+    SUBDIR += spl
     SUBDIR += squeak2
     SUBDIR += squeak3
     SUBDIR += sr
