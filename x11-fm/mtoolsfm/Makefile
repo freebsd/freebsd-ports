@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.core-coutainville.org/MToolsFM/archive/SOURCES/
 DISTNAME=	MToolsFM-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A graphical frontend to mtools
 
 RUN_DEPENDS=	mtools:${PORTSDIR}/emulators/mtools
 

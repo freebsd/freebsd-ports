@@ -11,6 +11,7 @@ CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.musikwissenschaft.uni-mainz.de/~ag/xfm/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The X File Manager
 
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 

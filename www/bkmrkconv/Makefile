@@ -11,6 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.bleb.org/software/bkmrkconv/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Netscape bookmarks.html converter
 
 USE_PERL5=	yes
 NO_BUILD=	yes

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	NovaWM-${PORTVERSION}_alpha
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A window manager for X, developed with speed, size, and style in mind
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.livinglogic.de/pub/livinglogic/xist/
 DISTNAME=	XIST-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An XML-based extensible HTML generator
 
 RUN_DEPENDS=	${PYXML} \
 		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging \

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/clocks
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A round, analog X11 clock with bezier curve hands
 
 USE_IMAKE=	yes
 MAN1=		bclock.1

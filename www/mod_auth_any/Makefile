@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.itlab.musc.edu/pub/toolbox/mod_auth_any/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Apache module to use any command line program to authenticate a user
 
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
 RUN_DEPENDS=	${APXS}:${APACHE_PORT}

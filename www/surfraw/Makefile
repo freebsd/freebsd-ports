@@ -11,6 +11,7 @@ MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/proff/ \
 		ftp://ftp.funet.fi/pub/NetBSD/misc/proff/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Command line interface to popular WWW search engines
 
 GNU_CONFIGURE=	yes
 

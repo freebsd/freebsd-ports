@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	notif210
 DISTNAME=	notif210-${GTKVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The Notif2 GTK theme engine following the new Motif look and feel
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

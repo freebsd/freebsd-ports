@@ -12,6 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.rudedog.org/auth_ldap/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Apache module to authenticate against an LDAP directory
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
 LIB_DEPENDS=	lber.2:${PORTSDIR}/net/openldap2

@@ -20,6 +20,7 @@ DISTNAME=	ijb-zlib-10
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An HTTP proxy server that eliminates ads
 
 USE_REINPLACE=	yes
 

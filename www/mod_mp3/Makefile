@@ -13,6 +13,7 @@ MASTER_SITES=	http://software.tangent.org/download/ \
 		http://atreides.freenix.no/~anders/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Apache module to allow MP3 streaming
 
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
 RUN_DEPENDS=	${APXS}:${APACHE_PORT}

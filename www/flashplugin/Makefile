@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.geocities.com/TimesSquare/Labyrinth/5084/flash/Linux/ \
 		http://perso.club-internet.fr/odebon/flash/Linux/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An implementation of Macromedia Flash plugin for Netscape
 
 ONLY_FOR_ARCHS=	i386
 

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.joerg-pommnitz.de/TrueType/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Create fonts.scale file for use with TrueType font server
 
 NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes

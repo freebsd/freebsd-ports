@@ -11,6 +11,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp:ftp@ftp.mxlab.com/x/wm/
 
 MAINTAINER=	ports@FreeBSD.Org
+COMMENT=	A small graphical configuration utility for the Ice Window Manager
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/GTK.py:${PORTSDIR}/x11-toolkits/py-gtk
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	X11
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl module that provides an interface roughly equivalent to Xlib
 
 PERL_CONFIGURE=	yes
 

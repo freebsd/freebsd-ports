@@ -12,6 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.nought.de/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Converts LaTeX formulas into high resolution pixmap graphics
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
 		latex:${PORTSDIR}/print/teTeX \

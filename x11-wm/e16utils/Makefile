@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.planetmirror.com/pub/enlightenment/e16utils/ \
 DISTFILES=	e16menuedit-0.1.tar.gz e16keyedit-0.2.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Standalone menu and keybinding editors for enlightment 0.16
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 

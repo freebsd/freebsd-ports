@@ -13,6 +13,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://helm.cs.unibo.it/mml-widget/sources/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A minimal implementation of the Document Object Model
 
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
 		iconv.3:${PORTSDIR}/converters/libiconv

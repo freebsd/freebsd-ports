@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.comintern.ru/pub/unix/X11/plan9/ \
 EXTRACT_SUFX=	.shar.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A simple menu patterened after plan9
 
 USE_XLIB=	yes
 NO_WRKSUBDIR=	yes

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=incrtcl
 DISTNAME=	itcl${PORTVERSION}
 
 MAINTAINER=	ports@freebsd.org
+COMMENT=	[incr Tk] (A.K.A. "itk")
 
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83 \
 		itcl${MAJOR}${MINOR}.1:${PORTSDIR}/lang/itcl

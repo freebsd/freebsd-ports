@@ -17,6 +17,7 @@ PATCHFILES=	Dclock-pl6.patch.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A 7-segment digital clock with optional military time and alarm
 
 IGNOREFILES=	${DISTFILES}
 USE_IMAKE=	yes

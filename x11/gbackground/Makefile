@@ -13,6 +13,7 @@ MASTER_SITES=	http://gBackGround.sourceforge.net/
 DISTNAME=	gBackGround-1.0.0-beta2
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Gnome Panel applet to change the background on the desktop
 
 USE_GNOME=	gnomelibs libpanel
 USE_GNOMENG=	yes

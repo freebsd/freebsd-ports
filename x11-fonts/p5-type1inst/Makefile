@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=X11/xutils
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A script that helps install Postscript fonts in X Window System
 
 USE_PERL5=	yes
 USE_XLIB=	yes

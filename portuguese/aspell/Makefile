@@ -9,6 +9,7 @@ PORTNAME=	aspell
 CATEGORIES=	portuguese
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Aspell with Portuguese dictionary
 
 MASTERDIR=	${.CURDIR}/../../textproc/aspell
 

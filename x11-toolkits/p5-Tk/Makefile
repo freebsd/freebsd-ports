@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Tk
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A re-port of a perl5 interface to Tk8.0p2
 
 USE_XLIB=	yes
 PERL_CONFIGURE=	yes

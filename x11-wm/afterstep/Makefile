@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	archives/${PORTVERSION}
 DISTNAME=	AfterStep-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Window manager originally based on the Bowman NeXTSTEP clone
 
 RUN_DEPENDS=	asclock:${PORTSDIR}/x11-clocks/asclock
 

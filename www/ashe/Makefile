@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	src libcci libhtmlw-2.7
 DISTFILES=	xhtml-1.3.tar.Z cci.tar.Z libhtmlw.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A simple HTML editor
 
 NO_WRKSUBDIR=	yes
 CONFIGURE_WRKSRC=	${WRKDIR}/src

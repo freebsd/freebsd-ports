@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	steve
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A Web Mirroring Program
 
 NO_PACKAGE=	"This program cannot be distributed if modified in any way"
 NO_CDROM=	"Don't sell for profit without written permission"

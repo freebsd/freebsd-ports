@@ -11,6 +11,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://www2.bc.edu/~kelleyry/toolbox/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A blackbox style configuration utility
 
 USE_QT_VER=	2
 USE_X_PREFIX=	yes

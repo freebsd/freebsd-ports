@@ -11,6 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://web.onda.com.br/orso/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Squid log analyzer and HTML report generator
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

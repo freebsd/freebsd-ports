@@ -12,6 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/cadaver/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Commandline client for DAV
 
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2 \
 		neon.23:${PORTSDIR}/www/neon

@@ -12,6 +12,7 @@ MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/
 DISTNAME=	wmMatrix-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A DockApp that runs a version of the xmatrix screenhack
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

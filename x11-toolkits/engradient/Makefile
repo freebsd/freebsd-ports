@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	engradient
 DISTNAME=	${PORTNAME}-1.2.x
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A GTK+ engine-gradient theme based off of the IceGradient theme
 
 WRKSRC=		${WRKDIR}/gtk-${PORTNAME}-${PORTVERSION}
 

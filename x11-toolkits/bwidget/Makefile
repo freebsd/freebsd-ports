@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	tcllib
 DISTNAME=	BWidget-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.ORG
+COMMENT=	A high-level widget set for Tcl/Tk
 
 NO_BUILD=	yes
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	arved
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A graphical file manager and image viewer aimed towards new users
 
 USE_REINPLACE=	yes
 USE_BZIP2=	yes

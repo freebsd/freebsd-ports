@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.cs.usyd.edu.au/matty/unicode/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An X11 program which emulates a plan9 window
 
 # needs library and private header, but not during runtime
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/editors/sam:build

@@ -15,6 +15,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Converts DTDs to XML instance, in a specific or RELAX NG format
 
 USE_JAVA=	1.1+
 NO_BUILD=	yes

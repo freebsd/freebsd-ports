@@ -11,6 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.hpl.hp.com/pub/httperf/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A tool for measuring webserver performance
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes

@@ -23,6 +23,7 @@ PATCHFILES=	${DISTNAME}-i18n.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Clone of the Motif library mostly for linux-netscape4
 
 BUILD_DEPENDS=	${LINUXBASE}/usr/bin/cc:${PORTSDIR}/devel/linux_devtools-7
 

@@ -11,6 +11,7 @@ CATEGORIES=	textproc gnome
 MASTER_SITES=	http://home.catv.ne.jp/pp/ginoue/software/gtkdiff/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A frontend program for diff(1) written for GNOME
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

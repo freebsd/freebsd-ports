@@ -12,6 +12,7 @@ CATEGORIES=	www textproc
 MASTER_SITES=	http://homepage.mac.com/pauljlucas/software/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Simple Web Indexing System for Humans: C++ version
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 

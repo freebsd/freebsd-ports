@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	sobomax
 DISTNAME=	IceGradient-1.2.x-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A GTK+ gradient theme engine based on ThinIce
 
 WRKSRC=		${WRKDIR}/gtk-${PORTNAME}-0.0.5
 

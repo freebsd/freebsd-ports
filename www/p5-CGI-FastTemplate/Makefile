@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	CGI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl module for manage templates and parses templates
 
 PERL_CONFIGURE=	yes
 

@@ -16,6 +16,7 @@ PATCHFILES=	${PORTNAME}-${OOPSVERSION}-${OOPSDATE}.patch
 PATCH_DIST_STRIP=	-d ${WRKDIR}/${DISTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A caching web proxy server
 
 BUILD_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk
 

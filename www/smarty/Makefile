@@ -16,6 +16,7 @@ DISTFILES+=	Smarty-${PORTVERSION}-docs${EXTRACT_SUFX}:manual
 .endif
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The PHP compiling template engine
 
 RUN_DEPENDS=	php-config:${PORTSDIR}/www/mod_php4
 

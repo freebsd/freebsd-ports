@@ -8,6 +8,7 @@
 PORTNAME=	fo-aspell
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Aspell with Faroese dictionary
 
 MASTERDIR=	${.CURDIR}/../aspell
 

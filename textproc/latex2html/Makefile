@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	support/${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Convert LaTeX documents to HTML
 
 .include <bsd.port.pre.mk>
 

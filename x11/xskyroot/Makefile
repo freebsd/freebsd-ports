@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.sra.co.jp/pub/news/fj.sources/V10/
 DISTFILES=	1079.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Realtime sky drawer for X root window
 
 EXTRACT_CMD=	${GZIP_CMD}
 EXTRACT_BEFORE_ARGS=	-dc

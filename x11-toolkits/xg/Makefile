@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://messners.com/code/ \
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Windows(tm) controls - like widget set for Motif(tm)
 
 WRKSRC=		${WRKDIR}/Xg-${PORTVERSION}
 USE_X_PREFIX=	yes

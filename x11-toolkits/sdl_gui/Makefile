@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.newimage.com/~rhk/SDL_gui/
 DISTNAME=	SDL_gui-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A Graphical User Interface library for SDL
 
 LIB_DEPENDS=	SDL-1.1:${PORTSDIR}/devel/sdl12 \
 		SDL_image:${PORTSDIR}/graphics/sdl_image \

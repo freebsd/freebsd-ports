@@ -15,6 +15,7 @@ DISTNAME=	Jetty-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Extensible Java HTTP Server
 
 USE_JAVA=	1.3+
 

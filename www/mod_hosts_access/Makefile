@@ -12,6 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.klomp.org/mod_hosts_access/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Apache module that makes Apache respect hosts.allow and hosts.deny
 
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
 RUN_DEPENDS=	${APXS}:${APACHE_PORT}

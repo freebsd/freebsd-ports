@@ -12,6 +12,7 @@ MASTER_SITES=	http://apps.alphaworks.ibm.com/technologies/xml4j/
 DISTNAME=	XML4J-J-bin.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	XML for Java parser
 
 WRKSRC=		${WRKDIR}/XML4J-3_1_1
 NO_BUILD=	YES

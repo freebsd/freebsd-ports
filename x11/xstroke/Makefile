@@ -13,6 +13,7 @@ CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.handhelds.org/pub/projects/xstroke/release-${PORTVERSION:R}/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Fullscreen gesture recognition
 
 BROKEN=		Needs updates for Xft and XFree86 4.3
 

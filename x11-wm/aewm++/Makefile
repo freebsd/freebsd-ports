@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sapphire
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The C++ version of aewm
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	cocoon/cocoon1
 DISTNAME=	Cocoon-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	100% pure Java publishing framework servlet
 
 USE_JAVA=	1.1+
 MAKE_ENV=	JAVA_HOME=${JAVA_HOME} CLASSPATH=${CLASSPATH}

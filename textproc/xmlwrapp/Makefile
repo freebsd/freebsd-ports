@@ -12,6 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://pmade.org/pjones/software/xmlwrapp/download/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A modern style C++ library for working with XML data
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 

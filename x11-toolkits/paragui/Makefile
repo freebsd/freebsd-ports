@@ -13,6 +13,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.bms-austria.com/pub/paragui/release/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Cross-platform high-level application framework and GUI library
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image \

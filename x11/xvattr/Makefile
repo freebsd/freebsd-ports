@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Getting and setting Xv attributes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

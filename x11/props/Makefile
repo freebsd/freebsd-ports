@@ -12,6 +12,7 @@ MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	fenner
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The OpenLook props application
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 

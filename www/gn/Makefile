@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}	#ftp://ftp.acns.nwu.edu/pub/gn/
 MASTER_SITE_SUBDIR=	trevor
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Gopher and http server
 
 BUILD_DEPENDS=	${WAISDIR}/bin/waisindex:${PORTSDIR}/net/wais
 

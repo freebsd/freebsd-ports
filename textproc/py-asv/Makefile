@@ -13,6 +13,7 @@ MASTER_SITES=	http://tratt.net/laurie/python/asv/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An extensible Python module to parse simple text file formats like CSV
 
 USE_PYTHON=	yes
 

@@ -11,6 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://jonatkins.org/imwheel/files/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Utility to translate mouse wheel actions into X keyboard events
 
 USE_REINPLACE=	yes
 USE_GMAKE=	YES

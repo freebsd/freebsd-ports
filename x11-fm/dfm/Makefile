@@ -11,6 +11,7 @@ CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.kaisersite.de/dfm/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	OS/2 - like Desktop-File-Manager for X Window System
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

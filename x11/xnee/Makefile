@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	X events recorder and player
 
 BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html
 

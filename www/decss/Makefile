@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.pigdog.org/decss/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Strip cascading style sheets from webpages
 
 WRKSRC=		${WRKDIR}/source
 

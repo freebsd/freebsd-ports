@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.fhttpd.org/ \
 		ftp://ftp.fhttpd.org/fhttpd/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	C++-based FTP/HTTP server that supports modules
 
 USE_REINPLACE=	yes
 

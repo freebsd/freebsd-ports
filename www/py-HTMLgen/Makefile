@@ -12,6 +12,7 @@ MASTER_SITES=		http://starship.python.net/crew/friedrich/
 DISTNAME=		HTMLgen
 
 MAINTAINER=		ports@FreeBSD.org
+COMMENT=	A Python library for the generation of HTML documents
 
 USE_PYTHON=		yes
 

@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS .
 DISTNAME=	xview3.2p1-X11R6
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	OpenLook applications and man pages
 
 DEPENDS=	${PORTSDIR}/x11-toolkits/xview:install
 

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	udeproject
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Small, fast, compact windowmanager
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		jpeg.9:${PORTSDIR}/graphics/jpeg

@@ -12,6 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.cabaret.demon.co.uk/filepp/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A generic file preprocessor
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	http://kassandra.techfak.uni-bielefeld.de/mtessmer/wmanager/
 EXTRACT_SUFX=	-src.tar.bz2
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	X11 window manager selector
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 

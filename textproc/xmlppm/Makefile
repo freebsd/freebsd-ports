@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	XML-Conscious PPM Compression
 
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
 

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.cs.usyd.edu.au/matty/unicode/
 DISTNAME=	libXg.utf.fonts
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	UNICODE fonts for use with 9term and sam
 
 NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.boognish.org.uk/enh/lwm/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A lightweight window manager
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_IMAKE=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://sys.estpak.ee/pub/ \
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An Apache module to make Apache get userdirs from MySQL
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13

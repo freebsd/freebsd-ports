@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	ViewKlass-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	C++ Framework for Motif
 
 BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake
 

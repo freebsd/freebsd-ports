@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 MASTER_SITE_SUBDIR=	contrib/modules/1.3
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Third-party modules contributed to the Apache HTTP server project
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13

@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An interactive, multi-threaded web browser for text terminals
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

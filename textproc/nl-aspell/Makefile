@@ -8,6 +8,7 @@
 PORTNAME=	nl-aspell
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Aspell with Dutch dictionary
 
 MASTERDIR=	${.CURDIR}/../aspell
 

@@ -14,6 +14,7 @@ DISTNAME=	xwatchwin
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Watch a window on another X server
 
 MAN1=		xwatchwin.1
 

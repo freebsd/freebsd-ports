@@ -11,6 +11,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.crynwr.com/piewm/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A tvtwm with pie (circular) menus
 
 USE_IMAKE=	yes
 USE_XPM=	yes

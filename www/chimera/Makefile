@@ -12,6 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.rocklinux.org/people/ripclaw/projects/software/chimera/devel/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	X/Athena World-Wide Web client
 
 NO_LATEST_LINK=	yes
 USE_IMAKE=	yes

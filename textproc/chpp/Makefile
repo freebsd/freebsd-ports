@@ -11,6 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.complang.tuwien.ac.at/~schani/chpp/files/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Non-intrusive full-featured text preprocessor
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share

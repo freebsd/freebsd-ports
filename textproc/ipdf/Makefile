@@ -12,6 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://hoopajoo.net/static/projects/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Creates indexed pdf documents from text files
 
 LIB_DEPENDS=	pdf:${PORTSDIR}/print/pdflib \
 		png:${PORTSDIR}/graphics/png \

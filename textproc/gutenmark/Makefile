@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.sandroid.org/GutenMark/SoftwareSnapshots/
 DISTNAME=	GutenMark_source_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Attractively formatting Project Gutenberg texts
 
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/GutenMark-source

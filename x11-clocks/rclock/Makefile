@@ -20,6 +20,7 @@ MASTER_SITE_SUBDIR=	. old devel
 DISTNAME=	rxvt-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Analog clock for X w/appointment reminder and mail notification
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

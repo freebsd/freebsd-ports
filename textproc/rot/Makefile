@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Rotates a file so that lines become columns and vice versa
 
 ALL_TARGET=	${PORTNAME}
 

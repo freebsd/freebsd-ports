@@ -12,6 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.cs.indiana.edu/~kinzler/align/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Text column alignment filter
 
 USE_PERL5=	yes
 
