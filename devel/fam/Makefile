@@ -5,12 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	fam
-PORTVERSION=	2.6.8
-CATEGORIES=	devel
-MASTER_SITES=	ftp://oss.sgi.com/projects/fam/download/
+PORTNAME=		fam
+PORTVERSION=		2.6.9
+CATEGORIES=		devel
+MASTER_SITES=		ftp://oss.sgi.com/projects/fam/download/
+PATCH_SITES=		ftp://oss.sgi.com/projects/fam/download/patches/
+PATCH_DIST_STRIP=	-p1
+PATCHFILES=		freebsd-mntent.patch # freebsd-build.patch
 
-MAINTAINER=	ports@geeksrus.net
+MAINTAINER=		ports@geeksrus.net
 
 USE_AUTOMAKE_VER=14
 USE_LIBTOOL=	yes
@@ -22,8 +25,6 @@ MAN3=		fam.3x
 
 pre-configure:
 	${RM} -fr ${WRKSRC}/util
-	${CP} ${FILESDIR}/fam-mntent.h ${WRKSRC}/fam/mntent.h
-	${CP} ${FILESDIR}/fam-mntent_compat.c++ ${WRKSRC}/fam/mntent_compat.c++
 	${MV} ${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.am.orig
 	${SED} -e s/util// -e /SUBDIRS/q \
 		<${WRKSRC}/Makefile.am.orig >${WRKSRC}/Makefile.am
