@@ -78,6 +78,7 @@
     SUBDIR += gnu-finger
     SUBDIR += gnut
     SUBDIR += gopher
+    SUBDIR += gq
     SUBDIR += gtic
     SUBDIR += gtk-gnutella
     SUBDIR += gtkyahoo
@@ -87,6 +88,7 @@
     SUBDIR += icmpinfo
     SUBDIR += icmpquery
     SUBDIR += icqlib
+    SUBDIR += icqmail
     SUBDIR += icqnix
     SUBDIR += ip-tun
     SUBDIR += ipfm
@@ -152,6 +154,7 @@
     SUBDIR += opengatekeeper
     SUBDIR += openh323
     SUBDIR += openldap
+    SUBDIR += p0f
     SUBDIR += p5-Archie
     SUBDIR += p5-Net
     SUBDIR += p5-Net-DNS
