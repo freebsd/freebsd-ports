@@ -1295,7 +1295,11 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/general_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/globals.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/globals_defs.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/globals_enum.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/globals_eval.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/globals_func.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/globals_type.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/globals_vars.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/glyph_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/glyphstring_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/graph_legend.dot
@@ -1684,7 +1688,7 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/figures/combo.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/figures/devcpp_project_options.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/figures/dialogs_colorselectiondialog.png
-%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/figures/dialogs_fileselection.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/figures/dialogs_filechooser.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/figures/dialogs_fontselectiondialog.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/figures/dialogs_messagedialog.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/figures/dialogs_simple.png
@@ -1812,6 +1816,8 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/html/ch21.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/html/ch21s02.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/html/ch22.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/html/ch22s02.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/html/ch23.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/html/index.html
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/arrow/arrow.cc
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/arrow/direction.cc
@@ -1855,6 +1861,16 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/combobox/text/examplewindow.cc
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/combobox/text/examplewindow.h
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/combobox/text/main.cc
+%%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/custom/custom_container/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/custom/custom_container/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/custom/custom_container/main.cc
+%%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/custom/custom_container/mycontainer.cc
+%%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/custom/custom_container/mycontainer.h
+%%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/custom/custom_widget/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/custom/custom_widget/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/custom/custom_widget/main.cc
+%%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/custom/custom_widget/mywidget.cc
+%%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/custom/custom_widget/mywidget.h
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/dialogs/colorselectiondialog/examplewindow.cc
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/dialogs/colorselectiondialog/examplewindow.h
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/dialogs/colorselectiondialog/main.cc
@@ -2063,6 +2079,9 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/dialogs/filechooserdialog
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/dialogs/colorselectiondialog
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/dialogs
+%%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/custom/custom_container
+%%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/custom/custom_widget
+%%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/custom
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/combobox/text
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/combobox/complex
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/combobox
