@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.run
 MAINTAINER=	nik@FreeBSD.org
 COMMENT=	Return to Castle Wolfenstein for Linux
 
+BROKEN=		"Does not fetch"
+
 ONLY_FOR_ARCHS=	i386
 USE_LINUX_PREFIX=	yes
 NO_CDROM=	"Size; the data set is much too big"

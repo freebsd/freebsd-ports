@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	q@uni.de
 COMMENT=	Utility to split mp3 and ogg files (via CUE sheets)
 
+BROKEN=		"Does not fetch"
+
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/mad \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
 		ogg.5:${PORTSDIR}/audio/libogg

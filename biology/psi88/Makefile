@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
 COMMENT=	Plotting wavefunctions (molecular orbitals) in 3D
 
+BROKEN=		"Does not fetch"
+
 pre-patch:
 	${MV} ${WRKSRC}/src/makefile ${WRKSRC}/src/Makefile
 
