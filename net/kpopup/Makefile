@@ -6,7 +6,7 @@
 
 PORTNAME=	kpopup
 PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net kde
 MASTER_SITES=	http://www.henschelsoft.de/kpopup/
 

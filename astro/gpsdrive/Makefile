@@ -7,7 +7,7 @@
 
 PORTNAME=	gpsdrive
 PORTVERSION=	2.07.r7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	http://gpsdrive.kraftvoll.at/     \
 		http://www.gpsdrive.cc/           \

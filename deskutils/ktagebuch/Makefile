@@ -6,7 +6,7 @@
 
 PORTNAME=		ktagebuch
 PORTVERSION=		0.72
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=		deskutils kde
 MASTER_SITES=		http://home.tiscali.de/rainerb/ktagebuch/
 

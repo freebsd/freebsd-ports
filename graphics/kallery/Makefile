@@ -7,7 +7,7 @@
 
 PORTNAME=	kallery
 PORTVERSION=	1.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics kde
 MASTER_SITES=	http://www.virtualartisans.com/kde/andras/kallery/
 MASTER_SITE_SUBDIR=	${PORTNAME}

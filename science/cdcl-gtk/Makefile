@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
+PORTREVISION=	2
 
 MAINTAINER=	murakami@ahs.scitec.kobe-u.ac.jp
 COMMENT=	Scientific graphic library for geoscience (with gtk support)

@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	2
+PORTREVISION=	3
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	The wxWindows GUI toolkit (GTK2 version)

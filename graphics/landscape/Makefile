@@ -7,7 +7,7 @@
 
 PORTNAME=		landscape
 PORTVERSION=		0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=		graphics kde
 MASTER_SITES=		http://www.witchspace.com/files/
 
