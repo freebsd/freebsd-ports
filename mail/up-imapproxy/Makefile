@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	up-imapproxy
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.imapproxy.org/downloads/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
-EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	mbr@FreeBSD.org
 COMMENT=	A caching IMAP proxy server
@@ -23,7 +22,7 @@ SAMPLE_EXT=	sample
 
 .include <bsd.port.pre.mk>
 
-RC_SCRIPTS_SUB= PREFIX=${PREFIX} \
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
 		RC_SUBR=${RC_SUBR}
 
 post-install:
