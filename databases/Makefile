@@ -25,6 +25,7 @@
     SUBDIR += p5-SQL-Statement
     SUBDIR += pgaccess
     SUBDIR += postgresql
+    SUBDIR += pxtools
     SUBDIR += py-PyGreSQL
     SUBDIR += ruby-postgres
     SUBDIR += tcl-Mysql
