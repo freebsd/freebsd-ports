@@ -35,7 +35,7 @@ _USE_GNOME_ALL+=libghttp glib12 gtk12 libxml gdkpixbuf imlib orbit \
 		gtkhtml pygtk pygnome
 
 # GNOME 2 components
-_USE_GNOME_ALL+=gnomeaudio glib20 atk pango gtk20 linc libidl orbit2 \
+_USE_GNOME_ALL+=glib20 atk pango gtk20 linc libidl orbit2 \
 		libglade2 libxml2 libxslt libbonobo gconf2 gnomevfs2 gail \
 		libgnomecanvas libartlgpl2 libgnomeprint libgnomeprintui \
 		libgnome libbonoboui libgnomeui atspi libgailgnome \
@@ -75,9 +75,6 @@ gnomeprefix_CONFIGURE_ARGS=--localstatedir=${PREFIX}/share/gnome \
 gnomeprefix_USE_GNOME_IMPL=gnomehier
 
 gnometarget_CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
-gnomeaudio_DETECT=	${X11BASE}/share/gnome/sounds/login.wav
-gnomeaudio_RUN_DEPENDS=	${gnomeaudio_DETECT}:${PORTSDIR}/audio/gnomeaudio2
 
 ESD_CONFIG?=		${LOCALBASE}/bin/esd-config
 esound_LIB_DEPENDS=	esd.2:${PORTSDIR}/audio/esound
