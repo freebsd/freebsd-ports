@@ -1,0 +1,8 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/IMAPUtf7/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Unicode/IMAPUtf7.pm
+lib/perl5/site_perl/%%PERL_VER%%/auto/Unicode/IMAPUtf7/autosplit.ix
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Unicode/IMAPUtf7 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Unicode 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Unicode 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/IMAPUtf7 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode 2>/dev/null || true
