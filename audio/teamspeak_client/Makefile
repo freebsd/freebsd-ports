@@ -8,11 +8,11 @@
 PORTNAME=	teamspeak_client
 PORTVERSION=	2.0.32
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp2.teamspeak.org/releases/ \
-		http://www.teamspeak.org/files/ \
-		http://www.gsoft.com.au/~doconnor/
+MASTER_SITES=	ftp://ftp2.teamspeak.org/releases/:main \
+		ftp://teamspeak.krawall.de/releases/:main \
+		http://www.gsoft.com.au/~doconnor/:misc
 DISTNAME=	ts2_client_rc2_2032
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} setduplexfake.so.gz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:main setduplexfake.so.gz:misc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	darius@dons.net.au
