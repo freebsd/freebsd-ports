@@ -3,7 +3,7 @@
 # Date created:         4 Apr 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.3 1997/10/12 15:08:06 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	hpscat-jshin

@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $Id: install,v 1.2 1996/12/31 21:27:03 peter Exp $
+# $FreeBSD$
 #
 
 VERSION="`sed -ne 's/^set vers \(.*\)/\1/p' ${WRKSRC}/exmh.install`"

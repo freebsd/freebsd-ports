@@ -3,7 +3,7 @@
 # Date created:		22 Mar 1997
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.13 1999/03/19 01:15:10 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	hanterm-xf-p16

@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.35 1999/08/25 07:12:53 taoka Exp $
+# $FreeBSD$
 #
 
     SUBDIR += Wnn

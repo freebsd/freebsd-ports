@@ -3,7 +3,7 @@
 # Date created:		22 Mar 1997
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.8 1998/11/17 04:14:01 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       pinetree.precomposed-1.01-bdf

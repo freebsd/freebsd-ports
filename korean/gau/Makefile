@@ -3,7 +3,7 @@
 # Date created:         23 Jul 1998
 # Whom:                 CHOI Junho <cjh@kr.freebsd.org>
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/01 02:30:04 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gau-0.3.1

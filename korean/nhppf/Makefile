@@ -3,7 +3,7 @@
 # Date created:         19 Apr 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.4 1998/09/15 21:31:46 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	nhppf-1.2

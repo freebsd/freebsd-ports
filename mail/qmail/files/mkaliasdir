@@ -3,7 +3,7 @@
 #  Script to populate a Qmail ~alias directory with entries from
 #  an [SZ]mail{er} or sendmail-like aliases file
 #
-#	$Id: mkaliasdir,v 1.2 1997/02/22 07:47:18 tenser Exp $
+# $FreeBSD$
 #
 #  Dan Cross <tenser@spitfire.ecsel.psu.edu>
 #

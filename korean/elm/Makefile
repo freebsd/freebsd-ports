@@ -3,7 +3,7 @@
 # Date created:         1 Apr 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.3 1998/03/16 07:32:08 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	elm2.4h4.1

@@ -3,7 +3,7 @@
 # Date created:		14 Jun 1999
 # Whom:			cjh@kr.freebsd.org
 #
-# $Id$
+# $FreeBSD$
 #
 
 MAINTAINER=	cjh@kr.freebsd.org

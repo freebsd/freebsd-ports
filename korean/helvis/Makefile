@@ -3,7 +3,7 @@
 # Date created:         2 Apr 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.1.1.1 1997/04/28 04:10:16 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	helvis-1.8h2-

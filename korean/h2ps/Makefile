@@ -3,7 +3,7 @@
 # Date created:         20 May 1997
 # Whom:                 CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.5 1998/08/13 07:18:01 asami Exp $
+# $FreeBSD$
 #
 # Thanks to SungGon Yi <skon@stats.snu.ac.kr> for advising 2.06 ports
 #

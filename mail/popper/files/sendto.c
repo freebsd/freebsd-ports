@@ -1,6 +1,6 @@
 #ifdef YOUBIN
 /*
- * Program:     $RCSfile: sendto.c,v $  $Revision: 4.3 $
+ * Program:     $RCSfile: sendto.c,v $  $Revision: 1.1 $
  *
  * Purpose:     Send a message with UDP packet.
  *              Invoked from mh-inc-folder-hook.
@@ -13,7 +13,7 @@
  * Modified:    K.Makimura  macky@agusa.nuie.nagoya-u.ac.jp
  *
  * Date:        1993/07/24
- * Modified:    $Date: 1994/08/01 12:57:38 $
+ * Modified:    $Date: 1998/08/04 22:41:00 $
  *
  * Copyright:   K.Agusa and S.Yamamoto  1993 - 94
  *
@@ -31,7 +31,7 @@
 
 #ifndef lint
 static char rcsid[] =
-    "$Id: sendto.c,v 4.3 1994/08/01 12:57:38 yamamoto Exp $";
+  "$FreeBSD$";
 #endif /* not lint */
 
 #include <sys/types.h>

@@ -3,7 +3,7 @@
 # Date created:         3 Jun 1999
 # Whom:                 Oh Junseon <hollywar@mail.holywar.net>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	engdic-0.1
