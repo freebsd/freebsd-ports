@@ -371,54 +371,54 @@ share/fvwm2/pixmaps/xterm.xpm
 share/fvwm2/pixmaps/xv.xpm
 share/fvwm2/pixmaps/xv2.xpm
 share/fvwm2/pixmaps/xview.xpm
-%%GNOMEDATADIR%%/ConfigFvwmBacker
-%%GNOMEDATADIR%%/ConfigFvwmButtons
-%%GNOMEDATADIR%%/ConfigFvwmDefaults
-%%GNOMEDATADIR%%/ConfigFvwmIconBox
-%%GNOMEDATADIR%%/ConfigFvwmIconMan
-%%GNOMEDATADIR%%/ConfigFvwmIdent
-%%GNOMEDATADIR%%/ConfigFvwmPager
-%%GNOMEDATADIR%%/ConfigFvwmScroll
-%%GNOMEDATADIR%%/ConfigFvwmSetup
-%%GNOMEDATADIR%%/ConfigFvwmTaskBar
-%%GNOMEDATADIR%%/ConfigFvwmWinList
-%%GNOMEDATADIR%%/FvwmForm-Capture
-%%GNOMEDATADIR%%/FvwmForm-Form
-%%GNOMEDATADIR%%/FvwmForm-QuitVerify
-%%GNOMEDATADIR%%/FvwmForm-Rlogin
-%%GNOMEDATADIR%%/FvwmForm-RootCursor
-%%GNOMEDATADIR%%/FvwmForm-Setup
-%%GNOMEDATADIR%%/FvwmForm-Talk
-%%GNOMEDATADIR%%/FvwmForm-TalkHelp
-%%GNOMEDATADIR%%/FvwmScript-BaseConfig
-%%GNOMEDATADIR%%/FvwmScript-BellSetup
-%%GNOMEDATADIR%%/FvwmScript-Buttons
-%%GNOMEDATADIR%%/FvwmScript-Colorset
-%%GNOMEDATADIR%%/FvwmScript-ComExample
-%%GNOMEDATADIR%%/FvwmScript-Date
-%%GNOMEDATADIR%%/FvwmScript-FileBrowser
-%%GNOMEDATADIR%%/FvwmScript-Find
-%%GNOMEDATADIR%%/FvwmScript-KeyboardSetup
-%%GNOMEDATADIR%%/FvwmScript-PointerSetup
-%%GNOMEDATADIR%%/FvwmScript-Quit
-%%GNOMEDATADIR%%/FvwmScript-ScreenDump
-%%GNOMEDATADIR%%/FvwmScript-ScreenSetup
-%%GNOMEDATADIR%%/FvwmScript-Setup95
-%%GNOMEDATADIR%%/FvwmScript-WidgetDemo
-%%GNOMEDATADIR%%/fvwm-script-ComExample.pl
-%%GNOMEDATADIR%%/fvwm-script-setup95.pl
-%%GNOMEDATADIR%%/system.fvwm2rc-sample-95
-%%GNOMEDATADIR%%/perllib/FVWM/Constants.pm
-%%GNOMEDATADIR%%/perllib/FVWM/Module/Gtk.pm
-%%GNOMEDATADIR%%/perllib/FVWM/Module/Tk.pm
-%%GNOMEDATADIR%%/perllib/FVWM/Module.pm
-%%GNOMEDATADIR%%/perllib/General/FileSystem.pm
-%%GNOMEDATADIR%%/perllib/General/Parse.pm
-@dirrm %%GNOMEDATADIR%%/perllib/General
-@dirrm %%GNOMEDATADIR%%/perllib/FVWM/Module
-@dirrm %%GNOMEDATADIR%%/perllib/FVWM
-@dirrm %%GNOMEDATADIR%%/perllib
-@dirrm %%GNOMEDATADIR%%
+share/fvwm/ConfigFvwmBacker
+share/fvwm/ConfigFvwmButtons
+share/fvwm/ConfigFvwmDefaults
+share/fvwm/ConfigFvwmIconBox
+share/fvwm/ConfigFvwmIconMan
+share/fvwm/ConfigFvwmIdent
+share/fvwm/ConfigFvwmPager
+share/fvwm/ConfigFvwmScroll
+share/fvwm/ConfigFvwmSetup
+share/fvwm/ConfigFvwmTaskBar
+share/fvwm/ConfigFvwmWinList
+share/fvwm/FvwmForm-Capture
+share/fvwm/FvwmForm-Form
+share/fvwm/FvwmForm-QuitVerify
+share/fvwm/FvwmForm-Rlogin
+share/fvwm/FvwmForm-RootCursor
+share/fvwm/FvwmForm-Setup
+share/fvwm/FvwmForm-Talk
+share/fvwm/FvwmForm-TalkHelp
+share/fvwm/FvwmScript-BaseConfig
+share/fvwm/FvwmScript-BellSetup
+share/fvwm/FvwmScript-Buttons
+share/fvwm/FvwmScript-Colorset
+share/fvwm/FvwmScript-ComExample
+share/fvwm/FvwmScript-Date
+share/fvwm/FvwmScript-FileBrowser
+share/fvwm/FvwmScript-Find
+share/fvwm/FvwmScript-KeyboardSetup
+share/fvwm/FvwmScript-PointerSetup
+share/fvwm/FvwmScript-Quit
+share/fvwm/FvwmScript-ScreenDump
+share/fvwm/FvwmScript-ScreenSetup
+share/fvwm/FvwmScript-Setup95
+share/fvwm/FvwmScript-WidgetDemo
+share/fvwm/fvwm-script-ComExample.pl
+share/fvwm/fvwm-script-setup95.pl
+share/fvwm/system.fvwm2rc-sample-95
+share/fvwm/perllib/FVWM/Constants.pm
+share/fvwm/perllib/FVWM/Module/Gtk.pm
+share/fvwm/perllib/FVWM/Module/Tk.pm
+share/fvwm/perllib/FVWM/Module.pm
+share/fvwm/perllib/General/FileSystem.pm
+share/fvwm/perllib/General/Parse.pm
+@dirrm share/fvwm/perllib/General
+@dirrm share/fvwm/perllib/FVWM/Module
+@dirrm share/fvwm/perllib/FVWM
+@dirrm share/fvwm/perllib
+@dirrm share/fvwm
 @dirrm share/fvwm2/pixmaps
 @dirrm share/fvwm2
 @dirrm libexec/fvwm/%%FVWM_VERSION%%
