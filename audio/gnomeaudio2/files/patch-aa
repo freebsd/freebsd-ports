@@ -1,17 +1,22 @@
---- sounds/Makefile.orig	Wed Feb 24 22:19:09 1999
-+++ sounds/Makefile	Sat Mar  6 15:20:39 1999
-@@ -6,10 +6,10 @@
+--- sounds/Makefile.orig	Wed Feb 24 14:19:09 1999
++++ sounds/Makefile	Mon Jul 12 11:24:27 1999
+@@ -1,15 +1,13 @@
+-prefix=$(shell gnome-config --prefix)
+-
+ all:
+ 
+ install: install-files install-default-links
  
  install-files:
  	for I in $(shell find . -name '*.wav'); do \
 -		install -d $(prefix)/share/sounds/`dirname $$I`; \
 -		install -m444 $$I $(prefix)/share/sounds/$$I; \
-+		mkdir -p $(prefix)/share/gnome/sounds/`dirname $$I`; \
-+		${INSTALL_DATA} $$I $(prefix)/share/gnome/sounds/$$I; \
++		mkdir -p $(PREFIX)/share/gnome/sounds/`dirname $$I`; \
++		${INSTALL_DATA} $$I $(PREFIX)/share/gnome/sounds/$$I; \
  	done
  
  install-default-links:
 -	ln -sf startup3.wav $(prefix)/share/sounds/login.wav
 -	ln -sf shutdown1.wav $(prefix)/share/sounds/logout.wav
-+	ln -sf startup3.wav $(prefix)/share/gnome/sounds/startup.wav
-+	ln -sf shutdown1.wav $(prefix)/share/gnome/sounds/logout.wav
++	ln -sf startup3.wav $(PREFIX)/share/gnome/sounds/startup.wav
++	ln -sf shutdown1.wav $(PREFIX)/share/gnome/sounds/logout.wav
