@@ -21,7 +21,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
-.include "files/manpages"
+.include "${FILESDIR}/manpages"
 
 post-extract:
 	find ${WRKSRC} -name CVS | xargs ${RM} -rf

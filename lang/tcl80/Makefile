@@ -28,7 +28,7 @@ SHLIB_MINOR=	5
 MAKEFILE=	makefile
 TCL_LIB=	libtcl80.so
 
-.include "files/manpages"
+.include "${FILESDIR}/manpages"
 
 MANCOMPRESSED=	yes
 
