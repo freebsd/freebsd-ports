@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	seahorse
-PORTVERSION=	0.7.5
-PORTREVISION=	1
+PORTVERSION=	0.7.6
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=sources/${PORTNAME}/0.7
@@ -41,9 +40,16 @@ OPTIONS=	GEDIT "Enable the gedit plug-in" on
 BUILD_DEPENDS+=	gedit:${PORTSDIR}/editors/gedit
 RUN_DEPENDS+=	gedit:${PORTSDIR}/editors/gedit
 PLIST_SUB+=	GEDIT=""
+GCONF_SCHEMAS+=	seahorse-gedit.schemas
+post-patch:
+	@${REINPLACE_CMD} -e "s|gedit-2.8|gedit-2.10|g" \
+		${WRKSRC}/configure
 .else
 PLIST_SUB+=	GEDIT="@comment "
 CONFIGURE_ARGS+=--disable-gedit
 .endif
+
+post-install:
+	-@update-desktop-database
 
 .include <bsd.port.post.mk>
