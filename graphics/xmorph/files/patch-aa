@@ -1,48 +1,31 @@
 --- Makefile.orig	Wed Oct  2 11:28:18 1996
 +++ Makefile	Thu Nov  7 15:26:58 1996
-@@ -64,12 +64,12 @@
- # You must use an ANSI C compiler.
+@@ -96,10 +96,10 @@
  #
+ #CFLAGS=-g +Ns4000 $(DREAL)
  
--CC=ucbcc
--CC=apcc -DANSI
--CC=gcc -W -Wunused -Wuninitialized -Wshadow -DANSI
--CC=gcc -DANSI
--CC=cc
--CC=cc -DANSI -fullwarn
-+#CC=ucbcc
-+#CC=apcc -DANSI
-+#CC=gcc -W -Wunused -Wuninitialized -Wshadow -DANSI
-+#CC=gcc -DANSI
-+#CC=cc
-+#CC=cc -DANSI -fullwarn
+-CFLAGS=-O $(DREAL)
+-CFLAGS=-g -O -I/usr/openwin/include -DSUNOS $(DREAL)
+-CFLAGS=-g -O -I/usr/openwin/include $(DREAL)
+-CFLAGS=-g $(DREAL)
++CFLAGS=-O $(DREAL) -I/usr/X11R6/include
++#CFLAGS=-g -O -I/usr/openwin/include -DSUNOS $(DREAL)
++#CFLAGS=-g -O -I/usr/openwin/include $(DREAL)
++#CFLAGS=-g $(DREAL)
  
  
  ##
-@@ -89,10 +89,10 @@
- #
- #CFLAGS=-g +Ns4000
- 
--CFLAGS=-O
--CFLAGS=-g -O -I/usr/openwin/include -DSUNOS
--CFLAGS=-g -O -I/usr/openwin/include
--CFLAGS=-g
-+CFLAGS+=-O -I/usr/X11R6/include
-+#CFLAGS=-g -O -I/usr/openwin/include -DSUNOS
-+#CFLAGS=-g -O -I/usr/openwin/include
-+#CFLAGS=-g
- 
- 
- ##
-@@ -117,9 +117,9 @@
+@@ -126,10 +126,10 @@
  #
  # SOLARIS: To link to openwin libraries, add -L/usr/openwin/lib
  #
 -LIBS=-L/usr/openwin/lib -lXaw -lXmu -lXext -lXt -lX11 -lm /usr/lib/debug/malloc.o
 -LIBS=-L/usr/openwin/lib -lXaw -lXmu -lXext -lXt -lX11 -lm
 -LIBS=-lXaw -lXmu -lXext -lXt -lX11 -lm
+-LIBS=-L/usr/X11/lib -lXaw -lXmu -lXext -lXt -lX11 -lm
 +#LIBS=-L/usr/openwin/lib -lXaw -lXmu -lXext -lXt -lX11 -lm /usr/lib/debug/malloc.o
 +#LIBS=-L/usr/openwin/lib -lXaw -lXmu -lXext -lXt -lX11 -lm
++#LIBS=-lXaw -lXmu -lXext -lXt -lX11 -lm
 +LIBS=-L/usr/X11R6/lib -lXaw -lXmu -lXext -lXt -lX11 -lm
  
  
