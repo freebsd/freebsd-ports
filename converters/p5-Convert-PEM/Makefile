@@ -18,7 +18,7 @@ MAINTAINER=	mharo@FreeBSD.org
 PERLBASE=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 BUILD_DEPENDS=	${PERLBASE}/Convert/ASN1.pm:${PORTSDIR}/converters/p5-Convert-ASN1 \
 		${PERLBASE}/${PERL_ARCH}/Crypt/DES.pm:${PORTSDIR}/security/p5-Crypt-DES \
-		${PERLBASE}/${PERL_ARCH}/Crypt/DES_EDE3.pm:${PORTSDIR}/security/p5-Crypt-DES_EDE3 \
+		${PERLBASE}/Crypt/DES_EDE3.pm:${PORTSDIR}/security/p5-Crypt-DES_EDE3 \
 		${PERLBASE}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${PERLBASE}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 
