@@ -1,12 +1,27 @@
 diff -u -r1.1 fig2dev/Imakefile
---- 1.1	1995/01/21 19:29:30
-+++ fig2dev/Imakefile	1995/01/21 19:30:28
-@@ -65,7 +65,7 @@
+--- 1.1	1995/01/25 20:55:22
++++ fig2dev/Imakefile	1995/01/25 21:26:14
+@@ -32,10 +32,10 @@
+ XCOMM the XPM (color pixmap) package and you would like to allow XPM files.
+ XCOMM You need version 3.4c of the XPM package.
+ 
+-XCOMM XPMDEFINES = -DUSE_XPM
+-XCOMM XPMLIBDIR = -L/usr/local/X11/lib
+-XCOMM XPMINCDIR = -I/usr/local/X11/include/xpm
+-XCOMM XPMLIB = $(XPMLIBDIR) -lXpm -lX11
++XPMDEFINES = -DUSE_XPM
++XPMLIBDIR = -L/usr/X11R6/lib
++XPMINCDIR = -I/usr/X11R6/include/X11
++XPMLIB = $(XPMLIBDIR) -lXpm -lX11
+ 
+ XCOMM For Linux machines or any machines that have a separate library for
+ XCOMM the database management routines, uncomment the following line
+@@ -73,7 +73,7 @@
  	arrow.o bound.o free.o read.o read1_3.o latex_line.o $(STRSTRO) \
  	dev/libtransfig.a
  
--SYS_LIBRARIES = -lm
-+SYS_LIBRARIES = -lm -lcompat
- LOCAL_LIBRARIES = $(XPMLIB)
+-SYS_LIBRARIES = $(XPMLIB) $(DBMLIB) -lm
++SYS_LIBRARIES = $(XPMLIB) $(DBMLIB) -lm  -lcompat
  
  MakeSubdirs($(SUBDIRS))
+ DependSubdirs($(SUBDIRS))
