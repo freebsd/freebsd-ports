@@ -300,6 +300,7 @@ anubis		ports/mail/anubis
 aoi		ports/graphics/aoi
 aolserver	ports/www/aolserver
 ap-utils	ports/net/ap-utils
+apache-ant	ports/devel/apache-ant
 apache-contrib	ports/www/apache-contrib
 apache-jserv	ports/www/apache-jserv
 apache13	ports/www/apache13
@@ -3196,7 +3197,6 @@ jaf		ports/java/jaf
 jags		ports/net/jags
 jailer		ports/sysutils/jailer
 jailutils	ports/sysutils/jailutils
-jakarta-ant	ports/devel/jakarta-ant
 jakarta-bcel	ports/java/jakarta-bcel
 jakarta-commons-beanutils	ports/java/jakarta-commons-beanutils
 jakarta-commons-cli	ports/java/jakarta-commons-cli
