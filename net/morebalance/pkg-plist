@@ -1,2 +1,3 @@
 sbin/morebalance
 etc/morebalance.conf.sample
+share/locale/de/LC_MESSAGES/morebalance.mo

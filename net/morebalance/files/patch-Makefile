@@ -1,34 +1,25 @@
---- Makefile.orig	Wed Oct  8 13:54:08 2003
-+++ Makefile	Sat Oct 11 15:38:37 2003
-@@ -1,26 +1,21 @@
- VERSION = 0.2
--#PCRE=-lpcre
--#GNUTLS=-lggz -lgnutls
+--- Makefile.orig	Tue Jun  1 23:06:03 2004
++++ Makefile	Wed Jun  2 11:55:57 2004
+@@ -1,19 +1,14 @@
+ VERSION = 0.3
+-PCRE=-lpcre
+-GNUTLS=-lggz -lgnutls
 -
 -CC = gcc
 -CFLAGS = -Wall -O3 -ggdb3
  
  OBJECTS = main.o conf.o sys.o magic.o server.o ipban.o filter.o
  
+-prefix = /usr/local
+-confprefix = /usr/local/etc
++prefix = ${PREFIX}
++confprefix = ${PREFIX}/etc
+ 
  all: morebalance
  
  morebalance: $(OBJECTS)
 -	$(CC) -o $@ $(OBJECTS) -lpthread $(PCRE) $(GNUTLS)
-+	$(CC) $(CFLAGS) -o $@ $(OBJECTS) $(LDFLAGS)
++	$(CC) -o $@ $(OBJECTS) $(CFLAGS) $(LDFLAGS)
  
  clean:
  	rm -f *.o
- 	rm -f morebalance
- 
- install: morebalance
--	install -d -m755 $(DESTDIR)$(prefix)/usr/bin
--	install -d -m755 $(DESTDIR)$(prefix)/etc
--	cp morebalance $(DESTDIR)$(prefix)/usr/bin
--	cp morebalance.conf $(DESTDIR)$(prefix)/etc
-+	install -d -m755 $(DESTDIR)$(PREFIX)/bin
-+	install -d -m755 $(DESTDIR)$(PREFIX)/etc
-+	cp morebalance $(DESTDIR)$(PREFIX)/bin
-+	cp morebalance.conf $(DESTDIR)$(PREFIX)/etc
- 
- distclean: clean
- 	rm -f configure-stamp

@@ -6,30 +6,24 @@
 #
 
 PORTNAME=	morebalance
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	net
-MASTER_SITES=	http://sheepkiller.nerim.net/ports/${PORTNAME}/ \
-		http://mindx.dyndns.org/morebalance/
+MASTER_SITES=	http://morebalance.coolprojects.org/
 
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	A modular open source user-space load balancing system
 
+LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre \
+		gnutls.13:${PORTSDIR}/security/gnutls \
+		ggz.2:${PORTSDIR}/games/libggz
+
 CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
-MAKE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
-USE_GETOPT_LONG=	yes
+MAKE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+USE_GETTEXT=	YES
+USE_GETOPT_LONG=yes
 
-.if defined(WITH_PCRE)
-LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
-CFLAGS+=	-DUSE_PCRE
-LDFLAGS+=	-L${LOCALBASE}/lib -lpcre
-.endif
-
-.if defined(WITH_TLS)
-LIB_DEPENDS+=	gnutls.13:${PORTSDIR}/security/gnutls \
-		ggz.1:${PORTSDIR}/games/libggz
-CFLAGS+=	-DUSE_TLS
-LDFLAGS+=	-lggz -lgnutls -L${LOCALBASE}/lib
-.endif
+LDFLAGS+=	-L${LOCALBASE}/lib -lpcre -lggz -lgnutls \
+		-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 MAN1=		morebalance.1
 MAN5=		morebalance.conf.5
@@ -39,5 +33,6 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}.conf.sample
 	@${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${MANPREFIX}/man/man1
 	@${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.conf.5 ${MANPREFIX}/man/man5
+	@${MAKE_ENV} ${MAKE} -C ${WRKSRC} install-messages
 
 .include <bsd.port.mk>
