@@ -11,7 +11,7 @@ PKGNAMESUFFIX=
 
 COMMENT=	The Adaptive Communication Environment for C++
 
-CONFLICTS=	ace+tao-*
+CONFLICTS=	ace+tao-5*
 
 WITHOUT_TAO=	yes
 
