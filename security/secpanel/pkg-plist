@@ -3,7 +3,6 @@ share/secpanel/convert_history.tcl
 share/secpanel/default.config
 share/secpanel/default.profile
 share/secpanel/gui.tcl
-share/secpanel/keydistribute.tcl
 share/secpanel/listserver.tcl
 share/secpanel/secpanel.dist
 share/secpanel/secpanel.wait
