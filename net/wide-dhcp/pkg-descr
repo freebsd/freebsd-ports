@@ -41,7 +41,7 @@ cd /dev
 ** dhcpdb.relay file is need without relay agent **
 
 	  Please read more information in
-	/usr/local/share/dhcp/intro.dhcp.
+	/usr/local/share/doc/dhcp/intro.dhcp or intro.dhcp.jis.
 
 ** CHECK_SUM Problem under FreeBSD 2.1.x **
 
