@@ -1,0 +1,19 @@
+*** tkdict.orig	Sun Jul 21 17:55:46 2002
+--- tkdict	Sun Jul 21 17:56:11 2002
+***************
+*** 340,346 ****
+  #=======================================================================
+  sub set_mode
+  {
+! 
+      if ($lookup_mode eq 'match')
+      {
+  	$sframe->pack();
+--- 340,346 ----
+  #=======================================================================
+  sub set_mode
+  {
+!     return if (!defined($sframe));
+      if ($lookup_mode eq 'match')
+      {
+  	$sframe->pack();
