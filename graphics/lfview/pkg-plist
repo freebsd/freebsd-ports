@@ -1,5 +1,5 @@
 bin/lfview
-share/doc/ja/lfview/README
-@dirrm share/doc/ja/lfview
-lib/liblfv_leaf.so.1
 lib/liblfv_leaf.so
+lib/liblfv_leaf.so.1
+%%PORTDOCS%%share/doc/ja/lfview/README
+%%PORTDOCS%%@dirrm share/doc/ja/lfview
