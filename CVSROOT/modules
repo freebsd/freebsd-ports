@@ -6032,6 +6032,7 @@ nettle		ports/security/nettle
 nettoe		ports/games/nettoe
 netustad	ports/net-mgmt/netustad
 netwag		ports/net-mgmt/netwag
+netwalker-ircc	ports/irc/netwalker-ircc
 netwib		ports/net/netwib
 netwox		ports/net-mgmt/netwox
 neverball	ports/games/neverball
