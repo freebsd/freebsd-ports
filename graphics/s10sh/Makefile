@@ -6,26 +6,24 @@
 #
 
 PORTNAME=	s10sh
-PORTVERSION=	0.2.0
-PORTREVISION=   3
+PORTVERSION=	0.2.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.reynoldsnet.org/s10sh/ \
-		http://www.edwinh.org/s10sh/ \
-		http://www.kyuzz.org/antirez/s10sh-src/
+		http://www.edwinh.org/s10sh/
 
 MAINTAINER=	johnjen@reynoldsnet.org
 COMMENT=	USB/serial userspace driver for the Canon PowerShot digital cameras
-
-# Don't extract the libusb bundled with s10sh:
-EXTRACT_AFTER_ARGS=     | ${TAR} -xf - --exclude '*/libusb*'
-
-MAKEFILE=	${FILESDIR}/Makefile.bsd
 
 .if defined(NOUSB) || defined(WITHOUT_USB)
 MAKE_ENV+=	WITHOUT_USB=YES
 .else
 LIB_DEPENDS=	usb-0.1.7:${PORTSDIR}/devel/libusb
 .endif
+
+# Don't extract the libusb bundled with s10sh:
+EXTRACT_AFTER_ARGS=     | ${TAR} -xf - --exclude '*/libusb*'
+
+MAKEFILE=	${FILESDIR}/Makefile.bsd
 
 .if !defined(NOPORTDOCS)
 post-install:
