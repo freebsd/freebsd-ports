@@ -166,6 +166,14 @@ share/locale/it/LC_MESSAGES/mutt.mo
 share/locale/es/LC_MESSAGES/mutt.mo
 share/locale/uk/LC_MESSAGES/mutt.mo
 share/locale/fr/LC_MESSAGES/mutt.mo
+share/locale/pl/LC_MESSAGES/mutt.mo
+share/locale/nl/LC_MESSAGES/mutt.mo
+share/locale/cs/LC_MESSAGES/mutt.mo
+share/locale/id/LC_MESSAGES/mutt.mo
+share/locale/sk/LC_MESSAGES/mutt.mo
+share/locale/ko/LC_MESSAGES/mutt.mo
+share/locale/el/LC_MESSAGES/mutt.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/mutt.mo
 share/doc/mutt/manual.txt
 share/doc/mutt/PGP-Notes.txt
 share/doc/mutt/sample.muttrc
