@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_php
-PORTVERSION= 	4.0.3
+PORTVERSION= 	4.0.3pl1
 CATEGORIES=	www
 MASTER_SITES=	http://us.php.net/${PHP_DISTDIR}/ \
 		http://php.he.net/${PHP_DISTDIR}/ \
