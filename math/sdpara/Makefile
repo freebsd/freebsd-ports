@@ -41,11 +41,6 @@ CXXFLAGS+=	-mfancy-math-387 -mpreferred-stack-boundary=3
 .endif
 
 pre-build:
-	${CP} ${FILESDIR}/Makefile ${WRKDIR}
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
-			      s|%%LAPACK%%|${LAPACK}|g ; \
-			      s|%%LOCALBASE%%|${LOCALBASE}|g ; \
-			      s|%%CBLAS%%|${CBLAS}|g'  ${WRKDIR}/Makefile
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
 			      s|%%LOCALBASE%%|${LOCALBASE}|g ; \
 			      s|%%CXXFLAGS%%|${CXXFLAGS}|g ; \
