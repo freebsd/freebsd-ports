@@ -32,6 +32,46 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3b3676be-52e1-11d9-a9e7-0001020eed82">
+    <topic>samba -- integer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>samba</name>
+	<name>ja-samba</name>
+	<range><lt>3.0.10,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Greg MacManus, iDEFENSE Labs reports:</p>
+	<blockquote cite="http://www.samba.org/samba/security/CAN-2004-1154.html">
+	  <p>Remote exploitation of an integer overflow vulnerability
+	    in the smbd daemon included in Samba 2.0.x, Samba 2.2.x,
+	    and Samba 3.0.x prior to and including 3.0.9 could allow
+	    an attacker to cause controllable heap corruption, leading
+	    to execution of arbitrary commands with root
+	    privileges.</p>
+	  <p>Successful remote exploitation allows an attacker to gain
+	    root privileges on a vulnerable system. In order to
+	    exploit this vulnerability an attacker must possess
+	    credentials that allow access to a share on the Samba
+	    server.  Unsuccessful exploitation attempts will cause the
+	    process serving the request to crash with signal 11, and
+	    may leave evidence of an attack in logs.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-1154</cvename>
+      <url>http://www.idefense.com/application/poi/display?id=165&amp;type=vulnerabilities</url>
+      <url>http://www.samba.org/samba/security/CAN-2004-1154.html</url>
+    </references>
+    <dates>
+      <discovery>2004-12-02</discovery>
+      <entry>2004-12-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d47e9d19-5016-11d9-9b5f-0050569f0001">
     <topic>php -- multiple vulnerabilities</topic>
     <affects>
