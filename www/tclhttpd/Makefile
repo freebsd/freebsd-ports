@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	mi@aldan.algebra.com
 
-RUN_DEPENDS=	${LOCALBASE}/lib/tcllib0.8/pkgIndex.tcl:${PORTSDIR}/devel/tcllib
+RUN_DEPENDS=	${LOCALBASE}/lib/tcllib1.2/pkgIndex.tcl:${PORTSDIR}/devel/tcllib
 LIB_DEPENDS=	tcl${TCL_VER}:${PORTSDIR}/lang/tcl${TCL_VER}
 
 TCL_DVER?=	8.3
