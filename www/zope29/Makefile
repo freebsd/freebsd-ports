@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	thomas@hentschel.net
 
+FORBIDDEN=	"Contains security vulnerability - needs to have a hotfix applied. See http://www.zope.org/Products/Zope/Hotfix_06_16_2000/security_alert"
+
 BUILD_DEPENDS=	python1.5:${PORTSDIR}/lang/python
 RUN_DEPENDS=	${LOCALBASE}/sbin/apache:${PORTSDIR}/www/apache13-modssl
 
