@@ -5099,6 +5099,7 @@ mod_python	ports/www/mod_python
 mod_python3	ports/www/mod_python3
 mod_roaming	ports/www/mod_roaming
 mod_roaming2	ports/www/mod_roaming2
+mod_rpaf	ports/www/mod_rpaf
 mod_ruby	ports/www/mod_ruby
 mod_scgi	ports/www/mod_scgi
 mod_security	ports/www/mod_security
