@@ -107,6 +107,7 @@
     SUBDIR += mindguard
     SUBDIR += mirrormagic
     SUBDIR += miscom
+    SUBDIR += nadar
     SUBDIR += nethack
     SUBDIR += nethack-gtk
     SUBDIR += nethack-qt
