@@ -1,5 +1,8 @@
 bin/irssi
 bin/irssi-bot
+lib/irssi/plugins/libbot.a
+lib/irssi/plugins/libbot.so
+lib/irssi/plugins/libbot.so.0
 lib/irssi/plugins/libexternal.a
 lib/irssi/plugins/libexternal.so
 lib/irssi/plugins/libexternal.so.0
