@@ -14,6 +14,7 @@ MAINTAINER=	andreas_and_joe@tao.org.uk
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc/zebra
+SCRIPTS_ENV=	WRKDIRPREFIX=${WRKDIRPREFIX}
 
 MAN1=		vtysh.1
 MAN8=		bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8
