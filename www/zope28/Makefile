@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zope
-PORTVERSION=	2.2.5
+PORTVERSION=	2.3.0
 PORTREVISION=	0
 CATEGORIES=	www python
 MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
@@ -25,11 +25,6 @@ DIST_SUBDIR=	zope
 # Build has to be done in the final location after installing the sources
 # there. It were a major action to fix all paths otherwise.
 do-build:	# empty, but needs to be there for the python dependency.
-
-# The web server's "root" directory used to be ${PREFIX}/www, and from
-# then on, data, cgi-bin and such. Thus, I decided that Zope belongs
-# there, too. I don't know whether this still applies to current apache
-# releases, though. I still run 2.2.8-STABLE.
 
 # Change these, if you like, via the environment.
 WEBBASEDIR?=	www
