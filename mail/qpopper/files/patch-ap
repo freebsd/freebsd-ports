@@ -1,5 +1,8 @@
---- man/popauth.8.orig	Mon Aug 21 00:18:08 2000
-+++ man/popauth.8	Wed Nov  1 11:50:18 2000
+
+$FreeBSD$
+
+--- man/popauth.8.orig	Wed Apr  4 03:23:13 2001
++++ man/popauth.8	Fri Apr 13 19:05:06 2001
 @@ -7,11 +7,11 @@
  .\" See License.txt file for terms and conditions for modification and
  .\" redistribution.
@@ -15,16 +18,16 @@
  [
  .BI \-trace " tracefile"
  ] [
-@@ -43,18 +43,18 @@
+@@ -46,18 +46,18 @@
  ]
  
  .SH DESCRIPTION
--The \fIpopauth\fR program allows a POP-subscribers to add or change the secret
-+The \fIqpopauth\fR program allows a POP-subscribers to add or change the secret
+-The \fIpopauth\fR program allows POP subscribers to add or change the secret
++The \fIqpopauth\fR program allows POP subscribers to add or change the secret
  values used to generate their authentication credentials, or to verify the
  existance of their records.
  
- In addition,the super\-user or master POP user can add, delete, or reset
+ In addition, the super\-user or master POP user can add, delete, or reset
  credential data for a user, or list which records exist.  Only the
 -super\-user may initialize the database.  \fIpopauth\fR is useful only when
 +super\-user may initialize the database.  \fIqpopauth\fR is useful only when
@@ -36,9 +39,9 @@
 +\fIqpopauth\fR prompts for a new secret,
  just like the \fIpasswd\fR program.  It then updates the authorization DB.
  
- With the `\-user' switch,
-@@ -74,8 +74,8 @@
- With the `\-delete' switch, the super-user or master POP user can remove
+ With the
+@@ -85,8 +85,8 @@
+ switch, the super-user or master POP user can remove
  a user entry from the authorization DB.
  .SH FILES
 -/etc/pop.auth.* POP authorization DB
@@ -46,5 +49,5 @@
  .SH ACKNOWLEDGEMENTS
  This program was derived from MH 6.8.3
  .SH SEE ALSO
--popper(8)
+-popper(8), poppassd(8)
 +qpopper(8)

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qpopper
-PORTVERSION=	3.1.2
-PORTREVISION=	1
+PORTVERSION=	4.0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/popper/ \
 		ftp://sunsite.doc.ic.ac.uk/Mirrors/ftp.qualcomm.com/eudora/servers/unix/popper/
@@ -15,11 +14,11 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 400014
-PATCH_SITES=    http://www.imasy.or.jp/~ume/ipv6/
-PATCHFILES=     qpopper3.1.2-ipv6-20001214.diff.gz
-PATCH_DIST_STRIP=       -p1
-.endif
+#.if ${OSVERSION} >= 400014
+#PATCH_SITES=    http://www.imasy.or.jp/~ume/ipv6/
+#PATCHFILES=     qpopper3.1.2-ipv6-20001214.diff.gz
+#PATCH_DIST_STRIP=       -p1
+#.endif
 
 MAINTAINER=	lioux@FreeBSD.org
 
@@ -43,6 +42,14 @@ OS_DEFS+=	-DAPOP_ONLY
 # with more verbose debugging. See also -d option to qpopper
 .if defined(FULL_POPD_DEBUG)
 CONFIGURE_ARGS+=	--enable-debugging
+.endif
+
+.if exists(/usr/lib/libssl.a) && exists(/usr/lib/libcrypto.a)
+CONFIGURE_ARGS+=	--with-openssl=/usr
+.elif exists(${LOCALBASE}/lib/libssl.a) && exists(${LOCALBASE}/lib/libcrypto.a)
+LIB_DEPENDS+=	ssl.1:${PORTSDIR}/security/openssl
+CONFIGURE_ARGS+=	-with-includes=${LOCALBASE}/include/openssl --with-openssl=${LOCALBASE}
+CONFIGURE_ENV+=		RSAGLUE=-lRSAglue
 .endif
 
 post-patch:
