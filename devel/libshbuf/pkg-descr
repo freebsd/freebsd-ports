@@ -1,0 +1,14 @@
+libshbuf implements a new kind of IPC: the "shared buffer", a faster, more
+flexible replacement for standard Unix FIFOs. It offers the following
+advantages:
+   - Normally better latency and throughput
+   - Full access to the buffer at any time
+   - Connecting processes need not to be children of each other
+   - Arbitrary buffer lengths
+   - Memory mapped
+   - "Backlog"
+
+The implementation is based on SysV shared memory, semaphores and message
+queues. It makes use of POSIX pthreads.
+
+WWW: http://libshbuf.sourceforge.net/
