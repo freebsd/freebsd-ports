@@ -27,8 +27,8 @@ post-install:
 	@ ${MKDIR} ${PREFIX}/share/xshipwars
 	@ ${CP} -R ${WRKSRC}/../../images \
 	   ${PREFIX}/share/xshipwars/
-	@ chmod -R 744 ${PREFIX}/share/xshipwars
-	@ chmod -R a+X ${PREFIX}/share/xshipwars
+	@ ${CHMOD} -R 744 ${PREFIX}/share/xshipwars
+	@ ${CHMOD} -R a+X ${PREFIX}/share/xshipwars
 	@ ${ECHO} "===>   Installing Documentation "
 	@ ${MKDIR} ${PREFIX}/share/doc/xshipwars
 	@${INSTALL_DATA} ${WRKSRC}/../README \

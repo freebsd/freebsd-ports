@@ -32,8 +32,8 @@ do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/gameText.txf ${PREFIX}/share/glasteroids
 	@ cd ${WRKSRC}; tar -cf - scores.txt textures | \
 		( cd ${PREFIX}/share/glasteroids; tar -xf - )
-	@ chmod a+rx ${PREFIX}/share/glasteroids/textures
-	@ chmod a+rw ${PREFIX}/share/glasteroids/scores.txt
+	@ ${CHMOD} a+rx ${PREFIX}/share/glasteroids/textures
+	@ ${CHMOD} a+rw ${PREFIX}/share/glasteroids/scores.txt
 
 post-install:
 .if !defined(NOPORTDOCS)
