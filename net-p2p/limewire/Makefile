@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	limewire
-PORTVERSION=	3.6.15
-PORTREVISION=	1
+PORTVERSION=	3.8.6
 CATEGORIES=	net java
 MASTER_SITES=	http://www3.limewire.com/download/
 DISTNAME=	LimeWireLinux
@@ -35,6 +34,6 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/runLime.sh.sed ${PREFIX}/bin/limewire
 	@${MKDIR} ${JAR_DIR}
 	@${INSTALL_DATA} ${WRKSRC}/*.jar ${WRKSRC}/MessagesBundle.properties \
-		${WRKSRC}/xml.war ${WRKSRC}/update.ver ${JAR_DIR}
+		${WRKSRC}/xml.war ${WRKSRC}/update.ver ${WRKSRC}/hashes ${JAR_DIR}
 
 .include <bsd.port.mk>
