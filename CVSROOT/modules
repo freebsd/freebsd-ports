@@ -7297,6 +7297,7 @@ xenophilia	ports/x11-toolkits/xenophilia
 xenostep	ports/x11-toolkits/xenostep
 xephem		ports/astro/xephem
 xerces		ports/textproc/xerces
+xerces-j	ports/textproc/xerces-j
 xevil		ports/games/xevil
 xeyesplus	ports/games/xeyesplus
 xfaces		ports/mail/xfaces
