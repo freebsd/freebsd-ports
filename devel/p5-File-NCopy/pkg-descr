@@ -1,0 +1,19 @@
+File::NCopy::copy copies files to directories, or a single file to
+another file.  You can also use a reference to a file handle if you wish
+whem doing a file to file copy.  The functionality is very similar to
+cp.  If the argument is a directory to directory copy and the recursive
+flag is set then it is done recursively like cp -R.  In fact it behaves
+like cp on Unix for the most part.
+
+If called in array context, an array of successful copies is returned,
+otherwise the number of succesful copies is returned.  If passed a file
+handle, it's difficult to make sure the file we are copying isn't the
+same that we are copying to, since by opening the file in write mode it
+gets pooched.  To avoid this use file names instead, if at all possible,
+especially for the to file.  If passed a file handle, it is not closed
+when copy returns, files opened by copy are closed.
+
+WWW: http://search.cpan.org/dist/File-NCopy/
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
