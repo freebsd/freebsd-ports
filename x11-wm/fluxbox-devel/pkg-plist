@@ -1,5 +1,6 @@
 bin/bsetbg
 bin/bsetroot
+bin/fbrun
 bin/fluxbox
 bin/fluxbox-generate_menu
 share/fluxbox/init
@@ -20,11 +21,13 @@ share/fluxbox/nls/sv_SE/blackbox.cat
 share/fluxbox/nls/tr_TR/blackbox.cat
 share/fluxbox/styles/Artwiz
 share/fluxbox/styles/Blue
+share/fluxbox/styles/BlueNight
 share/fluxbox/styles/Carbondioxide
 share/fluxbox/styles/Clean
 share/fluxbox/styles/CleanColor
 share/fluxbox/styles/Cthulhain
 share/fluxbox/styles/Flux
+share/fluxbox/styles/LemonSpace
 share/fluxbox/styles/Makro
 share/fluxbox/styles/MerleyKay
 share/fluxbox/styles/Minimal
@@ -36,7 +39,6 @@ share/fluxbox/styles/Rancor
 share/fluxbox/styles/Results
 share/fluxbox/styles/Shade
 share/fluxbox/styles/Spiff
-share/fluxbox/styles/TDF
 share/fluxbox/styles/Twice
 share/fluxbox/styles/qnx-photon
 @unexec rm %D/share/fluxbox/nls/fr
