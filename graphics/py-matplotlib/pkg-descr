@@ -1,8 +1,0 @@
-matplotlib is a python 2D plotting library which produces publication quality
-figures using in a variety of hardcopy formats (PNG, JPG, PS, SVG) and
-interactive GUI environments (WX, GTK, Tkinter) across platforms. matplotlib
-can be used in python scripts, interactively from the python shell (ala matlab
-or mathematica), in web application servers generating dynamic charts, or
-embedded in GTK, Tk or WX applications; see backends.
-
-WWW: http://matplotlib.sourceforge.net/
