@@ -3,7 +3,7 @@
 # Date created:         5 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.15 1997/04/20 01:28:39 jmz Exp $
+# $Id: Makefile,v 1.16 1997/08/13 15:28:12 jmz Exp $
 #
 
 DISTNAME=	mtools-3.8
@@ -31,6 +31,9 @@ post-patch:
 
 post-install:
 	@install -c ${WRKSRC}/mtools.conf ${PREFIX}/etc
+	@if [ ! -f ${PREFIX}/info/dir ]; then \
+	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
+	 fi
 	@install-info ${PREFIX}/info/mtools.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
