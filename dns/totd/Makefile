@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.pasta.cs.uit.no/pub/Vermicelli/
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 MAN8=		totd.8
 
