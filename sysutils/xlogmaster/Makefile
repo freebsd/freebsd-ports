@@ -3,7 +3,7 @@
 # Date created:		1 August 1998
 # Whom:			Adrian Wontroba <aw1@stade.co.uk>
 #
-# $Id: Makefile,v 1.6 1998/09/15 12:06:45 vanilla Exp $
+# $Id: Makefile,v 1.7 1998/09/19 10:55:11 vanilla Exp $
 #
 
 DISTNAME=	xlogmaster-1.4.4
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://sunsite.doc.ic.ac.uk/packages/gnu/\
 
 MAINTAINER=	aw1@stade.co.uk
 
-LIB_DEPENDS=	gtk11\\.1\\.:${PORTSDIR}/x11-toolkits/gtk11
+LIB_DEPENDS=	gtk11.1:${PORTSDIR}/x11-toolkits/gtk11
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CXXFLAGS="${CFLAGS}" GTK_CONFIG="${PREFIX}/bin/gtk11-config"

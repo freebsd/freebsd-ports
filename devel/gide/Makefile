@@ -3,7 +3,7 @@
 # Date created:        29 Jul 1998
 # Whom:                rom
 #
-# $Id: Makefile,v 1.4 1998/08/25 01:53:21 vanilla Exp $
+# $Id: Makefile,v 1.5 1998/09/15 12:05:11 vanilla Exp $
 #
 
 DISTNAME= 	gIDE-0.0.7
@@ -13,7 +13,7 @@ MASTER_SITES=   http://gide.pn.org/
 
 MAINTAINER=	rom_glsa@ein-hashofet.co.il
 
-LIB_DEPENDS=	gtk11\\.1\\.:${PORTSDIR}/x11-toolkits/gtk11 \
+LIB_DEPENDS=	gtk11.1:${PORTSDIR}/x11-toolkits/gtk11 \
 		guile\\.2\\.:${PORTSDIR}/lang/guile
 
 USE_X_PREFIX=   yes
