@@ -8,32 +8,26 @@
 PORTNAME=	simplog
 PORTVERSION=	0.9
 CATEGORIES=	www
-MASTER_SITES=	ftp://jose.idv.tw/simplog/
+MASTER_SITES=	http://simplog.jose.idv.tw/download/
 
 MAINTAINER=	jose@jose.idv.tw
 COMMENT=	A complete and powerful blogging tool
 
 DATADIR=	${PREFIX}/www/simplog
 NO_BUILD=	yes
-USE_APACHE=	yes
-USE_PHP=	yes
 
 WRKSRC?=	${WRKDIR}/simplog
 
 do-install:
-	@${ECHO} " "
-	@${ECHO} "**************************"
-	@${ECHO} "*** Installing simplog ***"
-	@${ECHO} "**************************"
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${CP} -R templates install images doc cache adodb * \
+	@${ECHO} ""
+	@${ECHO} "===> Installing simplog"
+	@${MKDIR} ${DATADIR}
+	cd ${WRKSRC} && ${CP} -R adodb cache doc images install templates * \
 	${DATADIR}
 
 post-install:
-	@${ECHO} " "
-	@${ECHO} "*************************"
-	@${ECHO} "**** Congratulations ****"
-	@${ECHO} "*************************"
+	@${ECHO} ""
+	@${ECHO} "===> Congratulations"
 	@${ECHO} "The installation of simplog is complete, please check\
 	README in ${DATADIR} first."
 	@${ECHO} "For more informations, documentation is available at\
