@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		xchat
-PORTVERSION=		1.5.8
+PORTVERSION=		1.5.9
 CATEGORIES=		irc gnome
 MASTER_SITES=		http://xchat.org/files/source/1.5/ \
 			http://xchat.linuxpower.org/files/source/1.5/
