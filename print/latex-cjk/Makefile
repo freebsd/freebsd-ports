@@ -16,7 +16,7 @@ MAINTAINER=	jtjang@gcn.net.tw
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
 		${X11BASE}/lib/X11/fonts/TrueType/moe_lishu.ttf:${PORTSDIR}/chinese/moettf \
 		ttf2pk:${PORTSDIR}/print/freetype:build
-LIB_DEPENDS=	ttf.3:${PORTSDIR}/print/freetype
+LIB_DEPENDS=	ttf.4:${PORTSDIR}/print/freetype
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 
 NO_PACKAGE=	Interactive

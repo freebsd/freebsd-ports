@@ -20,7 +20,7 @@ LIB_DEPENDS=	esd.2:${PORTSDIR}/audio/esound \
 		gif.5:${PORTSDIR}/graphics/giflib \
 		Imlib.5:${PORTSDIR}/graphics/imlib \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		ttf.3:${PORTSDIR}/print/freetype \
+		ttf.4:${PORTSDIR}/print/freetype \
 		ghttp.1:${PORTSDIR}/www/libghttp
 
 USE_GMAKE=	yes

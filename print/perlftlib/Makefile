@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.big.or.jp/pub/usr2/jam/ft/ \
 
 MAINTAINER=	taoka@FreeBSD.org
 
-LIB_DEPENDS=	ttf.3:${PORTSDIR}/print/freetype
+LIB_DEPENDS=	ttf.4:${PORTSDIR}/print/freetype
 RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/jcode.pl:${PORTSDIR}/japanese/p5-jcode.pl
 
 USE_PERL5=	yes

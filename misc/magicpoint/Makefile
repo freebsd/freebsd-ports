@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.mew.org/pub/MagicPoint/
 
 MAINTAINER?=	itojun@itojun.org
 
-LIB_DEPENDS+=	ttf.3:${PORTSDIR}/print/freetype
+LIB_DEPENDS+=	ttf.4:${PORTSDIR}/print/freetype
 
 USE_IMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.angelfire.com/va/powerpakgsdk/images/
 MAINTAINER=	andy@icc.surw.chel.su
 
 LIB_DEPENDS=	SDL.0:${PORTSDIR}/devel/sdl \
-		ttf.3:${PORTSDIR}/print/freetype
+		ttf.4:${PORTSDIR}/print/freetype
 
 MAKEFILE=	Makefile.FreeBSD
 

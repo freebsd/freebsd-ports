@@ -21,7 +21,7 @@ PATCHFILES=	3.3.3-3.3.3.1.diff.gz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
-LIB_DEPENDS+=	ttf.3:${PORTSDIR}/print/freetype
+LIB_DEPENDS+=	ttf.4:${PORTSDIR}/print/freetype
 RUN_DEPENDS=	mkttfdir:${PORTSDIR}/print/perlftlib
 
 VERSION=	1.2
