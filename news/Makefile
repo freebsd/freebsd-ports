@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.46 1999/03/01 11:59:24 andreas Exp $
+# $Id: Makefile,v 1.47 1999/03/14 12:35:58 kris Exp $
 #
 
     SUBDIR += atp
@@ -8,6 +8,7 @@
     SUBDIR += diablo
     SUBDIR += dnews
     SUBDIR += fidogate
+    SUBDIR += gup
     SUBDIR += ifmail
     SUBDIR += inn
     SUBDIR += inn-stable
