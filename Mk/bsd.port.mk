@@ -10,15 +10,14 @@
 # Please view me with 4 column tabs!
 
 # There are two different types of "maintainers" in the whole ports
-# framework concept.  Maintainers of the bsd.port*.mk files
-# are listed below in the ${OPSYS}_MAINTAINER entries (this file
-# is used by multiple *BSD flavors).  You should consult them
+# framework concept.  The maintainer of the bsd.port*.mk files
+# is listed below in the ${OPSYS}_MAINTAINER entries (this file
+# is used by multiple *BSD flavors).  You should consult him
 # if you have any questions/suggestions regarding this file.
 #
 # DO NOT COMMIT CHANGES TO THIS FILE BY YOURSELF!
 
 FreeBSD_MAINTAINER=	asami@FreeBSD.org
-OpenBSD_MAINTAINER=	imp@OpenBSD.ORG
 
 # For each port, the MAINTAINER variable is what you should consult for
 # contact information on the person(s) to contact if you have questions/
@@ -147,6 +146,7 @@ OpenBSD_MAINTAINER=	imp@OpenBSD.ORG
 # USE_XLIB		- Says that the port uses X libraries.
 # USE_QT		- Says that the port uses version 1 of the qt toolkit.
 # USE_QT2		- Says that the port uses version 2 of the qt toolkit.
+#				  Implies USE_NEWGCC.
 #
 # Dependency checking.  Use these if your port requires another port
 # not in the list above.
@@ -340,6 +340,19 @@ OpenBSD_MAINTAINER=	imp@OpenBSD.ORG
 #				  change the owner and group of all files under ${WRKDIR}
 #				  to 0:0.  Set this variable if you want to turn off this
 #				  feature.
+#
+# For patch:
+#
+# EXTRA_PATCHES - Define this variable if you have patches not in
+#				  ${PATCHDIR}.  This usually happens when you need to
+#				  do some pre-processing before some distribution
+#				  patches can be applied.  In that case, fetch them as
+#				  extra distfiles, put the processed results in
+#				  ${WRKDIR}, then point EXTRA_PATCHES to them.
+#
+#				  The patches specified by this variable will be
+#				  applied after the normal distribution patches but
+#				  before those in ${PATCHDIR}.
 #
 # For configure:
 #
@@ -584,6 +597,15 @@ MANCOMPRESSED?=	yes
 MANCOMPRESSED?=	no
 .endif
 
+.if defined(USE_QT)
+LIB_DEPENDS+=	qt.2:${PORTSDIR}/x11-toolkits/qt142
+.endif
+
+.if defined(USE_QT2)
+LIB_DEPENDS+=	qt2.2:${PORTSDIR}/x11-toolkits/qt20
+USE_NEWGCC=	yes
+.endif
+
 .if defined(USE_BZIP2)
 BUILD_DEPENDS+=		bzip2:${PORTSDIR}/archivers/bzip2
 .endif
@@ -656,15 +678,6 @@ RUN_DEPENDS+=	perl${PERL_VERSION}:${PORTSDIR}/lang/perl5
 # it's just too big....
 .if defined(USE_XLIB) && !defined(ALWAYS_BUILD_DEPENDS)
 LIB_DEPENDS+=	X11.6:${PORTSDIR}/x11/XFree86
-.endif
-
-.if defined(USE_QT)
-LIB_DEPENDS+=	qt.2:${PORTSDIR}/x11-toolkits/qt142
-.endif
-
-.if defined(USE_QT2)
-LIB_DEPENDS+=	qt2.2:${PORTSDIR}/x11-toolkits/qt20
-USE_NEWGCC=	yes
 .endif
 
 .if exists(${PORTSDIR}/../Makefile.inc)
@@ -910,7 +923,7 @@ MASTER_SITE_TEX_CTAN+=  \
 MASTER_SITE_SUNSITE+=	\
 	ftp://metalab.unc.edu/pub/Linux/%SUBDIR%/ \
 	ftp://ftp.infomagic.com/pub/mirrors/linux/sunsite/%SUBDIR%/ \
-	ftp://ftp.funet.fi/pub/mirrors/sunsite.unc.edu/pub/Linux/%SUBDIR%/
+	ftp://ftp.cdrom.com/pub/linux/sunsite/%SUBDIR%/
 
 MASTER_SITE_KDE+=	\
 	ftp://ftp.us.kde.org/pub/kde/%SUBDIR%/ \
@@ -1000,7 +1013,7 @@ PATCH_SITES:=	${MASTER_SITE_OVERRIDE} ${PATCH_SITES}
 .endif
 .else
 MASTER_SITES:=	${MASTER_SITE_BACKUP} ${MASTER_SITES}
-PATCH_SITES:=	${MASTER_SITE_BACKUP} ${MASTER_SITES}
+PATCH_SITES:=	${MASTER_SITE_BACKUP} ${PATCH_SITES}
 .endif
 
 # Search CDROM first if mounted, symlink instead of copy if
@@ -1072,8 +1085,8 @@ VALID_CATEGORIES+=	afterstep archivers astro audio benchmarks biology \
 	mail math mbone misc net news \
 	offix palm perl5 plan9 print python russian \
 	security shells sysutils \
-	tcl75 tcl76 tcl80 tcl81 tcl82 textproc \
-	tk41 tk42 tk80 tk81 tk82 tkstep80 \
+	tcl76 tcl80 tcl81 tcl82 textproc \
+	tk42 tk80 tk82 tkstep80 \
 	vietnamese windowmaker www \
 	x11 x11-clocks x11-fm x11-fonts x11-servers x11-toolkits x11-wm
 check-categories:
@@ -1560,6 +1573,12 @@ do-patch:
 		esac; \
 	  done)
 .endif
+.if defined(EXTRA_PATCHES)
+	@for i in ${EXTRA_PATCHES}; do \
+		${ECHO_MSG} "===>  Applying extra patch $$i"; \
+		${PATCH} ${PATCH_ARGS} < $$i; \
+	done
+.endif
 	@if [ -d ${PATCHDIR} ]; then \
 		if [ "`echo ${PATCHDIR}/patch-*`" = "${PATCHDIR}/patch-*" ]; then \
 			${ECHO_MSG} "===>   Ignoring empty patch directory"; \
@@ -1718,7 +1737,7 @@ delete-package-links-list:
 .if !target(delete-package-list)
 delete-package-list:
 	@${MAKE} ${__softMAKEFLAGS} delete-package-links-list
-	@${ECHO} ${RM} -f ${PKGFILE}
+	@${ECHO} "[ -f ${PKGFILE} ] && (${ECHO} deleting ${PKGFILE}; ${RM} -f ${PKGFILE})"
 .endif
 
 ################################################################
@@ -2011,7 +2030,13 @@ delete-distfiles:
 	@${ECHO_MSG} "===>  Deleting distfiles for ${PKGNAME}"
 	@(if [ "X${DISTFILES}${PATCHFILES}" != "X" -a -d ${_DISTDIR} ]; then \
 		cd ${_DISTDIR}; \
-		${RM} -f ${DISTFILES} ${PATCHFILES}; \
+		for file in ${DISTFILES} ${PATCHFILES}; do \
+			${RM} -f $${file}; \
+			dir=$${file%/*}; \
+			if [ "$${dir}" != "$${file}" ]; then \
+				${RMDIR} -p $${dir} >/dev/null 2>&1 || :; \
+			fi; \
+		done; \
 	fi)
 .if defined(DIST_SUBDIR)
 	-@${RMDIR} ${_DISTDIR}  
@@ -2023,11 +2048,15 @@ delete-distfiles-list:
 	@${ECHO} "# ${PKGNAME}"
 	@if [ "X${DISTFILES}${PATCHFILES}" != "X" ]; then \
 		for file in ${DISTFILES} ${PATCHFILES}; do \
-			${ECHO} ${RM} -f ${_DISTDIR}/$$file; \
+			${ECHO} "[ -f ${_DISTDIR}/$$file ] && (${ECHO} deleting ${_DISTDIR}/$$file; ${RM} -f ${_DISTDIR}/$$file)"; \
+			dir=$${file%/*}; \
+			if [ "$${dir}" != "$${file}" ]; then \
+				${ECHO} "(cd ${_DISTDIR} && ${RMDIR} -p $${dir} 2>/dev/null)"; \
+			fi; \
 		done; \
 	fi
 .if defined(DIST_SUBDIR)
-	@${ECHO} ${RMDIR} ${_DISTDIR}  
+	@${ECHO} "${RMDIR} ${_DISTDIR} 2>/dev/null"
 .endif
 .endif
 
@@ -2593,7 +2622,11 @@ compress-man:
 .if !target(fake-pkg)
 fake-pkg:
 	@if [ ! -d ${PKG_DBDIR} ]; then ${RM} -f ${PKG_DBDIR}; ${MKDIR} ${PKG_DBDIR}; fi
+	@${RM} -f /tmp/${PKGNAME}-required-by
 .if defined(FORCE_PKG_REGISTER)
+	@if [ -e ${PKG_DBDIR}/${PKGNAME}/+REQUIRED_BY ]; then \
+		${CP} ${PKG_DBDIR}/${PKGNAME}/+REQUIRED_BY /tmp/${PKGNAME}-required-by; \
+	fi
 	@${RM} -rf ${PKG_DBDIR}/${PKGNAME}
 .endif
 	@if [ ! -d ${PKG_DBDIR}/${PKGNAME} ]; then \
@@ -2622,6 +2655,10 @@ fake-pkg:
 				fi; \
 			fi; \
 		done; \
+	fi
+	@if [ -e /tmp/${PKGNAME}-required-by ]; then \
+		${CAT} /tmp/${PKGNAME}-required-by >> ${PKG_DBDIR}/${PKGNAME}/+REQUIRED_BY; \
+		${RM} -f /tmp/${PKGNAME}-required-by; \
 	fi
 .endif
 
