@@ -19,12 +19,19 @@ MAINTAINER=	dirk@FreeBSD.org
 .if ${OSVERSION} >= 400014
 FORBIDDEN=	"OpenSSL is already in the base system"
 .endif
+.if ${PORTOBJFORMAT} == "aout"
+NOSHARED=	yes
+.endif
 
 RESTRICTED=	"Cryptography"
 USE_PERL5=	yes
+.if defined(NOSHARED)
+PLIST=		${PKGDIR}/PLIST.noshared
+.else
 ALL_TARGET=	freebsd-shared all
 SHLIBVER=	1
 MAKE_ENV+=	SHLIBVER=${SHLIBVER}
+.endif
 
 MANPREFIX=	${PREFIX}/openssl
 MAN1=		CA.pl.1 asn1parse.1 ca.1 ciphers.1 crl.1 crl2pkcs7.1 dgst.1 \
@@ -82,11 +89,13 @@ do-configure:
 	   ${RSAREF} -L${PREFIX}/lib
 
 post-install:
+.if !defined(NOSHARED)
 .for i in libcrypto libssl
 	@${INSTALL_DATA} ${WRKSRC}/$i.so.${SHLIBVER} ${PREFIX}/lib
 	@${LN} -sf $i.so.${SHLIBVER} ${PREFIX}/lib/$i.so
 .endfor
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/openssl
 	@${INSTALL_DATA} ${WRKSRC}/doc/openssl.txt ${PREFIX}/share/doc/openssl
