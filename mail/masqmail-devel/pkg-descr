@@ -1,0 +1,23 @@
+MasqMail is a mail server designed for hosts that do not have a permanent
+internet connection eg. a home network or a single host at home. It has
+special support for connections to different ISPs. It replaces sendmail or
+other MTAs such as qmail or exim.
+
+Features
+
+    * Delivers only when online to a destination 'outside' your LAN
+    * Support for multiple Providers (ie. Mail Servers, or direct delivery)
+    * Rewriting of Return addresses (Return-Path:, From:, Reply-To:),
+	configurable for each Provider separately
+    * can also be used as a Mail Server on a LAN
+    * alias support
+    * delivery to pipes
+    * delivery to MDAs (eg. procmail)
+    * Maildir support (version >= 0.2.5)
+    * routing depending on sender
+    * AUTH (RFC 2554) support (as client, since version 0.1.0)
+    * SMTP-after-POP
+    * POP3 client
+    * POP3 client daemon (fetch mail in regular intervals if online)
+
+WWW: http://innominate.org/kurth/masqmail/
