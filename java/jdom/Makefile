@@ -41,10 +41,12 @@ do-install:
 	@${ECHO_MSG} " [ DONE ]"
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing samples in ${EXAMPLESDIR}..."
+	@${MKDIR} ${EXAMPLESDIR}
 	@cd ${WRKSRC}/build/samples/ && ${FIND} . \
 	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR} > /dev/null 2>&1
 	@${ECHO_MSG} " [ DONE ]"
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
+	@${MKDIR} ${DOCSDIR}/apidocs
 	@cd ${WRKSRC}/build/ && ${FIND} apidocs \
 	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1
 	@${INSTALL_DATA} ${OTHERDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
