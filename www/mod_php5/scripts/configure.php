@@ -98,7 +98,7 @@ BUILD_DEPENDS+=	ssleay:\${PORTSDIR}/security/SSLeay \\
 		\${PREFIX}/lib/libcrypto.a:\${PORTSDIR}/security/SSLeay
 RUN_DEPENDS+=	ssleay:\${PORTSDIR}/security/SSLeay
 
-VERSION_MODSSL=	2.1.3
+VERSION_MODSSL=	2.1.4
 
 RESTRICTED=	"Contains cryptography"
 
