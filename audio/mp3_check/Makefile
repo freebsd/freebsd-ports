@@ -8,7 +8,8 @@
 PORTNAME=	mp3_check
 PORTVERSION=	1.98
 CATEGORIES=	audio
-MASTER_SITES=	ftp://mp3check.sourceforge.net/pub/mp3check/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	mp3check
 
 MAINTAINER=	ericb@thedeepsky.com
 
