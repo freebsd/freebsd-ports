@@ -105,7 +105,6 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	Clipboard.3 Tk_ClipboardAppend.3 \
 	ClrSelect.3 Tk_ClearSelection.3 \
 	ConfigWidg.3 Tk_ConfigureWidget.3 \
-	ConfigWidg.3 Tk_Offset.3 \
 	ConfigWidg.3 Tk_ConfigureInfo.3 \
 	ConfigWidg.3 Tk_ConfigureValue.3 \
 	ConfigWidg.3 Tk_FreeOptions.3 \
@@ -269,6 +268,7 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	SetOptions.3 Tk_GetOptionValue.3 \
 	SetOptions.3 Tk_GetOptionInfo.3 \
 	SetOptions.3 Tk_FreeConfigOptions.3 \
+	SetOptions.3 Tk_Offset.3 \
 	SetVisual.3 Tk_SetWindowVisual.3 \
 	StrictMotif.3 Tk_StrictMotif.3 \
 	TextLayout.3 Tk_ComputeTextLayout.3 \
