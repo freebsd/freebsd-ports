@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	monafonts
-PORTVERSION=	2.22
+PORTVERSION=	2.90
 PORTEPOCH=	2
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -29,9 +29,6 @@ RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 .endif
 
 PLIST_SUB=	FONTSDIR=${FONTSDIR}
-
-post-extract:
-	@${MKDIR} ${WRKSRC}/dist
 
 pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
