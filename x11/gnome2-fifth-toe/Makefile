@@ -7,15 +7,17 @@
 
 PORTNAME=	gnome2-fifth-toe
 PORTVERSION=	2.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	The "meta-port" for the GNOME 2 "Fifth-Toe" extra package set
 
 RUN_DEPENDS=	gnumeric:${PORTSDIR}/math/gnumeric2 \
+		AbiWord-2.0:${PORTSDIR}/editors/AbiWord2 \
 		pan:${PORTSDIR}/news/pan2 \
 		xchat:${PORTSDIR}/irc/xchat2 \
 		balsa:${PORTSDIR}/mail/balsa2 \
