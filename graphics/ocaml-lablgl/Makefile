@@ -26,6 +26,12 @@ ALL_TARGET=	all opt
 EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
 post-extract:
 	@${CP} ${WRKSRC}/Makefile.config.ex ${WRKSRC}/Makefile.config
 
@@ -37,4 +43,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
