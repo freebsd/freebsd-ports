@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	strongtyping
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.5
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://mephle.org/StrongTyping/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
