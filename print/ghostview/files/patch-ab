@@ -1,0 +1,12 @@
+*** SelFile.c.orig	Fri Oct 21 22:37:11 1994
+--- SelFile.c	Fri Oct 21 22:37:17 1994
+***************
+*** 46,52 ****
+  /* BSD 4.3 errno.h does not declare errno */
+  extern int errno;
+  extern int sys_nerr;
+- extern char *sys_errlist[];
+  
+  #include <sys/param.h>
+  #include <X11/cursorfont.h>
+--- 46,51 ----
