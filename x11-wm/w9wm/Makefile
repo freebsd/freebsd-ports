@@ -6,19 +6,21 @@
 #
 
 PORTNAME=	w9wm
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://inferno.cs.univ-paris8.fr/~drieu/w9wm/src/
+MASTER_SITES=	http://www.grassouille.org/code/w9wm/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A hack of 9wm to give virtual screens
 
-USE_X_PREFIX=	yes
-MAKEFILE=	Makefile.no-imake
+WRKSRC=		${WRKDIR}/${DISTNAME}.orig
+
+USE_IMAKE=	yes
+USE_REINPLACE=	yes
 
 MAN1=		w9wm.1
 
-pre-patch:
-	@${PERL} -pi.orig -e 's|malloc.h|stdlib.h|' ${WRKSRC}/client.c
+post-patch:
+	@${REINPLACE_CMD} -e '/malloc\.h/d' ${WRKSRC}/client.c
 
 .include <bsd.port.mk>
