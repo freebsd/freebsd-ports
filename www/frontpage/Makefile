@@ -10,7 +10,7 @@ PORTVERSION=	5.0.2.2623
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.microsoft.com/products/frontpage/ \
-		ftp://www.westbend.net/Mirrors/ftp.microsoft.com/Products/frontpage/
+		ftp://www.westbend.net/pub/microsoft/frontpage/
 DISTFILES=	${FRONTPAGE}
 
 MAINTAINER=	hetzels@westbend.net
@@ -22,8 +22,7 @@ USE_REINPLACE=	yes
 
 ONLY_FOR_ARCHS=	i386 alpha
 
-FP_VER=		5.0
-#FP_VER=		${PORTVERSION:C/\..*//}
+FP_VER=		${PORTVERSION:C|^([0-9]+)\.([0-9]+).*|\1.\2|}
 
 .if ${ARCH} == i386
 .ifdef WANT_BSDI_EXT
@@ -125,9 +124,9 @@ do-install:
 	@${CP} ${PREFIX}/${README} ${MOD_FPDOCDIR}/index.html
 	@${INSTALL_SCRIPT} ${WRKDIR}/${FPINSTALL} ${PREFIX}/${FPINSTALL}
 	@${INSTALL_SCRIPT} ${WRKDIR}/${FPSETPERM} ${PREFIX}/${FPSETPERM}
+	@${PREFIX}/${FPSETPERM}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-	@${PREFIX}/${FPSETPERM}
 
 .include <bsd.port.post.mk>

@@ -1,7 +1,7 @@
-The BSDI FrontPage Extensions require that libcrypt.* be linked to the
-libdescrypt.* libraries.  The fpsrvadm.exe program can only create DES
-passwords, but the Apache server is unable to use them when libcrypt.* 
-are linked to the libscrypt.* libraries.
+The BSDI FrontPage Extensions requires crypt_des is available in the
+libcrypt.* libraries.  The fpsrvadm.exe program can only create DES
+passwords, but the Apache server is unable to use them when crypt_des
+is not available in the libscrypt.* libraries.
 
 For this port to be usefull you need to install an Apache-Frontpage
 enabled web server.  Only the following ports/packages qualifies:

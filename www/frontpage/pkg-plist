@@ -257,6 +257,8 @@ share/doc/apache/manual/frontpage/index.html
 @dirrm frontpage/version%%FP_VER%%/apache-fp
 @dirrm frontpage/version%%FP_VER%%/admin/1033
 @dirrm frontpage/version%%FP_VER%%/admin
-@dirrm frontpage/version%%FP_VER%%
-@dirrm frontpage
+@unexec rmdir %D/frontpage/version%%FP_VER%% 2> /dev/null || true
+@unexec rmdir %D/frontpage 2> /dev/null || true
 @dirrm share/doc/apache/manual/frontpage
+@unexec rmdir %D/share/doc/apache/manual 2> /dev/null || true
+@unexec rmdir %D/share/doc/apache 2> /dev/null || true
