@@ -9,8 +9,7 @@ PORTNAME=	libjtoolbar
 PORTVERSION=	0.5.4
 PORTREVISION=	2
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://ftp.krasnodar.ru/pub/unix/IDE/CodeCrusader/ \
-		ftp://ftp.uniovi.es/pub/unix/mail/
+MASTER_SITES=	ftp://ftp.uniovi.es/pub/unix/mail/
 DISTNAME=	JToolBar_source-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
