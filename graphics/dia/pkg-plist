@@ -25,6 +25,7 @@ lib/dia/libwpg_filter.so
 lib/dia/libxfig_filter.so
 lib/dia/libxslt_filter.so
 share/gnome/applications/dia.desktop
+share/gnome/dia/dia.xpm
 share/gnome/dia/dia_logo.png
 share/gnome/dia/images/broken-chain.xpm
 share/gnome/dia/images/unbroken-chain.xpm
