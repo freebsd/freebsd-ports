@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://cs.utk.edu/pub/plank/jgraph/  \
 		http://www.cs.washington.edu/homes/wolman/
 DISTFILES=	${PORTNAME}.shar.Z
 
-MAINTAINER=	wolman@cs.washington.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program that generates postscript graphs
 
 EXTRACT_CMD=	uncompress
