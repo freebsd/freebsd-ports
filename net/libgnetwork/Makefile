@@ -32,10 +32,16 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS+=--enable-ssl=no
 #.endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64"
+.endif
+
 pre-everything::
 #	@${ECHO_MSG} ""
 #	@${ECHO_MSG} "libgnetwork has the following configurable option(s):"
 #	@${ECHO_MSG} "	WITHOUT_SSL	Disable GnuTLS SSL support"
 #	@${ECHO_MSG} ""
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
