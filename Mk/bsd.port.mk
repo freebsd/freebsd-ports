@@ -798,8 +798,8 @@ MAKE_ENV+=		OPENSSLLIB=${OPENSSLLIB} OPENSSLINC=${OPENSSLINC} \
 
 .include "${PORTSDIR}/Mk/bsd.gnome.mk"
 
-# defaults to 4.x for -CURRENT; and 3.3.6 for all other branches
-.if ${OSVERSION} > 500025
+# defaults to 4.x for 5.0-CURRENT and 4.5-STABLE; and 3.3.6 for all other branches
+.if ${OSVERSION} > 500025 || ( ${OSVERSION} >= 450005 && ${OSVERSION} < 500000 )
 XFREE86_VERSION?=	4
 .else
 XFREE86_VERSION?=	3
