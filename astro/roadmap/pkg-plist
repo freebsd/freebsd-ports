@@ -1,0 +1,13 @@
+bin/buildmap
+bin/buildus
+bin/dumpmap
+bin/roadmap
+bin/roadgps
+%%PORTDOCS%%share/doc/roadmap/AUTHORS
+%%PORTDOCS%%share/doc/roadmap/BUGS
+%%PORTDOCS%%share/doc/roadmap/COPYING
+%%PORTDOCS%%share/doc/roadmap/README
+%%PORTDOCS%%share/doc/roadmap/TODO
+%%PORTDOCS%%@dirrm share/doc/roadmap
+@exec mkdir -p %D/share/roadmap 2>/dev/null || true
+@unexec rmdir %D/share/roadmap 2>/dev/null || true

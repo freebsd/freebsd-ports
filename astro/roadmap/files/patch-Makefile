@@ -1,0 +1,35 @@
+--- src/Makefile.orig	Thu Oct 31 22:53:28 2002
++++ src/Makefile	Mon Nov  4 14:40:36 2002
+@@ -1,12 +1,12 @@
+ 
+-GUICFLAGS=-DROADMAP_GUI_USES_GTK `gtk-config --cflags`
+-GUILDFLAGS=`gtk-config --libs`
++GUICFLAGS=-DROADMAP_GUI_USES_GTK `${GTK_CONFIG} --cflags`
++GUILDFLAGS=`${GTK_CONFIG} --libs`
+ 
+-CFLAGS=-O2 -ffast-math -fomit-frame-pointer -Wall $(GUICFLAGS)
++CFLAGS+=-O2 -ffast-math -fomit-frame-pointer -Wall $(GUICFLAGS)
+ # CFLAGS=-g -Wall -DROADMAP_DEBUG_HEAP $(GUICFLAGS)
+ # CFLAGS=-g -Wall -pg -fprofile-arcs -g $(GUICFLAGS)
+ 
+-LDFLAGS=-lm
++LDFLAGS=-lm -L$(LOCALBASE)/lib
+ # LDFLAGS=-pg $(LDFLAGS)
+ 
+ 
+@@ -103,13 +103,13 @@
+ install: uninstall all
+ 	mkdir -p $(INSTALLDIR)/share/roadmap
+ 	cp *.rdm $(INSTALLDIR)/share/roadmap
+-	cp roadmap.menu /usr/lib/menu/roadmap
++#	cp roadmap.menu /usr/lib/menu/roadmap
+ 	cp $(EXECUTABLES) $(INSTALLDIR)/bin
+ 
+ uninstall:
+ 	cd $(INSTALLDIR)/bin ; rm -f $(EXECUTABLES)
+ 	rm -rf $(INSTALLDIR)/share/roadmap
+-	rm -f /usr/lib/menu/roadmap
++#	rm -f /usr/lib/menu/roadmap
+ 
+ # --- The real targets --------------------------------------------
+ 
