@@ -1,0 +1,11 @@
+--- configure.orig	Sat Jan 22 21:37:40 2005
++++ configure	Sat Jan 22 21:40:21 2005
+@@ -22456,7 +22456,7 @@
+ rm -f core *.core gmon.out bb.out conftest$ac_exeext conftest.$ac_objext conftest.$ac_ext
+ fi
+ 
+-		if test "x$GOOD_OPENSSL" == "xyes"
++		if test "x$GOOD_OPENSSL" = "xyes"
+ 		then
+ 			# engine has to be there and working
+ 			LIBS="$saved_LIBS $LIBCRYPTO $LIBDL"
