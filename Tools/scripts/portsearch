@@ -77,7 +77,7 @@ Options:
 
   -n name	Search for \"name\" in name of ports
   -p path	Search for \"path\" in location of ports
-  -i info	Search for \"info\" in ports COMMENT files
+  -i info	Search for \"info\" in ports COMMENT
   -m maint	Search for \"maint\" in ports Maintainer
   -x index	Search for \"index\" in ports categories
   -b b_deps	Search for \"b_deps\" in build depends of ports

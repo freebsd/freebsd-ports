@@ -228,10 +228,7 @@ foreach my $thisdir (@dirs) {
 	} else {
 		## Set up the autofill file.
 		# Read COMMENT for part of the commit message.
-		open(COMMENT, "pkg-comment") or die("Can't open pkg-comment for reading: $!");
-		$pkgcomment = <COMMENT>;
-		close(COMMENT);
-		chomp $pkgcomment;
+		$pkgcomment = `$make $passenv -V COMMENT`;
 		# Change the first character to lowercase to make it fit with the
 		# rest of the commit message.
 		$pkgcomment =~ s/(^.)/\l$1/;
