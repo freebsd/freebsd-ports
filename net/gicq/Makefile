@@ -3,7 +3,7 @@
 # Date Created:				31 Oct 1998
 # Whom:					Seiichirou Hiraoka
 #
-# $Id: Makefile,v 1.5 1999/03/15 19:59:23 nectar Exp $
+# $Id: Makefile,v 1.6 1999/04/06 12:02:41 flathill Exp $
 #
 
 DISTNAME=	gicq-0.33
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.korsoft.com/pub/gicq/	\
 MAINTAINER=	flathill@FreeBSD.ORG
 
 LIB_DEPENDS=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12	\
-		icq.0:${PORTSDIR}/devel/libicq
+		icq.0:${PORTSDIR}/net/libicq
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
