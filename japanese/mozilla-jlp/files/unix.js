@@ -28,8 +28,8 @@ pref("network.hosts.pop_server", "pop");
 pref("mail.check_new_mail", true);
 pref("browser.display.screen_resolution", 0); // System setting
 pref("browser.startup.license_accepted", "");
-pref("browser.cache.memory_cache_size", 4096);
-pref("browser.cache.disk_cache_size", 50000);
+pref("browser.cache.memory.capacity", 4096);
+pref("browser.cache.disk.capacity", 50000);
 pref("browser.ncols", 0);
 pref("browser.installcmap", false);
 pref("browser.drag_out_of_frame_style", 1);
@@ -51,12 +51,17 @@ pref("middlemouse.scrollbarPosition", true);
 // Clipboard behavior
 pref("clipboard.autocopy", true);
 
+pref("browser.urlbar.clickSelectsAll", false);
+
 // autocomplete keyboard grab workaround
 pref("autocomplete.grab_during_popup", true);
 pref("autocomplete.ungrab_during_mode_switch", true);
 
 // Most Unix people think modal pref windows are stupid:
 pref("browser.prefWindowModal", false);
+
+// turn off scrollbar snapping
+pref("slider.snapMultiplier", 0);
 
 // Unix only
 pref("mail.use_movemail", true);
@@ -140,24 +145,72 @@ pref("font.name.monospace.zh-CN", "isas-song ti-gb2312.1980-0");
 
 // zh-TW
 
+pref("font.default", "serif");
+pref("font.size.variable.ar", 16);
+pref("font.size.fixed.ar", 12);
+
+pref("font.size.variable.el", 16);
+pref("font.size.fixed.el", 12);
+
+pref("font.size.variable.he", 16);
+pref("font.size.fixed.he", 12);
+
+pref("font.size.variable.ja", 14);
+pref("font.size.fixed.ja", 14);
+
+pref("font.size.variable.ko", 16);
+pref("font.size.fixed.ko", 16);
+
+pref("font.size.variable.th", 16);
+pref("font.size.fixed.th", 12);
+
+pref("font.size.variable.tr", 16);
+pref("font.size.fixed.tr", 12);
+
+pref("font.size.variable.x-baltic", 16);
+pref("font.size.fixed.x-baltic", 12);
+
+pref("font.size.variable.x-central-euro", 16);
+pref("font.size.fixed.x-central-euro", 12);
+
+pref("font.size.variable.x-cyrillic", 16);
+pref("font.size.fixed.x-cyrillic", 12);
+
+pref("font.size.variable.x-unicode", 16);
+pref("font.size.fixed.x-unicode", 12);
+
+pref("font.size.variable.x-western", 14);
+pref("font.size.fixed.x-western", 12);
+
+pref("font.size.variable.zh-CN", 16);
+pref("font.size.fixed.zh-CN", 16);
+
+pref("font.size.variable.zh-TW", 16);
+pref("font.size.fixed.zh-TW", 16);
+
 // below a certian pixel size scaled fonts produce poor results
 pref("font.scale.outline.min",      6);
 pref("font.scale.bitmap.min",       12);
 pref("font.scale.bitmap.undersize", 80);
 pref("font.scale.bitmap.oversize",  120);
 
-pref("font.scale.outline.min.ja",      10);
-pref("font.scale.bitmap.min.ja",       14);
+pref("font.scale.outline.min.ja",      8);
+pref("font.scale.bitmap.min.ja",       8);
 pref("font.scale.bitmap.undersize.ja", 80);
 pref("font.scale.bitmap.oversize.ja",  120);
 
+pref("font.scale.outline.min.ko",      10);
+pref("font.scale.bitmap.min.ko",       16);
+pref("font.scale.bitmap.undersize.ko", 80);
+pref("font.scale.bitmap.oversize.ko",  120);
+
 pref("font.scale.outline.min.zh-CN",      10);
-pref("font.scale.bitmap.min.zh-CN",       14);
+pref("font.scale.bitmap.min.zh-CN",       16);
 pref("font.scale.bitmap.undersize.zh-CN", 80);
 pref("font.scale.bitmap.oversize.zh-CN",  120);
 
 pref("font.scale.outline.min.zh-TW",      10);
-pref("font.scale.bitmap.min.zh-TW",       14);
+pref("font.scale.bitmap.min.zh-TW",       16);
 pref("font.scale.bitmap.undersize.zh-TW", 80);
 pref("font.scale.bitmap.oversize.zh-TW",  120);
 

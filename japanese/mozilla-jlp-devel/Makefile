@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3.r2
 PORTEPOCH=	1
 CATEGORIES=	japanese www
 MASTER_SITES=	http://www.mozilla.gr.jp/jlp/ \
@@ -33,8 +33,8 @@ MOZILLA_PORT=	${PORTSDIR}/www/mozilla+ipv6
 .else
 MOZILLA_PORT=	${PORTSDIR}/www/mozilla
 .endif
-JLP_SRC=	${PORTNAME}${PORTVERSION}-langjajp.xpi \
-		${PORTNAME}${PORTVERSION}-regjp.xpi
+JLP_SRC=	${PORTNAME}${PORTVERSION}-langjajp-RC2.xpi \
+		${PORTNAME}${PORTVERSION}-regjp-RC2.xpi
 
 .include <bsd.port.pre.mk>
 
@@ -53,7 +53,6 @@ pre-fetch:
 
 post-extract:
 	${MKDIR} ${WRKSRC}/defaults/pref
-	${CP} ${FILESDIR}/all.js ${WRKSRC}/defaults/pref
 	${CP} ${FILESDIR}/unix.js ${WRKSRC}/defaults/pref
 
 post-patch:
@@ -71,10 +70,7 @@ do-install:
 	${MV} -f user-skins.rdf user-skins.rdf.orig; \
 	${MV} -f installed-chrome.txt installed-chrome.txt.orig)
 	(cd ${PREFIX}/lib/mozilla/defaults/pref; \
-	${MV} -f all.js all.js.orig; ${MV} -f unix.js unix.js.orig)
-	(cd ${PREFIX}/lib/mozilla/defaults/profile; \
-	${MV} -f bookmarks.html bookmarks.html.orig; \
-	${MV} -f search.rdf search.rdf.orig)
+	${MV} -f unix.js unix.js.orig)
 	(cd ${PREFIX}/lib/mozilla/searchplugins; \
 	${MV} -f google.gif google.gif.orig; \
 	${MV} -f google.src google.src.orig)
@@ -86,9 +82,6 @@ do-install:
 	${TAR} -xf - -C ${PREFIX}/lib/mozilla/searchplugins
 	(cd ${WRKSRC}; ${TAR} -cf - chrome defaults) | \
 	${TAR} -xf - -C ${PREFIX}/lib/mozilla
-	(cd ${PREFIX}/lib/mozilla/defaults/profile; \
-	${CP} -p JP/bookmarks.html bookmarks.html; \
-	${CP} -p JP/search.rdf search.rdf)
 	(cd ${PREFIX}/lib/mozilla/chrome; \
 	${CP} installed-chrome.txt.orig installed-chrome.txt; \
 	${CAT} ${FILESDIR}/installed-chrome.txt >> installed-chrome.txt)
