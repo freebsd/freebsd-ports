@@ -16,7 +16,7 @@ MAINTAINER=	nakai@FreeBSD.org
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		rep.9:${PORTSDIR}/lang/librep
 .if !defined(WITHOUT_GNOME)
-LIB_DEPENDS+=	glade.3:${PORTSDIR}/devel/libglade \
+LIB_DEPENDS+=	glade.4:${PORTSDIR}/devel/libglade \
 		gnome.4:${PORTSDIR}/x11/gnomelibs \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 .endif

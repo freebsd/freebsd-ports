@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	nakai@FreeBSD.org
 
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
-		glade.3:${PORTSDIR}/devel/libglade \
+		glade.4:${PORTSDIR}/devel/libglade \
 		gnomeprint.9:${PORTSDIR}/print/gnomeprint \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 

@@ -15,7 +15,7 @@ MAINTAINER=	ade@FreeBSD.org
 
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 		xml.5:${PORTSDIR}/textproc/libxml \
-		glade.3:${PORTSDIR}/devel/libglade \
+		glade.4:${PORTSDIR}/devel/libglade \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
 		gnomeprint.9:${PORTSDIR}/print/gnomeprint \
 		oaf.0:${PORTSDIR}/devel/oaf \
