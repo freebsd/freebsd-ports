@@ -1,0 +1,19 @@
+*** xtar.c.orig	Wed Jul 31 18:16:22 1996
+--- xtar.c	Wed Jul 31 18:15:30 1996
+***************
+*** 1164,1170 ****
+  static int xtar_attributes(TAR_FILE *tf, char *filename)
+  {
+      int retval = 0;
+!     struct utimbuf utimbuf;
+  
+      /* If the file type is not a directory then try and set the access
+         permissions. We exclude directories because if write permission
+--- 1164,1170 ----
+  static int xtar_attributes(TAR_FILE *tf, char *filename)
+  {
+      int retval = 0;
+!     struct utimbuf {char utimbuf;} utimbuf;
+  
+      /* If the file type is not a directory then try and set the access
+         permissions. We exclude directories because if write permission
