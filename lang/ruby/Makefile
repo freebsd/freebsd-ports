@@ -1,12 +1,12 @@
 # New ports collection makefile for:    ruby
-# Version required:     1.4.0
+# Version required:     1.4.2
 # Date created:         04 September 1997
 # Whom:                 Eiji-usagi-MATSUmoto <usagi@ruby.club.or.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ruby-1.4.0
+DISTNAME=	ruby-1.4.2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.netlab.co.jp/pub/lang/ruby/${BRANCH_NAME}/ \
 		ftp://ftp.TokyoNet.AD.JP/pub/misc/ruby/${BRANCH_NAME}/ \
@@ -25,19 +25,40 @@ PLIST_SUB+=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
 RUBY_VER=	1.4
 RUBY_ARCH=	${ARCH}-freebsd${OSREL}
 
-BRANCH_NAME=	.
+BRANCH_NAME=	1.4
+
+DOCDIR=		${PREFIX}/share/doc/ruby
+EXAMPLESDIR=	${PREFIX}/share/examples/ruby
 
 post-patch:
 	${RM} -f ${WRKSRC}/ext/tcltklib/MANIFEST
 	${RM} -f ${WRKSRC}/ext/tk/MANIFEST
+	${RM} -rf ${WRKSRC}/lib/irb ${WRKSRC}/sample/irb.rb
 
 post-install:
 	strip ${PREFIX}/bin/ruby
-	${MKDIR} ${PREFIX}/share/examples/ruby
-	${INSTALL_DATA} ${WRKSRC}/sample/* ${PREFIX}/share/examples/ruby
-	${MKDIR} ${PREFIX}/share/examples/ruby/misc
-	${INSTALL_DATA} ${WRKSRC}/misc/* ${PREFIX}/share/examples/ruby/misc
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/sample/* ${EXAMPLESDIR}
+	${MKDIR} ${EXAMPLESDIR}/misc
+	${INSTALL_DATA} ${WRKSRC}/misc/* ${EXAMPLESDIR}/misc
+	${MKDIR} ${EXAMPLESDIR}/curses
+	${INSTALL_DATA} ${WRKSRC}/ext/curses/hello.rb ${WRKSRC}/ext/curses/rain.rb ${WRKSRC}/ext/curses/view.rb ${EXAMPLESDIR}/curses
+	${MKDIR} ${EXAMPLESDIR}/pty
+	${INSTALL_DATA} ${WRKSRC}/ext/pty/expect_sample.rb ${WRKSRC}/ext/pty/script.rb ${WRKSRC}/ext/pty/shl.rb ${EXAMPLESDIR}/pty
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/README* ${DOCDIR}
+	${MKDIR} ${DOCDIR}/etc
+	${INSTALL_DATA} ${WRKSRC}/ext/etc/etc.txt* ${DOCDIR}/etc
+	${MKDIR} ${DOCDIR}/md5
+	${INSTALL_DATA} ${WRKSRC}/ext/md5/md5.txt* ${DOCDIR}/md5
+	${MKDIR} ${DOCDIR}/pty
+	${INSTALL_DATA} ${WRKSRC}/ext/pty/README* ${DOCDIR}/pty
+	${MKDIR} ${DOCDIR}/readline
+	${INSTALL_DATA} ${WRKSRC}/ext/readline/README ${DOCDIR}/readline
+.endif
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+	@${CAT} ${PKGMESSAGE}
 
 test:
 	@(cd ${WRKSRC}; make test)

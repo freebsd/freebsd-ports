@@ -1,0 +1,5 @@
+====
+NOTE: This package does NOT contain irb (the interactive Ruby)
+      and Ruby/Tk (an interface to Tk GUI toolkits);  You need to
+      install separate packages to use them.
+====
