@@ -1,0 +1,8 @@
+Lapidary is a unit testing framework for Ruby based heavily on
+Smalltalk unit (sunit), as opposed to RUnit which is based on JUnit.
+
+The unit testing framework is known as part of Kent Beck's "eXtreme
+Programming" (XP).  For details, see http://www.xprogramming.com/.
+
+Author:	Nathaniel Talbott <lapidary@talbott.ws>
+WWW:	http://lapidary.sourceforge.net/

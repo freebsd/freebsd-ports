@@ -1,0 +1,33 @@
+%%RUBY_SITELIBDIR%%/Lapidary/Assertions.rb
+%%RUBY_SITELIBDIR%%/Lapidary/Error.rb
+%%RUBY_SITELIBDIR%%/Lapidary/Failure.rb
+%%RUBY_SITELIBDIR%%/Lapidary/TC_Assertions.rb
+%%RUBY_SITELIBDIR%%/Lapidary/TC_TestCase.rb
+%%RUBY_SITELIBDIR%%/Lapidary/TC_TestResult.rb
+%%RUBY_SITELIBDIR%%/Lapidary/TC_TestSuite.rb
+%%RUBY_SITELIBDIR%%/Lapidary/TF_Assertions.rb
+%%RUBY_SITELIBDIR%%/Lapidary/TF_Run.rb
+%%RUBY_SITELIBDIR%%/Lapidary/TF_SetupTearDown.rb
+%%RUBY_SITELIBDIR%%/Lapidary/TF_Suite.rb
+%%RUBY_SITELIBDIR%%/Lapidary/TF_TestCaseAssertionHandling.rb
+%%RUBY_SITELIBDIR%%/Lapidary/TS_Lapidary.rb
+%%RUBY_SITELIBDIR%%/Lapidary/TestCase.rb
+%%RUBY_SITELIBDIR%%/Lapidary/TestResult.rb
+%%RUBY_SITELIBDIR%%/Lapidary/TestSuite.rb
+%%RUBY_SITELIBDIR%%/Lapidary/UI/Console/TestRunner.rb
+%%RUBY_SITELIBDIR%%/Lapidary/UI/GTK/TestRunner.rb
+%%RUBY_SITELIBDIR%%/Lapidary/UI/TestRunnerMediator.rb
+%%RUBY_SITELIBDIR%%/Lapidary/UI/Util/TC_Tuner.rb
+%%RUBY_SITELIBDIR%%/Lapidary/UI/Util/TS_Utilities.rb
+%%RUBY_SITELIBDIR%%/Lapidary/UI/Util/Tuner.rb
+@dirrm %%RUBY_SITELIBDIR%%/Lapidary/UI/Console
+@dirrm %%RUBY_SITELIBDIR%%/Lapidary/UI/GTK
+@dirrm %%RUBY_SITELIBDIR%%/Lapidary/UI/Util
+@dirrm %%RUBY_SITELIBDIR%%/Lapidary/UI
+@dirrm %%RUBY_SITELIBDIR%%/Lapidary
+%%PORTDOCS%%%%RUBY_DOCDIR%%/lapidary/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/lapidary/design.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/lapidary/explanation.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/lapidary/index.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/lapidary/usage.html
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/lapidary

@@ -372,6 +372,7 @@
     SUBDIR += ruby-filelock
     SUBDIR += ruby-gemfinder
     SUBDIR += ruby-intl
+    SUBDIR += ruby-lapidary
     SUBDIR += ruby-libglade
     SUBDIR += ruby-locale
     SUBDIR += ruby-metaruby
