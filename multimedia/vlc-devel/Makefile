@@ -275,7 +275,7 @@ PLIST_FILES+=	lib/vlc/gui/libncurses_plugin.so
 .endif
 
 .if defined(WITH_SPEEX) && !defined(WITHOUT_SPEEX)
-LIB_DEPENDS+=	speex.2:${PORTSDIR}/audio/speex
+LIB_DEPENDS+=	speex.3:${PORTSDIR}/audio/speex
 CONFIGURE_ARGS+=--enable-speex
 PLIST_FILES+=	lib/vlc/codec/libspeex_plugin.so
 .else
