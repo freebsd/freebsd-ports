@@ -4,12 +4,12 @@ o 1st, copy /usr/X11R6/share/example/xsystem35/xsys35rc.sample
 e.g.)
 cdrom_device: /dev/cd0c
 
-o 2nd, install data from cdrom with
-	/usr/X11R6/share/example/xsystem35/instgame.
+o 2nd, install game data from AliceSoft's cdrom with
+	/usr/X11R6/bin/instgame.
 
 o 3rd, install X-tt for your real pleasure(optional).
 
-o and, play it!
+o and, enjoy!
 
 ********************* IMPORTANT *********************
 If you use over 16bpp mode, you must add
