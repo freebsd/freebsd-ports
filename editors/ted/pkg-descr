@@ -1,15 +1,12 @@
-Ted is a text editor running under X Windows on Unix/Linux systems.
+Ted 2.17 is a text editor running under X Windows on Unix/Linux systems.
 
 Features 
 --------   
   * Wysiwyg rich text editing. 
   * Ted uses Microsoft RTF as its native file format.
-  * In line bitmap pictures.
+  * In line bitmap, jpeg, gif, ppm, png and xpm pictures.
   * Postscript printing.
-  * Spelling checking in several Latin languages. (English, Dutch, German, 
-    Portuguese, French and Spanish.)
-  * Directly mailing documents from Ted.
-  * Cut/Copy/Paste, also with other applications.
+  * Cut/Copy/Paste, text and images.
   * Find/Replace using regular expressions.
   * Ruler: Paragraph indentation, Indentation of first line, Tabs.
   * Footnotes and endnotes.
@@ -18,5 +15,7 @@ Features
   * Symbols and accented characters are fully supported.
   * Hyperlinks. 
   * Saving a document in HTML format.
+  * Save to *.pdf using /usr/X11R6/bin/rtf2pdf.sh
+  * Numbered or bulleted lists 
 
 WWW: http://www.nllgg.nl/Ted/
