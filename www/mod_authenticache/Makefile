@@ -18,10 +18,4 @@ WITH_APACHE2=	YES
 USE_GMAKE=	YES
 MAKE_ENV+=	APXS="${APXS}"
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-BROKEN=		"Does not compile on amd64 or ia64 (shared library objects must be compiled with -fPIC)"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
