@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	whois
-PORTVERSION=	4.6.8
+PORTVERSION=	4.6.9
 CATEGORIES=	net
 MASTER_SITES=	http://www.linux.it/~md/software/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
