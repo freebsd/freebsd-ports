@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	conglomerate
-PORTVERSION=	0.7.7
+PORTVERSION=	0.7.8
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,11 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libgnomeui gtksourceview gnomeprefix gnomehack
 USE_LIBTOOL=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/home/david/jhbuilt/share|${LOCALBASE}/share|' ${WRKSRC}/intltool-merge.in
 
 .include <bsd.port.mk>
