@@ -1,8 +1,12 @@
---- makefile.orig	Sun Aug  5 20:04:08 1990
-+++ makefile	Wed Aug 13 14:50:08 1997
-@@ -1,4 +1,4 @@
+--- makefile.orig	Sun Aug  5 04:04:08 1990
++++ makefile	Sun Oct 19 01:34:53 2003
+@@ -1,6 +1,7 @@
 -DEST = .
 +DEST = $(PREFIX)/bin
  #CFLAGS = -O -DSysV
- CFLAGS = -O
+-CFLAGS = -O
++CFLAGS ?= -O -pipe
++CC ?= cc
  LDFLAGS = -s
+ 
+ SRCS = crc.c decode.c encode.c ish.c jis7.c jis8.c sjis.c njis.c
