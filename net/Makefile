@@ -310,6 +310,7 @@
     SUBDIR += priss
     SUBDIR += proxy
     SUBDIR += proxy-suite
+    SUBDIR += punkbuster
     SUBDIR += punkbuster-data
     SUBDIR += pvm
     SUBDIR += pvm++
