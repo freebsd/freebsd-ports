@@ -4,6 +4,7 @@ share/doc/txt2html/INSTALL
 share/doc/txt2html/LICENSE
 share/doc/txt2html/README
 share/doc/txt2html/changes.html
+share/doc/txt2html/sample.foot
 share/doc/txt2html/sample.html
 share/doc/txt2html/sample.txt
 @dirrm share/doc/txt2html
