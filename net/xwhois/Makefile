@@ -3,7 +3,7 @@
 # Date created:        31 December 1998
 # Whom:                Kris Kennaway <kkennawa@physics.adelaide.edu.au>
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/29 23:44:22 billf Exp $
+# $Id: Makefile,v 1.2 1999/03/01 10:46:39 kris Exp $
 #
 
 DISTNAME=	xwhois-0.3.3
@@ -12,7 +12,8 @@ MASTER_SITES=	http://c64.org/~nr/ \
 		http://www.goatnet.ml.org/ \
 		ftp://sangis.kalix.net/pub/nr/xwhois/ \
 		ftp://c64.org/pub/nr/xwhois/ \
-		ftp://ftp.infodrom.north.de/pub/unix/gtkbuffet/apps/xwhois/
+		ftp://ftp.infodrom.north.de/pub/unix/gtkbuffet/apps/xwhois/ \
+		http://www.physics.adelaide.edu.au/~kkennawa/
 
 MAINTAINER=	kris@FreeBSD.ORG
 
