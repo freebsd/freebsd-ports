@@ -1,5 +1,5 @@
 #
-# $Id: avail,v 1.57 1998/12/11 02:56:04 jkh Exp $
+# $Id: avail,v 1.58 1998/12/21 00:07:40 msmith Exp $
 #
 # cvs-committers mail is sent to all members of the /etc/group group 'ncvs'
 # When adding a new committer, please add them to /etc/group first, before
@@ -17,4 +17,4 @@
 # in sync with this.
 #
 unavail
-avail|dg,peter,jkh,phk,gpalmer,paul,wollman,bde,gibbs,asami,joerg,ache,pst,sos,nate,karl,csgr,ats,guido,martin,hsu,sef,se,torstenb,julian,rich,dfr,gclarkii,swallace,ljo,dima,lars,jmz,ugen,dufault,wpaul,amurai,jmacd,jfieber,roberto,markm,gj,mpp,rgrimes,smace,erich,graichen,adam,tg,uhclem,jdp,fenner,wosch,scrappy,smpatel,jhay,alex,jraynard,andreas,chuckr,jfitz,max,steve,fsmp,imp,msmith,obrien,mckay,kato,davidn,mbarkah,nsj,brian,darrenr,tegge,yokota,cracauer,eivind,jgreco,danny,jmg,hanai,jmb,jb,stb,pds,tedm,kjc,stark,charnier,itojun,cwt,rse,mjacob,jlemon,helbig,brandon,hoek,jseger,vanilla,jamil,hosokawa,nik,semenu,pb,des,rnordier,dt,thepish,kuriyama,mph,dburr,jkoshy,ghelmer,nectar,dillon,ejc,dwhite,nsouch,abial,luoqi,motoyuki,rvb,grog,luigi,ken,mckusick,truckman,archie,billf,n_hibma,sada,flathill,wes,jesusr,foxfair,newton,mks
+avail|dg,peter,jkh,phk,gpalmer,paul,wollman,bde,gibbs,asami,joerg,ache,pst,sos,nate,karl,csgr,ats,guido,martin,hsu,sef,se,torstenb,julian,rich,dfr,gclarkii,swallace,ljo,dima,lars,jmz,ugen,dufault,wpaul,amurai,jmacd,jfieber,roberto,markm,gj,mpp,rgrimes,smace,erich,graichen,adam,tg,uhclem,jdp,fenner,wosch,scrappy,smpatel,jhay,alex,jraynard,andreas,chuckr,jfitz,max,steve,fsmp,imp,msmith,obrien,mckay,kato,davidn,mbarkah,nsj,brian,darrenr,tegge,yokota,cracauer,eivind,jgreco,danny,jmg,hanai,jmb,jb,stb,pds,tedm,kjc,stark,charnier,itojun,cwt,rse,mjacob,jlemon,helbig,brandon,hoek,jseger,vanilla,jamil,hosokawa,nik,semenu,pb,des,rnordier,dt,thepish,kuriyama,mph,dburr,jkoshy,ghelmer,nectar,dillon,ejc,dwhite,nsouch,abial,luoqi,motoyuki,rvb,grog,luigi,ken,mckusick,truckman,archie,billf,n_hibma,sada,flathill,wes,jesusr,foxfair,newton,mks,dirk
