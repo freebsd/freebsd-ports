@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.84 1996/11/26 08:50:49 asami Exp $
+# $Id: Makefile,v 1.85 1996/12/01 12:12:35 max Exp $
 #
 
     SUBDIR += archie
@@ -19,6 +19,7 @@
     SUBDIR += ircII
     SUBDIR += isc-dhcp
     SUBDIR += ivs
+    SUBDIR += ldap
     SUBDIR += mirror
     SUBDIR += moxftp
     SUBDIR += ncftp
