@@ -1,24 +1,5 @@
 bin/xslt-config
 bin/xsltproc
-doc/libxslt/html/book1.html
-doc/libxslt/html/libxslt-attributes.html
-doc/libxslt/html/libxslt-functions.html
-doc/libxslt/html/libxslt-imports.html
-doc/libxslt/html/libxslt-keys.html
-doc/libxslt/html/libxslt-lib.html
-doc/libxslt/html/libxslt-namespaces.html
-doc/libxslt/html/libxslt-notes.html
-doc/libxslt/html/libxslt-numbersinternals.html
-doc/libxslt/html/libxslt-pattern.html
-doc/libxslt/html/libxslt-templates.html
-doc/libxslt/html/libxslt-transform.html
-doc/libxslt/html/libxslt-variables.html
-doc/libxslt/html/libxslt-xslt.html
-doc/libxslt/html/libxslt-xsltinternals.html
-doc/libxslt/html/libxslt-xsltutils.html
-doc/libxslt/html/tutorial/libxslt_tutorial.c
-doc/libxslt/html/tutorial/libxslttutorial.html
-doc/libxslt/html/tutorial/libxslttutorial.xml
 etc/xsltConf.sh
 include/libexslt/exslt.h
 include/libexslt/exsltconfig.h
@@ -45,8 +26,27 @@ lib/libexslt.so.2
 lib/libxslt.a
 lib/libxslt.so
 lib/libxslt.so.1
+share/doc/libxslt/html/book1.html
+share/doc/libxslt/html/libxslt-attributes.html
+share/doc/libxslt/html/libxslt-functions.html
+share/doc/libxslt/html/libxslt-imports.html
+share/doc/libxslt/html/libxslt-keys.html
+share/doc/libxslt/html/libxslt-lib.html
+share/doc/libxslt/html/libxslt-namespaces.html
+share/doc/libxslt/html/libxslt-notes.html
+share/doc/libxslt/html/libxslt-numbersinternals.html
+share/doc/libxslt/html/libxslt-pattern.html
+share/doc/libxslt/html/libxslt-templates.html
+share/doc/libxslt/html/libxslt-transform.html
+share/doc/libxslt/html/libxslt-variables.html
+share/doc/libxslt/html/libxslt-xslt.html
+share/doc/libxslt/html/libxslt-xsltinternals.html
+share/doc/libxslt/html/libxslt-xsltutils.html
+share/doc/libxslt/html/tutorial/libxslt_tutorial.c
+share/doc/libxslt/html/tutorial/libxslttutorial.html
+share/doc/libxslt/html/tutorial/libxslttutorial.xml
+@dirrm share/doc/libxslt/html/tutorial
+@dirrm share/doc/libxslt/html
+@dirrm share/doc/libxslt
 @dirrm include/libxslt
 @dirrm include/libexslt
-@dirrm doc/libxslt/html/tutorial
-@dirrm doc/libxslt/html
-@dirrm doc/libxslt
