@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uvscan_dat
-PORTVERSION=	4113
+PORTVERSION=	4115
 CATEGORIES=	security
 MASTER_SITES=	http://download.nai.com/products/datfiles/4.x/nai/
 DISTNAME=	dat-${PORTVERSION}
@@ -33,5 +33,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/uvscan
 .endfor
 	${INSTALL_SCRIPT} ${WRKDIR}/update_dat ${PREFIX}/sbin
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
