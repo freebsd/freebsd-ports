@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Jan 30 21:45:02 2005
-+++ Makefile	Sun Jan 30 21:51:08 2005
+--- Makefile.orig	Mon Jan 19 17:41:34 2004
++++ Makefile	Sun Jan 30 21:56:53 2005
 @@ -5,7 +5,6 @@
  ########################################
  
@@ -19,7 +19,7 @@
  
  TARGET=einstein
  
-@@ -52,86 +51,5 @@
+@@ -52,86 +51,7 @@
  run: $(TARGET)
  	./$(TARGET)
  
@@ -107,4 +107,6 @@
 -options.o: options.h widgets.h font.h storage.h main.h exceptions.h screen.h
 -options.o: resources.h random.h
 +install:
-+	${BSD_INSTALL_PROGRAM} ${TARGET} ${PREFIX}/bin
++	${BSD_INSTALL_PROGRAM} einstein ${PREFIX}/bin
++	mkdir -p ${PREFIX}/share/einstein
++	${BSD_INSTALL_DATA} einstein.res ${PREFIX}/share/einstein/einstein.res
