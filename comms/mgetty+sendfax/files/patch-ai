@@ -1,0 +1,11 @@
+--- voice/libvoice/voice_fax.c.orig	Fri Feb 18 10:10:12 2000
++++ voice/libvoice/voice_fax.c	Fri Feb 18 10:10:28 2000
+@@ -30,7 +30,7 @@
+ 
+ /* seems to missing nearly everywhere */
+ #ifndef __NetBSD__
+-time_t    time _PROTO(( long * tloc ));
++time_t    time _PROTO(( time_t * tloc ));
+ #endif
+ 
+ /* from faxrecp.c */
