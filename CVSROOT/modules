@@ -1813,6 +1813,7 @@ fr-med		ports/french/med
 fr-netscape7	ports/french/netscape7
 fr-ooodict-FR	ports/french/ooodict-fr_FR
 fr-openoffice-1.0	ports/french/openoffice-1.0
+fr-openoffice-1.1	ports/french/openoffice-1.1
 fr-php_doc	ports/french/php_doc
 fr-plgrenouille	ports/french/plgrenouille
 fr-staroffice52	ports/french/staroffice52
