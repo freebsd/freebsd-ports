@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	igor@zynaps.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl modules for using sockets
 
 PERL_CONFIGURE=	yes
