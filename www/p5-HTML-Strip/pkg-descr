@@ -1,0 +1,9 @@
+HTML::Strip
+===========
+This module strips HTML-like markup from text.
+It is written in XS, and thus about five times quicker than using
+regular expressions for the same task.
+
+WWW: http://search.cpan.org/dist/HTML-Strip/
+
+- Vanilla
