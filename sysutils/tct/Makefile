@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tct
-PORTVERSION=	1.12
+PORTVERSION=	1.14
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.fish.com/tct/ \
 		http://www.porcupine.org/forensics/
@@ -14,59 +14,60 @@ MASTER_SITES=	http://www.fish.com/tct/ \
 MAINTAINER=	francisco@gomezmarin.com
 COMMENT=	Analyzer for forensic data
 
-RUN_DEPENDS+=	${LOCALBASE}/sbin/lsof:${PORTSDIR}/sysutils/lsof
+USE_PERL5=	yes
 
-CONFLICTS=	file-*
-
-USE_PERL5_RUN=	yes
-
-MAN1=		ils.1 mactime.1 pcat.1 grave-robber.1 lastcomm.1 major_minor.1 timeout.1 icat.1 lazarus.1 unrm.1
+MAN1=		file-tct.1 ils.1 mactime.1 md5-tct.1 pcat.1 grave-robber.1 lastcomm.1 major_minor.1 timeout.1 icat.1 lazarus.1 unrm.1
 MAN5=		magic.5 tm-format.5
 
 MYPORTDOCS=	CHANGES COPYRIGHT INSTALL LICENSE MANIFEST OS-NOTES README.FIRST TODO docs/README docs/design-notes docs/lazarus.README docs/grave-robber.README docs/mac.README
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502000
-BROKEN=		"Install broken"
-.endif
-
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/file ${LOCALBASE}/bin/file-tct
-	@${INSTALL_DATA} -m 555 ${WRKSRC}/bin/grave-robber ${LOCALBASE}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/icat ${LOCALBASE}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/ils ${LOCALBASE}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/lastcomm ${LOCALBASE}/bin
-	@${INSTALL_DATA} -m 555 ${WRKSRC}/bin/mactime ${LOCALBASE}/bin
-	@${INSTALL_DATA} -m 555 ${WRKSRC}/lazarus/lazarus ${LOCALBASE}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/major_minor ${LOCALBASE}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/md5 ${LOCALBASE}/bin/md5-tct
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/pcat ${LOCALBASE}/bin
-	@${INSTALL_DATA} -m 555 ${WRKSRC}/bin/strip_tct_home ${LOCALBASE}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/unrm ${LOCALBASE}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/timeout ${LOCALBASE}/bin
-	@${INSTALL_MAN} ${WRKSRC}/man/man1/file.1 ${PREFIX}/man/man1/file-tct.1
-	@${INSTALL_MAN} ${WRKSRC}/man/man1/md5.1 ${PREFIX}/man/man1/md5-tct.1
-	@${CP} ${WRKSRC}/lib/* ${SITE_PERL}
+	${MKDIR} ${PREFIX}/share/doc/tct/lib
+	${MKDIR} ${PREFIX}/share/doc/tct/lazarus
+	${MKDIR} ${PREFIX}/share/doc/tct/etc
+	${MKDIR} ${PREFIX}/share/doc/tct/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/file ${PREFIX}/bin/file-tct
+	${INSTALL_DATA} -m 555 ${WRKSRC}/bin/grave-robber ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/icat ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/ils ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/lastcomm ${PREFIX}/bin
+	${INSTALL_DATA} -m 555 ${WRKSRC}/bin/mactime ${PREFIX}/bin
+	${INSTALL_DATA} -m 555 ${WRKSRC}/lazarus/lazarus ${PREFIX}/bin
+	${LN} -s ${PREFIX}/bin/lazarus ${LOCALBASE}/share/doc/tct/lazarus/lazarus
+	${LN} -s ${PREFIX}/bin/file-tct ${LOCALBASE}/share/doc/tct/bin/file
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/major_minor ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/md5 ${PREFIX}/bin/md5-tct
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/pcat ${PREFIX}/bin
+	${INSTALL_DATA} -m 555 ${WRKSRC}/bin/strip_tct_home ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/unrm ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/timeout ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/man1/file.1 ${PREFIX}/man/man1/file-tct.1
+	${INSTALL_MAN} ${WRKSRC}/man/man1/md5.1 ${PREFIX}/man/man1/md5-tct.1
+	${CP} -Rp ${WRKSRC}/lib ${PREFIX}/share/doc/tct
+	${CP} ${WRKSRC}/lib/savecore.pl ${SITE_PERL}
+	${CP} ${WRKSRC}/conf/paths.pl ${SITE_PERL}
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/tct
 .for file in ${MYPORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/tct
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/tct
 .endfor
 .endif
 
-.for file in ${MAN1}
-	@${INSTALL_MAN} ${WRKSRC}/man/man1/${file} ${PREFIX}/man/man1
+.for file in ${MAN1:S/file-tct.1//:S/md5-tct.1//}
+	${INSTALL_MAN} ${WRKSRC}/man/man1/${file} ${PREFIX}/man/man1
 .endfor
 
 .for file in ${MAN5}
-	@${INSTALL_MAN} ${WRKSRC}/man/man5/${file} ${PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/man/man5/${file} ${PREFIX}/man/man5
 .endfor
 
-	@${MKDIR} ${PREFIX}/share/doc/tct/conf
-	@${CP} ${WRKSRC}/conf/* ${PREFIX}/share/doc/tct/conf
-	@${CP} ${WRKSRC}/conf/paths.pl ${SITE_PERL}
+	${MKDIR} ${PREFIX}/share/doc/tct/conf
+	${CP} ${WRKSRC}/conf/* ${PREFIX}/share/doc/tct/conf
+	${CP} ${WRKSRC}/etc/magic ${PREFIX}/share/doc/tct/etc
+	${CP} ${WRKSRC}/src/file/Magdir/magic ${PREFIX}/share/doc/tct/etc
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
