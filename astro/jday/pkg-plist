@@ -1,0 +1,4 @@
+bin/jday
+bin/j2d
+%%PORTDOCS%%share/doc/jday/README
+%%PORTDOCS%%@dirrm share/doc/jday
