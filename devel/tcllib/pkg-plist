@@ -1,45 +1,61 @@
 lib/tcllib%%PORTVERSION%%/base64/base64.tcl
-lib/tcllib%%PORTVERSION%%/base64/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/base64/base64.test
+lib/tcllib%%PORTVERSION%%/base64/compare.tcl
+lib/tcllib%%PORTVERSION%%/base64/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/base64
 lib/tcllib%%PORTVERSION%%/cmdline/cmdline.tcl
+lib/tcllib%%PORTVERSION%%/cmdline/cmdline.test
 lib/tcllib%%PORTVERSION%%/cmdline/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/cmdline/typedCmdline.tcl
-lib/tcllib%%PORTVERSION%%/cmdline/cmdline.test
 lib/tcllib%%PORTVERSION%%/cmdline/typedCmdline.test
 @dirrm lib/tcllib%%PORTVERSION%%/cmdline
-lib/tcllib%%PORTVERSION%%/struct/graph.tcl
-lib/tcllib%%PORTVERSION%%/struct/pkgIndex.tcl
-lib/tcllib%%PORTVERSION%%/struct/queue.tcl
-lib/tcllib%%PORTVERSION%%/struct/stack.tcl
-lib/tcllib%%PORTVERSION%%/struct/struct.tcl
-lib/tcllib%%PORTVERSION%%/struct/tree.tcl
-lib/tcllib%%PORTVERSION%%/struct/graph.test
-lib/tcllib%%PORTVERSION%%/struct/queue.test
-lib/tcllib%%PORTVERSION%%/struct/stack.test
-lib/tcllib%%PORTVERSION%%/struct/tree.test
-@dirrm lib/tcllib%%PORTVERSION%%/struct
+lib/tcllib%%PORTVERSION%%/counter/counter.tcl
+lib/tcllib%%PORTVERSION%%/counter/counter.test
+lib/tcllib%%PORTVERSION%%/counter/pkgIndex.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/counter
 lib/tcllib%%PORTVERSION%%/fileutil/fileutil.tcl
-lib/tcllib%%PORTVERSION%%/fileutil/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/fileutil/fileutil.test
+lib/tcllib%%PORTVERSION%%/fileutil/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/fileutil
+lib/tcllib%%PORTVERSION%%/ftp/ftp.tcl
+lib/tcllib%%PORTVERSION%%/ftp/ftpdemo.tcl
+lib/tcllib%%PORTVERSION%%/ftp/pkgIndex.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/ftp
+lib/tcllib%%PORTVERSION%%/ftpd/ftpd.tcl
+lib/tcllib%%PORTVERSION%%/ftpd/pkgIndex.tcl
+lib/tcllib%%PORTVERSION%%/ftpd/rfc959.txt
+lib/tcllib%%PORTVERSION%%/ftpd/std9.txt
+@dirrm lib/tcllib%%PORTVERSION%%/ftpd
+lib/tcllib%%PORTVERSION%%/html/html.tcl
+lib/tcllib%%PORTVERSION%%/html/html.test
+lib/tcllib%%PORTVERSION%%/html/pkgIndex.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/html
+lib/tcllib%%PORTVERSION%%/javascript/javascript.tcl
+lib/tcllib%%PORTVERSION%%/javascript/pkgIndex.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/javascript
+lib/tcllib%%PORTVERSION%%/license.terms
 lib/tcllib%%PORTVERSION%%/math/math.tcl
-lib/tcllib%%PORTVERSION%%/math/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/math/math.test
+lib/tcllib%%PORTVERSION%%/math/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/math
-lib/tcllib%%PORTVERSION%%/mime/mime.tcl
-lib/tcllib%%PORTVERSION%%/mime/pkgIndex.tcl
-lib/tcllib%%PORTVERSION%%/mime/smtp.tcl
-lib/tcllib%%PORTVERSION%%/mime/mime.test
 lib/tcllib%%PORTVERSION%%/mime/README.html
 lib/tcllib%%PORTVERSION%%/mime/README.txt
 lib/tcllib%%PORTVERSION%%/mime/README.xml
+lib/tcllib%%PORTVERSION%%/mime/mime.tcl
+lib/tcllib%%PORTVERSION%%/mime/mime.test
+lib/tcllib%%PORTVERSION%%/mime/pkgIndex.tcl
+lib/tcllib%%PORTVERSION%%/mime/smtp.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/mime
 lib/tcllib%%PORTVERSION%%/ncgi/formdata.txt
 lib/tcllib%%PORTVERSION%%/ncgi/ncgi.tcl
-lib/tcllib%%PORTVERSION%%/ncgi/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/ncgi/ncgi.test
+lib/tcllib%%PORTVERSION%%/ncgi/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/ncgi
+lib/tcllib%%PORTVERSION%%/nntp/nntp.tcl
+lib/tcllib%%PORTVERSION%%/nntp/pkgIndex.tcl
+lib/tcllib%%PORTVERSION%%/nntp/rfc977.txt
+@dirrm lib/tcllib%%PORTVERSION%%/nntp
+lib/tcllib%%PORTVERSION%%/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/pop3/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/pop3/pop3.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/pop3
@@ -47,11 +63,31 @@ lib/tcllib%%PORTVERSION%%/profiler/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/profiler/profiler.tcl
 lib/tcllib%%PORTVERSION%%/profiler/profiler.test
 @dirrm lib/tcllib%%PORTVERSION%%/profiler
-lib/tcllib%%PORTVERSION%%/html/html.tcl
-lib/tcllib%%PORTVERSION%%/html/pkgIndex.tcl
-lib/tcllib%%PORTVERSION%%/html/html.test
-@dirrm lib/tcllib%%PORTVERSION%%/html
-lib/tcllib%%PORTVERSION%%/pkgIndex.tcl
-lib/tcllib%%PORTVERSION%%/install.sh
-lib/tcllib%%PORTVERSION%%/license.terms
+lib/tcllib%%PORTVERSION%%/struct/graph.tcl
+lib/tcllib%%PORTVERSION%%/struct/graph.test
+lib/tcllib%%PORTVERSION%%/struct/pkgIndex.tcl
+lib/tcllib%%PORTVERSION%%/struct/queue.tcl
+lib/tcllib%%PORTVERSION%%/struct/queue.test
+lib/tcllib%%PORTVERSION%%/struct/stack.tcl
+lib/tcllib%%PORTVERSION%%/struct/stack.test
+lib/tcllib%%PORTVERSION%%/struct/struct.tcl
+lib/tcllib%%PORTVERSION%%/struct/tree.tcl
+lib/tcllib%%PORTVERSION%%/struct/tree.test
+@dirrm lib/tcllib%%PORTVERSION%%/struct
+lib/tcllib%%PORTVERSION%%/textutil/adjust.tcl
+lib/tcllib%%PORTVERSION%%/textutil/adjust.test
+lib/tcllib%%PORTVERSION%%/textutil/pkgIndex.tcl
+lib/tcllib%%PORTVERSION%%/textutil/split.tcl
+lib/tcllib%%PORTVERSION%%/textutil/split.test
+lib/tcllib%%PORTVERSION%%/textutil/tabify.tcl
+lib/tcllib%%PORTVERSION%%/textutil/tabify.test
+lib/tcllib%%PORTVERSION%%/textutil/textutil.tcl
+lib/tcllib%%PORTVERSION%%/textutil/textutil.test
+lib/tcllib%%PORTVERSION%%/textutil/trim.tcl
+lib/tcllib%%PORTVERSION%%/textutil/trim.test
+@dirrm lib/tcllib%%PORTVERSION%%/textutil
+lib/tcllib%%PORTVERSION%%/uri/pkgIndex.tcl
+lib/tcllib%%PORTVERSION%%/uri/uri.tcl
+lib/tcllib%%PORTVERSION%%/uri/uri.test
+@dirrm lib/tcllib%%PORTVERSION%%/uri
 @dirrm lib/tcllib%%PORTVERSION%%

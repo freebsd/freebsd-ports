@@ -1,11 +1,7 @@
-===========================================================================
 
-	If you want users to be able to create their own web
-	subdirectories off of the main web directory, you need to:
+	Some of the parts of tcllib already come with man pages,
+	which  are  properly  installed.  Some  others  --  with
+	plain-text/HTML pages  which are  installed next  to the
+	corresponding TCL code. This  is how the Scriptics/Ajuba
+	developers intended it to happen, apparently...
 
-	a) add a group for www admins
-	b) chgrp yourgroup ${PREFIX}/bin/makeweb ${PREFIX}/www
-	c) chmod 2755 ${PREFIX}/bin/makeweb
-	d) tell them about makeweb(1)
-
-===========================================================================
