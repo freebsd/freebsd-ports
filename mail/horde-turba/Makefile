@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	turba
-PORTVERSION=	1.1
-PORTREVISION=	3
+PORTVERSION=	1.2
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/turba/				\
 		ftp://ftp.au.horde.org/pub/horde/turba/			\
@@ -18,8 +17,6 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/turba/				\
 
 MAINTAINER=	thierry@pompo.net
 COMMENT=	The Horde contact management application
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 #-----------------------------------------------------------------------
 # You may define these options:
@@ -46,9 +43,11 @@ RUN_DEPENDS+=  ${LOCALBASE}/www/horde/index.php:${PORTSDIR}/www/horde2
 NO_BUILD=	yes
 USE_REINPLACE=	yes
 
+LDD=		/usr/bin/ldd
+
 REINPLACE_ARGS=	-i.beforeTurba
 DOCS=		COPYING README docs/CHANGES docs/CREDITS \
-		docs/INSTALL docs/turba.dia docs/turba.pdf
+		docs/INSTALL docs/LDAP docs/UPDATE docs/turba.dia docs/turba.pdf
 CONFFILE=	attributes.php conf.php html.php menu.php \
 		prefs.php sources.php
 SUB_DIRS=	config graphics lib locale scripts templates po
@@ -63,18 +62,19 @@ TURBADIR=	${PREFIX}/${LTURBADIR}
 CONFDIR=	${TURBADIR}/config
 
 HORDE_INC=	${LOCALBASE}/etc/horde
+PHPSO?=		${LOCALBASE}/libexec/apache/libphp4.so
 
 pre-install:
 .if !defined(WITHOUT_LDAP)
 .if defined(WITH_LDAP1)
-	@if ! ${LDCONFIG} -r | ${GREP} -q -e "ldap.1"; then \
+	@if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libldap.so.1"; then \
 	    ${ECHO_MSG} "" ; \
 	    ${ECHO_MSG} "Please configure PHP with OpenLDAP support." ; \
 	    ${ECHO_MSG} "" ; \
 	    ${FALSE} ; \
 	fi
 .else
-	@if ! ${LDCONFIG} -r | ${GREP} -q -e "ldap.2"; then \
+	@if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libldap.so.2"; then \
 	    ${ECHO_MSG} "" ; \
 	    ${ECHO_MSG} "Please configure PHP with OpenLDAP2 support." ; \
 	    ${ECHO_MSG} "" ; \
