@@ -7,6 +7,7 @@
 
 PORTNAME=	straw
 PORTVERSION=	0.21.1
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}.pkg/${PORTVERSION}/
@@ -14,7 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}.pkg/${PORTVERSION}/
 MAINTAINER=	mezz7@cox.net
 COMMENT=	A GNOME 2 desktop weblog aggregator written in Python
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/DateTime/mxDateTime/__init__.py:${PORTSDIR}/lang/py-mx-base \
+RUN_DEPENDS=	${PYXML} \
+		${PYTHON_SITELIBDIR}/mx/DateTime/mxDateTime/__init__.py:${PORTSDIR}/lang/py-mx-base \
 		${PYTHON_SITELIBDIR}/gtk-2.0/gnome/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome2
 
 USE_BZIP2=	yes
