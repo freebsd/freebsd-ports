@@ -1,4 +1,6 @@
 bin/capture
+sbin/setbrightness
+sbin/vaiobat
 share/doc/picturebook/README
 share/doc/picturebook/README.FreeBSD
 @dirrm share/doc/picturebook
