@@ -11,7 +11,7 @@
 @@ -304,4 +305,6 @@ folder_format_str (char *dest, size_t de
  static void add_folder (MUTTMENU *m, struct browser_state *state,
 -			const char *name, const struct stat *s, int new)
-+			const char *name, const struct stat *s, BUFFY *mbuf)
++			const char *name, struct stat *s, BUFFY *mbuf)
  {
 +  int new = (mbuf) ? mbuf->new : 0;
 +

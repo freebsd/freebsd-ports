@@ -84,7 +84,7 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -230,6 +230,10 @@ pre-configure::
 .else
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-maildir-mtime
 .endif
+.endif
+.if defined(WITH_MUTT_NNTP)
+pre-configure::
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-nntp.c
 .endif
 
 .if ! defined(WITHOUT_MUTT_PGP_PATCH)
