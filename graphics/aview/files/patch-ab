@@ -1,0 +1,134 @@
+--- sstring.h.orig	Tue Sep 16 04:33:13 1997
++++ sstring.h	Sat Jan 15 22:24:50 2000
+@@ -478,6 +478,7 @@
+ extern inline void * __memcpy_g(void * to, const void * from, size_t n)
+ {
+ register void *tmp = (void *)to;
++int dummy;	/* dummy output for clobbers */
+ __asm__ __volatile__ (
+ 	"cld\n\t"
+ 	"shrl $1,%%ecx\n\t"
+@@ -488,9 +489,9 @@
+ 	"movsw\n"
+ 	"2:\trep\n\t"
+ 	"movsl"
+-	: /* no output */
+-	:"c" (n),"D" ((long) tmp),"S" ((long) from)
+-	:"cx","di","si","memory");
++	:"=c" (dummy),"=D" (dummy),"=S" (dummy)	/* dummy output for clobbers */
++	:"0" (n),"1" ((long) tmp),"2" ((long) from)
++	:"memory");
+ return (to);
+ }
+ 
+@@ -499,29 +500,32 @@
+ extern inline void * memmove(void * dest,const void * src, size_t n)
+ {
+ register void *tmp = (void *)dest;
++int dummy;	/* dummy output for clobbers */
+ if (dest<src)
+ __asm__ __volatile__ (
+ 	"cld\n\t"
+ 	"rep\n\t"
+ 	"movsb"
+-	: /* no output */
+-	:"c" (n),"S" (src),"D" (tmp)
+-	:"cx","si","di");
++	:"=c" (dummy),"=S" (dummy),"=D" (dummy)	/* dummy outpout for clobbers */
++	:"0" (n),"1" (src),"2" (tmp)
++	);
+ else
+ __asm__ __volatile__ (
+ 	"std\n\t"
+ 	"rep\n\t"
+ 	"movsb\n\t"
+ 	"cld"
+-	: /* no output */
+-	:"c" (n), "S" (n-1+(const char *)src), "D" (n-1+(char *)tmp)
+-	:"cx","si","di","memory");
++	:"=c" (dummy), "=S" (dummy), "=D" (dummy) /* dummy output for clobbers */
++
++	:"0" (n), "1" (n-1+(const char *)src), "2" (n-1+(char *)tmp)
++	:"memory");
+ return dest;
+ }
+ 
+ extern inline int memcmp(const void * cs,const void * ct,size_t count)
+ {
+ register int __res;
++int dummy;	/* dummy output for clobbers */
+ __asm__ __volatile__(
+ 	"cld\n\t"
+ 	"repe\n\t"
+@@ -530,8 +534,9 @@
+ 	"sbbl %0,%0\n\t"
+ 	"orb $1,%b0\n"
+ 	"1:"
+-	:"=abd" (__res):"0" (0),"S" (cs),"D" (ct),"c" (count)
+-	:"si","di","cx");
++	:"=abd" (__res), "=S" (dummy),"=D" (dummy),"=c" (dummy)
++	:"0" (0),"1" (cs),"2" (ct),"3" (count)
++	);
+ return __res;
+ }
+ 
+@@ -539,6 +544,7 @@
+ extern inline void * memchr(const void * cs,int c,size_t count)
+ {
+ register void * __res;
++int dummy;	/* dummy output for clobbers */
+ if (!count)
+ 	return NULL;
+ __asm__ __volatile__(
+@@ -548,8 +554,8 @@
+ 	"je 1f\n\t"
+ 	"movl $1,%0\n"
+ 	"1:\tdecl %0"
+-	:"=D" (__res):"a" (c),"D" (cs),"c" (count)
+-	:"cx");
++	:"=D" (__res), "=c"(dummy):"a" (c),"0" (cs),"1" (count)
++	);
+ return __res;
+ }
+ 
+@@ -657,6 +663,7 @@
+ extern inline void * __memset_cg(void * s, char c, size_t count)
+ {
+ register void *tmp = (void *)s;
++int dummy;	/* dummy output for clobbers */
+ __asm__ __volatile__ (
+ 	"shrl $1,%%ecx\n\t"
+ 	"rep\n\t"
+@@ -664,15 +671,16 @@
+ 	"jnc 1f\n\t"
+ 	"movb %%al,(%%edi)\n"
+ 	"1:"
+-	: /* no output */
+-	:"c" (count),"D" (tmp), "a" (0x0101U * (unsigned char) c)
+-	:"cx","di","memory");
++	:"=c" (dummy),"=D" (dummy)	/* dummy output for clobbers */
++	:"0" (count),"1" (tmp), "a" (0x0101U * (unsigned char) c)
++	:"memory");
+ return s;
+ }
+ 
+ extern inline void * __memset_gg(void * s,char c,size_t count)
+ {
+ register void *tmp = (void *)s;
++int dummy;	/* dummy output for clobbers */
+ __asm__ __volatile__ (
+ 	"movb %%al,%%ah\n\t"
+ 	"shrl $1,%%ecx\n\t"
+@@ -681,9 +689,9 @@
+ 	"jnc 1f\n\t"
+ 	"movb %%al,(%%edi)\n"
+ 	"1:"
+-	: /* no output */
+-	:"c" (count),"D" (tmp), "a" (c)
+-	:"cx","di","memory");
++	:"=c" (dummy),"=D" (dummy)	/* dummy output for clobbers */
++	:"0" (count),"1" (tmp), "a" (c)
++	:"memory");
+ return s;
+ }
+ 
