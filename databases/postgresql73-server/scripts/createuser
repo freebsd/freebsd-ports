@@ -32,7 +32,7 @@ if( getgrnam( "pgsql" ) ) {
 print "pgsql user using uid $pgUID\n";
 print "pgsql user using gid $pgGID\n";
 
-system( "/usr/bin/chpass -a \"pgsql:*:$pgUID:$pgGID::0:0:PostgreSQL pseudo-user:$ENV{'PREFIX'}/pgsql:/bin/sh\"" );
+system( "/usr/bin/chpass -a \"pgsql:*:$pgUID:$pgGID\:\:0:0:PostgreSQL pseudo-user:$ENV{'PREFIX'}/pgsql:/bin/sh\"" );
 
 sub append_file {
 	local($file,@list) = @_;

@@ -14,9 +14,8 @@ pgsql/bin/pg_dumpall
 pgsql/bin/pg_id
 pgsql/bin/pg_passwd
 pgsql/bin/pg_version
-pgsql/bin/pgtclsh
-pgsql/bin/pgtksh
 pgsql/bin/postgres
+pgsql/bin/postmaster
 pgsql/bin/psql
 pgsql/data/PG_VERSION
 pgsql/data/base/template1/PG_VERSION
@@ -68,7 +67,6 @@ pgsql/data/pg_log
 pgsql/data/pg_pwd
 pgsql/data/pg_shadow
 pgsql/data/pg_variable
-pgsql/errlog
 pgsql/include/access/attnum.h
 pgsql/include/c.h
 pgsql/include/commands/trigger.h
@@ -78,7 +76,6 @@ pgsql/include/ecpgtype.h
 pgsql/include/executor/spi.h
 pgsql/include/fmgr.h
 pgsql/include/lib/dllist.h
-pgsql/include/libpgtcl.h
 pgsql/include/libpq-fe.h
 pgsql/include/libpq/libpq-fs.h
 pgsql/include/libpq/pqcomm.h
@@ -92,11 +89,13 @@ pgsql/include/utils/palloc.h
 pgsql/lib/global1.bki.source
 pgsql/lib/global1.description
 pgsql/lib/libecpg.a
+pgsql/lib/libecpg.so
 pgsql/lib/libecpg.so.1.1
-pgsql/lib/libpgtcl.a
-pgsql/lib/libpgtcl.so.1.0
 pgsql/lib/libpq.a
+pgsql/lib/libpq.so
 pgsql/lib/libpq.so.1.1
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 pgsql/lib/local1_template1.bki.source
 pgsql/lib/local1_template1.description
 pgsql/lib/pg_geqo.sample
