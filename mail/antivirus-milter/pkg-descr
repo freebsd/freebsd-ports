@@ -15,6 +15,6 @@ The milter also does extention checks. Certain extentions are blocked
 completely. In specific, extenions of .scr, .vbs, .pif, and .com are
 blocked.
 
-Author gave permission to distribute it with BSD-License.
+Author gave permission to distribute it with BSD-License (2004-01-05).
 
 WWW: http://www.nmt.edu/~wcolburn/antivirus/
