@@ -257,6 +257,7 @@
     SUBDIR += xmms-fc
     SUBDIR += xmms-kde
     SUBDIR += xmms-liveice
+    SUBDIR += xmms-musepack
     SUBDIR += xmms-quix3dn
     SUBDIR += xmms-shn
     SUBDIR += xmms-sndfile
