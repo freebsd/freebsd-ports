@@ -1,12 +1,13 @@
 bin/x3270
-lib/X11/app-defaults/X3270
+bin/x3270if
 lib/X11/fonts/misc/3270.pcf.gz
 lib/X11/fonts/misc/3270b.pcf.gz
 lib/X11/fonts/misc/3270-12.pcf.gz
 lib/X11/fonts/misc/3270-12b.pcf.gz
-lib/X11/fonts/misc/3270a.pcf.gz
-lib/X11/fonts/misc/3270ab.pcf.gz
+lib/X11/fonts/misc/3270-20.pcf.gz
+lib/X11/fonts/misc/3270-20b.pcf.gz
 lib/X11/fonts/misc/3270d.pcf.gz
+lib/X11/fonts/misc/3270h.pcf.gz
 lib/X11/fonts/misc/3270gt8.pcf.gz
 lib/X11/fonts/misc/3270gt12.pcf.gz
 lib/X11/fonts/misc/3270gt12b.pcf.gz
@@ -16,10 +17,13 @@ lib/X11/fonts/misc/3270gt24.pcf.gz
 lib/X11/fonts/misc/3270gt24b.pcf.gz
 lib/X11/fonts/misc/3270gt32.pcf.gz
 lib/X11/fonts/misc/3270gt32b.pcf.gz
+lib/X11/x3270/ibm_hosts
 @exec /bin/chmod u+w /usr/X11R6/lib/X11/fonts/misc /usr/X11R6/lib/X11/fonts/misc/fonts.dir
 @exec /usr/X11R6/bin/mkfontdir /usr/X11R6/lib/X11/fonts/misc
 @exec /bin/chmod u=rwx,go=rx /usr/X11R6/lib/X11/fonts/misc
 @exec /bin/chmod a=r /usr/X11R6/lib/X11/fonts/misc/fonts.dir
 man/man1/x3270.1.gz
+man/man1/x3270if.1.gz
 man/man1/x3270-script.1.gz
 man/man1/ibm_hosts.1.gz
+@dirrm lib/X11/x3270
