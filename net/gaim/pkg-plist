@@ -19,6 +19,7 @@ lib/gaim/libtoc.so
 lib/gaim/libyahoo.so
 lib/gaim/libzephyr.so
 lib/gaim/notify.so
+%%PERL:%%lib/gaim/perl.so
 lib/gaim/spellchk.so
 lib/gaim/ssl-gnutls.so
 lib/gaim/ssl-nss.so
@@ -304,10 +305,9 @@ share/locale/zh_TW/LC_MESSAGES/gaim.mo
 @dirrm include/gaim-remote
 %%PERL:%%@cwd %%LOCALBASE%%
 %%PERL:%%lib/perl5/%%PERL_VER%%/man/man3/Gaim.3
-%%PERL:%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gaim/autosplit.ix
-%%PERL:%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gaim/Gaim.so
-%%PERL:%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gaim/Gaim.bs
-%%PERL:%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gaim/.packlist
-%%PERL:%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Gaim.pm
-%%PERL:%%lib/gaim/perl.so
-%%PERL:%%@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gaim
+%%PERL:%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gaim/autosplit.ix
+%%PERL:%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gaim/Gaim.so
+%%PERL:%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gaim/Gaim.bs
+%%PERL:%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gaim/.packlist
+%%PERL:%%%%SITE_PERL%%/%%PERL_ARCH%%/Gaim.pm
+%%PERL:%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gaim
