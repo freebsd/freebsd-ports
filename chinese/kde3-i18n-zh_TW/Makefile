@@ -9,7 +9,7 @@ CATEGORIES=	chinese kde misc
 
 MAINTAINER=	ports@FreeBSD.org
 
-LINGUAS=	"zh_CN.GB2312" "zh_TW.Big5"
+LINGUAS=	'"zh_CN.GB2312" "zh_TW.Big5"'
 MASTERDIR=	${.CURDIR}/../../misc/kde2-i18n
 
 SCRIPTS_ENV+=	LINGUAS=${LINGUAS}
