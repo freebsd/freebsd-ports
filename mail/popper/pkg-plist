@@ -1,3 +1,5 @@
 @cwd /usr/local
+bin/popauth
 libexec/popper
+man/man8/popauth.8.gz
 man/man8/popper.8.gz
