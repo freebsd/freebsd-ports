@@ -29,6 +29,12 @@ FLAG!=		/usr/bin/grep -e cd9660_wchar2char \
 BROKEN=		"your FreeBSD version is not supported. Please update to the latest version and try again"
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501109
+IGNORE=		is obsolete. See mount_cd9660(8)
+.endif
+
 pre-everything::
 	@if [ ! -d /sys -o ! -d ${SRCPREFIX}/sys ]; then \
 		${ECHO_MSG} "****************************************" ; \
@@ -48,4 +54,4 @@ pre-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
