@@ -1,5 +1,5 @@
---- backend/Makefile.in.orig	Thu Mar 22 16:48:30 2001
-+++ backend/Makefile.in	Thu Mar 22 16:50:53 2001
+--- backend/Makefile.in.orig	Fri Dec  1 04:05:49 2000
++++ backend/Makefile.in	Tue Mar 27 07:00:10 2001
 @@ -69,7 +69,7 @@
  LIBOBJS = $(addprefix ../lib/,$(addsuffix .lo,$(LIBLIB_FUNCS)))
  
@@ -9,3 +9,16 @@
  	$(LDFLAGS) $(BACKENDLIBS) $^ -rpath $(libsanedir) \
  	-version-info $(V_MAJOR):$(V_REV):$(V_MINOR)
  
+@@ -109,10 +109,10 @@
+ 	@# Assume the dll name without any versions is last
+ 	@dllend=`../tools/libtool-get-dll-ext libsane-dll.la`; \
+ 	rm -f $(libdir)/libsane.a $(libdir)/libsane.$$dllend \
+-		$(libdir)/libsane.$$dllend.$(V_MAJOR)*; \
++		$(libdir)/libsane.$$dllend.$(V_MAJOR); \
+ 	$(LN_S) sane/libsane-dll.a $(libdir)/libsane.a; \
+ 	$(LN_S) sane/libsane-dll.$$dllend $(libdir)/libsane.$$dllend ; \
+-	cd $(libsanedir) && for n in libsane-dll.$$dllend.$(V_MAJOR)*; do \
++	cd $(libsanedir) && for n in libsane-dll.$$dllend.$(V_MAJOR); do \
+ 	  nn=`echo $$n | sed 's,^libsane-dll,libsane,'`; \
+ 	  (cd ..; $(LN_S) sane/$$n $$nn); \
+ 	done || exit 1
