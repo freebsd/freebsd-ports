@@ -1,1 +1,10 @@
 bin/honeyd
+share/honeyd/README
+share/honeyd/nmap.assoc
+share/honeyd/nmap.prints
+share/honeyd/xprobe2.conf
+share/honeyd/config.sample
+@dirrm share/honeyd
+lib/honeyd/libhoneyd.so
+@dirrm lib/honeyd
+
