@@ -15,7 +15,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-help-${DOCVERSION}${EXTRACT_SUFX}
 .endif
 
-MAINTAINER=	brett@peloton.runet.edu
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Simple GTK-based text/HTML editor
 
 DOCVERSION=	1.2.0

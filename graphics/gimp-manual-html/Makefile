@@ -8,11 +8,10 @@
 PORTNAME=	GimpUserManual
 PORTVERSION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://manual.gimp.org/pub/manual/ \
-		http://peloton.runet.edu/distfiles/
+MASTER_SITES=	ftp://manual.gimp.org/pub/manual/ 
 PKGNAMESUFFIX=	-${DOCFORMAT}
 
-MAINTAINER=	brett@peloton.runet.edu
+MAINTAINER=	ports@freebsd.org
 COMMENT=	The user manual for the GNU Image Manipulation Program (GIMP)
 
 .if !defined(DOCFORMAT)

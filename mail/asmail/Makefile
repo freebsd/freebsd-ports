@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://gates.enemy.at/pub/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	brett@peloton.runet.edu
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Biff-type program, designed to match AfterStep
 
 USE_X_PREFIX=	yes
