@@ -7,25 +7,22 @@
 #
 
 PORTNAME=	aewm++
-PORTVERSION=	1.0.17
+PORTVERSION=	1.0.21
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sapphire
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_REINPLACE=	yes
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	CXX="${CXX}"
-CXXFLAGS+=	-I${X11BASE}/include
-LIBS+=		-L${X11BASE}/lib
+MAKE_ARGS=	CC="${CXX}" CFLAGS="${CXXFLAGS}" prefix="${PREFIX}" \
+		INCLUDES="-I${X11BASE}/include" LIBPATH="-L${X11BASE}/lib"
+MAN1=		aewm++.1x
 
-MAN1=	aewm++.1x
-
-post-patch:
-	@${REINPLACE_CMD} -e "s,^CC,#CC,g ; s,^CFLAGS,#CFLAGS,g ; \
-		s,^prefix,#prefix,g ; s,prefix,PREFIX,g ; \
-		s,CC,CXX,g ; s,CFLAGS,CXXFLAGS,g" ${WRKSRC}/Makefile
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
