@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tor
-PORTVERSION=	0.0.6.2
+PORTVERSION=	0.0.7
 CATEGORIES=	security
 MASTER_SITES=	http://freehaven.net/tor/dist/
 
