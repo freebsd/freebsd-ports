@@ -13,7 +13,7 @@ MASTER_SITES=	http://wildsau.idv.uni-linz.ac.at/mfx/download/pysol/pysol-sound-s
 MAINTAINER=	sobomax@altavista.net
 
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
-LIB_DEPENDS=	SDL.2:${PORTSDIR}/devel/sdl \
+LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl \
 		smpeg.0:${PORTSDIR}/graphics/smpeg
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python
 
