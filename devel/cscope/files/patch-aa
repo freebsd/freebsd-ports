@@ -1,5 +1,5 @@
---- src/constants.h.orig	Sun Feb 25 14:40:57 2001
-+++ src/constants.h	Sun Feb 25 14:41:08 2001
+--- src/constants.h.orig	Fri Jun  1 08:43:24 2001
++++ src/constants.h	Mon Aug  6 22:35:45 2001
 @@ -43,7 +43,7 @@
  
  /* database output macros that update its offset */
@@ -9,3 +9,12 @@
  #define	dbfputs(s)	(dboffset += strlen(s), fputs(s, newrefs))
  #else
  #define	dbfputs(s)	(dboffset += fputs(s, newrefs))
+@@ -98,7 +98,7 @@
+ #define INCLUDES	8
+ #define	FIELDS		9
+ 
+-#if (BSD || V9) && !__NetBSD__
++#if (BSD || V9) && !__NetBSD__ && !__FreeBSD__
+ #define TERMINFO	0	/* no terminfo curses */
+ #else
+ #define TERMINFO	1
