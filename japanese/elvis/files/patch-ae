@@ -1,0 +1,11 @@
+--- kanji.c.org	Wed Jan  8 15:51:20 1997
++++ kanji.c	Wed Jan  8 15:51:31 1997
+@@ -403,7 +403,7 @@
+  */
+ 
+ /* specify escape sequence for output here */
+-static	char	*kanjiIn	= "\033$@";
++static	char	*kanjiIn	= "\033$B";
+ static	char	*jisankIn	= "\033(J";
+ static	char	*asciiIn	= "\033(B";
+ 
