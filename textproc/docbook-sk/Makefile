@@ -5,36 +5,37 @@
 # $FreeBSD$
 #
 
-PORTNAME=	docbook-xml
+PORTNAME=	docbook
+PKGNAMESUFFIX=	-xml
 PORTVERSION=	4.1.2
+PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.docbook.org/xml/4.1.2/
+MASTER_SITES=	http://www.docbook.org/xml/${PORTVERSION}/
 DISTNAME=	docbkx412
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
+RUN_DEPENDS=	${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog
+
 USE_ZIP=	YES
 NO_BUILD=	YES
 NO_WRKSUBDIR=	YES
+PLIST_SUB=	DTD_VERSION=${PORTVERSION} \
+		MKCATALOG=${MKCATALOG} CATALOG=${CATALOG}
 
-INSTDIR=	${PREFIX}/share/xml
-DTDDIR=		${INSTDIR}/docbook
-ENTDIR=		${INSTDIR}/docbook/ent
-DTDFILES=	calstblx.dtd dbcentx.mod dbgenent.mod dbhierx.mod \
-		dbnotnx.mod dbpoolx.mod docbookx.dtd soextblx.dtd
-MISCFILES=	40chg.txt 41chg.txt readme.txt
-
-post-extract:
-	${SED} -e 's|%%PREFIX%%|${PREFIX}|g' ${FILESDIR}/catalog.tmpl > ${WRKSRC}/catalog
+DOCBOOKDIR=	${PREFIX}/share/xml/${PORTNAME}/${PORTVERSION}
+MKCATALOG=	${LOCALBASE}/sbin/mkcatalog
+CATALOG=	${PREFIX}/share/xml/catalog
 
 pre-install:
-	${MKDIR} ${ENTDIR}
+	@[ -d ${DOCBOOKDIR}/ent ] || ${MKDIR} ${DOCBOOKDIR}/ent
 
 do-install:
-	@(cd ${WRKSRC};     ${INSTALL_DATA} ${DTDFILES} ${DTDDIR})
-	@(cd ${WRKSRC}/ent; ${INSTALL_DATA} *.ent ${ENTDIR})
-	@(cd ${WRKSRC};     ${INSTALL_DATA} ${MISCFILES} ${DTDDIR})
-	${INSTALL_DATA} ${WRKSRC}/catalog ${INSTDIR}
-	${INSTALL_DATA} ${FILESDIR}/catalog.docbook ${DTDDIR}/catalog
+	for file in `unzip -l ${DISTDIR}/${DISTFILES}|${AWK} '/:[0-9].*[^\/]$$/{print $$4}'`; do \
+		${INSTALL_DATA} ${WRKSRC}/$$file ${DOCBOOKDIR}/$$file; \
+	done
+
+post-install:
+	${MKCATALOG} -q -c ${CATALOG} install docbook/${PORTVERSION} docbook.cat
 
 .include <bsd.port.mk>
