@@ -30,14 +30,12 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 CPPFLAGS=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT
 LDFLAGS=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on 4.x"
-.endif
-
 post-extract:
-	@${REINPLACE_CMD} -e 's/min/Min/; s/max/Max/' ${WRKSRC}/include/Various.h
+	@${REINPLACE_CMD} -E -e 's/min[[:space:]]*\(/Min(/; s/max[[:space:]]*\(/Max\(/' \
+		${WRKSRC}/include/Various.h ${WRKSRC}/src/ArenaBase.cc \
+		${WRKSRC}/src/GeometricalObjects.cc ${WRKSRC}/src/Options.cc \
+		${WRKSRC}/src/Robot.cc ${WRKSRC}/src/StartTournamentWindow.cc \
+		${WRKSRC}/src/StatisticsWindow.cc ${WRKSRC}/src/Various.cc
 	@${REINPLACE_CMD} -E -e 's/\(int\*\)/int\*/' ${WRKSRC}/src/ArenaRealTime.cc
 
 post-install:
@@ -48,4 +46,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/RealTimeBattle.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
