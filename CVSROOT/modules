@@ -10606,6 +10606,7 @@ tnftpd		ports/ftp/tnftpd
 tnt		ports/devel/tnt
 tochnog		ports/cad/tochnog
 togl		ports/graphics/togl
+tolua		ports/lang/tolua
 tome		ports/games/tome
 toolame		ports/audio/toolame
 topaz		ports/math/topaz
