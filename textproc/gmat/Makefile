@@ -12,7 +12,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-0.2.4
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.ora.com/pub/gmat/
 
-MAINTAINER=	grog@FreeBSD.org
+MAINTAINER=	grog@FreeBSD.Org
 COMMENT=	O'Reilly's SGML formatting package.
 
 RUN_DEPENDS=	${LOCALBASE}/bin/nsgmls:${PORTSDIR}/textproc/sp		\
