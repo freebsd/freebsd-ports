@@ -1,6 +1,10 @@
 
 			** IMPORTANT **
 
+    Please ensure that you have read the Alcatel license agreement at
+    http://www.alcatel.com/consumer/dsl/dvrreg_lx.htm before running
+    this software.
+
     To activate this port, create a new profile in /etc/ppp/ppp.conf
     called ``adsl'' using /usr/local/share/speedtouch/ppp.conf.sample
     as a template, then copy /usr/local/etc/rc.d/asdl.sh.sample to
