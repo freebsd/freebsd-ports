@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tksol
-PORTVERSION=	1.8.2
+PORTVERSION=	1.8.3
 CATEGORIES=	games tk84
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/solitaires
@@ -25,7 +25,7 @@ USE_REINPLACE=	yes
 MAN6=		tksol.6
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin/wish|${PREFIX}/bin/wish8.4|g ; \
+	@${REINPLACE_CMD} -e 's|exec wish|exec ${PREFIX}/bin/wish8.4|g ; \
 		 s|/usr/local/lib/tksol|${DATADIR}|g' ${WRKSRC}/tksol
 
 do-install:
