@@ -10,7 +10,7 @@ If you want to use samba-ja,
 See document files in /usr/local/share/doc/samba and example config files in
 /usr/local/share/examples/samba for details.
 
-Samba Japanese Edition is based on Samba 2.2.2, implemented the experimental
+Samba Japanese Edition is based on Samba 2.2.7a, implemented the
 internationalized SWAT and fixed several problems arond functions for
 Japanese support. See smb.conf.sample for details. If you want to use
 NT4+SP3 or Win95+updates clients, set "encrypt passwords" parameter to

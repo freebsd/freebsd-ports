@@ -4,7 +4,7 @@
  #endif
  
  /* this guess needs to be improved (tridge) */
-+#ifndef __FreeBSD__
++#ifndef FREEBSD
  #if (defined(STAT_STATVFS) || defined(STAT_STATVFS64)) && !defined(SYSV)
  #define SYSV 1
 +#endif
