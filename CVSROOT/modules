@@ -2608,6 +2608,7 @@ hackedbox	ports/x11-wm/hackedbox
 hafiye		ports/security/hafiye
 hagelslag	ports/net/hagelslag
 halflifeserver	ports/games/halflifeserver
+hamfax		ports/comms/hamfax
 hamlib		ports/comms/hamlib
 hammerhead	ports/sysutils/hammerhead
 happydoc	ports/devel/happydoc
