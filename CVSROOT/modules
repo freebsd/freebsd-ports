@@ -5798,6 +5798,7 @@ rtadvd		src/usr.sbin/rtadvd
 rtb		ports/games/rtb
 rtc		ports/emulators/rtc
 rtcw		ports/games/rtcw
+rtcw-paks	ports/games/rtcw-paks
 rtems-gcc	ports/devel/rtems-gcc
 rtf2htm		ports/textproc/rtf2htm
 rtf2latex	ports/print/rtf2latex
