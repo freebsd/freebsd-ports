@@ -37,6 +37,7 @@
     SUBDIR += irssi
     SUBDIR += kmyirc
     SUBDIR += konversation
+    SUBDIR += kvirc
     SUBDIR += liece
     SUBDIR += liece-dcc
     SUBDIR += liece-emacs20
