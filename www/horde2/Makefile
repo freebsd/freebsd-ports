@@ -7,6 +7,7 @@
 
 PORTNAME=	horde
 PORTVERSION=	2.2.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.horde.org/pub/horde/				\
 		ftp://ftp.planetmirror.com/pub/horde/horde/		\
@@ -18,7 +19,7 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/horde/				\
 		ftp://ftp.uk.horde.org/mirrors/ftp.horde.org/pub/horde/	\
 		http://ftp.horde.org/pub/horde/
 
-MAINTAINER=	thierry@pompo.net
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A common code-base used by Horde applications, written in PHP
 
 #-----------------------------------------------------------------------
@@ -28,20 +29,50 @@ COMMENT=	A common code-base used by Horde applications, written in PHP
 #
 # - WITHOUT_SUPPORTED_DB: if you run a database not in the ports tree.
 #
+# - WITHOUT_MYSQL:	this port is built with MySQL by default
+#			but you might choose any other database
+#			supported by PHP (e.g. WITH_POSTGRESQL).
+#
+# - WITHOUT_IMP:	this port is intended to build a default
+#			package for IMP; use this knob if for
+#			example you only need Chora.
+#
+# - WITHOUT_LDAP:	if you do not need OpenLDAP.
+#
+# - WITHOUT_MCAL:	if you don't plan to install Kronolith.
+#
+# - WITHOUT_FTP:	if you don't plan to install Gollem.
+#
 #-----------------------------------------------------------------------
 
-BUILD_DEPENDS=	pear:${PORTSDIR}/lang/php4-horde
-RUN_DEPENDS=	${BUILD_DEPENDS}						\
-		${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date			\
+RUN_DEPENDS=	${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date			\
 		${PEARDIR}/HTML/Common.php:${PORTSDIR}/devel/pear-HTML_Common	\
 		${PEARDIR}/Log.php:${PORTSDIR}/sysutils/pear-Log		\
 		${PEARDIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime
 
-NO_PACKAGE=	Packaging problem due to dependences with pear
 NO_BUILD=	yes
+USE_PHP=	domxml gettext session
+WANT_PHP_MOD=	yes
 USE_REINPLACE=	yes
 
-LDD=		/usr/bin/ldd
+.if !defined(NOCRYPT)
+USE_PHP+=	mcrypt
+.endif
+.if !defined(WITHOUT_MYSQL)
+USE_PHP+=	mysql
+.endif
+.if !defined(WITHOUT_LDAP)
+USE_PHP+=	ldap
+.endif
+.if !defined(WITHOUT_IMP)
+USE_PHP+=	imap
+.endif
+.if !defined(WITHOUT_MCAL)
+USE_PHP+=	mcal
+.endif
+.if !defined(WITHOUT_FTP)
+USE_PHP+=	ftp
+.endif
 
 REINPLACE_ARGS=	-i.beforeHorde
 DOCS=		COPYING README docs/CHANGES docs/CODING_STANDARDS \
@@ -64,12 +95,9 @@ APACHE_CONF=	${APACHE_CNFDIR}/httpd.conf
 PEARDIR?=	${LOCALBASE}/share/pear
 .if defined(WITH_APACHE2)
 APACHE_CNFDIR=	${LOCALBASE}/etc/apache2
-MOD_DIR=	libexec/apache2
 .else
 APACHE_CNFDIR=	${LOCALBASE}/etc/apache
-MOD_DIR=	libexec/apache
 .endif
-PHPSO=		${LOCALBASE}/${MOD_DIR}/libphp4.so
 HORDE_INC=	${PREFIX}/etc/horde
 LOG_FILE?=	/var/log/horde.log
 
@@ -89,24 +117,12 @@ pre-install:
 	    ${ECHO_MSG} "" ; \
 	    ${FALSE} ; \
 	fi
-	@if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libxml2.so"; then \
-	    ${ECHO_MSG} "" ; \
-	    ${ECHO_MSG} "Please configure PHP with DOM XML support." ; \
-	    ${ECHO_MSG} "" ; \
-	    ${FALSE} ; \
-	fi
-	@if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libintl.so"; then \
-	    ${ECHO_MSG} "" ; \
-	    ${ECHO_MSG} "Please configure PHP with gettext support." ; \
-	    ${ECHO_MSG} "" ; \
-	    ${FALSE} ; \
-	fi
 # N.B.: database dependencies are binded with mod_php#, not with Horde
 .if !defined(WITHOUT_SUPPORTED_DB)
-	@if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libmysqlclient" ; then \
-	 if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libpq.so" ; then \
-	  if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libsybdb.so" ; then \
-	   if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libct.so" ; then \
+	@if ! php -m | ${GREP} -q -e "mysql" ; then \
+	 if ! php -m | ${GREP} -q -e "pgsql" ; then \
+	  if ! php -m | ${GREP} -q -e "sybase" ; then \
+	   if ! php -m | ${GREP} -q -e "sybase_ct" ; then \
 	    ${ECHO_MSG} "" ; \
 	    ${ECHO_MSG} "Please configure PHP with a database support." ; \
 	    ${ECHO_MSG} "MySQL, PostgreSQL and Sybase (CTLIB or DBLIB)" ; \
