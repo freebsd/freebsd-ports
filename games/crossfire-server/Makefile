@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	crossfire
-PORTVERSION=	1.5.0
-PORTREVISION=	1
+PORTVERSION=	1.6.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.ifi.uio.no/pub/crossfire/ \
@@ -22,6 +21,7 @@ COMMENT=	Server for multiplayer graphical arcade and adventure game
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
+USE_BZIP2=	yes
 USE_XPM=	yes
 USE_PERL5=	yes
 USE_OPENSSL=	yes
@@ -29,17 +29,24 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
-LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-MAN6=		crossfire.6 crossedit.6
+MAN6=		crossedit.6 crossfire.6 crossfire-config.6 crossloop.6 \
+		crossloop.web.6
+
+CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include \
+		-I${OPENSSLINC}/openssl
+LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-ldes|-lcrypto|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-ldes|-lcrypto|g ; \
+		 s|des_crypt|DES_crypt|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|des_crypt|DES_crypt|g' ${WRKSRC}/server/main.c
 
 post-install:
-	@${TAR} -C ${WRKDIR} -cf - maps | ${TAR} -C ${DATADIR} --unlink -xf -
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
+	@${MKDIR} ${DATADIR}/maps
+	cd ${WRKDIR}/maps-bigworld && ${FIND} . | \
+		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/maps
 	@${CHOWN} ${BINOWN}:games ${PREFIX}/bin/crossfire
 	@${CHMOD} 2755 ${PREFIX}/bin/crossfire
 	@${CHGRP} -R games ${PREFIX}/var/crossfire
