@@ -1,0 +1,26 @@
+--- xsmbrowser.orig	Mon Dec  4 11:34:06 2000
++++ xsmbrowser	Mon Dec  4 11:36:25 2000
+@@ -1,4 +1,4 @@
+-#!/usr/bin/expectk -f
++#!/usr/local/bin/expectk -f
+ # xSMBrowser - Samba GUI that emulates Network Neighborhood
+ # Copyright (c) 2000 Chad Spencer
+ 
+@@ -6816,7 +6816,7 @@
+     $helpwindow.text.area insert end " -------------------------------\n"
+     $helpwindow.text.area insert end " The .xsmbrowser-config file contains various setup settings. Looking at\n"
+     $helpwindow.text.area insert end " this file, the most important settings are as follows.\n"
+-    $helpwindow.text.area insert end "  Image Path = /usr/share/pixmaps/xsmbrowser\n"
++    $helpwindow.text.area insert end "  Image Path = /usr/local/share/xsmbrowser\n"
+     $helpwindow.text.area insert end "  Smbmount = yes 1\n"
+     $helpwindow.text.area insert end "  Execute = kfmclient folder \$MOUNTPOINT\n"
+     $helpwindow.text.area insert end "\n"
+@@ -7044,7 +7044,7 @@
+     $helpwindow.text.area insert end "  a) Image Path\n"
+     $helpwindow.text.area insert end "      xSMBrowser now uses pictures and icons throughout the program. For\n"
+     $helpwindow.text.area insert end "      it to use the pictures, however, it must know where they are being\n"
+-    $helpwindow.text.area insert end "      stored. By default, they are put into /usr/share/pixmaps/xsmbrowser,\n"
++    $helpwindow.text.area insert end "      stored. By default, they are put into /usr/local/share/xsmbrowser,\n"
+     $helpwindow.text.area insert end "      so try that first if it says Use Geo (use internal geometry).\n"
+     $helpwindow.text.area insert end " \n"
+     $helpwindow.text.area insert end "  b) Query Timeout\n"
