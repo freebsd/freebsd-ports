@@ -12723,6 +12723,7 @@ zope-generator	ports/www/zope-generator
 zope-groupuserfolder	ports/www/zope-groupuserfolder
 zope-guf	ports/www/zope-guf
 zope-i18nlayer	ports/www/zope-i18nlayer
+zope-kupu	ports/www/zope-kupu
 zope-mimetypesregistry	ports/www/zope-mimetypesregistry
 zope-mindmapbbs	ports/www/zope-mindmapbbs
 zope-mysqluserfolder	ports/www/zope-mysqluserfolder
