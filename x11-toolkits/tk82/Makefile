@@ -7,7 +7,7 @@
 
 PORTNAME=	tk
 PORTVERSION=	8.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits tk82
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR=	tcl8_2
@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Graphical toolkit for TCL
 
-LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
+LIB_DEPENDS=	tcl82.1:${PORTSDIR}/${TCL82_PORT}
 
 NO_LATEST_LINK=	yes
 USE_XLIB=	yes
@@ -31,6 +31,8 @@ MAKE_ENV=	SHORT_TK_VER=${SHORT_TK_VER}
 PLIST_SUB=	TK_VER=${TK_VER} SHORT_TK_VER=${SHORT_TK_VER}
 PKGINSTALL=	${PKGDIR}/pkg-install.wish
 PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.wish
+TCL82_PORT?=	lang/tcl82
+USE_REINPLACE=	YES
 
 MANCOMPRESSED=	no
 
@@ -299,6 +301,10 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	palette.n tk_setPalette.n \
 	palette.n tk_bisque.n \
 	popup.n tk_popup.n
+
+post-configure:
+	${REINPLACE_CMD} -e 's=${WRKDIRPREFIX}=$${WRKDIRPREFIX}=' \
+		${WRKSRC}/tkConfig.sh
 
 .include <bsd.port.pre.mk>
 
