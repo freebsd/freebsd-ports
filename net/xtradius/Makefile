@@ -8,7 +8,7 @@
 PORTNAME=	xtradius
 PORTVERSION=	1.0b3
 CATEGORIES=	net
-MASTER_SITES=	http://www.xtradius.com/download/
+MASTER_SITES=	http://www.xtradius.com/files/stable/
 DISTNAME=	xtradius-1.0beta3
 EXTRACT_SUFX=	.tgz
 
