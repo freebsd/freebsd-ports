@@ -45,6 +45,7 @@
     SUBDIR += p5-Unicode-String
     SUBDIR += psiconv
     SUBDIR += py-iconv
+    SUBDIR += py-iconvcodec
     SUBDIR += recode
     SUBDIR += ruby-dump.rb
     SUBDIR += ruby-iconv

@@ -1,0 +1,5 @@
+%%PYTHON_SITELIBDIR%%/_iconv_codec.so
+%%PYTHON_SITELIBDIR%%/iconv_codec.pth
+%%PYTHON_SITELIBDIR%%/iconv_codec.py
+%%PYTHON_SITELIBDIR%%/iconv_codec.pyc
+%%PYTHON_SITELIBDIR%%/iconv_codec.pyo
