@@ -122,7 +122,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <url>http://www.osvdb.org/6834</url>
       <url>http://www.osvdb.org/6835</url>
       <url>http://www.osvdb.org/6836</url>
-      <url>http://www.packetstormsecurity.org/0405-exploits/cvs_linux_freebsd_HEAP.c</url>
       <bid>10499</bid>
       <freebsdsa>SA-04:14.cvs</freebsdsa>
     </references>
