@@ -22,7 +22,7 @@ include/magick/widget.h
 lib/libMagick.a
 lib/libMagick.la
 lib/libMagick.so
-lib/libMagick.so.4.5
+lib/libMagick.so.4.6
 @exec /sbin/ldconfig -m %D/lib
 @unexec /sbin/ldconfig -R
 man/man1/ImageMagick.1.gz
