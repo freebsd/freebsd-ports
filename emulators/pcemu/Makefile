@@ -3,7 +3,7 @@
 # Date created:		7 March 1995
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.9 1998/01/08 18:52:05 fenner Exp $
+# $Id: Makefile,v 1.10 1998/08/02 18:21:40 joerg Exp $
 #
 
 DISTNAME=	pcemu1.01alpha
@@ -29,7 +29,7 @@ MASTER_SITES+=	ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/
 MASTER_SITES+=	ftp://ftp.interface-business.de/pub/outgoing/
 #
 # This is the original master site, but better use a well-connected server
-MASTER_SITES+=	ftp://ftp.cs.bris.ac.uk/users/hedley/
+MASTER_SITES+=	ftp://ftp.cs.bris.ac.uk/pub/users/hedley/
 
 MAINTAINER=	joerg@FreeBSD.org
 
