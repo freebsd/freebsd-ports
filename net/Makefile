@@ -472,6 +472,7 @@
     SUBDIR += udptunnel
     SUBDIR += unison
     SUBDIR += urlendec
+    SUBDIR += utftpd
     SUBDIR += vchat
     SUBDIR += vicq
     SUBDIR += vnc

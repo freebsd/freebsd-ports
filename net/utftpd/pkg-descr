@@ -1,0 +1,15 @@
+utftpd is a TFTP server with fine-grained access control, support for
+blksize (RFC 2348), timeout options and support for revision control.
+
+You can assign three different kinds of rights to every client:
+- read:		the right to read a file. 
+- write:	the right to write to an already existing file. 
+- create:	the right to create a file. 
+
+Clients may be specified by a single ip address or a range of
+addresses or by ip address and mask.
+
+Revision control is optional and will never be turned on automatically
+for any file (you have to do the initial checkin into by hand).
+
+WWW:	http://www.ohse.de/uwe/software/utftpd.html
