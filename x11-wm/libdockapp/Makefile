@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	libdockapp
-PORTVERSION= 	0.2
+PORTVERSION= 	0.4.0
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://wit401310.student.utwente.nl/apps/apps/ \
-		http://people.FreeBSD.org/~jim/distfiles/ \
-		ftp://shadowmere.student.utwente.nl/pub/WindowMaker/
-DISTNAME=	docklib-${PORTVERSION}
+MASTER_SITES=	ftp://shadowmere.student.utwente.nl/pub/WindowMaker/ \
+		http://people.FreeBSD.org/~jim/distfiles/
 
 MAINTAINER=	jim@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
+USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 
