@@ -10,9 +10,7 @@ PORTVERSION=	1.0
 PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.linuxpowered.com/pub/Vorbis/unix/ \
-		ftp://ftp.wiles.org/pub/mirrors/Vorbis/unix/ \
-		http://xiph.stratius.com/vorbis/unix/ \
+MASTER_SITES=	ftp://ftp.wiles.org/pub/mirrors/Vorbis/unix/ \
 		http://www.oddsock.org/vorbis/unix/ \
 		http://www.casterclub.com/vorbis/unix/ \
 		http://www.math.utoledo.edu/~chaese/Vorbis/unix/
