@@ -51,7 +51,7 @@ lib/libgnomeuimm-2.0/proc/m4/convert.m4
 lib/libgnomeuimm-2.0/proc/m4/convert_libgnomeuimm.m4
 lib/libgnomeuimm-1.3.a
 lib/libgnomeuimm-1.3.so
-lib/libgnomeuimm-1.3.so.17
+lib/libgnomeuimm-1.3.so.18
 libdata/pkgconfig/libgnomeuimm-2.0.pc
 @dirrm lib/libgnomeuimm-2.0/include
 @dirrm lib/libgnomeuimm-2.0/proc/m4
