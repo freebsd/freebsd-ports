@@ -101,7 +101,6 @@ do-install:
 		${PREFIX}/lib/wine/reg
 	${INSTALL_DATA} ${FILESDIR}/README.patch \
 		${FILESDIR}/patch-3.3-sys-sigtrap \
-		${FILESDIR}/patch-3.3-sys-fsgs \
 		${PREFIX}/lib/wine
 	${INSTALL_DATA} ${WRKSRC}/winedefault.reg ${PREFIX}/lib/wine
 	${ECHO}

@@ -11,7 +11,6 @@ include/wine/wingdi.h
 include/wine/winuser.h
 lib/wine/README.patch
 lib/wine/patch-3.3-sys-sigtrap
-lib/wine/patch-3.3-sys-fsgs
 lib/wine/winedefault.reg
 lib/wine/bug_report.pl
 lib/wine/reg/regFixer.pl
