@@ -9,4 +9,4 @@ MASTERDIR=	${.CURDIR}/../irchat-pj-emacs20
 
 EMACS_PORT_NAME=	emacs21
 
-.include <${MASTERDIR}/Makefile>
+.include "${MASTERDIR}/Makefile"

@@ -14,6 +14,6 @@ XEMACS_ONLY=		""
 ALL_TARGET=		package c
 INSTALL_TARGET=		install-package
 PUREBIN=		${EMACS_LIBDIR}/site-packages/etc/pure
-MAKE_ENV=		LANG=ja_JP.EUC
+MAKE_ENV=		LANG=ja_JP.eucJP
 
-.include <${MASTERDIR}/Makefile>
+.include "${MASTERDIR}/Makefile"
