@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	mailgraph
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	mail
-MASTER_SITES=	http://people.ee.ethz.ch/~dws/software/mailgraph/pub/
+MASTER_SITES=	http://people.ee.ethz.ch/~dws/software/mailgraph/pub/ \
+		http://people.ee.ethz.ch/~dws/software/mailgraph/pub/old/
 
 MAINTAINER=	gslin@ccca.nctu.edu.tw
 COMMENT=	A RRDtool frontend for Postfix statistics
