@@ -85,10 +85,10 @@ pre-extract:
 	@${ECHO} ">> building inn2 with NEWSINFO=${NEWSINFO}..."
 
 pre-install:
-.for dir in ${NEWSSPOOL} ${NEWSLIB} ${NEWSLOG} ${NEWSMAN} ${NEWSINFO}
-	${MKDIR} ${dir}
-	${CHOWN} news:news ${dir}
-.endfor
+	@for dir in ${NEWSSPOOL} ${NEWSLIB} ${NEWSLOG} ${NEWSMAN} ${NEWSINFO}; do \
+		${MKDIR} $$dir; \
+		${CHOWN} news:news $$dir; \
+	done
 
 update: build
 	@(cd ${WRKSRC} ; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} update)
