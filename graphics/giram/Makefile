@@ -17,6 +17,7 @@ RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray31
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 USE_MESA=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
@@ -37,10 +38,12 @@ CONFIGURE_ARGS+=--disable-gnome
 .endif
 
 pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|g ; \
+	@${REINPLACE_CMD} -e \
+		's|-lpthread|${PTHREAD_LIBS:S/"//g}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
 		 s|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
-		 s|\$$\(top_builddir\)/intl/libintl.a|-lintl|g' ${WRKSRC}/configure
+		 s|\$$(top_builddir)/intl/libintl.a|-lintl|g' \
+		 ${WRKSRC}/configure
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/doc/giram/SampleScenes
