@@ -3,7 +3,7 @@
 # Date created:         02 November 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1998/11/16 08:52:11 tg Exp $
+# $Id: Makefile,v 1.4 1999/02/02 08:04:14 asami Exp $
 #
 
 DISTNAME=	Imaging-0.3b2
@@ -12,7 +12,7 @@ CATEGORIES=	graphics python
 MASTER_SITES=	http://www.pythonware.com/downloads/ \
 		ftp://www.python.org/pub/python/src/ \
 		ftp://ftp.cwi.nl/pub/python/src/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pyth151.tgz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} py152.tgz
 
 MAINTAINER=	tg@FreeBSD.ORG
 
@@ -36,9 +36,9 @@ TKINTERORIG=	${PYTHONSCRIPTDIR}/lib-dynload/_tkinter.so
 
 post-extract:
 	@(cd ${WRKDIR}; ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-	    ${_DISTDIR}/pyth151.tgz ${EXTRACT_AFTER_ARGS} \
-	    Python-1.5.1/Modules/_tkinter.c Python-1.5.1/Modules/tkappinit.c)
-	@${MV} ${WRKDIR}/Python-1.5.1/Modules/* ${WRKSRC}/..
+	    ${_DISTDIR}/py152.tgz ${EXTRACT_AFTER_ARGS} \
+	    Python-1.5.2/Modules/_tkinter.c Python-1.5.2/Modules/tkappinit.c)
+	@${MV} ${WRKDIR}/Python-1.5.2/Modules/* ${WRKSRC}/..
 	@${CP} ${FILESDIR}/Setup ${WRKSRC}/..
 
 post-configure:
