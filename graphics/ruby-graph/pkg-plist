@@ -3,5 +3,6 @@
 %%RUBY_SITELIBDIR%%/graph/graphviz_dot.rb
 @dirrm %%RUBY_SITELIBDIR%%/graph
 %%PORTDOCS%%%%RUBY_DOCDIR%%/graph/BUGS
+%%PORTDOCS%%%%RUBY_DOCDIR%%/graph/Changelog
 %%PORTDOCS%%%%RUBY_DOCDIR%%/graph/README
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/graph

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	graph
-PORTVERSION=	0.1.6
+PORTVERSION=	0.1.9
 CATEGORIES=	graphics ruby
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rockit
@@ -22,7 +22,7 @@ USE_RUBY=	yes
 
 NO_BUILD=	yes
 
-DOCS=		BUGS README
+DOCS=		BUGS Changelog README
 
 do-install:
 	cd ${WRKSRC}; ${RUBY} install.rb
