@@ -1,6 +1,15 @@
---- main.c.bak	Mon Apr 28 09:14:04 1997
-+++ main.c	Mon Nov  2 06:38:46 1998
-@@ -1059,7 +1059,7 @@
+--- main.c.orig	Fri Jul  9 17:40:18 1999
++++ main.c	Fri Jun 23 15:44:32 2000
+@@ -938,7 +938,7 @@
+ 
+ 			case 'V' :
+ 				printf("\nThis is glimpse version %s, %s.\n\n", GLIMPSE_VERSION, GLIMPSE_DATE);
+-				RETURNMAIN(0);
++				RETURNMAIN(1);
+ 
+ 			default :
+ 				if (isdigit(c)) quitwhile = ON;
+@@ -1063,7 +1063,7 @@
  		clargc = 0;
  		clargv = NULL;
  		cli_len = sizeof(cli_addr);
