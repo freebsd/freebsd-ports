@@ -6,11 +6,11 @@
 #
 
 PORTNAME=		coro
-PORTVERSION=		2001.02.02
+PORTVERSION=		20010202
 CATEGORIES=		devel python
 MASTER_SITES=		http://www.dotfunk.com/projects/coro/
 PKGNAMEPREFIX=		py-
-DISTNAME=		${PORTNAME}_${PORTVERSION:S/./_/g}
+DISTNAME=		${PORTNAME}_2001_02_02
 
 MAINTAINER=		kbyanc@posi.net
 
