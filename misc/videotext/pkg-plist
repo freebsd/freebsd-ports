@@ -17,15 +17,16 @@ lib/X11/fonts/local/vtx10x12.pcf
 lib/X11/fonts/local/vtx15x18.pcf
 lib/X11/fonts/local/vtx20x24.pcf
 
-@exec /bin/chmod u+w /usr/X11R6/lib/X11/fonts/local /usr/X11R6/lib/X11/fonts/local/fonts.dir
-@exec /usr/X11R6/bin/mkfontdir /usr/X11R6/lib/X11/fonts/local
-@exec /bin/chmod u=rwx,go=rx /usr/X11R6/lib/X11/fonts/local
-@exec /bin/chmod a=r /usr/X11R6/lib/X11/fonts/local/fonts.dir
+@exec /bin/chmod u+w %D/lib/X11/fonts/local %D/lib/X11/fonts/local/fonts.dir
+@exec %D/bin/mkfontdir %D/lib/X11/fonts/local
+@exec /bin/chmod u=rwx,go=rx %D/lib/X11/fonts/local
+@exec /bin/chmod a=r %D/lib/X11/fonts/local/fonts.dir
 
 
-@unexec /bin/chmod u+w /usr/X11R6/lib/X11/fonts/local /usr/X11R6/lib/X11/fonts/local/fonts.dir
-@unexec /usr/X11R6/bin/mkfontdir /usr/X11R6/lib/X11/fonts/local
-@unexec /bin/chmod u=rwx,go=rx /usr/X11R6/lib/X11/fonts/local
-@unexec /bin/chmod a=r /usr/X11R6/lib/X11/fonts/local/fonts.dir
+@unexec /bin/chmod u+w %D/lib/X11/fonts/local %D/lib/X11/fonts/local/fonts.dir
+@unexec %D/bin/mkfontdir %D/lib/X11/fonts/local
+@unexec /bin/chmod u=rwx,go=rx %D/lib/X11/fonts/local
+@unexec /bin/chmod a=r %D/lib/X11/fonts/local/fonts.dir
+@unexec if [ `wc -c %D/lib/X11/fonts/local/fonts.dir | awk '{print $1}'` = 2 ]; then rm -f %D/lib/X11/fonts/local/fonts.dir; fi
 
 @dirrm lib/X11/vtx
