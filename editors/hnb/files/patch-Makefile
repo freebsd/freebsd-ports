@@ -1,0 +1,33 @@
+--- Makefile.orig	Fri Feb 14 13:28:40 2003
++++ Makefile	Fri Feb 14 13:28:26 2003
+@@ -1,5 +1,5 @@
+ LIBS=-lncurses libcli/libcli.a
+-CFLAGS=-I.. -Ilibcli -DHAVE_CONFIG_H -Wall -O2
++CFLAGS+=-I.. -Ilibcli -DHAVE_CONFIG_H -Wall
+ 
+ OBJS= ui_cli.o hnb.o node.o path.o prefs.o tokenizer.o tree.o tree_sort.o tree_todo.o\
+ 	ui.o ui_binding.o ui_draw.o ui_overlay.o evilloop.o ui_edit.o \
+@@ -10,12 +10,12 @@
+ 
+ 
+ hnb: libcli/libcli.a $(OBJS) Makefile
+-	cc -o hnb $(OBJS) $(LIBS)
++	$(CC) -o hnb $(OBJS) $(LIBS)
+ 
+ ui_cli.c: cli_entries.inc cli_decls.inc
+ 
+ xml_debug: xml_tok.o xml_debug.o
+-	cc -o xml_debug xml_tok.o xml_debug.o
++	$(CC) -o xml_debug xml_tok.o xml_debug.o
+ 
+ libcli/libcli.a: libcli/*.c
+ 	(cd libcli;make)
+@@ -32,7 +32,7 @@
+ 	rm -f xml_debug hnb $(OBJS) *~ cli_*.inc
+ 	(cd libcli;make clean)
+ hnb_p: *.c libcli/libcli_p.a
+-	cc -o hnb_p *.c -pg -lncurses_p libcli/libcli_p.a -I.. -Ilibcli -DHAVE_CONFIG_H
++	$(CC) -o hnb_p *.c -pg $(LIBS) $(CFLAGS)
+ 
+ ps:
+ 	dot -Tps xml.dot > xml_states.ps
