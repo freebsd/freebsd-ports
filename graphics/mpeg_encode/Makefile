@@ -17,6 +17,10 @@ MAN1=		mpeg_encode.1
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+post-patch:
+	@(${GREP} -R -l "malloc.h" ${WRKSRC}/* | \
+	    ${XARGS} ${PERL} -pi -e "s/malloc.h/stdlib.h/")
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mpeg_encode ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/docs/mpeg_encode.1 ${PREFIX}/man/man1
