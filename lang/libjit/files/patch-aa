@@ -1,0 +1,12 @@
+--- jit/jit-apply.c.orig	Tue Apr 27 00:21:55 2004
++++ jit/jit-apply.c	Tue Apr 27 00:23:21 2004
+@@ -23,6 +23,9 @@
+ #include "jit-apply-rules.h"
+ #include "jit-apply-func.h"
+ #include "jit-cache.h"
++#ifdef __FreeBSD__
++	#include <stdlib.h>
++#endif
+ #if HAVE_ALLOCA_H
+ 	#include <alloca.h>
+ #endif

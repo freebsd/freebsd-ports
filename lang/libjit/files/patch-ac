@@ -1,0 +1,12 @@
+--- jit/jit-interp.cpp.orig	Tue Apr 27 00:23:50 2004
++++ jit/jit-interp.cpp	Tue Apr 27 00:24:18 2004
+@@ -30,6 +30,9 @@
+ #include "jit-rules.h"
+ #include "jit-memory.h"
+ #include <config.h>
++#ifdef __FreeBSD__
++	#include <stdlib.h>
++#endif
+ #if HAVE_ALLOCA_H
+ 	#include <alloca.h>
+ #endif

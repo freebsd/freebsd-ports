@@ -1,0 +1,12 @@
+--- jit/jit-insn.c.orig	Tue Apr 27 00:22:44 2004
++++ jit/jit-insn.c	Tue Apr 27 00:23:09 2004
+@@ -21,6 +21,9 @@
+ #include "jit-internal.h"
+ #include "jit-rules.h"
+ #include <config.h>
++#ifdef __FreeBSD__
++	#include <stdlib.h>
++#endif
+ #if HAVE_ALLOCA_H
+ 	#include <alloca.h>
+ #endif
