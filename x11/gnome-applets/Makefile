@@ -15,6 +15,7 @@ DISTNAME=	gnome-applets-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Applets components for the Gnome 2.0 Desktop Environment
 
 LIB_DEPENDS=	panel-applet-2.0:${PORTSDIR}/x11/gnomepanel \
 		gailutil.17:${PORTSDIR}/x11-toolkits/gail \

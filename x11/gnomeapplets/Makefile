@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sources/gnome-applets/1.4
 DISTNAME=	gnome-applets-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Applets components for the Gnome Desktop Environment
 
 LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop
 

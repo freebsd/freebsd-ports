@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gswitchit
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	An utility library to make XKB stuff easier
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 

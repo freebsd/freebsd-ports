@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	libs/X
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	Magnify, rotate, mirror the image on the X screen
 
 USE_IMAKE=	yes
 MAN1=		xzoom.1

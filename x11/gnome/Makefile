@@ -14,6 +14,7 @@ DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	The "meta-port" for the GNOME integrated X11 desktop
 
 RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore \
 		gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter \

@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://cclub.tutcc.tut.ac.jp/pub/xmascot/ \
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	Moving mascot on your X11 screen
 
 USE_IMAKE=	yes
 MAN1=		xmascot.1

@@ -12,6 +12,7 @@ MASTER_SITES=	http://people.freebsd.org/~sobomax/
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A library for writing custom applets for GNOME Control Center
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

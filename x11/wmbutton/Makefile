@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.cs.mun.ca/~gstarkes/wmaker/dockapps/files/ \
 MASTER_SITE_SUBDIR=	jim
 
 MAINTAINER=	jim@FreeBSD.org
+COMMENT=	A dockapp that displays 9 buttons to run apps of your choice
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

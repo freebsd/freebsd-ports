@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/_applet//}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	An applet that displays stock quotes in the Gnome panel
 
 USE_GNOME=	yes
 USE_X_PREFIX=	yes

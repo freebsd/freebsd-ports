@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.cs.purdue.edu/pub/bingle/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT=	Display X11 color names and colors
 
 USE_IMAKE=	yes
 USE_REINPLACE=	yes

@@ -15,6 +15,7 @@ DISTNAME=	gnome-panel-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Panel component for the GNOME 2.0 Desktop
 
 LIB_DEPENDS=	wnck-1.9:${PORTSDIR}/x11-toolkits/libwnck \
 		gnome-desktop-2.3:${PORTSDIR}/x11/gnomedesktop

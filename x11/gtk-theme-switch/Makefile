@@ -12,6 +12,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://www.muhri.net/
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A command line tool for switching GTK+ themes
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

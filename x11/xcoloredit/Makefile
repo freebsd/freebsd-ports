@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT=	Find colour values by graphical colour mixing
 
 USE_IMAKE=	yes
 MAN1=		xcoloredit.1

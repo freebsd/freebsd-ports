@@ -12,6 +12,7 @@ CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 
 MAINTAINER=	sada@FreeBSD.org
+COMMENT=	Redirect any key to second mouse button
 
 USE_IMAKE=	yes
 

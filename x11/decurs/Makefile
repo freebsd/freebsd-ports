@@ -12,6 +12,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://www.hut.fi/~pvsavola/files/
 
 MAINTAINER=	adamw@FreeBSD.org
+COMMENT=	A GTK+ based program that lets you edit you XFree86 mouse cursors
 
 LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
 

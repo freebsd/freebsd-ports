@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	me@FreeBSD.org
+COMMENT=	A terminal emulator for the X Window System
 
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/emu

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	sources/xalf/0.12
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	X11 Application Launch Feedback
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

@@ -15,6 +15,7 @@ PKGNAMEPREFIX=	linux-
 EXTRACT_SUFX=	.rpm
 
 MAINTAINER=	gnome@freebsd.org
+COMMENT=	Linux X11 Application Launch Feedback
 
 LIB_DEPENDS=	xalflaunch.0:${PORTSDIR}/x11/xalf
 BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio

@@ -23,6 +23,7 @@ PATCH_SITE_SUBDIR=	anholt/patches-4.2.0/
 PATCHFILES=		4.2.0-4.2.1-1-freebsd.patch.gz
 
 MAINTAINER=	anholt@freebsd.org
+COMMENT=	XFree86-4 include/(shared) library kit
 
 BUILD_DEPENDS=	${X11BASE}/lib/X11/config/version.def:${PORTSDIR}/devel/imake-4
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2

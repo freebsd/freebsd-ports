@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gswitchit
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A simple keyboard state indicator and switcher for GNOME Desktop
 
 LIB_DEPENDS=	xklavier.0:${PORTSDIR}/x11/libxklavier
 RUN_DEPENDS=	${X11BASE}/lib/X11/xkb/rules/xfree86.xml:${PORTSDIR}/x11/xfree86_xkb_xml

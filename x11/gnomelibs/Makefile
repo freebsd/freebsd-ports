@@ -15,6 +15,7 @@ DISTNAME=	gnome-libs-${PORTVERSION}
 DIST_SUBDIR=	gnome
 
 MAINTAINER?=	gnome@FreeBSD.org
+COMMENT=	Libraries for GNOME, a GNU desktop environment
 
 BUILD_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper

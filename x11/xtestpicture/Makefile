@@ -11,6 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.interface-business.de/pub/outgoing/
 
 MAINTAINER=	joerg@FreeBSD.org
+COMMENT=	Create a full-screen image to adjust your monitor
 
 USE_IMAKE=	yes
 MAN1=		xtestpicture.1

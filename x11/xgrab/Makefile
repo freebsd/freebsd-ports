@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}sc.2_41
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jmz@FreeBSD.org
+COMMENT=	An X11 image grabber
 
 USE_X_PREFIX=	yes
 

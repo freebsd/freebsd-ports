@@ -20,6 +20,7 @@ PATCH_SITE_SUBDIR=	anholt/patches-4.2.0/
 PATCHFILES=		4.2.0-4.2.1-1-freebsd.patch.gz
 
 MAINTAINER=	anholt@freebsd.org
+COMMENT=	XFree86-4 Client environments
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		GLU.1:${PORTSDIR}/x11/XFree86-4-libraries \

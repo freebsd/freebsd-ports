@@ -17,6 +17,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DAEMONPICS}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	kris@FreeBSD.org
+COMMENT=	WINGs Display Manager; an xdm replacement
 
 LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker \
 		PropList.2:${PORTSDIR}/devel/libPropList

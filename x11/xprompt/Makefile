@@ -12,6 +12,7 @@ MASTER_SITES=   ${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	mph
 
 MAINTAINER=	mph@freebsd.org
+COMMENT=	Displays a dialog box and prompts user for text
 
 USE_IMAKE=	yes
 
