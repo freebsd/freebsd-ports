@@ -5,6 +5,10 @@
 # $FreeBSD$
 #
 
+# Upgrading this port is not possible at this time because it has
+# extensive implications for the entire ports system. It will be
+# upgraded as soon as possible. Thanks.
+
 PORTNAME=	autoconf
 PORTVERSION=	2.13
 PORTREVISION=	1
