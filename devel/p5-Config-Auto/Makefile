@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Config-Auto
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Config
@@ -14,8 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lars@thegler.dk
 COMMENT=	Magical config file parser
 
-BUILD_DEPENDS=	${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
-		${SITE_PERL}/Config/IniFiles.pm:${PORTSDIR}/devel/p5-Config-IniFiles
+BUILD_DEPENDS=	${SITE_PERL}/Config/IniFiles.pm:${PORTSDIR}/devel/p5-Config-IniFiles
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
