@@ -8,7 +8,7 @@
 PORTNAME=	smapi
 PORTVERSION=	010423
 CATEGORIES=	mail
-MASTER_SITES=	http://cvs.physcip.uni-stuttgart.de/cvs2/
+MASTER_SITES=	http://gonza.nm.ru/ports/
 
 MAINTAINER=	gonza@techline.ru
 
