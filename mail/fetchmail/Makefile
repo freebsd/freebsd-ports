@@ -12,7 +12,7 @@
 PORTNAME=	fetchmail
 PORTVERSION=	6.2.0
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://www.tuxedo.org/~esr/fetchmail/ \
+MASTER_SITES=	http://www.catb.org/~esr/fetchmail/ \
 		ftp://ftp.ccil.org/pub/esr/fetchmail/
 
 MAINTAINER=	ve@sci.fi

@@ -8,7 +8,7 @@
 PORTNAME=	intercal
 PORTVERSION=	0.20
 CATEGORIES=	lang
-MASTER_SITES=	http://www.tuxedo.org/~esr/intercal/
+MASTER_SITES=	http://www.catb.org/~esr/intercal/
 
 MAINTAINER=	mph@freebsd.org
 
