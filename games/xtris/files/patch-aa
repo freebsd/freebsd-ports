@@ -1,0 +1,26 @@
+--- Makefile.orig	Wed Apr  9 20:02:03 1997
++++ Makefile	Wed Sep 24 13:28:50 1997
+@@ -11,19 +11,19 @@
+ CC = gcc
+ 
+ # change this to the directory where you want the xtris binaries installed
+-BINDIR = /usr/local/bin
++BINDIR = ${PREFIX}/bin
+ 
+ # change this to the directory where you want the xtris manpages installed
+-MANDIR = /usr/local/man
++MANDIR = ${PREFIX}/man
+ 
+ # change according to taste and local custom...
+-CFLAGS = -O3 -D__USE_FIXED_PROTOTYPES__
++CFLAGS = -O3 -D__USE_FIXED_PROTOTYPES__ -I${PREFIX}/include
+ 
+ # on Solaris and similar systems, you'll need to uncomment this:
+ # EXTRALIBS = -lnsl -lsocket 
+ 
+ # specify X11 libdir if your system needs it
+-# XLIBDIR = -L/usr/X11/lib
++XLIBDIR = -L${PREFIX}/lib
+ 
+ 
+ ###########################################################################
