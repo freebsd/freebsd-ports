@@ -68,6 +68,7 @@
     SUBDIR += rxvt-devel
     SUBDIR += stockticker_applet
     SUBDIR += sxpc
+    SUBDIR += temperature.app
     SUBDIR += tkgoodstuff
     SUBDIR += tycoon
     SUBDIR += wdm
