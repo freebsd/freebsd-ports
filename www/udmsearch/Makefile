@@ -13,7 +13,7 @@ MASTER_SITES=	http://search.mnogo.ru/Download/	\
 		http://udmsearch.real-time.com/Download/	\
 		http://www.ghks.de/computer/software/udmsearch/Download/
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full featured SQL-based hypertext search engine
 
 MAN1=		indexer.1
