@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	gtkpod
-PORTVERSION=	0.80
-PORTREVISION=	4
+PORTVERSION=	0.85.0
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-2
 
 MAINTAINER=	david@dyn-ns.net
 COMMENT=	GUI for Apple iPods using GTK2
@@ -52,9 +50,8 @@ pre-configure:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|(libdir)/locale|(datadir)/locale|' \
 		${WRKSRC}/po/Makefile.in.in
-	@${REINPLACE_CMD} -e 's|/bin/bash|${SH}|' \
-		${WRKSRC}/scripts/sync-kaddressbook.sh \
-		${WRKSRC}/scripts/sync-korganizer.sh
+	@${REINPLACE_CMD} -e 's|PACKAGE|"gtkpod"|' \
+		${WRKSRC}/src/support.h
 
 post-install:
 .if !defined(NOPORTDOCS)
