@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	p7zip
-PORTVERSION=	0.91
+PORTVERSION=	4.12
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	p7zip
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 
 MAINTAINER=	nox@jelal.kn-bremen.de
 COMMENT=	Command line versions of 7-zip
@@ -18,10 +18,12 @@ COMMENT=	Command line versions of 7-zip
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile
-ONLY_FOR_ARCHS=	alpha amd64 i386 ia64
 
-USE_REINPLACE=	yes
-MMACHINE=	${WRKSRC}/makefile.machine
+WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
+PLIST_FILES=	"@unexec ${RM} %D/bin/7z"
+PLIST_FILES+=	bin/7za
+PLIST_FILES+=	"@exec ${LN} -sf 7za %D/bin/7z"
+PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
@@ -30,22 +32,22 @@ BROKEN=		'Requires wchar functions (mbrtowc(3) etc.) for compilation'
 .endif
 
 post-patch:
-	${ECHO} "LOCAL_LIBS=	${PTHREAD_LIBS}" > ${MMACHINE}
-	${ECHO} "LOCAL_FLAGS+=	${PTHREAD_CFLAGS}" >> ${MMACHINE}
-	${REINPLACE_CMD} -e 's/-O2/${CXXFLAGS}/' ${WRKSRC}/makefile.glb
+	${SED} -e 's/-O2/${CFLAGS} ${PTHREAD_CFLAGS}/' \
+	       -e 's/g\+\+/${CXX}/' \
+	       -e 's/gcc/${CC}/' \
+	       -e '/LITTLE_ENDIAN/d' \
+	       -e 's/-lc_r/${PTHREAD_LIBS}/' \
+	       ${WRKSRC}/makefile.freebsd_x86 > ${WRKSRC}/makefile.machine
 
 do-install:
-	${MKDIR} ${PREFIX}/libexec/p7zip/Codecs
-	${MKDIR} ${PREFIX}/libexec/p7zip/Formats
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/7z ${PREFIX}/libexec/p7zip
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/7za ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/bin/Codecs/* ${PREFIX}/libexec/p7zip/Codecs
-	${INSTALL_DATA} ${WRKSRC}/bin/Formats/* ${PREFIX}/libexec/p7zip/Formats
-	${INSTALL_SCRIPT} ${FILESDIR}/7z ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/doc/p7zip/commands
-	${MKDIR} ${PREFIX}/share/doc/p7zip/switches
-	${INSTALL_DATA} ${WRKSRC}/html/cmdline/*.htm ${PREFIX}/share/doc/p7zip
-	${INSTALL_DATA} ${WRKSRC}/html/cmdline/commands/* ${PREFIX}/share/doc/p7zip/commands
-	${INSTALL_DATA} ${WRKSRC}/html/cmdline/switches/* ${PREFIX}/share/doc/p7zip/switches
+	${LN} -sf 7za ${PREFIX}/bin/7z
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${PAX} -rw -s,${WRKSRC}/DOCS,, ${WRKSRC}/DOCS ${DOCSDIR}
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+	${FIND} ${DOCSDIR} -type d | ${XARGS} ${CHMOD} 755
+	${FIND} ${DOCSDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+.endif
 
 .include <bsd.port.post.mk>
