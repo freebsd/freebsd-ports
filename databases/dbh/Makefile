@@ -8,6 +8,7 @@
 
 PORTNAME=	dbh
 PORTVERSION=	1.0.14
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,17 +18,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Disk Based Hashtables
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-
-USE_REINPLACE=	yes
+USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_LIBTOOL=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 INSTALLS_SHLIB=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|libdir[)]/pkgconfig|prefix)/libdata/pkgconfig|g' \
-			${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
