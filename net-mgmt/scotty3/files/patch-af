@@ -9,7 +9,7 @@
 +#define TnmStat			stat
 +#else
  #define TnmCreateDirectory	TclpCreateDirectory
--#if TCL_MAJOR_VERSION == 8 && TCL_MINOR_VERSION == 8 && TCL_RELEASE_SERIAL > 2  
+-#if TCL_MAJOR_VERSION == 8 && TCL_MINOR_VERSION == 8 && TCL_RELEASE_SERIAL > 2 
 +#if TCL_MAJOR_VERSION == 8 && TCL_MINOR_VERSION == 3 && TCL_RELEASE_SERIAL > 2 
  #define TnmStat			TclStat
  #else
