@@ -72,6 +72,7 @@ share/locale/ro/LC_MESSAGES/plugMP3.mo
 share/locale/ru/LC_MESSAGES/kmp3.mo
 share/mimelnk/audio/x-mp1.kdelnk
 share/mimelnk/audio/x-mp2.kdelnk
+share/mimelnk/audio/x-mp3.kdelnk
 share/mimelnk/audio/x-playlist.kdelnk
 @dirrm share/apps/kmp3/skins/winamp/Panic
 @dirrm share/apps/kmp3/skins/winamp
