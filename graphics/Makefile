@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.68 1998/02/21 15:13:31 se Exp $
+# $Id: Makefile,v 1.69 1998/03/01 00:46:11 obrien Exp $
 #
 
     SUBDIR += ImageMagick
@@ -41,6 +41,7 @@
     SUBDIR += netpbm
     SUBDIR += p5-GD
     SUBDIR += p5-Image-Size
+    SUBDIR += p5-chart
     SUBDIR += pgperl
     SUBDIR += pgplot
     SUBDIR += photopc
