@@ -25,6 +25,8 @@ PATCHFILES=	samba-2.2.8a-freebsd-jail-patch-20031108.gz:smbjail
 MAINTAINER=	dwcjr@FreeBSD.org
 COMMENT=	A free SMB and CIFS client and server for UNIX
 
+CONFLICTS=	ja-samba-2.* samba-3.* sharity-light-1.*
+
 USE_BZIP2=	YES
 USE_SUBMAKE=	YES
 USE_GMAKE=	YES

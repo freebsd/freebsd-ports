@@ -18,6 +18,8 @@ DISTNAME=	${PORTNAME}-3.0.0
 MAINTAINER=	einekoai@chello.nl
 COMMENT=	The shared lib from the samba packges
 
+CONFLICTS=	samba-3.*
+
 USE_BZIP2=		yes
 USE_AUTOCONF=		yes
 WANT_AUTOCONF_VER=	253
