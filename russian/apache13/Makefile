@@ -15,7 +15,7 @@ PATCH_SITES=	ftp://ftp.lexa.ru/pub/apache-rus/ \
 		ftp://ftp.lexa.ru/pub/apache-rus/old-versions/
 PATCHFILES=	patches_${APACHE_VERSION}rusPL${RA_VERSION}.tar.gz
 
-MAINTAINER=	lev@serebryakov.spb.ru
+MAINTAINER=	lev@FreeBSD.org
 COMMENT=	The extremely popular Apache http server.  Very fast, very clean
 
 RA_VERSION=	30.17

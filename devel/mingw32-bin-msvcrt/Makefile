@@ -15,7 +15,7 @@ DISTFILES=	mingw-runtime-${RUNTIMEVERSION}${EXTRACT_SUFX} \
 		w32api-${APIVERSION}${EXTRACT_SUFX}
 DIST_SUBDIR=	mingw
 
-MAINTAINER=	lev@serebryakov.spb.ru
+MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Headers and Libraries for Windows cross-development
 
 RUNTIMEVERSION=	2.2

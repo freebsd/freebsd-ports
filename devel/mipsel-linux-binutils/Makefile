@@ -13,7 +13,7 @@ MASTER_SITES=	http://lev.serebryakov.spb.ru/download/agenda/
 PKGNAMEPREFIX=	mipsel-linux-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-cvs
 
-MAINTAINER=	lev@serebryakov.spb.ru
+MAINTAINER=	lev@FreeBSD.org
 COMMENT=	GNU binutils for mipsel-linux cross-development with SNOW ABI
 
 WRKSRC=		${WRKDIR}/binutils-CVS/src

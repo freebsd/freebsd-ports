@@ -12,7 +12,7 @@ MASTER_SITES=	http://lev.serebryakov.spb.ru/download/msp430/
 PKGNAMEPREFIX=	msp430-
 DISTFILES=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	lev@serebryakov.spb.ru
+MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Libc for TI's msp430 MCUs cross-development
 
 BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:${PORTSDIR}/devel/${PKGNAMEPREFIX}gcc

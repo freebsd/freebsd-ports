@@ -19,7 +19,7 @@ PATCH_SITE_SUBDIR=	mingw
 PATCHFILES=	${PORTNAME}-${BINUTILVERSION}-${PATCHVERSION:S/./-/}.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	lev@serebryakov.spb.ru
+MAINTAINER=	lev@FreeBSD.org
 COMMENT=	FSF binutils-2.13 for Windows cross-development
 
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext

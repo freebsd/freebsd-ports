@@ -12,7 +12,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	lev@serebryakov.spb.ru
+MAINTAINER=	lev@FreeBSD.org
 COMMENT=	All libraries which are needed to develop for Agenda VR3 PDA
 
 RUN_DEPENDS=	${LOCALBASE}/mipsel-linux/lib/libc.a:${PORTSDIR}/devel/agenda-static-libs \
