@@ -53,7 +53,8 @@ CONFIGURE_ARGS+=--enable-eds
 CONFIGURE_ARGS+=--disable-eds
 .endif
 
-.if ${OSVERSION} < 600006
+.if ( ${OSVERSION} > 600000 && ${OSVERSION} < 600006 ) || \
+	( ${OSVERSION} < 503101 )
 post-patch:
 .for po in da.po it.po zh_CN.po zh_TW.po
 	@${REINPLACE_CMD} -e 's|%-|%|g' ${WRKSRC}/po/${po}
