@@ -9299,6 +9299,7 @@ ups-debug	ports/devel/ups-debug
 upsd		ports/sysutils/upsd
 upsmon		ports/sysutils/upsmon
 uptimed		ports/sysutils/uptimed
+upx		ports/archivers/upx
 uqm		ports/games/uqm
 urban		ports/games/urban
 urban-sounds	ports/games/urban-sounds
