@@ -1,0 +1,41 @@
+diff -ur ../tornado-1.0.3.orig/Makefile ./Makefile
+--- ../tornado-1.0.3.orig/Makefile	Fri Dec  1 09:00:11 2000
++++ ./Makefile	Sun Jul  1 17:29:21 2001
+@@ -30,26 +30,26 @@
+ 	if [ ! -d "$(PREFIX)/bin" ]; then \
+ 	  mkdir -p $(PREFIX)/bin; \
+ 	fi
+-	install -s tornado $(PREFIX)/bin
++	install -c -s tornado $(PREFIX)/bin
+ 	if [ ! -d "$(PREFIX)/man/man6" ]; then \
+ 	  mkdir -p $(PREFIX)/man/man6; \
+ 	fi
+-	install -m 0644 tornado.6 $(PREFIX)/man/man6
++	install -c -m 0644 tornado.6 $(PREFIX)/man/man6
+ 
+-	if [ -f "/var/games/tornado.scores" ]; then \
++	if [ -f "${PREFIX}/share/games/tornado.scores" ]; then \
+ 	  echo "Skipping install of the highscores file. File exists."; \
+-	  cat /var/games/tornado.scores | ./convert-highscorefile > score.tmp; \
+-	  mv -f score.tmp /var/games/tornado.scores; \
+-	  chmod a+rw-x "/var/games/tornado.scores"; \
++	  cat ${PREFIX}/share/games/tornado.scores | ./convert-highscorefile > score.tmp; \
++	  mv -f score.tmp ${PREFIX}/share/games/tornado.scores; \
++	  chmod a+rw-x "${PREFIX}/share/games/tornado.scores"; \
+ 	else \
+-	  if [ ! -d "/var/games" ]; then \
+-	    mkdir /var/games; \
++	  if [ ! -d "${PREFIX}/share/games" ]; then \
++	    mkdir -p ${PREFIX}/share/games; \
+ 	  fi; \
+-	  install tornado.scores /var/games; \
+-	  chmod a+w-x "/var/games/tornado.scores"; \
++	  install -c tornado.scores ${PREFIX}/share/games; \
++	  chmod a+w-x "${PREFIX}/share/games/tornado.scores"; \
+ 	fi
+ 
+ uninstall:
+ 	rm -f $(PREFIX)/bin/tornado
+ 	rm -f $(PREFIX)/man/man6/tornado.6
+-	rm -f /var/games/tornado.scores
++	rm -f ${PREFIX}/share/games/tornado.scores

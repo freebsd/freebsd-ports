@@ -1,0 +1,12 @@
+diff -ur ../tornado-1.0.3.orig/tornado.6.in ./tornado.6.in
+--- ../tornado-1.0.3.orig/tornado.6.in	Fri Dec  1 08:59:55 2000
++++ ./tornado.6.in	Sun Jul  1 16:35:53 2001
+@@ -90,7 +90,7 @@
+ .P
+ PREFIX/man/man6/tornado.6
+ .P
+-/var/games/tornado.scores
++/usr/local/share/games/tornado.scores
+ .SH NOTES
+ When you run the game in network mode you should have the same game versions
+ on client and server side. Versions prior 1.0pre4 won't work at all due to
