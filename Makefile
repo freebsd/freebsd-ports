@@ -84,7 +84,7 @@ parallel: ${.CURDIR}/INDEX
 .for dir in ${SUBDIR}
 	@echo "all: ${dir}-all"
 .endfor
-	@awk -F '|' '{me=$$1; here=$$2; bdep=$$8; rdep=$$9; split(here, tmp, "/"); if (bdep != "") { gsub("$$", ".tgz", bdep); gsub(" ", ".tgz ", bdep); } if (rdep != "") { gsub("$$", ".tgz", rdep); gsub(" ", ".tgz ", rdep); } print tmp[4] "-all: " me ".tgz"; print me ": " me ".tgz"; print me ".tgz: " bdep " " rdep; printf("\t@/var/portbuild/scripts/pdispatch ${branch} /var/portbuild/scripts/portbuild %s.tgz %s", me, here); if (bdep != "") printf(" %s", bdep); if (rdep != "") printf(" %s", rdep); printf("\n")}' < ${.CURDIR}/INDEX
+	@awk -F '|' '{me=$$1; here=$$2; bdep=$$8; rdep=$$9; split(here, tmp, "/"); if (bdep != "") { gsub("$$", ".tbz", bdep); gsub(" ", ".tbz ", bdep); } if (rdep != "") { gsub("$$", ".tbz", rdep); gsub(" ", ".tbz ", rdep); } print tmp[4] "-all: " me ".tbz"; print me ": " me ".tbz"; print me ".tbz: " bdep " " rdep; printf("\t@/var/portbuild/scripts/pdispatch ${branch} /var/portbuild/scripts/portbuild %s.tbz %s", me, here); if (bdep != "") printf(" %s", bdep); if (rdep != "") printf(" %s", rdep); printf("\n")}' < ${.CURDIR}/INDEX
 
 CVS?= cvs
 .if defined(SUPHOST)
