@@ -1,4 +1,8 @@
-The UML Modeller will allow you to create diagrams to the
-Unified Modelling Language (UML) standard.
+Umbrello UML Modeller is a Unified Modelling Language
+diagram programme for KDE. UML allows you to create
+diagrams of software and other systems in a standard
+format.
+
+This port was previously known as "uml".
 
 WWW: http://uml.sourceforge.net/
