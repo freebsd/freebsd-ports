@@ -5,29 +5,22 @@
 # $FreeBSD$
 #
 
-# Upgrading this port is not possible at this time because it has
-# extensive implications for the entire ports system. It will be
-# upgraded as soon as possible. Thanks.
-
 PORTNAME=	autoconf
-PORTVERSION=	2.13.000227
+PORTVERSION=	2.52
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEWARE} ${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	binutils autoconf
-DISTNAME=	autoconf-000227
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	autoconf
 
 MAINTAINER=	portmgr@FreeBSD.org
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	M4=${PREFIX}/bin/gm4
-WRKSRC=		${WRKDIR}/${PORTNAME}
+CONFIGURE_ENV=	M4=${LOCALBASE}/bin/gm4
 
-post-install:
-	@install-info ${PREFIX}/info/autoconf.info ${PREFIX}/info/dir
-	@install-info ${PREFIX}/info/standards.info ${PREFIX}/info/dir
+MAN1=		autoconf.1 autoheader.1 autoreconf.1 \
+		autoscan.1 autoupdate.1 config.guess.1 \
+		config.sub.1 ifnames.1
 
 .include <bsd.port.mk>
