@@ -1,5 +1,3 @@
-lib/libamd.a
-lib/libumfpack.a
 include/AMD/amd.h
 include/UMFPACK/umfpack.h
 include/UMFPACK/umfpack_col_to_triplet.h
@@ -32,61 +30,57 @@ include/UMFPACK/umfpack_timer.h
 include/UMFPACK/umfpack_transpose.h
 include/UMFPACK/umfpack_triplet_to_col.h
 include/UMFPACK/umfpack_wsolve.h
+lib/libamd.a
+lib/libumfpack.a
 %%PORTDOCS%%%%DOCSDIR%%/AMD_UserGuide.pdf
-%%PORTDOCS%%%%DOCSDIR%%/README.gz
 %%PORTDOCS%%%%DOCSDIR%%/QuickStart.pdf
+%%PORTDOCS%%%%DOCSDIR%%/README.gz
 %%PORTDOCS%%%%DOCSDIR%%/UserGuide.pdf
-%%PORTDOCS%%%%DOCSDIR%%/Papers/amdalgo.pdf
-%%PORTDOCS%%%%DOCSDIR%%/Papers/amdalgo.ps
-%%PORTDOCS%%%%DOCSDIR%%/Papers/umf4.pdf
-%%PORTDOCS%%%%DOCSDIR%%/Papers/umf4.ps
-%%PORTDOCS%%%%DOCSDIR%%/Papers/umf4algo.pdf
-%%PORTDOCS%%%%DOCSDIR%%/Papers/umf4algo.ps
-%%PORTDOCS%%@dirrm share/doc/umfpack/Papers
-%%PORTDOCS%%@dirrm share/doc/umfpack
-%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack_simple.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack_di_demo.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack_di_demo.sed
-%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack_dl_demo.sed
-%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack_xx_demo.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack_zi_demo.sed
-%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack_zl_demo.sed
+%%PORTDOCS%%%%EXAMPLESDIR%%/HB/arc130.rua
+%%PORTDOCS%%%%EXAMPLESDIR%%/HB/can_24.psa
+%%PORTDOCS%%%%EXAMPLESDIR%%/HB/fs_183_6.rua
+%%PORTDOCS%%%%EXAMPLESDIR%%/HB/qc324.cua
+%%PORTDOCS%%%%EXAMPLESDIR%%/HB/west0067.rua
+%%PORTDOCS%%%%EXAMPLESDIR%%/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/my_umfpack_di_demo.out
+%%PORTDOCS%%%%EXAMPLESDIR%%/my_umfpack_dl_demo.out
+%%PORTDOCS%%%%EXAMPLESDIR%%/my_umfpack_zi_demo.out
+%%PORTDOCS%%%%EXAMPLESDIR%%/my_umfpack_zl_demo.out
+%%PORTDOCS%%%%EXAMPLESDIR%%/numeric.umf
 %%PORTDOCS%%%%EXAMPLESDIR%%/readhb.f
-%%PORTDOCS%%%%EXAMPLESDIR%%/umf4.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack_dl_demo.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/readhb_nozeros.f
 %%PORTDOCS%%%%EXAMPLESDIR%%/readhb_size.f
-%%PORTDOCS%%%%EXAMPLESDIR%%/umf4hb.out
-%%PORTDOCS%%%%EXAMPLESDIR%%/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack_zi_demo.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack_zl_demo.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack_dl_demo.out
-%%PORTDOCS%%%%EXAMPLESDIR%%/umf4_f77zwrapper.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/umf4hb64.f
-%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack_zl_demo.out
+%%PORTDOCS%%%%EXAMPLESDIR%%/symbolic.umf
+%%PORTDOCS%%%%EXAMPLESDIR%%/umf4.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/umf4.out
 %%PORTDOCS%%%%EXAMPLESDIR%%/umf4_f77wrapper.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack_zi_demo.out
+%%PORTDOCS%%%%EXAMPLESDIR%%/umf4_f77zwrapper.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/umf4hb.f
+%%PORTDOCS%%%%EXAMPLESDIR%%/umf4hb.out
+%%PORTDOCS%%%%EXAMPLESDIR%%/umf4hb64.f
 %%PORTDOCS%%%%EXAMPLESDIR%%/umf4zhb.f
 %%PORTDOCS%%%%EXAMPLESDIR%%/umf4zhb.out
-%%PORTDOCS%%%%EXAMPLESDIR%%/HB/west0067.rua
-%%PORTDOCS%%%%EXAMPLESDIR%%/HB/arc130.rua
-%%PORTDOCS%%%%EXAMPLESDIR%%/HB/fs_183_6.rua
-%%PORTDOCS%%%%EXAMPLESDIR%%/HB/can_24.psa
-%%PORTDOCS%%%%EXAMPLESDIR%%/umf4.out
-%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack_di_demo.out
 %%PORTDOCS%%%%EXAMPLESDIR%%/umfpack_di_demo
-%%PORTDOCS%%%%EXAMPLESDIR%%/my_umfpack_di_demo.out
-%%PORTDOCS%%%%EXAMPLESDIR%%/symbolic.umf
-%%PORTDOCS%%%%EXAMPLESDIR%%/numeric.umf
-%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack_zi_demo
-%%PORTDOCS%%%%EXAMPLESDIR%%/my_umfpack_zi_demo.out
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack_di_demo.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack_di_demo.out
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack_di_demo.sed
 %%PORTDOCS%%%%EXAMPLESDIR%%/umfpack_dl_demo
-%%PORTDOCS%%%%EXAMPLESDIR%%/my_umfpack_dl_demo.out
-%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack_zl_demo
-%%PORTDOCS%%%%EXAMPLESDIR%%/my_umfpack_zl_demo.out
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack_dl_demo.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack_dl_demo.out
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack_dl_demo.sed
 %%PORTDOCS%%%%EXAMPLESDIR%%/umfpack_simple
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack_simple.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack_xx_demo.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack_zi_demo
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack_zi_demo.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack_zi_demo.out
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack_zi_demo.sed
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack_zl_demo
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack_zl_demo.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack_zl_demo.out
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack_zl_demo.sed
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/HB
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-@dirrm include/AMD
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/UMFPACK
+@dirrm include/AMD
