@@ -56,6 +56,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/ocaml/html
 	@cd ${WRKDIR}/htmlman; ${INSTALL_DATA} * ${PREFIX}/share/doc/ocaml/html
+	@${RM} ${PREFIX}/share/doc/ocaml/html/*~
 	@${CP} ${DISTDIR}/${DISTNAME}-refman.ps.gz ${PREFIX}/share/doc/ocaml
 .endif
 	@strip ${PREFIX}/bin/ocamlrun ${PREFIX}/bin/ocamlyacc
