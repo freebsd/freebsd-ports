@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MasonX-Request-WithApacheSession
-PORTVERSION=	0.21
+PORTVERSION=	0.30
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	MasonX
@@ -16,12 +16,14 @@ MAINTAINER=	nick@foobar.org
 COMMENT=	An interface to Apache::Session for HTML::Mason
 
 BUILD_DEPENDS=	${SITE_PERL}/HTML/Mason.pm:${PORTSDIR}/www/p5-HTML-Mason \
-		${SITE_PERL}/Apache/Session.pm:${PORTSDIR}/www/p5-Apache-Session
+		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
+		${SITE_PERL}/Apache/Session/Wrapper.pm:${PORTSDIR}/www/p5-Apache-Session-Wrapper
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
-MAN3=		MasonX::Request::WithApacheSession.3
+MAN3=		MasonX::Request::WithApacheSession.3 \
+		MasonX::Request::WithMultiSession.3
 
 .include <bsd.port.pre.mk>
 
