@@ -35,11 +35,11 @@ diff -cr Makefile.orig Makefile
   # MAN is the root of your local man pages directory
   # MANEXT is the extension for your commands' man pages (usually 1 or l)
   # TEXINPUTS is the directory for TeX macro files
-! BIN=/usr/public/pkg/noweb/bin
-! LIB=/usr/public/pkg/noweb/lib
-! MAN=/usr/public/pkg/noweb/man
+! BIN=/usr/local/noweb
+! LIB=/usr/local/noweb/lib
+! MAN=/usr/local/noweb/man
   MANEXT=1
-! TEXINPUTS=/usr/public/pkg/tex/tex/inputs
+! TEXINPUTS=/usr/local/tex/inputs
   
   # change WEAVE if you want a different version of noweave to be installed
   WEAVE=noweave		
@@ -47,11 +47,11 @@ diff -cr Makefile.orig Makefile
   # MAN is the root of your local man pages directory
   # MANEXT is the extension for your commands' man pages (usually 1 or l)
   # TEXINPUTS is the directory for TeX macro files
-! BIN=/usr/local/bin
-! LIB=/usr/local/share/noweb
-! MAN=/usr/local/man
+! BIN=${PREFIX}/bin
+! LIB=${PREFIX}/share/noweb
+! MAN=${PREFIX}/man
   MANEXT=1
-! TEXINPUTS=/usr/local/lib/texmf/tex/misc
+! TEXINPUTS=${LIB}/tex
   
   # change WEAVE if you want a different version of noweave to be installed
   WEAVE=noweave		
