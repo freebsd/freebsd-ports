@@ -1,5 +1,5 @@
---- config/gdm.conf.in.orig	Fri Aug 23 13:59:57 2002
-+++ config/gdm.conf.in	Sun Aug 25 13:57:05 2002
+--- config/gdm.conf.in.orig	Fri Aug 23 13:53:53 2002
++++ config/gdm.conf.in	Sun Oct 13 11:53:36 2002
 @@ -33,14 +33,14 @@
  # The gdm configuration program that is run from the login screen, you should
  # probably leave this alone
@@ -26,7 +26,7 @@
  # You should probably never change this value unless you have a weird setup
  PidFile=/var/run/gdm.pid
  PostSessionScriptDir=@EXPANDED_SYSCONFDIR@/gdm/PostSession/
-@@ -84,11 +84,11 @@
+@@ -84,16 +84,16 @@
  UserAuthFBDir=/tmp
  UserAuthFile=.Xauthority
  # The X server to use if we can't figure out what else to run.
@@ -40,6 +40,12 @@
  # Automatic VT allocation.  Right now only works on Linux.  This way
  # we force X to use specific vts.  turn VTAllocation to false if this
  # is causing problems.
+ FirstVT=7
+-VTAllocation=true
++VTAllocation=false
+ 
+ [security]
+ # If any distributions ship with this one off, they should be shot
 @@ -153,7 +153,7 @@
  # The 'theme'.  By default we're using the default gtk theme
  # Of course assuming that gtk got installed in the same prefix,
