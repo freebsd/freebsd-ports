@@ -1,0 +1,4 @@
+Scx is a graphical user interface library for scsh and Scheme 48. Scx
+provides a direct binding to Xlib.
+
+WWW: http://www.scsh.net/resources/graphics.html
