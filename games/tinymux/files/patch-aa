@@ -1,0 +1,20 @@
+--- configure.in.orig	Tue Apr 15 23:36:55 1997
++++ configure.in	Thu May 28 21:44:26 1998
+@@ -85,7 +85,7 @@
+ AC_DEFINE(NEED_SYS_ERRLIST_DCL) ;;
+ *)
+ AC_MSG_CHECKING(for sys_errlist dcl)
+-AC_HEADER_EGREP(sys_errlist,errno.h, AC_MSG_RESULT(yes), AC_DEFINE(NEED_SYS_ERRLIST_DCL) AC_MSG_RESULT(no)) ;;
++AC_HEADER_EGREP(sys_errlist,stdio.h, AC_MSG_RESULT(yes), AC_DEFINE(NEED_SYS_ERRLIST_DCL) AC_MSG_RESULT(no)) ;;
+ esac
+ AC_MSG_CHECKING(for perror dcl)
+ AC_HEADER_EGREP(perror,errno.h, AC_MSG_RESULT(yes) ,AC_DEFINE(NEED_PERROR_DCL) AC_MSG_RESULT(no))
+@@ -100,7 +100,7 @@
+ AC_TRY_COMPILE([#include <sys/socket.h>],[struct linger ling; ling.l_onoff = 1;],
+ AC_DEFINE(HAVE_LINGER) AC_MSG_RESULT(yes), AC_MSG_RESULT(no))
+ 
+-LIBS="-L./gdbm-1.7.3 -lgdbm"    
++LIBS="-L/usr/local/lib -lgdbm"    
+ AC_CHECK_LIB(resolv, main)
+ AC_CHECK_LIB(crypt, main)
+ 
