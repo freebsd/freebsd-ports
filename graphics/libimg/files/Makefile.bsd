@@ -1,0 +1,76 @@
+LIB=		img
+
+PORTVERSION?=	1.2.4
+LOCALBASE?=	/usr/local
+TCL_VER?=	8.3
+
+SHLIB_MAJOR=	1
+SHLIB_MINOR=	2
+
+.if exists(${LOCALBASE}/lib/tcl${TCL_VER}/tkConfig.sh)
+# If for some reason  the file does not exist -- make the best guess. In
+# reality, it will exist by the time we are actually doing the build, so
+# the quality of the guess does not matter. But we still try well. -mi
+TCL_STUB_LIB_SPEC!=	. ${LOCALBASE}/lib/tcl${TCL_VER}/tclConfig.sh; \
+TK_STUB_LIB_SPEC!=	. ${LOCALBASE}/lib/tcl${TCL_VER}/tclConfig.sh; \
+		echo $$TCL_STUB_LIB_SPEC
+.else
+TCL_STUB_LIB_SPEC=	-L${LOCALBASE}/lib -ltclstub${TCL_VER:S/.//}
+TK_STUB_LIB_SPEC=	-L${LOCALBASE}/lib -ltkstub${TCL_VER:S/.//}
+.endif
+
+LDADD=		-lm -lz -L${LOCALBASE}/lib -lpng -ljpeg -ltiff \
+		${TCL_STUB_LIB_SPEC} ${TCL_STUB_LIB_SPEC}
+
+CFLAGS+=	-I${LOCALBASE}/include/tcl${TCL_VER}
+CFLAGS+=	-I${LOCALBASE}/include/tcl${TCL_VER}/generic
+CFLAGS+=	-D__X11__ -I${X11BASE}/include
+CFLAGS+=	-I${LOCALBASE}/include/tk${TCL_VER}
+CFLAGS+=	-DNDEBUG -Wall -I. -DUSE_TCL_STUBS -DUSE_TK_STUBS
+CFLAGS+=	-DVERSION=\"${PORTVERSION}\" -I${LOCALBASE}/include
+CFLAGS+=	-DHAVE_JPEGLIB_H -DHAVE_TIFF_H -DHAVE_DLFCN_H -DHAVE_IMG_H
+
+# This seems terrible... The package uses libtiff's interfaces, which are
+# clearly marked as internal... It includes the libtiff's header files, which
+# libtiff itself does NOT install.	-mi
+CFLAGS+=	-I${.CURDIR}/libtiff
+
+INTERNALLIB	= don't build the useless static version
+NOPROFILE	= don't build the profilable lib
+
+all: ${SHLIB_NAME} pkgIndex.tcl
+
+pkgIndex.tcl: pkgIndex.tcl.in
+	sed -e 's,@IMG_PATCH_LEVEL@,${PORTVERSION},g' \
+		-e 's,@IMG_SHARED_LIB_FILE@,${SHLIB_NAME},g' \
+		< pkgIndex.tcl.in > pkgIndex.tcl
+
+DIR		= lib/Img1.2
+SHLIBDIR	= ${LOCALBASE}/${DIR}
+
+${SHLIBDIR} ${SHLIBDIR}/msgs:
+	${MKDIR} $@
+
+beforeinstall: ${SHLIBDIR} ${SHLIBDIR}/msgs
+	${INSTALL_DATA} pkgIndex.tcl ${.CURDIR}/demo.tcl ${.CURDIR}/tkv.tcl \
+		${.CURDIR}/imgmsg.tcl ${SHLIBDIR}
+	${INSTALL_DATA} ${.CURDIR}/msgs/* ${SHLIBDIR}/msgs/
+
+environ:
+	@${ECHO} SHLIB_NAME=${SHLIB_NAME} SHLIB_LINK=${SHLIB_LINK} DIR=${DIR}
+
+#		fundamentals of this library
+SRCS	=	imgInit.c imgObj.c imgUtil.c imgPmap.c imgUnixPmap.c \
+		imgBMP.c imgGIF.c imgJPEG.c imgPNG.c imgPS.c \
+		imgTIFF.c imgTIFFjpeg.c imgTIFFpixar.c imgTIFFzip.c \
+		imgWindow.c imgXBM.c imgXPM.c
+
+test:	$(SHLIB_NAME)
+	PATH=${TK_BIN_DIR}:${PATH}; export PATH; \
+	TCLLIBPATH=`pwd`; export TCLLIBPATH; \
+	export SHLIB_PATH; \
+	LD_LIBRARY_PATH=`pwd`; \
+	export LD_LIBRARY_PATH; \
+	wish${TCL_VER} demo.tcl
+
+.include <bsd.lib.mk>
