@@ -3,7 +3,7 @@
 # Date created:		26 Jun 1998
 # Whom:			Takashi Mega <mega@minz.org>
 #
-# $Id: Makefile,v 1.2 1998/10/09 10:05:50 asami Exp $
+# $Id: Makefile,v 1.3 1998/10/16 05:06:45 jseger Exp $
 
 DISTNAME=	slrn0.9.5.2
 PKGNAME=	ja-slrn-0.9.5.2
@@ -16,6 +16,8 @@ PATCHFILES= 	slrn0.9.5.2jp0.pat.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	mega@minz.org
+
+BROKEN= 'fetch -- this needs more than one MASTER_STIE'
 
 BROKEN_ELF=	yes
 
