@@ -1,0 +1,8 @@
+The module Net::SNMP implements an object oriented
+interface to the Simple Network Management Protocol.  Perl
+applications can use the module to retrieve or update
+information on a remote host using the SNMP protocol.
+Net::SNMP is implemented completely in Perl, requires no
+compiling, and uses only standard Perl modules. Both
+SNMPv1 and SNMPv2c (Community-Based SNMPv2) are supported
+by the module.

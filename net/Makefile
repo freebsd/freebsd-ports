@@ -158,6 +158,7 @@
     SUBDIR += p5-Net-IPv4Addr
     SUBDIR += p5-Net-Netmask
     SUBDIR += p5-Net-RawIP
+    SUBDIR += p5-Net-SNMP
     SUBDIR += p5-Net-Telnet
     SUBDIR += p5-Net-Whois
     SUBDIR += p5-Net-ext
