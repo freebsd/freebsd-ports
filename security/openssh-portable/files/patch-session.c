@@ -1,5 +1,5 @@
 --- session.c.orig	Mon Feb 25 16:48:03 2002
-+++ session.c	Sun Mar 17 21:05:03 2002
++++ session.c	Mon Mar 25 06:19:09 2002
 @@ -63,6 +63,13 @@
  #define is_winnt       (GetVersion() < 0x80000000)
  #endif
@@ -43,7 +43,7 @@
  		/* Close the master side of the pseudo tty. */
  		close(ptyfd);
  
-@@ -659,12 +681,23 @@
+@@ -659,12 +681,24 @@
  do_login(Session *s, const char *command)
  {
  	char *time_string;
@@ -58,6 +58,7 @@
 +	FILE *f;
 +	char buf[256];
 +	char *fname;
++	char *shorttty;
 +#endif /* HAVE_LOGIN_CAP */
 +#ifdef __FreeBSD__
 +#define DEFAULT_WARN  (2L * 7L * 86400L)  /* Two weeks */
@@ -67,7 +68,7 @@
  
  	/*
  	 * Get IP address of client. If the connection is not a socket, let
-@@ -703,6 +736,63 @@
+@@ -703,6 +737,72 @@
  	}
  #endif
  
@@ -118,7 +119,16 @@
 +#endif /* __FreeBSD__ */
 +
 +#ifdef HAVE_LOGIN_CAP
-+	if (!auth_ttyok(lc, s->tty)) {
++	/* check if we have a pathname in the ttyname */
++	shorttty = rindex( s->tty, '/' );
++	if (shorttty != NULL ) {
++		/* use only the short filename to check */
++		shorttty ++;
++	} else {
++		/* nothing found, use the whole name found */
++		shorttty = s->tty;
++	}
++	if (!auth_ttyok(lc, shorttty)) {
 +		(void)printf("Permission denied.\n");
 +		log(
 +	       "LOGIN %.200s REFUSED (TTY) FROM %.200s ON TTY %.200s",
@@ -131,7 +141,7 @@
  	if (check_quietlogin(s, command))
  		return;
  
-@@ -715,7 +805,17 @@
+@@ -715,7 +815,17 @@
  		printf("%s\n", aixloginmsg);
  #endif /* WITH_AIXAUTHENTICATE */
  
@@ -150,7 +160,7 @@
  		time_string = ctime(&last_login_time);
  		if (strchr(time_string, '\n'))
  			*strchr(time_string, '\n') = 0;
-@@ -725,7 +825,30 @@
+@@ -725,7 +835,30 @@
  			printf("Last login: %s from %s\r\n", time_string, hostname);
  	}
  
@@ -182,7 +192,7 @@
  }
  
  /*
-@@ -741,9 +864,9 @@
+@@ -741,9 +874,9 @@
  #ifdef HAVE_LOGIN_CAP
  		f = fopen(login_getcapstr(lc, "welcome", "/etc/motd",
  		    "/etc/motd"), "r");
@@ -194,7 +204,7 @@
  		if (f) {
  			while (fgets(buf, sizeof(buf), f))
  				fputs(buf, stdout);
-@@ -770,10 +893,10 @@
+@@ -770,10 +903,10 @@
  #ifdef HAVE_LOGIN_CAP
  	if (login_getcapbool(lc, "hushlogin", 0) || stat(buf, &st) >= 0)
  		return 1;
@@ -207,7 +217,7 @@
  	return 0;
  }
  
-@@ -902,6 +1025,10 @@
+@@ -902,6 +1035,10 @@
  #endif
  
  	if (!options.use_login) {
@@ -218,7 +228,7 @@
  		/* Set basic environment. */
  		child_set_env(&env, &envsize, "USER", pw->pw_name);
  		child_set_env(&env, &envsize, "LOGNAME", pw->pw_name);
-@@ -909,6 +1036,12 @@
+@@ -909,6 +1046,12 @@
  #ifdef HAVE_LOGIN_CAP
  		(void) setusercontext(lc, pw, pw->pw_uid, LOGIN_SETPATH);
  		child_set_env(&env, &envsize, "PATH", getenv("PATH"));
@@ -231,7 +241,7 @@
  #else /* HAVE_LOGIN_CAP */
  # ifndef HAVE_CYGWIN
  		/*
-@@ -1241,7 +1374,7 @@
+@@ -1241,7 +1384,7 @@
  	 * initgroups, because at least on Solaris 2.3 it leaves file
  	 * descriptors open.
  	 */
@@ -240,7 +250,7 @@
  		close(i);
  
  	/*
-@@ -1271,6 +1404,31 @@
+@@ -1271,6 +1414,31 @@
  			exit(1);
  #endif
  	}
