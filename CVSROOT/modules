@@ -1918,6 +1918,7 @@ gnotepad+	ports/editors/gnotepad+
 gnowavcut	ports/audio/gnowavcut
 gnu		src/gnu
 gnu-finger	ports/net/gnu-finger
+gnu-radius	ports/net/gnu-radius
 gnu-regexp	ports/java/gnu-regexp
 gnu2bmake	src/gnu/gnu2bmake
 gnu_games	src/gnu/games
