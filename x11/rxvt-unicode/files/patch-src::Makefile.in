@@ -1,0 +1,40 @@
+--- src/Makefile.in.orig	Mon Aug 16 01:11:45 2004
++++ src/Makefile.in	Tue Aug 17 21:25:56 2004
+@@ -72,13 +72,13 @@
+ 	$(COMPILE) -c $<
+ 
+ .C.lo:
+-	$(LIBTOOL) --mode=compile $(COMPILE) -c $<
++	$(LIBTOOL) --tag=CXX --mode=compile $(COMPILE) -c $<
+ 
+ .s.lo:
+-	$(LIBTOOL) --mode=compile $(COMPILE) -c $<
++	$(LIBTOOL) --tag=CXX --mode=compile $(COMPILE) -c $<
+ 
+ .S.lo:
+-	$(LIBTOOL) --mode=compile $(COMPILE) -c $<
++	$(LIBTOOL) --tag=CXX --mode=compile $(COMPILE) -c $<
+ 
+ .C.intpro:
+ 	@$(RMF) $@.tmp
+@@ -91,16 +91,16 @@
+ all: allbin
+ 
+ rxvt: version.h rxvt.o librxvt.la
+-	$(LIBTOOL) --mode=link $(LINK) rxvt.o librxvt.la $(LIBS) $(XLIB) $(DLIB) -o $@
++	$(LIBTOOL) --tag=CXX --mode=link $(LINK) rxvt.o librxvt.la $(LIBS) $(XLIB) $(DLIB) -o $@
+ 
+ rxvtd: version.h rxvtd.o librxvt.la rxvtdaemon.o
+-	$(LIBTOOL) --mode=link $(LINK) rxvtd.o rxvtdaemon.o librxvt.la $(LIBS) $(XLIB) $(DLIB) -o $@
++	$(LIBTOOL) --tag=CXX --mode=link $(LINK) rxvtd.o rxvtdaemon.o librxvt.la $(LIBS) $(XLIB) $(DLIB) -o $@
+ 
+ rxvtc: version.h rxvtc.o rxvtdaemon.o
+-	$(LIBTOOL) --mode=link $(LINK) rxvtc.o rxvtdaemon.o $(LIBS) $(DLIB) -o $@
++	$(LIBTOOL) --tag=CXX --mode=link $(LINK) rxvtc.o rxvtdaemon.o $(LIBS) $(DLIB) -o $@
+ 
+ librxvt.la: $(LIBOBJS)
+-	$(LIBTOOL) --mode=link $(LINK) -rpath $(libdir) -version-info $(LIBVERSION) $(LIBOBJS) $(LIBS) -o $@
++	$(LIBTOOL) --tag=CXX --mode=link $(LINK) -rpath $(libdir) -version-info $(LIBVERSION) $(LIBOBJS) $(LIBS) -o $@
+ 
+ #-------------------------------------------------------------------------
+ 

@@ -1,8 +1,6 @@
-Rxvt is an xterm replacement which uses a little less memory, and is 
-suitable for use on machines with small memories. Tek4010 support
-is removed.
+rxvt-unicode is a clone of the well known terminal emulator rxvt, modified
+to store text in Unicode (either UCS-2 or UCS-4) and to use locale-correct
+input and output. It also supports mixing multiple fonts at the same time,
+including Xft fonts.
 
-Modifications were made by Rob Nation (nation@rocket.sanders.lockheed.com) 
-to make it a little more compact, and to add and remove certain features.
-
-WWW: http://www.rxvt.org/
+WWW: http://software.schmorp.de/

@@ -9348,6 +9348,7 @@ rwhois		ports/net/rwhois
 rxp		ports/textproc/rxp
 rxvt		ports/x11/rxvt
 rxvt-devel	ports/x11/rxvt-devel
+rxvt-unicode	ports/x11/rxvt-unicode
 rzip		ports/archivers/rzip
 s-news		ports/news/s-news
 s10sh		ports/graphics/s10sh
