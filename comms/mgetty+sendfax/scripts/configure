@@ -22,6 +22,9 @@ cat >> policy.h <<END
 #undef MAILER
 #define MAILER		"/usr/sbin/sendmail"
 
+#undef DEVICE_GROUP
+#define DEVICE_GROUP	"uucp"
+
 END
 
 exit 0
