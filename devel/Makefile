@@ -514,6 +514,7 @@
     SUBDIR += ocaml-findlib
     SUBDIR += ocaml-pcre
     SUBDIR += ocamlweb
+    SUBDIR += ode
     SUBDIR += omniORB
     SUBDIR += oniguruma
     SUBDIR += openthreads
