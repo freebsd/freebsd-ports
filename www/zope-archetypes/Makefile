@@ -18,8 +18,8 @@ DIST_SUBDIR=	zope
 MAINTAINER=	filippo@widestore.net
 COMMENT=	Framework for the development of new Content Types in Zope/CMF/Plone
 
-RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/lib/python/Products/CMFPlone/__init__.py:${PORTSDIR}/www/plone \
-	${LOCALBASE}/${SZOPEBASEDIR}/lib/python/Products/PortalTransforms/__init__.py:${PORTSDIR}/www/zope-cmftransforms
+RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFPlone/__init__.py:${PORTSDIR}/www/plone \
+	${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/PortalTransforms/__init__.py:${PORTSDIR}/www/zope-cmftransforms
 
 WRKSRC=${WRKDIR}/${DISTNAME}
 USE_ZOPE=	yes
