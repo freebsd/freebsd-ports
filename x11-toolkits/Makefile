@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.33 1999/08/26 21:23:35 cpiazza Exp $
+# $Id: Makefile,v 1.34 1999/08/29 09:21:21 cpiazza Exp $
 #
 
     SUBDIR += FWF
@@ -28,7 +28,7 @@
     SUBDIR += py-gnome
     SUBDIR += qt-i18n
     SUBDIR += qt142
-    SUBDIR += qt2
+    SUBDIR += qt201
     SUBDIR += ruby-gtk
     SUBDIR += rubytk
     SUBDIR += slingshot
