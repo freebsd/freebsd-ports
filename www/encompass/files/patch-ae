@@ -1,0 +1,11 @@
+--- Makefile.in	2000/12/01 14:27:47	1.1
++++ Makefile.in	2000/12/01 14:28:02
+@@ -122,7 +122,7 @@
+ pixmapdir = $(gnomedatadir)/pixmaps
+ pixmap_DATA = encompass.png
+ 
+-desktopdir = $(gnomedatadir)/gnome/apps/Internet
++desktopdir = $(gnomedatadir)/apps/Internet
+ desktop_DATA = encompass.desktop
+ 
+ soundlistdir = $(sysconfdir)/sound/events
