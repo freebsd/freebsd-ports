@@ -1,18 +1,18 @@
 # New ports collection makefile for:	DSSSL stylesheets for DocBook
-# Version required:	1.07
+# Version required:	1.08
 # Date created:		16 March 1998
 # Whom:			Jun Kuriyama <kuriyama@opt.phys.waseda.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/03/25 14:10:27 nik Exp $
 #
 
-DISTNAME=	db107
-PKGNAME=	dsssl-docbook-modular-1.07
+DISTNAME=	db108
+PKGNAME=	dsssl-docbook-modular-1.08
 CATEGORIES=	textproc
 MASTER_SITES=	http://nwalsh.com/docbook/dsssl/
 EXTRACT_SUFX=	.zip
 
-MAINTAINER=	kuriyama@opt.phys.waseda.ac.jp
+MAINTAINER=	kuriyama@FreeBSD.ORG
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		${PREFIX}/share/sgml/docbook/3.0/catalog:${PORTSDIR}/textproc/docbook
@@ -29,6 +29,7 @@ INSTDIR=	${PREFIX}/share/sgml/docbook/dsssl/modular
 
 pre-install:
 	@[ -d ${INSTDIR} ] || ${MKDIR} ${INSTDIR}
+	@find ${WRKDIR} -name '*~' -exec rm {} \;
 
 do-install:
 	@${CP} -Rp ${WRKDIR}/docbook/* ${INSTDIR}
