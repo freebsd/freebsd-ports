@@ -16,12 +16,26 @@ EXTRACT_ONLY=	#empty
 MAINTAINER=	mita@FreeBSD.org
 COMMENT=	Wiliam Chia-Wei Cheng's yet another PS to EPSI converter
 
+.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
+GSPORT?=	print/ghostscript-afpl
+.else
+GSPORT?=	print/ghostscript-gnu
+.endif
+
 RUN_DEPENDS=	pbmtoepsi:${PORTSDIR}/graphics/netpbm \
-		gs:${PORTSDIR}/print/ghostscript-gnu
+		gs:${PORTSDIR}/${GSPORT}
 
 NO_WRKSUBDIR=	yes
 
 .SILENT:
+
+pre-fetch:
+.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
+	@${ECHO} ""
+	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
+	@${ECHO} "      AFPL Postscript interpreter instead of GNU one"
+	@${ECHO} ""
+.endif
 
 pre-patch:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/pstoepsi ${WRKDIR}/pstoepsi.prefix
