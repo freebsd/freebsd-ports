@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- configure.orig	Fri Jun  7 21:38:37 2002
-+++ configure	Fri Jun  7 21:39:48 2002
-@@ -5913,6 +5913,7 @@
+--- configure.orig	Thu Dec 12 14:44:07 2002
++++ configure	Tue Dec 24 00:22:37 2002
+@@ -9014,6 +9014,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -11,12 +8,12 @@ $FreeBSD$
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -10790,7 +10791,7 @@
+@@ -17878,7 +17879,7 @@
  	if gnome-config --libs gb > /dev/null 2>&1; then
  		verstxt=`gnome-config --modversion gb 2>/dev/null`
  		vers=`echo "$verstxt" | awk -F. '{ printf "%d", $1 * 10000 + $2 * 100 + $3; }'`
 -		if test "$vers" -eq 000017; then
 +		if test "$vers" -ge 000017; then
- 			echo "$ac_t""$marker_ok found $verstxt" 1>&6
- 			cat >> confdefs.h <<\EOF
- #define ENABLE_GB 1
+ 			echo "$as_me:$LINENO: result: $marker_ok found $verstxt" >&5
+ echo "${ECHO_T}$marker_ok found $verstxt" >&6
+ 
