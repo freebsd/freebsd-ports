@@ -4,5 +4,5 @@ include/sip/sipQt.h
 lib/libsip.so
 lib/libsip.so.10
 lib/libsip.so.10.1
-lib/libsip.so.10.1.0
+lib/libsip.so.10.1.1
 @dirrm include/sip

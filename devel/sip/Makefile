@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	sip
-PORTVERSION=	3.7
+PORTVERSION=	3.8
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.river-bank.demon.co.uk/download/sip/
 DISTNAME=	sip-x11-gpl-${PORTVERSION}
 
-MAINTAINER=	osgene@web.de
+MAINTAINER=	eugos@gmx.net
 COMMENT=	Python to C++ bindings generator
 
 USE_PYTHON=	yes
