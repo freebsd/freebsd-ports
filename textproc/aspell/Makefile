@@ -16,17 +16,11 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	pspell.4:${PORTSDIR}/textproc/pspell
 
-USE_NEWGCC=	yes
-USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-dict-dir=${DATADIR} \
 		--enable-doc-dir=${DOCSDIR}
+USE_GMAKE=	yes
 MAKE_ARGS=	NOPORTDOCS=${NOPORTDOCS}
 INSTALLS_SHLIB=	yes
-
-pre-build:
-	@${LN} -sf ${LOCALBASE}/bin/libtool ${WRKSRC}/libtool
 
 .include <bsd.port.mk>
