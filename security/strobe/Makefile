@@ -1,14 +1,15 @@
 # New ports collection makefile for:	strobe
-# Version required:	1.05
+# Version required:	1.06
 # Date created:		23 Sep 1996
 # Whom:			proff
 #
-# $Id: Makefile,v 1.4 1999/01/26 22:19:07 billf Exp $
+# $Id: Makefile,v 1.5 1999/03/09 00:16:14 jseger Exp $
 #
 
-DISTNAME=	strobe-1.05
+DISTNAME=	strobe-1.06
 CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.win.or.jp/pub/network/misc/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jseger@FreeBSD.org
 
