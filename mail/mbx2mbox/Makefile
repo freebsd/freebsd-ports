@@ -10,6 +10,8 @@ DISTNAME=	mbx2mbox-0.2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.cs.virginia.edu/~dwc3q/code/
 
+MAINTAINER=	ports@FreeBSD.org
+
 NO_BUILD=	yes
 USE_PERL5=	yes
 

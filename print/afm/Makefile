@@ -12,6 +12,8 @@ CATEGORIES=	print
 MASTER_SITES=	ftp://sgi.com/sgi/fax/source/
 EXTRACT_SUFX=   -tar.Z
 
+MAINTAINER=	ports@FreeBSD.org
+
 pre-patch:
 	@${RM} -rf ${WRKSRC}/RCS
 
