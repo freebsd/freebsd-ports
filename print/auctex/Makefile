@@ -11,13 +11,15 @@ CATEGORIES=		print elisp
 MASTER_SITES=		${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	support/auctex
 
-MAINTAINER=		mkamm@gmx.net
+MAINTAINER=		yoichi@FreeBSD.org
 
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 
 EMACS_PORT_NAME?=	emacs21
 EMACS_NO_RUN_DEPENDS=	yes
 LISPDIR=	${EMACS_SITE_LISPDIR}
+ALL_TARGET=	all contrib
+INSTALL_TARGET= install install-contrib
 MAKE_ARGS+=	lispdir=${PREFIX}/${LISPDIR}
 PLIST_SUB+=	LISPDIR=${LISPDIR}
 
