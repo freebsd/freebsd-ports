@@ -25,6 +25,7 @@ CONFLICTS=	python-2.3.*
 ONLY_FOR_ARCHS=	i386 powerpc
 CVSDATE=	040225
 MASTERDIR=	${.CURDIR}/../python23
+LATEST_LINK=	stackless_python
 STACKLESS_POST_CONFIGURE=	stackless-post-configure
 
 DESCR=		${.CURDIR}/pkg-descr
@@ -46,10 +47,9 @@ post-patch:
 	@${CAT} ${MASTERDIR}/pkg-plist >>${PLIST}
 
 stackless-post-configure:
-	${MKDIR} -p ${SHARED_WRKSRC}/Stackless
+	${MKDIR} ${SHARED_WRKSRC}/Stackless
 	${LN} -sf ${WRKSRC}/Stackless/slp_transfer.c \
 		${SHARED_WRKSRC}/Stackless/slp_transfer.c
 	${LN} -sf ${WRKSRC}/Stackless/*.h ${SHARED_WRKSRC}/Stackless/
-	
 
 .include "${MASTERDIR}/Makefile"
