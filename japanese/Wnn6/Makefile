@@ -35,7 +35,7 @@ fetch-list:
 .if !exists(${.CURDIR}/work/.build_done)
 pre-extract::
 	@${ECHO} "Please set the CD-ROM 'Wnn6 for Linux/FreeBSD -- 97.6.6'";
-	@${ECHO} "  It is an early version !!";
+	@${ECHO} "  (it is an early version !!)";
 	@${ECHO} -n "into your cdrom-drive. (Press Return)"; \
 	read dummy; \
 	${ECHO} "By default, a mount point and a device file"; \
@@ -45,7 +45,7 @@ pre-extract::
 	case x$${ans} in \
 	  xn*|xN*) \
 		${ECHO} "###########################################################"; \
-		${ECHO} "Please rerun 'make' in specifying MOUNT_PT and MOUNT_DEV"; \
+		${ECHO} "Please run 'make' in specifying MOUNT_PT and MOUNT_DEV"; \
 		${ECHO} "For example:"; \
 		${ECHO} "	make MOUNT_PT=/mnt MOUNT_DEV=/dev/cd0c"; \
 		${ECHO} "###########################################################"; \
