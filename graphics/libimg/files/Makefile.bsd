@@ -44,7 +44,7 @@ pkgIndex.tcl: pkgIndex.tcl.in
 
 DIR		= lib/Img1.2
 INSTDIR		= ${LOCALBASE}/${DIR}
-SHLIBDIR	= ${LOCALBASE}/lib
+LIBDIR		= ${LOCALBASE}/lib
 
 ${INSTDIR} ${INSTDIR}/msgs:
 	${MKDIR} $@
