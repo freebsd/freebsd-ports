@@ -20,7 +20,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		ungif.5:${PORTSDIR}/graphics/libungif \
-		freetype.8:${PORTSDIR}/print/freetype2
+		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_GMAKE=	yes
 USE_XLIB=	yes
