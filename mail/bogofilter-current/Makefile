@@ -7,6 +7,7 @@
 
 PORTNAME=	bogofilter
 PORTVERSION=	0.17.5
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +17,9 @@ COMMENT=	"Fast, teachable, learning spam detector"
 
 LIB_DEPENDS?=	db-4.2:${PORTSDIR}/databases/db42
 LIB_DEPENDS+=	gsl.5:${PORTSDIR}/math/gsl
+.if !defined(WITHOUT_BASH)
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
+.endif
 
 CONFLICTS?=	bogofilter-tdb* bogofilter-qdbm*
 
@@ -50,6 +53,15 @@ post-patch:
 PORTDOCS=	*
 .endif
 
+.if !defined(WITHOUT_BASH)
+pre-everything::
+	@${ECHO_CMD} "----------------------------------------------------------------------------"
+	@${ECHO_CMD} "To install without bash dependency, you can use: make -DWITHOUT_BASH install"
+	@${ECHO_CMD} "Note that installing without bash dependency will mean that some of the"
+	@${ECHO_CMD} "${DOCSDIR}/contrib scripts will not be installed."
+	@${ECHO_CMD} "----------------------------------------------------------------------------"
+.endif
+
 post-build::
 	cd ${WRKSRC} && make check SHELL=${SH}
 
@@ -69,18 +81,23 @@ post-install::
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/trio/AUTHORS ${DOCSDIR}/AUTHORS.trio
 .for i in contrib/bogo.R contrib/bogofilter-qfe \
-		contrib/randomtrain contrib/scramble \
 		contrib/mime.get.rfc822 contrib/printmaildir.pl \
 		contrib/bogominitrain.pl contrib/README.contrib
 	  ${INSTALL_SCRIPT} ${WRKSRC}/${i} ${DOCSDIR}/${i}
 .endfor
-.for i in contrib/README.randomtrain contrib/dot-qmail-bogofilter-default
+.for i in contrib/dot-qmail-bogofilter-default
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/${i}
 .endfor
 	${INSTALL_PROGRAM} ${WRKSRC}/contrib/bogogrep ${DOCSDIR}/contrib/
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}/html
 	${INSTALL_DATA} ${WRKSRC}/doc/*.xml ${DOCSDIR}/xml
 	${INSTALL_DATA} ${WRKSRC}/doc/programmer/README.freebsd ${DOCSDIR}/programmer
+.endif
+.if !defined(WITHOUT_BASH)
+.for i in randomtrain scramble trainbogo.sh
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/${i} ${DOCSDIR}/contrib/
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/contrib/README.randomtrain ${DOCSDIR}/contrib/
 .endif
 	${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
