@@ -272,6 +272,7 @@
     SUBDIR += libsocketcpp
     SUBDIR += libunp
     SUBDIR += libunpipc
+    SUBDIR += libyahoo2
     SUBDIR += licq
     SUBDIR += licq-console
     SUBDIR += licq-jons-gtk-gui
