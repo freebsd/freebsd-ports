@@ -3859,6 +3859,7 @@ libconnect	ports/net/libconnect
 libcoro		ports/devel/libcoro
 libcroco	ports/textproc/libcroco
 libctl		ports/science/libctl
+libcwd		ports/devel/libcwd
 libdbi		ports/databases/libdbi
 libdbi-drivers	ports/databases/libdbi-drivers
 libdict		ports/devel/libdict
