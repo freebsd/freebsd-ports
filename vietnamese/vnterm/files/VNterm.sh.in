@@ -1,0 +1,72 @@
+# ex:ts=4
+#	Modified from CXterm.sh included with the cxterm Chinese lang xterm pkg
+
+# ENCODE_FONTS:		automaticially search for a font from the list
+
+#Files:  "vn-r14 vn10x20 vn9x15 vnlutRS18"
+VN_FONTS="vn-r14 vn10x20 viet   vn-lucidasanstypewriter-18"
+
+if [ "$BINDIR" != "" ]; then
+	VNTERM="$BINDIR/vnterm"
+else
+	VNTERM=vnterm
+fi
+
+check_use_font ()
+{
+	for f in "$@" ; do
+	if [ "`xlsfonts $f 2>/dev/null`" = "$f" ]; then
+		echo $f
+		return 0
+	fi
+	done
+	xset fp+ "$XFONTDIR"
+	for f in "$@" ; do
+	if [ "`xlsfonts $f 2>/dev/null`" = "$f" ]; then
+		echo $f
+		return 0
+	fi
+	done
+	return 1
+}
+
+
+CF=""
+FH=0
+for i in "$@" ; do 
+	if [ "$i" = "-fh" ]; then
+		FH=1;  continue;
+	fi
+	if [ "$FH" -eq 1 ]; then
+		CF=`check_use_font $i`
+		if [ "$CF" = "" ]; then
+			echo "Specified font doesn't exist in the X Window system."
+			exit 1
+		fi
+		break
+    fi
+	FH=0
+done
+
+
+if [ "$CF" = "" ]; then
+	if [ "$NAME" = "cxterm" ]; then
+		CF=`check_use_font $GB_FONTS`
+		if [ "$CF" = "" ]; then
+			echo "Cannot identify a Vietnamese font in the X Window system."
+			exit 1
+		fi
+		FH_OPT="-fh $CF"
+	elif [ "$NAME" = "cxtermb5" ]; then
+		CF=`check_use_font $BIG5_FONTS`
+		if [ "$CF" = "" ]; then
+			echo "Cannot identify a Vietnamese font in the X Window system."
+			exit 1
+		fi
+		FH_OPT="-fh $CF"
+	fi
+fi
+
+XENVIRONMENT=$VNTERM_AD
+export XENVIRONMENT
+exec $VNTERM $FH_OPT $*

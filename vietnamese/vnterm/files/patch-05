@@ -1,0 +1,19 @@
+--- ../fonts/X/Makefile.orig	Tue Aug 31 15:42:26 1993
++++ ../fonts/X/Makefile	Wed Dec  4 02:00:53 1996
+@@ -35,7 +35,7 @@
+ 		@echo $(TAB)We\'re going to do some font conversion.
+ 		@echo $(TAB)Depending on your system set-up, some of
+ 		@echo $(TAB)the conversion programs may not exist.
+-		@echo $(TAB)Don't worry about this; it means that
++		@echo "$(TAB)Don't worry about this; it means that"
+ 		@echo $(TAB)your font format is one of the others.
+ 		@echo $(TAB)We try to cover PCF, SNF, and FB formats.
+ 		@echo $(TAB)You're out of luck if NONE of these work.
+@@ -71,6 +71,7 @@
+ 		else echo "I guess you don't." ;\
+ 		fi
+ 
++		-compress *.pcf
+ 		-mkfontdir >/dev/null 2>&1
+ 		@-chmod go+r fonts.*
+ 		@touch $(MADEFLAG)

@@ -1,0 +1,26 @@
+--- ../lib/Makefile.orig	Tue Aug 31 15:40:06 1993
++++ ../lib/Makefile	Sun Nov 24 19:59:14 1996
+@@ -4,7 +4,7 @@
+ LIBDIRS	= viqr vntype
+ LIBS	= libviqr.a libvntype.a
+ #FLAGS	= -DNO_ANSI_C
+-MFLAGS	= -r
++#MFLAGS	= -r
+ 
+ all:
+ 	@$(MAKE) MSG="Working on" TARGET=all forloop
+@@ -13,12 +13,13 @@
+ 	@$(MAKE) MSG="Working on" TARGET=clean forloop
+ 
+ forloop:
++	@echo "CFLAGS are $(CFLAGS)"
+ 	@for dir in $(LIBDIRS) ; do \
+ 		$(ECHO) "Working on" $$dir "	{" ; \
+ 		cd $$dir ; \
+ 		PATH=".:$(PATH)" ; \
+ 		export PATH ; \
+-		make $(MFLAGS) -e TAB="$(TAB)$(TAB)" $(TARGET) ; \
++		make $(MFLAGS) TAB="$(TAB)$(TAB)" $(TARGET) ; \
+ 		cd .. ; \
+ 		$(ECHO) "Done  with" $$dir "	}";\
+ 		$(ECHO) "" ;\

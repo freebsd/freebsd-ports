@@ -1,0 +1,13 @@
+Tha^n cha`o ca'c ba.n,
+
+vnxterm is a xterm replacement with Vietnamese VIQR 1.1 (7-bit VIetnamese
+Quoted Readable/Viet-Net) support.  This version of cxterm is derived from the
+X11R5 xterm, and thus has simular capabilities.
+
+Please see the README file in the share/doc/vnterm directory.
+
+	Note, if you are a new user, or not quite understand X resources or
+	X font paths, etc., simply use the command "VNterm".
+
+David O'Brien
+obrien@cs.ucdavis.edu
