@@ -1,0 +1,8 @@
+sbin/sircd
+lib/libsyscore.so
+etc/sircd.conf.sample
+share/sircd/motd.txt
+share/sircd/plugins/mod_base.so
+share/sircd/plugins/mod_oper.so
+@dirrm share/sircd/plugins
+@dirrm share/sircd

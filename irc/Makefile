@@ -39,6 +39,7 @@
     SUBDIR += scrollz-doc
     SUBDIR += sic
     SUBDIR += sirc
+    SUBDIR += sircd
     SUBDIR += slirc
     SUBDIR += tirc
     SUBDIR += tircproxy
