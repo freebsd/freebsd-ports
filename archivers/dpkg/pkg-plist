@@ -1,0 +1,75 @@
+bin/822-date
+bin/dpkg
+bin/dpkg-architecture
+bin/dpkg-buildpackage
+bin/dpkg-checkbuilddeps
+bin/dpkg-deb
+bin/dpkg-distaddfile
+bin/dpkg-genchanges
+bin/dpkg-gencontrol
+bin/dpkg-name
+bin/dpkg-parsechangelog
+bin/dpkg-scanpackages
+bin/dpkg-scansources
+bin/dpkg-shlibdeps
+bin/dpkg-source
+bin/dpkg-split
+bin/dselect
+bin/md5sum
+etc/alternatives/README
+etc/dpkg/origins/debian
+lib/dpkg/controllib.pl
+lib/dpkg/enoent
+lib/dpkg/methods/disk/desc.cdrom
+lib/dpkg/methods/disk/desc.harddisk
+lib/dpkg/methods/disk/desc.mounted
+lib/dpkg/methods/disk/desc.nfs
+lib/dpkg/methods/disk/install
+lib/dpkg/methods/disk/names
+lib/dpkg/methods/disk/setup
+lib/dpkg/methods/disk/update
+lib/dpkg/methods/floppy/desc.floppy
+lib/dpkg/methods/floppy/install
+lib/dpkg/methods/floppy/names
+lib/dpkg/methods/floppy/setup
+lib/dpkg/methods/floppy/update
+lib/dpkg/mksplit
+lib/dpkg/parsechangelog/debian
+sbin/cleanup-info
+sbin/dpkg-divert
+sbin/dpkg-statoverride
+sbin/install-info
+sbin/start-stop-daemon
+sbin/update-alternatives
+sbin/update-rc.d
+share/locale/ca/LC_MESSAGES/dpkg.mo
+share/locale/cs/LC_MESSAGES/dpkg.mo
+share/locale/da/LC_MESSAGES/dpkg.mo
+share/locale/de/LC_MESSAGES/dpkg.mo
+share/locale/en/LC_MESSAGES/dpkg.mo
+share/locale/es/LC_MESSAGES/dpkg.mo
+share/locale/fr/LC_MESSAGES/dpkg.mo
+share/locale/gl/LC_MESSAGES/dpkg.mo
+share/locale/it/LC_MESSAGES/dpkg.mo
+share/locale/ja/LC_MESSAGES/dpkg.mo
+share/locale/nl/LC_MESSAGES/dpkg.mo
+share/locale/pl/LC_MESSAGES/dpkg.mo
+share/locale/pt_BR/LC_MESSAGES/dpkg.mo
+share/locale/ru/LC_MESSAGES/dpkg.mo
+share/locale/sv/LC_MESSAGES/dpkg.mo
+@dirrm var/dpkg/updates
+@dirrm var/dpkg/methods/mnt
+@dirrm var/dpkg/methods/floppy
+@dirrm var/dpkg/methods/disk
+@dirrm var/dpkg/methods
+@dirrm var/dpkg/info
+@dirrm var/dpkg/alternatives
+@dirrm var/dpkg
+@dirrm lib/dpkg/parsechangelog
+@dirrm lib/dpkg/methods/floppy
+@dirrm lib/dpkg/methods/disk
+@dirrm lib/dpkg/methods
+@dirrm lib/dpkg
+@dirrm etc/dpkg/origins
+@dirrm etc/dpkg
+@dirrm etc/alternatives
