@@ -60,7 +60,7 @@
  [server-Standard]
  name=Standard server
 -command=/usr/X11R6/bin/X
-+command=@EXPANDED_BINDIR@/X
++command=@EXPANDED_BINDIR@/X vt9
  flexible=true
  
  # To use this server type you should add -query host or -indirect host
