@@ -1,10 +1,11 @@
-# $Id: Makefile,v 1.4 1996/11/11 23:25:27 ache Exp $
+# $Id: Makefile,v 1.5 1996/12/03 10:41:49 asami Exp $
 #
 
     SUBDIR += imm
     SUBDIR += mbone_vcr
     SUBDIR += nte
     SUBDIR += rtpmon
+    SUBDIR += rtptools
     SUBDIR += sdr
     SUBDIR += speak_freely
     SUBDIR += vat
