@@ -3,7 +3,7 @@
 # Date created:         4 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.36 1996/11/10 03:10:35 peter Exp $
+# $Id: Makefile,v 1.37 1996/11/18 11:35:35 asami Exp $
 #
 
 DISTNAME=       ncftp-2.4.2
@@ -13,7 +13,7 @@ MASTER_SITES=   ftp://ftp.probe.net/pub/ncftp/
 MAINTAINER=	ache@FreeBSD.ORG
 
 GNU_CONFIGURE=  yes
-CONFIGURE_ENV=  ac_cv_func_getmaxyx=yes
+CONFIGURE_ENV=  ac_cv_func_getmaxyx=yes ac_cv_lib_readline=yes
 MAN1=		ncftp2.1
 
 do-install:
