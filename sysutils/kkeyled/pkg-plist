@@ -1,0 +1,139 @@
+bin/kkeyled
+share/applnk/Utilities/kkeyled.desktop
+share/apps/kkeyled/pics/theme/alpha/alpha9.png
+share/apps/kkeyled/pics/theme/alpha/alphaA.png
+share/apps/kkeyled/pics/theme/alpha/alphaP.png
+share/apps/kkeyled/pics/theme/alpha/alphaligth9.png
+share/apps/kkeyled/pics/theme/alpha/alphaligthA.png
+share/apps/kkeyled/pics/theme/alpha/alphaligthP.png
+share/apps/kkeyled/pics/theme/anilock1/capslock_off.mng
+share/apps/kkeyled/pics/theme/anilock1/capslock_on.mng
+share/apps/kkeyled/pics/theme/anilock1/kkeyled_capslock_off.ogg
+share/apps/kkeyled/pics/theme/anilock1/kkeyled_capslock_on.ogg
+share/apps/kkeyled/pics/theme/anilock1/kkeyled_numlock_off.ogg
+share/apps/kkeyled/pics/theme/anilock1/kkeyled_numlock_on.ogg
+share/apps/kkeyled/pics/theme/anilock1/kkeyled_scrollock_off.ogg
+share/apps/kkeyled/pics/theme/anilock1/kkeyled_scrollock_on.ogg
+share/apps/kkeyled/pics/theme/anilock1/numlock_off.mng
+share/apps/kkeyled/pics/theme/anilock1/numlock_on.mng
+share/apps/kkeyled/pics/theme/anilock1/scrollock_off.mng
+share/apps/kkeyled/pics/theme/anilock1/scrollock_on.mng
+share/apps/kkeyled/pics/theme/blue/bouton-allume-1-24.png
+share/apps/kkeyled/pics/theme/blue/bouton-allume-A-24.png
+share/apps/kkeyled/pics/theme/blue/bouton-allume-S-24.png
+share/apps/kkeyled/pics/theme/blue/bouton-blue-1-24.png
+share/apps/kkeyled/pics/theme/blue/bouton-blue-A-24.png
+share/apps/kkeyled/pics/theme/blue/bouton-blue-S-24.png
+share/apps/kkeyled/pics/theme/blue/bouton-eteint-1-24.png
+share/apps/kkeyled/pics/theme/blue/bouton-eteint-A-24.png
+share/apps/kkeyled/pics/theme/blue/bouton-eteint-S-24.png
+share/apps/kkeyled/pics/theme/green/baseoff.png
+share/apps/kkeyled/pics/theme/green/baseon.png
+share/apps/kkeyled/pics/theme/lock/baselock.png
+share/apps/kkeyled/pics/theme/lock/baselock_24.png
+share/apps/kkeyled/pics/theme/lock/baselock_caps.png
+share/apps/kkeyled/pics/theme/lock/baselock_num.png
+share/apps/kkeyled/pics/theme/lock/baselock_scroll.png
+share/apps/kkeyled/pics/theme/lock/baseunlock.png
+share/apps/kkeyled/pics/theme/lock/baseunlock_24.png
+share/apps/kkeyled/pics/theme/lock/baseunlock_caps.png
+share/apps/kkeyled/pics/theme/lock/baseunlock_num.png
+share/apps/kkeyled/pics/theme/lock/baseunlock_scroll.png
+share/apps/kkeyled/pics/theme/lock/kdelock9.png
+share/apps/kkeyled/pics/theme/lock/kdelockA.png
+share/apps/kkeyled/pics/theme/lock/kdelockP.png
+share/apps/kkeyled/pics/theme/lock/kdelockligth9.png
+share/apps/kkeyled/pics/theme/lock/kdelockligthA.png
+share/apps/kkeyled/pics/theme/lock/kdelockligthP.png
+share/apps/kkeyled/pics/theme/lock/locksimple.png
+share/apps/kkeyled/pics/theme/lock/locksimple9.png
+share/apps/kkeyled/pics/theme/lock/locksimpleA.png
+share/apps/kkeyled/pics/theme/lock/locksimpleP.png
+share/apps/kkeyled/pics/theme/lock/locksimplelight9.png
+share/apps/kkeyled/pics/theme/lock/locksimplelightA.png
+share/apps/kkeyled/pics/theme/lock/locksimpleligthP.png
+share/apps/kkeyled/pics/theme/lock/tbaselock_caps.png
+share/apps/kkeyled/pics/theme/lock/tbaselock_num.png
+share/apps/kkeyled/pics/theme/lock/tbaselock_scroll.png
+share/apps/kkeyled/pics/theme/lock/tbaseunlock_caps.png
+share/apps/kkeyled/pics/theme/lock/tbaseunlock_num.png
+share/apps/kkeyled/pics/theme/lock/tbaseunlock_scroll.png
+share/apps/kkeyled/pics/theme/red/redbaseoff.png
+share/apps/kkeyled/pics/theme/red/redbaseon.png
+share/apps/kkeyled/pics/theme/round/roundgreen.png
+share/apps/kkeyled/pics/theme/round/roundgreenligth.png
+share/apps/kkeyled/pics/theme/round/roundred.png
+share/apps/kkeyled/pics/theme/round/roundredligth.png
+share/apps/kkeyled/pics/theme/round/roundyellow.png
+share/apps/kkeyled/pics/theme/round/roundyellowligth.png
+share/config/kkeyledrc
+share/doc/HTML/de/kkeyled/common
+share/doc/HTML/de/kkeyled/config-dialog.png
+share/doc/HTML/de/kkeyled/config-dialog2.png
+share/doc/HTML/de/kkeyled/context-menu.png
+share/doc/HTML/de/kkeyled/context-menu2.png
+share/doc/HTML/de/kkeyled/docs-am
+share/doc/HTML/de/kkeyled/index.cache.bz2
+share/doc/HTML/de/kkeyled/index.docbook
+share/doc/HTML/de/kkeyled/locked.png
+share/doc/HTML/de/kkeyled/screenshot.png
+share/doc/HTML/en/kkeyled/common
+share/doc/HTML/en/kkeyled/config-dialog.png
+share/doc/HTML/en/kkeyled/config-dialog2.png
+share/doc/HTML/en/kkeyled/context-menu.png
+share/doc/HTML/en/kkeyled/context-menu2.png
+share/doc/HTML/en/kkeyled/docs-am
+share/doc/HTML/en/kkeyled/index.cache.bz2
+share/doc/HTML/en/kkeyled/index.docbook
+share/doc/HTML/en/kkeyled/locked.png
+share/doc/HTML/en/kkeyled/screenshot.png
+share/icons/hicolor/16x16/apps/kkeyled.png
+share/icons/hicolor/22x22/apps/kkeyled.png
+share/icons/hicolor/32x32/apps/kkeyled.png
+share/icons/hicolor/48x48/apps/kkeyled.png
+share/icons/locolor/16x16/apps/kkeyled.png
+share/icons/locolor/22x22/apps/kkeyled.png
+share/icons/locolor/32x32/apps/kkeyled.png
+share/icons/locolor/48x48/apps/kkeyled.png
+share/locale/de/LC_MESSAGES/kkeyled.mo
+@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/de 2>/dev/null || true
+@unexec rmdir %D/share/locale 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/48x48/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/48x48 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/22x22/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/22x22 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/22x22/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/22x22 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrm share/doc/HTML/en/kkeyled
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@dirrm share/doc/HTML/de/kkeyled
+@unexec rmdir %D/share/doc/HTML/de 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@unexec rmdir %D/share/config 2>/dev/null || true
+@dirrm share/apps/kkeyled/pics/theme/round
+@dirrm share/apps/kkeyled/pics/theme/red
+@dirrm share/apps/kkeyled/pics/theme/lock
+@dirrm share/apps/kkeyled/pics/theme/green
+@dirrm share/apps/kkeyled/pics/theme/blue
+@dirrm share/apps/kkeyled/pics/theme/anilock1
+@dirrm share/apps/kkeyled/pics/theme/alpha
+@dirrm share/apps/kkeyled/pics/theme
+@dirrm share/apps/kkeyled/pics
+@dirrm share/apps/kkeyled
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Utilities 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true

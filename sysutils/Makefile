@@ -170,6 +170,7 @@
     SUBDIR += kdeadmin3
     SUBDIR += kdirstat
     SUBDIR += kkbswitch
+    SUBDIR += kkeyled
     SUBDIR += knutclient
     SUBDIR += krename
     SUBDIR += lavaps
