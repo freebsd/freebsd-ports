@@ -8,7 +8,8 @@
 PORTNAME=	dnsflood
 PORTVERSION=	1.10
 CATEGORIES=	dns
-MASTER_SITES=	http://www.adotout.com/
+MASTER_SITES=	http://www.adotout.com/ \
+		http://voodoo.oberon.net/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	krion@FreeBSD.org
