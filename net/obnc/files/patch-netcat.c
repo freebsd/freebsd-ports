@@ -1,7 +1,7 @@
---- netcat.c.orig	Wed Jun 27 02:23:58 2001
-+++ netcat.c	Fri Oct 19 07:31:54 2001
-@@ -36,6 +36,9 @@
- #include <sys/time.h>
+--- netcat.c.orig	Tue Feb 19 22:42:04 2002
++++ netcat.c	Thu Feb 21 23:37:07 2002
+@@ -37,6 +37,9 @@
+ #include <sys/un.h>
  
  #include <netinet/in.h>
 +#ifdef IPSEC
@@ -10,7 +10,7 @@
  #include <arpa/telnet.h>
  
  #include <err.h>
-@@ -51,6 +54,7 @@
+@@ -53,6 +56,7 @@
  #define PORT_MAX 65535
  
  /* Command Line Options */
@@ -18,27 +18,25 @@
  int	iflag;					/* Interval Flag */
  int	kflag;					/* More than one connect */
  int	lflag;					/* Bind to local port */
-@@ -77,12 +81,18 @@
- int	udptest __P((int));
- void	usage __P((int));
+@@ -84,10 +88,16 @@
+ int	unix_listen(char *);
+ void	usage(int);
  
 +#ifdef IPSEC
-+void	add_ipsec_policy __P((int, const char *));
++void	add_ipsec_policy(int, char *);
 +
 +char	*ipsec_policy[2];
 +#endif
 +
  int
- main(argc, argv)
- 	int argc;
- 	char *argv[];
+ main(int argc, char *argv[])
  {
 -	int ch, s, ret;
 +	int ch, s, ret, ipsec_count;
  	char *host, *uport, *endp;
  	struct addrinfo hints;
  	struct servent *sv;
-@@ -91,12 +101,13 @@
+@@ -99,12 +109,13 @@
  
  	ret = 1;
  	s = 0;
@@ -48,14 +46,14 @@
  	endp = NULL;
  	sv = NULL;
  
--	while ((ch = getopt(argc, argv, "46hi:klnp:rs:tuvw:z")) != -1) {
-+	while ((ch = getopt(argc, argv, "46e:Ehi:klnp:rs:tuvw:z")) != -1) {
+-	while ((ch = getopt(argc, argv, "46Uhi:klnp:rs:tuvw:x:z")) != -1) {
++	while ((ch = getopt(argc, argv, "46e:EUhi:klnp:rs:tuvw:x:z")) != -1) {
  		switch (ch) {
  		case '4':
  			family = AF_INET;
-@@ -104,6 +115,21 @@
- 		case '6':
- 			family = AF_INET6;
+@@ -115,6 +126,21 @@
+ 		case 'U':
+ 			family = AF_UNIX;
  			break;
 +		case 'e':
 +#ifdef IPSEC
@@ -75,9 +73,9 @@
  		case 'h':
  			help();
  			break;
-@@ -295,6 +321,12 @@
+@@ -422,6 +448,12 @@
  		if ((s = socket(res0->ai_family, res0->ai_socktype,
- 				res0->ai_protocol)) < 0)
+ 		    res0->ai_protocol)) < 0)
  			continue;
 +#ifdef IPSEC
 +		if (ipsec_policy[0] != NULL)
@@ -88,7 +86,7 @@
  
  		/* Bind to a local port or source address if specified */
  		if (sflag || pflag) {
-@@ -372,6 +404,12 @@
+@@ -497,6 +529,12 @@
  		ret = setsockopt(s, SOL_SOCKET, SO_REUSEPORT, &x, sizeof(x));
  		if (ret == -1)
  			err(1, NULL);
@@ -100,8 +98,8 @@
 +#endif
  
  		if (bind(s, (struct sockaddr *)res0->ai_addr,
- 						res0->ai_addrlen) == 0)
-@@ -571,7 +609,13 @@
+ 		    res0->ai_addrlen) == 0)
+@@ -690,7 +728,13 @@
  	usage(0);
  	fprintf(stderr, "\tCommand Summary:\n\
  	\t-4		Use IPv4\n\
@@ -113,11 +111,11 @@
 +	\t-E		Use IPsec ESP\n");
 +#endif
 +	fprintf(stderr, "\
+ 	\t-U		Use UNIX domain socket\n\
  	\t-h		This help text\n\
  	\t-i secs\t	Delay interval for lines sent, ports scanned\n\
- 	\t-k		Keep inbound sockets open for multiple connects\n\
-@@ -586,14 +630,43 @@
- 	\t-w secs\t	Timeout for connects and final net reads\n\
+@@ -707,13 +751,42 @@
+ 	\t-x addr[:port]\tSpecify socks5 proxy address and port\n\
  	\t-z		Zero-I/O mode [used for scanning]\n\
  	Port numbers can be individual or ranges: lo-hi [inclusive]\n");
 +#ifdef IPSEC
@@ -128,7 +126,7 @@
  
 +#ifdef IPSEC
 +void
-+add_ipsec_policy(int s, const char *policy)
++add_ipsec_policy(int s, char *policy)
 +{
 +	char *raw;
 +	int e;
@@ -149,14 +147,13 @@
 +#endif /* IPSEC */
 +
  void
- usage(ret)
- 	int ret;
+ usage(int ret)
  {
 +#ifdef IPSEC
-+	fprintf(stderr, "usage: nc [-46Ehklnrtuvz] [-e policy] [-i interval] [-p source port]\n");
++	fprintf(stderr, "usage: nc [-46EUhklnrtuvz] [-e policy] [-i interval] [-p source port]\n");
 +#else
- 	fprintf(stderr, "usage: nc [-46hklnrtuvz] [-i interval] [-p source port]\n");
+ 	fprintf(stderr, "usage: nc [-46Uhklnrtuvz] [-i interval] [-p source port]\n");
 +#endif
- 	fprintf(stderr, "\t  [-s ip address] [-w timeout] [hostname] [port[s...]]\n");
+ 	fprintf(stderr, "\t  [-s ip address] [-w timeout] [-x proxy address [:port]]\n");
+ 	fprintf(stderr, "\t  [hostname] [port[s...]]\n");
  	if (ret)
- 		exit(1);
