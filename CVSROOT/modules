@@ -7282,6 +7282,7 @@ p5-IO-Util	ports/devel/p5-IO-Util
 p5-IO-Zlib	ports/archivers/p5-IO-Zlib
 p5-IO-stringy	ports/devel/p5-IO-stringy
 p5-IPC-Cache	ports/devel/p5-IPC-Cache
+p5-IPC-Cmd	ports/devel/p5-IPC-Cmd
 p5-IPC-Locker	ports/devel/p5-IPC-Locker
 p5-IPC-MM	ports/devel/p5-IPC-MM
 p5-IPC-Run	ports/devel/p5-IPC-Run
