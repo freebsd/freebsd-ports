@@ -1,22 +1,17 @@
-The package includes
-libssl.a:
-	My implementation of SSLv2, SSLv3 and the required code to support
-	both SSLv2 and SSLv3 in the one server.
-libcrypto.a:
-	General encryption and X509 stuff needed by SSL but not
-	actually logically part of it.  It includes routines for the following:
-  Ciphers
-	libdes - My libdes DES encryption.
-	RC4, RC2, Blowfish, IDEA encryption
-  Digests
-	MD5 and MD2 message digest algorithms, fast implementations,
-	SHA (SHA-0) and SHA-1 message digest algorithms,
-	MDC2 message digest.  A DES based hash that is polular on smart cards.
-  Public Key
-	RSA encryption/decryption/generation.
-	DSA encryption/decryption/generation.
-	Diffie-Hellman key-exchange/key generation.
-		 There is no limit on the number of bits.
-  X509v3 certificates
-	X509 encoding/decoding into/from binary ASN1 and a PEM.
-	Program to generate RSA and DSA certificate requests and certificates.
+The OpenSSL Project is a collaborative effort to develop a robust,
+commercial-grade, full-featured, and Open Source toolkit implementing
+the Secure Sockets Layer (SSL v2/v3) and Transport Layer Security
+(TLS v1) protocols with full-strength cryptography world-wide. The
+project is managed by a worldwide community of volunteers that use
+the Internet to communicate, plan, and develop the OpenSSL tookit
+and its related documentation.
+
+OpenSSL is based on the excellent SSLeay library developed by Eric
+A. Young and Tim J. Hudson. The OpenSSL toolkit is licensed under
+an Apache-style licence, which basically means that you are free
+to get and use it for commercial and non-commercial purposes subject
+to some simple license conditions.
+
+OpenSSL homepage:
+
+	http://www.openssl.org/
