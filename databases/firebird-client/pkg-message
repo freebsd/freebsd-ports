@@ -1,8 +1,9 @@
 
 ---------------------------------------------------------
 Firebird is now installed.  A symbolic link from
-/usr/interbase -> %%PREFIX%%/firebird is REQUIRED for
-proper operation of Firebird.
+/usr/interbase -> %%PREFIX%%/firebird may be needed
+for compatibility with existing  programs that use
+Firebird.
 
 The symbolic link can be created with:
 

@@ -6,21 +6,29 @@
 #
 
 PORTNAME=	firebird
-PORTVERSION=	1.0.2
+PORTVERSION=	1.5.r7
 CATEGORIES=	databases
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}	\
-		http://www.aims.com.au/chris/firebird/
+MASTER_SITES=	http://www.aims.net.au/chris/firebird/
 MASTER_SITE_SUBDIR=firebird
-DISTFILES=	bootkit-1.0.2.908.tar.gz \
-		interbase0.9-4-v5examples.tar.gz \
-		Firebird-1.0.2.908.src.tar.gz
+DISTNAME=	firebird15-rc7
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chris@e-easy.com.au
 COMMENT=	The open-source InterBase(tm) 6.0 spin-off (Classic version)
 
-FORBIDDEN=	Local Stack Overflow, see http://packetstormsecurity.nl/0305-exploits/dsr-adv001.txt
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
+WANT_AUTOCONF_VER=	253
+USE_GCC=	3.3
 
-WRKSRC=		${WRKDIR}/firebird-1.0.2.908
+# Don't use ld for linking, use gcc
+LD=	gcc
+
+CONFLICTS=	firebird-devel-*
+NOPACKAGE=	pkg-install not finished
+
+WRKSRC=		${WRKDIR}/firebird15
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/firebird/lib
 MSG_FILE=	${PKGDIR}/pkg-message
@@ -36,76 +44,26 @@ pre-everything::
 	@${ECHO_MSG} "require NFS client locking support for the build to"
 	@${ECHO_MSG} "succeed. Currently this is only available on FreeBSD 5.0"
 	@${ECHO_MSG} "or greater."
+	@${ECHO_MSG}
+	@${ECHO_MSG} "WARNING: The on-disk structure of the databases has"
+	@${ECHO_MSG} "changed since version 1.0.x."
+	@${ECHO_MSG} "Cancel this installation now and backup your databases"
+	@${ECHO_MSG} "if you have not already done so."
 .if !defined(BATCH)
-	@sleep 5
+	@sleep 10
 .endif
 
-do-extract:
-	@${MKDIR} ${WRKDIR}
-	@(								\
-	cd ${WRKDIR}; ${TAR} -zxf					\
-		 ${DISTDIR}/Firebird-1.0.2.908.src.tar.gz;		\
-	cd firebird-1.0.2.908;						\
-	${TAR} -zxf ${DISTDIR}/bootkit-1.0.2.908.tar.gz;		\
-	${CP} -f msgs/msg.gbak misc/msg.gbak				\
-	)
-
-post-patch:
-	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${MSG_FILE} > ${PKGMESSAGE}
-.if ${OSVERSION} >= 430001 && ${OSVERSION} < 500000 || ${OSVERSION} >= 500016
-	@${REINPLACE_CMD} -e 's,\-ldescrypt,\-lcrypt,g' \
-		 ${WRKSRC}/builds/original/prefix.freebsd
-.else
-	@${REINPLACE_CMD} -e 's,^crypt_set_format.*,,' ${WRKSRC}/jrd/enc.c
-.endif
+patch-libtool:
+	@${DO_NADA}
 
 do-configure:
-	@(								\
-	cd ${WRKDIR}/firebird-1.0.2.908;				\
-	INTERBASE=${WRKDIR}/firebird-1.0.2.908/interbase; export INTERBASE; \
-	REFDBPATH=${WRKDIR}/firebird-1.0.2.908/refDatabases; export REFDBPATH; \
-	NOPROMPT_SETUP=yes; export NOPROMPT_SETUP;			\
-	FIREBIRD_64_BIT_IO=yes; export FIREBIRD_64_BIT_IO;		\
-	${SH} Configure.sh PROD FREEBSD;				\
-	)
+	@(cd ${WRKSRC} && ${ENV} CC=${CC} CXX=${CXX} MAKE=${GMAKE} ./autogen.sh --prefix=${PREFIX}/firebird --with-lock-manager --with-editline)
 
 do-build:
 	@(								\
-	${REINPLACE_CMD} -e 's,opt,usr,'				\
-		 ${WRKSRC}/firebird/install/linux/misc/ibmgr;		\
-	${LN} -sf ${WRKDIR}/firebird-1.0.2.908/refDatabases/jrd/isc.gdb	\
-		 ${WRKDIR}/firebird-1.0.2.908/interbase/isc4.gdb;	\
-	${LN} -sf ${WRKDIR}/firebird-1.0.2.908/refDatabases/msgs/msg.gdb \
-		 ${WRKDIR}/firebird-1.0.2.908/msg.gdb;			\
-	cd ${WRKDIR}/firebird-1.0.2.908;				\
-	INTERBASE=${WRKDIR}/firebird-1.0.2.908/interbase; export INTERBASE; \
-	REFDBPATH=${WRKDIR}/firebird-1.0.2.908/refDatabases; export REFDBPATH; \
-	${CP} ${PKGDIR}/files/buildit.sh ${WRKDIR}/firebird-1.0.2.908;	\
-	${SH} buildit.sh;						\
+	${SED} 's|%%PREFIX%%|${PREFIX}|g' ${MSG_FILE} > ${PKGMESSAGE};	\
+	cd ${WRKSRC};							\
+	${ENV} CC=${CC} CXX=${CXX} ${GMAKE} all;			\
 	)
-
-pre-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
-do-install:
-	@(								\
-	cd ${WRKDIR}/firebird-1.0.2.908;				\
-	${RM} ${WRKDIR}/firebird-1.0.2.908/interbase/isc4_tmp.gdb || ${TRUE}; \
-	${RM} ${WRKDIR}/firebird-1.0.2.908/interbase/lib/gds.so.1 || ${TRUE}; \
-	${TOUCH} interbase/interbase.log;				\
-	${CP} -Rp interbase ${PREFIX}/firebird;				\
-	${RM} ${PREFIX}/firebird/install;				\
-	${RM} ${PREFIX}/firebird/lib/libgds.so.1.0;			\
-	${RM} ${PREFIX}/firebird/lib/libgds_pyxis.a;			\
-	${LN} -fs gds.so ${PREFIX}/firebird/lib/libgds.so.1;		\
-	cd ${PREFIX}/firebird/examples;					\
-	${TAR} -xzf ${DISTDIR}/interbase0.9-4-v5examples.tar.gz;	\
-	${CP} ${FILESDIR}/RELNOTES ${PREFIX}/firebird/;			\
-	${CP} ${WRKSRC}/firebird/install/linux/misc/ibmgr		\
-		${PREFIX}/firebird/bin;					\
-	)
-
-post-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
