@@ -20,6 +20,7 @@
     SUBDIR += cucipop
     SUBDIR += cvsmail
     SUBDIR += cyrus
+    SUBDIR += cyrus-imapd
     SUBDIR += distribute
     SUBDIR += drac
     SUBDIR += elm
