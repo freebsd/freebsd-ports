@@ -1,0 +1,193 @@
+diff -ruN lib/Attrib.c xpm-3.4k/lib/Attrib.c
+--- lib/Attrib.c	Thu Oct 21 11:22:53 2004
++++ xpm-3.4k/lib/Attrib.c	Thu Oct 21 11:25:18 2004
+@@ -52,6 +52,8 @@
+     XpmColor **colorTable, **color;
+     int a;
+ 
++    if (ncolors > INT_MAX/sizeof(XpmColor *))
++	return (XpmNoMemory);
+     colorTable = (XpmColor **) XpmMalloc(ncolors * sizeof(XpmColor *));
+     if (!colorTable) {
+ 	*oldct = NULL;
+diff -ruN lib/CrDatFrI.c xpm-3.4k/lib/CrDatFrI.c
+--- lib/CrDatFrI.c	Thu Oct 21 11:22:53 2004
++++ xpm-3.4k/lib/CrDatFrI.c	Thu Oct 21 11:26:32 2004
+@@ -123,6 +123,8 @@
+      */
+     header_nlines = 1 + image->ncolors;
+     header_size = sizeof(char *) * header_nlines;
++    if (header_size > INT_MAX/sizeof(char *))
++	return (XpmNoMemory);
+     header = (char **) XpmCalloc(header_size, sizeof(char *));
+     if (!header)
+ 	return (XpmNoMemory);
+diff -ruN lib/XpmI.h xpm-3.4k/lib/XpmI.h
+--- lib/XpmI.h	Thu Oct 21 11:22:54 2004
++++ xpm-3.4k/lib/XpmI.h	Thu Oct 21 11:24:23 2004
+@@ -48,6 +48,7 @@
+  * lets try to solve include files
+  */
+ 
++#include <limits.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ /* stdio.h doesn't declare popen on a Sequent DYNIX OS */
+diff -ruN lib/create.c xpm-3.4k/lib/create.c
+--- lib/create.c	Thu Oct 21 11:22:53 2004
++++ xpm-3.4k/lib/create.c	Thu Oct 21 12:06:56 2004
+@@ -820,6 +820,8 @@
+     ErrorStatus = XpmSuccess;
+ 
+     /* malloc pixels index tables */
++    if (image->ncolors > INT_MAX/sizeof(Pixel))
++	return (XpmNoMemory);
+     image_pixels = (Pixel *) XpmMalloc(sizeof(Pixel) * image->ncolors);
+     if (!image_pixels)
+ 	return (XpmNoMemory);
+@@ -992,6 +994,10 @@
+ 
+ #if !defined(FOR_MSW) && !defined(AMIGA)
+     /* now that bytes_per_line must have been set properly alloc data */
++    if (height != 0 && (*image_return)->bytes_per_line > INT_MAX/height) {
++	XDestroyImage(*image_return);
++	return (XpmNoMemory);
++    }
+     (*image_return)->data =
+ 	(char *) XpmMalloc((*image_return)->bytes_per_line * height);
+ 
+@@ -2063,6 +2069,8 @@
+ 	xpmGetCmt(data, &colors_cmt);
+ 
+     /* malloc pixels index tables */
++    if (ncolors > INT_MAX/sizeof(Pixel))
++	RETURN(XpmNoMemory);
+     image_pixels = (Pixel *) XpmMalloc(sizeof(Pixel) * ncolors);
+     if (!image_pixels)
+ 	RETURN(XpmNoMemory);
+@@ -2364,7 +2372,7 @@
+ 
+ 	    /* array of pointers malloced by need */
+ 	    unsigned short *cidx[256];
+-	    int char1;
++	    unsigned int char1;
+ 
+ 	    bzero((char *)cidx, 256 * sizeof(unsigned short *)); /* init */
+ 	    for (a = 0; a < ncolors; a++) {
+diff -ruN lib/hashtab.c xpm-3.4k/lib/hashtab.c
+--- lib/hashtab.c	Thu Oct 21 11:22:54 2004
++++ xpm-3.4k/lib/hashtab.c	Thu Oct 21 12:08:24 2004
+@@ -144,6 +144,8 @@
+     HASH_TABLE_GROWS
+ 	table->size = size;
+     table->limit = size / 3;
++    if (size > INT_MAX/sizeof(*atomTable))
++	return (XpmNoMemory);
+     atomTable = (xpmHashAtom *) XpmMalloc(size * sizeof(*atomTable));
+     if (!atomTable)
+ 	return (XpmNoMemory);
+@@ -204,6 +206,8 @@
+     table->size = INITIAL_HASH_SIZE;
+     table->limit = table->size / 3;
+     table->used = 0;
++    if (table->size > INT_MAX/sizeof(*atomTable))
++	return (XpmNoMemory);
+     atomTable = (xpmHashAtom *) XpmMalloc(table->size * sizeof(*atomTable));
+     if (!atomTable)
+ 	return (XpmNoMemory);
+diff -ruN lib/parse.c xpm-3.4k/lib/parse.c
+--- lib/parse.c	Thu Oct 21 11:22:54 2004
++++ xpm-3.4k/lib/parse.c	Thu Oct 21 13:01:11 2004
+@@ -183,6 +183,8 @@
+     char **defaults;
+     int ErrorStatus;
+ 
++    if (ncolors > INT_MAX/sizeof(XpmColor))
++	return (XpmNoMemory);
+     colorTable = (XpmColor *) XpmCalloc(ncolors, sizeof(XpmColor));
+     if (!colorTable)
+ 	return (XpmNoMemory);
+@@ -194,6 +196,8 @@
+ 	    /*
+ 	     * read pixel value
+ 	     */
++	    if (cpp > INT_MAX-1)
++		return (XpmNoMemory);
+ 	    color->string = (char *) XpmMalloc(cpp + 1);
+ 	    if (!color->string) {
+ 		xpmFreeColorTable(colorTable, ncolors);
+@@ -276,6 +280,8 @@
+ 	    /*
+ 	     * read pixel value
+ 	     */
++	    if (cpp > INT_MAX-1)
++		return (XpmNoMemory);
+ 	    color->string = (char *) XpmMalloc(cpp + 1);
+ 	    if (!color->string) {
+ 		xpmFreeColorTable(colorTable, ncolors);
+@@ -338,6 +344,8 @@
+     unsigned int *iptr, *iptr2;
+     unsigned int a, x, y;
+ 
++    if (height != 0 && width > INT_MAX/sizeof(unsigned int))
++	return (XpmNoMemory);
+ #ifndef FOR_MSW
+     iptr2 = (unsigned int *) XpmMalloc(sizeof(unsigned int) * width * height);
+ #else
+@@ -391,7 +399,7 @@
+ 
+ 	    /* array of pointers malloced by need */
+ 	    unsigned short *cidx[256];
+-	    int char1;
++	    unsigned int char1;
+ 
+ 	    bzero((char *)cidx, 256 * sizeof(unsigned short *)); /* init */
+ 	    for (a = 0; a < ncolors; a++) {
+diff -ruN lib/scan.c xpm-3.4k/lib/scan.c
+--- lib/scan.c	Thu Oct 21 11:22:54 2004
++++ xpm-3.4k/lib/scan.c	Thu Oct 21 13:19:05 2004
+@@ -228,11 +228,16 @@
+     else
+ 	cpp = 0;
+ 
++    if ((height != 0 && width > INT_MAX/height) ||
++      (width*height > INT_MAX/sizeof(unsigned int)))
++	RETURN(XpmNoMemory);
+     pmap.pixelindex =
+ 	(unsigned int *) XpmCalloc(width * height, sizeof(unsigned int));
+     if (!pmap.pixelindex)
+ 	RETURN(XpmNoMemory);
+ 
++    if (pmap.size > INT_MAX/sizeof(Pixel))
++	RETURN(XpmNoMemory);
+     pmap.pixels = (Pixel *) XpmMalloc(sizeof(Pixel) * pmap.size);
+     if (!pmap.pixels)
+ 	RETURN(XpmNoMemory);
+@@ -297,7 +302,8 @@
+      * get rgb values and a string of char, and possibly a name for each
+      * color
+      */
+-
++    if (pmap.ncolors > INT_MAX/sizeof(XpmColor))
++	RETURN(XpmNoMemory);
+     colorTable = (XpmColor *) XpmCalloc(pmap.ncolors, sizeof(XpmColor));
+     if (!colorTable)
+ 	RETURN(XpmNoMemory);
+@@ -356,6 +362,8 @@
+ 
+     /* first get a character string */
+     a = 0;
++    if (cpp > INT_MAX-1)
++	return (XpmNoMemory);
+     if (!(s = color->string = (char *) XpmMalloc(cpp + 1)))
+ 	return (XpmNoMemory);
+     *s++ = printable[c = a % MAXPRINTABLE];
+@@ -447,6 +455,8 @@
+     }
+ 
+     /* first get character strings and rgb values */
++    if (ncolors > INT_MAX/sizeof(XColor) || cpp > INT_MAX-1)
++	return (XpmNoMemory);
+     xcolors = (XColor *) XpmMalloc(sizeof(XColor) * ncolors);
+     if (!xcolors)
+ 	return (XpmNoMemory);
