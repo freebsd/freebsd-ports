@@ -9,6 +9,7 @@ bin/limewire
 %%JAR_DIR%%/hashes
 %%JAR_DIR%%/i18n.jar
 %%JAR_DIR%%/icu4j.jar
+%%JAR_DIR%%/id3v2.jar
 %%JAR_DIR%%/jl011.jar
 %%JAR_DIR%%/logicrypto.jar
 %%JAR_DIR%%/mp3sp14.jar
