@@ -7,13 +7,15 @@
 
 PORTNAME=	citrix_ica
 PORTVERSION=	6.30.1054
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	german net comms linux
 MASTER_SITES=
 DISTNAME=	${PORTNAME}-linuxx86-de
 
 MAINTAINER=	mbr@FreeBSD.org
 COMMENT=	Citrix(R) client for the Microsoft Windows Terminal Server
+
+RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXaw.so.6:${PORTSDIR}/x11/linux-XFree86-libs
 
 ONLY_FOR_ARCHS=	i386
 RESTRICTED=	"License prohibits redistribution"
