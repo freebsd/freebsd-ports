@@ -9,6 +9,7 @@ PORTNAME=	frontpage
 PKGNAMEPREFIX=	it-
 
 MAINTAINER=	hetzels@westbend.net
+COMMENT=	Microsoft Frontpage Italian Web Administration
 
 MD5_FILE=	${.CURDIR}/distinfo
 

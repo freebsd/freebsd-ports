@@ -10,6 +10,7 @@ PKGNAMEPREFIX=	ko-
 CATEGORIES=	www korean
 
 MAINTAINER=	hetzels@westbend.net
+COMMENT=	Microsoft Frontpage Korean Web Administration
 
 MD5_FILE=	${.CURDIR}/distinfo
 

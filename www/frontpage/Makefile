@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.microsoft.com/products/frontpage/ \
 DISTFILES=	${FRONTPAGE}
 
 MAINTAINER=	hetzels@westbend.net
+COMMENT=	Microsoft Frontpage 2002 Extensions
 
 .include <bsd.port.pre.mk>
 

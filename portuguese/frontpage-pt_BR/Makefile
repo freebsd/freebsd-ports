@@ -10,6 +10,7 @@ CATEGORIES=	portuguese www
 PKGNAMEPREFIX=	pt_BR-
 
 MAINTAINER=	hetzels@westbend.net
+COMMENT=	Microsoft Frontpage Brazilian Web Administration
 
 MD5_FILE=	${.CURDIR}/distinfo
 

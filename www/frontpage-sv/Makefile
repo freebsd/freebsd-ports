@@ -9,6 +9,7 @@ PORTNAME=	frontpage
 PKGNAMEPREFIX=	sv-
 
 MAINTAINER=	hetzels@westbend.net
+COMMENT=	Microsoft Frontpage Swedish Web Administration
 
 MD5_FILE=	${.CURDIR}/distinfo
 
