@@ -459,6 +459,18 @@ diff -rNu fdiskbsdlabel.c fdiskbsdlabel.c
  		   SEEK_SET) == -1)
      fatal (unable_to_seek);
    if (sizeof (struct xbsd_disklabel) != write (fd, d, sizeof (struct xbsd_disklabel)))
+@@ -847,9 +847,11 @@
+ 
+ #if defined (__alpha__)
+ 
++/*
+ #if !defined(__GLIBC__)
+ typedef unsigned long long u_int64_t;
+ #endif
++*/
+
+ void
+ alpha_bootblock_checksum (char *boot)
 diff -rNu fdiskbsdlabel.h fdiskbsdlabel.h
 --- fdiskbsdlabel.h	Thu Oct 31 15:45:34 2002
 +++ fdiskbsdlabel.h	Fri Jun 20 19:25:55 2003
