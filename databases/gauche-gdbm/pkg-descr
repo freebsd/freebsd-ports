@@ -1,0 +1,4 @@
+This is a GDBM interface for Gauche.
+
+Author:	Shiro Kawai <shiro@acm.org>
+WWW:	http://www.shiro.dreamhost.com/scheme/gauche/index.html
