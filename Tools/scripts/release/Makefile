@@ -42,7 +42,7 @@ all:
 	cd ${RELEASE} && ln -s ../${SCRIPT} .
 .endfor
 .for SRCSCRIPT in ${SRCSCRIPTS}
-	cd ${RELEASE} && ln -s ${SRCSCRIPTS}/${SRCSCRIPT} .
+	cd ${RELEASE} && ln -s ${SRCSCRIPTDIR}/${SRCSCRIPT} .
 	@echo "Done."
 .endfor
 	cd ${RELEASE} && ln -s ../config .
