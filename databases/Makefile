@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.26 1998/01/11 17:54:44 steve Exp $
+# $Id: Makefile,v 1.27 1998/04/18 08:59:23 andreas Exp $
 #
     SUBDIR += db
     SUBDIR += gdbm
@@ -13,6 +13,7 @@
     SUBDIR += p5-Pg
     SUBDIR += pgaccess
     SUBDIR += postgresql
+    SUBDIR += py-PyGreSQL
     SUBDIR += tkgnats
     SUBDIR += typhoon
     SUBDIR += xmbase-grok
