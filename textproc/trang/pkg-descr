@@ -1,0 +1,9 @@
+Trang converts between different schema languages for XML.  It
+supports the following languages:
+
+    * RELAX NG (XML syntax)
+    * RELAX NG compact syntax
+    * XML 1.0 DTDs
+    * W3C XML Schema
+
+WWW: http://www.thaiopensource.com/relaxng/trang.html
