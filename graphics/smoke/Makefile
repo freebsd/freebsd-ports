@@ -36,7 +36,7 @@ pre-everything::
 	@${ECHO_MSG} "If your SDL does not support OpenGL, hit ^C now and reinstall SDL"
 	@${ECHO_MSG} "with OpenGL support turned on."
 
-post-patch:
+pre-configure:
 	@${REINPLACE_CMD} -e "s|%%FREETYPE_CONFIG%%|${FREETYPE_CONFIG}|g; \
 		s|%%SDL_CONFIG%%|${SDL_CONFIG}|g; \
 		s#%%FREETYPE_INCLUDEPATH%%#`${FREETYPE_CONFIG} --cflags | ${SED} -e 's|-I||g'`#; \
