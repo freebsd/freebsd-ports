@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ "`id -u`" != "0" ]; then
+	echo "This package must be added as root.";
+	exit 1;
+fi
+exit 0

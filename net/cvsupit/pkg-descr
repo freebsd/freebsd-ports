@@ -1,0 +1,3 @@
+This package installs the cvsup utility on your system and assists you in
+configuring it to track one or more of the FreeBSD source collections on
+your machine.
