@@ -21,8 +21,8 @@ USE_PYDISTUTILS=	yes
 
 .include <bsd.port.pre.mk>
 
-.if exists(${PYTHON_SITELIBDIR}/ogg/vorbismodule.so) || defined(WITH_VORBIS)
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ogg/vorbismodule.so:${PORTSDIR}/audio/py-vorbis
+.if exists(${PYTHON_SITELIBDIR}/ogg/vorbis.so) || defined(WITH_VORBIS)
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ogg/vorbis.so:${PORTSDIR}/audio/py-vorbis
 .else
 pre-everything::
 	@${ECHO_MSG} ""
