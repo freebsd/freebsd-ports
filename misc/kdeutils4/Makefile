@@ -28,10 +28,10 @@ USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
-#klaptop doesn't like alpha and ia64 because they don't support apm
-.if (${MACHINE_ARCH} == "alpha") || (${MACHINE_ARCH} == "ia64")
+#klaptop needs APM, which is i386 only 
+.if ${MACHINE_ARCH} != "i386"
 WITHOUT_KLAPTOP	=yes
-.endif # ${MACHINE_ARCH} == "alpha"
+.endif 
 
 .if defined(WITHOUT_KLAPTOP)
 DO_NOT_COMPILE+=klaptopdaemon
