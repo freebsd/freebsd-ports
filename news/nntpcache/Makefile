@@ -9,27 +9,18 @@ PORTNAME=	nntpcache
 PORTVERSION=	3.0.1
 PORTREVISION=	1
 CATEGORIES=	news
-MASTER_SITES=	ftp://ftp.nntpcache.org/pub/nntpcache/ \
-		ftp://ftp.cs.tu-berlin.de/pub/net/news/nntpcache/ \
+MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/net/news/nntpcache/ \
 		ftp://ftp.sbs.de/pub/news/servers/nntpcache/ \
 		ftp://ftp.ntua.gr/pub/net/news/nntpcache/ \
-		ftp://ftp.task.gda.pl/mirror/ftp.nntpcache.org/pub/nntpcache/ \
-		ftp://ftp.eos.hokudai.ac.jp/pub/network/news/nntpcache/ \
-		ftp://ftp.ayamura.org/pub/misc/
+		ftp://ftp.eos.hokudai.ac.jp/pub/network/news/nntpcache/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	News caching/anti-spam/server-merging system
 
 BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake
-.if defined(WITH_LDAP) && !defined(WITH_LDAP2)
-LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap12
-LIB_DEPENDS+=	lber.1:${PORTSDIR}/net/openldap12
-.endif
-.if defined(WITH_LDAP2)
-WITH_LDAP_VER?=	20
-LDAP_VER=	${WITH_LDAP_VER}
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap${LDAP_VER}-client
-LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap${LDAP_VER}-client
+
+.if defined(WITH_LDAP) || defined(WITH_LDAP2)
+USE_OPENLDAP=	yes
 .endif
 
 # This may be set interactively at install-time.  NNTPCache will
@@ -65,8 +56,7 @@ DOCS=		AUTHORS ChangeLog FAQ FAQ.html HACKING HTML \
 pre-everything::
 .if !defined(BATCH)
 	@${ECHO_MSG} "To enable LDAP support use either:"
-	@${ECHO_MSG} "	WITH_LDAP - LDAP v1 support"
-	@${ECHO_MSG} "	WITH_LDAP2 - LDAP v2 support"
+	@${ECHO_MSG} "	WITH_LDAP - OpenLDAP support"
 	@${ECHO_MSG}
 	@${ECHO_MSG} "To disable radius support use WITHOUT_RADIUS"
 .endif
