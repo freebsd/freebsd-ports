@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fcgi
-PORTVERSION=	2.2.2
+PORTVERSION=	2.4.0
 CATEGORIES=	www
 MASTER_SITES=	http://www.fastcgi.com/dist/
 PKGNAMESUFFIX=	-devkit
