@@ -15,6 +15,8 @@ DISTNAME=	cicb-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+BUILD_DEPENDS=	tclsh8.3:${PORTSDIR}/lang/tcl83
+
 GNU_CONFIGURE=	yes
 
 do-install:
