@@ -9,6 +9,7 @@ include/pango-1.0/pango/pango-engine.h
 include/pango-1.0/pango/pango-enum-types.h
 include/pango-1.0/pango/pango-font.h
 include/pango-1.0/pango/pango-fontmap.h
+include/pango-1.0/pango/pango-fontset.h
 include/pango-1.0/pango/pango-glyph.h
 include/pango-1.0/pango/pango-indic.h
 include/pango-1.0/pango/pango-item.h
