@@ -1,0 +1,37 @@
+--- Makefile.in.orig	Sat Apr 26 16:39:13 2003
++++ Makefile.in	Sat Jun  7 10:38:05 2003
+@@ -172,11 +172,11 @@
+ 	$(mkinstalldirs) $(DESTDIR)$(preludeconfdir)
+ 	@list='$(preludeconf_DATA)'; for p in $$list; do \
+ 	  if test -f $(srcdir)/$$p; then \
+-	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(preludeconfdir)/$$p"; \
+-	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(preludeconfdir)/$$p; \
++	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(preludeconfdir)/$$p-dist"; \
++	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(preludeconfdir)/$$p-dist; \
+ 	  else if test -f $$p; then \
+-	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(preludeconfdir)/$$p"; \
+-	    $(INSTALL_DATA) $$p $(DESTDIR)$(preludeconfdir)/$$p; \
++	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(preludeconfdir)/$$p-dist"; \
++	    $(INSTALL_DATA) $$p $(DESTDIR)$(preludeconfdir)/$$p-dist; \
+ 	  fi; fi; \
+ 	done
+ 
+@@ -413,17 +413,7 @@
+ 
+ install-data-local:
+ 	$(INSTALL) -m 700 -d $(DESTDIR)/$(configdir)/metadata;							
+-	@if test -f $(DESTDIR)/$(configdir)/prelude-lml.conf; then         					\
+-		echo "********************************************************************************"; 	\
+-                echo;                                                                                    	\
+-                echo "$(DESTDIR)/$(configdir)/prelude-lml.conf already exist...";				\
+-                echo "Installing default configuration in $(DESTDIR)/$(configdir)/prelude-lml.conf-dist";       \
+-                echo;                                                                                    	\
+-                echo "********************************************************************************"; 	\
+-		$(INSTALL) -m 600 $(top_srcdir)/prelude-lml.conf $(DESTDIR)/$(configdir)/prelude-lml.conf-dist; \
+-        else                                                                                             	\
+-                $(INSTALL) -m 600 $(top_srcdir)/prelude-lml.conf $(DESTDIR)/$(configdir)/;                      \
+-        fi
++	$(INSTALL) -m 600 $(top_srcdir)/prelude-lml.conf $(DESTDIR)/$(configdir)/prelude-lml.conf-dist;
+ 
+ nickel: distclean
+ 	@find . -type f -name Makefile.in | xargs rm
