@@ -3,7 +3,7 @@
 # Date created:		9 May 1999
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/10 14:47:26 shige Exp $
+# $Id: Makefile,v 1.2 1999/05/21 13:36:01 shige Exp $
 #
 
 MAINTAINER=	shige@FreeBSD.ORG
@@ -17,7 +17,8 @@ MASTERDIR=	${.CURDIR}/../../editors/wemi-emacs-current
 EMACS_NAME=	mule
 EMACS_PORT=	mule
 EMACS_VER=	19.34
-EMACS_LIBDIR=	share/${EMACS_NAME}
+EMACS_LIBDIR=		share/${EMACS_NAME}
+EMACS_LIBDIR_WITH_VER=	${EMACS_LIBDIR}/${EMACS_VER}
 
 HAVE_COMMON_PORT=	YES
 REQUIRE_SETUPEL=	YES

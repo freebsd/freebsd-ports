@@ -24,7 +24,7 @@
 %%EMACS_LIBDIR%%/site-lisp/semi/mime-mc.el
 %%EMACS_LIBDIR%%/site-lisp/semi/mime-bbdb.el
 %%EMACS_LIBDIR%%/site-lisp/semi/mime-w3.el
-%%EMACS_LIBDIR%%/site-lisp/%%WEMI_SETUPEL%%
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/%%WEMI_SETUPEL%%
 @dirrm %%EMACS_LIBDIR%%/site-lisp/semi
 %%WEMIDOCDIR%%/ChangeLog
 %%WEMIDOCDIR%%/NEWS
