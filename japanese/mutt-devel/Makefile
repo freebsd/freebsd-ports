@@ -9,19 +9,19 @@
 
 PORTNAME=	mutt
 PORTVERSION=	${VERSION}.j${JP_VERSION}
-PORTREVISION=	2
+PORTREVISION=	0
 CATEGORIES=	japanese mail
 MASTER_SITES=	http://www.emaillab.org/mutt/1.5/ \
 		http://my.reset.jp/~iwashita/mutt/distfiles/ \
 		http://ha4.seikyou.ne.jp/home/Kohtaro.Hitomi/mutt/ \
-		ftp://ftp.mutt.org/pub/mutt/devel/
+		ftp://ftp.mutt.org/mutt/devel/
 DISTNAME=	${PORTNAME}-${VERSION}i
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME}-ja.${JP_VERSION}${EXTRACT_SUFX} \
 		manual_ja-${MANUALVERSION}i-1${EXTRACT_SUFX}
 DIST_SUBDIR=	mutt
 
-MAINTAINER=	iwashita@cqmail.net
+MAINTAINER=	st@be.to
 COMMENT=	Text-based mail client (Japanised development version)
 
 LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang \
@@ -36,7 +36,7 @@ LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 .endif
 RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview
 
-VERSION=	1.5.4
+VERSION=	1.5.6
 JP_VERSION=	1
 MANUALVERSION=	1.4
 
@@ -74,7 +74,6 @@ DIFFDIR=	${WRKDIR}/${DISTNAME}-ja.${JP_VERSION}
 DIFFNAME=	patch-${VERSION}.tt.ja.${JP_VERSION}
 
 pre-patch:
-	(cd ${DIFFDIR}; ${PATCH} < ${FILESDIR}/prepatch-aa)
 	(cd ${WRKSRC}; ${PATCH} -p1 < ${DIFFDIR}/${DIFFNAME})
 
 pre-configure:
