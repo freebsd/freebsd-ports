@@ -82,35 +82,6 @@ bin/avr-readelf
 bin/avr-size
 bin/avr-strings
 bin/avr-strip
-@unexec install-info --delete %D/info/as.info %D/info/dir
-@unexec install-info --delete %D/info/binutils.info %D/info/dir
-@unexec install-info --delete %D/info/ld.info %D/info/dir
-info/as.info
-info/as.info-1
-info/as.info-10
-info/as.info-11
-info/as.info-2
-info/as.info-3
-info/as.info-4
-info/as.info-5
-info/as.info-6
-info/as.info-7
-info/as.info-8
-info/as.info-9
-info/binutils.info
-info/binutils.info-1
-info/binutils.info-2
-info/binutils.info-3
-info/ld.info
-info/ld.info-1
-info/ld.info-2
-info/ld.info-3
-info/ld.info-4
-info/ld.info-5
-info/ld.info-6
-@exec install-info %D/info/as.info %D/info/dir
-@exec install-info %D/info/binutils.info %D/info/dir
-@exec install-info %D/info/ld.info %D/info/dir
 share/locale/da/LC_MESSAGES/binutils.mo
 share/locale/es/LC_MESSAGES/binutils.mo
 share/locale/es/LC_MESSAGES/gas.mo
