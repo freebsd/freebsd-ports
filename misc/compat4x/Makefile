@@ -15,6 +15,7 @@ DISTFILES=	${COMPAT4X_DISTFILES}
 DIST_SUBDIR=	${ARCH}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A convenience package to install the compat4x libraries
 
 WRKSRC=		${WRKDIR}/usr/lib/compat
 NO_MTREE=	yes
@@ -31,8 +32,9 @@ COMPAT4X_OSVERSION=	5.0
 COMPAT4X_OSBRANCH=	CURRENT
 COMPAT4X_MASTER_SITES=	ftp://current.FreeBSD.org/pub/FreeBSD/%SUBDIR%/
 .if ${ARCH} == i386
-COMPAT4X_OSRELDATE=	20021221
-COMPAT4X_DISTFILES=	${PORTNAME}.aa
+COMPAT4X_OSRELDATE=	20030218
+COMPAT4X_DISTFILES=	${PORTNAME}.aa \
+			${PORTNAME}.ab
 .elif ${ARCH} == alpha
 FORBIDDEN=		"FreeBSD-SA-02:28.resolv - buffer overflow in resolver in libc"
 
@@ -47,7 +49,6 @@ COMPAT4X_DISTFILES=	${PORTNAME}.aa \
 .else
 IGNORE=			unsupported architecture
 .endif
-CURRENT_ONLY=		""
 .else
 COMPAT4X_OSVERSION=	4.7
 .if ${ARCH} == i386
@@ -63,16 +64,12 @@ IGNORE=			unsupported architecture
 .endif
 .endif
 
-CURRENT_ONLY?=		"@comment "
-
+PLIST=	${.CURDIR}/pkg-plist.${ARCH}-freebsd${OSREL:C/\..*//}
 .if ${ARCH} == i386
 I386_ONLY=		""
 .else
 I386_ONLY=		"@comment "
 .endif
-
-PLIST_SUB+=		CURRENT_ONLY:=${CURRENT_ONLY} \
-			I386_ONLY:=${I386_ONLY}
 
 OPENSSL_LIBS=		libcrypto.so.1 libssl.so.1
 .if defined(FORCE_VULNERABLE_OPENSSL)
