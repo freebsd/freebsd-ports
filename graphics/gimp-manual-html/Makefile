@@ -40,7 +40,7 @@ EXTRACT_SUFX=	-html.tar.bz2
 WRKSRC=		${WRKDIR}/GimpUserManaul_v1.0.0
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+PREFIX?=	${X11BASE}	# This port itself does not require Xlib
 NO_BUILD=	yes
 
 do-install:
@@ -53,7 +53,6 @@ DISTFILES=	GimpUserManual-1.0.0-pdf
 
 EXTRACT_ONLY=	#empty
 NO_BUILD=	yes
-USE_X_PREFIX=	yes
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/doc/gimp
@@ -70,7 +69,6 @@ EXTRACT_AFTER_ARGS= > ${DISTNAME}
 NO_CDROM=	"too big"
 
 NO_BUILD=	yes
-USE_X_PREFIX=	yes
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/doc/gimp
