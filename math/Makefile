@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.45 1998/06/25 06:38:28 tg Exp $
+# $Id: Makefile,v 1.46 1998/07/11 18:21:26 steve Exp $
 #
 
     SUBDIR += Scilab
@@ -30,6 +30,7 @@
     SUBDIR += siag
     SUBDIR += simpack
     SUBDIR += ss
+    SUBDIR += superlu
     SUBDIR += umatrix
     SUBDIR += umfpack
     SUBDIR += wingz
