@@ -1,6 +1,6 @@
---- SConstruct.orig	Sun Jan 16 00:08:50 2005
-+++ SConstruct	Tue Jan 18 19:45:45 2005
-@@ -14,6 +14,10 @@
+--- SConstruct.orig	Wed Feb  2 09:35:41 2005
++++ SConstruct	Wed Feb  2 21:47:51 2005
+@@ -20,6 +20,10 @@
  
  env.AppendUnique(LIBS = ['qt-mt', 'kdecore'])
  
@@ -8,6 +8,6 @@
 +env['CXXFLAGS'] = "%%CXXFLAGS%%"
 +env.AppendUnique(LINKFLAGS = ['%%LINKFLAGS%%'])
 +
- env['ITARGETS'] = []
+ if env['INSTALL_ALL'] == 1:
+     env['ITARGETS'] = []
  
- ### subdirectories
