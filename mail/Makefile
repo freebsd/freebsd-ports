@@ -3,6 +3,7 @@
 
     SUBDIR += abook
     SUBDIR += adcomplain
+    SUBDIR += akpop3d
     SUBDIR += althea
     SUBDIR += anubis
     SUBDIR += archivemail
