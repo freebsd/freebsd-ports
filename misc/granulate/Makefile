@@ -9,9 +9,10 @@
 PORTNAME=	granulate
 PORTVERSION=	0.2
 CATEGORIES=	misc
-MASTER_SITES=	http://exe2bin.com/granulate/
+MASTER_SITES=	http://exe2bin.com/granulate/ \
+		http://galileo.spaceports.com/~jharris/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jharris@widomaker.com
 
 post-patch:
 	@${PERL} -pi -e "s,^CC,#CC,g ; s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/Makefile
