@@ -30,7 +30,7 @@ Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 # USE_RUBY_EXTCONF	- Says that the port uses extconf.rb to configure.  Implies USE_RUBY.
 # RUBY_EXTCONF		- Set to the alternative name of extconf.rb (default: extconf.rb).
 # RUBY_EXTCONF_SUBDIRS	- Set to list of subdirectories, if multiple modules are included.
-# USE_RUBY_SETUP	- Says that the port uses setup.rb to configure and build.  Implies USE_RUBY_AMSTD.
+# USE_RUBY_SETUP	- Says that the port uses setup.rb to configure and build.
 # RUBY_SETUP		- Set to the alternative name of setup.rb (default: setup.rb).
 # USE_RUBY_AMSTD	- Says that the port uses amstd for building and running.
 # USE_RUBY_RD		- Says that the port uses rd to generate documents.
@@ -288,8 +288,6 @@ ruby-extconf-configure:
 
 # setup.rb
 .if defined(USE_RUBY_SETUP)
-USE_RUBY_AMSTD=		yes
-
 RUBY_SETUP?=		setup.rb
 
 do-configure:	ruby-setup-configure
