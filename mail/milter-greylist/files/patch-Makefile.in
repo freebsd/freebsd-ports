@@ -1,5 +1,5 @@
---- Makefile.in.orig	Tue Jun  8 17:57:34 2004
-+++ Makefile.in	Sat Jun 12 10:47:56 2004
+--- Makefile.in.orig	Wed Jun 16 22:28:30 2004
++++ Makefile.in	Fri Jun 25 16:26:41 2004
 @@ -29,9 +29,9 @@
  # OF THE POSSIBILITY OF SUCH DAMAGE.
  #
@@ -13,28 +13,3 @@
  prefix=		@prefix@
  exec_prefix=	@exec_prefix@
  SYSCONFDIR=	@sysconfdir@
-@@ -80,23 +80,7 @@
- 	${INSTALL} -m 755 milter-greylist ${BINDIR}
- 	${INSTALL} -m 644 milter-greylist.8 ${MANDIR}/man8
- 	${INSTALL} -m 644 greylist.conf.5 ${MANDIR}/man5
--	${TEST} -f /etc/mail/greylist.conf -o -f /etc/mail/greylist.except || \
--	     ${INSTALL} -m 644 greylist.conf /etc/mail
--	${INSTALL} -d -m 755 -o ${USER} /var/milter-greylist
--	@${TEST} -f /var/db/greylist.db && (			 	   \
--		echo "	================================================"; \
--		echo "	  WARNING: the dump file location has changed,  "; \
--		echo "	  Please move /var/db/greylist.db, the default  "; \
--		echo "	  location is now in /var/milter-greylist/      "; \
--		echo "	================================================"; \
--	) || ${TRUE}
--	@${TEST} -f /etc/mail/greylist.except && (		 	   \
--		echo "	================================================"; \
--		echo "	 WARNING: the config file name has changed,     "; \
--		echo "	 Please rename /etc/mail/greylist.except, the   "; \
--		echo "	 default name is now in /etc/mail/greylist.conf "; \
--		echo "	================================================"; \
--	) || ${TRUE}
-+	${INSTALL} -m 644 greylist.conf ${SYSCONFDIR}/mail/greylist.conf.sample
- 
- depend:
- 	${MKDEP} ${CFLAGS} ${SRC}
