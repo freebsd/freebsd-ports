@@ -7,6 +7,7 @@
 
 PORTNAME=	xorg
 PORTVERSION=	6.7.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -17,6 +18,7 @@ COMMENT=	X.Org distribution metaport
 
 LIB_DEPENDS=	X11.6:${PORTSDIR}/x11/xorg-libraries
 RUN_DEPENDS=	xvinfo:${PORTSDIR}/x11/xorg-clients \
+		${X11BASE}/share/doc/X11/ddx.txt:${PORTSDIR}/x11/xorg-documents \
 		${FONT100DPI}:${PORTSDIR}/x11-fonts/xorg-fonts-100dpi \
 		${FONT75DPI}:${PORTSDIR}/x11-fonts/xorg-fonts-75dpi \
 		${FONTCYR}:${PORTSDIR}/x11-fonts/xorg-fonts-cyrillic \
@@ -29,7 +31,6 @@ RUN_DEPENDS=	xvinfo:${PORTSDIR}/x11/xorg-clients \
 		${X11BASE}/bin/Xvfb:${PORTSDIR}/x11-servers/xorg-vfbserver \
 		${X11BASE}/bin/Xprt:${PORTSDIR}/x11-servers/xorg-printserver \
 		${X11BASE}/lib/modules/dri/r200_dri.so:${PORTSDIR}/graphics/dri
-#		${X11BASE}/lib/X11/doc/ddx.TXT:${PORTSDIR}/x11/xorg-documents \
 
 FONT100DPI=	${X11BASE}/lib/X11/fonts/100dpi/UTBI__10-ISO8859-1.pcf.gz
 FONT75DPI=	${X11BASE}/lib/X11/fonts/75dpi/UTBI__10-ISO8859-1.pcf.gz
