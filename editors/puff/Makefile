@@ -1,0 +1,18 @@
+# New ports collection makefile for:   puff
+# Date created:        10 April 2003
+# Whom:                Leif Pedersen <bilbo@developerpit.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=      puff
+PORTVERSION=   0.42
+CATEGORIES=    editors
+MASTER_SITES=  ftp://ftp.developerpit.com/puff/
+
+MAINTAINER=    bilbo@developerpit.com
+COMMENT=       Simple and efficient text editor
+
+WRKSRC=        ${WRKDIR}/puff
+
+.include <bsd.port.mk>
