@@ -8,7 +8,7 @@
 PORTNAME=	cim
 PORTVERSION=	3.36
 CATEGORIES=	lang
-MASTER_SITES=	http://www.gtlib.cc.gatech.edu/pub/fink/
+MASTER_SITES=	ftp://ftp.ifi.uio.no/pub/cim/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compiler for the SIMULA programming language
