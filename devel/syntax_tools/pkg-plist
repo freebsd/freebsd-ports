@@ -1,0 +1,33 @@
+lib/erlang/lib/syntax_tools-%%VERSION%%/doc/epp_dodger.html
+lib/erlang/lib/syntax_tools-%%VERSION%%/doc/erl_comment_scan.html
+lib/erlang/lib/syntax_tools-%%VERSION%%/doc/erl_prettypr.html
+lib/erlang/lib/syntax_tools-%%VERSION%%/doc/erl_recomment.html
+lib/erlang/lib/syntax_tools-%%VERSION%%/doc/erl_syntax.html
+lib/erlang/lib/syntax_tools-%%VERSION%%/doc/erl_syntax_lib.html
+lib/erlang/lib/syntax_tools-%%VERSION%%/doc/erl_tidy.html
+lib/erlang/lib/syntax_tools-%%VERSION%%/doc/index.html
+lib/erlang/lib/syntax_tools-%%VERSION%%/doc/stylesheet.css
+lib/erlang/lib/syntax_tools-%%VERSION%%/ebin/epp_dodger.beam
+lib/erlang/lib/syntax_tools-%%VERSION%%/ebin/erl_comment_scan.beam
+lib/erlang/lib/syntax_tools-%%VERSION%%/ebin/erl_prettypr.beam
+lib/erlang/lib/syntax_tools-%%VERSION%%/ebin/erl_recomment.beam
+lib/erlang/lib/syntax_tools-%%VERSION%%/ebin/erl_syntax.beam
+lib/erlang/lib/syntax_tools-%%VERSION%%/ebin/erl_syntax_lib.beam
+lib/erlang/lib/syntax_tools-%%VERSION%%/ebin/erl_tidy.beam
+lib/erlang/lib/syntax_tools-%%VERSION%%/ebin/prettypr.beam
+lib/erlang/lib/syntax_tools-%%VERSION%%/ebin/proplists.beam
+lib/erlang/lib/syntax_tools-%%VERSION%%/src/epp_dodger.erl
+lib/erlang/lib/syntax_tools-%%VERSION%%/src/erl_comment_scan.erl
+lib/erlang/lib/syntax_tools-%%VERSION%%/src/erl_prettypr.erl
+lib/erlang/lib/syntax_tools-%%VERSION%%/src/erl_recomment.erl
+lib/erlang/lib/syntax_tools-%%VERSION%%/src/erl_syntax.erl
+lib/erlang/lib/syntax_tools-%%VERSION%%/src/erl_syntax_lib.erl
+lib/erlang/lib/syntax_tools-%%VERSION%%/src/erl_tidy.erl
+lib/erlang/lib/syntax_tools-%%VERSION%%/src/prettypr.erl
+lib/erlang/lib/syntax_tools-%%VERSION%%/src/proplists.erl
+@dirrm lib/erlang/lib/syntax_tools-%%VERSION%%/src
+@dirrm lib/erlang/lib/syntax_tools-%%VERSION%%/ebin
+@dirrm lib/erlang/lib/syntax_tools-%%VERSION%%/doc
+@dirrm lib/erlang/lib/syntax_tools-%%VERSION%%
+@exec ln -sf syntax_tools-%%VERSION%% %D/lib/erlang/lib/syntax_tools
+@unexec rm -f %D/lib/erlang/lib/syntax_tools
