@@ -18,6 +18,8 @@ LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl
 MAKE_ENV=	SOUND=yes
 .endif
 
+ONLY_FOR_ARCHS=	i386	# Alphas don't have libvgl yet...
+
 DIGREL=		20000407
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DIGREL}
 MAKEFILE=	Makefile.fbsd
