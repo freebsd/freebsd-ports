@@ -1,0 +1,4 @@
+This package includes undms, a decompressor for the Amiga DMS disk image
+format.  It outputs ".adf" (11 sector per track, 80 tracks, 512
+bytes/sector) uncompressed disk images which may be written directly to
+disk on NetBSD/amiga or used with an Amiga emulator.
