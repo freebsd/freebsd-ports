@@ -9,15 +9,3 @@ info/sharutils.info
 info/remsync.info
 @exec install-info %D/info/sharutils.info %D/info/dir
 @exec install-info %D/info/remsync.info %D/info/dir
-lib/locale/de/LC_MESSAGES/sharutils.cat
-lib/locale/fr/LC_MESSAGES/sharutils.cat
-lib/locale/ja_JP.EUC/LC_MESSAGES/sharutils.cat
-lib/locale/nl/LC_MESSAGES/sharutils.cat
-lib/locale/pt/LC_MESSAGES/sharutils.cat
-lib/locale/sv/LC_MESSAGES/sharutils.cat
-share/locale/de.gmo/LC_MESSAGES/sharutils.cat
-share/locale/fr.gmo/LC_MESSAGES/sharutils.cat
-share/locale/ja_JP.EUC.gmo/LC_MESSAGES/sharutils.cat
-share/locale/nl.gmo/LC_MESSAGES/sharutils.cat
-share/locale/pt.gmo/LC_MESSAGES/sharutils.cat
-share/locale/sv.gmo/LC_MESSAGES/sharutils.cat
