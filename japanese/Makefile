@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.165 1998/11/21 03:26:40 kuriyama Exp $
+# $Id: Makefile,v 1.166 1998/11/22 08:14:36 kuriyama Exp $
 #
 
     SUBDIR += Canna
@@ -178,6 +178,7 @@
     SUBDIR += tcsh-nls-roomi
     SUBDIR += tcsh-nls-ruri2
     SUBDIR += tgif
+    SUBDIR += tgif2tex
     SUBDIR += tk42
     SUBDIR += tk80
     SUBDIR += today
