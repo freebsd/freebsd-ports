@@ -3,19 +3,14 @@
 # Date created:        			12/01/1998
 # Whom:                			nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.5 1998/12/03 04:35:44 nectar Exp $
+# $Id: Makefile,v 1.6 1998/12/28 12:49:18 asami Exp $
 #
 
 DISTNAME=	2.2
 PKGNAME=	squeak-2.2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.nectar.com/distfiles/squeak/ \
-		ftp://alix.inria.fr/pub/squeak/unix/ \
-		ftp://st.cs.uiuc.edu/pub/Smalltalk/Squeak/unix/ \
-		http://st-www.cs.uiuc.edu/ftp/Smalltalk/Squeak/ \
-		ftp://uiarchive.cso.uiuc.edu/pub/lang/smalltalk/smalltalk/Squeak/ \
-		http://wuarchive.wustl.edu/languages/smalltalk/smalltalk/Squeak/ \
-		ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/Smalltalk/Squeak/
+		ftp://alix.inria.fr/pub/squeak/unix/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} image/${SQUEAK_SRC}
 
 MAINTAINER=	nectar@FreeBSD.ORG
