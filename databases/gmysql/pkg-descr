@@ -1,16 +1,10 @@
-General Information
-===================
+gmysql is a program that allows the user to connect to a MySQL
+database and modify its design in the following ways:
 
-gmysql is a graphical user interface to the mysqld SQL database
-server. gmysql uses GTK+ for its widgets.
+* add or remove tables;
+* add or remove columns or indices;
+* modify columns or indices while preserving the data in them where possible.
 
-The gmysql web site is:
-  http://www.loth.demon.co.uk/gmysql/
+It is also possible to add and remove databases.
 
-The GTK+ web site is:
-  http://www.gtk.org/
-
-The MySQL web site is:
-  http://www.tcx.se/
-
-WWW: http://www.loth.demon.co.uk/gmysql/
+WWW: http://www.loth.demon.co.uk/people/steved/projects/gmysql/
