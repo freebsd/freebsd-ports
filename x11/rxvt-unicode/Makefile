@@ -3,7 +3,7 @@
 # Date created:		5th December 1994
 # Whom:			gpalmer@FreeBSD.org
 #
-# $Id: Makefile,v 1.6 1995/04/01 12:51:04 jkh Exp $
+# $Id: Makefile,v 1.7 1995/04/12 20:31:23 asami Exp $
 #
 
 DISTNAME=	rxvt-2.09
@@ -14,7 +14,6 @@ MAINTAINER=	gpalmer@FreeBSD.ORG
 
 WRKSRC=		${WRKDIR}/rxvt
 USE_IMAKE=	yes
-PREFIX=		/usr/X11R6
 
 # Get rid of the rclock directory until I can figure out how to patch
 # that up also and make it!
