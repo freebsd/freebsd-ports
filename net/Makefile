@@ -473,6 +473,7 @@
     SUBDIR += partysip
     SUBDIR += passlogd
     SUBDIR += pathchar
+    SUBDIR += pbnc
     SUBDIR += pchar
     SUBDIR += pcnfsd
     SUBDIR += pear-Net_NNTP
