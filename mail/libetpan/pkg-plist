@@ -26,6 +26,7 @@ include/libetpan/maildirdriver_message.h
 include/libetpan/maildirdriver_types.h
 include/libetpan/maildirstorage.h
 include/libetpan/maildriver.h
+include/libetpan/maildriver_errors.h
 include/libetpan/maildriver_tools.h
 include/libetpan/maildriver_types.h
 include/libetpan/maildriver_types_helper.h
