@@ -1,0 +1,11 @@
+--- src/impress.tcl.orig	Fri Jun 29 10:21:58 2001
++++ src/impress.tcl	Fri Jun 29 10:22:10 2001
+@@ -19,7 +19,7 @@
+ # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ #
+ # restart trick \
+-exec wish "$0" "$@"
++exec wish8.3 "$0" "$@"
+ 
+ option add *Radiobutton*borderWidth 1
+ option add *Button*borderWidth 1

@@ -60,6 +60,7 @@
     SUBDIR += hnb
     SUBDIR += hte
     SUBDIR += iiimecf
+    SUBDIR += impress
     SUBDIR += jed
     SUBDIR += jedit
     SUBDIR += jext
