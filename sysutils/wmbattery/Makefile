@@ -17,17 +17,13 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-USE_GMAKE=	yes
-MAKE_ENV=	PREFIX="${PREFIX}" INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-		INSTALL_DATA="${INSTALL_DATA}" INSTALL_MAN="${INSTALL_MAN}"
 ALL_TARGET=	wmbattery
 MAN1=		wmbattery.1
 
-# install additional docs
-.if !defined(NOPORTDOCS)
 post-install:
-.for i in COPYING INSTALL README TODO
-	@${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/wmbattery
+.if !defined(NOPORTDOCS)
+.for i in INSTALL README TODO
+	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/wmbattery
 .endfor
 .endif
 
