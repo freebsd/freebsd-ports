@@ -24,6 +24,12 @@ USE_GMAKE=	yes
 ALL_TARGET=	all opt opt.opt
 INSTALL_TARGET=	install installopt
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Broken pkg-plist"
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
@@ -35,4 +41,4 @@ post-install:
 .endif
 	@${STRIP_CMD} ${PREFIX}/bin/ncamlrun
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
