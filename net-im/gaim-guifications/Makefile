@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	guifications
-PORTVERSION=	1.9
+PORTVERSION=	1.10
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +20,7 @@ RUN_DEPENDS=	gaim:${PORTSDIR}/net/gaim
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack lthack gtk20
-USE_INC_LIBTOOL_VER=13
+USE_GNOME=	gnomeprefix gnomehack gtk20
+USE_LIBTOOL_VER=15
 
 .include <bsd.port.mk>
