@@ -1,26 +1,39 @@
---- Makefile	Mon Nov 27 07:43:28 2000
-+++ Makefile.new	Thu Dec 21 17:51:49 2000
-@@ -1,46 +1,21 @@
--
+--- Makefile.orig	Tue Feb 27 17:50:21 2001
++++ Makefile	Sun Mar 11 04:43:49 2001
+@@ -1,51 +1,21 @@
++PROG=	asp2php
++NOMAN=	true
++CC?=	cc
++CFLAGS?=-O -pipe
++CFLAGS+=-Wall
++SRCS=	conditionals.c database.c evalelement.c expression.c general.c \
++	gettoken.c html.c loops.c mysql.c odbc.c oracle.c postgres.c \
++	response.c request.c session.c sybase.c asp2php.c
+ 
 -CC=gcc
 -
 -default:
--	$(CC) -c general.c -Wall
 -	$(CC) -c conditionals.c -Wall
 -	$(CC) -c database.c -Wall
--	$(CC) -c mysql.c -Wall
--	$(CC) -c sybase.c -Wall
--	$(CC) -c odbc.c -Wall
--	$(CC) -c oracle.c -Wall
--	$(CC) -c postgres.c -Wall
 -	$(CC) -c evalelement.c -Wall
+-	$(CC) -c expression.c -Wall
+-	$(CC) -c general.c -Wall
 -	$(CC) -c gettoken.c -Wall
 -	$(CC) -c html.c -Wall
 -	$(CC) -c loops.c -Wall
+-	$(CC) -c mysql.c -Wall
+-	$(CC) -c odbc.c -Wall
+-	$(CC) -c oracle.c -Wall
+-	$(CC) -c postgres.c -Wall
+-	$(CC) -c response.c -Wall
+-	$(CC) -c request.c -Wall
 -	$(CC) -c session.c -Wall
--	$(CC) -o asp2php asp2php.c general.o conditionals.o database.o \
--		evalelement.o gettoken.o html.o loops.o mysql.o\
--		sybase.o odbc.o oracle.o postgres.o session.o -Wall
+-	$(CC) -c sybase.c -Wall
+-	$(CC) -o asp2php asp2php.c conditionals.o database.o \
+-		evalelement.o expression.o general.o gettoken.o \
+-		html.o loops.o mysql.o \
+-		odbc.o oracle.o postgres.o response.o \
+-		request.o session.o sybase.o -Wall
 -	@echo ""
 -#	@echo "Done!  You may type: make gtkasp2php for the optional GUI now"
 -
@@ -30,33 +43,26 @@
 -	@if [ -e gtkasp2php ]; then rm gtkasp2php; fi;
 -	@if [ -e unipiss ]; then rm unipiss; fi;
 -	@echo "Clean!"
-+PROG=	asp2php
-+NOMAN=	true
-+CC?=	cc
-+CFLAGS?=-O -pipe
-+CFLAGS+=-Wall
-+SRCS=	general.c conditionals.c database.c mysql.c sybase.c odbc.c oracle.c \
-+	postgres.c evalelement.c gettoken.c html.c loops.c session.c asp2php.c
 +CLEANFILES+=	gtkasp2php.o gtkasp2php
  
  gtkasp2php: gtkasp2php.c
- 	$(CC) -o gtkasp2php gtkasp2php.c `gtk-config --cflags` `gtk-config --libs`
- 
+-	$(CC) -o gtkasp2php gtkasp2php.c `gtk-config --cflags` `gtk-config --libs`
+-
 -unipiss:
 -	$(CC) -o unipiss unipiss.c html.o general.o -Wall
--
++	$(CC) -o gtkasp2php gtkasp2php.c `$(GTK_CONFIG) --cflags` `$(GTK_CONFIG) --libs`
+ 
  install:
 -	@if [ -e asp2php ]; then cp asp2php /usr/local/bin; fi;
 -	@if [ -e unipiss ]; then cp unipiss /usr/local/bin; fi;
 -	@if [ -e gtkasp2php ]; then cp gtkasp2php /usr/local/bin; fi;
 -	@echo "Compiled programs have been installed in /usr/local/bin"
-+	@if [ -e asp2php ]; then $(BSD_INSTALL_PROGRAM) asp2php $(PREFIX)/bin; fi;
-+	@echo "Compiled programs have been installed in $(PREFIX)/bin"
- 	@echo ""
- 
--all: default
+-	@echo ""
 -
+-all: default
++	$(BSD_INSTALL_PROGRAM) asp2php $(PREFIX)/bin
+ 
 +install-gtk:
-+	@if [ -e gtkasp2php ]; then $(BSD_INSTALL_PROGRAM) gtkasp2php $(PREFIX)/bin; fi;
++	$(BSD_INSTALL_PROGRAM) gtkasp2php $(PREFIX)/bin
  
 +.include <bsd.prog.mk>
