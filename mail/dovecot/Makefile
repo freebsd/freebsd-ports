@@ -1,12 +1,12 @@
 # New ports collection makefile for:	dovecot
 # Date created:				12/08/2002
-# Whom:			Dominic Marks <d.marks@student.umist.ac.uk>
+# Whom:			Dominic Marks <dominic.marks@btinternet.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	dovecot
-PORTVERSION=	0.99.9.1
+PORTVERSION=	0.99.10
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://dovecot.procontrol.fi/
 
@@ -91,7 +91,7 @@ LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql
 CONFIGURE_ARGS+=	--with-pgsql
 .endif
 
-pre-everything:
+pre-everything::
 	@${ECHO_MSG} "==>  Dovecot Options"
 	@${ECHO_MSG} "==>   See the Makefile for descriptions."
 	@${ECHO_MSG} "==> ------------------------------------------"
