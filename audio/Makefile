@@ -321,6 +321,7 @@
     SUBDIR += xmms-a52dec
     SUBDIR += xmms-audiofile
     SUBDIR += xmms-bonk
+    SUBDIR += xmms-cdparanoia
     SUBDIR += xmms-cdread
     SUBDIR += xmms-crossfade
     SUBDIR += xmms-crystality
