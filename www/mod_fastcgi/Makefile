@@ -24,6 +24,10 @@ do-build:
 
 do-install:
 	cd ${WRKSRC} ; ${LOCALBASE}/sbin/apxs -i -a -n fastcgi mod_fastcgi.so
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/mod_fastcgi
+	@cd ${WRKSRC} ; ${CP} -R docs/* ${PREFIX}/share/doc/mod_fastcgi
+.endif
 
 post-install:
 	@${ECHO_MSG} "*******************************************************"
