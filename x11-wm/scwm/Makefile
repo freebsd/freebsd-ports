@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scwm
-PORTVERSION= 	0.99.6.1
+PORTVERSION=	0.99.6.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://scwm.mit.edu/pub/scwm/
 
@@ -23,14 +23,14 @@ GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-guile-prefix=${LOCALBASE}
-CONFIGURE_ENV+= CPPFLAGS="-I${X11BASE}/include" \
+CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include" \
 		GTK_CONFIG="${GTK_CONFIG}" \
 		GLIB_CONFIG="${GLIB_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
 
 .if defined(MULTIBYTE)
 CONFIGURE_ARGS+=	--enable-multibyte=yes
-CONFIGURE_ENV+= LIBS="-L${X11BASE}/lib -lxpg4"
+CONFIGURE_ENV+=	LIBS="-L${X11BASE}/lib -lxpg4"
 .endif
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

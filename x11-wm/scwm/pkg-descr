@@ -12,4 +12,4 @@ scheme configurable window manager
   ${WORKDIR}/utilities/emacs
   ${WORKDIR}/configure --help
 
-SCWM Home Page: http://scwm.mit.edu/
+WWW: http://scwm.mit.edu/
