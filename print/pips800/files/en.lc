@@ -1,0 +1,47 @@
+#!/bin/sh
+###############################################################################
+### 
+### From @(#) Photo Image Print System -Locale file of install script
+### in pips900-2.1.i386.tgz
+### by taoka
+
+A_TXT="It starts to set up of photo Image Print System.\n"\
+"If this product does not set up, it does not operate correctly.\n"
+
+B_TXT="Please specify the connection of a printer.\n"
+
+C_TXT="Please specify the printer name when it is using by lpr.\n"
+
+D_TXT="Setup is complete. Is it saved?\n"
+
+if [ "$VERSION" = "2.0" -o "$VERSION" = "2.1" ]; then
+if [ X"$WITH_EKPD" != X ]; then
+E1_TXT="The following files were changed.\n"\
+"$EKPDRC\n/etc/printcap\n/etc/services\n\n"\
+"The following directories were created.\n"\
+"/var/spool/lpd/$PRT_NAME_LOW\n"
+else
+E1_TXT="The following files were changed.\n"\
+"$EKPDRC\n/etc/printcap\n\n"\
+"The following directories were created.\n"\
+"/var/spool/lpd/$PRT_NAME_LOW\n"
+fi
+else
+E1_TXT="The following files were changed.\n"\
+"/etc/printcap\n\n"\
+"The following directories were created.\n"\
+"/var/spool/lpd/$PRT_NAME_LOW\n"
+fi
+
+E2_TXT="\nIt saved. Setup is complete.\n"\
+"Start $SETUP_PATH to change setup.\n"
+
+F_TXT="Setup is canceled. Setup is not complete yet\n"\
+"Set up by starting $SETUP_PATH.\n"
+
+S1_TXT="\nThis system has already an entry for ${SERV_NAME} in ${SERV_FILE}.\n"
+
+S2_TXT="\nThis system has no entry for ${SERV_NAME} in ${SERV_FILE}.\n"
+
+S3_TXT="The original file is saved as ${SERV_BACK}.\n"
+

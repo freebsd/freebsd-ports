@@ -1,0 +1,47 @@
+#!/bin/sh
+###############################################################################
+###
+### From @(#) Photo Image Print System -Locale file of install script
+### in pips900-2.1.i386.tgz
+### by taoka
+
+A_TXT="これより Photo Image Print System のセットアップを開始します。\n"\
+"本製品は設定を行わなければ正しく動作しません。\n"
+
+B_TXT="プリンタの接続先を指定してください。\n"
+
+C_TXT="lprで使用する際のプリンタ名を指定してください。\n"
+
+D_TXT="設定は以上です。設定を保存してよろしいですか?\n"
+
+if [ "$VERSION" = "2.0" -o "$VERSION" = "2.1" ]; then
+if [ X"$WITH_EKPD" != X ]; then
+    E1_TXT="以下のファイルを変更しました。\n"\
+"$EKPDRC\n/etc/printcap\n/etc/services\n\n"\
+"以下のディレクトリを作成しました。\n"\
+"/var/spool/lpd/$PRT_NAME_LOW\n"
+else
+    E1_TXT="t以下のファイルを変更しました。\n"\
+"$EKPDRC\n/etc/printcap\n\n"\
+"以下のディレクトリを作成しました。\n"\
+"/var/spool/lpd/$PRT_NAME_LOW\n"
+fi
+else
+E1_TXT="s以下のファイルを変更しました。\n"\
+"/etc/printcap\n\n"\
+"以下のディレクトリを作成しました。\n"\
+"/var/spool/lpd/$PRT_NAME_LOW\n"
+fi
+
+E2_TXT="\n保存しました。セットアップを終了します。\n"\
+"設定を変更するには $SETUP_PATH を起動してください。\n"
+
+F_TXT="セットアップをキャンセルします。まだ設定は終了していません。\n"\
+"$SETUP_PATHを起動して、設定を行ってください。\n"
+
+S1_TXT="\nこのシステムの${SERV_FILE}には、すでに${SERV_NAME}のエントリがあります。\n"
+
+S2_TXT="\nこのシステムの${SERV_FILE}には、${SERV_NAME}のエントリがありません。\n"
+
+S3_TXT="オリジナルファイルは${SERV_BACK}としてセーブしています。\n"
+
