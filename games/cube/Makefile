@@ -27,12 +27,6 @@ BUILD_WRKSRC=	${WRKSRC}/source/src
 DATADIR=	${PREFIX}/share/cube
 CONFIGURE_WRKSRC=	${WRKSRC}/source/enet
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 post-extract:
 	@ ${UNZIP_CMD} -a -q -o ${WRKSRC}/source/${DISTNAME}_src.zip -d ${WRKSRC}/source/
 
@@ -53,4 +47,4 @@ do-install:
 	${CP} -Rp ${WRKSRC}/data ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/autoexec.cfg ${DATADIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
