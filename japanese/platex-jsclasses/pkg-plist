@@ -1,0 +1,32 @@
+@comment $FreeBSD$
+%%CLASSDIR%%/jsarticle.cls
+%%CLASSDIR%%/jsbook.cls
+%%CLASSDIR%%/jsclasses.dtx
+%%CLASSDIR%%/jsclasses.ins
+%%CLASSDIR%%/jspf.cls
+%%CLASSDIR%%/morisawa.dtx
+%%CLASSDIR%%/morisawa.ins
+%%CLASSDIR%%/morisawa.sty
+%%CLASSDIR%%/okumacro.dtx
+%%CLASSDIR%%/okumacro.ins
+%%CLASSDIR%%/okumacro.sty
+%%CLASSDIR%%/okuverb.dtx
+%%CLASSDIR%%/okuverb.ins
+%%CLASSDIR%%/okuverb.sty
+@dirrm %%CLASSDIR%%
+%%PLDIR%%/jis-v.pl
+%%PLDIR%%/jis.pl
+%%PLDIR%%/jisn-v.pl
+%%PLDIR%%/jisn.pl
+@dirrm %%PLDIR%%
+%%TFMDIR%%/jis-v.tfm
+%%TFMDIR%%/jis.tfm
+%%TFMDIR%%/jisg-v.tfm
+%%TFMDIR%%/jisg.tfm
+%%TFMDIR%%/jisgn-v.tfm
+%%TFMDIR%%/jisgn.tfm
+%%TFMDIR%%/jisn-v.tfm
+%%TFMDIR%%/jisn.tfm
+@dirrm %%TFMDIR%%
+@exec %%MKTEXLSR%%
+@unexec %%MKTEXLSR%%

@@ -297,6 +297,7 @@
     SUBDIR += phpgroupware
     SUBDIR += plain2
     SUBDIR += plan
+    SUBDIR += platex-jsclasses
     SUBDIR += platex209-euc
     SUBDIR += platex209-jis
     SUBDIR += platex209-sjis
