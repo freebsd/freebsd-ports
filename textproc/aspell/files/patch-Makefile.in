@@ -1,0 +1,15 @@
+--- Makefile.in.orig	Wed Aug 28 17:02:39 2002
++++ Makefile.in	Fri Sep 13 08:09:01 2002
+@@ -97,7 +97,11 @@
+ 
+ AUTOMAKE_OPTIONS = foreign
+ 
+-SUBDIRS = auto common modules lib examples prog data scripts interfaces manual
++ifndef NOPORTDOCS
++MANUALSUBDIR = manual
++endif
++
++SUBDIRS = auto common modules lib prog data scripts interfaces $(MANUALSUBDIR)
+ 
+ EXTRA_DIST = README
+ subdir = .
