@@ -7,6 +7,7 @@
 
 PORTNAME=	cricket
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,44 +16,47 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A high performance, extremely flexible monitoring system
 
-RUN_DEPENDS=	${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
+RUN_DEPENDS=	${SITE_PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL_ARCH}/RRDs.pm:${PORTSDIR}/net/rrdtool \
-		${SITE_PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
+		${SITE_PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/Time/Zone.pm:${PORTSDIR}/devel/p5-TimeDate \
-		${SITE_PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+		${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
+		${SITE_PERL}/Time/Zone.pm:${PORTSDIR}/devel/p5-TimeDate
 
 SITE_PERL_ARCH=	${SITE_PERL}/${PERL_ARCH}
 
 HAS_CONFIGURE=	yes
 USE_PERL5=	yes
 NO_BUILD=	yes
-PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST_SUB+=	VERSION=${PORTVERSION}
-CRICKET_USER=	cricket
-CRICKET_GROUP=	www
+CRICKET_USER?=	wwwadm
+CRICKET_UID?=	81
+CRICKET_GROUP?=	www
+CRICKET_GID?=	80
 
 do-install:
-	@PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
+	@PREFIX="${PREFIX}" USER="${CRICKET_USER}" GROUP="${CRICKET_GROUP}" \
+		 UID="${CRICKET_UID}" GID="${CRICKET_GID}" ${SH} \
+		 ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 	@${MKDIR} -m 755 ${PREFIX}/cricket/cricket-${PORTVERSION}
 	@${CP} -R ${WRKSRC}/* ${PREFIX}/cricket/cricket-${PORTVERSION}
 	@${FIND} ${PREFIX}/cricket/cricket-${PORTVERSION} -name \*.orig -or \
 		-name \*.bak | ${XARGS} ${RM} -f
 	${CHOWN} -R ${CRICKET_USER}:${CRICKET_GROUP} ${PREFIX}/cricket
 	@if [ -L ${PREFIX}/cricket/cricket ]; then \
-		${ECHO_MSG} "Updating ${PREFIX}/cricket/cricket symbolic link" ; \
-		${RM} ${PREFIX}/cricket/cricket ; \
+		${ECHO_MSG} "Updating ${PREFIX}/cricket/cricket symbolic link"
+		${RM} ${PREFIX}/cricket/cricket
 	fi
 	${LN} -s ${PREFIX}/cricket/cricket-${PORTVERSION} \
 		${PREFIX}/cricket/cricket
 	@if [ -f ${LOCALBASE}/cricket/compile ] ; then \
-		${ECHO_MSG} "You should migrate manually to use new cricket" ; \
-		${ECHO_MSG} "installation scheme." ; \
+		${ECHO_MSG} "You should migrate manually to use new cricket"
+		${ECHO_MSG} "installation scheme."
 	fi
 
 post-install:
 	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" ${WRKSRC}/cricket-conf.pl.sample \
-		>${PREFIX}/etc/cricket-conf.pl.dist
+		> ${PREFIX}/etc/cricket-conf.pl.dist
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},' ${FILESDIR}/pkg-message.in > \
 		${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}

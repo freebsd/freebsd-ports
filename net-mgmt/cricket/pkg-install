@@ -6,19 +6,31 @@ if [ "$2" != "PRE-INSTALL" ]; then
 	exit 0
 fi
 
-USER=cricket
-#group selected to be www since the webserver has to be able to serve it
-GROUP=www 
-
-if ! pw usershow "${USER}" 2>/dev/null 1>&2; then
-	if pw useradd ${USER} -g ${GROUP} -h - \
-		-s "/sbin/nologin" -d "${PREFIX}/cricket" \
-		-c "Cricket Monitoring Owner"; \
-	then
-		echo "Added user \"${USER}\"."
-	else
-		echo "Adding user \"${USER}\" failed..."
-		exit 1
-	fi
+if /usr/sbin/pw groupshow "${GROUP}" 2>/dev/null; then
+    echo "You already have a group \"${GROUP}\", so I will use it."
+else
+    if /usr/sbin/pw groupadd ${GROUP} -g ${GID}
+    then
+	echo "Added group \"${GROUP}\"."
+    else
+	echo "Adding group \"${GROUP}\" failed..."
+	echo "Please create it, and try again."
+	exit 1
+    fi
 fi
+
+if /usr/sbin/pw user show "${USER}" 2>/dev/null; then
+    echo "You already have a user \"${USER}\", so I will use it."
+else
+    if /usr/sbin/pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
+       -d /usr/local/www -s /bin/sh -c "WWW Administrator"
+    then
+	echo "Added user \"${USER}\"."
+    else
+	echo "Adding user \"${USER}\" failed..."
+	echo "Please create it, and try again."
+	exit 1
+    fi
+fi
+
 exit 0
