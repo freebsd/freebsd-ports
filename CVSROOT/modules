@@ -11907,6 +11907,7 @@ zope-coreblog	ports/www/zope-coreblog
 zope-epoz	ports/www/zope-epoz
 zope-exuserfolder	ports/www/zope-exuserfolder
 zope-formulator	ports/www/zope-formulator
+zope-generator	ports/www/zope-generator
 zope-groupuserfolder	ports/www/zope-groupuserfolder
 zope-guf	ports/www/zope-guf
 zope-i18nlayer	ports/www/zope-i18nlayer
