@@ -17,8 +17,6 @@ MAINTAINER=	petef@FreeBSD.org
 
 RUN_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
 
-USE_PERL5=	yes
-
 SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 PERL_CONFIGURE=	yes
 

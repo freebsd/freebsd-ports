@@ -18,7 +18,6 @@ MAINTAINER=	ijliao@FreeBSD.org
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}

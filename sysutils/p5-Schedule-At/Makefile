@@ -14,7 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
-USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=		Schedule::At.3

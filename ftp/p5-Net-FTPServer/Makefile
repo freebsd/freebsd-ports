@@ -24,7 +24,6 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Authen/PAM.pm:${PORTSDIR}/security/p5-A
 		${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_PERL5=	yes
 SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 PERL_CONFIGURE=	yes
 

@@ -17,7 +17,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Date/Parse.pm:${PORT
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate
 
 PERL_CONFIGURE=	yes
-USE_PERL5=	yes
 
 MAN1=		grepmail.1
 

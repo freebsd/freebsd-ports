@@ -17,7 +17,6 @@ MAINTAINER=	ijliao@FreeBSD.org
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 MAN1=	salias.1

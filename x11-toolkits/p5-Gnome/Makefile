@@ -19,7 +19,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gtk/Gdk
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_PERL5=	yes
 USE_GNOME=	yes
 PERL_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
