@@ -1,0 +1,11 @@
+--- configure.in.orig	Sun Jan 25 20:32:56 2004
++++ configure.in	Sun Jan 25 20:32:22 2004
+@@ -305,7 +305,7 @@
+ fi],
+ [if test "$ac_cv_search_connect" != no; then
+   AC_DEFINE(LOCKSERVER_SUPPORT,[],[Support CVS lock server])
+-  enable_server="yes"
++  enable_lockserver="yes"
+ fi])
+ AC_MSG_RESULT($enable_lockserver)
+ AM_CONDITIONAL(WITH_LOCKSERVER, test "$enable_lockserver" = "yes")

@@ -1,0 +1,42 @@
+bin/co
+bin/cvs
+bin/cvslockd
+bin/rcs2log
+bin/rcsdiff
+bin/rlog
+etc/cvsnt/PServer.example
+lib/cvsnt/ca.pem
+lib/cvsnt/ext_protocol.la
+lib/cvsnt/ext_protocol.so
+lib/cvsnt/fork_protocol.la
+lib/cvsnt/fork_protocol.so
+%%GSERVER%%lib/cvsnt/gserver_protocol.la
+%%GSERVER%%lib/cvsnt/gserver_protocol.so
+lib/cvsnt/pserver_protocol.la
+lib/cvsnt/pserver_protocol.so
+lib/cvsnt/server_protocol.la
+lib/cvsnt/server_protocol.so
+lib/cvsnt/sserver_protocol.la
+lib/cvsnt/sserver_protocol.so
+lib/cvsnt/sspi_protocol.la
+lib/cvsnt/sspi_protocol.so
+share/cvsnt/contrib/README
+share/cvsnt/contrib/clmerge
+share/cvsnt/contrib/cln_hist
+share/cvsnt/contrib/commit_prep
+share/cvsnt/contrib/cvs2vendor
+share/cvsnt/contrib/cvs_acls
+share/cvsnt/contrib/cvscheck
+share/cvsnt/contrib/debug_check_log
+share/cvsnt/contrib/intro.doc
+share/cvsnt/contrib/log
+share/cvsnt/contrib/log_accum
+share/cvsnt/contrib/mfpipe
+share/cvsnt/contrib/rcs-to-cvs
+share/cvsnt/contrib/rcs2log
+share/cvsnt/contrib/rcslock
+share/cvsnt/contrib/sccs2rcs
+@dirrm share/cvsnt/contrib
+@dirrm share/cvsnt
+@dirrm lib/cvsnt
+@dirrm etc/cvsnt
