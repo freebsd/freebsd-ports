@@ -1,10 +1,15 @@
 etc/rc.d/orion.sh
 bin/orionctl
+%%T%%/application-deployments/default/defaultWebApp/
+%%T%%/application-deployments/default/defaultWebApp/orion-web.xml
+%%T%%/application-deployments/default/defaultWebApp/persistence
+%%T%%/application-deployments/default/defaultWebApp/persistence/state.ser
 %%T%%/config/database-schemas/hypersonic.xml
 %%T%%/config/database-schemas/ms-access.xml
 %%T%%/config/database-schemas/ms-sql.xml
 %%T%%/config/database-schemas/oracle.xml
 %%T%%/config/database-schemas/postgresql.xml
+%%T%%/config/database-schemas/sapdb.xml
 %%T%%/config/database-schemas/sybase.xml
 %%T%%/config/data-sources.xml
 %%T%%/config/default-web-site.xml
@@ -317,6 +322,9 @@ bin/orionctl
 %%T%%/orion.jar
 %%T%%/tools.jar
 %%T%%/mail.jar
+@dirrm %%T%%/application-deployments/default/defaultWebApp/persistence
+@dirrm %%T%%/application-deployments/default/defaultWebApp
+@dirrm %%T%%/application-deployments/default
 @dirrm %%T%%/application-deployments
 @dirrm %%T%%/config/database-schemas
 @dirrm %%T%%/config

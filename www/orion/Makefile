@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	orion
-PORTVERSION=	1.4.5
-PORTREVISION=	8
+PORTVERSION=	1.5.2
 CATEGORIES=	www java
 MASTER_SITES=	http://www.orionserver.com/distributions/ \
 		http://www.metaverse.nl/~ernst/ \
@@ -106,11 +105,6 @@ do-install:
 	@# Create the directories that the application will create it at the
 	@# first run
 	${MKDIR} ${APP_HOME}/application-deployments
-
-	@# Fix a small typo in the index.html served as the root
-	${CAT} ${WRKSRC}/default-web-app/index.html \
-	| ${SED} "/1\.4\.0/s//${PORTVERSION}/" \
-	> ${APP_HOME}/default-web-app/index.html
 
 	@# Install the tools.jar file from the JDK, since it is needed by Orion
 	${LN} -sf ${JAVA_HOME}/lib/tools.jar ${APP_HOME}/tools.jar
