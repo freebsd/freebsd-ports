@@ -74,6 +74,7 @@
     SUBDIR += xmaddressbook
     SUBDIR += xmdiary
     SUBDIR += xopps
+    SUBDIR += xpad
     SUBDIR += xpostit
     SUBDIR += xpostitPlus
     SUBDIR += xrolo

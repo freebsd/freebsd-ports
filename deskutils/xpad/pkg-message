@@ -1,0 +1,11 @@
+-----------------------------------------------------------------------------
+
+1) See /usr/local/share/doc/xpad/README for some useful informations.
+
+2) If you are using KDE, copy /usr/local/share/example/xpad/xpad.desktop to:
+
+              ~/.kde/share/applnk/Utilities/
+                            or
+              /usr/local/share/applnk/Utilities/
+
+-----------------------------------------------------------------------------
