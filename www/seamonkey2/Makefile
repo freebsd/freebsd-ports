@@ -145,6 +145,8 @@ CONFIGURE_ARGS+=	--enable-default-toolkit=gtk
 
 .if !defined(WITHOUT_XFT)
 CONFIGURE_ARGS+=	--enable-xft
+.else
+CONFIGURE_ARGS+=	--disable-xft
 .endif
 
 .include <bsd.port.pre.mk>
