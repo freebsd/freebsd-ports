@@ -3,7 +3,7 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.33 1997/12/15 02:19:19 jmz Exp $
+# $Id: Makefile,v 1.34 1998/01/26 00:59:43 jmz Exp $
 #
 
 VERSION=	98.01
@@ -27,7 +27,7 @@ do-build:
 		tex --ini latex.ltx </dev/null)
 	(cd ${WRKSRC}/packages/tools; TEXFORMATS=${WRKSRC}/base:; \
 		TEXINPUTS=${WRKSRC}/base: export TEXFORMATS TEXINPUTS;\
-		 ln -sf /usr/local/bin/tex latex; ./latex tools.ins)
+		 ln -sf ${PREFIX}/bin/tex latex; ./latex tools.ins)
 
 do-install: 
 	@(/usr/bin/install -c -m 644 ${WRKSRC}/base/latex.fmt \
