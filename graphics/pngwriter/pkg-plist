@@ -10,11 +10,13 @@ lib/libpngwriter.a
 %%PORTDOCS%%%%DOCSDIR%%/espaniol/LEAME
 %%PORTDOCS%%%%DOCSDIR%%/espaniol/LICENCIA
 %%PORTDOCS%%%%DOCSDIR%%/espaniol/PNGwriterQuickReference_ES.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/english
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/espaniol
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%EXAMPLESDIR%%/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/burro.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/lyapunov.cc
 %%PORTDOCS%%%%EXAMPLESDIR%%/lyapunov.espaniol.cc
 %%PORTDOCS%%%%EXAMPLESDIR%%/pngtest.cc
 %%PORTDOCS%%%%EXAMPLESDIR%%/pngtest.espaniol.cc
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/espaniol
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/english
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
