@@ -1,0 +1,9 @@
+The xisp package implements a user-friendly X interface to pppd/chat
+and provides maximum feedback from the dial-in and login phases on a
+browser screen, as well as a manual login terminal window. It also
+provides greater versatility in interrupting a call in progress and in
+general enhances the user's feeling of "what's going on", especially
+if he/she is not all that well acquainted with the intricacies of
+system log files. Xisp also has means to track your phonecosts.
+
+WWW: http://users.hol.gr/~dbouras/
