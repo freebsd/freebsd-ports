@@ -1,3 +1,2 @@
 @comment $FreeBSD$
 bin/treecc
-bin/treecc-%%PORTVERSION%%
