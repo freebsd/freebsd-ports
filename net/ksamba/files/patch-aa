@@ -1,0 +1,12 @@
+--- ksamba/myservicewidget_page1Data.cpp.orig	Thu Apr 23 14:43:37 1998
++++ ksamba/myservicewidget_page1Data.cpp	Sat Feb 12 05:16:31 2000
+@@ -18,6 +18,9 @@
+ #include <qlabel.h>
+ #include <qbttngrp.h>
+ 
++#define QColor(i)	(QColor)(i)
++#define QRgb(i)		(QRgb)(i)
++
+ myservicewidget_page1Data::myservicewidget_page1Data
+ (
+ 	QWidget* parent,
