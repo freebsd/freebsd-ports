@@ -8,7 +8,8 @@
 PORTNAME=	rio500
 PORTVERSION=	0.7
 CATEGORIES=	audio
-MASTER_SITES=	http://download.sourceforge.net/rio500/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	k_nishizawa@anet.ne.jp
 
