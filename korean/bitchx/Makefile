@@ -12,7 +12,8 @@ MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
 		ftp://ukug.uk.freebsd.org/pub/lord_cj/
 
 PATCH_SITES=    ftp://ftp.holywar.net/pub/FreeBSD/
-PATCHFILES=     bx-korean-aa.patch
+PATCHFILES=     bx-korean-aa.patch\
+		bx-korean-ab.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	hollywar@mail.holywar.net
