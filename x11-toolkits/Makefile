@@ -104,6 +104,7 @@
     SUBDIR += libjsearch
     SUBDIR += libjtoolbar
     SUBDIR += libjtree
+    SUBDIR += libpanelappletmm
     SUBDIR += libwnck
     SUBDIR += libxfce4gui
     SUBDIR += libzvt

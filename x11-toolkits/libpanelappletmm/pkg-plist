@@ -1,0 +1,24 @@
+include/libpanelappletmm-2.0/libpanelappletmm.h
+include/libpanelappletmm-2.0/libpanelappletmm/applet.h
+include/libpanelappletmm-2.0/libpanelappletmm/enums.h
+include/libpanelappletmm-2.0/libpanelappletmm/factory.h
+include/libpanelappletmm-2.0/libpanelappletmm/init.h
+include/libpanelappletmm-2.0/libpanelappletmm/private.h
+include/libpanelappletmm-2.0/libpanelappletmm/private/applet_p.h
+include/libpanelappletmm-2.0/libpanelappletmm/private/enums_p.h
+include/libpanelappletmm-2.0/libpanelappletmm/types.h
+include/libpanelappletmm-2.0/libpanelappletmm/wrap_init.h
+lib/libpanelappletmm-1.3.a
+lib/libpanelappletmm-1.3.so
+lib/libpanelappletmm-1.3.so.2
+lib/libpanelappletmm-2.0/include/libpanelappletmmconfig.h
+lib/libpanelappletmm-2.0/proc/m4/convert.m4
+lib/libpanelappletmm-2.0/proc/m4/convert_libpanelappletmm.m4
+libdata/pkgconfig/libpanelappletmm-2.0.pc
+@dirrm lib/libpanelappletmm-2.0/proc/m4
+@dirrm lib/libpanelappletmm-2.0/proc
+@dirrm lib/libpanelappletmm-2.0/include
+@dirrm lib/libpanelappletmm-2.0
+@dirrm include/libpanelappletmm-2.0/libpanelappletmm/private
+@dirrm include/libpanelappletmm-2.0/libpanelappletmm/
+@dirrm include/libpanelappletmm-2.0
