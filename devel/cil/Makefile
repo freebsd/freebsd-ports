@@ -7,6 +7,7 @@
 
 PORTNAME=	cil
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://manju.cs.berkeley.edu/cil/distrib/
 
@@ -15,6 +16,9 @@ COMMENT=	Infrastructure for C Program Analysis and Transformation
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/ocamlopt:${PORTSDIR}/lang/ocaml
 
+CONFLICTS=	ccured-*
+
+ONLY_FOR_ARCHS=	i386
 USE_PERL5=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
