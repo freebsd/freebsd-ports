@@ -1,0 +1,19 @@
+*** mediatool/chunk.c.orig	Fri Oct 17 08:11:42 1997
+--- mediatool/chunk.c	Sun May  9 14:03:59 1999
+***************
+*** 77,83 ****
+    if (strlen(ChunkName) != 4)
+      return(NULL);
+  
+!   if (strncmp(adress, "MDTO", 4) !=0 )
+      return(NULL);
+  
+    /* Increment adress pointer by 4. The pointer now points to the first
+--- 77,83 ----
+    if (strlen(ChunkName) != 4)
+      return(NULL);
+  
+!   if (!adress || strncmp(adress, "MDTO", 4) !=0 )
+      return(NULL);
+  
+    /* Increment adress pointer by 4. The pointer now points to the first

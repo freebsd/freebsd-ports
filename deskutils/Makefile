@@ -16,7 +16,6 @@
     SUBDIR += gtimer
     SUBDIR += ical
     SUBDIR += korganizer
-    SUBDIR += korganizer11-i18n
     SUBDIR += kproject
     SUBDIR += moneydance
     SUBDIR += notebook

@@ -40,13 +40,10 @@
     SUBDIR += imwheel
     SUBDIR += kb2mb2
     SUBDIR += kde11
-    SUBDIR += kde11-i18n
     SUBDIR += kde2
     SUBDIR += kdebase11
-    SUBDIR += kdebase11-i18n
     SUBDIR += kdebase2
     SUBDIR += kdelibs11
-    SUBDIR += kdelibs11-i18n
     SUBDIR += kdelibs2
     SUBDIR += kvidtune
     SUBDIR += kworldwatch

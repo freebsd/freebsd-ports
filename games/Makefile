@@ -100,7 +100,6 @@
     SUBDIR += kbubbles
     SUBDIR += jzip
     SUBDIR += kdegames11
-    SUBDIR += kdegames11-i18n
     SUBDIR += kdegames2
     SUBDIR += klondike
     SUBDIR += krogue

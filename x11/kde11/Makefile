@@ -20,7 +20,8 @@ RUN_DEPENDS=	kwm:${PORTSDIR}/x11/kdebase11 \
 		kmahjongg:${PORTSDIR}/games/kdegames11 \
 		kghostview:${PORTSDIR}/graphics/kdegraphics11 \
 		kmail:${PORTSDIR}/net/kdenetwork11 \
-		kmedia:${PORTSDIR}/audio/kdemultimedia11
+		kmedia:${PORTSDIR}/audio/kdemultimedia11 \
+		kworldwatch:${PORTSDIR}/x11-clocks/kdetoys11-i18n
 
 NO_BUILD=	yes
 

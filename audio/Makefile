@@ -65,7 +65,6 @@
     SUBDIR += id3ren
     SUBDIR += juke
     SUBDIR += kdemultimedia11
-    SUBDIR += kdemultimedia11-i18n
     SUBDIR += kdemultimedia2
     SUBDIR += kmikmod
     SUBDIR += kmp3

@@ -109,7 +109,6 @@
     SUBDIR += jabber-transport
     SUBDIR += jwhois
     SUBDIR += kdenetwork11
-    SUBDIR += kdenetwork11-i18n
     SUBDIR += kdenetwork2
     SUBDIR += kdetelnet
     SUBDIR += kicq

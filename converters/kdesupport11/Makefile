@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	kdesupport
-PORTVERSION=	1.1.2.1
+PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	converters kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
 MASTER_SITE_SUBDIR= stable/1.1.2/distribution/tar/generic/source/bz2

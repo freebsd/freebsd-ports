@@ -11,7 +11,6 @@
     SUBDIR += iconv-rfc1345
     SUBDIR += ish
     SUBDIR += kdesupport11
-    SUBDIR += kdesupport11-i18n
     SUBDIR += kdesupport2
     SUBDIR += libiconv
     SUBDIR += libutf-8

@@ -14,16 +14,16 @@ PKGNAMESUFFIX=	-i18n
 
 MAINTAINER=	hige@higesoft.os.rim.or.jp
 
-LIB_DEPENDS=	qti18n.3:${PORTSDIR}/x11-toolkits/qt-i18n \
-		kdecore.2:${PORTSDIR}/x11/kdelibs11-i18n \
-		kfm.2:${PORTSDIR}/x11/kdebase11-i18n \
+LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11 \
 		eb.3:${PORTSDIR}/japanese/eb
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
+RUN_DEPENDS=	kfm:${PORTSDIR}/x11/kdebase11
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_NEWGCC=	yes
 USE_LIBTOOL=	yes
+USE_QT=		yes
 
 CONFIGURE_ARGS=	"--with-qt-dir=${QTDIR}" \
 		"--with-qt-includes=${QTDIR}/include/X11/qt" \

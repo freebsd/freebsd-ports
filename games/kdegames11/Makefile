@@ -13,14 +13,15 @@ MASTER_SITE_SUBDIR= stable/1.1.2/distribution/tar/generic/source/bz2
 
 MAINTAINER=	will@FreeBSD.org
 
+BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		kdecore.3:${PORTSDIR}/x11/kdelibs11 \
 		QwSpriteField.7:${PORTSDIR}/converters/kdesupport11
 
 USE_BZIP2=	yes
 USE_QT=		yes
-GNU_CONFIGURE= yes
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ENV= CXXFLAGS="$(CFLAGS)" INSTALL_SCRIPT="install -c -m 555"
+CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)" INSTALL_SCRIPT="install -c -m 555"
 
 .include <bsd.port.mk>

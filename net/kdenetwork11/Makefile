@@ -7,13 +7,21 @@
 
 PORTNAME=	kdenetwork
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	net news kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
 MASTER_SITE_SUBDIR= stable/1.1.2/distribution/tar/generic/source/bz2
 
+PATCH_SITES=	http://www.kde.gr.jp/~toyohiro/ \
+		http://www.kde.gr.jp/~imura/ko/
+PATCHFILES=	kdenetwork-1.1.2-ja-19991124.diff.gz \
+		kdenetwork-1.1.2-ko-20000108.diff
+PATCH_DIST_STRIP=	-p1
+
 MAINTAINER=	will@FreeBSD.org
 
-BUILD_DEPENDS=	${PREFIX}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
+BUILD_DEPENDS=	${PREFIX}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm \
+		msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	uu.1:${PORTSDIR}/converters/uulib \
 		kdecore.3:${PORTSDIR}/x11/kdelibs11 \
 		QwSpriteField.7:${PORTSDIR}/converters/kdesupport11
