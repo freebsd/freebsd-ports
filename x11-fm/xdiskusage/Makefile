@@ -19,6 +19,14 @@ LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 MAN1=		xdiskusage.1
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
+OPTIONS=	THREADS	"Threads support, necessary with threaded fltk" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_THREADS)
+CXXFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
+.endif
 
 do-build:
 .for i in panels xdiskusage
@@ -27,14 +35,14 @@ do-build:
 .endfor
 	${CXX} ${CXXFLAGS} -L${X11BASE}/lib -o \
 		${WRKSRC}/xdiskusage ${WRKSRC}/panels.o \
-		${WRKSRC}/xdiskusage.o -lfltk -lm -lXext -lX11
+		${WRKSRC}/xdiskusage.o -lfltk -lm -lXext -lX11 ${LDFLAGS}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xdiskusage ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/xdiskusage.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/xdiskusage
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xdiskusage
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

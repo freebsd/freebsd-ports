@@ -1,3 +1,3 @@
 bin/xdiskusage
-share/doc/xdiskusage/README
-@dirrm share/doc/xdiskusage
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
