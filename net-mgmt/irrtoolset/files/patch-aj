@@ -1,6 +1,6 @@
---- src/aoe/TclApp.cc.orig	Sat Nov 27 18:38:25 1999
-+++ src/aoe/TclApp.cc	Sat Nov 27 18:43:51 1999
-@@ -186,9 +186,9 @@
+--- src/aoe/TclApp.cc.orig	Thu Apr 23 21:52:07 1998
++++ src/aoe/TclApp.cc	Mon Nov 29 09:12:33 1999
+@@ -191,9 +191,9 @@
     // Call Tcl function to create a Tcl command
     if (Tcl_CreateCommand(ptInterp, 
  			 pcCommand->getName(), 
