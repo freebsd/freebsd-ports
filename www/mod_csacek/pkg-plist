@@ -3,12 +3,11 @@ libexec/apache/mod_csacek.so
 @unexec %D/sbin/apxs -e -A -n csacek %f
 share/doc/mod_csacek/csacek.html
 share/doc/mod_csacek/faq.html
+share/doc/mod_csacek/historie.html
 share/doc/mod_csacek/index.html
 share/doc/mod_csacek/instalace.html
 share/doc/mod_csacek/licence.html
 share/doc/mod_csacek/obj.html
-share/doc/mod_csacek/priklady.html
-share/doc/mod_csacek/testy.html
 share/doc/mod_csacek/img/ball.gif
 share/doc/mod_csacek/img/csacek_21.gif
 share/doc/mod_csacek/img/csacek_logo.gif
