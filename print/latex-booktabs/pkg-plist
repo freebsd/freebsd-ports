@@ -1,0 +1,9 @@
+@comment $FreeBSD$
+%%PORTDOCS%%%%DOCSDIR%%/booktabs.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%CLASSDIR%%/booktabs.dtx
+%%CLASSDIR%%/booktabs.ins
+%%CLASSDIR%%/booktabs.sty
+@dirrm %%CLASSDIR%%
+@exec %%MKTEXLSR%%
+@unexec %%MKTEXLSR%%
