@@ -6,39 +6,40 @@
 #
 
 PORTNAME=	pd
-PORTVERSION=	0.36.0
+PORTVERSION=	0.37
 CATEGORIES=	audio
 MASTER_SITES=	http://www-crca.ucsd.edu/~msp/Software/
-DISTNAME=	pd-0.36-0.linux
+DISTNAME=	pd-0.37-1test1.src
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Pure Data, a MIDI-capable real-time audio processor/synthesizer
 
-LIB_DEPENDS=	tcl83:${PORTSDIR}/lang/tcl83 \
-		tk83:${PORTSDIR}/x11-toolkits/tk83
+LIB_DEPENDS=	tcl84:${PORTSDIR}/lang/tcl84 \
+		tk84:${PORTSDIR}/x11-toolkits/tk84
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
-		LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib -ltk83 -ltcl83"
+		LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib -ltk84 -ltcl84"
 MAKEFILE=	makefile
 MAN1=		pd.1 pdreceive.1 pdsend.1
 PATCH_WRKSRC=	${WRKSRC}/..
 PLIST=		${WRKDIR}/pkg-plist
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-WRKSRC=		${WRKDIR}/pd-0.36-0/src
+USE_AUTOCONF=	yes
+WANT_AUTOCONF_VER=	257
+WRKSRC=		${WRKDIR}/pd-0.37-1test1/src
 
 pre-patch:
-	${CP} ${WRKSRC}/s_linux.c ${WRKSRC}/s_freebsd.c
-
-pre-configure:
-	${CHMOD} +x ${WRKSRC}/${CONFIGURE_SCRIPT}
+	${RM} -f ${WRKSRC}/configure
 
 post-configure:
-	${CP} ${WRKSRC}/makefile ${WRKSRC}/makefile.orig
-	${SED} -e "s:^INCLUDE = :INCLUDE = -I${LOCALBASE}/include/tk8.3 \
-		-I${LOCALBASE}/include/tcl8.3 -I${X11BASE}/include :g; \
+	${MV} ${WRKSRC}/makefile ${WRKSRC}/makefile.orig
+	${SED} -e "s:^INCLUDE = :INCLUDE = -I${LOCALBASE}/include/tk8.4 \
+		-I${LOCALBASE}/include/tcl8.4 -I${X11BASE}/include :g; \
 		s:^LIB =:LIB =${PTHREAD_LIBS}:g; \
+		s:GFLAGS = :GFLAGS = -DUSEAPI_OSS :g; \
+		s:x_midi.c ::g; s:s_midi.c ::g; \
 		s:^CFLAGS =:CFLAGS+=${PTHREAD_CFLAGS}:g" \
 		< ${WRKSRC}/makefile.orig > ${WRKSRC}/makefile
 

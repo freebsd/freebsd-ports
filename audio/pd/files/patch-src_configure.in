@@ -1,0 +1,43 @@
+$FreeBSD$
+
+--- src/configure.in.orig	Fri Sep 26 21:40:18 2003
++++ src/configure.in	Tue Nov 11 23:53:26 2003
+@@ -136,6 +136,38 @@
+         		AC_CHECK_LIB(tk8.0, main,,echo no tk library found || exit 1)))))))
+ 
+ 
++if test `uname -s` = FreeBSD;
++then
++    EXT=pd_freebsd
++    MORECFLAGS="-DPA_USE_OSS -DPA_LITTLE_ENDIAN \
++    	 -DUSEAPI_OSS \
++        -I../portaudio/pa_common \
++        -I../portaudio/pablio -I../portaudio/portmidi-macosx \
++	-Werror -fno-strict-aliasing"
++    SYSSRC="s_audio_oss.c"
++    if test x$portaudio == "xyes";
++    then
++    	MORECFLAGS="-DUSEAPI_PORTAUDIO "$MORECFLAGS
++	SYSSRC="s_audio_pa.c \
++	../portaudio/pa_common/pa_allocation.c  \
++	../portaudio/pa_common/pa_converters.c  \
++	../portaudio/pa_common/pa_cpuload.c     \
++	../portaudio/pa_common/pa_dither.c      \
++	../portaudio/pa_common/pa_front.c       \
++	../portaudio/pa_common/pa_process.c     \
++	../portaudio/pa_common/pa_skeleton.c    \
++	../portaudio/pa_common/pa_stream.c      \
++	../portaudio/pa_common/pa_trace.c       \
++    	../portaudio/pablio/pablio_pd.c         \
++	../portaudio/pablio/ringbuffer_pd.c     \
++	../portaudio/pa_unix/pa_unix_hostapis.c \
++	../portaudio/pa_unix/pa_unix_util.c     \
++	../portaudio/pa_unix_oss/pa_unix_oss.c "$SYSSRC
++    fi
++    GUINAME="pd-gui"
++    OSNUMBER=0
++fi
++
+ if test `uname -s` = Linux;
+ then
+     dnl Ckecking for ALSA
