@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bogofilter
-PORTVERSION=	0.14.5.4
+PORTVERSION=	0.15.7
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,6 +17,8 @@ COMMENT=	"Fast, teachable, learning spam detector"
 # There is a sibling port, bogofilter-tdb, which presets different
 # values for some of our variables
 LIB_DEPENDS?=	db4.0:${PORTSDIR}/databases/db4
+
+LIB_DEPENDS+=	gsl.5:${PORTSDIR}/math/gsl
 
 CONFLICTS?=	bogofilter-tdb*
 
@@ -36,8 +38,11 @@ post-build::
 do-install:
 	cd ${WRKSRC} && make install-strip prefix=${PREFIX}
 
-.if !defined(NOPORTDOCS)
 post-install::
+.for i in bogol.1 bogotune.1
+	${INSTALL_MAN} ${WRKSRC}/tuning/${i} ${MAN1PREFIX}/man/man1/${i}
+.endfor
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/contrib
 	@${MKDIR} ${DOCSDIR}/html
@@ -48,21 +53,20 @@ post-install::
 .for i in AUTHORS COPYING INSTALL NEWS README README.cvs \
 	TODO UPGRADE \
 	CHANGES-0.10 CHANGES-0.11 CHANGES-0.12 CHANGES-0.13 CHANGES-0.14 \
+	CHANGES-0.15 \
 	RELEASE.NOTES-0.11 RELEASE.NOTES-0.12 RELEASE.NOTES-0.13 \
-	RELEASE.NOTES-0.14 \
+	RELEASE.NOTES-0.14 RELEASE.NOTES-0.15 \
 	doc/integrating-with-postfix doc/integrating-with-qmail \
 	doc/bogofilter-tuning.HOWTO doc/bogofilter-SA-2002-01 METHODS \
 	doc/README.tdb
 	  ${INSTALL_MAN} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
+	${INSTALL_MAN} ${WRKSRC}/trio/AUTHORS ${DOCSDIR}/AUTHORS.trio
 .for i in README.bogotune
 	${INSTALL_MAN} ${WRKSRC}/tuning/${i} ${DOCSDIR}/tuning/${i}
 .endfor
 .for i in bogolex.sh bogol bogotune
 	${INSTALL_SCRIPT} ${WRKSRC}/tuning/${i} ${DOCSDIR}/tuning/${i}
-.endfor
-.for i in bogol.1 bogotune.1
-	${INSTALL_MAN} ${WRKSRC}/tuning/${i} ${MAN1PREFIX}/man/man1/${i}
 .endfor
 .for i in tune.nochange tune.normal tune.verbose
 	${INSTALL_SCRIPT} ${WRKSRC}/tuning/sample.output/${i} \
@@ -80,7 +84,7 @@ post-install::
 	${INSTALL_PROGRAM} ${WRKSRC}/contrib/bogogrep ${DOCSDIR}/contrib/
 	${INSTALL_MAN} ${WRKSRC}/doc/*.html ${DOCSDIR}/html
 	${INSTALL_MAN} ${WRKSRC}/doc/*.xml ${DOCSDIR}/xml
-	${INSTALL_MAN} ${WRKSRC}/doc/programmer/README.* ${DOCSDIR}/programmer
+	${INSTALL_MAN} ${WRKSRC}/doc/programmer/README.freebsd ${DOCSDIR}/programmer
 .endif
 
 .include <bsd.port.mk>
