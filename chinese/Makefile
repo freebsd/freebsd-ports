@@ -85,7 +85,6 @@
     SUBDIR += p5-Lingua-ZH-TaBE
     SUBDIR += pine4
     SUBDIR += pyDict
-    SUBDIR += pycodec
     SUBDIR += qe
     SUBDIR += qterm
     SUBDIR += stardict
