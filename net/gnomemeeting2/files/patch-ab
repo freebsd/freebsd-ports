@@ -14,7 +14,7 @@
       ;;
   
     FreeBSD)
-!     H323_CFLAGS="-DP_FREEBSD=400001 -DP_SSL -DP_PTHREADS -DPBYTE_ORDER=PLITTLE_ENDIAN -Wall"
+!     H323_CFLAGS="-DP_FREEBSD=400001 -DP_SSL -DP_PTHREADS -DPBYTE_ORDER=PLITTLE_ENDIAN -Wall -DPHAS_TEMPLATES"
 !     H323_LIBS="-lh323_FreeBSD_x86_r_s -lpt_FreeBSD_x86_r_s -pthread -lssl -lcrypto"
       LIBPT_FILE="libpt_FreeBSD_x86_r_s.a"
       LIBOPENH323_FILE="libh323_FreeBSD_x86_r_s.a"
