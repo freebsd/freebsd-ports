@@ -2,6 +2,8 @@ bin/caca-config
 bin/cacaball
 bin/cacademo
 bin/cacafire
+bin/cacamoir
+bin/cacaplas
 bin/cacaview
 include/caca.h
 lib/libcaca.a

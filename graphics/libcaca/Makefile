@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libcaca
-PORTVERSION=	0.7
+PORTVERSION=	0.9
 CATEGORIES=	graphics
 MASTER_SITES=	http://sam.zoy.org/projects/libcaca/
 
@@ -17,7 +17,8 @@ USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--program-prefix="" \
-			--enable-ncurses
+			--enable-ncurses \
+			--disable-doc
 
 MAN1=		caca-config.1 cacademo.1 cacaview.1
 
@@ -40,5 +41,6 @@ CONFIGURE_ARGS+=	--enable-slang
 
 post-patch:
 	${REINPLACE_CMD} -e 's,libcaca-dev,libcaca,g' ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's,resize_term,resizeterm,g' ${WRKSRC}/src/graphics.c
 
 .include <bsd.port.post.mk>

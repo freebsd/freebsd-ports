@@ -1,9 +1,9 @@
---- examples/Makefile.in.orig	Sun Jan 11 19:15:41 2004
-+++ examples/Makefile.in	Sun Jan 11 19:16:20 2004
-@@ -76,7 +76,7 @@
+--- examples/Makefile.in.orig	Mon Feb  2 04:00:44 2004
++++ examples/Makefile.in	Mon Mar 15 10:38:44 2004
+@@ -72,7 +72,7 @@
+ INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
  LATEX = @LATEX@
- LATEX_FALSE = @LATEX_FALSE@
- LATEX_TRUE = @LATEX_TRUE@
 -LDFLAGS = @LDFLAGS@
 +LDFLAGS = -lm @LDFLAGS@
  LIBOBJS = @LIBOBJS@
