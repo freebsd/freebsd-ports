@@ -1,4 +1,4 @@
-# New ports collection makefile for:	acm
+# New ports collection makefile for:	blackjack
 # Date created:		23 February 1998
 # Whom:			Peter Mutsaers
 #
@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	blackjack
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/strategy
+EXTRACT_SUFX=	.tgz
 
+MAINTAINER=	ports@FreeBSD.org
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_QT=		yes
-WRKSRC=		${WRKDIR}/blackjack
 
 MAN1=		blackjack.1
 

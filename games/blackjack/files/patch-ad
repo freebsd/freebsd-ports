@@ -1,0 +1,85 @@
+--- card.cpp.orig	Mon Dec  6 00:45:34 1999
++++ card.cpp	Sat Jun  3 02:47:49 2000
+@@ -201,8 +201,8 @@
+    QBitmap *bitmap_p = new QBitmap(CARD_W, CARD_H, TRUE);
+    QBitmap *back_bitmap_p = new QBitmap(logo_width, logo_height, logo_bits, 
+                                         TRUE);
+-   QBrush fill(Qt::white);
+-   QBrush pattern(Qt::CustomPattern);
++   QBrush fill(white);
++   QBrush pattern(CustomPattern);
+    QPainter painter;
+    
+    if ((painter.begin(bitmap_p)) == FALSE) {
+@@ -210,7 +210,7 @@
+       delete (bitmap_p);
+       bitmap_p = NULL;
+    } else {
+-      QBrush fill_ones(Qt::color1);// make a mask so we don't paint the corners
++      QBrush fill_ones(color1);	// make a mask so we don't paint the corners
+       painter.setBrush(fill_ones);	// make pixmap mask for card
+       painter.drawRoundRect(0, 0, CARD_W, CARD_H, x_round, y_round);
+       painter.end();
+@@ -221,7 +221,7 @@
+       delete (pixmap_p);
+       pixmap_p = NULL;
+    } else {
+-      painter.setPen(Qt::black);
++      painter.setPen(black);
+ 
+    if (bitmap_p) 			// if we made a mask bitmap
+       pixmap_p->setMask(*bitmap_p);	// set the mask for the pixmap
+@@ -229,7 +229,7 @@
+       painter.setBrush(fill);
+       painter.drawRoundRect(0, 0, CARD_W, CARD_H, x_round, y_round);
+       pattern.setPixmap(*back_bitmap_p);
+-      pattern.setColor(Qt::red);
++      pattern.setColor(red);
+       painter.setBrush(pattern);	// set up some painter options
+       painter.drawRoundRect(0, 0, CARD_W, CARD_H, x_round, y_round);
+       painter.end();
+@@ -255,21 +255,21 @@
+    QColor color;
+    QPixmap *pixmap_p = new QPixmap(CARD_W, CARD_H);
+    QBitmap *bitmap_p = new QBitmap(CARD_W, CARD_H, TRUE);
+-   QBrush fill(Qt::white);		// make two brushes, fill and no_fill 
+-   QBrush no_fill(Qt::NoBrush);
++   QBrush fill(white);		// make two brushes, fill and no_fill 
++   QBrush no_fill(NoBrush);
+    QPainter painter;
+ 
+    if (_suit == HEART || _suit == DIAMOND)
+-      color = Qt::red;
++      color = red;
+    else
+-      color = Qt::black;
++      color = black;
+ 
+    if ((painter.begin(bitmap_p)) == FALSE) {
+       cerr << "card::makePixmap(): Can't open bitmap paint device\n";
+       delete (bitmap_p);
+       bitmap_p = NULL;
+    } else {
+-      QBrush fill_ones(Qt::color1);// make a mask so we don't paint the corners
++      QBrush fill_ones(color1);	// make a mask so we don't paint the corners
+       painter.setBrush(fill_ones);	// make pixmap mask for card 
+       painter.drawRoundRect(0, 0, CARD_W, CARD_H, x_round, y_round); 
+       painter.end();
+@@ -281,7 +281,7 @@
+       pixmap_p = NULL;
+    } else {
+       painter.setBrush(fill);		// set up some painter options 
+-      painter.setPen(Qt::black);
++      painter.setPen(black);
+ 
+       if (bitmap_p) 			// if we made a mask bitmap
+          pixmap_p->setMask(*bitmap_p);	// set the mask for the pixmap
+@@ -295,7 +295,7 @@
+       painter.setWorldXForm(FALSE);	// disable transformation for now
+ 
+       painter.setPen(color);		// draw rank and suit in corners
+-      painter.setBackgroundColor(Qt::white);
++      painter.setBackgroundColor(white);
+       painter.drawPixmap(4, 6, *_rank_bitmaps[_rank]);
+       painter.drawPixmap(4, 23, *_small_suit_bitmaps[_suit]);
+       painter.setWorldXForm(TRUE);	// now draw flipped rank and suit 
