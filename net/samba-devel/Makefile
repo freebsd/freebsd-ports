@@ -13,13 +13,10 @@ MASTER_SITES=	ftp://ftp.samba.org/pub/samba/%SUBDIR%/ \
 		ftp://de.samba.org/pub/mirror/samba/%SUBDIR%/ \
 		ftp://se.samba.org/pub/samba/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/unix/utilities/samba/%SUBDIR%/
-MASTER_SITE_SUBDIR= . old-versions alpha old
-DISTNAME=       samba-${PORTVERSION}
+MASTER_SITE_SUBDIR=	. old-versions alpha old
+DISTNAME=	samba-${PORTVERSION}
 
 MAINTAINER=	dwcjr@FreeBSD.org
-
-NO_LATEST_LINK=	yes
-USE_AUTOCONF=	yes
 
 .if defined(WITH_CUPS)
 LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups
@@ -35,8 +32,9 @@ SAMBA_CONFDIR=	${PREFIX}/etc
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/samba.sh.sample
 SAMPLE_CONFIG=	${SAMBA_CONFDIR}/smb.conf.default
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	 --libdir=${SAMBA_CONFDIR} \
+NO_LATEST_LINK=	yes
+USE_AUTOCONF=	yes
+CONFIGURE_ARGS=	--libdir=${SAMBA_CONFDIR} \
 		--localstatedir=${VARDIR} --with-swatdir=${PREFIX}/share/swat \
 		--with-sambabook=${PREFIX}/share/swat/using_samba \
 		--with-lockdir=${VARDIR}/lock --with-privatedir=${SAMBA_PRIVATE}
@@ -44,19 +42,19 @@ CONFIGURE_ARGS=	 --libdir=${SAMBA_CONFDIR} \
 .include <bsd.port.pre.mk>
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
-CONFIGURE_ARGS+=--with-krb5=${KRB5_HOME}
+CONFIGURE_ARGS+=	--with-krb5=${KRB5_HOME}
 .endif
 
 .if defined(WITH_CUPS)
 # This enables CUPS printing support in Samba.
-CONFIGURE_ARGS+=--with-cups=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-cups=${LOCALBASE}
 .endif
 
 .if defined(WITH_ACL_SUPPORT)
 .if ${OSVERSION} < 500018
 BROKEN=	"Requires a recent FreeBSD 5.0-CURRENT"
 .else
-CONFIGURE_ARGS+=--with-acl-support
+CONFIGURE_ARGS+=	--with-acl-support
 .endif
 .endif
 
@@ -108,8 +106,8 @@ post-install:
 .endif
 
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/samba
-	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${PREFIX}/share/doc/samba
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${DOCSDIR}
 	for i in ${WRKDIR}/${DISTNAME}/README				\
 			${WRKDIR}/${DISTNAME}/COPYING			\
 			${WRKDIR}/${DISTNAME}/Manifest			\
@@ -120,18 +118,17 @@ post-install:
 			${WRKDIR}/${DISTNAME}/docs/THANKS		\
 			${WRKDIR}/${DISTNAME}/docs/announce		\
 			${WRKDIR}/${DISTNAME}/docs/history ; do		\
-		${INSTALL_DATA} $$i ${PREFIX}/share/doc/samba ;		\
+		${INSTALL_DATA} $$i ${DOCSDIR} ;		\
 	done
 	for i in faq htmldocs textdocs ; do			\
-		${MKDIR} ${PREFIX}/share/doc/samba/$$i ;		\
+		${MKDIR} ${DOCSDIR}/$$i ;		\
 		for j in ${WRKDIR}/${DISTNAME}/docs/$$i/* ; do		\
 			if [ $$j != ${WRKDIR}/${DISTNAME}/docs/htmldocs/using_samba ] ; then \
-				${INSTALL_DATA} $$j ${PREFIX}/share/doc/samba/$$i ;\
+				${INSTALL_DATA} $$j ${DOCSDIR}/$$i ;\
 			fi; \
 		done							\
 	done
-	${MKDIR} ${PREFIX}/share/doc/samba
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/swat/README ${PREFIX}/share/doc/samba/README.swat
+	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/swat/README ${DOCSDIR}/README.swat
 .endif
 
 .include <bsd.port.post.mk>
