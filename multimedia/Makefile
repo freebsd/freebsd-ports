@@ -25,6 +25,7 @@
     SUBDIR += gxanim
     SUBDIR += kdemultimedia3
     SUBDIR += kmplayer
+    SUBDIR += kplayer
     SUBDIR += ksubeditor
     SUBDIR += libdivxdecore
     SUBDIR += libdivxdecore-devel
