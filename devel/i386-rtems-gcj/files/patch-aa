@@ -1,21 +1,38 @@
---- gcc/Makefile.in.orig	Fri Aug 13 03:46:55 1999
-+++ gcc/Makefile.in	Mon Jun 12 22:04:15 2000
-@@ -2590,18 +2590,6 @@
- 
- # Install the man pages.
- install-man: installdirs $(srcdir)/gcc.1 $(srcdir)/cccp.1 lang.install-man
--	-if [ -f gcc-cross$(exeext) ] ; then \
--	  rm -f $(man1dir)/$(GCC_CROSS_NAME)$(manext); \
--	  $(INSTALL_DATA) $(srcdir)/gcc.1 $(man1dir)/$(GCC_CROSS_NAME)$(manext); \
--	  chmod a-x $(man1dir)/$(GCC_CROSS_NAME)$(manext); \
--	else \
--	  rm -f $(man1dir)/$(GCC_INSTALL_NAME)$(manext); \
--	  $(INSTALL_DATA) $(srcdir)/gcc.1 $(man1dir)/$(GCC_INSTALL_NAME)$(manext); \
--	  chmod a-x $(man1dir)/$(GCC_INSTALL_NAME)$(manext); \
--	fi
--	-rm -f $(man1dir)/cccp$(manext)
--	-$(INSTALL_DATA) $(srcdir)/cccp.1 $(man1dir)/cccp$(manext)
--	-chmod a-x $(man1dir)/cccp$(manext)
- 
- # Install the library.
- install-libgcc: libgcc.a installdirs
+--- Makefile.in.orig	Fri Sep  1 21:07:00 2000
++++ Makefile.in	Fri Sep  1 21:16:11 2000
+@@ -656,9 +656,7 @@
+ 	install-autoconf \
+ 	install-automake \
+ 	install-bash \
+-	install-bfd \
+ 	install-bzip2 \
+-	install-opcodes \
+ 	install-binutils \
+ 	install-bison \
+ 	install-byacc \
+@@ -689,11 +687,9 @@
+ 	install-itcl \
+ 	install-ld \
+ 	install-libgui \
+-	install-libiberty \
+ 	install-libtool \
+ 	install-m4 \
+ 	install-make \
+-	install-mmalloc \
+ 	install-patch \
+ 	install-perl \
+ 	install-prms \
+@@ -823,13 +819,11 @@
+ 	install-target-libio \
+ 	install-target-libstdc++ \
+ 	install-target-libg++ \
+-	install-target-newlib \
+ 	install-target-libf2c \
+ 	install-target-libchill \
+ 	install-target-libobjc \
+ 	install-target-winsup \
+ 	install-target-libgloss \
+-	install-target-libiberty \
+ 	install-target-bsp \
+ 	install-target-libjava \
+ 	install-target-zlib \
