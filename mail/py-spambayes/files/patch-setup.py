@@ -1,10 +1,11 @@
---- setup.py.orig	Sat Feb  1 15:52:48 2003
-+++ setup.py	Sat Feb  1 15:53:53 2003
-@@ -36,6 +36,7 @@
+--- setup.py.orig	Mon Feb  3 05:53:52 2003
++++ setup.py	Mon Feb 17 02:25:52 2003
+@@ -36,6 +36,8 @@
             'hammiecli.py',
             'hammiesrv.py',
             'hammiefilter.py',
++           'mailsort.py',
 +           'mboxtrain.py',
             'pop3proxy.py',
-            'proxytrainer.py',
             'proxytee.py',
+            'dbExpImp.py',

@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	spambayes
-PORTVERSION=	1.0.a.1
+PORTVERSION=	1.0.a.2
 CATEGORIES=	mail python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-1.0a1
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/(.)\.(.)\.(.)$/\1\2\3/}
 
 MAINTAINER=	lioux@FreeBSD.org
 
@@ -19,7 +19,8 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 
 DOC_FILES=	HAMMIE.txt INTEGRATION.txt LICENSE.txt README.txt \
-		TESTING.txt hammie/BULK.txt
+		TESTING.txt contrib/BULK.txt \
+		contrib/muttrc contrib/procmailrc contrib/spambayes.el
 
 post-install:
 .ifndef(PORTDOCS)
