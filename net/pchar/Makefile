@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	pchar
-PORTVERSION=	1.2
+PORTVERSION=	1.3.1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.employees.org/~bmah/Software/pchar/
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	bmah@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 MAN8=		pchar.8
