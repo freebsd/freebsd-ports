@@ -29,7 +29,7 @@ IGNORE= "JavaCC may not be redistributed."
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-DOWNLOAD_URL?=	http://www.webgain.com/products/java_cc/
+DOWNLOAD_URL?=	https://javacc.dev.java.net/servlets/ProjectDocumentList?folderID=212
 
 .include <bsd.port.pre.mk>
 
