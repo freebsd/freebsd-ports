@@ -3,7 +3,7 @@
 # Date created:		5 Oct 1998
 # Whom:			Issei Suzuki <issei@jp.FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.78 1999/02/06 01:40:28 ache Exp $
+# $Id: Makefile,v 1.79 1999/03/15 01:18:49 steve Exp $
 #
 # Maximal ssh2 package requires YES values for
 # USE_SSH1, USE_TCPWRAP
@@ -45,9 +45,13 @@ CONFIGURE_ARGS+= --with-secureid
 .if defined(USE_TIS) && ${USE_TIS} == YES
 CONFIGURE_ARGS+= --with-tis
 .endif
+.if exists(/usr/include/tcpd.h)
+CONFIGURE_ARGS+= --with-libwrap
+.else
 .if defined(USE_TCPWRAP) && ${USE_TCPWRAP} == YES
 CONFIGURE_ARGS+= --with-libwrap="-L ${PREFIX}/lib -lwrap"
 LIB_DEPENDS+=   wrap.7:${PORTSDIR}/security/tcp_wrapper
+.endif
 .endif
 
 MAN1=	ssh2.1 ssh-keygen2.1 ssh-add2.1 ssh-agent2.1 \
