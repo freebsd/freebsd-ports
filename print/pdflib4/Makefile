@@ -15,7 +15,9 @@ MASTER_SITES=	http://www.pdflib.com/pdflib/download/
 MAINTAINER=	sysadmin@alexdupre.com
 COMMENT=	A C library for dynamically generating PDF
 
-BROKEN=		Does not fetch
+BROKEN=		Files have been removed from the distribution site. \
+		Port is marked for deletion. Use print/pdflib5 instead \
+		of this one.
 
 RESTRICTED=	"many odd restrictions on usage and distribution"
 
