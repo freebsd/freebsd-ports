@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	abiword
-PORTVERSION=	0.7.13
+PORTVERSION=	0.9.2
 CATEGORIES=	chinese editors
 MASTER_SITES=	# none
 DISTFILES=	# none
