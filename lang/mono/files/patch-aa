@@ -1,0 +1,10 @@
+--- configure.in.orig	Mon Aug 12 18:20:14 2002
++++ configure.in	Mon Aug 12 18:20:37 2002
+@@ -273,6 +273,7 @@
+ 	AC_CACHE_VAL(cv_mono_sizeof_sunpath,
+ 		[AC_TRY_RUN([
+ 			#include <stdio.h>
++			#include <sys/types.h>
+ 			#include <sys/un.h>
+ 
+ 			int main(void) {
