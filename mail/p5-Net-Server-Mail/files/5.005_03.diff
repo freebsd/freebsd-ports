@@ -68,9 +68,8 @@ diff -ru lib.old/Net/Server/Mail/SMTP.pm lib/Net/Server/Mail/SMTP.pm
  
  =pod
  
-diff -ru lib.old/Net/Server/Mail.pm lib/Net/Server/Mail.pm
---- lib.old/Net/Server/Mail.pm	Sun Apr  6 17:18:17 2003
-+++ lib/Net/Server/Mail.pm	Thu Feb 19 15:50:38 2004
+--- lib/Net/Server/Mail.pm.orig	Wed Jan  5 19:50:35 2005
++++ lib/Net/Server/Mail.pm	Mon Jan 24 20:22:04 2005
 @@ -1,6 +1,5 @@
  package Net::Server::Mail;
  
@@ -78,16 +77,16 @@ diff -ru lib.old/Net/Server/Mail.pm lib/Net/Server/Mail.pm
  use strict;
  use Sys::Hostname;
  use IO::Select;
-@@ -500,7 +499,7 @@
+@@ -502,7 +501,7 @@
          else
          {
              next unless defined;
--            my $rv = $self->{process_operation}($self, $_);
-+            my $rv = $self->{process_operation}->($self, $_);
-             # if $rv is defined, we have to close the connection
-             return $rv if defined $rv;
+-            $rv = $self->{process_operation}($self, $_);
++            $rv = $self->{process_operation}->($self, $_);
          }
-@@ -518,7 +517,7 @@
+         # if $rv is defined, we have to close the connection
+         return $rv if defined $rv;
+@@ -521,7 +520,7 @@
      }
      else
      {
