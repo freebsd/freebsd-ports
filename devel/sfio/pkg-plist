@@ -1,6 +1,8 @@
+@comment $FreeBSD$
 include/sfio/ast_common.h
 include/sfio/sfio.h
 include/sfio/sfio_t.h
 include/sfio/stdio.h
 lib/libsfio.a
 lib/libstdio.a
+@dirrm include/sfio
