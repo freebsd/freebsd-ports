@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rdate
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www3.cons.org/freebsd-distfiles/ \
 		${MASTER_SITE_LOCAL}
