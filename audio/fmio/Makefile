@@ -8,7 +8,7 @@
 PORTNAME=	fmio
 PORTVERSION=	1.1.4
 CATEGORIES=	audio
-MASTER_SITES=	http://www.jumbo.narod.ru/src/
+MASTER_SITES=	http://www.jumbo.narod.ru/src/fmio/
 
 MAINTAINER=	d.s.div@bigfoot.com
 
