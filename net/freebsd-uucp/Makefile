@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	freebsd-uucp
-PORTVERSION=	1.06.1.10
-PORTREVISION=	2
+PORTVERSION=	1.07
 CATEGORIES=	net comms
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=dinoex
@@ -56,6 +55,8 @@ do-configure:
 	@${ECHO_CMD} "       uucp" >> ${WRKSRC}/uucp.mtree
 	@${ECHO_CMD} "       .." >> ${WRKSRC}/uucp.mtree
 .endif
+	@(cd ${CONFIGURE_WRKSRC}; ${SETENV} ${MAKE_ENV} \
+		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} configure)
 
 .if ! exists(${DESTDIR}/${PREFIX}/info/dir)
 pre-install:
