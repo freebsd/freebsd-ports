@@ -9,7 +9,8 @@
 DISTNAME=	perl5.005_03
 PKGNAME=	ja-perl-5.005.03
 CATEGORIES=	japanese perl5
-MASTER_SITES=	ftp://ftp.funet.fi/pub/languages/perl/CPAN/src/5.0/ \
+MASTER_SITES=	ftp://ftp.cpan.org/CPAN/src/5.0/ \
+		ftp://ftp.funet.fi/pub/languages/perl/CPAN/src/5.0/ \
 		ftp://ftp.is.co.za/pub/packages/perl/CPAN/src/5.0/ \
 		ftp://ftp.math.ncu.edu.tw/perl/CPAN/src/5.0/ \
 		ftp://ftp.lab.kdd.co.jp/lang/perl/CPAN/src/5.0/ \
@@ -21,7 +22,8 @@ MASTER_SITES=	ftp://ftp.funet.fi/pub/languages/perl/CPAN/src/5.0/ \
 		ftp://ftp.delphi.com/pub/mirrors/packages/perl/CPAN/src/5.0/ \
 		ftp://uiarchive.cso.uiuc.edu/pub/lang/perl/CPAN/src/5.0/
 
-PATCH_SITES=	ftp://ftp.funet.fi/pub/languages/perl/CPAN/authors/id/WATANABE/ \
+PATCH_SITES=	ftp://ftp.cpan.org/CPAN/authors/id/WATANABE/ \
+		ftp://ftp.funet.fi/pub/languages/perl/CPAN/authors/id/WATANABE/ \
 		ftp://ftp.is.co.za/pub/packages/perl/CPAN/authors/id/WATANABE/ \
 		ftp://ftp.math.ncu.edu.tw/perl/CPAN/authors/id/WATANABE/ \
 		ftp://ftp.lab.kdd.co.jp/lang/perl/CPAN/authors/id/WATANABE/ \
