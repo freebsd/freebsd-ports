@@ -3,10 +3,10 @@
 # Date created:         30 Oct 1997
 # Whom:                 sec@42.org
 #
-# $Id: Makefile,v 1.6 1998/08/17 20:16:36 asami Exp $
+# $Id: Makefile,v 1.7 1998/08/19 23:07:51 steve Exp $
 #
 
-DISTNAME=	sendfile-19980712
+DISTNAME=	sendfile-19990215
 PKGNAME=	sendfile-2.1
 CATEGORIES=	net
 MASTER_SITES=   ftp://ftp.uni-stuttgart.de/pub/unix/comm/sendfile/current/
