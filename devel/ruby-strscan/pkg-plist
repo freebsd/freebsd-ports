@@ -1,4 +1,5 @@
-%%RUBY_SITEARCHLIBDIR%%/strscan.so
+%%RUBY_SITEARCHLIBDIR%%/cscan.so
+%%RUBY_SITELIBDIR%%/rscan.rb
 %%RUBY_SITELIBDIR%%/scanner.rb
 %%RUBY_SITELIBDIR%%/strscan.rb
 %%RUBY_DOCDIR%%/strscan/README.en
@@ -6,6 +7,7 @@
 %%RUBY_DOCDIR%%/strscan/index.html
 %%RUBY_DOCDIR%%/strscan/reference.html
 %%RUBY_DOCDIR%%/strscan/usage.html
+%%RUBY_DOCDIR%%/strscan/ja/README.ja
 %%RUBY_DOCDIR%%/strscan/ja/changes.html
 %%RUBY_DOCDIR%%/strscan/ja/index.html
 %%RUBY_DOCDIR%%/strscan/ja/reference.html
