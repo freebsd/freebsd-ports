@@ -1,0 +1,14 @@
+LablGTK2 uses the rich type system of Objective Caml 3 to provide
+a strongly typed, yet very comfortable, object-oriented interface
+to GTK+ 2.x.
+
+Objective Caml threads are supported, including for the toplevel,
+which allows for interactive use of the library.
+
+Please see ${PREFIX}/share/doc/ocaml/${PORTNAME}/README for further
+information.
+
+WWW: http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/lablgtk.html
+
+- Rene
+r.c.ladan@student.tue.nl
