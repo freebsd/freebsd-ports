@@ -7,18 +7,17 @@
 libdata/pkgconfig/gst-python-0.8.pc
 %%PORTDOCS%%%%DOCSDIR%%/README.html
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTDOCS%%%%DOCSDIR%%/bps.py
-%%PORTDOCS%%%%DOCSDIR%%/cp.py
-%%PORTDOCS%%%%DOCSDIR%%/dvdplay.py
-%%PORTDOCS%%%%DOCSDIR%%/f2f.py
-%%PORTDOCS%%%%DOCSDIR%%/identity.py
-%%PORTDOCS%%%%DOCSDIR%%/ilat.py
-%%PORTDOCS%%%%DOCSDIR%%/lat.py
-%%PORTDOCS%%%%DOCSDIR%%/player.py
-%%PORTDOCS%%%%DOCSDIR%%/rot13.py
-%%PORTDOCS%%%%DOCSDIR%%/vorbisplay.py
-%%PORTDOCS%%%%DOCSDIR%%/wavenc.py
 share/gst-python/2.0/defs/gst-types.defs
+share/gst-python/examples/bps.py
+share/gst-python/examples/cp.py
+share/gst-python/examples/f2f.py
+share/gst-python/examples/filesrc.py
+share/gst-python/examples/gst123
+share/gst-python/examples/play.py
+share/gst-python/examples/player.py
+share/gst-python/examples/videoplayer.py
+share/gst-python/examples/vorbisplay.py
+@dirrm share/gst-python/examples
 @dirrm share/gst-python/2.0/defs
 @dirrm share/gst-python/2.0
 @dirrm share/gst-python
