@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	DBI
-PORTVERSION=	1.34
-PORTREVISION=	1
+PORTVERSION=	1.35
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBI
@@ -16,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	The perl5 Database Interface.  Required for DBD::* modules
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/RPC/PlServer.pm:${PORTSDIR}/net/p5-PlRPC
+BUILD_DEPENDS=	${SITE_PERL}/RPC/PlServer.pm:${PORTSDIR}/net/p5-PlRPC
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -33,7 +32,6 @@ MAN3=		Bundle::DBI.3 \
 		DBI::DBD.3 \
 		DBI::DBD::Metadata.3 \
 		DBI::FAQ.3 \
-		DBI::Format.3 \
 		DBI::Profile.3 \
 		DBI::ProfileData.3 \
 		DBI::ProfileDumper.3 \
@@ -42,6 +40,5 @@ MAN3=		Bundle::DBI.3 \
 		DBI::PurePerl.3 \
 		DBI::W32ODBC.3 \
 		Win32::DBIODBC.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
