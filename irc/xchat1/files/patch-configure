@@ -1,0 +1,51 @@
+--- configure.orig	Tue Oct 15 12:18:08 2002
++++ configure	Tue Oct 15 12:18:50 2002
+@@ -3221,10 +3221,10 @@
+ #include "confdefs.h"
+ #include <libintl.h>
+ extern int _nl_msg_cat_cntr;
+-extern int *_nl_domain_bindings;
++extern int *libintl_nl_domain_bindings;
+ int main() {
+ bindtextdomain ("", "");
+-return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings
++return (int) gettext ("") + _nl_msg_cat_cntr + *libintl_nl_domain_bindings
+ ; return 0; }
+ EOF
+ if { (eval echo configure:3231: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+@@ -3610,7 +3610,7 @@
+ #include "confdefs.h"
+ #include <libintl.h>
+ extern int _nl_msg_cat_cntr;
+-extern int *_nl_domain_bindings;
++extern int *libintl_nl_domain_bindings;
+ extern
+ #ifdef __cplusplus
+ "C"
+@@ -3618,7 +3618,7 @@
+ const char *_nl_expand_alias ();
+ int main() {
+ bindtextdomain ("", "");
+-return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings + *_nl_expand_alias (0)
++return (int) gettext ("") + _nl_msg_cat_cntr + *libintl_nl_domain_bindings + *_nl_expand_alias (0)
+ ; return 0; }
+ EOF
+ if { (eval echo configure:3625: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+@@ -3638,7 +3638,7 @@
+ #include "confdefs.h"
+ #include <libintl.h>
+ extern int _nl_msg_cat_cntr;
+-extern int *_nl_domain_bindings;
++extern int *libintl_nl_domain_bindings;
+ extern
+ #ifdef __cplusplus
+ "C"
+@@ -3646,7 +3646,7 @@
+ const char *_nl_expand_alias ();
+ int main() {
+ bindtextdomain ("", "");
+-return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings + *_nl_expand_alias (0)
++return (int) gettext ("") + _nl_msg_cat_cntr + *libintl_nl_domain_bindings + *_nl_expand_alias (0)
+ ; return 0; }
+ EOF
+ if { (eval echo configure:3653: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
