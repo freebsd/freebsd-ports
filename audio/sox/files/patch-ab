@@ -1,11 +1,11 @@
---- resample.c.orig	Fri Sep  1 11:08:24 2000
-+++ resample.c	Sat Feb 24 22:28:16 2001
+--- resample.c.orig	Fri Sep  1 18:08:24 2000
++++ resample.c	Sat Mar 10 17:26:57 2001
 @@ -180,7 +180,7 @@
  	resample_t r = (resample_t) effp->priv;
  	LONG Xoff, gcdrate;
  	int i;
 -	extern long st_gcd(P2(long a,long b));
-+	extern long st_gcd(P2(LONG,LONG));
++	extern LONG st_gcd(P2(LONG,LONG));
  
  	r->Factor = (double)effp->outinfo.rate / (double)effp->ininfo.rate;
  
