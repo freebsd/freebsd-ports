@@ -2,6 +2,7 @@
 #
 
     SUBDIR += bitchx
+    SUBDIR += bitlbee
     SUBDIR += blackened
     SUBDIR += bnc
     SUBDIR += bobot++
