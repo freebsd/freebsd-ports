@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	turck-mmcache
-PORTVERSION=	2.3.10
+PORTVERSION=	2.3.14
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,49 +14,28 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	sysadmin@alexdupre.com
 COMMENT=	An opcode cache for PHP with encoder and loader
 
-EXTRACT_DEPENDS=phpize:${PORTSDIR}/www/mod_php4
-BUILD_DEPENDS=	${LOCALBASE}/include/php/Zend/zend.h:${PORTSDIR}/www/mod_php4
-LIB_DEPENDS=	mm.12:${PORTSDIR}/devel/mm
-RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${APACHE_PORT} \
-		${LOCALBASE}/bin/php:${PORTSDIR}/www/mod_php4
+USE_REINPLACE=	yes
+USE_PHPIZE=	yes
 
-USE_LIBTOOL=	yes
-WANT_AUTOMAKE_VER=	15
-WANT_AUTOCONF_VER=	253
-
-CONFIGURE_ARGS=	--enable-mmcache=shared \
-		--with-php-config=${LOCALBASE}/bin/php-config \
-		--prefix=${PREFIX}
-
-EXT_DIR=	20020429
-PLIST_SUB=	EXT_DIR=${EXT_DIR}
+CONFIGURE_ARGS=	--enable-mmcache=shared
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-USE_REINPLACE=	yes
-
 .include <bsd.port.pre.mk>
+.include "${.CURDIR}/../../lang/php4/bsd.php.mk"
 
-.if defined(WITH_APACHE2) || exists(${LOCALBASE}/include/apache2/apr.h)
-APACHE_PORT?=	${PORTSDIR}/www/apache2
-.else
-APACHE_PORT?=	${PORTSDIR}/www/apache13
-.endif
-
-post-extract:
-	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/config.m4
-	@${ECHO_MSG} "===>  PHPizing for ${DISTNAME}"
-	@cd ${WRKSRC} && ${LOCALBASE}/bin/phpize
+post-patch:
+	@${REINPLACE_CMD} 's|ALIGN|MMALIGN|g' ${WRKSRC}/mm.c ${WRKSRC}/mmcache.c
 
 post-build:
 	@${SED} "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/encoder.php > ${WRKSRC}/encoder
-	@${SED} "s|%%LOCALBASE%%|${LOCALBASE}|g;s|%%PREFIX%%|${PREFIX}|g;s|%%EXT_DIR%%|${EXT_DIR}|g" \
+	@${SED} "s|%%LOCALBASE%%|${LOCALBASE}|g;s|%%PREFIX%%|${PREFIX}|g;s|%%PHP_EXT_DIR%%|${PHP_EXT_DIR}|g" \
 		${.CURDIR}/pkg-message > ${PKGMESSAGE}
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib/php/${EXT_DIR}
+	@${MKDIR} ${PREFIX}/lib/php/${PHP_EXT_DIR}
 	@${INSTALL_DATA} ${WRKSRC}/modules/mmcache.so \
-	       ${PREFIX}/lib/php/${EXT_DIR}
+	       ${PREFIX}/lib/php/${PHP_EXT_DIR}
 	@${INSTALL_SCRIPT} ${WRKSRC}/encoder ${PREFIX}/bin
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/mmcache.php ${EXAMPLESDIR}
