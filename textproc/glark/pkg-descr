@@ -2,4 +2,4 @@ A replacement for (or supplement to) the grep family, glark offers: Perl/Ruby
 regular expressions, highlighting of matches, context around matches, complex
 expressions (``and'' and ``or''), and automatic exclusion of non-text files.
 
-WWW: http://www.glark.org/
+WWW: http://glark.sourceforge.net/
