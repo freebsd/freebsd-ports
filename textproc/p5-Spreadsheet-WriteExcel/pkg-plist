@@ -31,6 +31,7 @@ lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/examples/copyformat.pl
 lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/examples/csv2xls.pl
 lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/examples/easter_egg.pl
 lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/examples/formats.pl
+lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/examples/hyperlink.pl
 lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/examples/merge1.pl
 lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/examples/merge2.pl
 lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/WriteExcel/examples/ms_time.pl
