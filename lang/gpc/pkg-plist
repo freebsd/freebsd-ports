@@ -1,6 +1,6 @@
 bin/gpc
-lib/gcc-lib/%%GNUHOST%%/2.8.1/gpc1
 lib/gcc-lib/%%GNUHOST%%/2.8.1/gpc-cpp
+lib/gcc-lib/%%GNUHOST%%/2.8.1/gpc1
 lib/gcc-lib/%%GNUHOST%%/2.8.1/libgpc.a
 lib/gcc-lib/%%GNUHOST%%/2.8.1/units/crt.inc
 lib/gcc-lib/%%GNUHOST%%/2.8.1/units/crt.pas
@@ -35,6 +35,36 @@ lib/gcc-lib/%%GNUHOST%%/2.8.1/units/strings.pas
 lib/gcc-lib/%%GNUHOST%%/2.8.1/units/system.pas
 lib/gcc-lib/%%GNUHOST%%/2.8.1/units/turbo3.pas
 lib/gcc-lib/%%GNUHOST%%/2.8.1/units/windos.pas
+@unexec install-info --delete %D/info/gpc.info %D/info/dir
+@unexec install-info --delete %D/info/gpc.info-1 %D/info/dir
+@unexec install-info --delete %D/info/gpc.info-10 %D/info/dir
+@unexec install-info --delete %D/info/gpc.info-11 %D/info/dir
+@unexec install-info --delete %D/info/gpc.info-12 %D/info/dir
+@unexec install-info --delete %D/info/gpc.info-13 %D/info/dir
+@unexec install-info --delete %D/info/gpc.info-14 %D/info/dir
+@unexec install-info --delete %D/info/gpc.info-2 %D/info/dir
+@unexec install-info --delete %D/info/gpc.info-3 %D/info/dir
+@unexec install-info --delete %D/info/gpc.info-4 %D/info/dir
+@unexec install-info --delete %D/info/gpc.info-5 %D/info/dir
+@unexec install-info --delete %D/info/gpc.info-6 %D/info/dir
+@unexec install-info --delete %D/info/gpc.info-7 %D/info/dir
+@unexec install-info --delete %D/info/gpc.info-8 %D/info/dir
+@unexec install-info --delete %D/info/gpc.info-9 %D/info/dir
+info/gpc.info
+info/gpc.info-1
+info/gpc.info-10
+info/gpc.info-11
+info/gpc.info-12
+info/gpc.info-13
+info/gpc.info-14
+info/gpc.info-2
+info/gpc.info-3
+info/gpc.info-4
+info/gpc.info-5
+info/gpc.info-6
+info/gpc.info-7
+info/gpc.info-8
+info/gpc.info-9
 @dirrm lib/gcc-lib/%%GNUHOST%%/2.8.1/units
 @exec install-info %D/info/gpc.info %D/info/dir
 @exec install-info %D/info/gpc.info-1 %D/info/dir
@@ -51,18 +81,3 @@ lib/gcc-lib/%%GNUHOST%%/2.8.1/units/windos.pas
 @exec install-info %D/info/gpc.info-7 %D/info/dir
 @exec install-info %D/info/gpc.info-8 %D/info/dir
 @exec install-info %D/info/gpc.info-9 %D/info/dir
-@unexec install-info --delete %D/info/gpc.info %D/info/dir
-@unexec install-info --delete %D/info/gpc.info-1 %D/info/dir
-@unexec install-info --delete %D/info/gpc.info-10 %D/info/dir
-@unexec install-info --delete %D/info/gpc.info-11 %D/info/dir
-@unexec install-info --delete %D/info/gpc.info-12 %D/info/dir
-@unexec install-info --delete %D/info/gpc.info-13 %D/info/dir
-@unexec install-info --delete %D/info/gpc.info-14 %D/info/dir
-@unexec install-info --delete %D/info/gpc.info-2 %D/info/dir
-@unexec install-info --delete %D/info/gpc.info-3 %D/info/dir
-@unexec install-info --delete %D/info/gpc.info-4 %D/info/dir
-@unexec install-info --delete %D/info/gpc.info-5 %D/info/dir
-@unexec install-info --delete %D/info/gpc.info-6 %D/info/dir
-@unexec install-info --delete %D/info/gpc.info-7 %D/info/dir
-@unexec install-info --delete %D/info/gpc.info-8 %D/info/dir
-@unexec install-info --delete %D/info/gpc.info-9 %D/info/dir
