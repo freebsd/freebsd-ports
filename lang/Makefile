@@ -75,6 +75,7 @@
     SUBDIR += gcc34
     SUBDIR += gcc40
     SUBDIR += gcl
+    SUBDIR += gdc
     SUBDIR += generic-haskell
     SUBDIR += gforth
     SUBDIR += gfortran
