@@ -12,6 +12,7 @@ CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 DISTFILES=	X402src-1.tgz X402src-2.tgz
+EXTRACT_ONLY=	X402src-1.tgz X402src-2.tgz
 
 MAINTAINER=	jmz@FreeBSD.org
 
@@ -65,18 +66,24 @@ pre-fetch:
 .elif defined(USA_RESIDENT)
 .if ${USA_RESIDENT} == NO
 pre-fetch:
+.ifndef WITH_MATROX_GXX_DRIVER
+	@${ECHO} Define WITH_MATROX_GXX_DRIVER if you want to enable Matrox driver for 
+	@${ECHO} G200, G400 and G450 graphic adapters
+.endif
 MASTER_SITES+=	ftp://psych.psy.uq.oz.au/pub/X11R5/ \
 		ftp://ftp.internat.freebsd.org/pub/FreeBSD/X11-Crypto/ \
 		ftp://ftp3.za.freebsd.org/pub/FreeBSD/X11-Crypto/
-EXTRACT_ONLY=	X402src-1.tgz X402src-2.tgz
 DISTFILES+=	Wraphelp.c
 IGNOREFILES=	Wraphelp.c
-.endif
-.if ${USA_RESIDENT} == YES
+.else # ${USA_RESIDENT} == YES
 pre-fetch:
 	@${ECHO}
 	@${ECHO} Assuming that you have fetched a USA-Legal Wraphelp.c.
+.ifndef WITH_MATROX_GXX_DRIVER
+	@${ECHO} Define WITH_MATROX_GXX_DRIVER if you want to enable Matrox driver for 
+	@${ECHO} G200, G400 and G450 graphic adapters
 .endif
+.endif # ${USA_RESIDENT}
 .endif
 
 .include <bsd.port.pre.mk>
@@ -85,13 +92,30 @@ pre-fetch:
 BROKEN=	"can't be compiled on this system (missing headers)"
 .endif
 
+.if defined(WITH_MATROX_GXX_DRIVER)
+MGA_DRIVER_VERSION=	1_01_05beta
+MASTER_SITES+=	ftp://ftp.matrox.com/pub/mga/archive/linux/2001/beta_${MGA_DRIVER_VERSION:S/beta//}
+DISTFILES+=	mga-${MGA_DRIVER_VERSION}.tgz
+.endif # WITH_MATROX_GXX_DRIVER
+
 .if ${OSVERSION} > 500012
 post-patch:
 	@if [ ! -e ${WRKSRC}/include/Xarch.h.orig ]; then\
 	  mv ${WRKSRC}/include/Xarch.h ${WRKSRC}/include/Xarch.h.orig;\
 	  ${SED} -e 52d -e 54d < ${WRKSRC}/include/Xarch.h.orig > \
 	  ${WRKSRC}/include/Xarch.h; fi
-.endif
+.endif # ${OSVERSION} > 500012
+.if defined(WITH_MATROX_GXX_DRIVER)
+.if !target(post-patch)
+post-patch:
+.endif # !target(post-patch)
+	@${MV} ${WRKSRC}/programs/Xserver/hw/xfree86/drivers/mga \
+		${WRKSRC}/programs/Xserver/hw/xfree86/drivers/mga.old
+	@${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/mga-${MGA_DRIVER_VERSION}.tgz \
+		-C ${WRKSRC}/programs/Xserver/hw/xfree86/drivers
+	@${CP} ${WRKSRC}/config/cf/xf86site.def ${WRKSRC}/config/cf/host.def
+	@${ECHO} "#define HaveMatroxHal YES" >> ${WRKSRC}/config/cf/host.def
+.endif # WITH_MATROX_GXX_DRIVER
 
 pre-install:
 	${MKDIR} ${PREFIX}
