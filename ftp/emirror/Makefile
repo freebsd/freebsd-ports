@@ -11,7 +11,7 @@ PORTVERSION=	2.2.0.0.4
 PORTREVISION=	0
 CATEGORIES=	ftp python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		ftp://eclipt.uni-klu.ac.at/pub/projects/emirror/
+		ftp://eclipt.uni-klu.ac.at/pub/projects/emirror/snapshots/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-2.2.0-0.4
 
