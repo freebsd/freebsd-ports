@@ -67,7 +67,7 @@ while [ "$1" ]; do
 			echo "FreeType is DISABLED for now. Ignoring." > /dev/stderr
 			;;
 		\"nothing\")
-			echo "LIB_DEPENDS+=	ttf.3:\${PORTSDIR}/print/freetype"
+			echo "LIB_DEPENDS+=	ttf.4:\${PORTSDIR}/print/freetype"
 			echo "PHP_CONF_ARGS+=	--with-ttf=\${PREFIX}"
 			if [ -z "$GD" ]; then
 				set $* \"GD\"
