@@ -1,6 +1,8 @@
 bin/yaz-asncomp
 bin/yaz-client
 bin/yaz-config
+bin/yaz-iconv
+bin/yaz-marcdump
 bin/yaz-ztest
 bin/zoomsh
 include/yaz/backend.h
@@ -73,10 +75,6 @@ lib/libyaz.a
 lib/libyaz.la
 lib/libyaz.so
 lib/libyaz.so.2
-lib/libyazmalloc.a
-lib/libyazmalloc.la
-lib/libyazmalloc.so
-lib/libyazmalloc.so.2
 lib/libyazthread.a
 lib/libyazthread.la
 lib/libyazthread.so
@@ -128,6 +126,7 @@ share/doc/yaz/soap.xml.html
 share/doc/yaz/tools.html
 share/doc/yaz/tools.nmem.html
 share/doc/yaz/tools.oid.html
+share/doc/yaz/yaz.css
 share/doc/yaz/yaz.html
 share/doc/yaz/yaz.pdf
 share/doc/yaz/zoom.events.html
