@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	palmpower
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	palm
 MASTER_SITES=	http://www.fh-wilhelmshaven.de/~akcaagaa/palmpower/files/
 
