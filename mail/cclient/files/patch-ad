@@ -1,0 +1,10 @@
+--- src/osdep/unix/mx.c.orig	Tue Jul 18 22:11:50 2000
++++ src/osdep/unix/mx.c	Tue Jul 18 22:13:55 2000
+@@ -882,6 +882,7 @@
+     if (f&fANSWERED) elt->answered = T;
+     if (f&fDRAFT) elt->draft = T;
+     elt->user_flags |= uf;
++    set_mbx_protections (mailbox,tmp);
+     mx_unlockindex (astream);	/* unlock index */
+   }
+   else {
