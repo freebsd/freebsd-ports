@@ -1,6 +1,8 @@
---- sysdeps/freebsd/proclist.c.orig	Thu May 27 09:04:05 1999
-+++ sysdeps/freebsd/proclist.c	Fri Dec 22 18:02:59 2000
-@@ -88,9 +88,20 @@
+--- sysdeps/freebsd/proclist.c.orig	Thu May 27 23:04:05 1999
++++ sysdeps/freebsd/proclist.c	Sun Sep  7 20:37:30 2003
+@@ -86,13 +86,24 @@
+ 	pids = glibtop_realloc_r (server, pids, count * sizeof (unsigned));
+ 	/* Copy the pids over to this chain */
  	for (i=j=0; i < count; i++) {
 +#if __FreeBSD_version >= 500013
 +#define XXX_P_STAT	ki_stat
@@ -24,8 +26,10 @@
 -		pids [j++] = (unsigned) pinfo[i].kp_proc.p_pid;
 +		pids [j++] = (unsigned) pinfo[i].XXX_P_PID;
  	} /* end for */
---- sysdeps/freebsd/procstate.c.orig	Sun Feb 10 09:30:11 2002
-+++ sysdeps/freebsd/procstate.c	Mon Apr 29 11:42:22 2002
+ 	/* Set the fields in buf */
+ 	buf->number = j;
+--- sysdeps/freebsd/procstate.c.orig	Sun Oct 17 03:01:39 1999
++++ sysdeps/freebsd/procstate.c	Sun Sep  7 20:37:30 2003
 @@ -28,7 +28,7 @@
  #include <glibtop_suid.h>
  
@@ -121,8 +125,10 @@
  	buf->flags |= (1L << GLIBTOP_PROC_STATE_STATE);
  }
 --- sysdeps/freebsd/procuid.c.orig	Fri Sep 17 06:08:07 1999
-+++ sysdeps/freebsd/procuid.c	Thu Feb 15 01:16:50 2001
-@@ -86,13 +86,42 @@
++++ sysdeps/freebsd/procuid.c	Sun Sep  7 20:37:30 2003
+@@ -84,17 +84,46 @@
+ 		return;
+ 	}
  
 -	buf->uid  = pinfo [0].kp_eproc.e_pcred.p_ruid;
 -	buf->euid = pinfo [0].kp_eproc.e_pcred.p_svuid;
@@ -175,39 +181,13 @@
 +	buf->nice     = pinfo [0].XXX_P_NICE;
 +	buf->priority = pinfo [0].XXX_P_PRIORITY;
  
---- sysdeps/freebsd/procmem.c.orig	Thu May 27 13:56:49 1999
-+++ sysdeps/freebsd/procmem.c	Wed Dec 27 10:16:26 2000
-@@ -139,2 +139,18 @@
- 
-+#if __FreeBSD_version >= 500013
-+
-+#define	XXX_P_VMSPACE	ki_vmspace
-+
-+	buf->rss_rlim = pinfo [0].ki_rssize;
-+
-+	buf->vsize = buf->size = (u_int64_t) pagetok
-+		(pinfo [0].ki_tsize + pinfo [0].ki_dsize + pinfo[0].ki_ssize)
-+			<< LOG1024;
-+	buf->resident = buf->rss = (u_int64_t) pagetok
-+		(pinfo [0].ki_rssize) << LOG1024;
-+
-+#else
-+
-+#define	XXX_P_VMSPACE	kp_proc.p_vmspace
-+
- 	if (kvm_read (server->machine.kd,
-@@ -156,2 +172,3 @@
- 		(vms->vm_rssize) << LOG1024;
-+#endif
- 
-@@ -160,3 +177,3 @@
- 	if (kvm_read (server->machine.kd,
--		      (unsigned long) pinfo [0].kp_proc.p_vmspace,
-+		      (unsigned long) pinfo [0].XXX_P_VMSPACE,
- 		      (char *) &vmspace, sizeof (vmspace)) != sizeof (vmspace)) {
---- sysdeps/freebsd/procsignal.c.orig	Sun Feb 13 15:31:39 2000
-+++ sysdeps/freebsd/procsignal.c	Wed Dec 27 10:22:28 2000
-@@ -69,2 +69,18 @@
+ 	/* Set the flags for the data we're about to return*/
+ 	buf->flags = _glibtop_sysdeps_proc_uid;
+--- sysdeps/freebsd/procsignal.c.orig	Mon Feb 14 06:31:39 2000
++++ sysdeps/freebsd/procsignal.c	Sun Sep  7 20:37:30 2003
+@@ -67,11 +67,27 @@
+ 		return;
+ 	}
  
 +#if __FreeBSD_version >= 500013
 +
@@ -226,147 +206,38 @@
 +#endif
 +
  	/* signal: mask of pending signals.
-@@ -73,3 +89,3 @@
+ 	 *         pinfo [0].kp_proc.p_siglist
+ 	 */
  #if (defined(__NetBSD__) && (NSIG > 32)) || (__FreeBSD_version >= 400011)
 -	buf->signal [0] = pinfo [0].kp_proc.p_siglist.__bits[0];
 +	buf->signal [0] = pinfo [0].XXX_P_SIGLIST.__bits[0];
  #else
-@@ -82,3 +98,3 @@
+ 	buf->signal [0] = pinfo [0].kp_proc.p_siglist;
+ #endif
+@@ -80,7 +96,7 @@
+ 	 *          pinfo [0].kp_proc.p_sigmask
+ 	 */
  #if (defined(__NetBSD__) && (NSIG > 32)) || (__FreeBSD_version >= 400011)
 -	buf->blocked [0] = pinfo [0].kp_proc.p_sigmask.__bits[0];
 +	buf->blocked [0] = pinfo [0].XXX_P_SIGMASK.__bits[0];
  #else
-@@ -91,3 +107,3 @@
+ 	buf->blocked [0] = pinfo [0].kp_proc.p_sigmask;
+ #endif
+@@ -89,7 +105,7 @@
+ 	 *            pinfo [0].kp_proc.p_sigignore
+ 	*/
  #if (defined(__NetBSD__) && (NSIG > 32)) || (__FreeBSD_version >= 400011)
 -	buf->sigignore [0] = pinfo [0].kp_proc.p_sigignore.__bits[0];
 +	buf->sigignore [0] = pinfo [0].XXX_P_SIGIGNORE.__bits[0];
  #else
-@@ -100,3 +116,3 @@
+ 	buf->sigignore [0] = pinfo [0].kp_proc.p_sigignore;
+ #endif
+@@ -98,7 +114,7 @@
+ 	 *           pinfo [0].kp_proc.p_sigcatch
+ 	*/
  #if (defined(__NetBSD__) && (NSIG > 32)) || (__FreeBSD_version >= 400011)
 -	buf->sigcatch [0] = pinfo [0].kp_proc.p_sigcatch.__bits[0];
 +	buf->sigcatch [0] = pinfo [0].XXX_P_SIGCATCH.__bits[0];
  #else
---- sysdeps/freebsd/prockernel.c.orig	Sat Oct 16 13:31:43 1999
-+++ sysdeps/freebsd/prockernel.c	Wed Dec 27 10:50:19 2000
-@@ -36,8 +36,2 @@
+ 	buf->sigcatch [0] = pinfo [0].kp_proc.p_sigcatch;
  #endif
--#if !defined(__bsdi__) && !(defined(__FreeBSD__) && defined(__alpha__))
--#include <machine/pcb.h>
--#endif
--#if defined(__FreeBSD__) && !defined(__alpha__)
--#include <machine/tss.h>
--#endif
- 
-@@ -80,10 +74,4 @@
- 	struct kinfo_proc *pinfo;
--	struct user *u_addr = (struct user *)USRSTACK;
--	struct pstats pstats;
--	struct pcb pcb;
- 	int count;
- 
--	char filename [BUFSIZ];
--	struct stat statb;
--
- 	glibtop_init_p (server, (1L << GLIBTOP_SYSDEPS_PROC_KERNEL), 0);
-@@ -103,7 +91,21 @@
- 
--	buf->nwchan = (unsigned long) pinfo [0].kp_proc.p_wchan &~ KERNBASE;
-+#if __FreeBSD_version >= 500013
-+
-+#define	XXX_P_WCHAN	ki_wchan
-+#define	XXX_P_WMESG	ki_wmesg
-+#define	XXX_E_WMESG	ki_wmesg
-+
-+#else
-+
-+#define	XXX_P_WCHAN	kp_proc.p_wchan
-+#define	XXX_P_WMESG	kp_proc.p_wmesg
-+#define	XXX_E_WMESG	kp_eproc.e_wmesg
-+
-+#endif
-+
-+	buf->nwchan = (unsigned long) pinfo [0].XXX_P_WCHAN &~ KERNBASE;
- 	buf->flags |= (1L << GLIBTOP_PROC_KERNEL_NWCHAN);
- 
--	if (pinfo [0].kp_proc.p_wchan && pinfo [0].kp_proc.p_wmesg) {
--		strncpy (buf->wchan, pinfo [0].kp_eproc.e_wmesg,
-+	if (pinfo [0].XXX_P_WCHAN && pinfo [0].XXX_P_WMESG) {
-+		strncpy (buf->wchan, pinfo [0].XXX_E_WMESG,
- 			 sizeof (buf->wchan) - 1);
-@@ -115,70 +117,8 @@
- 
--	/* Taken from `saveuser ()' in `/usr/src/bin/ps/ps.c'. */
--
--	/* [FIXME]: /usr/include/sys/user.h tells me that the user area
--	 *          may or may not be at the same kernel address in all
--	 *          processes, but I don't see any way to get that address.
--	 *          Since `ps' simply uses its own address, I think it's
--	 *          safe to do this here, too. */
--
--	/* NOTE: You need to mount the /proc filesystem to make
--	 *       `kvm_uread' work. */
--
--	sprintf (filename, "/proc/%d/mem", (int) pid);
--	if (stat (filename, &statb)) return;
--
--	glibtop_suid_enter (server);
--
--	if ((pinfo [0].kp_proc.p_flag & P_INMEM) &&
--	    kvm_uread (server->machine.kd, &(pinfo [0]).kp_proc,
--		       (unsigned long) &u_addr->u_stats,
--		       (char *) &pstats, sizeof (pstats)) == sizeof (pstats))
--		{
--			/*
--			 * The u-area might be swapped out, and we can't get
--			 * at it because we have a crashdump and no swap.
--			 * If it's here fill in these fields, otherwise, just
--			 * leave them 0.
--			 */
--
--			buf->min_flt = (u_int64_t) pstats.p_ru.ru_minflt;
--			buf->maj_flt = (u_int64_t) pstats.p_ru.ru_majflt;
--			buf->cmin_flt = (u_int64_t) pstats.p_cru.ru_minflt;
--			buf->cmaj_flt = (u_int64_t) pstats.p_cru.ru_majflt;
--			
--			buf->flags |= _glibtop_sysdeps_proc_kernel_pstats;
--		}
--
--	if ((pinfo [0].kp_proc.p_flag & P_INMEM) &&
--	    kvm_uread (server->machine.kd, &(pinfo [0]).kp_proc,
--		       (unsigned long) &u_addr->u_pcb,
--		       (char *) &pcb, sizeof (pcb)) == sizeof (pcb))
--		{
--#ifdef __FreeBSD__
--#ifndef __alpha__
--#if (__FreeBSD_version >= 300003)
--			buf->kstk_esp = (u_int64_t) pcb.pcb_esp;
--			buf->kstk_eip = (u_int64_t) pcb.pcb_eip;
--#else
--			buf->kstk_esp = (u_int64_t) pcb.pcb_ksp;
--			buf->kstk_eip = (u_int64_t) pcb.pcb_pc;
--#endif
--#else
--			/*xxx FreeBSD/Alpha? */
--#endif
--#else
--			buf->kstk_esp = (u_int64_t) pcb.pcb_tss.tss_esp0;
--#ifdef __bsdi__
--			buf->kstk_eip = (u_int64_t) pcb.pcb_tss.tss_eip;
--#else
--			buf->kstk_eip = (u_int64_t) pcb.pcb_tss.__tss_eip;
--#endif
--
--			buf->flags |= _glibtop_sysdeps_proc_kernel_pcb;
--#endif
--		}
--
--	/* Taken from `wchan ()' in `/usr/src/bin/ps/print.c'. */
--
--	glibtop_suid_leave (server);
-+	/* XXX: the code here was, quite frankly, junk, and almost
-+	 * certainly wrong - remove it all, leave these fields
-+	 * unpopulated, and give up until such time as the right
-+	 * code is produced for both FreeBSD 4.x and 5.x
-+	 */
-+	return;
- }
