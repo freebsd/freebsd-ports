@@ -1,0 +1,8 @@
+%%SITE_PERL%%/DateTime/Event/NameDay.pm
+%%SITE_PERL%%/DateTime/Event/NameDay/sweden.pm
+%%SITE_PERL%%/DateTime/Event/NameDay/slovakia.pm
+%%SITE_PERL%%/DateTime/Event/NameDay/france.pm
+%%SITE_PERL%%/DateTime/Event/NameDay/greece.pm
+@dirrm %%SITE_PERL%%/DateTime/Event/NameDay
+@unexec rmdir %D/%%SITE_PERL%%/DateTime/Event 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/DateTime 2>/dev/null || true
