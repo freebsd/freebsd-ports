@@ -1,0 +1,18 @@
+--- Makefile.in.orig	Fri May 21 14:39:05 2004
++++ Makefile.in	Sun May 30 15:59:59 2004
+@@ -508,7 +508,6 @@
+ #	$(SHELL) ./config.status --recheck
+ 
+ install-data-hook:
+-	$(mkinstalldirs) $(DESTDIR)$(datadir)/doc/$(PACKAGE)-$(VERSION)
+ 	$(mkinstalldirs) $(DESTDIR)$(datadir)/doc/$(PACKAGE)-$(VERSION)/doc
+ 	$(mkinstalldirs) $(DESTDIR)$(datadir)/doc/$(PACKAGE)-$(VERSION)/doc/themes
+ 	$(mkinstalldirs) $(DESTDIR)$(datadir)/doc/$(PACKAGE)-$(VERSION)/doc/themes/default
+@@ -516,7 +515,6 @@
+ 	$(mkinstalldirs) $(DESTDIR)$(datadir)/doc/$(PACKAGE)-$(VERSION)/doc/themes/default/buttons/en
+ 	$(mkinstalldirs) $(DESTDIR)$(datadir)/doc/$(PACKAGE)-$(VERSION)/doc/themes/default/images
+ 	$(mkinstalldirs) $(DESTDIR)$(datadir)/doc/$(PACKAGE)-$(VERSION)/doc/themes/default/templates
+-	$(INSTALL_DATA) $(top_srcdir)/AUTHORS $(top_srcdir)/COPYING $(top_srcdir)/ChangeLog $(top_srcdir)/INSTALL $(top_srcdir)/NEWS $(top_srcdir)/README $(top_srcdir)/THANKS $(DESTDIR)$(datadir)/doc/$(PACKAGE)-$(VERSION)/
+ 	$(INSTALL_DATA) $(top_srcdir)/doc/*.html $(DESTDIR)$(datadir)/doc/$(PACKAGE)-$(VERSION)/doc
+ 	$(INSTALL_DATA) $(top_srcdir)/doc/*.gif $(DESTDIR)$(datadir)/doc/$(PACKAGE)-$(VERSION)/doc
+ 	$(INSTALL_DATA) $(top_srcdir)/doc/*.png $(DESTDIR)$(datadir)/doc/$(PACKAGE)-$(VERSION)/doc
