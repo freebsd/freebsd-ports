@@ -13,7 +13,7 @@ MASTER_SITES=	http://freenode.net/ \
 		http://source.freenode.net/~asuffield/dancer/dancer-user-guide/:doc2
 MASTER_SITE_SUBDIR=	${PORTNAME}/stable/releases
 DISTNAME=	${PORTNAME}-${PORTVERSION}+6p4
-DISTFIELS=	${DISTNAME}${EXTRACT_SUFX}${EXTRACT_SUFX} \
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		dancer-oper-guide.txt:doc1 \
 		dancer-user-guide.txt:doc2
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
