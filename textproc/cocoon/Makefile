@@ -9,11 +9,8 @@ PORTNAME=	cocoon
 PORTVERSION=	1.8.2
 PORTREVISION=	3
 CATEGORIES=	textproc www java
-MASTER_SITES=	${MASTER_SITE_APACHE_XML} \
-		http://www.metaverse.nl/~ernst/
-MASTER_SITE_SUBDIR=	cocoon/cocoon1
-
-DISTNAME=	Cocoon-${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD:S,httpd/%SUBDIR%,%SUBDIR%,}
+MASTER_SITE_SUBDIR=	cocoon/OLD
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	100% pure Java publishing framework servlet
