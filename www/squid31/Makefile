@@ -66,7 +66,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
