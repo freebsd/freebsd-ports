@@ -419,6 +419,7 @@ aspostit	ports/deskutils/aspostit
 asprint		ports/print/asprint
 asr-manpages	ports/misc/asr-manpages
 asr-utils	ports/sysutils/asr-utils
+asterisk	ports/net/asterisk
 astime		ports/x11-clocks/astime
 astk-client	ports/cad/astk-client
 astk-serveur	ports/cad/astk-serveur
@@ -4299,6 +4300,7 @@ makepatch	ports/textproc/makepatch
 makeplus	ports/devel/makeplus
 makeself	ports/archivers/makeself
 maketeidtd	ports/textproc/maketeidtd
+maketool	ports/devel/maketool
 makeztxt	ports/palm/makeztxt
 malbolge	ports/lang/malbolge
 malsync		ports/palm/malsync
