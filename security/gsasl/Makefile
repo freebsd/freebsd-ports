@@ -8,6 +8,7 @@
 
 PORTNAME=	gsasl
 PORTVERSION=	0.1.4
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://josefsson.org/${PORTNAME}/releases/ \
 		${MASTER_SITE_GNU_ALPHA}
@@ -16,7 +17,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	GNU SASL Library
 
-LIB_DEPENDS=	idn.15:${PORTSDIR}/devel/libidn \
+LIB_DEPENDS=	idn.16:${PORTSDIR}/devel/libidn \
 		gcrypt.12:${PORTSDIR}/security/libgcrypt \
 		ntlm.0:${PORTSDIR}/security/libntlm
 
