@@ -3,7 +3,7 @@
 # Date created:		6 January 1997
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.7 1997/07/11 10:26:33 max Exp $
+# $Id: Makefile,v 1.8 1997/07/13 18:49:18 max Exp $
 #
 
 DISTNAME=	jpman-${VERSION}c
@@ -36,7 +36,7 @@ do-install:
 		DISTFILES=${DISTFILES} JPMANDIR=${JPMANDIR} \
 		EXTRACT_CMD=${EXTRACT_CMD} ECHO=${ECHO} RM=${RM} \
 		AWK=${AWK} GZIP_CMD="${GZIP_CMD}" SED=${SED} \
-		INSTALL_MAN="${INSTALL_MAN}" /bin/sh \
+		INSTALL_MAN="${INSTALL_MAN}" ${SH} \
 		${FILESDIR}/install-man NOMANCOMPRESS  
 .endif
 
