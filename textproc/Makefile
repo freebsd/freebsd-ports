@@ -45,6 +45,7 @@
     SUBDIR += gmat
     SUBDIR += grap
     SUBDIR += gsed
+    SUBDIR += gtk-doc
     SUBDIR += gtkdiff
     SUBDIR += gutenbook
     SUBDIR += gxditview

@@ -1,0 +1,4 @@
+This package automatically generates DocBook documentation for GTK+ and Gnome,
+and converts the DocBook documentation into HTML (and man pages in future).
+
+WWW: http://www.gtk.org/rdp/

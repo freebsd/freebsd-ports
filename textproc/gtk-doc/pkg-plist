@@ -1,0 +1,10 @@
+bin/gtkdoc-scanobj
+bin/gtkdoc-scangobj
+bin/gtkdoc-scan
+bin/gtkdoc-mktmpl
+bin/gtkdoc-mkdb
+bin/gtkdoc-mkhtml
+bin/gtkdoc-mkman
+bin/gtkdoc-fixxref
+share/gtk-doc/gtk-doc.dsl
+# rmdir share/gtk-doc
