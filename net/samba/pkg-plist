@@ -92,9 +92,6 @@ share/doc/samba/cifsntdomain.txt
 share/doc/samba/history
 share/doc/samba/security_level.txt
 share/doc/samba/wfw_slip.htm
-share/examples/samba/autofs/auto.a
-share/examples/samba/autofs/mount-smb.doc
-share/examples/samba/autofs/mount.smb
 share/examples/samba/dce-dfs/README
 share/examples/samba/dce-dfs/smb.conf
 share/examples/samba/tridge/smb.conf.WinNT
@@ -142,7 +139,6 @@ etc/codepages/codepage.950
 @unexec rm -rf /var/spool/samba
 @dirrm share/doc/samba/faq
 @dirrm share/doc/samba
-@dirrm share/examples/samba/autofs
 @dirrm share/examples/samba/dce-dfs
 @dirrm share/examples/samba/tridge
 @dirrm share/examples/samba/thoralf
