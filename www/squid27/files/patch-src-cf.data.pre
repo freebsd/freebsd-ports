@@ -1,20 +1,17 @@
---- src/cf.data.pre.orig	Thu May  1 14:07:51 2003
-+++ src/cf.data.pre	Thu May  1 14:13:12 2003
-@@ -2325,7 +2325,7 @@
+--- src/cf.data.pre.orig	Fri Aug 20 16:23:18 2004
++++ src/cf.data.pre	Fri Aug 20 16:25:23 2004
+@@ -2396,12 +2396,12 @@
  
  NAME: cache_effective_user
  TYPE: string
 -DEFAULT: nobody
 +DEFAULT: %%SQUID_UID%%
  LOC: Config.effectiveUser
- DOC_NONE
- 
-@@ -2337,7 +2337,7 @@
- 
+ DOC_START
  	If you start Squid as root, it will change its effective/real
- 	UID/GID to the UID/GID specified below.  The default is to
--	change to UID to nobody.  If you define cache_effective_user,
-+	change to UID to %%SQUID_UID%%.  If you define cache_effective_user,
- 	but not cache_effective_group, Squid sets the GID the
- 	effective user's default group ID (taken from the password
- 	file).
+ 	UID/GID to the user specified below.  The default is to change
+-	to UID to nobody.  If you define cache_effective_user, but not
++	to UID to %%SQUID_UID%%.  If you define cache_effective_user, but not
+ 	cache_effective_group, Squid sets the GID to the effective
+ 	user's default group ID (taken from the password file) and
+ 	supplementary group list from the from groups membership of
