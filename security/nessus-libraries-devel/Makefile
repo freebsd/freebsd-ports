@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.chg.ru/pub/security/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.sekure.net/pub/nessus/nessus-${PORTVERSION}/src/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	olgeni@uli.it
 
 DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/nessus-libraries
