@@ -16,12 +16,12 @@ MAINTAINER=	kiwi@oav.net
 COMMENT=	Universal log converter into graph
 
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
-
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		rrd.0:${PORTSDIR}/net/rrdtool
 
 USE_GETOPT_LONG=	yes
+USE_REINPLACE=	yes
 
 MAN1=		happystats.1
 MANCOMPRESSED=	yes
@@ -29,12 +29,13 @@ DOCS=		AUTHORS INSTALL TODO
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502108
-BROKEN=		"Does not link on FreeBSD >= 5.x"
-.endif
-
 do-configure:
 	@cd ${WRKSRC} && ${MAKE} dep
+
+post-configure:
+.if ${OSVERSION} > 500041
+	@${REINPLACE_CMD} -E -e 's|-lgnugetopt||g' ${WRKSRC}/Makefile
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/happystats ${PREFIX}/bin
