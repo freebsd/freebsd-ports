@@ -1946,6 +1946,7 @@ gnustep-objc	ports/lang/gnustep-objc
 gnustep-xgps	ports/x11-toolkits/gnustep-xgps
 gnut		ports/net/gnut
 gob		ports/x11-toolkits/gob
+goblin		ports/misc/goblin
 gogo		ports/audio/gogo
 golddig		ports/games/golddig
 goldstr		ports/misc/goldstr
