@@ -8197,6 +8197,7 @@ pear-HTML_Template_IT	ports/devel/pear-HTML_Template_IT
 pear-HTML_Template_PHPLIB	ports/devel/pear-HTML_Template_PHPLIB
 pear-HTML_TreeMenu	ports/devel/pear-HTML_TreeMenu
 pear-HTTP	ports/www/pear-HTTP
+pear-HTTP_Download	ports/www/pear-HTTP_Download
 pear-HTTP_Header	ports/www/pear-HTTP_Header
 pear-HTTP_Request	ports/www/pear-HTTP_Request
 pear-HTTP_Server	ports/www/pear-HTTP_Server
