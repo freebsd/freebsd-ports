@@ -5154,6 +5154,7 @@ osgedit		ports/graphics/osgedit
 osh		ports/shells/osh
 osrtspproxy	ports/net/osrtspproxy
 ossp-al		ports/devel/ossp-al
+ossp-cfg	ports/devel/ossp-cfg
 ossp-ex		ports/devel/ossp-ex
 ossp-l2		ports/devel/ossp-l2
 ossp-sa		ports/net/ossp-sa
