@@ -156,6 +156,7 @@
     SUBDIR += qt23
     SUBDIR += qt31
     SUBDIR += qwt
+    SUBDIR += render
     SUBDIR += rep-gtk
     SUBDIR += rep-gtk2
     SUBDIR += ruby-fltk
