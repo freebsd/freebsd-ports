@@ -1,0 +1,26 @@
+bin/tRNAscan-SE
+bin/eufindtRNA
+bin/coves-SE
+bin/covels-SE
+bin/trnascan-1.4
+share/tRNAscan-SE/TPCsignal
+share/tRNAscan-SE/gcode.vertmito
+share/tRNAscan-SE/gcode.othmito
+share/tRNAscan-SE/gcode.invmito
+share/tRNAscan-SE/gcode.echdmito
+share/tRNAscan-SE/gcode.cilnuc
+share/tRNAscan-SE/TRNA2ns.cm
+share/tRNAscan-SE/TRNA2.cm
+share/tRNAscan-SE/TRNA2-eukns.cm
+share/tRNAscan-SE/TRNA2-euk.cm
+share/tRNAscan-SE/TRNA2-bactns.cm
+share/tRNAscan-SE/TRNA2-bact.cm
+share/tRNAscan-SE/TRNA2-archns.cm
+share/tRNAscan-SE/TRNA2-arch.cm
+share/tRNAscan-SE/PSELC.cm
+share/tRNAscan-SE/ESELC.cm
+share/tRNAscan-SE/Dsignal
+share/tRNAscan-SE/gcode.ystmito
+@dirrm share/tRNAscan-SE
+%%PORTDOCS%%share/doc/tRNAscan-SE/Manual.ps
+%%PORTDOCS%%@dirrm share/doc/tRNAscan-SE
