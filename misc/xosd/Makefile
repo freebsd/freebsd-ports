@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	xosd
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	misc
-MASTER_SITES=	http://www.ignavus.net/
+MASTER_SITES=	http://www.ignavus.net/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	perky
 
 MAINTAINER=	perky@FreeBSD.org
 
