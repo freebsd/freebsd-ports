@@ -1,3 +1,4 @@
+# ex:ts=8
 # New ports collection makefile for:  pathchar
 # Version required:    a0 (a.out systems), a1 (ELF systems)
 # Date created:        7 November 1998
@@ -12,6 +13,8 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/pathchar/  \
 		http://www.caida.org/Tools/Pathchar/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pathcharnotes.html
+
+MAINTAINER=	obrien@FreeBSD.org
 
 ONLY_FOR_ARCHS=	i386
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}

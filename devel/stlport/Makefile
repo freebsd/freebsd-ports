@@ -1,3 +1,4 @@
+# ex:ts=8
 # New ports collection makefile for:	stlport
 # Version required:	3.01
 # Date Created:		2 December 1998
@@ -11,6 +12,8 @@ PKGNAME=	stlport-3.01
 CATEGORIES=	devel
 MASTER_SITES=	http://corp.metabyte.com/~fbp/stl/ \
 		ftp://maroon.webmaster.com/pub/STLport/
+
+MAINTAINER=	obrien@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 GNU_CONFIGURE=	yes
