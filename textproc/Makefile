@@ -52,6 +52,7 @@
     SUBDIR += par
     SUBDIR += perl2html
     SUBDIR += prag
+    SUBDIR += pstotext
     SUBDIR += py-mxTextTools
     SUBDIR += py-xml
     SUBDIR += rand
