@@ -11,7 +11,7 @@ CATEGORIES=	java devel
 MASTER_SITES=	ftp://ftp.cacas.org/pub/java/
 DISTNAME=	gnu.regexp-${PORTVERSION}
 
-MAINTAINER=	des@FreeBSD.org
+MAINTAINER=	freebsd-ports@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/javac:${PORTSDIR}/java/jdk11
 RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk11
