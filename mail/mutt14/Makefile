@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	mutt
-PORTVERSION=	1.4.1
-PORTREVISION=	6
+PORTVERSION=	1.4.2
 CATEGORIES+=	mail ipv6
 MASTER_SITES=	ftp://ftp.mutt.org/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
@@ -16,13 +15,17 @@ MASTER_SITES=	ftp://ftp.mutt.org/mutt/ \
 		ftp://ftp.parodius.com/pub/mutt/
 DISTFILES=	${DISTNAME}i${EXTRACT_SUFX}
 
+PATCHVERSION=	1.4.1
+.if ! defined(PATCHVERSION)
+PATCHVERSION=	${PORTVERSION}
+.endif
 PATCH_SITES=	http://www.spinnaker.de/mutt/compressed/:spinnaker \
-		http://www.mutt.org.ua/download/mutt-${PORTVERSION}/:vvv \
-		http://www2.mutt.org.ua/download/mutt-${PORTVERSION}/:vvv \
-		ftp://ftp.mutt.org.ua/pub/mutt/mutt-${PORTVERSION}/:vvv \
-		ftp://ftp2.mutt.org.ua/pub/mutt/mutt-${PORTVERSION}/:vvv
-PATCHFILES=	patch-${PORTVERSION}.rr.compressed.1.gz:spinnaker \
-		patch-${PORTVERSION}.vvv.initials.gz:vvv
+		http://www.mutt.org.ua/download/mutt-${PATCHVERSION}/:vvv \
+		http://www2.mutt.org.ua/download/mutt-${PATCHVERSION}/:vvv \
+		ftp://ftp.mutt.org.ua/pub/mutt/mutt-${PATCHVERSION}/:vvv \
+		ftp://ftp2.mutt.org.ua/pub/mutt/mutt-${PATCHVERSION}/:vvv
+PATCHFILES=	patch-${PATCHVERSION}.rr.compressed.1.gz:spinnaker \
+		patch-${PATCHVERSION}.vvv.initials.gz:vvv
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER?=	udo.schweigert@siemens.com
