@@ -6,27 +6,23 @@
 #
 
 PORTNAME=	malsync
-PORTVERSION=	2.06
-PORTREVISION=	2
+PORTVERSION=	2.10
 CATEGORIES=	palm
 MASTER_SITES=	http://www.tomw.org/malsync/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dirk
-DISTNAME=	malsync_2.0.6.src
+DISTNAME=	malsync_2.1.0.src
 
 MAINTAINER=	dirk@FreeBSD.org
 
 LIB_DEPENDS=	pisock.8:${PORTSDIR}/palm/pilot-link
 
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/malsync/mal/client/unix
+WRKSRC=		${WRKDIR}/malsync
 
 pre-patch:
 	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
-		${WRKSRC}/MAL31DBConfig.c
-
-pre-build:
-	cd ${WRKSRC} && ${GMAKE} clean
+		${WRKSRC}/mal/client/unix/MAL31DBConfig.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/malsync ${PREFIX}/bin
