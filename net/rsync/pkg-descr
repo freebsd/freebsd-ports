@@ -4,7 +4,7 @@ rsyns uses the "rsync algorithm" which provides a very fast method for
 bringing remote files into sync. It does this by sending just the
 differences in the files across the link, without requiring that both
 sets of files are present at one of the ends of the link beforehand.
-This makes rsync a good remote file distribution/synchronisation utility
+This makes rsync a good remote file distribution/synchronization utility
 in a dialup PPP/SLIP environment.
 
 Note, requires rsync on the destination machine.
