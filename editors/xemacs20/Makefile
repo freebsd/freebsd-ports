@@ -16,7 +16,7 @@ MASTER_SITES=	\
 		ftp://ftp.th-darmstadt.de:/pub/editors/xemacs/${DISTNAME}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${MULEDISTFILE}
 
-MAINTAINER=	me@FreeBSD.org
+MAINTAINER=	gj@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
