@@ -7,7 +7,7 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	editors
+CATEGORIES=	german
 
 LANGPREFIX=	de
 LANGSUFFIX=	DE
