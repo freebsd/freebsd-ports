@@ -9,6 +9,7 @@ share/doc/glade/portability.txt
 share/doc/glade/notes.txt
 share/doc/glade/source_code.txt
 share/locale/de/LC_MESSAGES/glade.mo
+share/locale/es/LC_MESSAGES/glade.mo
 share/locale/fr/LC_MESSAGES/glade.mo
 share/locale/pt_BR/LC_MESSAGES/glade.mo
 @dirrm share/doc/glade

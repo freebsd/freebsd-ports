@@ -1,12 +1,12 @@
 # New ports collection makefile for:	glade
-# Version required:     0.3.5
+# Version required:     0.3.7
 # Date created:		29 June 1998
 # Whom:			Dom Mitchell <dom@myrddin.demon.co.uk>
 #
-# $Id: Makefile,v 1.8 1998/09/22 22:55:52 asami Exp $
+# $Id: Makefile,v 1.9 1998/10/10 14:35:08 vanilla Exp $
 #
 
-DISTNAME=	glade-0.3.5
+DISTNAME=	glade-0.3.7
 CATEGORIES=	devel
 MASTER_SITES=   http://glade.pn.org/
 
