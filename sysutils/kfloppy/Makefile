@@ -7,11 +7,15 @@
 
 PORTNAME=	kdeutils
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES?=	misc kde
 MASTER_SITES=		${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
 DIST_SUBDIR=	KDE
+
+RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
+
+CONFLICTS=	kgpg-*
 
 MAINTAINER?=	kde@FreeBSD.org
 COMMENT=	Utilities for the KDE integrated X11 desktop
