@@ -1,0 +1,22 @@
+*** Xbricons.orig	Thu Jan 21 21:27:32 1993
+--- Xbricons	Sat Aug  3 15:14:56 1996
+***************
+*** 1,9 ****
+  ! Application resources file for bricons program
+  ! B.R. Ingram 9th Sept 1991
+  *no_of_cols: 			16
+! *icon_file: 			/home/cur/bri/.briconsrc
+! *help_file:			/home/cur/bri/Man/bricons.man
+! .bitmapFilePath:		/usr/local/include/X11/bitmaps:/s/bri/Pics
+  *borderColor:			yellow
+  *popup_layout*.borderColor:	black
+  *background:			#ffd28e
+--- 1,8 ----
+  ! Application resources file for bricons program
+  ! B.R. Ingram 9th Sept 1991
+  *no_of_cols: 			16
+! *help_file:			bricons
+! *.bitmapFilePath:		/usr/X11R6/include/X11/bitmaps
+  *borderColor:			yellow
+  *popup_layout*.borderColor:	black
+  *background:			#ffd28e

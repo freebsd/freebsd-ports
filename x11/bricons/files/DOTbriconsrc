@@ -1,0 +1,27 @@
+# <-- a line starting with a '#' is a comment line
+#
+
+# first line must have keyword %icon or %text
+# to indicate if button is an icon
+%icon help.xbm
+xman
+%icon letters.xbm
+knews
+%pixmap /usr/X11R6/include/X11/pixmaps/mail.xpm
+exmh
+%icon calander.xbm
+xcalendar
+%text Sub-\nmenu
+%sub_menu
+	%text \n  bitmap\n  editor\n
+	%pixmap /usr/X11R6/include/X11/pixmaps/clock.xpm
+	xclock
+	%icon load.xbm
+	xload
+	%text+ \n  Shell\n
+	xterm -n Shell &
+%end_sub_menu
+%pixmap+ /usr/X11R6/include/X11/pixmaps/xterm.xpm
+xterm &
+%pixmap+ /usr/X11R6/include/X11/pixmaps/editor.xpm
+xedit &

@@ -1,0 +1,11 @@
+bin/bricons
+man/man1/bricons.1.gz
+lib/X11/app-defaults/Xbricons
+include/X11/bitmaps/calander.xbm
+include/X11/bitmaps/help.xbm
+include/X11/bitmaps/letters.xbm
+include/X11/bitmaps/load.xbm
+include/X11/pixmaps/clock.xpm
+include/X11/pixmaps/editor.xpm
+include/X11/pixmaps/mail.xpm
+include/X11/pixmaps/news.xpm
