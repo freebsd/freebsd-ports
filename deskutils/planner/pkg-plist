@@ -202,6 +202,6 @@ share/locale/zh_CN/LC_MESSAGES/planner.mo
 @dirrm lib/planner/plugins
 @dirrm lib/planner/file-modules
 @dirrm lib/planner
-@dirrm include/planner-1.0/planner
+@dirrm include/planner-1.0/libplanner
 @dirrm include/planner-1.0
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/planner/planner-C.omf 2>/dev/null || /usr/bin/true
