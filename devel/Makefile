@@ -503,6 +503,7 @@
     SUBDIR += xwpe
     SUBDIR += xxgdb
     SUBDIR += yacl
+    SUBDIR += zthread
     SUBDIR += zziplib
 
 .include <bsd.port.subdir.mk>
