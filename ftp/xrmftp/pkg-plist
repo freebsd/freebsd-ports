@@ -1,0 +1,6 @@
+bin/xrmftp
+share/doc/xrmftp-1.2.4/CHANGES
+share/doc/xrmftp-1.2.4/COPYING
+share/doc/xrmftp-1.2.4/FIXED-BUGS
+share/doc/xrmftp-1.2.4/README
+@dirrm share/doc/xrmftp-1.2.4
