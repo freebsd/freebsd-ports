@@ -7,13 +7,16 @@
 
 PORTNAME=		aaccli
 PORTVERSION=		1.0
+PORTREVISION=		0
 CATEGORIES=		sysutils
-MASTER_SITES=		http://people.freebsd.org/~scottl/aac/
-DISTNAME=		${PORTNAME}-${PORTVERSION}_0
-EXTRACT_SUFX=		.tgz
+MASTER_SITES=		http://download.adaptec.com/raid/ccu/freebsd/
+DISTNAME=		5400s_fbsd_cli_v10
+EXTRACT_SUFX=		.zip
 
 MAINTAINER=		bms@FreeBSD.org
 COMMENT=		Adaptec SCSI RAID administration tool
+
+EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 RESTRICTED=		"May not be redistributed in binary form"
 NO_CDROM=		yes
@@ -23,8 +26,15 @@ PLIST=			${MASTERDIR}/pkg-plist.${MACHINE_ARCH}
 MD5_FILE=		${MASTERDIR}/distinfo.${MACHINE_ARCH}
 
 NO_BUILD=		yes
+NO_WRKSUBDIR=		yes
+
+UNZIP=			unzip
+
+do-extract:
+	${MKDIR} ${WRKSRC}
+	cd ${WRKSRC} && ${UNZIP} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
 
 do-install:
-	${PKG_ADD} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
+	${PKG_ADD} -R ${WRKSRC}/${PKGNAME}_${PORTREVISION}.tgz
 
 .include <bsd.port.mk>
