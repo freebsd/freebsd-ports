@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	xmlsec
-PORTVERSION=	0.0.9
+PORTVERSION=	0.0.10
 CATEGORIES=	security
 MASTER_SITES=	http://www.aleksey.com/xmlsec/download/
 
