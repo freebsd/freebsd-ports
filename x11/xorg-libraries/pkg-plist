@@ -647,3 +647,4 @@ lib/libxkbui.a
 lib/libxkbui.so
 lib/libxkbui.so.1
 libdata/pkgconfig/xcursor.pc
+libdata/pkgconfig/xrender.pc
