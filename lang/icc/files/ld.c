@@ -143,8 +143,8 @@ int
 main(int argc, char *argv[], char *envp[])
 {
 	size_t i;
-	int bootstrap, cpp, dynamic, stlinserted, threaded;
-	char *prefix;
+	int bootstrap, cpp, dynamic, pic, gprof, stlinserted, threaded;
+	char *libc, *libc_r, *prefix;
 	struct arglist al;
 
 	if (argc == 1)
@@ -154,7 +154,7 @@ main(int argc, char *argv[], char *envp[])
 		errx(1, "can't get PREFIX");
 
 	initarg(&al);
-	bootstrap = cpp = dynamic = stlinserted = threaded = 0;
+	bootstrap = cpp = dynamic = pic = gprof = stlinserted = threaded = 0;
 
 #ifdef DEBUG
 	printf("input: ");
@@ -184,6 +184,11 @@ main(int argc, char *argv[], char *envp[])
 			bootstrap++;
 			continue;
 		}
+
+	 	if (ARGCMP("-PIC")) {
+			pic++;
+			continue;
+	    	}
 
 		/*
 		 * If the compiler was called with -static we shouldn't see
@@ -217,12 +222,42 @@ main(int argc, char *argv[], char *envp[])
 			continue;
 		}
 
+		/*
+		 * Link against libc_p when "-pg" was given, "/usr/lib/gcrt1.o"
+		 * indicates this.
+		 */
+		if (ARGCMP("/usr/lib/gcrt1.o")) {
+			gprof++;
+			continue;
+		}
+	}
+
+	/*
+	 * Use the appropriate libs for libc and libc_r when linking static
+	 * and "-KPIC" or "-pg" where given.
+	 */
+	if (!dynamic && (pic || gprof)) {
+		/*
+		 * Let libc_p win above libc_pic when both, "-KPIC" and "-pg",
+		 * where given, GCC does the same.
+		 */
+		if (!gprof) {
+			libc = strdup("-lc_pic");
+			libc_r = strdup("-lc_r");
+		} else {
+			libc = strdup("-lc_p");
+			libc_r = strdup("-lc_r_p");
+		}
+	} else {
+		libc = strdup("-lc");
+		libc_r = strdup("-lc_r");
 	}
 
 #ifdef DEBUG
-	printf("\ncpp: %s bootstrap: %s dynamic: %s threaded: %s\n",
-	    cpp ? "YES" : "NO", bootstrap ? "YES" : "NO",
-	    dynamic ? "YES" : "NO", threaded ? "YES" : "NO");
+	printf("\ncpp: %s bootstrap: %s dynamic: %s gprof: %s pic: %s "
+	    "threaded: %s\n", cpp ? "YES" : "NO", bootstrap ? "YES" : "NO",
+	    dynamic ? "YES" : "NO", gprof ? "YES" : "NO", pic ? "YES" : "NO",
+	    threaded ? "YES" : "NO");
 #endif
 
 	if (bootstrap && !cpp)
@@ -230,7 +265,8 @@ main(int argc, char *argv[], char *envp[])
 		    "-CPLUSPLUS");
 
 	for (i = 0; i < argc; i++) {
-	 	if (ARGCMP("-CPLUSPLUS") || ARGCMP("-BOOTSTRAPSTLPORT"))
+	 	if (ARGCMP("-CPLUSPLUS") || ARGCMP("-BOOTSTRAPSTLPORT") ||
+		    ARGCMP("-PIC"))
 			continue;
 
 		/* prepend "-melf_i386" to the commandline */
@@ -277,18 +313,23 @@ main(int argc, char *argv[], char *envp[])
 		 * code (libcxa and libunwind depend on libc_r when compiling
 		 * C++ source).
 		 */
-		if ((cpp || threaded) && ARGCMP("-lc")) {
+		if (ARGCMP("-lc")) {
 			if (al.argc > 0 &&
 			    strncmp(al.argv[al.argc - 1], "-B", strlen("-B")))
 				addarg(&al,
 				    dynamic ? "-Bdynamic" : "-Bstatic", 1);
+			if (cpp || threaded) {
 #if __FreeBSD_version < 500016
-			addarg(&al, "-lc_r", 1);
+				addarg(&al, libc_r, 0);
 #else
-			addarg(&al, "-lc", 1);
-			addarg(&al, dynamic ? "-Bdynamic" : "-Bstatic", 1);
-			addarg(&al, "-lc_r", 1);
+				addarg(&al, libc, 0);
+				addarg(&al,
+				    dynamic ? "-Bdynamic" : "-Bstatic", 1);
+				addarg(&al, libc_r, 0);
 #endif
+			} else {
+				addarg(&al, libc, 0);
+			}
 			continue;
 		}
 
