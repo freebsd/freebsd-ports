@@ -19,7 +19,8 @@ BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
 # BUILD_DEPENDS+=rpm:${PORTSDIR}/archivers/rpm
 
 LIB_DEPENDS=	medusa.0:${PORTSDIR}/sysutils/medusa \
-		freetype.6:${PORTSDIR}/print/freetype2
+		freetype.6:${PORTSDIR}/print/freetype2 \
+		ghttp.1:${PORTSDIR}/www/libghttp
 
 .if !defined(WITHOUT_MOZILLA)
 MOZILLA=	mozilla
