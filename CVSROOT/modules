@@ -9718,7 +9718,6 @@ ruby-tzfile	ports/devel/ruby-tzfile
 ruby-usersguide	ports/lang/ruby-usersguide
 ruby-vorbisfile	ports/audio/ruby-vorbisfile
 ruby-webunit	ports/www/ruby-webunit
-ruby-wordnet	ports/textproc/ruby-wordnet
 ruby-xmlconfigfile	ports/textproc/ruby-xmlconfigfile
 ruby-xmlparser	ports/textproc/ruby-xmlparser
 ruby-xmlscan	ports/textproc/ruby-xmlscan
@@ -9868,7 +9867,6 @@ sdpa		ports/math/sdpa
 sdpara		ports/math/sdpara
 sdr		ports/mbone/sdr
 sdts++		ports/devel/sdts++
-se-ispell	ports/textproc/se-ispell
 se-openoffice-1.0	ports/editors/openoffice-1.0-se
 seabattle	ports/games/seabattle
 seahaven	ports/games/seahaven
@@ -10497,8 +10495,6 @@ tei-lite	ports/textproc/tei-lite
 tei-p3		ports/textproc/tei-p3
 tei-p4		ports/textproc/tei-p4
 tei-xlite	ports/textproc/tei-xlite
-tei-xsl-fo	ports/textproc/tei-xsl-fo
-tei-xsl-html	ports/textproc/tei-xsl-html
 teknap		ports/audio/teknap
 telbook		ports/misc/telbook
 tellico		ports/misc/tellico
