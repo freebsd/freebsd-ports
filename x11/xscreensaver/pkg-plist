@@ -5,7 +5,9 @@ bin/bouboule
 bin/braid
 bin/bsod
 bin/bubbles
+bin/compass
 bin/coral
+bin/critical
 bin/crystal
 bin/cynosure
 bin/decayscreen
@@ -51,6 +53,7 @@ bin/noseguy
 bin/pedal
 bin/penetrate
 bin/penrose
+bin/phosphor
 bin/pyro
 bin/qix
 bin/rd-bomb
@@ -63,6 +66,8 @@ bin/slip
 bin/sonar
 bin/sphere
 bin/spiral
+bin/spotlight
+bin/squiral
 bin/starfish
 bin/strange
 bin/swirl
@@ -70,9 +75,12 @@ bin/t3d
 bin/triangle
 bin/truchet
 bin/vines
+bin/wander
 bin/worm
+bin/xflame
 bin/xjack
 bin/xlyap
+bin/xmatrix
 bin/xroger
 bin/xscreensaver
 bin/xscreensaver-command
