@@ -1,6 +1,6 @@
---- sequence.c-orig	Thu Mar 21 10:22:35 2002
-+++ sequence.c	Thu Mar 21 10:22:53 2002
-@@ -922,7 +922,7 @@
+--- sequence.c.orig	Thu Feb 13 15:27:06 2003
++++ sequence.c	Thu Feb 13 15:27:37 2003
+@@ -924,7 +924,7 @@
  	static Boolean dnaflag1;
  	
  	if(usemenu)
