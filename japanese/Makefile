@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.98 1998/01/17 15:14:31 itojun Exp $
+# $Id: Makefile,v 1.99 1998/01/19 00:13:25 itojun Exp $
 #
 
     SUBDIR += Canna
@@ -77,6 +77,7 @@
     SUBDIR += pine
     SUBDIR += pkfonts
     SUBDIR += plain2
+    SUBDIR += plan
     SUBDIR += platex-common
     SUBDIR += platex-euc
     SUBDIR += platex-jis
