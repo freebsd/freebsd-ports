@@ -88,6 +88,7 @@
     SUBDIR += physcalc
     SUBDIR += plplot
     SUBDIR += pspp
+    SUBDIR += py-gato
     SUBDIR += py-gnuplot
     SUBDIR += py-numeric
     SUBDIR += py-numeric17
