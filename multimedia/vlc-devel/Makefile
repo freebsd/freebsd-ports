@@ -31,6 +31,7 @@
 
 PORTNAME=	vlc
 PORTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/
 PKGNAMESUFFIX?=	${GNOME_SUFFIX}${ESOUND_SUFFIX}${PKGNAMESUFFIX2}
@@ -136,7 +137,7 @@ WITH_LIVEMEDIA=	yes
 WITH_LIBMATROSKA=yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libspeex.so.2) && !defined(WITHOUT_SPEEX)
+.if exists(${LOCALBASE}/lib/libspeex.so.3) && !defined(WITHOUT_SPEEX)
 WITH_SPEEX=	yes
 .endif
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://gstreamer.freedesktop.org/src/gst-plugins/
@@ -823,7 +823,7 @@ PLIST_SUB+=	SMOOTHWAVE=""
 CONFIGURE_ARGS+=	--disable-speex
 PLIST_SUB+=	SPEEX="@comment "
 .else
-LIB_DEPENDS+=	speex.2:${PORTSDIR}/audio/speex
+LIB_DEPENDS+=	speex.3:${PORTSDIR}/audio/speex
 PLIST_SUB+=	SPEEX=""
 .endif
 

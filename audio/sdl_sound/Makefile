@@ -7,7 +7,7 @@
 
 PORTNAME=	sdl_sound
 PORTVERSION=	1.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://www.icculus.org/SDL_sound/downloads/
 DISTNAME=	SDL_sound-${PORTVERSION}
@@ -50,7 +50,7 @@ CONFIGURE_ARGS+=	--disable-smpeg
 .endif
 
 .if !defined(WITHOUT_SPEEX)
-LIB_DEPENDS+=	speex.2:${PORTSDIR}/audio/speex
+LIB_DEPENDS+=	speex.3:${PORTSDIR}/audio/speex
 .else
 CONFIGURE_ARGS+=	--disable-speex
 .endif
