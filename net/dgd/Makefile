@@ -9,7 +9,7 @@ DISTFILES=	${DISTNAME}.tar.gz
 PATCHFILES=	1.0.9-1.0.9.1.gz
 MASTER_SITES=	ftp.lysator.liu.se:/pub/lpmud/drivers/dgd/
 PATCH_SITES=	ftp.veda.is:/pub/mud/dgd/patches/
-CATEGORIES=	networking languages
+CATEGORIES=	net lang
 
 MAINTAINER=	adam@veda.is
 

@@ -3,12 +3,12 @@
 # Date created:		10 November 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.4 1995/04/16 15:37:10 ache Exp $
+# $Id: Makefile,v 1.5 1995/10/25 14:37:39 adam Exp $
 #
 
 DISTNAME=	dgd-lpmud
 PKGNAME=	dgd-lpmud-2.4.5
-CATEGORIES+=	networking development games
+CATEGORIES+=	net devel games
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/ \
 		ftp://ftp.lysator.liu.se/pub/lpmud/mudlibs/other/
 DISTFILES=	sim-2.4.5.tar.gz 2.4.5.tar.gz
