@@ -1,6 +1,6 @@
---- etc/Makefile.in.orig	Tue Mar 30 16:08:30 2004
-+++ etc/Makefile.in	Tue Mar 30 16:09:39 2004
-@@ -235,12 +235,11 @@
+--- etc/Makefile.in.orig	Thu Feb 17 20:36:39 2005
++++ etc/Makefile.in	Thu Feb 17 20:38:47 2005
+@@ -244,12 +244,11 @@
  AUTOMAKE_OPTIONS = gnu
  RC_FILES = \
   xmedconrc \
@@ -13,6 +13,6 @@
  GTK_DIST = README $(RC_FILES) $(ICONS)
 -sysconf_DATA = $(RC_FILES) $(ICONS)
 +@DO_XSUPPORT_TRUE@sysconf_DATA = $(RC_FILES) $(ICONS)
- EXTRA_DIST = $(GTK_DIST)
- DISTCLEANFILES = \
-  xmedcon-*.info \
+ EXTRA_DIST = \
+  $(GTK_DIST) \
+  xmedcon.spec
