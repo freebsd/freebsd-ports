@@ -19,7 +19,7 @@
  #           -lz -lgif  -lXi -lXext -lX11 -lm
  #LIBS=-L/usr/lib -L/usr/X11R6/lib -L/usr/local/lib `gtk-config --libs`
 -LIBS=-lgdk_imlib -ljpeg -ltiff -lpng -lz -lgif  `gtk-config --libs` -lXi -lXext -lX11 -lm
-+LIBS=-lgdk_imlib -ljpeg -ltiff -lpng -lz -lgif  `gtk12-config --libs` -lXi -lXext -lX11 -lm
++LIBS=-lgdk_imlib -ljpeg -ltiff -lpng -lz -lungif  `gtk12-config --libs` -lXi -lXext -lX11 -lm
  CFLAGS= -g -O2 -Wall 
  
  INSTALL = /usr/bin/install -c
