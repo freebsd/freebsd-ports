@@ -20,8 +20,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/${LISPPORT} \
 		${LOCALBASE}/bin/gnuplot:${PORTSDIR}/math/gnuplot \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2
 
-BROKEN=		"Does not compile"
-
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_AUTOMAKE_VER=	14
@@ -39,8 +37,8 @@ INFO=		maxima
 PLIST_SUB=	LISPBIN=${LISPBINARY}
 
 #Only define ONE of these!
-USE_CMUCL=	yes
-#USE_GCL=	yes
+#USE_CMUCL=	yes
+USE_GCL=	yes
 #USE_CLISP=	yes
 
 .if defined(USE_CMUCL)
