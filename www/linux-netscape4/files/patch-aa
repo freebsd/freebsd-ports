@@ -1,41 +1,25 @@
-*** ns-install.orig	Tue Jul  1 23:22:18 1997
---- ns-install	Wed Jul  2 22:55:02 1997
-***************
-*** 103,108 ****
---- 103,109 ----
-  # Even though the user has already used gzip to extract the file (or
-  # we wouldn't be here), make sure we can find it.
-  #
-+ unset GZIP
-  GZIP="gzip"
-  flag=1
-  while test ${flag} -eq 1
-***************
-*** 264,276 ****
-  	# Is this a virgin install?  If so, create the .netscape dir
-  	# and put the default bookmark file in it.
-  	#
-! 	if test ! -d ${HOME}/.netscape
-! 	then
-! 		# New install, or upgrade from 0.x or 1.x.
-! 		mkdir ${HOME}/.netscape
-! 		cp ${TARGET}/bookmark.htm ${HOME}/.netscape/bookmarks.html
-! 		echo "${HOME}/.netscape/bookmarks.html" >> ${LOGFILE}
-! 	fi
-  fi
-  
-  echo ""
---- 265,277 ----
-  	# Is this a virgin install?  If so, create the .netscape dir
-  	# and put the default bookmark file in it.
-  	#
-! #        if test ! -d ${HOME}/.netscape
-! #        then
-! #                # New install, or upgrade from 0.x or 1.x.
-! #                mkdir ${HOME}/.netscape
-! #                cp ${TARGET}/bookmark.htm ${HOME}/.netscape/bookmarks.html
-! #                echo "${HOME}/.netscape/bookmarks.html" >> ${LOGFILE}
-! #        fi
-  fi
-  
-  echo ""
+--- ns-install.orig	Tue Nov  3 22:27:09 1998
++++ ns-install	Sun Nov  8 17:33:36 1998
+@@ -120,6 +120,7 @@
+ # Even though the user has already used gzip to extract the file (or
+ # we wouldn't be here), make sure we can find it.
+ #
++unset GZIP
+ GZIP="gzip"
+ flag=1
+ while test ${flag} -eq 1
+@@ -324,14 +325,6 @@
+ 	# Is this a virgin install?  If so, create the .netscape dir
+ 	# and put the default bookmark file in it.
+ 	#
+-	if test ! -d ${HOME}/.netscape
+-	then
+-		# New install, or upgrade from 0.x or 1.x.
+-		mkdir ${HOME}/.netscape
+-		cp ${TARGET}/bookmark.htm ${HOME}/.netscape/bookmarks.html
+-		chmod 644 ${HOME}/.netscape/bookmarks.html
+-		echo "${HOME}/.netscape/bookmarks.html" >> ${LOGFILE}
+-	fi
+ fi
+ 
+ echo ""
