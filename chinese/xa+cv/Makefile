@@ -2,7 +2,7 @@
 # Date created:		29 March 1999
 # Whom:			Clive Lin <clive@CirX.ORG>
 #
-# $FreeBSD: /tmp/pcvs/ports/chinese/xa+cv/Attic/Makefile,v 1.3 2000-04-13 08:28:19 asami Exp $
+# $FreeBSD: /tmp/pcvs/ports/chinese/xa+cv/Attic/Makefile,v 1.4 2000-12-06 13:24:42 clive Exp $
 #
 
 PORTNAME=	xa+cv
@@ -10,7 +10,7 @@ PORTVERSION=	0.6
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/clive/
 
-MAINTAINER=	clive@CirX.ORG
+MAINTAINER=	clive@FreeBSD.org
 
 RUN_DEPENDS=	${X11BASE}/bin/xcin:${PORTSDIR}/chinese/xcin \
 		${X11BASE}/lib/X11/fonts/TrueType/moe_sung.ttf:${PORTSDIR}/chinese/moettf
