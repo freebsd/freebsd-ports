@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig	Thu Sep  5 15:38:26 2002
++++ Makefile.in	Thu Sep  5 15:38:51 2002
+@@ -103,7 +103,7 @@
+ 	  mkdir -p $(mailerdir) || mkdir $(mailerdir) || exit 0 ; \
+ 	  chown $(binusr) $(mailerdir) ; \
+ 	  chgrp $(bingrp) $(mailerdir) ; \
+-	  chmod 644 $(mailerdir) ; \
++	  chmod 755 $(mailerdir) ; \
+ 	fi
+ 	$(install) -c -o $(binusr) -g $(bingrp) -m 555 $(batcher) \
+ 	  $(privbin)/batcher || ( cp $(batcher) /tmp/batcher && \
