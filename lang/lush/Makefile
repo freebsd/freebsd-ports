@@ -14,12 +14,10 @@ MASTER_SITE_SUBDIR=	lush
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	A high level object-oriented programming language
 
-LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image
-
 USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GL=		yes
-USE_SDL=	yes
+USE_SDL=	sdl image
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 

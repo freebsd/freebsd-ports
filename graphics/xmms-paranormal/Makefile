@@ -16,15 +16,14 @@ DISTNAME=	paranormal-${PORTVERSION:S/.p/pre/}
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	An adaptation of the "OpenGL Spectrum Analyzer" from XMMS
 
-LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
-		SDL-1.1.5:${PORTSDIR}/devel/sdl12
+LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include/libxml2/libxml" SDL_CONFIG="${SDL_CONFIG}"
+CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include/libxml2/libxml"
 
 GNU_CONFIGURE=	yes
+USE_SDL=	sdl
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes

@@ -16,12 +16,9 @@ MAINTAINER=	dyeske@yahoo.com
 COMMENT=	A XMMS visualization plugin that uses SDL
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
+USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 PLIST_FILES=	lib/xmms/Visualization/libjess.so
 USE_GNOME=	glib12

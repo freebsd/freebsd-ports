@@ -16,14 +16,11 @@ MAINTAINER=	fab@gcu.info
 COMMENT=	Graphic development lightweight API
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		png.5:${PORTSDIR}/graphics/png
 
-SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
-
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
-	    	CPPFLAGS="${PTHREAD_CFLAGS}" \
+CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
 		LDFLAGS="${PTHREAD_LIBS}"
+USE_SDL=	sdl
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
