@@ -33,6 +33,12 @@ CONFIGURE_ENV=	PORTSDIR=${PORTSDIR}
 PKGINSTALL=	${PORTSDIR}/x11-toolkits/tk82/pkg-install.wish
 PKGDEINSTALL=	${PORTSDIR}/x11-toolkits/tk82/pkg-deinstall.wish
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Build fails on sparc64"
+.endif
+
 post-install:
 	@${RM} ${PREFIX}/lib/tkstep8.0/demos/*.orig
 	${STRIP_CMD} ${PREFIX}/bin/wishstep8.0
@@ -49,4 +55,4 @@ post-install:
 test:
 	cd ${WRKSRC}; make test
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

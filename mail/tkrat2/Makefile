@@ -30,6 +30,12 @@ DOCFILES=	CONFIGURATION COPYRIGHT README doc/interface doc/userprocs \
 
 MAN1=		tkrat.1
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Build fails on sparc64"
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "===>  Copying documents to ${PREFIX}/${PORTDOCDIR}"
@@ -43,4 +49,4 @@ post-install:
 	@${MKDIR} ${PREFIX}/lib/ratatosk
 	${INSTALL_DATA} ${FILESDIR}/ratatoskrc ${PREFIX}/lib/ratatosk
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
