@@ -231,6 +231,7 @@
     SUBDIR += p5-Email-Abstract
     SUBDIR += p5-Email-Address
     SUBDIR += p5-Email-Date
+    SUBDIR += p5-Email-Delete
     SUBDIR += p5-Email-Filter
     SUBDIR += p5-Email-Find
     SUBDIR += p5-Email-Folder

@@ -1,0 +1,4 @@
+This software will delete messages from a given folder if the test
+returns true.
+
+WWW: http://search.cpan.org/dist/Email-Delete
