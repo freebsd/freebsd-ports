@@ -46,6 +46,7 @@
     SUBDIR += festvox-rab16
     SUBDIR += festvox-rab8
     SUBDIR += festvox-tll
+    SUBDIR += freeamp
     SUBDIR += gdcd
     SUBDIR += gkrellmms
     SUBDIR += gkrellmvolume
