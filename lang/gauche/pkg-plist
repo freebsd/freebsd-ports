@@ -9,8 +9,10 @@ lib/gauche/%%VERSION%%/%%TARGET%%/libgauche.a
 lib/gauche/%%VERSION%%/%%TARGET%%/libgauche.so
 lib/gauche/%%VERSION%%/%%TARGET%%/libnet.so
 lib/gauche/%%VERSION%%/%%TARGET%%/libuvector.so
+lib/gauche/%%VERSION%%/%%TARGET%%/md5.so
 lib/gauche/%%VERSION%%/%%TARGET%%/mt-random.so
 lib/gauche/%%VERSION%%/%%TARGET%%/ndbm.so
+lib/gauche/%%VERSION%%/%%TARGET%%/sha1.so
 lib/gauche/%%VERSION%%/%%TARGET%%/syslog.so
 lib/gauche/%%VERSION%%/%%TARGET%%/termios.so
 lib/gauche/%%VERSION%%/%%TARGET%%/threads.so
@@ -63,11 +65,13 @@ share/gauche/%%VERSION%%/lib/gauche/common-macros.scm
 share/gauche/%%VERSION%%/lib/gauche/config.scm
 share/gauche/%%VERSION%%/lib/gauche/defvalues.scm
 share/gauche/%%VERSION%%/lib/gauche/fcntl.scm
+share/gauche/%%VERSION%%/lib/gauche/hook.scm
 share/gauche/%%VERSION%%/lib/gauche/interactive.scm
 share/gauche/%%VERSION%%/lib/gauche/interactive/info.scm
 share/gauche/%%VERSION%%/lib/gauche/interpolate.scm
 share/gauche/%%VERSION%%/lib/gauche/let-opt.scm
 share/gauche/%%VERSION%%/lib/gauche/listener.scm
+share/gauche/%%VERSION%%/lib/gauche/listutil.scm
 share/gauche/%%VERSION%%/lib/gauche/logger.scm
 share/gauche/%%VERSION%%/lib/gauche/logical.scm
 share/gauche/%%VERSION%%/lib/gauche/macroutil.scm
@@ -91,6 +95,7 @@ share/gauche/%%VERSION%%/lib/gauche/serializer.scm
 share/gauche/%%VERSION%%/lib/gauche/serializer/aserializer.scm
 share/gauche/%%VERSION%%/lib/gauche/signal.scm
 share/gauche/%%VERSION%%/lib/gauche/singleton.scm
+share/gauche/%%VERSION%%/lib/gauche/stringutil.scm
 share/gauche/%%VERSION%%/lib/gauche/syslog.scm
 share/gauche/%%VERSION%%/lib/gauche/termios.scm
 share/gauche/%%VERSION%%/lib/gauche/test.scm
@@ -108,8 +113,11 @@ share/gauche/%%VERSION%%/lib/math/mt-random.scm
 share/gauche/%%VERSION%%/lib/rfc/822.scm
 share/gauche/%%VERSION%%/lib/rfc/base64.scm
 share/gauche/%%VERSION%%/lib/rfc/cookie.scm
+share/gauche/%%VERSION%%/lib/rfc/hmac.scm
 share/gauche/%%VERSION%%/lib/rfc/http.scm
+share/gauche/%%VERSION%%/lib/rfc/md5.scm
 share/gauche/%%VERSION%%/lib/rfc/quoted-printable.scm
+share/gauche/%%VERSION%%/lib/rfc/sha1.scm
 share/gauche/%%VERSION%%/lib/rfc/uri.scm
 share/gauche/%%VERSION%%/lib/slib.scm
 share/gauche/%%VERSION%%/lib/srfi-0.scm
@@ -152,6 +160,7 @@ share/gauche/%%VERSION%%/lib/srfi-19/read-tai.scm
 share/gauche/%%VERSION%%/lib/srfi-2.scm
 share/gauche/%%VERSION%%/lib/srfi-26.scm
 share/gauche/%%VERSION%%/lib/srfi-27.scm
+share/gauche/%%VERSION%%/lib/srfi-31.scm
 share/gauche/%%VERSION%%/lib/srfi-4.scm
 share/gauche/%%VERSION%%/lib/srfi-9.scm
 share/gauche/%%VERSION%%/lib/text/csv.scm
@@ -160,6 +169,7 @@ share/gauche/%%VERSION%%/lib/text/info.scm
 share/gauche/%%VERSION%%/lib/text/parse.scm
 share/gauche/%%VERSION%%/lib/text/tr.scm
 share/gauche/%%VERSION%%/lib/text/tree.scm
+share/gauche/%%VERSION%%/lib/util/digest.scm
 share/gauche/%%VERSION%%/lib/util/isomorph.scm
 share/gauche/%%VERSION%%/lib/util/queue.scm
 share/gauche/%%VERSION%%/lib/util/toposort.scm
