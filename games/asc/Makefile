@@ -24,7 +24,7 @@ LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image \
 		SDLmm.8:${PORTSDIR}/devel/sdlmm \
 		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
-		paragui.3:${PORTSDIR}/x11-toolkits/paragui
+		paragui.4:${PORTSDIR}/x11-toolkits/paragui
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
