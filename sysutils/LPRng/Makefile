@@ -28,7 +28,8 @@ CONFIGURE_ARGS= \
 		--with-printcap_path=/etc/printcap
 
 MAN1=		cancel.1 lp.1 lpbanner.1 lpc.1 lpf.1 \
-		lpq.1 lpr.1 lpraccnt.1 lprm.1 lpstat.1 monitor.1
+		lpq.1 lpr.1 lpraccnt.1 lprm.1 lpstat.1 monitor.1 \
+		pclbanner.1 psbanner.1
 MAN5=		lpd.conf.5 lpd.perms.5 printcap.5
 MAN8=		checkpc.8 lpd.8
 MANCOMPRESSED=	yes

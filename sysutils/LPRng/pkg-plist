@@ -1,3 +1,5 @@
+bin/cancel
+bin/lp
 bin/lpq
 bin/lprm
 bin/lpr
@@ -56,3 +58,4 @@ share/doc/LPRng/LPRng_DOC-%%LPRNG_VER%%/license.txt
 @dirrm share/doc/LPRng/LPRng_DOC-%%LPRNG_VER%%/Macros
 @dirrm share/doc/LPRng/LPRng_DOC-%%LPRNG_VER%%
 @dirrm share/doc/LPRng
+@dirrm libexec/filters
