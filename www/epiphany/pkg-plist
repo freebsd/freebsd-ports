@@ -38,7 +38,7 @@ include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-statusbar.h
 include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-tab.h
 include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-window.h
 libdata/bonobo/servers/GNOME_Epiphany_Automation.server
-libdata/bonobo/servers/GNOME_Epiphany_NautilusView.server
+%%NAUTILUS%%libdata/bonobo/servers/GNOME_Epiphany_NautilusView.server
 libdata/pkgconfig/epiphany-1.2.pc
 %%DOCSDIR%%/ch01.html
 %%DOCSDIR%%/epiphany-ephy-cookie-manager.html

@@ -64,8 +64,10 @@ WITH_GNOME=	yes
 .if ${HAVE_GNOME:Mnautilus2}!=""
 USE_GNOME+=		nautilus2
 CONFIGURE_ARGS+=	--enable-nautilus-view
+PLIST_SUB+=		NAUTILUS=""
 .else
 CONFIGURE_ARGS+=	--enable-nautilus-view=no
+PLIST_SUB+=		NAUTILUS="@comment "
 .endif
 
 .if ${OSVERSION} > 500000
