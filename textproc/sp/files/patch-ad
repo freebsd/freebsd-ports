@@ -25,7 +25,7 @@
  	$(RANLIB) $@
  
 +lib$(LIB).so.$(VERSION): $(SOBJS) $(SCOBJS)
-+	$(CC) -shared -o lib$(LIB).so.$(VERSION) $(SOBJS) $(SCOBJS)
++	$(CC) -shared -soname lib$(LIB).so.$(VERSION) -o lib$(LIB).so.$(VERSION) $(SOBJS) $(SCOBJS)
 +
  install:
 +	$(INSTALL) lib$(LIB).a $(libdir)
