@@ -9,6 +9,7 @@
     SUBDIR += achievo
     SUBDIR += aclgen
     SUBDIR += acron
+    SUBDIR += afbackup
     SUBDIR += alevt
     SUBDIR += amanda
     SUBDIR += amanda24-client

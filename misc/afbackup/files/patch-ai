@@ -1,0 +1,31 @@
+--- budefs.h.in.orig	Sat May 26 13:02:04 2001
++++ budefs.h.in	Mon Aug 27 15:38:41 2001
+@@ -109,11 +109,13 @@
+ #define	SERVERMODE_VARAPPEND	1
+ 
+ #define DEFBINDIR		"@clientbindir@"
++#define DEFLIBEXECDIR		"@libexecdir@"
+ #define DEFVARDIR		"@clientvardir@"
+ #define DEFLIBDIR		"@clientlibdir@"
+ #define DEFLOGDIR		"@clientlogdir@"
+-#define DEFCONFDIR		"@clientlibdir@"
++#define DEFCONFDIR		"@clientconfdir@"
+ #define DEFSERVBINDIR		"@serverbindir@"
++#define DEFSERVLIBEXECDIR	"@libexecdir@"
+ #define DEFSERVVARDIR		"@servervardir@"
+ #define DEFSERVLIBDIR		"@serverlibdir@" 
+ #define DEFSERVCONFDIR		"@serverconfdir@" 
+@@ -223,11 +225,13 @@
+ 			2048, 1024, 512, 32768, 65536, 10240, 8192, 131072
+ 
+ #define	DEFAULT_CLIENT_CONFIGFILES	\
++				"@clientconfdir@/client.conf", \
+ 				"/etc/buclient.conf",	\
+ 				"/etc/afbuclient.conf", \
+ 				"/etc/afclient.conf", \
+ 				"/etc/afbackup/client.conf"
+ #define	DEFAULT_SERVER_CONFIGFILES	\
++				"@serverconfdir@/server.conf", \
+ 				"/etc/buserver.conf",	\
+ 				"/etc/afbuserver.conf", \
+ 				"/etc/afserver.conf", \

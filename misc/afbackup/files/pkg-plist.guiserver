@@ -1,0 +1,6 @@
+sbin/xafserverconfig
+@exec ln -sf %B/%f %B/xserverconfig
+@unexec rm -f %B/xserverconfig
+sbin/xafserverstatus
+@exec ln -sf %B/%f %B/xserverstatus
+@unexec rm -f %B/xserverstatus

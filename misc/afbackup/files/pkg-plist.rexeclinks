@@ -1,0 +1,12 @@
+@exec ln -sf %D/sbin/afrestore %D/libexec/afbackup/afrestore
+@exec ln -sf %D/sbin/afverify %D/libexec/afbackup/afverify
+@exec ln -sf %D/sbin/copy_tape %D/libexec/afbackup/copy_tape
+@exec ln -sf %D/sbin/full_backup %D/libexec/afbackup/full_backup
+@exec ln -sf %D/sbin/incr_backup %D/libexec/afbackup/incr_backup
+@exec ln -sf %D/sbin/update_indexes  %D/libexec/afbackup/update_indexes 
+@unexec rm -f  %D/libexec/afbackup/update_indexes 
+@unexec rm -f %D/libexec/afbackup/afrestore
+@unexec rm -f %D/libexec/afbackup/afverify
+@unexec rm -f %D/libexec/afbackup/copy_tape
+@unexec rm -f %D/libexec/afbackup/full_backup
+@unexec rm -f %D/libexec/afbackup/incr_backup
