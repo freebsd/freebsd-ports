@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.88 1999/04/12 08:18:30 asami Exp $
+# $Id: Makefile,v 1.89 1999/04/17 04:55:52 taoka Exp $
 #
 
     SUBDIR += adcomplain
@@ -27,6 +27,7 @@
     SUBDIR += mailagent
     SUBDIR += mailcrypt
     SUBDIR += maildrop
+    SUBDIR += mailx
     SUBDIR += majorcool
     SUBDIR += majordomo
     SUBDIR += mbx2mbox
@@ -59,6 +60,8 @@
     SUBDIR += premail
     SUBDIR += procmail
     SUBDIR += qmail
+    SUBDIR += qmail-contrib
+    SUBDIR += qmailanalog
     SUBDIR += rblcheck
     SUBDIR += rblsmtpd
     SUBDIR += rftp
