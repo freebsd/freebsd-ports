@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://mikmod.raphnet.net/files/
 
-MAINTAINER=	yoshiaki@kt.rim.or.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mod player which plays MTM, STM, XM, MOD, S3M, ULT, UNI and IT mods
 
 LIB_DEPENDS=	mikmod.2:${PORTSDIR}/audio/libmikmod
