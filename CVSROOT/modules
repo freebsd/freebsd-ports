@@ -3448,6 +3448,7 @@ klist		src/eBones/klist
 klondike	ports/games/klondike
 klone		ports/lang/klone
 kludge3d	ports/graphics/kludge3d
+kmerlin		ports/net/kmerlin
 kmess		ports/net/kmess
 knews		ports/news/knews
 knocker		ports/security/knocker
