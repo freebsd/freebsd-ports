@@ -1,4 +1,4 @@
 bin/xpuyo
 lib/X11/app-defaults/Xpuyo
-share/doc/xpuyo/README
-@dirrm share/doc/xpuyo
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
