@@ -1,0 +1,42 @@
+--- modules/_Image_TTF/configure.orig	Tue Mar  9 00:18:25 2004
++++ modules/_Image_TTF/configure	Fri Mar 19 12:19:13 2004
+@@ -963,7 +963,7 @@
+ fi
+ echo "$ac_t""$CPP" 1>&6
+ 
+-for ac_hdr in freetype.h ftxkern.h freetype/freetype.h freetype/ftxkern.h
++for ac_hdr in freetype.h ftxkern.h freetype1/freetype/freetype.h freetype1/freetype/ftxkern.h
+ do
+ ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
+ echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
+@@ -1004,7 +1004,7 @@
+ done
+ 
+   else
+-    for ac_hdr in freetype.h ftxkern.h freetype/freetype.h freetype/ftxkern.h
++    for ac_hdr in freetype.h ftxkern.h freetype1/freetype/freetype.h freetype1/freetype/ftxkern.h
+     do
+       ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
+       eval "ac_cv_header_$ac_safe=yes"
+@@ -1013,8 +1013,8 @@
+ 
+ 
+   parent="$ac_cv_header_ftxkern_h$ac_cv_header_freetype_h"
+-  subdir="$ac_cv_header_freetype_ftxkern_h$ac_cv_header_freetype_freetype_h"
+-  freetype_h="$ac_cv_header_freetype_h$ac_cv_header_freetype_freetype_h"
++  subdir="$ac_cv_header_freetype1_freetype_ftxkern_h$ac_cv_header_freetype1_freetype_freetype_h"
++  freetype_h="$ac_cv_header_freetype_h$ac_cv_header_freetype1_freetype_freetype_h"
+ 
+   if test "$parent" = "yesyes" -o "$subdir" = "yesyes"; then
+     echo $ac_n "checking for TT_Open_Collection in -lttf""... $ac_c" 1>&6
+@@ -1073,8 +1073,8 @@
+ #line 1074 "configure"
+ #include "confdefs.h"
+ 
+-#ifdef HAVE_FREETYPE_FREETYPE_H
+-#include <freetype/freetype.h>
++#ifdef HAVE_FREETYPE1_FREETYPE_FREETYPE_H
++#include <freetype1/freetype/freetype.h>
+ #else
+ #include <freetype.h>
+ #endif

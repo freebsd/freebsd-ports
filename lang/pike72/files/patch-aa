@@ -1,0 +1,12 @@
+--- modules/_Image_FreeType/configure.orig	Thu Mar 18 19:53:43 2004
++++ modules/_Image_FreeType/configure	Thu Mar 18 19:55:48 2004
+@@ -932,7 +932,8 @@
+ #line 933 "configure"
+ #include "confdefs.h"
+ 
+-#include <freetype/freetype.h> 
++#include <ft2build.h> 
++#include FT_FREETYPE_H
+ 
+ int main() {
+ 

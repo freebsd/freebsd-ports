@@ -1,0 +1,18 @@
+--- modules/_Image_TTF/config.h.in.orig	Fri Mar 19 01:04:12 2004
++++ modules/_Image_TTF/config.h.in	Fri Mar 19 01:05:19 2004
+@@ -7,11 +7,11 @@
+ /* Define if you have the <freetype.h> header file.  */
+ #undef HAVE_FREETYPE_H
+ 
+-/* Define if you have the <freetype/freetype.h> header file.  */
+-#undef HAVE_FREETYPE_FREETYPE_H
++/* Define if you have the <freetype1/freetype/freetype.h> header file.  */
++#undef HAVE_FREETYPE1_FREETYPE_FREETYPE_H
+ 
+-/* Define if you have the <freetype/ftxkern.h> header file.  */
+-#undef HAVE_FREETYPE_FTXKERN_H
++/* Define if you have the <freetype1/freetype/ftxkern.h> header file.  */
++#undef HAVE_FREETYPE1_FREETYPE_FTXKERN_H
+ 
+ /* Define if you have the <ftxkern.h> header file.  */
+ #undef HAVE_FTXKERN_H
