@@ -18,11 +18,14 @@ LIB_DEPENDS=	kdeui.4:${PORTSDIR}/x11/kdelibs2
 .if defined(WITH_OPTIONAL_DEPENDS)
 RUN_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf \
 		automake:${PORTSDIR}/devel/automake \
-		kdbg:${PORTSDIR}/devel/kdbg \
 		${LOCALBASE}/share/doc/HTML/en/kdelibs/kdecore/index.html:${PORTSDIR}/devel/kdelibdocs \
 		ktranslator:${PORTSDIR}/devel/ktranslator \
+		kdoc:${PORTSDIR}/textproc/kdoc \
 		kiconedit:${PORTSDIR}/graphics/kdegraphics2 \
 		glimpse:${PORTSDIR}/textproc/glimpse \
+		designer:${PORTSDIR}/devel/qt-designer \
+		linguist:${PORTSDIR}/devel/linguist \
+		kbabel:${PORTSDIR}/devel/kdesdk \
 		a2ps:${PORTSDIR}/print/a2ps43-letter
 .endif
 
