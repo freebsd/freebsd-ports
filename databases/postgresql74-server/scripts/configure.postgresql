@@ -220,7 +220,7 @@ if [ "${TCL}" ]; then
 				exit 1
 				;;
 		esac
-		echo WITH_TCL=\"$1\" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+		echo WITH_TCL=$1 >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 	fi
 	cat <<-EOF >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 		CONFIGURE_ARGS+= --with-tcl --with-tclconfig="\${TCLCONFIG}"
