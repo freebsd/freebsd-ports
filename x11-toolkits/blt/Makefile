@@ -1,6 +1,6 @@
 # New ports collection makefile for:	blt
 # Version required:	2.4m
-# Date created:		04 November 1999
+# Date created:		22 September 1998
 # Whom:			Kenjiro Cho <kjc@csl.sony.co.jp>
 #
 # $FreeBSD$
