@@ -27,6 +27,27 @@ if [ "$2" = "PRE-INSTALL" ]; then
 	fi
 fi
 
+if [ "$2" = "POST-INSTALL" ]; then
+	cf=$PKG_PREFIX/etc/exim/configure
+	if [ -e $cf ]; then
+		if grep -q '^[^#]*hostlist.*relay_from_hosts.*=.*127.0.0.1' $cf
+		    then
+			echo
+			echo "============================================================"
+			echo "                     !!! WARNING !!!                        "
+			echo "============================================================"
+			echo
+			echo "Existing configure file $cf"
+			echo "contains 127.0.0.1 in relay_from_hosts hostlist!"
+			echo "Use of localhost instead of 127.0.0.1 is highly recommended."
+			echo
+			echo "============================================================"
+			echo "                     !!! WARNING !!!                        "
+			echo "============================================================"
+		fi
+	fi
+fi
+
 # This is naughty, since the directory we create won't be removed along
 # with Exim.  However, logfiles should probably stick around after Exim
 # is removed, until the administrator is sure he doesn't want them
