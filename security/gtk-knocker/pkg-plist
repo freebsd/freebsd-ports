@@ -1,0 +1,4 @@
+bin/gtk-knocker
+share/gtk-knocker/pixmaps/knocker.xpm
+@dirrm share/gtk-knocker/pixmaps
+@dirrm share/gtk-knocker

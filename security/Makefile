@@ -47,6 +47,7 @@
     SUBDIR += gpa
     SUBDIR += gpasman
     SUBDIR += gpgme
+    SUBDIR += gtk-knocker
     SUBDIR += gtkportscan
     SUBDIR += heimdal
     SUBDIR += hlfl
