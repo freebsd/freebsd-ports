@@ -20,9 +20,7 @@
 # The two most important knobs are:
 #
 # In general you can choose between using the SLANG port (WITH_MUTT_SLANG)
-# and ncurses (WITH_MUTT_NCURSES) which is the default. Note that you may
-# have to set the variables COLORTERM=yes and COLORFGBG=color,color in your
-# environment to get slang function properly.
+# and ncurses (WITH_MUTT_NCURSES) which is the default.
 #
 # If you want to install the mutt documentation in html and ps format define:
 #  WITH_MUTT_HTML
@@ -130,7 +128,7 @@ pre-build:
 
 .if defined(PACKAGE_BUILDING)
 WITH_MUTT_SSL=			yes
-WITH_MUTT_NCURSES=		yes
+WITH_MUTT_SLANG=		yes
 WITH_MUTT_HTML=			yes
 WITH_MUTT_COMPRESSED_FOLDERS=	yes
 WITH_MUTT_QUOTE_PATCH=		yes
