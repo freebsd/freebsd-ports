@@ -1,0 +1,86 @@
+In order to activate spamass-milter, follow these steps:
+
+1. Review and customize your system-wide SpamAssassin preference, by
+   editing /etc/mail/spamassassin/local.cf.  Refer to the SpamAssassin
+   manpage Mail::SpamAssassin::Conf(3) for details on what to put in it.
+
+2. If you didn't activate spamd (the SpamAssassin daemon), do so now:
+
+	cd /usr/local/etc/rc.d
+	cp -p spamd.sh-dist spamd.sh
+	chmod 755 spamd.sh
+	/usr/local/etc/rc.d/spamd.sh start
+
+3. Activate spamass-milter:
+
+	cd /usr/local/etc/rc.d
+	cp -p spamass-milter.sh.dist spamass-milter.sh
+	chmod 755 spamass-milter.sh
+	/usr/local/etc/rc.d/spamass-milter.sh start
+
+4. Backup your sendmail.cf (in /etc/mail).
+
+5. If you didn't create your own customized version of Sendmail .mc
+   file, create one from the default template (replace YOURNAME with a
+   suitable name; a good candidate is the output of `hostname -s'):
+
+	cd /etc/mail
+	cp -p freebsd.mc YOURNAME.mc
+	echo "SENDMAIL_MC = /etc/mail/YOURNAME.mc" >> /etc/make.conf
+
+   The last line tells the system to use your customized version instead
+   of the default freebsd.mc when you run mergemaster(8) later on.
+
+6. Add the spamass-milter hook to your Sendmail .mc file.  The magic
+   line to add is:
+
+	INPUT_MAIL_FILTER(`spamassassin', `S=local:/var/run/spamass-milter.sock, F=, T=C:15m;S:4m;R:4m;E:10m')
+
+   Everything should go on a single line, no line break/continuation is
+   allowed!
+
+   The best place to add this is right after the dnsbl-related comments.
+   (Hint: Every comment in an .mc file starts with `dnl'.)
+
+7. Rebuild the sendmail.cf from your .mc file:
+
+	cd /etc/mail
+	make
+	make install
+
+   Or you can run mergemaster(8) instead if you want, although it's an
+   overkill.
+
+8. Restart Sendmail:
+
+	kill -HUP `head -1 /var/run/sendmail.pid`
+
+9. Test the whole piece:
+
+	/usr/sbin/sendmail root < /usr/local/share/doc/Mail-SpamAssassin/sample-nonspam.txt
+	/usr/sbin/sendmail root < /usr/local/share/doc/Mail-SpamAssassin/sample-spam.txt
+
+   Each of these commands might take a long time to finish (up to about
+   10-20 seconds), so please be patient.
+
+   You should receive two messages, one from `Keith Dawson' and the
+   other from xl6Ety00V@fismat1.fcfm.buap.mx.  The one from Keith Dawson
+   shouldn't be tagged as a spam, bearing this header line:
+
+	X-Spam-Status: No, ...
+
+   On the other hand, the one from xl6Ety00V@fismat1.fcfm.buap.mx should
+   be tagged as a spam, bearing these two header lines:
+
+	X-Spam-Status: Yes, ...
+	X-Spam-Flag: YES
+
+   If things don't work as expected, promptly restore your sendmail.cf
+   from the backup copy then restart sendmail as shown on step 9; you
+   may lose incoming mail otherwise!
+
+
+Now all messages received by Sendmail are filtered through
+SpamAssassin, and probable spam messages are tagged with the header
+`X-Spam-Flag: YES'.  Tell your users about this so they can set up
+appropriate filters on their mail reader.

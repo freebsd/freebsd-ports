@@ -224,6 +224,7 @@
     SUBDIR += smunge
     SUBDIR += solidpop3d
     SUBDIR += sonicmail
+    SUBDIR += spamass-milter
     SUBDIR += spambnc
     SUBDIR += spruce
     SUBDIR += squirrelmail

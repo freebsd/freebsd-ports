@@ -1,0 +1,5 @@
+------------------------------------------------------------------------
+spamass-milter has been installed, but you have to activate it manually
+to use it.  Refer to ${PREFIX}/share/doc/spamass-milter/activation.txt
+for details.
+------------------------------------------------------------------------
