@@ -11,6 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://member.nifty.ne.jp/tsato/xvkbd/
 
 MAINTAINER=	roam@FreeBSD.org
+COMMENT=	"A virtual keyboard for X applications"
 
 MAN1=		xvkbd.1
 

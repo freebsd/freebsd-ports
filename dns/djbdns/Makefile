@@ -51,6 +51,7 @@ DJBDNS_VER=	1.05
 DJBDNS_V6_VER=	test14
 
 MAINTAINER=	roam@FreeBSD.org
+COMMENT=	"A collection of secure and reliable DNS tools"
 
 RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools \
 		tcpserver:${PORTSDIR}/sysutils/ucspi-tcp

@@ -11,6 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.inter7.com/devel/
 
 MAINTAINER=	roam@FreeBSD.org
+COMMENT=	"Easy virtual domain and authentication package for use with qmail"
 
 BUILD_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail \
 		${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp

@@ -11,6 +11,7 @@ CATEGORIES=	mail www
 MASTER_SITES=	http://www.inter7.com/qmailadmin/
 
 MAINTAINER=	roam@FreeBSD.org
+COMMENT=	"CGI program for administering Qmail with vchkpw/vpopmail"
 
 BUILD_DEPENDS= \
 	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail \

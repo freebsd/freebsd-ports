@@ -12,6 +12,7 @@ MASTER_SITES=	http://ringwraith.online.bg/~roam/devel/sys/timelimit/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/pre/}
 
 MAINTAINER=	roam@FreeBSD.org
+COMMENT=	"Limit the absolute execution time of a process"
 
 MAN8=		timelimit.8
 

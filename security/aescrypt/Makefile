@@ -12,6 +12,7 @@ MASTER_SITES=	http://aescrypt.sourceforge.net/
 MASTER_SITE_SUBDIR=aescrypt
 
 MAINTAINER=	roam@FreeBSD.org
+COMMENT=	"A command-line AES encryption/decryption suite"
 
 GNU_CONFIGURE=	yes
 

@@ -22,6 +22,7 @@ PATCH_SITES=	${MASTER_SITE_LOCAL} \
 PATCH_SITE_SUBDIR=	roam
 
 MAINTAINER=	roam@FreeBSD.org
+COMMENT=	"Non-interactive tool to get files from FTP, GOPHER, HTTP(S) servers"
 
 MAN1=		curl.1 curl-config.1
 MAN3=		curl_easy_cleanup.3 curl_easy_duphandle.3 curl_easy_getinfo.3 \

@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://anight.org/magictun/dist/
 
 MAINTAINER=	roam@FreeBSD.org
+COMMENT=	"An LD_PRELOAD module for transparent HTTPS proxy redirection"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/magictun.so ${PREFIX}/lib/magictun.so

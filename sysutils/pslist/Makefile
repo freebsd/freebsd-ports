@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://ringwraith.online.bg/devel/sysutils/
 
 MAINTAINER=	roam@FreeBSD.org
+COMMENT=	"A utility to view or send signals to processes with all their children"
 
 NO_BUILD=	yes
 

@@ -12,6 +12,7 @@ CATEGORIES=	net security
 MASTER_SITES=	http://www.packetfactory.net/projects/libnids/dist/
 
 MAINTAINER=	roam@FreeBSD.org
+COMMENT=	"Network monitoring library with TCP/IP reassembly"
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 

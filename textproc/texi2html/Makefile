@@ -11,6 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.mathematik.uni-kl.de/~obachman/Texi2html/Distrib/
 
 MAINTAINER=	roam@FreeBSD.org
+COMMENT=	"Texinfo to HTML converter"
 
 USE_AUTOMAKE=	yes
 USE_AUTOCONF=	yes

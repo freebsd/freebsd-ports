@@ -11,6 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.inter7.com/devel/
 
 MAINTAINER=	roam@FreeBSD.org
+COMMENT=	"Simple autoresponder for qmail"
 
 USE_REINPLACE=	yes
 

@@ -16,6 +16,7 @@ MASTER_SITES=	http://www.eekim.com/software/cgihtml/cgihtml.tar.gz \
 FORBIDDEN=	Multiple vulnerabilities, see http://online.securityfocus.com/archive/1/305469
 
 MAINTAINER=	roam@FreeBSD.org
+COMMENT=	"Library that simplifies the task of writing CGI programs in C"
 
 INSTALLS_SHLIB=	yes
 

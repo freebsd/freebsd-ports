@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	UNIX/misc
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	roam@FreeBSD.org
+COMMENT=	"Command-line anti-spoofing detection utility"
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 

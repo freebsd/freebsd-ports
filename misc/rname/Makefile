@@ -11,6 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://ringwraith.online.bg/devel/sysutils/rname/
 
 MAINTAINER=	roam@FreeBSD.org
+COMMENT=	"Execute a program with a fake name"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes

@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	roam@FreeBSD.org
+COMMENT=	"Sort (or not) stdin using the bogo-sort algorithm"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
