@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/ \
 		ftp://carroll.cac.psu.edu/pub/OpenBSD/OpenSSH/portable/
 PKGNAMESUFFIX=	-portable
 
-MAINTAINER= dwcjr@FreeBSD.org
+MAINTAINER= dinoex@FreeBSD.org
 
 MAN1=	sftp.1 ssh-add.1 ssh-agent.1 ssh-keygen.1 ssh-keyscan.1 scp.1 ssh.1
 MLINKS=	ssh.1 slogin.1
