@@ -1,4 +1,107 @@
 bin/madbomber
+share/madbomber/embedded/images/bar.png
+share/madbomber/embedded/images/game/background.png
+share/madbomber/embedded/images/game/bomb/bomb0.png
+share/madbomber/embedded/images/game/bomb/bomb1.png
+share/madbomber/embedded/images/game/bomb/bomb2.png
+share/madbomber/embedded/images/game/bomb/bomb3.png
+share/madbomber/embedded/images/game/bomb/explosion1.png
+share/madbomber/embedded/images/game/bomb/explosion2.png
+share/madbomber/embedded/images/game/bomber/bomber-amazed.png
+share/madbomber/embedded/images/game/bomber/bomber-happy.png
+share/madbomber/embedded/images/game/bomber/bomber-sad.png
+share/madbomber/embedded/images/game/bucket/bucket1.png
+share/madbomber/embedded/images/game/bucket/bucket1red.png
+share/madbomber/embedded/images/game/bucket/bucket2.png
+share/madbomber/embedded/images/game/bucket/bucket2red.png
+share/madbomber/embedded/images/game/bucket/bucket3.png
+share/madbomber/embedded/images/game/bucket/bucket3red.png
+share/madbomber/embedded/images/game/bucket/small-bucket1.png
+share/madbomber/embedded/images/game/bucket/small-bucket1red.png
+share/madbomber/embedded/images/game/bucket/small-bucket2.png
+share/madbomber/embedded/images/game/bucket/small-bucket2red.png
+share/madbomber/embedded/images/game/bucket/small-bucket3.png
+share/madbomber/embedded/images/game/bucket/small-bucket3red.png
+share/madbomber/embedded/images/game/drop/drop-down.png
+share/madbomber/embedded/images/game/drop/drop-left-down.png
+share/madbomber/embedded/images/game/drop/drop-left-up.png
+share/madbomber/embedded/images/game/drop/drop-left.png
+share/madbomber/embedded/images/game/drop/drop-right-down.png
+share/madbomber/embedded/images/game/drop/drop-right-up.png
+share/madbomber/embedded/images/game/drop/drop-right.png
+share/madbomber/embedded/images/game/drop/drop-up.png
+share/madbomber/embedded/images/game/game-over.png
+share/madbomber/embedded/images/game/highscore.png
+share/madbomber/embedded/images/game/numbers/0.png
+share/madbomber/embedded/images/game/numbers/0red.png
+share/madbomber/embedded/images/game/numbers/1.png
+share/madbomber/embedded/images/game/numbers/1red.png
+share/madbomber/embedded/images/game/numbers/2.png
+share/madbomber/embedded/images/game/numbers/2red.png
+share/madbomber/embedded/images/game/numbers/3.png
+share/madbomber/embedded/images/game/numbers/3red.png
+share/madbomber/embedded/images/game/numbers/4.png
+share/madbomber/embedded/images/game/numbers/4red.png
+share/madbomber/embedded/images/game/numbers/5.png
+share/madbomber/embedded/images/game/numbers/5red.png
+share/madbomber/embedded/images/game/numbers/6.png
+share/madbomber/embedded/images/game/numbers/6red.png
+share/madbomber/embedded/images/game/numbers/7.png
+share/madbomber/embedded/images/game/numbers/7red.png
+share/madbomber/embedded/images/game/numbers/8.png
+share/madbomber/embedded/images/game/numbers/8red.png
+share/madbomber/embedded/images/game/numbers/9.png
+share/madbomber/embedded/images/game/numbers/9red.png
+share/madbomber/embedded/images/game/paused.png
+share/madbomber/embedded/images/game/press-escape.png
+share/madbomber/embedded/images/game/press-fire.png
+share/madbomber/embedded/images/highscore/highscore.png
+share/madbomber/embedded/images/highscore/letters.png
+share/madbomber/embedded/images/icon.png
+share/madbomber/embedded/images/loading.png
+share/madbomber/embedded/images/make-offs.sh
+share/madbomber/embedded/images/options/0percent-off.png
+share/madbomber/embedded/images/options/0percent.png
+share/madbomber/embedded/images/options/100percent-off.png
+share/madbomber/embedded/images/options/100percent.png
+share/madbomber/embedded/images/options/25percent-off.png
+share/madbomber/embedded/images/options/25percent.png
+share/madbomber/embedded/images/options/50percent-off.png
+share/madbomber/embedded/images/options/50percent.png
+share/madbomber/embedded/images/options/75percent-off.png
+share/madbomber/embedded/images/options/75percent.png
+share/madbomber/embedded/images/options/detail.png
+share/madbomber/embedded/images/options/difficulty.png
+share/madbomber/embedded/images/options/effects.png
+share/madbomber/embedded/images/options/hard-off.png
+share/madbomber/embedded/images/options/hard.png
+share/madbomber/embedded/images/options/music.png
+share/madbomber/embedded/images/options/normal-off.png
+share/madbomber/embedded/images/options/normal.png
+share/madbomber/embedded/images/options/ok-off.png
+share/madbomber/embedded/images/options/ok.png
+share/madbomber/embedded/images/options/options.png
+share/madbomber/embedded/images/options/player-one.png
+share/madbomber/embedded/images/options/player-two.png
+share/madbomber/embedded/images/options/volume.png
+share/madbomber/embedded/images/options/zen-off.png
+share/madbomber/embedded/images/options/zen.png
+share/madbomber/embedded/images/spray-black.png
+share/madbomber/embedded/images/spray-blue.png
+share/madbomber/embedded/images/spray-cyan.png
+share/madbomber/embedded/images/title/exit-off.png
+share/madbomber/embedded/images/title/exit.png
+share/madbomber/embedded/images/title/highscore-off.png
+share/madbomber/embedded/images/title/highscore.png
+share/madbomber/embedded/images/title/one-player-off.png
+share/madbomber/embedded/images/title/one-player.png
+share/madbomber/embedded/images/title/options-off.png
+share/madbomber/embedded/images/title/options.png
+share/madbomber/embedded/images/title/title.png
+share/madbomber/embedded/images/title/two-player-vs-off.png
+share/madbomber/embedded/images/title/two-player-vs.png
+share/madbomber/embedded/images/title/two-players-off.png
+share/madbomber/embedded/images/title/two-players.png
 share/madbomber/images/bar.png
 share/madbomber/images/game/background.png
 share/madbomber/images/game/bomb/bomb0.png
@@ -137,4 +240,15 @@ share/madbomber/sounds/spray.wav
 @dirrm share/madbomber/images/game/bomb
 @dirrm share/madbomber/images/game
 @dirrm share/madbomber/images
+@dirrm share/madbomber/embedded/images/title
+@dirrm share/madbomber/embedded/images/options
+@dirrm share/madbomber/embedded/images/highscore
+@dirrm share/madbomber/embedded/images/game/numbers
+@dirrm share/madbomber/embedded/images/game/drop
+@dirrm share/madbomber/embedded/images/game/bucket
+@dirrm share/madbomber/embedded/images/game/bomber
+@dirrm share/madbomber/embedded/images/game/bomb
+@dirrm share/madbomber/embedded/images/game
+@dirrm share/madbomber/embedded/images
+@dirrm share/madbomber/embedded
 @dirrm share/madbomber
