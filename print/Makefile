@@ -117,6 +117,7 @@
     SUBDIR += latex-subfig
     SUBDIR += latex-subfloat
     SUBDIR += latex-timing
+    SUBDIR += latex-ucs
     SUBDIR += latex-xcolor
     SUBDIR += latex2rtf
     SUBDIR += latex2slides
