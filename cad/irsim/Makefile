@@ -3,7 +3,7 @@
 # Date created:         18 Dec 1994
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.8 1996/12/06 23:24:36 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       irsim-9.4.1

@@ -3,7 +3,7 @@
 # Date created:         28 December 1995
 # Whom:                 se
 #
-# $Id: Makefile,v 1.9 1999/08/22 18:57:21 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       bytebench-3.1

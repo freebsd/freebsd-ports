@@ -4,7 +4,7 @@
 # Date created:         Mon Nov 18, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.8 1999/02/03 11:11:40 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	MaRS-2.1

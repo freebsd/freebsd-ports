@@ -4,7 +4,7 @@
 # Date created:			  Sun Aug 08, 1999
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.2 1997/01/25 18:08:40 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	rawio

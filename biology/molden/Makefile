@@ -3,7 +3,7 @@
 # Date created:		1998-11-14
 # Whom:			rmiya
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/07 06:57:51 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	molden3.4

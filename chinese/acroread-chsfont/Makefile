@@ -3,7 +3,7 @@
 # Date created:		99/06/16
 # Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.2 1999/07/04 07:56:55 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	chsfont

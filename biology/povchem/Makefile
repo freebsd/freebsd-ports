@@ -3,7 +3,7 @@
 # Date created:         Mar 14 1998
 # Whom:                 frankch@waru.life.nthu.edu.tw
 #
-# $Id: Makefile,v 1.1.1.1 1998/03/16 06:57:10 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	povchem-1.0

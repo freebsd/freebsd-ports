@@ -3,7 +3,7 @@
 # Date created:         Dec 4 1997
 # Whom:                 frankch@waru.life.nthu.edu.tw
 #
-# $Id: Makefile,v 1.7 1999/01/07 02:31:37 simokawa Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	MAGE_4_2.LINUX

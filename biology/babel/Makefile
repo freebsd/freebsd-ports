@@ -3,7 +3,7 @@
 # Date created:         Dec 4 1997
 # Whom:                 frankch@waru.life.nthu.edu.tw
 #
-# $Id: Makefile,v 1.2 1997/12/24 07:24:10 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	babel-1.6

@@ -3,7 +3,7 @@
 # Date created:		22 August 1994
 # Whom:			mr
 #
-# $Id: Makefile,v 1.13 1998/12/05 08:12:11 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tcpblast

@@ -3,7 +3,7 @@
 # Date created:  1999-01-11
 # Whom:	 Ryo MIYAMOTO <rmiya@cc.hirosaki-u.ac.jp>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	DeFT_2.2

@@ -3,7 +3,7 @@
 # Date created:		19 October 1994
 # Whom:			mr
 #
-# $Id: Makefile,v 1.18 1998/06/03 06:47:38 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	pcb-1.6.3

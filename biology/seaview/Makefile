@@ -3,7 +3,7 @@
 # Date created:         Dec 5 1997
 # Whom:                 frankch@waru.life.nthu.edu.tw
 #
-# $Id: Makefile,v 1.13 1999/02/03 11:11:40 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       seaview

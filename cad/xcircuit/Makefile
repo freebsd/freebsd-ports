@@ -3,7 +3,7 @@
 # Date created:		3 Apr 1998
 # Whom:			giffunip@asme.org
 #
-# $Id: Makefile,v 1.4 1998/11/21 07:27:34 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xcircuit-1.7

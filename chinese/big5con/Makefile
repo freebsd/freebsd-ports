@@ -3,7 +3,7 @@
 # Date created:		07 Jan 1997
 # Whom:			Hung-Chi Chu <hcchu@r350.ee.ntu.edu.tw>
 #
-# $Id: Makefile,v 1.9 1999/01/06 05:00:25 simokawa Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	big5con-0.92e

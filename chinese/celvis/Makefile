@@ -4,7 +4,7 @@
 # Date created:         Thur Aug 15, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.6 1997/09/22 17:48:24 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	celvis

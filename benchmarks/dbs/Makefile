@@ -3,7 +3,7 @@
 # Date created: 	1 August 1998
 # Whom:			jkoshy
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/01 23:34:42 jkoshy Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	dbs-1.1.5

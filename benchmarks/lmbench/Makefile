@@ -3,7 +3,7 @@
 # Date created:		6 May 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.7 1997/05/28 02:18:12 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	lmbench

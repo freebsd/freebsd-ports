@@ -3,7 +3,7 @@
 # Date created:         26 September 1994
 # Whom:                 se
 #
-# $Id: Makefile,v 1.4 1996/11/18 11:21:44 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       Bonnie

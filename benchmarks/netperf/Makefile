@@ -3,7 +3,7 @@
 # Date created:		19 July 1996
 # Whom:			koshy
 #
-# $Id: Makefile,v 1.6 1997/07/27 20:55:53 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	netperf-2.1pl3

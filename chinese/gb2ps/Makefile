@@ -4,7 +4,7 @@
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.5 1997/11/03 21:07:09 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gb2ps.2.02

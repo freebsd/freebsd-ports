@@ -3,7 +3,7 @@
 # Date created:		01 January 1995
 # Whom:			thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.9 1996/11/15 23:30:47 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	acs021

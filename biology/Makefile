@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.10 1999/05/07 06:59:25 taoka Exp $
+# $FreeBSD$
 #
 
     SUBDIR += babel

@@ -3,7 +3,7 @@
 # Date created:			  Wed Sep 24, 1997
 # Whom:				  Ada T Lim <ada@not-enough.bandwidth.org>
 #
-# $Id: Makefile,v 1.1.1.1 1997/10/07 07:03:41 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	hztty-2.0

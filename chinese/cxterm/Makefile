@@ -3,7 +3,7 @@
 # Date created:         Sat Aug 10, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.9 1997/07/31 23:11:28 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cxterm5.0.p3

@@ -4,7 +4,7 @@
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.3 1997/09/22 17:48:23 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	c2t

@@ -3,7 +3,7 @@
 # Date created:		19 October 1996
 # Whom:			Pedro Giffuni
 #
-# $Id: Makefile,v 1.11 1998/12/26 06:29:19 flathill Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	felt-3.02

@@ -4,7 +4,7 @@
 # Date created:		15 July 1998
 # Whom:			Tai-hwa Liang <avatar@www.mmlab.cse.yzu.edu.tw>
 #
-# $Id: Makefile,v 1.7 1998/08/24 01:24:38 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	pine4.10
