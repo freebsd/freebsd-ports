@@ -1,5 +1,14 @@
 --- configure.orig	Fri Aug 13 01:15:49 2004
 +++ configure	Fri Aug 13 01:15:35 2004
+-@@ -5325,7 +5325,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldv  $LIBS"
++LIBS="-ldv -pthread $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
 @@ -5693,7 +5693,7 @@
  else
    { { echo "$as_me:$LINENO: error: Unable to link with libraw1394. Check that you have libraw1394 installed" >&5
