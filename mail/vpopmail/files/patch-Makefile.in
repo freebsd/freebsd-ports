@@ -1,0 +1,14 @@
+--- Makefile.in.orig	Thu Sep  4 23:45:08 2003
++++ Makefile.in	Thu Sep  4 23:46:17 2003
+@@ -705,10 +705,7 @@
+ 
+ 	if test "@USE_MYSQL@" = "1"; then \
+ 	  if test ! -r $(MYSQLCONF); then \
+-	    echo "# MySQL settings, line 1 is config for read-only," > $(MYSQLCONF); \
+-	    echo "# line 2 is config for update.  Settings for each" >> $(MYSQLCONF); \
+-	    echo "# line: server|port|user|password|database" >> $(MYSQLCONF); \
+-	    echo "localhost|0|root|secret|vpopmail" >> $(MYSQLCONF); \
++	    touch $(MYSQLCONF); \
+ 	  fi ; \
+ 	  chown @vpopuser@  $(MYSQLCONF) ; \
+ 	  chgrp @vpopgroup@ $(MYSQLCONF) ; \

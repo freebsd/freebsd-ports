@@ -6,24 +6,18 @@
 #
 
 PORTNAME=	vpopmail
-PORTVERSION=	5.3.20
+PORTVERSION=	5.3.27
 CATEGORIES=	mail
-MASTER_SITES=	http://www.inter7.com/devel/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	roam@FreeBSD.org
-COMMENT=	"Easy virtual domain and authentication package for use with qmail"
+COMMENT=	Easy virtual domain and authentication package for use with qmail
 
 BUILD_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail \
 		${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
 RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail \
 		${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
-
-.if defined(WITH_VPOPMAIL_SQWEBMAIL_CREATION)
-PATCHFILES=	vpopmail-sqwebmail-config-${PORTVERSION}.patch
-PATCH_SITES=	${MASTER_SITE_LOCAL} \
-		http://people.FreeBSD.org/~roam/ports/patches/mail/vpopmail/
-PATCH_SITE_SUBDIR=	roam
-.endif
 
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
@@ -45,22 +39,22 @@ CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_DIR} \
 #
 # WITH_PASSWD   - allow authentication off /etc/passwd
 # WITHOUT_MD5_PASSWORDS - store encrypted passwords in MD5 format
+# WITH_CLEAR_PASSWD - store passwords in plaintext
+# WITH_LEARN_PASSWORDS	- enable learning passwords during pop auth
 # WITH_MYSQL	- allow authentitation via mysql
-# WITH_MYSQL_LARGE_SITE - enables large site layout
 # WITH_MYSQL_REPLICATION - enables MySQL database replication
 # WITH_MYSQL_LIMITS - enables the MySQL mailbox limit code
 # WITH_SYBASE   - allow authentication via Sybase (NOT TESTED!)
 # WITH_ORACLE   - allow authentication via Oracle (NOT TESTED!)
-# WITH_CLEAR_PASSWD - store passwords in plaintext into the MySQL db
 # WITH_VALIAS   - enable valias processing
 # WITHOUT_ROAMING - disallow roaming users
 # WITH_IP_ALIAS - enables IP aliasing
-# WITH_DELIVER_FILTER - enables the experimental vdelivermail filter
 # WITH_QMAIL_EXT - enables qmail-like user-* address extesions processing
 # WITHOUT_FILE_LOCKING - disable file locking
 # WITH_FILE_SYNC - enables immediate synching (may decrease performance)
 # WITHOUT_USERS_BIG_DIR - disables using big directories for users
 # WITHOUT_SEEKABLE - disables vdelivermail's attempt to make its input seekable
+# WITH_DOMAIN_QUOTAS	- enable domain quotas
 #
 # Set these to the values you'd prefer
 #
@@ -69,7 +63,8 @@ CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_DIR} \
 # DEFAULT_DOMAIN - default domain for non-vhost lookups
 # WITH_SINGLE_DOMAIN - optimize for a site with many users in a single domain
 # LOGLEVEL	- n - no logging, y - log all,
-#                 e - log errors, p - log passwords in errors
+#                 e - log errors, p - log passwords in errors,
+#		  v - verbose success and errors with passwords
 # WITHOUT_AUTH_LOG - disables authentication logging
 # WITH_MYSQL_LOG - enable logging to a MySQL database
 # QMAIL_DIR     - location of qmail directory
@@ -121,6 +116,8 @@ HARDQUOTA?=	10000000
 RELAYCLEAR?=	30
 LOGLEVEL?=	y
 
+.include <bsd.port.pre.mk>
+
 .if exists(${LOCALBASE}/qmail/bin/qmail-send)
 QMAIL_DIR?=	${LOCALBASE}/qmail
 .else
@@ -158,10 +155,6 @@ BROKEN=		"The WITH_APOP option is deprecated; set WITH_CLEAR_PASSWD instead, APO
 CONFIGURE_ARGS+=	--enable-valias=y
 .endif
 
-.if defined(WITH_SQWEBMAIL)
-CONFIGURE_ARGS+=	--enable-sqwebmail-pass=y
-.endif
-
 .if !defined(WITHOUT_ROAMING)
 CONFIGURE_ARGS+=	--enable-roaming-users=y \
 			--enable-relay-clear-minutes=${RELAYCLEAR}
@@ -171,14 +164,15 @@ CONFIGURE_ARGS+=	--enable-roaming-users=y \
 CONFIGURE_ARGS+=	--enable-clear-passwd=n
 .endif
 
-.if defined(WITH_MYSQL)
-LIB_DEPENDS+=		mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-CONFIGURE_ARGS+=	--enable-mysql=y \
-			--enable-sqlincdir=${LOCALBASE}/include/mysql \
-			--enable-sqllibdir=${LOCALBASE}/lib/mysql
-.if defined(WITH_MYSQL_LARGE_SITE)
-CONFIGURE_ARGS+=	--enable-large-site=y
+.if defined(WITH_LEARN_PASSWORDS)
+CONFIGURE_ARGS+=	--enable-learn-passwords=y
 .endif
+
+.if defined(WITH_MYSQL)
+USE_MYSQL=		yes
+CONFIGURE_ARGS+=	--enable-mysql=y \
+			--enable-incdir=${LOCALBASE}/include/mysql \
+			--enable-libdir=${LOCALBASE}/lib/mysql
 .if defined(WITH_MYSQL_REPLICATION)
 CONFIGURE_ARGS+=	--enable-mysql-replication=y
 .endif
@@ -189,18 +183,16 @@ CONFIGURE_ARGS+=	--enable-mysql-logging=y
 CONFIGURE_ARGS+=	--enable-mysql-limits=y
 .endif
 
-.if defined(WITH_MYSQL_SERVER)
+WITH_MYSQL_SERVER?=		localhost
 WITH_MYSQL_READ_SERVER?=	${WITH_MYSQL_SERVER}
 WITH_MYSQL_UPDATE_SERVER?=	${WITH_MYSQL_SERVER}
-.endif
-.if defined(WITH_MYSQL_USER)
+WITH_MYSQL_USER?=	vpopmail
 WITH_MYSQL_READ_USER?=	${WITH_MYSQL_USER}
 WITH_MYSQL_UPDATE_USER?=	${WITH_MYSQL_USER}
-.endif
-.if defined(WITH_MYSQL_PASSWD)
+WITH_MYSQL_PASSWD?=	secret
 WITH_MYSQL_READ_PASSWD?=	${WITH_MYSQL_PASSWD}
 WITH_MYSQL_UPDATE_PASSWD?=	${WITH_MYSQL_PASSWD}
-.endif
+WITH_MYSQL_DB?=		vpopmail
 .endif
 
 .if defined(WITH_SYBASE)
@@ -212,20 +204,12 @@ WITH_ORACLE_PROC?=	proc
 CONFIGURE_ARGS+=	--enable-oracle=y
 .endif
 
-.if defined(DEFAULT_DOMAIN)
-CONFIGURE_ARGS+=	--enable-default-domain=${DEFAULT_DOMAIN}
-.endif
-
 .if defined(WITH_SINGLE_DOMAIN)
 CONFIGURE_ARGS+=	--enable-many-domains=n
 .endif
 
 .if defined(WITH_IP_ALIAS)
 CONFIGURE_ARGS+=	--enable-ip-alias-domains=y
-.endif
-
-.if defined(WITH_DELIVER_FILTER)
-CONFIGURE_ARGS+=	--enable-deliver-filter=y
 .endif
 
 .if defined(WITH_QMAIL_EXT)
@@ -252,6 +236,10 @@ CONFIGURE_ARGS+=	--enable-users-big-dir=n
 CONFIGURE_ARGS+=	--enable-make-seekable=n
 .endif
 
+.if defined(WITH_DOMAIN_QUOTAS)
+CONFIGURE_ARGS+=	--enable-domainquotas=y
+.endif
+
 # autoconf and automake can remove our patches to the configure scripts.
 
 post-patch:
@@ -265,29 +253,6 @@ post-patch:
 
 pre-configure:
 	@PKG_PREFIX=${PREFIX}/vpopmail ${PERL5} ${PKGINSTALL}
-.if defined(WITH_MYSQL)
-.if defined(WITH_MYSQL_UPDATE_SERVER)
-	${REINPLACE_CMD} -E -e "s/(#define MYSQL_UPDATE_SERVER.*)localhost(.*)/\1${WITH_MYSQL_UPDATE_SERVER}\2/" ${WRKSRC}/vmysql.h
-.endif
-.if defined(WITH_MYSQL_READ_SERVER)
-	${REINPLACE_CMD} -E -e "s/(#define MYSQL_READ_SERVER.*)localhost(.*)/\1${WITH_MYSQL_READ_SERVER}\2/" ${WRKSRC}/vmysql.h
-.endif
-.if defined(WITH_MYSQL_UPDATE_USER)
-	${REINPLACE_CMD} -E "s/(#define MYSQL_UPDATE_USER.*)root(.*)/\1${WITH_MYSQL_UPDATE_USER}\2/" ${WRKSRC}/vmysql.h
-.endif
-.if defined(WITH_MYSQL_READ_USER)
-	${REINPLACE_CMD} -E -e "s/(#define MYSQL_READ_USER.*)root(.*)/\1${WITH_MYSQL_READ_USER}\2/" ${WRKSRC}/vmysql.h
-.endif
-.if defined(WITH_MYSQL_UPDATE_PASSWD)
-	${REINPLACE_CMD} -E -e "s/(#define MYSQL_UPDATE_PASSWD.*)secret(.*)/\1${WITH_MYSQL_UPDATE_PASSWD}\2/" ${WRKSRC}/vmysql.h
-.endif
-.if defined(WITH_MYSQL_READ_PASSWD)
-	${REINPLACE_CMD} -E -e "s/(#define MYSQL_READ_PASSWD.*)secret(.*)/\1${WITH_MYSQL_READ_PASSWD}\2/" ${WRKSRC}/vmysql.h
-.endif
-.if defined(WITH_MYSQL_DB)
-	${REINPLACE_CMD} -E -e "s/(#define MYSQL_DATABASE.*)vpopmail(.*)/\1${WITH_MYSQL_DB}\2/" ${WRKSRC}/vmysql.h
-.endif
-.endif
 .if defined(WITH_ORACLE)
 .if defined(WITH_ORACLE_SERVICE)
 	${REINPLACE_CMD} -E -e "s/(#define ORACLE_SERVICE.*)jimmy(.*)/\1${WITH_ORACLE_SERVICE}\2/" ${WRKSRC}/voracle.h
@@ -335,6 +300,15 @@ post-install:
 			${TOUCH} ${PREFIX}/vpopmail/etc/tcp.smtp; \
 		fi; \
 	fi
-	${INSTALL_DATA} ${VCFGDIR}/inc_deps ${VCFGDIR}/lib_deps ${PREFIX}/vpopmail/etc/
+#	${INSTALL_DATA} ${VCFGDIR}/inc_deps ${VCFGDIR}/lib_deps ${PREFIX}/vpopmail/etc/
+.if defined(DEFAULT_DOMAIN)
+	${ECHO_CMD} ${DEFAULT_DOMAIN} > ${PREFIX}/vpopmail/etc/defaultdomain
+.endif
+.if defined(WITH_MYSQL)
+	${ECHO_CMD} "${WITH_MYSQL_READ_SERVER}|0|${WITH_MYSQL_READ_USER}|${WITH_MYSQL_READ_PASSWD}|${WITH_MYSQL_DB}" \
+		> ${PREFIX}/vpopmail/etc/vpopmail.mysql
+	${ECHO_CMD} "${WITH_MYSQL_UPDATE_SERVER}|0|${WITH_MYSQL_UPDATE_USER}|${WITH_MYSQL_UPDATE_PASSWD}|${WITH_MYSQL_DB}" \
+		>> ${PREFIX}/vpopmail/etc/vpopmail.mysql
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
