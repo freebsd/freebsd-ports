@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ttt
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.2
 CATEGORIES=	net tk84 ipv6
 MASTER_SITES=	ftp://ftp.csl.sony.co.jp/pub/kjc/
 
