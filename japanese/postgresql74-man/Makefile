@@ -5,10 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=	postgresql
-PORTVERSION=	7.3.4
+PORTNAME=	postgresql7
+PORTVERSION=	7.4.2
 CATEGORIES=	japanese databases
-MASTER_SITES=	http://www.postgresql.jp/document/pg734doc/
+MASTER_SITES=	http://www.postgresql.jp/document/pg742doc/
 PKGNAMESUFFIX=	-man
 DISTNAME=	man
 DIST_SUBDIR=	postgresql/${PORTVERSION}
@@ -46,8 +46,16 @@ MAN1=		clusterdb.1 \
 		vacuumdb.1
 
 MANL=		abort.l \
+		alter_aggregate.l \
+		alter_conversion.l \
 		alter_database.l \
+		alter_domain.l \
+		alter_function.l \
 		alter_group.l \
+		alter_language.l \
+		alter_operator_class.l \
+		alter_schema.l \
+		alter_sequence.l \
 		alter_table.l \
 		alter_trigger.l \
 		alter_user.l \
@@ -113,6 +121,25 @@ MANL=		abort.l \
 		lock.l \
 		move.l \
 		notify.l \
+		pg_conndefaults.l \
+		pg_connect.l \
+		pg_disconnect.l \
+		pg_exec.l \
+		pg_execute.l \
+		pg_listen.l \
+		pg_lo_close.l \
+		pg_lo_creat.l \
+		pg_lo_export.l \
+		pg_lo_import.l \
+		pg_lo_lseek.l \
+		pg_lo_open.l \
+		pg_lo_read.l \
+		pg_lo_tell.l \
+		pg_lo_unlink.l \
+		pg_lo_write.l \
+		pg_on_connection_loss.l \
+		pg_result.l \
+		pg_select.l \
 		prepare.l \
 		reindex.l \
 		reset.l \
@@ -125,6 +152,34 @@ MANL=		abort.l \
 		set_session_authorization.l \
 		set_transaction.l \
 		show.l \
+		spi_connect.l \
+		spi_copytuple.l \
+		spi_copytupledesc.l \
+		spi_copytupleintoslot.l \
+		spi_cursor_close.l \
+		spi_cursor_fetch.l \
+		spi_cursor_find.l \
+		spi_cursor_move.l \
+		spi_cursor_open.l \
+		spi_exec.l \
+		spi_execp.l \
+		spi_finish.l \
+		spi_fname.l \
+		spi_fnumber.l \
+		spi_freeplan.l \
+		spi_freetuple.l \
+		spi_freetuptable.l \
+		spi_getbinval.l \
+		spi_getrelname.l \
+		spi_gettype.l \
+		spi_gettypeid.l \
+		spi_getvalue.l \
+		spi_modifytuple.l \
+		spi_palloc.l \
+		spi_pfree.l \
+		spi_prepare.l \
+		spi_repalloc.l \
+		spi_saveplan.l \
 		start_transaction.l \
 		truncate.l \
 		unlisten.l \

@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	postgresql
+PORTNAME=	postgresql73
 PORTVERSION=	7.3.4
 CATEGORIES=	japanese databases
 MASTER_SITES=	http://www.postgresql.jp/document/pg734doc/

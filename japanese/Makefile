@@ -299,8 +299,9 @@
     SUBDIR += platex209-jis
     SUBDIR += platex209-sjis
     SUBDIR += postgresql
-    SUBDIR += postgresql-man
     SUBDIR += postgresql-tcltk
+    SUBDIR += postgresql7-man
+    SUBDIR += postgresql73-man
     SUBDIR += ppxp
     SUBDIR += prn
     SUBDIR += ptex
