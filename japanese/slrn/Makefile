@@ -9,7 +9,7 @@ PORTNAME=	slrn
 PORTVERSION=	0.9.6.2
 CATEGORIES=	japanese news
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/slrn/ \
-		http://kondara.sdri.co.jp/~kikutani/slang/
+		http://www.kondara.org/~g/slang/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-doc-j0.9.5.6-0.tar.gz
 
