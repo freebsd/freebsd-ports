@@ -208,6 +208,7 @@
     SUBDIR += prcs
     SUBDIR += pth
     SUBDIR += pth-devel
+    SUBDIR += py-coro
     SUBDIR += py-htmlkit
     SUBDIR += py-kjbuckets
     SUBDIR += py-kqueue

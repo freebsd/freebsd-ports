@@ -1,0 +1,33 @@
+--- Makefile.orig	Mon Apr 24 12:51:16 2000
++++ Makefile	Fri Jul  7 14:33:04 2000
+@@ -1,13 +1,14 @@
++PREFIX?=	/usr/local
+ MODULES=	coroutinemodule.so sendfilemodule.so
+ OBJS=		coroutinemodule.o sendfilemodule.o
+-INCLUDES=	-I/usr/local/include/python1.5 -I/usr/local/include
++INCLUDES=	-I${LOCALBASE}/include/python1.5 -I${LOCALBASE}/include
+ # the location of the coro archive:
+-COROLIB=	/usr/local/lib/libcoro.a
+-OPTS=	-g -Wall -O6
+-#OPTS=	-g -Wall
++COROLIB=	-L${LOCALBASE}/lib -lcoro
++CFLAGS?=	-g -Wall -O6
++#CFLAGS?=	-g -Wall
+ 
+-CC=	gcc
+-LD=	ld
++CC?=	gcc
++LD?=	ld
+ RM=	rm -f
+ 
+ all: ${OBJS} ${MODULES}
+@@ -23,7 +24,7 @@
+ 	${LD} sendfilemodule.o -shared -o sendfilemodule.so
+ 
+ coroutinemodule.o: coroutinemodule.c
+-	${CC} ${INCLUDES} ${OPTS} -c coroutinemodule.c
++	${CC} ${CFLAGS} ${INCLUDES} -c coroutinemodule.c
+ 
+ sendfilemodule.o: sendfilemodule.c
+-	${CC} ${INCLUDES} ${OPTS} -c sendfilemodule.c
++	${CC} ${CFLAGS} ${INCLUDES} -c sendfilemodule.c

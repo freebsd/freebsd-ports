@@ -1,0 +1,17 @@
+From the README:
+
+	Coroutines can be used to implement 'cooperative multitasking' (as
+	opposed to 'preemptive multitasking').  Coroutines are very
+	lightweight (on Win32, they are called 'fibers'), and when combined
+	with an I/O-based scheduling system, they can be used to build highly
+	scalable network servers.
+
+	Coroutines give you the best of both worlds: the efficiency of
+	asynchronous state-machine programming, with the simplicity of
+	threaded programming; straight-line, readable code.  And they don't
+	have the overhead of preemptive threads - nearly everything happens in
+	user-space.  Also, complexity is lower because you don't have to worry
+	about locking access to shared state.
+
+  -Kelly
+   kbyanc@posi.net
