@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ORBit2
-PORTVERSION=	2.3.105
+PORTVERSION=	2.3.106
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
