@@ -1,5 +1,5 @@
-*** kfm/kfmsu2.in.orig	Sat Feb 28 15:26:31 1998
---- kfm/kfmsu2.in	Sat Feb 28 15:27:14 1998
+*** kfm/kfmsu2.in~	Sun Jul  5 15:53:02 1998
+--- kfm/kfmsu2.in	Sun Jul  5 15:53:58 1998
 ***************
 *** 2,10 ****
   echo "--------------"
@@ -8,7 +8,7 @@
 ! xhost +local:root
   echo ""
   echo "Logging in as super user"
-! su - -c "export DISPLAY=$DISPLAY; @kde_bindir@/kfm -sw >/dev/null"
+! su - root -c "export DISPLAY=$DISPLAY; @kde_bindir@/kfm -sw >/dev/null"
 ! xhost -local:root
   
 --- 2,10 ----
