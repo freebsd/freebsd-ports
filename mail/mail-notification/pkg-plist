@@ -1,0 +1,49 @@
+bin/mail-notification
+etc/gconf/gconf.xml.defaults/apps/mail-notification/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/mail-notification/commands/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/mail-notification/commands/new-mail/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/mail-notification/commands/clicked/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/mail-notification/local/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/mail-notification/local/delay/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/mail-notification/remote/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/mail-notification/remote/delay/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/mail-notification/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/mail-notification/commands/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/mail-notification/commands/new-mail/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/mail-notification/commands/clicked/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/mail-notification/local/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/mail-notification/local/delay/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/mail-notification/remote/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/mail-notification/remote/delay/%gconf.xml
+etc/gconf/schemas/mail-notification.schemas
+share/gnome/applications/mail-notification.desktop
+share/gnome/mail-notification/ui/about-icon.png
+share/gnome/mail-notification/ui/add-icon.png
+share/gnome/mail-notification/ui/add-pop3.glade
+share/gnome/mail-notification/ui/dialog.glade
+share/gnome/mail-notification/ui/logo.png
+share/gnome/mail-notification/ui/mail.png
+share/gnome/mail-notification/ui/menu.glade
+share/gnome/mail-notification/ui/no-mail.png
+share/gnome/mail-notification/ui/preferences-icon.png
+share/gnome/mail-notification/ui/preferences.glade
+share/gnome/pixmaps/mail-notification.png
+share/locale/fr/LC_MESSAGES/mail-notification.mo
+@dirrm etc/gconf/gconf.xml.defaults/apps/mail-notification/commands/new-mail
+@dirrm etc/gconf/gconf.xml.defaults/apps/mail-notification/commands/clicked
+@dirrm etc/gconf/gconf.xml.defaults/apps/mail-notification/commands
+@dirrm etc/gconf/gconf.xml.defaults/apps/mail-notification/local/delay
+@dirrm etc/gconf/gconf.xml.defaults/apps/mail-notification/local
+@dirrm etc/gconf/gconf.xml.defaults/apps/mail-notification/remote/delay
+@dirrm etc/gconf/gconf.xml.defaults/apps/mail-notification/remote
+@dirrm etc/gconf/gconf.xml.defaults/apps/mail-notification
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/mail-notification/commands/new-mail
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/mail-notification/commands/clicked
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/mail-notification/commands
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/mail-notification/local/delay
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/mail-notification/local
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/mail-notification/remote/delay
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/mail-notification/remote
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/mail-notification
+@dirrm share/gnome/mail-notification/ui
+@dirrm share/gnome/mail-notification
