@@ -6,30 +6,28 @@
 #
 
 PORTNAME=		dnrd
-PORTVERSION=		2.10
-PORTREVISION=		2
+PORTVERSION=		2.14
 CATEGORIES=		dns
-MASTER_SITES=		http://users.zoominternet.net/~garsh/dnrd/archive/ \
-			http://www.netsw.org/net/ip/infoservice/dns/dnrd/
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	dnrd
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A proxy DNS daemon
 
-WRKSRC=			${WRKDIR}/${DISTNAME}/src
-
 USE_GMAKE=		yes
 USE_REINPLACE=		yes
+GNU_CONFIGURE=		yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS}
 
 MAN8=			dnrd.8
-PLIST_FILES=		sbin/dnrd
 
 post-patch:
-.for F in main.c master.c
-	${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/$F
-.endfor
-	${REINPLACE_CMD} \
-		-e "s,cc,${CC},g" \
-		-e "s,-lc_r,${PTHREAD_LIBS},g" \
-		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|/etc/dnrd|${PREFIX}/etc/dnrd|g' ${WRKSRC}/doc/dnrd.8 \
+		${WRKSRC}/doc/master.sample ${WRKSRC}/doc/README-master ${WRKSRC}/src/common.h \
+		${WRKSRC}/src/master.c ${WRKSRC}/src/main.c
+
+post-install:
+	${INSTALL_SCRIPT} ${FILESDIR}/dnrd.sh ${PREFIX}/etc/rc.d/dnrd.sh
 
 .include <bsd.port.mk>

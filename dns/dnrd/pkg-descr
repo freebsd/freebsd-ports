@@ -1,21 +1,10 @@
-DNRD is a proxy name server. To clients on your home network,
-it looks just like a name server. In reality, it forwards every
-DNS query to the "real" DNS server, and forwards responses back
-to the client.
+DNRD is a proxy DNS daemon. It supports several forward servers for
+redundancy and/or load-balancing. DNS queries for specific domains can
+be forwarded to a specific group of DNS servers (with redundancy and
+load balancing) for that domain. It is useful for VPNs and also good
+support for offline and dialup sites.
 
-So, why would you want to use it? DNRD was designed for home
-networks where you might want to dial into more than one ISP
-(ie, your home ISP and a dialup connection to your office). The
-problem with multiple dialups is that you need to change
-/etc/resolv.conf for each one. With DNRD, this is no longer
-necessary.
-
-Your dialup machine will run DNRD (with appropriate options for
-forwarding messages to the desired DNS servers). All other
-machines on the home network, including the dialup machine
-itself, will use the dialup machine as its DNS server.
-
-WWW: http://users.zoominternet.net/~garsh/dnrd/
+WWW: http://dnrd.sourceforge.net
 
 - George Reid
 greid@ukug.uk.freebsd.org
