@@ -6,6 +6,7 @@
 
 PORTNAME=	libcddb
 PORTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,8 +15,8 @@ MAINTAINER=	ahze@ahze.net
 COMMENT=	A library to access data on a CDDB server
 
 USE_LIBTOOL_VER=	13
-USE_GNOME=	gnomehack pkgconfig
-INSTALL_SHLIBS=	yes
+USE_GNOME=	gnometarget lthack gnomehack pkgconfig
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
