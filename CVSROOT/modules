@@ -1909,6 +1909,7 @@ growfs		src/sbin/growfs
 grpn		ports/math/grpn
 gru		ports/games/gru
 grub		ports/sysutils/grub
+gruftistats	ports/irc/gruftistats
 grun		ports/misc/grun
 gschem		ports/cad/gschem
 gsculpt		ports/graphics/gsculpt
