@@ -1,0 +1,14 @@
+NIC is the Horde's suite of simple network utilities.
+The list of tools includes:
+
+ . Finger
+ . ICQ lookup
+ . DNS lookup
+ . Email address verification
+ . Ping
+ . SMTP open relay checking
+ . Service status
+ . Traceroute
+ . Whois
+
+WWW: http://horde.org/nic/
