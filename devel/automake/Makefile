@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	automake
 MAINTAINER=	ade@FreeBSD.org
 COMMENT=	GNU Standards-compliant Makefile generator
 
+LATEST_LINK=	automake
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PERL=${PERL5}
 USE_PERL5=	yes

@@ -5,9 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	automake17
-PORTVERSION=	1.7.2
-PORTEPOCH=	1
+PORTNAME=	automake
+PORTVERSION=	1.7.5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	automake
@@ -16,14 +15,19 @@ DISTNAME=	automake-${PORTVERSION}
 MAINTAINER=	ade@FreeBSD.org
 COMMENT=	GNU automake generates input files for GNU autoconf
 
-BROKEN=		Needs at least autoconf 254 to build.
+BUILD_DEPENDS=	autoconf257:${PORTSDIR}/devel/autoconf257
+RUN_DEPENDS=	autoconf257:${PORTSDIR}/devel/autoconf257
 
+BUILD_VERSION=	-1.7
+PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
+LATEST_LINK=	automake${BUILD_VERSION}
+USE_BZIP2=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	PERL=${PERL5}
+CONFIGURE_ENV=	AUTOCONF=autoconf257 AUTOHEADER=autoheader257
+CONFIGURE_ARGS=	--program-suffix=${BUILD_VERSION}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_REINPLACE=	yes
-
-STRIP=		# none
 
 .if defined(USE_AUTOMAKE) || defined(USE_AUTOMAKE_VER)
 pre-everything::
@@ -35,20 +39,12 @@ pre-everything::
 	@${FALSE}
 .endif # defined(USE_AUTOMAKE) || defined(USE_AUTOMAKE_VER)
 
-pre-configure:
-	@${REINPLACE_CMD} -i -e "s,%%X11BASE%%,${X11BASE}," \
-		${WRKSRC}/aclocal.in
-
-pre-install:
-	${RM} -fr ${PREFIX}/libexec/automake17
-	${MKDIR} ${PREFIX}/libexec/automake17
-
-post-install:
-.for i in aclocal automake
-	${LN} -sf ${PREFIX}/bin/${i}17 \
-		${PREFIX}/libexec/automake17/${i}
-.endfor
-	@install-info ${PREFIX}/info/automake17.info \
-		${PREFIX}/info/dir
+post-patch:
+	@(cd ${WRKSRC} && \
+		${RM} -f *.info && \
+		${MV} automake.texi automake${BUILD_VERSION}.texi && \
+		${REINPLACE_CMD} -E 's,(automake)\.(info),\1${BUILD_VERSION}\.\2,g' automake${BUILD_VERSION}.texi && \
+		${REINPLACE_CMD} -E 's,(automake)\.(info|texi),\1${BUILD_VERSION}\.\2,g ; \
+					s,^.+ install-exec-hook$$,,' Makefile.in)
 
 .include <bsd.port.mk>

@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	automake14
+PORTNAME=	automake
 PORTVERSION=	1.4.5
 PORTREVISION=	9
 CATEGORIES=	devel
@@ -16,9 +16,12 @@ DISTNAME=	automake-1.4-p5
 MAINTAINER=	ade@FreeBSD.org
 COMMENT=	GNU Standards-compliant Makefile generator (legacy version 1.4)
 
+BUILD_VERSION=	14
+PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
+LATEST_LINK=	automake${BUILD_VERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PERL=${PERL5}
-CONFIGURE_ARGS=	--program-suffix=14
+CONFIGURE_ARGS=	--program-suffix=${BUILD_VERSION}
 USE_PERL5=	yes
 USE_REINPLACE=	yes
 
@@ -35,7 +38,7 @@ pre-everything::
 .endif # defined(USE_AUTOMAKE) || defined(USE_AUTOMAKE_VER)
 
 post-patch:
-	@${MV} ${WRKSRC}/automake.texi ${WRKSRC}/automake14.texi
+	@${MV} ${WRKSRC}/automake.texi ${WRKSRC}/automake${BUILD_VERSION}.texi
 	@${RM} ${WRKSRC}/*.info* ${WRKSRC}/*.dvi >/dev/null 2>&1 || true
 
 pre-configure:
@@ -43,17 +46,17 @@ pre-configure:
 		${WRKSRC}/aclocal.in
 
 pre-install:
-	${RM} -fr ${PREFIX}/share/automake14
-	${MKDIR} ${PREFIX}/share/automake14
-	${MKDIR} ${PREFIX}/share/aclocal14
-	${MKDIR} ${PREFIX}/libexec/automake14
+	${RM} -fr ${PREFIX}/share/automake${BUILD_VERSION}
+	${MKDIR} ${PREFIX}/share/automake${BUILD_VERSION}
+	${MKDIR} ${PREFIX}/share/aclocal${BUILD_VERSION}
+	${MKDIR} ${PREFIX}/libexec/automake${BUILD_VERSION}
 
 post-install:
 .for i in aclocal automake
-	${LN} -sf ${PREFIX}/bin/${i}14 \
-		${PREFIX}/libexec/automake14/${i}
+	${LN} -sf ${PREFIX}/bin/${i}${BUILD_VERSION} \
+		${PREFIX}/libexec/automake${BUILD_VERSION}/${i}
 .endfor
-	@install-info ${PREFIX}/info/automake14.info \
+	@install-info ${PREFIX}/info/automake${BUILD_VERSION}.info \
 		${PREFIX}/info/dir
 
 .include <bsd.port.mk>
