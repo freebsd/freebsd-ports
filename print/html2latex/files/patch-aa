@@ -52,12 +52,16 @@ Only in .: diff
 diff -u ../html2latex-0.9c.old/html2latex.c ./html2latex.c
 --- ../html2latex-0.9c.old/html2latex.c	Wed Jun 16 05:55:10 1993
 +++ ./html2latex.c	Fri Mar 29 16:41:17 1996
-@@ -9,7 +9,9 @@
+@@ -9,7 +9,13 @@
  #include "HTMLparse.h"
  #include <stdio.h>
  #include <stdlib.h>
 +#if NEED_GETOPT_H
  #include <getopt.h>
++#else
++#if defined(__FreeBSD__) && __FreeBSD__ >= 3
++#include <unistd.h>
++#endif
 +#endif
  #include <ctype.h>
  #include <string.h>
