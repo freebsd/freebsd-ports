@@ -1,6 +1,4 @@
 bin/comp_err
-bin/isamchk
-bin/isamlog
 bin/my_print_defaults
 bin/myisam_ftdump
 bin/myisamchk
@@ -22,23 +20,24 @@ bin/mysqld_safe
 %%NDB%%bin/ndb_show_tables
 %%NDB%%bin/ndb_test_platform
 %%NDB%%bin/ndb_waiter
-bin/pack_isam
 bin/perror
 bin/replace
 bin/resolve_stack_dump
 bin/resolveip
-etc/rc.d/mysql-server.sh
+include/mysql/mysqld_ername.h
+include/mysql/mysqld_error.h
 %%NDB%%include/mysql/ndb/mgmapi/mgmapi.h
 %%NDB%%include/mysql/ndb/mgmapi/mgmapi_config_parameters.h
 %%NDB%%include/mysql/ndb/mgmapi/mgmapi_config_parameters_debug.h
 %%NDB%%include/mysql/ndb/mgmapi/mgmapi_debug.h
+%%NDB%%include/mysql/ndb/mgmapi/ndb_logevent.h
+%%NDB%%include/mysql/ndb/ndb_constants.h
+%%NDB%%include/mysql/ndb/ndb_init.h
 %%NDB%%include/mysql/ndb/ndb_types.h
 %%NDB%%include/mysql/ndb/ndb_version.h
 %%NDB%%include/mysql/ndb/ndbapi/Ndb.hpp
 %%NDB%%include/mysql/ndb/ndbapi/NdbApi.hpp
 %%NDB%%include/mysql/ndb/ndbapi/NdbBlob.hpp
-%%NDB%%include/mysql/ndb/ndbapi/NdbConnection.hpp
-%%NDB%%include/mysql/ndb/ndbapi/NdbCursorOperation.hpp
 %%NDB%%include/mysql/ndb/ndbapi/NdbDictionary.hpp
 %%NDB%%include/mysql/ndb/ndbapi/NdbError.hpp
 %%NDB%%include/mysql/ndb/ndbapi/NdbEventOperation.hpp
@@ -48,15 +47,16 @@ etc/rc.d/mysql-server.sh
 %%NDB%%include/mysql/ndb/ndbapi/NdbPool.hpp
 %%NDB%%include/mysql/ndb/ndbapi/NdbRecAttr.hpp
 %%NDB%%include/mysql/ndb/ndbapi/NdbReceiver.hpp
-%%NDB%%include/mysql/ndb/ndbapi/NdbResultSet.hpp
 %%NDB%%include/mysql/ndb/ndbapi/NdbScanFilter.hpp
 %%NDB%%include/mysql/ndb/ndbapi/NdbScanOperation.hpp
+%%NDB%%include/mysql/ndb/ndbapi/NdbTransaction.hpp
 %%NDB%%include/mysql/ndb/ndbapi/ndbapi_limits.h
 %%NDB%%include/mysql/ndb/ndbapi/ndb_cluster_connection.hpp
+%%NDB%%include/mysql/ndb/ndbapi/ndb_opt_defaults.h
 %%NDB%%include/mysql/ndb/ndbapi/ndberror.h
+include/mysql/sql_state.h
 lib/mysql/libdbug.a
 lib/mysql/libheap.a
-lib/mysql/libmerge.a
 lib/mysql/libmyisam.a
 lib/mysql/libmyisammrg.a
 lib/mysql/libmystrings.a
@@ -64,7 +64,6 @@ lib/mysql/libmysys.a
 %%NDB%%lib/mysql/libndbclient.a
 %%NDB%%lib/mysql/libndbclient.so
 %%NDB%%lib/mysql/libndbclient.so.0
-lib/mysql/libnisam.a
 lib/mysql/libvio.a
 libexec/mysqld
 %%NDB%%libexec/ndb_cpcd
@@ -103,30 +102,19 @@ libexec/mysqld
 %%DATADIR%%/charsets/macroman.xml
 %%DATADIR%%/charsets/swe7.xml
 %%DATADIR%%/czech/errmsg.sys
-%%DATADIR%%/czech/errmsg.txt
 %%DATADIR%%/danish/errmsg.sys
-%%DATADIR%%/danish/errmsg.txt
 %%DATADIR%%/dutch/errmsg.sys
-%%DATADIR%%/dutch/errmsg.txt
 %%DATADIR%%/english/errmsg.sys
-%%DATADIR%%/english/errmsg.txt
+%%DATADIR%%/errmsg.txt
 %%DATADIR%%/estonian/errmsg.sys
-%%DATADIR%%/estonian/errmsg.txt
 %%DATADIR%%/fill_help_tables.sql
 %%DATADIR%%/french/errmsg.sys
-%%DATADIR%%/french/errmsg.txt
 %%DATADIR%%/german/errmsg.sys
-%%DATADIR%%/german/errmsg.txt
 %%DATADIR%%/greek/errmsg.sys
-%%DATADIR%%/greek/errmsg.txt
 %%DATADIR%%/hungarian/errmsg.sys
-%%DATADIR%%/hungarian/errmsg.txt
 %%DATADIR%%/italian/errmsg.sys
-%%DATADIR%%/italian/errmsg.txt
 %%DATADIR%%/japanese/errmsg.sys
-%%DATADIR%%/japanese/errmsg.txt
 %%DATADIR%%/korean/errmsg.sys
-%%DATADIR%%/korean/errmsg.txt
 %%DATADIR%%/mi_test_all
 %%DATADIR%%/mi_test_all.res
 %%DATADIR%%/my-huge.cnf
@@ -137,32 +125,22 @@ libexec/mysqld
 %%DATADIR%%/mysql-log-rotate
 %%DATADIR%%/mysql-%%VER%%.spec
 %%DATADIR%%/mysql.server
+%%DATADIR%%/ndb-config-2-node.ini
 %%DATADIR%%/norwegian-ny/errmsg.sys
-%%DATADIR%%/norwegian-ny/errmsg.txt
 %%DATADIR%%/norwegian/errmsg.sys
-%%DATADIR%%/norwegian/errmsg.txt
 %%DATADIR%%/polish/errmsg.sys
-%%DATADIR%%/polish/errmsg.txt
 %%DATADIR%%/portuguese/errmsg.sys
-%%DATADIR%%/portuguese/errmsg.txt
 %%DATADIR%%/romanian/errmsg.sys
-%%DATADIR%%/romanian/errmsg.txt
 %%DATADIR%%/russian/errmsg.sys
-%%DATADIR%%/russian/errmsg.txt
 %%DATADIR%%/serbian/errmsg.sys
-%%DATADIR%%/serbian/errmsg.txt
 %%DATADIR%%/slovak/errmsg.sys
-%%DATADIR%%/slovak/errmsg.txt
 %%DATADIR%%/spanish/errmsg.sys
-%%DATADIR%%/spanish/errmsg.txt
 %%DATADIR%%/swedish/errmsg.sys
-%%DATADIR%%/swedish/errmsg.txt
 %%DATADIR%%/ukrainian/errmsg.sys
-%%DATADIR%%/ukrainian/errmsg.txt
 %%NDB%%@dirrm include/mysql/ndb/mgmapi
 %%NDB%%@dirrm include/mysql/ndb/ndbapi
 %%NDB%%@dirrm include/mysql/ndb
-%%NDB%%@unexec rmdir %D/include/mysql 2> /dev/null || true
+@unexec rmdir %D/include/mysql 2> /dev/null || true
 @unexec rmdir %D/lib/mysql 2> /dev/null || true
 @dirrm %%DATADIR%%/charsets
 @dirrm %%DATADIR%%/czech
@@ -189,5 +167,4 @@ libexec/mysqld
 @dirrm %%DATADIR%%/swedish
 @dirrm %%DATADIR%%/ukrainian
 @unexec rmdir %D/%%DATADIR%% 2> /dev/null || true
-@exec [ -d %%DB_DIR%% ] || %D/bin/mysql_install_db --ldata=%%DB_DIR%%
 @unexec /usr/bin/killall mysqld > /dev/null 2>&1 || true
