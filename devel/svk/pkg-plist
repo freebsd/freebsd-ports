@@ -49,6 +49,7 @@ bin/svk
 %%SITE_PERL%%/SVK/Editor/Status.pm
 %%SITE_PERL%%/SVK/Editor/Translate.pm
 %%SITE_PERL%%/SVK/Editor/XD.pm
+%%SITE_PERL%%/SVK/Help/Environment.pod
 %%SITE_PERL%%/SVK/Help/Index.pod
 %%SITE_PERL%%/SVK/Help/Intro.pod
 %%SITE_PERL%%/SVK/Help/zh_cn/Index.pod
