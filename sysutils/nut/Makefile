@@ -8,7 +8,7 @@
 PORTNAME=	nut
 PORTVERSION=	1.4.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.exploits.org/nut/release/${PORTVERSION:R}/
+MASTER_SITES=	http://penguin.harrison.k12.co.us/mirrors/nut/release/${PORTVERSION:R}/
 
 MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	Network UPS Tools
