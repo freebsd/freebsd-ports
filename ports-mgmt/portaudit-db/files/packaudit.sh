@@ -102,7 +102,17 @@ cd "$TMPDIR" || exit 1
   echo "$TESTPORT|$TESTURL|$TESTREASON"
   echo "# Please refer to the original document for copyright information:"
   echo "# $VULURL"
-  $XSLTPROC $XSLTPROC_EXTRA_ARGS --stringparam baseurl "$BASEURL" "$STYLESHEET" "$VUXMLDIR/vuln.xml"
+  $XSLTPROC $XSLTPROC_EXTRA_ARGS --stringparam baseurl "$BASEURL" "$STYLESHEET" "$VUXMLDIR/vuln.xml" \
+  | $AWK -F\| -v XLIST_FILE="$XLIST_FILE" '
+    BEGIN {
+      while((getline < XLIST_FILE) > 0)
+        if(!/^(#|$)/)
+          ignore[$1]=1
+    }
+    /^(#|$)/ || !($4 in ignore) {
+      print
+    }
+  '
   echo "# This part is in the public domain"
   $XSLTPROC $XSLTPROC_EXTRA_ARGS --stringparam baseurl "$BASEURL" "$STYLESHEET" "$PORTAUDITDBDIR/database/portaudit.xml"
   $AWK -F\| '
@@ -118,19 +128,14 @@ cd "$TMPDIR" || exit 1
     }
   ' "$PORTAUDITDBDIR/database/portaudit.txt"
 } | $AWK -F\| -v XLIST_FILE="$XLIST_FILE" '
-  BEGIN {
-    while((getline < XLIST_FILE) > 0)
-      if(!/^(#|$)/)
-        ignore[$1]=1
-  }
   /^(#|$)/ {
     print
     next
   }
   {
-    if (!($4 in ignore))
-      print $1 "|" $2 "|" $3
-  }' > auditfile
+    print $1 "|" $2 "|" $3
+  }
+' > auditfile
 echo "#CHECKSUM: MD5 `$MD5 < auditfile`" >> auditfile
 $TAR -jcf "$DATABASEDIR/auditfile.tbz" auditfile
 cd
