@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	gdbm
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.3
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	gdbm
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	cyrille.lefevre@laposte.net
 
-USE_LIBTOOL=	yes
-INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
-# PREFIX isn't honored. force it w/ prefix.
-MAKE_ARGS=	prefix=${PREFIX}
+USE_LIBTOOL=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+INSTALLS_SHLIB=	yes
 
 MAN3=		gdbm.3
 

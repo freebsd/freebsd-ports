@@ -4,4 +4,4 @@ info/gdbm.info
 @exec install-info %D/info/gdbm.info %D/info/dir
 lib/libgdbm.a
 lib/libgdbm.so
-lib/libgdbm.so.2
+lib/libgdbm.so.3
