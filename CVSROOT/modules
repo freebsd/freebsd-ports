@@ -1583,6 +1583,7 @@ efax		ports/comms/efax
 efax-gtk	ports/comms/efax-gtk
 efltk		ports/x11-toolkits/efltk
 egcs		ports/lang/egcs
+eggcreator	ports/irc/eggcreator
 eggdrop		ports/irc/eggdrop
 egoboo		ports/games/egoboo
 ehnt		ports/net-mgmt/ehnt
