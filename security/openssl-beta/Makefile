@@ -10,6 +10,7 @@ PORTNAME=	openssl
 PORTREVISION!=	date -v-1d +%Y%m%d
 .else
 PORTVERSION=	0.9.7b
+PORTREVISION=	1
 .endif
 CATEGORIES=	security devel
 .ifdef OPENSSL_SNAPSHOT
@@ -38,6 +39,8 @@ COMMENT=	SSL and crypto library
 NOPRECIOUSMAKEVARS=	Too many _MLINKS for fetch
 NO_LATEST_LINK=	yes
 USE_PERL5_BUILD=	yes
+OPENSSL_SHLIBVER?=	4
+CFLAGS+=		-Wl,-rpath,${LOCALBASE}/lib
 
 MAN1=	CA.pl.1 asn1parse.1 ca.1 ciphers.1 crl.1 crl2pkcs7.1 dgst.1 dhparam.1 \
 	dsa.1 dsaparam.1 enc.1 gendsa.1 genrsa.1 nseq.1 ocsp.1 openssl.1 \
@@ -842,24 +845,14 @@ PLIST_SUB+=	SHARED="@comment "
 .else
 PLIST_SUB+=	SHARED=""
 ALL_TARGET=	freebsd-shared all
-.if exists(/usr/lib/libcrypto.so.2) && !exists(/usr/lib/libcrypto.so.3)
-SHLIBVER=	3
-.else
-SHLIBVER=	4
-.endif
-MAKE_ENV+=	SHLIBVER=${SHLIBVER}
-PLIST_SUB+=	SHLIBVER=${SHLIBVER}
+MAKE_ENV+=	SHLIBVER=${OPENSSL_SHLIBVER}
+PLIST_SUB+=	SHLIBVER=${OPENSSL_SHLIBVER}
 INSTALLS_SHLIB=	yes
 .endif
 
 .if defined(OPENSSL_OVERWRITE_BASE)
 PKGNAMESUFFIX=	-beta-overwrite-base
 PREFIX=		/usr
-.if exists(/usr/lib/libcrypto.so.2) && !exists(/usr/lib/libcrypto.so.3)
-SHLIBVER=	2
-.else
-SHLIBVER=	3
-.endif
 OPENSSLDIR=	/etc/ssl
 MANPREFIX=	${PREFIX}/openssl
 PLIST_SUB+=	MANDIR=""
@@ -889,8 +882,8 @@ do-configure:
 post-install:
 .if !defined(NOSHARED)
 .for i in libcrypto libssl
-	@${INSTALL_DATA} ${WRKSRC}/$i.so.${SHLIBVER} ${PREFIX}/lib
-	@${LN} -sf $i.so.${SHLIBVER} ${PREFIX}/lib/$i.so
+	@${INSTALL_DATA} ${WRKSRC}/$i.so.${OPENSSL_SHLIBVER} ${PREFIX}/lib
+	@${LN} -sf $i.so.${OPENSSL_SHLIBVER} ${PREFIX}/lib/$i.so
 .endfor
 .endif
 .if !defined(NOPORTDOCS)
