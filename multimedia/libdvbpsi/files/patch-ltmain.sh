@@ -1,5 +1,5 @@
---- ltmain.sh.orig	Tue Jan  8 03:30:35 2002
-+++ ltmain.sh	Mon Sep 16 21:54:46 2002
+--- autotools/ltmain.sh.orig	Tue Jan  8 03:30:35 2002
++++ autotools/ltmain.sh	Mon Sep 16 21:54:46 2002
 @@ -4247,10 +4247,12 @@
  	fi
  
