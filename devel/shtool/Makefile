@@ -6,18 +6,21 @@
 #
 
 PORTNAME=	shtool
-PORTVERSION=	1.6.2
+PORTVERSION=	2.0.0
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU} \
-		ftp://ftp.ossp.org/pkg/tool/shtool/
-MASTER_SITE_SUBDIR=	shtool
+MASTER_SITES=	ftp://ftp.ossp.org/pkg/tool/shtool/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GNU Portable Shell Tool
 
-USE_PERL5=	yes
+USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes
 
-MAN1=		shtool.1 shtoolize.1
+MAN1=		shtool-arx.1 shtool-echo.1 shtool-fixperm.1 shtool-install.1 \
+		shtool-mdate.1 shtool-mkdir.1 shtool-mkln.1 shtool-mkshadow.1 \
+		shtool-move.1 shtool-path.1 shtool-platform.1 shtool-prop.1 \
+		shtool-rotate.1 shtool-scpp.1 shtool-slo.1 shtool-subst.1 \
+		shtool-table.1 shtool-tarball.1 shtool-version.1 \
+		shtool.1 shtoolize.1
 
 .include <bsd.port.mk>
