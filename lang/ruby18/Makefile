@@ -118,7 +118,7 @@ pre-install:
 	done
 
 post-install:
-.if ${STRIP} == -s
+.if defined(STRIP) && ${STRIP} == -s
 	strip ${RUBY}
 .endif
 	${INSTALL_SCRIPT} ${WRKSRC}/ext/dl/h2rb ${PREFIX}/bin/

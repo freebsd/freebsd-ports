@@ -103,7 +103,7 @@ pre-install:
 	done
 
 post-install:
-.if ${STRIP} == -s
+.if defined(STRIP) && ${STRIP} == -s
 	strip ${RUBY}
 .endif
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
