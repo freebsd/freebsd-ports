@@ -1,0 +1,29 @@
+--- Makefile.orig	Tue Nov 21 03:35:22 2000
++++ Makefile	Fri Jan 17 03:26:00 2003
+@@ -1,18 +1,15 @@
+-CC=gcc
+-DATADIR=/usr/lib/gfaim
+ 
+-gfaim: gfaim.c 
+-	$(CC) -DDATADIR="\"$(DATADIR)\"" `gtk-config --cflags`  gfaim.c -o gfaim `gtk-config --libs`
++all: gfaim.c 
++	$(CC) -DDATADIR="\"$(DATADIR)\"" `gtk12-config --cflags`  gfaim.c -o gfaim `gtk12-config --libs`
+ 
+ clean: 
+ 	rm -f *.o gfaim
+ 
+ install:
+-	install -g bin -m 755 gfaim /usr/bin
+-	install -g bin -m 755 imprec /usr/bin
+-	install -d $(DATADIR)
+-	install *.dat *.idx -m 644 $(DATADIR)
+-	install *.txt /usr/doc/gfaim
+-
+-
++	install -g bin -m 755 gfaim $(PREFIX)/bin
++	install -g bin -m 755 imprec $(PREFIX)/bin
++	install -d $(PREFIX)/lib/gfaim
++	install -m 644 *.dat *.idx $(PREFIX)/lib/gfaim
++	install -d $(PREFIX)/share/doc/gfaim
++	install *.txt $(PREFIX)/share/doc/gfaim
+ 
