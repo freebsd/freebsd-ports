@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	emacs-wget
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	ftp www
-MASTER_SITES=	http://isweb22.infoseek.co.jp/computer/pop-club/emacs/emacs-wget/
+MASTER_SITES=	http://pop-club.hp.infoseek.co.jp/emacs/emacs-wget/
 
 MAINTAINER=	yoichi@FreeBSD.org
 
@@ -21,7 +21,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.el ${PREFIX}/share/emacs/site-lisp/wget
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for i in README.ja USAGE.ja
+.for i in README README.ja USAGE USAGE.ja
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
