@@ -18,7 +18,7 @@
      level.c intro.c text.c status.c transition.c hiscore.c dialog.c
  
 -SDL_MIXER=-lSDL_mixer
-+SDL_MIXER=-lSDL_mixer -lsmpeg -lgcc_r
++SDL_MIXER=-lSDL_mixer -lsmpeg
  SDL_LIB=$(SDL_LDFLAGS) $(SDL_MIXER) 
 -SDL_CFLAGS := $(shell sdl-config --cflags)
 -SDL_LDFLAGS := $(shell sdl-config --libs)
