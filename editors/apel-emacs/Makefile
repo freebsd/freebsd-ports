@@ -15,8 +15,10 @@ MAINTAINER?=	shige@FreeBSD.org
 
 # distfile version
 APEL_VER=	9.20
+# setupel filename
 APEL_SETUPEL=	apel-setupel.el
-APELDOCDIR=	share/doc/apel
+# document install directory by install-doc target
+APELDOCDIR?=	share/doc/apel
 
 # This is a master port.
 PORTCLASS?=	master
@@ -35,15 +37,6 @@ REQUIRE_SETUPEL=  YES
 # target name for make build
 ALL_TARGET?=	elc
 
-# if RUN_DEPENDS emacs port name has the suffix `-common'
-.if !defined(HAVE_COMMON_PORT)
-HAVE_COMMON_PORT=	NO
-.endif
-# if RUN_DEPENDS emacs needs setup elisp
-.if !defined(REQUIRE_SETUPEL)
-REQUIRE_SETUPEL=	NO
-.endif
-
 .if defined(EMACS_PORT)
 PKGNAME=	apel-${EMACS_PORT}-${APEL_VER}
 EMACS_CMD=	${PREFIX}/bin/${EMACS_NAME}-${EMACS_VER}
@@ -60,11 +53,13 @@ BUILD_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR_WITH_VER}/site-lisp/custom.el:${PORTSDI
 RUN_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR_WITH_VER}/site-lisp/custom.el:${PORTSDIR}/editors/custom-${EMACS_PORT}
 .endif
 
-SCRIPTS_ENV=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER} \
+SCRIPTS_ENV+=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER} \
 		EMACS_LIBDIR_WITH_VER=${EMACS_LIBDIR_WITH_VER} \
+		EMACS_PACKAGESDIR=${EMACS_PACKAGESDIR} \
 		TARGETS="${APEL_SETUPEL}"
-PLIST_SUB=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER} \
+PLIST_SUB+=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER} \
 		EMACS_LIBDIR_WITH_VER=${EMACS_LIBDIR_WITH_VER} \
+		EMACS_PACKAGESDIR=${EMACS_PACKAGESDIR} \
 		APELDOCDIR=${APELDOCDIR} APEL_SETUPEL=${APEL_SETUPEL}
 MAKE_FLAGS+=	EMACS=${EMACS_CMD}
 .else
@@ -74,22 +69,40 @@ MAKE_FLAGS+=	EMACS=${EMACS_CMD}
 	@${FALSE}
 .endif
 
-.if (${REQUIRE_SETUPEL} == "YES")
 pre-configure:
+.if defined(REQUIRE_SETUPEL) && (${REQUIRE_SETUPEL} == "YES")
 	@${CP} ${FILESDIR}/${APEL_SETUPEL}.in ${WRKDIR}
 .endif
 
 post-install:
+.if defined(REQUIRE_SETUPEL) && (${REQUIRE_SETUPEL} == "YES")
+	@${MAKE} setupel-install
+.endif
+.if defined(EMACS_PACKAGESDIR) && defined(MANIFEST)
+	@${MAKE} manifest-install
+.endif
 .if !defined(NOPORTDOCS)
+	@${MAKE} doc-install
+.endif
+
+
+# install functions
+doc-install:
 	@${MKDIR} ${PREFIX}/${APELDOCDIR}
 	@(cd ${WRKSRC} ; \
 	for i in ChangeLog README.* ; do \
 		${INSTALL_DATA} $${i} ${PREFIX}/${APELDOCDIR}/ ; \
 	done)
-.endif
-.if (${REQUIRE_SETUPEL} == "YES")
+
+setupel-install:
 	@${INSTALL_DATA} ${WRKDIR}/${APEL_SETUPEL} \
 			${PREFIX}/${EMACS_LIBDIR_WITH_VER}/site-lisp
-.endif
+
+manifest-install:
+	@${RM} -f ${WRKDIR}/${MANIFEST}
+	@${CAT} ${PKGDIR}/PLIST | ${GREP} -e "^%%EMACS_PACKAGESDIR%%" | \
+		${SED} -e "s;^%%EMACS_PACKAGESDIR%%/;;" > ${WRKDIR}/${MANIFEST}
+	@${INSTALL_DATA} ${WRKDIR}/${MANIFEST} \
+		${PREFIX}/${EMACS_PACKAGESDIR}/pkginfo/
 
 .include <bsd.port.mk>
