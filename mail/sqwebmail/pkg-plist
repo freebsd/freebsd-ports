@@ -1,5 +1,8 @@
-libexec/sqwebmail/maildirmake
-libexec/sqwebmail/makedatprog
+libexec/sqwebmail/authlib/authcustom
+libexec/sqwebmail/authlib/authpam
+libexec/sqwebmail/authlib/authuserdb
+libexec/sqwebmail/sqwebmail/maildirmake
+libexec/sqwebmail/sqwebmail/makedatprog
 sbin/sqwebmail.makeuserdb
 sbin/sqwebmail.pw2userdb
 sbin/sqwebmail.userdb
@@ -8,6 +11,7 @@ sbin/sqwebmail.vchkpw2userdb
 share/sqwebmail/authmodulelist
 %%CACHE%%@unexec %D/share/sqwebmail/cleancache.pl
 share/sqwebmail/cleancache.pl
+@unexec /bin/rm -f %D/share/sqwebmail/html/en
 share/sqwebmail/html/en-us/CHARSET
 share/sqwebmail/html/en-us/ISPELLDICT
 share/sqwebmail/html/en-us/LANGUAGE
@@ -57,7 +61,6 @@ www/data.default/sqwebmail/right.gif
 www/data.default/sqwebmail/right2.gif
 www/data.default/sqwebmail/trash2.gif
 @dirrm www/data.default/sqwebmail
-@dirrm www/data.default
 @unexec /bin/rmdir %D/www/data.default 2> /dev/null || true
 @dirrm www/cgi-bin.default/sqwebmail
 @unexec /bin/rmdir %D/www/cgi-bin.default 2> /dev/null || true
@@ -67,8 +70,10 @@ www/data.default/sqwebmail/trash2.gif
 @dirrm share/sqwebmail/man/man1
 @dirrm share/sqwebmail/man
 @dirrm share/sqwebmail/html/en-us
-@unexec /bin/rm -f %D/share/sqwebmail/html/en
 @dirrm share/sqwebmail/html
 @dirrm share/sqwebmail
+@dirrm libexec/sqwebmail/sqwebmail
+@dirrm libexec/sqwebmail/authlib
+@dirrm libexec/sqwebmail
 %%CACHE%%@unexec rmdir /var/sqwebmail/cache 2> /dev/null || true
 %%CACHE%%@unexec rmdir /var/sqwebmail 2> /dev/null || true

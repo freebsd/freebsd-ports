@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqwebmail
-PORTVERSION=	1.0
+PORTVERSION=	1.0.3
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= courier
@@ -53,6 +53,7 @@ GNU_CONFIGURE=	YES
 CONFIGURE_ARGS= \
 	--enable-cgibindir=${CGIBINDIR}/${CGIBINSUBDIR} \
 	--enable-imagedir=${WEBDATADIR}/${WEBDATASUBDIR} \
+	--libexecdir=${PREFIX}/libexec/sqwebmail \
 	--enable-imageurl=/${IMAGEURL}/
 
 .if defined(WITHOUT_CACHEDIR)
