@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netatalk
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 PORTEPOCH=	1
 CATEGORIES=	net print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -58,7 +58,7 @@ MAN1=		achfile.1 aecho.1 afile.1 afppasswd.1 getzones.1 \
 		nbplkup.1 nbprgstr.1 nbpunrgstr.1 papstatus.1 \
 		single2bin.1 unbin.1 unhex.1 unsingle.1 acleandir.1 \
 		netatalk-config.1 timeout.1 apple_cp.1 apple_mv.1 \
-		apple_rm.1 uniconv.1 asip-status.pl.1
+		apple_rm.1 uniconv.1 asip-status.pl.1 cnid_index.1
 MAN3=		atalk_aton.3 nbp_name.3
 MAN4=		atalk.4
 MAN5=		AppleVolumes.default.5 afpd.conf.5 atalkd.conf.5 \
