@@ -1,10 +1,17 @@
 bin/fyre
 %%PORTDOCS%%%%DOCSDIR%%/README
-share/applications/fyre.desktop
+%%WITH_FDO%%share/applications/fyre.desktop
 share/fyre/animation-render.glade
 share/fyre/explorer.glade
 share/fyre/metadata-emblem.png
-share/fyre/wicker-shoelace.png
+share/fyre/about-box.fa
+share/fyre/fyre-48x48.png
+share/fyre/fyre-32x32.png
+share/fyre/fyre-16x16.png
+%%WITH_FDO%%share/pixmaps/fyre-48x48.png
+share/icons/hicolor/48x48/mimetypes/application-x-fyre-animation.png
+share/mime/packages/fyre.xml
+share/mime/application/x-fyre-animation.xml
 @dirrm share/fyre
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/share/applications 2> /dev/null || true
+%%WITH_FDO%%@unexec rmdir %D/share/applications 2> /dev/null || true
