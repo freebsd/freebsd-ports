@@ -1,5 +1,5 @@
---- Makefile.in.orig	Fri May 28 10:59:04 2004
-+++ Makefile.in	Thu Jun  3 14:21:13 2004
+--- Makefile.in.orig	Tue Jun  8 17:57:34 2004
++++ Makefile.in	Sat Jun 12 10:47:56 2004
 @@ -29,9 +29,9 @@
  # OF THE POSSIBILITY OF SUCH DAMAGE.
  #
@@ -8,16 +8,12 @@
 -LDFLAGS=	@LDFLAGS@
 -LIBS= 		@LIBS@
 +CFLAGS= 	@CFLAGS@ -D_BSD_SOURCE -pthread
-+LDFLAGS=	-pthread @LDFLAGS@
++LDFLAGS=	@LDFLAGS@ -pthread
 +LIBS= 		-lmilter
  prefix=		@prefix@
  exec_prefix=	@exec_prefix@
  SYSCONFDIR=	@sysconfdir@
-@@ -75,26 +75,11 @@
- 	${INSTALL} -d -m 755 ${BINDIR}
- 	${INSTALL} -d -m 755 ${MANDIR}/man8
- 	${INSTALL} -d -m 755 ${MANDIR}/man5
-+	${INSTALL} -d -m 755 ${SYSCONFDIR}/mail
+@@ -80,23 +80,7 @@
  	${INSTALL} -m 755 milter-greylist ${BINDIR}
  	${INSTALL} -m 644 milter-greylist.8 ${MANDIR}/man8
  	${INSTALL} -m 644 greylist.conf.5 ${MANDIR}/man5
