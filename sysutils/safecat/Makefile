@@ -8,7 +8,9 @@
 PORTNAME=	safecat
 PORTVERSION=	1.9
 CATEGORIES=	sysutils mail
-MASTER_SITES=	http://www.nb.net/~lbudney/linux/software/safecat/
+MASTER_SITES=	http://budney.homeunix.net:8080/users/budney/linux/software/safecat/ \
+		${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	utils/file
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	"Safely write data to a directory using D. J. Bernstein's Maildir ideology"
