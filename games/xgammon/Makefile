@@ -3,12 +3,12 @@
 # Date created:		02 January 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1997/01/03 08:15:44 tg Exp $
+# $Id: Makefile,v 1.2 1997/01/24 07:52:55 tg Exp $
 #
 
 DISTNAME=	xgammon-0.98
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.redhat.com/pub/redhat/devel/srpms/SRPMS/
+MASTER_SITES=	ftp://ftp.redhat.com/pub/redhat/current/SRPMS/
 EXTRACT_SUFX=	-7.src.rpm
 
 PATCH_DIST_STRIP=	-p1
