@@ -1,0 +1,14 @@
+AIM is the AOL Instant Messenger.
+
+The AOL Instant Messenger is used to see which of your friends (buddies),
+family or co-workers are logged on to the Internet (and registered with AIM)
+at the current time.
+
+You can then send messages and chat directly with these people.
+
+This port consists of AOL's Linux AIM client which runs on FreeBSD using the
+linux emulation system.
+
+WWW: http://www.aim.aol.com
+
+Roger Hardiman <roger@freebsd.org>
