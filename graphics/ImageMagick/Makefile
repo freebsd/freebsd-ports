@@ -57,7 +57,9 @@ MAN4=		miff.4
 MAN5=		quantize.5
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
-.if defined(PERL_THREADED) && ${PERL_THREADED} == "true"
+# PerlMagick not works with threads, if perl is not threaded, and vice versa
+.if defined(WITH_IMAGEMAGICK_THREADS) || \
+    defined(PERL_THREADED) && ${PERL_THREADED} == "true"
 CONFIGURE_ARGS+=	--with-threads
 .else
 CONFIGURE_ARGS+=	--without-threads
