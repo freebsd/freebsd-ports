@@ -7,13 +7,15 @@
 #
 
 PORTNAME=	tulip
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	graphics
-MASTER_SITES=	http://dept-info.labri.fr/~auber/projects/tulip/x345/
+MASTER_SITES=	http://dept-info.labri.fr/~auber/projects/tulip/x345/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A system dedicated to the visualization of huge graphs
 
+USE_BZIP2=	yes
 USE_QT_VER=	3
 QT_NONSTANDARD=	yes
 USE_REINPLACE=	yes
@@ -28,9 +30,9 @@ CONFIGURE_ARGS=	--with-qt-includes=${QT_PREFIX}/include \
 INSTALLS_SHLIB=	yes
 
 CPPFLAGS=	-I${LOCALBASE}/include -I${PREFIX}/include \
-		-I${QT_PREFIX}/include -DHAVE_DECL_GETOPT
+		-I${QT_PREFIX}/include -DHAVE_DECL_GETOPT ${PTHREAD_CFLAGS}
 LDFLAGS=	-Wl,-export-dynamic -L${LOCALBASE}/lib -L${X11BASE}/lib \
-		-ljpeg -L${QT_PREFIX}/lib -lcompat
+		-ljpeg -L${QT_PREFIX}/lib -lcompat ${PTHREAD_LIBS}
 
 post-extract:
 	@${FIND} ${WRKSRC} -name "moc_*" -delete
@@ -41,6 +43,8 @@ post-patch:
 		's|malloc\.h|stdlib.h|g'
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-ldl||g ; \
-		 s|-lpthread|${PTHREAD_LIBS}|g'
+		 s|-lpthread||g ; \
+		 s|-release @VERSION@|| ; \
+		 s|LDFLAGS = -module|LDFLAGS = @LDFLAGS@ -module|g'
 
 .include <bsd.port.mk>
