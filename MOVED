@@ -151,3 +151,4 @@ devel/gnustep-devel|devel/gnustep|2003-01-20|merged
 x11-toolkits/gnustep-gui-devel|x11-toolkits/gnustep-gui|2003-01-20|merged
 x11-toolkits/gnustep-xgps|x11-toolkits/gnustep-back|2003-01-20|full substitute
 devel/ruby-unit|devel/ruby-testunit|2003-01-23|succeeded
+mail/p5-Mail-SpamAssassin-devel|p5-Mail-SpamAssassin-snapshot|2003-01-25|directory renamed
