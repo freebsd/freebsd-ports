@@ -1,3 +1,4 @@
+bin/.xmcd_start
 bin/cda
 bin/cddbcmd
 bin/dp2xmcd
@@ -5,11 +6,12 @@ bin/wm2xmcd
 bin/xmcd
 lib/X11/app-defaults/XMcd
 lib/X11/xmcd/app-defaults/XMcd
-lib/X11/xmcd/bin-FreeBSD-%%ARCH%%/cda
-lib/X11/xmcd/bin-FreeBSD-%%ARCH%%/cddbcmd
-lib/X11/xmcd/bin-FreeBSD-%%ARCH%%/dp2xmcd
-lib/X11/xmcd/bin-FreeBSD-%%ARCH%%/wm2xmcd
-lib/X11/xmcd/bin-FreeBSD-%%ARCH%%/xmcd
+lib/X11/xmcd/app-defaults/XKeysymDB
+lib/X11/xmcd/bin-FreeBSD_%%RELEASE%%-%%ARCH%%/cda
+lib/X11/xmcd/bin-FreeBSD_%%RELEASE%%-%%ARCH%%/cddbcmd
+lib/X11/xmcd/bin-FreeBSD_%%RELEASE%%-%%ARCH%%/dp2xmcd
+lib/X11/xmcd/bin-FreeBSD_%%RELEASE%%-%%ARCH%%/wm2xmcd
+lib/X11/xmcd/bin-FreeBSD_%%RELEASE%%-%%ARCH%%/xmcd
 lib/X11/xmcd/config/.tbl/Acer
 lib/X11/xmcd/config/.tbl/Apple
 lib/X11/xmcd/config/.tbl/Aztech
@@ -22,6 +24,7 @@ lib/X11/xmcd/config/.tbl/Goldstar
 lib/X11/xmcd/config/.tbl/HP
 lib/X11/xmcd/config/.tbl/Hitachi
 lib/X11/xmcd/config/.tbl/IBM
+lib/X11/xmcd/config/.tbl/Kenwood
 lib/X11/xmcd/config/.tbl/Longshin
 lib/X11/xmcd/config/.tbl/MDI
 lib/X11/xmcd/config/.tbl/MediaVis
@@ -183,7 +186,7 @@ lib/X11/xmcd/scripts/ncsarmt
 lib/X11/xmcd/scripts/ncsawrap
 lib/X11/xmcd/scripts/nswrap
 @dirrm lib/X11/xmcd/app-defaults
-@dirrm lib/X11/xmcd/bin-FreeBSD-%%ARCH%%
+@dirrm lib/X11/xmcd/bin-FreeBSD_%%RELEASE%%-%%ARCH%%
 @unexec rm -rf %D/lib/X11/xmcd/cddb
 @dirrm lib/X11/xmcd/config/.tbl
 @dirrm lib/X11/xmcd/config
