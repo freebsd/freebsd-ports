@@ -1,8 +1,18 @@
---- Imakefile.orig	Sun Sep  6 00:11:26 1998
-+++ Imakefile	Wed Nov  1 08:58:25 2000
-@@ -5,4 +5,4 @@
+--- Imakefile.orig	Sat Sep  5 08:11:26 1998
++++ Imakefile	Sun Sep  8 13:24:11 2002
+@@ -5,4 +5,14 @@
  SRCS = wmcdplay.cc
  OBJS = wmcdplay.o
  
 -ComplexProgramTarget(wmcdplay)
-+ComplexProgramTargetNoMan(wmcdplay)
++PROGRAM = wmcdplay
++AllTarget(wmcdplay)
++
++ProgramTargetName(wmcdplay): $(OBJS) $(DEPLIBS)
++	RemoveTargetProgram(wmcdplay)
++	CplusplusLinkRule($@,$(LDOPTIONS),$(OBJS),$(LOCAL_LIBRARIES) $(LDLIBS))
++ 
++DependTarget()
++LintTarget()
++clean::
++	RemoveFile(ProgramTargetName(wmcdplay))
