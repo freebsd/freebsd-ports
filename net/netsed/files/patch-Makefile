@@ -1,0 +1,7 @@
+--- Makefile.orig	Tue Jan  9 12:04:29 2001
++++ Makefile	Tue Jan  9 12:04:36 2001
+@@ -1,4 +1,4 @@
+-CFLAGS = -Wall -fomit-frame-pointer -O9
++CFLAGS ?= -Wall -fomit-frame-pointer -O9
+ 
+ all: netsed
