@@ -17,6 +17,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER?=	murakami@ahs.scitec.kobe-u.ac.jp
 COMMENT?=	A Ruby interface to the scientific graphic library DCL
 
+BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray
 
 USE_RUBY=	yes
@@ -26,9 +27,9 @@ USE_RUBY_EXTCONF=	yes
 PKGNAMESUFFIX=	-gtk
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/gdk_pixbuf2.so:${PORTSDIR}/graphics/ruby-gdk_pixbuf2 \
 		${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2
-BUILD_DEPENDS=	${X11BASE}/lib/libcdcl52.a:${PORTSDIR}/science/cdcl-gtk
+BUILD_DEPENDS+=	${X11BASE}/lib/libcdcl52.a:${PORTSDIR}/science/cdcl-gtk
 .else
-BUILD_DEPENDS=	${X11BASE}/lib/libcdcl52.a:${PORTSDIR}/science/cdcl
+BUILD_DEPENDS+=	${X11BASE}/lib/libcdcl52.a:${PORTSDIR}/science/cdcl
 .endif
 
 DOCS=		ChangeLog README ToDo
