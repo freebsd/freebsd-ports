@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dovecot
-PORTVERSION=	0.99.11
+DISTVERSION=	0.99.12
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/
 
@@ -16,6 +16,7 @@ COMMENT=	Secure and compact IMAP and POP3 servers
 
 CONFLICTS=	dovecot-1.*
 
+USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_RC_SUBR=	yes
 
