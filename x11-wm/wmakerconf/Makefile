@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmakerconf
-PORTVERSION=	2.9.1
+PORTVERSION=	2.9.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.starplot.org/wmakerconf/
 
