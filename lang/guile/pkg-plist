@@ -101,46 +101,15 @@ include/libguile/vports.h
 include/libguile/weaks.h
 @unexec install-info --delete %D/info/goops.info %D/info/dir
 info/goops.info
-info/goops.info-1
-info/goops.info-2
-info/goops.info-3
 @exec install-info %D/info/goops.info %D/info/dir
 @unexec install-info --delete %D/info/guile-tut.info %D/info/dir
 info/guile-tut.info
 @exec install-info %D/info/guile-tut.info %D/info/dir
 @unexec install-info --delete %D/info/guile.info %D/info/dir
 info/guile.info
-info/guile.info-1
-info/guile.info-10
-info/guile.info-11
-info/guile.info-12
-info/guile.info-13
-info/guile.info-14
-info/guile.info-15
-info/guile.info-16
-info/guile.info-17
-info/guile.info-18
-info/guile.info-19
-info/guile.info-2
-info/guile.info-20
-info/guile.info-21
-info/guile.info-22
-info/guile.info-23
-info/guile.info-3
-info/guile.info-4
-info/guile.info-5
-info/guile.info-6
-info/guile.info-7
-info/guile.info-8
-info/guile.info-9
 @exec install-info %D/info/guile.info %D/info/dir
 @unexec install-info --delete %D/info/r5rs.info %D/info/dir
 info/r5rs.info
-info/r5rs.info-1
-info/r5rs.info-2
-info/r5rs.info-3
-info/r5rs.info-4
-info/r5rs.info-5
 @exec install-info %D/info/r5rs.info %D/info/dir
 lib/libguile-ltdl.a
 lib/libguile-ltdl.la
@@ -167,100 +136,100 @@ lib/libqthreads.la
 lib/libqthreads.so
 lib/libqthreads.so.15
 share/aclocal/guile.m4
-share/guile/%%GUILE_VER%%/guile-procedures.txt
-share/guile/%%GUILE_VER%%/ice-9/and-let*.scm
-share/guile/%%GUILE_VER%%/ice-9/and-let-star.scm
-share/guile/%%GUILE_VER%%/ice-9/arrays.scm
-share/guile/%%GUILE_VER%%/ice-9/boot-9.scm
-share/guile/%%GUILE_VER%%/ice-9/buffered-input.scm
-share/guile/%%GUILE_VER%%/ice-9/calling.scm
-share/guile/%%GUILE_VER%%/ice-9/channel.scm
-share/guile/%%GUILE_VER%%/ice-9/common-list.scm
-share/guile/%%GUILE_VER%%/ice-9/debug.scm
-share/guile/%%GUILE_VER%%/ice-9/debugger.scm
-share/guile/%%GUILE_VER%%/ice-9/documentation.scm
-share/guile/%%GUILE_VER%%/ice-9/emacs.scm
-share/guile/%%GUILE_VER%%/ice-9/expect.scm
-share/guile/%%GUILE_VER%%/ice-9/format.scm
-share/guile/%%GUILE_VER%%/ice-9/ftw.scm
-share/guile/%%GUILE_VER%%/ice-9/getopt-long.scm
-share/guile/%%GUILE_VER%%/ice-9/hcons.scm
-share/guile/%%GUILE_VER%%/ice-9/history.scm
-share/guile/%%GUILE_VER%%/ice-9/lineio.scm
-share/guile/%%GUILE_VER%%/ice-9/ls.scm
-share/guile/%%GUILE_VER%%/ice-9/mapping.scm
-share/guile/%%GUILE_VER%%/ice-9/match.scm
-share/guile/%%GUILE_VER%%/ice-9/networking.scm
-share/guile/%%GUILE_VER%%/ice-9/null.scm
-share/guile/%%GUILE_VER%%/ice-9/optargs.scm
-share/guile/%%GUILE_VER%%/ice-9/poe.scm
-share/guile/%%GUILE_VER%%/ice-9/popen.scm
-share/guile/%%GUILE_VER%%/ice-9/posix.scm
-share/guile/%%GUILE_VER%%/ice-9/pretty-print.scm
-share/guile/%%GUILE_VER%%/ice-9/psyntax.pp
-share/guile/%%GUILE_VER%%/ice-9/psyntax.ss
-share/guile/%%GUILE_VER%%/ice-9/q.scm
-share/guile/%%GUILE_VER%%/ice-9/r4rs.scm
-share/guile/%%GUILE_VER%%/ice-9/r5rs.scm
-share/guile/%%GUILE_VER%%/ice-9/rdelim.scm
-share/guile/%%GUILE_VER%%/ice-9/readline.scm
-share/guile/%%GUILE_VER%%/ice-9/receive.scm
-share/guile/%%GUILE_VER%%/ice-9/regex.scm
-share/guile/%%GUILE_VER%%/ice-9/runq.scm
-share/guile/%%GUILE_VER%%/ice-9/rw.scm
-share/guile/%%GUILE_VER%%/ice-9/safe-r5rs.scm
-share/guile/%%GUILE_VER%%/ice-9/safe.scm
-share/guile/%%GUILE_VER%%/ice-9/session.scm
-share/guile/%%GUILE_VER%%/ice-9/slib.scm
-share/guile/%%GUILE_VER%%/ice-9/stack-catch.scm
-share/guile/%%GUILE_VER%%/ice-9/streams.scm
-share/guile/%%GUILE_VER%%/ice-9/string-fun.scm
-share/guile/%%GUILE_VER%%/ice-9/syncase.scm
-share/guile/%%GUILE_VER%%/ice-9/threads.scm
-share/guile/%%GUILE_VER%%/ice-9/time.scm
-share/guile/%%GUILE_VER%%/oop/goops.scm
-share/guile/%%GUILE_VER%%/oop/goops/active-slot.scm
-share/guile/%%GUILE_VER%%/oop/goops/compile.scm
-share/guile/%%GUILE_VER%%/oop/goops/composite-slot.scm
-share/guile/%%GUILE_VER%%/oop/goops/describe.scm
-share/guile/%%GUILE_VER%%/oop/goops/dispatch.scm
-share/guile/%%GUILE_VER%%/oop/goops/internal.scm
-share/guile/%%GUILE_VER%%/oop/goops/old-define-method.scm
-share/guile/%%GUILE_VER%%/oop/goops/save.scm
-share/guile/%%GUILE_VER%%/oop/goops/stklos.scm
-share/guile/%%GUILE_VER%%/oop/goops/util.scm
-share/guile/%%GUILE_VER%%/scripts/PROGRAM
-share/guile/%%GUILE_VER%%/scripts/autofrisk
-share/guile/%%GUILE_VER%%/scripts/display-commentary
-share/guile/%%GUILE_VER%%/scripts/doc-snarf
-share/guile/%%GUILE_VER%%/scripts/frisk
-share/guile/%%GUILE_VER%%/scripts/generate-autoload
-share/guile/%%GUILE_VER%%/scripts/lint
-share/guile/%%GUILE_VER%%/scripts/punify
-share/guile/%%GUILE_VER%%/scripts/read-scheme-source
-share/guile/%%GUILE_VER%%/scripts/snarf-check-and-output-texi
-share/guile/%%GUILE_VER%%/scripts/snarf-guile-m4-docs
-share/guile/%%GUILE_VER%%/scripts/use2dot
-share/guile/%%GUILE_VER%%/srfi/srfi-1.scm
-share/guile/%%GUILE_VER%%/srfi/srfi-10.scm
-share/guile/%%GUILE_VER%%/srfi/srfi-11.scm
-share/guile/%%GUILE_VER%%/srfi/srfi-13.scm
-share/guile/%%GUILE_VER%%/srfi/srfi-14.scm
-share/guile/%%GUILE_VER%%/srfi/srfi-16.scm
-share/guile/%%GUILE_VER%%/srfi/srfi-17.scm
-share/guile/%%GUILE_VER%%/srfi/srfi-19.scm
-share/guile/%%GUILE_VER%%/srfi/srfi-2.scm
-share/guile/%%GUILE_VER%%/srfi/srfi-4.scm
-share/guile/%%GUILE_VER%%/srfi/srfi-6.scm
-share/guile/%%GUILE_VER%%/srfi/srfi-8.scm
-share/guile/%%GUILE_VER%%/srfi/srfi-9.scm
-@dirrm share/guile/%%GUILE_VER%%/srfi
-@dirrm share/guile/%%GUILE_VER%%/scripts
-@dirrm share/guile/%%GUILE_VER%%/oop/goops
-@dirrm share/guile/%%GUILE_VER%%/oop
-@dirrm share/guile/%%GUILE_VER%%/ice-9
-@dirrm share/guile/%%GUILE_VER%%
-@dirrm share/guile
+%%DATADIR%%/%%GUILE_VER%%/guile-procedures.txt
+%%DATADIR%%/%%GUILE_VER%%/ice-9/and-let*.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/and-let-star.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/arrays.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/boot-9.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/buffered-input.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/calling.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/channel.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/common-list.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/debug.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/debugger.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/documentation.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/emacs.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/expect.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/format.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/ftw.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/getopt-long.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/hcons.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/history.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/lineio.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/ls.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/mapping.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/match.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/networking.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/null.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/optargs.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/poe.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/popen.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/posix.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/pretty-print.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/psyntax.pp
+%%DATADIR%%/%%GUILE_VER%%/ice-9/psyntax.ss
+%%DATADIR%%/%%GUILE_VER%%/ice-9/q.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/r4rs.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/r5rs.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/rdelim.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/readline.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/receive.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/regex.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/runq.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/rw.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/safe-r5rs.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/safe.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/session.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/slib.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/stack-catch.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/streams.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/string-fun.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/syncase.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/threads.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/time.scm
+%%DATADIR%%/%%GUILE_VER%%/oop/goops.scm
+%%DATADIR%%/%%GUILE_VER%%/oop/goops/active-slot.scm
+%%DATADIR%%/%%GUILE_VER%%/oop/goops/compile.scm
+%%DATADIR%%/%%GUILE_VER%%/oop/goops/composite-slot.scm
+%%DATADIR%%/%%GUILE_VER%%/oop/goops/describe.scm
+%%DATADIR%%/%%GUILE_VER%%/oop/goops/dispatch.scm
+%%DATADIR%%/%%GUILE_VER%%/oop/goops/internal.scm
+%%DATADIR%%/%%GUILE_VER%%/oop/goops/old-define-method.scm
+%%DATADIR%%/%%GUILE_VER%%/oop/goops/save.scm
+%%DATADIR%%/%%GUILE_VER%%/oop/goops/stklos.scm
+%%DATADIR%%/%%GUILE_VER%%/oop/goops/util.scm
+%%DATADIR%%/%%GUILE_VER%%/scripts/PROGRAM
+%%DATADIR%%/%%GUILE_VER%%/scripts/autofrisk
+%%DATADIR%%/%%GUILE_VER%%/scripts/display-commentary
+%%DATADIR%%/%%GUILE_VER%%/scripts/doc-snarf
+%%DATADIR%%/%%GUILE_VER%%/scripts/frisk
+%%DATADIR%%/%%GUILE_VER%%/scripts/generate-autoload
+%%DATADIR%%/%%GUILE_VER%%/scripts/lint
+%%DATADIR%%/%%GUILE_VER%%/scripts/punify
+%%DATADIR%%/%%GUILE_VER%%/scripts/read-scheme-source
+%%DATADIR%%/%%GUILE_VER%%/scripts/snarf-check-and-output-texi
+%%DATADIR%%/%%GUILE_VER%%/scripts/snarf-guile-m4-docs
+%%DATADIR%%/%%GUILE_VER%%/scripts/use2dot
+%%DATADIR%%/%%GUILE_VER%%/srfi/srfi-1.scm
+%%DATADIR%%/%%GUILE_VER%%/srfi/srfi-10.scm
+%%DATADIR%%/%%GUILE_VER%%/srfi/srfi-11.scm
+%%DATADIR%%/%%GUILE_VER%%/srfi/srfi-13.scm
+%%DATADIR%%/%%GUILE_VER%%/srfi/srfi-14.scm
+%%DATADIR%%/%%GUILE_VER%%/srfi/srfi-16.scm
+%%DATADIR%%/%%GUILE_VER%%/srfi/srfi-17.scm
+%%DATADIR%%/%%GUILE_VER%%/srfi/srfi-19.scm
+%%DATADIR%%/%%GUILE_VER%%/srfi/srfi-2.scm
+%%DATADIR%%/%%GUILE_VER%%/srfi/srfi-4.scm
+%%DATADIR%%/%%GUILE_VER%%/srfi/srfi-6.scm
+%%DATADIR%%/%%GUILE_VER%%/srfi/srfi-8.scm
+%%DATADIR%%/%%GUILE_VER%%/srfi/srfi-9.scm
+@dirrm %%DATADIR%%/%%GUILE_VER%%/srfi
+@dirrm %%DATADIR%%/%%GUILE_VER%%/scripts
+@dirrm %%DATADIR%%/%%GUILE_VER%%/oop/goops
+@dirrm %%DATADIR%%/%%GUILE_VER%%/oop
+@dirrm %%DATADIR%%/%%GUILE_VER%%/ice-9
+@dirrm %%DATADIR%%/%%GUILE_VER%%
+@dirrm %%DATADIR%%
 @dirrm include/libguile
 @dirrm include/guile/srfi
 @dirrm include/guile-readline
