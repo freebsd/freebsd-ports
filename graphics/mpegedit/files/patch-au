@@ -1,0 +1,42 @@
+--- MpegCodec/decoder/Makefile.orig	Sun Jul 23 17:03:05 1995
++++ MpegCodec/decoder/Makefile	Wed Jun 28 15:18:39 2000
+@@ -27,9 +27,10 @@
+ 
+ AR 		= ar r
+ RM 		= rm -f
+-CC		= gcc
+-CPP 		= g++
++#CC		= gcc
++CPP 		= ${CXX}
+ RANLIB          = ranlib
++INCLUDES	= -I$(X11BASE)/include
+ DEPFILE 	= Dependencies
+ CCOPTIMISATIONS = -O6 -funroll-loops -fomit-frame-pointer
+ ANALYSIS 	= -DANALYSIS
+@@ -43,7 +44,7 @@
+ ALL     = ar
+ 
+ .c.o:	
+-	$(CC) $(CFLAGS) $(DEFINES) $(EXTRA) -c $< 
++	$(CC) $(CFLAGS) $(INCLUDES) $(DEFINES) $(EXTRA) -c $< 
+ 
+ all:	$(ALL) 
+ 
+@@ -58,14 +59,14 @@
+ 
+ dep:	FORCE
+ 	$(RM) $(DEPFILE) 
+-	make $(DEPFILE) 
++	$(MAKE) $(DEPFILE) 
+ 
+ $(DEPFILE):
+-	set -e; for i in $(SOURCES); do $(CC) -M $$i >>$(DEPFILE); done
++	set -e; for i in $(SOURCES); do $(CC) $(INCLUDES) -M $$i >>$(DEPFILE); done
+ 	
+ #
+ # include a dependency file if one exists
+ #
+ #ifeq ($(DEPFILE),$(wildcard $(DEPFILE)))
+-include $(DEPFILE)
++#include $(DEPFILE)
+ #endif

@@ -1,0 +1,39 @@
+--- editor/Makefile.orig	Mon Jul 24 00:01:16 1995
++++ editor/Makefile	Thu Jun 15 09:02:18 2000
+@@ -25,12 +25,12 @@
+ #                       Mr A S R Ashley B.Eng (Hons)    23rd July 1995
+ 
+ AR       = ar r
+-CC       = gcc
+-CPP      = g++
++#CC      = gcc
++CPP      = ${CXX}
+ RANLIB   = ranlib
+ RM       = rm -f
+ INCLUDES = -I../globals -I../ui -I../MpegCodec -I../MpegCodec/decoder \
+-	   -I../MpegCodec/encoder -I$(PBMDIR) 
++	   -I../MpegCodec/encoder -I$(PBMDIR) -I$(X11BASE)/include
+ 
+ DEPFILE  = Dependancies
+ HEADERS  = yuv.H 2x2_window.H mono_window.H bw_window.H effects.H \
+@@ -62,17 +62,17 @@
+ 
+ dep:	FORCE
+ 	$(RM) $(DEPFILE) 	
+-	make $(DEPFILE)
++	$(MAKE) $(DEPFILE)
+ 
+ FORCE:
+ 
+ 
+ $(DEPFILE):
+ 	set -e; for i in $(SOURCES) ; do $(CC) $(INCLUDES) -M $$i >>$(DEPFILE) ; done
+-	
++
+ #
+ # include a dependency file if one exists
+ #
+ #ifeq ($(DEPFILE),$(wildcard $(DEPFILE)))
+-include $(DEPFILE)
++#include $(DEPFILE)
+ #endif

@@ -1,31 +1,26 @@
---- Makefile.orig	Sun Jul 23 11:00:40 1995
-+++ Makefile	Sun Oct 11 23:07:08 1998
-@@ -23,17 +23,17 @@
+--- Makefile.orig	Mon Jul 24 01:00:40 1995
++++ Makefile	Thu Jun 15 08:53:48 2000
+@@ -23,8 +23,8 @@
  #
  #                       Mr A S R Ashley B.Eng (Hons)    23rd July 1995
  
 -      CC = gcc      
 -     CPP = g++
--      RM = rm -f
-+CC = gcc -O -I$(X11BASE)/include
-+CPP = g++ -O -I$(X11BASE)/include
-+RM = rm -f
++#     CC = gcc      
++     CPP = ${CXX}
+       RM = rm -f
  
  DEPFILE  = Dependancies
-- SUBDIRS = ui MpegCodec editor xuseless
-+SUBDIRS = ui MpegCodec editor xuseless
- HEADERS  = 
--SOURCES  = main.C globals/version.c
--OBJS     = main.o globals/version.o
-+SOURCES  = main.C globals/version.c 
-+OBJS     = main.o globals/version.o 
+@@ -33,7 +33,7 @@
+ SOURCES  = main.C globals/version.c
+ OBJS     = main.o globals/version.o
  ARCHIVES = editor/editor.a ui/ui.a MpegCodec/mpeg.a
 -    LIBS = -lXext -lX11 -lpnm -lppm -lpbm -lpgm -lm
 +    LIBS = -L$(X11BASE)/lib -L$(LOCALBASE)/lib -lXext -lX11 -lpnm -lppm -lpbm -lpgm -lm
  #
  #  CPPFLAGS     -Wall     all warnings
  #               -pipe     speeds up compilation (remove only if not using g++)
-@@ -55,9 +55,9 @@
+@@ -55,11 +55,11 @@
  # PBMDIR         The location of the pbmplus header files, which is
  #                /usr/include/gr on my Linux machine.
  
@@ -33,38 +28,37 @@
 +PBMDIR      = $(LOCALBASE)/include
  INCLUDES    = -Iglobals -Iui -IMpegCodec -IMpegCodec/decoder \
 -	      -IMpegCodec/encoder -Ieditor 
-+	      -IMpegCodec/encoder -Ieditor -I$(X11BASE)/include
- CPPFLAGS    = -Wall -pipe -O4
- CFLAGS      = -Wall -pipe -O4
+-CPPFLAGS    = -Wall -pipe -O4
+-CFLAGS      = -Wall -pipe -O4
++	      -IMpegCodec/encoder -Ieditor -I$(X11BASE)/include 
++CPPFLAGS    = ${CXXFLAGS}
++#CFLAGS     = -Wall -pipe -O4
  SHMEM	    = -DSH_MEM
-@@ -70,22 +70,27 @@
+ CACHE_FLAGS = -DCACHE_SIZE=12288 -DCACHE_GRANULARITY=5
+ 
+@@ -70,22 +70,22 @@
  
  all: mpeg_edit
  
 -ui.a:
-+install:
-+	install -cs mpeg_edit $(PREFIX)/bin
-+	mkdir -p $(PREFIX)/share/doc/mpeg_edit
-+	install -c -m 644 README manual.ps $(PREFIX)/share/doc/mpeg_edit
-+
+-	cd ui && make ui.a EXTRA="$(EXTRA)" CPPFLAGS="$(CPPFLAGS)" \
 +ui/ui.a:
- 	cd ui && make ui.a EXTRA="$(EXTRA)" CPPFLAGS="$(CPPFLAGS)" \
++	cd ui && $(MAKE) ui.a EXTRA="$(EXTRA)" CPPFLAGS="$(CPPFLAGS)" \
  	CFLAGS="$(CFLAGS)" && cd ..
--	
+ 	
 -mpeg.a:
-+
+-	cd MpegCodec && make mpeg.a EXTRA="$(EXTRA)" CPPFLAGS="$(CPPFLAGS)" \
 +MpegCodec/mpeg.a:
- 	cd MpegCodec && make mpeg.a EXTRA="$(EXTRA)" CPPFLAGS="$(CPPFLAGS)" \
++	cd MpegCodec && $(MAKE) mpeg.a EXTRA="$(EXTRA)" CPPFLAGS="$(CPPFLAGS)" \
  	CFLAGS="$(CFLAGS)" CACHE_FLAGS="$(CACHE_FLAGS)" && cd ..
--	
+ 	
 -editor.a:
-+
+-	cd editor && make editor.a EXTRA="$(EXTRA)" CPPFLAGS="$(CPPFLAGS)" \
 +editor/editor.a:
- 	cd editor && make editor.a EXTRA="$(EXTRA)" CPPFLAGS="$(CPPFLAGS)" \
++	cd editor && $(MAKE) editor.a EXTRA="$(EXTRA)" CPPFLAGS="$(CPPFLAGS)" \
  	CFLAGS="$(CFLAGS)" SHMEM="$(SHMEM)" PBMDIR="$(PBMDIR)" && cd ..
--	
+ 	
 -mpeg_edit: ui.a mpeg.a editor.a $(DEPFILE) $(OBJS)  
-+
 +mpeg_edit: $(ARCHIVES) $(DEPFILE) $(OBJS)  
  	$(CPP) -o mpeg_edit $(OBJS) $(ARCHIVES) $(LIBS)
  
@@ -73,7 +67,24 @@
  	$(CPP) -o ppmtorle ppmtorle.o MpegCodec/frame.o editor/yuv.o $(LIBS) 
  
  globals/version.o:	$(ARCHIVES) 
-@@ -107,10 +112,10 @@
+@@ -93,24 +93,24 @@
+ 
+ clean:
+ 	$(RM) mpeg_edit main.o globals/version.o
+-	set -e; for i in $(SUBDIRS); do cd $$i && make clean && cd .. ; done
++	set -e; for i in $(SUBDIRS); do cd $$i && $(MAKE) clean && cd .. ; done
+ 
+ dep:	FORCE
+-	set -e; for i in $(SUBDIRS) ; do cd $$i && make dep EXTRA="$(EXTRA)" \
++	set -e; for i in $(SUBDIRS) ; do cd $$i && $(MAKE) dep EXTRA="$(EXTRA)" \
+ 	CPPFLAGS="$(CPPFLAGS)" CFLAGS="$(CFLAGS)" SHMEM="$(SHMEM)" \
+ 	PBMDIR="$(PBMDIR)" && cd .. ; done
+ 	$(RM) $(DEPFILE) 	
+-	make $(DEPFILE)
++	$(MAKE) $(DEPFILE)
+ 
+ FORCE:
+ 
  
  $(DEPFILE):
  	set -e; for i in $(SOURCES) ; do $(CPP) $(INCLUDES) -M $$i >>$(DEPFILE) ; done

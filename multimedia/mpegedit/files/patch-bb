@@ -1,0 +1,33 @@
+--- ui/text_win.C.orig	Sun Jun 18 19:56:57 1995
++++ ui/text_win.C	Thu Jun 15 08:37:50 2000
+@@ -17,6 +17,7 @@
+ */
+ 
+ #include "text_win.H"
++#include <sys/time.h>
+ #include <assert.h>
+ #include <stdlib.h>
+ 
+@@ -407,14 +408,22 @@
+ 			long time_elapsed;
+ 			long speed;
+ 
++#ifdef __FreeBSD__
++			gettimeofday(&clk,(struct timezone *)NULL);
++#else
+ 			gettimeofday(&clk,(timezone *)NULL);
++#endif
+ 			time_elapsed = (clk.tv_sec - last_click.tv_sec)*100;
+ 			time_elapsed+=(clk.tv_usec - last_click.tv_usec)/10000;
+ 			speed = atol(click_speed);
+ 			if((time_elapsed<speed) && (callback!=NULL))
+ 			  retval = (*(callback))(callback_data);
+ 		      }
++#ifdef __FreeBSD__
++		    gettimeofday(&last_click,(struct timezone *)NULL);
++#else
+ 		    gettimeofday(&last_click,(timezone *)NULL);
++#endif
+ 		    text.inverse=true;
+ 		    TList.Write(text);
+ 		    if(!SendEventFlag)

@@ -1,0 +1,42 @@
+--- ui/Makefile.orig	Mon Jul 24 00:01:36 1995
++++ ui/Makefile	Thu Jun 15 09:04:16 2000
+@@ -26,9 +26,10 @@
+ #
+ 
+ AR       = ar r
+-CPP      = g++
++CPP      = ${CXX}
+ RANLIB   = ranlib
+ RM       = rm -f
++INCLUDES = -I../globals -I$(X11BASE)/include
+ 
+ #  CPPFLAGS     -Wall     all warnings
+ #               -pipe     speeds up compilation (remove only if not using g++)
+@@ -48,7 +49,7 @@
+ .SUFFIXES:	.C $(SUFFIXES) 
+ 
+ .C.o:
+-	$(CPP) $(CPPFLAGS) $(EXTRA) -I../globals -c $< 
++	$(CPP) $(CPPFLAGS) $(INCLUDES) $(EXTRA) -c $< 
+ 
+ all:	$(ALL) 
+ 
+@@ -65,14 +66,14 @@
+ 
+ dep:	FORCE
+ 	$(RM) $(DEPFILE) 
+-	make $(DEPFILE)
++	$(MAKE) $(DEPFILE)
+ 
+ $(DEPFILE):
+-	set -e; for i in $(SOURCES) ; do $(CPP) -M $$i  -I../globals >>$(DEPFILE) ; done
+-	
++	set -e; for i in $(SOURCES) ; do $(CPP) $(INCLUDES) -M $$i >>$(DEPFILE) ; done
++
+ #
+ # include a dependency file if one exists
+ #
+ #ifeq ($(DEPFILE),$(wildcard $(DEPFILE)))
+-include $(DEPFILE)
++#include $(DEPFILE)
+ #endif

@@ -1,0 +1,11 @@
+--- MpegCodec/decoder/motionvector.c.orig	Mon Aug 15 00:12:03 1994
++++ MpegCodec/decoder/motionvector.c	Thu Jun 15 08:37:50 2000
+@@ -19,7 +19,7 @@
+  * PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
+  */
+ #include "dmpeg.h"
+-#include "proto.h"
++/* #include "proto.h" */
+ #include "util.h"
+ 
+ 

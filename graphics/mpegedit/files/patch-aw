@@ -1,0 +1,11 @@
+--- MpegCodec/decoder/jrevdct.c.orig	Mon Aug 15 00:13:39 1994
++++ MpegCodec/decoder/jrevdct.c	Thu Jun 15 08:37:50 2000
+@@ -28,7 +28,7 @@
+ 
+ #include <string.h>
+ #include "dmpeg.h"
+-#include "proto.h"
++/* #include "proto.h" */
+ 
+ #define GLOBAL			/* a function referenced thru EXTERNs */
+   

@@ -1,0 +1,11 @@
+--- MpegCodec/decoder/huffman.c.orig	Mon Aug 15 00:08:13 1994
++++ MpegCodec/decoder/huffman.c	Thu Jun 15 08:37:50 2000
+@@ -31,7 +31,7 @@
+ #include "huffman.h"
+ #include "util.h" 
+ #include "dmpeg.h"
+-#include "proto.h"
++/* #include "proto.h" */
+ 
+ /* Decoding table for macroblock_address_increment */
+ mb_addr_inc_entry     mb_addr_inc[2048];

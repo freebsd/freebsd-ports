@@ -1,0 +1,10 @@
+--- MpegCodec/frame.C.orig	Sun May 21 02:14:48 1995
++++ MpegCodec/frame.C	Thu Jun 15 08:37:49 2000
+@@ -25,6 +25,7 @@
+ #include "frame.H"
+ #include <string.h>
+ #include <iostream.h>
++#include <sys/param.h>
+ 
+ #ifndef NO_INET
+   #include <netinet/in.h>

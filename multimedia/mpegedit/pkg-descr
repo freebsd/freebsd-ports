@@ -4,5 +4,7 @@ encoded mpeg video stream.
 The program has several bugs, but I've been able to use it.  Expect
 core-dumps.  It has problems with displays >8 bits too.
 
+WWW: http://www.ripley.demon.co.uk/mpeg/index.html
+
 eric.
 erich@FreeBSD.org
