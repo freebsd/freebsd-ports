@@ -7,7 +7,7 @@
 
 PORTNAME=	gdb
 PORTVERSION=	5.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gdb
@@ -49,6 +49,12 @@ PATCH_DIST_STRIP?=	-p1
 .if ${LCLTARGET} == powerpc-rtems
 PATCHFILES+=	powerpc-gdb-5.2-hw_sem.c.diff:THN \
 		powerpc-gdb-5.2-hw_shm.c.diff:THN
+PATCH_SITES+=	http://rtems.thehousleys.net/:THN
+.endif
+
+# Need to patch a patch file
+.if ${LCLTARGET} == i960-rtems
+PATCHFILES+=	i960-gdb-5.2-sem-switch.c.diff:THN
 PATCH_SITES+=	http://rtems.thehousleys.net/:THN
 .endif
 
