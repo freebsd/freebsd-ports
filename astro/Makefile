@@ -16,6 +16,7 @@
     SUBDIR += ksetispy
     SUBDIR += ksetiwatch
     SUBDIR += kstars
+    SUBDIR += linux-setiathome
     SUBDIR += luna
     SUBDIR += match
     SUBDIR += nightfall
