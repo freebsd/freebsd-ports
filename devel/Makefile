@@ -378,6 +378,7 @@
     SUBDIR += p5-Carp-Assert
     SUBDIR += p5-Cdk
     SUBDIR += p5-Class-Accessor
+    SUBDIR += p5-Class-ArrayObjects
     SUBDIR += p5-Class-BlackHole
     SUBDIR += p5-Class-Container
     SUBDIR += p5-Class-Contract
