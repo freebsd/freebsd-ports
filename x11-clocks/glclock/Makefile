@@ -30,11 +30,11 @@ OPT=		${CXXFLAGS} ${PTHREAD_CFLAGS} \
 		-DGLCLOCK_DIR="\\\"${PREFIX}/lib/X11/glclock/\\\""
 LIBS=		-lglut -lGLU -lGL -lXext -lXmu -lX11 -lm -lXi ${PTHREAD_LIBS}
 
-SCRIPTS = benchclock crystalclock f_crystalclock f_glclock		\
+SCRIPTS=	benchclock crystalclock f_crystalclock f_glclock	\
 	  f_marbleclock f_metalclock f_mwclock f_woodclock marbleclock	\
 	  metalclock mwclock woodclock
 
-TEXTURES = marble.ppm sky.ppm wood.ppm
+TEXTURES=	marble.ppm sky.ppm wood.ppm
 
 .include <bsd.port.pre.mk>
 

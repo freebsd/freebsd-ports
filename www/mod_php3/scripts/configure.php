@@ -184,4 +184,3 @@ fi
 if [ -z "${MYSQL}" ]; then
 	echo "WITHOUT_MYSQL=	1"
 fi
-

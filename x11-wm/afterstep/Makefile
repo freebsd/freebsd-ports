@@ -18,7 +18,7 @@ COMMENT=	Window manager originally based on the Bowman NeXTSTEP clone
 
 RUN_DEPENDS=	asclock:${PORTSDIR}/x11-clocks/asclock
 
-NO_LATEST_LINK= yes
+NO_LATEST_LINK=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_IMAKE=	yes

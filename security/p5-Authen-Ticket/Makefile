@@ -17,5 +17,4 @@ COMMENT=	Perl module providing the framework for implementing a ticketing system
 
 PERL_CONFIGURE=	yes
 
-
 .include <bsd.port.mk>

@@ -17,7 +17,7 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Willows Toolkit for migrating and developing Windows applications
 
-ONLY_FOR_ARCHS= i386 alpha powerpc
+ONLY_FOR_ARCHS=	i386 alpha powerpc
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -26,7 +26,7 @@ USE_REINPLACE=	yes
 USE_AUTOCONF_VER=	213
 GNU_CONFIGURE=	yes
 .if ${MACHINE_ARCH} == "alpha"
-CONFIGURE_ARGS+= --disable-intp
+CONFIGURE_ARGS+=--disable-intp
 .endif
 USE_GMAKE=	yes
 

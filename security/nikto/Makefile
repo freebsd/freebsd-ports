@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	nikto
-PORTVERSION= 	1.32
-CATEGORIES= 	security www
+PORTVERSION=	1.32
+CATEGORIES=	security www
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web and CGI vulnerability scanner with SSL support
@@ -15,10 +15,10 @@ COMMENT=	Web and CGI vulnerability scanner with SSL support
 MASTER_SITES=	http://www.cirt.net/nikto/ \
 		http://packetstormsecurity.org/UNIX/cgi-scanners/
 
-RUN_DEPENDS = 	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay \
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay \
 		${SITE_PERL}/libwhisker/LW.pm:${PORTSDIR}/security/libwhisker
 
-NO_BUILD= 	yes
+NO_BUILD=	yes
 USE_REINPLACE=	yes
 
 do-install:

@@ -8,7 +8,7 @@
 PORTNAME=	pycrypto
 PORTVERSION=	1.9.a6
 CATEGORIES=	security
-MASTER_SITES= 	http://www.amk.ca/files/python/crypto/
+MASTER_SITES=	http://www.amk.ca/files/python/crypto/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S@.a@a@}
 

@@ -17,7 +17,7 @@ COMMENT=	A display ghostscript system
 
 USE_GHOSTSCRIPT_RUN=	yes
 
-LIB_DEPENDS= 	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 

@@ -34,7 +34,6 @@ INSTALLS_SHLIB=	yes
 BROKEN=		"Does not compile"
 .endif
 
-
 .if ${OSVERSION} < 500035
 USE_GCC=	3.1
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"

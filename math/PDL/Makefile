@@ -56,7 +56,7 @@ BROKEN=	test script t/flexraw.t fails all 26 tests
 .endif
 
 .if ${PERL_LEVEL} < 500601
-IGNORE=   Port requires perl 5.6.x or later. Install lang/perl5 then try again
+IGNORE=	Port requires perl 5.6.x or later. Install lang/perl5 then try again
 .endif # ${PERL_LEVEL} < 500601
 
 post-patch:

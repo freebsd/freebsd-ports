@@ -17,7 +17,7 @@ WRKSRC=		${WRKDIR}/QVplay095/obj/FreeBSD
 
 GNU_CONFIGURE=	yes
 
-MAN1= 		qvplay.1 qvrec.1 qvalldel.1
+MAN1=		qvplay.1 qvrec.1 qvalldel.1
 
 MYPORTDOCS=	FAQ.txt HISTORY PROTOCOL.txt PROTOCOL.eng \
 		README README.eng README.FreeBSD

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lfview
-PORTVERSION=	1.1a 
+PORTVERSION=	1.1a
 CATEGORIES=	graphics
 MASTER_SITES=	http://hoshina.denpa.org/
 EXTRACT_SUFX=	.tgz

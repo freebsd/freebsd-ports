@@ -86,7 +86,7 @@ REMOVE_FILES=		/bin/df /bin/su /etc/exports /etc/group \
 			/etc/services /etc/protocols
 
 .if ${OSVERSION} >= 500113
-BROKEN=         "Does not install (attempts to overwrite something in /proc)"
+BROKEN=		"Does not install (attempts to overwrite something in /proc)"
 .endif
 
 .if ${OSVERSION} <= 320001

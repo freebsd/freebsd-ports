@@ -28,5 +28,3 @@ mv ${WRKSRC}/rkive.h ${WRKSRC}/rkive.h.old
 sed <${WRKSRC}/rkive.h.old >${WRKSRC}/rkive.h -f /tmp/tmp.rkive.sed.$$
 
 rm -f /tmp/tmp.inn.sed.$$
-
-

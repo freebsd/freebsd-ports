@@ -39,7 +39,7 @@ post-patch:
 		-e 's,gtk-config,${GTK_CONFIG},g' \
 		-e 's,= /usr,= ${PREFIX},g' \
 		-e 's,\-O2,,g' \
-		-e 's,\-lgtk \-lgdk \-lpthread ,`${GTK_CONFIG} \-\-libs gthread` ,g' ${WRKSRC}/Makefile 
+		-e 's,\-lgtk \-lgdk \-lpthread ,`${GTK_CONFIG} \-\-libs gthread` ,g' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gman ${PREFIX}/bin

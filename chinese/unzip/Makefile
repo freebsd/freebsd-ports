@@ -14,4 +14,3 @@ MASTERDIR=	${.CURDIR}/../../archivers/unzip
 EXTRA_PATCHES=	${.CURDIR}/files/patch-fileio.c
 
 .include "${MASTERDIR}/Makefile"
-

@@ -5,23 +5,23 @@
 # $FreeBSD$
 #
 
-PORTNAME=       adabooch-doc
+PORTNAME=	adabooch-doc
 PORTVERSION=	20020602
-CATEGORIES=     devel
+CATEGORIES=	devel
 MASTER_SITES=	http://www.adapower.net/booch/download/ \
 		http://www.pogner.demon.co.uk/components/bc/download/
-DISTNAME=       bc-html-${PORTVERSION}
-EXTRACT_SUFX=   .zip
+DISTNAME=	bc-html-${PORTVERSION}
+EXTRACT_SUFX=	.zip
 
-MAINTAINER=     ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Manual for adabooch
 
-USE_ZIP=        yes
-NO_BUILD=       yes
-NO_MTREE=       yes
-PREFIX=         ${LOCALBASE}/share/doc
-WRKSRC=         ${WRKDIR}/adabooch-doc-html
-EXTRACT_AFTER_ARGS=        -d ${WRKSRC}
+USE_ZIP=	yes
+NO_BUILD=	yes
+NO_MTREE=	yes
+PREFIX=		${LOCALBASE}/share/doc
+WRKSRC=		${WRKDIR}/adabooch-doc-html
+EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
 pre-extract:
 	@${MKDIR} ${WRKSRC}

@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://www.ics.uci.edu/pub/websoft/wwwstat/ \
 		ftp://ftp.gwdg.de/pub/misc/www-stat/websoft/wwwstat/
-DISTNAME=	${PORTNAME}-2.0	
+DISTNAME=	${PORTNAME}-2.0
 
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	patch-2.01.txt

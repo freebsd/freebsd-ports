@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 _DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}install
 DISTNAME=	${_DISTNAME:S/0install$/install/}
 EXTRACT_SUFX=	.jar
-EXTRACT_ONLY=	
+EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful programmer's text editor written in Java

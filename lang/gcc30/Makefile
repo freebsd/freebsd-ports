@@ -1,5 +1,5 @@
-# ex:ts=8 
-# Ports collection makefile for:	egcs 
+# ex:ts=8
+# Ports collection makefile for:	egcs
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
@@ -33,7 +33,7 @@ CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
+BROKEN=		"Does not compile"
 .endif
 
 .if ${PORTOBJFORMAT} == "elf"
@@ -54,14 +54,14 @@ CONFIGURE_ARGS=	--disable-nls --with-gnu-as --with-gnu-ld \
 		--with-gxx-include-dir=${TARGLIB}/include/g++
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 .if defined(WANT_SHAREDLIBS)
-CONFIGURE_ARGS+= --enable-shared
+CONFIGURE_ARGS+=--enable-shared
 .else
-CONFIGURE_ARGS+= --disable-shared
+CONFIGURE_ARGS+=--disable-shared
 .endif
 .if defined(WANT_THREADS_SUPPORT)
-CONFIGURE_ARGS+= --enable-threads
+CONFIGURE_ARGS+=--enable-threads
 #	?is this an ObjC only thing?
-CONFIGURE_ARGS+= --enable-threads=posix
+CONFIGURE_ARGS+=--enable-threads=posix
 .endif
 ALL_TARGET=	bootstrap
 MAN1=		cpp30.1 g++30.1 g77-30.1 gcc30.1 gcov30.1

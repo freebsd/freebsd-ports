@@ -25,7 +25,7 @@ LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
 .endif
 
 NO_BUILD=	yes
-ONLY_FOR_ARCHS=   alpha i386
+ONLY_FOR_ARCHS=	alpha i386
 
 MAN1=		rapgen.1
 MAN3=		nsr_getdate.3

@@ -85,7 +85,7 @@ pre-install:
 .endfor
 	${ECHO_CMD} @dirrm share/doc/openbox >> ${PLIST}
 .endif
-.for ii in include share 
+.for ii in include share
 	${ECHO_CMD} @dirrm ${ii}/openbox >> ${PLIST}
 .endfor
 

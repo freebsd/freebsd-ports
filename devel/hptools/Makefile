@@ -18,7 +18,7 @@ WRKSRC=		${WRKDIR}/Hptools/${CONFIGURE_TARGET}
 
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
-CONFIGURE_SCRIPT= ../support/configure
+CONFIGURE_SCRIPT=	../support/configure
 
 NO_CDROM=	'Commercial use is Prohibited'
 

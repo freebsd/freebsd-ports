@@ -5,14 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=      puff
-PORTVERSION=   0.42
-CATEGORIES=    editors
-MASTER_SITES=  ftp://ftp.developerpit.com/puff/
+PORTNAME=	puff
+PORTVERSION=	0.42
+CATEGORIES=	editors
+MASTER_SITES=	ftp://ftp.developerpit.com/puff/
 
-MAINTAINER=    ports@FreeBSD.org
-COMMENT=       Simple and efficient text editor
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Simple and efficient text editor
 
-WRKSRC=        ${WRKDIR}/puff
+WRKSRC=		${WRKDIR}/puff
 
 .include <bsd.port.mk>

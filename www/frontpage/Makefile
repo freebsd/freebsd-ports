@@ -85,7 +85,7 @@ pre-extract:
 	fi
 .else
 .if ${CRYPT_DES} == 1
-	@${ECHO} 
+	@${ECHO}
 	@${ECHO} "WARNING: MS FrontPage Extensions requires crypt_des in"
 	@${ECHO} "   the /usr/lib/libcrypt library.  You will need to"
 	@${ECHO} "   rebuild the libcrypt library with DES support."
@@ -93,7 +93,7 @@ pre-extract:
 	@${ECHO}
 	@${ECHO} "   You need to comment out both NOSECURE and NOCRYPT"
 	@${ECHO} "   in the /etc/make.conf file before rebuilding the"
-	@${ECHO} "   libcrypt library." 
+	@${ECHO} "   libcrypt library."
 .endif
 	@${ECHO}
 	@${FALSE}

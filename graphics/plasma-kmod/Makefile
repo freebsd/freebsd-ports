@@ -5,10 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=       plasma
+PORTNAME=	plasma
 PORTVERSION=	0.1
-CATEGORIES=     graphics
-MASTER_SITES=   http://users.uk.freebsd.org/~greid/
+CATEGORIES=	graphics
+MASTER_SITES=	http://users.uk.freebsd.org/~greid/
 PKGNAMESUFFIX=	-kmod
 
 MAINTAINER=	ports@FreeBSD.org

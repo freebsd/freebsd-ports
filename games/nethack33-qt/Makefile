@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-MASTERDIR=      ${.CURDIR}/../nethack33
+MASTERDIR=	${.CURDIR}/../nethack33
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dungeon explorin', slashin', hackin' game (w/ Qt graphics)

@@ -9,8 +9,8 @@
 #
 
 PORTNAME=	linux-q3ademo
-PORTVERSION= 	1.11.6
-PORTREVISION=   1
+PORTVERSION=	1.11.6
+PORTREVISION=	1
 CATEGORIES=	games graphics linux
 # fetch manually
 MASTER_SITES=

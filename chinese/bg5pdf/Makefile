@@ -15,7 +15,7 @@ MASTER_SITES=	http://cschin.yydolphin.net/bg5pdf/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert Chinese-Big5 encoded files to PDF, using PDFlib
 
-LIB_DEPENDS=    pdf.6:${PORTSDIR}/print/pdflib
+LIB_DEPENDS=	pdf.6:${PORTSDIR}/print/pdflib
 
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

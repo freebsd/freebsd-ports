@@ -16,7 +16,7 @@ MASTER_SITES=	http://ftp.cerias.purdue.edu/pub/tools/unix/scanners/queso/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Determine the remote OS using simple tcp packets
 
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 

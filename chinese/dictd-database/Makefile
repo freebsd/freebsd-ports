@@ -15,7 +15,7 @@ DISTNAME=	dict-zh-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Chinese <-> English dictd words database
 
-BUILD_DEPENDS=  ${LOCALBASE}/bin/dictzip:${PORTSDIR}/chinese/dictd
+BUILD_DEPENDS=	${LOCALBASE}/bin/dictzip:${PORTSDIR}/chinese/dictd
 
 USE_LIBTOOL_VER=	13
 USE_GMAKE=	yes

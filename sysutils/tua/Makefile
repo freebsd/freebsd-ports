@@ -8,7 +8,7 @@
 PORTNAME=	tua
 PORTVERSION=	4.0
 CATEGORIES=	sysutils
-MASTER_SITES=   ftp://ftp.vmunix.org/pub/misc/tua/
+MASTER_SITES=	ftp://ftp.vmunix.org/pub/misc/tua/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Uucp Analyzer

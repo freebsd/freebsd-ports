@@ -22,7 +22,7 @@ pre-configure:
 	@${CP} ${FILESDIR}/f2c.h.alpha ${WRKSRC}/f2c/f2c.h
 .endif
 
-ALL_TARGET=   depend all
+ALL_TARGET=	depend all
 
 MAN1=		f2c.1
 

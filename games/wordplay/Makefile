@@ -7,7 +7,7 @@
 PORTNAME=	wordplay
 PORTVERSION=	7.22
 CATEGORIES=	games
-MASTER_SITES= 	http://hsvmovies.com/static_subpages/personal/wordplay/
+MASTER_SITES=	http://hsvmovies.com/static_subpages/personal/wordplay/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.tar.Z
 

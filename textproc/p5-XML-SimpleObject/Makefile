@@ -18,7 +18,7 @@ COMMENT=	API for accessing the structure of an XML document
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 
-WRKSRC?=        ${WRKDIR}/${PORTNAME}${PORTVERSION}
+WRKSRC?=	${WRKDIR}/${PORTNAME}${PORTVERSION}
 
 PERL_CONFIGURE=	YES
 CONFIGURE_ARGS+=	DIR='Enhanced'

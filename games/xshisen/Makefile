@@ -27,7 +27,7 @@ CONFIGURE_ARGS=	--datadir="${X11BASE}/lib/X11" \
 
 .if ${OSVERSION} >= 220000 && ${OSVERSION} < 400020 || \
     ${OSVERSION} >= 500000 && ${OSVERSION} < 500005
-CONFIGURE_ENV=  LIBS="-lxpg4"
+CONFIGURE_ENV=	LIBS="-lxpg4"
 .endif
 
 MANLANG=	"" ja

@@ -33,7 +33,7 @@ MAINTAINER=		trevor@FreeBSD.org
 COMMENT=		Packages needed for doing development in Linux mode
 
 EXTRACT_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
-RUN_DEPENDS= ${LINUXBASE}/lib/libc-2.3.2.so:${PORTSDIR}/emulators/linux_base-8
+RUN_DEPENDS=${LINUXBASE}/lib/libc-2.3.2.so:${PORTSDIR}/emulators/linux_base-8
 
 RESTRICTED=		"binaries under GNU GPL without accompanying source"
 

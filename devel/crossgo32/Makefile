@@ -38,7 +38,7 @@ GO32DIR=	${PREFIX}/share/crossgo32
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
+BROKEN=		"Does not compile"
 .endif
 
 post-extract:

@@ -26,7 +26,7 @@ FILES=		PEAR.php System.php PEAR/Autoloader.php \
 		PEAR/Dependency.php PEAR/Frontend/CLI.php PEAR/Builder.php \
 		PEAR/Installer.php PEAR/Packager.php PEAR/Registry.php \
 		PEAR/Remote.php OS/Guess.php package.dtd template.spec
- 
+
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
 .include <bsd.port.post.mk>

@@ -28,5 +28,4 @@ PLIST_SUB+=	OLD="" NEW="@comment "
 PLIST_SUB+=	NEW="" OLD="@comment "
 .endif
 
-
 .include <bsd.port.post.mk>

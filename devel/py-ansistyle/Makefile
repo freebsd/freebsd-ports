@@ -9,7 +9,7 @@
 PORTNAME=	ansistyle
 PORTVERSION=	0.2.1
 CATEGORIES=	devel python
-MASTER_SITES=   ftp://ftp.livinglogic.de/pub/livinglogic/ansistyle/
+MASTER_SITES=	ftp://ftp.livinglogic.de/pub/livinglogic/ansistyle/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	ANSIStyle-${PORTVERSION}
 

@@ -1,6 +1,6 @@
-# New ports collection makefile for: Sun fortran preprocessor fpp	
+# New ports collection makefile for: Sun fortran preprocessor fpp
 # Date created:		30 January 1996
-# Whom:		 	vazquez@iqm.unicamp.br	
+# Whom:		 	vazquez@iqm.unicamp.br
 #
 # $FreeBSD$
 #

@@ -7,4 +7,3 @@ case $2 in
 	chown bin:bin $dic
 	;;
 esac
-

@@ -39,7 +39,7 @@ MAN3=	AddErrInfo.3 Alloc.3 AllowExc.3 AppInit.3 AssocData.3 Async.3 \
 	Preserve.3 PrintDbl.3 RecEvalObj.3 RecordEval.3 RegExp.3 SaveResult.3 \
 	SetErrno.3 SetRecLmt.3 SetResult.3 SetVar.3 Sleep.3 SplitList.3 \
 	SplitPath.3 StaticPkg.3 StrMatch.3 StringObj.3 Tcl_Main.3 Thread.3 \
-	ToUpper.3 TraceVar.3 Translate.3 UpVar.3 Utf.3 WrongNumArgs.3 
+	ToUpper.3 TraceVar.3 Translate.3 UpVar.3 Utf.3 WrongNumArgs.3
 
 MANN=	Tcl.n after.n append.n array.n bgerror.n binary.n break.n case.n \
 	catch.n cd.n clock.n close.n concat.n continue.n encoding.n eof.n \
@@ -52,7 +52,7 @@ MANN=	Tcl.n after.n append.n array.n bgerror.n binary.n break.n case.n \
 	registry.n regsub.n rename.n resource.n return.n safe.n scan.n seek.n \
 	set.n socket.n source.n split.n string.n subst.n switch.n tclvars.n \
 	tell.n time.n trace.n unknown.n unset.n update.n uplevel.n upvar.n \
-	variable.n vwait.n while.n 
+	variable.n vwait.n while.n
 
 MANCOMPRESSED=	yes
 

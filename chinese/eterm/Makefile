@@ -5,12 +5,12 @@
 
 CATEGORIES=	chinese
 
-MASTERDIR=      ${.CURDIR}/../../x11/eterm
+MASTERDIR=	${.CURDIR}/../../x11/eterm
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 terminal emulator based on rxvt/xterm that supports traditional Chinese (Big5)
 
-EXTRA_PATCHES=  ${.CURDIR}/files/extra-patch-configure.in
+EXTRA_PATCHES=	${.CURDIR}/files/extra-patch-configure.in
 
 USE_AUTOCONF_VER=	213
 CONFIGURE_ARGS=	--enable-trans --enable-utmp \
@@ -21,6 +21,6 @@ CONFIGURE_ARGS=	--enable-trans --enable-utmp \
 PKGDIR=		${.CURDIR}
 PLIST=		${MASTERDIR}/pkg-plist
 
-RUN_DEPENDS=    ${X11BASE}/lib/X11/fonts/local/kc15f.pcf.gz:${PORTSDIR}/chinese/kcfonts
+RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/kc15f.pcf.gz:${PORTSDIR}/chinese/kcfonts
 
 .include "${MASTERDIR}/Makefile"

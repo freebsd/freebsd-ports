@@ -14,7 +14,7 @@ MASTER_SITES=	http://jsautret.free.fr/BINS/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to generate HTML photo albums with XML support
 
-RUN_DEPENDS= \
+RUN_DEPENDS=	\
 	${PBASE}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
 	${PBASE}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick \
 	${PBASE}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv \
@@ -90,7 +90,7 @@ WITH_I18N=yes
 ##
 # gui
 .ifdef(WITH_GUI)
-RUN_DEPENDS+= \
+RUN_DEPENDS+=	\
 	${PBASE}/${PERL_ARCH}/Gnome.pm:${PORTSDIR}/x11-toolkits/p5-Gnome \
 	${PBASE}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk \
 	${PBASE}/${PERL_ARCH}/Gtk/Gdk/ImlibImage.pm:${PORTSDIR}/x11-toolkits/p5-GdkImlib \
@@ -107,7 +107,7 @@ PLIST_SUB=	GUI="@comment "
 .endif
 # localization support
 .ifdef(WITH_I18N)
-RUN_DEPENDS+= \
+RUN_DEPENDS+=	\
 	${PBASE}/${PERL_ARCH}/Locale/gettext.pm:${PORTSDIR}/devel/p5-Locale-gettext
 .endif
 

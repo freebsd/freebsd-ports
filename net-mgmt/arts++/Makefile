@@ -32,8 +32,8 @@ MANL=		artsportagg.l artsports.l artsprotos.l artsnets.l artsdump.l \
 
 post-patch:
 	cd ${WRKSRC}/classes/src; \
-	    ${REINPLACE_CMD} -e "s,<strstream.h>,<strstream>," \
-	    ArtsBgp4AsPathSegment.cc ArtsIfIndexSelectionSet.lex \
-            ArtsObjectTypeSelectionSet.lex  ArtsTimeIntervalSelectionSet.lex
+		${REINPLACE_CMD} -e "s,<strstream.h>,<strstream>," \
+		ArtsBgp4AsPathSegment.cc ArtsIfIndexSelectionSet.lex \
+		ArtsObjectTypeSelectionSet.lex  ArtsTimeIntervalSelectionSet.lex
 
 .include <bsd.port.post.mk>

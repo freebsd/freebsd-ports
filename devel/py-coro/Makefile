@@ -30,7 +30,7 @@ CONFIGURE_ARGS=		installdir="${PREFIX}" \
 COROMOD_MAKE=		cd ${WRKSRC}/coromodule && ${MAKE_ENV} ${MAKE}
 CORO_PACKAGE=		__init__ coro corodns coro_fd coro_subproc corodevice \
 			dnsclass dnslib dnsopcode dnstype fifo
-CORO_EXAMPLES= 		backdoor coro_fd coro_subproc coro_ehttpd \
+CORO_EXAMPLES=		backdoor coro_fd coro_subproc coro_ehttpd \
 			corohttpd
 
 .include <bsd.port.pre.mk>

@@ -16,7 +16,7 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libraries to make use of glx-aware Linux apps
 
-BUILD_DEPENDS= 	/compat/linux/sbin/ldconfig:${PORTSDIR}/emulators/linux_base	
+BUILD_DEPENDS=	/compat/linux/sbin/ldconfig:${PORTSDIR}/emulators/linux_base
 
 USE_BZIP2=	yes
 NO_BUILD=	yes

@@ -266,8 +266,8 @@ pre-everything::
 post-extract:
 	${ECHO_MSG} ">>> in post-extract ..."
 # ** 3rd party driver **
-# Note: don't forget to add those devices in scripts/configure,    
-# which update unix-gcc.mak to build gs with these new devices !   
+# Note: don't forget to add those devices in scripts/configure,
+# which update unix-gcc.mak to build gs with these new devices!
 #
 # for HP8XX driver
 	${ECHO_MSG} ">>>   extracting ${HP8XX_SRCS} ..."

@@ -109,7 +109,6 @@ post-patch:
 	@cd ${WRKDIR}/gcc-2.95.3 && ${PATCH} -p0 --forward --quiet -E < ${FILESDIR}/post-patch-gcc:strerror.c
 	@cd ${WRKDIR}/gcc-3.3.1 && ${PATCH} -p0 --forward --quiet -E < ${FILESDIR}/post-patch-gcc:Makefile.in
 
-
 pre-configure:
 	(cd ${WRKDIR}/prc-tools-${PORTVERSION} && \
 	 ${LN} -sf ../binutils-2.14 binutils; \
