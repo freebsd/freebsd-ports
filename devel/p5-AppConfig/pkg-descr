@@ -1,0 +1,14 @@
+From the README file for AppConfig:
+
+    AppConfig is a Perl5 module for managing application configuration
+    information. It maintains the state of any number of variables and
+    provides methods for parsing configuration files and command line
+    arguments.
+
+    Variables values may be set via configuration files. Variables may be
+    flags (On/Off), take a single value, or take multiple values stored as a
+    a list or hash. The number of arguments a variable expects is determined
+    by its configuration when defined.
+
+-- Igor
+igor@zynaps.ru
