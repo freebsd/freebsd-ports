@@ -7,6 +7,7 @@ rt3/etc/schema.mysql
 rt3/etc/acl.mysql
 rt3/etc/acl.Pg
 rt3/etc/acl.Oracle
+rt3/share/html/Ticket/Elements/BulkLinks
 rt3/share/html/Ticket/Elements/ShowTransaction
 rt3/share/html/Ticket/Elements/EditBasics
 rt3/share/html/Ticket/Elements/EditCustomField

@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	rt3
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.2
 CATEGORIES=	www
 MASTER_SITES?=	http://www.fsck.com/pub/rt/release/ \
 		ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/
-DISTFILES?=	rt-3-0-1.tar.gz
+DISTFILES?=	rt-${PORTVERSION:S/./-/g}.tar.gz
 
 MAINTAINER=	autrijus@autrijus.org
 COMMENT?=	RT is an industrial-grade ticketing system written in Perl
@@ -56,7 +56,7 @@ BUILD_DEPENDS=	${APXS}:${APACHE_PORT} \
 		${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-WRKSRC=		${WRKDIR}/rt-3-0-1
+WRKSRC=		${WRKDIR}/rt-${PORTVERSION:S/./-/g}
 HAS_CONFIGURE=	yes
 NO_BUILD=	yes
 NO_PACKAGE=	Executes scripts in post-install phase
@@ -84,11 +84,11 @@ APXS?=		${LOCALBASE}/sbin/apxs
 DB_TYPE?=	mysql
 
 .if ${DB_TYPE} == "Pg"
-BUILD_DEPENDS+=	${LOCALBASE}/bin/psql:${PORTSDIR}/databases/postgresql7
+BUILD_DEPENDS+=	${LOCALBASE}/bin/psql:${PORTSDIR}/databases/postgresql7 \
+		${ARCH_PERL}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
 .else
 DB_TYPE=	mysql
-BUILD_DEPENDS+=	${LOCALBASE}/bin/mysql_config:${PORTSDIR}/databases/mysql40-server \
-		${ARCH_PERL}/Mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+BUILD_DEPENDS+=	${LOCALBASE}/bin/mysql_config:${PORTSDIR}/databases/mysql40-server
 .endif
 
 SITE_PERL:=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
@@ -118,18 +118,12 @@ pre-fetch:
 	@${ECHO} "      UPGRADE                         Upgrade only, don't initialize DB"
 	@${ECHO} ""
 
-post-extract:
-	-@${CHMOD} a+x ${WRKSRC}/configure
-
 pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} \
 		${PKGNAME} PRE-INSTALL
 
-do-install:
-	@cd ${WRKSRC} && ${MAKE} install
-	@${INSTALL_DATA} ${WRKSRC}/README ${RT_PATH}/README
-
 post-install:
+	@${INSTALL_DATA} ${WRKSRC}/README ${RT_PATH}/README
 .if defined(UPGRADE)
 	@echo Upgrade of RT3 complete.
 .else
