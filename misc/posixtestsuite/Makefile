@@ -43,7 +43,7 @@ THEPIPE= | tee 2>&1
 .if defined(WITH_THRLIB)
 THRLIB=${WITH_THRLIB}
 .else
-THRLIB=	-lc_r
+THRLIB=	-lpthread
 .endif
 
 pre-everything::
@@ -58,15 +58,16 @@ pre-everything::
 	@${ECHO} ""
 	@${ECHO} "  * QUIET - don't print progress messages while running"
 	@${ECHO} "  * WITH_THRLIB - choose thread library to run test against"
-	@${ECHO} "    (NB: by default 'libc_r' is used)"
+	@${ECHO} "    (NB: by default 'libpthread' is used)"
 	@${ECHO} ""
 	@${ECHO} "Examples:"
 	@${ECHO} ""
-	@${ECHO} "  make WITH_THRLIB=libkse run"
-	@${ECHO} "    - run tests against libkse"
+	@${ECHO} "  make WITH_THRLIB=libthr run"
+	@${ECHO} "    - run tests against libthr"
 	@${ECHO} ""
 	@${ECHO} "  make QUIET=YES WITH_THRLIB= regression"
-	@${ECHO} "    - be quiet, run tests against libc, compare tests results"
+	@${ECHO} "    - be quiet, run tests against libpthread (default"
+        @${ECHO} "      threading library), compare tests results"
 	@${ECHO} ""
 
 help:	pre-everything
