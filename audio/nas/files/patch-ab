@@ -9,7 +9,17 @@
  #include <getopt.h>
  #endif
  #include <sys/types.h>
-@@ -670,7 +670,11 @@
+@@ -177,7 +177,9 @@
+ # else
+ #  include <machine/soundcard.h>
+ # endif
++/* PC Speaker functions seems to be unused here
+ # include <machine/pcaudioio.h>
++*/
+ #else
+ # ifdef __NetBSD__
+ #  include <sys/ioctl.h>
+@@ -670,7 +672,11 @@
    if(sndStatOut.fd == -1)
      {
        while ((sndStatOut.fd = open(sndStatOut.device, 
