@@ -15,7 +15,7 @@ MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	glibwww.1:${PORTSDIR}/www/glibwww \
 		pspell.4:${PORTSDIR}/textproc/pspell \
-		gal.6:${PORTSDIR}/x11-toolkits/gal
+		gal.7:${PORTSDIR}/x11-toolkits/gal
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
