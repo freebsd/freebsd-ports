@@ -1,0 +1,103 @@
+--- configure.orig	Thu Jun 22 06:09:24 2000
++++ configure	Sun Feb 10 12:51:27 2002
+@@ -1288,55 +1288,6 @@
+ rm -fr conftest*
+ fi
+ 
+-
+-echo $ac_n "checking for dlopen in -ldl""... $ac_c" 1>&6
+-echo "configure:1294: checking for dlopen in -ldl" >&5
+-ac_lib_var=`echo dl'_'dlopen | sed 'y%./+-%__p_%'`
+-if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  ac_save_LIBS="$LIBS"
+-LIBS="-ldl  $LIBS"
+-cat > conftest.$ac_ext <<EOF
+-#line 1302 "configure"
+-#include "confdefs.h"
+-/* Override any gcc2 internal prototype to avoid an error.  */
+-/* We use char because int might match the return type of a gcc2
+-    builtin and then its argument prototype would still apply.  */
+-char dlopen();
+-
+-int main() {
+-dlopen()
+-; return 0; }
+-EOF
+-if { (eval echo configure:1313: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+-  rm -rf conftest*
+-  eval "ac_cv_lib_$ac_lib_var=yes"
+-else
+-  echo "configure: failed program was:" >&5
+-  cat conftest.$ac_ext >&5
+-  rm -rf conftest*
+-  eval "ac_cv_lib_$ac_lib_var=no"
+-fi
+-rm -f conftest*
+-LIBS="$ac_save_LIBS"
+-
+-fi
+-if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+-  echo "$ac_t""yes" 1>&6
+-    ac_tr_lib=HAVE_LIB`echo dl | sed -e 's/[^a-zA-Z0-9_]/_/g' \
+-    -e 'y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/'`
+-  cat >> confdefs.h <<EOF
+-#define $ac_tr_lib 1
+-EOF
+-
+-  LIBS="-ldl $LIBS"
+-
+-else
+-  echo "$ac_t""no" 1>&6
+-{ echo "configure: error: needs libdl" 1>&2; exit 1; }
+-fi
+-
+ echo $ac_n "checking for atan in -lm""... $ac_c" 1>&6
+ echo "configure:1342: checking for atan in -lm" >&5
+ ac_lib_var=`echo m'_'atan | sed 'y%./+-%__p_%'`
+@@ -1385,14 +1336,14 @@
+ { echo "configure: error: needs libm" 1>&2; exit 1; }
+ fi
+ 
+-echo $ac_n "checking for pthread_create in -lpthread""... $ac_c" 1>&6
+-echo "configure:1390: checking for pthread_create in -lpthread" >&5
++echo $ac_n "checking for pthread_create in -pthread""... $ac_c" 1>&6
++echo "configure:1390: checking for pthread_create in -pthread" >&5
+ ac_lib_var=`echo pthread'_'pthread_create | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 1398 "configure"
+ #include "confdefs.h"
+@@ -1426,7 +1377,7 @@
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-lpthread $LIBS"
++  LIBS="-pthread -L/usr/local/lib -lgetline $LIBS"
+ 
+ else
+   echo "$ac_t""no" 1>&6
+@@ -2485,7 +2436,7 @@
+ ac_given_srcdir=$srcdir
+ ac_given_INSTALL="$INSTALL"
+ 
+-trap 'rm -fr `echo "Makefile tst/Makefile doc/Makefile sgtk/Makefile config.h" | sed "s/:[^ ]*//g"` conftest*; exit 1' 1 2 15
++trap 'rm -fr `echo "Makefile tst/Makefile doc/Makefile config.h" | sed "s/:[^ ]*//g"` conftest*; exit 1' 1 2 15
+ EOF
+ cat >> $CONFIG_STATUS <<EOF
+ 
+@@ -2585,7 +2536,7 @@
+ 
+ cat >> $CONFIG_STATUS <<EOF
+ 
+-CONFIG_FILES=\${CONFIG_FILES-"Makefile tst/Makefile doc/Makefile sgtk/Makefile"}
++CONFIG_FILES=\${CONFIG_FILES-"Makefile tst/Makefile doc/Makefile"}
+ EOF
+ cat >> $CONFIG_STATUS <<\EOF
+ for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then

@@ -1,0 +1,12 @@
+QScheme is a fast and small implementation of Scheme written in C. QScheme is
+easy to interface and should be easy to use as an extension language.
+
+QScheme currently supports foreign function call and dynamic library. A perl
+like regular expression module is provided as example.
+
+QScheme is really fast: benchmarks (still a little old) shows that it is
+generaly between 2 and 70 times faster than other scheme interpreters.
+
+Documentation and GTK support has been disabled in this port.
+
+WWW: http://www.sof.ch/dan/qscheme/index-e.html

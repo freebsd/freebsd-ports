@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun Feb 10 12:52:32 2002
++++ Makefile.in	Sun Feb 10 12:52:37 2002
+@@ -111,7 +111,7 @@
+ EXTRA_DIST = mkoptable mkwhatis $(modsrc) $(scmsrc) CHANGES LICENCE_EXCEPTION
+ 
+ # other directories
+-SUBDIRS = . doc sgtk
++SUBDIRS = . doc
+ 
+ noinst_LIBRARIES = libqs.a
+ 
