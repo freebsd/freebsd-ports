@@ -28,17 +28,14 @@ GIF=		pixel.gif gx.gif gni.gif gn.gif g.gif x.ico
 do-install:
 	${MKDIR} ${GLOCATE}
 	@${ECHO_MSG} '#!/bin/sh' > ${GLOCATE}/${GNAME}
-	@${ECHO_MSG} '${JAVA} -cp ${GLOCATE}/geonext.jar geonext/Geonext&' >>${GLOCATE}/${GNAME}
+	@${ECHO_MSG} '${JAVA} -cp ${GLOCATE}/geonext.jar geonext/Geonext&'\
+	>>${GLOCATE}/${GNAME}
 	${CHMOD} a+x ${GLOCATE}/${GNAME}
-	${LN} ${GLOCATE}/${GNAME} ${GLOCATE}/geonext
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DATA} ${GLOCATE}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${GIF} ${GLOCATE}
 	${INSTALL_SCRIPT} ${GLOCATE}/${GNAME} ${PREFIX}/bin
-	@${ECHO_MSG} "------------------------------------------------------"
-	@${ECHO_MSG} "Application:      ${GLOCATE}/geonext or geonext-fr"
-	@${ECHO_MSG} "Browser-Applet:   ${GLOCATE}/geonext.html"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} " WWW: http://geonext.uni-bayreuth.de/index?LANG=fr"
-	@${ECHO_MSG} "------------------------------------------------------"
+
+post-install:
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
