@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xchat2
-PORTVERSION=	2.0.5
-PORTREVISION=	1
+PORTVERSION=	2.0.6
 CATEGORIES=	irc gnome ipv6
 MASTER_SITES=	http://xchat.org/files/source/2.0/ \
 		http://xchat.linuxpower.org/files/source/2.0/
