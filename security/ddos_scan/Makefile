@@ -13,7 +13,7 @@ MASTER_SITES=	http://staff.washington.edu/dittrich/misc/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 ALL_TARGET=	dds
 

@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.secnet.com/pub/tools/nat10/  \
 		ftp://ftp.auscert.org.au/pub/coast/mirrors/ftp.secnet.com/tools/nat10/
 DISTNAME=	nat10
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 MAN1=		nat.1 nbaudit.1
