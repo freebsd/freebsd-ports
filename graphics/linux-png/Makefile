@@ -6,23 +6,22 @@
 #
 
 PORTNAME=	png
-PORTVERSION=	1.2.2
-PORTREVISION=	0
+PORTVERSION=	1.2.7
 CATEGORIES=	graphics linux
-MASTER_SITES=	${RPM_MIRRORS:S/__DIR__/${UPDDIR}/g}
-
-DEPRECATED=	http://vuxml.freebsd.org/f9e3e60b-e650-11d8-9b0a-000347a4fa7d.html (security)
-EXPIRATION_DATE=November 21, 2004
+MASTER_SITES=	http://mirrors.xmission.com/fedora/core/3/i386/os/Fedora/RPMS/ \
+		http://fedora.cat.pdx.edu/linux/core/3/i386/os/Fedora/RPMS/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RPM of the PNG lib
 
-CONFLICTS=	linux-png-1.0.*
-
+DIST_SUBDIR=	rpm/i386/fc3
 # no alpha rpm is available
 ONLY_FOR_ARCHS=	i386
+RPM_SET=	libpng-${PORTVERSION}-1.i386.rpm
 
-BASEVERSION=	8.0
-RPM_SET=	libpng-${PORTVERSION}-8.${MACHINE_ARCH}.rpm
+PLIST_FILES=	usr/lib/libpng12.so.0.1.2.7 \
+		usr/share/man/man5/png.5.gz
+DOCSDIR=	${PREFIX}/usr/share/doc/libpng-1.2.27
+PORTDOCS=	CHANGES LICENSE README TODO example.c libpng.txt
 
 .include "../../x11-toolkits/linux-gtk/Makefile"
