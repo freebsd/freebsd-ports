@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	vile
-PORTVERSION=	9.4
+PORTVERSION=	9.4a
 CATEGORIES=	editors
 MASTER_SITES=   ftp://ftp.phred.org/pub/vile/ \
 		ftp://dickey.his.com/vile/
 DISTNAME=	vile-9.4
 EXTRACT_SUFX=	.tgz
+
+PATCH_SITES=    ${MASTER_SITES:S,vile/,vile/patches/,g}
+PATCHFILES=	vile-9.4a.patch.gz
 
 MAINTAINER=	gj@FreeBSD.org
 COMMENT=	VI Like Emacs.  a vi "workalike", with many additional features
