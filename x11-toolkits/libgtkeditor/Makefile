@@ -27,6 +27,7 @@ INSTALLS_SHLIB=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_TARGET=	${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 pre-configure:
 .for file in install-sh config.sub mkinstalldirs
