@@ -24,6 +24,7 @@
     SUBDIR += gfe
     SUBDIR += intlfonts
     SUBDIR += jmk-x11-fonts
+    SUBDIR += kacst_fonts
     SUBDIR += lfpfonts-fix
     SUBDIR += lfpfonts-var
     SUBDIR += mkbold
