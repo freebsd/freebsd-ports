@@ -8,11 +8,11 @@
 PORTNAME=	bbdate
 PORTVERSION= 	0.2.1
 CATEGORIES=	x11-clocks
-MASTER_SITES=	http://bbtools.windsofstorm.net/sources/
+MASTER_SITES=	http://bbtools.thelinuxcommunity.org/sources/
 
 MAINTAINER=	patseal@hyperhost.net
 
+USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_XLIB=	yes
 
 .include <bsd.port.mk>
