@@ -3,7 +3,7 @@
 # Date created:		23 August 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.43 1996/06/10 01:13:44 adam Exp $
+# $Id: Makefile,v 1.44 1996/06/16 11:50:54 adam Exp $
 #
 
 DISTNAME=	dgd-1.0.56
@@ -58,8 +58,6 @@ package:
 #	@${MAKE} ${.MAKEFLAGS} 'PKG_CMD= cd ${WRKDIR}; ${PKG_CMD}' \
 	@${MAKE} ${.MAKEFLAGS} 'PKG_ARGS= ${PKG_ARGS} -f ${WRKDIR}/PLIST' \
 	    NO_INSTALL= DO_PACKAGE= package
-.else
-post-package:
 	@rm ${INSTALL_COOKIE}
 .endif
 
