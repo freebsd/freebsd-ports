@@ -1,0 +1,20 @@
+--- src/main.h.orig	Fri Apr 21 02:44:30 2000
++++ src/main.h	Wed May  3 21:00:00 2000
+@@ -34,11 +34,15 @@
+ #define MARK_VERSION		2
+ 
+ #define DEFAULT_SIGNATURE	".signature"
+-#define DEFAULT_INC_PATH	"/usr/bin/mh/inc"
+-#define DEFAULT_INC_PROGRAM	"inc"
++#define DEFAULT_INC_PATH	""
++#define DEFAULT_INC_PROGRAM	""
+ /* #define DEFAULT_INC_PATH	"/usr/bin/imget" */
+ /* #define DEFAULT_INC_PROGRAM	"imget" */
++#if defined(__FreeBSD__)
++#define DEFAULT_SPOOL_PATH	"/var/mail"
++#else
+ #define DEFAULT_SPOOL_PATH	"/var/spool/mail"
++#endif
+ 
+ #define BUFFSIZE			8192
+ #define MAXPATHLEN			4095

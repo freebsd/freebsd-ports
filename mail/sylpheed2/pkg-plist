@@ -1,0 +1,12 @@
+bin/sylpheed
+share/doc/sylpheed/ABOUT-NLS
+share/doc/sylpheed/COPYING
+share/doc/sylpheed/ChangeLog
+share/doc/sylpheed/ChangeLog.jp
+share/doc/sylpheed/INSTALL
+share/doc/sylpheed/INSTALL.jp
+share/doc/sylpheed/README
+share/doc/sylpheed/README.jp
+share/doc/sylpheed/TODO.jp
+share/locale/ja/LC_MESSAGES/sylpheed.mo
+@dirrm share/doc/sylpheed
