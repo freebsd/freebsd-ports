@@ -1,7 +1,3 @@
-=======================================================================
-*** [Extract from] Ecasound - README                                ***
-=======================================================================
-
 Ecasound is a software package designed for multitrack audio
 processing. It can be used for simple tasks like audio playback, 
 recording and format conversions, as well as for multitrack effect 
@@ -13,7 +9,6 @@ and MIDI-CCs. As most functionality is located in shared libraries,
 creating alternative user-interfaces is easy. A versatile console mode
 interface is included in the package.
 
-Ecasound home site
 WWW: http://www.eca.cx/ecasound
 
-- The Anarcat <anarcat@tao.ca>
+- The Anarcat <anarcat@anarcat.dyndns.org>
