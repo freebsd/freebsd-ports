@@ -7,7 +7,7 @@
 # Based on amavisd ports makefile.
 
 PORTNAME=	amavisd-new
-PORTVERSION=	20030616.p5
+PORTVERSION=	20030616.p6
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-p/}
@@ -35,6 +35,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-H
 		${LOCALBASE}/bin/zoo:${PORTSDIR}/archivers/zoo
 
 USE_PERL5_RUN=	yes
+USE_RC_SUBR=	yes
 
 PKGINSTALL=	${WRKDIR}/INSTALL
 PKGDEINSTALL=	${WRKDIR}/DEINSTALL
@@ -63,23 +64,20 @@ CONFIGURE_WRKSRC=	${WRKSRC}/helper-progs
 BUILD_WRKSRC=	${WRKSRC}/helper-progs
 .endif
 
+SED_SCRIPT=	-e 's,%%AMAVISUSER%%,${AMAVISUSER},g' \
+		-e 's,%%AMAVISGROUP%%,${AMAVISGROUP},g' \
+		-e 's,%%AMAVISDIR%%,${AMAVISDIR},g' \
+		-e 's,%%AMAVISQUARANTINE%%,${AMAVISQUARANTINE},g' \
+		-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
+		-e 's,%%PREFIX%%,${PREFIX},g' \
+		-e 's,%%RC_SUBR%%,${RC_SUBR},g'
+
 pre-build:
-	for file in amavisd.sh INSTALL DEINSTALL MESSAGE; do \
-		${SED} -e 's,%%AMAVISUSER%%,${AMAVISUSER},g' \
-		       -e 's,%%AMAVISGROUP%%,${AMAVISGROUP},g' \
-		       -e 's,%%AMAVISDIR%%,${AMAVISDIR},g' \
-		       -e 's,%%AMAVISQUARANTINE%%,${AMAVISQUARANTINE},g' \
-		       -e 's,%%DOCSDIR%%,${DOCSDIR},g' \
-		       -e 's,%%PREFIX%%,${PREFIX},g' \
-	               < ${FILESDIR}/$${file}.tmpl > ${WRKDIR}/$${file}; \
+	for file in amavisd.sh amavis-milter.sh INSTALL DEINSTALL MESSAGE; do \
+		${SED} ${SED_SCRIPT} < ${FILESDIR}/$${file}.tmpl > ${WRKDIR}/$${file}; \
 	done
 	for file in amavisd.conf amavisd; do \
-		${SED} -e 's,%%AMAVISUSER%%,${AMAVISUSER},g' \
-		       -e 's,%%AMAVISGROUP%%,${AMAVISGROUP},g' \
-		       -e 's,%%AMAVISDIR%%,${AMAVISDIR},g' \
-		       -e 's,%%AMAVISQUARANTINE%%,${AMAVISQUARANTINE},g' \
-		       -e 's,%%PREFIX%%,${PREFIX},g' \
-		       < ${WRKSRC}/$${file} > ${WRKDIR}/$${file}; \
+		${SED} ${SED_SCRIPT} < ${WRKSRC}/$${file} > ${WRKDIR}/$${file}; \
 	done
 
 pre-install:
@@ -89,6 +87,7 @@ do-install:
 .if !defined(AMAVIS_NOMILTER)
 	${INSTALL_PROGRAM} ${WRKSRC}/helper-progs/amavis ${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/helper-progs/amavis-milter ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKDIR}/amavis-milter.sh ${PREFIX}/etc/rc.d
 .endif
 	${INSTALL_SCRIPT} ${WRKDIR}/amavisd ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKDIR}/amavisd.conf ${PREFIX}/etc/amavisd.conf-dist

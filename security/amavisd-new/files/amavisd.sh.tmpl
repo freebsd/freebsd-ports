@@ -1,36 +1,42 @@
 #!/bin/sh
+#
+# $FreeBSD: /tmp/pcvs/ports/security/amavisd-new/files/Attic/amavisd.sh.tmpl,v 1.6 2003-11-20 11:00:19 jeh Exp $
+#
 
-if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/$(basename $0)\$"); then
-	echo "$0: Cannot determine the PREFIX" >&2
-	exit 1
-fi
+# PROVIDE: amavisd
+# REQUIRE: LOGIN
+# BEFORE: mail
+# KEYWORD: FreeBSD shutdown
 
-DIR=%%AMAVISDIR%%
-PIDFILE=$DIR/amavisd.pid
-SOCKFILES=$DIR/amavis*.sock
-MILTERFLAG=$DIR/use.milter
+#
+# Add the following lines to /etc/rc.conf to enable amavisd:
+#
+#amavisd_enable="YES"
+#
 
-case "$1" in
-start)
-	if [ -e ${PREFIX}/etc/amavisd.conf ]; then
-		rm -rf ${SOCKFILES}
-		if [ -e $MILTERFLAG ]; then
-			su %%AMAVISUSER%% -c "${PREFIX}/sbin/amavis-milter -D -p $DIR/amavis-milter.sock"
-		fi
-		su %%AMAVISUSER%% -c "${PREFIX}/sbin/amavisd > /dev/null 2>&1" && echo -n ' amavisd'
-	fi
-	;;
-stop)
-	if [ -e $MILTERFLAG ]; then
-		killall -u %%AMAVISUSER%% amavis-milter >/dev/null 2>&1
-	fi
-	if [ -e $PIDFILE ]; then
-		su %%AMAVISUSER%% -c "kill `cat $PIDFILE`" && echo -n ' amavisd'
-	fi
-	;;
-*)
-	echo "Usage: `basename $0` {start|stop}" >&2
-	;;
-esac
+. %%RC_SUBR%%
 
-exit 0
+name=amavisd
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/amavisd > /dev/null 2>&1
+
+amavisd_user=%%AMAVISUSER%%
+
+pidfile=%%AMAVISDIR%%/amavisd.pid
+required_files=%%PREFIX%%/etc/amavisd.conf
+
+stop_postcmd=stop_postcmd
+
+stop_postcmd()
+{
+  rm -f $pidfile
+}
+
+# set defaults
+
+amavisd_enable=${amavisd_enable:-"NO"}
+amavisd_flags=${amavisd_flags:-""}
+
+load_rc_config $name
+run_rc_command "$1"

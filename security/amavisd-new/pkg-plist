@@ -14,11 +14,13 @@
 %%PORTDOCS%%%%DOCSDIR%%/README.performance
 %%PORTDOCS%%%%DOCSDIR%%/README.policy-on-notifications
 %%PORTDOCS%%%%DOCSDIR%%/README.postfix
+%%PORTDOCS%%%%DOCSDIR%%/README.protocol
 %%PORTDOCS%%%%DOCSDIR%%/README.sendmail
 %%PORTDOCS%%%%DOCSDIR%%/README.sendmail-dual
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 etc/amavisd.conf-dist
+%%AMAVIS_NOMILTER%%etc/rc.d/amavis-milter.sh
 etc/rc.d/amavisd.sh
 %%AMAVIS_NOMILTER%%sbin/amavis
 %%AMAVIS_NOMILTER%%sbin/amavis-milter
