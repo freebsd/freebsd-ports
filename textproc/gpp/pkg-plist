@@ -1,3 +1,1 @@
 bin/gpp
-%%PORTDOCS%%share/doc/gpp/gpp.html
-%%PORTDOCS%%@dirrm share/doc/gpp
