@@ -1,0 +1,17 @@
+--- bin/dbxmladmin.orig	Mon Sep 24 21:50:39 2001
++++ bin/dbxmladmin	Sun Oct 21 22:12:44 2001
+@@ -1,8 +1,12 @@
+ #!/bin/sh
+ 
+-if test -z $DBXML_HOME; then
+-   echo "\$DBXML_HOME Is Not Set"
++DBXML_HOME=%%PREFIX%%/share/java/dbXML
++
++if test -z $JAVA_HOME; then
++   echo "Warning: JAVA_HOME environment variable is not set."
+    exit
++else
++   PATH=$JAVA_HOME/bin:$PATH
+ fi
+ 
+ CMD_HOME=`dirname $0`
