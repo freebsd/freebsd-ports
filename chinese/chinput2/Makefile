@@ -17,6 +17,8 @@ MAINTAINER=	phj@cn.FreeBSD.org
 BUILD_DEPENDS=	mysql:${PORTSDIR}/databases/mysql322-client
 RUN_DEPENDS=	mysql:${PORTSDIR}/databases/mysql322-client
 
+USE_XLIB=	yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-extract:
