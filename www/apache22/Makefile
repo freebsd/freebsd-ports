@@ -7,7 +7,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.0.39
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.apache.org/dist/httpd/ \
 		http://apache.mirrorcentral.com/dist/httpd/ \
@@ -23,6 +23,8 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER?=	perky@fallin.lv
 
+LIB_DEPENDS=	expat.2:${PORTSDIR}/textproc/expat2
+
 LATEST_LINK=	apache2
 
 WITH_MPM?=	prefork # or worker, perchild
@@ -37,6 +39,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--enable-so \
 		--with-mpm=${WITH_MPM} \
 		--with-port=${HTTP_PORT} \
+		--with-expat=${LOCALBASE} \
 		--libdir=${PREFIX_RELDEST}/lib/apache2 \
 		--includedir=${PREFIX_RELDEST}/include/apache2
 CONFIGURE_ENV=	CC="${CC}" CPPFLAGS="${CPPFLAGS}" CFLAGS="${CFLAGS}" \
@@ -48,15 +51,6 @@ MAKE_ENV+=	DESTDIR=${DESTDIR} EXPR_COMPAT=yes
 
 .if defined(NOPORTDOCS)
 MAKE_ENV+=	-DNOPORTDOCS
-.endif
-
-.if !defined(WITHOUT_BUNDLED_EXPAT)
-EXPAT_PATHS=	xml/expat-cvs xml/expat $$srcdir/xml/expat
-PLIST_SUB+=	EXPAT=""
-.else
-LIB_DEPENDS=	expat.2:${PORTSDIR}/textproc/expat2
-EXPAT_PATHS=	${LOCALBASE} ${PREFIX} ${LOCALBASE:S,^${DESTDIR},,}
-PLIST_SUB+=	EXPAT="@comment "
 .endif
 
 .if defined(WITH_SUEXEC)
@@ -132,8 +126,6 @@ post-patch:
 	  ${REINPLACE_CMD} -e 's,apache_pb,icons/freebsd.gif"\
 		ALT="[Powered by FreeBSD]"><IMG SRC="apache_pb2_ani,g' $$f \
 	 ); done
-	@${REINPLACE_CMD} -e 's,/usr .*/xml/expat,${EXPAT_PATHS},g' \
-		${WRKSRC}/srclib/apr-util/configure
 	@${FIND} ${WRKSRC} \( -name "*.orig" -or -name "*.bak" \) -exec ${RM} -f {} \;
 	@${SED} ${RC_SUB} ${FILESDIR}/apache.sh >${WRKDIR}/apache2.sh
 	@${SED} ${RC_SUB} ${FILESDIR}/config.layout >>${WRKSRC}/config.layout
