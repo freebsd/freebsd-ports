@@ -7,7 +7,7 @@
 
 PORTNAME=	eclipse
 PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_ECLIPSE}
 MASTER_SITE_SUBDIR=	R-2.1.1-200306271545
@@ -38,8 +38,23 @@ ECLIPSE_BUILD=	2135
 ECLIPSE_OS=	freebsd
 ECLIPSE_WS=	gtk
 ECLIPSE_ARCH=	x86
+ 
+# Here we must work around a bug that pops up when building from sources. A
+# certain "run" method must be made visible in the whole class hierarchy by
+# changing making it public, as documented here:
+#
+#   https://bugs.eclipse.org/bugs/show_bug.cgi?id=37846
+#
+# This access change has roots in patch-SelectionDispatchAction.java.
 
 post-patch:
 		@${FIND} ${WRKSRC} -name build.xml | ${XARGS} ${REINPLACE_CMD} 's@verbose="true"@verbose="false"@g'
+
+		# "refactoring" begins here
+		@${LN} -sf "ui refactoring" ${WRKSRC}/plugins/org.eclipse.jdt.ui/ui_refactoring
+		@for FILE in $$(${FIND} -L ${WRKSRC} -print0 | ${XARGS} -0 ${GREP} -l -E "extends (SelectionDispatchAction|ReorgDestinationAction)" | grep -v " "); do \
+			${REINPLACE_CMD} -e "s@protected void run(@public void run(@" \
+			-e "s@protected final void run(@public final void run(@" $$FILE; \
+		done
 
 .include <bsd.port.mk>
