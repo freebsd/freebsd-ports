@@ -5589,6 +5589,7 @@ mldonkey-core	ports/net/mldonkey-core
 mldonkey-core-devel	ports/net/mldonkey-core-devel
 mldonkey-devel	ports/net/mldonkey-devel
 mldonkey-gui	ports/net/mldonkey-gui
+mldonkey-gui-devel	ports/net/mldonkey-gui-devel
 mldonkey-perlreactor	ports/net/mldonkey-perlreactor
 mldonkey-serverspy	ports/net/mldonkey-serverspy
 mldonkey-urlslave	ports/net/mldonkey-urlslave
