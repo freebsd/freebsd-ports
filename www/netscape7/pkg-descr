@@ -1,5 +1,12 @@
-This is the Linux version of Netscape Communicator. You might wish
-to use this version if you wish to run Linux plugins, for example.
+This is the linux version of the netscape web-surfboard. Linux version
+on FreeBSD is necessary if you want binary downloadable plugins, made
+available for linux, to work.
 
-Please read the file "/usr/local/lib/netscape/LICENSE" for
-the licensing terms.
+Please read the file "/usr/local/lib/netscape/LICENSE" for the
+licensing terms.
+
+Note: If Java applets fail to display.  Type this as root:
+               cd /usr/X11R6/lib/X11/fonts/misc
+               /usr/X11R6/bin/mkfontdir
+               chmod 444 fonts.dir
+      And then exit and restart your X server.
