@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fluxbg
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,16 +16,15 @@ COMMENT=	Background changer for fluxbox/blackbox
 
 LIB_DEPENDS=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtk--2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+.if !exists(${X11BASE}/bin/bsetbg) &&  \
+    !exists(${X11BASE}/bin/fbsetbg) && \
+    !exists(${X11BASE}/bin/fbsetbg-devel)
+RUN_DEPENDS=	fbsetbg:${PORTSDIR}/x11-wm/fluxbox
+.endif
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gnomehack gnometarget
-
-post-patch:
-	@${REINPLACE_CMD} -e "s|%%X11BASE%%|${X11BASE}|g" \
-		${WRKSRC}/src/fluxbg_conf.cc
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

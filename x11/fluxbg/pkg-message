@@ -1,8 +1,5 @@
 
 
-Before you can use fluxbg, you must first run fluxbg_conf.
-
-Before you can use fluxbg_conf, you must first install boxtools,
-fluxbox, or fluxbox-devel.
+You must run fluxbg_conf before you can use fluxbg!
 
 
