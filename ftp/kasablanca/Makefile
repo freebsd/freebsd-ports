@@ -24,11 +24,10 @@ post-extract:
 	@${TOUCH} -t 200404130000 ${WRKSRC}/subdirs
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -e 's|\(-lssl\)|\1 -lcrypto|' \
+	@${REINPLACE_CMD} -e 's|-O2||g; s|-lpthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|\(-lssl\)|\1 -lcrypto ${PTHREAD_LIBS}|' \
 		${WRKSRC}/src/Makefile.in \
 		${WRKSRC}/src/kbftp/Makefile.in
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/x11/kde3/Makefile.kde"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

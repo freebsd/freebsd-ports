@@ -24,8 +24,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 pre-configure:
-	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-O2||g; s|-lpthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/configure
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/x11/kde3/Makefile.kde"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
