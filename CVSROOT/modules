@@ -1529,6 +1529,7 @@ flvw		ports/x11-toolkits/flvw
 flwm		ports/x11-wm/flwm
 fly		ports/graphics/fly
 flying		ports/games/flying
+flyway		ports/misc/flyway
 fmio		ports/audio/fmio
 fmsx		ports/emulators/fmsx
 fmt		src/usr.bin/fmt
