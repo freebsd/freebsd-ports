@@ -1,0 +1,15 @@
+bin/audio_player
+lib/q/audio.a
+lib/q/audio.so
+lib/q/sndfile.a
+lib/q/sndfile.so
+lib/q/draw_wave.a
+lib/q/draw_wave.so
+%%DATADIR%%/etc/README-Audio
+%%DATADIR%%/lib/audio.q
+%%DATADIR%%/lib/sndfile.q
+%%DATADIR%%/lib/draw_wave.q
+%%DATADIR%%/lib/audio_player.q
+%%DATADIR%%/lib/audio_player.tcl
+%%EXAMPLESDIR%%/audio_examp.q
+@dirrm %%EXAMPLESDIR%%

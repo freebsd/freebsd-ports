@@ -1,0 +1,17 @@
+This package contains two modules to write digital audio applications in the Q
+programming language:
+
+- The audio module implements a (near-)realtime audio interface on top of Phil
+  Burk's PortAudio library V1.8 (http://www.portaudio.com/).
+
+- The sndfile module allows you to access sound files in various formats using
+  Erik de Castro Lopo's libsndfile library V1.0 or later
+  (http://www.zip.com.au/~erikd/libsndfile/).
+
+Also included is a GGI-based wave renderer (draw_wave.q) and a simple
+graphical audio player application (audio_player.q).
+
+WWW: http://q-lang.sourceforge.net/
+
+- Albert Graef
+ag@muwiinfa.geschichte.uni-mainz.de

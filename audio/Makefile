@@ -262,6 +262,7 @@
     SUBDIR += py-vorbis
     SUBDIR += py-xmms
     SUBDIR += pysol-sound-server
+    SUBDIR += q-audio
     SUBDIR += quelcom
     SUBDIR += radio
     SUBDIR += raproxy
