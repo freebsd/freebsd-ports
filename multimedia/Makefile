@@ -50,6 +50,7 @@
     SUBDIR += kino
     SUBDIR += kino-dvtitler
     SUBDIR += kmplayer
+    SUBDIR += konverter
     SUBDIR += kplayer
     SUBDIR += ksubeditor
     SUBDIR += ldvd9to5
