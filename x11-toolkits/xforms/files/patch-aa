@@ -1,0 +1,20 @@
+--- mkconfig.h.orig	Sun Feb  4 18:49:19 2001
++++ mkconfig.h	Sun Feb  4 18:51:40 2001
+@@ -10,7 +10,7 @@
+ 
+ # where the library should be installed
+ 
+-LIB_TOPDIR=/usr
++LIB_TOPDIR=${PREFIX}
+ 
+ LIB_DIR=$(LIB_TOPDIR)/lib
+ LIBMODE=644
+@@ -18,7 +18,7 @@
+ HEADER_DIR=$(LIB_TOPDIR)/include
+ HEADERMODE=644
+ 
+-BIN_DIR=/usr/local/bin
++BIN_DIR=${PREFIX}/bin
+ BINMODE=711
+ 
+ MAN5_DIR=$(LIB_TOPDIR)/man/man5
