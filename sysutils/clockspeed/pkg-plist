@@ -1,0 +1,13 @@
+bin/clockadd
+bin/clockspeed
+bin/clockview
+bin/sntpclock
+bin/taiclock
+bin/taiclockd
+%%PORTDOCS:%%share/doc/clockspeed/INSTALL
+%%PORTDOCS:%%@dirrm share/doc/clockspeed
+@mode 0755
+@exec mkdir %D/etc/clockspeed
+@unexec rm %D/etc/clockspeed/atto.tmp 2>/dev/null || true
+@unexec rm %D/etc/clockspeed/atto 2>/dev/null || true
+@unexec rmdir %D/etc/clockspeed 2>/dev/null || true
