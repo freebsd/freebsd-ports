@@ -1,0 +1,17 @@
+From the tcpcat README:
+
+Tcpcat is a simple program that is like `cat' but it works over tcp streams
+to allow you to cat from one host to another.
+
+The host common way to use this program whould be something like this:
+on host a: $ tcpcat -l 93255 | gzip -dc | tar xvf -
+on host b: $ tcpcat -h hosta:93255  file.tar.gz
+
+Another good use for this program is debugging network stuff. When debugging
+a newtork client or server you can pipe the output of tcpcat to a hex dump
+(I recomend xxd which comes with vim). Also it can act as a crude telnet server
+when invoded with --listen, --input, and --output, this mode is quite useful
+for network program debugging as well.
+
+Author:		Angus Mackay <amackay@gusnet.cx>
+WWW:		http://www.gusnet.cx/proj/tcpcat/

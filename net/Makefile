@@ -245,6 +245,7 @@
     SUBDIR += sup
     SUBDIR += svnc
     SUBDIR += tac_plus4
+    SUBDIR += tcpcat
     SUBDIR += tcpflow
     SUBDIR += tcpillust
     SUBDIR += tcpmssd
