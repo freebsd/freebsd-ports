@@ -596,7 +596,7 @@
     SUBDIR += rude
     SUBDIR += rwhois
     SUBDIR += samba
-    SUBDIR += samba-devel
+    SUBDIR += samba3
     SUBDIR += samba-libsmbclient
     SUBDIR += sambasentinel
     SUBDIR += samplicator
