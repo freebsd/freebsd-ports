@@ -2035,6 +2035,7 @@ frabs		ports/games/frabs
 fractorama	ports/graphics/fractorama
 fragroute	ports/security/fragroute
 fragrouter	ports/security/fragrouter
+freebase	ports/devel/freebase
 freebirth	ports/audio/freebirth
 freebsd-games	ports/games/freebsd-games
 freebsd-update	ports/security/freebsd-update
@@ -2144,6 +2145,7 @@ fwbuilder	ports/security/fwbuilder
 fwlogwatch	ports/security/fwlogwatch
 fwtk		ports/security/fwtk
 fxhtml		ports/www/fxhtml
+fxscintilla	ports/x11-toolkits/fxscintilla
 fxt		ports/math/fxt
 fxtv		ports/multimedia/fxtv
 g-gcl		ports/www/g-gcl
