@@ -215,6 +215,7 @@
     SUBDIR += gnustep
     SUBDIR += gnustep-devel
     SUBDIR += gnustep-make
+    SUBDIR += gob2
     SUBDIR += gperf
     SUBDIR += gputils
     SUBDIR += gtgt
