@@ -3,13 +3,13 @@
 # Date created:			11 Feb. 1995
 # Whom:				torstenb
 #
-# $Id: Makefile,v 1.9 1995/05/04 21:27:52 torstenb Exp $
+# $Id: Makefile,v 1.10 1995/05/06 12:31:06 torstenb Exp $
 #
 
 DISTNAME=       zsh-2.6-beta8
 PKGNAME=	zsh-2.6b8
 CATEGORIES+=	shells
-MASTER_SITES=   ftp://ftp.math.gatech.edu/pub/zsh/
+MASTER_SITES=   ftp://ftp.math.gatech.edu/pub/zsh/src/
 
 MAINTAINER=	torstenb@FreeBSD.ORG
 
