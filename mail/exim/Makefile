@@ -159,7 +159,7 @@ do-configure:
 	${SED} ${SEDLIST} < ${WRKSRC}/src/EDITME > ${WRKSRC}/Local/Makefile
 	${SED} ${SEDLIST} < ${FILESDIR}/configure.default \
 	    > ${WRKSRC}/src/configure.default
-	${CP} ${FILESDIR}/eximon.conf ${WRKSRC}/Local
+	${CP} ${WRKSRC}/exim_monitor/EDITME ${WRKSRC}/Local/eximon.conf
 	cd ${WRKSRC}/doc && \
 	for i in ../../exim-texinfo-3.20/doc/* ; do \
 		${LN} -sf $$i ; \
