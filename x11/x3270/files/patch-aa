@@ -1,0 +1,11 @@
+--- ./Imakefile.org	Thu Feb 13 14:04:51 1997
++++ ./Imakefile	Mon Nov 16 19:11:53 1998
+@@ -24,7 +24,7 @@
+                   FontObj(3270gt24) FontObj(3270gt24b) \
+                   FontObj(3270gt32) FontObj(3270gt32b)
+ 
+-    FONTINSTDIR = $(FONTDIR)/misc
++    FONTINSTDIR = $(FONTDIR)/local
+ 
+     LIBX3270DIR = $(LIBDIR)/x3270
+       HOSTSFILE = ibm_hosts
