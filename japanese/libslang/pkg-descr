@@ -1,0 +1,7 @@
+S-Lang is an interpreted language that was designed from the start to be
+easily embedded into a program to provide it with a powerful extension
+language. S-Lang is also a programmer's library that permits a programmer to
+develop sophisticated platform-independent software.
+
+Takashi Mega
+mega@minz.org

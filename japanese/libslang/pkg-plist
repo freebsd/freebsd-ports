@@ -1,0 +1,38 @@
+include/slang.h
+include/slcurses.h
+lib/libslang.a
+@exec ranlib %D/%F
+lib/libslang.so
+lib/libslang.so.1.2.2
+@exec /sbin/ldconfig -m %D/lib
+@comment @unexec /sbin/ldconfig -R
+share/doc/slang/README
+share/doc/slang/OLD/help/README
+share/doc/slang/OLD/help/makefile.djg
+share/doc/slang/OLD/help/makefile.os2
+share/doc/slang/OLD/help/makefile.unx
+share/doc/slang/OLD/help/slang.hlp
+share/doc/slang/OLD/help/slhelp.c
+@dirrm share/doc/slang/OLD/help
+@dirrm share/doc/slang/OLD
+share/doc/slang/text/cslang.txt
+share/doc/slang/text/cref.txt
+share/doc/slang/text/slang.txt
+share/doc/slang/text/slangfun.txt
+@dirrm share/doc/slang/text
+share/doc/slang/tm/slangfun.tm
+share/doc/slang/tm/cref.tm
+share/doc/slang/tm/cslang.tm
+share/doc/slang/tm/slang.tm
+share/doc/slang/tm/copyright.tm
+share/doc/slang/tm/preface.tm
+share/doc/slang/tm/fixtex.sl
+share/doc/slang/tm/Makefile
+share/doc/slang/tm/tools/tm2txt.c
+share/doc/slang/tm/tools/sl2tm.c
+share/doc/slang/tm/tools/Makefile
+@dirrm share/doc/slang/tm/tools
+@dirrm share/doc/slang/tm
+share/doc/slang/internal/rpn.txt
+@dirrm share/doc/slang/internal
+@dirrm share/doc/slang
