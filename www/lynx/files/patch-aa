@@ -1,5 +1,5 @@
-*** Makefile.orig	Sat Jan 25 07:43:10 1997
---- Makefile	Mon Jan 27 23:17:17 1997
+*** Makefile.orig	Mon Mar 17 09:18:40 1997
+--- Makefile	Tue Mar 18 13:40:12 1997
 ***************
 *** 14,31 ****
   
@@ -15,7 +15,7 @@
   ##besides /usr/local/lib
 ! cfg= /usr/local/lib
   
-! installbin= install -c -s -m 555
+! installbin= install -c -s -m 755
 ! installdoc= install -c -m 444
   
   ##set the relative location of the WWW library Implementation directory,
@@ -35,12 +35,12 @@
 ! cfg= ${PREFIX}/etc
   
 ! installbin= ${INSTALL} -c -s -m ${BINMODE} -o ${BINOWN} -g ${BINGRP}
-! installdoc= ${INSTALL} -c -m 444 -o ${BINOWN} -g ${BINGRP}
+! installdoc= ${INSTALL} -c -m ${MANMODE} -o ${MANOWN} -g ${MANGRP}
   
   ##set the relative location of the WWW library Implementation directory,
   ##from this directory
 ***************
-*** 268,274 ****
+*** 270,276 ****
   SITE_LYDEFS = $(DIR_LYDEFS) # Your defines here
   
   # Set SITE_DEFS to one or more of the defines for lynx below:
@@ -48,7 +48,7 @@
   
   # if you are compiling on a previously unsupported system, modify
   # this generic entry!!
---- 268,274 ----
+--- 270,276 ----
   SITE_LYDEFS = $(DIR_LYDEFS) # Your defines here
   
   # Set SITE_DEFS to one or more of the defines for lynx below:
