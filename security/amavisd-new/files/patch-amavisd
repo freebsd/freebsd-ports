@@ -1,11 +1,11 @@
---- amavisd.orig	Mon Sep  6 20:30:58 2004
-+++ amavisd	Sun Sep 19 09:43:03 2004
-@@ -7452,7 +7452,7 @@
- $Amavis::Conf::log_recip_templ = $1
-   if $Amavis::Conf::log_recip_templ=~/^(.*?)[\r\n]+\z/s;
+--- amavisd.orig	Thu Dec 23 02:38:39 2004
++++ amavisd	Sun Dec 26 14:06:38 2004
+@@ -7805,7 +7805,7 @@
+ umask(0027);
  
--my($config_file) = '/etc/amavisd.conf';  # default location of config file
-+my($config_file) = '%%PREFIX%%/etc/amavisd.conf';  # default location of config file
+ # default location of the config file if none specified
+-push(@config_files, '/etc/amavisd.conf')  if !@config_files;
++push(@config_files, '%%PREFIX%%/etc/amavisd.conf')  if !@config_files;
  
- # Consider droping privileges early, before reading config file.
- # This is only possible if running under chroot will not be needed.
+ # Read config file, which may override default settings
+ Amavis::Conf::build_default_maps();
