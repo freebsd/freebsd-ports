@@ -10,13 +10,5 @@ bin/exim_dbmbuild
 bin/exicyclog
 bin/exigrep
 bin/eximstats
-etc/exim.conf
+etc/exim/configure
 info/exim.info
-info/exim.info-1
-info/exim.info-2
-info/exim.info-3
-info/exim.info-4
-info/exim.info-5
-info/exim.info-6
-info/exim.info-7
-info/exim.info-8

@@ -1,9 +1,38 @@
-diff -udr ../exim-0.52.ORG/scripts/exim_install ./scripts/exim_install
---- ../exim-0.52.ORG/scripts/exim_install	Mon Jun 10 12:04:44 1996
-+++ ./scripts/exim_install	Sun Jun 23 10:42:40 1996
-@@ -63,6 +63,20 @@
+--- scripts/exim_install.ORG	Tue Oct 29 17:46:05 1996
++++ scripts/exim_install	Thu Oct 31 20:53:16 1996
+@@ -8,6 +8,8 @@
+ # This script also installs a default configuration file in CONFIGURE_FILE
+ # if there is no configuration file there.
+ 
++# This script also installs a .info file in INFO_DIRECTORY if required.
++
+ # The script can be made to output what it would do, without actually doing
+ # anything, by giving it the option "-n" (cf make). Arguments are the names
+ # of things to install. No arguments installs everything.
+@@ -65,10 +67,12 @@
+ fi
+ 
+ BIN_DIRECTORY=`grep -h "^ *BIN_DIRECTORY" $files | tail -1 | cut -c15-99`
++INFO_DIRECTORY=`grep -h "^ *INFO_DIRECTORY" $files | tail -1 | cut -c16-99`
+ CONFIGURE_FILE=`grep -h "^ *CONFIGURE_FILE" $files | tail -1 | cut -c16-99`
+ 
+ # Allow INST_xx to over-ride xx
+ case "$INST_BIN_DIRECTORY" in ?*) BIN_DIRECTORY="$INST_BIN_DIRECTORY";; esac
++case "$INST_INFO_DIRECTORY" in ?*) INFO_DIRECTORY="$INST_INFO_DIRECTORY";; esac
+ case "$INST_CONFIGURE_FILE" in ?*) CONFIGURE_FILE="$INST_CONFIGURE_FILE";; esac
+ case "$INST_CP" in '') CP=cp;; *) CP="$INST_CP";; esac
+ case "$INST_MV" in '') MV=mv;; *) MV="$INST_MV";; esac
+@@ -76,6 +80,7 @@
+ 
+ # Allow the user to over-ride xx
+ case "$dest" in ?*) BIN_DIRECTORY="$dest";; esac
++case "$info" in ?*) INFO_DIRECTORY="$info";; esac
+ case "$conf" in ?*) CONFIGURE_FILE="$conf";; esac
+ case "$cp" in ?*) CP="$cp";; esac
+ case "$mv" in ?*) MV="$mv";; esac
+@@ -101,6 +106,20 @@
    fi
- fi              
+ fi
  
 +# If info directory doesn't exist, try to create it
 +
@@ -22,22 +51,28 @@ diff -udr ../exim-0.52.ORG/scripts/exim_install ./scripts/exim_install
  # If no arguments, install everything
  
  if [ $# -gt 0 ]; then
-@@ -127,6 +141,18 @@
-     echo $com ${name} is not newer than ${BIN_DIRECTORY}/${name}    
-   fi   
+@@ -166,12 +185,24 @@
+   fi
  done
-+
+ 
 +echo $com ""
 +echo $com Installation directory is ${INFO_DIRECTORY}
 +echo $com ""
 +
-+if [ -f ../doc/exim-texinfo-0.52 ]; then
-+    makeinfo --output ../doc/exim.info ../doc/exim-texinfo-0.52
-+    for info in ../doc/exim.info*; do
-+        echo ${CP} ${info} ${INFO_DIRECTORY}
-+        ${real} ${CP} ${info} ${INFO_DIRECTORY} ; gzip -9n ${INFO_DIRECTORY}/${info}
-+    done
++if [ -f ../doc/spec.texinfo ]; then
++    makeinfo --no-split --output exim.info ../doc/spec.texinfo
++    echo ${CP} exim.info ${INFO_DIRECTORY}
++    ${real} ${CP} exim.info ${INFO_DIRECTORY}
 +fi
- 
++
  # If there is no configuration file, install the default,
  # building the lib directory if necessary.
+ 
+ echo $com ""
+ 
+ if [ ! -f ${CONFIGURE_FILE} ]; then
++  echo mkdir -p `dirname ${CONFIGURE_FILE}`
++  ${real} mkdir -p `dirname ${CONFIGURE_FILE}`
+   echo $com Installing default configuration in ${CONFIGURE_FILE}
+   echo $com because there is no existing configuration file.
+   echo ${CP} ../src/configure.default ${CONFIGURE_FILE}
