@@ -10,7 +10,7 @@ PORTVERSION=	3.15p
 CATEGORIES=	lang
 MASTER_SITES=	ftp://cs.nyu.edu/pub/gnat/${PORTVERSION}/glade/
 DISTNAME=	glade-${PORTVERSION}-src
-EXTRACT_SUFFIX=	.tgz
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sam@inf.enst.fr
 COMMENT=	GNU Ada distributed systems annex
