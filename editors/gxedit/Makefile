@@ -10,7 +10,7 @@ PORTVERSION=	1.23
 PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.cyberspace.org/~elfguy00/
-DISTNAME=	GXedit-${PORTVERSION}
+DISTNAME=	GXedit${PORTVERSION}
 
 MAINTAINER=	dom@happygiraffe.net
 COMMENT=	A simple GTK+ editor
