@@ -28,6 +28,7 @@
     SUBDIR += gmysql
     SUBDIR += gnats
     SUBDIR += gnomedb
+    SUBDIR += gnomedb2
     SUBDIR += grass
     SUBDIR += gtksql
     SUBDIR += interbase4
@@ -35,6 +36,7 @@
     SUBDIR += jdbc-oracle816
     SUBDIR += libdbi
     SUBDIR += libgda
+    SUBDIR += libgda2
     SUBDIR += libgnomedb
     SUBDIR += libiodbc
     SUBDIR += libodbc++
