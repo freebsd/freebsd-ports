@@ -36,4 +36,12 @@ MAN8=		cleanup-info.8 dpkg-divert.8 dpkg-scanpackages.8 \
 		dpkg.8 dselect.8 install-info.8 start-stop-daemon.8 \
 		update-alternatives.8 update-rc.d.8
 
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
+
 .include <bsd.port.mk>
