@@ -35,7 +35,8 @@ start)
 		;;
 	*)
 		for interface in ${arpwatch_interfaces}; do
-			"$PREFIX"/sbin/arpwatch -i "${interface}" && echo -n " arpwatch(${interface})"
+			touch "$PREFIX"/arpwatch/arp.${interface}.dat
+			"$PREFIX"/sbin/arpwatch -i "${interface}" -f arp.${interface}.dat && echo -n " arpwatch(${interface})"
 		done
 		;;
 	esac
