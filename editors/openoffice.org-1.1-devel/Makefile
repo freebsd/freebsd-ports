@@ -17,7 +17,7 @@ MASTER_SITES=	http://afug.hypermart.net/files/ \
 EXTRACT_SUFX=	.tar
 DISTFILES=	applicat.rdb.gz libofa517li.so libsdb517li.so
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mb@imp.ch
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
