@@ -7,6 +7,7 @@ share/gnome/bombermaze/maps/15x13_random
 share/gnome/bombermaze/maps/15x15
 share/gnome/bombermaze/maps/15x15_random
 share/gnome/bombermaze/pixmaps/title.png
+share/gnome/bombermaze/themes/default/README
 share/gnome/bombermaze/themes/default/bomb.png
 share/gnome/bombermaze/themes/default/brick.png
 share/gnome/bombermaze/themes/default/fire.png
@@ -17,6 +18,17 @@ share/gnome/bombermaze/themes/default/player3.png
 share/gnome/bombermaze/themes/default/player4.png
 share/gnome/bombermaze/themes/default/powerup.png
 share/gnome/bombermaze/themes/default/wall.png
+share/gnome/bombermaze/themes/gnomed/README
+share/gnome/bombermaze/themes/gnomed/bomb.png
+share/gnome/bombermaze/themes/gnomed/brick.png
+share/gnome/bombermaze/themes/gnomed/fire.png
+share/gnome/bombermaze/themes/gnomed/floor.png
+share/gnome/bombermaze/themes/gnomed/player1.png
+share/gnome/bombermaze/themes/gnomed/player2.png
+share/gnome/bombermaze/themes/gnomed/player3.png
+share/gnome/bombermaze/themes/gnomed/player4.png
+share/gnome/bombermaze/themes/gnomed/powerup.png
+share/gnome/bombermaze/themes/gnomed/wall.png
 share/gnome/help/bombermaze/C/animation.html
 share/gnome/help/bombermaze/C/index.html
 share/gnome/help/bombermaze/C/numeric.html
@@ -26,6 +38,7 @@ share/locale/fr/LC_MESSAGES/bombermaze.mo
 share/locale/pt_BR/LC_MESSAGES/bombermaze.mo
 @dirrm share/gnome/help/bombermaze/C
 @dirrm share/gnome/help/bombermaze
+@dirrm share/gnome/bombermaze/themes/gnomed
 @dirrm share/gnome/bombermaze/themes/default
 @dirrm share/gnome/bombermaze/themes
 @dirrm share/gnome/bombermaze/pixmaps
