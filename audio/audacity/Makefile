@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}-2
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	freebsdports@arved.de
+MAINTAINER=	arved@FreeBSD.org
 
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	wx_gtk-2.2.2:${PORTSDIR}/x11-toolkits/wxgtk \
@@ -28,6 +28,8 @@ CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		CFLAGS="-DAUDACITY_HELP_DIR=${AUDACITY_HELP_DIR} ${PTHREAD_CFLAGS}"
 CONFIGURE_ARGS+=	--with-id3=no --with-libmad=yes
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_ARTS)
 LIB_DEPENDS+=	qtmcop.1:${PORTSDIR}/audio/arts
 CONFIGURE_ARGS+=	--with-arts-soundserver=yes
@@ -36,8 +38,10 @@ CONFIGURE_ARGS+=	--with-arts-soundserver=yes
 .if !defined(WITHOUT_VORBIS)
 CONFIGURE_ARGS+=	--with-vorbis
 LIB_DEPENDS+=	vorbis.2:${PORTSDIR}/audio/libvorbis
+.endif
 
 pre-everything:
+.if !defined(WITHOUT_VORBIS)
 	@${ECHO_MSG} "You can disable support for vorbis by defining WITHOUT_VORBIS.MSG."
 .endif
 .if !defined(WITH_ARTS)
@@ -51,4 +55,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/audacity-help.htb ${WRKSRC}/README.txt ${WRKSRC}/LICENSE.txt ${PREFIX}/share/doc/audacity/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
