@@ -11,7 +11,7 @@ CATEGORIES=	graphics windowmaker
 MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sascha@root-login.org
 
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
