@@ -16,18 +16,14 @@ MAINTAINER?=	kde@FreeBSD.org
 COMMENT=	Additional plugins and scripts for some KDE applications
 
 LIB_DEPENDS+=	noatun.0:${PORTSDIR}/multimedia/kdemultimedia3 \
-		kdegames:${PORTSDIR}/games/kdegames3 \
-		SDL-1.1.5:${PORTSDIR}/devel/sdl12
-
-WITH_SDL=	yes
-SDL_CONFIG=	sdl11-config
-CONFIGURE_ENV+=	SDL_CONFIG="${LOCALBASE}/bin/${SDL_CONFIG}"
+		kdegames:${PORTSDIR}/games/kdegames3
 
 USE_KDEBASE_VER=3
 PREFIX=		${KDE_PREFIX}
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_SDL=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
