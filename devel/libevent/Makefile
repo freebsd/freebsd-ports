@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libevent
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	devel
 MASTER_SITES=	http://monkey.org/~provos/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.c$/c/}
