@@ -3,7 +3,7 @@
 # Date created:		30 April 1999
 # Whom:			jake@checker.org
 #
-# $Id: Makefile,v 1.3 1999/06/28 02:22:34 billf Exp $
+# $Id: Makefile,v 1.4 1999/06/28 18:34:07 billf Exp $
 #
 
 DISTNAME=	shujit-0.2.10
@@ -36,7 +36,7 @@ JAVALIBDIR=	${JAVADIR}/lib/i386/green_threads
 JAVABINDIR=	${JAVADIR}/bin/i386/green_threads
 JAVAOBJFORMAT=	`file ${JAVABINDIR}/java | ${AWK} '{print $$2}'`
 
-pre-fetch:
+pre-build:
 	@( if [ ${JAVAOBJFORMAT} != ELF ]; then	\
 		${CAT} ${PKGDIR}/MESSAGE;	\
 		exit 1;				\
