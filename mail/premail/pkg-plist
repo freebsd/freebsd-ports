@@ -1,0 +1,5 @@
+bin/premail
+share/doc/premail/doc-0.45.txt
+share/doc/premail/doc-0.45.html
+share/doc/premail/preferences
+@exec echo "Check /usr/local/share/doc/premail for further instructions"
