@@ -1,0 +1,9 @@
+xmotd is a message-of-the-day browser for X11 and dumb-terminals, that
+can also be used to broadcast messages to users logged in across a
+network.  xmotd periodically checks whether a file has been modified
+and pops up and displays the contents of the file, if it has.
+
+WWW: http://www.ee.ryerson.ca/~elf/xmotd/
+
+--
+mwest@uct.ac.za
