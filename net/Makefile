@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.76 1996/09/24 16:14:57 jfitz Exp $
+# $Id: Makefile,v 1.77 1996/09/25 20:42:10 max Exp $
 #
 
     SUBDIR += archie
@@ -38,7 +38,6 @@
     SUBDIR += telnetx
     SUBDIR += tintin++
     SUBDIR += tinyfugue
-    SUBDIR += tkined
     SUBDIR += trafshow
     SUBDIR += ucd-snmp
     SUBDIR += vic
