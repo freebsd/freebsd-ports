@@ -13,7 +13,7 @@ MASTER_SITES=	http://www-cad.eecs.berkeley.edu/HomePages/aml/abacus/ \
 
 PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	steve
-PATCHFILES=	${PKGNAME}.patch.gz
+PATCHFILES=	${PORTNAME}-${PORTVERSION}.patch.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Spread sheet for X Window System
