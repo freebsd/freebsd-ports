@@ -1,0 +1,3 @@
+bin/php
+etc/php.standalone/php.ini-dist
+@dirrm etc/php.standalone
