@@ -4,5 +4,5 @@ bin/arm-rtems-jv-scan
 bin/arm-rtems-jcf-dump
 bin/grepjar
 bin/jar
-lib/gcc-lib/arm-rtems/3.2.1/jc1
-lib/gcc-lib/arm-rtems/3.2.1/jvgenmain
+lib/gcc-lib/arm-rtems/%%GCCVERSION%%/jc1
+lib/gcc-lib/arm-rtems/%%GCCVERSION%%/jvgenmain

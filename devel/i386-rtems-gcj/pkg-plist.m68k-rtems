@@ -4,5 +4,5 @@ bin/m68k-rtems-gcj
 bin/m68k-rtems-gcjh
 bin/m68k-rtems-jv-scan
 bin/m68k-rtems-jcf-dump
-lib/gcc-lib/m68k-rtems/3.2.1/jc1
-lib/gcc-lib/m68k-rtems/3.2.1/jvgenmain
+lib/gcc-lib/m68k-rtems/%%GCCVERSION%%/jc1
+lib/gcc-lib/m68k-rtems/%%GCCVERSION%%/jvgenmain

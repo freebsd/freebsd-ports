@@ -4,5 +4,5 @@ bin/powerpc-rtems-gcj
 bin/powerpc-rtems-gcjh
 bin/powerpc-rtems-jv-scan
 bin/powerpc-rtems-jcf-dump
-lib/gcc-lib/powerpc-rtems/3.2.1/jc1
-lib/gcc-lib/powerpc-rtems/3.2.1/jvgenmain
+lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/jc1
+lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/jvgenmain
