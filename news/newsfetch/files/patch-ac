@@ -1,0 +1,11 @@
+--- newsfetch.1.orig	Tue Apr 14 20:04:25 1998
++++ newsfetch.1	Fri Jan 26 23:41:22 2001
+@@ -5,7 +5,7 @@
+ .SH SYNOPSIS
+ .B newsfetch
+ .BI
+-hostname
++hostname[:port]
+ [
+ .BI \-clsyvV
+ ]
