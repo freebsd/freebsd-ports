@@ -41,20 +41,6 @@ extern "C" {
 #endif
 
 
-/*
- * Import u_intXX_t size_t type definitions from system headers.  You
- * may need to change this, or define these things yourself in this
- * file.
- */
-#include <sys/types.h>
-
-#ifdef SHA2_USE_INTTYPES_H
-
-#include <inttypes.h>
-
-#endif /* SHA2_USE_INTTYPES_H */
-
-
 /*** SHA-256/384/512 Various Length Definitions ***********************/
 #define SHA256_BLOCK_LENGTH		64
 #define SHA256_DIGEST_LENGTH		32
@@ -68,33 +54,6 @@ extern "C" {
 
 
 /*** SHA-256/384/512 Context Structures *******************************/
-/* NOTE: If your architecture does not define either u_intXX_t types or
- * uintXX_t (from inttypes.h), you may need to define things by hand
- * for your system:
- */
-#if 0
-typedef unsigned char u_int8_t;		/* 1-byte  (8-bits)  */
-typedef unsigned int u_int32_t;		/* 4-bytes (32-bits) */
-typedef unsigned long long u_int64_t;	/* 8-bytes (64-bits) */
-#endif
-/*
- * Most BSD systems already define u_intXX_t types, as does Linux.
- * Some systems, however, like Compaq's Tru64 Unix instead can use
- * uintXX_t types defined by very recent ANSI C standards and included
- * in the file:
- *
- *   #include <inttypes.h>
- *
- * If you choose to use <inttypes.h> then please define: 
- *
- *   #define SHA2_USE_INTTYPES_H
- *
- * Or on the command line during compile:
- *
- *   cc -DSHA2_USE_INTTYPES_H ...
- */
-#ifdef SHA2_USE_INTTYPES_H
-
 typedef struct _SHA256_CTX {
 	uint32_t	state[8];
 	uint64_t	bitcount;
@@ -105,21 +64,6 @@ typedef struct _SHA512_CTX {
 	uint64_t	bitcount[2];
 	uint8_t	buffer[SHA512_BLOCK_LENGTH];
 } SHA512_CTX;
-
-#else /* SHA2_USE_INTTYPES_H */
-
-typedef struct _SHA256_CTX {
-	u_int32_t	state[8];
-	u_int64_t	bitcount;
-	u_int8_t	buffer[SHA256_BLOCK_LENGTH];
-} SHA256_CTX;
-typedef struct _SHA512_CTX {
-	u_int64_t	state[8];
-	u_int64_t	bitcount[2];
-	u_int8_t	buffer[SHA512_BLOCK_LENGTH];
-} SHA512_CTX;
-
-#endif /* SHA2_USE_INTTYPES_H */
 
 typedef SHA512_CTX SHA384_CTX;
 

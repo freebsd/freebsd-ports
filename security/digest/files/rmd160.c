@@ -1,4 +1,4 @@
-/*	$NetBSD: rmd160.c,v 1.1.1.1 2001/03/06 11:21:05 agc Exp $	*/
+/*	$NetBSD: rmd160.c,v 1.3 2002/12/21 04:06:15 schmonz Exp $	*/
 
 /********************************************************************\
  *
@@ -18,21 +18,17 @@
  *
 \********************************************************************/
 
-#include <sys/cdefs.h>
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
+#include <digest-types.h>
+
 #ifndef lint
-__RCSID("$NetBSD: rmd160.c,v 1.1.1.1 2001/03/06 11:21:05 agc Exp $");
+__RCSID("$NetBSD: rmd160.c,v 1.3 2002/12/21 04:06:15 schmonz Exp $");
 #endif	/* not lint */
 
 /* header files */
-#include <sys/types.h>
-
-#ifdef HAVE_SYS_ENDIAN_H_
-#include <sys/endian.h>
-#endif
-
-#ifdef HAVE_MACHINE_ENDIAN_H_
-#include <machine/endian.h>
-#endif
 
 /* #include "namespace.h" */
 
@@ -44,6 +40,16 @@ __RCSID("$NetBSD: rmd160.c,v 1.1.1.1 2001/03/06 11:21:05 agc Exp $");
 
 #ifndef _DIAGASSERT
 #define _DIAGASSERT(cond)	assert(cond)
+#endif
+
+#if defined(HAVE_MEMSET)
+#define ZEROIZE(d, l)           memset((d), 0, (l)) 
+#else 
+# if defined(HAVE_BZERO)
+#define ZEROIZE(d, l)           bzero((d), (l))
+# else
+#error You need either memset or bzero 
+# endif 
 #endif
 
 #if 0
@@ -373,7 +379,7 @@ RMD160Update(RMD160_CTX *context, const u_char *data, u_int32_t nbytes)
 		context->length[1]++;		/* overflow to msb of length */
 	context->length[0] += nbytes;
 
-	(void)memset(X, 0, sizeof(X));
+	ZEROIZE(X, sizeof(X));
 
         if ( context->buflen + nbytes < 64 )
         {
@@ -430,7 +436,7 @@ RMD160Final(u_char digest[20], RMD160_CTX *context)
 	/* append the bit m_n == 1 */
 	context->bbuffer[context->buflen] = (u_char)'\200';
 
-	(void)memset(context->bbuffer + context->buflen + 1, 0,
+	ZEROIZE(context->bbuffer + context->buflen + 1,
 		63 - context->buflen);
 #if BYTE_ORDER == LITTLE_ENDIAN
 	(void)memcpy(X, context->bbuffer, sizeof(X));
@@ -441,7 +447,7 @@ RMD160Final(u_char digest[20], RMD160_CTX *context)
 	if ((context->buflen) > 55) {
 		/* length goes to next block */
 		RMD160Transform(context->state, X);
-		(void)memset(X, 0, sizeof(X));
+		ZEROIZE(X, sizeof(X));
 	}
 
 	/* append length in bits */

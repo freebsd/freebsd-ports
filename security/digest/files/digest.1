@@ -1,4 +1,4 @@
-.\" $NetBSD: digest.1,v 1.1.1.1 2001/03/06 11:21:04 agc Exp $
+.\" $NetBSD: digest.1,v 1.3 2001/12/03 19:03:22 wiz Exp $
 .\"
 .\"
 .\" Copyright (c) 2001 Alistair G. Crooks.  All rights reserved.
@@ -33,14 +33,14 @@
 .\"
 .Dd February 28, 2001
 .Dt DIGEST 1
-.Os NetBSD
+.Os
 .Sh NAME
 .Nm digest
-.Nd calculate message digests 
+.Nd calculate message digests
 .Sh SYNOPSIS
 .Nm
 .Ar algorithm
-.Op file...
+.Op file ...
 .Sh DESCRIPTION
 The
 .Nm
@@ -93,9 +93,9 @@ utility exits 0 on success, and >0 if an error occurs.
 The
 .Nm
 utility first appeared in
-.Nx
-pkgsrc.
-.Sh AUTHOR
+.Nx 1.6 .
+.Sh AUTHORS
 The
 .Nm
-utility was written by Alistair G. Crooks (agc@netbsd.org).
+utility was written by
+.An Alistair G. Crooks Aq agc@netbsd.org .

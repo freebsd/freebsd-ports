@@ -34,7 +34,12 @@
  */
 
 
-#include <sys/cdefs.h>		/* hfpkg */
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
+#include <digest-types.h>
+
 
 #include <stdio.h>
 #include <string.h>	/* memcpy()/memset() or bcopy()/bzero() */
@@ -98,7 +103,7 @@
  * Define the followingsha2_* types to types of the correct length on
  * the native archtecture.   Most BSD systems and Linux define u_intXX_t
  * types.  Machines with very recent ANSI C headers, can use the
- * uintXX_t definintions from inttypes.h by defining SHA2_USE_INTTYPES_H
+ * uintXX_t definintions from inttypes.h by defining USE_INTTYPES_H
  * during compile or in the sha.h header file.
  *
  * Machines that support neither u_intXX_t nor inttypes.h's uintXX_t
@@ -108,19 +113,19 @@
  * Thank you, Jun-ichiro itojun Hagino, for suggesting using u_intXX_t
  * types and pointing out recent ANSI C support for uintXX_t in inttypes.h.
  */
-#ifdef SHA2_USE_INTTYPES_H
+#ifdef USE_INTTYPES_H
 
 typedef uint8_t  sha2_byte;	/* Exactly 1 byte */
 typedef uint32_t sha2_word32;	/* Exactly 4 bytes */
 typedef uint64_t sha2_word64;	/* Exactly 8 bytes */
 
-#else /* SHA2_USE_INTTYPES_H */
+#else /* USE_INTTYPES_H */
 
 typedef u_int8_t  sha2_byte;	/* Exactly 1 byte */
 typedef u_int32_t sha2_word32;	/* Exactly 4 bytes */
 typedef u_int64_t sha2_word64;	/* Exactly 8 bytes */
 
-#endif /* SHA2_USE_INTTYPES_H */
+#endif /* USE_INTTYPES_H */
 
 
 /*** SHA-256/384/512 Various Length Definitions ***********************/
@@ -159,6 +164,7 @@ typedef u_int64_t sha2_word64;	/* Exactly 8 bytes */
 	} \
 }
 
+#if !defined(MEMSET_BZERO) && !defined(MEMCPY_BCOPY)
 /*
  * Macros for copying blocks of memory and for zeroing out ranges
  * of memory.  Using these macros makes it easy to switch from
@@ -185,7 +191,7 @@ typedef u_int64_t sha2_word64;	/* Exactly 8 bytes */
 #define MEMSET_BZERO(p,l)	bzero((p), (l))
 #define MEMCPY_BCOPY(d,s,l)	bcopy((s), (d), (l))
 #endif
-
+#endif /* !defined(MEMSET_BZERO) && !defined(MEMCPY_BCOPY) */
 
 /*** THE SIX LOGICAL FUNCTIONS ****************************************/
 /*

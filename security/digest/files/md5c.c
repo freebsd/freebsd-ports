@@ -1,4 +1,4 @@
-/*	$NetBSD: md5c.c,v 1.1.1.1 2001/03/06 11:21:05 agc Exp $	*/
+/*	$NetBSD: md5c.c,v 1.3 2002/12/21 04:06:14 schmonz Exp $	*/
 
 /*
  * This file is derived from the RSA Data Security, Inc. MD5 Message-Digest
@@ -29,7 +29,11 @@
  * documentation and/or software.
  */
 
-#include <sys/cdefs.h>		/* hfpkg */
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
+#include <digest-types.h>
 
 #if defined(_KERNEL) || defined(_STANDALONE)
 #include <lib/libkern/libkern.h>
@@ -38,13 +42,20 @@
 #define _DIAGASSERT(x)	(void)0
 #else
 /* #include "namespace.h" */
-#include <sys/types.h>
 #include <assert.h>
 #include <string.h>
 #include <md5.h>
 #endif /* _KERNEL || _STANDALONE */
 
+#if defined(HAVE_MEMSET)
 #define	ZEROIZE(d, l)		memset((d), 0, (l))
+#else
+# if defined(HAVE_BZERO)
+#define ZEROIZE(d, l)		bzero((d), (l))
+# else
+#error You need either memset or bzero
+# endif
+#endif
 
 typedef unsigned char *POINTER;
 typedef u_int16_t UINT2;
@@ -70,10 +81,12 @@ typedef u_int32_t UINT4;
 #define S43 15
 #define S44 21
 
+#if 0
 #if !defined(_KERNEL) && !defined(_STANDALONE) && defined(__weak_alias)
 __weak_alias(MD5Init,_MD5Init)
 __weak_alias(MD5Update,_MD5Update)
 __weak_alias(MD5Final,_MD5Final)
+#endif
 #endif
 
 #ifndef _DIAGASSERT

@@ -1,4 +1,4 @@
-/*	$NetBSD: digest.c,v 1.3 2001/07/09 21:42:30 hubertf Exp $ */
+/*	$NetBSD: digest.c,v 1.8 2003/07/24 00:27:09 atatat Exp $ */
 
 /*
  * Copyright (c) 2001 Alistair G. Crooks.  All rights reserved.
@@ -30,17 +30,25 @@
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-#include <sys/cdefs.h>
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
+
+#include <digest-types.h>
 
 #ifndef lint
 __COPYRIGHT("@(#) Copyright (c) 2001 \
 	        The NetBSD Foundation, Inc.  All rights reserved.");
-__RCSID("$NetBSD: digest.c,v 1.3 2001/07/09 21:42:30 hubertf Exp $");
+__RCSID("$NetBSD: digest.c,v 1.8 2003/07/24 00:27:09 atatat Exp $");
 #endif
 
-#include <sys/types.h>
 
+#ifdef HAVE_ERRNO_H
+#include <errno.h>
+#endif
+#ifdef HAVE_LOCALE_H
 #include <locale.h>
+#endif
 #include <md5.h>
 #include <rmd160.h>
 #include <sha1.h>
@@ -48,167 +56,54 @@ __RCSID("$NetBSD: digest.c,v 1.3 2001/07/09 21:42:30 hubertf Exp $");
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#ifdef HAVE_UNISTD_H
 #include <unistd.h>
+#endif
 
-/* perform an md5 digest, and print the results if successful */
-static int
-md5_digest_file(char *fn)
-{
-	MD5_CTX	m;
-	char	in[BUFSIZ * 20];
-	char	digest[33];
-	int	cc;
-
-	if (fn == NULL) {
-		MD5Init(&m);
-		while ((cc = read(STDIN_FILENO, in, sizeof(in))) > 0) {
-			MD5Update(&m, (u_char *)in, (unsigned) cc);
-		}
-		(void) printf("%s\n", MD5End(&m, digest));
-	} else {
-		if (MD5File(fn, digest) == NULL) {
-			return 0;
-		}
-		(void) printf("MD5 (%s) = %s\n", fn, digest);
-	}
-	return 1;
-}
-
-/* perform an sha1 digest, and print the results if successful */
-static int
-sha1_digest_file(char *fn)
-{
-	SHA1_CTX	sha;
-	char		in[BUFSIZ * 20];
-	char		digest[41];
-	int		cc;
-
-	if (fn == NULL) {
-		SHA1Init(&sha);
-		while ((cc = read(STDIN_FILENO, in, sizeof(in))) > 0) {
-			SHA1Update(&sha, (u_char *)in, (unsigned) cc);
-		}
-		(void) printf("%s\n", SHA1End(&sha, digest));
-	} else {
-		if (SHA1File(fn, digest) == NULL) {
-			return 0;
-		}
-		(void) printf("SHA1 (%s) = %s\n", fn, digest);
-	}
-	return 1;
-}
-
-/* perform an ripemd160 digest, and print the results if successful */
-static int
-rmd160_digest_file(char *fn)
-{
-	RMD160_CTX	rmd;
-	char		in[BUFSIZ * 20];
-	char		digest[41];
-	int		cc;
-
-	if (fn == NULL) {
-		RMD160Init(&rmd);
-		while ((cc = read(STDIN_FILENO, in, sizeof(in))) > 0) {
-			RMD160Update(&rmd, (u_char *)in, (unsigned) cc);
-		}
-		(void) printf("%s\n", RMD160End(&rmd, digest));
-	} else {
-		if (RMD160File(fn, digest) == NULL) {
-			return 0;
-		}
-		(void) printf("RMD160 (%s) = %s\n", fn, digest);
-	}
-	return 1;
-}
-
-/* perform a sha256 digest, and print the results if successful */
-static int
-sha256_digest_file(char *fn)
-{
-	SHA256_CTX	sha256;
-	char		in[BUFSIZ * 20];
-	char		digest[65];
-	int		cc;
-
-	if (fn == NULL) {
-		SHA256_Init(&sha256);
-		while ((cc = read(STDIN_FILENO, in, sizeof(in))) > 0) {
-			SHA256_Update(&sha256, (u_char *)in, (unsigned) cc);
-		}
-		(void) printf("%s\n", SHA256_End(&sha256, digest));
-	} else {
-		if (SHA256_File(fn, digest) == NULL) {
-			return 0;
-		}
-		(void) printf("SHA256 (%s) = %s\n", fn, digest);
-	}
-	return 1;
-}
-
-/* perform a sha384 digest, and print the results if successful */
-static int
-sha384_digest_file(char *fn)
-{
-	SHA384_CTX	sha384;
-	char		in[BUFSIZ * 20];
-	char		digest[97];
-	int		cc;
-
-	if (fn == NULL) {
-		SHA384_Init(&sha384);
-		while ((cc = read(STDIN_FILENO, in, sizeof(in))) > 0) {
-			SHA384_Update(&sha384, (u_char *)in, (unsigned) cc);
-		}
-		(void) printf("%s\n", SHA384_End(&sha384, digest));
-	} else {
-		if (SHA384_File(fn, digest) == NULL) {
-			return 0;
-		}
-		(void) printf("SHA384 (%s) = %s\n", fn, digest);
-	}
-	return 1;
-}
-
-/* perform a sha512 digest, and print the results if successful */
-static int
-sha512_digest_file(char *fn)
-{
-	SHA512_CTX	sha512;
-	char		in[BUFSIZ * 20];
-	char		digest[129];
-	int		cc;
-
-	if (fn == NULL) {
-		SHA512_Init(&sha512);
-		while ((cc = read(STDIN_FILENO, in, sizeof(in))) > 0) {
-			SHA512_Update(&sha512, (u_char *)in, (unsigned) cc);
-		}
-		(void) printf("%s\n", SHA512_End(&sha512, digest));
-	} else {
-		if (SHA512_File(fn, digest) == NULL) {
-			return 0;
-		}
-		(void) printf("SHA512 (%s) = %s\n", fn, digest);
-	}
-	return 1;
-}
-
+typedef void (*HASH_init)(void *);
+typedef void (*HASH_update)(void *, const unsigned char *, unsigned int);
+typedef char *(*HASH_end)(void *, char *);
+typedef char *(*HASH_file)(char *, char *);
+  
 /* this struct defines a message digest algorithm */
 typedef struct alg_t {
-	const char     *name;			/* algorithm name */
-	int		(*func)(char *);	/* function to call */
+	const char     *name;
+	int		hash_len;
+	HASH_init	hash_init;
+	HASH_update	hash_update;
+	HASH_end	hash_end;
+	HASH_file	hash_file;
+	union {
+		MD5_CTX		m;
+		SHA1_CTX	sha;
+		RMD160_CTX	rmd;
+		SHA256_CTX	sha256;
+		SHA384_CTX	sha384;
+		SHA512_CTX	sha512;
+	} hash_ctx, hash_ctx2;
 } alg_t;
 
 /* list of supported message digest algorithms */
 static alg_t algorithms[] = {
-	{ "md5",	md5_digest_file		},
-	{ "rmd160",	rmd160_digest_file	},
-	{ "sha1",	sha1_digest_file	},
-	{ "sha256",	sha256_digest_file	},
-	{ "sha384",	sha384_digest_file	},
-	{ "sha512",	sha512_digest_file	},
-	{ NULL	}
+	{ "MD5",	16,
+	  (HASH_init) MD5Init,		(HASH_update) MD5Update,
+	  (HASH_end) MD5End,		(HASH_file) MD5File },
+	{ "RMD160",	20,
+	  (HASH_init) RMD160Init,	(HASH_update) RMD160Update,
+	  (HASH_end) RMD160End,		(HASH_file) RMD160File },
+	{ "SHA1",	20,
+	  (HASH_init) SHA1Init,		(HASH_update) SHA1Update,
+	  (HASH_end) SHA1End,		(HASH_file) SHA1File },
+	{ "SHA256",	SHA256_DIGEST_LENGTH,
+	  (HASH_init) SHA256_Init,	(HASH_update) SHA256_Update,
+	  (HASH_end) SHA256_End,	(HASH_file) SHA256_File },
+	{ "SHA384",	SHA384_DIGEST_LENGTH,
+	  (HASH_init) SHA384_Init,	(HASH_update) SHA384_Update,
+	  (HASH_end) SHA384_End,	(HASH_file) SHA384_File },
+	{ "SHA512",	SHA512_DIGEST_LENGTH,
+	  (HASH_init) SHA512_Init,	(HASH_update) SHA512_Update,
+	  (HASH_end) SHA512_End,	(HASH_file) SHA512_File },
+	{ NULL }
 };
 
 /* find an algorithm, given a name */
@@ -222,6 +117,36 @@ find_algorithm(const char *a)
 	return (alg->name) ? alg : NULL;
 }
 
+/* compute a digest, and print the results if successful */
+static int
+digest_file(char *fn, alg_t *alg)
+{
+	char	in[BUFSIZ * 20];
+	char   *digest;
+	int	cc, rc;
+
+	digest = malloc(alg->hash_len * 2 + 1);
+
+        if (fn == NULL) {
+		(*alg->hash_init)(&alg->hash_ctx);
+                while ((cc = read(STDIN_FILENO, in, sizeof(in))) > 0) {
+			(*alg->hash_update)(&alg->hash_ctx, (u_char *)in,
+					    (unsigned) cc);
+		}
+		(void) printf("%s\n", (*alg->hash_end)(&alg->hash_ctx, digest));
+		rc = 1;
+	} else {
+		if ((*alg->hash_file)(fn, digest) == NULL) {
+			rc = 0;
+		} else {
+			(void) printf("%s (%s) = %s\n", alg->name, fn, digest);
+			rc = 1;
+		}
+	}
+
+	return (rc);
+}
+
 int
 main(int argc, char **argv)
 {
@@ -229,31 +154,39 @@ main(int argc, char **argv)
 	int	rval;
 	int	i;
 
+#ifdef HAVE_SETLOCALE
 	(void) setlocale(LC_ALL, "");
+#endif
 	while ((i = getopt(argc, argv, "V")) != -1) {
 		switch(i) {
 		case 'V':
-			printf("%d\n", VERSION);
+			printf("%s\n", VERSION);
 			return EXIT_SUCCESS;
 		}
 	}
-	if (argc == optind) {
-		(void) fprintf(stderr, "Usage: %s algorithm [file...]\n", *argv);
+	argc -= optind;
+	argv += optind;
+	
+	if (argc == 0) {
+		(void) fprintf(stderr, "Usage: %s algorithm [file...]\n",
+		    argv[-optind]);
 		return EXIT_FAILURE;
 	}
-	if ((alg = find_algorithm(argv[optind])) == NULL) {
-		(void) fprintf(stderr, "No such algorithm `%s'\n", argv[optind]);
+	if ((alg = find_algorithm(argv[0])) == NULL) {
+		(void) fprintf(stderr, "No such algorithm `%s'\n", argv[0]);
 		exit(EXIT_FAILURE);
 	}
+	argc--;
+	argv++;
 	rval = EXIT_SUCCESS;
-	if (argc == optind + 1) {
-		if (!(*alg->func)(NULL)) {
+	if (argc == 0) {
+		if (!digest_file(NULL, alg)) {
 			(void) fprintf(stderr, "stdin\n");
 			rval = EXIT_FAILURE;
 		}
 	} else {
-		for (i = optind + 1 ; i < argc ; i++) {
-			if (!(*alg->func)(argv[i])) {
+		for (i = 0 ; i < argc ; i++) {
+			if (!digest_file(argv[i], alg)) {
 				(void) fprintf(stderr, "%s\n", argv[i]);
 				rval = EXIT_FAILURE;
 			}

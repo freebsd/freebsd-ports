@@ -1,6 +1,9 @@
-This is a utility which calculates MD5 (RFC 1321), SHA-1, and
-RIPEMD-160 (RMD160) hashes (also known as message digests, checksums,
-or "fingerprints").
+The digest utility is a wrapper for the md5, sha1, sha256, sha384,
+sha512 and rmd160 message digest algorithms (also known as hashes,
+checksums or "fingerprints").
+
+WWW: http://cvsweb.NetBSD.org/bsdweb.cgi/pkgsrc/pkgtools/digest/
+AUTHOR: Alistair G. Crooks <agc@NetBSD.org>
 
 Trevor Johnson
 trevor@FreeBSD.org

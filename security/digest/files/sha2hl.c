@@ -1,4 +1,4 @@
-/* $NetBSD: sha2hl.c,v 1.1 2001/03/12 09:08:40 agc Exp $	 */
+/* $NetBSD: sha2hl.c,v 1.3 2002/12/21 04:06:15 schmonz Exp $	 */
 
 /*
  * sha2hl.c
@@ -40,19 +40,26 @@
  *
  */
 
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
 
-#include <sys/cdefs.h>
+#include <digest-types.h>
+
 #ifndef lint
-__RCSID("$NetBSD: sha2hl.c,v 1.1 2001/03/12 09:08:40 agc Exp $");
+__RCSID("$NetBSD: sha2hl.c,v 1.3 2002/12/21 04:06:15 schmonz Exp $");
 #endif				/* not lint */
 
-#include <sys/types.h>
 
 /* #include "namespace.h" */
 
 #include <assert.h>
+#ifdef HAVE_ERRNO_H
 #include <errno.h>
+#endif
+#ifdef HAVE_FCNTL_H
 #include <fcntl.h>
+#endif
 #include <sha2.h>
 #include <stdio.h>
 #include <string.h>
@@ -61,6 +68,10 @@ __RCSID("$NetBSD: sha2hl.c,v 1.1 2001/03/12 09:08:40 agc Exp $");
 
 #ifndef _DIAGASSERT
 #define _DIAGASSERT(cond)	assert(cond)
+#endif
+
+#ifndef MEMSET_BZERO
+#define MEMSET_BZERO(p,l)	memset((p), 0, (l))
 #endif
 
 /*
@@ -114,9 +125,9 @@ SHA256_End(SHA256_CTX *ctx, u_char *buffer)
 		}
 		*buffer = (char) 0;
 	} else {
-		(void) memset(ctx, 0, sizeof(SHA256_CTX));
+		(void) MEMSET_BZERO(ctx, sizeof(SHA256_CTX));
 	}
-	(void) memset(digest, 0, SHA256_DIGEST_LENGTH);
+	(void) MEMSET_BZERO(digest, SHA256_DIGEST_LENGTH);
 	return ret;
 }
 
@@ -174,9 +185,9 @@ SHA384_End(SHA384_CTX * ctx, char buffer[])
 		}
 		*buffer = (char) 0;
 	} else {
-		(void) memset(ctx, 0, sizeof(SHA384_CTX));
+		(void) MEMSET_BZERO(ctx, sizeof(SHA384_CTX));
 	}
-	(void) memset(digest, 0, SHA384_DIGEST_LENGTH);
+	(void) MEMSET_BZERO(digest, SHA384_DIGEST_LENGTH);
 	return ret;
 }
 
@@ -234,9 +245,9 @@ SHA512_End(SHA512_CTX * ctx, char buffer[])
 		}
 		*buffer = (char) 0;
 	} else {
-		(void) memset(ctx, 0, sizeof(SHA512_CTX));
+		(void) MEMSET_BZERO(ctx, sizeof(SHA512_CTX));
 	}
-	(void) memset(digest, 0, SHA512_DIGEST_LENGTH);
+	(void) MEMSET_BZERO(digest, SHA512_DIGEST_LENGTH);
 	return ret;
 }
 
