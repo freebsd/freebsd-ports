@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	samba
-PORTVERSION=	3.0.0.r1
+PORTVERSION=	3.0.0.r2
 CATEGORIES=	net
 MASTER_SITES=	http://us4.samba.org/samba/ftp/%SUBDIR%/
 MASTER_SITE_SUBDIR=	rc
