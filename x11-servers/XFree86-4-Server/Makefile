@@ -90,14 +90,18 @@ HasXdmAuth?=		YES
 HasSecureRPC?=		DEFAULT
 HasPam?=		DEFAULT
 ExtendedInputDevices?=	DEFAULT
-.if (exists(/sys) || exists(/usr/src/sys))
+.if ${ARCH} == i386  && (exists(/sys) || exists(/usr/src/sys))
 BuildXF86DRI=		YES
 BuildXF86DRM=		YES
 PLIST_SUB+=		DRI=""
 PLIST_SUB+=		DRI_KMOD=""
 .else
 pre-fetch::
+.if ${ARCH} == i386
 	@${ECHO_MSG} "DRI would not build: kernel source required in /sys."
+.else
+	@${ECHO_MSG} "DRI only built on i386"
+.endif # i386
 BuildXF86DRI=		NO
 BuildXF86DRM=		NO
 PLIST_SUB+=		DRI="@comment "
@@ -178,6 +182,8 @@ post-patch::
 post-install::
 	${INSTALL_DATA} ${WRKSRC}/programs/Xserver/hw/xfree86/drivers/mga/README_HALLIB ${PREFIX}/lib/X11/doc/README.mga_HALLIB
 .endif	# !WITH_MATROX_GXX_DRIVER
+.else
+HaveMatroxHal=		NO
 .endif
 
 do-configure:
