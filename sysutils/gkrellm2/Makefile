@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	gkrellm
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://web.wt.net/~billw/gkrellm/ \
+		http://newweb.wt.net/~billw/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ume
 
@@ -19,11 +20,13 @@ USE_IMLIB=	yes
 USE_GMAKE=	yes
 
 INCLUDES=	gkrellm.h gkrellm_public_proto.h
+MAN1=		gkrellm.1
 DOCS=		COPYRIGHT README Themes.html
 
 # You should aware that GKrellM must be setuid root to obtain
 # temperatures.  If your motherboard doesn't support LM78/79 feature,
-# you may not want this build WITHOUT_SENSOR=yes
+# you may not want this.
+# WITHOUT_SENSOR=yes
 
 .include <bsd.port.pre.mk>
 
@@ -41,17 +44,24 @@ BINMODE=	4111
 BINMODE=	2111
 .endif
 
+MAKE_ENV+=	enable_nls=1 LOCALEDIR=${PREFIX}/share/locale
 CFLAGS+=	-DSYSTEM_THEMES_DIR='\"${PREFIX}/share/gkrellm/themes\"' \
 		-DSYSTEM_PLUGINS_DIR='\"${PREFIX}/libexec/gkrellm/plugins\"'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/gkrellm ${PREFIX}/bin/gkrellm
+	@cd ${WRKSRC}/locale && \
+		${GMAKE} install enable_nls=1 LOCALEDIR=${PREFIX}/share/locale
+
 	@${MKDIR} ${PREFIX}/include/gkrellm
 .for file in ${INCLUDES}
 	${INSTALL_DATA} ${WRKSRC}/src/${file} ${PREFIX}/include/gkrellm
 .endfor
 	@${MKDIR} ${PREFIX}/libexec/gkrellm/plugins
 	@${MKDIR} ${PREFIX}/share/gkrellm/themes
+.for file in ${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/${file} ${MANPREFIX}/man/man1/${file}
+.endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/gkrellm
 .for file in ${DOCS}
