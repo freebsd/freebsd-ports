@@ -1,5 +1,17 @@
---- gcc/config/i386/freebsd.h.orig	Thu Jun 17 05:33:32 1999
-+++ gcc/config/i386/freebsd.h	Sat Jul 24 17:59:06 1999
+--- gcc/config/i386/freebsd.h.orig	Mon Dec 18 06:05:58 2000
++++ gcc/config/i386/freebsd.h	Tue Apr 17 02:24:05 2001
+@@ -35,9 +35,9 @@
+    libraries compiled with the native cc, so undef it. */
+ #undef NO_DOLLAR_IN_LABEL
+ 
+-/* Use more efficient ``thunks'' to implement C++ vtables. */
++/* Do not use ``thunks'' to implement C++ vtables.  This method still has
++   fatal bugs.  */
+ #undef DEFAULT_VTABLE_THUNKS
+-#define DEFAULT_VTABLE_THUNKS 1
+ 
+ /* Override the default comment-starter of "/".  */
+ #undef ASM_COMMENT_START
 @@ -135,6 +135,10 @@
   : ((n) >= FIRST_STACK_REG && (n) <= LAST_STACK_REG) ? (n)+3 \
   : (-1))
