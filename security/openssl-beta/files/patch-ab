@@ -1,5 +1,5 @@
---- Makefile.ssl.orig	Mon Mar 22 18:18:18 1999
-+++ Makefile.ssl	Wed Mar 24 17:25:25 1999
+--- Makefile.org.orig	Mon Mar 22 18:18:18 1999
++++ Makefile.org	Wed Mar 24 17:25:25 1999
 @@ -149,7 +149,7 @@
  ONEDIRS=out tmp
  EDIRS=  times doc bugs util include certs ms shlib mt demos perl sf dep

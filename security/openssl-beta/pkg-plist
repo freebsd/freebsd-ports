@@ -52,6 +52,7 @@ include/txt_db.h
 include/x509.h
 include/x509_vfy.h
 include/x509v3.h
+lib/libRSAglue.a
 lib/libcrypto.a
 lib/libssl.a
 lib/openssl.cnf
