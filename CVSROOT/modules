@@ -273,6 +273,7 @@ alf		ports/devel/alf
 algae		ports/math/algae
 alienwah	ports/audio/alienwah
 align		ports/textproc/align
+alisp		ports/lang/alisp
 allegro		ports/devel/allegro
 alloywm		ports/x11-wm/alloywm
 alsaplayer	ports/audio/alsaplayer
