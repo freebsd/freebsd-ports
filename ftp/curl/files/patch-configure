@@ -1,10 +1,10 @@
---- configure.orig	Fri Apr  9 14:00:52 2004
-+++ configure	Fri Apr  9 14:01:29 2004
-@@ -24123,8 +24123,10 @@
-     EXTRA_SSL= ;;
+--- configure.orig	Mon Oct 18 01:22:10 2004
++++ configure	Mon Dec 13 14:59:23 2004
+@@ -24217,8 +24217,10 @@
    *)
-         EXTRA_SSL=$OPT_SSL
-+    if [ ! "$EXTRA_SSL" = "/usr" ]; then
+         PKGTEST="no"
+     EXTRA_SSL=$OPT_SSL
++    if ! [ "$EXTRA_SSL" = "/usr" ]; then
      LDFLAGS="$LDFLAGS -L$EXTRA_SSL/lib$libsuff"
      CPPFLAGS="$CPPFLAGS -I$EXTRA_SSL/include/openssl -I$EXTRA_SSL/include"
 +    fi
