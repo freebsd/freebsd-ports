@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Feb  3 18:01:43 2004
++++ Makefile.in	Tue Feb  3 18:01:59 2004
+@@ -116,7 +116,7 @@
+ Renderincludedir = $(includedir)/X11/extensions
+ Renderinclude_HEADERS = render.h renderproto.h
+ 
+-Renderdocdir = $(datadir)/doc/render
++Renderdocdir = $(datadir)/doc/renderext
+ Renderdoc_DATA = library protocol
+ 
+ pkgconfigdir = $(prefix)/libdata/pkgconfig
