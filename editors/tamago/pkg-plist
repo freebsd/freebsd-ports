@@ -10,6 +10,7 @@
 %%ELISPDIR%%/egg/egg-sim.elc
 %%ELISPDIR%%/egg/egg.el
 %%ELISPDIR%%/egg/egg.elc
+%%ELISPDIR%%/egg/egg/.nosearch
 %%ELISPDIR%%/egg/egg/anthy.el
 %%ELISPDIR%%/egg/egg/anthy.elc
 %%ELISPDIR%%/egg/egg/anthyipc.el
