@@ -1,0 +1,41 @@
+--- Makefile.orig	Wed Aug 27 04:00:14 2003
++++ Makefile	Mon Sep  1 15:52:21 2003
+@@ -37,8 +37,8 @@
+ 	templates/replication.cfg-template
+ CONFS	= etc/repliclog.cfg
+ OSQLS	= sql/lastchg_install.sql sql/lastchg_remove.sql
+-JARS	= jar/jdbc7.0-1.2.jar jar/log4j.jar
+-ERJAR	= jar/erserver.jar
++JARS	= jar/jdbc7.0-1.2.jar
++ERJAR	= 
+ RHSCRIPT = scripts/erserver.redhat
+ FBSCRIPT = scripts/erserver.freebsd
+ NBSCRIPT = scripts/erserver.netbsd
+@@ -70,16 +70,15 @@
+ 	  $(INSTALL_DATA) $$file $(sqldir) || exit ; \
+ 	done
+ 	for file in $(JARS); do \
+-	  $(INSTALL_DATA) $$file $(libdir) || exit ; \
++	  $(INSTALL_DATA) $$file $(javadir) || exit ; \
+ 	done
+ 	for file in $(TMPLS); do \
+ 	  $(INSTALL_SCRIPT) $$file $(templdir) || exit ; \
+ 	done
+ 	for file in $(ERJAR); do \
+-	  $(INSTALL_DATA) $$file $(libdir) || exit ; \
++	  $(INSTALL_DATA) $$file $(javadir) || exit ; \
+ 	done
+-	$(INSTALL_DATA) $(PERLS) $(libdir)
+-	$(INSTALL_DATA) docs/INSTALL $(basedir)
++	$(INSTALL_DATA) $(PERLS) $(siteperldir)
+ 	$(INSTALL_SHLIB) $(SONAME) $(libdir)
+ 	$(INSTALL_SHLIB) $(SOPTE) $(libdir)
+ 	# If running on RedHat, install its startup script
+@@ -92,7 +91,6 @@
+ 
+ installdirs:
+ 	$(mkinstalldirs) $(bindir) \
+-	  $(libdir) $(docdir) $(logdir) \
+ 	  $(sysconfdir) $(sqldir) $(templdir)
+ 
+ clean distclean maintainer-clean:

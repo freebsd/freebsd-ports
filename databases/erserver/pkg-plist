@@ -1,0 +1,32 @@
+bin/ers_addslave
+bin/ers_addtable
+bin/ers_ctl
+bin/ers_masterremovefunctions
+bin/ers_masterremovetables
+bin/ers_mastershowcolumns
+bin/ers_mastershowtables
+bin/ers_monitor
+bin/ers_remove
+bin/ers_setup
+bin/ers_slaveincludetable
+bin/ers_slaveremovetables
+bin/ers_slaveshowcolumns
+bin/ers_slaveshowtables
+share/doc/erserver/diagram.gif
+share/doc/erserver/install.html
+share/doc/erserver/install.pdf
+share/doc/erserver/install.txt
+share/doc/erserver/logo.png
+etc/repliclog.cfg
+share/java/classes/jdbc7.0-1.2.jar
+@comment share/java/classes/erserver.jar
+share/erserver/erserver.freebsd
+share/erserver/lastchg_install.sql
+share/erserver/lastchg_remove.sql
+share/erserver/ers_setvars-template
+share/erserver/replication.cfg-template
+lib/postgresql/pte.so
+lib/postgresql/erserver.so
+%%SITE_PERL%%/eRServer.pm
+@dirrm share/doc/erserver
+@dirrm share/erserver
