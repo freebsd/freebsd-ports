@@ -1,6 +1,6 @@
---- Makefile.orig	Mon Mar 11 09:36:52 2002
-+++ Makefile	Thu Jun 13 15:20:18 2002
-@@ -2,14 +2,14 @@
+--- Makefile.orig	Wed Jun 11 10:42:07 2003
++++ Makefile	Wed Aug 13 14:48:47 2003
+@@ -4,7 +4,7 @@
  
  #################################################################
  # CHANGE THIS LINE to point to the location of your pppd binary.
@@ -8,12 +8,13 @@
 +PPPD = /usr/sbin/ppp
  #################################################################
  
- CC	= gcc
- RM	= rm -f
+ BINDIR=$(DESTDIR)/usr/sbin
+@@ -15,7 +15,7 @@
+ OPTIMIZE= -O0
  DEBUG	= -g
  INCLUDE =
--CFLAGS  = -Wall -O1 $(DEBUG) $(INCLUDE)
-+CFLAGS  = -Wall -O1 $(DEBUG) $(INCLUDE) -DUSER_PPP
- LIBS	=
- LDFLAGS	= -lutil
+-CFLAGS  = -Wall $(OPTIMIZE) $(DEBUG) $(INCLUDE)
++CFLAGS  = -Wall $(OPTIMIZE) $(DEBUG) $(INCLUDE) -DUSER_PPP
+ LIBS	= -lutil
+ LDFLAGS	=
  
