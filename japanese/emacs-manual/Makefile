@@ -6,29 +6,26 @@
 # $FreeBSD$
 #
 
-DISTNAME=	emacs-20.3-man-jp
-PKGNAME=	ja-emacs-manual-13.1998.11.25
+DISTNAME=	emacs-20.4-man-jp
+PKGNAME=	ja-emacs-manual-13.1999.09.12
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/GNU/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	okazaki@be.to
 
-BUILD_DEPENDS=	emacs-20.3:${PORTSDIR}/editors/emacs20 \
-		/nonexistent:${PORTSDIR}/editors/emacs20:fetch
-
-BROKEN=	"Depending emacs ports are already 20.4. Waiting for upgrade."
-FORBIDDEN= ${BROKEN} # Avoiding package building error report.
+BUILD_DEPENDS=	emacs-20.4:${PORTSDIR}/editors/emacs20 \
+		/nonexistent:${PORTSDIR}/editors/emacs20:checksum
 
 # EMACS_ARC is fetched by BUILD_DEPENDS
-EMACS_DISTNAME= emacs-20.3
+EMACS_DISTNAME= emacs-20.4
 EMACS_ARC=	${EMACS_DISTNAME}.tar.gz
 EMACS_SRCDIR=	${WRKDIR}/${EMACS_DISTNAME}
 EXTRACT_FILES=	${EMACS_DISTNAME}/man/ack.texi \
 		${EMACS_DISTNAME}/lisp/textmodes/texinfmt.el
 
 # We use emacs20 to format texinfo files.
-EMACS=		emacs-20.3
+EMACS=		emacs-20.4
 FORMAT_FLAG=	t
 
 MAKE_ENV=	EMACS="${EMACS}" FORMAT_FLAG="${FORMAT_FLAG}"
@@ -36,17 +33,12 @@ MAKE_ENV=	EMACS="${EMACS}" FORMAT_FLAG="${FORMAT_FLAG}"
 post-extract:
 	@${CP} ${FILESDIR}/Makefile.in ${WRKSRC}/Makefile
 	@(cd ${WRKDIR} && \
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${EMACS_ARC} ${EXTRACT_AFTER_ARGS} ${EXTRACT_FILES})
-	@${CP} ${EMACS_SRCDIR}/man/ack.texi ${WRKSRC}/ack.texi
-	@${CP} ${EMACS_SRCDIR}/lisp/textmodes/texinfmt.el ${WRKSRC}/texinfmt.el
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${EMACS_ARC} ${EXTRACT_AFTER_ARGS} ${EXTRACT_FILES} ; \
+	${CP} ${EXTRACT_FILES} ${WRKSRC})
+	@${MKDIR} ${WRKDIR}/info
 
 pre-patch:
 	@${PATCH} ${PATCH_ARGS} < ${WRKSRC}/patch-texinfmt.el
-
-post-patch:
-	@(cd ${WRKSRC} && ${MV} texinfmt.el texinfmt.el.tmp && \
-	  ${SED} -e 's/START-INFO-DIR-ENTRY\\n\\n/START-INFO-DIR-ENTRY\\n/g' \
-	  texinfmt.el.tmp > texinfmt.el)
 
 pre-build:
 	@${ECHO_MSG} "===>   Now start formatting texinfo. Please wait."
