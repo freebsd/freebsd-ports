@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-MAINTAINER=     alex@big.endian.de
+MAINTAINER=     alex@FreeBSD.org
 
 ISPELL_DENEU=	yes
 PORTNAME=	ispell
