@@ -1,0 +1,11 @@
+--- nmz/Makefile.in.orig	Wed Apr 14 03:09:04 2004
++++ nmz/Makefile.in	Wed Apr 21 21:19:46 2004
+@@ -174,7 +174,7 @@
+ 
+ 
+ libnmz_la_DEPENDENCIES = @NMZ_LIBOBJS@
+-libnmz_la_LIBADD = @NMZ_LIBOBJS@
++libnmz_la_LIBADD = @NMZ_LIBOBJS@ @LTLIBINTL@
+ libnmz_la_LDFLAGS = -version-info $(LTVERSION)
+ subdir = nmz
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
