@@ -1,57 +1,150 @@
-# Ports collection makefile for: gnugadu
-# Date created:		23 dec 2001
-# Whom: 		doc@lublin.t1.pl
+# Ports collection makefile for: gnugadu2
+# Date created:		12 january 2004
+# Whom: 		smyru@heron.pl
 #
 # $FreeBSD$
 #
 
-PORTNAME=	gnugadu
-PORTVERSION=	1.0.0
+PORTNAME=	gnugadu2
+PORTVERSION=	2.0.p5
 CATEGORIES=	polish net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ggadu
-DISTNAME=	gg-${PORTVERSION}
+DISTNAME=	gg2-${PORTVERSION:S/.p5/pre5/}
 
-MAINTAINER=	dotz@irc.pl
-COMMENT=	A GaduGadu client for X11/GTK
+MAINTAINER=	smyru@heron.pl
+COMMENT=	GTK2 based Gadu-Gadu client for X11
 
+LIB_DEPENDS=	gadu.3:${PORTSDIR}/polish/ekg
+
+USE_X_PREFIX=	yes
+USE_BZIP2=	yes
+USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gtk12
+USE_GNOME=	gtk20
+USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
-USE_SUBMAKE=	yes
-GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
+WANT_GNOME=	yes
 
-.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-IS_INTERACTIVE=	yes
+CONFIGURE_ARGS=	--with-gui \
+		--with-gadu \
+		--with-sms \
+		--with-external \
+		--with-update
+
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+.include <bsd.port.pre.mk>
+
+.if (${HAVE_GNOME:Mesound}!="")
+WITH_ESOUND=	yes
 .endif
 
-SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
-		TOUCH="${TOUCH}" \
-		MKDIR="${MKDIR}" \
-		CAT="${CAT}" \
-		GNUGADU_OPTIONS="${GNUGADU_OPTIONS}" \
-		REALCURDIR="${.CURDIR}"
+.if defined(WITH_DOCKLET)
+CONFIGURE_ARGS+=	--with-docklet_system_tray
+PLIST_SUB+=	DOCKLET:=""
+.else
+CONFIGURE_ARGS+=	--without-docklet_system_tray
+PLIST_SUB+=	DOCKLET:="@comment "
+.endif
 
-pre-fetch:
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.gg
+.if defined(WITH_DOCKAPP)
+CONFIGURE_ARGS+=	--with-docklet_dockapp
+PLIST_SUB+=	DOCKAPP:=""
+.else
+CONFIGURE_ARGS+=	--without-docklet_dockapp
+PLIST_SUB+=	DOCKAPP:="@comment "
+.endif
+
+.if defined(WITH_TLEN)
+CONFIGURE_ARGS+=	--with-tlen
+LIB_DEPENDS+=	tlen.1:${PORTSDIR}/polish/libtlen
+PLIST_SUB+=	TLEN:=""
+.else
+CONFIGURE_ARGS+=	--without-tlen
+PLIST_SUB+=	TLEN:="@comment "
+.endif
+
+.if defined(WITH_JABBER)
+CONFIGURE_ARGS+=	--with-jabber
+LIB_DEPENDS+=	loudmouth.0:${PORTSDIR}/net/loudmouth
+PLIST_SUB+=	JABBER:=""
+.else
+CONFIGURE_ARGS+=	--without-jabber
+PLIST_SUB+=	JABBER:="@comment "
+.endif
+
+.if defined(WITH_ESOUND)
+CONFIGURE_ARGS+=	--with-esd
+PKGNAMESUFFIX=	-esound
+USE_GNOME+=	esound
+PLIST_SUB+=	ESOUND:=""
+.else
+CONFIGURE_ARGS+=	--without-esd
+PLIST_SUB+=	ESOUND:="@comment "
+.endif
+
+.if defined(WITH_ARTS)
+CONFIGURE_ARGS+=	--with-arts
+LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
+PLIST_SUB+=	ARTS:=""
+.else
+CONFIGURE_ARGS+=	--without-arts
+PLIST_SUB+=	ARTS:="@comment "
+.endif
+
+.if defined(WITH_OSS)
+CONFIGURE_ARGS+=	--with-oss
+PLIST_SUB+=	OSS:=""
+.else
+PLIST_SUB+=	OSS:="@comment "
+.endif
+
+.if defined(WITH_XOSD)
+CONFIGURE_ARGS+=	--with-xosd
+LIB_DEPENDS+=	xosd.4:${PORTSDIR}/misc/xosd
+PLIST_SUB+=	XOSD:=""
+.else
+CONFIGURE_ARGS+=	--without-xosd
+PLIST_SUB+=	XOSD:="@comment "
+.endif
+
+.if (${HAVE_GNOME:Mgnomehier}!="")
+PLIST_SUB+=	GNOME:=""
+.else
+PLIST_SUB+=	GNOME:="@comment "
+.endif
+.if exists(${LOCALBASE}/lib/libkdecore.so)
+PLIST_SUB+=	KDE:=""
+.else
+PLIST_SUB+=	KDE:="@comment "
+.endif
+
+pre-everything::
+	@${ECHO_MSG}
+	@${ECHO_MSG} "  You can define following build options:"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "	WITH_TLEN      to enable Tlen.pl network plugin"
+	@${ECHO_MSG} "	WITH_JABBER    to enable Jabber loudmouth plugin"
+	@${ECHO_MSG} "	WITH_XOSD      to enable On-Screen-Display messages"
+	@${ECHO_MSG} "	WITH_DOCKLET   to enable freedesktop.org docklet plugin"
+	@${ECHO_MSG} "	WITH_DOCKAPP   to enable WindowMaker dockapp plugin"
+	@${ECHO_MSG} "	WITH_OSS       to build with sound via OSS"
+	@${ECHO_MSG} "	WITH_ARTS      to build with aRts sound server"
+	@${ECHO_MSG} "	WITH_ESOUND    to build with esound sound server"
+	@${ECHO_MSG}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,GTK_ CFLAGS,GTK_CFLAGS,' \
-		-e 's,CFLAGS =, CFLAGS += @GTK_CFLAGS@ ${PTHREAD_CFLAGS},' \
-		-e 's,@GTK_LIBS@,@GTK_LIBS@ ${PTHREAD_LIBS},'\
-		${WRKSRC}/Makefile.in \
-		${WRKSRC}/src/Makefile.in
-	@${REINPLACE_CMD} -e 's,-O2,,' -e 's,gtk-config,${GTK_CONFIG},' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/gg2.desktop
 
 post-install:
-	${STRIP_CMD} ${PREFIX}/bin/gg
-
-post-clean:
-	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
-
-.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
-.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
+.if (${HAVE_GNOME:Mgnomehier}!="")
+	${INSTALL_DATA} ${WRKSRC}/gg2.desktop ${X11BASE}/share/gnome/apps/Internet
+.endif
+.if exists(${LOCALBASE}/lib/libkdecore.so)
+	${INSTALL_DATA} ${WRKSRC}/gg2.desktop ${LOCALBASE}/share/applnk/Internet
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -5,6 +5,7 @@
     SUBDIR += aspell
     SUBDIR += ekg
     SUBDIR += gnugadu
+    SUBDIR += gnugadu2
     SUBDIR += ispell
     SUBDIR += kadu
     SUBDIR += kde3-i18n
