@@ -1,0 +1,41 @@
+#! /bin/sh
+#
+# $FreeBSD: /tmp/pcvs/ports/biology/distribfold/Attic/pkg-install,v 1.1 2002-10-07 03:07:13 lioux Exp $
+# taken from devel/perforce
+
+PATH=/bin:/usr/sbin
+
+DNETFOLD_USER=${DNETFOLD_USER:-dnetfold}
+DNETFOLD_GROUP=${DNETFOLD_GROUP:-dnetfold}
+
+case $2 in
+POST-INSTALL)
+	USER=${DNETFOLD_USER}
+	GROUP=${DNETFOLD_GROUP}
+
+	if pw group show "${GROUP}" 2>/dev/null; then
+		echo "You already have a group \"${GROUP}\", so I will use it."
+	else
+		if pw groupadd ${GROUP} ; then
+			echo "Added group \"${GROUP}\"."
+		else
+			echo "Adding group \"${GROUP}\" failed..."
+			exit 1
+		fi
+	fi
+
+	if pw user show "${USER}" 2>/dev/null; then
+		echo "You already have a user \"${USER}\", so I will use it."
+	else
+		if pw useradd ${USER} -g ${GROUP} -h - \
+			-d /nonexistent -c "distribfold Daemon" -s /sbin/nologin
+		then
+			echo "Added user \"${USER}\"."
+		else
+			echo "Adding user \"${USER}\" failed..."
+			exit 1
+		fi
+	fi
+
+	;;
+esac
