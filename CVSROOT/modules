@@ -5062,6 +5062,7 @@ p5-Net		ports/net/p5-Net
 p5-Net-CIDR	ports/net/p5-Net-CIDR
 p5-Net-DLookup	ports/net/p5-Net-DLookup
 p5-Net-DNS	ports/net/p5-Net-DNS
+p5-Net-DNS-ZoneFile	ports/net/p5-Net-DNS-ZoneFile
 p5-Net-Daemon	ports/net/p5-Net-Daemon
 p5-Net-FTPServer	ports/ftp/p5-Net-FTPServer
 p5-Net-Google	ports/net/p5-Net-Google
