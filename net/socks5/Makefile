@@ -1,20 +1,19 @@
 # New ports collection makefile for:	socks5
-# Version required:			beta-0.16.4
+# Version required:			beta-0.16.6
 # Date created:				24 Apr 1996
 # Whom:					pst
 #
-# $Id: Makefile,v 1.4 1996/07/22 23:06:45 pst Exp $
+# $Id: Makefile,v 1.5 1996/07/23 16:13:54 pst Exp $
 #
 
-PKGNAME=	socks5-0.16.4
-DISTNAME=	socks5-beta-0.16.4-exportable
+PKGNAME=	socks5-0.16.6
+DISTNAME=	socks5-beta-0.16.6-exportable
 CATEGORIES+=	net security
 MASTER_SITES=	ftp://ftp.nec.com/pub/socks/socks5/
 
 MAINTAINER=	ambrisko@ambrisko.roble.com
 
 NO_CDROM=	NEC has a funky license for this software
-RESTRICTED=	ITAR license required to export outside US/Canada
 NO_PACKAGE=	put an extra slug in to make sure he's dead
 
 # here are some extra configure args you may wish to use
