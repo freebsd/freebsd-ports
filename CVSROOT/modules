@@ -7703,6 +7703,7 @@ swhplugins	ports/audio/swhplugins
 swi-pl		ports/lang/swi-pl
 swig11		ports/devel/swig11
 swig13		ports/devel/swig13
+swig13-doc	ports/devel/swig13-doc
 swigruby	ports/devel/swigruby
 swish++		ports/www/swish++
 swish-e		ports/www/swish-e
