@@ -7,6 +7,7 @@
 
 PORTNAME=	razor-agents
 PORTVERSION=	2.61
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	razor
@@ -28,6 +29,9 @@ MAN3=		Razor2::Errorhandler.3 Razor2::Preproc::deHTMLxs.3 \
 MAN5=		razor-agents.5 razor-whitelist.5 razor-agent.conf.5
 
 post-patch:
+	@${PERL} -pi.orig -e 's|/etc/razor|${PREFIX}/etc|g' \
+		${WRKSRC}/lib/Razor2/Client/Agent.pm \
+		${WRKSRC}/docs/* ${WRKSRC}/Changes ${WRKSRC}/INSTALL
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
 
 post-install:
