@@ -1,26 +1,27 @@
-# New ports collection makefile for:   GTK+ Object Builder
-# Date created:        25 January 2000
-# Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
+# New ports collection makefile for:   gob2
+# Date created:        09 November 2002
+# Whom:                Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	gob
-PORTVERSION=	1.0.12
-CATEGORIES=	x11-toolkits
+PORTNAME=	gob2
+PORTVERSION=	2.0.3
+CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gob/1.0
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.0
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
+LIB_DEPENDS=	glib-2.0.0:${PORTSDIR}/devel/glib20
+
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
-USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
-MAN1=		gob.1
+MAN1=		gob2.1
 
 .include <bsd.port.mk>
