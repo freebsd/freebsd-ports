@@ -4,17 +4,16 @@ lib/libsamplerate.a
 lib/libsamplerate.so
 lib/libsamplerate.so.0
 libdata/pkgconfig/samplerate.pc
-%%PORTDOCS%%share/doc/libsamplerate/SRC.png
 %%PORTDOCS%%share/doc/libsamplerate/SRC.css
+%%PORTDOCS%%share/doc/libsamplerate/SRC.png
+%%PORTDOCS%%share/doc/libsamplerate/api.html
+%%PORTDOCS%%share/doc/libsamplerate/api_full.html
+%%PORTDOCS%%share/doc/libsamplerate/api_misc.html
+%%PORTDOCS%%share/doc/libsamplerate/api_simple.html
+%%PORTDOCS%%share/doc/libsamplerate/download.html
+%%PORTDOCS%%share/doc/libsamplerate/history.html
 %%PORTDOCS%%share/doc/libsamplerate/index.html
 %%PORTDOCS%%share/doc/libsamplerate/license.html
-%%PORTDOCS%%share/doc/libsamplerate/history.html
-%%PORTDOCS%%share/doc/libsamplerate/download.html
 %%PORTDOCS%%share/doc/libsamplerate/lists.html
 %%PORTDOCS%%share/doc/libsamplerate/quality.html
 %%PORTDOCS%%share/doc/libsamplerate/win32.html
-%%PORTDOCS%%share/doc/libsamplerate/api.html
-%%PORTDOCS%%share/doc/libsamplerate/api_simple.html
-%%PORTDOCS%%share/doc/libsamplerate/api_full.html
-%%PORTDOCS%%share/doc/libsamplerate/api_misc.html
-@dirrm %%PORTDOCS%%share/doc/libsamplerate
