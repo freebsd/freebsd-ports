@@ -18,6 +18,7 @@ LIB_PC_DEPENDS=	${X11BASE}/libdata/pkgconfig/x11.pc:${PORTSDIR}/x11/libX11 \
 		${X11BASE}/libdata/pkgconfig/xt.pc:${PORTSDIR}/x11-toolkits/libXt \
 		${X11BASE}/libdata/pkgconfig/xmu.pc:${PORTSDIR}/x11-toolkits/libXmu
 BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/xproto.pc:${PORTSDIR}/x11/xproto \
+		${X11BASE}/libdata/pkgconfig/xextensions.pc:${PORTSDIR}/x11/xextensions \
 		${LIB_PC_DEPENDS}
 RUN_DEPENDS=	${LIB_PC_DEPENDS}
 
@@ -30,5 +31,7 @@ USE_LIBTOOL_VER=13
 CFLAGS+=	-DMALLOC_0_RETURNS_NULL
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack pkgconfig
+
+MAN3=		Xaw.3
 
 .include <bsd.port.mk>
