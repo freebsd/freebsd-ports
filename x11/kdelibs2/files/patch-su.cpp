@@ -4,7 +4,7 @@
  	setTerminal(true);
  
      QCStringList args;
-+    args+="-";
++    args+="-m";
      if ((m_Scheduler != SchedNormal) || (m_Priority > 50))
  	args += "root";
      else
