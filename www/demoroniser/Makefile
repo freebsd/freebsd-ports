@@ -1,0 +1,26 @@
+# New ports collection makefile for:	demoroniser
+# Version required:			1.0
+# Date created:				07 August 1999
+# Whom:					Chris D. Faulhaber <jedgar@fxp.org>
+#
+# $Id:$
+#
+
+DISTNAME=	demoroniser
+PKGNAME=	demoroniser-1.0
+CATEGORIES=	www
+MASTER_SITES=	http://www.fourmilab.ch/webtools/demoroniser/
+
+MAINTAINER=	jedgar@fxp.org
+
+USE_ZIP=	yes
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
+
+MAN1=		demoroniser.1
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKDIR}/demoroniser.pl ${PREFIX}/bin/demoroniser
+	${INSTALL_MAN} ${WRKDIR}/demoroniser.1 ${PREFIX}/man/man1
+
+.include <bsd.port.mk>
