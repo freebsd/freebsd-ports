@@ -13,6 +13,9 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/wine/development
 DISTNAME=	Wine-${PORTVERSION:S/.//g}
 
+# This port has not been upgraded from 2002.08.04 to 2002.09.04 because the
+# latter does not work as well as the previous ones on some packages tested.
+
 MAINTAINER=	gerald@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/wine-${PORTVERSION:S/.//g}
