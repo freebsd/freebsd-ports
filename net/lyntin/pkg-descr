@@ -1,0 +1,5 @@
+Lyntin is a mature multi-platform multi-user-interface mud client written
+entirely in Python. It's also a framework on top of which you can code
+additional functionality to suit your needs.
+
+WWW: http://lyntin.sourceforge.net

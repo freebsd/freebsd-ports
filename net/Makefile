@@ -327,6 +327,7 @@
     SUBDIR += loadd
     SUBDIR += loudmouth
     SUBDIR += luasocket
+    SUBDIR += lyntin
     SUBDIR += mDNSResponder
     SUBDIR += mad_fcl
     SUBDIR += magictun
