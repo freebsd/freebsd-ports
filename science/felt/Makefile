@@ -8,7 +8,7 @@
 
 DISTNAME=	felt-3.02
 CATEGORIES=	cad
-MASTER_SITES=	http://www-cse.ucsd.edu/users/atkinson/FElt/Binaries/ \
+MASTER_SITES=	http://symphony.clarku.edu/atkinson/felt/Binaries/ \
 		ftp://ftp.isd.uni-stuttgart.de/pub/src/FEM/FElt/
 EXTRACT_SUFX=	.src.tar.gz
 
