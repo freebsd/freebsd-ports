@@ -312,6 +312,42 @@ share/WindowMaker/plmenu.pl
 share/WindowMaker/plmenu.zh_CN
 share/WindowMaker/wmmacros
 share/WindowMaker/xtree.dat
+share/locale/cs/LC_MESSAGES/WPrefs.mo
+share/locale/cs/LC_MESSAGES/WindowMaker.mo
+share/locale/da/LC_MESSAGES/WindowMaker.mo
+share/locale/de/LC_MESSAGES/WPrefs.mo
+share/locale/de/LC_MESSAGES/WindowMaker.mo
+share/locale/el/LC_MESSAGES/WindowMaker.mo
+share/locale/es/LC_MESSAGES/WPrefs.mo
+share/locale/es/LC_MESSAGES/WindowMaker.mo
+share/locale/fi/LC_MESSAGES/WPrefs.mo
+share/locale/fi/LC_MESSAGES/WindowMaker.mo
+share/locale/fr/LC_MESSAGES/WPrefs.mo
+share/locale/fr/LC_MESSAGES/WindowMaker.mo
+share/locale/gl/LC_MESSAGES/WindowMaker.mo
+share/locale/hr/LC_MESSAGES/WPrefs.mo
+share/locale/hr/LC_MESSAGES/WindowMaker.mo
+share/locale/it/LC_MESSAGES/WPrefs.mo
+share/locale/it/LC_MESSAGES/WindowMaker.mo
+share/locale/ja/LC_MESSAGES/WPrefs.mo
+share/locale/ja/LC_MESSAGES/WindowMaker.mo
+share/locale/ko/LC_MESSAGES/WPrefs.mo
+share/locale/ko/LC_MESSAGES/WindowMaker.mo
+share/locale/nl/LC_MESSAGES/WindowMaker.mo
+share/locale/no/LC_MESSAGES/WindowMaker.mo
+share/locale/pl/LC_MESSAGES/WindowMaker.mo
+share/locale/pt/LC_MESSAGES/WPrefs.mo
+share/locale/pt/LC_MESSAGES/WindowMaker.mo
+share/locale/ro/LC_MESSAGES/WindowMaker.mo
+share/locale/ru/LC_MESSAGES/WPrefs.mo
+share/locale/ru/LC_MESSAGES/WindowMaker.mo
+share/locale/se/LC_MESSAGES/WindowMaker.mo
+share/locale/sk/LC_MESSAGES/WindowMaker.mo
+share/locale/tr/LC_MESSAGES/WindowMaker.mo
+share/locale/zh_CN/LC_MESSAGES/WPrefs.mo
+share/locale/zh_CN/LC_MESSAGES/WindowMaker.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/WPrefs.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/WindowMaker.mo
 @exec mkdir -p %B/Sounds
 @dirrm share/WindowMaker/Themes/STEP2000.themed
 @dirrm share/WindowMaker/Themes/Night.themed
