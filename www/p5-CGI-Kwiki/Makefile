@@ -7,6 +7,7 @@
 
 PORTNAME=	CGI-Kwiki
 PORTVERSION=	0.18
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	CGI
@@ -15,10 +16,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	clsung@dragon2.net
 COMMENT=	A Quickie Wiki Package that's not too Tricky
 
-PERL_CONFIGURE=	yes
-
 BUILD_DEPENDS=	${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${BUILD_DEPENDS} \
+		${SITE_PERL}/Locale/Maketext.pm:${PORTSDIR}/devel/p5-Locale-Maketext
+
+PERL_CONFIGURE=	yes
 
 MAN1=		kwiki-install.1
 MAN3=		CGI::Kwiki.3 \
@@ -49,6 +51,7 @@ post-configure:
 		     -e 'if (/\@\$$\(POD2MAN\)/) { $$_ .= "\tlib/CGI/Kwiki/Config.pm \\\n\t\$$(INST_MAN3DIR)/CGI::Kwiki::Config.\$$(MAN3EXT) \\\n\tlib/CGI/Kwiki/Config_yaml.pm \\\n\t\$$(INST_MAN3DIR)/CGI::Kwiki::Config_yaml.\$$(MAN3EXT) \\\n"};' \
 			${WRKSRC}/Makefile
 .if ${PERL_LEVEL} < 500601
+EXTRA_PATCHES=	${FILESDIR}/p5005-patch-CGI-Kwiki-Template.pm
 post-patch:
 	${PERL} -pi -e '$$_ = "" if /warnings/;' \
 	             -e 's/\$$\w+(->\w+)?->\$$\w+\b(?!\()/$$&()/g;' \
