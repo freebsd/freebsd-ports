@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	irssi
-PORTVERSION=	0.7.91
+PORTVERSION=	0.7.92
 CATEGORIES=	irc ipv6
-MASTER_SITES=	http://xlife.dhs.org/irssi/files/
+MASTER_SITES=	http://irssi.org/files/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-2
 
 MAINTAINER=	jim@FreeBSD.org
 
@@ -17,6 +18,7 @@ LIB_DEPENDS=	glib12.3:${PORTSDIR}/devel/glib12 \
 
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
