@@ -33,17 +33,6 @@
   AR= ar
   RM= rm -f
   
-***************
-*** 39,44 ****
---- 39,46 ----
-  SYSTEM= System/GC/gc.a System/base.a System/MACROS System/CONFIG System/ITERS
-  BOOTCS= ${SHOME}/Boot/${CS}
-  BOOTHOME= ${SHOME}
-+ 
-+ all: testall
-  
-  # Make the boot compiler and give it a workout on itself and some test cases
-  testall: bootstrap test
 *** System/CONFIG.proto.0	Mon Oct 31 03:55:23 1994
 --- System/CONFIG.proto	Mon Oct 31 03:57:59 1994
 ***************
