@@ -4,11 +4,11 @@
 # Date created:         2 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.4 1998/09/14 22:33:23 smace Exp $
+# $Id: Makefile,v 1.5 1998/09/16 14:08:47 smace Exp $
 #
 
-PKGNAME=        rsaref-2.0
 DISTNAME=       rsaref20.1996
+PKGNAME=        rsaref-2.0
 CATEGORIES=     security
 MASTER_SITES=   ftp://utopia.hacktic.nl/pub/replay/pub/crypto/LIBS/rsa/
 EXTRACT_SUFX=   .tar.Z
@@ -19,17 +19,16 @@ WRKSRC=         ${WRKDIR}/source
 RESTRICTED=     "Crypto"
 
 pre-configure:
-	cp ${FILESDIR}/Makefile ${WRKSRC}
+	${CP} ${FILESDIR}/Makefile ${WRKSRC}
 	cd ${WRKSRC} && \
-		cp des.h _des.h && \
-		cp md2.h _md2.h && \
-		cp md5.h _md5.h
+		${CP} des.h _des.h && \
+		${CP} md2.h _md2.h && \
+		${CP} md5.h _md5.h
 
 post-install:
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
-	install -d -m 555 ${PREFIX}/share/doc/rsaref
+	${INSTALL} -d -m 555 ${PREFIX}/share/doc/rsaref
 	cd ${WRKDIR}/doc && ${INSTALL_DATA} info.txt rsaref.txt \
-                        ${PREFIX}/share/doc/rsaref
-
+		${PREFIX}/share/doc/rsaref
 
 .include <bsd.port.mk>
