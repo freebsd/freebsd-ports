@@ -7,6 +7,7 @@
 
 PORTNAME=	quake2lnx
 PORTVERSION=	0.16.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.icculus.org/quake2/files/:icc \
 		ftp://ftp.idsoftware.com/idstuff/quake2/:id
@@ -20,9 +21,13 @@ DISTFILES+=	maxpak.pak:icc
 DISTFILES+=	pak${i}.pak:icc
 . endfor
 .endif
-.if defined(WITH_SHAREWARE_DATA) || defined(WITH_MANUAL)
-DISTFILES+=	q2-314-demo-x86.exe:id
+.if defined(WITH_SHAREWARE_DATA) || defined(WITH_MANUAL) || defined(WITH_CTF_MAPS)
 EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
+. if defined(WITH_CTF_MAPS)
+DISTFILES+=	q2-3.20-x86-full-ctf.exe:id
+. else
+DISTFILES+=	q2-314-demo-x86.exe:id
+. endif
 .endif
 .if defined(WITH_XATRIX)
 DISTFILES+=	source/xatrixsrc320.shar.Z:id
@@ -267,6 +272,9 @@ pre-everything::
 .if !defined(WITH_CTF)
 	@${ECHO_MSG} "Define WITH_CTF to build Capture The Flag mod"
 .endif
+.if !defined(WITH_CTF_MAPS)
+	@${ECHO_MSG} "Define WITH_CTF_MAPS to install maps for CTF mod"
+.endif
 .if !defined(WITH_XATRIX)
 	@${ECHO_MSG} "Define WITH_XATRIX to install \"The Reckoning\" (Xatrix) mission pack .so"
 .endif
@@ -329,7 +337,7 @@ do-install:
 .for tgt in ${EXE_TARGETS}
 	${INSTALL_PROGRAM} ${TGTDIR}/${tgt} ${PREFIX}/bin
 .endfor
-	@${MKDIR} ${DATADIR}/baseq2
+	@${MKDIR} ${DATADIR}/baseq2 ${DATADIR}/ctf
 .for tgt in ${REF_TARGETS}
 	${INSTALL_PROGRAM} ${TGTDIR}/ref_${tgt}.so ${DATADIR}
 .endfor
@@ -343,8 +351,11 @@ do-install:
 . endfor
 .endif
 .if defined(WITH_CTF)
-	@${MKDIR} ${DATADIR}/ctf
 	${INSTALL_PROGRAM} ${TGTDIR}/ctf/game${ARCH}.so ${DATADIR}/ctf
+.endif
+.if defined(WITH_CTF_MAPS)
+	${UNZIP_CMD} -oj -d ${DATADIR}/ctf \
+		${DISTDIR}/${DIST_SUBDIR}/q2-3.20-x86-full-ctf.exe ctf/pak0.pak
 .endif
 .if defined(WITH_SHAREWARE_DATA)
 	@${MKDIR} ${DATADIR}/baseq2/players

@@ -85,7 +85,8 @@
 %%SHAREWARE%%@dirrm %%DATADIR%%/baseq2/players
 @dirrm %%DATADIR%%/baseq2
 %%CTF%%%%DATADIR%%/ctf/game%%ARCH%%.so
-%%CTF%%@dirrm %%DATADIR%%/ctf
+%%CTFMAPS%%%%DATADIR%%/ctf/pak0.pak
+@dirrm %%DATADIR%%/ctf
 %%XATRIX%%%%DATADIR%%/xatrix/game%%ARCH%%.so
 %%XATRIX%%@dirrm %%DATADIR%%/xatrix
 %%ROGUE%%%%DATADIR%%/rogue/game%%ARCH%%.so
