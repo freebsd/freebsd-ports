@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	srd-fpw
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.3
 CATEGORIES=	japanese
-MASTER_SITES=	http://openlab.ring.gr.jp/edict/srd-fpw/
+MASTER_SITES=	http://openlab.ring.gr.jp/edict/srd-fpw/dist/
 DISTNAME=	srd-fpw${PORTVERSION}-src
 
 MAINTAINER=    	taoka@FreeBSD.org
