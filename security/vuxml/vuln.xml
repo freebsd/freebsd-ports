@@ -1334,7 +1334,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>linux-png</name>
-	<range><le>1.2.2</le></range>
+	<range><le>1.0.14_3</le></range>
+	<range><ge>1.2.*</ge><le>1.2.2</le></range>
       </package>
       <package>
 	<name>png</name>
@@ -1361,7 +1362,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-04-29</discovery>
       <entry>2004-05-02</entry>
-      <modified>2004-05-21</modified>
+      <modified>2004-08-10</modified>
     </dates>
   </vuln>
 
@@ -4123,7 +4124,7 @@ misc.c:
   </vuln>
 
   <vuln vid="f9e3e60b-e650-11d8-9b0a-000347a4fa7d">
-    <topic>libPNG stack-based buffer overflow and other code concerns</topic>
+    <topic>libpng stack-based buffer overflow and other code concerns</topic>
     <affects>
       <package>
         <name>png</name>
