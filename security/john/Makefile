@@ -4,14 +4,17 @@
 # Date created:			  Sun Mar 09, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.2 1997/03/09 21:41:56 obrien Exp $
+# $Id: Makefile,v 1.3 1997/03/10 17:39:35 obrien Exp $
 #
 
 DISTNAME=	ucfjohn3
-PKGNAME=	john-1.4
+PKGNAME=	john-1.4.2
 CATEGORIES=	security
 MASTER_SITES=	http://www.false.com/security/john/
 EXTRACT_SUFX=	.zip
+
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	patch142.diff
 
 MAINTAINER=     obrien@NUXI.com
 
