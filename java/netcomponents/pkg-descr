@@ -1,0 +1,7 @@
+NetComponents TM is a Java package that allows easy access to the
+most commonly used Internet protocols. It provides support for
+FTP, NNTP, SMTP, POP3, Telnet, TFTP, Finger, Whois, and other
+frequently used Internet protocols as well as BSD R command
+support, including rexec, rcmd/rshell and rlogin
+
+WWW: http://www.savarese.org/oro/downloads/index.html#NetComponents
