@@ -52,5 +52,8 @@
 # Treat the TrustedBSD Web site just as the FreeBSD Web site.
 ^projects/trustedbsd/www/
 
+# Skip the CVSweb icon files
+^projects/cvsweb/icons/
+
 # Dictionaries should have no extra noise in them
 ^src/share/dict/*
