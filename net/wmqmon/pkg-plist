@@ -1,6 +1,0 @@
-bin/wmqmon
-%%PORTDOCS%%share/doc/wmqmon/BUGS
-%%PORTDOCS%%share/doc/wmqmon/README
-share/examples/wmqmon/wmqmon.rcfile.example
-@dirrm share/examples/wmqmon
-%%PORTDOCS%%@dirrm share/doc/wmqmon
