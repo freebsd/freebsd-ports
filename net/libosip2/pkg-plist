@@ -39,12 +39,12 @@ include/osipparser2/osip_parser.h
 include/osipparser2/osip_port.h
 include/osipparser2/osip_uri.h
 include/osipparser2/sdp_message.h
-@dirrm include/osip2
-@dirrm include/osipparser2/headers
-@dirrm include/osipparser2
 lib/libosip2.a
 lib/libosip2.so
 lib/libosip2.so.2
 lib/libosipparser2.a
 lib/libosipparser2.so
 lib/libosipparser2.so.2
+@dirrm include/osipparser2/headers
+@dirrm include/osipparser2
+@dirrm include/osip2
