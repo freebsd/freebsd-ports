@@ -168,10 +168,10 @@ WITH_ALL_STATIC_MODULES=	YES
 WANT_APACHE=	"Too bad, guy!"
 .endif
 .if ${WANT_APACHE} == common13
-SUEXEC_CONFARGS=	with-suexec
+SUEXEC_CONFARGS=	suexec
 CONFIGURE_ARGS+=	--enable-suexec
 .elif ${WANT_APACHE} == common2
-SUEXEC_CONFARGS=	suexec
+SUEXEC_CONFARGS=	with-suexec
 .else
 IGNORE=		Can not determine apache version
 .endif
