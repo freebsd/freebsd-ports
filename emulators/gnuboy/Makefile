@@ -7,9 +7,10 @@
 #
 
 PORTNAME=	gnuboy
-PORTVERSION=	0.9.13
+PORTVERSION=	1.0.0
 CATEGORIES=	emulators games
-MASTER_SITES=	http://brightrain.aerifal.cx/~laguna/src/
+MASTER_SITES=	http://gnuboy.unix-fu.org/src/ \
+		http://brightrain.aerifal.cx/~laguna/src/
 
 MAINTAINER=	ijliao@FreeBSD.org
 
