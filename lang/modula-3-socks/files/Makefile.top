@@ -1,0 +1,3 @@
+SUBDIR=	libm3socks m3socks
+
+.include <bsd.subdir.mk>
