@@ -131,6 +131,7 @@
     SUBDIR += libebml
     SUBDIR += liblrdf
     SUBDIR += libtre
+    SUBDIR += libwpd
     SUBDIR += libxml
     SUBDIR += libxml++
     SUBDIR += libxml2

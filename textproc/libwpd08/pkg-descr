@@ -1,0 +1,7 @@
+libwpd is a library for reading and writing WordPerfect(tm)
+documents.
+
+This package also includes utilities for converting to HTML
+and plain text.
+
+WWW: http://libwpd.sourceforge.net/
