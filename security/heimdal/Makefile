@@ -89,4 +89,8 @@ post-install:
 	${SED} 's;%%PREFIX%%;${PREFIX};g' ${FILESDIR}/kdc.sh > \
 		${PREFIX}/etc/rc.d/kdc.sh.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${ARCH} == "amd64"
+CFLAGS+= -fPIC
+.endif
+.include <bsd.port.post.mk>
