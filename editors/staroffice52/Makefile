@@ -149,12 +149,12 @@ do-extract:
 .if defined(WITH_CDROM)
 .if !exists(${CD_MOUNTPT}/linux/office52/setup)
 .if defined(WITH_ADABAS)
-	@cd ${WRKSRC} && ${LN} -s ${CD_MOUNTPT}/linux/adabas/adabas .
-	@cd ${WRKSRC} && ${LN} -s ${CD_MOUNTPT}/linux/adabas/f_0000 .
-	@cd ${WRKSRC} && ${LN} -s ${CD_MOUNTPT}/linux/adabas/f_0001 .
+	@cd ${WRKSRC} && ${LN} -fs ${CD_MOUNTPT}/linux/adabas/adabas .
+	@cd ${WRKSRC} && ${LN} -fs ${CD_MOUNTPT}/linux/adabas/f_0000 .
+	@cd ${WRKSRC} && ${LN} -fs ${CD_MOUNTPT}/linux/adabas/f_0001 .
 .endif
 	@${MKDIR} ${WRKSRC}
-	@cd ${WRKSRC} && ${LN} -s ${CD_MOUNTPT}/linux/office52/* .
+	@cd ${WRKSRC} && ${LN} -fs ${CD_MOUNTPT}/linux/office52/* .
 .endif
 .else
 	@${CP} ${_DISTDIR}/${DISTNAME} ${WRKSRC}
