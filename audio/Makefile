@@ -140,6 +140,7 @@
     SUBDIR += gtkgep
     SUBDIR += gtkpod
     SUBDIR += holyshout
+    SUBDIR += hydrogen
     SUBDIR += icecast
     SUBDIR += icecast2
     SUBDIR += ices
