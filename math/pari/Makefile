@@ -1,13 +1,13 @@
 # New ports collection makefile for:	PARI
-# Version required:	2.0.13a
+# Version required:	2.0.16b
 # Date created:		19 January 1999
 # Whom:	Yoshiaki UCHIKAWA <yoshiaki@kt.rim.or.jp>
 #
-# $Id: Makefile,v 1.6 1999/01/26 02:46:49 steve Exp $
+# $Id: Makefile,v 1.7 1999/07/04 21:29:55 steve Exp $
 #
 
-DISTNAME=	pari-2.0.13.alpha
-PKGNAME=	pari-2.0.13a
+DISTNAME=	pari-2.0.16.beta
+PKGNAME=	pari-2.0.16b
 CATEGORIES=	math
 MASTER_SITES=   ftp://megrez.math.u-bordeaux.fr/pub/pari/unix/ \
 				ftp://hasse.mathematik.tu-muenchen.de/pub/pari/
