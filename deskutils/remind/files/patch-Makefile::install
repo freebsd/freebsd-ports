@@ -1,0 +1,18 @@
+--- src/Makefile.in.orig	Mon Jun 26 16:50:53 2000
++++ src/Makefile.in	Sun Apr 18 23:40:23 2004
+@@ -49,11 +49,14 @@
+ 	@CC@ @LDFLAGS@ -o remind $(REMINDOBJS) @LIBS@
+ 
+ install: all
+-	for prog in $(PROGS) $(SCRIPTS) ; do \
++	for prog in $(PROGS) ; do \
+ 		$(INSTALL_PROGRAM) $$prog $(bindir) ; \
+ 	done
+ 	-strip $(bindir)/remind
+ 	-strip $(bindir)/rem2ps
++	for script in $(SCRIPTS) ; do \
++		$(INSTALL) -m 555 $$script $(bindir) ; \
++	done
+ 	for man in $(MANS) ; do  \
+ 		$(INSTALL_DATA) $$man $(mandir)/man1 ; \
+ 	done
