@@ -5,13 +5,12 @@ the Modula-3 installation directory, by simply building a new shared
 library for "m3configvars".  With this approach, there is no need to
 recompile or even relink applications.
 
-Index: m3/m3configvars/src/COPYRIGHT
 ===================================================================
 RCS file: /home/jdp/m3-cvs/m3/m3configvars/src/COPYRIGHT,v
 retrieving revision 1.1.1.1
 diff -u -r1.1.1.1 COPYRIGHT
---- COPYRIGHT	1996/09/24 05:21:56	1.1.1.1
-+++ COPYRIGHT	1996/09/24 05:32:39
+--- m3/m3configvars/src/COPYRIGHT.orig	1996/09/24 05:21:56	1.1.1.1
++++ m3/m3configvars/src/COPYRIGHT	1996/09/24 05:32:39
 @@ -0,0 +1,93 @@
 +
 +                     Digital License Agreement
@@ -106,13 +105,12 @@ diff -u -r1.1.1.1 COPYRIGHT
 +13. Should you have any questions concerning this Agreement, or if you
 +    desire to contact Digital for any reason, please do so via E-mail:
 +    M3-REQUEST@SRC.DEC.COM.
-Index: m3/m3configvars/src/M3ConfigVars.i3
 ===================================================================
 RCS file: /home/jdp/m3-cvs/m3/m3configvars/src/M3ConfigVars.i3,v
 retrieving revision 1.1.1.1
 diff -u -r1.1.1.1 M3ConfigVars.i3
---- M3ConfigVars.i3	1996/09/24 05:21:56	1.1.1.1
-+++ M3ConfigVars.i3	1996/09/24 05:32:39
+--- m3/m3configvars/src/M3ConfigVars.i3.orig	1996/09/24 05:21:56	1.1.1.1
++++ m3/m3configvars/src/M3ConfigVars.i3	1996/09/24 05:32:39
 @@ -0,0 +1,41 @@
 +(* Copyright (C) 1994, Digital Equipment Corporation *)
 +(* All rights reserved.                              *)
@@ -155,13 +153,12 @@ diff -u -r1.1.1.1 M3ConfigVars.i3
 +  HTML_USE:  TEXT;
 +
 +END M3ConfigVars.
-Index: m3/m3configvars/src/m3makefile
 ===================================================================
 RCS file: /home/jdp/m3-cvs/m3/m3configvars/src/m3makefile,v
 retrieving revision 1.1.1.1
 diff -u -r1.1.1.1 m3makefile
---- m3makefile	1996/09/24 05:21:56	1.1.1.1
-+++ m3makefile	1996/09/24 05:32:39
+--- m3/m3configvars/src/m3makefile.orig	1996/09/24 05:21:56	1.1.1.1
++++ m3/m3configvars/src/m3makefile	1996/09/24 05:32:39
 @@ -0,0 +1,57 @@
 +% Copyright (C) 1994, Digital Equipment Corporation
 +% All rights reserved.

@@ -1,9 +1,8 @@
 New wrapper files for network related functions.  These are separated so
 that they can be easily overridden when SOCKS support is desired.
 
-Index: m3/m3core/src/runtime/FreeBSD2/accept.c
---- accept.c.orig	Thu Oct 24 13:11:22 1996
-+++ accept.c	Thu Oct 24 12:47:29 1996
+--- m3/m3core/src/runtime/FreeBSD2/accept.c.orig	Thu Oct 24 13:11:22 1996
++++ m3/m3core/src/runtime/FreeBSD2/accept.c	Thu Oct 24 12:47:29 1996
 @@ -0,0 +1,16 @@
 +#include "wrap.h"
 +#include <sys/types.h>
@@ -21,9 +20,8 @@ Index: m3/m3core/src/runtime/FreeBSD2/accept.c
 +  EXIT_CRITICAL;
 +  return result;
 +}
-Index: m3/m3core/src/runtime/FreeBSD2/bind.c
---- bind.c.orig	Thu Oct 24 13:11:23 1996
-+++ bind.c	Thu Oct 24 12:48:12 1996
+--- m3/m3core/src/runtime/FreeBSD2/bind.c.orig	Thu Oct 24 13:11:23 1996
++++ m3/m3core/src/runtime/FreeBSD2/bind.c	Thu Oct 24 12:48:12 1996
 @@ -0,0 +1,15 @@
 +#include "wrap.h"
 +#include <sys/types.h>
@@ -40,9 +38,8 @@ Index: m3/m3core/src/runtime/FreeBSD2/bind.c
 +  EXIT_CRITICAL;
 +  return result;
 +}
-Index: m3/m3core/src/runtime/FreeBSD2/close.c
---- close.c.orig	Thu Oct 24 13:11:23 1996
-+++ close.c	Thu Oct 24 12:48:51 1996
+--- m3/m3core/src/runtime/FreeBSD2/close.c.orig	Thu Oct 24 13:11:23 1996
++++ m3/m3core/src/runtime/FreeBSD2/close.c	Thu Oct 24 12:48:51 1996
 @@ -0,0 +1,13 @@
 +#include "wrap.h"
 +#include <unistd.h>
@@ -57,9 +54,8 @@ Index: m3/m3core/src/runtime/FreeBSD2/close.c
 +  EXIT_CRITICAL;
 +  return result;
 +}
-Index: m3/m3core/src/runtime/FreeBSD2/connect.c
---- connect.c.orig	Thu Oct 24 13:11:23 1996
-+++ connect.c	Thu Oct 24 12:49:40 1996
+--- m3/m3core/src/runtime/FreeBSD2/connect.c.orig	Thu Oct 24 13:11:23 1996
++++ m3/m3core/src/runtime/FreeBSD2/connect.c	Thu Oct 24 12:49:40 1996
 @@ -0,0 +1,15 @@
 +#include "wrap.h"
 +#include <sys/types.h>
@@ -76,9 +72,8 @@ Index: m3/m3core/src/runtime/FreeBSD2/connect.c
 +  EXIT_CRITICAL;
 +  return result;
 +}
-Index: m3/m3core/src/runtime/FreeBSD2/dup.c
---- dup.c.orig	Thu Oct 24 13:11:23 1996
-+++ dup.c	Thu Oct 24 12:50:09 1996
+--- m3/m3core/src/runtime/FreeBSD2/dup.c.orig	Thu Oct 24 13:11:23 1996
++++ m3/m3core/src/runtime/FreeBSD2/dup.c	Thu Oct 24 12:50:09 1996
 @@ -0,0 +1,13 @@
 +#include "wrap.h"
 +#include <unistd.h>
@@ -93,9 +88,8 @@ Index: m3/m3core/src/runtime/FreeBSD2/dup.c
 +  EXIT_CRITICAL;
 +  return result;
 +}
-Index: m3/m3core/src/runtime/FreeBSD2/dup2.c
---- dup2.c.orig	Thu Oct 24 13:11:23 1996
-+++ dup2.c	Thu Oct 24 12:50:28 1996
+--- m3/m3core/src/runtime/FreeBSD2/dup2.c.orig	Thu Oct 24 13:11:23 1996
++++ m3/m3core/src/runtime/FreeBSD2/dup2.c	Thu Oct 24 12:50:28 1996
 @@ -0,0 +1,13 @@
 +#include "wrap.h"
 +#include <unistd.h>
@@ -110,9 +104,8 @@ Index: m3/m3core/src/runtime/FreeBSD2/dup2.c
 +  EXIT_CRITICAL;
 +  return result;
 +}
-Index: m3/m3core/src/runtime/FreeBSD2/gethostbyaddr.c
---- gethostbyaddr.c.orig	Thu Oct 24 16:07:10 1996
-+++ gethostbyaddr.c	Thu Oct 24 16:10:19 1996
+--- m3/m3core/src/runtime/FreeBSD2/gethostbyaddr.c.orig	Thu Oct 24 16:07:10 1996
++++ m3/m3core/src/runtime/FreeBSD2/gethostbyaddr.c	Thu Oct 24 16:10:19 1996
 @@ -0,0 +1,14 @@
 +#include "wrap.h"
 +#include <netdb.h>
@@ -128,9 +121,8 @@ Index: m3/m3core/src/runtime/FreeBSD2/gethostbyaddr.c
 +  EXIT_CRITICAL;
 +  return result;
 +}
-Index: m3/m3core/src/runtime/FreeBSD2/gethostbyname.c
---- gethostbyname.c.orig	Thu Oct 24 13:11:23 1996
-+++ gethostbyname.c	Thu Oct 24 16:08:41 1996
+--- m3/m3core/src/runtime/FreeBSD2/gethostbyname.c.orig	Thu Oct 24 13:11:23 1996
++++ m3/m3core/src/runtime/FreeBSD2/gethostbyname.c	Thu Oct 24 16:08:41 1996
 @@ -0,0 +1,14 @@
 +#include "wrap.h"
 +#include <netdb.h>
@@ -146,9 +138,8 @@ Index: m3/m3core/src/runtime/FreeBSD2/gethostbyname.c
 +  EXIT_CRITICAL;
 +  return result;
 +}
-Index: m3/m3core/src/runtime/FreeBSD2/getpeername.c
---- getpeername.c.orig	Thu Oct 24 13:11:23 1996
-+++ getpeername.c	Thu Oct 24 12:52:25 1996
+--- m3/m3core/src/runtime/FreeBSD2/getpeername.c.orig	Thu Oct 24 13:11:23 1996
++++ m3/m3core/src/runtime/FreeBSD2/getpeername.c	Thu Oct 24 12:52:25 1996
 @@ -0,0 +1,16 @@
 +#include "wrap.h"
 +#include <sys/types.h>
@@ -166,9 +157,8 @@ Index: m3/m3core/src/runtime/FreeBSD2/getpeername.c
 +  EXIT_CRITICAL;
 +  return result;
 +}
-Index: m3/m3core/src/runtime/FreeBSD2/getsockname.c
---- getsockname.c.orig	Thu Oct 24 13:11:23 1996
-+++ getsockname.c	Thu Oct 24 12:52:56 1996
+--- m3/m3core/src/runtime/FreeBSD2/getsockname.c.orig	Thu Oct 24 13:11:23 1996
++++ m3/m3core/src/runtime/FreeBSD2/getsockname.c	Thu Oct 24 12:52:56 1996
 @@ -0,0 +1,16 @@
 +#include "wrap.h"
 +#include <sys/types.h>
@@ -186,9 +176,8 @@ Index: m3/m3core/src/runtime/FreeBSD2/getsockname.c
 +  EXIT_CRITICAL;
 +  return result;
 +}
-Index: m3/m3core/src/runtime/FreeBSD2/listen.c
---- listen.c.orig	Thu Oct 24 13:11:23 1996
-+++ listen.c	Thu Oct 24 12:53:42 1996
+--- m3/m3core/src/runtime/FreeBSD2/listen.c.orig	Thu Oct 24 13:11:23 1996
++++ m3/m3core/src/runtime/FreeBSD2/listen.c	Thu Oct 24 12:53:42 1996
 @@ -0,0 +1,14 @@
 +#include "wrap.h"
 +#include <sys/types.h>
@@ -204,9 +193,8 @@ Index: m3/m3core/src/runtime/FreeBSD2/listen.c
 +  EXIT_CRITICAL;
 +  return result;
 +}
-Index: m3/m3core/src/runtime/FreeBSD2/read.c
---- read.c.orig	Thu Oct 24 13:11:23 1996
-+++ read.c	Thu Oct 24 12:55:56 1996
+--- m3/m3core/src/runtime/FreeBSD2/read.c.orig	Thu Oct 24 13:11:23 1996
++++ m3/m3core/src/runtime/FreeBSD2/read.c	Thu Oct 24 12:55:56 1996
 @@ -0,0 +1,15 @@
 +#include "wrap.h"
 +#include <sys/types.h>
@@ -223,9 +211,8 @@ Index: m3/m3core/src/runtime/FreeBSD2/read.c
 +  EXIT_CRITICAL;
 +  return result;
 +}
-Index: m3/m3core/src/runtime/FreeBSD2/recv.c
---- recv.c.orig	Thu Oct 24 13:11:23 1996
-+++ recv.c	Thu Oct 24 12:56:57 1996
+--- m3/m3core/src/runtime/FreeBSD2/recv.c.orig	Thu Oct 24 13:11:23 1996
++++ m3/m3core/src/runtime/FreeBSD2/recv.c	Thu Oct 24 12:56:57 1996
 @@ -0,0 +1,15 @@
 +#include "wrap.h"
 +#include <sys/types.h>
@@ -242,9 +229,8 @@ Index: m3/m3core/src/runtime/FreeBSD2/recv.c
 +  EXIT_CRITICAL;
 +  return result;
 +}
-Index: m3/m3core/src/runtime/FreeBSD2/recvfrom.c
---- recvfrom.c.orig	Thu Oct 24 13:11:23 1996
-+++ recvfrom.c	Thu Oct 24 12:58:10 1996
+--- m3/m3core/src/runtime/FreeBSD2/recvfrom.c.orig	Thu Oct 24 13:11:23 1996
++++ m3/m3core/src/runtime/FreeBSD2/recvfrom.c	Thu Oct 24 12:58:10 1996
 @@ -0,0 +1,18 @@
 +#include "wrap.h"
 +#include <sys/types.h>
@@ -264,9 +250,8 @@ Index: m3/m3core/src/runtime/FreeBSD2/recvfrom.c
 +  EXIT_CRITICAL;
 +  return result;
 +}
-Index: m3/m3core/src/runtime/FreeBSD2/select.c
---- select.c.orig	Thu Oct 24 13:11:23 1996
-+++ select.c	Thu Oct 24 12:59:17 1996
+--- m3/m3core/src/runtime/FreeBSD2/select.c.orig	Thu Oct 24 13:11:23 1996
++++ m3/m3core/src/runtime/FreeBSD2/select.c	Thu Oct 24 12:59:17 1996
 @@ -0,0 +1,20 @@
 +#include "wrap.h"
 +#include <sys/types.h>
@@ -288,9 +273,8 @@ Index: m3/m3core/src/runtime/FreeBSD2/select.c
 +  EXIT_CRITICAL;
 +  return result;
 +}
-Index: m3/m3core/src/runtime/FreeBSD2/send.c
---- send.c.orig	Thu Oct 24 13:11:23 1996
-+++ send.c	Thu Oct 24 13:00:25 1996
+--- m3/m3core/src/runtime/FreeBSD2/send.c.orig	Thu Oct 24 13:11:23 1996
++++ m3/m3core/src/runtime/FreeBSD2/send.c	Thu Oct 24 13:00:25 1996
 @@ -0,0 +1,15 @@
 +#include "wrap.h"
 +#include <sys/types.h>
@@ -307,9 +291,8 @@ Index: m3/m3core/src/runtime/FreeBSD2/send.c
 +  EXIT_CRITICAL;
 +  return result;
 +}
-Index: m3/m3core/src/runtime/FreeBSD2/sendto.c
---- sendto.c.orig	Thu Oct 24 13:11:23 1996
-+++ sendto.c	Thu Oct 24 13:01:18 1996
+--- m3/m3core/src/runtime/FreeBSD2/sendto.c.orig	Thu Oct 24 13:11:23 1996
++++ m3/m3core/src/runtime/FreeBSD2/sendto.c	Thu Oct 24 13:01:18 1996
 @@ -0,0 +1,17 @@
 +#include "wrap.h"
 +#include <sys/types.h>
@@ -328,9 +311,8 @@ Index: m3/m3core/src/runtime/FreeBSD2/sendto.c
 +  EXIT_CRITICAL;
 +  return result;
 +}
-Index: m3/m3core/src/runtime/FreeBSD2/shutdown.c
---- shutdown.c.orig	Thu Oct 24 13:11:23 1996
-+++ shutdown.c	Thu Oct 24 13:01:40 1996
+--- m3/m3core/src/runtime/FreeBSD2/shutdown.c.orig	Thu Oct 24 13:11:23 1996
++++ m3/m3core/src/runtime/FreeBSD2/shutdown.c	Thu Oct 24 13:01:40 1996
 @@ -0,0 +1,14 @@
 +#include "wrap.h"
 +#include <sys/types.h>
@@ -346,9 +328,8 @@ Index: m3/m3core/src/runtime/FreeBSD2/shutdown.c
 +  EXIT_CRITICAL;
 +  return result;
 +}
-Index: m3/m3core/src/runtime/FreeBSD2/socket.c
---- socket.c.orig	Thu Oct 24 16:11:12 1996
-+++ socket.c	Thu Oct 24 16:12:22 1996
+--- m3/m3core/src/runtime/FreeBSD2/socket.c.orig	Thu Oct 24 16:11:12 1996
++++ m3/m3core/src/runtime/FreeBSD2/socket.c	Thu Oct 24 16:12:22 1996
 @@ -0,0 +1,14 @@
 +#include "wrap.h"
 +#include <sys/types.h>
@@ -364,9 +345,8 @@ Index: m3/m3core/src/runtime/FreeBSD2/socket.c
 +  EXIT_CRITICAL;
 +  return result;
 +}
-Index: m3/m3core/src/runtime/FreeBSD2/socksconf.h
---- socksconf.h.orig	Fri Oct 25 14:05:03 1996
-+++ socksconf.h	Fri Oct 25 14:05:28 1996
+--- m3/m3core/src/runtime/FreeBSD2/socksconf.h.orig	Fri Oct 25 14:05:03 1996
++++ m3/m3core/src/runtime/FreeBSD2/socksconf.h	Fri Oct 25 14:05:28 1996
 @@ -0,0 +1,6 @@
 +/*
 + * Define 0 or 1 of these, to select the variety of SOCKS support you want.
@@ -374,9 +354,8 @@ Index: m3/m3core/src/runtime/FreeBSD2/socksconf.h
 +#undef HPSOCKS
 +#undef SOCKS4
 +#undef SOCKS5
-Index: m3/m3core/src/runtime/FreeBSD2/wrap.h
---- wrap.h.orig	Thu Oct 24 20:50:16 1996
-+++ wrap.h	Fri Oct 25 14:04:13 1996
+--- m3/m3core/src/runtime/FreeBSD2/wrap.h.orig	Thu Oct 24 20:50:16 1996
++++ m3/m3core/src/runtime/FreeBSD2/wrap.h	Fri Oct 25 14:04:13 1996
 @@ -0,0 +1,61 @@
 +#include "socksconf.h"
 +
@@ -439,9 +418,8 @@ Index: m3/m3core/src/runtime/FreeBSD2/wrap.h
 +
 +#define MAKE_WRITABLE(x) \
 +    if ((int)x) { *(char*)(x) = RTHeapDepC__c = *(char*)(x); }
-Index: m3/m3core/src/runtime/FreeBSD2/write.c
---- write.c.orig	Thu Oct 24 13:11:23 1996
-+++ write.c	Thu Oct 24 13:02:24 1996
+--- m3/m3core/src/runtime/FreeBSD2/write.c.orig	Thu Oct 24 13:11:23 1996
++++ m3/m3core/src/runtime/FreeBSD2/write.c	Thu Oct 24 13:02:24 1996
 @@ -0,0 +1,15 @@
 +#include "wrap.h"
 +#include <sys/types.h>

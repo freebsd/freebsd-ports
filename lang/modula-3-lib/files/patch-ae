@@ -5,8 +5,8 @@ Index: m3/coverage/src/analyze_coverage.c
 RCS file: /home/jdp/m3-cvs/m3/coverage/src/analyze_coverage.c,v
 retrieving revision 1.1.1.1
 diff -u -r1.1.1.1 analyze_coverage.c
---- analyze_coverage.c	1996/09/24 05:21:54	1.1.1.1
-+++ analyze_coverage.c	1996/09/24 05:32:35
+--- m3/coverage/src/analyze_coverage.c.orig	1996/09/24 05:21:54	1.1.1.1
++++ m3/coverage/src/analyze_coverage.c	1996/09/24 05:32:35
 @@ -15,8 +15,6 @@
  #endif
  #include <stdio.h>

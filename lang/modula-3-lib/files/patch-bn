@@ -4,9 +4,8 @@ procedure is invoked.
 
 This patch has been sent to SRC.
 
-Index: m3/vbtkit/src/etext/TextPortClass.m3
---- TextPortClass.m3-	Mon Jan 30 14:34:34 1995
-+++ TextPortClass.m3	Thu May  8 17:20:58 1997
+--- m3/vbtkit/src/etext/TextPortClass.m3.orig	Mon Jan 30 14:34:34 1995
++++ m3/vbtkit/src/etext/TextPortClass.m3	Thu May  8 17:20:58 1997
 @@ -271,8 +271,12 @@
      left := MTextUnit.StartOfLine (v.vtext.mtext, here);
    BEGIN

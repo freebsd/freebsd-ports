@@ -1,9 +1,8 @@
 This patch uses the sigaction interface to gain access to the PC value
 so that it can be printed out when a fatal signal occurs.
 
-Index: m3/m3core/src/runtime/FreeBSD2/RTSignal.m3
---- RTSignal.m3.orig	Mon Nov 21 10:31:19 1994
-+++ RTSignal.m3	Thu Jul 10 14:24:59 1997
+--- m3/m3core/src/runtime/FreeBSD2/RTSignal.m3.orig	Mon Nov 21 10:31:19 1994
++++ m3/m3core/src/runtime/FreeBSD2/RTSignal.m3	Thu Jul 10 14:24:59 1997
 @@ -7,18 +7,21 @@
  
  UNSAFE MODULE RTSignal;

@@ -1,8 +1,7 @@
 Update the m3build templates for FreeBSD-2.1 and later.
 
-Index: m3/m3build/templates/COMMON
---- COMMON.orig	Fri Feb  9 14:23:04 1996
-+++ COMMON	Fri Oct 25 13:48:57 1996
+--- m3/m3build/templates/COMMON.orig	Fri Feb  9 14:23:04 1996
++++ m3/m3build/templates/COMMON	Fri Oct 25 13:48:57 1996
 @@ -998,7 +998,7 @@
    if HAVE_PKGTOOLS
      _install_file (src, dest, "0755", "T")
@@ -12,9 +11,8 @@ Index: m3/m3build/templates/COMMON
                                               SL, BUILD_DIR, SL, src)
      local link = format ("%s%s%s", dest, SL, src)
      >> M3SHIP_FILE in
-Index: m3/m3build/templates/FreeBSD2
---- FreeBSD2.orig	Thu Jun 20 12:17:07 1996
-+++ FreeBSD2	Fri Oct 25 13:47:16 1996
+--- m3/m3build/templates/FreeBSD2.orig	Thu Jun 20 12:17:07 1996
++++ m3/m3build/templates/FreeBSD2	Fri Oct 25 13:47:16 1996
 @@ -8,8 +8,9 @@
  %      Modified On Thu Apr  8 13:45:49 PDT 1993 by muller
  %

@@ -1,8 +1,7 @@
 This patch corrects some errors in the Usignal interface for FreeBSD.
 
-Index: m3/m3core/src/unix/freebsd-2/Usignal.i3
---- Usignal.i3.orig	Mon Aug 12 15:47:48 1996
-+++ Usignal.i3	Thu Jul 10 18:38:06 1997
+--- m3/m3core/src/unix/freebsd-2/Usignal.i3.orig	Mon Aug 12 15:47:48 1996
++++ m3/m3core/src/unix/freebsd-2/Usignal.i3	Thu Jul 10 18:38:06 1997
 @@ -12,8 +12,6 @@
  
  (*** <signal.h> ***)

@@ -1,8 +1,7 @@
 Support for SOCKS wrappers in Unetdb.i3.
 
-Index: m3/m3core/src/unix/freebsd-2/Unetdb.i3
---- Unetdb.i3.orig	Sat Jan  7 14:22:19 1995
-+++ Unetdb.i3	Thu Oct 24 16:05:40 1996
+--- m3/m3core/src/unix/freebsd-2/Unetdb.i3.orig	Sat Jan  7 14:22:19 1995
++++ m3/m3core/src/unix/freebsd-2/Unetdb.i3	Thu Oct 24 16:05:40 1996
 @@ -88,10 +88,10 @@
  (*** gethostent(3n), gethostbyaddr(3n), gethostbyname(3n), 
       sethostent(3n), endhostent(3n) - get network host entry ***)
