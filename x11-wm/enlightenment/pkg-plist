@@ -2,6 +2,7 @@ bin/edox
 bin/eesh
 bin/enlightenment
 bin/epp
+etc/X11/dm/Sessions/enlightenment.desktop
 %%DATADIR%%/config/actionclasses.cfg
 %%DATADIR%%/config/actionclasses.cfg.ja
 %%DATADIR%%/config/actionclasses.cfg.ko
@@ -487,5 +488,7 @@ share/locale/tr/LC_MESSAGES/enlightenment.mo
 @dirrm %%DATADIR%%/config/pix
 @dirrm %%DATADIR%%/config
 @dirrm %%DATADIR%%
+@unexec rmdir %D/etc/X11/dm 2> /dev/null || true
+@unexec rmdir %D/etc/X11 2> /dev/null || true
 @unexec rmdir %D/share/locale/en_US/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/en_US 2> /dev/null || true
