@@ -1,0 +1,18 @@
+--- include/hide.h.orig	Wed Aug  4 04:59:30 1999
++++ include/hide.h	Mon Feb 21 14:41:49 2000
+@@ -19,6 +19,7 @@
+ #ifdef HAVE_GETHOSTBYNAME2
+ #define gethostbyname2 HIDE(gethostbyname2)
+ #endif
++#define getaddrinfo   HIDE(getaddrinfo)
+ #define gethostbyname HIDE(gethostbyname)
+ #define getpeername   HIDE(getpeername)
+ #define getsockname   HIDE(getsockname)
+@@ -53,6 +54,7 @@
+ #ifdef HAVE_GETHOSTBYNAME2
+ #undef gethostbyname2 
+ #endif
++#undef getaddrinfo
+ #undef gethostbyname 
+ #undef getpeername   
+ #undef getsockname   

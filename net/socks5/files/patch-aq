@@ -1,0 +1,20 @@
+--- include/socks.h.orig	Wed Aug  4 04:59:30 1999
++++ include/socks.h	Mon Feb 21 14:44:03 2000
+@@ -52,6 +52,9 @@
+ #ifdef HAVE_GETHOSTBYNAME2
+ extern struct hostent *LIBPREFIX(gethostbyname2) P((char *, int));
+ #endif
++extern int LIBPREFIX(getaddrinfo) P((const char *, const char *,
++				     const struct addrinfo *,
++				     struct addrinfo **));
+ #endif /* include prototypes */
+ 
+ #ifndef LIBPREFIX
+@@ -93,6 +96,7 @@
+ #ifdef HAVE_GETHOSTBYNAME2
+ #define gethostbyname2 LIBPREFIX(gethostbyname2)
+ #endif
++#define getaddrinfo   LIBPREFIX(getaddrinfo)
+ #define gethostbyname LIBPREFIX(gethostbyname)
+ #define rresvport     LIBPREFIX(rresvport)
+ #define connect       LIBPREFIX(connect)

@@ -1,0 +1,15 @@
+--- include/config.h.in.orig	Mon Aug  2 23:57:28 1999
++++ include/config.h.in	Sun Feb 20 21:20:53 2000
+@@ -133,6 +133,12 @@
+ /* Define if you have the gethostbyname_r function.  */
+ #undef HAVE_GETHOSTBYNAME_R
+ 
++/* Define if you have the getaddrinfo function.  */
++#undef HAVE_GETADDRINFO
++
++/* Define if you have the getnameinfo function.  */
++#undef HAVE_GETNAMEINFO
++
+ /* Define if you have the getifaddrs function.  */
+ #undef HAVE_GETIFADDRS
+ 
