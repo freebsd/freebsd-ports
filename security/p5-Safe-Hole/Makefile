@@ -6,19 +6,17 @@
 #
 
 PORTNAME=	Safe-Hole
-PORTVERSION=	0.08
+PORTVERSION=	0.10
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Safe
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	    sethk@meowfishies.com
+MAINTAINER=	sethk@meowfishies.com
 COMMENT=	Make a hole to the original main compartment in the Safe compartment
 
-BROKEN=		Incomplete pkg-plist
+PERL_CONFIGURE=	yes
 
-PERL_CONFIGURE=	    yes
-
-MAN3=	Safe::Hole.3
+MAN3=		Safe::Hole.3
 
 .include <bsd.port.mk>
