@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.15 1998/02/18 11:51:05 markm Exp $
+# $Id: Makefile,v 1.16 1998/03/15 15:15:22 markm Exp $
 #
 
 DISTNAME=       netscape-navigator-4.04
@@ -19,16 +19,17 @@ NO_BUILD=       Yes
 NDIR=           ${PREFIX}/lib/netscape
 BINDIR=		${PREFIX}/bin
 
-.if defined(USE_128BIT) && ${USA_RESIDENT} == NO
+.if defined(USE_128BIT) && defined(USA_RESIDENT) && ${USA_RESIDENT} == NO
 MASTER_SITES+=	ftp://ftp.fortify.net/pub/Fortify/ \
 		ftp://ftp.za.freebsd.org/pub/Fortify/
 DISTFILES+=	Fortify-1.2.1-unix.tar.gz
 RESTRICTED=     "Contains strong cryptography"
 .endif
 
-.if !defined(USE_128BIT) && ${USA_RESIDENT} == NO
+.if !defined(USE_128BIT)
 pre-extract:
 		@${ECHO} "You can make Netscape use 128-bit encryption by defining USE_128BIT"
+		@${ECHO} "and defining USA_RESIDENT to NO"
 .endif
 
 do-install:
