@@ -3,7 +3,7 @@ lib/linux-flashplugin6/libflashplayer.so
 %%PLUGINSDIR%%/flashplayer.xpt
 %%PLUGINSDIR%%/libflashplayer.so
 %%PORTDOCS%%share/doc/linux-flashplugin6/readme.txt
-%%PORTDOCS%%share/doc/linux-flashplugin6/ReadMe.htm
+%%PORTDOCS%%share/doc/linux-flashplugin6/readme.htm
 @dirrm share/doc/linux-flashplugin6
 @dirrm lib/linux-flashplugin6
 @unexec rmdir -p %D/%%PLUGINSDIR%% 2>/dev/null || true

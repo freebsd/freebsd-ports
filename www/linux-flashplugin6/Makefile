@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flashplugin
-PORTVERSION=	6.0r69
+PORTVERSION=	6.0r79
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://download.macromedia.com/pub/shockwave/flash/english/linux/${PORTVERSION}/
 PKGNAMEPREFIX=	linux-
@@ -37,7 +37,7 @@ do-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	@${INSTALL_DATA} ${WRKSRC}/readme.txt ${PREFIX}/share/doc/linux-flashplugin6/
-	@${INSTALL_DATA} ${WRKSRC}/ReadMe.htm ${PREFIX}/share/doc/linux-flashplugin6/
+	@${INSTALL_DATA} ${WRKSRC}/readme.htm ${PREFIX}/share/doc/linux-flashplugin6/
 .endif
 
 .include <bsd.port.mk>
