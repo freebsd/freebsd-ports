@@ -397,6 +397,7 @@
     SUBDIR += libol
     SUBDIR += libole2
     SUBDIR += liboop
+    SUBDIR += libopendaap
     SUBDIR += libowfat
     SUBDIR += libpci
     SUBDIR += libpdel
