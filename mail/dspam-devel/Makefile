@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	dspam
-PORTVERSION=	2.8.1
-PORTREVISION=	1
+PORTVERSION=	2.8.3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.nuclearelephant.com/projects/dspam/sources/
 
 MAINTAINER=	rob@debank.tv
 COMMENT=	A server-side bayesian spam filter
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-userdir=${PREFIX}/etc/dspam
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
-INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
+INSTALLS_SHLIB=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-userdir=${PREFIX}/etc/dspam
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 SED_SCRIPT=	-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
 		-e 's,%%EXAMPLESDIR%%,${EXAMPLESDIR},g' \
@@ -59,27 +59,22 @@ CONFIGURE_ARGS+=	--with-dspam-mode=4511
 CONFIGURE_ARGS+=	--enable-spam-delivery
 .endif
 
+DOCS=		CHANGE README
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LIBTOOLFLAGS%%|${LIBTOOLFLAGS}|g ; \
 		s|-ldb-4.1|-ldb41|g' ${WRKSRC}/configure
 
 post-install:
+.if defined(WITH_MYSQL)
+	@${MKDIR} ${EXAMPLESDIR}
+	cd ${WRKSRC}/tools.mysql_drv && \
+		${INSTALL_DATA} README *.sql ${EXAMPLESDIR}
+	${INSTALL_DATA} ${FILESDIR}/mysql.data ${EXAMPLESDIR}
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/CHANGE \
-		${DOCSDIR}
-.if defined(WITH_MYSQL)
-	@${MKDIR} ${DOCSDIR}/mysql
-	@${INSTALL_DATA} ${WRKSRC}/tools.mysql_drv/README \
-		${WRKSRC}/tools.mysql_drv/mysql_objects.sql \
-		${WRKSRC}/tools.mysql_drv/virtual_users.sql \
-		${WRKSRC}/tools.mysql_drv/purge.sql \
-		${DOCSDIR}/mysql
-	@${MKDIR} ${EXAMPLESDIR}
-.endif
-.endif
-.if defined(WITH_MYSQL)
-	@${INSTALL_DATA} ${FILESDIR}/mysql.data ${EXAMPLESDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 	@${SED} ${SED_SCRIPT} ${PKGMESSAGE}
 
