@@ -138,8 +138,8 @@ BBBike/lib/i386-freebsd/auto/BBBikeXS/BBBikeXS.so
 BBBike/lib/i386-freebsd/auto/BBBikeXS/BBBikeXS.bs
 BBBike/lib/i386-freebsd/auto/VirtArray/VirtArray.so
 BBBike/lib/i386-freebsd/auto/VirtArray/VirtArray.bs
-BBBike/lib/BBBikeXS.pm
-BBBike/lib/VirtArray.pm
+BBBike/lib/i386-freebsd/BBBikeXS.pm
+BBBike/lib/i386-freebsd/VirtArray.pm
 BBBike/bbbike.1
 @dirrm BBBike/lib/BikePower
 @dirrm BBBike/lib/Met
