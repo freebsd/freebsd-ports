@@ -52,13 +52,13 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-patch:
 	${PERL} -i -pe "\
-		s;!!PERL!!;${PERL};g; \
-		s;!!PREFIX!!;${PREFIX};g;" \
+		s'!!PERL!!'${PERL}'g; \
+		s'!!PREFIX!!'${PREFIX}'g;" \
 		${WRKSRC}/cvsweb.cgi
 	${PERL} -i -pe "\
-		s;!!PREFIX!!;${PREFIX};g; \
-		s;!!CVSROOT!!;${CVSROOT};g; \
-		s;!!TITLE!!;${TITLE};g;" \
+		s'!!PREFIX!!'${PREFIX}'g; \
+		s'!!CVSROOT!!'${CVSROOT}'g; \
+		s'!!TITLE!!'${TITLE}'g;" \
 		${WRKSRC}/cvsweb.conf
 
 do-install:
