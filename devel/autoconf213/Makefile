@@ -11,7 +11,7 @@
 
 PORTNAME=	autoconf213
 PORTVERSION=	2.13.000227
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE} ${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	binutils autoconf
@@ -24,14 +24,21 @@ RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	M4=${PREFIX}/bin/gm4
+CONFIGURE_ENV=	M4=${LOCALBASE}/bin/gm4
 CONFIGURE_ARGS=	--program-suffix=213 --datadir=${PREFIX}/share/autoconf213
 WRKSRC=		${WRKDIR}/autoconf
 
+post-patch:
+	@-${RM} ${WRKSRC}/*.info*
+
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/install-sh \
+	@${INSTALL_SCRIPT} ${WRKSRC}/install-sh \
 		${PREFIX}/share/autoconf213/autoconf
-	@install-info ${PREFIX}/info/autoconf.info ${PREFIX}/info/dir
-	@install-info ${PREFIX}/info/standards.info ${PREFIX}/info/dir
+	@-${RM} -fr ${PREFIX}/libexec/autoconf213
+	@${MKDIR} ${PREFIX}/libexec/autoconf213
+.for i in autoconf autoheader autoreconf autoscan autoupdate ifnames
+	@${LN} -s ../../bin/${i}213 ${PREFIX}/libexec/autoconf213/${i}
+.endfor
+	@install-info ${PREFIX}/info/autoconf213.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
