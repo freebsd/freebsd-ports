@@ -9799,6 +9799,7 @@ w3m-m17n	ports/www/w3m-m17n
 w3m-m17n-img	ports/www/w3m-m17n-img
 w3mir		ports/www/w3mir
 w9wm		ports/x11-wm/w9wm
+wa-aspell	ports/textproc/wa-aspell
 waccess	ports/www/waccess
 waimea		ports/x11-wm/waimea
 wais		ports/net/wais
