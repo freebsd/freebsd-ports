@@ -43,4 +43,10 @@ RUN_DEPENDS+=	xmgrace:${PORTSDIR}/math/grace
 CONFIGURE_ARGS+=	--enable-grace
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha" || ${ARCH} == "amd64"
+BROKEN=		"Does not compile on alpha or amd64"
+.endif
+
+.include <bsd.port.post.mk>
