@@ -7,6 +7,7 @@
 
 PORTNAME=	courier-imap
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -91,7 +92,8 @@ PLIST_SUB+=	MYSQLFLAG=""
 CONFIGURE_ARGS+= --without-authpgsql
 PLIST_SUB+=	PGSQLFLAG="@comment "
 .else
-LIB_DEPENDS+=	pq.2:${PORTSDIR}/databases/postgresql7
+POSTGRESQL_PORT?=	databases/postgresql7
+LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 PLIST_SUB+=	PGSQLFLAG=""
 .endif
 
