@@ -1,5 +1,0 @@
-bin/spamstats.pl
-%%PORTDOCS%%%%DOCSDIR%%/QUICK
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/copyright
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
