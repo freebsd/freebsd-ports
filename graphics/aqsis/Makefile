@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	aqsis
-PORTVERSION=	0.8.0
-PORTREVISION=	2
+PORTVERSION=	0.9.1
+PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,16 +16,16 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A photorealistic rendering system
 
-LIB_DEPENDS=	log4cpp.4:${PORTSDIR}/devel/log4cpp \
-		tiff.4:${PORTSDIR}/graphics/tiff
+BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
+LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 
-USE_MESA=	yes
+USE_GL=		yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--enable-static --datadir="${DATADIR}"
+CONFIGURE_ARGS=	--enable-static --enable-Mesa=no
 INSTALLS_SHLIB=	yes
 
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS} -fPIC
@@ -38,11 +38,16 @@ CFLAGS+=	-O0
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|PLUGIN_FLAGS=|#PLUGIN_FLAGS=|g ; \
-		 s|^CPPFLAGS="-D|CPPFLAGS="\$$CPPFLAGS -D|g ; \
-		 s|^CFLAGS=|#CFLAGS=|g ; \
-		 s|^CXXFLAGS=|#CXXFLAGS=|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|PLUGIN_FLAGS=|#PLUGIN_FLAGS=|g' ${WRKSRC}/configure
 	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|malloc\.h|stdlib.h|g'
+
+post-install:
+.for dir in ${PREFIX}/include/aqsis ${PREFIX}/lib/aqsis ${PREFIX}/share/aqsis
+	@${FIND} ${dir} ! -type d | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${dir} -type d | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+.endfor
 
 .include <bsd.port.post.mk>
