@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/software/java2/download.html
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk13.html
@@ -132,6 +132,7 @@ do-install:
 	(cd ${JDKIMAGEDIR_G} && ${BSD_TAR} -c -f - .) \
 		| (cd ${PREFIX}/jdk${JDK_VERSION} && ${BSD_TAR} --unlink -x -f -)
 .endif
+	${MKDIR} ${PREFIX}/jdk${JDK_VERSION}/jre/lib/ext
 
 post-install:
 	@${LOCALBASE}/bin/registervm "${PREFIX}/jdk${JDK_VERSION}/bin/java # FREEBSD-JDK${JDK_VERSION}"

@@ -972,6 +972,7 @@ jdk%%JDK_VERSION%%/src.jar
 @dirrm jdk%%JDK_VERSION%%/include-old/freebsd
 @dirrm jdk%%JDK_VERSION%%/include-old
 @dirrm jdk%%JDK_VERSION%%/include
+@dirrm jdk%%JDK_VERSION%%/ext
 @dirrm jdk%%JDK_VERSION%%/demo/sound/src
 @dirrm jdk%%JDK_VERSION%%/demo/sound/media
 @dirrm jdk%%JDK_VERSION%%/demo/sound
