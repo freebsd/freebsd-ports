@@ -1,0 +1,12 @@
+--- Makefile.in.orig	Wed Oct 20 23:02:06 1999
++++ Makefile.in	Wed Oct 20 23:02:19 1999
+@@ -1,7 +1,7 @@
+ DEFS=-DHAVE_CONFIG_H
+-PREFIX=/usr/local
++PREFIX?=/usr/local
+ 
+-CFLAGS=-O2 -g -Wall $(DEFS)
++CFLAGS+=-Wall $(DEFS)
+ 
+ OBJS=chm.o
+ 

@@ -1,4 +1,4 @@
-consolehm uses the SMBus Driver for PIIX4 provided by Takanori Watanabe to 
+ConsoleHM uses the SMBus Driver for PIIX4 provided by Takanori Watanabe to 
 gather information from LM78/79 sensors to provide motherboard temperature, fan
 speeds and voltage readings on the console.
 
