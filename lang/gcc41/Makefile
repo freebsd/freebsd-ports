@@ -4,10 +4,10 @@
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.56 1999/04/21 07:48:57 obrien Exp $
+# $Id: Makefile,v 1.57 1999/04/22 00:17:01 scrappy Exp $
 #
 
-SNAPDATE=	1999-04-18
+SNAPDATE=	1999-05-17
 SNAPVER=	${SNAPDATE:S/-//g}
 
 DISTNAME=	egcs-${SNAPVER}
@@ -32,7 +32,7 @@ NO_CDROM=	'dated material'
 
 .include <bsd.port.pre.mk>
 
-EGCS_REV=	egcs-2.93.19
+EGCS_REV=	2.93.22
 LIBSTDCPP_REV=	4
 
 .if ${PORTOBJFORMAT} == "elf"
