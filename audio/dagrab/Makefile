@@ -1,4 +1,4 @@
-# New ports collection makefile for: dagrab
+# New ports collection makefile for:	dagrab
 # Date created:		2nd, Jan 1999
 # Whom:			Chia-liang Kao <clkao@CirX.ORG>
 #
@@ -16,7 +16,7 @@ MAINTAINER=	clkao@CirX.ORG
 MAN1=		dagrab.1
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/dagrab ${PREFIX}/bin/dagrab
-	@${INSTALL_MAN} ${WRKSRC}/dagrab.1 ${MANPREFIX}/man/man1/dagrab.1
+	${INSTALL_PROGRAM} ${WRKSRC}/dagrab ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/dagrab.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
