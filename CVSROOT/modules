@@ -2201,6 +2201,7 @@ gnat-doc-txt	ports/lang/gnat-doc-txt
 gnat-glade	ports/lang/gnat-glade
 gnats		ports/databases/gnats
 gnats4		ports/databases/gnats4
+gnatsweb4	ports/databases/gnatsweb4
 gnet		ports/net/gnet
 gnet-glib2	ports/net/gnet-glib2
 gnet2		ports/net/gnet2
