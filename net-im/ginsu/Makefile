@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ginsu
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5.3
 CATEGORIES=	net
 MASTER_SITES=	http://repetae.net/john/computer/ginsu/drop/
 
@@ -16,12 +16,8 @@ COMMENT=	A client for the gale secure instant messaging system
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 
 MAN1=		ginsu.1
-PLIST_FILES=	bin/ginsu
-
-BROKEN=		"Does not compile"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2004-04-19
 
 .include <bsd.port.mk>
