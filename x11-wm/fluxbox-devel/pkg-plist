@@ -16,19 +16,58 @@ share/fluxbox-devel/nls/fr_FR/fluxbox.cat
 share/fluxbox-devel/nls/it_IT/fluxbox.cat
 share/fluxbox-devel/nls/ja_JP/fluxbox.cat
 share/fluxbox-devel/nls/lv_LV/fluxbox.cat
+share/fluxbox-devel/nls/nl_NL/fluxbox.cat
 share/fluxbox-devel/nls/pt_BR/fluxbox.cat
 share/fluxbox-devel/nls/pt_PT/fluxbox.cat
 share/fluxbox-devel/nls/ru_RU/fluxbox.cat
 share/fluxbox-devel/nls/sv_SE/fluxbox.cat
 share/fluxbox-devel/nls/tr_TR/fluxbox.cat
-share/fluxbox-devel/startup
 share/fluxbox-devel/styles/Artwiz
-share/fluxbox-devel/styles/Blue
+share/fluxbox-devel/styles/BlueFlux/pixmaps/button_close_active.xpm
+share/fluxbox-devel/styles/BlueFlux/pixmaps/button_close_pressed.xpm
+share/fluxbox-devel/styles/BlueFlux/pixmaps/button_close_unfocus.xpm
+share/fluxbox-devel/styles/BlueFlux/pixmaps/button_max_active.xpm
+share/fluxbox-devel/styles/BlueFlux/pixmaps/button_max_pressed.xpm
+share/fluxbox-devel/styles/BlueFlux/pixmaps/button_max_unfocus.xpm
+share/fluxbox-devel/styles/BlueFlux/pixmaps/button_min_active.xpm
+share/fluxbox-devel/styles/BlueFlux/pixmaps/button_min_pressed.xpm
+share/fluxbox-devel/styles/BlueFlux/pixmaps/button_min_unfocus.xpm
+share/fluxbox-devel/styles/BlueFlux/pixmaps/button_stick_active.xpm
+share/fluxbox-devel/styles/BlueFlux/pixmaps/button_stick_pressed.xpm
+share/fluxbox-devel/styles/BlueFlux/pixmaps/button_stick_unfocus.xpm
+share/fluxbox-devel/styles/BlueFlux/pixmaps/button_stuck.xpm
+share/fluxbox-devel/styles/BlueFlux/pixmaps/button_stuck_unfocus.xpm
+share/fluxbox-devel/styles/BlueFlux/pixmaps/button_toolbar.xpm
+share/fluxbox-devel/styles/BlueFlux/pixmaps/button_toolbar_pressed.xpm
+share/fluxbox-devel/styles/BlueFlux/pixmaps/menu_frame.xpm
+share/fluxbox-devel/styles/BlueFlux/pixmaps/title_bar.xpm
+share/fluxbox-devel/styles/BlueFlux/pixmaps/title_bar_unfocus.xpm
+share/fluxbox-devel/styles/BlueFlux/pixmaps/toolbar.xpm
+share/fluxbox-devel/styles/BlueFlux/pixmaps/toolbar_label.xpm
+share/fluxbox-devel/styles/BlueFlux/theme.cfg
 share/fluxbox-devel/styles/BlueNight
 share/fluxbox-devel/styles/Carbondioxide
 share/fluxbox-devel/styles/Clean
-share/fluxbox-devel/styles/CleanColor
 share/fluxbox-devel/styles/Cthulhain
+share/fluxbox-devel/styles/Emerge/pixmaps/bullet.xpm
+share/fluxbox-devel/styles/Emerge/pixmaps/close-pressed.xpm
+share/fluxbox-devel/styles/Emerge/pixmaps/close-unfocus.xpm
+share/fluxbox-devel/styles/Emerge/pixmaps/close.xpm
+share/fluxbox-devel/styles/Emerge/pixmaps/icon-pressed.xpm
+share/fluxbox-devel/styles/Emerge/pixmaps/icon-unfocus.xpm
+share/fluxbox-devel/styles/Emerge/pixmaps/icon.xpm
+share/fluxbox-devel/styles/Emerge/pixmaps/max-pressed.xpm
+share/fluxbox-devel/styles/Emerge/pixmaps/max-unfocus.xpm
+share/fluxbox-devel/styles/Emerge/pixmaps/max.xpm
+share/fluxbox-devel/styles/Emerge/pixmaps/selected.xpm
+share/fluxbox-devel/styles/Emerge/pixmaps/stick-pressed.xpm
+share/fluxbox-devel/styles/Emerge/pixmaps/stick-unfocus.xpm
+share/fluxbox-devel/styles/Emerge/pixmaps/stick.xpm
+share/fluxbox-devel/styles/Emerge/pixmaps/stuck-pressed.xpm
+share/fluxbox-devel/styles/Emerge/pixmaps/stuck-unfocus.xpm
+share/fluxbox-devel/styles/Emerge/pixmaps/stuck.xpm
+share/fluxbox-devel/styles/Emerge/pixmaps/unselected.xpm
+share/fluxbox-devel/styles/Emerge/theme.cfg
 share/fluxbox-devel/styles/Flux
 share/fluxbox-devel/styles/LemonSpace
 share/fluxbox-devel/styles/Makro
@@ -39,7 +78,6 @@ share/fluxbox-devel/styles/Nyz
 share/fluxbox-devel/styles/Operation
 share/fluxbox-devel/styles/Outcomes
 share/fluxbox-devel/styles/Rampage
-share/fluxbox-devel/styles/Rancor
 share/fluxbox-devel/styles/Results
 share/fluxbox-devel/styles/Shade
 share/fluxbox-devel/styles/Spiff
@@ -59,12 +97,17 @@ share/fluxbox-devel/styles/qnx-photon
 @exec ln -s C %D/share/fluxbox-devel/nls/en
 @exec ln -s C %D/share/fluxbox-devel/nls/US_ASCII
 @exec ln -s C %D/share/fluxbox-devel/nls/POSIX
+@dirrm share/fluxbox-devel/styles/Emerge/pixmaps
+@dirrm share/fluxbox-devel/styles/Emerge
+@dirrm share/fluxbox-devel/styles/BlueFlux/pixmaps
+@dirrm share/fluxbox-devel/styles/BlueFlux
 @dirrm share/fluxbox-devel/styles
 @dirrm share/fluxbox-devel/nls/tr_TR
 @dirrm share/fluxbox-devel/nls/sv_SE
 @dirrm share/fluxbox-devel/nls/ru_RU
 @dirrm share/fluxbox-devel/nls/pt_PT
 @dirrm share/fluxbox-devel/nls/pt_BR
+@dirrm share/fluxbox-devel/nls/nl_NL
 @dirrm share/fluxbox-devel/nls/lv_LV
 @dirrm share/fluxbox-devel/nls/ja_JP
 @dirrm share/fluxbox-devel/nls/it_IT

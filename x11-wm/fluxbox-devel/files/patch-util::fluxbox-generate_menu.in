@@ -1,5 +1,5 @@
---- util/fluxbox-generate_menu.in.orig	Mon Nov 17 01:50:53 2003
-+++ util/fluxbox-generate_menu.in	Mon Nov 17 02:00:42 2003
+--- util/fluxbox-generate_menu.in.orig	Mon Jan  5 16:00:08 2004
++++ util/fluxbox-generate_menu.in	Mon Jan  5 16:09:15 2004
 @@ -45,7 +45,7 @@
  
  
@@ -20,7 +20,7 @@
      -q  KDE-prefix; idem dito
  
  
-@@ -592,7 +592,7 @@
+@@ -599,7 +599,7 @@
  # Name of the outputfile
  # MENUFILENAME=${HOME}/.fluxbox/menu
  
@@ -29,7 +29,7 @@
  
  # standard url for console-browsers
  # HOMEPAGE=fluxbox.org
-@@ -604,19 +604,19 @@
+@@ -611,19 +611,19 @@
  # FBRUNOPTIONS='-font 10x20 -fg grey -bg black -title run'
  
  # --- PREFIX'es
@@ -56,7 +56,7 @@
  
  
  # --- Boolean variables.
-@@ -734,12 +734,12 @@
+@@ -741,12 +741,12 @@
  # prefix
  PREFIX="${PREFIX:=@PREFIX@}"
  if [  -z "${PREFIX}" -o ! -d "${PREFIX}" ]; then
@@ -71,7 +71,7 @@
      if [ -n "${GNOME_PREFIX}" -a -d "$GNOME_PREFIX/share/gnome" ]; then
          break;
      fi
-@@ -747,7 +747,7 @@
+@@ -754,7 +754,7 @@
  # Will remain $PREFIX if all else fails
  
  # kde prefix
@@ -80,7 +80,7 @@
      if [ -n "${KDE_PREFIX}" -a -d "$KDE_PREFIX/share/applnk" ]; then
          break;
      fi
-@@ -755,7 +755,7 @@
+@@ -762,7 +762,7 @@
  
  # directory for the backgrounds
  if [ -z "$BACKGROUND_DIRS" ]; then
@@ -89,7 +89,7 @@
  fi
  
  # find the default terminal
-@@ -830,7 +830,7 @@
+@@ -837,7 +837,7 @@
      links|w3m|lynx)  append "[exec] (${DEFAULT_BROWSERNAME}) {${DEFAULT_TERM} -e ${DEFAULT_BROWSER} ${HOMEPAGE}}" ;;
      firebird|mozilla|phoenix|galeon|dillo|netscape) append "[exec] (${DEFAULT_BROWSERNAME}) {${DEFAULT_BROWSER}}" ;;
      konqueror) append "[exec] (konqueror) {kfmclient openProfile webbrowsing}" ;;
@@ -98,7 +98,7 @@
      MozillaFirebird) append "[exec] (firebird) {MozillaFirebird}" ;;
      *) append "[exec] ($DEFAULT_BROWSERNAME) {$DEFAULT_BROWSER}" ;;
  esac
-@@ -846,7 +846,7 @@
+@@ -853,7 +853,7 @@
  append_submenu "${NETMENU}"
      append_submenu "${BROWSERMENU}"
          normal_find mozilla-firebird MozillaFirebird galeon mozilla dillo netscape
@@ -107,7 +107,7 @@
          find_it konqueror   append "[exec]   (konqueror) {kfmclient openProfile webbrowsing}"
          find_it links       append "[exec]   (links) {${DEFAULT_TERM} -e links ${HOMEPAGE}}"
          find_it w3m         append "[exec]   (w3m) {${DEFAULT_TERM} -e w3m ${HOMEPAGE}}"
-@@ -990,7 +990,7 @@
+@@ -996,7 +996,7 @@
      append "[config] (${CONFIGUREMENU})"
  
      append_menu "[submenu] (${SYSTEMSTYLES}) {${STYLEMENUTITLE}}"
@@ -116,3 +116,21 @@
      append_menu_end
  
      append_menu "[submenu] (${USERSTYLES}) {${STYLEMENUTITLE}}"
+@@ -1006,7 +1006,7 @@
+     # Backgroundmenu
+     addbackground() {
+                 picturename=`basename "$1"`
+-                append "[exec] (${picturename%.???}) {fbsetbg -a \"$1\" }"
++                append "[exec] (${picturename%.???}) {fbsetbg-devel -a \"$1\" }"
+     }
+ 
+     if [ "$BACKGROUNDMENUITEM" = yes ]; then
+@@ -1014,7 +1014,7 @@
+         NUMBER_OF_BACKGROUNDS=`find $BACKGROUND_DIRS -follow -type f 2> /dev/null|wc -l`
+         if [ "$NUMBER_OF_BACKGROUNDS" -gt 0 ]; then
+             append_menu "[submenu] (${BACKGROUNDMENU}) {${BACKGROUNDMENUTITLE}}"
+-            append "[exec] (random background) {fbsetbg -r ${HOME}/.fluxbox/backgrounds}"
++            append "[exec] (random background) {fbsetbg-devel -r ${HOME}/.fluxbox/backgrounds}"
+             if [ "$NUMBER_OF_BACKGROUNDS" -gt 30 ]; then
+                 menucounter=1 ; counter=1
+                 append_menu "[submenu] (${BACKGROUNDMENU} $menucounter) {${BACKGROUNDMENUTITLE}}"
