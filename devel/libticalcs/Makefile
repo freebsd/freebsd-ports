@@ -21,11 +21,11 @@ LIB_DEPENDS=	ticables.10:${PORTSDIR}/comms/libticables \
 		intl.5:${PORTSDIR}/devel/gettext
 
 USE_GNOME=	glib20
+WANT_AUTOMAKE_VER=	15
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
-USE_AUTOMAKE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"\
 		LDFLAGS="-L${LOCALBASE}/lib"

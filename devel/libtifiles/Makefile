@@ -18,11 +18,11 @@ BUILD_DEPENDS=  pkg-config:${PORTSDIR}/devel/pkgconfig
 RUN_DEPENDS=    pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
+WANT_AUTOMAKE_VER=	15
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
-USE_AUTOCONF=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"\
 		LDFLAGS="-L${LOCALBASE}/lib"
