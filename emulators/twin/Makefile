@@ -11,7 +11,7 @@ CATEGORIES=	emulators devel
 MASTER_SITES=	ftp://ftp.willows.com/pub/development/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		$(WRKDIR)/twin
 USE_XLIB=	yes
