@@ -3,7 +3,7 @@
 # Date created:         15 Jul 1998
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/15 09:56:31 dburr Exp $
+# $Id: Makefile,v 1.2 1998/07/25 12:37:36 asami Exp $
 #
 
 DISTNAME=	nologin
@@ -14,8 +14,6 @@ DISTFILES=	nologin.c nologin.8
 
 MAINTAINER=	dburr@FreeBSD.ORG
 
-BROKEN=		no Makefile
-
 DIST_SUBDIR=	nologin
 NO_WRKSUBDIR=	YES
 ALL_TARGET=	nologin
@@ -25,6 +23,7 @@ MAN8=		nologin.8
 do-extract:
 		@${MKDIR} ${WRKDIR}
 		for FILE in ${DISTFILES} ; do ${CP} ${DISTDIR}/${DIST_SUBDIR}/$${FILE} ${WRKDIR}/$${FILE} ; done
+		${CP} ${FILESDIR}/Makefile ${WRKDIR}
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKDIR}/nologin ${PREFIX}/sbin
