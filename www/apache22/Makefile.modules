@@ -31,7 +31,6 @@ PLIST_SUB+=	PREFORK="@comment " WORKER="@comment " THREADPOOL="@comment " EVENT=
 PLIST_SUB+=	PREFORK="@comment " WORKER="@comment " THREADPOOL="" EVENT="@comment "
 .      elif  ${WITH_MPM:L} == "event"
 PLIST_SUB+=	PREFORK="@comment " WORKER="@comment " THREADPOOL="@comment " EVENT=""
-EXTRA_PATCHES+=	${FILESDIR}/exp-event-mpm-apr-backport.patch
 .      else
 IGNORE=		"Unknown MPM: ${WITH_MPM}"
 .      endif
