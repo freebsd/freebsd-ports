@@ -23,4 +23,10 @@ PERL_CONFIGURE=	yes
 MAN1=		text-vimcolor.1
 MAN3=		Text::VimColor.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500601
+IGNORE=		This port requires perl 5.6.1 or later. Install lang/perl5 then try again
+.endif
+
+.include <bsd.port.post.mk>
