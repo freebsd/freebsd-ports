@@ -20,6 +20,8 @@ etc/uucp/port.sample
 etc/uucp/sys1.sample
 etc/uucp/sys2.sample
 info/uucp.info.gz
+@exec install-info %D/info/uucp.info %D/info/dir
+@unexec install-info --delete %D/info/uucp.info %D/info/dir
 libexec/uucp/uucico
 libexec/uucp/uuxqt
 libexec/uucpd
