@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cdpr
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.monkeymental.com/mmfiles/ \
 		${MASTER_SITE_LOCAL}
@@ -19,7 +19,7 @@ MAINTAINER=	mich@freebsdcluster.org
 USE_GCC=	yes
 ALL_TARGET=	cdpr
 
-DOCSDIR?=       ${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
