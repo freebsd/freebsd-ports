@@ -1,6 +1,6 @@
---- thttpd.c.orig	Tue May 13 17:14:33 2003
-+++ thttpd.c	Wed Oct 29 05:50:14 2003
-@@ -1593,12 +1593,45 @@
+--- thttpd.c.orig	Thu Dec 25 19:06:52 2003
++++ thttpd.c	Fri May 28 12:25:54 2004
+@@ -1723,12 +1723,45 @@
      if ( hc->responselen == 0 )
  	{
  	/* No, just write the file. */
@@ -8,8 +8,8 @@
 +	off_t sbytes;
 +	
 +	sz = sendfile(
-+	     hc->file_fd, hc->conn_fd, c->bytes_sent,
-+	     MIN( c->bytes_to_send - c->bytes_sent, c->max_limit ),
++	     hc->file_fd, hc->conn_fd, c->next_byte_index,
++	     MIN( c->end_byte_index - c->next_byte_index, max_bytes ),
 +	     NULL, &sbytes, 0 );
 +	if (sz == -1 && errno == EAGAIN)
 +	    sz = sbytes > 0 ? sbytes : -1;
@@ -17,8 +17,8 @@
 +	    sz = sbytes;
 +#else		      
  	sz = write(
- 	    hc->conn_fd, &(hc->file_address[c->bytes_sent]),
- 	    MIN( c->bytes_to_send - c->bytes_sent, c->max_limit ) );
+ 	    hc->conn_fd, &(hc->file_address[c->next_byte_index]),
+ 	    MIN( c->end_byte_index - c->next_byte_index, max_bytes ) );
 +#endif
  	}
      else
@@ -35,8 +35,8 @@
 +	sf.trailers = NULL;
 +	sf.trl_cnt = 0;
 +	sz = sendfile(
-+	     hc->file_fd, hc->conn_fd, c->bytes_sent,
-+	     MIN( c->bytes_to_send - c->bytes_sent, c->max_limit ),
++	     hc->file_fd, hc->conn_fd, c->next_byte_index,
++	     MIN( c->end_byte_index - c->next_byte_index, max_bytes ),
 +	     &sf, &sbytes, 0 );
 +	if (sz == -1 && errno == EAGAIN)
 +	    sz = sbytes > 0 ? sbytes : -1;
@@ -46,11 +46,11 @@
  	/* Yes.  We'll combine headers and file into a single writev(),
  	** hoping that this generates a single packet.
  	*/
-@@ -1609,6 +1642,7 @@
- 	iv[1].iov_base = &(hc->file_address[c->bytes_sent]);
- 	iv[1].iov_len = MIN( c->bytes_to_send - c->bytes_sent, c->max_limit );
+@@ -1739,6 +1772,7 @@
+ 	iv[1].iov_base = &(hc->file_address[c->next_byte_index]);
+ 	iv[1].iov_len = MIN( c->end_byte_index - c->next_byte_index, max_bytes );
  	sz = writev( hc->conn_fd, iv, 2 );
 +#endif
  	}
  
-     if ( sz == 0 ||
+     if ( sz < 0 && errno == EINTR )

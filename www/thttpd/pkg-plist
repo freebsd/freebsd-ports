@@ -5,11 +5,11 @@ etc/rc.d/thttpd.sh
 etc/thttpd.conf.sample
 sbin/thttpd
 sbin/thttpd_wrapper
-%%PORTDOCS%%share/doc/thttpd/notes.html
+%%PORTDOCS%%%%DOCSDIR%%/notes.html
 www/cgi-bin/phf
 www/cgi-bin/redirect
 www/cgi-bin/ssi
-%%PORTDOCS%%@dirrm share/doc/thttpd
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rmdir %D/www/cgi-bin 2> /dev/null || true
 @unexec rmdir %D/www/data 2> /dev/null || true
 @unexec rmdir %D/www/logs 2> /dev/null || true
