@@ -1,6 +1,7 @@
 #define this if you want to build LaTeX too
 #MAKE_LATEX=	yes
 
+PKGNAME=	tex
 DISTFILES=	web2c.tar.gz web.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
 		mf_lib.tar.gz cm_mf.tar.gz      modes.mf 
 
@@ -27,6 +28,8 @@ BASES=		mf.base cmmf.base
 FORMATS=	tex.fmt 
 
 CFLAGS=		-O2
+
+BUILD_COOKIE=		${WRKDIR}/.build_done
 
 pre-fetch:
 	@if [ ! -d ${DISTDIR} ]; then mkdir -p ${DISTDIR}; fi
@@ -98,8 +101,9 @@ latex_tfm.tar.gz:
  		ftp_dir=/tex-archive/fonts file_in=latex/tfm.tar.gz file_out=$@; \
 	 fi;)
 
+build: ${BUILD_COOKIE}
 
-build: configure
+${BUILD_COOKIE}:
 	@echo "===>  Building for ${DISTNAME}"
 	@(cd ${WRKSRC}/web2c; make triptrap)
 	@(cd ${WRKSRC}/web2c; make run-triptrap)
@@ -119,6 +123,7 @@ build: configure
 	@(cd ${WRKSRC}/web2c; TEXINPUTS=${WRKDIR}/lib:${WRKSRC}; export TEXINPUTS;\
 	  TEXFONTS=${WRKDIR}/cm/tfm:${WRKDIR}/latex/tfm; export TEXFONTS; \
 		make fmts="${FORMATS}" fmts)
+	@touch -f ${BUILD_COOKIE}
 
 install:
 	@echo "===>  Installing for ${DISTNAME}"
