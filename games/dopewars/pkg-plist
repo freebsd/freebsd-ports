@@ -5,9 +5,17 @@ lib/charset.alias
 %%PORTDOCS%%share/doc/%%DOPEWARS%%/clientplay.html
 %%PORTDOCS%%share/doc/%%DOPEWARS%%/commandline.html
 %%PORTDOCS%%share/doc/%%DOPEWARS%%/configfile.html
+%%PORTDOCS%%share/doc/%%DOPEWARS%%/contribute.html
 %%PORTDOCS%%share/doc/%%DOPEWARS%%/credits.html
 %%PORTDOCS%%share/doc/%%DOPEWARS%%/developer.html
 %%PORTDOCS%%share/doc/%%DOPEWARS%%/example-cfg
+%%PORTDOCS%%share/doc/%%DOPEWARS%%/help/cops.html
+%%PORTDOCS%%share/doc/%%DOPEWARS%%/help/drugs.html
+%%PORTDOCS%%share/doc/%%DOPEWARS%%/help/general.html
+%%PORTDOCS%%share/doc/%%DOPEWARS%%/help/guns.html
+%%PORTDOCS%%share/doc/%%DOPEWARS%%/help/locations.html
+%%PORTDOCS%%share/doc/%%DOPEWARS%%/help/server.html
+%%PORTDOCS%%share/doc/%%DOPEWARS%%/help/sounds.html
 %%PORTDOCS%%share/doc/%%DOPEWARS%%/i18n.html
 %%PORTDOCS%%share/doc/%%DOPEWARS%%/index.html
 %%PORTDOCS%%share/doc/%%DOPEWARS%%/installation.html
@@ -17,11 +25,24 @@ lib/charset.alias
 %%PORTDOCS%%share/doc/%%DOPEWARS%%/servercommands.html
 %%PORTDOCS%%share/doc/%%DOPEWARS%%/windows.html
 share/dopewars/dopewars.sco
+share/dopewars/bye.wav
+share/dopewars/colt.wav
+share/dopewars/die.wav
+share/dopewars/gun.wav
+share/dopewars/jet.wav
+share/dopewars/losebitch.wav
+share/dopewars/message.wav
+share/dopewars/murmur.wav
+share/dopewars/punch.wav
+share/dopewars/run.wav
+share/dopewars/shotdown.wav
+share/dopewars/train.wav
 @unexec if [ ! -s %D/share/dopewars/dopewars.sco.bak ]; then rm -f %D/share/dopewars/dopewars.sco.bak; fi
 share/dopewars/pixmaps/dopewars-pill.png
 share/dopewars/pixmaps/dopewars-shot.png
 share/dopewars/pixmaps/dopewars-weed.png
 share/locale/de/LC_MESSAGES/dopewars.mo
+share/locale/es/LC_MESSAGES/dopewars.mo
 share/locale/fr/LC_MESSAGES/dopewars.mo
 share/locale/locale.alias
 share/locale/nn/LC_MESSAGES/dopewars.mo
@@ -33,4 +54,5 @@ share/gnome/apps/Games/dopewars.desktop
 @unexec rmdir %D/share/gnome 2>/dev/null || true
 @dirrm share/dopewars/pixmaps
 @dirrm share/dopewars
+%%PORTDOCS%%@dirrm share/doc/%%DOPEWARS%%/help
 %%PORTDOCS%%@dirrm share/doc/%%DOPEWARS%%
