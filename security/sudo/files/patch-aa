@@ -1,3 +1,6 @@
+--- configure.orig	Mon Jan 12 20:45:09 1998
++++ configure	Fri May 29 01:31:07 1998
+@@ -4557,7 +4573,7 @@
  fi
  
  if test "$with_skey" = "yes"; then
