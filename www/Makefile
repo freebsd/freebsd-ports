@@ -236,6 +236,7 @@
     SUBDIR += netscape48-communicator
     SUBDIR += netscape48-navigator
     SUBDIR += netscape7
+    SUBDIR += notftp
     SUBDIR += npc
     SUBDIR += nscache
     SUBDIR += nspostgres

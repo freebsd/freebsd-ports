@@ -1,0 +1,5 @@
+NotFTP requires that PHP be compiled with the --with-ftp option. If you've
+already done this, you should be able to browse to http://yourserver/notftp/ and
+have it work right out of the box.
+
+To customize NotFTP, edit the file config.php in the notftp directory.
