@@ -3,16 +3,15 @@
 # Date created:		Thu Sep 14 11:10:01 CDT 1995
 # Whom:			erich@FreeBSD.org
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/08/01 19:54:20 erich Exp $
 #
 
 DISTNAME=	gcc11
 PKGNAME=	gcc11-2.6.3
 CATEGORIES=	devel
-MASTER_SITES=	ftp://nyquist.ee.ualberta.ca/pub/motorola/68hc11/gcc/
-MASTER_SITES+=	ftp://archive.cis.ohio-state.edu/pub/gnu/mirror/
-#MASTER_SITES+=	ftp://prep.ai.mit.edu/pub/gnu/
-
+MASTER_SITES=	ftp://nyquist.ee.ualberta.ca/pub/motorola/68hc11/gcc/ \
+		ftp://archive.cis.ohio-state.edu/pub/gnu/mirror/ \
+		ftp://prep.ai.mit.edu/pub/gnu/
 DISTFILES=	gcc-6811-fsf.tar.gz gcc-2.6.3.tar.gz
 
 MAINTAINER=	erich@FreeBSD.ORG
