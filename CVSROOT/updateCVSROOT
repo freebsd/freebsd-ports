@@ -2,19 +2,19 @@
 #
 # Called in place of mkmodules to take care of files mkmodules doesn't know.
 #
-# $Id$
+# $Id: updateCVSROOT,v 1.1 1995/11/27 06:26:29 peter Exp $
 
 PATH=$PATH:/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/bin
 export PATH
 
 FILELIST="avail mkavail commitcheck cvs_acls.pl commit_prep.pl log_accum.pl"
-FILELIST="${FILELIST} cvsedit edithook fixcvsroot"
+FILELIST="${FILELIST} cvsedit edithook updateCVSROOT"
 
 cd $1
 
 for i in $FILELIST
 do 
-  find $i,v -newer $i -exec co -u $i
+  find $i,v -newer $i -exec echo co -u $i \;
 done
 
 #find avail,v -newer cvs-committers -exec ./mkavail
@@ -23,4 +23,4 @@ done
 #  echo "please check to see what needs to be updated..."
 #}
 
-exec mkmodules $1
+#exec mkmodules $1
