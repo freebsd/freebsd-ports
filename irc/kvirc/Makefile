@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.kvirc.net/pub/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}/source/
 
 MAINTAINER=	mranner@inode.at
-COMMENT=	"IRC client for QT and KDE"
+COMMENT=	IRC client for QT and KDE
 
 LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm
 
