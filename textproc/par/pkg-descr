@@ -1,0 +1,19 @@
+    Par is a filter which copies its input to its output, changing all
+    white characters (except newlines) to spaces, and reformatting
+    each paragraph.  Paragraphs are separated by protected, blank, and
+    bodiless lines (see the Terminology section for definitions), and
+    optionally delimited by indentation (see the d option in the Options
+    section).
+
+    Each output paragraph is generated from the corresponding input
+    paragraph as follows:
+
+     1) An optional prefix and/or suffix is removed from each input
+        line.
+     2) The remainder is divided into words (separated by spaces).
+     3) The words are joined into lines to make an eye-pleasing
+        paragraph.
+     4) The prefixes and suffixes are reattached.
+
+     If there are suffixes, spaces are inserted before them so that they
+     all end in the same column.
