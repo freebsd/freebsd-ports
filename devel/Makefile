@@ -211,6 +211,7 @@
     SUBDIR += gnustep-make
     SUBDIR += gperf
     SUBDIR += gputils
+    SUBDIR += green-card
     SUBDIR += gtgt
     SUBDIR += gtranslator
     SUBDIR += gvd

@@ -1,0 +1,8 @@
+Green Card is a foreign function interface preprocessor for Haskell,
+simplifying the task of interfacing Haskell programs to external libraries
+(which are normally exposed via C interfaces).
+
+WWW: http://haskell.org/greencard/
+
+-- Oliver Braun
+obraun@informatik.unibw-muenchen.de
