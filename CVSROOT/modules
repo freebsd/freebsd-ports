@@ -3960,7 +3960,6 @@ messarge	ports/russian/messarge
 metacity	ports/x11-wm/metacity
 metacity-setup	ports/x11-wm/metacity-setup
 metakit		ports/databases/metakit
-metalist	ports/chinese/metalist
 metamail	ports/mail/metamail
 metapixel	ports/graphics/metapixel
 metatheme	ports/misc/metatheme
@@ -8224,6 +8223,7 @@ zh-linux-netscape47-communicator	ports/chinese/linux-netscape47-communicator
 zh-linux-netscape47-navigator	ports/chinese/linux-netscape47-navigator
 zh-linux_locale	ports/chinese/linux_locale
 zh-lunar	ports/chinese/lunar
+zh-metalist	ports/chinese/metalist
 zh-mkisofs	ports/chinese/mkisofs
 zh-moefonts-cid	ports/chinese/moefonts-cid
 zh-moettf	ports/chinese/moettf
