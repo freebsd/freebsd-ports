@@ -16,7 +16,7 @@ include/gd/gdfonts.h
 include/gd/gdfontt.h
 lib/libgd.a
 lib/libgd.so
-lib/libgd.so.0
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+lib/libgd.so.1
 @dirrm include/gd
+@exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
