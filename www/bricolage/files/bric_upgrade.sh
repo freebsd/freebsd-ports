@@ -1,6 +1,6 @@
 #!/bin/sh
 
-BRICUPGRADE=%%PREFIX%%
+BRICUPGRADE=%%PREFIX%%/bricolage/upgrade
 NEWVERSION=%%PORTVERSION%%
 
 # Ensure the version exists
