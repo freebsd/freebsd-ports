@@ -1,0 +1,11 @@
+--- include/standard.h.orig	Sun May 30 23:20:26 1999
++++ include/standard.h	Sun May 30 23:21:25 1999
+@@ -182,7 +182,7 @@
+ extern	int	wait_chld __PR((int));
+ extern	int	geterrno __PR((void));
+ extern	void	raisecond __PR((const char *, long));
+-extern	int	snprintf __PR((char *, unsigned, const char *, ...));
++/*extern	int	snprintf __PR((char *, unsigned, const char *, ...)); */
+ /*extern	int	sprintf __PR((char *, const char *, ...)); ist woanders falsch deklariert !!!*/
+ extern	char	*strcatl __PR((char *, ...));
+ extern	int	streql __PR((const char *, const char *));
