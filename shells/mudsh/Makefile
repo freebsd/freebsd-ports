@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mudsh
-PORTVERSION=	20010228
+PORTVERSION=	20010311
 CATEGORIES=	shells
 MASTER_SITES=	http://www.xirium.com/tech/mud-shell/download/
 DISTNAME=	mudsh
