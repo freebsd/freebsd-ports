@@ -7,6 +7,7 @@
 
 PORTNAME=	spamass-rules
 PORTVERSION=	20040811
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ranner.jawa.at/stuff/
 
@@ -51,15 +52,15 @@ SPAMASS_FILES+=	20_dnsbl_ahbl.cf
 SPAMASS_FILES+=	airmax.cf
 .endif
 
-.if defined(WITH_ANTIDRUG)
+.if !defined(WITHOUT_ANTIDRUG)
 SPAMASS_FILES+=	antidrug.cf
 .endif
 
-.if defined(WITH_BACKHAIR)
+.if !defined(WITHOUT_BACKHAIR)
 SPAMASS_FILES+=	backhair.cf
 .endif
 
-.if defined(WITH_BOGUS_VIRUS)
+.if !defined(WITHOUT_BOGUS_VIRUS)
 SPAMASS_FILES+=	bogus-virus-warnings.cf
 .endif
 
@@ -70,11 +71,11 @@ SPAMASS_FILES+=	$i
 .endfor
 .endif
 
-.if defined(WITH_CHICKENPOX)
+.if !defined(WITHOUT_CHICKENPOX)
 SPAMASS_FILES+=	chickenpox.cf
 .endif
 
-.if defined(WITH_EVILNUMBERS)
+.if !defined(WITHOUT_EVILNUMBERS)
 SPAMASS_FILES+=	evilnumbers.cf
 .endif
 
@@ -88,11 +89,11 @@ SPAMASS_FILES+=	$i
 .endfor
 .endif
 
-.if defined(WITH_RANDOM)
+.if !defined(WITHOUT_RANDOM)
 SPAMASS_FILES+=	random.cf
 .endif
 
-.if defined(WITH_SARE)
+.if !defined(WITHOUT_SARE)
 .for i in 70_sare_adult.cf 70_sare_bayes_poison_nxm.cf 70_sare_header0.cf \
 	70_sare_html0.cf 70_sare_genlsubj0.cf 70_sare_oem.cf 70_sare_random.cf \
 	70_sare_ratware.cf 70_sare_specific.cf 70_sare_spoof.cf 70_sare_unsub.cf \
@@ -124,11 +125,11 @@ SPAMASS_FILES+=	$i
 SPAMASS_FILES+=	99_FVGT_Tripwire.cf
 .endif
 
-.if defined(WITH_WEEDS) && !defined(WITH_WEEDS2)
+.if !defined(WITHOUT_WEEDS) && !defined(WITH_WEEDS2)
 SPAMASS_FILES+=	weeds.cf
 .endif
 
-.if defined(WITH_WEEDS2) && !defined(WITH_WEEDS)
+.if defined(WITH_WEEDS2) && defined(WITHOUT_WEEDS)
 SPAMASS_FILES+=	weeds2.cf
 .endif
 
