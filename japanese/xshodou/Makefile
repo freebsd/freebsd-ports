@@ -18,4 +18,7 @@ USE_X_PREFIX=	yes
 MAN1=		xshodou.1
 MANCOMPRESSED=	yes
 
+post-patch:
+	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/xshodou
+
 .include <bsd.port.mk>

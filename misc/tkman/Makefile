@@ -20,7 +20,7 @@ RUN_DEPENDS=	rman:${PORTSDIR}/textproc/rman \
 NO_CDROM=	"License required"
 
 post-patch:
-	perl -pi -e "s;/usr/local/bin/wish;${LOCALBASE}/bin/wish8.3;" \
+	${PERL} -pi -e "s;/usr/local/bin/wish;${LOCALBASE}/bin/wish8.3;" \
 		${WRKSRC}/contrib/tkmanclient
 
 post-install:

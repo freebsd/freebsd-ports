@@ -23,6 +23,9 @@ ALL_TARGET=	spin
 post-extract:
 	@cd ${WRKDIR}/Test && ${SH} ${WRKDIR}/Test/examples
 
+post-patch:
+	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKDIR}/Xspin3.3/xspin3310.tcl
+
 pre-build:
 	cd ${WRKSRC} && ${MAKE} clean
 

@@ -5,6 +5,6 @@
  	echo ""
  else
 -	exec /usr/local/bin/wish -f Generator/dotfile.tcl Generator Modules/$1 $2
-+	exec /usr/local/bin/wish8.2 -f Generator/dotfile.tcl Generator Modules/$1 $2
++	exec %%LOCALBASE%%/bin/wish8.2 -f Generator/dotfile.tcl Generator Modules/$1 $2
  fi
  
