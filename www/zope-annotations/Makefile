@@ -7,6 +7,7 @@
 
 PORTNAME=	annotations
 PORTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=	www zope
 MASTER_SITES=	http://zope.org/Members/infrae/Annotations/Annotations-${PORTVERSION}/
 PKGNAMEPREFIX=	zope-
@@ -30,7 +31,6 @@ ZOPEPRODUCTNAME=Annotations
 
 PLIST_SUB=	ZOPEBASEDIR=${SZOPEBASEDIR}
 WRKSRC=		${WRKDIR}/${ZOPEPRODUCTNAME}
-CPIO=		cpio --quiet -pdum -R
 
 do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
@@ -39,7 +39,7 @@ do-install:
 	@ ${CHMOD} -R og+rX ${WRKSRC}/
 	@ ${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
 	@ cd ${WRKSRC} && ${FIND} . \
-	  | ${CPIO} ${BINOWN}:${BINGRP} \
+	  | ${CPIO} --quiet -pdum -R ${BINOWN}:${BINGRP} \
 	  ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
 
 post-install:
