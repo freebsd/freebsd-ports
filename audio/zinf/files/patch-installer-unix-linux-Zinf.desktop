@@ -1,0 +1,13 @@
+--- installer/unix/linux/Zinf.desktop.orig	Mon Jun 24 08:44:27 2002
++++ installer/unix/linux/Zinf.desktop	Sat Jan 18 04:49:09 2003
+@@ -1,8 +1,8 @@
+ 
+ [Desktop Entry]
+-Name[en_US.ISO8859-1]=Zinf
++Name=Zinf
+ Exec=zinf 
+-Icon=/usr/share/pixmaps/zinf.png
++Icon=zinf.png
+ Terminal=false
+ MultipleArgs=false
+ Type=Application
