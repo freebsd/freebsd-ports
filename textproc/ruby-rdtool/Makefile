@@ -7,6 +7,7 @@
 
 PORTNAME=	rdtool
 PORTVERSION=	0.6.10
+PORTREVISION=	1
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www2.pos.to/~tosh/ruby/rdtool/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -14,7 +15,8 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-BUILD_DEPENDS=	racc:${PORTSDIR}/devel/ruby-racc \
+BUILD_DEPENDS=	${DEPEND_RUBY_AMSTD} \
+		racc:${PORTSDIR}/devel/ruby-racc \
 		${RUBY_SITELIBDIR}/strscan.rb:${PORTSDIR}/devel/ruby-strscan \
 		${RUBY_SITELIBDIR}/optparse.rb:${PORTSDIR}/devel/ruby-optparse
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/racc/parser.rb:${PORTSDIR}/devel/ruby-racc-runtime \
