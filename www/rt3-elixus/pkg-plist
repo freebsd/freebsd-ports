@@ -655,6 +655,7 @@ rt3/share/html/Work/Tickets/Cc
 rt3/share/html/Work/Tickets/Create.html
 rt3/share/html/Work/Tickets/Display.html
 rt3/share/html/Work/Tickets/Elements/AddAttachments
+rt3/share/html/Work/Tickets/Elements/AddOwner
 rt3/share/html/Work/Tickets/Elements/AddContent
 rt3/share/html/Work/Tickets/Elements/AddSubject
 rt3/share/html/Work/Tickets/Elements/EditBasics
@@ -665,6 +666,7 @@ rt3/share/html/Work/Tickets/Elements/EditCustomFieldValues
 rt3/share/html/Work/Tickets/Elements/EditCustomFields
 rt3/share/html/Work/Tickets/Elements/EditHistory
 rt3/share/html/Work/Tickets/Elements/EditLinks
+rt3/share/html/Work/Tickets/Elements/EditOverview
 rt3/share/html/Work/Tickets/Elements/EditPeople
 rt3/share/html/Work/Tickets/Elements/EditWatchers
 rt3/share/html/Work/Tickets/Elements/ProcessEntryUpdates
