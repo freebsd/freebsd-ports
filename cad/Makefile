@@ -33,6 +33,7 @@
     SUBDIR += slffea
     SUBDIR += spice
     SUBDIR += tkgate
+    SUBDIR += transcalc
     SUBDIR += vipec
     SUBDIR += xcircuit
 
