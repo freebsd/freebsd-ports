@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- po/Makefile.in.in	2002/02/07 13:50:02	1.1
++++ po/Makefile.in.in	2002/02/07 13:51:15
+@@ -52,7 +52,7 @@
+ POTFILES = \
+ 
+ CATALOGS = @CATALOGS@
+-CATOBJEXT = @CATOBJEXT@
++CATOBJEXT = .mo
+ INSTOBJEXT = @INSTOBJEXT@
+ 
+ .SUFFIXES:

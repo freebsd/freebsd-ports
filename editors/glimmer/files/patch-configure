@@ -1,9 +1,78 @@
 
 $FreeBSD$
 
---- configure.orig	Fri Nov 16 16:02:10 2001
-+++ configure	Fri Nov 16 16:02:49 2001
-@@ -8320,7 +8320,7 @@
+--- configure.orig	Thu Feb  7 15:54:38 2002
++++ configure	Thu Feb  7 16:09:08 2002
+@@ -8001,7 +8001,7 @@
+ #line 8001 "configure"
+ #include "confdefs.h"
+ #include <stdlib.h>
+-#include <iconv.h>
++#include <giconv.h>
+ int
+ main ()
+ {
+@@ -8032,12 +8032,12 @@
+ rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
+     if test "$am_cv_func_iconv" != yes; then
+       am_save_LIBS="$LIBS"
+-      LIBS="$LIBS -liconv"
++      LIBS="$LIBS -lgiconv"
+       cat >conftest.$ac_ext <<_ACEOF
+ #line 8037 "configure"
+ #include "confdefs.h"
+ #include <stdlib.h>
+-#include <iconv.h>
++#include <giconv.h>
+ int
+ main ()
+ {
+@@ -8090,7 +8090,7 @@
+ #include "confdefs.h"
+ 
+ #include <stdlib.h>
+-#include <iconv.h>
++#include <giconv.h>
+ extern
+ #ifdef __cplusplus
+ "C"
+@@ -8144,7 +8144,7 @@
+   fi
+   LIBICONV=
+   if test "$am_cv_lib_iconv" = yes; then
+-    LIBICONV="-liconv"
++    LIBICONV="-lgiconv"
+   fi
+ 
+   echo "$as_me:8150: checking for nl_langinfo and CODESET" >&5
+@@ -8605,7 +8605,7 @@
+ echo "${ECHO_T}no" >&6
+ fi
+ 
+-	     CATOBJEXT=.gmo
++	     CATOBJEXT=.mo
+ 	   fi
+ 
+ fi
+@@ -8729,7 +8729,7 @@
+ 
+ 	BUILD_INCLUDED_LIBINTL=yes
+ 	USE_INCLUDED_LIBINTL=yes
+-        CATOBJEXT=.gmo
++        CATOBJEXT=.mo
+ 	INTLLIBS="\$(top_builddir)/intl/libintl.a $LIBICONV"
+ 	LIBS=`echo " $LIBS " | sed -e 's/ -lintl / /' -e 's/^ //' -e 's/ $//'`
+       fi
+@@ -8819,7 +8819,7 @@
+     fi
+ 
+                 for lang in $ALL_LINGUAS; do
+-      GMOFILES="$GMOFILES $lang.gmo"
++      GMOFILES="$GMOFILES $lang.mo"
+       POFILES="$POFILES $lang.po"
+     done
+ 
+@@ -10202,7 +10202,7 @@
  fi
  echo System regex.......$use_system_regex
  
