@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.daemonology.net/freebsd-update/
 MAINTAINER=	cperciva@daemonology.net
 COMMENT=	Fetches and installs binary updates to FreeBSD
 
+RUN_DEPENDS=	bspatch:${PORTSDIR}/misc/bsdiff
 # This is a critical security port.  If it breaks, Bad Things will happen.
 # Under no circumstances should this port ever be modified without approval
 # from the maintainer or security-officer, even for "cosmetic" fixes.
@@ -20,7 +21,6 @@ COMMENT=	Fetches and installs binary updates to FreeBSD
 # The RSA code has only been tested on i386; I don't *think* there are
 # any word-size or endian issues, but I'm not sure.  Since nobody is
 # building updates for non-i386 platforms anyway, this won't hurt anyone.
-RUN_DEPENDS=	bspatch:${PORTSDIR}/misc/bsdiff
 
 ONLY_FOR_ARCHS=	i386
 
