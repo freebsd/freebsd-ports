@@ -1,0 +1,13 @@
+--- config_unix.py	2000/12/16 08:03:29	1.1
++++ config_unix.py	2000/12/16 08:23:56
+@@ -4,7 +4,9 @@
+ import os, sys, shutil
+ from glob import glob
+ 
+-configcommand = 'sdl-config --version --cflags --libs'
++try: configcommand = os.environ['SDL_CONFIG']
++except KeyError: configcommand = 'sdl-config'
++configcommand = configcommand + ' --version --cflags --libs'
+ 
+     
+ 
