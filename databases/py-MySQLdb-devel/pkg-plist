@@ -1,5 +1,5 @@
-lib/python1.5/site-packages/MySQLdb.pyc
-lib/python1.5/site-packages/_mysqlmodule.so
+lib/%%PYTHON_VERSION%%/site-packages/MySQLdb.pyc
+lib/%%PYTHON_VERSION%%/site-packages/_mysqlmodule.so
 share/doc/py-MySQLdb/MySQLdb-1.html
 share/doc/py-MySQLdb/MySQLdb-2.html
 share/doc/py-MySQLdb/MySQLdb-3.html
