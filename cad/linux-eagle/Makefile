@@ -9,6 +9,7 @@ PORTNAME=	linux-eagle
 EAGLEVERSION?=	4.09r2
 EAGLELANG?=	e
 PORTVERSION=	${EAGLEVERSION:S/r/./}
+PORTREVISION?=	1
 CATEGORIES?=	cad linux
 MASTER_SITES=	ftp://ftp.cadsoft.de/pub/program/${EAGLEVERSION}/
 DISTNAME=	${PORTNAME:S/linux-//}-${EAGLEVERSION}${EAGLELANG}
@@ -31,11 +32,13 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAN1=		eagle.1
 
+CPIO?=		/usr/bin/cpio --quiet -pdum -R
+
 do-install:
-	${MKDIR} ${DATADIR}
-	${TAR} -C ${WRKSRC} -cf - . | ${TAR} -C ${DATADIR} --unlink -xf -
-	${LN} -sf ${DATADIR}/bin/eagle ${PREFIX}/bin/eagle
-	${INSTALL_MAN} ${DATADIR}/man/eagle.1 ${PREFIX}/man/man1
+	@${MKDIR} ${DATADIR}
+	@ cd ${WRKSRC} && ${FIND} * -type f -print | ${CPIO} ${BINOWN}:${BINGRP} ${DATADIR}
+	@${LN} -sf ${DATADIR}/bin/eagle ${PREFIX}/bin/eagle
+	@${INSTALL_MAN} ${DATADIR}/man/eagle.1 ${PREFIX}/man/man1
 
 post-install:
 	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" ${PKGDIR}/pkg-message > \
