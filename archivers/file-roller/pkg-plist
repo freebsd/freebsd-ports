@@ -1,7 +1,7 @@
 bin/file-roller
-@unexec GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/file-roller.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/file-roller.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/file-roller.schemas
-@exec GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/file-roller.schemas > /dev/null || /usr/bin/true
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/file-roller.schemas > /dev/null || /usr/bin/true
 lib/bonobo/libfile-roller-component.so
 libdata/bonobo/servers/File_Roller_Component.server
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
