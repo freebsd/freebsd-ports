@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- Makefile.in.orig	Fri Jan  4 17:47:57 2002
-+++ Makefile.in	Mon Sep  9 15:55:57 2002
-@@ -342,17 +342,13 @@
+--- Makefile.in.orig	Sun Sep 21 18:31:27 2003
++++ Makefile.in	Tue Nov  4 22:33:54 2003
+@@ -332,17 +332,13 @@
  
  $(build_libdir)/@WX_LIBRARY_LINK1@: $(build_libdir)/@WX_LIBRARY_NAME_SHARED@
  	@$(RM) $(build_libdir)/@WX_LIBRARY_LINK1@
@@ -21,9 +18,9 @@ $FreeBSD$
 -		&& $(LN_S) @WX_TARGET_LIBRARY_GL@ @WX_LIBRARY_LINK2_GL@
 +		&& $(LN_S) @WX_TARGET_LIBRARY_GL@ @WX_LIBRARY_LINK1_GL@
  
- $(OBJECTS):	$(WXDIR)/include/wx/defs.h $(WXDIR)/include/wx/object.h
+ $(OBJECTS): $(WXDIR)/include/wx/defs.h $(WXDIR)/include/wx/object.h
  
-@@ -382,17 +378,13 @@
+@@ -371,28 +367,23 @@
  
  CREATE_INSTALLED_LINKS: preinstall
  	$(RM) $(libdir)/@WX_LIBRARY_LINK1@
@@ -41,49 +38,87 @@ $FreeBSD$
 -		&& $(LN_S) @WX_LIBRARY_NAME_SHARED_GL@ @WX_LIBRARY_LINK2_GL@
 +		&& $(LN_S) @WX_LIBRARY_NAME_SHARED_GL@ @WX_LIBRARY_LINK1_GL@
  
- afminstall: preinstall
- 	$(INSTALL) -d $(datadir)
-@@ -404,7 +396,7 @@
+-afminstall: preinstall
++afminstall:
+ 	@if test ! -d $(datadir); then $(INSTALL) -d $(datadir); fi
+ 	$(INSTALL) -d $(datadir)/wx
+-	$(INSTALL) -d $(datadir)/wx/$(VER_MAJMIN)
+-	$(INSTALL) -d $(datadir)/wx/$(VER_MAJMIN)/afm
+-	$(INSTALL) -d $(datadir)/wx/$(VER_MAJMIN)/gs_afm
+-	$(INSTALL_DATA) $(top_srcdir)/misc/afm/*.afm $(datadir)/wx/$(VER_MAJMIN)/afm
+-	$(INSTALL_DATA) $(top_srcdir)/misc/gs_afm/*.afm $(datadir)/wx/$(VER_MAJMIN)/gs_afm
++	$(INSTALL) -d $(datadir)/wx/afm
++	$(INSTALL) -d $(datadir)/wx/gs_afm
++	$(INSTALL_DATA) $(top_srcdir)/misc/afm/*.afm $(datadir)/wx/afm
++	$(INSTALL_DATA) $(top_srcdir)/misc/gs_afm/*.afm $(datadir)/wx/gs_afm
+ 
+-m4datainstall: preinstall
++m4datainstall:
+ 	$(INSTALL) -d $(datadir)/aclocal
+ 	$(INSTALL_DATA) $(top_srcdir)/wxwin.m4 $(datadir)/aclocal
+ 
+@@ -410,7 +401,7 @@
  
  # this is the real install target: copies the library, wx-config and the
  # headers to the installation directory
--preinstall: $(top_builddir)/lib/@WX_TARGET_LIBRARY@ $(top_builddir)/wx@TOOLCHAIN_NAME@-config
-+preinstall:
+-preinstall: $(build_libdir)/@WX_TARGET_LIBRARY@ $(top_builddir)/wx@TOOLCHAIN_NAME@-config
++install-common: @AFMINSTALL@ m4datainstall @WIN32INSTALL@
  	@echo " "
  	@echo " Installing wxWindows..."
  	@echo " "
-@@ -421,11 +413,8 @@
- 	@# import livraru name
- 	@if test "@TOOLKIT_DIR@" = "msw" -a "@WX_LIBRARY_NAME_STATIC@" != "@WX_TARGET_LIBRARY@"; then $(INSTALL_PROGRAM) $(top_builddir)/lib/@WX_LIBRARY_NAME_STATIC@ $(libdir)/@WX_LIBRARY_NAME_STATIC@; fi
+@@ -419,26 +410,11 @@
+ 	@if test ! -d $(bindir); then $(INSTALL) -d $(bindir); fi
+ 	@if test ! -d $(libdir); then $(INSTALL) -d $(libdir); fi
  
+-	$(INSTALL_SCRIPT) $(top_builddir)/wx@TOOLCHAIN_NAME@-config $(bindir)/wx@TOOLCHAIN_NAME@-config
+-	cd $(bindir) && rm -f wx-config && $(LN_S) wx@TOOLCHAIN_NAME@-config wx-config
+-	@INSTALL_LIBRARY@ $(build_libdir)/@WX_TARGET_LIBRARY@ $(libdir)/@WX_TARGET_LIBRARY@
+-	@if test "x@WX_LIBRARY_IMPORTLIB@" != "x"; then \
+-		$(INSTALL_PROGRAM) $(top_builddir)/lib/@WX_LIBRARY_IMPORTLIB@ $(libdir)/@WX_LIBRARY_IMPORTLIB@; fi
+-
 -	$(INSTALL) -d $(libdir)/wx
 -	$(INSTALL) -d $(libdir)/wx/include
+-	$(INSTALL) -d $(libdir)/wx/include/univ
 -	$(INSTALL) -d $(libdir)/wx/include/@TOOLCHAIN_NAME@
 -	$(INSTALL) -d $(libdir)/wx/include/@TOOLCHAIN_NAME@/wx
--	$(INSTALL_DATA) $(top_builddir)/lib/wx/include/@TOOLCHAIN_NAME@/wx/setup.h $(libdir)/wx/include/@TOOLCHAIN_NAME@/wx/setup.h
-+	$(INSTALL) -d $(prefix)/include/wx
-+	$(INSTALL_DATA) $(top_builddir)/lib/wx/include/@TOOLCHAIN_NAME@/wx/setup.h $(prefix)/include/wx/setup.h
- 
+-	$(INSTALL_DATA) $(build_libdir)/wx/include/@TOOLCHAIN_NAME@/wx/setup.h \
+-                    $(libdir)/wx/include/@TOOLCHAIN_NAME@/wx/setup.h
+-
  	$(INSTALL) -d $(includedir)/wx
  	@# FIXME: This will erroneously install a wx/base dir for wxBase..
-@@ -449,7 +438,7 @@
+ 	@if test "$(USE_GUI)" = 1; then $(INSTALL) -d $(includedir)/wx/@TOOLKIT_DIR@; fi
+ 	@if test "$(USE_GUI)" = 1; then $(INSTALL) -d $(includedir)/wx/html; fi
+ 	@if test "$(USE_GUI)" = 1; then $(INSTALL) -d $(includedir)/wx/generic; fi
+-	@if test "$(USE_GUI)" = 1; then $(INSTALL) -d $(includedir)/wx/univ; fi
+ 	@if test "@TOOLKIT_DIR@" = "msw"; then $(INSTALL) -d $(includedir)/wx/msw/ole; fi
+ 
+ 	@# always install msw headers for wxBase, it's much simpler
+@@ -459,6 +435,19 @@
  	  echo "$(INSTALL_DATA) $(top_srcdir)/locale/$$p.mo $(localedir)/$$p/LC_MESSAGES/wxstd.mo"; \
  	done
  
--preinstall_gl: $(top_builddir)/lib/@WX_TARGET_LIBRARY_GL@
-+preinstall_gl:
++preinstall: $(build_libdir)/@WX_TARGET_LIBRARY@ $(top_builddir)/wx@TOOLCHAIN_NAME@-config
++	$(INSTALL_SCRIPT) $(top_builddir)/wx@TOOLCHAIN_NAME@-config $(bindir)/wx@TOOLCHAIN_NAME@-config
++	@if test "$(WXGTK_FLAVOR)" = "gtk"; then \
++		cd $(bindir) && rm -f wx-config && $(LN_S) wx@TOOLCHAIN_NAME@-config wx-config; \
++	fi
++	@INSTALL_LIBRARY@ $(build_libdir)/@WX_TARGET_LIBRARY@ $(libdir)/@WX_TARGET_LIBRARY@
++	@if test "x@WX_LIBRARY_IMPORTLIB@" != "x"; then \
++		$(INSTALL_PROGRAM) $(top_builddir)/lib/@WX_LIBRARY_IMPORTLIB@ $(libdir)/@WX_LIBRARY_IMPORTLIB@; fi
++	$(INSTALL) -d $(prefix)/include/wx/@TOOLCHAIN_NAME@
++	$(INSTALL) -d $(prefix)/include/wx/@TOOLCHAIN_NAME@/wx
++	$(INSTALL_DATA) $(build_libdir)/wx/include/@TOOLCHAIN_NAME@/wx/setup.h \
++		    $(prefix)/include/wx/@TOOLCHAIN_NAME@/wx/setup.h
++
+ preinstall_res: $(build_libdir)/@WX_RESOURCES_MACOSX_ASCII@ $(build_libdir)/@WX_RESOURCES_MACOSX_DATA@
  	@echo " "
- 	@echo " Installing wxWindows OpenGl add-on..."
+ 	@echo " Installing wxWindows Mac resource ..."
+@@ -474,7 +463,7 @@
+ 	@if test ! -d $(libdir); then $(INSTALL) -d $(libdir); fi
+ 	@INSTALL_LIBRARY@ $(build_libdir)/@WX_TARGET_LIBRARY_GL@ $(libdir)/@WX_TARGET_LIBRARY_GL@
+ 
+-install: @AFMINSTALL@ @WX_ALL_INSTALLED@ m4datainstall @WIN32INSTALL@
++install: @WX_ALL_INSTALLED@
  	@echo " "
-@@ -476,11 +465,9 @@
- 	@echo " Removing library..."
- 	@$(RM) $(libdir)/@WX_TARGET_LIBRARY@
- 	@$(RM) $(libdir)/@WX_LIBRARY_LINK1@
--	@$(RM) $(libdir)/@WX_LIBRARY_LINK2@
- 	@echo " Removing GL library..."
- 	@$(RM) $(libdir)/@WX_TARGET_LIBRARY_GL@
- 	@$(RM) $(libdir)/@WX_LIBRARY_LINK1_GL@
--	@$(RM) $(libdir)/@WX_LIBRARY_LINK2_GL@
- 	@echo " Removing helper files..."
- 	@$(RM) $(libdir)/wx/include/@TOOLCHAIN_NAME@/wx/setup.h
- 	@$(RM) $(bindir)/wx-config
+ 	@echo " The installation of wxWindows is finished.  On certain"
+ 	@echo " platforms (e.g. Linux) you'll now have to run ldconfig"
