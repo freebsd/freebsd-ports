@@ -29,6 +29,7 @@
     SUBDIR += gnomeapplets
     SUBDIR += gnomecore
     SUBDIR += gnomelibs
+    SUBDIR += gnomeres_applet
     SUBDIR += gswitchit_applet
     SUBDIR += gtk-theme-switch
     SUBDIR += gvid
