@@ -4,7 +4,7 @@ Hopefully, their next release will include these hunks.
 	-mi
 
 --- an_string.c	Thu May  8 14:53:15 2003
-+++ an_string.c	Wed Aug 20 14:57:14 2003
++++ an_string.c	Wed Aug 20 15:58:35 2003
 @@ -17,19 +17,28 @@
   ************************************************************************************/
   
@@ -71,7 +71,7 @@ Hopefully, their next release will include these hunks.
  {	
  	while(*src != '\0') {
 --- an_string.h	Thu May  8 14:53:15 2003
-+++ an_string.h	Wed Aug 20 14:20:02 2003
++++ an_string.h	Wed Aug 20 15:58:35 2003
 @@ -24,7 +24,7 @@
  #include <string.h>
  
@@ -84,7 +84,7 @@ Hopefully, their next release will include these hunks.
  
  #endif
 --- codepages.c	Thu May  8 14:53:15 2003
-+++ codepages.c	Wed Aug 20 14:13:50 2003
++++ codepages.c	Wed Aug 20 15:58:35 2003
 @@ -24,117 +24,117 @@
  void cp850convert (unsigned char *src)
  {
@@ -92,8 +92,8 @@ Hopefully, their next release will include these hunks.
 -	for(i=0; i < strlen(src); i++) {
 -		switch(*(src+i)) {
 +
-+	while (*src) {
-+		switch(*src++) {
++	for (;*src; src++) {
++		switch(*src) {
  		case 0xE4:
 -			*(src+i) = (unsigned char)228;	/*auml (GER)*/
 +			*src = (unsigned char)228;	/*auml (GER)*/
@@ -250,8 +250,8 @@ Hopefully, their next release will include these hunks.
 -	for(i=0; i < strlen(src); i++) {
 -		switch(*(src+i)) {
 +
-+	while (*src) {
-+		switch(*src++) {
++	for (; *src; src++) {
++		switch(*src) {
  		case 0x84:
 -			*(src+i) = (unsigned char)228;	/*auml (GER)*/
 +			*src = (unsigned char)228;	/*auml (GER)*/
@@ -402,7 +402,7 @@ Hopefully, their next release will include these hunks.
  			break;				
  		}	
 --- csv.c	Thu May  8 14:53:15 2003
-+++ csv.c	Wed Aug 20 15:10:55 2003
++++ csv.c	Wed Aug 20 15:58:35 2003
 @@ -18,24 +18,20 @@
  /* writeCSVHeader */
  /* creates the CSV Header with the information provided by DB_FIELD */
@@ -497,7 +497,7 @@ Hopefully, their next release will include these hunks.
  	}
  	return 0;				
 --- csv.h	Thu May  8 14:53:15 2003
-+++ csv.h	Wed Aug 20 14:18:02 2003
++++ csv.h	Wed Aug 20 15:58:35 2003
 @@ -22,21 +22,19 @@
  #include "tables.h"
  #include "an_string.h"
@@ -532,15 +532,21 @@ Hopefully, their next release will include these hunks.
  header_length);
  #endif
 --- dbf.c	Thu May  8 14:53:15 2003
-+++ dbf.c	Wed Aug 20 14:25:27 2003
-@@ -99,5 +99,5 @@
++++ dbf.c	Wed Aug 20 16:20:37 2003
+@@ -41,4 +41,5 @@
+  ************************************************************************************/
+ 
++#include <assert.h>
+ #include "dbf.h"
+ 
+@@ -99,5 +100,5 @@
  {	
  	if ((read( fh, (char *)db, sizeof(struct DB_HEADER))) == -1 ) {
 -		printf("Error reading file %s.\n", file);
 +		perror(file);
  		exit(1);
  	}
-@@ -114,9 +114,9 @@
+@@ -114,9 +115,9 @@
  	{
  		if((header[i] = (struct DB_FIELD *)malloc(sizeof(struct DB_FIELD))) == NULL) {
 -			printf("Fatal error: Cannot malloc.\n");
@@ -552,18 +558,20 @@ Hopefully, their next release will include these hunks.
 +			perror(file);
  			exit(1);
  		}
-@@ -205,9 +205,9 @@
+@@ -205,10 +206,9 @@
  {	
  	int dbfhandle, handle;
 -	int header_length, i;
 +	int header_length, record_length, i;
  	char *filename;
  	int ppc_override; // Big Endian Check Override
- 	int type;
+-	int type;
 -	char *foo, *p;
+-	int k;	
++	enum OUTPUT type = SCREEN_OUTPUT;
 +	unsigned char *foo, *p;
- 	int k;	
  	ppc_override = 0;
+ 	
 @@ -218,5 +218,5 @@
  		
  	if (argc < 2) {
@@ -580,21 +588,38 @@ Hopefully, their next release will include these hunks.
 +		    "Please make sure that the last argument is a valid dBASE file\n");
  		exit(1);
  	} else 	filename = argv[(argc-1)]; 
-@@ -259,5 +259,5 @@
-                 type = CSV_OUTPUT;
-                } else {
+@@ -255,13 +255,15 @@
+ 	for(i=1; i < argc; i++) {	     
+ 		if(strcmp(argv[i],"--csv")==0) {
+-			  if((i+2) < argc) {
+-		    	export_filename = argv[i+1];
+-                type = CSV_OUTPUT;
+-               } else {
 -		     	printf("Usage: %s --csv export_filename dbf-file, -h for help\n", *argv);
-+		     	fprintf(stderr, "Usage: %s --csv export_filename dbf-file, -h for help\n", *argv);
- 		     	exit(1);
- 		   	   }
-@@ -272,5 +272,5 @@
+-		     	exit(1);
+-		   	   }
++			if((i+2) < argc) {
++				export_filename = argv[i+1];
++				type = CSV_OUTPUT;
++			} else {
++				fprintf(stderr,
++				    "Usage: %s --csv export_filename dbf-file, -h for help\n",
++				    *argv);
++				exit(1);
++			}
+ 		}
+-	}	
++	}
+ 
+     /* --sql: sql export */
+@@ -272,5 +274,5 @@
                  type = SQL_OUTPUT;
              } else {
 -                printf("Usage: %s --sql export_filename dbf-file, -h for help\n", *argv);
 +                fprintf(stderr, "Usage: %s --sql export_filename dbf-file, -h for help\n", *argv);
                  exit(1);
              } 
-@@ -289,11 +289,11 @@
+@@ -289,11 +291,11 @@
  				getHeaderValues(dbfhandle,filename,header_length);
  				dbf_field_stat(header,header_length);
 -				exit(1);				
@@ -610,7 +635,7 @@ Hopefully, their next release will include these hunks.
 -			dbf_close(dbfhandle, filename);
  		}
  	}
-@@ -304,9 +304,10 @@
+@@ -304,9 +306,10 @@
  		dbf_read_header(dbfhandle, filename);		
  		header_length = rotate2b(db->header_length) / 32;
 +		record_length = rotate2b(db->record_length);
@@ -623,7 +648,7 @@ Hopefully, their next release will include these hunks.
 +			perror("malloc"); exit(1);
  		}
  		
-@@ -319,15 +320,20 @@
+@@ -319,39 +322,43 @@
  			    writeSQLHeader(handle,header,dbf,header_length,filename,export_filename);
  		    	break;
 -            default:
@@ -648,22 +673,52 @@ Hopefully, their next release will include these hunks.
 +		  	cp850convert(p);
  		  	ASCIInumbers(p);
  			/* If export_filename is not set output data to screen, otherwise to export_filename */
-@@ -345,5 +351,5 @@
- 		  	} else {
- 		      	switch(type) {
+-		  	if(!export_filename) {
+-		    	for (i=1; i < header_length; i++)
+-				{
+-			  		dbf = header[i];										
+-			  		k = dbf->field_length;
+-	                printf("%11.11s: ", dbf->field_name);
+-			  		while (k--)
+-			     		putchar(*p++);
+-			  		putchar('\n');
++			switch (type) {
++			case SCREEN_OUTPUT:
++				for (i=1; i < header_length; i++) {
++					dbf = header[i];
++					printf("%11.11s: %.*s", dbf->field_name,
++			     		    dbf->field_length, p);
++					p += dbf->field_length;
+ 				}
+-				putchar('\n');
+-		  	} else {
+-		      	switch(type) {
 -              	case SQL_OUTPUT:
+-					writeSQLLine(handle,header,dbf,p,header_length,filename,export_filename);
+-					break;
+-		      	default:
+-					writeCSVLine(handle,p,header,dbf,header_length); //dbf and header added, must be tested
+-					break;
+-				}	
+-		  	} /* End of --> inner if */		  
++				break;
 +			case SQL_OUTPUT:
- 					writeSQLLine(handle,header,dbf,p,header_length,filename,export_filename);
- 					break;
-@@ -354,4 +360,5 @@
- 		  	} /* End of --> inner if */		  
++				writeSQLLine(handle, header, dbf, p, header_length,
++				    filename, export_filename);
++				break;
++			case CSV_OUTPUT:
++				writeCSVLine(handle, p, header, dbf, header_length);
++				break;
++			default:
++				assert(!"Unknown output type?");
++			} /* End of switch */
  		} /* End of --> while */
 +		free(foo);
  	} /* End of --> if dbfhandle */
  	if (filename) dbf_close(dbfhandle,filename);
 --- dbf.h	Thu May  8 14:53:15 2003
-+++ dbf.h	Wed Aug 20 13:35:54 2003
-@@ -16,18 +16,5 @@
++++ dbf.h	Wed Aug 20 16:09:31 2003
+@@ -16,25 +16,16 @@
  #include <string.h>
  #include <limits.h>
 -#ifdef __unix__	
@@ -683,8 +738,102 @@ Hopefully, their next release will include these hunks.
 +
  /*#define VERSION1 0
  #define VERSION2 5
+ #define VERSION3 0
+ #define VERSION4 1*/
+-#define SQL_OUTPUT 1
+-#define CSV_OUTPUT 2
+-#define INFO_OUTPUT 3
++enum OUTPUT {
++	SCREEN_OUTPUT,
++	SQL_OUTPUT,
++	CSV_OUTPUT,
++	INFO_OUTPUT
++};
++
+ /*#define DBF_VERSION 0x07
+ #define DBF_MEMO3 0x80
+--- iodbf.c	Thu May  8 14:53:15 2003
++++ iodbf.c	Wed Aug 20 16:25:13 2003
+@@ -18,5 +18,6 @@
+  * open the the current dbf file
+  * dbfhandle is defined as a global variable */
+-int dbf_open (char *file)
++int
++dbf_open(const char *file)
+ {
+ 	int dbfhandle;
+@@ -32,21 +33,25 @@
+  * close the current open dbf file
+  * incl. error handling routines */
+-int dbf_close (int fh, char *file)
++int
++dbf_close(int fh, const char *file)
+ {
+-	if((close(fh)) == -1)
+-		printf("Cannot close %s.\n", file);
+-	else
+-		printf("File %s was closed successfully.\n", file);
+-	
+-	return 1;
++	if((close(fh)) == -1) {
++		fputs("Can not close ", stderr);
++		perror(file);
++		return 1;
++	}
++
++	fprintf(stderr, "File %s was closed successfully.\n", file);
++	return 0;
+ }
+ 
+ /* * * * EXPORT_OPEN 
+  * open the export file for writing */
+-int export_open (char *file)
++int
++export_open(const char *file)
+ {
+ 	int handle;
+ 	if((handle = open(file, O_RDWR|O_CREAT,0644|O_TRUNC)) == -1) {
+-		printf("Cannot create/open file %s.\n", file);
++		perror(file);
+ 		exit(1);		
+ 	}
+@@ -56,10 +61,13 @@
+ /* * * * EXPORT_CLOSE 
+  * closes the opened file and stops the write-process */
+-int export_close (int fh, char *file)
++int
++export_close(int fh, const char *file)
+ {
+-	if((close(fh)) == -1)
+-		printf("Cannot close File %s.\n",file);
+-	else
+-		printf("Export file %s was closed successfully.\n",file);
+-	return 1;		
++	if((close(fh)) == -1) {
++		fputs("Cannot close File ", stderr);
++		perror(file);
++		return 1;
++	}
++	printf("Export file %s was closed successfully.\n",file);
++	return 0;		
+ }
+--- iodbf.h	Thu May  8 14:53:15 2003
++++ iodbf.h	Wed Aug 20 16:25:38 2003
+@@ -34,8 +34,8 @@
+ #endif	
+ 
+-int dbf_open (char *file);
+-int dbf_close (int fh, char *file);
+-int export_open (char *file);
+-int export_close (int fh, char *file);
++int dbf_open (const char *file);
++int dbf_close (int fh, const char *file);
++int export_open (const char *file);
++int export_close (int fh, const char *file);
+ 
+ #endif
 --- sql.c	Sat May 24 14:38:46 2003
-+++ sql.c	Wed Aug 20 14:19:09 2003
++++ sql.c	Wed Aug 20 15:58:35 2003
 @@ -24,32 +24,35 @@
  /* writeSQLHeader */
  /* creates the SQL Header with the information provided by DB_FIELD */
@@ -875,7 +1024,7 @@ Hopefully, their next release will include these hunks.
 +	return 0;
  }
 --- sql.h	Thu May  8 14:53:15 2003
-+++ sql.h	Wed Aug 20 14:17:46 2003
++++ sql.h	Wed Aug 20 15:58:35 2003
 @@ -42,7 +42,7 @@
  
  int field_type[MAX_FIELDS];
