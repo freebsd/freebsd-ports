@@ -9,7 +9,8 @@ CFLAGS+=	-I. -I./../generic \
 		-DTCL_SHLIB_EXT=\".so\" \
 		-DHAVE_SYS_FILIO_H=1 \
 		-DTCL_LIBRARY=\"${TCL_LIBRARY}\" \
-		-DTCL_PACKAGE_PATH="\"${PREFIX}/lib\""
+		-DTCL_PACKAGE_PATH="\"${PREFIX}/lib\"" \
+		-DNO_UNION_WAIT
 
 
 
