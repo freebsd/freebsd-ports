@@ -21,8 +21,8 @@ MAN1=		loaderinfo.1 mtx.1 tapeinfo.1 scsitape.1
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on ia64 or sparc64"
+.if ${ARCH} == "ia64" || ${ARCH} == "sparc64" || ${ARCH} == "amd64"
+BROKEN=		"Does not compile on ia64, sparc64 and amd64"
 .endif
 
 .include <bsd.port.post.mk>
