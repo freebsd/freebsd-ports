@@ -158,5 +158,5 @@ lib/librhtv.a
 lib/librhtv.so
 lib/librhtv.so.2
 lib/libtvfintl.a
-share/locale/es/LC_MESSAGES/tvision.mo
-share/locale/ru/LC_MESSAGES/tvision.mo
+share/locale/es/LC_MESSAGES/tvision2.0.3.mo
+share/locale/ru/LC_MESSAGES/tvision2.0.3.mo
