@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smtpmail
-PORTVERSION=	0.4
+PORTVERSION=	0.4.1
 CATEGORIES=	mail
 MASTER_SITES=	http://195.135.166.74/smtpmail/ \
 		http://voodoo.oberon.net/
