@@ -50,6 +50,7 @@ bin/svk
 %%SITE_PERL%%/SVK/Editor/Translate.pm
 %%SITE_PERL%%/SVK/Editor/XD.pm
 %%SITE_PERL%%/SVK/Help/Index.pod
+%%SITE_PERL%%/SVK/Help/zh_cn/Index.pod
 %%SITE_PERL%%/SVK/Help/zh_tw/Index.pod
 %%SITE_PERL%%/SVK/I18N.pm
 %%SITE_PERL%%/SVK/I18N/i_default.po
@@ -77,6 +78,7 @@ bin/svk
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVK/.packlist
 @dirrm %%SITE_PERL%%/SVK/Resolve
 @dirrm %%SITE_PERL%%/SVK/I18N
+@dirrm %%SITE_PERL%%/SVK/Help/zh_cn
 @dirrm %%SITE_PERL%%/SVK/Help/zh_tw
 @dirrm %%SITE_PERL%%/SVK/Help
 @dirrm %%SITE_PERL%%/SVK/Editor

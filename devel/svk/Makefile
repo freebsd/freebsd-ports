@@ -95,6 +95,7 @@ MAN3=		SVK.3 \
 		SVK::Editor::Translate.3 \
 		SVK::Editor::XD.3 \
 		SVK::Help::Index.3 \
+		SVK::Help::zh_cn::Index.3 \
 		SVK::Help::zh_tw::Index.3 \
 		SVK::Merge.3 \
 		SVK::Notify.3 \
