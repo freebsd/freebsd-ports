@@ -1,0 +1,15 @@
+From Donald E. Knuth's MMIX page:
+
+MMIX is a RISC computer designed by the author to illustrate
+machine-level aspects of programming. In the next editions of his
+books The Art of Computer Programming, MMIX will replace the
+1960s-style machine MIX.
+
+More details can be found in his book:
+
+  MMIXware: A RISC Computer for the Third Millennium, by Donald E. Knuth
+  (Heidelberg: Springer-Verlag, 1999), viii+550pp. ISBN 3-540-66938-8.
+  (Lecture Notes in Computer Science, no. 1750.)
+
+Some MIX programs have been converted to MMIX, and can be found at
+http://www.mmixmasters.org/~mmixmasters/
