@@ -1,4 +1,6 @@
 bin/psh
+lib/perl5/%%PERL_VERSION%%/man/man1/psh.pod1
+lib/perl5/%%PERL_VERSION%%/man/man1/pshdevel.pod1
 lib/perl5/site_perl/%%PERL_VER%%/Psh.pm
 lib/perl5/site_perl/%%PERL_VER%%/Psh/Joblist.pm
 lib/perl5/site_perl/%%PERL_VER%%/Psh/OS/Mac.pm
@@ -59,3 +61,6 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/psh/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Psh/OS
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Psh/Strategy
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Psh
+@unexec rmdir %D/lib/perl5/%%PERL_VERSION%%/man/man3 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%PERL_VERSION%%/man/man1 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/%%PERL_VERSION%%/man 2>/dev/null || true

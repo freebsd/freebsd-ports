@@ -7,6 +7,7 @@
 
 PORTNAME=	perlsh
 PORTVERSION=	0.009
+PORTREVISION=	1
 CATEGORIES=	shells perl5
 MASTER_SITES=	http://www.focusresearch.com/gregor/psh/
 DISTNAME=	psh-${PORTVERSION}
