@@ -165,8 +165,6 @@ SEDLIST+=	-e 's,^\# LOOKUP_CDB=,LOOKUP_CDB=,'
 do-configure:
 	${MKDIR} ${WRKSRC}/Local
 	${SED} ${SEDLIST} < ${WRKSRC}/src/EDITME > ${WRKSRC}/Local/Makefile
-	${SED} ${SEDLIST} < ${FILESDIR}/configure.default \
-	    > ${WRKSRC}/src/configure.default
 	${CP} ${WRKSRC}/exim_monitor/EDITME ${WRKSRC}/Local/eximon.conf
 	cd ${WRKSRC}/doc && \
 	for i in ../../exim-texinfo-3.20/doc/* ; do \

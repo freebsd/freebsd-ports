@@ -1,4 +1,4 @@
-etc/exim/configure.sample
+etc/exim/configure.default
 etc/rc.d/exim.sh
 info/exim_overview.info
 info/exim.info
