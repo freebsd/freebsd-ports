@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	xfe
-PORTVERSION=	0.54.2
-PORTREVISION=	1
+PORTVERSION=	0.70
+PORTREVISION=	0
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ptiJo@noos.fr
 COMMENT=	Fast MS-Explorer like filemanager for X
 
-LIB_DEPENDS=	FOX:${PORTSDIR}/x11-toolkits/fox \
+LIB_DEPENDS=	FOX-1.2:${PORTSDIR}/x11-toolkits/fox-devel \
 		png.5:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
@@ -33,7 +33,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-I/usr/include/fox|-I${LOCALBASE}/include/|g' \
 		${WRKSRC}/src/Makefile.in ${WRKSRC}/xfq/Makefile.in \
 		${WRKSRC}/xfv/Makefile.in
-	@${REINPLACE_CMD} -e 's|_nl_domain_bindings|libintl_nl_domain_bindings|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|_nl_domain_bindings|libintl_nl_domain_bindings| ; \
+		s|-lFOX|${PTHREAD_LIBS} &|g' ${WRKSRC}/configure
 
 MAN1=		xfe.1 xfq.1 xfv.1
 
