@@ -21,15 +21,19 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--force-libpcap
 USE_GMAKE=	yes
 
+PLIST_FILES=	sbin/hping
+PORTDOCS=	AS-BACKDOOR HPING2-HOWTO.txt HPING2-IS-OPEN \
+		MORE-FUN-WITH-IPID SPOOFED_SCAN.txt
+
 MAN8=	hping.8
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hping2 ${PREFIX}/sbin/hping
 	${INSTALL_MAN} ${WRKSRC}/docs/hping2.8 ${PREFIX}/man/man8/hping.8
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/hping
-.for i in AS-BACKDOOR HPING2-HOWTO.txt HPING2-IS-OPEN MORE-FUN-WITH-IPID SPOOFED_SCAN.txt
-	${INSTALL_DATA} ${WRKSRC}/docs/${i} ${PREFIX}/share/doc/hping/
+	${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/docs/${i} ${DOCSDIR}/
 .endfor
 .endif
 
