@@ -152,6 +152,13 @@ ruby-setup-build:
 	@${ECHO_MSG} "===>  Running ${RUBY_SETUP} to build"
 	@cd ${WRKSRC}; \
 	${SETENV} ${MAKE_ENV} ${RUBY} ${RUBY_SETUP} setup
+
+do-install:	ruby-setup-install
+
+ruby-setup-install:
+	@${ECHO_MSG} "===>  Running ${RUBY_SETUP} to install"
+	cd ${WRKSRC}; \
+	${SETENV} ${MAKE_ENV} ${RUBY} ${RUBY_SETUP} install
 .endif
 
 .if defined(USE_LIBRUBY)
