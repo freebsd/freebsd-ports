@@ -9,7 +9,7 @@ PORTNAME=	wmessage
 PORTVERSION=	0.11
 PORTREVISION=	1
 CATEGORIES=	x11 windowmaker
-MASTER_SITES=	http://members.ozemail.com.au/~crn/wmessage/
+MASTER_SITES=	http://tucows.mirror.ish.de/linux/files/x11/xwin/
 
 MAINTAINER=	pat@FreeBSD.org
 COMMENT=	A WINGs based message viewer similar to xmessage
