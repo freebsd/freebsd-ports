@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtkspell2
-PORTVERSION=	2.0.5
-PORTREVISION=	2
+PORTVERSION=	2.0.7
 CATEGORIES=	textproc gnome
 MASTER_SITES=	http://gtkspell.sourceforge.net/download/
 DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
@@ -20,10 +19,13 @@ LIB_DEPENDS=	pspell.16:${PORTSDIR}/textproc/aspell
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gtk20 lthack
-USE_INC_LIBTOOL_VER=13
+USE_GNOME=	gnomeprefix gnomehack gtk20
+USE_LIBTOOL_VER=15
+USE_GETTEXT=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/2$//}
 
 .include <bsd.port.mk>
