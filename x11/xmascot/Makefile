@@ -9,8 +9,7 @@ PORTNAME=	xmascot
 PORTVERSION=	2.6a
 PORTREVISION=	1
 CATEGORIES=	x11
-MASTER_SITES=	ftp://cclub.tutcc.tut.ac.jp/pub/xmascot/ \
-		http://cclub-flying.dsl.gr.jp/products/xmascot/
+MASTER_SITES=	http://cclub-flying.dsl.gr.jp/products/xmascot/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
