@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	FAQ-OMatic
-PORTVERSION=	2.712
+PORTVERSION=	2.719
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	FAQ
@@ -17,9 +17,16 @@ COMMENT=	Perl API to manipulate FAQ-O-Matics
 
 PERL_CONFIGURE=	yes
 
-IS_INTERACTIVE=	"Needs user input for setting up the FAQ-OMatic"
+MAN3=		FAQ::OMatic::API.3
 
-MAN3=	FAQ::OMatic::API.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+post-install:
+	@${CAT} ${WRKSRC}/install.notes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
+RUN_DEPENDS=	${BUILD_DEPENDS}
+.endif
+
+.include <bsd.port.post.mk>
