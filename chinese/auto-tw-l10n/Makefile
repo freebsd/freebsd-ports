@@ -33,7 +33,7 @@ RUN_DEPENDS=	${X11BASE}/lib/aout/zh-XFree86-aoutlibs-3.3.6:${PORTSDIR}/chinese/X
 		pyDict:${PORTSDIR}/chinese/pyDict \
 		rxvt-big5:${PORTSDIR}/chinese/rxvt-big5 \
 		aterm:${PORTSDIR}/chinese/aterm \
-		telnet:${PORTSDIR}/chinese/telnet \
+		zh-telnet:${PORTSDIR}/chinese/telnet \
 		tin:${PORTSDIR}/chinese/tin \
 		tintin++:${PORTSDIR}/chinese/tintin++ \
 		ve:${PORTSDIR}/chinese/ve \
