@@ -6,14 +6,19 @@
 #
 
 PORTNAME=	streamripper
-PORTVERSION=	1.0.5
+PORTVERSION=	1.61.3
 CATEGORIES=	audio
-MASTER_SITES=	http://streamripper.sourceforge.net/files/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Splits SHOUTcast stream into tracks
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
 PLIST_FILES=	bin/streamripper
+MAN1=		streamripper.1
 
 .include <bsd.port.mk>
