@@ -372,7 +372,7 @@ MASTER_SITE_GNU+=	\
 	http://ftp.lug.udel.edu/pub/gnu/%SUBDIR%/ \
 	http://gnu.mirror.mcgill.ca/%SUBDIR%/ \
 	ftp://ftp.nstu.ru/pub/mirrors/ftp.gnu.org/gnu/%SUBDIR%/ \
-	http://www.gtlib.cc.gatech.edu/pub/gnu/%SUBDIR%/ \
+	http://www.gtlib.cc.gatech.edu/pub/gnu/gnu/%SUBDIR%/ \
 	http://mirrors.usc.edu/pub/gnu/%SUBDIR%/ \
 	http://gatekeeper.dec.com/pub/GNU/%SUBDIR%/ \
 	ftp://ftp.de.uu.net/pub/gnu/%SUBDIR%/ \
