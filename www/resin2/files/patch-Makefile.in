@@ -1,0 +1,11 @@
+--- src/c/plugin/resin/Makefile.in.orig	Fri Feb 14 21:48:23 2003
++++ src/c/plugin/resin/Makefile.in	Wed Mar  5 19:11:12 2003
+@@ -20,7 +20,7 @@
+ all	: resin libresin.$(SO)
+ 
+ resin	: resin.o $(OBJ)
+-	$(CC) $(LDFLAGS) -o $@ resin.o $(OBJ) $(PROXY_LIBS) -ldl
++	$(CC) $(LDFLAGS) -o $@ resin.o $(OBJ) $(PROXY_LIBS)
+ 
+ resin_so	: libresin.$(SO)
+ 
