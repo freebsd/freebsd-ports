@@ -19,7 +19,6 @@ LIB_DEPENDS=	mrproject.0:${PORTSDIR}/deskutils/libmrproject
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui libgnomeprintui
-USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 USE_LIBTOOL_VER=	14
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
