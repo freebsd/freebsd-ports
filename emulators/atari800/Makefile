@@ -3,7 +3,7 @@
 # Date created:		29th April, 1997
 # Whom:			Joel Sutton <jsutton@webnet.com.au>
 #
-# $Id: Makefile,v 1.4 1999/03/30 16:32:34 taoka Exp $
+# $Id: Makefile,v 1.5 1999/05/04 23:18:05 steve Exp $
 #
 
 DISTNAME=	Atari800-0.8.6
@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.signus.demon.co.uk/Software/Portable/Atari800e/ \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${EXTRA_FILES}
 
 MAINTAINER=	jsutton@webnet.com.au
+
+BROKEN='MD5 checksum mismatch.  Also xf25.zip has an "End-of-central-directory signature not found" when unzipping problem.'
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 .if defined(ATARI) && (${ATARI} == "freebsd-xview")
