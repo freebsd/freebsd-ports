@@ -6,16 +6,11 @@
 #
 
 PORTNAME=		jadetex
-PORTVERSION=		2.20
-PORTREVISION=		1
+PORTVERSION=		3.6
 CATEGORIES=		print
 MASTER_SITES=		http://www.tug.org/applications/jadetex/
 
-PATCH_SITES=		http://indev.insu.com/openjade/
-PATCHFILES=		jadetex-2.20.patch
-PATCH_DIST_STRIP=	-p1
-
-MAINTAINER=		kelly@ad1440.net
+MAINTAINER=		nik
 
 BUILD_DEPENDS=		tex:${PORTSDIR}/print/teTeX
 LIB_DEPENDS=		png.4:${PORTSDIR}/graphics/png
@@ -24,7 +19,7 @@ RUN_DEPENDS=		tex:${PORTSDIR}/print/teTeX
 MAKE_ENV=		TEXMFCNF=${FILESDIR}:${PREFIX}/share/texmf/web2c
 USE_ZIP=		yes
 
-NO_WRKSUBDIR=   	yes
+WRKSRC=			${WRKDIR}/${PORTNAME}
 MESSAGE=		${WRKDIR}/pkg-message
 
 post-extract:
