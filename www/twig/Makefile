@@ -19,10 +19,6 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/${PHP4_PORT}
 .else
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp3.so:${PORTSDIR}/${PHP3_PORT}
 .endif
-.if !defined(WITH_MYSQL)
-LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
-.else
-.endif
 
 NO_BUILD=	YES
 PHP_PORT?=	www/mod_php4-twig
