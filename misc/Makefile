@@ -216,6 +216,7 @@
     SUBDIR += p5-Business-OnlinePayment-AuthorizeNet
     SUBDIR += p5-Business-OnlinePayment-BankOfAmerica
     SUBDIR += p5-Business-OnlinePayment-Beanstream
+    SUBDIR += p5-Business-OnlinePayment-Cardstream
     SUBDIR += p5-Business-OnlinePayment-TCLink
     SUBDIR += p5-Business-OnlinePayment-VirtualNet
     SUBDIR += p5-Business-OnlinePayment-WorldPay-Junior
