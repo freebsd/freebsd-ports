@@ -1,5 +1,5 @@
 %%RUBY_SITEARCHLIBDIR%%/mysql.so
-%%PORTDOCS%%%%RUBY_DOCDIR%%/mysql/ja/README.jp
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mysql/ja/README.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/mysql/README
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mysql/ja
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mysql
