@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webfs
-PORTVERSION=	1.16
+PORTVERSION=	1.20
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://bytesex.org/misc/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -16,6 +16,12 @@ COMMENT=	A simple http server for static content
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 USE_REINPLACE=	yes
+USE_GMAKE=	yes
+MAKEFILE=	GNUmakefile
+.if !defined(WITHOUT_OPENSSL)
+MAKE_ENV=	USE_SSL=no
+.endif
+MAKE_ENV+=	LDLIBS="-lssl -lcrypto" USE_DIET=no
 
 MAN1=		webfsd.1
 MIMEFILE?=	${PREFIX}/etc/webfsd/mime.types
@@ -26,9 +32,21 @@ MIMEFILE?=	${PREFIX}/etc/webfsd/mime.types
 BROKEN=		"Requires FreeBSD 4.x or greater due to ipv6 support"
 .endif
 
+pre-everything::
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "==========================================="
+	@${ECHO_CMD} "This package supports the following option:"
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} " -DWITHOUT_SSL   - omit SSL support"
+	@${ECHO_CMD} "==========================================="
+	@${ECHO_CMD} ""
+
 do-configure:
-	@${REINPLACE_CMD} -e 's|/etc/mime.types|${MIMEFILE}|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|/etc/mime.types|${MIMEFILE}|' ${WRKSRC}/GNUmakefile
 	@${REINPLACE_CMD} -e 's|/etc/mime.types|${MIMEFILE}|' ${WRKSRC}/webfsd.man
+.if defined(WITHOUT_OPENSSL)
+	@${REINPLACE_CMD} -e 's|USE_SSL      := yes|USE_SSL      := no|' ${WRKSRC}/Make.config
+.endif
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/webfsd ${PREFIX}/sbin
