@@ -1,13 +1,6 @@
---- src/config.h.orig	Fri Feb  6 04:10:31 1998
-+++ src/config.h	Mon Feb  9 09:38:23 1998
-@@ -46,13 +46,13 @@
-  * OPTION: define "SPECIAL_BSD" for using certain versions of UNIX
-  * that use the 4.4BSD Lite version of Curses in "main-gcu.c"
-  */
--/* #define SPECIAL_BSD */
-+#define SPECIAL_BSD
- 
- 
+--- src/config.h.orig	Wed Feb 11 05:30:28 1998
++++ src/config.h	Sat Sep 18 18:20:32 1999
+@@ -52,7 +52,7 @@
  /*
   * OPTION: Use the POSIX "termios" methods in "main-gcu.c"
   */
