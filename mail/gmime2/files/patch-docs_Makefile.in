@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- docs/Makefile.in.orig
++++ docs/Makefile.in
+@@ -152,7 +152,7 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ 
+-SUBDIRS = reference tutorial
++SUBDIRS =
+ 
+ EXTRA_DIST = \
+ 	gmime-config.txt	\

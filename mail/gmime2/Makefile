@@ -7,7 +7,7 @@
 
 PORTNAME=	gmime
 PORTVERSION=	2.1.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://spruce.sourceforge.net/gmime/sources/v2.1/
 
@@ -20,11 +20,24 @@ USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget glib20
 USE_LIBTOOL_VER=15
-CONFIGURE_ARGS+=	--with-libiconv=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-libiconv=${LOCALBASE} \
+			--with-html-dir=${PREFIX}/share/doc
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 			LIBS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=		yes
 
 LATEST_LINK=	gmime2
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for i in docs/reference/html/*
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
