@@ -1,0 +1,14 @@
+--- hpgl.c.orig	Thu Jul 17 03:40:40 1997
++++ hpgl.c	Fri Dec 10 03:07:38 1999
+@@ -11,10 +11,8 @@
+ #include "xgout.h"
+ #include "plotter.h"
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <math.h>
+-#define MAX(a,b) ( ((a)>(b)) ? (a) : (b) )
+-#define MIN(a,b) ( ((a)<(b)) ? (a) : (b) )
+-char *malloc();
+ 
+ static void hpglText();
+ static void hpglSeg();

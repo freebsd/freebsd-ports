@@ -1,1 +1,7 @@
 bin/xgraph
+share/examples/xgraph/bar.xg
+share/examples/xgraph/surface.xg
+share/examples/xgraph/surface2.xg
+share/examples/xgraph/surface3.xg
+share/examples/xgraph/xgtest.xg
+@dirrm share/examples/xgraph
