@@ -109,6 +109,7 @@
     SUBDIR += festvox-kal8
     SUBDIR += festvox-ked16
     SUBDIR += festvox-ked8
+    SUBDIR += festvox-lp
     SUBDIR += festvox-mwm
     SUBDIR += festvox-ogirab
     SUBDIR += festvox-pc
