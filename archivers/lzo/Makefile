@@ -1,5 +1,5 @@
 # New ports collection makefile for:	lzo
-# Version required:			1.04
+# Version required:			1.06
 # Date created:				21 Feb 1998
 # Whom:					giffunip@asme.org
 #
