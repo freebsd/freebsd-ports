@@ -2,10 +2,8 @@ bin/liferea
 bin/liferea-bin
 lib/liferea/liblihtmlg.la
 lib/liferea/liblihtmlg.so
-lib/liferea/liblihtmlg.so.0
 %%MOZ%%lib/liferea/liblihtmlm.la
 %%MOZ%%lib/liferea/liblihtmlm.so
-%%MOZ%%lib/liferea/liblihtmlm.so.0
 share/gnome/applications/liferea.desktop
 share/gnome/liferea/css/liferea.css
 share/gnome/liferea/pixmaps/available.png
@@ -15,6 +13,8 @@ share/gnome/liferea/pixmaps/flag.png
 share/gnome/liferea/pixmaps/help.png
 share/gnome/liferea/pixmaps/liferea.png
 share/gnome/liferea/pixmaps/ocs.png
+share/gnome/liferea/pixmaps/offline.png
+share/gnome/liferea/pixmaps/online.png
 share/gnome/liferea/pixmaps/read.xpm
 share/gnome/liferea/pixmaps/unavailable.png
 share/gnome/liferea/pixmaps/unread.png
