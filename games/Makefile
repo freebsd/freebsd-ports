@@ -370,6 +370,7 @@
     SUBDIR += spider
     SUBDIR += ssamtse
     SUBDIR += starlanes
+    SUBDIR += steam
     SUBDIR += stvef-paks
     SUBDIR += stvef-server
     SUBDIR += sxsame
