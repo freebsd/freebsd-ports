@@ -3,7 +3,7 @@
 # Date created:		3 August 1996
 # Whom:			lukin <lukin@okbmei.msk.su>
 #
-# $Id: Makefile,v 1.13 1997/04/20 13:19:49 wosch Exp $
+# $Id: Makefile,v 1.14 1997/07/17 15:13:00 max Exp $
 #
 
 DISTNAME=	blt-2.1
@@ -14,6 +14,8 @@ DISTFILES=	BLT2.1.tar.gz
 MAINTAINER=	lukin@okbmei.msk.su
 
 LIB_DEPENDS=	tk41\\.1:${PORTSDIR}/x11/tk41
+
+BROKEN=		tcl.h
 
 WRKSRC=		${WRKDIR}/blt2.1
 GNU_CONFIGURE=	yes
