@@ -23,20 +23,13 @@ MASTER_SITE_SUBDIR=	pureftpd
 MAINTAINER=	j@pureftpd.org
 COMMENT=	A small, easy to set up, fast and very secure FTP server
 
-.if defined(WITH_LDAP) && !defined(WITH_LDAP21)
-LIB_DEPENDS+=	ldap:${PORTSDIR}/net/openldap20-client
-.elif defined(WITH_LDAP21) && !defined(WITH_LDAP)
-LIB_DEPENDS+=	ldap:${PORTSDIR}/net/openldap21-client
-.elif defined(WITH_LDAP21) && defined(WITH_LDAP)
-BROKEN=		"You may only specify WITH_LDAP xor WITH_LDAP21, but not both together"
+.if defined(WITH_LDAP)
+USE_OPENLDAP=		YES
 .endif
 
-.if defined(WITH_MYSQL) && !defined(WITH_MYSQL4)
-LIB_DEPENDS+=	mysqlclient:${PORTSDIR}/databases/mysql323-client
-.elif defined(WITH_MYSQL4) && !defined(WITH_MYSQL)
-LIB_DEPENDS+=	mysqlclient.12:${PORTSDIR}/databases/mysql40-client
-.elif defined(WITH_MYSQL4) && defined(WITH_MYSQL)
-BROKEN=		"You may only specify WITH_MYSQL xor WITH_MYSQL4, but not both together"
+.if defined(WITH_MYSQL)
+USE_MYSQL=		YES
+BROKEN_WITH_MYSQL=	41
 .endif
 
 .if defined(WITH_PGSQL)
@@ -57,16 +50,16 @@ CONFIGURE_ARGS+=	--with-language="${WITH_LANG}"
 .endif
 
 # ldap support requested?
-.if defined(WITH_LDAP) || defined(WITH_LDAP21)
+.if defined(WITH_LDAP)
 CONFIGURE_ARGS+=	--with-ldap
 .endif
 
 # mysql support requested?
-.if defined(WITH_MYSQL) || defined(WITH_MYSQL4)
+.if defined(WITH_MYSQL)
 CONFIGURE_ARGS+=	--with-mysql
 .endif
 
-# mysql support requested?
+# postgresql support requested?
 .if defined(WITH_PGSQL)
 CONFIGURE_ARGS+=	--with-pgsql
 .endif
@@ -109,10 +102,8 @@ CONTRIB=	xml_python_processors.txt pure-vpopauth.pl
 
 pre-fetch:
 	@${ECHO_CMD} "You can use the following additional options:"
-	@${ECHO_CMD} "WITH_LDAP=1           - Support for users in LDAP directories (openldap-2.0)"
-	@${ECHO_CMD} "WITH_LDAP21=1         - Support for users in LDAP directories (openldap-2.1)"
-	@${ECHO_CMD} "WITH_MYSQL=1          - Support for users in MySQL 3.23 databases"
-	@${ECHO_CMD} "WITH_MYSQL4=1         - Support for users in MySQL 4 databases"
+	@${ECHO_CMD} "WITH_LDAP=1           - Support for users in LDAP directories"
+	@${ECHO_CMD} "WITH_MYSQL=1          - Support for users in MySQL databases"
 	@${ECHO_CMD} "WITH_PGSQL=1          - Support for users in PostgreSQL databases"
 	@${ECHO_CMD} "WITH_PRIVSEP=1        - Enable privilege separation"
 	@${ECHO_CMD} "WITH_LANG=lang        - Enable compilation of language support, lang is one of"
