@@ -32,6 +32,181 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c1d97a8b-05ed-11d9-b45d-000c41e2cdad">
+    <topic>mozilla --- POP client heap overflow</topic>
+    <affects>
+      <package>
+	<name>mozilla</name>
+	<range><lt>1.7,2</lt></range>
+      </package>
+      <package>
+	<name>linux-mozilla</name>
+	<range><lt>1.7</lt></range>
+      </package>
+      <package>
+	<name>netscape7</name>
+	<range><lt>7.2</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>0.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>zen-parse discovered a heap buffer overflow in Mozilla's
+          POP client implementation.  A malicious POP server
+          could exploit this vulnerability to cause Mozilla to execute
+	  arbitrary code.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0757</cvename>
+      <url>http://bugzilla.mozilla.org/show_bug.cgi?id=229374</url>
+      <url>http://bugzilla.mozilla.org/show_bug.cgi?id=157644</url>
+    </references>
+    <dates>
+      <discovery>2004-07-22</discovery>
+      <entry>2004-09-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a4fd8f53-05eb-11d9-b45d-000c41e2cdad">
+    <topic>mozilla --- SOAPParameter integer overflow</topic>
+    <affects>
+      <package>
+	<name>firebird</name>
+	<range><lt>0.9</lt></range>
+      </package>
+      <package>
+	<name>linux-mozilla</name>
+        <name>linux-mozilla-devel</name>
+        <name>mozilla-gtk1</name>
+	<range><lt>1.7</lt></range>
+      </package>
+      <package>
+	<name>mozilla</name>
+	<range><lt>1.7,2</lt></range>
+      </package>
+      <package>
+	<name>netscape7</name>
+	<range><lt>7.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>zen-parse discovered and iDEFENSE reported an exploitable
+          integer overflow in a scriptable Mozilla component
+          `SOAPParameter':</p>
+	<blockquote
+	  cite="http://www.idefense.com/application/poi/display?id=117&amp;type=vulnerabilities">
+          <p>Improper input validation to the SOAPParameter object
+            constructor in Netscape and Mozilla allows execution of
+            arbitrary code.  The SOAPParameter object's constructor
+            contains an integer overflow which allows controllable
+            heap corruption.  A web page can be constructed to
+	    leverage this into remote execution of arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0722</cvename>
+      <url>http://bugzilla.mozilla.org/show_bug.cgi?id=236618</url>
+    </references>
+    <dates>
+      <discovery>2004-08-02</discovery>
+      <entry>2004-09-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c62dc69f-05c8-11d9-b45d-000c41e2cdad">
+    <topic>openoffice --- document disclosure</topic>
+    <affects>
+      <package>
+	<name>openoffice</name>
+	<name>ar-openoffice</name>
+	<name>ca-openoffice</name>
+	<name>cs-openoffice</name>
+	<name>de-openoffice</name>
+	<name>dk-openoffice</name>
+	<name>el-openoffice</name>
+	<name>es-openoffice</name>
+	<name>et-openoffice</name>
+	<name>fi-openoffice</name>
+	<name>fr-openoffice</name>
+	<name>gr-openoffice</name>
+	<name>hu-openoffice</name>
+	<name>it-openoffice</name>
+	<name>ja-openoffice</name>
+	<name>ko-openoffice</name>
+	<name>nl-openoffice</name>
+	<name>pl-openoffice</name>
+	<name>pt-openoffice</name>
+	<name>pt_BR-openoffice</name>
+	<name>ru-openoffice</name>
+	<name>se-openoffice</name>
+	<name>sk-openoffice</name>
+	<name>sl-openoffice-SI</name>
+	<name>tr-openoffice</name>
+	<name>zh-openoffice-CN</name>
+	<name>zh-openoffice-TW</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>OpenOffice creates a working directory in /tmp on startup,
+          and uses this directory to temporarily store document
+          content.  However, the permissions of the created directory
+          may allow other user on the system to read these files,
+          potentially exposing information the user likely assumed was
+          inaccessible.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0752</cvename>
+      <url>http://www.openoffice.org/issues/show_bug.cgi?id=33357</url>
+      <url>http://securitytracker.com/alerts/2004/Sep/1011205.html</url>
+      <mlist msgid="20040910152759.7739.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109483308421566</mlist>
+    </references>
+    <dates>
+      <discovery>2004-08-24</discovery>
+      <entry>2004-09-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ae7b7f65-05c7-11d9-b45d-000c41e2cdad">
+    <topic>webmin --- insecure temporary file creation at installation
+      time</topic>
+    <affects>
+      <package>
+	<name>webmin</name>
+	<range><lt>1.160</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p></p>
+	<blockquote cite="http://www.webmin.com/changes-1.160.html">
+          <p>Fixed a security hole in the maketemp.pl script, used
+            to create the /tmp/.webmin directory at install time. If
+            an un-trusted user creates this directory before Webmin
+            is installed, he could create in it a symbolic link
+            pointing to a critical file on the system, which would be
+            overwritten when Webmin writes to the link filename.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0559</cvename>
+      <url>http://www.webmin.com/changes-1.160.html</url>
+    </references>
+    <dates>
+      <discovery>2004-09-05</discovery>
+      <entry>2004-09-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="15e0e963-02ed-11d9-a209-00061bc2ad93">
     <topic>mpg123 buffer overflow</topic>
     <affects>
@@ -165,6 +340,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>ImageMagick</name>
+	<name>ImageMagick-nox11</name>
 	<range><lt>6.0.6.2</lt></range>
       </package>
     </affects>
@@ -176,11 +352,13 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
+      <cvename>CAN-2004-0827</cvename>
       <url>http://www.imagemagick.org/www/Changelog.html</url>
     </references>
     <dates>
       <discovery>2004-08-25</discovery>
       <entry>2004-08-31</entry>
+      <modified>2004-09-14</modified>
     </dates>
   </vuln>
 
@@ -749,7 +927,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="641859e8-eca1-11d8-b913-000c41e2cdad">
-    <topic>KDE Konqueror frame injection vulnerability</topic>
+    <topic>Mutiple browser frame injection vulnerability</topic>
     <affects>
       <package>
 	<name>kdelibs</name>
@@ -759,9 +937,43 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<name>kdebase</name>
 	<range><lt>3.2.3_1</lt></range>
       </package>
+      <package>
+	<name>linux-opera</name>
+	<name>opera</name>
+	<range><ge>7.50</ge><lt>7.52</lt></range>
+      </package>
+      <package>
+        <name>firefox</name>
+	<range><lt>0.9</lt></range>
+      </package>
+      <package>
+        <name>linux-mozilla</name>
+        <name>linux-mozilla-devel</name>
+        <name>mozilla-gtk1</name>
+	<range><lt>1.7</lt></range>
+      </package>
+      <package>
+        <name>mozilla</name>
+	<range><lt>1.7,2</lt></range>
+      </package>
+      <package>
+	<name>netscape7</name>
+	<range><lt>7.2</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A class of bugs affecting many web browsers in the same way
+	  was discovered.  A Secunia advisory reports:</p>
+	<blockquote cite="http://secunia.com/advisories/11978">
+          <p>The problem is that the browsers don't check if a target
+            frame belongs to a website containing a malicious link,
+            which therefore doesn't prevent one browser window from
+	    loading content in a named frame in another window.</p>
+	  <p>Successful exploitation allows a malicious website to load
+	    arbitrary content in an arbitrary frame in another browser
+	    window owned by e.g. a trusted site.</p>
+	</blockquote>
 	<p>A KDE Security Advisory reports:</p>
 	<blockquote cite="http://www.kde.org/info/security/advisory-20040811-3.txt">
           <p>A malicious website could abuse Konqueror to insert
@@ -770,17 +982,23 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             confidential information intended for the trusted website
             to the malicious website.</p>
 	</blockquote>
+	<p>Secunia has provided a demonstration of the vulnerability at <a
+	  href="http://secunia.com/multiple_browsers_frame_injection_vulnerability_test/">http://secunia.com/multiple_browsers_frame_injection_vulnerability_test/</a>.</p>
       </body>
     </description>
     <references>
+      <cvename>CAN-2004-0717</cvename>
+      <cvename>CAN-2004-0718</cvename>
       <cvename>CAN-2004-0721</cvename>
       <url>http://secunia.com/advisories/11978/</url>
+      <url>http://bugzilla.mozilla.org/show_bug.cgi?id=246448</url>
       <url>ftp://ftp.kde.org/pub/kde/security_patches/post-3.2.3-kdelibs-htmlframes.patch</url>
       <url>ftp://ftp.kde.org/pub/kde/security_patches/post-3.2.3-kdebase-htmlframes.patch</url>
     </references>
     <dates>
       <discovery>2004-08-11</discovery>
       <entry>2004-08-12</entry>
+      <modified>2004-09-14</modified>
     </dates>
   </vuln>
 
@@ -2879,7 +3097,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>isakmpd payload handling denial-of-service vulnerabilities</topic>
     <affects>
       <package>
-	<name>iaskmpd</name>
+	<name>isakmpd</name>
 	<range><le>20030903</le></range>
       </package>
     </affects>
@@ -2910,6 +3128,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-03-17</discovery>
       <entry>2004-03-31</entry>
+      <modified>2004-09-14</modified>
     </dates>
   </vuln>
 
