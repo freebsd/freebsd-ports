@@ -1,6 +1,6 @@
-diff -uNr ../ripit-1.2.old/ripit.pl ./ripit.pl
---- ../ripit-1.2.old/ripit.pl	Sun May  2 18:24:11 1999
-+++ ./ripit.pl	Sun May  2 18:27:10 1999
+diff -uNr ../ripit-1.4.orig/ripit.pl ./ripit.pl
+--- ../ripit-1.4.orig/ripit.pl	Mon Jun 14 14:24:16 1999
++++ ./ripit.pl	Mon Jun 14 14:26:24 1999
 @@ -26,8 +26,8 @@
  # User configurable variables
  #
@@ -10,9 +10,9 @@ diff -uNr ../ripit-1.2.old/ripit.pl ./ripit.pl
 +$cddev 		= "/dev/rcd0c";		# CD Audio device
 +$outputdir 	= "/home/mp3/";		# Where the MP3s should go
  $bitrate	= 160;			# Bitrate for MP3s
+ $tocfile	= "";
  
- $use_underscore = 0;	# Use _ instead of spaces in filenames (1 yes, 0 no)
-@@ -312,14 +312,11 @@
+@@ -326,14 +326,11 @@
  
      &printflush(RIPLOG,"Ripping $tracklist[$_ - 1]...\n");
  
@@ -30,7 +30,7 @@ diff -uNr ../ripit-1.2.old/ripit.pl ./ripit.pl
      &printflush(RIPLOG,"Rip complete $tracklist[$_ - 1]\n");
  
      # Start the Encoder in the background. but only once
-@@ -349,7 +346,7 @@
+@@ -363,7 +360,7 @@
      print "\nBladeenc Encoding track ".$ncount." of ".($#seltrack + 1)."\n";
      &printflush(RIPLOG,"Encoding $tracklist[$_ - 1]...\n");
  
