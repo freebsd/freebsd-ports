@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_mp3
 PORTVERSION=	0.7
-CATEGORIES=	www
+CATEGORIES=	www audio
 MASTER_SITES=	http://www.tangent.org/mod_mp3/ \
 		ftp://ftp.tangent.org/pub/apache/ \
 		http://www.freenix.no/~anders/
