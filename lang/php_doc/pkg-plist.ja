@@ -1,3 +1,8 @@
+%%PHPDOCDIR%%/about.generate.html
+%%PHPDOCDIR%%/about.howtohelp.html
+%%PHPDOCDIR%%/about.html
+%%PHPDOCDIR%%/about.more.html
+%%PHPDOCDIR%%/about.notes.html
 %%PHPDOCDIR%%/aliases.html
 %%PHPDOCDIR%%/appendixes.html
 %%PHPDOCDIR%%/calling-user-functions.html
@@ -56,10 +61,12 @@
 %%PHPDOCDIR%%/function.abs.html
 %%PHPDOCDIR%%/function.accept-connect.html
 %%PHPDOCDIR%%/function.acos.html
+%%PHPDOCDIR%%/function.acosh.html
 %%PHPDOCDIR%%/function.addcslashes.html
 %%PHPDOCDIR%%/function.addslashes.html
 %%PHPDOCDIR%%/function.apache-lookup-uri.html
 %%PHPDOCDIR%%/function.apache-note.html
+%%PHPDOCDIR%%/function.array-change-key-case.html
 %%PHPDOCDIR%%/function.array-chunk.html
 %%PHPDOCDIR%%/function.array-count-values.html
 %%PHPDOCDIR%%/function.array-diff.html
@@ -67,6 +74,7 @@
 %%PHPDOCDIR%%/function.array-filter.html
 %%PHPDOCDIR%%/function.array-flip.html
 %%PHPDOCDIR%%/function.array-intersect.html
+%%PHPDOCDIR%%/function.array-key-exists.html
 %%PHPDOCDIR%%/function.array-keys.html
 %%PHPDOCDIR%%/function.array-map.html
 %%PHPDOCDIR%%/function.array-merge-recursive.html
@@ -91,6 +99,7 @@
 %%PHPDOCDIR%%/function.arsort.html
 %%PHPDOCDIR%%/function.ascii2ebcdic.html
 %%PHPDOCDIR%%/function.asin.html
+%%PHPDOCDIR%%/function.asinh.html
 %%PHPDOCDIR%%/function.asort.html
 %%PHPDOCDIR%%/function.aspell-check-raw.html
 %%PHPDOCDIR%%/function.aspell-check.html
@@ -100,6 +109,7 @@
 %%PHPDOCDIR%%/function.assert.html
 %%PHPDOCDIR%%/function.atan.html
 %%PHPDOCDIR%%/function.atan2.html
+%%PHPDOCDIR%%/function.atanh.html
 %%PHPDOCDIR%%/function.base-convert.html
 %%PHPDOCDIR%%/function.base64-decode.html
 %%PHPDOCDIR%%/function.base64-encode.html
@@ -165,6 +175,7 @@
 %%PHPDOCDIR%%/function.convert-cyr-string.html
 %%PHPDOCDIR%%/function.copy.html
 %%PHPDOCDIR%%/function.cos.html
+%%PHPDOCDIR%%/function.cosh.html
 %%PHPDOCDIR%%/function.count-chars.html
 %%PHPDOCDIR%%/function.count.html
 %%PHPDOCDIR%%/function.cpdf-add-annotation.html
@@ -414,6 +425,7 @@
 %%PHPDOCDIR%%/function.exit.html
 %%PHPDOCDIR%%/function.exp.html
 %%PHPDOCDIR%%/function.explode.html
+%%PHPDOCDIR%%/function.expm1.html
 %%PHPDOCDIR%%/function.extension-loaded.html
 %%PHPDOCDIR%%/function.extract.html
 %%PHPDOCDIR%%/function.ezmlm-hash.html
@@ -455,6 +467,7 @@
 %%PHPDOCDIR%%/function.fbsql-tablename.html
 %%PHPDOCDIR%%/function.fbsql-warnings.html
 %%PHPDOCDIR%%/function.fclose.html
+%%PHPDOCDIR%%/function.fdf-add-template.html
 %%PHPDOCDIR%%/function.fdf-close.html
 %%PHPDOCDIR%%/function.fdf-create.html
 %%PHPDOCDIR%%/function.fdf-get-file.html
@@ -705,6 +718,7 @@
 %%PHPDOCDIR%%/function.hw-root.html
 %%PHPDOCDIR%%/function.hw-unlock.html
 %%PHPDOCDIR%%/function.hw-who.html
+%%PHPDOCDIR%%/function.hypot.html
 %%PHPDOCDIR%%/function.ibase-close.html
 %%PHPDOCDIR%%/function.ibase-commit.html
 %%PHPDOCDIR%%/function.ibase-connect.html
@@ -1028,6 +1042,7 @@
 %%PHPDOCDIR%%/function.localtime.html
 %%PHPDOCDIR%%/function.log.html
 %%PHPDOCDIR%%/function.log10.html
+%%PHPDOCDIR%%/function.log1p.html
 %%PHPDOCDIR%%/function.long2ip.html
 %%PHPDOCDIR%%/function.lstat.html
 %%PHPDOCDIR%%/function.ltrim.html
@@ -1144,6 +1159,7 @@
 %%PHPDOCDIR%%/function.mcrypt-module-open.html
 %%PHPDOCDIR%%/function.mcrypt-module-self-test.html
 %%PHPDOCDIR%%/function.mcrypt-ofb.html
+%%PHPDOCDIR%%/function.md5-file.html
 %%PHPDOCDIR%%/function.md5.html
 %%PHPDOCDIR%%/function.mdecrypt-generic.html
 %%PHPDOCDIR%%/function.metaphone.html
@@ -1328,6 +1344,7 @@
 %%PHPDOCDIR%%/function.ncurses-flash.html
 %%PHPDOCDIR%%/function.ncurses-flushinp.html
 %%PHPDOCDIR%%/function.ncurses-getch.html
+%%PHPDOCDIR%%/function.ncurses-getmouse.html
 %%PHPDOCDIR%%/function.ncurses-halfdelay.html
 %%PHPDOCDIR%%/function.ncurses-has-colors.html
 %%PHPDOCDIR%%/function.ncurses-has-ic.html
@@ -1346,7 +1363,9 @@
 %%PHPDOCDIR%%/function.ncurses-isendwin.html
 %%PHPDOCDIR%%/function.ncurses-keyok.html
 %%PHPDOCDIR%%/function.ncurses-killchar.html
+%%PHPDOCDIR%%/function.ncurses-longname.html
 %%PHPDOCDIR%%/function.ncurses-mouseinterval.html
+%%PHPDOCDIR%%/function.ncurses-mousemask.html
 %%PHPDOCDIR%%/function.ncurses-move.html
 %%PHPDOCDIR%%/function.ncurses-mvaddch.html
 %%PHPDOCDIR%%/function.ncurses-mvaddchnstr.html
@@ -1394,9 +1413,11 @@
 %%PHPDOCDIR%%/function.ncurses-standout.html
 %%PHPDOCDIR%%/function.ncurses-start-color.html
 %%PHPDOCDIR%%/function.ncurses-termattrs.html
+%%PHPDOCDIR%%/function.ncurses-termname.html
 %%PHPDOCDIR%%/function.ncurses-timeout.html
 %%PHPDOCDIR%%/function.ncurses-typeahead.html
 %%PHPDOCDIR%%/function.ncurses-ungetch.html
+%%PHPDOCDIR%%/function.ncurses-ungetmouse.html
 %%PHPDOCDIR%%/function.ncurses-use-default-colors.html
 %%PHPDOCDIR%%/function.ncurses-use-env.html
 %%PHPDOCDIR%%/function.ncurses-use-extended-names.html
@@ -1404,6 +1425,7 @@
 %%PHPDOCDIR%%/function.ncurses-vline.html
 %%PHPDOCDIR%%/function.ncurses-wrefresh.html
 %%PHPDOCDIR%%/function.next.html
+%%PHPDOCDIR%%/function.nl-langinfo.html
 %%PHPDOCDIR%%/function.nl2br.html
 %%PHPDOCDIR%%/function.notes-body.html
 %%PHPDOCDIR%%/function.notes-copy-db.html
@@ -1960,6 +1982,7 @@
 %%PHPDOCDIR%%/function.shuffle.html
 %%PHPDOCDIR%%/function.similar-text.html
 %%PHPDOCDIR%%/function.sin.html
+%%PHPDOCDIR%%/function.sinh.html
 %%PHPDOCDIR%%/function.sizeof.html
 %%PHPDOCDIR%%/function.sleep.html
 %%PHPDOCDIR%%/function.snmp-get-quick-print.html
@@ -1985,6 +2008,7 @@
 %%PHPDOCDIR%%/function.str-pad.html
 %%PHPDOCDIR%%/function.str-repeat.html
 %%PHPDOCDIR%%/function.str-replace.html
+%%PHPDOCDIR%%/function.str-rot13.html
 %%PHPDOCDIR%%/function.strcasecmp.html
 %%PHPDOCDIR%%/function.strchr.html
 %%PHPDOCDIR%%/function.strcmp.html
@@ -2196,6 +2220,7 @@
 %%PHPDOCDIR%%/function.syslog.html
 %%PHPDOCDIR%%/function.system.html
 %%PHPDOCDIR%%/function.tan.html
+%%PHPDOCDIR%%/function.tanh.html
 %%PHPDOCDIR%%/function.tempnam.html
 %%PHPDOCDIR%%/function.textdomain.html
 %%PHPDOCDIR%%/function.time.html
@@ -2252,6 +2277,8 @@
 %%PHPDOCDIR%%/function.vpopmail-error.html
 %%PHPDOCDIR%%/function.vpopmail-passwd.html
 %%PHPDOCDIR%%/function.vpopmail-set-user-quota.html
+%%PHPDOCDIR%%/function.vprintf.html
+%%PHPDOCDIR%%/function.vsprintf.html
 %%PHPDOCDIR%%/function.w32api-deftype.html
 %%PHPDOCDIR%%/function.w32api-init-dtype.html
 %%PHPDOCDIR%%/function.w32api-invoke-function.html
@@ -2452,17 +2479,12 @@
 %%PHPDOCDIR%%/migration4.parser.html
 %%PHPDOCDIR%%/migration4.php4.with.php3.html
 %%PHPDOCDIR%%/migration4.strings.html
-%%PHPDOCDIR%%/moreabout.generate.html
-%%PHPDOCDIR%%/moreabout.howtohelp.html
-%%PHPDOCDIR%%/moreabout.html
-%%PHPDOCDIR%%/moreabout.more.html
-%%PHPDOCDIR%%/moreabout.notes.html
 %%PHPDOCDIR%%/pcre.pattern.modifiers.html
 %%PHPDOCDIR%%/pcre.pattern.syntax.html
 %%PHPDOCDIR%%/phpdevel-errors.html
 %%PHPDOCDIR%%/phpdevel.html
 %%PHPDOCDIR%%/preface.html
-%%PHPDOCDIR%%/r8897.html
+%%PHPDOCDIR%%/r9119.html
 %%PHPDOCDIR%%/ref.apache.html
 %%PHPDOCDIR%%/ref.array.html
 %%PHPDOCDIR%%/ref.aspell.html
