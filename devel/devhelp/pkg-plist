@@ -36,6 +36,8 @@ share/locale/cs/LC_MESSAGES/devhelp.mo
 share/locale/da/LC_MESSAGES/devhelp.mo
 share/locale/de/LC_MESSAGES/devhelp.mo
 share/locale/el/LC_MESSAGES/devhelp.mo
+share/locale/en_CA/LC_MESSAGES/devhelp.mo
+share/locale/en_GB/LC_MESSAGES/devhelp.mo
 share/locale/es/LC_MESSAGES/devhelp.mo
 share/locale/fi/LC_MESSAGES/devhelp.mo
 share/locale/fr/LC_MESSAGES/devhelp.mo
