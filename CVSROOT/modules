@@ -78,7 +78,7 @@ EZWGL		ports/graphics/EZWGL
 ElectricFence	ports/devel/ElectricFence
 FAQ		doc/en_US.ISO8859-1/books/faq
 FWF		ports/x11-toolkits/FWF
-GeoIP		ports/misc/GeoIP
+GeoIP		ports/net/GeoIP
 GiNaC		ports/math/GiNaC
 Gofer		ports/lang/Gofer
 Hermes		ports/graphics/Hermes
@@ -5208,7 +5208,7 @@ p5-GPS		ports/astro/p5-GPS
 p5-Gateway	ports/news/p5-Gateway
 p5-GdkImlib	ports/x11-toolkits/p5-GdkImlib
 p5-GdkPixbuf	ports/x11-toolkits/p5-GdkPixbuf
-p5-Geo-IP	ports/misc/p5-Geo-IP
+p5-Geo-IP	ports/net/p5-Geo-IP
 p5-Geo-METAR	ports/astro/p5-Geo-METAR
 p5-Geo-Weather	ports/misc/p5-Geo-Weather
 p5-Getargs-Long	ports/devel/p5-Getargs-Long
@@ -6091,6 +6091,7 @@ postal		ports/benchmarks/postal
 poster		ports/print/poster
 postfix		ports/mail/postfix
 postfix-current	ports/mail/postfix-current
+postgresql-devel	ports/databases/postgresql-devel
 postgresql-docs	ports/databases/postgresql-docs
 postgresql-jdbc	ports/databases/postgresql-jdbc
 postgresql-odbc	ports/databases/postgresql-odbc
