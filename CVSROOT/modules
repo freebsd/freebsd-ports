@@ -3818,8 +3818,6 @@ ja-navi2ch-xemacs21-mule	ports/japanese/navi2ch-xemacs21-mule
 ja-ne		ports/japanese/ne
 ja-nethack32	ports/japanese/nethack32
 ja-nethack34	ports/japanese/nethack34
-ja-netscape48-communicator	ports/japanese/netscape48-communicator
-ja-netscape48-navigator		ports/japanese/netscape48-navigator
 ja-netscape7	ports/japanese/netscape7
 ja-netype	ports/japanese/netype
 ja-netypesv	ports/japanese/netypesv
@@ -4441,8 +4439,6 @@ ko-msdosfs	ports/korean/msdosfs
 ko-mule-freewnn	ports/korean/mule-freewnn
 ko-munhwafonts-cid	ports/korean/munhwafonts-cid
 ko-nabi		ports/korean/nabi
-ko-netscape48-communicator	ports/korean/netscape48-communicator
-ko-netscape48-navigator	ports/korean/netscape48-navigator
 ko-nh2ps	ports/korean/nh2ps
 ko-nhpf		ports/korean/nhpf
 ko-nhppf	ports/korean/nhppf
@@ -6032,10 +6028,6 @@ netsaint	ports/net-mgmt/netsaint
 netsaint-plugins	ports/net-mgmt/netsaint-plugins
 netscape-remote	ports/www/netscape-remote
 netscape-wrapper	ports/www/netscape-wrapper
-netscape47-communicator	ports/www/netscape47-communicator
-netscape47-navigator	ports/www/netscape47-navigator
-netscape48-communicator	ports/www/netscape48-communicator
-netscape48-navigator	ports/www/netscape48-navigator
 netscape7	ports/www/netscape7
 netscript	ports/net/netscript
 netsed		ports/net/netsed
