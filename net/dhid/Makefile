@@ -3,7 +3,7 @@
 # Date created:		Sat Aug 21 06:13:59 EDT 1999
 # Whom:			Oryx Gazella <oryx@ungulate.net>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=		dhid-3.0
