@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	acpicatools
-PORTVERSION=	20010615.0
+PORTVERSION=	20010816.0
 CATEGORIES=	devel
 MASTER_SITES=	http://people.FreeBSD.org/~iwasaki/acpi/ \
 		ftp://download.intel.com/technology/iapc/acpi/downloads/ \
 		${MASTER_SITE_PORTS_JP}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		acpica-unix-20010615.tar.gz
+		acpica-unix-20010816.tar.gz
 WRKSRC=		${WRKDIR}
 
 MAINTAINER=	iwasaki@FreeBSD.org
