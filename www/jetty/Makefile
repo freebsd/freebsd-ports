@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	jetty
-PORTVERSION=	4.1.3
+PORTVERSION=	4.2.5
 CATEGORIES=	www java
-MASTER_SITES=	http://download.sourceforge.net/jetty/ \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://jetty.mortbay.com/pub/
+MASTER_SITE_SUBDIR=	jetty
 DISTNAME=	Jetty-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	stephane@freebsd-fr.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_JAVA=	1.3+
 
