@@ -1,4 +1,4 @@
-@cwd /usr/X11R6
+@cwd ${X11BASE}
 @mode 755
 bin/axe
 bin/coaxe
