@@ -7,7 +7,7 @@
 
 PORTNAME=	erlang
 PORTVERSION=	r10b2
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	lang parallel
 MASTER_SITES=	http://www.erlang.org/download/        \
@@ -45,7 +45,7 @@ ONLY_FOR_ARCHS=	i386
 REINPLACE_ARGS=	-i
 
 CONFIGURE_TARGET=	# Empty
-CONFIGURE_ARGS+=	--enable-threads --enable-hipe
+CONFIGURE_ARGS+=	--enable-threads --enable-hipe --enable-kernel-poll
 NOPRECIOUSMAKEVARS=	yes # Prevent exporting of "ARCH"
 
 .include <bsd.port.pre.mk>
