@@ -72,9 +72,7 @@ include/apache/multithread.h
 include/apache/os-inline.c
 include/apache/os.h
 include/apache/rfc1413.h
-%%WITHIPV6%%include/apache/sa_len.h
 include/apache/scoreboard.h
-%%WITHIPV6%%include/apache/sockaddr_storage.h
 include/apache/util_date.h
 include/apache/util_md5.h
 include/apache/util_script.h
@@ -131,7 +129,6 @@ sbin/apxs
 sbin/httpd
 sbin/logresolve
 sbin/rotatelogs
-%%SUB_SUEXEC%%sbin/suexec
 www/data-dist/apache_pb.gif
 @exec [ -d %D/www/data/ ] || ln -fs %B %D/www/data
 www/data-dist/index.html.ca
@@ -510,15 +507,6 @@ www/data-dist/index.html.zh-tw.big5
 %%DOCSDIR%%/howto/ssi.html.ja.jis
 %%DOCSDIR%%/urlmapping.html
 %%DOCSDIR%%/vhosts/index.html.html
-%%WITHSNMP%%%%DOCSDIR%%/mod/mod_snmp.html
-%%WITHSNMP%%%%DOCSDIR%%/snmp_agt/index.html
-%%WITHSNMP%%%%DOCSDIR%%/snmp_agt/www-mib.txt
-%%WITHSNMP%%%%DOCSDIR%%/snmp_agt/snmpv2-mib.txt
-%%WITHSNMP%%%%DOCSDIR%%/snmp_agt/rfc2594.txt
-%%WITHSNMP%%%%DOCSDIR%%/snmp_agt/apache-scoreboard-mib.txt
-%%WITHSNMP%%%%DOCSDIR%%/snmp_agt/apache-config-mib.txt
-%%WITHACCEL%%%%DOCSDIR%%/mod/mod_accel.html
-%%WITHDEFLATE%%%%DOCSDIR%%/mod/mod_deflate.html
 www/cgi-bin-dist/printenv
 @exec [ -d %D/www/cgi-bin/ ] || ln -fs %B %D/www/cgi-bin
 www/cgi-bin-dist/test-cgi
@@ -762,12 +750,10 @@ www/icons/world2.png
 @dirrm %%DOCSDIR%%/images
 @dirrm %%DOCSDIR%%/howto
 @dirrm %%DOCSDIR%%/programs
-%%WITHSNMP%%@dirrm %%DOCSDIR%%/snmp_agt
 @dirrm %%DOCSDIR%%
 @unexec rmdir %D/www/data-dist 2>/dev/null || true
 @unexec rmdir %D/www/cgi-bin-dist 2>/dev/null || true
 @dirrm www/icons/small
 @dirrm www/icons
 @dirrm www/proxy
-%%WITHSNMP%%@dirrm www/buckets
 @unexec rmdir %D/www 2>/dev/null || true

@@ -82,13 +82,12 @@ SUEXEC_CONF=	--enable-suexec \
 SUEXEC_CONF+=	--suexec-umask=${APACHE_SUEXEC_UMASK}
 .endif
 
-PLIST_SUB+=	SUB_SUEXEC=""
+PLIST_FILES+=	sbin/suexec
 SUEXEC_MAN=	suexec.8
 
 .else   # !SUEXEC
 
 SUEXEC_CONF=
-PLIST_SUB+=	SUB_SUEXEC="@comment "
 SUEXEC_MAN=
 
 .endif  # !SUEXEC
@@ -155,10 +154,16 @@ CONFIGURE_ARGS+=	--activate-module=src/modules/snmp_agt/libsnmp_agt.a
 CFLAGS+=	-DSNMP -DUSE_DB -DSNMP_CONFIG_H -DHARD_VIRTUAL_HOST_MAX=1000 \
 		-DSNMPLOCALONLY
 EXTRA_PATCHES+=	${WRKSRC}/src/modules/snmp_agt/mod_snmp.patch
-PLIST_SUB+=	WITHSNMP=""
+PLIST_FILES+=	%%DOCSDIR%%/mod/mod_snmp.html \
+		%%DOCSDIR%%/snmp_agt/index.html \
+		%%DOCSDIR%%/snmp_agt/www-mib.txt \
+		%%DOCSDIR%%/snmp_agt/snmpv2-mib.txt \
+		%%DOCSDIR%%/snmp_agt/rfc2594.txt \
+		%%DOCSDIR%%/snmp_agt/apache-scoreboard-mib.txt \
+		%%DOCSDIR%%/snmp_agt/apache-config-mib.txt
+PLIST_DIRS+=	%%DOCSDIR%%/snmp_agt www/buckets
 .else
 CONFLICTS+=	apache+mod_snmp*-1.*
-PLIST_SUB+=	WITHSNMP="@comment "
 .endif
 
 .if defined(APACHE_WITH_MODACCEL) || make(makesum) || defined(FETCH_ALL)
@@ -176,13 +181,18 @@ CONFLICTS+=	apache+mod_ssl-1.* \
 MODACCEL_SUFFIX=	+mod_accel
 PVERSION_MODACCEL=	+${VERSION_MODACCEL}
 CONFIGURE_ARGS+=	--activate-module=src/modules/extra/mod_randban.o \
+		--enable-shared=randban \
 		--activate-module=src/modules/extra/mod_freeze.o \
-		--activate-module=src/modules/accel/libaccel.a
+		--enable-shared=freeze \
+		--activate-module=src/modules/accel/libaccel.a \
+		--enable-shared=accel
 EXTRA_PATCHES+=	${FILESDIR}/mod_accel-preservehost.patch
-PLIST_SUB+=	WITHACCEL=""
+PLIST_FILES+=	libexec/apache/libaccel.so \
+		libexec/apache/mod_freeze.so \
+		libexec/apache/mod_randban.so \
+		%%DOCSDIR%%/mod/mod_accel.html
 .else
 CONFLICTS+=	apache+mod_accel*-1.*
-PLIST_SUB+=	WITHACCEL="@comment "
 .endif
 
 .if defined(APACHE_WITH_MODDEFLATE) || make(makesum) || defined(FETCH_ALL)
@@ -200,10 +210,9 @@ CONFLICTS+=	apache+mod_ssl-1.* \
 MODDEFLATE_SUFFIX=	+mod_deflate
 PVERSION_MODDEFLATE=	+${VERSION_MODDEFLATE}
 CONFIGURE_ARGS+=	--activate-module=src/modules/extra/mod_deflate.o
-PLIST_SUB+=	WITHDEFLATE=""
+PLIST_FILES+=	%%DOCSDIR%%/mod/mod_deflate.html
 .else
 CONFLICTS+=	apache+mod_deflate*-1.*
-PLIST_SUB+=	WITHDEFLATE="@comment "
 .endif
 
 .if defined(APACHE_WITH_IPV6)
@@ -221,9 +230,10 @@ CONFLICTS+=	apache+mod_ssl-1.* \
 IPV6_SUFFIX=	+ipv6
 CONFIGURE_ARGS+=	--enable-rule=INET6
 PLIST_SUB+=	WITHIPV6=""
+PLIST_FILES+=	include/apache/sa_len.h \
+		include/apache/sockaddr_storage.h
 .else
 EXTRA_PATCHES+=	${FILESDIR}/mod_access.c.patch
-PLIST_SUB+=	WITHIPV6="@comment "
 .endif
 
 CONFIGURE_ENV=	CFLAGS='${CFLAGS}' \
