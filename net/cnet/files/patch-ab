@@ -11,12 +11,3 @@
  #elif	defined(USE_SOLARIS2)
  #define	NDATASEGS		1
  #define	LENDATA_EVER_0		FALSE
-@@ -196,7 +200,7 @@
-     int			nlinks;
-     int			*links;
- 
--    int			errno;
-+    int			errorno;
-     CnetError		cnet_errno;
- 
-     unsigned long	length_data[NDATASEGS];

@@ -3,13 +3,15 @@
 # Date created:         Feb 8th, 1988
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.5 1998/09/21 22:15:56 steve Exp $
+# $Id: Makefile,v 1.6 1998/11/29 22:27:20 asami Exp $
 #
 
-DISTNAME=	cnet-1.4-3
-PKGNAME=	cnet-1.4p3
+DISTNAME=	cnet-1.4-4
+PKGNAME=	cnet-1.4p4
 CATEGORIES=	net
 MASTER_SITES=	http://www.cs.uwa.edu.au/pls/cnet/
+
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview-lib \
 		Xpm.4:${PORTSDIR}/graphics/xpm

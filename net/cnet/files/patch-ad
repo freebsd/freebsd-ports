@@ -1,0 +1,40 @@
+patch-ad:
+--- src/compile.c.orig	Sun Jan 26 03:42:23 1997
++++ src/compile.c	Sat Feb 13 02:29:14 1999
+@@ -2,6 +2,7 @@
+ 
+ #include <fcntl.h>
+ #include <sys/stat.h>
++#include <dlfcn.h>
+ 
+ #if	!defined(MAXPATHLEN)
+ #define	MAXPATHLEN	1024
+@@ -25,6 +26,9 @@
+ #elif	defined(USE_IRIX5)
+ #include "irix5/compile.c"
+ 
++#elif	defined(USE_FREEBSD)
++#include "freebsd/compile.c"
++
+ #elif	defined(USE_LINUXAOUT)
+ #include "linuxaout/compile.c"
+ 
+@@ -263,7 +267,6 @@
+ 			int kflag; char **Cflags, *o_file, *c_file;
+ {
+     extern int	fork			_PARAMS((void));
+-    extern int	execvp			_PARAMS((const char *, char **));
+ 
+     struct stat	stat_c, stat_o;
+ 
+@@ -483,6 +486,10 @@
+ {
+ 
+ #define	RECIEVE		"[Rr][Ee][Cc][IiEe][Ee][Vv]"
++
++#if	defined(USE_FREEBSD)
++#include	<unistd.h>
++#endif
+ 
+ #if	defined(SVR4) || defined(__svr4__)
+ #include <regexpr.h>
