@@ -1,5 +1,5 @@
---- libs/install.c.orig	Tue Nov  4 02:42:22 2003
-+++ libs/install.c	Tue Nov  4 02:42:26 2003
+--- libs/install.c.orig	Thu Jan 23 01:10:57 2003
++++ libs/install.c	Tue Nov  4 07:46:26 2003
 @@ -41,7 +41,7 @@
  static int get_unique_doc_id(char *);
  static void add_doc_to_scrollkeeper_docs(char *, char *, char *, int, char *);
@@ -138,6 +138,8 @@
      /* these should all be <sect> nodes */	    
      for(node = sect_node; node != NULL; node = node->next)
      {
++	xmlChar *categorycode;
++
      	if (xmlStrcmp(node->name, (xmlChar *)"sect"))
  	    continue;
 -	    
@@ -148,8 +150,6 @@
 -	        !xmlStrcmp(t_node->name, (xmlChar *)"title"))
 -		break;
 -	}
-+	
-+	xmlChar *categorycode;
 +	
 +	categorycode = xmlGetProp(node, (xmlChar *)"categorycode");
 +	if (categorycode == NULL)
