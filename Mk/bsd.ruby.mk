@@ -201,6 +201,8 @@ RUBY_CONFIGURE_ARGS+=	--with-libc_r=no
 RUBY_R=			# none
 .endif
 
+DEPENDS_ARGS+=		RUBY_VER="${RUBY_VER}" RUBY_R="${RUBY_R}"
+
 RUBY_CONFIGURE_ARGS+=	--program-suffix="${RUBY_SUFFIX}"
 
 RUBY_MODNAME?=		${PORTNAME}
