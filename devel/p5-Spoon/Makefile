@@ -48,11 +48,11 @@ post-patch:
 	@${PERL} -i -pe '$$_ = "" if $$. == 3' \
 		${WRKSRC}/lib/Spoon/Base.pm
 
-MAN3+=		Spoon::Config.3
-
 .if ${PERL_LEVEL} < 500601
 IGNORE=		This port requires perl 5.6.1 or later. Install lang/perl5 then try again
 .endif
+.else
+MAN3+=		Spoon::Config.3
 .endif
 
 .include <bsd.port.post.mk>
