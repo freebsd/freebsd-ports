@@ -1,0 +1,18 @@
+This is fvwm-2.0.41 (with the pixmap cache patch) hacked for a look and
+feel similar to Windows-95. 
+
+It's also included a hacked version of the Win95WinList module from
+David Barth (original from Mike Finger), whichs looks very close
+to the Windows-95 task bar. There is a clock and incoming mail
+indicator on it, it can also swallow other modules. The module is
+named FvwmTaskBar, for more information read the README file in
+the modules/FvwmTaskBar directory. 
+
+For more informations see also:
+
+	http://ltiwww.epfl.ch/~barth
+	http://ltiwww.epfl.ch/~barth/fvwm95.html
+
+Have fun
+
+	Andreas Klemm ///

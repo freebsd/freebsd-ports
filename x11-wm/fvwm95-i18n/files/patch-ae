@@ -1,0 +1,43 @@
+--- Fvwm.tmpl.orig	Wed Apr 10 18:07:34 1996
++++ Fvwm.tmpl	Wed Apr 10 18:14:16 1996
+@@ -29,7 +29,7 @@
+  * confused.
+  ***************************************************************************/
+ 
+-/* #define FvwmIconPath /usr/include/X11/bitmaps\:/usr/include/X11/pixmaps */
++#define FvwmIconPath /usr/X11R6/lib/X11/fvwm95-2/mini-icons\:/usr/X11R6/lib/X11/fvwm95-2/icons\:/usr/X11R6/include/X11/pixmaps\:/usr/X11R6/include/X11/bitmaps
+ 
+ 
+ /***************************************************************************
+@@ -80,7 +80,7 @@
+  * Set this to YES if you would like the programs in the utils directory
+  * installed.
+  *************************************************************************/
+-#define InstallUtils NO
++#define InstallUtils YES
+ 
+ 
+ /**************************************************************************
+@@ -142,17 +142,17 @@
+  ***************************************************************************/
+ 
+ /* Where do you want the fvwm binaries installed. */
+-#define FvwmBinDir      /usr/local/X11R6/bin
++#define FvwmBinDir      /usr/X11R6/bin
+ 
+ /* Where do you want the fvwm modules installed. */
+-#define FvwmDir         /usr/local/X11R6/lib/X11/fvwm95-2
++#define FvwmDir         /usr/X11R6/lib/X11/fvwm95-2
+ 
+ /* Where do you want the fvwm libraries installed. */
+-#define FvwmLibDir      /usr/local/X11R6/lib
++#define FvwmLibDir      /usr/X11R6/lib
+ 
+ /* Where do you want the fvwm man pages installed. */
+-/* #define FvwmManPath     /usr/local/X11R6/man */
+-/* #define FvwmManSuffix   1 */
++#define FvwmManPath     /usr/X11R6/man
++#define FvwmManSuffix   1
+ 
+ 
+ /***************************************************************************

@@ -1,0 +1,15 @@
+--- sample.fvwmrc/system.fvwmrc.orig	Wed Apr 10 18:03:50 1996
++++ sample.fvwmrc/system.fvwmrc	Wed Apr 10 18:05:44 1996
+@@ -35,9 +35,9 @@
+ IconFont		-adobe-helvetica-bold-r-*-*-10-*-*-*-*-*-*-*
+ EdgeScroll 100 100
+ 
+-ModulePath /usr/lib/X11/fvwm2
+-PixmapPath /usr/include/X11/pixmaps/
+-IconPath   /usr/include/X11/bitmaps/
++ModulePath /usr/X11R6/lib/X11/fvwm95-2/
++PixmapPath /usr/X11R6/include/X11/pixmaps/
++IconPath   /usr/X11R6/include/X11/bitmaps/
+ 
+ HilightColor black palevioletred
+ DeskTopSize 2x2
