@@ -1,11 +1,11 @@
---- configure.orig	Wed Nov  3 21:37:24 1999
-+++ configure	Sun Nov 21 15:34:05 1999
+--- configure.orig	Tue Dec 14 22:59:18 1999
++++ configure	Wed Jan  5 00:56:06 2000
 @@ -4648,7 +4648,7 @@
      EXTRA_CFLAGS=""
      TCL_EXPORT_FILE_SUFFIX=""
      UNSHARED_LIB_SUFFIX=""
 -    TCL_TRIM_DOTS='`echo ${VERSION} | tr -d .`'
-+    TCL_TRIM_DOTS=82
++    TCL_TRIM_DOTS=`echo ${VERSION} | tr -d .`
      ECHO_VERSION='`echo ${VERSION}`'
      TCL_LIB_VERSIONS_OK=ok
      CFLAGS_DEBUG=-g
@@ -18,7 +18,7 @@
  	    # Not available on all versions:  check for include file.
  	    ac_safe=`echo "dlfcn.h" | sed 'y%./+-%__p_%'`
  echo $ac_n "checking for dlfcn.h""... $ac_c" 1>&6
-@@ -4922,16 +4922,21 @@
+@@ -4922,16 +4922,20 @@
  fi
  if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
    echo "$ac_t""yes" 1>&6
@@ -33,7 +33,6 @@
  		LD_SEARCH_FLAGS=""
 -		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.0'
 +	if eval "test \"`echo ${PORTOBJFORMAT}`\" = elf" ; then
-+		echo "SHARED_LIB_SUFFIX JSEGER"
 +		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.1'
 +		SHLIB_LD="ld -shared -x -soname \$@"
 +	else
@@ -43,7 +42,7 @@
  	    
  else
    echo "$ac_t""no" 1>&6
-@@ -4954,17 +4959,6 @@
+@@ -4954,17 +4958,6 @@
  	    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.a'
  	    TCL_LIB_VERSIONS_OK=nodots
  	    ;;
@@ -61,7 +60,7 @@
  	NEXTSTEP-*)
  	    SHLIB_CFLAGS=""
  	    SHLIB_LD="cc -nostdlib -r"
-@@ -5371,7 +5365,7 @@
+@@ -5371,7 +5364,7 @@
  	SHARED_LIB_SUFFIX='${VERSION}\$\{DBGX\}${SHLIB_SUFFIX}'
      fi
      if test "$UNSHARED_LIB_SUFFIX" = "" ; then
@@ -70,7 +69,7 @@
      fi
  
      
-@@ -5628,11 +5622,7 @@
+@@ -5628,11 +5621,7 @@
  # up the Tcl library.
  
  if test "$SHARED_BUILD" = "0" -o $TCL_NEEDS_EXP_FILE = 0; then
@@ -83,7 +82,7 @@
      TCL_BUILD_LIB_SPEC="-L`pwd` ${TCL_LIB_FLAG}"
      TCL_LIB_SPEC="-L${exec_prefix}/lib ${TCL_LIB_FLAG}"
  else
-@@ -5678,11 +5668,7 @@
+@@ -5678,11 +5667,7 @@
  
  TCL_STUB_LIB_FILE=${STUB_LIB_FILE}
  

@@ -6,8 +6,8 @@
  # Directory in which to install the include file tcl.h:
 -INCLUDE_INSTALL_DIR = $(INSTALL_ROOT)$(prefix)/include
 +INCLUDE_INSTALL_DIR = $(INSTALL_ROOT)$(prefix)/include/tcl$(VERSION)
-+GENERIC_INCLUDE_INSTALL_DIR = $(INSTALL_ROOT)$(PREFIX)/include/tcl$(VERSION)/generic
-+UNIX_INCLUDE_INSTALL_DIR = $(INSTALL_ROOT)$(PREFIX)/include/tcl$(VERSION)/unix
++GENERIC_INCLUDE_INSTALL_DIR = $(INCLUDE_INSTALL_DIR)/generic
++UNIX_INCLUDE_INSTALL_DIR = $(INCLUDE_INSTALL_DIR)/unix
  
  # Top-level directory in which to install manual entries:
  MAN_INSTALL_DIR = $(INSTALL_ROOT)$(prefix)/man
@@ -34,7 +34,7 @@
  all: binaries libraries doc
  
 -binaries: ${TCL_LIB_FILE} $(TCL_STUB_LIB_FILE) $(TCL_BUILD_EXP_FILE) tclsh
-+binaries: ${TCL_LIB_FILE} $(TCL_STUB_LIB_FILE) $(TCL_BUILD_EXP_FILE) libtcl82.a tclsh
++binaries: ${TCL_LIB_FILE} $(TCL_STUB_LIB_FILE) $(TCL_BUILD_EXP_FILE) libtcl${SHORT_TCL_VER}.a tclsh
  
  libraries:
  
@@ -42,13 +42,13 @@
  ${TCL_LIB_FILE}: ${OBJS} ${STUB_LIB_FILE}
  	rm -f ${TCL_LIB_FILE}
  	@MAKE_LIB@
-+	ln -sf ${TCL_LIB_FILE} libtcl82.so
++	ln -sf ${TCL_LIB_FILE} libtcl${SHORT_TCL_VER}.so
  	$(RANLIB) ${TCL_LIB_FILE}
  
-+libtcl82.a: ${OBJS}
-+	rm -f libtcl82.a
-+	ar cr libtcl82.a ${OBJS}
-+	$(RANLIB) libtcl82.a
++libtcl${SHORT_TCL_VER}.a: ${OBJS}
++	rm -f libtcl${SHORT_TCL_VER}.a
++	ar cr libtcl${SHORT_TCL_VER}.a ${OBJS}
++	$(RANLIB) libtcl${SHORT_TCL_VER}.a
 +
  ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f ${STUB_LIB_FILE}
@@ -57,13 +57,13 @@
  	@echo "Installing $(TCL_LIB_FILE)"
  	chmod +x $(SRC_DIR)/install-sh
  	@$(INSTALL_DATA) $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
-+	@ln -sf $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/libtcl82.so
++	@ln -sf $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/libtcl${SHORT_TCL_VER}.so
  	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TCL_LIB_FILE))
  	@chmod 555 $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
-+	@echo "Installing libtcl82.a"
-+	@$(INSTALL_DATA) libtcl82.a $(LIB_INSTALL_DIR)/libtcl82.a
-+	@(cd $(LIB_INSTALL_DIR); $(RANLIB) libtcl82.a)
-+	@chmod 555 $(LIB_INSTALL_DIR)/libtcl82.a
++	@echo "Installing libtcl${SHORT_TCL_VER}.a"
++	@$(INSTALL_DATA) libtcl${SHORT_TCL_VER}.a $(LIB_INSTALL_DIR)/libtcl${SHORT_TCL_VER}.a
++	@(cd $(LIB_INSTALL_DIR); $(RANLIB) libtcl${SHORT_TCL_VER}.a)
++	@chmod 555 $(LIB_INSTALL_DIR)/libtcl${SHORT_TCL_VER}.a
  	@if test "$(TCL_BUILD_EXP_FILE)" != ""; then \
  	    echo "Installing $(TCL_EXP_FILE)"; \
  	    $(INSTALL_DATA) $(TCL_BUILD_EXP_FILE) \

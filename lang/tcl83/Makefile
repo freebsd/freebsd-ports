@@ -1,13 +1,13 @@
-# New ports collection makefile for:	tcl8.2.2
-# Version required:	8.2.2
+# New ports collection makefile for:	tcl8.2.3
+# Version required:	8.2.3
 # Date created:		19 August 1997
 # Whom:			jkh
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tcl8.2.2
-PKGNAME=	tcl-8.2.2
+DISTNAME=	tcl8.2.3
+PKGNAME=	tcl-8.2.3
 CATEGORIES=	lang tcl82
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_2/
 
@@ -19,6 +19,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_ENV=  PORTSDIR=${PORTSDIR}
+MAKE_ENV=	SHORT_TCL_VER=82
 PKGINSTALL=     ${PKGDIR}/INSTALL.tclsh
 
 PLIST_SUB=	TCL_VER=8.2 SHORT_TCL_VER=82
