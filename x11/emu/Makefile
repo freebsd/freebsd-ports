@@ -14,5 +14,6 @@ WRKSRC=		${WRKDIR}/emu
 USE_IMAKE=	yes
 MASTER_SITES=	ftp://ftp.x.org/contrib/applications/
 # NO_INSTALL_MANPAGES=	yes
+IS_INTERACTIVE=	yes
 
 .include <bsd.port.mk>
