@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://www.ics.uci.edu/pub/websoft/wwwstat/ \
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	patch-2.01.txt
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dima@Chg.RU
 
 RUN_DEPENDS=    ${LOCALBASE}/etc/apache/httpd.conf:${PORTSDIR}/www/apache13
 
