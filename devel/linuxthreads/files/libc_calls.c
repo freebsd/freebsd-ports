@@ -39,6 +39,7 @@
 #include <sys/ipc.h>
 #include <sys/msg.h>
 #include <sys/ttycom.h>
+#include <osreldate.h>
 #include <time.h>
 #include "pthread.h"
 #include "internals.h"
@@ -104,11 +105,19 @@ int msgrcv(msqid, msgp, msgsz, msgtyp, msgflg)
 }
 
 #if __STDC__
+#if __FreeBSD_version > 500100
+int msgsnd(int msqid, const void *msgp, size_t msgsz, int msgflg)
+#else
 int msgsnd(int msqid, void *msgp, size_t msgsz, int msgflg)
+#endif
 #else
 int msgsnd(msqid, msgp, msgsz, msgflg)
 	int msqid;
+#if __FreeBSD_version > 500100
+	const void *msgp;
+#else
 	void *msgp;
+#endif
 	size_t msgsz;
 	int msgflg;
 #endif
