@@ -10,25 +10,25 @@ lib/libgnet.so.0
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/aclocal/gnet.m4
-share/doc/libgnet0.1-dev/html/book1.html
-share/doc/libgnet0.1-dev/html/dnstest.html
-share/doc/libgnet0.1-dev/html/gnet-developers-tips.html
-share/doc/libgnet0.1-dev/html/gnet-developers.html
-share/doc/libgnet0.1-dev/html/gnet-examples.html
-share/doc/libgnet0.1-dev/html/gnet-gnet.html
-share/doc/libgnet0.1-dev/html/gnet-inetaddr.html
-share/doc/libgnet0.1-dev/html/gnet-mcast.html
-share/doc/libgnet0.1-dev/html/gnet-overview.html
-share/doc/libgnet0.1-dev/html/gnet-tcp.html
-share/doc/libgnet0.1-dev/html/gnet-udp.html
-share/doc/libgnet0.1-dev/html/hfetch.html
-share/doc/libgnet0.1-dev/html/hostinfo.html
-share/doc/libgnet0.1-dev/html/index.html
-share/doc/libgnet0.1-dev/html/index.sgml
-share/doc/libgnet0.1-dev/html/jmtransfer.html
-share/doc/libgnet0.1-dev/html/libgnet-reference.html
-share/doc/libgnet0.1-dev/html/ljoust.html
-share/doc/libgnet0.1-dev/html/sdr.html
+share/doc/libgnet1.0-dev/html/book1.html
+share/doc/libgnet1.0-dev/html/dnstest.html
+share/doc/libgnet1.0-dev/html/gnet-developers-tips.html
+share/doc/libgnet1.0-dev/html/gnet-developers.html
+share/doc/libgnet1.0-dev/html/gnet-examples.html
+share/doc/libgnet1.0-dev/html/gnet-gnet.html
+share/doc/libgnet1.0-dev/html/gnet-inetaddr.html
+share/doc/libgnet1.0-dev/html/gnet-mcast.html
+share/doc/libgnet1.0-dev/html/gnet-overview.html
+share/doc/libgnet1.0-dev/html/gnet-tcp.html
+share/doc/libgnet1.0-dev/html/gnet-udp.html
+share/doc/libgnet1.0-dev/html/hfetch.html
+share/doc/libgnet1.0-dev/html/hostinfo.html
+share/doc/libgnet1.0-dev/html/index.html
+share/doc/libgnet1.0-dev/html/index.sgml
+share/doc/libgnet1.0-dev/html/jmtransfer.html
+share/doc/libgnet1.0-dev/html/libgnet-reference.html
+share/doc/libgnet1.0-dev/html/ljoust.html
+share/doc/libgnet1.0-dev/html/sdr.html
 @dirrm include/gnet
-@dirrm share/doc/libgnet0.1-dev/html
-@dirrm share/doc/libgnet0.1-dev
+@dirrm share/doc/libgnet1.0-dev/html
+@dirrm share/doc/libgnet1.0-dev
