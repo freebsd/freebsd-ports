@@ -215,6 +215,10 @@ share/themes/Default/gtk/gtkrc.vi_VN.viscii111
 share/themes/Default/gtk/gtkrc.yi
 share/themes/Default/gtk/gtkrc.zh_CN
 share/themes/Default/gtk/gtkrc.zh_TW.Big5
+@exec mkdir -p %D/lib/gtk/themes/engines
+@dirrm lib/gtk/themes/engines
+@dirrm lib/gtk/themes
+@dirrm lib/gtk
 @dirrm share/themes/Default/gtk
 @dirrm share/themes/Default
 @dirrm share/themes

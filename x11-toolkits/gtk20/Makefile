@@ -33,7 +33,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAN1=		gtk12-config.1
 
 pre-build:
-	${PERL} -i -pe 's/\\"$$/\\/' ${WRKSRC}/gtk/gtkrc.*
 	${RM} -rf ${WRKSRC}/docs/gtk.info*
+
+post-install:
+	@${MKDIR} ${PREFIX}/lib/gtk/themes/engines
 
 .include <bsd.port.mk>
