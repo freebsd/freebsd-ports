@@ -20,6 +20,7 @@ RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+USE_BZIP2=	yes
 WANT_GTK=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
