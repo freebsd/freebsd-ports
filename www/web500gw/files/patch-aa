@@ -1,0 +1,108 @@
+--- Makefile.orig	Fri Mar 13 08:12:44 1998
++++ Makefile	Thu Jul 30 06:40:39 1998
+@@ -3,14 +3,14 @@
+ #-----------------------------------------------------------------------------
+ 
+ # Where to install web500gw
+-INSTDIR = /usr/local/etc
++#INSTDIR = /usr/local/www/cgi-bin
+ 
+ # Where to install the manual web500gw.8
+-MANDIR	= /usr/local/man/man8
++#MANDIR	= /usr/local/man/man8
+ 
+ # ... and web500gw' config/help/message files
+ # It's recommended to use an own directory for it.
+-WEB500GWDIR	= $(INSTDIR)/web500
++#WEB500GWDIR	= /usr/local/etc/web500gw
+ 
+ # What language dependent files should be installed? 
+ # "" stands for english (default) versions
+@@ -34,8 +34,9 @@
+ ## If you use U-Mich LDAP 3.3 package (recommended)
+ # If the LDAP include files and libraries installed in standard places 
+ # (/usr/lib, /usr/include) use this:
+-LDAPINCL = 
+-LDAPLIBS = -lldap -llber
++LDAPDIR = /usr/local
++LDAPINCL  = -I$(LDAPDIR)/include
++LDAPLIBS = -L$(LDAPDIR)/lib -lldap -llber
+ # set LDAPVERSION (32 for ldap-3.2, 33 for 3.3 etc)
+ LDAPVERSION = 33
+ VERSION = 3.3
+@@ -51,7 +52,7 @@
+ 
+ # T.61 <-> ISO-8859-1 translation: This is built in from LDAP 3.2.
+ # If you didn't define this translation there comment out the following line:
+-STR_TRANSLATION = -DSTR_TRANSLATION
++#STR_TRANSLATION = -DSTR_TRANSLATION
+ # If you defined LDAP_DEBUG there and want to enable LDAP debugging
+ # uncomment the following line:
+ LDAP_DEBUG = -DLDAP_DEBUG
+@@ -69,7 +70,7 @@
+ 
+ # platform specific:
+ # Linux
+-PLATFORMCFLAGS= -Dlinux -DSYSV 
++#PLATFORMCFLAGS= -Dlinux -DSYSV 
+ # Solaris 2
+ # PLATFORMCFLAGS= -Dsunos5
+ # PLATFORMLDFLAGS= -lsocket -lnsl
+@@ -92,7 +93,7 @@
+ # when using gcc:
+ CC	= gcc 
+ # WARN = -Wall -Wno-implicit
+-CFLAGS	= -O4 $(WARN) $(ALLDEFINES) -fpcc-struct-return -fwritable-strings
++CFLAGS	= $(WARN) $(ALLDEFINES) -fpcc-struct-return -fwritable-strings
+ #CFLAGS	= -g $(WARN) $(ALLDEFINES) -fpcc-struct-return -fwritable-strings
+ 
+ # or cc:
+@@ -105,7 +106,7 @@
+ # ALDFLAGS are always passed to ld
+ ALDFLAGS        = $(PLATFORMLDFLAGS)
+ 
+-INSTALL = util/install.sh
++#INSTALL = util/install.sh
+ MKDIR   = mkdir
+ # LIBEFENCE = -lefence
+ 
+@@ -149,30 +150,30 @@
+ $(INSTDIR)/web500gw:	web500gw
+ 	@echo ""
+ 	@echo "Installing web500gw to $(INSTDIR)"
+-	$(INSTALL) $(INSTALLFLAGS) -m 755 web500gw $(INSTDIR)
++	$(INSTALL_PROGRAM) web500gw $(INSTDIR)
+ 	@echo "... done!"
+ 
+ install-etc:;
+ 	@echo ""
+ 	@if [ ! -d $(WEB500GWDIR) ]; then $(MKDIR) -p $(WEB500GWDIR); fi
+ 	@echo "Installing web500gw config/help/message files to $(WEB500GWDIR)"
+-	$(INSTALL) $(INSTALLFLAGS) -m 644 etc/web500gw.conf $(WEB500GWDIR)
+-	$(INSTALL) $(INSTALLFLAGS) -m 644 etc/ldapfilter.conf $(WEB500GWDIR)
+-	$(INSTALL) $(INSTALLFLAGS) -m 644 etc/ldaptemplates.conf $(WEB500GWDIR)
++	$(INSTALL_DATA) etc/web500gw.conf $(WEB500GWDIR)/sample.web500gw.conf
++	$(INSTALL_DATA) etc/ldapfilter.conf $(WEB500GWDIR)/sample.ldapfilter.conf
++	$(INSTALL_DATA) etc/ldaptemplates.conf $(WEB500GWDIR)/sample.ldaptemplates.conf
+ 	@for i in $(SUFFIX); do \
+ 	if [ "x$$i" = "x" ]; then echo " english"; SUFF="";\
+ 	else echo " $$i"; SUFF=".$$i"; fi; \
+-	$(INSTALL) $(INSTALLFLAGS) -m 644 etc/web500gw.help$$SUFF $(WEB500GWDIR); \
+-	$(INSTALL) $(INSTALLFLAGS) -m 644 etc/web500gw.messages$$SUFF $(WEB500GWDIR); \
+-	$(INSTALL) $(INSTALLFLAGS) -m 644 etc/web500gw.attr$$SUFF $(WEB500GWDIR); \
+-	$(INSTALL) $(INSTALLFLAGS) -m 644 etc/ldapfriendly$$SUFF $(WEB500GWDIR); \
++	$(INSTALL_DATA) etc/web500gw.help$$SUFF $(WEB500GWDIR); \
++	$(INSTALL_DATA) etc/web500gw.messages$$SUFF $(WEB500GWDIR); \
++	$(INSTALL_DATA) etc/web500gw.attr$$SUFF $(WEB500GWDIR); \
++	$(INSTALL_DATA) etc/ldapfriendly$$SUFF $(WEB500GWDIR); \
+ 	done;
+ 	@echo "... done!"
+ 
+ install-man:;
+ 	@echo ""
+ 	@echo "Installing web500gw.8 to $(MANDIR)"
+-	$(INSTALL) $(INSTALLFLAGS) -m 644 doc/web500gw.8 $(MANDIR)
++	$(INSTALL_MAN) doc/web500gw.8 $(MANDIR)
+ 	@echo "... done!"
+ 
+ lint:;
