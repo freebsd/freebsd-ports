@@ -30,6 +30,160 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7229d900-88af-11d8-90d1-0020ed76ef5a">
+    <topic>mksnap_ffs clears file system options</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>5.2</ge><lt>5.2p1</lt></range>
+	<range><ge>5.1</ge><lt>5.1p12</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The kernel interface for creating a snapshot of a
+          filesystem is the same as that for changing the flags on
+	  that filesystem.  Due to an oversight, the <a
+	  href="http://www.freebsd.org/cgi/man.cgi?query=mksnap_ffs"
+	  >mksnap_ffs(8)</a>
+          command called that interface with only the snapshot flag
+          set, causing all other flags to be reset to the default
+	  value.</p>
+        <p>A regularly scheduled backup of a live filesystem, or
+          any other process that uses the mksnap_ffs command
+          (for instance, to provide a rough undelete functionality
+          on a file server), will clear any flags in effect on the
+          filesystem being snapshot.  Possible consequences depend
+          on local usage, but can include disabling extended access
+          control lists or enabling the use of setuid executables
+	  stored on an untrusted filesystem.</p>
+        <p>The mksnap_ffs command is normally only available to
+          the superuser and members of the `operator' group.  There
+          is therefore no risk of a user gaining elevated privileges
+          directly through use of the mksnap_ffs command unless
+          it has been intentionally made available to unprivileged
+          users.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0099</cvename>
+      <freebsdsa>SA-04:01.mksnap_ffs</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2004-01-30</discovery>
+      <entry>2004-04-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f95a9005-88ae-11d8-90d1-0020ed76ef5a">
+    <topic>shmat reference counting bug</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>5.2</ge><lt>5.2p2</lt></range>
+	<range><ge>5.1</ge><lt>5.1p14</lt></range>
+	<range><ge>5.0</ge><lt>5.0p20</lt></range>
+	<range><ge>4.9</ge><lt>4.9p2</lt></range>
+	<range><ge>4.8</ge><lt>4.8p15</lt></range>
+	<range><lt>4.7p25</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A programming error in the <a
+	  href="http://www.freebsd.org/cgi/man.cgi?query=shmat"
+	  >shmat(2)</a> system call can result
+          in a shared memory segment's reference count being erroneously
+	  incremented.</p>
+        <p>It may be possible to cause a shared memory segment to
+          reference unallocated kernel memory, but remain valid.
+          This could allow a local attacker to gain read or write
+          access to a portion of kernel memory, resulting in sensitive
+          information disclosure, bypass of access control mechanisms,
+          or privilege escalation. </p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0114</cvename>
+      <freebsdsa>SA-04:02.shmat</freebsdsa>
+      <url>http://www.pine.nl/press/pine-cert-20040201.txt</url>
+    </references>
+    <dates>
+      <discovery>2004-02-01</discovery>
+      <entry>2004-04-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9082a85a-88ae-11d8-90d1-0020ed76ef5a">
+    <topic>jailed processes can attach to other jails</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>5.1</ge><lt>5.1p14</lt></range>
+	<range><ge>5.2</ge><lt>5.2.1</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A programming error has been found in the <a
+	  href="http://www.freebsd.org/cgi/man.cgi?query=jail_attach"
+	  >jail_attach(2)</a>
+          system call which affects the way that system call verifies
+          the privilege level of the calling process.  Instead of
+          failing immediately if the calling process was already
+          jailed, the jail_attach system call would fail only after
+	  changing the calling process's root directory.</p>
+        <p>A process with superuser privileges inside a jail could
+          change its root directory to that of a different jail,
+          and thus gain full read and write access to files and
+          directories within the target jail. </p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0126</cvename>
+      <freebsdsa>SA-04:03.jail</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2004-02-19</discovery>
+      <entry>2004-04-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e289f7fd-88ac-11d8-90d1-0020ed76ef5a">
+    <topic>many out-of-sequence TCP packets denial-of-service</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>5.2</ge><lt>5.2.1p2</lt></range>
+	<range><ge>5.0</ge><lt>5.1p15</lt></range>
+	<range><ge>4.9</ge><lt>4.9p3</lt></range>
+	<range><ge>4.8</ge><lt>4.8p16</lt></range>
+	<range><lt>4.7p26</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>FreeBSD does not limit the number of TCP segments that
+        may be held in a reassembly queue.  A remote attacker may
+        conduct a low-bandwidth denial-of-service attack against
+        a machine providing services based on TCP (there are many
+        such services, including HTTP, SMTP, and FTP).  By sending
+        many out-of-sequence TCP segments, the attacker can cause
+        the target machine to consume all available memory buffers
+        (``mbufs''), likely leading to a system crash. </p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0171</cvename>
+      <freebsdsa>SA-04:04.tcp</freebsdsa>
+      <url>http://www.idefense.com/application/poi/display?id=78&amp;type=vulnerabilities</url>
+    </references>
+    <dates>
+      <discovery>2004-02-18</discovery>
+      <entry>2004-04-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="40fcf20f-8891-11d8-90d1-0020ed76ef5a">
     <topic>racoon remote denial of service vulnerability</topic>
     <affects>
@@ -423,7 +577,9 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<p>From the FreeBSD Security Advisory:</p>
 	<blockquote>
           <p>A programming error in the handling of some IPv6 socket
-            options within the setsockopt(2) system call may result
+	    options within the <a
+	    href="http://www.freebsd.org/cgi/man.cgi?query=setsockopt"
+	    >setsockopt(2)</a> system call may result
             in memory locations being accessed without proper
             validation.</p>
           <p>It may be possible for a local attacker to read portions
@@ -1816,6 +1972,7 @@ misc.c:
         <name>gaim</name>
         <range><lt>0.75_3</lt></range>
         <range><eq>0.75_5</eq></range>
+	<range><eq>0.76</eq></range>
       </package>
     </affects>
     <description>
@@ -1857,6 +2014,7 @@ misc.c:
     <dates>
       <discovery>2004-01-26</discovery>
       <entry>2004-02-12</entry>
+      <modified>2004-04-07</modified>
     </dates>
   </vuln>
 
