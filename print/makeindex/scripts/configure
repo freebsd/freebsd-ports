@@ -2,7 +2,7 @@
 
 cd $WRKSRC/src-3.0 || exit 1;
 cp Makefile.gen Makefile || exit 1;
-echo "STYDIR=$PREFIX/lib/texmf/makeindx" >> Makefile || exit 1;
+echo "STYDIR=$PREFIX/share/texmf/makeindx" >> Makefile || exit 1;
 echo "BINDIR=$PREFIX/bin"                >> Makefile || exit 1;
 
 mv mkind.h mkind.h.orig || exit 1;

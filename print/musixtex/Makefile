@@ -3,7 +3,7 @@
 # Date created:         9 july 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.5 1996/11/26 08:05:07 asami Exp $
+# $Id: Makefile,v 1.6 1996/12/12 01:07:17 jmz Exp $
 #
 
 DISTNAME=       musixtex-T64
@@ -19,7 +19,7 @@ RUN_DEPENDS=	tex:${PORTSDIR}/print/tex
 NO_WRKSUBDIR=	yes
 
 pre-install:
-	${MKDIR} ${PREFIX}/lib/texmf/fonts/tfm
-	${MKDIR} ${PREFIX}/lib/texmf/documentation
+	${MKDIR} ${PREFIX}/share/texmf/fonts/tfm
+	${MKDIR} ${PREFIX}/share/texmf/documentation
 
 .include <bsd.port.mk>
