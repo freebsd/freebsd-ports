@@ -32,6 +32,40 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b58ff497-6977-11d9-ae49-000c41e2cdad">
+    <topic>tiff -- divide-by-zero denial-of-service</topic>
+    <affects>
+      <package>
+	<name>tiff</name>
+	<name>linux-tiff</name>
+	<range><lt>3.6.0</lt></range>
+      </package>
+      <package>
+	<name>pdflib</name>
+	<range><lt>6.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A US-CERT vulnerability note reports:</p>
+	<blockquote cite="http://www.kb.cert.org/vuls/id/555304">
+	  <p>An Integer overflow in the LibTIFF library may allow a
+	    remote attacker to cause a divide-by-zero error that results
+	    in a denial-of-service condition.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0804</cvename>
+      <certvu>555304</certvu>
+      <url>http://bugzilla.remotesensing.org/show_bug.cgi?id=111</url>
+    </references>
+    <dates>
+      <discovery>2002-03-27</discovery>
+      <entry>2005-01-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="249a8c42-6973-11d9-ae49-000c41e2cdad">
     <topic>zgv -- exploitable heap overflows</topic>
     <affects>
