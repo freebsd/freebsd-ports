@@ -29,6 +29,9 @@ lib/libjack.so
 lib/libjack.so.0
 libdata/pkgconfig/jack.pc
 share/jack-audio-connection-kit/reference/html/annotated.html
+share/jack-audio-connection-kit/reference/html/dir_000000.html
+share/jack-audio-connection-kit/reference/html/dir_000001.html
+share/jack-audio-connection-kit/reference/html/dirs.html
 share/jack-audio-connection-kit/reference/html/deprecated.html
 share/jack-audio-connection-kit/reference/html/files.html
 share/jack-audio-connection-kit/reference/html/functions.html
