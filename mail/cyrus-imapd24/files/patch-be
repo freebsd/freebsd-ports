@@ -1,0 +1,13 @@
+--- imap/krbck.c.orig	Sat Dec 21 02:08:21 1996
++++ imap/krbck.c	Wed Oct  8 13:56:58 1997
+@@ -29,7 +29,9 @@
+ 
+ #define EXIT_CHOKE (int) 10
+ 
+-#define CONFIG_FILENAME "/etc/imapd.conf"
++#if !defined(CONFIG_FILENAME)
++	#define CONFIG_FILENAME "/etc/imapd.conf"
++#endif
+ #define MAX_FILENAME_LEN 255
+ 
+ int errno;
