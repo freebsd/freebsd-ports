@@ -4,6 +4,7 @@
     SUBDIR += 2dhf
     SUBDIR += at
     SUBDIR += bblimage
+    SUBDIR += cdcl
     SUBDIR += chemtool
     SUBDIR += chemtool-devel
     SUBDIR += clhep
