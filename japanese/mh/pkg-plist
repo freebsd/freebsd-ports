@@ -68,4 +68,8 @@ lib/mh/slocal
 lib/mh/spost
 lib/mh/tmac.h
 lib/mh/viamail
+lib/libmh.so
 lib/libmh.so.3.2
+@dirrm lib/mh
+@exec /sbin/ldconfig -m %D/lib
+@unexec /sbin/ldconfig -R
