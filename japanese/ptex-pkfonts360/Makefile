@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+USEPK_MODE=	canonbjc
 RESOLUTION=	360
 MASTERDIR=	${.CURDIR}/../ptex-pkfonts300
 

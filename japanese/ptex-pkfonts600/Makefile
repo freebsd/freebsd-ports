@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+USEPK_MODE=	ljfour
 RESOLUTION=	600
 MASTERDIR=	${.CURDIR}/../ptex-pkfonts300
 
