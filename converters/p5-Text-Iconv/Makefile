@@ -17,7 +17,7 @@ MAINTAINER=	skv@protey.ru
 LIB_DEPENDS=	iconv.2:${PORTSDIR}/converters/iconv
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS+=	INC="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE/lib"
+CONFIGURE_ARGS+=	INC="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib -liconv"
 
 MAN3=		Text::Iconv.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
