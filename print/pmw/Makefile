@@ -6,30 +6,29 @@
 #
 
 PORTNAME=	pmw
-PORTVERSION=	4.05
+PORTVERSION=	4.06
 CATEGORIES=	print audio
 MASTER_SITES=	http://www.quercite.com/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High quality music typesetting program
 
-ALL_TARGET=	build
-GNU_CONFIGURE=	yes
-MAN1=		pmw.1
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	ChangeLog spec.pdf
-.endif
+GNU_CONFIGURE=	yes
+ALL_TARGET=	build
+
+MAN1=		pmw.1
 
 post-patch:
-	@${CAT} ${MASTERDIR}/pkg-message | ${SED} 's|%%PREFIX%%|${PREFIX}|g ; s|%%LOCALBASE%%|${LOCALBASE}|g' > ${PKGMESSAGE}
+	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g ; \
+		s|%%LOCALBASE%%|${LOCALBASE}|g' ${MASTERDIR}/pkg-message > ${PKGMESSAGE}
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_MAN} ${WRKSRC}/doc/${i} ${DOCSDIR}/
+	@${MKDIR} ${DOCSDIR}
+.for file in ChangeLog spec.pdf
+	${INSTALL_MAN} ${WRKSRC}/doc/${file} ${DOCSDIR}
 .endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
