@@ -3,7 +3,7 @@
 # Date created: 	13 November 1997
 # Whom:			jraynard
 #
-# $Id: Makefile,v 1.2 1997/11/13 19:51:54 jraynard Exp $
+# $Id: Makefile,v 1.3 1997/11/15 10:47:30 asami Exp $
 #
 
 DISTNAME=	ElectricFence-2.0.5
@@ -15,6 +15,11 @@ MASTER_SITE_SUBDIR=	devel/lang/c
 MAINTAINER=	jraynard@freebsd.org
 
 MAN3=		libefence.3
+
+OSVERSION!=	sysctl -n kern.osreldate
+.if ${OSVERSION} >= 300000
+BROKEN=	"During build: ElectricFence Exiting: mmap() failed: Invalid argument"
+.endif
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libefence.a ${PREFIX}/lib
