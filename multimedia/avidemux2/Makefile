@@ -15,19 +15,14 @@ MAINTAINER=	amistry@am-productions.biz
 COMMENT=	Simple GUI based video editor
 
 LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
-		mad.1:${PORTSDIR}/audio/mad \
-		freetype.9:${PORTSDIR}/print/freetype2 \
-		gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20 \
-		xml2.5:${PORTSDIR}/textproc/libxml2
+		mad.1:${PORTSDIR}/audio/mad
 BUILD_DEPENDS=	\
 	${X11BASE}/include/X11/extensions/Xvlib.h:${PORTSDIR}/graphics/xv
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
-USE_GLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 		-I${LOCALBASE}/include/ffmpeg \
@@ -38,6 +33,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 		PTHREAD_CFLAGS=${PTHREAD_CFLAGS}
 CONFIGURE_ARGS=	--disable-warnings
 USE_GMAKE=	yes
+
+.include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/bin/mpeg2enc)
 WITH_MPEGENC=	yes
@@ -50,8 +47,6 @@ WITH_A52=	yes
 .if exists(${LOCALBASE}/lib/libxvidcore.so.0)
 WITH_XVID=	yes
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if defined(WITH_MPEGENC)
 RUN_DEPENDS+=	mpeg2enc:${PORTSDIR}/multimedia/mjpegtools
