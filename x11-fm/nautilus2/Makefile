@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nautilus2
-PORTVERSION=	2.0.7
+PORTVERSION=	2.0.8
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.0
@@ -33,6 +33,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -fno-rtti -fno-exceptions" \
 		LIBPNG="-L${LOCALBASE}/lib -lpng -lz ${MOZILLA_LIBS}"
 CONFIGURE_ARGS=	--with-freetype2-lib-place=${LOCALBASE}/lib \
 		--with-freetype2-include-place=${LOCALBASE}/include/freetype2
+MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
