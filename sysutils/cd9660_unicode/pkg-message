@@ -1,0 +1,16 @@
+---------------------------------------------------------------------
+ You can load the module by typing (as root of course):
+
+ # kldload %%PREFIX%%/lib/cd9660_unicode/cd9660_<encoding>.ko
+
+ where <encoding> is any name from the following list:
+
+ %%ENCODINGS%%.
+
+ If you have a CD with filenames in a single byte language/encoding
+ that doesn't listed here, feel free to send me conversion table
+ between that encoding and Unicode and I'll include it into the
+ distribution.
+
+ -- Maxim Sobolev <sobomax@FreeBSD.org>
+---------------------------------------------------------------------

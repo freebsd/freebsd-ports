@@ -1,0 +1,15 @@
+lib/cd9660_unicode/cd9660_cp775.ko
+lib/cd9660_unicode/cd9660_cp850.ko
+lib/cd9660_unicode/cd9660_cp852.ko
+lib/cd9660_unicode/cd9660_cp855.ko
+lib/cd9660_unicode/cd9660_cp866.ko
+lib/cd9660_unicode/cd9660_iso-8859-1.ko
+lib/cd9660_unicode/cd9660_iso-8859-15.ko
+lib/cd9660_unicode/cd9660_iso-8859-2.ko
+lib/cd9660_unicode/cd9660_iso-8859-4.ko
+lib/cd9660_unicode/cd9660_iso-8859-5.ko
+lib/cd9660_unicode/cd9660_jis_x0201.ko
+lib/cd9660_unicode/cd9660_koi8-r.ko
+lib/cd9660_unicode/cd9660_koi8-u.ko
+lib/cd9660_unicode/cd9660_shift_jis.ko
+@dirrm lib/cd9660_unicode
