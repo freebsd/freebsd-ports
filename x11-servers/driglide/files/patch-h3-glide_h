@@ -1,0 +1,40 @@
+diff -ru ../Glide3.orig/h3/glide3/src/glide.h ./h3/glide3/src/glide.h
+--- ../Glide3.orig/h3/glide3/src/glide.h	Thu May 31 12:05:52 2001
++++ ./h3/glide3/src/glide.h	Sun Jan 13 14:46:12 2002
+@@ -52,9 +52,7 @@
+ typedef FxU32 GrColor_t;
+ typedef FxU8  GrAlpha_t;
+ typedef FxU32 GrMipMapId_t;
+-#if defined(DRI_BUILD)
+ typedef FxU32 GrStipplePattern_t;
+-#endif
+ typedef FxU8  GrFog_t;
+ typedef AnyPtr GrContext_t;
+ typedef int (FX_CALL *GrProc)();
+@@ -253,12 +251,10 @@
+ #define GR_DITHER_2x2           0x1
+ #define GR_DITHER_4x4           0x2
+ 
+-#if defined(DRI_BUILD)
+ typedef FxI32 GrStippleMode_t;
+ #define GR_STIPPLE_DISABLE	0x0
+ #define GR_STIPPLE_PATTERN	0x1
+ #define GR_STIPPLE_ROTATE	0x2
+-#endif /* DRI_BUILD */
+ 
+ typedef FxI32 GrFogMode_t;
+ #define GR_FOG_DISABLE                     0x0
+@@ -709,13 +705,11 @@
+ FX_ENTRY void FX_CALL 
+ grDitherMode( GrDitherMode_t mode );
+ 
+-#if defined(DRI_BUILD)
+ FX_ENTRY void FX_CALL 
+ grStippleMode( GrStippleMode_t mode );
+ 
+ FX_ENTRY void FX_CALL 
+ grStipplePattern( GrStipplePattern_t mode );
+-#endif /* DRI_BUILD */
+ 
+ FX_ENTRY void FX_CALL 
+ grFogColorValue( GrColor_t fogcolor );

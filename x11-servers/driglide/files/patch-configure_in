@@ -1,0 +1,25 @@
+--- configure.in.orig	Thu May 31 12:05:51 2001
++++ configure.in	Fri May 10 19:45:32 2002
+@@ -25,6 +25,10 @@
+ AM_INIT_AUTOMAKE(glide, 3.0)
+ AM_CONFIG_HEADER(swlibs/include/config.h)
+ AC_PREFIX_DEFAULT([/usr])
++
++AC_PATH_X
++AC_SUBST(x_includes)
++
+ includedir='${prefix}/include/glide3'
+ #
+ # Variables local to the build.
+@@ -168,6 +172,11 @@
+                    ;;
+                esac],[FX_GLIDE_BUILD_ARCHITECTURE=`uname -m`])
+ AC_SUBST(FX_GLIDE_BUILD_ARCHITECTURE)
++
++# Appease automake1.5 about assembly targets
++ASFLAGS=
++AC_SUBST(ASFLAGS)
++
+ #
+ # Various tests needed at points in the build
+ # First, we set defaults.

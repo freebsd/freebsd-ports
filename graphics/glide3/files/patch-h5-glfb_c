@@ -1,0 +1,11 @@
+--- h5/glide3/src/glfb.c.orig	Fri May 10 17:43:21 2002
++++ h5/glide3/src/glfb.c	Fri May 10 17:43:36 2002
+@@ -700,7 +700,7 @@
+           } 
+ #endif          
+             else {
+-#ifdef	defined(DRI_BUILD)
++#if defined(DRI_BUILD)
+            /*
+             * For Linux, we just return the correct address and
+             * stride.

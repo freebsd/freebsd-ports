@@ -1,0 +1,138 @@
+diff -ru ../Glide3.orig/h3/glide3/src/gsst.c.dri ./h3/glide3/src/gsst.c.dri
+--- ../Glide3.orig/h3/glide3/src/gsst.c.dri	Wed Aug 30 01:47:03 2000
++++ ./h3/glide3/src/gsst.c.dri	Sun Jan 13 17:33:57 2002
+@@ -534,7 +534,7 @@
+ #include <windows.h>
+ #endif
+ 
+-#ifdef __linux__
++#ifdef DRI_BUILD
+ #include <lindri.h>
+ #endif
+ 
+@@ -746,7 +746,7 @@
+   GDBG_INFO(95, FN_NAME"(0x%X)\n", gc);
+   
+   /* Setup the indices of the logical buffers */
+-#ifdef __linux__
++#ifdef DRI_BUILD
+   gc->curBuffer   = (gc->grColBuf > 1) ? 1 : 0;
+   gc->frontBuffer = 0;
+ #else
+@@ -939,7 +939,7 @@
+   struct cmdTransportInfo *gcFifo = 0;
+   GrContext_t retVal = 0;
+ 
+-#ifndef __linux__
++#ifndef DRI_BUILD
+   if (!hWnd)
+     GrErrorCallback("grSstWinOpen: need to use a valid window handle",
+                     FXTRUE);
+@@ -977,7 +977,7 @@
+         ? GR_RESOLUTION_640x480 
+           : resolution;
+ 
+-#ifdef __linux__
++#ifdef DRI_BUILD
+     gc->state.screen_width = driInfo.screenWidth;
+     gc->state.screen_height = driInfo.screenHeight;
+ #else
+@@ -1059,7 +1059,7 @@
+       gc->hwInitP = FXTRUE;
+     }
+ 
+-#ifdef __linux__
++#ifdef DRI_BUILD
+     vInfo->xRes	       = driInfo.w;
+     vInfo->yRes	       = driInfo.h;
+ #else
+@@ -1118,7 +1118,7 @@
+     /* This actually gets taken in hwcInitVideo */
+     gc->contextP = FXTRUE;
+ 
+-#ifndef __linux__
++#ifndef DRI_BUILD
+     /* CSR - Set up flag for display driver to tell us that context was lost */
+ 	if ( !gc->open )  /* If we already have a context open, then lets not
+ 					     re-initialize the pointers                          */						
+@@ -1400,7 +1400,7 @@
+     gcFifo->fifoPtr  = gcFifo->fifoStart;
+     gcFifo->fifoRead = HW_FIFO_PTR( FXTRUE );
+ 
+-#ifndef __linux__    
++#ifndef DRI_BUILD    
+     if ( (void*)gcFifo->fifoPtr != (void*)gcFifo->fifoRead ) {
+ #ifdef GLIDE_INIT_HWC
+       hwcRestoreVideo( bInfo );
+@@ -1442,7 +1442,7 @@
+               gcFifo->fifoSize,
+               gcFifo->fifoPtr ); 
+ 
+-#ifdef __linux__
++#ifdef DRI_BUILD
+     _grImportFifo((AnyPtr)*driInfo.fifoPtr, (AnyPtr)*driInfo.fifoRead);
+ #endif
+     
+@@ -1496,7 +1496,7 @@
+     REG_GROUP_BEGIN(BROADCAST_ID, colBufferAddr, 4, 0xf);
+     {
+       REG_GROUP_SET(hw, colBufferAddr, gc->state.shadow.colBufferAddr);
+-#ifdef __linux__
++#ifdef DRI_BUILD
+       REG_GROUP_SET(hw, colBufferStride, (!gc->curBuffer) ? driInfo.stride :
+ 		    gc->state.shadow.colBufferStride);
+ #else
+@@ -1510,7 +1510,7 @@
+     
+     GDBG_INFO( gc->myLevel, "  Setting all Glide state\n" );
+     assertDefaultState();
+-#ifdef __linux__
++#ifdef DRI_BUILD
+     if (nColBuffers>1)
+ 	grRenderBuffer(GR_BUFFER_BACKBUFFER);
+     else
+@@ -1578,7 +1578,7 @@
+   GrGC* gc = (GrGC*)context;
+   GDBG_INFO(80, FN_NAME"(0x%X)\n", context);
+ 
+-#ifndef __linux__
++#ifndef DRI_BUILD
+   if (gc->lostContext) {
+     if (*gc->lostContext)
+       return 0;
+@@ -1626,7 +1626,7 @@
+        * safe everywhere.
+        */
+       GDBG_INFO(gc->myLevel, "  Restore Video");
+-#ifndef __linux__
++#ifndef DRI_BUILD
+       if (!*gc->lostContext)
+ #endif
+         hwcRestoreVideo(gc->bInfo);
+@@ -1657,7 +1657,7 @@
+   }
+   _GlideRoot.windowsInit--;
+ 
+-#ifndef __linux__  
++#ifndef DRI_BUILD  
+   if ( gc->bInfo->osNT )
+     hwcUnmapMemory();
+   else
+@@ -1731,7 +1731,7 @@
+         GR_ASSERT((gc >= _GlideRoot.GCs) &&
+                   (gc <= _GlideRoot.GCs + MAX_NUM_SST));
+ 
+-#if defined( GLIDE_INIT_HWC ) && !defined(__linux__)
++#if defined( GLIDE_INIT_HWC ) && !defined(DRI_BUILD)
+         gc->contextP = hwcQueryContext(gc->bInfo);
+ #else
+         gc->contextP = 1;
+@@ -1882,7 +1882,7 @@
+ 
+   grFlush();
+   if ( gc->windowed ) {
+-#if defined( GLIDE_INIT_HWC ) && !defined( __linux__ )
++#if defined( GLIDE_INIT_HWC ) && !defined( DRI_BUILD )
+     struct cmdTransportInfo*
+       gcFifo = &gc->cmdTransportInfo;
+     

@@ -1,0 +1,25 @@
+diff -ru ../Glide3.orig/h5/incsrc/gdebug.h ./h5/incsrc/gdebug.h
+--- ../Glide3.orig/h5/incsrc/gdebug.h	Sat Nov 18 08:00:33 2000
++++ ./h5/incsrc/gdebug.h	Sun Jan 13 16:20:49 2002
+@@ -67,12 +67,21 @@
+ #pragma disable_message (111, 201, 302)
+ #endif /* defined(__WATCOMC__) || defined(__WATCOM_CPLUSPLUS__) */
+ 
++#ifdef __GNUC__
++# define GDBG_INFO(x...)
++# define GDBG_INFO_MORE(x...)
++# define GDBG_PRINTF(x...)
++
++# define GDBG_ERROR_SET_CALLBACK(x...)
++# define GDBG_ERROR_CLEAR_CALLBACK(x...)
++#else
+ #define GDBG_INFO      0 && (unsigned long)
+ #define GDBG_INFO_MORE 0 && (unsigned long)
+ #define GDBG_PRINTF    0 && (unsigned long)
+ 
+ #define GDBG_ERROR_SET_CALLBACK   0 && (unsigned long)
+ #define GDBG_ERROR_CLEAR_CALLBACK 0 && (unsigned long)
++#endif
+ 
+ #define GDBG_GET_DEBUGLEVEL(x) 0
+ #define GDBG_SET_DEBUGLEVEL(a,b)

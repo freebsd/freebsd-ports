@@ -1,0 +1,16 @@
+diff -ru ../Glide3.orig/h5/glide3/src/fxglide.h ./h5/glide3/src/fxglide.h
+--- ../Glide3.orig/h5/glide3/src/fxglide.h	Thu May 31 12:05:52 2001
++++ ./h5/glide3/src/fxglide.h	Sun Jan 13 15:35:48 2002
+@@ -2992,7 +2992,11 @@
+ #if defined(GLIDE_SANITY_ASSERT)
+ #define GR_ASSERT(exp) ((void)((!(exp)) ? (_grAssert(#exp,  __FILE__, __LINE__),0) : 0xFFFFFFFF))
+ #else
+-#define GR_ASSERT(exp) ((void)(0 && ((FxU32)(exp))))
++# ifdef __GNUC__
++#  define GR_ASSERT(exp)       ((void) 0)
++# else
++#  define GR_ASSERT(exp) ((void)(0 && ((FxU32)(exp))))
++# endif
+ #endif
+ 
+ #define INTERNAL_CHECK(__name, __cond, __msg, __fatalP) \

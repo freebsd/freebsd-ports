@@ -1,0 +1,33 @@
+diff -ru ../Glide3.orig/swlibs/include/make/makefile.autoconf.bottom ./swlibs/include/make/makefile.autoconf.bottom
+--- ../Glide3.orig/swlibs/include/make/makefile.autoconf.bottom	Thu May 31 12:05:53 2001
++++ ./swlibs/include/make/makefile.autoconf.bottom	Sun Jan 13 16:13:13 2002
+@@ -32,7 +32,7 @@
+ CPPFLAGS  = $(GCPPFLAGS)  $(LCPPFLAGS)  $(VCPPFLAGS)
+ DEFS      = $(GDEFS)      $(LDEFS)      $(VDEFS)
+ INCLUDES  = $(GINCLUDES)  $(LINCLUDES)  $(VINCLUDES)
+-CFLAGS    = $(GCFLAGS)    $(LCFLAGS)    $(VCFLAGS)
++CFLAGS    += $(GCFLAGS)    $(LCFLAGS)    $(VCFLAGS)
+ 
+ AFLAGS    = $(GAFLAGS)    $(LAFLAGS)    $(VAFLAGS)
+ ADEFS     = $(GADEFS)     $(LADEFS)     $(VADEFS)
+@@ -48,7 +48,7 @@
+ # Global CFLAGS
+ #
+ ifeq ("@GLIDE_DEBUG@","true")
+-GLIDE_DEBUG_GCFLAGS = -g -O
++GLIDE_DEBUG_GCFLAGS = -g
+ GLIDE_DEBUG_GDEFS = -DGDBG_INFO_ON -DGLIDE_DEBUG
+ else
+ ifeq ("@FX_GLIDE_BUILD_ARCHITECTURE@","alpha")
+@@ -61,9 +61,8 @@
+ GLIDE_DEBUG_GDEFS = -fomit-frame-pointer \
+ 	                -fexpensive-optimizations -ffast-math -DBIG_OPT
+ else
+-GLIDE_DEBUG_GCFLAGS = -O2 
+-GLIDE_DEBUG_GDEFS = -fomit-frame-pointer -funroll-loops \
+-	                -fexpensive-optimizations -ffast-math -DBIG_OPT
++GLIDE_DEBUG_GCFLAGS = 
++GLIDE_DEBUG_GDEFS = 
+ endif
+ endif
+ endif

@@ -1,0 +1,32 @@
+diff -ru ../Glide3.orig/swlibs/include/make/3dfx.linux.mak ./swlibs/include/make/3dfx.linux.mak
+--- ../Glide3.orig/swlibs/include/make/3dfx.linux.mak	Wed Jul 12 14:35:28 2000
++++ ./swlibs/include/make/3dfx.linux.mak	Sun Jan 13 16:14:11 2002
+@@ -82,15 +82,11 @@
+ GCPTS	       := $(GCOPTS) -fPIC -DPIC
+ endif
+ 
+-# 
+-# BIG_OPT Indicates O3(?) or better is being used. It changes the
+-# assembly language in grDrawTriangle. Larger optimization removes
+-# an extra push in the calling sequence.
+-#
+-CNODEBUG       = -O6 -m486 -fomit-frame-pointer -funroll-loops \
+-	-fexpensive-optimizations -ffast-math -DBIG_OPT
++# Set CNODEBUG and CDEBUG to nothing to respect CFLAGS
++
++CNODEBUG       = 
++CDEBUG	       = 
+ 
+-CDEBUG	       = -g -O
+ GLDOPTS	       = -L$(BUILD_ROOT_SWLIBS)/lib -L/usr/lib
+ # Profiling
+ #CDEBUG	       = -pg -g -O
+@@ -115,7 +111,7 @@
+ LCFLAGS	= $(LCINCS) $(LCDEFS) $(LCOPTS)
+ VCFLAGS	= $(VCINCS) $(VCDEFS) $(VCOPTS)
+ 
+-CFLAGS	= $(CDEBUG) $(GCFLAGS) $(LCFLAGS) $(VCFLAGS)
++CFLAGS	+= $(CDEBUG) $(GCFLAGS) $(LCFLAGS) $(VCFLAGS)
+ 
+ #--------------------------------------------------------------------------
+ # build up global linker flags (LDFLAGS) and libraries (LDLIBS)

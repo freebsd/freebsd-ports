@@ -1,0 +1,12 @@
+diff -ru ../Glide3.orig/h3/minihwc/makefile.autoconf.am ./h3/minihwc/makefile.autoconf.am
+--- ../Glide3.orig/h3/minihwc/makefile.autoconf.am	Wed Jul 26 19:39:18 2000
++++ ./h3/minihwc/makefile.autoconf.am	Sun Jan 13 16:19:03 2002
+@@ -23,6 +23,8 @@
+ #
+ # First, the variable defs.
+ #
++LCFLAGS			= -I@x_includes@
++
+ if GLIDE_DEBUG
+ GLIDE_DEBUG_VDEFS = -DGDBG_INFO_ON
+ endif
