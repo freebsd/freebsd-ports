@@ -1,0 +1,15 @@
+Find paths between two keys in the OpenPGP Web of Trust, and get statistics
+about a key or the whole web.
+
+Observe:
+    * We only search the largest strongly connected set.
+    * No attempt is made to verify the signatures. For you to be able to trust
+      a path, you must verify all signatures yourself.
+    * Even if there exists a path between you and another key, you have to
+      trust the other people in at least one path in the graph to trust the key.
+
+Keys can be specified as normal key IDs (0x12345678 or 12345678), or a number
+of space-separated case-insensitive search terms (i.e. "rms@gnu.org" or
+"@gnu Stallman").
+
+WWW: http://www.lysator.liu.se/~jc/wotsap/
