@@ -22,6 +22,12 @@ TEST_PROGRAM=	big2gb/b2g big2jis/b2j gb2big/g2b gb2jis/g2j jis2big/j2b jis2gb/j2
 
 CFLAGS+=	-fPIC
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64"
+BROKEN=		"Segfault during build on ia64"
+.endif
+
 do-install:
 .for test_program in ${TEST_PROGRAM}
 	@${INSTALL_PROGRAM} ${WRKSRC}/${test_program} ${PREFIX}/bin
@@ -36,4 +42,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/lib/jp-util.h ${PREFIX}/include
 	@${INSTALL_DATA} ${WRKSRC}/lib/lang-util.h ${PREFIX}/include
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
