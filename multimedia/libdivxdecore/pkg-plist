@@ -1,0 +1,4 @@
+include/divx/decore.h
+lib/libdivxdecore.so
+lib/libdivxdecore.so.%%LIB_VERSION%%
+@dirrm include/divx
