@@ -1,0 +1,11 @@
+--- po/Makefile.in.in.orig	Sun May 21 14:41:15 2000
++++ po/Makefile.in.in	Sun May 21 14:41:44 2000
+@@ -19,7 +19,7 @@
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+ datadir = $(prefix)/@DATADIRNAME@
+-localedir = $(datadir)/locale
++localedir = $(gnulocaledir) 
+ gnulocaledir = $(prefix)/share/locale
+ gettextsrcdir = $(prefix)/share/gettext/po
+ subdir = po
