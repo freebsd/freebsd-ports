@@ -21,6 +21,8 @@ NO_BUILD=	yes
 NO_CDROM=	Bungie/Microsoft do not allow charging for Marathon data files.
 
 do-install:
+	@${MKDIR} ${PREFIX}/share/AlephOne
+	@${MKDIR} ${PREFIX}/share/AlephOne/MML
 	${INSTALL_DATA} ${WRKDIR}/Images ${PREFIX}/share/AlephOne/Images
 	${INSTALL_DATA} ${WRKDIR}/MML/Preferences.mml ${PREFIX}/share/AlephOne/MML/Preferences.mml
 	${INSTALL_DATA} ${WRKDIR}/Map ${PREFIX}/share/AlephOne/Map

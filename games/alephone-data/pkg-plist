@@ -4,3 +4,5 @@ share/AlephOne/Map
 share/AlephOne/README
 share/AlephOne/Shapes
 share/AlephOne/Sounds
+@dirrm share/AlephOne/MML
+@dirrm share/AlephOne
