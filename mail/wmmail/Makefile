@@ -8,7 +8,7 @@
 PORTNAME=	wmmail
 PORTVERSION= 	0.63a
 CATEGORIES=	mail windowmaker
-MASTER_SITES=	http://www.eecg.utoronto.ca/~chanb/
+MASTER_SITES=	http://soupnazi.org/FreeBSD/ports/distfiles/
 DISTNAME=	WMMail.app-${PORTVERSION}
 
 MAINTAINER=	jim@FreeBSD.org
