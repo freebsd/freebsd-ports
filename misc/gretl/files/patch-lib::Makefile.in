@@ -1,5 +1,5 @@
---- lib/Makefile.in.orig	Wed Nov 13 03:50:52 2002
-+++ lib/Makefile.in	Mon Nov 18 20:04:11 2002
+--- lib/Makefile.in.orig	Wed Dec  4 11:49:39 2002
++++ lib/Makefile.in	Sat Dec 14 05:26:28 2002
 @@ -14,6 +14,11 @@
  GLIB_LIBS = @GLIB_LIBS@
  have_gtk = @have_gtk@
@@ -42,8 +42,8 @@
  
  $(LIBGRETL): $(OBJS) $(LOBJS) $(CEPHES_OBJ) $(CEPHES_OBJ)
  	$(LIBTOOL) --mode=link $(CC) -o $@ $(LOBJS) $(CEPHES_LOBJ) \
--	-rpath $(prefix)/lib $(LIBS) -version-info 0:0:0
-+	-rpath $(prefix)/lib $(LIBS) -version-info 0:0:0 $(LDFLAGS)
+-	-rpath $(prefix)/lib $(LIBS) -version-info 0:2:0
++	-rpath $(prefix)/lib $(LIBS) -version-info 0:2:0 $(LDFLAGS)
  
  .PHONY: 
  
