@@ -3394,6 +3394,7 @@ ja-lynx-current	ports/japanese/lynx-current
 ja-lyx		ports/japanese/lyx
 ja-lyx-doc	ports/japanese/lyx-doc
 ja-magicpoint	ports/japanese/magicpoint
+ja-mailman	ports/japanese/mailman
 ja-makejvf	ports/japanese/makejvf
 ja-man-doc	ports/japanese/man-doc
 ja-marumoji-fonts	ports/japanese/marumoji-fonts
