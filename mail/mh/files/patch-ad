@@ -1,53 +1,3 @@
-Received: from freefall.cdrom.com (freefall.cdrom.com [192.216.222.4]) by time.cdrom.com (8.6.9/8.6.9) with ESMTP id LAA01600 for <jkh@time.cdrom.com>; Tue, 27 Dec 1994 11:39:33 -0800
-Received: (from gnats@localhost) by freefall.cdrom.com (8.6.9/8.6.6) id LAA20701; Tue, 27 Dec 1994 11:40:03 -0800
-Date: Tue, 27 Dec 1994 11:40:03 -0800
-Message-Id: <199412271940.LAA20701@freefall.cdrom.com>
-From: Mark Murray <mark@grondar.za>
-Reply-To: Mark Murray <mark@grondar.za>
-To: core@freefall.cdrom.com
-Cc: current@freefall.cdrom.com
-Subject: misc/88: MH has no 'local' shared libraries.
-In-Reply-To: Your message of Tue, 27 Dec 1994 21:34:40 +0200
-	<199412271934.VAA13910@grunt.grondar.za>
-
-
->Number:         88
->Category:       misc
->Synopsis:       MH has no 'local' shared libraries.
->Confidential:   no
->Severity:       non-critical
->Priority:       low
->Responsible:    core (FreeBSD core team)
->State:          open
->Class:          change-request
->Submitter-Id:   current-users
->Arrival-Date:   Tue Dec 27 11:40:01 1994
->Originator:     Mark Murray
->Organization:
-GTA
->Release:        FreeBSD 2.1.0-Development i386
->Environment:
-
-I use MH as my mailer of choice (I know, I'm a geek ;-), and I used the
-ports-mail port of MH to compile MH on my -current system.
-
->Description:
-
-I noticed at compile time that MH had not been configured to take
-advantage of the SUN/SYS5 shared libraries (in sbr/), so I did it.
-
->How-To-Repeat:
-
-Compile ports/mail/mh.
-
->Fix:
-	
-Please could some kind soul with commit powers commit the following
-as patch-ad in ports-mail/mh/patches? Obviously those already using
-MH will have to re-ldconfig, as the library gets dumped into 
-/usr/local/lib/libmh.so.3.2, and MH will break if it can't find this.
-
-------8<--------------patch-ad-------------------------------------------
 *** ../mh-6.8.3.orig/conf/FreeBSD	Tue Dec 27 20:36:52 1994
 --- conf/FreeBSD	Tue Dec 27 19:10:35 1994
 ***************
@@ -209,8 +159,3 @@ diff -cdr ../mh-6.8.3.orig/zotnet/mts/lock.c ./zotnet/mts/lock.c
   #ifdef	SYS5
   #define	u_short	ushort
   #define u_long  ulong
-------8<--------------patch-ad-------------------------------------------
->Audit-Trail:
->Unformatted:
-
-
