@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smarty
-PORTVERSION=	2.0
+PORTVERSION=	2.0.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.phpinsider.com/php/code/Smarty/download/
 DISTFILES=	Smarty-${PORTVERSION}${EXTRACT_SUFX}
