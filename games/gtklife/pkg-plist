@@ -190,4 +190,5 @@ share/gtklife/patterns/zips.lif
 %%PORTDOCS%%%%DOCSDIR%%/window.gif
 @dirrm share/gtklife/graphics
 @dirrm share/gtklife/patterns
+@dirrm share/gtklife
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
