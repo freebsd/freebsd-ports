@@ -1,0 +1,26 @@
+--- telnet/telnet.c.orig	Sun Sep 19 11:16:16 1999
++++ telnet/telnet.c	Sun Sep 19 11:16:33 1999
+@@ -752,23 +752,6 @@
+ 
+ #ifdef	TERMCAP
+ char termbuf[1024];
+-
+-	/*ARGSUSED*/
+-	int
+-setupterm(tname, fd, errp)
+-	char *tname;
+-	int fd, *errp;
+-{
+-	if (tgetent(termbuf, tname) == 1) {
+-		termbuf[1023] = '\0';
+-		if (errp)
+-			*errp = 1;
+-		return(0);
+-	}
+-	if (errp)
+-		*errp = 0;
+-	return(-1);
+-}
+ #else
+ #define	termbuf	ttytype
+ extern char ttytype[];
