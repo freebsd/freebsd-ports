@@ -15,6 +15,8 @@ MASTER_SITES=	ftp://ftp.uu.se/pub/unix/networking/mail/emil/ \
 		ftp://ftp.enst.fr/pub/unix/network/mail/ \
 		ftp://sunsite.doc.ic.ac.uk/Mirrors/ftp.uu.se/pub/unix/networking/mail/emil/
 
+MAINTAINER=	ports@FreeBSD.org
+
 GNU_CONFIGURE=	yes
 MAN1=		emil.1 emil.cf.1
 

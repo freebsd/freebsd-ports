@@ -12,6 +12,8 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.cs.uni-sb.de/pub/graphics/vcg/
 DISTFILES=	vcg.1.30.r3.17.tgz
 
+MAINTAINER=	ports@FreeBSD.org
+
 USE_X_PREFIX=	yes
 MANL=		pbmrot90.l pbmshift.l pbm2hp.l vcgdemomaker.l vcg.l xvcg.l
 
