@@ -1,0 +1,20 @@
+--- src/installers/80x86/common/codec.c.orig	Sat Jan 17 17:55:51 1998
++++ src/installers/80x86/common/codec.c	Wed Jun  3 14:27:33 1998
+@@ -267,7 +267,7 @@
+       qw.where_exp = copyexp (dest.where_exp);
+     else
+       qw.where_exp = copyexp (reg0.where_exp);
+-    sh (qw.where_exp) = sha;
++    sh (qw.where_exp) = sh(a);
+     qw.where_off = 0;
+     coder (qw, stack, a);
+     (*op) (sha, qw, mw (b, 0), dest);
+@@ -280,7 +280,7 @@
+       qw.where_exp = copyexp (dest.where_exp);
+     else
+       qw.where_exp = copyexp (reg0.where_exp);
+-    sh (qw.where_exp) = sha;
++    sh (qw.where_exp) = sh(b);
+     qw.where_off = 0;
+     coder (qw, stack, b);
+     (*op) (sha, mw (a, 0), qw, dest);
