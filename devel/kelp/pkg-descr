@@ -1,0 +1,21 @@
+KeLP is designed and maintained by a group at the University of California
+at San Diego.  Associate Professor Scott B. Baden of Computer Science and
+Engineering is the director of the KeLP Project KeLP was part of the
+dissertation topic of Stephen J. Fink (Ph.D. 1998) and portions of a
+prototype of KeLP were developed by Scott R. Kohn (Ph.D. 1995). KeLP is
+supported by the NSF, the University of California, San Diego, and the
+National Partnership for Advanced Computational Infrastructure (NPACI).
+KeLP is part of NPACI's Kommon Adaptive Runtime Environment (KARTE) effort.
+
+KeLP (Kernel Lattice Parallelism) is an infrastructure/interface to
+FORTRAN 77 or C numeric kernels using FORTRAN array ordering. It is usually
+used for structured block-irregular grid computational applications.  
+ KeLP uses coarse-grain data parallelism for its parallel model and should
+be run on message-passing parallel computers.
+KeLP is targeted towards adaptive mesh refinement applications and
+single-grid calculations requiring uniform or non-uniform decompositions
+across machine processors. Applications manipulate data decompositions as
+language objects through region calculus operations.
+
+WWW: http://www-cse.ucsd.edu/groups/hpcl/scg/kelp/index.html
+- Keichii <keichii@iteration.net>

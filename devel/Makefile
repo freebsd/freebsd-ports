@@ -121,6 +121,7 @@
     SUBDIR += kdbg
     SUBDIR += kdelibdocs
     SUBDIR += kdevelop
+    SUBDIR += kelp
     SUBDIR += kpp
     SUBDIR += ktranslator
     SUBDIR += lclint

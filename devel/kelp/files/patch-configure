@@ -1,0 +1,25 @@
+--- configure.orig	Sun Nov 26 18:36:01 2000
++++ configure	Tue Dec  5 18:23:11 2000
+@@ -21,9 +21,9 @@
+ 	if [ -d /opt/SUNWhpc ] ; then
+ 		# user has hpc environment
+ 		MACHID="${MACHID}hpc" ;
+-	elif [ -x `which mpirun` -a -x `which g++` ] ; then
++	elif [ -x `which %LOCALBASE%/mpich/bin/mpirun` -a -x `which g++` ] ; then
+ 		# user has g++ and mpich environment
+-		MACHID="${MACHID}g++mpich" ;
++		MACHID="x86-g++-linux" ;
+ 	fi
+ fi
+ 
+@@ -33,8 +33,8 @@
+ ARCHITECTURE=""
+ 
+ if [ -n "$1" ] ; then
+-	if [ -f config/${1} ] ; then
+-		ARCHITECTURE=$1 ;
++	if [ -f config/x86-g++-linux ] ; then
++		ARCHITECTURE=x86-g++-linux ;
+ 		echo "found ${ARCHITECTURE}" ;
+ 	else
+ 		echo "ERROR.  config/${1} not found" ;
