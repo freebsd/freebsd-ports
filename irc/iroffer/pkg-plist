@@ -1,0 +1,6 @@
+bin/iroffer
+share/doc/iroffer/README
+share/doc/iroffer/WHATSNEW
+share/doc/iroffer/iroffer.cron
+share/doc/iroffer/sample.config
+@dirrm share/doc/iroffer

@@ -11,6 +11,7 @@
     SUBDIR += ircII
     SUBDIR += ircatlite
     SUBDIR += ircd-hybrid
+    SUBDIR += iroffer
     SUBDIR += irssi
     SUBDIR += kvirc
     SUBDIR += muh
