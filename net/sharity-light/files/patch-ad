@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Jan  4 19:07:31 1999
-+++ Makefile	Mon Jan  4 19:08:07 1999
+--- Makefile.orig	Tue Nov 24 05:52:13 1998
++++ Makefile	Sat Jul 24 23:04:14 1999
 @@ -12,11 +12,11 @@
  ##############################################################################
  
@@ -29,3 +29,21 @@
  
  # For NetBsd
  #CFLAGS = -Wall -O2 -DNETBSD
+@@ -66,7 +66,7 @@
+ OFILES = proc.o sock.o rumba.o psinode.o kernel.o smb_abstraction.o fo_nfs.o
+ 
+ .c.o:
+-	$(CC) $(CFLAGS) $(ARCH) -c -o $*.o $<
++	$(CC) $(CFLAGS) -c -o $*.o $<
+ 
+ all: $(NAME)
+ 
+@@ -74,7 +74,7 @@
+ 	(cd nfs; $(MAKE) "CFLAGS=$(CFLAGS)" "CC=$(THE_CC)" "ARCH=$(ARCH)" "RPC_WARNFLAGS=$(RPC_WARNFLAGS)")
+ 
+ $(NAME): $(OFILES) nfs_dir
+-	$(CC) $(LDFLAGS) $(ARCH) -o $(NAME) $(OFILES) nfs/nfs.o $(LIBS)
++	$(CC) $(LDFLAGS) -o $(NAME) $(OFILES) nfs/nfs.o $(LIBS)
+ 
+ clean:
+ 	rm -f $(OFILES)
