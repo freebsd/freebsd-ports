@@ -764,6 +764,8 @@ share/sgml/docbook/dsssl/modular/print/docbook.dsl
 share/sgml/docbook/dsssl/modular/print/notoc.dsl
 share/sgml/docbook/dsssl/modular/print/plain.dsl
 share/sgml/docbook/dsssl/modular/print/version.dsl
+@unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove %%DTDDIR%%/catalog
+@exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%DTDDIR%%/catalog
 @dirrm share/sgml/docbook/dsssl/modular/print
 @dirrm share/sgml/docbook/dsssl/modular/olink
 @dirrm share/sgml/docbook/dsssl/modular/lib
