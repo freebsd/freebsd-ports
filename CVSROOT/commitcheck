@@ -6,7 +6,7 @@
 # BEWARE:  If you are "borrowing" this code for use on another cvs
 # repository, please make sure you change all references to '@FreeBSD.org'
 # in the log_accum script.  Otherwise your commit messages will be sent
-# to 'cvs-committers@freebsd.org' etc.  This could be highly embarresing. :-)
+# to 'cvs-committers@freebsd.org' etc.  This could be highly embarrassing. :-)
 #
 case "`hostname | tr A-Z a-z`" in
 freefall.freebsd.org|internat.freebsd.org)
@@ -47,7 +47,7 @@ else
 fi
 
 #
-# Last minute checks and preperations for log_accum.pl later.  This
+# Last minute checks and preparations for log_accum.pl later.  This
 # records the last directory in this commit so that log_accum knows when
 # to finish coalescing commit messages and mail it.
 #
