@@ -3,7 +3,7 @@
 # Date created:         Mar 26 1995
 # Whom:                 jmacd@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.10 1997/04/30 03:48:10 asami Exp $
+# $Id: Makefile,v 1.11 1998/10/14 01:40:04 jseger Exp $
 #
 
 DISTNAME=       mit-scheme
@@ -15,5 +15,7 @@ DISTFILES=	scheme-microcode+dist-7.3-freebsd.tgz
 MAINTAINER= 	jmacd@FreeBSD.ORG
 
 BROKEN_ELF=	yes
+
+USE_XLIB=	yes
 
 .include <bsd.port.mk>
