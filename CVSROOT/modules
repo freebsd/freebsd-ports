@@ -9373,6 +9373,7 @@ wolfpack	ports/games/wolfpack
 word2x		ports/textproc/word2x
 wordnet		ports/textproc/wordnet
 wordplay	ports/games/wordplay
+words		ports/textproc/words
 worker		ports/x11-fm/worker
 workman		ports/audio/workman
 workplace	ports/x11-fm/workplace
