@@ -3,24 +3,21 @@
 # Date created:         08 August 1995
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.24 1998/04/08 09:23:57 tg Exp $
+# $Id: Makefile,v 1.25 1998/04/09 10:51:32 tg Exp $
 #
 
-DISTNAME=       python1.5
-PKGNAME=        python-1.5
+DISTNAME=       pyth151
+PKGNAME=        python-1.5.1
 CATEGORIES=	lang tk80
 MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
 		ftp://ftp.cwi.nl/pub/python/src/
-
-PATCH_SITES=	http://www.python.org/1.5/
-PATCHFILES=	all.txt
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	tg@FreeBSD.org
 
 LIB_DEPENDS=	${TK_DEPENDS}
 
-DIST_SUBDIR=	python
-WRKSRC=		${WRKDIR}/Python-1.5
+WRKSRC=		${WRKDIR}/Python-1.5.1
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fpectl
 MAKE_FLAGS=	'OPT=${CFLAGS}'
