@@ -19,29 +19,36 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WCONF=		${WRKSRC}/devtools/Site
 PLIST=		${WRKDIR}/.PLIST.more
 
-.if defined(SENDMAIL_WITH_TSL)
+.if defined(SENDMAIL_WITH_TLS)
 USE_OPENSSL=	yes
 .endif
 .if defined(SENDMAIL_WITH_SASL)
 BUILD_DEPENDS=	${LOCALBASE}/sbin/pwcheck:${PORTSDIR}/security/cyrus-sasl
+.endif
+.if defined(SENDMAIL_WITH_SFIO)
+BUILD_DEPENDS=	${LOCALBASE}/lib/libsfio.a:${PORTSDIR}/devel/sfio
 .endif
 
 .if exists(${DESTDIR}/etc/mail/mailer.conf)
 pre-configure:
 	${SED} -e "s=%%PREFIX%%=${PREFIX}=" \
 		${FILESDIR}/site.config.m4 > ${WCONF}/site.config.m4
-.if defined(SENDMAIL_WITH_TSL)
+.if defined(SENDMAIL_WITH_TLS)
 	${CAT} ${FILESDIR}/site.config.m4.tls >> ${WCONF}/site.config.m4
 .endif
 .if defined(SENDMAIL_WITH_SASL)
 	${SED} -e "s=%%LOCALBASE%%=${LOCALBASE}=" \
 		${FILESDIR}/site.config.m4.sasl >>${WCONF}/site.config.m4
 .endif
+.if defined(SENDMAIL_WITH_SFIO)
+	${SED} -e "s=%%LOCALBASE%%=${LOCALBASE}=" \
+		${FILESDIR}/site.config.m4.sfio >>${WCONF}/site.config.m4
+.endif
 .else
 pre-configure:
 	${SED} -e "s=%%PREFIX%%=${PREFIX}=" \
 		${FILESDIR}/site.config.m4.pre4 > ${WCONF}/site.config.m4
-.if defined(SENDMAIL_WITH_TSL)
+.if defined(SENDMAIL_WITH_TLS)
 	${SED} -e "s=%%LOCALBASE%%=${LOCALBASE}=" \
 		${FILESDIR}/site.config.m4.ssl >> ${WCONF}/site.config.m4
 .endif
