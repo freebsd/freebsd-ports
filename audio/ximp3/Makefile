@@ -9,7 +9,8 @@
 PORTNAME=	ximp3
 PORTVERSION=	0.1.14
 CATEGORIES=	audio
-MASTER_SITES=	http://home.swipnet.se/~w-10246/unix/
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	apps/sound/players/mp3
 
 MAINTAINER=	ports@FreeBSD.org
 
