@@ -1,5 +1,4 @@
 GFax is a front end fax program that performs as the familiar pop-up fax
-manager when one prints to a fax printer.  GFax works with all X programs
-that use lpr as the printer interface--even the command line.
+manager when one prints to a fax printer.
 
 WWW: http://www.cowlug.org/gfax/
