@@ -5,12 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=	Xft
-PORTVERSION=	2.1.2
-PORTREVISION=	1
+PORTNAME=	libXft
+PORTVERSION=	2.1.5
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://pdx.freedesktop.org/software/fontconfig/releases/
-DISTNAME=	xft-${PORTVERSION}
+MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A client-sided font API for X applications

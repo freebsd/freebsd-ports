@@ -24,6 +24,7 @@
     SUBDIR += jmk-x11-fonts
     SUBDIR += lfpfonts-fix
     SUBDIR += lfpfonts-var
+    SUBDIR += libXft
     SUBDIR += linux-fontconfig
     SUBDIR += linux-urw-fonts
     SUBDIR += mkbold
