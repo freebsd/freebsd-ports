@@ -1,5 +1,5 @@
 --- tape-src/Makefile.in.orig	Mon Feb 24 21:45:25 2003
-+++ tape-src/Makefile.in	Sun Apr 13 21:03:21 2003
++++ tape-src/Makefile.in	Tue Apr 15 19:54:39 2003
 @@ -158,7 +158,8 @@
  lib_LTLIBRARIES = libamtape.la
  LIB_EXTENSION = la
@@ -20,16 +20,3 @@
  PROGRAMS = $(sbin_PROGRAMS)
  
  amdd_SOURCES = amdd.c
-@@ -517,7 +519,11 @@
- 
- install-data-am:
- 
--install-exec-am: install-libLTLIBRARIES install-sbinPROGRAMS
-+@WANT_CLIENT_TRUE@install-exec-am: @WANT_CLIENT_TRUE@install-libLTLIBRARIES \
-+	install-sbinPROGRAMS
-+	@$(NORMAL_INSTALL)
-+	$(MAKE) $(AM_MAKEFLAGS) install-exec-hook
-+@WANT_SERVER_TRUE@install-exec-am: install-sbinPROGRAMS
- 	@$(NORMAL_INSTALL)
- 	$(MAKE) $(AM_MAKEFLAGS) install-exec-hook
- 
