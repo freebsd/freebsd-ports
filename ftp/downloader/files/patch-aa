@@ -1,26 +1,92 @@
---- Makefile.orig	Sat Jan 29 05:02:17 2000
-+++ Makefile	Sun Feb 13 13:18:26 2000
-@@ -1,21 +1,15 @@
--CXX = c++
+--- Makefile.orig	Thu Apr 20 11:24:29 2000
++++ Makefile	Sat Apr 22 06:00:00 2000
+@@ -1,40 +1,19 @@
+-CXXFLAGS=-Wall -O2 -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS
+-# -ggdb
+-#-lefence
++CXXFLAGS += -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS
+ 
+-
+-export CXXFLAGS LOCALEDIR
+-
+-#CXX = c++
++CXX ?= c++
  
  NLS=-DENABLE_NLS # Remove or comment this line to disable gettext
 -ifeq ($(DEST),)
 -DEST=/usr/local
 -endif
-+DEST?=$(PREFIX)
- LOCALEDIR=$(DEST)/share/locale
- PTHREAD=-lpthread
--GTKCONFIG=gtk-config
- GLIBCONFIG=glib-config
++DEST=${PREFIX}
  
- #next strings were added for BSD support
+ LOCALEDIR=$(DEST)/share/locale
+-PTHREAD=-lpthread
+-GTKCONFIG=gtk-config
+-GLIBCONFIG=glib-config
+-MAKE=make
+-
+-#next strings were added for BSD support
 -ifeq ($(OSTYPE),BSD)
  PTHREAD=-pthread
- GTKCONFIG=gtk12-config
+-GTKCONFIG=gtk12-config
+-MAKE=gmake
 -endif
++MSGFMT=${MSGFMT_CMD}
  
--CFLAGS=-Wall -O2 -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS
-+CFLAGS+=-Wall -O2 -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS
- GTKLIBS=`$(GTKCONFIG) --libs` 
- GTKFLAGS=`$(GTKCONFIG) --cflags` `$(GLIBCONFIG) --cflags`
- LIBS=$(PTHREAD) $(GTKLIBS)
+-ifeq ($(OSTYPE),FreeBSD)
+-PTHREAD=-pthread
+-GTKCONFIG=gtk12-config
+-MAKE=gmake
+-endif
+-
+-GTKLIBS=$(shell $(GTKCONFIG) --libs) $(shell $(GLIBCONFIG) --libs)
+-GTKFLAGS=$(shell $(GTKCONFIG) --cflags) $(shell $(GLIBCONFIG) --cflags)
++GTKLIBS=`${GTK_CONFIG} --libs`
++GTKFLAGS=`${GTK_CONFIG} --cflags`
+ LDFLAGS=$(PTHREAD) $(GTKLIBS)
+-CXXFLAGS += $(GTKFLAGS) $(NLS) -DLOCALE=\"${LOCALEDIR}\"
++
++EXECC=$(CXX) $(CXXFLAGS) $(GTKFLAGS) $(NLS) -DLOCALE=\"${LOCALEDIR}\"
+ 
+ FACE=face/lmenu.o face/list.o face/addd.o face/graph.o face/log.o \
+ 	face/prefs.o face/buttons.o face/about.o face/edit.o \
+@@ -50,23 +29,20 @@
+ all:
+ 	-rm -f nt
+ 	$(MAKE) nt
+-	[ -z "$(NLS)" ] || $(MAKE) -C po
+-	$(MAKE) strip
++	[ -z "$(NLS)" ] || cd po && MSGFMT=$(MSGFMT) $(MAKE)
+ 
+ $(FACE):
+-	$(MAKE) -C face
++	cd face && EXECC="$(EXECC)" $(MAKE)
+ 
+ nt: $(MODULES)
+-	$(MAKE) -C face
+-	$(CXX) -lstdc++ $(MODULES) nt.cc -o nt $(CXXFLAGS) $(GTKLIBS) $(PTHREAD)
+-
+-strip: nt
+-	strip nt
+-
++	$(EXECC) $(MODULES) nt.cc -o nt $(LDFLAGS)
+ 
+ install: all
+-	install -c -m755 nt $(DEST)/bin
+-	[ -z "$(NLS)" ] || $(MAKE) install -C po
++	${BSD_INSTALL_PROGRAM} nt $(DEST)/bin
++	[ -z "$(NLS)" ] || cd po && LOCALEDIR=$(LOCALEDIR) $(MAKE) install
++
++.cc.o:
++	$(EXECC) -c $<
+ 
+ clean: 
+ 	-rm -f *.o nt TAGS *~
+@@ -79,8 +55,3 @@
+ uninstall:
+ 	-rm -f $(DEST)/bin/nt
+ 	$(MAKE) uninstall -C po
+-
+-Makefile.dep:
+-	$(CXX) $(CXXFLAGS) -MM *.cc > Makefile.dep
+-
+--include Makefile.dep
