@@ -1,0 +1,20 @@
+--- doc/newalias.1.orig	Fri Dec 29 20:56:44 2000
++++ doc/newalias.1	Sun Jan  7 04:34:29 2001
+@@ -73,13 +73,13 @@
+ .br
+ $HOME/.elm/aliases              alias data file for user
+ .br
+-/usr/local/lib/aliases.text     alias source for system
++#LIB#/aliases.text     alias source for system
+ .br
+-/usr/local/lib/aliases.dir      alias dbz directory for system
++#LIB#/aliases.dir      alias dbz directory for system
+ .br
+-/usr/local/lib/aliases.pag      alias data hash table for system
++#LIB#/aliases.pag      alias data hash table for system
+ .br
+-/usr/local/lib/aliases          alias data file for system
++#LIB#/aliases          alias data file for system
+ .SH AUTHOR
+ Elm Development Group
+ .SH SEE ALSO

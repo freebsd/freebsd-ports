@@ -1,3 +1,5 @@
-       Elm is an interactive screen-oriented mailer program  that
-       supersedes mail and mailx. This is unofficial clone.
+An interactive screen-oriented mailer program that supersedes mail
+and mailx. This version is an unofficial clone with enhanced MIME
+and character set support.  others new features include PGP, IMAP.
+
 WWW: http://www.ozone.fmi.fi/KEH/

@@ -1,23 +1,20 @@
 #!/bin/sh -
 #
 #       pre-configure script for Elm port to FreeBSD
+#
 # $FreeBSD$
 
-PortsDir=$PORTSDIR
-CurDir=$CURDIR
-WrkSrc=$WRKSRC
+[ -r /usr/include/inttypes.h ] && has_inttypes=define || has_inttypes=undef
 
-has_inttypes=undef
-[ -r /usr/include/inttypes.h ] && has_inttypes=define
-
-	cat > ${WrkSrc}/config.sh << EOF
+	cat > ${WRKSRC}/config.sh << EOF
 #!/bin/sh
 # config.sh
 # This file was produced by running the Configure script.
 
 Log='\$Log'
 Header='\$Header'
-bin="${PREFIX}/bin"
+install_prefix='${PREFIX}'
+bin='${PREFIX}/bin'
 contains='grep'
 cppstdin='/usr/bin/cpp'
 cppminus=''
@@ -39,7 +36,7 @@ n='-n'
 c=''
 orderlib='false'
 ranlib=':'
-package='elm2'
+package='elm2.4me+'
 pager='builtin++'
 startsh='#!/bin/sh'
 define='define'
@@ -114,13 +111,14 @@ tar
 tbl
 test
 troff
+gtroff
 uname
 uuname
 vi
 '
 test='/bin/test'
 inews=''
-ispell="${PREFIX}/bin/ispell"
+ispell='${PREFIX}/bin/ispell'
 egrep='/usr/bin/egrep'
 more='/usr/bin/more'
 pg='pg'
@@ -130,7 +128,7 @@ mailx='mailx'
 mail=''
 cpp='/usr/bin/cpp'
 perl=''
-emacs='emacs'
+emacs='${PREFIX}/bin/emacs'
 ls='/bin/ls'
 rmail='/bin/rmail'
 sendmail='/usr/sbin/sendmail'
@@ -164,7 +162,7 @@ compress='/usr/bin/compress'
 execmail=''
 libswanted='sun nls c_s'
 noaddlib='yes'
-c_date='Mon Aug 14 15:54:12 MSD 2000'
+c_date='Sun Jan  7 05:51:19 CET 2001'
 d_ascii='undef'
 d_broke_ctype='undef'
 d_calendar='define'
@@ -174,7 +172,7 @@ d_content='undef'
 d_crypt='define'
 cryptlib='-lcrypt'
 d_cuserid='undef'
-d_disphost='undef'
+d_disphost='define'
 d_domname='define'
 d_usegetdom='undef'
 d_errlst='define'
@@ -186,23 +184,23 @@ has_fcntl='define'
 d_ftruncate='define'
 d_gethname='define'
 d_douname='undef'
-d_host_comp='undef'
-ign_hname='n'
+ign_hname=''
 d_havetlib='define'
 termlib='-ltermlib'
+i_curses='undef'
+i_term='define'
 d_index='undef'
-d_internet='define'
+d_internet=''
 d_ispell='define'
-ispell_path="${PREFIX}/bin/ispell"
-ispell_options=''
+ispell_path='${PREFIX}/bin/ispell'
+ispell_options='-x'
 d_locale='define'
 d_nl_types='define'
 d_msgcat='define'
-d_usenls='undef'
+d_usenls=''
 d_mallocvoid='define'
 d_mboxedit='define'
-metamail_path='none'
-defencoding=''
+metamail_path='${PREFIX}/bin/metamail'
 d_8bitmime='define'
 d_binarymime='undef'
 d_dsn='define'
@@ -215,10 +213,9 @@ d_noxheader='undef'
 d_pidcheck='define'
 d_ptem='undef'
 d_putenv='define'
-d_remlock='undef'
 maxattempts='6'
 d_setgid='define'
-d_savegrpmboxid='undef'
+d_savegrpmboxid='define'
 mailermode='2755'
 d_sigvec='undef'
 d_sigvectr='undef'
@@ -247,6 +244,8 @@ d_termio='undef'
 d_termios='define'
 d_utimbuf='define'
 d_vfork='define'
+d_directory='define'
+d_directyry_type='USE_DIRENT'
 defbatsub='no subject (file transmission)'
 defeditor='/usr/bin/vi'
 editoropts=''
@@ -255,22 +254,20 @@ phostname='hostname'
 mydomain=''
 autohostname='define'
 i_memory='define'
-i_stdarg='define'
-i_stdlib='define'
 i_time='define'
 i_systime='define'
 d_systimekernel='undef'
 i_unistd='define'
 i_utime='define'
 i_sysutime='undef'
-lib="${PREFIX}/lib"
+lib='${PREFIX}/lib/elm'
 libc='/usr/lib/libc.so'
 linepr='/usr/bin/lp'
 maildir='/var/mail'
 mailer='/usr/sbin/sendmail'
 mailgrp='mail'
-mansrc="${PREFIX}/man/man1"
-catmansrc="${PREFIX}/man/cat1"
+mansrc='${PREFIX}/man/man1'
+catmansrc='${PREFIX}/man/cat1'
 manext='.1'
 manext_choice='.1'
 catmanext='.1'
@@ -280,7 +277,7 @@ manroff='/usr/bin/nroff'
 manroffopts=''
 suffix=''
 packer=''
-optimize="\$CFLAGS"
+optimize='${CFLAGS}'
 ccflags=''
 cppflags=''
 ldflags='-s'
@@ -307,15 +304,14 @@ d_xenix='undef'
 d_bsd='define'
 locale='locale'
 d_pgp='define'
-pgp="${PREFIX}/bin/pgp"
-pgp2_path="${PREFIX}/bin/pgp"
-pgp5_dir='none'
-gpg_path='none'
-special_path='${PREFIX}/bin'
+pgp='${PREFIX}/bin/pgp'
+pgp2_path='${PREFIX}/bin/pgp'
+pgp5_dir='${PREFIX}/bin'
+gpg_path='${PREFIX}/bin/gpg'
+special_path='/usr/bin'
+special_path2='${PREFIX}/bin'
 locale_dir='/usr/share/locale'
 CONFIG=true
 EOF
 
 exit 0
-# END
-
