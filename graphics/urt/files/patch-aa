@@ -139,8 +139,8 @@
 -INCPBMPLUS = -I$(PBMDIR) -I$(PBMDIR)/ppm -I$(PBMDIR)/pgm -I$(PBMDIR)/pbm
 -LIBPBMPLUS = $(PBMDIR)/ppm/libppm.a $(PBMDIR)/pgm/libpgm.a \
 -		$(PBMDIR)/pbm/libpbm.a 
-+INCPBMPLUS = -I${X11BASE}/include
-+LIBPBMPLUS = -L${X11BASE}/lib -lppm -lpgm -lpbm
++INCPBMPLUS = -I${LOCALBASE}/include
++LIBPBMPLUS = -L${LOCALBASE}/lib -lppm -lpgm -lpbm
  #endif
  
  #ifdef SUNRASTER|SUNTOOLS|TAAC1
@@ -152,10 +152,10 @@
 -INCTIFF = -I$(TIFFDIR)
 -LIBTIFF = $(TIFFDIR)/libtiff.a
 +##defpath TIFFDIR
-+INCTIFF = -I${PREFIX}/include
-+LIBTIFF = -L${PREFIX}/lib -ltiff
++INCTIFF = -I${LOCALBASE}/include
++LIBTIFF = -L${LOCALBASE}/lib -ltiff
 +.if ${PORTOBJFORMAT} == "elf"
-+LIBTIFF +=-Wl,-rpath,${PREFIX}/lib
++LIBTIFF +=-Wl,-rpath,${LOCALBASE}/lib
 +.endif
  #endif
  
