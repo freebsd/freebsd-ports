@@ -22,11 +22,15 @@ share/doc/diveintopython/dialect_re.html
 share/doc/diveintopython/dialect_sgmllib.html
 share/doc/diveintopython/dialect_summary.html
 share/doc/diveintopython/diveintopython.css
+share/doc/diveintopython/download/diveintopython-common-%%VERSION%%.zip
 share/doc/diveintopython/download/diveintopython-examples-%%VERSION%%.zip
+share/doc/diveintopython/download/diveintopython-help-%%VERSION%%.zip
 share/doc/diveintopython/download/diveintopython-html-%%VERSION%%.zip
 share/doc/diveintopython/download/diveintopython-html-flat-%%VERSION%%.zip
 share/doc/diveintopython/download/diveintopython-pdf-%%VERSION%%.zip
 share/doc/diveintopython/download/diveintopython-text-%%VERSION%%.zip
+share/doc/diveintopython/download/diveintopython-word-%%VERSION%%.zip
+share/doc/diveintopython/download/diveintopython-xml-%%VERSION%%.zip
 share/doc/diveintopython/examples.html
 share/doc/diveintopython/fdl.html
 share/doc/diveintopython/fdl_aggregation.html
@@ -77,14 +81,19 @@ share/doc/diveintopython/images/note.png
 share/doc/diveintopython/images/tip.png
 share/doc/diveintopython/images/warning.png
 share/doc/diveintopython/index.html
+share/doc/diveintopython/kgp_alltogether.html
 share/doc/diveintopython/kgp_attributes.html
+share/doc/diveintopython/kgp_cache.html
+share/doc/diveintopython/kgp_child.html
 share/doc/diveintopython/kgp_commandline.html
 share/doc/diveintopython/kgp_divein.html
+share/doc/diveintopython/kgp_handler.html
 share/doc/diveintopython/kgp_openanything.html
 share/doc/diveintopython/kgp_packages.html
 share/doc/diveintopython/kgp_parse.html
 share/doc/diveintopython/kgp_search.html
 share/doc/diveintopython/kgp_stdio.html
+share/doc/diveintopython/kgp_summary.html
 share/doc/diveintopython/kgp_unicode.html
 share/doc/diveintopython/license.html
 share/doc/diveintopython/license_terms.html
@@ -132,6 +141,7 @@ share/examples/diveintopython/BaseHTMLProcessor.py
 share/examples/diveintopython/LICENSE.txt
 share/examples/diveintopython/apihelper.py
 share/examples/diveintopython/apihelpertest.py
+share/examples/diveintopython/argecho.py
 share/examples/diveintopython/autosize.py
 share/examples/diveintopython/builddialectexamples.py
 share/examples/diveintopython/colorize.py
@@ -187,6 +197,7 @@ share/examples/diveintopython/roman/stage8/romantest83.py
 share/examples/diveintopython/roman/stage9/roman9.py
 share/examples/diveintopython/roman/stage9/romantest9.py
 share/examples/diveintopython/romantest.py
+share/examples/diveintopython/uncurly.py
 share/examples/diveintopython/unicode2koi8r.py
 share/examples/diveintopython/urllister.py
 @dirrm share/examples/diveintopython/roman/stage9
