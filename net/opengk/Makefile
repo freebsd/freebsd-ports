@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	opengk
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.openh323.org/bin/ \
 		http://www.de.openh323.org/bin/ \
 		http://www.ru.openh323.org/bin/
-DISTNAME=	opengk_1.1.1
+DISTNAME=	opengk_1.2.0
 
 MAINTAINER=	roger@FreeBSD.org
 
