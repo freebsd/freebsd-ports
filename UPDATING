@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050126:
+  AFFECTS: users of x11-wm/xfce4
+  AUTHOR: oliver@FreeBSD.org
+
+  If you use Xorg 6.8.1: Make shure there is an /tmp/.ICE-unix with propper
+  rights. For further informations about that, please refer to 20041229
+  Please update all your plugins as well when you update from 4.0.6 to 4.2
+  They all need recompiling to link against the new xfce libraries
+
 20050122:
   AFFECTS: users of PostgreSQL
   AUTHOR: seanc@FreeBSD.org

@@ -6,37 +6,27 @@
 #
 
 PORTNAME=	xfce4-session
-PORTVERSION=	0.1.4
-PORTREVISION=	5
+PORTVERSION=	4.2.0
+PORTREVISION=	0
 CATEGORIES=	x11-wm xfce
-MASTER_SITES=	http://echobase.homeunix.net/~bmeurer/tmp/xfce4-session/ \
-		http://matt.nerim.net/xfce-goodies/
+MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
+		http://spuriousinterrupt.org/projects/xfce4/files/mirror/xfce-${PORTVERSION}/ \
+		http://public.fh-wolfenbuettel.de/~luedickj/xfce4/xfce-${PORTVERSION}/
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	matt@bsdfly.org
-COMMENT=	XFce 4 Session Manager
+MAINTAINER=	oliver@FreeBSD.org
+COMMENT=	Session manager for the Xfce 4 desktop environment
 
 BUILD_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager
 LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
-		xfcegui4.1:${PORTSDIR}/x11-toolkits/libxfce4gui
+		xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui
 
-USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
-USE_INC_LIBTOOL_VER=13
-INSTALLS_SHLIB=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CFLAGS=-I${LOCALBASE}/include \
-		CPPFLAGS=-I${LOCALBASE}/include \
-		LIBS=-L${LOCALBASE}/lib
+USE_LIBTOOL_VER=15
+INSTALLS_SHLIB= yes
 
-MAN1=		xfce4-session.1 xfce4-shutdown.1
-
-DOCS=		AUTHORS NEWS README TODO
-
-.if !defined(NOPORTDOCS)
-post-install:
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
-.endif
+MAN1=		xfce4-session.1 xfce4-session-logout.1
 
 .include <bsd.port.mk>

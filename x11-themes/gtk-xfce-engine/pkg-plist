@@ -1,13 +1,22 @@
 lib/gtk-2.0/2.4.0/engines/libxfce.so
+share/themes/Xfce-4.0/gtk-2.0/gtkrc
+share/themes/Xfce-4.0/ICON.png
+share/themes/Xfce-4.0/README.html
 share/themes/Xfce-b5/ICON.png
 share/themes/Xfce-b5/README.html
 share/themes/Xfce-b5/gtk-2.0/gtkrc
 share/themes/Xfce-basic/ICON.png
 share/themes/Xfce-basic/README.html
 share/themes/Xfce-basic/gtk-2.0/gtkrc
+share/themes/Xfce-cadmium/gtk-2.0/gtkrc
+share/themes/Xfce-cadmium/ICON.png
+share/themes/Xfce-cadmium/README.html
 share/themes/Xfce-curve/ICON.png
 share/themes/Xfce-curve/README.html
 share/themes/Xfce-curve/gtk-2.0/gtkrc
+share/themes/Xfce-dawn/gtk-2.0/gtkrc
+share/themes/Xfce-dawn/ICON.png
+share/themes/Xfce-dawn/README.html
 share/themes/Xfce-kde2/ICON.png
 share/themes/Xfce-kde2/README.html
 share/themes/Xfce-kde2/gtk-2.0/gtkrc
@@ -35,7 +44,14 @@ share/themes/Xfce-winter/README.html
 share/themes/Xfce/ICON.png
 share/themes/Xfce/README.html
 share/themes/Xfce/gtk-2.0/gtkrc
+@dirrm share/themes/Xfce-4.0/gtk-2.0
+@dirrm share/themes/Xfce-4.0
 @dirrm share/themes/Xfce/gtk-2.0
+@unexec rmdir %D/share/themes/Xfce 2>/dev/null || true
+@dirrm share/themes/Xfce-cadmium/gtk-2.0
+@dirrm share/themes/Xfce-cadmium
+@dirrm share/themes/Xfce-dawn/gtk-2.0
+@dirrm share/themes/Xfce-dawn
 @dirrm share/themes/Xfce-winter/gtk-2.0
 @dirrm share/themes/Xfce-winter
 @dirrm share/themes/Xfce-stellar/gtk-2.0
@@ -58,5 +74,4 @@ share/themes/Xfce/gtk-2.0/gtkrc
 @dirrm share/themes/Xfce-basic
 @dirrm share/themes/Xfce-b5/gtk-2.0
 @dirrm share/themes/Xfce-b5
-@dirrm share/themes/Xfce
 @unexec rmdir %D/lib/gtk-2.0/2.4.0/engines 2>/dev/null || true

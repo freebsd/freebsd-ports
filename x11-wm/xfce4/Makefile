@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	xfce
-PORTVERSION=	4.0.6
-PORTREVISION=	1
+PORTVERSION=	4.2.0
+PORTREVISION=	0
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -18,7 +18,10 @@ COMMENT=	The "meta-port" for the XFce 4 desktop environment
 
 RUN_DEPENDS=	${X11BASE}/lib/xfce4/mcs-plugins/ui_plugin.so:${PORTSDIR}/sysutils/xfce4-mcs-plugins \
 		xfwm4:${PORTSDIR}/x11-wm/xfce4-wm \
+		xfce4-appfinder:${PORTSDIR}/misc/xfce4-appfinder \
+		xfce4-session:${PORTSDIR}/x11-wm/xfce4-session \
 		xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel \
+		${X11BASE}/lib/xfce4/panel-plugins/libtriggerlauncher.so:${PORTSDIR}/x11/xfce4-trigger-launcher \
 		xfdesktop:${PORTSDIR}/x11-wm/xfce4-desktop \
 		startxfce4:${PORTSDIR}/sysutils/xfce4-utils \
 		xffm:${PORTSDIR}/x11-fm/xfce4-fm \
@@ -39,9 +42,7 @@ PLIST_SUB+=	GDM="@comment "
 
 .if !defined(WITHOUT_EXTRAS)
 .if !defined(WITHOUT_THEMES)
-RUN_DEPENDS+=	${X11BASE}/share/xfce4/themes/BeOS/terminal.png:${PORTSDIR}/misc/xfce4-panel-themes \
-		${X11BASE}/share/xffm/pixmaps/xfce/mime.xml:${PORTSDIR}/x11-fm/xfce4-fm-icons \
-		${X11BASE}/share/xfwm4/themes/atlanta2/themerc:${PORTSDIR}/misc/xfce4-wm-themes
+RUN_DEPENDS+=	${X11BASE}/share/xfce4/mime/Rodent.mime.xml:${PORTSDIR}/x11-themes/xfce4-icon-theme
 .endif
 
 .if !defined(WITHOUT_PLUGINS)

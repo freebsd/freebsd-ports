@@ -2,14 +2,26 @@ include/xfce4/libxfce4mcs/mcs-client.h
 include/xfce4/libxfce4mcs/mcs-common.h
 include/xfce4/libxfce4mcs/mcs-manager.h
 lib/libxfce4mcs-client.a
-lib/libxfce4mcs-client.la
 lib/libxfce4mcs-client.so
-lib/libxfce4mcs-client.so.1
+lib/libxfce4mcs-client.so.2
 lib/libxfce4mcs-manager.a
-lib/libxfce4mcs-manager.la
 lib/libxfce4mcs-manager.so
-lib/libxfce4mcs-manager.so.1
+lib/libxfce4mcs-manager.so.2
 libdata/pkgconfig/libxfce4mcs-manager-1.0.pc
 libdata/pkgconfig/libxfce4mcs-client-1.0.pc
+share/gtk-doc/html/libxfce4mcs/ch01.html
+share/gtk-doc/html/libxfce4mcs/home.png
+share/gtk-doc/html/libxfce4mcs/index.html
+share/gtk-doc/html/libxfce4mcs/index.sgml
+share/gtk-doc/html/libxfce4mcs/left.png
+share/gtk-doc/html/libxfce4mcs/libxfce4mcs-mcs-client.html
+share/gtk-doc/html/libxfce4mcs/libxfce4mcs-mcs-common.html
+share/gtk-doc/html/libxfce4mcs/libxfce4mcs-mcs-manager.html
+share/gtk-doc/html/libxfce4mcs/libxfce4mcs.devhelp
+share/gtk-doc/html/libxfce4mcs/right.png
+share/gtk-doc/html/libxfce4mcs/up.png
 @dirrm include/xfce4/libxfce4mcs
+@dirrm share/gtk-doc/html/libxfce4mcs
+@unexec rmdir %D/share/gtk-doc/html 2>/dev/null || true
+@unexec rmdir %D/share/gtk-doc 2>/dev/null || true
 @unexec rmdir %D/include/xfce4 2>/dev/null || true

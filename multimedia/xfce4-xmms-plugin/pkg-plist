@@ -1,10 +1,9 @@
-lib/xfce4/panel-plugins/libxmms_plugin.a
-lib/xfce4/panel-plugins/libxmms_plugin.la
 lib/xfce4/panel-plugins/libxmms_plugin.so
 share/xfce4/xmms-plugin/xmms-plugin-prev.png
 share/xfce4/xmms-plugin/xmms-plugin-play.png
 share/xfce4/xmms-plugin/xmms-plugin-pause.png
 share/xfce4/xmms-plugin/xmms-plugin-stop.png
 share/xfce4/xmms-plugin/xmms-plugin-next.png
-@unexec rmdir %D/share/xfce4/xmms-plugin 2>/dev/null || true
+@dirrm share/xfce4/xmms-plugin
+@unexec rmdir %D/lib/xfce4/panel-plugins 2>/dev/null || true
 @unexec rmdir %D/lib/xfce4 2>/dev/null || true

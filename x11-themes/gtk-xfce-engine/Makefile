@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	gtk-xfce-engine
-PORTVERSION=	2.1.10
-PORTREVISION=	1
+PORTVERSION=	2.2.5
+PORTREVISION=	0
 CATEGORIES=	x11-themes xfce
-MASTER_SITES=	ftp://ftp.berlios.de/pub/xfce-goodies/4.0.6/ \
-		http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-4.0.6/src/
+MASTER_SITES=	http://www.us.xfce.org/archive/xfce-4.2.0/src/ \
+		http://spuriousinterrupt.org/projects/xfce4/files/mirror/xfce-4.2.0/ \
+		http://public.fh-wolfenbuettel.de/~luedickj/xfce4/xfce-4.2.0/
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	An XFCE engine for GTK 2.0
 
-USE_GMAKE=	yes
 USE_GNOME=	gnomehack gtk20
 USE_LIBTOOL_VER=15
 USE_X_PREFIX=	yes

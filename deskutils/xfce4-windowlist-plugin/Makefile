@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-windowlist-plugin
 PORTVERSION=	0.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/ \
 		http://matt.nerim.net/xfce-goodies/ \
@@ -20,7 +20,7 @@ COMMENT=	A windowlist plugin for xfce4-panel
 
 BUILD_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
 LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
-		xfcegui4.1:${PORTSDIR}/x11-toolkits/libxfce4gui \
+		xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui \
 		startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 RUN_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
 

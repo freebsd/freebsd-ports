@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-showdesktop-plugin
 PORTVERSION=	0.3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 DIST_SUBDIR=	xfce4
@@ -18,7 +18,7 @@ COMMENT=	Xfce 4 Plugin to minimize/unminimize all windows
 BUILD_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xfce4util.1:${PORTSDIR}/x11/libxfce4util \
-		xfcegui4.1:${PORTSDIR}/x11-toolkits/libxfce4gui
+		xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui
 RUN_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
