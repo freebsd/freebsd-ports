@@ -37,6 +37,7 @@ apps/ROX-Session/MakeDefault.sh
 apps/ROX-Session/Messages/da.gmo
 apps/ROX-Session/Messages/de.gmo
 apps/ROX-Session/Messages/nl.gmo
+apps/ROX-Session/Messages/ru.gmo
 apps/ROX-Session/Options.xml
 apps/ROX-Session/Setup
 apps/ROX-Session/SetupPanel
