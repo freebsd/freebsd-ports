@@ -112,6 +112,11 @@ MAN8=		ird.8 micod.8 nsd.8
 
 .include <bsd.port.pre.mk>
 
+# Does not build on alpha 4.x
+.if ${OSVERSION} < 500000
+NOT_FOR_ARCHS=	alpha
+.endif
+
 post-extract:
 	@${TAR} xzf ${DISTDIR}/doc-html.tar.gz -C ${WRKDIR}
 
