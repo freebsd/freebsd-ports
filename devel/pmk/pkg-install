@@ -1,0 +1,16 @@
+# $FreeBSD#
+
+if [ "$2" != "POST-INSTALL" ]; then
+	exit 0
+fi
+ 
+pmkconf=%%PREFIX%%/etc/pmk/pmk.conf
+ 
+if [ -f $pmkconf ]; then
+	mv -f ${pmkconf} ${pmkconf}.bak
+	%%PREFIX%%/sbin/pmksetup
+	mv -f ${pmkconf} ${pmkconf}.dist
+	mv -f ${pmkconf}.bak ${pmkconf}    
+fi
+ 
+exit 0

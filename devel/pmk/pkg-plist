@@ -2,6 +2,9 @@ bin/pmk
 bin/pmkinstall
 bin/pmkpc
 bin/pmkscan
+@unexec if cmp -s %D/etc/pmk/pmk.conf %D/etc/pmk/pmk.conf.dist; then rm -f %D/etc/pmk/pmk.conf; fi
+etc/pmk/pmk.conf.dist
+@unexec rmdir %D/etc/pmk 2>/dev/null || true
 sbin/pmksetup
 share/pmk/pmk.conf.sample
 share/pmk/pmkcfgtool.dat
