@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sylpheed-claws
-PORTVERSION=	0.8.10
+PORTVERSION=	0.9.3
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -20,8 +20,8 @@ COMMENT=	A lightweight and very featurefull GTK+ based e-mail and news client
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
-THEMEVERSION=	0.8.7
-THEMEFILE=	sylpheed-${THEMEVERSION}claws-iconset.tar.gz
+THEMEVERSION=	20030712
+THEMEFILE=	sylpheed-iconset-${THEMEVERSION}.tar.gz
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -89,6 +89,12 @@ PLIST_SUB+=	THEMES="@comment "
 .else
 PLIST_SUB+=	THEMES=""
 .endif
+.if defined(WITHOUT_IMAGE)
+PLIST_SUB+= IMAGE="@comment "
+CONFIGURE_ARGS+=	--disable-image-viewer-plugin
+.else
+PLIST_SUB+= IMAGE=""
+.endif
 
 pre-everything::
 	@${ECHO} ""
@@ -106,6 +112,7 @@ pre-everything::
 	@${ECHO} "      WITH_SA_PLUG   Build Spamassassin plugin"
 	@${ECHO} ""
 	@${ECHO} "      WITHOUT_SSL    Disable OpenSSL support"
+	@${ECHO} "      WITHOUT_IMAGE  Disable internal image viewer"
 	@${ECHO} "      WITHOUT_THEMES Don't install additional themes"
 	@${ECHO} ""
 
@@ -137,7 +144,7 @@ post-install:
 		${INSTALL_SCRIPT} OOo2sylpheed.pl calypso_convert.pl \
 		eud2gc.py filter_conv.pl gif2xface.pl google_msgid.pl \
 		gpg-sign-syl kmail2sylpheed.pl kmail2sylpheed_v2.pl \
-		launch_phoenix newscache_clean.pl outlook2sylpheed.pl \
+		launch_firebird newscache_clean.pl outlook2sylpheed.pl \
 		tb2sylpheed update-po uudec ${DATADIR}
 .if !defined(WITHOUT_THEMES)
 	@${MKDIR} ${DATADIR}/themes

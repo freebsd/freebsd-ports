@@ -1,0 +1,17 @@
+--- tools/launch_firebird.orig	Sun Jul 27 13:28:33 2003
++++ tools/launch_firebird	Sun Jul 27 13:30:11 2003
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # Copyright © 2002 Mohammed Sameer <Uniball@linux-egypt.org> 
+ #
+@@ -45,7 +45,7 @@
+ 
+ STR=`$FIREBIRD -remote "ping()" 2>&1 | grep No`
+ #echo $STR
+-if [[ "$STR" == "No running window found." ]]; then
++if [ "$STR" == "No running window found." ]; then
+ firebird_new;
+ else
+ firebird_running;
