@@ -1,5 +1,5 @@
-include/libiberty.h
-include/getopt.h
+include/freelibiberty/libiberty.h
+include/freelibiberty/getopt.h
 lib/libiberty.a
 lib/libiberty.so
 lib/libiberty.so.1
