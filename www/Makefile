@@ -150,6 +150,7 @@
     SUBDIR += harvest
     SUBDIR += horde
     SUBDIR += horde-passwd
+    SUBDIR += horde-php5
     SUBDIR += hotjava
     SUBDIR += htdump
     SUBDIR += html2hdml
