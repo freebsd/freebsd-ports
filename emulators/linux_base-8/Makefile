@@ -54,7 +54,6 @@ EXTRACT_ONLY=
 MAINTAINER=		freebsd-emulation@FreeBSD.org
 COMMENT=	Base set of packages needed in Linux mode (only for i386)
 
-EXTRACT_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 
 CONFLICTS=	linux_base-6* linux_base-7* linux_base-deb* linux_base-gentoo* \
