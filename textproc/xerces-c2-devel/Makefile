@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xerces-c2
-PORTVERSION=	2.5.0
-PORTREVISION=	2
+PORTVERSION=	2.6.0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_APACHE_XML}
 MASTER_SITE_SUBDIR=	xerces-c/source
@@ -16,9 +15,29 @@ DISTNAME=	xerces-c-src_${PORTVERSION:S/./_/g}
 MAINTAINER=	bzeeb+freebsdports@zabbadoz.net
 COMMENT=	Validating XML parser from the Apache XML Project
 
+OPTIONS=	THREADS "Build a thread enabled shared library." on \
+		SAMPLES "Copy sample binaries and sources." on \
+		PORTDOCS "Copy documentation." on \
+		DEBUG "Include debugging information, do not strip." off \
+		ICONVFBSD "Use IconvFBSD transcoder." on \
+		ICU "Use ICU transcoder." off \
+		NATIVE "Use native transcoder." off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_NATIVE)
+TRANSCODER=		native
+.endif
+.if defined(WITH_ICU)
+TRANSCODER=		icu
+.endif
+.if defined(WITH_ICONVFBSD)
+TRANSCODER=		IconvFBSD
+.endif
+
 .if !defined(TRANSCODER)
 USE_ICONV=		yes
-TRANSCODER=		"IconvFBSD"
+TRANSCODER=		IconvFBSD
 ICONVROOT?=		${LOCALBASE}
 CONFIGURE_ENV+=		ICONVROOT=${ICONVROOT}
 MAKE_ENV+=		ICONVROOT=${ICONVROOT}
@@ -39,7 +58,7 @@ PLIST_SUB+=		TRANSICONV=""
 PLIST_SUB+=		TRANSICU="@comment "
 .else
 USE_ICONV=		yes
-TRANSCODER=		"IconvFBSD"
+TRANSCODER=		IconvFBSD
 ICONVROOT?=		${LOCALBASE}
 CONFIGURE_ENV+=		ICONVROOT=${ICONVROOT}
 MAKE_ENV+=		ICONVROOT=${ICONVROOT}
@@ -68,12 +87,10 @@ CONFIGURE_ARGS+=	-p freebsd -c ${CC} -x ${CXX} -n socket -P ${PREFIX}
 
 CONFIGURE_ARGS+=	-t ${TRANSCODER}
 
-.if defined(DEBUG)
+.if !defined(WITHOUT_DEBUG)
 CONFIGURE_ARGS+=	-d
 STRIP=
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if defined(ARCH) && \
 	(${ARCH} == "alpha" || ${ARCH} == "sparc64" || \
@@ -83,7 +100,7 @@ CONFIGURE_ARGS+=	-b 64
 SAMPLES_CONFIG_ARGS+=	-b 64
 .endif
 
-.if defined(NO_THREADS)
+.if defined(WITHOUT_THREADS)
 CONFIGURE_ARGS+=	-r none
 .else
 CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
@@ -92,16 +109,19 @@ CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 
 XERCESC_LIB_VERSION=	${PORTVERSION:S/.//:R}
 XERCESC_LIB=		libxerces-c.so.${PORTVERSION:S/.//}
+XERCESC_DEPDOM_LIB=	libxerces-depdom.so.${PORTVERSION:S/.//}
 PLIST_SUB+=		XERCESC_LIB=${XERCESC_LIB} \
+			XERCESC_DEPDOM_LIB=${XERCESC_DEPDOM_LIB} \
 				XERCESC_LIB_VERSION=${XERCESC_LIB_VERSION}
 
-.if !defined(NO_SAMPLES)
+.if !defined(WITHOUT_SAMPLES)
 PLIST_SUB+=	NO_SAMPLES=""
 ALL_TARGET?=	all samples
 XERCES_BINS?=	CreateDOMDocument DOMCount DOMPrint EnumVal MemParse PParse \
-	Redirect SAX2Count SAX2Print SAXCount SAXPrint SEnumVal StdInParse
+		PSVIWriter Redirect SAX2Count SAX2Print SAXCount SAXPrint \
+		SCMPrint SEnumVal StdInParse
 SAMPLES_CONFIG_ARGS+=	-p freebsd -c ${CC} -x ${CXX}
-.if defined(NO_THREADS)
+.if defined(WITHOUT_THREADS)
 SAMPLES_CONFIG_ARGS+=	-r none
 .else
 SAMPLES_CONFIG_ARGS+=	-r pthread
@@ -112,27 +132,16 @@ SAMPLES_CONFIG_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 PLIST_SUB+=	NO_SAMPLES="@comment "
 .endif
 
-.if !defined(NOPORTDOCS)
+.if !defined(WITHOUT_PORTDOCS)
 PORTDOCS=	*
 .endif
 
-pre-everything::
-.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-	@${ECHO} ''
-	@${ECHO} 'You may use the following build options by defining'
-	@${ECHO} 'them on the command line with -D'
-	@${ECHO} ''
-	@${ECHO} 'NO_THREADS	do not build a thread enabled shared library'
-	@${ECHO} 'NO_SAMPLES	do not copy sample binaries and sources'
-	@${ECHO} 'NOPORTDOCS	do not copy documentation'
-	@${ECHO} 'DEBUG		include debugging information, do not strip'
-	@${ECHO} ''
-	@${ECHO} 'Also you may set TRANSCODER to the following values (without -D):'
-	@${ECHO} ''
-	@${ECHO} 'TRANSCODER=[icu|IconvFBSD|native]	default: IconvFBSD'
-	@${ECHO} ''
-	@/bin/sleep 2
-.endif
+SCRIPTS_ENV=	WITH_NATIVE="${WITH_NATIVE}" \
+		WITH_ICU="${WITH_ICU}" \
+		WITH_ICONVFBSD="${WITH_ICONVFBSD}"
+
+pre-extract:
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/check-config-options
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#CP = -cp -p#CP = -cp#'	\
@@ -143,7 +152,7 @@ pre-configure:
 	@${CHMOD} 700 ${CONFIGURE_WRKSRC}/configure
 
 post-configure:
-.if !defined(NO_SAMPLES)
+.if !defined(WITHOUT_SAMPLES)
 .if defined(TRANSCODER) && (${TRANSCODER} == "icu")
 	@(cd ${WRKSRC}/samples && \
 		${SETENV} \
@@ -162,14 +171,15 @@ post-configure:
 .endif
 
 post-install:
-.if !defined(DEBUG)
+.if defined(WITHOUT_DEBUG)
 	@${STRIP_CMD} ${PREFIX}/lib/${XERCESC_LIB}
+	@${STRIP_CMD} ${PREFIX}/lib/${XERCESC_DEPDOM_LIB}
 .endif
-.if !defined(NOPORTDOCS)
+.if !defined(WITHOUT_PORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${CP} -r ${WRKSRC}/doc/ ${DOCSDIR}
 .endif
-.if !defined(NO_SAMPLES)
+.if !defined(WITHOUT_SAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 .for i in ${XERCES_BINS} data
 	@${CP} -r ${WRKSRC}/samples/$i ${EXAMPLESDIR}

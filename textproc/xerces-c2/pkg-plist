@@ -29,6 +29,7 @@ include/xercesc/dom/DOMNodeFilter.hpp
 include/xercesc/dom/DOMNodeIterator.hpp
 include/xercesc/dom/DOMNodeList.hpp
 include/xercesc/dom/DOMNotation.hpp
+include/xercesc/dom/DOMPSVITypeInfo.hpp
 include/xercesc/dom/DOMProcessingInstruction.hpp
 include/xercesc/dom/DOMRange.hpp
 include/xercesc/dom/DOMRangeException.hpp
@@ -135,6 +136,7 @@ include/xercesc/framework/psvi/XSObject.hpp
 include/xercesc/framework/psvi/XSParticle.hpp
 include/xercesc/framework/psvi/XSSimpleTypeDefinition.hpp
 include/xercesc/framework/psvi/XSTypeDefinition.hpp
+include/xercesc/framework/psvi/XSValue.hpp
 include/xercesc/framework/psvi/XSWildcard.hpp
 include/xercesc/internal/BinFileOutputStream.hpp
 include/xercesc/internal/BinMemOutputStream.hpp
@@ -159,6 +161,7 @@ include/xercesc/internal/XMLScanner.hpp
 include/xercesc/internal/XMLScannerResolver.hpp
 include/xercesc/internal/XObjectComparator.hpp
 include/xercesc/internal/XProtoType.hpp
+include/xercesc/internal/XSAXMLScanner.hpp
 include/xercesc/internal/XSObjectFactory.hpp
 include/xercesc/internal/XSerializable.hpp
 include/xercesc/internal/XSerializationException.hpp
@@ -416,9 +419,9 @@ include/xercesc/validators/datatype/QNameDatatypeValidator.hpp
 include/xercesc/validators/datatype/StringDatatypeValidator.hpp
 include/xercesc/validators/datatype/TimeDatatypeValidator.hpp
 include/xercesc/validators/datatype/UnionDatatypeValidator.hpp
+include/xercesc/validators/datatype/XMLCanRepGroup.hpp
 include/xercesc/validators/datatype/YearDatatypeValidator.hpp
 include/xercesc/validators/datatype/YearMonthDatatypeValidator.hpp
-include/xercesc/validators/datatype/XMLCanRepGroup.hpp
 include/xercesc/validators/schema/ComplexTypeInfo.hpp
 include/xercesc/validators/schema/GeneralAttributeCheck.hpp
 include/xercesc/validators/schema/NamespaceScope.hpp
@@ -448,6 +451,7 @@ include/xercesc/validators/schema/identity/IC_KeyRef.hpp
 include/xercesc/validators/schema/identity/IC_Selector.hpp
 include/xercesc/validators/schema/identity/IC_Unique.hpp
 include/xercesc/validators/schema/identity/IdentityConstraint.hpp
+include/xercesc/validators/schema/identity/IdentityConstraintHandler.hpp
 include/xercesc/validators/schema/identity/ValueStore.hpp
 include/xercesc/validators/schema/identity/ValueStoreCache.hpp
 include/xercesc/validators/schema/identity/XPathException.hpp
@@ -460,6 +464,11 @@ lib/%%XERCESC_LIB%%
 @exec ln -sf %%XERCESC_LIB%% %D/lib/libxerces-c.so.%%XERCESC_LIB_VERSION%%
 @unexec if test ! -r %D/lib/libxerces-c.so; then rm -f %D/lib/libxerces-c.so; fi
 @unexec if test ! -r %D/lib/libxerces-c.so.%%XERCESC_LIB_VERSION%%; then rm -f %D/lib/libxerces-c.so.%%XERCESC_LIB_VERSION%%; fi
+lib/%%XERCESC_DEPDOM_LIB%%
+@exec ln -sf %%XERCESC_DEPDOM_LIB%% %D/lib/libxerces-depdom.so
+@exec ln -sf %%XERCESC_DEPDOM_LIB%% %D/lib/libxerces-depdom.so.%%XERCESC_LIB_VERSION%%
+@unexec if test ! -r %D/lib/libxerces-depdom.so; then rm -f %D/lib/libxerces-depdom.so; fi
+@unexec if test ! -r %D/lib/libxerces-depdom.so.%%XERCESC_LIB_VERSION%%; then rm -f %D/lib/libxerces-depdom.so.%%XERCESC_LIB_VERSION%%; fi
 @dirrm include/xercesc/validators/schema/identity
 @dirrm include/xercesc/validators/schema
 @dirrm include/xercesc/validators/datatype
@@ -495,11 +504,13 @@ lib/%%XERCESC_LIB%%
 %%NO_SAMPLES%%bin/EnumVal
 %%NO_SAMPLES%%bin/MemParse
 %%NO_SAMPLES%%bin/PParse
+%%NO_SAMPLES%%bin/PSVIWriter
 %%NO_SAMPLES%%bin/Redirect
 %%NO_SAMPLES%%bin/SAX2Count
 %%NO_SAMPLES%%bin/SAX2Print
 %%NO_SAMPLES%%bin/SAXCount
 %%NO_SAMPLES%%bin/SAXPrint
+%%NO_SAMPLES%%bin/SCMPrint
 %%NO_SAMPLES%%bin/SEnumVal
 %%NO_SAMPLES%%bin/StdInParse
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/CreateDOMDocument/CreateDOMDocument.cpp
@@ -533,6 +544,14 @@ lib/%%XERCESC_LIB%%
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/PParse/PParse.hpp
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/PParse/PParseHandlers.cpp
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/PParse/PParseHandlers.hpp
+%%NO_SAMPLES%%%%EXAMPLESDIR%%/PSVIWriter/Makefile
+%%NO_SAMPLES%%%%EXAMPLESDIR%%/PSVIWriter/Makefile.in
+%%NO_SAMPLES%%%%EXAMPLESDIR%%/PSVIWriter/PSVIUni.cpp
+%%NO_SAMPLES%%%%EXAMPLESDIR%%/PSVIWriter/PSVIUni.hpp
+%%NO_SAMPLES%%%%EXAMPLESDIR%%/PSVIWriter/PSVIWriter.cpp
+%%NO_SAMPLES%%%%EXAMPLESDIR%%/PSVIWriter/PSVIWriter.hpp
+%%NO_SAMPLES%%%%EXAMPLESDIR%%/PSVIWriter/PSVIWriterHandlers.cpp
+%%NO_SAMPLES%%%%EXAMPLESDIR%%/PSVIWriter/PSVIWriterHandlers.hpp
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/Redirect/Makefile
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/Redirect/Makefile.in
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/Redirect/Redirect.cpp
@@ -563,6 +582,9 @@ lib/%%XERCESC_LIB%%
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/SAXPrint/SAXPrint.hpp
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/SAXPrint/SAXPrintHandlers.cpp
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/SAXPrint/SAXPrintHandlers.hpp
+%%NO_SAMPLES%%%%EXAMPLESDIR%%/SCMPrint/Makefile
+%%NO_SAMPLES%%%%EXAMPLESDIR%%/SCMPrint/Makefile.in
+%%NO_SAMPLES%%%%EXAMPLESDIR%%/SCMPrint/SCMPrint.cpp
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/SEnumVal/Makefile
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/SEnumVal/Makefile.in
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/SEnumVal/SEnumVal.cpp
@@ -580,11 +602,13 @@ lib/%%XERCESC_LIB%%
 %%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/data
 %%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/StdInParse
 %%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/SEnumVal
+%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/SCMPrint
 %%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/SAXPrint
 %%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/SAXCount
 %%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/SAX2Print
 %%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/SAX2Count
 %%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/Redirect
+%%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/PSVIWriter
 %%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/PParse
 %%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/MemParse
 %%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/EnumVal

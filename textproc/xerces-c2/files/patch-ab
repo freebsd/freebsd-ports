@@ -1,14 +1,15 @@
---- src/xercesc/util/Transcoders/IconvFBSD/IconvFBSDTransService.cpp.orig	Thu Mar 18 10:44:13 2004
-+++ src/xercesc/util/Transcoders/IconvFBSD/IconvFBSDTransService.cpp	Thu Mar 18 10:47:04 2004
-@@ -1340,6 +1340,11 @@
-     if (wBufPtr)
-         manager->deallocate(wBufPtr);//delete [] wBufPtr;
- 
-+    // iconvTo resp. iconv(3) doe NOT return number of characters
-+    // converted but only number of non-reversible conversions;
-+    // thus we need to calculate correct mblen on our own
-+    mblen = ptr - toFill;
-+
- #endif /* !XML_USE_LIBICONV */
- 
-     // Cap it off just in case
+--- obj/Makefile.in.orig	Fri Oct 15 19:55:39 2004
++++ obj/Makefile.in	Fri Oct 15 19:55:53 2004
+@@ -247,10 +247,10 @@
+ 	(cd ${DESTDIR}$(PREFIX)/lib; rm -f ${LINK_DEPDOM}.a libxercesdepdom.dll.a; ln -s ${LIBDEPDOM}${SO_TARGET_VERSION}${SHLIBSUFFIX}.a ${LINK_NAME}.a; ln -s ${LIBDEPDOM}${SO_TARGET_VERSION}${SHLIBSUFFIX}.a libxercesdepdom.dll.a)
+ else
+ 	$(CP) ${FQ_REAL_NAME} ${DESTDIR}$(PREFIX)/lib
+-	(cd ${DESTDIR}$(PREFIX)/lib; ln -s ${REAL_NAME} ${SO_NAME}; ln -s ${REAL_NAME} ${LINK_NAME})
++	(cd ${DESTDIR}$(PREFIX)/lib; ln -sf ${REAL_NAME} ${SO_NAME}; ln -sf ${REAL_NAME} ${LINK_NAME})
+ 	
+ 	$(CP) ${FQ_REAL_DEPDOM} ${DESTDIR}$(PREFIX)/lib
+-	(cd ${DESTDIR}$(PREFIX)/lib; ln -s ${REAL_DEPDOM} ${SO_DEPDOM}; ln -s ${REAL_DEPDOM} ${LINK_DEPDOM})	
++	(cd ${DESTDIR}$(PREFIX)/lib; ln -sf ${REAL_DEPDOM} ${SO_DEPDOM}; ln -sf ${REAL_DEPDOM} ${LINK_DEPDOM})	
+ endif
+ ifeq (${PLATFORM},OS390)
+ 	$(CP) ${LIBNAME}${VER}${OS390SIDEDECK} ${DESTDIR}$(PREFIX)/lib
