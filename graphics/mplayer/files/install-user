@@ -1,5 +1,6 @@
 #This perl script links the codec config file
 #and the fonts dir to the user's home dir.
+#V0.2 Last touched: 2001-10-12 riggs
 
 if (-e "$ENV{HOME}/.mplayer/")
 {
@@ -16,13 +17,23 @@ $prefix=~ s/(.+mplayer).*/$1/;
 chop $prefix;
 
 print "You may choose any of the available language sets:\n\n";
-print "European fonts (e.g. dutch, french, german...) : e\n";
-print "Cyrillic fonts : c\n";
-print "Russian fonts: r\n";
+print "ISO-8859-1 Font : 1\n";
+print "ISO-8859-2 Font : 2\n";
+print "(old) Cyrillic fonts : c\n";
+print "Russian fonts : r\n";
 
 print "Your decision? ";
 chomp ($lang=<STDIN>);
 print "\n";
+
+if ($lang eq "1" || $lang eq "2")
+{
+	print "The available sizes for this font are 14,18,24,28.\n";
+	print "Please enter the wanted size: \n";
+	chomp ($size=<STDIN>);
+	if ($size ne "14" && $size ne "18" && $size ne "24" && $size ne "28") {$size=14;}
+}
+
 
 system "mkdir $ENV{HOME}/.mplayer";
 if ($lang eq "c")
@@ -31,8 +42,12 @@ if ($lang eq "c")
 }
 elsif ($lang eq "r")
 {
-	system "ln -s $prefix/fonts/koi8r/ $ENV{HOME}/.mplayer/font";
+	system "ln -s $prefix/fonts/koi8r-font/ $ENV{HOME}/.mplayer/font";
 }
-else {system "ln -s $prefix/fonts/iso/ $ENV{HOME}/.mplayer/font"};
+elsif ($lang eq "2")
+{
+	system "ln -s $prefix/fonts/iso-8859-2/arial-$size/ $ENV{HOME}/.mplayer/font";
+}
+else {system "ln -s $prefix/fonts/iso-8859-1/arial-$size/ $ENV{HOME}/.mplayer/font"};
 
 system "ln -s $prefix/codecs.conf $ENV{HOME}/.mplayer/codecs.conf";

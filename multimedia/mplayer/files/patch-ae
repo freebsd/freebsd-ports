@@ -1,20 +1,29 @@
---- Makefile.orig	Fri Sep 28 19:37:12 2001
-+++ Makefile	Fri Sep 28 19:41:53 2001
-@@ -113,15 +113,8 @@
+--- Makefile.orig	Fri Oct  5 10:39:21 2001
++++ Makefile	Mon Oct 15 21:51:01 2001
+@@ -118,24 +118,8 @@
  	$(CC) $(CFLAGS) -g codec-cfg.c -o $(PRG_CFG) -DCODECS2HTML
  
- install: $(PRG) $(PRG_FIBMAP)
--	install -d $(BINDIR)
+ install: $(ALL_PRG)
+-	if [ ! -e $(BINDIR) ]; then \
+-		mkdir -p $(BINDIR); \
+-	fi
 -	install -m 755 -s $(PRG) $(BINDIR)/$(PRG)
--	install -d $(prefix)/man/man1
--	install -m 644 DOCS/mplayer.1 $(prefix)/man/man1/mplayer.1
+-ifeq ($(GUI),yes)
+-	-ln -s $(BINDIR)/$(PRG) $(BINDIR)/gmplayer
+-endif
+-	if [ ! -e $(prefix)/man/man1 ]; then \
+-		mkdir -p $(prefix)/man/man1; \
+-	fi
+-	install -c -m 644 DOCS/mplayer.1 $(prefix)/man/man1/mplayer.1
+-ifeq ($(CSS_USE),yes)
 -	@echo "Following task requires root privs. If it fails don't panic"
 -	@echo "however it means you can't use fibmap_mplayer."
 -	@echo "Without this (or without running mplayer as root) you won't be"
 -	@echo "able to play encrypted DVDs."
--	install -o root -g root -m 4755 -s $(PRG_FIBMAP) $(BINDIR)/$(PRG_FIBMAP)
-+	install -C -m 755 -s $(PRG) $(BINDIR)/$(PRG)
-+	install -C -m 644 DOCS/mplayer.1 $(prefix)/man/man1/mplayer.1
+-	-install -o 0 -g 0 -m 4755 -s $(PRG_FIBMAP) $(BINDIR)/$(PRG_FIBMAP)
+-endif
++	@${BSD_INSTALL_PROGRAM} $(PRG) $(BINDIR)/$(PRG)
++	@${BSD_INSTALL_MAN} DOCS/mplayer.1 $(prefix)/man/man1/mplayer.1
  
  clean:
  	rm -f *.o *~ $(OBJS)

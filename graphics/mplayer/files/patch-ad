@@ -1,42 +1,62 @@
---- configure.orig	Fri Sep 28 19:21:08 2001
-+++ configure	Fri Sep 28 19:33:35 2001
+--- configure.old	Sun Oct  7 23:36:29 2001
++++ configure	Fri Oct 12 11:22:39 2001
 @@ -299,7 +299,7 @@
  _confcygwin="TARGET_CYGWIN=no"
  _confwin32=
- if [ "$system_name" = "FreeBSD" -o "$system_name" = "OpenBSD" ]; then
+ if [ "$system_name" = "FreeBSD" -o "$system_name" = "OpenBSD" -o "$system_name" = "BSD/OS" ]; then
 -    _archlibs="-rdynamic -pthread"
 +    _archlibs="-rdynamic ${PTHREAD_LIBS}"
  elif [ `echo $system_name | sed 's/[cC][yY][gG][wW][iI][nN].*/CYGWIN/'` = "CYGWIN" ]; then
      _confcygwin="TARGET_CYGWIN=yes"
      _confwin32="#define WIN32"
-@@ -766,7 +766,7 @@
+@@ -460,19 +460,8 @@
+ fi
+ 
+ if [ "$host_arch" = i386 ]; then
+-    if [ -r /proc/cpuinfo ]; then
+-	# linux with /proc mounted, extract cpu information from it
+-	_cpuinfo="cat /proc/cpuinfo"
+-    elif [ -r /compat/linux/proc/cpuinfo ]; then
+-        # FreeBSD with linux emulation /proc mounted, 
+-	# extract cpu information from it
+-        _cpuinfo="cat /compat/linux/proc/cpuinfo"
+-    else
+-	# all other OS try to extract cpu information from a small helper
+-	# program TOOLS/cpuinfo instead
+ 	$_cc -o TOOLS/cpuinfo TOOLS/cpuinfo.c
+ 	_cpuinfo="TOOLS/cpuinfo"
+-    fi
+ 
+     pname=`$_cpuinfo | grep 'model name' | cut -d ':' -f 2 | head -1`
+     pparam=`$_cpuinfo | grep 'features' | cut -d ':' -f 2 | head -1`
+@@ -798,7 +787,7 @@
  $_cc $_extraincdir $_extralibdir $TMPC -o $TMPO -lvgagl -lvga > /dev/null 2>&1 && _svga=yes
  
- if [ "$system_name" = "FreeBSD" -o "$system_name" = "OpenBSD" ]; then
+ if [ "$system_name" = "FreeBSD" -o "$system_name" = "OpenBSD" -o "$system_name" = "BSD/OS" ]; then
 -$_cc $TMPC -o $TMPO -pthread > /dev/null 2>&1 || \
 +$_cc $TMPC -o $TMPO ${PTHREAD_LIBS} > /dev/null 2>&1 || \
   { echo "Lib pthread not found."; rm -f $TMPC $TMPO $TMPS ; exit 1; }
  else
  $_cc $TMPC -o $TMPO -lpthread > /dev/null 2>&1 || \
-@@ -861,7 +861,7 @@
+@@ -893,7 +882,7 @@
  
  # this is not yet checked with OpenBSD - atmos
  if [ "$system_name" = "FreeBSD" -o "$system_name" = "OpenBSD" ]; then
--$_cc $TMPC -o $TMPO $_x11libdir -lX11 -lXext -lGL -pthread $_socklib > /dev/null 2>&1 && _gl=yes
-+$_cc $TMPC -o $TMPO $_x11libdir -lX11 -lXext -lGL ${PTHREAD_LIBS} $_socklib > /dev/null 2>&1 && _gl=yes
+-$_cc $TMPC -o $TMPO $_x11libdir -lX11 -lXext -lGL -lm -pthread $_socklib > /dev/null 2>&1 && _gl=yes
++$_cc $TMPC -o $TMPO $_x11libdir -lX11 -lXext -lGL -lm ${PTHREAD_LIBS} $_socklib > /dev/null 2>&1 && _gl=yes
  else
- $_cc $TMPC -o $TMPO $_x11libdir -lX11 -lXext -lGL $_socklib > /dev/null 2>&1 && _gl=yes
+ $_cc $TMPC -o $TMPO $_x11libdir -lX11 -lXext -lGL -lm $_socklib > /dev/null 2>&1 && _gl=yes
  fi
-@@ -872,7 +872,7 @@
+@@ -904,7 +893,7 @@
  EOF
  # this is not yet checked with OpenBSD - atmos
  if [ "$system_name" = "FreeBSD" -o "$system_name" = "OpenBSD" ]; then
--$_cc $_x11incdir $TMPC -o $TMPO $_x11libdir -lX11 -lXext -lGL -pthread $_socklib > /dev/null 2>&1 || \
-+$_cc $_x11incdir $TMPC -o $TMPO $_x11libdir -lX11 -lXext -lGL ${PTHREAD_LIBS} $_socklib > /dev/null 2>&1 || \
+-$_cc $_x11incdir $TMPC -o $TMPO $_x11libdir -lX11 -lXext -lGL -lm -pthread $_socklib > /dev/null 2>&1 || \
++$_cc $_x11incdir $TMPC -o $TMPO $_x11libdir -lX11 -lXext -lGL -lm ${PTHREAD_LIBS} $_socklib > /dev/null 2>&1 || \
   { _gl=no; echo "GL includes not found!";}
  else
- $_cc $TMPC -o $TMPO $_x11libdir -lX11 -lXext -lGL $_socklib > /dev/null 2>&1 || \
-@@ -1613,33 +1613,33 @@
+ $_cc $TMPC -o $TMPO $_x11libdir -lX11 -lXext -lGL -lm $_socklib > /dev/null 2>&1 || \
+@@ -1645,33 +1634,33 @@
  
  echo
  echo $_echo_n "Checking for gtk version ... $_echo_c"
@@ -76,7 +96,7 @@
  [ -z "$_gliblib" ] && { echo 'glib not found.'; exit 1; }
  echo "done"
  
-@@ -1668,7 +1668,7 @@
+@@ -1700,7 +1689,7 @@
     if [ "$system_name" = "FreeBSD" -o "$system_name" = "OpenBSD" ]; then
        # Under XFree86 4.x GL port is poorly designed
        if [ -r /usr/X11R6/bin/XFree86 ]; then
@@ -85,7 +105,7 @@
        else
           _gllib='-lGL'
        fi
-@@ -1895,7 +1895,7 @@
+@@ -1926,7 +1915,7 @@
  # Under FreeBSD (maybe other systems as well?) we have to add to CFLAGS
  # for MT applications: 
  if [ "$system_name" = "FreeBSD" ]; then

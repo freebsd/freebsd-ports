@@ -12,3 +12,7 @@ Please take a look at docs in
 
 You can download skins from the mplayer homepage:
 http://www.mplayerhq.hu/
+
+In order to use DVD please make sure that your
+kernel and base system is newer than 2001-09-25,
+otherwise DVD play will not work!
