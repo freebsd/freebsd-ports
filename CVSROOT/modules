@@ -7531,6 +7531,7 @@ tei-xlite	ports/textproc/tei-xlite
 tei-xsl-fo	ports/textproc/tei-xsl-fo
 tei-xsl-html	ports/textproc/tei-xsl-html
 teknap		ports/audio/teknap
+telbook		ports/misc/telbook
 telnetx		ports/net/telnetx
 telserv		ports/net/telserv
 temperature.app	ports/x11/temperature.app
