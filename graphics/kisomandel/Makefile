@@ -11,7 +11,7 @@ PORTVERSION=	0.66
 CATEGORIES=	graphics
 MASTER_SITES=	http://helsteger.supereva.it/kisomandel/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
 
@@ -25,5 +25,6 @@ post-patch:
 	@${PERL} -pi -e "s,-lqt,-lqt2,g" ${WRKSRC}/configure
 	@find ${WRKSRC} -name Makefile.in | xargs \
 		${PERL} -pi -e "s,-lqt,-lqt2,g"
+	@${PERL} -pi -e "s,malloc.h,stdlib.h,g" ${WRKSRC}/kisomandel/fractal.cpp
 
 .include <bsd.port.mk>
