@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	samba
-PORTVERSION=	3.0a14
+PORTVERSION=	3.0a15
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.samba.org/pub/samba/%SUBDIR%/ \
 		ftp://samba.anu.edu.au/pub/samba/%SUBDIR%/ \
