@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	autoconf
-PORTVERSION=	2.52
-PORTREVISION=	2
+PORTVERSION=	2.53
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	autoconf
@@ -17,15 +16,32 @@ MAINTAINER=	portmgr@FreeBSD.org
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
+USE_BZIP2=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	M4=${LOCALBASE}/bin/gm4
+CONFIGURE_ARGS=	--without-lispdir
 
-MAN1=		autoconf.1 autoheader.1 autoreconf.1 \
-		autoscan.1 autoupdate.1 config.guess.1 \
-		config.sub.1 ifnames.1
+GENERIC_TOOLS=	config.guess	\
+		config.sub	\
+		elisp-comp	\
+		install-sh	\
+		mdate-sh	\
+		missing		\
+		mkinstalldirs
+
+MAN1=		autoconf.1	\
+		autoheader.1	\
+		autom4te.1	\
+		autoreconf.1	\
+		autoscan.1	\
+		autoupdate.1	\
+		config.guess.1	\
+		config.sub.1	\
+		ifnames.1
 
 post-install:
-.for FILE in install-sh config.sub config.guess missing mkinstalldirs
+.for FILE in ${GENERIC_TOOLS}
 	${INSTALL_SCRIPT} ${WRKSRC}/config/${FILE} ${PREFIX}/share/autoconf
 .endfor
 
