@@ -10172,6 +10172,7 @@ transfig	ports/print/transfig
 translate	ports/misc/translate
 transproxy	ports/www/transproxy
 tree		ports/sysutils/tree
+tree-widget	ports/editors/tree-widget
 treecc		ports/lang/treecc
 treeline	ports/deskutils/treeline
 treepuzzle	ports/biology/treepuzzle
