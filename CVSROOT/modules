@@ -3475,7 +3475,6 @@ jhead		ports/graphics/jhead
 jift		ports/net/jift
 jigdo		ports/ftp/jigdo
 jikes		ports/java/jikes
-jikes-devel	ports/java/jikes-devel
 jing		ports/textproc/jing
 jive		ports/misc/jive
 jlex		ports/java/jlex
