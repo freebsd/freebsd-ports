@@ -1,5 +1,6 @@
 %%SITE_PERL%%/News/Gateway.pm
 %%SITE_PERL%%/News/Gateway.pod
+@unexec rmdir %D/%%SITE_PERL%%/News 2>/dev/null || true
 %%SITE_PERL%%/auto/News/Gateway/anykeyword.al
 %%SITE_PERL%%/auto/News/Gateway/bodyheaders.al
 %%SITE_PERL%%/auto/News/Gateway/cleanbody.al
@@ -19,6 +20,8 @@
 %%SITE_PERL%%/auto/News/Gateway/post.al
 %%SITE_PERL%%/auto/News/Gateway/previoushop.al
 %%SITE_PERL%%/auto/News/Gateway/whitelist.al
+@unexec rmdir %D/%%SITE_PERL%%/auto/News/Gateway 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/auto/News 2>/dev/null || true
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/News/Gateway/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/News/Gateway
 share/examples/Gateway/listgate
