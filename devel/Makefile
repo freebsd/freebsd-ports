@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.135 1998/08/25 16:14:05 kuriyama Exp $
+# $Id: Makefile,v 1.136 1998/09/05 05:56:30 hoek Exp $
 #
 
     SUBDIR += ElectricFence
@@ -41,7 +41,6 @@
     SUBDIR += glade
     SUBDIR += glib
     SUBDIR += gmake
-    SUBDIR += guileobjc
     SUBDIR += id-utils
     SUBDIR += ilu
     SUBDIR += jam
@@ -49,7 +48,6 @@
     SUBDIR += libdlmalloc
     SUBDIR += libffi
     SUBDIR += libmalloc
-    SUBDIR += libobjects
     SUBDIR += libslang
     SUBDIR += libtool
     SUBDIR += linux_devel
