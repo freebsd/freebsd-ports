@@ -4401,6 +4401,7 @@ mergeant	ports/databases/mergeant
 mergelog	ports/www/mergelog
 merlin		ports/games/merlin
 merlinmon	ports/net/merlinmon
+mesa-demos	ports/graphics/mesa-demos
 mesagl		ports/graphics/mesagl
 mesgui		ports/x11-toolkits/mesgui
 meshviewer	ports/graphics/meshviewer
