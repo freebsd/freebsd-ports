@@ -3,7 +3,7 @@
 # Date created:		27 Jan 1998
 # Whom:			mi@aldan.algebra.com
 #
-# $Id: Makefile,v 1.14 1999/06/25 21:17:14 cpiazza Exp $
+# $Id: Makefile,v 1.15 1999/06/25 21:29:23 cpiazza Exp $
 #
 
 DISTNAME=	siag-3.1.18
@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.edu.stockholm.se/pub/siag/ \
 		ftp://ftp.icm.edu.pl/site/siag/
 
-MAINTAINER=	mi@aldan.algebra.com	
+MAINTAINER=	mi@aldan.algebra.com
 
 LIB_DEPENDS=	Xaw3d.6:${PORTSDIR}/x11-toolkits/Xaw3d \
 		Xpm.4:${PORTSDIR}/graphics/xpm
