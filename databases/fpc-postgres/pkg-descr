@@ -1,0 +1,8 @@
+Postgres is part of the base packages of Free Pascal, a 32-bit
+Turbo Pascal/Delphi compatible compiler.  Postgres provides an
+interface to PostGreSQL.
+
+WWW: http://www.freepascal.org/
+
+--
+John Merryweather Cooper <coop9211@uidaho.edu>

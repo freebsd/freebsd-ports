@@ -1,0 +1,6 @@
+lib/fpc/%%PORTVERSION%%/units/freebsd/postgres/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/freebsd/postgres/dllist.o
+lib/fpc/%%PORTVERSION%%/units/freebsd/postgres/dllist.ppu
+lib/fpc/%%PORTVERSION%%/units/freebsd/postgres/postgres.o
+lib/fpc/%%PORTVERSION%%/units/freebsd/postgres/postgres.ppu
+@dirrm lib/fpc/%%PORTVERSION%%/units/freebsd/postgres
