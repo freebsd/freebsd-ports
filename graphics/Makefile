@@ -136,7 +136,6 @@
     SUBDIR += imlib
     SUBDIR += imlib2
     SUBDIR += imlib2_loaders
-    SUBDIR += ipa
     SUBDIR += ipe
     SUBDIR += isreal
     SUBDIR += ivtools
