@@ -526,3 +526,5 @@ Emacs*ximStyles: XIMPreeditPosition|XIMStatusArea\
 
 ! XIM fontset (defaults to system fontset default)
 ! Emacs*EmacsFrame.FontSet: -dt-interface user-medium-r-normal-s*-*-*-*-*-*-*-*-*
+
+*cursorColor: IndianRed
