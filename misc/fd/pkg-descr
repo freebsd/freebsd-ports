@@ -1,10 +1,10 @@
-`FD' is a file and directry management tool for text terminal.
+`FD' is a file and directory management tool for text terminal.
 Browsing file list, viewing, editing, archiving/extracting management
-by few touch.
+with a few touch.
 
 FD for unix by shirai@red.nintendo.co.jp, and it is a clone of
 FD for DOS (AT and PC9801) designed by A. Idei (SDI00544@niftyserve.or.jp).
 
-      The man page has only Japanese now, but it easy to use.
-    Stting `LANG' environment to 'C' you can use english help.
+      Currently, the man page is available only in Japanese, but it's
+    easy to use. Setting `LANG' environment to 'C' you can use english help.
                                      -- nobu@psrc.isac.co.jp
