@@ -8,6 +8,7 @@
     SUBDIR += kde-icons-kids
     SUBDIR += kde-icons-kool-gorilla
     SUBDIR += kde-icons-lush
+    SUBDIR += kde-icons-marbles-translucent
     SUBDIR += kde-icons-noia
     SUBDIR += kde-icons-noia-warm
     SUBDIR += kde-icons-nuvola
