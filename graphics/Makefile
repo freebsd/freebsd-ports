@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.105 1998/12/12 15:07:27 kuriyama Exp $
+# $Id: Makefile,v 1.106 1998/12/19 14:58:41 jseger Exp $
 #
 
     SUBDIR += 4va
@@ -10,6 +10,7 @@
     SUBDIR += aview
     SUBDIR += camediaplay
     SUBDIR += cqcam
+    SUBDIR += dc20ctrl
     SUBDIR += dc3play
     SUBDIR += dore
     SUBDIR += electriceyes
