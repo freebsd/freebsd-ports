@@ -102,7 +102,7 @@ sbin/httpd
 sbin/logresolve
 sbin/rotatelogs
 www/data.default/apache_pb.gif
-@exec [ -d %D/www/data ] || ln -fs %B %D/www/data
+@exec [ -d %D/www/data/ ] || ln -fs %B %D/www/data
 www/data.default/index.html.ca
 www/data.default/index.html.cz
 www/data.default/index.html.de
@@ -366,7 +366,7 @@ share/doc/apache/win_service.html.html
 share/doc/apache/win_service.html.ja.jis
 share/doc/apache/windows.html
 www/cgi-bin.default/printenv
-@exec [ -d %D/www/cgi-bin ] || ln -fs %B %D/www/cgi-bin
+@exec [ -d %D/www/cgi-bin/ ] || ln -fs %B %D/www/cgi-bin
 www/cgi-bin.default/test-cgi
 www/icons/README
 www/icons/a.gif

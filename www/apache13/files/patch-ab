@@ -45,7 +45,7 @@
  		find $(root)$(manualdir)/ -type f -print | xargs chmod a+r ; \
 +#        fi
 +	$(LN) -sf $(root)$(manualdir) $(root)$(htdocsdir).default/manual
-+	if [ ! -d $(root)$(htdocsdir) ]; then \
++	if [ ! -d $(root)$(htdocsdir)/ ]; then \
 +		$(LN) -sf $(root)$(htdocsdir).default $(root)$(htdocsdir); \
  	fi
 -	-@if [ -f $(root)$(cgidir)/printenv ]; then \
@@ -65,7 +65,7 @@
  		done; \
 -	fi
 +#        fi
-+	if [ ! -d $(root)$(cgidir) ]; then \
++	if [ ! -d $(root)$(cgidir)/ ]; then \
 +		$(LN) -sf $(root)$(cgidir).default $(root)$(cgidir); \
 +  	fi
  	@echo "Copying tree $(TOP)/icons/ -> $(root)$(iconsdir)/"; \
