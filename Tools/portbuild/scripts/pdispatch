@@ -51,6 +51,9 @@ fi
 if [ "x$WANT_DISTFILES" != "x" ]; then
   flags="${flags} -distfiles"
 fi
+if [ "x$FETCH_ORIGINAL" != "x" ]; then
+  flags="${flags} -fetch-original"
+fi
 
 echo "dispatching: ssh -a -t -n root@$1 ${command} ${arch} ${branch} $flags $args at $(date)"
 ${pb}/scripts/ptimeout.host $timeout ssh -a -t -n root@$1 ${command} ${arch} ${branch} ${flags} $args

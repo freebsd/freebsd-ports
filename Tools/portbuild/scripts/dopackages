@@ -20,7 +20,7 @@ errorexit () {
 }
 
 usage () {
-  echo "usage: [-continue] [-nofinish] [-finish] [-restart] [-ftp] [-cdrom] [-nodummy] [-nobuild] [-noindex] [-noduds] [-nocvsup] [-nocvs] [-noportscvs] [-norestr] [-plistcheck] [-distfiles] branch date"
+  echo "usage: [-continue] [-nofinish] [-finish] [-restart] [-ftp] [-cdrom] [-nodummy] [-nobuild] [-noindex] [-noduds] [-nocvsup] [-nocvs] [-noportscvs] [-norestr] [-plistcheck] [-distfiles] [-fetch-original] branch date"
   errorexit 1
 }
 
@@ -205,6 +205,7 @@ cont=0
 finish=0
 nofinish=0
 dodistfiles=0
+fetch_orig=0
 
 # optional arguments
 while [ $# -gt 2 ]; do
@@ -244,6 +245,9 @@ while [ $# -gt 2 ]; do
       ;;
     x-distfiles)
       dodistfiles=1
+      ;;
+    x-fetch-original)
+      fetch_orig=1
       ;;
     x-continue)
       cont=1
@@ -299,6 +303,10 @@ fi
 
 if [ "$cdrom" = 1 ]; then
   export FOR_CDROM=1
+fi
+
+if [ "$fetch_orig" = 1 ]; then
+  export FETCH_ORIGINAL=1
 fi
 
 export DISTDIR=${pb}/${arch}/${branch}/distfiles

@@ -86,6 +86,10 @@ if [ "x$1" = "x-distfiles" ]; then
   nodistfiles=0
   shift
 fi
+if [ "x$1" = "x-fetch-original" ]; then
+  export FETCH_ORIGINAL=1
+  shift
+fi
 args="$*"
 
 buildenv ${pb} ${arch} ${branch}
