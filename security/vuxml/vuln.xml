@@ -32,6 +32,34 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ed1d404d-2784-11d9-b954-000bdb1444a4">
+    <topic>horde -- cross-site scripting vulnerability in help
+      window</topic>
+    <affects>
+      <package>
+        <name>horde</name>
+	<name>horde-devel</name>
+        <range><lt>2.2.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Horde Team announcement states that a potential cross-site
+	  scripting vulnerability in the help window has been
+	  corrected.  The vulnerability appears to involve the handling
+	  of the <code>topic</code> and <code>module</code> parameters
+	  of the help window template.</p>
+      </body>
+    </description>
+    <references>
+      <mlist msgid="20041026115303.10FBEC046E@neo.wg.de">http://marc.theaimsgroup.com/?l=horde-announce&amp;m=109879164718625</mlist>
+    </references>
+    <dates>
+      <discovery>2004-10-06</discovery>
+      <entry>2004-10-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f4428842-a583-4a4c-89b7-297c3459a1c3">
     <topic>bogofilter -- RFC 2047 decoder denial-of-service vulnerability</topic>
     <affects>
