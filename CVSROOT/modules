@@ -7258,6 +7258,7 @@ setquota	ports/sysutils/setquota
 sex		ports/games/sex
 seyon		ports/comms/seyon
 sfio		ports/devel/sfio
+sformat		ports/sysutils/sformat
 sfront		ports/audio/sfront
 sfs		ports/security/sfs
 sftp		src/secure/usr.bin/sftp
