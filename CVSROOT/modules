@@ -3081,6 +3081,7 @@ icmpchat	ports/net/icmpchat
 icmpinfo	ports/net/icmpinfo
 icmpmonitor	ports/net-mgmt/icmpmonitor
 icmpquery	ports/net-mgmt/icmpquery
+icoconvert	ports/graphics/icoconvert
 icod		ports/graphics/icod
 icon		ports/lang/icon
 icontact	ports/graphics/icontact
