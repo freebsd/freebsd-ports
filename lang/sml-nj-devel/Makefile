@@ -32,6 +32,8 @@ NO_WRKSUBDIR=	yes
 EXTRACT_ONLY=	110.9.1-config.tar.Z
 USE_GMAKE=	yes
 
+NO_LATEST_LINK=	yes
+
 SML_BASE=	${PREFIX}/lib/sml-nj
 SML_LIBDIR=	${SML_BASE}/lib
 SML_BINDIR=	${SML_BASE}/bin
