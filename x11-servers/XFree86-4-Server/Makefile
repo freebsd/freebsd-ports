@@ -28,7 +28,10 @@ COMMENT=	XFree86-4 X server and related programs
 .for pf in patch-savage-pci-id patch-alpha_video.c patch-Pci.h patch-radeondri \
 	patch-r128_driver.c patch-mga_driver.c patch-xkbInit.c patch-radeon_dri.c \
 	patch-mga_dri.c patch-nv_driver.c patch-nv_setup.c patch-int10-generic.c \
-	patch-radeon_cursor.c patch-radeon_reg.h patch-smi
+	patch-radeon_cursor.c patch-radeon_reg.h patch-smi \
+	patch-libc_wrapper.c patch-xf86-common-Imakefile patch-loader-Imakefile \
+	patch-loader-elfloader.c patch-bsd-Imakefile patch-bsd-bsdResource.c \
+	patch-bus-Imakefile patch-r200_vtxtmp_x86.S patch-radeon_vtxtmp_x86.S
 EXTRA_PATCHES+=		${FILESDIR}/${pf}
 .endfor
 SCRIPTS_ENV=		OSVERSION=${OSVERSION} \

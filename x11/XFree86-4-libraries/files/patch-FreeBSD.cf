@@ -1,5 +1,5 @@
 --- config/cf/FreeBSD.cf.orig	Tue Jan 14 18:52:12 2003
-+++ config/cf/FreeBSD.cf	Tue Mar  4 16:36:20 2003
++++ config/cf/FreeBSD.cf	Tue Jul 15 19:57:04 2003
 @@ -162,11 +162,11 @@
   *    ld: warning: libXThrStub.so.6, needed by libX11.so, not found
   */
@@ -25,36 +25,60 @@
  #endif
  #endif
  #ifndef ExtraLibraries
-@@ -228,13 +228,17 @@
+@@ -209,6 +209,10 @@
+ #endif
+ 
+ /* 3.3(?) and later has support for setting MTRRs */
++#ifdef x86_64Architecture
++#define HasMTRRSupport		NO	/* not yet */
++#endif
++
+ #ifndef HasMTRRSupport
+ #if OSMajorVersion > 3 || (OSMajorVersion == 3 && OSMinorVersion >= 3)
+ #define HasMTRRSupport		YES
+@@ -228,21 +232,25 @@
  #endif
  
  /*
 - * 4.1/i386 and 5.0/i386 have the AGP driver.
-+ * 4.1/i386 and 5.0/i386,alpha,ia64 have the AGP driver.
++ * 4.1/i386 and 5.0/i386,alpha,ia64,amd64 have the AGP driver.
   */
  #ifndef HasAgpGart
  #if defined(i386Architecture) && \
  	(OSMajorVersion >= 5 || (OSMajorVersion == 4 && OSMinorVersion >= 1))
  #define HasAgpGart		YES
  #endif
-+#if (defined(AlphaArchitecture) || defined(ia64Architecture)) && \
-+	(OSMajorVersion >= 5)
++#if (defined(AlphaArchitecture) || defined(ia64Architecture) || \
++	defined(x86_64Architecture)) && (OSMajorVersion >= 5)
 +#define HasAgpGart		YES
 +#endif
  #endif
  
  /*
-@@ -461,6 +465,9 @@
- #ifdef Sparc64Architecture
+  * SSE and 3DNow will be autodetected, so binutils is the only 
+  * requirement for enabling this.  By 4.2 they were all supported.
+  */
+-#if defined(i386Architecture) && \
+-	(OSMajorVersion >= 5 || (OSMajorVersion == 4 && OSMinorVersion >= 2))
++#if defined(x86_64Architecture) || (defined(i386Architecture) && \
++	(OSMajorVersion >= 5 || (OSMajorVersion == 4 && OSMinorVersion >= 2)))
+ # define HasX86Support          YES
+ # define HasMMXSupport		YES
+ # define Has3DNowSupport	YES
+@@ -455,10 +463,8 @@
+ #ifdef i386Architecture
+ #define ServerExtraDefines GccGasOption XFree86ServerDefines
+ #endif
+-#ifdef AlphaArchitecture
+-#define ServerExtraDefines GccGasOption XFree86ServerDefines -D_XSERVER64
+-#endif
+-#ifdef Sparc64Architecture
++#if defined(AlphaArchitecture) || defined(Sparc64Architecture) || \
++	defined(ia64Architecture) || defined(x86_64Architecture)
  #define ServerExtraDefines GccGasOption XFree86ServerDefines -D_XSERVER64
  #endif
-+#ifdef ia64Architecture
-+#define ServerExtraDefines GccGasOption XFree86ServerDefines -D_XSERVER64
-+#endif
  
- #define StandardDefines	-DCSRG_BASED
- 
-@@ -482,18 +489,8 @@
+@@ -482,18 +488,8 @@
  #define XawI18nDefines		-DUSE_XWCHAR_STRING -DUSE_XMBTOWC
  #endif
  

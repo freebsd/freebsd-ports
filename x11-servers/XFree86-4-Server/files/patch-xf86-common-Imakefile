@@ -1,0 +1,12 @@
+--- programs/Xserver/hw/xfree86/common/Imakefile.orig	Mon Feb 17 09:06:41 2003
++++ programs/Xserver/hw/xfree86/common/Imakefile	Tue Jul 15 17:29:14 2003
+@@ -18,7 +18,8 @@
+ #endif /* GNUMachArchitecture */
+ #else
+ # if defined(i386BsdArchitecture) || defined(AlphaBsdArchitecture) \
+-	|| defined(OpenBSDArchitecture) || defined(NetBSDArchitecture)
++	|| defined(OpenBSDArchitecture) || defined(NetBSDArchitecture) \
++	|| defined(FreeBSDArchitecture)
+         KBD = xf86KbdBSD
+ # else
+ #  ifdef LinuxArchitecture
