@@ -8,16 +8,16 @@
 PORTNAME=		evilwm
 PORTVERSION=		0.2.7
 CATEGORIES=		x11-wm
-# not in MASTER_SITE_SOURCEFORGE
-MASTER_SITES=		ftp://projects.sourceforge.net/pub/evilwm/
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=		trevor@FreeBSD.org
+MAINTAINER=	trevor@FreeBSD.org
 
-DOCDIR=			share/doc/${PORTNAME}
-DOCS=			Changes.kja3 README
-MAN1=			evilwm.1
-PLIST=			${WRKDIR}/pkg-plist
-USE_X_PREFIX=		yes
+DOCDIR=		share/doc/${PORTNAME}
+DOCS=		Changes.kja3 README
+MAN1=		evilwm.1
+PLIST=		${WRKDIR}/pkg-plist
+USE_X_PREFIX=	yes
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -I${X11BASE}/include -L${X11BASE}/lib -o evilwm *.c -lX11
