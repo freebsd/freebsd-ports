@@ -54,6 +54,7 @@ sbin/postcat
 sbin/postconf
 sbin/postfix
 sbin/postkick
+sbin/postlock
 sbin/postlog
 sbin/postmap
 sbin/postsuper

@@ -42,7 +42,7 @@ BIN1=	bounce cleanup error flush lmtp local master nqmgr pickup \
 	pipe qmgr showq smtp smtpd spawn trivial-rewrite
 
 BIN2=	postalias postcat postconf postdrop postfix \
-	postkick postlog postmap postsuper sendmail
+	postkick postlock postlog postmap postsuper sendmail
 
 .if defined(WITH_TEST)
 BIN3=   smtp-sink smtp-source
