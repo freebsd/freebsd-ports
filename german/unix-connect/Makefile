@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	unix-connect
-PORTVERSION=	0.94
+PORTVERSION=	0.95
 CATEGORIES=	german comms news mail
 MASTER_SITES=	ftp://ftp.dinoex.org/pub/unix-connect/ \
 		${MASTER_SITE_SOURCEFORGE}
