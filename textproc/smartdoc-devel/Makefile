@@ -17,50 +17,49 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML utility to create various documents(devel version)
 
-RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
+RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
-SCRIPTS_ENV=	JAVALIBDIR=${JAVALIBDIR}
 WRKSRC=		${WRKDIR}/sdoc
 NO_BUILD=	yes
 USE_ZIP=	yes
-USE_JAVA=	1.3+
-JAVA_EXTRACT=	yes
+USE_JAVA=	yes
+JAVA_VERSION=	1.3+
+JAVA_EXTRACT=	jre
+JAVA_RUN=	jre
 EXTRACT_CMD=	${JAVA}
 EXTRACT_BEFORE_ARGS=	-jar ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} \
 			-batch -bindir:${WRKSRC}/bin -installbasedir:${WRKSRC}
 EXTRACT_AFTER_ARGS=	#
 NO_LATEST_LINK=	yes
 
-JAVALIBDIR=	${PREFIX}/share/java
 XMLDIR=		${PREFIX}/share/xml
 EMACSLISPDIR=	${LOCALBASE}/share/emacs/site-lisp
 XEMACSLISPDIR=	${LOCALBASE}/lib/xemacs/site-lisp
 DTDDIR=		${XMLDIR}/${PORTNAME}
 MKCATALOG=	${LOCALBASE}/sbin/mkcatalog
-DOCS=		COPYING.txt OroLICENSE.txt README README.sdoc \
+.if !defined(NOPORTDOCS)
+PORTDOCS=	COPYING.txt OroLICENSE.txt README README.sdoc \
 		README_en.html README_ja.html \
-		XalanLICENSE.txt XercesLICENSE.txt
+		XalanLICENSE.txt XercesLICENSE.txt doc
+.endif
 JARS=		SmartDoc.jar
 ELISPS=		sdoc-helper.el sdoc-mode.el
 
-post-extract:
-	${MKDIR} ${WRKSRC}/bin
-	${CP} ${FILESDIR}/sdoc.in ${WRKSRC}/bin/sdoc
+SUB_FILES=	sdoc.sh
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/sdoc ${PREFIX}/bin
-	${MKDIR} ${JAVALIBDIR}/classes
+	${INSTALL_SCRIPT} ${WRKDIR}/sdoc.sh ${PREFIX}/bin/sdoc
+	${MKDIR} ${JAVAJARDIR}
 .for jar in ${JARS}
-	${INSTALL_DATA} ${WRKSRC}/${jar} ${JAVALIBDIR}/classes
+	${INSTALL_DATA} ${WRKSRC}/${jar} ${JAVAJARDIR}
 .endfor
-	${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/etc/* ${EXAMPLESDIR}
+	cd ${WRKSRC}/etc \
+	  && ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/{} \; \
+	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/{} \;
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for doc in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
-.endfor
-	${CP} -R ${WRKSRC}/doc ${DOCSDIR}
+	cd ${WRKSRC} \
+	  && ${FIND} ${PORTDOCS} -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
+	  && ${FIND} ${PORTDOCS} -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
 .endif
 	${MKDIR} ${DTDDIR} ${EMACSLISPDIR} ${XEMACSLISPDIR}
 	${INSTALL_DATA} ${FILESDIR}/catalog ${DTDDIR}

@@ -1,6 +1,0 @@
-#!/bin/sh
-
-export JAVALIBDIR
-
-/usr/bin/sed  -i "" -E  -e "s|%%JAVALIBDIR%%|${JAVALIBDIR}|g" \
-			-e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/bin/sdoc
