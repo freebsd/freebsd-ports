@@ -1,0 +1,7 @@
+Log onto a popserver to see a list of all messages that you have on there, with
+sender, subject and size for each message. With an ncurses interface that
+easily lets you scroll through them, and optionally deleting messages without
+ever downloading them. This can be useful when you've received big mails that
+you don't really want to download.
+
+WWW: http://www.ludd.luth.se/~staham/linux/programs.html
