@@ -3,7 +3,7 @@
 # Date created:			11 Feb. 1995
 # Whom:				torstenb
 #
-# $Id: Makefile,v 1.26 1997/09/26 08:23:14 torstenb Exp $
+# $Id: Makefile,v 1.27 1998/08/27 02:33:51 max Exp $
 #
 
 DISTNAME=       zsh-3.0.5
@@ -19,6 +19,8 @@ MASTER_SITES=   ftp://ftp.math.gatech.edu/pub/zsh/ \
 		ftp://ftp.uit.no/pub/unix/shells/zsh/
 
 MAINTAINER=	torstenb@FreeBSD.ORG
+
+BROKEN=		upgrade
 
 GNU_CONFIGURE=	yes
 MAN1=		zsh.1 zshbuiltins.1 zshcompctl.1 zshexpn.1 zshmisc.1 \
