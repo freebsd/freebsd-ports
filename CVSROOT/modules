@@ -6338,6 +6338,7 @@ py-scgi		ports/www/py-scgi
 py-scientific	ports/math/py-scientific
 py-serial	ports/comms/py-serial
 py-sgrep	ports/textproc/py-sgrep
+py-sip		ports/devel/py-sip
 py-smb		ports/net/py-smb
 py-snmp		ports/net/py-snmp
 py-soap		ports/net/py-soap
