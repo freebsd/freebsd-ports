@@ -89,6 +89,7 @@
     SUBDIR += marc-search
     SUBDIR += mathopd
     SUBDIR += mhonarc
+    SUBDIR += mod_auth_mysql
     SUBDIR += mod_dav
     SUBDIR += mod_dtcl
     SUBDIR += mod_fastcgi
