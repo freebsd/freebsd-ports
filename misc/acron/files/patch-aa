@@ -1,0 +1,16 @@
+--- whats.orig	Wed Oct 14 18:32:40 1992
++++ whats	Sat Dec 13 11:31:33 1997
+@@ -44,11 +44,11 @@
+ fi
+ ac=`echo ${ac} | tr "[a-z]" "[A-Z]"`
+ 
+-if [ ! -f acron ]
++if [ ! -z ${ACRON} ]
+ then
+     acron=${ACRON}
+ else
+-    acron=acron
++    acron=@@PREFIX@@/share/misc/acron
+ fi
+ i=`grep $q -c "^${ac}	" ${acron}`
+ 
