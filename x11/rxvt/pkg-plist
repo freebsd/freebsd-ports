@@ -1,2 +1,1 @@
 bin/rxvt
-@exec chmod 4711 %D/bin/rxvt

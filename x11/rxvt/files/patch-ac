@@ -1,13 +1,12 @@
---- doc/Makefile.in.orig	Tue Jun  8 02:53:55 1999
-+++ doc/Makefile.in	Tue Jun  8 11:12:40 1999
-@@ -66,8 +66,8 @@
- rxvt.tbl: yodl/rxvt.yo $(YODL_RXVT) yodl/versioninfo.yo yodl/masonyodl.yo
- 	yodl2man -orxvt.tbl yodl/rxvt.yo
+--- doc/Makefile.in	Sun Mar 12 00:26:26 2000
++++ doc/Makefile.in.new	Mon Mar 27 01:39:53 2000
+@@ -40,9 +40,6 @@
+ 
+ all:	rxvt.1
  
 -rxvt.1: rxvt.tbl Makefile
--	@if test x$(TBL) = x; then : ; else echo "Making rxvt.1"; $(TBL) $(srcdir)/rxvt.tbl > rxvt.1 ; fi
-+#rxvt.1: rxvt.tbl Makefile
-+#	@if test x$(TBL) = x; then : ; else echo "Making rxvt.1"; $(TBL) $(srcdir)/rxvt.tbl > rxvt.1 ; fi
- 
- rxvt.html: yodl/rxvt.yo $(YODL_RXVT) yodl/versioninfo.yo yodl/masonyodl.yo
- 	yodl2html -o$@ yodl/rxvt.yo
+-	@if test x$(TBL) = x; then : ; else echo "$(TBL) $(srcdir)/rxvt.tbl | grep -v '^.lf' > rxvt.1"; $(TBL) $(srcdir)/rxvt.tbl | grep -v '^.lf' > rxvt.1 ; fi
+-
+ SEDREPLACE = -e 's%@RXVT_VERSION@%$(VERSION)%g;'\
+ 	     -e 's%@RXVT_LSMDATE@%$(LSMDATE)%g;'\
+ 	     -e 's%@RXVT_DATE@%$(DATE)%g;'\
