@@ -7,7 +7,7 @@
 PORTNAME=	mindterm-binary
 PORTVERSION=	1.2.1
 CATEGORIES=	security
-MASTER_SITES=	http://www.mindbright.se/mindterm/ \
+MASTER_SITES=	http://www.mindbright.se/download/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	alex
 DISTNAME=	mindtermbin-v121
@@ -19,6 +19,7 @@ MAINTAINER=	alex@FreeBSD.org
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+NO_CDROM=	"Do not sell for profit"
 
 post-extract:
 	@${CP} ${DISTDIR}/mindterm-ssh.html ${WRKSRC}
@@ -26,6 +27,12 @@ post-extract:
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/java/mindterm
-	@${INSTALL_DATA} ${WRKSRC}/* ${PREFIX}/share/java/mindterm/
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/mindterm
+.for DOC in CHANGES FAQ FEATURES PLATFORMS TODO mindterm-ssh.html
+	@${INSTALL_DATA} ${WRKSRC}/${DOC} ${PREFIX}/share/doc/mindterm/
+.endfor
+.endif
+	@${INSTALL_DATA} ${WRKSRC}/mindterm.jar ${PREFIX}/share/java/mindterm/
 
 .include <bsd.port.mk>
