@@ -1,0 +1,11 @@
+--- Makefile.in	Mon Jan 17 17:44:00 2000
++++ Makefile.in.new	Sun Feb 20 20:28:12 2000
+@@ -157,7 +157,7 @@
+ x_libraries = @x_libraries@
+ xdmconfigsubdir = @xdmconfigsubdir@
+ 
+-SUBDIRS = kbubbles po 
++SUBDIRS = kbubbles
+ 
+ EXTRA_DIST = kbubbles.kdevprj AUTHORS COPYING ChangeLog INSTALL README TODO kbubbles.lsm 
+ 
