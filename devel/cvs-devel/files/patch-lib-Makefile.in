@@ -1,0 +1,36 @@
+--- lib/Makefile.in.orig	Sat Apr 28 05:02:17 2001
++++ lib/Makefile.in	Mon Nov  5 14:24:16 2001
+@@ -133,7 +133,6 @@
+ 	getline.c \
+ 	getopt.c \
+ 	getopt1.c \
+-	md5.c \
+ 	regex.c \
+ 	savecwd.c \
+ 	sighandle.c \
+@@ -171,7 +170,7 @@
+ libcvs_a_DEPENDENCIES = @LIBOBJS@
+ am_libcvs_a_OBJECTS = argmatch.$(OBJEXT) ftruncate.$(OBJEXT) \
+ 	getdate.$(OBJEXT) getline.$(OBJEXT) getopt.$(OBJEXT) \
+-	getopt1.$(OBJEXT) md5.$(OBJEXT) regex.$(OBJEXT) \
++	getopt1.$(OBJEXT) regex.$(OBJEXT) \
+ 	savecwd.$(OBJEXT) sighandle.$(OBJEXT) stripslash.$(OBJEXT) \
+ 	xgetwd.$(OBJEXT) yesno.$(OBJEXT)
+ libcvs_a_OBJECTS = $(am_libcvs_a_OBJECTS)
+@@ -194,7 +193,7 @@
+ @AMDEP_TRUE@	$(DEPDIR)/ftruncate.Po $(DEPDIR)/getdate.Po \
+ @AMDEP_TRUE@	$(DEPDIR)/getline.Po $(DEPDIR)/getopt.Po \
+ @AMDEP_TRUE@	$(DEPDIR)/getopt1.Po $(DEPDIR)/hostname.Po \
+-@AMDEP_TRUE@	$(DEPDIR)/md5.Po $(DEPDIR)/memmove.Po \
++@AMDEP_TRUE@	$(DEPDIR)/memmove.Po \
+ @AMDEP_TRUE@	$(DEPDIR)/mkdir.Po $(DEPDIR)/regex.Po \
+ @AMDEP_TRUE@	$(DEPDIR)/rename.Po $(DEPDIR)/savecwd.Po \
+ @AMDEP_TRUE@	$(DEPDIR)/sighandle.Po $(DEPDIR)/strerror.Po \
+@@ -289,7 +288,6 @@
+ @_am_include@ @_am_quote@$(DEPDIR)/getopt.Po@_am_quote@
+ @_am_include@ @_am_quote@$(DEPDIR)/getopt1.Po@_am_quote@
+ @_am_include@ @_am_quote@$(DEPDIR)/hostname.Po@_am_quote@
+-@_am_include@ @_am_quote@$(DEPDIR)/md5.Po@_am_quote@
+ @_am_include@ @_am_quote@$(DEPDIR)/memmove.Po@_am_quote@
+ @_am_include@ @_am_quote@$(DEPDIR)/mkdir.Po@_am_quote@
+ @_am_include@ @_am_quote@$(DEPDIR)/regex.Po@_am_quote@
