@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	yahoo
-PORTVERSION=	2.1
+PORTVERSION=	2.1.1
 CATEGORIES=	net
 MASTER_SITES=	http://yahoo-transport-2.jabberstudio.org/
 PKGNAMEPREFIX=	jabber-
