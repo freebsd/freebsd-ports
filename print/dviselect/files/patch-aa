@@ -1,11 +1,10 @@
---- dviselect.c~	Thu Mar 14 21:53:21 1991
-+++ dviselect.c	Tue Aug 19 18:39:09 1997
-@@ -124,8 +124,6 @@
+--- dviselect.c~	Wed Nov 15 13:19:15 1989
++++ dviselect.c	Mon Jul  3 00:38:25 2000
+@@ -122,7 +122,6 @@
+ /* save some string space: we use this a lot */
+ char	writeerr[] = "error writing DVI file";
  
- #ifdef	_AIX
- char	*malloc(), *realloc();
--#else
 -char	*malloc(), *realloc(), *sprintf();
- #endif
  
  /*
+  * lint gets rather confused with the current definitions of getc and putc,

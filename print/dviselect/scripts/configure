@@ -1,6 +1,8 @@
 #!/bin/sh
 
-PREFIX=${PREFIX:-/usr/local}
+cd $WRKSRC
+mv Makefile Makefile~
+sed -e /DELETE/q <Makefile~ >Makefile
 
 echo "BINDIR = $PREFIX/bin"     >> $WRKSRC/Makefile || exit 1;
 echo "MANDIR = $PREFIX/man"     >> $WRKSRC/Makefile || exit 1;
