@@ -22,6 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/gnu-autotools/bin/autoconf:${PORTSDIR}/devel/gnu-autoc
 PREFIX?=	${LOCALBASE}/gnu-autotools
 
 USE_BZIP2=	yes
+INFO=		automake
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 NO_MTREE=	yes

@@ -2,9 +2,6 @@ bin/aclocal
 bin/aclocal-1.8
 bin/automake
 bin/automake-1.8
-@unexec install-info --delete %D/info/automake.info %D/info/dir
-info/automake.info
-@exec install-info %D/info/automake.info %D/info/dir
 share/aclocal-1.8/amversion.m4
 share/aclocal-1.8/as.m4
 share/aclocal-1.8/auxdir.m4

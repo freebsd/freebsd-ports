@@ -5,12 +5,6 @@ bin/autoreconf
 bin/autoscan
 bin/autoupdate
 bin/ifnames
-@unexec install-info --delete %D/info/autoconf.info %D/info/dir
-@unexec install-info --delete %D/info/standards.info %D/info/dir
-info/autoconf.info
-info/standards.info
-@exec install-info %D/info/autoconf.info %D/info/dir
-@exec install-info %D/info/standards.info %D/info/dir
 share/autoconf/Autom4te/C4che.pm
 share/autoconf/Autom4te/ChannelDefs.pm
 share/autoconf/Autom4te/Channels.pm
