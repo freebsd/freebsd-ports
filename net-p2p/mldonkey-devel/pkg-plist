@@ -7,13 +7,3 @@
 %%GUI%%bin/mlchat
 %%GUI%%bin/mlgui
 %%GUI%%bin/mlim
-%%PORTDOCS%%share/doc/mldonkey/Authors.txt
-%%PORTDOCS%%share/doc/mldonkey/Bugs.txt
-%%PORTDOCS%%share/doc/mldonkey/ChangeLog
-%%PORTDOCS%%share/doc/mldonkey/Developers.txt
-%%PORTDOCS%%share/doc/mldonkey/FAQ.html
-%%PORTDOCS%%share/doc/mldonkey/Install.txt
-%%PORTDOCS%%share/doc/mldonkey/Readme.txt
-%%PORTDOCS%%share/doc/mldonkey/Todo.txt
-%%PORTDOCS%%share/doc/mldonkey/ed2k_links.txt
-%%PORTDOCS%%@dirrm share/doc/mldonkey
