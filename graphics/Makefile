@@ -11,6 +11,7 @@
     SUBDIR += aalib
     SUBDIR += acidwarp
     SUBDIR += aero
+    SUBDIR += autotrace
     SUBDIR += aview
     SUBDIR += avifile
     SUBDIR += backfract

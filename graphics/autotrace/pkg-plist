@@ -1,0 +1,8 @@
+lib/libautotrace.a
+bin/autotrace
+bin/autotrace-config
+share/aclocal/autotrace.m4
+@dirrm share/aclocal
+include/autotrace/types.h
+include/autotrace/autotrace.h
+@dirrm include/autotrace

@@ -1,0 +1,11 @@
+--- configure.in.orig	Sun Mar 25 03:57:10 2001
++++ configure.in	Thu Apr 12 11:31:07 2001
+@@ -107,7 +107,7 @@
+ dnl
+ HAVE_LIBSWF=no
+ 
+-AC_CHECK_HEADER(ming.h,
++AC_CHECK_HEADER(ming/ming.h,
+ 	        swf_header_found=yes,
+ 		swf_header_found=no)
+ if test "${swf_header_found}" = yes ; then
