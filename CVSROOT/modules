@@ -466,6 +466,7 @@ biabam		ports/mail/biabam
 bibcard		ports/print/bibcard
 bibelot		ports/palm/bibelot
 biblereader	ports/misc/biblereader
+bibtex2html	ports/textproc/bibtex2html
 bibview		ports/print/bibview
 bidwatcher	ports/misc/bidwatcher
 biew		ports/editors/biew
