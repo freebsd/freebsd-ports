@@ -1,5 +1,5 @@
 --- pico/edef.h.orig	Thu Apr 23 07:53:44 1998
-+++ pico/edef.h	Tue Aug  4 12:42:14 1998
++++ pico/edef.h	Thu Oct 14 10:53:41 1999
 @@ -59,7 +59,7 @@
  int	ComposerEditing = FALSE;	/* TRUE if message line is open */
  int	revexist = FALSE;		/* does reverse video exist?	*/

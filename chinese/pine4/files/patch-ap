@@ -1,5 +1,5 @@
---- pico/main.c.orig	Thu Jul 16 16:30:47 1998
-+++ pico/main.c	Tue Aug  4 12:42:14 1998
+--- pico/main.c.orig	Fri Sep 24 05:44:10 1999
++++ pico/main.c	Thu Oct 14 10:53:41 1999
 @@ -66,7 +66,7 @@
      { F9,  (CTRL|'K')},
      { F10, (CTRL|'U')},
@@ -9,7 +9,7 @@
      { F12, (CTRL|'T')}
  #else
      { F12, (CTRL|'D')}
-@@ -424,7 +424,7 @@
+@@ -459,7 +459,7 @@
  	    gmode ^= MDSSPD;
  	    break;
  	  case 'q':			/* -q for termcap takes precedence */

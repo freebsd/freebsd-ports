@@ -1,5 +1,5 @@
---- pico/file.c.orig	Sat Jan 30 03:59:32 1999
-+++ pico/file.c	Mon Feb 22 22:11:27 1999
+--- pico/file.c.orig	Tue Mar 23 09:26:04 1999
++++ pico/file.c	Thu Oct 14 10:53:41 1999
 @@ -63,17 +63,17 @@
                  return(s);
  
@@ -91,7 +91,7 @@
  				    opertree);
  			else
  			  retval = ifile(fname);
-@@ -252,7 +251,7 @@
+@@ -255,7 +254,7 @@
  		break;
  	      case (CTRL|'T'):
  		if(msg){
@@ -100,7 +100,7 @@
  		}
  		else{
  		    if(*fname && isdir(fname, NULL, NULL))
-@@ -267,7 +266,7 @@
+@@ -270,7 +269,7 @@
  		    if((s = FileBrowse(dir, NLINE, fname, NLINE, 
  				       NULL, FB_READ)) == 1){
  			if(gmode&MDSCUR){
@@ -109,7 +109,7 @@
  				     NULL);
  			    sleep(2);
  			}
-@@ -308,7 +307,7 @@
+@@ -311,7 +310,7 @@
  
  		    if(gmode&MDSCUR){
  			emlwrite(
@@ -118,7 +118,7 @@
  			      NULL);
  			return(0);
  		    }
-@@ -408,20 +407,20 @@
+@@ -411,20 +410,20 @@
  	strcpy(curbp->b_fname, fname);
  	if ((s=ffropen(fname)) != FIOSUC){	/* Hard file open.      */
  	    if(s == FIOFNF)                     /* File not found.      */
@@ -143,7 +143,7 @@
  		  emlwrite(line, NULL);
  		  break;
  	      }
-@@ -479,14 +478,14 @@
+@@ -482,14 +481,14 @@
  	  fname[0] = '\0';
  
  	menu_write[0].name  = "^T";
@@ -161,7 +161,7 @@
  			 QDEFLT|QFFILE, menu_write);
  
  	    switch(s){
-@@ -497,7 +496,7 @@
+@@ -500,7 +499,7 @@
  		}
  	      case TRUE:
  		if((gmode & MDTREE) && !compresspath(opertree, fname, NFILEN)){
@@ -170,7 +170,7 @@
  			     opertree);
  		    sleep(2);
  		    continue;
-@@ -505,7 +504,7 @@
+@@ -508,7 +507,7 @@
  		else{
  		    fixpath(fname, NFILEN);	/*  fixup ~ in file name  */
  		    if((gmode & MDTREE) && !in_oper_tree(fname)){
@@ -179,7 +179,7 @@
  			sleep(2);
  			continue;
  		    }
-@@ -589,12 +588,12 @@
+@@ -592,12 +591,12 @@
  		    strcpy(fname, shows);
  		  }
  		  else {
@@ -194,7 +194,7 @@
  		  sleep(3);
  		}
  		refresh(FALSE, 1);
-@@ -632,7 +631,7 @@
+@@ -635,7 +634,7 @@
  		return(ABORT);
  	    }
  	}
@@ -203,7 +203,7 @@
  
          if ((s=writeout(fname, 0)) != -1) {
  	        if(!(gmode&MDTOOL)){
-@@ -649,9 +648,9 @@
+@@ -652,9 +651,9 @@
  		}
  
  		if(s > 1)
@@ -215,7 +215,7 @@
          }
          return ((s == -1) ? FALSE : TRUE);
  }
-@@ -677,12 +676,12 @@
+@@ -680,12 +679,12 @@
          if ((curbp->b_flag&BFCHG) == 0)         /* Return, no changes.  */
                  return (TRUE);
          if (curbp->b_fname[0] == 0) {           /* Must have a name.    */
@@ -230,7 +230,7 @@
          if ((s=writeout(curbp->b_fname, 0)) != -1) {
                  curbp->b_flag &= ~BFCHG;
                  wp = wheadp;                    /* Update mode lines.   */
-@@ -693,10 +692,10 @@
+@@ -696,10 +695,10 @@
                          wp = wp->w_wndp;
                  }
  		if(s > 1){
@@ -243,7 +243,7 @@
          }
          return (s);
  }
-@@ -815,7 +814,7 @@
+@@ -818,7 +817,7 @@
  	curbp->b_flag &= ~BFTEMP;		/* and are not temporary*/
  	curbp->b_linecnt = -1;			/* must be recalculated */
  
@@ -252,7 +252,7 @@
  	done = newline = 0;
  	nline = 0L;
  	while(!done)
-@@ -825,7 +824,7 @@
+@@ -828,7 +827,7 @@
  	      else
  		forwchar(FALSE, 1);
  
@@ -261,7 +261,7 @@
  	      emlwrite(line, NULL);
  	      break;
  	  }
-@@ -913,7 +912,7 @@
+@@ -916,7 +915,7 @@
  	      strcat(fn, S_FILESEP);
  	  }
  	  else{

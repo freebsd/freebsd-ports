@@ -1,18 +1,18 @@
---- pico/search.c.orig	Sat Sep 12 01:15:02 1998
-+++ pico/search.c	Tue Sep 22 18:54:24 1998
-@@ -127,9 +127,9 @@
-     /* ask the user for the text of a pattern */
+--- pico/search.c.orig	Tue Oct  5 05:49:41 1999
++++ pico/search.c	Thu Oct 14 11:36:00 1999
+@@ -131,9 +131,9 @@
      while(1){
+ 
  	if (gmode & MDREPLACE)
 -	  status = srpat("Search", defpat, repl_mode);
 +	  status = srpat("搜尋", defpat, repl_mode);
  	else
--	  status = readpattern("Search");
-+	  status = readpattern("搜尋");
+-	  status = readpattern("Search", TRUE);
++	  status = readpattern("搜尋", TRUE);
  
  	switch(status){
  	  case TRUE:                         /* user typed something */
-@@ -142,14 +142,14 @@
+@@ -146,14 +146,14 @@
  
  		saved_state = save_pico_state();
  		(*Pmaster->helper)(Pmaster->search_help,
@@ -29,7 +29,7 @@
  
  	  case (CTRL|'L'):			/* redraw requested */
  	    refresh(FALSE, 1);
-@@ -179,7 +179,7 @@
+@@ -235,7 +235,7 @@
  
  	  default:
  	    if(status == ABORT)
@@ -38,7 +38,7 @@
  	    else
  	      mlerase();
  
-@@ -228,16 +228,16 @@
+@@ -283,16 +283,16 @@
  
      /* and complain if not there */
      if (status == FALSE){
@@ -59,7 +59,7 @@
      }
      else if(status == TRUE){
  	emlwrite("", NULL);
-@@ -267,7 +267,7 @@
+@@ -321,7 +321,7 @@
      /* additional 'replace all' menu option */
      menu_pat[0].name  = "^X";
      menu_pat[0].key   = (CTRL|'X');
@@ -68,7 +68,7 @@
      KS_OSDATASET(&menu_pat[0], KS_NONE);
      menu_pat[1].name  = NULL;
  
-@@ -279,10 +279,10 @@
+@@ -333,10 +333,10 @@
  	pputs(origpat, 1);                       /* highlight word */
  	(*term.t_rev)(0);
  
@@ -81,7 +81,7 @@
  	if(rpat[0] != 0){
  	    strcat(prompt, " [");
  	    expandp(rpat, &prompt[strlen(prompt)], NPAT/2);
-@@ -324,14 +324,14 @@
+@@ -378,14 +378,14 @@
  
  		saved_state = save_pico_state();
  		(*Pmaster->helper)(Pmaster->search_help,
@@ -98,7 +98,7 @@
  
  	  case (CTRL|'L'):			/* redraw requested */
  	    refresh(FALSE, 1);
-@@ -341,18 +341,18 @@
+@@ -395,18 +395,18 @@
  	  case (CTRL|'X'):        /* toggle replace all option */
  	    if (repl_all){
  		repl_all = FALSE;
@@ -120,7 +120,7 @@
  	    else 
  	      mlerase();
  	    chword(defpat, origpat);
-@@ -401,9 +401,9 @@
+@@ -455,9 +455,9 @@
  	(*term.t_rev)(0);
  	fflush(stdout);
  
@@ -132,7 +132,7 @@
  	expandp(&repl[0], &prompt[strlen(prompt)], NPAT/2);
  	strcat(prompt, "\"");
  
-@@ -417,13 +417,13 @@
+@@ -471,13 +471,13 @@
  	    chword(realpat, realpat);	       /* replace word by itself */
  	    update();
  	    if(status == ABORT){		/* if cancelled return */
@@ -148,40 +148,86 @@
  	return (FALSE);
      }
  }
-@@ -440,18 +440,18 @@
- 	EXTRAKEYS    menu_pat[4];
+@@ -495,33 +495,33 @@
+ 	EXTRAKEYS    menu_pat[7];
  
- 	menu_pat[0].name  = "^Y";
--	menu_pat[0].label = "FirstLine";
-+	menu_pat[0].label = "第一行";
- 	menu_pat[0].key   = (CTRL|'Y');
- 	KS_OSDATASET(&menu_pat[0], KS_NONE);
- 	menu_pat[1].name  = "^V";
--	menu_pat[1].label = "LastLine";
-+	menu_pat[1].label = "最後一行";
- 	menu_pat[1].key   = (CTRL|'V');
- 	KS_OSDATASET(&menu_pat[1], KS_NONE);
- 	menu_pat[2].name  = "^R";
- 	if (repl_mode)
--	  menu_pat[2].label = "No Replace";
-+	  menu_pat[2].label = "不取代";
- 	else
--	  menu_pat[2].label = "Replace";
-+	  menu_pat[2].label = "取代";
- 	menu_pat[2].key   = (CTRL|'R');
- 	KS_OSDATASET(&menu_pat[2], KS_NONE);
- 	menu_pat[3].name  = NULL;
-@@ -504,11 +504,11 @@
- 	EXTRAKEYS    menu_pat[3];
+ 	menu_pat[i = 0].name = "^Y";
+-	menu_pat[i].label    = "FirstLine";
++	menu_pat[i].label    = "第一行";
+ 	menu_pat[i].key	     = (CTRL|'Y');
+ 	KS_OSDATASET(&menu_pat[i], KS_NONE);
  
- 	menu_pat[0].name  = "^Y";
--	menu_pat[0].label = "FirstLine";
-+	menu_pat[0].label = "第一行";
- 	menu_pat[0].key   = (CTRL|'Y');
- 	KS_OSDATASET(&menu_pat[0], KS_NONE);
- 	menu_pat[1].name  = "^V";
--	menu_pat[1].label = "LastLine";
-+	menu_pat[1].label = "最後一行";
- 	menu_pat[1].key   = (CTRL|'V');
- 	KS_OSDATASET(&menu_pat[1], KS_NONE);
- 	menu_pat[2].name  = NULL;
+ 	menu_pat[++i].name = "^V";
+-	menu_pat[i].label  = "LastLine";
++	menu_pat[i].label  = "最後一行";
+ 	menu_pat[i].key	   = (CTRL|'V');
+ 	KS_OSDATASET(&menu_pat[i], KS_NONE);
+ 
+ 	menu_pat[++i].name = "^R";
+-	menu_pat[i].label  = repl_mode ? "No Replace" : "Replace";
++	menu_pat[i].label  = repl_mode ? "不取代" : "取代";
+ 	menu_pat[i].key	   = (CTRL|'R');
+ 	KS_OSDATASET(&menu_pat[i], KS_NONE);
+ 
+ 	if(!repl_mode){
+ 	    menu_pat[++i].name = "^T";
+-	    menu_pat[i].label  = "LineNumber";
++	    menu_pat[i].label  = "行號";
+ 	    menu_pat[i].key    = (CTRL|'T');
+ 	    KS_OSDATASET(&menu_pat[i], KS_NONE);
+ 
+ 	    menu_pat[++i].name = "^W";
+-	    menu_pat[i].label  = "Start of Para";
++	    menu_pat[i].label  = "段落起始";
+ 	    menu_pat[i].key    = (CTRL|'W');
+ 	    KS_OSDATASET(&menu_pat[i], KS_NONE);
+ 
+ 	    menu_pat[++i].name = "^O";
+-	    menu_pat[i].label  = "End of Para";
++	    menu_pat[i].label  = "段落結尾";
+ 	    menu_pat[i].key    = (CTRL|'O');
+ 	    KS_OSDATASET(&menu_pat[i], KS_NONE);
+ 	}
+@@ -577,7 +577,7 @@
+     EXTRAKEYS    menu_pat[2];
+ 
+     menu_pat[i = 0].name  = "^T";
+-    menu_pat[i].label	  = "No Line Number";
++    menu_pat[i].label	  = "無行號";
+     menu_pat[i].key	  = (CTRL|'T');
+     KS_OSDATASET(&menu_pat[i++], KS_NONE);
+ 
+@@ -622,28 +622,28 @@
+ 	EXTRAKEYS    menu_pat[6];
+ 
+ 	menu_pat[i = 0].name = "^Y";
+-	menu_pat[i].label    = "FirstLine";
++	menu_pat[i].label    = "第一行";
+ 	menu_pat[i].key	     = (CTRL|'Y');
+ 	KS_OSDATASET(&menu_pat[i], KS_NONE);
+ 
+ 	menu_pat[++i].name = "^V";
+-	menu_pat[i].label  = "LastLine";
++	menu_pat[i].label  = "最後一行";
+ 	menu_pat[i].key	   = (CTRL|'V');
+ 	KS_OSDATASET(&menu_pat[i], KS_NONE);
+ 
+ 	if(text_mode){
+ 	    menu_pat[++i].name = "^T";
+-	    menu_pat[i].label  = "LineNumber";
++	    menu_pat[i].label  = "行號";
+ 	    menu_pat[i].key    = (CTRL|'T');
+ 	    KS_OSDATASET(&menu_pat[i], KS_NONE);
+ 
+ 	    menu_pat[++i].name = "^W";
+-	    menu_pat[i].label  = "Start of Para";
++	    menu_pat[i].label  = "段落起始";
+ 	    menu_pat[i].key    = (CTRL|'W');
+ 	    KS_OSDATASET(&menu_pat[i], KS_NONE);
+ 
+ 	    menu_pat[++i].name = "^O";
+-	    menu_pat[i].label  = "End of Para";
++	    menu_pat[i].label  = "段落結尾";
+ 	    menu_pat[i].key    = (CTRL|'O');
+ 	    KS_OSDATASET(&menu_pat[i], KS_NONE);
+ 	}

@@ -1,5 +1,5 @@
---- pico/browse.c.orig	Wed Sep 16 08:19:17 1998
-+++ pico/browse.c	Tue Sep 22 17:29:07 1998
+--- pico/browse.c.orig	Sat Oct  2 07:21:05 1999
++++ pico/browse.c	Thu Oct 14 10:53:41 1999
 @@ -126,12 +126,12 @@
  
  
@@ -453,7 +453,7 @@
  		break;
 @@ -1425,7 +1425,7 @@
  
- 		switch(readpattern("File name to find")){
+ 		switch(readpattern("File name to find", FALSE)){
  		  case HELPCH:
 -		    emlwrite("\007No help yet!", NULL);
 +		    emlwrite("\007尚無輔助說明!", NULL);

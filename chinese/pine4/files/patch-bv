@@ -1,5 +1,5 @@
---- pine/osdep/print.orig	Tue Sep 22 21:22:23 1998
-+++ pine/osdep/print	Tue Sep 22 21:26:09 1998
+--- pine/osdep/print.orig	Fri Nov 13 06:51:20 1998
++++ pine/osdep/print	Thu Oct 14 10:53:45 1999
 @@ -39,12 +39,12 @@
      HelpType help;
      char   **list;

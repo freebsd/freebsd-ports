@@ -1,5 +1,5 @@
---- pico/display.c.orig	Sat Jun 20 01:19:53 1998
-+++ pico/display.c	Tue Sep 22 18:30:04 1998
+--- pico/display.c.orig	Thu Sep  2 03:25:22 1999
++++ pico/display.c	Thu Oct 14 10:53:41 1999
 @@ -71,32 +71,32 @@
   * Standard pico keymenus...
   */
@@ -126,7 +126,7 @@
  	    wkeyhelp(menu_compose);
  #ifdef _WINDOWS
  	    /* When alt editor is available "Where is" is not on the menu
-@@ -1150,11 +1150,11 @@
+@@ -1159,11 +1159,11 @@
      }
  
      menu_yesno[1].name  = "Y";
@@ -141,7 +141,7 @@
      wkeyhelp(menu_yesno);		/* paint generic menu */
      sgarbk = TRUE;			/* mark menu dirty */
      if(Pmaster && curwp)
-@@ -1168,7 +1168,7 @@
+@@ -1177,7 +1177,7 @@
  	switch(GetKey()){
  	  case (CTRL|'M') :		/* default */
  	    if(dflt >= 0){
@@ -150,7 +150,7 @@
  		rv = dflt;
  	    }
  	    else
-@@ -1185,14 +1185,14 @@
+@@ -1194,14 +1194,14 @@
  	  case 'y' :
  	  case 'Y' :
  	  case F3  :
@@ -167,7 +167,7 @@
  	    rv = FALSE;
  	    break;
  
-@@ -1320,7 +1320,7 @@
+@@ -1329,7 +1329,7 @@
  #endif
  
      menu_mlreply[0].name = "^G";
@@ -176,7 +176,7 @@
      KS_OSDATASET(&menu_mlreply[0], KS_SCREENHELP);
      for(j = 0, i = 1; i < 6; i++){	/* insert odd extras */
  	menu_mlreply[i].name = NULL;
-@@ -1340,7 +1340,7 @@
+@@ -1349,7 +1349,7 @@
      }
  
      menu_mlreply[6].name = "^C";

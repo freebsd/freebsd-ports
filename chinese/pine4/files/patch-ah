@@ -1,6 +1,6 @@
---- pico/attach.c.orig	Sat Jul 11 06:41:23 1998
-+++ pico/attach.c	Tue Aug  4 12:42:13 1998
-@@ -74,12 +74,12 @@
+--- pico/attach.c.orig	Fri May 28 07:10:00 1999
++++ pico/attach.c	Thu Oct 14 10:53:41 1999
+@@ -75,12 +75,12 @@
  	    int	      n;
  
  	    menu_attach[n = 0].name  = "^T";
@@ -15,7 +15,7 @@
  		menu_attach[n].key    = (CTRL|'I');
  	    }
  
-@@ -101,12 +101,12 @@
+@@ -102,12 +102,12 @@
  
  	    menu_attach[++n].name  = NULL;
  	    KS_OSDATASET(&menu_attach[0], KS_NONE);

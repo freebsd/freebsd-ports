@@ -1,6 +1,6 @@
---- pine/takeaddr.c.orig	Fri Jun 26 02:26:36 1998
-+++ pine/takeaddr.c	Tue Aug  4 12:42:22 1998
-@@ -785,7 +785,7 @@
+--- pine/takeaddr.c.orig	Fri Sep 10 05:35:29 1999
++++ pine/takeaddr.c	Thu Oct 14 10:53:45 1999
+@@ -895,7 +895,7 @@
      return;
  
  take_to_addrbooks_cancel:
@@ -9,7 +9,7 @@
      if(tas && *tas){
  	restore_state(&((*tas)->state));
  	(*tas)->pab   = NULL;
-@@ -1267,7 +1267,7 @@
+@@ -1385,7 +1385,7 @@
  	    break;
  
  	  case MC_EXIT:				/* exit takeaddr screen */
@@ -18,7 +18,7 @@
  	    ret = 1;
  	    done++;
  	    break;
-@@ -2698,7 +2698,7 @@
+@@ -2862,7 +2862,7 @@
      
      switch(j){
        case 'x':
@@ -27,7 +27,7 @@
  	return;
  
        case 'e':
-@@ -2798,7 +2798,7 @@
+@@ -2962,7 +2962,7 @@
  
      switch(i){
        case 'x':
@@ -36,7 +36,7 @@
  	return;
      
        case 'a':
-@@ -4737,7 +4737,7 @@
+@@ -4937,7 +4937,7 @@
  	    
  	    switch(j){
  	      case 'x':
@@ -45,7 +45,7 @@
  		break;
  
  	      case 'e':
-@@ -4957,7 +4957,7 @@
+@@ -5155,7 +5155,7 @@
  	
  	switch(j){
  	  case 'x':

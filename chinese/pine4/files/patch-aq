@@ -1,6 +1,6 @@
---- pico/pico.c.orig	Tue Jul  7 05:41:45 1998
-+++ pico/pico.c	Tue Aug  4 12:42:15 1998
-@@ -318,7 +318,7 @@
+--- pico/pico.c.orig	Fri Jun 11 06:56:16 1999
++++ pico/pico.c	Thu Oct 14 10:53:41 1999
+@@ -313,7 +313,7 @@
  	c = GetKey();
          if (term.t_nrow < 6 && c != NODATA){
              (*term.t_beep)();
@@ -9,7 +9,7 @@
              continue;
          }
  
-@@ -560,9 +560,9 @@
+@@ -555,9 +555,9 @@
      }
      
      if(c&CTRL)
@@ -21,7 +21,7 @@
  
      lastflag = 0;                           /* Fake last flags.     */
      return (FALSE);
-@@ -615,7 +615,7 @@
+@@ -610,7 +610,7 @@
  	    return(TRUE);
  	}
  	else{
@@ -30,7 +30,7 @@
  	    curwp->w_flag |= WFMODE;		/* and modeline so we  */
  	    sgarbk = TRUE;			/* redraw the keymenu  */
  	    pclear(term.t_nrow - 1, term.t_nrow + 1);
-@@ -624,17 +624,17 @@
+@@ -619,17 +619,17 @@
  	}
      }
      else switch(mlyesno(Pmaster->headents
@@ -52,7 +52,7 @@
  	break;
  
        default:
-@@ -672,7 +672,7 @@
+@@ -667,7 +667,7 @@
  
  	/* First, make sure there are no outstanding problems */ 
  	if(AttachError()){
@@ -61,7 +61,7 @@
  	    return(FALSE);
  	}
  
-@@ -706,7 +706,7 @@
+@@ -701,7 +701,7 @@
          if (f != FALSE                          /* Argument forces it.  */
          || anycb() == FALSE                     /* All buffers clean.   */
  						/* User says it's OK.   */
@@ -70,7 +70,7 @@
                  vttidy();
  #if     defined(USE_TERMCAP) || defined(USE_TERMINFO) || defined(VMS)
  		kbdestroy(kbesc);
-@@ -719,7 +719,7 @@
+@@ -714,7 +714,7 @@
  	      wquit(1, 0);
  	}
  	else if(s == ABORT){
@@ -79,7 +79,7 @@
  	    if(term.t_mrow == 0)
  	      curwp->w_flag |= WFHARD;	/* cause bottom 3 lines to paint */
  	}
-@@ -753,7 +753,7 @@
+@@ -748,7 +748,7 @@
  ctrlg(f, n)
  int f, n;
  {
@@ -88,7 +88,7 @@
      return (ABORT);
  }
  
-@@ -764,7 +764,7 @@
+@@ -759,7 +759,7 @@
  rdonly()
  {
      (*term.t_beep)();
@@ -97,7 +97,7 @@
      return(FALSE);
  }
  
-@@ -1289,7 +1289,7 @@
+@@ -1323,7 +1323,7 @@
         wp->doto = 0;
     }
     else
@@ -106,7 +106,7 @@
  
     return((void *)wp);
  }
-@@ -1377,7 +1377,7 @@
+@@ -1411,7 +1411,7 @@
  	    register LINE *lp;
  
  	    if((lp = lalloc(0)) == NULL){

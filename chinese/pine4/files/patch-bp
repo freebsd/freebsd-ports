@@ -1,6 +1,6 @@
---- doc/pine.1.orig	Wed Jul 22 03:48:42 1998
-+++ doc/pine.1	Wed Aug 19 10:45:16 1998
-@@ -256,11 +256,11 @@
+--- doc/pine.1.orig	Wed Oct 13 02:29:13 1999
++++ doc/pine.1	Thu Oct 14 10:53:45 1999
+@@ -296,11 +296,11 @@
  .br
  /etc/mime.types	System-wide file ext. to MIME type mapping
  .br

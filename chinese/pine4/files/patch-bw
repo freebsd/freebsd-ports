@@ -1,6 +1,6 @@
---- pine/osdep/termin.gen.orig	Wed Aug 19 08:35:10 1998
-+++ pine/osdep/termin.gen	Tue Sep 22 21:47:15 1998
-@@ -32,21 +32,19 @@
+--- pine/osdep/termin.gen.orig	Tue Oct  5 06:45:41 1999
++++ pine/osdep/termin.gen	Thu Oct 14 10:53:45 1999
+@@ -38,21 +38,19 @@
       * we're in again...
       */
      if(ps_global->expunge_count){
@@ -30,7 +30,7 @@
  	ps_global->inbox_expunge_count = 0L;
  	display_message('x');
      }
-@@ -71,7 +69,7 @@
+@@ -77,7 +75,7 @@
  	int   winner = 0;
  
  	if(ps_global->post->status < 0){
@@ -39,7 +39,7 @@
  	}
  	else{
  	    (void) pine_send_status(ps_global->post->status,
-@@ -84,7 +82,7 @@
+@@ -90,7 +88,7 @@
  
  	if(!winner)
  	  q_status_message(SM_ORDER, 0, 3,
@@ -48,7 +48,7 @@
  
  	if(ps_global->post->fcc)
  	  fs_give((void **) &ps_global->post->fcc);
-@@ -115,8 +113,8 @@
+@@ -121,8 +119,8 @@
  
  
  static struct key oe_keys[] =

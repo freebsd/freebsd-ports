@@ -1,5 +1,5 @@
 --- pico/ebind.h.orig	Sat Feb 28 08:10:31 1998
-+++ pico/ebind.h	Tue Aug  4 12:42:14 1998
++++ pico/ebind.h	Thu Oct 14 10:53:41 1999
 @@ -145,7 +145,7 @@
  	{CTRL|'O',		filewrite},
  	{CTRL|'P',		backline},

@@ -1,15 +1,15 @@
---- imap/src/osdep/unix/unix.c.orig	Thu Sep  3 15:07:07 1998
-+++ imap/src/osdep/unix/unix.c	Tue Sep 22 13:36:19 1998
-@@ -1010,7 +1010,11 @@
-       case EACCES:		/* protection failure */
- 	if (stat (hitch,&sb)) {	/* try again if file exists(?) */
- 				/* punt silently if paranoid site */
--	  if (mail_parameters (NIL,GET_LOCKEACCESERROR,NIL))
+--- imap/src/osdep/unix/env_unix.c.orig	Thu Oct 14 12:37:16 1999
++++ imap/src/osdep/unix/env_unix.c	Thu Oct 14 13:21:27 1999
+@@ -825,7 +825,11 @@
+ 	    }
+ 	    close (pi[0]); close (pi[1]);
+ 	  }
+-	  if (lockEaccesError) {/* punt silently if paranoid site */
 +	  if (
 +#ifdef	__FreeBSD__
-+		strncmp(lock,"/var/mail/",10) &&  /* /var/mail/... isn't lockable */
++	      strncmp(base->lock,"/var/mail/",10) &&  /* /var/mail/... isn't lockable */
 +#endif
-+		mail_parameters (NIL,GET_LOCKEACCESERROR,NIL))
- 	    mm_log ("Mailbox vulnerable - directory must have 1777 protection",
- 		    WARN);
- 	  *lock = '\0';		/* give up on lock file */
++	      lockEaccesError) {/* punt silently if paranoid site */
+ 	    sprintf (tmp,"Mailbox vulnerable - directory %.80s",hitch);
+ 	    if (s = strrchr (tmp,'/')) *s = '\0';
+ 	    strcat (tmp," must have 1777 protection");

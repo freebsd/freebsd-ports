@@ -1,6 +1,6 @@
---- pine/screen.c.orig	Wed Jan 13 10:51:51 1999
-+++ pine/screen.c	Tue Feb 23 15:57:08 1999
-@@ -435,7 +435,7 @@
+--- pine/screen.c.orig	Thu Sep  9 05:45:46 1999
++++ pine/screen.c	Thu Oct 14 12:03:27 1999
+@@ -578,7 +578,7 @@
  
  
  static struct key cancel_keys[] = 
@@ -9,7 +9,7 @@
        {NULL,NULL,KS_NONE},            {NULL,NULL,KS_NONE},
        {NULL,NULL,KS_NONE},            {NULL,NULL,KS_NONE},
        {NULL,NULL,KS_NONE},            {NULL,NULL,KS_NONE},
-@@ -1128,10 +1128,10 @@
+@@ -1281,10 +1281,10 @@
      as.page_column    = -1;
      is_context        = strlen(as.context_name);
      sprintf(version, "PINE %s", pine_version); 
@@ -22,7 +22,7 @@
      ss_len            = strlen(ss_string);
  
      tit_len = strlen(as.title);		/* fixed title field width   */
-@@ -1148,17 +1148,17 @@
+@@ -1301,17 +1301,17 @@
      /* 
       * set location field's length and value based on requested style 
       */
@@ -44,7 +44,7 @@
  	    break;
  	  case MessageNumber :	       	/* "<loc_label> xxx of xxx DEL"  */
  	    num_len	     = digit_count(mn_get_total(as.msgmap));
-@@ -1166,7 +1166,7 @@
+@@ -1319,7 +1319,7 @@
  	    as.cur_mess_col  = sc - (2 * num_len) - 10;
  	    as.del_column    = as.cur_mess_col + num_len 
  	      + digit_count(as.current_msg) + 5;
@@ -53,7 +53,7 @@
  		    strcpy(tmp_20k_buf + 1000, comatose(as.current_msg)),
  		    strcpy(tmp_20k_buf + 1500, comatose(mn_get_total(as.msgmap))),
  		    BAR_STATUS(as.msg_state));
-@@ -1178,7 +1178,7 @@
+@@ -1331,7 +1331,7 @@
  	    as.percent_column  = as.cur_mess_col + num_len
  	      + digit_count(as.current_msg) + 7;
  	    as.del_column      = as.percent_column + 4;
@@ -62,7 +62,7 @@
  		    strcpy(tmp_20k_buf + 1000, comatose(as.current_msg)),
  		    strcpy(tmp_20k_buf + 1500, comatose(mn_get_total(as.msgmap))),
  		    percentage(as.current_line, as.total_lines, 1),
-@@ -1189,7 +1189,7 @@
+@@ -1342,7 +1342,7 @@
  	  case FileTextPercent :
  	    as.page_column = sc - (14 + 2*(num_len = digit_count(as.total_lines)));
  	    loc_len        = 17 + 2*num_len;
@@ -71,7 +71,7 @@
  		    num_len, as.current_line, 
  		    num_len, as.total_lines,
  		    percentage(as.current_line, as.total_lines, 1));
-@@ -1264,7 +1264,7 @@
+@@ -1417,7 +1417,7 @@
  		      ss_string);
  	}
  	else{
@@ -80,25 +80,25 @@
  	    if(fold_len + ss_len + 8 < avail) 	/* all of folder fit? */
  	      sprintf(fold_tmp, fmt, as.folder_name, ss_string);
  	    else if((fold_len/2) + ss_len + 8 < avail)
-@@ -1313,7 +1313,7 @@
- 	StartInverse();
- 	if(delta) {
+@@ -1474,7 +1474,7 @@
+ 
  	    if(as.style == MsgTextPercent){
+ 		as.percent_column += delta;
 -		PutLine5(0, as.cur_mess_col, "%s of %s %s %s%s",
 +		PutLine5(0, as.cur_mess_col, "%s ¤§ %s %s %s%s",
  			 strcpy(tmp_20k_buf + 1000, comatose(as.current_msg)),
  			 strcpy(tmp_20k_buf + 1500,
  				comatose(mn_get_total(as.msgmap))),
-@@ -1324,7 +1324,7 @@
- 		as.percent_column += delta;
+@@ -1483,7 +1483,7 @@
+ 			 repeat_char(max(0, -delta), SPACE));
  	    }
- 	    else{
--		PutLine4(0, as.cur_mess_col, "%s of %s %s%s",
-+		PutLine4(0, as.cur_mess_col, "%s ¤§ %s %s%s",
- 			 strcpy(tmp_20k_buf + 1000, comatose(as.current_msg)),
- 			 strcpy(tmp_20k_buf + 1500,
- 				comatose(mn_get_total(as.msgmap))),
-@@ -1426,7 +1426,7 @@
+ 	    else
+-	      PutLine4(0, as.cur_mess_col, "%s of %s %s%s",
++	      PutLine4(0, as.cur_mess_col, "%s ¤§ %s %s%s",
+ 		       strcpy(tmp_20k_buf + 1000, comatose(as.current_msg)),
+ 		       strcpy(tmp_20k_buf + 1500,
+ 			      comatose(mn_get_total(as.msgmap))),
+@@ -1610,7 +1610,7 @@
  
      as.current_line = new_line_number;
  

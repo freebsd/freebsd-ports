@@ -19,7 +19,7 @@ pgpencode, and pgpsign.
 dot.pinerc.sample is an example configuration file(include PGP support) can be
 put into your home directory as .pinerc.
 
-WWW: http://www.washington.edu/pine/
+Pine on WWW: http://www.washington.edu/pine/
 
 This version of zh-pine ports was based on pine4(pine 4.04) ports of FreeBSD,
 which is maintained by:
@@ -27,7 +27,7 @@ which is maintained by:
 	- Adrian Penisoara (Ady)
 	pine@freebsd.ady.ro
 
-zh-pine 4.10 ports for FreeBSD is maintained by:
+zh-pine 4.20 ports for FreeBSD is maintained by:
 
 	- Tai-hwa Liang
 	avatar@www.mmlab.cse.yzu.edu.tw
