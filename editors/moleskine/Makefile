@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	moleskine
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.4
 CATEGORIES=	editors python gnome
 MASTER_SITES=	http://www.moleskine.f2s.com/files/
 DISTNAME=	${PORTNAME:S/^m/M/}-${PORTVERSION}
@@ -18,12 +18,10 @@ RUN_DEPENDS=	${PYTHON_LIBDIR}/site-packages/_gnomemodule.so:${PORTSDIR}/x11-tool
 
 USE_X_PREFIX=	yes
 USE_PYTHON=	yes
+NO_BUILD=	yes
 
 INST_DIR=	${PREFIX}/share/gnome/Moleskine
 CONF_DIR=	${PREFIX}/etc/gnome/config/Moleskine
-
-do-build:
-	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
 	${MKDIR} ${INST_DIR}/Moleskine
@@ -36,9 +34,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/images/*.png ${INST_DIR}/images
 	${INSTALL_DATA} ${WRKSRC}/images/*.jpeg ${INST_DIR}/images
 	${INSTALL_DATA} ${WRKSRC}/images/moleskine.png ${PREFIX}/share/gnome/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/Moleskine/*.py ${WRKSRC}/Moleskine/*.pyc ${INST_DIR}/Moleskine
+	${INSTALL_DATA} ${WRKSRC}/Moleskine/*.py ${INST_DIR}/Moleskine
 	${INSTALL_DATA} ${WRKSRC}/moleskine.desktop ${PREFIX}/share/gnome/apps/Development
 	${INSTALL_SCRIPT} ${WRKSRC}/moleskine ${INST_DIR}
 	${LN} -sf ${INST_DIR}/moleskine ${PREFIX}/bin/moleskine
+	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${INST_DIR}/Moleskine
 
 .include <bsd.port.mk>
