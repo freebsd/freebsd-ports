@@ -88,7 +88,6 @@
     SUBDIR += ghostscript-gnu-jpnfont
     SUBDIR += gicq
     SUBDIR += gn-gnspool
-    SUBDIR += gn-mnews
     SUBDIR += gnome
     SUBDIR += gnomecore
     SUBDIR += gnomelibs
@@ -207,9 +206,6 @@
     SUBDIR += mikachan-ttfonts
     SUBDIR += mimekit
     SUBDIR += ming
-    SUBDIR += mnews
-    SUBDIR += mnews-gnspool
-    SUBDIR += mnews-im
     SUBDIR += monafonts
     SUBDIR += mozilla-jlp
     SUBDIR += mozilla-jlp-devel

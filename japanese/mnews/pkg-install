@@ -1,4 +1,0 @@
-#!/bin/sh
-if [ "$2" != "POST-INSTALL" ]; then exit 0; fi
-echo "Don't forget to edit /usr/local/etc/mnews/default-domain and make sure"
-echo "that it contains correct domain name for this host."
