@@ -43,3 +43,5 @@ libtool>=1.3<1.3.5_2|http://www.securityfocus.com/archive/1/352519|symlink vulne
 libtool>=1.4<1.4.3_3|http://www.securityfocus.com/archive/1/352519|symlink vulnerability
 libtool>=1.5<1.5.2|http://www.securityfocus.com/archive/1/352333|symlink vulnerability
 gnats<=3.113.1_9|http://www.securityfocus.com/archive/1/326337|Local privilege elevation
+XFree86-Server>=4.1.0<4.3.0_14|http://www.xfree86.org/security/|Font file buffer overflows
+XFree86-Server>=4.3.99<4.3.99.15_2|http://www.xfree86.org/security/|Font file buffer overflows
