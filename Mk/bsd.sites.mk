@@ -63,7 +63,6 @@ MASTER_SITE_APACHE_HTTPD+=	\
 	ftp://apache.theomnistore.com/mirror/apache/dist/httpd/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/apache/dist/httpd/&,} \
 	ftp://ftp.sogang.ac.kr/www/apache/dist/httpd/%SUBDIR%/ \
-	ftp://ftp.azc.uam.mx/mirrors/apache/dist/httpd/%SUBDIR%/ \
 	ftp://ftp.task.gda.pl/pub/www/apache/dist/httpd/%SUBDIR%/ \
 	ftp://sunsite.icm.edu.pl/pub/www/apache/dist/httpd/%SUBDIR%/ \
 	ftp://ftp.telepac.pt/pub/apache/dist/httpd/%SUBDIR%/ \
