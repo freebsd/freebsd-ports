@@ -21,6 +21,7 @@
     SUBDIR += concorde
     SUBDIR += cxsc
     SUBDIR += dcdflib
+    SUBDIR += djbfft
     SUBDIR += eispack
     SUBDIR += eval
     SUBDIR += femlab
