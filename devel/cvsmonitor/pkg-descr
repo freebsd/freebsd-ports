@@ -7,7 +7,7 @@ Features:
 that has at least a public read-only account, even if you don't own the
 repository
 
-* Aggresive Caching - all statistics, and most pages, are generated purely
+* Aggressive Caching - all statistics, and most pages, are generated purely
 from the cached information
 
 * ChangeSet Visibility - present changes to the repository in ChangeSets,
