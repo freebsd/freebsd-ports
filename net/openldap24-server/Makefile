@@ -7,6 +7,7 @@
 
 PORTNAME=	openldap
 PORTVERSION=	${OPENLDAP_VERSION}.a
+PORTREVISION=	1
 CATEGORIES=	net databases
 MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/		\
 		http://public.planetmirror.com/pub/openldap/%SUBDIR%/	\
@@ -18,7 +19,7 @@ MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/		\
 		ftp://ftp.holywar.net/pub/OpenLDAP/%SUBDIR%/		\
 		ftp://ftp.nl.uu.net/pub/unix/db/openldap/%SUBDIR%/	\
 		ftp://ftp.linux.pt/pub/mirrors/OpenLDAP/%SUBDIR%/	\
-		ftp://ftp.si.uniovi.es/mirror/OpenLDAP/%SUBDIR%/	\
+		ftp://ftp.rediris.es/mirror/OpenLDAP/%SUBDIR%/	\
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenLDAP/%SUBDIR%/	\
 		http://openldap.cdpa.nsysu.edu.tw/OpenLDAP/%SUBDIR%/	\
 		ftp://ftp.u-aizu.ac.jp/pub/net/openldap/%SUBDIR%/	\
