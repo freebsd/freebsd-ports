@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun Nov  9 21:20:38 2003
++++ Makefile.in	Sun Nov  9 22:54:17 2003
+@@ -180,7 +180,7 @@
+ 	include/X11/ICE/ICEutil.h
+ 
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = ice.pc
+ 
+ EXTRA_DIST = ice.pc.in
