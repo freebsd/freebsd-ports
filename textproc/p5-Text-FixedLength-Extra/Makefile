@@ -1,0 +1,32 @@
+# New ports collection makefile for:	textproc/p5-Text-FixedLength-Extra
+# Date created:				30 December 2000
+# Whom:					Anton Berezin <tobez@tobez.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Text-FixedLength-Extra
+PORTVERSION=	1.0
+CATEGORIES=	textproc perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Text
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	tobez@tobez.org
+
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Text/FixedLength.pm:${PORTSDIR}/textproc/p5-Text-FixedLength
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500007
+BROKEN="Requires perl that has 'our' keyword"
+.endif
+
+USE_PERL5=	yes
+PERL_CONFIGURE=	yes
+
+MAN3=		Text::FixedLength::Extra.3
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+
+.include <bsd.port.post.mk>
