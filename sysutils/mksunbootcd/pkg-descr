@@ -1,0 +1,10 @@
+mksunbootcd combines filesystem partitions for Sun Microsystems,
+Inc. computers into an image suitable for writing to a compact
+disc, that will allow the disc to be booted on the sun3, sun3x, sun4,
+sun4c, sun4m and sun4u platforms.  This hardware is supported by the
+NetBSD sparc, sparc64 and sun3 ports.
+See http://www.netbsd.org for more information on NetBSD.
+
+WWW: http://www.netbsd.org/
+
+Roman Shterenzon <roman@xpert.com>
