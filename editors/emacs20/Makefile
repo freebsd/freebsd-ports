@@ -24,7 +24,7 @@ ONLY_FOR_ARCHS=	i386 alpha
 USE_AUTOCONF_VER=213
 USE_GMAKE=	yes
 EMACS_VER=	20.7
-LATEST_LINK?=	emacs20
+LATEST_LINK?=	${PKGNAMEPREFIX}emacs20
 CONFIGURE_TARGET=	${MACHINE_ARCH}--freebsd
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS=	--with-x=no --with-pop
@@ -33,8 +33,6 @@ CONFIGURE_ARGS=	--with-x-toolkit --with-pop
 USE_XLIB=	yes
 .endif
 CONFIGURE_ARGS+=	--with-line-space
-
-NO_LATEST_LINK=	yes
 
 MAKE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 MAN1=		emacs.1 etags.1 ctags.1
