@@ -1,24 +1,27 @@
 # New ports collection makefile for:	apache HTTPD / php3
-# Version required:	1.3.0 / 3.0.3
+# Version required:	1.3.1 / 3.0.3
 # Date created:		So  21 Jun 1998 16:09:39 CEST
 # Whom:			Stefan Herrmann <stefan@asterix.webaffairs.net>
 #
 # $Id: Makefile,v 1.50 1998/08/27 14:08:20 kuriyama Exp $
 #
 
-DISTNAME=	apache_1.3.0
-PKGNAME=	apache-php3.0.3-1.3.0
+DISTNAME=	apache_${APACHE_VER}
+PKGNAME=	apache-php${PHP3_VER}-${APACHE_VER}
 CATEGORIES=	www
 MASTER_SITES=	ftp://www.apache.org/apache/dist/ \
 		http://www.php.net/distributions/
-DISTFILES=	apache_1.3.0.tar.gz php-3.0.3.tar.gz
+DISTFILES=	apache_${APACHE_VER}.tar.gz php-${PHP3_VER}.tar.gz
 
-MAINTAINER=	stefan@asterix.webaffairs.net
+MAINTAINER=	ibex@physik.TU-Berlin.DE
 
-BUILD_DEPENDS=	${PREFIX}/lib/libgd.a:${PORTSDIR}/graphics/gd \
-		perl5:${PORTSDIR}/lang/perl5
+APACHE_VER=	1.3.1
+PHP3_VER=	3.0.3
 
-NO_PACKAGE=	"Support for different databases via make-variable"
+#USE_PERL5=	yes
+
+IS_INTERACTIVE=	yes
+NO_PACKAGE=	Support for different databases
 
 #
 # Set APACHE_PERF_TUNING env. variable to YES to get maximum performance
@@ -50,7 +53,7 @@ OPTIM+= -DBUFFERED_LOGS
 CFLAGS+= -O6 -fomit-frame-pointer -fexpensive-optimizations
 .endif
 
-CONFIGURE_ENV= OPTIM='${OPTIM}'
+CONFIGURE_ENV= OPTIM='${OPTIM}' LIBS='-L${PREFIX}/lib'
 
 MAN1=	ab.1 apachectl.1 dbmmanage.1 htdigest.1 htpasswd.1
 MAN8=	apxs.8 httpd.8 logresolve.8 rotatelogs.8
@@ -60,47 +63,25 @@ PHP3DOCDIR=	${PREFIX}/share/doc/php3
 
 PHP3_CONF_ARGS=	--prefix=${PREFIX} \
 		--with-system-regex \
-		--with-gd \
 		--with-apache=${WRKSRC} \
 		--with-config-file-path=${PREFIX}/lib \
 		--disable-debug
 
-.if !defined(PHP3_DBTYPE) || ${PHP3_DBTYPE} != msql && ${PHP3_DBTYPE} != mysql && ${PHP3_DBTYPE} != pgsql
-pre-fetch:
-	@ ${ECHO}
-	@ ${ECHO} "You must set variable PHP3_DBTYPE to msql, mysql or pgsql by typing"
-	@ ${ECHO} "make PHP3_DBTYPE=[ msql | mysql | pgsql ]"
-	@ ${FALSE}
-.elif defined(PHP3_DBTYPE)
-.if ${PHP3_DBTYPE} == msql
-BUILD_DEPENDS+=		msql:${PORTSDIR}/databases/msql
-PHP3_CONF_ARGS+=	--with-msql=${PREFIX}
-.elif ${PHP3_DBTYPE} == mysql
-BUILD_DEPENDS+=		mysql:${PORTSDIR}/databases/mysql
-PHP3_CONF_ARGS+=	--with-mysql=${PREFIX}
-.elif ${PHP3_DBTYPE} == pgsql
-BUILD_DEPENDS+=		${PREFIX}/pgsql/bin/psql:${PORTSDIR}/databases/postgresql
-PHP3_CONF_ARGS+=	--with-pgsql=${PREFIX}/pgsql
-.endif
-.endif
+post-fetch:
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.php
 
-post-patch:
-	@ ${PATCH} -s -d ${WRKDIR}/php-3.0.3 < ${FILESDIR}/configure.patch
+#post-patch:
+#	@${PATCH} -s -d ${WRKDIR}/php-${PHP3_VER} < ${FILESDIR}/configure.patch
 
 pre-configure:
-	@( cd ${WRKDIR}/php-3.0.3 \
-	&& ${ECHO_MSG} "===>  Configuring for PHP-3.0.3" \
+	@( cd ${WRKSRC} \
+	&& ./configure > /dev/null \
+	&& cd ${WRKDIR}/php-${PHP3_VER} \
+	&& ${ECHO_MSG} "===>  Configuring for PHP-${PHP3_VER}" \
 	&& CFLAGS= CPPFLAGS="-I${PREFIX}/include -I${PREFIX}/include/gd" LDFLAGS=-L${PREFIX}/lib ./configure ${PHP3_CONF_ARGS} \
-	&& ${ECHO_MSG} "===>  Building for PHP-3.0.3" \
+	&& ${ECHO_MSG} "===>  Building for PHP-${PHP3_VER}" \
 	&& ${MAKE} install \
-	&& ${ECHO_MSG} "===>  Configuring for Apache-1.3.0" )
-.if defined(PHP3_DBTYPE) && ${PHP3_DBTYPE} == msql
-CONFIGURE_ENV+= LIBS='-lmd -L${PREFIX}/lib -lmsql -lgd -lm'
-.elif defined(PHP3_DBTYPE) && ${PHP3_DBTYPE} == mysql
-CONFIGURE_ENV+= LIBS='-L${PREFIX}/lib/mysql -L${PREFIX}/lib -lmysqlclient -lm -lgd'
-.elif defined(PHP3_DBTYPE) && ${PHP3_DBTYPE} == pgsql
-CONFIGURE_ENV+= LIBS='-lmd -L${PREFIX}/pgsql/lib -lpq -L${PREFIX}/lib -lgd -lm'
-.endif
+	&& ${ECHO_MSG} "===>  Configuring for Apache-${APACHE_VER}" )
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \
@@ -121,13 +102,36 @@ post-install:
 	find ${APACHEDOCDIR} -type d -exec chmod a+rx {} \; ; \
 	find ${APACHEDOCDIR} -type f -exec chmod a+r {} \;
 .for i in apache_pb.gif index.html manual
-	/bin/ln -s ${PREFIX}/share/doc/apache/$i ${PREFIX}/www/data/$i
+	${LN} -s ${PREFIX}/share/doc/apache/$i ${PREFIX}/www/data/$i
 .endfor
 .for i in CODING_STANDARDS EXTENSION_STATUS LICENSE
-	${INSTALL_DATA} ${WRKDIR}/php-3.0.3/$i ${PHP3DOCDIR}
+	${INSTALL_DATA} ${WRKDIR}/php-${PHP3_VER}/$i ${PHP3DOCDIR}
 .endfor
-	@ ${ECHO} "Docs reside in ${APACHEDOCDIR}"
-	@ ${ECHO} "and in ${PHP3DOCDIR}"
+	@${ECHO} "Docs reside in ${APACHEDOCDIR}"
+	@${ECHO} "and in ${PHP3DOCDIR}"
 .endif
 
+# This was copied from bsd.port.mk because a missing post-clean target
+# is needed
+clean:
+.if !defined(NOCLEANDEPENDS)
+	@${MAKE} clean-depends
+.endif
+	@${ECHO_MSG} "===>  Cleaning for ${PKGNAME}"
+.if !defined(NO_WRKDIR)
+	@if [ -d ${WRKDIR} ]; then \
+		if [ -w ${WRKDIR} ]; then \
+			${RM} -rf ${WRKDIR}; \
+		else \
+			${ECHO_MSG} "===>   ${WRKDIR} not writable, skipping"; \
+		fi; \
+	fi
+.else
+	@${RM} -f ${WRKDIR}/.*_done ${TMPPLIST}
+.endif
+	@${RM} -f Makefile.inc
+
+.if exists(Makefile.inc)
+.include "Makefile.inc"
+.endif
 .include <bsd.port.mk>
