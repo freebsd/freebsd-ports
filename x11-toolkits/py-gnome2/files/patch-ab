@@ -1,11 +1,11 @@
---- pygtk/configure.orig	Mon Mar 15 11:25:18 1999
-+++ pygtk/configure	Mon Mar 15 11:25:27 1999
-@@ -901,7 +901,7 @@
-   OPT="$am_cv_python_OPT"
-   SO="$am_cv_python_SO"
-   PYTHON_CFLAGS="$am_cv_python_CCSHARED \$(OPT)"
--  PYTHON_LINK="$am_cv_python_LDSHARED -o \$@"
-+  PYTHON_LINK="$am_cv_python_CC -shared -o \$@"
+--- Makefile.in.orig	Mon Sep 13 23:01:39 1999
++++ Makefile.in	Mon Sep 13 23:01:45 1999
+@@ -94,7 +94,7 @@
+ pyexecdir = @pyexecdir@
+ pythondir = @pythondir@
  
-           
+-SUBDIRS = macros pygtk pygnome
++SUBDIRS = macros pygnome
  
+ EXTRA_DIST = gnome-python.spec
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4

@@ -1,15 +1,9 @@
-Excerpts from the READMEs:
+Excerpt from the README:
+
  PyGNOME -- Python bindings for GNOME
  ====================================
  Author: James Henstridge <james@daa.com.au>
 
  This is a set of bindings for the GNOME libraries for use with python.
-
- PyGTK
- =====
- Author: James Henstridge <james@daa.com.au>
-
- This archive contains modules that allow you to use gtk in Python
- programs.  At present, it is a fairly complete set of bindings.
 
 -- Jacques Vidrine <nectar@FreeBSD.ORG>
