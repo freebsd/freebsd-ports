@@ -1,32 +1,32 @@
---- Makefile.orig	Wed Mar  1 20:09:59 2000
-+++ Makefile	Sat May 20 07:55:37 2000
-@@ -27,14 +27,14 @@
+--- Makefile.orig	Wed Apr  2 01:31:38 2003
++++ Makefile	Sun Oct 19 11:05:53 2003
+@@ -25,14 +25,16 @@
+ 
  ### you need to localize the paths on these lines
  
- #WISH = /usr/sww/tcl-8.3/bin/wish
--WISH = /private/share/bin/wish
-+#WISH = /private/share/bin/wish
- #WISH = /private/share/bin/wish8.3
--#WISH = /usr/local/bin/wish8.3
-+WISH = ${LOCALBASE}/bin/wish8.3
+-WISH = /usr/local/bin/wish8.4
++#WISH = /usr/local/bin/wish8.4
+ #WISH = /usr/sww/tcl-8.4/bin/wish
+ #WISH = /private/share/bin/wish8.4
++WISH = ${PREFIX}/bin/wish8.4
  
  # the executable `tkman' is placed in BINDIR
  # this should be a directory that's in your bin PATH
--BINDIR = /private/share/bin
--#BINDIR = /usr/local/bin
-+#BINDIR = /private/share/bin
+-BINDIR = /usr/local/bin
++#BINDIR = /usr/local/bin
+ #BINDIR = /private/share/bin
 +BINDIR = ${PREFIX}/bin
  
  
- # OPTIONAL
-@@ -44,13 +44,13 @@
+ # OPTIONAL FEATURES
+@@ -42,13 +44,14 @@
  # This directory should not have any Texinfo source itself.
- # More information is given in tkman-help.html
+ # More information is given in manual.html
  # if you don't have Texinfo files, leave this variable empty
 -texinfodir = ""
 +#texinfodir = ""
  #texinfodir = /home/orodruin/h/bair/phelps/spine/tkman/info
--#texinfodir = /usr/local/info
+ #texinfodir = /usr/local/info
 +texinfodir = ${PREFIX}/info
  # In order to search within Texinfo files you need a grep, such as GNU grep 2.1,
  # that can report byte offsets (with the -b switch).  This needs to be
@@ -36,7 +36,7 @@
  #gzgrep = "gzgrep -E"
  #gzgrep = "gzgrep -Ew"
  # Linux calls it zgrep
-@@ -59,6 +59,7 @@
+@@ -57,6 +60,7 @@
  #gzgrep = grep
  # if you don't compress your Texinfo source, this is fine
  #gzgrep = grep
@@ -44,7 +44,7 @@
  
  # OPTIONAL
  # directory root of hierarchy of RFC files, with "rfc-index.txt" at the root
-@@ -82,10 +83,12 @@
+@@ -80,10 +84,12 @@
  # will examine for matches if a search in the usual locations fails while searching
  # for a man pages and displaying its associated binaries (if any).
  # Use this feature carefully as a large number of directories can slow down startup.
@@ -52,14 +52,14 @@
 +#mastermen = "/usr/man /usr/local/man"
  #mastermen = "/usr/man /usr/local/man /usr/sww/man /usr/share/man /usr/kerberos/man"
 -masterbin = "/usr/bin /usr/local/bin"
-+mastermen = "${PREFIX}/man /usr/share/man ${X11BASE}/man"
++mastermen = "/usr/share/man ${PREFIX}/man ${X11BASE}/man"
 +#masterbin = "/usr/bin /usr/local/bin"
  #masterbin = "/usr/bin /usr/local/bin /usr/sww/bin /usr/sww/share/bin /usr/sww/share/X11R5/bin"
 +masterbin = "/usr/bin ${PREFIX}/bin ${X11BASE}/bin"
  
  
  # names of common printers, in addition to default printer (PRINTER or LPDEST)
-@@ -115,7 +118,7 @@
+@@ -113,7 +119,7 @@
  # Lines are cached in .../man/cat<n>@<line-length>; 
  #   that is, the line length is appended to the usual cache directory names
  #manformat = {groff -te -Tascii -man /tmp/ll -}
@@ -68,26 +68,31 @@
  # Ultrix users should uncomment the following line (you don't have eqn)
  #manformat = {tbl | nroff -man }
  # HP-UX uses a number of macros that groff doesn't define, so use the builtin nroff
-@@ -123,7 +126,7 @@
- #  space between the .de and the macro name, and groff doesn't like this.)
+@@ -122,6 +128,7 @@
  #manformat = {tbl | neqn | nroff -man }
  # BSD macros (.Sh, .Ss, .PP, ...) need -mandoc
--#manformat = {groff -Tascii -te -mandoc}
-+manformat = {groff -Tascii -te -mandoc}
+ #manformat = {groff -Tascii -te -mandoc}
++manformat = {groff -Tlatin1 -te -mandoc}
  # BSDI
  #manformat = {tbl | eqn -Tascii | nroff -man }
  # It's actually legal to leave this empty if all the pages you'll ever
-@@ -174,7 +177,8 @@
+@@ -166,13 +173,14 @@
+ 
+ # pick a printing pipeline for which your platform has all the constituants
+ #manprint = {groff -man -Tps -te -l}
++manprint = {groff -mandoc -Tps -te -l}
+ # alternatives
+ #manprint = {groff -man -Tps -te -l | psnup -n2}
+ #manprint = {tbl | eqn | troff -man -t | lpr -t}
  #manprint = {tbl | eqn | psroff -man}
  #manprint = {tbl | eqn | gtroff -Tpsc | psdit | lpr}
  # use an empty pipeline if you're environmentally conscious or have no printer
 -manprint = ""
 +#manprint = ""
-+manprint = {groff -mandoc -Tps -te -l}
  # printing string for preformatted pages without [tn]roff source
  #catprint = lpr
  #catprint = "lpr -h"
-@@ -461,7 +465,7 @@
+@@ -460,7 +468,7 @@
  	chmod +rx $(BINDIR)/tkman
  	$(CP) retkman $(BINDIR)
  	chmod +rx $(BINDIR)/retkman
