@@ -17,16 +17,12 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_AUTOMAKE=	yes
+AUTOMAKE_ARGS=	--add-missing
 WRKSRC=		${WRKDIR}/ogg
 
-ACLOCAL?=	${LOCALBASE}/bin/aclocal
 AUTOHEADER?=	${LOCALBASE}/bin/autoheader
-AUTOMAKE_ARGS=	--add-missing
 
-post-patch:
-	cd ${WRKSRC} && ${ACLOCAL}
+pre-configure:
 	cd ${WRKSRC} && ${AUTOHEADER}
-	cd ${WRKSRC} && ${AUTOMAKE} --add-missing
-	cd ${WRKSRC} && ${AUTOCONF}
 
 .include <bsd.port.mk>
