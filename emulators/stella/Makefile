@@ -3,7 +3,7 @@
 # Date created:		1st May, 1997
 # Whom:			Joel Sutton <sutton@aardvark.apana.org.au>
 #
-# $Id: Makefile,v 1.2 1998/03/22 21:35:23 jseger Exp $
+# $Id: Makefile,v 1.3 1998/04/29 09:56:44 asami Exp $
 #
 
 DISTNAME=	stella-0.6-src
@@ -12,6 +12,8 @@ CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.ucpel.tche.br/pub/msdos/emulator/atari/
 
 MAINTAINER=	sutton@aardvark.apana.org.au
+
+BROKEN="fetch"
 
 MANUAL_PACKAGE_BUILD=	installs bin/elk
 
