@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.latte.org/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple language for marking up text in a very expressive way
 
+USE_BISON=	yes
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 USE_AUTOCONF_VER=	213
