@@ -87,9 +87,9 @@
 ! 		find $(root)$(doc_prefix)/ -type f -exec chmod a+r {} \; ; \
 ! #        fi
 ! 	 if [ ! -d $(root)$(datadir)/data ]; then \
-! 		$(LN) -s $(root)$(doc_prefix) $(root)$(datadir)/data; \
+! 		$(LN) -sf $(root)$(doc_prefix) $(root)$(datadir)/data; \
 ! 	 fi
-! 	 $(LN) -s $(root)$(doc_prefix) $(root)$(datadir)/data.default
+! 	 $(LN) -sf $(root)$(doc_prefix) $(root)$(datadir)/data.default
 ! #        -@if [ -f $(root)$(datadir)/cgi-bin/printenv ]; then \
 ! #                echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(datadir)/cgi-bin/]"; \
 ! #        else \
@@ -100,7 +100,7 @@
 ! 		find $(root)$(datadir)/cgi-bin.default/ -type f -exec chmod a+r {} \; ; \
 ! #        fi
 ! 	if [ ! -d $(root)$(datadir)/cgi-bin ]; then \
-! 		$(LN) -s $(root)$(datadir)/cgi-bin.default $(root)$(datadir)/cgi-bin; \
+! 		$(LN) -sf $(root)$(datadir)/cgi-bin.default $(root)$(datadir)/cgi-bin; \
   	fi
   	@echo "Copying tree $(TOP)/icons/ -> $(root)$(datadir)/icons/"; \
   	(cd $(TOP)/icons/ && $(TAR) cf - *) |\
