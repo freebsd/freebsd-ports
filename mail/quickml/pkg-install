@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# $FreeBSD: /tmp/pcvs/ports/mail/quickml/Attic/pkg-install,v 1.1 2004-07-05 17:20:17 pav Exp $
+#
+
+PATH=/bin:/usr/bin:/usr/sbin
+
+case $2 in
+
+PRE-INSTALL)
+  echo "---> Starting pre-install script:"
+
+  if pw showgroup "%%GROUP%%" 2>/dev/null; then
+    echo "---> Using existing group \"%%GROUP%%\""
+  else
+    echo "---> Adding group \"%%GROUP%%\""
+    pw addgroup %%GROUP%% -g 109 -h - || exit 1
+  fi
+
+  # Create user if required
+  if pw showuser "%%USER%%" 2>/dev/null; then
+    echo "---> Using existing user \"%%USER%%\""
+  else
+    echo "---> Adding user \"%%USER%%\""
+    pw adduser %%USER%% -u 109 -g %%GROUP%% -h - \
+      -d "/nonexistent" -s "/sbin/nologin" -c "quickml Server" || exit 1
+  fi
+
+  ;;
+
+esac

@@ -348,6 +348,7 @@
     SUBDIR += qsf
     SUBDIR += qtools
     SUBDIR += queue-repair
+    SUBDIR += quickml
     SUBDIR += raysfilter
     SUBDIR += razor-agents
     SUBDIR += rbl-milter

@@ -1,0 +1,24 @@
+*** Makefile.in.with_analog	Thu Jul  1 00:20:16 2004
+--- Makefile.in	Thu Jul  1 00:22:28 2004
+***************
+*** 142,151 ****
+  RD = quickml.en.rd ml-usage.en.rd quickml.ja.rd with-mta.ja.rd
+  MESSAGES = messages.ja
+  EXTRA_DIST = $(RD) $(MESSAGES) quickml.in quickml-ctl.in \
+! 		quickmlrc.sample.in quickml-analog.in
+  
+  CLEANFILES = quickml quickml-ctl quickmlrc.sample quickml-analog
+- bin_SCRIPTS = quickml-analog
+  sbin_SCRIPTS = quickml quickml-ctl 
+  quickmlstatedir = $(localstatedir)/quickml
+  etcdir = $(sysconfdir)
+--- 142,150 ----
+  RD = quickml.en.rd ml-usage.en.rd quickml.ja.rd with-mta.ja.rd
+  MESSAGES = messages.ja
+  EXTRA_DIST = $(RD) $(MESSAGES) quickml.in quickml-ctl.in \
+! 		quickmlrc.sample.in
+  
+  CLEANFILES = quickml quickml-ctl quickmlrc.sample quickml-analog
+  sbin_SCRIPTS = quickml quickml-ctl 
+  quickmlstatedir = $(localstatedir)/quickml
+  etcdir = $(sysconfdir)
