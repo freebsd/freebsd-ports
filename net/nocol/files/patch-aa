@@ -1,0 +1,21 @@
+*** Configure  Fri Oct  2 21:50:16 1998
+--- Configure  Sat Nov 21 18:57:22 1998
+***************
+*** 92,107 ****
+   a VAR directory (or alternately create soft links to these directories).
+  !
+  
+- echo "Enter top level directory [${ROOTDIR}]: " | tr -d '\012'
+- read input ; if [ "X$input" != "X" ]; then  ROOTDIR=${input}; fi
+- 
+- MANDIR=${ROOTDIR}/man
+- echo "Enter location of man pages [${MANDIR}]: " | tr -d '\012'
+- read input ; if [ "X$input" != "X" ]; then  MANDIR=${input} ; fi
+- 
+- echo "Enter extension for man pages [${MANEXT}]: " | tr -d '\012'
+- read input ; if [ "X$input" != "X" ]; then  MANEXT=${input} ; fi
+- 
+  echo "               SELECT A LOGHOST"
+  echo " The various monitors will log messages to a loghost. It might"
+  echo " be useful to create a CNAME entry for ${package}.your.domain..."
+--- 92,97 ----
