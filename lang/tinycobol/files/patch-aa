@@ -1,18 +1,18 @@
---- configure.orig	Thu Oct 26 09:40:25 2000
-+++ configure	Thu Oct 26 10:31:42 2000
-@@ -1683,7 +1683,7 @@
- if test "${db_version}" = "0" ; then
-   echo -n "checking library db for version 1.85 compatibility ..."
+--- configure.orig	Tue Dec  5 20:13:21 2000
++++ configure	Wed Dec  6 20:03:52 2000
+@@ -1768,7 +1768,7 @@
+ if test "${db_version}" = "2" ; then
+   echo -n "checking library db for version 1.85 compatibility..."
    LIBS_BK="$LIBS"
 -  LIBS="$LIBS -ldb"
 +  LIBS="$LIBS -ldb2"
  cat > conftest.$ac_ext <<EOF
- #line 1689 "configure"
+ #line 1774 "configure"
  #include "confdefs.h"
-@@ -1786,13 +1786,13 @@
- 
- # if header db.h found check library db is version 1.85 
- 
+@@ -1876,13 +1876,13 @@
+ rm -f conftest*
+  
+                  
 -  echo $ac_n "checking for -ldb""... $ac_c" 1>&6
 +  echo $ac_n "checking for -ldb2""... $ac_c" 1>&6
  ac_lib_var=`echo db'_'dbopen | tr './+\055' '__p_'`
@@ -23,9 +23,25 @@
 -LIBS="-ldb  $LIBS"
 +LIBS="-ldb2  $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 1798 "configure"
+ #line 1888 "configure"
  #include "confdefs.h"
-@@ -1963,7 +1963,7 @@
+@@ -1924,13 +1924,13 @@
+ 
+ # if header db.h found check library db1 is version 1.85 
+ if test "${db_version}" = "3" ; then
+-  echo $ac_n "checking for -ldb""... $ac_c" 1>&6
++  echo $ac_n "checking for -ldb2""... $ac_c" 1>&6
+ ac_lib_var=`echo db'_'dbopen | tr './+\055' '__p_'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-ldb  $LIBS"
++LIBS="-ldb2  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 1936 "configure"
+ #include "confdefs.h"
+@@ -2104,7 +2104,7 @@
  fi
  
  # check for header and library for readline
@@ -34,7 +50,7 @@
  # Check whether --with-readline or --without-readline was given.
  if test "${with_readline+set}" = set; then
    withval="$with_readline"
-@@ -2037,7 +2037,7 @@
+@@ -2178,7 +2178,7 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
@@ -42,4 +58,4 @@
 +  htg_ld_args_default2="-lhtcobol -ldb2 -lncurses -lreadline -lm"
  else
    echo "$ac_t""no" 1>&6
- { echo "configure: error: "readline lib is required by create COBOL executable"" 1>&2; exit 1; }
+ { echo "configure: error: "readline lib is required by create COBOL executable... aborting"" 1>&2; exit 1; }
