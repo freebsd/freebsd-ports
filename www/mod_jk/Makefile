@@ -9,7 +9,7 @@ PORTNAME=	mod_jk
 PORTVERSION=	3.3.1
 PORTREVISION=	2
 CATEGORIES=	www
-MASTER_SITES=	http://jakarta.apache.org/Builds/jakarta-tomcat/release/v${PORTVERSION}/src/ \
+MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-tomcat/release/v${PORTVERSION}/src/ \
 		http://www.metaverse.nl/~ernst/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	znerd
