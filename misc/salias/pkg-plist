@@ -1,3 +1,4 @@
 bin/salias
 lib/%%PYTHON_VERSION%%/site-packages/salias.py
 lib/%%PYTHON_VERSION%%/site-packages/salias.pyc
+lib/%%PYTHON_VERSION%%/site-packages/salias.pyo

@@ -1,4 +1,6 @@
 lib/%%PYTHON_VERSION%%/site-packages/xmlstream.py
 lib/%%PYTHON_VERSION%%/site-packages/xmlstream.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xmlstream.pyo
 lib/%%PYTHON_VERSION%%/site-packages/jabber.py
 lib/%%PYTHON_VERSION%%/site-packages/jabber.pyc
+lib/%%PYTHON_VERSION%%/site-packages/jabber.pyo

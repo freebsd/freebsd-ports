@@ -3,26 +3,37 @@ lib/%%PYTHON_VERSION%%/site-packages/rijndaelc.so
 lib/%%PYTHON_VERSION%%/site-packages/sha256c.so
 lib/%%PYTHON_VERSION%%/site-packages/aes/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/aes/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/aes/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/aes/aes.py
 lib/%%PYTHON_VERSION%%/site-packages/aes/aes.pyc
+lib/%%PYTHON_VERSION%%/site-packages/aes/aes.pyo
 lib/%%PYTHON_VERSION%%/site-packages/cryptsock/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/cryptsock/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/cryptsock/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/cryptsock/cryptsock.py
 lib/%%PYTHON_VERSION%%/site-packages/cryptsock/cryptsock.pyc
+lib/%%PYTHON_VERSION%%/site-packages/cryptsock/cryptsock.pyo
 lib/%%PYTHON_VERSION%%/site-packages/ecc/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/ecc/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/ecc/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/ecc/ecc.py
 lib/%%PYTHON_VERSION%%/site-packages/ecc/ecc.pyc
+lib/%%PYTHON_VERSION%%/site-packages/ecc/ecc.pyo
 lib/%%PYTHON_VERSION%%/site-packages/ecc/elliptic.py
 lib/%%PYTHON_VERSION%%/site-packages/ecc/elliptic.pyc
+lib/%%PYTHON_VERSION%%/site-packages/ecc/elliptic.pyo
 lib/%%PYTHON_VERSION%%/site-packages/entropy/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/entropy/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/entropy/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/entropy/entropy.py
 lib/%%PYTHON_VERSION%%/site-packages/entropy/entropy.pyc
+lib/%%PYTHON_VERSION%%/site-packages/entropy/entropy.pyo
 lib/%%PYTHON_VERSION%%/site-packages/sha256/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/sha256/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/sha256/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/sha256/sha256.py
 lib/%%PYTHON_VERSION%%/site-packages/sha256/sha256.pyc
+lib/%%PYTHON_VERSION%%/site-packages/sha256/sha256.pyo
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/aes
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/cryptsock
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/ecc

@@ -1,13 +1,19 @@
 lib/%%PYTHON_VERSION%%/site-packages/pyweblib/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/pyweblib/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pyweblib/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pyweblib/forms.py
 lib/%%PYTHON_VERSION%%/site-packages/pyweblib/forms.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pyweblib/forms.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pyweblib/helper.py
 lib/%%PYTHON_VERSION%%/site-packages/pyweblib/helper.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pyweblib/helper.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pyweblib/httphelper.py
 lib/%%PYTHON_VERSION%%/site-packages/pyweblib/httphelper.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pyweblib/httphelper.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pyweblib/session.py
 lib/%%PYTHON_VERSION%%/site-packages/pyweblib/session.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pyweblib/session.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pyweblib/sslenv.py
 lib/%%PYTHON_VERSION%%/site-packages/pyweblib/sslenv.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pyweblib/sslenv.pyo
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/pyweblib
