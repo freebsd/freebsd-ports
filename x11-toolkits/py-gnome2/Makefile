@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	gnome-python-1.0.3
-PKGNAME=	py-gnome-1.0.3
+DISTNAME=	gnome-python-1.0.4
+PKGNAME=	py-gnome-1.0.4
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	ftp://ftp.daa.com.au/pub/james/python/ \
 		ftp://ftp.gimp.org/pub/gtk/python/ \
