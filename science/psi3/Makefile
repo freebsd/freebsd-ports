@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	psi3
-PORTVERSION=	3.2.0
+PORTVERSION=	3.2.1
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.psicode.org/doc/:doc
