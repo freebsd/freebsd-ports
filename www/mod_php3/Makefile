@@ -3,11 +3,11 @@
 # Date created:		So  21 Jun 1998 16:09:39 CEST
 # Whom:			Stefan Herrmann <stefan@asterix.webaffairs.net>
 #
-# $Id: Makefile,v 1.81 1999/07/03 09:50:38 dirk Exp $
+# $Id: Makefile,v 1.82 1999/07/30 21:06:59 dirk Exp $
 #
 
 DISTNAME=	apache_${VERSION_APACHE}
-PKGNAME=	apache-php3-${VERSION_APACHE}
+PKGNAME=	apache+php3-${VERSION_APACHE}+${VERSION_PHP3}
 CATEGORIES=	www
 MASTER_SITES=	http://www.apache.org/dist/ \
 		http://www.rge.com/pub/infosystems/apache/dist/ \

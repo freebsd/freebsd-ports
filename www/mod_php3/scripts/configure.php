@@ -107,7 +107,7 @@ while [ "$1" ]; do
 			;;
 		\"modssl\")
 			cat << EOF
-PKGNAME=	apache-php3-\${VERSION_APACHE}+mod_ssl-\${VERSION_MODSSL}
+PKGNAME=	apache+php3+mod_ssl-\${VERSION_APACHE}+\${VERSION_PHP3}+\${VERSION_MODSSL}
 MASTER_SITES+=	http://www.modssl.org/source/ \\
 		ftp://ftp.modssl.org/source/ \\
 		ftp://ftp.ecrc.net/pub/security/mod_ssl/ \\
