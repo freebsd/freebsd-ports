@@ -1,0 +1,10 @@
+Sub::Override allows the programmer to simply name the sub to replace
+and to supply a sub to replace it with.
+
+  my $override = Sub::Override->new('Some::sub', sub {'new data'});
+
+  # which is equivalent to:
+  my $override = Sub::Override->new;
+  $override->replace('Some::sub', sub { 'new data' });
+
+WWW: http://search.cpan.org/dist/Sub-Override/
