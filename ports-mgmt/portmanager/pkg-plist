@@ -21,4 +21,11 @@ lib/libMG.0
 lib/libPMGR.a
 lib/libPMGR
 lib/libPMGR.0
-@unexec rmdir %D/etc/portmanager 2>/dev/null || true
+share/portmanager/.keepme
+@unexec rm -f %D/share/portmanager/ports_installed.db 2>/dev/null || true
+@unexec rm -f %D/share/portmanager/port_dependencies.db 2>/dev/null || true
+@unexec rm -f %D/share/portmanager/ports_cache.db 2>/dev/null || true
+@unexec rm -f %D/share/portmanager/portCache.tmp 2>/dev/null || true
+@unexec rm -f %D/share/portmanager/ports_old.db 2>/dev/null || true
+@dirrm share/portmanager
+@dirrm etc/portmanager
