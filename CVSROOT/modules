@@ -8088,6 +8088,7 @@ pips980		ports/print/pips980
 pipsecd		ports/net/pipsecd
 pipsg700	ports/print/pipsg700
 pipsg800	ports/print/pipsg800
+pipsg900	ports/print/pipsg900
 pipsv500	ports/print/pipsv500
 pipsv600	ports/print/pipsv600
 pipsv700	ports/print/pipsv700
