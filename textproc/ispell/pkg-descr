@@ -1,0 +1,6 @@
+Ispell is a fast screen-oriented spelling checker that shows you your
+errors in the context of the original file, and suggests possible
+corrections when it can figure them out.  Compared to UNIX spell, it
+is faster and much easier to use.  Ispell can also handle languages
+other than English.
+    
