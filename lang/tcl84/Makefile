@@ -7,6 +7,7 @@
 
 PORTNAME=	tcl
 PORTVERSION=	8.4.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -21,7 +22,7 @@ PATCH_DIST_ARGS=	-d ${WRKDIR}/${DISTNAME} -E ${PATCH_DIST_STRIP}
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/unix
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared
+CONFIGURE_ARGS=	--enable-shared --includedir=${LOCALBASE}/include/tcl${TCL_VER}
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR}
 MAKE_ENV=	SHORT_TCL_VER=84
 PKGINSTALL=	${PKGDIR}/pkg-install.tclsh
@@ -29,8 +30,12 @@ PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.tclsh
 TCL_VER=	8.4
 NOPRECIOUSMAKEVARS=	Too many _MLINKS for README.html
 USE_REINPLACE=	YES
-
 PLIST_SUB=	TCL_VER=${TCL_VER} SHORT_TCL_VER=84
+
+.if defined(TCL_WITH_THREADS) || defined(WITH_THREADS)
+CONFIGURE_ARGS+=	--enable-threads
+PKGNAMESUFFIX?=		-threads
+.endif
 
 MAN1=	tclsh.1
 
@@ -583,11 +588,9 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	pkgMkIndex.n pkg_mkIndex.n \
 	safe.n SafeBase.n
 
-.if defined(TCL_WITH_THREADS) || defined(WITH_THREADS)
-CONFIGURE_ARGS+=	--enable-threads
-PKGNAMESUFFIX?=		-threads
-USE_REINPLACE=	YES
+.include <bsd.port.pre.mk>
 
+.if defined(TCL_WITH_THREADS) || defined(WITH_THREADS)
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure
@@ -597,8 +600,6 @@ post-patch:
 post-configure:
 	${REINPLACE_CMD} -e 's=${WRKDIRPREFIX}${PORTSDIR}=$${WRKDIRPREFIX}${PORTSDIR}=' \
 		${WRKSRC}/tclConfig.sh
-
-.include <bsd.port.pre.mk>
 
 post-install:
 .if exists(${PKGINSTALL})
