@@ -80,6 +80,7 @@
     SUBDIR += libretto-config
     SUBDIR += lmmon
     SUBDIR += log_analysis
+    SUBDIR += logmon
     SUBDIR += logrotate
     SUBDIR += logtool
     SUBDIR += lsmlib
