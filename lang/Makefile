@@ -150,6 +150,7 @@
     SUBDIR += php4
     SUBDIR += php4-cli
     SUBDIR += php5
+    SUBDIR += php5-cli
     SUBDIR += php_doc
     SUBDIR += pike70
     SUBDIR += pike72
