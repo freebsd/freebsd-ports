@@ -48,8 +48,6 @@ EXTRACT_ONLY=
 MAINTAINER=		trevor@FreeBSD.org
 COMMENT=		GNU GPL sources to linux_base-rh-7.3, to satisfy licence
 
-EXTRACT_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
-
 DIST_SUBDIR=		rpm/src/rh-${PORTVERSION}
 NO_MTREE=		yes
 PLIST=			${WRKDIR}/plist
