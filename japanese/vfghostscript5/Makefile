@@ -7,6 +7,7 @@
 
 PORTNAME=	vfghostscript
 PORTVERSION=	5.10
+PORTREVISION=	1
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.cs.wisc.edu/ghost/gnu/gs510/ \
@@ -61,7 +62,7 @@ GS_DRIVERS+=	gdev10v.tar.gz
 GS_DRIVERS+=	dmprt-2.01.tar.gz
 GS_DRIVERS+=	gdevalps-0.21.tar.gz
 GS_DRIVERS+=	gdevmd2k-0.2a.tar.gz
-GS_DRIVERS+=	gdevrpdl-1.2-510.tar.gz
+GS_DRIVERS+=	gdevrpdl-1.4-510.tar.gz
 GS_DRIVERS+=	gdevnpdl-1.6.2.tar.gz
 GS_DRIVERS+=	epag-3.09.tar.gz
 
@@ -82,7 +83,7 @@ post-extract:
 	  ${TAR} -C gdevdmpr --unlink -xzf ${DISTDIR}/dmprt-2.01.tar.gz ; \
 	  ${TAR} --unlink -xzf ${DISTDIR}/gdevalps-0.21.tar.gz ; \
 	  ${TAR} --unlink -xzf ${DISTDIR}/gdevmd2k-0.2a.tar.gz ; \
-	  ${TAR} --unlink -xzf ${DISTDIR}/gdevrpdl-1.2-510.tar.gz ; \
+	  ${TAR} --unlink -xzf ${DISTDIR}/gdevrpdl-1.4-510.tar.gz ; \
 	  ${TAR} --unlink -xzf ${DISTDIR}/gdevnpdl-1.6.2.tar.gz ; \
 	  )
 
@@ -106,7 +107,7 @@ post-patch:
 	  ${CP} epag-3.09/gdevepag.c epag-3.09/gdevepag.mak ${WRKSRC}; \
 	  ${CP} gdevalps-0.2/gdevalps.c gdevalps-0.2/gdevalps.mak ${WRKSRC}; \
 	  ${CP} gdevmd2k-0.2a/gdevmd2k.c gdevmd2k-0.2a/gdevmd2k.mak ${WRKSRC}; \
-	  ${CP} gdevrpdl-1.2-510/gdevrpdl.c gdevrpdl-1.2-510/gdevrpdl.mak ${WRKSRC}; \
+	  ${CP} gdevrpdl-1.4-510/gdevrpdl.c gdevrpdl-1.4-510/gdevrpdl.mak ${WRKSRC}; \
 	  ${PATCH} -d gdevnpdl --forward --quiet -E < ${PRINTER}/gdevnpdl/gdevnpdl.patch-gs${PORTVERSION} ; \
 	  ${CP} gdevnpdl/gdevnpdl.c gdevnpdl/gdevnpdl.mak ${WRKSRC}; \
 	  )
@@ -156,7 +157,7 @@ post-install:
 	  ${CP} ${PRINTER}/gdevmjc-0.8/gdevmjc.ps ${GSINST_DIR} ; \
 	  ${CP} ${PRINTER}/gdevalps-0.2/README.gdevalps ${DOC_DIR}/README.gdevalps ; \
 	  ${CP} ${PRINTER}/gdevmd2k-0.2a/README.jis ${DOC_DIR}/gdevmd2k.jis ; \
-	  ${CP} ${PRINTER}/gdevrpdl-1.2-510/gdevrpdl.doc ${DOC_DIR} ; \
+	  ${CP} ${PRINTER}/gdevrpdl-1.4-510/gdevrpdl.doc ${DOC_DIR} ; \
 	  ${CP} ${PRINTER}/gdevdmpr/gdevdmpr.sj ${DOC_DIR} ; \
 	  ${CP} ${PRINTER}/gdevnpdl/gdevnpdl.jis ${DOC_DIR} ; \
 	  ${CP} ${PRINTER}/gdevdmpr/dmp_init.ps ${GSINST_DIR} ; \
