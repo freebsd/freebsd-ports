@@ -1,0 +1,62 @@
+# Ports collection makefile for:  mount_jamsdos
+# Date created:		3 July 2000
+# Whom:			Ryuichiro IMURA <imura@af.airnet.ne.jp>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	msdosfs
+PORTVERSION=	20001007
+CATEGORIES=	japanese
+MASTER_SITES=	http://www.linkclub.or.jp/~clover/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	imura
+DISTNAME=	${PORTNAME}-ja-20000421
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		mount_msdos-20000701.tar.gz
+
+MAINTAINER=	imura@FreeBSD.org
+
+WRKSRC=		${WRKDIR}/${DISTNAME}/msdosfs.ja
+NO_PACKAGE=	"to avoid crashing a machine when try to install incorrect version"
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 410001 && ${OSVERSION} < 500000
+PATCHDIR=	${MASTERDIR}/patches.4
+.elif ${OSVERSION} >= 500012
+PATCHDIR=	${MASTERDIR}/patches.5
+.else
+BROKEN=		"It may not work with your FreeBSD version (but I'm not sure)"
+.endif
+
+post-extract:
+	cd ${WRKDIR}/mount ; co RCS/*,v
+	cd ${WRKDIR}/mount_msdos ; co RCS/*,v
+	${LN} -s ${WRKSRC} ${WRKSRC}/msdosfs
+	${LN} -s ${WRKSRC}/msdosfsmount.h ${WRKDIR}/mount_msdos
+
+pre-build:
+	@if [ ! -d /sys -o ! -d /usr/src/sys ]; then \
+		${ECHO} "****************************************" ; \
+		${ECHO} " You need to extract kernel source tree" ; \
+		${ECHO} " before you build this package..." ; \
+		${ECHO} "****************************************" ; \
+		${FALSE} ; \
+	fi
+
+post-build:
+	cd ${WRKDIR}/mount_msdos && ${MAKE}
+	${SED} -e "s,@@PREFIX@@,${PREFIX}," ${FILESDIR}/ja-msdosfs.sh \
+		> ${WRKDIR}/ja-msdosfs.sh
+
+do-install:
+	${MKDIR} ${PREFIX}/lib/ja-msdosfs
+	${INSTALL_PROGRAM} ${WRKDIR}/mount_msdos/mount_jamsdos ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/msdos_ja.ko ${PREFIX}/lib/ja-msdosfs
+	${INSTALL_SCRIPT} ${WRKDIR}/ja-msdosfs.sh ${PREFIX}/etc/rc.d
+
+post-install:
+	/sbin/kldload ${PREFIX}/lib/ja-msdosfs/msdos_ja.ko
+
+.include <bsd.port.post.mk>

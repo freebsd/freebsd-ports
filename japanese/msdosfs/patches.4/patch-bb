@@ -1,0 +1,78 @@
+--- ../../mount_msdos/mount_msdos.c.orig	Mon Jul  3 22:56:20 2000
++++ ../../mount_msdos/mount_msdos.c	Mon Jul  3 23:02:54 2000
+@@ -39,8 +39,6 @@
+ #include <sys/mount.h>
+ #include <sys/stat.h>
+ 
+-#include <msdosfs/msdosfsmount.h>
+-
+ #include <ctype.h>
+ #include <err.h>
+ #include <grp.h>
+@@ -55,6 +53,7 @@
+ #include <unistd.h>
+ 
+ #include "mntopts.h"
++#include "msdosfsmount.h"
+ 
+ /*
+  * XXX - no way to specify "foo=<bar>"-type options; that's what we'd
+@@ -95,8 +94,9 @@
+ 	mntflags = set_gid = set_uid = set_mask = 0;
+ 	(void)memset(&args, '\0', sizeof(args));
+ 	args.magic = MSDOSFS_ARGSMAGIC;
++	args.flags = MSDOSFSMNT_EUCJAPAN;
+ 
+-	while ((c = getopt(argc, argv, "sl9u:g:m:o:L:W:")) != -1) {
++	while ((c = getopt(argc, argv, "sl9u:g:m:o:")) != -1) {
+ 		switch (c) {
+ #ifdef MSDOSFSMNT_GEMDOSFS
+ 		case 'G':
+@@ -124,14 +124,6 @@
+ 			args.mask = a_mask(optarg);
+ 			set_mask = 1;
+ 			break;
+-		case 'L':
+-			load_ultable(&args, optarg);
+-			args.flags |= MSDOSFSMNT_ULTABLE;
+-			break;
+-		case 'W':
+-			load_u2wtable(&args, optarg);
+-			args.flags |= MSDOSFSMNT_U2WTABLE;
+-			break;
+ 		case 'o':
+ 			getmntopts(optarg, mopts, &mntflags, &args.flags);
+ 			break;
+@@ -173,15 +165,15 @@
+ 			args.mask = sb.st_mode & (S_IRWXU | S_IRWXG | S_IRWXO);
+ 	}
+ 
+-	error = getvfsbyname("msdos", &vfc);
+-	if (error && vfsisloadable("msdos")) {
+-		if (vfsload("msdos"))
+-			err(EX_OSERR, "vfsload(msdos)");
++	error = getvfsbyname("msdos_ja", &vfc);
++	if (error && vfsisloadable("msdos_ja")) {
++		if (vfsload("msdos_ja"))
++			err(EX_OSERR, "vfsload(msdos_ja)");
+ 		endvfsent();	/* clear cache */
+-		error = getvfsbyname("msdos", &vfc);
++		error = getvfsbyname("msdos_ja", &vfc);
+ 	}
+ 	if (error)
+-		errx(EX_OSERR, "msdos filesystem is not available");
++		errx(EX_OSERR, "msdos_ja filesystem is not available");
+ 
+ 	if (mount(vfc.vfc_name, mntpath, mntflags, &args) < 0)
+ 		err(EX_OSERR, "%s", dev);
+@@ -251,8 +243,8 @@
+ usage()
+ {
+ 	fprintf(stderr, "%s\n%s\n", 
+-	"usage: mount_msdos [-o options] [-u user] [-g group] [-m mask]",
+-	"                   [-s] [-l] [-9] [-L locale] [-W table] bdev dir");
++	"usage: mount_jmsdos [-o options] [-u user] [-g group] [-m mask]",
++	"                      [-s] [-l] [-9] bdev dir");
+ 	exit(EX_USAGE);
+ }
+ 
