@@ -11030,6 +11030,7 @@ xtic		ports/games/xtic
 xtide		ports/astro/xtide
 xtimer		ports/x11-clocks/xtimer
 xtl		ports/devel/xtl
+xtla		ports/devel/xtla
 xtoolwait	ports/x11/xtoolwait
 xtraceroute	ports/net/xtraceroute
 xtriangles	ports/games/xtriangles
