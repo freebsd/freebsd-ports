@@ -1,12 +1,22 @@
 
 $FreeBSD$
 
---- configure	2002/03/13 23:11:57	1.3
-+++ configure	2002/03/13 23:16:32
-@@ -8575,6 +8575,52 @@
+--- configure.orig	Wed Mar 13 00:58:30 2002
++++ configure	Thu Jul 18 13:27:09 2002
+@@ -5874,6 +5874,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -8575,6 +8576,52 @@
+ done
+ 
  fi
- 
- 
++
++
 +for ac_hdr in sys/types.h login_cap.h
 +do
 +ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
@@ -51,8 +61,6 @@ $FreeBSD$
 +  echo "$ac_t""no" 1>&6
 +fi
 +done
-+
-+
+ 
+ 
  if test x$enable_authentication_scheme = xpam -a x$have_pam = xno ; then
- 	{ echo "configure: error: PAM support requested but not available" 1>&2; exit 1; }
- fi
