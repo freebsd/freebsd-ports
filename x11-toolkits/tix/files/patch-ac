@@ -1,5 +1,5 @@
---- Makefile.in.orig	Wed Sep 24 01:57:18 1997
-+++ Makefile.in	Wed Oct  1 13:23:24 1997
+--- Makefile.in.orig	Thu Sep 25 20:32:45 1997
++++ Makefile.in	Sun Oct  4 20:47:11 1998
 @@ -29,7 +29,7 @@
  # Directory in which to install the library of Tix scripts and demos
  # (note: you can set the TIX_LIBRARY environment variable at run-time to
@@ -32,7 +32,7 @@
  
  
  #----------------------------------------------------------------
-@@ -210,29 +212,29 @@
+@@ -211,29 +211,29 @@
  # scripts of TK must be included in the fixed order.
  #----------------------------------------------------------------------
  
@@ -83,3 +83,11 @@
      $(SRC_DIR)/generic/tk8.0/console.tcl
  
  TIX_SCRIPTS = \
+@@ -247,6 +247,7 @@
+ 	rm -f $(TIX_LIB_FILE)
+ 	@TIX_MAKE_LIB@
+ 	$(RANLIB) $(TIX_LIB_FILE)
++	ln -fs $(TIX_LIB_FILE) `echo $(TIX_LIB_FILE) | sed -e 's/[\.0-9]*$$//'`
+ 
+ $(TCL_SAM_FILE): $(TCL_SAM_OBJS)
+ 	rm -f $(TCL_SAM_FILE)
