@@ -1,0 +1,11 @@
+--- src/lstream.c.orig	Tue Apr 29 21:31:17 2003
++++ src/lstream.c	Tue Apr 29 21:31:22 2003
+@@ -101,7 +101,7 @@
+     }
+ }
+ 
+-inline static Bytecount
++/*inline*/ static Bytecount
+ aligned_sizeof_lstream (Bytecount lstream_type_specific_size)
+ {
+   return MAX_ALIGN_SIZE (offsetof (Lstream, data) +

@@ -1,0 +1,17 @@
+--- modules/common/Makefile.common.orig	Tue Feb  4 08:33:04 2003
++++ modules/common/Makefile.common	Tue May 20 17:07:22 2003
+@@ -62,7 +62,7 @@
+ 	$(MODCC) $(MODCFLAGS) -c $<
+ 
+ $(MODNAME).ell: $(OBJS) $(MODNAME)_i.o
+-	$(MODCC) --mode=link --mode=verbose --mod-output=$@ $^ $(LDFLAGS)
++	$(MODCC) --mode=link --mode=verbose --mod-output=$@ ${.ALLSRC} $(LDFLAGS)
+ 
+ $(MODNAME)_i.c: $(SRCS)
+ 	ELLMAKEDOC=$(MAKE_DOCFILE) $(MODCC) --mode=init --mod-output=$@ \
+@@ -78,4 +78,4 @@
+ extraclean: distclean
+ 
+ install: $(OBJECT_TO_BUILD)
+-	$(INSTALL_PROGRAM) $< $(INSTALLPATH)
++	$(INSTALL_PROGRAM) ${.ALLSRC} $(INSTALLPATH)
