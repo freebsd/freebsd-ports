@@ -405,12 +405,13 @@ share/understand_c/compilers/solaris.cfg
 share/understand_c/compilers/sunos.cfg
 share/understand_c/configs/c.cfg
 share/understand_c/fonts/cetus.ttf
-@dirrm share/understand_c/license
 @exec %%MKDIR%% %D/share/understand_c/license
+@unexec %%RMDIR%% %D/share/understand_c/license 2>/dev/null || %%TRUE%%
 @dirrm share/understand_c/fonts
 @dirrm share/understand_c/configs
 @dirrm share/understand_c/compilers
-@dirrm share/understand_c
+@comment This won't be removed as well as the license directory if there is a license there.
+@unexec %%RMDIR%% %D/share/understand_c 2>/dev/null || %%TRUE%%
 @exec %%MKDIR%% %D/lib/understand_c/conf
 @exec %%LN%% %D/share/understand_c %D/lib/understand_c/conf/understand
 @exec %%LN%% %D/share/understand_c/license %D/lib/understand_c/conf/license
