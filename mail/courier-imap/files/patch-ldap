@@ -11,11 +11,3 @@
  ac_ext=c
  ac_cpp='$CPP $CPPFLAGS'
  ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
-@@ -5088,6 +5092,7 @@
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
- 
-+#include <sys/types.h>
- #if HAVE_NETINET_IN_H
- #include <netinet/in.h>
- #endif

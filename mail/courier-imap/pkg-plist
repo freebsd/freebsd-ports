@@ -25,7 +25,9 @@ bin/pop3d
 %%AUTHDFLAG%%%%LIBEXECDIR%%/authlib/authdaemon
 %%AUTHDFLAG%%%%LIBEXECDIR%%/authlib/authdaemond
 %%LDAPFLAG%%%%LIBEXECDIR%%/authlib/authdaemond.ldap
+%%LDAPFLAG%%%%LIBEXECDIR%%/authlib/authldap
 %%MYSQLFLAG%%%%LIBEXECDIR%%/authlib/authdaemond.mysql
+%%MYSQLFLAG%%%%LIBEXECDIR%%/authlib/authmysql
 %%PGSQLFLAG%%%%LIBEXECDIR%%/authlib/authdaemond.pgsql
 %%AUTHDFLAG%%%%LIBEXECDIR%%/authlib/authdaemond.plain
 %%PAMFLAG%%%%LIBEXECDIR%%/authlib/authpam
