@@ -1,9 +1,9 @@
---- Makefile.in.orig	Wed Jun 11 00:44:55 2003
-+++ Makefile.in	Wed Jun 11 00:45:19 2003
-@@ -138,7 +138,7 @@
- cxxflags_set = @cxxflags_set@
+--- Makefile.in.orig	Fri Mar 12 01:22:39 2004
++++ Makefile.in	Fri Mar 12 01:22:55 2004
+@@ -129,7 +129,7 @@
+ YACC = @YACC@
  gnomelocaledir = @gnomelocaledir@
- install_sh = @install_sh@
+ 
 -SUBDIRS = po gal tests docs art
 +SUBDIRS = po gal docs art
  
