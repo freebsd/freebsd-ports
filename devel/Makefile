@@ -731,6 +731,7 @@
     SUBDIR += shtool
     SUBDIR += sigslot
     SUBDIR += silc-toolkit
+    SUBDIR += simulavr
     SUBDIR += sip
     SUBDIR += soup
     SUBDIR += sparc-rtems-binutils

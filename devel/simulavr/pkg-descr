@@ -1,0 +1,7 @@
+Simulavr: A simulator for the Atmel AVR family of microcontrollers.
+
+This program is still under development and is not ready for production
+use. The simulator is stable enough for rudimentary debugging work in 
+conjuction with a patched gdb-5.1 (see README.gdb).
+
+WWW: http://savannah.gnu.org/projects/simulavr/
