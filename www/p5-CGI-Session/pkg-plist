@@ -8,6 +8,7 @@ lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/Serialize/Storable.pm
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/Serialize
 lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/ID/Incr.pm
 lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/ID/MD5.pm
+lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/ID/SHA1.pm
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/ID
 lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/DB_File.pm
 lib/perl5/site_perl/%%PERL_VER%%/CGI/Session/Example.pm
@@ -31,6 +32,7 @@ lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/load_param.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/clear.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/error.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/delete.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/is_new.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/version.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/dump.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/autosplit.ix
