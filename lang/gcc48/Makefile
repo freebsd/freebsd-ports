@@ -19,7 +19,9 @@ DISTFILES=	\
 		gcc-java-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-objc-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-testsuite-${VERSIONSTRING}${EXTRACT_SUFX}
-
+.if defined(WITH_FORTRAN)
+DISTFILES+=	gcc-fortran-${VERSIONSTRING}${EXTRACT_SUFX}
+.endif
 MAINTAINER?=	gerald@FreeBSD.org
 COMMENT?=	GNU Compiler Collection 4.0
 
@@ -93,6 +95,16 @@ CONFIGURE_ARGS+=	--disable-libgcj
 PLIST_SUB+=	LIBJAVA="@comment "
 .else
 PLIST_SUB+=	LIBJAVA=""
+.endif
+
+.if defined(WITH_FORTRAN)
+LIB_DEPENDS+=	gmp.6:${PORTSDIR}/math/libgmp4
+CONFIGURE_ARGS+=	--with-gmp=${LOCALBASE}
+MAN1+=	gfortran${SUFFIX}.1
+INFO+=	gfortran
+PLIST_SUB+=	FORTRAN=""
+.else
+PLIST_SUB+=	FORTRAN="@comment "
 .endif
 
 pre-everything::

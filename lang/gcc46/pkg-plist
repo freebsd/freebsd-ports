@@ -5,6 +5,11 @@ bin/fastjar40
 bin/g++40
 bin/gcc40
 bin/gcov40
+%%FORTRAN%%bin/gfortran40
+%%FORTRAN%%lib/libgfortran.a
+%%FORTRAN%%lib/libgfortranbegin.a
+%%FORTRAN%%lib/libgfortran.la
+%%FORTRAN%%lib/libgfortranbegin.la
 bin/%%GNU_HOST%%-c++40
 bin/%%GNU_HOST%%-gcc-%%GCC_VER%%
 bin/%%GNU_HOST%%-gcc40
