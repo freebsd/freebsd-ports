@@ -3,7 +3,7 @@
 # Date created:				October 21st 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.22 1998/10/25 09:06:49 markm Exp $
+# $Id: Makefile,v 1.23 1998/11/28 09:07:24 asami Exp $
 #
 
 DISTNAME=	Tk800.008
@@ -42,6 +42,6 @@ MAN3=	Tk::Adjuster.3 Tk::After.3 Tk::Animation.3 Tk::Balloon.3 \
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
+		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL PREFIX=${PREFIX} INSTALLSCRIPT=${PREFIX}/bin INSTALLMAN1DIR=${PREFIX}/man/man1
 
 .include <bsd.port.mk>
