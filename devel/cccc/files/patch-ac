@@ -1,0 +1,12 @@
+--- cccc_utl.cc.orig	Thu Mar 30 12:22:38 2000
++++ cccc_utl.cc	Thu Mar 30 12:25:29 2000
+@@ -212,7 +212,8 @@
+       for(i=0;i<pssLAST; i++) {
+         CCCC_String sep;
+         if(i==pssMODULE) { sep="::"; } else { sep=" "; }
+-        if(string[i]!="") { os << string[i] << sep; } 
++        if(static_cast<const char*>(string[i])!="")
++	  os << string[i] << sep;
+       }
+       os << "  Attributes: ";
+       for(i=0; i<psfLAST; i++) {

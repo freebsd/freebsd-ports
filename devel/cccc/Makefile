@@ -17,8 +17,6 @@ MAINTAINER=		ports@FreeBSD.org
 BUILD_DEPENDS=		antlr:${PORTSDIR}/devel/pccts \
 			dlg:${PORTSDIR}/devel/pccts
 
-BROKEN=			pccts upgrade
-
 WRKSRC=			${WRKDIR}/usr/local/src/cccc-2.1.1
 USE_GMAKE=		yes
 MAKEFILE=		makefile
