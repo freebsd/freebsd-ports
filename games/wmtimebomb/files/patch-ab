@@ -1,0 +1,107 @@
+--- timebomb.c.old	Tue Jan 18 20:02:14 2000
++++ timebomb.c	Tue Jan 18 20:05:03 2000
+@@ -94,7 +94,7 @@
+ XpmIcon rbuttonb;
+ XpmIcon id;
+ XpmIcon timebombicon;
+-XpmIcon clock;
++XpmIcon iconclock;
+ XpmIcon title;
+ XpmIcon about;
+ int abouttick;
+@@ -1049,9 +1049,9 @@
+ 	about.attributes.width=256;
+ 	about.attributes.height=256;
+ 	about.attributes.valuemask=(XpmSize);
+-	clock.attributes.width=200;
+-	clock.attributes.height=BS;
+-	clock.attributes.valuemask=XpmSize;
++	iconclock.attributes.width=200;
++	iconclock.attributes.height=BS;
++	iconclock.attributes.valuemask=XpmSize;
+ 	countbar.attributes.width=160;
+ 	countbar.attributes.height=BS;
+ 	countbar.attributes.valuemask=XpmSize;
+@@ -1081,7 +1081,7 @@
+ 	XpmCreatePixmapFromData(display,window, rbuttonb_xpm,
+ 			&rbuttonb.pixmap, &rbuttonb.mask, &rbuttonb.attributes);
+ 	XpmCreatePixmapFromData(display,window, clock_xpm,
+-			&clock.pixmap, &clock.mask, &clock.attributes);
++			&iconclock.pixmap, &iconclock.mask, &iconclock.attributes);
+ 	XpmCreatePixmapFromData(display,window, countbar_xpm,
+ 			&countbar.pixmap, &countbar.mask, &countbar.attributes);
+ 
+@@ -1175,27 +1175,27 @@
+ }
+ 
+ void redraw_iconwin(){
+-	XCopyArea(display,clock.pixmap,iconwin,igc,clockn/100*BS,0,BS,BS,0,BS);
+-	XCopyArea(display,clock.pixmap,iconwin,igc,(clockn%100)/10*BS,0,BS,BS,BS,BS);
+-	XCopyArea(display,clock.pixmap,iconwin,igc,clockn%10*BS,0,BS,BS,BSx2,BS);
++	XCopyArea(display,iconclock.pixmap,iconwin,igc,clockn/100*BS,0,BS,BS,0,BS);
++	XCopyArea(display,iconclock.pixmap,iconwin,igc,(clockn%100)/10*BS,0,BS,BS,BS,BS);
++	XCopyArea(display,iconclock.pixmap,iconwin,igc,clockn%10*BS,0,BS,BS,BSx2,BS);
+ 	if(windowswitch[0]){
+ 		XCopyArea(display,title.pixmap,window,gc,(tb.x-4)*BS,BS,BSx3,BS,(tb.x-4)*BS,BS);
+ 		if(clockn/1000){
+-			XCopyArea(display,clock.pixmap,window,igc,clockn/1000*BS,0,BS,BS,(tb.x-4)*BS,BS);
+-			XCopyArea(display,clock.pixmap,window,igc,(clockn%1000)/100*BS,0,BS,BS,(tb.x-3)*BS,BS);
+-			XCopyArea(display,clock.pixmap,window,igc,(clockn%100)/10*BS,0,BS,BS,(tb.x-2)*BS,BS);
+-			XCopyArea(display,clock.pixmap,window,igc,clockn%10*BS,0,BS,BS,(tb.x-1)*BS,BS);
++			XCopyArea(display,iconclock.pixmap,window,igc,clockn/1000*BS,0,BS,BS,(tb.x-4)*BS,BS);
++			XCopyArea(display,iconclock.pixmap,window,igc,(clockn%1000)/100*BS,0,BS,BS,(tb.x-3)*BS,BS);
++			XCopyArea(display,iconclock.pixmap,window,igc,(clockn%100)/10*BS,0,BS,BS,(tb.x-2)*BS,BS);
++			XCopyArea(display,iconclock.pixmap,window,igc,clockn%10*BS,0,BS,BS,(tb.x-1)*BS,BS);
+ 		}
+ 		else if((clockn%1000)/100){
+-			XCopyArea(display,clock.pixmap,window,igc,(clockn%1000)/100*BS,0,BS,BS,(tb.x-3)*BS,BS);
+-			XCopyArea(display,clock.pixmap,window,igc,(clockn%100)/10*BS,0,BS,BS,(tb.x-2)*BS,BS);
+-			XCopyArea(display,clock.pixmap,window,igc,clockn%10*BS,0,BS,BS,(tb.x-1)*BS,BS);
++			XCopyArea(display,iconclock.pixmap,window,igc,(clockn%1000)/100*BS,0,BS,BS,(tb.x-3)*BS,BS);
++			XCopyArea(display,iconclock.pixmap,window,igc,(clockn%100)/10*BS,0,BS,BS,(tb.x-2)*BS,BS);
++			XCopyArea(display,iconclock.pixmap,window,igc,clockn%10*BS,0,BS,BS,(tb.x-1)*BS,BS);
+ 		}
+ 		else if((clockn%100)/10){
+-			XCopyArea(display,clock.pixmap,window,igc,(clockn%100)/10*BS,0,BS,BS,(tb.x-2)*BS,BS);
+-			XCopyArea(display,clock.pixmap,window,igc,clockn%10*BS,0,BS,BS,(tb.x-1)*BS,BS);
++			XCopyArea(display,iconclock.pixmap,window,igc,(clockn%100)/10*BS,0,BS,BS,(tb.x-2)*BS,BS);
++			XCopyArea(display,iconclock.pixmap,window,igc,clockn%10*BS,0,BS,BS,(tb.x-1)*BS,BS);
+ 		}
+-		else XCopyArea(display,clock.pixmap,window,igc,clockn%10*BS,0,BS,BS,(tb.x-1)*BS,BS);
++		else XCopyArea(display,iconclock.pixmap,window,igc,clockn%10*BS,0,BS,BS,(tb.x-1)*BS,BS);
+ 	}
+ 	if(!(iconswitch[SW_RESTART]||iconswitch[SW_RESETTIME]||iconswitch[SW_CHEAT])){
+ 	XCopyArea(display,sbutton.pixmap,iconwin,igc,0,0,BS,BS,0,0);
+@@ -1210,21 +1210,21 @@
+ 	if(windowswitch[1]){
+ 		XCopyArea(display,title.pixmap,window,gc,(tb.x-4)*BS,0,BSx3,BS,(tb.x-4)*BS,0);
+ 		if(bombcount/1000){
+-			XCopyArea(display,clock.pixmap,window,igc,bombcount/1000*BS,0,BS,BS,(tb.x-4)*BS,0);
+-			XCopyArea(display,clock.pixmap,window,igc,(bombcount%1000)/100*BS,0,BS,BS,(tb.x-3)*BS,0);
+-			XCopyArea(display,clock.pixmap,window,igc,(bombcount%100)/10*BS,0,BS,BS,(tb.x-2)*BS,0);
+-			XCopyArea(display,clock.pixmap,window,igc,bombcount%10*BS,0,BS,BS,(tb.x-1)*BS,0);
++			XCopyArea(display,iconclock.pixmap,window,igc,bombcount/1000*BS,0,BS,BS,(tb.x-4)*BS,0);
++			XCopyArea(display,iconclock.pixmap,window,igc,(bombcount%1000)/100*BS,0,BS,BS,(tb.x-3)*BS,0);
++			XCopyArea(display,iconclock.pixmap,window,igc,(bombcount%100)/10*BS,0,BS,BS,(tb.x-2)*BS,0);
++			XCopyArea(display,iconclock.pixmap,window,igc,bombcount%10*BS,0,BS,BS,(tb.x-1)*BS,0);
+ 		}
+ 		else if((bombcount%1000)/100){
+-			XCopyArea(display,clock.pixmap,window,igc,(bombcount%1000)/100*BS,0,BS,BS,(tb.x-3)*BS,0);
+-			XCopyArea(display,clock.pixmap,window,igc,(bombcount%100)/10*BS,0,BS,BS,(tb.x-2)*BS,0);
+-			XCopyArea(display,clock.pixmap,window,igc,bombcount%10*BS,0,BS,BS,(tb.x-1)*BS,0);
++			XCopyArea(display,iconclock.pixmap,window,igc,(bombcount%1000)/100*BS,0,BS,BS,(tb.x-3)*BS,0);
++			XCopyArea(display,iconclock.pixmap,window,igc,(bombcount%100)/10*BS,0,BS,BS,(tb.x-2)*BS,0);
++			XCopyArea(display,iconclock.pixmap,window,igc,bombcount%10*BS,0,BS,BS,(tb.x-1)*BS,0);
+ 		}
+ 		else if((bombcount%100)/10){
+-			XCopyArea(display,clock.pixmap,window,igc,(bombcount%100)/10*BS,0,BS,BS,(tb.x-2)*BS,0);
+-			XCopyArea(display,clock.pixmap,window,igc,bombcount%10*BS,0,BS,BS,(tb.x-1)*BS,0);
++			XCopyArea(display,iconclock.pixmap,window,igc,(bombcount%100)/10*BS,0,BS,BS,(tb.x-2)*BS,0);
++			XCopyArea(display,iconclock.pixmap,window,igc,bombcount%10*BS,0,BS,BS,(tb.x-1)*BS,0);
+ 		}
+-		else XCopyArea(display,clock.pixmap,window,igc,bombcount%10*BS,0,BS,BS,(tb.x-1)*BS,0);
++		else XCopyArea(display,iconclock.pixmap,window,igc,bombcount%10*BS,0,BS,BS,(tb.x-1)*BS,0);
+ 	}
+ 	redraw_iconwin();
+ }
+
