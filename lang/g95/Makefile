@@ -32,6 +32,10 @@ SNAPDATE=	20040130
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502000
+BROKEN=		"Broken pkg-plist"
+.endif
+
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 
 SRCDIR=		${WRKDIR}/gcc
