@@ -7,6 +7,7 @@
 
 PORTNAME=	Archive_Tar
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	archivers www
 MASTER_SITES=	http://pear.php.net/get/
 PKGNAMEPREFIX=	pear-
@@ -29,7 +30,7 @@ PHP_BASE!=	${LOCALBASE}/bin/php-config --prefix
 .else
 PHP_BASE=	${LOCALBASE}
 .endif
-
+PEAR=		${LOCALBASE}/bin/pear
 LPHP_LIB=	lib/php
 PEARDIR=	${PHP_BASE}/${LPHP_LIB}
 PLIST_SUB=	PEARDIR=${LPHP_LIB}
@@ -46,5 +47,9 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/docs/Archive_Tar.txt ${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
+
+post-install:
+# Register a new package
+	@${PEAR} upgrade -r -f ${WRKDIR}/package.xml
 
 .include <bsd.port.post.mk>

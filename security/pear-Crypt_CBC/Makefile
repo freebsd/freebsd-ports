@@ -7,6 +7,7 @@
 
 PORTNAME=	Crypt_CBC
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	security www
 MASTER_SITES=	http://pear.php.net/get/
 PKGNAMEPREFIX=	pear-
@@ -16,13 +17,21 @@ DIST_SUBDIR=	PEAR
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class to emulate Perl's Crypt::CBC module
 
-BUILD_DEPENDS=	${PEARDIR}.DIST_PHP:${PORTSDIR}/devel/pear-install
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php.dist:${PORTSDIR}/devel/pear-PEAR
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 NO_BUILD=	yes
 
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/bin/php-config)
+PHP_BASE!=	${LOCALBASE}/bin/php-config --prefix
+.else
+PHP_BASE!=	${LOCALBASE}
+.endif
+PEAR=		${LOCALBASE}/bin/pear
 LPHP_LIB=	lib/php
-PEARDIR=	${LOCALBASE}/${LPHP_LIB}
+PEARDIR=	${PHP_BASE}/${LPHP_LIB}
 PLIST_SUB=	PEARDIR=${LPHP_LIB}
 
 do-install:
@@ -33,4 +42,8 @@ do-install:
 	@${CP} -p ${FILESDIR}/Crypt_HCEMD5.php ${PEARDIR}/Crypt/HCEMD5.php
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PEARDIR}/Crypt
 
-.include <bsd.port.mk>
+post-install:
+# Register a new package
+	@${PEAR} install -r -f ${WRKDIR}/package.xml
+
+.include <bsd.port.post.mk>

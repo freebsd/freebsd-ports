@@ -7,6 +7,7 @@
 
 PORTNAME=	HTML_Select_Common
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	devel www
 MASTER_SITES=	http://pear.php.net/get/
 PKGNAMEPREFIX=	pear-
@@ -21,11 +22,21 @@ RUN_DEPENDS=	${PEARDIR}/HTML/Common.php:${PORTSDIR}/devel/pear-HTML_Common \
 		${PEARDIR}/I18N/Common.php:${PORTSDIR}/devel/pear-I18N
 
 NO_BUILD=	yes
+
 EXAMPLESDIR=	${PREFIX}/share/examples/pear/${PORTNAME}
 
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/bin/php-config)
+PHP_BASE!=	${LOCALBASE}/bin/php-config --prefix
+.else
+PHP_BASE!=	${LOCALBASE}
+.endif
+PEAR=		${LOCALBASE}/bin/pear
 LPHP_LIB=	lib/php
-PEARDIR=	${LOCALBASE}/${LPHP_LIB}
+PEARDIR=	${PHP_BASE}/${LPHP_LIB}
 PLIST_SUB=	PEARDIR=${LPHP_LIB}
+
 MANIFEST=	Country.php FRDepartements.php UKCounty.php USState.php
 EXAMPLES=	Country.php FRDepartements.php UKCounty.php USState.php
 
@@ -40,8 +51,6 @@ do-install:
 #	but should be removed with the next release.
 	@${CP} -p ${FILESDIR}/Select.php ${PEARDIR}/HTML
 	@${CHOWN} ${SHAREOWN}:${SHAREGRP} ${PEARDIR}/HTML/Select.php
-
-post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}
 .for FILE in ${EXAMPLES}
@@ -50,4 +59,8 @@ post-install:
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 .endif
 
-.include <bsd.port.mk>
+post-install:
+# Register a new package
+	@${PEAR} install -r -f ${WRKDIR}/package.xml
+
+.include <bsd.port.post.mk>
