@@ -13,10 +13,12 @@ include/fastdb/stdtp.h
 include/fastdb/sync.h
 include/fastdb/ttree.h
 include/fastdb/wwwapi.h
-@dirrm include/fastdb
 lib/libcli_r.a
 lib/libcli_r.so
 lib/libcli_r.so.2
 lib/libfastdb_r.a
 lib/libfastdb_r.so
 lib/libfastdb_r.so.2
+%%PORTDOCS%%share/doc/fastdb/FastDB.htm
+%%PORTDOCS%%@dirrm share/doc/fastdb
+@dirrm include/fastdb

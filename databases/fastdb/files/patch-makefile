@@ -1,19 +1,19 @@
---- makefile.orig	Fri Apr  6 23:14:06 2001
-+++ makefile	Thu Jul 12 00:40:24 2001
+--- makefile.orig	Fri Apr  6 12:13:44 2001
++++ makefile	Wed Aug  8 02:04:05 2001
 @@ -2,13 +2,13 @@
  # Makefile for Generic Unix with GCC compiler
  
  # Place where to copy GastDB header files
 -INCSPATH=/usr/local/include/fastdb
-+INCSPATH=%%PREFIX%%/include/fastdb
++INCSPATH=${PREFIX}/include/fastdb
  
  #Place where to copy Fastdb library
 -LIBSPATH=/usr/local/lib
-+LIBSPATH=%%PREFIX%%/lib
++LIBSPATH=${PREFIX}/lib
  
  #Place where to copy Fastdb subsql utility
 -BINSPATH=/usr/local/bin
-+BINSPATH=%%PREFIX%%/bin
++BINSPATH=${PREFIX}/bin
  
  OBJS = class.o compiler.o database.o hashtab.o file.o symtab.o ttree.o \
  	cursor.o query.o wwwapi.o unisock.o sync.o
@@ -23,25 +23,51 @@
  else 
 -TFLAGS=-D_REENTRANT -D_THREAD_SAFE
 -THRLIBS=-lpthread
-+TFLAGS=-D_REENTRANT -D_THREAD_SAFE %%PTHREAD_CFLAGS%%
-+THRLIBS=%%PTHREAD_LIBS%%
++TFLAGS=-D_REENTRANT ${PTHREAD_CFLAGS}
++THRLIBS=${PTHREAD_LIBS}
  endif
  SUFF=_r
  endif
-@@ -64,7 +64,7 @@
+@@ -60,19 +60,18 @@
+ 
+ WEB_EXAMPLES = cgistub bugdb clidb
+ 
+-CC = g++
  #DEFS =-DTHROW_EXCEPTION_ON_ERROR -DUSE_QUEUE_MANAGER
  DEFS = -DUSE_QUEUE_MANAGER -DUSE_LOCALE_SETTINGS
  
 -CFLAGS = $(TFLAGS) -c -Wall -O5 -g $(TFLAGS) 
-+CFLAGS += $(TFLAGS) -c $(TFLAGS) 
++CFLAGS += -c $(TFLAGS) 
  
  #CFLAGS = -c -Wall -O0 -g $(DEFS) $(TFLAGS)
  #CFLAGS = -c -Wall -O0 -DDEBUG=DEBUG_TRACE -g $(DEFS) $(TFLAGS)
-@@ -258,7 +258,6 @@
- 	cp $(INCS) $(INCSPATH)
+-SHFLAGS=-shared
++SHFLAGS=-shared -Wl,-soname,$@
+ 
+ 
+ LD = $(CC)
+-LDFLAGS = -g $(TFLAGS)
++LDFLAGS = $(TFLAGS)
+ 
+ AR = ar
+ ARFLAGS = -cru
+@@ -255,16 +254,15 @@
+ 
+ installlib: $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED)
+ 	mkdir -p $(INCSPATH)
+-	cp $(INCS) $(INCSPATH)
++	${BSD_INSTALL_DATA} $(INCS) $(INCSPATH)
  	mkdir -p $(LIBSPATH)
- 	cp $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) $(LIBSPATH)
+-	cp $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) $(LIBSPATH)
 -	cp -P libcli.so $(LIBSPATH)
++	${BSD_INSTALL_DATA} $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) $(LIBSPATH)
  	ln -f -s $(LIBSPATH)/$(FASTDB_SHARED) $(LIBSPATH)/libfastdb$(SUFF).so
  	ln -f -s $(LIBSPATH)/$(CLI_SHARED) $(LIBSPATH)/libcli$(SUFF).so
  	mkdir -p $(BINSPATH)
+-	cp subsql $(BINSPATH)
+ 
+ 
++	${BSD_INSTALL_PROGRAM} subsql $(BINSPATH)
+ 
+ cleanobj:
+ 	rm -fr *.o *.tgz core *~ cxx_repository
