@@ -1,5 +1,6 @@
 bin/cd-drive
 bin/cd-info
+bin/cd-read
 bin/iso-info
 bin/iso-read
 include/cdio/bytesex.h
