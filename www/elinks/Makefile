@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	elinks
-PORTVERSION=	0.4.3
+PORTVERSION=	0.9.0
 CATEGORIES=	www
 MASTER_SITES=	http://elinks.or.cz/download/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
@@ -18,6 +18,8 @@ COMMENT=	Elinks - links text WWW browser with enhancements
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
+USE_BISON=	yes
+USE_OPENSSL=	yes
 
 MAN1=		elinks.1
 MAN5=		elinkskeys.5 elinks.conf.5
