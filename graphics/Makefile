@@ -139,6 +139,7 @@
     SUBDIR += hppsmtools
     SUBDIR += hs-HOpenGL
     SUBDIR += hs-hgl
+    SUBDIR += hsetroot
     SUBDIR += icod
     SUBDIR += icontact
     SUBDIR += imageindex
