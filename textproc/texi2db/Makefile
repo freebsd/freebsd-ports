@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	texi2db
-PORTVERSION=	0.4.2
+PORTVERSION=	0.5
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.tldp.org/downloads/
 
