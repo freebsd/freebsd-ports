@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.dreamind.de/debian/dists/sid/main/source/x11/ \
 DISTNAME=	${PORTNAME}_${PORTVERSION}-1
 
 MAINTAINER=	matt@peterson.org
+COMMENT=	A small and simple GNOME-compatible window manager
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

@@ -11,6 +11,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://bbtools.windsofstorm.net/sources/
 
 MAINTAINER=	stijn@win.tue.nl
+COMMENT=	A pager for the Blackbox window manager
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	stijn@win.tue.nl
+COMMENT=	A keygrabber for the Blackbox window manager
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

@@ -12,6 +12,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.student.oulu.fi/~jlof/gtkglarea/download/
 
 MAINTAINER=	jaeger16@yahoo.com
+COMMENT=	An OpenGL widget for the GTK+ GUI toolkit
 
 USE_X_PREFIX=	yes
 USE_MESA=	yes

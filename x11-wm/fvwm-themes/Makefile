@@ -15,6 +15,7 @@ DISTFILES=	fvwm-themes-base-${PORTVERSION}${EXTRACT_SUFX} \
 		fvwm-themes-extra-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	mkm@ieee.org
+COMMENT=	Themes for the Fvwm2 window manager
 
 BUILD_DEPENDS=	fvwm2:${PORTSDIR}/x11-wm/fvwm2 \
 		gm4:${PORTSDIR}/devel/m4

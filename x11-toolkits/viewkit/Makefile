@@ -17,6 +17,7 @@ MASTER_SITE_SUBDIR=	fenner
 DISTNAME=       libvk-Apr19-2243
 
 MAINTAINER=	peterho@ned.dem.csiro.au
+COMMENT=	ViewKit workalike from Hungry Programmers
 
 BUILD_DEPENDS=   ${AUTOCONFIG}:${PORTSDIR}/devel/${AUTOCONFIG}
 

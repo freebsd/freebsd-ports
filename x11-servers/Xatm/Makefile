@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.netlab.is.tsukuba.ac.jp/~yokota/archive/
 DISTNAME=	${PORTNAME}+cid-${PORTVERSION}
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
+COMMENT=	XFree86 Font Server with Xatm
 
 BROKEN=		"Does not build"
 

@@ -12,6 +12,7 @@ MASTER_SITES=	http://developer.gnome.org/doc/API/
 DISTFILES=	glib-docs.tar.gz gtk-docs.tar.gz gdk-docs.tar.gz
 
 MAINTAINER=	edwin@mavetju.org
+COMMENT=	API reference for the Gimp Toolkit for X11 GUI
 
 NO_BUILD=	yes
 PREFIX=		${X11BASE}

@@ -12,6 +12,7 @@ CATEGORIES=	x11-toolkits www
 MASTER_SITES=	http://www.xs4all.nl/~ripley/XmHTML/dist/
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.de
+COMMENT=	A Motif widget set for displaying HTML 3.2 documents
 
 # BUILD_DEPENDS is used instead of USE_LIBTOOL in order to avoid
 # GNU_CONFIGURE being set.

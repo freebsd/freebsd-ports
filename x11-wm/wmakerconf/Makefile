@@ -11,6 +11,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://ulli.on.openave.net/wmakerconf/
 
 MAINTAINER=	nc-rotherdo@netcologne.de
+COMMENT=	A configuration tool for Window Maker
 
 RUN_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 .if !exists(/usr/bin/bzip2)

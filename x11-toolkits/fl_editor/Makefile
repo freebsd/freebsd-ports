@@ -12,6 +12,7 @@ MASTER_SITES=	http://robertk.com/source/fl_editor/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	cyrille.lefevre@laposte.net
+COMMENT=	Text Editor Widgets for the Fast Light ToolKit
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 

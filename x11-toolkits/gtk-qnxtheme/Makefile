@@ -13,6 +13,7 @@ MASTER_SITES=	http://download.freshmeat.net/themes/qnxtheme/
 DISTNAME=	qnxtheme-default-${PORTVERSION}
 
 MAINTAINER=	flynn@energyhq.homeip.net
+COMMENT=	QNX-inspired theme for GTK1 and GTK2
 
 .if defined(WITH_GTK2)
 LIB_DEPENDS+=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.kde-look.org/content/files/
 DISTNAME=	2865-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	flynn@energyhq.homeip.net
+COMMENT=	A lightweight native KWin style for KDE3
 
 BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake \
 		autoconf:${PORTSDIR}/devel/autoconf

@@ -18,7 +18,8 @@ PATCH_SITES=	${MASTER_SITE_XFREE:S,%SUBDIR%/source,${XFREE_VERSION}/fixes,}
 PATCHFILES=	fix-01-r128 fix-04-s3trio3d2x fix-05-s3trio3d fix-06-s3trio3d2x\
 		fix-07-s3trio64v2gx+netfinity fix-08-s3savage_ix+mx
 
-MAINTAINER=	taguchi@tohoku.iij.ad.jp
+MAINTAINER?=	taguchi@tohoku.iij.ad.jp
+COMMENT?=	Common files for X True Type Servers
 
 RUN_DEPENDS+=	mkttfdir:${PORTSDIR}/print/perlftlib
 

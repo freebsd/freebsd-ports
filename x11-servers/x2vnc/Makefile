@@ -11,6 +11,7 @@ CATEGORIES=	x11-servers
 MASTER_SITES=	http://www.hubbe.net/~hubbe/
 
 MAINTAINER=	chrise@scardini.com
+COMMENT=	A program to link multiple X and VNC servers together
 
 USE_IMAKE=	yes
 MAN1=		x2vnc.1

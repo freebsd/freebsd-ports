@@ -11,6 +11,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.jeremias.net/wmthemeinstall/download/
 
 MAINTAINER=	adam-ports@blacktabby.org
+COMMENT=	A neat theme manager for WindowMaker
 
 RUN_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker
 

@@ -11,6 +11,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.mired.org/downloads/
 
 MAINTAINER=	mwm@mired.org
+COMMENT=	A simple menu patterened for use with ratpoison
 
 USE_X_PREFIX=	yes
 ALL_TARGET=	ratmenu

@@ -15,6 +15,7 @@ DISTNAME=	GtkAda-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sam@inf.enst.fr
+COMMENT=	Gtk binding for Ada
 
 BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
 

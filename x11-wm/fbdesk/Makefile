@@ -11,6 +11,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://fluxbox.sourceforge.net/download/
 
 MAINTAINER=	hendrik@scholz.net
+COMMENT=	A Fluxbox utility to create and manage icons on the desktop
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		Xft.2:${PORTSDIR}/x11-fonts/Xft
