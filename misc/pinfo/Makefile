@@ -19,7 +19,14 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-readline \
 		--with-localedir=${PREFIX}/share/locale
+
+.if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 MAN1=	pinfo.1
 INFO=	pinfo
