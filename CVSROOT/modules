@@ -2821,6 +2821,7 @@ gutenbook	ports/textproc/gutenbook
 gutenfetch	ports/net/gutenfetch
 gutenmark	ports/textproc/gutenmark
 gv		ports/print/gv
+gv-aspell	ports/textproc/gv-aspell
 gvd		ports/devel/gvd
 gview		ports/graphics/gview
 gwave		ports/cad/gwave
