@@ -2,32 +2,32 @@ bin/penv
 @unexec if cmp -s %D/etc/penv.conf %D/etc/penv.conf.default; then rm -f %D/etc/penv.conf; fi
 etc/penv.conf.default
 @exec [ -f %B/penv.conf ] || cp %B/%f %B/penv.conf
-%%PORTDOCS%%share/doc/penv/html/changes
-%%PORTDOCS%%share/doc/penv/html/docbook.css
-%%PORTDOCS%%share/doc/penv/html/en_US.ISO8859-1/changes/changes.html
-%%PORTDOCS%%share/doc/penv/html/en_US.ISO8859-1/changes/changes.txt
-%%PORTDOCS%%share/doc/penv/html/en_US.ISO8859-1/docbook.css
-%%PORTDOCS%%share/doc/penv/html/en_US.ISO8859-1/index.html
-%%PORTDOCS%%share/doc/penv/html/en_US.ISO8859-1/penv-compat.html
-%%PORTDOCS%%share/doc/penv/html/en_US.ISO8859-1/penv-history.html
-%%PORTDOCS%%share/doc/penv/html/en_US.ISO8859-1/penv-install.html
-%%PORTDOCS%%share/doc/penv/html/en_US.ISO8859-1/penv-src.html
-%%PORTDOCS%%share/doc/penv/html/en_US.ISO8859-1/penv-usage.html
-%%PORTDOCS%%share/doc/penv/html/en_US.ISO8859-1/penv.html
-%%PORTDOCS%%share/doc/penv/html/index.html
-%%PORTDOCS%%share/doc/penv/html/penv-compat.html
-%%PORTDOCS%%share/doc/penv/html/penv-history.html
-%%PORTDOCS%%share/doc/penv/html/penv-install.html
-%%PORTDOCS%%share/doc/penv/html/penv-src.html
-%%PORTDOCS%%share/doc/penv/html/penv-usage.html
-%%PORTDOCS%%share/doc/penv/html/penv.html
-%%PORTDOCS%%share/doc/penv/txt/en_US.ISO8859-1/penv.txt
-%%PORTDOCS%%share/doc/penv/txt/penv.txt
-%%PORTDOCS%%@dirrm share/doc/penv/html/en_US.ISO8859-1/changes
-%%PORTDOCS%%@dirrm share/doc/penv/html/en_US.ISO8859-1
-%%PORTDOCS%%@dirrm share/doc/penv/html
-%%PORTDOCS%%@dirrm share/doc/penv/txt/en_US.ISO8859-1
-%%PORTDOCS%%@dirrm share/doc/penv/txt
-%%PORTDOCS%%@dirrm share/doc/penv
+%%PORTDOCS%%%%DOCSDIR%%/html/changes
+%%PORTDOCS%%%%DOCSDIR%%/html/docbook.css
+%%PORTDOCS%%%%DOCSDIR%%/html/en_US.ISO8859-1/changes/changes.html
+%%PORTDOCS%%%%DOCSDIR%%/html/en_US.ISO8859-1/changes/changes.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/en_US.ISO8859-1/docbook.css
+%%PORTDOCS%%%%DOCSDIR%%/html/en_US.ISO8859-1/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/en_US.ISO8859-1/penv-compat.html
+%%PORTDOCS%%%%DOCSDIR%%/html/en_US.ISO8859-1/penv-history.html
+%%PORTDOCS%%%%DOCSDIR%%/html/en_US.ISO8859-1/penv-install.html
+%%PORTDOCS%%%%DOCSDIR%%/html/en_US.ISO8859-1/penv-src.html
+%%PORTDOCS%%%%DOCSDIR%%/html/en_US.ISO8859-1/penv-usage.html
+%%PORTDOCS%%%%DOCSDIR%%/html/en_US.ISO8859-1/penv.html
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/penv-compat.html
+%%PORTDOCS%%%%DOCSDIR%%/html/penv-history.html
+%%PORTDOCS%%%%DOCSDIR%%/html/penv-install.html
+%%PORTDOCS%%%%DOCSDIR%%/html/penv-src.html
+%%PORTDOCS%%%%DOCSDIR%%/html/penv-usage.html
+%%PORTDOCS%%%%DOCSDIR%%/html/penv.html
+%%PORTDOCS%%%%DOCSDIR%%/txt/en_US.ISO8859-1/penv.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/penv.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/en_US.ISO8859-1/changes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/en_US.ISO8859-1
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/txt/en_US.ISO8859-1
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec mkdir -p %%DBDIR%%
 @unexec rmdir %%DBDIR%% 2>/dev/null || true
