@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	tarfile
-PORTVERSION=	0.4.9
+PORTVERSION=	0.6
 CATEGORIES=	archivers python
-MASTER_SITES=	http://www.gustaebel.de/lars/tarfile/ \
-		http://www3.kr.freebsd.org/~perky/distfiles/
+MASTER_SITES=	http://www.gustaebel.de/lars/tarfile/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	perky@FreeBSD.org
