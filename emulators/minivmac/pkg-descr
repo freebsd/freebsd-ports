@@ -1,0 +1,9 @@
+Mini vMac is a minor spin off of the program vMac. Its goal is to
+provide the simplest usable emulation of a Macintosh, instead of
+the fastest or most usable emulation. It can serve as a programmers
+introduction to vMac, having only about one tenth as much source
+code.
+
+Mini vMac, like vMac, emulates an Apple Macintosh Plus(tm).
+
+WWW: http://www.gryphel.com/c/minivmac/

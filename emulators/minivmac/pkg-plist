@@ -1,0 +1,11 @@
+bin/minivmac
+%%PORTDOCS%%share/doc/minivmac/about.html
+%%PORTDOCS%%share/doc/minivmac/autoquit.html
+%%PORTDOCS%%share/doc/minivmac/build.html
+%%PORTDOCS%%share/doc/minivmac/contents.html
+%%PORTDOCS%%share/doc/minivmac/credits.html
+%%PORTDOCS%%share/doc/minivmac/default.html
+%%PORTDOCS%%share/doc/minivmac/license.html
+%%PORTDOCS%%share/doc/minivmac/manual.html
+%%PORTDOCS%%share/doc/minivmac/todo.html
+%%PORTDOCS%%@dirrm share/doc/minivmac
