@@ -70,8 +70,8 @@ jdk%%JDK_VERSION%%/bin/i386/green_threads/tnameserv
 %%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/jarsigner_g
 %%NATIVE:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/java
 %%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/java_g
-%%PLUGIN:%%%%NATIVE:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/java_vm
-%%PLUGIN:%%%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/java_vm_g
+%%PLUGIN:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/java_vm
+%%PLUGIN:%%%%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/java_vm_g
 %%NATIVE:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/javac
 %%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/javac_g
 %%NATIVE:%%jdk%%JDK_VERSION%%/bin/i386/native_threads/javadoc
@@ -752,8 +752,8 @@ jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/tnameserv
 %%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/jarsigner_g
 %%NATIVE:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/java
 %%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/java_g
-%%PLUGIN:%%%%NATIVE:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/java_vm
-%%PLUGIN:%%%%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/java_vm_g
+%%PLUGIN:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/java_vm
+%%PLUGIN:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/java_vm_g
 %%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/javac_g
 %%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/javadoc_g
 %%NATIVE:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/i386/native_threads/javah_g
@@ -884,9 +884,9 @@ jdk%%JDK_VERSION%%/jre/lib/security/java.security
 jdk%%JDK_VERSION%%/jre/lib/sunrsasign.jar
 jdk%%JDK_VERSION%%/jre/lib/tzmappings
 %%PLUGIN:%%jdk%%JDK_VERSION%%/jre/plugin/i386/ns4/javaplugin.so
-%%PLUGIN:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/plugin/i386/ns4/javaplugin_g.so
+%%PLUGIN:%%jdk%%JDK_VERSION%%/jre/plugin/i386/ns4/javaplugin_g.so
 %%PLUGIN:%%jdk%%JDK_VERSION%%/jre/plugin/i386/ns600/libjavaplugin_oji.so
-%%PLUGIN:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/plugin/i386/ns600/libjavaplugin_oji_g.so
+%%PLUGIN:%%jdk%%JDK_VERSION%%/jre/plugin/i386/ns600/libjavaplugin_oji_g.so
 jdk%%JDK_VERSION%%/lib/dt.jar
 jdk%%JDK_VERSION%%/lib/htmlconverter.jar
 jdk%%JDK_VERSION%%/lib/i386/libdt_socket.so
