@@ -7,6 +7,7 @@
 
 PORTNAME=	foldoc-fpw
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/foldoc/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -26,8 +27,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/foldoc/gaiji/gai16h ${PREFIX}/share/dict/foldoc-fpw/foldoc/gaiji
 	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/foldoc-fpw
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/foldoc-fpw
-	${INSTALL_DATA} ${WRKSRC}/readme.txt ${PREFIX}/share/doc/foldoc-fpw
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

@@ -5,6 +5,6 @@ share/dict/otojiro-fpw/catalogs
 @dirrm share/dict/otojiro-fpw/otojiro/gaiji
 @dirrm share/dict/otojiro-fpw/otojiro
 @dirrm share/dict/otojiro-fpw
-share/doc/otojiro-fpw/COPYING
-share/doc/otojiro-fpw/readme.txt
-@dirrm share/doc/otojiro-fpw
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

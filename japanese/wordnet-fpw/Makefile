@@ -7,6 +7,7 @@
 
 PORTNAME=	wordnet-fpw
 PORTVERSION=	${WN_VER}.${WNFPW_VER}
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/wordnet/
 DISTNAME=	wordnet-${WN_VER}-fpw${WNFPW_VER}
@@ -27,8 +28,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/wordnet/data/honmon ${PREFIX}/share/dict/wordnet-fpw/wordnet/data
 	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/wordnet-fpw
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/wordnet-fpw
-	${INSTALL_DATA} ${WRKSRC}/readme ${PREFIX}/share/doc/wordnet-fpw
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

@@ -7,6 +7,7 @@
 
 PORTNAME=	ASCIIdates98-fpw
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/ASCIIdates98/
 DISTNAME=	${PORTNAME:S/-fpw//}-${PORTVERSION}
@@ -24,9 +25,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/ascdates/data/honmon ${PREFIX}/share/dict/ASCIIdates98-fpw/ascdates/data
 	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/ASCIIdates98-fpw
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/ASCIIdates98-fpw
+	${MKDIR} ${DOCSDIR}
 .for i in readme
-	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/ASCIIdates98-fpw
+	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
 .endif
 

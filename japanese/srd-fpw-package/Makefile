@@ -7,6 +7,7 @@
 
 PORTNAME=	srd-fpw-package
 PORTVERSION=	1.0.8
+PORTREVISION=	1
 CATEGORIES=	japanese elisp
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/srd/
 
@@ -22,16 +23,15 @@ PLIST_SUB=	PKGNAME=${PKGNAME}
 USE_PERL5=	yes
 
 PKG_DIR=	${PREFIX}/share/dict/lookup-package
-PORT_DOCDIR=	${PREFIX}/share/doc/${PKGNAME}
 
 do-install:
 	${MKDIR} ${PKG_DIR}
 	${INSTALL_DATA} ${WRKSRC}/srd-fpw.el ${PKG_DIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/extract-srd.pl ${PKG_DIR}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PORT_DOCDIR}
+	${MKDIR} ${DOCSDIR}
 .for file in ChangeLog README.TXT
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PORT_DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 

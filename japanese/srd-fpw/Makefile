@@ -7,7 +7,7 @@
 
 PORTNAME=	srd-fpw
 PORTVERSION=	1.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/srd/
 DISTNAME=	srd-fpw${PORTVERSION}-src
@@ -53,9 +53,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/srd-fpw
 	${INSTALL_DATA} ${WRKSRC}/img.dat ${PREFIX}/share/dict/srd-fpw
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/srd-fpw
+	${MKDIR} ${DOCSDIR}
 .for file in AUTHORS COPYING ChangeLog GAIJI.TXT NEWS README.PKG README.TXT TOBEDONE
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/srd-fpw
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	mypaedia-fpw
 PORTVERSION=	1.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/mypaedia/
 DISTNAME=	mypaedia-fpw${PORTVERSION}-src
@@ -49,9 +49,9 @@ do-install:
 		${PREFIX}/share/dict/mypaedia-fpw/mypaedia/gaiji
 	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/mypaedia-fpw
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/mypaedia-fpw
+	${MKDIR} ${DOCSDIR}
 .for file in AUTHORS COPYING ChangeLog GAIJI.TXT MYPAEDIA-format.txt README.PKG README.TXT TOBEDONE
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/mypaedia-fpw
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 

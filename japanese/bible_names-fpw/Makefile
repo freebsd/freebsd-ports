@@ -7,6 +7,7 @@
 
 PORTNAME=	bible_names-fpw
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/bible_names/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -24,9 +25,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/biblenam/data/honmon ${PREFIX}/share/dict/bible_names-fpw/biblenam/data
 	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/bible_names-fpw
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/bible_names-fpw
+	${MKDIR} ${DOCSDIR}
 .for i in biblenam.txt readme
-	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/bible_names-fpw
+	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
 .endif
 

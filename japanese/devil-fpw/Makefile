@@ -7,6 +7,7 @@
 
 PORTNAME=	devil-fpw
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/devil/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -24,9 +25,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/devil/data/honmon ${PREFIX}/share/dict/devil-fpw/devil/data
 	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/devil-fpw
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/devil-fpw
+	${MKDIR} ${DOCSDIR}
 .for i in readme.pkg readme.txt
-	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/devil-fpw
+	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
 .endif
 

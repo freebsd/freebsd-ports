@@ -3,5 +3,5 @@ share/dict/wordnet-fpw/wordnet/data/honmon
 @dirrm share/dict/wordnet-fpw/wordnet/data
 @dirrm share/dict/wordnet-fpw/wordnet
 @dirrm share/dict/wordnet-fpw
-share/doc/wordnet-fpw/readme
-@dirrm share/doc/wordnet-fpw
+%%PORTDOCS%%%%DOCSDIR%%/readme
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

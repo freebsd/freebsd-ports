@@ -7,7 +7,7 @@
 
 PORTNAME=	otojiro-fpw
 PORTVERSION=	1.0.a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/eijiro/ \
 		http://member.nifty.ne.jp/~satomii/freepwing/archive/
@@ -70,9 +70,9 @@ do-install:
 		${PREFIX}/share/dict/otojiro-fpw/otojiro/gaiji
 	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/otojiro-fpw
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/otojiro-fpw
+	${MKDIR} ${DOCSDIR}
 .for i in readme.txt COPYING
-	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/otojiro-fpw
+	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
 .endif
 

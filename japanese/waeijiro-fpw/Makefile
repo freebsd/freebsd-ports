@@ -7,7 +7,7 @@
 
 PORTNAME=	waeijiro-fpw
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 #MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/eijiro/
 MASTER_SITES=	http://www.dsl.gr.jp/~tf/pool/
@@ -63,9 +63,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/honmon ${PREFIX}/share/dict/waeijiro-fpw/waeijiro/data
 	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/waeijiro-fpw
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/waeijiro-fpw
+	${MKDIR} ${DOCSDIR}
 .for i in README
-	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/waeijiro-fpw
+	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
 .endif
 

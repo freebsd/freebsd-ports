@@ -7,6 +7,7 @@
 
 PORTNAME=	lsd-fpw
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/lsd/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -24,9 +25,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lsd/data/honmon ${PREFIX}/share/dict/lsd-fpw/lsd/data
 	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/lsd-fpw
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/lsd-fpw
+	${MKDIR} ${DOCSDIR}
 .for i in readme.pkg readme.txt
-	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/lsd-fpw
+	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
 .endif
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	ryaku-fpw
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/Ryaku/
 DISTNAME=	Ryaku-${PORTVERSION}
@@ -24,9 +25,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/ryaku/data/honmon ${PREFIX}/share/dict/ryaku-fpw/ryaku/data
 	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/ryaku-fpw
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/ryaku-fpw
+	${MKDIR} ${DOCSDIR}
 .for i in readme
-	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/ryaku-fpw
+	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
 .endif
 

@@ -5,6 +5,6 @@ share/dict/wdic-fpw/wdic/gaiji/gai16h
 @dirrm share/dict/wdic-fpw/wdic/gaiji
 @dirrm share/dict/wdic-fpw/wdic/
 @dirrm share/dict/wdic-fpw
-share/doc/wdic-fpw/readme.1st
-share/doc/wdic-fpw/readme.txt
-@dirrm share/doc/wdic-fpw
+%%PORTDOCS%%%%DOCSDIR%%/readme.1st
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

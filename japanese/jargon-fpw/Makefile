@@ -7,6 +7,7 @@
 
 PORTNAME=	jargon-fpw
 PORTVERSION=	1.2a
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/jargon/
 DISTNAME=	jarg-fpw${PORTVERSION}
@@ -28,9 +29,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/jargon/gaiji/gai16h ${PREFIX}/share/dict/jargon-fpw/jargon/gaiji
 	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/jargon-fpw
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/jargon-fpw
+	${MKDIR} ${DOCSDIR}
 .for i in readme.1st readme.txt
-	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/jargon-fpw
+	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
 .endif
 

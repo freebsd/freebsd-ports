@@ -7,6 +7,7 @@
 
 PORTNAME=	fumeikai-fpw
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/Fumeikai/
 DISTNAME=	Fumeikai-${PORTVERSION}
@@ -24,9 +25,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/fumeikai/data/honmon ${PREFIX}/share/dict/fumeikai-fpw/fumeikai/data
 	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/fumeikai-fpw
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/fumeikai-fpw
+	${MKDIR} ${DOCSDIR}
 .for i in readme
-	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/fumeikai-fpw
+	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
 .endif
 
