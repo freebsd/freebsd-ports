@@ -1,0 +1,16 @@
+include/liboil-%%VERSION%%/liboil/liboil.h
+include/liboil-%%VERSION%%/liboil/liboilcpu.h
+include/liboil-%%VERSION%%/liboil/liboildebug.h
+include/liboil-%%VERSION%%/liboil/liboilfuncs.h
+include/liboil-%%VERSION%%/liboil/liboilfunction.h
+include/liboil-%%VERSION%%/liboil/liboilprototype.h
+include/liboil-%%VERSION%%/liboil/liboiltypes.h
+lib/liboil-%%VERSION%%.a
+lib/liboil-%%VERSION%%.so
+lib/liboil-%%VERSION%%.so.0
+lib/liboiltmp1.a
+lib/liboiltmp1.so
+lib/liboiltmp1.so.0
+libdata/pkgconfig/liboil-%%VERSION%%.pc
+@dirrm include/liboil-%%VERSION%%/liboil
+@dirrm include/liboil-%%VERSION%%

@@ -1,0 +1,13 @@
+Liboil is a library of simple functions that are optimized for various CPUs.
+These functions are generally loops implementing simple algorithms, such as
+converting an array of N integers to floating-point numbers or multiplying
+and summing an array of N numbers. Clearly such functions are candidates for
+significant optimization using various techniques, especially by using
+extended instructions provided by modern CPUs (Altivec, MMX, SSE, etc.).
+
+Many multimedia applications and libraries already do similar things
+internally. The goal of this project is to consolidate some of the code used
+by various multimedia projects, and also make optimizations easier to use by
+a broad range of applications.
+
+WWW: http://www.schleef.org/liboil/

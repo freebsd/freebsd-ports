@@ -437,6 +437,7 @@
     SUBDIR += libmcve
     SUBDIR += libmimedir
     SUBDIR += libmtrie
+    SUBDIR += liboil
     SUBDIR += libol
     SUBDIR += libole2
     SUBDIR += liboop
