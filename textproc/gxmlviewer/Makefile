@@ -18,6 +18,8 @@ COMMENT=	An xmlviewer with a netscape plugin, and now a bonobo control as well
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
+BROKEN=		Incomplete pkg-plist
+
 USE_GETTEXT=	yes
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
