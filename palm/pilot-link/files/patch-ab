@@ -1,5 +1,14 @@
---- configure.orig	Tue Oct  7 07:24:18 1997
-+++ configure	Mon Nov 24 00:46:24 1997
+--- configure.orig	Sat Dec 13 23:27:17 1997
++++ configure	Wed Jan 14 06:49:36 1998
+@@ -9,7 +9,7 @@
+ 
+ # Defaults:
+ ac_help=
+-ac_default_prefix=/usr/local
++ac_default_prefix=/usr/local/pilot
+ # Any additions from configure.in:
+ ac_help="$ac_help
+   --with-gnu-ld           assume the C compiler uses GNU ld [default=no]"
 @@ -818,9 +818,9 @@
  
  # Use test -z because SunOS4 sh mishandles braces in ${var-val}.
