@@ -49,7 +49,7 @@ PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	trevor
 PATCHFILES=	linux-netscape6-${PORTVERSION}-generated-files.tar.gz
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER?=	trevor@FreeBSD.org
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0.5.0:${PORTSDIR}/x11-toolkits/linux-gtk \
