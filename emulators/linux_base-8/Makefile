@@ -125,7 +125,7 @@ do-extract:
 # Also, set the ELF fallback brand to Linux, so that we don't have to do
 # anything special to run staticly linked binaries.
 	@/sbin/sysctl -w ${FALLBACK_ELF_MIB}=${LINUX_ELF}
-	@for R in ${DISTFILES}; do \
+	@for R in ${DISTFILES:S/:new//}; do \
 		${ECHO} $$R; \
 		${RPM} -U ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
