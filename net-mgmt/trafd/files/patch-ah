@@ -1,0 +1,39 @@
+--- trafd/traffic.c.buggy	Mon Aug  7 18:45:54 2000
++++ trafd/traffic.c	Mon Aug  7 18:46:42 2000
+@@ -253,7 +253,7 @@
+ 		t.p_port = tp->th_sport, t.who_srv = 1;
+ 	else if (tp->th_sport > tp->th_dport)
+ 		t.p_port = tp->th_dport, t.who_srv = 2;
+-	else if (tp->th_sport = tp->th_dport)
++	else if (tp->th_sport == tp->th_dport)
+ 		t.p_port = tp->th_sport, t.who_srv = 3;
+ 	if (t.p_port > IPPORT_RESERVED) {
+ 		if (s_port_big[tp->th_sport & (IPPORT_RESERVED-1)] & IPPROTO_TCP) {
+@@ -263,7 +263,7 @@
+ 				t.p_port = tp->th_dport;
+ 				t.who_srv = 2;
+ 			}
+-		if (tp->th_sport = tp->th_dport) t.who_srv = 3;
++		if (tp->th_sport == tp->th_dport) t.who_srv = 3;
+ 	}
+ 	traf_add(insertentry(&t), t.n_bytes, t.n_psize);
+ 
+@@ -300,7 +300,7 @@
+ 		t.p_port = up->uh_sport, t.who_srv = 1;
+ 	else if (up->uh_sport > up->uh_dport)
+ 		t.p_port = up->uh_dport, t.who_srv = 2;
+-	else if (up->uh_sport = up->uh_dport)
++	else if (up->uh_sport == up->uh_dport)
+ 		t.p_port = up->uh_sport, t.who_srv = 3;
+ 	if (t.p_port > IPPORT_RESERVED) {
+ 		if (s_port_big[up->uh_sport & (IPPORT_RESERVED-1)] & IPPROTO_UDP) {
+@@ -310,7 +310,7 @@
+ 				t.p_port = up->uh_dport;
+ 				t.who_srv = 2;
+ 			}
+-		if (up->uh_sport = up->uh_dport) t.who_srv = 3;
++		if (up->uh_sport == up->uh_dport) t.who_srv = 3;
+ 	}
+ 	traf_add(insertentry(&t), t.n_bytes, t.n_psize);
+ 
+
