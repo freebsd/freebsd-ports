@@ -8,6 +8,7 @@
     SUBDIR += agbrowser
     SUBDIR += agsatellite
     SUBDIR += amp
+    SUBDIR += ample
     SUBDIR += ascd
     SUBDIR += aumix
     SUBDIR += aureal-kmod
