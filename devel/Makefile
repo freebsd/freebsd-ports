@@ -1066,7 +1066,6 @@
     SUBDIR += sigslot
     SUBDIR += simgear
     SUBDIR += simulavr
-    SUBDIR += sip
     SUBDIR += skalibs
     SUBDIR += smv
     SUBDIR += soup
