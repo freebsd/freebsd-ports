@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	freebase
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://rubyforge.org/frs/download.php/2185/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/3148/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	freeride-${PORTVERSION}
 DIST_SUBDIR=	ruby
@@ -22,6 +22,6 @@ USE_RUBY=	yes
 NO_BUILD=	yes
 
 do-install:
-	cd ${WRKSRC}; ${RUBY} bin/install.rb
+	cd ${WRKSRC}; ${RUBY} bin/install.rb --prefix=${PREFIX}
 
 .include <bsd.port.mk>
