@@ -3,7 +3,7 @@
 # Date created:		So  21 Jun 1998 16:09:39 CEST
 # Whom:			Stefan Herrmann <stefan@asterix.webaffairs.net>
 #
-# $Id: Makefile,v 1.77 1999/06/10 10:24:35 dirk Exp $
+# $Id: Makefile,v 1.78 1999/06/18 02:40:11 billf Exp $
 #
 
 DISTNAME=	apache_${VERSION_APACHE}
@@ -36,7 +36,7 @@ MAINTAINER=	dirk@FreeBSD.ORG
 Y2K=		http://www.php.net/y2k.php3
 
 VERSION_APACHE=	1.3.6
-VERSION_PHP3=	3.0.9
+VERSION_PHP3=	3.0.10
 
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
