@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scsh
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.2
 CATEGORIES=	shells lang
 MASTER_SITES=	ftp://ftp.scsh.net/pub/scsh/0.6/
 
