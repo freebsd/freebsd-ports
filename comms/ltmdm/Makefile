@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	ltmdm
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	comms
 MASTER_SITES=	http://www.csociety.org/~will/ \
+		http://soupnazi.org/FreeBSD/ports/distfiles/ \
 		http://www.gsoft.com.au/~doconnor/
 EXTRACT_SUFX=	.tgz
 
