@@ -29,12 +29,6 @@ pre-patch:
 		-e 's:/usr/tmp:/var/tmp:' \
 		${DISTDIR}/${DIST_SUBDIR}/aub > ${WRKDIR}/aub
 
-.if !exists(/usr/bin/perl5)
-post-patch:
-	@cd ${WRKSRC} ; ${PATCH} -d ${WRKSRC} --reverse --quiet -E \
-		${PATCH_STRIP} < ${PATCHDIR}/patch-01
-.endif
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/aub ${PREFIX}/bin
 	${INSTALL_MAN} ${DISTDIR}/${DIST_SUBDIR}/aub.1 ${PREFIX}/man/man1
