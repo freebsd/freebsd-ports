@@ -25,8 +25,10 @@ include/gtk/gtkcombo.h
 include/gtk/gtkcontainer.h
 include/gtk/gtkcurve.h
 include/gtk/gtkdata.h
+include/gtk/gtkdebug.h
 include/gtk/gtkdialog.h
 include/gtk/gtkdrawingarea.h
+include/gtk/gtkeditable.h
 include/gtk/gtkentry.h
 include/gtk/gtkenums.h
 include/gtk/gtkeventbox.h
@@ -62,6 +64,7 @@ include/gtk/gtkoptionmenu.h
 include/gtk/gtkpaned.h
 include/gtk/gtkpixmap.h
 include/gtk/gtkpreview.h
+include/gtk/gtkprivate.h
 include/gtk/gtkprogressbar.h
 include/gtk/gtkradiobutton.h
 include/gtk/gtkradiomenuitem.h
@@ -74,10 +77,12 @@ include/gtk/gtkscrolledwindow.h
 include/gtk/gtkselection.h
 include/gtk/gtkseparator.h
 include/gtk/gtksignal.h
+include/gtk/gtkspinbutton.h
 include/gtk/gtkstatusbar.h
 include/gtk/gtkstyle.h
 include/gtk/gtktable.h
 include/gtk/gtktext.h
+include/gtk/gtktipsquery.h
 include/gtk/gtktogglebutton.h
 include/gtk/gtktoolbar.h
 include/gtk/gtktooltips.h
@@ -96,12 +101,15 @@ include/gtk/gtkvseparator.h
 include/gtk/gtkwidget.h
 include/gtk/gtkwindow.h
 @unexec install-info --delete %D/info/gdk.info %D/info/dir
+@unexec install-info --delete %D/info/glib.info %D/info/dir
 @unexec install-info --delete %D/info/gtk.info %D/info/dir
 info/gdk.info
+info/glib.info
 info/gtk.info
 @exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
-@exec install-info %D/info/gtk.info %D/info/dir
 @exec install-info %D/info/gdk.info %D/info/dir
+@exec install-info %D/info/glib.info %D/info/dir
+@exec install-info %D/info/gtk.info %D/info/dir
 lib/libgdk.a
 lib/libgdk.la
 lib/libgdk.so.1.0
