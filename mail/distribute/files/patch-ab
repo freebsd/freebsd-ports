@@ -1,0 +1,11 @@
+--- config.h.orig	Sun Sep 14 09:25:53 1997
++++ config.h	Sun Sep 14 09:26:01 1997
+@@ -86,6 +86,8 @@
+  * Other set-ups
+  */
+ 
++#if 0
+ #ifndef _PATH_SENDMAIL
+ # define	_PATH_SENDMAIL	"/usr/lib/sendmail" /* default */
++#endif
+ #endif
