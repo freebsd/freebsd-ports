@@ -32,7 +32,12 @@ AUTOMAKE_ARGS=		-a
 USE_GMAKE=		yes
 MAKEFILE=		makefile.autoconf
 
-#Glide3 DOES NOT work with CFLAGS greater than -O2
+# This Glide3 does not work on alpha, and I don't expect it to work right
+# on other non-i386 without patches.  Further development is going on in
+# x11-servers/driglide.
+ONLY_FOR_ARCHS=		i386
+
+# Glide3 DOES NOT work with CFLAGS greater than -O2
 CFLAGS+= -O
 
 .ifdef WITH_VOODOO3
