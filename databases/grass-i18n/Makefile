@@ -10,8 +10,10 @@ PORTVERSION=	5.0.2
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	databases
-MASTER_SITES=	http://grass.itc.it/grass5/source/ \
-		ftp://grass.baylor.edu/pub/grass/grass5/source/
+MASTER_SITES=	http://grass.itc.it/grass50/source/ \
+		http://grass.meteo.uni.wroc.pl/grass50/source/ \
+		ftp://sunsite.ualberta.ca/pub/Mirror/grass-web/grass50/source/ \
+		http://www.dinama.gub.uy/grass/grass50/source/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
 
 MAINTAINER=	ports@FreeBSD.org
