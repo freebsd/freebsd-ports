@@ -1,6 +1,14 @@
---- Makefile.orig	Mon Oct 26 05:47:44 1998
-+++ Makefile	Sun Feb 14 17:39:37 1999
-@@ -13,8 +13,8 @@
+--- Makefile.orig	Mon Oct 26 02:47:44 1998
++++ Makefile	Sun Feb  6 16:58:34 2000
+@@ -6,18 +6,18 @@
+ OBJECTS = $(SOURCES:.c=.o)
+ 
+ ######## compiler options ########
+-CC = gcc
++CC ?= gcc
+ LANG_OPTIONS = 
+ WARN_OPTIONS = -Wall -Wtraditional -Wpointer-arith \
+                -Wconversion -Wstrict-prototypes -Wmissing-prototypes \
                 -Wmissing-declarations -Wreturn-type \
                 -Wnested-externs -Wwrite-strings -Wcast-qual
  INCDIR = -I. -I/usr/include 
@@ -10,7 +18,11 @@
 +CFLAGS+= $(DEFINES) $(LANG_OPTIONS) $(WARN_OPTIONS) $(INCDIR)
  
  ######## link options ########
- LD = gcc
+-LD = gcc
++LD = $(CC)
+ LIBDIR = 
+ LIBRARIES = #-lm 
+ LDFLAGS = $(LIBDIR)
 @@ -36,7 +36,7 @@
  
  %o: %c
