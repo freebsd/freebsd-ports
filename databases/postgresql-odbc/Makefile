@@ -15,10 +15,6 @@ DIST_SUBDIR=	postgresql
 
 MAINTAINER=	girgen@pingpong.net
 
-POSTGRESQL_PORT?=	databases/postgresql7
-POSTGRESQL_SUBPORT=YES
-.include <${.CURDIR}/../../${POSTGRESQL_PORT}/Makefile>
-
 # PostgreSQL ODBC support needs an ODBC driver manager to be
 # installed, and it supports both iODBC and unixODBC.  The following
 # variable may be set at built-time to either "iodbc" or "unixodbc",
