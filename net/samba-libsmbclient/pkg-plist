@@ -2,3 +2,10 @@ include/libsmbclient.h
 lib/libsmbclient.a
 lib/libsmbclient.so
 lib/libsmbclient.so.0
+%%EXAMPLESDIR%%/Makefile
+%%EXAMPLESDIR%%/README
+%%EXAMPLESDIR%%/testacl.c
+%%EXAMPLESDIR%%/testbrowse.c
+%%EXAMPLESDIR%%/testsmbc.c
+%%EXAMPLESDIR%%/tree.c
+@dirrm %%EXAMPLESDIR%%

@@ -28,7 +28,6 @@ sbin/smbd
 sbin/nmbd
 sbin/swat
 %%WINBIND%%sbin/winbindd
-include/libsmbclient.h
 lib/samba/lowcase.dat
 lib/samba/upcase.dat
 lib/samba/valid.dat
@@ -54,24 +53,10 @@ lib/samba/charset/CP850.so
 %%SAMMYSQL%%lib/samba/pdb/mysql.so
 %%SAMPGSQL%%lib/samba/pdb/pgsql.so
 %%SAMXML%%lib/samba/pdb/xml.so
-lib/libsmbclient.a
-lib/libsmbclient.so
-lib/libsmbclient.so.0
 %%WINBIND_NSS%%lib/nss_winbind.so.1
 %%WINBIND_NSS%%lib/nss_wins.so.1
 %%WINBIND%%lib/pam_winbind.so
 %%SMBPASS%%lib/pam_smbpass.so
-%%PYTHON%%lib/%%PYTHON_VERSION%%/site-packages/samba/__init__.py
-%%PYTHON%%lib/%%PYTHON_VERSION%%/site-packages/samba/lsa.so
-%%PYTHON%%lib/%%PYTHON_VERSION%%/site-packages/samba/printerdata.py
-%%PYTHON%%lib/%%PYTHON_VERSION%%/site-packages/samba/samr.so
-%%PYTHON%%lib/%%PYTHON_VERSION%%/site-packages/samba/smb.so
-%%PYTHON%%lib/%%PYTHON_VERSION%%/site-packages/samba/spoolss.so
-%%PYTHON%%lib/%%PYTHON_VERSION%%/site-packages/samba/srvsvc.so
-%%PYTHON%%lib/%%PYTHON_VERSION%%/site-packages/samba/tdb.so
-%%PYTHON%%lib/%%PYTHON_VERSION%%/site-packages/samba/tdbpack.so
-%%PYTHON%%lib/%%PYTHON_VERSION%%/site-packages/samba/winbind.so
-%%PYTHON%%lib/%%PYTHON_VERSION%%/site-packages/samba/winreg.so
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/Manifest
 %%PORTDOCS%%%%DOCSDIR%%/README
@@ -81,21 +66,14 @@ lib/libsmbclient.so.0
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/WHATSNEW.txt
 %%PORTDOCS%%%%DOCSDIR%%/history
-%%PORTDOCS%%%%DOCSDIR%%/faq/FAQ-ClientApp.html
-%%PORTDOCS%%%%DOCSDIR%%/faq/FAQ-Install.html
-%%PORTDOCS%%%%DOCSDIR%%/faq/FAQ-errors.html
-%%PORTDOCS%%%%DOCSDIR%%/faq/FAQ-features.html
-%%PORTDOCS%%%%DOCSDIR%%/faq/FAQ-general.html
-%%PORTDOCS%%%%DOCSDIR%%/faq/samba-faq.html
 %%PORTDOCS%%%%DOCSDIR%%/htmldocs/AccessControls.html
 %%PORTDOCS%%%%DOCSDIR%%/htmldocs/AdvancedNetworkManagement.html
-%%PORTDOCS%%%%DOCSDIR%%/htmldocs/Appendixes.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/Appendix.html
 %%PORTDOCS%%%%DOCSDIR%%/htmldocs/Backup.html
 %%PORTDOCS%%%%DOCSDIR%%/htmldocs/CUPS-printing.html
 %%PORTDOCS%%%%DOCSDIR%%/htmldocs/ClientConfig.html
 %%PORTDOCS%%%%DOCSDIR%%/htmldocs/DNSDHCP.html
 %%PORTDOCS%%%%DOCSDIR%%/htmldocs/FastStart.html
-%%PORTDOCS%%%%DOCSDIR%%/htmldocs/Further-Resources.html
 %%PORTDOCS%%%%DOCSDIR%%/htmldocs/InterdomainTrusts.html
 %%PORTDOCS%%%%DOCSDIR%%/htmldocs/IntroSMB.html
 %%PORTDOCS%%%%DOCSDIR%%/htmldocs/NT4Migration.html
@@ -117,6 +95,7 @@ lib/libsmbclient.so.0
 %%PORTDOCS%%%%DOCSDIR%%/htmldocs/domain-member.html
 %%PORTDOCS%%%%DOCSDIR%%/htmldocs/editreg.1.html
 %%PORTDOCS%%%%DOCSDIR%%/htmldocs/findsmb.1.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/go01.html
 %%PORTDOCS%%%%DOCSDIR%%/htmldocs/groupmapping.html
 %%PORTDOCS%%%%DOCSDIR%%/htmldocs/index.html
 %%PORTDOCS%%%%DOCSDIR%%/htmldocs/install.html
@@ -139,6 +118,7 @@ lib/libsmbclient.so.0
 %%PORTDOCS%%%%DOCSDIR%%/htmldocs/pdbedit.8.html
 %%PORTDOCS%%%%DOCSDIR%%/htmldocs/pr01.html
 %%PORTDOCS%%%%DOCSDIR%%/htmldocs/pr02.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/pr03.html
 %%PORTDOCS%%%%DOCSDIR%%/htmldocs/printing.html
 %%PORTDOCS%%%%DOCSDIR%%/htmldocs/problems.html
 %%PORTDOCS%%%%DOCSDIR%%/htmldocs/profiles.1.html
@@ -212,51 +192,25 @@ lib/libsmbclient.so.0
 %%PORTDOCS%%%%DOCSDIR%%/htmldocs/images/pdftoepsonusb.png
 %%PORTDOCS%%%%DOCSDIR%%/htmldocs/images/pdftosocket.png
 %%PORTDOCS%%%%DOCSDIR%%/htmldocs/images/trusts1.png
-%%PORTDOCS%%%%DOCSDIR%%/Registry/FolderRedir.adm
-%%PORTDOCS%%%%DOCSDIR%%/Registry/NT4-Locking.reg
-%%PORTDOCS%%%%DOCSDIR%%/Registry/NT4_PlainPassword.reg
-%%PORTDOCS%%%%DOCSDIR%%/Registry/Win-2Kx-XPP-DeleteCachedProfiles.reg
-%%PORTDOCS%%%%DOCSDIR%%/Registry/Win-2Kx-XPP-ForceLocalProfile.reg
-%%PORTDOCS%%%%DOCSDIR%%/Registry/Win-NT-DeleteRoamingProfile.reg
-%%PORTDOCS%%%%DOCSDIR%%/Registry/Win2000_PlainPassword.reg
-%%PORTDOCS%%%%DOCSDIR%%/Registry/Win95_PlainPassword.reg
-%%PORTDOCS%%%%DOCSDIR%%/Registry/Win98_PlainPassword.reg
-%%PORTDOCS%%%%DOCSDIR%%/Registry/Win9X-CacheHandling.reg
-%%PORTDOCS%%%%DOCSDIR%%/Registry/WinME_PlainPassword.reg
-%%PORTDOCS%%%%DOCSDIR%%/Registry/WinXP_PlainPassword.reg
-%%PORTDOCS%%%%DOCSDIR%%/Registry/WinXP_SignOrSeal.reg
-%%PORTDOCS%%%%DOCSDIR%%/Registry/WindowsTerminalServer.reg
+%%PORTDOCS%%%%DOCSDIR%%/registry/FolderRedir.adm
+%%PORTDOCS%%%%DOCSDIR%%/registry/NT4-Locking.reg
+%%PORTDOCS%%%%DOCSDIR%%/registry/NT4_PlainPassword.reg
+%%PORTDOCS%%%%DOCSDIR%%/registry/Win-2Kx-XPP-DeleteCachedProfiles.reg
+%%PORTDOCS%%%%DOCSDIR%%/registry/Win-2Kx-XPP-ForceLocalProfile.reg
+%%PORTDOCS%%%%DOCSDIR%%/registry/Win-NT-DeleteRoamingProfile.reg
+%%PORTDOCS%%%%DOCSDIR%%/registry/Win2000_PlainPassword.reg
+%%PORTDOCS%%%%DOCSDIR%%/registry/Win95_PlainPassword.reg
+%%PORTDOCS%%%%DOCSDIR%%/registry/Win98_PlainPassword.reg
+%%PORTDOCS%%%%DOCSDIR%%/registry/Win9X-CacheHandling.reg
+%%PORTDOCS%%%%DOCSDIR%%/registry/WinME_PlainPassword.reg
+%%PORTDOCS%%%%DOCSDIR%%/registry/WinXP_PlainPassword.reg
+%%PORTDOCS%%%%DOCSDIR%%/registry/WinXP_SignOrSeal.reg
+%%PORTDOCS%%%%DOCSDIR%%/registry/WindowsTerminalServer.reg
 %%SMBPASS%%%%EXAMPLESDIR%%/pam_smbpass/README
 %%SMBPASS%%%%EXAMPLESDIR%%/pam_smbpass/kdc-pdc
 %%SMBPASS%%%%EXAMPLESDIR%%/pam_smbpass/password-mature
 %%SMBPASS%%%%EXAMPLESDIR%%/pam_smbpass/password-migration
 %%SMBPASS%%%%EXAMPLESDIR%%/pam_smbpass/password-sync
-%%PYTHON%%%%EXAMPLESDIR%%/python/tdbpack/oldtdbutil.py
-%%PYTHON%%%%EXAMPLESDIR%%/python/tdbpack/tdbtimetrial.py
-%%PYTHON%%%%EXAMPLESDIR%%/python/tdbpack/test_tdbpack.py
-%%PYTHON%%%%EXAMPLESDIR%%/python/spoolss/changeid.py
-%%PYTHON%%%%EXAMPLESDIR%%/python/spoolss/enumprinters.py
-%%PYTHON%%%%EXAMPLESDIR%%/python/spoolss/psec.py
-%%EXAMPLESDIR%%/pdb/Makefile
-%%EXAMPLESDIR%%/pdb/README
-%%EXAMPLESDIR%%/pdb/mysql/mysql.dump
-%%EXAMPLESDIR%%/pdb/mysql/smb.conf
-%%EXAMPLESDIR%%/pdb/pdb_test.c
-%%EXAMPLESDIR%%/pdb/sambapdb.dtd
-%%EXAMPLESDIR%%/validchars/msdos70.out
-%%EXAMPLESDIR%%/validchars/nwdos70.out
-%%EXAMPLESDIR%%/validchars/readme
-%%EXAMPLESDIR%%/validchars/validchr.c
-%%EXAMPLESDIR%%/validchars/validchr.com
-%%EXAMPLESDIR%%/tridge/README
-%%EXAMPLESDIR%%/tridge/smb.conf
-%%EXAMPLESDIR%%/tridge/smb.conf.WinNT
-%%EXAMPLESDIR%%/tridge/smb.conf.fjall
-%%EXAMPLESDIR%%/tridge/smb.conf.lapland
-%%EXAMPLESDIR%%/tridge/smb.conf.vittjokk
-%%EXAMPLESDIR%%/thoralf/smb.conf
-%%EXAMPLESDIR%%/svr4-startup/samba.server
-%%EXAMPLESDIR%%/svr4-startup/README
 %%EXAMPLESDIR%%/LDAP/README
 %%EXAMPLESDIR%%/LDAP/convertSambaAccount
 %%EXAMPLESDIR%%/LDAP/ldapsync.pl
@@ -300,19 +254,7 @@ lib/libsmbclient.so.0
 %%EXAMPLESDIR%%/LDAP/smbldap-tools/smbldap-usershow.pl
 %%EXAMPLESDIR%%/LDAP/smbldap-tools/smbldap_conf.pm
 %%EXAMPLESDIR%%/LDAP/smbldap-tools/smbldap_tools.pm
-%%EXAMPLESDIR%%/simple/README
-%%EXAMPLESDIR%%/simple/smb.conf
-%%EXAMPLESDIR%%/printing/prtpub.c
-%%EXAMPLESDIR%%/printing/readme.prtpub
-%%EXAMPLESDIR%%/printing/smbprint
-%%EXAMPLESDIR%%/printing/smbprint-new.sh
-%%EXAMPLESDIR%%/printing/smbprint.sysv
-%%EXAMPLESDIR%%/printer-accounting/README
-%%EXAMPLESDIR%%/printer-accounting/acct-all
-%%EXAMPLESDIR%%/printer-accounting/acct-sum
-%%EXAMPLESDIR%%/printer-accounting/hp5-redir
-%%EXAMPLESDIR%%/printer-accounting/lp-acct
-%%EXAMPLESDIR%%/printer-accounting/printcap
+%%EXAMPLESDIR%%/README
 %%EXAMPLESDIR%%/VFS/Makefile.in
 %%EXAMPLESDIR%%/VFS/README
 %%EXAMPLESDIR%%/VFS/autogen.sh
@@ -321,46 +263,64 @@ lib/libsmbclient.so.0
 %%EXAMPLESDIR%%/VFS/shadow_copy_test.c
 %%EXAMPLESDIR%%/VFS/skel_opaque.c
 %%EXAMPLESDIR%%/VFS/skel_transparent.c
-%%EXAMPLESDIR%%/ntlogon/README
-%%EXAMPLESDIR%%/ntlogon/ntlogon.conf
-%%EXAMPLESDIR%%/ntlogon/ntlogon.py
-%%EXAMPLESDIR%%/wins_hook/README
-%%EXAMPLESDIR%%/wins_hook/dns_update
+%%EXAMPLESDIR%%/auth/Makefile
+%%EXAMPLESDIR%%/auth/auth_skel.c
+%%EXAMPLESDIR%%/autofs/auto.a
+%%EXAMPLESDIR%%/dce-dfs/README
+%%EXAMPLESDIR%%/dce-dfs/smb.conf
+%%EXAMPLESDIR%%/genlogon/genlogon.pl
 %%EXAMPLESDIR%%/misc/extra_smbstatus
 %%EXAMPLESDIR%%/misc/modify_samba_config.pl
 %%EXAMPLESDIR%%/misc/swat.pl
 %%EXAMPLESDIR%%/misc/wall.perl
-%%EXAMPLESDIR%%/libsmbclient/Makefile
-%%EXAMPLESDIR%%/libsmbclient/README
-%%EXAMPLESDIR%%/libsmbclient/testacl.c
-%%EXAMPLESDIR%%/libsmbclient/testbrowse.c
-%%EXAMPLESDIR%%/libsmbclient/testsmbc.c
-%%EXAMPLESDIR%%/libsmbclient/tree.c
-%%EXAMPLESDIR%%/genlogon/genlogon.pl
-%%EXAMPLESDIR%%/dce-dfs/README
-%%EXAMPLESDIR%%/dce-dfs/smb.conf
-%%EXAMPLESDIR%%/autofs/auto.a
-%%EXAMPLESDIR%%/auth/Makefile
-%%EXAMPLESDIR%%/auth/auth_skel.c
-%%EXAMPLESDIR%%/appliance/Makefile
-%%EXAMPLESDIR%%/appliance/README
-%%EXAMPLESDIR%%/appliance/appliance.spec
-%%EXAMPLESDIR%%/appliance/build.sh
-%%EXAMPLESDIR%%/appliance/smb.conf-appliance
 %%EXAMPLESDIR%%/nss/nss_winbind.c
 %%EXAMPLESDIR%%/nss/nss_winbind.h
 %%EXAMPLESDIR%%/nss/wbtest.c
-%%EXAMPLESDIR%%/README
+%%EXAMPLESDIR%%/ntlogon/README
+%%EXAMPLESDIR%%/ntlogon/ntlogon.conf
+%%EXAMPLESDIR%%/ntlogon/ntlogon.py
+%%EXAMPLESDIR%%/pdb/Makefile
+%%EXAMPLESDIR%%/pdb/README
+%%EXAMPLESDIR%%/pdb/mysql/mysql.dump
+%%EXAMPLESDIR%%/pdb/mysql/smb.conf
+%%EXAMPLESDIR%%/pdb/pdb_test.c
+%%EXAMPLESDIR%%/pdb/sambapdb.dtd
+%%EXAMPLESDIR%%/printer-accounting/README
+%%EXAMPLESDIR%%/printer-accounting/acct-all
+%%EXAMPLESDIR%%/printer-accounting/acct-sum
+%%EXAMPLESDIR%%/printer-accounting/hp5-redir
+%%EXAMPLESDIR%%/printer-accounting/lp-acct
+%%EXAMPLESDIR%%/printer-accounting/printcap
+%%EXAMPLESDIR%%/printing/VampireDriversFunctions
+%%EXAMPLESDIR%%/printing/prtpub.c
+%%EXAMPLESDIR%%/printing/readme.prtpub
+%%EXAMPLESDIR%%/printing/smbprint
+%%EXAMPLESDIR%%/printing/smbprint.sysv
+%%EXAMPLESDIR%%/scripts/backtrace
 %%EXAMPLESDIR%%/smb.conf.default
+%%EXAMPLESDIR%%/svr4-startup/README
+%%EXAMPLESDIR%%/svr4-startup/samba.server
+%%EXAMPLESDIR%%/tridge/README
+%%EXAMPLESDIR%%/tridge/smb.conf
+%%EXAMPLESDIR%%/tridge/smb.conf.WinNT
+%%EXAMPLESDIR%%/tridge/smb.conf.fjall
+%%EXAMPLESDIR%%/tridge/smb.conf.lapland
+%%EXAMPLESDIR%%/tridge/smb.conf.vittjokk
+%%EXAMPLESDIR%%/validchars/msdos70.out
+%%EXAMPLESDIR%%/validchars/nwdos70.out
+%%EXAMPLESDIR%%/validchars/readme
+%%EXAMPLESDIR%%/validchars/validchr.c
+%%EXAMPLESDIR%%/validchars/validchr.com
+%%EXAMPLESDIR%%/wins_hook/README
+%%EXAMPLESDIR%%/wins_hook/dns_update
 share/swat/help/AccessControls.html
 share/swat/help/AdvancedNetworkManagement.html
-share/swat/help/Appendixes.html
+share/swat/help/Appendix.html
 share/swat/help/Backup.html
 share/swat/help/CUPS-printing.html
 share/swat/help/ClientConfig.html
 share/swat/help/DNSDHCP.html
 share/swat/help/FastStart.html
-share/swat/help/Further-Resources.html
 share/swat/help/InterdomainTrusts.html
 share/swat/help/IntroSMB.html
 share/swat/help/NT4Migration.html
@@ -382,7 +342,41 @@ share/swat/help/diagnosis.html
 share/swat/help/domain-member.html
 share/swat/help/editreg.1.html
 share/swat/help/findsmb.1.html
+share/swat/help/go01.html
 share/swat/help/groupmapping.html
+share/swat/help/images/10small.png
+share/swat/help/images/11small.png
+share/swat/help/images/12small.png
+share/swat/help/images/13small.png
+share/swat/help/images/14small.png
+share/swat/help/images/1small.png
+share/swat/help/images/2small.png
+share/swat/help/images/3small.png
+share/swat/help/images/4small.png
+share/swat/help/images/5small.png
+share/swat/help/images/6small.png
+share/swat/help/images/7small.png
+share/swat/help/images/8small.png
+share/swat/help/images/9small.png
+share/swat/help/images/a_small.png
+share/swat/help/images/access1.png
+share/swat/help/images/browsing1.png
+share/swat/help/images/cups1.png
+share/swat/help/images/cups2.png
+share/swat/help/images/domain.png
+share/swat/help/images/ethereal1.png
+share/swat/help/images/ethereal2.png
+share/swat/help/images/idmap-gid2sid.png
+share/swat/help/images/idmap-groups.png
+share/swat/help/images/idmap-sid2gid.png
+share/swat/help/images/idmap-sid2uid.png
+share/swat/help/images/idmap-store-gid2sid.png
+share/swat/help/images/idmap-uid2sid.png
+share/swat/help/images/idmap.png
+share/swat/help/images/idmap_winbind_no_loop.png
+share/swat/help/images/pdftoepsonusb.png
+share/swat/help/images/pdftosocket.png
+share/swat/help/images/trusts1.png
 share/swat/help/index.html
 share/swat/help/install.html
 share/swat/help/integrate-ms-networks.html
@@ -404,6 +398,7 @@ share/swat/help/passdb.html
 share/swat/help/pdbedit.8.html
 share/swat/help/pr01.html
 share/swat/help/pr02.html
+share/swat/help/pr03.html
 share/swat/help/printing.html
 share/swat/help/problems.html
 share/swat/help/profiles.1.html
@@ -453,39 +448,6 @@ share/swat/images/shares.gif
 share/swat/images/status.gif
 share/swat/images/viewconfig.gif
 share/swat/images/wizard.gif
-share/swat/help/images/10small.png
-share/swat/help/images/11small.png
-share/swat/help/images/12small.png
-share/swat/help/images/13small.png
-share/swat/help/images/14small.png
-share/swat/help/images/1small.png
-share/swat/help/images/2small.png
-share/swat/help/images/3small.png
-share/swat/help/images/4small.png
-share/swat/help/images/5small.png
-share/swat/help/images/6small.png
-share/swat/help/images/7small.png
-share/swat/help/images/8small.png
-share/swat/help/images/9small.png
-share/swat/help/images/a_small.png
-share/swat/help/images/access1.png
-share/swat/help/images/browsing1.png
-share/swat/help/images/cups1.png
-share/swat/help/images/cups2.png
-share/swat/help/images/domain.png
-share/swat/help/images/ethereal1.png
-share/swat/help/images/ethereal2.png
-share/swat/help/images/idmap-gid2sid.png
-share/swat/help/images/idmap-groups.png
-share/swat/help/images/idmap-sid2gid.png
-share/swat/help/images/idmap-sid2uid.png
-share/swat/help/images/idmap-store-gid2sid.png
-share/swat/help/images/idmap-uid2sid.png
-share/swat/help/images/idmap.png
-share/swat/help/images/idmap_winbind_no_loop.png
-share/swat/help/images/pdftoepsonusb.png
-share/swat/help/images/pdftosocket.png
-share/swat/help/images/trusts1.png
 share/swat/include/footer.html
 share/swat/include/header.html
 share/swat/lang/ja/help/welcome.html
@@ -683,44 +645,36 @@ share/swat/using_samba/samba2_xs.gif
 @dirrm share/swat/help
 @dirrm share/swat
 %%SMBPASS%%@dirrm %%EXAMPLESDIR%%/pam_smbpass
-%%PYTHON%%@dirrm %%EXAMPLESDIR%%/python/spoolss
-%%PYTHON%%@dirrm %%EXAMPLESDIR%%/python/tdbpack
-%%PYTHON%%@dirrm %%EXAMPLESDIR%%/python
-@dirrm %%EXAMPLESDIR%%/wins_hook
-@dirrm %%EXAMPLESDIR%%/validchars
-@dirrm %%EXAMPLESDIR%%/tridge
-@dirrm %%EXAMPLESDIR%%/thoralf
-@dirrm %%EXAMPLESDIR%%/svr4-startup
-@dirrm %%EXAMPLESDIR%%/simple
-@dirrm %%EXAMPLESDIR%%/printing
-@dirrm %%EXAMPLESDIR%%/printer-accounting
+@dirrm %%EXAMPLESDIR%%/VFS
+@dirrm %%EXAMPLESDIR%%/auth
+@dirrm %%EXAMPLESDIR%%/autofs
+@dirrm %%EXAMPLESDIR%%/dce-dfs
+@dirrm %%EXAMPLESDIR%%/genlogon
+@dirrm %%EXAMPLESDIR%%/misc
+@dirrm %%EXAMPLESDIR%%/nss
+@dirrm %%EXAMPLESDIR%%/ntlogon
 @dirrm %%EXAMPLESDIR%%/pdb/mysql
 @dirrm %%EXAMPLESDIR%%/pdb
-@dirrm %%EXAMPLESDIR%%/ntlogon
-@dirrm %%EXAMPLESDIR%%/nss
-@dirrm %%EXAMPLESDIR%%/misc
-@dirrm %%EXAMPLESDIR%%/libsmbclient
-@dirrm %%EXAMPLESDIR%%/genlogon
-@dirrm %%EXAMPLESDIR%%/dce-dfs
-@dirrm %%EXAMPLESDIR%%/autofs
-@dirrm %%EXAMPLESDIR%%/auth
-@dirrm %%EXAMPLESDIR%%/appliance
-@dirrm %%EXAMPLESDIR%%/VFS
+@dirrm %%EXAMPLESDIR%%/printer-accounting
+@dirrm %%EXAMPLESDIR%%/printing
+@dirrm %%EXAMPLESDIR%%/scripts
+@dirrm %%EXAMPLESDIR%%/svr4-startup
+@dirrm %%EXAMPLESDIR%%/tridge
+@dirrm %%EXAMPLESDIR%%/validchars
+@dirrm %%EXAMPLESDIR%%/wins_hook
 @dirrm %%EXAMPLESDIR%%/LDAP/smbldap-tools/mkntpwd
 @dirrm %%EXAMPLESDIR%%/LDAP/smbldap-tools/cgi
 @dirrm %%EXAMPLESDIR%%/LDAP/smbldap-tools
 @dirrm %%EXAMPLESDIR%%/LDAP
 @dirrm %%EXAMPLESDIR%%
-@dirrm lib/samba/vfs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/htmldocs/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/htmldocs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/registry
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/samba/rpc
 @dirrm lib/samba/pdb
 @dirrm lib/samba/idmap
 @dirrm lib/samba/charset
 @dirrm lib/samba/auth
-@dirrm lib/samba
-%%PYTHON%%@unexec rmdir -p %D/lib/%%PYTHON_VERSION%%/site-packages/samba/. 2>/dev/null || true
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Registry
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/htmldocs/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/htmldocs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/faq
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec rmdir %D/lib/samba/vfs 2>/dev/null || true
+@unexec rmdir %D/lib/samba 2>/dev/null || true
