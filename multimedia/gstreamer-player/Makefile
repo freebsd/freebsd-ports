@@ -49,7 +49,8 @@ pre-install:
 	@${MKDIR} ${PREFIX}/etc/gconf/
 
 .if defined(WITH_MOZILLA_PLUGIN)
-BUILD_DEPENDS+=	${X11BASE}/include/mozilla${HEADERS_SUFX}/plugin/npapi.h:${PORTSDIR}/www/mozilla-headers${HEADERS_SUFX}
+BUILD_DEPENDS+=	${X11BASE}/include/mozilla${HEADERS_SUFX}/plugin/npapi.h:${PORTSDIR}/www/mozilla-headers${HEADERS_SUFX} \
+		${X11BASE}/lib/${MOZILLA}/mozilla-config:${PORTSDIR}/www/${MOZILLA}
 
 .if !defined(WITH_MOZILLA)
 MOZILLA=	mozilla-gtk2
