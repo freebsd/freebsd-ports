@@ -230,6 +230,7 @@
     SUBDIR += p5-Text-Flowchart
     SUBDIR += p5-Text-Format
     SUBDIR += p5-Text-FormatTable
+    SUBDIR += p5-Text-Glob
     SUBDIR += p5-Text-Graphics
     SUBDIR += p5-Text-Metaphone
     SUBDIR += p5-Text-Query
