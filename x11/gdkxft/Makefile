@@ -10,7 +10,7 @@ PORTVERSION=	1.1
 CATEGORIES=	x11
 MASTER_SITES=	http://philrsss.anu.edu.au/~josh/gdkxft/
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_GTK=	yes
