@@ -1,1 +1,3 @@
-MD5 (inn1.4unoff4.tar.gz) = 894a9121fde036711500963c1bf786ec
+MD5 (inn1.4sec.tar.Z) = 6c916baf2b7029b13caf2701f2406e50
+MD5 (select-loop-bug.patch) = 85b0ac32f130ab9cfb5c640ebf99d864
+MD5 (innxmit-long-lines) = 3b0ee87ae6d9e5e39470df777f515397
