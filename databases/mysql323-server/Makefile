@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://planetmirror.com/pub/mysql/Downloads/MySQL-3.23/ \
 		ftp://ftp.rtfm.no/pub/mysql/Downloads/MySQL-3.23/ \
 		http://www.mysql.cz/Downloads/MySQL-3.23/ \
 		ftp://ftp.u-paris10.fr/mysql.com/Downloads/MySQL-3.23/ \
-		http://mysql.oms-net.nl/Downloads/MySQL-3.23/ \
+		http://mysql.proserve.nl/Downloads/MySQL-3.23/ \
 		ftp://ftp.free.fr/pub/MySQL/Downloads/MySQL-3.23/
 PKGNAMESUFFIX?=	-server
 
