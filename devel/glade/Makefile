@@ -1,18 +1,26 @@
 # New ports collection makefile for:	glade
-# Version required:     0.4.1
+# Version required:     0.5.3
 # Date created:		29 June 1998
 # Whom:			Dom Mitchell <dom@myrddin.demon.co.uk>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	glade-0.4.1
+DISTNAME=	glade-0.5.3
 CATEGORIES=	devel
 MASTER_SITES=   http://glade.pn.org/
 
 MAINTAINER=     dom@myrddin.demon.co.uk
 
+.if defined(USE_GNOME)
+LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs
+PLIST_GNOME=	${PKGDIR}/PLIST.gnome
+.else
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+CONFIGURE_ARGS=	--disable-gnome
+.endif
+
+PLIST=		${WRKDIR}/PLIST
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
@@ -20,10 +28,22 @@ FETCH_BEFORE_ARGS=	-b
 
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--disable-gnome
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/libs"
+
+.if !defined(USE_GNOME)
+pre-extract:
+	@${ECHO} "You can add hooks for GNOME by defining USE_GNOME"
+.endif
+
+post-patch:
+.if !defined(USE_GNOME)
+	@cd ${WRKSRC} && ${PATCH} ${PATCH_ARGS} < ${FILESDIR}/patch-nognome
+.endif
+
+pre-install:
+	@sort -r -o ${PLIST} ${PLIST_GNOME} ${PKGDIR}/PLIST
 
 post-install:
 .if !defined(NOPORTDOCS)
