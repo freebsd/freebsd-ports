@@ -9,7 +9,8 @@
 PORTNAME=	trinokiller
 PORTVERSION=	1.0
 CATEGORIES=	security
-MASTER_SITES=	http://www.afro-productions.com/
+# mastersite disappeared in August 2003
+MASTER_SITES=	# http://www.afro-productions.com/
 DISTNAME=	trinokiller
 EXTRACT_SUFX=	.c
 
