@@ -1,22 +1,85 @@
-#! /bin/sh
-# CVS only passes one argument here.. the filename in /tmp...
-ARG="$1"
+#! /usr/bin/perl
+# 
+# This crude hack is to sanitise the results of what the user may have
+# "done" while editing the commit log message.. :-)   Peter Wemm.
+#
+# To use this, make it executable, and set your editinfo DEFAULT line:
+# DEFAULT   /path/to/this/program
+#
+# $Id$
+#
 
 # same rules as CVS
-ED="vi"
-{ test -n "$EDITOR"; } && ED="$EDITOR"
-{ test -n "$CVSEDITOR"; } && ED="$CVSEDITOR"
+$editor="vi";
+if (defined $ENV{'EDITOR'}) {		# $EDITOR overrides default
+	$editor = $ENV{'EDITOR'};
+}
+if (defined $ENV{'CVSEDITOR'}) {	# $CVSEDITOR overrises $EDITOR
+	$editor = $ENV{'CVSEDITOR'};
+}
 
-$EDITOR "$ARG"
-EDSTATUS=$?
+if (!@ARGV) {
+	die "Usage: cvsedit filename\n";
+}
+$filename = $ARGV[0];
+$tmpfile = $filename . "tmp";
+
+$retcode = system("$editor $filename");
+$retcode /= 256;
+
+if ($retcode) {
+	# Kaboom!
+	exit($retcode);
+}
+
+open(IN, "< $filename") ||
+	die "cvsedit: Cannot open for reading: $filename: $!\n";
+
+open(OUT, "> $tmpfile") ||
+	die "cvsedit: Cannot open for writing: $tmpfile: $!\n";
 
 # In-place edit the result of the user's edit on the file.
-/usr/bin/perl -i -e '
-while(<>) {
-	# Delete the following lines if they only have whitespace after them.
-	print unless /^Reviewed by:[\s]*$/ ||
-		     /^Submitted by:[\s]*$/ ||
-		     /^Obtained from:[\s]*$/;
-}' "$ARG"
+$blank = 0;	# true if the last line was blank
+$first = 0;	# true if we have seen the first real text
+while(<IN>) {
+	chop;		# strip trailing newline
+	s/[\s]+$//;	# strip trailing whitespace
 
-exit $EDSTATUS
+	# collapse multiple blank lines, and trailing blank lines.
+	if (/^$/) {
+		# Blank line. Remember in case more text follows.
+		$blank = 1;
+		next;
+	} else {
+		# Delete if they only have whitespace after them.
+		if (/^Reviewed by:$/ || /^Submitted by:/ ||
+		    /^Obtained from:$/) {
+			next;
+		}
+		# Dont let CVS: lines upset things, but maintain them in case
+		# the editor is re-entered.
+		if (/^CVS:/) {
+			print OUT "$_\n";
+			next;
+		}
+		if ($blank && $first) {
+			# Previous line(s) was blank, this isn't. Close the
+			# collapsed section.
+			print OUT "\n";
+		}
+		$blank = 0;	# record non-blank
+		$first = 1;	# record first line
+		print OUT "$_\n";
+	}
+}
+close(IN);
+close(OUT);
+
+rename("$tmpfile", "$filename") ||
+	die("cvsedit: Could not rename $tmpfile to $filename: $!");
+
+# sanity check...
+if (!$first) {
+	die("cvsedit: Empty log message not permitted!\n");
+}
+exit(0);
