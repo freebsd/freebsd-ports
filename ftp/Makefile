@@ -58,6 +58,7 @@
     SUBDIR += vcheck
     SUBDIR += vsftpd
     SUBDIR += wget
+    SUBDIR += wget+ipv6
     SUBDIR += wu-ftpd
     SUBDIR += xrmftp
     SUBDIR += yafc
