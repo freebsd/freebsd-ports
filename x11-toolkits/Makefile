@@ -28,6 +28,7 @@
     SUBDIR += gtk-engines-collection
     SUBDIR += gtk-flat-theme
     SUBDIR += gtk-qn-x11-theme
+    SUBDIR += gtk-zenith-theme
     SUBDIR += gtk12
     SUBDIR += gtk13
     SUBDIR += gtkada
