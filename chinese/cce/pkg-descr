@@ -1,0 +1,6 @@
+Console CJK Environment let you display and input Chinese/Japanese/Korean
+under Linux/FreeBSD console, it works both in VGA mode and frame buffer
+mode. Input methods include PinYin WuBi ShuangPin Ziranma CangJie Zhuyin
+Dayi YingHan, totally around 40.
+
+WWW: http://sourceforge.net/projects/cce2k/

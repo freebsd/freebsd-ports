@@ -1,0 +1,46 @@
+bin/cce
+bin/cceb5
+bin/cceconv
+bin/ccegbk
+bin/ccejis
+bin/cceksc
+share/cce/8x16.bin
+share/cce/all/ciyin.tab
+share/cce/all/ciyingb.tab
+share/cce/all/intcode.tab
+share/cce/all/zhiyin.tab
+share/cce/all/zhiyin.tab.usr
+share/cce/bdf2bin
+share/cce/big5/array30.tab
+share/cce/big5/big5.lx
+share/cce/big5/cj.tab
+share/cce/big5/dayi.tab
+share/cce/big5/kc16.bin
+share/cce/big5/liu5.tab
+share/cce/big5/simplex.tab
+share/cce/cce.cfg
+share/cce/cceconv.tab
+share/cce/cin2tab
+share/cce/gb/ZiRanMa.tab
+share/cce/gb/gb.lx
+share/cce/gb/gb16fs.bin
+share/cce/gbk/ebf.tab
+share/cce/gbk/gbk-winpy.tab
+share/cce/gbk/gbk16.bin
+share/cce/gbk/nqwb.tab
+share/cce/jis/8x16rk.bin
+share/cce/jis/jis.lx
+share/cce/jis/jiskan16.bin
+share/cce/jis/kana.tab
+share/cce/jis/tut.tab
+share/cce/ksc/HANGUL.tab
+share/cce/ksc/HANJA.tab
+share/cce/ksc/hanglm16.bin
+share/cce/ksc/ksc.lx
+@dirrm share/cce/all
+@dirrm share/cce/big5
+@dirrm share/cce/gb
+@dirrm share/cce/gbk
+@dirrm share/cce/jis
+@dirrm share/cce/ksc
+@dirrm share/cce
