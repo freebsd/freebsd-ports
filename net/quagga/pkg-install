@@ -3,7 +3,7 @@
 PATH=/bin:/usr/sbin
 
 if [ -z "${SYSCONF_DIR}" ]; then
-    SYSCONF_DIR=${PREFIX}/etc/quagga
+    SYSCONF_DIR=${PKG_PREFIX}/etc/quagga
 fi
 
 if [ -z "${LOCALSTATE_DIR}" ]; then
@@ -26,7 +26,7 @@ case $2 in
 	    echo "You already have a group \"${ENABLE_GROUP}\", so I will use it."
 	else
 	    if pw groupadd ${ENABLE_GROUP} -g ${GID}; then
-		echo "Added group \"${ENABLE_GROUP}\."
+		echo "Added group \"${ENABLE_GROUP}\"."
 	    else
 		echo "Adding group \"${ENABLE_GROUP}\" failed."
 		exit 1
