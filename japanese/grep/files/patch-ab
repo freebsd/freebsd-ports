@@ -19,7 +19,7 @@
 -	$(LN) $(bindir)/$(binprefix)grep $(bindir)/$(binprefix)fgrep	
 +	cd $(bindir); $(LN) $(binprefix)grep $(binprefix)fgrep	
  	$(INSTALL_DATA) $(srcdir)/grep.man $(mandir)/grep.$(manext)
-+	gzip -9n $(mandir)/grep.$(manext)
++	gzip -9nf $(mandir)/grep.$(manext)
  
  check:
  	AWK=$(AWK) sh $(srcdir)/tests/check.sh $(srcdir)/tests
