@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat Sep 13 15:34:23 2003
++++ Makefile.in	Sun Sep 14 05:02:54 2003
+@@ -167,7 +167,7 @@
+ target_vendor = @target_vendor@
+ NULL = 
+ 
+-SUBDIRS = include src lib scm doc examples
++SUBDIRS = include src lib scm
+ DIST_SUBDIRS = $(SUBDIRS) autotools debian
+ 
+ EXTRA_DIST = \
