@@ -6,7 +6,6 @@ CC	=	${CXX}	# a hack to force linking with c++
 SRCS	=	sql-mysql.cc sql.cc sql-manager.cc
 CXXFLAGS+=	-I${LOCALBASE}/include/${TCL_VERSION}
 CXXFLAGS+=	-I${LOCALBASE}/include/mysql
-CXXFLAGS+=	-O0 -g
 LDADD  +=	-L${LOCALBASE}/lib -l${TCL_NODOT}
 LDADD  +=	-L${LOCALBASE}/lib/mysql -lmysqlclient
 
