@@ -7766,6 +7766,7 @@ php5-iconv	ports/converters/php5-iconv
 php5-interbase	ports/databases/php5-interbase
 php5-mbstring	ports/converters/php5-mbstring
 php5-mcve	ports/devel/php5-mcve
+php5-ming	ports/graphics/php5-ming
 php5-mssql	ports/databases/php5-mssql
 php5-mysql	ports/databases/php5-mysql
 php5-mysqli	ports/databases/php5-mysqli
