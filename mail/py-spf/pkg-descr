@@ -1,0 +1,11 @@
+Python implementation of SPF (Sender Permitted From)
+
+For more information about SPF, a tool against email forgery, see
+	http://spf.pobox.com
+
+For news, bugfixes, etc. visit the home page for this implementation at
+	http://www.wayforward.net/spf/
+
+WWW: http://www.wayforward.net/spf/
+
+Marcus Grando <marcus@corp.grupos.com.br>
