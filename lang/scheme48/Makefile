@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	scheme48
-PORTVERSION=	0.56
+PORTVERSION=	0.57
 CATEGORIES=	lang
-MASTER_SITES=	http://s48.org/0.56/
+MASTER_SITES=	http://s48.org/0.57/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nectar@FreeBSD.org
