@@ -1,14 +1,14 @@
-*** Imakefile.orig	Wed Oct 28 03:03:10 1998
---- Imakefile	Sat Nov  7 15:27:39 1998
+*** Imakefile.orig	Wed May 16 15:58:57 2001
+--- Imakefile	Sat Jul  7 02:49:45 2001
 ***************
-*** 66,71 ****
+*** 73,78 ****
   
   install::
   	@BINDIR=$(BINDIR) LIBDIR=$(LIBDIR) MANDIR=$(MANDIR) \
 ! 		MANSUFFIX=$(MANSUFFIX) $(SHELL) ./install.sh -n
   
   
---- 66,71 ----
+--- 73,78 ----
   
   install::
   	@BINDIR=$(BINDIR) LIBDIR=$(LIBDIR) MANDIR=$(MANDIR) \

@@ -1,46 +1,29 @@
-*** xmcd_d/Imakefile.orig	Sat May 23 02:31:49 1998
---- xmcd_d/Imakefile	Tue May 26 17:32:59 1998
+*** xmcd_d/Imakefile.orig	Mon Jul 16 13:52:06 2001
+--- xmcd_d/Imakefile	Tue Jul 17 03:04:47 2001
 ***************
-*** 43,49 ****
-   * #include "Motif.tmpl"
-   * #include "Motif.rules"
-   */
+*** 54,60 ****
+  SYS_LIBRARIES= $(LIBCDDB)
+  #endif
+  
 ! LOCAL_LIBRARIES= XmClientLibs
   
+  #if defined(FreeBSDArchitecture)
+  .if exists(/usr/include/camlib.h)
+--- 54,60 ----
+  SYS_LIBRARIES= $(LIBCDDB)
+  #endif
   
-  /**** Optional defines:  Change as you see fit. *****************************
---- 43,49 ----
-   * #include "Motif.tmpl"
-   * #include "Motif.rules"
-   */
 ! LOCAL_LIBRARIES= ${MOTIFLIB} XawClientLibs
   
-  
-  /**** Optional defines:  Change as you see fit. *****************************
+  #if defined(FreeBSDArchitecture)
+  .if exists(/usr/include/camlib.h)
 ***************
-*** 68,79 ****
-  DEFINES=
-  #endif
+*** 98,103 ****
+--- 98,104 ----
+  #endif	/* Linux Sun AIX Ultrix USL SVR4 */
+  #endif	/* BSD Osf sony_news Sun4 */
   
-  
-  /*
-   * Add local include path
-   */
-  INCLUDES=-I..
-- 
-  
-  /*
-   * C Source files
---- 68,79 ----
-  DEFINES=
-  #endif
-  
-+ MANSUFFIX = 1
++ MANSUFFIX=1
   
   /*
    * Add local include path
-   */
-  INCLUDES=-I..
-  
-  /*
-   * C Source files

@@ -1,12 +1,20 @@
---- make.inc.orig	Tue Dec 29 15:53:17 1998
-+++ make.inc	Tue Dec 29 15:54:53 1998
-@@ -52,7 +52,8 @@
- RANLIB=		/bin/true
- AR=		ar cq
- RM=		rm -f
--CFLAGS=		-O $(DEFINES) $(INCDIRS) $(ARCH) $(TIMER) $(TERMIO)
-+CFLAGS?=	-O
-+CFLAGS+=	$(DEFINES) $(INCDIRS) $(ARCH) $(TIMER) $(TERMIO)
- ARCH=		-DSVR4 -Di386
- TIMER=		-DUSE_SELECT
- TERMIO=		-DUSE_TERMIOS
+*** make.inc.orig	Wed May 16 15:58:57 2001
+--- make.inc	Sat Jul  7 03:04:53 2001
+***************
+*** 53,59 ****
+  AR=		ar cq
+  RM=		rm -f
+  LN=		ln -s
+! CFLAGS=		-O $(DEFINES) $(INCDIRS) $(ARCH) $(TIMER) $(TERMIO)
+  ARCH=		-DSVR4 -Di386
+  TIMER=		-DUSE_SELECT
+  TERMIO=		-DUSE_TERMIOS
+--- 53,60 ----
+  AR=		ar cq
+  RM=		rm -f
+  LN=		ln -s
+! CFLAGS?=	-O
+! CFLAGS+=	$(DEFINES) $(INCDIRS) $(ARCH) $(TIMER) $(TERMIO)
+  ARCH=		-DSVR4 -Di386
+  TIMER=		-DUSE_SELECT
+  TERMIO=		-DUSE_TERMIOS

@@ -1,17 +1,16 @@
 bin/.xmcd_start
 bin/cda
-bin/cddbcmd
-bin/dp2xmcd
-bin/wm2xmcd
 bin/xmcd
 lib/X11/app-defaults/XMcd
 lib/X11/xmcd/app-defaults/XMcd
 lib/X11/xmcd/app-defaults/XKeysymDB
+lib/X11/xmcd/bin-FreeBSD_%%RELEASE%%-%%ARCH%%/README
 lib/X11/xmcd/bin-FreeBSD_%%RELEASE%%-%%ARCH%%/cda
-lib/X11/xmcd/bin-FreeBSD_%%RELEASE%%-%%ARCH%%/cddbcmd
-lib/X11/xmcd/bin-FreeBSD_%%RELEASE%%-%%ARCH%%/dp2xmcd
-lib/X11/xmcd/bin-FreeBSD_%%RELEASE%%-%%ARCH%%/wm2xmcd
+lib/X11/xmcd/bin-FreeBSD_%%RELEASE%%-%%ARCH%%/gobrowser
 lib/X11/xmcd/bin-FreeBSD_%%RELEASE%%-%%ARCH%%/xmcd
+lib/X11/xmcd/config/common.cfg
+lib/X11/xmcd/config/device.cfg
+lib/X11/xmcd/config/wwwwarp.cfg
 lib/X11/xmcd/config/.tbl/Acer
 lib/X11/xmcd/config/.tbl/Apple
 lib/X11/xmcd/config/.tbl/Aztech
@@ -19,6 +18,7 @@ lib/X11/xmcd/config/.tbl/Chinon
 lib/X11/xmcd/config/.tbl/Compaq
 lib/X11/xmcd/config/.tbl/Compro
 lib/X11/xmcd/config/.tbl/Creative
+lib/X11/xmcd/config/.tbl/Cyberdri
 lib/X11/xmcd/config/.tbl/DEC
 lib/X11/xmcd/config/.tbl/Goldstar
 lib/X11/xmcd/config/.tbl/HP
@@ -51,18 +51,28 @@ lib/X11/xmcd/config/.tbl/Tatung
 lib/X11/xmcd/config/.tbl/Teac
 lib/X11/xmcd/config/.tbl/Toshiba
 lib/X11/xmcd/config/.tbl/Yamaha
-lib/X11/xmcd/config/common.cfg
 lib/X11/xmcd/config/config.sh
-lib/X11/xmcd/config/device.cfg
-lib/X11/xmcd/config/sites
 lib/X11/xmcd/discog/bkgnd.gif
+lib/X11/xmcd/discog/cda.html
 lib/X11/xmcd/discog/discog.html
+lib/X11/xmcd/discog/index.html
+lib/X11/xmcd/discog/xmcd.html
 lib/X11/xmcd/discog/xmcdlogo.gif
+lib/X11/xmcd/discog/Blues/General_Blues/index.html
+lib/X11/xmcd/discog/Classical/General_Classical/index.html
+lib/X11/xmcd/discog/Country/General_Country/index.html
+lib/X11/xmcd/discog/Data/General_Data/index.html
+lib/X11/xmcd/discog/Folk/General_Folk/index.html
+lib/X11/xmcd/discog/Jazz/General_Jazz/index.html
+lib/X11/xmcd/discog/Newage/General_Newage/index.html
+lib/X11/xmcd/discog/Rock/General_Rock/index.html
+lib/X11/xmcd/discog/Soundtrack/General_Soundtrack/index.html
+lib/X11/xmcd/discog/Unclassifiable/General_Unclassifiable/index.html
+lib/X11/xmcd/discog/World/Reggae/index.html
 lib/X11/xmcd/docs/ACKS
 lib/X11/xmcd/docs/CDDB
 lib/X11/xmcd/docs/CHANGES
 lib/X11/xmcd/docs/COPYING
-lib/X11/xmcd/docs/COPYING.LIB
 lib/X11/xmcd/docs/DRIVES
 lib/X11/xmcd/docs/FAQ
 lib/X11/xmcd/docs/FEATURES
@@ -70,128 +80,217 @@ lib/X11/xmcd/docs/INSTALL
 lib/X11/xmcd/docs/INSTALL.VMS
 lib/X11/xmcd/docs/PLATFORM
 lib/X11/xmcd/docs/PORTING
+lib/X11/xmcd/docs/PRIVACY
 lib/X11/xmcd/docs/README
 lib/X11/xmcd/docs/RELNOTES
 lib/X11/xmcd/docs/WEB
-lib/X11/xmcd/help/Ab.btn
-lib/X11/xmcd/help/DbMode.lbl
-lib/X11/xmcd/help/DbProg.btn
-lib/X11/xmcd/help/DdCancel.btn
-lib/X11/xmcd/help/DdClr.btn
-lib/X11/xmcd/help/DdDisc.txw
-lib/X11/xmcd/help/DdOk.btn
-lib/X11/xmcd/help/Disc.lbl
-lib/X11/xmcd/help/DiscId.lbl
-lib/X11/xmcd/help/DiscTitl.lbl
-lib/X11/xmcd/help/DlCancel.btn
-lib/X11/xmcd/help/DlChgTo.btn
-lib/X11/xmcd/help/DlDel.btn
-lib/X11/xmcd/help/DlDelAll.btn
-lib/X11/xmcd/help/DlDisc.lsw
-lib/X11/xmcd/help/DlReScan.btn
-lib/X11/xmcd/help/DlShow.btn
-lib/X11/xmcd/help/DlType.opt
-lib/X11/xmcd/help/DpAddPgm.btn
-lib/X11/xmcd/help/DpCancel.btn
-lib/X11/xmcd/help/DpClrPgm.btn
-lib/X11/xmcd/help/DpDExt.btn
-lib/X11/xmcd/help/DpDList.btn
-lib/X11/xmcd/help/DpDTitle.txw
-lib/X11/xmcd/help/DpLink.btn
-lib/X11/xmcd/help/DpLoad.btn
-lib/X11/xmcd/help/DpPgmSeq.txw
-lib/X11/xmcd/help/DpRmDsbl.btn
-lib/X11/xmcd/help/DpSave.btn
-lib/X11/xmcd/help/DpSubmit.btn
-lib/X11/xmcd/help/DpTExt.btn
-lib/X11/xmcd/help/DpTTitle.txw
-lib/X11/xmcd/help/DpTimSel.btn
-lib/X11/xmcd/help/DpTotTim.lbl
-lib/X11/xmcd/help/DpTrk.lsw
-lib/X11/xmcd/help/DsCancel.btn
-lib/X11/xmcd/help/DsDir.lsw
-lib/X11/xmcd/help/DsOk.btn
-lib/X11/xmcd/help/DtAutoTr.btn
-lib/X11/xmcd/help/DtCancel.btn
-lib/X11/xmcd/help/DtClr.btn
-lib/X11/xmcd/help/DtDir.btn
-lib/X11/xmcd/help/DtOk.btn
-lib/X11/xmcd/help/DtTrack.txw
-lib/X11/xmcd/help/Eject.btn
-lib/X11/xmcd/help/Ff.btn
-lib/X11/xmcd/help/Help.btn
-lib/X11/xmcd/help/HpAbout.btn
-lib/X11/xmcd/help/HpCancel.btn
-lib/X11/xmcd/help/HpText.txw
-lib/X11/xmcd/help/HpTopic.opt
-lib/X11/xmcd/help/Index.lbl
-lib/X11/xmcd/help/Keypad.btn
-lib/X11/xmcd/help/Keypad.lbl
-lib/X11/xmcd/help/KpCancel.btn
-lib/X11/xmcd/help/KpClear.btn
-lib/X11/xmcd/help/KpEnter.btn
-lib/X11/xmcd/help/KpNum.btn
-lib/X11/xmcd/help/KpSel.btn
-lib/X11/xmcd/help/KpWarp.scl
-lib/X11/xmcd/help/Level.scl
-lib/X11/xmcd/help/LsCancel.btn
-lib/X11/xmcd/help/LsLink.lsw
-lib/X11/xmcd/help/LsOk.btn
-lib/X11/xmcd/help/Main.cbx
-lib/X11/xmcd/help/Mode.btn
-lib/X11/xmcd/help/NextDisc.btn
-lib/X11/xmcd/help/NextIdx.btn
-lib/X11/xmcd/help/NextTrk.btn
-lib/X11/xmcd/help/OpBal.scl
-lib/X11/xmcd/help/OpBalCtr.btn
-lib/X11/xmcd/help/OpChRt.rbx
-lib/X11/xmcd/help/OpChgr.cbx
-lib/X11/xmcd/help/OpDone.cbx
-lib/X11/xmcd/help/OpEject.cbx
-lib/X11/xmcd/help/OpExit.rbx
-lib/X11/xmcd/help/OpLoad.cbx
-lib/X11/xmcd/help/OpLoad.rbx
-lib/X11/xmcd/help/OpOk.btn
-lib/X11/xmcd/help/OpReset.btn
-lib/X11/xmcd/help/OpSave.btn
-lib/X11/xmcd/help/OpVolTpr.rbx
-lib/X11/xmcd/help/Options.btn
-lib/X11/xmcd/help/PlayMode.lbl
-lib/X11/xmcd/help/PlayPaus.btn
-lib/X11/xmcd/help/PrevDisc.btn
-lib/X11/xmcd/help/PrevIdx.btn
-lib/X11/xmcd/help/PrevTrk.btn
-lib/X11/xmcd/help/ProgMode.lbl
-lib/X11/xmcd/help/Quit.btn
-lib/X11/xmcd/help/Rew.btn
-lib/X11/xmcd/help/RptCnt.lbl
-lib/X11/xmcd/help/Sample.btn
-lib/X11/xmcd/help/Stop.btn
-lib/X11/xmcd/help/Time.btn
-lib/X11/xmcd/help/Time.lbl
-lib/X11/xmcd/help/TimeMode.lbl
-lib/X11/xmcd/help/Track.lbl
-lib/X11/xmcd/help/TrkTitle.lbl
-lib/X11/xmcd/help/WWWwarp.btn
-lib/X11/xmcd/help/WwCancel.btn
-lib/X11/xmcd/help/WwGo.btn
-lib/X11/xmcd/help/WwSearch.opt
-lib/X11/xmcd/help/WwSelect.rbx
+lib/X11/xmcd/help/Cr/Add.btn
+lib/X11/xmcd/help/Cr/AutoTr.btn
+lib/X11/xmcd/help/Cr/Credit.lsw
+lib/X11/xmcd/help/Cr/Delete.btn
+lib/X11/xmcd/help/Cr/Dir.btn
+lib/X11/xmcd/help/Cr/FName.btn
+lib/X11/xmcd/help/Cr/Modify.btn
+lib/X11/xmcd/help/Cr/Name.txw
+lib/X11/xmcd/help/Cr/Notes.txw
+lib/X11/xmcd/help/Cr/Ok.btn
+lib/X11/xmcd/help/Cr/PriRole.opt
+lib/X11/xmcd/help/Cr/SubRole.opt
+lib/X11/xmcd/help/Dd/Comp.btn
+lib/X11/xmcd/help/Dd/Dnum.txw
+lib/X11/xmcd/help/Dd/Genre.opt
+lib/X11/xmcd/help/Dd/Info.lbl
+lib/X11/xmcd/help/Dd/Label.txw
+lib/X11/xmcd/help/Dd/Notes.txw
+lib/X11/xmcd/help/Dd/Ok.btn
+lib/X11/xmcd/help/Dd/Region.txw
+lib/X11/xmcd/help/Dd/SortTt.txw
+lib/X11/xmcd/help/Dd/Tnum.txw
+lib/X11/xmcd/help/Dd/Year.txw
+lib/X11/xmcd/help/Df/Name.txw
+lib/X11/xmcd/help/Df/Ok.btn
+lib/X11/xmcd/help/Dl/Cancel.btn
+lib/X11/xmcd/help/Dl/ChgTo.btn
+lib/X11/xmcd/help/Dl/Del.btn
+lib/X11/xmcd/help/Dl/DelAll.btn
+lib/X11/xmcd/help/Dl/Disc.lsw
+lib/X11/xmcd/help/Dl/ReScan.btn
+lib/X11/xmcd/help/Dl/Show.btn
+lib/X11/xmcd/help/Dl/Type.opt
+lib/X11/xmcd/help/Dp/AddPgm.btn
+lib/X11/xmcd/help/Dp/Artist.txw
+lib/X11/xmcd/help/Dp/ClrPgm.btn
+lib/X11/xmcd/help/Dp/DCredits.btn
+lib/X11/xmcd/help/Dp/DExt.btn
+lib/X11/xmcd/help/Dp/DList.btn
+lib/X11/xmcd/help/Dp/FName.btn
+lib/X11/xmcd/help/Dp/Flush.btn
+lib/X11/xmcd/help/Dp/Offline.btn
+lib/X11/xmcd/help/Dp/Ok.btn
+lib/X11/xmcd/help/Dp/UserReg.btn
+lib/X11/xmcd/help/Dp/PgmSeq.txw
+lib/X11/xmcd/help/Dp/Reload.btn
+lib/X11/xmcd/help/Dp/SavePgm.btn
+lib/X11/xmcd/help/Dp/Segments.btn
+lib/X11/xmcd/help/Dp/Submit.btn
+lib/X11/xmcd/help/Dp/TCredits.btn
+lib/X11/xmcd/help/Dp/TExt.btn
+lib/X11/xmcd/help/Dp/TTitle.txw
+lib/X11/xmcd/help/Dp/TimSel.btn
+lib/X11/xmcd/help/Dp/Title.txw
+lib/X11/xmcd/help/Dp/TotTim.lbl
+lib/X11/xmcd/help/Dp/Trk.lsw
+lib/X11/xmcd/help/Dt/Artist.txw
+lib/X11/xmcd/help/Dt/AutoTr.btn
+lib/X11/xmcd/help/Dt/BPM.txw
+lib/X11/xmcd/help/Dt/Dir.btn
+lib/X11/xmcd/help/Dt/FName.btn
+lib/X11/xmcd/help/Dt/Genre.opt
+lib/X11/xmcd/help/Dt/ISRC.lbl
+lib/X11/xmcd/help/Dt/Label.txw
+lib/X11/xmcd/help/Dt/Notes.txw
+lib/X11/xmcd/help/Dt/Ok.btn
+lib/X11/xmcd/help/Dt/SortTt.txw
+lib/X11/xmcd/help/Dt/Year.txw
+lib/X11/xmcd/help/Hp/About.btn
+lib/X11/xmcd/help/Hp/Cancel.btn
+lib/X11/xmcd/help/Hp/Text.txw
+lib/X11/xmcd/help/Hp/Topic.opt
+lib/X11/xmcd/help/Kp/Cancel.btn
+lib/X11/xmcd/help/Kp/Clear.btn
+lib/X11/xmcd/help/Kp/Enter.btn
+lib/X11/xmcd/help/Kp/Ind.lbl
+lib/X11/xmcd/help/Kp/Num.btn
+lib/X11/xmcd/help/Kp/Sel.btn
+lib/X11/xmcd/help/Kp/Warp.scl
+lib/X11/xmcd/help/Ms/Match.lsw
+lib/X11/xmcd/help/Ms/Ok.btn
+lib/X11/xmcd/help/Op/Bal.scl
+lib/X11/xmcd/help/Op/BalCtr.btn
+lib/X11/xmcd/help/Op/ChRt.rbx
+lib/X11/xmcd/help/Op/Chgr.cbx
+lib/X11/xmcd/help/Op/Done.cbx
+lib/X11/xmcd/help/Op/Eject.cbx
+lib/X11/xmcd/help/Op/Exit.rbx
+lib/X11/xmcd/help/Op/Load.cbx
+lib/X11/xmcd/help/Op/Load.rbx
+lib/X11/xmcd/help/Op/Ok.btn
+lib/X11/xmcd/help/Op/Reset.btn
+lib/X11/xmcd/help/Op/Save.btn
+lib/X11/xmcd/help/Op/VolTpr.rbx
+lib/X11/xmcd/help/Rs/Ok.btn
+lib/X11/xmcd/help/Rs/Region.lsw
+lib/X11/xmcd/help/Sg/Add.btn
+lib/X11/xmcd/help/Sg/Credits.btn
+lib/X11/xmcd/help/Sg/Delete.btn
+lib/X11/xmcd/help/Sg/Fields.txw
+lib/X11/xmcd/help/Sg/Modify.btn
+lib/X11/xmcd/help/Sg/Notes.txw
+lib/X11/xmcd/help/Sg/Ok.btn
+lib/X11/xmcd/help/Sg/PlayPaus.btn
+lib/X11/xmcd/help/Sg/Segment.lsw
+lib/X11/xmcd/help/Sg/Set.btn
+lib/X11/xmcd/help/Sg/Stop.btn
+lib/X11/xmcd/help/Su/Ok.btn
+lib/X11/xmcd/help/Su/SubmURL.txw
+lib/X11/xmcd/help/Su/Submit.btn
+lib/X11/xmcd/help/Ur/Age.txw
+lib/X11/xmcd/help/Ur/AllowM.btn
+lib/X11/xmcd/help/Ur/AllowS.btn
+lib/X11/xmcd/help/Ur/Cancel.btn
+lib/X11/xmcd/help/Ur/Email.txw
+lib/X11/xmcd/help/Ur/Gender.rbx
+lib/X11/xmcd/help/Ur/Handle.txw
+lib/X11/xmcd/help/Ur/Hint.btn
+lib/X11/xmcd/help/Ur/Hint.txw
+lib/X11/xmcd/help/Ur/Ok.btn
+lib/X11/xmcd/help/Ur/Passwd.txw
+lib/X11/xmcd/help/Ur/Postal.txw
+lib/X11/xmcd/help/Ur/Region.txw
+lib/X11/xmcd/help/Ur/Vpaswd.txw
+lib/X11/xmcd/help/Xm/Ab.btn
+lib/X11/xmcd/help/Xm/DbMode.lbl
+lib/X11/xmcd/help/Xm/DbProg.btn
+lib/X11/xmcd/help/Xm/Disc.lbl
+lib/X11/xmcd/help/Xm/DiscTitl.lbl
+lib/X11/xmcd/help/Xm/Eject.btn
+lib/X11/xmcd/help/Xm/Ff.btn
+lib/X11/xmcd/help/Xm/Help.btn
+lib/X11/xmcd/help/Xm/Index.lbl
+lib/X11/xmcd/help/Xm/Keypad.btn
+lib/X11/xmcd/help/Xm/Level.scl
+lib/X11/xmcd/help/Xm/Main.cbx
+lib/X11/xmcd/help/Xm/Mode.btn
+lib/X11/xmcd/help/Xm/NextDisc.btn
+lib/X11/xmcd/help/Xm/NextIdx.btn
+lib/X11/xmcd/help/Xm/NextTrk.btn
+lib/X11/xmcd/help/Xm/Options.btn
+lib/X11/xmcd/help/Xm/PlayMode.lbl
+lib/X11/xmcd/help/Xm/PlayPaus.btn
+lib/X11/xmcd/help/Xm/PrevDisc.btn
+lib/X11/xmcd/help/Xm/PrevIdx.btn
+lib/X11/xmcd/help/Xm/PrevTrk.btn
+lib/X11/xmcd/help/Xm/ProgMode.lbl
+lib/X11/xmcd/help/Xm/Quit.btn
+lib/X11/xmcd/help/Xm/Rew.btn
+lib/X11/xmcd/help/Xm/RptCnt.lbl
+lib/X11/xmcd/help/Xm/Sample.btn
+lib/X11/xmcd/help/Xm/Stop.btn
+lib/X11/xmcd/help/Xm/Time.btn
+lib/X11/xmcd/help/Xm/Time.lbl
+lib/X11/xmcd/help/Xm/TimeMode.lbl
+lib/X11/xmcd/help/Xm/Track.lbl
+lib/X11/xmcd/help/Xm/TrkTitle.lbl
+lib/X11/xmcd/help/Xm/WWWwarp.btn
 lib/X11/xmcd/pixmaps/xmcd.icon
-lib/X11/xmcd/pixmaps/xmcd.xpm
 lib/X11/xmcd/pixmaps/xmcd_a.px
 lib/X11/xmcd/pixmaps/xmcd_b.px
+lib/X11/xmcd/pixmaps/xmcd.xpm
 lib/X11/xmcd/scripts/genidx
-lib/X11/xmcd/scripts/ncsarmt
-lib/X11/xmcd/scripts/ncsawrap
-lib/X11/xmcd/scripts/nswrap
 @dirrm lib/X11/xmcd/app-defaults
 @dirrm lib/X11/xmcd/bin-FreeBSD_%%RELEASE%%-%%ARCH%%
-@unexec rm -rf %D/lib/X11/xmcd/cddb
+@unexec rm -rf %D/lib/X11/xmcd/lib-FreeBSD_%%RELEASE%%-%%ARCH%%
 @dirrm lib/X11/xmcd/config/.tbl
 @dirrm lib/X11/xmcd/config
+@dirrm lib/X11/xmcd/discog/Blues/General_Blues
+@dirrm lib/X11/xmcd/discog/Blues
+@dirrm lib/X11/xmcd/discog/Classical/General_Classical
+@dirrm lib/X11/xmcd/discog/Classical
+@dirrm lib/X11/xmcd/discog/Country/General_Country
+@dirrm lib/X11/xmcd/discog/Country
+@dirrm lib/X11/xmcd/discog/Data/General_Data
+@dirrm lib/X11/xmcd/discog/Data
+@dirrm lib/X11/xmcd/discog/Folk/General_Folk
+@dirrm lib/X11/xmcd/discog/Folk
+@dirrm lib/X11/xmcd/discog/Jazz/General_Jazz
+@dirrm lib/X11/xmcd/discog/Jazz
+@dirrm lib/X11/xmcd/discog/Newage/General_Newage
+@dirrm lib/X11/xmcd/discog/Newage
+@dirrm lib/X11/xmcd/discog/Rock/General_Rock
+@dirrm lib/X11/xmcd/discog/Rock
+@dirrm lib/X11/xmcd/discog/Soundtrack/General_Soundtrack
+@dirrm lib/X11/xmcd/discog/Soundtrack
+@dirrm lib/X11/xmcd/discog/Unclassifiable/General_Unclassifiable
+@dirrm lib/X11/xmcd/discog/Unclassifiable
+@dirrm lib/X11/xmcd/discog/World/Reggae
+@dirrm lib/X11/xmcd/discog/World
 @dirrm lib/X11/xmcd/discog
 @dirrm lib/X11/xmcd/docs
+@dirrm lib/X11/xmcd/help/Cr
+@dirrm lib/X11/xmcd/help/Dd
+@dirrm lib/X11/xmcd/help/Df
+@dirrm lib/X11/xmcd/help/Dl
+@dirrm lib/X11/xmcd/help/Dp
+@dirrm lib/X11/xmcd/help/Dt
+@dirrm lib/X11/xmcd/help/Hp
+@dirrm lib/X11/xmcd/help/Kp
+@dirrm lib/X11/xmcd/help/Ms
+@dirrm lib/X11/xmcd/help/Op
+@dirrm lib/X11/xmcd/help/Rs
+@dirrm lib/X11/xmcd/help/Sg
+@dirrm lib/X11/xmcd/help/Su
+@dirrm lib/X11/xmcd/help/Ur
+@dirrm lib/X11/xmcd/help/Xm
 @dirrm lib/X11/xmcd/help
 @dirrm lib/X11/xmcd/pixmaps
 @dirrm lib/X11/xmcd/scripts

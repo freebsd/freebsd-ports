@@ -1,11 +1,19 @@
---- ./install.sh.org	Fri Feb  4 23:26:20 2000
-+++ ./install.sh	Sun Aug 13 00:00:45 2000
-@@ -1065,7 +1065,7 @@
- 	$ECHO "\t$XMCDLIB/discog"
- fi
- 
--if [ -n "$MANDIR" ]
-+if [ -n "$MANDIR"  -a ! -d "$MANDIR" ]
- then
- 	make_dir $MANDIR $DIRPERM $OWNER $GROUP
- fi
+*** ./install.sh.orig	Wed May 16 15:58:57 2001
+--- ./install.sh	Sat Jul  7 02:37:04 2001
+***************
+*** 1132,1138 ****
+  make_dir $ARCHLIB $DIRPERM $OWNER $GROUP
+  make_dir $DISCOGDIR $GDIRPERM $OWNER $GROUP
+  
+! if [ -n "$MANDIR" ]
+  then
+  	make_dir $MANDIR $DIRPERM $OWNER $GROUP
+  fi
+--- 1132,1138 ----
+  make_dir $ARCHLIB $DIRPERM $OWNER $GROUP
+  make_dir $DISCOGDIR $GDIRPERM $OWNER $GROUP
+  
+! if [ -n "$MANDIR" -a ! -d "$MANDIR" ]
+  then
+  	make_dir $MANDIR $DIRPERM $OWNER $GROUP
+  fi
