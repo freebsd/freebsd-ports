@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	xd3d
-PORTVERSION=	8.1.0
+PORTVERSION=	8.2.0
 CATEGORIES=	graphics math
 MASTER_SITES=	http://www.cmap.polytechnique.fr/~jouve/xd3d/
 
-MAINTAINER=	thierry@pompo.net
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A simple scientific visualization tool
 
 #--------------------------------------------------------------------------
@@ -29,7 +29,7 @@ COMMENT=	A simple scientific visualization tool
 #--------------------------------------------------------------------------
 
 .if !defined(WITHOUT_IMAGEMAGICK)
-RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .endif
 .if !defined(WITHOUT_GIFSICLE)
 RUN_DEPENDS+=	gifsicle:${PORTSDIR}/graphics/gifsicle
@@ -45,21 +45,21 @@ F77?=		f77
 FFLAGS?=	-O
 MEMORY_XD3D?=	64
 
-.if ${MACHINE_ARCH} == "i386"
-FFLAGS+=	-malign-double
-CFLAGS+=	-malign-double
-.endif
-
 .if defined(LANG) && ${LANG:Mfr*} != ""
 XD3D_LANG=	FRANCAIS
 .else
 XD3D_LANG=	ENGLISH
 .endif
 
-DOCS=		BUGS CHANGELOG FAQ INSTALL README Manuals/formats.txt	\
+DOCS=		BUGS CHANGELOG FAQ FORMATS INSTALL README Manuals/formats.txt	\
 		Manuals/xd3d_doc.pdf Manuals/xgraphic_doc.pdf
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+FFLAGS+=	-malign-double
+CFLAGS+=	-malign-double
+.endif
 
 do-fetch:
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
