@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-infopipe
 PORTVERSION=	1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.beastwithin.org/users/wwwwolf/code/xmms/
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	mig@mig-29.net
 COMMENT=	Create a named pipe to retrive xmms info about currently playing song
 
+LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes
