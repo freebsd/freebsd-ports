@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	ted
-PORTVERSION=	2.14
-PORTREVISION=	1
-CATEGORIES=	editors textproc print
+PORTVERSION=	2.17
+CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.nluug.nl/pub/editors/ted/
 EXTRACT_SUFX=	.src.tar.gz
 
@@ -16,7 +15,6 @@ MAINTAINER=	jon.drews@gmail.com
 COMMENT=	X11 based RTF editor
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
 
@@ -27,6 +25,7 @@ USE_X_PREFIX=	yes
 USE_MOTIF=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}"
 MAKE_ENV=	DEF_AFMDIR="-DAFMDIR=\"\\\"${AFMDIR}\\\"\"" \
@@ -39,21 +38,13 @@ INDDIR=		${PREFIX}/share/Ted/ind
 
 post-extract:
 	cd ${WRKSRC}/tedPackage && ${TAR} xf TedBindist.tar
-
 post-patch:
-	${FIND} ${WRKSRC} -name "configure" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|/usr/apps|${LOCALBASE}|g ; '
 	${REINPLACE_CMD} \
 		's|DEF_PKGDIR|DEF_DOCUMENT_DIR|g' ${WRKSRC}/Ted/makefile.in
 
-post-configure:
-.for dir in appFrame appUtil bitmap ind libreg
-	cd ${WRKSRC}/${dir} && \
-		${SETENV} ${CONFIGURE_ENV} ./configure ${CONFIGURE_ARGS}
-.endfor
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Ted/Ted ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/tedPackage/Ted/rtf2*.sh ${PREFIX}/bin/
 	@${MKDIR} ${AFMDIR}
 	${INSTALL_DATA} ${WRKSRC}/tedPackage/afm/* ${AFMDIR}
 	@${MKDIR} ${INDDIR}
