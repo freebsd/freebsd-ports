@@ -1,11 +1,0 @@
---- ../generic/tclListObj.c.ORIG	Tue Dec 30 15:54:34 1997
-+++ ../generic/tclListObj.c	Tue Dec 30 15:55:18 1997
-@@ -260,6 +260,8 @@
- 	
- 	objPtr->internalRep.otherValuePtr = (VOID *) listRepPtr;
- 	objPtr->typePtr = &tclListType;
-+    } else {
-+      objPtr->bytes = tclEmptyStringRep;
-     }
- }
- 

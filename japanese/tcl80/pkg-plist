@@ -1,6 +1,6 @@
 bin/tclsh8.0jp
 lib/libtcl80jp.a
-lib/libtcl80jp.so.1.2
+lib/libtcl80jp.so.1.4
 lib/libtcl80jp.so
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

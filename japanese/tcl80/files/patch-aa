@@ -1,6 +1,6 @@
---- configure.in.ORIG	Sun Sep 20 20:57:48 1998
-+++ configure.in	Sun Sep 20 21:00:47 1998
-@@ -811,15 +811,21 @@
+--- configure.in.ORIG	Wed Jan 20 15:06:29 1999
++++ configure.in	Wed Jan 20 15:06:43 1999
+@@ -825,15 +825,21 @@
      NetBSD-*|FreeBSD-*|OpenBSD-*)
  	# Not available on all versions:  check for include file.
  	AC_CHECK_HEADER(dlfcn.h, [
@@ -10,7 +10,7 @@
 +	       TCL_SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1'
 +	    else
 +	       SHLIB_LD="ld -Bshareable -x"
-+	       TCL_SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.2'
++	       TCL_SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.4'
 +	    fi
  	    SHLIB_CFLAGS="-fpic"
 -	    SHLIB_LD="ld -Bshareable -x"
@@ -24,7 +24,7 @@
  	], [
  	    SHLIB_CFLAGS=""
  	    SHLIB_LD="echo tclLdAout $CC \{$SHLIB_CFLAGS\} | `pwd`/tclsh -r"
-@@ -1182,6 +1188,7 @@
+@@ -1196,6 +1202,7 @@
  if test "$TCL_UNSHARED_LIB_SUFFIX" = "" ; then
      TCL_UNSHARED_LIB_SUFFIX='${VERSION}\$\{DBGX\}.a'
  fi
@@ -32,7 +32,7 @@
  AC_ARG_ENABLE(shared,
      [  --enable-shared         build libtcl as a shared library],
      [tcl_ok=$enableval], [tcl_ok=no])
-@@ -1190,10 +1197,15 @@
+@@ -1204,10 +1211,15 @@
      TCL_SHLIB_CFLAGS="${SHLIB_CFLAGS}"
      TCL_LD_SEARCH_FLAGS="${LD_SEARCH_FLAGS}"
      eval "TCL_LIB_FILE=libtcl${TCL_SHARED_LIB_SUFFIX}"
@@ -49,7 +49,7 @@
  	RANLIB=":"
      fi
  else
-@@ -1234,6 +1246,7 @@
+@@ -1248,6 +1260,7 @@
  # Trick to replace DBGX with TCL_DBGX
  DBGX='${TCL_DBGX}'
  eval "TCL_LIB_FILE=${TCL_LIB_FILE}"
@@ -57,7 +57,7 @@
  
  VERSION='${VERSION}'
  eval "CFG_TCL_SHARED_LIB_SUFFIX=${TCL_SHARED_LIB_SUFFIX}"
-@@ -1272,6 +1285,7 @@
+@@ -1287,6 +1300,7 @@
  AC_SUBST(TCL_BUILD_LIB_SPEC)
  AC_SUBST(TCL_LD_SEARCH_FLAGS)
  AC_SUBST(TCL_LIB_FILE)
@@ -65,8 +65,8 @@
  AC_SUBST(TCL_LIB_FLAG)
  AC_SUBST(TCL_LIB_SPEC)
  AC_SUBST(TCL_LIB_VERSIONS_OK)
---- Makefile.in.ORIG	Sun Sep 20 20:57:54 1998
-+++ Makefile.in	Sun Sep 20 21:01:40 1998
+--- Makefile.in.ORIG	Wed Jan 20 15:06:34 1999
++++ Makefile.in	Wed Jan 20 15:06:43 1999
 @@ -55,11 +55,16 @@
  BIN_INSTALL_DIR =	$(INSTALL_ROOT)$(exec_prefix)/bin
  
@@ -102,7 +102,7 @@
  #TCL_LIB_FILE = libtcl.a
  
  TCL_LIB_FLAG = @TCL_LIB_FLAG@
-@@ -334,7 +340,11 @@
+@@ -336,7 +342,11 @@
  
  SRCS = $(GENERIC_SRCS) $(UNIX_SRCS) $(KANJI_SRCS)
  
@@ -115,7 +115,7 @@
  
  # The following target is configured by autoconf to generate either
  # a shared library or non-shared library for Tcl.
-@@ -342,6 +352,14 @@
+@@ -344,6 +354,14 @@
  	rm -f ${TCL_LIB_FILE}
  	@MAKE_LIB@
  	$(RANLIB) ${TCL_LIB_FILE}
@@ -130,7 +130,7 @@
  
  # Make target which outputs the list of the .o contained in the Tcl lib
  # usefull to build a single big shared library containing Tcl and other
-@@ -430,13 +448,13 @@
+@@ -432,13 +450,13 @@
  	cd dltest; if test -f configure; then ./configure; else \
  	    $(DLTEST_DIR)/configure; fi
  
@@ -146,7 +146,7 @@
  	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -449,19 +467,27 @@
+@@ -451,19 +469,27 @@
  	@echo "Installing $(TCL_LIB_FILE)"
  	@$(INSTALL_DATA) $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
  	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TCL_LIB_FILE))
@@ -178,7 +178,7 @@
  		chmod 755 $$i; \
  		else true; \
  		fi; \
-@@ -475,8 +501,15 @@
+@@ -477,8 +503,15 @@
  		else true; \
  		fi; \
  	    done;
@@ -196,7 +196,7 @@
  	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex $(UNIX_DIR)/tclAppInit.c $(UNIX_DIR)/ldAix; \
  	    do \
  	    echo "Installing $$i"; \
-@@ -504,30 +537,37 @@
+@@ -506,30 +539,37 @@
  	@cd $(TOP_DIR)/doc; for i in *.1; \
  	    do \
  	    echo "Installing doc/$$i"; \
