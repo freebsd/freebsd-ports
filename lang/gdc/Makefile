@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gdc
-PORTVERSION=	0.9
+PORTVERSION=	0.10
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC} \
 		http://home.earthlink.net/~dvdfrdmn/d/:gdc \
@@ -22,7 +22,8 @@ EXTRACT_ONLY=	gcc-core-${GCC_VERSIONSTRING}.tar.bz2 \
 MAINTAINER=	daichi@FreeBSD.org
 COMMENT=	D Front End for GCC
 
-BUILD_DEPENDS=	gcc34:${PORTSDIR}/lang/gcc34
+BUILD_DEPENDS=	gcc34:${PORTSDIR}/lang/gcc34 \
+		bison:${PORTSDIR}/devel/bison
 RUN_DEPENDS=	gcc34:${PORTSDIR}/lang/gcc34
 
 ONLY_FOR_ARCHS=	i386 amd64 alpha
