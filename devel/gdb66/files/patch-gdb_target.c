@@ -4,7 +4,7 @@
    for (t = target_structs; t < target_structs + target_struct_size;
         ++t)
      {
-+#if defined(__FreeBSD__) && !defined(__sparc64__)
++#if defined(__FreeBSD__) && defined(__i386__)
 +      if ((*t)->to_stratum == (kernel_debugging ? kcore_stratum : core_stratum))
 +#else
        if ((*t)->to_stratum == core_stratum)
