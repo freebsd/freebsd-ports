@@ -74,5 +74,6 @@ post-patch:
 	@${REINPLACE_CMD} -E 's,(\$$\(PYTHON\)),CFLAGS="" \1,g' ${WRKSRC}/python/Makefile
 	@# Avoid rebuiling man pages
 	@${REINPLACE_CMD} -e 's,all man,all,g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|`$$python_bin -c "import site; print site.sitedirs\[0\]"`|"${PYTHON_SITELIBDIR}"|' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
