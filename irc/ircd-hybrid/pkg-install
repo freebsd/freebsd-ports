@@ -53,6 +53,11 @@ echo ""
 if pw groupshow ircd 2> /dev/null ; then
 	echo "You already have a group \"ircd\", so I will use it."
 else
+	if pw usershow 72 2> /dev/null ; then
+		echo "You already have a uid \"72\".  Please create a user \"ircd\""
+		echo "with a default group of \"ircd\"."
+		exit 1
+	fi
 	echo "You need a group \"ircd\"."
 	if which -s pw && yesno "Would you like me to create it" y; then
 		pw groupadd ircd -g 72 || exit
@@ -72,6 +77,7 @@ if pw usershow ircd 2> /dev/null ; then
 else
 	echo "You need a user \"ircd\"."
 	if which -s pw && yesno "Would you like me to create it" y; then
+		ifkk
 		pw useradd ircd -g ircd -u 72 -h - -d /nonexistent \
 			-s /nonexistent -c "IRC Daemon" || exit
 		echo "Done."
