@@ -76,6 +76,9 @@ config/class1.0
 config/class2
 config/class2.0
 config/class2.1
+config/digi
+config/digi-2
+config/digi-20
 config/davicom-2
 config/dsi-scout+
 config/e-tech
@@ -89,6 +92,7 @@ config/gvc-288-2
 config/hayes
 config/intel-400e
 config/lucent
+config/lucent-isa
 config/lucent-mt-2
 config/lucent-mt-20
 config/lucent-mt-21
