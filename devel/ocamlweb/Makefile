@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ocamlweb
-PORTVERSION=	0.9
+PORTVERSION=	1.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.lri.fr/~filliatr/ftp/ocamlweb/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DOCFILES}
@@ -22,10 +22,12 @@ GNU_CONFIGURE= yes
 DOCFILES=	${PORTNAME}-man.ps.gz
 .endif
 
+MAN1=		ocamlweb.1
+
 post-install:
 .if !defined{NOPORTDOCS}
-	${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
-	${INSTALL_MAN} ${DISTDIR}/${PORTNAME}-man.ps.gz ${PREFIX}/share/doc/${PORTNAME}
+	@${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
+	@${INSTALL_DATA} ${DISTDIR}/${PORTNAME}-man.ps.gz ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
