@@ -1,0 +1,16 @@
+This is an implementation of lookupd - name service switch daemon.
+It gives an ability to use IPC model for different lookup operations
+(just like nsswitch, but all requests are processed by lookupd daemon),
+which in turn makes system-wide caching possible. Besides, unlike
+the nsswitch lookupd can use persistent connections and different
+other optimizations.
+
+As current nsswitch implementation, lookupd is also based on plugins,
+which are a bit different from standard nss_* plugins such as nss_ldap,
+but they are easy to port. Files and dns plugins are installed by
+default and lookupd_ldap module can be found in ports.
+
+Lookupd should be plugged into the current FreeBSD
+nsswitch implementation using a standard module - nss_lookupd.so.
+
+WWW: http://www.rsu.ru/~bushman/lookupd

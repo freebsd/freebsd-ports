@@ -1,0 +1,11 @@
+lookupd_ldap is the LDAP plugin for the lookupd daemon.
+It is, basically, a slightly changed PADL.com's nss_ldap. The
+most important changes are:
+	1) It's a bit smaller and is only for FreeBSD
+	2) It's adapted to the lookupd threaded model
+
+For the information about configuring lookupd-ldap see
+the nss_ldap website (we use the same configuration
+file: /usr/local/etc/nss_ldap.conf).
+
+WWW: http://www.rsu.ru/~bushman/lookupd/ldap

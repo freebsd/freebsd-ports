@@ -4975,6 +4975,8 @@ logtool-devel	ports/sysutils/logtool-devel
 logtools	ports/www/logtools
 lookat		ports/sysutils/lookat
 lookout		ports/mail/lookout
+lookupd		ports/sysutils/lookupd
+lookupd_ldap	ports/sysutils/lookupd_ldap
 lopster		ports/audio/lopster
 lostirc		ports/irc/lostirc
 loudmouth	ports/net/loudmouth

@@ -218,6 +218,8 @@
     SUBDIR += logtool
     SUBDIR += logtool-devel
     SUBDIR += lookat
+    SUBDIR += lookupd
+    SUBDIR += lookupd_ldap
     SUBDIR += lsmlib
     SUBDIR += lsof
     SUBDIR += ltrace
