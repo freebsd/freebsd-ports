@@ -1,0 +1,14 @@
+--- docs/Makefile.in.orig	Fri Jan 15 08:40:27 1999
++++ docs/Makefile.in	Sun Jan 13 16:07:07 2002
+@@ -219,10 +219,7 @@
+ 	done
+ 	@$(POST_INSTALL)
+ 	@if $(SHELL) -c 'install-info --version | sed 1q | fgrep -s -v -i debian' >/dev/null 2>&1; then \
+-	  for file in $(INFO_DEPS); do \
+-	    echo " install-info --info-dir=$(DESTDIR)$(infodir) $(DESTDIR)$(infodir)/$$file";\
+-	    install-info --info-dir=$(DESTDIR)$(infodir) $(DESTDIR)$(infodir)/$$file || :;\
+-	  done; \
++	  echo " install-info will be done in POST-INSTALL."; \
+ 	else : ; fi
+ 
+ uninstall-info:

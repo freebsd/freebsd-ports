@@ -1,0 +1,11 @@
+bin/js
+bin/jsas
+bin/jsdas
+bin/jswrap
+include/js.h
+include/jsint.h
+include/jsconfig.h
+%%PORTDOCS%%@unexec install-info --delete %D/info/js.info %D/info/dir
+%%PORTDOCS%%info/js.info
+%%PORTDOCS%%@exec install-info %D/info/js.info %D/info/dir
+lib/libjs.a
