@@ -370,7 +370,6 @@ arm-elf-gcc295	ports/devel/arm-elf-gcc295
 arm-rtems-binutils	ports/devel/arm-rtems-binutils
 arm-rtems-g77	ports/devel/arm-rtems-g77
 arm-rtems-gcc	ports/devel/arm-rtems-gcc
-arm-rtems-gcj	ports/devel/arm-rtems-gcj
 arm-rtems-gdb	ports/devel/arm-rtems-gdb
 arm-rtems-objc	ports/devel/arm-rtems-objc
 arpack		ports/math/arpack
@@ -2757,7 +2756,6 @@ i18ntools	ports/converters/i18ntools
 i386-rtems-binutils	ports/devel/i386-rtems-binutils
 i386-rtems-g77	ports/devel/i386-rtems-g77
 i386-rtems-gcc	ports/devel/i386-rtems-gcc
-i386-rtems-gcj	ports/devel/i386-rtems-gcj
 i386-rtems-gdb	ports/devel/i386-rtems-gdb
 i386-rtems-objc	ports/devel/i386-rtems-objc
 i960-rtems-binutils	ports/devel/i960-rtems-binutils
@@ -4321,7 +4319,6 @@ m6811-gcc	ports/devel/m6811-gcc
 m68k-rtems-binutils	ports/devel/m68k-rtems-binutils
 m68k-rtems-g77	ports/devel/m68k-rtems-g77
 m68k-rtems-gcc	ports/devel/m68k-rtems-gcc
-m68k-rtems-gcj	ports/devel/m68k-rtems-gcj
 m68k-rtems-gdb	ports/devel/m68k-rtems-gdb
 m68k-rtems-objc	ports/devel/m68k-rtems-objc
 mac-robber	ports/security/mac-robber
@@ -4511,7 +4508,6 @@ minivmac	ports/emulators/minivmac
 mips-rtems-binutils	ports/devel/mips-rtems-binutils
 mips-rtems-g77	ports/devel/mips-rtems-g77
 mips-rtems-gcc	ports/devel/mips-rtems-gcc
-mips-rtems-gcj	ports/devel/mips-rtems-gcj
 mips-rtems-gdb	ports/devel/mips-rtems-gdb
 mips-rtems-objc	ports/devel/mips-rtems-objc
 mipsel-linux-binutils	ports/devel/mipsel-linux-binutils
@@ -6900,7 +6896,6 @@ powerpak	ports/games/powerpak
 powerpc-rtems-binutils	ports/devel/powerpc-rtems-binutils
 powerpc-rtems-g77	ports/devel/powerpc-rtems-g77
 powerpc-rtems-gcc	ports/devel/powerpc-rtems-gcc
-powerpc-rtems-gcj	ports/devel/powerpc-rtems-gcj
 powerpc-rtems-gdb	ports/devel/powerpc-rtems-gdb
 powerpc-rtems-objc	ports/devel/powerpc-rtems-objc
 powershell	ports/x11/powershell
@@ -7957,7 +7952,6 @@ sgrep2		ports/textproc/sgrep2
 sh-rtems-binutils	ports/devel/sh-rtems-binutils
 sh-rtems-g77	ports/devel/sh-rtems-g77
 sh-rtems-gcc	ports/devel/sh-rtems-gcc
-sh-rtems-gcj	ports/devel/sh-rtems-gcj
 sh-rtems-gdb	ports/devel/sh-rtems-gdb
 sh-rtems-objc	ports/devel/sh-rtems-objc
 sh-utils	ports/misc/sh-utils
@@ -8135,7 +8129,6 @@ spar		ports/math/spar
 sparc-rtems-binutils	ports/devel/sparc-rtems-binutils
 sparc-rtems-g77	ports/devel/sparc-rtems-g77
 sparc-rtems-gcc	ports/devel/sparc-rtems-gcc
-sparc-rtems-gcj	ports/devel/sparc-rtems-gcj
 sparc-rtems-gdb	ports/devel/sparc-rtems-gdb
 sparc-rtems-objc	ports/devel/sparc-rtems-objc
 spdbv		ports/biology/spdbv
