@@ -1,37 +1,28 @@
-*** configure.orig	Sun Sep 27 19:09:55 1998
---- configure	Fri Oct  2 21:29:19 1998
+*** configure.orig	Wed Dec 23 19:24:45 1998
+--- configure	Wed Dec 23 19:26:33 1998
 ***************
-*** 2355,2359 ****
+*** 2616,2620 ****
   ; return 0; }
   EOF
-! if { (eval echo configure:2358: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
+! if { (eval echo configure:2619: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
     rm -rf conftest*
     ac_cv_c_extern_prefix="yes"
---- 2354,2358 ----
+--- 2616,2620 ----
   ; return 0; }
   EOF
-! if { (eval echo configure:2358: \"$ac_link\") 1>&5; (eval $ac_link) </dev/null 2>&5; } && test -s conftest; then
+! if { (eval echo configure:2619: \"$ac_link\") 1>&5; (eval $ac_link) </dev/null 2>&5; } && test -s conftest; then
     rm -rf conftest*
     ac_cv_c_extern_prefix="yes"
 ***************
-*** 2396,2400 ****
+*** 2657,2661 ****
   ; return 0; }
   EOF
-! if { (eval echo configure:2399: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
+! if { (eval echo configure:2660: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
     rm -rf conftest*
     ac_cv_c_asm_string="yes"
---- 2395,2399 ----
+--- 2657,2661 ----
   ; return 0; }
   EOF
-! if { (eval echo configure:2399: \"$ac_link\") 1>&5; (eval $ac_link) </dev/null 2>&5; } && test -s conftest; then
+! if { (eval echo configure:2660: \"$ac_link\") 1>&5; (eval $ac_link) </dev/null 2>&5; } && test -s conftest; then
     rm -rf conftest*
     ac_cv_c_asm_string="yes"
-***************
-*** 3440,3443 ****
---- 3439,3444 ----
-  
-  trap 'rm -f $CONFIG_STATUS conftest*; exit 1' 1 2 15
-+ 
-+ LDLIBS="$LDLIBS -lxpg4"
-  
-  DEFS=-DHAVE_CONFIG_H
