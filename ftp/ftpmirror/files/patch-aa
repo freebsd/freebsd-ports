@@ -5,7 +5,7 @@
  ;# Where configuration files are.
  BEGIN {
 -	$sysconfdir = "/usr/local/etc";
-+	$sysconfdir = '%%PREFIX%%';
++	$sysconfdir = '%%PREFIX%%/etc';
  }
  
  ;#
