@@ -6,12 +6,8 @@ if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
 fi
 
-if [ "${BATCH}" -o "${BINDDLZ_OPTIONS}" ]; then
-	if [ "${BINDDLZ_OPTIONS}" ]; then
-                set ${BINDDLZ_OPTIONS}
-        else
-		set \"OpenSSL\" \"PostgreSQL\" \"FileSystem\"
-	fi
+if [ "${BINDDLZ_OPTIONS}" ]; then
+	set ${BINDDLZ_OPTIONS}
 else
 	dialog --title "configuration options" --clear \
 				--checklist "\n\
@@ -19,7 +15,7 @@ Please select desired options:" -1 -1 5 \
 OpenSSL		"OpenSSL support" ON \
 PostgreSQL	"PostgreSQL driver" ON \
 MySQL		"MySQL driver" OFF \
-FileSystem	"Filesystem driver" OFF \
+FileSystem	"Filesystem driver" ON \
 Stub		"Stub driver" OFF \
 2> /tmp/checklist.tmp.$$
 
@@ -50,7 +46,6 @@ while [ "$1" ]; do
 			;;
 		\"PostgreSQL\")
 			echo WITH_POSTGRESQL_DRIVER=YES
-			WITH_POSTGRESQL_DRIVER=1
 			;;
 		\"MySQL\")
 			echo WITH_MYSQL_DRIVER=YES

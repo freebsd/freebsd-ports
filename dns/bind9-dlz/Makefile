@@ -27,13 +27,23 @@ USE_SUBMAKE=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps
 
+# use user config if possible
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
+.else
+.if defined(BATCH)
+# default package, can be configured in /etc/make.conf
+BINDDLZ_OPTIONS?=	\"OpenSSL\" \"PostgreSQL\" \"FileSystem\"
+.endif
+# make INDEX match
+NO_DESCRIBE=yes
 .endif
 
 .if defined(WITH_POSTGRESQL_DRIVER)
+.if !defined(WITHOUT_POSTGRESQL_DRIVER)
 LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 CONFIGURE_ARGS+= --with-dlz-postgres
+.endif
 .endif
 
 .if defined(WITH_MYSQL_DRIVER)
@@ -42,7 +52,9 @@ CONFIGURE_ARGS+= --with-dlz-mysql
 .endif
 
 .if defined(WITH_FILESYSTEM_DRIVER)
+.if !defined(WITHOUT_FILESYSTEM_DRIVER)
 CONFIGURE_ARGS+= --with-dlz-filesystem
+.endif
 .endif
 
 .if defined(WITH_STUB_DRIVER)
@@ -163,14 +175,24 @@ post-clean:
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_OPENSSL)
+.if !defined(WITHOUT_OPENSSL)
 .include "${PORTSDIR}/security/openssl/Makefile.ssl"
 CONFIGURE_ARGS+= --with-openssl=${OPENSSLBASE}
+.endif
 .endif
 
 .if ${OSVERSION} > 500030
 CONFIGURE_ARGS+=	--enable-threads
 .else
 CONFIGURE_ARGS+=	--disable-threads
+.endif
+
+.if defined(NO_DESCRIBE)
+describe:
+.if defined(BATCH)
+	@ ${SETENV} ${SCRIPTS_ENV} ${SH} ${FILESDIR}/configure.bind9-dlz
+.endif
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} BATCH=yes ${.TARGET}
 .endif
 
 .include <bsd.port.post.mk>
