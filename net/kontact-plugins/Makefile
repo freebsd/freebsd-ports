@@ -1,0 +1,37 @@
+# New ports collection makefile for:	kontact-plugins
+# Date created:				11 Febrary 2004
+# Whom:					Michael Nottebrock <lofi@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	${KONTACTPLUG_PORTNAME}
+PORTVERSION=	${KONTACTPLUG_PORTVERSION}
+PORTREVISION=	${KONTACTPLUG_PORTREVISION}
+CATEGORIES=	net kde
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
+DIST_SUBDIR=	KDE
+
+MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Newsticker plugin for Kontact
+
+IGNORE=		This port is part of KDE 3.2.1 and is not yet ready
+
+LIB_DEPENDS=	kdepim:${PORTSDIR}/deskutils/kdepim3
+
+KDE_SPLIT=	kontact
+KDE_DOC_SPLIT=	# none
+USE_KDELIBS_VER=3
+
+USE_BZIP2=	yes
+PREFIX=		${KDE_PREFIX}
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+
+INSTALLS_SHLIB=	yes
+LDCONFIG_DIRS+=	%%PREFIX%%/lib/kde3
+
+.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
+.include "${.CURDIR}/../../misc/kdeaddons3/Makefile.split"
+.include <bsd.port.mk>
