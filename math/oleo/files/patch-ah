@@ -1,15 +1,21 @@
---- configure.in.orig	Tue Jul 25 21:56:32 2000
-+++ configure.in	Fri Jul 28 02:51:24 2000
-@@ -324,12 +324,6 @@
- AM_GNU_GETTEXT
- 
+--- configure.in.orig	Thu Nov 23 05:31:55 2000
++++ configure.in	Sat Dec  2 10:41:01 2000
+@@ -208,13 +208,15 @@
+ dnl	the libplot from GNU plotutils sometimes requires linking the
+ dnl	X and Motif libraries
  dnl
--dnl This used to cause all kinds of problems in an earlier revision
--dnl	of oleo. (Mostly because of using earlier auto* tools.)
--dnl
--AC_LINK_FILES($nls_cv_header_libgt, $nls_cv_header_intl)
--
--dnl
- dnl Pass information about where we install to the source, to be
- dnl	able to read AFM files. Note this doesn't work if you
- dnl	install via "make install DESTDIR=/xxx"
+-AC_CHECK_LIB(plot, pl_openpl_r,
++if test "$with_motif" = "yes"; then
++  AC_CHECK_LIB(plot, pl_openpl_r,
+ 	AC_DEFINE(HAVE_LIBPLOT)
+ 	LIBS="$LIBS -lplot")
+ 
+-AC_CHECK_LIB(sciplot, sp_begin_plot)
+-if test x$ac_cv_lib_sciplot_sp_begin_plot = xyes; then
++  AC_CHECK_LIB(sciplot, sp_begin_plot)
++    if test x$ac_cv_lib_sciplot_sp_begin_plot = xyes; then
+ 	AC_DEFINE(HAVE_LIBSCIPLOT)
++    fi
+ fi
+ 
+ dnl Checks for Guile
