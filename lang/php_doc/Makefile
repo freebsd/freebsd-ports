@@ -41,13 +41,13 @@ pre-fetch:
 .endif
 
 pre-install:
-	${FIND} ${WRKDIR} -type f ! -name '.*' | ${SED} -e "s,${WRKDIR},%%PHPDOCDIR%%," > ${PLIST}
+	${FIND} ${WRKDIR} -type f ! -name '.*' ! -name pkg-plist | ${SED} -e "s,${WRKDIR},%%PHPDOCDIR%%," > ${PLIST}
 	${FIND} ${WRKDIR} -type d | ${SORT} -r | ${SED} -e "s,${WRKDIR},@dirrm %%PHPDOCDIR%%," >> ${PLIST}
 
 do-install:
 	@${MKDIR} ${PHPDOCDIR}
 	${FIND} ${WRKDIR} -type d | ${SED} -e "s,${WRKDIR},${PHPDOCDIR}/," | ${XARGS} ${MKDIR}
-	for f in `${FIND} ${WRKDIR} -type f ! -name '.*' | ${SED} -e "s,${WRKDIR}/,,"`; do \
+	for f in `${FIND} ${WRKDIR} -type f ! -name '.*' ! -name pkg-plist | ${SED} -e "s,${WRKDIR}/,,"`; do \
 		${INSTALL_DATA} ${WRKDIR}/$$f ${PHPDOCDIR}/$$f; \
 	done
 
