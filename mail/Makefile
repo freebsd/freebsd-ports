@@ -190,6 +190,7 @@
     SUBDIR += pop3gwd
     SUBDIR += pop3lite
     SUBDIR += popa3d
+    SUBDIR += popa3d-before-sendmail
     SUBDIR += popd
     SUBDIR += poppassd
     SUBDIR += popper
