@@ -1,0 +1,8 @@
+This a perl wrapper to "ps(1)" that gets its output and maps pids to jails.
+
+The wrapper takes all "ps(1)" options and passed then to the "ps(1)" if some
+specified. When no options specified the wrapper uses default options.
+
+No additional software or tools like "jailer(8)" needed.
+
+WWW: http://ext.by/jps/
