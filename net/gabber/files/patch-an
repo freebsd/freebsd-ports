@@ -1,11 +1,11 @@
---- src/TCPTransmitter.cc.orig Thu Jan 18 15:08:39 2001
-+++ src/TCPTransmitter.cc      Thu Jan 18 15:09:13 2001
-@@ -33,6 +33,8 @@
- #include <string.h>
- #include <sys/wait.h>
+--- src/TCPTransmitter.cc.orig Sun May 12 16:02:43 2002
++++ src/TCPTransmitter.cc      Sun May 12 16:03:01 2002
+@@ -48,6 +48,8 @@
+ #include <fcntl.h>
+ #include <glib.h>
 
 +#define TRANSMITTER_DEBUG
 +
  using namespace std;
 
-
+ #ifdef HAVE_GETHOSTBYNAME_R_GLIB_MUTEX
