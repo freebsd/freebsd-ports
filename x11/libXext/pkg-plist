@@ -1,0 +1,5 @@
+lib/libXext.a
+lib/libXext.la
+lib/libXext.so
+lib/libXext.so.6
+libdata/pkgconfig/xext.pc
