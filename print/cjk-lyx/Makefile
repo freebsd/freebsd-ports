@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	lyx
-PORTVERSION=	1.1.5.2
+PORTVERSION=	1.1.6.3
 CATEGORIES=	print
 MASTER_SITES=	ftp://stone.phys.pusan.ac.kr/pub/CJK-LyX/
 PKGNAMEPREFIX=	cjk-
-DISTNAME=	CJK-LyX-1.1.5fix2-src
+DISTNAME=	CJK-LyX-1.1.6fix3-src
 
 MAINTAINER=	cjh@FreeBSD.org
 
@@ -31,7 +31,7 @@ CONFIGURE_ARGS=	--with-extra-lib="${X11BASE}/lib ${LOCALBASE}/lib" \
 		--with-extra-inc="${X11BASE}/include ${LOCALBASE}/include"
 MAKE_ENV+=	INTLLIBS="-L${LOCALBASE}/lib -lintl"
 MAN1=		lyx.1 reLyX.1
-WRKSRC=		${WRKDIR}/CJK-LyX-1.1.5fix2
+WRKSRC=		${WRKDIR}/CJK-LyX-1.1.6fix3
 
 .if !defined(WITH_ISPELL)
 pre-fetch:
