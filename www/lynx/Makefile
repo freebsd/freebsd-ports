@@ -6,13 +6,13 @@
 #
 
 # NOTE: This port is tracking lynx-current until 2.8.3 is released.  Anything
-#       before 2.8.3pre.2 has unacceptable security holes.
+#       before 2.8.3pre.5 has unacceptable security holes.
 
 PORTNAME=	lynx
-PORTVERSION=    2.8.3pre.5
+PORTVERSION=    2.8.3.p5
 CATEGORIES=	www
 MASTER_SITES=   http://lynx.isc.org/current/
-DISTNAME=	${PORTNAME}${PORTVERSION}
+DISTNAME=	${PORTNAME}2.8.3pre.5
 
 MAINTAINER=	jseger@FreeBSD.org
 
