@@ -4,10 +4,9 @@ Opera, try updating the compat4x port.
 *** IMPORTANT: users with custom search.ini ***
 
 If you have a custom search.ini and you've used opera 7.51 or an earlier
-version before this upgrade, edit ~/.opera/search.ini _before_ running the 
+version before this upgrade, edit ~/.opera/search.ini _before_ running the
 upgraded Opera for the first time, and change the file version to 4. It should
 look like this:
 
 [Version]
 File Version=4
-

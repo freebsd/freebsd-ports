@@ -7,6 +7,7 @@
 
 PORTNAME=	cone
 PORTVERSION=	0.60
+PORTREVISION=	1
 CATEGORIES=	mail
 # This is for beta versions, leave it in please:
 #MASTER_SITES=	http://www.courier-mta.org/beta/${PORTNAME}/
@@ -18,7 +19,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console based mail client with POP3/IMAP/SMAP support
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
-		aspell.15:${PORTSDIR}/textproc/aspell \
+		aspell.16:${PORTSDIR}/textproc/aspell \
 		fam.0:${PORTSDIR}/devel/fam
 BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 RUN_DEPENDS=	${BUILD_DEPENDS}

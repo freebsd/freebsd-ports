@@ -7,6 +7,7 @@
 
 PORTNAME=	balsa
 PORTVERSION=	2.2.3
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/
 DISTNAME=	balsa-${PORTVERSION}
@@ -14,7 +15,7 @@ DISTNAME=	balsa-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A mail reader for the GNOME 2 desktop
 
-LIB_DEPENDS=	aspell.15:${PORTSDIR}/textproc/aspell \
+LIB_DEPENDS=	aspell.16:${PORTSDIR}/textproc/aspell \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		esmtp.6:${PORTSDIR}/mail/libesmtp \
 		gmime-2.0.3:${PORTSDIR}/mail/gmime2

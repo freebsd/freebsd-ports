@@ -6,7 +6,7 @@
 
 PORTNAME=	simicq
 PORTVERSION=	0.9.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/mi/m-i/}
@@ -37,7 +37,7 @@ PLIST_SUB+=	SSL="@comment "
 
 .if defined(WITHOUT_KDE)
 CONFIGURE_ARGS+=--disable-kde --enable-mt
-LIB_DEPENDS+=	aspell.15:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
 PLIST_SUB+=	KDE="@comment " \
 		SPELL=""
 .else

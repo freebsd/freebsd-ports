@@ -7,6 +7,7 @@
 
 PORTNAME=	lyx
 PORTVERSION=	1.3.4.1
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://cellular.phys.pusan.ac.kr/CJK-LyX/qt/
 PKGNAMEPREFIX=	cjk-
@@ -45,7 +46,7 @@ QTCPPFLAGS+=	${PTHREAD_CFLAGS}
 QTCFGLIBS+=	${PTHREAD_LIBS}
 
 .if defined(WITH_ASPELL)
-LIB_DEPENDS+=	aspell.15:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
 CONFIGURE_ARGS+=	--with-pspell \
 			--with-pspell-lib="${LOCALBASE}/lib" \
 			--with-pspell-include="${LOCALBASE}/include"

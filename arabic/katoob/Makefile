@@ -7,7 +7,7 @@
 
 PORTNAME=	katoob
 PORTVERSION=	0.3.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	arabic
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	arabeyes
@@ -31,9 +31,9 @@ CONFIGURE_ARGS+=	"--enable-highlight"
 USE_GNOME+=		gtksourceview
 .endif
 
-.if defined(WITH_SPELLCHECKER) || exists(${LOCALBASE}/lib/libaspell.so.15)
+.if defined(WITH_SPELLCHECKER) || exists(${LOCALBASE}/lib/libaspell.so.16)
 CONFIGURE_ARGS+=	"--enable-spell"
-LIB_DEPENDS+=		aspell.15:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS+=		aspell.16:${PORTSDIR}/textproc/aspell
 .endif
 
 .include <bsd.port.post.mk>
