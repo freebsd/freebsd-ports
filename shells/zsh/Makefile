@@ -1,14 +1,16 @@
 # New ports collection makefile for:	zsh
-# Version required:     2.6 beta34
+# Version required:     2.6 beta4
 # Date created:		11 Feb. 1995
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.3 1995/02/15 23:46:36 torstenb Exp $
+# $Id: Makefile,v 1.4 1995/04/01 12:50:00 jkh Exp $
 #
 
 DISTNAME=       zsh-2.6-beta4
-MASTER_SITES=   ftp://ftp.math.gatech.edu/pub/zsh/
+PKGNAME=	zsh-2.6.4
 CATEGORIES+=	shells
-GNU_CONFIGURE=	YES
+MASTER_SITES=   ftp://ftp.math.gatech.edu/pub/zsh/
+
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
