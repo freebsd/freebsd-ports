@@ -46,6 +46,7 @@
     SUBDIR += plp
     SUBDIR += pr
     SUBDIR += py-bulksms
+    SUBDIR += py-lirc
     SUBDIR += py-serial
     SUBDIR += qico
     SUBDIR += qpage
