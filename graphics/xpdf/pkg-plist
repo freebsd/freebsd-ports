@@ -6,9 +6,9 @@ bin/pdftops
 bin/pdftotext
 bin/xpdf
 etc/xpdfrc
-%%PORTDOCS%%share/doc/xpdf/ANNOUNCE
-%%PORTDOCS%%share/doc/xpdf/CHANGES
-%%PORTDOCS%%share/doc/xpdf/INSTALL
-%%PORTDOCS%%share/doc/xpdf/README
-%%PORTDOCS%%share/doc/xpdf/hello.pdf
-%%PORTDOCS%%@dirrm share/doc/xpdf
+%%PORTDOCS%%%%DOCSDIR%%/ANNOUNCE
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/hello.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
