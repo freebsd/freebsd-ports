@@ -260,6 +260,7 @@
     SUBDIR += jcifs
     SUBDIR += jffnms
     SUBDIR += jit
+    SUBDIR += jrobin
     SUBDIR += jsch
     SUBDIR += jumpgate
     SUBDIR += jwhois

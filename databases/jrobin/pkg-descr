@@ -1,0 +1,14 @@
+JRobin is a 100% pure java implementation of RRDTool's functionality. It
+follows the same logic and uses the same data sources, archive types and
+definitions as RRDTool does. JRobin supports all standard operations on
+Round Robin Database (RRD) files: CREATE, UPDATE, FETCH, LAST, DUMP, XPORT
+and GRAPH. JRobin's API is made for those who are familiar with RRDTool's
+concepts and logic, but prefer to work with pure java. If you provide the
+same data to RRDTool and JRobin, you will get exactly the same results and
+graphs. JRobin is made from the scratch and it uses very limited portions
+of RRDTool's original source code. JRobin does not use native functions and
+libraries, has no Runtime.exec() calls and does not require RRDTool to be
+present. JRobin is distributed as a software library (jar files) and comes
+with full java source code (LGPL licence).
+
+WWW: http://www.jrobin.org/
