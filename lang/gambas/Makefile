@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		gambas
-PORTVERSION=		1.0.3
+PORTVERSION=		1.0.4
 CATEGORIES=		lang
 MASTER_SITES=		http://gambas.sourceforge.net/
 
