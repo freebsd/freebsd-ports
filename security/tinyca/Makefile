@@ -1,12 +1,12 @@
 # New ports collection makefile for:	tinyca
-# Date created:		17 July 2003
-# Whom:			Janos.Mohacsi@bsd.hu
+# Date created:				17 July 2003
+# Whom:					Janos.Mohacsi@bsd.hu
 #
 # $FreeBSD$
 #
 
 PORTNAME=	tinyca
-PORTVERSION=	0.6.7
+PORTVERSION=	0.6.8
 CATEGORIES=	security net
 MASTER_SITES=	http://tinyca.sm-zone.net/ \
 		http://tinyca.sm-zone.net/old/
