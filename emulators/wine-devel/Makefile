@@ -89,8 +89,8 @@ do-install:
 		${WRKSRC}/programs/regapi/regRestorer.pl \
 		${PREFIX}/lib/wine/reg
 	${INSTALL_DATA} ${FILESDIR}/README.patch \
-		${FILESDIR}/patch-3.3-sys-sigtrap \
-		${PREFIX}/lib/wine
+		${FILESDIR}/install-patch-3.3-sys-sigtrap \
+		${PREFIX}/lib/wine/patch-3.3-sys-sigtrap
 	${INSTALL_DATA} ${WRKSRC}/winedefault.reg ${PREFIX}/lib/wine
 	${ECHO}
 	@${SED} s+%%PREFIX%%+${PREFIX}+g <${PKGMESSAGE}
