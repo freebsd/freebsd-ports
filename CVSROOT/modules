@@ -3555,8 +3555,6 @@ kzipboot	src/sys/i386/boot/kzipboot
 l0pht-watch	ports/security/l0pht-watch
 l0phtcrack	ports/security/l0phtcrack
 l5		ports/security/l5
-lablgl		ports/graphics/lablgl
-lablgtk		ports/x11-toolkits/lablgtk
 labrea		ports/security/labrea
 lacheck		ports/textproc/lacheck
 ladder		ports/games/ladder
@@ -4791,6 +4789,8 @@ obliterate	ports/sysutils/obliterate
 obnc		ports/net/obnc
 ocaml		ports/lang/ocaml
 ocaml-findlib	ports/devel/ocaml-findlib
+ocaml-lablgl	ports/graphics/ocaml-lablgl
+ocaml-lablgtk	ports/x11-toolkits/ocaml-lablgtk
 ocaml-mode.el	ports/lang/ocaml-mode.el
 ocamlweb	ports/devel/ocamlweb
 octave		ports/math/octave

@@ -10,6 +10,7 @@ PORTVERSION=	0.98
 CATEGORIES=	graphics
 MASTER_SITES=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/ \
 		ftp://ftp.inria.fr/lang/caml-light/bazar-ocaml/
+PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	rk@ronald.org
 

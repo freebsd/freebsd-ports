@@ -10,6 +10,7 @@ PORTVERSION=	1.2.5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/ \
 		ftp://ftp.inria.fr/lang/caml-light/bazar-ocaml/
+PKGNAMEPREFIX=	ocaml-
 PKGNAMESUFFIX=	${SFXGL}${SFXGNOME}${SFXGLADE}
 
 MAINTAINER=	rk@ronald.org
