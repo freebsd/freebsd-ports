@@ -15,8 +15,7 @@ being piped into standard input, and it extracts the first member from
 the archive to stdout.  If there is an argument, then the input comes
 from the specified file instead of from stdin.
 
-Unzipsfx is a modified version of unzip designed to be prepended to
-existing ZIP archives in order to form self-extracting archives.
-Instead of taking its first non-flag argument to be the zipfile(s) to
-be extracted, unzipsfx seeks itself under the name by which it was
-invoked and tests or extracts the contents of the appended archive.
+Unzipsfx may be used to create self-extracting ZIP archives from previously
+created ZIP archives.
+
+http://infozip.cdrom.com/pub/infozip/
