@@ -15,6 +15,7 @@ etc/sane.d/dc25.conf
 etc/sane.d/dll.conf
 etc/sane.d/dmc.conf
 etc/sane.d/epson.conf
+%%GPHOTO2%%etc/sane.d/gphoto2.conf
 etc/sane.d/hp.conf
 etc/sane.d/m3096g.conf
 etc/sane.d/microtek.conf
@@ -87,6 +88,9 @@ lib/sane/libsane-dmc.so.1
 lib/sane/libsane-epson.a
 lib/sane/libsane-epson.so
 lib/sane/libsane-epson.so.1
+%%GPHOTO2%%lib/sane/libsane-gphoto2.a
+%%GPHOTO2%%lib/sane/libsane-gphoto2.so
+%%GPHOTO2%%lib/sane/libsane-gphoto2.so.1
 lib/sane/libsane-hp.a
 lib/sane/libsane-hp.so
 lib/sane/libsane-hp.so.1

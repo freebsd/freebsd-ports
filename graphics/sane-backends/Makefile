@@ -23,7 +23,6 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_UNION_SEMUN" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-gphoto2=no
 MAKE_ENV=	NOPORTDOCS=${NOPORTDOCS}
 INSTALLS_SHLIB=	yes
 
@@ -39,5 +38,25 @@ MAN5=	sane-abaton.5 sane-agfafocus.5 sane-apple.5 sane-artec.5 sane-as6e.5 \
 	sane-tamarack.5 sane-umax.5 sane-umax1220u.5 sane-umax_pp.5 \
 	sane-usb.5 sane-v4l.5
 MAN7=	sane.7
+
+.if defined(WITH_GPHOTO2)
+LIB_DEPENDS+=	gphoto2.2:${PORTSDIR}/graphics/gphoto2
+CONFIGURE_ARGS+=	--with-gphoto2=yes
+PLIST_SUB+=	GPHOTO2=""
+.else
+PLIST_SUB+=	GPHOTO2="@comment "
+.endif
+
+pre-everything::
+.if !defined(WITH_GPHOTO2)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "If you want to compile with gPhoto2 support,"
+	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_GPHOTO2=yes\""
+	@${ECHO_MSG}
+.endif
+
+post-patch:
+	@${PERL} -pi -e 's| -I/usr/local/include||g ; \
+		 s|2.0beta5dev1|2.0|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
