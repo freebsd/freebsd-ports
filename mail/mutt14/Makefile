@@ -60,7 +60,7 @@ BUILD_DEPENDS+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
 DIST_SUBDIR=	mutt
 GNU_CONFIGURE=	yes
 USE_AUTOMAKE=	yes	# configure.in is patched by <PATCHFILES>
-USE_GMAKE=	yes	# grrr, why is this now required if USE_AUTOMAKE ?!?!?
+AUTOMAKE_ARGS=	--include-deps
 CONFIGURE_TARGET=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" LDFLAGS=-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-pop --enable-imap --enable-flock --disable-fcntl \
