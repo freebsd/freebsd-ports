@@ -178,6 +178,7 @@
     SUBDIR += xenmenu
     SUBDIR += xgas
     SUBDIR += xless
+    SUBDIR += xosd
     SUBDIR += xpns
     SUBDIR += xquote
     SUBDIR += xtail

@@ -1,0 +1,8 @@
+XOSD displays text on your screen, sounds simple right?
+The difference is it is unmanaged and shaped, so it appears
+transparent. This gives the effect of an On Screen Display,
+like your TV/VCR etc.. The package also includes an xmms
+plugin, which automatically displays various interesting
+things as they change (song name, volume etc...) 
+
+WWW: http://www.ignavus.net/software.html
