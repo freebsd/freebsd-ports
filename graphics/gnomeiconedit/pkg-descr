@@ -11,5 +11,3 @@ Features:
 * Brush mode where contents of the paste buffer can be pasted
   anywhere on the screen.
 * Loads any format Gdk-Pixbuf can handle.
-
-WWW: http://www.abdn.ac.uk/~u07ih/gnome-iconedit/
