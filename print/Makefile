@@ -120,6 +120,7 @@
     SUBDIR += latex-subfig
     SUBDIR += latex-subfloat
     SUBDIR += latex-timing
+    SUBDIR += latex-tipa
     SUBDIR += latex-ucs
     SUBDIR += latex-xcolor
     SUBDIR += latex2rtf
@@ -219,7 +220,6 @@
     SUBDIR += tex-texmflocal
     SUBDIR += texpower
     SUBDIR += tgif2tex
-    SUBDIR += tipa
     SUBDIR += tipograf
     SUBDIR += tr2latex
     SUBDIR += transfig
