@@ -1,17 +1,15 @@
---- Makefile.orig	Tue Dec  9 21:59:18 2003
-+++ Makefile	Tue Dec  9 22:00:42 2003
-@@ -4,21 +4,21 @@
- #
- VERSION=1.18i
+--- Makefile.orig	Sat Dec 13 02:34:25 2003
++++ Makefile	Sat Dec 13 02:33:16 2003
+@@ -7,15 +7,15 @@
+ 
+ VERSION=1.18l
  
 -BINDIR=/usr/local/bin
 -SAMPLEDIR=/usr/local/share
 +BINDIR=$(PREFIX)/bin
 +SAMPLEDIR=$(PREFIX)/share
  
- SHELL = /bin/sh
  INSTALL = install
- 
  
 -GTKINC=`gtk-config --cflags`
 -GTKLIB=`gtk-config --libs`
@@ -22,11 +20,5 @@
 +GLIBINC=`glib12-config --cflags`
 +GLIBLIB=`glib12-config --libs`
  
--CFLAGS = -g $(GLIBINC) $(GTKINC) -Dunix #-static
-+CFLAGS += -g $(GLIBINC) $(GTKINC) -Dunix #-static
- 
--CC = cc
-+CC ?= cc
- 
- LIBS = $(GLIBLIB) $(GTKLIB)
+ CFLAGS += -g $(GLIBINC) $(GTKINC) #-static
  

@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	tdir
-PORTVERSION=	1.18i
+PORTVERSION=	1.18l
 CATEGORIES=	games
-MASTER_SITES=	http://xtsl.free.fr/118i/
+MASTER_SITES=	http://xtsl.free.fr/118l/
 DISTNAME=	traindir-${PORTVERSION}-src
 WRKSRC=		${WRKDIR}/traindir-${PORTVERSION}
 
@@ -16,9 +16,8 @@ MAINTAINER=	mad@madpilot.net
 COMMENT=	Train controller simulation
 
 USE_GMAKE=	yes
-USE_XLIB=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gtk12 glib12
+USE_GNOME=	gtk12
 USE_REINPLACE=	yes
 
 post-extract:
@@ -29,9 +28,5 @@ post-extract:
 
 post-patch:
 	${REINPLACE_CMD} -e 's#PREFIX#${PREFIX}#' ${WRKSRC}/setup_trdir.sh
-
-post-configure:
-	${REINPLACE_CMD} -e 's,\#include \<malloc.h\>,/* include malloc.h */,' \
-		${WRKSRC}/gdialog.c
 
 .include <bsd.port.mk>
