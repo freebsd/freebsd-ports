@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Crypt-SSLeay
-PORTVERSION=	0.18
+PORTVERSION=	0.23
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Crypt
@@ -15,10 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 
 RESTRICTED=	"Crypto; export-controlled"
-
-IS_INTERACTIVE=	"asks about openssl"
-
 PERL_CONFIGURE=	yes
+CONFIGURE_ARGS+=	"/usr"
+USE_OPENSSL=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Crypt::SSLeay.3
