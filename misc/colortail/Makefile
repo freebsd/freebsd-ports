@@ -14,19 +14,13 @@ MASTER_SITES=	http://www.student.hk-r.se/~pt98jan/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A colour-able replacement for tail(1)
 
+USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-.if !exists(/usr/include/getopt.h)
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lgnugetopt
-.endif
-
-.if !defined(NOPORTDOCS)
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/example-conf/conf* ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/example-conf/conf* ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
