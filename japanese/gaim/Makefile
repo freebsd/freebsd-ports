@@ -17,5 +17,6 @@ MASTERDIR=	${.CURDIR}/../../net/gaim
 MD5_FILE=	${.CURDIR}/distinfo
 
 CONFLICTS=	gaim-[0-9]*
+BROKEN=	"Needs update for Gaim 1.1.3"
 
 .include "${MASTERDIR}/Makefile"
