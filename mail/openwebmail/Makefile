@@ -78,8 +78,8 @@ post-patch:
 .endif
 
 do-install:
-	@${CP} -R ${WRKSRC}/cgi-bin/openwebmail ${OWCGIDIR}
-	@${CP} -R ${WRKSRC}/data/openwebmail ${OWDATADIR}
+	@${CP} -R ${WRKSRC}/cgi-bin/openwebmail/ ${OWCGIDIR}
+	@${CP} -R ${WRKSRC}/data/openwebmail/ ${OWDATADIR}
 	@${CHOWN} -R root:mail ${OWCGIDIR}
 	@${CHMOD} 0770 ${OWCGIDIR}/etc/sessions ${OWCGIDIR}/etc/users
 	@${CHMOD} 4755 ${OWCGIDIR}/openwebmail*pl
