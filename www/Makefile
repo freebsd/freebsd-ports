@@ -325,6 +325,7 @@
     SUBDIR += mozilla-devel
     SUBDIR += mozilla-gtk1
     SUBDIR += mplayer-plugin
+    SUBDIR += nanoblogger
     SUBDIR += nd
     SUBDIR += neon
     SUBDIR += neowebscript
