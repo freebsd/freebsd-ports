@@ -3,10 +3,10 @@
 # Date created:         Sun Feb  5 16:12:09  1995
 # Whom:			hsu
 #
-# $Id: Makefile,v 1.6 1995/05/18 18:46:04 hsu Exp $
+# $Id: Makefile,v 1.7 1995/06/15 07:46:50 hsu Exp $
 #
 
-DATE=		950606
+DATE=		950706
 DISTNAME=       Wine-${DATE}
 PKGNAME=	Wine-95.06.06
 CATEGORIES+=	utilities x11 emulation
