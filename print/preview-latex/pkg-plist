@@ -1,17 +1,17 @@
-share/texmf/tex/latex/preview/prauctex.cfg
-share/texmf/tex/latex/preview/prauctex.def
-share/texmf/tex/latex/preview/prcounters.def
-share/texmf/tex/latex/preview/preview.sty
-share/texmf/tex/latex/preview/prfootnotes.def
-share/texmf/tex/latex/preview/prlyx.def
-share/texmf/tex/latex/preview/prshowbox.def
-share/texmf/tex/latex/preview/prshowlabels.def
-share/texmf/tex/latex/preview/prtightpage.def
-share/texmf/tex/latex/preview/prtracingall.def
-@dirrm share/texmf/tex/latex/preview
+share/texmf-var/tex/latex/preview/prauctex.cfg
+share/texmf-var/tex/latex/preview/prauctex.def
+share/texmf-var/tex/latex/preview/prcounters.def
+share/texmf-var/tex/latex/preview/preview.sty
+share/texmf-var/tex/latex/preview/prfootnotes.def
+share/texmf-var/tex/latex/preview/prlyx.def
+share/texmf-var/tex/latex/preview/prshowbox.def
+share/texmf-var/tex/latex/preview/prshowlabels.def
+share/texmf-var/tex/latex/preview/prtightpage.def
+share/texmf-var/tex/latex/preview/prtracingall.def
+@dirrm share/texmf-var/tex/latex/preview
 @exec %D/bin/mktexlsr
 @unexec %D/bin/mktexlsr
-share/texmf/doc/latex/styles/preview.dvi
+share/texmf-var/doc/latex/styles/preview.dvi
 %%EMACS_VERSION_SITE_LISPDIR%%/preview/preview.el
 %%EMACS_VERSION_SITE_LISPDIR%%/preview/preview.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/preview/preview-latex.el
