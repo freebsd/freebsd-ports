@@ -1,23 +1,29 @@
 # New ports collection makefile for:	jdk
-# Version required:     1.0.2
-# Date created:		8 April 1996
-# Whom:			Sujal Patel <smpatel@freebsd.org> (original)
+# Version required:     1.1.5
+# Date created:		Feb, 8, 1998
+# Whom:			Martin Cracauer <cracauer@cons.org>
 #
-# $Id: Makefile,v 1.7 1997/05/18 11:35:57 pgs Exp $
+# $Id: Makefile,v 1.8 1997/05/30 14:16:27 asami Exp $
 #
 
-DISTNAME=	jdk102.11-26
-PKGNAME=	jdk-1.0.2
+DISTNAME=	jdk1.1.5.V98-2-8
+PKGNAME=	jdk-1.1.5
+WRKSRC=		${WRKDIR}/jdk1.1.5
 CATEGORIES=	lang devel
-MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITES=	http://www.freebsd.org/java/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	cracauer@freebsd.org
 
-NO_CDROM=	"Put copyright on packaging, etc"
+NO_CDROM=	"License doesn't allow distribution with fee"
 
-NO_WRKSUBDIR=	yes
+NO_CONFIGURE=   yes
+NO_BUILD=       yes
 
-post-install:
-	@${CAT} ${PKGDIR}/MESSAGE
+do-install:
+	${MKDIR} ${PREFIX}/java
+	(cd ${WRKSRC} && tar -c -f - --exclude '*.class' --exclude \
+		demo/ImageMap/audio/dialog .) \
+		| (cd ${PREFIX}/java/. && tar fx -)
+	${MKDIR} ${PREFIX}/java/demo/ImageMap/audio/dialog
 
 .include <bsd.port.mk>

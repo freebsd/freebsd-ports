@@ -1,3 +1,5 @@
-These are the Java Developers Kit's class libraries.
-The libraries are used in various ports like
-javac_netscape and kaffe.
+Binaries of Sun's Java Developers Kit. Include bytecode machine,
+compiler, demos and sources for most Java runtime classes.
+
+For more information about the FreeBSD port see
+http://www.freebsd.org/java/
