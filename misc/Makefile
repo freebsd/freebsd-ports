@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.206 1999/05/06 14:30:06 taoka Exp $
+# $Id: Makefile,v 1.207 1999/05/10 16:45:54 flathill Exp $
 #
 
     SUBDIR += 221upgrade
@@ -30,6 +30,7 @@
     SUBDIR += diction
     SUBDIR += display
     SUBDIR += dotfile
+    SUBDIR += enlightenment-conf
     SUBDIR += estic
     SUBDIR += ewipe
     SUBDIR += fd
