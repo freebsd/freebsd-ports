@@ -1,11 +1,11 @@
-# New ports collection makefile for:	psgml for xemacs-mule
-# Date created:		26 May 1999
-# Whom:			kuriyama
+# New ports collection makefile for:	psgml for emacs19
+# Date created:		23 January 1999
+# Whom:			shige
 #
 # $FreeBSD$
 #
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	shige@FreeBSD.org
 
 # This is a slave port.
 PORTCLASS=	slave
@@ -13,7 +13,7 @@ PORTCLASS=	slave
 MASTERDIR=	${.CURDIR}/../psgml
 
 # emacs port setup
-EMACS_PORT_NAME=	xemacs21-mule
+EMACS_PORT_NAME=	emacs19
 
 # pkg-* files in ${.CURDIR} are used
 PKGDIR=		${.CURDIR}

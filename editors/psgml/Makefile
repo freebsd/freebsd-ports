@@ -26,7 +26,7 @@ PLIST_SUB=		PSGML_STARTUPEL=${PSGML_STARTUPEL}
 PORTCLASS?=	master
 
 .if (${PORTCLASS} == "master")
-EMACS_PORT_NAME=	emacs
+EMACS_PORT_NAME=	emacs21
 .endif
 
 .include <bsd.port.pre.mk>
