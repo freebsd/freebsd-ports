@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zipcodes
-PORTVERSION=	20030910
+PORTVERSION=	20031021
 CATEGORIES=	japanese misc
 MASTER_SITES=	http://post.ah-tech.co.jp/zipcode/dl/kogaki/lzh/
 DISTNAME=	ken_all
