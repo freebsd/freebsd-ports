@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	paragui
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.bms-austria.com/pub/paragui/release/
 
@@ -30,10 +30,13 @@ INSTALLS_SHLIB=	yes
 SHLIB_VER=	3
 PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 
+post-extract:
+	@${RM} -f ${WRKSRC}/src/physfs/platform.c
+
 post-patch:
 	@${PERL} -pi -e 's|LT_CURRENT=.*$$|LT_CURRENT=${SHLIB_VER}|g ; \
 		 s|`sdl-config |`\$$\{SDL_CONFIG\} |g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
 		's|\$$\(SDL_CFLAGS\)|\$$\(PARAGUI_CFLAGS\)|g ; \
 		 s|-release \$$\(LT_RELEASE\)||g'
 
