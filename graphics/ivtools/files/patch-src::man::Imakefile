@@ -1,0 +1,12 @@
+--- src/man/Imakefile.orig	Tue Jul 27 16:12:15 1999
++++ src/man/Imakefile	Wed Mar 27 12:18:06 2002
+@@ -6,8 +6,7 @@
+ PACKAGE = man_ivtools
+ 
+ SUBDIRS	= \
+-	man1 \
+-        man3
++	man1
+ 
+ MakeInSubdirs($(SUBDIRS))
+ FormatSubdirs($(SUBDIRS))

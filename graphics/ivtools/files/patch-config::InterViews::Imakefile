@@ -1,0 +1,16 @@
+--- config/InterViews/Imakefile.orig	Mon Jul 16 10:11:11 2001
++++ config/InterViews/Imakefile	Wed Mar 27 12:18:06 2002
+@@ -6,13 +6,4 @@
+ 
+ IvmkcmTargets($(PACKAGE))
+ 
+-#if !InstallRelative
+-install::
+-	MakeDir($(CONFIGDIR)/InterViews)
+-	$(INSTALL) -c $(INSTINCFLAGS) *.cf $(CONFIGDIR)/InterViews
+-
+-uninstall::
+-	(cd $(CONFIGDIR)/InterViews; $(RM) *.cf)
+-#endif
+-
+ 
