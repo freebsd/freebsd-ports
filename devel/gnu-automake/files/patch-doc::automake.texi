@@ -1,5 +1,5 @@
---- doc/automake.texi.orig	Sun Feb 15 10:01:40 2004
-+++ doc/automake.texi	Sun Mar 14 17:13:45 2004
+--- doc/automake.texi.orig	Sun Sep 19 21:28:46 2004
++++ doc/automake.texi	Thu Oct 14 20:38:54 2004
 @@ -2,4 +2,4 @@
  @c %**start of header
 -@setfilename automake.info
@@ -7,13 +7,18 @@
 +@setfilename automake19.info
 +@settitle automake19
  @setchapternewpage off
-@@ -36,3 +36,3 @@
+@@ -36,8 +36,3 @@
  @direntry
 -* automake: (automake).		Making Makefile.in's.
+-@end direntry
+-
+-@dircategory Individual utilities
+-@direntry
+-* aclocal: (automake)Invoking aclocal.          Generating aclocal.m4.
 +* automake19: (automake19).		Making Makefile.in's.
  @end direntry
-@@ -41,3 +41,3 @@
- @direntry
--* aclocal: (automake)Invoking aclocal.          Generating aclocal.m4.
-+* aclocal19: (automake19)Invoking aclocal.          Generating aclocal.m4.
- @end direntry
+@@ -8915,3 +8910,3 @@
+ @multitable {8888-88-88} {8.8-p8} {8888} {888} {8888} {8888 (88)} {8888 (88)} {888} {888}
+-@headitem Date   @tab Rel @tab am @tab acl @tab pm @tab @file{*.am} @tab m4 @tab doc @tab t
++@item Date   @tab Rel @tab am @tab acl @tab pm @tab @file{*.am} @tab m4 @tab doc @tab t
+ @item 1994-09-19 @tab CVS    @tab  141 @tab     @tab      @tab  299 (24) @tab           @tab     @tab

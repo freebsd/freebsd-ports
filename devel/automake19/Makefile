@@ -1,4 +1,4 @@
-# New ports collection makefile for:	automake18
+# New ports collection makefile for:	automake19
 # Date created:		15 Feb 2003
 # Whom:			Udo Schweigert
 #
@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	automake
-PORTVERSION=	1.9.1
+PORTVERSION=	1.9.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	automake
@@ -27,6 +27,7 @@ CONFIGURE_ENV=	AUTOCONF=autoconf259 AUTOHEADER=autoheader259 MAKEINFO=makeinfo
 CONFIGURE_ARGS=	--program-suffix=${BUILD_VERSION}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_REINPLACE=	yes
+INFO=		automake${BUILD_VERSION}
 
 post-patch:
 	@(cd ${WRKSRC}/doc && \
@@ -38,14 +39,14 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,%%X11BASE%%,${X11BASE},g' ${WRKSRC}/aclocal.in
 
 pre-install:
-	${RM} -fr ${PREFIX}/share/automake${BUILD_VERSION}
-	${MKDIR} ${PREFIX}/share/automake${BUILD_VERSION}
-	${MKDIR} ${PREFIX}/share/aclocal${BUILD_VERSION}
-	${MKDIR} ${PREFIX}/libexec/automake${BUILD_VERSION}
+	@${RM} -fr ${PREFIX}/share/automake${BUILD_VERSION}
+	@${MKDIR} ${PREFIX}/share/automake${BUILD_VERSION}
+	@${MKDIR} ${PREFIX}/share/aclocal${BUILD_VERSION}
+	@${MKDIR} ${PREFIX}/libexec/automake${BUILD_VERSION}
 
 post-install:
 .for i in aclocal automake
-	${LN} -sf ${PREFIX}/bin/${i}${BUILD_VERSION} \
+	@${LN} -sf ${PREFIX}/bin/${i}${BUILD_VERSION} \
 		${PREFIX}/libexec/automake${BUILD_VERSION}/${i}
 .endfor
 
