@@ -1,5 +1,5 @@
---- /tmp/rosegarden-2.1/configure.in	Wed Oct 15 20:42:59 1997
-+++ ./configure.in	Fri May 14 20:29:22 1999
+--- configure.in.orig	Wed Oct 15 13:42:59 1997
++++ configure.in	Sat Sep 18 16:15:13 1999
 @@ -4,6 +4,14 @@
  
  AC_CONFIG_HEADER(config.h)
@@ -38,12 +38,14 @@
  		if test -n "$TCL_MIDI_CHECK"
  		then
  			Petal=""
-@@ -153,8 +161,8 @@
+@@ -152,9 +160,9 @@
+ 
  	*freebsd*)
  	defines="-DNO_SYS_ERRLIST"
- 	AC_CHECK_HEADER(sys/soundcard.h, sound_system="-DSYSTEM_FREEBSD")
+-	AC_CHECK_HEADER(sys/soundcard.h, sound_system="-DSYSTEM_FREEBSD")
 -	extra_libs="-lmalloc"
 -	# LDFLAGS="-L/usr/lib -L/usr/X11R6/lib"
++	AC_CHECK_HEADER(sys/soundcard.h, sound_system="-DSYSTEM_OSS")
 +	# extra_libs="-lmalloc"
 +	LDFLAGS="-L/usr/lib -L/usr/X11R6/lib"
  

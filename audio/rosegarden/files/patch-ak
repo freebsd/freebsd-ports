@@ -1,0 +1,12 @@
+--- mapper/src/Mapper_OSS.c.orig	Sat Sep 18 16:18:42 1999
++++ mapper/src/Mapper_OSS.c	Sat Sep 18 16:19:17 1999
+@@ -13,6 +13,9 @@
+ #include <sys/stat.h>
+ #include <unistd.h>
+ #include <fcntl.h>
++#ifdef __FreeBSD__
++#include <errno.h>
++#endif
+ 
+ #include <MidiFile.h>
+ #include <MidiErrorHandler.h>
