@@ -8,7 +8,7 @@
 PORTNAME=	metalist
 PORTVERSION=	2.2.5
 CATEGORIES=	chinese www
-MASTER_SITES=	http://autrijus.org/
+MASTER_SITES=	http://www.autrijus.org/
 DISTNAME=	metalist-${PORTVERSION}
 
 MAINTAINER=	autrijus@autrijus.org
