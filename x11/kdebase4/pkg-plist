@@ -73,6 +73,8 @@ bin/kxkb
 bin/kxmlrpcd
 bin/kxsconfig
 bin/kxsrun
+%%MOTIF%%bin/nspluginscan
+%%MOTIF%%bin/nspluginviewer
 bin/startkde
 etc/ksysguarddrc
 include/KBackgroundIface.h
@@ -377,6 +379,8 @@ lib/libkateinterfaces.la
 lib/libkateinterfaces.so
 lib/libkcm_keyboard.la
 lib/libkcm_keyboard.so
+%%MOTIF%%lib/libkcm_nsplugin.la
+%%MOTIF%%lib/libkcm_nsplugin.so
 lib/libkcm_xmlrpcd.la
 lib/libkcm_xmlrpcd.so
 lib/libkminipagerapplet.la
@@ -405,6 +409,9 @@ lib/libksystemtrayapplet.so.1
 lib/libnaughtyapplet.la
 lib/libnaughtyapplet.so
 lib/libnaughtyapplet.so.1
+%%MOTIF%%lib/libnsplugin.la
+%%MOTIF%%lib/libnsplugin.so
+%%MOTIF%%lib/libnsplugin.so.4
 lib/libquicklauncher.la
 lib/libquicklauncher.so
 lib/libquicklauncher.so.1
@@ -522,6 +529,7 @@ share/applnk/Settings/WebBrowsing/cookies.desktop
 share/applnk/Settings/WebBrowsing/ebrowsing.desktop
 share/applnk/Settings/WebBrowsing/kcmcss.desktop
 share/applnk/Settings/WebBrowsing/konqhtml.desktop
+%%MOTIF%%share/applnk/Settings/WebBrowsing/nsplugin.desktop
 share/applnk/Settings/WebBrowsing/proxy.desktop
 share/applnk/Settings/WebBrowsing/smb.desktop
 share/applnk/Settings/WebBrowsing/useragent.desktop
@@ -1274,6 +1282,7 @@ share/config/imsmaprc
 share/config/interferencerc
 share/config/kdesktop_custom_menu1
 share/config/kdesktop_custom_menu2
+share/config/kdm/README
 share/config/kdm/kdmrc
 share/config/klipperrc
 share/config/konqsidebartng.rc
@@ -2282,7 +2291,9 @@ share/wallpapers/simple_wallpaper.jpg
 share/wallpapers/sunday_brunch.jpg
 share/wallpapers/vegetative_fog.jpg
 @dirrm share/wallpapers
-@dirrm share/templates/.source/emtpydir
+@exec mkdir %D/share/templates/.source/emptydir
+@exec chmod 644 %D/share/templates/.source/emptydir
+@unexec rmdir %D/share/templates/.source/emptydir
 @dirrm share/templates/.source
 @dirrm share/templates
 @dirrm share/sounds
@@ -2369,7 +2380,10 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/locale/C
 @dirrm share/locale
 @dirrm share/icons/locolor/32x32/apps
+@dirrm share/icons/locolor/32x32
 @dirrm share/icons/locolor/16x16/apps
+@dirrm share/icons/locolor/16x16
+@dirrm share/icons/locolor
 @dirrm share/icons/hicolor/48x48/filesystems
 @dirrm share/icons/hicolor/48x48/apps
 @dirrm share/icons/hicolor/32x32/filesystems
@@ -2430,6 +2444,8 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/apps/konqueror/pics
 @dirrm share/apps/konqueror/icons/hicolor/16x16/actions
 @dirrm share/apps/konqueror/icons/hicolor/16x16
+@dirrm share/apps/konqueror/icons/hicolor
+@dirrm share/apps/konqueror/icons
 @dirrm share/apps/konqueror/dirtree/services
 @dirrm share/apps/konqueror/dirtree/remote/web
 @dirrm share/apps/konqueror/dirtree/remote/ftp
@@ -2452,10 +2468,13 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/apps/konqiconview
 @dirrm share/apps/kmenuedit/icons/locolor/16x16/actions
 @dirrm share/apps/kmenuedit/icons/locolor/16x16
+@dirrm share/apps/kmenuedit/icons/locolor
 @dirrm share/apps/kmenuedit/icons/hicolor/32x32/actions
 @dirrm share/apps/kmenuedit/icons/hicolor/32x32
 @dirrm share/apps/kmenuedit/icons/hicolor/22x22/actions
 @dirrm share/apps/kmenuedit/icons/hicolor/22x22
+@dirrm share/apps/kmenuedit/icons/hicolor
+@dirrm share/apps/kmenuedit/icons
 @dirrm share/apps/kmenuedit
 @dirrm share/apps/kjobviewer
 @dirrm share/apps/kioslave
@@ -2466,8 +2485,11 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/apps/kicker/pics
 @dirrm share/apps/kicker/icons/locolor/16x16/actions
 @dirrm share/apps/kicker/icons/locolor/16x16
+@dirrm share/apps/kicker/icons/locolor
 @dirrm share/apps/kicker/icons/hicolor/16x16/actions
 @dirrm share/apps/kicker/icons/hicolor/16x16
+@dirrm share/apps/kicker/icons/hicolor
+@dirrm share/apps/kicker/icons
 @dirrm share/apps/kicker/extensions
 @dirrm share/apps/kicker/applets
 @dirrm share/apps/kicker
@@ -2476,6 +2498,9 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/apps/khelpcenter
 @dirrm share/apps/kfind/icons/locolor/22x22/actions
 @dirrm share/apps/kfind/icons/locolor/22x22
+@dirrm share/apps/kfind/icons/locolor
+@dirrm share/apps/kfind/icons
+@dirrm share/apps/kfind
 @dirrm share/apps/keditbookmarks
 @dirrm share/apps/kdm/pics/users
 @dirrm share/apps/kdm/pics
@@ -2548,6 +2573,7 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/apps/kappfinder/apps/Editors
 @dirrm share/apps/kappfinder/apps/Development
 @dirrm share/apps/kappfinder/apps
+@dirrm share/apps/kappfinder
 @dirrm share/apps/kaddressbook/pics
 @dirrm share/apps/kaddressbook
 @dirrm share/apps/drkonqi/presets
@@ -2594,9 +2620,7 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/applnk/Development
 @dirrm share/applnk/Applications
 @dirrm share/applnk/.hidden
+@dirrm share/applnk
 @dirrm lib/kde2
 @dirrm include/kwin
 @dirrm include/kate
-@exec mkdir %D/share/templates/.source/emptydir
-@exec chmod 644 %D/share/templates/.source/emptydir
-@unexec rmdir %D/share/templates/.source/emptydir
