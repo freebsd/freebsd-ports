@@ -14,7 +14,7 @@ MASTER_SITES=   ftp://ftp.walrus.com/pub/avatar/clients/ \
 DISTNAME=	tintin++v1.5pl6
 EXTRACT_SUFX=   .tar.Z
 
-MAINTAINER=	ache@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=         ${WRKDIR}/tintin++/src
 GNU_CONFIGURE=	yes
