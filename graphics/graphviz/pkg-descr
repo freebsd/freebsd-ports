@@ -1,0 +1,14 @@
+Graph Visualization Software from AT&T Laboratories and
+Bell Laboratories (Lucent Technologies)
+
+Source code - 12/1/96
+
+These programs licensed under the terms described in the Web page
+http://www.research.att.com/orgs/ssr/book/reuse.
+
+The package contains:
+    dotty - customizable X windows graph viewer written in the Lefty editor
+    tcldot - customizable TCL/tk graph viewer written by John Ellson
+    dot - batch program for drawing directed graphs as hierarchies
+    neato - batch program for drawing undirected graphs using Kamada-Kawai
+        spring models

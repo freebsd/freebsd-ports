@@ -1,0 +1,26 @@
+bin/dot
+bin/dotty
+bin/lefty
+bin/lneato
+bin/neato
+man/man1/dot.1.gz
+man/man1/dotty.1.gz
+man/man1/lefty.1.gz
+man/man1/neato.1.gz
+man/man1/tcldot.1.gz
+lib/Tcldot/Tcldot.so.1.2
+lib/Tcldot/pkgIndex.tcl
+share/doc/graphviz/dotguide.ps.gz
+share/doc/graphviz/dotty.ps.gz
+share/doc/graphviz/gd.html
+share/doc/graphviz/lefty.ps.gz
+share/doc/graphviz/neatoguide.ps.gz
+share/doc/graphviz/tcldot.html
+share/lefty/dotty.lefty
+share/lefty/dotty_draw.lefty
+share/lefty/dotty_edit.lefty
+share/lefty/dotty_layout.lefty
+share/lefty/dotty_ui.lefty
+@dirrm lib/Tcldot
+@dirrm share/lefty
+@dirrm share/doc/graphviz

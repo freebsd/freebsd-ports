@@ -1,0 +1,14 @@
+--- cmd/lefty/lefty.c.orig	Mon Mar 24 18:01:54 1997
++++ cmd/lefty/lefty.c	Tue Jan 27 20:25:04 1998
+@@ -29,7 +29,11 @@
+ #ifdef GNU
+ #define canread(fp) ((fp)->_IO_read_end > (fp)->_IO_read_ptr)
+ #else
++#ifdef __FreeBSD__
++#define canread(fp) ((fp)->_r >0)
++#else
+ #define canread(fp) ((fp)->_cnt > 0)
++#endif
+ #endif
+ #endif
+ 

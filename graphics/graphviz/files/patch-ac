@@ -1,0 +1,42 @@
+--- cmd/lefty/os/unix/io.c.orig	Mon Mar 10 21:45:50 1997
++++ cmd/lefty/os/unix/io.c	Tue Jan 27 20:45:50 1998
+@@ -10,7 +10,11 @@
+ #include <fcntl.h>
+ #include <signal.h>
+ #include <sys/wait.h>
++#ifndef __FreeBSD__
+ #include <termio.h>
++#else
++#include <termios.h>
++#endif
+ #include <sys/time.h>
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+@@ -271,7 +267,11 @@
+ static int findpty (int *fd) {
+     char *majorp, *minorp;
+     char pty[32], tty[32];
++#ifndef __FreeBSD__
+     struct termio tio;
++#else
++    struct termios tio;
++#endif
+ 
+     static char ptymajor[] = "pqrs";
+     static char ptyminor[] = "0123456789abcdefghijklmnopqrstuvwxyz";
+@@ -286,9 +278,15 @@
+             if ((fd[0] = open (pty, O_RDWR)) >= 0) {
+                 sprintf (tty, "/dev/tty%c%c", *majorp, *minorp);
+                 if ((fd[1] = open (tty, O_RDWR)) >= 0) {
++#ifndef __FreeBSD__
+                     ioctl (fd[1], TCGETA, &tio);
+                     tio.c_lflag &= ~ECHO;
+                     ioctl (fd[1], TCSETA, &tio);
++#else
++                    tcgetattr(fd[1], &tio);
++                    tio.c_lflag &= ~ECHO;
++                    tcsetattr(fd[1], TCSANOW, &tio);
++#endif
+                     return 0;
+                 }
+                 close (fd[0]);
