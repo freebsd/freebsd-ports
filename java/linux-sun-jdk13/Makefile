@@ -30,21 +30,17 @@ PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///} \
 NO_BUILD=	yes
 USE_LINUX=	yes
 JDK_VERSION=	1.3.1
-JDK_REVISION=	09
+JDK_REVISION=	10
 ONLY_FOR_ARCHS=	i386
 TARGET_DIR?=	${PREFIX}/${PKGBASE}${JDK_VERSION}
-SUN_BUNDLE_ID?=	8901
-DOWNLOAD_URL?=	http://java.sun.com/webapps/download/Display?BundleId=${SUN_BUNDLE_ID}
+DOWNLOAD_URL?=	http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=22&PartDetailId=j2sdk-${JDK_VERSION}_${JDK_REVISION}-oth-JPR&SiteId=JSC&TransactionId=noreg
 
 CPIO?=		/usr/bin/cpio
 
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
-IGNORE=	You must manually fetch the Java 2 Development Kit ${PORTVERSION}\
-	archive (${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL},\
-	download the "Linux GNUZIP Tar shell script" into ${DISTDIR} and\
-	then run make again
+IGNORE=You must manually fetch the J2SE SDK self-extracting file for the Linux Platform (${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
 
 pre-extract:
@@ -62,7 +58,7 @@ pre-extract:
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@cd ${WRKDIR} \
-	&& ${TAIL} +295 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKDIR}/install.sfx \
+	&& ${TAIL} +296 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKDIR}/install.sfx \
 	&& ${CHMOD} +x ${WRKDIR}/install.sfx \
 	&& ${WRKDIR}/install.sfx > /dev/null
 
