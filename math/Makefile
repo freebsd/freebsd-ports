@@ -34,6 +34,7 @@
     SUBDIR += diehard
     SUBDIR += djbfft
     SUBDIR += drgeo
+    SUBDIR += e
     SUBDIR += eispack
     SUBDIR += emc2
     SUBDIR += entropy
