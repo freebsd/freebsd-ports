@@ -1,0 +1,29 @@
+bin/coverhunter
+lib/coverhunter/__init__.py
+lib/coverhunter/__init__.pyc
+lib/coverhunter/__init__.pyo
+lib/coverhunter/album.py
+lib/coverhunter/album.pyc
+lib/coverhunter/album.pyo
+lib/coverhunter/amazon.py
+lib/coverhunter/amazon.pyc
+lib/coverhunter/amazon.pyo
+lib/coverhunter/config.py
+lib/coverhunter/config.pyc
+lib/coverhunter/config.pyo
+lib/coverhunter/libhunter.py
+lib/coverhunter/libhunter.pyc
+lib/coverhunter/libhunter.pyo
+lib/coverhunter/musicfile.py
+lib/coverhunter/musicfile.pyc
+lib/coverhunter/musicfile.pyo
+lib/coverhunter/source.py
+lib/coverhunter/source.pyc
+lib/coverhunter/source.pyo
+%%DATADIR%%/CoverHunter.glade
+%%DATADIR%%/fetch_all.png
+%%DATADIR%%/nocover.gif
+%%DATADIR%%/picture.png
+%%DATADIR%%/searching.png
+@dirrm lib/coverhunter
+@dirrm %%DATADIR%%

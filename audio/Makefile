@@ -52,6 +52,7 @@
     SUBDIR += chordpack
     SUBDIR += cmp3
     SUBDIR += cmt
+    SUBDIR += coverhunter
     SUBDIR += cplay
     SUBDIR += crip
     SUBDIR += csound
