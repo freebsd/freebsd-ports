@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Nov 10 06:31:26 1998
-+++ Makefile	Sat Oct 28 06:38:38 2000
+--- Makefile.orig	Fri Mar  9 04:50:04 2001
++++ Makefile	Wed Mar 14 20:22:07 2001
 @@ -1,16 +1,16 @@
  #{{{script}}}#{{{ Linux, moria machines, gcc
 -CFLAGS=		-g -pipe -O2 -Wall -Wmissing-prototypes -Wstrict-prototypes -Wcast-qual -Wpointer-arith -Wcast-align -Wwrite-strings -Wmissing-declarations -Wnested-externs -pedantic -fno-common
@@ -35,16 +35,3 @@
  #LDFLAGS=	
  #MAKEDEPEND=	gcc -MM
  #}}}
-@@ -68,9 +67,9 @@
- #MAKEDEPEND=	makedepend -f-
- #}}}
- #{{{ DEC OSF/1, cc
--CFLAGS=		-O -std1 $(CPPFLAGS)
--CPPFLAGS=	-D_XOPEN_SOURCE -D_OSF_SOURCE
--LIBS=		-lcurses -lm
-+#CFLAGS=		-O -std1 $(CPPFLAGS)
-+#CPPFLAGS=	-D_XOPEN_SOURCE -D_OSF_SOURCE
-+#LIBS=		-lcurses -lm
- MAKEDEPEND=	mkdep -d
- #}}}
- #{{{ AIX 3, xlc
