@@ -296,6 +296,7 @@
     SUBDIR += ray++
     SUBDIR += rayshade
     SUBDIR += recmpeg
+    SUBDIR += ruby-evas
     SUBDIR += ruby-gd
     SUBDIR += ruby-gdchart
     SUBDIR += ruby-gdk_imlib
