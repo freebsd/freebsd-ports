@@ -16,7 +16,7 @@ COMMENT=	Desktop pager for the Fluxbox window manager
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 
-PKG_PLIST=	bin/fbpager
+PLIST_FILES=	bin/fbpager
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 
 post-install:
