@@ -1,30 +1,29 @@
-diff -r -u ../hypermail-orig/archive/Makefile.in archive/Makefile.in
---- ../hypermail-orig/archive/Makefile.in	Thu Aug 20 23:12:36 1998
-+++ archive/Makefile.in	Tue Jan  5 08:21:50 1988
-@@ -11,7 +11,7 @@
+--- archive/Makefile.in	Wed Nov 17 17:44:29 1999
++++ archive/Makefile.in.new	Mon Nov 22 16:21:56 1999
+@@ -14,7 +14,7 @@
+ #WARNINGS=$(WNOERROR) -ansi -pedantic -Wall -Wtraditional -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Waggregate-return -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Dlint
  
- CC=@CC@
-  
+ CC=@CC@ $(WARNINGS)
 -CFLAGS=@CFLAGS@
 +CFLAGS?=@CFLAGS@
+ INSTALL_PROG=@INSTALL@
  
  ###################################################
+@@ -25,7 +25,7 @@
  #
-@@ -24,7 +24,7 @@
- # This is a SAMPLE file.
+ # PLEASE read the README in this directory before continuing.
  
- # PROGS = hmail hrdmsg isnmail isn-rdmsg wuftpdmail wu-rdmsg nu-mail nu-rdmsg na-mail na-rdmsg
--PROGS = htestmail htestrdmsg 
-+PROGS = 
+-PROGS = msg2archive$(SUFFIX) rdmsg$(SUFFIX)
++PROGS =
  
  all: $(PROGS) 
  
-@@ -75,7 +75,7 @@
- 	lint $(LINT_FLAGS) $(SOURCE) | tee Lint.out
+@@ -48,7 +48,7 @@
+ 	rm -f $(OBJS) Lint.out
+ 	rm -f $(PROGS)
  
- #install: $(bindir)/isnmail $(bindir)/isn-rdmsg
--install: $(bindir)/hmail $(bindir)/hrdmsg
-+install: 
+-install: $(bindir)/msg2archive$(SUFFIX) $(bindir)/rdmsg$(SUFFIX)
++install:
  
- install_all: \
- 	$(bindir)/hmail \
+ $(bindir)/msg2archive$(SUFFIX):  msg2archive$(SUFFIX)
+ 	@if [ ! -d $(bindir) ]; then mkdir $(bindir); fi
