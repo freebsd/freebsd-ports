@@ -1,0 +1,8 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Reform/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Text/demo_ws.pl
+lib/perl5/site_perl/%%PERL_VER%%/Text/demo_table.pl
+lib/perl5/site_perl/%%PERL_VER%%/Text/demo_filler.pl
+lib/perl5/site_perl/%%PERL_VER%%/Text/demo_columns.pl
+lib/perl5/site_perl/%%PERL_VER%%/Text/demo.pl
+lib/perl5/site_perl/%%PERL_VER%%/Text/Reform.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Reform
