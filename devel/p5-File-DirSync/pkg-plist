@@ -1,6 +1,6 @@
-lib/perl5/site_perl/%%PERL_VER%%/File/DirSync.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/DirSync/.packlist
 bin/dirsync
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/File 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/DirSync 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File 2>/dev/null || true
+%%SITE_PERL%%/File/DirSync.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/DirSync/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/DirSync
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/File 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/File 2>/dev/null || true

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File-DirSync
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	File
@@ -19,6 +19,5 @@ PERL_CONFIGURE=	yes
 
 MAN1=		dirsync.1
 MAN3=		File::DirSync.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
