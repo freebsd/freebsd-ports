@@ -1,10 +1,11 @@
---- Makefile.PL.orig	Tue Jul  8 09:10:12 2003
-+++ Makefile.PL	Tue Jul  8 09:11:03 2003
-@@ -15,7 +15,7 @@
- 	}
- }
+--- Makefile.PL.orig	Sun Aug 15 18:33:03 2004
++++ Makefile.PL	Sun Aug 15 18:33:41 2004
+@@ -25,8 +25,7 @@
+ # testing.
+ print "Trying to find a serial port for testing...\n";
  unless (@SERIALS) {
--	@SERIALS=( "/dev/ttyS1", "/dev/cua01", "/dev/cua/b", "/dev/tty1" );
+-	@SERIALS=( "/dev/ttyS1", "/dev/cua01", "/dev/cua/b", "/dev/tty1",
+-		   "/dev/tty.modem" );
 +	@SERIALS=( "/dev/ttyd0", "/dev/cuaa0", "/dev/ucom0", "/dev/ttya", "/dev/ttyb" );
  	print "(use 'perl Makefile.PL TESTPORT=<DEVICE>' to override this search)\n";
  }
