@@ -3,7 +3,7 @@
 # Date created:				April 18th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#	$Id: Makefile,v 1.12 1999/03/29 17:09:03 jfitz Exp $
+#	$Id: Makefile,v 1.13 1999/07/29 03:26:36 foxfair Exp $
 #
 
 DISTNAME=	mrtg-2.8.6
@@ -41,7 +41,7 @@ do-install:
 		for file in ${WRKSRC}/images/*.gif; do \
 			${INSTALL_DATA} $$file ${PREFIX}/share/mrtg/; \
 		done
-		for file in SNMP_Session.pm SNMP_util.pm BER.pm; do \
+		for file in SNMP_Session.pm SNMP_util.pm BER.pm locales_mrtg.pm; do \
 			${INSTALL_DATA} ${WRKSRC}/run/$$file ${PREFIX}/lib/perl5/site_perl/${PERL_VER}; \
 		done
 		${INSTALL_PROGRAM} ${WRKSRC}/run/rateup ${PREFIX}/bin/
