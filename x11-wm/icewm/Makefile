@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	icewm
-PORTVERSION=	1.2.13
-PORTREVISION=	1
+PORTVERSION=	1.2.14
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +19,7 @@ WANT_GNOME=	yes
 USE_GNOME=	gnometarget
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOCONF_VER=	257
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS=	--enable-shaped-decorations \
@@ -30,14 +29,6 @@ CONFIGURE_ARGS=	--enable-shaped-decorations \
 		--with-kdedatadir=${LOCALBASE}/share \
 		--with-docdir=${PREFIX}/share/doc \
 		--with-mkfontdir=${NONEXISTENT}
-
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -80,6 +71,14 @@ CONFIGURE_ARGS+=	--disable-xinerama
 CONFIGURE_ARGS+=	--disable-x86-asm
 .endif
 
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
+
 post-patch:
 .for file in src/gnome2.cc
 	@${REINPLACE_CMD} -e \
@@ -97,7 +96,5 @@ post-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
 .endif
-	${CHOWN} root:kmem ${PREFIX}/bin/icewm
-	${CHMOD} 2555 ${PREFIX}/bin/icewm
 
 .include <bsd.port.post.mk>
