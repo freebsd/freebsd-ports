@@ -108,17 +108,17 @@ share/doc/apache/index.html.en-dist
 share/doc/apache/index.html.es-dist
 share/doc/apache/index.html.fr-dist
 share/doc/apache/index.html.it-dist
-share/doc/apache/index.html.ja.jis-dist
 share/doc/apache/index.html.ja.jis
 share/doc/apache/index.html.lu-dist
 share/doc/apache/index.html.nl-dist
 share/doc/apache/index.html.po.iso-pl
-share/doc/apache/index.html.po.iso-pl-dist
-share/doc/apache/index.html.pt-br
 share/doc/apache/index.html.pt-dist
 share/doc/apache/index.html.pt-br-dist
 share/doc/apache/index.html.se-dist
 @unexec rm -rf %B/index.html.??
+@unexec rm -rf %B/index.html.po.iso-pl-dist
+@unexec rm -rf %B/index.html.ja.jis-dist
+@unexec rm -rf %B/index.html.pt-br
 share/doc/apache/manual/LICENSE
 share/doc/apache/manual/bind.html
 share/doc/apache/manual/cgi_path.html
@@ -429,6 +429,7 @@ frontpage/%%FP_REV%%/admin/uninstal.htm
 frontpage/%%FP_REV%%/apache-fp/_vti_bin/fpexe
 frontpage/%%FP_REV%%/apache-fp/fp-patch-apache_1.3.3
 frontpage/%%FP_REV%%/apache-fp/fpexe.c
+@unexec if [ -f %B/suidkey ] ; then rm -f %B/suidkey* ; fi
 frontpage/%%FP_REV%%/bin/_vti_inf.htm
 frontpage/%%FP_REV%%/bin/fpsrvadm.exe
 frontpage/%%FP_REV%%/bin/postinfo.htm
@@ -579,24 +580,3 @@ frontpage/%%FP_REV%%/srcs/fp.suid.c
 @dirrm frontpage/%%FP_REV%%/srcs
 @dirrm frontpage/%%FP_REV%%
 @dirrm frontpage
-/usr/local/www/data
-/usr/local/www/data/images
-/usr/local/www/data/images/apache_pb.gif
-/usr/local/www/data/images/fplogo.gif
-/usr/local/www/data/images/powerlogo.gif
-/usr/local/www/data/index.html.ca
-/usr/local/www/data/index.html.cz
-/usr/local/www/data/index.html.de
-/usr/local/www/data/index.html.dk
-/usr/local/www/data/index.html.ee
-/usr/local/www/data/index.html.en
-/usr/local/www/data/index.html.es
-/usr/local/www/data/index.html.fr
-/usr/local/www/data/index.html.it
-/usr/local/www/data/index.html.ja.jis
-/usr/local/www/data/index.html.lu
-/usr/local/www/data/index.html.nl
-/usr/local/www/data/index.html.po.iso-pl
-/usr/local/www/data/index.html.pt
-/usr/local/www/data/index.html.pt-br
-/usr/local/www/data/index.html.se
