@@ -1,0 +1,26 @@
+bin/swigruby
+lib/libswigrb.a
+lib/libswigrb.so
+lib/swig_lib/ruby/Makefile.swig
+lib/swig_lib/ruby/exception.i
+lib/swig_lib/ruby/lang.map
+lib/swig_lib/ruby/ptrlang.i
+lib/swig_lib/ruby/ruby.swg
+lib/swig_lib/ruby/typemaps.i
+@dirrm lib/swig_lib/ruby
+share/doc/ruby/swigruby/ChangeLog
+share/doc/ruby/swigruby/README
+share/doc/ruby/swigruby/ja/README.ja
+@dirrm share/doc/ruby/swigruby/ja
+@dirrm share/doc/ruby/swigruby
+share/examples/ruby/swigruby/dbm/Makefile.swig
+share/examples/ruby/swigruby/dbm/DBM.i
+share/examples/ruby/swigruby/dbm/extconf.rb
+share/examples/ruby/swigruby/dbm/dbmtest.rb
+share/examples/ruby/swigruby/qt/Makefile.swig
+share/examples/ruby/swigruby/qt/qt.i
+share/examples/ruby/swigruby/qt/extconf.rb
+share/examples/ruby/swigruby/qt/hello.rb
+@dirrm share/examples/ruby/swigruby/dbm
+@dirrm share/examples/ruby/swigruby/qt
+@dirrm share/examples/ruby/swigruby
