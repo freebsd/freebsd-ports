@@ -1,7 +1,7 @@
 #!/bin/sh -
 #
 #	pre-configure script for Trn port to FreeBSD 3.0
-#	$Id: preconf,v 1.3 1996/12/06 23:58:51 ache Exp $
+#	$Id: pre-configure,v 1.1 1998/06/04 16:12:39 smace Exp $
 
 PortsDir=$PORTSDIR
   CurDir=$CURDIR
@@ -82,9 +82,9 @@ active='none'
 acttimes='nntp'
 d_acttimes='define'
 myactive='.falseactive'
-bin='${PREFIX}/bin'
-binexp='${PREFIX}/bin'
-installbin='${PREFIX}/bin'
+bin="${PREFIX}/bin"
+binexp="${PREFIX}/bin"
+installbin="${PREFIX}/bin"
 cc='cc'
 ccflags=''
 cppflags=''
@@ -148,7 +148,7 @@ d_vfork='define'
 d_voidsig='define'
 signal_t='void'
 defeditor='/usr/bin/vi'
-filexp='${PREFIX}/lib/trn/filexp'
+filexp="${PREFIX}/lib/trn/filexp"
 d_dirnamlen=''
 i_dirent='define'
 i_ptem='undef'
@@ -184,10 +184,10 @@ orgdist='none'
 statedist='none'
 mailer='/usr/sbin/sendmail'
 mailfile='/var/mail/%L'
-installmansrc='${PREFIX}/man/man1'
+installmansrc="${PREFIX}/man/man1"
 manext='1'
-mansrc='${PREFIX}/man/man1'
-mansrcexp='${PREFIX}/man/man1'
+mansrc="${PREFIX}/man/man1"
+mansrcexp="${PREFIX}/man/man1"
 mboxchar='F'
 c=''
 n='-n'
@@ -206,9 +206,9 @@ pager='/usr/bin/more'
 phost='.'
 phostcmd='hostname'
 prefshell='/bin/sh'
-installprivlib='${PREFIX}/lib/trn'
-privlib='${PREFIX}/lib/trn'
-privlibexp='${PREFIX}/lib/trn'
+installprivlib="${PREFIX}/lib/trn"
+privlib="${PREFIX}/lib/trn"
+privlibexp="${PREFIX}/lib/trn"
 rootid='0'
 sharpbang='#!'
 shsharp='true'
