@@ -1,0 +1,19 @@
+*** lib/OutputTool.pm.bak	Fri Jul 24 02:05:21 1998
+--- lib/OutputTool.pm	Tue Nov  3 13:14:37 1998
+***************
+*** 72,78 ****
+  
+  sub makeEndHits {
+  	my $self = shift;
+! 	return "<hr>";
+  }
+  
+  sub makeLinkOutput {
+--- 72,78 ----
+  
+  sub makeEndHits {
+  	my $self = shift;
+! 	return "</UL>";
+  }
+  
+  sub makeLinkOutput {
