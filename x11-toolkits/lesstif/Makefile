@@ -3,7 +3,7 @@
 # Date created:		December 10, 1996
 # Whom:			1wardd@airmail.net
 #
-# $Id: Makefile,v 1.30 1999/06/12 05:30:58 mharo Exp $
+# $Id: Makefile,v 1.31 1999/06/28 00:05:06 cpiazza Exp $
 #
 
 DISTNAME=	lesstif-0.88.1
@@ -73,8 +73,14 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/clients/Motif-1.2/mwm/alt.map ${PREFIX}/lib/X11/mwm
 	${INSTALL_DATA} ${WRKSRC}/clients/Motif-1.2/mwm/Mwm \
 		${PREFIX}/lib/X11/app-defaults/Mwm
-	${LN} -s ${PREFIX}/lib/libXm.so.1 ${PREFIX}/lib/libXm.so.1.2
-	${LN} -s ${PREFIX}/lib/libXm.so.2 ${PREFIX}/lib/libXm.so.2.0
+	${LN} -sf ${PREFIX}/LessTif/Motif1.2/lib/libMrm.so.1 ${PREFIX}/lib/
+	${LN} -sf ${PREFIX}/LessTif/Motif2.0/lib/libMrm.so.2 ${PREFIX}/lib/
+	${LN} -sf ${PREFIX}/LessTif/Motif1.2/lib/libMrm.a ${PREFIX}/lib/
+	${LN} -sf ${PREFIX}/lib/libMrm.so.1 ${PREFIX}/lib/libMrm.so
+	${LN} -sf ${PREFIX}/LessTif/Motif1.2/lib/libXm.so.1 ${PREFIX}/lib/
+	${LN} -sf ${PREFIX}/LessTif/Motif2.0/lib/libXm.so.2 ${PREFIX}/lib/
+	${LN} -sf ${PREFIX}/LessTif/Motif1.2/lib/libXm.a ${PREFIX}/lib/
+	${LN} -sf ${PREFIX}/lib/libXm.so.1 ${PREFIX}/lib/libXm.so
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 	${RM} -f ${PREFIX}/share/doc/LessTif/COPYING
 	${RM} -f ${PREFIX}/share/doc/LessTif/COPYING.LIB
