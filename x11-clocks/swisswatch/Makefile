@@ -3,7 +3,7 @@
 # Date created:         16 December 1995
 # Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
-# $Id: Makefile,v 1.3 1996/11/18 11:43:40 asami Exp $
+# $Id: Makefile,v 1.4 1998/08/07 22:28:04 asami Exp $
 #
 
 DISTNAME=	swisswatch-0.06
@@ -14,5 +14,6 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	sanpei@yy.cs.keio.ac.jp
 
 USE_IMAKE=	yes
+MAN1=		swisswatch.1
 
 .include <bsd.port.mk>

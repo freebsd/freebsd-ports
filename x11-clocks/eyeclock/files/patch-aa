@@ -1,34 +1,38 @@
---- Makefile.orig	Thu Sep  3 09:48:01 1998
-+++ Makefile	Sun Sep  6 14:59:03 1998
-@@ -1,20 +1,20 @@
+--- Makefile.orig	Thu Sep 17 01:42:06 1998
++++ Makefile	Sun Sep 20 20:12:26 1998
+@@ -1,20 +1,23 @@
++LIBS=	-L${X11BASE}/lib -lm -lX11 -lXt -lXmu -lXaw -lXpm
++LDFLAGS=-Wl,-rpath,${X11BASE}/lib
++CFLAGS+=-I${X11BASE}/include
++
  eyeclock :	eyegraph.o eyeinit.o eyemain.o eyequit.o eyestr.o eyetime.o
  			gcc eyegraph.o eyeinit.o eyemain.o eyequit.o eyestr.o \
  			eyetime.o \
 -			-o eyeclock -O -L/usr/X11R6/lib \
-+			-o eyeclock ${CFLAGS} -L/usr/X11R6/lib \
- 			-lm -lX11 -lXt -lXmu -lXaw -lXpm
+-			-lm -lX11 -lXt -lXmu -lXaw -lXpm
++			-o eyeclock ${CFLAGS} ${LIBS} ${LDFLAGS}
  eyegraph.o :	eyegraph.c
 -		gcc -c eyegraph.c -O -I/usr/X11R6/include
-+		gcc -c eyegraph.c ${CFLAGS} -I/usr/X11R6/include
++		gcc -c eyegraph.c ${CFLAGS}
  eyeinit.o :	eyeinit.c
 -		gcc -c eyeinit.c -O -I/usr/X11R6/include
-+		gcc -c eyeinit.c ${CFLAGS} -I/usr/X11R6/include
++		gcc -c eyeinit.c ${CFLAGS}
  eyemain.o :	eyemain.c
 -		gcc -c eyemain.c -O -I/usr/X11R6/include
-+		gcc -c eyemain.c ${CFLAGS} -I/usr/X11R6/include
++		gcc -c eyemain.c ${CFLAGS}
  eyequit.o :	eyequit.c
 -		gcc -c eyequit.c -O -I/usr/X11R6/include
-+		gcc -c eyequit.c ${CFLAGS} -I/usr/X11R6/include
++		gcc -c eyequit.c ${CFLAGS}
  eyestr.o :	eyestr.c
 -		gcc -c eyestr.c -O -I/usr/X11R6/include
-+		gcc -c eyestr.c ${CFLAGS} -I/usr/X11R6/include
++		gcc -c eyestr.c ${CFLAGS}
  eyetime.o :	eyetime.c
 -		gcc -c eyetime.c -O -I/usr/X11R6/include
-+		gcc -c eyetime.c ${CFLAGS} -I/usr/X11R6/include
++		gcc -c eyetime.c ${CFLAGS}
  clean :
  		rm *.o eyeclock
  backup :
-@@ -36,19 +36,19 @@
+@@ -36,19 +39,19 @@
  		cp sample2 sample2.bak
  		cp sample2.xpm sample2.xpm.bak
  install :

@@ -3,7 +3,7 @@
 # Date created:				10th February 1995
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.7 1998/02/18 18:08:23 vanilla Exp $
+# $Id: Makefile,v 1.8 1998/08/07 22:28:05 asami Exp $
 #
 
 DISTNAME=	xdaliclock-2.11
@@ -14,5 +14,6 @@ MASTER_SITE_SUBDIR=	applications
 MAINTAINER=	gpalmer@FreeBSD.ORG
 
 USE_IMAKE=	yes
+MAN1=		xdaliclock.1
 
 .include <bsd.port.mk>

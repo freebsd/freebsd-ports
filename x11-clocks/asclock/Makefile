@@ -3,7 +3,7 @@
 # Date created:        20 June 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1997/11/04 09:03:01 tg Exp $
+# $Id: Makefile,v 1.2 1998/08/07 22:28:02 asami Exp $
 #
 
 DISTNAME=	asclock
@@ -16,6 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
 
 USE_IMAKE=	yes
+MAN1=		asclock.1
 
 pre-configure:
 	(cd ${WRKSRC}; \

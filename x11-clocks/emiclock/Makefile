@@ -3,7 +3,7 @@
 # Date created:		15 March 1995
 # Whom:			Nobuhiro Yasutomi
 #
-# $Id: Makefile,v 1.9 1998/01/23 06:59:22 itojun Exp $
+# $Id: Makefile,v 1.10 1998/08/07 22:28:03 asami Exp $
 #
 
 DISTNAME=	emiclock-1.0.4
@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.plaza.hitachi-sk.co.jp/pub/EmiClock/X11/
 MAINTAINER=	nobu@psrc.isac.co.jp
 
 USE_IMAKE=	yes
+MAN1=		emiclock.1
 
 LANGRES=	resources/R6/EUC/EmiClock.ad
 LANGDIR=	$(X11BASE)/lib/X11/ja_JP.EUC/app-defaults
