@@ -90,6 +90,7 @@
     SUBDIR += hs-port
     SUBDIR += icegradient
     SUBDIR += inti
+    SUBDIR += inti-gconf
     SUBDIR += itk
     SUBDIR += iwidgets
     SUBDIR += jx
