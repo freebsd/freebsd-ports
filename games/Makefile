@@ -270,6 +270,7 @@
     SUBDIR += rtcw-paks
     SUBDIR += rubix
     SUBDIR += scid
+    SUBDIR += scorched3d-devel
     SUBDIR += scummvm
     SUBDIR += sdlroids
     SUBDIR += seabattle
