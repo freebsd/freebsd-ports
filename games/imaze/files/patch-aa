@@ -1,5 +1,5 @@
 *** source/Makefile.orig	Thu Feb 22 23:01:18 1996
---- source/Makefile	Tue Nov 19 11:45:31 1996
+--- source/Makefile	Tue Nov 19 14:50:50 1996
 ***************
 *** 111,123 ****
   	  all
@@ -19,7 +19,7 @@
   	  all
   
   freebsd:
-+ .if defined(HAVE_MOTIF)
++ .if defined(HAVE_MOTIF) && defined(FORCE_MOTIF)
 + 	$(MAKE) \
 + 	  GRAF=MOTIF \
 + 	  GRAFLIBS='$$(MOTIFLIB) $$(MOTIFLIBS)' \
