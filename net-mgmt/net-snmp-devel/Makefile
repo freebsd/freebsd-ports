@@ -14,17 +14,11 @@ MASTER_SITE_SUBDIR= net-snmp
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	An extendable SNMP implementation
 
-.if !exists(/etc/rc.subr)
-RUN_DEPENDS=	${LOCALBASE}/etc/rc.subr:${PORTSDIR}/sysutils/rc_subr
-RC_SUBR=	${LOCALBASE}/etc/rc.subr
-.else
-RC_SUBR=	/etc/rc.subr
-.endif
-
 USE_PERL5=	yes
 USE_REINPLACE=	yes
 USE_AUTOCONF_VER=213
 USE_LIBTOOL=	yes
+USE_RC_SUBR=	yes
 INSTALLS_SHLIB=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 NO_LATEST_LINK=	yes
