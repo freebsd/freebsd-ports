@@ -4,10 +4,14 @@ include/lauxlib.h
 include/lua.h
 include/lualib.h
 lib/liblua.a
+lib/liblua.so
+lib/liblua.so.5
 lib/liblualib.a
-share/doc/lua/logo.gif
-share/doc/lua/lua.html
-share/doc/lua/luac.html
-share/doc/lua/manual.html
-share/doc/lua/readme.html
-@dirrm share/doc/lua
+lib/liblualib.so
+lib/liblualib.so.5
+%%DOCSDIR%%/logo.gif
+%%DOCSDIR%%/lua.html
+%%DOCSDIR%%/luac.html
+%%DOCSDIR%%/manual.html
+%%DOCSDIR%%/readme.html
+@dirrm %%DOCSDIR%%
