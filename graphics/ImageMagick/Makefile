@@ -29,6 +29,10 @@ BUILD_DEPENDS=	gs:${PORTSDIR}/print/ghostscript55 \
 		mpeg2decode:${PORTSDIR}/graphics/mpeg2codec \
 		picttoppm:${PORTSDIR}/graphics/netpbm \
 		fig2dev:${PORTSDIR}/print/transfig
+RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript55 \
+		mpeg2decode:${PORTSDIR}/graphics/mpeg2codec \
+		picttoppm:${PORTSDIR}/graphics/netpbm \
+		fig2dev:${PORTSDIR}/print/transfig
 
 USE_PERL5=	yes
 USE_XLIB=	yes
