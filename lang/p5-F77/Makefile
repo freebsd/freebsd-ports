@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ExtUtils-F77
-PORTVERSION=	1.13
+PORTVERSION=	1.14
 CATEGORIES=	lang perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	ExtUtils
@@ -17,7 +17,6 @@ COMMENT=	Helps link C programs with Fortran subroutines
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		ExtUtils::F77.3
 
 .include <bsd.port.pre.mk>
