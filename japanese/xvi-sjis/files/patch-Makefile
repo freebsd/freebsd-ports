@@ -1,0 +1,68 @@
+--- Makefile.orig	Tue Aug 27 14:27:05 2002
++++ Makefile	Tue Aug 27 14:27:05 2002
+@@ -12,15 +12,19 @@
+ #	Makefile for CC for 386bsd
+ #
+ #***
++
++PROG=	sxvi
++MAN1=	../doc/xvi.1
+  
+ SYSDEFS=	-DUNIX -DBSD386
+ INCDIRS=
+ 
+-LIBS=		-ltermcap
++LIBS=		-lcurses
++#LIBS=		-ltermcap
+ LDFLAGS=
+ 
+-CFLAGS= 	$(SYSDEFS) $(INCDIRS) -O
+-LINTFLAGS=	$(SYSDEFS) $(INCDIRS) -ah
++CFLAGS+= 	${SYSDEFS} ${INCDIRS} -DHELPFILE=\"/usr/local/share/xvi/sxvi.help\"
++LINTFLAGS=	${SYSDEFS} ${INCDIRS} -ah
+ 
+ MACHSRC=	unix.c termcap.c defscr.c
+ MACHOBJ=	unix.o termcap.o defscr.o
+@@ -42,28 +46,30 @@
+ 		regexp.o screen.o search.o signal.o startup.o status.o \
+ 		tags.o undo.o version.o windows.o yankput.o kanji.o
+ 
+-all:		xvi
++all:		${PROG}
+ 
+-xvi:		$(GENOBJ) $(MACHOBJ)
+-		$(CC) $(CFLAGS) -o xvi $(GENOBJ) $(MACHOBJ) $(LIBS)
++${PROG}:		${GENOBJ} ${MACHOBJ}
++		${CC} ${CFLAGS} -o $@ ${GENOBJ} ${MACHOBJ} ${LIBS}
+ 
+-.c.o:		$< $(GENINC) $(MACHINC) param.c
+-		$(CC) $(CFLAGS) -c $<
++.c.o:		$< ${GENINC} ${MACHINC} param.c
++		${CC} ${CFLAGS} -c $<
+ 
+ lint:
+-		lint $(LINTFLAGS) $(GENSRC) $(MACHSRC)
++		lint ${LINTFLAGS} ${GENSRC} ${MACHSRC}
+ 
+ listsrc:
+-		@echo $(GENSRC) $(MACHSRC) $(GENINC) $(MACHINC)
++		@echo ${GENSRC} ${MACHSRC} ${GENINC} ${MACHINC}
+ 
+ listobj:
+-		@echo $(GENOBJ) $(MACHOBJ)
++		@echo ${GENOBJ} ${MACHOBJ}
+ 
+ 
+-tags:		$(GENSRC) $(MACHSRC)
+-		ctags -t $(GENSRC) $(MACHSRC) $(GENINC) $(MACHINC)
++tags:		${GENSRC} ${MACHSRC}
++		ctags -t ${GENSRC} ${MACHSRC} ${GENINC} ${MACHINC}
+ 
+ clean:
+-		rm $(GENOBJ) $(MACHOBJ) xvi
++		rm -f ${GENOBJ} ${MACHOBJ} ${PROG}
++
++${GENOBJ}: 	${GENINC} ${MACHINC}
+ 
+-$(GENOBJ): 	$(GENINC) $(MACHINC)
++.include <bsd.prog.mk>
