@@ -234,6 +234,7 @@
     SUBDIR += p5-Devel-Symdump
     SUBDIR += p5-Errno
     SUBDIR += p5-File-BasicFlock
+    SUBDIR += p5-File-Binary
     SUBDIR += p5-File-Lock
     SUBDIR += p5-File-MMagic
     SUBDIR += p5-File-Slurp
