@@ -16,12 +16,17 @@ MAINTAINER=	ports@FreeBSD.org
 
 IGNOREFILES=	${DISTNAME}${EXTRACT_SUFX}
 
+MAKEFILE=	Makefile.unix
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
+ALL_TARGET=	tr2latex
 MAN1=		tr2latex.1
 
-post-extract:
-	${CP} ${WRKSRC}/Makefile.unix ${WRKSRC}/Makefile
-
-pre-install:
-	${MKDIR} ${PREFIX}/share/texmf/tex/latex/misc
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/tr2latex ${PREFIX}/bin/tr2latex
+	${INSTALL_MAN} ${WRKSRC}/tr2latex.man ${MANPREFIX}/man/man1/tr2latex.1
+	@${MKDIR} ${PREFIX}/share/texmf/tex/latex/misc
+.for file in troffman.sty troffms.sty
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/texmf/tex/latex/misc
+.endfor
 
 .include <bsd.port.mk>
