@@ -55,7 +55,7 @@ RUN_DEPENDS+=	urlview:${PORTSDIR}/textproc/urlview
 DIST_SUBDIR=	mutt
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=  CC="${CC} -I${PREFIX}/include" LDFLAGS=-L${PREFIX}/lib
+CONFIGURE_ENV=  CC="${CC} -I${LOCALBASE}/include" LDFLAGS=-L${LOCALBASE}/lib
 CONFIGURE_ARGS= --enable-pop --enable-imap --enable-flock --disable-fcntl  \
 		--with-sharedir=${PREFIX}/share/mutt \
 		--with-docdir=${PREFIX}/share/doc/mutt --with-charmaps \
