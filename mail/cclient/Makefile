@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	cclient
-PORTVERSION=	0104051333
+PORTVERSION=	0104101757
 CATEGORIES=	mail devel
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
+		ftp://ftp.nuug.no/pub/anders/distfiles/%SUBDIR%/ \
+		http://www.freenix.no/~anders/%SUBDIR%/ \
 		ftp://ftp.funet.fi/pub/mirrors/ftp.cac.washington.edu/imap/%SUBDIR%/ \
 		http://mirror.nucba.ac.jp/mirror/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
 DISTNAME=	imap-2001.BETA.SNAP-${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	anders@fix.no
 
 INSTALLS_SHLIB=	yes
 ALL_TARGET=	bsf
