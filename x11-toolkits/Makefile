@@ -106,7 +106,6 @@
     SUBDIR += ocaml-lablgtk
     SUBDIR += ocaml-lablgtk2
     SUBDIR += open-motif
-    SUBDIR += open-motif-jdk
     SUBDIR += p5-GdkImlib
     SUBDIR += p5-GdkPixbuf
     SUBDIR += p5-Glade2
