@@ -1,0 +1,39 @@
+#!/bin/sh 
+
+USER=popa3d
+UID=89
+GID=89
+GROUP=popa3d
+GECOS="popa3d"
+HOME=/nonexistent
+SHELL=/sbin/nologin
+
+case $2 in
+    PRE-INSTALL)
+	which -s pw || {
+	    cat << EOF
+
+I see that it is missing the "pw" utility. I need this utility.
+Please get it and install it, and try again.
+
+EOF
+	    exit 1
+	}
+	pw groupshow $GROUP > /dev/null 2>&1 || {
+	    pw groupadd $GROUP -g $GID;
+	}
+
+	pw usershow $USER > /dev/null 2>&1 || {
+	    pw useradd $USER -g $GROUP -u $UID -h - -d $HOME -s $SHELL -c "$GECOS";
+	}
+
+	;;
+    POST-INSTALL)
+
+	;;
+    *)
+	echo "usage: $0 <pkg-name> {PRE-INSTALL|POST-INSTALL}"
+	exit 64
+esac
+
+exit 0

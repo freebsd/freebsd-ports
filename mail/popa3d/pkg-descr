@@ -1,0 +1,14 @@
+The popa3d goals
+================
+
+Well, the goals themselves are obvious; they"re probably the same for most
+other POP3 servers as well. It"s their priority that differs. For popa3d,
+the goals are:
+
+1. Security (to the extent that is possible with POP3 at all, of course).
+2. Reliability (again, as limited by the mailbox format and the protocol).
+3. RFC compliance (slightly relaxed to work with real-world POP3 clients).
+4. Performance (limited by the more important goals, above).
+
+-- Sergey Samoyloff
+gonza@techline.ru
