@@ -222,6 +222,7 @@
     SUBDIR += php5-dbx
     SUBDIR += php5-filepro
     SUBDIR += php5-interbase
+    SUBDIR += php5-mssql
     SUBDIR += phpmyadmin
     SUBDIR += phppgadmin
     SUBDIR += postgis
