@@ -10393,6 +10393,7 @@ xdu		ports/sysutils/xdu
 xdvi		ports/print/xdvi
 xdvik		ports/print/xdvik
 xdvshow		ports/multimedia/xdvshow
+xdx		ports/comms/xdx
 xearth		ports/astro/xearth
 xed		ports/editors/xed
 xeji		ports/games/xeji
