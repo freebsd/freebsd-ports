@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lua
-PORTVERSION=	3.2.2
+PORTVERSION=	4.0
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.tecgraf.puc-rio.br/pub/lua/ \
 		ftp://csg.uwaterloo.ca/pub/lhf/lua/ \
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.tecgraf.puc-rio.br/pub/lua/ \
 		ftp://ftp.ntua.gr/pub/lang/lua/ \
 		ftp://ftp.uni-trier.de/pub/languages/lua/ \
 		ftp://ftp.gwdg.de/pub/languages/lua/
-DISTNAME=	lua-3.2
+DISTNAME=	lua-4.0
 
 MAINTAINER=	richard@homemail.com
 
@@ -25,7 +25,7 @@ do-install:
 	@ ${MKDIR} ${PREFIX}/share/doc/lua
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/bin/lua ${PREFIX}/bin
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/bin/luac ${PREFIX}/bin
-	@ ${INSTALL_MAN} ${WRKSRC}/doc/luac.man ${PREFIX}/man/man1/luac.1
+	@ ${INSTALL_MAN} ${WRKSRC}/doc/luac.1 ${PREFIX}/man/man1/luac.1
 	@ ${INSTALL_DATA} ${WRKSRC}/doc/idx.html ${PREFIX}/share/doc/lua
 	@ ${INSTALL_DATA} ${WRKSRC}/doc/index.html ${PREFIX}/share/doc/lua
 	@ ${INSTALL_DATA} ${WRKSRC}/doc/luac.html ${PREFIX}/share/doc/lua
