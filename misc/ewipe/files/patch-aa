@@ -1,18 +1,19 @@
---- ewipe.orig	Fri Oct 17 16:19:46 1997
-+++ ewipe	Fri Oct 17 16:20:16 1997
+--- ewipe.orig	Fri Dec  5 10:00:10 1997
++++ ewipe	Fri Dec  5 10:54:04 1997
 @@ -1,6 +1,6 @@
  #!/bin/sh
  # the next line restarts using wish \
 -exec wish "$0" "--" "$@"
-+exec /usr/local/bin/wish4.2jp "$0" "--" "$@"
++exec wish4.2jp "$0" "--" "$@"
  
  #                                                #
  #     EWIPE: Extended WIPE (Editor for WIPE)     #
-@@ -21,6 +21,7 @@
+@@ -20,7 +20,7 @@
+ #     set PATH /usr/local/lib/ewipe              #
  #                                                #
  
- lappend auto_path .
-+lappend auto_path /usr/local/lib/ewipe
+-set PATH .
++set PATH /usr/local/lib/ewipe
  
  ##################################################
  
