@@ -66,6 +66,7 @@
     SUBDIR += paraget
     SUBDIR += pavuk
     SUBDIR += pftpd
+    SUBDIR += php4-curl
     SUBDIR += proftpd
     SUBDIR += proftpd-mysql
     SUBDIR += profxp
