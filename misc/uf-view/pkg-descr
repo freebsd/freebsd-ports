@@ -1,6 +1,8 @@
-uf-view is a Gnome viewer for the UserFriendly comic.
-It also supports MegaTokyo, Penny Arcade, Calvin and Hobbes and
-Dilbert.  This port also includes a patch by Drew Ogle to view
-the comic goats.
+UF-View is a calendar-based comic viewer. It was first hacked to view the
+"User Friendly" comic, and was extended to allow other reccuring comics to be
+viewed as well.
 
-WWW: http://hadess.net/uf-view.shtml
+It also supports Angst Technology, Calvin and Hobbes, Little Gamers,
+Penny Arcade, and PvP.
+
+WWW: http://www.hadess.net/misc-code.php3
