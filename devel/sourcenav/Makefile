@@ -8,8 +8,7 @@
 PORTNAME=	SN
 PORTVERSION=	4.5.2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.freesoftware.com/pub/sourceware/%SUBDIR% \
-	ftp://ftp.unina.it/pub/Unix/cygnus/%SUBDIR% \
+MASTER_SITES=	ftp://ftp.unina.it/pub/Unix/cygnus/%SUBDIR% \
 	ftp://unix.hensa.ac.uk/mirrors/sourceware.cygnus.com/pub/%SUBDIR% \
 	ftp://ftp.funet.fi/pub/mirrors/sourceware.cygnus.com/pub/%SUBDIR% \
 	ftp://gd.tuwien.ac.at/gnu/sourceware/%SUBDIR% \

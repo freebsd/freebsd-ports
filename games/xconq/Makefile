@@ -9,7 +9,6 @@ PORTNAME=	xconq
 PORTVERSION=	7.4.1
 CATEGORIES=	games
 MASTER_SITES=	ftp://sources.redhat.com/pub/xconq/ \
-		ftp://ftp.freesoftware.com/pub/sourceware/xconq/ \
 		ftp://unix.hensa.ac.uk/mirrors/sourceware.cygnus.com/pub/xconq/
 
 MAINTAINER=	ports@freebsd.org

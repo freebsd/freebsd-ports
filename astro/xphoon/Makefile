@@ -8,8 +8,7 @@
 PORTNAME=	xphoon
 PORTVERSION=	1991.9.18
 CATEGORIES=	astro x11
-MASTER_SITES=	ftp://ftp.x.org/R5contrib/ \
-		ftp://ftp.freesoftware.com/pub/X11/R5contrib/
+MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTNAME=	xphoon
 EXTRACT_SUFX=	.tar.Z
 

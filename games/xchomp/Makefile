@@ -8,8 +8,7 @@
 PORTNAME=	xchomp
 PORTVERSION=	pl1
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.x.org/R5contrib/ \
-		ftp://ftp.freesoftware.com/pub/X11/R5contrib/
+MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 
 MAINTAINER=		ports@FreeBSD.org
 

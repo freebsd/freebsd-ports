@@ -8,8 +8,7 @@
 PORTNAME=	slingshot
 PORTVERSION=	2.1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://ftp.x.org/R5contrib/ \
-		ftp://ftp.freesoftware.com/pub/X11/R5contrib/
+MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTNAME=	SlingShot${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 

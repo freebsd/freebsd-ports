@@ -8,8 +8,7 @@
 PORTNAME=	xvmahjongg
 PORTVERSION=	2.1
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.x.org/R5contrib/ \
-		ftp://ftp.freesoftware.com/pub/X11/R5contrib/
+MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTFILES=	${PORTNAME}${PORTVERSION}.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org

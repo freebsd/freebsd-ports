@@ -30,7 +30,6 @@ PLIST=			${PKGDIR}/pkg-plist.${MACHINE_ARCH}
 MD5_FILE=		${MASTERDIR}/distinfo.${MACHINE_ARCH}
 
 RPM_MIRRORS=		\
-	ftp://ftp.freesoftware.com/pub/linux/redhat/__DIR__/ \
 	ftp://ftp.redhat.com/pub/redhat/__DIR__/ \
 	ftp://ftp.infomagic.com/pub/mirrors/linux/RedHat/__DIR__/ \
 	ftp://ftp.crc.ca/mirrors/by-site/ftp.redhat.com/redhat/__DIR__/ \

@@ -30,7 +30,6 @@ NO_FILTER_SHLIBS=	yes
 NO_MTREE=		yes
 
 RPM_MIRRORS=		\
-	ftp://ftp.freesoftware.com/pub/linux/redhat/__DIR__/ \
 	ftp://ftp.redhat.com/pub/redhat/__DIR__/ \
 	ftp://ftp.infomagic.com/pub/mirrors/linux/redhat/__DIR__/ \
 	ftp://ftp.crc.ca/pub/systems/linux/redhat/ftp.redhat.com/__DIR__/ \

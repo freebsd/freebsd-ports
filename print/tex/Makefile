@@ -8,8 +8,7 @@
 PORTNAME=	tex
 PORTVERSION=	3.14159
 CATEGORIES=	print
-MASTER_SITES=   ftp://ftp.freesoftware.com/pub/tex/package/  \
-		${MASTER_SITE_TEX_CTAN}
+MASTER_SITES=   ${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	systems/web2c
 DISTNAME=	web2c-7.2
 DISTFILES=	web2c-7.2b.tar.gz web-7.2a.tar.gz tex_base.tar.gz cm_tfm.tar.gz \

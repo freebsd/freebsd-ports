@@ -12,8 +12,7 @@ PORTREVISION=	0
 PORTNAME=	xloadimage
 PORTVERSION=	${VERSION}.${REVISION}
 CATEGORIES=	x11 graphics
-MASTER_SITES=	ftp://ftp.x.org/R5contrib/ \
-		ftp://ftp.freesoftware.com/pub/X11/R5contrib/
+MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTNAME=	${PORTNAME}.${VERSION}
 PATCH_SITES=	ftp://ftp.debian.org/debian/pool/main/x/xloadimage/ \
 		ftp://ftp.de.debian.org/debian/pool/main/x/xloadimage/
