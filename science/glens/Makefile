@@ -27,7 +27,9 @@ CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
 
 post-patch:
-	@${REINPLACE_CMD} 's|-O6||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|-O6||g ; \
+		s|-malign-double||g' ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
