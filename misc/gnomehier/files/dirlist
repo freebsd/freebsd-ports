@@ -86,6 +86,7 @@ share/gnome/bug-buddy
 share/gnome/bug-buddy/bugzilla
 share/gnome/bug-buddy/bugzilla/gnome
 share/gnome/bug-buddy/bugzilla/ximian
+share/gnome/capplets
 share/gnome/control-center
 share/gnome/control-center-2.0
 share/gnome/control-center-2.0/capplets
