@@ -1,41 +1,67 @@
-.\" $Id: tcpmssd.8,v 1.1 2000/07/17 17:58:03 ru Exp $
-.Dd July 17, 2000
+.\" Copyright (c) 2000 Ruslan Ermilov
+.\" All rights reserved.
+.\"
+.\" Redistribution and use in source and binary forms, with or without
+.\" modification, are permitted provided that the following conditions
+.\" are met:
+.\" 1. Redistributions of source code must retain the above copyright
+.\"    notice, this list of conditions and the following disclaimer.
+.\" 2. Redistributions in binary form must reproduce the above copyright
+.\"    notice, this list of conditions and the following disclaimer in the
+.\"    documentation and/or other materials provided with the distribution.
+.\"
+.\" THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+.\" ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+.\" IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+.\" ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+.\" FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+.\" DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+.\" OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+.\" HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+.\" LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+.\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+.\" SUCH DAMAGE.
+.\"
+.\" $FreeBSD$
+.\"
+.Dd June 11, 2004
 .Dt TCPMSSD 8
-.Os FreeBSD
+.Os
 .Sh NAME
 .Nm tcpmssd
-.Nd TCP Maximum Segment Size option corrector
+.Nd "TCP Maximum Segment Size option corrector"
 .Sh SYNOPSIS
 .Nm
-.Op Fl v
+.Op Fl bv
 .Fl p Ar port
-.Eo \&{
-.Fl i Ar iface | Fl m Ar mtu
-.Ec \&}
+.Brq Fl i Ar iface | Fl m Ar mtu
 .Sh DESCRIPTION
+The
 .Nm
-is a program that adjusts outgoing TCP SYN packets so that the maximum
+utility adjusts TCP SYN packets so that the maximum
 receive segment size is not greater than the amount allowed by the
-interface MTU.
+interface's MTU.
 .Pp
 This is necessary in many setups to avoid problems caused by routers that
 drop ICMP
-.Dq Datagram Too Big
-messages, thus breaking Path MTU discovery algorithm (RFC 1191).
+.Dq "Datagram Too Big"
+messages, thus breaking the Path MTU Discovery algorithm (RFC 1191).
 Without these messages, the originating machine sends data, it passes
 the rogue router then hits a machine that has an MTU that is not big
 enough for the data.
 Because the IP
-.Dq don't fragment
+.Dq "don't fragment"
 option is set, this machine sends an ICMP
-.Dq Datagram Too Big
+.Dq "Datagram Too Big"
 message back to the originator and drops the packet.
 The rogue router drops the ICMP and the originator never gets to
 discover that it must reduce the Path MTU value or exclude the IP
-.Dq don't fragment
+.Dq "don't fragment"
 option from its outgoing data.
 .Pp
+The
 .Nm
+utility
 normally runs in the background as a daemon.
 It intercepts TCP packets
 from a
@@ -47,15 +73,25 @@ specified with the
 option and reduces the value of TCP MSS option if necessary so that
 the incoming TCP messages will pass through this host without need to
 send ICMP
-.Dq Datagram Too Big
+.Dq "Datagram Too Big"
 messages.
 .Pp
-The maximum value for the TCP MSS option is determined based on a MTU
+The maximum value for the TCP MSS option is determined based on an MTU
 given either as an absolute value with the
 .Fl m
 option or derived from a network interface specified with the
 .Fl i
 option.
+.Pp
+If run with the
+.Fl b
+option,
+.Nm
+will attempt to update the TCP MSS option on both incoming and outgoing
+TCP segments, as delivered on the
+.Xr divert 4
+socket.
+By default, only outgoing TCP segments are examined.
 .Pp
 If run with the
 .Fl v
@@ -65,7 +101,7 @@ does not detach from its controlling terminal and writes various diagnostic
 messages to the standard error output.
 .Pp
 The following steps are necessary to run
-.Nm No :
+.Nm :
 .Bl -enum
 .It
 Build your kernel with the following options:
@@ -87,8 +123,9 @@ manual page for details.
 .El
 .Sh SEE ALSO
 .Xr divert 4 ,
-.Xr ipfw 8 .
+.Xr ipfw 8
 .Sh AUTHORS
+.An -nosplit
 This program was written by
 .An Ruslan Ermilov Aq ru@FreeBSD.org
 based on work done by

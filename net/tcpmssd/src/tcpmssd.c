@@ -23,7 +23,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $Id: tcpmssd.c,v 1.5 2000/07/17 17:57:24 ru Exp $
+ * $FreeBSD$
  */
 
 #include <sys/param.h>
@@ -50,7 +50,9 @@ static int if_mtu(const char *, u_long *);
 static void sigterm_handler(int);
 static void usage(void);
 
-int verbose;
+static int both;
+static int verbose;
+
 char pidfilename[MAXPATHLEN];
 
 /*-
@@ -83,8 +85,11 @@ main(int argc, char *argv[])
 	ifindex = 0;
 	rtsock = -1;
 
-	while ((ch = getopt(argc, argv, "i:m:p:v")) != -1)
+	while ((ch = getopt(argc, argv, "bi:m:p:v")) != -1)
 		switch (ch) {
+		case 'b':
+			both = 1;
+			break;
 		case 'i':
 			if (!(ifindex = if_mtu(optarg, &mtu))) {
 				errx(1, "unknown interface %s", optarg);
@@ -217,7 +222,7 @@ main(int argc, char *argv[])
 			 * TCP packets with zero fragment offset
 			 * and correct total and header lengths.
 			 */
-			if (sin.sin_addr.s_addr == INADDR_ANY &&
+			if ((both || sin.sin_addr.s_addr == INADDR_ANY) &&
 			    pip->ip_p == IPPROTO_TCP &&
 			    (ntohs(pip->ip_off) & IP_OFFMASK) == 0 &&
 			    ntohs(pip->ip_len) == pktlen &&
