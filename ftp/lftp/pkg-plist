@@ -7,8 +7,11 @@ etc/lftp.conf.sample
 %%PORTDOCS%%share/doc/lftp/FAQ
 %%PORTDOCS%%share/doc/lftp/NEWS
 %%PORTDOCS%%share/doc/lftp/README
+%%PORTDOCS%%share/doc/lftp/README.debug-levels
+%%PORTDOCS%%share/doc/lftp/README.modules
 %%PORTDOCS%%share/doc/lftp/THANKS
 %%PORTDOCS%%share/doc/lftp/TODO
+%%PORTDOCS%%share/doc/lftp/FEATURES
 share/lftp/import-ncftp
 share/lftp/import-netscape
 share/locale/de/LC_MESSAGES/lftp.mo
