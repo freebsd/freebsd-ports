@@ -8,7 +8,7 @@
 PORTNAME=	kon2
 PORTVERSION=	0.3
 PKGNAMESUFFIX=	-${KONFONT}
-CATEGORIES=	japanese
+CATEGORIES+=	japanese # '+=' is for slave ports
 # note kon is only in first directory and fonts are only in second directory
 MASTER_SITES=	ftp://ftp.tut.ac.jp/Linux/Packages/Utils/ \
 		${MASTER_SITE_PORTS_JP} \
@@ -19,7 +19,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		k14.bdf 7x14rk.bdf \
 		jiskan16.bdf 8x16rk.bdf
 
-MAINTAINER=	shige@FreeBSD.org
+MAINTAINER?=	shige@FreeBSD.org # '+=' is for slave ports
 COMMENT=	Kanji On Console -- Display kanji characters on your own console
 
 ONLY_FOR_ARCHS=	i386
