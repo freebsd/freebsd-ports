@@ -86,6 +86,7 @@ INSTALLED_SCRIPTS=	${PREFIX}/bin/irb \
 			${PREFIX}/bin/h2rb
 
 OBSOLETED_MODULES=	dl \
+			erb \
 			fileutils \
 			optparse \
 			racc-runtime \
