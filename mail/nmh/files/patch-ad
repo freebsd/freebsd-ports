@@ -1,0 +1,11 @@
+--- uip/sortm.c--	Thu Mar 18 00:12:19 2004
++++ uip/sortm.c	Thu Mar 18 00:26:50 2004
+@@ -439,8 +439,6 @@
+ 			if(uprf(cp, "re:"))
+ 			    cp += 2;
+ 			else {
+-			    if (isalnum(c))
+-				*cp2++ = isupper(c) ? tolower(c) : c;
+ 			    break;
+ 			}
+ 		    }
