@@ -79,6 +79,7 @@
     SUBDIR += libicq
     SUBDIR += libnet
     SUBDIR += libsocket++
+    SUBDIR += libunp
     SUBDIR += licq
     SUBDIR += macipgw
     SUBDIR += mars_nwe
