@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.54 1998/05/23 08:53:38 obrien Exp $
+# $Id: Makefile,v 1.55 1998/06/12 07:55:06 dima Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -110,10 +110,8 @@ post-install:
 		ln -sf $${file}1.1.gz ${PREFIX}/man/man1/$${file}.1.gz; \
 	done
 	rm -f ${PREFIX}/man/man1/slogin.1
-	rm -f ${PREFIX}/man/man1/slogin1.1
 	rm -f ${PREFIX}/man/man8/sshd.8
 	ln -sf ssh.1.gz ${PREFIX}/man/man1/slogin.1.gz
-	ln -sf ssh1.1.gz ${PREFIX}/man/man1/slogin1.1.gz
 	ln -sf sshd1.8.gz ${PREFIX}/man/man8/sshd.8.gz
 .endif
 	@if [ ! -f ${PREFIX}/etc/rc.d/sshd.sh ]; then \
