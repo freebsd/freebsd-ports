@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.31 1997/03/26 02:15:30 jfitz Exp $
+# $Id: Makefile,v 1.32 1997/04/17 07:08:39 davidn Exp $
 #
 
     SUBDIR += cam
@@ -17,6 +17,7 @@
     SUBDIR += sox
     SUBDIR += splay
     SUBDIR += timidity
+    SUBDIR += tosha
     SUBDIR += tracker
     SUBDIR += workman
     SUBDIR += xcd
