@@ -9,8 +9,9 @@ PORTNAME=	gnomesession
 PORTVERSION=	2.4.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
-		http://people.freebsd.org/~marcus/:local
-MASTER_SITE_SUBDIR=	sources/gnome-session/2.4
+		${MASTER_SITE_LOCAL:S/$/:local/}
+MASTER_SITE_SUBDIR=	sources/gnome-session/2.4 \
+		    	marcus/:local
 DISTNAME=	gnome-session-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		splash.png:local
