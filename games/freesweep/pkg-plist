@@ -1,6 +1,7 @@
 bin/freesweep
-%%PORTDOCS%%share/doc/freesweep/CHANGES
-%%PORTDOCS%%share/doc/freesweep/README
-share/freesweep/sweeprc
-@dirrm share/freesweep
-%%PORTDOCS%%@dirrm share/doc/freesweep
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%DATADIR%%/sweeprc
+%%DATADIR%%/sweeptimes
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
