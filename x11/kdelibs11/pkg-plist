@@ -174,6 +174,8 @@ share/doc/HTML/en/kfiledialog/viewmag.gif
 share/doc/HTML/en/kspell/ksconfig.html
 share/doc/HTML/en/kspell/ksdialog.html
 share/doc/HTML/en/kspell/kspell.html
+share/locale/br/LC_MESSAGES/kde.mo
+share/locale/br/charset
 share/locale/ca/LC_MESSAGES/kde.mo
 share/locale/ca/charset
 share/locale/cs/LC_MESSAGES/kde.mo
@@ -371,6 +373,8 @@ share/toolbar/viewzoom.xpm
 @dirrm share/locale/cs
 @dirrm share/locale/ca/LC_MESSAGES
 @dirrm share/locale/ca
+@dirrm share/locale/br/LC_MESSAGES
+@dirrm share/locale/br
 @dirrm share/locale
 @dirrm share/doc/HTML/en/kspell
 @dirrm share/doc/HTML/en/kfiledialog
@@ -379,7 +383,9 @@ share/toolbar/viewzoom.xpm
 @dirrm share/doc/HTML
 @dirrm share/config
 @dirrm share/apps/khtmlw/pics
+@dirrm share/apps/khtmlw
 @dirrm share/apps/kde/pics
+@dirrm share/apps/kde
 @dirrm share/apps/kab/pics
 @dirrm share/apps/kab
 @dirrm share/apps

@@ -3,13 +3,13 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.20 1999/02/03 11:11:47 asami Exp $
+# $Id: Makefile,v 1.21 1999/02/06 23:22:02 se Exp $
 #
 
-DISTNAME=	kdegraphics-1.1pre2
+DISTNAME=	kdegraphics-1.1
 CATEGORIES=	graphics kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
-MASTER_SITE_SUBDIR= stable/1.2pre1/distribution/tar/generic/source
+MASTER_SITE_SUBDIR= stable/1.1/distribution/tar/generic/source
 
 MAINTAINER=	se@freebsd.org
 
@@ -27,3 +27,5 @@ CFLAGS+=	"-I${PREFIX}/include"
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>
+
+#CONFIGURE_ARGS+="--with-install-root=/data/kde"

@@ -3,13 +3,13 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.25 1999/02/03 11:11:44 asami Exp $
+# $Id: Makefile,v 1.26 1999/02/06 23:22:00 se Exp $
 #
 
-DISTNAME=	kdegames-1.1pre2
+DISTNAME=	kdegames-1.1
 CATEGORIES=	games kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
-MASTER_SITE_SUBDIR= stable/1.1pre2/distribution/tar/generic/source
+MASTER_SITE_SUBDIR= stable/1.1/distribution/tar/generic/source
 
 MAINTAINER=	se@freebsd.org
 
@@ -28,3 +28,5 @@ CONFIGURE_ENV= CXXFLAGS="$(CFLAGS)" \
 		INSTALL_SCRIPT="install -c -m 555"
 
 .include <bsd.port.mk>
+
+#CONFIGURE_ARGS+="--with-install-root=/data/kde"
