@@ -1,0 +1,20 @@
+XTL is a library of template classes and functions for reading/writing
+structured data to/from an external (platform independent) representation.
+This process is also usually known as marshalling, serialization or pickling,
+and is useful both for heterogeneous network programming and portable
+persistent storage. 
+
+Currently, XTL supports XDR (Internet standard), GIOP CDR (CORBA standard)
+and readable ascii text (write-only) as data formats. Memory buffers and C++
+iostreams are usable as data sources/targets. Besides the usual C data types
+(basic, structs, pointers, unions), the XTL also supports C++ constructs,
+such as pointers to base classes and template types, namely, STL containers. 
+
+XTL does not include any kind of IDL, and as such, the programmer is required
+to write a "filter" for each data type. The API is somewhat modeled on the
+original XDR library by Sun, in that the same filter is used for both reading
+and writing. However, heavy usage of templates makes the API simpler and type
+safe. Function inlining and careful avoidance of pointers or virtual
+functions, also make generated code faster. 
+
+WWW: http://xtl.sourceforge.net/

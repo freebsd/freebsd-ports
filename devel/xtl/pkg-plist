@@ -1,0 +1,13 @@
+include/xtl.h
+include/xtl/autobuf.h
+include/xtl/autoio.h
+include/xtl/config.h
+include/xtl/giop.h
+include/xtl/graphio.h
+include/xtl/iostrbuf.h
+include/xtl/macros.h
+include/xtl/objio.h
+include/xtl/text.h
+include/xtl/vobjio.h
+include/xtl/xdr.h
+@dirrm include/xtl
