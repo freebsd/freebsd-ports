@@ -281,6 +281,7 @@
     SUBDIR += p5-Apache-Reload
     SUBDIR += p5-Apache-SSI
     SUBDIR += p5-Apache-Session
+    SUBDIR += p5-Apache-Session-PHP
     SUBDIR += p5-Apache-Session-SharedMem
     SUBDIR += p5-Apache-SubProcess
     SUBDIR += p5-ApacheBench
