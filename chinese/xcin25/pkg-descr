@@ -1,14 +1,12 @@
-Thanks to Mr. Edward Der-Hua Liu and others who developed the xcin
-system. With the wonderful program, we can do a lot of operations with
-Chinese under the X Window System in the UN*X world. As time goes on,
-more and more people use it, and more and more comments appear. The
-package hs been upgraded with time but it seems that the install process
-is not convenient and self-consistent. These confuse a lot of people,
-especially for new users in the UN*X world. We often see the `Big FAQs'
-about xcin such as `how can I install the Chinese fonts' or `the cj2cin
-command not found' or `the crxvt terminal is too big!!' or something
-appears in the newsgroup again and again. In fact, such problems are
-easy to remedy. Because I really like this program and feel that I may
-do something to improve this package, I try my best to re-write the
-Makefiles and auto-configuration programs of this package to try to
-solve these troubles. This comes the `xcin-2.3' project.
+xcin is a Chinese INput application in X, well support in both Traditional
+Chinese(Big5) and Simplified Chinese(GB) charsets. New version of xcin support
+standard XIM too. You can activate one xcin-XIM server, meanwhile, use 
+different locale configuration to input Big5/GB words at the different 
+sessions. This port is current version of xcin, code rewritten by 
+Tung-Han Hsieh <thhsieh@linux.org.tw>.
+
+WWW: http://xcin.linux.org.tw/
+
+Porting to FreeBSD by Yung-Jen Hung <winard@ms11.url.com.tw>
+& Keith Jang <jtjang@gcn.net.tw>.
+

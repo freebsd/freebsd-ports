@@ -1,42 +1,56 @@
-bin/xcin
-lib/X11/xcin/cin2tab
-lib/X11/xcin/cj.cin
-lib/X11/xcin/cj.tab
-lib/X11/xcin/cj.tab.rev
-lib/X11/xcin/et.kbm
-lib/X11/xcin/et26.kbm
-lib/X11/xcin/hsu.kbm
-lib/X11/xcin/lphrase
-lib/X11/xcin/pho.sel1st
-lib/X11/xcin/pho.tab
-lib/X11/xcin/phone.cin
-lib/X11/xcin/phone.tab
-lib/X11/xcin/phone.tab.rev
-lib/X11/xcin/phs_out
-lib/X11/xcin/pin2tsin
-lib/X11/xcin/pinyin.cin
-lib/X11/xcin/pinyin.tab
-lib/X11/xcin/pinyin.tab.rev
-lib/X11/xcin/sample.phs.out
-lib/X11/xcin/tsa2d
-lib/X11/xcin/tsa2rel
-lib/X11/xcin/tsd2a
-lib/X11/xcin/tsin
-lib/X11/xcin/tsin.idx
-lib/X11/xcin/tsin.rel
-lib/X11/xcin/tsin.rel.src
-lib/X11/xcin/tsin.src
-lib/X11/xcin/tsin_pin.map
-lib/X11/xcin/voca.box
-lib/X11/xcin/zmdbosh.cin
-lib/X11/xcin/zmdbosh.tab
-lib/X11/xcin/zmdbosh.tab.rev
-lib/X11/xcin/zo.kbm
-lib/X11/xcin/docs/Boshiamy.HOWTO
-lib/X11/xcin/docs/README.xcin
-lib/X11/xcin/docs/XCIN.client.doc
-lib/X11/xcin/docs/Xfonts.HOWTO
-lib/X11/xcin/docs/cin2tab.HOWTO
-lib/X11/xcin/docs/xcin.HOWTO
-@dirrm lib/X11/xcin/docs
-@dirrm lib/X11/xcin
+bin/xcin2.5
+etc/xcinrc
+lib/X11/xcin25/bimsphone.so
+lib/X11/xcin25/gen_inp.so
+lib/X11/xcin25/zh_hex.so
+lib/X11/xcin25/bin/cin2tab
+lib/X11/xcin25/doc/Bugs
+lib/X11/xcin25/doc/COPYING
+lib/X11/xcin25/doc/CREDITS
+lib/X11/xcin25/doc/Changes
+lib/X11/xcin25/doc/Cin
+lib/X11/xcin25/doc/CopyRight
+lib/X11/xcin25/doc/FAQ
+lib/X11/xcin25/doc/README
+lib/X11/xcin25/doc/SETUP
+lib/X11/xcin25/doc/Todo
+lib/X11/xcin25/doc/Usage
+lib/X11/xcin25/doc/internal/IMdkit
+lib/X11/xcin25/doc/internal/gen_inp
+lib/X11/xcin25/doc/internal/module
+lib/X11/xcin25/doc/internal/structer
+lib/X11/xcin25/doc/modules/bimsphone
+lib/X11/xcin25/doc/modules/gen_inp
+lib/X11/xcin25/doc/modules/im_comm
+lib/X11/xcin25/doc/modules/zh_hex
+lib/X11/xcin25/tab/zh_TW.Big5/array30.cin
+lib/X11/xcin25/tab/zh_TW.Big5/array30.tab
+lib/X11/xcin25/tab/zh_TW.Big5/cantonese.cin
+lib/X11/xcin25/tab/zh_TW.Big5/cantonese.tab
+lib/X11/xcin25/tab/zh_TW.Big5/cj.cin
+lib/X11/xcin25/tab/zh_TW.Big5/cj.tab
+lib/X11/xcin25/tab/zh_TW.Big5/default.phr
+lib/X11/xcin25/tab/zh_TW.Big5/phone.cin
+lib/X11/xcin25/tab/zh_TW.Big5/phone.tab
+lib/X11/xcin25/tab/zh_TW.Big5/pinyin.cin
+lib/X11/xcin25/tab/zh_TW.Big5/pinyin.tab
+lib/X11/xcin25/tab/zh_TW.Big5/simplex.cin
+lib/X11/xcin25/tab/zh_TW.Big5/simplex.tab
+lib/X11/xcin25/tab/zh_TW.Big5/sys.cin
+lib/X11/xcin25/tab/zh_TW.Big5/sys.tab
+lib/X11/xcin25/tab/zh_CN.GB2312/default.phr
+lib/X11/xcin25/tab/zh_CN.GB2312/jtcj_gb.cin
+lib/X11/xcin25/tab/zh_CN.GB2312/jtcj_gb.tab
+lib/X11/xcin25/tab/zh_CN.GB2312/sys.cin
+lib/X11/xcin25/tab/zh_CN.GB2312/sys.tab
+lib/X11/xcin25/tab/zh_CN.GB2312/zhiranma.cin
+lib/X11/xcin25/tab/zh_CN.GB2312/zhiranma.tab
+share/locale/zh_TW.Big5/LC_MESSAGES/xcin.mo
+@dirrm lib/X11/xcin25/bin
+@dirrm lib/X11/xcin25/doc/internal
+@dirrm lib/X11/xcin25/doc/modules
+@dirrm lib/X11/xcin25/doc
+@dirrm lib/X11/xcin25/tab/zh_TW.Big5
+@dirrm lib/X11/xcin25/tab/zh_CN.GB2312
+@dirrm lib/X11/xcin25/tab
+@dirrm lib/X11/xcin25
