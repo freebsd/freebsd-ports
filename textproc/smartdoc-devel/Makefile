@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	kiri/smartdoc
 EXTRACT_SUFX=	.zip
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	kunishi@acm.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML utility to create various documents(devel version)
 
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
