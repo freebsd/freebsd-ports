@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libsndfile
-PORTVERSION=	1.0.9
+PORTVERSION=	1.0.10
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mega-nerd.com/libsndfile/
 
@@ -16,11 +16,15 @@ COMMENT=	Reading and writing files containing sampled sound (like WAV or AIFF)
 
 USE_GCC=	3.3
 USE_GNOME=	gnomehack gnometarget lthack pkgconfig
+USE_REINPLACE=	yes
 USE_LIBTOOL_VER=	13
 CONFIGURE_ARGS=	--enable-justsrc --disable-gcc-pipe
 INSTALLS_SHLIB=	yes
 
 MAN1=		sndfile-convert.1 sndfile-info.1 sndfile-play.1
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/ doc / /g' ${WRKSRC}/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -28,8 +32,8 @@ post-install:
 .for file in AUTHORS ChangeLog NEWS README TODO
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
-	${TAR} -C ${WRKSRC}/doc --exclude "*Makefile*" -cf - . | \
-		${TAR} -C ${DOCSDIR} --unlink -xf -
+	${TAR} -C ${WRKSRC}/doc --exclude "*Makefile*" --exclude "*.in" \
+		-cf - . | ${TAR} -C ${DOCSDIR} --unlink -xf -
 	@${CHOWN} ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 .endif
 
