@@ -78,29 +78,6 @@ pre-install:
 	${MKDIR} ${PREFIX}
 
 post-install:
-.if ${PORTOBJFORMAT} == "aout"
-.for lib in psres dps dpstk Xfont GL
-	${LN} -sf lib${lib}.so.1.0 ${DESTDIR}/${PREFIX}/lib/lib${lib}.so
-.endfor
-.for lib in Xpm
-	${LN} -sf lib${lib}.so.4.0 ${DESTDIR}/${PREFIX}/lib/lib${lib}.so
-.endfor
-.for lib in PEX5 SM XIE Xi Xmu Xt oldX xrx
-	${LN} -sf lib${lib}.so.6.0 ${DESTDIR}/${PREFIX}/lib/lib${lib}.so
-.endfor
-.for lib in X11 Xtst
-	${LN} -sf lib${lib}.so.6.1 ${DESTDIR}/${PREFIX}/lib/lib${lib}.so
-.endfor
-.for lib in Xp
-	${LN} -sf lib${lib}.so.6.2 ${DESTDIR}/${PREFIX}/lib/lib${lib}.so
-.endfor
-.for lib in ICE Xext
-	${LN} -sf lib${lib}.so.6.3 ${DESTDIR}/${PREFIX}/lib/lib${lib}.so
-.endfor
-.for lib in Xaw
-	${LN} -sf lib${lib}.so.7.0 ${DESTDIR}/${PREFIX}/lib/lib${lib}.so
-.endfor
-.endif
 .ifndef DISTRIB
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .endif
