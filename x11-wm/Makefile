@@ -65,6 +65,7 @@
     SUBDIR += plwm
     SUBDIR += pwm
     SUBDIR += qlwm
+    SUBDIR += qnxstyle
     SUBDIR += qvwm
     SUBDIR += ratmenu
     SUBDIR += ratpoison
