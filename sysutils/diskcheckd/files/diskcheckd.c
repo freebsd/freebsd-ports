@@ -27,7 +27,7 @@
 static const char rcsid[] =
 	"$FreeBSD$";
 
-#include <sys/types.h>
+#include <sys/param.h>
 #include <sys/sysctl.h>
 
 #include <ctype.h>
@@ -46,6 +46,7 @@ static const char rcsid[] =
 
 #define DKTYPENAMES
 #define FSTYPENAMES
+#include <sys/disk.h>
 #include <sys/disklabel.h>
 #include <sys/diskmbr.h>
 
@@ -757,7 +758,23 @@ readconf(const char *conf_file) {
 void
 getdisksize(struct disk *dp) {
 	struct disklabel label;
+#if __FreeBSD_version >= 500040
+	off_t mediasize;
+	unsigned sectorsize;
 
+	if (ioctl(dp->fd, DIOCGSECTORSIZE, &sectorsize) < 0) {
+		syslog(LOG_NOTICE, "DIOCGSECTORSIZE on %s failed: %m",
+		    dp->device);
+		exit(EXIT_FAILURE);
+	}
+	if (ioctl(dp->fd, DIOCGMEDIASIZE, &mediasize) < 0) {
+		syslog(LOG_NOTICE, "DIOCGMEDIASIZE on %s failed: %m",
+		    dp->device);
+		exit(EXIT_FAILURE);
+	}
+	dp->secsize = label.d_secsize = sectorsize;
+	dp->size = mediasize;
+#else
 	if (ioctl(dp->fd, DIOCGDINFO, &label) < 0) {
 		syslog(LOG_NOTICE, "DIOCGDINFO on %s failed: %m",
 		    dp->device);
@@ -766,6 +783,7 @@ getdisksize(struct disk *dp) {
 
 	dp->secsize = label.d_secsize;
 	dp->size = (off_t)label.d_secperunit * label.d_secsize;
+#endif
 
 	if (label.d_secsize != 512)
 		syslog(LOG_NOTICE,
