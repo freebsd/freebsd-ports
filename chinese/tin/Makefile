@@ -3,11 +3,11 @@
 # Date created:		2 Dec 1997
 # Whom:			Yen-Shuo Su <yssu@CCCA.NCTU.edu.tw>
 #
-# $Id: Makefile,v 1.1.1.1 1997/12/01 21:16:50 vanilla Exp $
+# $Id: Makefile,v 1.2 1997/12/02 04:23:49 asami Exp $
 #
 
-DISTNAME=       tinpre-1.4-971123
-PKGNAME=        zh-tin-1.4.971123
+DISTNAME=       tinpre-1.4-971127
+PKGNAME=        zh-tin-1.4.971127
 CATEGORIES=	chinese news
 MASTER_SITES=   ftp://nuxi.ucdavis.edu/pub/tin/ \
 		ftp://ftp.akk.uni-karlsruhe.de/pub/tin/ \
