@@ -1,31 +1,16 @@
 --- docs/Makefile.in.orig	Sun Aug  6 19:53:16 2000
 +++ docs/Makefile.in	Fri Sep  8 02:09:07 2000
-@@ -91,8 +91,10 @@
+@@ -91,11 +91,13 @@
  SUBDIRS = sample.gftp
  EXTRA_DIST = USERS-GUIDE gftp.1 gftp.desktop gftp.lsm gftp.png
  
 +.ifdef HAVE_GNOME
  Utilitiesdir = $(datadir)/apps/Internet
  Utilities_DATA = gftp.desktop
-+.endif
  
  Iconsdir = $(datadir)/pixmaps
  Icons_DATA = gftp.png
-@@ -182,7 +184,6 @@
- 
- install-UtilitiesDATA: $(Utilities_DATA)
- 	@$(NORMAL_INSTALL)
--	$(mkinstalldirs) $(DESTDIR)$(Utilitiesdir)
- 	@list='$(Utilities_DATA)'; for p in $$list; do \
- 	  if test -f $(srcdir)/$$p; then \
- 	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(Utilitiesdir)/$$p"; \
-@@ -338,8 +339,7 @@
- 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
- installdirs: installdirs-recursive
- installdirs-am:
--	$(mkinstalldirs)  $(DESTDIR)$(mandir)/man1 $(DESTDIR)$(Iconsdir) \
--		$(DESTDIR)$(Utilitiesdir)
-+	$(mkinstalldirs)  $(DESTDIR)$(mandir)/man1 $(DESTDIR)$(Iconsdir)
- 
- 
- mostlyclean-generic:
++.endif
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 
