@@ -1,14 +1,6 @@
-GNOME version of xdm display manager
+The GNOME version of the xdm display manager. It has support for
+face pixmaps, multiple sessions plus clean shutdowns from the login
+menu.
 
-- This port doesn't work on the normal FreeBSD 3.x-RELEASEs because
-  those pam is not stable.
-  I'm sure this works on 5.0-current, and it may works on 4.x-RELEASE
-
-  You should append those lines to your /etc/pam.conf
-
-# gdm config
-gdm     auth            requisite       pam_unix.so     try_first_pass
-gdm     account         requisite       pam_unix.so     try_first_pass
-gdm     session         required        pam_permit.so
-
-This notes is written by:  Yukihiro Nakai <nakai@FreeBSD.org>
+For now it only works with the 3.3.x series of XFree86 and a fairly
+recent FreeBSD (4.x-STABLE).

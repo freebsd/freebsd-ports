@@ -1,11 +1,8 @@
 GDM is installed.
 
 Please note the following:
-- Add 'gdm' user and 'gdm' group by handle.
-- This port doesn't work on the normal FreeBSD 3.x-RELEASEs because
-  PAM is not stable.
-- This port has been tested on 5.0-CURRENT and 4.1.1-STABLE.
-  4.x-RELEASE may or may not work.
+- This port has been tested on 5.0-CURRENT and 4.4-STABLE. It only works
+  with XFree86-3.3.x. It will not work on 3.x.
 - You should append these lines to your /etc/pam.conf, otherwise
   GDM will refuse all logins:
 
