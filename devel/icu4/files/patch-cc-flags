@@ -1,0 +1,27 @@
+--- source/runConfigureICU	Fri Jan 16 17:26:40 2004
++++ source/runConfigureICU	Mon Nov 15 11:05:50 2004
+@@ -289,7 +289,7 @@
+     *BSD)
+-        THE_OS="BSD"
++        THE_OS="$platform"
+-        THE_COMP="the GNU C++"
+-        CC=gcc; export CC
+-        CXX=g++; export CXX
++        CC=${CC:=cc}; export CC
++        CXX=${CXX:=c++}; export CXX
++        THE_COMP="`$CC -v | fgrep -i ver`" # works with icc and gcc at least
+         ;;
+     QNX)
+@@ -358,12 +358,4 @@
+ if test $release -eq 1
+ then
+-    if test "$RELEASE_CFLAGS" = ""
+-    then
+-        case $CC in
+-            gcc|*/gcc|*-gcc-*|*/*-gcc-*)
+-                RELEASE_CFLAGS=-O3
+-                ;;
+-        esac
+-    fi
+     if test "$RELEASE_CFLAGS" != ""
+     then

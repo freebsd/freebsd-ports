@@ -1,0 +1,10 @@
+--- source/data/mappings/convrtrs.txt	Wed Sep 15 18:10:20 2004
++++ source/data/mappings/convrtrs.txt	Thu Sep 16 12:23:59 2004
+@@ -646,6 +646,7 @@
+ ibm-868_P100-1995 { UTR22* }    ibm-868 { IBM* } IBM868 { IANA* JAVA } CP868 { IANA MIME* JAVA* } 868 { JAVA } csIBM868 { IANA } cp-ar { IANA }          # PC Urdu
+ ibm-869_P100-1995 { UTR22* }    ibm-869 { IBM* } IBM869 { IANA* WINDOWS JAVA } cp869 { IANA MIME* JAVA* } 869 { IANA JAVA } cp-gr { IANA JAVA } csIBM869 { IANA JAVA } windows-869 { WINDOWS* } # PC Greek (w/o euro update)
+ ibm-878_P100-1996 { UTR22* }    ibm-878 { IBM* } KOI8-R { IANA* MIME* JAVA* } koi8 { JAVA } csKOI8R { IANA JAVA } cp878   # Russian internet
++koi8-u { MIME* JAVA* }          KOI8-RU { MIME JAVA } # Ukrainian KOI RFC2319
+ ibm-901_P100-1999 { UTR22* }    ibm-901 { IBM* } # PC Baltic (w/ euro update), update of ibm-921
+ ibm-902_P100-1999 { UTR22* }    ibm-902 { IBM* } # PC Estonian (w/ euro update), update of ibm-922
+ ibm-922_P100-1999 { UTR22* }    ibm-922 { IBM* JAVA }   cp922 { MIME* JAVA* } 922 { JAVA } # PC Estonian (w/o euro update)
