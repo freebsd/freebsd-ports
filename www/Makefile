@@ -737,6 +737,7 @@
     SUBDIR += zope-groupuserfolder
     SUBDIR += zope-guf
     SUBDIR += zope-i18nlayer
+    SUBDIR += zope-mimetypesregistry
     SUBDIR += zope-mindmapbbs
     SUBDIR += zope-mysqluserfolder
     SUBDIR += zope-parsedxml

@@ -1,0 +1,10 @@
+Mimetypes Registry
+
+This Zope product provides a new tool for the CMF in order to make MIME
+types based transformations on the portal contents, and so an easy to way to
+plugin some new transformations for previously unsupported content types. The
+provided tool is:
+ 
+ * mimetypes_registry (the mimetypes tool) : handle mime types information
+ 
+WWW: http://sourceforge.net/projects/archetypes
