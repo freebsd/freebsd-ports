@@ -230,6 +230,7 @@
     SUBDIR += libafterbase
     SUBDIR += libast
     SUBDIR += libavl
+    SUBDIR += libbonobo
     SUBDIR += libcache
     SUBDIR += libcapsinetwork
     SUBDIR += libcii
