@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	samba
-PORTVERSION=	3.0a20
+PORTVERSION=	3.0.0.b1
+PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://us4.samba.org/samba/ftp/%SUBDIR%/
-MASTER_SITE_SUBDIR=	alpha old
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/a/alpha/}
+MASTER_SITE_SUBDIR=	beta alpha old
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/beta/}
 
 MAINTAINER=	dwcjr@FreeBSD.org
 COMMENT=	A free SMB and CIFS client and server for UNIX
@@ -27,7 +28,6 @@ CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
 .endif
 
-
 # directories
 VARDIR=		/var
 SAMBA_SPOOL=	${VARDIR}/spool/samba
@@ -41,6 +41,7 @@ DOCSDIR=	${PREFIX}/share/doc/samba
 
 NO_LATEST_LINK=	yes
 USE_AUTOCONF=	yes
+WANT_AUTOCONF_VER=	253
 CONFIGURE_ARGS=	--libdir=${SAMBA_CONFDIR} \
 		--localstatedir=${VARDIR} --with-swatdir=${PREFIX}/share/swat \
 		--with-sambabook=${PREFIX}/share/swat/using_samba \
@@ -91,12 +92,12 @@ CONFIGURE_ARGS+=	--with-libiconv
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
 
-MAN1=		findsmb.1 make_smbcodepage.1 make_unicodemap.1 nmblookup.1 \
+MAN1=		findsmb.1 nmblookup.1 \
 		rpcclient.1 smbcacls.1 smbclient.1 smbcontrol.1 smbsh.1 \
-		smbstatus.1 smbtar.1 testparm.1 testprns.1 wbinfo.1
+		smbstatus.1 smbtar.1 testparm.1 testprns.1 wbinfo.1 vfstest.1
 MAN5=		lmhosts.5 smb.conf.5 smbpasswd.5
 MAN7=		samba.7
-MAN8=		nmbd.8 smbd.8 smbmnt.8 smbmount.8 \
+MAN8=		nmbd.8 smbd.8 smbmnt.8 smbmount.8 net.8 pdbedit.8 \
 		smbpasswd.8 smbspool.8 smbumount.8 swat.8 winbindd.8
 
 post-install:
