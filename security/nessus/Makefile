@@ -31,7 +31,7 @@ WANT_GTK=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_GTK) && !defined(WITHOUT_GTK)
+.if defined(HAVE_GTK)
 USE_GTK=	yes
 .else
 CONFIGURE_ARGS+=	--disable-gtk
