@@ -17,8 +17,6 @@ LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11 \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 RUN_DEPENDS=	${LOCALBASE}/bin/kdehelp:${PORTSDIR}/x11/kdebase11
 
-BROKEN=		"KDE 1.x is no longer in the ports tree"
-
 USE_QT=		yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
