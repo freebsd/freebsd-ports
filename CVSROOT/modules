@@ -1541,7 +1541,6 @@ fugu		ports/net/fugu
 fujiplay	ports/graphics/fujiplay
 funktrackergold	ports/audio/funktrackergold
 funnelweb	ports/devel/funnelweb
-furi		ports/net/furi
 fuzz		ports/security/fuzz
 fvwm		ports/x11-wm/fvwm
 fvwm-themes	ports/x11-wm/fvwm-themes
