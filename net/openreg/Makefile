@@ -1,0 +1,43 @@
+# New ports collection makefile for:	openreg
+# Date created:				6 June 2003
+# Whom:					seanc
+#
+# $FreeBSD$
+#
+
+PORTNAME=	openreg
+PORTVERSION=	1.0.2
+CATEGORIES=	net
+MASTER_SITES=	${MASTER_SITE_ISC}
+MASTER_SITE_SUBDIR=	openreg
+
+MAINTAINER=	seanc@FreeBSD.org
+COMMENT=	Domain Registry software
+
+RUN_DEPENDS=	${LOCALBASE}/sbin/stunnel:${PORTSDIR}/security/stunnel \
+		${LOCALBASE}/sbin/named:${PORTSDIR}/net/bind9 \
+		${LOCALBASE}/bin/postgres:${PORTSDIR}/${POSTGRESQL_PORT} \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+BUILD_DEPENDS=	${LOCALBASE}/include/isc/buffer.h:${PORTSDIR}/net/bind9
+LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
+
+POSTGRESQL_PORT?=	databases/postgresql7
+
+USE_OPENSSL=	YES
+USE_PERL5=	YES
+GNU_CONFIGURE=	YES
+
+post-install:
+	@${MKDIR} ${DOCSDIR} ;\
+	${CP} -r ${WRKSRC}/doc/ ${DOCSDIR} ;\
+	cd ${WRKSRC}/doc ;\
+	for file in `${FIND} ./ ! -type d` ; do \
+		printf "share/doc/${PORTNAME}/%s\n" $$file >> ${TMPPLIST} ;\
+	done ;\
+	for dir in `${FIND} ./ -type d -mindepth 1| sort -r` ; do \
+		printf "@dirrm share/doc/${PORTNAME}/%s\n" $$dir >> ${TMPPLIST} ;\
+	done
+	@${ECHO} "@dirrm share/doc/${PORTNAME}" >> ${TMPPLIST}
+	@${CAT} pkg-message
+
+.include <bsd.port.mk>

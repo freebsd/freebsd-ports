@@ -1,0 +1,65 @@
+lib/perl5/%%PERL_VER%%/man/man3/ISC::DBI.3
+lib/perl5/%%PERL_VER%%/man/man3/ISC::Date.3
+lib/perl5/%%PERL_VER%%/man/man3/ISC::Log.3
+lib/perl5/%%PERL_VER%%/man/man3/ISC::NameVerify.3
+lib/perl5/%%PERL_VER%%/man/man3/ISC::Net::CRLF.3
+lib/perl5/%%PERL_VER%%/man/man3/ISC::Net::LengthPrefix.3
+lib/perl5/%%PERL_VER%%/man/man3/ISC::Net::Listen.3
+lib/perl5/%%PERL_VER%%/man/man3/ISC::Random.3
+lib/perl5/%%PERL_VER%%/man/man3/ISC::SRS::DB.3
+lib/perl5/%%PERL_VER%%/man/man3/ISC::SRS::Version.3
+lib/perl5/%%PERL_VER%%/man/man3/ISC::Stats::Report.3
+lib/perl5/site_perl/%%PERL_VER%%/ISC/CC/Direct.pm
+lib/perl5/site_perl/%%PERL_VER%%/ISC/CC/Direct/Connect.pm
+lib/perl5/site_perl/%%PERL_VER%%/ISC/CC/Direct/Listen.pm
+lib/perl5/site_perl/%%PERL_VER%%/ISC/CC/Group.pm
+lib/perl5/site_perl/%%PERL_VER%%/ISC/CC/Group/Connect.pm
+lib/perl5/site_perl/%%PERL_VER%%/ISC/CC/Message.pm
+lib/perl5/site_perl/%%PERL_VER%%/ISC/DB/ReplicationMaster.pm
+lib/perl5/site_perl/%%PERL_VER%%/ISC/DB/ReplicationSlave.pm
+lib/perl5/site_perl/%%PERL_VER%%/ISC/DBI.pm
+lib/perl5/site_perl/%%PERL_VER%%/ISC/Date.pm
+lib/perl5/site_perl/%%PERL_VER%%/ISC/Log.pm
+lib/perl5/site_perl/%%PERL_VER%%/ISC/NameVerify.pm
+lib/perl5/site_perl/%%PERL_VER%%/ISC/Net/CRLF.pm
+lib/perl5/site_perl/%%PERL_VER%%/ISC/Net/Connect.pm
+lib/perl5/site_perl/%%PERL_VER%%/ISC/Net/LengthPrefix.pm
+lib/perl5/site_perl/%%PERL_VER%%/ISC/Net/Listen.pm
+lib/perl5/site_perl/%%PERL_VER%%/ISC/Random.pm
+lib/perl5/site_perl/%%PERL_VER%%/ISC/SRS/DB.pm
+lib/perl5/site_perl/%%PERL_VER%%/ISC/SRS/EPPConnection.pm
+lib/perl5/site_perl/%%PERL_VER%%/ISC/SRS/EPPParser.pm
+lib/perl5/site_perl/%%PERL_VER%%/ISC/SRS/EPPRegistrar.pm
+lib/perl5/site_perl/%%PERL_VER%%/ISC/SRS/EPPResultCode.pm
+lib/perl5/site_perl/%%PERL_VER%%/ISC/SRS/EPPWriter.pm
+lib/perl5/site_perl/%%PERL_VER%%/ISC/SRS/SAX/EPPHandler.pm
+lib/perl5/site_perl/%%PERL_VER%%/ISC/SRS/Version.pm
+lib/perl5/site_perl/%%PERL_VER%%/ISC/Stats/Report.pm
+lib/perl5/site_perl/%%PERL_VER%%/mach/auto/ISC/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/mach/auto/ISC
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/ISC/CC/Direct
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/ISC/CC/Group
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/ISC/CC
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/ISC/DB
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/ISC/Net
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/ISC/SRS/SAX
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/ISC/SRS
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/ISC/Stats
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/ISC
+bin/group-sniff
+bin/epp-from-file
+sbin/msgq
+sbin/xaction
+sbin/epp-frontend
+sbin/whois
+sbin/replication-master
+sbin/write-zone
+sbin/stats-monitor
+sbin/log-monitor
+sbin/ka_msgq
+sbin/ka_xaction
+sbin/ka_epp-frontend
+sbin/ka_whois
+sbin/ka_write-zone
+sbin/ka_stats-monitor
+@unexec echo "If you are permanently removing this port, you should do a ``rm -f /var/log/openreg`` to remove the log file and ``rm -rf /usr/local/openreg`` to remove the openreg data files." | fmt

@@ -1,0 +1,19 @@
+OpenReg is an implementation of a domain registry, such as might be
+used by top-level domain operators to manage the delegation of domains
+in a "shared registry" environment. OpenReg:
+
+*) supports the Extensible Provisioning Protocol (EPP), the IETF
+   standards-track protocol for interaction between registries and
+   registrars;
+ 
+*) is designed and debugged as a distributed multi-process system;
+ 
+*) supports PostgreSQL and is designed to accommodate to very large registries;
+ 
+*) publishes zone files to be served using BIND;
+ 
+*) gathers comprehensive profiling and load statistics;
+ 
+*) is published as free software, under a BSD-style licence.
+
+WWW: http://www.isc.org/products/OpenReg/
