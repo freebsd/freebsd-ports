@@ -14,7 +14,10 @@ DISTNAME=	${PORTNAME}.2.0beta2
 MAINTAINER=	sec@42.org
 
 WRKSRC=		${WRKDIR}/xmove
+
 USE_X_PREFIX=	yes
+USE_IMAKE=	yes
+
 MAN1=		xmove.1 xmovectrl.1
 
 post-extract:
