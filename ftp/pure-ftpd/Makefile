@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pure-ftpd
-PORTVERSION=	1.0.11
+PORTVERSION=	1.0.12
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.dk.pureftpd.org/mirrors/pure-ftpd/releases/ \
@@ -97,7 +97,7 @@ pre-fetch:
 		support, lang is one of"
 	@${ECHO} "  english, german, romanian, french, french-funny, polish, spanish,"
 	@${ECHO} "  dutch, italian, brazilian-portuguese, danish, slovak, korean,"
-	@${ECHO} "  norwegian or swedish."
+	@${ECHO} "  norwegian, swedish, russian, traditional-chinese, simplified-chinese."
 	@${ECHO}
 
 post-install:
