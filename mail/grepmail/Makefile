@@ -6,18 +6,20 @@
 #
 
 PORTNAME=	grepmail
-PORTVERSION= 	4.23
+PORTVERSION= 	4.30
 CATEGORIES=	mail
 MASTER_SITES=	http://download.sourceforge.net/grepmail/
 
 MAINTAINER=	jedgar@FreeBSD.org
 
+USE_PERL5=	yes
 NO_BUILD=	yes
 POD2MAN?=	/usr/bin/pod2man
 
 MAN1=		grepmail.1
 
 do-configure:
+		@${PERL} -pi.orig -e 's|_PERL_|${PERL}|' ${WRKSRC}/grepmail.DP
 		@cd ${WRKSRC} && ${CP} grepmail.DP grepmail
 		@cd ${WRKSRC} && ${POD2MAN} grepmail > grepmail.1
 
