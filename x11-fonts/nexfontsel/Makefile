@@ -1,15 +1,15 @@
 # New ports collection makefile for:	nexfontsel
-# Version required:	2.0
 # Date created:		99/09/29
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	NeXFontSel-2.0
-PKGNAME=	nexfontsel-2.0
+PORTNAME=	nexfontsel
+PORTVERSION= 	2.0
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.netlab.is.tsukuba.ac.jp/~yokota/archive/
+DISTNAME=	NeXFontSel-${PORTVERSION}
 
 MAINTAINER=	taoka@FreeBSD.org
 

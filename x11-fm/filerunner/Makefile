@@ -1,16 +1,16 @@
 # New ports collection makefile for:	filerunner
-# Version required:	2.5
 # Date created:		3 August 1996
 # Whom:			lukin
 #
 # $FreeBSD$
 #
 
-DISTNAME=	FileRunner-2.5
-PKGNAME=	filerunner-2.5
+PORTNAME=	filerunner
+PORTVERSION= 	2.5
 CATEGORIES=	x11-fm tk82
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/desktop
+DISTNAME=	FileRunner-${PORTVERSION}
 
 MAINTAINER=	vanilla@FreeBSD.org
 

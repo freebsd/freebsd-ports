@@ -1,13 +1,12 @@
 # New ports collection makefile for:	workplace
-# Version required:			1.0a3
 # Date created:				7 March 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	workplace-1.0.a3
-PKGNAME=	workplace-1.0a3
+PORTNAME=	workplace
+PORTVERSION= 	1.0.a3
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www2.osk.3web.ne.jp/~hideki70/src/
 
@@ -18,7 +17,7 @@ LIB_DEPENDS=	gtk10.1:${PORTSDIR}/x11-toolkits/gtk10
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/gtk10" \
-		LIBS="-L${LOCALBASE}/lib" 
+		LIBS="-L${LOCALBASE}/lib"
 
 pre-configure:
 	@ ${RM} ${WRKSRC}/config.cache

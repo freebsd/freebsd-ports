@@ -1,5 +1,4 @@
 # New ports collection makefile for:	xcruise
-# Version required:	0.24
 # Date created:		22 December 1999
 # Whom:			minoura@netbsd.org
 #
@@ -7,7 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	xcruise-0.24
+PORTNAME=	xcruise
+PORTVERSION= 	0.24
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://tanaka-www.cs.titech.ac.jp/%7Eeuske/prog/
 
