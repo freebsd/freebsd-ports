@@ -1,8 +1,8 @@
 bin/mtv
 bin/mtvp
-share/mtv/LICENSE
-share/mtv/README
-share/mtv/README-Fullscreen
-share/mtv/README-mtv-redhat
-share/mtv/release-notes.html
-@dirrm share/mtv
+%%PORTDOCS%%share/doc/mtv/LICENSE
+%%PORTDOCS%%share/doc/mtv/README
+%%PORTDOCS%%share/doc/mtv/README-Fullscreen
+%%PORTDOCS%%share/doc/mtv/README-mtv-redhat
+%%PORTDOCS%%share/doc/mtv/release-notes.html
+%%PORTDOCS%%@dirrm share/doc/mtv

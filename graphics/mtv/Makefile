@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mtv
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.5
 CATEGORIES=	graphics linux
 MASTER_SITES=	ftp://ftp.mpegtv.com/pub/mpeg/mpegtv/player/x86-unknown-linux-glibc/packages/TGZ/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz libSDLx11.so.tar.gz
@@ -26,20 +26,21 @@ WRKSRC=		${WRKDIR}/mtv
 MAN1=	mtv.1
 
 do-install:
-	${MKDIR} ${WRKDIR}/libSDLx11
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/libSDLx11.so.tar.gz \
+	@${MKDIR} ${WRKDIR}/libSDLx11
+	@${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/libSDLx11.so.tar.gz \
 		${EXTRACT_AFTER_ARGS} -C ${WRKDIR}/libSDLx11
 	${INSTALL_DATA} ${WRKDIR}/libSDLx11/libSDLx11.so.0.9.9 \
-		/compat/linux/usr/X11R6/lib
-	/compat/linux/sbin/ldconfig
+		${LINUXBASE}/usr/X11R6/lib
+	${LINUXBASE}/sbin/ldconfig
 	${INSTALL_SCRIPT} ${WRKSRC}/mtv ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/mtvp ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/mtv.1 ${PREFIX}/man/man1
-	${MKDIR} ${PREFIX}/share/mtv
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/mtv
-	${INSTALL_DATA} ${WRKSRC}/release-notes.html ${PREFIX}/share/mtv
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/mtv
-	${INSTALL_DATA} ${WRKSRC}/README-Fullscreen ${PREFIX}/share/mtv
-	${INSTALL_DATA} ${WRKSRC}/README-mtv-redhat ${PREFIX}/share/mtv
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/mtv
+.for file in LICENSE README README-Fullscreen README-mtv-redhat \
+	release-notes.html
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/mtv
+.endfor
+.endif
 
 .include <bsd.port.mk>
