@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	awstats
-PORTVERSION=	5.9
+PORTVERSION=	6.0
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	firewolf@lightningfire.net
+MAINTAINER=	clement@FreeBSD.org
 COMMENT=	Free real-time logfile analyzer to get advanced web statistics
 
 NO_BUILD=	yes
@@ -35,17 +35,20 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/awstats_buildstaticpages.pl ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/awstats_exportlib.pl ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/awstats_updateall.pl ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/configure.pl ${PREFIX}/bin/awstats_configure.pl
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/logresolvemerge.pl ${PREFIX}/bin/awstats_logresolvemerge.pl
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/maillogconvert.pl ${PREFIX}/bin/awstats_maillogconvert.pl
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/urlaliasbuilder.pl ${PREFIX}/bin/awstats_urlaliasbuilder.pl
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/webmin/awstats-1.1.wbm ${PREFIX}/bin/awstats-1.1.wbm
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/webmin/awstats-1.21.wbm ${PREFIX}/bin/awstats-1.21.wbm
 	${INSTALL_SCRIPT} ${WRKSRC}/wwwroot/cgi-bin/awredir.pl ${PREFIX}/www/cgi-bin
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/awstats.model.conf ${PREFIX}/www/cgi-bin
 	${INSTALL_SCRIPT} ${WRKSRC}/wwwroot/cgi-bin/awstats.pl ${PREFIX}/www/cgi-bin
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/lang/* ${PREFIX}/www/cgi-bin/lang
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/lib/* ${PREFIX}/www/cgi-bin/lib
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/decodeutfkeys.pm ${PREFIX}/www/cgi-bin/plugins
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/geoip.pm ${PREFIX}/www/cgi-bin/plugins
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/geoipfree.pm ${PREFIX}/www/cgi-bin/plugins
+	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/graphapplet.pm ${PREFIX}/www/cgi-bin/plugins
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/hashfiles.pm ${PREFIX}/www/cgi-bin/plugins
 	${INSTALL_DATA}	${WRKSRC}/wwwroot/cgi-bin/plugins/hostinfo.pm ${PREFIX}/www/cgi-bin/plugins
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/plugins/ipv6.pm ${PREFIX}/www/cgi-bin/plugins

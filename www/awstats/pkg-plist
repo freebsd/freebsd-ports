@@ -1,10 +1,28 @@
+bin/awstats-1.21.wbm
 bin/awstats_buildstaticpages.pl
+bin/awstats_configure.pl
 bin/awstats_exportlib.pl
-bin/awstats_updateall.pl
 bin/awstats_logresolvemerge.pl
 bin/awstats_maillogconvert.pl
+bin/awstats_updateall.pl
 bin/awstats_urlaliasbuilder.pl
-bin/awstats-1.1.wbm
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.TXT
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.TXT
+%%PORTDOCS%%%%DOCSDIR%%/awstats.pdf
+%%PORTDOCS%%%%DOCSDIR%%/awstats_benchmark.html
+%%PORTDOCS%%%%DOCSDIR%%/awstats_changelog.txt
+%%PORTDOCS%%%%DOCSDIR%%/awstats_compare.html
+%%PORTDOCS%%%%DOCSDIR%%/awstats_config.html
+%%PORTDOCS%%%%DOCSDIR%%/awstats_extra.html
+%%PORTDOCS%%%%DOCSDIR%%/awstats_faq.html
+%%PORTDOCS%%%%DOCSDIR%%/awstats_glossary.html
+%%PORTDOCS%%%%DOCSDIR%%/awstats_license.html
+%%PORTDOCS%%%%DOCSDIR%%/awstats_security.html
+%%PORTDOCS%%%%DOCSDIR%%/awstats_setup.html
+%%PORTDOCS%%%%DOCSDIR%%/awstats_tools.html
+%%PORTDOCS%%%%DOCSDIR%%/awstats_upgrade.html
+%%PORTDOCS%%%%DOCSDIR%%/awstats_webmin.html
+%%PORTDOCS%%%%DOCSDIR%%/awstats_what.html
 %%PORTDOCS%%%%DOCSDIR%%/images/awstats.ico
 %%PORTDOCS%%%%DOCSDIR%%/images/awstats_logo1.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/awstats_logo1.png
@@ -22,46 +40,34 @@ bin/awstats-1.1.wbm
 %%PORTDOCS%%%%DOCSDIR%%/images/screen_shot_1.png
 %%PORTDOCS%%%%DOCSDIR%%/images/screen_shot_2.png
 %%PORTDOCS%%%%DOCSDIR%%/images/screen_shot_3.gif
-%%PORTDOCS%%%%DOCSDIR%%/images/star.png
 %%PORTDOCS%%%%DOCSDIR%%/images/screen_shot_3.png
 %%PORTDOCS%%%%DOCSDIR%%/images/screen_shot_4.png
-%%PORTDOCS%%%%DOCSDIR%%/COPYING.TXT
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE.TXT
-%%PORTDOCS%%%%DOCSDIR%%/awstats.htm
-%%PORTDOCS%%%%DOCSDIR%%/awstats.pdf
-%%PORTDOCS%%%%DOCSDIR%%/awstats.xml
-%%PORTDOCS%%%%DOCSDIR%%/awstats_benchmark.html
-%%PORTDOCS%%%%DOCSDIR%%/awstats_changelog.txt
-%%PORTDOCS%%%%DOCSDIR%%/awstats_compare.html
-%%PORTDOCS%%%%DOCSDIR%%/awstats_config.html
-%%PORTDOCS%%%%DOCSDIR%%/awstats_extra.html
-%%PORTDOCS%%%%DOCSDIR%%/awstats_faq.html
-%%PORTDOCS%%%%DOCSDIR%%/awstats_glossary.html
-%%PORTDOCS%%%%DOCSDIR%%/awstats_license.html
-%%PORTDOCS%%%%DOCSDIR%%/awstats_security.html
-%%PORTDOCS%%%%DOCSDIR%%/awstats_setup.html
-%%PORTDOCS%%%%DOCSDIR%%/awstats_tools.html
-%%PORTDOCS%%%%DOCSDIR%%/awstats_update.html
-%%PORTDOCS%%%%DOCSDIR%%/awstats_webmin.html
-%%PORTDOCS%%%%DOCSDIR%%/awstats_what.html
+%%PORTDOCS%%%%DOCSDIR%%/images/star.png
 %%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/pad_awstats.htm
+%%PORTDOCS%%%%DOCSDIR%%/pad_awstats.xml
 %%PORTDOCS%%%%DOCSDIR%%/styles.css
+www/cgi-bin/awredir.pl
+www/cgi-bin/awstats.model.conf
+www/cgi-bin/awstats.pl
 www/cgi-bin/lang/awstats-al.txt
 www/cgi-bin/lang/awstats-ba.txt
 www/cgi-bin/lang/awstats-bg.txt
 www/cgi-bin/lang/awstats-br.txt
+www/cgi-bin/lang/awstats-ca.txt
 www/cgi-bin/lang/awstats-cn.txt
 www/cgi-bin/lang/awstats-cz.txt
 www/cgi-bin/lang/awstats-de.txt
 www/cgi-bin/lang/awstats-dk.txt
 www/cgi-bin/lang/awstats-en.txt
 www/cgi-bin/lang/awstats-es.txt
-www/cgi-bin/lang/awstats-es_cat.txt
-www/cgi-bin/lang/awstats-es_eu.txt
 www/cgi-bin/lang/awstats-et.txt
+www/cgi-bin/lang/awstats-eu.txt
 www/cgi-bin/lang/awstats-fi.txt
 www/cgi-bin/lang/awstats-fr.txt
+www/cgi-bin/lang/awstats-gl.txt
 www/cgi-bin/lang/awstats-gr.txt
+www/cgi-bin/lang/awstats-he.txt
 www/cgi-bin/lang/awstats-hu.txt
 www/cgi-bin/lang/awstats-id.txt
 www/cgi-bin/lang/awstats-is.txt
@@ -83,15 +89,16 @@ www/cgi-bin/lang/awstats-tr.txt
 www/cgi-bin/lang/awstats-tt-al.txt
 www/cgi-bin/lang/awstats-tt-ba.txt
 www/cgi-bin/lang/awstats-tt-bg.txt
+www/cgi-bin/lang/awstats-tt-ca.txt
 www/cgi-bin/lang/awstats-tt-cn.txt
 www/cgi-bin/lang/awstats-tt-cz.txt
 www/cgi-bin/lang/awstats-tt-de.txt
 www/cgi-bin/lang/awstats-tt-dk.txt
 www/cgi-bin/lang/awstats-tt-en.txt
 www/cgi-bin/lang/awstats-tt-es.txt
-www/cgi-bin/lang/awstats-tt-es_cat.txt
 www/cgi-bin/lang/awstats-tt-fi.txt
 www/cgi-bin/lang/awstats-tt-fr.txt
+www/cgi-bin/lang/awstats-tt-gl.txt
 www/cgi-bin/lang/awstats-tt-hu.txt
 www/cgi-bin/lang/awstats-tt-is.txt
 www/cgi-bin/lang/awstats-tt-it.txt
@@ -119,12 +126,16 @@ www/cgi-bin/lib/operating_systems.pm
 www/cgi-bin/lib/referer_spam.pm
 www/cgi-bin/lib/robots.pm
 www/cgi-bin/lib/search_engines.pm
+www/cgi-bin/lib/status_http.pm
+www/cgi-bin/lib/status_smtp.pm
 www/cgi-bin/lib/worms.pm
+www/cgi-bin/plugins/decodeutfkeys.pm
 www/cgi-bin/plugins/example/example.pm
 www/cgi-bin/plugins/geoip.pm
 www/cgi-bin/plugins/geoipfree.pm
-www/cgi-bin/plugins/hostinfo.pm
+www/cgi-bin/plugins/graphapplet.pm
 www/cgi-bin/plugins/hashfiles.pm
+www/cgi-bin/plugins/hostinfo.pm
 www/cgi-bin/plugins/ipv6.pm
 www/cgi-bin/plugins/rawlog.pm
 www/cgi-bin/plugins/timehires.pm
@@ -132,30 +143,41 @@ www/cgi-bin/plugins/timezone.pm
 www/cgi-bin/plugins/tooltips.pm
 www/cgi-bin/plugins/urlalias.pm
 www/cgi-bin/plugins/userinfo.pm
-www/cgi-bin/awredir.pl
-www/cgi-bin/awstats.model.conf
-www/cgi-bin/awstats.pl
 www/css/awstats_bw.css
 www/css/awstats_default.css
 www/icons/browser/adobe.png
 www/icons/browser/amaya.png
+www/icons/browser/amigavoyager.png
+www/icons/browser/apt.png
+www/icons/browser/avant.png
+www/icons/browser/aweb.png
+www/icons/browser/bpftp.png
 www/icons/browser/chimera.png
+www/icons/browser/cyberdog.png
 www/icons/browser/da.png
+www/icons/browser/dillo.png
 www/icons/browser/dreamcast.png
+www/icons/browser/ecatch.png
+www/icons/browser/encompass.png
+www/icons/browser/fpexpress.png
+www/icons/browser/fresco.png
 www/icons/browser/galeon.png
 www/icons/browser/getright.png
 www/icons/browser/gozilla.png
+www/icons/browser/hotjava.png
 www/icons/browser/ibrowse.png
 www/icons/browser/icab.png
 www/icons/browser/kmeleon.png
 www/icons/browser/konqueror.png
 www/icons/browser/lotusnotes.png
 www/icons/browser/lynx.png
+www/icons/browser/macweb.png
 www/icons/browser/mediaplayer.png
 www/icons/browser/mozilla.png
 www/icons/browser/msie.png
 www/icons/browser/msie_large.png
 www/icons/browser/multizilla.png
+www/icons/browser/ncsa_mosaic.png
 www/icons/browser/netpositive.png
 www/icons/browser/netscape.png
 www/icons/browser/netscape_large.png
@@ -349,8 +371,10 @@ www/icons/flags/mg.png
 www/icons/flags/mil.png
 www/icons/flags/mk.png
 www/icons/flags/ml.png
+www/icons/flags/mm.png
 www/icons/flags/mn.png
 www/icons/flags/mo.png
+www/icons/flags/mp.png
 www/icons/flags/mq.png
 www/icons/flags/mr.png
 www/icons/flags/ms.png
@@ -387,8 +411,8 @@ www/icons/flags/ph.png
 www/icons/flags/pk.png
 www/icons/flags/pl.png
 www/icons/flags/pr.png
-www/icons/flags/ps.png
 www/icons/flags/pro.png
+www/icons/flags/ps.png
 www/icons/flags/pt.png
 www/icons/flags/py.png
 www/icons/flags/qa.png
@@ -469,6 +493,7 @@ www/icons/os/atari.png
 www/icons/os/beos.png
 www/icons/os/bsdi.png
 www/icons/os/cpm.png
+www/icons/os/debian.png
 www/icons/os/digital.png
 www/icons/os/dos.png
 www/icons/os/dreamcast.png
@@ -493,6 +518,7 @@ www/icons/os/qnx.png
 www/icons/os/riscos.png
 www/icons/os/sco.png
 www/icons/os/sunos.png
+www/icons/os/symbian.png
 www/icons/os/unix.png
 www/icons/os/unknown.png
 www/icons/os/vms.png
@@ -534,18 +560,21 @@ www/icons/other/vp.png
 www/icons/other/vu.png
 www/icons/other/vv.png
 www/js/awstats_misc_tracker.js
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/images
-@dirrm %%PORTDOCS%%%%DOCSDIR%%
-@dirrm www/cgi-bin/lang
-@dirrm www/cgi-bin/lib
+@dirrm www/js
+@dirrm www/icons/other
+@dirrm www/icons/os
+@dirrm www/icons/mime
+@dirrm www/icons/flags
+@dirrm www/icons/cpu
+@dirrm www/icons/clock
+@dirrm www/icons/browser
+@dirrm www/icons
+@dirrm www/css
 @dirrm www/cgi-bin/plugins/example
 @dirrm www/cgi-bin/plugins
-@dirrm www/css
-@dirrm www/icons/browser
-@dirrm www/icons/clock
-@dirrm www/icons/cpu
-@dirrm www/icons/flags
-@dirrm www/icons/mime
-@dirrm www/icons/os
-@dirrm www/icons/other
-@dirrm www/js
+@dirrm www/cgi-bin/lib
+@dirrm www/cgi-bin/lang
+@dirrm www/cgi-bin
+@dirrm www
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
