@@ -402,6 +402,7 @@
     SUBDIR += openldap20
     SUBDIR += openldap21
     SUBDIR += openmcu
+    SUBDIR += openreg
     SUBDIR += openslp
     SUBDIR += openverse
     SUBDIR += oproute
