@@ -10,7 +10,6 @@ PORTVERSION=	3.1.1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.wwdsi.com/pub/saint/			\
 		http://www.wwdsi.com/saint/downloads/
-DISTNAME=       ${PORTNAME}-${PORTVERSION}.beta2
 
 MAINTAINER=	cj@vallcom.net
 
