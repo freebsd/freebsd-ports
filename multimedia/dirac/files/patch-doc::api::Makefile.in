@@ -1,0 +1,11 @@
+--- doc/api/Makefile.in.orig	Wed Dec  1 16:07:11 2004
++++ doc/api/Makefile.in	Mon Feb 28 15:33:41 2005
+@@ -388,7 +388,7 @@
+ 	doxygen $(srcdir)/dirac_api.doxygen
+ 
+ install-data-hook:
+-	cp -dR html/* $(DESTDIR)$(htmldir)
++	cp -R html/* $(DESTDIR)$(htmldir)
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

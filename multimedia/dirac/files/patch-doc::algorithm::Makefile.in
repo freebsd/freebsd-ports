@@ -1,0 +1,13 @@
+--- doc/algorithm/Makefile.in.orig	Wed Dec  1 16:07:11 2004
++++ doc/algorithm/Makefile.in	Mon Feb 28 15:33:41 2005
+@@ -380,8 +380,8 @@
+ 
+ 
+ install-data-hook:
+-	cp -dp *.htm $(DESTDIR)$(algodir)
+-	cp -dpR figs $(DESTDIR)$(algodir)
++	cp -p *.htm $(DESTDIR)$(algodir)
++	cp -pR figs $(DESTDIR)$(algodir)
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
