@@ -44,6 +44,10 @@ MAN1=		ffmpeg.1
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not compile on alpha"
+.endif
+
 .if exists(${LOCALBASE}/lib/libavformat.so.0)
 BROKEN=		Please remove previous version of ${PORTNAME} to continue build
 .endif

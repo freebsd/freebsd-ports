@@ -27,6 +27,10 @@ DEPRECATED=	"This port is no longer in use by anything in the ports collection a
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not compile on alpha"
+.endif
+
 .if ${OSVERSION} >= 500113
 BROKEN=		"Does not compile (bad C++ code)"
 .endif
