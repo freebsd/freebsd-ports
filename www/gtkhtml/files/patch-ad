@@ -1,11 +1,7 @@
---- src/gtkhtml.c.orig	Thu Aug 10 14:54:13 2000
-+++ src/gtkhtml.c	Mon Aug 14 12:52:42 2000
-@@ -2331,7 +2331,7 @@
+--- src/gtkhtml.c.orig	Thu Oct 19 04:04:22 2000
++++ src/gtkhtml.c	Fri Oct 20 10:40:47 2000
+@@ -2625,3 +2625,3 @@
  
- 	if (strcmp (klass->properties->keybindings_theme, "custom")) {
- 		base = g_strconcat ("keybindingsrc.", klass->properties->keybindings_theme, NULL);
--		rcfile = g_concat_dir_and_file (PREFIX "/share/gtkhtml", base);
-+		rcfile = g_concat_dir_and_file (PREFIX "/share/gnome/gtkhtml", base);
- 		g_free (base);
- 	} else {
- 		rcfile = g_strconcat (gnome_util_user_home (), "/.gnome/gtkhtml-bindings-custom", NULL);
+-	rcfile = g_strconcat ((from_share ? PREFIX "/share/gtkhtml/" : gnome_util_user_home ()),
++	rcfile = g_strconcat ((from_share ? PREFIX "/share/gnome/gtkhtml/" : gnome_util_user_home ()),
+ 			      (from_share ? "" : "/.gnome/"), name, NULL);
