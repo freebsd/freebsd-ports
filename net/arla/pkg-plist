@@ -1,6 +1,8 @@
+bin/aklog
 bin/amon
 bin/bos
 bin/fs
+bin/kalog
 bin/klog
 bin/mk_cmds
 bin/pts
@@ -21,6 +23,7 @@ etc/ThisCell.default
 @unexec if cmp -s %D/etc/arla.conf %D/etc/arla.conf.default; then rm -f %D/etc/arla.conf; fi
 etc/arla.conf.default
 include/afs/cmd.h
+include/arlalib.h
 include/atypes.h
 include/auth.h
 include/base64.h
@@ -37,6 +40,7 @@ include/fs_errors.h
 include/getarg.h
 include/hash.h
 include/heap.h
+include/ka-procs.h
 include/list.h
 include/lock.h
 include/log.h
@@ -96,6 +100,7 @@ lib/libsl.a
 lib/libss.a
 lib/libutil.a
 libexec/arlad
+sbin/arla-cli
 sbin/rxperf
 sbin/mount_xfs
 sbin/startarla
