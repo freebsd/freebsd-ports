@@ -4530,6 +4530,7 @@ nos-tun		src/sbin/nos-tun
 nosefart	ports/audio/nosefart
 notebook	ports/deskutils/notebook
 notif2		ports/x11-toolkits/notif2
+novawm		ports/x11-wm/novawm
 noweb		ports/devel/noweb
 npadmin		ports/sysutils/npadmin
 npc		ports/www/npc
