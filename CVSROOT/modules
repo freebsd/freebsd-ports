@@ -4579,6 +4579,7 @@ ocaml-mode.el	ports/lang/ocaml-mode.el
 ocaml-net	ports/www/ocaml-net
 ocaml-pcre	ports/devel/ocaml-pcre
 ocaml-pxp	ports/textproc/ocaml-pxp
+ocaml-wdialog	ports/www/ocaml-wdialog
 ocaml-yaxpo	ports/textproc/ocaml-yaxpo
 ocamlweb	ports/devel/ocamlweb
 octave		ports/math/octave
