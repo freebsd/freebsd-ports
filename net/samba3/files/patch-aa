@@ -1,5 +1,5 @@
-*** Makefile.orig	Tue Jan 24 16:30:54 1995
---- Makefile	Sat Feb 11 10:11:05 1995
+*** Makefile.orig	Fri Mar 24 01:37:51 1995
+--- Makefile	Mon Mar 27 15:19:10 1995
 ***************
 *** 5,16 ****
   
@@ -28,35 +28,35 @@
   LIBDIR = $(BASEDIR)/lib
   VARDIR = $(BASEDIR)/var
 ***************
-*** 195,202 ****
-  
+*** 217,224 ****
   # This is for FreeBSD
   # contributed by kuku@acds.physik.rwth-aachen.de
-! # FLAGSM = -DFreeBSD -DUSE_DIRECT
+  # NOTE: You may need to add -DBSD44 if you have password problems
+! # FLAGSM = -DFreeBSD
 ! # LIBSM = -lcrypt 
   
   
   # This is for NeXT. Note that versions of NeXT less than 3.2 
---- 195,202 ----
-  
+--- 217,224 ----
   # This is for FreeBSD
   # contributed by kuku@acds.physik.rwth-aachen.de
-! FLAGSM = -DFreeBSD -DUSE_DIRECT
+  # NOTE: You may need to add -DBSD44 if you have password problems
+! FLAGSM = -DFreeBSD -DBSD44
 ! LIBSM = -lcrypt 
   
   
   # This is for NeXT. Note that versions of NeXT less than 3.2 
 ***************
-*** 380,386 ****
-  	chmod u=rw,go=r $(MANDIR)/man5/smb.conf.5
+*** 440,446 ****
+  	chmod u=rw,go=r $(MANDIR)/man7/samba.7
   	chmod u=rw,go=r $(MANDIR)/man8/smbd.8
   	chmod u=rw,go=r $(MANDIR)/man8/nmbd.8
 ! 	
   source:
   	tar cfv sources.tar COPYING README THANKS \
                               Makefile announce bugs change-log \
---- 380,395 ----
-  	chmod u=rw,go=r $(MANDIR)/man5/smb.conf.5
+--- 440,455 ----
+  	chmod u=rw,go=r $(MANDIR)/man7/samba.7
   	chmod u=rw,go=r $(MANDIR)/man8/smbd.8
   	chmod u=rw,go=r $(MANDIR)/man8/nmbd.8
 ! 	@echo "Comrpessing manpages"
