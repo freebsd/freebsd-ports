@@ -14,12 +14,14 @@ MASTER_SITE_SUBDIR=	tcllib
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	A collection of utility modules for Tcl
 
-BUILD_DEPENDS=	tclsh:${PORTSDIR}/lang/tcl84
+BUILD_DEPENDS=	tclsh:${PORTSDIR}/lang/tcl${TCL_VER:S/.//}
 
+TCL_VER?=	8.4
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all
 MAKE_ENV+=	LANG=C
+SCRIPTS_ENV+=	TCL_VER=${TCL_VER} PATCH="${PATCH}"
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
