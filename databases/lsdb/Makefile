@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lsdb
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	databases elisp
 MASTER_SITES=	http://deisui.org/~ueno/emacs-lisp/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
