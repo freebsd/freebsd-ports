@@ -1826,7 +1826,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-applets-2.0.mo
 @dirrm share/gnome/pixmaps/mixer
 @dirrm share/gnome/pixmaps/mini-commander
 @dirrm share/gnome/pixmaps/mailcheck
-@dirrm share/gnome/pixmaps/gweather
 @dirrm share/gnome/pixmaps/gkb
 @dirrm share/gnome/pixmaps/accessx-status-applet
 @dirrm share/gnome/omf/gnome-applets
