@@ -77,3 +77,4 @@ share/doc/mhc/00readme.jis
 share/doc/mhc/00usage.jis
 @dirrm %%EMACS_LIBDIR%%/site-packages/lisp/mhc
 @dirrm %%EMACS_LIBDIR%%/site-packages/etc/mhc
+@dirrm share/doc/mhc
