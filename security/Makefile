@@ -355,6 +355,7 @@
     SUBDIR += saferpay
     SUBDIR += safesh
     SUBDIR += saint
+    SUBDIR += samba-vscan
     SUBDIR += samhain
     SUBDIR += scanssh
     SUBDIR += seahorse
