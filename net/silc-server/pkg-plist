@@ -1,0 +1,3 @@
+etc/silc/silcd.conf
+sbin/i386--freebsd4.4-silcd
+@dirrm etc/silc

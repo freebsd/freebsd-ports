@@ -1,0 +1,11 @@
+--- lib/dotconf/src/Makefile.in.orig	Thu Nov  8 23:46:47 2001
++++ lib/dotconf/src/Makefile.in	Thu Nov  8 23:47:31 2001
+@@ -91,7 +91,7 @@
+ noinst_HEADERS = readdir.h
+ lib_LTLIBRARIES = libdotconf.la
+ libdotconf_la_SOURCES = dotconf.c readdir.c
+-libdotconf_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 	-release $(LT_RELEASE) 	-export-dynamic
++libdotconf_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) -export-dynamic
+ 
+ 
+ EXTRA_DIST = dotconf.dsp

@@ -1,0 +1,11 @@
+--- configure.orig	Thu Nov  8 14:44:02 2001
++++ configure	Thu Nov  8 14:45:48 2001
+@@ -8499,7 +8499,7 @@
+       fi
+       ;;
+     *-freebsd2.2*)
+-      CFLAGS="$CFLAGS -D_THREAD_SAFE"
++      CFLAGS="$CFLAGS"
+       ;;
+     *-sysv5uw7*)  # UnixWare 7
+       if test "$GCC" != "yes"; then
