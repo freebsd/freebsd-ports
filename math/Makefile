@@ -1,6 +1,6 @@
 
-# $Id: Makefile,v 1.7 1995/01/13 11:44:45 jkh Exp $
+# $Id: Makefile,v 1.8 1995/02/13 23:52:02 ats Exp $
 #
-SUBDIR=	blas calc eispack fudgit gmp gnuplot hexcalc linpack oleo xgraph
+SUBDIR=	blas calc eispack fudgit gmp gnuplot hexcalc linpack octave oleo xgraph
 
 .include <bsd.port.subdir.mk>
