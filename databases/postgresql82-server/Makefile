@@ -15,7 +15,6 @@ MASTER_SITES=	ftp://ftp.iodynamics.com/pub/mirror/postgresql/%SUBDIR%/ \
 		ftp://ftp.digex.net/pub/packages/database/postgresql/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/unix/databases/relational/postgresql/%SUBDIR%/ \
 		ftp://ftp.chg.ru/pub/databases/postgresql/%SUBDIR%/
-
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
 DISTFILES=	${PORTNAME}-base-${PORTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-opt-${PORTVERSION}${EXTRACT_SUFX}
