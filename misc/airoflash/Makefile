@@ -8,14 +8,14 @@
 PORTNAME=	airoflash
 PORTVERSION=	${AF_VERSION}
 CATEGORIES=	misc
-MASTER_SITES=	"http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/~checkout~/airo-linux/airo-linux/tools/airoflash.c?rev=${AF_VERSION}"
+MASTER_SITES=	"http://cvs.sourceforge.net/viewcvs.py/*checkout*/airo-linux/airo-linux/tools/airoflash.c?rev=${AF_VERSION}"
 DISTNAME=	airoflash.c
 EXTRACT_SUFX=
 
 MAINTAINER=	ambrisko@freebsd.org
 COMMENT=	Flash utiltity for Cisco/Aironet 802.11 wireless cards
 
-AF_VERSION=	1.3
+AF_VERSION=	1.7
 
 do-fetch:
 		[ -f ${DISTDIR}/${DISTNAME} ] || \
