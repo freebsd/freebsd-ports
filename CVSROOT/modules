@@ -1178,6 +1178,7 @@ cvsup-without-gui	ports/net/cvsup-without-gui
 cvsutils	ports/devel/cvsutils
 cvsweb		ports/devel/cvsweb
 cvsweb-converters	ports/sysutils/cvsweb-converters
+cvsweb3		ports/devel/cvsweb3
 cvswrap		ports/devel/cvswrap
 cvsync		ports/net/cvsync
 cweb		ports/devel/cweb
@@ -3579,10 +3580,10 @@ ja-php_doc	ports/japanese/php_doc
 ja-phpgroupware	ports/japanese/phpgroupware
 ja-plain2	ports/japanese/plain2
 ja-plan		ports/japanese/plan
+ja-platex-jsclasses	ports/japanese/platex-jsclasses
 ja-platex209-euc	ports/japanese/platex209-euc
 ja-platex209-jis	ports/japanese/platex209-jis
 ja-platex209-sjis	ports/japanese/platex209-sjis
-ja-platex-jsclasses	ports/japanese/platex-jsclasses
 ja-port_man	ports/japanese/man
 ja-postgresql	ports/japanese/postgresql
 ja-postgresql-tcltk	ports/japanese/postgresql-tcltk
@@ -4512,6 +4513,7 @@ libksba		ports/security/libksba
 liblingoteach	ports/textproc/liblingoteach
 liblrdf		ports/textproc/liblrdf
 libltdl		ports/devel/libltdl
+libltdl15	ports/devel/libltdl15
 liblug		ports/graphics/liblug
 libmad		ports/audio/libmad
 libmaitretarot	ports/games/libmaitretarot
