@@ -5,12 +5,12 @@
 #					msmith@freebsd.org
 # Relevant URLs:			http://www.corel.com/
 #
-# $Id: Makefile,v 1.4 1999/02/03 11:11:42 asami Exp $
+# $Id: Makefile,v 1.5 1999/07/21 14:55:30 marcel Exp $
 
 DISTNAME=	GUILG00
 PKGNAME=	wordperfect-8.0
 CATEGORIES=     editors
-MASTER_SITES=	"Fetch must be performed manually"
+MASTER_SITES=	
 EXTRACT_SUFX=	.GZ
 
 MAINTAINER=	msmith@freebsd.org

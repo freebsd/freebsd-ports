@@ -3,13 +3,13 @@
 # Date created:        31 January 1999
 # Whom:                Kris Kennaway <kkennawa@physics.adelaide.edu.au>
 #
-# $Id: Makefile,v 1.3 1999/06/07 12:03:37 kris Exp $
+# $Id: Makefile,v 1.4 1999/07/21 14:55:27 marcel Exp $
 #
 
 DISTNAME=	rv50_linux20
 PKGNAME=	linux-realplayer-5.0
 CATEGORIES=	audio
-MASTER_SITES=	"Fetch must be performed manually"
+MASTER_SITES=	
 
 MAINTAINER=	kris@FreeBSD.ORG
 
