@@ -14,8 +14,8 @@ MASTER_SITES=	ftp://avian.org/src/hacks/  \
 		ftp://zippy.telcom.arizona.edu/pub/mirrors/avian.org/hacks/  \
 		ftp://ftp.sterling.com/mirrors/avian.org/src/hacks/  \
 		ftp://ftp.rge.com/pub/security/coast/mirrors/avian.org/netcat/
-EXTRACT_SUFX=	.tgz
 DISTNAME=	nc110
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	obrien@FreeBSD.org
 
