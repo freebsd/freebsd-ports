@@ -3582,6 +3582,8 @@ ko-mplayer-fonts	ports/korean/mplayer-fonts
 ko-msdosfs	ports/korean/msdosfs
 ko-mule-freewnn	ports/korean/mule-freewnn
 ko-munhwafonts-cid	ports/korean/munhwafonts-cid
+ko-netscape48-communicator	ports/korean/netscape48-communicator
+ko-netscape48-navigator	ports/korean/netscape48-navigator
 ko-nh2ps	ports/korean/nh2ps
 ko-nhpf		ports/korean/nhpf
 ko-nhppf	ports/korean/nhppf
