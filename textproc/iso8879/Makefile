@@ -15,12 +15,15 @@ EXTRACT_SUFX=	.zip
 MAINTAINER=	kuriyama@FreeBSD.org
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+RUN_DEPENDS=	${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog
 
 EXTRACT_ONLY=	# empty
 NO_BUILD=       yes
 NO_WRKSUBDIR=	yes
+PLIST_SUB=	DTD_NAME=${PORTNAME} MKCATALOG=${MKCATALOG}
 
 INSTDIR=	${PREFIX}/share/sgml/iso8879
+MKCATALOG=	${PREFIX}/sbin/mkcatalog
 
 pre-install:
 	@[ -d ${INSTDIR} ] || ${MKDIR} ${INSTDIR}
@@ -30,5 +33,8 @@ do-install:
 	@${INSTALL_DATA} ${FILESDIR}/catalog ${INSTDIR}/catalog
 	@${CHMOD} ${SHAREMODE} ${INSTDIR}/*
 	@${CHOWN} -R ${SHAREOWN}.${SHAREGRP} ${INSTDIR}
+
+post-install:
+	@${MKCATALOG} -q install ${PORTNAME}
 
 .include <bsd.port.mk>
