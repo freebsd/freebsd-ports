@@ -1,0 +1,9 @@
+entitymib is a utility for displaying the physical configuration of an
+SNMPv2c or v3 agent using the SNMP Entity MIB, and, for certain Cisco
+Systems switches, displaying additional sensor and configuration
+information from proprietary MIBs (which must be obtained separately).
+
+entitymib is written entirely in Perl, but it uses the NetSNMP library
+through its Perl binding, SNMP(3), and requires that NetSNMP's MIB
+directories be correctly configured to provide, at a minimum, the
+Entity MIB.

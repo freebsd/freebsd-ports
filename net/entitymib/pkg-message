@@ -1,0 +1,9 @@
+In order to use the full functionality of entitymib for Cisco
+switches, you must obtain and install the following Cisco proprietary
+MIB modules:
+
+	CISCO-ENTITY-SENSOR-MIB
+	CISCO-ASSET-ENTITY-MIB
+	CISCO-ENTITY-EXT-MIB
+
+Not all MIBs are supported by all Cisco switches.
