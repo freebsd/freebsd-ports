@@ -1,0 +1,13 @@
+--- src/load-dl.c.orig	Fri Dec 22 08:46:24 1995
++++ src/load-dl.c	Sun Dec 12 16:29:07 1999
+@@ -4,6 +4,10 @@
+ extern char *strrchr();
+ extern char *getenv();
+ 
++#ifndef RTLD_NOW
++#define RTLD_NOW 1
++#endif
++
+ Dlopen_File (fn) char *fn; {
+     void *handle;
+     SYM *sp;

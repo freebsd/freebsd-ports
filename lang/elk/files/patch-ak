@@ -1,0 +1,11 @@
+--- lib/xaw/build.orig	Tue Jul 18 06:29:49 1995
++++ lib/xaw/build	Sun Dec 12 16:29:08 1999
+@@ -7,7 +7,7 @@
+ 
+ SHELL=/bin/sh
+ 
+-CC= ${cc-cc}
++CC?= cc
+ CFLAGS= $cflags $obj_cflags
+ LINTFLAGS= $lintflags
+ SCMFLAGS= -p .:../../scm:../xt

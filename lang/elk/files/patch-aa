@@ -1,0 +1,15 @@
+--- Makefile.orig	Mon Jul 31 07:56:26 1995
++++ Makefile	Sun Dec 12 16:29:07 1999
+@@ -16,9 +16,9 @@
+ 	 lib/unix\
+ 	 lib/xlib\
+ 	 lib/xt\
+-	 lib/xaw\
+-	 lib/xm\
+-	 lib/xm/xt
++	 lib/xaw
++#	 lib/xm\
++#	 lib/xm/xt
+ 
+ # ----------------------------------------------------------------------
+ 

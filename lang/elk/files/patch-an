@@ -1,0 +1,11 @@
+--- lib/xt/build.orig	Tue Jul 18 06:21:52 1995
++++ lib/xt/build	Sun Dec 12 16:29:08 1999
+@@ -7,7 +7,7 @@
+ 
+ SHELL=/bin/sh
+ 
+-CC= ${cc-cc}
++CC?= cc
+ CFLAGS= $cflags $obj_cflags
+ LINTFLAGS= $lintflags
+ 

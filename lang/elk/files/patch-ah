@@ -1,0 +1,11 @@
+--- src/build.orig	Mon Jan 24 10:12:31 1994
++++ src/build	Sun Dec 12 16:29:08 1999
+@@ -22,7 +22,7 @@
+ 
+ SHELL=/bin/sh
+ 
+-CC= ${cc-cc}
++CC?= cc
+ CFLAGS= $cflags
+ LDFLAGS= $ldflags
+ LINTFLAGS= $lintflags

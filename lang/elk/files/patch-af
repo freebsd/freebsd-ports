@@ -1,0 +1,19 @@
+--- src/print.c.orig	Thu Apr  4 07:25:04 1996
++++ src/print.c	Sun Dec 12 16:29:07 1999
+@@ -6,6 +6,7 @@
+ #include <errno.h>
+ #include <ctype.h>
+ #include <varargs.h>
++#include <sys/param.h>
+ 
+ #ifdef FLUSH_TIOCFLUSH
+ #  include <sys/ioctl.h>
+@@ -556,7 +557,7 @@
+     register c;
+     char buf[256];
+     extern sys_nerr;
+-#ifndef __bsdi__
++#if !(defined(BSD) && (BSD >= 199306))
+     extern char *sys_errlist[];
+ #endif
+     GC_Node;
