@@ -60,6 +60,7 @@ share/doc/libgnomedb/index.html
 share/doc/libgnomedb/index.sgml
 share/doc/libgnomedb/libgnomedb-basic.html
 share/doc/libgnomedb/libgnomedb-bonobo.html
+share/doc/libgnomedb/libgnomedb-gnome-db-config.html
 share/doc/libgnomedb/libgnomedb-gnome-db-model.html
 share/doc/libgnomedb/libgnomedb-gnome-db-stock.html
 share/doc/libgnomedb/libgnomedb-gnome-db-util.html
@@ -91,7 +92,9 @@ share/doc/libgnomedb/libgnomedb-widgets.html
 share/gnome/control-center-2.0/capplets/database-properties.desktop
 share/gnome/mime-info/libgnomedb.keys
 share/gnome/mime-info/libgnomedb.mime
+share/gnome/omf/libgnomedb/libgnomedb-C.omf
 share/gnome/pixmaps/libgnomedb/gnome-db-aggregates_16x16.png
+share/gnome/pixmaps/libgnomedb/gnome-db-aggregates_24x24.png
 share/gnome/pixmaps/libgnomedb/gnome-db-connect_24x24.png
 share/gnome/pixmaps/libgnomedb/gnome-db-database_16x16.png
 share/gnome/pixmaps/libgnomedb/gnome-db-database_24x24.png
@@ -99,17 +102,24 @@ share/gnome/pixmaps/libgnomedb/gnome-db-designer_24x24.png
 share/gnome/pixmaps/libgnomedb/gnome-db-disconnect_24x24.png
 share/gnome/pixmaps/libgnomedb/gnome-db-indexes_16x16.png
 share/gnome/pixmaps/libgnomedb/gnome-db-procedures_16x16.png
+share/gnome/pixmaps/libgnomedb/gnome-db-procedures_24x24.png
+share/gnome/pixmaps/libgnomedb/gnome-db-query_16x16.png
+share/gnome/pixmaps/libgnomedb/gnome-db-query_24x24.png
 share/gnome/pixmaps/libgnomedb/gnome-db-sequences_16x16.png
+share/gnome/pixmaps/libgnomedb/gnome-db-sequences_24x24.png
 share/gnome/pixmaps/libgnomedb/gnome-db-sql_16x16.png
 share/gnome/pixmaps/libgnomedb/gnome-db-sql_24x24.png
+share/gnome/pixmaps/libgnomedb/gnome-db-table_16x16.png
 share/gnome/pixmaps/libgnomedb/gnome-db-tables_16x16.png
 share/gnome/pixmaps/libgnomedb/gnome-db-tables_24x24.png
 share/gnome/pixmaps/libgnomedb/gnome-db-triggers_16x16.png
 share/gnome/pixmaps/libgnomedb/gnome-db-types_16x16.png
+share/gnome/pixmaps/libgnomedb/gnome-db-types_24x24.png
 share/gnome/pixmaps/libgnomedb/gnome-db-views_16x16.png
 share/gnome/pixmaps/libgnomedb/gnome-db.png
 share/locale/az/LC_MESSAGES/libgnomedb-2.mo
 share/locale/ca/LC_MESSAGES/libgnomedb-2.mo
+share/locale/cs/LC_MESSAGES/libgnomedb-2.mo
 share/locale/da/LC_MESSAGES/libgnomedb-2.mo
 share/locale/de/LC_MESSAGES/libgnomedb-2.mo
 share/locale/el/LC_MESSAGES/libgnomedb-2.mo
@@ -139,6 +149,7 @@ share/locale/vi/LC_MESSAGES/libgnomedb-2.mo
 share/locale/zh_CN/LC_MESSAGES/libgnomedb-2.mo
 share/locale/zh_TW/LC_MESSAGES/libgnomedb-2.mo
 @dirrm share/gnome/pixmaps/libgnomedb
+@dirrm share/gnome/omf/libgnomedb
 @dirrm share/doc/libgnomedb
 @dirrm include/libgnomedb
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-db/UI
