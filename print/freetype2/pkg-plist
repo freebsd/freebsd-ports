@@ -19,6 +19,7 @@ include/freetype2/freetype/ftimage.h
 include/freetype2/freetype/ftlist.h
 include/freetype2/freetype/ftmac.h
 include/freetype2/freetype/ftmm.h
+include/freetype2/freetype/ftmoderr.h
 include/freetype2/freetype/ftmodule.h
 include/freetype2/freetype/ftoutln.h
 include/freetype2/freetype/ftrender.h
@@ -28,7 +29,6 @@ include/freetype2/freetype/ftsystem.h
 include/freetype2/freetype/fttrigon.h
 include/freetype2/freetype/fttypes.h
 include/freetype2/freetype/internal/autohint.h
-include/freetype2/freetype/internal/cfferrs.h
 include/freetype2/freetype/internal/cfftypes.h
 include/freetype2/freetype/internal/fnttypes.h
 include/freetype2/freetype/internal/ftcalc.h
@@ -43,9 +43,7 @@ include/freetype2/freetype/internal/pcftypes.h
 include/freetype2/freetype/internal/psaux.h
 include/freetype2/freetype/internal/psnames.h
 include/freetype2/freetype/internal/sfnt.h
-include/freetype2/freetype/internal/t1errors.h
 include/freetype2/freetype/internal/t1types.h
-include/freetype2/freetype/internal/tterrors.h
 include/freetype2/freetype/internal/tttypes.h
 include/freetype2/freetype/t1tables.h
 include/freetype2/freetype/ttnameid.h
@@ -54,7 +52,7 @@ include/freetype2/freetype/tttags.h
 include/ft2build.h
 lib/libfreetype.a
 lib/libfreetype.so
-lib/libfreetype.so.6
+lib/libfreetype.so.7
 @dirrm include/freetype2/freetype/internal
 @dirrm include/freetype2/freetype/config
 @dirrm include/freetype2/freetype/cache

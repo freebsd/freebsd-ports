@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	freetype2
-PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTVERSION=	2.0.4
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,freetype,} \
 		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/%SUBDIR%/ \
@@ -23,11 +22,11 @@ MAINTAINER=	sobomax@FreeBSD.org
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	TOP=""
-USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls --enable-static --enable-shared
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 CONFIGURE_WRKSRC=	${WRKSRC}/builds/unix
-LIBTOOLFILES=	${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-configure:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} setup)
