@@ -22,6 +22,9 @@ USE_SIZE=	yes
 
 MAN1=		${PORTNAME}.1
 
+PORTDOCS=	README
+PLIST_FILES=	bin/ipsumdump
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

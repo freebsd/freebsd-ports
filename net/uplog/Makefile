@@ -21,6 +21,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
+PORTDOCS=	README
+PLIST_FILES=	bin/uplog
+
 post-patch:
 	${REINPLACE_CMD} -e \
 	's|#include <malloc.h>||g' \

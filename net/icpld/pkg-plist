@@ -1,5 +1,0 @@
-bin/icpld
-etc/icpld.conf.sample
-etc/rc.d/icpld.sh.sample
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
