@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME applet to warn about task terminations
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomelibs gnomeprefix libpanel
+USE_GNOME=	gnomehack gnomelibs gnomeprefix libpanel
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
