@@ -1,0 +1,28 @@
+%%SITE_PERL%%/Config/Simple.pm
+%%SITE_PERL%%/auto/Config/Simple/CLEAR.al
+%%SITE_PERL%%/auto/Config/Simple/DELETE.al
+%%SITE_PERL%%/auto/Config/Simple/EXISTS.al
+%%SITE_PERL%%/auto/Config/Simple/FETCH.al
+%%SITE_PERL%%/auto/Config/Simple/FIRSTKEY.al
+%%SITE_PERL%%/auto/Config/Simple/NEXTKEY.al
+%%SITE_PERL%%/auto/Config/Simple/STORE.al
+%%SITE_PERL%%/auto/Config/Simple/TIEHASH.al
+%%SITE_PERL%%/auto/Config/Simple/autosplit.ix
+%%SITE_PERL%%/auto/Config/Simple/block.al
+%%SITE_PERL%%/auto/Config/Simple/clear.al
+%%SITE_PERL%%/auto/Config/Simple/dump.al
+%%SITE_PERL%%/auto/Config/Simple/error.al
+%%SITE_PERL%%/auto/Config/Simple/errstr.al
+%%SITE_PERL%%/auto/Config/Simple/hashref.al
+%%SITE_PERL%%/auto/Config/Simple/import_from.al
+%%SITE_PERL%%/auto/Config/Simple/import_names.al
+%%SITE_PERL%%/auto/Config/Simple/param_hash.al
+%%SITE_PERL%%/auto/Config/Simple/vars.al
+%%SITE_PERL%%/auto/Config/Simple/verbose.al
+%%SITE_PERL%%/auto/Config/Simple/write_string.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Simple/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Simple
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config 2>/dev/null || true
+@dirrm %%SITE_PERL%%/auto/Config/Simple
+@unexec rmdir %D/%%SITE_PERL%%/auto/Config 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Config 2>/dev/null || true

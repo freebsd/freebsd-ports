@@ -1,0 +1,13 @@
+Reading and writing configuration files is one of the most frequent
+aspects of any software design. Config::Simple is the library to help
+you with it.
+
+Config::Simple is a class representing configuration file object. It
+supports several configuration file syntax and tries to identify the
+file syntax to parse them accordingly. Library supports parsing,
+updating and creating configuration files.
+
+WWW: http://search.cpan.org/search?dist=Config-Simple
+
+- Manuel Rodrigo Rabade Garcia
+mig@mig-29.net

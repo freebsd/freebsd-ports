@@ -546,6 +546,7 @@
     SUBDIR += p5-Config-Ini
     SUBDIR += p5-Config-IniFiles
     SUBDIR += p5-Config-Setting
+    SUBDIR += p5-Config-Simple
     SUBDIR += p5-Config-Tiny
     SUBDIR += p5-ConfigReader
     SUBDIR += p5-Coro
