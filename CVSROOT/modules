@@ -2798,8 +2798,8 @@ hayes		ports/multimedia/hayes
 hb		ports/misc/hb
 hbiff		ports/mail/hbiff
 hdconv		ports/palm/hdconv
-hdf		ports/graphics/hdf
-hdf5		ports/graphics/hdf5
+hdf		ports/science/hdf
+hdf5		ports/science/hdf5
 health-nut	ports/misc/nut
 healthd		ports/sysutils/healthd
 heimdal		ports/security/heimdal
