@@ -1,0 +1,19 @@
+include/xfce4/libxfce4util/debug.h
+include/xfce4/libxfce4util/i18n.h
+include/xfce4/libxfce4util/utf8.h
+include/xfce4/libxfce4util/util.h
+lib/libxfce4util.a
+lib/libxfce4util.la
+lib/libxfce4util.so
+lib/libxfce4util.so.1
+libdata/pkgconfig/libxfce4util-1.0.pc
+share/xfce4/i18n/nls.alias
+share/xfce4/m4/X11.m4
+share/xfce4/m4/debug.m4
+share/xfce4/m4/depends.m4
+share/xfce4/m4/i18n.m4
+@dirrm include/xfce4/libxfce4util
+@unexec rmdir %D/include/xfce4 2>/dev/null || true
+@dirrm share/xfce4/i18n
+@dirrm share/xfce4/m4
+@unexec rmdir %D/share/xfce4 2>/dev/null || true
