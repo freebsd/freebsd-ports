@@ -6,14 +6,20 @@
 #
 
 PORTNAME=	jabber-transport
-PORTVERSION=	0.9
+PORTVERSION=	1.0
 CATEGORIES=	net
-MASTER_SITES=	http://download.jabber.org/dists/0.9/final/
+MASTER_SITES=	http://download.jabber.org/dists/1.0/
 
 MAINTAINER=	lukin@okbmei.msk.su
 
-LIB_DEPENDS=	etherx.0:${PORTSDIR}/net/libetherx
+LIB_DEPENDS=	etherx.1:${PORTSDIR}/net/libetherx
 
 USE_LIBTOOL=	yes
+
+rc=${PREFIX}/etc/rc.d
+
+post-install:
+	@PREFIX=${PREFIX} ${PERL5} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	@${INSTALL_SCRIPT} ${FILESDIR}/jserver.sh ${rc}
 
 .include <bsd.port.mk>
