@@ -15,7 +15,7 @@ MAINTAINER=     kargl@apl.washington.edu
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
 
-MAN1=		dcl2inc.1 ftnchek.1
+MAN1=		dcl2inc.1 ftnchek.1 ftnpp.1
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_dir_lispdir=${PREFIX}/share/emacs/site-lisp
