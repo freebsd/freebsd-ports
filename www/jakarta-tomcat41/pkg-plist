@@ -1,3 +1,4 @@
+bin/tomcatctl
 etc/rc.d/020.jakarta-tomcat.sh
 %%T%%/KEYS
 %%T%%/LICENSE
