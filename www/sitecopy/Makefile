@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	sitecopy
-PORTVERSION= 	0.9.5
+PORTVERSION=    0.9.10
 CATEGORIES=	www
 MASTER_SITES=   http://www.lyra.org/sitecopy/
 
 MAINTAINER=     nik@FreeBSD.org
 
+BUILD_DEPENDS=  xgettext:${PORTSDIR}/devel/gettext
+
 FETCH_BEFORE_ARGS=	-b
 GNU_CONFIGURE=  yes
-CONFIGURE_ARGS= --disable-nls
 USE_GMAKE=      yes
 ALL_TARGET=     sitecopy
 

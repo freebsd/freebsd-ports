@@ -6,5 +6,9 @@ share/doc/sitecopy/NEWS
 share/doc/sitecopy/README
 share/doc/sitecopy/THANKS
 share/doc/sitecopy/update.sh
+share/locale/ru/LC_MESSAGES/sitecopy.mo
+share/locale/fr/LC_MESSAGES/sitecopy.mo
+share/locale/cs/LC_MESSAGES/sitecopy.mo
+share/locale/ja/LC_MESSAGES/sitecopy.mo
 @unexec rm -f %D/share/sitecopy
 @unexec rm -f %D/share/doc/sitecopy
