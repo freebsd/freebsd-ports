@@ -25,6 +25,7 @@ WRKSRC=		${WRKDIR}/nessus-libraries
 
 USE_LIBTOOL=	YES
 CONFIGURE_ARGS=	--enable-cipher
+INSTALLS_SHLIB=	YES
 
 MAN1=		nessus-config.1
 
