@@ -5642,6 +5642,7 @@ portal		src/sys/miscfs/portal
 portcheckout	ports/devel/portcheckout
 porteasy	ports/misc/porteasy
 porters-handbook	doc/en_US.ISO8859-1/books/porters-handbook
+portfwd		ports/net/portfwd
 portlint	ports/devel/portlint
 portmap		src/usr.sbin/portmap
 portoseguro	ports/x11/portoseguro
