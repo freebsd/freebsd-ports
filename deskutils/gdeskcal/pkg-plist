@@ -38,6 +38,7 @@ share/gnome/gdeskcal/code/planner/iCalLoader.py
 share/gnome/gdeskcal/code/planner/iCalWriter.py
 share/gnome/gdeskcal/code/sfrmapper.py
 share/gnome/gdeskcal/code/values.py
+share/gnome/gdeskcal/code/values.py.bak
 share/gnome/gdeskcal/data/config.xml
 share/gnome/gdeskcal/data/format.xml
 share/gnome/gdeskcal/data/gfx/business.png
