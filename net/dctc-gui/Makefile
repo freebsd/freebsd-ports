@@ -7,6 +7,7 @@
 
 PORTNAME=	dctc
 PORTVERSION=	0.59
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	http://ac2i.tzo.com/dctc/
 PKGNAMESUFFIX=	-gui
@@ -43,7 +44,7 @@ post-patch:
 		s|(cmdline.+)(hublist)|\1dc_\2|' \
 		${WRKSRC}/src/init_fnc.c
 # XXX - revise at every port update
-	@${REINPLACE_CMD} -e "s|%'|%|" ${WRKSRC}/src/*.c
+	@${REINPLACE_CMD} -e "s|%'|%|g" ${WRKSRC}/src/*.c
 
 post-configure:
 	@${ECHO_CMD} '#ifndef MSG_NOSIGNAL' >> ${CONFIGURE_WRKSRC}/config.h
