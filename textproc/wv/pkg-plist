@@ -1,10 +1,9 @@
-bin/make_epses.sh
-bin/wv-incconfig
-bin/wv-libconfig
+bin/libwv-config
 bin/wvAbw
 bin/wvCleanLatex
 bin/wvConvert
 bin/wvDVI
+bin/wvDocBook
 bin/wvHtml
 bin/wvLatex
 bin/wvMime
@@ -19,6 +18,8 @@ bin/wvWml
 include/wv.h
 include/wvexporter.h
 lib/libwv.a
+lib/libwv.so
+lib/libwv.so.6
 share/wv/patterns/100.gif
 share/wv/patterns/101.gif
 share/wv/patterns/102.gif
@@ -460,13 +461,13 @@ share/wv/wingdingfont/99.gif
 share/wv/wvAbw.xml
 share/wv/wvCleanLaTeX.xml
 share/wv/wvConfig.xml
+share/wv/wvDocbook.xml
 share/wv/wvHtml.xml
 share/wv/wvLaTeX.xml
 share/wv/wvText.xml
 share/wv/wvWml.xml
 share/wv/wvXml.dtd
 share/wv/wvXml.xml
-@exec mkdir -p %D/share/wv/ttf
 @dirrm share/wv/wingdingfont
 @dirrm share/wv/patterns
-@unexec rm -rf %D/share/wv 2>/dev/null || true
+@dirrm share/wv
