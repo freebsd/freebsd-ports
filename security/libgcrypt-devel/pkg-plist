@@ -1,0 +1,10 @@
+bin/libgcrypt-config
+include/gcrypt.h
+@unexec install-info --delete %D/info/gcrypt.info %D/info/dir
+info/gcrypt.info
+@exec install-info %D/info/gcrypt.info %D/info/dir
+lib/libgcrypt.a
+lib/libgcrypt.la
+lib/libgcrypt.so
+lib/libgcrypt.so.5
+share/aclocal/libgcrypt.m4
