@@ -24,7 +24,6 @@ include/ucd-snmp/mib.h
 lib/libsnmp.so
 @exec ln %D/lib/libsnmp.so %D/lib/libsnmp.so.3.5
 @unexec rm -f %D/lib/libsnmp.so.3.5
-man/man1/snmpcmd.1
 sbin/snmpd
 sbin/snmptrapd
 share/examples/ucd-snmp/README
