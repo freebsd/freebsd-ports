@@ -7,13 +7,13 @@
 #
 
 DISTNAME=	ethereal-0.8.1
-CATEGORIES=	net
+CATEGORIES=	net ipv6
 MASTER_SITES=	http://alpha1.linuxberg.com/files/x11/network/ \
 		http://www.linuxberg.com/files/x11/network/ \
 		http://jefnet.linuxberg.com/files/x11/network/ \
 		http://ethereal.zing.org/distribution/ \
 		http://ethereal.boehm.org/distribution/
-		
+
 MAINTAINER=	billf@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12

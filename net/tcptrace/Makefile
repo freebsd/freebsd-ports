@@ -8,7 +8,7 @@
 
 DISTNAME=	tcptrace.5.2.0
 PKGNAME=	tcptrace-5.2.0
-CATEGORIES=	net
+CATEGORIES=	net ipv6
 MASTER_SITES=	http://jarok.cs.ohiou.edu/software/tcptrace/files/5.2.0/
 
 MAINTAINER=	fenner@FreeBSD.org
