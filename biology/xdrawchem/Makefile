@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Chemical drawing program
 
+LIB_DEPENDS=	openbabel.0:${PORTSDIR}/science/openbabel
+
 CFLAGS+=	-O0
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 GNU_CONFIGURE=	yes
