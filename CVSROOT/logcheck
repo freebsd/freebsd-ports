@@ -12,27 +12,8 @@
 #
 
 use strict;
-
-
-############################################################
-#
-# Configurable options
-#
-############################################################
-
-# These are the optional headers that can be filled at the end of
-# each commit message.  The associated value is a regular-expression
-# that is used to type-check the entered value.  If the match failed
-# then the commit is rejected.  (See rcstemplate).
-my %HEADERS = (
-	"Reviewed by"		=> '.*',
-	"Submitted by"		=> '.*',
-	"Obtained from"		=> '.*',
-	"Approved by"		=> '.*',
-	"PR"			=> '.*',
-	"MFC after"		=> '\d+(?:\s+(?:days?|weeks?|months?))?'
-);
-
+use lib $ENV{CVSROOT};
+use CVSROOT::cfg;
 
 
 #############################################################
@@ -95,7 +76,7 @@ while ($j >= 0) {
 
 	my $header = $1;
 	my $value = $2;
-	my $pattern = $HEADERS{$header};
+	my $pattern = $cfg::TEMPLATE_HEADERS{$header};
 
 	# Ignore unrecognised headers.
 	unless (defined($pattern)) {
