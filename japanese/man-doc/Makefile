@@ -3,11 +3,11 @@
 # Date created:		6 January 1997
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.22 1999/01/27 17:02:44 asami Exp $
+# $Id: Makefile,v 1.23 1999/02/12 14:42:43 kuriyama Exp $
 #
 
-DISTNAME=	jpman-3.1
-PKGNAME=	ja-man-doc-3.1
+DISTNAME=	jpman-3.2
+PKGNAME=	ja-man-doc-3.2
 CATEGORIES=	japanese
 DISTFILES=	# none
 
