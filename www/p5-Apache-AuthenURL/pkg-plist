@@ -1,0 +1,3 @@
+lib/perl5/site_perl/%%PERL_VER%%/Apache/AuthenURL.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/AuthenURL/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/AuthenURL

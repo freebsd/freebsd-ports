@@ -1,0 +1,7 @@
+Apache::AuthenURL is an Apache/mod_perl authentication handler to allow
+authentication against external URLs.  This module requires the LWP
+bundle maintained by Gisle Aas.
+
+Author: John Groenveld
+
+--will
