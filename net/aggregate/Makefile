@@ -8,7 +8,7 @@
 PORTNAME=	aggregate
 PORTVERSION=	1.3
 CATEGORIES=	net
-MASTER_SITES=	http://www.mfnx.net/public/
+MASTER_SITES=	http://www.automagic.org/~jabley/
 
 MAINTAINER=	jabley@automagic.org
 
