@@ -30,7 +30,7 @@ yesno() {
 }
 
 delete_account() {
-    local u g
+    local u g home
 
     u=$1
     g=$2
@@ -39,8 +39,13 @@ delete_account() {
 	echo "Done."
     fi
     if yesno "Do you want me to remove user \"${u}\"" y; then
+	eval home=~${u}
 	pw userdel -n ${u}
 	echo "Done."
+	if [ -d "${home}" ]; then
+	    echo "Please remember to remove the home directory \"${home}\" as"
+	    echo "well as the mirrored files."
+	fi
     fi
 }
 
@@ -55,8 +60,13 @@ base=${PKG_PREFIX}/etc/cvsup
 . ${base}/config.sh || exit
 
 if ps -axc | grep -q cvsupd; then
-    echo "Please kill your running cvsupd processes first" >&2
-    exit 1
+    if yesno "There are some cvsupd processes running.  Shall I kill them" y
+    then
+	killall cvsupd
+	sleep 2
+    else
+	echo "OK ... I hope you know what you are doing."
+    fi
 fi
 
 tmp="/etc/#cvsma$$"
