@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	txt2html
-PORTVERSION=	2.31
+PORTVERSION=	2.35
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	txt2html
@@ -14,7 +14,8 @@ MASTER_SITE_SUBDIR=	txt2html
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert raw text to something with a little HTML formatting
 
-BUILD_DEPENDS=	${SITE_PERL}/Getopt/ArgvFile.pm:${PORTSDIR}/devel/p5-Getopt-ArgvFile
+BUILD_DEPENDS=	${SITE_PERL}/Getopt/ArgvFile.pm:${PORTSDIR}/devel/p5-Getopt-ArgvFile \
+		${SITE_PERL}/Filter/Simple.pm:${PORTSDIR}/textproc/p5-Filter-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
