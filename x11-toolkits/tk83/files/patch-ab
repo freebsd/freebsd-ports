@@ -1,5 +1,5 @@
---- Makefile.in.orig	Fri Apr  6 04:03:05 2001
-+++ Makefile.in	Fri Apr 13 21:59:30 2001
+--- Makefile.in.orig	Wed Oct 23 19:45:50 2002
++++ Makefile.in	Tue Nov 12 21:56:31 2002
 @@ -57,7 +57,9 @@
  SCRIPT_INSTALL_DIR	= $(INSTALL_ROOT)$(TK_LIBRARY)
  
@@ -11,19 +11,25 @@
  
  # Top-level directory for manual entries:
  MAN_INSTALL_DIR		= $(INSTALL_ROOT)$(mandir)
-@@ -103,1 +103,1 @@
--CFLAGS			= @CFLAGS@
+@@ -100,7 +102,7 @@
+ #CFLAGS			= $(CFLAGS_DEBUG)
+ #CFLAGS			= $(CFLAGS_OPTIMIZE)
+ #CFLAGS			= $(CFLAGS_DEBUG) $(CFLAGS_OPTIMIZE)
+-CFLAGS			= @CFLAGS@ @CFLAGS_DEFAULT@
 +CFLAGS			?= @CFLAGS@
-@@ -197,7 +199,7 @@
+ 
+ # Flags to pass to the linker
+ LDFLAGS_DEBUG		= @LDFLAGS_DEBUG@
+@@ -203,7 +205,7 @@
  # Libraries to use when linking.  This definition is determined by the
  # configure script.
- LIBS = @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
--WISH_LIBS = $(TCL_LIB_SPEC) @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
+ LIBS = @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@
+-WISH_LIBS = $(TCL_LIB_SPEC) @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@
 +WISH_LIBS = -L${PREFIX}/lib -ltcl${SHORT_TK_VER} @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
  
  # The symbol below provides support for dynamic loading and shared
  # libraries.  See configure.in for a description of what it means.
-@@ -346,6 +348,8 @@
+@@ -352,6 +354,8 @@
  	default.h ks_names.h tkPatch.h tk.h tkButton.h tkCanvas.h tkInt.h  \
  	tkPort.h tkScrollbar.h tkText.h
  
@@ -32,7 +38,7 @@
  DEMOPROGS = browse hello ixset rmt rolodex square tcolor timer widget
  
  all: binaries libraries doc
-@@ -365,8 +369,14 @@
+@@ -371,8 +375,14 @@
  ${TK_LIB_FILE}: ${OBJS}
  	rm -f ${TK_LIB_FILE}
  	@MAKE_LIB@
@@ -47,7 +53,7 @@
  ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f ${STUB_LIB_FILE}
  	@MAKE_STUB_LIB@
-@@ -438,7 +448,7 @@
+@@ -460,7 +470,7 @@
  # some ranlibs write to current directory, and this might not always be
  # possible (e.g. if installing as root).
  
@@ -56,7 +62,7 @@
  	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -456,12 +466,18 @@
+@@ -478,12 +488,18 @@
  	    fi
  	@echo "Installing $(TK_LIB_FILE) to $(LIB_INSTALL_DIR)/"
  	@$(INSTALL_DATA) $(TK_LIB_FILE) $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
@@ -76,7 +82,7 @@
  	@if test "$(TK_BUILD_EXP_FILE)" != ""; then \
  	    echo "Installing $(TK_EXP_FILE) to $(LIB_INSTALL_DIR)/"; \
  	    $(INSTALL_DATA) $(TK_BUILD_EXP_FILE) \
-@@ -475,6 +491,7 @@
+@@ -497,6 +513,7 @@
  
  install-libraries:
  	@for i in $(INCLUDE_INSTALL_DIR) \
@@ -84,14 +90,15 @@
  		$(SCRIPT_INSTALL_DIR) $(SCRIPT_INSTALL_DIR)/images; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -488,10 +505,18 @@
+@@ -510,10 +527,18 @@
  	    chmod +x $(UNIX_DIR)/install-sh; \
  	    fi
  	@echo "Installing header files";
 -	@for i in $(GENERIC_DIR)/tk.h $(GENERIC_DIR)/tkPlatDecls.h \
--		$(GENERIC_DIR)/tkDecls.h $(GENERIC_DIR)/tkIntXlibDecls.h ; \
+-		$(GENERIC_DIR)/tkDecls.h ; \
 +	@for i in $(GENERIC_DIR)/*.h ; \
-+	    do \
+ 	    do \
+-	    $(INSTALL_DATA) $$i $(INCLUDE_INSTALL_DIR); \
 +	    $(INSTALL_DATA) $$i $(GENERIC_INCLUDE_INSTALL_DIR); \
 +	    done;
 +	@for i in $(UNIX_DIR)/*.h ; \
@@ -99,14 +106,13 @@
 +	    $(INSTALL_DATA) $$i $(UNIX_INCLUDE_INSTALL_DIR); \
 +	    done;
 +	@for i in $(INSTALL_HDRS) ; \
- 	    do \
--	    $(INSTALL_DATA) $$i $(INCLUDE_INSTALL_DIR); \
++  	    do \
 +	    j=`basename $$i` ; \
 +	    ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/$$j $(INCLUDE_INSTALL_DIR)/$$j ; \
  	    done;
  	@echo "Installing library files to $(SCRIPT_INSTALL_DIR)";
  	@for i in $(SRC_DIR)/library/*.tcl $(GENERIC_DIR)/prolog.ps \
-@@ -558,7 +583,6 @@
+@@ -580,7 +605,6 @@
  	    chmod 444 $(MAN1_INSTALL_DIR)/$$i; \
  	    done;
  	@echo "Cross-linking top-level (.1) docs";
@@ -114,7 +120,7 @@
  	@echo "Installing C API (.3) docs";
  	@cd $(SRC_DIR)/doc; for i in *.3; \
  	    do \
-@@ -568,7 +592,6 @@
+@@ -590,7 +614,6 @@
  	    chmod 444 $(MAN3_INSTALL_DIR)/$$i; \
  	    done;
  	@echo "Cross-linking top-level (.3) docs";
@@ -122,7 +128,7 @@
  	@echo "Installing command (.n) docs";
  	@cd $(SRC_DIR)/doc; for i in *.n; \
  	    do \
-@@ -578,7 +601,6 @@
+@@ -600,7 +623,6 @@
  	    chmod 444 $(MANN_INSTALL_DIR)/$$i; \
  	    done;
  	@echo "Cross-linking command (.n) docs";

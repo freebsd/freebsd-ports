@@ -1,34 +1,35 @@
---- configure.orig	Sat Oct 20 02:24:40 2001
-+++ configure	Sat Nov 10 21:53:28 2001
-@@ -2351,21 +2351,22 @@
- 	    # FreeBSD doesn't handle version numbers with dots.
- 
- 	    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.a'
-+	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1'
- 	    TCL_LIB_VERSIONS_OK=nodots
- 	    ;;
+--- configure.orig	Wed Oct 23 19:45:50 2002
++++ configure	Tue Nov 12 21:51:56 2002
+@@ -2496,12 +2496,12 @@
  	FreeBSD-*)
  	    # FreeBSD 3.* and greater have ELF.
  	    SHLIB_CFLAGS="-fPIC"
 -	    SHLIB_LD="ld -Bshareable -x"
--	    SHLIB_LD_LIBS=""
-+	    SHLIB_LD="ld -shared -x -soname \$@"
-+	    SHLIB_LD_LIBS='${LIBS}'
++ 	    SHLIB_LD="ld -shared -x -soname \$@"
+ 	    SHLIB_LD_LIBS='${LIBS}'
  	    SHLIB_SUFFIX=".so"
  	    DL_OBJS="tclLoadDl.o"
  	    DL_LIBS=""
 -	    LDFLAGS="-export-dynamic"
 +	    LDFLAGS=""
- 	    LD_SEARCH_FLAGS=""
- 	    # FreeBSD doesn't handle version numbers with dots.
- 	    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.a'
--	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so'
-+	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1'
- 	    TCL_LIB_VERSIONS_OK=nodots
- 	    ;;
- 	Rhapsody-*|Darwin-*)
-@@ -2882,6 +2883,7 @@
- 	echo "$ac_t""no" 1>&6
+ 	    LD_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
+ 	    if test "${TCL_THREADS}" = "1" ; then
+ 		# The -pthread needs to go in the CFLAGS, not LIBS
+@@ -2510,10 +2510,10 @@
+ 	    	LDFLAGS="$LDFLAGS -pthread"
+ 	    fi
+ 	    case $system in
+-	    FreeBSD-3.*)
++	    FreeBSD-*)
+ 	    	# FreeBSD-3 doesn't handle version numbers with dots.
+ 	    	UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.a'
+-	    	SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so'
++	    	SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1'
+ 	    	TCL_LIB_VERSIONS_OK=nodots
+ 		;;
+ 	    esac
+@@ -3074,6 +3074,7 @@
+ 	fi
      fi
  
 +TCL_SRC_DIR=${prefix}/include/tcl${TCL_VERSION}
