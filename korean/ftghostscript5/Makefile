@@ -3,7 +3,7 @@
 # Date created:		Fri Mar 27 10:32:46 KST 1998
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/29 14:55:44 kuriyama Exp $
+# $Id: Makefile,v 1.2 1998/09/21 08:41:45 asami Exp $
 #
 # based on print/ghostscript5 and japanese/vfghostscript5
 # use Adobe's CID-keyed font sameple(korean) because there are no
@@ -26,6 +26,9 @@ DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
 		${CID_FONTS_KO} ${CID_CMAP_KO}
 
 MAINTAINER=	junker@jazz.snu.ac.kr
+
+
+BROKEN_ELF=	yes
 
 BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/graphics/jpeg:extract \
 		/nonexistent:${PORTSDIR}/graphics/png:extract \
