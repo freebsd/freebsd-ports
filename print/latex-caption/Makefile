@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	latex-caption
-PORTVERSION=	3.0.20031220
-PORTREVISION=	1
+PORTVERSION=	3.0.20040123
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
+MASTER_SITES=	ftp://ftp.ctan.org/tex-archive/%SUBDIR%/ \
+		${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	macros/latex/contrib/caption
 DISTFILES=	caption.dtx caption2.dtx caption.ins caption.xml
 DIST_SUBDIR=	${PORTNAME}
@@ -20,8 +20,6 @@ BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
 BUILD_DEPENDS+=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
 BUILD_DEPENDS+=	tex:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
-
-BROKEN=		"Checksum mismatch"
 
 PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} MKTEXLSR=${MKTEXLSR}
 PLIST_SUB+=	CLASSDIR=${CLASSDIR}
