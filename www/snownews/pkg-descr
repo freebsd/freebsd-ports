@@ -1,0 +1,23 @@
+Snownews is a text mode RSS/RDF newsreader. It supports RSS 1.0 feeds that 
+comply with the W3C RDF specification and also supports Radio Userland's 
+RSS 0.91 and 2.0 versions.
+
+Features:
+
+    * Runs on Linux, *BSD, OS X (Darwin), Solaris and probably 
+      many more Unices. Yes, even works under Cygwin.
+    * Fast and very resource friendly.
+    * Bultin HTTP client will follow server redirects and update feed 
+      URLs that point to permanent redirects (301) automatically.
+    * Snownews understands "Not-Modified" (304) server replies and handles 
+      gzip/deflate Content-Encoding.
+    * Local cache for minimal network traffic.
+    * HTTP proxy support.
+    * A help menu available throughout the program.
+    * Automatic update checking (can be deactivated).
+    * Few dependencies on external libraries; ncurses and libxml2.
+    * Import feature for OPML subscription lists.
+    * Fully customizable key bindings of all program functions.
+    * Type Ahead Find for quick and easy navigation.
+
+WWW: http://home.kcore.de/~kiza/software/snownews/
