@@ -8,6 +8,7 @@ lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/Dict.pm
 lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/File.pm
 lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/Filter.pm
 lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/Name.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/Null.pm
 lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/Number.pm
 lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/Objind.pm
 lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/Page.pm
@@ -27,6 +28,7 @@ lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/examples/pdfaddpg.pl
 lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/examples/pdfcrop.pl
 lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/examples/pdfgetobj.pl
 lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/examples/pdflines.pl
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/examples/squares.pdf
 lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/examples/test.pdf
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/PDF
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/examples

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text-PDF
-PORTVERSION=	0.20
+PORTVERSION=	0.23
 CATEGORIES=	print perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
@@ -23,7 +23,8 @@ MAN3=		Text::PDF::Pages.3 Text::PDF::Page.3 Text::PDF::Name.3 \
 		Text::PDF::TTFont0.3 Text::PDF::String.3 Text::PDF::File.3 \
 		Text::PDF::Dict.3 Text::PDF::Array.3 Text::PDF::Bool.3 \
 		Text::PDF::Objind.3 Text::PDF::SFont.3 Text::PDF::Filter.3 \
-		Text::PDF::Utils.3 Text::PDF::TTFont.3 Text::PDF::Number.3
+		Text::PDF::Utils.3 Text::PDF::TTFont.3 Text::PDF::Number.3 \
+		Text::PDF::Null.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 post-install:
