@@ -42,6 +42,7 @@ share/doc/vnc/download.html
 share/doc/vnc/downloadbutton.gif
 share/doc/vnc/downloadtemplate.html
 share/doc/vnc/extras.html
+share/doc/vnc/faq.dtd
 share/doc/vnc/faq.html
 share/doc/vnc/faq.xml
 share/doc/vnc/faqbutton.gif
@@ -50,6 +51,7 @@ share/doc/vnc/free.html
 share/doc/vnc/freebutton.gif
 share/doc/vnc/gpl.html
 share/doc/vnc/help.html
+share/doc/vnc/help.html~
 share/doc/vnc/helpbutton.gif
 share/doc/vnc/homebutton.gif
 share/doc/vnc/howitworks.html
