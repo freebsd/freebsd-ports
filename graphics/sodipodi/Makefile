@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sodipodi
-PORTVERSION=	0.29
-PORTREVISION=	1
+PORTVERSION=	0.30
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,15 +14,15 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/frontline.pc:${PORTSDIR}/graphics/frontline
-LIB_DEPENDS=	gnomeprintui-2-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui
+LIB_DEPENDS=	glade-2.0.0:${PORTSDIR}/devel/libglade2
 RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/frontline.pc:${PORTSDIR}/graphics/frontline
 
-BROKEN=		"Requires update for libgnomeprint-2-2"
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--without-gnome-print
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
@@ -33,5 +32,9 @@ MAN1=		sodipodi.1
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|X11/Xft/Xft\.h|X11/Xft/Xft2.h|g' \
+		${WRKSRC}/configure \
+		${WRKSRC}/src/libnrtype/nr-type-xft.c
+
 
 .include <bsd.port.mk>
