@@ -1,6 +1,6 @@
-sbin/setiathome
-@unexec if cmp -s %D/etc/rc.setiathome.conf %D/etc/rc.setiathome.conf.sample; then rm -f %D/etc/rc.setiathome.conf; fi
-etc/rc.setiathome.conf.sample
-@exec [ -f %D/etc/rc.setiathome.conf ] || cp %D/etc/rc.setiathome.conf.sample %D/etc/rc.setiathome.conf
-etc/rc.d/setiathome.sh
-%%X11PORTS%%bin/xsetiathome
+sbin/%%PREFX%%setiathome%%SUFX%%
+@unexec if cmp -s %D/etc/rc.%%PREFX%%setiathome%%SUFX%%.conf %D/etc/rc.%%PREFX%%setiathome%%SUFX%%.conf.sample; then rm -f %D/etc/rc.%%PREFX%%setiathome%%SUFX%%.conf; fi
+etc/rc.%%PREFX%%setiathome%%SUFX%%.conf.sample
+@exec [ -f %D/etc/rc.%%PREFX%%setiathome%%SUFX%%.conf ] || cp %D/etc/rc.%%PREFX%%setiathome%%SUFX%%.conf.sample %D/etc/rc.%%PREFX%%setiathome%%SUFX%%.conf
+etc/rc.d/%%PREFX%%setiathome%%SUFX%%.sh
+%%X11PORTS%%bin/%%PREFX%%xsetiathome%%SUFX%%

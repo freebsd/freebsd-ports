@@ -1,3 +1,3 @@
-****  %%PREFIX%%/etc/rc.setiathome.conf may be edited to tune some startup
-      variables such as `seti_nice' defaulted to 15 and `seti_maxprocs'
-      defaulted to your number of processors.
+****  %%PREFIX%%/etc/rc.%%PREFX%%setiathome%%SUFX%%.conf may be edited to
+      tune some startup variables such as `seti_nice' defaulted to 15
+      and `seti_maxprocs' defaulted to your number of processors.
