@@ -1,0 +1,14 @@
+Alias is a perl module that performs aliasing services.  It is useful for
+those of you that are tired of dereferencing hash-based object attributes,
+or wish perl could make-do with fewer $, -> and {} things, or are a little
+scared of using typeglobs, or want the freedom to put what you want, when you
+want in the symbol table without having to deal with wierd syntax, or need
+to use scalar constants in your program since you don't trust yourself from
+changing $PI (heh).  Most notably, there is a C<attr> function that installs
+a whole hash on the symbol table with implicit localization.  This allows
+you to access object attributes without having to deref the object every
+time, as in most other OO languages.
+
+Author: Sarathy <gsar@umich.edu>
+
+--will

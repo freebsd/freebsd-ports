@@ -206,6 +206,7 @@
     SUBDIR += noweb
     SUBDIR += oaf
     SUBDIR += omniORB
+    SUBDIR += p5-Alias
     SUBDIR += p5-AppConfig
     SUBDIR += p5-B-Graph
     SUBDIR += p5-BSD-Resource
