@@ -1,0 +1,38 @@
+bin/irssistats
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README
+share/irssistats/data/blue.css
+share/irssistats/data/dark.css
+share/irssistats/data/default.css
+share/irssistats/data/grayscale.css
+share/irssistats/data/h1.png
+share/irssistats/data/h2.png
+share/irssistats/data/h3.png
+share/irssistats/data/h4.png
+share/irssistats/data/hm.png
+share/irssistats/data/irssistats_black.png
+share/irssistats/data/irssistats_white.png
+share/irssistats/data/namour.css
+share/irssistats/data/pisg.css
+share/irssistats/data/pisg_blue-h.png
+share/irssistats/data/pisg_blue-v.png
+share/irssistats/data/pisg_green-h.png
+share/irssistats/data/pisg_green-v.png
+share/irssistats/data/pisg_red-h.png
+share/irssistats/data/pisg_red-v.png
+share/irssistats/data/pisg_yellow-h.png
+share/irssistats/data/pisg_yellow-v.png
+share/irssistats/data/v1.png
+share/irssistats/data/v2.png
+share/irssistats/data/v3.png
+share/irssistats/data/v4.png
+share/irssistats/data/valid-css.png
+share/irssistats/data/valid-xhtml10.png
+share/irssistats/data/vm.png
+share/irssistats/data/zeduel.css
+share/irssistats/data/zerezo.css
+share/irssistats/sample.configfile
+share/irssistats/sample.nickfile
+@dirrm share/irssistats/data
+@dirrm share/irssistats
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
