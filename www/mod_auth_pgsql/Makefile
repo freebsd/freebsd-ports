@@ -6,14 +6,15 @@
 
 PORTNAME=	mod_auth_pgsql
 PORTVERSION=	0.9.12
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.giuseppetanzilli.it/mod_auth_pgsql/dist/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	seanc@FreeBSD.org
 
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
 RUN_DEPENDS=	${LOCALBASE}/sbin/${AP_TARGET}:${APACHE_PORT}
-LIB_DEPENDS=	pq.3:${PORTSDIR}/databases/postgresql7
+LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}
 
@@ -22,6 +23,7 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}
 APXS?=		${LOCALBASE}/sbin/apxs
 AP_PORT?=	apache13
 APACHE_PORT?=	${PORTSDIR}/www/${AP_PORT}
+POSTGRESQL_PORT?=	databases/postgresql7
 
 .if exists(${APXS})
 APXS_WORKS!=	${APXS} -q TARGET 2>/dev/null || echo no
