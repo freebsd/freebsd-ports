@@ -16,12 +16,14 @@ DISTNAME=	se${PORTVERSION:S/.//g:L}
 MAINTAINER=	adam-ports@blacktabby.org
 
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 MAN6=		dgn_comp.6 dlb.6 lev_comp.6 slashem-tty.6 recover.6
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/([A-Z])./\1/g}
 
 post-patch:
-	${PERL} -pi -e "s@/usr/local@${PREFIX}@g" ${WRKSRC}/include/config.h
+	${REINPLACE_CMD} -e \
+		"s@/usr/local@${PREFIX}@g" ${WRKSRC}/include/config.h
 
 pre-configure:
 	@cd ${WRKSRC}/sys/unix; ${SH} setup.sh

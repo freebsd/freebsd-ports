@@ -14,6 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 USE_AUTOCONF_VER=213
 USE_GMAKE=	yes
+USE_PERL5=	yes
 USE_REINPLACE=	yes
 STARTUP_SCRIPT=	pam_smbd.sh.sample
 

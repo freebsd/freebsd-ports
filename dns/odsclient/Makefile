@@ -12,10 +12,11 @@ MASTER_SITES=	http://www.ods.org/
 
 MAINTAINER=	geniusj@ods.org
 
+USE_REINPLACE=	yes
 ALL_TARGET=	odsclient
 
 post-patch:
-	@${PERL} -pi -e "s/^(CC|CFLAGS).+//g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s/^(CC|CFLAGS).+//g" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/odsclient ${PREFIX}/bin

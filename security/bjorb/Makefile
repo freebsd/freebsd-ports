@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.hitachi-ms.co.jp/pub/bjorb/
 MAINTAINER=	ports@FreeBSD.org
 
 USE_OPENSSL=	YES
+USE_PERL5=	yes
 
 .if !defined(BATCH)
 INSTALL_TARGET=		install certificate

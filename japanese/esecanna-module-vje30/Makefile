@@ -17,6 +17,7 @@ MAINTAINER=	knu@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/esecannaserver:${PORTSDIR}/japanese/esecanna
 
+USE_PERL5=	yes
 USE_REINPLACE=	yes
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes

@@ -17,6 +17,7 @@ MAINTAINER=	demon@FreeBSD.org
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_LIBTOOL=	yes
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--without-included-gettext
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -35,7 +36,7 @@ remove-info-files:
 post-patch: patch-po-files patch-makeinfo
 
 patch-po-files:
-	@${PERL} -pi -e '\
+	@${REINPLACE_CMD} -e '\
 		if (/Project-Id-Version/) { \
 			s/3\.[45](r|\.[0-9])?/3.6/; \
 			s/: (Free )?recode/: GNU recode/; \
@@ -43,7 +44,7 @@ patch-po-files:
 	' ${WRKSRC}/i18n/*.po
 
 patch-makeinfo:
-	@${PERL} -pi.fbsd -e 's|\@MAKEINFO\@|\@MAKEINFO\@ --no-split|g' \
+	@${REINPLACE_CMD} -e 's|\@MAKEINFO\@|\@MAKEINFO\@ --no-split|g' \
 		${WRKSRC}/doc/Makefile.in
 
 .include <bsd.port.mk>

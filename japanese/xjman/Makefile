@@ -17,6 +17,7 @@ MAINTAINER?=	sada@FreeBSD.org
 
 RUN_DEPENDS=	jman:${PORTSDIR}/japanese/man
 
+USE_REINPLACE=	yes
 NO_MTREE=	yes
 PLIST=		${WRKDIR}/PLIST
 USE_BZIP2=	yes
@@ -32,7 +33,7 @@ post-extract:
 .for sec in ${MANSECS}
 	(cd ${WRKSRC}/man${sec}; \
 	for f in *.${sec}x; do ${CP} $$f $${f%x}; done; \
-	${PERL} -pi -e 's/^(\.so .*)x$$/$$1/' *.${sec})
+	${REINPLACE_CMD} -e 's/^(\.so .*)x$$/$$1/' *.${sec})
 .endfor
 
 post-build:
