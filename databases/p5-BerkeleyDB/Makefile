@@ -35,7 +35,7 @@ BDB_LIB_VER=	db41
 LIB_DEPENDS=	db-4.2.2:${PORTSDIR}/databases/db42
 BDB_LIB_VER=	db-4.2
 .else
-.error WITH_BDB_VER must be one between 2, 3, 4, 41 and 42
+IGNORE=	"WITH_BDB_VER must be one between 2, 3, 4, 41 and 42"
 .endif
 
 PERL_CONFIGURE=	yes
