@@ -528,6 +528,7 @@
     SUBDIR += rand
     SUBDIR += raptor
     SUBDIR += redland
+    SUBDIR += redland-bindings
     SUBDIR += replaceit
     SUBDIR += resume
     SUBDIR += resume-extensions
