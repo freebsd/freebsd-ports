@@ -155,6 +155,7 @@
     SUBDIR += p5-Crypt-IDEA
     SUBDIR += p5-Crypt-OTP
     SUBDIR += p5-Crypt-OpenPGP
+    SUBDIR += p5-Crypt-OpenSSL-DSA
     SUBDIR += p5-Crypt-OpenSSL-RSA
     SUBDIR += p5-Crypt-OpenSSL-Random
     SUBDIR += p5-Crypt-PGPSimple
