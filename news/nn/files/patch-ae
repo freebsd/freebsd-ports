@@ -1,0 +1,115 @@
+--- config.h.orig	Fri Apr 16 01:30:09 1999
++++ config.h	Fri Apr 16 01:30:09 1999
+@@ -51,10 +51,10 @@
+ #define DO_NOV_DIGEST	/* */
+ 
+ /* Optional */
+-/* #define NOV_DIRECTORY	"/usr/spool/news"	/* */
++#define NOV_DIRECTORY	"/var/news/over.view"	/* */
+ 
+ /* Optional */
+-/* #define NOV_FILENAME		".overview"		/* */
++#define NOV_FILENAME		".overview"		/* */
+ 
+ 
+ /*********************** NETWORK DEPENDENT DEFINITIONS **********************
+@@ -107,7 +107,7 @@
+  *	NOTE: If you plan to use the included inews, it MUST be a full pathname
+  */
+ 
+-#define NNTP_SERVER	"/usr/lib/nntp_server"	/* */
++#define NNTP_SERVER	"/usr/local/etc/nntp_server"	/* */
+ 
+ /*
+  *	Define NNTP_POST if you want nn to reject attempts to post via
+@@ -149,7 +149,7 @@
+  *	conf/s-template.h as a starting point for writing you own.
+  */
+ 
+-#include "s-hpux9-0.h"
++#include "s-freebsd.h"
+ 
+ /*
+  *	Define DEFAULT_PAGER as the initial value of the 'pager' variable.
+@@ -210,7 +210,7 @@
+  *	conf/m-template.h as a starting point for writing you own.
+  */
+ 
+-#include "m-hp9000.h"
++#include "m-i80386.h"
+ 
+ 
+ /***************************** OWNERSHIP ***************************
+@@ -263,7 +263,7 @@
+ 
+ #define BIN_DIRECTORY	"/usr/local/bin"
+ #define LIB_DIRECTORY	"/usr/local/lib/nn"
+-
++#define TMP_DIRECTORY   "/var/tmp"
+ 
+ /**************************** DATABASE LOCATION **************************
+  *
+@@ -294,7 +294,7 @@
+  *	     (The file system must support long file names!!)
+  */
+ 
+-/* #define DB_DIRECTORY	"/usr/spool/nn"	/* */
++#define DB_DIRECTORY	"/var/spool/nn"	/* */
+ 
+ 
+ /*************************** NEWS TRANSPORT **************************
+@@ -316,8 +316,8 @@
+  *				  Default: NEWS_LIB_DIR/{rm,del}group
+  */
+ 
+-/* #define NEWS_DIRECTORY	"/usr/spool/news"	/* */
+-/* #define NEWS_LIB_DIRECTORY	"/usr/lib/news"		/* */
++#define NEWS_DIRECTORY	"/var/news"	/* */
++#define NEWS_LIB_DIRECTORY	"/usr/local/news/lib"		/* */
+ /* #define INEWS_PATH		"/usr/lib/news/inews"	/* */
+ 
+ 
+@@ -341,7 +341,7 @@
+  */
+ 
+ /* #define REC_MAIL	"/usr/lib/news/recmail"		/* non-sendmail */
+-#define REC_MAIL	"/usr/lib/sendmail -t"		/* sendmail */
++#define REC_MAIL	"/usr/sbin/sendmail -t"		/* sendmail */
+ 
+ 
+ /*
+@@ -403,13 +403,13 @@
+  *	DAEMON_MAN	- nnmaster
+  */
+ 
+-#define USER_MAN_DIR	"/usr/man/man1"
++#define USER_MAN_DIR	"/usr/local/man/man1"
+ #define USER_MAN_SECTION	"1"
+ 
+-#define SYS_MAN_DIR	"/usr/man/man1"
++#define SYS_MAN_DIR	"/usr/local/man/man1"
+ #define SYS_MAN_SECTION		"1m"
+ 
+-#define DAEMON_MAN_DIR	"/usr/man/man8"
++#define DAEMON_MAN_DIR	"/usr/local/man/man8"
+ #define DAEMON_MAN_SECTION	"8"
+ 
+ 
+@@ -469,7 +469,7 @@
+  *	was accepted, whereas with INN, it only takes seconds.
+  */
+ 
+-#define INEWS_IS_FAST	/* comment out for C-News */
++/*#define INEWS_IS_FAST*/	/* comment out for C-News */
+ 
+ /*
+  *	Synchronous posting: If set this will cause NN to wait until a
+@@ -481,7 +481,7 @@
+  *	via some sort of NNTP.
+  */
+ 
+-#define SYNCHRONOUS_POSTING	/* comment out for C-News */
++/*#define SYNCHRONOUS_POSTING     /* comment out for C-News */
+ 
+ /*
+  *	PUT_TIMESTAMP_IN_SCRIPTS

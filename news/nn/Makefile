@@ -3,7 +3,7 @@
 # Date created:		24 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.16 1998/07/23 15:30:32 asami Exp $
+# $Id: Makefile,v 1.17 1998/12/10 17:24:32 vanilla Exp $
 #
 
 DISTNAME=	nn-6.5.3
@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp.visi.com/users/mtpins/ \
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=     ports@FreeBSD.ORG
-
-BROKEN=		checksum
 
 MAN1=		nn.1 nncheck.1 nngoback.1 nngrab.1  nngrep.1 nnpost.1 \
 		nntidy.1 nnview.1 nnacct.1m nnadmin.1m nnstats.1m nnusage.1m
