@@ -1,16 +1,6 @@
 --- configure.in.orig	Tue Jun  6 00:42:49 2000
-+++ configure.in	Sat Jul  1 20:46:31 2000
-@@ -42,6 +42,9 @@
- AC_ARG_WITH(hesiod,
- [  --with-hesiod           support Hesiod to get the POP server host],
- [AC_DEFINE(HESIOD)])
-+AC_ARG_WITH(xpg4,
-+[  --with-xpg4             support XPG4 library on FreeBSD system],
-+[AC_DEFINE(USE_XPG)])
- dnl This should be the last --with option, because --with-x is
- dnl added later on when we find the path of X, and it's best to
- dnl keep them together visually.
-@@ -147,6 +150,15 @@
++++ configure.in	Sun Sep 23 06:53:04 2001
+@@ -147,6 +147,15 @@
  machine='' opsys='' unported=no
  case "${canonical}" in
  
@@ -26,7 +16,7 @@
    ## NetBSD ports
    *-*-netbsd* )
      opsys=netbsd
-@@ -958,7 +970,6 @@
+@@ -958,7 +967,6 @@
  				;;
        *-sysv4.2uw* )	  	opsys=unixware; NON_GNU_CPP=/lib/cpp ;;
        *-386bsd* )	        opsys=386bsd ;;
@@ -34,7 +24,7 @@
        *-nextstep* )             opsys=nextstep ;;
        ## Otherwise, we'll fall through to the generic opsys code at the bottom.
      esac
-@@ -1639,7 +1650,7 @@
+@@ -1639,7 +1647,7 @@
  rename closedir mkdir rmdir sysinfo \
  random lrand48 bcopy bcmp logb frexp fmod rint cbrt ftime res_init setsid \
  strerror fpathconf select mktime euidaccess getpagesize tzset setlocale \
@@ -43,3 +33,11 @@
  
  # UNIX98 PTYs.
  AC_CHECK_FUNCS(grantpt)
+@@ -1656,6 +1664,7 @@
+ # Solaris requires -lintl if you want strerror (which calls dgettext)
+ # to return localized messages.
+ AC_CHECK_LIB(intl, dgettext)
++AC_CHECK_LIB(xpg4, _xpg4_setrunelocale)
+ 
+ AC_MSG_CHECKING(whether localtime caches TZ)
+ AC_CACHE_VAL(emacs_cv_localtime_cache,
