@@ -1,11 +1,13 @@
-#! /bin/sh
-# $OpenBSD$
+#!/bin/sh
 #
-# Pre/post-installation setup of milter-regex
+# 	$FreeBSD$
+#
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
+MAILUSER=mailnull
+SPOOLDIR=/var/spool/milter-regex
 
 do_notice()
 {
@@ -39,6 +41,9 @@ case $2 in
     PRE-INSTALL)
 	;;
     POST-INSTALL)
+	if [ ! -d $SPOOLDIR ]; then
+		install -d -o $MAILUSER -g daemon -m 0700 $SPOOLDIR
+	fi
 	do_notice
 	;;
     *)
