@@ -1,6 +1,6 @@
 # New ports collection makefile for:	Unreal Tournament Dedicated Server
 # Date created:				Thu Oct 4 23:38:00 CEST 2001
-# Whom:			Martin Matuska <matuska@wu-wien.ac.at> et al
+# Whom:			Martin Matuska <martin@tradex.sk> et al
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	games linux
 MASTER_SITES=	http://files.sobservers.com/UnrealTournament/UTServerOnly/
 DISTNAME=	ut-server-${PORTVERSION}
 
-MAINTAINER=	matuska@wu-wien.ac.at
+MAINTAINER=	martin@tradex.sk
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
 BUILD_DEPENDS=	${RUN_DEPENDS}

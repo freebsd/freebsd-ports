@@ -1,6 +1,6 @@
 # New ports collection makefile for:	Half Life Psychostats
 # Date created:				Sun Oct 14 14:34:20 CEST 2001
-# Whom:					matuska@wu-wien.ac.at
+# Whom:					martin@tradex.sk
 #
 # $FreeBSD$
 #
@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.psychostats.com/psychostats/ \
 		http://www.green-goblin.de/psychostats/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	matuska@wu-wien.ac.at
+MAINTAINER=	martin@tradex.sk
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
