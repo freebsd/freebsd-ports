@@ -11,7 +11,7 @@
 -I 	= -I/usr/local/X11R5/include
 -
 -L 	= -L/usr/local/X11R5/lib -lXaw -lXmu -lXt -lXext -lX11 -lm
-+O	= -O2 -m486
++O	= -O2
 +I 	= -I$(X11BASE)/include
  
 +L 	= -L$(X11BASE)/lib -lXaw -lXmu -lXt -lXext -lX11 -lm

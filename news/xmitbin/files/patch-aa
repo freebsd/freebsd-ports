@@ -27,7 +27,7 @@
  # ...options for Apollo...
  # CCOPTS	= -DAPOLLO -DSysVMail
 +# ...options for FreeBSD...
-+CCOPTS		= -O6 -m486 -Wall -DSysVMail
++CCOPTS		= -O6 -Wall -DSysVMail
  
  #
  # END OF USER-CONFIGURABLE ITEMS - NO MODIFICATIONS BEYOND THIS POINT SHOULD
