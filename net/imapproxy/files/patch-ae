@@ -1,0 +1,11 @@
+--- network.c.orig	Fri Aug  1 06:34:08 2003
++++ network.c	Fri Aug  1 06:33:23 2003
+@@ -48,7 +48,7 @@
+     va_start(v, fmt);
+     i = vsnprintf(buf, sizeof(buf), fmt, v);
+     write(s, buf, i);
+-    va_end(fmt);
++    va_end(v);
+ }
+ 
+ /* resolve a hostname to an IP in long notation
