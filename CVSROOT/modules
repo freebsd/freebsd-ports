@@ -88,6 +88,7 @@ DarwinStreamingServer	ports/net/DarwinStreamingServer
 ETHOberonV4	ports/lang/ETHOberonV4
 EZWGL		ports/graphics/EZWGL
 ElectricFence	ports/devel/ElectricFence
+FSViewer	ports/x11-fm/FSViewer
 GIFgraph	ports/graphics/GIFgraph
 GeoIP		ports/net/GeoIP
 GiNaC		ports/math/GiNaC
