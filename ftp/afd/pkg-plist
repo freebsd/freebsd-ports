@@ -68,6 +68,7 @@ bin/tiff-sniffer
 bin/trans_db_log
 bin/transfer_log
 bin/udc
+bin/uhc
 bin/view_dc
 bin/watch_dir
 sbin/msa_view
