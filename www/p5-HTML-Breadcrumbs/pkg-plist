@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Breadcrumbs/.packlist
+%%SITE_PERL%%/HTML/Breadcrumbs.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Breadcrumbs
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/HTML 2>/dev/null || true
