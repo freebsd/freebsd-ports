@@ -1,0 +1,11 @@
+gnuplot-3.7+1.1 is a patch package to add some enhanced functions to
+gnuplot(version 3.7) and enable it to treat Japanese text.
+
+On patched gnuplot, the following are added.
+
+1. LaTeX like text processing on PostScript terminal.
+2. Japanese text handling
+3. Saving histories of command-line-editing by GNU readline library.
+
+For more information, see /usr/local/share/doc/gnuplot+/README.plus 
+or http://www.ipc.chiba-u.ac.jp/~yamaga/gnuplot+/
