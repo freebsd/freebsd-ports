@@ -1,0 +1,14 @@
+Updating databases from old versions of Postgis
+
+Due the libpostgis.so.0 path modification, databases created with older 
+versions of postgis won't work properly.
+To solve this problem, please, make a dump (on text format) of your database 
+and use the PREFIX/share/updatedb script.
+
+ sh PREFIX/share/updatedb dump.sql
+
+A new file with '.updated' extension will be created with libpostgis 
+references updated.
+After that you can restore your database using updated file. 
+
+ psql -f dump.sql.updated database

@@ -1,0 +1,13 @@
+--- loader/Makefile	Wed Dec 29 16:31:54 2004
++++ loader/Makefile.new	Wed Dec 29 16:32:25 2004
+@@ -50,8 +50,8 @@
+ 	$(CC) $(CFLAGS) $(OBJS) shp2pgsql.o $(LDFLAGS) -o $@ 
+ 
+ install: all
+-	$(INSTALL_PROGRAM) pgsql2shp$(EXE) $(DESTDIR)$(bindir)/pgsql2shp$(EXE)
+-	$(INSTALL_PROGRAM) shp2pgsql$(EXE) $(DESTDIR)$(bindir)/shp2pgsql$(EXE)
++	$(INSTALL_PROGRAM) pgsql2shp$(EXE) $(DESTDIR)$(BINDIR)/pgsql2shp$(EXE)
++	$(INSTALL_PROGRAM) shp2pgsql$(EXE) $(DESTDIR)$(BINDIR)/shp2pgsql$(EXE)
+ 
+ clean:
+ 	@rm -f $(OBJS) shp2pgsql.o pgsql2shp.o shp2pgsql$(EXE) pgsql2shp$(EXE)

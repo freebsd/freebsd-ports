@@ -1,0 +1,52 @@
+#!/bin/sh
+
+msg(){
+ echo "
+  ================== ** Postgis Upgrade Notice ** ===================
+
+  The Postgis 0.9.1 port has changed the location of some files, 
+  including libpostgis.so.0 library. If you are a user from a old 
+  version of Postgis (0.9.0 or older), make a backup from your 
+  databases before continue !
+
+  If you need to backup your data, press CTRL-C now !
+
+  ======================= GEOS Support Notice =======================
+  In order to use the GEOS support, you may need to specially compile
+  your version of PostgreSQL to link the C++ runtime library.
+  To do this, invoke the PostgreSQL Makefile script this way:
+
+  on csh shell:
+
+  setenv LDFLAGS -lstdc++
+  make
+
+  on sh or bash shell:
+
+  export LDFLAGS=-lstdc++
+  make
+
+  The initial LDFLAGS variable is passed through to the Makefile and
+  adds the C++ library to the linking stage.
+
+  ===================================================================
+"
+sleep 10
+
+}
+
+case "$2" in
+  "PRE-INSTALL")
+	msg
+  ;;
+  "POST-INSTALL")
+	PREF=${PREFIX:-$PKG_PREFIX}
+	SHAREDIR=${PREF}/share/postgis
+	LIBDIR=${PREF}/lib
+	sed -e "s|\$libdir|${LIBDIR}|g" ${SHAREDIR}/postgis.sql.default > ${SHAREDIR}/postgis.sql
+	sed -e "s|%%LIBDIR%%|${LIBDIR}|g" ${SHAREDIR}/updatedb.default > ${SHAREDIR}/updatedb
+  ;;
+  "MESSAGE")
+	msg
+  ;;
+esac

@@ -1,0 +1,16 @@
+=============================================================
+
+Postgis Installation notes
+
+* The Postgis SQL files had its locations changed.
+  Now they can be found at PREFIX/share/postgis
+
+* HTML Documentation was added to this port and can be found
+  at PREFIX/share/doc/postgis
+
+* libpostgis.so and libpostgis.so.1 were moved from
+  PREFIX/lib/postgresql to PREFIX/lib. 
+  Users from older versions (0.9.0 or older), *must* read 
+  PREFIX/share/postgis/UPDATE for instructions.
+
+=============================================================

@@ -1,10 +1,13 @@
 bin/pgsql2shp
 bin/shp2pgsql
-lib/postgresql/libpostgis.so
-lib/postgresql/libpostgis.so.0
-share/postgresql/README.postgis
-share/postgresql/postgis.sql
-share/postgresql/postgis_undef.sql
-share/postgresql/spatial_ref_sys.sql
-@unexec rmdir %D/lib/postgresql 2>/dev/null || true
-@unexec rmdir %D/share/postgresql 2>/dev/null || true
+lib/libpostgis.so
+lib/libpostgis.so.0
+%%DATADIR%%/README.postgis
+%%DATADIR%%/UPDATE
+%%DATADIR%%/postgis.sql.default
+%%DATADIR%%/updatedb.default
+%%DATADIR%%/postgis_undef.sql
+%%DATADIR%%/spatial_ref_sys.sql
+%%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
+@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
+@unexec rmdir %D/lib 2>/dev/null || true
