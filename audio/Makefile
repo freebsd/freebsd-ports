@@ -73,6 +73,7 @@
     SUBDIR += esound
     SUBDIR += etktab
     SUBDIR += extace
+    SUBDIR += faac
     SUBDIR += faad
     SUBDIR += fcplay
     SUBDIR += festdoc
