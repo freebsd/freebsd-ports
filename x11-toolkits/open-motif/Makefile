@@ -16,6 +16,8 @@ MASTER_SITES=	ftp://openmotif.opengroup.org/pub/openmotif/R2.1.30/binaries/metro
 DISTNAME=	openmotif-${PORTVERSION}-1_MLI
 EXTRACT_SUFX=	.tgz
 
+MAINTAINER=	obrien@FreeBSD.org
+
 ONLY_FOR_ARCHS=	i386
 PREFIX?=	/	# will install into ${PREFIX}/usr/X11R6
 USE_X_PREFIX=	yes
