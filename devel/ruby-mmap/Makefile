@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mmap
-PORTVERSION=	0.1.9
+PORTVERSION=	0.2.1
 CATEGORIES=	devel ruby
 MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
