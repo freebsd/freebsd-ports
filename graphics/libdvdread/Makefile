@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	libdvdread
-PORTVERSION=	0.9.2
-PORTREVISION=	2
+PORTVERSION=	0.9.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
 
-MAINTAINER=	3d@FreeBSD.org
+MAINTAINER=	lioux@FreeBSD.org
 
 LIB_DEPENDS=	dvdcss.${DVDCSS_LIBVERSION}:${PORTSDIR}/graphics/libdvdcss
 
@@ -19,23 +18,12 @@ GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
-DOC_FILES=	AUTHORS NEWS README TODO
+DOC_FILES=	AUTHORS COPYING NEWS README TODO
 
 # ugly hack to have libdvdread directly depend on libdvdcss since
 # it already does for practical reasons even though not for compile
 # time ones
 DVDCSS_LIBVERSION=	2
-
-# optional CFLAGS safeness
-.if !defined(WITH_OPTIMIZED_CFLAGS)
-USE_AUTOCONF=	yes
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-configure.in
-.endif
-
-pre-everything::
-.if !defined(WITH_OPTIMIZED_CFLAGS)
-	@${ECHO_MSG} "====> If you want to enable optimizations, please define WITH_OPTIMIZED_CFLAGS"
-.endif
 
 post-patch:
 .for p in Makefile.in dvdread/Makefile.in src/Makefile.in
@@ -43,8 +31,8 @@ post-patch:
 		s|cd \$$\(srcdir\) && \$$\(ACLOCAL\)|\#|' ${WRKSRC}/${p}
 .endfor
 # update this in sync with libdvdcss shared library version
-	@${PERL} -pi -e 's|(libdvdcss.so).0|\1.${DVDCSS_LIBVERSION}|' \
-		${WRKSRC}/dvdread/dvd_reader.c
+	@${PERL} -pi -e 's|(libdvdcss.so).2|\1.${DVDCSS_LIBVERSION}|' \
+		${WRKSRC}/dvdread/dvd_input.c
 
 post-configure:
 	@${LN} -sf ${LOCALBASE}/bin/libtool ${WRKSRC}
