@@ -1,0 +1,8 @@
+--- Makefile.orig	Wed Aug 18 01:56:28 2004
++++ Makefile	Tue Aug 31 15:38:44 2004
+@@ -32,4 +32,4 @@
+ vars.mk:;
+ 
+ %:
+-	@make -C build --no-print-directory $@
++	@${MAKE} -C build --no-print-directory $@
