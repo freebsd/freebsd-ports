@@ -9,7 +9,7 @@ PORTNAME=	code_crusader
 PORTVERSION=	2.1.4
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.krasnodar.ru/pub/unix/IDE/CodeCrusader/
+MASTER_SITES=	http://ftp.cdut.edu.cn/pub/linux/develop/CodeCrusader/
 DISTNAME=	${PORTNAME}_source-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
