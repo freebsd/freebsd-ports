@@ -20,4 +20,4 @@ then
 	echo "LIB_PATH = ${LIB_PATH}"
 fi
 
-"%%JAVA%%" -cp "${CLASS_PATH}" "-Djava.library.path=${LIB_PATH}" org.gudy.azureus2.ui.swt.Main
+"%%JAVA%%" -cp "${CLASS_PATH}" "-Djava.library.path=${LIB_PATH}" "-Dos.name=Linux" org.gudy.azureus2.ui.swt.Main
