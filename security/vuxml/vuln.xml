@@ -3699,11 +3699,11 @@ http_access deny Gopher</pre>
   </vuln>
 
   <vuln vid="cdf14b68-3ff9-11d9-8405-00065be4b5b6">
-    <topic>Open Dc Hub -- remote buffer overflow vulnerability</topic>
+    <topic>Open DC Hub -- remote buffer overflow vulnerability</topic>
     <affects>
       <package>
 	<name>opendchub</name>
-	<range><le>0.7.14_1</le></range>
+	<range><lt>0.7.14_2</lt></range>
       </package>
     </affects>
     <description>
@@ -3721,6 +3721,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2004-11-24</discovery>
       <entry>2004-11-27</entry>
+      <modified>2005-02-13</modified>
     </dates>
   </vuln>
 
