@@ -593,3 +593,4 @@ net/staticcharge|dns/staticcharge|2003-09-05|moved to new dns category
 net/totd|dns/totd|2003-09-05|moved to new dns category
 net/walker|dns/walker|2003-09-05|moved to new dns category
 net/gnomemeeting2|net/gnomemeeting|2003-09-07|no need to keep two versions in ports tree
+irc/ircproxy-freebsd-port|irc/ircproxy|2003-09-08|fix directory name
