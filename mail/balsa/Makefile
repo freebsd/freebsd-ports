@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	balsa
-PORTVERSION= 	0.9.4
+PORTVERSION= 	0.9.5
 CATEGORIES=	mail gnome
 MASTER_SITES=	ftp://ftp.newton.cx/pub/balsa/ \
 		http://www.theochem.kth.se/~pawsa/balsa/
@@ -14,7 +14,9 @@ MASTER_SITES=	ftp://ftp.newton.cx/pub/balsa/ \
 MAINTAINER=	sobomax@FreeBSD.org
 
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
-		PropList.2:${PORTSDIR}/devel/libPropList
+		PropList.2:${PORTSDIR}/devel/libPropList \
+		pspell.2:${PORTSDIR}/textproc/pspell \
+		gnomeprint.9:${PORTSDIR}/print/gnomeprint
 RUN_DEPENDS=	gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter \
 		${X11BASE}/share/gnome/sounds/login.wav:${PORTSDIR}/audio/gnomeaudio \
 		panel:${PORTSDIR}/x11/gnomecore
