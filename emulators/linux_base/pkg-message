@@ -1,0 +1,6 @@
+Installation of the Linux base system is
+finished. Before you can actually run
+Linux binaries, the Linux kernel module
+must be loaded. See linux(8). You may
+consider loading the Linux kernel module
+at boot time. See rc.conf(5).
