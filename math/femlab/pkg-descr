@@ -1,0 +1,21 @@
+Femlab is built up by several different programs. Currently the 
+X11-interface, a meshgenerator and one solver. These programs communicate
+with each other with two ASCII files called "area.scratch" and
+"solu.scratch". The programs reside in FEMLAB_HOME/bin. These allows you
+to for instance run the solver directly from the csh as a batch job. The
+aim is to provide more solvers for different applications, such as 2D
+incompressible flow problems, transient problems etc. It should also be
+possible to use the X11 interface for your own applications.
+	+---------------------------------------+
+	|					|
+	|	Authors:			|
+	|     Peter Hansbo			|
+	|     Marten Levenstam			|
+	|     Dep. of Mathematics		|
+	|     Chalmers University of Technology	|
+	|     S-412 96 Goteborg			|
+	|     SWEDEN				|
+	|     femlab@math.chalmers.se		|
+	|					|
+	|                \|/			|
+	+----------------( )--------------------+
