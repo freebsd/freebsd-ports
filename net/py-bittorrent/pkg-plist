@@ -1,7 +1,5 @@
 bin/btcompletedir.py
-%%GUI%%bin/btcompletedirgui.py
 bin/btdownloadcurses.py
-%%GUI%%bin/btdownloadgui.py
 bin/btdownloadheadless.py
 bin/btdownloadlibrary.py
 bin/btlaunchmany.py
@@ -90,12 +88,6 @@ bin/bttrack.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/zurllib.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/zurllib.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/zurllib.pyo
-%%PORTDOCS%%%%DOCSDIR%%/BUILD.windows.txt
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL.unix.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTDOCS%%%%DOCSDIR%%/credits.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/BitTorrent
 @unexec rmdir %D/%%PYTHON_SITELIBDIR%% 2>/dev/null || true
 @unexec rmdir %D/%%PYTHON_LIBDIR%% 2>/dev/null || true

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	BitTorrent
-PORTVERSION=	3.4.1
-PORTREVISION=	1
+PORTVERSION=	3.4.2
 PORTEPOCH=	1
 CATEGORIES?=	net python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
@@ -21,11 +20,10 @@ COMMENT?=	A peer-to-peer tool for distributing files written in Python
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_REINPLACE=	yes
-USE_ZIP=	yes
 
 CONFLICTS=	py??-*[Bb]it[Tt]orrent*
 
-DOC_FILES=	BUILD.windows.txt INSTALL.unix.txt LICENSE.txt \
+PORTDOCS=	BUILD.windows.txt INSTALL.unix.txt LICENSE.txt \
 		README.txt credits.txt
 
 # required for GUI
@@ -33,9 +31,11 @@ DOC_FILES=	BUILD.windows.txt INSTALL.unix.txt LICENSE.txt \
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython
 
 PLIST_SUB+=	GUI=''
+PLIST_FILES+=	\
+		bin/btcompletedirgui.py \
+		bin/btdownloadgui.py
 .else
 EXTRA_PATCHES+=	${FILESDIR}/extra-nogui-patch-setup.py
-PLIST_SUB+=	GUI='@comment '
 .endif
 
 pre-everything::
@@ -55,9 +55,9 @@ post-patch:
 .endif
 
 post-install:
-.ifndef(PORTDOCS)
+.ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOC_FILES}
+.for file in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
