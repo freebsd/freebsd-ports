@@ -1,0 +1,12 @@
+XML::Stream v1.10
+
+This module provides you with access to XML Streams.  An XML Stream
+is just that.  A stream of XML over a connection between two computers.
+For more information about XML Streams, and the group that created them,
+please visit:
+
+http://etherx.jabber.org/streams
+
+Ryan Eatmon
+Jabber Perl Team Leader
+reatmon@jabber.org

@@ -72,6 +72,7 @@
     SUBDIR += p5-XML-Parser
     SUBDIR += p5-XML-RSS
     SUBDIR += p5-XML-Simple
+    SUBDIR += p5-XML-Stream
     SUBDIR += par
     SUBDIR += perl2html
     SUBDIR += pspell
