@@ -6319,6 +6319,7 @@ p5-Chart-PNGgraph	ports/graphics/p5-Chart-PNGgraph
 p5-Chatbot-Eliza	ports/misc/p5-Chatbot-Eliza
 p5-Chemistry-Elements	ports/science/p5-Chemistry-Elements
 p5-Class-Accessor	ports/devel/p5-Class-Accessor
+p5-Class-Accessor-Lvalue	ports/devel/p5-Class-Accessor-Lvalue
 p5-Class-ArrayObjects	ports/devel/p5-Class-ArrayObjects
 p5-Class-Autouse	ports/devel/p5-Class-Autouse
 p5-Class-Base	ports/devel/p5-Class-Base
