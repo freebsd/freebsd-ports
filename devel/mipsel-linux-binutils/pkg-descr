@@ -2,9 +2,9 @@ GNU binutils for MIPS Little Endian Linux (mipsel-linux) cross-development
 
   It is binutils for MIPS Little Endian Linux (mipsel-linux) target.
   This target is, for example, Linux VR on NEC's VR-based PDAs (Agenda VR3
-  and others), and includes Linux VR pathes.
+  and others).
 
-Hacked from official SRPMs for RedHat.
+  It is CVS-based version, official version of Agenda SNOW Toolchain.
 
 http://dev.agendacomputing.org/ -- Agenda VR3 PDA
 http://www.gnu.org/ -- Home page of GNU binutils 
