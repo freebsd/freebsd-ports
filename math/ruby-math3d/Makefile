@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	math3d
-PORTVERSION=	0.02
-PORTREVISION=	1
+PORTVERSION=	0.03
 CATEGORIES=	math ruby
 MASTER_SITES=	http://www2.giganet.net/~yoshi/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
@@ -19,12 +17,12 @@ MAINTAINER=	knu@FreeBSD.org
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
 INSTALL_TARGET=	site-install
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}/ja
+	${INSTALL_DATA} ${WRKSRC}/manual.en ${RUBY_MODDOCDIR}/
 	${INSTALL_DATA} ${WRKSRC}/manual.jis ${RUBY_MODDOCDIR}/ja/
 .endif
 
