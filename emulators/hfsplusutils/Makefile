@@ -14,6 +14,8 @@ DISTNAME=	hfsplus_${PORTVERSION}.src
 MAINTAINER=	jre@vineyard.net
 COMMENT=	Utilities for accessing HFS+ filesystems
 
+BROKEN=		"Does not compile"
+
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=	13
