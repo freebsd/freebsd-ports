@@ -25,4 +25,6 @@ PERL_CONFIGURE=	yes
 MAN3=	MP3::Tag::ID3v2.3 MP3::Tag.3 MP3::Tag::File.3 \
 	MP3::Tag::ID3v2-Data.3 MP3::Tag::ID3v1.3
 
+CONFLICTS=	p5-MP3-Tag-0.*
+
 .include <bsd.port.mk>
