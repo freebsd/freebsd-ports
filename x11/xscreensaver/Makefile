@@ -1,12 +1,12 @@
 # New ports collection makefile for:    xscreensaver
-# Version required:     2.11
+# Version required:     2.14
 # Date created:         10 July 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.4 1997/09/09 05:42:49 asami Exp $
+# $Id: Makefile,v 1.5 1997/11/27 23:47:57 jseger Exp $
 #
 
-DISTNAME=	xscreensaver-2.11
+DISTNAME=	xscreensaver-2.14
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
