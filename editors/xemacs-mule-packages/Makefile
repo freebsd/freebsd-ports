@@ -8,22 +8,15 @@
 PORTNAME=	xemacs-mule-packages
 PORTVERSION=	1.0
 CATEGORIES=	editors elisp
-MASTER_SITES=	\
-		ftp://ftp.xemacs.org/pub/xemacs/packages/ \
-		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/packages/ \
-		ftp://ftp.usyd.edu.au/pub/Xemacs/packages/ \
-		ftp://ftp.lab.kdd.co.jp/xemacs/packages/ \
-		ftp://ftp.th-darmstadt.de/pub/editors/xemacs/packages/
-
+MASTER_SITES=	${MASTER_SITE_XEMACS}
+MASTER_SITE_SUBDIR=	packages
 DISTFILES=	\
 		edict-1.09-pkg.tar.gz \
 		leim-1.15-pkg.tar.gz \
 		lookup-1.04-pkg.tar.gz
+DIST_SUBDIR=	xemacs
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
-
-DIST_SUBDIR=	xemacs
-MASTER_SITE_SUBDIR=${DIST_SUBDIR}
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/mule-packages

@@ -8,13 +8,8 @@
 PORTNAME=	xemacs-packages
 PORTVERSION=	1.6
 CATEGORIES=	editors elisp
-MASTER_SITES=	\
-		ftp://ftp.xemacs.org/pub/xemacs/packages/ \
-		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/packages/ \
-		ftp://ftp.usyd.edu.au/pub/Xemacs/packages/ \
-		ftp://ftp.lab.kdd.co.jp/xemacs/packages/ \
-		ftp://ftp.th-darmstadt.de/pub/editors/xemacs/packages/
-
+MASTER_SITES=	${MASTER_SITE_XEMACS}
+MASTER_SITE_SUBDIR=	packages
 DISTFILES=	\
 		apel-1.18-pkg.tar.gz \
 		auctex-1.21-pkg.tar.gz \
@@ -45,11 +40,9 @@ DISTFILES=	\
 		w3-1.15-pkg.tar.gz \
 		xemacs-base-1.43-pkg.tar.gz \
 		xemacs-devel-1.28-pkg.tar.gz
+DIST_SUBDIR=	xemacs
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
-
-DIST_SUBDIR=	xemacs
-MASTER_SITE_SUBDIR=${DIST_SUBDIR}
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/xemacs-packages

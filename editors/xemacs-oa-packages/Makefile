@@ -8,13 +8,8 @@
 PORTNAME=	xemacs-oa-packages
 PORTVERSION=	1.1
 CATEGORIES=	editors elisp
-MASTER_SITES=	\
-		ftp://ftp.xemacs.org/pub/xemacs/packages/ \
-		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/packages/ \
-		ftp://ftp.usyd.edu.au/pub/Xemacs/packages/ \
-		ftp://ftp.lab.kdd.co.jp/xemacs/packages/ \
-		ftp://ftp.th-darmstadt.de/pub/editors/xemacs/packages/
-
+MASTER_SITES=	${MASTER_SITE_XEMACS}
+MASTER_SITE_SUBDIR=	packages
 DISTFILES=	\
 		calc-1.12-pkg.tar.gz \
 		calendar-1.14-pkg.tar.gz \
@@ -24,11 +19,9 @@ DISTFILES=	\
 		slider-1.11-pkg.tar.gz \
 		speedbar-1.16-pkg.tar.gz \
 		strokes-1.06-pkg.tar.gz
+DIST_SUBDIR=	xemacs
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
-
-DIST_SUBDIR=	xemacs
-MASTER_SITE_SUBDIR=${DIST_SUBDIR}
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/xemacs-packages
