@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pipenightdreams
-PORTVERSION=	0.6.1
+PORTVERSION=	0.8.0
 CATEGORIES=	games
-MASTER_SITES=	http://www.libsdl.org/projects/pipenightdreams/package/
+MASTER_SITES=	http://www.libsdl.org/projects/pipenightdreams/packages/
 
 MAINTAINER=	markp@FreeBSD.org
 
@@ -16,13 +16,15 @@ LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" CPPFLAGS="-I${LOCALBASE}/include"
 
 pre-patch:
 	@${PERL} -pi -e 's|"SDL/SDL|"SDL|g ; s|<SDL/SDL|<SDL|g; s|SDL_LIBSS|SDL_LIBS|g;' ${WRKSRC}/configure
 	@find ${WRKSRC} -name Makefile.in | \
-		xargs ${PERL} -pi -e 's|/games/|/|g'
-	@${PERL} -pi -e "s|/usr/local/share/games|${LOCALBASE}/share|g" ${WRKSRC}/src/main.cpp
+		xargs ${PERL} -pi -e 's|/games/|/|g; \
+			s/^pipenightdreams_LDADD.+//g;'
+	@${PERL} -pi -e "s|/usr/share/games|${LOCALBASE}/share|g" ${WRKSRC}/src/main.cpp
 
 .include <bsd.port.mk>
