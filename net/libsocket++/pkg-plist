@@ -1,8 +1,8 @@
 lib/libsocket++.a
 lib/libsocket++.so.1.10
 lib/libsocket++_p.a
-@exec /sbin/ldconfig -m %D/lib
-@unexec /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 include/Fork.h
 include/echo.h 
 include/ftp.h
@@ -12,6 +12,10 @@ include/smtp.h
 include/sockinet.h 
 include/sockstream.h 
 include/sockunix.h 
+@unexec install-info --delete %D/info/socket++.info %D/info/dir
 info/socket++.info
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/socket++.info %D/info/dir
 share/doc/libsocket++/README
 share/doc/libsocket++/socket++.ps
+@dirrm share/doc/libsocket++
