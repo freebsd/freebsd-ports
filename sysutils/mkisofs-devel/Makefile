@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	mkisofs
-PORTVERSION=	1.12
+PORTVERSION=	1.12.1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/cdrecord/ \
 		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/
-DISTNAME=	cdrecord-1.8
+DISTNAME=	cdrecord-1.8.1
 
 MAINTAINER=	dirk@FreeBSD.org
 
