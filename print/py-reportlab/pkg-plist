@@ -10,6 +10,39 @@
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/__init__.py
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/__init__.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/__init__.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/__init__.py
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/__init__.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/__init__.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/areas.py
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/areas.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/areas.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/axes.py
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/axes.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/axes.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/barcharts.py
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/barcharts.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/barcharts.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/legends.py
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/legends.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/legends.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/linecharts.py
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/linecharts.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/linecharts.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/lineplots.py
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/lineplots.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/lineplots.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/markers.py
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/markers.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/markers.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/piecharts.py
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/piecharts.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/piecharts.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/textlabels.py
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/textlabels.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/textlabels.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/utils.py
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/utils.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/utils.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/renderPDF.py
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/renderPDF.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/renderPDF.pyo
@@ -37,6 +70,21 @@
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/widgetbase.py
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/widgetbase.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/widgetbase.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/widgets/__init__.py
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/widgets/__init__.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/widgets/__init__.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/widgets/flags.py
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/widgets/flags.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/widgets/flags.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/widgets/grids.py
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/widgets/grids.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/widgets/grids.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/widgets/markers.py
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/widgets/markers.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/widgets/markers.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/widgets/signsandsymbols.py
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/widgets/signsandsymbols.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/widgets/signsandsymbols.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/lib/PyFontify.py
 %%PYTHON_SITELIBDIR%%/reportlab/lib/PyFontify.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/lib/PyFontify.pyo
@@ -121,9 +169,15 @@
 %%PYTHON_SITELIBDIR%%/reportlab/pdfbase/pdfdoc.py
 %%PYTHON_SITELIBDIR%%/reportlab/pdfbase/pdfdoc.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/pdfbase/pdfdoc.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/pdfform.py
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/pdfform.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/pdfform.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/pdfbase/pdfmetrics.py
 %%PYTHON_SITELIBDIR%%/reportlab/pdfbase/pdfmetrics.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/pdfbase/pdfmetrics.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/pdfpattern.py
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/pdfpattern.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/pdfbase/pdfpattern.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/pdfbase/pdfutils.py
 %%PYTHON_SITELIBDIR%%/reportlab/pdfbase/pdfutils.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/pdfbase/pdfutils.pyo
@@ -277,6 +331,8 @@
 @dirrm %%PYTHON_SITELIBDIR%%/reportlab/pdfgen
 @dirrm %%PYTHON_SITELIBDIR%%/reportlab/pdfbase
 @dirrm %%PYTHON_SITELIBDIR%%/reportlab/lib
+@dirrm %%PYTHON_SITELIBDIR%%/reportlab/graphics/widgets
+@dirrm %%PYTHON_SITELIBDIR%%/reportlab/graphics/charts
 @dirrm %%PYTHON_SITELIBDIR%%/reportlab/graphics
 @dirrm %%PYTHON_SITELIBDIR%%/reportlab/fonts
 @dirrm %%PYTHON_SITELIBDIR%%/reportlab/extensions
