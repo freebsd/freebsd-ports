@@ -6,7 +6,6 @@ share/texmf/tex/platex/base/README.txt
 share/texmf/tex/platex/base/README2.txt
 share/texmf/tex/platex/base/Xins.ins
 share/texmf/tex/platex/base/ascmac.sty
-share/texmf/tex/platex/base/docstrip.cfg
 share/texmf/tex/platex/base/hyphen.cfg
 share/texmf/tex/platex/base/jarticle.cls
 share/texmf/tex/platex/base/jarticle.sty
@@ -53,6 +52,7 @@ share/texmf/tex/platex/base/plnews01.tex
 share/texmf/tex/platex/base/plnews02.tex
 share/texmf/tex/platex/base/plnews03.tex
 share/texmf/tex/platex/base/plnews04.tex
+share/texmf/tex/platex/base/plnews05.tex
 share/texmf/tex/platex/base/plpatch.ltx
 share/texmf/tex/platex/base/plvers.dtx
 share/texmf/tex/platex/base/ptrace.sty

@@ -933,6 +933,7 @@ share/texmf/tex/latex/base/cp850.def
 share/texmf/tex/latex/base/cp852.def
 share/texmf/tex/latex/base/cp865.def
 share/texmf/tex/latex/base/cstex.txt
+share/texmf/tex/latex/base/cyrguide.tex
 share/texmf/tex/latex/base/decmulti.def
 share/texmf/tex/latex/base/decustex.txt
 share/texmf/tex/latex/base/directex.txt
@@ -943,6 +944,7 @@ share/texmf/tex/latex/base/docstrip.ins
 share/texmf/tex/latex/base/docstrip.tex
 share/texmf/tex/latex/base/ec.ins
 share/texmf/tex/latex/base/emtex.txt
+share/texmf/tex/latex/base/emtextds.txt
 share/texmf/tex/latex/base/exscale.dtx
 share/texmf/tex/latex/base/exscale.ins
 share/texmf/tex/latex/base/exscale.sty
@@ -961,6 +963,7 @@ share/texmf/tex/latex/base/graphpap.dtx
 share/texmf/tex/latex/base/graphpap.ins
 share/texmf/tex/latex/base/graphpap.sty
 share/texmf/tex/latex/base/grphcomp.err
+share/texmf/tex/latex/base/handbuch.err
 share/texmf/tex/latex/base/hyphen.ltx
 share/texmf/tex/latex/base/idx.tex
 share/texmf/tex/latex/base/ifthen.dtx
@@ -993,6 +996,8 @@ share/texmf/tex/latex/base/letter.dtx
 share/texmf/tex/latex/base/letter.ins
 share/texmf/tex/latex/base/letter.sty
 share/texmf/tex/latex/base/lindner.txt
+share/texmf/tex/latex/base/lppl-1-0.txt
+share/texmf/tex/latex/base/lppl.txt
 share/texmf/tex/latex/base/ltalloc.dtx
 share/texmf/tex/latex/base/ltbibl.dtx
 share/texmf/tex/latex/base/ltboxes.dtx
@@ -1028,6 +1033,8 @@ share/texmf/tex/latex/base/ltnews06.tex
 share/texmf/tex/latex/base/ltnews07.tex
 share/texmf/tex/latex/base/ltnews08.tex
 share/texmf/tex/latex/base/ltnews09.tex
+share/texmf/tex/latex/base/ltnews10.tex
+share/texmf/tex/latex/base/ltnews11.tex
 share/texmf/tex/latex/base/ltoutenc.dtx
 share/texmf/tex/latex/base/ltoutenc.ins
 share/texmf/tex/latex/base/ltoutput.dtx
@@ -1156,6 +1163,7 @@ share/texmf/tex/latex/base/unpack.log
 share/texmf/tex/latex/base/usrguide.tex
 share/texmf/tex/latex/base/vtex.txt
 share/texmf/tex/latex/base/web2ctex.txt
+share/texmf/tex/latex/base/webcomp.err
 share/texmf/tex/latex/base/yandytex.txt
 share/texmf/web2c/latex.fmt
 @dirrm share/texmf/fonts/tfm/public/ec
