@@ -1,5 +1,5 @@
---- sys/unix/Makefile.src.orig	Thu Mar 21 08:43:54 2002
-+++ sys/unix/Makefile.src	Tue Aug 13 05:44:28 2002
+--- sys/unix/Makefile.src.orig	Sun May 25 10:20:20 2003
++++ sys/unix/Makefile.src	Sun May 25 10:30:45 2003
 @@ -139,19 +139,28 @@
  # directories.  The ones given below is the usual spot for linux systems.
  # The paths are for glibconfig.h and gnomesupport.h respectively.
@@ -33,7 +33,7 @@
  #LD=g++
  
  # Set the WINSRC, WINOBJ, and WINLIB lines to correspond to your desired
-@@ -204,7 +213,26 @@
+@@ -205,7 +214,26 @@
  #
  #
  WINSRC = $(WINTTYSRC)
@@ -60,7 +60,7 @@
  
  # on some systems the termcap library is in -ltermcap or -lcurses
  # on 386 Xenix, the -ltermlib tputs() seems not to work; use -lcurses instead
-@@ -224,19 +252,19 @@
+@@ -225,19 +253,19 @@
  #
  # libraries for X11
  # If USE_XPM is defined in config.h, you will also need -lXpm here.
@@ -83,7 +83,7 @@
  #
  # libraries for Gem port
  WINGEMLIB = -le_gem -lgem
-@@ -245,6 +273,15 @@
+@@ -246,6 +274,15 @@
  WINBELIB = -lbe
  
  WINLIB = $(WINTTYLIB)
@@ -99,7 +99,7 @@
  
  # any other strange libraries your system needs (for Sysunix only -- the more
  # specialized targets should already be right)
-@@ -274,7 +311,7 @@
+@@ -275,7 +312,7 @@
  LIBS =
  
  # make NetHack
@@ -108,20 +108,20 @@
  # GAME     = nethack.prg
  
  # if you defined RANDOM in unixconf.h/tosconf.h since your system did not come
-@@ -450,13 +487,13 @@
+@@ -451,13 +488,13 @@
  
  # Qt windowport meta-object-compiler output
  qt_kde0.moc: ../include/qt_kde0.h
--	$(QTDIR)/bin/moc ../include/qt_kde0.h > qt_kde0.moc
-+	${MOC} ../include/qt_kde0.h > qt_kde0.moc
+-	$(QTDIR)/bin/moc -o qt_kde0.moc ../include/qt_kde0.h
++	${MOC} -o qt_kde0.moc ../include/qt_kde0.h
  
  qt_win.moc: ../include/qt_win.h
--	$(QTDIR)/bin/moc ../include/qt_win.h > qt_win.moc
-+	${MOC} ../include/qt_win.h > qt_win.moc
+-	$(QTDIR)/bin/moc -o qt_win.moc ../include/qt_win.h
++	${MOC} -o qt_win.moc ../include/qt_win.h
  
  qttableview.moc: ../include/qttableview.h
--	$(QTDIR)/bin/moc ../include/qttableview.h > qttableview.moc
-+	${MOC} ../include/qttableview.h > qttableview.moc
+-	$(QTDIR)/bin/moc -o qttableview.moc ../include/qttableview.h
++	${MOC} -o qttableview.moc ../include/qttableview.h
  
  $(MAKEDEFS): ../util/makedefs.c  $(CONFIG_H) ../include/permonst.h \
  		../include/objclass.h ../include/monsym.h \

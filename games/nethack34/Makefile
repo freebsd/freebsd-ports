@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	nethack
-PORTVERSION=	3.4.0
-PORTREVISION=	1
+PORTVERSION=	3.4.1
 CATEGORIES?=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	nethack
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER?=	ports@freebsd.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	A dungeon explorin', slashin', hackin' game
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -52,12 +51,6 @@ PKGNAMESUFFIX=	-nox11
 .else
 USE_XPM=	yes
 GRAPHICS=	X11_GRAPHICS
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_QT_GRAPHICS) && ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
 .endif
 
 pre-everything::
@@ -101,4 +94,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/Guidebook.txt ${PREFIX}/${HACKDOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
