@@ -1,0 +1,9 @@
+GNUstep is a set of general-purpose Objective-C libraries based on the
+OpenStep standard developed by NeXT (now Apple) Inc. The libraries
+consist of everything from foundation classes, such as dictionaries and
+arrays, to GUI interface classes such as windows, sliders, buttons, etc.
+
+Please contact the GNUstep maintainers at <discussion@gnustep.org> in 
+case of questions and help offers.
+
+WWW: http://www.gnustep.org/
