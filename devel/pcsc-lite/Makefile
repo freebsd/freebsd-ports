@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	pcsc-lite
-PORTVERSION=	1.2.0.r1
-PORTREVISION=	1
-PORTEPOCH=	2
+PORTVERSION=	1.2.0
 CATEGORIES=	devel security
-MASTER_SITES=	http://alioth.debian.org/download.php/373/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
+MASTER_SITES=	http://alioth.debian.org/download.php/419/
 
 MAINTAINER=	toni@soth.at
 COMMENT=	A smartcard development library

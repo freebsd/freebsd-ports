@@ -1,7 +1,7 @@
 $FreeBSD$
 
---- build/ltmain.sh	2001/08/27 09:51:26	1.1
-+++ build/ltmain.sh	2001/08/27 09:51:42
+--- ltmain.sh	2001/08/27 09:51:26	1.1
++++ ltmain.sh	2001/08/27 09:51:42
 @@ -1278,7 +1278,7 @@
  	  esac
  	elif test "X$arg" = "X-lc_r"; then
