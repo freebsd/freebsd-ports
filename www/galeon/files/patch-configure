@@ -1,47 +1,22 @@
 
 $FreeBSD$
 
---- configure.orig	Wed Mar 13 10:57:19 2002
-+++ configure	Wed Mar 13 10:58:12 2002
-@@ -9966,7 +9966,7 @@
+--- configure.orig	Thu Apr 25 21:02:26 2002
++++ configure	Thu Apr 25 21:03:14 2002
+@@ -5434,6 +5434,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -7078,7 +7079,7 @@
+ #define ENABLE_NAUTILUS_VIEW 1
+ EOF
+ 
+-  _gnome_modules="$_gnome_modules bonobox nautilus"
++  _gnome_modules="$_gnome_modules bonobox"
  fi
+ echo "$ac_t""$enable_nautilus_view" 1>&6
  
- 
--	     CATOBJEXT=.gmo
-+	     CATOBJEXT=.mo
- 	   fi
- 	
- else
-@@ -10088,7 +10088,7 @@
-         
- 	BUILD_INCLUDED_LIBINTL=yes
- 	USE_INCLUDED_LIBINTL=yes
--        CATOBJEXT=.gmo
-+        CATOBJEXT=.mo
- 	INTLLIBS="\$(top_builddir)/intl/libintl.a $LIBICONV"
- 	LIBS=`echo " $LIBS " | sed -e 's/ -lintl / /' -e 's/^ //' -e 's/ $//'`
-       fi
-@@ -10173,7 +10173,7 @@
-     fi
- 
-                 for lang in $ALL_LINGUAS; do
--      GMOFILES="$GMOFILES $lang.gmo"
-+      GMOFILES="$GMOFILES $lang.mo"
-       POFILES="$POFILES $lang.po"
-     done
- 
-@@ -10502,10 +10502,10 @@
- s%@INSTALL_DATA@%$INSTALL_DATA%g
- s%@PACKAGE@%$PACKAGE%g
- s%@VERSION@%$VERSION%g
--s%@ACLOCAL@%$ACLOCAL%g
--s%@AUTOCONF@%$AUTOCONF%g
--s%@AUTOMAKE@%$AUTOMAKE%g
--s%@AUTOHEADER@%$AUTOHEADER%g
-+s%@ACLOCAL@%/usr/bin/true%g
-+s%@AUTOCONF@%/usr/bin/true%g
-+s%@AUTOMAKE@%/usr/bin/true%g
-+s%@AUTOHEADER@%/usr/bin/true%g
- s%@MAKEINFO@%$MAKEINFO%g
- s%@SET_MAKE@%$SET_MAKE%g
- s%@host@%$host%g

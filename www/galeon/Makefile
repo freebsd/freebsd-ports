@@ -31,7 +31,7 @@ MOZILLA=	mozilla
 USE_X_PREFIX=	yes
 USE_NEWGCC=	yes
 USE_GNOME=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-mozilla-includes="${X11BASE}/include/mozilla" \
 		--with-mozilla-libs="${X11BASE}/lib/${MOZILLA}" \
 		--enable-nautilus-view
