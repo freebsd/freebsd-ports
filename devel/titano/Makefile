@@ -14,7 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs
+LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
+		gtkeditor.0:${PORTSDIR}/x11-toolkits/libgtkeditor
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/b//}
 
