@@ -6,3 +6,4 @@ etc/php3.ini-dist
 %%PHPDOCDIR%%/LICENSE
 @exec %D/sbin/apachectl restart
 @unexec %D/sbin/apachectl restart
+@dirrm %%PHPDOCDIR%%
