@@ -30,9 +30,7 @@ RESTRICTED=	"Not sure if we can redistribute it"
 VMWARE_MIRROR_SITES=	\
 		http://vmware-svca.www.conxion.com/software/:vmware \
 		http://vmware-chil.www.conxion.com/software/:vmware \
-		http://vmware-heva.www.conxion.com/software/:vmware \
-		http://vmware.wespe.de/software/:vmware \
-		ftp://vmware.wespe.de/pub/software:vmware
+		http://vmware-heva.www.conxion.com/software/:vmware
 FREEBSD_MODULE_SITES=	\
 		http://www.break.net/orlando/vmware3/:patch \
 
