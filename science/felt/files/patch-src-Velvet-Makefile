@@ -1,0 +1,11 @@
+--- src/Velvet/Makefile.orig	Sat Jan 29 18:21:57 2005
++++ src/Velvet/Makefile	Sat Jan 29 18:19:36 2005
+@@ -18,7 +18,7 @@
+ CFLAGS	= $(CCOPTS) -I$(X11INC) -I$(TOPDIR)/include
+ LDFLAGS	= $(LDOPTS) -L$(X11LIB)
+ LIBS	= $(LIBWIDGETS) $(LIBGEN) $(LIBFELT) $(LIBELT) $(LIBMTX)\
+-          -lGLw -lGLU -lGL -lXaw3d -lXmu -lXt -lSM -lICE -lXext -lX11 -lm 
++          -lGLw -lGLU -lGL -lXaw3d -lXmu -lXt -lSM -lICE -lXext -lXm -lX11 -lm 
+ #	  /usr/X11R6/lib/libXaw3d.a /usr/X11R6/lib/libXmu.so.6.0 \
+ #	  /usr/X11R6/lib/libXt.so.6.0 /usr/X11R6/lib/libSM.so.6.0 \
+ #	  /usr/X11R6/lib/libICE.so.6.0 /usr/X11R6/lib/libXext.so.6.0 \
