@@ -8,14 +8,10 @@
 PORTNAME=	pycodec
 PORTVERSION=	1.4.7
 CATEGORIES=	japanese python converters
-MASTER_SITES=	http://www.python.jp/Zope/download/JapaneseCodecs/ \
-		http://pseudo.grad.sccs.chukyo-u.ac.jp/~kajiyama/python/ \
-		http://www3.kr.freebsd.org/~perky/distfiles/
+MASTER_SITES=	http://www.python.jp/Zope/download/JapaneseCodecs/
 DISTNAME=	JapaneseCodecs-${PORTVERSION}
 
 MAINTAINER=	perky@FreeBSD.org
-
-BUILD_DEPENDS=	${PYDISTUTILS}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
