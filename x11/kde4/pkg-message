@@ -1,0 +1,11 @@
+======================================================================
+======================================================================
+If you are upgrading from kde 3.0.4, please type ^C (control-c) and
+then do the following before attempting to upgrade:
+
+	pkg_delete -f -x kdelibs kdebase kdenetwork
+
+Thanks.
+-- The KDE-FreeBSD Team
+======================================================================
+======================================================================

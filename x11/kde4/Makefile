@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kde
-PORTVERSION=	${KDE_VERSION}
+PORTVERSION=	3.0.5
 CATEGORIES=	x11 kde
 MASTER_SITES=	# empty
 DISTFILES=	# none
@@ -23,7 +23,7 @@ RUN_DEPENDS+=	kjumpingcube:${PORTSDIR}/games/kdegames3 \
 
 .if make(package)
 DEPENDS_TARGET="package"
-.endif
+.endif # .if make(package)
 
 USE_QT_VER=3
 USE_KDELIBS_VER=3
