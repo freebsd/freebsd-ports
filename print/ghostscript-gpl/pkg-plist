@@ -299,8 +299,8 @@ share/ghostscript/%%GS_VERSION%%/lib/wftopfa.ps
 share/ghostscript/%%GS_VERSION%%/lib/winmaps.ps
 share/ghostscript/%%GS_VERSION%%/lib/wrfont.ps
 share/ghostscript/%%GS_VERSION%%/lib/zeroline.ps
-share/ghostscript/%%GS_VERSION%%/pcl3/BETA
 share/ghostscript/%%GS_VERSION%%/pcl3/BUGS
+share/ghostscript/%%GS_VERSION%%/pcl3/NEWS
 share/ghostscript/%%GS_VERSION%%/pcl3/README
 share/ghostscript/%%GS_VERSION%%/pcl3/calign.ps
 share/ghostscript/%%GS_VERSION%%/pcl3/dumppdd.ps
