@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	abcmidi
-PORTVERSION=	2004.11.21
+PORTVERSION=	2004.12.04
 CATEGORIES=	audio
 MASTER_SITES=	http://ifdo.pugmarks.com/~seymour/runabc/
 DISTNAME=	abcMIDI-${PORTVERSION:S/./-/g}
@@ -23,10 +23,10 @@ USE_GMAKE=	yes
 MAKEFILE=	makefiles/unix.mak
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DANSILIBS -c" LNK="${CC}"
 
-MAN1=		abc2abc.1 abc2midi.1 mftext.1 midi2abc.1 yaps.1
+MAN1=		abc2abc.1 abc2midi.1 mftext.1 midi2abc.1 midicopy.1 yaps.1
 
 do-install:
-.for FILE in abc2abc abc2midi mftext midi2abc yaps
+.for FILE in abc2abc abc2midi mftext midi2abc midicopy yaps
 	${INSTALL_PROGRAM} ${WRKSRC}/${FILE} ${PREFIX}/bin
 .endfor
 .for FILE in ${MAN1}
