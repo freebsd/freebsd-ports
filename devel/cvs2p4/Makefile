@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	cvs2p4
-PORTVERSION=	1.2.16
+PORTVERSION=	1.3.3
 CATEGORIES+=	devel
 MASTER_SITES=	ftp://ftp.perforce.com/perforce/utils/cvs2p4/
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 NO_BUILD=	yes
 
