@@ -8,7 +8,7 @@
 PORTNAME=	fltk
 PORTVERSION=	20000831
 CATEGORIES=	x11-toolkits ruby
-MASTER_SITES=	http://kt-www.jaist.ac.jp:8000/~ttate/ftp/
+MASTER_SITES=	http://kt-www.jaist.ac.jp/~ttate/ftp/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
