@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	spambayes
-PORTVERSION=	1.0.rc.1
-PORTREVISION=	1
+PORTVERSION=	1.0
 CATEGORIES=	mail python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -30,6 +29,7 @@ PORTDOCS=	CHANGELOG.txt \
 		README.txt \
 		TESTING.txt \
 		WHAT_IS_NEW.txt \
+		utilities/ \
 		contrib/
 
 post-extract:
@@ -45,6 +45,8 @@ post-install:
 .endfor
 	@${MKDIR} ${DOCSDIR}/contrib
 	@${INSTALL_DATA} ${WRKSRC}/contrib/* ${DOCSDIR}/contrib
+	@${MKDIR} ${DOCSDIR}/utilities
+	@${INSTALL_DATA} ${WRKSRC}/utilities/* ${DOCSDIR}/utilities
 .endif
 
 .include <bsd.port.mk>
