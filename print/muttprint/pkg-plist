@@ -21,8 +21,8 @@ bin/muttprint
 %%PORTDOCS%%share/doc/muttprint/manual-es/muttprint.html
 %%PORTDOCS%%share/doc/muttprint/manual-es/x15.html
 %%PORTDOCS%%share/doc/muttprint/manual-es/x23.html
-%%PORTDOCS%%share/doc/muttprint/manual-es/x157.html
-%%PORTDOCS%%share/doc/muttprint/manual-es/x404.html
+%%PORTDOCS%%share/doc/muttprint/manual-es/x190.html
+%%PORTDOCS%%share/doc/muttprint/manual-es/x623.html
 %%PORTDOCS%%share/doc/muttprint/manual-es.pdf
 %%PORTDOCS%%share/doc/muttprint/manual-it/muttprint.html
 %%PORTDOCS%%share/doc/muttprint/manual-it/x15.html
@@ -30,6 +30,7 @@ bin/muttprint
 %%PORTDOCS%%share/doc/muttprint/manual-it/x191.html
 %%PORTDOCS%%share/doc/muttprint/manual-it/x617.html
 %%PORTDOCS%%share/doc/muttprint/manual-it.pdf
+%%PORTDOCS%%share/doc/muttprint/sample-muttprintrc-cs
 %%PORTDOCS%%share/doc/muttprint/sample-muttprintrc-de
 %%PORTDOCS%%share/doc/muttprint/sample-muttprintrc-en
 %%PORTDOCS%%share/doc/muttprint/sample-muttprintrc-es

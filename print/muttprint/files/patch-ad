@@ -1,5 +1,5 @@
---- doc/manpages/Makefile.orig	Mon Feb 18 00:03:28 2002
-+++ doc/manpages/Makefile	Mon Feb 18 00:06:49 2002
+--- doc/manpages/Makefile.orig	Sat Feb 23 23:17:56 2002
++++ doc/manpages/Makefile	Sat Feb 23 23:19:15 2002
 @@ -4,8 +4,8 @@
  
  VERSION = 0.62
