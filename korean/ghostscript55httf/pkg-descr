@@ -1,18 +1,20 @@
-Ghostscript with FreeType(Korean)
-=================================
+GNU Ghostscript is the name of a set of software that provides:
 
-This is Aladdin Ghostscript, the non-GPL version that comes
-with a licence different from the GPL. Read the file PUBLIC in the
-work/gsX.Y directory or in /usr/local/share/ghostscript/X.Y/doc/PUBLIC
-after installation for details !
+        - An interpreter for the PostScript (TM) language, and
+
+        - A set of C procedures (the Ghostscript library) that implement
+the graphics capabilities that appear as primitive operations in the
+PostScript language.
+
+GNU Ghostscript comes with NO WARRANTY and NO SUPPORT.  
+
+Also included with this package is the PCL3 driver written by Martin
+Lottermoser with defaults for a Deskjet 560C.
 
 This version can handle Korean(and Japanese) Truetype fonts
 using FreeType library. It also has some bugfix for correctly working 
 CID-Keyed fonts.
 
-GS with Korean Web page:
-	http://www.kr.freebsd.org/~cjh/freetime/printings/gs-ko/
-
 --
-Ports by CHOI Junho <cjh@kr.freebsd.org>
+Ports by CHOI Junho <cjh@FreeBSD.org>
 WWW: http://www.kr.freebsd.org/~cjh/freetime/printings/gs-ko/
