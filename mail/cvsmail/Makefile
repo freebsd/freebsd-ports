@@ -8,7 +8,7 @@
 PORTNAME=	cvsmail
 PORTVERSION=	2.2
 CATEGORIES=	mail
-MASTER_SITES=	http://www.smithurst.org/ben/software/mail/dists/
+MASTER_SITES=	http://www.bensmithurst.com/software/mail/dists/
 DISTNAME=	mailutils-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
