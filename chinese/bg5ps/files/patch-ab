@@ -1,0 +1,11 @@
+--- bg5ps.conf.orig	Thu Nov  2 23:47:35 2000
++++ bg5ps.conf	Thu Nov  2 23:50:27 2000
+@@ -4,7 +4,7 @@
+ Encoding="big5"
+ 
+ #chineseFontPath: 指定中文字型的路徑(預設值: 與 bg5ps 同) 
+-chineseFontPath="/usr/share/fonts/ttf/"
++chineseFontPath="/usr/X11R6/lib/X11/fonts/TrueType"
+ 
+ #modify the above line
+ 

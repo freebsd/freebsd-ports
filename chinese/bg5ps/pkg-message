@@ -1,6 +1,9 @@
+--------------------------------------------------------------------
+Please check the following files:
 
-------------------------------------------------------------
-Copy /usr/local/share/doc/bg5ps/bg5ps.conf to ~/.bg5ps.conf.
-Then modify it to suit your needs.
-------------------------------------------------------------
+/usr/local/share/doc/bg5ps/bg5ps.conf.sample
+/usr/local/share/doc/bg5ps/gb2312-bg5ps.conf.sample
 
+Copy one of them to ~/.bg5ps.conf(depend on which encoding you use),
+then modify it to suit your needs.  Type `bg5ps -h` for help.
+--------------------------------------------------------------------
