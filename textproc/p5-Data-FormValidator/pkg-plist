@@ -1,5 +1,10 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/FormValidator/.packlist
 %%SITE_PERL%%/Data/FormValidator.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/FormValidator
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data 2>/dev/null || true
+%%SITE_PERL%%/Data/FormValidator/Constraints.pm
+%%SITE_PERL%%/Data/FormValidator/ConstraintsFactory.pm
+%%SITE_PERL%%/Data/FormValidator/Constraints/Dates.pm
+%%SITE_PERL%%/Data/FormValidator/Constraints/Upload.pm
+%%SITE_PERL%%/Data/FormValidator/Filters.pm
+%%SITE_PERL%%/Data/FormValidator/Results.pm
+@dirrm %%SITE_PERL%%/Data/FormValidator/Constraints
+@dirrm %%SITE_PERL%%/Data/FormValidator
 @unexec rmdir %D/%%SITE_PERL%%/Data 2>/dev/null || true
