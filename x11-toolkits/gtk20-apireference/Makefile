@@ -15,8 +15,9 @@ DISTFILES=	${MODULES:C/$/-2.0-docs${EXTRACT_SUFX}/}
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	API reference for the Gimp Toolkit v2.x for X11 GUI
 
+IGNOREFILES=	${DISTFILES}
+
 NO_BUILD=	yes
-NO_CHECKSUM=	yes		# they're rebuild too often to keep track of
 PLIST=		${WRKDIR}/plist
 PREFIX=		${X11BASE}	# do not use USE_X_PREFIX, does not depend on X
 USE_REINPLACE=	yes
