@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkam
 PORTVERSION=	0.1.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gphoto
@@ -66,7 +66,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|images/gtkam|gtkam/images|g ; \
 		 s|-pedantic||g ; \
-		 s|$$(libdir)/gimp/1.3/|$$(libexecdir)/gimp/2.0/|g'
+		 s|$$(libdir)/gimp/1.3/|$$(libexecdir)/gimp/2.2/|g'
 	@${ECHO_CMD} "Icon=gtkam.png" >> ${WRKSRC}/gtkam.desktop
 
 post-install:
