@@ -8,7 +8,7 @@
 PORTNAME=	xphotohunter
 PORTVERSION=	1.4
 CATEGORIES=	games
-MASTER_SITES=	http://www.oz.nthu.edu.tw/~u860905/Xphotohunter/
+MASTER_SITES=	http://micro.ee.nthu.edu.tw/~tomcat/Xphotohunter/
 
 MAINTAINER=	clive@FreeBSD.org
 
