@@ -723,3 +723,4 @@ security/whisker|security/nikto|2003-11-20|Discontinued by author, who recommend
 sysutils/medusa||2003-11-27|Obsolete, and broken on 64-bit platforms
 databases/postgresql7-client|databases/postgresql-client|2003-12-04|Duplicate after postgresql update
 cad/metis-edf|math/metis-edf|2003-12-09|moved to math category
+textproc/ruby-rdoc||2003-12-15|integrated into ruby18 and ruby16-shim-ruby18
