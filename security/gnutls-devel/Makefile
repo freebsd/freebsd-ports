@@ -23,6 +23,8 @@ LIB_DEPENDS=	gcrypt.10:${PORTSDIR}/security/libgcrypt \
 		tasn1.2:${PORTSDIR}/security/libtasn1 \
 		opencdk.8:${PORTSDIR}/security/opencdk
 
+BROKEN=		"Inconsistent dependencies (depends on two versions of libgcrypt)"
+
 CONFLICTS=	gnutls-[0-9]*
 
 USE_ICONV=	yes
