@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netcdf
-PORTVERSION=	3.5.0
+PORTVERSION=	3.5.1
 CATEGORIES=	math
 MASTER_SITES=	ftp://unidata.ucar.edu/pub/netcdf/
 #DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/-beta/}
@@ -31,9 +31,17 @@ post-build:
 		${SETENV} ${MAKE_ENV} ${MAKE} linux_shared_library)
 
 post-install:
+	@${STRIP_CMD} ${PREFIX}/bin/ncdump
+	@${STRIP_CMD} ${PREFIX}/bin/ncgen
 	${INSTALL_DATA} ${WRKSRC}/libsrc/libnetcdf.so ${PREFIX}/lib/libnetcdf.so.1
 	${LN} -sf libnetcdf.so.1 ${PREFIX}/lib/libnetcdf.so
 	${INSTALL_DATA} ${WRKSRC}/cxx/libnetcdf_c++.so ${PREFIX}/lib/libnetcdf_c++.so.1
 	${LN} -sf libnetcdf_c++.so.1 ${PREFIX}/lib/libnetcdf_c++.so
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in COMPATIBILITY COPYRIGHT README RELEASE_NOTES
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
