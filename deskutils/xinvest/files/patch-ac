@@ -1,16 +1,16 @@
---- Imakefile.orig	Tue Sep 23 08:50:46 1997
-+++ Imakefile	Thu Oct 26 03:46:58 2000
+--- Imakefile.orig	Sat Feb  5 07:59:08 2000
++++ Imakefile	Sun Nov 12 15:02:20 2000
 @@ -11,7 +11,7 @@
  
  DEFINES = -DSHAPE
  INCLUDES = -I$(INCROOT)/X11
 -SYS_LIBRARIES = -lXm -lXpm $(XTOOLLIB) -lXext $(XLIB) -lm
-+SYS_LIBRARIES = -lXm -lXpm $(XTOOLLIB) -lXext $(XLIB) -lm ${MOTIFLIB}
++SYS_LIBRARIES = ${MOTIFLIB} -lXpm $(XTOOLLIB) -lXext $(XLIB) -lm
  DEPLIBS = 
  
  SRCS =	account.c askuser.c calendar.c color.c drawing.c \
 @@ -25,5 +25,5 @@
- 	util.o xinvest.o xutil.o
+ 	tooltips.o trans.o util.o xinvest.o xutil.o
  
  
 -ComplexProgramTarget(Xinvest)

@@ -1,0 +1,11 @@
+--- portfolio.c.orig	Sat Feb  5 07:59:06 2000
++++ portfolio.c	Sun Nov 12 15:09:56 2000
+@@ -29,7 +29,7 @@
+ #include <string.h>
+ #include <math.h>
+ 
+-#if !defined(NeXT) && !defined(__NetBSD__)
++#if !defined(NeXT) && !defined(__NetBSD__) && !defined(__FreeBSD__)
+ #include <values.h>
+ #endif
+ 
