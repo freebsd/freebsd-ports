@@ -1,6 +1,6 @@
---- configure.orig	Wed Nov 18 14:54:54 1998
-+++ configure		Tue Dec  1 14:49:37 1998
-@@ -842,14 +842,14 @@
+--- configure.orig	Mon Mar  8 22:53:50 1999
++++ configure	Thu Apr 29 11:23:44 1999
+@@ -874,14 +874,14 @@
    withval="$with_tcl"
    TCL_BIN_DIR=$withval
  else
@@ -18,7 +18,7 @@
  fi
  
  #--------------------------------------------------------------------
-@@ -889,6 +889,7 @@
+@@ -921,6 +921,7 @@
  CFLAGS_DEBUG=$TCL_CFLAGS_DEBUG
  CFLAGS_OPTIMIZE=$TCL_CFLAGS_OPTIMIZE
  EXTRA_CFLAGS=$TCL_EXTRA_CFLAGS
@@ -26,7 +26,7 @@
  
  LIB_RUNTIME_DIR='${LIB_RUNTIME_DIR}'
  
-@@ -2344,7 +2345,7 @@
+@@ -2387,7 +2388,7 @@
  if test "$ok" = "yes" -a "${SHLIB_SUFFIX}" != ""; then
      TK_SHARED_BUILD=1
      TK_SHLIB_CFLAGS="${SHLIB_CFLAGS}"
