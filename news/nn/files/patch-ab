@@ -1,5 +1,5 @@
-*** config.h.orig	Sat Apr 15 04:57:46 1995
---- config.h	Sat Apr 15 05:12:40 1995
+*** config.h.orig	Sun Jun 18 16:39:25 1995
+--- config.h	Sun Jun 18 16:41:44 1995
 ***************
 *** 32,38 ****
   #define NOV
@@ -87,6 +87,23 @@
   
   /*
    * 	Define RESIZING to make nn understand dynamic window-resizing.
+***************
+*** 239,245 ****
+  
+  #define BIN_DIRECTORY	"/usr/local/bin"
+  #define LIB_DIRECTORY	"/usr/local/lib/nn"
+! 
+  
+  /**************************** DATABASE LOCATION **************************
+   *
+--- 239,245 ----
+  
+  #define BIN_DIRECTORY	"/usr/local/bin"
+  #define LIB_DIRECTORY	"/usr/local/lib/nn"
+! #define TMP_DIRECTORY   "/var/tmp"
+  
+  /**************************** DATABASE LOCATION **************************
+   *
 ***************
 *** 270,276 ****
    *	     (The file system must support long file names!!)
