@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	scim
-PORTVERSION=	0.99.6
+PORTVERSION=	1.0.0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://freedesktop.org/~suzhe/sources/
 MASTER_SITE_SUBDIR=scim
+
 MAINTAINER=	gaoj@cpsc.ucalgary.ca
 COMMENT=	Smart Common Input Method platform
 
@@ -28,10 +29,10 @@ CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500035
-BUILD_DEPENDS+= ${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-RUN_DEPENDS+=   ${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-CONFIGURE_ENV+= CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/stlport" \
-                LDFLAGS="-L${LOCALBASE}/lib -lstlport_gcc -lintl ${PTHREAD_LIBS}"
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
+RUN_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/stlport" \
+		LDFLAGS="-L${LOCALBASE}/lib -lstlport_gcc -lintl ${PTHREAD_LIBS}"
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-4-stable
 PLIST_SUB=	NOSTABLE="@comment "
 .else
@@ -48,6 +49,6 @@ post-configure:
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-	@${ECHO} To display this message again, type make post-install
+	@${ECHO} To display this message again, type pkg_info -D ${PKGNAME}
 
 .include <bsd.port.post.mk>

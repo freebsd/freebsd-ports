@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	skim
-PORTVERSION=	0.9.5
+PORTVERSION=	1.0.0
 CATEGORIES=	textproc kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://freedesktop.org/~cougar/skim/downloads/
-MASTER_SITE_SUBDIR= scim
+MASTER_SITE_SUBDIR=	scim
 
 MAINTAINER=	gaoj@cpsc.ucalgary.ca
 COMMENT=	An input method platform based on SCIM library and KDE/QT
@@ -18,10 +18,11 @@ COMMENT=	An input method platform based on SCIM library and KDE/QT
 LIB_DEPENDS=	scim-1.0.5:${PORTSDIR}/textproc/scim
 
 USE_KDELIBS_VER=3
+USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
+USE_INC_LIBTOOL_VER=	15
 
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
@@ -29,14 +30,15 @@ CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500035
-BUILD_DEPENDS+= ${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-RUN_DEPENDS+=   ${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-CONFIGURE_ENV+= CXXFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/stlport" \
-                LDFLAGS="-L${LOCALBASE}/lib -lstlport_gcc -lintl ${PTHREAD_LIBS}"
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
+RUN_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
+CONFIGURE_ENV+=	CXXFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/stlport ${CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib -lstlport_gcc -lintl ${PTHREAD_LIBS}"
 .else
-CONFIGURE_ENV+=	CXXFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__" \
+CONFIGURE_ENV+=	CXXFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__ ${CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 .endif
+
 pre-configure:
 	${REINPLACE_CMD} "s,-pedantic,,g; \
 		s,-pthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
@@ -44,6 +46,6 @@ pre-configure:
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-	@${ECHO} To display this message again, type make post-install
+	@${ECHO} To display this message again, type pkg_info -D ${PKGNAME}
 
 .include <bsd.port.post.mk>

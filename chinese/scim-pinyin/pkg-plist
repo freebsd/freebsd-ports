@@ -2,6 +2,8 @@
 etc/gconf/schemas/scim-chinese.schemas
 lib/scim-1.0/IMEngine/pinyin.so
 lib/scim-1.0/SetupUI/pinyin-imengine-setup.so
+share/locale/ko/LC_MESSAGES/scim-chinese.mo
+share/locale/ja/LC_MESSAGES/scim-chinese.mo
 share/locale/zh_CN/LC_MESSAGES/scim-chinese.mo
 share/locale/zh_TW/LC_MESSAGES/scim-chinese.mo
 share/scim/chinese/phrase_lib
