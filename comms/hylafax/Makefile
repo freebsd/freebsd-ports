@@ -83,15 +83,4 @@ post-install:
 	fi
 	@${SED} 's^/usr/local^${PREFIX}^g' < ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-
-.if ${LOCALBASE} != /usr/local
-USE_REINPLACE=	yes
-REINPLACE_ARGS=	-i ""
-post-patch:
-	${REINPLACE_CMD} -e 's^/usr/local^${LOCALBASE}^g' \
-		`${FIND} ${WRKSRC} -type f -print0 | \
-			${XARGS} -0 ${GREP} -F -l --mmap /usr/local`
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
