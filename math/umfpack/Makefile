@@ -14,8 +14,6 @@ DISTNAME=	UMFPACKv${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unsymmetric-pattern MultiFrontal Package
 
-BROKEN=		Does not install
-
 BUILD_DEPENDS=	${LOCALBASE}/lib/libcblas.a:${PORTSDIR}/math/atlas
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/UMFPACK
@@ -33,8 +31,15 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/AMD/Doc/*.pdf ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${GZIP_CMD} ${DOCSDIR}/README
-	${INSTALL_DATA} ${WRKSRC}/*.pdf  ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Doc/*.pdf  ${DOCSDIR}
 	${CP} -R ${WRKDIR}/${DISTNAME}/Papers ${DOCSDIR}
+	@${FIND} ${DOCSDIR} | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+	@${FIND} ${DOCSDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+	@${MKDIR} ${EXAMPLESDIR}
+	@${TAR} --exclude tmp -C ${WRKSRC}/Demo -cf - . | \
+		${TAR} -C ${EXAMPLESDIR} -xf -
+	@${FIND} ${EXAMPLESDIR} | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+	@${FIND} ${EXAMPLESDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 .endif
 
 .include <bsd.port.mk>
