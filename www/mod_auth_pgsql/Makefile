@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_auth_pgsql
-PORTVERSION=	0.9.11
+PORTVERSION=	0.9.12
 CATEGORIES=	www
 MASTER_SITES=	http://www.giuseppetanzilli.it/mod_auth_pgsql/dist/
 
