@@ -1,6 +1,6 @@
 bin/background-properties-capplet
+bin/default-application-properties-capplet
 bin/file-types-capplet
-bin/gnome-edit-properties-capplet
 bin/gnomecc
 bin/keyboard-properties
 bin/mouse-properties-capplet
@@ -20,7 +20,7 @@ share/gnome/apps/Settings/Desktop/background-properties.desktop
 share/gnome/apps/Settings/Desktop/theme-selector.desktop
 share/gnome/apps/Settings/Desktop/wm-properties.desktop
 share/gnome/apps/Settings/Documents/.directory
-share/gnome/apps/Settings/Documents/gnome-edit-properties.desktop
+share/gnome/apps/Settings/Documents/default-applicaiton-properties.desktop
 share/gnome/apps/Settings/Documents/url-properties.desktop
 share/gnome/apps/Settings/Multimedia/.directory
 share/gnome/apps/Settings/Multimedia/sound-properties.desktop
@@ -37,8 +37,8 @@ share/gnome/control-center/Desktop/background-properties.desktop
 share/gnome/control-center/Desktop/theme-selector.desktop
 share/gnome/control-center/Desktop/wm-properties.desktop
 share/gnome/control-center/Documents/.directory
+share/gnome/control-center/Documents/default-application-properties.desktop
 share/gnome/control-center/Documents/file-types-capplet.desktop
-share/gnome/control-center/Documents/gnome-edit-properties.desktop
 share/gnome/control-center/Documents/url-properties.desktop
 share/gnome/control-center/Multimedia/.directory
 share/gnome/control-center/Multimedia/sound-properties.desktop
@@ -90,8 +90,49 @@ share/gnome/help/control-center/C/stylesheet-images/up.gif
 share/gnome/help/control-center/C/stylesheet-images/warning.gif
 share/gnome/help/control-center/C/topic.dat
 share/gnome/help/control-center/C/usage.html
+share/gnome/help/control-center/eu/control-center.sgml
+share/gnome/help/control-center/eu/desktop-intro.html
+share/gnome/help/control-center/eu/doc-handlers.html
+share/gnome/help/control-center/eu/figures/bg-capplet.png
+share/gnome/help/control-center/eu/figures/gccalf.png
+share/gnome/help/control-center/eu/figures/gccappdef.png
+share/gnome/help/control-center/eu/figures/gccdialog.png
+share/gnome/help/control-center/eu/figures/gccedit.png
+share/gnome/help/control-center/eu/figures/gcchints.png
+share/gnome/help/control-center/eu/figures/gccmdi.png
+share/gnome/help/control-center/eu/figures/gccmime.png
+share/gnome/help/control-center/eu/figures/gccsession-props.png
+share/gnome/help/control-center/eu/figures/gccsessopt.png
+share/gnome/help/control-center/eu/figures/gccsound1.png
+share/gnome/help/control-center/eu/figures/gccsound2.png
+share/gnome/help/control-center/eu/figures/gccstartup.png
+share/gnome/help/control-center/eu/figures/gccurl.png
+share/gnome/help/control-center/eu/figures/glob_pref_anim.png
+share/gnome/help/control-center/eu/figures/keyboard-capplet.png
+share/gnome/help/control-center/eu/figures/mouse-capplet.png
+share/gnome/help/control-center/eu/figures/screensave-capplet.png
+share/gnome/help/control-center/eu/figures/theme-select.png
+share/gnome/help/control-center/eu/figures/wm-add.png
+share/gnome/help/control-center/eu/figures/wm-main.png
+share/gnome/help/control-center/eu/index.html
+share/gnome/help/control-center/eu/ln7.html
+share/gnome/help/control-center/eu/stylesheet-images/caution.gif
+share/gnome/help/control-center/eu/stylesheet-images/home.gif
+share/gnome/help/control-center/eu/stylesheet-images/important.gif
+share/gnome/help/control-center/eu/stylesheet-images/next.gif
+share/gnome/help/control-center/eu/stylesheet-images/note.gif
+share/gnome/help/control-center/eu/stylesheet-images/prev.gif
+share/gnome/help/control-center/eu/stylesheet-images/tip.gif
+share/gnome/help/control-center/eu/stylesheet-images/toc-blank.gif
+share/gnome/help/control-center/eu/stylesheet-images/toc-minus.gif
+share/gnome/help/control-center/eu/stylesheet-images/toc-plus.gif
+share/gnome/help/control-center/eu/stylesheet-images/up.gif
+share/gnome/help/control-center/eu/stylesheet-images/warning.gif
+share/gnome/help/control-center/eu/topic.dat
+share/gnome/help/control-center/eu/usage.html
 share/gnome/idl/control-center.idl
 share/gnome/omf/control-center/control-center-C.omf
+share/gnome/omf/control-center/control-center-eu.omf
 share/gnome/pixmaps/ccsplash.png
 share/gnome/pixmaps/control-center.png
 share/gnome/wm-properties/Enlightenment.desktop
@@ -141,6 +182,9 @@ share/locale/zh_TW/LC_MESSAGES/control-center.mo
 @dirrm share/gnome/help/control-center/C/stylesheet-images
 @dirrm share/gnome/help/control-center/C/figures
 @dirrm share/gnome/help/control-center/C
+@dirrm share/gnome/help/control-center/eu/stylesheet-images
+@dirrm share/gnome/help/control-center/eu/figures
+@dirrm share/gnome/help/control-center/eu
 @dirrm share/gnome/help/control-center
 @dirrm share/gnome/control-center/UIOptions
 @dirrm share/gnome/control-center/Session

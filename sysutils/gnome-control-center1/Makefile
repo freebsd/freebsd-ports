@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnomecontrolcenter
-PORTVERSION=	1.4.0.4
-PORTREVISION=	3
+PORTVERSION=	1.4.0.5
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/control-center
