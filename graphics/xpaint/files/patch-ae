@@ -1,6 +1,6 @@
---- readRC.c.orig	Sun Sep  3 07:07:09 2000
-+++ readRC.c	Fri Mar  9 03:31:53 2001
-@@ -30,11 +30,13 @@
+--- readRC.c.orig	Sun Oct 27 16:32:36 2002
++++ readRC.c	Fri Nov  8 22:50:21 2002
+@@ -32,11 +32,13 @@
  #include <unistd.h>
  #endif
  
@@ -14,7 +14,7 @@
  
  #define RC_FILENAME	".XPaintrc"
  
-@@ -64,19 +66,32 @@
+@@ -73,19 +75,32 @@
  static FILE *
  openTemp(char **np)
  {
@@ -25,7 +25,7 @@
      char xx[256];
  
      if ((n = getenv("TMPDIR")) == NULL)
- 	n = "/tmp";
+         n = "/tmp";
  
 +#ifdef HAVE_MKSTEMP
 +    snprintf(xx, 256, "%s/%s", n, "/XPaintXXXXXXX");
@@ -33,12 +33,12 @@
 +    n = xx;
 +#else
      strcpy(xx, n);
-     strcat(xx, "/XPaintXXXXXXX");
+     strcat(xx, "/XPaint-XXXXXX");
      n = mktemp(xx);
 +#endif
      tempName[++tempIndex] = XtNewString(n);
      if (np != NULL)
- 	*np = tempName[tempIndex];
+         *np = tempName[tempIndex];
 +#ifdef HAVE_MKSTEMP
 +    return fdopen(fd, "w");
 +#else
