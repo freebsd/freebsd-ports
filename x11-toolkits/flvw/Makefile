@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	cyrille.lefevre@laposte.net
 COMMENT=	Virtual Widgets for the Fast Light ToolKit
 
+BROKEN=		"Does not compile"
+
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/1.0

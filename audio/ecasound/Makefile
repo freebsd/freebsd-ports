@@ -13,6 +13,8 @@ MASTER_SITES=	http://ecasound.seul.org/download/
 MAINTAINER=	anarcat@anarcat.ath.cx
 COMMENT=	Multitrack audio processing software
 
+BROKEN=		"Does not compile"
+
 USE_GMAKE=	yes
 USE_AUTOMAKE_VER=14
 USE_LIBTOOL=	yes
