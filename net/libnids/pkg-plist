@@ -1,0 +1,7 @@
+include/nids.h
+lib/libnids.a
+share/doc/libnids/API
+share/doc/libnids/MISC
+share/doc/libnids/README
+share/doc/libnids/TESTS
+@dirrm share/doc/libnids
