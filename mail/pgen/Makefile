@@ -8,7 +8,7 @@
 PORTNAME=	pgen
 PORTVERSION=	0.2
 CATEGORIES=	mail
-MASTER_SITES=	http://www.myrddin.demon.co.uk/dist/
+MASTER_SITES=	http://www.happygiraffe.net/dist/
 
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Tool to generate a procmailrc file with m4 macros
