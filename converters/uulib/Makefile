@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	uulib
-PORTVERSION=	0.5.13
+PORTVERSION=	0.5.18
 CATEGORIES=	converters
-MASTER_SITES=	ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/ \
-		http://www.informatik.uni-frankfurt.de/~fp/uudeview/Apps/frank/
+MASTER_SITES=	http://www.fpx.de/fp/Software/UUDeview/download/
 DISTNAME=	uudeview-${PORTVERSION}
 
 MAINTAINER=	hoek@FreeBSD.org
@@ -24,12 +23,12 @@ ALL_TARGET=	libuu.a	libuu.so.${VERSION}
 .include <bsd.port.pre.mk>
 
 .if ${PORTOBJFORMAT} == "elf"
-VERSION=	1
+VERSION=	2
 .else
-VERSION=	1.0
+VERSION=	2.0
 .endif
 
-DOCFILES=	HISTORY doc/Makefile doc/README doc/binhex.fig \
+DOCFILES=	COPYING HISTORY doc/Makefile doc/README doc/binhex.fig \
 		doc/library.ltx doc/structure.fig doc/td-v1.c doc/td-v2.c \
 		doc/td-v3.c doc/test.txt
 

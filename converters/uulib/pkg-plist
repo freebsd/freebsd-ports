@@ -1,6 +1,6 @@
 lib/libuu.a
 lib/libuu.so
-lib/libuu.so.1
+lib/libuu.so.2
 include/uudeview.h
 %%PORTDOCS%%share/doc/uulib/Makefile
 %%PORTDOCS%%share/doc/uulib/README
@@ -13,4 +13,5 @@ include/uudeview.h
 %%PORTDOCS%%share/doc/uulib/test.txt
 %%PORTDOCS%%share/doc/uulib/porting.notes
 %%PORTDOCS%%share/doc/uulib/HISTORY
+%%PORTDOCS%%share/doc/uulib/COPYING
 %%PORTDOCS%%@dirrm share/doc/uulib

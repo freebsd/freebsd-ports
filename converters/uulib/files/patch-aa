@@ -14,13 +14,13 @@
  	-$(RANLIB) $@
  
 +SOBJS=	$(UULIB_OBJ:.o=.so)
-+libuu.so.1.0:	$(SOBJS)
++libuu.so.2.0:	$(SOBJS)
 +	rm -f $(.TARGET)
-+	ld -Bshareable -x -o libuu.so.1.0 `lorder $(SOBJS) | tsort -q`
++	ld -Bshareable -x -o libuu.so.2.0 `lorder $(SOBJS) | tsort -q`
 +
-+libuu.so.1:	$(SOBJS)
++libuu.so.2:	$(SOBJS)
 +	rm -f $(.TARGET)
-+	ld -shared -x -soname libuu.so.1 -o libuu.so.1 $(SOBJS)
++	$(CC) -shared -Wl,-x,-soname,libuu.so.2 -o libuu.so.2 $(SOBJS)
 +
 +.c.so:
 +	$(CC) -fpic -DPIC -c -o $(.TARGET) $(CFLAGS) $(VDEF) $(.IMPSRC)
