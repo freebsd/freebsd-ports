@@ -21,7 +21,7 @@ USE_JAVA=	1.2+
 USE_PERL5_BUILD=YES
 NEED_JAVAC=	YES
 
-MAN1=		kawa
+MAN1=		kawa.1
 
 CONFIGURE_ARGS=	--enable-kawa-frontend
 GNU_CONFIGURE=	yes
