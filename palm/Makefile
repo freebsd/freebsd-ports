@@ -2,6 +2,7 @@
 #
 
     SUBDIR += imgvtopgm
+    SUBDIR += isilo
     SUBDIR += jpilot
     SUBDIR += kpilot
     SUBDIR += pilot-link
