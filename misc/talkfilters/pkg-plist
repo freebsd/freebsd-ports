@@ -1,0 +1,23 @@
+bin/b1ff
+bin/brooklyn
+bin/chef
+bin/cockney
+bin/drawl
+bin/fudd
+bin/funetak
+bin/jethro
+bin/jive
+bin/kraut
+bin/pansy
+bin/postmodern
+bin/redneck
+bin/valspeak
+bin/warez
+bin/wrap
+include/talkfilters.h
+@unexec install-info --delete %D/info/talkfilters.info %D/info/dir
+info/talkfilters.info
+@exec install-info %D/info/talkfilters.info %D/info/dir
+lib/libtalkfilters.a
+lib/libtalkfilters.so
+lib/libtalkfilters.so.0

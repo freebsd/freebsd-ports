@@ -333,6 +333,7 @@
     SUBDIR += susv3
     SUBDIR += sword
     SUBDIR += sword-modules
+    SUBDIR += talkfilters
     SUBDIR += tcb
     SUBDIR += team
     SUBDIR += telbook
