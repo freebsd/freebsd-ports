@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+sbin/pchar
+share/doc/pchar/FAQ
+share/doc/pchar/README
