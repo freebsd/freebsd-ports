@@ -4,3 +4,5 @@
        methods
 
        blocksize =item keysize =item encrypt =item decrypt
+
+WWW: http://search.cpan.org/dist/Crypt-IDEA/

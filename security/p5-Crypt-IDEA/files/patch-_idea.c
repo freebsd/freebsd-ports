@@ -1,5 +1,5 @@
---- idea.c.orig	Sun Apr 23 03:51:49 2000
-+++ idea.c	Sun Apr 23 03:51:27 2000
+--- _idea.c.orig	Sun Jan 19 11:37:03 2003
++++ _idea.c	Sun Jan 19 11:37:14 2003
 @@ -5,7 +5,7 @@
  
  #include "idea.h"
