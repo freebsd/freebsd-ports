@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.abridgegame.org/darcs/
 MAINTAINER=	obraun@FreeBSD.org
 COMMENT=	Yet another replacement for CVS, written in Haskell
 
-BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc6
+BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 USE_REINPLACE=	yes
