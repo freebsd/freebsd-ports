@@ -604,6 +604,7 @@
     SUBDIR += p5-Class-WhiteHole
     SUBDIR += p5-Clone
     SUBDIR += p5-Config-Auto
+    SUBDIR += p5-Config-Fast
     SUBDIR += p5-Config-General
     SUBDIR += p5-Config-Ini
     SUBDIR += p5-Config-IniFiles
