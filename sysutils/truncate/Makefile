@@ -20,6 +20,6 @@ WRKSRC=		${WRKDIR}/truncate
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} >= 420000
-#BROKEN=		"truncate(1) is in the base-system"
+BROKEN=		"truncate(1) is in the base-system"
 .endif
 .include <bsd.port.post.mk>
