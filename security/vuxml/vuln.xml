@@ -32,23 +32,99 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   "http://www.vuxml.org/dtd/vuxml-1/vuxml-10.dtd">
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
 
-  <vuln vid="a20082c3-6255-11d8-80e3-0020ed76ef5a">
-    <topic>metamail format string bugs and buffer overflows</topic>
+  <vuln vid="ac4b9d18-67a9-11d8-80e3-0020ed76ef5a">
+    <topic>fetchmail denial-of-service vulnerability</topic>
     <affects>
       <package>
-	<name>metamail</name>
-	<range><lt>2.7_2</lt></range>
+        <name>fetchmail</name>
+        <range><lt>6.2.5</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Ulf Härnhammar reported four bugs in metamail: two are format
-	  string bugs and two are buffer overflows.  The bugs are in
-	  SaveSquirrelFile(), PrintHeader(), and ShareThisHeader().</p>
-	<p>These vulnerabilities could be triggered by a maliciously
-	  formatted email message if `metamail' or `splitmail' is used
-	  to process it, possibly resulting in arbitrary code execution
-	  with the privileges of the user reading mail.</p>
+        <p>Dave Jones discovered a denial-of-service vulnerability
+	  in fetchmail. An email message containing a very long line
+	  could cause fetchmail to segfault due to missing NUL
+	  termination in transact.c.</p>
+        <p>Eric Raymond decided not to mention this issue in the
+          release notes for fetchmail 6.2.5, but it was fixed
+          there.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0792</cvename>
+      <bid>8843</bid>
+      <url>http://xforce.iss.net/xforce/xfdb/13450</url>
+      <url>http://www.openbsd.org/cgi-bin/cvsweb/ports/mail/fetchmail/patches/Attic/patch-rfc822_c?rev=1.1</url>
+    </references>
+    <dates>
+      <discovery>2003-10-16</discovery>
+      <entry>2004-02-25</entry>
+      <modified>2004-03-05</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="e25566d5-6d3f-11d8-83a4-000a95bc6fae">
+    <topic>multiple buffer overflows in xboing</topic>
+    <affects>
+      <package>
+        <name>xboing</name>
+        <range><lt>2.4_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Steve Kemp reports (in a Debian bug submission):</p>
+        <blockquote cite="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=174924">
+          <p>Due to improper bounds checking it is possible for a
+            malicious user to gain a shell with membership group
+            'games'.  (The binary is installed setgid games).</p>
+          <p>Environmental variables are used without being bounds-checked
+            in any way, from the source code:</p>
+<pre>
+highscore.c:
+   /* Use the environment variable if it exists */
+   if ((str = getenv("XBOING_SCORE_FILE")) != NULL)
+        strcpy(filename, str);
+   else
+        strcpy(filename, HIGH_SCORE_FILE);
+
+misc.c:
+    if ((ptr = getenv("HOME")) != NULL)
+        (void) strcpy(dest, ptr);
+</pre>
+        <p>Neither of these checks are boundschecked, and will allow
+          arbitary shell code to be run.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0149</cvename>
+      <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=174924</url>
+    </references>
+    <dates>
+      <discovery>2003-01-01</discovery>
+      <entry>2004-03-05</entry>
+    </dates>
+  </vuln>
+  
+  <vuln vid="a20082c3-6255-11d8-80e3-0020ed76ef5a">
+    <topic>metamail format string bugs and buffer overflows</topic>
+    <affects>
+      <package>
+        <name>metamail</name>
+        <range><lt>2.7_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Ulf Härnhammar reported four bugs in metamail: two are format
+          string bugs and two are buffer overflows.  The bugs are in
+          SaveSquirrelFile(), PrintHeader(), and ShareThisHeader().</p>
+        <p>These vulnerabilities could be triggered by a maliciously
+          formatted email message if `metamail' or `splitmail' is used
+          to process it, possibly resulting in arbitrary code execution
+          with the privileges of the user reading mail.</p>
       </body>
     </description>
     <references>
@@ -66,18 +142,18 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>mod_python denial-of-service vulenerability in parse_qs</topic>
     <affects>
       <package>
-	<name>mod_python</name>
-	<range><lt>2.7.10</lt></range>
-	<range><lt>3.0.4</lt></range>
+        <name>mod_python</name>
+        <range><lt>2.7.10</lt></range>
+        <range><lt>3.0.4</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
         <p>An attacker may cause Apache with mod_python to crash
           by using a specially constructed query string.</p>
-	<p><em>Note:</em> It was announced that this bug was fixed in
-	  mod_python 2.7.9 also.  However, there are only changes in
-	  documentation between 2.7.8 and 2.7.9.</p>
+        <p><em>Note:</em> It was announced that this bug was fixed in
+          mod_python 2.7.9 also.  However, there are only changes in
+          documentation between 2.7.8 and 2.7.9.</p>
       </body>
     </description>
     <references>
@@ -91,58 +167,18 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </dates>
   </vuln>
 
-  <vuln vid="ac4b9d18-67a9-11d8-80e3-0020ed76ef5a">
-    <topic>fetchmail denial-of-service vulnerabilities</topic>
-    <affects>
-      <package>
-	<name>fetchmail</name>
-	<range><lt>6.2.5</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Dave Jones discovered two denial-of-service vulnerabilities
-          in fetchmail:</p>
-	<ul>
-	  <li>An out-of-bounds array reference in rfc822.c could cause
-	    fetchmail to segfault.  (This bug was actually fixed in the
-	    OpenBSD port before the discovery of the implications by
-	    Dave.)  (CAN-2003-0790)</li>
-	  <li>An email message containing a very long line could cause
-	    fetchmail to segfault due to a missing NUL termination
-	    in transact.c. (CAN-2003-0792)</li>
-	</ul>
-	<p>Eric Raymond decided not to mention these issues in the
-	  release notes for fetchmail 6.2.5, but they were fixed
-	  there.</p>
-	<p>NOTE: MITRE has mistakenly cancelled CAN-2003-0790.</p>
-      </body>
-    </description>
-    <references>
-      <cvename>CAN-2003-0790</cvename>
-      <cvename>CAN-2003-0792</cvename>
-      <bid>8843</bid>
-      <url>http://xforce.iss.net/xforce/xfdb/13450</url>
-      <url>http://www.openbsd.org/cgi-bin/cvsweb/ports/mail/fetchmail/patches/Attic/patch-rfc822_c?rev=1.1</url>
-    </references>
-    <dates>
-      <discovery>2003-10-16</discovery>
-      <entry>2004-02-25</entry>
-    </dates>
-  </vuln>
-
   <vuln vid="b0e76877-67a8-11d8-80e3-0020ed76ef5a">
     <topic>mailman denial-of-service vulnerability in
       MailCommandHandler</topic>
     <affects>
       <package>
-	<name>mailman</name>
-	<range><lt>2.1</lt></range>
+        <name>mailman</name>
+        <range><lt>2.1</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>A malformed message could cause mailman to crash.</p>
+        <p>A malformed message could cause mailman to crash.</p>
       </body>
     </description>
     <references>
@@ -159,13 +195,13 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>mailman XSS in admin script</topic>
     <affects>
       <package>
-	<name>mailman</name>
-	<range><lt>2.1.4</lt></range>
+        <name>mailman</name>
+        <range><lt>2.1.4</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Dirk Mueller reports:</p>
+        <p>Dirk Mueller reports:</p>
           <blockquote><p>I've found a cross-site scripting
            vulnerability in the admin interface of mailman 2.1.3 that
            allows, under certain circumstances, for anyone to retrieve
@@ -187,13 +223,13 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>mailman XSS in create script</topic>
     <affects>
       <package>
-	<name>mailman</name>
-	<range><lt>2.1.3</lt></range>
+        <name>mailman</name>
+        <range><lt>2.1.3</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>From the 2.1.3 release notes:</p>
+        <p>From the 2.1.3 release notes:</p>
         <blockquote><p>Closed a cross-site scripting exploit in the
         create cgi script.</p></blockquote>
       </body>
@@ -212,13 +248,13 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>mailman XSS in user options page</topic>
     <affects>
       <package>
-	<name>mailman</name>
-	<range><lt>2.1.1</lt></range>
+        <name>mailman</name>
+        <range><lt>2.1.1</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>From the 2.1.1 release notes:</p>
+        <p>From the 2.1.1 release notes:</p>
         <blockquote><p>Closed a cross-site scripting vulnerability in
         the user options page.</p></blockquote>
       </body>
@@ -237,17 +273,17 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>SQL injection vulnerability in phpnuke</topic>
     <affects>
       <package>
-	<name>phpnuke</name>
-	<range><le>6.9</le></range>
+        <name>phpnuke</name>
+        <range><le>6.9</le></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Multiple researchers have discovered multiple SQL injection
-	  vulnerabilities in some versions of Php-Nuke.  These
-	  vulnerabilities may lead to information disclosure, compromise
-	  of the Php-Nuke site, or compromise of the back-end
-	  database.</p>
+        <p>Multiple researchers have discovered multiple SQL injection
+          vulnerabilities in some versions of Php-Nuke.  These
+          vulnerabilities may lead to information disclosure, compromise
+          of the Php-Nuke site, or compromise of the back-end
+          database.</p>
       </body>
     </description>
     <references>
@@ -267,8 +303,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       handling</topic>
     <affects>
       <package>
-	<name>lbreakout2</name>
-	<range><le>2.2.2_1</le></range>
+        <name>lbreakout2</name>
+        <range><le>2.2.2_1</le></range>
       </package>
     </affects>
     <description>
@@ -298,15 +334,15 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>hsftp format string vulnerabilities</topic>
     <affects>
       <package>
-	<name>hsftp</name>
-	<range><lt>1.14</lt></range>
+        <name>hsftp</name>
+        <range><lt>1.14</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Ulf Härnhammar discovered a format string bug in hsftp's file
-	  listing code may allow a malicious server to cause arbitrary
-	  code execution by the client.</p>
+        <p>Ulf Härnhammar discovered a format string bug in hsftp's file
+          listing code may allow a malicious server to cause arbitrary
+          code execution by the client.</p>
       </body>
     </description>
     <references>
@@ -323,14 +359,14 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       vulnerability</topic>
     <affects>
       <package>
-	<name>DarwinStreamingServer</name>
-	<range><le>4.1.3g</le></range>
+        <name>DarwinStreamingServer</name>
+        <range><le>4.1.3g</le></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>An attacker can cause an assertion to trigger by sending
-	  a long User-Agent field in a request.</p>
+        <p>An attacker can cause an assertion to trigger by sending
+          a long User-Agent field in a request.</p>
       </body>
     </description>
     <references>
@@ -347,18 +383,18 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>libxml2 stack buffer overflow in URI parsing</topic>
     <affects>
       <package>
-	<name>libxml2</name>
-	<range><lt>2.6.6</lt></range>
+        <name>libxml2</name>
+        <range><lt>2.6.6</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Yuuichi Teranishi reported a crash in libxml2's URI handling
-	  when a long URL is supplied.  The implementation in nanohttp.c
-	  and nanoftp.c uses a 4K stack buffer, and longer URLs will
-	  overwrite the stack.  This could result in denial-of-service
-	  or arbitrary code execution in applications using libxml2
-	  to parse documents.</p>
+        <p>Yuuichi Teranishi reported a crash in libxml2's URI handling
+          when a long URL is supplied.  The implementation in nanohttp.c
+          and nanoftp.c uses a 4K stack buffer, and longer URLs will
+          overwrite the stack.  This could result in denial-of-service
+          or arbitrary code execution in applications using libxml2
+          to parse documents.</p>
       </body>
     </description>
     <references>
@@ -376,15 +412,15 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>file disclosure in phpMyAdmin</topic>
     <affects>
       <package>
-	<name>phpMyAdmin</name>
-	<range><le>2.5.4</le></range>
+        <name>phpMyAdmin</name>
+        <range><le>2.5.4</le></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Lack of proper input validation in phpMyAdmin may allow an
-	  attacker to obtain the contents of any file on the target
-	  system that is readable by the web server.</p>
+        <p>Lack of proper input validation in phpMyAdmin may allow an
+          attacker to obtain the contents of any file on the target
+          system that is readable by the web server.</p>
       </body>
     </description>
     <references>
@@ -402,30 +438,30 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>Vulnerabilities in H.323 implementations</topic>
     <affects>
       <package>
-	<name>pwlib</name>
-	<range><lt>1.6.0</lt></range>
+        <name>pwlib</name>
+        <range><lt>1.6.0</lt></range>
       </package>
       <package>
-	<name>asterisk</name>
-	<range><le>0.7.2</le></range>
+        <name>asterisk</name>
+        <range><le>0.7.2</le></range>
       </package>
       <package>
-	<name>openh323</name>
-	<range><le>1.12.0_2</le></range>
+        <name>openh323</name>
+        <range><le>1.12.0_2</le></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>The <a href="http://www.niscc.gov.uk/">NISCC</a> and the <a
-	    href="http://www.ee.oulu.fi/research/ouspg/">OUSPG</a>
-	  developed a test suite for the H.323 protocol.  This test
-	  suite has uncovered vulnerabilities in several H.323
-	  implementations with impacts ranging from denial-of-service
-	  to arbitrary code execution.</p>
-	<p>In the FreeBSD Ports Collection, `pwlib' is directly
-	  affected.  Other applications such as `asterisk' and
-	  `openh323' incorporate `pwlib' statically and so are also
-	  independently affected.</p>
+        <p>The <a href="http://www.niscc.gov.uk/">NISCC</a> and the <a
+            href="http://www.ee.oulu.fi/research/ouspg/">OUSPG</a>
+          developed a test suite for the H.323 protocol.  This test
+          suite has uncovered vulnerabilities in several H.323
+          implementations with impacts ranging from denial-of-service
+          to arbitrary code execution.</p>
+        <p>In the FreeBSD Ports Collection, `pwlib' is directly
+          affected.  Other applications such as `asterisk' and
+          `openh323' incorporate `pwlib' statically and so are also
+          independently affected.</p>
       </body>
     </description>
     <references>
@@ -448,9 +484,9 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>Buffer overflows in XFree86 servers</topic>
     <affects>
       <package>
-	<name>XFree86-Server</name>
-	<range><le>4.3.0_13</le></range>
-	<range><ge>4.3.99</ge><le>4.3.99.15_1</le></range>
+        <name>XFree86-Server</name>
+        <range><le>4.3.0_13</le></range>
+        <range><ge>4.3.99</ge><le>4.3.99.15_1</le></range>
       </package>
     </affects>
     <description>
@@ -458,7 +494,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <p>A number of buffer overflows were recently discovered in
           XFree86, prompted by initial discoveries by iDEFENSE.  These
           buffer overflows are present in the font alias handling.  An
-	  attacker with authenticated access to a running X server may
+          attacker with authenticated access to a running X server may
           exploit these vulnerabilities to obtain root privileges on
           the machine running the X server.</p>
       </body>
@@ -481,15 +517,15 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>mnGoSearch buffer overflow in UdmDocToTextBuf()</topic>
     <affects>
       <package>
-	<name>mnogosearch</name>
-	<range><ge>3.2</ge></range>
+        <name>mnogosearch</name>
+        <range><ge>3.2</ge></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Jedi/Sector One &lt;j@pureftpd.org&gt; reported the following
-	  on the full-disclosure list:</p>
-	<blockquote>
+        <p>Jedi/Sector One &lt;j@pureftpd.org&gt; reported the following
+          on the full-disclosure list:</p>
+        <blockquote>
           <p>Every document is stored in multiple parts according to
             its sections (description, body, etc) in databases. And
             when the content has to be sent to the client,
@@ -502,10 +538,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             . S->val length depends on the length of the original
             document and on the indexer settings (the sample
             configuration file has low limits that work around the
-	    bug, though).</p>
+            bug, though).</p>
           <p>Exploitation should be easy, moreover textbuf points to
           the stack.</p>
-	</blockquote>
+        </blockquote>
       </body>
     </description>
     <references>
@@ -521,21 +557,21 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>GNU libtool insecure temporary file handling</topic>
     <affects>
       <package>
-	<name>libtool</name>
-	<range><ge>1.3</ge><lt>1.3.5_2</lt></range>
-	<range><ge>1.4</ge><lt>1.4.3_3</lt></range>
-	<range><ge>1.5</ge><lt>1.5.2</lt></range>
+        <name>libtool</name>
+        <range><ge>1.3</ge><lt>1.3.5_2</lt></range>
+        <range><ge>1.4</ge><lt>1.4.3_3</lt></range>
+        <range><ge>1.5</ge><lt>1.5.2</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
         <p>libtool attempts to create a temporary directory in
           which to write scratch files needed during processing.  A
-	  malicious user may create a symlink and then manipulate
-	  the directory so as to write to files to which she normally
-	  has no permissions.</p>
-	<p>This has been reported as a ``symlink vulnerability'',
-	  although I do not think that is an accurate description.</p>
+          malicious user may create a symlink and then manipulate
+          the directory so as to write to files to which she normally
+          has no permissions.</p>
+        <p>This has been reported as a ``symlink vulnerability'',
+          although I do not think that is an accurate description.</p>
         <p>This vulnerability could possibly be used on a multi-user
           system to gain elevated privileges, e.g. root builds some
           packages, and another user successfully exploits this
@@ -556,8 +592,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>seti@home remotely exploitable buffer overflow</topic>
     <affects>
       <package>
-	<name>setiathome</name>
-	<range><lt>3.0.8</lt></range>
+        <name>setiathome</name>
+        <range><lt>3.0.8</lt></range>
       </package>
     </affects>
     <description>
@@ -565,7 +601,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <p>The seti@home client contains a buffer overflow in the HTTP
           response handler.  A malicious, spoofed seti@home server can
           exploit this buffer overflow to cause remote code execution
-	  on the client.  Exploit programs are widely available.</p>
+          on the client.  Exploit programs are widely available.</p>
       </body>
     </description>
     <references>
@@ -582,15 +618,15 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>icecast 1.x multiple vulnerabilities</topic>
     <affects>
       <package>
-	<name>icecast</name>
-	<range><lt>1.3.12</lt></range>
+        <name>icecast</name>
+        <range><lt>1.3.12</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>icecast 1.3.11 and earlier contained numerous security
-	  vulnerabilities, the most severe allowing a remote attacker
-	  to execute arbitrary code as root.</p>
+        <p>icecast 1.3.11 and earlier contained numerous security
+          vulnerabilities, the most severe allowing a remote attacker
+          to execute arbitrary code as root.</p>
       </body>
     </description>
     <references>
@@ -612,18 +648,18 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>nap allows arbitrary file access</topic>
     <affects>
       <package>
-	<name>nap</name>
-	<range><lt>1.4.5</lt></range>
+        <name>nap</name>
+        <range><lt>1.4.5</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>According to the author:</p>
-	<blockquote>
-	  <p>Fixed security loophole which allowed remote
-	    clients to access arbitrary files on our
-	    system.</p>
-	</blockquote>
+        <p>According to the author:</p>
+        <blockquote>
+          <p>Fixed security loophole which allowed remote
+            clients to access arbitrary files on our
+            system.</p>
+        </blockquote>
       </body>
     </description>
     <references>
@@ -639,14 +675,14 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>CCE contains exploitable buffer overflows</topic>
     <affects>
       <package>
-	<name>zh-cce</name>
-	<range><lt>0.40</lt></range>
+        <name>zh-cce</name>
+        <range><lt>0.40</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>The Chinese Console Environment contains exploitable buffer
-	  overflows.</p>
+        <p>The Chinese Console Environment contains exploitable buffer
+          overflows.</p>
       </body>
     </description>
     <references>
@@ -662,15 +698,15 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>ChiTeX/ChiLaTeX unsafe set-user-id root</topic>
     <affects>
       <package>
-	<name>zh-chitex</name>
-	<range><gt>0</gt></range>
+        <name>zh-chitex</name>
+        <range><gt>0</gt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Niels Heinen reports that ChiTeX installs set-user-id root
-	  executables that invoked system(3) without setting up the
-	  environment, trivially allowing local root compromise.</p>
+        <p>Niels Heinen reports that ChiTeX installs set-user-id root
+          executables that invoked system(3) without setting up the
+          environment, trivially allowing local root compromise.</p>
       </body>
     </description>
     <references>
@@ -686,17 +722,17 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>pine remotely exploitable buffer overflow in newmail.c</topic>
     <affects>
       <package>
-	<name>zh-pine</name>
-	<name>iw-pine</name>
-	<name>pine</name>
-	<name>pine4-ssl</name>
-	<range><le>4.21</le></range>
+        <name>zh-pine</name>
+        <name>iw-pine</name>
+        <name>pine</name>
+        <name>pine4-ssl</name>
+        <range><le>4.21</le></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Kris Kennaway reports a remotely exploitable buffer overflow
-	  in newmail.c.  Mike Silbersack submitted the fix.</p>
+        <p>Kris Kennaway reports a remotely exploitable buffer overflow
+          in newmail.c.  Mike Silbersack submitted the fix.</p>
       </body>
     </description>
     <references>
@@ -712,17 +748,17 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>pine insecure URL handling</topic>
     <affects>
       <package>
-	<name>pine</name>
-	<name>zh-pine</name>
-	<name>iw-pine</name>
-	<range><lt>4.44</lt></range>
+        <name>pine</name>
+        <name>zh-pine</name>
+        <name>iw-pine</name>
+        <range><lt>4.44</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>An attacker may send an email message containing a specially
-	  constructed URL that will execute arbitrary commands when
-	  viewed.</p>
+        <p>An attacker may send an email message containing a specially
+          constructed URL that will execute arbitrary commands when
+          viewed.</p>
       </body>
     </description>
     <references>
@@ -738,16 +774,16 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>pine remote denial-of-service attack</topic>
     <affects>
       <package>
-	<name>pine</name>
-	<name>zh-pine</name>
-	<name>iw-pine</name>
-	<range><lt>4.50</lt></range>
+        <name>pine</name>
+        <name>zh-pine</name>
+        <name>iw-pine</name>
+        <range><lt>4.50</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>An attacker may send a specially-formatted email message
-	  that will cause pine to crash.</p>
+        <p>An attacker may send a specially-formatted email message
+          that will cause pine to crash.</p>
       </body>
     </description>
     <references>
@@ -764,19 +800,19 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>pine remotely exploitable vulnerabilities</topic>
     <affects>
       <package>
-	<name>pine</name>
-	<name>zh-pine</name>
-	<name>iw-pine</name>
-	<range><lt>4.58</lt></range>
+        <name>pine</name>
+        <name>zh-pine</name>
+        <name>iw-pine</name>
+        <range><lt>4.58</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Pine versions prior to 4.58 are affected by two
-	  vulnerabilities discovered by iDEFENSE, a buffer overflow
-	  in mailview.c and an integer overflow in strings.c.  Both
-	  vulnerabilities can result in arbitrary code execution
-	  when processing a malicious message.</p>
+        <p>Pine versions prior to 4.58 are affected by two
+          vulnerabilities discovered by iDEFENSE, a buffer overflow
+          in mailview.c and an integer overflow in strings.c.  Both
+          vulnerabilities can result in arbitrary code execution
+          when processing a malicious message.</p>
       </body>
     </description>
     <references>
@@ -794,16 +830,16 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>rsync buffer overflow in server mode</topic>
     <affects>
       <package>
-	<name>rsync</name>
-	<range><lt>2.5.7</lt></range>
+        <name>rsync</name>
+        <range><lt>2.5.7</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>When rsync is run in server mode, a buffer overflow could
-	  allow a remote attacker to execute arbitrary code with the
-	  privileges of the rsync server.  Anonymous rsync servers are
-	  at the highest risk.</p>
+        <p>When rsync is run in server mode, a buffer overflow could
+          allow a remote attacker to execute arbitrary code with the
+          privileges of the rsync server.  Anonymous rsync servers are
+          at the highest risk.</p>
       </body>
     </description>
     <references>
@@ -821,17 +857,17 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>Several remotely exploitable buffer overflows in gaim</topic>
     <affects>
       <package>
-	<name>gaim</name>
-	<range><lt>0.75_3</lt></range>
-	<range><eq>0.75_5</eq></range>
+        <name>gaim</name>
+        <range><lt>0.75_3</lt></range>
+        <range><eq>0.75_5</eq></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Stefan Esser of e-matters found almost a dozen remotely
-	  exploitable vulnerabilities in Gaim.  From the e-matters
-	  advisory:</p>
-	<blockquote cite="http://security.e-matters.de/advisories/012004.txt">
+        <p>Stefan Esser of e-matters found almost a dozen remotely
+          exploitable vulnerabilities in Gaim.  From the e-matters
+          advisory:</p>
+        <blockquote cite="http://security.e-matters.de/advisories/012004.txt">
           <p>While developing a custom add-on, an integer overflow
           in the handling of AIM DirectIM packets was revealed that
           could lead to a remote compromise of the IM client. After
@@ -852,7 +888,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
           <p>In combination with the latest kernel vulnerabilities or
           the habit of users to work as root/administrator these bugs
           can result in remote root compromises.</p>
-	</blockquote>
+        </blockquote>
       </body>
     </description>
     <references>
@@ -872,20 +908,20 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>Samba 3.0.x password initialization bug</topic>
     <affects>
       <package>
-	<name>samba</name>
-	<range><ge>3.0,1</ge><lt>3.0.1_2,1</lt></range>
+        <name>samba</name>
+        <range><ge>3.0,1</ge><lt>3.0.1_2,1</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>From the Samba 3.0.2 release notes:</p>
-	<blockquote cite="http://www.samba.org/samba/whatsnew/samba-3.0.2.html">
+        <p>From the Samba 3.0.2 release notes:</p>
+        <blockquote cite="http://www.samba.org/samba/whatsnew/samba-3.0.2.html">
           <p>Security Announcement: It has been confirmed that
           previous versions of Samba 3.0 are susceptible to a password
           initialization bug that could grant an attacker unauthorized
           access to a user account created by the mksmbpasswd.sh shell
           script.</p>
-    	</blockquote>
+        </blockquote>
       </body>
     </description>
     <references>
@@ -902,16 +938,16 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>clamav remote denial-of-service</topic>
     <affects>
       <package>
-	<name>clamav</name>
-	<range><lt>0.65_7</lt></range>
+        <name>clamav</name>
+        <range><lt>0.65_7</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
         <p>clamav will exit when a programming
-	  assertion is not met.  A malformed uuencoded message can
-	  trigger this assertion, allowing an attacker to trivially
-	  crash clamd or other components of clamav.</p>
+          assertion is not met.  A malformed uuencoded message can
+          trigger this assertion, allowing an attacker to trivially
+          crash clamd or other components of clamav.</p>
       </body>
     </description>
     <references>
@@ -928,16 +964,16 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>Buffer overflow in Mutt 1.4</topic>
     <affects>
       <package>
-	<name>mutt</name>
-	<name>ja-mutt</name>
-	<range><ge>1.4</ge><lt>1.4.2</lt></range>
+        <name>mutt</name>
+        <name>ja-mutt</name>
+        <range><ge>1.4</ge><lt>1.4.2</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Mutt 1.4 contains a buffer overflow that could be exploited
-	  with a specially formed message, causing Mutt to crash or
-	  possibly execute arbitrary code.</p>
+        <p>Mutt 1.4 contains a buffer overflow that could be exploited
+          with a specially formed message, causing Mutt to crash or
+          possibly execute arbitrary code.</p>
       </body>
     </description>
     <references>
@@ -954,24 +990,24 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>Apache-SSL optional client certificate vulnerability</topic>
     <affects>
       <package>
-	<name>apache+ssl</name>
-	<range><lt>1.3.29.1.53</lt></range>
+        <name>apache+ssl</name>
+        <range><lt>1.3.29.1.53</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>From the Apache-SSL security advisory:</p>
-	<blockquote>
-	  <p>If configured with SSLVerifyClient set to 1 or 3 (client
+        <p>From the Apache-SSL security advisory:</p>
+        <blockquote>
+          <p>If configured with SSLVerifyClient set to 1 or 3 (client
           certificates optional) and SSLFakeBasicAuth, Apache-SSL
           1.3.28+1.52 and all earlier versions would permit a
           client to use real basic authentication to forge a client
-	  certificate.</p>
+          certificate.</p>
 
-	  <p>All the attacker needed is the "one-line DN" of a valid
+          <p>All the attacker needed is the "one-line DN" of a valid
           user, as used by faked basic auth in Apache-SSL, and the
-	  fixed password ("password" by default).</p>
-	</blockquote>
+          fixed password ("password" by default).</p>
+        </blockquote>
       </body>
     </description>
     <references>
