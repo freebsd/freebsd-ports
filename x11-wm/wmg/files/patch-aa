@@ -1,0 +1,11 @@
+--- src/Client.C.orig	Sat Feb  5 18:11:15 2000
++++ src/Client.C	Sat Feb  5 18:11:31 2000
+@@ -339,7 +339,7 @@
+                 p = (unsigned char *)malloc(
+                         sizeof (unsigned char) * (strlen(cl[0]) + 1)
+                     );
+-                strcpy(p, cl[0]);
++                strcpy((char *)p, cl[0]);
+                 XFreeStringList(cl);
+             }
+         }
