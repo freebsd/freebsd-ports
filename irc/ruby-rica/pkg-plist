@@ -1,8 +1,8 @@
+%%RUBY_SITELIBDIR%%/ctcpresponcer.rb
 %%RUBY_SITELIBDIR%%/rica.rb
-%%RUBY_SITELIBDIR%%/rica_utils.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rica/ricaco.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rica/ricatest.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/rica
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rica/README
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rica/classes_and_methods.txt
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rica/event.txt
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rica
