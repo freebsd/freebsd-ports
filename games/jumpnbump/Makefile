@@ -27,6 +27,12 @@ PLIST_SUB +=	WITH_TCL="@comment "
 
 MAN6=	jumpnbump.6
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not compile on alpha"
+.endif
+
 .if !defined (WITHOUT_TCL)
 pre-everything::
 	@${ECHO_MSG} "Define WITHOUT_TCL to disable the X11 frontend."
@@ -52,4 +58,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
