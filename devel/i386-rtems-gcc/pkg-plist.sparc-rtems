@@ -310,7 +310,6 @@ sparc-rtems/include/sys/utime.h
 sparc-rtems/include/sys/wait.h
 sparc-rtems/include/sys/features.h
 sparc-rtems/include/sys/sched.h
-sparc-rtems/include/sys/siginfo.h
 sparc-rtems/include/limits.h
 sparc-rtems/include/pthread.h
 @dirrm lib/gcc-lib/sparc-rtems/2.95.2/include

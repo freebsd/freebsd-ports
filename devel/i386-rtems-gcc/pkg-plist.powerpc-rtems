@@ -405,7 +405,6 @@ powerpc-rtems/include/sys/utime.h
 powerpc-rtems/include/sys/wait.h
 powerpc-rtems/include/sys/features.h
 powerpc-rtems/include/sys/sched.h
-powerpc-rtems/include/sys/siginfo.h
 powerpc-rtems/include/limits.h
 powerpc-rtems/include/pthread.h
 @dirrm lib/gcc-lib/powerpc-rtems/2.95.2/include

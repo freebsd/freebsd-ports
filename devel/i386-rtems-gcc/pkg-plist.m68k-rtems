@@ -332,7 +332,6 @@ m68k-rtems/include/sys/utime.h
 m68k-rtems/include/sys/wait.h
 m68k-rtems/include/sys/features.h
 m68k-rtems/include/sys/sched.h
-m68k-rtems/include/sys/siginfo.h
 m68k-rtems/include/limits.h
 m68k-rtems/include/pthread.h
 @dirrm lib/gcc-lib/m68k-rtems/2.95.2/include
