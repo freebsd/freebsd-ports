@@ -37,6 +37,7 @@ include/osipparser2/osip_md5.h
 include/osipparser2/osip_message.h
 include/osipparser2/osip_parser.h
 include/osipparser2/osip_port.h
+include/osipparser2/osip_rfc3264.h
 include/osipparser2/osip_uri.h
 include/osipparser2/sdp_message.h
 lib/libosip2.a
