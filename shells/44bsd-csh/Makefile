@@ -1,0 +1,46 @@
+# ex:ts=8
+# Ports collection makefile for:  csh
+# Date created:			  23 January 2000
+# Whom:				  David O'Brien <obrien@NUXI.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	44bsd-csh
+PORTVERSION=	20000409
+CATEGORIES=	shells
+MASTER_SITES=	http://people.freebsd.org/~obrien/
+
+MAINTAINER=	obrien@FreeBSD.org
+
+USE_BZIP2=	yes
+
+NO_WRKSUBDIR=	yes
+MAN1=		44bsd-csh.1
+
+post-extract:
+	cd ${WRKSRC} ; co RCS/*,v
+	cd ${WRKSRC}/USD.doc ; co RCS/*,v
+
+post-build:
+	cd ${WRKSRC}/USD.doc ; ${MAKE}
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/csh ${PREFIX}/bin/44bsd-csh
+	${INSTALL_MAN} ${WRKSRC}/csh.1 ${PREFIX}/man/man1/44bsd-csh.1
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/44bsd-csh
+	${INSTALL_MAN} ${WRKSRC}/USD.doc/paper.ascii.gz  \
+		${PREFIX}/share/doc/44bsd-csh
+.endif
+	@${ECHO} "Updating /etc/shells"
+	@${CP} /etc/shells /etc/shells.bak
+	@(${GREP} -v ${PREFIX}/bin/tcsh /etc/shells.bak; \
+		${ECHO} ${PREFIX}/bin/tcsh) > /etc/shells
+	@${RM} /etc/shells.bak
+
+tarup:
+	cd ${WRKSRC} ; rm * USD.doc/*
+	cd ${WRKSRC} ; tar cvyf /tmp/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
+
+.include <bsd.port.mk>
