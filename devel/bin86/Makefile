@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	bin86
-PORTVERSION=	0.16.13
+PORTVERSION=	0.16.14
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cix.co.uk/~mayday/dev86/
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	16-bit assembler and loader (conflicts with devel/bcc)
 
-BROKEN=		"needs to be updated to 0.16.14--author removed distfile"
 BINS=		as/as86 ld/ld86 ld/objchop ld/catimage ld/objdump86
 CONFLICTS=	bcc-*
 DOCS=		ChangeLog README README-0.4
