@@ -7,7 +7,7 @@
 
 PORTNAME=	xemacs-${NAMEPREFIX}sumo
 PORTVERSION=	${XEMACS_VER}
-CATEGORIES=	editors
+CATEGORIES+=	editors
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
