@@ -11163,6 +11163,7 @@ tkrunit		ports/misc/tkrunit
 tkscanfax	ports/comms/tkscanfax
 tkseti		ports/astro/tkseti
 tksol		ports/games/tksol
+tkshape		ports/x11-toolkits/tkshape
 tkstep80	ports/x11-toolkits/tkstep80
 tktable		ports/x11-toolkits/tktable
 tkxanim		ports/multimedia/tkxanim
