@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	mod_chroot
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	www
 MASTER_SITES=	http://core.segfault.pl/~hobbit/mod_chroot/dist/
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	The mod_chroot makes running Apache in a chroot easy
 
-PORTDOCS=	INSTALL EAPI CAVEATS README.Apache20 README
+PORTDOCS=	INSTALL CAVEATS README.Apache20 README
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 
