@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	alleg.4:${PORTSDIR}/devel/allegro
 
-BROKEN=		Does not build with version of devel/allegro currently in ports
 NO_CDROM=	Reverse-engineered version of copyrighted abandonware
 NO_PACKAGE=	${NO_CDROM}
 USE_ZIP=	yes

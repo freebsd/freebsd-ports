@@ -1,6 +1,6 @@
 --- makefile.orig	Fri Jul  6 21:29:04 2001
-+++ makefile	Mon Sep 16 17:03:26 2002
-@@ -2,26 +2,24 @@
++++ makefile	Sat Nov 23 16:06:24 2002
+@@ -2,26 +2,23 @@
  # Makefile for Elite - The New Kind.
  #
  
@@ -9,9 +9,9 @@
  WRES	=	windres
  
 -LIBS	=	-s -mwindows -lalleg_s -lkernel32 -lgdi32 -lcomdlg32 -luser32 -lole32 -lddraw -ldxguid -lwinmm -ldsound -ldinput
-+LOCALBASE ?=	/usr/local
-+LIBS	=	-L$(LOCALBASE)/lib -L$(LOCALBASE)/lib/allegro/4.0 -lalleg
- CFLAGS	=	-mpentium -O2 -funroll-loops -Wall -DALLEGRO_STATICLINK
+-CFLAGS	=	-mpentium -O2 -funroll-loops -Wall -DALLEGRO_STATICLINK
++LIBS	=	-L$(LOCALBASE)/lib -L$(LOCALBASE)/lib/allegro/4.0 -lalleg `$(LOCALBASE)/bin/allegro-config --libs`
++CFLAGS	+=	-funroll-loops -Wall -DALLEGRO_STATICLINK
 +CFLAGS	+=	-I$(LOCALBASE)/include -I$(LOCALBASE)/include/allegro
  
  OBJS	= alg_gfx.o alg_main.o docked.o elite.o\
