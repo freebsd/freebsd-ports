@@ -42,6 +42,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+USE_GMAKE	=yes
+.endif
+
 .if defined(WITH_GDBM)
 LIB_DEPENDS+=		gdbm.3:${PORTSDIR}/databases/gdbm
 CONFIGURE_ARGS+=	--with-db=gdbm
