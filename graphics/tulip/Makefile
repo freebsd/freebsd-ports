@@ -14,6 +14,7 @@ MASTER_SITES=	http://dept-info.labri.fr/~auber/projects/tulip/x345/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A system dedicated to the visualization of huge graphs
 
+BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png:${PORTSDIR}/graphics/png \
 		gnugetopt:${PORTSDIR}/devel/libgnugetopt
