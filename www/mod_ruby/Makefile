@@ -13,9 +13,9 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
+BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
 LIB_DEPENDS=	eruby.09:${PORTSDIR}/textproc/eruby
-RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
+RUN_DEPENDS=	${APXS}:${APACHE_PORT}
 
 USE_RUBY=	yes
 .if !defined(NOPORTDOCS)
@@ -23,6 +23,7 @@ USE_RUBY_RD=	yes
 .endif
 
 APXS?=		${LOCALBASE}/sbin/apxs
+APACHE_PORT?=	${PORTSDIR}/www/apache13
 
 CONFIGURE_ARGS=	--with-apxs="${APXS}" \
 		--enable-eruby=yes \
