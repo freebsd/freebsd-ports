@@ -6,18 +6,15 @@
 
 PORTNAME=	shared-mime-info
 PORTVERSION=	0.12
-CATEGORIES=	misc
+CATEGORIES=	misc gnome
 MASTER_SITES=	http://www.freedesktop.org/software/shared-mime-info/releases/
 DISTNAME=	shared-mime-info-${PORTVERSION}
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A MIME type database from the FreeDesktop project
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
-		glib-2.0.200:${PORTSDIR}/devel/glib20
-
 GNU_CONFIGURE=	yes
+USE_GNOME=	glib20 libxml2
 
 MAN1=		update-mime-database.1
 
