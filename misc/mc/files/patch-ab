@@ -1,6 +1,6 @@
---- vfs/Makefile.in.orig	Thu Jan 22 12:01:22 1998
-+++ vfs/Makefile.in	Sat Jan 31 16:25:55 1998
-@@ -91,24 +91,24 @@
+--- vfs/Makefile.in.orig	Mon Mar 30 05:26:08 1998
++++ vfs/Makefile.in	Sun Apr 12 03:17:24 1998
+@@ -91,25 +91,25 @@
  
  install: mcserv install.extfs
  	if test x@mcserv@ != x; then \
@@ -14,10 +14,12 @@
 -	$(INSTALL_PROGRAM) $(srcdir)/extfs/a $(DESTDIR)$(libdir)/extfs/a
 -	$(INSTALL_PROGRAM) $(srcdir)/extfs/arfs $(DESTDIR)$(libdir)/extfs/arfs
 -	$(INSTALL_PROGRAM) $(srcdir)/extfs/rpm  $(DESTDIR)$(libdir)/extfs/rpm
+-	$(INSTALL_PROGRAM) $(srcdir)/extfs/hp48  $(DESTDIR)$(libdir)/extfs/hp48
 +	$(INSTALL_DATA) $(srcdir)/extfs/a $(DESTDIR)$(libdir)/extfs/a
 +	$(INSTALL_DATA) $(srcdir)/extfs/arfs $(DESTDIR)$(libdir)/extfs/arfs
 +	$(INSTALL_DATA) $(srcdir)/extfs/rpm  $(DESTDIR)$(libdir)/extfs/rpm
- 
++	$(INSTALL_DATA) $(srcdir)/extfs/hp48  $(DESTDIR)$(libdir)/extfs/hp48
+ 	
 -	$(INSTALL_PROGRAM) extfs/cpio $(DESTDIR)$(libdir)/extfs/cpio
 -	$(INSTALL_PROGRAM) extfs/deb  $(DESTDIR)$(libdir)/extfs/deb
 -	$(INSTALL_PROGRAM) extfs/ftplist $(DESTDIR)$(libdir)/extfs/ftplist
