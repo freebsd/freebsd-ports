@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	nitpicker
-PORTVERSION=	1.23
+PORTVERSION=	1.2.1
+PORTEPOCH=1
 CATEGORIES=	net
 MASTER_SITES=	http://nitpicker.de/
-DISTNAME= Nitpicker-${PORTVERSION}
 
 MAINTAINER=	mr@freebsd.org
 COMMENT=	IP flow Accounting tools
-
-WRKSRC= ${WRKDIR}/Nitpicker
 
 NO_MAN= YES
 
