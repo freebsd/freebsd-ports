@@ -3,7 +3,7 @@
 # Date created:        20 January 1999
 # Whom:                gmarco
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/01/26 03:43:37 steve Exp $
 #
 
 DISTNAME=	abs-src-0.5
@@ -12,6 +12,8 @@ CATEGORIES=	math
 MASTER_SITES=	http://www.ping.be/bertin/
 
 MAINTAINER=	freebsd@scotty.masternet.it
+
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_XLIB=	yes
 
