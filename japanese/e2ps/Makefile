@@ -6,24 +6,29 @@
 #
 
 PORTNAME=	e2ps
-PORTVERSION=	4.0
+PORTVERSION=	4.34
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://pine.kuee.kyoto-u.ac.jp/pub/e2ps/
+MASTER_SITES=	http://wt1.ld.infoseek.co.jp/sources/
 
 MAINTAINER=	kawahara@pine.kuee.kyoto-u.ac.jp
 COMMENT=	Text file to postscript converter (with Japanese support)
 
-WRKSRC=		${WRKDIR}/e2ps
+USE_BZIP2=	yes
+DOCDIR=		${PREFIX}/share/doc/${PKGBASE}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
+post-patch:
+		cd ${WRKSRC} && \
+		mv ps-font.c ps-font.c.orig && \
+		${SED} -e '/Times-Roman$$/,/^Gothic-Medium.Katakana$$/{s,$$,\\,;}' ps-font.c.orig > ps-font.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/e2ps ${PREFIX}/bin
 	${LN} -sf ${PREFIX}/bin/e2ps ${PREFIX}/bin/e2lpr
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCDIR}
+	cd ${WRKSRC} ; ${INSTALL_DATA} README.euc README.english ${DOCDIR}
+.endif
 
 .include <bsd.port.post.mk>
