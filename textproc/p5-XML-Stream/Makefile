@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Stream
-PORTVERSION=	1.17
+PORTVERSION=	1.20
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -16,6 +16,7 @@ MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	XML::Stream provides you with access to XML Stream
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
+		${SITE_PERL}/Authen/SASL.pm:${PORTSDIR}/security/p5-Authen-SASL \
 		${SITE_PERL}/${PERL_ARCH}/Unicode/String.pm:${PORTSDIR}/converters/p5-Unicode-String
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
