@@ -23,12 +23,14 @@ NO_WRKSUBDIR=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500000
+.if ${OSVERSION} >= 500000 && ${OSVERSION} < 501109
 MSDOSFSDIR=	${SYSDIR}/fs/msdosfs
 MSDOSFSKO=	msdosfs.ko
 MSDOSFSKODIR=	${SYSDIR}/modules/msdosfs
 NTFSDIR=	${SYSDIR}/fs/ntfs
 NTFSPATCH=	ntfs_big5.diff.5
+.elif ${OSVERSION} >= 501109
+IGNORE=		is obsolete. See mount_cd9660(8), mount_msdosfs(8) or mount_ntfs(8)
 .else
 MSDOSFSDIR=	${SYSDIR}/msdosfs
 MSDOSFSKO=	msdos.ko
