@@ -18,10 +18,8 @@ bin/altair
 bin/altairz80
 bin/gri
 bin/ibm1130
-share/doc/sim/0readme_210.txt
-share/doc/sim/0readme_ethernet.txt
-share/doc/sim/simh_doc.txt
-share/doc/sim/simh_swre.txt
+bin/id16
+bin/id32
+bin/sds
 share/sim/ka655.bin
-@dirrm share/doc/sim
 @dirrm share/sim

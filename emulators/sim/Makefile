@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	sim
-PORTVERSION=	2.10.1
+PORTVERSION=	3.0.2
 CATEGORIES=	emulators
 MASTER_SITES=	http://simh.trailing-edge.com/sources/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=jedgar
-DISTNAME=	${PORTNAME}hv210-1
+DISTNAME=	${PORTNAME}hv30-2
 
 MAINTAINER=	jedgar@FreeBSD.org
 COMMENT=	PDP-8, PDP-11, PDP-1, other 18b PDP, Nova, and IBM 1401 simulators
@@ -24,10 +24,14 @@ NO_WRKSUBDIR=	yes
 
 SHELL=${SH}
 
-BIN_FILES=	altair h316 ibm1130 pdp11 pdp8 \
-		altairz80 hp2100 nova pdp15 pdp9 \
-		eclipse i1401 pdp1 pdp4 s3 \
-		gri i1620 pdp10 pdp7 vax \
+BIN_FILES=	pdp1 pdp4 pdp7 pdp8 pdp9 \
+		pdp15 pdp11 pdp10 vax nova \
+		eclipse h316 hp2100 i1401 \
+		i1620 s3 altair altairz80 \
+		gri ibm1130 id16 id32 sds
+
+PORTDOCS=       0readme_30.txt simh_doc.txt simh_swre.txt \
+		0readme_ethernet.txt simh_faq.txt
 
 pre-patch:
 	@${MKDIR} ${WRKSRC}/BIN
@@ -46,9 +50,8 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/sim
-	@for i in 0readme_210.txt 0readme_ethernet.txt \
-			simh_doc.txt simh_swre.txt; do \
-	${INSTALL_DATA} ${WRKDIR}/$$i ${PREFIX}/share/doc/sim; \
+	@for i in ${PORTDOCS}; do\
+		${INSTALL_DATA} ${WRKDIR}/$$i ${PREFIX}/share/doc/sim; \
 	done
 .endif
 
