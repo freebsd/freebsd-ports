@@ -18,13 +18,14 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS= --prefix=${MAILMANDIR} \
-		--with-mail-gid=daemon --with-cgi-gid=${CGI_GID}
+		--with-mail-gid=${MAIL_GID} --with-cgi-gid=${CGI_GID}
 USE_PYTHON=	yes
 
 USERNAME?=	mailman
 USERID?=	89
 
 CGI_GID?=	nogroup
+MAIL_GID?=	daemon
 
 MMDIR?=		mailman
 MAILMANDIR=	${PREFIX}/${MMDIR}
