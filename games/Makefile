@@ -58,6 +58,7 @@
     SUBDIR += fkiss
     SUBDIR += flightgear
     SUBDIR += flying
+    SUBDIR += freecell-solver
     SUBDIR += freeciv
     SUBDIR += freeciv-gtk
     SUBDIR += freesweep
