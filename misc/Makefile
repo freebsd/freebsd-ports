@@ -99,7 +99,6 @@
     SUBDIR += team
     SUBDIR += tet
     SUBDIR += tkcron
-    SUBDIR += tkdiff
     SUBDIR += tkinfo
     SUBDIR += tkman
     SUBDIR += tkrunit
