@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2000-10-02
+SNAPDATE=	2000-11-20
 SNAPVER=	${SNAPDATE:S/-//g}
 
 PORTNAME=	gcc-devel
@@ -18,25 +18,30 @@ MASTER_SITES=	ftp://ftp.freesoftware.com/pub/sourceware/gcc/snapshots/${SNAPDATE
 		ftp://ftp.iij.ad.jp/pub/egcs/snapshots/${SNAPDATE}/ \
 		ftp://ftp.yggdrasil.com/mirrors/site/egcs.cygnus.com/pub/egcs/snapshots/${SNAPDATE}/  \
  		ftp://ftp.fu-berlin.de/unix/languages/egcs/snapshots/
-DISTFILES=	egcs-core-${SNAPVER}${EXTRACT_SUFX} \
-		egcs-g++-${SNAPVER}${EXTRACT_SUFX} \
-		egcs-g77-${SNAPVER}${EXTRACT_SUFX} \
-		egcs-java-${SNAPVER}${EXTRACT_SUFX} \
-		egcs-objc-${SNAPVER}${EXTRACT_SUFX}
+DISTFILES=	gcc-core-${SNAPVER}${EXTRACT_SUFX} \
+		gcc-g++-${SNAPVER}${EXTRACT_SUFX} \
+		gcc-g77-${SNAPVER}${EXTRACT_SUFX} \
+		gcc-java-${SNAPVER}${EXTRACT_SUFX} \
+		gcc-objc-${SNAPVER}${EXTRACT_SUFX}
 
 MAINTAINER=	obrien@FreeBSD.org
 
 NO_CDROM=	'dated material'
 
+##WRKSRC=		${WRKDIR}/gcc-${SNAPVER}
+##CONFIGURE_WRKSRC=	${WRKDIR}/build
+##BUILD_WRKSRC=		${WRKDIR}/build
+##INSTALL_WRKSRC=		${WRKDIR}/build
+##CONFIGURE_SCRIPT=	${WRKSRC}/configure
 EGCS_REV=	2.97
 LIBSTDCPP_REV=	4
-SRCDIR=		${WRKDIR}/egcs-${SNAPVER}
+SRCDIR=		${WRKDIR}/gcc-${SNAPVER}
 WRKSRC=		${WRKDIR}/build
 PATCH_ARGS=	-d ${SRCDIR} -E ${PATCH_STRIP}
 .if !defined(PATCH_DEBUG)
 PATCH_ARGS+=	--forward --quiet
 .endif
-CONFIGURE_SCRIPT=	../egcs-${SNAPVER}/configure
+CONFIGURE_SCRIPT=	../gcc-${SNAPVER}/configure
 
 .include <bsd.port.pre.mk>
 
@@ -68,9 +73,10 @@ pre-configure:
 	@(MAJ=`sysctl -n kern.osreldate | ${SED} -e '/.....$$/s///'` ; \
 	    ${PERL} -pi.orig -e "s:__FreeBSD__:__FreeBSD__=$${MAJ}:" \
 	    ${SRCDIR}/gcc/config/freebsd.h )
-	@${CP} ${FILESDIR}/alpha-freebsd.h ${SRCDIR}/gcc/config/alpha/freebsd.h
 	@# Keep from running `autoconf' and `autoheader' since we modified
 	@# configure.in by patching it.
+	##@touch ${WRKSRC}/gcc/configure
+	##@touch ${WRKSRC}/gcc/cstamp-h.in
 	@touch ${SRCDIR}/gcc/configure
 	@touch ${SRCDIR}/gcc/cstamp-h.in
 	@${MKDIR} ${CONFIGURE_WRKSRC}
