@@ -3,7 +3,7 @@
 # Date created:		28 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.15 1996/11/21 12:10:16 asami Exp $
+# $Id: Makefile,v 1.16 1996/12/07 01:30:12 adam Exp $
 #
 
 DISTNAME=	cnews
@@ -21,6 +21,8 @@ MAN8=		cnewsdo.8cn expire.8cn explode.8cn mergeactive.8 \
 		mkhistory.8cn newsaux.8cn newsbatch.8cn newsmail.8cn \
 		newsmaint.8cn newsoverview.8 relaynews.8cn report.8cn \
 		rnews.8cn
+
+BROKEN=		"Fails while installing bin/inews."
 
 NEWSSPOOL=	${PREFIX}/newsspool
 NEWSBIN=	${PREFIX}/news/cnewsbin
