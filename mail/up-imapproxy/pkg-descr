@@ -1,0 +1,7 @@
+The IMAP Proxy server is a caching IMAP proxy server.
+It was written to reduce the load that Webmail clients
+put on an IMAP server by keeping server connections
+alive for reuse, thus avoiding a new server connection
+for each Webmail transaction.
+
+WWW: http://www.imapproxy.org

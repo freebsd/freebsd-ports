@@ -1,0 +1,9 @@
+****************************************************************************
+
+Please change the name of your mailserver in the imapproxyd.conf and setup
+the correct ports.
+
+To run the imapproxyd from startup, add imapproxyd_enable="YES" in your
+/etc/rc.conf.
+
+****************************************************************************

@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri Nov  7 17:36:05 2003
++++ Makefile.in	Wed May 12 14:37:33 2004
+@@ -24,7 +24,7 @@
+ rpm_prefix = @rpm_prefix@
+ 
+ CC = @CC@
+-CPPFLAGS = @CPPFLAGS@ 
++CPPFLAGS = @CPPFLAGS@ -DDEFAULT_CONFIG_FILE=\"$(prefix)/etc/imapproxyd.conf\"
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+ DEFINES = @DEFINES@
