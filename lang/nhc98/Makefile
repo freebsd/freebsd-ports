@@ -13,10 +13,13 @@ DISTNAME=	${PORTNAME}src-${PORTVERSION}
 DIST_SUBDIR=	nhc98
 
 PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	patch-1.16-typesyn
+PATCHFILES=	patch-1.16-typesyn \
+		patch-1.16-ghc6
 
 MAINTAINER=	obraun@FreeBSD.org
 COMMENT=	A fully-fledged compiler for Haskell 98
+
+ONLY_FOR_ARCHS=	i386
 
 USE_REINPLACE=	yes
 
@@ -36,10 +39,12 @@ CONFIGURE_ARGS+=	--buildwith=ghc
 .endif
 
 .if !defined(NOPORTDOCS)
-CONFIGURE_ARGS+=	--docdir=${PREFIX}/share/doc/nhc98 +docs
+CONFIGURE_ARGS+=	--docdir=${DOCSDIR} +docs
 .endif
 
 MAN1=		harch.1 hmake.1 hp2graph.1 nhc98.1
+
+CONFLICTS=	hs-hmake-*
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3|${CFLAGS}|' ${WRKSRC}/Makefile.inc
@@ -52,16 +57,6 @@ post-configure:
 	@${ECHO} "LIBDIR=${PREFIX}/lib/nhc98" \
 		>> ${WRKSRC}/targets/ix86-FreeBSD/config.cache
 
-pre-install:
-.if exists(${PREFIX}/bin/hmake) && !defined(OVERRIDE_HMAKE)
-	@${ECHO} ""
-	@${ECHO} "It seems that there is already a version of hmake installed on"
-	@${ECHO} "this system. Since hmake is part of nhc98, please deinstall it,"
-	@${ECHO} "or define OVERRIDE_HMAKE to override the installed version."
-	@${ECHO} ""
-	@${FALSE}
-.endif
-
 post-install:
 	${SED} -e "s#/usr/doc/nhc98#${PREFIX}/share/doc/nhc98#" \
 	       < ${WRKSRC}/man/nhc98.1 > ${WRKSRC}/man/nhc98.1.fix
@@ -69,7 +64,7 @@ post-install:
 	${RM} ${WRKSRC}/man/nhc98.1.fix
 .if !defined(NOPORTDOCS)
 .for directory in . bugs examples hmake implementation-notes libs
-	${RM} -r ${PREFIX}/share/doc/nhc98/${directory}/CVS
+	${RM} -r ${DOCSDIR}/${directory}/CVS
 .endfor
 .endif
 
