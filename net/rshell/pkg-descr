@@ -1,0 +1,21 @@
+DESCRIPTION
+     rshell is front end for rsh(1) and rcp(1).  Rshell read the host and
+     username aliases from the configuration file $HOME/.rshellrc with the
+     following syntax:
+
+           alias   <hostname alias> <full hostname>
+
+     or
+
+           alias   <host,host2,...> <email@hostname>
+
+EXAMPLES
+     The following are examples of a typical usage of the rshell command:
+
+           $ rshell foo
+
+     which rshell expand to `rsh -l wosch mail.foobar.com'
+
+           $ rcp foo:/etc/motd .
+
+     which rcopy expand to `rcp wosch@mail.foobar.com:/etc/motd .'
