@@ -12,6 +12,7 @@ share/apps/kdevelop/examples/kscribble-1.0.tar.gz
 share/apps/kdevelop/pics/about_logo.bmp
 share/apps/kdevelop/pics/customApp.bmp
 share/apps/kdevelop/pics/dlg_firstrun.bmp
+share/apps/kdevelop/pics/gnomeApp.bmp
 share/apps/kdevelop/pics/kAppWizard.bmp
 share/apps/kdevelop/pics/kdemdi.bmp
 share/apps/kdevelop/pics/mini/CTchildren.xpm
@@ -65,6 +66,7 @@ share/apps/kdevelop/pics/mini/kdlg_QScrollBar.xpm
 share/apps/kdevelop/pics/mini/kdlg_QSlider.xpm
 share/apps/kdevelop/pics/mini/kdlg_QSpinBox.xpm
 share/apps/kdevelop/pics/mini/kdlg_QWidget.xpm
+share/apps/kdevelop/pics/mini/mini-doc2.xpm
 share/apps/kdevelop/pics/miniApp.bmp
 share/apps/kdevelop/pics/normalApp.bmp
 share/apps/kdevelop/pics/normalOglApp.bmp
@@ -83,6 +85,7 @@ share/apps/kdevelop/templates/AUTHORS_template
 share/apps/kdevelop/templates/COPYING_template
 share/apps/kdevelop/templates/ChangeLog_template
 share/apps/kdevelop/templates/INSTALL_template
+share/apps/kdevelop/templates/MAM_shared_template
 share/apps/kdevelop/templates/README_template
 share/apps/kdevelop/templates/TODO_template
 share/apps/kdevelop/templates/c.tar.gz
@@ -90,6 +93,7 @@ share/apps/kdevelop/templates/cpp.tar.gz
 share/apps/kdevelop/templates/cpp_template
 share/apps/kdevelop/templates/cvsignore_template
 share/apps/kdevelop/templates/docbook_en_template
+share/apps/kdevelop/templates/gnome.tar.gz
 share/apps/kdevelop/templates/handbook_en_template
 share/apps/kdevelop/templates/header_template
 share/apps/kdevelop/templates/icon_template
@@ -172,6 +176,17 @@ share/doc/HTML/de/kdevelop/index-7.html
 share/doc/HTML/de/kdevelop/index-8.html
 share/doc/HTML/de/kdevelop/index-9.html
 share/doc/HTML/de/kdevelop/index.html
+share/doc/HTML/de/kdevelop/kde_libref/index-1.html
+share/doc/HTML/de/kdevelop/kde_libref/index-2.html
+share/doc/HTML/de/kdevelop/kde_libref/index-3.html
+share/doc/HTML/de/kdevelop/kde_libref/index-4.html
+share/doc/HTML/de/kdevelop/kde_libref/index-5.html
+share/doc/HTML/de/kdevelop/kde_libref/index-6.html
+share/doc/HTML/de/kdevelop/kde_libref/index-7.html
+share/doc/HTML/de/kdevelop/kde_libref/index-8.html
+share/doc/HTML/de/kdevelop/kde_libref/index-9.html
+share/doc/HTML/de/kdevelop/kde_libref/index.html
+share/doc/HTML/de/kdevelop/kde_libref/logotp3.png
 share/doc/HTML/de/kdevelop/logotp3.png
 share/doc/HTML/de/kdevelop/reference/C/index.html
 share/doc/HTML/de/kdevelop/tip.database
@@ -180,6 +195,8 @@ share/doc/HTML/de/kdevelop/tutorial/index-10.html
 share/doc/HTML/de/kdevelop/tutorial/index-11.html
 share/doc/HTML/de/kdevelop/tutorial/index-12.html
 share/doc/HTML/de/kdevelop/tutorial/index-13.html
+share/doc/HTML/de/kdevelop/tutorial/index-14.html
+share/doc/HTML/de/kdevelop/tutorial/index-15.html
 share/doc/HTML/de/kdevelop/tutorial/index-2.html
 share/doc/HTML/de/kdevelop/tutorial/index-3.html
 share/doc/HTML/de/kdevelop/tutorial/index-4.html
@@ -299,6 +316,27 @@ share/doc/HTML/es/kdevelop/reference/C/index.html
 share/doc/HTML/es/kdevelop/tip.database
 share/doc/HTML/es/kdevelop/welcome/index.html
 share/doc/HTML/es/kdevelop/welcome/logotp3.png
+share/doc/HTML/fr/kdevelop/programming/index-1.html
+share/doc/HTML/fr/kdevelop/programming/index-10.html
+share/doc/HTML/fr/kdevelop/programming/index-11.html
+share/doc/HTML/fr/kdevelop/programming/index-12.html
+share/doc/HTML/fr/kdevelop/programming/index-13.html
+share/doc/HTML/fr/kdevelop/programming/index-14.html
+share/doc/HTML/fr/kdevelop/programming/index-15.html
+share/doc/HTML/fr/kdevelop/programming/index-16.html
+share/doc/HTML/fr/kdevelop/programming/index-17.html
+share/doc/HTML/fr/kdevelop/programming/index-18.html
+share/doc/HTML/fr/kdevelop/programming/index-19.html
+share/doc/HTML/fr/kdevelop/programming/index-2.html
+share/doc/HTML/fr/kdevelop/programming/index-3.html
+share/doc/HTML/fr/kdevelop/programming/index-4.html
+share/doc/HTML/fr/kdevelop/programming/index-5.html
+share/doc/HTML/fr/kdevelop/programming/index-6.html
+share/doc/HTML/fr/kdevelop/programming/index-7.html
+share/doc/HTML/fr/kdevelop/programming/index-8.html
+share/doc/HTML/fr/kdevelop/programming/index-9.html
+share/doc/HTML/fr/kdevelop/programming/index.html
+share/doc/HTML/fr/kdevelop/programming/logotp3.png
 share/doc/HTML/fr/kdevelop/tip.database
 share/doc/HTML/fr/kdevelop/tutorial/index-1.html
 share/doc/HTML/fr/kdevelop/tutorial/index-2.html
@@ -317,6 +355,7 @@ share/doc/HTML/hu/kdevelop/index-14.html
 share/doc/HTML/hu/kdevelop/index-15.html
 share/doc/HTML/hu/kdevelop/index-16.html
 share/doc/HTML/hu/kdevelop/index-17.html
+share/doc/HTML/hu/kdevelop/index-18.html
 share/doc/HTML/hu/kdevelop/index-2.html
 share/doc/HTML/hu/kdevelop/index-3.html
 share/doc/HTML/hu/kdevelop/index-4.html
@@ -424,8 +463,10 @@ share/doc/HTML/zh_CN.GB2312/kdevelop/tutorial/index.html
 share/doc/HTML/zh_CN.GB2312/kdevelop/tutorial/logotp3.png
 share/doc/HTML/zh_CN.GB2312/kdevelop/welcome/index.html
 share/doc/HTML/zh_CN.GB2312/kdevelop/welcome/logotp3.png
+share/icons/development_package.xpm
 share/icons/kdevelop-project.xpm
 share/icons/kdevelop.xpm
+share/icons/mini/development_package.xpm
 share/icons/mini/kdevelop.xpm
 share/locale/cs/LC_MESSAGES/kdevelop.mo
 share/locale/da/LC_MESSAGES/kdevelop.mo
@@ -449,6 +490,7 @@ share/mimelnk/application/x-kdevelop-project.kdelnk
 @dirrm share/doc/HTML/zh_CN.GB2312/kdevelop/welcome
 @dirrm share/doc/HTML/zh_CN.GB2312/kdevelop/tutorial
 @dirrm share/doc/HTML/zh_CN.GB2312/kdevelop
+@dirrm share/doc/HTML/zh_CN.GB2312
 @dirrm share/doc/HTML/sv/kdevelop
 @dirrm share/doc/HTML/ru/kdevelop/welcome
 @dirrm share/doc/HTML/ru/kdevelop/tutorial
@@ -465,6 +507,7 @@ share/mimelnk/application/x-kdevelop-project.kdelnk
 @dirrm share/doc/HTML/hu/kdevelop
 @dirrm share/doc/HTML/fr/kdevelop/welcome
 @dirrm share/doc/HTML/fr/kdevelop/tutorial
+@dirrm share/doc/HTML/fr/kdevelop/programming
 @dirrm share/doc/HTML/fr/kdevelop
 @dirrm share/doc/HTML/es/kdevelop/welcome
 @dirrm share/doc/HTML/es/kdevelop/reference/C
@@ -482,6 +525,7 @@ share/mimelnk/application/x-kdevelop-project.kdelnk
 @dirrm share/doc/HTML/de/kdevelop/tutorial
 @dirrm share/doc/HTML/de/kdevelop/reference/C
 @dirrm share/doc/HTML/de/kdevelop/reference
+@dirrm share/doc/HTML/de/kdevelop/kde_libref
 @dirrm share/doc/HTML/de/kdevelop
 @dirrm share/apps/kdevelop/tools
 @dirrm share/apps/kdevelop/toolbar
