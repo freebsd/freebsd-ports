@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xtemplate
-PORTVERSION=	0.7.0
+PORTVERSION=	0.8.0
 CATEGORIES=	textproc ruby
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,10 +17,6 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A lightweight XML template engine for Ruby
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/xmlscan/parser.rb:${PORTSDIR}/textproc/ruby-xmlscan
-# You can use REXML as an alternative to xmlscan:
-#		${RUBY_SITELIBDIR}/rexml/document.rb:${PORTSDIR}/textproc/ruby-rexml
-# YAML is supported optionally:
-#		${RUBY_SITELIBDIR}/yaml.rb:${PORTSDIR}/devel/ruby-yaml
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
