@@ -3,14 +3,14 @@
 # Date created:		28 Jul 1996
 # Whom:			shanee@augusta.de
 #
-# $Id: Makefile,v 1.3 1998/02/06 19:07:05 fenner Exp $
+# $Id: Makefile,v 1.4 1998/10/04 22:41:22 steve Exp $
 #
 
 DISTNAME=	logsurfer-1.41
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.fh-rosenheim.de/pub/mirror/cert.dfn/tools/audit/logsurfer/ \
 		ftp://ftp.tuwien.ac.at/infosys/security/dfn/tools/audit/logsurfer/ \
-		ftp://ftp.uni-magdeburg.de/pub/mirror/ftp.cert.dfn.de/tools/audit/logsurfer/ \
+		ftp://ftp.uni-magdeburg.de/pub/mirror/ftp.cert.dfn.de/tools/audit/logsurfer/
 
 MAINTAINER=	shanee@augusta.de
 
