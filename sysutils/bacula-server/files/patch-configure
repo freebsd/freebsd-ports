@@ -1,0 +1,21 @@
+*** configure.org	Sun Mar  6 16:46:54 2005
+--- configure	Sun Mar  6 16:49:20 2005
+***************
+*** 21037,21044 ****
+  	DISTVER=`uname -a |awk '{print $3}'`
+  	VER=`echo $DISTVER | cut -c 1`
+  	if test x$VER = x4 ; then
+! 	   PTHREAD_LIB="-pthread"
+! 	   CFLAGS="${CFLAGS} -pthread"
+  	fi
+  	lld="qd"
+  	llu="qu"
+--- 21037,21044 ----
+  	DISTVER=`uname -a |awk '{print $3}'`
+  	VER=`echo $DISTVER | cut -c 1`
+  	if test x$VER = x4 ; then
+! 	   PTHREAD_LIB="${PTHREAD_LIBS}"
+! 	   CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
+  	fi
+  	lld="qd"
+  	llu="qu"
