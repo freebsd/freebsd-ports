@@ -8,7 +8,7 @@
 PORTNAME=	qmailanalog
 PORTVERSION=	0.70
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.qmail.org/pub/software/
+MASTER_SITES=	ftp://cr.yp.to/software/
 
 MAINTAINER=	nbm@FreeBSD.org
 
