@@ -4,7 +4,7 @@
  #ifndef GNULIB_H
  #define GNULIB_H
  
--#ifdef __GNUG__
+-#if defined(__GNUG__) && !defined(__APPLE_CC__)
 -#include <_G_config.h>
 -#endif   // __GNUG__
  #include <stddef.h>
@@ -14,7 +14,7 @@
  #include <errno.h>
  #include <fcntl.h>
  
--#ifdef __GNUG__
+-#if defined(__GNUG__) && !defined(__APPLE_CC__)
 -extern "C" {
 -int strcasecmp _G_ARGS((const char*, const char*));
 -}
