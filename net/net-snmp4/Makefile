@@ -62,6 +62,8 @@ SBIN=		snmpd snmptrapd
 
 STARTUP_FILE=	${PREFIX}/etc/rc.d/snmpd.sh
 
+CONFLICTS=	net-snmp-5.*
+
 .if defined(WITHOUT_SSL)
 CONFIGURE_ARGS+= --without-openssl
 .else
