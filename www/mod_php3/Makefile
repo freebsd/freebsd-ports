@@ -27,10 +27,8 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 
 PHP_DISTDIR=	distributions
 
-APXS=		${PREFIX}/sbin/apxs
-
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-apxs=${APXS} \
+CONFIGURE_ARGS=	--with-apxs=${PREFIX}/sbin/apxs \
 		--enable-versioning \
 		--with-system-regex \
 		--with-config-file-path=${PREFIX}/etc \
@@ -42,11 +40,7 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		TOUCH="${TOUCH}" \
 		MKDIR="${MKDIR}"
 
-.if exists(${APXS})
-AP_LIBEXEC!=	${APXS} -q LIBEXEC
-.else
 AP_LIBEXEC=	${PREFIX}/libexec/apache
-.endif
 
 PHPDOCDIR=	${PREFIX}/share/doc/php3
 PLIST_SUB=	PHPDOCDIR=${PHPDOCDIR:S/^${PREFIX}\///} \
