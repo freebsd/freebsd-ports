@@ -7622,6 +7622,7 @@ vis		src/usr.bin/vis
 vis2u		ports/vietnamese/vis2u
 vis5d+		ports/science/vis5d+
 visualos	ports/emulators/visualos
+visualworks	ports/lang/visualworks
 viz		ports/misc/viz
 vlc		ports/graphics/vlc
 vlock		ports/security/vlock
