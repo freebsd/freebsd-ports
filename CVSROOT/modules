@@ -6008,6 +6008,7 @@ p5-Clone	ports/devel/p5-Clone
 p5-Compress-Bzip2	ports/archivers/p5-Compress-Bzip2
 p5-Compress-Zlib	ports/archivers/p5-Compress-Zlib
 p5-Config-Auto	ports/devel/p5-Config-Auto
+p5-Config-Fast	ports/devel/p5-Config-Fast
 p5-Config-General	ports/devel/p5-Config-General
 p5-Config-Ini	ports/devel/p5-Config-Ini
 p5-Config-IniFiles	ports/devel/p5-Config-IniFiles
