@@ -1,0 +1,38 @@
+--- lib/dps/Imakefile.orig	Thu Mar  4 09:47:01 2004
++++ lib/dps/Imakefile	Thu May 27 18:13:27 2004
+@@ -29,7 +29,6 @@
+             SED = sed
+             AWK = awk
+            SORT = sort
+-         PSWRAP = PsWrap
+ 
+ COMMONOBJECTFILES = \
+ 	dpsclient.o\
+@@ -201,7 +200,7 @@
+ 
+ includes:: $(DPSOPSCFILES) $(PSOPSCFILES) $(HEADERS)
+ 
+-$(DPSOPSCFILES) $(PSOPSCFILES): HostProgramTargetName($(PSWRAP))
++$(DPSOPSCFILES) $(PSOPSCFILES): PsWrapDependency
+ 
+ SRCS = \
+ 	${COMMONSOURCEFILES} \
+@@ -224,16 +223,11 @@
+ 
+ .SUFFIXES: .psw .h
+ 
+-.psw.c : HostProgramTargetName($(PSWRAP))
++.psw.c : PsWrapDependency
+ 	RunProgram(PSWRAP,-a -o $*.c -h $*.h $<)
+ 
+-.psw.h : HostProgramTargetName($(PSWRAP))
++.psw.h : PsWrapDependency
+ 	RunProgram(PSWRAP,-a -h $*.h $< > /dev/null)
+-
+-HostProgramTargetName($(PSWRAP)):
+-	@echo "checking $@ over in $(PSWRAPSRC) first..."; \
+-	cd $(PSWRAPSRC) && $(MAKE) pswraponly; \
+-	echo "okay, continuing in $(CURRENT_DIR)"
+ 
+ includes :: $(HEADERS)
+ depend :: $(DPSOPSCFILES) $(PSOPSCFILES)

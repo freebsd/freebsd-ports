@@ -1,0 +1,12 @@
+#!/bin/sh
+
+LOCALDEF=$WRKDIR/.config
+
+rm -f $LOCALDEF
+echo "#define BuildServer NO"				>> $LOCALDEF
+echo "#define BuildXft1Library NO"			>> $LOCALDEF
+echo "#define BuildXftLibrary NO"			>> $LOCALDEF
+echo "#define UseInstalledPrograms YES"			>> $LOCALDEF
+echo "#define StandardIncludes -I${PREFIX}/include"	>> $LOCALDEF
+
+sh $PORTSDIR/x11-servers/xorg-server/scripts/configure.gen
