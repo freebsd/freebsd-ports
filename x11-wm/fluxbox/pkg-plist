@@ -40,13 +40,13 @@ share/fluxbox/styles/Shade
 share/fluxbox/styles/Spiff
 share/fluxbox/styles/Twice
 share/fluxbox/styles/qnx-photon
-@unexec rm %D/share/fluxbox/nls/lv
-@unexec rm %D/share/fluxbox/nls/fr
-@unexec rm %D/share/fluxbox/nls/es
-@unexec rm %D/share/fluxbox/nls/en_US
-@unexec rm %D/share/fluxbox/nls/en
-@unexec rm %D/share/fluxbox/nls/US_ASCII
-@unexec rm %D/share/fluxbox/nls/POSIX
+@unexec rm %D/share/fluxbox/nls/lv 2>&1 >/dev/null || true
+@unexec rm %D/share/fluxbox/nls/fr 2>&1 >/dev/null || true
+@unexec rm %D/share/fluxbox/nls/es 2>&1 >/dev/null || true
+@unexec rm %D/share/fluxbox/nls/en_US 2>&1 >/dev/null || true
+@unexec rm %D/share/fluxbox/nls/en 2>&1 >/dev/null || true
+@unexec rm %D/share/fluxbox/nls/US_ASCII 2>&1 >/dev/null || true
+@unexec rm %D/share/fluxbox/nls/POSIX 2>&1 >/dev/null || true
 @exec ln -s lv_LV %D/share/fluxbox/nls/lv
 @exec ln -s fr_FR %D/share/fluxbox/nls/fr
 @exec ln -s es_ES %D/share/fluxbox/nls/es

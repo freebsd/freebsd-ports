@@ -13,9 +13,9 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 .if defined(WITH_REMEMBER)
-PATCH_SITES=	http://www.bugfactory.org/~gav/fluxbox/
+PATCH_SITES=		http://www.bugfactory.org/~gav/fluxbox/
+PATCHFILES=		remember-0.1.14-7.gz
 PATCH_DIST_STRIP=	-p1
-PATCHFILES=	remember-0.1.14-7.gz
 .endif
 
 MAINTAINER=	mezz@FreeBSD.org
@@ -23,21 +23,24 @@ COMMENT=	A small and fast window manager based on BlackBox
 
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 RUN_DEPENDS=	bsetbg:${PORTSDIR}/x11-wm/boxtools
-.if defined(WITH_REMEMBER)
-WANT_AUTOMAKE_VER=14
-.endif
 
+WANT_GNOME=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-WANT_GNOME=	yes
-.if defined(WITH_REMEMBER)
-USE_GMAKE=	yes
-CONFIGURE_ENV=	AUTOMAKE=automake14
-.endif
 CONFIGURE_ARGS=	--disable-newwmspec
+
+MAN1=		fluxbox.1
+
 .if defined(WITH_KDE) || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--enable-kde
 .endif
+
+.if defined(WITH_REMEMBER)
+USE_GMAKE=		yes
+WANT_AUTOMAKE_VER=	14
+CONFIGURE_ENV=		AUTOMAKE=automake14
+.endif
+
 .if defined(WITH_XINERAMA) || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--enable-xinerama
 .endif
@@ -49,12 +52,10 @@ CONFIGURE_ARGS+=	--enable-xinerama
 .endif
 
 .if defined(WITH_WINSNAP)
-PATCH_SITES+=	http://www.raisdorf.net/files/FreeBSD/
+PATCH_SITES+=		http://www.raisdorf.net/files/FreeBSD/
+PATCHFILES+=		winsnap-0.1.14.patch
 PATCH_DIST_STRIP=	-p1
-PATCHFILES+=	winsnap-0.1.14.patch
 .endif
-
-MAN1=		fluxbox.1
 
 .if ${HAVE_GNOME:Mgnomelibs}!="" || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--enable-gnome
@@ -64,9 +65,6 @@ pre-everything::
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "Definable build options"
 	@${ECHO_CMD} "-----------------------"
-.if !defined(WITH_XINERAMA)
-	@${ECHO_CMD} "WITH_XINERAMA	- Enable Xinerama support"
-.endif
 .if !defined(WITH_KDE)
 	@${ECHO_CMD} "WITH_KDE	- Enable KDE slit support"
 .endif
@@ -76,6 +74,9 @@ pre-everything::
 .if !defined(WITH_WINSNAP)
 	@${ECHO_CMD} "WITH_WINSNAP	- Enable the unofficial window snapping patch"
 	@${ECHO_CMD} "            	  (does not work on -current)"
+.endif
+.if !defined(WITH_XINERAMA)
+	@${ECHO_CMD} "WITH_XINERAMA	- Enable Xinerama support"
 .endif
 	@${ECHO_CMD} ""
 
