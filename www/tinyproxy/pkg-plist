@@ -1,3 +1,4 @@
+etc/rc.d/tinyproxy.sh
 etc/tinyproxy/tinyproxy.conf-dist
 sbin/tinyproxy
 share/tinyproxy/HTML_VARIABLES
