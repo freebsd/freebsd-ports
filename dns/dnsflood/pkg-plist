@@ -1,0 +1,3 @@
+sbin/dns_flood_detector
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
