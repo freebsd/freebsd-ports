@@ -7,15 +7,17 @@
 
 PORTNAME=	xsidplay
 PORTVERSION=	1.6.4.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio emulators
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/packages/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jmcoopr@webmail.bmi.net
 
 LIB_DEPENDS=	sidplay.1:${PORTSDIR}/audio/libsidplay
 
+USE_X_PREFIX=	yes
 USE_QT_VER=	2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -39,12 +41,15 @@ pre-patch:
 	@${PERL} -pi -e 's|/usr/share|${PREFIX}|g' ${WRKSRC}/xsidplay.1
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/xsidplay ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/xsidplay.1 ${MANPREFIX}/man/man1
+	@${INSTALL_PROGRAM} ${WRKSRC}/src/xsidplay ${PREFIX}/bin
+	@${INSTALL_DATA} ${WRKSRC}/xsidplay.xpm ${PREFIX}/share/pixmaps
+	@${INSTALL_MAN} ${WRKSRC}/xsidplay.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.faq ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/*.faq ${DOCSDIR}
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/example-sidtunes/*.sid ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.post.mk>

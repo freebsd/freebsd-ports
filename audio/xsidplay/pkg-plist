@@ -1,5 +1,28 @@
 bin/xsidplay
+share/pixmaps/xsidplay.xpm
 %%PORTDOCS%%share/doc/xsidplay/README
 %%PORTDOCS%%share/doc/xsidplay/STIL.faq
 %%PORTDOCS%%share/doc/xsidplay/hv_sids.faq
+%%PORTDOCS%%share/examples/xsidplay/Baby_Of_Can_Guru.sid
+%%PORTDOCS%%share/examples/xsidplay/C-demo_tune.sid
+%%PORTDOCS%%share/examples/xsidplay/Compleeto.sid
+%%PORTDOCS%%share/examples/xsidplay/Connect_4.sid
+%%PORTDOCS%%share/examples/xsidplay/Dignified.sid
+%%PORTDOCS%%share/examples/xsidplay/G_I_Hero.sid
+%%PORTDOCS%%share/examples/xsidplay/Galway-tune.sid
+%%PORTDOCS%%share/examples/xsidplay/Game_On_Issue_11_89.sid
+%%PORTDOCS%%share/examples/xsidplay/Lightforce.sid
+%%PORTDOCS%%share/examples/xsidplay/Martinism.sid
+%%PORTDOCS%%share/examples/xsidplay/Metropolis.sid
+%%PORTDOCS%%share/examples/xsidplay/Microwave.sid
+%%PORTDOCS%%share/examples/xsidplay/PayDay-Ingame_tune.sid
+%%PORTDOCS%%share/examples/xsidplay/Platou.sid
+%%PORTDOCS%%share/examples/xsidplay/Rage_03.sid
+%%PORTDOCS%%share/examples/xsidplay/Rambo_First_Blood_Part_II.sid
+%%PORTDOCS%%share/examples/xsidplay/SYS4096.sid
+%%PORTDOCS%%share/examples/xsidplay/Startrash.sid
+%%PORTDOCS%%share/examples/xsidplay/Sweet.sid
+%%PORTDOCS%%share/examples/xsidplay/Think_Now.sid
+%%PORTDOCS%%share/examples/xsidplay/Zybernix.sid
+%%PORTDOCS%%@dirrm share/examples/xsidplay
 %%PORTDOCS%%@dirrm share/doc/xsidplay
