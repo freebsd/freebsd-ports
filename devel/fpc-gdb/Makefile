@@ -35,6 +35,8 @@ USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--program-suffix=fpc
 AR?=		/usr/bin/ar
 
+ONLY_FOR_ARCHS=	i386
+
 pre-configure:
 	cd ${WRKSRC} ; ${RM} -rf dejagnu expect sim tcl texinfo
 
