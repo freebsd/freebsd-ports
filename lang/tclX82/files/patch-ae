@@ -1,0 +1,35 @@
+--- configure.orig	Sun Dec  6 21:47:31 1998
++++ configure	Fri Aug 27 10:11:48 1999
+@@ -1097,21 +1097,19 @@
+ #
+ # Generate the library names using the Tcl macros.
+ #
+-SHLIB_SUFFIX=${TCL_SHLIB_SUFFIX}
++TCL_STLIB_NAME=libtcl80.a
++TK_STLIB_NAME=libtk80.a
+ 
+-VERSION=$TCL_VERSION
+-eval "TCL_STLIB_NAME=libtcl${TCL_UNSHARED_LIB_SUFFIX}"
++TCLX_STLIB_NAME=libtclx804.a
++TKX_STLIB_NAME=libtkx804.a
+ 
+-VERSION=$TK_VERSION
+-eval "TK_STLIB_NAME=libtk${TCL_UNSHARED_LIB_SUFFIX}"
+-
+-VERSION=$TCLX_VERSION$TCL_DBGX
+-eval "TCLX_STLIB_NAME=libtclx${TCL_UNSHARED_LIB_SUFFIX}"
+-eval "TCLX_SHLIB_NAME=libtclx${TCL_SHARED_LIB_SUFFIX}"
+-
+-VERSION=$TKX_VERSION$TCL_DBGX
+-eval "TKX_STLIB_NAME=libtkx${TCL_UNSHARED_LIB_SUFFIX}"
+-eval "TKX_SHLIB_NAME=libtkx${TCL_SHARED_LIB_SUFFIX}"
++if [ "$PORTOBJFORMAT" = "elf" ]; then
++    TCLX_SHLIB_NAME=libtclx804.so.1
++    TKX_SHLIB_NAME=libtkx804.so.1
++else
++    TCLX_SHLIB_NAME=libtclx804.so.1.4
++    TKX_SHLIB_NAME=libtkx804.so.1.4
++fi
+ 
+ #
+ # Determine suffix to use for the object files for the shared library.

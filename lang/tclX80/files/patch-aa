@@ -1,11 +1,11 @@
---- Config.mk.ORIG	Sun May  3 18:41:27 1998
-+++ Config.mk	Sun May  3 18:43:35 1998
+--- Config.mk.orig	Sun Dec  6 21:47:30 1998
++++ Config.mk	Fri Aug 27 09:38:06 1999
 @@ -56,10 +56,10 @@
  # to ${TCL_LIB_SPEC}.
  # 
  
--TCL_SRC=${srcbasedir}/../tcl8.0
--TCL_BUILD=${bldbasedir}/../tcl8.0
+-TCL_SRC=${srcbasedir}/../tcl8.0.4
+-TCL_BUILD=${bldbasedir}/../tcl8.0.4
 -TCL_CONFIG=${TCL_BUILD}/unix/tclConfig.sh
 -TCL_LIB=${TCL_BUILD_LIB_SPEC}
 +TCL_SRC=${prefix}/include/tcl8.0
@@ -14,13 +14,13 @@
 +TCL_LIB=${TCL_LIB_SPEC}
  
  #------------------------------------------------------------------------------
- # Unless configure is going to be run with --with-tk=NO, these defines must be
+ # Unless configure is going to be run with --enable-tk=NO, these defines must
 @@ -68,10 +68,10 @@
  # neccessary to link with the Tk shared library (libtk8.0.so).  If you want to
  # use the installed Tk library, set TK_LIB to ${TK_LIB_SPEC}.
  
--TK_SRC=${srcbasedir}/../tk8.0
--TK_BUILD=${bldbasedir}/../tk8.0
+-TK_SRC=${srcbasedir}/../tk8.0.4
+-TK_BUILD=${bldbasedir}/../tk8.0.4
 -TK_CONFIG=${TK_BUILD}/unix/tkConfig.sh
 -TK_LIB=${TK_BUILD_LIB_SPEC}
 +TK_SRC=${prefix}/include/tk8.0
