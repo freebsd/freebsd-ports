@@ -1,0 +1,16 @@
+tosvcd takes one or more recorded vdr files and transcodes them to a SVCD
+image file ready for cdrdao to burn.
+
+Some functions:
+   * synchronises Video/Audio
+   * tries to repair demaged streams
+   * split output(with help of mpeg2enc)
+   * invoke yuvscaler, if input is not 480x576
+   * invoke noise filter on request
+   * predicts finish time
+   * predicts final output size
+   * restarts if output size exceeds CD's capacity to enable full automatic
+     operation
+   * invoke mplex and vcdimager
+
+WWW: http://muse.seh.de/tosvcd/

@@ -381,6 +381,7 @@
     SUBDIR += tifmerge
     SUBDIR += tkxanim
     SUBDIR += togl
+    SUBDIR += tosvcd
     SUBDIR += totem
     SUBDIR += transcode
     SUBDIR += truevision
