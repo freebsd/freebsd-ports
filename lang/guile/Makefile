@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	guile
 MAINTAINER=	jseger@FreeBSD.org
 
 GNU_CONFIGURE=	YES
-CONFIGURE_ARGS=	--with-threads
+#CONFIGURE_ARGS=	--with-threads
 
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	configure guile-readline/configure
