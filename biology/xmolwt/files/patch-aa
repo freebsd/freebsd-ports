@@ -1,0 +1,13 @@
+*** Makefile.gtk	Sat Aug 28 19:46:47 1999
+--- Makefile	Mon Aug 30 19:49:21 1999
+***************
+*** 3,8 ****
+--- 3,10 ----
+  GTKCONFIG = gtk12-config
+  OBJS = molwt.o usage.o element.o reduce.o count.o calculate.o initwidget.o allowcase.o inputformula.o addtolist.o
+  
++ all: gmolwt
++ 
+  molwt: gmolwt
+  	ln -s gmolwt molwt
+  
