@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	totem
-PORTVERSION=	0.96.0
+PORTVERSION=	0.97.0
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.96
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.97
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	hendrik@scholz.net
@@ -25,4 +25,20 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 	       	LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/lib/libdvdnav.so)
+WITH_DVDNAV=	yes
+.endif
+
+.if defined(WITH_DVDNAV)
+LIB_DEPENDS+=	dvdnav.1:${PORTSDIR}/multimedia/libdvdnav
+.endif
+
+.if !defined(WITH_DVDNAV)
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "You can enable DVD support by defining WITH_DVDNAV"
+.endif
+
+.include <bsd.port.post.mk>
