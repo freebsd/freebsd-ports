@@ -15,6 +15,11 @@ MAINTAINER=	pat@databits.net
 
 GNU_CONFIGURE=	yes
 USE_KDELIBS_VER=	2
-USE_X_PREFIX=	yes 
+USE_X_PREFIX=	yes
+CONFIGURE_ENV=	KDEDIR="${LOCALBASE}"
+
+pre-patch:
+	@${PERL} -pi.orig -e 's|-ljpeg6b|-ljpeg|; \
+		s|-O2||' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>
