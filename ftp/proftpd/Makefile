@@ -26,7 +26,7 @@ USE_AUTOCONF=	yes
 CONFIGURE_ARGS=	--localstatedir=/var/run \
 		--disable-sendfile
 
-MODULES?=	mod_ratio
+MODULES?=	mod_ratio:mod_readme
 
 .if !empty(MODULES)
 CONFIGURE_ARGS+= --with-modules=${MODULES}
