@@ -6,36 +6,36 @@
 #
 
 PORTNAME=	cc65
-PORTVERSION=	2.8.0
+PORTVERSION=	2.9.1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		ftp://ftp.musoftware.de/pub/uz/cc65/
-# Mirror sites that were not useful at the time I updated this port:
-#		http://www.acc.umu.se/~arvid/cc65_mirror/ \
+MASTER_SITES=	ftp://ftp.musoftware.de/pub/uz/cc65/ \
+		http://www.funet.fi/pub/cbm/programming/cc65/ \
+		http://www.acc.umu.se/~arvid/cc65_mirror/ \
+		http://bj.spline.de/cc65/
+# This mirror seems to stop at version 2.7.0
 #		ftp://ftp.elysium.pl/tools/crossplatform/programming/c/cc65/ \
-#		http://www.funet.fi/pub/cbm/programming/cc65/
-MASTER_SITE_SUBDIR=	hoek
-WRKSRC=		${WRKDIR}/cc65-2.8.0
-DISTNAME=	cc65-sources-2.8.0
+DISTNAME=	cc65-sources-2.9.1
 
-MAINTAINER=	hoek@FreeBSD.org
+MAINTAINER=	watchman@ludd.luth.se
 COMMENT=	Cross-compiler for 6502-based systems, includes 65816 assembler
 
+USE_SUBMAKE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 CFLAGS+=	-DCC65_INC=\\\"${PREFIX}/lib/cc65/include\\\" \
 		-DCC65_LIB=\\\"${PREFIX}/lib/cc65/lib\\\" \
-		-I${WRKSRC}/src/common
+		-I${WRKSRC}/src/common -Wall -W -DSPAWN_UNIX
+
+# Need ${WRKSRC} so that the (slightly ugly) != assignments work
+.include <bsd.port.pre.mk>
+WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
+WRKSRC=		${WRKDIR}/cc65-${PORTVERSION}
+
+DEVNULL=	${__empty_string_for_portlint}/dev/null
 
 # These doc files can be compiled using the textproc/sgmltools port
-DOCFILES= \
-	doc/BUGS doc/CREDITS doc/Makefile doc/Makefile.orig \
-	doc/ar65.sgml doc/ca65.sgml doc/cc65.sgml doc/cl65.sgml \
-	doc/coding.sgml doc/compile.txt doc/debugging.sgml \
-	doc/dio.sgml doc/geos.sgml doc/grc.txt doc/index.sgml \
-	doc/internal.txt doc/intro.sgml doc/ld65.sgml \
-	doc/library.sgml doc/newvers.txt doc/readme.1st announce.txt
-
+DOCFILES!=	ls ${WRKSRC}/doc 2> ${DEVNULL} | \
+		    ${SED} -E -e 's/^/doc\//' && ${ECHO_CMD} announce.txt
 
 BINFILES= \
 	src/ar65/ar65 src/ca65/ca65 src/cc65/cc65 \
@@ -43,87 +43,84 @@ BINFILES= \
 
 BINSCRIPTS= src/ca65html/ca65html
 
-CC65INCFILES=  \
-	6502.h _6525.h _6526.h _6545.h _6551.h _antic.h _gtia.h _pbi.h _pia.h \
-	_pokey.h _sid.h _vdc.h _vic.h ace.h apple2.h assert.h atari.h c128.h \
-	c64.h cbm.h cbm510.h cbm610.h conio.h ctype.h dbg.h dio.h errno.h \
-	fcntl.h geos.h graphics.h iso646.h joystick.h limits.h locale.h \
-	mouse.h pet.h plus4.h rs232.h setjmp.h stdarg.h stddef.h stdio.h \
-	stdlib.h string.h time.h zlib.h
+ASMINCFILES!=	ls ${WRKSRC}/asminc 2> ${DEVNULL} | ${EGREP} '\.inc' || true
 
-CC65GEOSINCFILES= \
-	gconst.h gdisk.h gdlgbox.h gfile.h ggraph.h gmemory.h gmenu.h \
-	gprocess.h gsprite.h gstruct.h gsym.h gsys.h
+CC65LIBFILES!=	ls ${WRKSRC}/libsrc/ 2> ${DEVNULL} | ${EGREP} '\.(o|lib)' \
+		    || true
 
-CC65LIBFILES= \
-	apple2.o atari.o c128.o c64.o cbm510.o cbm610.o geos.o pet.o \
-	plus4.o apple2.lib atari.lib c128.lib c64.lib cbm510.lib cbm610.lib \
-	geos.lib pet.lib plus4.lib
+CC65EMDFILES!=	ls ${WRKSRC}/libsrc/ 2> ${DEVNULL} | ${EGREP} '\.emd' || true
 
-SAMPLES= Makefile README hello.c mousedemo.c nachtm.c plasma.c sieve.c
-
-GEOSSAMPLES= \
-	appfile.grc apphello1.grc apphello2.grc apprmvprot.grc \
-	appyesno.grc dialog.c filesel.c geosconio.c geosconiores.res \
-	grphstr.c hello1.c hello2.c inittab.c menu.c rmvprot.c yesno.c
+CC65TGIFILES!=	ls ${WRKSRC}/libsrc/ 2> ${DEVNULL} | ${EGREP} '\.tgi' || true
 
 do-build:
 	cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${GMAKE} -ef make/gcc.mak
 	cd ${WRKSRC}/libsrc && ${GMAKE} all
 
 do-install:
-	${MKDIR} ${PREFIX}/share/doc/cc65
-	${MKDIR} ${PREFIX}/lib/cc65/include/geos
+	${MKDIR} ${PREFIX}/lib/cc65/emd
 	${MKDIR} ${PREFIX}/lib/cc65/lib
+	${MKDIR} ${PREFIX}/lib/cc65/tgi
+	${MKDIR} ${PREFIX}/lib/cc65/asminc
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/cc65/samples/geos
+	${MKDIR} ${PREFIX}/share/doc/cc65
 	${INSTALL_DATA} ${DOCFILES:S,^,${WRKSRC}/,} ${PREFIX}/share/doc/cc65
-	${INSTALL_DATA} ${SAMPLES:S,^,${WRKSRC}/samples/,} \
-	    ${PREFIX}/share/doc/cc65/samples
-	${INSTALL_DATA} ${GEOSSAMPLES:S,^,${WRKSRC}/samples/geos/,} \
-	    ${PREFIX}/share/doc/cc65/samples/geos
+	${CP} -R ${WRKSRC}/samples ${PREFIX}/share/doc/cc65
+	${FIND} ${PREFIX}/share/doc/cc65/samples -not -type d | \
+	    ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+	${FIND} ${PREFIX}/share/doc/cc65/samples -not -type d | \
+	    ${XARGS} ${CHMOD} ${SHAREMODE}
 .endif
 	${INSTALL_PROGRAM} ${BINFILES:S,^,${WRKSRC}/,} ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${BINSCRIPTS:S,^,${WRKSRC}/,} ${PREFIX}/bin
-	${INSTALL_DATA} ${CC65INCFILES:S,^,${WRKSRC}/include/,} \
-	    ${PREFIX}/lib/cc65/include
-	${INSTALL_DATA} ${CC65GEOSINCFILES:S,^,${WRKSRC}/include/geos/,} \
-	    ${PREFIX}/lib/cc65/include/geos
+	${INSTALL_DATA} ${ASMINCFILES:S,^,${WRKSRC}/asminc/,} \
+	    ${PREFIX}/lib/cc65/asminc
+	${CP} -R ${WRKSRC}/include ${PREFIX}/lib/cc65
+	${FIND} ${PREFIX}/lib/cc65 -not -type d | \
+	    ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+	${FIND} ${PREFIX}/lib/cc65 -not -type d | \
+	    ${XARGS} ${CHMOD} ${SHAREMODE}
 	${INSTALL_DATA} ${CC65LIBFILES:S,^,${WRKSRC}/libsrc/,} \
 	    ${PREFIX}/lib/cc65/lib
+	${INSTALL_DATA} ${CC65EMDFILES:S,^,${WRKSRC}/libsrc/,} \
+	    ${PREFIX}/lib/cc65/emd
+	${INSTALL_DATA} ${CC65TGIFILES:S,^,${WRKSRC}/libsrc/,} \
+	    ${PREFIX}/lib/cc65/tgi
 
 plist:
+	@${FIND} ${WRKSRC}/samples -not -type d | \
+	    ${SED} -E -e 's/^.*cc65.*\/samples/%%PORTDOCS%%share\/doc\/cc65\/samples/'
+	@${FIND} ${WRKSRC}/samples -type d | sort -r | \
+	    ${SED} -E -e 's/^.*cc65.*\/samples/%%PORTDOCS%%@dirrm share\/doc\/cc65\/samples/'
 .for file in ${DOCFILES}
 	@${ECHO_CMD} %%PORTDOCS%%share/doc/cc65/`${BASENAME} ${file}`
 .endfor
+	@${ECHO_CMD} %%PORTDOCS%%@dirrm share/doc/cc65
 .for file in ${BINFILES}
 	@${ECHO_CMD} bin/`${BASENAME} ${file}`
 .endfor
 .for file in ${BINSCRIPTS}
 	@${ECHO_CMD} bin/`${BASENAME} ${file}`
 .endfor
-.for file in ${CC65GEOSINCFILES}
-	@${ECHO_CMD} lib/cc65/include/geos/`${BASENAME} ${file}`
+.for file in ${ASMINCFILES}
+	@${ECHO_CMD} lib/cc65/asminc/`${BASENAME} ${file}`
 .endfor
-.for file in ${CC65INCFILES}
-	@${ECHO_CMD} lib/cc65/include/`${BASENAME} ${file}`
-.endfor
+	@${FIND} ${WRKSRC}/include -not -type d | \
+	    ${SED} -E -e 's/^.*cc65.*\/include/lib\/cc65\/include/'
+	@${FIND} ${WRKSRC}/include -type d | sort -r | \
+	    ${SED} -E -e 's/^.*cc65.*\/include/@dirrm lib\/cc65\/include/'
 .for file in ${CC65LIBFILES}
 	@${ECHO_CMD} lib/cc65/lib/`${BASENAME} ${file}`
 .endfor
-.for file in ${SAMPLES}
-	@${ECHO_CMD} %%PORTDOCS%%share/doc/cc65/samples/`${BASENAME} ${file}`
+.for file in ${CC65EMDFILES}
+	@${ECHO_CMD} lib/cc65/emd/`${BASENAME} ${file}`
 .endfor
-.for file in ${GEOSSAMPLES}
-	@${ECHO_CMD} \
-		%%PORTDOCS%%share/doc/cc65/samples/geos/`${BASENAME} ${file}`
+.for file in ${CC65TGIFILES}
+	@${ECHO_CMD} lib/cc65/tgi/`${BASENAME} ${file}`
 .endfor
+	@${ECHO_CMD} @dirrm lib/cc65/emd
 	@${ECHO_CMD} @dirrm lib/cc65/lib
-	@${ECHO_CMD} @dirrm lib/cc65/include/geos
-	@${ECHO_CMD} @dirrm lib/cc65/include
+	@${ECHO_CMD} @dirrm lib/cc65/tgi
+	@${ECHO_CMD} @dirrm lib/cc65/asminc
 	@${ECHO_CMD} @dirrm lib/cc65
-	@${ECHO_CMD} %%PORTDOCS%%@dirrm share/doc/cc65/samples/geos
-	@${ECHO_CMD} %%PORTDOCS%%@dirrm share/doc/cc65/samples
-	@${ECHO_CMD} %%PORTDOCS%%@dirrm share/doc/cc65
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
