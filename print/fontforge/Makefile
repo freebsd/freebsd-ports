@@ -8,27 +8,24 @@
 PORTNAME=	pfaedit
 PORTVERSION=	20${DIST_VER}
 CATEGORIES=	print
-MASTER_SITES=	http://pfaedit.sourceforge.net/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR =	libuninameslist
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR =	pfaedit
 DISTFILES=	${EXTRACT_ONLY}
 .if !defined(NOPORTDOCS)
 DISTFILES+=	${DOCFILE}
 .endif
-EXTRACT_ONLY=	${PORTNAME}_full-${DIST_VER}.tgz cidmaps.tgz \
-		libuninameslist_src-${LIBUNINAMESLIST_VER}.tgz
+EXTRACT_ONLY=	${PORTNAME}_full-${DIST_VER}.tgz cidmaps.tgz
 
 MAINTAINER=	kanou@khdd.net
 COMMENT=	Type 1/TrueType/OpenType/bitmap font editor
 
-LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
+LIB_DEPENDS=	uninameslist.0:${PORTSDIR}/textproc/libuninameslist \
+		tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		xml2:${PORTSDIR}/textproc/libxml2
-
-BROKEN=		Does not fetch, will be removed after Feb 2
 
 USE_GMAKE=	yes
 USE_XLIB=	yes
@@ -41,8 +38,7 @@ INSTALLS_SHLIB=	yes
 
 MAN1=		pfaedit.1 sfddiff.1
 
-DIST_VER=	031020
-LIBUNINAMESLIST_VER=	030713
+DIST_VER=	031029
 
 .if !defined (NOPORTDOCS)
 DOCFILE=	${PORTNAME}_htdocs-${DIST_VER}.tgz
@@ -59,18 +55,11 @@ post-extract:
 	${MV} ${WRKDIR}/*.cidmap ${WRKSRC}/cidmap
 .endif
 
-post-configure:
-	(cd ${WRKDIR}/libuninameslist ; ./configure ${CONFIGURE_ARGS} )
-
-post-build:
-	(cd ${WRKDIR}/libuninameslist ; ${GMAKE} )
-
 post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
 .if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKDIR}/html/* ${DOCSDIR}
-	(cd ${WRKDIR}/libuninameslist ; ${GMAKE} install )
 .endif
 
 .include <bsd.port.mk>
