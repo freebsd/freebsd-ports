@@ -1,0 +1,11 @@
+--- ../audioIO.h.orig	Tue Aug 18 12:45:04 1998
++++ ../audioIO.h	Tue Aug 18 12:45:53 1998
+@@ -12,7 +12,7 @@
+ #endif
+ 
+ #ifdef OS_BSD
+-  #define AUSIZ 32768
++extern int AUSIZ;
+ #endif
+ 
+ #if defined(OS_IRIX) || defined(OS_IRIX64)

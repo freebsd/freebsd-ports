@@ -1,0 +1,12 @@
+--- id3Data.cpp.orig	Tue Jan 25 01:37:13 2000
++++ id3Data.cpp	Tue Jan 25 01:37:40 2000
+@@ -17,6 +17,9 @@
+ #include <qframe.h>
+ #include <qlabel.h>
+ 
++#define QColor(i)	(QColor)(i)
++#define QRgb(i)		(QRgb)(i)
++
+ id3Data::id3Data
+ (
+ 	QWidget* parent,
