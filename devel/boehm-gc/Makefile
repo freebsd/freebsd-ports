@@ -22,10 +22,16 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --disable-threads --enable-cplusplus
 
 MAN3=		gc.3
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386" && ${ARCH} != "alpha"
+BROKEN=		"Does not compile on !i386 and !alpha"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/doc/gc.man
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/gc.man ${PREFIX}/man/man3/gc.3
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
