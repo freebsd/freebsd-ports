@@ -10,7 +10,7 @@ PORTVERSION=	1.00
 CATEGORIES=	archivers
 MASTER_SITES=	http://wildsau.idv.uni-linz.ac.at/mfx/lzo-download/
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	lzo.1:${PORTSDIR}/archivers/lzo
 

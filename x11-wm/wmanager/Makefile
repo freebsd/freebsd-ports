@@ -11,7 +11,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://heuss.techfak.uni-bielefeld.de/www/mtessmer/wmanager/
 EXTRACT_SUFX=	.src.tar.bz2
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk/
 

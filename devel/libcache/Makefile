@@ -10,7 +10,7 @@ PORTVERSION=	1.0.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.afro-productions.com/
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes

@@ -10,7 +10,7 @@ PORTVERSION= 	0.2
 CATEGORIES=	www kde
 MASTER_SITES=	http://neptune.spaceports.com/%7Eatnet/files/
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	kdeui.3:${PORTSDIR}/x11/kdelibs11/
 

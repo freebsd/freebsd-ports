@@ -10,7 +10,7 @@ PORTVERSION=	0.9.1
 CATEGORIES=	shells
 MASTER_SITES=	ftp://ftp.netsoc.ucd.ie/pub/computing/flash/
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 .include <bsd.port.pre.mk>
 

@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://qtez.zax.net/qtez-extras/
 DISTNAME=	QtEZ.current-src
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_QT=		yes

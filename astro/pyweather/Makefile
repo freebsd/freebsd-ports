@@ -11,7 +11,7 @@ CATEGORIES=	astro python
 MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/will/
 DISTNAME=	pyWeather
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	${PYTHON}:${PORTSDIR}/lang/python
 

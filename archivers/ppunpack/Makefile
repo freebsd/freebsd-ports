@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://de.aminet.net/pub/aminet/misc/unix/ \
 DISTNAME=	ppsmall-${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 RESTRICTED=	"No commercial redistribution"
 NO_CDROM=	${RESTRICTED}

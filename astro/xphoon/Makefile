@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.x.org/R5contrib/ \
 DISTNAME=	xphoon
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_IMAKE=	yes
 

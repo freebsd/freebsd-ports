@@ -10,7 +10,7 @@ PORTVERSION=	0.8.6
 CATEGORIES=	games
 MASTER_SITES=	http://hem.passagen.se/tonybj/kbubbles/
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	QwSpriteField.7:${PORTSDIR}/converters/kdesupport11 \

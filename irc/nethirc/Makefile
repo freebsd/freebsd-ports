@@ -11,7 +11,7 @@ CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.nog.net/pub/tony/nethirc/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/5.005/Net/IRC.pm:${PORTSDIR}/irc/p5-IRC
 

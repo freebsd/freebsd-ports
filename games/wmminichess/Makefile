@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.electricrain.com/edavis/miniCHESS/
 DISTNAME=	miniCHESS-${PORTVERSION}
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 RUN_DEPENDS=	${LOCALBASE}/bin/gnuchessx:${PORTSDIR}/games/gnuchess

@@ -10,7 +10,7 @@ PORTVERSION= 	0.0.2
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://glacier.linuxave.net/
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs
 

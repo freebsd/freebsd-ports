@@ -10,7 +10,7 @@ PORTVERSION= 	0.4.2
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.fhttpd.org/
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LOGFILE=	share/fhttpd/fhttpd.log
 PLIST_SUB+=	LOGFILE=${LOGFILE}

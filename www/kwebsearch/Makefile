@@ -10,7 +10,7 @@ PORTVERSION= 	1.2
 CATEGORIES=	www kde
 MASTER_SITES=	http://www.bawue.de/~rgoetz/
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11
 BUILD_DEPENDS=	${LOCALBASE}/bin/gettext:${PORTSDIR}/devel/gettext

@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://de.aminet.net/pub/aminet/misc/unix/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION}.c
 EXTRACT_SUFX=	.Z
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 

@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.cfdrc.com/pub/FOX/ \
 		ftp://imssun1.epfl.ch/pub/sources/ \
 		ftp://SunSITE.Informatik.RWTH-Aachen.DE/pub/Linux/fox/
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.3:${PORTSDIR}/graphics/png \

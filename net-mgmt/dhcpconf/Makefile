@@ -12,7 +12,7 @@ MASTER_SITES=	http://members.xoom.com/vschade/dhcp-conf/
 DISTNAME=	dhcp-conf
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm \
 		newt.0:${PORTSDIR}/devel/newt

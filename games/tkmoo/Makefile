@@ -11,7 +11,7 @@ CATEGORIES=	games tk82
 MASTER_SITES=	http://www.awns.com/tkMOO-light/Source/
 DISTNAME=	tkMOO-light-${PORTVERSION}
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	${WISH82}:${PORTSDIR}/x11-toolkits/tk82
 

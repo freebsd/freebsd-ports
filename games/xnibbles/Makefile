@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.tjhsst.edu/xnibbles/
 DISTNAME=	xnibbles-1.0BETA3
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 

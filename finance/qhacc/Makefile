@@ -10,7 +10,7 @@ PORTVERSION=	0.5
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.ostrich-emulators.cx/qhacc/
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_QT2=	yes
 USE_X_PREFIX=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	http://tzo.linux.tucows.com/files/x11/dev/ \
 		ftp://ftp.infomagic.com/pub/mirrors/tucows/mlinux/files/x11/dev/ \
 		http://dark.x.dtu.dk/~mbn/clanlib/download/
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
