@@ -4,12 +4,12 @@
 # Whom:					Matthew Hunt <mph@FreeBSD.org>
 # Based on ports by:			Stefan Eggers <seggers@semyam.dinoco.de>
 #
-# $Id: Makefile,v 1.1.1.1 1998/06/04 02:37:37 mph Exp $
+# $Id: Makefile,v 1.1.1.1 1998/12/29 18:49:29 mph Exp $
 #
 
 DISTNAME=	crafty-open-rock-19980707
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/common/
+MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/common/rock/
 DISTFILES=	rock.01 rock.02 rock.03 rock.04 rock.05 rock.06 rock.07 \
 		rock.08 rock.09 rock.10
 
