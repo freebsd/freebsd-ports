@@ -121,6 +121,11 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  during any step in a package build.  User can then decide
 #				  to skip this port by setting ${BATCH}, or compiling only
 #				  the interactive ports by setting ${INTERACTIVE}.
+# USE_SUBMAKE	- Set this if you want that each of the port's main 6 targets
+#				  (extract, patch, configure, build, install and package) to be
+#				  executed in a separate make(1) process. Useful when one of
+#				  the stages needs to influence make(1) variables of the later
+#				  stages using ${WRKDIR}/Makefile.inc generated on the fly.
 #
 # Set these if your port only makes sense to certain archetictures.
 # They are lists containing names for them (e.g., "alpha i386").
@@ -1034,8 +1039,7 @@ CONFIGURE_ARGS+=--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 .include "${PORTSDIR}/../Makefile.inc"
 .endif
 
-# Don't change these!!!  These names are built into the _TARGET_USE macro,
-# there is no way to refer to them cleanly from within the macro AFAIK.
+# Names of cookies used to skip already completed stages
 EXTRACT_COOKIE?=	${WRKDIR}/.extract_done.${PKGNAME}
 CONFIGURE_COOKIE?=	${WRKDIR}/.configure_done.${PKGNAME}
 INSTALL_COOKIE?=	${WRKDIR}/.install_done.${PKGNAME}
@@ -2015,6 +2019,24 @@ describe:
 # adding pre-* or post-* targets/scripts, override these.
 ################################################################
 
+# Pre-everything
+
+.if !target(pre-everything)
+pre-everything:
+.if defined(TRYBROKEN)
+	@${ECHO_MSG} "Trying build of ${PKGNAME} even though it is marked BROKEN."
+.else
+	@${DO_NADA}
+.endif
+.if defined(GNOME_OPTION_MSG) && (!defined(PACKAGE_BUILDING) || !defined(BATCH))
+	@for m in ${GNOME_OPTION_MSG}; do \
+		${ECHO_MSG} $$m; \
+	done
+.else
+	@${DO_NADA}
+.endif
+.endif
+
 # Fetch
 
 .if !target(do-fetch)
@@ -2278,7 +2300,6 @@ do-install:
 
 .if !target(do-package)
 do-package: ${TMPPLIST}
-	@${ECHO_MSG} "===>  Building package for ${PKGNAME}"
 	@if [ -d ${PACKAGES} ]; then \
 		if [ ! -d ${PKGREPOSITORY} ]; then \
 			if ! ${MKDIR} ${PKGREPOSITORY}; then \
@@ -2301,8 +2322,7 @@ do-package: ${TMPPLIST}
 # Some support rules for do-package
 
 .if !target(package-links)
-package-links:
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} delete-package-links
+package-links: delete-package-links
 	@for cat in ${CATEGORIES}; do \
 		if [ ! -d ${PACKAGES}/$$cat ]; then \
 			if ! ${MKDIR} ${PACKAGES}/$$cat; then \
@@ -2334,8 +2354,7 @@ delete-package-links:
 .endif
 
 .if !target(delete-package)
-delete-package:
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} delete-package-links
+delete-package: delete-package-links
 	@${RM} -f ${PKGFILE}
 .endif
 
@@ -2350,29 +2369,14 @@ delete-package-links-list:
 .endif
 
 .if !target(delete-package-list)
-delete-package-list:
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} delete-package-links-list
+delete-package-list: delete-package-links-list
 	@${ECHO} "[ -f ${PKGFILE} ] && (${ECHO} deleting ${PKGFILE}; ${RM} -f ${PKGFILE})"
 .endif
 
-################################################################
-# This is the "generic" port target, actually a macro used from the
-# six main targets.  See below for more.
-################################################################
+# Utility targets follow
 
-_PORT_USE: .USE
-.if make(real-fetch)
-.if defined(TRYBROKEN)
-	@${ECHO_MSG} "Trying build of ${PKGNAME} even though it is marked BROKEN."
-.endif
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} fetch-depends
-.endif
-.if make(real-extract)
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} checksum REAL_EXTRACT=yes
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} build-depends lib-depends misc-depends
-.endif
-.if make(real-install)
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} check-categories
+.if !target(check-already-installed)
+check-already-installed:
 .if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)
 	@if [ -d ${PKG_DBDIR}/${PKGNAME} ]; then \
 		${ECHO} "===>  ${PKGNAME} is already installed - perhaps an older version?"; \
@@ -2383,15 +2387,22 @@ _PORT_USE: .USE
 		${ECHO} "      in your environment or the \"make install\" command line."; \
 		exit 1; \
 	fi
+.else
+	@${DO_NADA}
 .endif
+.endif
+
+.if !target(check-umask)
+check-umask:
 	@if [ `${SH} -c umask` != 0022 ]; then \
 		${ECHO_MSG} "===>  Warning: your umask is \"`${SH} -c umask`"\".; \
 		${ECHO_MSG} "      If this is not desired, set it to an appropriate value"; \
 		${ECHO_MSG} "      and install this port again by \`\`make reinstall''."; \
 	fi
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} run-depends lib-depends
 .endif
-.if make(real-install)
+
+.if !target(install-mtree)
+install-mtree:
 	@${MKDIR} ${PREFIX}
 	@if [ `id -u` != 0 ]; then \
 		if [ -w ${PREFIX}/ ]; then \
@@ -2416,98 +2427,19 @@ _PORT_USE: .USE
 	fi
 .endif
 .endif
-.if make(real-configure) && defined(USE_LIBTOOL)
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} patch-libtool
-.endif
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} ${.TARGET:S/^real-/pre-/}
-	@if [ -f ${SCRIPTDIR}/${.TARGET:S/^real-/pre-/} ]; then \
-		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
-			${SCRIPTDIR}/${.TARGET:S/^real-/pre-/}; \
-	fi
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} ${.TARGET:S/^real-/do-/}
-# put here so ports can change the contents of ${TMPPLIST} if necessary
-.if make(real-install)
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} generate-plist
-.endif
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} ${.TARGET:S/^real-/post-/}
-	@if [ -f ${SCRIPTDIR}/${.TARGET:S/^real-/post-/} ]; then \
-		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
-			${SCRIPTDIR}/${.TARGET:S/^real-/post-/}; \
-	fi
-.if make(real-install) && (defined(_MANPAGES) || defined(_MLINKS))
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} compress-man
-.endif
-.if make(real-install) && defined(INSTALLS_SHLIB)
+
+.if !target(run-ldconfig)
+run-ldconfig:
+.if defined(INSTALLS_SHLIB)
 	@${ECHO_MSG} "===>   Running ldconfig"
 	${LDCONFIG} -m ${LDCONFIG_RUNLIST}
-.endif
-.if make(real-install) && !defined(NO_PKG_REGISTER)
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} fake-pkg
-.endif
-.if !make(real-fetch) \
-	&& (!make(real-patch) || !defined(PATCH_CHECK_ONLY)) \
-	&& (!make(real-package) || !defined(PACKAGE_NOINSTALL))
-	@${TOUCH} ${TOUCH_FLAGS} ${WRKDIR}/.${.TARGET:S/^real-//}_done.${PKGNAME}
-.endif
-
-################################################################
-# Skeleton targets start here
-# 
-# You shouldn't have to change these.  Either add the pre-* or
-# post-* targets/scripts or redefine the do-* targets.  These
-# targets don't do anything other than checking for cookies and
-# call the necessary targets/scripts.
-################################################################
-
-.if !target(pre-everything)
-pre-everything:
+.else
 	@${DO_NADA}
 .endif
-
-.if !target(fetch)
-fetch:	pre-everything
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} real-fetch
 .endif
 
-.if !target(extract)
-extract: ${EXTRACT_COOKIE}
-.endif
-
-.if !target(patch)
-patch: ${PATCH_COOKIE}
-.endif
-
-.if !target(configure)
-configure: ${CONFIGURE_COOKIE}
-.endif
-
-.if !target(build)
-build: ${BUILD_COOKIE}
-.endif
-
-.if !target(install)
-install: ${INSTALL_COOKIE}
-.endif
-
-.if !target(package)
-package: ${PACKAGE_COOKIE}
-.endif
-
-${EXTRACT_COOKIE}:
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} fetch
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} real-extract
-${PATCH_COOKIE}:
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} extract
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} real-patch
-${CONFIGURE_COOKIE}:
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} patch
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} real-configure
-${BUILD_COOKIE}:
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} configure
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} real-build
-${INSTALL_COOKIE}:
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} build
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} real-install
+.if !target(security-check)
+security-check:
 # Scan PLIST for setugid files and startup scripts
 	-@for i in `${GREP} -v '^@' ${TMPPLIST}`; do \
 		${FIND} ${PREFIX}/$$i -prune -type f \( -perm -4000 -o -perm -2000 \) \( -perm -0010 -o -perm -0001 \) -ls 2>/dev/null; \
@@ -2538,51 +2470,111 @@ ${INSTALL_COOKIE}:
 			${MAKE} www-site; \
 		fi; \
 	fi
-
-${PACKAGE_COOKIE}:
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} install
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} real-package
-
-# And call the macros
-
-real-fetch: _PORT_USE
-real-extract: _PORT_USE
-	@${ECHO_MSG} "===>  Extracting for ${PKGNAME}"
-real-patch: _PORT_USE
-	@${ECHO_MSG} "===>  Patching for ${PKGNAME}"
-real-configure: _PORT_USE
-	@${ECHO_MSG} "===>  Configuring for ${PKGNAME}"
-real-build: _PORT_USE
-	@${ECHO_MSG} "===>  Building for ${PKGNAME}"
-real-install: _PORT_USE
-	@${ECHO_MSG} "===>  Installing for ${PKGNAME}"
-real-package: _PORT_USE
-
-# Empty pre-* and post-* targets, note we can't use .if !target()
-# in the _PORT_USE macro
-
-.for name in fetch extract patch configure build install package
-
-.if !target(pre-${name})
-pre-${name}:
-	@${DO_NADA}
 .endif
 
-.if !target(post-${name})
-post-${name}:
-	@${DO_NADA}
+################################################################
+# Skeleton targets start here
+# 
+# You shouldn't have to change these.  Either add the pre-* or
+# post-* targets/scripts or redefine the do-* targets.  These
+# targets don't do anything other than checking for cookies and
+# call the necessary targets/scripts.
+################################################################
+
+# Please note that the order of the following targets is important, and
+# should not be modified.
+
+_FETCH_SEQ=		pre-everything fetch-depends pre-fetch pre-fetch-script \
+				do-fetch post-fetch post-fetch-script
+_EXTRACT_SEQ=	fetch extract-message checksum build-depends lib-depends \
+				misc-depends pre-extract pre-extract-script do-extract \
+				post-extract post-extract-script
+_PATCH_SEQ=		extract patch-message pre-patch pre-patch-script do-patch \
+				post-patch post-patch-script
+_CONFIGURE_SEQ=	patch configure-message patch-libtool pre-configure \
+				pre-configure-script do-configure post-configure \
+				post-configure-script
+_BUILD_SEQ=		configure build-message pre-build pre-build-script do-build \
+				post-build post-build-script
+_INSTALL_SEQ=	build install-message check-categories check-already-installed \
+				check-umask run-depends lib-depends install-mtree pre-install \
+				pre-install-script do-install generate-plist post-install \
+				post-install-script compress-man run-ldconfig fake-pkg \
+				security-check
+_PACKAGE_SEQ=	install package-message pre-package pre-package-script \
+				do-package post-package-script
+
+.if !target(fetch)
+fetch: ${_FETCH_SEQ}
+.endif
+
+# Main logick. The loop generates 6 main targets and using cookies
+# ensures that those already completed are skipped.
+
+.for target in extract patch configure build install package
+
+.if !target(${target})
+.if !defined(USE_SUBMAKE)
+${target}: ${${target:U}_COOKIE}
+.else
+${target}:
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} ${${target:U}_COOKIE}
+.endif
+.endif
+
+.if !exists(${${target:U}_COOKIE})
+${${target:U}_COOKIE}: ${_${target:U}_SEQ}
+	@${TOUCH} ${TOUCH_FLAGS} ${.TARGET}
+.else
+${${target:U}_COOKIE}:
+	${DO_NADA}
 .endif
 
 .endfor
 
-.if defined(GNOME_OPTION_MSG) && (!defined(PACKAGE_BUILDING) || !defined(BATCH))
-pre-everything:: echo-gnome-option-msg
+# Enforce order for -jN builds
 
-echo-gnome-option-msg:
-	@for m in ${GNOME_OPTION_MSG}; do \
-		${ECHO_MSG} $$m; \
-	done
+.ORDER: ${_FETCH_SEQ}
+.ORDER: ${_EXTRACT_SEQ}
+.ORDER: ${_PATCH_SEQ}
+.ORDER: ${_CONFIGURE_SEQ}
+.ORDER: ${_BUILD_SEQ}
+.ORDER: ${_INSTALL_SEQ}
+.ORDER: ${_PACKAGE_SEQ}
+
+extract-message:
+	@${ECHO_MSG} "===>  Extracting for ${PKGNAME}"
+patch-message:
+	@${ECHO_MSG} "===>  Patching for ${PKGNAME}"
+configure-message:
+	@${ECHO_MSG} "===>  Configuring for ${PKGNAME}"
+build-message:
+	@${ECHO_MSG} "===>  Building for ${PKGNAME}"
+install-message:
+	@${ECHO_MSG} "===>  Installing for ${PKGNAME}"
+package-message:
+	@${ECHO_MSG} "===>  Building package for ${PKGNAME}"
+
+# Empty pre-* and post-* targets
+
+.for stage in pre post
+.for name in fetch extract patch configure build install package
+
+.if !target(${stage}-${name})
+${stage}-${name}:
+	@${DO_NADA}
 .endif
+
+.if !target(${stage}-${name}-script)
+${stage}-${name}-script:
+	@if [ -f ${SCRIPTDIR}/${.TARGET:S/-script$//} ]; then \
+		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
+			${SCRIPTDIR}/${.TARGET:S/-script$//}; \
+	fi
+.endif
+
+.endfor
+.endfor
 
 # Patch-libtool
 #
@@ -2608,6 +2600,7 @@ echo-gnome-option-msg:
 
 .if !target(patch-libtool)
 patch-libtool:
+.if defined(USE_LIBTOOL)
 	@(if ${LIBTOOL} --version | grep -vq "1\.3\.4-freebsd-ports"; then \
 		(${ECHO} "Your libtool installation is out of date. Please remove"; \
 		 ${ECHO} "and reinstall ${PORTSDIR}/devel/libtool."; \
@@ -2621,7 +2614,14 @@ patch-libtool:
 			-e "s^\$$ac_aux_dir/ltmain.sh^${LIBTOOLFLAGS} $${LIBTOOLDIR}/ltmain.sh^g" \
 			$$file.tmp > $$file; \
 	 done);
+.else
+	@${DO_NADA}
 .endif
+.endif
+
+################################################################
+# Some more targets supplied for users' convenience
+################################################################
 
 # Checkpatch
 #
@@ -2629,7 +2629,7 @@ patch-libtool:
 
 .if !target(checkpatch)
 checkpatch:
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} PATCH_CHECK_ONLY=yes patch
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} PATCH_CHECK_ONLY=yes ${_PATCH_SEQ}
 .endif
 
 # Reinstall
@@ -2656,10 +2656,6 @@ deinstall:
 	 fi
 	@${RM} -f ${INSTALL_COOKIE} ${PACKAGE_COOKIE}
 .endif
-
-################################################################
-# Some more targets supplied for users' convenience
-################################################################
 
 # Cleaning up
 
@@ -2824,10 +2820,7 @@ makesum:
 
 
 .if !target(checksum)
-checksum:
-.if !defined(REAL_EXTRACT)
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} fetch
-.endif
+checksum: fetch
 	@if [ ! -f ${MD5_FILE} ]; then \
 		${ECHO_MSG} ">> No MD5 checksum file."; \
 	else \
@@ -2896,7 +2889,8 @@ pre-repackage:
 .if !target(package-noinstall)
 package-noinstall:
 	@${MKDIR} ${WRKDIR}
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} PACKAGE_NOINSTALL=yes real-package
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} pre-package \
+		pre-package-script do-package post-package-script
 	@${RM} -f ${TMPPLIST}
 	-@${RMDIR} ${WRKDIR}
 .endif
@@ -2906,22 +2900,7 @@ package-noinstall:
 ################################################################
 
 .if !target(depends)
-depends: lib-depends misc-depends
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} fetch-depends
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} build-depends
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} run-depends
-
-.if make(fetch-depends)
-DEPENDS_TMP+=	${FETCH_DEPENDS}
-.endif
-
-.if make(build-depends)
-DEPENDS_TMP+=	${BUILD_DEPENDS}
-.endif
-
-.if make(run-depends)
-DEPENDS_TMP+=	${RUN_DEPENDS}
-.endif
+depends: lib-depends misc-depends fetch-depends build-depends run-depends
 
 .if defined(ALWAYS_BUILD_DEPENDS)
 _DEPEND_ALWAYS=	1
@@ -2929,10 +2908,11 @@ _DEPEND_ALWAYS=	1
 _DEPEND_ALWAYS=	0
 .endif
 
-_DEPENDS_USE:	.USE
-.if defined(DEPENDS_TMP)
+.for deptype in FETCH BUILD RUN
+${deptype:L}-depends:
+.if defined(${deptype}_DEPENDS)
 .if !defined(NO_DEPENDS)
-	@for i in ${DEPENDS_TMP}; do \
+	@for i in ${${deptype}_DEPENDS}; do \
 		prog=`${ECHO} $$i | ${SED} -e 's/:.*//'`; \
 		dir=`${ECHO} $$i | ${SED} -e 's/[^:]*://'`; \
 		if ${EXPR} "$$dir" : '.*:' > /dev/null; then \
@@ -2983,10 +2963,7 @@ _DEPENDS_USE:	.USE
 .else
 	@${DO_NADA}
 .endif
-
-fetch-depends:	_DEPENDS_USE
-build-depends:	_DEPENDS_USE
-run-depends:	_DEPENDS_USE
+.endfor
 
 lib-depends:
 .if defined(LIB_DEPENDS)
@@ -3144,32 +3121,39 @@ RUN-DEPENDS-LIST= \
 		fi; \
 	done | sort -u
 
-# Package (recursive runtime) dependency list.  Print out directory names.
+# Package (recursive runtime) dependency list.  Print out both directory names
+# and package names.
 
 package-depends-list:
 	@${PACKAGE-DEPENDS-LIST}
 
 PACKAGE-DEPENDS-LIST= \
+	if [ "${CHILD_DEPENDS}" ]; then \
+		${ECHO} "${PKGNAME}	${.CURDIR}"; \
+	fi; \
 	checked="${PARENT_CHECKED}"; \
 	for dir in $$(${ECHO} "${LIB_DEPENDS} ${RUN_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//') $$(${ECHO} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//'); do \
 		if [ -d $$dir ]; then \
 			if (${ECHO} $$checked | ${GREP} -qwv "$$dir"); then \
-				child=$$(cd $$dir; ${MAKE} PARENT_CHECKED="$$checked" package-depends-list); \
-				for d in $$child; do ${ECHO} $$d; done; \
-				${ECHO} $$dir; \
-				checked="$$dir $$child $$checked"; \
+				childout=$$(cd $$dir; ${MAKE} CHILD_DEPENDS=yes PARENT_CHECKED="$$checked" package-depends-list); \
+				set -- $$childout; \
+				while [ $$\# != 0 ]; do \
+					childname="$$childname $$1"; \
+					childdir="$$childdir $$2"; \
+					${ECHO} "$$1	$$2"; \
+					shift 2; \
+				done; \
+				checked="$$dir $$childdir $$checked"; \
 			fi; \
 		else \
 			${ECHO_MSG} "${PKGNAME}: \"$$dir\" non-existent -- dependency list incomplete" >&2; \
 		fi; \
-	done | sort -u
+	done
 
 # Print out package names.
 
 package-depends:
-	@for dir in $$(${PACKAGE-DEPENDS-LIST}); do \
-		(cd $$dir; ${MAKE} package-name); \
-	done
+	@${PACKAGE-DEPENDS-LIST} | ${AWK} '{print $$1}'
 
 ################################################################
 # Everything after here are internal targets and really
@@ -3345,6 +3329,7 @@ ${TMPPLIST}:
 # Compress (or uncompress) and symlink manpages.
 .if !target(compress-man)
 compress-man:
+.if defined(_MANPAGES) || defined(_MLINKS)
 .if ${MANCOMPRESSED} == yes && defined(NOMANCOMPRESS)
 	@${ECHO_MSG} "===>   Uncompressing manual pages for ${PKGNAME}"
 	@_manpages='${_MANPAGES:S/'/'\''/g}' && [ "$${_manpages}" != "" ] && ( eval ${GUNZIP_CMD} $${_manpages} ) || ${TRUE}
@@ -3365,6 +3350,9 @@ compress-man:
 		shift; shift; \
 	done
 .endif
+.else
+	@${DO_NADA}
+.endif
 .endif
 
 # Fake installation of package so that user can pkg_delete it later.
@@ -3373,6 +3361,7 @@ compress-man:
 
 .if !target(fake-pkg)
 fake-pkg:
+.if !defined(NO_PKG_REGISTER)
 	@if [ ! -d ${PKG_DBDIR} ]; then ${RM} -f ${PKG_DBDIR}; ${MKDIR} ${PKG_DBDIR}; fi
 	@${RM} -f /tmp/${PKGNAME}-required-by
 .if defined(FORCE_PKG_REGISTER)
@@ -3412,6 +3401,9 @@ fake-pkg:
 		${CAT} /tmp/${PKGNAME}-required-by >> ${PKG_DBDIR}/${PKGNAME}/+REQUIRED_BY; \
 		${RM} -f /tmp/${PKGNAME}-required-by; \
 	fi
+.else
+	@${DO_NADA}
+.endif
 .endif
 
 # Depend is generally meaningless for arbitrary ports, but if someone wants
