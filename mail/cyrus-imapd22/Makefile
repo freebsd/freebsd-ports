@@ -17,6 +17,8 @@ DISTNAME=	${PORTNAME}-2.2.1-BETA
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	The cyrus mail server, supporting POP3 and IMAP4 protocols
 
+CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^2].*
+
 LIB_DEPENDS=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 

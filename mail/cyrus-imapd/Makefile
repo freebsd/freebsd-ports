@@ -19,6 +19,8 @@ PATCHFILES=	${DISTNAME}-ipv6-20021205.diff.gz
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	The cyrus mail server, supporting POP3 and IMAP4 protocols
 
+CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^0].*
+
 LIB_DEPENDS=	sasl.8:${PORTSDIR}/security/cyrus-sasl \
 		db3.3:${PORTSDIR}/databases/db3
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend \
