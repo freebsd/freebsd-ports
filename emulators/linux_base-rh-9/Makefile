@@ -22,7 +22,7 @@ BUILD_DEPENDS=		rpm:${PORTSDIR}/misc/rpm
 
 ONLY_FOR_ARCHS=		alpha i386
 DIST_SUBDIR=		rpm
-PREFIX=			/usr/compat/linux
+PREFIX=			/compat/linux
 EXTRACT_ONLY=
 NO_BUILD=		yes
 NO_FILTER_SHLIBS=	yes
