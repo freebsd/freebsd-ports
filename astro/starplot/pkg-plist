@@ -1,18 +1,22 @@
-bin/starplot
 bin/starconvert
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/examples/example.spec
-%%PORTDOCS%%%%DOCSDIR%%/html/ch1.html
-%%PORTDOCS%%%%DOCSDIR%%/html/images/bayerdes.png
-%%PORTDOCS%%%%DOCSDIR%%/html/images/coords.png
-%%PORTDOCS%%%%DOCSDIR%%/html/images/gcoords.png
-%%PORTDOCS%%%%DOCSDIR%%/html/images/hrdiagram.png
-%%PORTDOCS%%%%DOCSDIR%%/html/index.html
-share/starplot/examples/sample.stars
-share/starplot/examples/test.stars
-@dirrm share/starplot/examples
-@dirrm share/starplot/
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/
+bin/starpkg
+bin/starplot
+%%DOCSDIR%%/html/ch1.html
+%%DOCSDIR%%/html/images/bayerdes.png
+%%DOCSDIR%%/html/images/coords.png
+%%DOCSDIR%%/html/images/gcoords.png
+%%DOCSDIR%%/html/images/hrdiagram.png
+%%DOCSDIR%%/html/index.html
+%%DOCSDIR%%/html/starplot.css
+%%EXAMPLESDIR%%/example.spec
+%%NLS%%share/locale/en@boldquot/LC_MESSAGES/starplot.mo
+%%NLS%%share/locale/en@quot/LC_MESSAGES/starplot.mo
+%%NLS%%share/locale/es_ES/LC_MESSAGES/starplot.mo
+%%NLS%%share/locale/es_ES@euro/LC_MESSAGES/starplot.mo
+share/starplot/sample.stars
+share/starplot/test.stars
+@dirrm share/starplot
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%DOCSDIR%%/html/images
+@dirrm %%DOCSDIR%%/html
+@dirrm %%DOCSDIR%%

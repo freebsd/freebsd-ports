@@ -1,0 +1,17 @@
+--- configure.orig	Mon Aug 30 09:02:54 2004
++++ configure	Thu Dec 23 16:04:03 2004
+@@ -9827,11 +9827,11 @@
+ 
+ 
+ 
+-docdir='${prefix}/doc'
++docdir='$(DOCSDIR)'
+ 
+-pkgdocdir='$(docdir)/'${PACKAGE_NAME}
++pkgdocdir='$(DOCSDIR)'
+ 
+-exampledir='$(pkgdocdir)/examples'
++exampledir='$(EXAMPLESDIR)'
+ 
+ htmldir='$(pkgdocdir)/html'
+ 
