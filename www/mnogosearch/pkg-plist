@@ -30,6 +30,7 @@ include/udm_robots.h
 include/udm_search_tl.h
 include/udm_searchtool.h
 include/udm_server.h
+include/udm_services.h
 include/udm_signals.h
 include/udm_socket.h
 include/udm_spell.h
@@ -49,6 +50,7 @@ sbin/run-splitter
 sbin/splitter
 bin/udm-config
 share/doc/mnogosearch/HTDB.txt
+share/doc/mnogosearch/HTML-design.txt
 share/doc/mnogosearch/HTTP-codes.txt
 share/doc/mnogosearch/INSTALL
 share/doc/mnogosearch/NEWS.html
@@ -81,6 +83,8 @@ share/mnogosearch/create/ibase/create.sql
 share/mnogosearch/create/msql/crc-multi.txt
 share/mnogosearch/create/msql/crc.txt
 share/mnogosearch/create/msql/create.txt
+share/mnogosearch/create/msql/cross-crc.txt
+share/mnogosearch/create/msql/cross.txt
 share/mnogosearch/create/msql/ispell.txt
 share/mnogosearch/create/msql/multi.txt
 share/mnogosearch/create/msql/track.txt
@@ -89,6 +93,8 @@ share/mnogosearch/create/mysql/categories.txt
 share/mnogosearch/create/mysql/crc-multi.txt
 share/mnogosearch/create/mysql/crc.txt
 share/mnogosearch/create/mysql/create.txt
+share/mnogosearch/create/mysql/cross-crc.txt
+share/mnogosearch/create/mysql/cross.txt
 share/mnogosearch/create/mysql/ispell.txt
 share/mnogosearch/create/mysql/multi.txt
 share/mnogosearch/create/mysql/servers.txt
@@ -105,6 +111,8 @@ share/mnogosearch/create/pgsql/categories.txt
 share/mnogosearch/create/pgsql/crc-multi.txt
 share/mnogosearch/create/pgsql/crc.txt
 share/mnogosearch/create/pgsql/create.txt
+share/mnogosearch/create/pgsql/cross-crc.txt
+share/mnogosearch/create/pgsql/cross.txt
 share/mnogosearch/create/pgsql/grant.txt
 share/mnogosearch/create/pgsql/ispell.txt
 share/mnogosearch/create/pgsql/multi.txt
