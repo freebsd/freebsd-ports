@@ -1,0 +1,32 @@
+--- afterstep/configure.c.old	Mon Oct 19 22:00:57 1998
++++ afterstep/configure.c	Mon Oct 19 22:06:26 1998
+@@ -409,7 +409,7 @@
+  ****************************************************************************/
+ void MakeMenus(const char *display_name, char *m4_options)
+ {
+-  char *system_file = STEPRC;
++  char *system_file;
+   char *home_file;
+   char line[256],*tline;
+   char *Home;			/* the HOME environment variable */
+@@ -504,8 +504,20 @@
+     }
+   afterstep_file = home_file;
+   config_fd = fopen(home_file,"r");
++#ifdef I18N
++  if (config_fd == (FILE *)NULL && Lang != NULL) {
++      system_file = safemalloc(strlen(STEPRC) + strlen(Lang) + 2);
++      sprintf(system_file, "%s.%s", STEPRC, Lang);
++      afterstep_file = system_file;
++      config_fd = fopen(system_file,"r");
++  }
++#endif
+   if(config_fd == (FILE *)NULL)
+     {
++#ifdef I18N
++      free(system_file);
++#endif
++      system_file = STEPRC;
+       afterstep_file = system_file;
+       config_fd = fopen(system_file,"r");
+     }

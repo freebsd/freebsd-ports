@@ -1,0 +1,17 @@
+--- sample.steprc.ja_JP.EUC.old	Mon Oct 19 21:35:25 1998
++++ sample.steprc.ja_JP.EUC	Mon Oct 19 21:36:49 1998
+@@ -70,11 +70,11 @@
+ IconTitle
+ 
+ # Menu Font
+-Font                    -adobe-helvetica-medium-r-*-*-12-*-*-*-*-*-*-*
++Font                    -*-fixed-medium-r-*-*-14-*-*-*-*-*-jisx0208.1983,-adobe-helvetica-medium-r-*-*-14-*-*-*-*-*-iso8859-*
+ # Window TitleBar Font
+-WindowFont              -adobe-helvetica-bold-r-*-*-12-*-*-*-*-*-*-*
++WindowFont              -*-fixed-medium-r-*-*-14-*-*-*-*-*-jisx0208.1983,-adobe-helvetica-medium-r-*-*-14-*-*-*-*-*-iso8859-*
+ # Icon Font
+-IconFont                -adobe-helvetica-medium-r-*-*-8-*-*-*-*-*-*-*
++IconFont                -*-fixed-medium-r-*-*-14-*-*-*-*-*-jisx0208.1983,-adobe-helvetica-medium-r-*-*-14-*-*-*-*-*-iso8859-*
+ # Area where icons should show up (RightX, RightY, LeftX, LeftY)
+ IconBox 0 -64 -1 -1
+ 

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+files="sample.steprc sample.steprc.ja_JP.EUC configure.h afterstep/afterstep.man"
+for i in $files; do
+	/usr/bin/perl -pi -e 's|%%PREFIX%%|$ENV{'PREFIX'}|g' $WRKSRC/$i
+done
