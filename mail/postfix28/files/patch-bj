@@ -1,0 +1,11 @@
+--- makedefs.orig	Sat Jan 22 14:04:27 2000
++++ makedefs	Sat Mar 25 09:04:50 2000
+@@ -89,6 +89,8 @@
+ 		;;
+   FreeBSD.4*)	SYSTYPE=FREEBSD4
+ 		;;
++  FreeBSD.5*)	SYSTYPE=FREEBSD5
++		;;
+   OpenBSD.2*)	SYSTYPE=OPENBSD2
+ 		;;
+    NetBSD.1*)	SYSTYPE=NETBSD1
