@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	9menu
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	x11-wm plan9
 MASTER_SITES=	ftp://freefriends.org/arnold/Source/ \
 		${MASTER_SITE_NETBSD}
@@ -14,7 +14,6 @@ EXTRACT_SUFX=	.shar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple menu patterened after plan9
-BROKEN=		"Checksum mismatch"
 
 PLIST_FILES=		bin/9menu
 USE_XLIB=		yes
@@ -23,6 +22,8 @@ EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	|sh
 MAKEFILE=		Makefile.noimake
 ALL_TARGET=		9menu
+
+NO_WRKSUBDIR=	yes
 
 MAN1=		9menu.1
 MANCOMPRESSED=	yes
