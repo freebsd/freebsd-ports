@@ -1,0 +1,13 @@
+--- Makefile.in.orig	Thu Nov  4 02:08:36 2004
++++ Makefile.in	Fri Nov  5 09:05:02 2004
+@@ -75,7 +75,9 @@
+ install: all installdirs
+ 	cd ext; make DESTDIR=$(DESTDIR) rss-install; cd ..
+ 	$(INSTALL) -m0755 $(SKKSERV) $(DESTDIR)$(sbindir)/$(SKKSERV)
+-	$(INSTALL) -m0644 $(CONFFILE) $(DESTDIR)$(sysconfdir)/$(CONFFILE)
++	if [ ! -f $(DESTDIR)$(sysconfdir)/$(CONFFILE) ]; then \
++	    $(INSTALL) -m0644 $(CONFFILE) $(DESTDIR)$(sysconfdir)/; \
++	fi
+ 
+ installdirs:
+ 	mkdir -p $(DESTDIR)$(sbindir)
