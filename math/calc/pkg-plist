@@ -30,7 +30,9 @@ lib/calc/help/bugs
 lib/calc/help/full
 lib/calc/help/obj
 lib/calc/README
+lib/calc/altbind
 lib/calc/bigprime.cal
+lib/calc/bindings
 lib/calc/chrem.cal
 lib/calc/cryrand.cal
 lib/calc/deg.cal
@@ -68,3 +70,5 @@ lib/calc/longbits.h
 lib/calc/qmath.h
 lib/calc/stdarg.h
 lib/calc/zmath.h
+@dirrm lib/calc/help
+@dirrm lib/calc
