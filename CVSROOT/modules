@@ -512,6 +512,7 @@ beonex		ports/www/beonex
 bestfit		ports/misc/bestfit
 bfbtester	ports/security/bfbtester
 bfe		ports/emulators/bfe
+bfilter		ports/net/bfilter
 bforce		ports/comms/bforce
 bforce-kst	ports/comms/bforce-kst
 bftpd		ports/ftp/bftpd
@@ -620,6 +621,7 @@ bonnie++	ports/benchmarks/bonnie++
 bonobo		ports/devel/bonobo
 bonobo-activation	ports/devel/bonobo-activation
 bonobo-conf	ports/devel/bonobo-conf
+bookcase	ports/misc/bookcase
 boost		ports/devel/boost
 borzoi		ports/security/borzoi
 botan		ports/security/botan
@@ -1999,6 +2001,7 @@ gmcal		ports/deskutils/gmcal
 gmessage	ports/x11/gmessage
 gmetadom	ports/textproc/gmetadom
 gmime		ports/mail/gmime
+gmime2		ports/mail/gmime2
 gmixer		ports/audio/gmixer
 gmrun		ports/x11/gmrun
 gmt		ports/graphics/gmt
@@ -3445,6 +3448,7 @@ krb4		ports/security/krb4
 krb5		ports/security/krb5
 krb5-beta	ports/security/krb5-beta
 krdesktop	ports/net/krdesktop
+krename		ports/sysutils/krename
 kripp		ports/security/kripp
 kronolith	ports/deskutils/kronolith
 krss		ports/deskutils/krss
