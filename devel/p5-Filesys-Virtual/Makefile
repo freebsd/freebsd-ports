@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Filesys-Virtual
-PORTVERSION=	0.04
-PORTREVISION=	2
+PORTVERSION=	0.05
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Filesys
@@ -23,12 +22,8 @@ MAN3=		Filesys::Virtual.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} <= 500503
-EXTRA_PATCHES=	${PATCHDIR}/5.005_03-Virtual.pm \
-		${PATCHDIR}/5.005_03-Virtual::Plain.pm
-
 post-patch:
-	@${RM} -f ${WRKSRC}/Virtual.pm.orig \
-		${WRKSRC}/Virtual/Plain.pm.orig
+	@${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1); $$1/;' ${WRKSRC}/Virtual.pm
 .endif
 
 .include <bsd.port.post.mk>
