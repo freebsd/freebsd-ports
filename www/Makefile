@@ -334,6 +334,7 @@
     SUBDIR += p5-libwww
     SUBDIR += peacock
     SUBDIR += pgdriver
+    SUBDIR += phoenix
     SUBDIR += php-dyn
     SUBDIR += php-screw
     SUBDIR += php-templates
