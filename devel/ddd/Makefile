@@ -4,16 +4,16 @@
 # Date created:			  Tue Jan 28, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.2 1997/05/23 05:57:59 obrien Exp $
+# $Id: Makefile,v 1.3 1997/06/04 18:21:35 obrien Exp $
 #
 
 DISTNAME=	ddd-2.1.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ips.cs.tu-bs.de/pub/local/softech/ddd/  \
 		ftp://richb-pc.acc.qc.edu/pub/ddd/  \
-		ftp://ftp.gre.ac.uk/pub/tools/debuggers/ddd/bin/  \
-		ftp://uiarchive.cso.uiuc.edu/pub/packages/ddd/bin/  \
-		ftp://ftp.th-darmstadt.de/pub/programming/tools/ddd/bin/
+		ftp://ftp.gre.ac.uk/pub/tools/debuggers/ddd/  \
+		ftp://uiarchive.cso.uiuc.edu/pub/packages/ddd/  \
+		ftp://ftp.th-darmstadt.de/pub/programming/tools/ddd/
 
 MAINTAINER=     obrien@NUXI.com
 
