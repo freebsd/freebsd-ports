@@ -564,6 +564,7 @@ bash2		ports/shells/bash2
 basiliskII	ports/emulators/basiliskII
 basket		ports/deskutils/basket
 bass		ports/games/bass
+bastet		ports/games/bastet
 batik		ports/graphics/batik
 battalion	ports/games/battalion
 battfink	ports/sysutils/battfink
