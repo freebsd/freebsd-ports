@@ -1,18 +1,18 @@
 # New ports collection makefile for:	mizifonts
 # Version required:	1.1
 # Date created:		16 Mar 1998
-# Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
+# Whom:			CHOI Junho <cjh@kr.freebsd.org>
 #
-# $Id: Makefile,v 1.7 1998/11/18 13:03:40 asami Exp $
+# $Id: Makefile,v 1.8 1998/12/10 15:46:40 kuriyama Exp $
 #
 
 DISTNAME=	xfntmizi-1.1-2.noarch
 PKGNAME=	ko-mizifonts-1.1
 CATEGORIES=	korean x11-fonts
-MASTER_SITES=	http://www.mizi.co.kr/packages/
+MASTER_SITES=	http://www.mizi.co.kr/packages/hanIM/
 EXTRACT_SUFX=	.rpm
 
-MAINTAINER=	junker@jazz.snu.ac.kr
+MAINTAINER=	cjh@kr.freebsd.org
 
 BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/misc/rpm
 
