@@ -1,34 +1,20 @@
 Index: Makefile
 diff -u Makefile.orig Makefile
---- Makefile.orig	Thu Jun 15 21:02:13 2000
-+++ Makefile	Tue Jun 27 00:34:00 2000
-@@ -1,15 +1,15 @@
- # Makefile for  GKrellM volume plugin
+--- Makefile.orig	Fri Aug 30 03:01:56 2002
++++ Makefile	Fri Aug 30 22:00:06 2002
+@@ -3,17 +3,15 @@
+ GTK_CONFIG = pkg-config gtk+-2.0
  
- # Linux
--GTK_CONFIG = gtk-config
--SYSLIB = -lpthread
-+#GTK_CONFIG = gtk-config
-+#SYSLIB = -lpthread
- 
- # FreeBSD
- #GTK_CONFIG = gtk12-config
- #SYSLIB =
- 
--PLUGIN_DIR = /usr/share/gkrellm/plugins
+ PLUGIN_DIR ?= /usr/local/lib/gkrellm2/plugins
 -GKRELLM_INCLUDE = -I/usr/local/include
-+PLUGIN_DIR = $(PREFIX)/libexec/gkrellm/plugins
-+GKRELLM_INCLUDE = -I$(PREFIX)/include
++GKRELLM_INCLUDE = -I${PREFIX}/include
  
- GTK_INCLUDE = `$(GTK_CONFIG) --cflags`
+ GTK_CFLAGS = `$(GTK_CONFIG) --cflags` 
  GTK_LIB = `$(GTK_CONFIG) --libs`
-@@ -17,12 +17,10 @@
- IMLIB_INCLUDE = `imlib-config --cflags-gdk`
- IMLIB_LIB = `imlib-config --libs-gdk`
  
--FLAGS = -O2 -Wall -fPIC $(GTK_INCLUDE) $(IMLIB_INCLUDE) $(GKRELLM_INCLUDE)
-+CFLAGS += -fPIC $(GTK_INCLUDE) $(IMLIB_INCLUDE) $(GKRELLM_INCLUDE)
- LIBS = $(GTK_LIB) $(IMLIB_LIB) $(SYSLIB)
+-FLAGS = -O2 -Wall -fPIC $(GTK_CFLAGS) $(GKRELLM_INCLUDE)
++CFLAGS += -fPIC $(GTK_CFLAGS) $(GKRELLM_INCLUDE)
+ LIBS = $(GTK_LIB)
  LFLAGS = -shared
  
 -CC = gcc $(CFLAGS) $(FLAGS)
@@ -36,18 +22,12 @@ diff -u Makefile.orig Makefile
  INSTALL = install -c
  INSTALL_PROGRAM = $(INSTALL) -s
  
-@@ -34,12 +32,13 @@
- 	make GTK_CONFIG=gtk12-config SYSLIB= all
+@@ -22,7 +20,7 @@
+ all:	volume.so
  
  volume.so: $(OBJS)
 -	$(CC) $(OBJS) -o volume.so $(LIBS) $(LFLAGS)
-+	$(CC) $(CFLAGS) $(OBJS) -o volume.so $(LFLAGS) $(LIBS)
++	$(CC) $(CFLAGS) $(OBJS) -o volume.so $(LIBS) $(LFLAGS)
  
  clean:
  	rm -f *.o core *.so* *.bak *~
- 
- install: 
-+	mkdir -p $(PLUGIN_DIR)
- 	$(INSTALL_PROGRAM) volume.so $(PLUGIN_DIR)
- 
- volume.c.o: volume.c
