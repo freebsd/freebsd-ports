@@ -35,6 +35,8 @@ lib/swig_lib/tcl/typemaps.i
 lib/swig_lib/tcl/wish.i
 lib/swig_lib/tcl/class.swg
 lib/swig_lib/tcl/configcode.swg
+lib/swig_lib/tcl/constarray.i
+lib/swig_lib/tcl/consthash.i
 lib/swig_lib/tcl/delcmd.swg
 lib/swig_lib/tcl/delcmd8.swg
 lib/swig_lib/tcl/methodcmd.swg
@@ -56,8 +58,10 @@ lib/swig_lib/perl5/Makefile.pl
 lib/swig_lib/python/embed.i
 lib/swig_lib/python/embed13.i
 lib/swig_lib/python/embed14.i
+lib/swig_lib/python/embed15.i
 lib/swig_lib/python/ptrlang.i
 lib/swig_lib/python/typemaps.i
+lib/swig_lib/python/typemaps_old.i
 lib/swig_lib/python/defarg.swg
 lib/swig_lib/python/pyexp.swg
 lib/swig_lib/python/python.swg
