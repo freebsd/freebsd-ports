@@ -14,6 +14,8 @@ DISTNAME=	xorg-1
 
 MAINTAINER=	obrien@FreeBSD.org
 
+BROKEN=		"Does not compile"
+
 USE_IMAKE=	yes
 
 .include <bsd.port.pre.mk>

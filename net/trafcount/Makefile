@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	trafcount
 
 MAINTAINER=		amir@boom.org.il
 
+BROKEN=			"Does not compile"
+
 STARTUP=		trafcount.sh
 MAN1=			trafcount.1
 

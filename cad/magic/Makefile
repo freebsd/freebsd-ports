@@ -13,6 +13,8 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
+BROKEN=		"Does not compile"
+
 USE_XLIB=	yes
 USE_GMAKE=	yes
 

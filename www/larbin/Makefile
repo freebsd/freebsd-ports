@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://ftp.sourceforge.net/pub/sourceforge/larbin/
 
 MAINTAINER=	hiten@uk.FreeBSD.org
 
+BROKEN=		"Does not compile"
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
