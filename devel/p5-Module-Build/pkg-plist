@@ -1,7 +1,8 @@
+bin/config_data
 %%SITE_PERL%%/Module/Build.pm
 %%SITE_PERL%%/Module/Build/Base.pm
-%%SITE_PERL%%/Module/Build/BuildConfig.pm
 %%SITE_PERL%%/Module/Build/Compat.pm
+%%SITE_PERL%%/Module/Build/ConfigData.pm
 %%SITE_PERL%%/Module/Build/Cookbook.pm
 %%SITE_PERL%%/Module/Build/PPMMaker.pm
 %%SITE_PERL%%/Module/Build/Platform/Amiga.pm
