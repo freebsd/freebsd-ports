@@ -4756,6 +4756,7 @@ netraider	ports/www/netraider
 netrek-BRMH-bin	ports/games/netrek-BRMH-bin
 netrek-COW3-bin	ports/games/netrek-COW3-bin
 netrexx		ports/java/netrexx
+netrik		ports/www/netrik
 netris		ports/games/netris
 netsaint	ports/net/netsaint
 netsaint-plugins	ports/net/netsaint-plugins
