@@ -1,11 +1,11 @@
---- updown.c.orig	Sun Oct 13 13:56:18 1996
-+++ updown.c	Sun Oct 13 13:58:54 1996
-@@ -150,7 +150,7 @@
-   sprintf(cmdline, "%s %s", P_PPROG(g), s);
+--- updown.c.orig	Sat Feb 28 14:58:00 1998
++++ updown.c	Tue May 12 18:12:37 1998
+@@ -209,7 +209,7 @@
+   do_log(cmdline);   /* jl 22.06.97 */
  
    if (P_PFULL(g) == 'N') {
 -	win = wopen(10, 7, 70, 13, BSINGLE, stdattr, mfcolor, mbcolor, 1, 0, 1);
 +	win = wopen(5, 5, 74, 11, BSINGLE, stdattr, mfcolor, mbcolor, 1, 0, 1);
- 	sprintf(title, "%.30s %s - Press CTRL-C to quit", P_PNAME(g),
- 		what == 'U' ? "upload" : "download");
+ 	sprintf(title, _("%.30s %s - Press CTRL-C to quit"), P_PNAME(g),
+ 		what == 'U' ? _("upload") : _("download"));
  	wtitle(win, TMID, title);

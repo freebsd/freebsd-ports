@@ -1,0 +1,11 @@
+--- window.c.orig	Tue Aug 11 03:10:29 1998
++++ window.c	Tue Aug 11 03:07:12 1998
+@@ -104,7 +104,7 @@
+ 
+ int useattr = 1;
+ int dirflush = 1;
+-extern int LINES, COLS;
++int LINES, COLS;
+ int usecolor = 0;
+ WIN *stdwin;
+ char *_tptr = CNULL;

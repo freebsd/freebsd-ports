@@ -1,0 +1,11 @@
+--- config.h.orig	Fri Oct 31 11:48:00 1997
++++ config.h	Tue Aug 11 02:44:53 1998
+@@ -58,7 +58,7 @@
+ 
+ #ifdef __FreeBSD__
+ #  define DFL_PORT "/dev/modem"
+-#  define DEF_BAUD "19200"
++#  define DEF_BAUD "38400"
+ #  define CALLOUT  ""
+ #  define CALLIN   ""
+ #endif
