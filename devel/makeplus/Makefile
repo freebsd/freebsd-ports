@@ -17,7 +17,8 @@ MASTER_SITES=	http://www.annexia.org/freeware/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of GNU Make rules for building packages with gmake
 
-USE_GMAKE=	yes
+RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
+
 PREFIX?=	${LOCALBASE}
 MAKE_ENV+=	MAKEPLUS_HOME=${WRKSRC}
 NO_MTREE=	yes
