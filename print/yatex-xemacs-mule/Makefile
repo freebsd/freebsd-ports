@@ -3,15 +3,15 @@
 # Date created:		98/11/17
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.4 1998/11/20 18:19:09 itojun Exp $
+# $Id: Makefile,v 1.5 1998/12/01 03:06:25 asami Exp $
 #
 
-PKGNAME=	ja-yatex-xemacs-1.66
-CATEGORIES=	japanese print elisp
+PKGNAME=	yatex-xemacs-mule-1.66
 
 XEMACS-MULE=	yes
 
-MASTERDIR=	${.CURDIR}/../../print/yatex
+MASTERDIR=	${.CURDIR}/../yatex
+COMMENT=	${.CURDIR}/pkg/COMMENT
 PLIST=		${.CURDIR}/pkg/PLIST
 
 .include	"${MASTERDIR}/Makefile"
