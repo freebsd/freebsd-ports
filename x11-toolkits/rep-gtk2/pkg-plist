@@ -6,6 +6,8 @@ libexec/rep/%%GNUHOST%%/gnomeui.la
 libexec/rep/%%GNUHOST%%/gnomeui.so
 libexec/rep/%%GNUHOST%%/gtk.la
 libexec/rep/%%GNUHOST%%/gtk.so
+libexec/rep/%%GNUHOST%%/libglade-gnome.la
+libexec/rep/%%GNUHOST%%/libglade-gnome.so
 libexec/rep/%%GNUHOST%%/libglade.la
 libexec/rep/%%GNUHOST%%/libglade.so
 libexec/rep/%%GNUHOST%%/sgtk-types.la
