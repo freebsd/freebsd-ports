@@ -8,8 +8,8 @@
 PORTNAME=	libh
 PORTVERSION=	0.2
 CATEGORIES=	misc
-# ${MASTER_SITES} is only for if CVS won't work, period.
-MASTER_SITES=	${MASTER_SITE_LOCAL}
+# ${MASTER_SITES} is unavailable for CVS only projects.
+# MASTER_SITES=	${MASTER_SITE_LOCAL}
 DISTNAME=	libh
 
 MAINTAINER=	nra@FreeBSD.org
