@@ -32,6 +32,101 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="877e918e-5362-11d9-96d4-00065be4b5b6">
+    <topic>mpg123 -- playlist processing buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+        <name>mpg123</name>
+        <range><le>0.59r_15</le></range>
+      </package>
+      <package>
+        <name>mpg123-esound</name>
+        <range><le>0.59r_15</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A buffer overflow vulnerability exists in the playlist
+	  processing of mpg123. A specially crafted playlist entry
+	  can cause a stack overflow that can be used to inject
+	  arbitrary code into the mpg123 process </p>
+	<p>Note that a malicious playlist, demonstrating this
+	  vulnerability, was released by the bug finder and may be
+	  used as a template by attackers.</p>
+      </body>
+    </description>
+    <references>
+	<url>http://tigger.uic.edu/~jlongs2/holes/mpg123.txt</url>
+	<url>http://secunia.com/advisories/13511//</url>
+	<mlist msgid="653D74053BA6F54A81ED83DCF969DF08CFA2AA@pivxes1.pivx.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110321888413132</mlist>
+    </references>
+    <dates>
+      <discovery>2004-12-15</discovery>
+      <entry>2005-01-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="bd579366-5290-11d9-ac20-00065be4b5b6">
+    <topic>greed -- insecure GRX file processing</topic>
+    <affects>
+      <package>
+        <name>greed</name>
+        <range><le>0.81p</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A buffer overflow vulnerability has been detected in the greed
+	URL handling code. This bug can especially be a problem when greed is
+	used to process GRX (GetRight) files that originate from untrusted
+	sources.</p>
+	<p>The bug finder, Manigandan Radhakrishnan, gave the following description:</p>
+	<blockquote cite='http://tigger.uic.edu/~jlongs2/holes/greed.txt'>
+	  <p>Here are the bugs. First, in main.c, DownloadLoop() uses strcat()
+	    to copy an input filename to the end of a 128-byte COMMAND array.
+	    Second, DownloadLoop() passes the input filename to system() without
+	    checking for special characters such as semicolons.</p></blockquote>
+      </body>
+    </description>
+    <references>
+	<url>http://tigger.uic.edu/~jlongs2/holes/greed.txt</url>
+	<url>http://secunia.com/advisories/13534/</url>
+	<mlist msgid="653D74053BA6F54A81ED83DCF969DF08CFA2AA@pivxes1.pivx.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110321888413132</mlist>
+    </references>
+    <dates>
+      <discovery>2004-12-15</discovery>
+      <entry>2005-01-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="949c470e-528f-11d9-ac20-00065be4b5b6">
+    <topic>golddig -- local buffer overflow vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>golddig</name>
+        <range><le>2.0</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Two buffer overflow vulnerabilities where detected. Both issues can
+	be used by local users to gain group games privileges on affected systems.</p>
+        <p>The first overflow exists in the map name handling and can be triggered
+        when a very long name is given to the program during command-line execution</p>
+         <p>The second overflow exists in the username processing while writing
+	the players score to disk. Excessivly long usernames, set via the USER environment
+	variable, are stored without any length checks in a memory buffer.</p>
+      </body>
+    </description>
+    <references>
+    <mlist msgid="200412021055.iB2AtweU067125@repoman.freebsd.org">http://docs.FreeBSD.org/cgi/mid.cgi?200412021055.iB2AtweU067125</mlist>
+    </references>
+    <dates>
+      <discovery>2004-11-11</discovery>
+      <entry>2005-01-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="927743d4-5ca9-11d9-a9e7-0001020eed82">
     <topic>up-imapproxy -- multiple vulnerabilities</topic>
     <affects>
