@@ -1,3 +1,4 @@
+bin/sdl-config
 include/SDL/SDL.h
 include/SDL/SDL_active.h
 include/SDL/SDL_audio.h
@@ -9,7 +10,7 @@ include/SDL/SDL_error.h
 include/SDL/SDL_events.h
 include/SDL/SDL_keyboard.h
 include/SDL/SDL_keysym.h
-include/SDL/SDL_mangle.h
+include/SDL/SDL_main.h
 include/SDL/SDL_mouse.h
 include/SDL/SDL_mutex.h
 include/SDL/SDL_quit.h
@@ -22,19 +23,21 @@ include/SDL/SDL_version.h
 include/SDL/SDL_video.h
 include/SDL/begin_code.h
 include/SDL/close_code.h
+lib/libSDL-1.0.so
+lib/libSDL-1.0.so.0
 lib/libSDL.a
-lib/libSDL.so.0
-lib/libSDLx11.so.0.10
-lib/libSDLx11.so.0.10.0
+lib/libSDL.la
+lib/libSDL.so
+lib/libSDLmain.a
 @exec /sbin/ldconfig -m %B
 @unexec /sbin/ldconfig -R
+share/aclocal/sdl.m4
 share/doc/SDL/BUGS
 share/doc/SDL/COPYING
 share/doc/SDL/CREDITS
 share/doc/SDL/README
 share/doc/SDL/TODO
 share/doc/SDL/WhatsNew
-share/doc/SDL/docs.html
 share/doc/SDL/audio/examples.html
 share/doc/SDL/audio/funclist.html
 share/doc/SDL/audio/functions.html
@@ -43,11 +46,11 @@ share/doc/SDL/cdrom/examples.html
 share/doc/SDL/cdrom/funclist.html
 share/doc/SDL/cdrom/functions.html
 share/doc/SDL/cdrom/index.html
+share/doc/SDL/docs.html
 share/doc/SDL/events/examples.html
 share/doc/SDL/events/functions.html
 share/doc/SDL/events/index.html
 share/doc/SDL/events/keysym.html
-share/doc/SDL/images/SDL_title.gif
 share/doc/SDL/images/rainbow.gif
 share/doc/SDL/index.html
 share/doc/SDL/threads/index.html
@@ -56,14 +59,21 @@ share/doc/SDL/video/funclist.html
 share/doc/SDL/video/functions.html
 share/doc/SDL/video/index.html
 share/examples/SDL/COPYING
-share/examples/SDL/GNUC.sh
-share/examples/SDL/GNUmake
-share/examples/SDL/Makefile
+share/examples/SDL/Makefile.am
+share/examples/SDL/Makefile.in
 share/examples/SDL/README
+share/examples/SDL/acinclude.m4
+share/examples/SDL/aclocal.m4
+share/examples/SDL/autogen.sh
 share/examples/SDL/checkkeys.c
+share/examples/SDL/configure
+share/examples/SDL/configure.in
 share/examples/SDL/graywin.c
 share/examples/SDL/icon.bmp
+share/examples/SDL/install-sh
 share/examples/SDL/loopwave.c
+share/examples/SDL/missing
+share/examples/SDL/mkinstalldirs
 share/examples/SDL/picture.xbm
 share/examples/SDL/sample.bmp
 share/examples/SDL/sample.wav
@@ -82,12 +92,12 @@ share/examples/SDL/testvidinfo.c
 share/examples/SDL/testwin.c
 share/examples/SDL/testwm.c
 share/examples/SDL/threadwin.c
-@dirrm include/SDL
-@dirrm share/doc/SDL/audio
-@dirrm share/doc/SDL/cdrom
-@dirrm share/doc/SDL/events
-@dirrm share/doc/SDL/images
-@dirrm share/doc/SDL/threads
-@dirrm share/doc/SDL/video
-@dirrm share/doc/SDL
 @dirrm share/examples/SDL
+@dirrm share/doc/SDL/video
+@dirrm share/doc/SDL/threads
+@dirrm share/doc/SDL/images
+@dirrm share/doc/SDL/events
+@dirrm share/doc/SDL/cdrom
+@dirrm share/doc/SDL/audio
+@dirrm share/doc/SDL
+@dirrm include/SDL
