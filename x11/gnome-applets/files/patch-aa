@@ -1,6 +1,6 @@
---- configure.orig	Tue Apr 16 19:23:54 2002
-+++ configure	Tue Apr 30 13:58:18 2002
-@@ -6968,6 +6968,7 @@
+--- configure.orig	Mon May 20 17:48:43 2002
++++ configure	Thu May 30 10:42:05 2002
+@@ -6966,6 +6966,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,7 +8,7 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -10825,6 +10826,7 @@
+@@ -10556,6 +10557,7 @@
  *irix*) CDROM_HOST=irix; CDROM_LIBS="-lcdaudio -lmediad -lds";cd_device_path="/dev/cdrom";;
  *linux*) CDROM_HOST=linux;cd_device_path="/dev/cdrom";;
  *netbsd*) CDROM_HOST=netbsd;cd_device_path="/dev/rcd0";;
@@ -16,12 +16,13 @@
  *solaris*) CDROM_HOST=solaris;cd_device_path="/vol/dev/aliases/cdrom0";;
  esac
  case "$host" in
-@@ -10870,6 +10872,17 @@
+@@ -10600,6 +10602,21 @@
+   HAVE_LIBAPM_TRUE='#'
    HAVE_LIBAPM_FALSE=
  fi
- 
++
 +	;;
-+  *-*-freebsd*)
++  i386-*-freebsd*)
 +  	HAVE_LIBAPM=no
 +
 +if test "x$HAVE_LIBAPM" = "xyes"; then
@@ -31,6 +32,9 @@
 +    HAVE_LIBAPM_TRUE='#'
 +    HAVE_LIBAPM_FALSE=
 +fi
++	;;
++  *-*-freebsd*)
++  	build_battstat_applet=no
+ 
  	;;
    *-*-linux*)
- 	echo "$as_me:10875: checking for apm_read in -lapm" >&5

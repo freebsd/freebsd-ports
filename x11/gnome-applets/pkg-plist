@@ -1,4 +1,4 @@
-bin/battstat-applet-2
+%%BATTER%%bin/battstat-applet-2
 bin/cdplayer_applet2
 bin/charpick_applet2
 bin/drivemount_applet2
@@ -11,8 +11,8 @@ bin/mini_commander_applet
 bin/mixer_applet2
 bin/modemlights_applet2
 bin/multiload-applet-2
-etc/gconf/gconf.xml.defaults/schemas/apps/battstat-applet/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/battstat-applet/prefs/%gconf.xml
+%%BATTER%%etc/gconf/gconf.xml.defaults/schemas/apps/battstat-applet/%gconf.xml
+%%BATTER%%etc/gconf/gconf.xml.defaults/schemas/apps/battstat-applet/prefs/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/cdplayer-applet/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/cdplayer-applet/prefs/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/charpick/%gconf.xml
@@ -33,7 +33,7 @@ etc/gconf/gconf.xml.defaults/schemas/apps/modemlights/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/modemlights/prefs/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/multiload/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/multiload/prefs/%gconf.xml
-etc/gconf/schemas/battstat.schemas
+%%BATTERY%%etc/gconf/schemas/battstat.schemas
 etc/gconf/schemas/cdplayer.schemas
 etc/gconf/schemas/charpick.schemas
 etc/gconf/schemas/drivemount.schemas
@@ -44,7 +44,7 @@ etc/gconf/schemas/gweather.schemas
 etc/gconf/schemas/mini-commander.schemas
 etc/gconf/schemas/modemlights.schemas
 etc/gconf/schemas/multiload.schemas
-etc/sound/events/battstat_applet.soundlist
+%%BATTERY%%etc/sound/events/battstat_applet.soundlist
 libdata/bonobo/servers/GNOME_BattstatApplet.server
 libdata/bonobo/servers/GNOME_CDPlayerApplet.server
 libdata/bonobo/servers/GNOME_CharpickerApplet.server
@@ -57,7 +57,7 @@ libdata/bonobo/servers/GNOME_MiniCommanderApplet.server
 libdata/bonobo/servers/GNOME_MixerApplet.server
 libdata/bonobo/servers/GNOME_ModemLightsApplet.server
 libdata/bonobo/servers/GNOME_MultiLoadApplet_Factory.server
-share/gnome/battstat_applet/battstat_applet.glade
+%%BATTERY%%share/gnome/battstat_applet/battstat_applet.glade
 share/gnome/geyes/Bizarre/Bizarre-eye.png
 share/gnome/geyes/Bizarre/Bizarre-pupil.png
 share/gnome/geyes/Bizarre/config
@@ -238,7 +238,7 @@ share/gnome/omf/gnome-applets/geyes-C.omf
 share/gnome/omf/gnome-applets/gtik2_applet2-C.omf
 share/gnome/omf/gnome-applets/gweather-C.omf
 share/gnome/omf/gnome-applets/mixer_applet2-C.omf
-share/gnome/pixmaps/battstat.png
+%%BATTERY%%share/gnome/pixmaps/battstat.png
 share/gnome/pixmaps/charpick.png
 share/gnome/pixmaps/drivemount-applet.png
 share/gnome/pixmaps/gkb-icon.png
@@ -473,7 +473,7 @@ share/locale/zh_TW/LC_MESSAGES/gnome-applets-2.0.mo
 @dirrm share/gnome/geyes/Bloodshot
 @dirrm share/gnome/geyes/Bizarre
 @dirrm share/gnome/geyes
-@dirrm share/gnome/battstat_applet
+%%BATTERY%%@dirrm share/gnome/battstat_applet
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/multiload/prefs
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/multiload
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/modemlights/prefs
@@ -494,5 +494,5 @@ share/locale/zh_TW/LC_MESSAGES/gnome-applets-2.0.mo
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/charpick
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/cdplayer-applet/prefs
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/cdplayer-applet
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/battstat-applet/prefs
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/battstat-applet
+%%BATTERY%%@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/battstat-applet/prefs
+%%BATTERY%%@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/battstat-applet
