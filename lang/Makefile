@@ -50,6 +50,7 @@
     SUBDIR += fesi
     SUBDIR += forth
     SUBDIR += fpc
+    SUBDIR += fpl
     SUBDIR += gauche
     SUBDIR += gawk
     SUBDIR += gcc27

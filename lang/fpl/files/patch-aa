@@ -1,0 +1,11 @@
+--- Makefile	Thu May 14 10:00:39 1998
++++ Makefile.new	Sat Jan  4 15:53:08 2003
+@@ -13,7 +13,7 @@
+ ########################################################################
+ 
+ all:
+-	@echo "no default action"
++	@(cd src; make)
+ 
+ tgz:
+ 	@(dir=`pwd`;name=`basename $$dir`;echo Creates $$name.tar.gz; cd .. ; \
