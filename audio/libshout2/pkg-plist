@@ -1,6 +1,5 @@
 include/shout/shout.h
 lib/libshout.a
-lib/libshout.la
 lib/libshout.so
 lib/libshout.so.3
 libdata/pkgconfig/shout.pc
