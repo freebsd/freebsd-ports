@@ -88,6 +88,7 @@
     SUBDIR += gnomelibs
     SUBDIR += gnumeric
     SUBDIR += gp
+    SUBDIR += gqmpeg
     SUBDIR += grep
     SUBDIR += groff
     SUBDIR += gtkicq
