@@ -1,10 +1,11 @@
 bin/abc2mtex
 bin/abc_search
 bin/abc_sort_in
-share/doc/abc2mtex/usrguide.ps
-share/doc/abc2mtex/examples/English.abc
-share/doc/abc2mtex/examples/Jigs.abc
-share/doc/abc2mtex/examples/Reels.abc
-share/doc/abc2mtex/examples/Strspys.abc
-@dirrm share/doc/abc2mtex/examples
-@dirrm share/doc/abc2mtex
+share/texmf/doc/abc2mtex/usrguide.ps
+share/texmf/doc/abc2mtex/examples/English.abc
+share/texmf/doc/abc2mtex/examples/Jigs.abc
+share/texmf/doc/abc2mtex/examples/Reels.abc
+share/texmf/doc/abc2mtex/examples/Strspys.abc
+share/texmf/tex/abc2mtex_header.tex
+@dirrm share/texmf/doc/abc2mtex/examples
+@dirrm share/texmf/doc/abc2mtex
