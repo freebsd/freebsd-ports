@@ -1,6 +1,24 @@
---- configure.orig	Wed Jul  7 18:16:55 2004
-+++ configure	Wed Jul  7 18:16:55 2004
-@@ -20976,13 +20976,13 @@
+--- configure.orig	Sat Mar 19 14:39:26 2005
++++ configure	Sat Mar 19 14:40:24 2005
+@@ -21821,7 +21821,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lldap -llber -lresolv $LIBS"
++LIBS="-lldap -llber $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -21885,7 +21885,7 @@
+ #define ENABLE_LDAP 1
+ _ACEOF
+ 
+-              LIBS="-lldap -llber -lresolv $LIBS"
++              LIBS="-lldap -llber $LIBS"
+ else
+   { { echo "$as_me:$LINENO: error: *** You enabled LDAP but ldap library is not found." >&5
+ echo "$as_me: error: *** You enabled LDAP but ldap library is not found." >&2;}
+@@ -22664,13 +22664,13 @@
  else
  
  
@@ -18,7 +36,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -20996,11 +20996,11 @@
+@@ -22684,11 +22684,11 @@
  #endif
  /* We use char because int might match the return type of a gcc2
     builtin and then its argument prototype would still apply.  */
@@ -32,21 +50,3 @@
    ;
    return 0;
  }
-@@ -23045,7 +23045,7 @@
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lldap -llber -lresolv $LIBS"
-+LIBS="-lldap -llber $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -23109,7 +23109,7 @@
- #define ENABLE_LDAP 1
- _ACEOF
- 
--              LIBS="-lldap -llber -lresolv $LIBS"
-+              LIBS="-lldap -llber $LIBS"
- else
-   { { echo "$as_me:$LINENO: error: *** You enabled LDAP but ldap library is not found." >&5
- echo "$as_me: error: *** You enabled LDAP but ldap library is not found." >&2;}

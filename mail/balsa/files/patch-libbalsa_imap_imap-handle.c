@@ -1,5 +1,5 @@
---- libbalsa/imap/imap-handle.c.orig	Mon Jul 26 01:56:32 2004
-+++ libbalsa/imap/imap-handle.c	Mon Jul 26 02:08:48 2004
+--- libbalsa/imap/imap-handle.c.orig	Sun Feb 20 13:54:21 2005
++++ libbalsa/imap/imap-handle.c	Sat Mar 19 14:40:45 2005
 @@ -18,10 +18,13 @@
   */
  #include "config.h"
@@ -14,21 +14,3 @@
  #include <netdb.h>
  #include <glib.h>
  #include <glib-object.h>
-@@ -360,9 +363,17 @@
-   for (cur = res; cur != NULL; cur = cur->ai_next) {
-     fd = socket (cur->ai_family, cur->ai_socktype, cur->ai_protocol);
-     if (fd >= 0) {
-+#ifdef __FreeBSD__
-+      int sa_size = ((struct sockaddr_in *)cur->ai_addr)->sin_len;
-+#else
-       int sa_size = sizeof (struct sockaddr_in);
-+#endif
-       if (cur->ai_addr->sa_family == AF_INET6)
-+#ifdef __FreeBSD__
-+	sa_size = ((struct sockaddr_in6 *)cur->ai_addr)->sin6_len;
-+#else
-         sa_size = sizeof (struct sockaddr_in6);
-+#endif
-       if ((rc=connect(fd, cur->ai_addr, sa_size)) == 0) {
- 	break;
-       } else {

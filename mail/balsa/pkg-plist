@@ -3,6 +3,47 @@ bin/balsa-ab
 etc/sound/events/balsa.soundlist
 libdata/bonobo/servers/GNOME_Balsa.server
 share/gnome/applications/balsa.desktop
+share/gnome/balsa/hicolor/16x16/apps/balsa-encrypted.png
+share/gnome/balsa/hicolor/16x16/apps/balsa-mark-all.png
+share/gnome/balsa/hicolor/16x16/apps/balsa-mbox-draft.png
+share/gnome/balsa/hicolor/16x16/apps/balsa-mbox-sent.png
+share/gnome/balsa/hicolor/16x16/apps/balsa-mbox-tray-empty.png
+share/gnome/balsa/hicolor/16x16/apps/balsa-mbox-tray-full.png
+share/gnome/balsa/hicolor/16x16/apps/balsa-next-flagged.png
+share/gnome/balsa/hicolor/16x16/apps/balsa-next-part.png
+share/gnome/balsa/hicolor/16x16/apps/balsa-next-unread.png
+share/gnome/balsa/hicolor/16x16/apps/balsa-next.png
+share/gnome/balsa/hicolor/16x16/apps/balsa-postpone.png
+share/gnome/balsa/hicolor/16x16/apps/balsa-previous-part.png
+share/gnome/balsa/hicolor/16x16/apps/balsa-previous.png
+share/gnome/balsa/hicolor/16x16/apps/balsa-reply-all.png
+share/gnome/balsa/hicolor/16x16/apps/balsa-signature-bad.png
+share/gnome/balsa/hicolor/16x16/apps/balsa-signature-good.png
+share/gnome/balsa/hicolor/16x16/apps/balsa-signature-notrust.png
+share/gnome/balsa/hicolor/16x16/apps/balsa-signature-unknown.png
+share/gnome/balsa/hicolor/22x22
+share/gnome/balsa/hicolor/24x24/apps/balsa-crypt-check.png
+share/gnome/balsa/hicolor/24x24/apps/balsa-encrypt.png
+share/gnome/balsa/hicolor/24x24/apps/balsa-encrypted.png
+share/gnome/balsa/hicolor/24x24/apps/balsa-mark-all.png
+share/gnome/balsa/hicolor/24x24/apps/balsa-marked-new.png
+share/gnome/balsa/hicolor/24x24/apps/balsa-next-flagged.png
+share/gnome/balsa/hicolor/24x24/apps/balsa-next-part.png
+share/gnome/balsa/hicolor/24x24/apps/balsa-next-unread.png
+share/gnome/balsa/hicolor/24x24/apps/balsa-next.png
+share/gnome/balsa/hicolor/24x24/apps/balsa-postpone.png
+share/gnome/balsa/hicolor/24x24/apps/balsa-preview.png
+share/gnome/balsa/hicolor/24x24/apps/balsa-previous-part.png
+share/gnome/balsa/hicolor/24x24/apps/balsa-previous.png
+share/gnome/balsa/hicolor/24x24/apps/balsa-reply-all.png
+share/gnome/balsa/hicolor/24x24/apps/balsa-sign.png
+share/gnome/balsa/hicolor/24x24/apps/balsa-signature-bad.png
+share/gnome/balsa/hicolor/24x24/apps/balsa-signature-good.png
+share/gnome/balsa/hicolor/24x24/apps/balsa-signature-notrust.png
+share/gnome/balsa/hicolor/24x24/apps/balsa-signature-unknown.png
+share/gnome/balsa/hicolor/24x24/apps/balsa-trash-empty.png
+share/gnome/balsa/hicolor/icon-theme.cache
+@exec gtk-update-icon-cache %%X11BASE%%/share/icons/hicolor > /dev/null || /usr/bin/true
 share/gnome/balsa/pixmaps/attachment.png
 share/gnome/balsa/pixmaps/balsa-logo.png
 share/gnome/balsa/pixmaps/balsa-top.png
@@ -58,6 +99,7 @@ share/locale/lt/LC_MESSAGES/balsa.mo
 share/locale/lv/LC_MESSAGES/balsa.mo
 share/locale/ml/LC_MESSAGES/balsa.mo
 share/locale/ms/LC_MESSAGES/balsa.mo
+share/locale/nb/LC_MESSAGES/balsa.mo
 share/locale/nl/LC_MESSAGES/balsa.mo
 share/locale/nn/LC_MESSAGES/balsa.mo
 share/locale/no/LC_MESSAGES/balsa.mo
@@ -85,4 +127,10 @@ share/locale/zh_TW/LC_MESSAGES/balsa.mo
 @dirrm share/gnome/help/balsa/C
 @dirrm share/gnome/help/balsa
 @dirrm share/gnome/balsa/pixmaps
+@dirrm share/gnome/balsa/hicolor/24x24/apps
+@dirrm share/gnome/balsa/hicolor/24x24
+@dirrm share/gnome/balsa/hicolor/16x16/apps
+@dirrm share/gnome/balsa/hicolor/16x16
+@dirrm share/gnome/balsa/hicolor
 @dirrm share/gnome/balsa
+@unexec gtk-update-icon-cache %%X11BASE%%/share/icons/hicolor > /dev/null || /usr/bin/true
