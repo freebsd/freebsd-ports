@@ -1,5 +1,6 @@
 bin/raine
 %%DATADIR%%/cheats.cfg
+%%DATADIR%%/hiscore.dat
 %%DATADIR%%/languages/Brasil.cfg
 %%DATADIR%%/languages/CZECH.CFG
 %%DATADIR%%/languages/Catala.cfg
