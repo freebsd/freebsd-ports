@@ -3,7 +3,7 @@
 # Date created:		24 November 1994
 # Whom:			asami
 #
-# $id:$
+# $Id:$
 #
 
 DISTNAME=	piewm
