@@ -1,5 +1,5 @@
 # New ports collection makefile for:	xwave
-# Date created:				2000-06-11
+# Date created:				11 June 2000
 # Whom:					Trevor Johnson <trevor@jpj.net>
 # based on the NetBSD port
 #
@@ -13,7 +13,7 @@ CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.vex.net/pub/software/
 DISTNAME=	xwave2
 
-MAINTAINER=	trevor@jpj.net
+MAINTAINER=	martin.kraft@fal.de
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
