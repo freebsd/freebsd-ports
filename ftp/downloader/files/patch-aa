@@ -1,124 +1,42 @@
---- Makefile.orig	Sun Oct 29 02:34:33 2000
-+++ Makefile	Sun Oct 29 02:36:32 2000
-@@ -1,103 +1,44 @@
--# Solaris Openwin 2.6 headers are not properly casted to for
--# compilation with C++/g++. Three files Xlib.h, Xresource.h, Xutil.h
--# need to be fixed to compile this. Or add a path to the X11R6 headers
--ifeq ($(OSTYPE),Solaris)
--SOLARIS_TYPECASTED_X11_HEADERS=-I/var/tmp/src
--endif
--ifndef CXXFLAGS
+--- Makefile.orig	Sat Dec 16 07:44:10 2000
++++ Makefile	Fri Jan  5 21:24:27 2001
+@@ -5,10 +5,10 @@
+ SOLARIS_TYPECASTED_X11_HEADERS=-I/var/tmp/src
+ endif
+ ifndef CXXFLAGS
 -CXXFLAGS=-Wall -O2 $(SOLARIS_TYPECASTED_X11_HEADERS)
--endif
--
--CXXFLAGS+=-D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS $(SOLARIS_TYPECASTED_X11_HEADERS)
--# -DDEBUG_ALL
--# -ggdb
-+CXXFLAGS += -D_THREAD_SAFE -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS
++#CXXFLAGS=-Wall -O2 $(SOLARIS_TYPECASTED_X11_HEADERS)
+ endif
  
--export CXXFLAGS LOCALEDIR
--
--#CXX = c++
-+CXX ?= c++
+-CXXFLAGS+=-D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS $(SOLARIS_TYPECASTED_X11_HEADERS) -DDEBUG_ALL
++CXXFLAGS+=-D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS -D_THREAD_SAFE
+ # -ggdb
  
- NLS=-DENABLE_NLS # Remove or comment this line to disable gettext
--ifeq ($(DEST),)
--DEST=/usr/local
--endif
-+DEST=${PREFIX}
- 
- LOCALEDIR=$(DEST)/share/locale
--PTHREAD=-lpthread
--GTKCONFIG=gtk-config
--GLIBCONFIG=glib-config
--MAKE=make
--
--#next strings were added for BSD support
--ifeq ($(OSTYPE),BSD)
- PTHREAD=-pthread
--GTKCONFIG=gtk12-config
--MAKE=gmake
--endif
-+MSGFMT=${MSGFMT_CMD}
+ export CXXFLAGS LOCALEDIR
+@@ -33,11 +33,13 @@
+ MAKE=gmake
+ endif
  
 -ifeq ($(OSTYPE),FreeBSD)
--PTHREAD=-pthread
--GTKCONFIG=gtk12-config
--MAKE=gmake
++#	fsck'ing gmake won't recongize us as FreeBSD...
++#ifeq ($(OSTYPE),FreeBSD)
+ PTHREAD=-pthread
+ GTKCONFIG=gtk12-config
++GLIBCONFIG=glib12-config
+ MAKE=gmake
 -endif
--
--GTKLIBS=$(shell $(GTKCONFIG) --libs) $(shell $(GLIBCONFIG) --libs)
--GTKFLAGS=$(shell $(GTKCONFIG) --cflags) $(shell $(GLIBCONFIG) --cflags)
--
--ifeq ($(OSTYPE),Irix)
--CTKFLIBS += lintl
--MAKE=gmake
--CXXFLAGS += -fpermissive
--endif
-+GTKLIBS=`${GTK_CONFIG} --libs`
-+GTKFLAGS=`${GTK_CONFIG} --cflags`
-+LDFLAGS=$(PTHREAD) $(GTKLIBS)
++#endif
  
--LDFLAGS=$(PTHREAD) $(GTKLIBS)
--CXXFLAGS += $(GTKFLAGS) $(NLS) -DLOCALE=\"${LOCALEDIR}\"
-+EXECC=$(CXX) $(CXXFLAGS) $(GTKFLAGS) $(NLS) -DLOCALE=\"${LOCALEDIR}\"
+ GTKLIBS=$(shell $(GTKCONFIG) --libs) $(shell $(GLIBCONFIG) --libs)
+ GTKFLAGS=$(shell $(GTKCONFIG) --cflags) $(shell $(GLIBCONFIG) --cflags)
+@@ -81,8 +83,8 @@
  
- FACE=face/lmenu.o face/list.o face/addd.o face/graph.o face/log.o \
- 	face/prefs.o face/buttons.o face/about.o face/edit.o \
- 	face/colors.o face/saveload.o face/limface.o face/misc.o \
- 	face/lod.o face/columns.o face/dndtrash.o face/passface.o \
- 	face/mywidget.o
--MODULES1=base64.o addr.o queue.o liststr.o dlist.o mdlist.o locstr.o \
-+MODULES=base64.o addr.o queue.o liststr.o dlist.o mdlist.o locstr.o \
- 	log.o  sort.o meter.o socket.o history.o  speed.o srvclt.o html.o \
- 	client.o ftp.o http.o download.o ftpd.o httpd.o hproxy.o signal.o \
- 	main.o config.o savelog.o mainlog.o var.o sortstr.o db.o cookie.o \
- 	pass.o eff.o
--MODULES = $(FACE) $(MODULES1)
-+MODULES += $(FACE)
- 
--all:
--	-rm -f nt
--	$(MAKE) nt
--	[ -z "$(NLS)" ] || $(MAKE) -C po
--	$(MAKE) strip
-+all: nt
-+	[ -z "$(NLS)" ] || cd po && MSGFMT=$(MSGFMT) $(MAKE)
- 
- $(FACE):
--	$(MAKE) -C face
-+	cd face && EXECC="$(EXECC)" $(MAKE)
- 
- nt: $(MODULES)
--	$(MAKE) -C face
--	$(CXX) -lstdc++ $(MODULES) nt.cc -o nt $(CXXFLAGS) $(GTKLIBS) $(PTHREAD)
--
--strip: nt
--	strip nt
--
-+	$(EXECC) $(MODULES) nt.cc -o nt $(LDFLAGS)
  
  install: all
 -	install -c -m755 nt $(DEST)/bin
 -	[ -z "$(NLS)" ] || $(MAKE) install -C po
--
--clean: 
--	-rm -f *.o nt TAGS *~
--	$(MAKE) clean -C face
--	$(MAKE) clean -C po
--
--tags:
--	etags *.{cc,h} face/*.{cc,h}
--
--uninstall:
--	-rm -f $(DEST)/bin/nt
--	$(MAKE) uninstall -C po
--
--Makefile.dep:
--	$(CXX) -I./ -Iface $(CXXFLAGS) -MM *.cc > Makefile.dep
 +	$(BSD_INSTALL_PROGRAM) nt $(DEST)/bin
 +	[ -z "$(NLS)" ] || cd po && LOCALEDIR=$(LOCALEDIR) $(MAKE) install
  
---include Makefile.dep
-+.cc.o:
-+	$(EXECC) -c $<
+ clean: 
+ 	-rm -f *.o nt TAGS *~
