@@ -1161,6 +1161,7 @@ daemontools	ports/sysutils/daemontools
 daemontools53	ports/sysutils/daemontools53
 dagrab		ports/audio/dagrab
 dailystrips	ports/deskutils/dailystrips
+damageext	ports/x11/damageext
 danamics	ports/net/danamics
 dancer		ports/irc/dancer
 dancer-ircd	ports/irc/dancer-ircd
