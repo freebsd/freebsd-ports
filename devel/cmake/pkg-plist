@@ -1,5 +1,6 @@
 bin/ccmake
 bin/cmake
+bin/cmaketest
 bin/ctest
 share/CMake/Modules/Dart.cmake
 share/CMake/Modules/Documentation.cmake
@@ -13,10 +14,12 @@ share/CMake/Modules/FindGCCXML.cmake
 share/CMake/Modules/FindGLU.cmake
 share/CMake/Modules/FindGLUT.cmake
 share/CMake/Modules/FindGTK.cmake
+share/CMake/Modules/FindGnuplot.cmake
 share/CMake/Modules/FindHhc.cmake
 share/CMake/Modules/FindITK.cmake
 share/CMake/Modules/FindJNI.cmake
 share/CMake/Modules/FindJPEG.cmake
+share/CMake/Modules/FindJava.cmake
 share/CMake/Modules/FindMPI.cmake
 share/CMake/Modules/FindOpenGL.cmake
 share/CMake/Modules/FindPerl.cmake
@@ -31,9 +34,11 @@ share/CMake/Modules/FindWget.cmake
 share/CMake/Modules/FindWish.cmake
 share/CMake/Modules/FindX11.cmake
 share/CMake/Modules/LinkQT.cmake
+share/CMake/Templates/CCMakeSystemConfig.cmake.in
+share/CMake/Templates/CXXCMakeSystemConfig.cmake.in
+share/CMake/Templates/cconfigure
+share/CMake/Templates/cxxconfigure
 share/CMake/Templates/install-sh
-share/CMake/Templates/CMakeSystemConfig.cmake.in
-share/CMake/Templates/configure
 @dirrm share/CMake/Templates
 @dirrm share/CMake/Modules
 @dirrm share/CMake
