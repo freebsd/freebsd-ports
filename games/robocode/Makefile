@@ -16,8 +16,6 @@ EXTRACT_SUFX=	.jar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A game for learning Java[tm] programming language
 
-BROKEN=		"Unfetchable"
-
 USE_JAVA=	1.3+
 
 JAVAVM=		${JAVA_HOME}/bin/java
@@ -28,6 +26,7 @@ USE_XLIB=	yes
 RESTRICTED=	"Redistribution isn't permitted - see license for details"
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+NO_SIZE=	yes
 
 INSTFILES=	battles javadoc license.html robocode.ico \
 		robocode.jar robots templates versions.txt
