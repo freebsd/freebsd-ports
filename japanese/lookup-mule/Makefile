@@ -51,9 +51,6 @@ do-install:
 	${RM} ${ELISPDIR}/lookup-compile.el
 	${SED} -e 's,@VERSION@,1.0,' -e 's,@pkgemacsdir@,${ELISPDIR},' \
 		${WRKSRC}/lisp/lookup-vars.el.in > ${ELISPDIR}/lookup-vars.el
-	@if [ ! -f ${PORTINFODIR}/info/dir ]; then \
-		${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PORTINFODIR}/dir; \
-	fi
 	install-info ${PORTINFODIR}/lookup.info ${PORTINFODIR}/dir
 	${SED} -e 's,%%ELISPDIR%%,${ELISPDIR},' ${FILESDIR}/lookup-startup.el.tmpl > ${ELISPDIR}/../lookup-startup.el
 
