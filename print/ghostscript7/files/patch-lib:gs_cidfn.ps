@@ -1,0 +1,51 @@
+--- lib/gs_cidfn.ps.org	2003-04-12 23:02:38.000000000 +0900
++++ lib/gs_cidfn.ps	2003-09-03 07:28:28.000000000 +0900
+@@ -511,9 +511,32 @@
+ 
+ .loadinitialcidfonts
+ 
++% <fontname> <font> .RenameFontForNeverEmbed <fontname> <font'>
++/.RenameFontForNeverEmbed {
++    /DEVICE where { pop DEVICE (pdfwrite) eq {
++        currentdistillerparams /NeverEmbed get {
++            2 index eq {
++                (*** unembeddable CIDFont: ) print 1 index == flush
++                dup length 1 add dict copy
++                dup /FID undef
++                dup /.orig_CIDFontName 1 index /CIDFontName get put
++                dup /CIDFontName 3 index dup type /stringtype eq {
++                    dup rcheck {
++                        dup length string 0 1 2 index length 1 sub {
++                            2 index 1 index get 3 copy put pop pop
++                        } for exch pop
++                    } if
++                } if put
++                dup /FontName 1 index /CIDFontName get put
++            } if
++        } forall
++    } if } if
++} bind def
++
+ /CIDFontmapHandler <<
+   /nametype {
+     /CIDFont findresource
++    .RenameFontForNeverEmbed
+     /CIDFont defineresource pop
+   } bind
+   /stringtype {
+@@ -528,6 +551,7 @@
+ 	      pop pop
+ 	  } {
+ 	      % Give a name different from the name defined in the file
++	      .RenameFontForNeverEmbed
+ 	      /CIDFont defineresource pop
+ 	  } ifelse
+       } {
+@@ -546,6 +570,7 @@
+ 	  3 -1 roll put
+ 	  % Expand array
+ 	  aload pop .loadcjkvttcidfont
++	  .RenameFontForNeverEmbed
+ 	  /CIDFont defineresource pop
+       } {
+ 	  /undefinedresource signalerror
