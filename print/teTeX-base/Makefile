@@ -3,7 +3,7 @@
 # Date created:		5 December 1996
 # Whom:			Bernd Rosauer <br@schiele-ct.de>
 #
-# $Id: Makefile,v 1.21 1998/05/26 08:01:03 tg Exp $
+# $Id: Makefile,v 1.22 1998/06/27 05:19:21 asami Exp $
 #
 
 DISTNAME=	teTeX-src-0.4
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	systems/unix/teTeX/distrib/sources
 DISTFILES=	${TETEX_SRC} ${TETEX_LIB}
 
-MAINTAINER=	br@schiele-ct.de
+MAINTAINER=	br@netland.inka.de
 
 DIST_SUBDIR=	teTeX
 PATCH_DIST_STRIP=	-p1
