@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	bs-
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Localized messages and documentation for koffice
+COMMENT=	Bosnian messages and documentation for koffice
 
 IGNORE=		Needs update from vendor.
 
