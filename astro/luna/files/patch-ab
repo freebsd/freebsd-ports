@@ -1,0 +1,92 @@
+--- makefile.orig	Sun May 24 03:57:22 1992
++++ makefile	Mon Feb 21 02:45:58 2000
+@@ -2,23 +2,24 @@
+ # 	Makefile for luna using BSD cc
+ # 
+ 
+-MAKEFILE = Makefile
++#MAKEFILE = Makefile
+ OPTDEF = -DBOX
+ 
+ # MSDOS
+-CC = cl
+-CFLAGS = -Ox -AS -DANSI -W4 $(OPTDEF)
+-LD = link
+-LDFLAGS = -NOI
+-O = .obj
+-EXE = .exe
++#CC = cl
++#CFLAGS = -Ox -AS -DANSI -W4 $(OPTDEF)
++#LD = link
++#LDFLAGS = -NOI
++#O = .obj
++#EXE = .exe
+ # UNIX
+-#CC = cc
+-#CFLAGS = -Ox -DUNIX $(OPTDEF)
+-#LD = cc
+-#LDFLAGS =
+-#O = .o
+-#EXE =
++CC ?= cc
++CFLAGS += -DUNIX $(OPTDEF)
++LD = cc
++LDFLAGS =
++O = .o
++EXE =
++IANSILIB = iprintf/iansilib.o
+ 
+ # The program name
+ PROG = luna$(EXE)
+@@ -26,7 +27,8 @@
+ # All modules
+ SRCS = famplan.c luna.c pyramid.c
+ OBJS = famplan$(O) luna$(O) pyramid$(O)
+-OBJSIP = iprintf/idoprnt$(O) iprintf/iprintf$(O) iprintf/isprintf$(O)
++OBJSIP = iprintf/idoprnt$(O) iprintf/iprintf$(O) iprintf/isprintf$(O) \
++	$(IANSILIB)
+ HDRS = luna.h
+ HDRSPR = pyramid.h
+ HDRSIP = iprintf/iansilib.h iprintf/iprint.h
+@@ -35,13 +37,18 @@
+ #
+ all : $(PROG)
+ 
++install:
++	${BSD_INSTALL_PROGRAM} $(PROG) ${PREFIX}/bin
++clean:
++	rm -fr $(OBJS) $(OBJSIP) $(PROG)
++
+ # MSDOS
+-$(PROG) : $(OBJS) $(OBJSIP)
+-	$(LD) @link.i
++#$(PROG) : $(OBJS) $(OBJSIP)
++#	$(LD) @link.i
+ #	$(LD) $(LDFLAGS) $(OBJS) $(OBJSIP), $(PROG);
+ # UNIX
+-#$(PROG) : $(OBJS) $(OBJSIP)
+-#	$(LD) -o $(PROG) $(OBJS) $(OBJSIP) $(LDFLAGS) 
++$(PROG) : $(OBJS) $(OBJSIP)
++	$(LD) -o $(PROG) $(OBJS) $(OBJSIP) $(LDFLAGS) 
+ 
+ $(OBJS) : $(HDRS)
+ 
+@@ -50,13 +57,13 @@
+ $(OBJS) : $(MAKEFILE)
+ 
+ # UNIX
+-#$(OBJSIP) : $(HDRSIP)
+-#	( cd iprintf; make )
++$(OBJSIP) : $(HDRSIP)
++	( cd iprintf; ${MAKE} )
+ # MSDOS
+ $(OBJSIP) : $(HDRSIP)
+-	cd iprintf
+-	make
+-	cd ..
++#	cd iprintf
++#	make
++#	cd ..
+ #
+ #	Other dependencies
+ #

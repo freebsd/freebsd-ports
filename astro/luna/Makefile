@@ -6,10 +6,10 @@
 # $FreeBSD$
 #
 
-DISTNAME=	luna19
+DISTNAME=	luna19s
 PKGNAME=	luna-1.9
 CATEGORIES=	astro games
-MASTER_SITES=	ftp://ftp.ae.keio.ac.jp/pub/msdos/utils/
+MASTER_SITES=	ftp://ftp.vector.co.jp/pack/dos/edu/science/space/
 EXTRACT_SUFX=	.lzh
 
 MAINTAINER=	rewsirow@ff.iij4u.or.jp
@@ -17,12 +17,10 @@ MAINTAINER=	rewsirow@ff.iij4u.or.jp
 BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
 EXTRACT_CMD=	lha
-EXTRACT_BEFORE_ARGS=	xfw=${WRKDIR}
+EXTRACT_BEFORE_ARGS=	xtfqw=${WRKDIR}
 EXTRACT_AFTER_ARGS=	# empty
-PATCH_STRIP=	-p1
 
-post-extract:
-	@${ECHO_MSG} "===>  Removing object files for ${DISTNAME}"
-	@(cd ${WRKDIR}/luna19/iprintf; ${RM} -fr *.o)
+NO_WRKSUBDIR=	yes
+MAKEFILE=	makefile
 
 .include <bsd.port.mk>
