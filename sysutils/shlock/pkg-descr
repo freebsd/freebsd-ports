@@ -1,0 +1,8 @@
+The historical, and still very useful process-locking program. Use to make
+sure that your shell script is the only version of itself running on your
+system. There are many other creative ways to use this program.
+
+WWW: http://www.isc.org/products/INN/
+
+- Doug Barton
+DougB@FreeBSD.org

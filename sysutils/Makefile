@@ -176,6 +176,7 @@
     SUBDIR += service-config
     SUBDIR += setcdboot
     SUBDIR += setquota
+    SUBDIR += shlock
     SUBDIR += skill
     SUBDIR += slay
     SUBDIR += slmon
