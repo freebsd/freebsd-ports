@@ -1,5 +1,5 @@
 --- xmit/shlock.c.orig	Tue Nov  1 06:54:32 1994
-+++ xmit/shlock.c	Sun Jan  9 09:30:04 2000
++++ xmit/shlock.c	Tue Dec  3 05:04:26 2002
 @@ -28,7 +28,6 @@
  ** Erik E. Fair <fair@apple.com>, November 12, 1989
  */
@@ -12,10 +12,34 @@
  #ifdef NNTPSRC
  #include "../conf.h"
  #endif
-+#ifdef BSD_44
-+#define _ANSI_SOURCE
-+#endif
 +#include <stdio.h>
++#ifdef __FreeBSD__
++#include <string.h>
++#endif
  
  #define	LOCK_SET	0
  #define	LOCK_FAIL	1
+@@ -61,10 +64,12 @@
+ 
+ #define	dprintf	if (Debug) printf
+ 
++#ifndef __FreeBSD__
+ extern	int	errno;
+ extern	char	*rindex();
+ extern	char	*strcpy();
+ extern	char	*strcat();
++#endif
+ 
+ main(ac, av)
+ int	ac;
+@@ -118,8 +123,10 @@
+ errmsg(n)
+ register int	n;
+ {
++#ifndef __FreeBSD__
+ 	extern	int	sys_nerr;
+ 	extern 	char	*sys_errlist[];
++#endif
+ 
+ 	return((n >= 0 && n < sys_nerr) ? sys_errlist[n] : "unknown error");
+ }
