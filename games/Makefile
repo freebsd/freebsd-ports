@@ -197,7 +197,6 @@
     SUBDIR += omega
     SUBDIR += twitch
     SUBDIR += uox3
-    SUBDIR += varconf
     SUBDIR += wmeyes
     SUBDIR += wmminichess
     SUBDIR += wmtictactoe
