@@ -25,6 +25,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	shige@FreeBSD.org
 
+FORBIDDEN=	"The main zsh port (ports/shells/zsh) has been upgraded to 4.x.  It is highly advised that you use that port instead of this one"
+
 USE_AUTOCONF=	yes
 
 ZSH_VER=	${PORTVERSION}
@@ -38,12 +40,6 @@ MAN1=		zsh.1 zshbuiltins.1 zshcompctl.1 zshexpn.1 zshmisc.1 \
 		zshoptions.1 zshall.1 zshparam.1 zshzle.1 zshmodules.1 \
 		zshzftpsys.1 zshcompsys.1 zshcompwid.1
 PLIST_SUB=	ZSH_VER="${ZSH_VER}" ZSHFUNC_SUBDIR="${ZSHFUNC_SUBDIR}"
-
-pre-everything::
-	@${ECHO} "The main zsh port (ports/shells/zsh) has been upgraded"
-	@${ECHO} "to 4.0.1.  It is highly advised that you use that port"
-	@${ECHO} "instead of this one."
-	@${FALSE}
 
 # If you want to build a static binary, uncomment the following line
 #LDFLAGS+=-static
