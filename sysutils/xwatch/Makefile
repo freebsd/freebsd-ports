@@ -13,7 +13,8 @@ MASTER_SITES=	http://www.student.lu.se/~nbi98oli/src/obsolete/
 MAINTAINER=	mph@freebsd.org
 
 USE_XLIB=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 
 post-install:

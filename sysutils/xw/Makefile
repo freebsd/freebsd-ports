@@ -14,8 +14,8 @@ MAINTAINER=	ports@FreeBSD.Org
 
 GTK_CONFIG=${X11BASE}/bin/gtk12-config
 
-USE_GTK=	yes
-USE_IMLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	imlib
 USE_X_PREFIX=	yes
 
 .include <bsd.port.mk>

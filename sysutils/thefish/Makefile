@@ -19,7 +19,9 @@ LIB_DEPENDS=	gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20
 USE_X_PREFIX=	yes
 .endif
 .if !defined(NO_GUI) && !defined(WITH_GTK2)
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
+PKGNAMESUFFIX=	-gtk
 .endif
 
 MAN1=		thefish.1

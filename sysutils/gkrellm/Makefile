@@ -16,7 +16,8 @@ MAINTAINER=	ume@FreeBSD.org
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_IMLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	imlib
 USE_GMAKE=	yes
 
 INCLUDES=	gkrellm.h gkrellm_public_proto.h
