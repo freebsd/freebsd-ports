@@ -67,12 +67,6 @@ GNU_CONFIGURE=	yes
 USE_BISON=	yes
 USE_REINPLACE=	yes
 
-WITH_PTHREAD_LIBS?=	${PTHREAD_LIBS:S/-l//}
-WITH_PTHREAD_CFLAGS?=	${PTHREAD_CFLAGS}
-
-CONFIGURE_ENV=	ac_cv_pthreads_lib=${WITH_PTHREAD_LIBS} \
-		ac_cv_pthreads_cflags=${WITH_PTHREAD_CFLAGS}
-
 CONFIGURE_ARGS=	--enable-versioning \
 		--enable-memory-limit \
 		--with-layout=GNU \
@@ -552,6 +546,13 @@ CONFIGURE_ARGS+=--with-zlib=yes
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500016
+WITH_PTHREAD_LIBS?=	${PTHREAD_LIBS:S/-l//}
+WITH_PTHREAD_CFLAGS?=	${PTHREAD_CFLAGS}
+CONFIGURE_ENV=	ac_cv_pthreads_lib=${WITH_PTHREAD_LIBS} \
+		ac_cv_pthreads_cflags=${WITH_PTHREAD_CFLAGS}
+.endif
 
 .if !defined(WITHOUT_APACHE)
 .if exists(${LOCALBASE}/include/apache2/httpd.h)
