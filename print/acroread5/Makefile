@@ -33,6 +33,7 @@ post-install:
 	  ${PATCH} --quiet < ${FILESDIR}/acroread.diff && \
 	  ${INSTALL_SCRIPT} ${PREFIX}/Acrobat4/bin/acroread \
 	     ${PREFIX}/bin/acroread4 && ${RM} acroread.orig
+	@strip ${PREFIX}/Acrobat4/Reader/intellinux/bin/acroread
 	@brandelf -t Linux ${PREFIX}/Acrobat4/Reader/intellinux/bin/acroread
 	@${CHMOD} +x ${PREFIX}/bin/acroread4
 	@${ECHO_MSG} "Be sure to read the license agreement in"
