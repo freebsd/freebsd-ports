@@ -8,7 +8,7 @@
 PORTNAME=	nstreams
 PORTVERSION=	1.0.0
 CATEGORIES=	net
-MASTER_SITES=	http://www.hsc.fr/cabinet/produits/nstreams/
+MASTER_SITES=	http://www.hsc.fr/ressources/outils/nstreams/download/
 
 MAINTAINER=	darius@dons.net.au
 
