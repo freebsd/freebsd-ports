@@ -20,12 +20,11 @@ ONLY_FOR_ARCHS= i386 alpha powerpc
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_XLIB=	yes
+USE_REINPLACE=	yes
 USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
-CONFIGURE_ARGS=	--disable-debugger
-.if ${MACHINE_ARCH} != "i386"
-  CONFIGURE_ARGS+= --disable-intp
+.if ${MACHINE_ARCH} == "alpha"
+CONFIGURE_ARGS+= --disable-intp
 .endif
 USE_GMAKE=	yes
 
@@ -37,7 +36,7 @@ INSTALLS_SHLIB=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
-BROKEN=         "Dumps core at making RscData.res.c"
+USE_GCC=	3.2
 .endif
 
 FMT?=	/usr/bin/fmt
