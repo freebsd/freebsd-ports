@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	french comms emulators
 MASTER_SITES=	http://pficheux.free.fr/xtel/download/
 
-MAINTAINER=	thierry@pompo.net
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	An emulator for the french Minitel
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
@@ -27,6 +27,8 @@ USE_XPM=	yes
 USE_REINPLACE=	yes
 
 MAN1=	xtel.1 xteld.1
+
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
 
@@ -64,19 +66,19 @@ post-install:
 .endfor
 	@${ECHO}
 	@(if [ 0${LANGUE} = 0fr ] ; then \
-	  ${ECHO_MSG} "La documentation a été installée dans ${DOCSDIR}." ; \
+	  ${ECHO_MSG} "===> La documentation a été installée dans ${DOCSDIR}." ; \
 	else \
-	  ${ECHO_MSG} "Documentation installed in ${DOCSDIR}." ; \
+	  ${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}." ; \
 	fi)
 .endif
 	@${TOUCH} ${PREFIX}/lib/X11/xtel/xtel.log
 	@(if [ 0${LANGUE} = 0fr ] ; then \
-		${CP} ${PKGMESSAGE}-fr ${WRKDIR}/pkg-message ; \
+		${CP} ${FILESDIR}/pkg-message-fr.in ${PKGMESSAGE} ; \
 	else \
-		${CP} ${PKGMESSAGE} ${WRKDIR} ; \
+		${CP} ${FILESDIR}/pkg-message.in ${PKGMESSAGE} ; \
 	fi)
 	@${ECHO}
-	@${CAT} ${WRKDIR}/pkg-message | ${SED} -e "s:%%PREFIX%%:${PREFIX}:g"
+	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" ${PKGMESSAGE}
 	@${ECHO}
 
 .include <bsd.port.post.mk>
