@@ -3,7 +3,7 @@
 # Date created:				23 September 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/06/07 12:01:14 kuriyama Exp $
+# $Id: Makefile,v 1.2 1998/06/08 00:15:43 asami Exp $
 #
 
 DISTNAME=		ncurses-1.9.9g
@@ -11,6 +11,8 @@ CATEGORIES=		devel
 MASTER_SITES=		ftp://ftp.netcom.com/pub/zm/zmbenhal/ncurses/
 
 MAINTAINER=		andy@icc.surw.chel.su
+
+BROKEN=			compile
 
 WRKSRC=			${WRKDIR}/ncurses_1.9.9g
 GNU_CONFIGURE=		yes
