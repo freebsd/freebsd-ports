@@ -1,0 +1,45 @@
+bin/yazproxy
+include/yazproxy/bw.h
+include/yazproxy/proxy.h
+lib/libyazproxy.a
+lib/libyazproxy.la
+lib/libyazproxy.so
+lib/libyazproxy.so.1
+share/doc/yazproxy/id.png
+share/doc/yazproxy/installation.html
+share/doc/yazproxy/introduction.html
+share/doc/yazproxy/license.html
+share/doc/yazproxy/other-optimizations.html
+share/doc/yazproxy/otherinfo-encoding.html
+share/doc/yazproxy/proxy-config-file.html
+share/doc/yazproxy/proxy-keepalive.html
+share/doc/yazproxy/proxy-reference.html
+share/doc/yazproxy/proxy-target.html
+share/doc/yazproxy/proxy-usage.html
+share/doc/yazproxy/query-cache.html
+share/doc/yazproxy/query-validation.html
+share/doc/yazproxy/record-cache.html
+share/doc/yazproxy/record-validation.html
+share/doc/yazproxy/support.html
+share/doc/yazproxy/using.html
+share/doc/yazproxy/windows.html
+share/doc/yazproxy/yaz.css
+share/doc/yazproxy/yazproxy-man.html
+share/doc/yazproxy/yazproxy-schema.html
+share/doc/yazproxy/yazproxy.html
+share/doc/yazproxy/yazproxy.pdf
+share/yazproxy/MARC21slim2DC.xsl
+share/yazproxy/MARC21slim2MODS.xsl
+share/yazproxy/MARC21slim2MODS3.xsl
+share/yazproxy/MARC21slim2RDFDC.xsl
+share/yazproxy/MARC21slim2SRWDC.xsl
+share/yazproxy/MARC21slimUtils.xsl
+share/yazproxy/config.xml
+share/yazproxy/pqf.properties
+share/yazproxy/voyager.xml
+share/yazproxy/yazproxy.xsd
+share/yazproxy/yazproxyctl.sh
+share/yazproxy/zeerex-2.0.xsd
+@dirrm include/yazproxy
+@dirrm share/doc/yazproxy
+@dirrm share/yazproxy
