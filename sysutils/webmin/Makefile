@@ -29,11 +29,12 @@ post-patch:
 	${WRKDIR}/webmin-${PORTVERSION}/bind8/config-freebsd-3.4
 
 do-install:
-	${MKDIR} ${LOCALBASE}/lib/webmin
-	${CP} -r ${WRKSRC}/* ${LOCALBASE}/lib/webmin
-	@cd ${LOCALBASE}/lib/webmin && find . -name "*.orig" -print \
+	@${MKDIR} ${PREFIX}/lib/webmin
+	@${CP} -r ${WRKSRC}/* ${PREFIX}/lib/webmin
+	@cd ${PREFIX}/lib/webmin && find . -name "*.orig" -print \
 		| xargs ${RM}
-	@cd ${LOCALBASE}/lib/webmin && ./setup.sh
-	${MV} /tmp/webmin.sh ${LOCALBASE}/etc/rc.d/webmin.sh
+	@cd ${PREFIX}/lib/webmin && ./setup.sh
+	@${MV} /tmp/webmin.sh ${PREFIX}/etc/rc.d/webmin.sh
+	@${CHMOD} 554 ${PREFIX}/etc/rc.d/webmin.sh
 
 .include <bsd.port.mk>
