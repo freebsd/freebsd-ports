@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+CATEGORIES=	japanese
+
 LANGUAGE=	Japanese
 MASTERDIR=	${.CURDIR}/../../misc/seizedesktop
 
