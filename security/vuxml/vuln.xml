@@ -30,6 +30,36 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="84237895-8f39-11d8-8b29-0020ed76ef5a">
+    <topic>neon format string vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>neon</name>
+	<range><lt>0.24.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Greuff reports that the neon WebDAV client library contains
+          several format string bugs within error reporting code.  A
+          malicious server may exploit these bugs by sending specially
+          crafted PROPFIND or PROPPATCH responses.</p>
+	<p>Although several applications include neon, such as cadaver and
+	  subversion, the FreeBSD Ports of these applications are not
+	  affected.  They are specifically configured to NOT use the
+	  included neon.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0179</cvename>
+      <url>http://www.webdav.org/neon/</url>
+    </references>
+    <dates>
+      <discovery>2004-04-14</discovery>
+      <entry>2004-04-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0792e7a7-8e37-11d8-90d1-0020ed76ef5a">
     <topic>CVS path validation errors</topic>
     <affects>
@@ -39,7 +69,9 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </package>
       <system>
 	<name>FreeBSD</name>
-	<range><ge>0</ge></range>
+	<range><ge>5.2</ge><lt>5.2.1p5</lt></range>
+	<range><ge>4.9</ge><lt>4.9p5</lt></range>
+	<range><ge>4.8</ge><lt>4.8p18</lt></range>
       </system>
     </affects>
     <description>
@@ -1721,7 +1753,7 @@ misc.c:
       </package>
       <package>
         <name>openh323</name>
-        <range><le>1.12.0_2</le></range>
+        <range><lt>1.13.0</lt></range>
       </package>
     </affects>
     <description>
@@ -1750,6 +1782,7 @@ misc.c:
     <dates>
       <discovery>2004-01-13</discovery>
       <entry>2004-02-22</entry>
+      <modified>2004-04-15</modified>
     </dates>
   </vuln>
 
