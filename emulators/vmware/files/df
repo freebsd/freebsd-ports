@@ -2,6 +2,9 @@
 # Hacky emulation of GNU df.
 # Intented to use with vmware wizard.
 # Depend from the _absence_ linux version perl in the dir /compat/linux/usr/bin/
+#
+# $FreeBSD$
+#
 @NARGV=('-n');
 $type=0;
 foreach (@ARGV) {
