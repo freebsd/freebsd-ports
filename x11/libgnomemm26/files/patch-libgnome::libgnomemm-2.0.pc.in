@@ -1,0 +1,9 @@
+--- libgnome/libgnomemm-2.0.pc.in.orig	Mon Oct 13 00:04:50 2003
++++ libgnome/libgnomemm-2.0.pc.in	Mon Oct 13 00:05:12 2003
+@@ -7,5 +7,5 @@
+ Description: C++ wrapper for libgnome
+ Requires: gtkmm-2.0 >= @GTKMM_VERSION_NEEDED@  libgnome-2.0 >= @LIBGNOME_VERSION_NEEDED@
+ Version: @VERSION@
+-Libs: -L${libdir} -lgnomemm-1.3
++Libs: -L${libdir} -lgnomemm-2.0
+ Cflags: -I${includedir}/libgnomemm-2.0 -I${libdir}/libgnomemm-2.0/include
