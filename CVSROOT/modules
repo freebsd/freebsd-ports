@@ -6859,6 +6859,7 @@ ruby-rreadline	ports/devel/ruby-rreadline
 ruby-rss	ports/textproc/ruby-rss
 ruby-rudl	ports/devel/ruby-rudl
 ruby-sablot	ports/textproc/ruby-sablot
+ruby-sary	ports/textproc/ruby-sary
 ruby-sdl	ports/devel/ruby-sdl
 ruby-search-namazu	ports/databases/ruby-search-namazu
 ruby-setup.rb	ports/devel/ruby-setup.rb
