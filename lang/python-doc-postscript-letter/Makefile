@@ -1,6 +1,6 @@
 # New ports collection makefile for:	python-doc-postscript-letter
 # Date created:		02 June 1999
-# Whom:			Thomas Gellekum <tg@FreeBSD.org>
+# Whom:			Thomas Gellekum <alane@FreeBSD.org>
 #
 # $FreeBSD$
 #
