@@ -545,6 +545,7 @@ share/gnome/mc/templates/gnumeric.desktop
 share/gnome/mime-info/gnumeric.keys
 share/gnome/mime-info/gnumeric.mime
 share/gnome/omf/gnumeric/gnumeric-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnumeric/gnumeric-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gnome-application-vnd.lotus-1-2-3.png
 share/gnome/pixmaps/gnome-application-x-applix-spreadsheet.png
 share/gnome/pixmaps/gnome-application-x-generic-spreadsheet.png
@@ -822,3 +823,4 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/autoformat
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/autocorrect
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnumeric/gnumeric-C.omf 2>/dev/null || /usr/bin/true

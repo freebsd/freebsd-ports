@@ -24,6 +24,7 @@ share/gnome/help/ggv/C/legal.xml
 share/gnome/help/ggv/C/topic.dat
 share/gnome/idl/Ggv.idl
 share/gnome/omf/ggv/ggv-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/ggv/ggv-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/ggv/clearall.xpm
 share/gnome/pixmaps/ggv/fitwidth.png
 share/gnome/pixmaps/ggv/ggv-splash.png
@@ -90,3 +91,4 @@ share/locale/zh_TW/LC_MESSAGES/ggv.mo
 @dirrm etc/gconf/gconf.xml.defaults/apps/ggv/coordinates
 @dirrm etc/gconf/gconf.xml.defaults/apps/ggv/control
 @dirrm etc/gconf/gconf.xml.defaults/apps/ggv
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/ggv/ggv-C.omf 2>/dev/null || /usr/bin/true

@@ -30,7 +30,9 @@ share/gnome/help/ghex2/C/ghex2.xml
 share/gnome/help/ghex2/C/legal.xml
 share/gnome/help/ghex2/C/topic.dat
 share/gnome/omf/ghex/ghex-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/ghex/ghex-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/ghex/ghex-ja.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/ghex/ghex-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gnome-ghex.png
 share/locale/am/LC_MESSAGES/ghex-2.0.mo
 share/locale/bg/LC_MESSAGES/ghex-2.0.mo
@@ -78,3 +80,5 @@ share/locale/zh_TW/LC_MESSAGES/ghex-2.0.mo
 @dirrm share/gnome/help/ghex2
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/ghex2
 @dirrm etc/gconf/gconf.xml.defaults/apps/ghex2
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/ghex/ghex-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/ghex/ghex-ja.omf 2>/dev/null || /usr/bin/true

@@ -6,6 +6,7 @@ share/gnome/mergeant/plugins/libPnetaddr.so
 share/gnome/mergeant/plugins/libPpicts.so
 share/gnome/mergeant/plugins/libPsample.so
 share/gnome/omf/mergeant/mergeant-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/mergeant/mergeant-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/mergeant/mergeant.png
 share/gnome/pixmaps/mergeant/mergeant_connect.png
 share/gnome/pixmaps/mergeant/mergeant_connect_small.png
@@ -41,3 +42,4 @@ share/locale/vi/LC_MESSAGES/mergeant.mo
 @dirrm share/doc/mergeant/C/images
 @dirrm share/doc/mergeant/C
 @dirrm share/doc/mergeant
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/mergeant/mergeant-C.omf 2>/dev/null || /usr/bin/true

@@ -70,6 +70,7 @@ share/gnome/help/gthumb/C/figures/search-result.png
 share/gnome/help/gthumb/C/gthumb.xml
 share/gnome/help/gthumb/C/legal.xml
 share/gnome/omf/gthumb/gthumb-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gthumb/gthumb-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gthumb.png
 share/locale/am/LC_MESSAGES/gthumb.mo
 share/locale/cs/LC_MESSAGES/gthumb.mo
@@ -129,3 +130,4 @@ share/locale/zh_TW/LC_MESSAGES/gthumb.mo
 @dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/dialogs
 @dirrm etc/gconf/gconf.xml.defaults/apps/gthumb/browser
 @dirrm etc/gconf/gconf.xml.defaults/apps/gthumb
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gthumb/gthumb-C.omf 2>/dev/null || /usr/bin/true
