@@ -7,7 +7,7 @@
 
 PORTNAME=	PEAR
 PORTVERSION=	1.2.1
-CATEGORIES=	devel www
+CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR Base System

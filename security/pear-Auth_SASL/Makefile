@@ -7,7 +7,7 @@
 
 PORTNAME=	Auth_SASL
 PORTVERSION=	1.0.1
-CATEGORIES=	security www
+CATEGORIES=	security www pear
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR abstraction of various SASL mechanism responses

@@ -8,7 +8,7 @@
 PORTNAME=	Mail_Mime
 PORTVERSION=	1.2.1
 PORTREVISION=	3
-CATEGORIES=	mail www
+CATEGORIES=	mail www pear
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR classes to create and decode MIME messages

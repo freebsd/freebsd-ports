@@ -7,7 +7,7 @@
 
 PORTNAME=	Net_SMTP
 PORTVERSION=	1.2.3
-CATEGORIES=	net mail www
+CATEGORIES=	net mail www pear
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class that provides an implementation of the SMTP protocol

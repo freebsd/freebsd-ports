@@ -7,7 +7,7 @@
 
 PORTNAME=	mailparse
 PORTVERSION=	0.9.3
-CATEGORIES=	mail www
+CATEGORIES=	mail www pear
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR classes to create and decode MIME messages

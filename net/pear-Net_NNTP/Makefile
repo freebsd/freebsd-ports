@@ -7,7 +7,7 @@
 
 PORTNAME=	Net_NNTP
 PORTVERSION=	0.9.3
-CATEGORIES=	net news www
+CATEGORIES=	net news www pear
 
 MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	PEAR class that provides an implementation of the NNTP protocol

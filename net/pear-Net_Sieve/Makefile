@@ -8,7 +8,7 @@
 PORTNAME=	Net_Sieve
 PORTVERSION=	0.8.1
 PORTREVISION=	2
-CATEGORIES=	net www
+CATEGORIES=	net www pear
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class to handle talking to timsieved

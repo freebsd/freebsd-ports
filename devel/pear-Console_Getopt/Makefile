@@ -8,7 +8,7 @@
 PORTNAME=	Console_Getopt
 PORTVERSION=	1.0
 PORTREVISION=	1
-CATEGORIES=	devel www
+CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR command-line option parser

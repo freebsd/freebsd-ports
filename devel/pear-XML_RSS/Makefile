@@ -7,7 +7,7 @@
 
 PORTNAME=	XML_RSS
 PORTVERSION=	0.9.2
-CATEGORIES=	devel www
+CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR RSS parser

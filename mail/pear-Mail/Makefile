@@ -7,7 +7,7 @@
 
 PORTNAME=	Mail
 PORTVERSION=	1.1.2
-CATEGORIES=	mail www
+CATEGORIES=	mail www pear
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class that provides multiple interfaces for sending emails

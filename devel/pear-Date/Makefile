@@ -8,7 +8,7 @@
 PORTNAME=	Date
 PORTVERSION=	1.3
 PORTREVISION=	2
-CATEGORIES=	devel www
+CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR Date and Time Zone Classes

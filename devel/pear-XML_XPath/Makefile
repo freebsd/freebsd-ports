@@ -7,7 +7,7 @@
 
 PORTNAME=	XML_XPath
 PORTVERSION=	1.2
-CATEGORIES=	devel www
+CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class provided an XPath/DOM XML manipulation

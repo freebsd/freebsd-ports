@@ -7,7 +7,7 @@
 
 PORTNAME=	Console_Table
 PORTVERSION=	1.0.1
-CATEGORIES=	devel
+CATEGORIES=	devel pear
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP class that makes it easy to build console style tables

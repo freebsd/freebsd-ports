@@ -7,7 +7,7 @@
 
 PORTNAME=	Archive_Tar
 PORTVERSION=	1.1
-CATEGORIES=	archivers www
+CATEGORIES=	archivers www pear
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR tar file management class

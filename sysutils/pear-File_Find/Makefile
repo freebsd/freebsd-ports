@@ -7,7 +7,7 @@
 
 PORTNAME=	File_Find
 PORTVERSION=	0.2.0
-CATEGORIES=	sysutils www
+CATEGORIES=	sysutils www pear
 MASTER_SITES=	http://pear.php.net/get/
 PKGNAMEPREFIX=	pear-
 EXTRACT_SUFX=	.tgz

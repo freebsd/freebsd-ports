@@ -7,7 +7,7 @@
 
 PORTNAME=	XML_Tree
 PORTVERSION=	1.1
-CATEGORIES=	devel www
+CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class for representing XML data in a tree structure

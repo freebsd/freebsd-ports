@@ -8,7 +8,7 @@
 PORTNAME=	File
 PORTVERSION=	1.0.3
 PORTREVISION=	1
-CATEGORIES=	sysutils www
+CATEGORIES=	sysutils www pear
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR common file and directory routines
