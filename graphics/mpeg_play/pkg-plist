@@ -1,0 +1,3 @@
+@cwd /usr/X11R6
+bin/mpeg_play
+man/man1/mpeg_play.1.gz
