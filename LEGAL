@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.14 1995/06/21 11:10:25 asami Exp $
+# $Id: LEGAL,v 1.15 1995/06/23 14:52:55 joerg Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -29,3 +29,4 @@ irc-2.8.21.tar.gz	ports/net/irc		Restrictive copyright
 						in irc2.8.21/ircd/res.c
 e9e-1.0.2rX.tar.gz	ports/editors/e93	Restrictive copyright?
 uzap.tar.gz             ports/editors/uzap      Restrictive copyright
+joe2.8.tar.Z		ports/editors/joe	Restrictive copyright
