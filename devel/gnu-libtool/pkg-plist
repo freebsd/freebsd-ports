@@ -4,6 +4,7 @@ share/aclocal/libtool.m4
 share/aclocal/ltdl.m4
 share/libtool/config.guess
 share/libtool/config.sub
+share/libtool/install-sh
 share/libtool/libltdl/COPYING.LIB
 share/libtool/libltdl/Makefile.am
 share/libtool/libltdl/Makefile.in
