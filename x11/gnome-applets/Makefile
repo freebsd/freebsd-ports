@@ -35,9 +35,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 .if ${ARCH} != "i386"
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -fPIC"
-PLIST_SUB=      BATTERY="@comment "
+PLIST_SUB=	BATTERY="@comment "
 .else
-PLIST_SUB=      BATTERY=""
+PLIST_SUB=	BATTERY=""
 .endif
 
 .include <bsd.port.post.mk>
