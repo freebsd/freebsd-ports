@@ -1,5 +1,5 @@
---- configure.orig	Tue Mar 21 03:20:42 2000
-+++ configure	Sat Apr  1 00:00:00 2000
+--- configure.orig	Mon Mar 20 20:20:42 2000
++++ configure	Mon Sep 18 21:04:27 2000
 @@ -1150,8 +1150,10 @@
  	TIFFLIBREF='-L${DEPTH}/libtiff -ltiff'
  	;;
@@ -12,3 +12,12 @@
  	DSO=FREEBSD
  	TIFFLIBREF='-L${DEPTH}/libtiff -ltiff'
  	;;
+@@ -1256,7 +1258,7 @@
+ # Check if ln -s creates a symbolic link.
+ #
+ if [ -z "${LN_S-}" ]; then
+-    $RM t.c; $LN -s foo t.c && LN_S=-s
++    $RM t.c; $LN -sf foo t.c && LN_S=-sf
+ fi
+ if [ -n "$LN_S" ]; then
+     Note "Looks like $LN supports the -s option to create a symbolic link."
