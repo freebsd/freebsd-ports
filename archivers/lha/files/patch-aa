@@ -1,5 +1,5 @@
 --- Makefile.orig	Sat May  6 18:55:15 2000
-+++ Makefile	Sat Aug 12 18:13:52 2000
++++ Makefile	Mon Aug 14 19:41:44 2000
 @@ -11,27 +11,27 @@
  #-----------------------------------------------------------------------
  
@@ -12,7 +12,7 @@
 -SWITCHES	= -DNEED_INCREMENTAL_INDICATOR \
 - -DTMP_FILENAME_TEMPLATE="\"/tmp/lhXXXXXX\""
 +#CC			= gcc
-+#SWITCHES	= -DNEED_INCREMENTAL_INDICATOR \
++SWITCHES        = -DNEED_INCREMENTAL_INDICATOR
  
  #MACHINE     = -DSYSTIME_HAS_NO_TM -DFTIME -DEUC
  #MACHINE     = -DSYSTIME_HAS_NO_TM -DEUC -DHAVE_TM_ZONE -DSYSV_SYSTEM_DIR
