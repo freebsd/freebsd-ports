@@ -32,6 +32,47 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e8c6ade2-6bcc-11d9-8e6f-000a95bc6fae">
+    <topic>phpbb -- multiple vulnerabilities include XSS and SQL injection</topic>
+    <affects>
+      <package>
+	<name>phpbb</name>
+	<range><lt>2.0.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The ChangeLog for phpBB 2.0.11 states:</p>
+	<blockquote cite="http://www.phpbb.com/support/documents.php?mode=changelog">
+	  <p>Changes since 2.0.10</p>
+	  <ul>
+	    <li>Fixed vulnerability in highlighting code (<strong>very
+	      high severity, please update your installation as soon
+	      as possible</strong>)</li>
+	    <li>Fixed unsetting global vars - <strong>Matt
+	      Kavanagh</strong></li>
+	    <li>Fixed XSS vulnerability in username handling
+	      - <strong>AnthraX101</strong></li>
+	    <li>Fixed not confirmed sql injection in username handling
+	      - <strong>warmth</strong></li>
+	    <li>Added check for empty topic id in topic_review
+	      function</li>
+	    <li>Added visual confirmation mod to code base</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpbb.com/support/documents.php?mode=changelog</url>
+      <url>http://www.phpbb.com/phpBB/viewtopic.php?f=14&amp;t=240636</url>
+      <freebsdpr>ports/74106</freebsdpr>
+    </references>
+    <dates>
+      <discovery>2004-11-18</discovery>
+      <entry>2005-01-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1489df94-6bcb-11d9-a21e-000a95bc6fae">
     <topic>opera -- multiple vulnerabilities in Java implementation</topic>
     <affects>
