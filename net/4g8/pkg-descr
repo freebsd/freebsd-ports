@@ -1,4 +1,4 @@
-Forgate (Forge Gateway) is a tool that allows you to capture
+4g8 (Forge Gateway) is a tool that allows you to capture
 traffic from a third party in a switched environment at the
 expense of a slight increase in latency to that third party
 host. Utilizing ARP cache poisoning, packet capture, and packet
