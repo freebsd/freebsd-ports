@@ -1,10 +1,10 @@
---- configure.orig	Wed Jan 30 06:06:31 2002
-+++ configure	Wed Feb 13 12:22:43 2002
-@@ -18821,86 +18821,6 @@
+--- configure.orig	Thu Mar 21 16:12:29 2002
++++ configure	Thu Mar 21 16:13:33 2002
+@@ -19041,88 +19041,6 @@
  fi
  done
  
--   echo "$as_me:18824: checking if trio library is needed" >&5
+-   echo "$as_me:19044: checking if trio library is needed" >&5
 -echo $ECHO_N "checking if trio library is needed... $ECHO_C" >&6
 -if test "${ac_cv_need_trio+set}" = set; then
 -  echo $ECHO_N "(cached) $ECHO_C" >&6
@@ -17,12 +17,12 @@
 -      else
 -
 -      if test "$cross_compiling" = yes; then
--  { { echo "$as_me:18837: error: cannot run test program while cross compiling" >&5
+-  { { echo "$as_me:19057: error: cannot run test program while cross compiling" >&5
 -echo "$as_me: error: cannot run test program while cross compiling" >&2;}
 -   { (exit 1); exit 1; }; }
 -else
 -  cat >conftest.$ac_ext <<_ACEOF
--#line 18842 "configure"
+-#line 19062 "configure"
 -#include "confdefs.h"
 -
 -	 int main()
@@ -49,15 +49,15 @@
 -	 }
 -_ACEOF
 -rm -f conftest$ac_exeext
--if { (eval echo "$as_me:18869: \"$ac_link\"") >&5
+-if { (eval echo "$as_me:19089: \"$ac_link\"") >&5
 -  (eval $ac_link) 2>&5
 -  ac_status=$?
--  echo "$as_me:18872: \$? = $ac_status" >&5
+-  echo "$as_me:19092: \$? = $ac_status" >&5
 -  (exit $ac_status); } && { ac_try='./conftest$ac_exeext'
--  { (eval echo "$as_me:18874: \"$ac_try\"") >&5
+-  { (eval echo "$as_me:19094: \"$ac_try\"") >&5
 -  (eval $ac_try) 2>&5
 -  ac_status=$?
--  echo "$as_me:18877: \$? = $ac_status" >&5
+-  echo "$as_me:19097: \$? = $ac_status" >&5
 -  (exit $ac_status); }; }; then
 -  :
 -else
@@ -72,11 +72,13 @@
 -      fi
 -
 -fi
--echo "$as_me:18892: result: $ac_cv_need_trio" >&5
+-echo "$as_me:19112: result: $ac_cv_need_trio" >&5
 -echo "${ECHO_T}$ac_cv_need_trio" >&6
 -   case $ac_cv_need_trio in
 -   yes*)
--      LIBOBJS="$LIBOBJS strio.o trio.o trionan.o"
+-      LIBOBJS="$LIBOBJS trio.$ac_objext"
+-      LIBOBJS="$LIBOBJS trionan.$ac_objext"
+-      LIBOBJS="$LIBOBJS triostr.$ac_objext"
 -
 -cat >>confdefs.h <<\EOF
 -#define TRIO_REPLACE_STDIO 1
@@ -86,4 +88,4 @@
 -   esac
  
  # See if we have h_errno (the test is here so we can use -lresolv if necessary).
- echo "$as_me:18906: checking for h_errno" >&5
+ echo "$as_me:19128: checking for h_errno" >&5
