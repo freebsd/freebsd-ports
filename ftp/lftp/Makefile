@@ -3,7 +3,7 @@
 # Date created:				11 September 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.5 1998/03/12 02:39:42 vanilla Exp $
+# $Id: Makefile,v 1.6 1998/03/21 12:24:37 asami Exp $
 #
 
 DISTNAME=	lftp-0.14.3
@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/net/ftp/client/ \
 MASTER_SITE_SUBDIR=	system/network/file-transfer
 
 MAINTAINER=	andy@icc.surw.chel.su
-
-BROKEN=		fetch
 
 GNU_CONFIGURE=	yes
 MAN1=		lftp.1 ftpget.1
