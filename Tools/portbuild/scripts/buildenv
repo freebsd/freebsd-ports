@@ -31,14 +31,21 @@ buildenv () {
     export OSREL=$(awk 'BEGIN {FS="\""}; /^REVISION/ {print $2}' < ${SRCBASE}/sys/conf/newvers.sh)
     export BRANCH=$(awk 'BEGIN {FS="\""}; /^BRANCH/ {print $2}' < ${SRCBASE}/sys/conf/newvers.sh)
 
-    export BATCH=t
-    export HAVE_MOTIF=t
-    export PACKAGE_BUILDING=t
-    export PARALLEL_PACKAGE_BUILD=t
+    export BATCH=1
+    export HAVE_MOTIF=1
+    export PACKAGE_BUILDING=1
+    export PARALLEL_PACKAGE_BUILD=1
     export PORTOBJFORMAT=elf
+    export USA_RESIDENT=yes
+
+    # XXX Are these supposed to be used for release CD builds?
+    #export NO_RESTRICTED=1
+    #export FOR_CDROM=1
 
     # XXX Probably old and mouldy
-    #export NO_RESTRICTED=t
-    #export FOR_CDROM=t
-    #export INDEX_NOSORT=t
+    #export INDEX_NOSORT=1
+    #export FORCE_PKG_REGISTER=1
+    #export FORCE_PACKAGE=1
+    #export PKG_NOCOMPRESS=1
+
 }
