@@ -1,28 +1,41 @@
 bin/gedit
+lib/gedit/plugins/libbrowse.so
+lib/gedit/plugins/libconvert.so
 lib/gedit/plugins/libdiff.so
 lib/gedit/plugins/libemail.so
+lib/gedit/plugins/libreverse.so
+lib/gedit/plugins/libsample.so
 lib/gedit/plugins/libtime.so
 share/gnome/apps/Applications/gedit.desktop
 share/gnome/gedit/glade/about.glade
+share/gnome/gedit/glade/convert.glade
 share/gnome/gedit/glade/email.glade
-share/gnome/gedit/glade/find-line.glade
+share/gnome/gedit/glade/goto-line.glade
 share/gnome/gedit/glade/prefs.glade
 share/gnome/gedit/glade/replace.glade
-share/gnome/gedit/glade/search.glade
+share/gnome/help/gedit/C/authors.html
+share/gnome/help/gedit/C/bugs.html
+share/gnome/help/gedit/C/docbook.css
+share/gnome/help/gedit/C/figures/mainwin.png
+share/gnome/help/gedit/C/figures/preferences.png
+share/gnome/help/gedit/C/figures/toolbar.png
 share/gnome/help/gedit/C/index.html
+share/gnome/help/gedit/C/license.html
+share/gnome/help/gedit/C/ln12.html
+share/gnome/help/gedit/C/plugins.html
+share/gnome/help/gedit/C/prefs.html
 share/gnome/help/gedit/C/topic.dat
-share/gnome/help/gedit/no/index.html
-share/gnome/help/gedit/no/topic.dat
-share/gnome/help/gedit/uk/index.html
-share/gnome/help/gedit/uk/topic.dat
+share/gnome/help/gedit/C/usage.html
 share/gnome/mime-info/gedit.keys
+share/gnome/pixmaps/gedit-icon.xpm
 share/gnome/pixmaps/gedit-logo.png
-share/gnome/pixmaps/gnome-gedit.png
+share/locale/ca/LC_MESSAGES/gedit.mo
 share/locale/cs/LC_MESSAGES/gedit.mo
 share/locale/da/LC_MESSAGES/gedit.mo
 share/locale/de/LC_MESSAGES/gedit.mo
 share/locale/el/LC_MESSAGES/gedit.mo
 share/locale/es/LC_MESSAGES/gedit.mo
+share/locale/fi/LC_MESSAGES/gedit.mo
 share/locale/fr/LC_MESSAGES/gedit.mo
 share/locale/ga/LC_MESSAGES/gedit.mo
 share/locale/gl/LC_MESSAGES/gedit.mo
@@ -37,14 +50,15 @@ share/locale/pl/LC_MESSAGES/gedit.mo
 share/locale/pt/LC_MESSAGES/gedit.mo
 share/locale/pt_BR/LC_MESSAGES/gedit.mo
 share/locale/ru/LC_MESSAGES/gedit.mo
+share/locale/sl/LC_MESSAGES/gedit.mo
 share/locale/sv/LC_MESSAGES/gedit.mo
 share/locale/tr/LC_MESSAGES/gedit.mo
 share/locale/uk/LC_MESSAGES/gedit.mo
 share/locale/wa/LC_MESSAGES/gedit.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/gedit.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/gedit.mo
-@dirrm share/gnome/help/gedit/uk
-@dirrm share/gnome/help/gedit/no
+@dirrm share/gnome/help/gedit/C/stylesheet-images
+@dirrm share/gnome/help/gedit/C/figures
 @dirrm share/gnome/help/gedit/C
 @dirrm share/gnome/help/gedit
 @dirrm share/gnome/gedit/glade

@@ -1,0 +1,84 @@
+--- plugins/browse/Makefile.in.orig	Sun Jun 11 03:00:15 2000
++++ plugins/browse/Makefile.in	Sun Jun 11 11:15:17 2000
+@@ -128,3 +128,3 @@
+ 
+-INCLUDES =  	-I$(top_srcdir)/src					-DGNOMELOCALEDIR=\""$(datadir)/locale"\"		-DGEDIT_GLADEDIR=\""$(gladedir)"\"			-I$(includedir)						$(GNOME_INCLUDEDIR)
++INCLUDES =  	-I$(top_srcdir)/src					-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"		-DGEDIT_GLADEDIR=\""$(gladedir)"\"			-I$(includedir)						$(GNOME_INCLUDEDIR)
+ 
+@@ -138,3 +138,3 @@
+ LIBS = @LIBS@
+-libbrowse_la_LDFLAGS = 
++libbrowse_la_LDFLAGS = -avoid-version
+ libbrowse_la_LIBADD = 
+--- plugins/convert/Makefile.in.orig	Sun Jun 11 03:00:17 2000
++++ plugins/convert/Makefile.in	Sun Jun 11 11:15:25 2000
+@@ -130,3 +130,3 @@
+ 
+-INCLUDES =  	-I$(top_srcdir)/src					-DGNOMELOCALEDIR=\""$(datadir)/locale"\"		-DGEDIT_GLADEDIR=\""$(gladedir)"\"			-I$(includedir)						$(GNOME_INCLUDEDIR)
++INCLUDES =  	-I$(top_srcdir)/src					-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"		-DGEDIT_GLADEDIR=\""$(gladedir)"\"			-I$(includedir)						$(GNOME_INCLUDEDIR)
+ 
+@@ -147,3 +147,3 @@
+ LIBS = @LIBS@
+-libconvert_la_LDFLAGS = 
++libconvert_la_LDFLAGS = -avoid-version
+ libconvert_la_LIBADD = 
+--- plugins/diff/Makefile.in.orig	Sun Jun 11 03:00:15 2000
++++ plugins/diff/Makefile.in	Sun Jun 11 11:15:29 2000
+@@ -128,3 +128,3 @@
+ 
+-INCLUDES =  	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"		-I$(includedir) 					-I$(top_srcdir) 					-I$(top_srcdir)/src					$(GNOME_INCLUDEDIR)
++INCLUDES =  	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"		-I$(includedir) 					-I$(top_srcdir) 					-I$(top_srcdir)/src					$(GNOME_INCLUDEDIR)
+ 
+@@ -138,3 +138,3 @@
+ LIBS = @LIBS@
+-libdiff_la_LDFLAGS = 
++libdiff_la_LDFLAGS = -avoid-version
+ libdiff_la_LIBADD = 
+--- plugins/email/Makefile.in.orig	Sun Jun 11 03:00:16 2000
++++ plugins/email/Makefile.in	Sun Jun 11 11:15:33 2000
+@@ -130,3 +130,3 @@
+ 
+-INCLUDES =  	-I$(top_srcdir)/src					-DGNOMELOCALEDIR=\""$(datadir)/locale"\"		-DGEDIT_GLADEDIR=\""$(gladedir)"\"			-I$(includedir)						$(GNOME_INCLUDEDIR)
++INCLUDES =  	-I$(top_srcdir)/src					-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"		-DGEDIT_GLADEDIR=\""$(gladedir)"\"			-I$(includedir)						$(GNOME_INCLUDEDIR)
+ 
+@@ -147,3 +147,3 @@
+ LIBS = @LIBS@
+-libemail_la_LDFLAGS = 
++libemail_la_LDFLAGS = -avoid-version
+ libemail_la_LIBADD = 
+--- plugins/reverse/Makefile.in.orig	Sun Jun 11 03:00:18 2000
++++ plugins/reverse/Makefile.in	Sun Jun 11 11:15:40 2000
+@@ -130,3 +130,3 @@
+ 
+-INCLUDES = -I$(top_srcdir)/src 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"		-I$(includedir)		$(GNOME_INCLUDEDIR)
++INCLUDES = -I$(top_srcdir)/src 	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"		-I$(includedir)		$(GNOME_INCLUDEDIR)
+ 
+@@ -140,3 +140,3 @@
+ LIBS = @LIBS@
+-libreverse_la_LDFLAGS = 
++libreverse_la_LDFLAGS = -avoid-version
+ libreverse_la_LIBADD = 
+--- plugins/sample/Makefile.in.orig	Sun Jun 11 03:00:18 2000
++++ plugins/sample/Makefile.in	Sun Jun 11 11:15:45 2000
+@@ -130,3 +130,3 @@
+ 
+-INCLUDES = -I../../src 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"		-I$(includedir)		$(GNOME_INCLUDEDIR)
++INCLUDES = -I../../src 	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"		-I$(includedir)		$(GNOME_INCLUDEDIR)
+ 
+@@ -140,3 +140,3 @@
+ LIBS = @LIBS@
+-libsample_la_LDFLAGS = 
++libsample_la_LDFLAGS = -avoid-version
+ libsample_la_LIBADD = 
+--- plugins/time/Makefile.in.orig	Sun Jun 11 03:00:17 2000
++++ plugins/time/Makefile.in	Sun Jun 11 11:15:49 2000
+@@ -130,3 +130,3 @@
+ 
+-INCLUDES = -I../../src 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"		-I$(includedir)		$(GNOME_INCLUDEDIR)
++INCLUDES = -I../../src 	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"		-I$(includedir)		$(GNOME_INCLUDEDIR)
+ 
+@@ -140,3 +140,3 @@
+ LIBS = @LIBS@
+-libtime_la_LDFLAGS = 
++libtime_la_LDFLAGS = -avoid-version
+ libtime_la_LIBADD = 
