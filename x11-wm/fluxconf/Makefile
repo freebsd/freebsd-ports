@@ -11,10 +11,10 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://devaux.fabien.free.fr/flux/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Fluxconf is a configuration program for the fluxbox window manager
+COMMENT=	A configuration program for the fluxbox window manager
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
