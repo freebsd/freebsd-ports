@@ -1,11 +1,20 @@
---- src/Makefile.in.orig	Sun Apr  1 02:14:08 2001
-+++ src/Makefile.in	Sun Jun 10 16:44:19 2001
-@@ -97,7 +97,7 @@
- 
+--- src/Makefile.in.orig	Mon Sep 27 11:31:32 2004
++++ src/Makefile.in	Thu Feb 17 15:01:16 2005
+@@ -37,7 +37,7 @@
+ install_sh_PROGRAM = $(install_sh) -c
+ install_sh_SCRIPT = $(install_sh) -c
+ INSTALL_HEADER = $(INSTALL_DATA)
+-transform = $(program_transform_name)
++transform = 
+ NORMAL_INSTALL = :
+ PRE_INSTALL = :
+ POST_INSTALL = :
+@@ -276,7 +276,7 @@
+ target_vendor = @target_vendor@
+ EXTRA_SUBDIRS = Posix SDL
  SUBDIRS = SDL POSIX
- 
 -gamesdir = $(prefix)/games
 +gamesdir = $(prefix)/bin
- EXTRA_PROGRAMS = prboom-game-server
- games_PROGRAMS = prboom @BUILD_SERVER@
- 
+ prboom_game_server_SOURCES = d_server.c i_udp_sdl.c protocol.h
+ prboom_game_server_LDADD = POSIX/libposixdoom.a @NET_LIBS@ @SDL_LIBS@
+ COMMON_SRC = \

@@ -1,25 +1,33 @@
---- doc/Makefile.in.orig	Sun Apr  1 02:14:05 2001
-+++ doc/Makefile.in	Fri Jun 29 03:39:06 2001
-@@ -196,23 +196,9 @@
- 	$(MAKE) $(AM_MAKEFLAGS) uninstall-man5 uninstall-man6
- 
+--- doc/Makefile.in.orig	Mon Sep 27 11:31:31 2004
++++ doc/Makefile.in	Thu Feb 17 14:55:23 2005
+@@ -32,7 +32,7 @@
+ install_sh_PROGRAM = $(install_sh) -c
+ install_sh_SCRIPT = $(install_sh) -c
+ INSTALL_HEADER = $(INSTALL_DATA)
+-transform = $(program_transform_name)
++transform = 
+ NORMAL_INSTALL = :
+ PRE_INSTALL = :
+ POST_INSTALL = :
+@@ -297,22 +297,9 @@
+ 	  rm -f "$(DESTDIR)$(man6dir)/$$inst"; \
+ 	done
  install-docDATA: $(doc_DATA)
 -	@$(NORMAL_INSTALL)
--	$(mkinstalldirs) $(DESTDIR)$(docdir)
+-	test -z "$(docdir)" || $(mkdir_p) "$(DESTDIR)$(docdir)"
 -	@list='$(doc_DATA)'; for p in $$list; do \
--	  if test -f $(srcdir)/$$p; then \
--	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(docdir)/$$p"; \
--	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(docdir)/$$p; \
--	  else if test -f $$p; then \
--	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(docdir)/$$p"; \
--	    $(INSTALL_DATA) $$p $(DESTDIR)$(docdir)/$$p; \
--	  fi; fi; \
+-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+-	  echo " $(docDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(docdir)/$$f'"; \
+-	  $(docDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(docdir)/$$f"; \
 -	done
  
  uninstall-docDATA:
 -	@$(NORMAL_UNINSTALL)
--	list='$(doc_DATA)'; for p in $$list; do \
--	  rm -f $(DESTDIR)$(docdir)/$$p; \
+-	@list='$(doc_DATA)'; for p in $$list; do \
+-	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+-	  echo " rm -f '$(DESTDIR)$(docdir)/$$f'"; \
+-	  rm -f "$(DESTDIR)$(docdir)/$$f"; \
 -	done
 +
  tags: TAGS
