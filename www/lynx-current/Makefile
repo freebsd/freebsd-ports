@@ -1,17 +1,16 @@
 # New ports collection makefile for:    lynx
 # See http://www.wfbr.edu/dir/lynx/ for additional info
-# Version required:     2.5
+# Version required:     2.5FM
 # Date created:         15 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.20 1996/03/09 06:00:09 ache Exp $
+# $Id: Makefile,v 1.21 1996/05/03 19:48:58 ache Exp $
 #
 
-DISTNAME=       lynx2-5
-PKGNAME=        lynx-2.5
+DISTNAME=       lynx2-5FM
+PKGNAME=        lynx-2.5FM
 CATEGORIES+=	www
-MASTER_SITES=   ftp://ftp.kiae.su/unix/tcpip/internet/www/
-EXTRACT_SUFX=   .zip
+MASTER_SITES=   ftp://ftp.more.net/pub/mirrors/lynx/
 
 # Original location, lynx changes too often there
 #MASTER_SITES=   http://www.wfbr.edu/lynx/
@@ -26,11 +25,6 @@ EXTRACT_SUFX=   .zip
 
 MAINTAINER=	ache@FreeBSD.ORG
 
-BUILD_DEPENDS=  ${EXTRACT_CMD}:${PORTSDIR}/archivers/unzip
-
-WRKSRC=         ${WRKDIR}/lynx2-5
-EXTRACT_CMD=    unzip
-EXTRACT_ARGS=   -q
 ALL_TARGET=     freebsd-ncurses
 
 .include <bsd.port.mk>
