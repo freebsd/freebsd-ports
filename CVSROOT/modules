@@ -5204,6 +5204,7 @@ no-login	ports/sysutils/no-login
 noattach	ports/mail/noattach
 nocatauth-gateway	ports/net/nocatauth-gateway
 nocatauth-server	ports/net/nocatauth-server
+nocatsplash	ports/net/nocatsplash
 nocc		ports/mail/nocc
 nocol		ports/net/nocol
 noffle		ports/news/noffle
