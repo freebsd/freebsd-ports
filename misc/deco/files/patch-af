@@ -1,0 +1,11 @@
+--- rec.c.orig	Thu Aug 16 17:29:07 2001
++++ rec.c	Thu Aug 16 17:29:35 2001
+@@ -61,7 +61,7 @@
+ static char *scanbuf, *pbuf;
+ static char *tfilename;
+ static int eoln;
+-static int MAXLEN = ((unsigned int) (int) -1 >> 1) / sizeof (struct index);
++static int MAXLEN = 32767;
+ 
+ static int ffcopy (int from, int to)
+ {
