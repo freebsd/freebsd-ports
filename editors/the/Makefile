@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	the
-PORTVERSION=	3.0
+PORTVERSION=	3.1
 CATEGORIES=	editors
-MASTER_SITES=	ftp://ftp.lightlink.com/pub/hessling/THE/	\
-		ftp://ftp.qut.edu.au/pub/markh/THE/		\
-		ftp://ftp.wu-wien.ac.at/pub/src/Editors/THE/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	hessling-editor
 DISTNAME=	THE-${PORTVERSION}
+
+PATCH_SITES=	http://users.comlab.ox.ac.uk/ian.collier/distribution/
+PATCHFILES=	${DISTNAME}-rexximc.patch
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	"The Hessling Editor", an implementation of the xedit editor
@@ -20,9 +23,12 @@ BUILD_DEPENDS=	rexx:${PORTSDIR}/lang/rexx-imc
 RUN_DEPENDS=	rexx:${PORTSDIR}/lang/rexx-imc
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-ncurses --with-rexximc \
+CONFIGURE_ARGS=	--with-ncurses --with-rexx=rexximc \
 		--with-rexxincdir=${LOCALBASE}/include \
 		--with-rexxlibdir=${LOCALBASE}/lib
+ALL_TARGET=	all html
+
+MAN1=		the.1
 
 post-install:
 .if !defined(NOPORTDOCS)
