@@ -1,0 +1,11 @@
+--- TIMING/LIN/Makefile.orig	Mon Mar  1 15:34:42 1999
++++ TIMING/LIN/Makefile	Wed Oct  6 11:04:27 1999
+@@ -55,7 +55,7 @@
+         ctimsy.o ctimsp.o ctimhe.o ctimhp.o \
+         ctimtr.o ctimtp.o ctimtb.o ctimhr.o ctimtd.o ctimbr.o \
+         ctimq3.o ctimqr.o ctimlq.o ctimql.o ctimrq.o ctimqp.o \
+-        cqrt13.o cqrt15.o clinpk.o
++        cqrt13.o cqrt15.o clinpk.o $(FPMCLR)
+  
+ DLINTIM = dtimaa.o dtimmg.o \
+         dtimmv.o dtimmm.o dtimb2.o dtimb3.o dtimge.o dtimgb.o dtimgt.o \

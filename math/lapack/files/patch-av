@@ -1,0 +1,10 @@
+--- /dev/null	Thu Oct  7 16:30:13 1999
++++ fpmclr_.c	Thu Oct  7 16:45:05 1999
+@@ -0,0 +1,7 @@
++#include <ieeefp.h>
++
++void
++fpmclr_()
++{
++  fpsetmask(fpgetmask() & ~FP_X_INV & ~FP_X_DZ & ~FP_X_OFL);
++}

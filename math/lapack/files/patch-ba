@@ -1,0 +1,13 @@
+--- BLAS/TESTING/cblat3.f.orig	Sun Jun  9 03:15:54 1996
++++ BLAS/TESTING/cblat3.f	Wed Oct  6 11:04:27 1999
+@@ -1989,8 +1989,8 @@
+ *
+ *     Initialize ALPHA, BETA, RALPHA, and RBETA.
+ *
+-      ALPHA = ( ONE, -ONE )
+-      BETA = ( TWO, -TWO )
++      ALPHA = CMPLX( ONE, -ONE )
++      BETA = CMPLX( TWO, -TWO )
+       RALPHA = ONE
+       RBETA = TWO
+ *
