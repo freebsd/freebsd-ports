@@ -18,6 +18,8 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
+LATEST_LINK=	icqlib0
+
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/icqlib/icq.h ${PREFIX}/include/icq0.h
 
