@@ -1,0 +1,4 @@
+bin/cmp3
+bin/rnmp3
+share/doc/cmp3/README
+@dirrm share/doc/cmp3
