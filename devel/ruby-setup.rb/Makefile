@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	setup.rb
-PORTVERSION=	3.1.5
+PORTVERSION=	3.2.0
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.loveruby.net/archive/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME:R}
@@ -21,12 +21,12 @@ USE_RUBY=	yes
 
 NO_BUILD=	yes
 
-_SCRIPTS=	install.rb setup.rb
+_SCRIPTS=	setup.rb
 
 RUBY_SHEBANG_FILES=	${_SCRIPTS:S:^:${WRKSRC}/ruby-:}
 
-DOCS_EN=	doc.en/* NEWS.en Usage_en.txt ChangeLog TODO
-DOCS_JA=	doc.ja/* NEWS.ja Usage_ja.txt
+DOCS_EN=	doc.en/* NEWS.en Usage_en.txt README.en ChangeLog TODO
+DOCS_JA=	doc.ja/* NEWS.ja Usage_ja.txt README.ja
 
 post-extract:
 .for f in ${_SCRIPTS}
@@ -39,6 +39,8 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/ruby-${f} ${PREFIX}/bin/
 .endfor
 .if !defined(NOPORTDOCS)
+	${MKDIR} ${RUBY_MODEXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/sample/* ${RUBY_MODEXAMPLESDIR}/
 	${MKDIR} ${RUBY_MODDOCDIR}/ja
 .for f in ${DOCS_EN}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/

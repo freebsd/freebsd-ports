@@ -1,9 +1,8 @@
-bin/ruby-install.rb
 bin/ruby-setup.rb
-%%RUBY_SITELIBDIR%%/install.rb
 %%RUBY_SITELIBDIR%%/setup.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/NEWS.en
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.en
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/TODO
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/Usage_en.txt
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/devel.html
@@ -12,6 +11,7 @@ bin/ruby-setup.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/metaconfapi.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/usage.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/NEWS.ja
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/Usage_ja.txt
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/devel.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/hookapi.html
@@ -20,3 +20,5 @@ bin/ruby-setup.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/usage.html
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/add-task.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
