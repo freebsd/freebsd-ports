@@ -7,9 +7,11 @@
 
 PORTNAME=	fcplay
 PORTVERSION=	0.0.1
+PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/mod/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
+MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/mod/ \
+		http://www.freenix.no/~anders/ \
+		ftp://totem.fix.no/pub/mirrors/misc/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	anders@fix.no
