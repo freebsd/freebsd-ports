@@ -24,13 +24,8 @@ lib/dia/libuml_objects.so
 lib/dia/libwpg_filter.so
 lib/dia/libxfig_filter.so
 lib/dia/libxslt_filter.so
-share/gnome/apps/Applications/dia.desktop
+share/gnome/applications/dia.desktop
 share/gnome/dia/dia_logo.png
-share/gnome/dia/plugins/xslt/dia-uml.xsl
-share/gnome/dia/plugins/xslt/dia-uml2c++.xsl
-share/gnome/dia/plugins/xslt/dia-uml2idl.xsl
-share/gnome/dia/plugins/xslt/dia-uml2java.xsl
-share/gnome/dia/plugins/xslt/stylesheets.xml
 %%PYTHON:%%share/gnome/dia/python-startup.py
 %%PYTHON:%%share/gnome/dia/python/diasvg.py
 %%PYTHON:%%share/gnome/dia/python/group_props.py
@@ -1005,6 +1000,9 @@ share/gnome/dia/sheets/SADT.sheet
 share/gnome/dia/sheets/SDL.sheet
 share/gnome/dia/sheets/UML.sheet
 share/gnome/dia/sheets/UML/aggregation.xpm
+share/gnome/dia/sheets/UML/eventsink.xpm
+share/gnome/dia/sheets/UML/eventsource.xpm
+share/gnome/dia/sheets/UML/receptacle.xpm
 share/gnome/dia/sheets/UML/umlclass_template.xpm
 share/gnome/dia/sheets/chronogram.sheet
 share/gnome/dia/sheets/ciscocomputer.sheet
@@ -1016,6 +1014,12 @@ share/gnome/dia/sheets/civil.sheet
 share/gnome/dia/sheets/jigsaw.sheet
 share/gnome/dia/sheets/network.sheet
 share/gnome/dia/sheets/sybase.sheet
+share/gnome/dia/xslt/dia-uml.xsl
+share/gnome/dia/xslt/dia-uml2c++.xsl
+share/gnome/dia/xslt/dia-uml2componentlist.xsl
+share/gnome/dia/xslt/dia-uml2idl.xsl
+share/gnome/dia/xslt/dia-uml2java.xsl
+share/gnome/dia/xslt/stylesheets.xml
 %%GNOME:%%share/gnome/help/dia/C
 %%GNOME:%%share/gnome/help/dia/en/topic.dat
 %%GNOME:%%share/gnome/help/dia/pl/topic.dat
@@ -1028,6 +1032,7 @@ share/gnome/pixmaps/dia-diagram.png
 share/gnome/pixmaps/dia_gnome_icon.png
 share/locale/am/LC_MESSAGES/dia.mo
 share/locale/az/LC_MESSAGES/dia.mo
+share/locale/be/LC_MESSAGES/dia.mo
 share/locale/ca/LC_MESSAGES/dia.mo
 share/locale/cs/LC_MESSAGES/dia.mo
 share/locale/da/LC_MESSAGES/dia.mo
@@ -1042,6 +1047,9 @@ share/locale/hu/LC_MESSAGES/dia.mo
 share/locale/it/LC_MESSAGES/dia.mo
 share/locale/ja/LC_MESSAGES/dia.mo
 share/locale/ko/LC_MESSAGES/dia.mo
+share/locale/mk/LC_MESSAGES/dia.mo
+share/locale/ml/LC_MESSAGES/dia.mo
+share/locale/ms/LC_MESSAGES/dia.mo
 share/locale/nl/LC_MESSAGES/dia.mo
 share/locale/nn/LC_MESSAGES/dia.mo
 share/locale/no/LC_MESSAGES/dia.mo
@@ -1052,6 +1060,8 @@ share/locale/ro/LC_MESSAGES/dia.mo
 share/locale/ru/LC_MESSAGES/dia.mo
 share/locale/sk/LC_MESSAGES/dia.mo
 share/locale/sl/LC_MESSAGES/dia.mo
+share/locale/sr/LC_MESSAGES/dia.mo
+share/locale/sr@Latn/LC_MESSAGES/dia.mo
 share/locale/sv/LC_MESSAGES/dia.mo
 share/locale/tr/LC_MESSAGES/dia.mo
 share/locale/uk/LC_MESSAGES/dia.mo
@@ -1064,6 +1074,7 @@ share/locale/zh_TW/LC_MESSAGES/dia.mo
 %%NOGNOME:%%@dirrm share/gnome/dia/help/pl
 %%NOGNOME:%%@dirrm share/gnome/dia/help/en
 %%NOGNOME:%%@dirrm share/gnome/dia/help
+@dirrm share/gnome/dia/xslt
 @dirrm share/gnome/dia/sheets/UML
 @dirrm share/gnome/dia/sheets/GRAFCET
 @dirrm share/gnome/dia/sheets/ER
@@ -1085,7 +1096,5 @@ share/locale/zh_TW/LC_MESSAGES/dia.mo
 @dirrm share/gnome/dia/shapes/Assorted
 @dirrm share/gnome/dia/shapes
 %%PYTHON:%%@dirrm share/gnome/dia/python
-@dirrm share/gnome/dia/plugins/xslt
-@dirrm share/gnome/dia/plugins
 @dirrm share/gnome/dia
 @dirrm lib/dia
