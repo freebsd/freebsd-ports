@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kaffeine
-PORTVERSION=	0.4.3
+PORTVERSION=	0.4.3b
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kaffeine
@@ -22,5 +22,7 @@ GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		CXXFLAGS="${CFLAGS}"
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+MAN1=	kaffeine.1
 
 .include <bsd.port.mk>
