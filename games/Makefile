@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.112 1998/03/15 20:33:21 steve Exp $
+# $Id: Makefile,v 1.113 1998/03/15 20:39:14 steve Exp $
 #
 
     SUBDIR += acm
@@ -40,6 +40,7 @@
     SUBDIR += sokoban
     SUBDIR += spider
     SUBDIR += starlanes
+    SUBDIR += tank
     SUBDIR += tksol
     SUBDIR += tvp
     SUBDIR += xasteroids
