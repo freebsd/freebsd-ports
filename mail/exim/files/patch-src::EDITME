@@ -43,6 +43,17 @@
  
  
  # In some installations there may be multiple machines sharing file systems,
+@@ -231,8 +231,8 @@
+ # "security" setting, which controls how privilege is released (setuid vs
+ # seteuid).
+ 
+-# EXIM_UID=
+-# EXIM_GID=
++EXIM_UID=26
++EXIM_GID=6
+ 
+ 
+ # Compiling the Exim monitor: If you want to compile the Exim monitor,
 @@ -243,7 +243,7 @@
  # are defaulted in the OS/Makefile-Default file, and can be overridden
  # in local OS-specific make files.
