@@ -1,0 +1,29 @@
+# ex:ts=8
+# Ports collection makefile for:  lunar
+# Version required:     	  2.1
+# Date created:			  Mon Feb 03, 1997
+# Whom:				  David O'Brien (obrien@FreeBSD.org)
+#
+# $Id: Makefile,v 1.2 1997/01/25 18:08:40 obrien Exp $
+#
+
+DISTNAME=	lunar-2.1
+PKGNAME=	cn-lunar-2.1
+CATEGORIES=	chinese
+MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/c-utils/  \
+		ftp://ftp.edu.tw/Chinese/ifcss/software/unix/c-utils/  \
+		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/c-utils/
+
+MAINTAINER=     obrien@NUXI.com
+
+ALL_TARGET=
+MAN1=		lunar.1
+
+do-install:
+	@${MKDIR} ${PREFIX}/share/chinese
+	${INSTALL_PROGRAM} ${WRKSRC}/lunar ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/lunar.bitmap ${PREFIX}/share/chinese
+	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
+
+
+.include <bsd.port.mk>

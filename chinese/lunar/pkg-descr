@@ -1,0 +1,13 @@
+The lunar program performs date conversion between the Gregorian Solar
+Calendar (SC) and the Chinese Lunar Calendar (LC).
+
+Given a date in either calendar, the program also outputs the corresponding
+"shengxiao" (animal of the year) and "ganzhi" characters.
+
+The date range currently covered is from about 1900 A.D. to 2049 A.D.
+
+The standard time of the Lunar Calendar is Beijing (Hong Kong) Standard Time,
+not GMT.  Be sure to adjust appropriately for other time zones and "Day-light
+Saving Time".
+
+-- David O'Brien
