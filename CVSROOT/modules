@@ -3761,6 +3761,7 @@ ja-tcl80	ports/japanese/tcl80
 ja-tdiary	ports/japanese/tdiary
 ja-teTeX	ports/japanese/teTeX
 ja-texfamily	ports/japanese/texfamily
+ja-texfamily-vfn2a	ports/japanese/texfamily-vfn2a
 ja-texinfo	ports/japanese/texinfo
 ja-tgif		ports/japanese/tgif
 ja-timidity++-slang	ports/japanese/timidity++-slang
