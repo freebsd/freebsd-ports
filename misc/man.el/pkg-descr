@@ -5,8 +5,29 @@ The mode also supports hypertext-like following of manual page SEE
 ALSO references, and other features.  See below or do `?' in a
 manual page buffer for details.
 
-For working with Japanese, put your dot.emacs file to 
+For working with Japanese, English and German, put your dot.emacs file
+following:
 
-(load "i18n-man-ja")
+(autoload 'jman "i18n-man-ja" nil t)
+(autoload 'eman "i18n-man-en" nil t)
+(autoload 'dman "i18n-man-de" nil t)
 
-Then M-x jman in minibuffer, and specify man page name.
+then
+
+  M-x jman
+    to get a Japanese manual page thru jman(1) and put it in a buffer.
+  M-x eman
+    to get a English manual page thru man(1) and put it in a buffer.
+  M-x dman
+    to get a German manual page thru man(1) and put it in a buffer.
+
+If you want byte-compile with your favorite "Emacs", use "byte-comile"
+script as:
+
+  # cd /usr/local/share/emacs/site-lisp
+  # /usr/local/share/doc/prom-mew/byte-compile xemacs-mule i18n-man-ja i18n-man-ja.el i18n-man.el
+
+For usage of byte_compile scripts, run byte_compile with -h option.
+
+-KIRIYAMA Kazuhiko
+<kiri@kiri.toba-cmt.ac.jp>
