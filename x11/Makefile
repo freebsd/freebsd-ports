@@ -41,6 +41,7 @@
     SUBDIR += imwheel
     SUBDIR += kb2mb2
     SUBDIR += kde2
+    SUBDIR += kdebase11
     SUBDIR += kdebase2
     SUBDIR += kdelibs11
     SUBDIR += kdelibs2
