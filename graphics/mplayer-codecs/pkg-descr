@@ -1,0 +1,13 @@
+The superset of win32 codecs for mplayer
+includes support for a lot of different movie types including
+
+- Inter Video 3.2, 4.1
+- MPEG-4 v1,v2,v3 (DivX :-))
+- Cinepack Video
+- WMA Audio, MPEG-Layer 1,2,3, GSM6.1
+
+and much more.
+
+This compilation of codecs is provided by the makers of mplayer.
+
+WWW: http://mplayer.sourceforge.net
