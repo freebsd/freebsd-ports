@@ -1,6 +1,6 @@
 --- glib-config.in.orig	Thu Jun 11 07:21:14 1998
-+++ glib-config.in	Thu Jul 30 12:44:12 1998
-@@ -42,7 +42,7 @@
++++ glib-config.in	Thu Aug 13 17:46:26 1998
+@@ -42,10 +42,10 @@
        if test @includedir@ != /usr/include ; then
          includes=-I@includedir@
        fi
@@ -8,4 +8,8 @@
 +      echo $includes
        ;;
      --libs)
-       echo -L@libdir@ -lglib-@LT_RELEASE@
+-      echo -L@libdir@ -lglib-@LT_RELEASE@
++      echo -L@libdir@ -lglib11
+       ;;
+     *)
+       echo "${usage}" 1>&2

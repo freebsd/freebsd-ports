@@ -1,10 +1,10 @@
 bin/glib-config
 include/glib/glib.h
 include/glib/glibconfig.h
-lib/libglib-1.1.a
-lib/libglib-1.1.la
-lib/libglib-1.1.so
-lib/libglib-1.1.so.0.2
+lib/libglib11.a
+lib/libglib11.la
+lib/libglib11.so
+lib/libglib11.so.0.2
 @unexec /sbin/ldconfig -R
 @exec /sbin/ldconfig -m %D/lib
 share/aclocal/glib.m4

@@ -1,6 +1,6 @@
 --- Makefile.in.orig	Thu Aug  6 01:16:42 1998
-+++ Makefile.in	Thu Aug  6 14:45:14 1998
-@@ -77,8 +77,6 @@
++++ Makefile.in	Thu Aug 13 17:48:34 1998
+@@ -77,17 +77,15 @@
  RANLIB = @RANLIB@
  VERSION = @VERSION@
  
@@ -9,7 +9,18 @@
  bin_SCRIPTS=glib-config
  
  EXTRA_DIST =	\
-@@ -109,12 +107,10 @@
+ 		glib.m4 \
+ 		glib.spec
+ 
+-lib_LTLIBRARIES = libglib-1.1.la
++lib_LTLIBRARIES = libglib11.la
+ 
+-libglib_1_1_la_SOURCES = \
++libglib11_la_SOURCES = \
+ 		garray.c	\
+ 		gcache.c	\
+ 		gcompletion.c	\
+@@ -109,17 +107,15 @@
  		gutils.c
  
  include_HEADERS = \
@@ -20,9 +31,35 @@
  		glibconfig.h
  
 -libglib_1_1_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
-+libglib_1_1_la_LDFLAGS = -version-info 0:2:0
++libglib11_la_LDFLAGS = -version-info 0:2:0
  
  INCLUDES = -I$(top_srcdir)
+ 
+ noinst_PROGRAMS = testglib
+-testglib_LDADD = libglib-@LT_RELEASE@.la
++testglib_LDADD = libglib11.la
+ 
+ m4datadir = $(datadir)/aclocal
+ m4data_DATA = glib.m4
+@@ -134,8 +130,8 @@
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+-libglib_1_1_la_LIBADD = 
+-libglib_1_1_la_OBJECTS =  garray.lo gcache.lo gcompletion.lo gdataset.lo \
++libglib11_la_LIBADD = 
++libglib11_la_OBJECTS =  garray.lo gcache.lo gcompletion.lo gdataset.lo \
+ gerror.lo ghash.lo glist.lo gmem.lo gmessages.lo gnode.lo gprimes.lo \
+ gslist.lo gtimer.lo gtree.lo grel.lo gstring.lo gstrfuncs.lo \
+ gscanner.lo gutils.lo
+@@ -143,7 +139,7 @@
+ 
+ testglib_SOURCES = testglib.c
+ testglib_OBJECTS =  testglib.o
+-testglib_DEPENDENCIES =  libglib-@LT_RELEASE@.la
++testglib_DEPENDENCIES =  libglib11.la
+ testglib_LDFLAGS = 
+ SCRIPTS =  $(bin_SCRIPTS)
  
 @@ -151,7 +147,7 @@
  COMPILE = $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
@@ -32,6 +69,28 @@
 +DATA =  $(m4data_DATA)
  
  HEADERS =  $(include_HEADERS)
+ 
+@@ -165,8 +161,8 @@
+ 
+ TAR = tar
+ GZIP = --best
+-SOURCES = $(libglib_1_1_la_SOURCES) testglib.c
+-OBJECTS = $(libglib_1_1_la_OBJECTS) testglib.o
++SOURCES = $(libglib11_la_SOURCES) testglib.c
++OBJECTS = $(libglib11_la_OBJECTS) testglib.o
+ 
+ all: Makefile $(LTLIBRARIES) $(PROGRAMS) $(SCRIPTS) $(DATA) $(HEADERS) glibconfig.h
+ 
+@@ -273,8 +269,8 @@
+ 
+ maintainer-clean-libtool:
+ 
+-libglib-1.1.la: $(libglib_1_1_la_OBJECTS) $(libglib_1_1_la_DEPENDENCIES)
+-	$(LINK) -rpath $(libdir) $(libglib_1_1_la_LDFLAGS) $(libglib_1_1_la_OBJECTS) $(libglib_1_1_la_LIBADD) $(LIBS)
++libglib11.la: $(libglib11_la_OBJECTS) $(libglib11_la_DEPENDENCIES)
++	$(LINK) -rpath $(libdir) $(libglib11_la_LDFLAGS) $(libglib11_la_OBJECTS) $(libglib11_la_LIBADD) $(LIBS)
+ 
+ mostlyclean-noinstPROGRAMS:
  
 @@ -308,25 +304,6 @@
  	  rm -f $(DESTDIR)$(bindir)/`echo $$p|sed '$(transform)'`; \
