@@ -32,6 +32,39 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="40549bbf-43b5-11d9-a9e7-0001020eed82">
+    <topic>zip -- long path buffer overflow</topic>
+    <affects>
+      <package>
+	<name>zip</name>
+	<range><lt>2.3_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A HexView security advisory reports:</p>
+	<blockquote cite="http://www.hexview.com/docs/20041103-1.txt">
+	  <p>When zip performs recursive folder compression, it does
+	    not check for the length of resulting path. If the path is
+	    too long, a buffer overflow occurs leading to stack
+	    corruption and segmentation fault.	It is possible to
+	    exploit this vulnerability by embedding a shellcode in
+	    directory or file name. While the issue is not of primary
+	    concern for regular users, it can be critical for
+	    environments where zip archives are re-compressed
+	    automatically using Info-Zip application.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.hexview.com/docs/20041103-1.txt</url>
+    </references>
+    <dates>
+      <discovery>2004-10-03</discovery>
+      <entry>2004-12-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="85edfb6a-43a5-11d9-a9e7-0001020eed82">
     <topic>sudoscript -- signal delivery vulnerability</topic>
     <affects>
