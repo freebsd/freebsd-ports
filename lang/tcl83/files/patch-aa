@@ -1,5 +1,5 @@
---- Makefile.in.orig	Fri Apr  6 20:51:46 2001
-+++ Makefile.in	Fri Apr 13 21:12:54 2001
+--- Makefile.in.orig	Sat Oct 20 02:24:15 2001
++++ Makefile.in	Sat Oct 20 11:21:50 2001
 @@ -53,7 +53,9 @@
  SCRIPT_INSTALL_DIR	= $(INSTALL_ROOT)$(TCL_LIBRARY)
  
@@ -15,26 +15,29 @@
  #CFLAGS			= $(CFLAGS_DEBUG)
  #CFLAGS			= $(CFLAGS_OPTIMIZE)
  #CFLAGS			= $(CFLAGS_DEBUG) $(CFLAGS_OPTIMIZE)
--CFLAGS			= @CFLAGS@
-+CFLAGS			?= @CFLAGS@
+-CFLAGS			= @CFLAGS@ @CFLAGS_DEFAULT@
++CFLAGS			?= @CFLAGS@ @CFLAGS_DEFAULT@
  
- # To disable ANSI-C procedure prototypes reverse the comment characters
- # on the following lines:
-@@ -397,7 +399,7 @@
+ # Flags to pass to the linker
+ LDFLAGS_DEBUG		= @LDFLAGS_DEBUG@
+@@ -407,7 +409,8 @@
  
  all: binaries libraries doc
  
 -binaries: ${TCL_LIB_FILE} $(TCL_STUB_LIB_FILE) $(TCL_BUILD_EXP_FILE) tclsh
-+binaries: ${TCL_LIB_FILE} $(TCL_STUB_LIB_FILE) $(TCL_BUILD_EXP_FILE) libtcl${SHORT_TCL_VER}.a tclsh
++binaries: ${TCL_LIB_FILE} $(TCL_STUB_LIB_FILE) $(TCL_BUILD_EXP_FILE) \
++	libtcl${SHORT_TCL_VER}.a tclsh
  
  libraries:
  
-@@ -408,8 +410,14 @@
+@@ -418,10 +421,16 @@
  ${TCL_LIB_FILE}: ${OBJS} ${STUB_LIB_FILE}
  	rm -f ${TCL_LIB_FILE}
  	@MAKE_LIB@
 +	@ln -sf $(TCL_LIB_FILE) ./libtcl${SHORT_TCL_VER}.so
- 	$(RANLIB) ${TCL_LIB_FILE}
+ 	if test "x@DL_OBJS@" = "xtclLoadAout.o"; then \
+ 		$(RANLIB) ${TCL_LIB_FILE}; \
+ 	fi
  
 +libtcl${SHORT_TCL_VER}.a: ${OBJS}
 +	rm -f libtcl${SHORT_TCL_VER}.a
@@ -44,21 +47,24 @@
  ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f ${STUB_LIB_FILE}
  	@MAKE_STUB_LIB@
-@@ -525,8 +533,13 @@
+@@ -539,10 +548,16 @@
  	    fi
  	@echo "Installing $(TCL_LIB_FILE) to $(LIB_INSTALL_DIR)/"
- 	@$(INSTALL_DATA) $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
+ 	@$(INSTALL_LIBRARY) $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
 +	@ln -sf $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/libtcl${SHORT_TCL_VER}.so
- 	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TCL_LIB_FILE))
+ 	@if test "x@DL_OBJS@" = "xtclLoadAout.o"; then \
+ 	    (cd $(LIB_INSTALL_DIR); $(RANLIB) $(TCL_LIB_FILE)); \
+ 	    fi
  	@chmod 555 $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
 +	@echo "Installing libtcl${SHORT_TCL_VER}.a"
-+	@$(INSTALL_DATA) libtcl${SHORT_TCL_VER}.a $(LIB_INSTALL_DIR)/libtcl${SHORT_TCL_VER}.a
++	@$(INSTALL_DATA) libtcl${SHORT_TCL_VER}.a \
++		$(LIB_INSTALL_DIR)/libtcl${SHORT_TCL_VER}.a
 +	@(cd $(LIB_INSTALL_DIR); $(RANLIB) libtcl${SHORT_TCL_VER}.a)
 +	@chmod 555 $(LIB_INSTALL_DIR)/libtcl${SHORT_TCL_VER}.a
  	@if test "$(TCL_BUILD_EXP_FILE)" != ""; then \
  	    echo "Installing $(TCL_EXP_FILE) to $(LIB_INSTALL_DIR)/"; \
  	    $(INSTALL_DATA) $(TCL_BUILD_EXP_FILE) \
-@@ -534,8 +547,9 @@
+@@ -550,8 +565,9 @@
  	    fi
  	@echo "Installing tclsh as $(BIN_INSTALL_DIR)/tclsh$(VERSION)"
  	@$(INSTALL_PROGRAM) tclsh $(BIN_INSTALL_DIR)/tclsh$(VERSION)
@@ -69,8 +75,8 @@
 +	@$(INSTALL_DATA) tclConfig.sh $(SCRIPT_INSTALL_DIR)/tclConfig.sh
  	@if test "$(TCL_STUB_LIB_FILE)" != "" ; then \
  	    echo "Installing $(TCL_STUB_LIB_FILE) to $(LIB_INSTALL_DIR)/"; \
- 	    $(INSTALL_DATA) $(STUB_LIB_FILE) \
-@@ -543,7 +557,8 @@
+ 	    $(INSTALL_LIBRARY) $(STUB_LIB_FILE) \
+@@ -559,7 +575,8 @@
  	    fi
  
  install-libraries: libraries
@@ -80,7 +86,7 @@
  	    do \
  	    if [ ! -d $$i ] ; then \
  		echo "Making directory $$i"; \
-@@ -565,11 +580,16 @@
+@@ -581,11 +598,16 @@
  	    chmod +x $(SRC_DIR)/install-sh; \
  	    fi
  	@echo "Installing header files";
@@ -100,7 +106,7 @@
  	@echo "Installing library files to $(SCRIPT_INSTALL_DIR)";
  	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex $(UNIX_DIR)/tclAppInit.c $(UNIX_DIR)/ldAix; \
  	    do \
-@@ -627,7 +647,6 @@
+@@ -643,7 +665,6 @@
  	    chmod 444 $(MAN1_INSTALL_DIR)/$$i; \
  	    done;
  	@echo "Cross-linking top-level (.1) docs";
@@ -108,7 +114,7 @@
  	@echo "Installing C API (.3) docs";
  	@cd $(TOP_DIR)/doc; for i in *.3; \
  	    do \
-@@ -637,7 +656,6 @@
+@@ -653,7 +674,6 @@
  	    chmod 444 $(MAN3_INSTALL_DIR)/$$i; \
  	    done;
  	@echo "Cross-linking C API (.3) docs";
@@ -116,7 +122,7 @@
  	@echo "Installing command (.n) docs";
  	@cd $(TOP_DIR)/doc; for i in *.n; \
  	    do \
-@@ -647,7 +665,14 @@
+@@ -663,7 +683,14 @@
  	    chmod 444 $(MANN_INSTALL_DIR)/$$i; \
  	    done;
  	@echo "Cross-linking command (.n) docs";
