@@ -17,7 +17,7 @@ DISTNAME=	nethack-3.2.2
 PATCH_SITES=	ftp://ftp.nethack.org/pub/nethack/nh323/src/
 PATCHFILES=	nh-3.2.2-3.2.3.diff
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_XPM=	yes
 USE_GMAKE=	yes
