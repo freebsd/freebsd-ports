@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	distcc
-PORTVERSION=	2.9
+PORTVERSION=	2.11
 CATEGORIES=	devel
 MASTER_SITES=	http://distcc.samba.org/ftp/distcc/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	Distribute compilation of C(++) code acrosss machines on a network
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
@@ -27,14 +27,15 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 .if ${HAVE_GNOME:Mlibgnomeui} != ""
 USE_GNOME=	libgnomeui
-CONFIGURE_ARGS+=	"--enable-gnome"
+CONFIGURE_ARGS+=	"--with-gnome"
+PKGNAMESUFFIX=	-gnome
 PLIST_SUB+=	WITH_GNOME=""
 .else
 PLIST_SUB+=	WITH_GNOME="@comment "
 .endif
 
 MAN1=	distcc.1 distccd.1
-DOC_FILES=	AUTHORS COPYING COPYING.FDL INSTALL NEWS README \
+DOC_FILES=	AUTHORS COPYING INSTALL NEWS README \
 		doc/protocol-1.txt doc/status-1.txt
 
 pre-fetch:
