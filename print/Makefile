@@ -93,6 +93,7 @@
     SUBDIR += panda
     SUBDIR += pcal
     SUBDIR += pclprint
+    SUBDIR += pdflib
     SUBDIR += pdflib3
     SUBDIR += pdq
     SUBDIR += perlftlib
