@@ -3,7 +3,7 @@
 # Date created:		27 Oct 1998
 # Whom:			Abel Chow <achow@transoft.net>
 #
-# $Id: Makefile,v 1.2 1998/11/10 01:33:44 steve Exp $
+# $Id: Makefile,v 1.3 1998/12/20 22:29:52 nik Exp $
 #
 
 DISTNAME=	tidy17dec98
@@ -11,7 +11,7 @@ PKGNAME=	tidy-0.1.98.12
 CATEGORIES=	www
 MASTER_SITES=	http://www.w3.org/People/Raggett/
 
-MAINTAINER=	saken@rmta.ml.org
+MAINTAINER=	saken@budoir.net
 
 ALL_TARGET=	tidy
 WRKSRC=		${WRKDIR}/tidy17dec98
