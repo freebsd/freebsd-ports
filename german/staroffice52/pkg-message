@@ -1,0 +1,32 @@
+StarOffice 5.1a (Sun Version) Personal Install How-To
+
+Geschrieben von: Darren Wiebe <dkwiebe@hagenhomes.com>
+Deutsche Portierung: Martin Blapp <mb@imp.ch>
+
+------------------------ WICHITG ---------------------------
+
+Prüfen Sie noch einmal nach, ob Ihre Kernel-Konfiguration
+die folgenden Optionen enthaltet:
+
+options         "P1003_1B"
+options         "_KPOSIX_PRIORITY_SCHEDULING"
+options         "_KPOSIX_VERSION=199309L" 
+
+Diese Funktionalität des FreeBSD-Kernels ist für den Betrieb
+von StarOffice5 unter FreeBSD unabdingbar.
+
+------------------------------------------------------------
+
+In Kürze wird die Netzwerk-Variante von Staroffice 5.1a
+auf Ihrem System installiert sein.
+
+Führen Sie danach unter einem Benutzeraccount im Port-Verzeichnis
+"make install-user" aus und wählen Sie eine Standard-Workstation
+Installation aus.
+
+Fügen Sie anschliessend $HOME/Office51/bin Ihrem Pfad hinzu.
+
+StarOffice wird nun für diesen Benutzer verfügbar sein.
+
+Viel Glück
+
