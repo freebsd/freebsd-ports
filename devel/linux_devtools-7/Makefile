@@ -25,6 +25,7 @@ PATCHFILES=
 
 MAINTAINER=		marcel@FreeBSD.org
 
+BUILD_DEPENDS=		rpm:${PORTSDIR}/misc/rpm
 RUN_DEPENDS=		\
 	${PREFIX}/etc/redhat-release:${PORTSDIR}/emulators/linux_base
 
