@@ -1,32 +1,29 @@
 # New ports collection makefile for:	ja-S-lang library
-# Version required:	1.2.2
-# Date created:		26 Jun 1998
-# Whom:			Takashi Mega <mega@minz.org>
+# Version required:	1.2.2_j055
+# Date created:		22 April 1999
+# Whom:			IWASHITA Yoji <shuna@pop16.odn.ne.jp>
 #
-# $Id: Makefile,v 1.2 1998/10/16 04:30:24 jseger Exp $
+# $Id$
+#
 
-DISTNAME=	slang1.2.2
-PKGNAME=	ja-libslang-1.2.2
+DISTNAME=	slang1.2.2_j055
+PKGNAME=	ja-libslang-1.2.2.j055
 CATEGORIES=	japanese devel
-MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/
-
-PATCH_SITES=	http://home.sprintmail.com/~kikutani/slang/
-PATCHFILES= 	slang1.2.2jp0.pat.gz
-PATCH_DIST_STRIP=	-p1
+MASTER_SITES=	http://home.sprintmail.com/~kikutani/slang/
 
 MAINTAINER=	mega@minz.org
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--includedir=${PREFIX}/include/slang
 ALL_TARGET=	all elf
 INSTALL_TARGET=	install install-elf
-WRKSRC=         ${WRKDIR}/slang
-
-post-install:
-	${ECHO} "installing documents in ${PREFIX}/share/doc/slang"
-	@mkdir -p ${PREFIX}/share/doc/slang
-	${CP} -R ${WRKSRC}/doc/* ${PREFIX}/share/doc/slang
+WRKSRC=		${WRKDIR}/slang
 
 post-install:
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+	${ECHO} "===> Installing documents in ${PREFIX}/share/doc/slang"
+	@mkdir -p ${PREFIX}/share/doc/slang
+	${CP} -R ${WRKSRC}/doc/* ${PREFIX}/share/doc/slang
+	${CP} ${WRKSRC}/slang-j.doc ${PREFIX}/share/doc/slang
 
 .include <bsd.port.mk>
