@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	proftpd
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.6
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.net/distrib/source/ \
 		ftp://ftp.stikman.com/pub/proftpd/source/ \
 		ftp://ftp.dataguard.no/pub/proftpd/distrib/source/ \
 		ftp://ftp.club-internet.fr/pub/mirrors/ftp.proftpd.org/distrib/source/
-DISTNAME=	${PORTNAME}-1.2.5
+DISTNAME=	${PORTNAME}-1.2.6
 
 MAINTAINER=	mharo@FreeBSD.org
 
@@ -21,7 +21,7 @@ MAN5=	xferlog.5
 MAN8=	proftpd.8 ftpshut.8
 
 USE_GMAKE=	yes
-USE_AUTOCONF=	yes
+GNU_CONFIGURE=	yes
 USE_BZIP2=	YES
 
 CONFIGURE_ARGS=	--localstatedir=/var/run \
@@ -36,7 +36,7 @@ CONFIGURE_ARGS+=	--disable-pam
 .endif
 
 #allow user to override
-MODULES?=	mod_ratio:mod_readme:mod_quota:mod_wrap
+MODULES?=	mod_ratio:mod_readme:mod_wrap
 
 INCLUDEDIRS=
 LIBDIRS=
