@@ -1,0 +1,9 @@
+NeTAMS is a Network Traffic Accounting and Monitoring Software. 
+It runs as a daemon under FreeBSD and Linux operating systems. 
+Collects an IP traffic information flowing via your PC/UNIX or Cisco router, 
+filters it, aggregates, stores onto HASH/SQL database, 
+and makes SMTP/HTML reports to site administrator.
+Anoter features are flexible policy targets, firewalling, access control,  
+quotas, scheduler and much much more.
+
+WWW: http://www.netams.com/
