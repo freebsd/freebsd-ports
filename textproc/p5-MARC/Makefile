@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	MARC
-PORTVERSION=	1.14
+PORTVERSION=	1.15
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	MARC
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	A module for manipulating bibliographic records in the USMARC format
 
 PERL_CONFIGURE=	yes
 
