@@ -5,7 +5,7 @@
  exec_prefix	= @exec_prefix@
  bindir		= @bindir@
 -includedir	= @includedir@/mozilla-$(MOZILLA_VERSION)
-+includedir	= @includedir@/mozilla-%%HEADERS_SUFX%%
++includedir	= @includedir@/mozilla%%HEADERS_SUFX%%
  libdir		= @libdir@
  datadir		= @datadir@
  mandir		= @mandir@
