@@ -1,5 +1,5 @@
---- Makefile.in.ORIG	Wed Dec  8 12:06:17 1999
-+++ Makefile.in	Wed Dec  8 12:47:57 1999
+--- Makefile.in.orig	Tue May 21 09:13:50 2002
++++ Makefile.in	Tue May 21 16:02:12 2002
 @@ -56,7 +56,9 @@
  BIN_DIR =		$(exec_prefix)/bin
  
@@ -48,6 +48,23 @@
  #TK_LIB_FILE = libtk.a
  
  TK_LIB_FLAG = @TK_LIB_FLAG@
+@@ -187,11 +194,11 @@
+  
+ KANJI_FLAGS = @KANJI_FLAGS@
+  
+-CACHEDIR=$(UNIX_DIR)/CacheLib
+-CACHEDFONTDEF = -I$(CACHEDIR) @XLIB_HACK_DEF@
+-CACHEDFONTSRCS = $(CACHEDIR)/Font.c $(CACHEDIR)/FontNames.c $(CACHEDIR)/omGeneric.c \
+-	$(CHACHEDIR)/chkImEv.c $(CHACHEDIR)/imTrX.c
+-CACHEDFONTOBJS = Font.o FontNames.o omGeneric.o chkImEv.o imTrX.o
++#CACHEDIR=$(UNIX_DIR)/CacheLib
++#CACHEDFONTDEF = -I$(CACHEDIR) @XLIB_HACK_DEF@
++#CACHEDFONTSRCS = $(CACHEDIR)/Font.c $(CACHEDIR)/FontNames.c $(CACHEDIR)/omGeneric.c \
++#	$(CHACHEDIR)/chkImEv.c $(CHACHEDIR)/imTrX.c
++#CACHEDFONTOBJS = Font.o FontNames.o omGeneric.o chkImEv.o imTrX.o
+ 
+ #----------------------------------------------------------------
+ # The information below is modified by the configure script when
 @@ -318,6 +325,10 @@
  
  DEMOPROGS = browse hello ixset rmt rolodex square tcolor timer widget
