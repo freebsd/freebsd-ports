@@ -7,6 +7,7 @@
     SUBDIR += luna
     SUBDIR += openuniverse
     SUBDIR += p5-GPS
+    SUBDIR += p5-Geo-METAR
     SUBDIR += pyweather
     SUBDIR += rmap
     SUBDIR += saoimage
