@@ -5,7 +5,7 @@
     *  Disable floating point exepctions
     */
 -#ifdef __FreeBSD__
-+#ifdef __FreeBSD__  && !defined(__alpha__)
++#if defined(__FreeBSD__) && !defined(__alpha__)
  # include <floatingpoint.h>
    {
    /* seet floating point mask to the Linux default */
