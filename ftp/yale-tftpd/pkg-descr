@@ -1,0 +1,4 @@
+yale-tftpd is an improved (but slightly incompatible until you configure it)
+tftpd server.  It has a powerful and configurable security setup and is well
+suited for people who want to boot network devices using their system as a
+TFTP server.
