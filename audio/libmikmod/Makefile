@@ -1,12 +1,12 @@
 # ports collection makefile for:   libmikmod
-# Version required:    3.1.8
+# Version required:    3.1.9
 # Date created:        Sun Apr 11 13:06:01 PDT 1999
 # Whom:                Michael Haro <mharo@area51.fremont.ca.us>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	libmikmod-3.1.8
+DISTNAME=	libmikmod-3.1.9
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mikmod.darkorb.net/libmikmod/
 

@@ -1,24 +1,25 @@
---- configure.orig	Tue Jan 25 00:19:49 2000
-+++ configure	Tue Jan 25 00:20:51 2000
-@@ -2045,14 +2045,14 @@
+--- configure.orig	Mon Feb 14 12:20:17 2000
++++ configure	Tue Mar  7 13:04:53 2000
+@@ -2063,14 +2063,14 @@
    libmikmod_threads=-lpthread
  else
    echo "$ac_t""no" 1>&6
 -echo $ac_n "checking for pthread_create in -lc_r""... $ac_c" 1>&6
--echo "configure:2050: checking for pthread_create in -lc_r" >&5
-+echo $ac_n "checking for pthread_create in -pthread""... $ac_c" 1>&6
-+echo "configure:2050: checking for pthread_create in -pthread" >&5
- ac_lib_var=`echo c_r'_'pthread_create | sed 'y%./+-%__p_%'`
+-echo "configure:2068: checking for pthread_create in -lc_r" >&5
+-ac_lib_var=`echo c_r'_'pthread_create | sed 'y%./+-%__p_%'`
++echo $ac_n "checking for pthread_create in -lpthread""... $ac_c" 1>&6
++echo "configure:2068: checking for pthread_create in -lpthread" >&5
++ac_lib_var=`echo pthread'_'pthread_create | sed 'y%./+-%__p_%'`
  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-lc_r  $LIBS"
-+LIBS="-pthread  $LIBS"
++LIBS="-lpthread  $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 2058 "configure"
+ #line 2076 "configure"
  #include "confdefs.h"
-@@ -2080,7 +2080,7 @@
+@@ -2098,7 +2098,7 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
@@ -27,7 +28,7 @@
  else
    echo "$ac_t""no" 1>&6
  fi
-@@ -3681,9 +3681,9 @@
+@@ -3790,9 +3790,9 @@
  #define HAVE_PTHREAD 1
  EOF
  
