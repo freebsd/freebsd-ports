@@ -6963,6 +6963,7 @@ postgresql-pltcl	ports/databases/postgresql-pltcl
 postgresql-tcltk	ports/databases/postgresql-tcltk
 postgresql7	ports/databases/postgresql7
 postgresql72	ports/databases/postgresql72
+postgresql73	ports/databases/postgresql73
 postgresql_autodoc	ports/databases/postgresql_autodoc
 postilion	ports/mail/postilion
 postmark	ports/benchmarks/postmark
