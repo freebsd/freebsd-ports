@@ -132,6 +132,17 @@ BUILD_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
 TAR=		gtar	# Necessary for proper extraction of sources
 .endif
 
+# Check for patchset
+.if !exists(${DISTDIR}/${PATCHSETFILE}) && !defined(PACKAGE_BUILDING)
+ECHO_MSG=/usr/bin/printf
+IGNORE= :\n\
+The source distribution exists on your system, but due to\n\
+licensing restrictions you still need to download the\n\
+patchset, ${PATCHSETFILE}, from\n\
+http://www.eyesbeyond.com/freebsddom/java/jdk13.html.\n\
+Please place the patchset in ${DISTDIR}.\n
+.endif
+
 # Check for JDK sources
 .if !exists(${DISTDIR}/${SRCFILE}) && !defined(PACKAGE_BUILDING)
 ECHO_MSG=/usr/bin/printf
@@ -144,17 +155,6 @@ but you can create an account on this page.  After registration and\n\
 accepting the Sun Community Source License, select \"J2SESDK\" and\n\
 download the source file, ${SRCFILE}.  Please place this file in\n\
 ${DISTDIR}.\n
-.endif
-
-# Check for patchset
-.if !exists(${DISTDIR}/${PATCHSETFILE}) && !defined(PACKAGE_BUILDING)
-ECHO_MSG=/usr/bin/printf
-IGNORE= :\n\
-The source distribution exists on your system, but due to\n\
-licensing restrictions you still need to download the\n\
-patchset, ${PATCHSETFILE}, from\n\
-http://www.eyesbeyond.com/freebsddom/java/jdk13.html.\n\
-Please place the patchset in ${DISTDIR}.\n
 .endif
 
 # HotSpot and/or native threads require a recent version of FreeBSD

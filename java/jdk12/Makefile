@@ -76,6 +76,17 @@ PLIST_SUB+=	DEBUG:=""
 
 .include <bsd.port.pre.mk>
 
+# Check for patchset
+.if !exists(${DISTDIR}/${PATCHSETFILE}) && !defined(PACKAGE_BUILDING)
+ECHO_MSG=/usr/bin/printf
+IGNORE= :\n\
+The source distribution exists on your system, but due to\n\
+licensing restrictions you still need to download the\n\
+patchset, ${PATCHSETFILE}, from\n\
+http://www.eyesbeyond.com/freebsddom/java/jdk.html.\n\
+Please place the patchset in ${DISTDIR}.\n
+.endif
+
 # Check for JDK sources
 .if !exists(${DISTDIR}/${SRCFILE}) && !defined(PACKAGE_BUILDING)
 ECHO_MSG=/usr/bin/printf
@@ -88,17 +99,6 @@ but you can create an account on this page.  After registration and\n\
 accepting the Sun Community Source License, select \"JDK-${JDK_VERSION}\" and\n\
 download the file \"${SRCFILE}\".  Please place this file in\n\
 ${DISTDIR}.\n
-.endif
-
-# Check for patchset
-.if !exists(${DISTDIR}/${PATCHSETFILE}) && !defined(PACKAGE_BUILDING)
-ECHO_MSG=/usr/bin/printf
-IGNORE= :\n\
-The source distribution exists on your system, but due to\n\
-licensing restrictions you still need to download the\n\
-patchset, ${PATCHSETFILE}, from\n\
-http://www.eyesbeyond.com/freebsddom/java/jdk.html.\n\
-Please place the patchset in ${DISTDIR}.\n
 .endif
 
 pre-patch:
