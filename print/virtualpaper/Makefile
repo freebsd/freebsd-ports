@@ -3,7 +3,7 @@
 # Date created:		13 June 1996
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.4 1996/11/27 12:08:48 asami Exp $
+# $Id: Makefile,v 1.5 1997/03/27 18:35:41 jdp Exp $
 #
 
 DISTNAME=	virtualpaper-1.4
@@ -13,8 +13,8 @@ DISTFILES=	sources.tar.Z
 
 MAINTAINER=	jdp@FreeBSD.org
 
-BUILD_DEPENDS=	m3build-4:${PORTSDIR}/lang/modula-3
-LIB_DEPENDS=	m3\\.4\\.:${PORTSDIR}/lang/modula-3-lib
+BUILD_DEPENDS=	m3build-5:${PORTSDIR}/lang/modula-3
+LIB_DEPENDS=	m3\\.5\\.:${PORTSDIR}/lang/modula-3-lib
 
 DIST_SUBDIR=	virtualpaper-1.4
 MAN1=		LecternClient.1 Lectern.1 BuildLectern.1 EditLectern.1
