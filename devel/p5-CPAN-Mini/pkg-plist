@@ -1,0 +1,6 @@
+bin/minicpan
+%%SITE_PERL%%/CPAN/Mini.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Mini/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Mini 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/CPAN 2>/dev/null || true

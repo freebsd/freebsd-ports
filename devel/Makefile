@@ -646,6 +646,7 @@
     SUBDIR += p5-BSD-stat
     SUBDIR += p5-C-Scan
     SUBDIR += p5-CPAN-DistnameInfo
+    SUBDIR += p5-CPAN-Mini
     SUBDIR += p5-Cache
     SUBDIR += p5-Cache-Cache
     SUBDIR += p5-Cache-FastMmap
