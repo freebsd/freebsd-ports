@@ -16,3 +16,4 @@ lib/ladspa/square_1643.so
 lib/ladspa/sum_1665.so
 lib/ladspa/sync_square_1678.so
 lib/ladspa/triangle_1649.so
+@unexec rmdir %D/lib/ladspa 2>/dev/null || true

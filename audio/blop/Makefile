@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	blop
-PORTVERSION=	0.2.6
+PORTVERSION=	0.2.7
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,16 +14,19 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bandlimited oscillator plugins for LADSPA-aware audio applications
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-.if !exists(/usr/include/getopt.h)
-LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
-CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -lgnugetopt"
-.endif
 
+USE_GETOPT_LONG=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
-		--with-ladspa-prefix="${LOCALBASE}"
+CONFIGURE_TARGET= --build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--with-ladspa-prefix="${LOCALBASE}"
+
+post-patch:
+	@${REINPLACE_CMD} 's|-pipe -Wall -O3 |\$$CFLAGS |g' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|\$$(LIBS)|\$$(LIBS) \$$(LDFLAGS)|g ; \
+		 s|-lc | |g'
 
 pre-build:
 	cd ${WRKSRC}/src; ${GMAKE} sawtooth_data.h square_data.h parabola_data.h
