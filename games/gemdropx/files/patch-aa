@@ -1,15 +1,23 @@
---- makefile.orig	Sat Nov 22 01:56:59 1997
-+++ makefile	Mon Apr 27 00:42:53 1998
-@@ -10,10 +10,10 @@
- # X Window version: November 5, 1997 - November 21, 1997
+--- makefile	Thu Jul 30 19:53:32 1998
++++ /home/andy/tmp/wrk/makefile	Mon Aug 10 18:03:04 1998
+@@ -11,14 +11,16 @@
+ # X Window Updates: July 29, 1998- July 29, 1998
  
  
 -CC=gcc
-+CC+=${CFLAGS} -I$(X11BASE)/include -DPREFIX=\"${PREFIX}\"
- POSTPROCESS=strip
++CC?=gcc
++PREFIX?=/usr/X11R6
++X11BASE?=/usr/X11R6
  
--XLIB=-lX11
-+XLIB=-L$(X11BASE)/lib -lX11 -lcompat
- # XLIB=-L/usr/openwin/lib -lX11
- # XLIB=-L/usr/X11/lib -lX11
+-INSTALLROOT= $(PREFIX)
++INSTALLROOT= $(PREFIX)/share/gemdropx
+ GFX= $(INSTALLROOT)/gfx
+ SOUNDS= $(INSTALLROOT)/sounds
  
+-XLIB= $(RPATH) -L$(PREFIX)/lib -lX11 -lm
+-XINC= -I$(PREFIX)/include
++XLIB= $(RPATH) -L$(X11BASE)/lib -lX11 -lm
++XINC= -I$(X11BASE)/include
+ CFLAGS= $(XINC) -DSOUNDS=\"$(SOUNDS)\" -DGFX=\"$(GFX)\"
+ 
+ all:	gemdropx
