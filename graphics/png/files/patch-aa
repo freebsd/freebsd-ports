@@ -1,5 +1,5 @@
-*** makefile.orig	Fri May 16 10:53:30 1997
---- makefile	Tue Dec 16 11:54:05 1997
+*** makefile.std.orig	Sat Feb 28 16:00:24 1998
+--- makefile.std	Mon Mar  2 22:20:36 1998
 ***************
 *** 5,33 ****
   # Where the zlib library and include files are located
@@ -38,7 +38,7 @@
 ! #ZLIBLIB=../zlib
 ! #ZLIBINC=../zlib
   
-! VER=0.96
+! VER=0.99
 ! #CC=cc
 ! #CFLAGS=-I$(ZLIBINC) -O # -g -DPNG_DEBUG=1
 ! LDFLAGS=-L. -lpng -lz -lm -static
@@ -84,13 +84,15 @@
   
   clean:
   	rm -f *.o libpng.a pngtest pngout.png
---- 46,54 ----
+--- 46,56 ----
   install: libpng.a
   	-@mkdir $(prefix)/include
   	-@mkdir $(prefix)/lib
-! 	${INSTALL} -c -m 644 -o ${BINOWN} -g ${BINGRP} png.h pngconf.h $(prefix)/include
-! 	${INSTALL} -c -m 644 -o ${BINOWN} -g ${BINGRP} libpng.a libpng.so.${VER} $(prefix)/lib
+! 	${INSTALL} -c -m ${BINMODE} -o ${BINOWN} -g ${BINGRP} png.h pngconf.h $(prefix)/include
+! 	${INSTALL} -c -m ${BINMODE} -o ${BINOWN} -g ${BINGRP} libpng.a libpng.so.${VER} $(prefix)/lib
 ! 	ranlib $(prefix)/lib/libpng.a
+! 	${INSTALL} -c -m ${MANMODE} -o ${MANOWN} -g ${MANGRP} libpng.3 libpngpf.3 $(prefix)/man/man3
+! 	${INSTALL} -c -m ${MANMODE} -o ${MANOWN} -g ${MANGRP} png.5 $(prefix)/man/man5
   
   clean:
   	rm -f *.o libpng.a pngtest pngout.png
