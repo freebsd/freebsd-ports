@@ -203,6 +203,7 @@
     SUBDIR += pear-Mail_Mime
     SUBDIR += pear-mailparse
     SUBDIR += perdition
+    SUBDIR += pflogstats
     SUBDIR += pflogsumm
     SUBDIR += pgen
     SUBDIR += pgp4pine
