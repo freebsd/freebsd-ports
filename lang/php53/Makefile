@@ -1,4 +1,4 @@
-# New ports collection makefile for:	php4
+# New ports collection makefile for:	php5
 # Date created:				Tue Feb 18 11:17:13 CET 2003
 # Whom:					Alex Dupre <sysadmin@alexdupre.com>
 #
@@ -7,21 +7,21 @@
 # There are many ways to select which extensions you want to enable, either
 # in interactive mode or in batch mode.
 #
-# By default, the enabled extensions are: CTYPE, MYSQL, OVERLOAD, PCRE, POSIX,
-# SESSION, TOKENIZER, XML and ZLIB. This behaviour can be changed overriding
-# the PHP4_OPTIONS variable (e.g. PHP4_OPTIONS="EXT1 EXT2 EXT3").
+# By default, the enabled extensions are: CTYPE, DOM, PCRE, POSIX, SESSION,
+# SIMPLEXML, SQLITE, TOKENIZER and XML. This behaviour can be changed
+# overriding the PHP5_OPTIONS variable (e.g. PHP5_OPTIONS="EXT1 EXT2 EXT3").
 #
 # Another way is to use the WITH_<EXT> and WITHOUT_<EXT> knobs, for additional
 # and default extensions respectively (implies batch mode).
 #
-# The last way reads an "extension" file, located in ~/php4_options (the
-# location is overridable by the PHP4_OPTFILE variable). You may find an
-# example in scripts/php4_options (interactive mode only).
+# The last way reads an "extension" file, located in ~/php5_options (the
+# location is overridable by the PHP5_OPTFILE variable). You may find an
+# example in scripts/php5_options (interactive mode only).
 #
 
-PORTNAME=	php4
-PORTVERSION=	4.3.3.r1
-PORTREVISION=	1
+PORTNAME=	php5
+PORTVERSION=	5.0.0.a1
+PORTREVISION=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	http://www.php.net/distributions/ \
 		http://it.php.net/distributions/ \
@@ -31,6 +31,7 @@ MASTER_SITES=	http://www.php.net/distributions/ \
 		http://fr.php.net/distributions/ \
 		http://es.php.net/distributions/ \
 		http://se.php.net/distributions/ \
+		http://www.sm.FreeBSD.org/~alex/ \
 		http://downloads.php.net/jani/
 .if defined(WITHOUT_CLI) && !defined(WITHOUT_APACHE)
 PKGNAMEPREFIX=	mod_
@@ -43,7 +44,7 @@ PKGNAMESUFFIX=	-cli
 .endif
 .endif
 .endif
-DISTNAME=	php-${PORTVERSION:S/.r/RC/}
+DISTNAME=	php-${PORTVERSION:S/.a/a/}
 
 MAINTAINER?=	sysadmin@alexdupre.com
 COMMENT=	PHP Scripting Language (Apache Module and CLI)
@@ -68,7 +69,6 @@ USE_LIBTOOL_VER=14
 CONFIGURE_ARGS=	--enable-versioning \
 		--enable-memory-limit \
 		--with-layout=GNU \
-		--with-zlib-dir=/usr \
 		--disable-all
 
 .if !defined(WITH_REGEX_TYPE) || ${WITH_REGEX_TYPE} == "php"
@@ -86,18 +86,19 @@ CONFIGURE_ARGS+=--with-regex=apache
 EXT_DIR=	20020429
 SAPI_FILE=	"@comment "
 
-CONFLICTS=	php4-cli-4* mod_php4-4* php4-cgi-4*
+CONFLICTS=	php5-cli-5* mod_php5-5* php5-cgi-5*
 .if defined(WITHOUT_APACHE)
 .if defined(WITHOUT_CLI)
-CONFLICTS=	php4-4* php4-cli-4* mod_php4-4*
+CONFLICTS=	php5-5* php5-cli-5* mod_php5-5*
 .else
-CONFLICTS=	php4-4* php4-cgi-4* mod_php4-4*
+CONFLICTS=	php5-5* php5-cgi-5* mod_php5-5*
 .endif
 .else
 .if defined(WITHOUT_CLI)
-CONFLICTS=	php4-4* php4-cli-4* php4-cgi-4*
+CONFLICTS=	php5-5* php5-cli-5* php5-cgi-5*
 .endif
 .endif
+CONFLICTS+=	php4-4* php4-cli-4* mod_php4-4* php4-cgi-4*
 
 .if defined(WITHOUT_APACHE)
 CONFIGURE_ARGS+=--enable-discard-path
@@ -109,6 +110,12 @@ PLIST_SUB+=	APACHE=""
 CONFIGURE_ARGS+=--disable-cli
 PLIST_SUB+=	CLI="@comment "
 .else
+.if !defined(WITHOUT_PEAR)
+CONFIGURE_ARGS+=--with-pear
+PLIST_SUB+=	PEAR=""
+.else
+PLIST_SUB+=	PEAR="@comment "
+.endif
 MAN1=		php.1
 PLIST_SUB+=	CLI=""
 .endif
@@ -116,13 +123,13 @@ PLIST_SUB+=	CLI=""
 SAPI_FILE=	"bin/php"
 .endif
 
-ALL_OPTIONS=	BCMATH BZIP2 CALENDAR CDB CRACK CTYPE CURL DBASE DBX DOMXML \
-		DOMXSLT EXIF FILEPRO FRIBIDI FTP GD GDBM GETTEXT GMP HYPERWAVE \
-		ICONV IMAP INTERBASE INIFILE MBSTRING MCAL MCVE MCRYPT MHASH \
-		MIME MING MYSQL NCURSES OPENLDAP OPENSSL ORACLE OVERLOAD PCNTL \
-		PCRE PDFLIB POSIX POSTGRESQL PSPELL READLINE RECODE SESSION \
-		SHMOP SNMP SOCKETS SYBASEDB SYBASECT SYSVSEM SYSVSHM TOKENIZER \
-		UNIXODBC WDDX XML XMLRPC XSLT YAZ YP ZIP ZLIB
+ALL_OPTIONS=	BCMATH BZIP2 CALENDAR CDB CRACK CTYPE CURL DBASE DBX DOM EXIF \
+		FILEPRO FTP GD GDBM GETTEXT GMP ICONV IMAP INTERBASE INIFILE \
+		MBSTRING MCAL MCVE MCRYPT MHASH MIME MING MYSQL NCURSES \
+		OPENLDAP OPENSSL ORACLE PCNTL PCRE PDFLIB POSIX POSTGRESQL \
+		PSPELL READLINE RECODE SESSION SHMOP SIMPLEXML SNMP SOCKETS \
+		SQLITE SYBASEDB SYBASECT SYSVSEM SYSVSHM TOKENIZER UNIXODBC \
+		WDDX XML XMLRPC XSL YAZ YP ZLIB
 
 .for opt in ${ALL_OPTIONS}
 .if defined(WITH_${opt}) || defined(WITHOUT_${opt})
@@ -133,8 +140,6 @@ BATCH=		yes
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 IS_INTERACTIVE=	yes
 .endif
-
-PBDIR=		${PREFIX}/share/pear/boot
 
 .include <bsd.port.pre.mk>
 
@@ -152,11 +157,11 @@ APXS?=		${LOCALBASE}/sbin/apxs
 .if defined(WITH_APACHE2)
 APACHE_PORT?=	${PORTSDIR}/www/apache2
 CONFIGURE_ARGS+=--with-apxs2=${APXS}
-SAPI_FILE=	libexec/apache2/libphp4.so
+SAPI_FILE=	libexec/apache2/libphp5.so
 .else
 APACHE_PORT?=	${PORTSDIR}/www/apache13
 CONFIGURE_ARGS+=--with-apxs=${APXS}
-SAPI_FILE=	libexec/apache/libphp4.so
+SAPI_FILE=	libexec/apache/libphp5.so
 .endif
 
 BUILD_DEPENDS+=	${APXS}:${APACHE_PORT}
@@ -171,16 +176,16 @@ PLIST_SUB+=	SAPI_FILE=${SAPI_FILE} \
 		EXT_DIR=${EXT_DIR}
 
 WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
-PHP4_OPTFILE?=	${HOME}/php4_options
+PHP5_OPTFILE?=	${HOME}/php5_options
 
-PHP4_OPTIONS?=	CTYPE MYSQL OVERLOAD PCRE POSIX SESSION TOKENIZER XML ZLIB
+PHP5_OPTIONS?=	CTYPE DOM PCRE POSIX SESSION SIMPLEXML SQLITE TOKENIZER XML
 
 .for opt in ${ALL_OPTIONS}
 .if defined(WITH_${opt})
 SEL_OPTIONS+=	${opt}
 .endif
 .endfor
-.for opt in ${PHP4_OPTIONS}
+.for opt in ${PHP5_OPTIONS}
 .if !defined(WITHOUT_${opt})
 SEL_OPTIONS+=	${opt}
 .endif
@@ -188,13 +193,12 @@ SCRIPTS_ENV+=	WITH_${opt}=ON
 .endfor
 
 SCRIPTS_ENV+=	SEL_OPTIONS="${SEL_OPTIONS}" \
-		OPTION_FILE="${PHP4_OPTFILE}" \
+		OPTION_FILE="${PHP5_OPTFILE}" \
 		WRKDIR="${WRKDIR}" \
 		CAT="${CAT}" \
 		SED="${SED}"
 
 .ifmake describe
-WITH_MYSQL=	yes
 WITH_XML=	yes
 .endif
 
@@ -206,24 +210,24 @@ WITH_XML=	yes
 WITH_DBA=	yes
 .endif
 
-.if defined(WITH_DOMXSLT)
-WITH_DOMXML=	yes
+.if defined(WITH_XSL)
+WITH_DOM=	yes
 .endif
 
-.if defined(WITH_XMLRPC) || defined(WITH_XSLT)
+.if defined(WITH_XMLRPC)
 WITH_ICONV_DEP=	yes
 .endif
 
 .if defined(WITH_SNMP)
-WITH_OPENSSL=	yes
+WITH_OPENSSL_DEP=	yes
 .endif
 
-.if defined(WITH_XMLRPC) || defined(WITH_XSLT)
+.if defined(WITH_DOM) || defined(WITH_SIMPLEXML)
 WITH_XML_DEP=	yes
 .endif
 
-.if defined(WITH_WDDX)
-WITH_XML=	yes
+.if defined(WITH_GD) || defined(WITH_MYSQL) || defined(WITH_PDFLIB)
+WITH_ZLIB_DEP=	yes
 .endif
 
 .if defined(WITH_BCMATH)
@@ -275,14 +279,8 @@ CONFIGURE_ARGS+=--enable-dbase
 CONFIGURE_ARGS+=--enable-dbx
 .endif
 
-.if defined(WITH_DOMXML)
-LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
-CONFIGURE_ARGS+=--with-dom=${LOCALBASE}
-.endif
-
-.if defined(WITH_DOMXSLT)
-LIB_DEPENDS+=	xslt.1:${PORTSDIR}/textproc/libxslt
-CONFIGURE_ARGS+=--with-dom-xslt=${LOCALBASE} --with-dom-exslt=${LOCALBASE}
+.if defined(WITH_DOM)
+CONFIGURE_ARGS+=--enable-dom
 .endif
 
 .if defined(WITH_EXIF)
@@ -291,11 +289,6 @@ CONFIGURE_ARGS+=--enable-exif
 
 .if defined(WITH_FILEPRO)
 CONFIGURE_ARGS+=--enable-filepro
-.endif
-
-.if defined(WITH_FRIBIDI)
-LIB_DEPENDS+=	fribidi.0:${PORTSDIR}/converters/fribidi
-CONFIGURE_ARGS+=--with-fribidi=${LOCALBASE}
 .endif
 
 .if defined(WITH_FTP)
@@ -336,10 +329,6 @@ LIB_DEPENDS+=	gmp.6:${PORTSDIR}/math/libgmp4
 CONFIGURE_ARGS+=--with-gmp=${LOCALBASE}
 .endif
 
-.if defined(WITH_HYPERWAVE)
-CONFIGURE_ARGS+=--with-hyperwave
-.endif
-
 .if defined(WITH_ICONV) || defined(WITH_ICONV_DEP)
 LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
 .endif
@@ -376,7 +365,7 @@ CONFIGURE_ARGS+=--with-interbase=${LOCALBASE}/firebird
 .endif
 
 .if defined(WITH_MBSTRING)
-CONFIGURE_ARGS+=--enable-mbstring --enable-mbregex
+CONFIGURE_ARGS+=--enable-mbstring
 .endif
 
 .if defined(WITH_MCAL)
@@ -459,16 +448,12 @@ RUN_DEPENDS+=	${LOCALBASE}/oracle7/lib/libcore3.a:${PORTSDIR}/databases/oracle7-
 CONFIGURE_ARGS+=--with-oracle=${LOCALBASE}/oracle7
 .endif
 
-.if defined(WITH_OVERLOAD)
-CONFIGURE_ARGS+=--enable-overload
-.endif
-
 .if defined(WITH_PCNTL)
 CONFIGURE_ARGS+=--enable-pcntl
 .endif
 
 .if defined(WITH_PCRE)
-CONFIGURE_ARGS+=--with-pcre-regex=yes
+CONFIGURE_ARGS+=--with-pcre-regex
 .endif
 
 .if defined(WITH_PDFLIB)
@@ -507,17 +492,25 @@ CONFIGURE_ARGS+=--enable-session
 CONFIGURE_ARGS+=--enable-shmop
 .endif
 
+.if defined(WITH_SIMPLEXML)
+CONFIGURE_ARGS+=--enable-simplexml
+.endif
+
 .if defined(WITH_SNMP)
 .if exists(${LOCALBASE}/lib/libsnmp.so.4)
 LIB_DEPENDS+=	snmp.4:${PORTSDIR}/net/net-snmp4
 .else
 LIB_DEPENDS+=	netsnmp.5:${PORTSDIR}/net/net-snmp
 .endif
-CONFIGURE_ARGS+=--with-snmp=${LOCALBASE} --enable-ucd-snmp-hack
+CONFIGURE_ARGS+=--with-snmp=${LOCALBASE} --with-openssl-dir=${OPENSSLBASE} --enable-ucd-snmp-hack
 .endif
 
 .if defined(WITH_SOCKETS)
 CONFIGURE_ARGS+=--enable-sockets
+.endif
+
+.if defined(WITH_SQLITE)
+CONFIGURE_ARGS+=--with-sqlite
 .endif
 
 .if defined(WITH_SYBASEDB)
@@ -552,20 +545,22 @@ CONFIGURE_ARGS+=--enable-wddx
 .endif
 
 .if defined(WITH_XML) || defined(WITH_XML_DEP)
-LIB_DEPENDS+=	expat.4:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
+CONFIGURE_ARGS+=--with-libxml-dir=${LOCALBASE}
 .endif
 
 .if defined(WITH_XML)
-CONFIGURE_ARGS+=--enable-xml --with-expat-dir=${LOCALBASE}
+CONFIGURE_ARGS+=--enable-xml
 .endif
 
 .if defined(WITH_XMLRPC)
-CONFIGURE_ARGS+=--with-xmlrpc
+LIB_DEPENDS+=	expat.4:${PORTSDIR}/textproc/expat2
+CONFIGURE_ARGS+=--with-xmlrpc --with-expat-dir=${LOCALBASE} --with-iconv-dir=${LOCALBASE}
 .endif
 
-.if defined(WITH_XSLT)
-LIB_DEPENDS+=	sablot.70:${PORTSDIR}/textproc/sablotron
-CONFIGURE_ARGS+=--enable-xslt --with-xslt-sablot=${LOCALBASE}
+.if defined(WITH_XSL)
+LIB_DEPENDS+=	xslt.1:${PORTSDIR}/textproc/libxslt
+CONFIGURE_ARGS+=--with-xsl=${LOCALBASE}
 .endif
 
 .if defined(WITH_YAZ)
@@ -577,13 +572,12 @@ CONFIGURE_ARGS+=--with-yaz=${LOCALBASE}/bin
 CONFIGURE_ARGS+=--enable-yp
 .endif
 
-.if defined(WITH_ZIP)
-LIB_DEPENDS+=	zzip-0.10:${PORTSDIR}/devel/zziplib
-CONFIGURE_ARGS+=--with-zip=${LOCALBASE}
+.if defined(WITH_ZLIB) || defined(WITH_ZLIB_DEP)
+CONFIGURE_ARGS+=--with-zlib-dir=/usr
 .endif
 
 .if defined(WITH_ZLIB)
-CONFIGURE_ARGS+=--with-zlib=yes
+CONFIGURE_ARGS+=--with-zlib
 .endif
 
 pre-patch:
@@ -615,13 +609,18 @@ pre-configure:
 	@${ECHO_CMD} "To enable LZW-compressed GIF support in GD define the WITH_LZW knob."
 	@${ECHO_CMD} ""
 .endif
+.if !defined(WITHOUT_CLI) && !defined(WITHOUT_PEAR) && (!defined(WITH_PCRE) || !defined(WITH_XML))
+	@${ECHO_CMD} "PEAR requires PCRE and XML extensions."
+	@${ECHO_CMD} "Define the WITHOUT_PEAR knob or enable these extensions."
+	@${FALSE}
+.endif
 .if !defined(WITHOUT_APACHE) && !defined(WITHOUT_CLI)
 	@${ECHO_CMD} "You are building the Apache Module and the Command Line Interpreter of PHP."
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "Use port:"
-	@${ECHO_CMD} "	lang/php4-cli		for Command Line Interpreter only"
-	@${ECHO_CMD} "	www/php4-cgi		for Common Gateway Interface only"
-	@${ECHO_CMD} "	www/mod_php4		for Apache Module only"
+	@${ECHO_CMD} "	lang/php5-cli		for Command Line Interpreter only"
+	@${ECHO_CMD} "	www/php5-cgi		for Common Gateway Interface only"
+	@${ECHO_CMD} "	www/mod_php5		for Apache Module only"
 	@${ECHO_CMD} ""
 .endif
 
@@ -638,12 +637,13 @@ test: all
 .endif
 
 post-install:
-.if !defined(WITHOUT_CLI)
+.if !defined(WITHOUT_CLI) && !defined(WITHOUT_PEAR)
 	@${INSTALL_SCRIPT} ${WRKSRC}/pear/scripts/pear ${PREFIX}/bin
 .endif
 	@${INSTALL_DATA} ${WRKSRC}/php.ini-dist ${PREFIX}/etc
 	@${INSTALL_DATA} ${WRKSRC}/php.ini-recommended ${PREFIX}/etc
 	@${TOUCH} ${PREFIX}/lib/php/${EXT_DIR}/.php
+	@${TOUCH} ${PREFIX}/include/php/ext/xml/expat/.php
 .if !defined(WITHOUT_APACHE)
 	@${ECHO_CMD} "*****************************************************************************"
 	@${ECHO_CMD} ""

@@ -1,4 +1,4 @@
-%%CLI%%bin/pear
+%%CLI%%%%PEAR%%bin/pear
 %%CLI%%bin/php
 bin/php-config
 bin/phpextdist
@@ -24,12 +24,13 @@ include/php/Zend/zend_alloc.h
 include/php/Zend/zend_builtin_functions.h
 include/php/Zend/zend_compile.h
 include/php/Zend/zend_config.h
+include/php/Zend/zend_config.nw.h
 include/php/Zend/zend_config.w32.h
 include/php/Zend/zend_constants.h
+include/php/Zend/zend_default_classes.h
 include/php/Zend/zend_dynamic_array.h
 include/php/Zend/zend_errors.h
 include/php/Zend/zend_execute.h
-include/php/Zend/zend_execute_globals.h
 include/php/Zend/zend_execute_locks.h
 include/php/Zend/zend_extensions.h
 include/php/Zend/zend_fast_cache.h
@@ -46,18 +47,25 @@ include/php/Zend/zend_language_parser.h
 include/php/Zend/zend_language_scanner.h
 include/php/Zend/zend_list.h
 include/php/Zend/zend_llist.h
+include/php/Zend/zend_mm.h
 include/php/Zend/zend_modules.h
-include/php/Zend/zend_multibyte.h
 include/php/Zend/zend_multiply.h
+include/php/Zend/zend_object_handlers.h
+include/php/Zend/zend_objects.h
+include/php/Zend/zend_objects_API.h
 include/php/Zend/zend_operators.h
 include/php/Zend/zend_ptr_stack.h
 include/php/Zend/zend_qsort.h
+include/php/Zend/zend_reflection_api.h
 include/php/Zend/zend_stack.h
 include/php/Zend/zend_static_allocator.h
+include/php/Zend/zend_stream.h
+include/php/Zend/zend_ts_hash.h
 include/php/Zend/zend_types.h
 include/php/Zend/zend_variables.h
 include/php/acconfig.h
 include/php/ext/mbstring/cp932_table.h
+include/php/ext/mbstring/mb_gpc.h
 include/php/ext/mbstring/mbfilter.h
 include/php/ext/mbstring/mbfilter_cn.h
 include/php/ext/mbstring/mbfilter_ja.h
@@ -80,7 +88,6 @@ include/php/ext/session/mod_files.h
 include/php/ext/session/mod_mm.h
 include/php/ext/session/mod_user.h
 include/php/ext/session/php_session.h
-include/php/ext/standard/aggregation.h
 include/php/ext/standard/base64.h
 include/php/ext/standard/basic_functions.h
 include/php/ext/standard/crc32.h
@@ -127,28 +134,22 @@ include/php/ext/standard/php_smart_str.h
 include/php/ext/standard/php_smart_str_public.h
 include/php/ext/standard/php_standard.h
 include/php/ext/standard/php_string.h
+include/php/ext/standard/php_sunfuncs.h
 include/php/ext/standard/php_type.h
 include/php/ext/standard/php_var.h
 include/php/ext/standard/php_versioning.h
+include/php/ext/standard/proc_open.h
 include/php/ext/standard/quot_print.h
 include/php/ext/standard/reg.h
 include/php/ext/standard/scanf.h
 include/php/ext/standard/sha1.h
+include/php/ext/standard/streamsfuncs.h
 include/php/ext/standard/uniqid.h
 include/php/ext/standard/url.h
 include/php/ext/standard/url_scanner.h
 include/php/ext/standard/url_scanner_ex.h
-include/php/ext/xml/expat/ascii.h
-include/php/ext/xml/expat/asciitab.h
-include/php/ext/xml/expat/expat.h
-include/php/ext/xml/expat/iasciitab.h
-include/php/ext/xml/expat/latin1tab.h
-include/php/ext/xml/expat/nametab.h
-include/php/ext/xml/expat/utf8tab.h
-include/php/ext/xml/expat/winconfig.h
-include/php/ext/xml/expat/xmlrole.h
-include/php/ext/xml/expat/xmltok.h
-include/php/ext/xml/expat/xmltok_impl.h
+include/php/ext/xml/expat_compat.h
+include/php/ext/xml/expat/.php
 include/php/ext/xml/php_xml.h
 include/php/main/SAPI.h
 include/php/main/build-defs.h
@@ -183,6 +184,13 @@ include/php/main/rfc1867.h
 include/php/main/safe_mode.h
 include/php/main/snprintf.h
 include/php/main/spprintf.h
+include/php/main/streams/php_stream_context.h
+include/php/main/streams/php_stream_filter_api.h
+include/php/main/streams/php_stream_mmap.h
+include/php/main/streams/php_streams_int.h
+include/php/main/streams/php_stream_transport.h
+include/php/main/streams/php_stream_userspace.h
+include/php/main/streams/php_stream_plain_wrapper.h
 include/php/main/win95nt.h
 include/php/regex/cclass.h
 include/php/regex/cname.h
@@ -198,32 +206,34 @@ lib/php/build/phpize.m4
 lib/php/build/scan_makefile_in.awk
 lib/php/build/shtool
 %%SAPI_FILE%%
-%%APACHE%%@exec %D/sbin/apxs -e -a -n php4 %f
-%%APACHE%%@unexec %D/sbin/apxs -e -A -n php4 %f
-%%CLI%%share/pear/bootstrap/Archive/Tar.php
-%%CLI%%share/pear/bootstrap/PEAR.php
-%%CLI%%share/pear/bootstrap/System.php
-%%CLI%%share/pear/bootstrap/Console/Getopt.php
-%%CLI%%share/pear/bootstrap/OS/Guess.php
-%%CLI%%share/pear/bootstrap/PEAR/Command/Auth.php
-%%CLI%%share/pear/bootstrap/PEAR/Command/Build.php
-%%CLI%%share/pear/bootstrap/PEAR/Command/Common.php
-%%CLI%%share/pear/bootstrap/PEAR/Command/Config.php
-%%CLI%%share/pear/bootstrap/PEAR/Command/Install.php
-%%CLI%%share/pear/bootstrap/PEAR/Command/Package.php
-%%CLI%%share/pear/bootstrap/PEAR/Command/Registry.php
-%%CLI%%share/pear/bootstrap/PEAR/Command/Remote.php
-%%CLI%%share/pear/bootstrap/PEAR/Autoloader.php
-%%CLI%%share/pear/bootstrap/PEAR/Builder.php
-%%CLI%%share/pear/bootstrap/PEAR/Command.php
-%%CLI%%share/pear/bootstrap/PEAR/Common.php
-%%CLI%%share/pear/bootstrap/PEAR/Config.php
-%%CLI%%share/pear/bootstrap/PEAR/Dependency.php
-%%CLI%%share/pear/bootstrap/PEAR/Installer.php
-%%CLI%%share/pear/bootstrap/PEAR/Packager.php
-%%CLI%%share/pear/bootstrap/PEAR/Registry.php
-%%CLI%%share/pear/bootstrap/PEAR/Remote.php
-%%CLI%%share/pear/bootstrap/PEAR/Frontend/CLI.php
+%%APACHE%%@exec %D/sbin/apxs -e -a -n php5 %f
+%%APACHE%%@unexec %D/sbin/apxs -e -A -n php5 %f
+%%CLI%%%%PEAR%%share/pear/bootstrap/Archive/Tar.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/System.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/Console/Getopt.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/OS/Guess.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Autoloader.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Builder.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Command.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Command/Auth.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Command/Build.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Command/Common.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Command/Config.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Command/Install.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Command/Mirror.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Command/Package.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Command/Registry.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Command/Remote.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Common.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Config.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Dependency.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/DependencyDB.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Installer.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Packager.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Registry.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Remote.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Frontend/CLI.php
 @dirrm include/php/TSRM
 @dirrm include/php/Zend
 @dirrm include/php/ext/mbstring
@@ -233,17 +243,18 @@ lib/php/build/shtool
 @dirrm include/php/ext/xml/expat
 @dirrm include/php/ext/xml
 @dirrm include/php/ext
+@dirrm include/php/main/streams
 @dirrm include/php/main
 @dirrm include/php/regex
 @dirrm include/php/
 @unexec rmdir %D/lib/php/%%EXT_DIR%% 2> /dev/null || true
 @dirrm lib/php/build
 @unexec rmdir %D/lib/php 2> /dev/null || true
-%%CLI%%@dirrm share/pear/bootstrap/Archive
-%%CLI%%@dirrm share/pear/bootstrap/Console
-%%CLI%%@dirrm share/pear/bootstrap/OS
-%%CLI%%@dirrm share/pear/bootstrap/PEAR/Command
-%%CLI%%@dirrm share/pear/bootstrap/PEAR/Frontend
-%%CLI%%@dirrm share/pear/bootstrap/PEAR
-%%CLI%%@dirrm share/pear/bootstrap
-%%CLI%%@unexec rmdir %D/share/pear 2> /dev/null || true
+%%CLI%%%%PEAR%%@dirrm share/pear/bootstrap/Archive
+%%CLI%%%%PEAR%%@dirrm share/pear/bootstrap/Console
+%%CLI%%%%PEAR%%@dirrm share/pear/bootstrap/OS
+%%CLI%%%%PEAR%%@dirrm share/pear/bootstrap/PEAR/Command
+%%CLI%%%%PEAR%%@dirrm share/pear/bootstrap/PEAR/Frontend
+%%CLI%%%%PEAR%%@dirrm share/pear/bootstrap/PEAR
+%%CLI%%%%PEAR%%@dirrm share/pear/bootstrap
+%%CLI%%%%PEAR%%@unexec rmdir %D/share/pear 2> /dev/null || true
