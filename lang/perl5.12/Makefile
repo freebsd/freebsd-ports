@@ -7,6 +7,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VER}
+PORTREVISION=	1
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -219,10 +220,14 @@ post-patch:
 		${FILESDIR}/use.perl \
 		> ${WRKDIR}/use.perl
 
+pre-install:
+	@${RM} -f ${PREFIX}/bin/perl${PERL_VER}
+	@${RM} -f ${PREFIX}/bin/perl
+
 post-install:
+	@${STRIP_CMD} ${PREFIX}/bin/perl${PERL_VER}
 	@${STRIP_CMD} ${PREFIX}/bin/perl
-	@${LN} -sf ${PREFIX}/bin/perl ${PREFIX}/bin/perl5
-	@${LN} -sf ${PREFIX}/bin/perl ${PREFIX}/bin/perl${PERL_VER}
+	@${LN} -sf ${PREFIX}/bin/perl${PERL_VER} ${PREFIX}/bin/perl5
 	${INSTALL_SCRIPT} ${WRKDIR}/use.perl ${PREFIX}/bin/use.perl
 .for files in ${BSDPAN_FILES}
 	${MKDIR} ${BSDPAN_DEST}/${files:H}
