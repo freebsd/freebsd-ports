@@ -1,0 +1,14 @@
+--- bool.cc.orig	Mon Feb 22 03:40:47 1999
++++ bool.cc	Sun Jan 12 14:42:05 2003
+@@ -1,6 +1,11 @@
+ /* C code produced by gperf version 2.1 (K&R C version) */
+ /* Command-line: gperf -aptCT -N in_word_set_boollist bool.list  */
+ 
++#include "config.h"
++
++#ifdef HAVE_STRING_H
++#include <string.h>
++#endif /* HAVE_STRING_H */
+ 
+ #include "common.h"
+ #include "bool.h"

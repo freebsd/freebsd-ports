@@ -1,0 +1,12 @@
+--- portinfo.cc.orig	Mon Feb 22 03:40:47 1999
++++ portinfo.cc	Sun Jan 12 14:40:05 2003
+@@ -1,3 +1,9 @@
++#include "config.h"
++
++#ifdef HAVE_STRING_H
++#include <string.h>
++#endif /* HAVE_STRING_H */
++
+ #include "common.h"
+ #include "portinfo.h"
+ #include "token.h"
