@@ -3,7 +3,7 @@
 # Date created:         02 November 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1998/11/05 08:02:39 tg Exp $
+# $Id: Makefile,v 1.2 1998/11/09 08:10:03 tg Exp $
 #
 
 DISTNAME=	Imaging-0.3b2
@@ -31,6 +31,7 @@ PYTHONSCRIPTDIR=	${PREFIX}/lib/python1.5
 PILDIR=		${PYTHONSCRIPTDIR}/site-packages/PIL
 PILDOCDIR=	${PREFIX}/share/doc/PIL
 PILEXDIR=	${PREFIX}/share/examples/PIL
+PILINCDIR=	${PREFIX}/include/python1.5
 TKINTERORIG=	${PYTHONSCRIPTDIR}/lib-dynload/_tkinter.so
 
 post-extract:
@@ -61,5 +62,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/../FORMATS ${PILDOCDIR}
 	@${MKDIR} ${PILEXDIR}
 	${INSTALL_DATA} ${WRKSRC}/../Scripts/* ${PILEXDIR}
+.for file in ImConfig.h ImPlatform.h Imaging.h
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PILINCDIR}
+.endfor
 
 .include <bsd.port.mk>

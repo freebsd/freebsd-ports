@@ -1,3 +1,6 @@
+include/python1.5/ImConfig.h
+include/python1.5/ImPlatform.h
+include/python1.5/Imaging.h
 lib/python1.5/site-packages/PIL/ArgImagePlugin.py
 lib/python1.5/site-packages/PIL/ArgImagePlugin.pyc
 lib/python1.5/site-packages/PIL/ArgImagePlugin.pyo
