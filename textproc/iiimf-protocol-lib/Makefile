@@ -5,33 +5,36 @@
 # $FreeBSD$
 #
 
-PORTNAME=	iiimf-protocol-lib
-PORTVERSION=	${IIIMF_VER:S/_/./:C/-.*//}
-PORTREVISION=	1
+PORTNAME=	protocol-lib
+PORTVERSION=	${IIIMF_VER:S/_/./g:C/-.*//}
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.openi18n.org/download/docs/im-sdk/
+MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
+PKGNAMEPREFIX=	iiimf-
 DISTNAME=	im-sdk
-DISTFILES=	${DISTNAME}.${IIIMF_VER:S/-/./}${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}-src-${IIIMF_VER}.tgz
 
 MAINTAINER=	kcwu@csie.org
 COMMENT=	Internet/Intranet Input Method Framework protocol library
 
-IIIMF_VER=	r11_4-1467
+IIIMF_VER=	r12_0_1-svn1891
 WRKSRC=		${WRKDIR}/${DISTNAME}-${IIIMF_VER}/lib/iiimp
-PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}-${IIIMF_VER}
-USE_BZIP2=	yes
-USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--includedir=${PREFIX}/include/iiimf/iiimp
+USE_OPENSSL=	yes
+USE_AUTOCONF_VER=	259
+USE_AUTOHEADER_VER=	259
+USE_AUTOMAKE_VER=	19
+USE_LIBTOOL_VER=	15
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--includedir=${PREFIX}/include/iiimf/iiimp
 
 post-patch:
-	${REINPLACE_CMD} -e "s,-lpthread,-pthread,g" \
-		-e "s,-D_POSIX_C_SOURCE=199506L,,g" \
-		-e "s,has_xiccallback=no,has_xiccallback=yes,g" \
-		-e "s,/usr/lib/im,${PREFIX}/lib/im,g" \
-		${WRKSRC}/configure
+	${REINPLACE_CMD} -e "s,/usr/lib/im,${PREFIX}/lib/im,g" \
+		${WRKSRC}/../../acfiles/im_common.m4 \
+		${WRKSRC}/configure.ac
+
+pre-configure:
+	cd ${WRKSRC} && ${ACLOCAL} -I ${LOCALBASE}/share/aclocal -I ../../acfiles
+	${TOUCH} ${WRKSRC}/config.h.in
 
 .include <bsd.port.mk>
