@@ -7,6 +7,7 @@
 
 PORTNAME=	camserv
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://cserv.sourceforge.net/old/
