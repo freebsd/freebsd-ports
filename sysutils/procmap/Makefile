@@ -12,11 +12,16 @@ DISTFILES=	#empty
 
 MAINTAINER=	jasone@freebsd.org
 
-# setting MAKEOBJDIR doesn't work for some reason
-MAKE_ENV=	MAKEOBJDIRPREFIX=${WRKDIR}
-WRKSRC=		${.CURDIR}/src
+WRKSRC=		${WRKDIR}
+MAKE_ENV=	MAKEOBJDIRPREFIX=${WRKSRC} MAKEOBJDIR=${WRKSRC}
+
+procmap_files := Makefile procmap.c procmap.8
+
+post-extract:
+	cd ${FILESDIR} ; \
+		${CP} -p ${procmap_files} ${WRKSRC}
 
 pre-build:
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} obj
+	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} obj
 
 .include <bsd.port.mk>
