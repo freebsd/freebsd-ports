@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	icu2
-PORTVERSION=	2.6
-PORTREVISION=	1
+PORTVERSION=	2.8
 CATEGORIES=	devel
 MASTER_SITES=	ftp://www-126.ibm.com/pub/icu/${PORTVERSION}/
 DISTNAME=	icu-${PORTVERSION}
@@ -33,6 +32,11 @@ CONFIGURE_ARGS+=	--enable-static
 CONFIGURE_ARGS+=	--enable-samples=no --enable-tests=no
 .if defined(NO_THREADS)
 CONFIGURE_ARGS+=	--enable-threads=no
+.else
+CONFIGURE_ENV+=		THREADSCPPFLAGS="${PTHREAD_CFLAGS}" \
+			THREADSCFLAGS="${PTHREAD_CFLAGS}" \
+			THREADSCXXFLAGS="${PTHREAD_CFLAGS}" \
+			PTHREAD_LIBS="${PTHREAD_LIBS}"
 .endif
 CONFIGURE_ENV+=		CXXFLAGS="-O3"
 CONFIGURE_ENV+=		CFLAGS="-O3"
@@ -44,15 +48,14 @@ MAN1+=	icu-config.1
 MAN1+=	makeconv.1
 MAN1+=	pkgdata.1
 MAN1+=	uconv.1
-MAN5+=	cnvalias.dat.5
 MAN5+=	convrtrs.txt.5
 MAN8+=	decmn.8
 MAN8+=	genccode.8
 MAN8+=	gencmn.8
-MAN8+=	genidna.8
 MAN8+=	gennames.8
 MAN8+=	gennorm.8
 MAN8+=	genprops.8
+MAN8+=	gensprep.8
 MAN8+=	genuca.8
 
 ICUMAJOR=	${PORTVERSION:S/.//:R}
