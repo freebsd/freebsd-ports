@@ -1,12 +1,12 @@
 # New ports collection makefile for:   	yagirc
-# Version required:			0.65.6
+# Version required:			0.65.7
 # Date created:				6 July 1998
 # Whom:					mph
 #
-# $Id: Makefile,v 1.5 1998/08/24 07:13:53 asami Exp $
+# $Id: Makefile,v 1.6 1998/08/25 04:09:28 vanilla Exp $
 #
 
-DISTNAME=	yagirc-0.65.6
+DISTNAME=	yagirc-0.65.7
 CATEGORIES=	net
 MASTER_SITES=	http://www.elpaso.net/~spoon/yagirc/
 
