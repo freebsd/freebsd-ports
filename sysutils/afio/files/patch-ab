@@ -1,37 +1,11 @@
---- afio.c.orig	Sun Jan 21 11:39:35 1996
-+++ afio.c	Mon Jan  6 00:27:47 1997
-@@ -827,21 +827,21 @@
-     return (warnarch ("Bad ASCII header", (off_t) H_STRLEN));
- #else
-   /* this should be much more portable than the one above */
--  if (sscanf (header, PH_SCAN, &pasb.st_dev,
--	      &pasb.st_ino, &pasb.st_mode, &pasb.st_uid,
--	      &pasb.st_gid, &pasb.st_nlink, &pasb.st_rdev,
--	      &pasb.st_mtime, &namelen, &pasb.st_size) != H_COUNT)
-+  if (sscanf (header, PH_SCAN, &pasb.PSt_dev,
-+	      &pasb.PSt_ino, &pasb.PSt_mode, &pasb.PSt_uid,
-+	      &pasb.PSt_gid, &pasb.PSt_nlink, &pasb.PSt_rdev,
-+	      &pasb.PSt_mtime, &namelen, &pasb.PSt_size) != H_COUNT)
-     return (warnarch ("Bad ASCII header", (off_t) H_STRLEN));
-   /* now, we let the compiler cast the info to the right types (field sizes) */
--  asb->sb_dev = pasb.st_dev;
--  asb->sb_ino = pasb.st_ino;
--  asb->sb_mode = pasb.st_mode;
--  asb->sb_uid = pasb.st_uid;
--  asb->sb_gid = pasb.st_gid;
--  asb->sb_nlink = pasb.st_nlink;
--  asb->sb_rdev = pasb.st_rdev;
--  asb->sb_mtime = pasb.st_mtime;
--  asb->sb_size = pasb.st_size;
-+  asb->sb_dev = pasb.PSt_dev;
-+  asb->sb_ino = pasb.PSt_ino;
-+  asb->sb_mode = pasb.PSt_mode;
-+  asb->sb_uid = pasb.PSt_uid;
-+  asb->sb_gid = pasb.PSt_gid;
-+  asb->sb_nlink = pasb.PSt_nlink;
-+  asb->sb_rdev = pasb.PSt_rdev;
-+  asb->sb_mtime = pasb.PSt_mtime;
-+  asb->sb_size = pasb.PSt_size;
- #endif
-   if (namelen == 0 || namelen >= PATHSIZE)
-     return (warnarch ("Bad ASCII pathname length", (off_t) H_STRLEN));
+--- afio.c.orig	Tue Sep 29 04:05:54 1998
++++ afio.c	Wed Dec  9 01:38:58 1998
+@@ -427,7 +427,7 @@
+   if (aruntil && (aruntil < arbsize))
+     {
+       fprintf (stderr, "Media size %ld is less than buffer size %d\n",
+-	       (ulong) aruntil, arbsize);
++	       (u_long) aruntil, arbsize);
+       usage ();
+     }
+   if (arpad == 0)

@@ -1,55 +1,52 @@
---- Makefile.orig	Tue Nov  7 13:16:12 1995
-+++ Makefile	Mon Jan  6 00:52:41 1997
-@@ -26,7 +26,8 @@
+--- Makefile.orig	Tue Sep 29 04:13:19 1998
++++ Makefile	Wed Dec  9 01:30:18 1998
+@@ -26,7 +26,7 @@
  c	= -DHAVEMEMCMP
  ##  Define DEFFMTCMD to being how to format the media you use the most
  ##		This is the DEFault FoRMat CoManD. 
 -d	= -DDEFFMTCMD='"fdformat /dev/fd0H1440"'
-+#d	= -DDEFFMTCMD='"fdformat /dev/fd0H1440"'
-+d	= -DDEFFMTCMD='"/usr/sbin/fdformat -f 1440 /dev/fd0.1440"'
++d	= -DDEFFMTCMD='"/usr/bin/fdformat -f 1440 /dev/fd0.1440"'
  ##  Define LONGZFILE if you want .Z to be tagged on the end of a 14 char
  ##	file name (or longer for BSD) in the archive when the file is compressed
  #e	= -DLONGZFILE
-@@ -43,6 +44,11 @@
+@@ -43,6 +43,11 @@
  
  g	= -DHAVEFNMATCH
  
-+## Define HAVE_PARAM_H if your system has sys/param.h.  This is used for BSD
++## Define HAVE_PARAM_H if your system has sys/param.h. This is used for BSD
 +#  detection.
 +
-+h	= -DHAVE_PARAM_H
++h 	= -DHAVE_PARAM_H
 +
  # fnmatch() is in the gnu C library, so it is directly available on
  # Linux.  If your system (e.g. SCO) does not have the gnu C library,
  # unpack the archive gnu.fnmatch.tar.gz and uncomment the following
-@@ -54,15 +60,16 @@
- # Please read the COPYING.LIB file in this archive if you plan to
+@@ -55,14 +60,15 @@
  # redistribute afio executables with this library linked in.
  
--CFLAGS1 = -s -O2 -fomit-frame-pointer
-+#CFLAGS1 = -s -O2 -fomit-frame-pointer
- #CFLAGS1 =  -fomit-frame-pointer
- #CFLAGS1 = -Wall  -fomit-frame-pointer
-+CFLAGS1 = -O2 -fomit-frame-pointer -fno-strength-reduce
+ #CFLAGS1 = -ggdb
+-CFLAGS1 = -Wformat -g -O2 -fomit-frame-pointer
++#FLAGS1 = -Wformat -g -O2 -fomit-frame-pointer
+ #CFLAGS1 = -Wformat -g -fomit-frame-pointer
++CFLAGS1 = -fomit-frame-pointer -fno-strength-reduce
+ 
  
  CC=gcc
  
  
 -CFLAGS = ${CFLAGS1} $1 $2 $3 $4 $5 $6 $7 $8 $9 $a $b $c $d $e $f $g $I
--LDFLAGS = -s
-+CFLAGS = ${CFLAGS1} $1 $2 $3 $4 $5 $6 $7 $8 $9 $a $b $c $d $e $f $g $h $I
-+#LDFLAGS = -s
++CFLAGS += ${CFLAGS1} $1 $2 $3 $4 $5 $6 $7 $8 $9 $a $b $c $d $e $f $g $h $I
+ LDFLAGS = -s
  
  afio : afio.o compfile.o exten.o match.o $M
- 	${CC} ${LDFLAGS} afio.o compfile.o exten.o match.o $M -o afio
-@@ -71,8 +78,8 @@
+@@ -72,8 +78,8 @@
  	rm -f *.o afio
  
  install: afio
 -	cp afio /usr/bin
 -	cp afio.1 /usr/man/man1
-+	install -cs -o bin -g bin afio ${PREFIX}/bin
-+	install -c -o bin -g bin afio.1 ${PREFIX}/man/man1
++	install -cs -o root -g wheel afio ${PREFIX}/bin
++	install -c -o root -g wheel afio.1 ${PREFIX}/man/man1
  
- tarfile: clean
- 	{ cd .. ; tar zcvf /root/src/tbackup/afio.2.4.2.tgz afio.2.4.2 }
+ 
+ afio.o : afio.h patchlevel.h

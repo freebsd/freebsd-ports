@@ -1,5 +1,5 @@
---- afio.h.orig	Sun Jan 21 04:58:12 1996
-+++ afio.h	Mon Jan  6 00:53:13 1997
+--- afio.h.orig	Sun Sep 20 04:04:54 1998
++++ afio.h	Wed Dec  9 01:33:32 1998
 @@ -1,5 +1,9 @@
  /* afio.h  defines for afio. */
  
@@ -10,37 +10,3 @@
  #ifdef	SYSTIME
  #include <sys/time.h>
  #else /* SYSTIME */
-@@ -107,15 +111,15 @@
- #define PH_SCAN  "%6lo%6lo%6lo%6lo%6lo%6lo%6lo%11lo%6o%11lo"
- 
- typedef struct {
--long unsigned int st_dev;
--long unsigned int st_ino;
--long unsigned int st_mode;
--long unsigned int st_uid;
--long unsigned int st_gid;
--long unsigned int st_nlink;
--long unsigned int st_rdev;
--long unsigned int st_mtime;
--long unsigned int st_size;
-+long unsigned int PSt_dev;
-+long unsigned int PSt_ino;
-+long unsigned int PSt_mode;
-+long unsigned int PSt_uid;
-+long unsigned int PSt_gid;
-+long unsigned int PSt_nlink;
-+long unsigned int PSt_rdev;
-+long unsigned int PSt_mtime;
-+long unsigned int PSt_size;
- } PStat;
- 
- #define	H_STRLEN 70		/* ASCII header string length */
-@@ -388,7 +392,7 @@
- #ifndef MKDIR
- int rmdir ();
- #endif
--#ifndef linux
-+#if !defined (linux) && !(defined(BSD) && (BSD >= 199103))
- VOIDFN (*signal ())();
- #endif
-      int fswrite ();
