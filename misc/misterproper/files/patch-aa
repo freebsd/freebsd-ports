@@ -1,20 +1,23 @@
---- src/main.c	2000/12/12 10:59:00	1.1
-+++ src/main.c	2000/12/12 11:00:32
-@@ -208,7 +208,7 @@
- 		 g_free(thing);
- 		 continue;
- 	      }
--	      if ((thing->frequency = (time_t) strtoull(skunk, NULL, 10)) == 
-+	      if ((thing->frequency = (time_t) strtoul(skunk, NULL, 10)) == 
- 		  (time_t) 0ULL) {
- 		 g_warning(_("Corrupted database : null frequency\n"));
- 		 g_free(thing);
-@@ -219,7 +219,7 @@
- 		 g_free(thing);
- 		 continue;
- 	      }
--	      thing->last = (time_t) strtoull(skunk, NULL, 10);
-+	      thing->last = (time_t) strtoul(skunk, NULL, 10);
- 	      if ((skunk = strtok(NULL, DBSEP)) == NULL) {
- 		 g_warning(_("Corrupted database : wrong line format\n"));
- 		 g_free(thing);
+
+$FreeBSD$
+
+--- src/main.c.orig	Sat Mar  3 15:03:28 2001
++++ src/main.c	Tue Apr 17 10:16:55 2001
+@@ -230,7 +230,7 @@
+ 					g_free(thing);
+ 					continue;
+ 				}
+-				if ((thing->frequency = (time_t) strtoull(skunk, NULL, 10))
++				if ((thing->frequency = (time_t) strtoul(skunk, NULL, 10))
+ 					== (time_t) 0ULL) {
+ 					g_warning(_("Corrupted database : null frequency\n"));
+ 					g_free(thing);
+@@ -247,7 +247,7 @@
+ 						(rand() % (thing->frequency * 4)) - 
+ 						(thing->frequency * 2) + thing->frequency / 2;
+ 				} else {
+-					thing->last = (time_t) strtoull(skunk, NULL, 10);
++					thing->last = (time_t) strtoul(skunk, NULL, 10);
+ 				}
+ 				if ((skunk = strtok(NULL, DBSEP)) == NULL) {
+ 					g_warning(_

@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	misterproper
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	misc gnome
-MASTER_SITES=	ftp://misterproper.sourceforge.net/pub/misterproper/releases/ \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+#ftp://misterproper.sourceforge.net/pub/misterproper/releases/ \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sobomax@FreeBSD.org
