@@ -9,7 +9,7 @@ PORTNAME=	gtkgep
 PORTVERSION=	0.2.3
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://gtkgep.republika.pl/
+MASTER_SITES=	http://www.macio.risp.pl/gtkgep/files/
 
 MAINTAINER=	linimon@lonesome.com
 COMMENT=	A guitar effects processor for GTK
