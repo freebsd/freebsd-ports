@@ -9,6 +9,7 @@ etc/Muttrc
 etc/mime.types
 %%PORTDOCS%%share/doc/mutt/COPYRIGHT
 %%PORTDOCS%%share/doc/mutt/ChangeLog
+%%PORTDOCS%%share/doc/mutt/ChangeLog.old
 %%PORTDOCS%%share/doc/mutt/GPL
 %%PORTDOCS%%share/doc/mutt/INSTALL
 %%PORTDOCS%%share/doc/mutt/INSTALL.JA-PATCH.ja
@@ -21,9 +22,7 @@ etc/mime.types
 %%PORTDOCS%%share/doc/mutt/TODO
 %%PORTDOCS%%share/doc/mutt/applying-patches.txt
 %%PORTDOCS%%share/doc/mutt/devel-notes.txt
-%%PORTDOCS%%share/doc/mutt/html/INSTALL.JA-PATCH.en.html
 %%PORTDOCS%%share/doc/mutt/html/INSTALL.JA-PATCH.ja.html
-%%PORTDOCS%%share/doc/mutt/html/README.JA-PATCH.en.html
 %%PORTDOCS%%share/doc/mutt/html/README.JA-PATCH.ja.html
 %%PORTDOCS%%share/doc/mutt/html/manual-1.html
 %%PORTDOCS%%share/doc/mutt/html/manual-2.html
@@ -35,7 +34,6 @@ etc/mime.types
 %%PORTDOCS%%share/doc/mutt/html/manual.html
 %%PORTDOCS%%share/doc/mutt/html/manual-ja-patch.en.html
 %%PORTDOCS%%share/doc/mutt/html/manual-ja-patch.ja.html
-%%PORTDOCS%%share/doc/mutt/html/usage-japanese.en.html
 %%PORTDOCS%%share/doc/mutt/html/usage-japanese.ja.html
 %%PORTDOCS%%share/doc/mutt/manual.txt
 %%PORTDOCS%%share/doc/mutt/manual_ja.html
