@@ -23,8 +23,25 @@ CONFIGURE_ARGS=	--disable-network --disable-debug
 PORTDOCS=	README TODO NEWS AUTHORS readme.txt installation.txt
 PLIST_FILES=	bin/d2x
 
+.ifdef(WITH_OPENGL)
+USE_GL=		yes
+CONFIGURE_ARGS+=--with-opengl
+CONFIGURE_ENV=LDFLAGS=-L${X11BASE}/lib CPPFLAGS=-I${X11BASE}/include
+.endif
+
+pre-everything::
+.ifndef(WITH_OPENGL)
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Define WITH_OPENGL to use OpenGL for 3D graphics"
+	@${ECHO_MSG} ""
+.endif
+
 do-install:
+.ifdef(WITH_OPENGL)
+		${INSTALL} ${WRKSRC}/d2x-gl  ${PREFIX}/bin/d2x
+.else
 		${INSTALL} ${WRKSRC}/d2x-sdl ${PREFIX}/bin/d2x
+.endif
 .if !defined(NOPORTDOCS)
 	        ${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
