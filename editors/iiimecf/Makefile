@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.kddlabs.co.jp/Japan/m17n.org/mule/IIIM/ \
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	IIIMECF-${PORTVERSION}
 
-MAINTAINER=	okazaki@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${UN_DEFINE}:${PORTSDIR}/converters/mule-ucs-emacs20
 RUN_DEPENDS=	${UN_DEFINE}:${PORTSDIR}/converters/mule-ucs-emacs20
@@ -25,7 +25,7 @@ EMACS_PORT_NAME=	emacs20
 UN_DEFINE=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/mule-ucs/un-define.el
 PLIST_SUB=	PORTDOCDIR=${PORTDOCDIR}
 PORTDOCDIR=	share/doc/iiimecf
-IIIMECF_DESTDIR= ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/iiimecf
+IIIMECF_DESTDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/iiimecf
 EMACS_ARGS=	-q --no-site-file -batch
 
 do-build:
