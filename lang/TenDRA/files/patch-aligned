@@ -1,11 +1,8 @@
-Index: src/lib/machines/freebsd/80x86/startup/ansi.h
+Index: src/lib/machines/freebsd/5/alpha/startup/ansi.h
 ===================================================================
-RCS file: /usr/home/stefan/tendra/cvsup/tendra/src/lib/machines/freebsd/80x86/startup/ansi.h,v
-retrieving revision 1.1
-diff -u -r1.1 ansi.h
---- src/lib/machines/freebsd/80x86/startup/ansi.h	26 Jan 2002 21:31:47 -0000	1.1
-+++ src/lib/machines/freebsd/80x86/startup/ansi.h	16 Aug 2003 19:50:55 -0000
-@@ -28,3 +28,8 @@
+--- src/lib/machines/freebsd/5/alpha/startup/ansi.h	(.../ten15.org)	(revision 512)
++++ src/lib/machines/freebsd/5/alpha/startup/ansi.h	(.../freebsd-port)	(revision 512)
+@@ -32,3 +32,8 @@
  #ifndef __signed
  #define __signed	signed
  #endif
@@ -14,20 +11,44 @@ diff -u -r1.1 ansi.h
 +#ifndef	__aligned
 +#define	__aligned(x)	/* nothing */
 +#endif
-Index: src/lib/machines/freebsd/80x86/startup/system.h
+Index: src/lib/machines/freebsd/5/alpha/startup/system.h
 ===================================================================
-RCS file: /usr/home/stefan/tendra/cvsup/tendra/src/lib/machines/freebsd/80x86/startup/system.h,v
-retrieving revision 1.1
-diff -u -r1.1 system.h
---- src/lib/machines/freebsd/80x86/startup/system.h	26 Jan 2002 21:31:47 -0000	1.1
-+++ src/lib/machines/freebsd/80x86/startup/system.h	4 Aug 2003 21:07:05 -0000
-@@ -36,4 +36,9 @@
+--- src/lib/machines/freebsd/5/alpha/startup/system.h	(.../ten15.org)	(revision 512)
++++ src/lib/machines/freebsd/5/alpha/startup/system.h	(.../freebsd-port)	(revision 512)
+@@ -40,4 +40,9 @@
  #define __signed	signed
  #endif
  
 +/* Work around __aligned() */
 +#ifndef	__aligned
 +#define	__aligned(x)	/* nothing */
-+#endif
-+
  #endif
++
++#endif
+Index: src/lib/machines/freebsd/5/80x86/startup/ansi.h
+===================================================================
+--- src/lib/machines/freebsd/5/80x86/startup/ansi.h	(.../ten15.org)	(revision 512)
++++ src/lib/machines/freebsd/5/80x86/startup/ansi.h	(.../freebsd-port)	(revision 512)
+@@ -32,3 +32,8 @@
+ #ifndef __signed
+ #define __signed	signed
+ #endif
++
++/* Work around __aligned() */
++#ifndef	__aligned
++#define	__aligned(x)	/* nothing */
++#endif
+Index: src/lib/machines/freebsd/5/80x86/startup/system.h
+===================================================================
+--- src/lib/machines/freebsd/5/80x86/startup/system.h	(.../ten15.org)	(revision 512)
++++ src/lib/machines/freebsd/5/80x86/startup/system.h	(.../freebsd-port)	(revision 512)
+@@ -40,4 +40,9 @@
+ #define __signed	signed
+ #endif
+ 
++/* Work around __aligned() */
++#ifndef	__aligned
++#define	__aligned(x)	/* nothing */
+ #endif
++
++#endif
