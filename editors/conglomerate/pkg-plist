@@ -2,6 +2,7 @@ bin/conglomerate
 share/gnome/applications/conglomerate.desktop
 share/gnome/conglomerate/dispspecs/cnxml.xds
 share/gnome/conglomerate/dispspecs/docbook.xds
+share/gnome/conglomerate/dispspecs/kernel-traffic-newsletter.xds
 share/gnome/conglomerate/dispspecs/readme.xds
 share/gnome/conglomerate/dispspecs/website-layout.xds
 share/gnome/conglomerate/dispspecs/website-webpage.xds
@@ -10,7 +11,15 @@ share/gnome/conglomerate/examples/cnxml.xml
 share/gnome/conglomerate/examples/readme.xml
 share/gnome/conglomerate/examples/test-docbook.xml
 share/gnome/conglomerate/glade/docbook-common-properties.glade
-share/gnome/pixmaps/ChangeLog
+share/gnome/help/conglomerate/C/conglomerate.xml
+share/gnome/help/conglomerate/C/figures/conglomerate_logo.png
+share/gnome/help/conglomerate/C/figures/intro.png
+share/gnome/help/conglomerate/C/figures/menu-properties.png
+share/gnome/help/conglomerate/C/figures/new-doc-wizard.png
+share/gnome/help/conglomerate/C/figures/new.png
+share/gnome/help/conglomerate/C/figures/properties-dialog.png
+share/gnome/help/conglomerate/C/figures/quote.png
+share/gnome/omf/conglomerate/conglomerate-C.omf
 share/gnome/pixmaps/cong-address-16.png
 share/gnome/pixmaps/cong-answer-16.png
 share/gnome/pixmaps/cong-author-16.png
@@ -39,8 +48,17 @@ share/gnome/pixmaps/cong-subsection-16.png
 share/gnome/pixmaps/cong-summary-16.png
 share/gnome/pixmaps/cong-title-16.png
 share/gnome/pixmaps/cong-wrapper-16.png
+share/gnome/pixmaps/conglomerate-icon-16.png
+share/locale/da/LC_MESSAGES/conglomerate.mo
 share/locale/es/LC_MESSAGES/conglomerate.mo
+share/locale/nl/LC_MESSAGES/conglomerate.mo
 share/locale/ru/LC_MESSAGES/conglomerate.mo
+@exec scrollkeeper-install -q %D/share/gnome/omf/conglomerate/conglomerate-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/conglomerate/conglomerate-C.omf 2>/dev/null || /usr/bin/true
+@dirrm share/gnome/omf/conglomerate
+@dirrm share/gnome/help/conglomerate/C/figures
+@dirrm share/gnome/help/conglomerate/C
+@dirrm share/gnome/help/conglomerate
 @dirrm share/gnome/conglomerate/dispspecs
 @dirrm share/gnome/conglomerate/examples
 @dirrm share/gnome/conglomerate/glade
