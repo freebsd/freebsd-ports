@@ -13,7 +13,6 @@ MASTER_SITES=	http://www.hry.info.gifu-u.ac.jp/~hideki/
 MAINTAINER=	nakai@FreeBSD.org
 
 USE_IMAKE=	yes
-NO_INSTALL_MANPAGES=	yes
 WRKSRC=		${WRKDIR}/mlclock
 
 post-install:
