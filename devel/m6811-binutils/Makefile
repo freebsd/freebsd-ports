@@ -16,7 +16,7 @@ PATCH_SITES=	http://home.worldnet.fr/~stcarrez/snapshots/
 PATCHFILES=	${PORTNAME}-${PORTVERSION}-m68hc1x-20010107.diffs.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes

@@ -1,33 +1,32 @@
-# New ports collection makefile for:	gcc-6811
+# New ports collection makefile for:	m6811-gcc
 # Date created:		Thu Sep 14 11:10:01 CDT 1995
-# Whom:			erich@FreeBSD.org
+# Whom:			erich@FreeBSD.org, jake@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-PORTNAME=	gcc-6811
-PORTVERSION=	2.6.3
+PORTNAME=	gcc
+PORTVERSION=	2.95.2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://nyquist.ee.ualberta.ca/pub/motorola/68hc11/gcc/ \
-		ftp://ftp.celestial.com/mirrors/gnu/ \
-		ftp://ftp.inria.fr/gnu/
-DISTFILES=	gcc-6811-fsf.tar.gz gcc-2.6.3.tar.gz
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	gcc
+PKGNAMEPREFIX=	m6811-
 
-MAINTAINER=	jake@FreeBSD.org
+PATCH_SITES=	http://home.worldnet.fr/~stcarrez/snapshots/
+PATCHFILES=	${PORTNAME}-${PORTVERSION}-m68hc1x-20000111.diffs.gz
+PATCH_DIST_STRIP=	-p1
 
-NO_WRKSUBDIR=	yes
+MAINTAINER=	dinoex@FreeBSD.org
 
-post-extract:
-	tar -C ${WRKSRC}/gcc-6811-release/gcc -cf - config | \
-	  tar -C ${WRKSRC}/gcc-2.6.3 -xvf -
+BUILD_DEPENDS=	${LOCALBASE}/bin/m6811-elf-as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils
+BUILD_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf
 
-pre-configure:
-	cd ${WRKSRC}/gcc-2.6.3; ./configure -host=i386-unknown-freebsd2.0.5 \
-	  --target=m6811-local --prefix=${PREFIX}
+USE_GMAKE=	yes
+HAS_CONFIGURE=	yes
+PLIST_SUB=	GCC_VER=${PORTVERSION}
+CONFIGURE_ARGS=		--prefix=${PREFIX} --target=m6811-elf   \
+			--program-prefix=m6811-elf-
 
-post-install:
-	cd ${PREFIX}/lib/gcc-lib/m6811-local/2.6.3; strip cc1 cpp
-	cd ${PREFIX}/bin; strip m6811-local-gcc as6800 asz80 as6811 \
-	  as6809 as6805 as6804 asi85 aslink
+MAN1=		m6811-elf-g++.1 m6811-elf-g77.1 m6811-elf-gcc.1 cccp.1
 
 .include <bsd.port.mk>
