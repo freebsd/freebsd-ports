@@ -43,6 +43,8 @@ PATCHFILES=	linux-netscape6-${PORTVERSION}-generated-files.tar.gz
 
 MAINTAINER?=	trevor@FreeBSD.org
 
+FORBIDDEN=	"may have zlib double free() bug"
+
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0.5.0:${PORTSDIR}/x11-toolkits/linux-gtk \
 		${LINUXBASE}/usr/lib/libjpeg.so.62.0.0:${PORTSDIR}/graphics/linux-jpeg
