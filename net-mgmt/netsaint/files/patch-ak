@@ -1,0 +1,11 @@
+--- html/side.html.in.org	Sun Sep 16 11:36:54 2001
++++ html/side.html.in	Sun Sep 16 11:39:53 2001
+@@ -44,7 +44,7 @@
+ <table width="150" border="0">
+   <tr>
+     <td>
+-      <div align="center"><a href="http://www.netsaint.org" target="_top"><img src="images/sblogo.gif" width="130" height="125" border="0"></a></div>
++      <div align="center"><a href="http://www.netsaint.org" target="_top"><img src="images/bsd_sblogo.gif" width="110" height="95" border="0"></a></div>
+     </td>
+   </tr>
+ </table>
