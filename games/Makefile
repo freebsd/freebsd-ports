@@ -192,6 +192,7 @@
     SUBDIR += rubix
     SUBDIR += seabattle
     SUBDIR += seahaven
+    SUBDIR += sex
     SUBDIR += sl
     SUBDIR += slashem-tty
     SUBDIR += smacx
