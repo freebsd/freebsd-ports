@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	mod_watch
-PORTVERSION=	2.1
+PORTVERSION=	2.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.snert.com/Software/mod_watch/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
-DISTNAME=	${PORTNAME}201
+DISTNAME=	${PORTNAME}203
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	anders@fix.no
