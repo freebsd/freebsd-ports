@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	slurm
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.raisdorf.net/files/code/ \
 		http://www.fachschaft.fh-kiel.de/~hscholz/slurm/ \
@@ -18,10 +18,13 @@ COMMENT=	Slurm is a generic network load monitor
 
 LDFLAGS+=	-lncurses
 
+MAN1=	slurm.1
+
 do-build:
 	(cd ${WRKSRC} && ${CC} ${CFLAGS} ${LDFLAGS} -o ${PORTNAME} slurm.c)
 
 do-install:
+	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
 .if !defined(NOPORTDOCS)
