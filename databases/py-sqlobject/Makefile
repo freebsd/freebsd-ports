@@ -1,0 +1,26 @@
+# Ports collection makefile for:	py-sqlobject
+# Date created:				24 June 2004
+# Whom:					"Choe, Cheng-Dae" whitekid
+#
+# $FreeBSD$
+#
+
+PORTNAME=	sqlobject
+PORTVERSION=	0.5.2
+CATEGORIES=	databases python
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	SQLObject-${PORTVERSION}
+
+MAINTAINER=	whitekid@netian.com
+COMMENT=	A python object for manipulation with SQL table row
+
+# Someone will add SQLite, Firebird and DBMConnection support things.
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/MySQLdb/__init__.py:${PORTSDIR}/databases/py-MySQLdb \
+		${PYTHON_SITELIBDIR}/psycopgmodule.so:${PORTSDIR}/databases/py-psycopg
+
+USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
+
+.include <bsd.port.mk>
