@@ -11,6 +11,7 @@
   cd %%LOCALBASE%%/slash                       # change to the slash directory
   bin/install-slashsite -u slash       	    # "slash" is virtual user's name
   apachectl restart                         # restarts the apache server
+  %%LOCALBASE%%/etc/rc.d/slash.sh start        # start the "slashd" daemon
   
   Note that the "install-slashsite" script will ask you of a "theme"; just
   answer "slashcode" (the only option) will do.
