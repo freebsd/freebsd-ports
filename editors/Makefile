@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += zoinks
 
     SUBDIR += AbiWord
     SUBDIR += AbiWord2
