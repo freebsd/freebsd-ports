@@ -7,6 +7,7 @@
 
 PORTNAME=	galeon2
 PORTVERSION=	1.3.15
+PORTREVISION=	1
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://osdn.dl.sourceforge.net/sourceforge/galeon/
@@ -19,7 +20,7 @@ COMMENT=	A GNOME 2 Web browser based on gecko (the Mozilla rendering engine)
 BUILD_DEPENDS=	${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
 RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
 
-MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.6"
+MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.7"
 
 MOZILLA=	mozilla
 HEADERS_SUFX=
@@ -31,7 +32,7 @@ HEADERS_SUFX=
 .if ${WITH_MOZILLA}=="mozilla-devel" || ${WITH_MOZILLA}=="mozilla-devel-gtk2"
 MOZILLA=	mozilla-devel
 HEADERS_SUFX=	-devel
-MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.7rc2"
+MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.8a"
 .else
 MOZILLA=	mozilla
 HEADERS_SUFX=
