@@ -7,6 +7,7 @@
 
 PORTNAME=	fakebo
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://the.ausmac.net/wd2a/security/port-loggers/ \
 		ftp://ftp.mayn.de/pub/unix/security/network/ \
