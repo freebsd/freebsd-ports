@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.p/pre/}
 
 MAINTAINER=	reg@FreeBSD.org
 
+BROKEN=		"Configure fails"
+
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
