@@ -17,6 +17,7 @@
     SUBDIR += asbutton
     SUBDIR += bb
     SUBDIR += bbjd
+    SUBDIR += bidwatcher
     SUBDIR += bottlerocket
     SUBDIR += buffer
     SUBDIR += chord
