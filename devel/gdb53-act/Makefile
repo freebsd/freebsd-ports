@@ -29,6 +29,10 @@ CONFIGURE_ARGS+=	--disable-nls
 BROKEN=		"Does not compile on !i386 and !alpha"
 .endif
 
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on 4.x"
+.endif
+
 pre-configure:
 	cd ${WRKSRC} ; ${RM} -rf dejagnu expect sim tcl texinfo
 
