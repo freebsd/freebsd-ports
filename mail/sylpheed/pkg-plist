@@ -8,6 +8,7 @@ bin/sylpheed
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/TODO.jp
 share/locale/cs/LC_MESSAGES/sylpheed.mo
+share/locale/bg/LC_MESSAGES/sylpheed.mo
 share/locale/da/LC_MESSAGES/sylpheed.mo
 share/locale/de/LC_MESSAGES/sylpheed.mo
 share/locale/el/LC_MESSAGES/sylpheed.mo
