@@ -1,20 +1,19 @@
---- Makefile.in.orig	Sat Jun 12 12:02:17 2004
-+++ Makefile.in	Sat Jul  3 01:06:55 2004
-@@ -540,7 +540,7 @@
- 	       exit 1; } >&2
- check-am: all-am
- check: check-am
--all-am: Makefile $(PROGRAMS) $(MANS) config.h
-+all-am: Makefile $(PROGRAMS) config.h
- 
- installdirs:
- 	$(mkinstalldirs) $(DESTDIR)$(bindir) $(DESTDIR)$(sbindir) $(DESTDIR)$(man1dir) $(DESTDIR)$(man8dir)
-@@ -589,7 +589,7 @@
- 
- info-am:
- 
--install-data-am: install-man
-+install-data-am:
- 
- install-exec-am: install-binPROGRAMS install-sbinPROGRAMS
- 
+--- Makefile.in.orig	Tue Dec 14 14:25:52 2004
++++ Makefile.in	Thu Dec 30 00:08:38 2004
+@@ -75,7 +75,7 @@
+ man1dir = $(mandir)/man1
+ man8dir = $(mandir)/man8
+ NROFF = nroff
+-MANS = $(man1_MANS) $(man8_MANS)
++MANS = $(man1_MANS)
+ ETAGS = etags
+ CTAGS = ctags
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+@@ -166,7 +166,6 @@
+ nbd_client_SOURCES = nbd-client.c cliserv.h
+ nbd_server_SOURCES = nbd-server.c cliserv.h lfs.h
+ man1_MANS = nbd-server.1
+-man8_MANS = nbd-client.8
+ EXTRA_DIST = nbd-client.8.sgml nbd-server.1.sgml gznbd winnbd nbd-client.8 nbd-server.1
+ MAINTAINERCLEANFILES = nbd-client.8 nbd-server.1
+ all: config.h
