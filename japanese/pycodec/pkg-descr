@@ -3,4 +3,4 @@ Japanese character encodings such as EUC-JP, Shift_JIS and
 ISO-2022-JP.  By using this package, Japanese characters can be
 treated as a character string instead of a byte sequence.
 
-WWW: http://pseudo.grad.sccs.chukyo-u.ac.jp/~kajiyama/python/
+WWW: http://www.python.jp/Zope/download/JapaneseCodecs
