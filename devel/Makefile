@@ -312,6 +312,7 @@
     SUBDIR += gnustep
     SUBDIR += gnustep-make
     SUBDIR += gob2
+    SUBDIR += gonzui
     SUBDIR += gorm
     SUBDIR += gperf
     SUBDIR += gputils
