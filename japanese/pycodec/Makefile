@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pycodec
-PORTVERSION=	1.4.8
+PORTVERSION=	1.4.9
 CATEGORIES=	japanese python converters
 MASTER_SITES=	http://www.python.jp/Zope/download/JapaneseCodecs/ \
 		http://www.asahi-net.or.jp/~rd6t-kjym/python/JapaneseCodecs/dist/
