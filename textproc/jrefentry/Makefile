@@ -7,22 +7,18 @@
 
 PORTNAME=	jrefentry
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	docbook
 
-MAINTAINER=	fuyuki@mj.0038.net
+MAINTAINER=	ports@FreeBSD.org
 
-RUN_DEPENDS=	${LOCALBASE}/share/xml/docbook/catalog:${PORTSDIR}/textproc/docbook-xml \
-		${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog
+RUN_DEPENDS=	${LOCALBASE}/share/xml/docbook/catalog:${PORTSDIR}/textproc/docbook-xml
 
 NO_BUILD=	yes
-PLIST_SUB=	MKCATALOG=${MKCATALOG} CATALOG=${CATALOG}
 
 XMLDIR=		${PREFIX}/share/xml/docbook/${PORTNAME}
-
-MKCATALOG=	${LOCALBASE}/sbin/mkcatalog
-CATALOG=	${PREFIX}/share/xml/docbook/catalog
 
 do-install:
 	${MKDIR} ${XMLDIR}
@@ -31,7 +27,6 @@ do-install:
 		>${XMLDIR}/catalog
 
 post-install:
-	${MKCATALOG} -c ${CATALOG} -q install jrefentry
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/jtest.xml ${EXAMPLESDIR}
 	${MKDIR} ${DOCSDIR}
