@@ -1,0 +1,10 @@
+--- ogginfo/Makefile.am.orig	Tue Jul 17 01:23:47 2001
++++ ogginfo/Makefile.am	Tue Jul 17 01:24:00 2001
+@@ -3,7 +3,6 @@
+ AUTOMAKE_OPTIONS = foreign
+ 
+ bin_PROGRAMS = ogginfo
+-mandir = $(datadir)/man
+ man_MANS = ogginfo.1
+ 
+ INCLUDES = @OGG_CFLAGS@ @VORBIS_CFLAGS@

@@ -1,0 +1,26 @@
+$FreeBSD$
+--- src/plugins/arts/Makefile.in.orig	Tue Jul 17 02:29:03 2001
++++ src/plugins/arts/Makefile.in	Tue Jul 17 02:29:34 2001
+@@ -93,13 +93,12 @@ AUTOMAKE_OPTIONS = foreign
+ @HAVE_ARTS_TRUE@artssources = ao_arts.c
+ @HAVE_ARTS_FALSE@artssources = 
+ 
+-INCLUDES = -I$(top_srcdir) -I$(top_srcdir)/include
++INCLUDES = -I$(top_srcdir) -I$(top_srcdir)/include @ARTS_CFLAGS@
+ 
+ libdir = $(plugindir)
+ lib_LTLIBRARIES = $(artsltlibs)
+ 
+ libarts_la_LDFLAGS = $(artsldflags)
+-CFLAGS = @ARTS_CFLAGS@
+ libarts_la_LIBADD = @ARTS_LIBS@
+ libarts_la_SOURCES = $(artssources)
+ 
+@@ -116,6 +115,7 @@ LIBS = @LIBS@
+ libarts_la_DEPENDENCIES = 
+ @HAVE_ARTS_FALSE@libarts_la_OBJECTS = 
+ @HAVE_ARTS_TRUE@libarts_la_OBJECTS =  ao_arts.lo
++CFLAGS = @CFLAGS@
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)

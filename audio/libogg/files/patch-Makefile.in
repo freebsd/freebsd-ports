@@ -1,0 +1,12 @@
+$FreeBSD$
+--- Makefile.in.orig	Tue Jul 17 02:36:25 2001
++++ Makefile.in	Tue Jul 17 02:36:39 2001
+@@ -85,7 +85,7 @@ VERSION = @VERSION@
+ 
+ AUTOMAKE_OPTIONS = foreign dist-zip
+ 
+-SUBDIRS = src include doc win32 debian
++SUBDIRS = src include $(DOC) win32 debian
+ 
+ m4datadir = $(datadir)/aclocal
+ m4data_DATA = ogg.m4

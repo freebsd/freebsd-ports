@@ -4,7 +4,7 @@ include/ogg/ogg.h
 include/ogg/os_types.h
 lib/libogg.a
 lib/libogg.so
-lib/libogg.so.1
+lib/libogg.so.2
 share/aclocal/ogg.m4
 %%PORTDOCS%%share/doc/libogg/framing.html
 %%PORTDOCS%%share/doc/libogg/index.html
