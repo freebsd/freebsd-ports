@@ -4,12 +4,12 @@
 # PROVIDE: nginx
 # REQUIRE: DAEMON
 # BEFORE: LOGIN
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
-# Define these apache_* variables in one of these files:
+# Define these nginx_* variables in one of these files:
 #       /etc/rc.conf
 #       /etc/rc.conf.local
-#       /etc/rc.conf.d/apache
+#       /etc/rc.conf.d/nginx
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
