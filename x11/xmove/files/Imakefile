@@ -1,0 +1,6 @@
+#define IHaveSubdirs
+#define PassCDebugFlags CDEBUGFLAGS="$(CDEBUGFLAGS)"
+
+SUBDIRS=	xmove xmovectrl
+MakeSubdirs($(SUBDIRS))
+DependSubdirs($(SUBDIRS))
