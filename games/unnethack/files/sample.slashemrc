@@ -1,0 +1,47 @@
+# Sample .slashemrc file
+# 
+
+# Window systems
+# Options are tty, x11. qt, gtk
+# but not all of these are necessarily compiled in
+OPTIONS=windowtype:tty
+
+# names for pets
+OPTIONS=catname:Fuzzy
+OPTIONS=dogname:Rover
+OPTIONS=horsename:Trigger
+
+# Autopickup options
+# Autopickup all the things you would pick up anyway
+# In order: money, potions, spellbooks, rings, amulets, 
+# scrolls, and wands
+OPTIONS=autopickup
+OPTIONS=pickup_types:$!+="?/
+
+# Favorite fruit
+OPTIONS=fruit:Strawberry
+
+# Turn on numberpad movement
+# Be sure to turn on numlock or this won't work
+OPTIONS=number_pad
+
+# Show experience on the status line
+OPTIONS=showexp
+
+# Fix inventory letters
+# If you aquire an item, drop it, then pick it up again
+# it will retain the same inventory letter
+# Sort your pack contents by type when viewing your inventory
+OPTIONS=fixinv
+OPTIONS=sortpack
+
+# Makes pets more visible
+# Don't allow attacking your pet
+OPTIONS=hilite_pet
+OPTIONS=safe_pet
+
+# verbose messages in the game
+OPTIONS=verbose
+
+# Ask for confirmation before attacking peaceful creatures
+OPTIONS=confirm

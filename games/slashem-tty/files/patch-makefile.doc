@@ -1,0 +1,33 @@
+--- sys/unix/Makefile.doc.good	Thu Nov 23 01:01:16 2000
++++ sys/unix/Makefile.doc	Thu Nov 23 01:04:09 2000
+@@ -52,10 +52,10 @@
+ # Guidebook.dvi:	Guidebook.mn
+ #	tbl tmac.n Guidebook.mn | groff -Wall -Tdvi > Guidebook.dvi
+ 
+-GAME    = slashem
++GAME    = slashem-tty
+ #GAME    = nethack
+-MANDIR	= /games/slash/doc
+-MANEXT	= 1n
++MANDIR	= ${PREFIX}/man/man
++MANEXT	= 6
+ 
+ # manual installation for most BSD-style systems
+ GAMEMANCREATE = cp $(GAME).6
+@@ -72,11 +72,11 @@
+ # DLBMANCREATE = groff -Wall -mtty-char -Tascii -man dlb.6 >
+ 
+ manpages:
+-	-$(GAMEMANCREATE) $(MANDIR)/$(GAME).$(MANEXT)
+-	-$(LEVMANCREATE) $(MANDIR)/lev_comp.$(MANEXT)
+-	-$(DGNMANCREATE) $(MANDIR)/dgn_comp.$(MANEXT)
+-	-$(RCVRMANCREATE) $(MANDIR)/recover.$(MANEXT)
+-	-$(DLBMANCREATE) $(MANDIR)/dlb.$(MANEXT)
++	-$(GAMEMANCREATE) $(MANDIR)${MANEXT}/$(GAME).$(MANEXT)
++	-$(LEVMANCREATE) $(MANDIR)${MANEXT}/lev_comp.$(MANEXT)
++	-$(DGNMANCREATE) $(MANDIR)${MANEXT}/dgn_comp.$(MANEXT)
++	-$(RCVRMANCREATE) $(MANDIR)${MANEXT}/recover.$(MANEXT)
++	-$(DLBMANCREATE) $(MANDIR)${MANEXT}/dlb.$(MANEXT)
+ 
+ # manual creation for distribution
+ DISTRIB = Guidebook.txt $(GAME).txt lev_comp.txt dgn_comp.txt recover.txt dlb.txt

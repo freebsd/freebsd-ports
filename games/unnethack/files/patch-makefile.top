@@ -1,0 +1,53 @@
+--- sys/unix/Makefile.top.good	Wed Nov 22 23:48:33 2000
++++ sys/unix/Makefile.top	Wed Nov 22 23:54:33 2000
+@@ -14,18 +14,17 @@
+ # MAKE = make
+ 
+ # make NetHack
+-PREFIX   = /usr
+-GAME     = slashem
++GAME     = slashem-tty
+ # GAME     = slashem.prg
+ GAMEUID  = games
+-GAMEGRP  = bin
++GAMEGRP  = games
+ 
+ # Permissions - some places use setgid instead of setuid, for instance
+ # See also the option "SECURE" in include/config.h
+-GAMEPERM = 04755
+-FILEPERM = 0644
++GAMEPERM = 02755
++FILEPERM = 0664
+ EXEPERM  = 0755
+-DIRPERM  = 0755
++DIRPERM  = 0775
+ 
+ # GAMEDIR also appears in config.h as "HACKDIR".
+ # VARDIR may also appear in unixconf.h as "VAR_PLAYGROUND" else GAMEDIR
+@@ -38,7 +37,7 @@
+ # These must agree with the definitions in unixconf.h
+ 
+ # Defs. for non file areas support.
+-GAMEDIR  = $(PREFIX)/local/slashemdir
++GAMEDIR  = $(PREFIX)/share/${GAME}
+ VARDIR = $(GAMEDIR)
+ FILE_AREA_VAR = $(VARDIR)
+ FILE_AREA_SAVE = $(VARDIR)/save
+@@ -47,7 +46,7 @@
+ FILE_AREA_DOC = $(GAMEDIR)
+ FILE_AREA_BONES = $(FILE_AREA_VAR)
+ FILE_AREA_LEVL = $(FILE_AREA_VAR)
+-SHELLDIR = $(PREFIX)/local/bin
++SHELLDIR = $(PREFIX)/bin
+ 
+ # Defs. compatible with Linux's FSSTND 1.2
+ # FILE_AREA_VAR = /var/lib/games/slashem
+@@ -239,7 +238,7 @@
+ 	  	-e '$$s/.*/nodlb/p' < dat/options` ;	\
+ 	$(MAKE) dofiles-$${target-nodlb}
+ 	cp src/$(GAME) $(FILE_AREA_UNSHARE)
+-	cp license doc/Guidebook.txt $(FILE_AREA_DOC)
++	cp license $(FILE_AREA_DOC)
+ #	cp win/Qt/KDE/kslashem.kdelnk $(KDEDIR)/share/applnk/Games
+ 	-rm -f $(SHELLDIR)/$(GAME)
+ 	sed -e 's;/usr/games/lib/nethackdir;$(FILE_AREA_UNSHARE);' \

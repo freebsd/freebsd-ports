@@ -1,0 +1,13 @@
+--- sys/unix/Makefile.utl.good	Thu Nov 23 13:55:38 2000
++++ sys/unix/Makefile.utl	Thu Nov 23 13:56:54 2000
+@@ -89,8 +89,8 @@
+ # flags for debugging:
+ # CFLAGS = -g -I../include
+ 
+-CFLAGS = -O -I../include
+-LFLAGS =
++CFLAGS += -O -I../include -I${PREFIX}/include
++LFLAGS = -L${PREFIX}/lib
+ 
+ LIBS =
+  

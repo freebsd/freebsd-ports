@@ -1,0 +1,22 @@
+--- sys/unix/Makefile.src.good	Thu Nov 23 00:24:58 2000
++++ sys/unix/Makefile.src	Thu Nov 23 00:26:13 2000
+@@ -144,8 +144,8 @@
+ # flags for debugging:
+ # CFLAGS = -g -I../include
+ 
+-CFLAGS = -O -I../include
+-LFLAGS =
++CFLAGS += -O -I../include -I${PREFIX}/include 
++LFLAGS = -L${PREFIX}/lib
+ 
+ # QT windowing system
+ # SuSE 6.1
+@@ -322,7 +322,7 @@
+ LIBS =
+ 
+ # make NetHack
+-GAME     = slashem
++GAME     = slashem-tty
+ # GAME     = slashem.prg
+ 
+ # if you defined RANDOM in unixconf.h/tosconf.h since your system did not come

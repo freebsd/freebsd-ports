@@ -1,0 +1,42 @@
+--- src/read.c.orig	Sat Jul 22 18:04:06 2000
++++ src/read.c	Thu Jan 25 18:46:03 2001
+@@ -62,6 +62,24 @@
+ 	    return(1);
+ #ifdef TOURIST
+ 	} else if (scroll->otyp == T_SHIRT) {
++	    static const char *shirt_msgs[] = {
++    "I explored the Dungeons of Doom and all I got was this lousy T-shirt!",
++    "Is that Mjollnir in your pocket or are you just happy to see me?",
++    "It's not the size of your sword, it's how #enhance'd you are with it.",
++    "Madame Elvira's House O' Succubi Lifetime Customer",
++    "Madame Elvira's House O' Succubi Employee of the Month",
++    "Ludios Vault Guards Do It In Small, Dark Rooms",
++    "Yendor Military Soldiers Do It In Large Groups",
++    "I survived Yendor Military Boot Camp",
++    "Ludios Accounting School Intra-Mural Lacrosse Team",
++    "Oracle(TM) Fountains 10th Annual Wet T-Shirt Contest",
++    "Hey, black dragon!  Disintegrate THIS!",
++    "I'm With Stupid -->",
++    "Don't blame me, I voted for Izchak!",
++    "Don't Panic",	// HHGTTG
++    "Furinkan High School Athletic Dept.",	// Ranma 1/2
++    "Hel-LOOO, Nurse!",		// Animaniacs"
++	    };
+ 	    char buf[BUFSZ];
+ 	    int erosion;
+ 
+@@ -72,13 +90,7 @@
+ 	    u.uconduct.literate++;
+ 	    if(flags.verbose)
+ 		pline("It reads:");
+-	    Sprintf(buf,  "I explored the Dungeons of Doom, %s.",
+-		    Hallucination ?
+-			(scroll == uarmu ?
+-			    /* (force these two to have identical length) */
+-			    "and never did any laundry..." :
+-			    "and couldn't find my way out") :
+-			"but all I got was this lousy T-shirt");
++	    strcpy(buf, shirt_msgs[scroll->o_id % SIZE(shirt_msgs)]);
+ 	    erosion = greatest_erosion(scroll);
+ 	    if (erosion)
+ 		wipeout_text(buf,
