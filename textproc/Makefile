@@ -563,7 +563,6 @@
     SUBDIR += ruby-spreadsheet-excel
     SUBDIR += ruby-tempura
     SUBDIR += ruby-text-format
-    SUBDIR += ruby-wordnet
     SUBDIR += ruby-xmlconfigfile
     SUBDIR += ruby-xmlparser
     SUBDIR += ruby-xmlscan
@@ -584,7 +583,6 @@
     SUBDIR += scrollkeeper
     SUBDIR += sdf
     SUBDIR += sdocbook-xml
-    SUBDIR += se-ispell
     SUBDIR += sed_inplace
     SUBDIR += sgmlformat
     SUBDIR += sgmls
@@ -617,8 +615,6 @@
     SUBDIR += tei-p3
     SUBDIR += tei-p4
     SUBDIR += tei-xlite
-    SUBDIR += tei-xsl-fo
-    SUBDIR += tei-xsl-html
     SUBDIR += tet-aspell
     SUBDIR += tex2im
     SUBDIR += texi2db
