@@ -34,4 +34,14 @@ USE_GMAKE=	yes
 MAKE_ENV=	SOMAJOR="${SOMAJOR}" SOMINOR="${SOMINOR}" \
 PLIST_SUB+=	LIBVER="${SOMAJOR}"
 
+.for LIB in DCOP kab kdecore kdesu kdeui kfile kformula khtml kio kjs kmid \
+	    kparts kspell ksycoca kwrite
+	@${LN} -sf ${PREFIX}/lib/lib${LIB}.so.${SOMAJOR} ${PREFIX}/lib/lib${LIB}.so
+.endfor
+.for LIB in artsc artscbackend artsdsp artsflow artsflow_idl kmedia2_idl qtmcop \
+	    soundserver_idl x11globalcomm
+	@${LN} -sf ${PREFIX}/lib/lib${LIB}.so.0 ${PREFIX}/lib/lib${LIB}.so
+.endfor
+	@${LN} -sf ${PREFIX}/lib/libkjava.so.1 ${PREFIX}/lib/libkjava.so
+
 .include <bsd.port.mk>
