@@ -9,9 +9,10 @@ PORTVERSION=	1.97
 CATEGORIES=	www databases
 MASTER_SITES=	http://www.outoforder.cc/downloads/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	clement@FreeBSD.org
 COMMENT=	Allows Apache to log to a MySQL database
 
+LATEST_LINK=	mod_log_sql2
 GNU_CONFIGURE=	yes
 USE_MYSQL=	yes
 USE_REINPLACE=	yes
