@@ -8,7 +8,7 @@
 PORTNAME=	adzapper
 PORTVERSION=	0.4.0
 CATEGORIES=	www
-MASTER_SITES=	http://adzapper.sourceforge.net/
+MASTER_SITES=	ftp://ftp.aquezada.com/pub/distrib/adzapper/
 
 MAINTAINER=	jdunn@aquezada.com
 COMMENT=	A filtering proxy that can block ads from being displayed
