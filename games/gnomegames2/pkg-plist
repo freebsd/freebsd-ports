@@ -137,7 +137,8 @@ share/gnome/games/iagno.b3.scores
 share/gnome/games/iagno.w1.scores
 share/gnome/games/iagno.w2.scores
 share/gnome/games/iagno.w3.scores
-share/gnome/games/mahjongg.{easy,difficult}.scores
+share/gnome/games/mahjongg.difficult.scores
+share/gnome/games/mahjongg.easy.scores
 share/gnome/games/same-gnome.scores
 share/gnome/gnect/catseyes_40x40.gnect
 share/gnome/gnect/classic_40x40.gnect
