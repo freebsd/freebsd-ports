@@ -1,0 +1,54 @@
+--- pic2fig.1.orig	Thu Feb 11 05:34:07 1988
++++ pic2fig.1	Wed Apr  3 10:27:14 2002
+@@ -55,6 +55,51 @@
+ must be given in the first column.  Changing the drawing thickness applies
+ to solid, dashed, and dotted lines, as well as circles, arcs, and ellipses.
+ .PP
++Setting the font for text may be done using a
++.ti +.5i
++\&.ft \fIn\fR
++
++command, where \fIn\fR corresponds to the following PostScript fonts:
++.nf
++-1	Default font
++ 0	Times Roman           
++ 1	Times Italic          
++ 2	Times Bold            
++ 3	Times Bold Italic    
++ 4	AvantGarde Book      
++ 5	AvantGarde Book Oblique 
++ 6	AvantGarde Demi
++ 7	AvantGarde Demi Oblique
++ 8	Bookman Light
++ 9	Bookman Light Italic
++10	Bookman Demi
++11	Bookman Demi Italic
++12	Courier
++13	Courier Oblique
++14	Courier Bold
++15	Courier Bold Oblique
++16	Helvetica
++17	Helvetica Oblique
++18	Helvetica Bold
++19	Helvetica Bold Oblique
++20	Helvetica Narrow
++21	Helvetica Narrow Oblique
++22	Helvetica Narrow Bold
++23	Helvetica Narrow Bold Oblique
++24	New Century Schoolbook Roman
++25	New Century Schoolbook Italic
++26	New Century Schoolbook Bold
++27	New Century Schoolbook Bold Italic
++28	Palatino Roman
++29	Palatino Italic
++30	Palatino Bold
++31	Palatino Bold Italic
++32	Symbol
++33	Zapf Chancery Medium Italic
++34	Zapf Dingbats
++.fi
++
++.PP
+ Normally, the distance between text is 12 points.  If you're using larger
+ text to label objects, this should be set to an appropriate larger value.
+ This can be done using the
