@@ -7,6 +7,7 @@
 
 PORTNAME=       gfe
 PORTVERSION=    0.0.4
+PORTREVISION=	1
 CATEGORIES=     x11-fonts
 MASTER_SITES=   ftp://alpha.gnu.org/gnu/gfe/
 
