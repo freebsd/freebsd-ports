@@ -1,7 +1,7 @@
 %%XFREE3:%%etc/mesa.conf
 %%XFREE3:%%include/GL/gl.h
 %%XFREE3:%%include/GL/gl_mangle.h
-include/GL/glu.h
+%%XFREE3:%%include/GL/glu.h
 %%XFREE3:%%include/GL/glu_mangle.h
 include/GL/glut.h
 %%XFREE3:%%include/GL/glx.h
@@ -13,8 +13,8 @@ include/GL/glut.h
 %%XFREE3:%%include/GL/xmesa_xf86.h
 %%XFREE3:%%lib/libGL.so
 %%XFREE3:%%lib/libGL.so.%%GLVER%%
-lib/libGLU.so
-lib/libGLU.so.%%GLVER%%
+%%XFREE3:%%lib/libGLU.so
+%%XFREE3:%%lib/libGLU.so.%%GLVER%%
 lib/libMesaGL.so
 lib/libMesaGLU.so
 lib/libglut.so
