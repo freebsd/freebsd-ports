@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asp2php
-PORTVERSION=	0.76.22
+PORTVERSION=	0.76.23
 CATEGORIES=	www
 MASTER_SITES=	http://downloads.mikekohn.net/asp2php/
 
