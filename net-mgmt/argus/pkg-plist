@@ -24,8 +24,6 @@ share/doc/argus-2.0/README
 share/doc/argus-2.0/html/man/argus.5.html
 share/doc/argus-2.0/html/man/argus.8.html
 share/doc/argus-2.0/html/man/argus.conf.5.html
-share/doc/argus-2.0/html/man/hosts_access.5.html
-share/doc/argus-2.0/html/man/hosts_options.5.html
 share/doc/argus-2.0/html/man/ra.1.html
 share/doc/argus-2.0/html/man/racount.1.html
 share/doc/argus-2.0/html/man/ragator.1.html
@@ -33,7 +31,6 @@ share/doc/argus-2.0/html/man/ramon.1.html
 share/doc/argus-2.0/html/man/rarc.5.html
 share/doc/argus-2.0/html/man/rasort.1.html
 share/doc/argus-2.0/html/man/raxml.1.html
-share/doc/argus-2.0/html/man/tcpd.8.html
 share/doc/argus-2.0/html/man/tcpdump.1.html
 share/examples/argus-2.0/Archive/argusarchive
 share/examples/argus-2.0/Config/argus.conf
