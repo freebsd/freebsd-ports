@@ -1,35 +1,11 @@
---- configure.orig	Wed Dec 17 06:12:43 1997
-+++ configure	Thu Dec 23 16:38:07 1999
-@@ -521,6 +521,23 @@
-   ac_n= ac_c='\c' ac_t=
- fi
- 
-+echo checking for FreeBSD
-+cat > conftest.${ac_ext} <<EOF
-+#include "confdefs.h"
-+#ifdef __FreeBSD__
-+  yes
-+#endif
-+
-+EOF
-+eval "$ac_cpp conftest.${ac_ext} > conftest.out 2>&1"
-+if egrep "yes" conftest.out >/dev/null 2>&1; then
-+  rm -rf conftest*
-+  bsd=1
-+  freebsd=1
-+
-+fi
-+rm -f conftest*
-+
- 
- 
- ac_aux_dir=
-@@ -1304,7 +1321,7 @@
- if eval "test \"`echo '$ac_cv_func_'dlopen`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
-   
--  FOREIGN_FILE="sysvr4-foreign.h"
-+  FOREIGN_FILE="bsd-foreign.h"
-   foreign=1
-   cat >> confdefs.h <<\EOF
- #define HAVE_DLOPEN 1
+--- configure.orig	Fri Mar 24 01:03:59 2000
++++ configure	Wed May  3 09:00:00 2000
+@@ -580,7 +580,7 @@
+ # Set some default values
+ #
+ LIBS=-lm
+-UCFLAGS=-O
++UCFLAGS=$CFLAGS
+ ULDFLAGS=
+ X11INCDIR_FLAG=
+ X11LIBDIR_FLAG=
