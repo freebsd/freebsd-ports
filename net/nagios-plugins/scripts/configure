@@ -81,7 +81,7 @@ while [ "$1" ]; do
 			;;
 		\"PostgreSQL\")
 			echo "LIB_DEPENDS+=	pq.2:\${PORTSDIR}/databases/postgresql7"
-			echo "CONFIGURE_ARGS+=	--with-pgsql=\${LOCALBASE}/pgsql"
+			echo "CONFIGURE_ARGS+=	--with-pgsql=\${LOCALBASE}"
 			SUB_PGSQL=""
 			;;
 		\"OpenLDAP\")

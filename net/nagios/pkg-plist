@@ -2,7 +2,7 @@
 @exec mkdir -p %D/var/netsaint/rw
 @exec chmod 775 %D/var/netsaint %D/var/netsaint/archives %D/var/netsaint/rw
 @exec chown netsaint:netsaint %D/var/netsaint %D/var/netsaint/archives
-@exec chown nobody:nogroup %D/var/netsaint/rw
+@exec chown netsaint:nogroup %D/var/netsaint/rw
 bin/netsaint
 etc/netsaint/commands.cfg.dist
 etc/netsaint/hosts.cfg.dist
@@ -291,3 +291,4 @@ share/netsaint/stylesheets/trends.css
 @unexec rmdir %D/var/netsaint/archives 2>/dev/null || true
 @unexec rmdir %D/var/netsaint/rw 2>/dev/null || true
 @unexec rmdir %D/var/netsaint 2>/dev/null || true
+@unexec rmdir %D/var 2>/dev/null || true
