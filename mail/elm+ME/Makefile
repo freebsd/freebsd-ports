@@ -4,7 +4,7 @@
 # Date created:         26 June 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.47 1998/08/22 13:20:35 asami Exp $
+# $Id: Makefile,v 1.48 1998/08/28 19:51:38 hoek Exp $
 #
 
 DISTNAME=       elm-2.4ME+43
@@ -26,6 +26,7 @@ CONFIGURE_ENV=  PREFIX="${PREFIX}"
 CONFIGURE_ARGS= -S
 
 post-install:
+	perl -pi -e 's,/usr/local,${PREFIX},' ${WRKSRC}/nls/LANGS
 	cd ${WRKSRC}/nls; ${MAKE} install
 	if [ -f ${PREFIX}/lib/elm.mimetypes ] ; then \
 		${INSTALL_DATA} \
