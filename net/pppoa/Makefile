@@ -5,17 +5,18 @@
 # $FreeBSD$
 #
 
-PORTNAME=	pppoa
-PORTVERSION=	1.0
-PORTEPOCH=	1
-CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://www.xsproject.org/speedtouch/files/ \
-		http://www.alcatel.com/consumer/dsl/ \
-    		http://benoit.papillault.free.fr/speedtouch/
-DISTFILES=	${SPEEDTOUCH}.tar.gz speedmgmt.tar.gz
+PORTNAME=		pppoa
+PORTVERSION=		1.0
+PORTEPOCH=		1
+CATEGORIES=		net
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE} \
+			http://www.xsproject.org/speedtouch/files/ \
+			http://www.alcatel.com/consumer/dsl/ \
+    			http://benoit.papillault.free.fr/speedtouch/
+DISTFILES=		${SPEEDTOUCH}.tar.gz speedmgmt.tar.gz
+MASTER_SITE_SUBDIR=	speedtouch
 
-MAINTAINER=	brian@Awfulhak.org
+MAINTAINER=		brian@Awfulhak.org
 
 HAS_CONFIGURE=		yes
 SPEEDTOUCH=		speedtouch-1_0
