@@ -5147,6 +5147,7 @@ osg		ports/graphics/osg
 osgedit		ports/graphics/osgedit
 osh		ports/shells/osh
 osrtspproxy	ports/net/osrtspproxy
+ossp-mm		ports/devel/ossp-mm
 ossp-sa		ports/net/ossp-sa
 otcl		ports/lang/otcl
 outguess	ports/security/outguess
