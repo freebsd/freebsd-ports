@@ -40,19 +40,6 @@ etc/drweb/viruses.conf-dist
 @exec [ -f %B/viruses.conf ] || cp %B/%f %B/viruses.conf
 sbin/drweb-postfix
 sbin/drwebdc
-share/doc/drweb-postfix/addresses_list.rus.txt
-share/doc/drweb-postfix/addresses_list.txt
-share/doc/drweb-postfix/conf_file.rus.txt
-share/doc/drweb-postfix/conf_file.txt
-share/doc/drweb-postfix/notify.rus.txt
-share/doc/drweb-postfix/notify.txt
-share/doc/drweb-postfix/readme
-share/doc/drweb-postfix/readme.rus
-share/doc/drweb-postfix/users_list.rus.txt
-share/doc/drweb-postfix/users_list.txt
-share/doc/drweb-postfix/viruses_list.rus.txt
-share/doc/drweb-postfix/viruses_list.txt
-@dirrm share/doc/drweb-postfix
 @dirrm etc/drweb/templates/en-ru/postfix
 @dirrm etc/drweb/templates/en-ru
 @dirrm etc/drweb/templates

@@ -1,10 +1,10 @@
---- dw_options.c.orig	Fri Feb 14 16:52:50 2003
-+++ dw_options.c	Sat Mar  1 00:18:04 2003
-@@ -113,7 +113,7 @@
+--- dw_options.c.orig	Tue Dec  9 01:23:55 2003
++++ dw_options.c	Tue Mar  2 20:54:56 2004
+@@ -117,7 +117,7 @@
  #if defined(__UNIX_DW)
  #if !defined(EMX_DW)
  #if defined(FreeBSD_DW)
--#define OS_SPEC_CONFNAME            "/usr/local/drweb/"CONF_FNAME
+-#define OS_SPEC_CONFNAME            "/usr/local/etc/drweb/"CONF_FNAME
 +#define OS_SPEC_CONFNAME            "%PREFIX%/etc/drweb/"CONF_FNAME
  #else /* FreeBSD */
  #define OS_SPEC_CONFNAME            "/opt/drweb/"CONF_FNAME

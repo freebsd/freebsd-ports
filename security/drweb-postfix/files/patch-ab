@@ -1,53 +1,46 @@
---- etc/drweb_postfix.conf.orig	Sat Jul 12 16:30:33 2003
-+++ etc/drweb_postfix.conf	Sat Jul 12 16:40:30 2003
-@@ -17,14 +17,14 @@
+--- etc/drweb_postfix.conf.orig	Sun Jul 18 14:55:55 2004
++++ etc/drweb_postfix.conf	Sun Jul 18 15:00:45 2004
+@@ -18,14 +18,14 @@
  #   Address = local:/usr/local/drweb/run/drwebd.skt
  #   Address = pid:/usr/local/drweb/run/drwebd.pid
  #   Address = pid:/var/drweb/run/drwebd.pid, inet:3000@backup_server.example.com
 -Address = inet:3000@localhost
 +Address = local:%PREFIX%/drweb/run/drwebd.sock
  
- # Enable/disable caching resolved daemon host 
+ # Enable/disable caching of the resolved daemon host 
  # (useful only if daemon uses TCP/IP communications)
  Cache = yes
  
- # Timeout for whole scanning session (in seconds)
+ # Timeout for the whole scanning session (seconds)
 -Timeout = 120
 +Timeout = 160
  
  ########################
  # Scan options section #
-@@ -69,10 +69,10 @@
- DenyOnOne = yes
+@@ -83,10 +83,10 @@
+ DenyByDefault = no
  
  # List with rules for users or domains to block scanning 
 -DenyList = /etc/drweb/users.conf
 +DenyList = %PREFIX%/etc/drweb/users.conf
  
- # Directory used for story temporary files
+ # Directory used to store temporary files
 -Spool = /var/drweb/spool 
 +Spool = /tmp
  
  # Permissions for created spool files
  SpoolFilesMode = 0600
-@@ -192,28 +192,28 @@
- #        redirect - redirect to RedirectMail and reject message 
+@@ -237,7 +237,7 @@
+ #        pass - pass such messages 
  #        reject - reject such messages with permanent error 
  #        tempfail - reject such message with temporary error 
--ProcessingErrors = quarantine 
+-ProcessingErrors = reject 
 +ProcessingErrors = tempfail
  
  # Admin mail address (may be unix-local address)
--AdminMail = av-master@example.com
-+AdminMail = postmaster
- 
- # Mail address for redirect action (may be unix-local address)
--RedirectMail = quarantine@example.com
-+RedirectMail = postmaster
- 
- # Filter address, that be used in From: (should be qualified)
--FilterMail = DrWEB-DAEMON@example.com
-+FilterMail = DrWEB-DAEMON@%HOSTNAME%
+ AdminMail = postmaster
+@@ -249,16 +249,16 @@
+ FilterMail = DrWEB-DAEMON
  
  # List of unnotificable viruses
 -UnnotificableVirusesList = /etc/drweb/viruses.conf
@@ -59,23 +52,24 @@
  
  # Quarantine directory. 
  # The infected files could be moved in that dir 
- # if you stay this field empty or commented then 
- # infected messages would not been storied
+ # if you leave this field empty or commented out then 
+ # infected messages will not be stored
 -Quarantine = /var/drweb/infected
 +Quarantine = %PREFIX%/drweb/infected
  
  # Permissions for quarantined files
  QuarantineFilesMode = 0660
-@@ -237,15 +237,15 @@
+@@ -282,15 +282,16 @@
  RcptsNotify = yes
  
  # Files with notification templates
 -SenderTemplate = /etc/drweb/templates/en-ru/postfix/virus-sender.msg
 -AdminTemplate = /etc/drweb/templates/en-ru/postfix/virus-admin.msg
 -RcptsTemplate = /etc/drweb/templates/en-ru/postfix/virus-rcpts.msg
-+AdminTemplate = %PREFIX%/etc/drweb/templates/en-ru/postfix/virus-admin.msg
-+RcptsTemplate = %PREFIX%/etc/drweb/templates/en-ru/postfix/virus-rcpts.msg
-+SenderTemplate = %PREFIX%/etc/drweb/templates/en-ru/postfix/virus-sender.msg
++SenderTemplate = %PREFIX%/etc/drweb/templates/en-ru/sendmail/virus-sender.msg
++AdminTemplate = %PREFIX%/etc/drweb/templates/en-ru/sendmail/virus-admin.msg
++RcptsTemplate = %PREFIX%/etc/drweb/templates/en-ru/sendmail/virus-rcpts.msg
++
  
  [SkipNotifications]
  SenderNotify = yes
@@ -86,7 +80,7 @@
  AdminTemplate = 
  RcptsTemplate = 
  
-@@ -253,16 +253,16 @@
+@@ -298,16 +299,16 @@
  SenderNotify = yes
  AdminNotify = yes
  RcptsNotify = no
@@ -107,7 +101,7 @@
  RcptsTemplate = 
  
  [RuleFilterNotifications]
-@@ -270,7 +270,7 @@
+@@ -315,7 +316,7 @@
  AdminNotify = yes
  RcptsNotify = no
  SenderTemplate = 
