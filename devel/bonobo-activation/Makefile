@@ -16,7 +16,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	glib-1.3.13:${PORTSDIR}/devel/glib13 \
+LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		ORBit-2.0:${PORTSDIR}/devel/ORBit2
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
