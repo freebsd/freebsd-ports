@@ -20,3 +20,5 @@ share/doc/libsx/string_entry.doc.gz
 share/doc/libsx/text_edit.doc.gz
 share/doc/libsx/toggle.doc.gz
 share/doc/libsx/windows.doc.gz
+@dirrm include/X11/libsx
+@dirrm share/doc/libsx
