@@ -100,6 +100,7 @@ share/gnump3d/split/stats.html
 @dirrm share/gnump3d/default
 @dirrm share/gnump3d/Thexder
 @dirrm share/gnump3d/LaFrere
+@dirrm share/gnump3d
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/gnump3d/plugins
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/gnump3d
 @unexec rmdir %D/etc/gnump3d 2>/dev/null || true
