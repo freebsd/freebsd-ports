@@ -62,7 +62,7 @@ lib/libpicc.a
 lib/libpisock.a
 lib/libpisock.la
 lib/libpisock.so
-lib/libpisock.so.3.0
+lib/libpisock.so.3.1
 lib/pix/b1.gif
 lib/pix/b2.gif
 lib/pix/b3.gif
