@@ -1,0 +1,28 @@
+--- contrib/src/Makefile.in.orig	Mon May 31 18:12:16 2004
++++ contrib/src/Makefile.in	Mon Jun 28 00:28:54 2004
+@@ -1,15 +1,23 @@
+ # $Id: Makefile.in,v 1.16 2003/08/17 12:48:18 VS Exp $
+ 
+-CONTRIB_SUBDIRS=fl gizmos mmedia ogl plot stc svg xrc deprecated animate #applet
++CONTRIB_SUBDIRS=fl gizmos ogl plot stc svg xrc deprecated animate #applet mmedia
+ 
+-all:
++@COND_UNICODE_1@wxregexu_depname=	wxregexu
++
++all:	$(wxregexu_depname)
+ 	@for d in $(CONTRIB_SUBDIRS); do (cd $$d && $(MAKE)); done
+ 
++wxregexu:
++	cd ../.. && $(MAKE) lib/libwxregexu.a
++
+ clean:
+ 	@for d in $(CONTRIB_SUBDIRS); do (cd $$d && $(MAKE) clean); done
+ 
+ install:
+ 	@for d in $(CONTRIB_SUBDIRS); do (cd $$d && $(MAKE) install); done
++
++install-common:
++	@for d in $(CONTRIB_SUBDIRS); do (cd $$d && $(MAKE) install-common); done
+ 
+ uninstall:
+ 	@for d in $(CONTRIB_SUBDIRS); do (cd $$d && $(MAKE) uninstall); done

@@ -1,0 +1,9 @@
+--- contrib/Makefile.in.orig	Sun Jun 27 21:46:24 2004
++++ contrib/Makefile.in	Sun Jun 27 21:46:44 2004
+@@ -16,3 +16,6 @@
+ 
+ install:
+ 	cd src; $(MAKE) install
++
++install-common:
++	cd src; $(MAKE) install-common
