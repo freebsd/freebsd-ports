@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nslint
-PORTVERSION=	2.1.a2
+PORTVERSION=	2.1.a3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a/a/}
