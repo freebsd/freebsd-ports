@@ -357,6 +357,7 @@
     SUBDIR += postfix-current
     SUBDIR += postfix-gps
     SUBDIR += postfix1
+    SUBDIR += postfix21
     SUBDIR += postfixadmin
     SUBDIR += postgrey
     SUBDIR += postilion
