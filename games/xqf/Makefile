@@ -7,6 +7,7 @@
 
 PORTNAME=	xqf
 PORTVERSION=	0.9.14
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Find quake servers
 
-RUN_DEPENDS=	qstat:${PORTSDIR}/games/qstat
+RUN_DEPENDS=	qstat:${PORTSDIR}/games/qstat \
+		wget:${PORTSDIR}/ftp/wget
 
 USE_GNOME=	gnometarget intlhack
 USE_GETOPT_LONG=	yes
