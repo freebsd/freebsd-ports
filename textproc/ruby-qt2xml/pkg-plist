@@ -1,17 +1,17 @@
 %%RUBY_SITEARCHLIBDIR%%/qt2xml.so
-%%RUBY_EXAMPLESDIR%%/qt2xml/domexample/quotes.xml
-%%RUBY_EXAMPLESDIR%%/qt2xml/domexample/domtest1.rb
-%%RUBY_EXAMPLESDIR%%/qt2xml/saxsample/sax.rb
-%%RUBY_EXAMPLESDIR%%/qt2xml/saxsample/sample.xml
-%%RUBY_EXAMPLESDIR%%/qt2xml/saxsample/sample1.ui
-%%RUBY_EXAMPLESDIR%%/qt2xml/xmlquotes/README.orig
-%%RUBY_EXAMPLESDIR%%/qt2xml/xmlquotes/quotes.xml
-%%RUBY_EXAMPLESDIR%%/qt2xml/xmlquotes/richtext.h.rb
-%%RUBY_EXAMPLESDIR%%/qt2xml/xmlquotes/richtext.rb
-%%RUBY_EXAMPLESDIR%%/qt2xml/xmlquotes/quoteparser.rb
-%%RUBY_EXAMPLESDIR%%/qt2xml/xmlquotes/xmlquotes.rb
-%%RUBY_EXAMPLESDIR%%/qt2xml/xmlquotes/marble.png
-@dirrm %%RUBY_EXAMPLESDIR%%/qt2xml/domexample
-@dirrm %%RUBY_EXAMPLESDIR%%/qt2xml/saxsample
-@dirrm %%RUBY_EXAMPLESDIR%%/qt2xml/xmlquotes
-@dirrm %%RUBY_EXAMPLESDIR%%/qt2xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/domexample/quotes.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/domexample/domtest1.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/saxsample/sax.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/saxsample/sample.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/saxsample/sample1.ui
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/xmlquotes/README.orig
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/xmlquotes/quotes.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/xmlquotes/richtext.h.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/xmlquotes/richtext.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/xmlquotes/quoteparser.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/xmlquotes/xmlquotes.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/xmlquotes/marble.png
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2xml/domexample
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2xml/saxsample
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2xml/xmlquotes
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2xml

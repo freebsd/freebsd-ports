@@ -1,10 +1,10 @@
 %%RUBY_SITELIBDIR%%/property.rb
-%%RUBY_DOCDIR%%/property/property-example.rb
-%%RUBY_DOCDIR%%/property/test.default
-%%RUBY_DOCDIR%%/property/property.README
-%%RUBY_DOCDIR%%/property/Properties.html
-%%RUBY_DOCDIR%%/property/rubyapi.css
-%%RUBY_DOCDIR%%/property/ja/property.README.ja
-%%RUBY_DOCDIR%%/property/ja/Properties-ja.html
-@dirrm %%RUBY_DOCDIR%%/property/ja
-@dirrm %%RUBY_DOCDIR%%/property
+%%PORTDOCS%%%%RUBY_DOCDIR%%/property/property-example.rb
+%%PORTDOCS%%%%RUBY_DOCDIR%%/property/test.default
+%%PORTDOCS%%%%RUBY_DOCDIR%%/property/property.README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/property/Properties.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/property/rubyapi.css
+%%PORTDOCS%%%%RUBY_DOCDIR%%/property/ja/property.README.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/property/ja/Properties-ja.html
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/property/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/property

@@ -14,22 +14,22 @@ bin/rmi2html.rb
 %%RUBY_SITELIBDIR%%/rd/rdinlineparser.tab.rb
 %%RUBY_SITELIBDIR%%/rd/rdvisitor.rb
 @dirrm %%RUBY_SITELIBDIR%%/rd
-%%RUBY_EXAMPLESDIR%%/rd/dot.rd2rc
-@dirrm %%RUBY_EXAMPLESDIR%%/rd
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rd/dot.rd2rc
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/rd
 lib/xemacs/site-lisp/rd-mode.el
 @unexec rmdir -p %D/lib/xemacs/site-lisp 2>/dev/null || true
 @exec ln -sf %D/%F %D/share/emacs/site-lisp/
 @unexec rm -f %D/share/emacs/site-lisp/rd-mode.el 2>/dev/null || true
-@comment %%RUBY_DOCDIR%%/amstd/ja/amstd-ja.html
-%%RUBY_DOCDIR%%/optparse/ja/optparse.ja.html
-%%RUBY_DOCDIR%%/optparse/optparse.en.html
-%%RUBY_DOCDIR%%/rd/README.html
-%%RUBY_DOCDIR%%/rd/rd-draft.html
-%%RUBY_DOCDIR%%/rd/rd-draft.rd
-%%RUBY_DOCDIR%%/rd/ja/README.ja.html
-%%RUBY_DOCDIR%%/rd/ja/dev-note.ja.html
-%%RUBY_DOCDIR%%/rd/ja/dev-note.rd.ja
-%%RUBY_DOCDIR%%/rd/ja/rd-draft.ja.html
-%%RUBY_DOCDIR%%/rd/ja/rd-draft.rd.ja
-@dirrm %%RUBY_DOCDIR%%/rd/ja
-@dirrm %%RUBY_DOCDIR%%/rd
+%%PORTDOCS%%@comment %%RUBY_DOCDIR%%/amstd/ja/amstd-ja.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/optparse/ja/optparse.ja.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/optparse/optparse.en.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rd/README.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rd/rd-draft.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rd/rd-draft.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rd/ja/README.ja.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rd/ja/dev-note.ja.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rd/ja/dev-note.rd.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rd/ja/rd-draft.ja.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rd/ja/rd-draft.rd.ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rd/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rd

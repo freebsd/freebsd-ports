@@ -1,5 +1,5 @@
 %%RUBY_SITEARCHLIBDIR%%/textbuf.so
-%%RUBY_DOCDIR%%/textbuf/README.en
-%%RUBY_DOCDIR%%/textbuf/ja/README.ja
-@dirrm %%RUBY_DOCDIR%%/textbuf/ja
-@dirrm %%RUBY_DOCDIR%%/textbuf
+%%PORTDOCS%%%%RUBY_DOCDIR%%/textbuf/README.en
+%%PORTDOCS%%%%RUBY_DOCDIR%%/textbuf/ja/README.ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/textbuf/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/textbuf

@@ -1,4 +1,4 @@
 %%RUBY_SITEARCHLIBDIR%%/iconv.so
-%%RUBY_DOCDIR%%/iconv/iconv.html
-%%RUBY_DOCDIR%%/iconv/rd.css
-@dirrm %%RUBY_DOCDIR%%/iconv
+%%PORTDOCS%%%%RUBY_DOCDIR%%/iconv/iconv.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/iconv/rd.css
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/iconv

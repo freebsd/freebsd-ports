@@ -1,21 +1,21 @@
 %%RUBY_SITEARCHLIBDIR%%/narray.so
 %%RUBY_SITELIBDIR%%/narray_ext.rb
 %%RUBY_SITELIBDIR%%/nmatrix.rb
-%%RUBY_DOCDIR%%/narray/ja/README.jp
-%%RUBY_DOCDIR%%/narray/ja/SPEC.jp
-%%RUBY_DOCDIR%%/narray/ChangeLog
-%%RUBY_DOCDIR%%/narray/README.en
-%%RUBY_DOCDIR%%/narray/SPEC.en
-@dirrm %%RUBY_DOCDIR%%/narray/ja
-@dirrm %%RUBY_DOCDIR%%/narray
-%%RUBY_EXAMPLESDIR%%/narray/add.rb
-%%RUBY_EXAMPLESDIR%%/narray/add_int.rb
-%%RUBY_EXAMPLESDIR%%/narray/lu.rb
-%%RUBY_EXAMPLESDIR%%/narray/mat.rb
-%%RUBY_EXAMPLESDIR%%/narray/mul.rb
-%%RUBY_EXAMPLESDIR%%/narray/mul2.rb
-%%RUBY_EXAMPLESDIR%%/narray/mul_comp.rb
-%%RUBY_EXAMPLESDIR%%/narray/mul_int.rb
-%%RUBY_EXAMPLESDIR%%/narray/mybench.rb
-%%RUBY_EXAMPLESDIR%%/narray/solve.rb
-@dirrm %%RUBY_EXAMPLESDIR%%/narray
+%%PORTDOCS%%%%RUBY_DOCDIR%%/narray/ja/README.jp
+%%PORTDOCS%%%%RUBY_DOCDIR%%/narray/ja/SPEC.jp
+%%PORTDOCS%%%%RUBY_DOCDIR%%/narray/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/narray/README.en
+%%PORTDOCS%%%%RUBY_DOCDIR%%/narray/SPEC.en
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/narray/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/narray
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/narray/add.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/narray/add_int.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/narray/lu.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/narray/mat.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/narray/mul.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/narray/mul2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/narray/mul_comp.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/narray/mul_int.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/narray/mybench.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/narray/solve.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/narray

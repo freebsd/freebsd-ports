@@ -16,7 +16,7 @@ bin/irb%%_RUBY_SUFFIX%%
 %%RUBY_LIBDIR%%/irb/workspace-binding.rb
 %%RUBY_LIBDIR%%/irb/xmp.rb
 @dirrm %%RUBY_LIBDIR%%/irb
-%%RUBY_DOCDIR%%/irb/README
-%%RUBY_DOCDIR%%/irb/README-add
-%%RUBY_DOCDIR%%/irb/README-install
-@dirrm %%RUBY_DOCDIR%%/irb
+%%PORTDOCS%%%%RUBY_DOCDIR%%/irb/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/irb/README-add
+%%PORTDOCS%%%%RUBY_DOCDIR%%/irb/README-install
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/irb

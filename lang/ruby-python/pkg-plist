@@ -1,26 +1,26 @@
 %%RUBY_SITEARCHLIBDIR%%/python.so
-%%RUBY_EXAMPLESDIR%%/python/Lib/BaseHTTPServer.rb
-%%RUBY_EXAMPLESDIR%%/python/Lib/README
-%%RUBY_EXAMPLESDIR%%/python/Lib/base64.rb
-%%RUBY_EXAMPLESDIR%%/python/Lib/rfc822.rb
-%%RUBY_EXAMPLESDIR%%/python/Lib/urllib.rb
-%%RUBY_EXAMPLESDIR%%/python/hello.rb
-%%RUBY_EXAMPLESDIR%%/python/html.py
-%%RUBY_EXAMPLESDIR%%/python/html.rb
-%%RUBY_DOCDIR%%/python/ja/README.ja
-%%RUBY_DOCDIR%%/python/ja/Mapping.html
-%%RUBY_DOCDIR%%/python/ja/Object.html
-%%RUBY_DOCDIR%%/python/ja/Py.html
-%%RUBY_DOCDIR%%/python/ja/Sequence.html
-%%RUBY_DOCDIR%%/python/ja/index.html
-%%RUBY_DOCDIR%%/python/ChangeLog
-%%RUBY_DOCDIR%%/python/README
-%%RUBY_DOCDIR%%/python/Mapping.html
-%%RUBY_DOCDIR%%/python/Object.html
-%%RUBY_DOCDIR%%/python/Py.html
-%%RUBY_DOCDIR%%/python/Sequence.html
-%%RUBY_DOCDIR%%/python/index.html
-@dirrm %%RUBY_EXAMPLESDIR%%/python/Lib
-@dirrm %%RUBY_EXAMPLESDIR%%/python
-@dirrm %%RUBY_DOCDIR%%/python/ja
-@dirrm %%RUBY_DOCDIR%%/python
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/python/Lib/BaseHTTPServer.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/python/Lib/README
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/python/Lib/base64.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/python/Lib/rfc822.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/python/Lib/urllib.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/python/hello.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/python/html.py
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/python/html.rb
+%%PORTDOCS%%%%RUBY_DOCDIR%%/python/ja/README.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/python/ja/Mapping.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/python/ja/Object.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/python/ja/Py.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/python/ja/Sequence.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/python/ja/index.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/python/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/python/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/python/Mapping.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/python/Object.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/python/Py.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/python/Sequence.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/python/index.html
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/python/Lib
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/python
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/python/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/python

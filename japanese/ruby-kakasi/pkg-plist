@@ -1,11 +1,11 @@
 bin/wdcnt
 %%RUBY_SITEARCHLIBDIR%%/kakasi.so
-%%RUBY_EXAMPLESDIR%%/kakasi/ja/test.rb
-@dirrm %%RUBY_EXAMPLESDIR%%/kakasi/ja
-@dirrm %%RUBY_EXAMPLESDIR%%/kakasi
-%%RUBY_DOCDIR%%/kakasi/ChangeLog
-%%RUBY_DOCDIR%%/kakasi/README
-%%RUBY_DOCDIR%%/kakasi/wdcnt.html
-%%RUBY_DOCDIR%%/kakasi/ja/README.jp
-@dirrm %%RUBY_DOCDIR%%/kakasi/ja
-@dirrm %%RUBY_DOCDIR%%/kakasi
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/kakasi/ja/test.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/kakasi/ja
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/kakasi
+%%PORTDOCS%%%%RUBY_DOCDIR%%/kakasi/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/kakasi/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/kakasi/wdcnt.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/kakasi/ja/README.jp
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/kakasi/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/kakasi

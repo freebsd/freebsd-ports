@@ -1,10 +1,10 @@
 %%RUBY_SITEARCHLIBDIR%%/_filelock.so
 %%RUBY_SITELIBDIR%%/filelock.rb
-%%RUBY_EXAMPLESDIR%%/filelock/test.rb
-%%RUBY_EXAMPLESDIR%%/filelock/tst1.rb
-%%RUBY_EXAMPLESDIR%%/filelock/tst2.rb
-%%RUBY_EXAMPLESDIR%%/filelock/tst3.rb
-%%RUBY_EXAMPLESDIR%%/filelock/tst4.rb
-@dirrm %%RUBY_EXAMPLESDIR%%/filelock
-%%RUBY_DOCDIR%%/filelock/README
-@dirrm %%RUBY_DOCDIR%%/filelock
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/filelock/test.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/filelock/tst1.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/filelock/tst2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/filelock/tst3.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/filelock/tst4.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/filelock
+%%PORTDOCS%%%%RUBY_DOCDIR%%/filelock/README
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/filelock

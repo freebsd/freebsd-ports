@@ -11,26 +11,26 @@ bin/y2racc
 %%RUBY_SITELIBDIR%%/racc/raccs.rb
 %%RUBY_SITELIBDIR%%/racc/state.rb
 %%RUBY_SITELIBDIR%%/racc/ucodep.rb
-%%RUBY_EXAMPLESDIR%%/racc/calc-ja.y
-%%RUBY_EXAMPLESDIR%%/racc/calc.y
-%%RUBY_EXAMPLESDIR%%/racc/conflict.y
-%%RUBY_EXAMPLESDIR%%/racc/lalr.y
-%%RUBY_EXAMPLESDIR%%/racc/syntax.y
-%%RUBY_EXAMPLESDIR%%/racc/yyerr.y
-%%RUBY_DOCDIR%%/racc/ja/changes.html
-%%RUBY_DOCDIR%%/racc/ja/command.html
-%%RUBY_DOCDIR%%/racc/ja/debug.html
-%%RUBY_DOCDIR%%/racc/ja/grammer.html
-%%RUBY_DOCDIR%%/racc/ja/index.html
-%%RUBY_DOCDIR%%/racc/ja/parser.html
-%%RUBY_DOCDIR%%/racc/ja/usage.html
-%%RUBY_DOCDIR%%/racc/changes.html
-%%RUBY_DOCDIR%%/racc/command.html
-%%RUBY_DOCDIR%%/racc/debug.html
-%%RUBY_DOCDIR%%/racc/grammer.html
-%%RUBY_DOCDIR%%/racc/index.html
-%%RUBY_DOCDIR%%/racc/parser.html
-%%RUBY_DOCDIR%%/racc/usage.html
-@dirrm %%RUBY_EXAMPLESDIR%%/racc
-@dirrm %%RUBY_DOCDIR%%/racc/ja
-@dirrm %%RUBY_DOCDIR%%/racc
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/racc/calc-ja.y
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/racc/calc.y
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/racc/conflict.y
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/racc/lalr.y
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/racc/syntax.y
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/racc/yyerr.y
+%%PORTDOCS%%%%RUBY_DOCDIR%%/racc/ja/changes.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/racc/ja/command.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/racc/ja/debug.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/racc/ja/grammer.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/racc/ja/index.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/racc/ja/parser.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/racc/ja/usage.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/racc/changes.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/racc/command.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/racc/debug.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/racc/grammer.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/racc/index.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/racc/parser.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/racc/usage.html
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/racc
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/racc/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/racc

@@ -9,8 +9,8 @@ etc/rskkserv.conf.sample
 @dirrm %%RUBY_SITELIBDIR%%/skkserv
 libexec/rskkserv
 @unexec rm -f %D/share/skk/SKK-JISYO.[LMS].[an] 2>/dev/null || true
-%%RUBY_DOCDIR%%/rskkserv/ChangeLog
-%%RUBY_DOCDIR%%/rskkserv/ja/README
-%%RUBY_DOCDIR%%/rskkserv/ja/TODO
-@dirrm %%RUBY_DOCDIR%%/rskkserv/ja
-@dirrm %%RUBY_DOCDIR%%/rskkserv
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rskkserv/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rskkserv/ja/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rskkserv/ja/TODO
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rskkserv/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rskkserv

@@ -3,5 +3,5 @@
 %%RUBY_SITELIBDIR%%/gplot/PlotItem.rb
 %%RUBY_SITELIBDIR%%/gplot/Stream.rb
 @dirrm %%RUBY_SITELIBDIR%%/gplot
-%%RUBY_DOCDIR%%/gnuplot/README
-@dirrm %%RUBY_DOCDIR%%/gnuplot
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gnuplot/README
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/gnuplot

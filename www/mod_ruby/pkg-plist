@@ -1,8 +1,8 @@
 libexec/apache/mod_ruby.so
 @exec %D/sbin/apxs -e -A -n ruby %D/%F
 @unexec %D/sbin/apxs -e -A -n ruby %D/%F
-%%RUBY_DOCDIR%%/mod_ruby/ChangeLog
-%%RUBY_DOCDIR%%/mod_ruby/README.en
-%%RUBY_DOCDIR%%/mod_ruby/ja/README.ja
-@dirrm %%RUBY_DOCDIR%%/mod_ruby/ja
-@dirrm %%RUBY_DOCDIR%%/mod_ruby
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/README.en
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/ja/README.ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mod_ruby/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mod_ruby
