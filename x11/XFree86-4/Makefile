@@ -48,9 +48,12 @@ pre-everything::
 	@${ECHO_MSG} "upgrade XFree86.  If you simply type 'make install' it may use over 2GB to build"
 	@${ECHO_MSG} "all of the subports.  You can install the ports singly if you are low on space."
 
-.if make(package) && empty(DEPENDS_TARGET:Mpackage)
+.if make(package)
+.if !defined(DEPENDS_TARGET:Mpackage) || empty(DEPENDS_TARGET:Mpackage)
 DEPENDS_TARGET="package"
 .endif
+.endif
+
 .undef NOCLEANDEPENDS
 
 do-install:	# empty
