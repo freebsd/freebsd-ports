@@ -8,10 +8,10 @@
 
 DISTNAME=	bvi-1.2.0
 CATEGORIES=	editors
-MASTER_SITES=	http://bvi.linuxbox.com/download/
+MASTER_SITES=	http://bvi.linuxave.net/download/
 EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	jedgar@fxp.org
+MAINTAINER=	jedgar@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 
