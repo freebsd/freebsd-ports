@@ -25,6 +25,9 @@ pre-fetch:
 	${SH} pkg-install apr-devel PRE-INSTALL
 
 pre-configure:
+	(find ${WRKDIR}/apr-util/ -name Makefile.in -exec \
+	 ${PERL} -pi -e 's/\@APRUTIL_INCLUDES\@ \@APRUTIL_PRIV_INCLUDES\@/\@APRUTIL_PRIV_INCLUDES\@ \@APRUTIL_INCLUDES\@/g' \{\} \;)
+
 	(cd ${WRKDIR}/apr/ && ./buildconf)
 	(cd ${WRKDIR}/apr-util/ && ./buildconf)
 
