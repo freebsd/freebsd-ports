@@ -1,0 +1,14 @@
+--- cgi-bin/mfs.bak	Wed Oct 22 09:49:43 1997
++++ cgi-bin/mfs	Wed Nov 17 16:21:17 1999
+@@ -15,7 +15,11 @@
+ $file = $ENV{'QUERY_STRING'};
+ 
+ $indexdir =~ s/\'//g;
++$indexdir =~ s/\\/\\\\/g;
++$indexdir =~ s/\0//g;
+ $file =~ s/\'//g;
++$file =~ s/\\/\\\\/g;
++$file =~ s/\0//g;
+ 
+ if (!$indexdir) {
+ 	print "Content-type: text/html\n\n";

@@ -1,5 +1,5 @@
 --- cgi-bin/webglimpse.orig	Mon Jul 27 22:59:49 1998
-+++ cgi-bin/webglimpse	Tue Nov  3 13:15:40 1998
++++ cgi-bin/webglimpse	Wed Nov 17 16:51:58 1999
 @@ -39,6 +39,9 @@
  # **** **** **** ****    CONFIGURABLE VARIABLES     **** **** **** ****
  # We need some of these to find our libraries, so wrap them in a BEGIN block
@@ -36,7 +36,20 @@
  
  }
  
-@@ -216,10 +224,20 @@
+@@ -187,10 +195,12 @@
+ 
+ 
+ $indexdir = $path_info;
++$indexdir =~ s|\0||g;
+ 
+ # Check that indexdir has no single quote characters; it will be used on a command line
+ $indexdir =~ s/[\']//g;
+ 
++$indexdir =~ s/\\/\\\\/g;
+ 
+ # Added check for ".." as per CERT 11/7/97 --GB
+ if ($indexdir =~ /\.\./) {
+@@ -216,10 +226,20 @@
  $nhhops = 0;
  $traverse_type = 0;
  $urlpath = '';
@@ -58,7 +71,38 @@
  
  # Ensure that Glimpse is available on this machine
  -x $GLIMPSE_LOC || &err_noglimpse($GLIMPSE_LOC) ;
-@@ -510,7 +528,7 @@
+@@ -232,6 +252,9 @@
+ 
+ $QS_query =~ s|\+| |g;
+ $QS_query =~ s|%(\w\w)|sprintf("%c", hex($1))|ge;
++$QS_query =~ s|\0||g;
++$QS_query =~ s|^\-+||;
++$QS_query =~ s|\\|\\\\|g;
+ $pquery = $QS_query;
+ $QS_query =~ s|\'|\'\"\'\"\'|g;
+ 
+@@ -247,8 +270,11 @@
+ $OPT_age = '';
+ $OPT_age = "-Y $QS_age" if $QS_age =~ /^[0-9]+$/;
+ # print "OPT_age = $OPT_age<br>\n";
++$QS_filter =~ s/\0//g;
++$QS_filter =~ s/\\/\\\\/g;
+ $QS_filter =~ s/\./\\./g;
+ $QS_filter =~ s/\'//g;
++$QS_filter =~ s/^\-+//;
+ $OPT_filter = '';
+ $OPT_filter="-F '$QS_filter'"	if $QS_filter;
+ 
+@@ -382,7 +408,7 @@
+ 	# Security note: using $indexdir on the command line could be dangerous if a directory really exists whose name contains shell control characters. 10/17/97 --GB
+ 	#$cmd = "$GLIMPSE_LOC -j -z -y $OPT_file $OPT_linenums $OPT_age $OPT_case $OPT_whole $OPT_errors -H . " . Added -U -W --> bgopal oct/6/96
+ 	$cmd = "$GLIMPSE_LOC -U -W -j -z -y $OPT_file $OPT_linenums $OPT_age $OPT_case $OPT_whole $OPT_errors -H $indexdir " .
+-	 "$OPT_filter '$QS_query' 2>&1 |";
++	 "$OPT_filter '$QS_query' |";
+ 
+ 	# Fool perl -T into accepting $cmd for execution.  (as per Peter Bigot) --GB 10/17/97
+ 	# We assume that we have sufficiently checked the parameters to be safe at this point.  
+@@ -510,12 +536,12 @@
  		$charcount = 0;
  		if ($fcount>=$maxfiles) {
  
@@ -66,8 +110,28 @@
 +			$mOutput->limitMaxFiles($maxfiles);
  
  			$file = "";
- # Keep the real # of lines retrieved!  The "at least" message can be in the output module.
-@@ -667,7 +685,7 @@
+-# Keep the real # of lines retrieved!  The "at least" message can be in the output module.
+-#			$fcount = "at least $fcount";
+-#			$lcount = "at least $lcount";
++
++			$fcount++;
++
+ 			last line;
+ 		}
+ 		print $mOutput->{end_file_marker} if ( $prevfile ne "" );
+@@ -620,9 +646,9 @@
+ 
+ # If we jumped out because of max files, we already printed the necessary ending codes
+ # otherwise, do it now.
+-($fcount < $maxfiles) && print $mOutput->makeEndHits($file);
++($fcount <= $maxfiles) && print $mOutput->makeEndHits($file);
+ 
+-if (($fcount >= $maxfiles) && $USE_CACHE && $mCache && $HAVE_CUSTOM_OUTPUT) {
++if (($fcount > $maxfiles) && $USE_CACHE && $mCache && $HAVE_CUSTOM_OUTPUT) {
+ 	print $mOutput->makeNextHits($indexdir, $cachefile, $QS_query, $maxfiles, $maxlines, $maxchars);
+ }
+ 
+@@ -667,7 +693,7 @@
  sub err_noneighborhood {
  
  	local($_) = @_;
@@ -76,7 +140,7 @@
  	# neighborhood does not exist
  	print <<EOM;
  <hr>
-@@ -683,6 +701,7 @@
+@@ -683,6 +709,7 @@
  
  ##########################################################################
  sub err_noquery {
@@ -84,7 +148,7 @@
     #	The script was called without a query. 
     #	Provide an ISINDEX type response for browsers
     #	without form support.
-@@ -732,6 +751,7 @@
+@@ -732,6 +759,7 @@
  ##########################################################################
  sub err_noglimpse {
  local($_) = @_;
@@ -92,7 +156,7 @@
     #
     # Glimpse was not found
     # Report a useful message
-@@ -756,6 +776,7 @@
+@@ -756,6 +784,7 @@
  ##########################################################################
  sub err_badglimpse {
     my(@glines) = @_;
@@ -100,7 +164,7 @@
     #
     # Glimpse had an error
     # Report a useful message
-@@ -786,6 +807,7 @@
+@@ -786,6 +815,7 @@
  ##########################################################################
  sub err_noindex {
  	local ($indexdir) = @_;
@@ -108,7 +172,7 @@
  # Glimpse index was not found
  # Give recommendations for indexing
  	print "<TITLE>Glimpse Index not found</TITLE>\n";
-@@ -801,6 +823,7 @@
+@@ -801,6 +831,7 @@
  }
  ##########################################################################
  sub err_insecurepath {
@@ -116,7 +180,7 @@
  # Path user requested contains ".." characters
  	print "<TITLE>Path not accepted</TITLE>\n";
  	print "</HEAD>\n";
-@@ -814,6 +837,7 @@
+@@ -814,6 +845,7 @@
  
  ##########################################################################
  sub err_conf {
@@ -124,7 +188,7 @@
  # Glimpse archive Configuration File was not found
  	print "<TITLE>Glimpse Archive Configuration File not found</TITLE>\n";
  	print "</HEAD>\n";
-@@ -827,6 +851,7 @@
+@@ -827,6 +859,7 @@
  
  ##########################################################################
  sub err_badquery {
@@ -132,7 +196,7 @@
  	print "<TITLE>Query is too broad</TITLE>\n";
  	print "</HEAD>\n";
  	print "<BODY>\n";
-@@ -840,6 +865,7 @@
+@@ -840,6 +873,7 @@
  
  ##########################################################################
  sub err_locked {
