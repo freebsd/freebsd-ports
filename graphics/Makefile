@@ -16,9 +16,7 @@
     SUBDIR += aoi
     SUBDIR += aqsis
     SUBDIR += autotrace
-    SUBDIR += avidemux
     SUBDIR += aview
-    SUBDIR += avinfo
     SUBDIR += backfract
     SUBDIR += barcode
     SUBDIR += bbrb
@@ -26,7 +24,6 @@
     SUBDIR += blender-devel
     SUBDIR += cadubi
     SUBDIR += camediaplay
-    SUBDIR += camserv
     SUBDIR += chbg
     SUBDIR += claraocr
     SUBDIR += cqcam
@@ -45,14 +42,11 @@
     SUBDIR += dore
     SUBDIR += dri-devel
     SUBDIR += drm-kmod
-    SUBDIR += dtv
     SUBDIR += duhdraw
-    SUBDIR += dumpmpeg
     SUBDIR += dynamechs
     SUBDIR += ecg2png
     SUBDIR += electriceyes
     SUBDIR += enfle
-    SUBDIR += enjoympeg
     SUBDIR += entice
     SUBDIR += eog
     SUBDIR += eog2
@@ -75,7 +69,6 @@
     SUBDIR += fractorama
     SUBDIR += frontline
     SUBDIR += fujiplay
-    SUBDIR += fxtv
     SUBDIR += g2
     SUBDIR += g3dviewer
     SUBDIR += gauche-gl
@@ -113,7 +106,6 @@
     SUBDIR += gnofract4d
     SUBDIR += gnomecanvas
     SUBDIR += gnomeiconedit
-    SUBDIR += gopchop
     SUBDIR += gozer
     SUBDIR += gpaint
     SUBDIR += gphoto2
@@ -134,7 +126,6 @@
     SUBDIR += guilib
     SUBDIR += gview
     SUBDIR += gwenview
-    SUBDIR += gxanim
     SUBDIR += hdf
     SUBDIR += hdf5
     SUBDIR += hobbes-icons-xpm
@@ -185,10 +176,8 @@
     SUBDIR += libart_lgpl2
     SUBDIR += libaux
     SUBDIR += libdjvu++
-    SUBDIR += libdvbpsi
     SUBDIR += libexif
     SUBDIR += libexif-gtk
-    SUBDIR += libfame
     SUBDIR += libflash
     SUBDIR += libfpx
     SUBDIR += libgdgeda
@@ -200,7 +189,6 @@
     SUBDIR += liblug
     SUBDIR += libmng
     SUBDIR += libmorph
-    SUBDIR += libquicktime
     SUBDIR += librsvg
     SUBDIR += librsvg2
     SUBDIR += libungif
@@ -224,22 +212,10 @@
     SUBDIR += metapixel
     SUBDIR += mgp-gallery
     SUBDIR += ming
-    SUBDIR += mmsclient
     SUBDIR += morpheus
-    SUBDIR += mpeg
-    SUBDIR += mpeg2codec
-    SUBDIR += mpeg2play
-    SUBDIR += mpeg_encode
-    SUBDIR += mpeg_play
-    SUBDIR += mpeg_stat
-    SUBDIR += mpegedit
-    SUBDIR += mpgtx
-    SUBDIR += mplex
     SUBDIR += mrsidviewer
-    SUBDIR += mtv
     SUBDIR += multivideo
     SUBDIR += netpbm
-    SUBDIR += netshow
     SUBDIR += nurbs++
     SUBDIR += ocaml-images
     SUBDIR += ocaml-lablgl
@@ -292,7 +268,6 @@
     SUBDIR += pornview
     SUBDIR += povray
     SUBDIR += povray31
-    SUBDIR += ppm2fli
     SUBDIR += ppmcaption
     SUBDIR += proj
     SUBDIR += pstoedit
@@ -359,12 +334,9 @@
     SUBDIR += showimg
     SUBDIR += simage
     SUBDIR += sketch
-    SUBDIR += smpeg
-    SUBDIR += smpeg-xmms
     SUBDIR += sng
     SUBDIR += sodipodi
     SUBDIR += spigot
-    SUBDIR += splitmpg
     SUBDIR += springgraph
     SUBDIR += stamp
     SUBDIR += svg2swf
@@ -379,10 +351,7 @@
     SUBDIR += tiff
     SUBDIR += tiff2png
     SUBDIR += tifmerge
-    SUBDIR += tkxanim
     SUBDIR += togl
-    SUBDIR += totem
-    SUBDIR += transcode
     SUBDIR += truevision
     SUBDIR += tulip
     SUBDIR += txtmerge
@@ -393,7 +362,6 @@
     SUBDIR += vid
     SUBDIR += view3ds
     SUBDIR += visionegg
-    SUBDIR += vlc
     SUBDIR += vp
     SUBDIR += vterrain-apps
     SUBDIR += vterrain-sdk
@@ -401,9 +369,7 @@
     SUBDIR += white_dune
     SUBDIR += wmgrabimage
     SUBDIR += wmicons
-    SUBDIR += xanim
     SUBDIR += xaos
-    SUBDIR += xawtv
     SUBDIR += xbarcode
     SUBDIR += xbmbrowser
     SUBDIR += xdgagrab
@@ -415,8 +381,6 @@
     SUBDIR += xfractint
     SUBDIR += xglurbules
     SUBDIR += xgrasp
-    SUBDIR += xine_d4d_plugin
-    SUBDIR += xine_d5d_plugin
     SUBDIR += xli
     SUBDIR += xmagv
     SUBDIR += xmandel
@@ -436,8 +400,6 @@
     SUBDIR += xmms-xvs
     SUBDIR += xmorph
     SUBDIR += xmountains
-    SUBDIR += xmovie
-    SUBDIR += xmps
     SUBDIR += xmrm
     SUBDIR += xnview
     SUBDIR += xpaint
@@ -447,7 +409,6 @@
     SUBDIR += xpx
     SUBDIR += xrml
     SUBDIR += xsane
-    SUBDIR += xtheater
     SUBDIR += xv
     SUBDIR += xv-m17n
     SUBDIR += xwpick

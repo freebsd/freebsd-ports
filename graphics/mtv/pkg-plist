@@ -1,8 +1,0 @@
-bin/mtv
-bin/mtvp
-%%PORTDOCS%%share/doc/mtv/LICENSE
-%%PORTDOCS%%share/doc/mtv/README
-%%PORTDOCS%%share/doc/mtv/README-Fullscreen
-%%PORTDOCS%%share/doc/mtv/README-mtv-redhat
-%%PORTDOCS%%share/doc/mtv/release-notes.html
-%%PORTDOCS%%@dirrm share/doc/mtv
