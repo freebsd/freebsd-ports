@@ -1,12 +1,12 @@
 # New ports collection makefile for:	squid
-# Version required:	2.2.STABLE3
+# Version required:	2.2.STABLE5
 # Date created:		Thu Nov  7 00:53:18 WST 1996
 # Whom:			Peter Wemm <peter@freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	squid-2.2.STABLE4
+DISTNAME=	squid-2.2.STABLE5
 PKGNAME=	squid-2.2
 CATEGORIES=	www
 MASTER_SITES=  \
