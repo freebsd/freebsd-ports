@@ -18,7 +18,6 @@ LIB_DEPENDS=    intl.1:${PORTSDIR}/devel/gettext
 
 USE_BZIP2=      YES
 NO_LATEST_LINK=	YES
-WRKSRC=         ${WRKDIR}/lynx2-8-4
 GNU_CONFIGURE=  YES
 CONFIGURE_ARGS= --with-screen=ncurses --with-zlib --libdir="${L_LIB}" \
 		--enable-nsl-fork --enable-persistent-cookies \
