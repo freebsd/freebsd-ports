@@ -1,4 +1,5 @@
 bin/anjuta
+bin/anjuta-bin
 bin/anjuta_import.sh
 bin/anjuta_launcher
 lib/anjuta/libanjuta_clsGen.a
