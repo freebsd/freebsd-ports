@@ -30,6 +30,12 @@ MAN1=		onyx.1 onyx_config.1
 
 PLIST_SUB=	ONYX_VERSION=${PORTVERSION}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64"
+BROKEN=		"Coredump during build on ia64"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
@@ -43,4 +49,4 @@ post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/onyx
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
