@@ -1,18 +1,13 @@
-$NetBSD: patch-aa,v 1.2 2000/05/20 13:32:14 sommerfeld Exp $
-
---- wrapzap.orig	Thu Jan 11 12:23:23 2001
-+++ wrapzap	Mon Jan 15 00:49:46 2001
-@@ -16,26 +16,9 @@
+--- wrapzap.orig	Mon Apr  2 17:24:56 2001
++++ wrapzap	Tue Apr 17 09:08:03 2001
+@@ -16,25 +16,9 @@
  #
  
  # modify this to match your install
 -zapper=/usr/local/script/squid_redirect
-+zapper=@@PREFIX@@/libexec/squid_redirect
- 
+-
 -ZAP_MODE=				# or "CLEAR"
 -ZAP_BASE=http://adzap.cs.zip.com.au	# a local web server will be better
--ZAP_CHAINING=				# set to "1" or "FULL" if chaining
--					# redirectors; see web page
 -ZAP_PREMATCH=				# pathname of extra pattern file
 -					# for patterns to preempt the stock
 -					# zapper
@@ -27,7 +22,9 @@ $NetBSD: patch-aa,v 1.2 2000/05/20 13:32:14 sommerfeld Exp $
 -STUBURL_ADPOPUP=$ZAP_BASE/closepopup.html
 -STUBURL_COUNTER=$ZAP_BASE/counter.gif
 -STUBURL_WEBBUG=$ZAP_BASE/webbug.gif
-+. %PREFIX%/etc/adzap.conf
++zapper=@@PREFIX@@/libexec/squid_redirect
  
- export ZAP_MODE ZAP_BASE ZAP_CHAINING ZAP_PREMATCH ZAP_POSTMATCH
++. @@PREFIX@@/etc/adzap.conf 
+ export ZAP_MODE ZAP_BASE ZAP_PREMATCH ZAP_POSTMATCH
  export STUBURL_AD STUBURL_ADJS STUBURL_ADHTML STUBURL_ADPOPUP \
+ 	STUBURL_COUNTER STUBURL_WEBBUG
