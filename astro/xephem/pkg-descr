@@ -11,16 +11,10 @@ systems. It ...
     and Earth; Mars' and Jupiter's central meridian longitude; Saturn's rings;
     and Jupiter's Great Red Spot
 
-    supports user-defined objects;
-
-    comes with sample databases of over 20,000 objects in the release kit;
-
-    can access the Hubble Guide Star Catalog from CD-ROM using gscdbd;
-
   Elwood Downey
   ecdowney@noao.edu
   http://iraf.noao.edu/~ecdowney
   August 1995
 
-eric.
+--
 erich@FreeBSD.org

@@ -8,30 +8,15 @@ From the original README...
     is manufactured by Coactive Aesthetics. It was hosted on a NeXT system.
     However, there is no assumptions and/or hardcode values within the
     compiler which would prevent the compiler from working on any 6811 board
-    or on any host system. A port to another board would require an updated
-    crt0.s file which defines where the "pseudo" registers live in the memory
-    map and where the startup code lives. A sample crt0.s file has been
-    included as part of this release.
-
-    The rest of this readme file has some technical notes relating to the
-    port, and installation procedures that can be used in installing the
-    compiler.
+    or on any host system.
 
     Any questions, bug reports, or porting comments/questions should be sent
     to gcc@coactive.com.
 
     Thanks,
-
     Otto
-
-    --
-    Otto Lind                  Coactive Aesthetics
-    otto@coactive.com          P.O. Box 425967, San Francisco, CA 94142
-    netcom!coactive!otto       voice:(415)626-5152    fax:(415)626-6320
 
 You'll probably have to edit ${PREFIX}/lib/gcc-lib/m6811-local/2.6.3/crt0.s
 to suit your hardware.
-
 --
-eric
-erich@rrnet.com
+erich@freebsd.org
