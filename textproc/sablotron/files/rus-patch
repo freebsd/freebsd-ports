@@ -1,6 +1,6 @@
-diff -crN Sablot-0.44/Sablot/engine/enc_cyr.h Sablot-0.44.rus/Sablot/engine/enc_cyr.h
-*** Sablot-0.44/Sablot/engine/enc_cyr.h	Thu Jan  1 03:00:00 1970
---- Sablot/engine/enc_cyr.h	Sun Nov 12 19:08:27 2000
+diff -crN Sablot/engine/enc_cyr.h Sablot/engine/enc_cyr.h
+*** Sablot/engine/enc_cyr.h	Thu Jan  1 03:00:00 1970
+--- Sablot/engine/enc_cyr.h	Thu Feb 22 16:58:56 2001
 ***************
 *** 0 ****
 --- 1,80 ----
@@ -84,30 +84,32 @@ diff -crN Sablot-0.44/Sablot/engine/enc_cyr.h Sablot-0.44.rus/Sablot/engine/enc_
 + };
 + 
 + 
-diff -crN Sablot-0.44/Sablot/engine/output.cpp Sablot-0.44.rus/Sablot/engine/output.cpp
-*** Sablot-0.44/Sablot/engine/output.cpp	Sun Nov 12 19:07:52 2000
---- Sablot/engine/output.cpp	Sun Nov 12 19:12:54 2000
+diff -crN Sablot/engine/output.cpp Sablot/engine/output.cpp
+*** Sablot/engine/output.cpp	Thu Feb 22 17:29:40 2001
+--- Sablot/engine/output.cpp	Thu Feb 22 17:29:48 2001
 ***************
-*** 230,235 ****
---- 230,241 ----
-          return ENC_EUCJP;
-      else if (enc_.eqNoCase((char*) "shift-jis"))
-          return ENC_SJIS;
-+     else if (enc_.eqNoCase((char*) "cp1251"))
-+         return ENC_1251;
+*** 258,263 ****
+--- 258,271 ----
+          return ENC_8859_1;
+      else if (enc_.eqNoCase((char*) "iso-8859-2"))
+          return ENC_8859_2;
 +     else if (enc_.eqNoCase((char*) "koi8-r"))
 +         return ENC_KOI8R;
++     else if (enc_.eqNoCase((char*) "windows-1251"))
++         return ENC_1251;
++     else if (enc_.eqNoCase((char*) "cp1251"))
++         return ENC_1251;
 +     else if (enc_.eqNoCase((char*) "cp866" ))
-+         return ENC_866;
-      else return ENC_UTF8;
-  }
-  
-diff -crN Sablot-0.44/Sablot/engine/parser.cpp Sablot-0.44.rus/Sablot/engine/parser.cpp
-*** Sablot-0.44/Sablot/engine/parser.cpp	Sun Nov 12 19:07:58 2000
---- Sablot/engine/parser.cpp	Sun Nov 12 19:08:27 2000
++          return ENC_866;
+      else if (enc_.eqNoCase((char*) "euc-jp"))
+          return ENC_EUCJP;
+      else if (enc_.eqNoCase((char*) "shift-jis"))
+diff -crN Sablot/engine/parser.cpp Sablot/engine/parser.cpp
+*** Sablot/engine/parser.cpp	Thu Feb 22 17:29:40 2001
+--- Sablot/engine/parser.cpp	Thu Feb 22 17:29:48 2001
 ***************
-*** 41,46 ****
---- 41,48 ----
+*** 40,45 ****
+--- 40,47 ----
   
   // for the windows-1250 encoding:
   #include "enc1250.h"
@@ -117,82 +119,66 @@ diff -crN Sablot-0.44/Sablot/engine/parser.cpp Sablot-0.44.rus/Sablot/engine/par
   
   // 
 ***************
-*** 550,555 ****
---- 552,565 ----
+*** 552,557 ****
+--- 554,567 ----
           theTable = Enc1250;
       else if (strEqNoCase((char*) name,"iso-8859-2"))
           theTable = EncLatin2;
++     else if (strEqNoCase((char*) name,"koi8-r"))
++         theTable = EncKOI8_R;
 +     else if (strEqNoCase((char*) name,"windows-1251"))
 +         theTable = EncCP1251;
 +     else if (strEqNoCase((char*) name,"cp1251"))
 +         theTable = EncCP1251;
-+     else if (strEqNoCase((char*) name,"koi8-r"))
-+         theTable = EncKOI8_R;
 +     else if (strEqNoCase((char*) name,"cp866"))
 +         theTable = EncCP866;
       else
           return 0;
       int i;
-diff -crN Sablot-0.44/Sablot/engine/utf8.cpp Sablot-0.44.rus/Sablot/engine/utf8.cpp
-*** Sablot-0.44/Sablot/engine/utf8.cpp	Sun Nov 12 19:07:59 2000
---- Sablot/engine/utf8.cpp	Sun Nov 12 19:19:05 2000
+diff -crN Sablot/engine/utf8.cpp Sablot/engine/utf8.cpp
+*** Sablot/engine/utf8.cpp	Thu Feb 22 17:29:41 2001
+--- Sablot/engine/utf8.cpp	Thu Feb 22 17:29:48 2001
 ***************
-*** 44,50 ****
+*** 63,69 ****
   #endif
   
   /*  This MUST match the Encoding enum defined in utf8.h  */
-! static char* iconv_encoding[8] =
+! static const char* iconv_encoding[8] =
   {
       "UTF8",
       "UTF16",
---- 44,50 ----
+--- 63,69 ----
   #endif
   
   /*  This MUST match the Encoding enum defined in utf8.h  */
-! static char* iconv_encoding[11] =
+! static const char* iconv_encoding[11] =
   {
       "UTF8",
       "UTF16",
 ***************
-*** 53,59 ****
+*** 71,76 ****
+--- 71,79 ----
+      "ISO-8859-1",
       "ISO-8859-2",
       "CP1250",
++     "KOI8-R",
++     "CP1251",
++     "CP866",
       "EUC-JP",
-!     "SHIFT-JIS"
+      "SHIFT-JIS"
   };
-  
-  int utf8SingleCharLength (const char* text)
---- 53,62 ----
-      "ISO-8859-2",
-      "CP1250",
-      "EUC-JP",
-!     "SHIFT-JIS",
-!     "CP1251",
-!     "KOI8-R",
-!     "CP866"
-  };
-  
-  int utf8SingleCharLength (const char* text)
-diff -crN Sablot-0.44/Sablot/engine/utf8.h Sablot-0.44.rus/Sablot/engine/utf8.h
-*** Sablot-0.44/Sablot/engine/utf8.h	Sun Nov 12 19:07:52 2000
---- Sablot/engine/utf8.h	Sun Nov 12 19:19:18 2000
+diff -crN Sablot/engine/utf8.h Sablot/engine/utf8.h
+*** Sablot/engine/utf8.h	Thu Feb 22 17:29:40 2001
+--- Sablot/engine/utf8.h	Thu Feb 22 17:29:48 2001
 ***************
-*** 50,56 ****
+*** 49,54 ****
+--- 49,57 ----
+      ENC_8859_1,
       ENC_8859_2,
       ENC_1250,
++     ENC_KOI8R,
++     ENC_1251,
++     ENC_866,
       ENC_EUCJP,
-!     ENC_SJIS    
+      ENC_SJIS    
   };
-  
-  extern  int     utf8SingleCharLength(const char* text);
---- 50,59 ----
-      ENC_8859_2,
-      ENC_1250,
-      ENC_EUCJP,
-!     ENC_SJIS,
-!     ENC_1251,
-!     ENC_KOI8R,
-!     ENC_866
-  };
-  
-  extern  int     utf8SingleCharLength(const char* text);
