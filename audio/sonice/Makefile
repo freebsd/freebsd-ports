@@ -23,7 +23,7 @@ NO_BUILD=	yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/sonice.py ${PREFIX}/bin/sonice
-.for file in commatoys ogg
+.for file in comatoys ogg
 	${INSTALL_SCRIPT} ${WRKSRC}/${file}.py ${PYTHON_SITELIBDIR}
 .endfor
 
