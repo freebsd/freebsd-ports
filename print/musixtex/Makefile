@@ -3,7 +3,7 @@
 # Date created:         9 july 1995
 # Whom:                 jmz
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1995/07/15 23:13:58 jmz Exp $
 #
 PKGNAME=        musixtex-3.96
 DISTFILES=      musixtex-T396.tar.gz musixexa-0375.tar.gz
@@ -13,6 +13,7 @@ NO_WRKSUBDIR=	yes
 
 MAINTAINER=	jmz@FreeBSD.org
 
-EXEC_DEPENDS=	tex:${PORTSDIR}/print/tex
+BUILD_DEPENDS=	tex:${PORTSDIR}/print/tex
+RUN_DEPENDS=	tex:${PORTSDIR}/print/tex
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.16 1995/06/24 16:35:40 jmz Exp $
+# $Id: Makefile,v 1.17 1995/06/27 12:56:00 jmz Exp $
 #
 VERSION=	95.06
 DISTNAME=	latex
@@ -14,7 +14,8 @@ DISTFILES=	latex_mf-${VERSION}.tar.gz latex_tfm-${VERSION}.tar.gz \
 
 MAINTAINER=	jmz@FreeBSD.org
 
-EXEC_DEPENDS=	tex:${PORTSDIR}/print/tex
+BUILD_DEPENDS=	tex:${PORTSDIR}/print/tex
+RUN_DEPENDS=	tex:${PORTSDIR}/print/tex
 
 FTPGET=		${FILESDIR}/ftpget
 
