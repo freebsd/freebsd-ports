@@ -1,0 +1,8 @@
+bin/gnomba
+share/locale/fr/LC_MESSAGES/gnomba.mo
+share/locale/ko/LC_MESSAGES/gnomba.mo
+share/locale/pl/LC_MESSAGES/gnomba.mo
+share/locale/ru/LC_MESSAGES/gnomba.mo
+share/locale/wa/LC_MESSAGES/gnomba.mo
+share/gnome/apps/Internet/gnomba.desktop
+share/gnome/pixmaps/gnome-gnomba.png

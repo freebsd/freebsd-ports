@@ -63,6 +63,7 @@
     SUBDIR += gicq
     SUBDIR += gnome-icu
     SUBDIR += gnome-vnc
+    SUBDIR += gnomba
     SUBDIR += gnomenetwork
     SUBDIR += gnu-finger
     SUBDIR += gopher

@@ -1,0 +1,11 @@
+Gnomba is a stab at writing a GUI machine and share browser for the smb
+protocol.  Gnomba allows you to scan any number of subnets for machines
+with smb.  The workgroups, machines and share are shown in a tree-view.
+For each machine you can then view the list of shares, and mount, unmount
+or browse them. 
+
+WWW:  http://gnomba.darkcorner.net/
+
+
+Dmitry Sivachenko,
+dima@Chg.RU
