@@ -26,7 +26,8 @@ case "$1" in
 			case "$1" in
 				restart|start)
 					echo 'To access i2p:'
-					echo 'Point your browser at http://localhost:7657/'
+					echo 'Point your browser at http://localhost:7657/ to access configuration'
+					echo 'Point your browser proxy at http://localhost:4444/ to access i2p network'
 				;;
 			esac
 			exec sh "${I2P_HOME}/${I2P_RC_SCRIPT}" ${1}
