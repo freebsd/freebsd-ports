@@ -20,6 +20,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	josh@tcbug.org
 COMMENT=	The (E)nhanced (P)rogrammable (I)RC-II (C)lient
 
+CONFLICTS=	epic5-*
+
 GNU_CONFIGURE=	yes
 MAN1=		epic.1
 USE_OPENSSL=	yes
