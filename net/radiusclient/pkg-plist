@@ -9,9 +9,13 @@ etc/radiusclient/servers
 include/radiusclient.h
 lib/libradiusclient.la
 lib/libradiusclient.a
+lib/libradiusclient.so
+lib/libradiusclient.so.0.3
 sbin/radlogin
 sbin/radstatus
 sbin/radacct
 sbin/radexample
 sbin/login.radius
 @dirrm etc/radiusclient
+@exec /sbin/ldconfig -m %D/lib
+@unexec /sbin/ldconfig -R
