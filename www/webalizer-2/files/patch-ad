@@ -1,0 +1,38 @@
+--- graphs.c.orig	Tue Jun 15 06:33:40 1999
++++ graphs.c	Sat Jul 31 10:43:48 1999
+@@ -285,7 +285,7 @@
+    /* save gif image */
+    if ((out = fopen(fname, "wb")) != NULL)
+    {
+-      gdImageGif(im, out);
++      gdImagePng(im, out);
+       fclose(out);
+    }
+    /* deallocate memory */
+@@ -501,7 +501,7 @@
+    /* open file for writing */
+    if ((out = fopen(fname, "wb")) != NULL)
+    {
+-      gdImageGif(im, out);
++      gdImagePng(im, out);
+       fclose(out);
+    }
+    /* deallocate memory */
+@@ -614,7 +614,7 @@
+    /* save as gif file */
+    if ( (out = fopen(fname, "wb")) != NULL)
+    {
+-      gdImageGif(im, out);
++      gdImagePng(im, out);
+       fclose(out);
+    }
+    /* deallocate memory */
+@@ -700,7 +700,7 @@
+    /* save gif image */
+    if ((out = fopen(fname, "wb")) != NULL)
+    {
+-      gdImageGif(im, out);
++      gdImagePng(im, out);
+       fclose(out);
+    }
+    /* deallocate memory */
