@@ -1,0 +1,6 @@
+Wanderer is a game similar to Boulderdash, Repton, XOR and others.
+A full description of how to play the game is given upon execution.
+The hiscore table holds only 15 scores, and the name displayed is
+taken from the environment variable NAME. If you wish to have a
+different alias without changing this variable, you can set the
+variable NEWNAME before playing.

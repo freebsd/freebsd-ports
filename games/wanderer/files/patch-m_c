@@ -1,0 +1,11 @@
+$OpenBSD: patch-m_c,v 1.1 2003/05/02 16:14:13 pvalchev Exp $
+--- m.c.orig	Thu Mar 13 04:22:07 2003
++++ m.c	Sun Apr 20 11:09:05 2003
+@@ -20,6 +20,7 @@
+ ***************************************************************************/
+ 
+ 
++#include <stdlib.h>
+ #include <sys/time.h>
+ #include "wand_head.h"
+ 

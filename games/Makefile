@@ -485,6 +485,7 @@
     SUBDIR += vavoom
     SUBDIR += vectoroids
     SUBDIR += virt
+    SUBDIR += wanderer
     SUBDIR += wargus
     SUBDIR += wesnoth
     SUBDIR += wmeyes
