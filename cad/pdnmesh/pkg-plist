@@ -1,30 +1,30 @@
 bin/pdnmesh
-share/pdnmesh/README
-share/pdnmesh/COPYING
-share/pdnmesh/ChangeLog
-share/pdnmesh/tutorial/README
-share/pdnmesh/tutorial/tutorial.sgml.gz
-share/pdnmesh/tutorial/tutorial.pdf.gz
-share/pdnmesh/tutorial/tutorial.html.tgz
-share/pdnmesh/examples/README
-share/pdnmesh/examples/coords.1
-share/pdnmesh/examples/coords.10
-share/pdnmesh/examples/coords.11
-share/pdnmesh/examples/coords.1a
-share/pdnmesh/examples/coords.2
-share/pdnmesh/examples/coords.3
-share/pdnmesh/examples/coords.4
-share/pdnmesh/examples/coords.5
-share/pdnmesh/examples/coords.6
-share/pdnmesh/examples/coords.7
-share/pdnmesh/examples/coords.8
-share/pdnmesh/examples/coords.9
-share/pdnmesh/examples/heat
-share/pdnmesh/examples/flow
-share/pdnmesh/examples/flow.1
-share/pdnmesh/examples/heart
-share/pdnmesh/examples/switch
-share/pdnmesh/examples/trans
-@dirrm share/pdnmesh/examples
-@dirrm share/pdnmesh/tutorial
-@dirrm share/pdnmesh
+%%DATADIR%%/README
+%%DATADIR%%/COPYING
+%%DATADIR%%/ChangeLog
+%%DATADIR%%/tutorial/README
+%%DATADIR%%/tutorial/tutorial.sgml.gz
+%%DATADIR%%/tutorial/tutorial.pdf.gz
+%%DATADIR%%/tutorial/tutorial.html.tgz
+%%DATADIR%%/examples/README
+%%DATADIR%%/examples/coords.1
+%%DATADIR%%/examples/coords.10
+%%DATADIR%%/examples/coords.11
+%%DATADIR%%/examples/coords.1a
+%%DATADIR%%/examples/coords.2
+%%DATADIR%%/examples/coords.3
+%%DATADIR%%/examples/coords.4
+%%DATADIR%%/examples/coords.5
+%%DATADIR%%/examples/coords.6
+%%DATADIR%%/examples/coords.7
+%%DATADIR%%/examples/coords.8
+%%DATADIR%%/examples/coords.9
+%%DATADIR%%/examples/heat
+%%DATADIR%%/examples/flow
+%%DATADIR%%/examples/flow.1
+%%DATADIR%%/examples/heart
+%%DATADIR%%/examples/switch
+%%DATADIR%%/examples/trans
+@dirrm %%DATADIR%%/examples
+@dirrm %%DATADIR%%/tutorial
+@dirrm %%DATADIR%%
