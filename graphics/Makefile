@@ -37,6 +37,7 @@
     SUBDIR += drm-kmod
     SUBDIR += dtv
     SUBDIR += dumpmpeg
+    SUBDIR += dvdrip
     SUBDIR += dynamechs
     SUBDIR += ecg2png
     SUBDIR += electriceyes

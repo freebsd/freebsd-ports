@@ -1,0 +1,8 @@
+This is dvd::rip, a Perl Gtk+ based dvd-ripper. It serves as a
+convenient frontend to transcode and makes ripping and encoding
+DVDs a breeze. It also features a cluster daemon, which can distribute
+encoding jobs over multiple machines.
+
+WWW: http://www.exit1.org/dvdrip/
+
+- Michael Nottebrock <michaelnottebrock@gmx.net>
