@@ -2,7 +2,7 @@
 +++ mime-ja.texi	Sun Dec 27 17:48:34 1998
 @@ -9,6 +9,11 @@
  @node Top, Introduction, (dir), (dir)
- @top FLIM 1.9 MIME 機能説明書
+ @top FLIM 1.12 MIME 機能説明書
  
 +@dircategory The Emacs editor and associated tools
 +@direntry

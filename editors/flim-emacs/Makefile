@@ -1,5 +1,5 @@
 # New ports collection makefile for:	flim for emacs
-# Version required:	1.9.2
+# Version required:	1.12.7
 # Date created:		9 May 1999
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
@@ -8,18 +8,21 @@
 
 DISTNAME=	flim-${FLIM_VER}
 CATEGORIES=	editors elisp
-MASTER_SITES=	ftp://ftp.jaist.ac.jp/pub/GNU/elisp/flim/flim-1.09/
-
+MASTER_SITES=	ftp://ftp.etl.go.jp/pub/mule/flim/flim-1.12/ \
+		ftp://ftp.media.kyoto-u.ac.jp/pub/mule/flim/flim-1.12/ \
+		ftp://ftp.win.or.jp/pub/word/mule/flim/flim-1.12/ \
+		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/emacs/mule/flim/flim-1.12/
 MAINTAINER?=	shige@FreeBSD.org
 
 PORTCLASS?=	master
 
 # distfile version
-FLIM_VER=	1.9.2
+FLIM_VER=	1.12.7
 # setupel filename
 FLIM_SETUPEL=	flim-setupel.el
 # document install directory by install-doc target
 FLIMDOCDIR?=	share/doc/flim
+FLIM_COOKIE=	flim-${EMACS_PORT}-${FLIM_VER}.FreeBSD-packages
 
 .if (${PORTCLASS} == "master")
 # for emacs
@@ -28,8 +31,8 @@ EMACS_PORT=	emacs
 EMACS_VER=	19.34
 EMACS_LIBDIR=		share/${EMACS_NAME}
 EMACS_LIBDIR_WITH_VER=	${EMACS_LIBDIR}/${EMACS_VER}
-# emacs requires *-setupel.el
-REQUIRE_SETUPEL=  YES
+# whether emacs requires *-setupel.el
+REQUIRE_SETUPEL= YES
 .endif
 
 # target name for make build
@@ -38,11 +41,11 @@ ALL_TARGET?=	elc
 .if defined(EMACS_PORT)
 PKGNAME=	flim-${EMACS_PORT}-${FLIM_VER}
 EMACS_CMD=	${PREFIX}/bin/${EMACS_NAME}-${EMACS_VER}
-BUILD_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
-.if defined(HAVE_COMMON_PORT) && (${HAVE_COMMON_PORT} == "YES")
-RUN_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}-common
+BUILD_DEPENDS+=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
+.if defined(HAS_COMMON_PORT) && (${HAS_COMMON_PORT} == "YES")
+RUN_DEPENDS+=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}-common
 .else
-RUN_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
+RUN_DEPENDS+=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
 .endif
 SCRIPTS_ENV+=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER} \
 		EMACS_LIBDIR_WITH_VER=${EMACS_LIBDIR_WITH_VER} \
@@ -51,8 +54,9 @@ SCRIPTS_ENV+=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER} \
 PLIST_SUB+=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER} \
 		EMACS_LIBDIR_WITH_VER=${EMACS_LIBDIR_WITH_VER} \
 		EMACS_PACKAGESDIR=${EMACS_PACKAGESDIR} \
-		FLIMDOCDIR=${FLIMDOCDIR} FLIM_SETUPEL=${FLIM_SETUPEL}
-MAKE_FLAGS+=	EMACS=${EMACS_CMD}
+		FLIMDOCDIR=${FLIMDOCDIR} FLIM_SETUPEL=${FLIM_SETUPEL} \
+		FLIM_COOKIE=${FLIM_COOKIE}
+MAKE_FLAGS+=	EMACS=${EMACS_CMD} XEMACS=${EMACS_CMD}
 .if (${EMACS_VER} == "19.34")
 # depends on custom: emacs-19.34 or mule-19.34
 BUILD_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR_WITH_VER}/site-lisp/custom.el:${PORTSDIR}/editors/custom-${EMACS_PORT}
@@ -74,8 +78,10 @@ RUN_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${PORTSDIR
 	@${FALSE}
 .endif
 
+.if !defined(BUILD_INFO_BY_EMACS) || (${BUILD_INFO_BY_EMACS} == "NO")
 # info files JIS to EUC
 BUILD_DEPENDS+=	nkf:${PORTSDIR}/japanese/nkf
+.endif
 
 pre-configure:
 .if defined(REQUIRE_SETUPEL) && (${REQUIRE_SETUPEL} == "YES")
@@ -91,9 +97,16 @@ MAKEINFO_EMACS_FLAGS=	-e texinfo-format-buffer -f save-buffer
 
 
 post-build:
+.if defined(BUILD_INFO_BY_EMACS) && (${BUILD_INFO_BY_EMACS} == "YES")
+	@${MAKE} info-build-by-emacs
+.else
 	@${MAKE} info-build
+.endif
 
 post-install:
+# install package-cookie
+	@${MKDIR} -p ${PREFIX}/share/flim
+	@${TOUCH} ${PREFIX}/share/flim/${FLIM_COOKIE}
 .if defined(REQUIRE_SETUPEL) && (${REQUIRE_SETUPEL} == "YES")
 	@${MAKE} setupel-install
 .endif
@@ -108,27 +121,42 @@ post-install:
 .endif
 
 
-# install functions
+###############################################################################
+#
+# miscellaneous local functions
+#
 info-build:
 	@(cd ${WRKSRC} ; \
-	for i in mime-en.texi mime-ja.texi; do \
+	for i in mime-en.texi; do \
 		${MV} $${i} $${i}.jis ; \
 		${CAT} $${i}.jis | nkf -e > $${i} ; \
 		${MAKEINFO} $${i} || ${TRUE} ; \
 	done)
+.if defined(HAS_MULE) && (${HAS_MULE} == "YES")
+	@(cd ${WRKSRC} ; \
+	for i in mime-ja.texi; do \
+		${MV} $${i} $${i}.jis ; \
+		${CAT} $${i}.jis | nkf -e > $${i} ; \
+		${MAKEINFO} $${i} || ${TRUE} ; \
+	done)
+.endif
 
 info-build-by-emacs:
 	@(cd ${WRKSRC} ; \
-	for i in mime-en.texi mime-ja.texi; do \
-		${MV} $${i} $${i}.jis ; \
-		${CAT} $${i}.jis | nkf -e > $${i} ; \
+	for i in mime-en.texi; do \
 		${MAKEINFO_EMACS} $${i} ${MAKEINFO_EMACS_FLAGS} || ${TRUE} ; \
 	done)
+.if defined(HAS_MULE) && (${HAS_MULE} == "YES")
+	@(cd ${WRKSRC} ; \
+	for i in mime-ja.texi; do \
+		${MAKEINFO_EMACS} $${i} ${MAKEINFO_EMACS_FLAGS} || ${TRUE} ; \
+	done)
+.endif
 
 doc-install:
 	@${MKDIR} ${PREFIX}/${FLIMDOCDIR}
 	@(cd ${WRKSRC} ; \
-	for i in ChangeLog README.* ; do \
+	for i in ChangeLog NEWS README.* VERSION ; do \
 		${INSTALL_DATA} $${i} ${PREFIX}/${FLIMDOCDIR}/ ; \
 	done)
 
@@ -139,10 +167,17 @@ setupel-install:
 
 info-install:
 	@(cd ${WRKSRC} ; \
-	for i in mime-en.info mime-ja.info; do \
+	for i in mime-en.info; do \
 		${INSTALL_DATA} ${WRKSRC}/$${i} ${PREFIX}/info ; \
 		install-info ${PREFIX}/info/$${i} ${PREFIX}/info/dir ; \
 	done)
+.if defined(HAS_MULE) && (${HAS_MULE} == "YES")
+	@(cd ${WRKSRC} ; \
+	for i in mime-ja.info; do \
+		${INSTALL_DATA} ${WRKSRC}/$${i} ${PREFIX}/info ; \
+		install-info ${PREFIX}/info/$${i} ${PREFIX}/info/dir ; \
+	done)
+.endif
 
 info-package-install:
 	@(cd ${WRKSRC} ; \
