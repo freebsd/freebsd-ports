@@ -1,5 +1,6 @@
 bin/inkscape
 lib/inkscape/extensions/SpSVG.pm
+lib/inkscape/extensions/dia2svg.sh
 lib/inkscape/extensions/ill2svg.pl
 lib/inkscape/extensions/roundhole
 lib/inkscape/extensions/svg_dropshadow
@@ -104,6 +105,12 @@ share/gnome/inkscape/line_doubled.xpm
 share/gnome/inkscape/line_full.xpm
 share/gnome/inkscape/lock_aspect_no.xpm
 share/gnome/inkscape/lock_aspect_yes.xpm
+share/gnome/inkscape/modules/ai_input.inkmod
+share/gnome/inkscape/modules/dia.inkmod
+share/gnome/inkscape/modules/dropshadow.inkmod
+share/gnome/inkscape/modules/roundhole.inkmod
+share/gnome/inkscape/modules/svgz_input.inkmod
+share/gnome/inkscape/modules/svgz_output.inkmod
 share/gnome/inkscape/move.xpm
 share/gnome/inkscape/node.xpm
 share/gnome/inkscape/node_break.xpm

@@ -1,14 +1,14 @@
---- src/dialogs/stroke-style.c.orig	Sun Nov 16 22:49:08 2003
-+++ src/dialogs/stroke-style.c	Sun Nov 16 22:50:27 2003
-@@ -537,6 +537,7 @@
- {
- 	GtkWidget *spw, *f, *t, *l, *hb, *sb, *us, *tb, *px, *ds;
+--- src/dialogs/stroke-style.c.orig	Thu Dec 11 08:05:58 2003
++++ src/dialogs/stroke-style.c	Thu Dec 11 08:08:22 2003
+@@ -581,6 +581,7 @@
+ 	GtkWidget *spw, *f, *t, *l, *hb, *sb, *us, *tb, *ds;
  	GtkObject *a;
+ 	gint i;
 +	SPDesktop *desktop;
  
  	spw = sp_widget_new_global (INKSCAPE);
  
-@@ -678,7 +679,7 @@
+@@ -725,7 +726,7 @@
  	gtk_signal_connect (GTK_OBJECT (spw), "change_selection", GTK_SIGNAL_FUNC (sp_stroke_style_line_change_selection), NULL);
  	gtk_signal_connect (GTK_OBJECT (spw), "attr_changed", GTK_SIGNAL_FUNC (sp_stroke_style_line_attr_changed), NULL);
  
