@@ -1,11 +1,11 @@
---- configure	2000/08/02 11:30:25	1.1
-+++ configure	2000/08/02 11:31:11
-@@ -2833,7 +2833,7 @@
- VP_CPPFLAGS="-I$vp_python_incdir -I$vp_gd_incdir"
+--- configure.orig	Sat Oct 21 18:09:50 2000
++++ configure	Sat Oct 21 18:11:01 2000
+@@ -2777,7 +2777,7 @@
  VP_GDLDFLAGS="-L$vp_gd_libdir"
- VP_PYLIBDIR=$vp_python_libdir
--VP_PYINTERPRETER=$vp_python_interpreter
-+VP_PYINTERPRETER="$vp_python_interpreter -lreadline -lcrypt"
+ VP_PYMODDIR=$vp_python_moddir
+ VP_PYDYNLIBDIR=$vp_python_dynlibdir
+-VP_PYINTERPLIB=$vp_python_interplib
++VP_PYINTERPLIB="$vp_python_interplib -lreadline -lcrypt"
  
  
  

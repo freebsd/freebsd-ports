@@ -6,21 +6,20 @@
 #
 
 PORTNAME=	veepee
-PORTVERSION=	0.3
+PORTVERSION=	1.0
 CATEGORIES=	devel python gnome
 MASTER_SITES=	http://www.river-bank.demon.co.uk/software/
 DISTNAME=	VeePee-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 		gd.1:${PORTSDIR}/graphics/gd
-RUN_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
 
 USE_XLIB=	yes
+USE_PYTHON=	yes
 USE_LIBTOOL=	yes
-
+CONFIGURE_ENV=	LDFLAGS="-pthread"
 CONFIGURE_ARGS=	--with-gd-includes=${LOCALBASE}/include/gd \
 		--disable-kde
 
