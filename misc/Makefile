@@ -57,6 +57,7 @@
     SUBDIR += findutils
     SUBDIR += fortuneit
     SUBDIR += freedialog
+    SUBDIR += ftree
     SUBDIR += geekcode
     SUBDIR += git
     SUBDIR += gnomepm
