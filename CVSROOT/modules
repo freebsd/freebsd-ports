@@ -6234,6 +6234,7 @@ py-biopython	ports/biology/py-biopython
 py-bsddb3	ports/databases/py-bsddb3
 py-bzip2	ports/archivers/py-bzip2
 py-cdb	ports/databases/py-cdb
+py-cddb		ports/audio/py-cddb
 py-chart	ports/graphics/py-chart
 py-ciphon	ports/devel/py-ciphon
 py-compiler	ports/lang/py-compiler
