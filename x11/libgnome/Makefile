@@ -3,7 +3,7 @@
 # Date created:        17 June 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.20 1999/01/01 02:47:11 vanilla Exp $
+# $Id: Makefile,v 1.21 1999/01/04 08:43:06 vanilla Exp $
 #
 
 DISTNAME=	gnome-libs-0.99.1
@@ -23,8 +23,8 @@ LIB_DEPENDS=	gdk_imlib.1:${PORTSDIR}/graphics/imlib \
 		gif.3:${PORTSDIR}/graphics/giflib \
 		png.2:${PORTSDIR}/graphics/png \
 		Xpm.4:${PORTSDIR}/graphics/xpm \
-		ORBit.0:${PORTSDIR}/devel/ORBit \
-		esd.0:${PORTSDIR}/audio/esound
+		ORBit.1:${PORTSDIR}/devel/ORBit \
+		esd.1:${PORTSDIR}/audio/esound
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
