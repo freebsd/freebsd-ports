@@ -1,27 +1,30 @@
 # New ports collection makefile for:   gogo no coder
-# Version required:    1999-07-09
+# Version required:    2.10
 # Date created:        01 July 1999
 # Whom:                Yukihiro Nakai <Nacai@iname.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	bsd0709
-PKGNAME=	gogo-19990709
+DISTNAME=	gogo210
+PKGNAME=	gogo-2.10
 CATEGORIES=	audio
-MASTER_SITES=	http://www.kurims.kyoto-u.ac.jp/~shigeo/soft/mpegenc/
+MASTER_SITES=	http://www.kurims.kyoto-u.ac.jp/~shigeo/soft/gogo2/src/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	Nacai@iname.com
 
-WRKSRC=		${WRKDIR}
+# More than version 0.98
+BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
-ONLY_FOR_ARCHS=	i386
-NO_BUILD=	yes
+MAKEFILE=	makefile.unx
+ALL_TARGET=	gogo
+.if(!defined(KANJI))
+MAKE_ENV+=	DONT_USE_KANJI=-DNO_KANJI
+.endif
+RESTRICTED=	Condition is not clear
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gogo ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/doc/gogo
-	${INSTALL_DATA} ${FILESDIR}/README ${PREFIX}/share/doc/gogo
 
 .include <bsd.port.mk>
