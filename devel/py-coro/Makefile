@@ -47,7 +47,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/py-coro
 .for i in ${CORO_DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/py-coro
+	${INSTALL_MAN} ${WRKSRC}/${i} ${PREFIX}/share/doc/py-coro
 .endfor
 .endif
 
