@@ -7,9 +7,10 @@
 
 PORTNAME=	hugs98
 PORTVERSION=	200102
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://www.cse.ogi.edu/pub/pacsoft/hugs/
-DISTNAME=	${PORTNAME}${PORTVERSION}-${HUGS_DATE}
+DISTNAME=	${PORTNAME}-${HUGS_DATE}
 
 MAINTAINER=	obraun@informatik.unibw-muenchen.de
 
