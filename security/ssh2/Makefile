@@ -55,11 +55,13 @@ post-install:
 .endfor
 .endif
 #
-	@if [ ! -f ${PREFIX}/etc/rc.d/sshd.sh ]; then \
+	@if [ "`grep ssh /etc/inetd.conf|grep -v ^#ssh`" = "" ]; then \
+	    if [ ! -f ${PREFIX}/etc/rc.d/sshd.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/sshd.sh startup file."; \
 		${SED} -e 's+!!PREFIX!!+${PREFIX}+' < ${FILESDIR}/sshd.sh \
 			> ${PREFIX}/etc/rc.d/sshd.sh; \
 		${CHMOD} 751 ${PREFIX}/etc/rc.d/sshd.sh; \
+	    fi; \
 	fi
 
 .include <bsd.port.post.mk>
