@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	weather
-PORTVERSION=	0.25
+PORTVERSION=	0.26
 CATEGORIES=	astro gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-
