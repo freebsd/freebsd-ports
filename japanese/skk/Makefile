@@ -10,8 +10,16 @@ PORTVERSION=	9.6
 CATEGORIES=	japanese elisp
 MASTER_SITES=	# empty
 DISTFILES=	# empty
+EXTRACT_ONLY=	# empty
 
 MAINTAINER=	matusita@FreeBSD.org
+
+RUN_DEPENDS=	${LOCALBASE}/share/skk/${SKKJISYO}:${PORT_SKK_JISYO} \
+		${LOCALBASE}/bin/skkdic-count:${PORT_SKK_TOOLS} \
+		${LOCALBASE}/share/mule/site-lisp/skk/skk.el:${PORT_SKK_ELISP} \
+		${LOCALBASE}/sbin/skkserv:${PORT_SKK_SERV}
+
+NO_BUILD=	yes
 
 SKKJISYO_SIZE?=	L
 SKKJISYO?=	SKK-JISYO.${SKKJISYO_SIZE}
@@ -19,14 +27,6 @@ PORT_SKK_JISYO=	${.CURDIR}/../../japanese/skk-jisyo
 PORT_SKK_TOOLS=	${.CURDIR}/../../japanese/skk-tools
 PORT_SKK_ELISP=	${.CURDIR}/../../japanese/skk-elisp
 PORT_SKK_SERV=	${.CURDIR}/../../japanese/skkserv
-
-RUN_DEPENDS=	${PREFIX}/share/skk/${SKKJISYO}:${PORT_SKK_JISYO} \
-		${PREFIX}/bin/skkdic-count:${PORT_SKK_TOOLS} \
-		${PREFIX}/share/mule/site-lisp/skk/skk.el:${PORT_SKK_ELISP} \
-		${PREFIX}/sbin/skkserv:${PORT_SKK_SERV}
-
-EXTRACT_ONLY=	# empty
-NO_BUILD=	yes
 
 do-install:	# empty
 
