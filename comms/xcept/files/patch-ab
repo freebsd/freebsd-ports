@@ -17,7 +17,7 @@
 -GROUP= sys
 -EXECMODE= 6750
 +GROUP= bin
-+EXECMODE= 04750
++EXECMODE= 0750
 +MANMODE= 0644
  
 -BINDIR= /usr/local/bin# 		directory for the executable ceptd
