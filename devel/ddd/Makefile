@@ -43,10 +43,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/PROBLEMS ${PREFIX}/share/doc/ddd
 	${INSTALL_DATA} ${WRKSRC}/doc/README ${PREFIX}/share/doc/ddd
 	${INSTALL_DATA} ${WRKSRC}/doc/ddd-paper.ps ${PREFIX}/share/doc/ddd
-	${INSTALL_DATA} ${WRKSRC}/doc/ddd.man.ps ${PREFIX}/share/doc/ddd
+	${INSTALL_DATA} ${WRKSRC}/doc/ddd.ps ${PREFIX}/share/doc/ddd
 	${INSTALL_DATA} ${WRKSRC}/doc/sample.dddinit ${PREFIX}/share/doc/ddd
 	${GZIP_CMD} ${PREFIX}/share/doc/ddd/ddd-paper.ps
-	${GZIP_CMD} ${PREFIX}/share/doc/ddd/ddd.man.ps
+	${GZIP_CMD} ${PREFIX}/share/doc/ddd/ddd.ps
 .endif
 
 check:
