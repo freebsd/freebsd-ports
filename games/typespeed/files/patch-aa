@@ -1,0 +1,36 @@
+--- Makefile.orig	Wed Nov 10 15:32:40 1999
++++ Makefile	Mon Sep 29 04:32:41 2003
+@@ -11,9 +11,9 @@
+ OBJS = file.o  menu.o  misc.o  network.o
+ 
+ local_dir = $(HOME)
+-install_dir = "/usr/local/bin"
+-wordfiles = "/usr/local/lib"
+-man_dir  = "/usr/local/man/man1/"
++install_dir = ${PREFIX}/bin
++wordfiles = ${PREFIX}/lib
++man_dir  = ${PREFIX}/man/man1/
+ 
+ all: clean $(PROG)
+ 
+@@ -23,7 +23,6 @@
+ 
+ 
+ $(PROG): $(OBJS)
+-	
+ 	$(CC) $(CFLAGS) $(OBJS) -o $(PROG) $(PROG).c $(LFLAGS)
+ 
+ 
+@@ -40,11 +39,9 @@
+ 	if test ! -d $(wordfiles)/typespeed; then mkdir $(wordfiles)/typespeed; fi
+ 	./typespeed --makescores
+ 	cp words.* $(wordfiles)/typespeed
+-	cp high.* $(wordfiles)/typespeed
+ 	chmod 755 $(wordfiles)/typespeed
+-	chmod 666 $(wordfiles)/typespeed/high.*
+ 	chmod 644 $(wordfiles)/typespeed/words.*
+-	echo $(wordfiles)/typespeed/ > /etc/typespeedrc
++	echo $(wordfiles)/typespeed/ > ${PREFIX}/etc/typespeedrc
+ 	cp typespeed.1 $(man_dir)
+ 	chmod 644 $(man_dir)/typespeed.1
+ 	@echo done...

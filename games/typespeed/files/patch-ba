@@ -1,0 +1,11 @@
+--- typespeed.h.orig	Fri Sep  5 23:30:12 2003
++++ typespeed.h	Fri Sep  5 23:39:42 2003
+@@ -24,7 +24,7 @@
+ 
+ #define TVERSION "v0.4.1" 
+ 
+-#define CONFIGFILE "/etc/typespeedrc"
++#define CONFIGFILE "_PREFIX_HERE/etc/typespeedrc"
+ #define LOCALCONF ".typespeedrc"
+ 
+ #define WORD_MAX 10000

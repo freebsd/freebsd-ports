@@ -377,6 +377,7 @@
     SUBDIR += tuxtype
     SUBDIR += tvp
     SUBDIR += twitch
+    SUBDIR += typespeed
     SUBDIR += uhexen
     SUBDIR += uox3
     SUBDIR += uqm
