@@ -35,8 +35,8 @@ MASTER_SITES_MODSSL=	http://www.modssl.org/source/ \
 
 .include <bsd.port.pre.mk>
 
-VERSION_APACHE=	1.3.27
-VERSION_MODSSL=	2.8.14
+VERSION_APACHE=	1.3.28
+VERSION_MODSSL=	2.8.15
 
 DATADIR=	${PREFIX}/www
 DOCUMENT_ROOT=	${DATADIR}/data
