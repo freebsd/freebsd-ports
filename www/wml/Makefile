@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wml
-PORTVERSION= 	1.6.8
+PORTVERSION= 	1.99.8
 CATEGORIES=	www lang
 MASTER_SITES=	http://www.engelschall.com/sw/wml/distrib/ \
 		ftp://ftp.ch.engelschall.com/sw/wml/ \
@@ -15,19 +15,17 @@ MASTER_SITES=	http://www.engelschall.com/sw/wml/distrib/ \
 
 MAINTAINER=	rse@engelschall.com
 
-.include <bsd.port.pre.mk>
-
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-perl=${PERL5}
 
 CAT1=	wml_aux_linklint.1 wml_aux_txt2html.1 \
-	wml_aux_wwwtable.1 wml_p2_mhc.1 wml_p4_gm4.1
+	wml_aux_tidy.1 wml_p4_gm4.1
 
 MAN1=	wmd.1 wmk.1 wml.1 wmb.1 wmu.1 \
-	wml_aux_htmlinfo.1 wml_aux_iselect.1 \
+	wml_aux_freetable.1 wml_aux_htmlclean.1 wml_aux_htmlinfo.1 wml_aux_iselect.1 \
 	wml_aux_map2html.1 wml_aux_weblint.1 wml_p1_ipp.1 \
-	wml_p3_eperl.1 wml_p5_divert.1 wml_p6_asubst.1 \
+	wml_p2_mp4h.1 wml_p3_eperl.1 wml_p5_divert.1 wml_p6_asubst.1 \
 	wml_p7_htmlfix.1 wml_p8_htmlstrip.1 wml_p9_slice.1
 
 MAN3=	wml::all.3 wml::des::all.3 wml::des::gfont.3 \
@@ -39,14 +37,17 @@ MAN3=	wml::all.3 wml::des::all.3 wml::des::gfont.3 \
 	wml::fmt::xtable.3 wml::imp::all.3 wml::imp::csmap.3 \
 	wml::imp::fsview.3 wml::imp::generic.3 wml::std::all.3 \
 	wml::std::box.3 wml::std::case.3 wml::std::grid.3 \
-	wml::std::href.3 wml::std::lang.3 wml::std::logo.3 \
-	wml::std::info.3 wml::std::page.3 wml::std::tags.3 \
-	wml::std::toc.3 wml::sup::all.3 wml::sup::hextriple.3 \
-	wml::sup::path.3 wml::sys::all.3 wml::sys::boot.3
+	wml::std::label.3 wml::std::href.3 wml::std::lang.3 \
+	wml::std::logo.3 wml::std::info.3 wml::std::page.3 \
+	wml::std::tags.3 wml::std::toc.3 wml::sup::all.3 \
+	wml::sup::hextriple.3 wml::mod::MakeMaker.3 wml::mod::all.3 \
+	wml::mod::version.3 wml::sup::path.3 wml::sys::all.3 \
+	wml::sys::bootp3.3 wml::sys::bootp4.3 wml::sys::compat1.3
 
 CAT7=	wml_barebone.7 \
 	wml_std_css1.7 wml_std_css2.7 wml_std_csspos.7 \
-	wml_std_html20.7 wml_std_html32.7 wml_std_html40.7
+	wml_std_html20.7 wml_std_html32.7 wml_std_html40.7 \
+	wml_std_html401.7 wml_std_wai10.7 wml_std_xhtml10.7
 
 MAN7=	wml_intro.7 wml_tutorial.7 wml_faq.7 wml_tags.7
 
@@ -62,4 +63,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -4,7 +4,8 @@
     \ V  V /| |  | | |___   ``WML is the Unix toolkit for getting
      \_/\_/ |_|  |_|_____|    your webdesigner's HTML job done.''
 
-  Copyright (c) 1996,1997,1998 Ralf S. Engelschall
+  Copyright (c) 1996-2000 Ralf S. Engelschall
+  Copyright (c) 1999-2000 Denis Barbier
 
   WML is a free and extensible Webdesigner's off-line HTML generation toolkit
   for Unix, distributed under the GNU General Public License (GPL v2). It is
@@ -21,4 +22,3 @@
   generation.
 
 WWW: http://www.engelschall.com/sw/wml/
-     ftp://ftp.engelschall.com/sw/wml/
