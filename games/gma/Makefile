@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.student.nada.kth.se/~d92-jwa/code/gma/
 
 MAINTAINER=	ijliao@FreeBSD.org
 
-GNU_CONFIGURE= yes
+USE_GCC=	2.95
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
