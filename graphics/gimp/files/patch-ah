@@ -1,5 +1,5 @@
---- configure.in.orig	Sat Jan  3 19:31:29 1998
-+++ configure.in	Mon Jan  5 09:42:49 1998
+--- configure.in~	Mon Jan 26 10:34:48 1998
++++ configure.in	Mon Jan 26 10:35:31 1998
 @@ -120,10 +120,10 @@
  
  dnl Test for libtiff
@@ -24,17 +24,17 @@
  
  dnl This is for generating PDB docuemntation.
  AC_PATH_PROG(EMACS, emacs, :)
---- configure.orig	Mon Jan  5 09:44:02 1998
-+++ configure	Mon Jan  5 09:46:45 1998
-@@ -2531,14 +2531,14 @@
+--- configure~	Mon Jan 26 10:36:08 1998
++++ configure	Mon Jan 26 10:37:35 1998
+@@ -2738,14 +2738,14 @@
  fi
  
    if test -z "$LIBTIFF_LIB"; then
 -    echo $ac_n "checking for TIFFReadScanline in -ltiff""... $ac_c" 1>&6
--echo "configure:2536: checking for TIFFReadScanline in -ltiff" >&5
+-echo "configure:2743: checking for TIFFReadScanline in -ltiff" >&5
 -ac_lib_var=`echo tiff'_'TIFFReadScanline | sed 'y%./+-%__p_%'`
 +    echo $ac_n "checking for TIFFReadScanline in -ltiff34""... $ac_c" 1>&6
-+echo "configure:2536: checking for TIFFReadScanline in -ltiff34" >&5
++echo "configure:2743: checking for TIFFReadScanline in -ltiff34" >&5
 +ac_lib_var=`echo tiff34'_'TIFFReadScanline | sed 'y%./+-%__p_%'`
  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
@@ -43,9 +43,9 @@
 -LIBS="-ltiff -lm $LIBS"
 +LIBS="-ltiff34 -lm $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 2544 "configure"
+ #line 2751 "configure"
  #include "confdefs.h"
-@@ -2566,17 +2566,17 @@
+@@ -2773,17 +2773,17 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
@@ -54,10 +54,10 @@
  else
    echo "$ac_t""no" 1>&6
 -echo $ac_n "checking for TIFFWriteScanline in -ltiff""... $ac_c" 1>&6
--echo "configure:2574: checking for TIFFWriteScanline in -ltiff" >&5
+-echo "configure:2781: checking for TIFFWriteScanline in -ltiff" >&5
 -ac_lib_var=`echo tiff'_'TIFFWriteScanline | sed 'y%./+-%__p_%'`
 +echo $ac_n "checking for TIFFWriteScanline in -ltiff34""... $ac_c" 1>&6
-+echo "configure:2574: checking for TIFFWriteScanline in -ltiff34" >&5
++echo "configure:2781: checking for TIFFWriteScanline in -ltiff34" >&5
 +ac_lib_var=`echo tiff34'_'TIFFWriteScanline | sed 'y%./+-%__p_%'`
  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
@@ -66,9 +66,9 @@
 -LIBS="-ltiff -lz -ljpeg -lm $LIBS"
 +LIBS="-ltiff34 -lz -ljpeg -lm $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 2582 "configure"
+ #line 2789 "configure"
  #include "confdefs.h"
-@@ -2604,7 +2604,7 @@
+@@ -2811,7 +2811,7 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
@@ -77,7 +77,7 @@
  else
    echo "$ac_t""no" 1>&6
  echo "configure: warning: *** TIFF plug-in will not be built ***" 1>&2
-@@ -3742,7 +3742,7 @@
+@@ -3949,7 +3949,7 @@
  
  
  gimpdatadir=$datadir/$PACKAGE
