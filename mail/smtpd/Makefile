@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.obtuse.com/pub/smtpd/
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	patch-smtpd-2.0-RBL.gz
 
-MAINTAINER=	jonny@jonny.eng.br
+MAINTAINER=	ports@FreeBSD.org
 
 BROKEN=		Does not work with Sendmail-8.12
 
