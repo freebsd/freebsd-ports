@@ -64,7 +64,7 @@ USE_REINPLACE=	yes
 
 LATEST_LINK=	squid24
 DEPRECATED=	This version of squid-2 is no longer officially supported
-EXPIRATION_DATE=	on the 31st October 2004
+EXPIRATION_DATE=31st October 2004
 
 SQUID_UID?=	squid
 SQUID_GID?=	squid
