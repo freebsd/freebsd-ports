@@ -1,0 +1,11 @@
+--- commands/Makefile.in.orig	Mon Feb  2 14:57:14 2004
++++ commands/Makefile.in	Mon Feb  2 14:57:24 2004
+@@ -99,7 +99,7 @@
+ EXTRA_PROGRAMS = vpasswd2cdb vrehash
+ EXTRA_SCRIPTS = allvpasswd2cdb
+ 
+-CXXLINK = $(CC) $(CXXFLAGS) $(LDFLAGS) -o $@
++CXXLINK = $(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@
+ INCLUDES = -I../lib -DBINDIR=\"@bindir@\"
+ 
+ listvdomain_SOURCES = listvdomain.cc vcommand.cc

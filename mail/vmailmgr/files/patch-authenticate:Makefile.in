@@ -1,0 +1,11 @@
+--- authenticate/Makefile.in.orig	Mon Feb  2 14:47:40 2004
++++ authenticate/Makefile.in	Mon Feb  2 14:49:35 2004
+@@ -93,7 +93,7 @@
+ 
+ EXTRA_DIST = $(man_MANS) $(noinst_HTMLS) $(noinst_PODS)
+ 
+-CXXLINK = $(CC) $(CXXFLAGS) $(LDFLAGS) -o $@
++CXXLINK = $(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@
+ INCLUDES = $(CIINCLUDES) -I../lib
+ 
+ checkvpw_SOURCES = checkvpw.cc authvlib.cc authvlib.h
