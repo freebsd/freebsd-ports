@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	kile
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	1.31
 CATEGORIES=	editors kde
-MASTER_SITES=	http://xm1.net.free.fr/kile/
+MASTER_SITES=	http://perso.club-internet.fr/pascal.brachet/kile/
 
 MAINTAINER=	stefan.jahn@nemesis-sektor.de
 
