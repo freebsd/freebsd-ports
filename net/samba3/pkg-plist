@@ -17,6 +17,7 @@ bin/smbtar
 bin/smbtree
 bin/tdbbackup
 bin/tdbdump
+bin/tdbtool
 bin/testparm
 bin/testprns
 %%WINBIND%%bin/wbinfo
@@ -44,7 +45,6 @@ lib/samba/vfs/cap.so
 lib/samba/vfs/default_quota.so
 lib/samba/vfs/expand_msdfs.so
 lib/samba/vfs/extd_audit.so
-%%MULTIBYTE%%lib/samba/vfs/hex.so
 lib/samba/vfs/fake_perms.so
 lib/samba/vfs/full_audit.so
 lib/samba/vfs/netatalk.so
@@ -127,6 +127,8 @@ lib/samba/charset/CP850.so
 %%EXAMPLESDIR%%/VFS/skel_transparent.c
 %%EXAMPLESDIR%%/auth/Makefile
 %%EXAMPLESDIR%%/auth/auth_skel.c
+%%EXAMPLESDIR%%/auth/crackcheck/Makefile
+%%EXAMPLESDIR%%/auth/crackcheck/crackcheck.c
 %%EXAMPLESDIR%%/autofs/auto.smb
 %%EXAMPLESDIR%%/dce-dfs/README
 %%EXAMPLESDIR%%/dce-dfs/smb.conf
@@ -191,6 +193,7 @@ lib/samba/charset/CP850.so
 @dirrm %%EXAMPLESDIR%%/genlogon
 @dirrm %%EXAMPLESDIR%%/dce-dfs
 @dirrm %%EXAMPLESDIR%%/autofs
+@dirrm %%EXAMPLESDIR%%/auth/crackcheck
 @dirrm %%EXAMPLESDIR%%/auth
 @dirrm %%EXAMPLESDIR%%/VFS
 @dirrm %%EXAMPLESDIR%%/LDAP/smbldap-tools/mkntpwd
@@ -472,10 +475,6 @@ share/swat/images/wizard.gif
 share/swat/include/footer.html
 share/swat/include/header.html
 share/swat/lang/ja/help/welcome.html
-share/swat/lang/ja/include/footer.html
-share/swat/lang/ja/include/header.html
-share/swat/lang/ja/include/header.nocss.html
-share/swat/lang/ja/include/header_css.html
 share/swat/lang/tr/help/welcome.html
 share/swat/lang/tr/images/globals.gif
 share/swat/lang/tr/images/home.gif
@@ -485,7 +484,6 @@ share/swat/lang/tr/images/samba.gif
 share/swat/lang/tr/images/shares.gif
 share/swat/lang/tr/images/status.gif
 share/swat/lang/tr/images/viewconfig.gif
-share/swat/lang/tr/include/header.html
 share/swat/using_samba/appa.html
 share/swat/using_samba/appb.html
 share/swat/using_samba/appc.html

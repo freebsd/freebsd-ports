@@ -6,19 +6,13 @@
 #
 
 PORTNAME=		samba
-PORTVERSION=		3.0.7
+PORTVERSION=		3.0.8
 PORTREVISION?=		0
 PORTEPOCH?=		1
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	. old-versions rc pre
 DISTNAME=		${PORTNAME}-${PORTVERSION:S/.p/pre/:S/.r/rc/}
-
-.if defined(WITH_MULTIBYTE)
-PATCH_SITES=		http://dist.bsdlab.org/
-PATCHFILES=		samba-3.0.7-i18n-20040915.bz2
-PATCH_DIST_STRIP=	-p0
-.endif
 
 MAINTAINER?=		timur@gnu.org
 COMMENT?=		A free SMB and CIFS client and server for UNIX
@@ -48,6 +42,8 @@ SAMBA_CONFIG=		${SAMBA_CONFDIR}/smb.conf
 CONFIGURE_ENV+=		CPPFLAGS=-I${LOCALBASE}/include \
 			LDFLAGS=-L${LOCALBASE}/lib
 
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+
 CONFIGURE_ARGS+=	--exec-prefix=${PREFIX} \
 			--localstatedir=${VARDIR} \
 		        --with-configdir=${SAMBA_CONFDIR} \
@@ -76,8 +72,7 @@ OPTIONS=	LDAP		"With LDAP support" on \
 		SAM_PGSQL	"With PostgreSQL smbpasswd backend" off \
 		SAM_OLD_LDAP	"With Samba2.x LDAP smbpasswd backend" off \
 		PAM_SMBPASS	"With SMB PAM module" off \
-		POPT		"With installed POPT library" on \
-		MULTIBYTE	"With multibyte encoding patch" off
+		POPT		"With installed POPT library" on
 .endif
 
 .include <bsd.port.pre.mk>
@@ -252,14 +247,6 @@ MAN8+=		winbindd.8
 WINBIND_FILTER=		${SED} -e 's|%%WINBIND%%||g'
 .else
 WINBIND_FILTER=		${GREP} -v '^%%WINBIND%%'
-.endif
-
-.if defined(WITH_MULTIBYTE)
-# Based on patch from miraclelinux.com.
-# http://www.miraclelinux.com/english/technet/samba30/index.html
-PLIST_SUB+=		MULTIBYTE=""
-.else
-PLIST_SUB+=		MULTIBYTE="@comment "
 .endif
 
 PLIST_SUB+=		RC_DIR=${RC_DIR} \
