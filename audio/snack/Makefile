@@ -7,24 +7,33 @@
 #
 
 PORTNAME=	snack
-PORTVERSION=	2.2.3
+PORTVERSION=	2.2.4
 CATEGORIES=	audio tcl84 tk84
 MASTER_SITES=	http://www.speech.kth.se/~kare/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The Snack Sound Toolkit
+COMMENT=	A sound toolkit for scripting languages
 
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
+
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl8.4 \
-		--with-tk=${LOCALBASE}/lib/tk8.4 \
-		--prefix=${PREFIX}
+		--with-tk=${LOCALBASE}/lib/tk8.4
+MAKE_ENV=	prefix=${PREFIX} exec_prefix=${PREFIX}
 
-PLIST_SUB=	SNACK_VER=2.2
+PLIST_SUB=	SNACK_VER=${PORTVERSION:R}
+
+CFLAGS+=	-I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4 \
+		-I${LOCALBASE}/include
+
+OPTIONS=	VORBIS "Support for OGG/Vorbis Audio" off
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_VORBIS)
 LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
@@ -36,21 +45,10 @@ PLIST_SUB+=	VORBIS=""
 PLIST_SUB+=	VORBIS="@comment "
 .endif
 
-pre-everything::
-.if !defined(WITH_VORBIS)
-	@${ECHO_MSG}
-	@${ECHO_MSG} 'Use "make WITH_VORBIS=yes" to build support for OGG Vorbis.'
-	@${ECHO_MSG}
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g" \
-		-e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/Makefile.in
-
-.if !defined(NOPORTDOCS)
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${CP} ${WRKSRC}/../doc/* ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/../doc/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
