@@ -1,0 +1,53 @@
+*** whatpix.ori	Fri Aug  9 13:43:49 2002
+--- whatpix	Fri Aug  9 13:44:49 2002
+***************
+*** 236,242 ****
+      print "    ", $dir, "\n";
+  
+      # Get list of subdirectories.
+!     opendir(DIR, $dir) or die "Error: opendir() failed on $dir\n";
+      my @dirs  = grep  { -d "$dir/$_" } readdir(DIR);
+      closedir(DIR);
+  
+--- 236,242 ----
+      print "    ", $dir, "\n";
+  
+      # Get list of subdirectories.
+!     opendir(DIR, "$dir\0") or die "Error: opendir() failed on $dir\n";
+      my @dirs  = grep  { -d "$dir/$_" } readdir(DIR);
+      closedir(DIR);
+  
+***************
+*** 246,252 ****
+      }
+  
+      # Now do the files in this directory.
+!     opendir(DIR, $dir) || die "Error: failed to open $dir:  $!";
+      my @files = grep  { -r "$dir/$_" && -s "$dir/$_" } readdir(DIR);
+      closedir(DIR);
+      my $digester  = $usemd5 ? Digest::MD5->new() : Digest::SHA1->new();
+--- 246,252 ----
+      }
+  
+      # Now do the files in this directory.
+!     opendir(DIR, "$dir\0") || die "Error: failed to open $dir:  $!";
+      my @files = grep  { -r "$dir/$_" && -s "$dir/$_" } readdir(DIR);
+      closedir(DIR);
+      my $digester  = $usemd5 ? Digest::MD5->new() : Digest::SHA1->new();
+***************
+*** 256,262 ****
+          my @vars = stat($filename) or die "Error: could not stat $filename\n";
+          my $size = $vars[7];
+          if ($size) {
+!             open(FILE, $filename) or die "Error: could not open $filename\n";
+              binmode(FILE);
+              $digester->reset;
+              $digester->addfile(*FILE);
+--- 256,262 ----
+          my @vars = stat($filename) or die "Error: could not stat $filename\n";
+          my $size = $vars[7];
+          if ($size) {
+!             open(FILE, "$filename\0") or die "Error: could not open $filename\n";
+              binmode(FILE);
+              $digester->reset;
+              $digester->addfile(*FILE);
