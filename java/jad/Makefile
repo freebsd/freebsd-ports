@@ -6,13 +6,17 @@
 #
 
 PORTNAME=	jad
-PORTVERSION=	1.5.7f
+PORTVERSION=	1.5.8c
 CATEGORIES=	java
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Bridge/8617/jad/freebsd/ \
-		ftp://freebsd.ntu.edu.tw/FreeBSD/taiwan/NTU/leeym/distfiles/
-DISTNAME=	jadfb157
+		http://members.nbci.com/kpdus/jad/freebsd/ \
+		http://www.znerd.demon.nl/ \
+		http://www.pensioenconsult.com/ \
+		http://www.schraven.nl/ \
+		http://www.jollem.com/~ernst/
+DISTNAME=	jadfb158
 
-MAINTAINER=	leeym@cae.ce.ntu.edu.tw
+MAINTAINER=	ernst@jollem.com
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
