@@ -17,4 +17,10 @@ COMMENT=	An RFC1413 identification server which also supports random replies
 GNU_CONFIGURE=	yes
 MAN8=		ident2.8
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
+.include <bsd.port.post.mk>
