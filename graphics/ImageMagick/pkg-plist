@@ -23,7 +23,7 @@ include/magick/memory.h
 lib/libMagick.a
 lib/libMagick.la
 lib/libMagick.so
-lib/libMagick.so.4.8
+lib/libMagick.so.4.9
 @exec /sbin/ldconfig -m %D/lib
 @unexec /sbin/ldconfig -R
 @dirrm include/magick
