@@ -1,0 +1,25 @@
+# New ports collection makefile for:    omi
+# http://fromme.com/omi/
+# Version required:     alpha-7
+# Date created:		19 August 1995
+# Whom:                 ache
+#
+# $Id: Makefile,v 1.12 1998/01/21 02:39:56 peter Exp $
+#
+
+DISTNAME=       omi-alpha-7
+CATEGORIES=	net
+MASTER_SITES=   http://dorifer.heim3.tu-clausthal.de/~olli/omi/
+
+MAINTAINER=     ache@FreeBSD.org
+
+ALL_TARGET=     freebsd
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/omi ${PREFIX}/bin
+	${INSTALL} -d -m 755 -o ${DOCOWN} -g ${DOCGRP} \
+		${PREFIX}/share/doc/omi
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/omi
+	${INSTALL_DATA} ${WRKSRC}/BSD-COPYRIGHT ${PREFIX}/share/doc/omi
+
+.include <bsd.port.mk>
