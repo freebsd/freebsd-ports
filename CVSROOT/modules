@@ -6155,6 +6155,7 @@ openvrml	ports/www/openvrml
 openwebmail	ports/mail/openwebmail
 openzz		ports/devel/openzz
 opera		ports/www/opera
+opieprint	ports/security/opieprint
 ophoto		ports/graphics/ophoto
 opmixer		ports/audio/opmixer
 oproute		ports/net-mgmt/oproute
