@@ -3533,7 +3533,6 @@ ksrvtgt		src/eBones/ksrvtgt
 kssh		ports/security/kssh
 kstars		ports/astro/kstars
 kstash		src/eBones/kstash
-ktexshell	ports/print/ktexshell
 ktrace		src/usr.bin/ktrace
 kuickshow	ports/graphics/kuickshow
 kvirc		ports/irc/kvirc
