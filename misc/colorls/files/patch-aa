@@ -109,6 +109,33 @@
  			printlink(p);
  		(void)putchar('\n');
  	}
+@@ -190,10 +214,22 @@
+ 			    dp->s_block);
+ 			if ((base += numrows) >= num)
+ 				break;
+-			while ((cnt = ((chcnt + TAB) & ~(TAB - 1))) <= endcol){
+-				(void)putchar('\t');
+-				chcnt = cnt;
+-			}
++
++			/*
++			 * some terminals get confused if we mix tabs
++			 * with color sequences
++			 */
++			if (f_color)
++				for (cnt = chcnt ; cnt <= endcol ; cnt++) {
++					(void)putchar(' ');
++					chcnt = cnt;
++				}
++			else
++				while ((cnt = ((chcnt + TAB) & ~(TAB - 1)))
++				       <= endcol) {
++					(void)putchar('\t');
++					chcnt = cnt;
++				}
+ 			endcol += colwidth;
+ 		}
+ 		(void)putchar('\n');
 @@ -217,9 +241,13 @@
  	if (f_size)
  		chcnt += printf("%*qd ",
