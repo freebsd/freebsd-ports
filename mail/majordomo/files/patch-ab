@@ -1,9 +1,10 @@
---- sample.cf.orig	Tue Oct  8 15:02:14 1996
-+++ sample.cf	Sat Oct 26 13:19:04 1996
-@@ -1,23 +1,19 @@
+--- sample.cf.orig	Mon Dec 23 10:05:15 1996
++++ sample.cf	Fri Dec 27 00:31:03 1996
+@@ -6,11 +6,11 @@
+ 
  # $whereami -- What machine am I running on?
  #
--$whereami = "foo.NOWHERE.COM";
+-$whereami = "example.com";
 +$whereami = "%%HOSTNAME%%";
  
  # $whoami -- Who do users send requests to me as?
@@ -13,9 +14,7 @@
  
  # $whoami_owner -- Who is the owner of the above, in case of problems?
  #
--$whoami_owner = "Majordomo-Owner\@$whereami";
-+$whoami_owner = "majordomo-owner\@$whereami";
- 
+@@ -19,11 +19,7 @@
  # $homedir -- Where can I find my extra .pl files, like majordomo.pl?
  # the environment variable HOME is set by the wrapper
  #
@@ -28,16 +27,16 @@
  
  # $listdir -- Where are the mailing lists?
  #
-@@ -29,7 +25,7 @@
+@@ -35,7 +31,7 @@
  # 	/usr/local/mail/digest/bblisa
  # as its directory.
  #
--$digest_work_dir = '/usr/local/mail/digest';
+-$digest_work_dir = "/usr/local/mail/digest";
 +$digest_work_dir = "%%PREFIX%%/majordomo/digests";
  
  # $log -- Where do I write my log?
  #
-@@ -39,8 +35,8 @@
+@@ -45,8 +41,8 @@
  #                      usually /usr/lib/sendmail, but some newer BSD systems
  #                      seem to prefer /usr/sbin/sendmail
  #
@@ -48,12 +47,24 @@
  
  # $mailer -- What program and args do I use to send mail to the list?
  # $bounce_mailer -- What is used to send mail anywhere else?
-@@ -152,7 +148,7 @@
+@@ -82,9 +78,9 @@
+ # returns a string like:
+ #   5:23pm  up  5:51,  9 users,  load average: 0.19, 0.25, 0.33
+ #
+-#$max_loadavg = 10;                 # Choose the maximum allowed load
++$max_loadavg = 10;                 # Choose the maximum allowed load
+ #
+-#$uptime = `/usr/bin/uptime` if -x </usr/bin/uptime>;     # Get system uptime
++$uptime = `/usr/bin/uptime` if -x </usr/bin/uptime>;     # Get system uptime
+ #$uptime = `/usr/bsd/uptime` if -x </usr/bsd/uptime>;     # or uptime is over here.
+ #
+ #($avg_1_minute, $avg_5_minutes, $avg_15_minutes) = 
+@@ -181,7 +177,7 @@
  # majordomo has r/w permission to.
  # Uses the environment variable TMPDIR, since that's pretty common
  #
--$TMPDIR = $ENV{'TMPDIR'} || '/usr/tmp';
+-$TMPDIR = $ENV{'TMPDIR'} || "/usr/tmp";
 +$TMPDIR = '%%PREFIX%%/majordomo/tmp';
  
- # Tune the number of retries that shlock does before aborting.
- # This defaults to 600, with a random sleep from 1-10 seconds between
+ # Tune how long set_lock tries to obtain a lock before giving up. Each
+ # attempt waits 1 to 10 seconds before trying again and waittime is

@@ -1,54 +1,39 @@
---- Makefile.orig	Sun Oct 20 09:23:18 1996
-+++ Makefile	Wed Oct 23 15:56:10 1996
-@@ -12,7 +12,7 @@
+--- Makefile.orig	Mon Dec  9 10:41:18 1996
++++ Makefile	Fri Dec 27 00:25:07 1996
+@@ -12,22 +12,22 @@
  #
- # Where is Perl located?
+  
+ # Put the location of your Perl binary here:
+-PERL = /bin/perl
++PERL = ${PREFIX}/bin/perl
  
--PERL = 		/bin/perl5
-+PERL = 		${PREFIX}/bin/perl
+ # What do you call your C compiler?
+ CC = cc
+  
+ # Where do you want Majordomo to be installed?  This CANNOT be the
+ # current directory (where you unpacked the distribution)
+-W_HOME = /usr/test/majordomo-$(VERSION)
++W_HOME = ${PREFIX}/majordomo
+  
+ # Where do you want man pages to be installed?
+-MAN = $(W_HOME)/man
++MAN = ${PREFIX}/man
+  
+ # You need to have or create a user and group which majordomo will run as.
+ # Enter the numeric UID and GID (not their names!) here:
+-W_USER = 123
+-W_GROUP = 45
++W_USER = %%MJUID%%
++W_GROUP = %%MJGID%%
  
- # 
- # If your default 'chown' doesn't support the USER.GROUP syntax,
-@@ -23,15 +23,15 @@
- #  
- # The location of Majordomo.  Wrapper looks here for programs to run.
- 
--W_HOME	=	/usr/test/majordomo-$(VERSION)
-+W_HOME	=	${PREFIX}/majordomo
- 
- # 
- # Where do you want the manual pages installed?  By default, this is 
- # $(W_HOME)/man/man[18]
- #
--W_MAN = $(W_HOME)/man
--MAN1 = $(W_HOME)/man/man1
--MAN8 = $(W_HOME)/man/man8
-+W_MAN = ${PREFIX}/man
-+MAN1 = ${PREFIX}/man/man1
-+MAN8 = $(PREFIX)/man/man8
- 
- # What permissions does wrapper need?   
- # (6755 = -rwsr-s-r-x, 4755 = -rwsr-xr-x)
-@@ -43,7 +43,7 @@
+ # These set the permissions for all installed files and executables (except
+ # the wrapper), respectively.  Some sites may wish to make these more
+@@ -61,7 +61,7 @@
  # parent process, and without the leading "W_" in the variable names) gets
  # passed to processes run by "wrapper"
+ W_SHELL = /bin/sh
+-W_PATH = /bin:/usr/bin:/usr/ucb
++W_PATH = /bin:/usr/bin
+ W_MAJORDOMO_CF = $(W_HOME)/majordomo.cf
  
--W_PATH = 	/bin:/usr/bin:/usr/ucb
-+W_PATH = 	/bin:/usr/bin
- W_BIN =		$(W_HOME)
- W_SHELL =	/bin/csh
- W_MAJORDOMO_CF =	$(W_BIN)/majordomo.cf
-@@ -53,11 +53,11 @@
- 
- # majordomo on my system
- #
--W_USER =	443
-+W_USER =	%%MJUID%%
- #
- # daemon on my system
- #
--W_GROUP =       1
-+W_GROUP =       %%MJGID%%
- #
- # You might need to change : to .
- #
+ # A directory for temp files..
