@@ -1,7 +1,7 @@
---- FAQ.orig	Sun Dec  6 19:37:53 1998
-+++ FAQ	Wed Dec  9 17:36:30 1998
-@@ -21,17 +21,17 @@
- 3. How do I configure Leafnode+?
+--- FAQ.orig	Fri Jan 29 13:01:52 1999
++++ FAQ	Sat Jan 30 22:17:12 1999
+@@ -41,8 +41,8 @@
+ 5. How do I configure Leafnode+?
  
  See the manual pages for information on how to configure Leafnode+.
 -Also, see the sample configuration file, "config.example", in the
@@ -10,25 +10,35 @@
 +!!PREFIX!!/share/doc/leafnode+.
  
  
- 4. How do I upgrade from Leafnode?
+ 6. How do I upgrade from Leafnode?
+@@ -50,8 +50,8 @@
+ Upgrading is easy - Leafnode+ can be used as a direct replacement
+ for Leafnode. However, Leafnode+ will write some additional files in
+ the LIBDIR defined when compiling Leafnode+, usually
+-/usr/lib/leafnode. Therefore, the UID under which Leafnode+ runs,
+-usually root or news, needs write access to this directory.
++!!PREFIX!!/lib/leafnode. Therefore, the UID under which Leafnode+
++runs, usually root or news, needs write access to this directory.
  
- Upgrading is easy - Leafnode+ can be used as a direct replacement for
- Leafnode.  However, Leafnode+ will write some additional files in the
--LIBDIR defined when compiling Leafnode+, usually /usr/lib/leafnode.
--Therefore, the UID under which Leafnode+ runs, usually root or news,
--needs write access to this directory.
-+LIBDIR defined when compiling Leafnode+, !!PREFIX!!/lib/leafnode.
-+Therefore, the UID under which Leafnode+ runs, usually news, needs write
-+access to this directory.
+ You will need to change all references to the "fetch" program to
+ refer to "fetchnews". The name of this program has changed because
+@@ -59,8 +59,8 @@
+ "fetchnews" describes the function of the program better.
+ 
+ To update from Cornelius's Leafnode, copy
+-/var/spool/news/leaf.node/groupinfo into your LIBDIR (usually
+-/usr/lib/leafnode/groupinfo) then run "fetchnews".
++/var/spool/news/leaf.node/groupinfo into your LIBDIR
++(!!PREFIX!!/lib/leafnode/groupinfo) then run "fetchnews".
  
  
- 5. Can I use Leafnode+ with multiple news servers?
-@@ -61,7 +61,7 @@
+ 7. Can I use Leafnode+ with multiple news servers?
+@@ -90,7 +90,7 @@
  Most news reader software uses the NEWGROUPS command to learn about
- the creation of new groups.  The Leafnode+ news server does not
- support this command.  To check if new groups are available, see the
+ the creation of new groups. The Leafnode+ news server does not
+ support this command. To check if new groups are available, see the
 -"groupinfo" file in your LIBDIR (usually /usr/lib/leafnode).
-+"groupinfo" file in your LIBDIR (usually !!PREFIX!!/lib/leafnode).
++"groupinfo" file in your LIBDIR (!!PREFIX!!/lib/leafnode).
  
  
  
@@ -38,14 +48,14 @@
  
  3. make installall
  
--5. Edit $(LIBDIR)/config so server points to your upstream news server
-+5. Edit !!PREFIX!!/lib/leafnode/config so the server points to your
+-4. Edit $(LIBDIR)/config so server points to your upstream news server
++4. Edit !!PREFIX!!/lib/leafnode/config so the server points to your
 +   upstream news server
     (generally, your IP provider's).  Make sure $NNTPSERVER or
     /etc/nntpserver points to your own host so clients will talk to
     leafnode rather than try to go to the upstream server.
 @@ -15,25 +16,24 @@
- 4. Set up a cron job (as user "news") to run texpire every night or
+ 5. Set up a cron job (as user "news") to run texpire every night or
     maybe every week.  Here is my crontab line, which runs nightly:
  
 -0 4 * * * /usr/local/sbin/texpire
@@ -59,16 +69,16 @@
  
     tells cron to run texpire at 4am Monday morning.
  
- 5. Make sure fetchnews is run at the appropriate time.  If you have a
+ 6. Make sure fetchnews is run at the appropriate time.  If you have a
     full-time link, run it out of cron (as "news" again), if not, run
     it when your connection to the net is established.  If it is run as
 -   root, it will change user to "news".  I use PPP, and run fetchnews
 -   from /etc/ppp/ip-up.
 +   root, it will change user to "news".
  
--6. Edit /etc/inetd.conf so $(BINDIR)/leafnode is executed for incoming
+-7. Edit /etc/inetd.conf so $(BINDIR)/leafnode is executed for incoming
 -   NNTP connections.  HUP inetd.  Here is my inetd.conf line:
-+6. Edit /etc/inetd.conf so !!PREFIX!!/sbin/leafnode is executed for
++7. Edit /etc/inetd.conf so !!PREFIX!!/sbin/leafnode is executed for
 +   incoming NNTP connections.  HUP inetd.  Here is my inetd.conf line:
  
 -nntp    stream  tcp     nowait  news    /usr/local/sbin/leafnode
