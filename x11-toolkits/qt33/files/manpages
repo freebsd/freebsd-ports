@@ -56,11 +56,13 @@ qdragobject.3qt \
 qdropevent.3qt \
 qdropsite.3qt \
 qeucjpcodec.3qt \
+qeuckrcodec.3qt \
 qevent.3qt \
 qfile.3qt \
 qfiledialog.3qt \
 qfileiconprovider.3qt \
 qfileinfo.3qt \
+qfilepreview.3qt \
 qfocusdata.3qt \
 qfocusevent.3qt \
 qfont.3qt \
@@ -243,6 +245,7 @@ qvaluelist.3qt \
 qvaluelistconstiterator.3qt \
 qvaluelistiterator.3qt \
 qvaluestack.3qt \
+qvariant.3qt \
 qvbox.3qt \
 qvboxlayout.3qt \
 qvbuttongroup.3qt \
@@ -256,5 +259,6 @@ qwidgetstack.3qt \
 qwindowsstyle.3qt \
 qwizard.3qt \
 qwmatrix.3qt \
+qworkspace.3qt \
 qxtapplication.3qt \
 qxtwidget.3qt

@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	qt
-PORTVERSION= 	2.1.0b3
+PORTVERSION=	2.1.0b4
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://ftp.troll.no/qt/source/
-DISTNAME=	qt-x11-2.1.0-beta3
+MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/
+DISTNAME=	qt-x11-2.1.0-beta4
 
 MAINTAINER=	imura@FreeBSD.org
 
@@ -22,12 +22,12 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_NEWGCC=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	-system-zlib -system-libpng -system-jpeg \
+CONFIGURE_ARGS=	-system-zlib -system-libpng -system-jpeg -sm \
 		-I${LOCALBASE}/include -L${LOCALBASE}/lib
 CONFIGURE_ENV=	QTDIR=${WRKSRC}
 MAKE_ENV=	QTDIR=${WRKSRC}
 
-WRKSRC=		${WRKDIR}/qt-2.1.0-beta3
+WRKSRC=		${WRKDIR}/qt-2.1.0-beta4
 CONFIG=		${WRKSRC}/configs/freebsd-g++-shared
 
 .if defined(QT_GIF_AVAILABLE)
@@ -70,6 +70,7 @@ do-install:
 	${INSTALL_DATA} PORTING ${PREFIX}/share/doc/qt2 ; \
 	${INSTALL_DATA} README ${PREFIX}/share/doc/qt2 ; \
 	${INSTALL_DATA} README.QT ${PREFIX}/share/doc/qt2 ; \
+	${INSTALL_DATA} changes-2.1.0 ${PREFIX}/share/doc/qt2 ; \
 	${INSTALL_DATA} doc/html/* ${PREFIX}/share/doc/qt2/html ; \
 	${INSTALL_MAN} doc/man/man3/q* ${PREFIX}/man/man3 )
 .endif
