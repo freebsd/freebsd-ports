@@ -1,9 +1,9 @@
---- src/xml2ps/pagedstream.cc.orig	Sun Nov  2 11:48:29 2003
-+++ src/xml2ps/pagedstream.cc	Sun Nov  2 11:49:54 2003
-@@ -3,6 +3,8 @@
- #include <fstream>
+--- src/xml2ps/pagedstream.cc.orig	Thu Nov 20 04:13:54 2003
++++ src/xml2ps/pagedstream.cc	Fri Nov 21 16:32:48 2003
+@@ -7,6 +7,8 @@
  #include <sstream>
  #include <iostream>
+ #include <vector>
 +#include <exception>
 +#include <memory>
  

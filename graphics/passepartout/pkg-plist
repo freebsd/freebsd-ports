@@ -1,10 +1,10 @@
-bin/pptout
+bin/passepartout
 bin/xml2ps
 share/doc/passepartout/README
 share/doc/passepartout/docbook.xslt
 share/doc/passepartout/examples/docbook.xslt
 share/doc/passepartout/examples/example1.html
-share/doc/passepartout/examples/example1.ppt
+share/doc/passepartout/examples/example1.pp
 share/doc/passepartout/examples/gradient.eps
 share/doc/passepartout/examples/hippie.jpg
 share/doc/passepartout/examples/hline.eps
@@ -19,7 +19,7 @@ share/doc/passepartout/nsfaq.html
 share/doc/passepartout/nsfaq.xml
 share/doc/passepartout/pptout-sv.eps
 share/doc/passepartout/users_guide.html
-share/doc/passepartout/users_guide.ppt
+share/doc/passepartout/users_guide.pp
 share/doc/passepartout/users_guide.xml
 share/doc/passepartout/xhtml.xslt
 share/xml/passepartout/docbook.xslt
