@@ -1,0 +1,10 @@
+--- configure.bak	Mon Sep  1 23:55:30 2003
++++ configure	Tue Jul 13 01:53:31 2004
+@@ -8738,7 +8738,6 @@
+ s,@GMLLIB@,$GMLLIB,;t t
+ s,@LIBOBJS@,$LIBOBJS,;t t
+ s,@LTLIBOBJS@,$LTLIBOBJS,;t t
+-/@EJECT_PROG@/r $EJECT_PROG
+ s,@EJECT_PROG@,,;t t
+ CEOF
+ 
