@@ -7,28 +7,31 @@
 #
 
 PORTNAME=	libsocket++
-PORTVERSION=	1.10
+PORTVERSION=	1.12.7
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.umsicht.fhg.de/pub/unix/language/C++/class-libraries/ \
+MASTER_SITES=	http://members.aon.at/~hstraub/linux/socket++/ \
+		ftp://ftp.umsicht.fhg.de/pub/unix/language/C++/class-libraries/ \
 		ftp://ftp.par.univie.ac.at/pub/unix/c++/  \
 		ftp://jungfrau.ptf.hro.nl/pub/socket/
-DISTNAME=	socket++-1.10
+DISTNAME=	socket++-${PORTVERSION}
 
 MAINTAINER=	narvi@haldjas.folklore.ee
 
+BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
+
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-NOPROFILE=	true
+USE_AUTOMAKE=	yes
+USE_AUTOMAKE_VER=	15
+USE_LIBTOOL=	yes
 
-post-configure:
-	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile
+post-patch:
+	cd ${WRKSRC}; ./autogen
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/libsocket++
 	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/libsocket++
-	${INSTALL_MAN} ${WRKSRC}/socket++.ps ${PREFIX}/share/doc/libsocket++
 .endif
-	@install-info ${PREFIX}/info/socket++.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
