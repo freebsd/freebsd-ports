@@ -1,166 +1,107 @@
-*** CONFIG	Sun Feb  1 23:33:08 1998
---- CONFIG.neu	Thu Mar 26 22:01:41 1998
-***************
-*** 8,21 ****
-  # Debug messages turned on by -x key are written here.
-  # Some error messages may occationally appear here too.
-  # This may be changed in the 'config' file.
-! DEBUGFILE   = "/var/log/ifmail/ifdebug"
-  
-  # Procession log. Usually gets several lines for each invocation.
-  # Also look for error diagnostics here.  If HAS_SYSLOG defined,
-  # only stdout and stderr from the packers and unpackers go to this
-  # file, while actual logging is done via syslog() calls.
-  # This may be changed in the 'config' file.
-! LOGFILE     = "/var/log/ifmail/iflog"
-  
-  # Use syslog() facility codes for mail gate, news gate and ifcico.
-  # Define -DHAS_SYSLOG (see below)
---- 8,21 ----
-  # Debug messages turned on by -x key are written here.
-  # Some error messages may occationally appear here too.
-  # This may be changed in the 'config' file.
-! DEBUGFILE   = "/var/spool/ifmail/ifdebug"
-  
-  # Procession log. Usually gets several lines for each invocation.
-  # Also look for error diagnostics here.  If HAS_SYSLOG defined,
-  # only stdout and stderr from the packers and unpackers go to this
-  # file, while actual logging is done via syslog() calls.
-  # This may be changed in the 'config' file.
-! LOGFILE     = "/var/spool/ifmail/iflog"
-  
-  # Use syslog() facility codes for mail gate, news gate and ifcico.
-  # Define -DHAS_SYSLOG (see below)
-***************
-*** 27,39 ****
-  CICOLOG    = LOG_LOCAL0
-  
-  # Directory where UUCP lock files reside.
-! #LOCKDIR     = "/var/spool/uucp"
-! LOCKDIR     = "/var/lock"
-  
-  # Directory from which file requests are resolved.
-  # This may be changed from the 'config' file.
-! #PUBDIR      = "/home/ftp/pub"
-! PUBDIR      = "/var/spool/uucppublic"
-  
-  # News spool directory (to check space only)
-  #NEWSSPOOL   = "/usr/spool/news"
---- 27,39 ----
-  CICOLOG    = LOG_LOCAL0
-  
-  # Directory where UUCP lock files reside.
-! LOCKDIR     = "/var/spool/lock"
-! #LOCKDIR     = "/var/lock"
-  
-  # Directory from which file requests are resolved.
-  # This may be changed from the 'config' file.
-! PUBDIR      = "/home/ftp/pub"
-! #PUBDIR      = "/var/spool/uucppublic"
-  
-  # News spool directory (to check space only)
-  #NEWSSPOOL   = "/usr/spool/news"
-***************
-*** 152,171 ****
-  # system, usually "-DINT32=long -DINT16=short"
-  
-  # Linux/x86:  (add -DHAS_BSD_SIGNALS if you have glibc2 aka libc6.x)
-! OPTS        = -DHAS_STATFS -DSTATFS_IN_VFS_H -DHAS_SETSID -DHAS_NDBM_H \
-! 		-DDONT_HAVE_TM_GMTOFF -DHAS_TERMIOS_H -DASCII_LOCKFILES \
-! 		-DHAS_FSYNC -DHAS_IOCTL_H -DHAS_REGEX_H -DHAS_TCP \
-! 		-DFORCEINTL -DHAS_SYSLOG -DNEED_UUCPFROM -DNEED_BSY \
-! 		-DSLAVE_SENDS_NAK_TOO -DNEED_FORK \
-! 		-DINT32=long -DINT16=short
-  
-  # 386BSD:
-! #OPTS        = -DHAS_STATFS -DSTATFS_IN_MOUNT_H -DHAS_SETSID -DHAS_NDBM_H \
-! #		-DHAS_TERMIOS_H -DASCII_LOCKFILES -DHAS_FSYNC -DHAS_IOCTL_H \
-! #		-DHAS_REGEX_H -DHAS_TCP -DHAS_SYSLOG -DNEED_UUCPFROM \
-! #		-DNEED_BSY -DNEED_FORK -DNEGATIVE_SEEK_BUG \
-! #		-DHAS_SYS_ERRLIST -DHAS_BSD_SIGNALS \
-! #		-DINT32=long -DINT16=short
-  
-  # SVR4:
-  #OPTS        = -DHAS_STATVFS -DDONT_HAVE_TM_GMTOFF -DHAS_SETSID -DHAS_NDBM_H \
---- 152,171 ----
-  # system, usually "-DINT32=long -DINT16=short"
-  
-  # Linux/x86:  (add -DHAS_BSD_SIGNALS if you have glibc2 aka libc6.x)
-! #OPTS        = -DHAS_STATFS -DSTATFS_IN_VFS_H -DHAS_SETSID -DHAS_NDBM_H \
-! #		-DDONT_HAVE_TM_GMTOFF -DHAS_TERMIOS_H -DASCII_LOCKFILES \
-! #		-DHAS_FSYNC -DHAS_IOCTL_H -DHAS_REGEX_H -DHAS_TCP \
-! #		-DFORCEINTL -DHAS_SYSLOG -DNEED_UUCPFROM -DNEED_BSY \
-! #		-DSLAVE_SENDS_NAK_TOO -DNEED_FORK \
-! #		-DINT32=long -DINT16=short
-  
-  # 386BSD:
-! OPTS        = -DHAS_STATFS -DSTATFS_IN_MOUNT_H -DHAS_SETSID -DHAS_NDBM_H \
-! 		-DHAS_TERMIOS_H -DASCII_LOCKFILES -DHAS_FSYNC -DHAS_IOCTL_H \
-! 		-DHAS_REGEX_H -DHAS_TCP -DHAS_SYSLOG -DNEED_UUCPFROM \
-! 		-DNEED_BSY -DNEED_FORK -DNEGATIVE_SEEK_BUG \
-! 		-DHAS_SYS_ERRLIST -DHAS_BSD_SIGNALS \
-! 		-DINT32=long -DINT16=short
-  
-  # SVR4:
-  #OPTS        = -DHAS_STATVFS -DDONT_HAVE_TM_GMTOFF -DHAS_SETSID -DHAS_NDBM_H \
-***************
-*** 217,223 ****
-  #		-DNEED_BSY -DSLAVE_SENDS_NAK_TOO -DINT32=int -DINT16=short
-  
-  # for make install, where to put binaries and what owner to set
-! BINDIR = /usr/lib/ifmail
-  OWNER = ifmail
-  GROUP = uucp
-  MODE = 0711
---- 217,223 ----
-  #		-DNEED_BSY -DSLAVE_SENDS_NAK_TOO -DINT32=int -DINT16=short
-  
-  # for make install, where to put binaries and what owner to set
-! BINDIR = ${PREFIX}/libexec/ifmail
-  OWNER = ifmail
-  GROUP = uucp
-  MODE = 0711
-***************
-*** 237,243 ****
-  TAR = tar
-  
-  #CFLAGS = -g -Wall
-! # Linux, 386BSD, SunOS:
-  CFLAGS = -O2 -Wall
-  # SVR4:
-  #CFLAGS = -O -Xa
---- 237,243 ----
-  TAR = tar
-  
-  #CFLAGS = -g -Wall
-! # Linux, 386BSD,FreeBsd, SunOS:
-  CFLAGS = -O2 -Wall
-  # SVR4:
-  #CFLAGS = -O -Xa
-***************
-*** 254,264 ****
-  # If you need TERM also add e.g. "/usr/src/term112/client.a"
-  
-  # Linux
-! LIBS = -lgdbm
-  # SunOS:
-  #LIBS =
-  # 386BSD:
-  #LIBS = -lgdbm -lcompat
-  # SVR4
-  #LIBS = -ldbm -lform -lnsl -lsocket -lc -L/usr/ucblib -lucb
-  # SCO
---- 254,266 ----
-  # If you need TERM also add e.g. "/usr/src/term112/client.a"
-  
-  # Linux
-! #LIBS = -lgdbm
-  # SunOS:
-  #LIBS =
-  # 386BSD:
-  #LIBS = -lgdbm -lcompat
-+ # FreeBsd:
-+ LIBS = -lgnuregex
-  # SVR4
-  #LIBS = -ldbm -lform -lnsl -lsocket -lc -L/usr/ucblib -lucb
-  # SCO
+--- CONFIG.orig	Fri Jul 16 23:26:29 1999
++++ CONFIG	Sat Oct  2 22:15:45 1999
+@@ -8,14 +8,14 @@
+ # Debug messages turned on by -x key are written here.
+ # Some error messages may occationally appear here too.
+ # This may be changed in the 'config' file.
+-DEBUGFILE   = "/var/log/ifmail/ifdebug"
++DEBUGFILE   = "/var/spool/ifmail/ifdebug"
+ 
+ # Procession log. Usually gets several lines for each invocation.
+ # Also look for error diagnostics here.  If HAS_SYSLOG defined,
+ # only stdout and stderr from the packers and unpackers go to this
+ # file, while actual logging is done via syslog() calls.
+ # This may be changed in the 'config' file.
+-LOGFILE     = "/var/log/ifmail/iflog"
++LOGFILE     = "/var/spool/ifmail/iflog"
+ 
+ # Use syslog() facility codes for mail gate, news gate and ifcico.
+ # Define -DHAS_SYSLOG (see below)
+@@ -27,13 +27,13 @@
+ CICOLOG    = LOG_LOCAL0
+ 
+ # Directory where UUCP lock files reside.
+-#LOCKDIR     = "/var/spool/uucp"
+-LOCKDIR     = "/var/lock"
++LOCKDIR     = "/var/spool/lock"
++#LOCKDIR     = "/var/lock"
+ 
+ # Directory from which file requests are resolved.
+ # This may be changed from the 'config' file.
+-#PUBDIR      = "/home/ftp/pub"
+-PUBDIR      = "/var/spool/uucppublic"
++PUBDIR      = "/home/ftp/pub"
++#PUBDIR      = "/var/spool/uucppublic"
+ 
+ # News spool directory (to check space only)
+ #NEWSSPOOL   = "/usr/spool/news"
+@@ -152,20 +152,20 @@
+ # system, usually "-DINT32=long -DINT16=short"
+ 
+ # Linux/x86:  (remove -DHAS_BSD_SIGNALS if you have libc5 (not glibc2))
+-OPTS        = -DHAS_STATFS -DSTATFS_IN_VFS_H -DHAS_SETSID -DHAS_NDBM_H \
+-		-DDONT_HAVE_TM_GMTOFF -DHAS_TERMIOS_H -DASCII_LOCKFILES \
+-		-DHAS_FSYNC -DHAS_IOCTL_H -DHAS_REGEX_H -DHAS_TCP \
+-		-DFORCEINTL -DHAS_SYSLOG -DNEED_UUCPFROM -DNEED_BSY \
+-		-DSLAVE_SENDS_NAK_TOO -DNEED_FORK -DHAS_BSD_SIGNALS \
+-		-DHAS_BSD_DB -DINT32=long -DINT16=short
++#OPTS        = -DHAS_STATFS -DSTATFS_IN_VFS_H -DHAS_SETSID -DHAS_NDBM_H \
++#		-DDONT_HAVE_TM_GMTOFF -DHAS_TERMIOS_H -DASCII_LOCKFILES \
++#		-DHAS_FSYNC -DHAS_IOCTL_H -DHAS_REGEX_H -DHAS_TCP \
++#		-DFORCEINTL -DHAS_SYSLOG -DNEED_UUCPFROM -DNEED_BSY \
++#		-DSLAVE_SENDS_NAK_TOO -DNEED_FORK -DHAS_BSD_SIGNALS \
++#		-DHAS_BSD_DB -DINT32=long -DINT16=short
+ 
+ # 386BSD:
+-#OPTS        = -DHAS_STATFS -DSTATFS_IN_MOUNT_H -DHAS_SETSID -DHAS_NDBM_H \
+-#		-DHAS_TERMIOS_H -DASCII_LOCKFILES -DHAS_FSYNC -DHAS_IOCTL_H \
+-#		-DHAS_REGEX_H -DHAS_TCP -DHAS_SYSLOG -DNEED_UUCPFROM \
+-#		-DNEED_BSY -DNEED_FORK -DNEGATIVE_SEEK_BUG \
+-#		-DHAS_SYS_ERRLIST -DHAS_BSD_SIGNALS \
+-#		-DINT32=long -DINT16=short
++OPTS        = -DHAS_STATFS -DSTATFS_IN_MOUNT_H -DHAS_SETSID -DHAS_NDBM_H \
++		-DHAS_TERMIOS_H -DASCII_LOCKFILES -DHAS_FSYNC -DHAS_IOCTL_H \
++		-DHAS_REGEX_H -DHAS_TCP -DHAS_SYSLOG -DNEED_UUCPFROM \
++		-DNEED_BSY -DNEED_FORK -DNEGATIVE_SEEK_BUG \
++		-DHAS_SYS_ERRLIST -DHAS_BSD_SIGNALS \
++		-DINT32=long -DINT16=short
+ 
+ # SVR4:
+ #OPTS        = -DHAS_STATVFS -DDONT_HAVE_TM_GMTOFF -DHAS_SETSID -DHAS_NDBM_H \
+@@ -222,7 +222,7 @@
+ #		-DNEED_BSY -DSLAVE_SENDS_NAK_TOO -DINT32=int -DINT16=short
+ 
+ # for make install, where to put binaries and what owner to set
+-BINDIR = /usr/lib/ifmail
++BINDIR = ${PREFIX}/libexec/ifmail
+ OWNER = ifmail
+ GROUP = uucp
+ MODE = 0711
+@@ -242,7 +242,7 @@
+ TAR = tar
+ 
+ #CFLAGS = -g -Wall
+-# Linux, 386BSD, SunOS:
++# Linux, 386BSD, FreeBSD, SunOS:
+ CFLAGS = -g -O2 -Wall
+ # SVR4:
+ #CFLAGS = -O -Xa
+@@ -261,7 +261,7 @@
+ # Linux w/libc5
+ #LIBS = -lgdbm
+ # Linux w/glibc
+-LIBS = -lndbm
++#LIBS = -lndbm
+ # SunOS:
+ #LIBS =
+ # Solaris:
+@@ -276,6 +276,9 @@
+ #LIBS = -lcposix -lmalloc -ldbm -linet -lPW
+ # NeXTSTEP
+ #LIBS = -lgdbm -lposix
++# FreeBsd:
++LIBS = -lgnuregex
++
+ 
+ INCLUDES = -I${INCDIR}
+ # ISC
