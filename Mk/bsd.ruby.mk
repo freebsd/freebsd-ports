@@ -265,7 +265,7 @@ ruby-extconf-configure:
 .for d in ${RUBY_EXTCONF_SUBDIRS}
 	@${ECHO_MSG} "===>  Running ${RUBY_EXTCONF} in ${d} to configure"
 .if defined(RUBY_WITH_PTHREAD)
-	cd ${WRKSRC}/${d}; \
+	cd ${CONFIGURE_WRKSRC}/${d}; \
 	${RUBY} ${RUBY_FLAGS} -i -pe '~ /\brequire\s+[\047"]mkmf[\047"]/ \
 	and $$_ += %Q|\
 		$$libs.sub!(/-lc\\b/, "")\n \
@@ -273,13 +273,13 @@ ruby-extconf-configure:
 		$$CFLAGS += " " + with_config("pthread-cflags") + " "\n \
 	|' ${RUBY_EXTCONF}
 .endif
-	@cd ${WRKSRC}/${d}; \
+	@cd ${CONFIGURE_WRKSRC}/${d}; \
 	${SETENV} ${CONFIGURE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_EXTCONF} ${CONFIGURE_ARGS}
 .endfor
 .else
 	@${ECHO_MSG} "===>  Running ${RUBY_EXTCONF} to configure"
 .if defined(RUBY_WITH_PTHREAD)
-	cd ${WRKSRC}; if [ ! -e ${WRKSRC}/${RUBY_EXTCONF}.pth.orig ]; then \
+	cd ${CONFIGURE_WRKSRC}; if [ ! -e ${CONFIGURE_WRKSRC}/${RUBY_EXTCONF}.pth.orig ]; then \
 	${RUBY} ${RUBY_FLAGS} -i.pth.orig -pe '~ /\brequire\s+[\047"]mkmf[\047"]/ \
 	and $$_ += %Q|\
 		$$libs.sub!(/-lc\\b/, "")\n \
@@ -287,7 +287,7 @@ ruby-extconf-configure:
 		$$CFLAGS += " " + with_config("pthread-cflags") + " "\n \
 	|' ${RUBY_EXTCONF}; fi
 .endif
-	@cd ${WRKSRC}; \
+	@cd ${CONFIGURE_WRKSRC}; \
 	${SETENV} ${CONFIGURE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_EXTCONF} ${CONFIGURE_ARGS}
 .endif
 .endif
@@ -300,21 +300,21 @@ do-configure:	ruby-setup-configure
 
 ruby-setup-configure:
 	@${ECHO_MSG} "===>  Running ${RUBY_SETUP} to configure"
-	@cd ${WRKSRC}; \
+	@cd ${BUILD_WRKSRC}; \
 	${SETENV} ${CONFIGURE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_SETUP} config ${CONFIGURE_ARGS}
 
 do-build:	ruby-setup-build
 
 ruby-setup-build:
 	@${ECHO_MSG} "===>  Running ${RUBY_SETUP} to build"
-	@cd ${WRKSRC}; \
+	@cd ${BUILD_WRKSRC}; \
 	${SETENV} ${MAKE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_SETUP} setup
 
 do-install:	ruby-setup-install
 
 ruby-setup-install:
 	@${ECHO_MSG} "===>  Running ${RUBY_SETUP} to install"
-	cd ${WRKSRC}; \
+	cd ${INSTALL_WRKSRC}; \
 	${SETENV} ${MAKE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_SETUP} install
 .endif
 
