@@ -3,10 +3,10 @@
 # Date created:        11 November 1997
 # Whom:                Brion Moss <brion@queeg.com>
 #
-# $Id: Makefile,v 1.7 1998/12/27 04:21:58 billf Exp $
+# $Id: Makefile,v 1.8 1999/06/04 23:15:03 billf Exp $
 #
 
-DISTNAME=	catdoc-0.90.2
+DISTNAME=	catdoc-0.90.3
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ice.ru/pub/vitus/
