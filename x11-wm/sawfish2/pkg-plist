@@ -53,8 +53,11 @@ share/gnome/pixmaps/sawfish-placement.png
 share/gnome/pixmaps/sawfish-shortcuts.png
 share/gnome/pixmaps/sawfish-tooltips.png
 share/gnome/pixmaps/sawfish-workspaces.png
+share/locale/am/LC_MESSAGES/sawfish.mo
 share/locale/az/LC_MESSAGES/sawfish.mo
+share/locale/be/LC_MESSAGES/sawfish.mo
 share/locale/bg/LC_MESSAGES/sawfish.mo
+share/locale/bs/LC_MESSAGES/sawfish.mo
 share/locale/ca/LC_MESSAGES/sawfish.mo
 share/locale/cs/LC_MESSAGES/sawfish.mo
 share/locale/da/LC_MESSAGES/sawfish.mo
@@ -284,6 +287,8 @@ share/sawfish/%%VERSION%%/lisp/sawfish/wm/ext/tooltips.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/ext/tooltips.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/ext/window-history.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/ext/window-history.jlc
+share/sawfish/%%VERSION%%/lisp/sawfish/wm/ext/workspace-grid.jl
+share/sawfish/%%VERSION%%/lisp/sawfish/wm/ext/workspace-grid.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/focus.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/focus.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/frames.jl
@@ -360,6 +365,8 @@ share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/display-wininfo.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/display-wininfo.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/edges.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/edges.jlc
+share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/font.jl
+share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/font.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/groups.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/groups.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/gtkrc.jl
@@ -639,8 +646,6 @@ share/sawfish/%%VERSION%%/themes/smaker/close_inv.png
 share/sawfish/%%VERSION%%/themes/smaker/min.png
 share/sawfish/%%VERSION%%/themes/smaker/min_inv.png
 share/sawfish/%%VERSION%%/themes/smaker/theme.jl
-@dirrm share/sawfish/themes
-@dirrm share/sawfish/sounds
 @dirrm share/sawfish/%%VERSION%%/themes/smaker
 @dirrm share/sawfish/%%VERSION%%/themes/simple
 @dirrm share/sawfish/%%VERSION%%/themes/mono
@@ -670,11 +675,9 @@ share/sawfish/%%VERSION%%/themes/smaker/theme.jl
 @dirrm share/sawfish/%%VERSION%%/lisp/sawfish
 @dirrm share/sawfish/%%VERSION%%/lisp
 @dirrm share/sawfish/%%VERSION%%
-@dirrm share/sawfish
 @dirrm libexec/sawfish/%%VERSION%%/%%GNUHOST%%/sawfish/wm/util
 @dirrm libexec/sawfish/%%VERSION%%/%%GNUHOST%%/sawfish/wm
 @dirrm libexec/sawfish/%%VERSION%%/%%GNUHOST%%/sawfish
 @dirrm libexec/sawfish/%%VERSION%%/%%GNUHOST%%
 @dirrm libexec/sawfish/%%VERSION%%
-@dirrm libexec/sawfish
 @dirrm libexec/rep/%%GNUHOST%%/sawfish

@@ -6,27 +6,30 @@
 #
 
 PORTNAME=	sawfish2
-PORTVERSION=	2.0
-PORTEPOCH=	1
+PORTVERSION=	1.2
+PORTEPOCH=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/sawfish/2.0
-DISTNAME=	sawfish-${PORTVERSION}
+MASTER_SITE_SUBDIR=	sources/sawfish/1.2
+DISTNAME=	sawfish-${PORTVERSION}-gtk2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	rep.12:${PORTSDIR}/lang/librep
+LIB_DEPENDS=	rep.12:${PORTSDIR}/lang/librep \
+		Xft2.2:${PORTSDIR}/x11-fonts/Xft
 BUILD_DEPENDS=	${X11BASE}/libexec/rep/${GNUHOST}/gui/gtk-2/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk2
 RUN_DEPENDS=	${X11BASE}/libexec/rep/${GNUHOST}/gui/gtk-2/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk2
 
 GNUHOST=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
-PLIST_SUB=	GNUHOST=${GNUHOST} VERSION=2.0
+PLIST_SUB=	GNUHOST=${GNUHOST} VERSION=1.2
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomehier gnomehack
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-readline \
 		--localstatedir=${PREFIX}/share \
@@ -42,10 +45,6 @@ pre-patch:
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
 		 s|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
 		 s|[$$][(]top_builddir[)]/intl/libintl.a|-lintl|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${REINPLACE_CMD} -e \
-		's|[(]datadir[)]/gnome/|(datadir)/|g ; \
-		 s|[(]datadir[)]/aclocal|(prefix)/share/aclocal|g ; \
-		 s|[(]datadir[)]/locale|(prefix)/share/locale|g'
 
 post-install:
 	install-info --section="X11 window manager" \
