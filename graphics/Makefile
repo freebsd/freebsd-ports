@@ -234,6 +234,7 @@
     SUBDIR += metapixel
     SUBDIR += mgp-gallery
     SUBDIR += ming
+    SUBDIR += mingplot
     SUBDIR += morpheus
     SUBDIR += mrsidviewer
     SUBDIR += multivideo

@@ -1,0 +1,9 @@
+bin/amazonplot
+bin/googleplot
+share/mingplot/mingplot.css
+share/mingplot/EfontSerifB.fdb
+%%RUBY_SITELIBDIR%%/mingchart.rb
+%%RUBY_SITELIBDIR%%/mingplot.rb
+%%RUBY_SITELIBDIR%%/googleplot.rb
+%%RUBY_SITELIBDIR%%/amazonplot.rb
+@dirrm share/mingplot
