@@ -1,0 +1,11 @@
+--- configure.in.orig	Fri Mar 19 00:41:20 2004
++++ configure.in	Fri Mar 19 00:41:36 2004
+@@ -204,7 +204,7 @@
+ AC_CHECK_HEADERS(sys/filio.h sys/conf.h paths.h stropts.h)
+ AC_CHECK_HEADERS(sys/sockio.h)
+ 
+-AC_CHECK_HEADERS(net/if.h net/pfvar.h netinet/in_systm.h)
++AC_CHECK_HEADERS(net/if.h netinet/in_systm.h)
+ AC_CHECK_HEADERS(netinet/ip.h netinet/ip_fil.h netinet/ip_nat.h)
+ AC_CHECK_HEADERS(netinet/ip_compat.h netinet/ip_fil_compat.h)
+ 

@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.suse.com/pub/projects/proxy-suite/src/ \
 MAINTAINER=	thomas@cuivre.fr.eu.org
 COMMENT=	The SuSE Proxy-Suite, a set of programs to enhance firewall security
 
-USE_AUTOCONF_VER= 253
+USE_AUTOCONF_VER=	253
 USE_GMAKE=	yes
 
 #
@@ -31,7 +31,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --with-libwrap=/usr/lib --with-regex \
 # OPTIONAL: RFC1579 support -- not complete yet.
 #
 .if defined(WITH_RFC1579)
-CONFIGURE_ARGS+= --enable-rfc1579
+CONFIGURE_ARGS+=	--enable-rfc1579
 .endif
 
 #
@@ -57,10 +57,6 @@ MAN8=		ftp-proxy.8
 MAN5=		ftp-proxy.conf.5
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502105
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
 
 pre-install:
 	@${STRIP_CMD} ${WRKSRC}/ftp-proxy/ftp-proxy
