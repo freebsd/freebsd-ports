@@ -1,6 +1,11 @@
---- tosvcd.c.orig	Fri Oct 25 12:15:12 2002
-+++ tosvcd.c	Fri Oct 25 12:16:27 2002
-@@ -29,9 +29,8 @@
+--- tosvcd.c.orig	Fri Sep 13 10:08:52 2002
++++ tosvcd.c	Mon Nov 18 16:56:27 2002
+@@ -24,14 +24,12 @@
+ #include <fcntl.h>
+ #include <errno.h>
+ #include <string.h>
+-#include <stdint.h>
+ #include <sys/stat.h>
  #include <time.h>
  #include <pthread.h>
  #include <list>
@@ -11,7 +16,7 @@
  #include <glob.h>
  
  
-@@ -1322,7 +1321,7 @@
+@@ -1322,7 +1320,7 @@
        //  catch all signals
        //---------------------------------------------------
  #if 1
