@@ -1,9 +1,31 @@
 %%RUBY_SITEARCHLIBDIR%%/qt2xml.so
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/domexample/quotes.xml
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/domexample/domtest1.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb/examples/example1/example1.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb/examples/example1/example1.ui
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb/examples/example2/example2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb/examples/example2/example2.ui
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb/examples/example2/example2j.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb/examples/example2/example2j.ui
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb/examples/example3/example3.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb/examples/example3/example3.ui
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb/examples/example4/example4.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb/examples/example4/example4.ui
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb/examples/example5/example5.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb/examples/example5/example5.ui
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb/examples/example6/example6.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb/examples/example6/example6.ui
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb/formmaker.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb/ui2rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/saxsample/sax.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/saxsample/sample.xml
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/saxsample/sample1.ui
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/xml/tagreader-with-features/fnord.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/xml/tagreader-with-features/structureparser.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/xml/tagreader-with-features/tagreader.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/xml/tagreader/animals.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/xml/tagreader/structureparser.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/xml/tagreader/tagreader.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/xmlquotes/README.orig
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/xmlquotes/quotes.xml
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/xmlquotes/richtext.h.rb
@@ -12,6 +34,17 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/xmlquotes/xmlquotes.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2xml/xmlquotes/marble.png
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2xml/domexample
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb/examples/example1
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb/examples/example2
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb/examples/example3
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb/examples/example4
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb/examples/example5
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb/examples/example6
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb/examples
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2xml/qui2rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2xml/saxsample
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2xml/xml/tagreader
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2xml/xml/tagreader-with-features
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2xml/xml
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2xml/xmlquotes
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2xml

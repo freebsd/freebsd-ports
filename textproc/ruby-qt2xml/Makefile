@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	qt2xml
-PORTVERSION=	0.11
+PORTVERSION=	${RUBY_QT2_PORTVERSION}
 CATEGORIES=	textproc x11-toolkits ruby
-MASTER_SITES=	http://sfns.u-shizuoka-ken.ac.jp/geneng/horie_hp/ruby/
+MASTER_SITES=	${RUBY_QT2_MASTER_SITES}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	ruby-qt2-${PORTVERSION}
+DISTNAME=	${RUBY_QT2_DISTNAME}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
@@ -18,16 +18,14 @@ MAINTAINER=	knu@FreeBSD.org
 BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/qt2.so:${RUBY_QT2_PORTDIR}
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/qt2.so:${RUBY_QT2_PORTDIR}
 
-RUBY_QT2_PORTDIR=	${PORTSDIR}/x11-toolkits/ruby-qt2
-
-MD5_FILE=	${RUBY_QT2_PORTDIR}/distinfo
-
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
 USE_GMAKE=	yes
 
-WRKSRC=		${WRKDIR}/qt2/modules/xml
+.include "${.CURDIR}/../../x11-toolkits/ruby-qt2/Makefile.common"
+
+WRKSRC=		${RUBY_QT2_WRKSRC}/modules/xml
 CONFIGURE_ARGS=	--with-qt2-include=${X11BASE}/include/qt2 \
 		--with-qt2-lib=${X11BASE}/lib \
 		--with-qt2=qt2 \
@@ -35,14 +33,10 @@ CONFIGURE_ARGS=	--with-qt2-include=${X11BASE}/include/qt2 \
 MAKE_ARGS=	LOCAL_LIBS=-lgcc
 INSTALL_TARGET=	site-install
 
-post-extract:
-	cd ${WRKSRC}/examples/domexample && \
-	${RM} domtest1.cc domtest1
-
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/qt2xml
-	${CP} -R ${WRKSRC}/examples/* ${RUBY_EXAMPLESDIR}/qt2xml/
+	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
+	${CP} -R ${WRKSRC}/examples/* ${RUBY_EXAMPLESDIR}/${PORTNAME}/
 .endif
 
 .include <bsd.port.mk>
