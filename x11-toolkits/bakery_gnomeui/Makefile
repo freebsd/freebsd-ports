@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	bakery
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A Bakery C++ Application Framework extention for GNOME
 
-LIB_DEPENDS=	bakery-2.0:${PORTSDIR}/x11-toolkits/bakery \
+LIB_DEPENDS=	bakery-2.3:${PORTSDIR}/x11-toolkits/bakery \
 		gnomeuimm-2.0:${PORTSDIR}/x11-toolkits/libgnomeuimm
 
 USE_X_PREFIX=	yes
