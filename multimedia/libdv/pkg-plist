@@ -6,4 +6,9 @@ lib/libdv.a
 lib/libdv.la
 lib/libdv.so
 lib/libdv.so.1
+%%PORTDOCS%%share/doc/libdv/ChangeLog
+%%PORTDOCS%%share/doc/libdv/README.dvconnect
+%%PORTDOCS%%share/doc/libdv/README.encoder
+%%PORTDOCS%%@dirrm share/doc/libdv
 @dirrm include/libdv
+
