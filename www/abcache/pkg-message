@@ -1,0 +1,14 @@
+*****************************************************************************
+
+You have installed the abcache package.
+
+Edit %%LOCALBASE%%/etc/php.ini and add:
+
+[abcache]
+zend_extension="%%LOCALBASE%%/lib/php/20010901/bware_cache.so"
+bware_cache_enable="1"
+bware_cache_check_stamp="1"
+bware_cache_log_level="1"
+bware_cache_only=*.php"
+
+*****************************************************************************
