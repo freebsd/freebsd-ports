@@ -17,6 +17,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	wjv@FreeBSD.org
 COMMENT=	A collection of Perl modules for bioinformatics (developer's release)
 
+BROKEN=		"Broken pkg-plist"
+
 # These are all run-time dependencies, but listing them in ${BUILD_DEPENDS}
 # prevents a flood of build-time warnings.
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Ace.pm:${PORTSDIR}/biology/p5-AcePerl \
