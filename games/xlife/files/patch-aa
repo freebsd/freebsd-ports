@@ -1,10 +1,13 @@
---- ./data.h.org	Thu Mar 21 13:47:04 1991
-+++ ./data.h	Wed Mar 15 22:09:46 1995
-@@ -21,7 +21,7 @@
+--- data.h.orig	Thu Mar 21 22:47:04 1991
++++ data.h	Sat Oct 19 16:05:33 2002
+@@ -20,8 +20,9 @@
+  * PERFORMANCE OF THIS SOFTWARE.
   */
  
- extern int sys_nerr, errno;
+-extern int sys_nerr, errno;
 -extern char *sys_errlist[];
++extern const int sys_nerr;
++extern int errno;
 +/* extern char *sys_errlist[]; */
  #define SYSERR sys_errlist[(errno > sys_nerr? 0 : errno)]
  
