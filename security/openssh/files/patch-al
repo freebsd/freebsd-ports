@@ -1,20 +1,20 @@
---- /usr/ports/distfiles/OpenSSH-1.2/src/usr.bin/ssh/ssh.h	Sun Nov 28 16:47:46 1999
-+++ ssh.h	Sun Nov 28 17:00:07 1999
-@@ -61,7 +61,7 @@
+--- pathnames.h.orig	Thu Apr 12 21:15:24 2001
++++ pathnames.h	Sat May 26 15:11:30 2001
+@@ -12,7 +12,7 @@
+  * called by a name other than "ssh" or "Secure Shell".
   */
- #define SSH_SERVICE_NAME	"ssh"
  
--#define ETCDIR			"/etc"
-+#define ETCDIR			"__PREFIX__/etc"
- #define PIDDIR			"/var/run"
+-#define ETCDIR				"/etc"
++#define ETCDIR				"__PREFIX__/etc"
+ #define _PATH_SSH_PIDDIR		"/var/run"
  
  /*
-@@ -78,7 +78,7 @@
- #define SERVER_CONFIG_FILE	ETCDIR "/sshd_config"
- #define HOST_CONFIG_FILE	ETCDIR "/ssh_config"
+@@ -33,7 +33,7 @@
+ #define _PATH_HOST_RSA_KEY_FILE		ETCDIR "/ssh_host_rsa_key"
+ #define _PATH_DH_PRIMES			ETCDIR "/primes"
  
--#define SSH_PROGRAM		"/usr/bin/ssh"
-+#define SSH_PROGRAM		"__PREFIX__/bin/ssh"
+-#define _PATH_SSH_PROGRAM		"/usr/bin/ssh"
++#define _PATH_SSH_PROGRAM		"__PREFIX__/bin/ssh"
  
  /*
   * The process id of the daemon listening for connections is saved here to

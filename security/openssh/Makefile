@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	OpenSSH
-PORTVERSION=	2.2.0
-PORTREVISION=	2
+PORTVERSION=	2.9
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/ \
 		ftp://ftp.usa.openbsd.org/pub/OpenBSD/OpenSSH/ \
@@ -15,7 +14,7 @@ MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/ \
 DISTNAME=	openssh-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dirk.meyer@dinoex.sub.org
 
 USE_OPENSSL=	YES
 
@@ -62,23 +61,11 @@ post-extract:
 	@${CP} ${FILESDIR}/getnameinfo.c ${WRKSRC}/lib/
 	@${CP} ${FILESDIR}/netdb.h ${WRKSRC}/
 .endif
-	@${MKDIR} ${WRKSRC}/pam_ssh
-	@${CP} ${FILESDIR}/pam_ssh_Makefile ${WRKSRC}/pam_ssh/Makefile
-	@${CP} ${FILESDIR}/pam_ssh.c ${WRKSRC}/pam_ssh/
 
 post-patch:
 	@${PERL} -pi -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/ssh.h	\
-		${WRKSRC}/sshd_config ${WRKSRC}/pam_ssh/pam_ssh.c	\
-		${WRKSRC}/sshd.sh
-
-.if ${PAM} == yes
-PLIST=		${WRKDIR}/PLIST
-
-do-configure:
-	@${CP} ${PKGDIR}/pkg-plist ${PLIST}
-	@${ECHO} "@cwd /usr" >> ${PLIST}
-	@${ECHO} "lib/pam_ssh.so" >> ${PLIST}
-.endif
+		${WRKSRC}/sshd_config ${WRKSRC}/sshd.sh \
+		${WRKSRC}/pathnames.h
 
 post-install:
 .if !exists(${PREFIX}/etc/ssh_host_key)

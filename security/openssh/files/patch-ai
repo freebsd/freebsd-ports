@@ -1,6 +1,6 @@
---- ssh-agent/Makefile.orig	Thu Jun 29 14:35:48 2000
-+++ ssh-agent/Makefile	Sat Nov  4 17:06:34 2000
-@@ -5,12 +5,12 @@
+--- ssh-agent/Makefile.orig	Sun Mar  4 01:51:25 2001
++++ ssh-agent/Makefile	Sat May 26 14:58:48 2001
+@@ -7,12 +7,12 @@
  
  BINMODE?=555
  
@@ -9,10 +9,10 @@
 +BINDIR=	/bin
 +MAN1=	ssh-agent.1
  
- SRCS=	ssh-agent.c log-client.c
+ SRCS=	ssh-agent.c
  
  .include <bsd.prog.mk>
  
--LDADD+=	-lcrypto -lutil -lz
-+LDADD+=	${CRYPTOLIBS} -lutil -lz
- DPADD+=	${LIBCRYPTO} ${LIBDES} ${LIBUTIL} ${LIBZ}
+-LDADD+=	-lcrypto
++LDADD+=	${CRYPTOLIBS}
+ DPADD+=	${LIBCRYPTO}

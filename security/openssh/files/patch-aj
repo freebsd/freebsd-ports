@@ -1,6 +1,6 @@
---- ssh-keygen/Makefile.orig	Thu Jun 29 14:35:48 2000
-+++ ssh-keygen/Makefile	Sat Nov  4 17:06:49 2000
-@@ -5,12 +5,12 @@
+--- ssh-keygen/Makefile.orig	Sun Mar  4 01:51:26 2001
++++ ssh-keygen/Makefile	Sat May 26 15:02:25 2001
+@@ -7,12 +7,12 @@
  
  BINMODE?=555
  
@@ -9,10 +9,10 @@
 +BINDIR=	/bin
 +MAN1=	ssh-keygen.1
  
- SRCS=	ssh-keygen.c log-client.c
+ SRCS=	ssh-keygen.c
  
  .include <bsd.prog.mk>
  
--LDADD+=	-lcrypto -lutil -lz
-+LDADD+=	${CRYPTOLIBS} -lutil -lz
- DPADD+=	${LIBCRYPTO} ${LIBDES} ${LIBUTIL} ${LIBZ}
+-LDADD+=	-lcrypto
++LDADD+=	${CRYPTOLIBS}
+ DPADD+=	${LIBCRYPTO}
