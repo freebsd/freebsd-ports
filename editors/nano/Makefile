@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nano
-PORTVERSION=	0.9.10
+PORTVERSION=	0.9.14
 CATEGORIES=	editors
 MASTER_SITES=	http://www.asty.org/nano/dist/ \
 		${MASTER_SITE_SOURCEFORGE}
