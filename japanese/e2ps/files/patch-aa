@@ -1,0 +1,33 @@
+*** e2ps.c.orig	Wed Nov  4 22:44:30 1998
+--- e2ps.c	Wed Jan  5 11:45:18 2000
+***************
+*** 87,92 ****
+--- 87,95 ----
+  void	help(char *,char *);			/* ヘルプとエラー */
+  void	quit(int);				/* 停止された時 */
+  
++ extern char *euc(unsigned char *);
++ extern char *ps_font(char *, float *);
++ 
+  void main(int argc,char **argv) {
+      FILE	*read;
+      struct tm	*systime;
+***************
+*** 112,119 ****
+      /* 日付・時刻をセット */
+      nowtime = time(NULL);
+      systime = localtime(&nowtime);
+!     sprintf(NOWTIME,"%s %.2d 19%.2d %.2d:%.2d:%.2d"
+! 	    , month(systime->tm_mon) , systime->tm_mday , systime->tm_year
+  	    , systime->tm_hour , systime->tm_min , systime->tm_sec);
+  
+      /* ヘッダ */
+--- 115,122 ----
+      /* 日付・時刻をセット */
+      nowtime = time(NULL);
+      systime = localtime(&nowtime);
+!     sprintf(NOWTIME,"%s %.2d %.4d %.2d:%.2d:%.2d"
+! 	    , month(systime->tm_mon) , systime->tm_mday , systime->tm_year+1900
+  	    , systime->tm_hour , systime->tm_min , systime->tm_sec);
+  
+      /* ヘッダ */
