@@ -7,9 +7,6 @@ can write MIDI files, and there is a MIDI to lilypond conversion
 tool, midi2ly.  Conversion tools for PMX, MUP, ABC, Finale and
 Musedata are also included.
 
-The texinfo files are not installed by this port.
-
-WWW:  http://lilypond.org/development/
+WWW:  http://lilypond.org/web/
 
 Trevor Johnson
-trevor@FreeBSD.org
