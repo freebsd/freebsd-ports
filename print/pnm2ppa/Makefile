@@ -13,11 +13,18 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu \
 		enscript:${PORTSDIR}/print/enscript-letter
 
+MAKE_ENV=	LDFLAGS="${LDFLAGS}"	
+
 MAN1=		pnm2ppa.1
+
+.if !exists(/usr/include/getopt.h)
+LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lgnugetopt
+.endif
 
 post-patch:
 	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" \
