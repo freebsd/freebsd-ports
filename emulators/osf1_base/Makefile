@@ -9,8 +9,8 @@
 PORTNAME=	osf1_base
 PORTVERSION=	4.0f
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://ftp.digital.com/private/netscape/
-DISTNAME=	netscape-4.7-1.alpha
+MASTER_SITES=	ftp://ftp.support.compaq.com/private/alpha-tools-software/netscape/
+DISTNAME=	netscape-4.7-3.alpha
 EXTRACT_SUFX=	.rpm
 
 MAINTAINER=	obrien@FreeBSD.org
@@ -18,7 +18,6 @@ MAINTAINER=	obrien@FreeBSD.org
 BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/misc/rpm2cpio
 
 ONLY_FOR_ARCHS=	alpha
-RESTRICTED=	Not allowed to redistribute on our FTP site or CDROMs
 
 PREFIX=			/compat/osf1
 EXTRACT_CMD=		rpm2cpio
