@@ -1818,6 +1818,16 @@ include/mozilla/xmlextras/nsISOAPTransportListener.h
 include/mozilla/xmlextras/nsISchema.h
 include/mozilla/xmlextras/nsISchemaLoader.h
 include/mozilla/xmlextras/nsIXMLHttpRequest.h
+include/mozilla/xmlterm/lineterm.h
+include/mozilla/xmlterm/mozILineTerm.h
+include/mozilla/xmlterm/mozIXMLTermShell.h
+include/mozilla/xmlterm/mozIXMLTermStream.h
+include/mozilla/xmlterm/mozIXMLTerminal.h
+include/mozilla/xmlterm/mozXMLT.h
+include/mozilla/xmlterm/mozXMLTermUtils.h
+include/mozilla/xmlterm/ptystream.h
+include/mozilla/xmlterm/tracelog.h
+include/mozilla/xmlterm/unistring.h
 include/mozilla/xp_core.h
 include/mozilla/xp_mem.h
 include/mozilla/xp_path.h
