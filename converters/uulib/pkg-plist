@@ -1,4 +1,5 @@
 lib/libuu.a
+lib/libuu.so.1.0
 include/uu.h
 share/doc/uulib/Makefile
 share/doc/uulib/README
