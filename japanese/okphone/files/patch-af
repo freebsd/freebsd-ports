@@ -1,0 +1,12 @@
+--- ./conv/convd.c.orig	Mon Dec  2 22:26:48 2002
++++ ./conv/convd.c	Mon Dec  2 22:26:54 2002
+@@ -406,8 +406,8 @@
+ {
+ #ifndef __FreeBSD__
+ 	extern char *sys_errlist[];
+-#endif
+ 	extern int  sys_nerr;
++#endif
+ 	char   buf[128];
+ 	char   mesg[256];
+ 	char   host[32];
