@@ -8,7 +8,7 @@
 PORTNAME=	jext
 PORTVERSION=	2.7.0.6
 CATEGORIES=	editors java
-MASTER_SITES=	http://members.xoom.com/romainguy/jext/
+MASTER_SITES=	http://members.xoom.com/romainguy/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	sobomax@altavista.net
