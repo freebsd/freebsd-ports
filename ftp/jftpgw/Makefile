@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jftpgw
-PORTVERSION=	0.13.1
+PORTVERSION=	0.13.2
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.mcknight.de/jftpgw/
 
@@ -26,5 +26,9 @@ do-install:
 		@${SED} -e 's:@PREFIX@:${PREFIX}:g' \
 			${FILESDIR}/jftpgw.sh.in > ${WRKDIR}/jftpgw.sh
 		${INSTALL_SCRIPT} ${WRKDIR}/jftpgw.sh ${PREFIX}/etc/rc.d
+.if !defined(NOPORTDOCS)
+		${MKDIR} ${PREFIX}/share/doc/jftpgw
+		${INSTALL_DATA} ${WRKSRC}/doc/config.html ${PREFIX}/share/doc/jftpgw
+.endif
 
 .include <bsd.port.mk>
