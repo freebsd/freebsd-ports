@@ -22,7 +22,6 @@
     SUBDIR += bidwatcher
     SUBDIR += bottlerocket
     SUBDIR += buffer
-    SUBDIR += bug-buddy
     SUBDIR += cassowary
     SUBDIR += chord
     SUBDIR += cmatrix
