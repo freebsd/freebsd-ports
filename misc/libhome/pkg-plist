@@ -1,7 +1,9 @@
-include/home/pwd.h
-include/home/hpwd.h
-include/home/hparam.h
-include/home/home_version.h
-lib/libhome.a
+bin/home_finger
 bin/libhome.sh
+etc/home.conf.dist
+include/home/home_version.h
+include/home/hparam.h
+include/home/hpwd.h
+include/home/pwd.h
 @dirrm include/home
+lib/libhome.a
