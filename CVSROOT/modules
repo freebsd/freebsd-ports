@@ -2837,6 +2837,7 @@ golem		ports/x11-wm/golem
 gomoku.app	ports/games/gomoku.app
 gone		ports/misc/gone
 gonvert		ports/misc/gonvert
+goobox		ports/audio/goobox
 googolplex	ports/net/googolplex
 goose		ports/www/goose
 gopchop		ports/multimedia/gopchop
