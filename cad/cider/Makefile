@@ -7,7 +7,7 @@
 
 PORTNAME=	cider
 PORTVERSION=	1.b1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ic.eecs.berkeley.edu/pub/Cider/new/
 DISTNAME=	cider1b1
