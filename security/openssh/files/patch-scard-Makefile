@@ -1,0 +1,11 @@
+--- scard/Makefile.orig	Fri Jun 29 09:02:09 2001
++++ scard/Makefile	Wed Oct  3 14:14:55 2001
+@@ -3,7 +3,7 @@
+ .PATH:		${.CURDIR}/..
+ 
+ CARDLET=	Ssh.bin
+-DATADIR=	/usr/libdata/ssh
++DATADIR=	/libdata/ssh
+ 
+ all: ${CARDLET}
+ 

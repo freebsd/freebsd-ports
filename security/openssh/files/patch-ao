@@ -1,35 +1,24 @@
---- sshd_config.orig	Sat May 26 14:48:18 2001
-+++ sshd_config	Sat May 26 15:15:11 2001
-@@ -7,13 +7,13 @@
- #Protocol 2,1
- #ListenAddress 0.0.0.0
- #ListenAddress ::
--HostKey /etc/ssh_host_key
--HostKey /etc/ssh_host_rsa_key
--HostKey /etc/ssh_host_dsa_key
-+HostKey /usr/local/etc/ssh_host_key
-+HostKey /usr/local/etc/ssh_host_rsa_key
-+HostKey /usr/local/etc/ssh_host_dsa_key
- ServerKeyBits 768
--LoginGraceTime 600
-+LoginGraceTime 120
- KeyRegenerationInterval 3600
--PermitRootLogin yes
-+PermitRootLogin no
- #
- # Don't read ~/.rhosts and ~/.shosts files
- IgnoreRhosts yes
-@@ -57,10 +57,10 @@
- #KerberosTgtPassing yes
+--- sshd_config.orig	Thu Sep 20 22:57:51 2001
++++ sshd_config	Wed Oct  3 12:37:28 2001
+@@ -25,8 +25,8 @@
  
- #CheckMail yes
--#UseLogin no
-+UseLogin no
+ # Authentication:
+ 
+-LoginGraceTime 600
+-PermitRootLogin yes
++LoginGraceTime 120
++PermitRootLogin no
+ StrictModes yes
+ 
+ RSAAuthentication yes
+@@ -66,8 +66,9 @@
+ #PrintLastLog no
+ KeepAlive yes
+ #UseLogin no
++UseLogin yes
  
 -#MaxStartups 10:30:60
 +MaxStartups 10:30:60
  #Banner /etc/issue.net
  #ReverseMappingCheck yes
  
--Subsystem	sftp	/usr/libexec/sftp-server
-+Subsystem	sftp	/usr/local/libexec/sftp-server

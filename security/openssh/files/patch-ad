@@ -1,23 +1,26 @@
---- lib/Makefile.orig	Tue Apr  3 21:53:30 2001
-+++ lib/Makefile	Sat May 26 14:39:03 2001
-@@ -8,7 +8,12 @@
- 	hostfile.c log.c match.c mpaux.c nchan.c packet.c readpass.c \
+--- lib/Makefile.orig	Mon Sep 24 22:34:07 2001
++++ lib/Makefile	Wed Oct  3 13:45:40 2001
+@@ -9,10 +9,14 @@
  	rsa.c tildexpand.c ttymodes.c uidswap.c xmalloc.c atomicio.c \
  	key.c dispatch.c kex.c mac.c uuencode.c misc.c \
--	cli.c rijndael.c ssh-dss.c ssh-rsa.c dh.c kexdh.c kexgex.c
-+	cli.c rijndael.c ssh-dss.c ssh-rsa.c dh.c kexdh.c kexgex.c \
-+	strlcpy.c strlcat.c
-+
+ 	rijndael.c ssh-dss.c ssh-rsa.c dh.c kexdh.c kexgex.c \
+-	scard.c
++	scard.c strlcpy.c strlcat.c
+ 
+ SRCS+=	readpassphrase.c
+ 
 +.if defined(COMPAT_GETADDRINFO)
 +SRCS+=	getaddrinfo.c getnameinfo.c name6.c rcmd.c bindresvport.c
 +.endif
- 
++
  NOPROFILE= yes
  NOPIC=	yes
-@@ -17,6 +22,7 @@
+ 
+@@ -20,6 +24,8 @@
  	@echo -n
  
  .include <bsd.own.mk>
++IGNORE_LIBSSH=yes
 +.include "../Makefile.inc"
  
  .if (${KERBEROS:L} == "yes")
