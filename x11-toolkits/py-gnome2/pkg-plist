@@ -3,7 +3,7 @@ lib/%%PYTHON_VERSION%%/site-packages/_cappletmodule.so
 lib/%%PYTHON_VERSION%%/site-packages/_gladegnomemodule.so
 lib/%%PYTHON_VERSION%%/site-packages/_gnomemodule.so
 lib/%%PYTHON_VERSION%%/site-packages/_gnomeuimodule.so
-lib/%%PYTHON_VERSION%%/site-packages/_gtkhtmlmodule.so
+@comment lib/%%PYTHON_VERSION%%/site-packages/_gtkhtmlmodule.so
 lib/%%PYTHON_VERSION%%/site-packages/_gtkxmhtmlmodule.so
 lib/%%PYTHON_VERSION%%/site-packages/_zvtmodule.so
 lib/%%PYTHON_VERSION%%/site-packages/gettext.py
@@ -63,9 +63,9 @@ lib/%%PYTHON_VERSION%%/site-packages/gnome/xmhtml.pyo
 lib/%%PYTHON_VERSION%%/site-packages/gnome/zvt.py
 lib/%%PYTHON_VERSION%%/site-packages/gnome/zvt.pyc
 lib/%%PYTHON_VERSION%%/site-packages/gnome/zvt.pyo
-lib/%%PYTHON_VERSION%%/site-packages/gtkhtml.py
-lib/%%PYTHON_VERSION%%/site-packages/gtkhtml.pyc
-lib/%%PYTHON_VERSION%%/site-packages/gtkhtml.pyo
+@comment lib/%%PYTHON_VERSION%%/site-packages/gtkhtml.py
+@comment lib/%%PYTHON_VERSION%%/site-packages/gtkhtml.pyc
+@comment lib/%%PYTHON_VERSION%%/site-packages/gtkhtml.pyo
 share/examples/py-gnome/about.py
 share/examples/py-gnome/bookmarks-applet.py
 share/examples/py-gnome/calculator.py
