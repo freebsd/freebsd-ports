@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/users/cjh/nhppf/
 
 MAINTAINER=	cjh@FreeBSD.org
 
-RUN_DEPENDS=    ${PREFIX}/share/texmf/fonts/type1/korean/pkmj/pkmjm0.pfb:$(PORTSDIR)/korean/hlatexpsfonts-wansungstd
+RUN_DEPENDS=    ${PREFIX}/share/texmf/fonts/type1/korean/pkmj/pkmjm0.pfb:$(PORTSDIR)/korean/hlatex-psfonts-wansung
 
 NO_BUILD=	yes
 
