@@ -3,15 +3,15 @@
 # Date created:		14 June 1997
 # Whom:			Dmitrij Tejblum <dima@tejblum.dnttm.rssi.ru>
 #
-# $Id: Makefile,v 1.8 1998/10/16 00:55:28 jseger Exp $
+# $Id: Makefile,v 1.9 1998/11/23 23:10:10 billf Exp $
 #
 
-DISTNAME=	Sharity-Light.1.0.s
-PKGNAME=	sharity-light-1.0
+DISTNAME=	Sharity-Light.1.2
+PKGNAME=	sharity-light-1.2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.obdev.at/pub/Products/Sharity-Light/	\
-		ftp://ftp.rhrz.uni-bonn.de/pub-koeln/net/samba/	\
-		ftp://ftp.warpnet.ro/mirrors/ftp.obdev.at/pub/Products/Sharity-Light/
+		ftp://ftp.warpnet.ro/mirrors/ftp.obdev.at/pub/Products/Sharity-Light/ \
+		http://www.freebsd.org/~dt/distfiles/
 
 MAINTAINER=	dt@FreeBSD.ORG
 

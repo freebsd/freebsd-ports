@@ -1,12 +1,11 @@
---- Makefile.orig	Wed Jun  3 15:19:51 1998
-+++ Makefile	Wed Jun  3 15:20:59 1998
-@@ -13,12 +13,12 @@
+--- Makefile.orig	Mon Jan  4 19:07:31 1999
++++ Makefile	Mon Jan  4 19:08:07 1999
+@@ -12,11 +12,11 @@
  ##############################################################################
  
  # For NEXTSTEP/OPENSTEP:
 -CFLAGS = -Wall -O2 -traditional-cpp -g
 +#CFLAGS = -Wall -O2 -traditional-cpp -g
- INCLUDES = $(MYINCL) $(INCL)
  # put your architecture here:
 -ARCH = -arch i386
 -THE_CC = cc
@@ -15,38 +14,18 @@
 +#THE_CC = cc
 +#RPC_WARNFLAGS = -Wno-unused -Wno-switch -Wno-uninitialized
  
- # For Linux:
+ # For Linux: (use static linking because of libc5/libc6 troubles)
  #CFLAGS = -Wall -O2 -g
-@@ -26,10 +26,10 @@
+@@ -24,9 +24,9 @@
  #RPC_WARNFLAGS = -Wno-unused -Wno-switch -Wno-uninitialized
  
  # For FreeBSD
 -#CFLAGS = -Wall -O2
--#INCLUDES = $(MYINCL) $(INCL)
 -#THE_CC = cc
 -#RPC_WARNFLAGS = -Wno-unused -Wno-switch -Wno-uninitialized
 +CFLAGS += -Wall
-+INCLUDES = $(MYINCL) $(INCL)
 +THE_CC := $(CC)
 +RPC_WARNFLAGS = -Wno-unused -Wno-switch -Wno-uninitialized
  
  # For NetBsd
  #CFLAGS = -Wall -O2 -DNETBSD
-@@ -67,7 +67,7 @@
- OFILES = proc.o sock.o rumba.o psinode.o kernel.o smb_abstraction.o fo_nfs.o
- 
- .c.o:
--	$(CC) $(CFLAGS) $(ARCH) -c -o $*.o $<
-+	$(CC) $(CFLAGS) -c -o $*.o $<
- 
- all: $(NAME)
- 
-@@ -75,7 +75,7 @@
- 	(cd nfs; $(MAKE) "CFLAGS=$(CFLAGS)" "CC=$(THE_CC)" "ARCH=$(ARCH)" "RPC_WARNFLAGS=$(RPC_WARNFLAGS)")
- 
- $(NAME): $(OFILES) nfs_dir
--	$(CC) $(ARCH) -o $(NAME) $(OFILES) nfs/nfs.o $(LIBS)
-+	$(CC) -o $(NAME) $(OFILES) nfs/nfs.o $(LIBS)
- 
- clean:
- 	rm -f $(OFILES)
