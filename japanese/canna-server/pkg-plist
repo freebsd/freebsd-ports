@@ -1,13 +1,129 @@
 @cwd /usr/local
-canna
-lib/libcanna.a
-lib/libcanna.so.1.0
-lib/libcanna16.a
-lib/libcanna16.so.1.0
+canna/bin/addwords
+canna/bin/canlisp
+canna/bin/cannacheck
+canna/bin/cannakill
+canna/bin/cannaserver
+canna/bin/cannastat
+canna/bin/canvert
+canna/bin/catdic
+canna/bin/chmoddic
+canna/bin/cpdic
+canna/bin/crfreq
+canna/bin/crrdic
+canna/bin/crxdic
+canna/bin/crxgram
+canna/bin/cshost
+canna/bin/ctow
+canna/bin/delwords
+canna/bin/dicar
+canna/bin/dpbindic
+canna/bin/dpromdic
+canna/bin/dpwdic
+canna/bin/dpxdic
+canna/bin/forcpp
+canna/bin/forsort
+canna/bin/itoc
+canna/bin/kpdic
+canna/bin/lsdic
+canna/bin/mergeword
+canna/bin/mkbindic
+canna/bin/mkdic
+canna/bin/mkromdic
+canna/bin/mvdic
+canna/bin/rmdic
+canna/bin/splitword
+canna/bin/syncdic
+canna/bin/wtoc
+canna/include/canna/RK.h
+canna/include/canna/jrkanji.h
+canna/include/canna/keydef.h
+canna/include/canna/mfdef.h
+canna/lib/default.canna
+canna/lib/dic/canna/bushu.fq
+canna/lib/dic/canna/dics.dir
+canna/lib/dic/canna/fuzokugo.d
+canna/lib/dic/canna/fuzokugo.fq
+canna/lib/dic/canna/hojomwd.t
+canna/lib/dic/canna/hojoswd.t
+canna/lib/dic/canna/iroha.d
+canna/lib/dic/canna/iroha.fq
+canna/lib/dic/canna/number.t
+canna/lib/dic/canna/suffix.t
+canna/lib/dic/canna/yuubin.fq
+canna/lib/dic/default.kp
+canna/lib/dic/default.rdic
+canna/lib/dic/english.kp
+canna/lib/dic/hyoujun.gram
+canna/lib/dic/jdaemon.kp
+canna/lib/dic/jdaemon.rdic
+canna/lib/dic/just.kp
+canna/lib/dic/just.rdic
+canna/lib/dic/kaisoku.kp
+canna/lib/dic/kana.kp
+canna/lib/dic/kana.rdic
+canna/lib/dic/lan5.kp
+canna/lib/dic/newjis.kp
+canna/lib/dic/newjis.rdic
+canna/lib/dic/premountdics
+canna/lib/dic/romaji.kp
+canna/lib/dic/sokuon.kp
+canna/lib/dic/tut.kp
+canna/lib/dic/user/user/chimei.t
+canna/lib/dic/user/user/dics.dir
+canna/lib/dic/user/user/katakana.t
+canna/lib/dic/user/user/necgaiji.t
+canna/lib/dic/user/user/software.t
+canna/lib/dic/user/user/user.t
+canna/lib/engine.cf
+canna/lib/sample/1.1.canna
+canna/lib/sample/1.1.iroha
+canna/lib/sample/1.2.canna
+canna/lib/sample/default.canna
+canna/lib/sample/default.iroha
+canna/lib/sample/fixer.canna
+canna/lib/sample/fixer.iroha
+canna/lib/sample/jdemon.canna
+canna/lib/sample/jdemon.iroha
+canna/lib/sample/just.canna
+canna/lib/sample/just.iroha
+canna/lib/sample/lan5.canna
+canna/lib/sample/modes.canna
+canna/lib/sample/modes.iroha
+canna/lib/sample/sample.canna
+canna/lib/sample/sample.iroha
+canna/lib/sample/src/Makefile
+canna/lib/sample/src/default.kpdef
+canna/lib/sample/src/english.kpdef
+canna/lib/sample/src/is.c
+canna/lib/sample/src/jdaemon.kpdef
+canna/lib/sample/src/just.kpdef
+canna/lib/sample/src/kaisoku.kpdef
+canna/lib/sample/src/kana.kpdef
+canna/lib/sample/src/lan5.kpdef
+canna/lib/sample/src/newjis.kpdef
+canna/lib/sample/src/romaji.kpdef
+canna/lib/sample/src/sokuon.kpdef
+canna/lib/sample/src/tut.kpdef
+canna/lib/sample/tut.canna
+canna/lib/sample/unix.canna
+canna/lib/sample/vje.canna
+canna/lib/sample/vje.iroha
 lib/libRKC.a
 lib/libRKC.so.1.0
 lib/libRKC16.a
 lib/libRKC16.so.1.0
+lib/libcanna.a
+lib/libcanna.so.1.0
+lib/libcanna16.a
+lib/libcanna16.so.1.0
 @exec ldconfig -m %B
-@exec mkdir -p /var/spool/canna/lock
-@exec chown bin.bin /var/spool/canna /var/spool/canna/lock
+@exec chown bin.bin %D/canna/lib/dic/canna
+@exec chmod ug+w %D/canna/lib/dic/canna
+@exec chown bin.bin %D/canna/lib/dic
+@exec chmod ug+w %D/canna/lib/dic
+@exec chown bin.bin %D/canna/lib/dic/user/user %D/canna/lib/dic/user
+@exec chmod ug+w %D/canna/lib/dic/user/user %D/canna/lib/dic/user
+@cwd /var/spool
+canna/lock/Readme
+@exec chown bin.bin %D/canna %D/canna/lock
