@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	yudit
-PORTVERSION=	2.5.4
-PORTREVISION=	1
+PORTVERSION=	2.6.2
 CATEGORIES=	editors converters print
 MASTER_SITES=	http://yudit.org/download/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= apps/editors/X
-DISTNAME=	${PORTNAME}-2.5.4
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jkoshy@freebsd.org
 
