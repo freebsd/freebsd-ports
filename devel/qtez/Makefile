@@ -17,6 +17,7 @@ USE_X_PREFIX=	yes
 USE_QT=		yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/qtez_src
+CFLAGS+=	-pedantic
 
 BROKEN=		"Compiler error"
 
