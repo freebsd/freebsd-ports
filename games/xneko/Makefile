@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	markm@FreeBSD.org
 
+BROKEN=		"Checksum fails"
+
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
 MAN6=		xneko.6
