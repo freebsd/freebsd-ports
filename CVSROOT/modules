@@ -5127,6 +5127,7 @@ mod_webapp	ports/www/mod_webapp
 mod_zap		ports/www/mod_zap
 mode-info	ports/editors/mode-info
 modlogan	ports/textproc/modlogan
+moftpd		ports/ftp/moftpd
 moinmoin	ports/www/moinmoin
 molden		ports/biology/molden
 moleskine	ports/editors/moleskine
