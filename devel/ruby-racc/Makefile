@@ -17,20 +17,19 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-.if !defined(RUNTIME)
-RUN_DEPENDS=	${RUBY_SITELIBDIR}/racc/parser.rb:${PORTSDIR}/devel/ruby-racc-runtime \
-		${RUBY_SITELIBDIR}/strscan.rb:${PORTSDIR}/devel/ruby-strscan
-.endif
-
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 
-.if defined(RUNTIME)
-CONFIGURE_ARGS=	--with=raccrt
-.else
 CONFIGURE_ARGS=	--with=racc
 
 WRKDIR_RACC=	${WRKSRC}/packages/racc
+
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} < 1.7
+RUN_DEPENDS+=	${RUBY_SITELIBDIR}/racc/parser.rb:${PORTSDIR}/lang/ruby16-shim-ruby18 \
+		${RUBY_SITEARCHLIBDIR}/strscan.so:${PORTSDIR}/lang/ruby16-shim-ruby18
+.endif
 
 post-extract:
 	${CP} -p ${WRKDIR_RACC}/misc/* ${WRKDIR_RACC}/bin/
@@ -43,6 +42,5 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR_RACC}/doc.en/* ${RUBY_DOCDIR}/${PORTNAME}/
 	${INSTALL_DATA} ${WRKDIR_RACC}/doc.ja/* ${RUBY_DOCDIR}/${PORTNAME}/ja/
 .endif
-.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
