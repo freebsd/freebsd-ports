@@ -20,6 +20,8 @@ COMMENT=	Internet/Intranet Input Method Gtk Client Framework
 LIB_DEPENDS=	iiimp.0:${PORTSDIR}/textproc/iiimf-protocol-lib \
 		iiimcf.2:${PORTSDIR}/textproc/iiimf-client-lib
 
+BROKEN=		Does not compile
+
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
 
