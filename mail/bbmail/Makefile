@@ -1,18 +1,19 @@
 # New ports collection makefile for:  	bbmail
-# Version required:   	0.5.2
+# Version required:   	0.5.3
 # Date created:		May 3 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
-# $Id: Makefile,v 1.4 1999/06/19 08:25:11 cpiazza Exp $
+# $Id: Makefile,v 1.5 1999/07/14 05:50:03 cpiazza Exp $
 #
 
-DISTNAME=	bbmail-0.5.2
+DISTNAME=	bbmail-0.5.3
 CATEGORIES=	mail
 MASTER_SITES=	http://bbtools.windsofstorm.net/sources/ \
 		ftp://stokes.tte.ele.tue.nl/pub/bbmail/
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
+WRKSRC=		${WRKDIR}/${DISTNAME}-1
 GNU_CONFIGURE=	YES
 USE_XLIB=	YES
 
