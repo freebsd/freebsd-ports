@@ -1,0 +1,11 @@
+--- modules/FvwmTaskBar/Goodies.h.orig	Sun Aug  3 13:00:30 1997
++++ modules/FvwmTaskBar/Goodies.h	Sun Aug  3 13:00:09 1997
+@@ -1,4 +1,8 @@
++#ifdef __FreeBSD__
++#define DEFAULT_MAIL_PATH  "/var/mail/"
++#else
+ #define DEFAULT_MAIL_PATH  "/var/spool/mail/"
++#endif
+ #define DEFAULT_BELL_VOLUME 20
+ 
+ /* Tip window types */
