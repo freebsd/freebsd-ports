@@ -10798,6 +10798,7 @@ xmlrpc++	ports/net/xmlrpc++
 xmlrpc-c	ports/net/xmlrpc-c
 xmlsec		ports/security/xmlsec
 xmlsec1		ports/security/xmlsec1
+xmlstarlet	ports/textproc/xmlstarlet
 xmltex		ports/print/xmltex
 xmlto		ports/textproc/xmlto
 xmlwrapp	ports/textproc/xmlwrapp
