@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	rawio
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://ftp.lemis.com/pub/
 
