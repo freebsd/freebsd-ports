@@ -1,0 +1,79 @@
+--- Makefile.am.orig	Mon Mar 24 20:30:38 2003
++++ Makefile.am	Fri May  2 15:33:10 2003
+@@ -9,13 +9,15 @@
+ 
+ SUBDIRS  = asm builtin engine fft include io lib parse ${PLOTDIR}
+ 
+-asirdir       = ${libdir}/asir
++bindir        = ${prefix}/bin
++asirlibdir    = ${datadir}/asir
++asirdir       = ${bindir}
+ asir_PROGRAMS = asir
+ asir_SOURCES  = parse/main.c
+ asir_LDADD    = libasir.a libasir-gc.a
+ CLEANFILES    = ${asir_LDADD} asir-openxm-${VERSION}.tgz
+ 
+-DEFS     = @DEFS@ -DASIR_LIBDIR=\"${asirdir}\"
++DEFS     = @DEFS@ -DASIR_LIBDIR=\"${asirlibdir}\"
+ INCLUDES = -I${top_srcdir}/include -I${top_srcdir}/parse -I${top_srcdir}/io \
+            -I${top_srcdir}/gc/include \
+            @PARIINC@ @MPIINC@ @X_CFLAGS@
+@@ -76,33 +78,33 @@
+ 	${INSTALL_DATA} libasir-gc.a ${DESTDIR}${libdir}/libasir-gc.a
+ 
+ install-openxm: asir${EXEEXT} install-libasir install-libasir-gc
+-	-mkdir -p ${DESTDIR}${bindir}
+-	${INSTALL_PROGRAM} asir ${DESTDIR}${bindir}
+-	-mkdir -p ${DESTDIR}${asirdir}
+-	(cd ${top_srcdir}/lib; ${MAKE} install-doc install-lib)
+-	-rm -f ${DESTDIR}${bindir}/ox_asir${EXEEXT}
+-	(cd ${DESTDIR}${bindir} ; ${LN_S} asir${EXEEXT} ox_asir${EXEEXT})
+-	-(cd ${DESTDIR}${asirdir}; \
+-    rm -f asir${EXEEXT} ox_asir${EXEEXT} ox_launch${EXEEXT} ox_plot${EXEEXT})
+-	(cd ${DESTDIR}${asirdir} ; \
+-	${LN_S} ../../bin/asir${EXEEXT} asir${EXEEXT} ; \
+-	${LN_S} asir${EXEEXT} ox_asir${EXEEXT} ; \
+-	${LN_S} asir${EXEEXT} ox_launch${EXEEXT} ; \
+-	${LN_S} asir${EXEEXT} ox_plot${EXEEXT})
+-	(cd ${top_srcdir}/include; ${MAKE} install)
+-	(cd ${top_srcdir}/parse; ${MAKE} install)
++#	-mkdir -p ${DESTDIR}${bindir}
++#	${INSTALL_PROGRAM} asir /usr/local/bin
++#	-mkdir -p ${DESTDIR}${asirdir}
++#	(cd ${top_srcdir}/lib; ${MAKE} install-doc install-lib)
++#	-rm -f ${DESTDIR}${bindir}/ox_asir${EXEEXT}
++#	(cd ${DESTDIR}${bindir} ; ${LN_S} asir${EXEEXT} ox_asir${EXEEXT})
++#	-(cd ${DESTDIR}${asirdir}; \
++#    rm -f asir${EXEEXT} ox_asir${EXEEXT} ox_launch${EXEEXT} ox_plot${EXEEXT})
++#	(cd ${DESTDIR}${asirdir} ; \
++#	${LN_S} ../../bin/asir${EXEEXT} asir${EXEEXT} ; \
++#	${LN_S} asir${EXEEXT} ox_asir${EXEEXT} ; \
++#	${LN_S} asir${EXEEXT} ox_launch${EXEEXT} ; \
++#	${LN_S} asir${EXEEXT} ox_plot${EXEEXT})
++#	(cd ${top_srcdir}/include; ${MAKE} install)
++#	(cd ${top_srcdir}/parse; ${MAKE} install)
+ 
+ install-lib:
+-	(cd ${top_srcdir}/lib; ${MAKE} install-lib)
+-	-(cd ${DESTDIR}${asirdir}; \
+-	rm -f ox_asir${EXEEXT} ox_launch${EXEEXT} ox_plot${EXEEXT})
+-	(cd ${DESTDIR}${asirdir} ; \
+-	${LN_S} asir${EXEEXT} ox_asir${EXEEXT} ; \
+-	${LN_S} asir${EXEEXT} ox_launch${EXEEXT} ; \
+-	${LN_S} asir${EXEEXT} ox_plot${EXEEXT})
+-	-mkdir -p ${DESTDIR}${bindir}
+-	-rm -f ${DESTDIR}${bindir}/asir${EXEEXT}
+-	(cd ${DESTDIR}${bindir} ; ${LN_S} ../lib/asir/asir${EXEEXT} asir${EXEEXT})
++#	(cd ${top_srcdir}/lib; ${MAKE} install-lib)
++#	-(cd ${DESTDIR}${asirdir}; \
++#	rm -f ox_asir${EXEEXT} ox_launch${EXEEXT} ox_plot${EXEEXT})
++#	(cd ${DESTDIR}${asirdir} ; \
++#	${LN_S} asir${EXEEXT} ox_asir${EXEEXT} ; \
++#	${LN_S} asir${EXEEXT} ox_launch${EXEEXT} ; \
++#	${LN_S} asir${EXEEXT} ox_plot${EXEEXT})
++#	-mkdir -p ${DESTDIR}${bindir}
++#	-rm -f ${DESTDIR}${bindir}/asir${EXEEXT}
++#	(cd ${DESTDIR}${bindir} ; ${LN_S} ../lib/asir/asir${EXEEXT} asir${EXEEXT})
+ 
+ install-doc:
+ 	(cd ${top_srcdir}/lib; ${MAKE} install-doc)

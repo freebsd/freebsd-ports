@@ -1,0 +1,13 @@
+--- builtin/numerical.c.org	Thu Aug 16 18:47:06 2001
++++ builtin/numerical.c	Thu Aug 16 18:47:52 2001
+@@ -51,7 +51,11 @@
+ #include "parse.h"
+ 
+ #if LAPACK
++#if (__FreeBSD__ >= 4)
++#include <g2c.h>
++#else
+ #include <f2c.h>
++#endif
+ 
+ void Pflinsolve(); 
