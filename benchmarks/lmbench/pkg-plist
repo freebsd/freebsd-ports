@@ -14,7 +14,6 @@ lib/lmbench/Results/OUT
 lib/lmbench/Results/PAPER
 lib/lmbench/Results/aix/6000-990
 lib/lmbench/Results/aix/powerpc.2
-lib/lmbench/Results/bsd/sundae.parc.xerox.com
 lib/lmbench/Results/dgux/AViiON
 lib/lmbench/Results/hpux/735
 lib/lmbench/Results/hpux/cello
@@ -61,7 +60,6 @@ lib/lmbench/Results/solaris/ss20.61
 lib/lmbench/Results/solaris/sun4m
 lib/lmbench/Results/solaris/ultrasparc.10
 lib/lmbench/Results/unixware/alder.2
-lib/lmbench/bin/bsd/CONFIG
 lib/lmbench/bin/bsd/bw_file_rd
 lib/lmbench/bin/bsd/bw_mem_cp
 lib/lmbench/bin/bsd/bw_mem_rd
