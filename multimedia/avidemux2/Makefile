@@ -7,6 +7,7 @@
 
 PORTNAME=	avidemux2
 PORTVERSION=	2.0.32
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://fixounet.free.fr/avidemux/ \
 		http://download.berlios.de/avidemux/
@@ -42,6 +43,10 @@ USE_GMAKE=	yes
 #.if ${HAVE_SDL:Msdl}!=""
 #WITH_SDL=	yes
 #.endif
+
+.if exists(${LOCALBASE}/lib/libfaac.so)
+WITH_FAAC=	yes
+.endif
 
 .if exists(${LOCALBASE}/lib/libfaad.so.0)
 WITH_FAAD=	yes
@@ -82,6 +87,10 @@ LIB_DEPENDS+=	a52.0:${PORTSDIR}/audio/liba52
 USE_SDL+=	sdl
 .endif
 
+.if defined(WITH_FAAC)
+LIB_DEPENDS+=	faac.0:${PORTSDIR}/audio/faac
+.endif
+
 .if defined(WITH_FAAD)
 LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
 .endif
@@ -103,8 +112,12 @@ pre-everything::
 	@${ECHO_MSG} "To enable SDL support define WITH_SDL."
 .endif
 
+.if !defined(WITH_FAAC)
+	@${ECHO_MSG} "To enable FAAC (mpeg4/aac encoder) support define WITH_FAAC."
+.endif
+
 .if !defined(WITH_FAAD)
-	@${ECHO_MSG} "To enable FAAD (mpeg4/aac) support define WITH_FAAD."
+	@${ECHO_MSG} "To enable FAAD (mpeg4/aac decoder) support define WITH_FAAD."
 .endif
 
 post-patch:
