@@ -10,12 +10,13 @@ PORTVERSION= 	1.3
 CATEGORIES=	${CATEGORY_LIST}
 MASTER_SITES=	http://www.aaa-int.or.jp/~jfactory/JDE/dist/
 DISTNAME=	Binder-${PORTVERSION}
+EXTRACT_ONLY=	# extracted directly in install target
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
 
 RUN_DEPENDS=	${RUN_DEP_LIST}
+LIB_DEPENDS=	${LIB_DEP_LIST}
 
-EXTRACT_ONLY=	# extracted directly in install target
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_X_PREFIX=	yes
@@ -30,12 +31,12 @@ PIXMAPPATH?=	${PREFIX}/share/WindowMaker/Pixmaps
 LANGUAGE?=
 .if (${LANGUAGE} == "Japanese")
 CATEGORY_LIST=	x11-fm windowmaker tkstep80 japanese
-RUN_DEP_LIST=	${LOCALBASE}/lib/Img1.2/libimg12.so.1:${PORTSDIR}/japanese/libimg \
-		${LOCALBASE}/lib/tkstep8.0jp/tkstep.tcl:${PORTSDIR}/japanese/tkstep80
+RUN_DEP_LIST=	${LOCALBASE}/lib/tkstep8.0jp/tkstep.tcl:${PORTSDIR}/japanese/tkstep80
+LIB_DEP_LIST=	img1:${PORTSDIR}/japanese/libimg
 .else
 CATEGORY_LIST=	x11-fm windowmaker tkstep80
-RUN_DEP_LIST=	${LOCALBASE}/lib/Img1.2/libimg12.so.1:${PORTSDIR}/graphics/libimg \
-		${LOCALBASE}/share/tkstep8.0/tkstep.tcl:${PORTSDIR}/x11-toolkits/tkstep80
+RUN_DEP_LIST=	${LOCALBASE}/lib/tkstep8.0/tkstep.tcl:${PORTSDIR}/x11-toolkits/tkstep80
+LIB_DEP_LIST=	img.1:${PORTSDIR}/graphics/libimg
 .endif
 
 do-install:
