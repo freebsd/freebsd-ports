@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	alpha/cryptplug
 MAINTAINER=	lofi@freebsd.org
 COMMENT=	A collection of plug-ins to cryptographic engines
 
-BUILD_DEPENDS=	gpgme-config:${PORTSDIR}/security/gpgme03 \
+BUILD_DEPENDS=	${LOCALBASE}/lib/libgpgme.so.9:${PORTSDIR}/security/gpgme03 \
 		gpg-agent:${PORTSDIR}/security/gnupg-devel
 
 USE_INC_LIBTOOL_VER=13
