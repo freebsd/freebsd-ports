@@ -7,6 +7,7 @@
 
 PORTNAME=	mupen64
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES+=	emulators
 MASTER_SITES=	http://mupen64.emulation64.com/files/${PORTVERSION}/
 PKGNAMESUFFIX=	-sound
@@ -24,7 +25,7 @@ ONLY_FOR_ARCHS=	i386
 
 PLUGIN_NAME=	mupen64_audio
 PLIST_FILES=	share/mupen64/plugins/${PLUGIN_NAME}.so
-PLIST_DIRS=	share/mupen64/plugins
+PLIST_DIRS=	share/mupen64/plugins share/mupen64
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|linux/soundcard.h|sys/soundcard.h|' ${WRKSRC}/main.c
