@@ -1,0 +1,4 @@
+bin/i386-go32-f77
+i386-go32/bin/f77
+i386-go32/include/f2c.h
+i386-go32/lib/libf2c.a

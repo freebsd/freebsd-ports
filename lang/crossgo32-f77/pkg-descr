@@ -1,0 +1,13 @@
+This package installs g2c libraries and f77 wrapper for DJGPP V2
+crossgo32 crosscompiler.
+
+Simple usage:
+	i386-go32-f77 -o fortran.exe fortran.f
+
+The above command creates the MS-DOS executable fortran.exe file from
+fortran.f fortran77 source file.
+
+Enjoy.
+
+Huidae Cho
+hdcho@geni.knu.ac.kr
