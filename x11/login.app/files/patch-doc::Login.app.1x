@@ -1,0 +1,72 @@
+--- doc/Login.app.1x.orig	Sun Oct 24 04:45:13 2004
++++ doc/Login.app.1x	Sat Jan 22 18:38:47 2005
+@@ -1,31 +1,25 @@
+-.TH Login.app 1 "October 2004"
++.TH Login.app 1 "January 2005"
+ .SH NAME
+ Login.app \- a login application with the NeXTStep look
+ .SH SYNOPSIS
+ .B Login.app
+ .SH "DESCRIPTION"
+ \fBLogin.app\fP fires up the X server, changes the background color,
+-and puts a login box centered on the screen. It's invoked via
+-\fIinit(8)\fP.
++and puts a login box centered on the screen\fP.
+ 
+ It accepts several \fIcommands\fP entered on the \fBusername\fP box.
+ .IP *
+ username \fBreboot\fP with the root password, excecutes
+- \fI/usr/local/GNUstep/Applications/Login.app/Scripts/Restart\fP
++ \fI%%X11BASE%%/GNUstep/Applications/Login.app/Scripts/Restart\fP
+ .IP *
+ username \fBhalt\fP with the root password, excecutes
+- \fI/usr/local/GNUstep/Applications/Login.app/Scripts/PowerOff\fP
++ \fI%%X11BASE%%/GNUstep/Applications/Login.app/Scripts/PowerOff\fP
+ .IP *
+ username \fBsuspend\fP with the root password, executes
+- \fI/usr/local/GNUstep/Applications/Login.app/Scripts/Suspend\fP
++ \fI%%X11BASE%%/GNUstep/Applications/Login.app/Scripts/Suspend\fP
+ .IP *
+-username \fBexit\fP without password exits (and restarts, if installed
+-on inittab) Login.app
+-.IP *
+-username \fBconsole\fP without password opens a kind of console where
+-you can login. \fBPlease note\fP root can't login here UNLESS you edit
+-\fI/etc/securetty(5)\fP to include ttyp0. Read that man page to find out
+-why.
++username \fBexit\fP without password exits Login.app and returns to
++the console login.
+ .SH "OPTIONS"
+ .TP
+ \fB-v\fP, \fB--version\fP
+@@ -35,20 +29,14 @@
+ Parse configuration and show result
+ .SH "FILES"
+ .TP
+-.B /etc/inittab
+-file used by \fIinit(8)\fP to initialize the computer
+-.TP
+-.B /usr/local/GNUstep/Applications/Login.app/Preferences
++.B %%X11BASE%%/GNUstep/Applications/Login.app/Preferences
+ Configuration settings.
+ .TP
+-.B /usr/local/GNUstep/Applications/Login.app/Scripts/*
++.B %%X11BASE%%/GNUstep/Applications/Login.app/Scripts/*
+ Scripts executed by Login.App
+ .TP
+-.B /usr/local/GNUstep/Applications/Login.app/Themes
++.B %%X11BASE%%/GNUstep/Applications/Login.app/Themes
+ Themes used by Login.app.
+-.SH BUGS
+-On the "console" I can't get it to recognize the root password without
+-changing securettys.
+ .SH AUTHOR
+ Login.app was written by Per Liden <per@rsn.hk-r.se>
+ .PP
+@@ -56,4 +44,5 @@
+ .PP
+  This manual page originally written by
+  Marcelo E. Magallon, <mmagallo@debian.org>
+- with updates by Justin Stressman
++ with updates by Justin Stressman and
++ adaptions for FreeBSD by Tobias Roth

@@ -7,7 +7,7 @@
 
 PORTNAME=	login.app
 PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://largo.windowmaker.org/files/Login.app/ \
 		http://depot.fsck.ch/mirror/distfiles/
@@ -22,8 +22,8 @@ LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker \
 WRKSRC=		${WRKDIR}/Login.app-${PORTVERSION:S/.a/-Alpha-/}
 
 USE_X_PREFIX=	yes
-HAS_CONFIGURE=  yes
-CONFIGURE_ARGS= --prefix=${PREFIX}
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX}
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
@@ -43,7 +43,9 @@ pre-configure:
 		${WRKSRC}/Themes/Drone/Makefile.in \
 		${WRKSRC}/Themes/Drone/Makefile.am \
 		${WRKSRC}/src/Makefile.in \
-		${WRKSRC}/src/Makefile.am
+		${WRKSRC}/src/Makefile.am \
+		${WRKSRC}/doc/Login.app.1x
+	# this replacement is only used to fix cluster builds:
 	@${REINPLACE_CMD} -e \
 		's|-lWUtil|-lWUtil -lintl|' \
 		${WRKSRC}/configure \
@@ -60,7 +62,8 @@ post-configure:
 		${WRKSRC}/Scripts/Startup \
 		${WRKSRC}/Preferences \
 		${WRKSRC}/src/config.h \
-		${WRKSRC}/src/preferences.h
+		${WRKSRC}/src/preferences.h \
+		${WRKSRC}/doc/Login.app.1x
 
 post-install:
 	@${SED} 's|%%X11BASE%%|${PREFIX}|' \
