@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	potrace
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	graphics
 MASTER_SITES=	http://potrace.sourceforge.net/download/
 
