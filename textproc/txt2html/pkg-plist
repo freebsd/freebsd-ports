@@ -1,11 +1,8 @@
 bin/txt2html
-share/doc/txt2html/INSTALL
-share/doc/txt2html/LICENSE
-share/doc/txt2html/README
-share/doc/txt2html/changes.html
-share/doc/txt2html/sample.foot
-share/doc/txt2html/sample.html
-share/doc/txt2html/sample.txt
 share/txt2html/txt2html.dict
+%%SITE_PERL%%/HTML/TextToHTML.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/TextToHTML/.packlist
 @dirrm share/txt2html
-@dirrm share/doc/txt2html
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/TextToHTML
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/HTML 2>/dev/null || true

@@ -6,33 +6,28 @@
 #
 
 PORTNAME=	txt2html
-PORTVERSION=	1.28
-PORTREVISION=	1
-CATEGORIES=	textproc
-MASTER_SITES=	http://www.aigeek.com/txt2html/
+PORTVERSION=	2.23
+CATEGORIES=	textproc perl5
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	txt2html
 
-MAINTAINER=	croyle@gelemna.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert raw text to something with a little HTML formatting
 
-NO_BUILD=	yes
-USE_REINPLACE=	yes
+BUILD_DEPENDS=	${SITE_PERL}/Getopt/ArgvFile.pm:${PORTSDIR}/devel/p5-Getopt-ArgvFile
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
-do-configure:
-	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g; \
-		s|${PREFIX}/lib|${DATADIR}|" ${WRKSRC}/txt2html.pl
+PERL_CONFIGURE=	yes
 
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/txt2html.pl ${PREFIX}/bin/txt2html
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/txt2html.dict ${DATADIR}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for file in INSTALL LICENSE README changes.html sample.foot sample.html sample.txt
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
+MAN1=	txt2html.1
+MAN3=	HTML::TextToHTML.3
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500601
+BUILD_DEPENDS+=	${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser \
+		${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+RUN_DEPENDS=	${BUILD_DEPENDS}
 .endif
-	@${ECHO_MSG} "To install the sample links dictionary as the default"
-	@${ECHO_MSG} "copy or link ${PREFIX}/share/doc/txt2html/txt2html.dict to"
-	@${ECHO_MSG} "${PREFIX}/lib/txt2html.dict or ~/.txt2html.dict"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -1,3 +1,0 @@
-To install the sample links dictionary as the default
-copy or link /usr/local/share/doc/txt2html/txt2html.dict to
-/usr/local/lib/txt2html.dict or ~/.txt2html.dict
