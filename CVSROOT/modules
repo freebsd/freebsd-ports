@@ -8405,6 +8405,7 @@ pear-Net_FTP	ports/ftp/pear-Net_FTP
 pear-Net_Finger	ports/net/pear-Net_Finger
 pear-Net_IMAP	ports/mail/pear-Net_IMAP
 pear-Net_IPv6	ports/net/pear-Net_IPv6
+pear-Net_LMTP	ports/mail/pear-Net_LMTP
 pear-Net_NNTP	ports/net/pear-Net_NNTP
 pear-Net_POP3	ports/net/pear-Net_POP3
 pear-Net_Ping	ports/net/pear-Net_Ping
