@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pth
-PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTVERSION=	1.4.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.engelschall.com/sw/pth/
