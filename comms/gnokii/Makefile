@@ -52,7 +52,6 @@ WANT_GNOME=	yes
 PLIST_SUB+=	SMSD='@comment '
 PLIST_SUB+=	PGM='@comment '
 PLIST_SUB+=	MSM='@comment '
-USE_GNOME+=	glib12
 .else
 PLIST_SUB+=	SMSD=''
 MAN8+=		smsd.8
@@ -70,6 +69,7 @@ WITH_PGSQL=	yes
 .else
 PLIST_SUB+=	PGM='@comment '
 .endif
+USE_GNOME+=	glib12
 .endif
 
 .if defined(WITHOUT_X11)
