@@ -1,6 +1,9 @@
-tkseti is a nice Tk interface to the seti@home program.  It shows
+tkseti is a nice Tk interface to the SETI@Home program.  It shows
 current best spikes and gaussians for the user and can be used in
 multiple directories.  It can also fetch the user's statistics from
 the seti@home web site.
 
 WWW: http://www.cuug.ab.ca/~macdonal/tkseti/
+
+- Pete
+petef@databits.net

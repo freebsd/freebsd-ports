@@ -6,25 +6,26 @@
 #
 
 PORTNAME=	tkseti
-PORTVERSION=	2.12
-CATEGORIES=	astro tk82
+PORTVERSION=	3.04
+CATEGORIES=	astro tk83
 MASTER_SITES=	http://www.cuug.ab.ca/~macdonal/tkseti/
 
-MAINTAINER=	brett@peloton.runet.edu
+MAINTAINER=	petef@databits.net
 
-RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82 \
+RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83 \
 		setiathome:${PORTSDIR}/astro/setiathome
 
 NO_BUILD=	yes
 
+MAN1=	tkseti.1
+
 do-install:
-	${MKDIR} ${PREFIX}/share/doc/tkseti
 	${INSTALL_SCRIPT} ${WRKSRC}/tkseti ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/tkseti.1 ${PREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/tkseti
 	${INSTALL_DATA}	${WRKSRC}/DOC ${PREFIX}/share/doc/tkseti/DOC
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/tkseti/README
-
-post-install:
-	@${ECHO} "Please read the documentation for tkseti located in"
-	@${ECHO} "${PREFIX}/share/doc/tkseti/DOC and ${PREFIX}/share/doc/tkseti/README."
+.endif
 
 .include <bsd.port.mk>
