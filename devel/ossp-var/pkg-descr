@@ -1,0 +1,10 @@
+OSSP var is a flexible, full-featured and fast variable construct expansion
+library. It supports a configurable variable construct syntax very similar
+to the style found in many scripting languages (like @name, ${name}, , etc.)
+and provides both simple scalar (${name}) and array (${name[index]})
+expansion, plus optionally one or more post-operations on the expanded value
+(${name:op:op...}).
+
+WWW: http://www.ossp.org/pkg/lib/var/
+
+-- AlanE@FreeBSD.org

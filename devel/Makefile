@@ -413,6 +413,7 @@
     SUBDIR += ossp-ex
     SUBDIR += ossp-l2
     SUBDIR += ossp-mm
+    SUBDIR += ossp-var
     SUBDIR += p4.el
     SUBDIR += p4db
     SUBDIR += p5-Agent
