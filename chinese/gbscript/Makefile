@@ -4,11 +4,11 @@
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.2 1997/01/25 18:08:40 obrien Exp $
+# $Id: Makefile,v 1.1.1.1 1997/02/08 00:29:27 obrien Exp $
 #
 
 DISTNAME=	gbscript-1.11
-PKGTNAME=	cn-gbscript-1.11
+PKGNAME=	cn-gbscript-1.11
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/print/  \
 		ftp://ftp.ifcss.org/pub/software/fonts/gb/misc/  \
