@@ -90,7 +90,7 @@ WITH_FAAD=yes
 ## support activation
 ##
 ## disable a52
-.ifndef(WITHOUT_A52)
+.ifndef(WITHOUT_LIBA52)
 LIB_DEPENDS+=	a52.0:${PORTSDIR}/audio/liba52
 
 CONFIGURE_ARGS+=	--enable-a52 \
