@@ -1,4 +1,4 @@
-#!/bin/sh -x
+#!/bin/sh
 
 # set up the resource file
 #	nothing yet...
