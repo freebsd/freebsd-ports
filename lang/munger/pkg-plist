@@ -1,0 +1,24 @@
+bin/munger
+bin/httpf
+bin/xml2munger
+share/munger-%%VERSION%%/mbox2munger.munger
+share/munger-%%VERSION%%/mime2munger.munger
+share/munger-%%VERSION%%/google.munger
+share/munger-%%VERSION%%/google.template
+share/munger-%%VERSION%%/ed.munger
+share/munger-%%VERSION%%/xml2lisp.munger
+share/munger-%%VERSION%%/xml2lisp2.munger
+share/munger-%%VERSION%%/xmlquery.munger
+share/munger-%%VERSION%%/filter.munger
+share/munger-%%VERSION%%/tags.munger
+share/munger-%%VERSION%%/fcgi.munger
+share/munger-%%VERSION%%/client.fcgi
+share/munger-%%VERSION%%/err.munger
+share/munger-%%VERSION%%/options.munger
+share/munger-%%VERSION%%/fmt.munger
+share/munger-%%VERSION%%/cat.munger
+share/munger-%%VERSION%%/grep.munger
+share/munger-%%VERSION%%/library.munger
+share/munger-%%VERSION%%/transform.munger
+share/munger-%%VERSION%%/view.munger
+@dirrm share/munger-%%VERSION%%

@@ -1,0 +1,16 @@
+Munger is a simple, statically-scoped, interpreted lisp that has
+line-editor-like access to multiple text buffers.  Lines can be inserted,
+removed, overwritten, retrieved in whole or in part, with or without tabs
+expanded, searched for matches on regular expressions, read from and written
+to files, and piped to and from, or filtered through external processes.
+
+Using regular expressions to search through or transform strings is easy in
+Munger.  Basic facilities for doing line-oriented I/O and cursor-addressing
+are provided.  Munger also has interfaces to the FastCGI devkit
+(http://www.fastcgi.com), and the SQLite library (http://www.sqlite.org).
+
+WWW: http://jamesbailie.com/munger.html
+
+--
+James Bailie <jimmy@jamesbailie.com>
+http://jamesbailie.com
