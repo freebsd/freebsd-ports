@@ -7,10 +7,10 @@
 
 PORTNAME=	aster
 PORTVERSION=	7.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	french cad python
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
-DISTNAME=	${PORTNAME}-full-src-${PORTVERSION}-4
+DISTNAME=	${PORTNAME}-full-src-${PORTVERSION}-5
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analyse des structures et thermo-mécanique
@@ -62,12 +62,14 @@ PKGMESSIN=	pkg-message.in
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=	"Does not compile on FreeBSD-4.x, and cannot be patched easily."
+.if ${ARCH} == "i386"
+FLAGARCH=	P_LINUX		# 32 bits
+.else
+FLAGARCH=	TRU64		# 64 bits
 .endif
 
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
+.if ${OSVERSION} < 500000
+BROKEN=	"Does not compile on FreeBSD-4.x, and cannot be patched easily."
 .endif
 
 .if defined(WITH_BLAS)
@@ -184,11 +186,14 @@ pre-configure:
 	@${ECHO_CMD} "_install_Pmw = False"			>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "_install_Numeric = False"			>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "_install_gmsh = False"			>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "_install_gibi = False"			>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "_install_homard = False"			>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "_install_eficas = False"			>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "_install_astk = False"			>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "_install_astk_serv = False"		>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "_install_metis = False"			>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "_install_crpcrs = False"			>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "_install_aster_Linux = False"		>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "HOME_HDF='${hdf_dir}'"			>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "HOME_MED='${LOCALBASE}'"			>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "HOME_TCL_TK='${tcl_dir}'"			>> ${WRKSRC}/setup.cfg
@@ -197,11 +202,11 @@ pre-configure:
 	@${ECHO_CMD} "SHELL_EXECUTION='${SHELL_INSTALL_ASTER}'"	>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "EDITOR='${WITH_ED}'"			>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "LDFLAGS='-v ${LDFLAGS}'"			>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "FFLAGS='-c ${FFLAGS} -DP_LINUX'"		>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "FFLAGS_DBG='-c -g -O -DP_LINUX'"		>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "CFLAGS='-c ${CFLAGS} ${PTHREAD_CFLAGS} -DP_LINUX'"	\
+	@${ECHO_CMD} "FFLAGS='-c ${FFLAGS} -D${FLAGARCH}'"	>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "FFLAGS_DBG='-c -g -O -D${FLAGARCH}'"	>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "CFLAGS='-c ${CFLAGS} ${PTHREAD_CFLAGS} -D${FLAGARCH}'"	\
 		>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "CFLAGS_DBG='-c -g -O -pipe ${PTHREAD_CFLAGS} -DP_LINUX'"	\
+	@${ECHO_CMD} "CFLAGS_DBG='-c -g -O -pipe ${PTHREAD_CFLAGS} -D${FLAGARCH}'"	\
 		>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "SYSLIBS='-Xlinker -export-dynamic ${PTHREAD_LIBS} -lutil -lm -lz -lg2c'"	\
 		>> ${WRKSRC}/setup.cfg
@@ -229,11 +234,13 @@ pre-install:
 
 do-install:
 	${MKDIR} ${tools_dir} ${inst_dir}
-	${INSTALL_PROGRAM} ${WRKSRC}/instdir/${vaster}/asteru.exe ${inst_dir}
-	${INSTALL_SCRIPT} ${WRKSRC}/instdir/${vaster}/asterd.exe ${inst_dir} # Don't strip!
+	${INSTALL_PROGRAM} ${WRKSRC}/instdir/${vaster}/asteru ${inst_dir}
+	${INSTALL_SCRIPT} ${WRKSRC}/instdir/${vaster}/asterd ${inst_dir} # Don't strip!
 .for FILE in ${DAT2FIX}
 	${SED} -e 's|${WRKSRC}/instdir/${vaster}|${inst_dir}|g'		\
 		-e 's|${WRKSRC}/instdir/outils|${tools_dir}|g'		\
+		-e 's|P mode astout|P mode interactif|'			\
+		-e 's|P mode forma01a|P mode interactif|'		\
 	< ${WRKSRC}/instdir/${vaster}/${FILE} > ${inst_dir}/${FILE}
 .endfor
 .for FILE in ${INST_DAT} ${INST_PY}
