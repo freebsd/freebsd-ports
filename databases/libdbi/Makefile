@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libdbi
-PORTVERSION=	0.6.6
+PORTVERSION=	0.6.7
 CATEGORIES=	databases devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://linux.ucla.edu/~dap24/%SUBDIR%/
