@@ -1,0 +1,11 @@
+--- lib/ps2epsi.orig	Wed Jan 30 01:05:36 2002
++++ lib/ps2epsi	Wed Jan 30 01:05:58 2002
+@@ -63,7 +63,7 @@
+ 
+ cat ${infile} |
+ sed -e '/^%%BeginPreview:/,/^%%EndPreview[^!-~]*$/d' -e '/^%!PS-Adobe/d'\
+--e '/^%%[A-Za-z][A-Za-z]*[^!-~]*$/d' -e '/^%%[A-Za-z][A-Za-z]*: /d'
++ -e '/^%%[A-Za-z][A-Za-z]*[^!-~]*$/d' -e '/^%%[A-Za-z][A-Za-z]*: /d'
+ 
+ cat << ENDEPS
+ %%Trailer
