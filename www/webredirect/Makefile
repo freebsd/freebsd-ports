@@ -8,7 +8,7 @@
 PORTNAME=	webredirect
 PORTVERSION=	0.2
 CATEGORIES=	www
-MASTER_SITES=	ftp://Raditex.se/pub/kaj/
+MASTER_SITES=	ftp://ftp.stacken.kth.se/pub/projects/webredirect/
 
 MAINTAINER=	rasmus@kaj.se
 
