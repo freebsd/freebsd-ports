@@ -8,8 +8,7 @@
 PORTNAME=	amstd
 PORTVERSION=	2.0.0
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://www.loveruby.net/archive/%SUBDIR%/ \
-		http://www.ruby-lang.org/~knu/backup/
+MASTER_SITES=	http://www.loveruby.net/archive/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
