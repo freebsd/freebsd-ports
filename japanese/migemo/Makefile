@@ -9,12 +9,10 @@ PORTNAME=	migemo
 PORTVERSION=	0.40
 PORTEPOCH=	1
 CATEGORIES=	japanese elisp
-MASTER_SITES=   http://migemo.namazu.org/stable/
+MASTER_SITES=   http://namazu.org/~satoru/migemo/
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT?=	Japanese incremental search tool
-
-BROKEN=		"Unfetchable"
 
 .if !defined(EMACS_PORT_NAME)
 USE_AUTOMAKE_VER=	14
