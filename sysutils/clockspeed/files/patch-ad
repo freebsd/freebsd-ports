@@ -14,7 +14,7 @@
      long or long long.
  
 - 2. Install the programs, the man pages, and /etc/leapsecs.dat:
-+ 2. Install the programs, the man pages, and %%PREFIX%%/etc/leapsecs.dat:
++ 2. Install the programs, the man pages, and %%PREFIX%%/etc/clockspeed/leapsecs.dat:
         # make setup check
 -    Put /usr/local/clockspeed/bin into $PATH.
 +    Put %%PREFIX%%/bin into $PATH.

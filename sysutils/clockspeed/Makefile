@@ -7,7 +7,7 @@
 
 PORTNAME=	clockspeed
 PORTVERSION=	0.62
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cr.yp.to/clockspeed/ \
 		ftp://mirror.pipex.net/pub/qmail/ \
@@ -23,19 +23,41 @@ INSTALL_TARGET=	setup check
 MAN1=		clockadd.1 clockspeed.1 clockview.1 sntpclock.1 \
 		taiclock.1 taiclockd.1
 
+PREFIX_FIX_FILES=	${WRKSRC}/leapsecs_read.c ${WRKSRC}/INSTALL
+CLOCKSPEED_RC_SCRIPT_SAMPLE=	${FILESDIR}/clockspeed.sh.sample
+RC_SCRIPT_STARTUP_DIR=		${PREFIX}/etc/rc.d
+
+.include <bsd.port.pre.mk>
+
+post-patch: real-post-patch
+
 do-configure:
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/INSTALL
 	@${ECHO} ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
 	@${ECHO} ${CC} -s -L${LOCALBASE}/lib > ${WRKSRC}/conf-ld
 	@${ECHO} ${PREFIX} > ${WRKSRC}/conf-home
 
-post-install:
+post-install: real-post-install
+
+.include <bsd.port.post.mk>
+
+real-post-patch:
+	@${SED} "s!/usr/local/!${PREFIX}!" ${CLOCKSPEED_RC_SCRIPT_SAMPLE} > \
+		${WRKDIR}/${CLOCKSPEED_RC_SCRIPT_SAMPLE:T}
+.for file in ${PREFIX_FIX_FILES}
+	@${PERL} -pi -ne "s|%%PREFIX%%|${PREFIX}|g" ${file}
+.endfor
+
+real-post-install:
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755 \
 		${PREFIX}/share/doc/clockspeed
 	@${INSTALL_DATA} ${WRKSRC}/INSTALL ${PREFIX}/share/doc/clockspeed
+	@${INSTALL_DATA} ${PKGMESSAGE} \
+		${PREFIX}/share/doc/clockspeed/INSTALL-FreeBSD
 .endif
 	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755 \
 		${PREFIX}/etc/clockspeed
-
-.include <bsd.port.mk>
+	@${INSTALL_DATA} ${WRKSRC}/leapsecs.dat ${PREFIX}/etc/clockspeed
+	@${INSTALL_SCRIPT} ${WRKDIR}/${CLOCKSPEED_RC_SCRIPT_SAMPLE:T} \
+		${RC_SCRIPT_STARTUP_DIR}/${CLOCKSPEED_RC_SCRIPT_SAMPLE:T}
+	@${SED} s!/usr/local/!${PREFIX}/! ${PKGMESSAGE}

@@ -1,0 +1,45 @@
+	ATTENTIONATTENTION:
+
+Please make sure that you read /usr/local/share/doc/clockspeed/INSTALL.
+It contains important information about testing and configuring
+clockspeed, and finally installing it in your system.
+
+Clockspeed uses the libtai library, check /usr/ports/devel/libtai
+for more details. TAI time measure is off 22 seconds from UTC time
+measure. Therefore, your system time will show a 22 secs difference
+from your time source after you've installed this port.
+
+To fix this, you could follow this simple recipe created with
+PR ports/27617.
+
+1) killall clockspeed (you can't have it running)
+2) sntpclock IP.OF.NTP.SERVER | clockadd
+3) enable/start clockspeed :
+	% cp /usr/local/etc/rc.d/clockspeed.sh.sample \
+	  /usr/local/etc/rc.d/clockspeed.sh
+	# enable clockspeed to automagically start next
+	# time you reboot. do this after testing everything
+	% /usr/local/etc/rc.d/clockspeed.sh start
+	# start clockspeed now
+4) sntpclock IP.OF.NTP.SERVER > /usr/local/etc/clockspeed/adjust
+5) cd /usr/src/share/zoneinfo
+6) make -DLEAPSECONDS clean all install ; make clean
+
+Step 5 and 6 build support in your system for leapseconds handling.
+Take a note about this since you might forget later to disable it
+if you remove this port. To disable it, simply re-do step 6 without
+-DLEAPSECONDS.
+Step 6 should not break anything but you can disable it anytime
+as per last paragraph if you think something unusual has happened
+to your system.
+ 
+7) /stand/sysinstall -> configure -> time zone (choose the correct
+   time zone for your system)
+8) sntpclock IP.OF.NTP.SERVER | clockview
+
+Check how close is your clock before and after now. Should be
+within milliseconds.
+
+Do not forget to add a cron(8) job with step 4 to periodically
+adjust clockspeed's drift rate. Once a week should be more than
+adequate.
