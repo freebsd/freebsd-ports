@@ -6,20 +6,11 @@
 #
 
 PORTNAME=	ns
-PORTVERSION=	1.0.3
-MASTER_SITES=	http://gwforum.net/mirror/ns/ \
-		http://files.games.eftel.com/halflife/ns/ \
+PORTVERSION=	1.0.4
+MASTER_SITES=	http://files.games.eftel.com/halflife/ns/ \
 		http://www.jetstreamgames.co.nz/files/pub/halflife/NaturalSelection/ \
-		http://www.redphive.org/files/ns/ \
 		ftp://ftp2.extreme-players.de/hl/mod/ns/ \
-		ftp://ftp.task.gda.pl/mirror/ftp.extreme-players.de/exp/hl/mod/ns/ \
-		ftp://files.recongamer.com:2121/games/action/half-life/mods/natural-selection/ \
-		http://mirror2.lanvancouver.com/:PATCH \
-		http://mirror3.lanvancouver.com/:PATCH \
-		http://www.helix-designs.com/files/:PATCH \
-		http://www.cofrfps.com/downloads/:PATCH \
-		http://gamefiles.blueyonder.co.uk/blueyondergames/halflife/modifications/naturalselection/server/win32/:PATCH \
-		ftp://gaming.stny.com/files/:PATCH
+		http://files.redphive.org/:PATCH
 DISTFILES=	ns_v1_linux_dedicated_server.tar.gz \
 		ns-v${PORTVERSION:S/.//g}.zip:PATCH
 EXTRACT_ONLY=	ns_v1_linux_dedicated_server.tar.gz
