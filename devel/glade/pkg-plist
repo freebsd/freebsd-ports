@@ -1,19 +1,110 @@
 bin/glade
-share/doc/glade/README
-share/doc/glade/TODO
-share/doc/glade/developer.txt
-share/doc/glade/file_format.txt
-share/doc/glade/generic.txt
-share/doc/glade/manual.txt
-share/doc/glade/notes.txt
-share/doc/glade/portability.txt
-share/doc/glade/source_code.txt
+share/glade/gnome/Makefile.am
+share/glade/gnome/aclocal-include.m4
+share/glade/gnome/autogen.sh
+share/glade/gnome/compiler-flags.m4
+share/glade/gnome/curses.m4
+share/glade/gnome/gnome-bonobo-check.m4
+share/glade/gnome/gnome-common.m4
+share/glade/gnome/gnome-fileutils.m4
+share/glade/gnome/gnome-ghttp-check.m4
+share/glade/gnome/gnome-gnorba-check.m4
+share/glade/gnome/gnome-guile-checks.m4
+share/glade/gnome/gnome-libgtop-check.m4
+share/glade/gnome/gnome-objc-checks.m4
+share/glade/gnome/gnome-orbit-check.m4
+share/glade/gnome/gnome-print-check.m4
+share/glade/gnome/gnome-pthread-check.m4
+share/glade/gnome/gnome-support.m4
+share/glade/gnome/gnome-undelfs.m4
+share/glade/gnome/gnome-vfs.m4
+share/glade/gnome/gnome-x-checks.m4
+share/glade/gnome/gnome-xml-check.m4
+share/glade/gnome/gnome.m4
+share/glade/gnome/gperf-check.m4
+share/glade/gnome/linger.m4
+share/glade/gnome/need-declaration.m4
 share/glade/gtk/autogen.sh
+share/gnome/apps/Development/glade.desktop
+share/gnome/help/glade/C/faq/docbook.css
+share/gnome/help/glade/C/faq/index.html
+share/gnome/help/glade/C/faq/ln7.html
+share/gnome/help/glade/C/faq/stylesheet-images/caution.gif
+share/gnome/help/glade/C/faq/stylesheet-images/home.gif
+share/gnome/help/glade/C/faq/stylesheet-images/important.gif
+share/gnome/help/glade/C/faq/stylesheet-images/next.gif
+share/gnome/help/glade/C/faq/stylesheet-images/note.gif
+share/gnome/help/glade/C/faq/stylesheet-images/prev.gif
+share/gnome/help/glade/C/faq/stylesheet-images/tip.gif
+share/gnome/help/glade/C/faq/stylesheet-images/toc-blank.gif
+share/gnome/help/glade/C/faq/stylesheet-images/toc-minus.gif
+share/gnome/help/glade/C/faq/stylesheet-images/toc-plus.gif
+share/gnome/help/glade/C/faq/stylesheet-images/up.gif
+share/gnome/help/glade/C/faq/stylesheet-images/warning.gif
+share/gnome/help/glade/C/topic.dat
+share/gnome/help/glade/C/user-guide/authors.html
+share/gnome/help/glade/C/user-guide/docbook.css
+share/gnome/help/glade/C/user-guide/edit-menu.html
+share/gnome/help/glade/C/user-guide/helloworld.html
+share/gnome/help/glade/C/user-guide/help-menu.html
+share/gnome/help/glade/C/user-guide/index.html
+share/gnome/help/glade/C/user-guide/introduction.html
+share/gnome/help/glade/C/user-guide/libglade.html
+share/gnome/help/glade/C/user-guide/ln7.html
+share/gnome/help/glade/C/user-guide/menus.html
+share/gnome/help/glade/C/user-guide/output.html
+share/gnome/help/glade/C/user-guide/project-options.html
+share/gnome/help/glade/C/user-guide/quickstart.html
+share/gnome/help/glade/C/user-guide/settings-menu.html
+share/gnome/help/glade/C/user-guide/stylesheet-images/caution.gif
+share/gnome/help/glade/C/user-guide/stylesheet-images/home.gif
+share/gnome/help/glade/C/user-guide/stylesheet-images/important.gif
+share/gnome/help/glade/C/user-guide/stylesheet-images/next.gif
+share/gnome/help/glade/C/user-guide/stylesheet-images/note.gif
+share/gnome/help/glade/C/user-guide/stylesheet-images/prev.gif
+share/gnome/help/glade/C/user-guide/stylesheet-images/tip.gif
+share/gnome/help/glade/C/user-guide/stylesheet-images/toc-blank.gif
+share/gnome/help/glade/C/user-guide/stylesheet-images/toc-minus.gif
+share/gnome/help/glade/C/user-guide/stylesheet-images/toc-plus.gif
+share/gnome/help/glade/C/user-guide/stylesheet-images/up.gif
+share/gnome/help/glade/C/user-guide/stylesheet-images/warning.gif
+share/gnome/help/glade/C/user-guide/toolbar.html
+share/gnome/help/glade/C/user-guide/user-guide-images/edit-menu.png
+share/gnome/help/glade/C/user-guide/user-guide-images/file-menu.png
+share/gnome/help/glade/C/user-guide/user-guide-images/grid-options.png
+share/gnome/help/glade/C/user-guide/user-guide-images/help-menu.png
+share/gnome/help/glade/C/user-guide/user-guide-images/menu.png
+share/gnome/help/glade/C/user-guide/user-guide-images/options-c.png
+share/gnome/help/glade/C/user-guide/user-guide-images/options-general.png
+share/gnome/help/glade/C/user-guide/user-guide-images/options-libglade.png
+share/gnome/help/glade/C/user-guide/user-guide-images/settings-menu.png
+share/gnome/help/glade/C/user-guide/user-guide-images/snap-options.png
+share/gnome/help/glade/C/user-guide/user-guide-images/toolbar.png
+share/gnome/help/glade/C/user-guide/user-guide-images/view-menu.png
+share/gnome/help/glade/C/user-guide/user-guide-images/window-main.png
+share/gnome/help/glade/C/user-guide/user-guide-images/window-palette-add.png
+share/gnome/help/glade/C/user-guide/user-guide-images/window-palette-basic.png
+share/gnome/help/glade/C/user-guide/user-guide-images/window-palette-gnome.png
+share/gnome/help/glade/C/user-guide/using.html
+share/gnome/help/glade/C/user-guide/view-menu.html
+share/gnome/help/glade/C/user-guide/windows-clipboard.html
+share/gnome/help/glade/C/user-guide/windows-editor.html
+share/gnome/help/glade/C/user-guide/windows-palette.html
+share/gnome/help/glade/C/user-guide/windows-tree.html
+share/gnome/help/glade/C/user-guide/windows.html
+share/gnome/help/glade/C/user-guide/x230.html
+share/gnome/help/glade/C/user-guide/x329.html
+share/gnome/pixmaps/glade.png
+share/locale/ca/LC_MESSAGES/glade.mo
+share/locale/cs/LC_MESSAGES/glade.mo
 share/locale/da/LC_MESSAGES/glade.mo
 share/locale/de/LC_MESSAGES/glade.mo
+share/locale/el/LC_MESSAGES/glade.mo
 share/locale/en_GB/LC_MESSAGES/glade.mo
 share/locale/es/LC_MESSAGES/glade.mo
 share/locale/fr/LC_MESSAGES/glade.mo
+share/locale/ga/LC_MESSAGES/glade.mo
+share/locale/gl/LC_MESSAGES/glade.mo
 share/locale/it/LC_MESSAGES/glade.mo
 share/locale/ja/LC_MESSAGES/glade.mo
 share/locale/no/LC_MESSAGES/glade.mo
@@ -22,6 +113,14 @@ share/locale/pt_BR/LC_MESSAGES/glade.mo
 share/locale/ru/LC_MESSAGES/glade.mo
 share/locale/sv/LC_MESSAGES/glade.mo
 share/locale/uk/LC_MESSAGES/glade.mo
+@dirrm share/gnome/help/glade/C/user-guide/user-guide-images
+@dirrm share/gnome/help/glade/C/user-guide/stylesheet-images
+@dirrm share/gnome/help/glade/C/user-guide
+@dirrm share/gnome/help/glade/C/faq/stylesheet-images
+@dirrm share/gnome/help/glade/C/faq
+@dirrm share/gnome/help/glade/C
+@dirrm share/gnome/help/glade
+@unexec rmdir %D/share/gnome/apps/Development 2>/dev/null || true
 @dirrm share/glade/gtk
+@dirrm share/glade/gnome
 @dirrm share/glade
-@dirrm share/doc/glade
