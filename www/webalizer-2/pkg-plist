@@ -3,9 +3,11 @@ etc/webalizer.conf-dist
 share/doc/webalizer/CHANGES
 share/doc/webalizer/COPYING
 share/doc/webalizer/Copyright
+share/doc/webalizer/INSTALL
 share/doc/webalizer/README
+share/doc/webalizer/country-codes.txt
 share/doc/webalizer/webalizer.LSM
+@dirrm share/doc/webalizer
 share/examples/webalizer/msfree.gif
 share/examples/webalizer/sample.conf
-@dirrm share/doc/webalizer
 @dirrm share/examples/webalizer
