@@ -17,4 +17,7 @@ MAINTAINER=	howardjp@wam.umd.edu
 
 MAN1=	grep.1 egrep.1 fgrep.1 zgrep.1
 
+post-extract:
+	@(cd ${WRKSRC}; rm -f .depend)
+
 .include <bsd.port.mk>
