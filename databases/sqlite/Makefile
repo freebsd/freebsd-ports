@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	sqlite
-PORTVERSION=	1.0.27
+PORTVERSION=	1.0.30
 CATEGORIES=	databases
 MASTER_SITES=	http://www.hwaci.com/sw/sqlite/
 DISTNAME=	${PORTNAME}
