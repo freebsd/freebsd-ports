@@ -6181,6 +6181,7 @@ p5-Lingua-Stem	ports/textproc/p5-Lingua-Stem
 p5-Lingua-Stem-It	ports/textproc/p5-Lingua-Stem-It
 p5-Lingua-Stem-Snowball-Da	ports/textproc/p5-Lingua-Stem-Snowball-Da
 p5-Lingua-Stem-Snowball-No	ports/textproc/p5-Lingua-Stem-Snowball-No
+p5-Lingua-Stem-Snowball-Se	ports/textproc/p5-Lingua-Stem-Snowball-Se
 p5-Locale-Codes	ports/misc/p5-Locale-Codes
 p5-Locale-Maketext	ports/devel/p5-Locale-Maketext
 p5-Locale-Maketext-Fuzzy	ports/devel/p5-Locale-Maketext-Fuzzy
