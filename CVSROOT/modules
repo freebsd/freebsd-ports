@@ -854,6 +854,7 @@ cl-port		ports/devel/cl-port
 cl-port-cmucl	ports/devel/cl-port-cmucl
 cl-port-sbcl	ports/devel/cl-port-sbcl
 cl-ppcre	ports/textproc/cl-ppcre
+cl-ppcre-cmucl	ports/textproc/cl-ppcre-cmucl
 cl-split-sequence	ports/devel/cl-split-sequence
 clamav		ports/security/clamav
 clamav-devel	ports/security/clamav-devel
