@@ -5,15 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME?=	yatex
-PORTVERSION?=	1.67
+PORTNAME=	yatex
+PORTVERSION=	${VERSION}
 CATEGORIES?=	print elisp
 MASTER_SITES=	http://www.yatex.org/
-DISTNAME=	yatex1.67
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	taoka@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/yatex${VERSION}
 .if defined(XEMACS-MULE)
 BUILD_DEPENDS=	xemacs:${PORTSDIR}/japanese/xemacs21-canna \
 		${LOCALBASE}/lib/xemacs/xemacs-packages/pkginfo/MANIFEST.zenirc:${PORTSDIR}/editors/xemacs-sumo-packages \

@@ -5,9 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	yatex-mule
-PORTVERSION=	1.67
-CATEGORIES=	print elisp
+PKGNAMESUFFIX=	-mule
 
 MULE=		yes
 

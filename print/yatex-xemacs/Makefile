@@ -5,8 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	yatex-xemacs
-PORTVERSION=	1.67
+PKGNAMESUFFIX=	-xemacs
 
 XEMACS=		yes
 
