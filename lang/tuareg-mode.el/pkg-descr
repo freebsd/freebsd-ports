@@ -1,0 +1,17 @@
+From the web site:
+
+  Tuareg is a Caml mode for GNU Emacs and XEmacs. It handles automatic
+  indentation of Objective Caml and Camllight codes. Key parts of the
+  code are hilighted using Font-Lock. Support to run an interactive
+  Caml toplevel and debbuger is provided.
+
+  This mode attempts to give better results than the one provided in
+  the standard distribution OCaml 3.x. Indentation rules are slightly
+  different but closer to classical functional languages.
+
+  There is no relation with the Tuareg People, except their reputation
+  of great CAMeL riders and breeders.
+
+Documentation is installed into share/doc/tuareg-mode
+
+WWW: http://www-rocq.inria.fr/~acohen/tuareg/
