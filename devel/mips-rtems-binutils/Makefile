@@ -9,7 +9,7 @@ PORTNAME=       binutils
 
 MAINTAINER=     jeh@FreeBSD.org
 
-BROKEN=         RepoCopy done.  Now it has to be updated.
-
+#BROKEN=         RepoCopy done.  Now it has to be updated.
+#
 LCLTARGET=      mips-rtems
 .include "${.CURDIR}/../i386-rtems-binutils/Makefile"
