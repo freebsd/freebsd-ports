@@ -3,11 +3,11 @@
 # Date created:		Mon Feb 15 02:53:29 CET 1999
 # Whom:			Anders Nordby <anders@fix.no>
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/10 19:08:24 jseger Exp $
+# $Id: Makefile,v 1.2 1999/04/13 23:11:07 mharo Exp $
 #
 
 DISTNAME=	kvirc-0.9.0
-CATEGORIES=	net kde
+CATEGORIES=	irc kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
 MASTER_SITE_SUBDIR=	 stable/1.1/apps/network
 

@@ -3,12 +3,12 @@
 # Date created:		10 May 1998
 # Whom:			nordwick@xcf.berkeley.edu
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/11 02:51:41 jseger Exp $
+# $Id: Makefile,v 1.2 1999/05/20 14:05:05 kuriyama Exp $
 #
 
 DISTNAME=	java_cup_v10g
 PKGNAME=	java_cup-10.g
-CATEGORIES=	devel
+CATEGORIES=	java
 MASTER_SITES=	http://www.cs.princeton.edu/~appel/modern/java/CUP/
 
 MAINTAINER=	nordwick@xcf.berkeley.edu

@@ -3,12 +3,12 @@
 # Date created:		21 May 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/09 01:58:17 steve Exp $
+# $Id: Makefile,v 1.2 1999/06/19 08:25:54 cpiazza Exp $
 #
 
 DISTNAME=	quirc
 PKGNAME=	quirc-0.9.77
-CATEGORIES=	net tk80
+CATEGORIES=	irc tk80
 MASTER_SITES=	http://www.quirc.org/ \
 		http://patearl.powersurfr.com/quirc/
 

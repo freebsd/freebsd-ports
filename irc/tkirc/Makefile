@@ -3,12 +3,12 @@
 # Date created:         Jan 15 1998
 # Whom:                 brianfeldman@hotmail.com
 #
-# $Id: Makefile,v 1.5 1998/04/14 09:27:21 jkh Exp $
+# $Id: Makefile,v 1.6 1998/08/07 23:56:44 asami Exp $
 #
 
 DISTNAME=	tkirc1.202
 PKGNAME=	tkirc-1.202
-CATEGORIES=	net tk80
+CATEGORIES=	irc tk80
 MASTER_SITES=	ftp://ftp.informatik.uni-oldenburg.de/pub/tkirc/
 
 MAINTAINER=	brianfeldman@hotmail.com

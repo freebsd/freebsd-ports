@@ -3,12 +3,12 @@
 # Date created:		16 May 1999
 # Whom:			jake@checker.org
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/09 00:59:02 steve Exp $
+# $Id: Makefile,v 1.1.1.1 1999/06/10 08:10:14 steve Exp $
 #
 
 DISTNAME=	tya13v2
 PKGNAME=	tya-1.3v2
-CATEGORIES=	lang
+CATEGORIES=	java
 MASTER_SITES=	ftp://gonzalez.cyberus.ca/pub/Linux/java/
 EXTRACT_SUFX=	.tgz
 

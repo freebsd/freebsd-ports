@@ -3,12 +3,12 @@
 # Date created:		23 August 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.18 1998/01/26 10:44:18 asami Exp $
+# $Id: Makefile,v 1.19 1998/12/09 20:15:29 billf Exp $
 #
 
 DISTNAME=	irc2.10.1
 PKGNAME=	irc-2.10.1
-CATEGORIES=	net
+CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.funet.fi/pub/networking/services/irc/server/ \
 		ftp://ftp.irc.org/irc/server/ \
 		ftp://tau.ac.il/pub/unix/irc/server/ \

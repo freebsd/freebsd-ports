@@ -3,12 +3,12 @@
 # Date created:        25 Sept 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.2 1999/03/03 20:45:18 billf Exp $
+# $Id: Makefile,v 1.3 1999/04/07 21:22:54 billf Exp $
 #
 
 DISTNAME=	muh2.04
 PKGNAME=	muh-2.04
-CATEGORIES=	net
+CATEGORIES=	irc
 MASTER_SITES=	http://mind.riot.org/download/
 
 MAINTAINER=	billf@FreeBSD.org

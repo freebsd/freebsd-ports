@@ -3,12 +3,12 @@
 # Date created:		13 Dec 1998
 # Whom:			Taguchi Takeshi <taguchi@tohoku.iij.ad.jp>
 #
-# $Id: Makefile,v 1.2 1999/01/15 09:49:24 asami Exp $
+# $Id: Makefile,v 1.3 1999/04/02 08:27:56 taoka Exp $
 #
 
 DISTNAME=	xc
 PKGNAME=	xtt-3DLabs-${VERSION}.${PATCHLEVEL}
-CATEGORIES=	x11
+CATEGORIES=	x11-servers
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 

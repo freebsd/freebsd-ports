@@ -3,12 +3,12 @@
 # Date created:			14 Apr 1999
 # Whom:				Jim Mock <jim@phrantic.phear.net>
 #
-# $Id: Makefile,v 1.3 1999/05/29 03:55:52 steve Exp $
+# $Id: Makefile,v 1.4 1999/06/19 20:09:23 cpiazza Exp $
 #
 
 DISTNAME=	irssi-0.7.11-2
 PKGNAME=	irssi-0.7.11
-CATEGORIES=	net
+CATEGORIES=	irc
 MASTER_SITES=	http://www.sicom.fi/~ikioma/irssi/
 
 MAINTAINER=	jim@phrantic.phear.net

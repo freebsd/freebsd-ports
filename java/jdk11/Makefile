@@ -3,11 +3,11 @@
 # Date created:		Feb, 8, 1998
 # Whom:			Nate Williams <nate@FreeBSD.org>
 #
-# $Id: Makefile,v 1.21 1999/06/08 21:57:38 steve Exp $
+# $Id: Makefile,v 1.22 1999/06/08 23:13:20 steve Exp $
 #
 
 DISTNAME=	jdk-${JDK_VERSION}
-CATEGORIES=	lang devel
+CATEGORIES=	java devel
 #MASTER_SITES=	ftp://ftp.nuxi.com/pub/FreeBSD/JDK/ \
 MASTER_SITES=		http://www.freebsd.org/java/
 

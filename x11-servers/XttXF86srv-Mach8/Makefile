@@ -3,12 +3,12 @@
 # Date created:		15 April 1998
 # Whom:			Taguchi Takeshi <taguchi@tohoku.iij.ad.jp>
 #
-# $Id: Makefile,v 1.7 1999/04/02 08:28:08 taoka Exp $
+# $Id: Makefile,v 1.8 1999/06/13 07:17:40 simokawa Exp $
 #
 
 DISTNAME=	xc
 PKGNAME=	xtt-Mach8-${VERSION}.${PATCHLEVEL}
-CATEGORIES=	x11
+CATEGORIES=	x11-servers
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 

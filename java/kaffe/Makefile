@@ -3,11 +3,11 @@
 # Date created:         20 February 1995
 # Whom:                 Tim Wilkinson <tim@sarc.city.ac.uk>
 #
-# $Id: Makefile,v 1.40 1999/03/08 07:28:30 asami Exp $
+# $Id: Makefile,v 1.41 1999/04/10 01:41:01 archie Exp $
 #
 
 DISTNAME=	kaffe-1.0.b4
-CATEGORIES=	lang
+CATEGORIES=	java
 MASTER_SITES=	ftp://ftp.transvirtual.com/pub/kaffe/
 
 MAINTAINER=	xaa@xaa.iae.nl

@@ -3,12 +3,12 @@
 # Date created:		17 May 1999
 # Whom:			Jun Kuriyama <kuriyama@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/09 13:08:40 kuriyama Exp $
+# $Id: Makefile,v 1.2 1999/06/23 15:26:12 kuriyama Exp $
 #
 
 DISTNAME=	swing11
 PKGNAME=	jfc-1.1
-CATEGORIES=	lang
+CATEGORIES=	java
 MASTER_SITES=	http://java.sun.com/products/jfc/
 EXTRACT_SUFX=	.tar.Z
 

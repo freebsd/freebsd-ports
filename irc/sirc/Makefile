@@ -3,7 +3,7 @@
 # Date created:                      4 May 1998
 # Whom:                              Studded <Studded@dal.net>
 #
-# $Id: Makefile,v 1.2 1998/05/07 21:58:53 mph Exp $
+# $Id: Makefile,v 1.3 1998/09/16 06:55:15 asami Exp $
 #
 # If you need SOCKS support, define SOCKS_SERVER with
 # the name of your SOCKS proxy and remove the '#'.
@@ -13,7 +13,7 @@
 # SOCKS_SERVER= your.socks.proxy
 
 DISTNAME=	sirc-2.211
-CATEGORIES=	net
+CATEGORIES=	irc
 MASTER_SITES=	http://www.eleves.ens.fr:8080/home/espel/sirc/ \
 		ftp://ftp1.dal.net/dalnet/clients/unix/sirc/ \
 		ftp://ftp2.dal.net/dalnet/clients/unix/sirc/

@@ -3,12 +3,12 @@
 # Date created:		15 April 1998
 # Whom:			Taguchi Takeshi <taguchi@tohoku.iij.ad.jp>
 #
-# $Id: Makefile,v 1.17 1999/03/19 22:38:55 asami Exp $
+# $Id: Makefile,v 1.18 1999/04/02 08:28:21 taoka Exp $
 #
 
 DISTNAME=	xc
 PKGNAME?=	xtt-common-${VERSION}.${PATCHLEVEL}
-CATEGORIES=	x11
+CATEGORIES=	x11-servers
 MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.3/source/ \
 		ftp://xfree86.cdrom.com/pub/XFree86/3.3.3/source/ \
 		http://hawk.ise.chuo-u.ac.jp/student/person/tshiozak/x-tt/dists/1.x/1.2/
