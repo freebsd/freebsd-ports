@@ -46,6 +46,10 @@ CONFIGURE_ARGS+= --enable-lzw
 USE_PERL5=	YES
 USE_XLIB=       YES
 CONFIGURE_ENV=  LDFLAGS="$(LDFLAGS) -L${WRKSRC}/magick/.libs"
+
+pre-configure:
+	${RM} -f ${WRKSRC}/config.cache
+
 post-install:
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
