@@ -3,7 +3,7 @@
 # Date created:		19 December 1994
 # Whom:			janek
 #
-# $Id: Makefile,v 1.18 1998/08/19 04:16:15 hoek Exp $
+# $Id: Makefile,v 1.19 1998/09/21 01:35:32 steve Exp $
 #
 
 DISTNAME=	moxftp-2.2
@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://ftp.pacbell.com/X11/contrib/applications/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.ORG
+
+BROKEN_ELF=	yes
 
 HAS_CONFIGURE=	yes
 USE_X_PREFIX=	yes
