@@ -21,6 +21,12 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 MAN1=		lisp.1 cmucl.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
+.endif
+
 do-install:
 	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} ${WRKDIR}/bin/lisp ${PREFIX}/bin
 	(cd ${WRKDIR} && tar fc - lib ) | (cd ${PREFIX} && tar fx -)
@@ -31,4 +37,4 @@ do-install:
 	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} ${WRKDIR}/man/man1/lisp.1 \
 		${PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
