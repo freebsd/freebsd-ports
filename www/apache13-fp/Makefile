@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	apache_fp
-PORTVERSION=	1.3.14
+PORTVERSION=	1.3.17
 CATEGORIES=	www
 MASTER_SITES=	http://www.apache.org/dist/ \
 		ftp://ftp.microsoft.com/products/frontpage/ \
@@ -62,6 +62,9 @@ PLIST_SUB=	FP_REV=${FP_REV}
 #
 # Set APACHE_PERF_TUNING env. variable to YES to get maximum performance
 #
+HTTPD_USER?=	apache
+HTTPD_GROUP?=	apache
+USER_WEB_DIR?=	public_html
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	 \
@@ -69,6 +72,8 @@ CONFIGURE_ARGS=	 \
 		  --server-gid=nogroup \
 		  --with-perl=${PERL} \
 		  --with-layout=${FILESDIR}/FreeBSD.layout:FreeBSD \
+		  --server-uid=${HTTPD_USER} \
+		  --server-gid=${HTTPD_GROUP} \
 		  --without-confadjust \
 		  --enable-shared=max \
 		  --enable-module=most \
@@ -102,14 +107,12 @@ CONFIGURE_ENV=	CFLAGS='${CFLAGS}' \
 MAN1=	dbmmanage.1 htdigest.1 htpasswd.1
 MAN8=	ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8
 
-.if defined(SUEXEC)
-HTTPD_USER?=www
-USER_DIR?=public_html
+.ifndef NO_SUEXEC
 CONFIGURE_ARGS+=	--enable-suexec \
 			--suexec-caller=${HTTPD_USER} \
 			--suexec-docroot=${PREFIX}/www/data \
 			--suexec-logfile=/var/log/httpd-suexec.log \
-			--suexec-userdir=${USER_DIR} \
+			--suexec-userdir=${USER_WEB_DIR} \
 			--suexec-safepath='/bin:/usr/bin:${PREFIX}/bin'
 MAN8+=	suexec.8
 .endif
@@ -142,13 +145,18 @@ post-patch:
 .endif
 
 post-configure:
-.if defined(SUEXEC)
+.ifndef NO_SUEXEC
 	${CP} ${PKGDIR}/pkg-plist ${PLIST}
 .else
 	${CAT} ${PKGDIR}/pkg-plist | ${GREP} -v sbin/suexec > ${PLIST}
 .endif
 
 IMAGES=		apache_pb.gif fplogo.gif powerlogo.gif
+
+# Create apache user and group
+pre-install:
+	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} PKG_USER=${HTTPD_USER} \
+	    PKG_GROUP=${HTTPD_GROUP} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \

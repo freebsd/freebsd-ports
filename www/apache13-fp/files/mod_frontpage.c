@@ -634,7 +634,7 @@ static int FrontPageAlias(
          * the owners and groups of both directories to match, and have both a
          * uid and gid in the allowable range.
          */
-        sprintf(szFormat, "Incorrect permissions on webroot \"\%-.0124s\" and webroot's _vti_pvt directory, the owners and groups must match and have a uid >= %d and gid >= %d", LOWEST_VALID_UID, LOWEST_VALID_GID);
+        sprintf(szFormat, "Incorrect permissions on webroot \"%%-.1024s\" and webroot's _vti_pvt directory, the owners and groups must match and have a uid >= %d and gid >= %d", LOWEST_VALID_UID, LOWEST_VALID_GID);
 
         LogFrontPageError(r->server, szFormat,
                           szBuf, "FrontPageAlias()", FALSE);

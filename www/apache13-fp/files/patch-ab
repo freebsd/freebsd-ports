@@ -1,6 +1,6 @@
---- Makefile.tmpl.orig	Tue Jan 11 13:47:41 2000
-+++ Makefile.tmpl	Thu Mar  2 23:00:19 2000
-@@ -123,6 +123,7 @@
+--- Makefile.tmpl.orig	Mon Jan 15 10:26:17 2001
++++ Makefile.tmpl	Thu Feb  8 22:41:43 2001
+@@ -126,6 +126,7 @@
  runtimedir      = @runtimedir@
  logfiledir      = @logfiledir@
  proxycachedir   = @proxycachedir@
@@ -8,7 +8,7 @@
  
  libexecdir_relative   = @libexecdir_relative@
  
-@@ -266,9 +267,9 @@
+@@ -269,9 +270,9 @@
  	$(MKDIR) $(root)$(mandir)/man1
  	$(MKDIR) $(root)$(mandir)/man8
  	$(MKDIR) $(root)$(sysconfdir)
@@ -20,7 +20,7 @@
  	$(MKDIR) $(root)$(includedir)
  	$(MKDIR) $(root)$(includedir)/xml
  	$(MKDIR) $(root)$(runtimedir)
-@@ -324,19 +325,34 @@
+@@ -327,19 +328,34 @@
  			echo "$(INSTALL_DSO) $(TOP)/$(SRC)/$${mod} $(root)$(libexecdir)/$${file}"; \
  			$(INSTALL_DSO) $(TOP)/$(SRC)/$${mod} $(root)$(libexecdir)/$${file}; \
  			name=`$(TOP)/$(AUX)/fmn.sh $(TOP)/$(SRC)/$${mod}`; \
@@ -60,7 +60,7 @@
  	fi
  	@echo "<=== [programs]"
  
-@@ -405,6 +421,7 @@
+@@ -408,6 +424,7 @@
  	echo "$(INSTALL_SCRIPT) $(TOP)/$(SRC)/support/apachectl[*] $(root)$(sbindir)/$${apachectl}"; \
  	sed -e 's;PIDFILE=.*;PIDFILE=$(runtimedir)/$(TARGET).pid;' \
  		-e 's;HTTPD=.*;HTTPD=$(sbindir)/$(TARGET);' \
@@ -68,7 +68,7 @@
  		< $(TOP)/$(SRC)/support/apachectl > $(TOP)/$(SRC)/.apaci.install.tmp && \
  		$(INSTALL_SCRIPT) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(sbindir)/$${apachectl}; \
  	echo "$(INSTALL_DATA) $(TOP)/$(SRC)/support/apachectl.8 $(root)$(mandir)/man8/$${apachectl}.8"; \
-@@ -452,26 +469,30 @@
+@@ -455,26 +472,28 @@
  #   icons and distributed CGI scripts.
  install-data:
  	@echo "===> [data: Installing initial data files]"
@@ -89,10 +89,8 @@
 -		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(cgidir)/]"; \
 -	else \
 +		(cd $(root)$(doc_prefix)/ && $(TAR) -xf -); \
-+		for lang in ca cz de dk ee en es fr it ja.jis lu nl po.iso-pl pt pt-br se; do \
-+			mv $(root)$(doc_prefix)/index.html.$${lang} \
-+			   $(root)$(doc_prefix)/index.html.$${lang}-dist ; \
-+		done; \
++		mv $(root)$(doc_prefix)/index.html.en \
++			   $(root)$(doc_prefix)/index.html.en-dist ; \
 +		find $(root)$(doc_prefix)/ -type d -exec chmod a+rx {} \; ; \
 +		find $(root)$(doc_prefix)/ -type f -exec chmod a+r {} \; ; \
 +#	fi
@@ -113,7 +111,7 @@
  	@echo "Copying tree $(TOP)/icons/ -> $(root)$(iconsdir)/"; \
  	(cd $(TOP)/icons/ && $(TAR) $(TAROPT) - *) |\
  	(cd $(root)$(iconsdir)/ && $(TAR) -xf -); \
-@@ -504,42 +525,47 @@
+@@ -507,42 +526,47 @@
  			-e 's;@@ServerRoot@@/icons;$(iconsdir);' \
  			-e 's;@@ServerRoot@@/cgi-bin;$(cgidir);' \
  			-e 's;@@ServerRoot@@/proxy;$(proxycachedir);' \
