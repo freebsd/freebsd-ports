@@ -1,0 +1,96 @@
+--- Makefile.in.orig	Sat Sep 28 08:38:59 2002
++++ Makefile.in	Wed Nov  6 07:41:33 2002
+@@ -25,7 +25,7 @@
+ #Rules: major  -- inc for incompatible change
+ #     : minor  -- inc for bugfix or forward compatible change
+ 
+-LIBVERSION=1.0
++LIBVERSION=1
+ 
+ PATHS= 
+ 
+@@ -34,7 +34,7 @@
+ CFLAGS=@CFLAGS@
+ CPPFLAGS=-I. -I$(srcdir) @CPPFLAGS@ $(PATHS) @DEFS@
+ LDFLAGS=@LDFLAGS@
+-LIBS=@LIBS@
++LIBS=-L. @LIBS@
+ THLDFLAGS=@THLDFLAGS@
+ THLIBS=@THLIBS@
+ AR=@AR@
+@@ -51,8 +51,10 @@
+ PERL=@PERL@
+ ENT=@ENT@
+ EXEEXT=@EXEEXT@
++SHLDSONAME=-Wl,-soname,libspread.so.$(LIBVERSION)
++TSHLDSONAME=-Wl,-soname,libtspread.so.$(LIBVERSION)
+ 
+-TARGETS=spread$(EXEEXT) spuser$(EXEEXT) spflooder$(EXEEXT) spmonitor$(EXEEXT) sptuser${EXEEXT} @LIBSPSO@ @LIBTSPSO@
++TARGETS=spread$(EXEEXT) spuser$(EXEEXT) spflooder$(EXEEXT) spmonitor$(EXEEXT) sptuser${EXEEXT} @LIBSPSO@ @LIBTSPSO@ libspread.a libtspread.a
+ 
+ LIBSP_OBJS= alarm.o events.o memory.o sp.o
+ 
+@@ -123,8 +125,11 @@
+ 	$(INSTALL) -m 0755 libspread.$(LIBVERSION).dylib $(DESTDIR)$(libdir)/libspread.$(LIBVERSION).dylib
+ 	(cd $(DESTDIR)$(libdir); $(SOFTLINK) libspread.$(LIBVERSION).dylib libspread.dylib)
+ 
+-libspread.so:	$(LIBSP_SHOBJS)
+-	$(SHLD) -o $@ $(LIBSP_SHOBJS) $(SHLDFLAGS) $(SHLIBS)
++libspread.so:	$@.$(LIBVERSION)
++	$(SOFTLINK) $@.$(LIBVERSION) $@
++
++libspread.so.$(LIBVERSION):	$(LIBSP_SHOBJS)
++	$(SHLD) -o $@ $(LIBSP_SHOBJS) $(SHLDSONAME) $(SHLDFLAGS) $(SHLIBS)
+ 
+ install-libspread.so:	libspread.so
+ 	$(INSTALL) -m 0755 libspread.so $(DESTDIR)$(libdir)/libspread.so.$(LIBVERSION)
+@@ -142,8 +147,11 @@
+ 	$(INSTALL) -m 0755 libtspread.$(LIBVERSION).dylib $(DESTDIR)$(libdir)/libtspread.$(LIBVERSION).dylib
+ 	(cd $(DESTDIR)$(libdir); $(SOFTLINK) libtspread.$(LIBVERSION).dylib libtspread.dylib)
+ 
+-libtspread.so:	$(LIBTSP_SHOBJS)
+-	$(SHLD) -o $@ $(LIBTSP_SHOBJS) $(SHLDFLAGS) $(SHLIBS) $(THLIBS)
++libtspread.so:	$@.$(LIBVERSION)
++	$(SOFTLINK) $@.$(LIBVERSION) $@
++
++libtspread.so.$(LIBVERSION):	$(LIBTSP_SHOBJS)
++	$(SHLD) -o $@ $(LIBTSP_SHOBJS) $(TSHLDSONAME) $(SHLDFLAGS) $(SHLIBS) $(THLIBS)
+ 
+ install-libtspread.so:	libtspread.so
+ 	$(INSTALL) -m 0755 libtspread.so $(DESTDIR)$(libdir)/libtspread.so.$(LIBVERSION)
+@@ -152,17 +160,17 @@
+ spread$(EXEEXT): $(SPREADOBJS)
+ 	$(LD) -o $@ $(SPREADOBJS) $(LDFLAGS) $(LIBS)
+ 
+-spuser$(EXEEXT): libspread.a	user.o
+-	$(LD) -o $@ user.o $(LDFLAGS) libspread.a $(LIBS)
++spuser$(EXEEXT): libspread.so	user.o
++	$(LD) -o $@ user.o $(LDFLAGS) -lspread $(LIBS)
+ 
+-spflooder$(EXEEXT): libspread.a flooder.o
+-	$(LD) -o $@ flooder.o $(LDFLAGS) libspread.a $(LIBS)
++spflooder$(EXEEXT): libspread.so flooder.o
++	$(LD) -o $@ flooder.o $(LDFLAGS) -lspread $(LIBS)
+ 
+ spmonitor$(EXEEXT): $(MONITOROBJS)
+ 	$(LD) -o $@ $(MONITOROBJS) $(LDFLAGS) $(LIBS) 
+ 
+-sptuser$(EXEEXT): user.to libtspread.a
+-	$(LD) $(THLDFLAGS) -o $@ user.to libtspread.a $(LDFLAGS) $(LIBS) $(THLIBS)
++sptuser$(EXEEXT): user.to libtspread.so
++	$(LD) $(THLDFLAGS) -o $@ user.to -ltspread $(LDFLAGS) $(LIBS) $(THLIBS)
+ 
+ spsimple_user$(EXEEXT): simple_user.o libspread.a
+ 	$(LD) -o $@ simple_user.o $(LDFLAGS) libspread.a $(LIBS) 
+@@ -234,11 +242,6 @@
+ 	done
+ 	if [ ! -d $(DESTDIR)$(sysconfdir) ]; then \
+ 		$(buildtoolsdir)/mkinstalldirs $(DESTDIR)$(sysconfdir); \
+-	fi
+-	if [ ! -f $(DESTDIR)$(sysconfdir)/spread.conf ]; then \
+-		$(INSTALL) -m 644 $(srcdir)/sample.spread.conf $(DESTDIR)$(sysconfdir)/spread.conf; \
+-	else \
+-		echo "$(DESTDIR)$(sysconfdir)/spread.conf already exists, install will not overwrite"; \
+ 	fi
+ 
+ uninstallall:	uninstall
