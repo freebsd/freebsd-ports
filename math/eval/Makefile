@@ -3,15 +3,14 @@
 # Date created:         24 Sep 1997
 # Whom:                 eserte
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/04/26 03:25:09 mph Exp $
 #
 
 DISTNAME=	Eval113
 PKGNAME=	eval-113
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.doc.ic.ac.uk/Mirrors/wuarchive.wustl.edu/pub/aminet/util/cli/ \
-		ftp://ftp.uni-paderborn.de/ftp/aminet/pub/util/cli/ \
-		ftp://ftp.demon.net/pub/mirrors/aminet/util/cli/
+		ftp://ftp.uni-paderborn.de/ftp/aminet/pub/util/cli/ 
 EXTRACT_SUFX=	.lha
 
 MAINTAINER=	eserte@cs.tu-berlin.de
