@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Data-Flow
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../by-authors/id/T/TB/TBONE/
+MASTER_SITE_SUBDIR=	../by-authors/id/R/RA/RADOS/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
@@ -18,6 +18,5 @@ COMMENT=	Perl extension for simple-minded recipe-controlled build of data
 PERL_CONFIGURE=	YES
 
 MAN3=		Data::Flow.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
