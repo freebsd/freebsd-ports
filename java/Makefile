@@ -3,6 +3,7 @@
 
     SUBDIR += bluej
     SUBDIR += bouncycastle
+    SUBDIR += bsh
     SUBDIR += bugseeker
     SUBDIR += bugseeker-demo
     SUBDIR += collections
