@@ -1,3 +1,4 @@
+usr/libexec/elf/ld
 usr/share/mk/bsd.port.mk
 usr/share/mk/bsd.port.pre.mk
 usr/share/mk/bsd.port.post.mk
