@@ -94,6 +94,7 @@
     SUBDIR += cube
     SUBDIR += cursive
     SUBDIR += d2x
+    SUBDIR += daimonin-client
     SUBDIR += deal
     SUBDIR += defendguin
     SUBDIR += deng
