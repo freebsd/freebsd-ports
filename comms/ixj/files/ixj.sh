@@ -1,6 +1,6 @@
 #!/bin/sh
 
-$PREFIX=%%PREFIX%%
+PREFIX=%%PREFIX%%
 
 case "$1" in
   restart)
