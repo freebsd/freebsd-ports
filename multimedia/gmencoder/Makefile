@@ -7,7 +7,7 @@
 
 PORTNAME=	gmencoder
 PORTVERSION=	0.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,6 +26,8 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui
 USE_REINPLACE=	yes
 
+MAN1=		gmencoder.1
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O4||; s|type -path|which|' \
 		${WRKSRC}/configure
@@ -37,5 +39,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
+	${INSTALL_MAN}	${WRKSRC}/man/gmencoder.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
