@@ -14,7 +14,7 @@ avail||distrib
 avail||doc
 avail||ports
 avail||projects
-avail||src
+avail|murray,peter,joe|src
 avail||www
 unavail||src/UPDATING
 avail|:updating_committers|src/UPDATING
