@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	xemacs-wp-packages
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_XEMACS} \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	packages kiri
 DISTFILES=	\
-		crisp-1.11-pkg.tar.gz \
-		edt-1.10-pkg.tar.gz \
-		reftex-1.21-pkg.tar.gz \
-		textools-1.11-pkg.tar.gz \
-		tpu-1.11-pkg.tar.gz
+		crisp-1.12-pkg.tar.gz \
+		edt-1.11-pkg.tar.gz \
+		reftex-1.22-pkg.tar.gz \
+		textools-1.12-pkg.tar.gz \
+		tpu-1.12-pkg.tar.gz
 DIST_SUBDIR=	xemacs
 
 MAINTAINER=	kiri@FreeBSD.org
