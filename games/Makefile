@@ -233,6 +233,7 @@
     SUBDIR += rollemup
     SUBDIR += rt2-demo
     SUBDIR += rtb
+    SUBDIR += rtcw
     SUBDIR += rubix
     SUBDIR += sdlroids
     SUBDIR += seabattle
