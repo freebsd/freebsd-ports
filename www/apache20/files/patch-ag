@@ -1,5 +1,5 @@
-*** conf/httpd.conf-dist.orig	Thu Oct 16 22:55:54 1997
---- conf/httpd.conf-dist	Wed Oct 22 20:58:36 1997
+*** conf/httpd.conf-dist.orig	Wed Feb  4 22:42:29 1998
+--- conf/httpd.conf-dist	Fri Feb 20 13:36:27 1998
 ***************
 *** 34,40 ****
   #  suggested workaround is to create a user www and use that user.
@@ -18,7 +18,24 @@
   # ServerAdmin: Your address, where problems with the server should be
   # e-mailed.
 ***************
-*** 56,76 ****
+*** 47,53 ****
+  # mounted filesystem then please read the LockFile documentation,
+  # you will save yourself a lot of trouble.
+  
+! ServerRoot @@ServerRoot@@
+  
+  # BindAddress: You can support virtual hosts with this option. This option
+  # is used to tell the server which IP address to listen to. It can either
+--- 47,53 ----
+  # mounted filesystem then please read the LockFile documentation,
+  # you will save yourself a lot of trouble.
+  
+! ServerRoot /usr/local/etc/apache
+  
+  # BindAddress: You can support virtual hosts with this option. This option
+  # is used to tell the server which IP address to listen to. It can either
+***************
+*** 59,79 ****
   # ErrorLog: The location of the error log file. If this does not start
   # with /, ServerRoot is prepended to it.
   
@@ -38,9 +55,9 @@
   # no two invocations of Apache share the same scoreboard file.
 ! ScoreBoardFile logs/apache_status
   
-  # ServerName allows you to set a host name which is sent back to clients for
-  # your server if it's different than the one the program would get (i.e. use
---- 56,78 ----
+  # The LockFile directive sets the path to the lockfile used when Apache
+  # is compiled with either USE_FCNTL_SERIALIZED_ACCEPT or
+--- 59,81 ----
   # ErrorLog: The location of the error log file. If this does not start
   # with /, ServerRoot is prepended to it.
   
@@ -62,10 +79,27 @@
   # no two invocations of Apache share the same scoreboard file.
 ! ScoreBoardFile /var/run/apache_runtime_status
   
-  # ServerName allows you to set a host name which is sent back to clients for
-  # your server if it's different than the one the program would get (i.e. use
+  # The LockFile directive sets the path to the lockfile used when Apache
+  # is compiled with either USE_FCNTL_SERIALIZED_ACCEPT or
 ***************
-*** 175,184 ****
+*** 172,178 ****
+  
+  # To enable the cache as well, edit and uncomment the following lines:
+  
+! #CacheRoot @@ServerRoot@@/proxy
+  #CacheSize 5
+  #CacheGcInterval 4
+  #CacheMaxExpire 24
+--- 174,180 ----
+  
+  # To enable the cache as well, edit and uncomment the following lines:
+  
+! #CacheRoot /usr/local/etc/apache/proxy
+  #CacheSize 5
+  #CacheGcInterval 4
+  #CacheMaxExpire 24
+***************
+*** 196,205 ****
    
   #<VirtualHost host.some_domain.com>
   #ServerAdmin webmaster@host.some_domain.com
@@ -76,7 +110,7 @@
   #</VirtualHost>
   
   
---- 177,186 ----
+--- 198,207 ----
    
   #<VirtualHost host.some_domain.com>
   #ServerAdmin webmaster@host.some_domain.com
