@@ -41,7 +41,7 @@ ${PROGS} ${TESTS}: ${SHLIB_NAME} lib${LIB}.a
 
 install:
 	mkdir -p ${PREFIX}/include/gd
-	make LIB=${LIB} LIBDIR="${PREFIX}/lib" \
+	make LIB=${LIB} LIBDIR="${PREFIX}/lib" NOPROFILE=true \
 		SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR} \
 		-f bsd.lib.mk install
 	cd ${.CURDIR} && ${INSTALL_DATA} ${INCS} ${PREFIX}/include/gd
