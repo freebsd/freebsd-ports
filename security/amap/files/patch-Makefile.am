@@ -1,13 +1,10 @@
---- Makefile.am.orig	Mon Jul 14 21:38:18 2003
-+++ Makefile.am	Wed Aug 13 15:14:22 2003
-@@ -1,8 +1,7 @@
+--- Makefile.am.orig	Sun Sep 14 11:04:11 2003
++++ Makefile.am	Sun Sep 14 11:05:29 2003
+@@ -1,6 +1,5 @@
 -CC=gcc
  LIB=-lpcre -L./pcre-3.9/ -I./pcre-3.9/
 -OPT=-O2
 +OPT=${CFLAGS}
  OPT_DEBUG=-ggdb -Wall -lefence
--DIR=/usr/local/bin
-+DIR=${PREFIX}/bin
+ DIR=/bin
  SCRIPTS=appdefs.trig appdefs.resp appdefs.rpc
- MANPAGE=amap.1
- all:	pcre strip
