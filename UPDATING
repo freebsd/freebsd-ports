@@ -6,6 +6,25 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050114:
+  AFFECTS: users of security/libgnomesu, esp. on FreeBSD 4.x.
+  AUTHOR: adamw@FreeBSD.org
+
+  If you installed libgnomesu the day it was added to the ports tree,
+  you have a malformed PAM control file in /etc/pam.d/. All libgnomesu
+  users should remove /etc/pam.d/gnomesu-pam, and 5.x users should
+  replace it with the version in the updated libgnomesu port (ensure
+  that you're using the most current revision of the libgnomesu port).
+  
+  4.x users: listen up! The presence of the /etc/pam.d/ directory (and
+  anything in that directory) presents a Very Bad Thing. Unless you've
+  manually tweaked your PAM settings, you must run:
+  
+  	# rm /etc/pam.d/gnomesu-pam
+  	# rmdir /etc/pam.d/
+	
+  or all users will be locked out of your system!
+  
 20050110:
   AFFECTS: users of irc/iip
   AUTHOR: lioux@FreeBSD.org
