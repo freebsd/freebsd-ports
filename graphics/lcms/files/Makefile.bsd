@@ -9,6 +9,7 @@ NOPROFILE=YES
 INCS=	${.CURDIR}/../include/lcms.h ${.CURDIR}/../include/icc34.h
 
 CFLAGS+=	-I${.CURDIR}/../include
+LDFLAGS+=	-lm
 
 INCSDIR=${LOCALBASE}/include
 INCDIR= ${INCSDIR}		# for 4.x bsd.lib.mk
