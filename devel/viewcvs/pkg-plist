@@ -24,8 +24,12 @@ share/viewcvs/lib/py2html.py
 share/viewcvs/lib/py2html.pyc
 share/viewcvs/lib/query.py
 share/viewcvs/lib/query.pyc
+share/viewcvs/lib/rcsparse.py
+share/viewcvs/lib/rcsparse.pyc
 share/viewcvs/lib/rlog.py
 share/viewcvs/lib/rlog.pyc
+share/viewcvs/lib/viewcvs.py          
+share/viewcvs/lib/viewcvs.pyc
 share/viewcvs/loginfo-handler
 share/viewcvs/cvsdbadmin
 share/viewcvs/make-database
