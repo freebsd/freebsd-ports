@@ -73,11 +73,11 @@
     SUBDIR += gnome-icu
     SUBDIR += gnome-vnc
     SUBDIR += gnomenetwork
+    SUBDIR += gnosamba
     SUBDIR += gnu-finger
     SUBDIR += gnut
     SUBDIR += gopher
     SUBDIR += gtic
-    SUBDIR += gtksamba
     SUBDIR += gtkyahoo
     SUBDIR += h2n
     SUBDIR += hesiod
