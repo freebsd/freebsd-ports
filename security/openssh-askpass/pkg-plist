@@ -1,0 +1,4 @@
+bin/ssh-askpass
+lib/X11/app-defaults/SshAskpass
+share/doc/ssh-askpass/README
+@dirrm share/doc/ssh-askpass
