@@ -20,8 +20,7 @@ LIB_DEPENDS=	sqlrclient.0:${SQLRELAY_PORTDIR}
 
 PLIST_FILES=	%%RUBY_SITEARCHLIBDIR%%/sqlrelay.so
 USE_RUBY=	yes
-USE_RUBY_EXTCONF=	yes
-RUBY_EXTCONF_SUBDIRS=	src/api/ruby
+USE_GMAKE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 BUILD_WRKSRC=	${WRKSRC}/src/api/ruby
@@ -29,7 +28,8 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${SQLRELAY_CONFIGURE_ARGS} \
 		--with-ruby-prefix="${LOCALBASE}"
-INSTALL_TARGET=	site-install
+MAKE_ARGS=	RUBY="${RUBY}"
+ALL_TARGET=	sqlrelay.so
 
 .include "${.CURDIR}/../sqlrelay/Makefile.common"
 
@@ -41,5 +41,8 @@ do-extract:
 	${MKDIR} ${WRKDIR}
 	${LN} -fs `${SQLRELAY_WRKSRC_CMD}` ${WRKSRC}
 	${RM} -f ${WRKSRC}/config.cache
+
+do-install:
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/sqlrelay.so ${RUBY_SITEARCHLIBDIR}/
 
 .include <bsd.port.mk>
