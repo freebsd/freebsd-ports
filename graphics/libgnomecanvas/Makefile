@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	libgnomecanvas
-PORTVERSION=	2.2.0.1
+PORTVERSION=	2.2.0.2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A graphics library for GNOME
 
 LIB_DEPENDS=	glade-2.0.0:${PORTSDIR}/devel/libglade2 \
 		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2
