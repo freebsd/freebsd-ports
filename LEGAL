@@ -32,6 +32,7 @@ altivore		ports/security/altivore	No redistribution allowed
 aswedit-*		ports/www/aswedit	Commercial software.
 atari800-*		ports/emulators/atari800 xf25 contains copyright ROMs
 						and cannot be distributed.
+avfbmlt.tgz		ports/security/antivir-milter No redistribution allowed
 baudline		ports/audio/baudline	No redistribution allowed
 bcwipe			ports/security/bcwipe	Non-Commercial Distribution and
 						Use Only
