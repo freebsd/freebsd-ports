@@ -23,6 +23,8 @@ COMMENT?=	Common files for X True Type Servers
 
 RUN_DEPENDS+=	mkttfdir:${PORTSDIR}/print/perlftlib
 
+FORBIDDEN=	"Broken pkg-plist"
+
 USE_SUBMAKE=	yes
 XFREE_VERSION=	3.3.6
 VERSION=	1.3
@@ -66,10 +68,6 @@ DOCDIR=		${PREFIX}/share/doc/Xtt
 PATCH_DIST_STRIP=	-p1
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502000
-BROKEN=		"Does not compile"
-.endif
 
 .if ${XFREE86_VERSION} == 4
 BUILD_DEPENDS+=	xmkmf:${PORTSDIR}/devel/imake-4
