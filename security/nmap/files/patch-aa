@@ -1,5 +1,5 @@
---- Makefile.in.orig	Fri Dec 31 03:13:50 1999
-+++ Makefile.in	Mon Jan  3 23:54:14 2000
+--- Makefile.in.orig	Sun Mar 26 03:04:48 2000
++++ Makefile.in	Sun Mar 26 17:16:58 2000
 @@ -5,13 +5,13 @@
  sbindir = @sbindir@
  mandir = @mandir@
@@ -18,17 +18,17 @@
  # CFLAGS = -g -Wall $(DEFS) $(INCLS)
 @@ -36,7 +36,7 @@
  
- all: $(TARGET)
+ all: $(TARGET) nmapfe/nmapfe
  
--$(TARGET): $(DEPS) @PCAP_DEPENDS@ $(OBJS) nmapfe/nmapfe
-+$(TARGET): $(DEPS) $(OBJS) nmapfe/nmapfe # @PCAP_DEPENDS@
+-$(TARGET): $(DEPS) @PCAP_DEPENDS@ $(OBJS)
++$(TARGET): $(DEPS) $(OBJS)
  	@echo Compiling nmap
  	rm -f $@
  	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS)
 @@ -128,7 +128,7 @@
  	$(MAKEDEPEND) $(INCLS) -s "# DO NOT DELETE" -- $(DEFS) -- $(SRCS)
  
- install: all
+ install: $(TARGET)
 -	$(SHTOOL) mkdir -f -p -m 755 $(bindir) $(mandir)/man1 $(libdir) $(deskdir)
 +	$(SHTOOL) mkdir -f -p -m 755 $(bindir) $(mandir)/man1 $(libdir)
  	$(INSTALL) -c -m 755 nmap $(bindir)/nmap

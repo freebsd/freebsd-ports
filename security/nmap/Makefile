@@ -7,12 +7,15 @@
 # $FreeBSD$
 #
 
-DISTNAME=	nmap-2.3BETA14
-PKGNAME=	nmap-2.3b14
+DISTNAME=	nmap-2.30BETA17
+PKGNAME=	nmap-2.3b17
 CATEGORIES=	security net
 MASTER_SITES=	http://www.insecure.org/nmap/dist/  \
-		ftp://relay.nuxi.com/pub/misc/
+		ftp://nuxi.ucdavis.edu/pub/misc/  \
+		http://www.mobis.com/ajax/projects/
 EXTRACT_SUFX=	.tgz
+
+#PATCH_SITES=	http://www.mobis.com/ajax/projects/
 
 MAINTAINER=	obrien@FreeBSD.org
 
