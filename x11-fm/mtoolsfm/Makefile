@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mfm
-PORTVERSION= 	1.3
+PORTVERSION= 	1.5
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.core-coutainville.org/mfm/archive/SOURCES/
 
@@ -19,11 +19,11 @@ GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	GTK_CONFIG=${GTK_CONFIG}
-CONFIGURE_ARGS=	--disable-gtktest
+CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
+CONFIGURE_ARGS=	--with-conffile="${PREFIX}/etc/mfm.conf" \
+		--with-mtoolsdir="${LOCALBASE}/bin" \
+		--disable-gtktest
 
-post-patch:
-	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/*.h
-	@${PERL} -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/*.h
+MAN1=		mfm.1
 
 .include <bsd.port.mk>
