@@ -1,0 +1,24 @@
+From the README:
+
+                  MPEG-1 Video Software Encoder
+                 (Version 1.5; February 1, 1995)
+
+      Lawrence A. Rowe, Kevin Gong, Eugene Hung, Ketan Patel, Steve Smoot
+        and Dan Wallach
+     Computer Science Division-EECS, Univ. of Calif. at Berkeley
+
+ This directory contains the freely distributed Berkeley MPEG-1 Video 
+ Encoder.  The encoder implements the standard described in the ISO/IEC
+ International Standard 11172-2.  The code has been compiled and tested 
+ on the following platforms:
+
+  DECstation 5000 and Alpha
+  HP PA-RISC (HP/UX 9.X) (i.e., HP 9000/7XX and 9000/3XX)
+  SGI Indigo running IRIX 5.0.1
+  Sun Sparc (SunOS 4.X)
+
+This is *not* bug-free software.  In particular, I've had problems using
+odd-sized input frames.  Other than that, it works OK.
+
+eric.
+erich@FreeBSD.org

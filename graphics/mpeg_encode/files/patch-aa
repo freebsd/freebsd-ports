@@ -1,0 +1,43 @@
+--- ./headers/libpnmrw.h~	Thu Aug  1 08:52:25 1996
++++ ./headers/libpnmrw.h	Thu Aug  1 08:51:16 1996
+@@ -19,7 +19,12 @@
+ ** malloc.h at all.  A sad situation.  If you have compilation problems
+ ** that point here, feel free to tweak or remove these declarations.
+ */
++#ifdef __FreeBSD__
++#include <stdlib.h>
++#else
+ #include <malloc.h>
++#endif
++
+ #if !defined(sco)  &&  !defined(sgi) && !defined(IRIX)
+ extern char* malloc();
+ #endif
+--- ./libpnmrw.c~	Thu Aug  1 08:52:14 1996
++++ ./libpnmrw.c	Thu Aug  1 08:51:26 1996
+@@ -126,7 +126,9 @@
+   pm_perror( reason )
+ char* reason;
+ {
++#ifndef __FreeBSD__
+   extern char* sys_errlist[];
++#endif
+   extern int errno;
+   char* e;
+ 
+--- Makefile~	Wed Aug 16 17:16:56 1995
++++ Makefile	Thu Aug  1 09:00:04 1996
+@@ -182,6 +182,13 @@
+ 
+ all: mpeg_encode
+ 
++install:
++	install -c mpeg_encode ${PREFIX}/bin
++	install	-c -m 644 mpeg_encode.1 ${PREFIX}/man/man1
++	gzip -9nf ${PREFIX}/man/man1/mpeg_encode.1
++	mkdir -p ${PREFIX}/share/doc/mpeg_encode
++	install -c docs/users-guide.ps docs/template.param ${PREFIX}/share/doc/mpeg_encode
++
+ #########
+ # TESTS #
+ #########
