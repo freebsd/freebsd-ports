@@ -1,0 +1,6 @@
+radmind is a set of tools for creating filesystem diffs which can be 
+loaded over the network. This is useful for administering a large number
+of hosts at the filesystem level. It can also act as an intelligent
+tripwire.
+
+WWW:	http://www.radmind.org/

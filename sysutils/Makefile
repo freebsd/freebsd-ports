@@ -260,6 +260,7 @@
     SUBDIR += pyfind
     SUBDIR += qlogtools
     SUBDIR += qtpkg
+    SUBDIR += radmind
     SUBDIR += rc_subr
     SUBDIR += rclean
     SUBDIR += rdate

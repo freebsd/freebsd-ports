@@ -1,0 +1,14 @@
+@comment $FreeBSD$
+bin/fsdiff
+bin/ktcheck
+bin/lapply
+bin/lcksum
+bin/lcreate
+bin/lfdiff
+bin/lmerge
+bin/twhich
+sbin/radmind
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/SPEC
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
