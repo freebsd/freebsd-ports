@@ -1,4 +1,5 @@
 bin/unicode-config
+etc/unicodeConf.sh
 include/unicode.h
 lib/libunicode.a
 lib/libunicode.so
