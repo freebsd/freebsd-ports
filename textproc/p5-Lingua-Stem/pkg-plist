@@ -1,0 +1,13 @@
+%%SITE_PERL%%/Lingua/Stem.pm
+%%SITE_PERL%%/Lingua/Stem/AutoLoader.pm
+%%SITE_PERL%%/Lingua/Stem/Da.pm
+%%SITE_PERL%%/Lingua/Stem/De.pm
+%%SITE_PERL%%/Lingua/Stem/En.pm
+%%SITE_PERL%%/Lingua/Stem/EnBroken.pm
+%%SITE_PERL%%/Lingua/Stem/Gl.pm
+%%SITE_PERL%%/Lingua/Stem/No.pm
+%%SITE_PERL%%/Lingua/Stem/Pt.pm
+%%SITE_PERL%%/Lingua/Stem/Sv.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/Lingua 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Lingua/Stem 2>/dev/null || true
