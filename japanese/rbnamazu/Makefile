@@ -31,7 +31,8 @@ MODULES=	rbnamazu.rb nmzqr.rb nmzqr.tab.rb nmzdoc.rb
 RD_DOCS=	rbnamazu.rd.ja rbnamazu.rd.en
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/namazu.rb ${PREFIX}/bin/rbnamazu
+	${INSTALL_SCRIPT} ${WRKSRC}/namazu.rb ${PREFIX}/bin/
+	${LN} -sf namazu.rb ${PREFIX}/bin/rbnamazu
 .for f in ${MODULES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/lib/ruby/site_ruby/${RUBY_VER}/
 .endfor
