@@ -16,6 +16,7 @@ MAINTAINER=	nakai@FreeBSD.org
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
 WANT_GNOME=	yes
+USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -25,9 +26,9 @@ MAN1=		vdk-config.1
 
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mgtk12}!=""
-USE_GNOME=	gtk12
-PKGNAMESUFFIX=	-gtk
+.if ${HAVE_GNOME:Mgnomelibs}!=""
+USE_GNOME=	gnomelibs
+PKGNAMESUFFIX=	-gnome
 CONFIGURE_ARGS+=	--enable-gnome
 .endif
 
