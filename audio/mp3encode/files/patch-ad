@@ -1,0 +1,19 @@
+*** encoder.h.orig	Fri Jul  3 20:20:57 1998
+--- encoder.h	Fri Jul  3 20:21:56 1998
+***************
+*** 62,68 ****
+  
+  #define DFLT_LAY        2      /* default encoding layer is II */
+  #define DFLT_MOD        's'    /* default mode is stereo */
+! #define DFLT_PSY        1      /* default psych model is 1 */
+  #define DFLT_SFQ        44.1   /* default input sampling rate is 44.1 kHz */
+  #define DFLT_EMP        'n'    /* default de-emphasis is none */
+  #define DFLT_EXT        ".mpg" /* default output file extension */
+--- 62,68 ----
+  
+  #define DFLT_LAY        2      /* default encoding layer is II */
+  #define DFLT_MOD        's'    /* default mode is stereo */
+! #define DFLT_PSY        2      /* default psych model is 1 */
+  #define DFLT_SFQ        44.1   /* default input sampling rate is 44.1 kHz */
+  #define DFLT_EMP        'n'    /* default de-emphasis is none */
+  #define DFLT_EXT        ".mpg" /* default output file extension */

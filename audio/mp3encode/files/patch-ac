@@ -1,0 +1,19 @@
+*** common.h.orig	Wed Jan 22 20:43:13 1997
+--- common.h	Thu May 21 14:12:52 1998
+***************
+*** 93,99 ****
+  #endif
+  
+  #ifdef  UNIX
+! #define         TABLES_PATH     "tables"  /* to find data files */
+  /* name of environment variable holding path of table files */
+  #define         MPEGTABENV      "MPEGTABLES"
+  #define         PATH_SEPARATOR  "/"        /* how to build paths */
+--- 93,99 ----
+  #endif
+  
+  #ifdef  UNIX
+! #define         TABLES_PATH     "ZAP"  /* to find data files */
+  /* name of environment variable holding path of table files */
+  #define         MPEGTABENV      "MPEGTABLES"
+  #define         PATH_SEPARATOR  "/"        /* how to build paths */

@@ -1,0 +1,19 @@
+*** Makefile.in.orig	Wed May 20 22:00:23 1998
+--- Makefile.in	Wed May 20 22:07:53 1998
+***************
+*** 40,46 ****
+  
+  NINT_SWITCH = @NINTSW@
+  
+! CC_SWITCHES = -g -O -DUNIX -DBS_FORMAT=BINARY $(NINT_SWITCH) -DNDEBUG
+  
+  PGM = encode
+  
+--- 40,46 ----
+  
+  NINT_SWITCH = @NINTSW@
+  
+! CC_SWITCHES = -g -O3 -DUNIX -DBS_FORMAT=BINARY $(NINT_SWITCH) -DNDEBUG
+  
+  PGM = encode
+  
