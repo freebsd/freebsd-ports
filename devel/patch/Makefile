@@ -15,11 +15,12 @@ MAINTAINER=	petef@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
+USE_REINPLACE=	yes
 
 MAN1=		gpatch.1
 
 post-patch:
-	@${PERL} -pi -e 's!HAVE_SETMODE!HAVE_SETMODE_DISABLE!' \
+	@${REINPLACE_CMD} -e 's!HAVE_SETMODE!HAVE_SETMODE_DISABLE!' \
 		${WRKSRC}/config.hin
 
 .include <bsd.port.mk>

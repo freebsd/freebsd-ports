@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	diffutils
 
 MAINTAINER=	rooneg@electricjellyfish.net
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --program-prefix=g
 
@@ -26,7 +27,7 @@ remove-info-files:
 post-patch: patch-makeinfo
 
 patch-makeinfo:
-	@${PERL} -pi.fbsd -e 's|makeinfo|makeinfo --no-split|g' \
+	@${REINPLACE_CMD} -e 's|makeinfo|makeinfo --no-split|g' \
 		${WRKSRC}/Makefile.in
 
 post-install: install-info

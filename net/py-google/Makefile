@@ -19,6 +19,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_xmlplus/sax/__init__.py:${PORTSDIR}/textproc/
 USE_PYTHON=	yes
 USE_ZIP=	yes
 USE_PYDISTUTILS=	yes
+USE_REINPLACE=	yes
 EXTRACT_BEFORE_ARGS=	-q -aa
 
 WRKSRC=		${WRKDIR}/pygoogle
@@ -28,11 +29,11 @@ post-patch:
 # www/py-websvcs has an incompatible version of SOAP.py
 	@${MV} ${WRKSRC}/SOAP.py ${WRKSRC}/SOAPgoogle.py
 	@cd ${WRKSRC}; for f in *.py; do \
-		${PERL} -pi -e 's,import SOAP,import SOAPgoogle as SOAP,g' $$f; \
+		${REINPLACE_CMD} -e 's,import SOAP,import SOAPgoogle as SOAP,g' $$f; \
 	done
 	@${MKDIR} ${WRKSRC}/tests
 	@${MV} ${WRKSRC}/*test*.py ${WRKSRC}/tests
-	@${PERL} -pi -e 's,.*extra_path.*,,g' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e 's,.*extra_path.*,,g' ${WRKSRC}/setup.py
 
 post-install:
 .if !defined(NOPORTDOCS)

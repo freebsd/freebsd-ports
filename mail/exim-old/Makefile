@@ -16,6 +16,7 @@ DISTFILES=	exim-3.36.tar.bz2 exim-texinfo-3.30.tar.bz2
 MAINTAINER=	sheldonh@FreeBSD.org
 
 USE_BZIP2=	yes
+USE_PERL5=	yes
 
 .if defined(NOPORTDOCS)
 PKGMESSAGE=	${FILESDIR}/POST-INSTALL-NOTES

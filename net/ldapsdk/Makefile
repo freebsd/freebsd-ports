@@ -18,6 +18,7 @@ MAINTAINER=	paul@FreeBSD.org
 WRKSRC=			${WRKDIR}/mozilla
 MAKEFILE=	${WRKSRC}/directory/ldapsdk.mk
 USE_GMAKE=	yes
+USE_PERL5=	yes
 
 MAKE_ENV+=	MOZILLA_CLIENT=1 NO_MDUPDATE=1 MOZ_LDAP_SDK=1
 ALL_TARGET=		build

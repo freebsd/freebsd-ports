@@ -17,6 +17,7 @@ BROKEN=		"Does not compile"
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 # libodbc++ needs an ODBC driver manager to be installed, and it supports
@@ -56,7 +57,7 @@ PLIST_SUB+=	PLIST_GUI="@comment " PLIST_NOGUI=""
 
 post-patch:
 .for docdir in doc doc/progref
-	@ ${PERL} -pi.orig -e \
+	@ ${REINPLACE_CMD} -e \
 	  "s#\@docdir\@/\@PACKAGE\@-\@VERSION\@/#\@docdir\@/\@PACKAGE\@/#" \
 	  ${WRKSRC}/${docdir}/Makefile.in
 .endfor

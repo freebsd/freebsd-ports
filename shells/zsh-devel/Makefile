@@ -20,7 +20,8 @@ DISTNAME=	${PORTNAME}-${ZSH_VER}-dev-${ZSH_DEV_REV}
 
 MAINTAINER=	shige@FreeBSD.org
 
-USE_AUTOCONF=	yes
+USE_AUTOCONF=   yes
+USE_REINPLACE=	yes
 
 ZSH_VER=	4.1.0
 ZSH_DEV_REV=	5
@@ -50,7 +51,7 @@ PLIST_SUB+=	NO_STATIC=""
 .endif
 
 post-patch:
-	@${PERL} -pi -e 's!\$\(htmldir\)!\$\(prefix\)/share/doc/zsh!' \
+	@${REINPLACE_CMD} -e 's!\$\(htmldir\)!\$\(prefix\)/share/doc/zsh!' \
 		${WRKSRC}/Doc/Makefile.in
 
 post-build:

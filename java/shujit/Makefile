@@ -18,6 +18,7 @@ LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ONLY_FOR_ARCHS=	i386
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
@@ -31,7 +32,7 @@ CONFIGURE_ARGS+=	--with-jdk="${JAVADIR}"
 MAKE_ENV=	JAVADIR="${JAVADIR}"
 
 post-configure:
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/README
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/README
 
 do-install:
 	@${MKDIR} ${JAVALIBDIR}

@@ -13,13 +13,14 @@ DISTNAME=	Sigit-${PORTVERSION}
 
 MAINTAINER=	petef@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 WRKSRC=	${WRKDIR}/sigit-${PORTVERSION}
 
 MAN1=	sigit.1 sigit.rc.1
 
 post-patch:
-	@${PERL} -pi -e 's,/etc/sigit.rc,${PREFIX}/etc/sigit.rc,; \
+	@${REINPLACE_CMD} -e 's,/etc/sigit.rc,${PREFIX}/etc/sigit.rc,; \
 		s,/usr/share/sigit,${DATADIR},' ${WRKSRC}/config.h
 
 post-install:

@@ -24,6 +24,7 @@ DISTFILES+=	exiscan-${EXISCAN_VERSION}.tar.bz2
 MAINTAINER=	sheldonh@FreeBSD.org
 
 USE_BZIP2=	yes
+USE_PERL5=	yes
 MAN8=		exim.8
 
 EXIM_VERSION=	4.10

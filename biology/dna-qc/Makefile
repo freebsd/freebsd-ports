@@ -15,16 +15,17 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	tonym@biolateral.com.au
 
 NO_WRKSUBDIR=	true
+USE_REINPLACE=	yes
 
 EXAMPLES=	README script.compare script.limits \
 		bact.all chromosomeIII.all human.all worm.all
 PROGRAMS=	counter hybridize normalize random_clip random_line
 
 post-patch:
-	@${PERL} -pi -e 's,^CFLAGS,#CFLAGS,' ${WRKSRC}/Makefile
-	@${PERL} -pi -e 's,malloc.h,stdlib.h,' ${WRKSRC}/normalize.c
-	@${PERL} -pi -e 's,fname\*,fname,' ${WRKSRC}/random_line.c
-	@${PERL} -pi -e 's,static void allocate_pool,void allocate_pool,' \
+	@${REINPLACE_CMD} -e 's,^CFLAGS,#CFLAGS,' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's,malloc.h,stdlib.h,' ${WRKSRC}/normalize.c
+	@${REINPLACE_CMD} -e 's,fname\*,fname,' ${WRKSRC}/random_line.c
+	@${REINPLACE_CMD} -e 's,static void allocate_pool,void allocate_pool,' \
 		${WRKSRC}/stringpool.c
 
 do-install:

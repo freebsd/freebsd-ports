@@ -13,9 +13,10 @@ MASTER_SITES=	ftp://samba.org/pub/tridge/dbench/
 MAINTAINER=	nyxo@dnuc.polyn.kiae.su
 
 WRKSRC=		${WRKDIR}/dbench
+USE_REINPLACE=	yes
 
 post-patch:
-	@${PERL} -pi -e 's/^CFLAGS.+//g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's/^CFLAGS.+//g' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dbench ${PREFIX}/bin/dbench

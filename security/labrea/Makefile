@@ -18,9 +18,10 @@ BUILD_DEPENDS+= ${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 
 WRKSRC=		${WRKDIR}/LaBrea
 ALL_TARGET=	LaBrea
+USE_REINPLACE=	yes
 
 pre-build:
-	${PERL} -pi -e "s@PREFIX=/usr/local@PREFIX=${PREFIX}@g;\
+	${REINPLACE_CMD} -e "s@PREFIX=/usr/local@PREFIX=${PREFIX}@g;\
 		s@LOCALBASE=/usr/local@LOCALBASE=${LOCALBASE}@g" \
 		${WRKSRC}/Makefile
 

@@ -61,6 +61,7 @@ MASTER_SITE_SUBDIR=	jkoshy
 
 MAINTAINER=	scott+ports@sabami.seaslug.org
 
+USE_REINPLACE=	yes
 USE_AUTOCONF_VER=213
 CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec/nmh \
 		--sysconfdir=${PREFIX}/etc/nmh
@@ -109,7 +110,7 @@ MLINKS=	mh-profile.5 mh_profile.5
 MAN8=	ap.8 conflict.8 dp.8 fmtdump.8 install-mh.8 mh-mts.8 post.8
 
 post-patch:
-	@${PERL} -pi -e "s|autoconf|${AUTOCONF}|;\
+	@${REINPLACE_CMD} -e "s|autoconf|${AUTOCONF}|;\
 		s|autoheader|${AUTOHEADER}|" ${WRKSRC}/Makefile.in
 
 post-install:

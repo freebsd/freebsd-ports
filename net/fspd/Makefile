@@ -16,13 +16,14 @@ MAINTAINER=	trevor@FreeBSD.org
 ALL_TARGET=	fspserver
 DOCDIR=		share/doc/${PORTNAME}
 DOCFILES=	BETA.README ChangeLog FILES INFO TODO INSTALL MACHINES
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 MAN1=		fspd.1
 PLIST=		${WRKDIR}/pkg-plist
 WRKSRC=		${WRKDIR}/2.8.1
 
 do-patch:
-	${PERL} -pi -e "s:/usr/fsp:${LOCALBASE}/etc:g" \
+	${REINPLACE_CMD} -e "s:/usr/fsp:${LOCALBASE}/etc:g" \
 		${WRKSRC}/include/server_conf.h
 
 pre-install:

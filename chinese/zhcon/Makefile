@@ -19,6 +19,7 @@ LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-included-gettext=${LOCALBASE}
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 MAN1=		zhcon.1
 
@@ -26,7 +27,7 @@ MAN1=		zhcon.1
 
 post-patch:
 .if ${OSVERSION} > 500012
-	@${FIND} ${WRKSRC}/src/ -name "*.cpp" | ${XARGS} ${PERL} -pi.bak -e 's,machine/console.h>,sys/consio.h>\n#include <sys/fbio.h>\n#include <sys/kbio.h>\n,'
+	@${FIND} ${WRKSRC}/src/ -name "*.cpp" | ${XARGS} ${REINPLACE_CMD} -e 's,machine/console.h>,sys/consio.h>\n#include <sys/fbio.h>\n#include <sys/kbio.h>\n,'
 .endif
 
 .include <bsd.port.post.mk>

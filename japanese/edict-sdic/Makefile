@@ -26,6 +26,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-emacs=mule \
 		--with-lispdir=${PREFIX}/share/emacs/site-lisp \
 		--with-dictdir=${PREFIX}/share/dict
+USE_PERL5=	yes
 
 post-extract:
 	${CP} -f ${DISTDIR}/edict.gz ${WRKSRC}

@@ -17,6 +17,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 MAINTAINER=	svenasse@polaris.ca
 
 USE_AUTOCONF=	yes
+USE_PERL5=	yes
 CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc --with-cflags="${CFLAGS}" \
 		--with-rootname=root --with-rootgroup=wheel \
 		--with-answer-all=yes

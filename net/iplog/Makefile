@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	ojnk
 MAINTAINER=	udo.schweigert@siemens.com
 
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 MAN5=	iplog.conf.5
@@ -24,7 +25,7 @@ MAN8=	iplog.8
 .include <bsd.port.pre.mk>
 post-patch:
 .for file in example-iplog.conf iplog.8 iplog.conf.5 src/iplog.h
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/${file}
 .endfor
 
 post-install:

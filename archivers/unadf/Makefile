@@ -14,10 +14,11 @@ DISTNAME=	adflib
 MAINTAINER=	wigren@home.se
 
 NO_WRKSUBDIR=	yes
+USE_REINPLACE=	yes
 USE_ZIP=	yes
 
 pre-build:
-	@${PERL} -pi -e "s@tests lib demo@lib demo@g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s@tests lib demo@lib demo@g" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Demo/unadf ${PREFIX}/bin

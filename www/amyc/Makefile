@@ -15,6 +15,7 @@ MAINTAINER=	petef@FreeBSD.org
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
+USE_REINPLACE=	yes
 USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -35,7 +36,7 @@ PLIST_SUB=	WITH_GTK="@comment "
 .endif
 
 post-patch:
-	@${PERL} -pi -e 's!\(datadir\)/locale!(prefix)/share/locale!' \
+	@${REINPLACE_CMD} -e 's!\(datadir\)/locale!(prefix)/share/locale!' \
 		${WRKSRC}/po/Makefile.in.in
 
 .include <bsd.port.post.mk>

@@ -15,6 +15,7 @@ MAINTAINER=	tonym@biolateral.com.au
 
 WRKTOP=		${WRKDIR}/${DISTNAME}
 WRKSRC=		${WRKTOP}/src
+USE_REINPLACE=	yes
 MAKEFILE=	makefile
 
 #
@@ -49,17 +50,17 @@ EXFILES=	README db.hmm hn_est.fa human.genomic \
 #
 
 post-configure:
-	@${PERL} -pi.orig \
+	@${REINPLACE_CMD} \
 		-e s'#^CFLAGS = -c -O#CFLAGS ?= -c -O#;' \
 		-e s'#\tcsh welcome.csh##;' \
 		${WRKSRC}/${MAKEFILE}
-	@${PERL} -pi.orig \
+	@${REINPLACE_CMD} \
 		-e s'#CFLAGS\) $?#CFLAGS\) -c $?#;' \
 		${WRKSRC}/base/${MAKEFILE}
-	@${PERL} -pi.orig \
+	@${REINPLACE_CMD} \
 		-e s'#INCFLAGS\) $?#INCFLAGS\) -c $?#;' \
 		${WRKSRC}/dynlibsrc/${MAKEFILE}
-	@${PERL} -pi.orig \
+	@${REINPLACE_CMD} \
 		-e s'#INCFLAGS\) $?#INCFLAGS\) -c $?#;' \
 		-e s'#CFLAGS\) estwise.c#CFLAGS\) -c estwise.c#;' \
 		-e s'#CFLAGS\) estwiseb.c#CFLAGS\) -c estwiseb.c#;' \

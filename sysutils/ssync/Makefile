@@ -15,14 +15,15 @@ MAINTAINER=	nyxo@dnuc.polyn.kiae.su
 ALL_TARGET=	default
 USE_GMAKE=	yes
 MAKEFILE=	makefile
+USE_REINPLACE=	yes
 
 MAN1=		ssync.1
 
 post-patch:
-	@${PERL} -pi -e 's@/etc/init.d/ssyncd@\$$0@g' ${WRKSRC}/ssyncd.init
-	@${PERL} -pi -e "s@/etc@${PREFIX}/etc@g;s@/usr/sbin@${PREFIX}/sbin@g;" \
+	@${REINPLACE_CMD} -e 's@/etc/init.d/ssyncd@\$$0@g' ${WRKSRC}/ssyncd.init
+	@${REINPLACE_CMD} -e "s@/etc@${PREFIX}/etc@g;s@/usr/sbin@${PREFIX}/sbin@g;" \
 		${WRKSRC}/ssyncd.init ${WRKSRC}/ssyncd.conf ${WRKSRC}/daemon.c
-	@${PERL} -pi -e "s@ +CFLAGS.+@@g; s@ +LDFLAGS.+@@g;" ${WRKSRC}/makefile
+	@${REINPLACE_CMD} -e "s@ +CFLAGS.+@@g; s@ +LDFLAGS.+@@g;" ${WRKSRC}/makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/ssync ${PREFIX}/bin/ssync

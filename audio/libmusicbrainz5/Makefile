@@ -14,11 +14,12 @@ MAINTAINER=	roman@xpert.com
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 post-patch:
-	@${PERL} -pi -e 's|^CFLAGS=|#CFLAGS=|g ; \
+	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g ; \
 		 s|^CPPFLAGS=|#CPPFLAGS=|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

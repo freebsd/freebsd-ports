@@ -16,11 +16,12 @@ MAINTAINER=	roger@freebsd.org
 ONLY_FOR_ARCHS=	i386
 
 WRKSRC=         ${WRKDIR}/ixj_freebsd
+USE_REINPLACE=	yes
 MAKEFILE=	Makefile.BSD
 
 post-patch:
 	${CP} ${FILESDIR}/ixj.sh ${WRKSRC}
-	${PERL} -pi.orig -e "s@%%PREFIX%%@${PREFIX}@g" ${WRKSRC}/ixj.sh
+	${REINPLACE_CMD} -e "s@%%PREFIX%%@${PREFIX}@g" ${WRKSRC}/ixj.sh
 
 pre-build:
 .if !exists(${SRC_BASE}/sys/Makefile)

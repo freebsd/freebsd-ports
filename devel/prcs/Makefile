@@ -15,6 +15,8 @@ MAINTAINER=	sam@inf.enst.fr
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
+
 MAN1=		prcs.1
 
 .include <bsd.port.pre.mk>
@@ -27,7 +29,7 @@ PLIST_SUB+=	EMACS='@comment '
 
 pre-configure:
 .if !exists(${LOCALBASE}/bin/emacs)
-	${PERL} -pi -e "s@^(SUBDIRS = .*) emacs (.*)@\1 \2@" \
+	${REINPLACE_CMD} -e "s@^(SUBDIRS = .*) emacs (.*)@\1 \2@" \
 		${WRKSRC}/Makefile.in
 .endif
 

@@ -13,12 +13,13 @@ MASTER_SITES=	http://www.tundraware.com/Software/waccess/
 MAINTAINER=	tundra@tundraware.com
 
 USE_PYTHON=	yes
+USE_REINPLACE=	yes
 
 MAN1=	waccess.1
 MANCOMPRESSED=	yes
 
 post-patch:
-	@${PERL} -pi -e 's,^#!/usr/local/bin/python,#!${PYTHON_CMD},' \
+	@${REINPLACE_CMD} -e 's,^#!/usr/local/bin/python,#!${PYTHON_CMD},' \
 		${WRKSRC}/waccess
 
 do-install:

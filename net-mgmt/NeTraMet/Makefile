@@ -15,6 +15,7 @@ MAINTAINER=	olgeni@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/NeTraMet${PORTVERSION:S/.//}
 
+USE_REINPLACE=	yes
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
 
@@ -27,6 +28,6 @@ PLIST_SUB=	MOTIF="@comment "
 .endif
 
 post-patch:
-	${PERL} -pi -e "s|"/etc/mib.txt"|${LOCALBASE}/share/NeTraMet/mibs/mib.txt|g;" ${WRKSRC}/src/snmplib/mib.c
+	${REINPLACE_CMD} -e "s|"/etc/mib.txt"|${LOCALBASE}/share/NeTraMet/mibs/mib.txt|g;" ${WRKSRC}/src/snmplib/mib.c
 
 .include <bsd.port.mk>

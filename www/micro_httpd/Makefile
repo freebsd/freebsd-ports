@@ -14,15 +14,16 @@ DISTNAME=	${PORTNAME}_15dec00
 
 MAINTAINER=	user@unknown.nu
 
+USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN8=		micro_httpd.8
 
 post-patch:
-	@${PERL} -pi -e "s:/usr/local/sbin:${PREFIX}/sbin:g; \
+	@${REINPLACE_CMD} -e "s:/usr/local/sbin:${PREFIX}/sbin:g; \
 		s:/usr/local/man/man8:${MAN8PREFIX}/man/man8:g; \
 		s:^(CC|CFLAGS) =.+::g;" \
 		${WRKSRC}/Makefile
-	@${PERL} -pi -e "s/^.TH micro_httpd 1/.TH micro_httpd 8/g" \
+	@${REINPLACE_CMD} -e "s/^.TH micro_httpd 1/.TH micro_httpd 8/g" \
 		${WRKSRC}/micro_httpd.8
 
 .include <bsd.port.mk>

@@ -18,8 +18,10 @@ PATCH_DIST_ARGS=	-d ${WRKSRC} -p1
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
 
-MAN1=		cce.1
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USE_REINPLACE=	yes
+
+MAN1=		cce.1
 
 pre-configure:
 	(cd ${WRKSRC} && ${LN} -fs Makefile.FreeBSD Makefile )
@@ -27,6 +29,6 @@ pre-configure:
 .include <bsd.port.pre.mk>
 post-patch:
 .if ${OSVERSION} > 500012
-	@${FIND} ${WRKSRC}/src/ -name "*.c" | ${XARGS} ${PERL} -pi.bak -e 's,machine/console.h>,sys/consio.h>\n#include <sys/fbio.h>\n#include <sys/kbio.h>\n,'
+	@${FIND} ${WRKSRC}/src/ -name "*.c" | ${XARGS} ${REINPLACE_CMD} -e 's,machine/console.h>,sys/consio.h>\n#include <sys/fbio.h>\n#include <sys/kbio.h>\n,'
 .endif
 .include <bsd.port.post.mk>

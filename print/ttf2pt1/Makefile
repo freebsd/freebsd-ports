@@ -19,6 +19,7 @@ LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
 
 FREETYPE_CONFIG?=	${LOCALBASE}/bin/freetype-config
 MAKE_ENV=	FREETYPE_CONFIG="${FREETYPE_CONFIG}"
+USE_PERL5=	yes
 
 MAN1=	ttf2pt1.1 ttf2pt1_convert.1 ttf2pt1_x2gs.1
 
