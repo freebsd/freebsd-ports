@@ -38,6 +38,16 @@ STRIDE_DIST=		stride.tar.gz
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+VMD_ARCH=		FREEBSDAMD64
+VMD_TARGET=		freebsd.amd64.opengl
+.else
+VMD_ARCH=		FREEBSD
+VMD_TARGET=		freebsd.opengl
+.endif
+
+PLIST_SUB+=		VMD_ARCH=${VMD_ARCH}
+
 # Check for VMD sources
 .if !exists(${DISTDIR}/${VMD_DIST}) # && !defined(PACKAGE_BUILDING)
 ECHO_MSG=	${PRINTF}
@@ -66,15 +76,15 @@ post-patch:
 	${REINPLACE_CMD} "s/python2.2/${PYTHON_VERSION}/" ${WRKSRC}/configure
 
 do-build:
-	cd ${WRKSRC}/lib/tachyon/unix && ${SETENV} ${MAKE_ENV} ${GMAKE} bsd && ${MV} ../compile/bsd/tachyon ../tachyon_FREEBSD
-	cd ${WRKDIR}/plugins && ${SETENV} ${MAKE_ENV} PLUGINDIR=${WRKSRC}/plugins ${GMAKE} FREEBSD distrib
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} TCL_INCLUDE_DIR=${PREFIX}/include/tcl8.4 TK_INCLUDE_DIR=${PREFIX}/include/tk8.4 ${GMAKE} freebsd.opengl
+	cd ${WRKSRC}/lib/tachyon/unix && ${SETENV} ${MAKE_ENV} ${GMAKE} bsd && ${MV} ../compile/bsd/tachyon ../tachyon_${VMD_ARCH}
+	cd ${WRKDIR}/plugins && ${SETENV} ${MAKE_ENV} PLUGINDIR=${WRKSRC}/plugins ${GMAKE} ${VMD_ARCH} distrib
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} TCL_INCLUDE_DIR=${PREFIX}/include/tcl8.4 TK_INCLUDE_DIR=${PREFIX}/include/tk8.4 ${GMAKE} ${VMD_TARGET}
 	cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${GMAKE} all
-	cd ${WRKSRC}/lib/surf && ${SETENV} ${MAKE_ENV} ${GMAKE} depend && ${SETENV} ${MAKE_ENV} ${GMAKE} surf && ${MV} surf surf_FREEBSD
-	cd ${WRKSRC}/lib/stride && ${SETENV} ${MAKE_ENV} ${GMAKE} && ${MV} stride stride_FREEBSD
+	cd ${WRKSRC}/lib/surf && ${SETENV} ${MAKE_ENV} ${GMAKE} depend && ${SETENV} ${MAKE_ENV} ${GMAKE} surf && ${MV} surf surf_${VMD_ARCH}
+	cd ${WRKSRC}/lib/stride && ${SETENV} ${MAKE_ENV} ${GMAKE} && ${MV} stride stride_${VMD_ARCH}
 
 do-install:
 	cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${GMAKE} install
-#	cd ${WRKSRC}/lib/surf && ${INSTALL_PROGRAM} surf_FREEBSD ${PREFIX}/lib/vmd
+#	cd ${WRKSRC}/lib/surf && ${INSTALL_PROGRAM} surf_${VMD_ARCH} ${PREFIX}/lib/vmd
 
 .include <bsd.port.post.mk>

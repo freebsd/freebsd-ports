@@ -1,0 +1,11 @@
+--- bin/vmd.orig	Tue Feb  1 14:05:15 2005
++++ bin/vmd	Tue Feb  1 14:05:59 2005
+@@ -194,6 +194,8 @@
+   # The standard options
+   if (`uname -m` == "i386") then
+     set ARCH=FREEBSD
++  else if (`uname -m` == "amd64") then
++    set ARCH=FREEBSDAMD64
+   endif
+   set VMD_WINTERM=xterm
+   set VMD_WINOPTS='-sb -sl 1000 -e'
