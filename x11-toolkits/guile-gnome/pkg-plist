@@ -17,6 +17,9 @@ lib/libguilegnome.so.0
 lib/libguilegnorba.a
 lib/libguilegnorba.so
 lib/libguilegnorba.so.0
+lib/libguilegtkhtml.a
+lib/libguilegtkhtml.so
+lib/libguilegtkhtml.so.0
 lib/libguilezvt.a
 lib/libguilezvt.so
 lib/libguilezvt.so.0
@@ -24,6 +27,7 @@ share/gnome/guile-gnome/bonobo.defs
 share/gnome/guile-gnome/ghttp.defs
 share/gnome/guile-gnome/gnome.defs
 share/gnome/guile-gnome/gnorba.defs
+share/gnome/guile-gnome/gtkhtml.defs
 share/gnome/guile-gnome/zvt.defs
 share/gnome/guile-gtk/gdkpixbuf.defs
 share/gnome/guile-gtk/libglade.defs
@@ -33,6 +37,7 @@ share/gnome/guile/gnome/gnome.scm
 share/gnome/guile/gnome/gnorba.scm
 share/gnome/guile/gnome/zvt.scm
 share/gnome/guile/gtk/gdkpixbuf.scm
+share/gnome/guile/gtk/gtkhtml.scm
 share/gnome/guile/gtk/libglade.scm
 @dirrm share/gnome/guile/gtk
 @dirrm share/gnome/guile/gnome
