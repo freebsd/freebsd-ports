@@ -1,0 +1,61 @@
+--- Makefile.orig	Sun Mar 23 02:04:32 2003
++++ Makefile	Sat Mar 29 22:29:46 2003
+@@ -1,43 +1,23 @@
+-#Makefile
++CC ?=	cc
++LDIR =	-L${X11BASE}/lib
++IDIR =	-I${X11BASE}/include
+ 
+-PREFIX=/usr/local
+-BINDIR=$(PREFIX)/bin
+-MANUALDIR=$(PREFIX)/share/man/man1
+-CC=gcc
+-STRIP=strip
+-FLAGS=-Wall -O2 -ffast-math
+-RM=rm -f
+-INST=install
+-OBJS=cpu_linux.o dockapp.o draw.o options.o timing.o wmbluecpu.o
+-PROG=wmbluecpu
+-MANUAL=$(PROG).1
+-LIBS=-L/usr/X11R6/lib -lX11 -lXext -lXpm
++LIBS =	-lX11 -lXpm -lXext -lkvm
+ 
+-DEFS=-DOPT_TIMER_MILISECONDS=1000 -DOPT_WINDOW=0 -DOPT_SHAPE=1
++DEFS=	-DOPT_TIMER_MILISECONDS=1000 -DOPT_WINDOW=0 -DOPT_SHAPE=1
+ # OPT_TIMER_MILISECONDS - the number of miliseconds between updates
+ # OPT_WINDOW            - Run in a window ?
+ # OPT_SHAPE             - Use XShape ?
+ 
+-all: $(PROG)
++OBJS =	cpu_freebsd.o\
++	dockapp.o\
++	draw.o\
++	options.o\
++	timing.o\
++	wmbluecpu.o
+ 
+-$(PROG): $(OBJS)
+-	$(CC) -o $(PROG) $(OBJS) $(LIBS)
+-	$(STRIP) $(PROG)
+-%.o: %.c
+-	$(CC) $(FLAGS) -c $< -o $@
+-clean:
+-	$(RM) $(OBJS) $(PROG)
+-install: $(PROG)
+-	$(INST) -m 755 $(PROG) $(BINDIR)
+-	$(INST) -m 644 $(MANUAL) $(MANUALDIR)
+-uninstall:
+-	$(RM) $(BINDIR)/$(PROG)
+-	$(RM) $(MANUALDIR)/$(MANUAL)
++.c.o:
++	${CC} ${CFLAGS} ${IDIR} ${DEFS} -c $< -o $*.o
+ 
+-cpu_linux.o: cpu_linux.c
+-dockapp.o: dockapp.c wmbluecpu.h options.h draw.h timing.h xpm/bg.xpm \
+-  xpm/on.xpm xpm/off.xpm xpm/numbers.xpm xpm/panel.xpm
+-draw.o: draw.c cpu_linux.h dockapp.h options.h
+-options.o: options.c options.h wmbluecpu.h
+-timing.o: timing.c draw.h options.h cpu_linux.h
+-wmbluecpu.o: wmbluecpu.c options.h dockapp.h timing.h
++all:	${OBJS}
++	${CC} ${CFLAGS} -o wmbluecpu ${OBJS} ${LDIR} ${LIBS}
