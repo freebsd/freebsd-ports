@@ -1,0 +1,21 @@
+--- libgnomeui/gnome-druid-page-finish.c.orig	Sat Jul 22 00:37:59 2000
++++ libgnomeui/gnome-druid-page-finish.c	Sun Oct 29 19:23:55 2000
+@@ -205,7 +205,8 @@
+ 				       gnome_canvas_text_get_type (), 
+ 				       "text", druid_page_finish->title,
+ 				       "font", "-adobe-helvetica-bold-r-normal-*-*-180-*-*-p-*-iso8859-1",
+-				       "fontset", "-adobe-helvetica-bold-r-normal-*-*-180-*-*-p-*-iso8859-1,*-r-*",
++                                       "fontset", "-misc-fixed-medium-r-normal--
++14-*-*-*-*-*-*-*",
+ 				       NULL);
+ 	druid_page_finish->text_item =
+ 		gnome_canvas_item_new (gnome_canvas_root (GNOME_CANVAS (druid_page_finish->canvas)),
+@@ -213,7 +214,7 @@
+ 				       "text", druid_page_finish->text,
+ 				       "justification", GTK_JUSTIFY_LEFT,
+ 				       "font", "-adobe-helvetica-medium-r-normal-*-*-120-*-*-p-*-iso8859-1",
+-				       "fontset", "-adobe-helvetica-medium-r-normal-*-*-120-*-*-p-*-iso8859-1,*-r-*",
++                                       "fontset", "-misc-fixed-medium-r-normal--14-*-*-*-*-*-*-*",
+ 				       NULL);
+ 
+ 	gnome_druid_page_finish_configure_size (druid_page_finish, DRUID_PAGE_WIDTH, DRUID_PAGE_HEIGHT);
