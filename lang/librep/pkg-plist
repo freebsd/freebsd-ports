@@ -22,6 +22,8 @@ lib/librep.so
 lib/librep.so.8
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+libexec/rep/%%VERSION%%/%%GNUHOST%%/datums.la
+libexec/rep/%%VERSION%%/%%GNUHOST%%/datums.so
 libexec/rep/%%VERSION%%/%%GNUHOST%%/gdbm.la
 libexec/rep/%%VERSION%%/%%GNUHOST%%/gdbm.so
 libexec/rep/%%VERSION%%/%%GNUHOST%%/gettext.la
