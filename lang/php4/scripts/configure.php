@@ -50,6 +50,7 @@ MCRYPT		"Encryption support" ${WITH_MCRYPT:-OFF} \
 MHASH		"Crypto-hashing support" ${WITH_MHASH:-OFF} \
 MIME		"mime_magic support" ${WITH_MIME:-OFF} \
 MING		"ming shockwave flash support" ${WITH_MING:-OFF} \
+MNOGOSEARCH	"mnoGoSearch support" ${WITH_MNOGOSEARCH:-OFF} \
 MYSQL		"MySQL database support" ${WITH_MYSQL:-OFF} \
 NCURSES		"ncurses support (CLI only)" ${WITH_NCURSES:-OFF} \
 OPENLDAP	"OpenLDAP support" ${WITH_OPENLDAP:-OFF} \
