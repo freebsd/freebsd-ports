@@ -9,13 +9,16 @@ etc/gnump3d/gnump3d.conf-default
 etc/gnump3d/mime.types
 %%SITE_PERL%%/gnump3d/IP.pm
 %%SITE_PERL%%/gnump3d/MD5.pm
+%%SITE_PERL%%/gnump3d/WMA.pm
 %%SITE_PERL%%/gnump3d/base64.pm
 %%SITE_PERL%%/gnump3d/config.pm
 %%SITE_PERL%%/gnump3d/files.pm
 %%SITE_PERL%%/gnump3d/lang/de.pm
 %%SITE_PERL%%/gnump3d/lang/en.pm
+%%SITE_PERL%%/gnump3d/lang/fr.pm
 %%SITE_PERL%%/gnump3d/lang/lookup.pm
 %%SITE_PERL%%/gnump3d/mp3info.pm
+%%SITE_PERL%%/gnump3d/mp4info.pm
 %%SITE_PERL%%/gnump3d/ogginfo.pm
 %%SITE_PERL%%/gnump3d/oggtagreader.pm
 %%SITE_PERL%%/gnump3d/plugins/COPYING.pm
@@ -30,6 +33,7 @@ etc/gnump3d/mime.types
 %%SITE_PERL%%/gnump3d/plugins/size.pm
 %%SITE_PERL%%/gnump3d/plugins/stats.pm
 %%SITE_PERL%%/gnump3d/plugins/tagbrowse.pm
+%%SITE_PERL%%/gnump3d/readtags.pm
 %%SITE_PERL%%/gnump3d/sorting.pm
 %%SITE_PERL%%/gnump3d/tagcache.pm
 %%SITE_PERL%%/gnump3d/url.pm
@@ -70,28 +74,6 @@ etc/gnump3d/mime.types
 %%DATADIR%%/LaFrere/size.html
 %%DATADIR%%/LaFrere/stats.html
 %%DATADIR%%/LaFrere/tagbrowse.html
-%%DATADIR%%/Musicus/AUTHOR
-%%DATADIR%%/Musicus/COPYING.html
-%%DATADIR%%/Musicus/bug.html
-%%DATADIR%%/Musicus/config.ini
-%%DATADIR%%/Musicus/error.html
-%%DATADIR%%/Musicus/extras.html
-%%DATADIR%%/Musicus/footer.tmpl
-%%DATADIR%%/Musicus/index.html
-%%DATADIR%%/Musicus/info.html
-%%DATADIR%%/Musicus/now.html
-%%DATADIR%%/Musicus/playlist.html
-%%DATADIR%%/Musicus/prefs.html
-%%DATADIR%%/Musicus/random.html
-%%DATADIR%%/Musicus/recent.html
-%%DATADIR%%/Musicus/results.html
-%%DATADIR%%/Musicus/search.html
-%%DATADIR%%/Musicus/size.html
-%%DATADIR%%/Musicus/statistics.html
-%%DATADIR%%/Musicus/stats.html
-%%DATADIR%%/Musicus/style.css
-%%DATADIR%%/Musicus/tagbrowse.html
-%%DATADIR%%/Musicus/template.ini
 %%DATADIR%%/Nomad/COPYING.html
 %%DATADIR%%/Nomad/ClubNomadLogo.gif
 %%DATADIR%%/Nomad/GNUMP3dLogo.jpg
@@ -241,6 +223,7 @@ etc/gnump3d/mime.types
 %%DATADIR%%/dotNET/style.css
 %%DATADIR%%/handheld/AUTHOR
 %%DATADIR%%/handheld/config.ini
+%%DATADIR%%/handheld/error.html
 %%DATADIR%%/handheld/index.html
 %%DATADIR%%/handheld/random.html
 %%DATADIR%%/handheld/results.html
@@ -288,7 +271,6 @@ etc/gnump3d/mime.types
 @dirrm %%DATADIR%%/Tabular
 @dirrm %%DATADIR%%/SchwartzNGrau
 @dirrm %%DATADIR%%/Nomad
-@dirrm %%DATADIR%%/Musicus
 @dirrm %%DATADIR%%/LaFrere
 @dirrm %%DATADIR%%/Clean
 @dirrm %%DATADIR%%

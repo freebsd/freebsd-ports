@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnump3d
-PORTVERSION=	2.9.2
+PORTVERSION=	2.9.3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +14,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A streaming server for MP3, Ogg Vorbis, and other streamable audio files
+COMMENT=	Streaming server for MP3, Ogg Vorbis and other streamable audio files
 
 RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 		sox:${PORTSDIR}/audio/sox \
@@ -29,7 +29,6 @@ NO_BUILD=	yes
 MAN1=		gnump3d-index.1 gnump3d-top.1 gnump3d.1 gnump3d.conf.1
 
 CONFDIR=	${PREFIX}/etc/${PORTNAME}
-PERL_SITELIBDIR=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}
 
 .include <bsd.port.pre.mk>
 
@@ -39,24 +38,24 @@ IGNORE=	"You need at least perl 5.6.0. Do not use FreeBSD 4.x' system perl,\
 .endif
 
 post-patch:
-.for file in bin/gnump3d-index bin/gnump3d-top bin/gnump3d2 etc/gnump3d.conf \
+.for f in bin/gnump3d-index bin/gnump3d-top bin/gnump3d2 etc/gnump3d.conf \
 	man/gnump3d.conf.1
 	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g ; \
 		 s|%%LOCALBASE%%|${LOCALBASE}|g ; \
-		 s|%%PERL_SITELIBDIR%%|${PERL_SITELIBDIR}|g' ${WRKSRC}/${file}
+		 s|%%SITE_PERL%%|${SITE_PERL}|g' ${WRKSRC}/${f}
 .endfor
 
 do-install:
-.for file in gnump3d-index gnump3d-top gnump3d2
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/${file} ${PREFIX}/bin
+.for f in gnump3d-index gnump3d-top gnump3d2
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${f} ${PREFIX}/bin
 .endfor
 	${LN} -sf gnump3d2 ${PREFIX}/bin/gnump3d
-.for file in gnump3d-index.1 gnump3d-top.1 gnump3d.1 gnump3d.conf.1
-	${INSTALL_MAN} ${WRKSRC}/man/${file} ${MANPREFIX}/man/man1
+.for f in gnump3d-index.1 gnump3d-top.1 gnump3d.1 gnump3d.conf.1
+	${INSTALL_MAN} ${WRKSRC}/man/${f} ${MANPREFIX}/man/man1
 .endfor
-	${MKDIR} ${PERL_SITELIBDIR}
+	${MKDIR} ${SITE_PERL}
 	cd ${WRKSRC}/lib && ${FIND} . ! -empty | \
-		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PERL_SITELIBDIR}
+		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${SITE_PERL}
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC}/templates && ${FIND} . ! -empty | \
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
