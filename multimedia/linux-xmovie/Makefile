@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	xmovie
-PORTVERSION=	1.5.2.1
+PORTVERSION=	1.5.3.1
 CATEGORIES=	graphics linux
-MASTER_SITES=	http://heroine.linuxave.net/
+MASTER_SITES=	http://heroines.sourceforge.net/
 DISTFILES=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}.i386.rpm
 
 MAINTAINER=	sanpei@FreeBSD.org
