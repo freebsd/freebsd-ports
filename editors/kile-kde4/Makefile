@@ -12,6 +12,8 @@ MASTER_SITES=	http://xm1.net.free.fr/kile/
 
 MAINTAINER=	stefan.jahn@nemesis-sektor.de
 
+BROKEN=		"Does not fetch"
+
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 
 USE_KDELIBS_VER=3
