@@ -56,6 +56,7 @@ share/xtux/images/items/bullets.xpm
 share/xtux/images/items/can.xpm
 share/xtux/images/items/dewcan.xpm
 share/xtux/images/items/disk.xpm
+share/xtux/images/items/e.xpm
 share/xtux/images/items/energy.xpm
 share/xtux/images/items/explosives.xpm
 share/xtux/images/items/firewall.xpm
@@ -106,6 +107,7 @@ share/xtux/images/tiles/bar_icon_folder.xpm
 share/xtux/images/tiles/bar_icon_tools.xpm
 share/xtux/images/tiles/bar_icon_windows.xpm
 share/xtux/images/tiles/bar_w.xpm
+share/xtux/images/tiles/barrier.xpm
 share/xtux/images/tiles/basin_e.xpm
 share/xtux/images/tiles/basin_e_b.xpm
 share/xtux/images/tiles/basin_w.xpm
@@ -122,6 +124,7 @@ share/xtux/images/tiles/bed_b.xpm
 share/xtux/images/tiles/bed_n.xpm
 share/xtux/images/tiles/bed_s.xpm
 share/xtux/images/tiles/black.xpm
+share/xtux/images/tiles/blank.xpm
 share/xtux/images/tiles/block_e.xpm
 share/xtux/images/tiles/block_m.xpm
 share/xtux/images/tiles/block_n.xpm
@@ -165,6 +168,8 @@ share/xtux/images/tiles/carpet_blue.xpm
 share/xtux/images/tiles/carpet_blue_e.xpm
 share/xtux/images/tiles/carpet_grey.xpm
 share/xtux/images/tiles/carpet_light.xpm
+share/xtux/images/tiles/carpet_light_e.xpm
+share/xtux/images/tiles/carpet_light_w.xpm
 share/xtux/images/tiles/carpet_purple.xpm
 share/xtux/images/tiles/carpet_red.xpm
 share/xtux/images/tiles/carpet_red_e.xpm
@@ -206,7 +211,10 @@ share/xtux/images/tiles/desk_work.xpm
 share/xtux/images/tiles/desk_work_b.xpm
 share/xtux/images/tiles/dirt.xpm
 share/xtux/images/tiles/door_authorized.xpm
+share/xtux/images/tiles/door_automatic.xpm
+share/xtux/images/tiles/door_glass.xpm
 share/xtux/images/tiles/door_plain.xpm
+share/xtux/images/tiles/door_roller_white.xpm
 share/xtux/images/tiles/door_star.xpm
 share/xtux/images/tiles/drain.xpm
 share/xtux/images/tiles/drawers.xpm
@@ -240,16 +248,14 @@ share/xtux/images/tiles/green.xpm
 share/xtux/images/tiles/greenbase.xpm
 share/xtux/images/tiles/grey_light.xpm
 share/xtux/images/tiles/grey_light_w.xpm
-share/xtux/images/tiles/grn_txt.xpm
 share/xtux/images/tiles/guard_rail_e.xpm
 share/xtux/images/tiles/guard_rail_h.xpm
 share/xtux/images/tiles/guard_rail_n.xpm
 share/xtux/images/tiles/guard_rail_s.xpm
 share/xtux/images/tiles/guard_rail_w.xpm
-share/xtux/images/tiles/gy_txt.xpm
-share/xtux/images/tiles/gy_txt_ln.xpm
 share/xtux/images/tiles/h2o.xpm
 share/xtux/images/tiles/h2o1.xpm
+share/xtux/images/tiles/handle_grey.xpm
 share/xtux/images/tiles/hilight_n.xpm
 share/xtux/images/tiles/hilight_s.xpm
 share/xtux/images/tiles/ice.xpm
@@ -263,7 +269,6 @@ share/xtux/images/tiles/kitchen_bench_n.xpm
 share/xtux/images/tiles/kitchen_bench_s.xpm
 share/xtux/images/tiles/kitchen_bench_v.xpm
 share/xtux/images/tiles/kitchen_sink.xpm
-share/xtux/images/tiles/kitchen_sink_v.xpm
 share/xtux/images/tiles/lightgrey.xpm
 share/xtux/images/tiles/line_dotted_h.xpm
 share/xtux/images/tiles/line_dotted_v.xpm
@@ -271,6 +276,7 @@ share/xtux/images/tiles/line_grey_h.xpm
 share/xtux/images/tiles/line_h.xpm
 share/xtux/images/tiles/line_v.xpm
 share/xtux/images/tiles/logo_wwt.xpm
+share/xtux/images/tiles/manhole_open.xpm
 share/xtux/images/tiles/marble.xpm
 share/xtux/images/tiles/marble1.xpm
 share/xtux/images/tiles/mat.xpm
@@ -336,6 +342,7 @@ share/xtux/images/tiles/red.xpm
 share/xtux/images/tiles/red_carpet.xpm
 share/xtux/images/tiles/road.xpm
 share/xtux/images/tiles/rockice.xpm
+share/xtux/images/tiles/roller_door_top.xpm
 share/xtux/images/tiles/roof_black_e.xpm
 share/xtux/images/tiles/roof_black_n.xpm
 share/xtux/images/tiles/roof_black_s.xpm
@@ -359,7 +366,6 @@ share/xtux/images/tiles/sd_corner.xpm
 share/xtux/images/tiles/sd_menu_0.xpm
 share/xtux/images/tiles/sd_menu_1.xpm
 share/xtux/images/tiles/sd_menu_2.xpm
-share/xtux/images/tiles/sd_readmore.xpm
 share/xtux/images/tiles/sd_titlebar_green.xpm
 share/xtux/images/tiles/sd_titlebar_green_e.xpm
 share/xtux/images/tiles/sd_titlebar_green_w.xpm
@@ -374,6 +380,9 @@ share/xtux/images/tiles/sd_topicquake.xpm
 share/xtux/images/tiles/sd_topicscience.xpm
 share/xtux/images/tiles/sd_topicspam.xpm
 share/xtux/images/tiles/security_camera.xpm
+share/xtux/images/tiles/shop_window_1.xpm
+share/xtux/images/tiles/shop_window_2.xpm
+share/xtux/images/tiles/shop_window_3.xpm
 share/xtux/images/tiles/shower.xpm
 share/xtux/images/tiles/side_ring.xpm
 share/xtux/images/tiles/sidewalk.xpm
@@ -411,13 +420,6 @@ share/xtux/images/tiles/table_marble_e.xpm
 share/xtux/images/tiles/table_marble_h.xpm
 share/xtux/images/tiles/table_marble_w.xpm
 share/xtux/images/tiles/teleporter.xpm
-share/xtux/images/tiles/text_0.xpm
-share/xtux/images/tiles/text_1.xpm
-share/xtux/images/tiles/text_2.xpm
-share/xtux/images/tiles/text_3.xpm
-share/xtux/images/tiles/text_4.xpm
-share/xtux/images/tiles/text_5.xpm
-share/xtux/images/tiles/text_6.xpm
 share/xtux/images/tiles/time.xpm
 share/xtux/images/tiles/title_emacs.xpm
 share/xtux/images/tiles/title_xtux.xpm
@@ -426,8 +428,6 @@ share/xtux/images/tiles/toaster.xpm
 share/xtux/images/tiles/toilet.xpm
 share/xtux/images/tiles/toilet_b.xpm
 share/xtux/images/tiles/towel.xpm
-share/xtux/images/tiles/towel_b.xpm
-share/xtux/images/tiles/towl.xpm
 share/xtux/images/tiles/trash.xpm
 share/xtux/images/tiles/tree_l.xpm
 share/xtux/images/tiles/tree_u.xpm
@@ -489,11 +489,12 @@ share/xtux/maps/desktop.map
 share/xtux/maps/end.map
 share/xtux/maps/geekusa.map
 share/xtux/maps/home.map
+share/xtux/maps/home2.map
 share/xtux/maps/my_way_home.map
 share/xtux/maps/skyscraper.map
 share/xtux/maps/slashdot.map
+share/xtux/maps/street_spirit.map
 share/xtux/maps/test.map
-share/xtux/maps/trashed_home.map
 share/xtux/maps/unfinished_sympathy.map
 share/xtux/maps/watership.map
 share/xtux/default.table
