@@ -1,10 +1,7 @@
-
-$FreeBSD$
-
---- muttprint.orig	Tue May 27 14:11:31 2003
-+++ muttprint	Wed Aug  6 12:28:31 2003
-@@ -79,13 +79,13 @@
- ######## 'private' Variablen für den Rest
+--- muttprint.orig	Wed Apr  7 19:27:31 2004
++++ muttprint	Sun May 23 17:37:08 2004
+@@ -92,13 +92,13 @@
+ ######## 'private' variables for the rest
  %Config = (
  	PRINTER			=> 	'',
 -	PRINT_COMMAND	=>	'lpr -P$PRINTER',
@@ -16,10 +13,10 @@ $FreeBSD$
  	FONT			=>	'Latex',
 -	PAPER			=>	'A4',
 +	PAPER			=>	'%%PAPERSIZE%%',
- 	DEBUG			=>	'1',
+ 	DEBUG			=>	'0',
  	REM_SIG			=>	'off',
  	REM_QUOTE		=>	'off',
-@@ -182,16 +182,16 @@
+@@ -196,16 +196,16 @@
  	}
  }
  
@@ -31,16 +28,16 @@ $FreeBSD$
  
  @print = readOpts ();
  
- if ($Config{'PENGUIN'} eq "on") {
+ if ($Config{PENGUIN} eq "on") {
  	my $sharedir = findCommonDir("share");
--	$Config{'PENGUIN'} = (-r "$sharedir/penguin.eps")
+-	$Config{PENGUIN} = (-r "$sharedir/penguin.eps")
 -			? "$sharedir/penguin.eps" 
-+	$Config{'PENGUIN'} = (-r "$sharedir/Beastie.eps")
++	$Config{PENGUIN} = (-r "$sharedir/Beastie.eps")
 +			? "$sharedir/Beastie.eps" 
  			: "off";
  }
  
-@@ -1671,7 +1671,7 @@
+@@ -1978,7 +1978,7 @@
  Options:
  
  PLEASE NOTICE: These options override the corresponding settings in 
