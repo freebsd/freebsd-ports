@@ -14,7 +14,7 @@
 #   using symbolic links.
 
 PORTNAME=	gnat
-PORTVERSION=	3.13p
+PORTVERSION=	3.14p
 CATEGORIES=	lang
 MASTER_SITES=	ftp://cs.nyu.edu/pub/gnat/${PORTVERSION}/ \
 		${MASTER_SITE_LOCAL} ${MASTER_SITE_GNU}
@@ -112,7 +112,7 @@ GNATLIBCFLAGS=	-O2
 .endif
 
 # Shared library handling
-LIBRARY_VERSION=	3.13
+LIBRARY_VERSION=	3.14
 SHARED_MAJOR=	1
 
 # Account for signal set changes
@@ -188,6 +188,9 @@ do-build:
 	${RM} ${WRKSRC}/stamp-gnatlib2
 	(cd ${WRKSRC}; \
 	    ${GMAKE} CFLAGS="${GNATCFLAGS}" GNATLIBCFLAGS="${GNATLIBCFLAGS}" gnatlib )
+.ifndef(NOPORTDOCS)
+	${RM} ${WRKDIR}/gnat-3.14p-src/examples/*.orig
+.endif
 
 do-install:
 	(cd ${WRKSRC}; \
@@ -202,6 +205,11 @@ do-install:
 	    ${PREFIX}/lib/gcc-lib/${GNUHOST}/${GCC_VERSION}/adalib/libgnat.so
 	${LN} -s ${PREFIX}/lib/libgnarl-${LIBRARY_VERSION}.so.${SHARED_MAJOR} \
 	    ${PREFIX}/lib/gcc-lib/${GNUHOST}/${GCC_VERSION}/adalib/libgnarl.so
+.ifndef(NOPORTDOCS)
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} \
+	    ${WRKDIR}/gnat-3.14p-src/examples/* ${EXAMPLESDIR}
+.endif
 
 post-install:
 	@(for prog in ${PREFIX}/bin/adagcc \
