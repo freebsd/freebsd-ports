@@ -57,29 +57,28 @@
    handle_result(result);
  }
    
---- ./libgnomevfs/libgnomevfsmm/file-info.cc.orig	Tue Jul 22 01:02:02 2003
-+++ ./libgnomevfs/libgnomevfsmm/file-info.cc	Thu Jul 31 21:57:31 2003
-@@ -149,17 +149,17 @@
- 
- FileType FileInfo::get_type() const
+--- ./libgnomevfs/libgnomevfsmm/uri.cc.orig     Tue Jul 22 01:39:50 2003
++++ ./libgnomevfs/libgnomevfsmm/uri.cc  Thu Jul 31 22:09:38 2003
+@@ -42,7 +42,7 @@
+ Glib::RefPtr<FileInfo> Uri::get_file_info(FileInfoOptions options) const throw(exception)
  {
--  return static_cast<FileType>(gobj()->type);
-+  return FileType(gobj()->type);
+   GnomeVFSFileInfo* file_info = gnome_vfs_file_info_new();
+-  GnomeVFSResult result = gnome_vfs_get_file_info_uri(const_cast<GnomeVFSURI*>(gobj()), file_info, static_cast<GnomeVFSFileInfoOptions>(options));
++  GnomeVFSResult result = gnome_vfs_get_file_info_uri(const_cast<GnomeVFSURI*>(gobj()), file_info, GnomeVFSFileInfoOptions(options));
+   handle_result(result);
+   return Glib::wrap(file_info);
  }
- 
- FilePermissions FileInfo::get_permissions() const
- {
--  return static_cast<FilePermissions>(gobj()->permissions);
-+  return FilePermissions(gobj()->permissions);
- }
- 
- FileFlags FileInfo::get_flags() const
- {
--  return static_cast<FileFlags>(gobj()->flags);
-+  return FileFlags(gobj()->flags);
- }
- 
- guint FileInfo::get_link_count() const
+--- ./libgnomevfs/libgnomevfsmm/mime-application.cc.orig        Thu Jul 31 22:10:37 2003
++++ ./libgnomevfs/libgnomevfsmm/mime-application.cc     Thu Jul 31 22:12:01 2003
+@@ -42,7 +42,7 @@
+   gobject_->id = g_strdup(id.c_str());
+   gobject_->name = g_strdup(name.c_str());
+   gobject_->command = g_strdup(command.c_str());
+-  gobject_->expects_uris = static_cast<GnomeVFSMimeApplicationArgumentType>(argument_type);
++  gobject_->expects_uris = GnomeVFSMimeApplicationArgumentType(argument_type);
+   gobject_->supported_uri_schemes = supported_uri_schemes.data();
+   gobject_->can_open_multiple_files = multiple_files;
+   gobject_->requires_terminal = requires_terminal;
 --- ./libgnomevfs/libgnomevfsmm/handle.cc.orig	Fri Jul 18 13:53:54 2003
 +++ ./libgnomevfs/libgnomevfsmm/handle.cc	Thu Jul 31 22:23:31 2003
 @@ -49,25 +49,25 @@
@@ -156,55 +155,6 @@
    handle_result(result);
  }
  
---- ./libgnomevfs/libgnomevfsmm/uri.cc.orig	Tue Jul 22 01:39:50 2003
-+++ ./libgnomevfs/libgnomevfsmm/uri.cc	Thu Jul 31 22:09:38 2003
-@@ -42,7 +42,7 @@
- Glib::RefPtr<FileInfo> Uri::get_file_info(FileInfoOptions options) const throw(exception)
- {
-   GnomeVFSFileInfo* file_info = gnome_vfs_file_info_new();
--  GnomeVFSResult result = gnome_vfs_get_file_info_uri(const_cast<GnomeVFSURI*>(gobj()), file_info, static_cast<GnomeVFSFileInfoOptions>(options));
-+  GnomeVFSResult result = gnome_vfs_get_file_info_uri(const_cast<GnomeVFSURI*>(gobj()), file_info, GnomeVFSFileInfoOptions(options));
-   handle_result(result);
-   return Glib::wrap(file_info);
- }
-@@ -160,7 +160,7 @@
- 
- Glib::ustring Uri::to_string(URIHideOptions hide_options) const
- {
--  return Glib::convert_return_gchar_ptr_to_ustring(gnome_vfs_uri_to_string(const_cast<GnomeVFSURI*>(gobj()), static_cast<GnomeVFSURIHideOptions>(hide_options)));
-+  return Glib::convert_return_gchar_ptr_to_ustring(gnome_vfs_uri_to_string(const_cast<GnomeVFSURI*>(gobj()), GnomeVFSURIHideOptions(hide_options)));
- }
- 
- Glib::RefPtr<Uri> Uri::dup()
---- ./libgnomevfs/libgnomevfsmm/mime-application.cc.orig	Thu Jul 31 22:10:37 2003
-+++ ./libgnomevfs/libgnomevfsmm/mime-application.cc	Thu Jul 31 22:12:01 2003
-@@ -42,7 +42,7 @@
-   gobject_->id = g_strdup(id.c_str());
-   gobject_->name = g_strdup(name.c_str());
-   gobject_->command = g_strdup(command.c_str());
--  gobject_->expects_uris = static_cast<GnomeVFSMimeApplicationArgumentType>(argument_type);
-+  gobject_->expects_uris = GnomeVFSMimeApplicationArgumentType(argument_type);
-   gobject_->supported_uri_schemes = supported_uri_schemes.data();
-   gobject_->can_open_multiple_files = multiple_files;
-   gobject_->requires_terminal = requires_terminal;
-@@ -263,7 +263,7 @@
- 
- MimeApplicationArgumentType MimeApplication::get_argument_type() const
- {
--  return static_cast<MimeApplicationArgumentType>(gobj()->expects_uris);
-+  return MimeApplicationArgumentType(gobj()->expects_uris);
- }
- 
- Glib::ListHandle<Glib::ustring> MimeApplication::get_supported_uri_schemes() const
-@@ -288,7 +288,7 @@
- 
- void MimeApplication::set_argument_type(const MimeApplicationArgumentType& value)
- {
--  gobj()->expects_uris = static_cast<GnomeVFSMimeApplicationArgumentType>(value);
-+  gobj()->expects_uris = GnomeVFSMimeApplicationArgumentType(value);
- }
- 
- void MimeApplication::set_supported_uri_schemes(const Glib::ListHandle<Glib::ustring>& value)
 --- ./libgnomevfs/libgnomevfsmm/transfer-progress.cc.orig	Thu Jul 31 22:12:40 2003
 +++ ./libgnomevfs/libgnomevfsmm/transfer-progress.cc	Thu Jul 31 22:13:38 2003
 @@ -58,17 +58,17 @@
