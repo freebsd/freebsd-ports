@@ -489,3 +489,14 @@
      exit 0 ;;
    -help | --help | --hel | --he | --h)
      echo "\$ac_cs_usage"; exit 0 ;;
+--- ./Makefile.in.org	Mon Jul 22 09:32:53 1996
++++ ./Makefile.in	Wed Nov  6 23:30:05 1996
+@@ -303,7 +303,7 @@
+ 	 chown bin @prefix@/bin/vic
+ 	 chgrp bin @prefix@/bin/vic
+ 	 chmod 555 @prefix@/bin/vic
+-	 cp vic.1 @prefix@/man/vic.1
++	 cp vic.1 @prefix@/man/man1/vic.1
+ 	 cp histtolut @prefix@/bin/histtolut
+ 	 chown bin @prefix@/bin/histtolut
+ 	 chgrp bin @prefix@/bin/histtolut
