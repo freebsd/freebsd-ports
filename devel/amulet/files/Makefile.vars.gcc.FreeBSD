@@ -1,0 +1,67 @@
+
+CC = g++
+LD = ld
+
+##
+## Parameters for Amulet programs
+## 
+
+# X11 directories, uncomment and set if necessary
+X11_INC = -I/usr/X11R6/include
+X11_LIB = -L/usr/X11R6/lib
+
+# directory where Amulet will (eventually) be installed
+# defaults to its current location (AMULET_DIR)
+AMULET_ROOT=$(PREFIX)/share/amulet
+
+# compiler flags for Amulet programs
+AM_CFLAGS = -I$(AMULET_DIR)/include $(X11_INC) -Wall \
+	    -DGCC -DMEMORY
+
+# libraries needed by Amulet (interactors needs math library)
+AM_LIBS = $(X11_LIB) -lX11 -lm 
+
+
+.if $(MACHINE_ARCH) == "alpha"
+OPT_CFLAGS = -O0
+.else
+OPT_CFLAGS = -O2
+.endif
+
+##
+## Parameters for the Amulet library
+## 
+
+# additional compiler flags for development version
+AM_DEVELOP = $(OPT_CFLAGS) -DDEBUG -g -DAMULET2_CONVERSION
+
+# additional compiler flags for release version
+AM_RELEASE = $(OPT_CFLAGS) -DAMULET2_CONVERSION
+
+# additional compiler flags for optimized version with inspector and debugging enabled
+AM_INHOUSE = -DDEBUG -g
+
+# additional compiler flags for optimized version with inspector but no debugging symbols
+AM_NODEBUGSYM = $(OPT_CFLAGS) -DDEBUG -DAMULET2_CONVERSION
+
+# Flags used to build the sample programs
+AM_SAMPLE_FLAGS = $(AM_NODEBUGSYM)
+
+# Default set of extra compiler flags
+OP = $(AM_NODEBUGSYM)
+
+# extra link flags for library test programs
+AM_LIB_LDFLAGS =
+
+# Makefile identifying the gem files for this platform
+AM_GEM_SOURCE = Makefile.gem.X
+
+# Makefile that knows how to make the Amulet library for this platform
+AM_SHARED_LIB_MAKE = Makefile.lib.gcc.shared
+AM_STATIC_LIB_MAKE = Makefile.lib.unix.static
+
+# Set of library variants for make libs
+# Note: The develop-shared library will also be build when
+# we build the samples programs. If we add it here it would
+# be build twice. 
+AM_LIBS_TO_MAKE = release-shared release-static

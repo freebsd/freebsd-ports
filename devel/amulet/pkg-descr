@@ -1,0 +1,23 @@
+Amulet is a toolkit for building graphical user interfaces in C++.
+
+This port builds three versions of the library:
+  libamulet.so.3.0:         shared library with the inspector
+			    (for development)
+  libamulet-release.so.3.0: shared library without the inspector
+  libamulet-release.a:      static version of the above library
+
+In addition, the following programs are installed in /usr/X11R6/bin:
+  gilt:         the interface designer
+  agate:        gesture training program
+
+The sample programs are installed in /usr/X11R6/share/amulet/samples.
+
+There is also a sample Makefile (sample.Makefile) in that directory
+that you can use to build amulet programs. This is an adaption
+of the Makefiles that come with amulet, which does not require the 
+AMULET_DIR and AMULET_VARS_FILE to be set.
+
+WWW: http://pecan.srv.cs.cmu.edu/afs/cs/project/amulet/www/
+
+Filip Bovyn
+bovynf@awe.be
