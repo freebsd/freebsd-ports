@@ -67,8 +67,11 @@ GNU_CONFIGURE=	yes
 USE_BISON=	yes
 USE_REINPLACE=	yes
 
-CONFIGURE_ENV=	ac_cv_pthreads_lib=${PTHREAD_LIBS} \
-		ac_cv_pthreads_cflags=${PTHREAD_CFLAGS}
+WITH_PTHREAD_LIBS?=	${PTHREAD_LIBS:S/-l//}
+WITH_PTHREAD_CFLAGS?=	${PTHREAD_CFLAGS}
+
+CONFIGURE_ENV=	ac_cv_pthreads_lib=${WITH_PTHREAD_LIBS} \
+		ac_cv_pthreads_cflags=${WITH_PTHREAD_CFLAGS}
 
 CONFIGURE_ARGS=	--enable-versioning \
 		--enable-memory-limit \
