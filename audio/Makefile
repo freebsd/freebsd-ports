@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.67 1999/01/14 23:46:15 dirk Exp $
+# $Id: Makefile,v 1.68 1999/01/26 03:11:58 steve Exp $
 #
 
     SUBDIR += 8hz-mp3
@@ -21,6 +21,7 @@
     SUBDIR += kmpg
     SUBDIR += lamer
     SUBDIR += libaudiofile
+    SUBDIR += linux-realplayer
     SUBDIR += maplay
     SUBDIR += mikmod
     SUBDIR += mp3encode
