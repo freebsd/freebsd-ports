@@ -33,10 +33,16 @@ NO_BUILD=	YES
 APP_HOME?=	${PREFIX}/${PKGBASE}${PORTVERSION}
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
 
+CPIO?=		/usr/bin/cpio
+
+post-patch:
+	${FIND} ${WRKSRC} \( -name '*.orig' -o -name '.*.orig' \) -print \
+	  | xargs ${RM} -f
+
 do-install:
 	${MKDIR} ${APP_HOME}
-	(cd ${WRKSRC} && tar --exclude "*.orig" -c -f - .) \
-	| (cd ${APP_HOME} && tar fx -)
-	${LOCALBASE}/bin/registervm "${APP_HOME}/bin/java # Linux-JDK${PORTVERSION}"
+	cd ${WRKSRC} && ${FIND} . -print \
+	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${APP_HOME}
+	${LOCALBASE}/bin/registervm "${APP_HOME}/bin/java # Linux-Blackdown-JDK${PORTVERSION}"
 
 .include <bsd.port.mk>
