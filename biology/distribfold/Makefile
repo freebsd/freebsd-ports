@@ -36,7 +36,7 @@ DNETFOLD_GROUP=dnetfold
 # default number of processors
 WITH_NCPU?=	1
 
-RELEASE_DATE=	20040226
+RELEASE_DATE=	20040613
 
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|%%DESTINATION_DIR%%|${DESTINATION_DIR}/cpu0|' \
