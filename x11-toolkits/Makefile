@@ -107,6 +107,7 @@
     SUBDIR += libxfce4gui
     SUBDIR += libzvt
     SUBDIR += linux-gtk
+    SUBDIR += linux-gtk2
     SUBDIR += linux-openmotif
     SUBDIR += mesgui
     SUBDIR += movingmotif
