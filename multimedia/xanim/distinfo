@@ -2,3 +2,6 @@ MD5 (xanim27070.tar.gz) = 768253a86b059b4d100e34c602931af6
 MD5 (xa2.0_cvid_netbsd386.o.Z) = 80a70d69ea532c7f32a074381fff8468
 MD5 (xa2.0_iv32_netbsd386.o.Z) = 1968c29d77e02c53df14bc4f2a29a1c0
 MD5 (xa1.0_cyuv_netbsd386.o.Z) = 9f2d2b1a14f4518ffd02c0f45ccbf9e6
+MD5 (xa2.0_cvid_linuxELF.o.Z) = 3b4e0575227a595267f8ea8c8dc389d4
+MD5 (xa2.0_iv32_linuxELF.o.Z) = 6d96884a3ab902efb3315388c5091c42
+MD5 (xa1.0_cyuv_linuxELF.o.Z) = 1485e89ede4f392229b3dbee0015b59d
