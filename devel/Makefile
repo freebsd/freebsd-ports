@@ -47,7 +47,6 @@
     SUBDIR += autobook
     SUBDIR += autoconf
     SUBDIR += autoconf213
-    SUBDIR += autoconf257
     SUBDIR += autodia
     SUBDIR += autogen
     SUBDIR += automake
