@@ -3,3 +3,8 @@
 %%PORTDOCS%%%%RUBY_DOCDIR%%/ncurses/README
 %%PORTDOCS%%%%RUBY_DOCDIR%%/ncurses/TODO
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/ncurses
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ncurses/LICENSES_for_examples
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ncurses/example.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ncurses/hello_ncurses.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ncurses/rain.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/ncurses
