@@ -148,7 +148,6 @@
     SUBDIR += kbanner
     SUBDIR += kcc
     SUBDIR += kde3-i18n
-    SUBDIR += kdeaddons
     SUBDIR += kdevelop
     SUBDIR += kdrill
     SUBDIR += kinput2-canna
