@@ -6,34 +6,29 @@
 #
 
 PORTNAME=       dillo
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=     www
 MASTER_SITES=	http://dillo.auriga.wearlab.de/download/
-# hack to account for the bugfix version number
-DISTNAME=	${PORTNAME}-${PORTVERSION}.2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast, small graphical Web browser built upon GTK+
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png \
-		intl.4:${PORTSDIR}/devel/gettext
+		png.5:${PORTSDIR}/graphics/png
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
+USE_BZIP2=	yes
 USE_GNOME=	gtk12
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--includedir="${LOCALBASE}/include" \
-			--libdir="${LOCALBASE}/lib" \
-			--with-jpeg-inc="${LOCALBASE}/include"
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
-	${PERL} -pi -e "s@-D_REENTRANT -D_THREAD_SAFE@@" ${WRKSRC}/configure
-	${PERL} -pi -e "s@dillorc@dillorc.sample@g" ${WRKSRC}/Makefile.in
-	${MV} ${WRKSRC}/dillorc ${WRKSRC}/dillorc.sample
-	${PERL} -pi -e "s@/usr/local/etc/dillorc@${PREFIX}/etc/dillorc@g" \
-		${WRKSRC}/src/prefs.c
+	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g ; \
+		 s|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|dillorc|dillorc.sample|g' ${WRKSRC}/Makefile.in
+	@${CP} ${WRKSRC}/dillorc ${WRKSRC}/dillorc.sample
 
 .include <bsd.port.mk>
