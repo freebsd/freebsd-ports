@@ -1,1 +1,20 @@
-XXX fixme
+HTML-Element-Extended is a package of several enhanced
+HTML::Element classes, most of which arose during the effort
+to implement an HTML::Element based table class.
+
+The modules are:
+        HTML::ElementTable
+        HTML::ElementSuper
+        HTML::ElementGlob
+        HTML::ElementRaw
+
+The resulting functionality enables:
+        tables
+        element globs
+        element coordinates
+        content replacement
+        content wrapping
+        element cloning
+        raw HTML string adoption
+
+WWW:	http://www.mojotoad.com/sisk/projects/HTML-Element-Extended/
