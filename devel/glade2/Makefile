@@ -3,7 +3,7 @@
 # Date created:		29 June 1998
 # Whom:			Dom Mitchell <dom@myrddin.demon.co.uk>
 #
-# $Id: Makefile,v 1.11 1999/03/19 04:39:47 nectar Exp $
+# $Id: Makefile,v 1.12 1999/05/29 04:17:51 steve Exp $
 #
 
 DISTNAME=	glade-0.4.1
@@ -15,6 +15,8 @@ MAINTAINER=     dom@myrddin.demon.co.uk
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+
+FETCH_BEFORE_ARGS=	-b
 
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
