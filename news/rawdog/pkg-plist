@@ -1,0 +1,22 @@
+bin/rawdog
+%%PYTHON_SITELIBDIR%%/rawdoglib/__init__.py
+%%PYTHON_SITELIBDIR%%/rawdoglib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/rawdoglib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/rawdoglib/feedparser.py
+%%PYTHON_SITELIBDIR%%/rawdoglib/feedparser.pyc
+%%PYTHON_SITELIBDIR%%/rawdoglib/feedparser.pyo
+%%PYTHON_SITELIBDIR%%/rawdoglib/persister.py
+%%PYTHON_SITELIBDIR%%/rawdoglib/persister.pyc
+%%PYTHON_SITELIBDIR%%/rawdoglib/persister.pyo
+%%PYTHON_SITELIBDIR%%/rawdoglib/rawdog.py
+%%PYTHON_SITELIBDIR%%/rawdoglib/rawdog.pyc
+%%PYTHON_SITELIBDIR%%/rawdoglib/rawdog.pyo
+%%PYTHON_SITELIBDIR%%/rawdoglib/timeoutsocket.py
+%%PYTHON_SITELIBDIR%%/rawdoglib/timeoutsocket.pyc
+%%PYTHON_SITELIBDIR%%/rawdoglib/timeoutsocket.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/rawdoglib
+%%EXAMPLESDIR%%/config
+%%EXAMPLESDIR%%/style.css
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
