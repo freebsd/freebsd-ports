@@ -67,3 +67,6 @@ sbin/client
 sbin/squid
 @exec mkdir -p %D/squid/cache
 @exec mkdir -p %D/squid/logs
+@unexec rmdir %D/squid/cache 2>/dev/null || true
+@unexec rmdir %D/squid/logs 2>/dev/null || true
+@unexec rmdir %D/squid 2>/dev/null || true
