@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	jonc@chen.org.nz
 COMMENT=	A Qt-based Jabber client
 
+LIB_DEPENDS+=	qssl.1:${PORTSDIR}/devel/qssl
+
 HAS_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
