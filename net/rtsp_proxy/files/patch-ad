@@ -1,0 +1,29 @@
+--- ../shared_udp.c	Tue Jul  6 17:42:26 1999
++++ ../shared_udp.c	Tue Jul 20 23:54:38 1999
+@@ -259,7 +259,16 @@
+ 			gNextPort++;
+ 		if (gNextPort > gUDPPortMax)
+ 			gNextPort = gUDPPortMin;
+-	} while (bind_socket_to_address(skt1, fromIP, port1 = gNextPort++, false) != 0);
++	} while (bind_socket_to_address(skt1, INADDR_ANY, port1 = gNextPort++, false) != 0);
++
++// i've changed the previous bind and the next one below to bind to any
++// IP number rather than using 'fromIP'. 'fromIP' is obtained from gProxyIP
++// which is in turn obtained from 'get_local_ip_address'. this function
++// gets the current hostname and then resolves that into an address. however,
++// since a proxy server runs on a bridging system with multiple IP addresses,
++// this is as likely as not to return the wrong IP address, which results in
++// the proxy missing all of the traffic from the server. not binding to a
++// specific address is cheap but gets a result.
+ 
+ 	if (withSib) {
+ retry_rtcp:
+@@ -271,7 +280,7 @@
+ 			else
+ 				goto bail_error;
+ 		}
+-		if (bind_socket_to_address(skt2, fromIP, port2 = gNextPort++, false) != 0) {
++		if (bind_socket_to_address(skt2, INADDR_ANY, port2 = gNextPort++, false) != 0) {
+ 			close_socket(skt1);
+ 			close_socket(skt2);
+ 			skt1 = INVALID_SOCKET;

@@ -1,0 +1,16 @@
+--- ../proxy.h	Tue Jul  6 17:42:19 1999
++++ ../proxy.h	Tue Jul 20 22:26:39 1999
+@@ -80,7 +80,12 @@
+ 	trans_pb	RTCP_C2S_tpb;
+ } track_info;
+ 
+-#define RTSP_SESSION_BUF_SIZE	1024
++// 1024 is too small for some server messages, so i've up'd this to 2048
++// instead as the proxy will otherwise truncate the message before sending
++// it on to the client, this will confuse the client no end.
++
++#define RTSP_SESSION_BUF_SIZE	2048
++
+ typedef struct rtsp_session {
+ 	struct rtsp_session *next;
+ 	int		die;

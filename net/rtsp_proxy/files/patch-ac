@@ -1,3 +1,25 @@
+--- ../proxy.c	Tue Jul  6 17:42:19 1999
++++ ../proxy.c	Tue Jul 20 22:26:39 1999
+@@ -1142,7 +1142,18 @@
+ 			}
+ 			//
+ 			// did we get a complete response yet?
+-			if (! has_two_crlfs(s->sinbuf))
++			//
++
++// this used to look for a blank line, which is a dumb way to check if we 
++// have a complete response since that only means we have a complete header. 
++// the correct method would be to check the 'Content-Length:' header, but 
++// that's too much trouble without a lot of re-writing. so this is a cheap 
++// hack to look and see if the buffer ends on a 'CRLF' pair - this might get 
++// broken if we happen to break on an end-of-line, but it's better than 
++// nothing.  
++
++			pBuf = s->sinbuf + s->amtInServerInBuffer - 2;
++			if ((pBuf[0] != '\r') || (pBuf[1] != '\n'))
+ 				break;
+ 
+ 			//
 --- ../proxy.c.orig	Sat Oct 16 10:29:52 1999
 +++ ../proxy.c	Sat Oct 16 10:30:01 1999
 @@ -127,7 +127,9 @@
