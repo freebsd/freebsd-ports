@@ -3,7 +3,7 @@
 # Date created:        Wed Nov  4 08:48:08 EST 1998
 # Whom:                maurice
 #
-# $Id: Makefile,v 1.1.1.1 1998/11/04 03:17:53 jkoshy Exp $
+# $Id: Makefile,v 1.2 1999/01/12 23:37:49 dirk Exp $
 #
 
 DISTNAME=	radiusclient-0.3
@@ -18,8 +18,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 pre-configure:
-	${CP} ${WRKDIRPREFIX}${PORTSDIR}/devel/libtool/work/libtool-1.2/ltconfig ${WRKSRC}
-	${CP} ${WRKDIRPREFIX}${PORTSDIR}/devel/libtool/work/libtool-1.2/ltmain.sh ${WRKSRC}
+	${CP} ${WRKDIRPREFIX}${PORTSDIR}/devel/libtool/work/libtool-1.3/ltconfig ${WRKSRC}
+	${CP} ${WRKDIRPREFIX}${PORTSDIR}/devel/libtool/work/libtool-1.3/ltmain.sh ${WRKSRC}
 
 post-install:
 	${LDCONFIG} -m ${PREFIX}/lib
