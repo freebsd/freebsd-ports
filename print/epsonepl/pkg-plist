@@ -1,0 +1,5 @@
+bin/ijs_server_epsonepl
+bin/ps2epl
+etc/epsonepl.conf.sample
+share/epsonepl/epsonepl.apsfilter
+@dirrm share/epsonepl

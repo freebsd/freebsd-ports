@@ -1,0 +1,17 @@
+# apsfilter epson EPL5[789]00L driver
+# just copy to ${LOCALBASE}/share/apsfilter/driver/epsonepl and add this line to
+# ${LOCALBASE}/share/apsfilter/driver/MAPPING:
+# +--------------------------------------+
+# | epsonepl:EPL5700L:EPL5800L:EPL5900L: |
+# +--------------------------------------+
+
+case "$QUALITY" in
+	draft)	params="EplDpi=300,EplRitech=off,EplTonerSave=on" RESOLUTION=300x300 ;;
+	low)	params="EplDpi=300,EplRitech=off,EplTonerSave=off" RESOLUTION=300x300 ;;
+	medium)	params="EplDpi=Class600,EplRitech=on,EplTonerSave=off" RESOLUTION=600x300 ;;
+	high)	params="EplDpi=600,EplRitech=off,EplTonerSave=off" RESOLUTION=600x600 ;;
+	photo)	params="EplDpi=Class1200,EplRitech=on,EplTonerSave=off" RESOLUTION=1200x600 ;;
+esac
+
+GS_FEATURES="$GS_FEATURES -sProcessColorModel=DeviceGray -dBitsPerSample=1 -sIjsServer=ijs_server_epsonepl -dIjsUseOutputFD -sIjsParams='$params,EplDensity=3' -sDeviceManufacturer=Epson -sDeviceModel=$(echo $PRINTER | sed 's#.*/##')"
+PRINTER=ijs

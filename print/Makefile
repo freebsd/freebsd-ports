@@ -54,6 +54,7 @@
     SUBDIR += enscript-letterdj
     SUBDIR += enscriptfonts
     SUBDIR += envelope
+    SUBDIR += epsonepl
     SUBDIR += font2svg
     SUBDIR += foomatic-db
     SUBDIR += foomatic-db-engine
