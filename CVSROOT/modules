@@ -4602,6 +4602,7 @@ p5-PGP-Sign	ports/security/p5-PGP-Sign
 p5-POE		ports/devel/p5-POE
 p5-POE-Component-Client-DNS	ports/devel/p5-POE-Component-Client-DNS
 p5-POE-Component-Client-HTTP	ports/devel/p5-POE-Component-Client-HTTP
+p5-POE-Component-Client-Ping	ports/devel/p5-POE-Component-Client-Ping
 p5-POE-Component-IRC	ports/irc/p5-POE-Component-IRC
 p5-POE-Component-JobQueue	ports/devel/p5-POE-Component-JobQueue
 p5-POE-Component-Pcap	ports/devel/p5-POE-Component-Pcap
