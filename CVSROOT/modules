@@ -357,7 +357,7 @@ apsfilter	ports/print/apsfilter
 apwal		ports/x11/apwal
 aqmoney		ports/finance/aqmoney
 aqsis		ports/graphics/aqsis
-aquaosk		ports/x11-wm/aquaosk
+aquaosk		ports/x11-themes/aquaosk
 ar-ae_fonts_mono	ports/arabic/ae_fonts_mono
 ar-ae_fonts_ttf	ports/arabic/ae_fonts_ttf
 ar-kacst_fonts	ports/arabic/kacst_fonts
@@ -2117,7 +2117,7 @@ fusenshi	ports/deskutils/fusenshi
 fuzz		ports/security/fuzz
 fvcool		ports/sysutils/fvcool
 fvwm		ports/x11-wm/fvwm
-fvwm-themes	ports/x11-wm/fvwm-themes
+fvwm-themes	ports/x11-themes/fvwm-themes
 fvwm2		ports/x11-wm/fvwm2
 fvwm2-devel	ports/x11-wm/fvwm2-devel
 fvwm2-i18n	ports/x11-wm/fvwm2-i18n
@@ -4032,7 +4032,7 @@ kde31-apireference	ports/x11/kde31-apireference
 kdeaccessibility	ports/accessibility/kdeaccessibility
 kdeaddons3	ports/misc/kdeaddons3
 kdeadmin3	ports/sysutils/kdeadmin3
-kdeartwork3	ports/x11-wm/kdeartwork3
+kdeartwork3	ports/x11-themes/kdeartwork3
 kdebase3	ports/x11/kdebase3
 kdeedu3		ports/misc/kdeedu3
 kdegames3	ports/games/kdegames3
@@ -4251,7 +4251,7 @@ kvirc		ports/irc/kvirc
 kwappen		ports/games/kwappen
 kwatch		ports/misc/kwatch
 kwebget		ports/ftp/kwebget
-kwin_flatcurve	ports/x11-wm/kwin_flatcurve
+kwin_flatcurve	ports/x11-themes/kwin_flatcurve
 kwirc		ports/irc/kwirc
 kwordquiz	ports/misc/kwordquiz
 kxl		ports/games/kxl
@@ -5170,7 +5170,7 @@ mknmz-wwwoffle	ports/www/mknmz-wwwoffle
 mkptools	ports/Tools/scripts/mkptools
 mksunbootcd	ports/sysutils/mksunbootcd
 mktool		ports/sysutils/mktool
-mkultra		ports/x11-wm/mkultra
+mkultra		ports/x11-themes/mkultra
 mkvtoolnix	ports/multimedia/mkvtoolnix
 mkxvcd		ports/multimedia/mkxvcd
 ml		ports/mail/ml
@@ -8303,7 +8303,7 @@ qhull		ports/math/qhull
 qico		ports/comms/qico
 qicosi		ports/comms/qicosi
 qident		ports/security/qident
-qinx		ports/x11-wm/qinx
+qinx		ports/x11-themes/qinx
 qiv		ports/graphics/qiv
 qix		ports/games/qix
 qkmj		ports/games/qkmj
@@ -8328,7 +8328,7 @@ qmailanalog	ports/mail/qmailanalog
 qmake		ports/devel/qmake
 qmc		ports/misc/qmc
 qmls		ports/cad/qmls
-qnxstyle	ports/x11-wm/qnxstyle
+qnxstyle	ports/x11-themes/qnxstyle
 qpage		ports/comms/qpage
 qpopper		ports/mail/qpopper
 qrash		ports/x11/qrash
@@ -8907,7 +8907,7 @@ sane-backends	ports/graphics/sane-backends
 sane-frontends	ports/graphics/sane-frontends
 saoimage	ports/astro/saoimage
 sapphire	ports/x11-wm/sapphire
-sapphire-themes	ports/x11-wm/sapphire-themes
+sapphire-themes	ports/x11-themes/sapphire-themes
 sarah		ports/sysutils/sarah
 sarep		ports/textproc/sarep
 sarg		ports/www/sarg
