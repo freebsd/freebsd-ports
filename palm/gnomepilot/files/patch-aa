@@ -1,9 +1,17 @@
 
 $FreeBSD$
 
---- configure.orig	Fri Dec 14 10:40:32 2001
-+++ configure	Fri Dec 14 10:42:15 2001
-@@ -1851,8 +1851,8 @@
+--- configure.orig	Thu Apr 25 19:15:48 2002
++++ configure	Thu Apr 25 19:17:00 2002
+@@ -5388,6 +5388,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -5633,8 +5634,8 @@
    
  		gnome_cv_gnorba_found=no
  		if test x$gnome_cv_orbit_found = xyes; then
@@ -14,7 +22,7 @@ $FreeBSD$
  			if test -n "$GNORBA_LIBS"; then
  				gnome_cv_gnorba_found=yes
  			fi
-@@ -1872,8 +1872,8 @@
+@@ -5654,8 +5655,8 @@
  fi
  	if test x$gnome_cv_orbit_found = xyes; then
  		
@@ -25,7 +33,7 @@ $FreeBSD$
  		
  		
  	else
-@@ -5290,8 +5290,8 @@
+@@ -9022,8 +9023,8 @@
  fi
  
  GPILOT_LIBDIR='-L${libdir}'

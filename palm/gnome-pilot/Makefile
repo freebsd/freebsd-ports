@@ -6,18 +6,20 @@
 #
 
 PORTNAME=	gnomepilot
-PORTVERSION=	0.1.64
+PORTVERSION=	0.1.65
 CATEGORIES=	palm comms gnome
-MASTER_SITES=	http://www.eskil.org/gnome-pilot/download/tarballs/ \
-		${MASTER_SITE_GNOME}
+MASTER_SITES=	${MASTER_SITE_GNOME} \
+		http://www.eskil.org/gnome-pilot/download/tarballs/
 MASTER_SITE_SUBDIR=	unstable/sources/gnome-pilot
 DISTNAME=	gnome-pilot-${PORTVERSION}
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	gob:${PORTSDIR}/x11-toolkits/gob
 LIB_DEPENDS=	pisock.4:${PORTSDIR}/palm/pilot-link
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	yes
@@ -26,6 +28,8 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-pisock=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+
+MAN1=		gpilot-install-file.1
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \

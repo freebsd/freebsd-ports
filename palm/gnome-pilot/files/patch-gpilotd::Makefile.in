@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- gpilotd/Makefile.in	2002/04/25 16:24:16	1.1
++++ gpilotd/Makefile.in	2002/04/25 16:24:35
+@@ -305,7 +305,7 @@
+ CFLAGS = \
+ 	-Wall -Wmissing-prototypes			\
+ 	 -Wmissing-declarations				\
+-	 -Wpointer-arith -g 				\
++	 -Wpointer-arith 				\
+ 	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 	\
+ 	$(NULL)
+ 
