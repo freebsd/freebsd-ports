@@ -3,7 +3,7 @@
 # Date created:		22 Jun 1998
 # Whom:                 sada
 #
-# $Id: Makefile,v 1.4 1998/11/20 20:31:20 sada Exp $
+# $Id: Makefile,v 1.5 1998/11/23 08:16:09 asami Exp $
 #
 
 DISTNAME=	ja-netscape-fonts-1.0
@@ -23,6 +23,6 @@ NO_BUILD=	yes
 
 do-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${PERL} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+		/usr/bin/perl ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
