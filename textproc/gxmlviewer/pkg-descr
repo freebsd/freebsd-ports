@@ -1,0 +1,5 @@
+gxmlviewer is an xml viewer written using libxml and gnome-libs. It is a
+stand-alone xmlviewer with a netscpe plugin. The purpose of the app is to
+create an xmlviewer that will present the xml in its source view.
+
+WWW: http://gxmlviewer.sourceforge.net/

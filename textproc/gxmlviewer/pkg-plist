@@ -1,0 +1,4 @@
+bin/gxmlviewer
+bin/xmlview-control
+lib/netscape/plugins/npgxmlviewer.so
+share/gnome/oaf/GNOME_XMLView.oaf

@@ -58,6 +58,7 @@
     SUBDIR += gtkdiff
     SUBDIR += gutenbook
     SUBDIR += gxditview
+    SUBDIR += gxmlviewer
     SUBDIR += hevea
     SUBDIR += htdig
     SUBDIR += html
