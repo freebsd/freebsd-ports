@@ -17,6 +17,6 @@ USE_GTK=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-lib-GL
-CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
+CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS} -lstdc++"
 
 .include <bsd.port.mk>
