@@ -1,7 +1,7 @@
 bin/navigator-%%BROWSER_VER%%
 @exec ln -sf %f %B/navigator-4
-@exec ln -sf navigator-4 %B/netscape
-@unexec rm -f %B/netscape
+@exec ln -sf navigator-4 %B/netscape.run
+@unexec rm -f %B/netscape.run
 @unexec rm -f %B/navigator-4
 %%NSUBDIR%%/LICENSE
 %%NSUBDIR%%/Netscape.ad

@@ -78,7 +78,7 @@ do-install:
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${WRKSRC}/${NETHELP}.nif \
 		${EXTRACT_AFTER_ARGS} -C ${NDIR}/${LANG}
 	${INSTALL_SCRIPT} ${WRKDIR}/start.sh ${PREFIX}/bin/${BROWSER_CMD}
-	${LN} -sf ${BROWSER_CMD} ${PREFIX}/bin/netscape
+	${LN} -sf ${BROWSER_CMD} ${PREFIX}/bin/netscape.run
 	${MKDIR} ${MANDIR}/man1
 	${INSTALL_MAN} ${MASTERDIR}/files/${MAN1} ${MANDIR}/man1
 

@@ -1,7 +1,7 @@
 bin/communicator-%%BROWSER_VER%%
 @exec ln -sf %f %B/communicator-4
-@exec ln -sf communicator-4 %B/netscape
-@unexec rm -f %B/netscape
+@exec ln -sf communicator-4 %B/netscape.run
+@unexec rm -f %B/netscape.run
 @unexec rm -f %B/communicator-4
 %%NSUBDIR%%/README
 %%NSUBDIR%%/LICENSE

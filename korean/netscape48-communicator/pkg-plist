@@ -1,5 +1,5 @@
 bin/ko-communicator-4
-@exec ln -sf %f %B/netscape
+@exec ln -sf %f %B/netscape.run
 %%NSUBDIR%%/netscape.cfg
 %%NSUBDIR%%/%%LANG%%/Netscape
 %%NSUBDIR%%/%%LANG%%/about
