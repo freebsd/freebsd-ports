@@ -730,6 +730,7 @@ boodler		ports/audio/boodler
 bookcase	ports/misc/bookcase
 bookmarkbridge	ports/www/bookmarkbridge
 boost		ports/devel/boost
+bopm		ports/irc/bopm
 borzoi		ports/security/borzoi
 botan		ports/security/botan
 bottlerocket	ports/misc/bottlerocket
