@@ -1,5 +1,5 @@
 --- configure.orig	Sat Mar  4 04:58:00 2000
-+++ configure	Mon Mar  6 13:40:33 2000
++++ configure	Thu Aug 31 18:43:39 2000
 @@ -604,9 +604,9 @@
  
  # libtool versioning
@@ -12,7 +12,25 @@
  
  
  
-@@ -4324,7 +4324,7 @@
+@@ -2142,7 +2142,7 @@
+ LN_S="$LN_S" NM="$NM" RANLIB="$RANLIB" \
+ DLLTOOL="$DLLTOOL" AS="$AS" OBJDUMP="$OBJDUMP" \
+ ${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
+-$libtool_flags --no-verify --build="$build" $ac_aux_dir/ltmain.sh $target \
++$libtool_flags --no-verify $ac_aux_dir/ltmain.sh $target \
+ || { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
+ 
+ # Reload cache, that may have been modified by ltconfig
+@@ -4279,8 +4279,6 @@
+          #include <vga.h>
+          #include <vgamouse.h>
+          #include <vgakeyboard.h>
+-         #include <linux/kd.h>
+-         #include <linux/keyboard.h>
+         
+ int main() {
+ 
+@@ -4324,7 +4322,7 @@
      ac_save_libs="$LIBS"
      case "$target" in
          *-*-freebsd*)
@@ -21,7 +39,7 @@
              ;;
          *-*-openbsd*)
              pthread_lib="-lc_r"
-@@ -4364,7 +4364,7 @@
+@@ -4364,7 +4362,7 @@
          echo "$ac_t""$use_pthreads" 1>&6
          if test x$use_pthreads = xyes; then
              CFLAGS="$CFLAGS -D_REENTRANT -DSDL_USE_PTHREADS"
@@ -30,11 +48,14 @@
              SDL_LIBS="$SDL_LIBS $pthread_lib"
          fi
      fi
-@@ -4953,6 +4953,7 @@
+@@ -4953,8 +4951,10 @@
          ;;
      *-*-freebsd*)
          ARCH=freebsd
 +        CheckNASM
          CheckESD
          CheckX11
++        CheckSVGA
          CheckPTHREAD
+         # Set up files for the main() stub
+         

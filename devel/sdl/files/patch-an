@@ -1,0 +1,123 @@
+--- src/video/svga/SDL_svgaevents.c	2000/08/25 03:55:01	1.1
++++ src/video/svga/SDL_svgaevents.c	2000/08/29 19:58:36
+@@ -42,8 +42,6 @@
+ #include "SDL_svgaevents_c.h"
+ 
+ /* The translation tables from a console scancode to a SDL keysym */
+-#define NUM_VGAKEYMAPS	(1<<KG_CAPSSHIFT)
+-static Uint16 vga_keymap[NUM_VGAKEYMAPS][NR_KEYS];
+ static SDLKey keymap[128];
+ static SDL_keysym *TranslateKey(int scancode, SDL_keysym *keysym);
+ 
+@@ -54,70 +52,6 @@
+  */
+ void SVGA_initkeymaps(int fd)
+ {
+-	struct kbentry entry;
+-	int map, i;
+-
+-	/* Load all the keysym mappings */
+-	for ( map=0; map<NUM_VGAKEYMAPS; ++map ) {
+-		memset(vga_keymap[map], 0, NR_KEYS*sizeof(Uint16));
+-		for ( i=0; i<NR_KEYS; ++i ) {
+-			entry.kb_table = map;
+-			entry.kb_index = i;
+-			if ( ioctl(fd, KDGKBENT, &entry) == 0 ) {
+-				/* The "Enter" key is a special case */
+-				if ( entry.kb_value == K_ENTER ) {
+-					entry.kb_value = K(KT_ASCII,13);
+-				}
+-				/* Handle numpad specially as well */
+-				if ( KTYP(entry.kb_value) == KT_PAD ) {
+-				    switch ( entry.kb_value ) {
+-					case K_P0:
+-					case K_P1:
+-					case K_P2:
+-					case K_P3:
+-					case K_P4:
+-					case K_P5:
+-					case K_P6:
+-					case K_P7:
+-					case K_P8:
+-					case K_P9:
+-					    vga_keymap[map][i]=entry.kb_value;
+-					    vga_keymap[map][i]+= '0';
+-					    break;
+-                                        case K_PPLUS:
+-					    vga_keymap[map][i]=K(KT_ASCII,'+');
+-					    break;
+-                                        case K_PMINUS:
+-					    vga_keymap[map][i]=K(KT_ASCII,'-');
+-					    break;
+-                                        case K_PSTAR:
+-					    vga_keymap[map][i]=K(KT_ASCII,'*');
+-					    break;
+-                                        case K_PSLASH:
+-					    vga_keymap[map][i]=K(KT_ASCII,'/');
+-					    break;
+-                                        case K_PENTER:
+-					    vga_keymap[map][i]=K(KT_ASCII,'\r');
+-					    break;
+-                                        case K_PCOMMA:
+-					    vga_keymap[map][i]=K(KT_ASCII,',');
+-					    break;
+-                                        case K_PDOT:
+-					    vga_keymap[map][i]=K(KT_ASCII,'.');
+-					    break;
+-					default:
+-					    break;
+-				    }
+-				}
+-				/* Do the normal key translation */
+-				if ( (KTYP(entry.kb_value) == KT_LATIN) ||
+-				     (KTYP(entry.kb_value) == KT_ASCII) ||
+-				     (KTYP(entry.kb_value) == KT_LETTER) ) {
+-					vga_keymap[map][i] = entry.kb_value;
+-				}
+-			}
+-		}
+-	}
+ }
+ 
+ int posted = 0;
+@@ -312,38 +246,10 @@
+ 	keysym->sym = keymap[scancode];
+ 	keysym->mod = KMOD_NONE;
+ 
+-	/* If UNICODE is on, get the UNICODE value for the key */
+ 	keysym->unicode = 0;
+ 	if ( SDL_TranslateUNICODE ) {
+-		int map;
+-		SDLMod modstate;
+-
+-		modstate = SDL_GetModState();
+-		map = 0;
+-		if ( modstate & KMOD_SHIFT ) {
+-			map |= (1<<KG_SHIFT);
+-		}
+-		if ( modstate & KMOD_CTRL ) {
+-			map |= (1<<KG_CTRL);
+-		}
+-		if ( modstate & KMOD_ALT ) {
+-			map |= (1<<KG_ALT);
+-		}
+-		if ( modstate & KMOD_MODE ) {
+-			map |= (1<<KG_ALTGR);
+-		}
+-		if ( KTYP(vga_keymap[map][scancode]) == KT_LETTER ) {
+-			if ( modstate & KMOD_CAPS ) {
+-				map ^= (1<<KG_SHIFT);
+-			}
+-		}
+-		if ( KTYP(vga_keymap[map][scancode]) == KT_PAD ) {
+-			if ( modstate & KMOD_NUM ) {
+-				keysym->unicode=KVAL(vga_keymap[map][scancode]);
+-			}
+-		} else {
+-			keysym->unicode = KVAL(vga_keymap[map][scancode]);
+-		}
++		/* Populate the unicode field with the ASCII value */
++		keysym->unicode = scancode;
+ 	}
+ 	return(keysym);
+ }
