@@ -1,5 +1,5 @@
---- src/ipopd/ipop3d.c.orig	Sat Dec  8 14:22:36 2001
-+++ src/ipopd/ipop3d.c	Sat Dec  8 14:22:41 2001
+--- src/ipopd/ipop3d.c.orig	Tue Dec 18 13:41:46 2001
++++ src/ipopd/ipop3d.c	Tue Nov 26 02:15:13 2002
 @@ -28,6 +28,11 @@
  #include <time.h>
  #include "c-client.h"
@@ -12,29 +12,21 @@
  
  #define CRLF PSOUT ("\015\012")	/* primary output terpri */
  
-@@ -57,6 +62,12 @@
- 
- /* Global storage */
+@@ -54,6 +59,13 @@
+ #define STATUS "Status: %s%s\015\012"
+ #define SLEN (sizeof (STATUS)-3)
  
 +#ifdef DRAC_AUTH
-+#define DRACTIMEOUT 10*60      /* check every 10 minutes */
-+time_t lastdrac = 0;           /* time of last drac check */
++#define DRACTIMEOUT 10*60	/* check every 10 minutes */
++time_t lastdrac = 0;		/* time of last drac check */
 +extern char *getenv ();
 +#endif /* DRAC_AUTH */
 +
- char *version = "2001.78";	/* server version */
- short state = AUTHORIZATION;	/* server state */
- short critical = NIL;		/* non-zero if in critical code */
-@@ -100,7 +111,7 @@
- #include "linkage.c"
- 				/* initialize server */
-   server_init (((s = strrchr (argv[0],'/')) || (s = strrchr (argv[0],'\\'))) ?
--	       s+1 : argv[0],"pop3","pop3s","pop",clkint,kodint,hupint,trmint);
-+	       s+1 : argv[0],"pop3","pop3s","pop3",clkint,kodint,hupint,trmint);
-   challenge[0] = '\0';		/* find the CRAM-MD5 authenticator */
-   if (i = mail_lookup_auth_name ("CRAM-MD5",NIL)) {
-     AUTHENTICATOR *a = mail_lookup_auth (i);
-@@ -694,6 +705,46 @@
++
+ 
+ /* Global storage */
+ 
+@@ -696,6 +708,46 @@
        }
        sprintf (tmp,"+OK Mailbox open, %lu messages\015\012",nmsgs);
        PSOUT (tmp);

@@ -1,5 +1,5 @@
---- src/imapd/Makefile.orig	Thu Jun 28 19:23:36 2001
-+++ src/imapd/Makefile	Mon Oct  1 05:00:17 2001
+--- src/imapd/Makefile.orig	Mon Nov 18 08:48:25 2002
++++ src/imapd/Makefile	Tue Nov 26 02:07:06 2002
 @@ -18,10 +18,10 @@
  # CPYRIGHT, included with this Distribution.
  
@@ -13,24 +13,24 @@
  SHELL= /bin/sh
  
  
-@@ -37,7 +37,9 @@
- #    NULs in the message text are technically a violation of both the message
- #    format and the IMAP specification, they can happen.  Fortunately, most
- #    IMAP clients don't care.  Netscape hangs.
+@@ -29,7 +29,9 @@
+ # causes the "Manage Mail" menu item to open the given URL, e.g. to point to
+ # an alternative IMAP client (e.g. Pine) or perhaps to a homebrew mail
+ # account management page.
 -#NSBD= -DNETSCAPE_BRAIN_DAMAGE=\"http://www.washington.edu/pine\"
 +.if defined(WITH_NETSCAPE_BRAIN_DAMAGE)
 +NSBD= -DNETSCAPE_BRAIN_DAMAGE=\"http://www.washington.edu/pine\"
 +.endif
  
  
- # Un-comment this to get somewhat better interoperability with Microsoft
-@@ -61,22 +63,21 @@
+ 
+@@ -44,22 +46,21 @@
  # Get local definitions from c-client directory
  
  C = ../c-client
 -CCLIENTLIB = $C/c-client.a
 -CC = `cat $C/CCTYPE`
--CFLAGS = -I$C `cat $C/CFLAGS` $(RFC1730) $(NSBD) $(MSBD) $(ENBD) \
+-CFLAGS = -I$C `cat $C/CFLAGS` $(NSBD) $(ENBD) \
 -	-DANOFILE=\"$(ANO)\" -DALERTFILE=\"$(ALERT)\" \
 -	-DUSERALERTFILE=\"$(USERALERT)\" -DSHUTDOWNFILE=\"$(SHUTDOWN)\"
 -LDFLAGS = $(CCLIENTLIB) `cat $C/LDFLAGS`
@@ -38,7 +38,7 @@
 +CFLAGS+=	-DNFSKLUDGE -I$(LOCALBASE)/include/c-client -DANOFILE=\"$(ANO)\" \
 +		-DALERTFILE=\"$(ALERT)\" -DUSERALERTFILE=\"$(USERALERT)\" \
 +		-DSHUTDOWNFILE=\"$(SHUTDOWN)\"
-+LDFLAGS+=	 $(EXTRALDFLAGS) -L$(LOCALBASE)/lib -lc-client4
++LDFLAGS+=	$(EXTRALDFLAGS) -L$(LOCALBASE)/lib -lc-client4
 +.if defined(WITH_DRAC)
 +CFLAGS+=	-DETC_DIR=\"$(PREFIX)/etc\" -DDRAC_AUTH
 +LDFLAGS+=	-ldrac
@@ -48,7 +48,7 @@
  all:	imapd
  
 -imapd: $(CCLIENTLIB) imapd.o
-+imapd: imapd.o
++imapd:	imapd.o
  	$(CC) $(CFLAGS) -o imapd imapd.o $(LDFLAGS)
 -
 -imapd.o: $C/mail.h $C/misc.h $C/osdep.h

@@ -1,5 +1,5 @@
---- src/imapd/imapd.c.orig	Sat Dec  8 14:25:00 2001
-+++ src/imapd/imapd.c	Sat Dec  8 14:28:55 2001
+--- src/imapd/imapd.c.orig	Mon Nov 18 14:29:04 2002
++++ src/imapd/imapd.c	Tue Nov 26 02:19:34 2002
 @@ -29,6 +29,11 @@
  #include "c-client.h"
  #include <sys/stat.h>
@@ -12,20 +12,21 @@
  
  #define CRLF PSOUT ("\015\012")	/* primary output terpri */
  
-@@ -173,6 +178,12 @@
+@@ -176,6 +181,13 @@
+ void mm_list_work (char *what,int delimiter,char *name,long attributes);
+ char *lasterror (void);
  
- /* Global storage */
- 
++
 +#ifdef DRAC_AUTH
-+#define DRACTIMEOUT 10*60      /* check every 10 minutes */
-+time_t lastdrac = 0;           /* time of last drac check */
++#define DRACTIMEOUT 10*60	/* check every 10 minutes */
++time_t lastdrac = 0;		/* time of last drac check */
 +extern char *getenv ();
 +#endif /* DRAC_AUTH */
 +
- char *version = "2001.315";	/* version number of this server */
- time_t alerttime = 0;		/* time of last alert */
- time_t sysalerttime = 0;	/* time of last system alert */
-@@ -1226,6 +1237,45 @@
+ /* Global storage */
+ 
+ char *version = "2002.332";	/* version number of this server */
+@@ -1184,6 +1196,45 @@
  	      lasterror ());
        return;
      }
