@@ -1,13 +1,13 @@
 # New ports collection makefile for:	libwww
-# Version required:	5.1i
+# Version required:	5.1j
 # Date created:		18 Feb 1996
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.5 1998/02/08 02:24:44 jseger Exp $
+# $Id: Makefile,v 1.6 1998/02/22 21:44:49 jseger Exp $
 #
 
-DISTNAME=	w3c-libwww-5.1i
-PKGNAME=	libwww-5.1i
+DISTNAME=	w3c-libwww-5.1j
+PKGNAME=	libwww-5.1j
 CATEGORIES=	www devel
 MASTER_SITES=	ftp://ftp.w3.org/pub/libwww/
 
