@@ -20,7 +20,7 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomelibs gtk12 glib12 orbit
+USE_GNOME=	gnomelibs gnomeprefix gnomehack gtk12 glib12 orbit
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -liconv"
