@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	jakarta-tomcat
-PORTVERSION=	3.1
+PORTVERSION=	3.2.1
 CATEGORIES=	www
-MASTER_SITES=	http://jakarta.apache.org/builds/tomcat/release/v${PORTVERSION}/bin/
-DISTNAME=	${PORTNAME}
+MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-tomcat/release/v${PORTVERSION}/bin/
 DIST_SUBDIR=	jakarta/tomcat/${PORTVERSION}
 
 MAINTAINER=	dirk@FreeBSD.org
