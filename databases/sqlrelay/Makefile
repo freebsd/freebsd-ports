@@ -7,7 +7,7 @@
 
 PORTNAME=	${SQLRELAY_PORTNAME}
 PORTVERSION=	${SQLRELAY_PORTVERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sqlrelay
@@ -115,7 +115,7 @@ IF_ODBC=	"@comment "
 .endif
 
 .if defined(WITH_FREETDS) && ${WITH_FREETDS:L} != no
-LIB_DEPENDS+=		tds.2:${PORTSDIR}/databases/freetds
+LIB_DEPENDS+=		tds.3:${PORTSDIR}/databases/freetds
 CONFIGURE_ARGS+=	--with-freetds-prefix="${LOCALBASE}"
 IF_FREETDS=	""
 .else
