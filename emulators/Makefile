@@ -70,6 +70,7 @@
     SUBDIR += sim
     SUBDIR += sim6811
     SUBDIR += ski
+    SUBDIR += snes9express
     SUBDIR += snes9x
     SUBDIR += spim
     SUBDIR += stella
