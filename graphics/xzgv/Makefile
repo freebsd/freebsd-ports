@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xzgv
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	graphics
 MASTER_SITES=	http://xzgv.browser.org/ \
 		${MASTER_SITE_SUNSITE}
@@ -21,6 +21,7 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 MAN1=		xzgv.1
+INFO=		xzgv
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CC|#CC|g ; \
