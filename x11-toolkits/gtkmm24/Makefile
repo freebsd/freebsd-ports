@@ -36,20 +36,20 @@ CONFIGURE_ARGS=	--enable-static=yes \
 PLIST_SUB=	VERSION="2.4" API_VERSION="2.4"
 
 .if defined(WITH_EXAMPLES)
+CONFIGURE_ARGS+=--enable-examples
 PLIST_SUB+=	EXAMPLES=""
 .else
+CONFIGURE_ARGS+=--disable-examples
 PLIST_SUB+=	EXAMPLES="@comment "
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/tests//' \
+		-e '/^SUBDIRS =/s/demos//' \
 		${WRKSRC}/Makefile.in
-.if !defined(WITH_EXAMPLES)
-	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/examples//' \
-		${WRKSRC}/Makefile.in
-.endif
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's/^SUBDIRS = /docs//' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/docs//' \
+		${WRKSRC}/Makefile.in
 .endif
 
 .include <bsd.port.mk>
