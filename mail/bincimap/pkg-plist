@@ -1,26 +1,27 @@
 bin/bincimapd
 bin/bincimap-up
-%%CONFDIR%%/bincimap.conf.sample
-@unexec rmdir %D/%%CONFDIR%% 2>/dev/null || true
+etc/bincimap/bincimap.conf.sample
+%%XINETD%%etc/bincimap/imap.sample
+%%XINETD%%%%SSL%%etc/bincimap/imaps.sample
+%%DJB%%etc/bincimap/imap.sample/run
+%%DJB%%etc/bincimap/imap.sample/log/run
+%%DJB%%@dirrm etc/bincimap/imap.sample/log
+%%DJB%%@dirrm etc/bincimap/imap.sample
+%%DJB%%%%SSL%%etc/bincimap/imaps.sample/run
+%%DJB%%%%SSL%%etc/bincimap/imaps.sample/log/run
+%%DJB%%%%SSL%%@dirrm etc/bincimap/imaps.sample/log
+%%DJB%%%%SSL%%@dirrm etc/bincimap/imaps.sample
+@unexec %D/etc/bincimap 2>/dev/null || true
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/bincimap-faq.html
 %%PORTDOCS%%%%DOCSDIR%%/bincimap-goals.html
 %%PORTDOCS%%%%DOCSDIR%%/bincimap-imapdir.html
+%%PORTDOCS%%%%DOCSDIR%%/bincimap-manual.ps
 %%PORTDOCS%%%%DOCSDIR%%/bincimap-tech.html
 %%PORTDOCS%%%%DOCSDIR%%/bincimap.css
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%EXAMPLESDIR%%/xinetd/imap
-%%EXAMPLESDIR%%/xinetd/imaps
-@dirrm %%EXAMPLESDIR%%/xinetd
-%%EXAMPLESDIR%%/supervise/imap/run
-%%EXAMPLESDIR%%/supervise/imap/log/run
-@dirrm %%EXAMPLESDIR%%/supervise/imap/log
-@dirrm %%EXAMPLESDIR%%/supervise/imap
-%%EXAMPLESDIR%%/supervise/imaps/run
-%%EXAMPLESDIR%%/supervise/imaps/log/run
-@dirrm %%EXAMPLESDIR%%/supervise/imaps/log
-@dirrm %%EXAMPLESDIR%%/supervise/imaps
-@dirrm %%EXAMPLESDIR%%/supervise
+%%EXAMPLESDIR%%/README
+%%EXAMPLESDIR%%/bincimap-auth-teapop.sh
 @dirrm %%EXAMPLESDIR%%

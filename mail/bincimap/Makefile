@@ -5,51 +5,76 @@
 # $FreeBSD$
 #
 
+# The following compile-time options are available:
+#
+# WITH_XINETD		Use xinetd instead of the default daemontools/ucspi-tcp
+# WITHOUT_OPENSSL	Disable OpenSSL support (enabled by default)
+#
+
 PORTNAME=	bincimap
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.8
 CATEGORIES=	mail
-MASTER_SITES=	http://www.bincimap.org/dl/tarballs/
+MASTER_SITES=	http://www.bincimap.org/dl/tarballs/ \
+		http://www.bincimap.andreas.hanssen.name/dl/tarballs/ \
+		http://bincimap.argonsoft.de/www.bincimap.org/dl/tarballs/
 
 MAINTAINER=	sergei@kolobov.com
 COMMENT=	Light-weight IMAP server for Maildir
 
+.if defined(WITH_XINETD)
+RUN_DEPENDS=	xinetd:${PORTSDIR}/security/xinetd
+PLIST_SUB+=	XINETD="" DJB="@comment "
+.else
+RUN_DEPENDS=	supervise:${PORTSDIR}/sysutils/daemontools \
+		tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
+PLIST_SUB+=	XINETD="@comment " DJB=""
+.endif
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GETOPT_LONG=	yes
 
-CONFDIR?=	${PREFIX}/etc/${PORTNAME}
-PLIST_SUB+=	CONFDIR="${CONFDIR:S,^${PREFIX}/,,}"
-
+CONFDIR=		${PREFIX}/etc/${PORTNAME}
 CONFIGURE_ARGS+=	--sysconfdir=${CONFDIR}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if defined(WITHOUT_OPENSSL)
 CONFIGURE_ARGS+=	--without-ssl
+PLIST_SUB+=		SSL="@comment "
 .else
 CONFIGURE_ARGS+=	--with-ssl
-USE_OPENSSL=	yes
+USE_OPENSSL=		yes
+PLIST_SUB+=		SSL=""
 .endif
 
 MAN1=		bincimap-up.1 bincimapd.1
 MAN5=		bincimap.conf.5
-DOCS=		AUTHORS ChangeLog README doc/bincimap*
+DOCS=		AUTHORS ChangeLog README doc/bincimap* \
+		doc/manual/bincimap-manual.ps
+EXAMPLES=	contrib/README contrib/authenticators/bincimap-auth-teapop.sh
 
 post-install:
 	@${MKDIR} ${CONFDIR}
 	${INSTALL_DATA} ${WRKSRC}/conf/bincimap.conf \
 		${CONFDIR}/bincimap.conf.sample
+.if defined(WITH_XINETD)
+	${INSTALL_DATA} ${WRKSRC}/conf/xinetd-bincimap ${CONFDIR}/imap.sample
+.if !defined(WITHOUT_OPENSSL)
+	${INSTALL_DATA} ${WRKSRC}/conf/xinetd-bincimaps ${CONFDIR}/imaps.sample
+.endif
+.else
+	@${MKDIR} ${CONFDIR}/imap.sample
+	${INSTALL_SCRIPT} ${WRKSRC}/service/run ${CONFDIR}/imap.sample
+	@${MKDIR} ${CONFDIR}/imap.sample/log
+	${INSTALL_SCRIPT} ${WRKSRC}/service/log/run ${CONFDIR}/imap.sample/log
+.if !defined(WITHOUT_OPENSSL)
+	@${MKDIR} ${CONFDIR}/imaps.sample
+	${INSTALL_SCRIPT} ${WRKSRC}/service/run-ssl ${CONFDIR}/imaps.sample/run
+	@${MKDIR} ${CONFDIR}/imaps.sample/log
+	${INSTALL_SCRIPT} ${WRKSRC}/service/log/run ${CONFDIR}/imaps.sample/log
+.endif
+.endif
 	@${MKDIR} ${EXAMPLESDIR}
-.for dir in xinetd supervise/imap/log supervise/imaps/log
-	@${MKDIR} ${EXAMPLESDIR}/${dir}
-.endfor
-	@cd ${WRKSRC}/conf && \
-	    ${INSTALL_DATA} xinetd-bincimap ${EXAMPLESDIR}/xinetd/imap && \
-	    ${INSTALL_DATA} xinetd-bincimaps ${EXAMPLESDIR}/xinetd/imaps
-	@cd ${WRKSRC}/service && \
-	    ${INSTALL_DATA} run ${EXAMPLESDIR}/supervise/imap && \
-	    ${INSTALL_DATA} log/run ${EXAMPLESDIR}/supervise/imap/log && \
-	    ${INSTALL_DATA} run-ssl ${EXAMPLESDIR}/supervise/imaps/run && \
-	    ${INSTALL_DATA} log/run ${EXAMPLESDIR}/supervise/imaps/log
+	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
 	cd ${WRKSRC}/man && ${INSTALL_MAN} ${MAN1} ${MANPREFIX}/man/man1
 	cd ${WRKSRC}/man && ${INSTALL_MAN} ${MAN5} ${MANPREFIX}/man/man5
 .if !defined(NOPORTDOCS)
