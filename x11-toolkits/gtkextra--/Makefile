@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtkextramm
-PORTVERSION=	0.8.0
+PORTVERSION=	0.9.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	sobomax@FreeBSD.org
 
 LIB_DEPENDS=	gtkextra.14:${PORTSDIR}/x11-toolkits/gtkextra \
-		gtkmm.1:${PORTSDIR}/x11-toolkits/gtk--
+		gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
