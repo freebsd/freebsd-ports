@@ -1,0 +1,58 @@
+--- builds/original/prefix.freebsd	2000/10/08 15:36:25	1.2
++++ builds/original/prefix.freebsd	2001/01/11 19:17:58
+@@ -28,7 +28,7 @@
+ 
+ 
+ PROD_DEBUG_OBJECTS=	nodebug.o
+-PROD_SHRLIB_DIR=	
++PROD_SHRLIB_DIR=	-Lsource/jrd
+ PROD_VERSION_FLAG=	-DPROD_BUILD
+ PROD_CFLAGS=            -O -m486 -fpic -DFLINTSTONE
+ 
+@@ -48,7 +48,7 @@
+ UDF_LINK_CMD=		gcc
+ UDF_CFLAGS=         	-fPIC -mieee-fp
+ UDF_LFLAGS=         	-shared
+-UDF_SHRLIBS=        	-L/usr/local/lib -lgds -lm -lc -mieee-fp -ldescrypt
++UDF_SHRLIBS=        	$(SHRLIB_DIR) -lgds -lm -lc -mieee-fp -ldescrypt
+ 
+ #NOTE: PIC_J_CFLAGS is special CFLAGS used to build PIPD_IS_SHRLIB modules
+ #      to workaround the Solaris threading problems with signals
+@@ -69,16 +69,14 @@
+ FUNCTIONS=		functions.bin
+ FUNCSHR=		source/interbase/lib/gdsf.so
+ GDS_LINK=		$(GDSSHR_LINK)
+-#GDS_PYXIS=
+ GDS_PYXIS=		gds_pyxis.a
+ GDSLIB_BACKEND=		source/interbase/lib/gds_b.a
+ GDSLIB_LINK=		-Lsource/jrd -lgds_b -lc -ldescrypt
+ 
+ GDSSHR=			source/interbase/lib/gds.so
+ LINUX_GDSSHR=		$(GDSSHR)
+-GDSSHR_LINK=		$(SHRLIB_DIR) -L/usr/local/lib -lgds -lgds_pyxis -ldescrypt
+-PIPE_GDSSHR_LINK=	$(SHRLIB_DIR) -L/usr/local/lib -lgds -lgds_pyxis
+-#PIPE_GDSSHR_LINK=	$(SHRLIB_DIR) -lgds -lgds_pyxis
++GDSSHR_LINK=		$(SHRLIB_DIR) -lgds -lgds_pyxis -ldescrypt
++PIPE_GDSSHR_LINK=	$(SHRLIB_DIR) -lgds -lgds_pyxis
+ HLPDIR=			source/qli/
+ HOSTNAME=		`hostname | cut -d'.' -f1`
+ INCLUDES=		include_so include_so_ada	
+@@ -106,11 +104,6 @@
+ MUISQL_LINK_OPTS=	$(MUISQL_MU_LIB) $(PIPE_GDSSHR_LINK) -lm 
+ PIC_FLAGS=		$(CFLAGS) -fPIC
+ PIPE=			gds.a gds_pipe
+-#PYXIS=
+-#PYXIS_MISC_OBJS=
+-#PYXIS_P_MISC_OBJS=
+-#PYXIS_OBJECTS=
+-#PYXIS_MISC_OBJECTS=
+ PYXIS=			pyxis
+ PYXIS_MISC_OBJS=	$(PYXIS_MISC)
+ PYXIS_P_MISC_OBJS=	$(PYXIS_P_MISC)
+@@ -167,5 +160,8 @@
+ SHRLIB_EXT=		.so
+ 
+ V3PRINTER=		source/lock/printv3.o
++
++# Forces library build for FreeBSD
++PYXIS_LIBRARY= libpyxis.a

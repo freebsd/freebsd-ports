@@ -1,0 +1,104 @@
+firebird/intl/gdsintl
+firebird/examples/v5/ib_udf.sql
+firebird/examples/v5/README
+firebird/examples/v5/align.h
+firebird/examples/v5/api1.c
+firebird/examples/v5/api10.c
+firebird/examples/v5/api11.c
+firebird/examples/v5/api12.c
+firebird/examples/v5/api13.c
+firebird/examples/v5/api14.e
+firebird/examples/v5/api15.c
+firebird/examples/v5/api16.c
+firebird/examples/v5/api16t.c
+firebird/examples/v5/api2.c
+firebird/examples/v5/api3.c
+firebird/examples/v5/api4.c
+firebird/examples/v5/api5.c
+firebird/examples/v5/api6.c
+firebird/examples/v5/api7.c
+firebird/examples/v5/api8.c
+firebird/examples/v5/api9.c
+firebird/examples/v5/api9f.c
+firebird/examples/v5/apifull.c
+firebird/examples/v5/employe2.sql
+firebird/examples/v5/dyn1.e
+firebird/examples/v5/dyn2.e
+firebird/examples/v5/dyn3.e
+firebird/examples/v5/dyn4.e
+firebird/examples/v5/dyn5.e
+firebird/examples/v5/dynfull.e
+firebird/examples/v5/employee.gbk
+firebird/examples/v5/employee.gdb
+firebird/examples/v5/example.h
+firebird/examples/v5/api9f.sql
+firebird/examples/v5/intlemp.gbk
+firebird/examples/v5/intlemp.gdb
+firebird/examples/v5/stat1.e
+firebird/examples/v5/stat10.e
+firebird/examples/v5/stat11.e
+firebird/examples/v5/stat12.e
+firebird/examples/v5/stat12t.e
+firebird/examples/v5/stat2.e
+firebird/examples/v5/stat3.e
+firebird/examples/v5/stat4.e
+firebird/examples/v5/stat5.e
+firebird/examples/v5/stat6.e
+firebird/examples/v5/stat7.e
+firebird/examples/v5/stat8.e
+firebird/examples/v5/stat9.e
+firebird/examples/v5/udf.sql
+firebird/examples/v5/udflib.c
+firebird/examples/v5/makefile
+firebird/include/perf.h
+firebird/include/ib_util.h
+firebird/include/gds.hxx
+firebird/include/gds.h
+firebird/include/ibase.h
+firebird/include/iberror.h
+firebird/include/gds.f
+firebird/UDF/ib_udf
+firebird/lib/ib_util.so
+firebird/lib/gds.a
+firebird/lib/gds.so
+firebird/lib/libgds.so
+firebird/lib/libgds.so.1
+firebird/lib/libgds_pyxis.a
+firebird/lib/libgds.a
+firebird/lib/gds_pyxis.a
+firebird/help/help.gbak
+firebird/help/help.gdb
+firebird/bin/isc4.gbak
+firebird/bin/gpre
+firebird/bin/gds_pipe
+firebird/bin/gds_drop
+firebird/bin/gds_lock_mgr
+firebird/bin/gfix
+firebird/bin/gdef
+firebird/bin/isql
+firebird/bin/gds_lock_print
+firebird/bin/qli
+firebird/bin/gds_inet_server
+firebird/bin/gsplit
+firebird/bin/gstat
+firebird/bin/gds_relay
+firebird/bin/gsec
+firebird/bin/gbak
+firebird/services.isc
+firebird/isc_config
+firebird/isc4.gdb
+firebird/interbase.msg
+firebird/interbase.log
+firebird/inetd.conf.isc
+firebird/RELNOTES
+@dirrm firebird
+@dirrm firebird/intl
+@dirrm firebird/examples/v3
+@dirrm firebird/examples/v4
+@dirrm firebird/examples/v5
+@dirrm firebird/examples
+@dirrm firebird/include
+@dirrm firebird/UDF
+@dirrm firebird/lib
+@dirrm firebird/help
+@dirrm firebird/bin

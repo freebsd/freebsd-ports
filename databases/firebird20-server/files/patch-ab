@@ -1,0 +1,11 @@
+--- setup_dirs.boot.orig	Tue Oct 10 23:00:07 2000
++++ setup_dirs.boot	Tue Oct 10 23:00:22 2000
+@@ -49,7 +49,7 @@
+    DefaultAns=$2
+    echo -n "${1}"
+    Answer="$DefaultAns"
+-   read Answer 
++#   read Answer 
+ }
+ 
+ 

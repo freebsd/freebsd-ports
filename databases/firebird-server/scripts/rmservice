@@ -1,0 +1,8 @@
+#!/bin/sh
+
+cp /etc/services /etc/services.old
+cp /etc/inetd.conf /etc/inetd.conf.old
+cat /etc/services |grep -v gds_db >/etc/services.new
+cat /etc/inetd.conf |grep -v gds_db >/etc/inetd.conf.new
+mv /etc/services.new /etc/services
+mv /etc/inetd.conf.new /etc/inetd.conf

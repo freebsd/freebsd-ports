@@ -1,0 +1,22 @@
+The open-source InterBase(tm) 6.0 spin-off (Classic server version)
+
+InterBase is a world-class DBMS with a history too rich to detail
+here.  Once selling for several thousands of dollars per license,
+some very big players use it worldwide.  Inprise has open-sourced
+InterBase 6.0, and a lively bunch of folks has charged themselves
+with seeing that it lives on through the Firebird project.
+
+Note that as of Firebird 0.9_4, the locksmith back door has
+been closed.
+
+For more information on Firebird and InterBase, see:
+http://www.ibphoenix.com/
+http://www.interbase2000.org/
+http://www.interbase.com/
+
+and of course the firebird page itself:
+WWW: http://sourceforge.net/projects/firebird/
+
+For more information on the locksmith back door, see:
+
+https://www.kb.cert.org/vuls/id/247371

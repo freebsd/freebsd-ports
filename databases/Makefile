@@ -9,6 +9,7 @@
     SUBDIR += dbview
     SUBDIR += edb
     SUBDIR += fastdb
+    SUBDIR += firebird
     SUBDIR += freetds
     SUBDIR += gadfly
     SUBDIR += gdbm
