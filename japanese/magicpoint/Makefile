@@ -3,7 +3,7 @@
 # Date created:		25 Dec 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.7 1998/12/23 01:31:37 steve Exp $
+# $Id: Makefile,v 1.8 1999/06/17 08:33:55 itojun Exp $
 #
 
 MASTERDIR=	${.CURDIR}/../../misc/magicpoint
@@ -20,5 +20,5 @@ CATEGORIES=	japanese misc
 MAINTAINER=	itojun@itojun.org
 
 # dirty, but this is required for version independent-ness
-CONFIGURE_ARGS+=	--with-vfontcap=`echo ${LOCALBASE}/share/VFlib/*/vfontcap | tail -1`
+CONFIGURE_ARGS=		--with-vfontcap=`echo ${LOCALBASE}/share/VFlib/*/vfontcap | tail -1`
 CONFIGURE_ARGS+=	--enable-freetype-charset16
