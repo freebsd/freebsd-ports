@@ -12,6 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=   http://sol.slcc.edu/lynx/current/
 
 USE_OPENSSL=	RSA
+FORBIDDEN=	"Riddled with buffer overflows exploitable by a malicious server to execute code as the local user"
 
 .include <bsd.port.pre.mk>
 
