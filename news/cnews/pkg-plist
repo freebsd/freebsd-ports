@@ -118,6 +118,19 @@ lib/libcnews.a
 %%NEWSBIN%%/unlock
 %%NEWSBIN%%/pgpverify
 %%NEWSBIN%%/config
+@dirrm %%NEWSBIN%%/batch
+@dirrm %%NEWSBIN%%/ctl
+@dirrm %%NEWSBIN%%/decompressors
+@dirrm %%NEWSBIN%%/expire
+@dirrm %%NEWSBIN%%/inject
+@dirrm %%NEWSBIN%%/input
+@dirrm %%NEWSBIN%%/maint
+@dirrm %%NEWSBIN%%/nov
+@dirrm %%NEWSBIN%%/relay
+@dirrm %%NEWSBIN%%
+@cwd %%VARBASE%%
+@owner news
+@group news
 %%NEWSCTL%%/active
 %%NEWSCTL%%/active.times
 %%NEWSCTL%%/batchparms
@@ -137,45 +150,26 @@ lib/libcnews.a
 %%NEWSCTL%%/sys
 %%NEWSCTL%%/versionname
 %%NEWSCTL%%/whoami
-@dirrm %%NEWSBIN%%/batch
-@dirrm %%NEWSBIN%%/ctl
-@dirrm %%NEWSBIN%%/decompressors
-@dirrm %%NEWSBIN%%/expire
-@dirrm %%NEWSBIN%%/inject
-@dirrm %%NEWSBIN%%/input
-@dirrm %%NEWSBIN%%/maint
-@dirrm %%NEWSBIN%%/nov
-@dirrm %%NEWSBIN%%/relay
-@dirrm %%NEWSBIN%%
 @dirrm %%NEWSCTL%%/bin
 @dirrm %%NEWSCTL%%
-@dirrm news
-@exec mkdir %D/%%NEWSCTL%%/bin
-@exec mkdir -p %%NEWSOV%%/control
-@exec mkdir -p %%NEWSOV%%/junk
-@exec mkdir -p %%NEWSOV%%/news/announce/newusers
-@unexec rmdir %%NEWSOV%%/control
-@unexec rmdir %%NEWSOV%%/junk
-@unexec rmdir %%NEWSOV%%/news/announce/newusers
-@unexec rmdir %%NEWSOV%%/news/announce
-@unexec rmdir %%NEWSOV%%/news
-@unexec rmdir %%NEWSOV%%
-@exec mkdir -p %%NEWSARTS%%/control
-@exec mkdir -p %%NEWSARTS%%/junk
-@exec mkdir -p %%NEWSARTS%%/news/announce/newusers
-@exec mkdir -p %%NEWSARTS%%/in.coming/bad
-@exec mkdir -p %%NEWSARTS%%/out.going
-@exec mkdir -p %%NEWSARTS%%/out.master
-@exec mkdir -p %%NEWSARTS%%/out.nntp
-@exec chown -R news:news %%NEWSARTS%%
-@unexec rmdir %%NEWSARTS%%/control
-@unexec rmdir %%NEWSARTS%%/junk
-@unexec rmdir %%NEWSARTS%%/news/announce/newusers
-@unexec rmdir %%NEWSARTS%%/news/announce
-@unexec rmdir %%NEWSARTS%%/news
-@unexec rmdir %%NEWSARTS%%/in.coming/bad
-@unexec rmdir %%NEWSARTS%%/in.coming
-@unexec rmdir %%NEWSARTS%%/out.going
-@unexec rmdir %%NEWSARTS%%/out.master
-@unexec rmdir %%NEWSARTS%%/out.nntp
-@unexec rmdir %%NEWSARTS%%
+@dirrm %%NEWSCTLBASE%%
+@exec mkdir -p %D/%%NEWSCTL%%/bin
+@dirrm %%NEWSARTS%%/control
+@dirrm %%NEWSARTS%%/junk
+@dirrm %%NEWSARTS%%/news/announce/newusers
+@dirrm %%NEWSARTS%%/news/announce
+@dirrm %%NEWSARTS%%/news
+@dirrm %%NEWSARTS%%/in.coming/bad
+@dirrm %%NEWSARTS%%/in.coming
+@dirrm %%NEWSARTS%%/out.going
+@dirrm %%NEWSARTS%%/out.master
+@dirrm %%NEWSARTS%%/out.nntp
+@dirrm %%NEWSARTS%%
+@exec mkdir -p %D/%%NEWSARTS%%/control
+@exec mkdir -p %D/%%NEWSARTS%%/junk
+@exec mkdir -p %D/%%NEWSARTS%%/news/announce/newusers
+@exec mkdir -p %D/%%NEWSARTS%%/in.coming/bad
+@exec chmod g+w %D/%%NEWSARTS%%/in.coming
+@exec mkdir -p %D/%%NEWSARTS%%/out.going
+@exec mkdir -p %D/%%NEWSARTS%%/out.master
+@exec mkdir -p %D/%%NEWSARTS%%/out.nntp

@@ -7,7 +7,7 @@
 
 PORTNAME=	cnews
 PORTVERSION=	cr.g
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/c-news/ \
 		ftp://ftp.funet.fi/pub/unix/news/cnews/ \
@@ -46,19 +46,22 @@ MAN8=		cnewsdo.8cn expire.8cn explode.8cn mergeactive.8 \
 		mkhistory.8cn newsaux.8cn newsbatch.8cn newsmail.8cn \
 		newsmaint.8cn newsoverview.8 relaynews.8cn report.8cn \
 		rnews.8cn
-PLIST_SUB+=	NEWSBIN=${NEWSBIN:S=${PREFIX}/==}
-PLIST_SUB+=	NEWSCTL=${NEWSCTL:S=${PREFIX}/==}
-PLIST_SUB+=	NEWSARTS=${NEWSARTS:S=${PREFIX}/==}
-PLIST_SUB+=	NEWSOV=${NEWSOV:S=${PREFIX}/==}
+PLIST_SUB+=	VARBASE=${VARBASE}
+PLIST_SUB+=	NEWSBIN=${NEWSBIN:S=^${PREFIX}/==}
+PLIST_SUB+=	NEWSCTL=${NEWSCTL:S=^${VARBASE}/==}
+PLIST_SUB+=	NEWSCTLBASE=${NEWSCTL:S=/news==:S=^${VARBASE}/==}
+PLIST_SUB+=	NEWSARTS=${NEWSARTS:S=^${VARBASE}/==}
+PLIST_SUB+=	NEWSOV=${NEWSOV:S=^${VARBASE}/==}
 
 MODIFY=		conf/quiz.def \
 		conf/substitutions \
 		include/config.make
 
+VARBASE?=	/var
 NEWSBIN?=	${PREFIX}/libexec/cnews
-NEWSCTL?=	${PREFIX}/news/lib
-NEWSARTS?=	/var/news
-NEWSOV?=	/var/news/over.view
+NEWSCTL?=	${VARBASE}/lib/news
+NEWSARTS?=	${VARBASE}/news
+NEWSOV?=	${VARBASE}/news
 PGPVERIFY?=	pgpverify-1.12
 
 .include <bsd.port.pre.mk>
