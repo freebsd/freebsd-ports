@@ -5,3 +5,5 @@ This package does not contain anything by itself -- it is a
 to require dependencies so users can install this package only and
 have all the GNOME 2.0 stuff pulled in by the port/package dependency
 mechanism.
+
+WWW: http://www.FreeBSD.org/gnome/
