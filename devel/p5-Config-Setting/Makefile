@@ -8,7 +8,7 @@
 PORTNAME=	Config-Setting
 PORTVERSION=	0.01
 CATEGORIES=	devel perl5
-MASTER_SITES=	http://www.myrddin.demon.co.uk/dist/
+MASTER_SITES=	http://www.happygiraffe.net/dist/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	petef@FreeBSD.org
