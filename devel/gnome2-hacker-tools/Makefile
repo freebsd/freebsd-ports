@@ -23,7 +23,7 @@ RUN_DEPENDS=	mlv:${PORTSDIR}/editors/mlview \
 		regexxer:${PORTSDIR}/devel/regexxer \
 		conglomerate:${PORTSDIR}/editors/conglomerate \
 		anjuta:${PORTSDIR}/devel/anjuta \
-		meld:${PORTSDIR}/texproc/meld
+		meld:${PORTSDIR}/textproc/meld
 
 NO_BUILD=	yes
 
