@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
 DISTNAME=	VGB
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nintendo GameBoy(tm) emulator
 
 WRKSRC=		${WRKDIR}/GB

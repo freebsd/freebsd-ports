@@ -17,7 +17,7 @@ MASTER_SITES=	http://www.edu.tw/download/mandr/biauword/5879/ \
 DISTFILES=	moe_kai.ttf moe_sung.ttf edustds1.exe edustds2.exe \
 		edustd-15.exe kai-pc.ttf
 
-MAINTAINER=	keith@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Three Chinese BIG5 TrueType fonts: Kai LiShu Sung SungExt
 
 BUILD_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar

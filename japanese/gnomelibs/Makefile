@@ -13,7 +13,7 @@ MASTERDIR=	${.CURDIR}/../../x11/gnomelibs
 
 EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 PLIST=		${WRKDIR}/pkg-plist
 

@@ -13,6 +13,6 @@ MASTERDIR=	${.CURDIR}/../../math/gnumeric
 
 EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 .include "${MASTERDIR}/Makefile"

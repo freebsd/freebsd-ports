@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/
 PATCH_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/
 PATCHFILES=	mkisofs-1.12b5.big5patch.gz
 
-MAINTAINER=	keith@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create ISO9660/JOLIET/Rock Ridge filesystems, Big5 compatible
 
 GNU_CONFIGURE=	yes

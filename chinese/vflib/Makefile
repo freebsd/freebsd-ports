@@ -18,7 +18,7 @@ PATCH_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/VFlib2/
 PATCHFILES=	VFlib2-2.25.1-Chinese.patch.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	keith@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vector font library with free vector font, BIG5 and GB supported
 
 BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake-4

@@ -13,7 +13,7 @@ DISTNAME=	mlvwm091
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} mini-icons.tar.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Macintosh like window manager for X11
 
 USE_IMAKE=	yes

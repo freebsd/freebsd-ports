@@ -10,7 +10,7 @@ PORTVERSION=	0.96
 CATEGORIES=	games
 MASTER_SITES=	http://www.surfline.ne.jp/hachi/xsoldier/
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shooting game for x11
 
 USE_IMAKE=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.sbs.de/pub/www/tools/giftool/
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for GIF89a transparent option and interlace mode
 
 NO_CDROM=	"Shareware"

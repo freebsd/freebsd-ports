@@ -10,7 +10,7 @@ PORTVERSION=	0.99.2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://scwm.mit.edu/pub/scwm/
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An icon collection for the scwm window manager
 
 GNU_CONFIGURE=	yes

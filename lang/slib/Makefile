@@ -12,7 +12,7 @@ CATEGORIES=	lang scheme
 MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/
 DISTNAME=	slib${PORTVERSION}
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable scheme library
 
 RUN_DEPENDS=	guile:${PORTSDIR}/lang/guile

@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://cle.linux.org.tw/pub/CLE/stable/v0.9p1/i386/RedHat/RPMS/ \
 		ftp://freebsd.sinica.edu.tw/pub/keith/zh-rpm/
 DISTFILES=	gtk+-1.2.6-7CLE.i386.rpm
 
-MAINTAINER=	keith@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RPM of the Gtk lib, zh-Big5/GB-ized
 
 BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm

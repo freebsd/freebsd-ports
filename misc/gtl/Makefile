@@ -13,7 +13,7 @@ CATEGORIES=	misc
 MASTER_SITES=	#
 DISTNAME=	GTL-${PORTVERSION}
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ STL-based support for graphs and graph algorithms
 
 INSTALLS_SHLIB=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/gtkbuffet/apps/replay
 DISTNAME=	${PORTNAME}-source-dgtk_${PORTVERSION}
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another GTK-based mp3 player
 
 USE_X_PREFIX=	yes
