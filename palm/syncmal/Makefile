@@ -13,8 +13,8 @@ DISTNAME=	jpilot-${PORTNAME}_${PORTVERSION}${EXTRACTSUFX}
 
 MAINTAINER=	fenner@FreeBSD.Org
 
-BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/palm/jpilot:patch \
-		/nonexistent:${PORTSDIR}/palm/malsync:patch
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/palm/jpilot:patch \
+		${NONEXISTENT}:${PORTSDIR}/palm/malsync:patch
 RUN_DEPENDS=	jpilot:${PORTSDIR}/palm/jpilot
 
 PREFIX=		${LOCALBASE}/pilot
@@ -22,7 +22,7 @@ USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ENV=	GTK_CONFIG=${X11BASE}/bin/gtk12-config
 CONFIGURE_ARGS=	--with-pilot-prefix=${PREFIX} \
-		--with-plugin-prefix=${WRKDIRPREFIX}${PORTSDIR}/palm/jpilot/work/jpilot-0.99 \
-		--with-mal-source=${WRKDIRPREFIX}${PORTSDIR}/palm/malsync/work/malsync
+		--with-plugin-prefix=${WRKDIR}/../../jpilot/work/jpilot-0.99 \
+		--with-mal-source=${WRKDIR}/../../malsync/work/malsync
 
 .include <bsd.port.mk>
