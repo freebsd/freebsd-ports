@@ -3,7 +3,7 @@
 # Date created:		17 January 1998
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1999/09/02 10:44:02 kiri Exp $
+# $FreeBSD$
 #
 
 EMACS_PORT_NAME=	xemacs21
