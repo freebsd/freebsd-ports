@@ -7,17 +7,8 @@ to enable clamsmtpd.
 
 Also, there is a clamsmtpd.conf-sample in %%PREFIX%%/etc/, 
 rename to clamsmtpd.conf, otherwise specify -f option to your
-config file. Add the following in the config file or 
-comment them out.
+config file. 
 
-OutAddress: 127.0.0.1:10026
-Listen: 127.0.0.1:10025
-
-To work with postfix, put following lines in Postfix' main.cf:
-
-content_filter = scan:127.0.0.1:10025
-receive_override_options = no_address_mappings
-
-And modify master.cf to active it. See also
+To work with postfix, See also
 http://memberwebs.com/nielsen/software/clamsmtp/postfix.html
 /* ================================================================= */
