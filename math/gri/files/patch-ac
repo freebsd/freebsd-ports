@@ -1,0 +1,11 @@
+--- gr.hh.orig	Fri Oct 25 01:19:27 2002
++++ gr.hh	Fri Oct 25 01:20:38 2002
+@@ -28,7 +28,7 @@
+ #if STDC_HEADERS
+ #include        <stdlib.h>
+ #else
+-#ifndef MSDOS
++#if !defined(MSDOS) && !defined(__FreeBSD__)
+ #include        <malloc.h>
+ #endif				// not MSDOS
+ #endif				// Doesn't have stdlib
