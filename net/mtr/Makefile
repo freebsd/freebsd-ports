@@ -22,8 +22,8 @@ MAN8=	mtr.8
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 400014 && 0
-PATCHFILES=	mtr-042-v6-20010508.diff.gz
+.if ${OSVERSION} >= 400014
+PATCHFILES=	mtr-044-v6-20011212.diff.gz
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
 PATCH_DIST_STRIP=	-p1
 
