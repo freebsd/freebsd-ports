@@ -72,7 +72,8 @@ include/X11/pixmaps/cloud-e/m-e27.xpm
 include/X11/pixmaps/cloud-e/m-e28.xpm
 include/X11/pixmaps/cloud-e/m-e29.xpm
 include/X11/pixmaps/cloud-e/m-e30.xpm
-share/doc/asmail/sample.asmailrc
+share/examples/asmail/sample.asmailrc
 share/doc/asmail/README
-@dirrm include/X11/pixmaps/cloud-e
+@dirrm share/examples/asmail
 @dirrm share/doc/asmail
+@dirrm include/X11/pixmaps/cloud-e

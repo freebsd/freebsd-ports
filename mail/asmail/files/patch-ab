@@ -1,6 +1,6 @@
---- sample.asmailrc.orig	Mon Jun 21 10:11:24 1999
-+++ sample.asmailrc	Sat Jul 17 14:10:08 1999
-@@ -69,7 +69,7 @@
+--- sample.asmailrc.orig	Thu Apr 13 18:55:58 2000
++++ sample.asmailrc	Mon May  1 22:48:33 2000
+@@ -70,7 +70,7 @@
  #########################################################
  # Turns off shaped window				#
  #########################################################
@@ -9,39 +9,36 @@
  
  
  #########################################################
-@@ -115,25 +115,25 @@
+@@ -116,25 +116,25 @@
  #########################################################
  # Assign frame if not shaped				#
  #########################################################
 -#Frame ~/GNUstep/Library/AfterStep/desktop/icons/8bpp/frame.xpm
-+#Frame /usr/X11R6/include/X11/pixmaps/frame.xpm
++#Frame %%PREFIX%%/include/X11/pixmaps/frame.xpm
  
  
  #########################################################
  # Assign icons/animations				#
  #########################################################
--NoMail  
--        /usr/local/share/afterstep/desktop/icons/common/Mail1.xpm
-+NoMail
-+	/usr/X11R6/include/X11/pixmaps/nomail_s.xpm
+ NoMail  
+-#        /usr/local/share/afterstep/desktop/icons/common/Mail1.xpm
++        %%PREFIX%%/include/X11/pixmaps/nomail_s.xpm
  End
  
--OldMail  	
--        /usr/local/share/afterstep/desktop/icons/common/Mail2.xpm
-+OldMail
-+	/usr/X11R6/include/X11/pixmaps/oldmail_s.xpm
+ OldMail  	
+-#        /usr/local/share/afterstep/desktop/icons/common/Mail2.xpm
++        %%PREFIX%%/include/X11/pixmaps/oldmail_s.xpm
  End
  
--NewMail  
--        /usr/local/share/afterstep/desktop/icons/common/Mail1.xpm
--        /usr/local/share/afterstep/desktop/icons/common/Mail2.xpm
--        /usr/local/share/afterstep/desktop/icons/common/Mail3.xpm
--        /usr/local/share/afterstep/desktop/icons/common/Mail2.xpm
-+NewMail
-+	/usr/X11R6/include/X11/pixmaps/oldmail_s.xpm
-+	/usr/X11R6/include/X11/pixmaps/newmail_s.xpm
-+	/usr/X11R6/include/X11/pixmaps/oldmail_s.xpm
-+	/usr/X11R6/include/X11/pixmaps/newmail_s.xpm
+ NewMail  
+-#        /usr/local/share/afterstep/desktop/icons/common/Mail1.xpm
+-#        /usr/local/share/afterstep/desktop/icons/common/Mail2.xpm
+-#        /usr/local/share/afterstep/desktop/icons/common/Mail3.xpm
+-#        /usr/local/share/afterstep/desktop/icons/common/Mail2.xpm
++        %%PREFIX%%/include/X11/pixmaps/oldmail_s.xpm
++        %%PREFIX%%/include/X11/pixmaps/newmail_s.xpm
++        %%PREFIX%%/include/X11/pixmaps/oldmail_s.xpm
++        %%PREFIX%%/include/X11/pixmaps/newmail_s.xpm
  End
  
  #########################################################
