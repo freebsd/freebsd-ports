@@ -2558,6 +2558,7 @@ ja-libslang	ports/japanese/libslang
 ja-linux-JM	ports/japanese/linux-JM
 ja-linux-netscape47-communicator	ports/japanese/linux-netscape47-communicator
 ja-linux-netscape47-navigator	ports/japanese/linux-netscape47-navigator
+ja-linux-netscape6	ports/japanese/linux-netscape6
 ja-linux_locale	ports/japanese/linux_locale
 ja-lipsf	ports/japanese/lipsf
 ja-lookup	ports/japanese/lookup
