@@ -206,6 +206,7 @@ share/apps/kchart/icons/hicolor/22x22/actions/hilo.png
 share/apps/kchart/icons/hicolor/22x22/actions/lines.png
 share/apps/kchart/icons/hicolor/22x22/actions/lines3d.png
 share/apps/kchart/icons/hicolor/22x22/actions/options.png
+share/apps/kchart/icons/hicolor/22x22/actions/polar.png
 share/apps/kchart/icons/hicolor/22x22/actions/ring.png
 share/apps/kchart/icons/hicolor/22x22/actions/wizard.png
 share/apps/kchart/icons/locolor/16x16/actions/areas.png
@@ -1535,19 +1536,6 @@ share/templates/Illustration.desktop
 share/templates/Presentation.desktop
 share/templates/SpreadSheet.desktop
 share/templates/TextDocument.desktop
-@dirrm share/templates/.source
-@dirrm share/templates
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor/22x22/apps
-@dirrm share/icons/locolor/22x22
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/22x22/mimetypes
-@dirrm share/icons/hicolor/22x22/apps
 @dirrm share/doc/HTML/en/kword
 @dirrm share/doc/HTML/en/kugar
 @dirrm share/doc/HTML/en/kspread
@@ -1676,4 +1664,3 @@ share/templates/TextDocument.desktop
 @dirrm share/apps/kchart/icons
 @dirrm share/apps/kchart
 @dirrm share/applnk/Office
-@dirrm share/applnk
