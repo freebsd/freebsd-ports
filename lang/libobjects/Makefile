@@ -3,11 +3,11 @@
 # Date created:        21 April 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/13 02:02:31 steve Exp $
 #
 
 DISTNAME=	libobjects-0.1.19
-CATEGORIES=	devel
+CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 
 MAINTAINER=	Nakai@technologist.com
