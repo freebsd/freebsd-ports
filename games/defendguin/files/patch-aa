@@ -1,0 +1,51 @@
+
+$FreeBSD$
+
+--- Makefile.orig	Sun Nov 26 13:45:14 2000
++++ Makefile	Thu Feb  8 14:27:03 2001
+@@ -9,21 +9,20 @@
+ 
+ # User-definable stuff:
+ 
+-CFLAGS=-Wall -O2
++CFLAGS?=-Wall -O2
+ #DATA_PREFIX=$(PWD)/data/
+-PREFIX=/usr/local
++PREFIX?=/usr/local
+ DATA_PREFIX=$(PREFIX)/share/defendguin/
+ JOY=YES
+ 
+ 
+ # Other definitions:
+ 
+-SDL_CFLAGS := $(shell sdl-config --cflags)
+-SDL_LDFLAGS := $(shell sdl-config --libs) -L/usr/X11R6/lib \
+-	-lX11 -lXext   # WHY DO I NEED THIS!?!?!?!?
+-MIXER=-lSDL_mixer
++SDL_CFLAGS := $(shell $(SDL_CONFIG) --cflags)
++SDL_LDFLAGS := $(shell $(SDL_CONFIG) --libs)
++MIXER=-lSDL_mixer -lsmpeg
+ NOSOUNDFLAG=__SOUND
+-CFLAGS=-Wall $(SDL_CFLAGS) -DDATA_PREFIX=\"$(DATA_PREFIX)\" -D$(NOSOUNDFLAG) \
++CFLAGS+=-Wall $(SDL_CFLAGS) -DDATA_PREFIX=\"$(DATA_PREFIX)\" -D$(NOSOUNDFLAG) \
+ 	-DJOY_$(JOY)
+ SDL_LIB=$(SDL_LDFLAGS) $(MIXER)
+ 
+@@ -36,11 +35,12 @@
+ 	make defendguin MIXER= NOSOUNDFLAG=NOSOUND
+ 
+ install:	defendguin
+-	install -d $(DATA_PREFIX)
+-	cp -R data/* $(DATA_PREFIX)
+-	chmod -R a+rX,g-w,o-w $(DATA_PREFIX)
+-	cp defendguin $(PREFIX)/bin/
+-	chmod a+rx,g-w,o-w $(PREFIX)/bin/defendguin
++	$(MKDIR) $(DATA_PREFIX)
++	$(MKDIR) $(PREFIX)/doc/defendguin
++	cd data; tar --exclude .xvpics -cf - . | \
++		(cd $(DATA_PREFIX); ${TAR} --unlink -xf - )
++	$(BSD_INSTALL_PROGRAM) defendguin $(PREFIX)/bin
++	$(BSD_INSTALL_MAN) COPYING.txt README.txt $(PREFIX)/doc/defendguin
+ 
+ uninstall:
+ 	-rm -r $(DATA_PREFIX)
