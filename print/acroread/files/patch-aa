@@ -1,0 +1,32 @@
+--- INSTALL.orig	Mon Jul  1 15:09:57 2002
++++ INSTALL	Thu Aug  8 04:28:23 2002
+@@ -133,8 +133,10 @@
+   total=0
+   for i in $* ; do
+     if [ "$i" -a -f "$i" ] ; then
+-        if [ `uname -s` = "Linux" ] ; then
++        if [ `uname -s` = "FreeBSD|Linux" ] ; then
+           size=`ls -lLn "$i" | ( read perm links owner group size date ; echo $size )`
++	elif [ `uname -s` = "FreeBSD" ] ; then
++	  size=`ls -lL "$i" | ( read perm links owner group size date ; echo $size )`
+         else
+           size=`ls -lLon "$i" | ( read perm links owner size date ; echo $size )`
+         fi
+@@ -344,7 +346,7 @@
+   SearchPlatformTar="$3"
+   CustomPlatformTar="$4"
+ 
+-  OutputLicense "$ReadLicense"
++#  OutputLicense "$ReadLicense"
+   ReadLicense=""
+ 
+   PrintRequiredFree "$ReadTar" "$SearchTar" "$CustomTar" \
+@@ -524,7 +526,7 @@
+       ;;
+     esac
+     ;;
+-  Linux)
++  FreeBSD)
+     ReadDefaultNum="$ReadIntelLinuxNum"
+     DefaultName="Intel/Linux"
+     ;;

@@ -1,0 +1,92 @@
+@comment ALPHA-ONLY:Acrobat5/Reader/%%ARCHDIR%%/plug_ins/autoIndx.api
+@comment ALPHA-ONLY:Acrobat5/Reader/%%ARCHDIR%%/plug_ins/search.api
+@comment ALPHA-ONLY:Acrobat5/Reader/%%ARCHDIR%%/plug_ins/acrosrch.uid
+@comment ALPHA-ONLY:Acrobat5/Reader/%%ARCHDIR%%/plug_ins/vdkHome/vdk10.cmp
+@comment ALPHA-ONLY:Acrobat5/Reader/%%ARCHDIR%%/plug_ins/vdkHome/vdk10.lic
+@comment ALPHA-ONLY:Acrobat5/Reader/%%ARCHDIR%%/plug_ins/vdkHome/vdk10.std
+@comment ALPHA-ONLY:Acrobat5/Reader/%%ARCHDIR%%/plug_ins/vdkHome/vdk10.syx
+@comment ALPHA-ONLY:Acrobat5/Reader/%%ARCHDIR%%/plug_ins/vdkHome/language/acro20.lng
+@comment ALPHA-ONLY:Acrobat5/Reader/%%ARCHDIR%%/plug_ins/vdkHome/language/vdk10.rsd
+@comment ALPHA-ONLY:Acrobat5/Reader/%%ARCHDIR%%/plug_ins/vdkHome/language/vdk10.rst
+@comment ALPHA-ONLY:Acrobat5/Reader/%%ARCHDIR%%/plug_ins/vdkHome/language/vdk10.stc
+@comment ALPHA-ONLY:Acrobat5/Reader/%%ARCHDIR%%/plug_ins/vdkHome/language/vdk10.stp
+@comment ALPHA-ONLY:Acrobat5/Reader/%%ARCHDIR%%/plug_ins/vdkHome/language/vdk10.syd
+Acrobat5/Browsers/netscape
+Acrobat5/Browsers/%%ARCHDIR%%/nppdf.so
+Acrobat5/Resource/Font/AdobeSansMM
+Acrobat5/Resource/Font/AdobeSansMM.MMM
+Acrobat5/Resource/Font/AdobeSerifMM
+Acrobat5/Resource/Font/AdobeSerifMM.MMM
+Acrobat5/Resource/Font/Arial
+Acrobat5/Resource/Font/Arial-Bold
+Acrobat5/Resource/Font/Arial-BoldItalic
+Acrobat5/Resource/Font/Arial-Italic
+Acrobat5/Resource/Font/Courier
+Acrobat5/Resource/Font/Courier-Bold
+Acrobat5/Resource/Font/Courier-BoldOblique
+Acrobat5/Resource/Font/Courier-Oblique
+Acrobat5/Resource/Font/Fonts14.upr
+Acrobat5/Resource/Font/Symbol
+Acrobat5/Resource/Font/TimesNewRoman
+Acrobat5/Resource/Font/TimesNewRoman-Bold
+Acrobat5/Resource/Font/TimesNewRoman-BoldItalic
+Acrobat5/Resource/Font/TimesNewRoman-Italic
+Acrobat5/Resource/Font/ZapfDingbats
+Acrobat5/Resource/LICFONT.TXT
+Acrobat5/Reader/AcroVersion
+Acrobat5/Reader/MapTypes.pdf
+Acrobat5/Reader/help/acrobat.pdf
+Acrobat5/Reader/help/reader.pdf
+@comment ALPHA-ONLY:Acrobat5/Reader/help/search.pdf
+Acrobat5/Reader/%%ARCHDIR%%/app-defaults/AcroRead
+Acrobat5/Reader/%%ARCHDIR%%/bin/acroread
+Acrobat5/Reader/%%ARCHDIR%%/lib/XKeysymDB
+Acrobat5/Reader/%%ARCHDIR%%/lib/libACE.so
+Acrobat5/Reader/%%ARCHDIR%%/lib/libACE.so.2.02
+Acrobat5/Reader/%%ARCHDIR%%/lib/libAGM.so
+Acrobat5/Reader/%%ARCHDIR%%/lib/libAGM.so.4.08
+Acrobat5/Reader/%%ARCHDIR%%/lib/libBIB.so
+Acrobat5/Reader/%%ARCHDIR%%/lib/libBIB.so.1.1
+Acrobat5/Reader/%%ARCHDIR%%/lib/libCoolType.so
+Acrobat5/Reader/%%ARCHDIR%%/lib/libCoolType.so.4.10
+Acrobat5/Reader/%%ARCHDIR%%/lib/libOPP.so
+Acrobat5/Reader/%%ARCHDIR%%/lib/libOPP.so.1.02
+Acrobat5/Reader/%%ARCHDIR%%/plug_ins/AcroForm.api
+Acrobat5/Reader/%%ARCHDIR%%/plug_ins/EScript.api
+Acrobat5/Reader/%%ARCHDIR%%/plug_ins/JavaScripts/AFStrENU.js
+Acrobat5/Reader/%%ARCHDIR%%/plug_ins/JavaScripts/AForm.js
+Acrobat5/Reader/%%ARCHDIR%%/plug_ins/Highlight.api
+Acrobat5/Reader/%%ARCHDIR%%/plug_ins/ewh.api
+Acrobat5/Reader/%%ARCHDIR%%/plug_ins/wwwlink.api
+Acrobat5/Reader/res/ENUtxt.pdf
+Acrobat5/Reader/res/splashScreen11R.xbm
+Acrobat5/Reader/res/splashScreen18R.xpm
+Acrobat5/Reader/license.txt
+Acrobat5/bin/acroread
+bin/acroread
+bin/acroread5
+%%PORTDOCS%%share/doc/acroread/README
+@exec ln -sf ../../Resource/Font/ %D/Acrobat5/Reader/%%ARCHDIR%%/fonts
+@unexec rm -f %D/Acrobat5/Reader/%%ARCHDIR%%/fonts
+@exec ln -sf ../res %D/Acrobat5/Reader/%%ARCHDIR%%/res
+@unexec rm -f %D/Acrobat5/Reader/%%ARCHDIR%%/res
+@exec echo "Be sure to read the license agreement in"
+@exec echo "%D/Acrobat5/Reader/license.txt"
+@dirrm Acrobat5/bin
+@dirrm Acrobat5/Reader/res
+@comment ALPHA-ONLY:@dirrm Acrobat5/Reader/%%ARCHDIR%%/plug_ins/vdkHome/language
+@comment ALPHA-ONLY:@dirrm Acrobat5/Reader/%%ARCHDIR%%/plug_ins/vdkHome
+@dirrm Acrobat5/Reader/%%ARCHDIR%%/plug_ins/JavaScripts
+@dirrm Acrobat5/Reader/%%ARCHDIR%%/plug_ins
+@dirrm Acrobat5/Reader/%%ARCHDIR%%/lib
+@dirrm Acrobat5/Reader/%%ARCHDIR%%/bin
+@dirrm Acrobat5/Reader/%%ARCHDIR%%/app-defaults
+@dirrm Acrobat5/Reader/%%ARCHDIR%%
+@dirrm Acrobat5/Reader/help
+@dirrm Acrobat5/Reader
+@dirrm Acrobat5/Resource/Font
+@dirrm Acrobat5/Resource
+@dirrm Acrobat5/Browsers/%%ARCHDIR%%
+@dirrm Acrobat5/Browsers
+@dirrm Acrobat5
+@dirrm share/doc/acroread

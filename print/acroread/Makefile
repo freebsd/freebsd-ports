@@ -6,55 +6,49 @@
 #
 
 PORTNAME=	acroread
-PORTVERSION=	7.0.0
+PORTVERSION=	5.10
+PORTREVISION=	1
 CATEGORIES=	print linux
-MASTER_SITES=	http://download.adobe.com/pub/adobe/reader/unix/7x/7.0/enu/ \
-		ftp://ftp.adobe.com/pub/adobe/reader/unix/7x/7.0/enu/
-DISTNAME=	AdobeReader_enu-7.0.0-1.i386.rpm
-EXTRACT_SUFX=
+MASTER_SITES=	http://download.adobe.com/pub/adobe/acrobatreader/unix/5.x/ \
+		ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/5.x/
+.include <bsd.port.pre.mk>
+DISTNAME=	linux-5010
 DIST_SUBDIR=	acroread
-EXTRACT_ONLY=
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	View, distribute and print PDF documents
 
-BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2 \
-		${LINUXBASE}/usr/lib/libpango-1.0.so.0:${PORTSDIR}/x11-toolkits/linux-pango \
-		${LINUXBASE}/usr/X11R6/lib/libXext.so.6:${PORTSDIR}/x11/linux-XFree86-libs
+RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libX11.so.6:${PORTSDIR}/x11/linux-XFree86-libs
 
 ONLY_FOR_ARCHS=	amd64 i386
 USE_REINPLACE=	yes
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i '' -E
 NO_FILTER_SHLIBS=	yes
-PLIST=		${WRKDIR}/plist
-PREFIX=		${LINUXBASE}
 
-pre-install:
-	@kldstat -v | grep -E 'linux(aout|elf)' >/dev/null ||\
-		{ ${ECHO_MSG} "Linux ABI compatibility must be enabled to install ${PORTNAME}-${PORTVERSION}"; \
-		  exit 1; }
-	@${RM} -rf ${WRKSRC}/tmp
-	@${MKDIR} ${WRKSRC}/tmp
-	cd ${WRKSRC}/tmp; \
-		rpm2cpio < ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} | ${CPIO} -id; \
-		${FIND} * -type f -o -type l > ${PLIST} \
-		&& ${FIND} -d * -type d | ${SED} -e 's:^:@dirrm :' | \
-		${GREP} -vE "(usr/bin$$|local$$|share$$|usr$$)" >> ${PLIST}
+PLIST_SUB=	"ARCHDIR=intellinux"
+WRKSRC=		${WRKDIR}/installers
 
 do-install:
-	@rpm -U --ignorearch --ignoreos --root ${PREFIX} --dbpath /var/lib/rpm \
-		 --nodeps --replacepkgs ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} || ${TRUE}
-	# disable the PPKLite plugin as it requires an LDAP share lib
-	${CHMOD} 0 ${PREFIX}/usr/local/Adobe/Acrobat7.0/Reader/intellinux/plug_ins/PPKLite.api
+	@${MKDIR} ${PREFIX}/Acrobat5
+	@ReadInstallDir=${PREFIX}/Acrobat5 ${WRKSRC}/INSTALL
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	strings -1 ${WRKSRC}/README > ${DOCSDIR}/README
+.endif
 
 post-install:
-	@${REINPLACE_CMD} 's:Linux:FreeBSD|Linux:g' \
-		${PREFIX}/usr/local/Adobe/Acrobat7.0/bin/acroread
-	cd ${LOCALBASE}/bin ; ${LN} -sf ${PREFIX}/usr/local/Adobe/Acrobat7.0/bin/acroread acroread7
-	cd ${LOCALBASE}/bin ; ${LN} -sf ${PREFIX}/usr/local/Adobe/Acrobat7.0/bin/acroread acroread
+	${REINPLACE_CMD} 's:Linux):FreeBSD|Linux):g' ${PREFIX}/Acrobat5/bin/acroread
+	@${BRANDELF} -t Linux ${PREFIX}/Acrobat5/Reader/intellinux/bin/acroread
+	${REINPLACE_CMD} 's:OSF1):FreeBSD|OSF1):g' ${PREFIX}/Acrobat5/bin/acroread
+	@cd ${PREFIX}/Acrobat5/bin && \
+	  ${INSTALL_SCRIPT} ${PREFIX}/Acrobat5/bin/acroread \
+	     ${PREFIX}/bin/acroread5
+	@${CHOWN} -R -h root:wheel ${PREFIX}/Acrobat5
+	@${CHMOD} +x ${PREFIX}/bin/acroread5
+	[ -e ${PREFIX}/bin/acroread ] \
+	    || (cd ${PREFIX}/bin ; ${LN} -sf acroread5 acroread)
 	@${ECHO_MSG} "Be sure to read the license agreement in"
-	@${ECHO_MSG} "${PREFIX}/usr/local/Adobe/Acrobat7.0/Reader/Legal/ENU/license_ENU_uc.txt"
+	@${ECHO_MSG} "${PREFIX}/Acrobat5/Reader/license.txt"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
