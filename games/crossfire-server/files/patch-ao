@@ -1,0 +1,11 @@
+--- config/crossfire.cf.orig	Sat Sep 18 18:31:54 1999
++++ config/crossfire.cf	Sat Sep 18 18:32:23 1999
+@@ -174,7 +174,7 @@
+ 				/* use /bin/cc you will be able to compile */
+ 				/* crossfire itself. */
+ 
+-#ifdef AlphaArchitecture
++#if defined(AlphaArchitecture) && !defined(FreeBSDArchitecture)
+ CC = cc -std1 -Olimit 1000    /* Alpha */
+ #endif
+ 
