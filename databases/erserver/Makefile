@@ -36,6 +36,6 @@ MAKE_ARGS=	sqldir=${DATADIR} templdir=${DATADIR} docdir=${DOCSDIR} \
 PGINC=		${PREFIX}/include/postgresql/server
 
 pre-install:
-	${MKDIR} ${PREFIX}/share/doc/erserver
+	${MKDIR} ${DOCSDIR}
 
 .include <bsd.port.mk>
