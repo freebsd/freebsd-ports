@@ -1,0 +1,8 @@
+Maxima is a Common Lisp implementation of MIT's Macsyma system for
+computer based algebra.
+
+WWW: http://www.ma.utexas.edu/maxima.html
+
+Built to run with CMU Common Lisp.
+
+- Scott Flatman <sf@dsinw.com>
