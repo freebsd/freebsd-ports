@@ -1,6 +1,6 @@
 # New ports collection makefile for:    bsd-airtools
 # Date created:		2002/07/06
-# Whom:			Sean Chittenden <sean@chittenden.org>
+# Whom:			Sean Chittenden <seanc@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.dachb0den.com/projects/bsd-airtools/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sean@chittenden.org
+MAINTAINER=	seanc@FreeBSD.org
 
 CONF_AIRTOOLS=	dstumbler
 MAKE_AIRTOOLS=	dweputils/dwepcrack dweputils/dwepdump \
