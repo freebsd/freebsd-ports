@@ -15,18 +15,10 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	${PYDISTUTILS} \
-		${PYTHON_SITELIBDIR}/Numeric.pth:${PORTSDIR}/math/py-numeric
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric.pth:${PORTSDIR}/math/py-numeric
 LIB_DEPENDS=	plot:${PORTSDIR}/graphics/plotutils
 
 USE_PYTHON=	yes
-
-SETUP_CMD=	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py
-
-do-build:
-	@${SETUP_CMD} build
-
-do-install:
-	@${SETUP_CMD} install
+USE_PYDISTUTILS=	yes
 
 .include <bsd.port.mk>

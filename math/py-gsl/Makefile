@@ -20,11 +20,6 @@ LIB_DEPENDS=	gsl.0:${PORTSDIR}/math/gsl
 
 PLIST_SUB=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S,^${LOCALBASE}/,,g}
 USE_PYTHON=	yes
-
-do-build:
-	@cd ${WRKSRC} && ${PYTHON_CMD} setup.py build
-
-do-install:
-	@cd ${WRKSRC} && ${PYTHON_CMD} setup.py install
+USE_PYDISTUTILS=	yes
 
 .include <bsd.port.mk>
