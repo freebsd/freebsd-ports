@@ -33,7 +33,11 @@ CONFIGURE_ENV=	X11BASE=${X11BASE}  LOCALBASE=${LOCALBASE} \
 		CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib" \
 		LINGUAS="da de es fi fr hr it ja_JP.EUC ko nl no pl pt ru zh_TW.Big5 zh_CN"
 CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
-	--with-nlsdir=${PREFIX}/share/locale --disable-debug
+	--with-nlsdir=${PREFIX}/share/locale \
+	--with-libs-from="-L${LOCALBASE}/lib" \
+	--with-incs-from="-I${LOCALBASE}/include" \
+	--with-appspath="${PREFIX}/GNUstep/Apps" \
+	--disable-debug
 
 MAN1=	geticonset.1x getstyle.1x seticons.1x setstyle.1x \
 	wdwrite.1x wmaker.1x wmsetbg.1x wxcopy.1x wxpaste.1x wsetfont.1x
@@ -57,6 +61,10 @@ CONFIGURE_ARGS+=	--enable-kde
 pre-extract:
 	${ECHO} "You can add hooks for Gnome and KDE by defining USE_GNOME and/or USE_KDE"
 .endif
+
+post-extract:
+	@cd ${WRKSRC} && \
+	${TAR} xfz libwmfun-0.0.2.tar.gz
 
 .include <bsd.port.pre.mk>
 
