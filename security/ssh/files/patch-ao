@@ -1,0 +1,13 @@
+--- newchannels.c.orig	Tue Apr 22 17:40:11 1997
++++ newchannels.c	Sat Jul 19 11:42:06 1997
+@@ -2139,6 +2139,10 @@
+      ssh-agent connections on your system */
+   old_umask = umask(S_IRUSR|S_IXUSR|S_IRGRP|S_IXGRP|S_IROTH|S_IXOTH);
+   
++  /* Make sure the socket doesn't already exist, left over from a system
++     crash perhaps. */
++  unlink(channel_forwarded_auth_socket_name);
++
+   if (bind(sock, (struct sockaddr *)&sunaddr, AF_UNIX_SIZE(sunaddr)) < 0)
+     packet_disconnect("Agent socket bind failed: %.100s", strerror(errno));
+   
