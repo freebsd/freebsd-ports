@@ -7755,7 +7755,7 @@ pecl-yaz	ports/net/pecl-yaz
 pecl-zip	ports/archivers/pecl-zip
 pedisassem	ports/devel/pedisassem
 peeper		ports/x11/peeper
-peeksystray	ports/x11-wm/peksystray
+peksystray	ports/x11-wm/peksystray
 pekwm		ports/x11-wm/pekwm
 pen		ports/net/pen
 pengpong	ports/games/pengpong
