@@ -347,7 +347,6 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/win.xbm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/winfolder.xpm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/wintext.xpm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/CancelRepeat.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Clipboard.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Clipboard/getSelected.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Clipboard/autosplit.ix
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/EnterFocus.al
@@ -373,7 +372,6 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Listbox/BeginExtend.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Listbox/BeginSelect.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Listbox/BeginToggle.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Listbox/Cancel.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Listbox/ClassInit.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Listbox/DataExtend.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Listbox/ExtendUpDown.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Listbox/Motion.al
@@ -399,7 +397,6 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Scale/Leave.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Scale/autosplit.ix
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Scrollbar/ButtonDown.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Scrollbar/ButtonUp.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Scrollbar/ClassInit.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Scrollbar/Drag.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Scrollbar/EndDrag.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Scrollbar/Enter.al
@@ -433,11 +430,9 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/X/autosplit.ix
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/Wm/FullScreen.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/autosplit.ix
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/break.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/findINC.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/focusFollowsMouse.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/focusNext.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/focusPrev.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/idletasks.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/interps.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/lsearch.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/tabFocus.al
