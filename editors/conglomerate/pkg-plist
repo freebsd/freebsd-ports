@@ -126,6 +126,7 @@ share/gnome/conglomerate/glade/cong-preferences.glade
 share/gnome/conglomerate/glade/docbook-common-properties.glade
 share/gnome/conglomerate/glade/docbook-orderedlist-properties.glade
 share/gnome/conglomerate/glade/docbook-ulink-properties.glade
+share/gnome/conglomerate/glade/plugin-arbitrary.glade
 share/gnome/conglomerate/glade/plugin-random.glade
 share/gnome/conglomerate/glade/string_selection_dialog.glade
 share/gnome/conglomerate/help/conglomerate
