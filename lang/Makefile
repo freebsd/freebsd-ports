@@ -70,6 +70,10 @@
     SUBDIR += perl5
     SUBDIR += pgcc
     SUBDIR += pike
+    SUBDIR += pm3-base
+    SUBDIR += pm3-forms
+    SUBDIR += pm3-gui
+    SUBDIR += pm3-net
     SUBDIR += ptoc
     SUBDIR += python
     SUBDIR += python+ipv6
