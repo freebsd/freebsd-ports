@@ -336,6 +336,7 @@
     SUBDIR += wmx10
     SUBDIR += xd
     SUBDIR += xdelta
+    SUBDIR += xdf
     SUBDIR += xenmenu
     SUBDIR += xgas
     SUBDIR += xless
