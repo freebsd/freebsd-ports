@@ -293,6 +293,7 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/mt
 %%PORTDOCS%%%%EXAMPLESDIR%%/smile.blob
 %%PORTDOCS%%%%EXAMPLESDIR%%/test.blob
+%%PORTDOCS%%%%EXAMPLESDIR%%/zsx.blob
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ToDo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

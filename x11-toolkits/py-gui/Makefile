@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gui
-PORTVERSION=	1.5
+PORTVERSION=	1.5.1
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	http://www.cosc.canterbury.ac.nz/~greg/python_gui/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,9 +14,7 @@ DISTNAME=	PyGUI-${PORTVERSION}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	A cross-platform pythonic GUI API
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Pyrex/Distutils.py:${PORTSDIR}/devel/pyrex
-
-BROKEN=		"Broken dependency"
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Pyrex/Distutils/__init__.py:${PORTSDIR}/devel/pyrex
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
