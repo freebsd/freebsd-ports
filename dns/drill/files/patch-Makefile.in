@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Wed Jan  5 01:37:41 2005
++++ Makefile.in	Wed Jan 12 20:42:10 2005
+@@ -10,7 +10,7 @@
+ CC = @CC@
+ CFLAGS = @CFLAGS@
+ LDFLAGS = @LDFLAGS@
+-LIBS = @LIBS@
++LIBS = @LIBS@ -lssl
+ INSTALL = $(srcdir)/install-sh -c
+ INSTALL_PROGRAM = $(INSTALL)
+ 
