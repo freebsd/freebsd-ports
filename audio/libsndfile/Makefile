@@ -14,9 +14,8 @@ MASTER_SITES=	http://www.mega-nerd.com/libsndfile/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reading and writing files containing sampled sound (like WAV or AIFF)
 
-USE_GCC=	3.4
-USE_GNOME=	gnomehack gnometarget lthack pkgconfig
-USE_INC_LIBTOOL_VER=	13
+USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--enable-justsrc --disable-gcc-pipe
 INSTALLS_SHLIB=	yes
