@@ -34,7 +34,7 @@ PLIST_SUB+=	DATADIR=${DATADIR} CGIDIR=${CGIDIR}
 
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
-NO_PACKAGE=	"License does not permit distribution"
+RESTRICTED=	"License does not permit distribution"
 
 .if defined(WITH_OLD_DISTFILE)
 PLIST_SUB+=	OLD=""
@@ -45,7 +45,7 @@ PLIST_SUB+=	OLD="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 ECHO_MSG=/usr/bin/printf
 IGNORE=	:\n\
 Because of licensing restrictions, you must fetch the source distribution\n\
