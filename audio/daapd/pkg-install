@@ -23,17 +23,8 @@ PRE-INSTALL)
   else
     echo "---> Adding user \"%%USER%%\""
     pw adduser %%USER%% -g %%GROUP%% -h - \
-      -d "%%LOGDIR%%" -s "/sbin/nologin" -c "daapd User" || exit 1
+      -d "/nonexistent" -s "/sbin/nologin" -c "daapd User" || exit 1
   fi
-
-  ;;
-
-POST-INSTALL)
-  echo "---> Starting post-install script:"
-
-  echo "---> Creating directory \"%%LOGDIR%%\""
-  mkdir %%LOGDIR%%
-  chown %%USER%% %%LOGDIR%%
 
   ;;
 
