@@ -1,0 +1,23 @@
+What is is:
+
+ A patch to stock qmail-1.03 to get all user account information
+ from an LDAP database. It primary target are POP toaster with
+ huge numbers of users (from thousands up to millions).
+
+Some of it's greatest features:
+
+ - Users and virtual domains in an LDAP database
+ - No local accounts needed
+ - Perfect for ISP's to build POP toasters
+ - Native mail server clustering
+ - Supports size quotas on user maildirs and mbox
+ - Automatic creation of home- and maildir's
+ - Handles replies with new qmail-reply
+ - Extensive logging in qmail-smtpd and qmail-pop3d
+ - Supports tarpitting (based on a patch by Chris Johnson)
+ - Supports OpenLDAP 1.2.X and Mozilla Directory SDK
+ - Includes Antispam-Features (based on a patch by Lindsay Haisley,
+   Rask Lambertsen and Lionel Widdifield)
+ [snip]
+
+WWW: http://www.nrg4u.com/

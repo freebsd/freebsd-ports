@@ -103,6 +103,7 @@
     SUBDIR += pygmy
     SUBDIR += qmail
     SUBDIR += qmail-contrib
+    SUBDIR += qmail-ldap
     SUBDIR += qmailanalog
     SUBDIR += qpopper
     SUBDIR += rblcheck
