@@ -7766,6 +7766,7 @@ php5-mcve	ports/devel/php5-mcve
 php5-mssql	ports/databases/php5-mssql
 php5-mysql	ports/databases/php5-mysql
 php5-mysqli	ports/databases/php5-mysqli
+php5-ncurses	ports/devel/php5-ncurses
 php5-odbc	ports/databases/php5-odbc
 php5-oracle	ports/databases/php5-oracle
 php5-pcre	ports/devel/php5-pcre
