@@ -1,5 +1,5 @@
---- Makefile.in.orig	Wed May  6 21:57:14 1998
-+++ Makefile.in	Wed May  6 21:59:13 1998
+--- Makefile.in.orig	Thu May  7 02:49:14 1998
++++ Makefile.in	Thu May  7 02:49:48 1998
 @@ -102,7 +102,7 @@
  xdf_io.c mkmanifest.c
  
@@ -14,13 +14,13 @@
  	@$(top_srcdir)/mkinstalldirs $(bindir)
  	@for j in $(SCRIPTS) ; do \
 -		$(INSTALL_PROGRAM) $(srcdir)/scripts/$$j $(bindir)/$$j ; \
-+		install -o bin -g bin -m 755 $(srcdir)/scripts/$$j $(bindir)/$$j ; \
++ 		$(BSD_INSTALL_SCRIPT) $(srcdir)/scripts/$$j $(bindir)/$$j ; \
  		echo $(bindir)/$$j ; \
  	done
 -	rm -f $(bindir)/lz
 -	$(LN_S) uz $(bindir)/lz
-+#	rm -f $(bindir)/lz
-+#	$(LN_S) uz $(bindir)/lz
++	#rm -f $(bindir)/lz
++	#$(LN_S) uz $(bindir)/lz
  
  install-man:
  	@$(top_srcdir)/mkinstalldirs $(MAN1DIR)

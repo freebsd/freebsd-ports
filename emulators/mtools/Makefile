@@ -3,24 +3,28 @@
 # Date created:         5 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.19 1998/01/21 08:57:15 obrien Exp $
+# $Id: Makefile,v 1.20 1998/05/07 01:59:22 vanilla Exp $
 #
 
 DISTNAME=	mtools-3.9
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://linux.wauug.org/pub/knaff/mtools/
 
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	mtools-3.9-0305.diff.gz 
+
 MAINTAINER=	jmz@FreeBSD.org
 
+PATCH_DIST_STRIP=	-p1
 HAS_CONFIGURE=		yes
 CONFIGURE_ARGS=		--enable-xdf --prefix=${PREFIX}
 
 USE_GMAKE=	yes
 
 MAN1=		mattrib.1 mbadblocks.1 mcd.1 mcopy.1 mdel.1 mdeltree.1 \
-		mdir.1 mdu.1 mformat.1 mkmanifest.1 mlabel.1 mmd.1 mmount.1 mmove.1 \
-		mrd.1 mread.1 mren.1 mshowfat.1 mtoolstest.1 mtools.1 mtype.1 \
-		mzip.1 mpartition.1
+		mdir.1 mdu.1 mformat.1 mkmanifest.1 mlabel.1 mmd.1 mmount.1 \
+		mmove.1 mpartition.1 mrd.1 mread.1 mren.1 mshowfat.1 \
+		mtoolstest.1 mtools.1 mtype.1 mzip.1
 MAN5=		mtools.5
 
 post-patch:
@@ -33,7 +37,11 @@ post-patch:
 	 done
 
 post-install:
-	@install -c ${WRKSRC}/mtools.conf ${PREFIX}/etc
+	@#	mwrite has been removed by author, but we'll keep it just a bit longer
+	@ln -sf ${PREFIX}/bin/mtools ${PREFIX}/bin/mwrite
+	@ln -sf ${PREFIX}/man/man1/mcopy.1.gz ${PREFIX}/man/man1/mwrite.1.gz
+	@${INSTALL_DATA} ${WRKSRC}/mtools.conf ${PREFIX}/etc
+	@${ECHO} "Please verify ${PREFIX}/etc/mtools.conf for your machine."
 	@if [ ! -f ${PREFIX}/info/dir ]; then \
 	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
 	 fi

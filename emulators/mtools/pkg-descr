@@ -20,6 +20,7 @@ mrd             RD/RMDIR        remove an MSDOS subdirectory
 mread           COPY            low level read (copy) an MSDOS file to Unix
 mren            REN/RENAME      rename an existing MSDOS file
 mtype           TYPE            display contents of an MSDOS file
+mwrite          COPY            alias for mcopy, will be removed soon
 
 You should be able to just close your eyes and pretend you're on an MSDOS
 system.  Everything should work the same... except for the added 'm' at
