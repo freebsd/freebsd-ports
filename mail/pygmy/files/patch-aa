@@ -1,10 +1,10 @@
 
 $FreeBSD$
 
---- Makefile.orig	Fri Mar 16 14:48:21 2001
-+++ Makefile	Fri Mar 16 19:21:58 2001
-@@ -1,12 +1,12 @@
- # $Id: Makefile,v 1.11 2001/03/15 12:31:46 kjetilja Exp $
+--- Makefile.orig	Fri Apr 20 12:59:26 2001
++++ Makefile	Fri Apr 20 14:38:21 2001
+@@ -1,11 +1,11 @@
+ # $Id: Makefile,v 1.14 2001/04/15 18:42:31 kjetilja Exp $
  
  # Installation prefix -- modify to your preferences
 -PREFIX=/usr/local
@@ -12,10 +12,8 @@ $FreeBSD$
  
  
  # NOTE: Normally nothing below this point need to be changed
--PYTHON=/usr/bin/env python1.5
--PYTHONLIBPATH=`$(PYTHON) -c 'import sys; print sys.prefix'`/lib/python1.5
+-PYTHON=/usr/bin/env python
 +PYTHON=${LOCALBASE}/bin/$(PYTHON_VERSION)
-+PYTHONLIBPATH=`$(PYTHON) -c 'import sys; print sys.prefix'`/lib/$(PYTHON_VERSION)
+ PYTHONLIBPATH=`$(PYTHON) -c "import sys; print sys.modules['site'].__file__[:-8]"`
  COMPILEPROG=compileall.py
  COMPILEPROGOPT=-l .
- SH=/bin/sh
