@@ -3,7 +3,7 @@
 # Date created:		3 January 1998
 # Whom:			jraynard
 #
-# $Id: Makefile,v 1.3 1998/02/18 04:18:45 asami Exp $
+# $Id: Makefile,v 1.4 1998/08/07 23:56:17 asami Exp $
 #
 
 DISTNAME=	textedit-1.0
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.freebsd.org/~jraynard/ports/distfiles/
 
 MAINTAINER=	jraynard@@freebsd.org
 
-LIB_DEPENDS=	xview\\.3\\.:${PORTSDIR}/x11-toolkits/xview-lib
+LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview-lib
 
 WRKSRC=		${WRKDIR}/textedit
 USE_IMAKE=	yes
