@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}-beta-1.0
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Platform Independent Petri-Net Editor
 
+BROKEN=		Size mismatch
+
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/PIPE
 NO_WRKSUBDIR=	yes

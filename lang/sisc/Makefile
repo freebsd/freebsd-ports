@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extensible Java-based Scheme interpreter
 
+BROKEN=		Size mismatch
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+
 
