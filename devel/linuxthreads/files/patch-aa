@@ -801,6 +801,15 @@ diff -ru ../../work/linuxthreads-2.2.3/pthread.c ./pthread.c
    /* Make current thread the main thread in case the calling thread
       changes its mind, does not exec(), and creates new threads instead. */
    __pthread_reset_main_thread();
+@@ -967,7 +947,7 @@
+ __pthread_timedsuspend_old(pthread_descr self, const struct timespec *abstime)
+ {
+   sigset_t unblock, initial_mask;
+-  int was_signalled = 0;
++  int was_signalled = 1;
+   sigjmp_buf jmpbuf;
+ 
+   if (atomic_decrement(&self->p_resume_count) == 0) {
 @@ -1131,3 +1111,17 @@
  static const int *const __pthread_require_wrappers =
    &__pthread_provide_wrappers;
