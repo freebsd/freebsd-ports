@@ -1,0 +1,37 @@
+share/gnome/gdesklets/Displays/Weather/README
+share/gnome/gdesklets/Displays/Weather/gfx/bg-left.png
+share/gnome/gdesklets/Displays/Weather/gfx/bg-right.png
+share/gnome/gdesklets/Displays/Weather/gfx/bg-weather.png
+share/gnome/gdesklets/Displays/Weather/weather.display
+share/gnome/gdesklets/Sensors/Weather/README
+share/gnome/gdesklets/Sensors/Weather/__init__.py
+share/gnome/gdesklets/Sensors/Weather/__init__.pyc
+share/gnome/gdesklets/Sensors/Weather/__init__.pyo
+share/gnome/gdesklets/Sensors/Weather/icons/clear-sky.png
+share/gnome/gdesklets/Sensors/Weather/icons/cloud.png
+share/gnome/gdesklets/Sensors/Weather/icons/cloudy_night.png
+share/gnome/gdesklets/Sensors/Weather/icons/drizzle.png
+share/gnome/gdesklets/Sensors/Weather/icons/fog.png
+share/gnome/gdesklets/Sensors/Weather/icons/heavy-rain.png
+share/gnome/gdesklets/Sensors/Weather/icons/ice.png
+share/gnome/gdesklets/Sensors/Weather/icons/isolated.t-storm.png
+share/gnome/gdesklets/Sensors/Weather/icons/luna-ceatza.png
+share/gnome/gdesklets/Sensors/Weather/icons/luna-nori.png
+share/gnome/gdesklets/Sensors/Weather/icons/moon-rain.png
+share/gnome/gdesklets/Sensors/Weather/icons/moon-snow.png
+share/gnome/gdesklets/Sensors/Weather/icons/moon-tstorm.png
+share/gnome/gdesklets/Sensors/Weather/icons/moon.png
+share/gnome/gdesklets/Sensors/Weather/icons/mostly-cloudy.png
+share/gnome/gdesklets/Sensors/Weather/icons/rain.png
+share/gnome/gdesklets/Sensors/Weather/icons/snow.png
+share/gnome/gdesklets/Sensors/Weather/icons/sun-light-clouds.png
+share/gnome/gdesklets/Sensors/Weather/icons/sun.png
+share/gnome/gdesklets/Sensors/Weather/icons/suncloud.png
+share/gnome/gdesklets/Sensors/Weather/icons/t-storm_night.png
+share/gnome/gdesklets/Sensors/Weather/icons/thunder.png
+share/gnome/gdesklets/Sensors/Weather/icons/unknown.png
+share/gnome/gdesklets/Sensors/Weather/icons/wind.png
+@dirrm share/gnome/gdesklets/Sensors/Weather/icons
+@dirrm share/gnome/gdesklets/Sensors/Weather
+@dirrm share/gnome/gdesklets/Displays/Weather/gfx
+@dirrm share/gnome/gdesklets/Displays/Weather

@@ -9,6 +9,7 @@
     SUBDIR += fooseti
     SUBDIR += gdesklets-goodweather
     SUBDIR += gdesklets-seti
+    SUBDIR += gdesklets-weather
     SUBDIR += gkrellmearth
     SUBDIR += gkrellmoon
     SUBDIR += gkrellmseti
