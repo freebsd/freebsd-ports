@@ -3,7 +3,7 @@
 # Date created:		17 Dec 1998
 # Whom:			asami
 #
-# $Id: Makefile,v 1.4 1999/03/10 22:10:50 asami Exp $
+# $Id: Makefile,v 1.5 1999/03/29 07:09:46 asami Exp $
 #
 
 DISTNAME=	227upgrade-1998.03.08
@@ -27,5 +27,9 @@ PKGINSTALL=	${WRKDIR}/INSTALL
 do-install:
 	${SED} -e "s/%%VERSION%%/${BSDPORTMKVERSION}/" ${PKGDIR}/INSTALL \
 		> ${PKGINSTALL}
+
+deinstall:
+	@${ECHO} "You can't delete this port."
+	@${FALSE}
 
 .include <bsd.port.post.mk>
