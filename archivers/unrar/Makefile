@@ -7,7 +7,8 @@
 
 PORTNAME=	unrar
 PORTVERSION=    3.20
-PORTEPOCH=      2
+PORTEPOCH=      1
+PORTREVISION=   1
 CATEGORIES=	archivers
 MASTER_SITES=   http://files10.rarlab.com/rar/
 DISTNAME=       unrarsrc-3.2.3
