@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	WebMagick
-PORTVERSION=    2.0p4
+PORTVERSION=    2.0
 CATEGORIES=	www graphics
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=     webmagick
-DISTNAME=       ${PORTNAME}-2.0pre4
+#DISTNAME=       ${PORTNAME}-2.0pre4
 
 MAINTAINER=	ache@freebsd.org
 
