@@ -3,10 +3,10 @@
 # Date created:		7 July 1997
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.29 1997/06/08 12:54:59 asami Exp $
+# $Id: Makefile,v 1.30 1997/09/10 08:51:19 asami Exp $
 #
 
-PKGNAME=	jp-mule-wnn6-2.3
+PKGNAME=	ja-mule-wnn6-2.3
 CATEGORIES=	japanese editors
 
 WNN6=		yes

@@ -3,11 +3,11 @@
 # Date created:		7 March 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.8 1996/11/18 10:23:58 asami Exp $
+# $Id: Makefile,v 1.9 1997/09/08 03:33:54 max Exp $
 #
 
 DISTNAME=	less-332
-PKGNAME=	jp-less-332
+PKGNAME=	ja-less-332
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GNU}
 

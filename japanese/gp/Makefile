@@ -3,11 +3,11 @@
 # Date created:		15 April 1997
 # Whom:			Kiriyama Kazuhiko<kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.2 1997/06/29 11:30:39 obrien Exp $
+# $Id: Makefile,v 1.3 1997/07/13 18:49:16 max Exp $
 #
 
 DISTNAME=	GP-2.01jp
-PKGNAME=	jp-gp-2.01
+PKGNAME=	ja-gp-2.01
 CATEGORIES=	japanese print
 MASTER_SITES=	http://www.kamome.or.jp/hueda/GP/ \
 		ftp://green.arailab.dnj.ynu.ac.jp/pub/AraiLab/GP/

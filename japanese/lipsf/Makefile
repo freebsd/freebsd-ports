@@ -3,11 +3,11 @@
 # Date created:		6 Dec 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.1.1.1 1996/12/19 03:36:13 max Exp $
+# $Id: Makefile,v 1.2 1997/04/30 03:18:03 asami Exp $
 #
 
 DISTNAME=	lipsf113
-PKGNAME=	jp-lipsf-1.13c
+PKGNAME=	ja-lipsf-1.13c
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.eos.hokudai.ac.jp/pub/tools/
 

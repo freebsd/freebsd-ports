@@ -3,11 +3,11 @@
 # Date created:        05 February 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/03/03 12:38:01 asami Exp $
 #
 
 DISTNAME=	recjis-1.0
-PKGNAME=	jp-recjis-1.0
+PKGNAME=	ja-recjis-1.0
 CATEGORIES+=    japanese
 MASTER_SITES=   ftp://ftp.leo.chubu.ac.jp/pub/tools/
 DISTFILES=	recjis.tar.gz

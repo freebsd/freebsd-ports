@@ -1,13 +1,13 @@
-# New ports collection makefile for:	gxditview (part of jp-groff)
+# New ports collection makefile for:	gxditview (part of ja-groff)
 # Version required:	1.09+0.98
 # Date created:		14 April 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.5 1996/06/26 22:20:07 gpalmer Exp $
+# $Id: Makefile,v 1.6 1996/11/18 10:23:51 asami Exp $
 #
 
 DISTNAME=	groff-1.09
-PKGNAME=	jp-gxditview-0.98
+PKGNAME=	ja-gxditview-0.98
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_GNU}
 

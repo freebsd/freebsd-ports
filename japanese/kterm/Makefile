@@ -3,11 +3,11 @@
 # Date created:		18 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.12 1996/11/11 10:12:21 max Exp $
+# $Id: Makefile,v 1.13 1996/11/18 09:54:05 asami Exp $
 #
 
 DISTNAME=	kterm-6.2.0
-PKGNAME=	jp-kterm-6.2.0
+PKGNAME=	ja-kterm-6.2.0
 CATEGORIES=	japanese x11
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications

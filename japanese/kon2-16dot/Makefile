@@ -3,11 +3,11 @@
 # Date created:         11 Apr 1997
 # Whom:                 Makoto Matsushita <matusita@jp.freebsd.org>
 #
-# $Id: Makefile,v 1.10 1997/07/10 13:14:50 max Exp $
+# $Id: Makefile,v 1.11 1997/07/21 19:21:03 max Exp $
 #
 
 DISTNAME=	kon2-0.3
-PKGNAME=	jp-kon2-0.3
+PKGNAME=	ja-kon2-0.3
 CATEGORIES=	japanese
 # note kon is only in first directory and fonts are only in second directory
 MASTER_SITES=	ftp://ftp.tut.ac.jp/Linux/Packages/Utils/ \

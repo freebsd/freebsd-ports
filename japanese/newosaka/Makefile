@@ -3,11 +3,11 @@
 # Date created:        20 January 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/03/03 08:46:54 asami Exp $
 #
 
 DISTNAME=	newosaka
-PKGNAME=        jp-newosaka-1.0
+PKGNAME=        ja-newosaka-1.0
 CATEGORIES+=    japanese
 MASTER_SITES=   ftp://ports.jp.freebsd.org/pub/incoming/distfiles/
 DISTFILES=	new-osaka.tar.gz

@@ -3,11 +3,11 @@
 # Date created:		8 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.6 1996/12/18 14:16:23 asami Exp $
+# $Id: Makefile,v 1.7 1997/01/14 07:37:07 asami Exp $
 #
 
 DISTNAME=	xdvi-17
-PKGNAME=	jp-vfxdvi${RESOLUTION}-17
+PKGNAME=	ja-vfxdvi${RESOLUTION}-17
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://bacchus.in.kobe-u.ac.jp/pub/tex/dviware/xdvi17/ \
 		ftp://bacchus.in.kobe-u.ac.jp/pub/tex/dviware/xdvi18/ \

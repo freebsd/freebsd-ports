@@ -3,11 +3,11 @@
 # Date created:			26 May 1997
 # Whom:				Satoshi TAOKA
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/06/24 05:29:02 max Exp $
 #
 
 DISTNAME=	typist2.0
-PKGNAME=	jp-typist-2.0
+PKGNAME=	ja-typist-2.0
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://tuba.csedu.kobe-u.ac.jp/pub/UNIX/
 EXTRACT_SUFX=	.src.tar.gz

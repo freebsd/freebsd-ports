@@ -3,11 +3,11 @@
 # Date created:		23 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.9 1997/07/12 10:53:37 asami Exp $
+# $Id: Makefile,v 1.10 1997/07/14 06:25:59 asami Exp $
 #
 
 DISTNAME=	ghostscript-4.03
-PKGNAME=	jp-vfghostscript-4.03
+PKGNAME=	ja-vfghostscript-4.03
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/ \
 		ftp://i1nws2.fukui-u.ac.jp/pub/TeX/dvipr/ \

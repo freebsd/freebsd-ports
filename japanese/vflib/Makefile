@@ -1,13 +1,13 @@
-# New ports collection makefile for:	jp-vflib
+# New ports collection makefile for:	vflib
 # Version required:	2.22 Patchlevel 9
 # Date created:		10 May 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.7 1997/07/17 15:12:47 max Exp $
+# $Id: Makefile,v 1.8 1997/07/24 20:52:43 max Exp $
 #
 
 DISTNAME=	VFlib-2.22-PL8
-PKGNAME=	jp-vflib-2.22.9
+PKGNAME=	ja-vflib-2.22.9
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://gull.se.hiroshima-u.ac.jp/pub/VFlib/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} VFlib-2.22-Patch9 watanabe-vf.tar.Z

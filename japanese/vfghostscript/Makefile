@@ -3,11 +3,11 @@
 # Date created:		14 May 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.7 1996/12/07 00:20:40 asami Exp $
+# $Id: Makefile,v 1.8 1997/07/13 18:49:20 max Exp $
 #
 
 DISTNAME=	ghostscript2.6.2
-PKGNAME=	jp-vfghostscript-2.6.2
+PKGNAME=	ja-vfghostscript-2.6.2
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.iis.u-tokyo.ac.jp/GNU/ \

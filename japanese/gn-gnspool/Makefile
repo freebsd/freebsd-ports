@@ -3,11 +3,11 @@
 # Date created:				14 Feb. 1997
 # Whom:					Kiroh HARADA <kiroh@kh.rim.or.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/02/15 11:09:03 max Exp $
 #
 
 DISTNAME=	gn-1.35
-PKGNAME=	jp-gn-gnspool-1.35
+PKGNAME=	ja-gn-gnspool-1.35
 CATEGORIES=	japanese news
 MASTER_SITES=	ftp://ftp.omronsoft.co.jp/pub/misc/gn/
 

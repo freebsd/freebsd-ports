@@ -3,11 +3,11 @@
 # Date created:		26 May 1997
 # Whom:			Satoshi TAOKA <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/06/23 12:30:28 max Exp $
 #
 
 DISTNAME=	kcc
-PKGNAME=	jp-kcc-1.0
+PKGNAME=	ja-kcc-1.0
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.eos.hokudai.ac.jp/pub/tools/
 

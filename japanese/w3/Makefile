@@ -3,10 +3,10 @@
 # Date created:		31 December 1996
 # Whom:			MITA Yoshio <mita@ee.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.3 1997/02/15 07:42:32 max Exp $
+# $Id: Makefile,v 1.4 1997/06/10 10:00:46 asami Exp $
 #
 
-PKGNAME=	jp-w3-2.2.26
+PKGNAME=	ja-w3-2.2.26
 CATEGORIES=	www japanese
 FILESDIR=	${.CURDIR}/../../www/w3/files
 PATCHDIR=	${.CURDIR}/../../www/w3/patches

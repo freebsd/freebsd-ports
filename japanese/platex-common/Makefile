@@ -3,11 +3,11 @@
 # Date created:		5 Nov 1995
 # Whom:			Hideaki Ohmon <ohmon@sfc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.14 1997/02/11 18:06:02 max Exp $
+# $Id: Makefile,v 1.15 1997/04/30 03:18:03 asami Exp $
 #
 
 DISTNAME=	platex2e
-PKGNAME=	jp-platex2e-97.02.01
+PKGNAME=	ja-platex2e-97.02.01
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/platex2e/1997-02-01/ \
 		${MASTER_SITE_LOCAL}

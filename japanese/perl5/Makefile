@@ -1,13 +1,13 @@
-# New ports collection makefile for:	jp-perl5
+# New ports collection makefile for:	ja-perl5
 # Version required:	5.004_01
 # Date created:		7 January 1997
 # Whom:			Yoshiro MIHIRA
 #
-# $Id: Makefile,v 1.8 1997/06/23 01:38:27 fenner Exp $
+# $Id: Makefile,v 1.9 1997/08/31 16:20:35 max Exp $
 #
 
 DISTNAME=	perl5.004_01
-PKGNAME=	jp-perl-5.004.01
+PKGNAME=	ja-perl-5.004.01
 CATEGORIES=	japanese perl5
 MASTER_SITES=	ftp://ftp.funet.fi/pub/languages/perl/CPAN/src/5.0/ \
 		ftp://ftp.is.co.za/pub/packages/perl/CPAN/src/5.0/ \
