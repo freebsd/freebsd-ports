@@ -14,7 +14,7 @@ DISTNAME=	sg-${PORTVERSION}
 MAINTAINER=	sobomax@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/include/${PYTHON_VERSION}/Numeric/arrayobject.h:${PORTSDIR}/math/numpy
-LIB_DEPENDS=	gtkextra.10:${PORTSDIR}/x11-toolkits/gtkextra \
+LIB_DEPENDS=	gtkextra.12:${PORTSDIR}/x11-toolkits/gtkextra \
 		xml.5:${PORTSDIR}/textproc/libxml
 RUN_DEPENDS=	${LOCALBASE}/include/${PYTHON_VERSION}/Numeric/arrayobject.h:${PORTSDIR}/math/numpy
 
