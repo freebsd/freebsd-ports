@@ -1,14 +1,23 @@
-Krusader is a File Manager for KDE, patterned after
-old-school managers like Midnight Commander and Norton
-Commander. It features basically all your file-management
-needs, plus extensive archive handling, supporting many
-archive formats, mounted filesystems support, ftp, and
-much much more.
+Krusader is a File Manager for KDE, patterned after old-school managers like 
+Midnight Commander and Norton Commander. It features basically all your 
+file-management needs, plus extensive archive handling, supporting many archive
+formats, mounted filesystems support, ftp, and much much more.
 
-It is (almost) completely customizable, very user friendly,
-fast, and good looking :-)
+List of changes of MAJOR changes from 1.20 version:
+* Creating new files with SHIFT+F4
+* Tabbed - browsing! (click the middle or right mouse button on a folder)
+* a new view dialog, click SHIFT-F3 
+* Panel swapping by Ctrl+U
+* Right click menu, can now "open" multiple files (with the same mimetype)
+* Updates to the search module
+* A new command line widget, with many tweaks (ctrl+enter,ctrl+shift+enter,...)
+* run-in-terminal keeps the terminal open.
+* A new bookmark system is here! courtasy of Jan Halasa
+* In-place renaming (thanks to Heiner Eichmann)
+* New KIO slaves to handle archives.
+* Support for multi-file properties.
+* Krusader now obeys KDE's date time format
 
 WWW: http://krusader.sourceforge.net
 
-Heiner
-h.eichmann@gmx.de
+Heiner (h.eichmann@gmx.de)
