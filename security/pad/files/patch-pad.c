@@ -1,5 +1,5 @@
 --- pad.c.orig	Sun Jul 23 09:14:10 2000
-+++ pad.c	Sun Feb 10 11:15:12 2002
++++ pad.c	Sun Oct  6 15:17:31 2002
 @@ -31,17 +31,17 @@
  #include "pad.h"
  #include "md5.h"
@@ -134,15 +134,17 @@
 +  for (i=0; ofname[i][0] != (char)0; i++)
    {
 -    if ((defined_output) && (lastout == i))
-+    if ((defined_output) && (lastout == i)) {
-       sprintf(buf, outputname);
+-      sprintf(buf, outputname);
 -    else
-+    } else {
-       sprintf(buf, "pad-md5-%s.dat", hexize(digest[i]));
+-      sprintf(buf, "pad-md5-%s.dat", hexize(digest[i]));
 -
 -    if (rename(ofname[i], buf)) /* note: no renaming across filesystems */
 -      fprintf(stderr, "Error renaming: %s\n", strerror(errno));
 -    else 
++    if ((defined_output) && (lastout == i)) {
++      snprintf(buf, sizeof(buf), outputname);
++    } else {
++      snprintf(buf, sizeof(buf), "pad-md5-%s.dat", hexize(digest[i]));
 +    }
 +    if (rename((char *)ofname[i], buf)) { /* note: no renaming across filesystems */
 +      fprintf (stderr,
@@ -174,3 +176,14 @@
                  to its MD5-sum, along with the rest of the random pads.
  
    -s [size]   - The output data will be [size] bytes. If this is less than the
+@@ -325,8 +329,8 @@
+   buf[0] = '\0';
+   for ( j=0 ; j<16 ; j++ )
+   {
+-    sprintf(buf, "%s%c", buf, (hexdigits[digest[j]>>4]));
+-    sprintf(buf, "%s%c", buf, (hexdigits[digest[j]&0xf]));
++    snprintf(buf, sizeof(buf), "%s%c", buf, (hexdigits[digest[j]>>4]));
++    snprintf(buf, sizeof(buf), "%s%c", buf, (hexdigits[digest[j]&0xf]));
+   }
+   return((char *)strdup(buf));
+ }
