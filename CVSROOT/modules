@@ -206,6 +206,7 @@ acroread4	ports/print/acroread4
 acs		ports/cad/acs
 actx		ports/games/actx
 adabroker	ports/devel/adabroker
+adamem		ports/emulators/adamem
 adasockets	ports/net/adasockets
 adcomplain	ports/mail/adcomplain
 add		ports/math/add
