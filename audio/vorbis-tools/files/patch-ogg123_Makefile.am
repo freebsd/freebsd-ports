@@ -1,0 +1,14 @@
+$FreeBSD$
+--- ogg123/Makefile.am.orig	Mon Feb 19 23:27:52 2001
++++ ogg123/Makefile.am	Wed Mar 21 16:04:07 2001
+@@ -3,9 +3,8 @@
+ AUTOMAKE_OPTIONS = foreign
+ 
+ bin_PROGRAMS = ogg123
+-docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
++docdir = $(datadir)/doc/$(PACKAGE)
+ doc_DATA = ogg123rc-example
+-mandir = $(datadir)/man
+ man_MANS = ogg123.1
+ 
+ INCLUDES = @OGG_CFLAGS@ @VORBIS_CFLAGS@ @AO_CFLAGS@
