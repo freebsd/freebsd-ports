@@ -2,7 +2,7 @@ GKrellM volume plugin
 Author:  Sjoerd Simons <Sjoerd@donald-duck.ele.tue.nl>
 WWW: http://gkrellm.luon.net/volume.phtml
 
-A plugin for GKrellM, that let's you control your mixer..
+A plugin for gkrellm 2.0 , that let's you control your mixer..
 
 
 - Hajimu UMEMOTO <ume@FreeBSD.org>
