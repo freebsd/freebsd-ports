@@ -318,7 +318,7 @@ FreeBSD_MAINTAINER=	asami@FreeBSD.org
 # checkpatch	- Do a "patch -C" instead of a "patch".  Note that it may
 #				  give incorrect results if multiple patches deal with
 #				  the same file.
-# checksum		- Use files/md5 to ensure that your distfiles are valid.
+# checksum		- Use distinfo to ensure that your distfiles are valid.
 # checksum-recursive - Run checksum in this port and all dependencies.
 # makesum		- Generate distinfo (only do this for your own ports!).
 # clean		    - Remove ${WRKDIR} and other temporary files used for building.
@@ -495,9 +495,40 @@ FreeBSD_MAINTAINER=	asami@FreeBSD.org
 
 _PREMKINCLUDED=	yes
 
+AWK?=		/usr/bin/awk
+BASENAME?=	/usr/bin/basename
+CAT?=		/bin/cat
+CHMOD?=		/bin/chmod
+CHOWN?=		/usr/sbin/chown
+CP?=		/bin/cp
+ECHO?=		/bin/echo
+EXPR?=		/bin/expr
+FALSE?=		/usr/bin/false
+GREP?=		/usr/bin/grep
+GUNZIP_CMD?=	/usr/bin/gunzip -f
+GZCAT?=		/usr/bin/gzcat
+GZIP?=		-9
+GZIP_CMD?=	/usr/bin/gzip -nf ${GZIP}
+LDCONFIG?=	/sbin/ldconfig
+LN?=		/bin/ln
+MKDIR?=		/bin/mkdir -p
+MV?=		/bin/mv
+RM?=		/bin/rm
+RMDIR?=		/bin/rmdir
+SED?=		/usr/bin/sed
+SETENV?=	/usr/bin/env
+SH?=		/bin/sh
+TR?=		/usr/bin/tr
+TRUE?=		/usr/bin/true
+UNAME?=		/usr/bin/uname
+WHICH?=		/usr/bin/which
+
+# Used to print all the '===>' style prompts - override this to turn them off.
+ECHO_MSG?=		${ECHO}
+
 # Get the architecture
 .if !defined(ARCH)
-ARCH!=	/usr/bin/uname -m
+ARCH!=	${UNAME} -m
 .endif
 
 # Kludge for pre-3.0 systems
@@ -505,12 +536,12 @@ MACHINE_ARCH?=	i386
 
 # Get the operating system type
 .if !defined(OPSYS)
-OPSYS!=	/usr/bin/uname -s
+OPSYS!=	${UNAME} -s
 .endif
 
 # Get the operating system revision
 .if !defined(OSREL)
-OSREL!=	/usr/bin/uname -r | sed -e 's/[-(].*//'
+OSREL!=	${UNAME} -r | ${SED} -e 's/[-(].*//'
 .endif
 
 # Get __FreeBSD_version
@@ -810,7 +841,7 @@ LIB_DEPENDS+=			dps.0:${PORTSDIR}/x11/dgs
 LIB_DEPENDS+=			GL.14:${PORTSDIR}/graphics/Mesa3
 .endif
 XAWVER=					6
-PKG_IGNORE_DEPENDS?=	'(XFree86-3\.3\.6_2|Motif-2\.1\.10)'
+PKG_IGNORE_DEPENDS?=	'(XFree86-3\.3\.6_4|Motif-2\.1\.10)'
 .else
 .if defined(USE_IMAKE)
 BUILD_DEPENDS+=			imake:${PORTSDIR}/devel/imake-4
@@ -1065,36 +1096,6 @@ MOTIFLIB?=	${X11BASE}/lib/libXm.a -L${X11BASE}/lib -lXp
 MOTIFLIB?=	-L${X11BASE}/lib -lXm -lXp
 .endif
 .endif
-
-AWK?=		/usr/bin/awk
-BASENAME?=	/usr/bin/basename
-CAT?=		/bin/cat
-CHMOD?=		/bin/chmod
-CHOWN?=		/usr/sbin/chown
-CP?=		/bin/cp
-ECHO?=		/bin/echo
-EXPR?=		/bin/expr
-FALSE?=		/usr/bin/false
-GREP?=		/usr/bin/grep
-GUNZIP_CMD?=	/usr/bin/gunzip -f
-GZCAT?=		/usr/bin/gzcat
-GZIP?=		-9
-GZIP_CMD?=	/usr/bin/gzip -nf ${GZIP}
-LDCONFIG?=	/sbin/ldconfig
-LN?=		/bin/ln
-MKDIR?=		/bin/mkdir -p
-MV?=		/bin/mv
-RM?=		/bin/rm
-RMDIR?=		/bin/rmdir
-SED?=		/usr/bin/sed
-SETENV?=	/usr/bin/env
-SH?=		/bin/sh
-TR?=		/usr/bin/tr
-TRUE?=		/usr/bin/true
-WHICH?=		/usr/bin/which
-
-# Used to print all the '===>' style prompts - override this to turn them off.
-ECHO_MSG?=		${ECHO}
 
 ALL_TARGET?=		all
 INSTALL_TARGET?=	install
@@ -2384,7 +2385,7 @@ checksum:
 				${ECHO_MSG} ">> No checksum recorded for $$file."; \
 				OK="false"; \
 			elif [ "$$CKSUM2" = "IGNORE" ]; then \
-				${ECHO_MSG} ">> Checksum for $$file is set to IGNORE in md5 file even though"; \
+				${ECHO_MSG} ">> Checksum for $$file is set to IGNORE in distinfo file even though"; \
 				${ECHO_MSG} "   the file is not in the "'$$'"{IGNOREFILES} list."; \
 				OK="false"; \
 			elif ${EXPR} "$$CKSUM2" : ".*$$CKSUM" > /dev/null; then \
@@ -2400,13 +2401,13 @@ checksum:
 				${ECHO_MSG} ">> No checksum recorded for $$file, file is in "'$$'"{IGNOREFILES} list."; \
 				OK="false"; \
 			elif [ "$$CKSUM2" != "IGNORE" ]; then \
-				${ECHO_MSG} ">> Checksum for $$file is not set to IGNORE in md5 file even though"; \
+				${ECHO_MSG} ">> Checksum for $$file is not set to IGNORE in distinfo file even though"; \
 				${ECHO_MSG} "   the file is in the "'$$'"{IGNOREFILES} list."; \
 				OK="false"; \
 			fi; \
 		  done; \
 		  if [ "$$OK" != "true" ]; then \
-			${ECHO_MSG} "Make sure the Makefile and md5 file (${MD5_FILE})"; \
+			${ECHO_MSG} "Make sure the Makefile and distinfo file (${MD5_FILE})"; \
 			${ECHO_MSG} "are up to date.  If you are absolutely sure you want to override this"; \
 			${ECHO_MSG} "check, type \"make NO_CHECKSUM=yes [other args]\"."; \
 			exit 1; \
