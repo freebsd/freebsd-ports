@@ -1,0 +1,12 @@
+K-3D is the free-as-in-freedom 3D modeling, animation, and rendering system
+for GNU/Linux, Posix, and Win32 operating systems. K-3D features a robust,
+object-oriented plugin architecture, designed to scale to the needs of
+professional artists, and is designed from-the-ground-up to generate
+motion-picture-quality animation using RenderMan-compliant render engines.
+We strongly recommend the Aqsis render engine for use with K-3D.
+
+K-3D allows you to create and edit documents in multiple realtime OpenGL
+solid, shaded, texture-mapped views. You can even model, animate, and interact
+with animations while they play back for maximum productivity!
+
+WWW: http://k3d.sourceforge.net/

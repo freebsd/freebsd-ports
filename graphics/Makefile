@@ -186,6 +186,7 @@
     SUBDIR += jpgtn
     SUBDIR += jslice
     SUBDIR += juno-2
+    SUBDIR += k3d
     SUBDIR += kalbum
     SUBDIR += kallery
     SUBDIR += kbarcode
