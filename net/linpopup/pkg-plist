@@ -1,0 +1,18 @@
+bin/linpopup
+bin/LinPopUp
+doc/LinPopUp/AUTHORS
+doc/LinPopUp/BUGS
+doc/LinPopUp/COPYING
+doc/LinPopUp/ChangeLog
+doc/LinPopUp/INSTALL
+doc/LinPopUp/MANUAL
+doc/LinPopUp/NEWS
+doc/LinPopUp/README
+doc/LinPopUp/THANKS
+doc/LinPopUp/TODO
+share/LinPopUp/gtkrc
+share/LinPopUp/pixmaps/little_igloo.xpm
+@dirrm doc/LinPopUp
+@dirrm share/LinPopUp/pixmaps
+@dirrm share/LinPopUp
+@unexec rm -rf /var/db/linpopup

@@ -1,0 +1,6 @@
+#!/bin/sh
+DBDIR=/var/db/linpopup
+
+mkdir -p $DBDIR
+touch $DBDIR/messages.dat
+chmod 666 $DBDIR/messages.dat
