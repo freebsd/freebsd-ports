@@ -1,9 +1,9 @@
---- gwlib/gwthread-pthread.c.orig	Wed Sep  4 18:11:06 2002
-+++ gwlib/gwthread-pthread.c	Sun Jan 19 03:05:30 2003
-@@ -68,6 +68,11 @@
- pthread_key_t tsd_key;
+--- gwlib/gwthread-pthread.c.orig	Thu Aug 12 19:53:30 2004
++++ gwlib/gwthread-pthread.c	Mon Dec 20 00:53:57 2004
+@@ -125,6 +125,11 @@
+ static pthread_key_t tsd_key;
  
- pthread_mutex_t threadtable_lock;
+ static pthread_mutex_t threadtable_lock;
 +/*
 + * Thread creation parameters.
 + */
@@ -12,7 +12,7 @@
  
  static void lock(void)
  {
-@@ -205,6 +210,7 @@
+@@ -263,6 +268,7 @@
  {
      int ret;
      int i;
@@ -20,7 +20,7 @@
  
      pthread_mutex_init(&threadtable_lock, NULL);
  
-@@ -217,6 +223,13 @@
+@@ -275,6 +281,13 @@
          threadtable[i] = NULL;
      }
      active_threads = 0;
@@ -34,7 +34,7 @@
  
      create_threadinfo_main();
  }
-@@ -380,7 +393,7 @@
+@@ -443,7 +456,7 @@
          return -1;
      }
  

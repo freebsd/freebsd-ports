@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kannel
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.4.0
 CATEGORIES=	www
 MASTER_SITES=	http://www.kannel.3glab.org/download/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -15,16 +14,20 @@ DISTNAME=	gateway-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WAP / SMS Gateway
 
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
-
+USE_GNOME=	libxml2
+USE_OPENSSL=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
-CONFIGURE_ARGS=	--with-malloc=native --enable-start-stop-daemon=no
+CONFIGURE_ARGS=	--with-cflags="${CPPFLAGS}" --with-libs="${LDFLAGS}" \
+		--enable-pcre=yes --enable-docs=no --with-malloc=native \
+		--enable-start-stop-daemon=no
 
-MAN1=		seewbmp.1 wmlsc.1 wmlsdasm.1
+MAN1=		mtbatch.1 seewbmp.1 wmlsc.1 wmlsdasm.1
 MAN8=		kannel.8 run_kannel_box.8
+
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 
@@ -33,14 +36,15 @@ BROKEN=		"Does not compile on alpha"
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|-lc_r|${PTHREAD_LIBS:S/"//g}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-pthread||g ; \
+		 s|-lc_r||g ; \
+		 s|-lkse||g' ${WRKSRC}/configure
 
 post-install:
 .for file in gw/wapkannel.conf gw/smskannel.conf
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/etc
 .endfor
-.for file in seewbmp wmlsc wmlsdasm
+.for file in mtbatch seewbmp wmlsc wmlsdasm
 	@${STRIP_CMD} ${PREFIX}/bin/${file}
 .endfor
 .for file in bearerbox run_kannel_box smsbox wapbox
