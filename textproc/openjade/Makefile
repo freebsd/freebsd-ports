@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	openjade
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
+LIB_DEPENDS=	osp.3:${PORTSDIR}/textproc/opensp
 RUN_DEPENDS=	${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog
 
 USE_GMAKE=	YES
@@ -25,11 +26,7 @@ PLIST_SUB=	MKCATALOG=${MKCATALOG}
 
 MKCATALOG=	${PREFIX}/sbin/mkcatalog
 
-post-patch:
-	@${CP} ${PREFIX}/bin/libtool ${WRKSRC}/libtool
-
 post-install:
-	@${MKDIR} ${PREFIX}/share/sgml/openjade
 	@${INSTALL_DATA} ${WRKSRC}/dsssl/* ${PREFIX}/share/sgml/openjade
 	@${MKCATALOG} -q install openjade
 
