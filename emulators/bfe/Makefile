@@ -16,7 +16,6 @@ MAINTAINER=	greid@FreeBSD.org
 COMMENT=	X11 GUI for the bochs debugger (revision 2)
 
 RUN_DEPENDS=	bochs:${PORTSDIR}/emulators/bochs
-BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
