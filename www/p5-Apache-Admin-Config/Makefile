@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Apache-Admin-Config
-PORTVERSION=	0.91
+PORTVERSION=	0.92
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A perl module to manipulate Apache configuration files
 
 PERL_CONFIGURE=	yes
