@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	njam
-PORTVERSION=	1.00
-PORTREVISION=	2
+PORTVERSION=	1.21
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,6 +17,7 @@ COMMENT=	Fast paced multiplayer pac-man clone
 
 USE_GMAKE=	yes
 USE_SDL=	mixer image net sdl
+USE_REINPLACE=	yes
 DOC_FILES=	assassin.gif award-2.gif cookie.gif doc-editor.html \
 		doc.html doc2.html door.gif freezer.gif ghactive.gif \
 		ghinactive.gif hunter.gif invisible.gif juice.gif \
@@ -25,6 +25,9 @@ DOC_FILES=	assassin.gif award-2.gif cookie.gif doc-editor.html \
 		teleport.gif thinline.gif trap.gif
 
 post-install:
+	${CP} ${FILESDIR}/njam.sh ${WRKDIR}/njam.sh
+	${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKDIR}/njam.sh
+	${INSTALL_SCRIPT} ${WRKDIR}/njam.sh ${PREFIX}/bin/njam
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/html/* ${DOCSDIR}
