@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	netscript
-PORTVERSION=	1.6.2
+PORTVERSION=	1.6.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.realhalo.org/netscript/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 ALL_TARGET=	bsd
 
