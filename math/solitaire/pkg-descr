@@ -1,0 +1,9 @@
+Solitaire is an encryption system based on a deck of cards by Bruce
+Schneier.  Although it is designed to be worked out by a human, it can
+work on computers.  This is the reference implementation programmed in
+Perl.  The program itself is installed as 'solitaire', and the source
+code and test vectors are installed in share/doc/solitaire.
+
+Please read the web site below before relying on this for real security.
+
+WWW: http://www.counterpane.com/solitaire.html

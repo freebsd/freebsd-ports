@@ -102,6 +102,7 @@
     SUBDIR += simpack
     SUBDIR += slsc
     SUBDIR += snns
+    SUBDIR += solitaire
     SUBDIR += spar
     SUBDIR += spin
     SUBDIR += ss
