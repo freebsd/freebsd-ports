@@ -3,6 +3,8 @@ share/emacs/site-lisp/wget/w3-wget.el
 share/emacs/site-lisp/wget/w3m-wget.el
 share/emacs/site-lisp/wget/wget-sysdep.el
 @dirrm share/emacs/site-lisp/wget
+%%PORTDOCS%%share/doc/emacs-wget/README
 %%PORTDOCS%%share/doc/emacs-wget/README.ja
+%%PORTDOCS%%share/doc/emacs-wget/USAGE
 %%PORTDOCS%%share/doc/emacs-wget/USAGE.ja
 %%PORTDOCS%%@dirrm share/doc/emacs-wget
