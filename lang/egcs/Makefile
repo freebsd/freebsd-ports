@@ -22,6 +22,8 @@ COMMENT=	EGCS enhanced version of the GNU compiler suite
 USE_BZIP2=	yes
 ONLY_FOR_ARCHS=	i386 alpha
 
+DEPRECATED=	"This port is no longer in use by anything in the ports collection and will be removed in the future.  Use a later release of gcc instead"
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
