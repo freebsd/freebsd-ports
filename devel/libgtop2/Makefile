@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libgtop2
-PORTVERSION=	2.0.1
-PORTREVISION=	3
+PORTVERSION=	2.0.2
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.0
@@ -15,7 +14,7 @@ DISTNAME=	libgtop-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	GNOME 2.0 top library
+COMMENT=	GNOME 2 top library
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
@@ -25,7 +24,7 @@ USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
 	install-info --section="Programming \& development tools" \
