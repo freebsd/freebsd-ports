@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	XNap
-PORTVERSION=	2.5.r2
 CATEGORIES=	net audio java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
+DISTVERSION=	2.5r3
 #DISTNAME=	${PORTNAME:L}-${PORTVERSION:S/.p/-pre/:S/.b/-beta/}
-DISTNAME=	xnap-2.5r2
+DISTNAME=	${PORTNAME:L}-${DISTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A pure java napster client; also, supports OpenNap & giFT (FastTrack)
@@ -21,7 +21,7 @@ NO_BUILD=	yes
 NO_BUILD_DEPENDS_JAVA=	yes
 PLIST_SUB=	JAR_DIR=${JAR_DIR}
 
-JAVAVM=		${LOCALBASE}/bin/javavm
+JAVAVM=		${LOCALBASE}/bin/java
 JAR_DIR=	share/java/jar/${PORTNAME}
 
 DOC_FILES=	AUTHORS COPYING COPYING.LIB NEWS README \
@@ -29,6 +29,7 @@ DOC_FILES=	AUTHORS COPYING COPYING.LIB NEWS README \
 
 post-patch:
 	@${SED} -e "s|%%JAR_DIR%%|${JAR_DIR}|;s|%%JAVAVM%%|${JAVAVM}|; \
+		s|%%JAVA_VERSION%%|${USE_JAVA}|; \
 		s|%%PREFIX%%|${PREFIX}|" \
 		${FILESDIR}/wrapper.sh > ${WRKDIR}/wrapper.sh
 
