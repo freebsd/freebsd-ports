@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	calife
-PORTVERSION=	2.8.4c
+PORTVERSION=	2.8.4d
 CATEGORIES=	security
 MASTER_SITES=	ftp://postfix.eu.org/pub/calife/
 
-MAINTAINER=	thomas@cuivre.fr.eu.org
+MAINTAINER=	thomas@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	"--with-etcdir=$(PREFIX)/etc"
