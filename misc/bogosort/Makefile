@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	bogosort
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	misc
 MASTER_SITES=	http://www.lysator.liu.se/~qha/bogosort/ \
 		ftp://l82.ryd.student.liu.se/pub/unix/bogosort/
 DISTNAME=	${PORTNAME}
+DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	roam@FreeBSD.org
 
