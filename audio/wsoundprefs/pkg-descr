@@ -1,0 +1,13 @@
+This utility allows you to configure wmsound for Window Maker. It provides 
+a browse list for selecting the SoundSets and the Sounds that are installed. 
+It allows you to save your own SoundSets and load them or other preconfigured 
+SoundSets.
+
+It is similar in form and function to WPrefs that is installed with 
+Window Maker. 
+
+To run it, enter the following command:
+${X11BASE}/GNUstep/Apps/WSoundPrefs.app/WSoundPrefs
+
+The following icon is recommended for the dock or clip of Window Maker:
+${X11BASE}/GNUstep/Apps/WSoundPrefs.app/WSoundPrefs.tiff
