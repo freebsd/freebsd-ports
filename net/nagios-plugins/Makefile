@@ -32,5 +32,5 @@ pre-fetch:
 
 post-clean:
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
-	
+
 .include <bsd.port.mk>

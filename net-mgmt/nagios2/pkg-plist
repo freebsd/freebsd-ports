@@ -40,6 +40,7 @@ share/netsaint/docs/developer/xrd.html
 share/netsaint/docs/developer/xsd.html
 share/netsaint/docs/distributed.html
 share/netsaint/docs/downtime.html
+share/netsaint/docs/embeddedperl.html
 share/netsaint/docs/escalations.html
 share/netsaint/docs/eventhandlers.html
 share/netsaint/docs/extcommands.html
@@ -95,7 +96,6 @@ share/netsaint/docs/makehtml.html
 share/netsaint/docs/networkoutages.html
 share/netsaint/docs/networkreachability.html
 share/netsaint/docs/notifications.html
-share/netsaint/docs/oldplugins.html
 share/netsaint/docs/parallelization.html
 share/netsaint/docs/passivechecks.html
 share/netsaint/docs/perfdata.html
@@ -120,7 +120,7 @@ share/netsaint/docs/xdata-db.html
 share/netsaint/images/ack.gif
 share/netsaint/images/active.gif
 share/netsaint/images/bsd_logofullsize.gif
-share/netsaint/images/bsd_sblogo.gif 
+share/netsaint/images/bsd_sblogo.gif
 share/netsaint/images/command.gif
 share/netsaint/images/comment.gif
 share/netsaint/images/config.gif
