@@ -1,0 +1,4 @@
+lib/%%PYTHON_VERSION%%/site-packages/_xmms.so
+lib/%%PYTHON_VERSION%%/site-packages/xmms.py
+lib/%%PYTHON_VERSION%%/site-packages/xmms.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xmms.pyo

@@ -172,6 +172,7 @@
     SUBDIR += pimp3
     SUBDIR += play
     SUBDIR += playmidi
+    SUBDIR += py-xmms
     SUBDIR += pysol-sound-server
     SUBDIR += quelcom
     SUBDIR += radio
