@@ -1,0 +1,22 @@
+@exec echo "Be sure to edit %D/bin/Pnews and %D/bin/newsetup to set the Distribution codes"
+@cwd /usr/local
+bin/Pnews
+bin/Rnmail
+bin/newsetup
+bin/newsgroups
+bin/nntplist
+bin/trn
+bin/trn-artchk
+lib/trn/INIT
+lib/trn/Pnews.header
+lib/trn/Speller
+lib/trn/filexp
+lib/trn/makedir
+lib/trn/mbox.saver
+lib/trn/newsnews
+lib/trn/norm.saver
+man/man1/trn.1
+man/man1/Pnews.1
+man/man1/Rnmail.1
+man/man1/newsetup.1
+man/man1/newsgroups.1

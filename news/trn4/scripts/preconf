@@ -1,0 +1,273 @@
+#!/bin/sh -
+#
+#	pre-configure script for Trn port to FreeBSD 2.0
+#	$Id: preconf,v 1.2 1994/10/21 00:00:00 smace Exp $
+
+PortsDir=$1
+  CurDir=$2
+  WrkSrc=$3
+
+echo ""
+echo "Trn comes with a nice Configure script to help you get things setup."
+echo "Some of the things this script asks you may be a little misleading."
+echo "I (the porter) configured Trn to be as generic as possible."
+echo "It assumes a few things."
+echo "1. You are accessing news via NNTP, you must set the NNTPSERVER"
+echo "   environment variable"
+echo "2. You have access to the threads databases (either xover or xthread)"
+echo "3. You have a inews program, otherwise you cannot post."
+echo "   The inews program can be obtained from the inn port."
+echo ""
+
+echo ""
+echo "You now have two possible choices:"
+echo ""
+echo " 1) use my configuration as default, run Configure on top of it."
+echo " 2) run Configure from scratch."
+echo ""
+echo "Due to a check done iside the Trn Configure script, I cannot run"
+echo "it automagically.  If you want to pick up the default configura-"
+echo "tion, simply press ENTER each time the script asks you anything."
+echo ""
+echo "With either choice, you will want to the the organization to match"
+echo "your site.  Also you will want to set your distribution codes"
+echo ""
+echo -n "Your choice [1]: "
+read foo
+
+if [ ! ${foo} ] ; then
+	foo=1
+fi
+
+if [ ${foo} -eq 1 ] ; then
+	#DON'T ALTER INDENTATION
+	cat > ${WrkSrc}/config.sh << 'EOF'
+#!/bin/sh
+#
+# This file was produced by running the Configure script. It holds all the
+# definitions figured out by Configure. Should you modify one of these values,
+# do not forget to propagate your changes by running "Configure -der". You may
+# instead choose to run each of the .SH files by yourself, or "Configure -S".
+#
+
+# Configuration time: Sat Oct 22 02:47:18 MDT 1994
+# Configured by: smace
+# Target system: freebsd metal.neosoft.com 2.0.1-development freebsd 2.0.1-development #0: fri oct 21 16:48:01 mdt 1994 root@metal.neosoft.com:/usr/src/sys/compile/metal i386 
+
+d_bsd='define'
+d_eunice='undef'
+d_xenix='undef'
+eunicefix=':'
+Mcc='Mcc'
+awk='awk'
+basename='basename'
+bash='bash'
+cat='cat'
+cp='cp'
+cpp='cpp'
+csh='csh'
+date='date'
+diff='diff'
+echo='echo'
+ed='ed'
+egrep='egrep'
+expr='expr'
+grep='grep'
+inews='inews'
+ispell='ispell'
+ksh='ksh'
+less='less'
+lint=''
+mail='mail'
+metamail='metamail'
+mhn='mhn'
+mkdir='mkdir'
+more='more'
+munpack='munpack'
+mv='mv'
+nroff='nroff'
+pg='pg'
+rm='rm'
+rmail='rmail'
+sed='sed'
+sendmail='sendmail'
+smail='smail'
+sort='sort'
+spell='spell'
+tail='tail'
+test='test'
+tr='tr'
+uname='uname'
+uniq='uniq'
+uuname='uuname'
+vi='vi'
+vspell=''
+who=''
+hint='previous'
+myuname='freebsd metal.neosoft.com 2.0.1-development freebsd 2.0.1-development #0: fri oct 21 16:48:01 mdt 1994 root@metal.neosoft.com:/usr/src/sys/compile/metal i386 '
+srcdir='.'
+vincludes=''
+vpath='.'
+Id='$Id'
+Log='$Log'
+active='none'
+acttimes='nntp'
+d_acttimes='define'
+myactive='.falseactive'
+bin='/usr/local/bin'
+binexp='/usr/local/bin'
+installbin='/usr/local/bin'
+cc='cc'
+ccflags=''
+cppflags=''
+ldflags=''
+lkflags=''
+optimize='-O'
+cf_by='smace'
+cf_time='Sat Oct 22 02:47:18 MDT 1994'
+contains='grep'
+cpplast='-'
+cppminus='-'
+cpprun='cc -E'
+cppstdin='cc -E'
+d_ftime='undef'
+aphostcmd='/bin/hostname'
+d_gethname='define'
+d_phostcmd='define'
+d_uname='undef'
+d_getpwent='define'
+d_getcwd='undef'
+d_getwd='define'
+d_havetlib='define'
+termlib='-ltermcap'
+d_ignoreorg='undef'
+d_internet='define'
+d_memcmp='define'
+d_memcpy='define'
+d_memset='define'
+d_mimeshow='undef'
+d_mimestore='undef'
+mimeshow="none"
+mimestore="none"
+d_newsadm='undef'
+newsadmin='root'
+d_nntp='define'
+d_xdata='define'
+servername='no default'
+d_nolnbuf='undef'
+d_normsig='define'
+jobslib=''
+d_novoid='undef'
+void=''
+d_portable='define'
+d_rdchk='undef'
+d_rename='define'
+d_sigblock='define'
+d_sighold='undef'
+d_sizet='undef'
+d_strccmp='define'
+d_strchr='define'
+d_strftime='define'
+strftimec=''
+strftimeo=''
+d_libndir='undef'
+d_usendir='undef'
+libndir=''
+ndirc=''
+ndiro=''
+d_vfork='define'
+d_voidsig='define'
+signal_t='void'
+defeditor='/usr/bin/vi'
+filexp='/usr/local/lib/trn/filexp'
+d_dirnamlen=''
+i_dirent='define'
+i_ptem='undef'
+i_stdlib='define'
+i_string='define'
+strings='/usr/include/string.h'
+i_sysdir='define'
+d_voidtty=''
+i_bsdioctl=''
+i_sysfilio='define'
+i_sysioctl='define'
+i_syssockio=''
+i_sysndir='undef'
+i_sgtty='undef'
+i_termio='undef'
+i_termios='define'
+i_systime='define'
+i_time='undef'
+i_unistd='define'
+i_vfork='undef'
+ispell_options=''
+ispell_prg='none'
+libc='/usr/lib/libc.so.2.0'
+plibpth='/usr/ccs/lib /usr/lib /usr/ucblib /usr/local/lib'
+xlibpth='/usr/lib/386 /lib/386'
+libs=' '
+citydist='none'
+cntrydist='none'
+contdist='none'
+locdist='none'
+multistatedist='none'
+orgdist='none'
+statedist='none'
+mailer='/usr/sbin/sendmail'
+mailfile='/var/mail/%L'
+installmansrc='/usr/local/man/man1'
+manext='1'
+mansrc='/usr/local/man/man1'
+mansrcexp='/usr/local/man/man1'
+mboxchar='F'
+c=''
+n='-n'
+d_berknames='define'
+d_passnames='define'
+d_usgnames='undef'
+nametype='bsd'
+inewsloc='inews'
+newslib='/tmp'
+newslibexp='/tmp'
+newsspool='/tmp'
+orgname='none'
+package='trn'
+spackage='Trn'
+pager='/usr/bin/more'
+phost='.'
+phostcmd='hostname'
+prefshell='/bin/csh'
+installprivlib='/usr/local/lib/trn'
+privlib='/usr/local/lib/trn'
+privlibexp='/usr/local/lib/trn'
+rootid='0'
+sharpbang='#!'
+shsharp='true'
+spitshell='cat'
+startsh='#!/bin/sh'
+sysman='/usr/share/man/man1'
+d_usemt='define'
+d_useov='define'
+overviewdir='/tmp'
+threaddir='/tmp'
+trn_init='TRUE'
+trn_select='TRUE'
+nm_opt=''
+runnm='true'
+usenm='true'
+incpath=''
+mips=''
+mips_type=''
+usrinc='/usr/include'
+PATCHLEVEL="Version: 3.5"
+CONFIG=true
+EOF
+
+fi	# choice = 1
+
+cd ${WrkSrc}
+sh Configure 
+cd ${CurDir}
+
+exit 0
+# END
