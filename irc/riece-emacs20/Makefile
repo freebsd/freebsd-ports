@@ -1,12 +1,10 @@
-# New ports collection makefile for:	liece (for emacs20)
-# Date Created:		9 Mar 2001
-# Whom:			Yoichi NAKAYAMA <yoichi@eken.phys.nagoya-u.ac.jp>
+# New ports collection makefile for:	riece-emacs20
+# Date created: 	30 May 2004
+# Whom:			KIMURA Yasuhiro <yasu@utahime.org>
 #
 # $FreeBSD$
-#
 
-
-MASTERDIR=	${.CURDIR}/../liece
+MASTERDIR=	${.CURDIR}/../riece
 
 EMACS_PORT_NAME=	emacs20
 
