@@ -8,7 +8,7 @@
 PORTNAME=	xmlscan
 PORTVERSION=	0.0.10
 CATEGORIES=	textproc ruby
-MASTER_SITES=	http://www.blue.sky.or.jp/atelier/ruby/
+MASTER_SITES=	http://www.blue.sky.or.jp/atelier/ruby/xmlscan/old/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
