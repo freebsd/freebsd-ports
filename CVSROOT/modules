@@ -10263,6 +10263,7 @@ tracker		ports/audio/tracker
 tractorgen	ports/games/tractorgen
 trafd		ports/net-mgmt/trafd
 trafshow	ports/net/trafshow
+trafshow4	ports/net/trafshow4
 traindirector	ports/games/traindirector
 tramp		ports/net/tramp
 tramp-emacs20	ports/net/tramp-emacs20
