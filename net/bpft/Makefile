@@ -5,11 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	bpft
-PORTVERSION=	4.0
+PORTVERSION=	4.20030301
 CATEGORIES=	net
-MASTER_SITES=	http://bpft.by.ru/ \
-		ftp://vampiro.rootshell.ru/pub/FreeBSD/distfiles/
-EXTRACT_SUFX=	_29-07-2002.tgz
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		ftp://rusunix.org/pub/FreeBSD/distfiles/
+MASTER_SITE_SUBDIR=bpft4
+DISTNAME=	bpft4-latest
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	vampiro@rusunix.org
 COMMENT=	The BPF Traffic collector
@@ -33,9 +35,5 @@ post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/WhatsNew ${DOCSDIR}
-	${STRIP_CMD} ${PREFIX}/sbin/trafd
-	${STRIP_CMD} ${PREFIX}/sbin/trafstatd
-	${STRIP_CMD} ${PREFIX}/bin/trafstat
-	${STRIP_CMD} ${PREFIX}/bin/traflog
 
 .include <bsd.port.mk>
