@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=       sitecopy-0.8.0
+DISTNAME=       sitecopy-0.8.1
 CATEGORIES=	www
 MASTER_SITES=   http://www.lyra.org/sitecopy/
 
