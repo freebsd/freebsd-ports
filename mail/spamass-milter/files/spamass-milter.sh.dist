@@ -10,6 +10,8 @@ start)
 	then
 		"${DAEMON}" "${SOCKET}" &
 		echo $! > "${PIDFILE}"
+		sleep 1
+		kill -HUP `head -1 /var/run/sendmail.pid`
 		echo -n ' spamass-milter'
 	fi
 ;;
@@ -19,6 +21,8 @@ stop)
 		read -r pid junk < "${PIDFILE}"
 		kill ${pid}
 		rm -f "${SOCKET}" "${PIDFILE}"
+		sleep 1
+		kill -HUP `head -1 /var/run/sendmail.pid`
 		echo -n ' spamass-milter'
 	fi
 ;;
