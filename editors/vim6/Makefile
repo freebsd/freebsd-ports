@@ -4,7 +4,7 @@
 # Date created:         Sat June 29, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.38 1999/04/29 02:39:24 obrien Exp $
+# $Id: Makefile,v 1.39 1999/07/14 18:45:19 obrien Exp $
 #
 
 DISTNAME=	vim-5.3
@@ -32,10 +32,11 @@ PATCH_DIST_ARGS=	-d ${WRKDIR}/${DISTNAME} --forward --quiet -E ${PATCH_DIST_STRI
 MAKE_FLAGS=	CONF_ARGS="--prefix=${PREFIX} --with-tlib=termlib" -f
 ALL_TARGET=	#
 MAN1=		vim.1 xxd.1 ectags.1
-MLINKS=		vim.1 gvim.1   vim.1 gview.1  \
-		vim.1 rgvim.1  vim.1 rgview.1  vim.1 rvim.1  vim.1 rview.1
+MLINKS=		vim.1 rvim.1  vim.1 rview.1
 
 .if !defined(LITE)
+MLINKS+=	vim.1 gvim.1  vim.1 gview.1  vim.1 rgvim.1  vim.1 rgview.1  
+
 MAKE_FLAGS:=	CONF_OPT_MAX="--enable-max-features" ${MAKE_FLAGS}
 
 .if defined(HAVE_MOTIF)
@@ -50,6 +51,7 @@ MAKE_FLAGS:=	CONF_OPT_PERL="--enable-perlinterp --enable-tclinterp --enable-csco
 .endif
 
 .else	# LITE
+PLIST=		${WRKDIR}/PLIST.nogui
 MAKE_FLAGS:=	CONF_OPT_MAX="--enable-min-features" ${MAKE_FLAGS}
 MAKE_FLAGS:=	CONF_OPT_GUI="--enable-gui=no --without-x" ${MAKE_FLAGS}
 MAKE_FLAGS:=	CONF_OPT_PERL="--disable-perlinterp --disable-tclinterp" ${MAKE_FLAGS}
@@ -57,9 +59,12 @@ MAKE_FLAGS:=	CONF_OPT_PERL="--disable-perlinterp --disable-tclinterp" ${MAKE_FLA
 
 pre-build:
 	@(cd ${WRKSRC}; ${MAKE} distclean)
+	@${SED} -e '/gvi/d' ${PKGDIR}/PLIST > ${WRKDIR}/PLIST.nogui
 
 post-install:
+.if !defined(LITE)
 	[ -e ${PREFIX}/bin/gvim ] || ${LN} -s ${PREFIX}/bin/vim ${PREFIX}/bin/gvim
+.endif
 	@${RM} -f ${PREFIX}/man/man1/etags.1
 	@${MV} ${PREFIX}/man/man1/ctags.1 ${PREFIX}/man/man1/ectags.1
 	@${LN} -sf ${PREFIX}/man/man1/ectags.1.gz ${PREFIX}/man/man1/etags.1.gz
