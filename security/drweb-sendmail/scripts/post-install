@@ -1,21 +1,29 @@
 #!/bin/sh
 ex=0
-if ! id -u drweb > /dev/null 2>&1; then
-  echo "You need an account \"drweb\" to install this package."
-  echo "Please add it by hand (try \"man vipw\") and try again."
-  echo ""
-  echo "An example /etc/master.passwd entry is:"
-  echo "drweb:*:426:426::0:0:Dr.Web Scanner:/nonexistent:/sbin/nologin"
-  echo ""
-  ex=1
+USER=drweb
+GROUP=${USER}
+UID=426
+GID=${UID}
+
+if ! pw group show "${GROUP}" 2>/dev/null 1>&2; then
+	if pw groupadd ${GROUP} -g ${GID}; then
+		echo "Added group \"${GROUP}\"."
+	else
+		echo "Adding group \"${GROUP}\" failed..."
+		ex=1
+	fi
 fi
-if ! grep -q "^drweb:" /etc/group; then
-  echo "You need a group \"drweb\" to install this package."
-  echo ""
-  echo "An example /etc/group entry is:"
-  echo "drweb:*:426:"
-  echo ""
-  ex=1
+
+if ! pw user show "${USER}" 2>/dev/null 1>&2; then
+	if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
+		-s "/sbin/nologin" -d "/nonexistent" -c "Dr. Web Scanner"
+	then
+		echo "Added user \"${USER}\"."
+	else
+		echo "Adding user \"${USER}\" failed..."
+		ex=1
+	fi
 fi
+
 [ "$ex" = "1" ] && exit 1
 exit 0
