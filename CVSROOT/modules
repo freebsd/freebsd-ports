@@ -4752,6 +4752,7 @@ openoffice-pl	ports/editors/openoffice-pl
 openoffice-pt	ports/editors/openoffice-pt
 openoffice-se	ports/editors/openoffice-se
 openoffice-tr	ports/editors/openoffice-tr
+openoffice-zh_TW	ports/chinese/openoffice-zh_TW
 openquicktime	ports/graphics/openquicktime
 opensched	ports/textproc/opensched
 openslp		ports/net/openslp
