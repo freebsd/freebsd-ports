@@ -7,6 +7,7 @@
 
 PORTNAME=	portupgrade
 PORTVERSION=	20020213.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.iDaemons.org/distfiles/
@@ -54,6 +55,9 @@ INSTALL_TARGET=		install
 .if !defined(NOPORTDOCS)
 INSTALL_TARGET+=	install-doc
 .endif
+
+post-patch:
+	${RUBY} -i.orig -ne '/ p / or print' ${WRKSRC}/bin/portcvsweb
 
 post-install:
 	if [ ! -f ${PREFIX}/etc/pkgtools.conf ]; then \
