@@ -1,2 +1,4 @@
-MD5 (PyKDE-3.3.2-3.tar.gz) = 1df179c05b7d296e88e8f04d9a384522
-MD5 (PyQt-x11-gpl-3.4.tar.gz) = 1a61c55ad716f20f52883740c578c352
+MD5 (PyKDE-3.11rc1.tar.gz) = ad113efa838c79f262212d1795485f22
+SIZE (PyKDE-3.11rc1.tar.gz) = 1019499
+MD5 (PyQt-x11-gpl-3.11.tar.gz) = 78d0ef29f57d7efd1d87f9a24fc25f1e
+SIZE (PyQt-x11-gpl-3.11.tar.gz) = 757652
