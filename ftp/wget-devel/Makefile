@@ -42,6 +42,8 @@ MAN1=		wget.1
 post-patch:
 # made by broken KAME patch. Already contacted.
 	@${RM} -f ${WRKSRC}/po/zh.po*
+# we don't need to run autoconf.
+	${TOUCH} ${WRKSRC}/configure
 
 pre-build:
 	@${RM} -f ${WRKSRC}/doc/wget.info*
