@@ -1,0 +1,33 @@
+--- Makefile.orig	Thu May 15 09:07:10 2003
++++ Makefile	Thu May 15 09:08:24 2003
+@@ -1,13 +1,13 @@
+ # Makefile for phoon
+ 
+-BINDIR =	/usr/local/bin
+-MANDIR =	/usr/local/man/man1
++BINDIR =	${PREFIX}/bin
++MANDIR =	${MANPREFIX}/man/man1
+ 
+ DEFINES =	-DOS_BSD
+ #DEFINES =	-DOS_SYSV
+ 
+-CC =		gcc
+-CFLAGS =	-O $(DEFINES)
++CC ?=		gcc
++CFLAGS	?=	${CFLAGS}	
+ 
+ LDFLAGS =	-s
+ 
+@@ -15,10 +15,10 @@
+ all:		phoon
+ 
+ phoon:		phoon.o date_parse.o astro.o
+-	$(CC) $(LDFLAGS) -o phoon phoon.o date_parse.o astro.o -lm
++	${CC} $(LDFLAGS) -o phoon phoon.o date_parse.o astro.o -lm
+ 
+ .c.o:
+-	$(CC) $(CFLAGS) -c $<
++	${CC} $(CFLAGS) -c $<
+ 
+ date_parse.o:	date_parse.h
+ astro.o:	astro.h
