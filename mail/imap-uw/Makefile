@@ -11,10 +11,8 @@ PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/%SUBDIR%/ \
-		http://www.freenix.no/~anders/%SUBDIR%/ \
-		ftp://ftp.funet.fi/pub/mirrors/ftp.cac.washington.edu/mail/%SUBDIR%/ \
-		http://mirror.nucba.ac.jp/mirror/imap/%SUBDIR%/ \
-		ftp://ftp.uni-halle.de/pub/mail/pine/%SUBDIR%/
+		http://atreides.freenix.no/~anders/%SUBDIR%/ \
+		ftp://ftp.funet.fi/pub/mirrors/ftp.cac.washington.edu/mail/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
 PKGNAMESUFFIX=	-uw
 DISTNAME=	imap-2001a
