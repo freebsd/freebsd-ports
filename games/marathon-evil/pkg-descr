@@ -1,0 +1,11 @@
+This port contains the Marathon: Evil files, converted to run on
+Aleph One.  The Aleph One application itself is in the `alephone' port.
+
+Marathon: Evil is a third-party scenario package with all-new monsters,
+maps, sounds, and so on.  This particular port is a conversion of
+the original Marathon: Evil to run on Aleph One/SDL.
+
+Bruce A. Mah
+bmah@freebsd.org
+
+WWW: http://bighouse.bungie.org/evil/
