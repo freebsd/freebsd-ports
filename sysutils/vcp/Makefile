@@ -7,9 +7,10 @@
 #
 
 PORTNAME=	vcp
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://members.optusnet.com.au/~dbbryan/vcp/
+MASTER_SITES=	http://members.iinet.net.au/~lynx/vcp/ \
+		http://members.optusnet.com.au/~dbbryan/vcp/
 
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Copy files in curses interface

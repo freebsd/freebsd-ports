@@ -1,7 +1,7 @@
 vcp copies files and directories in a curses interface,
 and behaves much like cp.
 
-WWW:		http://members.optusnet.com.au/~dbbryan/vcp/
+WWW:		http://members.iinet.net.au/~lynx/vcp
 AUTHOR:		Daniel Bryan <so1o@bsdmail.com>
 
        - Michael L. Hostbaek
