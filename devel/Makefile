@@ -345,6 +345,7 @@
     SUBDIR += libafterbase
     SUBDIR += libargparse
     SUBDIR += libassa
+    SUBDIR += libassetml
     SUBDIR += libast
     SUBDIR += libavl
     SUBDIR += libbonobo

@@ -1,0 +1,11 @@
+--- configure.orig	Thu Dec  4 12:51:13 2003
++++ configure	Thu Dec  4 12:52:04 2003
+@@ -11645,7 +11646,7 @@
+ 
+ 
+ cat >>confdefs.h <<_ACEOF
+-#define ASSETML_DIR "${myprefix}/${DATADIRNAME}/${ASSETML_DIR}"
++#define ASSETML_DIR "${myprefix}/${DATADIRNAME}/gnome/${ASSETML_DIR}"
+ _ACEOF
+ 
+ 

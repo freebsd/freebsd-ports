@@ -1,0 +1,6 @@
+This is a library based on an XML file format that is used to share
+and reuse content like image and audio file.
+Application using this library can query files on their system that
+provides an assetml xml file description.
+
+WWW: http://www.ofset.org/assetml/
