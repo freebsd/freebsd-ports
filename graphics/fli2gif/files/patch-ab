@@ -1,0 +1,39 @@
+--- fli2gif.C.orig	Tue Jul 29 20:05:27 1997
++++ fli2gif.C	Thu Jan 29 11:27:08 1998
+@@ -43,7 +43,9 @@
+ // ******************
+ #include <stdio.h>
+ #include <stdlib.h>
+-#include <malloc.h>
++#ifndef __STDC__
++# include <malloc.h>
++#endif
+ #include <string.h>
+ #if defined(__TURBOC__) || defined(_MSC_VER)
+     #include <conio.h>
+@@ -112,7 +114,7 @@
+     // []----------------[]
+     // |  Initialization  |
+     // []----------------[]
+-    printf("FLI2GIF.EXE -- Automatic Flic to Animated GIF convertor, v1.1\n");
++    printf("FLI2GIF -- Automatic Flic to Animated GIF convertor, v1.1\n");
+     printf("   by JL Enterprises, 1996.  (Compiled with "
+         #if defined(__TURBOC__)
+             "Borland"
+@@ -125,13 +127,15 @@
+         #endif
+         #if defined(_Windows)
+             " for Windows"
++	#elif defined(__FreeBSD__)
++	    " for FreeBSD"
+         #elif defined(_SCO_DS)
+             " for SCO OpenServer 5"
+         #elif defined(__USLC__)
+             " for SCO UnixWare"
+         #elif defined(__MSDOS__) || defined(_DOS)
+             " for MS-DOS"
+-        #endif    
++        #endif
+         ")\n\n");
+     {
+         int gotflic = FALSE, gotgif = FALSE;

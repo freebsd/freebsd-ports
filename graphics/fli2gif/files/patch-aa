@@ -1,0 +1,23 @@
+--- Makefile.orig	Thu Feb 20 21:28:59 1997
++++ Makefile	Thu Jan 29 11:27:08 1998
+@@ -1,16 +1,16 @@
+ all: fli2gif
+ 
+ fli2gif: fliplay.o gif.o fli2gif.o
+-	CC -o fli2gif fli2gif.o gif.o fliplay.o
++	$(CC) $(CCFLAGS) -o fli2gif fli2gif.o gif.o fliplay.o
+ 
+ fliplay.o: fliplay.C
+-	CC -c -I. fliplay.C
++	$(CC) $(CFLAGS) -c -I. fliplay.C
+ 
+ gif.o: gif.C
+-	CC -c -I. gif.C
++	$(CC) $(CFLAGS) -c -I. gif.C
+ 
+ fli2gif.o: fli2gif.C
+-	CC -c -I. fli2gif.C
++	$(CC) $(CFLAGS) -c -I. fli2gif.C
+ 
+ clean:
+ 	rm -f fli2gif fli2gif.o fliplay.o gif.o
