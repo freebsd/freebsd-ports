@@ -75,6 +75,7 @@
     SUBDIR += ruby-X11
     SUBDIR += ruby-gnome
     SUBDIR += ruby-kde
+    SUBDIR += ruby-panel-applet
     SUBDIR += rxvt
     SUBDIR += rxvt-devel
     SUBDIR += stockticker_applet
