@@ -1,6 +1,6 @@
 bin/eruby
 include/eruby.h
-lib/liberuby.so.09
+lib/liberuby.so.10
 lib/liberuby.so
 lib/liberuby.a
 %%RUBY_SITEARCHLIBDIR%%/eruby.so
