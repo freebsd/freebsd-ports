@@ -227,8 +227,6 @@
     SUBDIR += minirsyslogd
     SUBDIR += mixer
     SUBDIR += mkfile
-    SUBDIR += mkisofs
-    SUBDIR += mkisofs-devel
     SUBDIR += mksunbootcd
     SUBDIR += mktool
     SUBDIR += monitord
