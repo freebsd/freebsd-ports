@@ -34,6 +34,7 @@ share/doc/lynx/test/TestComment.html
 share/doc/lynx/test/c1.html
 share/doc/lynx/test/iso8859-1.html
 share/doc/lynx/test/iso88592.html
+share/doc/lynx/test/koi8-r.html
 share/doc/lynx/test/quickbrown.html
 share/doc/lynx/test/raw8bit.html
 share/doc/lynx/test/sgml.html
@@ -47,6 +48,7 @@ share/locale/da/LC_MESSAGES/lynx.mo
 share/locale/de/LC_MESSAGES/lynx.mo
 share/locale/et/LC_MESSAGES/lynx.mo
 share/locale/fr/LC_MESSAGES/lynx.mo
+share/locale/hu/LC_MESSAGES/lynx.mo
 share/locale/it/LC_MESSAGES/lynx.mo
 share/locale/ja/LC_MESSAGES/lynx.mo
 share/locale/nl/LC_MESSAGES/lynx.mo
@@ -54,6 +56,7 @@ share/locale/pt_BR/LC_MESSAGES/lynx.mo
 share/locale/ru/LC_MESSAGES/lynx.mo
 share/locale/sl/LC_MESSAGES/lynx.mo
 share/locale/sv/LC_MESSAGES/lynx.mo
+share/locale/tr/LC_MESSAGES/lynx.mo
 share/locale/zh_TW/LC_MESSAGES/lynx.mo
 share/lynx_help/Lynx_users_guide.html
 share/lynx_help/about_lynx.html
