@@ -94,6 +94,10 @@ MLINKS=	mh-profile.5 mh_profile.5
 
 MAN8=	ap.8 conflict.8 dp.8 fmtdump.8 install-mh.8 mh-mts.8 post.8
 
+post-patch:
+	@${PERL} -pi -e "s|autoconf|${AUTOCONF}|;\
+		s|autoheader|${AUTOHEADER}|" ${WRKSRC}/Makefile.in
+
 post-install:
 	@PKG_PREFIX='${PREFIX}' ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	chgrp mail ${PREFIX}/bin/inc
