@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	linux-j
-PORTVERSION=	405a
+PORTVERSION=	501a
 CATEGORIES=	lang linux
 MASTER_SITES=	http://www.jsoftware.com/download/
-DISTFILES=	jconsole405a-Linux.tgz jlib405.tgz jhelp.tgz
+DISTNAME=	j501a_linux
 DIST_SUBDIR=    ${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	js@jeannot.org
@@ -28,14 +28,12 @@ do-build:
 	@sed "s:PREFIX:$(PREFIX):" < ${FILESDIR}/jconsole > ${WRKSRC}/jconsole
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/jconsole405a-Linux/jconsole_files/jconsole ${PREFIX}/bin/jconsole.bin
-	@brandelf -t Linux ${PREFIX}/bin/jconsole.bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/jconsole ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/jconsole405a-Linux/jconsole_files/${MAN1} ${PREFIX}/man/man1
+	@${INSTALL_MAN} ${WRKSRC}/j501a/system/extras/help/man/${MAN1} ${PREFIX}/man/man1
 	@${MKDIR} ${PREFIX}/lib/j
-	@cd ${WRKSRC}/jlib405/jlib_files && tar -cf - * | tar -xf - -C ${PREFIX}/lib/j
-	@${MKDIR} ${PREFIX}/lib/j/system/extras/help
-	@cd ${WRKSRC}/jhelp/jhelp_files && tar -cf - * | tar -xf - -C ${PREFIX}/lib/j/system/extras/help
+	@cd ${WRKSRC}/j501a && tar -cf - system user profile.ijs readme.txt | tar -xf - -C ${PREFIX}/lib/j
+	@${INSTALL_PROGRAM} ${WRKSRC}/j501a/jconsole ${PREFIX}/lib/j/jconsole
+	@brandelf -t Linux ${PREFIX}/lib/j/jconsole
 
 post-install:
 .if !defined(BATCH)
