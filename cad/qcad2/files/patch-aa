@@ -1,46 +1,29 @@
---- Makefile.orig	Sat Aug 12 03:31:54 2000
-+++ Makefile	Sat Sep 23 06:33:52 2000
-@@ -7,13 +7,15 @@
+--- Makefile.orig	Mon May 27 00:08:53 2002
++++ Makefile	Thu May 30 02:58:38 2002
+@@ -7,16 +7,16 @@
  
  ####### Compiler, tools and options
  
--CC	=	g++
--CFLAGS	=	-Wall -W -O2 -fno-strength-reduce
+-CC	=	gcc
+-CXX	=	g++
+-CFLAGS	=	-pipe -Wall -W -O2 -DNO_DEBUG
+-CXXFLAGS=	-pipe -Wall -W -O2 -DNO_DEBUG
 -INCPATH	=	-I$(QTDIR)/include
 -LINK	=	g++
 -LFLAGS	=	-static
--LIBS	=	-L$(QTDIR)/lib -lqt -L/usr/X11R6/lib -lX11
--MOC	=	moc
+-LIBS	=	$(SUBLIBS) -L$(QTDIR)/lib -L/usr/X11R6/lib -lqt -lXext -lX11 -lm
+-MOC	=	$(QTDIR)/bin/moc
+-UIC	=	$(QTDIR)/bin/uic
 +CC	?=	gcc
 +CXX	?=	g++
-+CFLAGS	?=	-Wall -W -O2 -fno-strength-reduce
-+CXXFLAGS?=	-Wall -W -O2 -fno-strength-reduce
-+INCPATH	=	-I$(QTDIR)/include/qt2
-+LINK	=	$(CXX)
++CFLAGS	+=	-DNO_DEBUG
++CXXFLAGS+=	-DNO_DEBUG
++INCPATH	=	${QTCPPFLAGS}
++LINK	=	${CXX}
 +LFLAGS	=	
-+LIBS	=	-L$(QTDIR)/lib -lqt2
-+MOC	=	$(QTDIR)/bin/moc2
++LIBS	=	${QTCFGLIBS} ${LIBQT}
++MOC	?=	${X11BASE}/bin/moc2
++UIC	?=	${X11BASE}/bin/uic
  
- ####### Files
- 
-@@ -351,16 +353,16 @@
- .SUFFIXES: .cpp .cxx .cc .C .c
- 
- .cpp.o:
--	$(CC) -c $(CFLAGS) $(INCPATH) -o $@ $<
-+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o $@ $<
- 
- .cxx.o:
--	$(CC) -c $(CFLAGS) $(INCPATH) -o $@ $<
-+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o $@ $<
- 
- .cc.o:
--	$(CC) -c $(CFLAGS) $(INCPATH) -o $@ $<
-+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o $@ $<
- 
- .C.o:
--	$(CC) -c $(CFLAGS) $(INCPATH) -o $@ $<
-+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o $@ $<
- 
- .c.o:
- 	$(CC) -c $(CFLAGS) $(INCPATH) -o $@ $<
+ TAR	=	tar -cf
+ GZIP	=	gzip -9f

@@ -18,6 +18,7 @@ bin/qcad
 %%PORTDOCS%%share/doc/qcad/en/017.html
 %%PORTDOCS%%share/doc/qcad/en/018.html
 %%PORTDOCS%%share/doc/qcad/en/img/000000.png
+%%PORTDOCS%%share/doc/qcad/en/img/CVS
 %%PORTDOCS%%share/doc/qcad/en/img/boxangle.png
 %%PORTDOCS%%share/doc/qcad/en/img/boxbevel.png
 %%PORTDOCS%%share/doc/qcad/en/img/boxdirection.png
@@ -235,6 +236,8 @@ bin/qcad
 %%PORTDOCS%%share/examples/qcad/example01.dxf
 %%PORTDOCS%%share/examples/qcad/example02.dxf
 %%PORTDOCS%%share/examples/qcad/example03.dxf
+%%PORTDOCS%%share/examples/qcad/example04.dxf
+%%PORTDOCS%%share/examples/qcad/example05.dxf
 %%PORTDOCS%%share/examples/qcad/hatches.dxf
 %%PORTDOCS%%share/examples/qcad/styles.dxf
 %%PORTDOCS%%share/examples/qcad/texts.dxf
@@ -245,6 +248,8 @@ share/qcad/cur/cur_glass_mask.cur
 share/qcad/fonts/courier.cxf
 share/qcad/fonts/cursive.cxf
 share/qcad/fonts/cyrillic.cxf
+share/qcad/fonts/japanese.cxf
+share/qcad/fonts/latin2.cxf
 share/qcad/fonts/normal.cxf
 share/qcad/fonts/romans.cxf
 share/qcad/hatches/0.dxf
@@ -256,47 +261,487 @@ share/qcad/hatches/concrete.dxf
 share/qcad/hatches/honeycomb.dxf
 share/qcad/hatches/plastic.dxf
 share/qcad/hatches/sand.dxf
-share/qcad/libraries/3rd/ball/608.dxf
-share/qcad/libraries/3rd/cone_roll/322_10.dxf
-share/qcad/libraries/3rd/cone_roll/322_12.dxf
-share/qcad/libraries/3rd/shaft_nut/KM_10.dxf
-share/qcad/libraries/misc/Bicycle/AusfE-rechts.dxf
-share/qcad/libraries/misc/Bicycle/Daempfer1.dxf
-share/qcad/libraries/misc/Bicycle/Flasche-075.dxf
-share/qcad/libraries/misc/Bicycle/Kettenblatt/Kettenbl-32.dxf
-share/qcad/libraries/misc/Bicycle/Kettenblatt/Kettenbl-36.dxf
-share/qcad/libraries/misc/Bicycle/Kettenblatt/Kettenbl-38.dxf
-share/qcad/libraries/misc/Bicycle/Kettenblatt/Kettenbl-42.dxf
-share/qcad/libraries/misc/Bicycle/Kettenblatt/Kettenbl-48.dxf
-share/qcad/libraries/misc/Bicycle/Kettenblatt/Kettenbl-52.dxf
-share/qcad/libraries/misc/Bicycle/Lichthalter.dxf
-share/qcad/libraries/misc/Bicycle/Ritzel/R-10.dxf
-share/qcad/libraries/misc/Bicycle/Ritzel/R-11.dxf
-share/qcad/libraries/misc/Bicycle/Ritzel/R-22.dxf
-share/qcad/libraries/misc/Bicycle/Ritzel/Ritzel10.dxf
-share/qcad/libraries/misc/Bicycle/Ritzel/Ritzel11.dxf
-share/qcad/libraries/misc/Bicycle/Ritzel/Ritzel22.dxf
-share/qcad/libraries/misc/Bicycle/Ritzel/Ritzel28.dxf
-share/qcad/libraries/misc/Bicycle/Ritzel/Rolle-Schaltwerk.dxf
-share/qcad/libraries/misc/Bicycle/Seculite.dxf
-share/qcad/libraries/misc/Bicycle/Taschen/Backroller-alt.dxf
-share/qcad/libraries/misc/Bicycle/Taschen/Backroller-neu.dxf
-share/qcad/libraries/misc/Bicycle/Taschen/Frontroller.dxf
-share/qcad/libraries/misc/Igus/GFM-121418-20.dxf
-share/qcad/libraries/misc/Igus/GSM-0810-10.dxf
-share/qcad/libraries/misc/Igus/GTM-0818-015.dxf
-share/qcad/libraries/misc/example.dxf
+share/qcad/libraries/mechanical/bearing/ball/608.dat
+share/qcad/libraries/mechanical/bearing/ball/608.dxf
+share/qcad/libraries/mechanical/bearing/cone_roll/322_10.dat
+share/qcad/libraries/mechanical/bearing/cone_roll/322_10.dxf
+share/qcad/libraries/mechanical/bearing/cone_roll/322_12.dat
+share/qcad/libraries/mechanical/bearing/cone_roll/322_12.dxf
+share/qcad/libraries/mechanical/bearing/shaft_nut/KM0-b.dat
+share/qcad/libraries/mechanical/bearing/shaft_nut/KM0-b.dxf
+share/qcad/libraries/mechanical/bearing/shaft_nut/KM0-c.dat
+share/qcad/libraries/mechanical/bearing/shaft_nut/KM0-c.dxf
+share/qcad/libraries/mechanical/bearing/shaft_nut/KM1-b.dat
+share/qcad/libraries/mechanical/bearing/shaft_nut/KM1-b.dxf
+share/qcad/libraries/mechanical/bearing/shaft_nut/KM1-c.dat
+share/qcad/libraries/mechanical/bearing/shaft_nut/KM1-c.dxf
+share/qcad/libraries/mechanical/bearing/shaft_nut/KM2-b.dat
+share/qcad/libraries/mechanical/bearing/shaft_nut/KM2-b.dxf
+share/qcad/libraries/mechanical/bearing/shaft_nut/KM2-c.dat
+share/qcad/libraries/mechanical/bearing/shaft_nut/KM2-c.dxf
+share/qcad/libraries/mechanical/bearing/shaft_nut/KM_10.dat
+share/qcad/libraries/mechanical/bearing/shaft_nut/KM_10.dxf
+share/qcad/libraries/mechanical/bearing/shaft_nut/MB0-b.dat
+share/qcad/libraries/mechanical/bearing/shaft_nut/MB0-b.dxf
+share/qcad/libraries/mechanical/bearing/shaft_nut/MB0-c.dat
+share/qcad/libraries/mechanical/bearing/shaft_nut/MB0-c.dxf
+share/qcad/libraries/mechanical/bearing/shaft_nut/MB1-b.dat
+share/qcad/libraries/mechanical/bearing/shaft_nut/MB1-b.dxf
+share/qcad/libraries/mechanical/bearing/shaft_nut/MB1-c.dat
+share/qcad/libraries/mechanical/bearing/shaft_nut/MB1-c.dxf
+share/qcad/libraries/mechanical/bearing/shaft_nut/MB2-b.dat
+share/qcad/libraries/mechanical/bearing/shaft_nut/MB2-b.dxf
+share/qcad/libraries/mechanical/bearing/shaft_nut/MB2-c.dat
+share/qcad/libraries/mechanical/bearing/shaft_nut/MB2-c.dxf
+share/qcad/libraries/mechanical/notches/form_a.dat
+share/qcad/libraries/mechanical/notches/form_a.dxf
+share/qcad/libraries/mechanical/notches/form_a_2x2a_xL.dat
+share/qcad/libraries/mechanical/notches/form_a_2x2a_xL.dxf
+share/qcad/libraries/mechanical/notches/form_a_2x2c_xL.dat
+share/qcad/libraries/mechanical/notches/form_a_2x2c_xL.dxf
+share/qcad/libraries/mechanical/notches/form_a_3x3a_xL.dat
+share/qcad/libraries/mechanical/notches/form_a_3x3a_xL.dxf
+share/qcad/libraries/mechanical/notches/form_a_3x3c_xL.dat
+share/qcad/libraries/mechanical/notches/form_a_3x3c_xL.dxf
+share/qcad/libraries/mechanical/notches/form_a_4x4a_xL.dat
+share/qcad/libraries/mechanical/notches/form_a_4x4a_xL.dxf
+share/qcad/libraries/mechanical/notches/form_a_4x4c_xL.dat
+share/qcad/libraries/mechanical/notches/form_a_4x4c_xL.dxf
+share/qcad/libraries/mechanical/notches/form_a_5x5a_xL.dat
+share/qcad/libraries/mechanical/notches/form_a_5x5a_xL.dxf
+share/qcad/libraries/mechanical/notches/form_a_5x5c_xL.dat
+share/qcad/libraries/mechanical/notches/form_a_5x5c_xL.dxf
+share/qcad/libraries/mechanical/notches/form_a_6x6a_xL.dat
+share/qcad/libraries/mechanical/notches/form_a_6x6a_xL.dxf
+share/qcad/libraries/mechanical/notches/form_a_8x7c_xL.dat
+share/qcad/libraries/mechanical/notches/form_a_8x7c_xL.dxf
+share/qcad/libraries/mechanical/notches/form_b_2x2a_xL.dat
+share/qcad/libraries/mechanical/notches/form_b_2x2a_xL.dxf
+share/qcad/libraries/mechanical/notches/form_b_2x2c_xL.dat
+share/qcad/libraries/mechanical/notches/form_b_2x2c_xL.dxf
+share/qcad/libraries/mechanical/notches/form_b_3x3a_xL.dat
+share/qcad/libraries/mechanical/notches/form_b_3x3a_xL.dxf
+share/qcad/libraries/mechanical/notches/form_b_4x4c_xL.dat
+share/qcad/libraries/mechanical/notches/form_b_4x4c_xL.dxf
+share/qcad/libraries/mechanical/notches/form_b_6x6c_xL.dat
+share/qcad/libraries/mechanical/notches/form_b_6x6c_xL.dxf
+share/qcad/libraries/mechanical/notches/form_c.dat
+share/qcad/libraries/mechanical/notches/form_c.dxf
+share/qcad/libraries/mechanical/notches/form_c_2x2a_xL.dat
+share/qcad/libraries/mechanical/notches/form_c_2x2a_xL.dxf
+share/qcad/libraries/mechanical/notches/form_c_2x2c_xL.dat
+share/qcad/libraries/mechanical/notches/form_c_2x2c_xL.dxf
+share/qcad/libraries/mechanical/notches/form_c_3x3a_xL.dat
+share/qcad/libraries/mechanical/notches/form_c_3x3a_xL.dxf
+share/qcad/libraries/mechanical/notches/form_c_3x3c_xL.dat
+share/qcad/libraries/mechanical/notches/form_c_3x3c_xL.dxf
+share/qcad/libraries/mechanical/notches/form_c_4x4a_xL.dat
+share/qcad/libraries/mechanical/notches/form_c_4x4a_xL.dxf
+share/qcad/libraries/mechanical/notches/form_c_4x4c_xL.dat
+share/qcad/libraries/mechanical/notches/form_c_4x4c_xL.dxf
+share/qcad/libraries/mechanical/notches/form_c_6x6a_xL.dat
+share/qcad/libraries/mechanical/notches/form_c_6x6a_xL.dxf
+share/qcad/libraries/mechanical/nuts/Hk-M10a.dat
+share/qcad/libraries/mechanical/nuts/Hk-M10a.dxf
+share/qcad/libraries/mechanical/nuts/Hk-M10c.dat
+share/qcad/libraries/mechanical/nuts/Hk-M10c.dxf
+share/qcad/libraries/mechanical/nuts/Hk-M12a.dat
+share/qcad/libraries/mechanical/nuts/Hk-M12a.dxf
+share/qcad/libraries/mechanical/nuts/Hk-M12c.dat
+share/qcad/libraries/mechanical/nuts/Hk-M12c.dxf
+share/qcad/libraries/mechanical/nuts/Hk-M6a.dat
+share/qcad/libraries/mechanical/nuts/Hk-M6a.dxf
+share/qcad/libraries/mechanical/nuts/Hk-M6c.dat
+share/qcad/libraries/mechanical/nuts/Hk-M6c.dxf
+share/qcad/libraries/mechanical/nuts/Hk-M8a.dat
+share/qcad/libraries/mechanical/nuts/Hk-M8a.dxf
+share/qcad/libraries/mechanical/nuts/Hk-M8c.dat
+share/qcad/libraries/mechanical/nuts/Hk-M8c.dxf
+share/qcad/libraries/mechanical/nuts/Hm-M10a.dat
+share/qcad/libraries/mechanical/nuts/Hm-M10a.dxf
+share/qcad/libraries/mechanical/nuts/Hm-M10c.dat
+share/qcad/libraries/mechanical/nuts/Hm-M10c.dxf
+share/qcad/libraries/mechanical/nuts/Hm-M20a.dat
+share/qcad/libraries/mechanical/nuts/Hm-M20a.dxf
+share/qcad/libraries/mechanical/nuts/Hm-M20c.dat
+share/qcad/libraries/mechanical/nuts/Hm-M20c.dxf
+share/qcad/libraries/mechanical/nuts/Hm-M8a.dat
+share/qcad/libraries/mechanical/nuts/Hm-M8a.dxf
+share/qcad/libraries/mechanical/nuts/Hm-M8c.dat
+share/qcad/libraries/mechanical/nuts/Hm-M8c.dxf
+share/qcad/libraries/mechanical/nuts/M10.dat
+share/qcad/libraries/mechanical/nuts/M10.dxf
+share/qcad/libraries/mechanical/nuts/M10_c.dat
+share/qcad/libraries/mechanical/nuts/M10_c.dxf
+share/qcad/libraries/mechanical/nuts/M10_nut.dat
+share/qcad/libraries/mechanical/nuts/M10_nut.dxf
+share/qcad/libraries/mechanical/nuts/M12.dat
+share/qcad/libraries/mechanical/nuts/M12.dxf
+share/qcad/libraries/mechanical/nuts/M12_c.dat
+share/qcad/libraries/mechanical/nuts/M12_c.dxf
+share/qcad/libraries/mechanical/nuts/M12_nut.dat
+share/qcad/libraries/mechanical/nuts/M12_nut.dxf
+share/qcad/libraries/mechanical/nuts/M16.dat
+share/qcad/libraries/mechanical/nuts/M16.dxf
+share/qcad/libraries/mechanical/nuts/M16_c.dat
+share/qcad/libraries/mechanical/nuts/M16_c.dxf
+share/qcad/libraries/mechanical/nuts/M16_nut.dat
+share/qcad/libraries/mechanical/nuts/M16_nut.dxf
+share/qcad/libraries/mechanical/nuts/M1_6.dat
+share/qcad/libraries/mechanical/nuts/M1_6.dxf
+share/qcad/libraries/mechanical/nuts/M1_6_c.dat
+share/qcad/libraries/mechanical/nuts/M1_6_c.dxf
+share/qcad/libraries/mechanical/nuts/M2.dat
+share/qcad/libraries/mechanical/nuts/M2.dxf
+share/qcad/libraries/mechanical/nuts/M20.dat
+share/qcad/libraries/mechanical/nuts/M20.dxf
+share/qcad/libraries/mechanical/nuts/M20_c.dat
+share/qcad/libraries/mechanical/nuts/M20_c.dxf
+share/qcad/libraries/mechanical/nuts/M2_5.dat
+share/qcad/libraries/mechanical/nuts/M2_5.dxf
+share/qcad/libraries/mechanical/nuts/M2_5_c.dat
+share/qcad/libraries/mechanical/nuts/M2_5_c.dxf
+share/qcad/libraries/mechanical/nuts/M2_c.dat
+share/qcad/libraries/mechanical/nuts/M2_c.dxf
+share/qcad/libraries/mechanical/nuts/M3.dat
+share/qcad/libraries/mechanical/nuts/M3.dxf
+share/qcad/libraries/mechanical/nuts/M3_c.dat
+share/qcad/libraries/mechanical/nuts/M3_c.dxf
+share/qcad/libraries/mechanical/nuts/M4.dat
+share/qcad/libraries/mechanical/nuts/M4.dxf
+share/qcad/libraries/mechanical/nuts/M48_a.dat
+share/qcad/libraries/mechanical/nuts/M48_a.dxf
+share/qcad/libraries/mechanical/nuts/M48_c.dat
+share/qcad/libraries/mechanical/nuts/M48_c.dxf
+share/qcad/libraries/mechanical/nuts/M4_c.dat
+share/qcad/libraries/mechanical/nuts/M4_c.dxf
+share/qcad/libraries/mechanical/nuts/M4_nut.dat
+share/qcad/libraries/mechanical/nuts/M4_nut.dxf
+share/qcad/libraries/mechanical/nuts/M5.dat
+share/qcad/libraries/mechanical/nuts/M5.dxf
+share/qcad/libraries/mechanical/nuts/M5_c.dat
+share/qcad/libraries/mechanical/nuts/M5_c.dxf
+share/qcad/libraries/mechanical/nuts/M5_nut.dat
+share/qcad/libraries/mechanical/nuts/M5_nut.dxf
+share/qcad/libraries/mechanical/nuts/M6.dat
+share/qcad/libraries/mechanical/nuts/M6.dxf
+share/qcad/libraries/mechanical/nuts/M6_c.dat
+share/qcad/libraries/mechanical/nuts/M6_c.dxf
+share/qcad/libraries/mechanical/nuts/M6_nut.dat
+share/qcad/libraries/mechanical/nuts/M6_nut.dxf
+share/qcad/libraries/mechanical/nuts/M6a_nut.dat
+share/qcad/libraries/mechanical/nuts/M6a_nut.dxf
+share/qcad/libraries/mechanical/nuts/M6c_nut.dat
+share/qcad/libraries/mechanical/nuts/M6c_nut.dxf
+share/qcad/libraries/mechanical/nuts/M8.dat
+share/qcad/libraries/mechanical/nuts/M8.dxf
+share/qcad/libraries/mechanical/nuts/M8_c.dat
+share/qcad/libraries/mechanical/nuts/M8_c.dxf
+share/qcad/libraries/mechanical/nuts/M8_nut.dat
+share/qcad/libraries/mechanical/nuts/M8_nut.dxf
+share/qcad/libraries/mechanical/screws/chc/Chc-M6a-L10-L30.dat
+share/qcad/libraries/mechanical/screws/chc/Chc-M6a-L10-L30.dxf
+share/qcad/libraries/mechanical/screws/chc/Chc-M6a-L35-L60.dat
+share/qcad/libraries/mechanical/screws/chc/Chc-M6a-L35-L60.dxf
+share/qcad/libraries/mechanical/screws/hex/Hm-M10a-L20-L35.dat
+share/qcad/libraries/mechanical/screws/hex/Hm-M10a-L20-L35.dxf
+share/qcad/libraries/mechanical/screws/hex/Hm-M10a-L40-L100.dat
+share/qcad/libraries/mechanical/screws/hex/Hm-M10a-L40-L100.dxf
+share/qcad/libraries/mechanical/screws/hex/Hm-M12a-L25-L40.dat
+share/qcad/libraries/mechanical/screws/hex/Hm-M12a-L25-L40.dxf
+share/qcad/libraries/mechanical/screws/hex/Hm-M12a-L45-L120.dat
+share/qcad/libraries/mechanical/screws/hex/Hm-M12a-L45-L120.dxf
+share/qcad/libraries/mechanical/screws/hex/Hm-M14a-L30-L40.dat
+share/qcad/libraries/mechanical/screws/hex/Hm-M14a-L30-L40.dxf
+share/qcad/libraries/mechanical/screws/hex/Hm-M14a-L45-L140.dat
+share/qcad/libraries/mechanical/screws/hex/Hm-M14a-L45-L140.dxf
+share/qcad/libraries/mechanical/screws/hex/Hm-M16a-L130-L160.dat
+share/qcad/libraries/mechanical/screws/hex/Hm-M16a-L130-L160.dxf
+share/qcad/libraries/mechanical/screws/hex/Hm-M16a-L35-L50.dat
+share/qcad/libraries/mechanical/screws/hex/Hm-M16a-L35-L50.dxf
+share/qcad/libraries/mechanical/screws/hex/Hm-M16a-L55-L120.dat
+share/qcad/libraries/mechanical/screws/hex/Hm-M16a-L55-L120.dxf
+share/qcad/libraries/mechanical/screws/hex/Hm-M5a-L10-L20.dat
+share/qcad/libraries/mechanical/screws/hex/Hm-M5a-L10-L20.dxf
+share/qcad/libraries/mechanical/screws/hex/Hm-M5a-L25-L50.dat
+share/qcad/libraries/mechanical/screws/hex/Hm-M5a-L25-L50.dxf
+share/qcad/libraries/mechanical/screws/hex/Hm-M6a-L12-L25.dat
+share/qcad/libraries/mechanical/screws/hex/Hm-M6a-L12-L25.dxf
+share/qcad/libraries/mechanical/screws/hex/Hm-M6a-L30-L60.dat
+share/qcad/libraries/mechanical/screws/hex/Hm-M6a-L30-L60.dxf
+share/qcad/libraries/mechanical/screws/hex/Hm-M8a-L16-L30.dat
+share/qcad/libraries/mechanical/screws/hex/Hm-M8a-L16-L30.dxf
+share/qcad/libraries/mechanical/screws/hex/Hm-M8a-L35-L85.dat
+share/qcad/libraries/mechanical/screws/hex/Hm-M8a-L35-L85.dxf
+share/qcad/libraries/mechanical/screws/hex/M10_a.dat
+share/qcad/libraries/mechanical/screws/hex/M10_a.dxf
+share/qcad/libraries/mechanical/screws/hex/M10_c.dat
+share/qcad/libraries/mechanical/screws/hex/M10_c.dxf
+share/qcad/libraries/mechanical/screws/hex/M12_a.dat
+share/qcad/libraries/mechanical/screws/hex/M12_a.dxf
+share/qcad/libraries/mechanical/screws/hex/M12_c.dat
+share/qcad/libraries/mechanical/screws/hex/M12_c.dxf
+share/qcad/libraries/mechanical/screws/hex/M16_a.dat
+share/qcad/libraries/mechanical/screws/hex/M16_a.dxf
+share/qcad/libraries/mechanical/screws/hex/M16_c.dat
+share/qcad/libraries/mechanical/screws/hex/M16_c.dxf
+share/qcad/libraries/mechanical/screws/hex/M1_6_a.dat
+share/qcad/libraries/mechanical/screws/hex/M1_6_a.dxf
+share/qcad/libraries/mechanical/screws/hex/M1_6_c.dat
+share/qcad/libraries/mechanical/screws/hex/M1_6_c.dxf
+share/qcad/libraries/mechanical/screws/hex/M20_a.dat
+share/qcad/libraries/mechanical/screws/hex/M20_a.dxf
+share/qcad/libraries/mechanical/screws/hex/M20_c.dat
+share/qcad/libraries/mechanical/screws/hex/M20_c.dxf
+share/qcad/libraries/mechanical/screws/hex/M2_5_a.dat
+share/qcad/libraries/mechanical/screws/hex/M2_5_a.dxf
+share/qcad/libraries/mechanical/screws/hex/M2_5_c.dat
+share/qcad/libraries/mechanical/screws/hex/M2_5_c.dxf
+share/qcad/libraries/mechanical/screws/hex/M2_a.dat
+share/qcad/libraries/mechanical/screws/hex/M2_a.dxf
+share/qcad/libraries/mechanical/screws/hex/M2_c.dat
+share/qcad/libraries/mechanical/screws/hex/M2_c.dxf
+share/qcad/libraries/mechanical/screws/hex/M3_a.dat
+share/qcad/libraries/mechanical/screws/hex/M3_a.dxf
+share/qcad/libraries/mechanical/screws/hex/M3_c.dat
+share/qcad/libraries/mechanical/screws/hex/M3_c.dxf
+share/qcad/libraries/mechanical/screws/hex/M4_a.dat
+share/qcad/libraries/mechanical/screws/hex/M4_a.dxf
+share/qcad/libraries/mechanical/screws/hex/M4_c.dat
+share/qcad/libraries/mechanical/screws/hex/M4_c.dxf
+share/qcad/libraries/mechanical/screws/hex/M5_a.dat
+share/qcad/libraries/mechanical/screws/hex/M5_a.dxf
+share/qcad/libraries/mechanical/screws/hex/M5_c.dat
+share/qcad/libraries/mechanical/screws/hex/M5_c.dxf
+share/qcad/libraries/mechanical/screws/hex/M6_a.dat
+share/qcad/libraries/mechanical/screws/hex/M6_a.dxf
+share/qcad/libraries/mechanical/screws/hex/M6_c.dat
+share/qcad/libraries/mechanical/screws/hex/M6_c.dxf
+share/qcad/libraries/mechanical/screws/hex/M8_a.dat
+share/qcad/libraries/mechanical/screws/hex/M8_a.dxf
+share/qcad/libraries/mechanical/screws/hex/M8_c.dat
+share/qcad/libraries/mechanical/screws/hex/M8_c.dxf
+share/qcad/libraries/mechanical/screws/in_hex/M10_a.dat
+share/qcad/libraries/mechanical/screws/in_hex/M10_a.dxf
+share/qcad/libraries/mechanical/screws/in_hex/M10_c.dat
+share/qcad/libraries/mechanical/screws/in_hex/M10_c.dxf
+share/qcad/libraries/mechanical/screws/in_hex/M12_a.dat
+share/qcad/libraries/mechanical/screws/in_hex/M12_a.dxf
+share/qcad/libraries/mechanical/screws/in_hex/M12_c.dat
+share/qcad/libraries/mechanical/screws/in_hex/M12_c.dxf
+share/qcad/libraries/mechanical/screws/in_hex/M16_a.dat
+share/qcad/libraries/mechanical/screws/in_hex/M16_a.dxf
+share/qcad/libraries/mechanical/screws/in_hex/M16_c.dat
+share/qcad/libraries/mechanical/screws/in_hex/M16_c.dxf
+share/qcad/libraries/mechanical/screws/in_hex/M1_6_a.dat
+share/qcad/libraries/mechanical/screws/in_hex/M1_6_a.dxf
+share/qcad/libraries/mechanical/screws/in_hex/M1_6_c.dat
+share/qcad/libraries/mechanical/screws/in_hex/M1_6_c.dxf
+share/qcad/libraries/mechanical/screws/in_hex/M20_a.dat
+share/qcad/libraries/mechanical/screws/in_hex/M20_a.dxf
+share/qcad/libraries/mechanical/screws/in_hex/M20_c.dat
+share/qcad/libraries/mechanical/screws/in_hex/M20_c.dxf
+share/qcad/libraries/mechanical/screws/in_hex/M2_5_a.dat
+share/qcad/libraries/mechanical/screws/in_hex/M2_5_a.dxf
+share/qcad/libraries/mechanical/screws/in_hex/M2_5_c.dat
+share/qcad/libraries/mechanical/screws/in_hex/M2_5_c.dxf
+share/qcad/libraries/mechanical/screws/in_hex/M2_a.dat
+share/qcad/libraries/mechanical/screws/in_hex/M2_a.dxf
+share/qcad/libraries/mechanical/screws/in_hex/M2_c.dat
+share/qcad/libraries/mechanical/screws/in_hex/M2_c.dxf
+share/qcad/libraries/mechanical/screws/in_hex/M3_a.dat
+share/qcad/libraries/mechanical/screws/in_hex/M3_a.dxf
+share/qcad/libraries/mechanical/screws/in_hex/M3_c.dat
+share/qcad/libraries/mechanical/screws/in_hex/M3_c.dxf
+share/qcad/libraries/mechanical/screws/in_hex/M4_a.dat
+share/qcad/libraries/mechanical/screws/in_hex/M4_a.dxf
+share/qcad/libraries/mechanical/screws/in_hex/M4_c.dat
+share/qcad/libraries/mechanical/screws/in_hex/M4_c.dxf
+share/qcad/libraries/mechanical/screws/in_hex/M5_a.dat
+share/qcad/libraries/mechanical/screws/in_hex/M5_a.dxf
+share/qcad/libraries/mechanical/screws/in_hex/M5_c.dat
+share/qcad/libraries/mechanical/screws/in_hex/M5_c.dxf
+share/qcad/libraries/mechanical/screws/in_hex/M6_a.dat
+share/qcad/libraries/mechanical/screws/in_hex/M6_a.dxf
+share/qcad/libraries/mechanical/screws/in_hex/M6_c.dat
+share/qcad/libraries/mechanical/screws/in_hex/M6_c.dxf
+share/qcad/libraries/mechanical/screws/in_hex/M8_a.dat
+share/qcad/libraries/mechanical/screws/in_hex/M8_a.dxf
+share/qcad/libraries/mechanical/screws/in_hex/M8_c.dat
+share/qcad/libraries/mechanical/screws/in_hex/M8_c.dxf
+share/qcad/libraries/mechanical/tapers/jarno/internal/no_2.dat
+share/qcad/libraries/mechanical/tapers/jarno/internal/no_2.dxf
+share/qcad/libraries/mechanical/tapers/jarno/internal/no_3.dat
+share/qcad/libraries/mechanical/tapers/jarno/internal/no_3.dxf
+share/qcad/libraries/mechanical/tapers/jarno/internal/no_4.dat
+share/qcad/libraries/mechanical/tapers/jarno/internal/no_4.dxf
+share/qcad/libraries/mechanical/tapers/jarno/internal/no_5.dat
+share/qcad/libraries/mechanical/tapers/jarno/internal/no_5.dxf
+share/qcad/libraries/mechanical/tapers/jarno/internal/no_6.dat
+share/qcad/libraries/mechanical/tapers/jarno/internal/no_6.dxf
+share/qcad/libraries/mechanical/tapers/jarno/internal/no_7.dat
+share/qcad/libraries/mechanical/tapers/jarno/internal/no_7.dxf
+share/qcad/libraries/mechanical/tapers/jarno/internal/no_8.dat
+share/qcad/libraries/mechanical/tapers/jarno/internal/no_8.dxf
+share/qcad/libraries/mechanical/tapers/morse/internal/no_0.dat
+share/qcad/libraries/mechanical/tapers/morse/internal/no_0.dxf
+share/qcad/libraries/mechanical/tapers/morse/internal/no_1.dat
+share/qcad/libraries/mechanical/tapers/morse/internal/no_1.dxf
+share/qcad/libraries/mechanical/tapers/morse/internal/no_2.dat
+share/qcad/libraries/mechanical/tapers/morse/internal/no_2.dxf
+share/qcad/libraries/mechanical/tapers/morse/internal/no_3.dat
+share/qcad/libraries/mechanical/tapers/morse/internal/no_3.dxf
+share/qcad/libraries/mechanical/tapers/morse/internal/no_4.dat
+share/qcad/libraries/mechanical/tapers/morse/internal/no_4.dxf
+share/qcad/libraries/mechanical/tapers/morse/internal/no_5.dat
+share/qcad/libraries/mechanical/tapers/morse/internal/no_5.dxf
+share/qcad/libraries/mechanical/tapers/morse/internal/no_6.dat
+share/qcad/libraries/mechanical/tapers/morse/internal/no_6.dxf
+share/qcad/libraries/mechanical/tapers/morse/internal/no_7.dat
+share/qcad/libraries/mechanical/tapers/morse/internal/no_7.dxf
+share/qcad/libraries/mechanical/threads/external/M10.dat
+share/qcad/libraries/mechanical/threads/external/M10.dxf
+share/qcad/libraries/mechanical/threads/external/M12.dat
+share/qcad/libraries/mechanical/threads/external/M12.dxf
+share/qcad/libraries/mechanical/threads/external/M16.dat
+share/qcad/libraries/mechanical/threads/external/M16.dxf
+share/qcad/libraries/mechanical/threads/external/M1_6.dat
+share/qcad/libraries/mechanical/threads/external/M1_6.dxf
+share/qcad/libraries/mechanical/threads/external/M2.dat
+share/qcad/libraries/mechanical/threads/external/M2.dxf
+share/qcad/libraries/mechanical/threads/external/M20.dat
+share/qcad/libraries/mechanical/threads/external/M20.dxf
+share/qcad/libraries/mechanical/threads/external/M2_5.dat
+share/qcad/libraries/mechanical/threads/external/M2_5.dxf
+share/qcad/libraries/mechanical/threads/external/M3.dat
+share/qcad/libraries/mechanical/threads/external/M3.dxf
+share/qcad/libraries/mechanical/threads/external/M4.dat
+share/qcad/libraries/mechanical/threads/external/M4.dxf
+share/qcad/libraries/mechanical/threads/external/M5.dat
+share/qcad/libraries/mechanical/threads/external/M5.dxf
+share/qcad/libraries/mechanical/threads/external/M6.dat
+share/qcad/libraries/mechanical/threads/external/M6.dxf
+share/qcad/libraries/mechanical/threads/external/M8.dat
+share/qcad/libraries/mechanical/threads/external/M8.dxf
+share/qcad/libraries/mechanical/threads/internal/M10_a.dat
+share/qcad/libraries/mechanical/threads/internal/M10_a.dxf
+share/qcad/libraries/mechanical/threads/internal/M10_c.dat
+share/qcad/libraries/mechanical/threads/internal/M10_c.dxf
+share/qcad/libraries/mechanical/threads/internal/M12_a.dat
+share/qcad/libraries/mechanical/threads/internal/M12_a.dxf
+share/qcad/libraries/mechanical/threads/internal/M12_c.dat
+share/qcad/libraries/mechanical/threads/internal/M12_c.dxf
+share/qcad/libraries/mechanical/threads/internal/M16_a.dat
+share/qcad/libraries/mechanical/threads/internal/M16_a.dxf
+share/qcad/libraries/mechanical/threads/internal/M16_c.dat
+share/qcad/libraries/mechanical/threads/internal/M16_c.dxf
+share/qcad/libraries/mechanical/threads/internal/M1_6_a.dat
+share/qcad/libraries/mechanical/threads/internal/M1_6_a.dxf
+share/qcad/libraries/mechanical/threads/internal/M1_6_c.dat
+share/qcad/libraries/mechanical/threads/internal/M1_6_c.dxf
+share/qcad/libraries/mechanical/threads/internal/M20_a.dat
+share/qcad/libraries/mechanical/threads/internal/M20_a.dxf
+share/qcad/libraries/mechanical/threads/internal/M20_c.dat
+share/qcad/libraries/mechanical/threads/internal/M20_c.dxf
+share/qcad/libraries/mechanical/threads/internal/M2_5_a.dat
+share/qcad/libraries/mechanical/threads/internal/M2_5_a.dxf
+share/qcad/libraries/mechanical/threads/internal/M2_5_c.dat
+share/qcad/libraries/mechanical/threads/internal/M2_5_c.dxf
+share/qcad/libraries/mechanical/threads/internal/M2_a.dat
+share/qcad/libraries/mechanical/threads/internal/M2_a.dxf
+share/qcad/libraries/mechanical/threads/internal/M2_c.dat
+share/qcad/libraries/mechanical/threads/internal/M2_c.dxf
+share/qcad/libraries/mechanical/threads/internal/M3_a.dat
+share/qcad/libraries/mechanical/threads/internal/M3_a.dxf
+share/qcad/libraries/mechanical/threads/internal/M3_c.dat
+share/qcad/libraries/mechanical/threads/internal/M3_c.dxf
+share/qcad/libraries/mechanical/threads/internal/M4_a.dat
+share/qcad/libraries/mechanical/threads/internal/M4_a.dxf
+share/qcad/libraries/mechanical/threads/internal/M4_c.dat
+share/qcad/libraries/mechanical/threads/internal/M4_c.dxf
+share/qcad/libraries/mechanical/threads/internal/M5_a.dat
+share/qcad/libraries/mechanical/threads/internal/M5_a.dxf
+share/qcad/libraries/mechanical/threads/internal/M5_c.dat
+share/qcad/libraries/mechanical/threads/internal/M5_c.dxf
+share/qcad/libraries/mechanical/threads/internal/M6_a.dat
+share/qcad/libraries/mechanical/threads/internal/M6_a.dxf
+share/qcad/libraries/mechanical/threads/internal/M6_c.dat
+share/qcad/libraries/mechanical/threads/internal/M6_c.dxf
+share/qcad/libraries/mechanical/threads/internal/M8_a.dat
+share/qcad/libraries/mechanical/threads/internal/M8_a.dxf
+share/qcad/libraries/mechanical/threads/internal/M8_c.dat
+share/qcad/libraries/mechanical/threads/internal/M8_c.dxf
+share/qcad/libraries/mechanical/washers/M3_a.dat
+share/qcad/libraries/mechanical/washers/M3_a.dxf
+share/qcad/libraries/mechanical/washers/M3_c.dat
+share/qcad/libraries/mechanical/washers/M3_c.dxf
+share/qcad/libraries/mechanical/washers/M4_a.dat
+share/qcad/libraries/mechanical/washers/M4_a.dxf
+share/qcad/libraries/mechanical/washers/M4_c.dat
+share/qcad/libraries/mechanical/washers/M4_c.dxf
+share/qcad/libraries/mechanical/washers/M5_a.dat
+share/qcad/libraries/mechanical/washers/M5_a.dxf
+share/qcad/libraries/mechanical/washers/M5_c.dat
+share/qcad/libraries/mechanical/washers/M5_c.dxf
+share/qcad/libraries/mechanical/washers/M6_a.dat
+share/qcad/libraries/mechanical/washers/M6_a.dxf
+share/qcad/libraries/mechanical/washers/M6_c.dat
+share/qcad/libraries/mechanical/washers/M6_c.dxf
+share/qcad/libraries/mechanical/washers/M8_a.dat
+share/qcad/libraries/mechanical/washers/M8_a.dxf
+share/qcad/libraries/mechanical/washers/M8_c.dat
+share/qcad/libraries/mechanical/washers/M8_c.dxf
+share/qcad/libraries/misc/bicycle/AusfE-rechts.dat
+share/qcad/libraries/misc/bicycle/AusfE-rechts.dxf
+share/qcad/libraries/misc/bicycle/Daempfer1.dat
+share/qcad/libraries/misc/bicycle/Daempfer1.dxf
+share/qcad/libraries/misc/bicycle/Flasche-075.dat
+share/qcad/libraries/misc/bicycle/Flasche-075.dxf
+share/qcad/libraries/misc/bicycle/Kettenblatt/Kettenbl-32.dat
+share/qcad/libraries/misc/bicycle/Kettenblatt/Kettenbl-32.dxf
+share/qcad/libraries/misc/bicycle/Kettenblatt/Kettenbl-36.dat
+share/qcad/libraries/misc/bicycle/Kettenblatt/Kettenbl-36.dxf
+share/qcad/libraries/misc/bicycle/Kettenblatt/Kettenbl-38.dat
+share/qcad/libraries/misc/bicycle/Kettenblatt/Kettenbl-38.dxf
+share/qcad/libraries/misc/bicycle/Kettenblatt/Kettenbl-42.dat
+share/qcad/libraries/misc/bicycle/Kettenblatt/Kettenbl-42.dxf
+share/qcad/libraries/misc/bicycle/Kettenblatt/Kettenbl-48.dat
+share/qcad/libraries/misc/bicycle/Kettenblatt/Kettenbl-48.dxf
+share/qcad/libraries/misc/bicycle/Kettenblatt/Kettenbl-52.dat
+share/qcad/libraries/misc/bicycle/Kettenblatt/Kettenbl-52.dxf
+share/qcad/libraries/misc/bicycle/Lichthalter.dat
+share/qcad/libraries/misc/bicycle/Lichthalter.dxf
+share/qcad/libraries/misc/bicycle/Ritzel/R-10.dat
+share/qcad/libraries/misc/bicycle/Ritzel/R-10.dxf
+share/qcad/libraries/misc/bicycle/Ritzel/R-11.dat
+share/qcad/libraries/misc/bicycle/Ritzel/R-11.dxf
+share/qcad/libraries/misc/bicycle/Ritzel/R-22.dat
+share/qcad/libraries/misc/bicycle/Ritzel/R-22.dxf
+share/qcad/libraries/misc/bicycle/Ritzel/Ritzel10.dat
+share/qcad/libraries/misc/bicycle/Ritzel/Ritzel10.dxf
+share/qcad/libraries/misc/bicycle/Ritzel/Ritzel11.dat
+share/qcad/libraries/misc/bicycle/Ritzel/Ritzel11.dxf
+share/qcad/libraries/misc/bicycle/Ritzel/Ritzel22.dat
+share/qcad/libraries/misc/bicycle/Ritzel/Ritzel22.dxf
+share/qcad/libraries/misc/bicycle/Ritzel/Ritzel28.dat
+share/qcad/libraries/misc/bicycle/Ritzel/Ritzel28.dxf
+share/qcad/libraries/misc/bicycle/Seculite.dat
+share/qcad/libraries/misc/bicycle/Seculite.dxf
+share/qcad/libraries/misc/bicycle/Taschen/Backroller-alt.dat
+share/qcad/libraries/misc/bicycle/Taschen/Backroller-alt.dxf
+share/qcad/libraries/misc/bicycle/Taschen/Backroller-neu.dat
+share/qcad/libraries/misc/bicycle/Taschen/Backroller-neu.dxf
+share/qcad/libraries/misc/bicycle/Taschen/Frontroller.dat
+share/qcad/libraries/misc/bicycle/Taschen/Frontroller.dxf
+share/qcad/libraries/misc/igus/GFM-121418-20.dxf
+share/qcad/libraries/misc/igus/GSM-0810-10.dxf
+share/qcad/libraries/misc/igus/GTM-0818-015.dxf
+share/qcad/libraries/misc/screw.dat
+share/qcad/libraries/misc/screw.dxf
+share/qcad/libraries/misc/t-part.dat
+share/qcad/libraries/misc/t-part.dxf
+share/qcad/libraries/misc/tux.dat
 share/qcad/libraries/misc/tux.dxf
-share/qcad/libraries/screws/M10/M10_hex.dxf
-share/qcad/libraries/screws/M10/M10_nut.dxf
-share/qcad/libraries/screws/M4/M4_hex.dxf
-share/qcad/libraries/screws/M4/M4_nut.dxf
-share/qcad/libraries/screws/M5/M5_hex.dxf
-share/qcad/libraries/screws/M5/M5_nut.dxf
-share/qcad/libraries/screws/M6/M6_hex.dxf
-share/qcad/libraries/screws/M6/M6_nut.dxf
-share/qcad/libraries/screws/M8/M8_hex.dxf
-share/qcad/libraries/screws/M8/M8_nut.dxf
 share/qcad/libraries/templates/de/DIN_A4.dxf
 share/qcad/libraries/templates/de/DIN_A4_quer.dxf
 share/qcad/libraries/templates/empty.dxf
@@ -305,6 +750,18 @@ share/qcad/libraries/templates/en/iso_en_a1.dxf
 share/qcad/libraries/templates/en/iso_en_a2.dxf
 share/qcad/libraries/templates/en/iso_en_a3.dxf
 share/qcad/libraries/templates/en/iso_en_a4.dxf
+share/qcad/libraries/templates/fr/A0_NF.dat
+share/qcad/libraries/templates/fr/A0_NF.dxf
+share/qcad/libraries/templates/fr/A1_NF.dat
+share/qcad/libraries/templates/fr/A1_NF.dxf
+share/qcad/libraries/templates/fr/A2_NF.dat
+share/qcad/libraries/templates/fr/A2_NF.dxf
+share/qcad/libraries/templates/fr/A3_NF.dat
+share/qcad/libraries/templates/fr/A3_NF.dxf
+share/qcad/libraries/templates/fr/A4_NF.dat
+share/qcad/libraries/templates/fr/A4_NF.dxf
+share/qcad/libraries/templates/fr/nomenclature.dat
+share/qcad/libraries/templates/fr/nomenclature.dxf
 share/qcad/libraries/templates/pt/A2.dxf
 share/qcad/messages/qcad.lang
 share/qcad/messages/qcad_cs.qm
@@ -319,6 +776,8 @@ share/qcad/messages/qcad_gr.qm
 share/qcad/messages/qcad_hu.qm
 share/qcad/messages/qcad_it.qm
 share/qcad/messages/qcad_jp.qm
+share/qcad/messages/qcad_jp_corr.qm
+share/qcad/messages/qcad_kr.qm
 share/qcad/messages/qcad_nl.qm
 share/qcad/messages/qcad_pl.qm
 share/qcad/messages/qcad_pt.qm
@@ -545,30 +1004,41 @@ share/qcad/xpm/zoomtopage.xpm
 share/qcad/xpm/zoomwindow.xpm
 %%PORTDOCS%%@exec ln -sf %D/share/doc/qcad %D/share/qcad/doc
 %%PORTDOCS%%@unexec rm -f %D/share/qcad/doc
-@exec mkdir %D/share/qcad/libraries/3rd/roll
 @dirrm share/qcad/xpm
 @dirrm share/qcad/messages
 @dirrm share/qcad/libraries/templates/pt
+@dirrm share/qcad/libraries/templates/fr
 @dirrm share/qcad/libraries/templates/en
 @dirrm share/qcad/libraries/templates/de
 @dirrm share/qcad/libraries/templates
-@dirrm share/qcad/libraries/screws/M8
-@dirrm share/qcad/libraries/screws/M6
-@dirrm share/qcad/libraries/screws/M5
-@dirrm share/qcad/libraries/screws/M4
-@dirrm share/qcad/libraries/screws/M10
-@dirrm share/qcad/libraries/screws
-@dirrm share/qcad/libraries/misc/Igus
-@dirrm share/qcad/libraries/misc/Bicycle/Taschen
-@dirrm share/qcad/libraries/misc/Bicycle/Ritzel
-@dirrm share/qcad/libraries/misc/Bicycle/Kettenblatt
-@dirrm share/qcad/libraries/misc/Bicycle
+@dirrm share/qcad/libraries/misc/igus
+@dirrm share/qcad/libraries/misc/bicycle/Taschen
+@dirrm share/qcad/libraries/misc/bicycle/Ritzel
+@dirrm share/qcad/libraries/misc/bicycle/Kettenblatt
+@dirrm share/qcad/libraries/misc/bicycle
 @dirrm share/qcad/libraries/misc
-@dirrm share/qcad/libraries/3rd/shaft_nut
-@dirrm share/qcad/libraries/3rd/roll
-@dirrm share/qcad/libraries/3rd/cone_roll
-@dirrm share/qcad/libraries/3rd/ball
-@dirrm share/qcad/libraries/3rd
+@dirrm share/qcad/libraries/mechanical/washers
+@dirrm share/qcad/libraries/mechanical/threads/internal
+@dirrm share/qcad/libraries/mechanical/threads/external
+@dirrm share/qcad/libraries/mechanical/threads
+@dirrm share/qcad/libraries/mechanical/tapers/morse/internal
+@dirrm share/qcad/libraries/mechanical/tapers/morse
+@dirrm share/qcad/libraries/mechanical/tapers/jarno/internal
+@dirrm share/qcad/libraries/mechanical/tapers/jarno
+@dirrm share/qcad/libraries/mechanical/tapers/brown&sharpe
+@dirrm share/qcad/libraries/mechanical/tapers/ansi
+@dirrm share/qcad/libraries/mechanical/tapers
+@dirrm share/qcad/libraries/mechanical/screws/in_hex
+@dirrm share/qcad/libraries/mechanical/screws/hex
+@dirrm share/qcad/libraries/mechanical/screws/chc
+@dirrm share/qcad/libraries/mechanical/screws
+@dirrm share/qcad/libraries/mechanical/nuts
+@dirrm share/qcad/libraries/mechanical/notches
+@dirrm share/qcad/libraries/mechanical/bearing/shaft_nut
+@dirrm share/qcad/libraries/mechanical/bearing/cone_roll
+@dirrm share/qcad/libraries/mechanical/bearing/ball
+@dirrm share/qcad/libraries/mechanical/bearing
+@dirrm share/qcad/libraries/mechanical
 @dirrm share/qcad/libraries
 @dirrm share/qcad/hatches
 @dirrm share/qcad/fonts
