@@ -12,6 +12,7 @@
     SUBDIR += chipvault
     SUBDIR += cider
     SUBDIR += electric
+    SUBDIR += fandango
     SUBDIR += geda
     SUBDIR += geda-symbols
     SUBDIR += geda-symcheck
