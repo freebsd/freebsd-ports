@@ -3,13 +3,13 @@
 # Date created:         19990120
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/20 16:43:22 cracauer Exp $
+# $Id: Makefile,v 1.2 1999/02/03 11:11:47 asami Exp $
 #
 
-DISTNAME=       opengl-man-657
-CATEGORIES=     graphics
-MASTER_SITES=   http://www2.cons.org:8000/freebsd-distfiles/ \
-		http://www.freebsd.org/~cracauer/freebsd-distfiles/
+DISTNAME=	opengl-man-657
+CATEGORIES=	graphics
+MASTER_SITES=	http://www.freebsd.org/~cracauer/freebsd-distfiles/ \
+		http://www2.cons.org:8000/freebsd-distfiles/
 
 MAINTAINER=	cracauer@cons.org
 
