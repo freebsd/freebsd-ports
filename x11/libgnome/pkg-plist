@@ -115,6 +115,7 @@ share/doc/libgnome/x4188.html
 share/gnome/sgml/docbook/gnome-customization-0.1/gnome-custom.xsl
 share/gnome/sgml/docbook/gnome-customization-0.1/gnome-customization.xsl
 share/gnome/sgml/docbook/gnome-customization-0.1/l10n.xml
+share/locale/ar/LC_MESSAGES/libgnome-2.0.mo
 share/locale/az/LC_MESSAGES/libgnome-2.0.mo
 share/locale/bg/LC_MESSAGES/libgnome-2.0.mo
 share/locale/bs/LC_MESSAGES/libgnome-2.0.mo
