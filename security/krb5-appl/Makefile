@@ -10,12 +10,7 @@ PORTVERSION=		1.3.1
 CATEGORIES=		security
 # USE_MIT_TARBALL tells the port that the user has fetched the source
 # directly from MIT rather than the default crypto-publish.org.
-
-# XXX  At the present time crypto-publish.org does not have krb5-1.3.1
-# XXX  We must use the MIT copy instead, requiring the user to manually
-# XXX  fetch the distfile.  As soon as crypto-publish.org distributes
-# XXX  krb5-1.3, USE_MIT_TARBALL should be changed back to NO.
-USE_MIT_TARBALL?=	YES
+USE_MIT_TARBALL?=	NO
 
 .if defined(USE_MIT_TARBALL) && ${USE_MIT_TARBALL} == "YES"
 MASTER_SITES=		# manual download
