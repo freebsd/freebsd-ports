@@ -1,5 +1,5 @@
 # If you link against Tcl like so "-ltcl", leave this blank.
-TCL_VERSION?=8.2
+TCL_VERSION?=8.3
 TCL_NDVER?=${TCL_VERSION:S/.//}	# same, but without the dot
 
 PREFIX?=	/usr/local

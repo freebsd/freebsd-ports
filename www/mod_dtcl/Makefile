@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	mod_dtcl
-PORTVERSION= 	0.7.3.1
-CATEGORIES=	www tcl82
+PORTVERSION= 	0.8.1.1
+CATEGORIES=	www tcl83
 MASTER_SITES=	http://master.debian.org/~davidw/mod_dtcl/
-DISTNAME=	libapache-mod-dtcl_0.7.3-1
+DISTNAME=	libapache-mod-dtcl_0.8.1-1
 
 MAINTAINER=	mi@aldan.algebra.com
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
-LIB_DEPENDS=	tcl82:${PORTSDIR}/lang/tcl82
+LIB_DEPENDS=	tcl83:${PORTSDIR}/lang/tcl83
 
 WRKSRC=		${WRKDIR}/mod_dtcl
 
