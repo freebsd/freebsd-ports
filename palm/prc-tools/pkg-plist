@@ -1,0 +1,20 @@
+m68k-palmos/include/ctype.h
+m68k-palmos/include/errno.h
+m68k-palmos/include/malloc.h
+m68k-palmos/include/math.h
+m68k-palmos/include/mathf.h
+m68k-palmos/include/setjmp.h
+m68k-palmos/include/stdio.h
+m68k-palmos/include/stdlib.h
+m68k-palmos/include/string.h
+m68k-palmos/include/sys/types.h
+m68k-palmos/lib/crt0.o
+m68k-palmos/lib/gcrt0.o
+m68k-palmos/lib/libc.a
+m68k-palmos/lib/libcrt.a
+m68k-palmos/lib/libg.a
+m68k-palmos/lib/libm.a
+m68k-palmos/lib/libmf.a
+m68k-palmos/lib/libnoexcept.a
+m68k-palmos/lib/libstdc++.a
+@dirrm m68k-palmos/include/sys
