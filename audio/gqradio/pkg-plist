@@ -1,5 +1,4 @@
 %%GNOME:%%share/pixmaps/gqradio.png
-share/locale/locale.alias
 share/gqradio/skins/default/slider-pos-14h.png
 share/gqradio/skins/default/skindata_submenu
 share/gqradio/skins/default/skindata_presets_advanced
@@ -49,7 +48,6 @@ share/gqradio/skins/default/btn-grey-34x12-advanced1.png
 share/gqradio/skins/SKIN-SPECS
 share/gqradio/skins/README
 %%GNOME:%%share/gnome/apps/Multimedia/gqradio.desktop
-lib/charset.alias
 bin/gqradio
 @dirrm share/gqradio/skins/default
 @dirrm share/gqradio/skins
