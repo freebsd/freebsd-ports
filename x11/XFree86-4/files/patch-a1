@@ -1,0 +1,16 @@
+--- programs/Xserver/hw/xfree86/os-support//shared/xf86Axp.h~	Mon Nov  6 22:57:11 2000
++++ programs/Xserver/hw/xfree86/os-support//shared/xf86Axp.h	Fri Apr  6 00:21:23 2001
+@@ -19,13 +19,6 @@
+   IRONGATE
+ } axpDevice;
+   
+-typedef struct 
+- { char* sysName; 
+-   char* sysVari; 
+-   char* cpu; 
+-   axpDevice sys; }
+-AXP;
+-
+ typedef struct {
+   axpDevice id;
+   unsigned long hae_thresh;
