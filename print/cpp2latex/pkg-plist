@@ -1,8 +1,6 @@
 bin/cpp2latex
-share/doc/cpp2latex/AUTHORS
-share/doc/cpp2latex/COPYING
-share/doc/cpp2latex/ChangeLog
-share/doc/cpp2latex/INSTALL
-share/doc/cpp2latex/README
-share/doc/cpp2latex/TODO
-@dirrm share/doc/cpp2latex
+%%PORTDOCS%%share/doc/cpp2latex/AUTHORS
+%%PORTDOCS%%share/doc/cpp2latex/ChangeLog
+%%PORTDOCS%%share/doc/cpp2latex/README
+%%PORTDOCS%%share/doc/cpp2latex/TODO
+%%PORTDOCS%%@dirrm share/doc/cpp2latex
