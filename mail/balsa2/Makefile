@@ -28,7 +28,8 @@ CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include' \
 		LIBS='-L${LOCALBASE}/lib'
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome \
-		--with-gnome=${PREFIX}
+		--with-gnome=${PREFIX} \
+		--enable-system-install
 
 MAN1=		balsa.1
 
