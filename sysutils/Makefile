@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.69 1999/06/14 19:31:22 taoka Exp $
+# $Id: Makefile,v 1.70 1999/06/28 01:09:41 flathill Exp $
 #
 
     SUBDIR += LPRng
@@ -48,6 +48,7 @@
     SUBDIR += socket
     SUBDIR += star
     SUBDIR += stat
+    SUBDIR += stmpclean
     SUBDIR += su2
     SUBDIR += tcplist
     SUBDIR += tua
