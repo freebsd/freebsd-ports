@@ -17,6 +17,10 @@ MAINTAINER=	sheldonh@FreeBSD.org
 
 USE_BZIP2=	yes
 
+.if defined(NOPORTDOCS)
+PKGMESSAGE=	${FILESDIR}/POST-INSTALL-NOTES
+.endif
+
 MAKE_ENV+=	OSTYPE=${OPSYS} ARCHTYPE=${MACHINE_ARCH}
 
 # If WITH_EXIMON is defined, the eximon monitor, which requires X,
@@ -80,18 +84,8 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/eximon:${PORTSDIR}/mail/exim-monitor
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500033
-PI_NOTES_FILE=	${FILESDIR}/POST-INSTALL-NOTES
-.else
-PI_NOTES_FILE=	${FILESDIR}/POST-INSTALL-NOTES.latest
-.endif
-
 .if ${OSVERSION} < 400014
 WITHOUT_IPV6=	yes
-.endif
-
-.if defined(NOPORTDOCS)
-PKGMESSAGE=	${PI_NOTES_FILE}
 .endif
 
 SEDLIST=	-e 's,XX_PREFIX_XX,${PREFIX},'
@@ -207,8 +201,7 @@ post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/exim.sh ${PREFIX}/etc/rc.d
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/exim
-	${INSTALL_DATA} ${PI_NOTES_FILE} \
-	    ${PREFIX}/share/doc/exim/POST-INSTALL-NOTES
+	${INSTALL_DATA} ${FILESDIR}/POST-INSTALL-NOTES ${PREFIX}/share/doc/exim
 	${INSTALL_DATA} ${WRKSRC}/doc/filter.txt ${PREFIX}/share/doc/exim
 	${INSTALL_DATA} ${WRKSRC}/doc/oview.txt ${PREFIX}/share/doc/exim
 	${INSTALL_DATA} ${WRKSRC}/doc/spec.txt ${PREFIX}/share/doc/exim

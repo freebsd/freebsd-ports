@@ -24,11 +24,13 @@ In addition, a comprehensive FAQ list is available at:
 
 To use Exim instead of sendmail:
 
-1) Create exim/configure from exim/configure.default .
-2) Stop the sendmail daemon.
-3) Adjust mailer.conf(5) as appropriate.
-4) Set the 'sendmail_enable' rc.conf(5) variable to 'NO'.
-5) Start exim with '${PREFIX}/etc/rc.d/exim.sh start'.
+*) Create exim/configure from exim/configure.default .
+*) Clear the sendmail queue and stop the sendmail daemon.
+*) Adjust mailer.conf(5) as appropriate.
+*) Set the 'sendmail_enable' rc.conf(5) variable to 'NO'.
+*) Set the 'daily_status_include_submit_mailq' periodic.conf(5) variable
+   to 'NO'.
+*) Start exim with '${PREFIX}/etc/rc.d/exim.sh start'.
 
 You may also want to configure newsyslog(8) to rotate Exim log files:
 
