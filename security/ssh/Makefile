@@ -111,7 +111,7 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_PERL) || (exists(${PERL5}) && (!defined(WITHOUT_PERL))
+.if defined(WITH_PERL) || (exists(${PERL5}) && (!defined(WITHOUT_PERL)))
 USE_PERL5=	yes
 CONFIGURE_ENV+= PERL=${PERL5}
 .else
