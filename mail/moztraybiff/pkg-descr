@@ -3,4 +3,7 @@ system tray when new mail arrives in Mozilla Thunderbird. While it
 supports the standard (FreeDesktop.org) system tray, as used by GNOME,
 KDE and IceWM, it requires GNOME libraries to build and run.
 
+It builds and installs an .xpi file, which can be installed through
+Thunderbird's extension manager. See the pkg-message for more details.
+
 WWW: http://moztraybiff.mozdev.org/
