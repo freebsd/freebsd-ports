@@ -11,7 +11,7 @@ options { long_hostnames(off); sync(0); };
 #
 # sources
 #
-source src { unix-dgram("/var/run/log"); udp(); internal(); };
+source src { unix-dgram("/var/run/log"); udp(); internal(); file("/dev/klog"); };
 
 #
 # destinations
