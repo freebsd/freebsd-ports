@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	centericq
-PORTVERSION=	3.22.8
+PORTVERSION=	3.29.12
 CATEGORIES=	net
-MASTER_SITES=	http://download.konst.org.ua/
+MASTER_SITES=	http://konst.org.ua/download/
 
 MAINTAINER=	ijliao@FreeBSD.org
 
