@@ -5,4 +5,5 @@ lib/X11/sj3def/sjrc
 lib/X11/sj3def/sjrk
 lib/X11/sj3def/sjsb
 lib/X11/sj3def/sjzh
+@dirrm lib/X11/sj3def
 man/man1/kinput2.1.gz
