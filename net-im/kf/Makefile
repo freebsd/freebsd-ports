@@ -8,7 +8,9 @@
 PORTNAME=	kf
 PORTVERSION=	0.4
 CATEGORIES=	net
-MASTER_SITES=	http://www.jabberstudio.org/projects/kf/releases/
+MASTER_SITES=	http://www.habazie.rams.pl/kf/files/ \
+		http://www.jabberstudio.org/projects/kf/releases/ \
+		http://santinel.bas-net.by/files/
 
 MAINTAINER=	anrays@gmail.com
 COMMENT=	A simple Jabber client using the GTK+ 2.0 toolkit
