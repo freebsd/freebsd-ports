@@ -14,6 +14,7 @@
     SUBDIR += donkey
     SUBDIR += dsniff
     SUBDIR += fakebo
+    SUBDIR += find_ddos
     SUBDIR += firewalk
     SUBDIR += fragrouter
     SUBDIR += fwtk
