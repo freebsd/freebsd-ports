@@ -9,6 +9,7 @@ etc/gconf/gconf.xml.defaults/apps/galeon/Advanced/Persistent/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/galeon/Advanced/Security/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/galeon/Browsing/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/galeon/Browsing/Bookmarks/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/galeon/Browsing/Bookmarks/Editor/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/galeon/Browsing/Find/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/galeon/Browsing/General/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/galeon/Browsing/History/%gconf.xml
@@ -33,6 +34,7 @@ etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced/Persistent/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced/Security/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Browsing/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Browsing/Bookmarks/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Browsing/Bookmarks/Editor/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Browsing/Find/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Browsing/General/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Browsing/History/%gconf.xml
@@ -56,11 +58,8 @@ libdata/bonobo/servers/GNOME_Galeon_Automation.server
 libdata/bonobo/servers/GNOME_Galeon_NautilusView.server
 share/gnome/applications/galeon.desktop
 share/gnome/galeon/FAQ.html
-share/gnome/galeon/Insecure.png
-share/gnome/galeon/Secure.png
 share/gnome/galeon/about_logo.png
 share/gnome/galeon/autoscroll.xpm
-share/gnome/galeon/blocked.png
 share/gnome/galeon/bookmarks-editor-small.glade
 share/gnome/galeon/bookmarks-editor.glade
 share/gnome/galeon/bookmarks-find.glade
@@ -80,6 +79,8 @@ share/gnome/galeon/galeon-folder-open.png
 share/gnome/galeon/galeon-folder.png
 share/gnome/galeon/galeon-fullscreen.png
 share/gnome/galeon/galeon-history.png
+share/gnome/galeon/galeon-insecure.png
+share/gnome/galeon/galeon-popup-blocked.png
 share/gnome/galeon/galeon-prefs-fonts.png
 share/gnome/galeon/galeon-prefs-general.png
 share/gnome/galeon/galeon-prefs-language.png
@@ -88,6 +89,7 @@ share/gnome/galeon/galeon-prefs-network.png
 share/gnome/galeon/galeon-prefs-privacy.png
 share/gnome/galeon/galeon-prefs-tabs.png
 share/gnome/galeon/galeon-prefs-web-content.png
+share/gnome/galeon/galeon-secure.png
 share/gnome/galeon/galeon-send-link.png
 share/gnome/galeon/galeon-separator.png
 share/gnome/galeon/galeon-tab-loading.gif
@@ -276,6 +278,7 @@ share/locale/zh_TW/LC_MESSAGES/galeon-2.0.mo
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Browsing/History
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Browsing/General
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Browsing/Find
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Browsing/Bookmarks/Editor
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Browsing/Bookmarks
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Browsing
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced/Security
@@ -300,6 +303,7 @@ share/locale/zh_TW/LC_MESSAGES/galeon-2.0.mo
 @dirrm etc/gconf/gconf.xml.defaults/apps/galeon/Browsing/History
 @dirrm etc/gconf/gconf.xml.defaults/apps/galeon/Browsing/General
 @dirrm etc/gconf/gconf.xml.defaults/apps/galeon/Browsing/Find
+@dirrm etc/gconf/gconf.xml.defaults/apps/galeon/Browsing/Bookmarks/Editor
 @dirrm etc/gconf/gconf.xml.defaults/apps/galeon/Browsing/Bookmarks
 @dirrm etc/gconf/gconf.xml.defaults/apps/galeon/Browsing
 @dirrm etc/gconf/gconf.xml.defaults/apps/galeon/Advanced/Security
