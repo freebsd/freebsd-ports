@@ -4276,6 +4276,7 @@ mozilla-devel-gtk2	ports/www/mozilla-devel-gtk2
 mozilla-embedded ports/www/mozilla-embedded
 mozilla-embedded-devel ports/www/mozilla-embedded-devel
 mozilla-embedded-vendor ports/www/mozilla-embedded-vendor
+mozilla-firebird	ports/www/mozilla-firebird
 mozilla-fonts	ports/x11-fonts/mozilla-fonts
 mozilla-gtk2	ports/www/mozilla-gtk2
 mozilla-headers	ports/www/mozilla-headers
@@ -5870,7 +5871,6 @@ phalanx		ports/games/phalanx
 pharmacy	ports/devel/pharmacy
 phex		ports/net/phex
 phluid		ports/x11-wm/phluid
-phoenix		ports/www/phoenix
 phoon		ports/astro/phoon
 photopc		ports/graphics/photopc
 php-dbg		ports/devel/php-dbg
