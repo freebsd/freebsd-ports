@@ -1,0 +1,158 @@
+%%ISMAILDIR%%addressbook.php
+%%ISMAILDIR%%addressbookdecrypt.php
+%%ISMAILDIR%%addressbookentry.php
+%%ISMAILDIR%%addressbooklist.php
+%%ISMAILDIR%%addressbookpopupbottom.php
+%%ISMAILDIR%%addressbookpopuplist.php
+%%ISMAILDIR%%addressbookpopuptop.php
+%%ISMAILDIR%%addressbooktopbar.php
+%%ISMAILDIR%%deletefolder.php
+%%ISMAILDIR%%dict.php
+%%ISMAILDIR%%editaddressbook.php
+%%ISMAILDIR%%editsettings.php
+%%ISMAILDIR%%error.php
+%%ISMAILDIR%%folderlist.php
+%%ISMAILDIR%%header.php
+%%ISMAILDIR%%hidden.php
+%%ISMAILDIR%%include/conffilefunctions.php
+%%ISMAILDIR%%include/istheme.conf.sample
+%%ISMAILDIR%%include/ismail.conf.sample
+%%ISMAILDIR%%include/datastores/template.php
+%%ISMAILDIR%%include/datastores/mysql4.php
+%%ISMAILDIR%%include/datastores/pgsql.php
+%%ISMAILDIR%%include/datastores/xml.php
+%%ISMAILDIR%%include/empty.xml
+%%ISMAILDIR%%include/globals.php
+%%ISMAILDIR%%include/mailfunctions.php
+%%ISMAILDIR%%index.php
+%%ISMAILDIR%%ismail.php
+%%ISMAILDIR%%locale/cs_CZ/LC_MESSAGES/messages.mo
+%%ISMAILDIR%%locale/cs_CZ/LC_MESSAGES/messages.po
+%%ISMAILDIR%%locale/it_IT/LC_MESSAGES/messages.mo
+%%ISMAILDIR%%locale/it_IT/LC_MESSAGES/messages.po
+%%ISMAILDIR%%locale/en_US/LC_MESSAGES/messages.mo
+%%ISMAILDIR%%locale/en_US/LC_MESSAGES/messages.po
+%%ISMAILDIR%%locale/da_DK/LC_MESSAGES/messages.po
+%%ISMAILDIR%%locale/da_DK/LC_MESSAGES/messages.mo
+%%ISMAILDIR%%login.php
+%%ISMAILDIR%%logout.php
+%%ISMAILDIR%%mail.php
+%%ISMAILDIR%%mailheader.php
+%%ISMAILDIR%%maillist.php
+%%ISMAILDIR%%maillistheader.php
+%%ISMAILDIR%%mailwrapper.php
+%%ISMAILDIR%%movemail.php
+%%ISMAILDIR%%newfolder.php
+%%ISMAILDIR%%sendmail.php
+%%ISMAILDIR%%settingseditidentity.php
+%%ISMAILDIR%%settingsgeneral.php
+%%ISMAILDIR%%settingsidentities.php
+%%ISMAILDIR%%settingslist.php
+%%ISMAILDIR%%spellcheck.php
+%%ISMAILDIR%%statusbar.php
+%%ISMAILDIR%%subscribe.php
+%%ISMAILDIR%%themes/swarthy/headerbarleftcap.gif
+%%ISMAILDIR%%themes/swarthy/checkspelling.gif
+%%ISMAILDIR%%themes/swarthy/xtree/foldericon.png
+%%ISMAILDIR%%themes/swarthy/xtree/Tminus.png
+%%ISMAILDIR%%themes/swarthy/xtree/Lplus.png
+%%ISMAILDIR%%themes/swarthy/xtree/file.png
+%%ISMAILDIR%%themes/swarthy/xtree/T.png
+%%ISMAILDIR%%themes/swarthy/xtree/openfoldericon.png
+%%ISMAILDIR%%themes/swarthy/xtree/blank.png
+%%ISMAILDIR%%themes/swarthy/xtree/Lminus.png
+%%ISMAILDIR%%themes/swarthy/xtree/Tplus.png
+%%ISMAILDIR%%themes/swarthy/xtree/I.png
+%%ISMAILDIR%%themes/swarthy/xtree/new.png
+%%ISMAILDIR%%themes/swarthy/xtree/L.png
+%%ISMAILDIR%%themes/swarthy/css/topbarpop3.css
+%%ISMAILDIR%%themes/swarthy/css/error.css
+%%ISMAILDIR%%themes/swarthy/css/settingslist.css
+%%ISMAILDIR%%themes/swarthy/css/folderlists.css
+%%ISMAILDIR%%themes/swarthy/css/mailheader.css
+%%ISMAILDIR%%themes/swarthy/css/addressbookdecrypt.css
+%%ISMAILDIR%%themes/swarthy/css/settingsgeneral.css
+%%ISMAILDIR%%themes/swarthy/css/sendmail.css
+%%ISMAILDIR%%themes/swarthy/css/topbarimap.css
+%%ISMAILDIR%%themes/swarthy/css/addressbook.css
+%%ISMAILDIR%%themes/swarthy/css/frameheader.css
+%%ISMAILDIR%%themes/swarthy/css/statusbar.css
+%%ISMAILDIR%%themes/swarthy/css/addressbooktopbar.css
+%%ISMAILDIR%%themes/swarthy/css/login.css
+%%ISMAILDIR%%themes/swarthy/css/logout.css
+%%ISMAILDIR%%themes/swarthy/css/view.css
+%%ISMAILDIR%%themes/swarthy/css/maillist.css
+%%ISMAILDIR%%themes/swarthy/css/settingseditidentity.css
+%%ISMAILDIR%%themes/swarthy/css/addressbookentry.css
+%%ISMAILDIR%%themes/swarthy/css/settingsidentities.css
+%%ISMAILDIR%%themes/swarthy/css/mail.css
+%%ISMAILDIR%%themes/swarthy/css/dict.css
+%%ISMAILDIR%%themes/swarthy/css/globals.css
+%%ISMAILDIR%%themes/swarthy/css/maillistheader.css
+%%ISMAILDIR%%themes/swarthy/css/xtree.css
+%%ISMAILDIR%%themes/swarthy/titlebarfill.gif
+%%ISMAILDIR%%themes/swarthy/sendnow.gif
+%%ISMAILDIR%%themes/swarthy/istheme.conf
+%%ISMAILDIR%%themes/swarthy/statusbarfill.gif
+%%ISMAILDIR%%themes/swarthy/statusbarleftcap.gif
+%%ISMAILDIR%%themes/swarthy/headerbarfill.gif
+%%ISMAILDIR%%themes/swarthy/deleteentry.gif
+%%ISMAILDIR%%themes/swarthy/replyall.gif
+%%ISMAILDIR%%themes/swarthy/newfolder.gif
+%%ISMAILDIR%%themes/swarthy/middletab.gif
+%%ISMAILDIR%%themes/swarthy/stipplebg.gif
+%%ISMAILDIR%%themes/swarthy/curvedlefttab.gif
+%%ISMAILDIR%%themes/swarthy/reply.gif
+%%ISMAILDIR%%themes/swarthy/newmail.gif
+%%ISMAILDIR%%themes/swarthy/generalsettings.gif
+%%ISMAILDIR%%themes/swarthy/deletefolder.gif
+%%ISMAILDIR%%themes/swarthy/addressbook.gif
+%%ISMAILDIR%%themes/swarthy/settings.gif
+%%ISMAILDIR%%themes/swarthy/identities.gif
+%%ISMAILDIR%%themes/swarthy/smallismaillogo.jpg
+%%ISMAILDIR%%themes/swarthy/righttab.gif
+%%ISMAILDIR%%themes/swarthy/titlebarleftcap.gif
+%%ISMAILDIR%%themes/swarthy/deletemail.gif
+%%ISMAILDIR%%themes/swarthy/subscribefolder.gif
+%%ISMAILDIR%%themes/swarthy/answered.gif
+%%ISMAILDIR%%themes/swarthy/logout.gif
+%%ISMAILDIR%%themes/swarthy/ismaillogo.jpg
+%%ISMAILDIR%%themes/swarthy/newentry.gif
+%%ISMAILDIR%%themes/swarthy/titlebarrightcap.gif
+%%ISMAILDIR%%themes/swarthy/curvedrighttab.gif
+%%ISMAILDIR%%themes/swarthy/lefttab.gif
+%%ISMAILDIR%%themes/swarthy/statusbarrightcap.gif
+%%ISMAILDIR%%themes/swarthy/addressicon.gif
+%%ISMAILDIR%%themes/swarthy/curvedmiddletab.gif
+%%ISMAILDIR%%themes/swarthy/headerbarrightcap.gif
+%%ISMAILDIR%%themes/swarthy/forward.gif
+%%ISMAILDIR%%themes/swarthy/attach.gif
+%%ISMAILDIR%%themes/swarthy/movemail.gif
+%%ISMAILDIR%%themes/swarthy/topbarrightcap.gif
+%%ISMAILDIR%%topbar.php
+%%ISMAILDIR%%viewmailbody.php
+%%ISMAILDIR%%viewmailheader.php
+%%ISMAILDIR%%xtree/xtree-css.php
+%%ISMAILDIR%%xtree/xtree.php
+%%DOCSDIR%%/docs.html
+%%EXAMPLESDIR%%/pgsql.schema
+%%EXAMPLESDIR%%/mysql4.schema
+@dirrm %%ISMAILDIR%%xtree
+@dirrm %%ISMAILDIR%%themes/swarthy/xtree
+@dirrm %%ISMAILDIR%%themes/swarthy/css
+@dirrm %%ISMAILDIR%%themes/swarthy
+@dirrm %%ISMAILDIR%%themes
+@dirrm %%ISMAILDIR%%locale/it_IT/LC_MESSAGES
+@dirrm %%ISMAILDIR%%locale/it_IT
+@dirrm %%ISMAILDIR%%locale/en_US/LC_MESSAGES
+@dirrm %%ISMAILDIR%%locale/en_US
+@dirrm %%ISMAILDIR%%locale/da_DK/LC_MESSAGES
+@dirrm %%ISMAILDIR%%locale/da_DK
+@dirrm %%ISMAILDIR%%locale/cs_CZ/LC_MESSAGES
+@dirrm %%ISMAILDIR%%locale/cs_CZ
+@dirrm %%ISMAILDIR%%locale
+@dirrm %%ISMAILDIR%%include/datastores
+@dirrm %%ISMAILDIR%%include
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%DOCSDIR%%
+@dirrm %%ISMAILDIR%%

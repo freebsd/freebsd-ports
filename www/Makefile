@@ -168,6 +168,7 @@
     SUBDIR += imgsizer
     SUBDIR += indexme
     SUBDIR += interchange
+    SUBDIR += ismail
     SUBDIR += jakarta-jmeter
     SUBDIR += jakarta-tomcat3
     SUBDIR += jakarta-tomcat4
