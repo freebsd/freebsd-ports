@@ -8,13 +8,12 @@
 PORTNAME=	mysql-jdbc-mm
 PORTVERSION=	1.2c
 CATEGORIES=	databases java
-MASTER_SITES=	http://www.worldserver.com/mm.mysql/dist/
+MASTER_SITES=	http://mmmysql.sourceforge.net/dist/
 DISTNAME=	mm.mysql.jdbc-${PORTVERSION}
 
 MAINTAINER=	dglo@SSEC.WISC.EDU
 
 BUILD_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/javac:${PORTSDIR}/java/jdk
-RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk
 
 ALL_TARGET=	jar
 

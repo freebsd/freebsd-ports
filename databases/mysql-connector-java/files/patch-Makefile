@@ -1,13 +1,13 @@
---- Makefile.orig	Mon Feb 21 23:43:51 2000
-+++ Makefile	Sun Aug 27 13:38:46 2000
+--- Makefile.orig	Sun May 27 12:10:22 2001
++++ Makefile	Sun May 27 12:16:18 2001
 @@ -3,14 +3,16 @@
  # $Id: Makefile,v 1.2 1998/08/25 04:02:25 mmatthew Exp $
  #
  
 -JAVAC = /usr/local/jdk118/bin/javac
-+JAVA_HOME ?=	/usr/local/jdk1.1.8
-+JAVAC ?=	$(JAVA_HOME)/bin/javac
-+JAR ?=		$(JAVA_HOME)/bin/jar
++JAVA_HOME = /usr/local/jdk1.1.8
++JAVAC = JAVA_HOME=$(JAVA_HOME) CLASSPATH= $(JAVA_HOME)/bin/javac
++JAR = JAVA_HOME=$(JAVA_HOME) CLASSPATH= $(JAVA_HOME)/bin/jar
  JAVAC_FLAGS =-O -g 
  
  all:
@@ -15,7 +15,7 @@
  
  jar: all
 -	jar -cv0f mysql_uncomp.jar org/gjt/mm/mysql/*.class; jar -cvf mysql_comp.jar org/gjt/mm/mysql/*.class
-+	$(JAR) -cv0f mysql_uncomp.jar org/gjt/mm/mysql/*.class; jar -cvf mysql_comp.jar org/gjt/mm/mysql/*.class
++	$(JAR) -cv0f mysql_uncomp.jar org/gjt/mm/mysql/*.class; $(JAR) -cvf mysql_comp.jar org/gjt/mm/mysql/*.class
  
  clean:
  	rm -f org/gjt/mm/mysql/*.class org/gjt/mm/mysql/*~
