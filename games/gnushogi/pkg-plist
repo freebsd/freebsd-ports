@@ -1,0 +1,17 @@
+bin/gnushogi
+bin/gnushogir
+libexec/gnushogix
+man/man1/gnushogi.1.gz
+share/doc/gnushogi/BOOKFILES
+share/doc/gnushogi/CHANGES
+share/doc/gnushogi/CONTRIB
+share/doc/gnushogi/COPYING
+share/doc/gnushogi/GENERAL
+share/doc/gnushogi/INSTALL
+share/doc/gnushogi/PORTING
+share/doc/gnushogi/README-FIRST
+share/doc/gnushogi/listserv.ref
+share/doc/gnushogi/shogi.rules
+share/doc/gnushogi/tutorial1.gam
+share/doc/gnushogi/tutorial2.gam
+share/gnushogi/gnushogi.bbk
