@@ -74,6 +74,7 @@
     SUBDIR += eterm-bg
     SUBDIR += evas
     SUBDIR += evolvotron
+    SUBDIR += exifprobe
     SUBDIR += exiftags
     SUBDIR += fbm
     SUBDIR += feh
