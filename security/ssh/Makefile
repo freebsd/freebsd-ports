@@ -69,7 +69,7 @@ MAKE_ENV+=	GMPINCDIR="${LOCALBASE}/include" \
 .endif
 
 .if (${OSVERSION} >= 400016 && !defined(REALLY_WANT_SSH))
-IGNORE=		OpenSSH is a superior version of SSH which has been included in the FreeBSD base system since 4.0-RELEASE. This port is now deprecated. To override this warning set the REALLY_WANT_SSH environment variable and rebuild.
+IGNORE=		is now deprecated: OpenSSH is a superior version of SSH which has been included in the FreeBSD base system since 4.0-RELEASE.  To override this warning set the REALLY_WANT_SSH environment variable and rebuild
 .endif
 
 MAN1=		scp1.1 ssh-add1.1 ssh-agent1.1 ssh-keygen1.1 ssh1.1 \
