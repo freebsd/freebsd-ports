@@ -10,7 +10,7 @@ PORTVERSION=	0.70
 CATEGORIES=	mail
 MASTER_SITES=	ftp://cr.yp.to/software/
 
-MAINTAINER=	nbm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of tools to analyze qmail-send's activity
 
 RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail

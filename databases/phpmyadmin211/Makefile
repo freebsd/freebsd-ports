@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpmyadmin
 DISTFILES=	${DISTNAME}-${PHP_SUFX}${EXTRACT_SUFX}
 
-MAINTAINER=	nbm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of PHP-scripts to adminstrate MySQL over the web
 
 FORBIDDEN=	http://people.freebsd.org/~eik/portaudit/cc0fb686-6550-11d8-80e3-0020ed76ef5a.html

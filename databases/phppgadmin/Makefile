@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	phpPgAdmin-${PORTVERSION}
 
-MAINTAINER=	nbm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web Based Postgres Administration
 
 POSTGRESQL_PORT?=	databases/postgresql7
