@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	openal
-PORTVERSION=	20030524
+PORTVERSION=	20030724
 CATEGORIES=	audio
 MASTER_SITES=	http://math.smsu.edu/~erik/files/fbsd/\
-		http://www.smluc.org/~erik/
+		http://www.smluc.org/~erik/files/fbsd/
 
 MAINTAINER=	erik@smluc.org
 COMMENT=	A 3D positional spatialized sound library
