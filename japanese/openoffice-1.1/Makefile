@@ -11,6 +11,7 @@ LANG_PKGNAME=	ja
 LANG_EXT=	81
 LANG_CONFIGURE_ARG=	JAPN
 MASTERDIR=	${.CURDIR}/../../editors/openoffice-devel
+MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/stable/&,}
 RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/TrueType/kochi-mincho-subst.ttf:${PORTSDIR}/japanese/kochi-ttfonts
 L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
 
