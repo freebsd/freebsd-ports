@@ -1,5 +1,5 @@
---- Makefile.orig	Sun May 31 06:06:53 1998
-+++ Makefile	Fri Sep  6 20:00:06 2002
+--- Makefile.orig	Sun Aug 17 23:30:01 2003
++++ Makefile	Sun Aug 17 23:35:09 2003
 @@ -28,9 +28,9 @@
  #	SVR4	/usr/share/man/cat1	-		1
  #	Linux	/usr/local/man/man1	-		man
@@ -9,7 +9,7 @@
 -LOCALMAN = /usr/local/man/cat1
 +LOCALLIB = $(PREFIX)/lib
 +LOCALBIN = $(PREFIX)/bin
-+LOCALMAN = $(PREFIX)/man/man1
++LOCALMAN = $(PREFIX)/man/cat1
  
  # Program to use for compressing the manpage.
  # If set to 'true', no compression is applied.
@@ -25,41 +25,48 @@
  # Location of the GD library and include files.
 -GDLIB	= /usr/local/lib/libgd.a
 -GDINC	= /usr/local/include
-+GDLIB	= $(PREFIX)/lib/libgd.a
-+GDINC	= $(PREFIX)/include/gd
++GDLIB	= ${LOCALBASE}/lib/libgd.a
++GDINC	= ${LOCALBASE}/include
  
  #
  # Platform selection
-@@ -76,7 +76,7 @@
+@@ -74,9 +74,9 @@
+ #	If you prefer optimization of the generated code, uncomment the
+ #	next line and comment out the -g definition.
  #
- #CC = cc
+-#CC = cc
++CC ?= cc
  #OPTIM = -O2
 -OPTIM = -g
 +#OPTIM = -g
  
  # Remove NDEBUG to include various assertion checks in the program.
  #COMDEFS = -DTIME_STATS -DNDEBUG
-@@ -108,6 +108,10 @@
- #PLATFORM = -ansi -Dunix
- #CC = gcc
+@@ -88,6 +88,10 @@
+ # for the NETWARE platform.
+ #
  
 +# FreeBSD
 +DEFINES = -DBSD -DHA_LIBDIR="$(LOCALLIB)/http-analyze"
 +PLATFORM =
 +
- # HP/UX
+ # IRIX
  #
- # Lacks definition of the 'unix' macro in it's compiler, so we
-@@ -139,7 +143,7 @@
+ #DEFINES = -DIRIX $(COMDEFS)
+@@ -139,10 +143,10 @@
  #DEFINES = -DNETWARE $(COMDEFS)
  #PLATFORM = 
  
 -CFLAGS  = $(OPTIM) $(PLATFORM) $(DEFINES)
-+CFLAGS  += $(PLATFORM) $(DEFINES)
++CFLAGS  += $(OPTIM) $(PLATFORM) $(DEFINES)
  LDFLAGS	=  
  LINT	= lint -Dunix -Xa -u
- LIBS	= -lm
-@@ -212,14 +216,15 @@
+-LIBS	= -lm
++LIBS	= -lm -L/usr/local/lib -lpng
+ NROFF	= nroff
+ NRFLAGS	= -u1 -man
+ 
+@@ -212,10 +216,12 @@
  	cp http-analyze.$(EXTENSION) $(LOCALMAN)/http-analyze.1
  	chmod 755 $(LOCALBIN)/http-analyze $(LOCALBIN)/ha-setup
  	chmod 444 $(LOCALMAN)/http-analyze.1
@@ -75,12 +82,3 @@
  	cp files/btn/* $(LOCALLIB)/http-analyze/btn/
  	@echo "\nNow run 'ha-setup' to configure http-analyze for your server (Unix only).\n"
  
--
- clean:
- 	-rm -f $(HA_OBJ) $(3D_OBJ) lint.out
- 
-@@ -228,4 +233,3 @@
- 
- clobber::	realclean
- 	-rm -f index.html stats*.html stats*.hist sites*.html files*.html agents*.html *.gif
--
