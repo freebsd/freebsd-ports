@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-PORTVERSION=	5.4.3.10
+PORTVERSION=	5.4.3.11
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://imagemagick.sourceforge.net/http/ \
 		ftp://ftp.yggdrasil.com/mirrors/site/ftp.simplesystems.org/pub/%SUBDIR%/ \
@@ -46,15 +46,12 @@ LIB_DEPENDS+=	bz2:${PORTSDIR}/archivers/bzip2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 USE_PERL5=	yes
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-shared --with-perl=${PERL5} \
 		--without-gslib --without-jp2
-.ifndef WITH_HDF
-CONFIGURE_ARGS+=--without-hdf 
-.endif
 INSTALLS_SHLIB=	yes
 
 MAN1=		ImageMagick.1 Magick++-config.1 Magick-config.1 \
@@ -97,6 +94,12 @@ PLIST_SUB+=	MODULES=''
 PLIST_SUB+=	MODULES='@comment '
 .endif
 
+.if defined(WITH_HDF)
+CONFIGURE_ARGS+=	--with-hdf 
+.else
+CONFIGURE_ARGS+=	--without-hdf 
+.endif
+
 .if defined(WITHOUT_X11)
 PKGNAMESUFFIX+=	-nox11
 BUILD_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-gnu-nox11
@@ -113,25 +116,25 @@ MAN1+=		animate.1 display.1 import.1
 PLIST_SUB+=	X11=''
 .endif
 
+.if defined(NOPORTDOCS)
+INSTALL_TARGET=	install
+.else
+INSTALL_TARGET=	install install-data-html
+.endif
+
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|-lc_r|g ; \
 		s|LIBLTDL=.*$$|LIBLTDL="-lltdl"|g ; \
 		s|INCLTDL=.*$$|INCLTDL=|g ; \
 		s|lcms/lcms.h|lcms.h|g ; \
 		s|lcms_lcms_h|lcms_h|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|top_builddir\)/ltdl/libltdlc.la|LIBLTDL\)|g'
+	@find ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
+		's|top_builddir\)/ltdl/libltdlc.la|LIBLTDL\)|g ; \
+		 s|pkgdocdir =.*$$|pkgdocdir = ${DOCSDIR}/|g ; \
+		 s| install-data-html||g'
 	@${PERL} -pi -e 's|lcms/lcms.h|lcms.h|g' ${WRKSRC}/magick/transform.c
 	@${PERL} -pi -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/ltdl/ltdl.c
 	@${PERL} -pi -e 's|timestamp: %ld|timestamp: %d|g' \
 		${WRKSRC}/magick/xwindow.c
-	@${PERL} -pi -e 's|pkgdocdir = (.+)|pkgdocdir = ${DOCSDIR}/|' \
-		${WRKSRC}/Makefile.in
-
-.if defined(NOPORTDOCS)
-pre-install:
-# Don't install the HTML documentation...
-	${TOUCH} ${WRKSRC}/install-data-html
-.endif
 
 .include <bsd.port.mk>
