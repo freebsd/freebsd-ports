@@ -1,0 +1,4 @@
+bin/oinkmaster
+etc/oinkmaster.conf
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

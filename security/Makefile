@@ -142,6 +142,7 @@
     SUBDIR += nss
     SUBDIR += ocaml-cryptokit
     SUBDIR += oidentd
+    SUBDIR += oinkmaster
     SUBDIR += op
     SUBDIR += opencdk
     SUBDIR += opensc
