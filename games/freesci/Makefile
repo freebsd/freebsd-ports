@@ -7,6 +7,7 @@
 
 PORTNAME=	freesci
 PORTVERSION=	0.3.4a
+PORTREVISION=	1
 CATEGORIES=	emulators games
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		http://teksolv.de/~jameson/

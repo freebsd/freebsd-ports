@@ -6,10 +6,18 @@ bin/freesci
 bin/freesci-setup
 bin/sciv
 share/applnk/Games/Adventure/FreeSCI.desktop
+@unexec rmdir %D/share/applnk/Games/Adventure 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Games 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true
 share/icons/hicolor/48x48/apps/freesci.png
+@unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
 share/games/freesci/config.template
 %%PORTDOCS%%share/games/freesci/sci.sgml
 %%PORTDOCS%%share/games/freesci/sci-kernel.sgml
 %%PORTDOCS%%share/games/freesci/freesci.sgml
 %%PORTDOCS%%share/games/freesci/game-list.sgml
 @dirrm share/games/freesci
+@unexec rmdir %D/share/games 2>/dev/null || true
