@@ -8,14 +8,15 @@ PORTNAME=	chemtool
 PORTVERSION=	1.6.1
 PORTREVISION=	1
 CATEGORIES=	science
-MASTER_SITES=	http://ruby.chemie.uni-freiburg.de/~martin/chemtool/
+MASTER_SITES=   ${MASTER_SITE_LOCAL}
+#		http://ruby.chemie.uni-freiburg.de/~martin/chemtool/
+MASTER_SITE_SUBDIR=     maho/chemtool
+
 DISTNAME=	ct161gtk2
 EXTRACT_SUFX=   .tgz
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Drawing organic molecules easily and store them (developer version)
-
-BROKEN=		"Checksum mismatch"
 
 LIB_DEPENDS=    EMF.1:${PORTSDIR}/graphics/libemf
 RUN_DEPENDS=	transfig:${PORTSDIR}/print/transfig
