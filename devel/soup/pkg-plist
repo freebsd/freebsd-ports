@@ -9,11 +9,16 @@ include/soup/libsoup/soup-context.h
 include/soup/libsoup/soup-dav-server.h
 include/soup/libsoup/soup-dav.h
 include/soup/libsoup/soup-env.h
+include/soup/libsoup/soup-error.h
 include/soup/libsoup/soup-fault.h
+include/soup/libsoup/soup-headers.h
 include/soup/libsoup/soup-message.h
+include/soup/libsoup/soup-method.h
 include/soup/libsoup/soup-misc.h
+include/soup/libsoup/soup-ntlm.h
 include/soup/libsoup/soup-parser.h
 include/soup/libsoup/soup-serializer.h
+include/soup/libsoup/soup-server-auth.h
 include/soup/libsoup/soup-server.h
 include/soup/libsoup/soup-socket.h
 include/soup/libsoup/soup-uri.h
@@ -28,13 +33,13 @@ include/soup/libwsdl/wsdl-typecodes.h
 include/soup/libwsdl/wsdl.h
 lib/libsoup-apache.a
 lib/libsoup-apache.so
-lib/libsoup-apache.so.2
+lib/libsoup-apache.so.5
 lib/libsoup.a
 lib/libsoup.so
-lib/libsoup.so.2
+lib/libsoup.so.5
 lib/libwsdl.a
 lib/libwsdl.so
-lib/libwsdl.so.2
+lib/libwsdl.so.5
 libdata/pkgconfig/soup.pc
 share/aclocal/soup.m4
 @dirrm share/doc/soup
