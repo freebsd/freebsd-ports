@@ -1,0 +1,29 @@
+--- mims.c	Mon May 29 03:56:00 2000
++++ mims.c	Thu May 23 04:07:31 2002
+@@ -323,7 +323,7 @@
+               else putchar(p[i]);
+ }   };
+ 
+-char * strnstr(char *bs, off_t bl, char *s)
++char * strn_str(char *bs, off_t bl, char *s)
+ {   char *p = bs;
+     while ((p = memchr(p, s[0], bs + bl - p)))
+         if (strlen(s) > (bs + bl - p) || strncmp(p, s, strlen(s))) p++;
+@@ -335,7 +335,7 @@
+ {   char *p;
+     off_t l;
+     p = bs;
+-    while ((p = strnstr(p, bl, "\n--")))
++    while ((p = strn_str(p, bl, "\n--")))
+     {   p += 3;
+         l = bs + bl - p;
+         if (!strncmp(p, ss, (l > sl) ? sl : l)) return(p - 2);
+@@ -403,7 +403,7 @@
+     unsigned charset, encapsulation;
+     enum quost q_st;
+     char *Fnam = NULL;
+-    begin = strnstr(begin, len, "\n\n");
++    begin = strn_str(begin, len, "\n\n");
+     if (begin)
+     {   begin += 2;
+         headlen = begin - headers;
