@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	plone
-PORTVERSION=	2.0
+PORTVERSION=	2.0.2
 CATEGORIES=	www zope
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	plone
-DISTNAME=	CMFPlone-${PORTVERSION}-final
+DISTNAME=	Plone-${PORTVERSION}
 DIST_SUBDIR=	zope
 
 MAINTAINER=	filippo@widestore.net
@@ -18,12 +18,10 @@ COMMENT=	A user friendly implementation of the CMF written on top of ZOPE
 
 RUN_DEPENDS=	${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFDefault/__init__.py:${PORTSDIR}/www/zope-cmf
 
-BROKEN=		"Broken pkg-plist"
-
 USE_ZOPE=	yes
 USE_PYTHON=	yes
 
-WRKSRC=		${WRKDIR}/CMFPlone-${PORTVERSION}-final
+WRKSRC=		${WRKDIR}/Plone-${PORTVERSION}
 PLIST=		${WRKDIR}/pkg-plist
 MODULES=	CMFPlone CMFFormController
 
@@ -90,13 +88,13 @@ pre-install:
 	@${RM} -f ${PLIST}
 	@${TOUCH} ${PLIST}
 	@for m in ${MODULES}; do \
-		if [ ! -f ${ZOPEBASEDIR}/lib/python/Products/$${m}/__init__.py ]; then \
+		if [ ! -f ${ZOPEBASEDIR}/Products/$${m}/__init__.py ]; then \
 			cd ${WRKSRC}; \
 			for i in `${FIND} $${m} -type f`; do \
-				${ECHO_CMD} %%ZOPEBASEDIR%%/lib/python/Products/$${i} >> ${PLIST}; \
+				${ECHO_CMD} %%ZOPEBASEDIR%%/Products/$${i} >> ${PLIST}; \
 			done; \
 			for i in `${FIND} -d $${m} -type d`; do \
-				${ECHO_CMD} @dirrm %%ZOPEBASEDIR%%/lib/python/Products/$${i} >> ${PLIST}; \
+				${ECHO_CMD} @dirrm %%ZOPEBASEDIR%%/Products/$${i} >> ${PLIST}; \
 			done; \
 		fi;\
 	done
@@ -105,7 +103,7 @@ do-install:
 	@${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}
 	@cd ${WRKSRC}; \
 	for m in ${MODULES}; do \
-		if [ ! -f ${ZOPEBASEDIR}/lib/python/Products/$${m}/__init__.py ]; then \
+		if [ ! -f ${ZOPEBASEDIR}/Products/$${m}/__init__.py ]; then \
 			${CP} -R $${m} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}; \
 		fi; \
 	done
