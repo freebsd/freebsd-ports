@@ -13,29 +13,24 @@ DISTFILES=	ppinst-0.01.tar.gz ppsrc-0.01.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
+WRKSRC=		${WRKDIR}/ppsrc
 USE_QT=		yes
 USE_X_PREFIX=	yes
-WRKSRC=		${WRKDIR}/ppsrc
-
-pre-build:
-	@ cd ${WRKSRC}; ${MAKE} ${MAKE_ENV} depend
 
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/pp ${PREFIX}/bin/pp.bin
-	@ ${SED} 's#%%PREFIX%%#${PREFIX}#g' ${FILESDIR}/pp.sh > ${WRKDIR}/pp.sh
-	@ ${INSTALL_SCRIPT} ${WRKDIR}/pp.sh ${PREFIX}/bin/pp
-	@ ${MKDIR} ${PREFIX}/share/pp
-	@ ${INSTALL_DATA} ${WRKDIR}/ppinst/autosave.sav ${PREFIX}/share/pp
-	@ ${MKDIR} ${PREFIX}/share/pp/pic
-	@ ${INSTALL_DATA} ${WRKDIR}/ppinst/*.gif ${PREFIX}/share/pp/pic
-	@ ${MKDIR} ${PREFIX}/share/pp/level
-	@ ${INSTALL_DATA} ${WRKDIR}/ppinst/*.map1 ${PREFIX}/share/pp/level
-
-post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/pp ${PREFIX}/bin/pp.bin
+	@${SED} "s:%%PREFIX%%:${PREFIX}:g" ${FILESDIR}/pp.sh > ${WRKDIR}/pp.sh
+	${INSTALL_SCRIPT} ${WRKDIR}/pp.sh ${PREFIX}/bin/pp
+	@${MKDIR} ${PREFIX}/share/pp
+	${INSTALL_DATA} ${WRKDIR}/ppinst/autosave.sav ${PREFIX}/share/pp
+	@${MKDIR} ${PREFIX}/share/pp/pic
+	${INSTALL_DATA} ${WRKDIR}/ppinst/*.gif ${PREFIX}/share/pp/pic
+	@${MKDIR} ${PREFIX}/share/pp/level
+	${INSTALL_DATA} ${WRKDIR}/ppinst/*.map1 ${PREFIX}/share/pp/level
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/pp
+	@${MKDIR} ${PREFIX}/share/doc/pp
 .for file in INSTALL LICENSE RULES WARRANTY free-license.html
-	@ ${INSTALL_DATA} ${WRKDIR}/ppinst/${file} ${PREFIX}/share/doc/pp
+	${INSTALL_DATA} ${WRKDIR}/ppinst/${file} ${PREFIX}/share/doc/pp
 .endfor
 .endif
 
