@@ -42,6 +42,7 @@ share/locale/cs/LC_MESSAGES/balsa.mo
 share/locale/da/LC_MESSAGES/balsa.mo
 share/locale/de/LC_MESSAGES/balsa.mo
 share/locale/el/LC_MESSAGES/balsa.mo
+share/locale/en_CA/LC_MESSAGES/balsa.mo
 share/locale/en_GB/LC_MESSAGES/balsa.mo
 share/locale/es/LC_MESSAGES/balsa.mo
 share/locale/et/LC_MESSAGES/balsa.mo
@@ -50,6 +51,7 @@ share/locale/fr/LC_MESSAGES/balsa.mo
 share/locale/ga/LC_MESSAGES/balsa.mo
 share/locale/he/LC_MESSAGES/balsa.mo
 share/locale/hi/LC_MESSAGES/balsa.mo
+share/locale/hr/LC_MESSAGES/balsa.mo
 share/locale/hu/LC_MESSAGES/balsa.mo
 share/locale/it/LC_MESSAGES/balsa.mo
 share/locale/ja/LC_MESSAGES/balsa.mo
