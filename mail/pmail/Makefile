@@ -12,13 +12,12 @@ MASTER_SITES=	http://www.toad.net/~sbender/pmail/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
-		${LOCALBASE}/lib/python1.5/site-packages/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome
+BUILD_DEPENDS=	${PYTHON_LIBDIR}/site-packages/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome
 LIB_DEPENDS=	glade.4:${PORTSDIR}/devel/libglade
-RUN_DEPENDS=	python:${PORTSDIR}/lang/python \
-		${LOCALBASE}/lib/python1.5/site-packages/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome
+RUN_DEPENDS=	${PYTHON_LIBDIR}/site-packages/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome
 
 USE_GMAKE=	yes
+USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
