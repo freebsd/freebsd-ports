@@ -3,7 +3,7 @@
 # Date created:         28 December 1995
 # Whom:                 se
 #
-# $Id: Makefile,v 1.5 1996/11/18 11:21:48 asami Exp $
+# $Id: Makefile,v 1.6 1996/11/20 01:59:19 obrien Exp $
 #
 
 DISTNAME=       bytebench-3.1
@@ -32,5 +32,6 @@ do-install:
 		chmod 755 $(PREFIX)/lib/bytebench/pgms/*
 		chmod 755 $(PREFIX)/lib/bytebench/results
 		chmod 755 $(PREFIX)/lib/bytebench/testdir
+		@rm -f ${PREFIX}/lib/bytebench/pgms/*.orig
 
 .include <bsd.port.mk>
