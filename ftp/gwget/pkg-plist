@@ -43,6 +43,7 @@ share/locale/pt_BR/LC_MESSAGES/gwget.mo
 share/locale/ro/LC_MESSAGES/gwget.mo
 share/locale/ru/LC_MESSAGES/gwget.mo
 share/locale/tr/LC_MESSAGES/gwget.mo
+share/locale/zh_CN/LC_MESSAGES/gwget.mo
 share/locale/zh_TW/LC_MESSAGES/gwget.mo
 @dirrm include/gwget
 %%EPIPHANY:%%@unexec rmdir %D/lib/epiphany-%%VERSION%%/extensions 2>/dev/null || true
