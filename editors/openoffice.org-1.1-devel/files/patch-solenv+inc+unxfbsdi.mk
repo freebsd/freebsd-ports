@@ -115,15 +115,15 @@
 -LINKFLAGSAPPGUI= -Wl,-export-dynamic
 -LINKFLAGSAPPCUI= -Wl,-export-dynamic
 +# name of linker
-+LINK*=$(CC)
++LINK*=$(CXX)
 +
 +# default linker flags
 +# LINKFLAGSRUNPATH*=-Wl,-rpath\''$$ORIGIN'\'
-+LINKFLAGS=-z combreloc $(LINKFLAGSRUNPATH)
++LINKFLAGS=$(LINKFLAGSRUNPATH)
 +
 +# linker flags for linking applications
-+LINKFLAGSAPPGUI= -Wl,-export-dynamic -Wl,--noinhibit-exec
-+LINKFLAGSAPPCUI= -Wl,-export-dynamic -Wl,--noinhibit-exec
++LINKFLAGSAPPGUI= -Wl,--noinhibit-exec
++LINKFLAGSAPPCUI= -Wl,--noinhibit-exec
 +
 +# linker flags for linking shared libraries
  LINKFLAGSSHLGUI= -shared
