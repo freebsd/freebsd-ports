@@ -183,6 +183,7 @@
     SUBDIR += kp
     SUBDIR += kwatch
     SUBDIR += lc
+    SUBDIR += less
     SUBDIR += libelysium
     SUBDIR += libh
     SUBDIR += libmcal
