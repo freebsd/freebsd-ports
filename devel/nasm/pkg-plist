@@ -1,0 +1,4 @@
+bin/nasm
+bin/ndisasm
+man/man1/nasm.1.gz
+man/man1/ndisasm.1.gz
