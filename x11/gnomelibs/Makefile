@@ -7,6 +7,7 @@
 
 PORTNAME=	gnomelibs
 PORTVERSION=	1.4.1.6
+PORTREVISION=	1
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-libs
@@ -33,7 +34,8 @@ LIBTOOLFILES=	configure libart_lgpl/configure
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome \
 		--disable-test-gnome \
-		--disable-gtk-doc
+		--disable-gtk-doc \
+		--with-html-dir=${PREFIX}/share/doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 

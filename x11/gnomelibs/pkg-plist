@@ -202,45 +202,45 @@ lib/libzvt.a
 lib/libzvt.so
 lib/libzvt.so.5
 share/aclocal/libart.m4
+share/doc/libart/basic-foo.html
+share/doc/libart/basic-rendering.html
+share/doc/libart/basic.html
+share/doc/libart/fdl-section1.html
+share/doc/libart/fdl-section10.html
+share/doc/libart/fdl-section2.html
+share/doc/libart/fdl-section3.html
+share/doc/libart/fdl-section4.html
+share/doc/libart/fdl-section5.html
+share/doc/libart/fdl-section6.html
+share/doc/libart/fdl-section7.html
+share/doc/libart/fdl-section8.html
+share/doc/libart/fdl-section9.html
+share/doc/libart/fdl-using.html
+share/doc/libart/fdl.html
+share/doc/libart/index.sgml
+share/doc/libart/internals-intersector.html
+share/doc/libart/internals.html
+share/doc/libart/intro-file-names.html
+share/doc/libart/intro.html
+share/doc/libart/libart-affine-transformation-matrices.html
+share/doc/libart/libart-art-alpha-gamma-stuff.html
+share/doc/libart/libart-core-construction-apis.html
+share/doc/libart/libart-extended-construction-apis.html
+share/doc/libart/libart-memory-management.html
+share/doc/libart/libart-svp-rendering.html
+share/doc/libart/libart-svps.html
+share/doc/libart/libart-transformation-operations.html
+share/doc/libart/libart.html
+share/doc/libart/problems-memory.html
+share/doc/libart/problems.html
+share/doc/libart/sample-display.html
+share/doc/libart/sample.html
+share/doc/libart/x35.html
 share/gnome/doc/gnome-doc
 share/gnome/doc/gnome-doc.1
 share/gnome/doc/gnome-doc.el
 share/gnome/doc/gnome-mkstub.1
 share/gnome/doc/mkstub
-share/gnome/gtk-doc/html/libart/basic-foo.html
-share/gnome/gtk-doc/html/libart/basic-rendering.html
-share/gnome/gtk-doc/html/libart/basic.html
-share/gnome/gtk-doc/html/libart/fdl-section1.html
-share/gnome/gtk-doc/html/libart/fdl-section10.html
-share/gnome/gtk-doc/html/libart/fdl-section2.html
-share/gnome/gtk-doc/html/libart/fdl-section3.html
-share/gnome/gtk-doc/html/libart/fdl-section4.html
-share/gnome/gtk-doc/html/libart/fdl-section5.html
-share/gnome/gtk-doc/html/libart/fdl-section6.html
-share/gnome/gtk-doc/html/libart/fdl-section7.html
-share/gnome/gtk-doc/html/libart/fdl-section8.html
-share/gnome/gtk-doc/html/libart/fdl-section9.html
-share/gnome/gtk-doc/html/libart/fdl-using.html
-share/gnome/gtk-doc/html/libart/fdl.html
-share/gnome/gtk-doc/html/libart/index.sgml
-share/gnome/gtk-doc/html/libart/internals-intersector.html
-share/gnome/gtk-doc/html/libart/internals.html
-share/gnome/gtk-doc/html/libart/intro-file-names.html
-share/gnome/gtk-doc/html/libart/intro.html
-share/gnome/gtk-doc/html/libart/libart-affine-transformation-matrices.html
-share/gnome/gtk-doc/html/libart/libart-art-alpha-gamma-stuff.html
-share/gnome/gtk-doc/html/libart/libart-core-construction-apis.html
-share/gnome/gtk-doc/html/libart/libart-extended-construction-apis.html
-share/gnome/gtk-doc/html/libart/libart-memory-management.html
-share/gnome/gtk-doc/html/libart/libart-svp-rendering.html
-share/gnome/gtk-doc/html/libart/libart-svps.html
-share/gnome/gtk-doc/html/libart/libart-transformation-operations.html
-share/gnome/gtk-doc/html/libart/libart.html
-share/gnome/gtk-doc/html/libart/problems-memory.html
-share/gnome/gtk-doc/html/libart/problems.html
-share/gnome/gtk-doc/html/libart/sample-display.html
-share/gnome/gtk-doc/html/libart/sample.html
-share/gnome/gtk-doc/html/libart/x35.html
 share/gnome/gtkrc
 share/gnome/gtkrc.el
 share/gnome/gtkrc.eo
@@ -550,11 +550,9 @@ share/locale/zh_TW/LC_MESSAGES/gnome-libs.mo
 @dirrm share/gnome/help/gnome-dev-info/C
 @dirrm share/gnome/help/gnome-dev-info
 @dirrm share/gnome/help
-@dirrm share/gnome/gtk-doc/html/libart
-@dirrm share/gnome/gtk-doc/html
-@dirrm share/gnome/gtk-doc
 @dirrm share/gnome/games
 @dirrm share/gnome/doc
+@dirrm share/doc/libart
 @dirrm include/gnome-1.0/zvt
 @dirrm include/gnome-1.0/libgnorba
 @dirrm include/gnome-1.0/libgnomeui
