@@ -58,6 +58,7 @@ lib/gstreamer-%%VERSION%%/libgstcdxaparse.so
 lib/gstreamer-%%VERSION%%/libgstchart.so
 %%HERMES%%lib/gstreamer-%%VERSION%%/libgstcolorspace.so
 lib/gstreamer-%%VERSION%%/libgstcutter.so
+lib/gstreamer-%%VERSION%%/libgstdebug.so
 lib/gstreamer-%%VERSION%%/libgstdeinterlace.so
 %%LIBDV%%lib/gstreamer-%%VERSION%%/libgstdvdec.so
 %%LIBDVDNAV%%lib/gstreamer-%%VERSION%%/libgstdvdnavsrc.so
@@ -82,6 +83,7 @@ lib/gstreamer-%%VERSION%%/libgstinterleave.so
 %%IVORBIS%%lib/gstreamer-%%VERSION%%/libgstivorbis.so
 %%JACK%%lib/gstreamer-%%VERSION%%/libgstjack.so
 %%JPEG%%lib/gstreamer-%%VERSION%%/libgstjpeg.so
+%%KIO%%lib/gstreamer-%%VERSION%%/libgstkio.so
 %%LADSPA%%lib/gstreamer-%%VERSION%%/libgstladspa.so
 %%LAME%%lib/gstreamer-%%VERSION%%/libgstlame.so
 lib/gstreamer-%%VERSION%%/libgstlevel.so
@@ -180,8 +182,11 @@ libdata/pkgconfig/gstreamer-libs-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-media-info-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-play-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-plugins-%%VERSION%%.pc
+share/locale/af/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
+share/locale/az/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/nl/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/sr/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
+share/locale/sv/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 @unexec rmdir %D/lib/gstreamer-%%VERSION%% 2>/dev/null || true
 @dirrm include/gstreamer-%%VERSION%%/gst/xwindowlistener
 @dirrm include/gstreamer-%%VERSION%%/gst/xoverlay

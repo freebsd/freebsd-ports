@@ -81,6 +81,8 @@ lib/gstreamer-%%VERSION%%/libgstbasicgthreadscheduler.so
 lib/gstreamer-%%VERSION%%/libgstbasicomegascheduler.so
 lib/gstreamer-%%VERSION%%/libgstbytestream.so
 lib/gstreamer-%%VERSION%%/libgstelements.so
+lib/gstreamer-%%VERSION%%/libgstentrygthreadscheduler.so
+lib/gstreamer-%%VERSION%%/libgstentryomegascheduler.so
 lib/gstreamer-%%VERSION%%/libgstgetbits.so
 lib/gstreamer-%%VERSION%%/libgstindexers.so
 lib/gstreamer-%%VERSION%%/libgstoptgthreadscheduler.so
@@ -96,18 +98,16 @@ lib/libgstreamer-%%VERSION%%.so.%%SHLIB_VERSION%%
 libdata/pkgconfig/gstreamer-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-control-%%VERSION%%.pc
 share/aclocal/gst-element-check-%%VERSION%%.m4
+share/locale/af/LC_MESSAGES/gstreamer-%%VERSION%%.mo
+share/locale/az/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/fr/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/nl/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/sr/LC_MESSAGES/gstreamer-%%VERSION%%.mo
+share/locale/sv/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 @unexec rm %D/share/gnome/cache/gstreamer-%%VERSION%%/registry.xml 2>/dev/null || true
-@dirrm share/gnome/doc/gstreamer-%%VERSION%%.0/pwg
-@dirrm share/gnome/doc/gstreamer-%%VERSION%%.0/manual
-@dirrm share/gnome/doc/gstreamer-%%VERSION%%.0/faq
-@dirrm share/gnome/doc/gstreamer-%%VERSION%%.0
 @dirrm share/gnome/cache/gstreamer-%%VERSION%%
 @unexec rmdir %D/share/gnome/cache 2>/dev/null || true
 @dirrm lib/gstreamer-%%VERSION%%
-@dirrm include/gstreamer-%%VERSION%%/gst/tag
 @dirrm include/gstreamer-%%VERSION%%/gst/getbits
 @dirrm include/gstreamer-%%VERSION%%/gst/control
 @dirrm include/gstreamer-%%VERSION%%/gst/bytestream
