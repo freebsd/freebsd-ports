@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.170 1998/12/16 18:50:20 sada Exp $
+# $Id: Makefile,v 1.171 1998/12/22 00:59:55 jseger Exp $
 #
 
     SUBDIR += Canna
@@ -193,6 +193,7 @@
     SUBDIR += typist
     SUBDIR += vfghostscript
     SUBDIR += vfghostscript5
+    SUBDIR += vfghostscript55
     SUBDIR += vflib
     SUBDIR += vftool
     SUBDIR += vftool-misc118
