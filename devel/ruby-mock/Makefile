@@ -22,7 +22,7 @@ USE_RUBY_FEATURES=	runit
 NO_BUILD=	yes
 
 post-patch:
-	${RUBY} -i -pe 'sub %q{\.\./mock}, "mock"' ${WRKSRC}/demo/*
+	${RUBY} -i -pe 'sub %r{\.\./mock}, "mock"' ${WRKSRC}/demo/*
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/mock.rb ${RUBY_SITELIBDIR}/
