@@ -1,0 +1,30 @@
+--- configure.in.dist	Wed Aug  7 13:51:51 1996
++++ configure.in	Wed Aug  7 13:54:35 1996
+@@ -344,9 +344,9 @@
+     ;;
+ esac
+ 
+-# Socket pairs appear to be broken on several systems.  I don't know exactly
+-# where, so I'll use pipes everywhere for now.
+-AC_DEFINE(USE_PIPES)
++dnl # Socket pairs appear to be broken on several systems.  I don't know exactly
++dnl # where, so I'll use pipes everywhere for now.
++dnl AC_DEFINE(USE_PIPES)
+ 
+ AC_MSG_CHECKING([that the compiler works])
+ AC_TRY_RUN([ main(int ac, char **av) { return 0; } ],
+--- configure.dist	Wed Aug  7 13:45:37 1996
++++ configure	Wed Aug  7 13:55:29 1996
+@@ -1274,12 +1274,6 @@
+     ;;
+ esac
+ 
+-# Socket pairs appear to be broken on several systems.  I don't know exactly
+-# where, so I'll use pipes everywhere for now.
+-cat >> confdefs.h <<\EOF
+-#define USE_PIPES 1
+-EOF
+-
+ 
+ echo $ac_n "checking that the compiler works""... $ac_c" 1>&6
+ if test "$cross_compiling" = yes; then
