@@ -1,0 +1,8 @@
+This is the SlimKit collection of surface modeling tools.  Most of the
+programs in this collection simply provide an interface to the
+underlying functionality of the MixKit library.
+
+The primary component of this package is the QSlim 2.0 surface
+simplification tool.
+
+WWW: http://graphics.cs.uiuc.edu/~garland/software/qslim.html

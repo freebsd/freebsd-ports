@@ -250,6 +250,7 @@
     SUBDIR += qdraw
     SUBDIR += qglviewer
     SUBDIR += qiv
+    SUBDIR += qslim
     SUBDIR += quickpics
     SUBDIR += qvplay
     SUBDIR += ray++
