@@ -8,8 +8,8 @@
 %%MIGEMO%%%%RUBY_SITELIBDIR%%/migemo-dict.rb
 %%MIGEMO%%%%RUBY_SITELIBDIR%%/migemo-index.rb
 %%MIGEMO%%%%RUBY_SITELIBDIR%%/migemo-regex.rb
-%%ELISP%%%%EMACS_LIBDIR%%/site-lisp/migemo.el
-%%ELISP%%%%EMACS_LIBDIR%%/site-lisp/migemo.elc
+%%ELISP%%%%EMACS_SITE_LISPDIR%%/migemo.el
+%%ELISP%%%%EMACS_SITE_LISPDIR%%/migemo.elc
 %%MIGEMO%%share/doc/migemo/migemo.ja.html
 %%MIGEMO%%share/migemo/migemo-dict
 %%MIGEMO%%share/migemo/migemo-dict.idx
@@ -20,3 +20,4 @@
 %%MIGEMO%%share/migemo/regex-dict.sample
 %%MIGEMO%%@dirrm share/doc/migemo
 %%MIGEMO%%@dirrm share/migemo
+%%ELISP%%@unexec rmdir %D/%%EMACS_SITE_LISPDIR%% 2>/dev/null || true
