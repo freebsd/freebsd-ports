@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	cyrus-imapd
-PORTVERSION= 	2.0.15
-PORTREVISION=	3
+PORTVERSION= 	2.0.16
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/
 
 PATCH_SITES=	http://www.imasy.or.jp/~ume/ipv6/
-PATCHFILES=	${DISTNAME}-ipv6-20010711.diff.gz
+PATCHFILES=	${DISTNAME}-ipv6-20010728.diff.gz
 
 MAINTAINER=	ume@FreeBSD.org
 
@@ -78,9 +77,11 @@ post-install:
 .endfor
 .for file in ${MAN1} ${MAN3} ${MAN5} ${MAN8}
 		ofile=`echo ${file} | sed s/cyrquota/quota/`; \
+		if [ -f ${WRKSRC}/doc/man/$${ofile}.html ]; then \
 		${INSTALL_DATA} ${WRKSRC}/doc/man/$${ofile}.html \
 			${PREFIX}/share/doc/cyrus/man/$${ofile}.html; \
-		${ECHO} share/doc/cyrus/man/$${ofile}.html >>${TMPPLIST}
+		${ECHO} share/doc/cyrus/man/$${ofile}.html >>${TMPPLIST}; \
+		fi
 .endfor
 		${INSTALL_DATA} ${WRKSRC}/doc/cyrusv2.mc \
 			${PREFIX}/share/doc/cyrus
