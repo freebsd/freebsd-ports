@@ -1,0 +1,40 @@
+--- Makefile.in.orig	Fri Nov 21 12:35:25 2003
++++ Makefile.in	Fri Nov 21 12:36:06 2003
+@@ -112,7 +112,7 @@
+ icon2dir = $(datadir)/icons/mini
+ icon2_DATA = gxmame.xpm
+
+-docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
++docdir = $(datadir)/doc/$(PACKAGE)
+ doc_DATA = BUGS NEWS COPYING AUTHORS README TODO ChangeLog
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+@@ -362,7 +362,7 @@
+
+ maintainer-clean-tags:
+
+-distdir = $(PACKAGE)-$(VERSION)
++distdir = $(PACKAGE)
+ top_distdir = $(distdir)
+
+ # This target untars the dist file and tries a VPATH configuration.  Then
+--- html/Makefile.in.orig	Fri Nov 21 12:47:52 2003
++++ html/Makefile.in	Fri Nov 21 12:48:16 2003
+@@ -97,7 +97,7 @@
+
+ EXTRA_DIST = *html includes gui
+
+-htmldir = $(datadir)/doc/$(PACKAGE)-$(VERSION)/html
++htmldir = $(datadir)/doc/$(PACKAGE)/html
+ html_DATA = *.html
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+@@ -143,7 +143,7 @@
+ TAGS:
+
+
+-distdir = $(top_builddir)/$(PACKAGE)-$(VERSION)/$(subdir)
++distdir = $(top_builddir)/$(PACKAGE)/$(subdir)
+
+ subdir = html
+
