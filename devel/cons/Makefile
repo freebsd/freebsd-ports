@@ -3,12 +3,13 @@
 # Date created:		11 December 1998
 # Whom:			rv@fore.com
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/12/15 21:06:18 steve Exp $
 #
 
 DISTNAME=	cons-1.5
 CATEGORIES=	devel
-MASTER_SITES=	http://www.lowrent.org/cons/
+MASTER_SITES=	http://www.dsmit.com/cons/ \
+		http://www.telerama.com/~bgarcia/cons/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	rv@fore.com
