@@ -7,12 +7,12 @@
 
 PORTNAME=	mupen64
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://mupen64.emulation64.com/files/:mupen \
 		http://www.liquidx.org/distfiles/:plugins
 PKGNAMEPREFIX=	linux-
-DISTFILES=	mupen64-0.3.tar.bz2:mupen mupen64linplugins1.tar.bz2:plugins
+DISTFILES=	mupen64-0.3.tar.bz2:mupen mupen64linplugins2.tar.bz2:plugins
 
 MAINTAINER=	tlp@liquidx.org
 COMMENT=	A Nintendo 64 emulator (Linux version)
@@ -49,10 +49,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/whatsnew.txt ${DOCSDIR}/whatsnew.txt
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/lang/* ${PREFIX}/share/linux-mupen64/lang
-	${INSTALL_DATA} ${WRKDIR}/mupen64linplugins1/* ${PREFIX}/lib/linux-mupen64/plugins
+	${INSTALL_DATA} ${WRKDIR}/mupen64linplugins2/* ${PREFIX}/lib/linux-mupen64/plugins
 	${INSTALL_DATA} ${WRKSRC}/plugins/mupen64_audio.so ${PREFIX}/lib/linux-mupen64/plugins/mupen64_audio.so
 	${INSTALL_DATA} ${WRKSRC}/plugins/mupen64_gfx.so ${PREFIX}/lib/linux-mupen64/plugins/mupen64_gfx.so
-	${INSTALL_DATA} ${WRKSRC}/plugins/mupen64_hle_rsp.so ${PREFIX}/lib/linux-mupen64/plugins/mupen64_hle_rsp.so
 	${INSTALL_DATA} ${WRKSRC}/plugins/mupen64_input.so ${PREFIX}/lib/linux-mupen64/plugins/mupen64_input.so
 	${INSTALL_DATA} ${WRKSRC}/plugins/ricedaedalus.so ${PREFIX}/lib/linux-mupen64/plugins/ricedaedalus.so
 	${INSTALL_DATA} ${WRKSRC}/plugins/RiceDaedalus5.1.0.ini ${PREFIX}/lib/linux-mupen64/plugins/RiceDaedalus5.1.0.ini
