@@ -5,6 +5,6 @@ if [ "$2" != "POST-INSTALL" ]; then
 fi
 
 echo '**********************************************************************'
-echo "         Now, edit ${PREFIX}/etc/cap/start-cap-servers.sample."
+echo "         Now, edit /usr/local/etc/cap/start-cap-servers.sample."
 echo "         Then install it as ${PREFIX}/etc/rc.d/start-cap-servers.sh."
 echo '**********************************************************************'
