@@ -6,10 +6,13 @@
 #
 
 PORTNAME=	admin
-PORTVERSION=	2.50c
+PORTVERSION=	2.50e
+CATEGORIES=	games
 MASTER_SITES=	http://www.adminmod.org/downloads/
-DISTNAME=	halflife-admin-2.50-c
+DISTNAME=	halflife-${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	pat@databits.net
 
 WRKSRC=		${WRKDIR}/Admin
 

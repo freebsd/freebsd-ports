@@ -1,4 +1,4 @@
-%%HLDSDIR%%/Admin/README
+%%PORTDOCS%%%%HLDSDIR%%/Admin/README
 %%HLDSDIR%%/Admin/config/Samples/ips.ini
 %%HLDSDIR%%/Admin/config/Samples/maps.ini
 %%HLDSDIR%%/Admin/config/Samples/models.ini
@@ -11,124 +11,131 @@
 %%HLDSDIR%%/Admin/dlls/admin_MM_i386.so
 %%HLDSDIR%%/Admin/dlls/amx_admin.so
 %%HLDSDIR%%/Admin/dlls/metamod_i386.so
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/Manual.html
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/admin2_50.pdf
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/admin_permission_levels.txt
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/adminmmod_commands.txt
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/adminmod_accesslevel.txt
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/adminmod_inifiles.txt
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/adminmod_variables.txt
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/amx_error_codes.txt
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/About_Admin_Mod/Intrducing_Admin_Mod.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/About_Admin_Mod/What_this_document_covers.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/Admin_Etc/Admin_Mod_Erata.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/Admin_Mod_2_50.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/Admin_Mod_Reference/Access_Levels_and_Respective_Admin_Commands.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/Admin_Mod_Reference/Admin_Mod_Commands.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/Admin_Mod_Reference/Admin_Mod_Configuration_Variables_(CVARs).htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/Admin_Mod_Reference/Error_Codes.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/Admin_Mod_Reference/Frequently_Asked_Questions_(FAQ).htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/Admin_Mod_Reference/Materials_for_reference_when_installing,_configring_and_using_Admin_Mod.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/Geting_Ready_to_Install/Introductory_Information.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration/1st_Time_Linux_Install.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration/How_to_Use_Bots_with_MetaMod_(AM_2.50).htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration/Linux_Upgrade_Install.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration/Setting_up_server.cfg_and_the_ini_files.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration/Setting_up_your_ips.ini_file.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration/Setting_up_your_maps.ini_file.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration/Setting_up_your_models.ini_file.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration/Setting_up_your_plugin.ini_file.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration/Setting_up_your_users.ini_file.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration/Settinng_up_yout_server.cfg_file.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration/The_Admin_Mod_Configuration_Files.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Default_Windows_Installation_of_Admin_Mod.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Linux_Installation_Information.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Linux_Passwords.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Manual_Installation_-_Walk-Through.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Running_the_Installation_Script.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Uninstalling_Admin_Mod.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Unzipping_Admin_Mod_the_Right_Way.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/Scripting_Basics/A_Beginner_s_Guide_to_Scripting.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/Scripting_Basics/Compiling_Admin_Mod_Scripts_101.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/Scripting_Basics/Compiling_by_hand.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/Setting_up_Clients_to_Use_Admin_Mod/Client_configuration_via_setinfo_commands.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/What_s_New_in_version_2.50_.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/_blank.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/bsscdht1.js
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/bsscdht2.js
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/bsscdht3.js
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/bsscnav1.gif
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/bsscnav2.gif
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/bsscnav3.gif
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/bsscnav4.gif
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/bsscnav5.gif
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/bsscnav6.gif
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/bsscnav7.gif
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/bsscnav8.gif
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/bsscnbar.js
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/bssctab0.gif
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/bssctab1.gif
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/bssctab2.gif
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/bssctab3.gif
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/bssctab4.gif
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/bssctab5.gif
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/bssctab6.gif
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/bssctoc1.gif
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/bssctoc2.gif
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/bssctoc3.gif
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/bssctoc4.gif
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/default.css
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/default_ns.css
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/eHelp.xml
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/ehlpdht1.js
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/ehlpdht2.js
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/ehlpdht3.js
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/ehlpdht4.js
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/ehlpdht5.js
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/ehlpdht6.js
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/ehlpdht7.js
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/ehlpdhtm.js
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/ftsbody.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/ftsdhtml.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/ftsform.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/image1.jpg
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/image10.gif
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/image11.gif
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/image13.gif
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/image15.gif
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/image16.gif
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/image17.gif
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/image18.gif
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/image19.gif
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/image5.gif
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/image6.gif
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/image7.gif
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/image8.gif
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/image9.gif
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/index.ftp
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/index.hhc
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/index.hhc.zip
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/index.hhk
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/index.hhk.zip
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/index.hhs
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/index.hhs.zip
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/index.html
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/index_csh.html
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/navframe.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/navpane1.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/navpane2.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/nsdnsfix.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/nsdnsfix.jar
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/tabframe.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/tocdhtml.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/toclist.htm
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/webhelp.cab
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/webhelp.jar
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/webhelp.res
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/webhelp.zip
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/webhelp0.cab
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/webhelp0.zip
-%%PORTDOCS%%%%HLDSDIR%%/Admin/docu/html/webhelp4.js
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/AdminMod-HTML-Manual.html
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/AdminMod-PDF-Manual.pdf
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/README_Documentation.txt
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/admin_permission_levels.txt
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/adminmod_accesslevel.txt
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/adminmod_commands.txt
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/adminmod_inifiles.txt
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/adminmod_variables.txt
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/amx_error_codes.txt
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/About_Admin_Mod/Intrducing_Admin_Mod.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/About_Admin_Mod/What_this_document_covers.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/Admin_Etc/Admin_Mod_Erata.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/Admin_Mod_Reference/Access_Levels_and_Respective_Admin_Commands.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/Admin_Mod_Reference/Admin_Mod_Commands.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/Admin_Mod_Reference/Admin_Mod_Configuration_Variables_CVARs.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/Admin_Mod_Reference/Error_Codes.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/Admin_Mod_Reference/Frequently_Asked_Questions_FAQ.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/Admin_Mod_Reference/Materials_for_reference_when_installing,_configring_and_using_Admin_Mod.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/DLL_Change_Log.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/Downloading_and_Installing_Additional_Plugins.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/Geting_Ready_to_Install/Introductory_Information.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/Half_Life_Sounds.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration/1st_Time_Linux_Install.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration/How_to_Use_Bots_with_MetaMod_AM_2.50.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration/Linux_Upgrade_Install.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration/Setting_up_server.cfg_and_the_ini_files.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration/Setting_up_your_ips.ini_file.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration/Setting_up_your_maps.ini_file.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration/Setting_up_your_models.ini_file.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration/Setting_up_your_plugin.ini_file.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration/Setting_up_your_users.ini_file.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration/Settinng_up_yout_server.cfg_file.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration/The_Admin_Mod_Configuration_Files.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/Installing_and_Configuring_Admin_Mod_2.50/Default_Windows_Installation_of_Admin_Mod.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/Installing_and_Configuring_Admin_Mod_2.50/Linux_Installation_Information.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/Installing_and_Configuring_Admin_Mod_2.50/Linux_Passwords.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/Installing_and_Configuring_Admin_Mod_2.50/Manual_Installation_-_Walk-Through.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/Installing_and_Configuring_Admin_Mod_2.50/Running_the_Installation_Script.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/Installing_and_Configuring_Admin_Mod_2.50/Uninstalling_Admin_Mod.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/Installing_and_Configuring_Admin_Mod_2.50/Unzipping_Admin_Mod_the_Right_Way.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/MySQL_Setup.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/Plugin_Change_Log.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/RoboHHRE.lng
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/Scripting_Basics/A_Beginner_s_Guide_to_Scripting.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/Scripting_Basics/Compiling_Admin_Mod_Scripts_101.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/Scripting_Basics/Compiling_by_hand.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/Setting_up_Clients_to_Use_Admin_Mod/Client_configuration_via_setinfo_commands.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/Spawning_Items_Reference.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/The_Admin_Mod_Default_Plugins.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/What_s_New_in_version_2.50_.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/Where_to_Go_for_Help.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/_blank.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/bsscdhtm.js
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/bsscnav1.gif
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/bsscnav2.gif
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/bsscnav3.gif
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/bsscnav4.gif
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/bsscnav5.gif
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/bsscnav6.gif
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/bsscnav7.gif
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/bsscnav8.gif
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/bsscnbar.js
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/bssctab0.gif
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/bssctab1.gif
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/bssctab2.gif
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/bssctab3.gif
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/bssctab4.gif
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/bssctab5.gif
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/bssctab6.gif
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/bssctoc1.gif
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/bssctoc2.gif
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/bssctoc3.gif
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/bssctoc4.gif
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/default.css
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/default_ns.css
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/eHelp.xml
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/ehlpdht1.js
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/ehlpdht2.js
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/ehlpdhtm.js
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/ftsbody.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/ftsdhtml.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/ftsform.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/idxbody.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/idxdhtml.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/idxform.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/idxlist.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/image1.jpg
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/image10.gif
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/image11.gif
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/image13.gif
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/image15.gif
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/image16.gif
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/image17.gif
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/image18.gif
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/image19.gif
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/image5.gif
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/image6.gif
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/image7.gif
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/image8.gif
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/image9.gif
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/index.ftp
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/index.hhc
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/index.hhc.zip
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/index.hhk
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/index.hhk.zip
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/index.hhs
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/index.hhs.zip
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/index.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/index.html
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/index_csh.html
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/navframe.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/navpane1.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/navpane2.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/nsdnsfix.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/nsdnsfix.jar
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/tabframe.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/tocdhtml.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/toclist.htm
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/webhelp.cab
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/webhelp.jar
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/webhelp.res
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/webhelp.zip
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/webhelp0.cab
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/webhelp0.zip
+%%PORTDOCS%%%%HLDSDIR%%/Admin/docs/html/webhelp4.js
 %%HLDSDIR%%/Admin/install_admin
 %%HLDSDIR%%/Admin/instscr.sed
 %%HLDSDIR%%/Admin/scripting/binaries/admin.amx
@@ -168,21 +175,22 @@
 %%HLDSDIR%%/Admin/tools/make_pass
 @dirrm %%HLDSDIR%%/Admin/tools
 @dirrm %%HLDSDIR%%/Admin/scripting/myscripts
+@dirrm %%HLDSDIR%%/Admin/scripting/mybinaries
 @dirrm %%HLDSDIR%%/Admin/scripting/include
 @dirrm %%HLDSDIR%%/Admin/scripting/examples
 @dirrm %%HLDSDIR%%/Admin/scripting/compiler
 @dirrm %%HLDSDIR%%/Admin/scripting/binaries
 @dirrm %%HLDSDIR%%/Admin/scripting
-%%PORTDOCS%%@dirrm %%HLDSDIR%%/Admin/docu/html/Setting_up_Clients_to_Use_Admin_Mod
-%%PORTDOCS%%@dirrm %%HLDSDIR%%/Admin/docu/html/Scripting_Basics
-%%PORTDOCS%%@dirrm %%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration
-%%PORTDOCS%%@dirrm %%HLDSDIR%%/Admin/docu/html/Installing_and_Configuring_Admin_Mod_2.50
-%%PORTDOCS%%@dirrm %%HLDSDIR%%/Admin/docu/html/Geting_Ready_to_Install
-%%PORTDOCS%%@dirrm %%HLDSDIR%%/Admin/docu/html/Admin_Mod_Reference
-%%PORTDOCS%%@dirrm %%HLDSDIR%%/Admin/docu/html/Admin_Etc
-%%PORTDOCS%%@dirrm %%HLDSDIR%%/Admin/docu/html/About_Admin_Mod
-%%PORTDOCS%%@dirrm %%HLDSDIR%%/Admin/docu/html
-%%PORTDOCS%%@dirrm %%HLDSDIR%%/Admin/docu
+%%PORTDOCS%%@dirrm %%HLDSDIR%%/Admin/docs/html/Setting_up_Clients_to_Use_Admin_Mod
+%%PORTDOCS%%@dirrm %%HLDSDIR%%/Admin/docs/html/Scripting_Basics
+%%PORTDOCS%%@dirrm %%HLDSDIR%%/Admin/docs/html/Installing_and_Configuring_Admin_Mod_2.50/Configuration
+%%PORTDOCS%%@dirrm %%HLDSDIR%%/Admin/docs/html/Installing_and_Configuring_Admin_Mod_2.50
+%%PORTDOCS%%@dirrm %%HLDSDIR%%/Admin/docs/html/Geting_Ready_to_Install
+%%PORTDOCS%%@dirrm %%HLDSDIR%%/Admin/docs/html/Admin_Mod_Reference
+%%PORTDOCS%%@dirrm %%HLDSDIR%%/Admin/docs/html/Admin_Etc
+%%PORTDOCS%%@dirrm %%HLDSDIR%%/Admin/docs/html/About_Admin_Mod
+%%PORTDOCS%%@dirrm %%HLDSDIR%%/Admin/docs/html
+%%PORTDOCS%%@dirrm %%HLDSDIR%%/Admin/docs
 @dirrm %%HLDSDIR%%/Admin/dlls
 @dirrm %%HLDSDIR%%/Admin/config/Samples
 @dirrm %%HLDSDIR%%/Admin/config
