@@ -7,10 +7,11 @@
 #
 
 PORTNAME=	slurm
-PORTVERSION=	0.0.3
+PORTVERSION=	0.0.5
 CATEGORIES=	net
 MASTER_SITES=	http://www.raisdorf.net/files/code/ \
-		http://www.fachschaft.fh-kiel.de/~hscholz/slurm/
+		http://www.fachschaft.fh-kiel.de/~hscholz/slurm/ \
+		http://www.toppoint.de/~hscholz/slurm/
 
 MAINTAINER=	mich@freebsdcluster.org
 
