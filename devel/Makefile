@@ -79,6 +79,7 @@
     SUBDIR += libslang
     SUBDIR += libtool
     SUBDIR += libxalloc
+    SUBDIR += linuxthreads
     SUBDIR += linux_devtools
     SUBDIR += linux_kdump
     SUBDIR += m4
