@@ -7,9 +7,10 @@
 #
 
 PORTNAME=	dhcp
-PORTVERSION=	3.0.r2
+PORTVERSION=	3.0.r2.1
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.isc.org/isc/dhcp/
+MASTER_SITES=	ftp://ftp.isc.org/isc/dhcp/%SUBDIR%/
+MASTER_SITE_SUBDIR=	. dhcp-3.0-history
 PKGNAMEPREFIX=	isc-
 PKGNAMESUFFIX=	3
 DISTNAME=	${PORTNAME}-${RELEASE}${VERSION}${PATCHLEVEL}
@@ -21,6 +22,8 @@ MAINTAINER=	clefevre@poboxes.com
 #
 
 HAS_CONFIGURE=	yes
+
+PLIST_SUB=	PKGBASE="${PKGBASE}"
 
 MAN3=		dhcpctl.3 omapi.3
 MAN5=		dhclient.conf.5 dhclient.leases.5 dhcp-contrib.5 \

@@ -19,13 +19,13 @@ sbin/dhclient
 sbin/dhclient-script
 sbin/dhcpd
 sbin/dhcrelay
-share/doc/isc-dhcp3/CHANGES
-share/doc/isc-dhcp3/COPYRIGHT
-share/doc/isc-dhcp3/README
-share/doc/isc-dhcp3/RELNOTES
+%%PORTDOCS%%share/doc/%%PKGBASE%%/CHANGES
+%%PORTDOCS%%share/doc/%%PKGBASE%%/COPYRIGHT
+%%PORTDOCS%%share/doc/%%PKGBASE%%/README
+%%PORTDOCS%%share/doc/%%PKGBASE%%/RELNOTES
 @dirrm include/isc
 @dirrm include/omapip
-@dirrm share/doc/isc-dhcp3
+%%PORTDOCS%%@dirrm share/doc/%%PKGBASE%%
 @exec [ -f /var/db/dhclient.leases ] || touch /var/db/dhclient.leases
 @unexec [ -s /var/db/dhclient.leases ] || rm -f /var/db/dhclient.leases
 @exec [ -f /var/db/dhcpd.leases ] || touch /var/db/dhcpd.leases
