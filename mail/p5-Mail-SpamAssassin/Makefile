@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Mail-SpamAssassin
-PORTVERSION=	2.41
-PORTREVISION=	1
+PORTVERSION=	2.43
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://spamassassin.org/released/ \
 		${MASTER_SITE_PERL_CPAN}
@@ -28,6 +27,8 @@ RUN_DEPENDS+=	${PODPARSER}
 BUILD_DEPENDS+=	${PODPARSER}
 
 PERL_CONFIGURE=	yes
+CONFIGURE_ARGS+=	SYSCONFDIR="${PREFIX}/etc"
+
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Mail::SpamAssassin.3 Mail::SpamAssassin::PerMsgStatus.3 \
 		Mail::SpamAssassin::Conf.3 \
