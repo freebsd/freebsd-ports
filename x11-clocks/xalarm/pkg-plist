@@ -4,8 +4,3 @@ bin/xfortune
 bin/xyow
 lib/X11/app-defaults/XAlarm
 lib/X11/app-defaults/XAlarm-color
-man/man1/xalarm.1.gz
-man/man1/xmemo.1.gz
-man/man1/xfortune.1.gz
-man/man1/xyow.1.gz
-

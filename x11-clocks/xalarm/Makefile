@@ -16,8 +16,9 @@ MAINTAINER=	desmo@bandwidth.org
 USE_IMAKE=	yes
 IS_INTERACTIVE=	yes
 
-pre-install:	
+MAN1=		xalarm.1 xmemo.1 xfortune.1 xyow.1
+
+pre-install:
 	(cd ${WRKSRC} ; ${CP} XAlarm.ad XAlarm-color.ad)
 
 .include <bsd.port.mk>
-

@@ -1,19 +1,20 @@
-*** Imakefile.orig	Wed Dec  4 08:27:18 1996
---- Imakefile	Wed Dec  4 08:27:53 1996
-***************
-*** 23,29 ****
-  /**/#   this may not work if xalarm is invoked from a pseudo terminal).
-  /**/# o Define USECUSERID to use cuserid(3) to get the user name.
-  
-! DEFINES = $(SIGNAL_DEFINES) -DUSERENAME -DUSEGETHOSTNAME -DUSEGETPWUID
-  
-  
-  OBJS = alarm.o when.o warnings.o times.o dates.o file.o fns.o xalarm.o
---- 23,29 ----
-  /**/#   this may not work if xalarm is invoked from a pseudo terminal).
-  /**/# o Define USECUSERID to use cuserid(3) to get the user name.
-  
-! DEFINES = $(SIGNAL_DEFINES) -DFORKRETURNSPID_T -DUSERENAME -DUSEGETHOSTNAME -DUSEGETPWUID
-  
-  
-  OBJS = alarm.o when.o warnings.o times.o dates.o file.o fns.o xalarm.o
+--- Imakefile.orig	Sat Jul 22 00:32:07 1995
++++ Imakefile	Tue Dec 25 17:40:22 2001
+@@ -23,7 +23,7 @@
+ /**/#   this may not work if xalarm is invoked from a pseudo terminal).
+ /**/# o Define USECUSERID to use cuserid(3) to get the user name.
+ 
+-DEFINES = $(SIGNAL_DEFINES) -DUSERENAME -DUSEGETHOSTNAME -DUSEGETPWUID
++DEFINES = $(SIGNAL_DEFINES) -DFORKRETURNSPID_T -DUSERENAME -DUSEGETHOSTNAME -DUSEGETPWUID
+ 
+ 
+ OBJS = alarm.o when.o warnings.o times.o dates.o file.o fns.o xalarm.o
+@@ -51,7 +51,7 @@
+ 	@./config.1st -quick $(WHICH) fortune yow
+ 
+ xmemo.man xyow.man xfortune.man:
+-	echo ".so man"`echo ManSuffix`"/xalarm."`echo ManSuffix` > $@
++	echo ".so xalarm.man" > $@
+ 
+ xfortune::
+ 
