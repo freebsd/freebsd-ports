@@ -1,0 +1,5 @@
+Optik is a powerful, flexible, extensible, easy-to-use command-line parsing
+library for Python. Using Optik, you can add intelligent, sophisticated
+handling of command-line options to your scripts with very little overhead.
+
+WWW: http://optik.sourceforge.net/

@@ -1,0 +1,9 @@
+lib/%%PYTHON_VERSION%%/site-packages/optik/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/optik/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/optik/errors.py
+lib/%%PYTHON_VERSION%%/site-packages/optik/errors.pyc
+lib/%%PYTHON_VERSION%%/site-packages/optik/option.py
+lib/%%PYTHON_VERSION%%/site-packages/optik/option.pyc
+lib/%%PYTHON_VERSION%%/site-packages/optik/option_parser.py
+lib/%%PYTHON_VERSION%%/site-packages/optik/option_parser.pyc
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/optik
