@@ -1,10 +1,9 @@
+
 MPD MULTI-LINK PPP DAEMON FOR FREEBSD
 
-Release 1.0b5
+Version 2.0b1
 Written by Archie Cobbs <archie@whistle.com>
 Based on IIJ-PPP by Toshiharu OHNO <tony-o@iij.ad.jp>
-
-Please see the CHANGES file if you are updating from mpd-1.0b3.
 
 * WHAT IS IT?
 
@@ -23,6 +22,8 @@ Please see the CHANGES file if you are updating from mpd-1.0b3.
   make depend all install
 
 * HOW DO I SET IT UP?
+
+  Complete documentation is included in the "doc" subdirectory.
 
   You will need to create your own versions of the four required
   configuration files in /etc/ppp:
@@ -55,13 +56,7 @@ Please see the CHANGES file if you are updating from mpd-1.0b3.
 
   Berkeley style: see ``COPYRIGHT.iij'' and ``COPYRIGHT.whistle''.
 
-* WHERE CAN I READ MORE ABOUT IT?
-
-  In the "docs" directory is a preliminary man page and some other
-  assorted stuff. In the "conf" directory are example configuration
-  files with descriptive comments.
-
 * WHERE CAN I GO FOR HELP?
 
-  Email me any questions <archie@whistle.com> and I'll do my best
-  to answer them.
+  Email questions to the freebsd-net@freebsd.org mailing list.
+

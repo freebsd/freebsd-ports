@@ -1,0 +1,24 @@
+# $Id: skip.mtree,v 1.1.1.1 1998/01/09 23:23:41 julian Exp $
+
+/set type=dir uname=root gname=wheel mode=0755
+.
+    sbin
+    ..
+    etc
+	mpd
+	..
+    ..
+    man
+        cat8            uname=man
+        ..
+        man8
+        ..
+    ..
+    share
+        doc
+	    mpd
+	    ..
+        ..
+    ..
+..
+
