@@ -21,7 +21,7 @@ NO_BUILD=	yes
 PORTDOCS=	*
 .endif
 
-PLIST_FILES=	${JAVAJARDIR:S,^${PREFIX}/,,}/gnu-regexp.jar
+PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/${PORTNAME}-${PORTVERSION}.jar \
