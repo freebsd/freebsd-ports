@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 
-MAINTAINER=	seiken@ARGV.AC
+MAINTAINER=	ports@freebsd.org
 COMMENT=	A simple audio file player
 
 MANLANG=	ja
