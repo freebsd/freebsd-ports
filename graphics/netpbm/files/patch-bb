@@ -1,18 +1,24 @@
 --- Makefile.common.orig	Sat Mar 25 02:46:12 2000
 +++ Makefile.common	Sat Apr  1 12:00:00 2000
-@@ -51,26 +51,22 @@
- .PHONY: install.merge
+@@ -56,31 +56,27 @@
  install.merge: $(MERGENAME) $(NOMERGEBINARIES) install.script
  	cd $(INSTALLBINARIES) ; rm -f $(BINARIES)
--	cp $< $(INSTALLBINARIES)
+ ifneq ($(MERGENAME)x,x)
+-	cp $(MERGENAME) $(INSTALLBINARIES)
+-	strip $(INSTALLBINARIES)/$(MERGENAME)
 +	${BSD_INSTALL_PROGRAM} $(MERGENAME) $(INSTALLBINARIES)
  	cd $(INSTALLBINARIES) ; \
- 	   for i in $(BINARIES) ; do ln $(MERGENAME) $$i ; done
--	rm -f $(INSTALLBINARIES)/$(MERGENAME)
+ 	   for i in $(BINARIES) $(MERGE_ALIASES) ; \
+-             do ln -s $(MERGENAME) $$i ; \
++             do ln -sf $(MERGENAME) $$i ; \
+              done
+ endif
+ ifneq ($(NOMERGEBINARIES)x,x)
  	cd $(INSTALLBINARIES) ; rm -f $(NOMERGEBINARIES)
 -	cp $(NOMERGEBINARIES) $(INSTALLBINARIES)
 -	cd $(INSTALLBINARIES) ; strip $(NOMERGEBINARIES)
 +	${BSD_INSTALL_PROGRAM} $(NOMERGEBINARIES) $(INSTALLBINARIES)
+ endif
  
  .PHONY: install.bin.common
  install.bin.common: $(BINARIES) install.script
@@ -31,7 +37,7 @@
  endif
  
  .PHONY: install.man
-@@ -95,13 +91,12 @@
+@@ -111,13 +107,13 @@
  # prefer not to "install" them, but just to access the Netpbm source
  # directory when you compile your programs.
  	cd $(INSTALLHDRS) ; rm -f $(INTERFACE_HEADERS)
@@ -40,26 +46,26 @@
  
 -lib$(LIBROOT).so: lib$(LIBROOT).so.$(MAJ).$(MIN)
 -	ln -sf lib$(LIBROOT).so.$(MAJ).$(MIN) $@
--lib$(LIBROOT).so.$(MAJ).$(MIN): $(LIBOBJECTS)
--	$(LD) $(LDSHLIB) -Wl,-soname,lib$(LIBROOT).so.$(MAJ) -o $@ \
--          $(LIBOBJECTS)
-+lib$(LIBROOT).so: lib$(LIBROOT).so.$(MAJ)
+-lib$(LIBROOT).so.$(MAJ).$(MIN): $(LIBOBJECTS) $(LIBLIBS)
++lib$(LIBROOT).so: lib$(LIBROOT).a lib$(LIBROOT).so.$(MAJ)
 +	ln -sf lib$(LIBROOT).so.$(MAJ) $@
-+lib$(LIBROOT).so.$(MAJ): lib$(LIBROOT).a $(LIBSOBJECTS)
-+	$(LD) $(LDSHLIB) -Wl,-soname,$@ -o $@ $(LIBSOBJECTS)
++lib$(LIBROOT).so.$(MAJ): $(LIBSOBJECTS) $(LIBLIBS)
+ 	$(LD) $(LDSHLIB) -Wl,-soname,lib$(LIBROOT).so.$(MAJ) -o $@ \
+-          $(LIBOBJECTS) $(LIBLIBS) -lc
++          $(LIBSOBJECTS) $(LIBLIBS)
  
  lib$(LIBROOT).a: $(LIBOBJECTS)
  	-rm -f $@
-@@ -109,11 +104,11 @@
- 	-ranlib $@
+@@ -126,11 +122,11 @@
  
- .PHONY: install.lib
--install.lib: lib$(LIBROOT).so.$(MAJ).$(MIN) 
+ 
+ .PHONY: install.lib.common
+-install.lib.common: lib$(LIBROOT).so.$(MAJ).$(MIN) 
 -	cd $(INSTALLLIBS) ; rm -f lib$(LIBROOT).so.$(MAJ).*
 -	cp $< $(INSTALLLIBS)
 -	cd $(INSTALLLIBS) ; ln -sf $< lib$(LIBROOT).so
 -	cd $(INSTALLLIBS) ; ln -sf $< lib$(LIBROOT).so.$(MAJ)
-+install.lib: lib$(LIBROOT).so
++install.lib.common: lib$(LIBROOT).a lib$(LIBROOT).so
 +	cd $(INSTALLLIBS) ; rm -f lib$(LIBROOT).*
 +	${BSD_INSTALL_DATA} lib$(LIBROOT).a $(INSTALLLIBS)
 +	${BSD_INSTALL_DATA} lib$(LIBROOT).so.$(MAJ) $(INSTALLLIBS)

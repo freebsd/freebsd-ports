@@ -1,6 +1,15 @@
 --- Makefile.orig	Sat Mar 25 02:47:02 2000
 +++ Makefile	Sat Apr  1 12:00:00 2000
-@@ -56,7 +56,10 @@
+@@ -30,7 +30,7 @@
+ SRCDIR = .
+ include $(SRCDIR)/Makefile.config
+ 
+-SUBDIRS =	pbm pgm ppm pnm ppmtompeg
++SUBDIRS =	pbm pgm ppm pnm
+ 
+ # Note that the Tiff library, from the libtiff subdirectory, only gets built
+ # if you specify the homegrown libtiff as $(TIFFLIB), in which case it is
+@@ -57,7 +57,10 @@
  	./stamp-date
  
  .PHONY: install
@@ -11,7 +20,18 @@
 +install-merge: install.merge install.lib install.man install.hdr
  
  .PHONY: merge
- merge:
+ merge:  compile.h
+@@ -72,8 +75,8 @@
+ 	    ( echo install.bin.$$i ; cd $$i ; $(MAKE) install.bin ); \
+ 	done
+ 
+-.PHONY: install-merge
+-install-merge:
++.PHONY: install.merge
++install.merge:
+ 	-mkdir -p $(INSTALLBINARIES)
+ 	for i in $(SUBDIRS) ; do \
+ 	    ( echo install.merge.$$i ; cd $$i ; $(MAKE) install.merge ); \
 @@ -97,6 +100,13 @@
  	-mkdir -p $(INSTALLMANUALS5)
  	for i in $(SUBDIRS) ; do \

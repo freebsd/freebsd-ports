@@ -1,15 +1,15 @@
 --- pnm/Makefile.orig	Sat Mar 25 02:27:50 2000
 +++ pnm/Makefile	Sat Apr  1 12:00:00 2000
-@@ -35,6 +35,8 @@
+@@ -32,6 +32,8 @@
  
  NETPBMLIBS = $(LIBPNM) \
             $(PBMDIR)/$(LIBPBM) $(PGMDIR)/$(LIBPGM) $(PPMDIR)/$(LIBPPM)
 +NETPBMLD = -L. -lpnm \
 +           -L$(PBMDIR) -lpbm -L$(PGMDIR) -lpgm -L$(PPMDIR) -lppm
+ LIBLIBS =  $(PBMDIR)/$(LIBPBM) $(PGMDIR)/$(LIBPGM) $(PPMDIR)/$(LIBPPM)
  
  ifeq ($(JPEGLIB_DIR),NONE)
-   JPEGLD =
-@@ -87,6 +89,7 @@
+@@ -89,6 +91,7 @@
  MERGE_OBJECTS = $(patsubst %,%.o2, $(PORTBINARIES) $(MATHBINARIES))
  
  LIBOBJECTS = libpnm1.o libpnm2.o libpnm3.o libpnm4.o
@@ -17,10 +17,10 @@
  
  MANUALS1 = $(BINARIES) $(SCRIPTS)
  MANUALS3 = libpnm
-@@ -102,45 +105,48 @@
+@@ -104,44 +107,48 @@
  merge:    $(MERGENAME) $(NOMERGEBINARIES)
  
- tifftopnm pnmtotiff:  %: %.o $(NETPBMLIBS) $(TIFFLIB_DIR)/libtiff.so
+ tifftopnm pnmtotiff:  %: %.o $(NETPBMLIBS) $(TIFFLIB_DIR)/libtiff.so 
 -	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLIBS) -L$(TIFFLIB_DIR) -ltiff \
 +	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLD) -lm -L$(TIFFLIB_DIR) -ltiff \
  	  $(JPEGLD) $(CDEBUG)
@@ -32,7 +32,7 @@
  
  # Rules for plain programs.
  $(PORTBINARIES): %: %.o $(NETPBMLIBS) 
--	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLIBS) $(CDEBUG) 
+-	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLIBS) $(CDEBUG)
 +	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLD) $(CDEBUG) 
  
  # Rule for math-dependent programs.
@@ -45,10 +45,10 @@
 +	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLD) \
  	  -L$(PNGLIB_DIR) -lpng -lz -lm $(CDEBUG)
  
- jpegtopnm: %: %.o $(NETPBMLIBS) $(SRCDIR)/shhopt/libshhopt.a
--	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLIBS) $(JPEGLD) -lm \
+ jpegtopnm: %: %.o $(NETPBMLIBS)
+-	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLIBS) $(JPEGLD) -lm $(CDEBUG)
 +	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLD) $(JPEGLD) -lm \
- 	    $(SRCDIR)/shhopt/libshhopt.a $(CDEBUG)
++	  $(CDEBUG)
  
  # Rule for objects.
  $(OBJECTS) $(LIBOBJECTS): %.o: %.c
@@ -61,18 +61,18 @@
  	$(CC) -c $(CFLAGS) $(INCLUDE) "-Dmain=$*_main" -o $@ $<
  
  # And libraries.
- $(PBMDIR)/$(LIBPBM):
+ $(PBMDIR)/$(LIBPBM): FORCE
 -	cd $(PBMDIR) ; make $(LIBPBM)
 +	cd $(PBMDIR) ; $(MAKE) $(LIBPBM)
- $(PGMDIR)/$(LIBPGM):
+ $(PGMDIR)/$(LIBPGM): FORCE
 -	cd $(PGMDIR) ; make $(LIBPGM)
 +	cd $(PGMDIR) ; $(MAKE) $(LIBPGM)
- $(PPMDIR)/$(LIBPPM):
+ $(PPMDIR)/$(LIBPPM): FORCE
 -	cd $(PPMDIR) ; make $(LIBPPM)
 +	cd $(PPMDIR) ; $(MAKE) $(LIBPPM)
- $(TIFFDIR)/$(LIBTIFF):
+ $(TIFFDIR)/$(LIBTIFF): FORCE
 -	cd $(TIFFDIR) ; make $(LIBTIFF)
 +	cd $(TIFFDIR) ; $(MAKE) $(LIBTIFF)
  
- $(SRCDIR)/shhopt/libshhopt.a:
- 	cd $(SRCDIR)/shhopt; $(MAKE) libshhopt.a
+ include $(SRCDIR)/Makefile.common
+ 
