@@ -3,15 +3,15 @@
 # Date created:				14 February 1999
 # Whom:                			Dima Sivachenko <dima@chg.ru>
 #
-# $Id: $
+# $Id: Makefile,v 1.1.1.1 1999/02/27 18:04:08 billf Exp $
 #
 
 DISTNAME=	ggsd
 PKGNAME=	ggsd-0.1
 CATEGORIES=	net
 MASTER_SITES=	http://devplanet.fastethernet.net/ \
-		http://www.FreeBSD.org/~billf/distfiles/
-#		ftp://ftp.gpad.ac.ru/pub/FreeBSD/distfiles/
+		http://www.FreeBSD.org/~billf/distfiles/ \
+		ftp://ftp.gpad.ac.ru/pub/FreeBSD/distfiles/
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	dima@chg.ru
