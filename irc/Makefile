@@ -38,6 +38,7 @@
     SUBDIR += pisg
     SUBDIR += pure-emacs20
     SUBDIR += pure-emacs21
+    SUBDIR += pure-xemacs-devel-mule
     SUBDIR += pure-xemacs21-mule
     SUBDIR += py-irclib
     SUBDIR += quirc
