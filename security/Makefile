@@ -223,6 +223,7 @@
     SUBDIR += pam_pop3
     SUBDIR += pam_pwdfile
     SUBDIR += pam_smb
+    SUBDIR += pear-Crypt_CBC
     SUBDIR += pgp
     SUBDIR += pgp5
     SUBDIR += pgp6
