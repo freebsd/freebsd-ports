@@ -1,5 +1,5 @@
 --- Makefile.PL.orig	Tue Mar 12 22:07:07 2002
-+++ Makefile.PL	Thu May 16 11:52:08 2002
++++ Makefile.PL	Thu May 16 12:21:00 2002
 @@ -9,14 +9,28 @@
  # FP extensions 5.0 from Martin Blapp <mbr@freebsd.org>
  #
@@ -45,8 +45,14 @@
  } else { $defaultid=99; }
  
  if ($uid < $defaultid) {
-@@ -162,7 +176,8 @@
- $_=~ s|"\$\(fpstatic_bin\)|\\\\\"$sbindir\/fpstatic\\\\|;
+@@ -158,11 +172,12 @@
+ $_=~ s|\$\(fpexec_logexec\)|$errorlog|;
+ $_=~ s|\$\(fpexec_userdir\)|$userdir|;
+ $_=~ s|\$\(fpexec_docroot\)|$documentroot|;
+-$_=~ s|"\$\(fpexec_bin\)|\\\\\"$sbindir\/fpexec\\\\|;
+-$_=~ s|"\$\(fpstatic_bin\)|\\\\\"$sbindir\/fpstatic\\\\|;
++$_=~ s|"\$\(fpexec_bin\)|\\\\\"$prefix\/sbin\/fpexec\\\\|;
++$_=~ s|"\$\(fpstatic_bin\)|\\\\\"$prefix\/sbin\/fpstatic\\\\|;
  $_=~ s|\$\(httpdconf\)|$httpdconf|;
  $_=~ s|\$\(libexecdir\)|$libexecdir|;
 -if ($flavor eq "FreeBSD") { $_=~ s|root.root|root:wheel|;}

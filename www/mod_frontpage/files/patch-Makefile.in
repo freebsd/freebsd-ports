@@ -1,5 +1,5 @@
 --- Makefile.in.orig	Tue Mar 12 22:07:06 2002
-+++ Makefile.in	Thu May 16 11:27:06 2002
++++ Makefile.in	Thu May 16 12:17:42 2002
 @@ -22,8 +22,9 @@
  	-DFP_LOG_EXEC=\"$(fpexec_logexec)\" \
  	-DFP_USERDIR_SUFFIX=\"$(fpexec_userdir)\" \
@@ -12,3 +12,24 @@
  	-DFP_USER=\"bin\" \
  	-DFP_GROUP=\"bin\" \
  	-DFP_HTACCESS=\".htaccess\" \
+@@ -49,8 +50,8 @@
+ #   and activate it in the Apache configuration
+ install: all
+ 	$(APXS) -i -a -n 'frontpage' mod_frontpage.so
+-	$(install) -m 4550 -o root -g $(fpexec_gidcaller) fpexec $(sbindir)/fpexec
+-	$(install) -m 0555 -o root -g $(fpexec_gidcaller) fpstatic $(sbindir)/fpstatic
++	$(install) -m 4550 -o root -g $(fpexec_gidcaller) fpexec $(prefix)/sbin/fpexec
++	$(install) -m 0555 -o root -g $(fpexec_gidcaller) fpstatic $(prefix)/sbin/fpstatic
+ 	touch $(fpexec_logexec)
+ 	chown $(fpexec_uidcaller) $(fpexec_logexec)
+ 
+@@ -73,7 +74,7 @@
+ 	$(APACHECTL) stop
+ 
+ uninstall:
+-	rm -f $(sbindir)/fpexec
+-	rm -f $(sbindir)/fpstatic
++	rm -f $(prefix)/sbin/fpexec
++	rm -f $(prefix)/sbin/fpstatic
+ 	rm -f $(libexecdir)/mod_frontpage.so
+ 	$(APXS) -e -A -n 'frontpage' mod_frontpage.so
