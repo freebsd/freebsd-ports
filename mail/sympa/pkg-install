@@ -44,7 +44,7 @@ fi
 
 USER=sympa
 GROUP=${USER}
-UID=1025
+UID=200
 GID=${UID}
 
 if ! pw groupshow "${GROUP}" 2>/dev/null 1>&2; then
