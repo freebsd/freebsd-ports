@@ -1,5 +1,14 @@
---- beep/main.c.orig	Fri Nov 14 05:29:27 2003
-+++ beep/main.c	Fri Nov 14 05:30:06 2003
+--- beep/main.c.orig	Sat Nov 15 21:33:27 2003
++++ beep/main.c	Sat Nov 15 21:35:22 2003
+@@ -1634,7 +1634,7 @@
+ 
+ 	if (treeview->selection)
+ 	{
+-		pos = gtk_treeview_get_row_data(treeview, GPOINTER_TO_INT(treeview->selection->data));
++//		pos = gtk_treeview_get_row_data(treeview, GPOINTER_TO_INT(treeview->selection->data));
+ 		playlist_queue_position(*pos);
+ 		gtk_widget_set(GTK_WIDGET(widget), "label", playlist_is_position_queued(*pos) ? "Unqueue" : "Queue", NULL);
+ 	}	
 @@ -2030,11 +2030,12 @@
  		
  
