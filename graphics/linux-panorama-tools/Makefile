@@ -26,6 +26,8 @@ RUN_DEPENDS=	${LINUXBASE}/usr/bin/jpegtran:${PORTSDIR}/graphics/linux-jpeg \
 		${LINUXBASE}/usr/bin/tiffcmp:${PORTSDIR}/graphics/linux-tiff \
 		${LINUXBASE}/usr/lib/libpng12.so.0.1.2.7:${PORTSDIR}/graphics/linux-png
 
+BROKEN=		Broken dependency
+
 NO_BUILD=	yes
 
 WRKSRC=	${WRKDIR}/PTLinux
