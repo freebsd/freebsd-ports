@@ -7725,6 +7725,7 @@ p5-Test-Harness	ports/devel/p5-Test-Harness
 p5-Test-Inline	ports/devel/p5-Test-Inline
 p5-Test-LectroTest	ports/devel/p5-Test-LectroTest
 p5-Test-Manifest	ports/devel/p5-Test-Manifest
+p5-Test-MockModule	ports/devel/p5-Test-MockModule
 p5-Test-MockObject	ports/devel/p5-Test-MockObject
 p5-Test-NoWarnings	ports/devel/p5-Test-NoWarnings
 p5-Test-Pod	ports/devel/p5-Test-Pod
