@@ -5,11 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	opengate
-PORTVERSION=	0.44
+PORTNAME=	opengatekeeper
+PORTVERSION=	0.50
 CATEGORIES=	net
 MASTER_SITES=	http://download.sourceforge.net/OpenGatekeeper/
-DISTNAME=	opengate_alpha0.44
+DISTNAME=	opengate_alpha0.50
 
 MAINTAINER=	roger@freebsd.org
 
