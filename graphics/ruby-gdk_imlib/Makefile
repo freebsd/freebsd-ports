@@ -34,6 +34,7 @@ DOCS_EN=	ChangeLog
 
 post-extract:
 	${MV} ${WRKSRC:S/gdk_imlib$/gdkimlib/} ${WRKSRC}
+	${FIND} ${WRKSRC} -type d -name CVS -print0 | ${XARGS} -0 ${RM} -r
 
 post-install:
 .if !defined(NOPORTDOCS)
