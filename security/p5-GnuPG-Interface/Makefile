@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	GnuPG-Interface
-PORTVERSION=    0.10
+PORTVERSION=    0.11
 CATEGORIES=	security perl5
 MASTER_SITES=	http://download.sourceforge.net/${PORTNAME}/ \
 		ftp://download.sourceforge.net/pub/sourceforge/${PORTNAME}/ \
