@@ -1,4 +1,8 @@
 ====
+To build a ruby related port for Ruby 1.6, define RUBY_VER=1.6 on the
+make command line.  If you want to use Ruby 1.6 by default instead of
+1.8, define RUBY_DEFAULT_VER=1.6 in /etc/make.conf.
+
 Note that some of the standard libraries are provided as separate
 ports since they require extra dependencies:
 
