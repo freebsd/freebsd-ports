@@ -8,7 +8,7 @@ compliant as possible so porting to other UNIX platforms should
 be painless.  Binary distributions for most popular platforms
 are available.  Features multiple language support, incremental
 processing capabilities, reverse DNS lookup support, export via
-tab seperated ascii files to popular databases and spreadsheets,
+tab separated ascii files to popular databases and spreadsheets,
 and much more.  Supports standard CLF and combined logs, as well
 as wu-ftpd xferlog and squid proxy logs, which can be either in
 standard text format or gzip compressed.
