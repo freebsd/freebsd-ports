@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xvkbd
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	x11
 MASTER_SITES=	http://member.nifty.ne.jp/tsato/xvkbd/
 
@@ -19,11 +19,20 @@ BUILD_DEPENDS=	${X11BASE}/lib/libXaw3d.a:${PORTSDIR}/x11-toolkits/Xaw3d
 USE_IMAKE=	yes
 
 pre-fetch:
-		@${ECHO} "Define WITH_XAW3D for Xaw3d support."
+		@${ECHO} "The following define controls are available:"
+		@${ECHO} "- WITH_XAW3D	- Xaw3d support;"
+		@${ECHO} "- WITH_XTEST	- XTEST extesions support;"
+		@${ECHO} "- WITH_I18N	- internationalization."
 
-.if	defined(WITH_XAW3D)
 post-patch:
+.if	defined(WITH_XAW3D)
 		${PERL} -pi.fbsd -e 's/XCOMM define XAW3D/#define XAW3D/' ${WRKSRC}/Imakefile
+.endif
+.if	defined(WITH_XTEST)
+		${PERL} -pi.fbsd -e 's/XCOMM define XTEST/#define XTEST/' ${WRKSRC}/Imakefile
+.endif
+.if	defined(WITH_I18N)
+		${PERL} -pi.fbsd -e 's/XCOMM define I18N/#define I18N/' ${WRKSRC}/Imakefile
 .endif
 
 .include <bsd.port.mk>
