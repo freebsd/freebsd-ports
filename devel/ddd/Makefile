@@ -8,7 +8,6 @@
 
 PORTNAME=	ddd
 PORTVERSION=	3.3.8
-PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= ddd
@@ -20,7 +19,6 @@ LIB_DEPENDS=	iberty.1:${PORTSDIR}/devel/freelibiberty
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_SIZE=	yes
 USE_XPM=	yes
 USE_MOTIF=	yes
 USE_LIBTOOL_VER=13
@@ -53,6 +51,15 @@ LIBXMDIR=	${X11BASE}
 .endif
 
 .include <bsd.port.pre.mk>
+
+# DDD builds with either GCC 3.1 or GCC 3.2
+# Use 3.1 if it is available with base system
+# Otherwise, default to 3.2
+.if ${OSVERSION} >= 500035 && ${OSVERSION} <= 500038
+USE_GCC=3.1
+.else
+USE_GCC=3.2
+.endif
 
 pre-patch:
 	@${RM} -fv ${WRKSRC}/ddd/ddd.info*
