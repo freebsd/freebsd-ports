@@ -73,6 +73,10 @@ lib/gnumeric/%%VERSION%%/plugins/plot_pie/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/plot_radar/plot-types.xml
 lib/gnumeric/%%VERSION%%/plugins/plot_radar/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/plot_radar/radar.so
+lib/gnumeric/%%VERSION%%/plugins/plot_surface/gog-contour-prefs.glade
+lib/gnumeric/%%VERSION%%/plugins/plot_surface/surface.so
+lib/gnumeric/%%VERSION%%/plugins/plot_surface/plugin.xml
+lib/gnumeric/%%VERSION%%/plugins/plot_surface/plot-types.xml
 lib/gnumeric/%%VERSION%%/plugins/plot_xy/gog-bubble-prefs.glade
 lib/gnumeric/%%VERSION%%/plugins/plot_xy/plot-types.xml
 lib/gnumeric/%%VERSION%%/plugins/plot_xy/plugin.xml
@@ -782,6 +786,7 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm lib/gnumeric/%%VERSION%%/plugins/python-loader
 @dirrm lib/gnumeric/%%VERSION%%/plugins/py-func
 @dirrm lib/gnumeric/%%VERSION%%/plugins/plot_xy
+@dirrm lib/gnumeric/%%VERSION%%/plugins/plot_surface
 @dirrm lib/gnumeric/%%VERSION%%/plugins/plot_radar
 @dirrm lib/gnumeric/%%VERSION%%/plugins/plot_pie
 @dirrm lib/gnumeric/%%VERSION%%/plugins/plot_barcol
