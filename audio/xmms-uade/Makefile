@@ -9,7 +9,7 @@ PORTNAME=	xmms-uade
 PORTVERSION=	0.80
 PORTREVISION=	3
 CATEGORIES=	audio
-MASTER_SITES=	http://www.ee.tut.fi/%7Eheikki/uade/
+MASTER_SITES=	http://www.ee.tut.fi/%7Eheikki/uade/pre/
 DISTFILES=	uade-${PORTVERSION}-pre3-antiwar${EXTRACT_SUFX}
 
 MAINTAINER=	mbr@FreeBSD.org
