@@ -14,6 +14,8 @@ share/icons/gnome/24x24/filesystems/gnome-fs-directory-accept.png
 share/icons/gnome/24x24/filesystems/gnome-fs-directory.icon
 share/icons/gnome/24x24/filesystems/gnome-fs-directory.png
 share/icons/gnome/32x32/apps/panel-notification-area.png
+share/icons/gnome/36x36/apps/gnome-spinner.png
+share/icons/gnome/36x36/apps/gnome-spinner-rest.png
 share/icons/gnome/36x36/emblems/emblem-symbolic-link.png
 share/icons/gnome/36x36/filesystems/gnome-fs-directory-accept.icon
 share/icons/gnome/36x36/filesystems/gnome-fs-directory-accept.png
@@ -352,6 +354,7 @@ share/locale/zh_TW/LC_MESSAGES/gnome-icon-theme.mo
 @dirrm share/icons/gnome/36x36/filesystems
 @dirrm share/icons/gnome/36x36/emblems
 @dirrm share/icons/gnome/36x36/devices
+@dirrm share/icons/gnome/36x36/apps
 @dirrm share/icons/gnome/36x36
 @dirrm share/icons/gnome/32x32/apps
 @dirrm share/icons/gnome/32x32
