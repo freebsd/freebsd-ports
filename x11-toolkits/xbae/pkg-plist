@@ -7,6 +7,7 @@ include/Xbae/InputP.h
 include/Xbae/Matrix.h
 include/Xbae/MatrixP.h
 include/Xbae/patchlevel.h
+lib/libXbae.a
 lib/libXbae.la
 lib/libXbae.so
 lib/libXbae.so.4

@@ -33,6 +33,7 @@ include/Inventor/Xt/SoXtRenderArea.h
 @dirrm include/Inventor/Xt/widgets
 @dirrm include/Inventor/Xt
 @dirrm include/Inventor
+lib/libSoXt.a
 lib/libSoXt.so.0
 lib/libSoXt.so
 lib/libSoXt.la

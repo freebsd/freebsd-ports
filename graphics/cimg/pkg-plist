@@ -1,4 +1,5 @@
 %%PORTDOCS%%bin/CImg_test
+include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
 %%PORTDOCS%%%%DOCSDIR%%/CImg.doxygen
 %%PORTDOCS%%%%DOCSDIR%%/README.txt

@@ -17,6 +17,7 @@ include/Inventor/Qt/SoQtCursor.h
 include/Inventor/Qt/SoQtComponent.h
 include/Inventor/Qt/SoQtGLWidget.h
 include/Inventor/Qt/SoQtRenderArea.h
+lib/libSoQt.a
 lib/libSoQt.so.20
 lib/libSoQt.so
 lib/libSoQt.la
