@@ -4850,7 +4850,6 @@ pips780cs	ports/print/pips780cs
 pips790		ports/print/pips790
 pips800		ports/print/pips800
 pips820		ports/print/pips820
-pips820_3300	ports/print/pips820_3300
 pips820ug	ports/print/pips820ug
 pips880		ports/print/pips880
 pips900		ports/print/pips900
