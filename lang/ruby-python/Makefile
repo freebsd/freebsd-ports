@@ -20,6 +20,8 @@ COMMENT=	Ruby extension library for embedding Python in Ruby
 BUILD_DEPENDS=	${NONEXISTENT}:${PYTHON_PORTSDIR}:-DWITHOUT_THREADS
 
 BROKEN=		"Broken dependency"
+DEPRECATED=	"obsolete now that hundreds of native libraries have been added to Ruby"
+EXPIRATION_DATE=	"May 14, 2004"
 
 USE_PYTHON=	yes
 PYTHON_VERSION?=	python1.5
