@@ -9215,6 +9215,7 @@ super_methane_brothers	ports/games/super_methane_brothers
 superkaramba	ports/deskutils/superkaramba
 superlu		ports/math/superlu
 superlu_mt	ports/math/superlu_mt
+supertux	ports/games/supertux
 suphp		ports/www/suphp
 surf		ports/math/surf
 surfraw		ports/www/surfraw
