@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	0.7.7
+PORTVERSION=	0.7.8
 CATEGORIES=	games
 MASTER_SITES=	http://www.wesnoth.org/files/
 .if defined(LITE)

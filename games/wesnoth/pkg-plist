@@ -67,7 +67,6 @@ share/wesnoth/data/multiplayer.cfg
 share/wesnoth/data/names.cfg
 share/wesnoth/data/sample_translation.cfg
 share/wesnoth/data/scenario-test.cfg
-share/wesnoth/data/scenarios/Heir_To_The_Throne.cfg
 share/wesnoth/data/scenarios/Heir_To_The_Throne/A_Choice_Must_Be_Made.cfg
 share/wesnoth/data/scenarios/Heir_To_The_Throne/Bay_of_Pearls.cfg
 share/wesnoth/data/scenarios/Heir_To_The_Throne/Blackwater_Port.cfg
@@ -97,7 +96,6 @@ share/wesnoth/data/scenarios/Heir_To_The_Throne/The_Siege_of_Elensefar.cfg
 share/wesnoth/data/scenarios/Heir_To_The_Throne/Valley_of_Death.cfg
 share/wesnoth/data/scenarios/Heir_To_The_Throne/Valley_of_Statues.cfg
 share/wesnoth/data/scenarios/Random_Scenario.cfg
-share/wesnoth/data/scenarios/Son_Of_The_Black_Eye.cfg
 share/wesnoth/data/scenarios/Son_Of_The_Black_Eye/Black_Flag.cfg
 share/wesnoth/data/scenarios/Son_Of_The_Black_Eye/Desert_Of_Death.cfg
 share/wesnoth/data/scenarios/Son_Of_The_Black_Eye/End_Of_Peace.cfg
@@ -110,7 +108,6 @@ share/wesnoth/data/scenarios/Son_Of_The_Black_Eye/Towards_Mountains_of_Haag.cfg
 share/wesnoth/data/scenarios/Son_Of_The_Black_Eye/deaths.cfg
 share/wesnoth/data/scenarios/Son_Of_The_Black_Eye/story.cfg
 share/wesnoth/data/scenarios/Son_Of_The_Black_Eye/utils.cfg
-share/wesnoth/data/scenarios/The_Dark_Hordes.cfg
 share/wesnoth/data/scenarios/The_Dark_Hordes/A_New_Chance.cfg
 share/wesnoth/data/scenarios/The_Dark_Hordes/Brother_Against_Brother.cfg
 share/wesnoth/data/scenarios/The_Dark_Hordes/Crelanus_Book.cfg
@@ -163,6 +160,7 @@ share/wesnoth/data/units/Deathmaster.cfg
 share/wesnoth/data/units/Demilich.cfg
 share/wesnoth/data/units/Dragoon.cfg
 share/wesnoth/data/units/Drakonian_Fighter.cfg
+share/wesnoth/data/units/Drakonian_Slave.cfg
 share/wesnoth/data/units/Duelist.cfg
 share/wesnoth/data/units/Dwarvish_Berserker.cfg
 share/wesnoth/data/units/Dwarvish_Fighter.cfg
@@ -349,6 +347,10 @@ share/wesnoth/images/drakonian-fighter-attack-fire1.png
 share/wesnoth/images/drakonian-fighter-attack-fire2.png
 share/wesnoth/images/drakonian-fighter-defend.png
 share/wesnoth/images/drakonian-fighter.png
+share/wesnoth/images/drakonian-slave-attack1.png
+share/wesnoth/images/drakonian-slave-attack2.png
+share/wesnoth/images/drakonian-slave-defend.png
+share/wesnoth/images/drakonian-slave.png
 share/wesnoth/images/dwarf-berserker.png
 share/wesnoth/images/dwarf-fighter-attack.png
 share/wesnoth/images/dwarf-fighter-defend.png
@@ -459,6 +461,7 @@ share/wesnoth/images/elvish-scout-attack.png
 share/wesnoth/images/elvish-scout-attack1.png
 share/wesnoth/images/elvish-scout-attack2.png
 share/wesnoth/images/elvish-scout-defend.png
+share/wesnoth/images/elvish-scout-moving.png
 share/wesnoth/images/elvish-scout.png
 share/wesnoth/images/elvish-shaman-attack.png
 share/wesnoth/images/elvish-shaman-attack2.png
@@ -474,6 +477,7 @@ share/wesnoth/images/elvish-shyde.png
 share/wesnoth/images/enemy-energy.png
 share/wesnoth/images/entangle.png
 share/wesnoth/images/faerie_touch.png
+share/wesnoth/images/fireball-halo.png
 share/wesnoth/images/fireball.png
 share/wesnoth/images/galleon.png
 share/wesnoth/images/goblin-direwolver.png
@@ -491,7 +495,18 @@ share/wesnoth/images/gryphon-rider-defend.png
 share/wesnoth/images/gryphon-rider.png
 share/wesnoth/images/gryphon-sleeping.png
 share/wesnoth/images/gryphon.png
+share/wesnoth/images/halo/mage-halo1.png
+share/wesnoth/images/halo/mage-halo2.png
+share/wesnoth/images/halo/mage-halo3.png
+share/wesnoth/images/halo/mage-halo4.png
+share/wesnoth/images/halo/mage-halo5.png
+share/wesnoth/images/halo/mage-halo6.png
+share/wesnoth/images/halo/mage-halo7.png
+share/wesnoth/images/halo/mage-halo8.png
+share/wesnoth/images/halo/mage-halo9.png
 share/wesnoth/images/horseman-attack.png
+share/wesnoth/images/horseman-defend.png
+share/wesnoth/images/horseman-moving.png
 share/wesnoth/images/horseman.png
 share/wesnoth/images/human-battleprincess-attack.png
 share/wesnoth/images/human-battleprincess-defend.png
@@ -534,6 +549,8 @@ share/wesnoth/images/human-queen.png
 share/wesnoth/images/human-royalguard-defend.png
 share/wesnoth/images/human-royalguard.png
 share/wesnoth/images/human-scout-attack.png
+share/wesnoth/images/human-scout-defend.png
+share/wesnoth/images/human-scout-moving.png
 share/wesnoth/images/human-scout.png
 share/wesnoth/images/human-shocktrooper-attack.png
 share/wesnoth/images/human-shocktrooper.png
@@ -584,8 +601,11 @@ share/wesnoth/images/item-rock4.png
 share/wesnoth/images/item-slab.png
 share/wesnoth/images/item-well.png
 share/wesnoth/images/knight.png
-share/wesnoth/images/konrad-commander-attack1.png
-share/wesnoth/images/konrad-commander-attack2.png
+share/wesnoth/images/konrad-commander-attack.png
+share/wesnoth/images/konrad-commander-defend.png
+share/wesnoth/images/konrad-commander-leading.png
+share/wesnoth/images/konrad-commander-ranged-defend.png
+share/wesnoth/images/konrad-commander-ranged.png
 share/wesnoth/images/konrad-commander.png
 share/wesnoth/images/konrad-fighter-attack.png
 share/wesnoth/images/konrad-fighter-defend.png
@@ -607,6 +627,7 @@ share/wesnoth/images/mage-defend.png
 share/wesnoth/images/mage.png
 share/wesnoth/images/magicmissile-n.png
 share/wesnoth/images/magicmissile-ne.png
+share/wesnoth/images/merman-attack.png
 share/wesnoth/images/merman-defend.png
 share/wesnoth/images/merman-king-attack.png
 share/wesnoth/images/merman-king-defend.png
@@ -628,6 +649,7 @@ share/wesnoth/images/misc/club.png
 share/wesnoth/images/misc/compass-north.png
 share/wesnoth/images/misc/compass-south.png
 share/wesnoth/images/misc/cross.png
+share/wesnoth/images/misc/curse.png
 share/wesnoth/images/misc/dagger.png
 share/wesnoth/images/misc/dark-missile.png
 share/wesnoth/images/misc/darkstaff.png
@@ -677,6 +699,7 @@ share/wesnoth/images/misc/foot-left-nw.png
 share/wesnoth/images/misc/foot-right-n.png
 share/wesnoth/images/misc/foot-right-nw.png
 share/wesnoth/images/misc/frenzy.png
+share/wesnoth/images/misc/gaze.png
 share/wesnoth/images/misc/gold.png
 share/wesnoth/images/misc/halberd.png
 share/wesnoth/images/misc/hammer.png
@@ -696,6 +719,7 @@ share/wesnoth/images/misc/konrad.png
 share/wesnoth/images/misc/lance.png
 share/wesnoth/images/misc/lightingbolt.png
 share/wesnoth/images/misc/lisar.png
+share/wesnoth/images/misc/lisar_b.png
 share/wesnoth/images/misc/lobby.png
 share/wesnoth/images/misc/logo.png
 share/wesnoth/images/misc/longbow.png
@@ -777,12 +801,14 @@ share/wesnoth/images/misc/villages.png
 share/wesnoth/images/misc/waterspray.png
 share/wesnoth/images/misc/web.png
 share/wesnoth/images/misc/woodensword.png
+share/wesnoth/images/missile-gaze.png
 share/wesnoth/images/missile-n.png
 share/wesnoth/images/missile-ne.png
 share/wesnoth/images/missile-nw.png
 share/wesnoth/images/missile-s.png
 share/wesnoth/images/missile-se.png
 share/wesnoth/images/missile-sw.png
+share/wesnoth/images/missile-thorns.png
 share/wesnoth/images/missile.png
 share/wesnoth/images/missiledagger-n.png
 share/wesnoth/images/missiledagger-ne.png
@@ -848,6 +874,8 @@ share/wesnoth/images/paladin.png
 share/wesnoth/images/partmoved-energy.png
 share/wesnoth/images/pirate-galleon.png
 share/wesnoth/images/random-enemy.png
+share/wesnoth/images/red-mage-attack.png
+share/wesnoth/images/red-mage-attack1.png
 share/wesnoth/images/red-mage-defend.png
 share/wesnoth/images/red-mage.png
 share/wesnoth/images/rogue-attack.png
@@ -975,6 +1003,26 @@ share/wesnoth/images/terrain/flag-team6.png
 share/wesnoth/images/terrain/flag-team7.png
 share/wesnoth/images/terrain/flag-team8.png
 share/wesnoth/images/terrain/flag-team9.png
+share/wesnoth/images/terrain/fog-n-ne-se-s.png
+share/wesnoth/images/terrain/fog-n-ne-se.png
+share/wesnoth/images/terrain/fog-n-ne.png
+share/wesnoth/images/terrain/fog-n.png
+share/wesnoth/images/terrain/fog-ne-se-s.png
+share/wesnoth/images/terrain/fog-ne-se.png
+share/wesnoth/images/terrain/fog-ne.png
+share/wesnoth/images/terrain/fog-nw-n-ne.png
+share/wesnoth/images/terrain/fog-nw-n.png
+share/wesnoth/images/terrain/fog-nw.png
+share/wesnoth/images/terrain/fog-s-sw-nw-n.png
+share/wesnoth/images/terrain/fog-s-sw-nw.png
+share/wesnoth/images/terrain/fog-s-sw.png
+share/wesnoth/images/terrain/fog-s.png
+share/wesnoth/images/terrain/fog-se-s-sw.png
+share/wesnoth/images/terrain/fog-se-s.png
+share/wesnoth/images/terrain/fog-se.png
+share/wesnoth/images/terrain/fog-sw-nw-n.png
+share/wesnoth/images/terrain/fog-sw-nw.png
+share/wesnoth/images/terrain/fog-sw.png
 share/wesnoth/images/terrain/fog.png
 share/wesnoth/images/terrain/forest-n.png
 share/wesnoth/images/terrain/forest-ne.png
@@ -1153,6 +1201,26 @@ share/wesnoth/images/terrain/swampwater3.png
 share/wesnoth/images/terrain/temple.png
 share/wesnoth/images/terrain/test.png
 share/wesnoth/images/terrain/trash.png
+share/wesnoth/images/terrain/void-n-ne-se-s.png
+share/wesnoth/images/terrain/void-n-ne-se.png
+share/wesnoth/images/terrain/void-n-ne.png
+share/wesnoth/images/terrain/void-n.png
+share/wesnoth/images/terrain/void-ne-se-s.png
+share/wesnoth/images/terrain/void-ne-se.png
+share/wesnoth/images/terrain/void-ne.png
+share/wesnoth/images/terrain/void-nw-n-ne.png
+share/wesnoth/images/terrain/void-nw-n.png
+share/wesnoth/images/terrain/void-nw.png
+share/wesnoth/images/terrain/void-s-sw-nw-n.png
+share/wesnoth/images/terrain/void-s-sw-nw.png
+share/wesnoth/images/terrain/void-s-sw.png
+share/wesnoth/images/terrain/void-s.png
+share/wesnoth/images/terrain/void-se-s-sw.png
+share/wesnoth/images/terrain/void-se-s.png
+share/wesnoth/images/terrain/void-se.png
+share/wesnoth/images/terrain/void-sw-nw-n.png
+share/wesnoth/images/terrain/void-sw-nw.png
+share/wesnoth/images/terrain/void-sw.png
 share/wesnoth/images/terrain/void.png
 share/wesnoth/images/thief-attack.png
 share/wesnoth/images/thief-defend.png
@@ -1244,7 +1312,11 @@ share/wesnoth/images/unmoved-energy.png
 share/wesnoth/images/water_spay.png
 share/wesnoth/images/web.png
 share/wesnoth/images/wesnoth-icon.png
+share/wesnoth/images/white-cleric-aura.png
 share/wesnoth/images/white-cleric.png
+share/wesnoth/images/white-mage-attack.png
+share/wesnoth/images/white-mage-attack1.png
+share/wesnoth/images/white-mage-defend.png
 share/wesnoth/images/white-mage.png
 share/wesnoth/images/whitemissile-n.png
 share/wesnoth/images/whitemissile-ne.png
@@ -1275,36 +1347,50 @@ share/wesnoth/images/yeti.png
 %%LITE:%%share/wesnoth/music/wesnoth-6.ogg
 %%LITE:%%share/wesnoth/music/wesnoth-7.ogg
 %%LITE:%%share/wesnoth/music/wesnoth-8.ogg
+share/wesnoth/sounds/arrive.wav
 share/wesnoth/sounds/arrow-hit.wav
 share/wesnoth/sounds/arrow-miss.wav
 share/wesnoth/sounds/bell.wav
+share/wesnoth/sounds/dagger-swish.wav
 share/wesnoth/sounds/dart.wav
+share/wesnoth/sounds/female-hit.wav
 share/wesnoth/sounds/fire.wav
 share/wesnoth/sounds/firearrow.wav
 share/wesnoth/sounds/fist-swish.wav
+share/wesnoth/sounds/ghoul-hit.wav
+share/wesnoth/sounds/ghoul-swish.wav
 share/wesnoth/sounds/groan.wav
 share/wesnoth/sounds/gunshot.wav
 share/wesnoth/sounds/heal.wav
 share/wesnoth/sounds/horse-canter.wav
 share/wesnoth/sounds/knife.wav
+share/wesnoth/sounds/leave.wav
 share/wesnoth/sounds/lightning.wav
 share/wesnoth/sounds/mace.wav
 share/wesnoth/sounds/magicmissile.wav
 share/wesnoth/sounds/mermen-hit.wav
 share/wesnoth/sounds/net.wav
+share/wesnoth/sounds/open-chest.wav
+share/wesnoth/sounds/orc-hit.wav
 share/wesnoth/sounds/pistol.wav
+share/wesnoth/sounds/receive.wav
 share/wesnoth/sounds/skeleton-hit.wav
 share/wesnoth/sounds/spear.wav
 share/wesnoth/sounds/staff.wav
 share/wesnoth/sounds/sword-clang.wav
 share/wesnoth/sounds/sword-swish.wav
+share/wesnoth/sounds/torch-swish.wav
 share/wesnoth/sounds/ugg.wav
+share/wesnoth/sounds/wolf-attack.wav
 share/wesnoth/sounds/wolf-cry.wav
+share/wesnoth/sounds/zombie-attack.wav
+share/wesnoth/sounds/zombie-hit.wav
 @dirrm share/wesnoth/sounds
 %%LITE:%%@dirrm share/wesnoth/music
 @dirrm share/wesnoth/images/terrain
 @dirrm share/wesnoth/images/sotbe
 @dirrm share/wesnoth/images/misc
+@dirrm share/wesnoth/images/halo
 @dirrm share/wesnoth/images/editor
 @dirrm share/wesnoth/images/cursors-bw
 @dirrm share/wesnoth/images/cursors
