@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ogmrip
-PORTVERSION=	0.5.3
+PORTVERSION=	0.6.0
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,10 +17,12 @@ COMMENT=	Application and libraries for encoding DVDs into DivX/OGM files
 BUILD_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mplayer \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
 		ogmmerge:${PORTSDIR}/multimedia/ogmtools \
-		lame:${PORTSDIR}/audio/lame
+		lame:${PORTSDIR}/audio/lame \
+		gocr:${PORTSDIR}/graphics/gocr
 RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	xvidcore:${PORTSDIR}/multimedia/xvid \
-		dvdread:${PORTSDIR}/multimedia/libdvdread
+		dvdread:${PORTSDIR}/multimedia/libdvdread \
+		enchant:${PORTSDIR}/textproc/enchant
 
 USE_REINPLACE=	yes
 USE_GNOME=	gtk20 glib20 libgnomeui gconf2 libgnome libglade2
