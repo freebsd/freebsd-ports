@@ -1,5 +1,16 @@
 --- configure-xxx	Fri Dec  5 13:20:58 2003
 +++ configure	Thu Aug 12 00:22:30 2004
+@@ -624,8 +624,8 @@
+ # This may be commented out if not required.
+ $libtachyon_defines        = "-DVMDLIBTACHYON";
+ $libtachyon_dir         = "$vmd_library_dir/tachyon";
+-$libtachyon_include     = "-I$libtachyon_dir/include";
+-$libtachyon_library     = "-L$libtachyon_dir/lib_$config_arch";
++$libtachyon_include     = "-I$libtachyon_dir/src";
++$libtachyon_library     = "-L$libtachyon_dir/compile/bsd";
+ $libtachyon_libs        = "-ltachyon";
+ @libtachyon_cc             = ();
+ @libtachyon_ccpp           = ('LibTachyonDisplayDevice.C'
 @@ -1174,8 +1174,10 @@
  
      # XFree 4.0 Direct Rendering Interface and GLX 
