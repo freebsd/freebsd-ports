@@ -57,6 +57,12 @@ DOCS=	COPYING README TODO
 FIXPREFIX_CONF=	src/include/audconf.h src/auditd/auditd.8
 LIBVERSION=	1
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64"
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e "s@Linux@FreeBSD@g" ${WRKSRC}/configure
 	(${FIND} ${WRKSRC}/src/modules -name Makefile.in -exec \
@@ -78,4 +84,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
