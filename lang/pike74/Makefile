@@ -7,6 +7,7 @@
 
 PORTNAME=	pike74
 PORTVERSION=	7.4.28
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
 		ftp://ftp.oav.net/pkg_freebsd/distfiles/ \
@@ -124,7 +125,7 @@ WITH_SANE=	yes
 WITH_MESA=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libpdf.so.4) || exists(${LOCALBASE}/lib/libpanda.so.0)
+.if exists(${LOCALBASE}/lib/libpdf.so.6) || exists(${LOCALBASE}/lib/libpanda.so.0)
 WITH_PDF=	yes
 .endif
 
@@ -244,7 +245,7 @@ CONFIGURE_ARGS+= --without-sane
 .endif
 
 .if defined(WITH_PDF)
-LIB_DEPENDS+=	pdf.4:${PORTSDIR}/print/pdflib4 \
+LIB_DEPENDS+=	pdf.6:${PORTSDIR}/print/pdflib \
 		panda.0:${PORTSDIR}/print/panda
 CONFIGURE_ARGS+= --with-libpdf --with-libpanda
 .else
