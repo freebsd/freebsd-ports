@@ -5,27 +5,27 @@
 # $FreeBSD$
 #
 
-PORTNAME=	keyprint
+PORTNAME=	opieprint
 PORTVERSION=	1.0
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	mharo
+MASTER_SITES=	http://www.inner.net/pub/opie/contrib/
+DISTNAME=	${PORTNAME}
+EXTRACT_SUFX=	.gz
 
 MAINTAINER=	mharo@FreeBSD.org
-COMMENT=	Print S/Key keys on a piece of paper, twice the size of a credit card
+COMMENT=	Output postscript with 100 OPIE passwords credit card sized
 
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 USE_REINPLACE=	yes
+USE_PERL5_RUN=	yes
+
+EXTRACT_AFTER_ARGS= > ${WRKSRC}/${PORTNAME}
 
 post-patch:
-	${REINPLACE_CMD} -e 's,__PREFIX__,${PREFIX},' ${WRKSRC}/keyprint
+	${REINPLACE_CMD} -e 's,/usr/local/bin/perl,${PERL},' ${WRKSRC}/opieprint
 
 do-install:
-	${MKDIR} ${PREFIX}/share/keyprint
-	${INSTALL_DATA} ${WRKSRC}/keyblank.ps ${PREFIX}/share/keyprint
-	${INSTALL_SCRIPT} ${WRKSRC}/keyprint ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/keyprint
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/opieprint ${PREFIX}/bin
 
 .include <bsd.port.mk>

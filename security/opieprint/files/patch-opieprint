@@ -1,0 +1,25 @@
+--- opieprint.orig	Sat Aug 28 13:15:12 2004
++++ opieprint	Sat Aug 28 13:20:52 2004
+@@ -25,11 +25,11 @@
+ 
+ ########################## Configurable Parameters #######################
+ 
+-$dir="/usr/local/bin";		# dir containing opieinfo & opiekey
++$dir="/usr/bin";		# dir containing opieinfo & opiekey
+ 
+ ##########################################################################
+ 
+-$ENV{'PATH'}='/bin:/usr/bin:/usr/ucb';
++$ENV{'PATH'}='/bin:/usr/bin';
+ $|=1;				# unbuffer stdout
+ 
+ $max = 100;			# default max seq number is 100
+@@ -49,7 +49,7 @@
+ }
+ 
+ # get user from: cmdline or ENV or getlogin
+-$username = $ARGV[0] || $ENV{'USER'} || $ENV{'LOGNAME'} || getlogin();
++$username = $ARGV[0]; # || $ENV{'USER'} || $ENV{'LOGNAME'} || getlogin();
+ $username =~ /(\w+)/;
+ $username = $1;
+ 
