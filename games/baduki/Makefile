@@ -8,7 +8,7 @@
 PORTNAME=	baduki
 PORTVERSION=	0.2.9
 CATEGORIES=	games
-MASTER_SITES=	ftp://autoinst.acs.uci.edu/pub/go/
+MASTER_SITES=	ftp://autoinst.acs.uci.edu/pub/go/baduki/
 
 MAINTAINER=	spcoltri@omcl.org
 
