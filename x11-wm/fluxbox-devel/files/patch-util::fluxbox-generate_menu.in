@@ -1,5 +1,5 @@
---- util/fluxbox-generate_menu.in.orig	Mon Aug 23 18:23:41 2004
-+++ util/fluxbox-generate_menu.in	Thu Sep  2 05:43:40 2004
+--- util/fluxbox-generate_menu.in.orig	Mon Dec  6 18:33:02 2004
++++ util/fluxbox-generate_menu.in	Mon Dec  6 18:43:47 2004
 @@ -45,7 +45,7 @@
  
  
@@ -29,7 +29,7 @@
          }
  
          find_it_options() {
-@@ -800,19 +800,19 @@
+@@ -802,19 +802,19 @@
  # FBRUNOPTIONS='-font 10x20 -fg grey -bg black -title run'
  
  # --- PREFIX'es
@@ -56,7 +56,7 @@
  
  
  # --- Boolean variables.
-@@ -935,7 +935,7 @@
+@@ -939,7 +939,7 @@
  
  
  # gnome prefix
@@ -65,7 +65,7 @@
      if [ -n "${GNOME_PREFIX}" -a -d "$GNOME_PREFIX/share/gnome" ]; then
          break;
      fi
-@@ -943,7 +943,7 @@
+@@ -947,7 +947,7 @@
  # Will remain $PREFIX if all else fails
  
  # kde prefix
@@ -74,7 +74,7 @@
      if [ -n "${KDE_PREFIX}" -a -d "$KDE_PREFIX/share/applnk" ]; then
          break;
      fi
-@@ -988,7 +988,7 @@
+@@ -992,7 +992,7 @@
  else
      [ -n "$MY_BROWSER" ] && echo "Warning: you chose an invalid browser." >&2
      #The precise order is up for debate.
@@ -83,7 +83,7 @@
          if find_it $browser; then
              DEFAULT_BROWSER=$browser
              break
-@@ -1028,7 +1028,8 @@
+@@ -1032,7 +1032,8 @@
      links|w3m|lynx)  append "[exec] (${DEFAULT_BROWSERNAME}) {${DEFAULT_TERM} -e ${DEFAULT_BROWSER} ${HOMEPAGE}}" ;;
      firefox|firebird|mozilla|phoenix|galeon|dillo|netscape) append "[exec] (${DEFAULT_BROWSERNAME}) {${DEFAULT_BROWSER}}" ;;
      konqueror) append "[exec] (konqueror) {kfmclient openProfile webbrowsing}" ;;
@@ -93,7 +93,7 @@
      MozillaFirebird) append "[exec] (firebird) {MozillaFirebird}" ;;
      MozillaFirefox) append "[exec] (firefox) {MozillaFirefox}" ;;
      *) append "[exec] ($DEFAULT_BROWSERNAME) {$DEFAULT_BROWSER}" ;;
-@@ -1046,7 +1047,8 @@
+@@ -1050,7 +1051,8 @@
      append_submenu "${BROWSERMENU}"
          normal_find firefox mozilla-firefox MozillaFirefox galeon mozilla dillo netscape
          find_it links       append "[exec]   (links-graphic) {links -driver x ${HOMEPAGE}}"
@@ -103,7 +103,7 @@
          find_it konqueror   append "[exec]   (konqueror) {kfmclient openProfile webbrowsing}"
          find_it links       append "[exec]   (links) {${DEFAULT_TERM} -e links ${HOMEPAGE}}"
          find_it w3m         append "[exec]   (w3m) {${DEFAULT_TERM} -e w3m ${HOMEPAGE}}"
-@@ -1203,7 +1205,6 @@
+@@ -1210,7 +1212,6 @@
  
      append_menu "[submenu] (${SYSTEMSTYLES}) {${STYLEMENUTITLE}}"
          append "[stylesdir] (${PREFIX}/share/fluxbox/styles)"

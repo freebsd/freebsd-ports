@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fluxbox
-PORTVERSION=	0.9.10
+PORTVERSION=	0.9.11
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fluxbox
@@ -22,16 +22,14 @@ RUN_DEPENDS=	bsetroot:${PORTSDIR}/x11-wm/boxtools
 
 CONFLICTS=	fluxbox-0.1.*
 
+USE_GNOME=	gnometarget
 WANT_GNOME=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=15
 
 DOCS=		AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
 MAN1=		fbrun.1 fbsetbg.1 fluxbox.1 fluxstyle.1 startfluxbox.1
-NLSMAKEFILES=	nls nls/C nls/bg_BG nls/da_DK nls/de_DE nls/es_ES nls/et_EE \
-		nls/fr_FR nls/it_IT nls/ja_JP nls/lv_LV nls/nl_NL nls/pl_PL \
-		nls/pt_BR nls/pt_PT nls/ru_RU nls/sl_SI nls/sv_SE nls/tr_TR
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
@@ -66,9 +64,13 @@ CONFIGURE_ARGS+=	--enable-xinerama
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=		yes
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LIBS="-L${LOCALBASE}/lib -liconv"
 CONFIGURE_ARGS+=	--enable-nls
 PLIST_SUB+=		NLS:=""
 .else
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		NLS:="@comment "
 .endif
@@ -128,10 +130,9 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g; s|%%X11BASE%%|${X11BASE}|g' \
 		${WRKSRC}/util/fluxbox-generate_menu.in
-.if !defined(WITHOUT_NLS)
-.for i in ${NLSMAKEFILES}
-	@${REINPLACE_CMD} -e 's|@NLS@|-DNLS|' ${WRKSRC}/${i}/Makefile.in
-.endfor
+.if defined(WITHOUT_NLS)
+	@${REINPLACE_CMD} -e 's|HAVE_ICONV=yes|HAVE_ICONV=no|g' \
+		${WRKSRC}/configure
 .endif
 
 post-install:
