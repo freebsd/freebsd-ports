@@ -205,6 +205,7 @@
     SUBDIR += psmisc
     SUBDIR += pstack
     SUBDIR += pstree
+    SUBDIR += pwg
     SUBDIR += pwgen
     SUBDIR += pyfind
     SUBDIR += qlogtools
