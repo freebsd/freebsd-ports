@@ -1,4 +1,4 @@
-# New ports collection makefile for: Japanese Aladdin ghostscript + vector font library(FreeType)
+# New ports collection makefile for: Japanese GNU ghostscript + vector font library(FreeType)
 # Date created:		26 Aug 1997
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	vfghostscript
-PORTVERSION=	5.50
+PORTVERSION=	5.50a
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/gs550/ \
-		ftp://ftp.cs.wisc.edu/ghost/aladdin/fonts/ \
-		ftp://ftp.uu.net/graphics/png/src/ \
-		ftp://ftp.uu.net/graphics/jpeg/ \
+MASTER_SITES=	${MASTER_SITE_GNU} \
+		ftp://ftp.cs.wisc.edu/ghost/gnu/gs550/ \
+		ftp://ftp.cs.wisc.edu/ghost/gnu/fonts/ \
 		http://www.bukka.p.chiba-u.ac.jp/~ohmori/gs/ \
 		ftp://ftp.mei.co.jp/free/gnu/util/ghostscript/drivers/ \
 		${MASTER_SITE_LOCAL} \
@@ -21,50 +20,52 @@ MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/gs550/ \
 		http://www.rd.nacsis.ac.jp/~katayama/homepage/ghostscript/jpdf/ \
 		http://itohws03.ee.noda.sut.ac.jp/~matsuda/VFlib-FT/ \
 		http://www.ceres.dti.ne.jp/~owatanab/gdevnpdl/ \
-		ftp://ftp.humblesoft.com/pub/ \
+		http://www.humblesoft.com/pub/ \
 		http://www.necs.co.jp/~umi/ \
 		http://plaza26.mbn.or.jp/~higamasa/gdevmd2k/ \
-		http://www.aial.hiroshima-u.ac.jp/~sakai/Linux/gs${PORTVERSION}/
-# former for ${MASTER_SITE_LOCAL}, latter for ${MASTER_SITE_PORTS_JP}
-MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS .
-DISTNAME=	ghostscript-${PORTVERSION}
+		http://www.aial.hiroshima-u.ac.jp/~sakai/Linux/gs5.50/ \
+		http://www.epkowa.on.arena.ne.jp/pips/data/lp8500/
+# first for ${MASTER_SITE_GNU}, second for ${MASTER_SITE_LOCAL},
+# third for ${MASTER_SITE_PORTS_JP}
+MASTER_SITE_SUBDIR=	ghostscript asami/LOCAL_PORTS .
 DISTFILES=	${GS_SOURCES} ${GS_DRIVERS} ${GS_FONTS_STD} ${GS_FONTS_OTHER}
+EXTRACT_ONLY=	${GS_SOURCES}
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
-LIB_DEPENDS=	VFlib2.24:${PORTSDIR}/japanese/vflib
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/graphics/jpeg:extract
+LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
+		VFlib2.24:${PORTSDIR}/japanese/vflib
 
-EXTRACT_ONLY=	ghostscript-${PORTVERSION}.tar.gz jpegsrc.v6b.tar.gz libpng-1.0.2.tar.gz
-WRKSRC=		${WRKDIR}/gs${PORTVERSION}
+WRKSRC=		${WRKDIR}/gs5.50
+
+USE_XLIB=	yes
+USE_GMAKE=	yes
 MAKEFILE=	unix-gcc.mak
-#MAKE_FLAGS=	prefix=${PREFIX} CFLAGS="${CFLAGS}" -f
-ALL_TARGET=	
 MAN1=		gs.1 pdf2ps.1 ps2ascii.1 ps2epsi.1 ps2pdf.1 pdf2dsc.1 ps2ps.1
 
-USE_GMAKE=	yes
 CFLAGS+=	-DA4
-GSINST_DIR=	${PREFIX}/share/ghostscript/${PORTVERSION}vflib
+GSINST_DIR=	${PREFIX}/share/ghostscript/5.50vflib
 DOC_DIR=	${GSINST_DIR}/doc
 PRINTER=	${WRKSRC}/jp-printers
-GS_SOURCES=	ghostscript-${PORTVERSION}.tar.gz
-GS_SOURCES+=	jpegsrc.v6b.tar.gz
-GS_SOURCES+=	libpng-1.0.2.tar.gz
-GS_DRIVERS=	gs${PORTVERSION}-vflib-1.0.tar.gz
-GS_DRIVERS+=	gdevlips-2.3.2.tar.gz
+GS_SOURCES=	gnu-gs-5.50a.tar.gz
+GS_DRIVERS=	gs5.50-vflib-1.0.tar.gz
+GS_DRIVERS+=	gdevlips-2.3.6-550.tar.gz
 GS_DRIVERS+=	gdevmjc-0.8.tar.gz
 GS_DRIVERS+=	gdev10v.tar.gz
 GS_DRIVERS+=	dmprt-2.01.tar.gz
 GS_DRIVERS+=	gdevnpdl-1.6.2.tar.gz
-GS_DRIVERS+=	epag-3.08.tar.gz
-GS_DRIVERS+=	gdevalps-0.2.tar.gz
+GS_DRIVERS+=	epag-3.09.tar.gz
+GS_DRIVERS+=	gdevalps-0.21.tar.gz
 GS_DRIVERS+=	gdevmd2k-0.2a.tar.gz
 GS_DRIVERS+=	gdevrpdl-1.2.tar.gz
+GS_DRIVERS+=	eplaser-1.1.1-550.tgz
 #  Note: the following two are real files that have symlinks with
 #  later version numbers pointing to them.  To avoid unnecessarily
 #  downloading distfiles, do not change these when upgrading the port
 #  unless the files really change.
-GS_FONTS_STD=	ghostscript-fonts-std-${PORTVERSION}.tar.gz
-GS_FONTS_OTHER=	ghostscript-fonts-other-${PORTVERSION}.tar.gz
+GS_FONTS_STD=	gnu-gs-fonts-std-6.0.tar.gz
+GS_FONTS_OTHER=	gnu-gs-fonts-other-6.0.tar.gz
 
 pre-fetch:
 .if !defined(PDFENCRYPT)
@@ -72,38 +73,43 @@ pre-fetch:
 	@${ECHO_MSG} "\"PDFENCRYPT=yes\" to argument of make."
 .endif
 
+post-extract:
+	${LN} -s ${WRKDIRPREFIX}${.CURDIR}/../../graphics/jpeg/work/jpeg-6b ${WRKSRC}/jpeg
+	@( ${MKDIR} ${PRINTER} ; \
+	  cd ${PRINTER} ; \
+	  ${TAR} --unlink -xzf ${DISTDIR}/gdevlips-2.3.6-550.tar.gz ; \
+	  ${TAR} --unlink -xzf ${DISTDIR}/gdevmjc-0.8.tar.gz ; \
+	  ${TAR} --unlink -xzf ${DISTDIR}/gdev10v.tar.gz ; \
+	  ${MKDIR} ${PRINTER}/gdevdmpr ; \
+	  ${TAR} -C gdevdmpr --unlink -xzf ${DISTDIR}/dmprt-2.01.tar.gz ; \
+	  ${TAR} --unlink -xzf ${DISTDIR}/gdevnpdl-1.6.2.tar.gz ; \
+	  ${TAR} --unlink -xzf ${DISTDIR}/epag-3.09.tar.gz ; \
+	  ${TAR} --unlink -xzf ${DISTDIR}/gdevalps-0.21.tar.gz ; \
+	  ${TAR} --unlink -xzf ${DISTDIR}/gdevmd2k-0.2a.tar.gz ; \
+	  ${TAR} --unlink -xzf ${DISTDIR}/gdevrpdl-1.2.tar.gz ; \
+	  ${TAR} --unlink -xzf ${DISTDIR}/eplaser-1.1.1-550.tgz ; \
+	)
+
 pre-patch:
 	@(cd ${WRKSRC} ; \
-	tar xzf ${DISTDIR}/gs${PORTVERSION}-vflib-1.0.tar.gz ;\
-	${MV} ../jpeg-6b jpeg ; \
-	${MV} ../libpng-1.0.2 libpng ; \
-	${PATCH} -s -p1 < ${WRKSRC}/gs${PORTVERSION}-vflib-1.0/gs${PORTVERSION}-vflib-1.0.diff \
+	  ${TAR} --unlink -xzf ${DISTDIR}/gs5.50-vflib-1.0.tar.gz ;\
+	  ${PATCH} -s -p1 < ${WRKSRC}/gs5.50-vflib-1.0/gs5.50-vflib-1.0.diff \
 		>/dev/null 2>&1)
 
 post-patch:
-	@( ${MKDIR} ${PRINTER} ; \
-	  cd ${PRINTER} ; \
-	  tar xzf ${DISTDIR}/gdevlips-2.3.2.tar.gz ; \
-	  tar xzf ${DISTDIR}/gdevmjc-0.8.tar.gz ; \
-	  tar xzf ${DISTDIR}/gdev10v.tar.gz ; \
-	  ${MKDIR} ${PRINTER}/gdevdmpr ; \
-	  tar -C gdevdmpr -xzf ${DISTDIR}/dmprt-2.01.tar.gz ; \
-	  tar xzf ${DISTDIR}/gdevnpdl-1.6.2.tar.gz ; \
-	  tar xzf ${DISTDIR}/epag-3.08.tar.gz ; \
-	  tar xzf ${DISTDIR}/gdevalps-0.2.tar.gz ; \
-	  tar xzf ${DISTDIR}/gdevmd2k-0.2a.tar.gz ; \
-	  tar xzf ${DISTDIR}/gdevrpdl-1.2.tar.gz ; \
+	@( cd ${PRINTER} ; \
 	  ${CP} gdev10v/gdev10v.c gdev10v/gdev10v.mak ${WRKSRC}; \
 	  ${CP} gdevmjc-0.8/*.[ch] gdevmjc-0.8/gdevmjc.mak ${WRKSRC}; \
-	  ${CP} gdevlips-2.3.2/gdevlips.[ch] gdevlips-2.3.2/gdevlips.mak ${WRKSRC}; \
-	  ${CP} gdevlips-2.3.2/gdevl4[rv].c gdevlips-2.3.2/gdevlprn.[ch] ${WRKSRC}; \
+	  ${CP} gdevlips-2.3.6-550/gdevlips.[ch] gdevlips-2.3.6-550/gdevlips.mak ${WRKSRC}; \
+	  ${CP} gdevlips-2.3.6-550/gdevl4[rv].c gdevlips-2.3.6-550/gdevlprn.[ch] ${WRKSRC}; \
 	  ${CP} gdevdmpr/gdevdmpr.c gdevdmpr/gdevdmpr.mak ${WRKSRC}; \
 	  ${CP} gdevdmpr/dviprlib.c gdevdmpr/dviprlib.h   ${WRKSRC}; \
-	  ${CP} epag-3.08/gdevepag.c epag-3.08/gdevepag.mak ${WRKSRC}; \
+	  ${CP} epag-3.09/gdevepag.c epag-3.09/gdevepag.mak ${WRKSRC}; \
 	  ${CP} gdevnpdl/gdevnpdl.c gdevnpdl/gdevnpdl.mak ${WRKSRC}; \
-	  ${CP} gdevalps-0.2/gdevalps.c gdevalps-0.2/gdevalps.mak-${PORTVERSION} ${WRKSRC}; \
-	  ${CP} gdevmd2k-0.2a/gdevmd2k.c gdevmd2k-0.2a/gdevmd2k.mak-${PORTVERSION} ${WRKSRC}; \
+	  ${CP} gdevalps-0.2/gdevalps.c gdevalps-0.2/gdevalps.mak-5.50 ${WRKSRC}; \
+	  ${CP} gdevmd2k-0.2a/gdevmd2k.c gdevmd2k-0.2a/gdevmd2k.mak-5.50 ${WRKSRC}; \
 	  ${CP} gdevrpdl-1.2/gdevrpdl.c gdevrpdl-1.2/gdevrpdl.mak ${WRKSRC}; \
+	  ${CP} eplaser/gdevescv.[ch] eplaser/gdevescv.mak ${WRKSRC}; \
 	  )
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/gdev10v.mak.patch
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/mjc.dev.patch
@@ -112,6 +118,7 @@ post-patch:
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/gdevmjc.c.patch
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/gdevdmpr.patch
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/gdevlips.mak.patch
+	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/gdevescv.c.patch
 	@${CAT} ${WRKSRC}/gdev10v.mak >> ${WRKSRC}/contrib.mak
 	@${CAT} ${WRKSRC}/gdevdmpr.mak >> ${WRKSRC}/contrib.mak
 	@${CAT} ${WRKSRC}/gdevepag.mak >> ${WRKSRC}/contrib.mak
@@ -119,27 +126,31 @@ post-patch:
 	@${CAT} ${WRKSRC}/gdevnpdl.mak >> ${WRKSRC}/contrib.mak
 	@${CAT} ${WRKSRC}/gdevrpdl.mak >> ${WRKSRC}/contrib.mak
 	@${CAT} ${WRKSRC}/gdevmjc.mak >> ${WRKSRC}/contrib.mak
-	@${CAT} ${WRKSRC}/gdevalps.mak-${PORTVERSION} >> ${WRKSRC}/contrib.mak
-	@${CAT} ${WRKSRC}/gdevmd2k.mak-${PORTVERSION} >> ${WRKSRC}/contrib.mak
+	@${CAT} ${WRKSRC}/gdevalps.mak-5.50 >> ${WRKSRC}/contrib.mak
+	@${CAT} ${WRKSRC}/gdevmd2k.mak-5.50 >> ${WRKSRC}/contrib.mak
+	@${CAT} ${WRKSRC}/gdevescv.mak >> ${WRKSRC}/contrib.mak
+
+pre-build:
+	${MKDIR} ${WRKSRC}/obj
 
 post-build:
-	@(cd ${PRINTER}/epag-3.08 ;  ${MAKE})
+	@(cd ${PRINTER}/epag-3.09 ;  ${MAKE})
 
 pre-install:
 	@${MKDIR} ${PREFIX}/share/ghostscript
-	@tar -C ${PREFIX}/share/ghostscript -xzf ${DISTDIR}/${GS_FONTS_STD}
-	@tar -C ${PREFIX}/share/ghostscript/fonts -xzf ${DISTDIR}/${GS_FONTS_OTHER}
+	@${TAR} -C ${PREFIX}/share/ghostscript -xzf ${DISTDIR}/${GS_FONTS_STD}
+	@${TAR} -C ${PREFIX}/share/ghostscript -xzf ${DISTDIR}/${GS_FONTS_OTHER}
 
 post-install:
-	${INSTALL_PROGRAM} ${PRINTER}/epag-3.08/ert ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${PRINTER}/epag-3.09/ert ${PREFIX}/bin
 	@strip ${PREFIX}/bin/gs
 	@( \
-	  ${CP} ${WRKSRC}/gs${PORTVERSION}-vflib-1.0/README ${DOC_DIR}/README.gs5.10-vflib ; \
-	  ${CP} ${WRKSRC}/gs${PORTVERSION}-vflib-1.0/OLD-DOC/gs261d13-doc/* ${DOC_DIR} ; \
-	  ${CP} ${WRKSRC}/gs${PORTVERSION}-vflib-1.0/OLD-DOC/gs261j11-doc/* ${DOC_DIR} ; \
+	  ${CP} ${WRKSRC}/gs5.50-vflib-1.0/README ${DOC_DIR}/README.gs5.10-vflib ; \
+	  ${CP} ${WRKSRC}/gs5.50-vflib-1.0/OLD-DOC/gs261d13-doc/*.sj ${DOC_DIR} ; \
+	  ${CP} ${WRKSRC}/gs5.50-vflib-1.0/OLD-DOC/gs261j11-doc/* ${DOC_DIR} ; \
 	  ${CP} ${PRINTER}/gdev10v/gdev10v.jis ${DOC_DIR} ; \
-	  ${CP} ${PRINTER}/gdevlips-2.3.2/Gdevlips.htm ${DOC_DIR} ; \
-	  ${CP} ${PRINTER}/gdevlips-2.3.2/gs_statd.dif ${DOC_DIR} ; \
+	  ${CP} ${PRINTER}/gdevlips-2.3.6-550/Gdevlips.htm ${DOC_DIR} ; \
+	  ${CP} ${PRINTER}/gdevlips-2.3.6-550/gs_statd.dif ${DOC_DIR} ; \
 	  ${MKDIR} ${DOC_DIR}/gdevmjc-0.8 ; \
 	  ${CP} ${PRINTER}/gdevmjc-0.8/README.mjc ${DOC_DIR}/gdevmjc-0.8/ ; \
 	  ${CP} ${PRINTER}/gdevmjc-0.8/README.noz ${DOC_DIR}/gdevmjc-0.8/ ; \
@@ -155,13 +166,14 @@ post-install:
 	  ${CP} ${PRINTER}/gdevdmpr/escp_24.src ${GSINST_DIR} ; \
 	  ${CP} ${PRINTER}/gdevdmpr/testpage.ps ${GSINST_DIR} ; \
 	  ${CP} ${PRINTER}/gdevnpdl/gdevnpdl.jis ${DOC_DIR} ; \
-	  ${MKDIR} ${DOC_DIR}/epag-3.08 ; \
-	  ${CP} ${PRINTER}/epag-3.08/FILES ${DOC_DIR}/epag-3.08 ; \
-	  ${CP} ${PRINTER}/epag-3.08/*.txt ${DOC_DIR}/epag-3.08 ; \
-	  ${CP} ${PRINTER}/epag-3.08/adjust.ps ${DOC_DIR}/epag-3.08 ; \
-	  ${CP} ${PRINTER}/epag-3.08/gsepagif.sh ${DOC_DIR}/epag-3.08 ; \
-	  ${CP} ${PRINTER}/epag-3.08/psprint ${DOC_DIR}/epag-3.08 ; \
+	  ${MKDIR} ${DOC_DIR}/epag-3.09 ; \
+	  ${CP} ${PRINTER}/epag-3.09/FILES ${DOC_DIR}/epag-3.09 ; \
+	  ${CP} ${PRINTER}/epag-3.09/*.txt ${DOC_DIR}/epag-3.09 ; \
+	  ${CP} ${PRINTER}/epag-3.09/adjust.ps ${DOC_DIR}/epag-3.09 ; \
+	  ${CP} ${PRINTER}/epag-3.09/gsepagif.sh ${DOC_DIR}/epag-3.09 ; \
+	  ${CP} ${PRINTER}/epag-3.09/psprint ${DOC_DIR}/epag-3.09 ; \
 	  ${CP} ${PRINTER}/gdevmjc-0.8/gdevmjc.ps ${GSINST_DIR} ; \
+	  ${CP} ${PRINTER}/eplaser/readme-eplaser.euc ${DOC_DIR} ; \
 	)
 .if defined(PDFENCRYPT)
 	@${CP} -f ${DISTDIR}/pdf_sec.ps ${GSINST_DIR}

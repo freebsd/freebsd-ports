@@ -1,0 +1,127 @@
+--- unix-gcc.mak.orig	Sat Sep  2 04:47:06 2000
++++ unix-gcc.mak	Sat Sep  2 04:58:56 2000
+@@ -57,11 +57,10 @@
+ # initialization files (gs_*.ps) and the fonts.
+ 
+ # If your system has installbsd, change install to installbsd in the next line.
+-INSTALL = install -c
+-INSTALL_PROGRAM = $(INSTALL) -m 755
+-INSTALL_DATA = $(INSTALL) -m 644
++INSTALL_PROGRAM = $(BSD_INSTALL_SCRIPT)
++INSTALL_DATA = $(BSD_INSTALL_DATA)
+ 
+-prefix = /usr/local
++prefix = $(PREFIX)
+ exec_prefix = $(prefix)
+ bindir = $(exec_prefix)/bin
+ scriptdir = $(bindir)
+@@ -142,14 +141,14 @@
+ # You may need to change this if the libpng version changes.
+ # See libpng.mak for more information.
+ 
+-PSRCDIR=libpng
++PSRCDIR=${LOCALBASE}/include
+ PVERSION=96
+ 
+ # Choose whether to use a shared version of the PNG library, and if so,
+ # what its name is.
+ # See gs.mak and Make.htm for more information.
+ 
+-SHARE_LIBPNG=0
++SHARE_LIBPNG=1
+ LIBPNG_NAME=png
+ 
+ # Define the directory where the zlib sources are stored.
+@@ -161,7 +160,7 @@
+ # what its name is (usually libz, but sometimes libgz).
+ # See gs.mak and Make.htm for more information.
+ 
+-SHARE_ZLIB=0
++SHARE_ZLIB=1
+ #ZLIB_NAME=gz
+ ZLIB_NAME=z
+ 
+@@ -180,7 +179,7 @@
+ 
+ # Define the name of the C compiler.
+ 
+-CC=gcc
++#CC=gcc
+ 
+ # Define the name of the linker for the final link step.
+ # Normally this is the same as the C compiler.
+@@ -213,7 +212,7 @@
+ #   gcc to accept ANSI-style function prototypes and function definitions.
+ XCFLAGS=
+ 
+-CFLAGS=$(CFLAGS_STANDARD) $(GCFLAGS) $(XCFLAGS)
++#CFLAGS=$(CFLAGS_STANDARD) $(GCFLAGS) $(XCFLAGS)
+ 
+ # Define platform flags for ld.
+ # SunOS 4.n may need -Bstatic.
+@@ -222,7 +221,7 @@
+ #	-R /usr/local/xxx/lib:/usr/local/lib
+ # giving the full path names of the shared library directories.
+ # XLDFLAGS can be set from the command line.
+-XLDFLAGS=
++XLDFLAGS= -L${LOCALBASE}/lib
+ 
+ LDFLAGS=$(XLDFLAGS) -fno-common
+ 
+@@ -242,7 +241,7 @@
+ # Note that x_.h expects to find the header files in $(XINCLUDE)/X11,
+ # not in $(XINCLUDE).
+ 
+-XINCLUDE=-I/usr/local/X/include
++XINCLUDE=-I${X11BASE}/include
+ 
+ # Define the directory/ies and library names for the X11 library files.
+ # XLIBDIRS is for ld and should include -L; XLIBDIR is for LD_RUN_PATH
+@@ -257,17 +256,17 @@
+ #XLIBS=Xt SM ICE Xext X11
+ 
+ #XLIBDIRS=-L/usr/local/X/lib
+-XLIBDIRS=-L/usr/X11/lib
++XLIBDIRS=-L${X11BASE}/lib
+ XLIBDIR=
+-XLIBS=Xt Xext X11
++XLIBS=Xt ICE SM Xext X11
+ 
+ # Define the directory/ies for the VFlib files.
+ # If you use FreeType, Add ttf to VFLIBS
+ #VFINCLUDE=-I/usr/local/include
+ #VFLIBDIRS=-L/usr/local/lib
+ #VFLIBS=VFlib
+-VFINCLUDE=
+-VFLIBDIRS=
++VFINCLUDE=-I${LOCALBASE}/include
++VFLIBDIRS=-L${LOCALBASE}/lib
+ VFLIBS=VFlib2 ttf
+ 
+ # Define whether this platform has floating point hardware:
+@@ -337,16 +336,10 @@
+ 
+ MAKEFILE=$(GLSRC)unix-gcc.mak
+ 
+-# Define the ANSI-to-K&R dependency.  There isn't one, but we do have to
+-# detect whether we're running a version of gcc with the const optimization
+-# bug.
+-
+-AK=$(GLGENDIR)/cc.tr
+-
+ # Define the compilation rules and flags.
+ 
+ CCFLAGS=$(GENOPT) $(CFLAGS)
+-CC_=$(CC) `cat $(AK)` $(CCFLAGS)
++CC_=$(CC) $(CCFLAGS)
+ CCAUX=$(CC)
+ #We can't use -fomit-frame-pointer with -pg....
+ #CC_LEAF=$(CC_)
+@@ -367,7 +360,3 @@
+ include $(GLSRC)unixtail.mak
+ include $(GLSRC)unix-end.mak
+ include $(GLSRC)unixinst.mak
+-
+-# This has to come last so it won't be taken as the default target.
+-$(AK):
+-	if ( gcc --version | grep "2.7.[01]" >/dev/null || test `gcc --version` = 2.7.2 ); then echo -Dconst= >$(AK); else echo -Wcast-qual -Wwrite-strings >$(AK); fi
