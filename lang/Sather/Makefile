@@ -3,7 +3,7 @@
 # Date created:         Mon Oct 31 22:04:12 PST 1994
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.6 1995/04/01 12:46:40 jkh Exp $
+# $Id: Makefile,v 1.7 1995/04/15 05:44:29 asami Exp $
 #
 
 DISTNAME=       Sather-1.0.5
@@ -13,7 +13,7 @@ MASTER_SITES=   ftp://ftp.icsi.berkeley.edu/pub/sather/
 WRKSRC=		${WRKDIR}/Sather
 ALL_TARGET=	testall
 
-install:
+install: build
 	@if [ ! -e ${PREFIX}/bin ]; then mkdir -p ${PREFIX}/bin; fi
 	@if [ ! -e ${PREFIX}/man/man1 ]; then mkdir -p ${PREFIX}/man/man1; fi
 	install -c -m 555 ${WRKSRC}/Compiler/cs ${PREFIX}/bin
