@@ -1,0 +1,114 @@
+--- Imakefile.orig	Mon Aug 21 08:47:46 2000
++++ Imakefile	Sat Feb 10 05:32:41 2001
+@@ -1,6 +1,6 @@
+ XCOMM $Xorg: Imakefile,v 1.3 2000/08/17 19:55:07 cpqbld Exp $
+ XCOMM
+-XCOMM                         Attention xterm porters
++XCOMM                         Attention vnterm porters
+ XCOMM
+ XCOMM
+ XCOMM Xterm assumes that bcopy can handle overlapping arguments.  If your
+@@ -23,26 +23,35 @@
+  OSMAJORVERSION = OSMajorVersion
+  OSMINORVERSION = OSMinorVersion
+ 
++  VNLIBDIR      = ../lib
++  VNINCDIR      = /usr/local/include/viet
++  VNFONTXDIR    = ../fonts/X
++
+    MAIN_DEFINES = -DUTMP $(TTYGROUPDEF) $(PUCCPTYDDEF) \
+ 		  -DOSMAJORVERSION=$(OSMAJORVERSION) \
+ 		  -DOSMINORVERSION=$(OSMINORVERSION)
+    MISC_DEFINES = /* -DALLOWLOGFILEEXEC */ 
+     XKB_DEFINES = XkbClientDefines
+         DEFINES = $(XKB_DEFINES)
++    CDEBUGFLAGS = -I$(VNINCDIR) -O #-g
++         LDLIBS = $(VNLIBS)
+           SRCS1 = button.c charproc.c cursor.c data.c input.c \
+ 		  main.c menu.c misc.c screen.c scrollbar.c tabs.c \
+-		  TekPrsTbl.c Tekproc.c util.c VTPrsTbl.c
++		  TekPrsTbl.c Tekproc.c util.c VTPrsTbl.c vnvars.c
+           OBJS1 = main.o input.o charproc.o cursor.o util.o tabs.o \
+ 		  screen.o scrollbar.o button.o Tekproc.o misc.o \
+-		  VTPrsTbl.o TekPrsTbl.o data.o menu.o
++		  VTPrsTbl.o TekPrsTbl.o data.o menu.o vnvars.o
+           SRCS2 = resize.c
+           OBJS2 = resize.o
+            SRCS = $(SRCS1) $(SRCS2)
+            OBJS = $(OBJS1) $(OBJS2)
+-       PROGRAMS = resize xterm
+-       DEPLIBS1 = XkbClientDepLibs XawClientDepLibs
++       PROGRAMS = vnterm
++         VNLIBS = /usr/local/lib/libviqr.a /usr/local/lib/libvntype.a
++        /*VNFONTX = $(VNFONTXDIR)/fontsmade */
++        VNFONTX =
++       DEPLIBS1 = XkbClientDepLibs XawClientDepLibs $(VNFONTX)
+        DEPLIBS2 = 
+-       PROGRAMS = xterm resize
++       PROGRAMS = vnterm
+ 
+ #ifndef TermcapLibrary
+ #if SystemV && !defined(MacIIArchitecture)
+@@ -65,9 +74,9 @@
+ SpecialCObjectRule(charproc,$(_NOOP_),$(MISC_DEFINES))
+ 
+ #if InstallXtermSetUID
+-SetUIDProgramTarget(xterm,$(OBJS1),$(DEPLIBS1),XkbClientLibs XawClientLibs,$(TERMCAPLIB) $(PTYLIB))
++SetUIDProgramTarget(vnterm,$(OBJS1),$(DEPLIBS1),XkbClientLibs XawClientLibs,$(TERMCAPLIB) $(PTYLIB))
+ #else
+-NormalProgramTarget(xterm,$(OBJS1),$(DEPLIBS1),XkbClientLibs XawClientLibs,$(TERMCAPLIB) $(PTYLIB))
++NormalProgramTarget(vnterm,$(OBJS1),$(DEPLIBS1),XkbClientLibs XawClientLibs,$(TERMCAPLIB) $(PTYLIB))
+ #endif
+ 
+ #if InstallXtermSetUID && defined(SunArchitecture) && HasSharedLibraries && OSMajorVersion < 5
+@@ -83,24 +92,37 @@
+ #endif
+ #endif
+ #endif
+-install:: xterm
++
++/*	XTERM_LINK_FLAGS = -Wl,-T,10000000,-D,10400000	*/
++
++install:: vnterm
+ 	MakeDir($(DESTDIR)$(BINDIR))
+-	RemoveFile(xterm.inst)
+-	LinkRule(xterm.inst,$(CDEBUGFLAGS) $(CCOPTIONS) $(EXTRA_LDOPTIONS) $(LOCAL_LDFLAGS),$(OBJS1),$(LDOVERRIDE) XawClientLibs $(LDRESUME) $(LDLIBS) $(TERMCAPLIB) $(PTYLIB))
+-	$(INSTALL) -c $(INSTPGMFLAGS) $(INSTUIDFLAGS) xterm.inst $(DESTDIR)$(BINDIR)/xterm
+-	RemoveFile(xterm.inst)
++	RemoveFile(vnterm.inst)
++	LinkRule(vnterm.inst,$(CDEBUGFLAGS) $(CCOPTIONS) $(EXTRA_LDOPTIONS) $(LOCAL_LDFLAGS),$(OBJS1),$(LDOVERRIDE) XawClientLibs $(LDRESUME) $(LDLIBS) $(TERMCAPLIB) $(PTYLIB) $(XTERM_LINK_FLAGS))
++	$(INSTALL) -c $(INSTPGMFLAGS) $(INSTUIDFLAGS) vnterm.inst $(DESTDIR)$(BINDIR)/vnterm
++	RemoveFile(vnterm.inst)
+ #else
+ #if InstallXtermSetUID
+-InstallProgramWithFlags(xterm,$(BINDIR),$(INSTUIDFLAGS))
++InstallProgramWithFlags(vnterm,$(BINDIR),$(INSTUIDFLAGS))
+ #else
+-InstallProgramWithFlags(xterm,$(BINDIR),NullParameter)
++InstallProgramWithFlags(vnterm,$(BINDIR),NullParameter)
+ #endif
+ #endif
+ 
+-NormalProgramTarget(resize,$(OBJS2),$(DEPLIBS2),NullParameter,$(TERMCAPLIB))
+-InstallProgramWithFlags(resize,$(BINDIR),NullParameter)
+-
+-InstallAppDefaults(XTerm)
+-InstallManPage(xterm,$(MANDIR))
+-InstallManPage(resize,$(MANDIR))
++InstallAppDefaults(VNTerm)
++InstallManPage(vnterm,$(MANDIR))
+ DependTarget()
++
++$(VNLIBS):
++	@echo ""
++	@echo "Making library routines in $(VNLIBDIR).  Please wait..."
++	@(cd $(VNLIBDIR) ; make VNLIBDIR=.. VNINCDIR=../../include)
++	@echo "Done making library routines."
++	@echo ""
++
++$(VNFONTX):
++	@echo ""
++	@echo "Making X fonts in $(VNFONTXDIR).  Please wait..."
++	@(cd $(VNFONTXDIR) ; make)
++	@echo "Done making X fonts."
++	@echo ""

@@ -1,0 +1,222 @@
+.\" $FreeBSD$
+.\" to view this file, use: nroff -man %M% | more
+.\"     %W%     (TriChlor) %G% %U%
+.\"
+.TH vnterm 1V 
+.SH NAME
+vnterm \- X-terminal with Vietnamese
+.SH SYNTAX
+.B vnterm
+[\fB-/+vnk\fP]
+[\fB-/+vns\fP]
+[\fB-vne <erase_ASCII_code>\fP]
+[\fIregular_xterm_options\fP]
+.SH DESCRIPTION
+.NXR "vnterm command"
+Version 3.3 of
+.PN vnterm
+is an adaptation of the X11R5
+.MS xterm 1X
+command.  This manual page describes only
+those features specific to
+.PN vnterm ;
+please consult the manual page for
+.MS xterm 1X
+for the rest of the story.
+.PP
+.PN Vnterm
+allows the X-environment user to type and
+display Vietnamese text.  The keyboard input
+scheme follows the
+7-bit VIQR (VIetnamese Quoted-Readable) standard,
+which is based on the prevalent
+Vietnamese networking convention of placing Vietnamese
+diacritical marks after the vowel, for example: "Vie^.t Nam".
+.PP
+With the appropriate font setting,
+.PN vnterm
+can display both 7-bit and 8-bit
+Vietnamese text.  The 7-bit text is assumed
+to follow the
+.I VIQR
+standard,
+and the 8-bit text is according to
+.I VISCII
+(VIetnamese Standard Code for Information Interchange),
+both published by the Viet-Std working group
+(Viet-Std@Haydn.Stanford.EDU).
+.PP
+On start-up,
+.PN vnterm
+attempts to set the tty line to 8-bit mode,
+with canonical echoing of control characters turned off
+(because the Vietnamese characters "A(? A(~ A^~ Y? Y~ Y."
+are encoded in the C0 control-character area).
+.SH OPTIONS
+.nf
+	-/+vnk          turn on/off Vietnamese keyboard filter (default on)
+	-/+vns          turn on/off Vietnamese screen output (default off)
+	-vne ASCII_code explicitly specify erase character
+.fi
+.PP
+The keyboard and screen options above
+can also be found and set
+in the
+"VT\ Options"
+menu of
+.PN vnterm ,
+which you may access by clicking the CTRL-middle-mouse-button
+combination.
+The corresponding X resources are:
+.EX
+	vnterm*font:				vn-r14
+	vnterm*vnFilterKeyboard:    on
+	vnterm*vnFilterScreen:      off
+	vnterm*vnEraseCharacter:    127
+.EE
+.PP
+If 
+.I vnFilterKeyboard
+is turned off, no keyboard processing is done and characters
+are reported to the underlying application as they are typed.
+With
+.I vnFilterKeyboard
+turned on,
+Vietnamese composition takes place.
+.PP
+The erase character (which is needed to backspace
+over the Vietnamese letter being composed)
+is figured from the terminal settings at the time
+.PN vnterm
+is invoked.  In those cases where it is necessary
+to specify another erase character,
+.I vnEraseCharacter
+may be used.  The argument to this option is
+the decimal ASCII code for the desired erase
+character.  Use 8 for backspace, and 127 for
+delete.
+.PP
+The
+.I vnFilterScreen
+setting is provided as a convenience to the user
+who wants to read 7-bit Vietnamese without
+having first to convert it to 8-bit format.
+When turned on,
+.I vnFilterScreen
+causes the displayed characters to be interpreted
+with exactly the same rules as those applied to
+keyboard input.  This option is provided
+with Soc.Culture.Vietnamese readers
+explicitly in mind.
+.SH "KEYBOARD INSTRUCTIONS"
+Vnterm starts up in Vietnamese typing mode.  There are two other
+modes, English and Literal,
+each of which is initiated as described below.
+
+.PP
+.SH "Vietnamese Mode:"
+Type "\\V" or "\\v" to start Vietnamese mode,
+where Viet-Net style input is supported, for example:
+.EX
+	Ca' kho^ng a(n muo^'i ca' u+o+ng
+	Con ca~i cha me. tra(m ddu+o+`ng con hu+\\.
+.EE
+.PP
+To prevent composition, use "\\".  The example above shows
+"hu+\." which tells Vnterm that the ending period is
+a period and not a Vietnamese dot-below (da^'u na(.ng).
+.PP
+The diacritics (da^'u) are:
+.EX
+	MARK      	CHAR	EXAMPLE
+
+	breve     	 (  	a(n na(n
+	circumflex	 ^  	nha^n co^ng
+	horn      	 +  	tu+o+ng tu+
+
+	acute     	 '  	choa'ng va'ng
+	grave     	 `  	lu` khu`
+	hook above 	 ?  	ho?i tha(m
+	tilde      	 ~  	ky~ ca`ng
+	dot below  	 .  	Tra.ng Nguye^n
+
+	dd        	 dd 	dda ti`nh
+	DD        	 DD 	DDo^ng So+n
+.EE
+.SH "English Mode:"
+Type "\\M" or "\\m" to start English mode,
+where Viet-Net style input is supported,
+but must be explicitly announced with a "\\", for example:
+.EX
+	C\\a' kh\\o^ng \\a(n mu\\o^'i c\\a' \\u+\\o+ng
+	Con c\\a~i cha m\\e. tr\\a(m \\dd\\u+\\o+`ng con h\\u+\\.
+.EE
+.PP
+This mode is useful if you type mostly English and don't
+want the trouble of having to type "\\" to escape composition
+all the time.
+.SH "Literal Mode:"
+Typing "\\L" or "\\l" starts the Literal mode,
+in which almost all keys are passed literally.
+.SH RESTRICTIONS
+.NXR "vnterm command" "restricted"
+.PP
+.IP o 
+If your shell is tcsh, you may find that it's unfriendly
+to 8-bit data; this means Vietnamese characters cannot
+be used.  Use csh in the
+.PN vnterm
+window instead.
+.PP
+.IP o
+In some cases
+.PN vnterm
+may fail to set the terminal mode correctly for 8-bits.
+This will happen when your shell is "smart" and undoes the
+settings performed by
+.PN vnterm
+on start-up.
+In this case issue the command:
+.EX
+	% stty -istrip cs8 pass8
+.EE
+to set the terminal line for 8-bits.
+.PP
+.IP o
+Remember that the screen output filter only works strictly
+with 7-bit Vietnamese that is conformant to the VIQR
+standard.
+With the Viet-Net style text alone, there are potential
+ambiguities which
+.PN vnterm
+will not interpret correctly, e.g., in displaying
+the question "La`m chi?", where the question mark
+will be taken to be a hook-above (da^'u ho?i),
+and the word displayed as "ch<i?>" (Vietnamese "thread")
+rather than as "chi<?>" (Vietnamese "what").
+Note that "chi\\?" will be correctly interpreted.
+.PP
+Occasionally, magic sequences such as "\\V",
+"\\M", and "\\L" may appear in non-VIQR-conformant text
+which will change the state of the screen filter
+causing it not to display Vietnamese properly afterwards.
+When this happens, simply turn the screen filter
+off and on again, by using the CTRL-middle-mouse-button
+menu of
+.PN vnterm.
+.SH AUTHOR
+4.4BSD porting by David O'Brien <obrien@cs.ucdavis.edu>
+.PP
+Adapted from X11R5's xterm by
+Tin Le <tin@saigon.com>
+.PP
+Adapted from X11R4's xterm by
+the TriChlor Group, TriChlor@haydn.Stanford.EDU.
+.PP
+Thanks to Tuan P. Do (tuan@compass-da.com) for illustrating
+the need for the vnEraseCharacter specifier.
+.SH "SEE ALSO"
+.PP
+vietterm(1V), vnelvis(1V)
+.SH STANDARDS
+Viet-Std Standardization Specification (Viet-Std@Haydn.Stanford.EDU)

@@ -1,0 +1,271 @@
+7/15/93
+vnterm has been "ported" to be base on the latest X11R5 xterm source
+that I have.  It has only been tested on SGI IRIX 5.0 alpha.
+
+Theoretically, it should compile on other SVR4 derived OS.
+
+Any problem, contact me as I am responsible for this particular
+version of vnterm.  Email to tin@saigon.com
+
+Tin Le
+
+--------------------------
+
+If you received this program in source form and must compile it,
+please follow the compile instructions below.  If you received
+the program in executable format, please skip directly to the
+XDEFAULTS section below.
+
+The files VIQR.7 and VISCII.8 contain samples of Vietnamese
+text that conform to the Viet-Std encoding specifications,
+with which Vnterm complies.
+
+--------
+COMPILE INSTRUCTIONS:
+
+To compile this program, first try
+	
+	% xmkmf
+	% /bin/make
+
+If your system is properly set up for X and imake, that should be
+sufficient.  However, some systems are not correctly set up,
+and for that we have provided the script "make" that summarizes
+the important parameters you need to set for your system.
+Edit "Doimake" and "make" as appropriate, and run
+
+	% Doimake
+	% ./Make Makefile
+	% ./Make
+
+Sparc users note: your system libraries may require the -ldl
+option added at the final linking step.  A simple fix for this
+is to edit your Imakefile/Makefile, and change the definition
+
+	VNLIBS = $(VNLIBDIR)/libviqr.a $(VNLIBDIR)/libvntype.a
+
+to
+
+	VNLIBS = -ldl $(VNLIBDIR)/libviqr.a $(VNLIBDIR)/libvntype.a
+
+If you still have trouble, make a transcript of your compile
+attempt,
+
+	% script
+	% ....
+	% exit
+
+and mail it to trichlor@haydn.Stanford.EDU, along with your questions.
+--------
+XDEFAULTS:
+
+Sample settings to be placed in your .Xdefaults file for vnterm
+is provided in the file "Xdefaults."
+
+  > vnterm*font:                    vn-r14
+    This sets the font for "vnterm" to "vn-r14" whenever you
+    run it.
+
+  > vnterm*vnFilterKeyboard:        on
+    This enables the Vietnamese keyboard.
+
+  > vnterm*vnFilterScreen:          off
+    This disables the screen-filter mode.   When this mode is enabled,
+    instead of displaying the true characters, vnterm will display them
+    as Vietnamese characters according to the VIQR standard (Viet-Net
+    like, see below under KEYBOARD INSTRUCTIONS).  This is useful if
+    you're reading Vietnamese mail or Soc.Culture.Vietnamese messages
+    where people type things like:
+
+    DDa^y la` tie^'ng Vie^.t.
+
+    By having the screen filter ON, you will see this as true Vietnamese
+    characters.  Of course, you won't need the filter on if the characters
+    are already true Vietnamese data (according to the Viet-Std 8-bit
+    VISCII standard).
+
+    One hitch: occasionally, some magic strings will cause the
+    Vietnamese screen filter to switch language modes (see below,
+    under KEYBOARD INSTRUCTIONS) and it will no longer combine
+    characters to form Vietnamese.  "This is not a bug, it is a feature."
+    If you want to get back to Vietnamese mode for screen filtering,
+    the simplest way is to go to the pop-up menu (CTRL-MIDDLE MOUSE)
+    and turn the screen filter off, then on again.
+
+--------
+FONT INSTRUCTIONS:
+
+Vnterm.3.0 requires the availability of Vietnamese X fonts.
+Such fonts can be found under the "fonts/X" directory of the
+TriChlor distribution.  Installation of the fonts is a 4-step
+process, which is partially taken care of by the Makefile
+in the fonts/X directory:
+
+    1. Convert the BDF format to SNF (server normal format),
+       with "bdftosnf <fontfile>.bdf > <fontfile>.snf".
+       The Makefile under fonts/X takes care of this automatically.
+       This is also automatically taken care of if you run
+       a compilation of vnterm.  However, if you retrieved
+       vnterm in its executable form, you must go to the
+       fonts/X directory and run "make all".
+
+    2. Make a listing of your fonts in the directory so the
+       X server can read it, with "mkfontdir".  The Makefile
+       takes care of this automatically.
+
+    3. Tell the X server where to find your font directory,
+       with "xset +fp <your_font_directory>".  The Makefile
+       does NOT do this, as you may wish to place your fonts
+       somewhere other than in the directory where they were compiled.
+
+       Remember that <your_font_directory> refers to
+       where the X server is running, which is NOT necessarily
+       the machine you are logged into.  If this doesn't make
+       much sense, don't worry, just plow ahead with the installation.
+       If it doesn't work, you'll know this is one possible
+       reason why.  In case of doubt, ask your local X guru.
+    
+    4. Set the font for the "vnterm" program to that font.
+       For example, if you have the font "vn-r14",
+       either issue the command
+
+	 % vnterm -fn vn-r14
+    
+       of place the following line in your .Xdefaults:
+
+
+	 vnterm*font: vn-r14
+
+If you have trouble with the font installation, try seeking help
+from a local X guru who knows the particulars of your environment.
+We can be reached for further consultation at the mail alias
+TriChlor@haydn.Stanford.EDU.
+
+Particulars:
+
+X11/NeWS: the server has its own font format that can be generated
+	  with the command "convertfont".
+
+NFS users:make sure your font files are accessible by everyone.  This
+	  means a minimum of:
+
+	  (a) all directories in the path to your font files must
+	      be executable by everyone.  This means a minimum of:
+
+	      % chmod go+x <dir>
+
+	      for all directory components.
+
+	  (b) all font files readable by everyone:
+
+	      % chmod go+r *
+
+	      in the font directory.
+
+X-terminals: recently X-terminals have become increasingly available.
+	X-terminals typically boot up getting files from a file server,
+	in particular its font files.  This poses a thorny problem:
+	how do you install a new font for these displays?  The user
+	typically does not have access to the file system where the
+	X-terminal looks for its fonts.
+
+	If you know where your X terminal looks for its fonts
+	(at least which file system), and have write access to
+	it, you're okay, because you can place your fonts there
+	and tell the X terminal server proram to look there.
+
+	If you do know where it looks for fonts, but don't have
+	access to it, OR, if you don't know where it looks for fonts,
+	there is nothing you can do short of contacting the
+	guru who manages your X terminal.  He or she will be
+	able to put the Vietnames font file in the right places
+--------
+KEYBOARD INSTRUCTIONS:
+
+    Vnterm starts up in Vietnamese typing mode.  There are two other
+    modes, English and Literal, (according to the Viet-Std VIQR standard)
+    each of which is initiated as described below:
+
+    Typing instructions:
+
+	\v: Start Vietnamese mode, where Viet-Net style input is supported,
+	    for example:
+
+	    Ca' kho^ng a(n muo^'i ca' u+o+ng
+	    Con ca~i cha me. tra(m ddu+o+`ng con hu+\.
+
+	    To prevent composition, use "\".  The example above shows
+	    "hu+\." which tells Vnterm that the ending period is
+	    a period and not a Vietnamese dot-below (da^'u na(.ng).
+
+	    The diacritics (da^'u) are:
+
+	    (	breve		da^'u tra(ng, a('
+	    ^	circumflex	da^'u mu~, a^'
+	    +	horn		da^'u mo'c, o+
+
+	    '	acute		da^'u sa('c
+	    `	grave		da^'u huye^`n
+	    ?	hook above	da^'u ho?i
+	    ~	tilde		da^'u nga~
+	    .	dot below	da^'u na(.ng
+	
+	\m: Start English mode, where Viet-Net style input is supported,
+	    but must be explicitly announced with a "\", for example:
+
+	    C\a' kh\o^ng \a(n mu\o^'i c\a' \u+\o+ng
+	    Con c\a~i cha m\e. tr\a(m \dd\u+\o+`ng con h\u+\.
+
+	    This mode is useful if you type mostly English and don't
+	    want the trouble of having to type "\" to escape composition
+	    all the time.
+
+	\l: starts Literal mode, almost all keys are passed literally.
+
+	For complete details, please see the Viet-Std documents
+	published elsewhere.  Contact "viet-std@haydn.Stanford.EDU"
+	if you would like a copy.
+
+    To turn off keyboard filtering completely, use the pop-up menu
+    using CTRL-middle (hold down Control key while pressing the middle
+    mouse button), and highlight the option "Enable Vietnamese keys."
+    If there is a check mark next to it, the Vietnamese keyboard filtering
+    is in effect. Otherwise, it has been turned off.
+--------
+DISPLAY INSTRUCTIONS:
+
+    Vnterm also supports a Screen-Filter mode which will convert
+    the displayed text to Vietnamese as appropriate.  This is useful
+    if you are reading Soc.Culture.Vietnamese or something similar.
+    To use this, bring up the pop-up menu, also using CTRL-middle,
+    and highlight the "Use Vietnamese screen" option so that there
+    is a check mark next to it.  From then on if you read a message
+    with Vietnamese mnemonics in it, it will display as true Vietnamese
+    characters.  NOTE: the screen filter also switches modes like
+    the keyboard filter, so that if you happen to read a message
+    with the string "\l" or "\m" in it, it will put the filter in
+    Literal or English mode, respectively.  Subsequently, the
+    Vietnamese mnemonics will no longer display as Vietnamese.
+    A simple way to get the screen filter back to Vietnamese mode
+    is to turn it off, then on again, using the pop-up menu.
+
+--------
+TTY settings:
+	
+    Some of the newer shells try to be "smart" and will actually
+    reset your terminal characteristics, even though vnterm attempts
+    to set them correctly on start-up.  This requires you to manually
+    set:
+
+	% stty pass8 cs8 -istrip
+
+    You may find it convenient to place the line above in your
+    .cshrc, which is read every time the C-shell starts up.
+
+    In addition, the one of the newest shells we've tested will
+    actually insist on not passing 8-bit characters, regardless
+    of the tty settings.  Your best bet in this case is to run
+    an older shell, which may be available on your system as
+    /bin/csh.
+
+Cu+o+`ng Nguye^~n
