@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://ftp.rygannon.com/pub/Korelib/
 
 MAINTAINER=	ports@FreeBSD.org
 
+BROKEN=		"Missing dependency on autoheader"
+
 USE_KDELIBS_VER=3
 USE_AUTOMAKE=	yes
 USE_GMAKE=	yes
