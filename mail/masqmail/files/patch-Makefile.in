@@ -1,0 +1,18 @@
+--- Makefile.in.old	Sun Apr  4 19:10:04 2004
++++ Makefile.in	Sun Apr  4 19:10:29 2004
+@@ -375,13 +375,13 @@
+ 
+ $(DESTDIR)@with_logdir@:
+ 	mkdir -p $(DESTDIR)@with_logdir@
+-	chown @with_user@.@with_group@ $(DESTDIR)@with_logdir@
++	chown @with_user@:@with_group@ $(DESTDIR)@with_logdir@
+ 
+ $(DESTDIR)@with_spooldir@:
+ 	mkdir -p $(DESTDIR)@with_spooldir@
+ 	mkdir -p $(DESTDIR)@with_spooldir@/input
+ 	mkdir -p $(DESTDIR)@with_spooldir@/popuidl
+-	chown -R @with_user@.@with_group@ $(DESTDIR)@with_spooldir@
++	chown -R @with_user@:@with_group@ $(DESTDIR)@with_spooldir@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
