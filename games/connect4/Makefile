@@ -1,16 +1,16 @@
 # New ports collection makefile for:  connect4
-# Version required:	3.2
 # Date created:		Thu May  8 16:41:01 EST 1997
 # Whom:			Joel Sutton <jsutton@bbcon.com.au>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	connect4
-PKGNAME=	connect4-3.2
+PORTNAME=	connect4
+PORTVERSION=	3.2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.gu.kiev.ua/pub/cdrom5/games/volume6/ \
 		ftp://scitsc.wlv.ac.uk/pub/infomagic/usenet/games/volume6/
+DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	""
 
 MAINTAINER=	jsutton@bbcon.com.au

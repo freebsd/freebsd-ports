@@ -1,12 +1,12 @@
 # New ports collection makefile for:	affenspiel
-# Version required:			1.0
 # Date created:				2 May 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	affenspiel-1.0
+PORTNAME=	affenspiel
+PORTVERSION=	1.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/strategy

@@ -1,12 +1,12 @@
 # New ports collection makefile for:   cgoban
-# Version required:    1.9.10
 # Date created:        28 October 1996
 # Whom:                simonm@dcs.gla.ac.uk
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cgoban-1.9.10
+PORTNAME=	cgoban
+PORTVERSION=	1.9.10
 CATEGORIES=	games
 MASTER_SITES=	http://www.inetarena.com/~wms/comp/cgoban/
 

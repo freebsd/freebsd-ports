@@ -1,16 +1,16 @@
 # New ports collection makefile for:  bugsx
-# Version required:  1.08
 # Date created:  7 December 1997
 # Whom:  Don Croyle <croyle@gelemna.ft-wayne.in.us>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	bugsx108
-PKGNAME=	bugsx-1.08
+PORTNAME=	bugsx
+PORTVERSION=	1.08
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
+DISTNAME=	bugsx108
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	croyle@gelemna.ft-wayne.in.us

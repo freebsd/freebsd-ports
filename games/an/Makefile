@@ -1,12 +1,12 @@
 # New ports collection makefile for:	an
-# Version required:	0.93
 # Date created:		28 Feb 1997
 # Whom:			proff
 #
 # $FreeBSD$
 #
 
-DISTNAME=	an-0.93
+PORTNAME=	an
+PORTVERSION=	0.93
 CATEGORIES=	games
 MASTER_SITES=	ftp://suburbia.net/pub/rmj/ \
 		ftp://ftp.suburbia.net/pub/rmj/

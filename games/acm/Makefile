@@ -6,7 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	acm-5.0
+PORTNAME=	acm
+PORTVERSION=	5.0
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.websimulations.com/pub/download/
 

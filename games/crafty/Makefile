@@ -1,12 +1,12 @@
 # New ports collection makefile for:	crafty
-# Version required:			17.6
 # Date created:				31 May 1998
 # Whom:					Stefan Eggers <seggers@semyam.dinoco.de>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	crafty-17.6
+PORTNAME=	crafty
+PORTVERSION=	17.6
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/ \
 		ftp://ftp.cis.uab.edu/pub/hyatt/common/ \

@@ -1,5 +1,4 @@
 # New ports collection makefile for:	crafty-open-rock
-# Version required:			7 July 1998
 # Date created:				28 December 1998
 # Whom:					Matthew Hunt <mph@FreeBSD.org>
 # Based on ports by:			Stefan Eggers <seggers@semyam.dinoco.de>
@@ -7,7 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	crafty-open-rock-19980707
+PORTNAME=	crafty-open-rock
+PORTVERSION=	19980707
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/common/rock/
 DISTFILES=	rock.01 rock.02 rock.03 rock.04 rock.05 rock.06 rock.07 \
