@@ -3,18 +3,15 @@ This package contains:
 
   SWF::Builder               - Main module
   SWF::Builder::ActionScript - SWF ActionScript object
-  SWF::Builder::ActionScript::Compiler
-                             - SWF ActionScript compiler
-  SWF::Builder::Bitmap       - SWF Bitmap object
-  SWF::Builder::Bitmap::Lossless::*
+  SWF::Builder::ActionScript::Compiler	- SWF ActionScript compiler
+  SWF::Character	     - SWF character, frame, and display instance
+  SWF::Builder::Character::Bitmap	- SWF Bitmap object
+  SWF::Builder::Character::Bitmap::Lossless::*
                              - Drivers for SWF Bitmap object
-  SWF::Builder::Font         - SWF font object
+  SWF::Builder::Character::Font         - SWF font object
   SWF::Builder::Gradient     - SWF gradient object
-  SWF::Builder::MovieClip    - SWF movie clip object
-  SWF::Builder::Shape        - SWF shape object
-  SWF::Builder::Text         - SWF static text object
+  SWF::Builder::Character::MovieClip    - SWF movie clip object
+  SWF::Builder::Character::Shape        - SWF shape object
+  SWF::Builder::Character::Text         - SWF static text object
 
 WWW: http://search.cpan.org/dist/SWF-Builder/
-
--- Sergey Skvortsov
-skv@FreeBSD.org

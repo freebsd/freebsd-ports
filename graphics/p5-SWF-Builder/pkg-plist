@@ -3,19 +3,22 @@ bin/asc.plx
 %%SITE_PERL%%/SWF/Builder.pm
 %%SITE_PERL%%/SWF/Builder/ActionScript.pm
 %%SITE_PERL%%/SWF/Builder/ActionScript/Compiler.pm
-%%SITE_PERL%%/SWF/Builder/Bitmap.pm
-%%SITE_PERL%%/SWF/Builder/Bitmap/Lossless/Custom.pm
-%%SITE_PERL%%/SWF/Builder/Bitmap/Lossless/GD.pm
-%%SITE_PERL%%/SWF/Builder/Bitmap/Lossless/ImageMagick.pm
+%%SITE_PERL%%/SWF/Builder/Character.pm
+%%SITE_PERL%%/SWF/Builder/Character/Bitmap.pm
+%%SITE_PERL%%/SWF/Builder/Character/Bitmap/Lossless/Custom.pm
+%%SITE_PERL%%/SWF/Builder/Character/Bitmap/Lossless/GD.pm
+%%SITE_PERL%%/SWF/Builder/Character/Bitmap/Lossless/ImageMagick.pm
+%%SITE_PERL%%/SWF/Builder/Character/EditText.pm
+%%SITE_PERL%%/SWF/Builder/Character/Font.pm
+%%SITE_PERL%%/SWF/Builder/Character/MovieClip.pm
+%%SITE_PERL%%/SWF/Builder/Character/Shape.pm
+%%SITE_PERL%%/SWF/Builder/Character/Text.pm
 %%SITE_PERL%%/SWF/Builder/ExElement.pm
-%%SITE_PERL%%/SWF/Builder/Font.pm
 %%SITE_PERL%%/SWF/Builder/Gradient.pm
-%%SITE_PERL%%/SWF/Builder/MovieClip.pm
-%%SITE_PERL%%/SWF/Builder/Shape.pm
-%%SITE_PERL%%/SWF/Builder/Text.pm
 @dirrm %%SITE_PERL%%/SWF/Builder/ActionScript
-@dirrm %%SITE_PERL%%/SWF/Builder/Bitmap/Lossless
-@dirrm %%SITE_PERL%%/SWF/Builder/Bitmap
+@dirrm %%SITE_PERL%%/SWF/Builder/Character/Bitmap/Lossless
+@dirrm %%SITE_PERL%%/SWF/Builder/Character/Bitmap
+@dirrm %%SITE_PERL%%/SWF/Builder/Character
 @dirrm %%SITE_PERL%%/SWF/Builder
 @unexec rmdir %D/%%SITE_PERL%%/SWF 2>/dev/null || true
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF/Builder

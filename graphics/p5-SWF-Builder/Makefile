@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SWF-Builder
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	graphics www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/Y/YS/YSAS
@@ -22,9 +22,12 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		SWF::Builder.3 SWF::Builder::ActionScript.3 \
-		SWF::Builder::Bitmap.3 SWF::Builder::Font.3 \
-		SWF::Builder::Gradient.3 SWF::Builder::MovieClip.3 \
-		SWF::Builder::Shape.3 SWF::Builder::Text.3
+		SWF::Builder::Character::Bitmap.3 \
+		SWF::Builder::Character::EditText.3 \
+		SWF::Builder::Character::Font.3 \
+		SWF::Builder::Character::MovieClip.3 \
+		SWF::Builder::Character::Shape.3 \
+		SWF::Builder::Character::Text.3 SWF::Builder::Gradient.3
 MAN1=		asc.plx.1
 
 post-patch:
