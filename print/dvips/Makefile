@@ -3,7 +3,7 @@
 # Date created:         30 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.9 1995/11/22 13:18:03 asami Exp $
+# $Id: Makefile,v 1.10 1995/12/06 00:35:31 jmz Exp $
 #
 
 DISTNAME=	dvips
@@ -22,5 +22,7 @@ EXTRACT_ARGS=	<
 pre-install:
 	@mkdir -p ${PREFIX}/lib/texmf
 
+pre-clean:
+	@rm -f ${SCRIPTDIR}/post-install
 
 .include <bsd.port.mk>
