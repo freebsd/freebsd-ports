@@ -30,6 +30,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		Python="${PYTHON_CMD}"
 CONFIGURE_ARGS=	--with-recode-prefix="${LOCALBASE}"
 
+.include <bsd.port.pre.mk>
+
 pre-patch:
 	@${REINPLACE_CMD} 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|glib-config|glib12-config|g ; \
@@ -37,6 +39,9 @@ pre-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|\$$(datadir)/gnome/|$$(datadir)/|g ; \
 		 s|\$$(datadir)/locale|$$(prefix)/share/locale|g'
+.if ${PYTHON_REL} >= 230
+	@${REINPLACE_CMD} 's|@DEFS@||g' ${WRKSRC}/compiled/Makefile.pre.in
+.endif
 
 post-install:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
@@ -44,4 +49,4 @@ post-install:
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
 		${PREFIX}/share/gnome/${PORTNAME}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
