@@ -199,6 +199,7 @@ sbin/rndc
 %%PORTDOCS%%share/doc/bind9/misc/dnssec
 %%PORTDOCS%%share/doc/bind9/misc/ipv6
 %%PORTDOCS%%share/doc/bind9/misc/migration
+%%PORTDOCS%%share/doc/bind9/misc/migration-4to9
 %%PORTDOCS%%share/doc/bind9/misc/options
 %%PORTDOCS%%share/doc/bind9/misc/sdb
 %%PORTDOCS%%@dirrm share/doc/bind9/arm
