@@ -149,6 +149,7 @@
     SUBDIR += rcalc
     SUBDIR += rpc
     SUBDIR += ruby-algebra
+    SUBDIR += ruby-bitset
     SUBDIR += ruby-bitvector
     SUBDIR += ruby-gmp
     SUBDIR += ruby-gnuplot
