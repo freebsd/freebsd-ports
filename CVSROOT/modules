@@ -6301,6 +6301,7 @@ py-ncurses	ports/devel/py-ncurses
 py-numarray	ports/math/py-numarray
 py-numeric	ports/math/py-numeric
 py-numeric17	ports/math/py-numeric17
+py-ogg		ports/audio/py-ogg
 py-omniorb	ports/devel/py-omniorb
 py-oops		ports/databases/py-oops
 py-opengl	ports/graphics/py-opengl
