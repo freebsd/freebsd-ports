@@ -14,6 +14,8 @@ lib/libnautic.a
 lib/libnautic.so
 lib/libnautic.so.2
 share/gpsdrive/friendsicon.png
+share/gpsdrive/gpsdrive/FAQ.gpsdrive
+share/gpsdrive/gpsdrive/FAQ.gpsdrive.fr
 share/gpsdrive/gpsdrive/AUTHORS
 share/gpsdrive/gpsdrive/GPS-receivers
 share/gpsdrive/gpsdrive/LEEME
