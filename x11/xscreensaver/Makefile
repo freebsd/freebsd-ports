@@ -19,10 +19,17 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_MESA=	yes
 USE_GTK=	yes
+WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-pam --without-gnome --with-gl --with-gle --with-xpm \
-		--with-xml --with-hackdir=${PREFIX}/bin/xscreensaver-hacks/ \
+CONFIGURE_ARGS=	--without-pam --with-gl --with-gle --with-xpm --with-xml \
+		--with-hackdir=${PREFIX}/bin/xscreensaver-hacks/ \
 		--with-configdir=${PREFIX}/share/xscreensaver/config/
+
+.if defined(HAVE_GNOME)
+CONFIGURE_ARGS+=	--with-gnome
+.else
+CONFIGURE_ARGS+=	--without-gnome
+.endif
 
 CONFIGURE_ENV=	X_CFLAGS=-I${LOCALBASE}/include/gnome-xml
 
