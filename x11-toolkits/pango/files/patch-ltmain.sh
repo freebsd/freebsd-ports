@@ -1,9 +1,23 @@
-
-$FreeBSD$
-
---- ltmain.sh.orig	Wed Jan 23 11:38:40 2002
-+++ ltmain.sh	Sun Feb  3 01:44:17 2002
-@@ -1037,8 +1037,16 @@
+--- ltmain.sh.orig	Fri Apr 26 05:23:44 2002
++++ ltmain.sh	Wed Jul  3 12:50:12 2002
+@@ -1056,14 +1056,14 @@
+ 	    # These systems don't actually have a C library (as such)
+ 	    test "X$arg" = "X-lc" && continue
+ 	    ;;
+-	  *-*-openbsd*)
++	  *-*-openbsd*|*-*-freebsd*)
+ 	    # Do not include libc due to us having libc/libc_r.
+ 	    test "X$arg" = "X-lc" && continue
+ 	    ;;
+ 	  esac
+ 	 elif test "X$arg" = "X-lc_r"; then
+ 	  case $host in
+-	  *-*-openbsd*)
++	  *-*-openbsd*|*-*-freebsd*)
+ 	    # Do not include libc_r directly, use -pthread flag.
+ 	    continue
+ 	    ;;
+@@ -1073,8 +1073,16 @@
  	continue
  	;;
  
@@ -20,9 +34,19 @@ $FreeBSD$
  	continue
  	;;
  
-@@ -2412,6 +2420,9 @@
- 	  *-*-netbsd*)
- 	    # Don't link with libc until the a.out ld.so is fixed.
+@@ -2399,6 +2407,9 @@
+ 	    # problems, so we reset it completely
+ 	    verstring=""
+ 	    ;;
++	  *-*-freebsd*)
++	    # FreeBSD doesn't need this...
++	    ;;
+ 	  *)
+ 	    verstring="0.0"
+ 	    ;;
+@@ -2502,6 +2513,9 @@
+ 	  *-*-openbsd*)
+ 	    # Do not include libc due to us having libc/libc_r.
  	    ;;
 +	  *-*-freebsd*)
 +	    # FreeBSD doesn't need this...
@@ -30,7 +54,7 @@ $FreeBSD$
  	  *)
  	    # Add libc to deplibs on all other systems if necessary.
  	    if test "$build_libtool_need_lc" = "yes"; then
-@@ -4179,10 +4190,12 @@
+@@ -4286,10 +4300,12 @@
  	fi
  
  	# Install the pseudo-library for information purposes.

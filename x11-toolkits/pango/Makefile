@@ -7,6 +7,7 @@
 
 PORTNAME=	pango
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,2.0.0/releases/gnome-2.0-desktop-final,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.0/ \
@@ -38,7 +39,7 @@ GLIB2_CFLAGS=	`pkg-config glib-2.0 --cflags`
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
 			${GLIB2_CFLAGS} -I${LOCALBASE}/include \
 			-I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 PLIST_SUB=	VERSION="1.0.0"
 
