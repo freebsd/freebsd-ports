@@ -24,6 +24,14 @@ MASTER_SITES=	http://www.apache.org/dist/httpd/ \
 		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/httpd/ \
 		ftp://apache.nextpath.com/pub/apache/dist/httpd/ \
 		${MASTER_SITES_MODSSL:S/$/:modssl/}
+DISTNAME=	apache_${VERSION_APACHE}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE}${EXTRACT_SUFX}:modssl
+
+MAINTAINER=	ports@FreeBSD.org
+
+LIB_DEPENDS=	mm.11:${PORTSDIR}/devel/mm
+
 MASTER_SITES_MODSSL=	http://www.modssl.org/source/ \
 		ftp://ftp.modssl.org/source/ \
 		ftp://ftp.pca.dfn.de/pub/tools/net/mod_ssl/ \
@@ -36,20 +44,47 @@ MASTER_SITES_MODSSL=	http://www.modssl.org/source/ \
 		ftp://ftp.blatzheim.com/pub/mod_ssl/ \
 		ftp://ftp.fu-berlin.de/unix/security/mod_ssl/ \
 		ftp://ftp.ntrl.net/pub/mirror/ralfsw/mod_ssl/
-DISTNAME=	apache_${VERSION_APACHE}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE}${EXTRACT_SUFX}:modssl
-
-MAINTAINER=	ports@FreeBSD.org
-
 USE_OPENSSL=	YES
 
 .include <bsd.port.pre.mk>
 
-LIB_DEPENDS=	mm.11:${PORTSDIR}/devel/mm
-
 VERSION_APACHE=	1.3.26
 VERSION_MODSSL=	2.8.10
+
+DATADIR=	${PREFIX}/www
+DOCUMENT_ROOT=	${DATADIR}/data
+DEFAULT_PATH=/bin:/usr/bin:${PREFIX}/bin
+
+.if defined(WITH_APACHE_SUEXEC) && ${WITH_APACHE_SUEXEC} == yes
+
+APACHE_SUEXEC_DOCROOT?=${DOCUMENT_ROOT}
+APACHE_SUEXEC_USERDIR?=public_html
+
+SUEXEC_CONF=\
+		--enable-suexec \
+		--suexec-docroot=${APACHE_SUEXEC_DOCROOT} \
+		--suexec-caller=www \
+		--suexec-uidmin=1000 \
+		--suexec-gidmin=1000 \
+		--suexec-logfile=/var/log/httpd-suexec.log \
+		--suexec-userdir=${APACHE_SUEXEC_USERDIR} \
+		--suexec-safepath=${DEFAULT_PATH}
+
+.if defined(APACHE_SUEXEC_UMASK)
+SUEXEC_CONF+=\
+		--suexec-umask=${APACHE_SUEXEC_UMASK}
+.endif
+
+PLIST_SUB+=	SUB_SUEXEC=""
+SUEXEC_MAN=	suexec.8
+
+.else   # !SUEXEC
+
+SUEXEC_CONF=
+PLIST_SUB+=	SUB_SUEXEC="@comment "
+SUEXEC_MAN=
+
+.endif  # !SUEXEC
 
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
@@ -58,7 +93,6 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--server-gid=www \
 		--with-perl=${PERL} \
 		--with-layout=FreeBSD \
-		--suexec-docroot=${PREFIX}/www/data \
 		--without-confadjust \
 		--enable-module=most \
 		--enable-module=auth_db \
@@ -66,7 +100,8 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--disable-module=auth_dbm \
 		--enable-shared=max \
 		--enable-module=ssl \
-		--enable-module=define
+		--enable-module=define \
+		${SUEXEC_CONF}
 
 OPTIM=		-DHARD_SERVER_LIMIT=512 \
 		-DDOCUMENT_LOCATION=\\"${PREFIX}/www/data/\\" \
@@ -98,7 +133,8 @@ CONFIGURE_ENV=	CFLAGS='${CFLAGS}' \
 INSTALL_TARGET=	install-quiet
 
 MAN1=	dbmmanage.1 htdigest.1 htpasswd.1
-MAN8=	ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8
+MAN8=	ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8 \
+	${SUEXEC_MAN}
 
 TYPE=	test
 CRT=
