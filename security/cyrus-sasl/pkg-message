@@ -1,4 +1,15 @@
-Start the pwcheck program to have clients use the SASL libraries
-as a non-root user:
+PREFIX/etc/cyrusdb.db now needs to be created
+before applications that depend on SASL are used.
 
-	/usr/local/etc/rc.d/pwcheck.sh [start|stop]
+	su cyrus
+	PREFIX/sbin/saslpasswd -c userid
+
+You will also need to start the pwcheck daemon:
+
+	PREFIX/etc/rc.d/pwcheck.sh start
+
+Read the documentation in PREFIX/share/doc/SASL
+
+How to enable SMTP AUTH with system Sendmail 8.11 - Sendmail.README
+
+How to use LDAP or MySQL for passwords - see html/sysadmin.html
