@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += acidrip
     SUBDIR += acme
     SUBDIR += avidemux
     SUBDIR += avidemux2
