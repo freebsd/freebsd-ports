@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netatalk
-PORTVERSION=	1.6.3
+PORTVERSION=	1.6.4
 PORTEPOCH=	1
 CATEGORIES=	net print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -61,7 +61,7 @@ PLIST_SUB+=		TIMELORD="@comment "
 CONFIGURE_ARGS+=	--with-mangling
 .endif
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=       --build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 USE_PERL5=	yes
 FILES=		AppleVolumes.default AppleVolumes.system afpd.conf \

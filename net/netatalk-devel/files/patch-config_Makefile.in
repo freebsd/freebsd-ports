@@ -1,6 +1,6 @@
---- config/Makefile.in.orig	Mon Nov 25 22:12:52 2002
-+++ config/Makefile.in	Sun Dec 15 16:57:43 2002
-@@ -244,19 +244,11 @@
+--- config/Makefile.in.orig	Tue Dec  2 15:19:05 2003
++++ config/Makefile.in	Sun Dec  7 13:29:53 2003
+@@ -378,23 +378,11 @@
  install-config-files: $(CONFFILES) $(GENFILES)
  	$(mkinstalldirs) $(DESTDIR)$(pkgconfdir)
  	for f in $(CONFFILES) $(GENFILES); do \
@@ -16,9 +16,13 @@
  
  @USE_PAM_TRUE@install-data-local: install-config-files $(PAMFILES)
 -@USE_PAM_TRUE@	$(mkinstalldirs) $(DESTDIR)$(pamdir)
--@USE_PAM_TRUE@	for f in $(PAMFILES); do					\
--@USE_PAM_TRUE@		$(INSTALL_DATA) $$f $(DESTDIR)$(pamdir)/netatalk || echo "WARNING: Can't install PAM files";		\
--@USE_PAM_TRUE@	done
+-@USE_PAM_TRUE@	if test "x$(OVERWRITE_CONFIG)" = "xyes" -o ! -f $(DESTDIR)$(pamdir)/netatalk; then \
+-@USE_PAM_TRUE@		echo "$(INSTALL_DATA) netatalk.pamd $(DESTDIR)$(pamdir)/netatalk"; \
+-@USE_PAM_TRUE@		$(INSTALL_DATA) netatalk.pamd $(DESTDIR)$(pamdir)/netatalk || \
+-@USE_PAM_TRUE@		echo "WARNING: Can't install PAM file";            \
+-@USE_PAM_TRUE@	else \
+-@USE_PAM_TRUE@		echo "not overwriting $(DESTDIR)$(pamdir)/netatalk"; \
+-@USE_PAM_TRUE@	fi;
  
  @USE_PAM_FALSE@install-data-local: install-config-files
- 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
