@@ -5,14 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	ghc
-PORTVERSION=	4.08.1
+PORTVERSION=	4.08.2
 CATEGORIES=	lang
-MASTER_SITES=	http://www.haskell.org/ghc/dist/4.08.1/
+MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/
 DISTFILES=	ghc-${PORTVERSION}-src${EXTRACT_SUFX} \
 		ghc-${PORTVERSION}-x86-hc${EXTRACT_SUFX}
 
 MAINTAINER=	simonmar@microsoft.com
 
+USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -20,8 +21,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --enable-hc-boot --libdir=${PREFIX}/lib/ghc
 # specifying CONFIGURE_TARGET doesn't work for some reason.
 CONFIGURE_TARGET=
-
-WRKSRC=		${WRKDIR}/fptools
 
 # override TMPDIR because /tmp often doesn't have enough space
 # to build some of the larger libraries.
