@@ -21,5 +21,5 @@ share/xml/xmlcharent/iso-num.ent
 share/xml/xmlcharent/iso-pub.ent
 share/xml/xmlcharent/iso-tech.ent
 @dirrm share/xml/xmlcharent
-share/doc/xmlcharent/entities-2001-11-19.html
+share/doc/xmlcharent/entities-2002-03-19.html
 @dirrm share/doc/xmlcharent
