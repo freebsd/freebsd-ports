@@ -15,14 +15,19 @@ DIST_SUBDIR=	jabber
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Online presence and instant messaging server
 
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --with-libiconv-prefix=${LOCALBASE} \
 		--enable-storage='${STORAGE}' \
-		--enable-authreg='${AUTHREG}' \
-		--enable-debug
+		--enable-authreg='${AUTHREG}'
 
 STORAGE+=	fs
 AUTHREG+=	anon pipe
+
+.if !defined(WITHOUT_DEBUG)
+CONFIGURE_ARGS+=--enable-debug
+.endif
 
 .if defined(WITH_PGSQL)
 LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql-client
@@ -55,7 +60,7 @@ MAN8=		c2s.8 jabberd.8 resolver.8 router.8 s2s.8 sm.8
 
 pre-everything::
 	@${ECHO}
-	@${ECHO} "You can build jabberd with the following options:"
+	@${ECHO} "You can build Jabber with the following options:"
 	@${ECHO} "WITH_PGSQL	use PostgreSQL for storage and authentication"
 	@${ECHO} "WITH_BDB	use Berkeley DB for storage and authentication"
 	@${ECHO} "WITH_MYSQL	use MySQL for storage and authentication"
@@ -71,5 +76,8 @@ post-install:
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/jabberd.sh startup file."; \
 		${INSTALL_SCRIPT} ${FILESDIR}/jabberd.sh ${PREFIX}/etc/rc.d/jabberd.sh; \
 	fi
+	@${CHOWN} -R jabber:jabber ${PREFIX}/etc/jabberd
+	@${FIND} ${PREFIX}/etc/jabberd -type d | ${XARGS} ${CHMOD} 750
+	@${FIND} ${PREFIX}/etc/jabberd -type f | ${XARGS} ${CHMOD} 660
 
 .include <bsd.port.mk>
