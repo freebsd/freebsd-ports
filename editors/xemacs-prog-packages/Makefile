@@ -6,29 +6,30 @@
 #
 
 PORTNAME=	xemacs-prog-packages
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_XEMACS} \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	packages kiri
 DISTFILES=	\
 		ada-1.10-pkg.tar.gz \
-		ediff-1.29-pkg.tar.gz \
+		ediff-1.30-pkg.tar.gz \
 		emerge-1.09-pkg.tar.gz \
 		idlwave-1.23-pkg.tar.gz \
-		jde-1.24-pkg.tar.gz \
+		jde-1.26-pkg.tar.gz \
 		scheme-1.11-pkg.tar.gz \
-		semantic-1.04-pkg.tar.gz \
+		semantic-1.05-pkg.tar.gz \
 		vc-cc-1.15-pkg.tar.gz \
-		vhdl-1.12-pkg.tar.gz
+		vhdl-1.13-pkg.tar.gz
 DIST_SUBDIR=	xemacs
 
 MAINTAINER=	kiri@FreeBSD.org
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/xemacs-packages
+WRKSRC=		${WRKDIR}/${PACKAGES_SUBDIR}
 
 XEMACSDIR=	${PREFIX}/lib/xemacs
+PACKAGES_SUBDIR=	xemacs-packages
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
@@ -39,9 +40,15 @@ do-extract:
 
 do-install:
 	${MKDIR} ${XEMACSDIR}
-	${CP} -Rp ${WRKDIR}/xemacs-packages ${XEMACSDIR}
+	${CP} -R ${WRKSRC} ${XEMACSDIR}
 
 post-install:
+	@cd ${WRKDIR} && \
+	find ${PACKAGES_SUBDIR} -type f|sort|${SED} 's:^:lib/xemacs/:' >> ${TMPPLIST}; \
+	find ${PACKAGES_SUBDIR}/*/* -type d|sort -r|${SED} 's:^:@dirrm lib/xemacs/:'>> ${TMPPLIST}
+	@${ECHO} '@unexec rmdir %D/lib/xemacs/${PACKAGES_SUBDIR}/* 2>/dev/null || true' >> ${TMPPLIST}
+	@${ECHO} '@unexec rmdir %D/lib/xemacs/${PACKAGES_SUBDIR} 2>/dev/null || true' >> ${TMPPLIST}
+	@${ECHO} '@unexec rmdir %D/lib/xemacs 2>/dev/null || true' >> ${TMPPLIST}
 	@${ECHO_MSG} "    This is the set of the packages for xemacs with the prog category. You can"
 	@${ECHO_MSG} "install other packages provided by XEmacs.org with editors/xemacs-*-packages"
 	@${ECHO_MSG} "ports. These ports are prepared for corresponding XEmacs packages except for"
