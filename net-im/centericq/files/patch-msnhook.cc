@@ -1,6 +1,14 @@
---- src/hooks/msnhook.cc.orig	Mon Oct  6 01:01:52 2003
-+++ src/hooks/msnhook.cc	Mon Oct  6 01:05:37 2003
-@@ -248,7 +248,8 @@
+--- src/hooks/msnhook.cc.orig	Tue Sep 30 19:38:43 2003
++++ src/hooks/msnhook.cc	Tue Oct  7 10:20:29 2003
+@@ -33,6 +33,7 @@
+ #include "accountmanager.h"
+ #include "eventmanager.h"
+ #include "imlogger.h"
++#include "utf8conv.h"
+ #include "connwrap.h"
+ 
+ #include "msn_bittybits.h"
+@@ -248,7 +249,8 @@
      }
  
      icqcontact *c = clist.get(ev.getcontact());
@@ -10,7 +18,7 @@
  
      if(c)
      if(c->getstatus() != offline || !c->inlist()) {
-@@ -378,11 +379,11 @@
+@@ -378,11 +380,11 @@
  
  void msnhook::checkfriendly(icqcontact *c, const string friendlynick, bool forcefetch) {
      string oldnick = c->getnick();
@@ -24,7 +32,7 @@
  	c->setdispnick(newnick);
  	face.relaxedupdate();
      }
-@@ -602,7 +603,8 @@
+@@ -602,7 +604,8 @@
  
      mhook.checkinlist(ic);
  
@@ -34,7 +42,7 @@
      em.store(immessage(ic, imevent::incoming, text));
  }
  
-@@ -779,5 +781,139 @@
+@@ -779,5 +782,139 @@
  	log(string("[OUT] ") + buf);
      }
  }

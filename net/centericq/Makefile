@@ -8,11 +8,11 @@
 
 PORTNAME=	centericq
 PORTVERSION=	4.9.7
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://konst.org.ua/download/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	clsung@dragon2.net
 COMMENT=	A text mode menu- and window-driven IM interface
 
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
