@@ -35,9 +35,11 @@ lib/win32/ir50_32.dll
 lib/win32/ir50_qc.dll
 lib/win32/ir50_qcx.dll
 lib/win32/ivvideo.dll
+lib/win32/jp2avi.dll
 lib/win32/l3codeca.acm
 lib/win32/l3codecx.ax
 lib/win32/lhacm.acm
+lib/win32/m3jp2k32.dll
 lib/win32/m3jpeg32.dll
 lib/win32/m3jpegdec.ax
 lib/win32/m3jpegenc.ax

@@ -6,24 +6,24 @@
 #
 
 PORTNAME=	win32-codecs
-PORTVERSION=	${CODEC_VERSION}.1.${CODEC_MPLAYER_VERSION:S/pre/.p/}
+PORTVERSION=	${CODEC_VERSION}.2.${CODEC_MPLAYER_VERSION:S/pre/.p/}
 CATEGORIES=	multimedia audio
-MASTER_SITES=	http://avifile.sourceforge.net/:binaries \
-		http://ernie.eit.uni-kl.de/avifile/ \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:avifile/} \
+		http://avifile.sourceforge.net/:binaries \
 		http://www1.mplayerhq.hu/MPlayer/releases/codecs/:mplayer_extracodec \
 		http://www2.mplayerhq.hu/MPlayer/releases/codecs/:mplayer_extracodec \
-		http://www.mplayerhq.hu/MPlayer/releases/:w32codec \
-		http://ftp.lug.udel.edu/MPlayer/releases/%SUBDIR%/:mplayer_extracodec,w32codec \
-		ftp://ftp1.mplayerhq.hu/MPlayer/releases/codecs/:mplayer_extracodec \
-		ftp://ftp2.mplayerhq.hu/MPlayer/releases/codecs/:mplayer_extracodec \
-		ftp://ftp.mplayerhq.hu/MPlayer/releases/:w32codec \
-		ftp://ftp.lug.udel.edu/MPlayer/releases/%SUBDIR%/:mplayer_extracodec,w32codec
-MASTER_SITE_SUBDIR=	codecs/:mplayer_extracodec
-DISTFILES=	w32codec-${CODEC_MPLAYER_VERSION}.tar.bz2:w32codec \
-		binaries-${CODEC_VERSION}.tgz:binaries,DEFAULT \
-		Win32_dmo.tgz:binaries \
+		http://www.mplayerhq.hu/MPlayer/releases/codecs/:w32codec \
+		http://ftp.lug.udel.edu/MPlayer/releases/codecs/:mplayer_extracodec,w32codec \
+		http://www1.mplayerhq.hu/MPlayer/releases/codecs/:mplayer_extracodec \
+		http://www2.mplayerhq.hu/MPlayer/releases/codecs/:mplayer_extracodec \
+		ftp://ftp.mplayerhq.hu/MPlayer/releases/codecs/:w32codec \
+		ftp://ftp.lug.udel.edu/MPlayer/releases/codecs/:mplayer_extracodec,w32codec
+MASTER_SITE_SUBDIR=	avifile/:avifile
+DISTFILES=	win32codecs.tar.bz2:w32codec \
+		binaries-${CODEC_VERSION}.tgz:avifile,binaries \
+		Win32_dmo.tgz:avifile,binaries \
 		qt5dlls.tar.bz2:mplayer_extracodec
-EXTRACT_ONLY=	w32codec-${CODEC_MPLAYER_VERSION}.tar.bz2
+EXTRACT_ONLY=	win32codecs.tar.bz2
 
 MAINTAINER=	holger@e-gitt.net
 COMMENT=	Huge compilation of Win32 binary codecs, including MPEG-4(DivX ;-))
@@ -49,6 +49,7 @@ ADDITIONAL_CODECS_DISTFILES=	binaries-${CODEC_VERSION}.tgz \
 ADDITIONAL_CODECS_QT_DISTFILES=	qt5dlls.tar.bz2
 # extraction wrksrc
 ADDITIONAL_CODECS_WRKSRC=	Win32_dmo win32 \
+				win32codecs \
 				qt5dlls
 
 post-extract:
@@ -60,6 +61,7 @@ post-extract:
 	@cd ${WRKDIR} && ${TAR} xyf \
 		${DISTDIR}/${file}
 .endfor
+	@${MKDIR} ${WRKSRC}
 .for dir in ${ADDITIONAL_CODECS_WRKSRC}
 	@${INSTALL} ${WRKDIR}/${dir}/* ${WRKSRC}
 .endfor
