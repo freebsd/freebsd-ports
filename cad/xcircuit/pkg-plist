@@ -4,7 +4,6 @@ lib/X11/xcircuit/analog.lps
 lib/X11/xcircuit/avlsi.lps
 lib/X11/xcircuit/builtins.lps
 lib/X11/xcircuit/digital.lps
-lib/X11/xcircuit/generic.lps
 lib/X11/xcircuit/fonts/courier.lps
 lib/X11/xcircuit/fonts/courier.xfe
 lib/X11/xcircuit/fonts/courieriso.xfe
@@ -30,6 +29,7 @@ lib/X11/xcircuit/fonts/times_romaniso2.lps
 lib/X11/xcircuit/fonts/times_romaniso2.xfe
 lib/X11/xcircuit/fonts/times_romaniso5.lps
 lib/X11/xcircuit/fonts/times_romaniso5.xfe
+lib/X11/xcircuit/generic.lps
 lib/X11/xcircuit/lgf.lps
 lib/X11/xcircuit/musiclib.lps
 lib/X11/xcircuit/signal.lps

@@ -1,5 +1,5 @@
-*** Imakefile.orig	Thu Jan  6 03:15:52 2000
---- Imakefile	Fri Jan 21 12:00:00 2000
+*** Imakefile.orig	Wed Mar  1 00:41:35 2000
+--- Imakefile	Mon Mar 13 01:45:29 2000
 ***************
 *** 26,44 ****
   #CCOPTIONS = -O2
@@ -26,7 +26,7 @@
   #
   # for debugging purposes uncomment the following line:
 ! #CDEBUGFLAGS = -g
-! #STD_INCLUDES = -I. -I/usr/X11R6/include/X11
+! STD_INCLUDES = -I. -I$(INCDIR)/X11
   
   #------------------------------------------------------------------------
   # Installation directories:
@@ -42,23 +42,19 @@
   #------------------------------------------------------------------------
   # Support for graphics double-buffering (A memory hog, but yields fastest
 ***************
-*** 89,97 ****
-  # DEC Alpha, Solaris and other SVR4 systems need the following,
-  # or if you have compilation errors about "dp->d_name" being
-  # undefined:
-! #DIRENT = -DSVR4_DIRENT
-  # Otherwise,
-! DIRENT =
+*** 56,62 ****
+  # Support for background rendering through ghostscript.  Change this
+  # to the path where gs can be found.
+  # GS_EXEC= /usr/local/src/gs5.50/obj/gs
+! GS_EXEC= /usr/bin/gs
   
-  # My DECstation (Ultrix) has something funny going on in XLib. . . if there
-  # is a compile-time error "ld: Undefined: XUniqueContext *** Error code 1"
---- 89,97 ----
-  # DEC Alpha, Solaris and other SVR4 systems need the following,
-  # or if you have compilation errors about "dp->d_name" being
-  # undefined:
-! DIRENT = -DSVR4_DIRENT
-  # Otherwise,
-! #DIRENT =
+  #------------------------------------------------------------------------
+  # Window manager bug workaround---If you don't like xcircuit grabbing kbd
+--- 56,62 ----
+  # Support for background rendering through ghostscript.  Change this
+  # to the path where gs can be found.
+  # GS_EXEC= /usr/local/src/gs5.50/obj/gs
+! GS_EXEC= %%LOCALBASE%%/bin/gs
   
-  # My DECstation (Ultrix) has something funny going on in XLib. . . if there
-  # is a compile-time error "ld: Undefined: XUniqueContext *** Error code 1"
+  #------------------------------------------------------------------------
+  # Window manager bug workaround---If you don't like xcircuit grabbing kbd
