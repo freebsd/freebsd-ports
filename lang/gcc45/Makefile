@@ -5,10 +5,10 @@
 #
 # $FreeBSD$
 #
-SNAPDATE=	2004-04-14
+SNAPDATE=	2004-06-04
 
 PORTNAME=	gcc
-PORTVERSION=	3.4.0
+PORTVERSION=	3.4.1
 PORTREVISION=	${SNAPDATE:S/-//g}
 CATEGORIES=	lang java
 VERSIONSTRING=	3.4-${PORTREVISION}
@@ -46,7 +46,7 @@ CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .endif
 
-.if ${ARCH} == ia64  ||  ${ARCH} == sparc64
+.if ${ARCH} == amd64  ||  ${ARCH} == ia64  ||  ${ARCH} == sparc64
 WITHOUT_LIBJAVA=	yes
 .endif
 
