@@ -1,6 +1,6 @@
---- configure.orig	Sun Feb 15 23:02:51 2004
-+++ configure	Sun Feb 15 23:07:26 2004
-@@ -16588,17 +16588,12 @@
+--- configure.tmp	Sat Apr 10 03:28:51 2004
++++ configure	Sat Apr 10 04:47:54 2004
+@@ -16589,17 +16589,12 @@
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  
