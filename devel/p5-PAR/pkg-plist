@@ -1,12 +1,22 @@
 bin/parl
+bin/parldyn
 bin/pp
 bin/par.pl
-%%SITE_PERL%%/App/Packer/PAR.pm
+bin/tkpp
+%%SITE_PERL%%/App/Packer/Backend/PAR.pm
 %%SITE_PERL%%/PAR.pm
+%%SITE_PERL%%/PAR/FAQ.pod
+%%SITE_PERL%%/PAR/Filter.pm
+%%SITE_PERL%%/PAR/Filter/Bleach.pm
+%%SITE_PERL%%/PAR/Filter/Bytecode.pm
+%%SITE_PERL%%/PAR/Filter/Obfuscate.pm
+%%SITE_PERL%%/PAR/Filter/PatchContent.pm
+%%SITE_PERL%%/PAR/Filter/PodStrip.pm
 %%SITE_PERL%%/PAR/Heavy.pm
-%%SITE_PERL%%/PAR/Intro.pod
+%%SITE_PERL%%/PAR/Tutorial.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PAR/.packlist
-@dirrm %%SITE_PERL%%/App/Packer
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PAR
+@unexec rmdir %D/%%SITE_PERL%%/App/Packer/Backend 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/App/Packer 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/App 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/PAR/Filter 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/PAR 2>/dev/null || true

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PAR
-PORTVERSION=	0.75
+PORTVERSION=	0.77
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/A/AU/AUTRIJUS
@@ -18,15 +18,19 @@ COMMENT=	Perl Archive Toolkit
 BUILD_DEPENDS=	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
 		${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
-		${SITE_PERL}/Module/ScanDeps.pm:${PORTSDIR}/devel/p5-Module-ScanDeps \
+		${SITE_PERL}/Module/ScanDeps/DataFeed.pm:${PORTSDIR}/devel/p5-Module-ScanDeps \
 		${SITE_PERL}/Module/Signature.pm:${PORTSDIR}/security/p5-Module-Signature \
-		${SITE_PERL}/PAR/Dist.pm:${PORTSDIR}/devel/p5-PAR-Dist
+		${SITE_PERL}/PAR/Dist.pm:${PORTSDIR}/devel/p5-PAR-Dist \
+		${SITE_PERL}/B/Deobfuscate.pm:${PORTSDIR}/devel/p5-B-Deobfuscate
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN1=		par.pl.1 parl.1 pp.1
-MAN3=		App::Packer::PAR.3 PAR.3 PAR::Heavy.3 PAR::Intro.3
+MAN3=		App::Packer::Backend::PAR.3 PAR.3 PAR::FAQ.3 PAR::Filter.3 \
+		PAR::Filter::Bleach.3 PAR::Filter::Bytecode.3 \
+		PAR::Filter::Obfuscate.3 PAR::Filter::PatchContent.3 \
+		PAR::Filter::PodStrip.3 PAR::Heavy.3 PAR::Tutorial.3
 
 .include <bsd.port.pre.mk>
 
