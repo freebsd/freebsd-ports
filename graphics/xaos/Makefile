@@ -3,14 +3,14 @@
 # Date created:				24 February 1996
 # Whom:					Joseph Koshy <koshy@india.hp.com>
 #
-# $Id: Makefile,v 1.4 1998/07/03 07:02:54 jkoshy Exp $
+# $Id: Makefile,v 1.5 1998/07/06 07:23:14 jkoshy Exp $
 #
 
 DISTNAME=	XaoS-3.0
 PKGNAME=	xaos-3.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
-		ftp://ftp.ta.jcu.cz/pub/linux/hubicka/XaoS/2.2/ \
+		ftp://ftp.ta.jcu.cz/pub/linux/hubicka/XaoS/3.0/ \
 		http://www.paru.cas.cz/~hubicka/XaoS/dist/
 MASTER_SITE_SUBDIR=	graphics
 
