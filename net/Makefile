@@ -539,6 +539,7 @@
     SUBDIR += pvm++
     SUBDIR += pxe
     SUBDIR += py-bittorrent
+    SUBDIR += py-bittorrent-core
     SUBDIR += py-fngrab
     SUBDIR += py-google
     SUBDIR += py-ipy
