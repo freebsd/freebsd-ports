@@ -7,14 +7,14 @@
 
 PORTNAME=	asv
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc python
 MASTER_SITES=	http://tratt.net/~laurie/python/asv/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	johann@egenetics.com
 
-PYTHON_VERSION=	python2.0
+PYTHON_VERSION=	python2.1
 
 ASV_BASEDIR=	${PREFIX}/lib/${PYTHON_VERSION}/site-packages
 ASV_DOCDIR=	${PREFIX}/share/doc/py-asv
