@@ -12,6 +12,7 @@ MASTER_SITES=	http://maddingue.free.fr/techie/download/Html2Wml/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p5//}-pre5
 
 MAINTAINER=	greid@FreeBSD.org
+COMMENT=	A CGI that can do on-the-fly HTML to WML conversion
 
 RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/Text/Template.pm:${PORTSDIR}/textproc/p5-Text-Template \

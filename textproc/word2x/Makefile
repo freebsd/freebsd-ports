@@ -11,6 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://word2x.alcom.co.uk/download/
 
 MAINTAINER=	billf@FreeBSD.org
+COMMENT=	Converter from MS Word to text, HTML or LaTeX
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.gedanken.freeserve.co.uk/download-wwwoffle/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sumikawa@FreeBSD.org
+COMMENT=	A caching proxy server for HTTP and FTP designed for dial-up hosts
 
 USE_PERL5=	yes
 USE_GMAKE=	yes

@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/ \
 		ftp://ftp.mirror.ac.uk/sites/ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	The Red Hat Package Manager
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		popt.0:${PORTSDIR}/devel/popt

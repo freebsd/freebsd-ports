@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.seul.org/pub/xarchon/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	blackend@FreeBSD.org
+COMMENT=	A chess-like strategy game with battle options
 
 USE_XLIB=	yes
 USE_GNOMENG=	yes

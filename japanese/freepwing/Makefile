@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/freepwing/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT=	Free JIS X 4081 (subset of EPWING V1) Formatter
 
 RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
 

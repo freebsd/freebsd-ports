@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.geocities.com/~starkville/mozilla/
 DISTNAME=	uhoaiw21
 
 MAINTAINER=	obrien@FreeBSD.org
+COMMENT=	Unicode TrueType Font with UHoai Vietnamese encoding
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Text
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Parse and create fixed length field records
 
 PERL_CONFIGURE=	yes
 

@@ -18,6 +18,7 @@ DISTFILES=	${DISTNAME}.tar.gz \
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	yoichi@FreeBSD.org
+COMMENT=	X-Face encoder/decoder/viewer for Emacsen
 
 RUN_DEPENDS=	compface:${PORTSDIR}/mail/faces
 

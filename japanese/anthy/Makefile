@@ -11,6 +11,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	http://www.kyoto.trans-nt.com/anthy/
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	Another kana-kanji conversion system
 
 GNU_CONFIGURE=	yes
 INSTALL_SHLIBS=	yes

@@ -15,6 +15,7 @@ MASTER_SITES=	http://sparcs.kaist.ac.kr/~firiel/Works/ \
 DISTNAME=	pgp263i-${PGP_LANGUAGE}
 
 MAINTAINER=	cjh@kr.freebsd.org
+COMMENT=	Korean language module for PGP
 
 RUN_DEPENDS=	pgp:${PORTSDIR}/security/pgp
 

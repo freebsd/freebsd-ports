@@ -17,6 +17,7 @@ MASTER_SITE_SUBDIR=	1.00RC5
 DISTNAME=	${PORTNAME}-1.00RC5
 
 MAINTAINER=	clive@FreeBSD.org
+COMMENT=	MTA for hosts which relay to a fixed set of smart relays
 
 HAS_CONFIGURE=	yes
 

@@ -12,6 +12,7 @@ MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	archie
 
 MAINTAINER=		archie@freebsd.org
+COMMENT=	Lightweight threaded HTTP/HTTPS web server based on libpdel(3)
 
 LIB_DEPENDS=		pdel.0:${PORTSDIR}/devel/libpdel
 

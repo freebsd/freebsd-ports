@@ -11,6 +11,7 @@ CATEGORIES=	games gnome
 MASTER_SITES=	http://www.informatik.uni-oldenburg.de/~pearl/download/
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A yet another little mind game
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

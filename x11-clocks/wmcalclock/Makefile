@@ -11,6 +11,7 @@ CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/
 
 MAINTAINER=	kris@FreeBSD.org
+COMMENT=	Another Window Maker calendar/clock dockapp
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/Src
 

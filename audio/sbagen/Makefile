@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	greid@FreeBSD.org
+COMMENT=	A sequenced binaural wave generator
 
 SHAREFILES=	t-alpha t-beta t-calm t-calm2 t-delta t-focus t-focus-1 \
 		t-focus-2 t-focus2 t-mix1 t-seqall t-test10 t-test10b \

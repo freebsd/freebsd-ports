@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	anders@FreeBSD.org
+COMMENT=	Figaro's Password Manager, an app to securely store your passwords
 
 USE_GNOME=	yes
 USE_X_PREFIX=	yes

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Mail
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	Perl module to verify email addresses
 
 BUILD_DEPENDS=	${SITE_PERL}/Net/DNS.pm:${PORTSDIR}/net/p5-Net-DNS
 RUN_DEPENDS=	${BUILD_DEPENDS}

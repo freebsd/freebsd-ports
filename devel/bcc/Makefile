@@ -11,6 +11,7 @@ CATEGORIES=	devel lang
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	joerg@FreeBSD.org
+COMMENT=	Bruce's C compiler (with as and ld); can do 16-bit code
 
 MAN1=		as86.1 bcc.1 bcc-cc1.1 ld86.1
 .if !defined(NOMANCOMPRESS)

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	XML
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Perl SAX driver for the Sablotron XSLT
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/XML/Sablotron.pm:${PORTSDIR}/textproc/p5-XML-Sablotron \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/XML/SAX/Base.pm:${PORTSDIR}/textproc/p5-XML-SAX

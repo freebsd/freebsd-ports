@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PACKETSTORM} \
 MASTER_SITE_SUBDIR=	UNIX/security
 
 MAINTAINER=	kris@FreeBSD.org
+COMMENT=	Source code auditing tool
 
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
 

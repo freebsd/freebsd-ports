@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/libole2/0.2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Support library for OLE functions (MS-Excel) for gnumeric
 
 USE_GMAKE=	yes
 USE_GNOMENG=	yes

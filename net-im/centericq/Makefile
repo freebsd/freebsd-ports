@@ -13,6 +13,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://konst.org.ua/download/
 
 MAINTAINER=	ijliao@FreeBSD.org
+COMMENT=	A ncurses based interface for ICQ, Yahoo!, AIM, MSN and IRC
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		iconv.3:${PORTSDIR}/converters/libiconv \

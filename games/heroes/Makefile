@@ -18,6 +18,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 #PATCHFILES=	heroes-0.7-errata.patch
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A game of yore similar to the "Tron" and "Nibbles"
 
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \

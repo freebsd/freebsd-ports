@@ -12,6 +12,7 @@ CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.kame.net/pub/kame/misc/
 
 MAINTAINER=	suz@FreeBSD.org
+COMMENT=	PIM for IPv6 dense mode daemon
 
 NO_CDROM=	"Cannot be sold for profit"
 

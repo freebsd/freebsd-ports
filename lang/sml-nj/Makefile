@@ -19,6 +19,7 @@ DISTFILES=	bin.x86-unix.tar.Z cm.tar.Z cml.tar.Z \
 EXTRACT_ONLY=	config.tar.Z
 
 MAINTAINER=	jkoshy@freebsd.org
+COMMENT=	A popular functional language from Bell Labs
 
 # Other mirror sites that generally carry only released versions of SML
 # 	ftp://rodin.stanford.edu/pub/smlnj/release/

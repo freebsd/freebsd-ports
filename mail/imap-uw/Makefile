@@ -19,6 +19,7 @@ DISTNAME=	imap-${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	anders@FreeBSD.org
+COMMENT=	University of Washington IMAP4rev1/POP2/POP3 mail servers
 
 LIB_DEPENDS=	c-client4.8:${PORTSDIR}/mail/cclient
 .if defined(WITH_DRAC)

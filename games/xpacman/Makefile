@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.nvg.unit.no/pub/pacman/
 DISTNAME=	pacman10
 
 MAINTAINER=	joerg@FreeBSD.org
+COMMENT=	An old action game
 
 NO_WRKSUBDIR=	Does not unpack into subdir.
 USE_ZIP=	yes

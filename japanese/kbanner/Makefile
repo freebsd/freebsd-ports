@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.sra.co.jp/pub/news/fj.sources/V24/
 DISTFILES=	2426.gz 2427.gz 2428.gz 2429.gz 2430.gz 2431.gz
 
 MAINTAINER=	sumikawa@FreeBSD.org
+COMMENT=	Displays large japanese letters on the standard output
 
 DIST_SUBDIR=	kbanner
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.leo.org/~bartel/nttcp/ \
 MASTER_SITE_SUBDIR=	billf
 
 MAINTAINER=	billf@FreeBSD.org
+COMMENT=	A client/server program for testing network performance
 
 ALL_TARGET=	nttcp
 MAN1=		nttcp.1

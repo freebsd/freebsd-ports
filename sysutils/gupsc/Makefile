@@ -12,6 +12,7 @@ CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.stud.ifi.uio.no/~hennikul/gupsc/download/
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	A free Gnome client for the Network UPS Tools
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes

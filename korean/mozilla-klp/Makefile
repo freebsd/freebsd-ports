@@ -15,6 +15,7 @@ DIST_SUBDIR=	mozilla-klp
 EXTRACT_SUFX=	.xpi
 
 MAINTAINER=	cjh@FreeBSD.org
+COMMENT=	Mozilla Korean Language Pack (KLP)
 
 BUILD_DEPENDS=	${X11BASE}/lib/mozilla/regxpcom:${PORTSDIR}/www/mozilla
 RUN_DEPENDS=	mozilla:${PORTSDIR}/www/mozilla

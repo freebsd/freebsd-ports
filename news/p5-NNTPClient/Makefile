@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	News
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	Client interface to NNTP (RFC977)
 
 PERL_CONFIGURE=	yes
 

@@ -12,6 +12,7 @@ MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/ups
 
 MAINTAINER=		dburr@FreeBSD.ORG
+COMMENT=	monitor a state of MGE Pulsar UPS connected to RS-232 port
 
 USE_GMAKE=		YES
 WRKSRC=			${WRKDIR}/MGE

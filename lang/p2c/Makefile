@@ -15,6 +15,7 @@ MASTER_SITES=   ftp://ftp.clara.net/pub/mirrors/gnu/hurd/ \
 DISTFILES=	p2c-1.21alpha2.tar.gz
 
 MAINTAINER=	jmz@FreeBSD.org
+COMMENT=	Pascal to C translator
 
 WRKSRC=		${WRKDIR}/p2c-1.21alpha-07.Dec.93
 MAN1=		p2c.1 p2cc.1

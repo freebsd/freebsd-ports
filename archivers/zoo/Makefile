@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/arcers/
 DISTNAME=	zoo-2.10pl1
 
 MAINTAINER=	jmz@FreeBSD.org
+COMMENT=	Manipulate archives of files in compressed form
 
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	bsdansi

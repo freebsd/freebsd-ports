@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	dirk
 DISTNAME=	httrack-3.20-2
 
 MAINTAINER=	dirk@FreeBSD.org
+COMMENT=	Easy-to-use offline browser utility and website copier
 
 WRKSRC=		${WRKDIR}/httrack-3.20/src
 USE_GMAKE=	yes

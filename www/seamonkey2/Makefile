@@ -17,6 +17,7 @@ DISTFILES=	${PORTNAME}-source-${PORTVERSION:S/.rc/rc/}${EXTRACT_SUFX} \
 		libart_lgpl-${PORTVERSION}${EXTRACT_SUFX}:local
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	The open source, standards compliant web browser
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		freetype-config:${PORTSDIR}/print/freetype2

@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.oasis-open.org/docbook/sgml/4.0/
 DISTNAME=	docbk40
 
 MAINTAINER=	asmodai@FreeBSD.org
+COMMENT=	V4.0 of the DocBook DTD, designed for technical documentation
 
 RUN_DEPENDS=	${ISOCAT}:${PORTSDIR}/textproc/iso8879 \
 		${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog

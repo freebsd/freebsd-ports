@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR= apps/editors/X
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jkoshy@freebsd.org
+COMMENT=	Multi-lingual unicode text editor with TTF support
 
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	petef
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	Converts EPS images to anti-aliased PGM bitmaps
 
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu \
 		pnmtopng:${PORTSDIR}/graphics/netpbm

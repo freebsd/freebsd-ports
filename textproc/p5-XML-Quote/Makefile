@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	XML
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	XML quote/dequote functions
 
 PERL_CONFIGURE=	yes
 

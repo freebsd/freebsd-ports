@@ -17,6 +17,7 @@ DISTNAME=	fdec-rs-405
 .endif
 
 MAINTAINER=	dima@FreeBSD.org
+COMMENT=	View, distribute and print PDF documents
 
 .if ${ARCH} == "i386"
 USE_LINUX=	yes

@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.graphviz.org/pub/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	mi@aldan.algebra.com
+COMMENT=	A TCL interface to the Thomas Boutell's Gd library
 
 LIB_DEPENDS=	tcl${TCL_DVER}.1:${PORTSDIR}/lang/tcl${TCL_DVER} \
 		gd:${PORTSDIR}/graphics/gd2

@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.tstrathmann.de/files/
 
 MAINTAINER=	greid@FreeBSD.org
+COMMENT=	A lightweight 8080/8085 assembler
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 BUILD_WRKSRC=	${WRKSRC}/src

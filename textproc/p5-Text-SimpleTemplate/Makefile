@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Text
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Yet another Perl module for template processing
 
 PERL_CONFIGURE=	yes
 

@@ -14,6 +14,7 @@ PATCH_SITES=	ftp://ftp.fit.ac.jp/pub/Net/okphone/patch/
 PATCHFILES=	${DISTNAME}.FreeBSD-patch.rev2.gz
 
 MAINTAINER=	max@FreeBSD.org
+COMMENT=	Conference-calling phone with Japanese support
 
 PATCH_DIST_STRIP=	-p1
 MAN1=			phone.1

@@ -11,6 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://cserv.sourceforge.net/old/
 
 MAINTAINER=	chein@freebsd.org
+COMMENT=	Camserv is a free program to do streaming video via the web
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.cs.technion.ac.il/users/c2ps/
 DISTNAME=	c2ps-${PORTVERSION}
 
 MAINTAINER=	mph@freebsd.org
+COMMENT=	A PostScript pretty-printer for C source
 
 MAN1=		c2ps.1
 MAKE_ENV=	DEFAULT_PAPER_TYPE=${PS}

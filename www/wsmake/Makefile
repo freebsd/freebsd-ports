@@ -18,6 +18,7 @@ DIST_SUBDIR=	wsmake
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	jkoshy@freebsd.org
+COMMENT=	Software for production and maintenance of web sites
 
 USE_BZIP2=	YES
 GNU_CONFIGURE=	YES

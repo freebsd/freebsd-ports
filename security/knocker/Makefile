@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	pat@FreeBSD.org
+COMMENT=	A simple and easy to use TCP only port scanner (Console version)
 
 GNU_CONFIGURE=	yes
 

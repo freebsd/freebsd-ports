@@ -19,6 +19,7 @@ DISTFILES=	ztelnet-linux.tar.gz ztelnet-patch.tar.gz \
 		ztelnet-patch-cmascott.tar.gz
 
 MAINTAINER=	cjh@FreeBSD.org
+COMMENT=	Telnet program with zmodem transfer
 
 RESTRICTED=	"zmodem code has restrictive copyright"
 

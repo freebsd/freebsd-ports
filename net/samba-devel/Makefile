@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	alpha old
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/a/alpha/}
 
 MAINTAINER=	dwcjr@FreeBSD.org
+COMMENT=	A free SMB and CIFS client and server for UNIX
 
 USE_BZIP2="YES"
 

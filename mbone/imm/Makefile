@@ -13,6 +13,7 @@ DISTNAME=	imm.source
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	fenner@freebsd.org
+COMMENT=	Internet Image(or other data) Multicaster (and receiver)
 
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 

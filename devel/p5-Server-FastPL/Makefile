@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Server
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Perl module to eliminate the compile-time of big scripts
 
 PERL_CONFIGURE=	yes
 

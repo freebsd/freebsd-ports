@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/ \
 DISTNAME=	hcode2.1-mailpatch3
 
 MAINTAINER=	cjh@FreeBSD.org
+COMMENT=	Hangul code conversion utility
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hcode ${PREFIX}/bin

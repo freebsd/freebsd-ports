@@ -14,6 +14,7 @@ USE_QT_VER=	3
 USE_KDELIBS_VER=3
 
 MAINTAINER=	jedgar@FreeBSD.org
+COMMENT=	A graphical user interface around gdb using KDE
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBQTMT="-lqt-mt" \

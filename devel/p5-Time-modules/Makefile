@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Time
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Set of modules for time manipulation
 
 PERL_CONFIGURE=	yes
 

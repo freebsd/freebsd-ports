@@ -12,6 +12,7 @@ MASTER_SITES=	http://gatekeeper.dec.com/pub/DEC/SRC/x2x/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	grog@FreeBSD.org
+COMMENT=	A program to link multiple X servers together
 
 USE_IMAKE=	yes
 USE_GMAKE=	yes

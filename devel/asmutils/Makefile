@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://linuxassembly.org/asmutils/
 
 MAINTAINER=	greid@FreeBSD.org
+COMMENT=	A set of UNIX utilities written in assembly language
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 

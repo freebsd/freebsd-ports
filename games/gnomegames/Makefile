@@ -14,6 +14,7 @@ DISTNAME=	gnome-games-${PORTVERSION}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	The game applications package for the Gnome Desktop Environment
 
 LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile
 

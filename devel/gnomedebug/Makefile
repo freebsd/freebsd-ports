@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/gnome/gnome-/}/0.1
 DISTNAME=	${PORTNAME:S/gnome/gnome-/}-${PORTVERSION}
 
 MAINTAINER?=	gnome@FreeBSD.org
+COMMENT=	A GNOME Debugging Framework (GDF)
 
 LIB_DEPENDS=	gdl.0:${PORTSDIR}/x11-toolkits/gdl
 

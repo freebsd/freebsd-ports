@@ -12,6 +12,7 @@ CATEGORIES=	mail elisp
 MASTER_SITES=	http://www02.so-net.ne.jp/~murata/software/pub/
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
+COMMENT=	Procmail reader for Mew on GNU Emacs
 
 # This port requires Mew. But we can't decide which mew to depends, there is
 # NO RUN_DEPENDS mail/mew*.

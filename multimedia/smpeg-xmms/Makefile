@@ -11,6 +11,7 @@ CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.xmms.org/xmms/plugins/smpeg-xmms/
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A mpeg video plugin for XMMS
 
 LIB_DEPENDS=	smpeg.1:${PORTSDIR}/graphics/smpeg \
 		xmms.3:${PORTSDIR}/multimedia/xmms

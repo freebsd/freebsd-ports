@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	System2
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	System2 - like system(), but with STDERR available as well
 
 PERL_CONFIGURE=	yes
 

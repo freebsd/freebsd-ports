@@ -11,6 +11,7 @@ CATEGORIES=	japanese print
 MASTER_SITES=	http://www.flatout.org/~wing/Linux/Escpf/
 
 MAINTAINER=	mita@jp.FreeBSD.org
+COMMENT=	Text filters for ESC/P, ESC/Page and ESC/PS printers
 
 DOCDIR=		${PREFIX}/share/doc/escpf
 LINES?=		66

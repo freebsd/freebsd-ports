@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.kano.org.uk/projects/pxe/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 
 MAINTAINER=	anders@FreeBSD.org
+COMMENT=	PXE daemon, set up a boot menu for netbooting PXE enabled clients
 
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes

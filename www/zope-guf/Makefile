@@ -14,6 +14,7 @@ DISTNAME=	${ZOPEPRODUCTNAME}-${PORTVERSION:S|.|-|g}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	wjv@FreeBSD.org
+COMMENT=	A roll-your-own user folder product for Zope
 
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/z2.py:${PORTSDIR}/www/zope
 

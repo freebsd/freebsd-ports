@@ -12,6 +12,7 @@ MASTER_SITES=	http://stat.fsu.edu/pub/diehard/
 DISTNAME=	die.c
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Marsaglia's Diehard Battery of Tests of Randomness
 
 ALL_TARGET=	diehard
 USE_REINPLACE=	YES

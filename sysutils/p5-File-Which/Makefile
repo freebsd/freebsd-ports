@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	File
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Portable implementation of `which' in Perl
 
 PERL_CONFIGURE=	yes
 

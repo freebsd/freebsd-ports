@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	KDE Software Development Kit
 
 LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db2
 

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.xtrophy.dk/xicq/
 DISTNAME=	xicq-071298-snapshot.src
 
 MAINTAINER=	scrappy@FreeBSD.org
+COMMENT=	Xtropy's ICQ Client
 
 WRKSRC=		${WRKDIR}/xicq-071298
 

@@ -17,6 +17,7 @@ PATCHFILES=	gau-0.4.1.patch gau-0.4.1-rc.patch gau-0.4.1-grim_show.patch \
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	cjh@FreeBSD.org
+COMMENT=	Gtk-based Hangul terminal emulator (for modem/tcp)
 
 RUN_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz \
 		${X11BASE}/lib/X11/fonts/local/gulim12.pcf.gz:${PORTSDIR}/korean/baekmukfonts-bdf

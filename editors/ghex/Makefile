@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/ghex/1.2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	GNOME hex editor
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

@@ -12,6 +12,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://www.nocrew.org/software/vcdpad/
 
 MAINTAINER=	ijliao@FreeBSD.org
+COMMENT=	A program to pad vcd mpegs
 
 USE_GMAKE=	yes
 

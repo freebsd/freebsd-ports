@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Graphics
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	A perl class that defines RGB values for common color names
 
 PERL_CONFIGURE=	yes
 

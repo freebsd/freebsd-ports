@@ -16,6 +16,7 @@ DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	anders@FreeBSD.org
+COMMENT=	Tiny/turbo/throttling HTTP server
 
 IGNOREFILES=	notes.html
 

@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	seanc@FreeBSD.org
+COMMENT=	A Ruby extension that wraps around libGeoIP
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 		GeoIP.2:${PORTSDIR}/net/GeoIP

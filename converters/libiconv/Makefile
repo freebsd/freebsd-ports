@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A character set conversion library
 
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	configure libcharset/configure

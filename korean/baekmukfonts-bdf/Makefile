@@ -20,6 +20,7 @@ DISTFILES=	baekmuk-${PORTVERSION}${EXTRACT_SUFX} \
 EXTRACT_ONLY=	baekmuk-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	cjh@freebsd.org
+COMMENT=	Free Hangul fonts for X11(baekmuk)
 
 USE_X_PREFIX=	yes
 

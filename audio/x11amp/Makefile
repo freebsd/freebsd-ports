@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/misc/x11amp/0.9/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/-beta/}
 
 MAINTAINER=	dburr@FreeBSD.org
+COMMENT=	X11-based MP3 player with nice graphical interface
 
 USE_XLIB=	yes
 USE_GNOMENG=	yes

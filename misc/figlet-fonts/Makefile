@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.figlet.org/pub/figlet/fonts/
 DISTFILES=	contributed.tar.gz international.tar.gz
 
 MAINTAINER=	dd@FreeBSD.org
+COMMENT=	Assorted fonts for the figlet(6) program
 
 RUN_DEPENDS=	figlet:${PORTSDIR}/misc/figlet
 

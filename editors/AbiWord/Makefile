@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	abiword
 DISTNAME=	abiword-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	An open-source, cross-platform WYSIWYG word processor
 
 # unzip is needed during the installation process
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip

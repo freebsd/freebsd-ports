@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	boa-constructor
 DISTNAME=	Boa-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A cross platform RAD GUI Building IDE for wxPython
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/wxPython/wxc.so:${PORTSDIR}/x11-toolkits/py-wxPython
 

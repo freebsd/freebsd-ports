@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	asami/GridPix
 DISTNAME=	GridPix-${PORTVERSION}
 
 MAINTAINER=	asami@FreeBSD.org
+COMMENT=	Present large images efficiently over the Internet
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnetpbm.a:${PORTSDIR}/graphics/netpbm
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg

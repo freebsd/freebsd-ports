@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.iSilo.com/pub/
 DISTNAME=	iSiloBSD
 
 MAINTAINER=	nik@FreeBSD.org
+COMMENT=	Converts documents from text/HTML to iSilo format
 
 USE_ZIP=	yes
 NO_BUILD=	yes

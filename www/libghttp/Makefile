@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/libghttp/1.0
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	GNOME http client library
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

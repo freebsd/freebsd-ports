@@ -12,6 +12,7 @@ MASTER_SITES=	http://dast.nlanr.net/Projects/Iperf/
 DISTNAME=	iperf-1.6.5-source
 
 MAINTAINER=	smace@FreeBSD.org
+COMMENT=	A tool to measure maximum TCP and UDP bandwidth
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

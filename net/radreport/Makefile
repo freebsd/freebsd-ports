@@ -14,6 +14,7 @@ DISTNAME=		radreport
 EXTRACT_SUFX=
 
 MAINTAINER=		kbyanc@FreeBSD.org
+COMMENT=	Perl script for processing radius logs
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

@@ -19,6 +19,7 @@ PATCHFILES=	${DISTNAME}-jp.patch.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	max@FreeBSD.org
+COMMENT=	The 'Internet Relay Chat' Client
 
 GNU_CONFIGURE=	yes
 MAN1=		irc.1

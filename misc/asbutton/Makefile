@@ -11,6 +11,7 @@ CATEGORIES=	misc windowmaker afterstep
 MASTER_SITES=	http://www.tigr.net/afterstep/download/asbutton/
 
 MAINTAINER=	jim@FreeBSD.org
+COMMENT=	A dockapp that displays 4 or 9 buttons to run apps of your choice
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	archie
 
 MAINTAINER=		archie@freebsd.org
+COMMENT=	Packet Design multi-purpose C library for embedded applications
 
 LIB_DEPENDS=		expat.4:${PORTSDIR}/textproc/expat2
 

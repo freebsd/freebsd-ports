@@ -13,6 +13,7 @@ CATEGORIES=	www
 DISTFILES=
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	The embeddable component of mozilla communicator web-surfboard
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/www/mozilla-vendor:build \
 		zip:${PORTSDIR}/archivers/zip \

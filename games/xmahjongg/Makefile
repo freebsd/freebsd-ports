@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.lcdf.org/xmahjongg/
 
 MAINTAINER=	joerg@freebsd.org
+COMMENT=	The Chinese game of Mahjongg for X11
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

@@ -11,6 +11,7 @@ CATEGORIES=     	math
 MASTER_SITES=		http://www.angelfire.com/linux/linuxjeff/mtrxmath/files/
 
 MAINTAINER=		greid@ukug.uk.freebsd.org
+COMMENT=	A small tool for matrix mathemetics
 
 LIB_DEPENDS=		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

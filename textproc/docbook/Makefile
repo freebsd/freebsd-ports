@@ -14,6 +14,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# empty
 
 MAINTAINER=	nik@freebsd.org
+COMMENT=	Meta-port for the different versions of the DocBook DTD
 
 RUN_DEPENDS=	${PREFIX}/share/sgml/iso8879:${PORTSDIR}/textproc/iso8879 \
 		${PREFIX}/share/sgml/docbook/2.4.1:${PORTSDIR}/textproc/docbook-241 \

@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	stable/${KDE_VERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@freebsd.org
+COMMENT=	GUI HTML editor that bears resemblence to kdevelop
 
 BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
 

@@ -14,6 +14,7 @@ DISTFILES=	${BOOTSTRAP} \
 		ezm3-${PORTVERSION}-src.tar.bz2
 
 MAINTAINER=	jdp@FreeBSD.org
+COMMENT=	Easier, more portable Modula-3 distribution for building CVSup
 
 DIST_SUBDIR=	ezm3
 INSTALL_TARGET=	all

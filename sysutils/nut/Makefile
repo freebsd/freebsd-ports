@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.exploits.org/nut/release/${PORTVERSION:R}/
 
 MAINTAINER=	DougB@FreeBSD.org
+COMMENT=	Network UPS Tools
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \

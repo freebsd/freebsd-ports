@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.run
 EXTRACT_ONLY=
 
 MAINTAINER=	se@FreeBSD.org
+COMMENT=	The free demo of Railroad Tycoon II
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

@@ -11,6 +11,7 @@ CATEGORIES=	astro windowmaker
 MASTER_SITES=	http://perso.linuxfr.org/jdumont/wmg/
 
 MAINTAINER=	will@FreeBSD.org
+COMMENT=	A neat xearth-like WindowMaker dockapp
 
 LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker
 

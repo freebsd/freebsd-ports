@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.vector.co.jp/pack/unix/game/action/block/
 DISTFILES=	${PORTNAME}.tgz
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	Block action game
 
 WRKSRC=		${WRKDIR}/xdeblo_v1.0
 USE_IMAKE=	yes

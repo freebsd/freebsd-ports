@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	will@FreeBSD.org
+COMMENT=	Draw pictures of the earth textured by an image
 
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		freetype.9:${PORTSDIR}/print/freetype2 \

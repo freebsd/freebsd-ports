@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.scriptbasic.com/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	greid@ukug.uk.freebsd.org
+COMMENT=	A scripting implementation of the BASIC language
 
 PRFXFILES=	variations/standard/basiccmd.c \
 		variations/standalone/basicc.c \

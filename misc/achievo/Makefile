@@ -12,6 +12,7 @@ MASTER_SITES=	http://ftp.achievo.org/pub/achievo/
 DISTNAME=	${PORTNAME}-stable-${PORTVERSION}
 
 MAINTAINER=	nbm@FreeBSD.org
+COMMENT=	A flexible web-based resource management tool
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 

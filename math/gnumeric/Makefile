@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.0
 DIST_SUBDIR=	gnome
 
 MAINTAINER?=	gnome@FreeBSD.org
+COMMENT=	The GNOME spreadsheet
 
 LIB_DEPENDS=	gnomeole2.0:${PORTSDIR}/devel/libole2 \
 		gbrun.0:${PORTSDIR}/lang/gnomebasic \

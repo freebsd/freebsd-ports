@@ -12,6 +12,7 @@ MASTER_SITES=	http://jasonday.home.att.net/code/syncmal/
 DISTNAME=	jpilot-${PORTNAME}_${PORTVERSION}${EXTRACTSUFX}
 
 MAINTAINER=	fenner@FreeBSD.Org
+COMMENT=	A MAL plugin for jpilot, to synchronize with services like AvantGo
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/palm/jpilot:patch \
 		${NONEXISTENT}:${PORTSDIR}/palm/malsync:patch

@@ -12,6 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://helsteger.supereva.it/kisomandel/
 
 MAINTAINER=	kde@freebsd.org
+COMMENT=	A fractal rendering program with nice 3d-display in realtime
 
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
 

@@ -13,6 +13,7 @@ MASTER_SITES=	http://w3.sys.es.osaka-u.ac.jp/~seke/software/cn2jp/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	leeym@FreeBSD.org
+COMMENT=	A library for code translation between Chinese and Japanese
 
 INSTALLS_SHLIB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -13,6 +13,7 @@ CATEGORIES=	www
 DISTFILES=
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	Header files for mozilla communicator web-surfboard
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/www/mozilla-devel:configure
 

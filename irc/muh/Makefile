@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=muh
 
 MAINTAINER=	billf@FreeBSD.org
+COMMENT=	A smart irc-bouncing-tool that remains on IRC all the time
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

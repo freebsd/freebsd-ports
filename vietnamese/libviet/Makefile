@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	obrien
 
 MAINTAINER=	obrien@FreeBSD.org
+COMMENT=	VIQR<->VISCII conversion and VISCII ctype-like routines
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/lib
 

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.djvu.com/products/plugin/unix/
 DISTNAME=	npdjvu-freebsd
 
 MAINTAINER=	mi@aldan.algebra.com
+COMMENT=	Netscape plugin that views AT&T DjVu images
 
 RUN_DEPENDS=	netscape:${PORTSDIR}/www/netscape47-communicator
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	URI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	Perl module to find URIs in arbitrary text
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/URI.pm:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS=	${BUILD_DEPENDS}

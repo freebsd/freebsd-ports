@@ -19,6 +19,7 @@ DISTNAME?=	TacticalOps220
 .endif
 
 MAINTAINER?=	pat@FreeBSD.org
+COMMENT?=	Unreal Tournament mod Tactical Ops full server package for Linux
 
 RUN_DEPENDS=	${LINUXBASE}/usr/games/ut-server/System/ucc-bin:${UTSERVER_PORT}
 

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	httpd
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	mi@aldan.algebra.com
+COMMENT=	An http-server implemented in TCL
 
 RUN_DEPENDS=	${LOCALBASE}/lib/tcllib1.2/pkgIndex.tcl:${PORTSDIR}/devel/tcllib
 LIB_DEPENDS=	tcl${TCL_VER}:${PORTSDIR}/lang/tcl${TCL_VER}

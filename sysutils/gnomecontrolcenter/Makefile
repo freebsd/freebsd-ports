@@ -15,6 +15,7 @@ DISTNAME=	control-center-${PORTVERSION}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Control center for GNOME project
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

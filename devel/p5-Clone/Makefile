@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Clone
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Clone - recursively copy Perl datatypes
 
 PERL_CONFIGURE=	yes
 

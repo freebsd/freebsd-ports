@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Digest
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	Perl5 interface to the MD5 algorithm
 
 PERL_CONFIGURE=	yes
 

@@ -11,6 +11,7 @@ CATEGORIES=	mbone tk80
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/nte/1.5a29/
 
 MAINTAINER=	fenner@FreeBSD.org
+COMMENT=	Multicast Network Text Editor
 
 LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 

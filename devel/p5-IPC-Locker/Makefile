@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	IPC
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Provide a server for locks and clients to access that server
 
 PERL_CONFIGURE=	yes
 

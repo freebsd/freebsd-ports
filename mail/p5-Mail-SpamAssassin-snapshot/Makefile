@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	Mail
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	DougB@FreeBSD.org
+COMMENT=	A mail filter for identifying SPAM
 
 BROKEN=		"mail/p5-Mail-SpamAssassin has been updated to 2.50"
 

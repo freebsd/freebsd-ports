@@ -18,6 +18,7 @@ MASTER_SITES=	ftp://ftp.mutt.org/mutt/contrib/ \
 #PATCHFILES=	urlview.diff
 
 MAINTAINER=	obrien@FreeBSD.org
+COMMENT=	URL extractor/launcher
 
 USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes

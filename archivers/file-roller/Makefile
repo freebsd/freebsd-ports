@@ -15,6 +15,7 @@ DISTNAME=	file-roller-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	An archive manager for zip files, tar, etc.
 
 LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
 RUN_DEPENDS=	bzip:${PORTSDIR}/archivers/bzip \

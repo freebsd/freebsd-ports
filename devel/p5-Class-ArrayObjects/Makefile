@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Class
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Utility class for array based objects
 
 PERL_CONFIGURE=	yes
 

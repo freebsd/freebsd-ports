@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.linet.gr.jp/~mituiwa/
 DISTNAME=	print-${PORTVERSION}
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT=	A control panel for printers (with Japanese messages)
 
 RUN_DEPENDS=	e2ps:${PORTSDIR}/japanese/e2ps \
 		wish8.0jp:${PORTSDIR}/japanese/tk80 \

@@ -13,6 +13,7 @@ DISTFILES=	# none
 EXTRACT_ONLY=	# none
 
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Localized messages and documentation for KDE
 
 RUN_DEPENDS+=\
 	${PREFIX}/share/locale/ja/entry.desktop:${PORTSDIR}/japanese/kde3-i18n \

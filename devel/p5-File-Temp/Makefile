@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	File
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wjv@FreeBSD.org
+COMMENT=	Perl5 module to generate temporary files or directories safely
 
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

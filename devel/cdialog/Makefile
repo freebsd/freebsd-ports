@@ -18,6 +18,7 @@ DISTNAME=	${PORTNAME:S|^c||}-${PORTVERSION:S|.200|-200|}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	alane@freebsd.org
+COMMENT=	An enhanced version of the 'dialog' command to work with ncurses
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

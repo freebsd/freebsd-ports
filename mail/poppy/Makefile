@@ -11,6 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://home.sprynet.com/~cbagwell/
 
 MAINTAINER=	kevlo@FreeBSD.org
+COMMENT=	A client to perform simple tasks with a POP3/IMAP server
 
 NO_BUILD=	yes
 

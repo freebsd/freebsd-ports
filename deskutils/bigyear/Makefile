@@ -13,6 +13,7 @@ MASTER_SITES=	http://mahon.cwx.net/sources/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	greid@FreeBSD.org
+COMMENT=	A program to print a large (one month per page) calendar
 
 MAN1=		bigyear.1
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Apache
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dburr@FreeBSD.ORG
+COMMENT=	Perl module that logs access information in a DBI database
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \

@@ -15,6 +15,7 @@ DISTNAME=	emacs-20.6-man-jp
 DISTFILES=	${DISTNAME}.tgz ${EMACS_ARC}
 
 MAINTAINER=	okazaki@FreeBSD.org
+COMMENT=	Japanese translation of the GNU Emacs Manual
 
 EMACS_PORT_NAME=	emacs20
 EMACS_NO_RUN_DEPENDS=	YES

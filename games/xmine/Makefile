@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
 DISTNAME=	${PKGNAME}-Xaw
 
 MAINTAINER=	joerg@FreeBSD.org
+COMMENT=	The `Athena' port of the xminesweeper game
 
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 

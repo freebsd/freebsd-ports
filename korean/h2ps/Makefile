@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://cglab.snu.ac.kr/pub/hangul/n3f/tar/ \
 		ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
 
 MAINTAINER=	cjh@FreeBSD.org
+COMMENT=	Formats an ascii file for printing on a postscript printer with Korean char
 
 pre-build:
 	@(cd ${WRKSRC}; make clean)

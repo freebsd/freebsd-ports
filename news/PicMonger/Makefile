@@ -11,6 +11,7 @@ CATEGORIES=	news graphics
 MASTER_SITES=	http://download.sourceforge.net/PicMonger/
 
 MAINTAINER=	dburr@FreeBSD.ORG
+COMMENT=	An automated USENET (NNT) picture decoding client
 
 LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
 RUN_DEPENDS=	mpack:${PORTSDIR}/converters/mpack

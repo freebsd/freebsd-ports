@@ -19,6 +19,7 @@ DISTFILES=	\
 DIST_SUBDIR=	xemacs
 
 MAINTAINER=	kiri@FreeBSD.org
+COMMENT=	XEmacs elisp packages for Games(games)
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PACKAGES_SUBDIR}

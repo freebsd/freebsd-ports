@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Math
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Sum of variables with a numerical coefficient
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/fields.pm:${PORTSDIR}/devel/p5-Class-Fields \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Math/SimpleVariable.pm:${PORTSDIR}/math/p5-Math-SimpleVariable

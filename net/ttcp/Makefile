@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.sgi.com/sgi/src/ttcp/
 DISTFILES=	ttcp.c ttcp.1 README
 
 MAINTAINER=	mharo@FreeBSD.org
+COMMENT=	Benchmarking tool for analysing TCP and UDP performance
 
 EXTRACT_ONLY=	#none
 NO_WRKSUBDIR=	yes

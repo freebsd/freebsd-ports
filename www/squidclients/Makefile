@@ -13,6 +13,7 @@ DISTNAME=	squidclients-1.6-freebsd.bin
 EXTRACT_SUFX=
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Generate a summary of client usage from a Squid log
 
 NO_BUILD=	YES
 NO_WRKSUBDIR=	YES

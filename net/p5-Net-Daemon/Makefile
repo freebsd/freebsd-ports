@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vanilla@FreeBSD.ORG
+COMMENT=	Perl5 extension for portable daemons
 
 PERL_CONFIGURE=	yes
 

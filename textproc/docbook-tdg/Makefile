@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.docbook.org/tdg/en/
 DISTNAME=	tdg-en-html-${PORTVERSION}
 
 MAINTAINER=	wjv@FreeBSD.org
+COMMENT=	Norman Walsh's book "DocBook: The Definitive Guide"
 
 USE_REINPLACE=	yes
 USE_ZIP=	yes

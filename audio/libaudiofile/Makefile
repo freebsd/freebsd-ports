@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	sources/audiofile/0.2
 DISTNAME=	audiofile-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A sound library for SGI audio file
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig

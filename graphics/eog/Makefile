@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/eog/0.6
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	The Eye Of Gnome image viewer
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

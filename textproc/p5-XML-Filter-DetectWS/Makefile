@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	XML
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	A PerlSAX filter that detects ignorable whitespace
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/XML/Filter/SAXT.pm:${PORTSDIR}/textproc/p5-XML-Filter-SAXT
 BUILD_DEPENDS=	${RUN_DEPENDS}

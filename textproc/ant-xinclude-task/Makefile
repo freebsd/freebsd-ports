@@ -12,6 +12,7 @@ MASTER_SITES=	http://people.freebsd.org/~znerd/xinclude-task/
 PKGNAMEPREFIX=	ant-
 
 MAINTAINER=	znerd@FreeBSD.org
+COMMENT=	XInclude task for Jakarta Ant
 
 BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/jakarta-ant \
 		${JAVASHAREDIR}/classes/xincluder.jar:${PORTSDIR}/textproc/xincluder

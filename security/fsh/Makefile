@@ -11,6 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.lysator.liu.se/fsh/
 
 MAINTAINER=	sumikawa@FreeBSD.org
+COMMENT=	Fast remote command execution
 
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
 

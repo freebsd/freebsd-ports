@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A component and compound document system for GNOME2
 
 LIB_DEPENDS=	bonobo-activation.4:${PORTSDIR}/devel/bonobo-activation
 

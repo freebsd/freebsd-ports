@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Class
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	A perlish implementation of Java like inner classes
 
 PERL_CONFIGURE=	yes
 

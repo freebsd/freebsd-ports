@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.ncsa.uiuc.edu/HDF/HDF/HDF${PORTVERSION}/tar/
 DISTNAME=	HDF${PORTVERSION}
 
 MAINTAINER=	mi@aldan.algebra.com
+COMMENT=	Hierarchical Data Format library (from NCSA)
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 

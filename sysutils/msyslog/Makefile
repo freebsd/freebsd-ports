@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	anders@FreeBSD.org
+COMMENT=	Flexible and easy to integrate syslog daemon
 
 .if defined(WITH_MYSQL)
 LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client

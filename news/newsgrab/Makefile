@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	newsgrab
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	Download and uudecode binary files from USENET using regexps
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/News/NNTPClient.pm:${PORTSDIR}/news/p5-NNTPClient \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \

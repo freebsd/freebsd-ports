@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Class
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Provides information about classes
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Class/ISA.pm:${PORTSDIR}/devel/p5-Class-ISA
 RUN_DEPENDS=	${BUILD_DEPENDS}

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.time-travellers.org/oftpd/ \
 		http://atreides.freenix.no/~anders/
 
 MAINTAINER=	anders@FreeBSD.org
+COMMENT=	A threaded, anonymous only FTP server designed for security
 
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	http://aixpdslib.seas.ucla.edu/pub/xspringies/RISC/3.2/src/
 DISTFILES=	xspringies.1.1.tar.Z
 
 MAINTAINER=	jkh@FreeBSD.org
+COMMENT=	A mass and spring simulation system
 
 USE_IMAKE=	yes
 MAN1=		xspringies.1

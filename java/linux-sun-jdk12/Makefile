@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	linux-sun-
 DISTNAME=	${PORTNAME}-${JDK_VERSION:S/./_/g}-linux-i586
 
 MAINTAINER=	znerd@FreeBSD.org
+COMMENT=	Sun Java Development Kit 1.2 for Linux
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
 RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper

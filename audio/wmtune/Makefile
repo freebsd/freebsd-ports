@@ -16,6 +16,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:wmtune \
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	jedgar@FreeBSD.org
+COMMENT=	Dockable radio program for the BT848/878 and RadioTrack cards
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

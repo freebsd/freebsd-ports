@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	cfengine-${PORTVERSION}
 
 MAINTAINER=	fanf@FreeBSD.org
+COMMENT=	GNU cfengine - a systems administration tool for networks
 
 LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4
 

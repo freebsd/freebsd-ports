@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	jmz
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	jmz@FreeBSD.org
+COMMENT=	A Tcl/Tk front end to the hfs program
 
 RUN_DEPENDS=	hfs:${PORTSDIR}/emulators/hfs \
 		wish8.2:${PORTSDIR}/x11-toolkits/tk82

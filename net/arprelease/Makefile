@@ -12,6 +12,7 @@ MASTER_SITES= 	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	arprelease
 
 MAINTAINER=	nbm@FreeBSD.org
+COMMENT=	Libnet tool to flush arp cache entries from devices (eg. routers)
 
 BUILD_DEPENDS=	libnet-config:${PORTSDIR}/net/libnet
 

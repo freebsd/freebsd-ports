@@ -15,6 +15,7 @@ DISTNAME=	metatheme-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	An utility for managing "theme sets" that accomodate gtk, window manager, etc
 
 LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
 

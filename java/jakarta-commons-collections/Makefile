@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	jakarta-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	znerd@FreeBSD.org
+COMMENT=	Classes that extend/augment the Java Collections Framework
 
 BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/jakarta-ant
 

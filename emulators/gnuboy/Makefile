@@ -13,6 +13,7 @@ MASTER_SITES=	http://gnuboy.unix-fu.org/src/ \
 		http://brightrain.aerifal.cx/~laguna/src/
 
 MAINTAINER=	ijliao@FreeBSD.org
+COMMENT=	Nintendo GameBoy emulator
 
 LIB_DEPENDS=	vga.1:${PORTSDIR}/graphics/svgalib \
 		SDL-1.1.5:${PORTSDIR}/devel/sdl12

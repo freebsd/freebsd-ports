@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.tcp-ip.or.jp/~shochan/linux/
 DISTFILES=	xhime151.tgz
 
 MAINTAINER=	flathill@FreeBSD.org
+COMMENT=	Resident Himechan for X Window System
 
 WRKSRC=		${WRKDIR}/xhime1.51
 USE_IMAKE=	yes

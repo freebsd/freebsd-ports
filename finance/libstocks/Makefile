@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mi@aldan.algebra.com
+COMMENT=	A C library which can be used to fetch stocks quotes
 
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""

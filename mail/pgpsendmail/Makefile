@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.dhp.com/pub/crypto/pgp/PGPsendmail/
 DISTNAME=	PGPsendmail-v${PORTVERSION}
 
 MAINTAINER=	ache@FreeBSD.org
+COMMENT=	PGP sign/encrypt/decrypt messages automatically
 
 BUILD_DEPENDS+=	pgp:${PORTSDIR}/security/pgp
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	IO
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	scrappy@FreeBSD.org
+COMMENT=	Perl5 interface to SSL sockets
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Getopt
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Declaratively Expressed Command-Line Arguments via Regular Expressions
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Text/Balanced.pm:${PORTSDIR}/textproc/p5-Text-Balanced
 RUN_DEPENDS=	${BUILD_DEPENDS}

@@ -11,6 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.cs.washington.edu/research/constraints/cassowary/
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	Constraint solving toolkit
 
 BROKEN=		"Does not build"
 

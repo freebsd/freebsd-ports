@@ -11,6 +11,7 @@ CATEGORIES=	x11-clocks gnome
 MASTER_SITES=	http://www.mathematik.uni-kl.de/~wwwstoch/voss/
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	An alarm clock for GNOME desktop designed as a sand-glass
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

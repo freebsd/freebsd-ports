@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	clive@FreeBSD.org
+COMMENT=	Transforms Netscape bookmarks into a Yahoo-like website
 
 .include <bsd.port.pre.mk>
 APXS=		${LOCALBASE}/sbin/apxs

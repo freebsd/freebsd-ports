@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.manicai.net/comp/wmfuzzy/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	adamw@FreeBSD.org
+COMMENT=	A fuzzy clock WindowMaker dockapp
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

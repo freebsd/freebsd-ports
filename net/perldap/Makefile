@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	directory/perldap
 EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	paul@FreeBSD.org
+COMMENT=	Perl interface to LDAP
 
 LIB_DEPENDS=	mozldap.1:${PORTSDIR}/net/ldapsdk
 

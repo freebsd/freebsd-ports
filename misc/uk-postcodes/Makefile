@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.Awfulhak.org/pub/uk-postcodes/ \
 EXTRACT_SUFX=	.gz
 
 MAINTAINER=	brian@FreeBSD.org
+COMMENT=	United Kingdom post codes
 
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${GZCAT}

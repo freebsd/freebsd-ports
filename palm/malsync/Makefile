@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	dirk
 DISTNAME=	malsync_2.1.0.src
 
 MAINTAINER=	dirk@FreeBSD.org
+COMMENT=	Sync to Mobile Application Link (MAL) compliant servers
 
 LIB_DEPENDS=	pisock.8:${PORTSDIR}/palm/pilot-link
 

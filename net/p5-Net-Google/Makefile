@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	simple OOP-ish interface to the Google SOAP API
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite
 RUN_DEPENDS=	${BUILD_DEPENDS}

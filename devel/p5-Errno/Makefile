@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Errno
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	A perl5 module providing access to System errno constants
 
 PERL_CONFIGURE=	YES
 

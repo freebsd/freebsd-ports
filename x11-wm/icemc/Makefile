@@ -11,6 +11,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.algorithm.at/comp/icemc/
 
 MAINTAINER=	adamw@FreeBSD.org
+COMMENT=	QT-based menu editor for IceWM
 
 USE_X_PREFIX=	yes
 USE_QT_VER=	3

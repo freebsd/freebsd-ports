@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.cs.ru.ac.za/homes/g98t4414/rvi/
 DISTNAME=	rvi
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	A simple interface to RCS
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.se.freebsd.org/pub/FreeBSD/JDK/ \
 MASTER_SITE_SUBDIR=	patrick
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	Standard Java Platform for running Java programs
 
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 

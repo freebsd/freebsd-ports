@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR= jedgar
 
 MAINTAINER=	jedgar@FreeBSD.org
+COMMENT=	Graphing calculator using GTK+
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	netchild@FreeBSD.org
+COMMENT=	Change Background Picture with time period
 
 # GNOME parts aren't prefix safe, they install into "gnome-config --prefix"
 USE_X_PREFIX=	yes

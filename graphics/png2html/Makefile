@@ -12,6 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.engr.mun.ca/~holden/
 
 MAINTAINER=	jedgar@fxp.org
+COMMENT=	Takes a PNG image and transforms it into HTML
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		gd.2:${PORTSDIR}/graphics/gd

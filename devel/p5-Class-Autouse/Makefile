@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Class
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Defer loading of one or more classes
 
 PERL_CONFIGURE=	yes
 

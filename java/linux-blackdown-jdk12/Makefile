@@ -17,6 +17,7 @@ PKGNAMEPREFIX=	linux-blackdown-
 DISTNAME=	j2sdk-${PORTVERSION}-FCS-linux-${ARCH}-glibc-2.1.3
 
 MAINTAINER=	znerd@FreeBSD.org
+COMMENT=	Blackdown Java Development Kit 1.2 for Linux
 
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 

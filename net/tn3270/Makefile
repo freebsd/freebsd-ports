@@ -14,6 +14,7 @@ MASTER_SITES=	http://people.freebsd.org/~markm/ \
 DISTNAME=	tn3270
 
 MAINTAINER=	markm@FreeBSD.ORG
+COMMENT=	Full-screen remote login to IBM VM/CMS
 
 MAN1=		tn3270.1 mset.1
 MAN5=		map3270.5

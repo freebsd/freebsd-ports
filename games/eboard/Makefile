@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} eboard-extras-${EXTRASVERSION}.tar.gz
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	GTK+ chess board interface (mainly for FICS and chessd)
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

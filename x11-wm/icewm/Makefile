@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	Window Manager designed for speed, usability and consistency
 
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext

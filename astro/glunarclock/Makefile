@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A GNOME applet which displays the current phase of the Moon
 
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	File
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	File::ReadBackwards -- read a file backwards by lines
 
 BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}

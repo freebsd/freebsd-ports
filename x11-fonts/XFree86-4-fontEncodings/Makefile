@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	XFree86-
 DISTFILES=	X${PORTVERSION:S/.//g}src-2.tgz
 
 MAINTAINER=	anholt@freebsd.org
+COMMENT=	XFree86-4 font encoding files
 
 BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	okazaki@FreeBSD.org
+COMMENT=	A regression testing utility for use with the Java(TM) Language
 
 USE_ZIP=	yes
 USE_JAVA=	1.1+

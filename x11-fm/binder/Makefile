@@ -13,6 +13,7 @@ DISTNAME=	Binder-${PORTVERSION}
 EXTRACT_ONLY=	# extracted directly in install target
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
+COMMENT=	A file manager on X window with TkStep
 
 RUN_DEPENDS=	${RUN_DEP_LIST}
 LIB_DEPENDS=	${LIB_DEP_LIST}

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Data
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Module for generating Globally/Universally Unique Identifiers (GUIDs/UUIDs)
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	</dev/null

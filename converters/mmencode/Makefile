@@ -15,6 +15,7 @@ DISTNAME=	mm${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	kbyanc@posi.net
+COMMENT=	Translate to and from mail-oriented encoding formats
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src/metamail
 

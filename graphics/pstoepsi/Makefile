@@ -14,6 +14,7 @@ DIST_SUBDIR=	pstoepsi
 EXTRACT_ONLY=	#empty
 
 MAINTAINER=	mita@FreeBSD.org
+COMMENT=	Wiliam Chia-Wei Cheng's yet another PS to EPSI converter
 
 RUN_DEPENDS=	pbmtoepsi:${PORTSDIR}/graphics/netpbm \
 		gs:${PORTSDIR}/print/ghostscript-gnu

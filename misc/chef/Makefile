@@ -13,6 +13,7 @@ DISTNAME=	bork
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	brooks@FreeBSD.org
+COMMENT=	Feelter thet cunferts Ingleesh text tu Muck Cheenese-a
 
 WRKSRC=		${WRKDIR}/bork
 

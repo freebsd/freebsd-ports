@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.dtek.chalmers.se/~d3august/xt/dl/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILES}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	3D graphical version of the traceroute program
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/host:${PORTSDIR}/net/host
 LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea

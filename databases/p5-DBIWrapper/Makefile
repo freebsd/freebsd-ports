@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	dbi_wrapper-${PORTVERSION}
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	Perl extension for generic DBI database access
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML

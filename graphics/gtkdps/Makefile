@@ -12,6 +12,7 @@ MASTER_SITES= 	ftp://ftp.aist-nara.ac.jp/pub/personal/masata-y/gtkDPS/
 DISTNAME=	gtkDPS-${PORTVERSION}
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	Gtk bindings for the Display GhostScript System
 
 BUILD_DEPENDS=	pswrap:${PORTSDIR}/x11/dgs
 RUN_DEPENDS=	pswrap:${PORTSDIR}/x11/dgs

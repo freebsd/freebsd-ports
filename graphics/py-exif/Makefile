@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyexif-${PORTVERSION}
 
 MAINTAINER=	wjv@FreeBSD.org
+COMMENT=	Python library to extract EXIF metadata from JPEG and TIFF image files
 
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/pyexif

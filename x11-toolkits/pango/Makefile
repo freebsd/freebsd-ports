@@ -16,6 +16,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/${PORTNAME}/1.2,} \
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	An open-source framework for the layout and rendering of i18n text
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
 LIB_DEPENDS=	glib-2.0.200:${PORTSDIR}/devel/glib20 \

@@ -16,6 +16,7 @@ DIST_SUBDIR=	sybase
 EXTRACT_ONLY=
 
 MAINTAINER=	mi@aldan.algebra.com
+COMMENT=	Headers and static libraries of Sybase OpenClient
 
 NO_BUILD=	no sources :-\
 WRKSRC=		${WRKDIR}/sybase

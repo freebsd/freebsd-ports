@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	AsciiDB
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Perl tie class for a simple ASCII database
 
 PERL_CONFIGURE=	yes
 

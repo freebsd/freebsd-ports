@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Convert
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Perl5 module for uuencode and uudecode
 
 PERL_CONFIGURE=	YES
 

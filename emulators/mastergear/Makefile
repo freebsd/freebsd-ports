@@ -13,6 +13,7 @@ DISTNAME=	MG13-FreeBSD-80x86-bin
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	SEGA Master System and Game Gear emulator for X
 
 NO_WRKSUBDIR=	yes
 ONLY_FOR_ARCHS=	i386

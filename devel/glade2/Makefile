@@ -15,6 +15,7 @@ DISTNAME=	glade-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A user interface builder for GTK+/GNOME
 
 LIB_DEPENDS=	gnomedb-2.1:${PORTSDIR}/databases/libgnomedb \
 		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui

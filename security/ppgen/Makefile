@@ -13,6 +13,7 @@ DISTFILES=	${DISTNAME}.tar.gz en.gz
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	kris@FreeBSD.org
+COMMENT=	Secure passphrase generator
 
 GNU_CONFIGURE=	yes
 

@@ -11,6 +11,7 @@ CATEGORIES=	mbone tk82
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/sdr/2.9/
 
 MAINTAINER=	fenner@FreeBSD.org
+COMMENT=	Multicast Session Directory
 
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 BUILD_DEPENDS=	${LOCALBASE}/lib/libuclmmbase.a:${PORTSDIR}/devel/uclmmbase

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mi@aldan.algebra.com
+COMMENT=	TCL module for accessing MySQL databases
 
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 RUN_DEPENDS=	${TCL_VERSION:S/tcl/tclsh/}:${PORTSDIR}/lang/${TCL_NODOT}

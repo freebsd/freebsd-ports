@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.zope.org/Products/StandaloneZODB/
 DISTNAME=	StandaloneZODB-${PORTVERSION}
 
 MAINTAINER=	wjv@FreeBSD.org
+COMMENT=	The Zope Object Database, a persistent object database for Python
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/bsddb3/__init__.py:${PORTSDIR}/databases/py-bsddb3
 

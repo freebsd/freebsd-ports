@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.cs.tut.fi/~rammer/ \
 		ftp://ftp.cs.tut.fi/pub/src/gnu/
 
 MAINTAINER=	cy@FreeBSD.org
+COMMENT=	A replacement and extension for Tripwire
 
 LIB_DEPENDS=	mhash.2:${PORTSDIR}/security/mhash
 

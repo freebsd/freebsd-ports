@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	ViPEC-${PORTVERSION}
 
 MAINTAINER=	kde@freebsd.org
+COMMENT=	Analyze high frequency, linear electrical networks
 
 BUILD_DEPENDS=	tmake:${PORTSDIR}/devel/tmake
 

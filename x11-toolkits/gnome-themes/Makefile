@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A collection of themes and icons for GNOME 2 designed for accessibility
 
 BUILD_DEPENDS=	${X11BASE}/lib/gtk-2.0/2.2.0/engines/libthinice.so:${PORTSDIR}/x11-toolkits/gtk-thinice-engine \
 		${X11BASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-toolkits/gtk-engines2

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Locale
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	Pure perl implementation of GNU gettext
 
 PERL_CONFIGURE=	YES
 

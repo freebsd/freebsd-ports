@@ -18,6 +18,7 @@ PATCH_SITE_SUBDIR= okazaki/pcl-cvs
 PATCHFILES=	pcl-cvs-2.9.9-compat.patch
 
 MAINTAINER?=	okazaki@FreeBSD.org
+COMMENT=	An Emacs-based front-end to CVS
 
 # startup el filename
 PORT_SETUPEL=	pcl-cvs-setup.el

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	mph
 DISTFILES=		unix8m.tgz
 
 MAINTAINER=		mph@freebsd.org
+COMMENT=	An Infocom game interpreter for X11
 
 WRKSRC=			${WRKDIR}/xinfocom
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Text
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	A PDF manipulation module
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
 RUN_DEPENDS=	${BUILD_DEPENDS}

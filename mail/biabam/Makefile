@@ -11,6 +11,7 @@ CATEGORIES=		mail
 MASTER_SITES=		http://mmj.dk/biabam/
 
 MAINTAINER=		greid@FreeBSD.org
+COMMENT=	A command-line attachment mailer
 
 NO_BUILD=		yes
 

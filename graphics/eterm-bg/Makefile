@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.enlightenment.org/pub/enlightenment/Eterm/ \
 DISTNAME=	Eterm-bg-${PORTVERSION}
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT=	Image files for background of Eterm
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

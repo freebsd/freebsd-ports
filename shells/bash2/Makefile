@@ -24,6 +24,7 @@ PATCH_SITE_SUBDIR=	obrien
 PATCHFILES=	bash205b-001 bash205b-002 bash205b-003 bash205b-004
 
 MAINTAINER=	obrien@FreeBSD.org
+COMMENT=	The GNU Bourne Again Shell
 
 .include <bsd.port.pre.mk>
 

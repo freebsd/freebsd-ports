@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.ee.lbl.gov/conferencing/vat/alpha-test/
 DISTFILES=	vatsrc-4.0b2.tar.gz
 
 MAINTAINER=	fenner@FreeBSD.org
+COMMENT=	The Visual Audio Tool - multicast audioconferencing
 
 GSM_DIR=	${.CURDIR}/../../audio/gsm
 GSM_WORK=	${WRKDIRPREFIX}${GSM_DIR}/work/gsm-1.0-pl10

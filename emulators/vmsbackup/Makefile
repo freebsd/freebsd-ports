@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jmb@FreeBSD.org
+COMMENT=	Reads VMS BACKUP tapes
 
 MAN1=		vmsbackup.1
 MANCOMPRESSED=	yes

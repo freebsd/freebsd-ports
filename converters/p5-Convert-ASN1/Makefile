@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Convert
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	scrappy@FreeBSD.org
+COMMENT=	Perl5 module to encode and decode ASN.1 data structures
 
 PERL_CONFIGURE=	YES
 

@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	obrien@FreeBSD.org
+COMMENT=	A pager utility that speaks Vietnamese
 
 ALL_TARGET=	clobber all
 MAN1=		vnless.1 vnlesskey.1

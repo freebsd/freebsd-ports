@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Math
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Perl extension for base 85 numbers, as referenced by RFC 1924
 
 PERL_CONFIGURE=	yes
 

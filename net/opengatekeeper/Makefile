@@ -13,6 +13,7 @@ MASTER_SITES=	http://download.sourceforge.net/OpenGatekeeper/
 DISTNAME=	opengate_0.9alpha4
 
 MAINTAINER=	roger@FreeBSD.org
+COMMENT=	H323 GateKeeper (MPL Licence) for OpenH323 OhPhone and NetMeeting
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/openh323:build
 

@@ -15,6 +15,7 @@ DISTNAME=	gnome-pilot-${PORTVERSION}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	3Com PalmPilot conduit system for GNOME
 
 BUILD_DEPENDS=	gob:${PORTSDIR}/x11-toolkits/gob
 LIB_DEPENDS=	pisock.8:${PORTSDIR}/palm/pilot-link

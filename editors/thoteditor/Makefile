@@ -18,6 +18,7 @@ MASTER_SITE_SUBDIR=	apps/editors/X/thot
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	chuckr@FreeBSD.org
+COMMENT=	An structured document editor, offering a graphical WYSIWYG interface
 
 THOT_SUBDIR=	Target
 USE_MOTIF=	yes

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	XML
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Regular expressions for XML tokens
 
 PERL_CONFIGURE=	yes
 

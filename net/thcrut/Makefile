@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.thehackerschoice.com/releases/
 
 MAINTAINER=	kris@FreeBSD.org
+COMMENT=	Local network discovery tool
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 

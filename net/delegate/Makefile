@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://www.delegate.org/pub/DeleGate/ \
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	max@FreeBSD.org
+COMMENT=	General purpose TCP/IP proxy system
 
 USE_BZIP2=	YES
 NO_PACKAGE=	"Insecure program."

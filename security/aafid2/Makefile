@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.rge.com/pub/security/cerias/tools/unix/ids/AAFID/ \
 EXTRACT_ONLY=
 
 MAINTAINER=	se@FreeBSD.org
+COMMENT=	A distributed monitoring and intrusion detection system
 
 RUN_DEPENDS=	ptksh:${PORTSDIR}/x11-toolkits/p5-Tk
 

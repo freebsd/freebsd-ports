@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	greid@FreeBSD.org
+COMMENT=	A network sniffer/interceptor/injector/logger for switched LANs
 
 GNU_CONFIGURE=	yes
 

@@ -14,6 +14,7 @@ DISTNAME=	VGB
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	Nintendo GameBoy(tm) emulator
 
 WRKSRC=		${WRKDIR}/GB
 

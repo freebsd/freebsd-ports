@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.oersted.co.jp/~yav/soft/xpx/
 DISTNAME=	xpx141
 
 MAINTAINER=	flathill@FreeBSD.org
+COMMENT=	A simple pixel editing tool to make datas for KISS
 
 WRKSRC=		${WRKDIR}/xpx
 USE_IMAKE=	yes

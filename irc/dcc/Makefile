@@ -18,6 +18,7 @@ PATCHFILES=	irchat-pj-${PORTVERSION}pl2.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	yoichi@FreeBSD.org
+COMMENT=	DCC support program for irchat-pj
 
 ALL_TARGET=	dcc
 LDFLAGS=	${PTHREAD_LIBS}

@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME:U}-${PORTVERSION:C|\.([^.]*)$|-\1|}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	wjv@FreeBSD.org
+COMMENT=	A pure Python module that provides an implementation of SOAP 1.1
 
 RUN_DEPENDS=	${PYXML}
 

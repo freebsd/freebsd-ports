@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sources/ORBit/0.5
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	High-performance CORBA ORB with support for the C language
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext

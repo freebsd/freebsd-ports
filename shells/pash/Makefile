@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.chez-pierre.com/pash/Archives/
 DISTNAME=	pash.sources
 
 MAINTAINER=	greid@ukug.uk.freebsd.org
+COMMENT=	A full-screen shell (commander GUI) for *nix.
 
 NO_WRKSUBDIR=	yes
 

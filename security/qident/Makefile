@@ -11,6 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.netbsd.org/~ad/qident/
 
 MAINTAINER=	dd@FreeBSD.org
+COMMENT=	Query a remote IDENT (RFC 1413) server
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libident.a:${PORTSDIR}/security/libident
 

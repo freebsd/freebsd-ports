@@ -12,6 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.italpro.net/mb/soft/
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	Tool to view and manage a qmail queue
 
 RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-qstat:${PORTSDIR}/mail/qmail
 

@@ -11,6 +11,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.stanford.edu/~satyakid/
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	A pager for sawfish without GNOME
 
 RUN_DEPENDS=	sawfish:${PORTSDIR}/x11-wm/sawfish
 

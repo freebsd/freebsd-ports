@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	sources/imlib/1.9
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A graphic library for enlightenment package
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \

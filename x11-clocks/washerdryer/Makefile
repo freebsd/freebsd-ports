@@ -12,6 +12,7 @@ MASTER_SITES=	http://lucille.dhs.org/
 DISTNAME=	washerDryer-${PORTVERSION}
 
 MAINTAINER=	pat@FreeBSD.org
+COMMENT=	A dockapp that keeps track of the loads in your washer and dryer
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/washerDryer
 USE_X_PREFIX=	yes

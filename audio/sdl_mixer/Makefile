@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.libsdl.org/projects/SDL_mixer/release/
 DISTNAME=	SDL_mixer-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A sample multi-channel audio mixer library
 
 LIB_DEPENDS=  	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		smpeg.1:${PORTSDIR}/graphics/smpeg \

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	jim
 DISTNAME=	wmtictactoe-1.1-1
 
 MAINTAINER=	jim@FreeBSD.org
+COMMENT=	A dockable TicTacToe game for WindowMaker and AfterStep
 
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/wmtictactoe.app/wmtictactoe

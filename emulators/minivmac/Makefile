@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	blackend@FreeBSD.org
+COMMENT=	A miniature Macintosh emulator
 
 USE_REINPLACE=	yes
 USE_XLIB=	yes

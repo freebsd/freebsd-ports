@@ -13,6 +13,7 @@ DISTNAME=	viewer.bin
 EXTRACT_SUFX=
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	Viewer for the PDF files written in Java(TM)
 
 RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper \
 		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jre

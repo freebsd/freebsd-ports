@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.saferpay.com/download/
 DISTFILES=	${PORTNAME}_${PORTVERSION}_linux-g++_src.tar.gz
 
 MAINTAINER=	mbr@FreeBSD.org
+COMMENT=	A command line tool for online payment
 
 MAKEFILE=	${WRKSRC}/saferpay/Makefile
 

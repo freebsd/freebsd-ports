@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Class
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Inheritable, overridable class data
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/base.pm:${PORTSDIR}/devel/p5-Class-Fields
 RUN_DEPENDS=	${BUILD_DEPENDS}

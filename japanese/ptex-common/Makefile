@@ -17,6 +17,7 @@ DISTFILES=	${TETEX_SRC} ${TETEX_TEXMF} ${PTEX_TEXMF} ${DVIPSK_JPATCH}
 EXTRACT_ONLY=	${TETEX_SRC} ${DVIPSK_JPATCH}
 
 MAINTAINER=	max@FreeBSD.org
+COMMENT=	Character code independent files for ASCII Japanese pTeX
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		wwwcore.1:${PORTSDIR}/www/libwww

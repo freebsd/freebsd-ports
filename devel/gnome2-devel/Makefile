@@ -14,6 +14,7 @@ DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	The "meta-port" for the GNOME 2.0 development API
 
 RUN_DEPENDS=	intltool-merge:${PORTSDIR}/textproc/intltool \
 		gnome-autogen.sh:${PORTSDIR}/devel/gnomecommon \

@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	espgs
 DISTNAME=		espgs-${PORTVERSION}-source
 
 MAINTAINER=	alane@FreeBSD.org
+COMMENT=	GNU Postscript interpreter for CUPS printing to non-PS printers
 
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
 RUN_DEPENDS+=	${LOCALBASE}/share/ghostscript/fonts/fonts.scale:${PORTSDIR}/print/ghostscript-gnu

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	HTML
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Produces summaries from the textual content of web pages
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/HTML/TreeBuilder.pm:${PORTSDIR}/www/p5-HTML-Tree
 

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
+COMMENT=	Japanese AFM fonts
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

@@ -14,6 +14,7 @@ DISTNAME=	mm${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	torstenb@FreeBSD.org
+COMMENT=	Implementation of MIME, the Multipurpose Internet Mail Extensions
 
 RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage
 

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER?=	kde@FreeBSD.org
+COMMENT=	Utilities for the KDE integrated X11 desktop
 
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}

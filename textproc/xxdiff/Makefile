@@ -18,6 +18,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	QT interface to view/merge differences between 2 or 3 files
 
 BUILD_DEPENDS=	tmake:${PORTSDIR}/devel/tmake
 

@@ -13,6 +13,7 @@ MASTER_SITES=   	http://www.exolution.de/wapsh/
 DISTNAME=		${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=		greid@FreeBSD.org
+COMMENT=	A system to allow remote shell logins via a WAP phone or web browser
 
 #RUN_DEPENDS=		${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13 \
 #			${LOCALBASE}/libexec/apache/libphp3.so:${PORTSDIR}/www/mod_php3

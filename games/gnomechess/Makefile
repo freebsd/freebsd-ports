@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sources/gnome-chess/0.3
 DISTNAME=	gnome-chess-${PORTVERSION}
 
 MAINTAINER=	reg@FreeBSD.org
+COMMENT=	A GUI chess front-end to crafy, for the GNOME Desktop Environment
 
 BUILD_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty

@@ -11,6 +11,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	http://www.mcknight.de/jftpgw/
 
 MAINTAINER=	se@FreeBSD.org
+COMMENT=	Highly configurable FTP proxy
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

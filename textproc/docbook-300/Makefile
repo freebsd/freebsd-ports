@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.ora.com/pub/davenport/
 DISTFILES=	docbk30.tar.Z
 
 MAINTAINER=	nik@FreeBSD.org
+COMMENT=	V3.0 of the DocBook DTD, designed for technical documentation
 
 RUN_DEPENDS=	${ISOCAT}:${PORTSDIR}/textproc/iso8879 \
 		${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog

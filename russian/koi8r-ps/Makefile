@@ -14,6 +14,7 @@ DISTFILES=	gs-type1_koi8_fonts.tgz gs-type1_koi8_afm.tgz \
 		XFree86-Type1_fonts.dir.scale.gz
 
 MAINTAINER=	mi@aldan.algebra.com
+COMMENT=	Add Russian (KOI8) fonts to your PostScript fonts collection
 
 EXTRACT_ONLY=
 

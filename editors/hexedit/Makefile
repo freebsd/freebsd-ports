@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	utils/file/hex
 EXTRACT_SUFX=	.src.tgz
 
 MAINTAINER=	obrien@FreeBSD.org
+COMMENT=	View and edit files in hexadecimal or ASCII
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-${PORTVERSION}//}
 GNU_CONFIGURE=	yes

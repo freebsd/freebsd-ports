@@ -14,6 +14,7 @@ DISTNAME=	gnome-pilot-conduits-${PORTVERSION}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Additional conduits for gnome-pilot
 
 LIB_DEPENDS=	gpilotd.1:${PORTSDIR}/palm/gnomepilot
 

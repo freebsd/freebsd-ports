@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.net-games.com/downloads/
 DISTFILES=	fsgs07126bsd.tgz fsgs0721lx.tgz
 
 MAINTAINER=	dburr@FreeBSD.ORG
+COMMENT=	Free network game server with ladders, player rankings, more
 
 NO_BUILD=	yes
 

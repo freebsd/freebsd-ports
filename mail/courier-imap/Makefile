@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
 
 MAINTAINER=	nbm@FreeBSD.org
+COMMENT=	IMAP (and POP3) server that provides access to Maildir mailboxes
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes

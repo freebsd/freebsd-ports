@@ -14,6 +14,7 @@ MASTER_SITES=	http://community.corest.com/pub/audit/ \
 DISTNAME=	${PORTNAME}-v${PORTVERSION}beta-src
 
 MAINTAINER=	anders@FreeBSD.org
+COMMENT=	Tools for remote and centralized audit data collection
 
 .if defined(WITH_MYSQL)
 LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Convert
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Perl5 interface to the uulib library (a.k.a. uudeview/uuenview)
 
 PERL_CONFIGURE=	yes
 

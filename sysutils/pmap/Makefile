@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.wuppy.net.ru/pub/FreeBSD/local/pmap/
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Detailed process memory display
 
 PLIST_SUB=	KMODDIR=${KMODDIR}
 WRKSRC=		${WRKDIR}/${PORTNAME}

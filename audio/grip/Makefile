@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=grip
 
 MAINTAINER=	alane@FreeBSD.org
+COMMENT=	GTK-based front-end to external cd audio rippers and mp3 encoders
 
 LIB_DEPENDS=	id3-3.8.2:${PORTSDIR}/audio/id3lib \
 		ghttp.1:${PORTSDIR}/www/libghttp

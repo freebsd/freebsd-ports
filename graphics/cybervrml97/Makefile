@@ -14,6 +14,7 @@ DISTFILES=	cv97r${PORTVERSION:S/.//g}${EXTRACT_SUFX} Makefile
 EXTRACT_ONLY=	cv97r${PORTVERSION:S/.//g}${EXTRACT_SUFX}
 
 MAINTAINER=	3d@FreeBSD.org
+COMMENT=	A development library of VRML97/2.0 applications
 
 DIST_SUBDIR=	${PORTNAME}
 USE_MESA=	yes

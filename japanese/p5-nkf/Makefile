@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	ja-p5-
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//:S/./-/}
 
 MAINTAINER=	max@FreeBSD.org
+COMMENT=	A perl extension module to use NKF
 
 PERL_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/NKF.mod

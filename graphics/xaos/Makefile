@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	xaos
 DISTNAME=	XaoS-${PORTVERSION}
 
 MAINTAINER=	jkoshy@freebsd.org
+COMMENT=	A real-time fractal browser for X11 and ASCII terminals
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 .if defined(WITH_SVGALIB)

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	jmz
 DISTNAME=	dvips576
 
 MAINTAINER=	jmz@FreeBSD.org
+COMMENT=	Convert a TeX DVI file to PostScript
 
 WRKSRC=		${WRKDIR}/dvips576/dvips
 IS_INTERACTIVE=	yes

@@ -15,6 +15,7 @@ MASTER_SITES=	\
 DISTNAME=	oracle7.client.OCI
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Oracle 7 client
 
 ORACLE_PREFIX=	oracle7
 DIST_SUBDIR=	${ORACLE_PREFIX}

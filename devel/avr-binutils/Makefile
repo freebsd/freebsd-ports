@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	binutils/releases
 PKGNAMEPREFIX=	avr-
 
 MAINTAINER=	joerg@freebsd.org
+COMMENT=	GNU binutils for Atmel AVR 8-bit RISC cross-development
 
 WRKSRC=		${WRKDIR}/binutils-${PORTVERSION}
 

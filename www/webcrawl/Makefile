@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	apps/www/mirroring
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Download web sites without user interaction by following links
 
 ALL_TARGET=
 

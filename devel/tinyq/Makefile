@@ -15,6 +15,7 @@ CATEGORIES=	devel kde
 MASTER_SITES=	http://savannah.nongnu.org/download/tinyq/
 
 MAINTAINER=	kde@freebsd.org
+COMMENT=	A stripped down version of Qt 3 for use as a utility library
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

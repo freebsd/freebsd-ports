@@ -14,6 +14,7 @@ DISTNAME=	deco383
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Demos Commander, a free Norton Commander clone
 
 WRKSRC=		${WRKDIR}/deco383
 GNU_CONFIGURE=	yes

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	IPC
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	leeym@FreeBSD.org
+COMMENT=	Share Perl variables between processes
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Text
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Text::Balanced - extract delimited text sequences from strings
 
 PERL_CONFIGURE=	yes
 

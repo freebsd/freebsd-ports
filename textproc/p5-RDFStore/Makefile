@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	RDF
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Perl API for RDF Storage
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Digest.pm:${PORTSDIR}/security/p5-Digest \

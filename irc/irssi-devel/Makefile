@@ -12,6 +12,7 @@ CATEGORIES+=	irc	# `+=' is for slave ports
 MASTER_SITES=	http://irssi.org/files/
 
 MAINTAINER?=	vanilla@FreeBSD.org
+COMMENT?=	A modular IRC client with many features
 
 USE_BZIP2=	yes
 USE_PERL5=	yes

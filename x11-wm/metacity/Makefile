@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.4
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A window manager for the adult in you
 
 LIB_DEPENDS=	gconf-2:${PORTSDIR}/devel/gconf2 \
 		glade-2.0.0:${PORTSDIR}/devel/libglade2 \

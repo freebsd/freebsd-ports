@@ -13,6 +13,7 @@ DISTNAME=	tya17v3
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A ``100% unofficial'' JIT-compiler for java
 
 BUILD_DEPENDS=	${JAVADIR}/bin/java:${PORTSDIR}/java/jdk11
 

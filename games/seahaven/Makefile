@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	imp@FreeBSD.org
+COMMENT=	The classic, lightweight version of Seahaven Towers
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.wiretrip.net/rfp/bins/whisker/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	kris@FreeBSD.ORG
+COMMENT=	A sophisticated CGI (in)security scanner
 
 WRKSRC=		${WRKDIR}/v${PORTVERSION}
 NO_BUILD=	yes

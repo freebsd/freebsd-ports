@@ -12,6 +12,7 @@ MASTER_SITES=	http://scifi.squawk.com/
 DISTFILES=	${PORTNAME}.stable demime_junkmail.cf
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	A tool to scrub mime from mailing lists
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Bundle/LWP.pm:${PORTSDIR}/www/p5-libwww \

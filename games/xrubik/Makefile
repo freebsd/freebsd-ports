@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games/xpuzzles
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	X-based rubik's cube(tm)
 
 WRKSRC=		${WRKDIR}/xrubik
 USE_IMAKE=	yes

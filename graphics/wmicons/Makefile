@@ -19,6 +19,7 @@ MASTER_SITE_SUBDIR=	. contrib/icons beta/srcs
 DISTFILES=	${EXTRACT_ONLY} isiconpack4.tgz
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
+COMMENT=	Icons mainly for use in Window Maker
 
 EXTRACT_ONLY=	DWiconpack1.tar.gz DWiconpack2.tar.gz IconFest-1.2.tgz \
 		NeXT_XEmacs_tar.gz  wm_icons_png.tar.gz wm_icons_tif.tar.gz \

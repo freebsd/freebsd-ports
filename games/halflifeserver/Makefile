@@ -11,6 +11,7 @@ CATEGORIES=	games linux
 DISTNAME=	hlds_l_${PORTVERSION:S/.//g}_full
 
 MAINTAINER=	pat@FreeBSD.org
+COMMENT=	Half-Life Dedicated Server for Linux
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX_PREFIX=	yes

@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	_tar.gz
 
 MAINTAINER=	mi@aldan.algebra.com
+COMMENT=	Binary File Viewer, Editor, & Manipulator (and a lot more)
 
 NO_WRKSUBDIR=	Yes
 

@@ -12,6 +12,7 @@ MASTER_SITES=	http://sunsite.dk/xinvest/	\
 MASTER_SITE_SUBDIR= applications
 
 MAINTAINER=	mph@freebsd.org
+COMMENT=	A quote retrieval tool for X
 
 USE_MOTIF=	yes
 USE_IMAKE=	yes

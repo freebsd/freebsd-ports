@@ -11,6 +11,7 @@ CATEGORIES=	graphics tk82
 MASTER_SITES=	http://members.yourlink.net/aaron/software/linux/
 
 MAINTAINER=	jedgar@fxp.org
+COMMENT=	Tcl/Tk frontend to xanim
 
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82 \
 		xanim:${PORTSDIR}/graphics/xanim

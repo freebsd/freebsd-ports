@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.acme.com/software/mini_httpd/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/beta/}
 
 MAINTAINER=	se@FreeBSD.org
+COMMENT=	Small HTTP server with support for GET, HEAD, POST, CGI, SSL, IPv6
 
 .ifndef NO_SSL
 USE_OPENSSL=	YES

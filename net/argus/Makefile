@@ -12,6 +12,7 @@ MASTER_SITES=	http://qosient.com/argus/src/ \
 		ftp://qosient.com/pub/argus/src/
 
 MAINTAINER=	se@freebsd.org
+COMMENT=	A generic IP network transaction auditing tool
 
 .if !exists(/usr/include/tcpd.h)
 LIB_DEPENDS=	wrap.7:${PORTSDIR}/security/tcp_wrapper

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Libraries for the GNOME GUI, a GNU desktop environment
 
 LIB_DEPENDS+=	bonoboui-2.0:${PORTSDIR}/x11-toolkits/libbonoboui \
 		startup-notification-1.0:${PORTSDIR}/x11/startup-notification

@@ -18,6 +18,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		BSDPAN-${PORTVERSION}_${BSDPAN_REVISION}${EXTRACT_SUFX}:local
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Practical Extraction and Report Language
 
 PERL_VER=	5.8.0
 PERL_ARCH=	mach

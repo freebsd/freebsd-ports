@@ -11,6 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://pldaniels.com/replaceit/
 
 MAINTAINER=	pat@FreeBSD.org
+COMMENT=	A light replacement to the combination of sed/awk/grep/head/tail
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/replaceit ${PREFIX}/bin

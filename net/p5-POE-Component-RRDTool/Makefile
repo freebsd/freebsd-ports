@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	POE
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	POE interface to Round Robin Database Tools
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/POE.pm:${PORTSDIR}/devel/p5-POE \
 		${LOCALBASE}/bin/rrdtool:${PORTSDIR}/net/rrdtool

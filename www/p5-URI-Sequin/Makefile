@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	../../authors/id/S/SA/SARGIE
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Extract information from the URLs of Search-Engines
 
 PERL_CONFIGURE=	yes
 

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/crypto/pgp/
 DISTNAME=	pgp26ru
 
 MAINTAINER=	ache@FreeBSD.org
+COMMENT=	Russian language module for PGP
 
 RUN_DEPENDS+=	${LOCALBASE}/lib/pgp/config.txt:${PORTSDIR}/security/pgp
 

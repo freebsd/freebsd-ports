@@ -19,6 +19,7 @@ PATCHFILES=	${DISTNAME}-jgroff-0.0.2.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	okazaki@FreeBSD.org
+COMMENT=	Japanese enhancement of GNU xditview
 
 RUN_DEPENDS=	${LOCALBASE}/bin/groff:${PORTSDIR}/japanese/groff
 

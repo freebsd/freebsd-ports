@@ -11,6 +11,7 @@ CATEGORIES=	misc windowmaker
 MASTER_SITES=	http://members.ozemail.com.au/~crn/wmessage/
 
 MAINTAINER=	pat@FreeBSD.org
+COMMENT=	A WINGs based message viewer similar to xmessage
 
 BUILD_DEPENDS=	get-wraster-flags:${PORTSDIR}/x11-wm/windowmaker
 

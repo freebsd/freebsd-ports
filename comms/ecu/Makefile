@@ -11,6 +11,7 @@ CATEGORIES=	comms
 MASTER_SITES=  ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/Communications/
 
 MAINTAINER=	ache@FreeBSD.org
+COMMENT=	Extended Call Utility
 
 USE_REINPLACE=	yes
 

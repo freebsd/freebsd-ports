@@ -15,6 +15,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION:S/${PATCH_LEVEL}$/-patch&/}-tex.tar.gz \
 		${PORTNAME}-${PORTVERSION:S/${PATCH_LEVEL}$/-patch&/}-type1.tar.gz
 
 MAINTAINER=	kappa@freebsd.org.ua
+COMMENT=	Cyrillic PostScript Type1 fonts for use with TeX
 
 RUN_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
 # no other TeX is sufficient

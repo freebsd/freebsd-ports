@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	recode
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Converts files between character sets and usages
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

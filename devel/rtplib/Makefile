@@ -11,6 +11,7 @@ CATEGORIES=	devel mbone
 MASTER_SITES=	http://www-out.bell-labs.com:80/project/RTPlib/
 
 MAINTAINER=	jkoshy@freebsd.org
+COMMENT=	A library for developing applications over RTP
 
 RTP_HEADERS=	rtp_api.h rtp_highlevel.h rtp_lowlevel.h
 

@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	anders@FreeBSD.org
+COMMENT=	An Apache module to monitor bandwidth usage, for use with MRTG etc
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13

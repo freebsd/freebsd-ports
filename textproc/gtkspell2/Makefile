@@ -13,6 +13,7 @@ MASTER_SITES=	http://gtkspell.sourceforge.net/download/
 DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A GTK+ 2 spell checking component
 
 LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20 \
 		pspell.15:${PORTSDIR}/textproc/aspell

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	DBD
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	DBI driver for Oracle RDBMS server
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${LOCALBASE}/oracle7/rdbms/demo/oracle.mk:${PORTSDIR}/databases/oracle7-client

@@ -17,6 +17,7 @@ MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
 
 MAINTAINER=	cy@FreeBSD.org
+COMMENT=	The Network Time Protocol Distribution
 
 # ntp's configure script created by autoconf 2.14.1 doesn't work
 # if GNU_CONFIGURE is defined

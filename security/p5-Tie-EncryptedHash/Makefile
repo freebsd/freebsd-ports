@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Tie
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mharo@FreeBSD.org
+COMMENT=	Hashes (and objects based on hashes) with encrypting fields
 
 PERLBASE=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://telepresence.dmem.strath.ac.uk/pub/openh323/
 DISTNAME=	ixj_freebsd-${PORTVERSION}
 
 MAINTAINER=	roger@freebsd.org
+COMMENT=	Driver for Quicknet Internet PhoneJack and LineJack. Used by OpenH323
 
 ONLY_FOR_ARCHS=	i386
 

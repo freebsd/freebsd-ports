@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.ifi.uio.no/pub/pgp/2.x/src/ \
 DISTNAME=	pgp263is
 
 MAINTAINER=	ache@FreeBSD.org
+COMMENT=	PGP MIT or International version - Public-Key encryption for the masses
 
 WRKSRC=		${WRKDIR}/src
 

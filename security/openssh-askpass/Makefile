@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kris
 
 MAINTAINER=	kris@FreeBSD.org
+COMMENT=	Graphical password applet for entering SSH passphrase
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/X11/xc/programs/ssh-askpass
 USE_IMAKE=	yes

@@ -11,6 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.winfield.demon.nl/linux/
 
 MAINTAINER=	leeym@FreeBSD.org
+COMMENT=	An application to display Microsoft(tm) Word files
 
 USE_REINPLACE=	yes
 INSTALL_TARGET=	global_install

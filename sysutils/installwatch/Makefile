@@ -12,5 +12,6 @@ MASTER_SITES=   http://mayams.net/~izto/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	greid@ukug.uk.freebsd.org
+COMMENT=	A file creation/modification logger
 
 .include <bsd.port.mk>

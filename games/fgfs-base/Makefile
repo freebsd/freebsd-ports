@@ -17,6 +17,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${BASEFILE}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	des@FreeBSD.org
+COMMENT=	The FlightGear flight simulator
 
 BUILD_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${LOCALBASE}/lib/libmk4.a:${PORTSDIR}/databases/metakit \

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.digger.org/
 DISTNAME=	${PORTNAME}-${DIGREL}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	FreeBSD graphics console (VGL) version of the famous Digger game
 
 .if defined(WITH_SOUND)
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config

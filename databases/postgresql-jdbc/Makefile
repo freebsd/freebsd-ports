@@ -9,6 +9,7 @@ PORTNAME=	postgresql-jdbc
 CATEGORIES=	databases java
 
 MAINTAINER=	girgen@pingpong.net
+COMMENT=	The Java JDBC implementation for PostgreSQL
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/jakarta-ant
 

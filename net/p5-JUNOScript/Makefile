@@ -16,6 +16,7 @@ PKGNAMEPREFIX=		p5-
 DISTNAME=		junoscript-perl-${PORTVERSION}-domestic
 
 MAINTAINER=		jesper@FreeBSD.org
+COMMENT=	API to exchange information with Juniper Networks routers
 
 PERL_BASE=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2 \

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Set
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Perl module for grouped data eg ACL's, city/state/country etc
 
 PERL_CONFIGURE=	yes
 

@@ -11,6 +11,7 @@ CATEGORIES=	mail python gnome
 MASTER_SITES=	http://pygmy.sourceforge.net/
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A tiny GNOME mail client written in the Python programming language
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome \

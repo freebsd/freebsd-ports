@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.interface-business.de/pub/outgoing/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	joerg@FreeBSD.org
+COMMENT=	Convert HTML document into LaTeX
 
 MAN1=		html2latex.1
 MANCOMPRESSED=	yes

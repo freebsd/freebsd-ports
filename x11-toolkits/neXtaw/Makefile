@@ -11,6 +11,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://gama.urisan.tche.br/~casantos/neXtaw/
 
 MAINTAINER=	tg@FreeBSD.org
+COMMENT=	Athena Widgets with N*XTSTEP appearance
 
 USE_IMAKE=	yes
 INSTALLS_SHLIB=	yes

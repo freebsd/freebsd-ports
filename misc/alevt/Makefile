@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 MASTER_SITE_SUBDIR=	apps/video
 
 MAINTAINER=	roger@freebsd.org
+COMMENT=	X11 Teletext decoding and display program. (reads from /dev/vbi)
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 

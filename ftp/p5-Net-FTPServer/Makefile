@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	A full-featured, secure, extensible and configurable Perl FTP server
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Authen/PAM.pm:${PORTSDIR}/security/p5-Authen-PAM \
 		${SITE_PERL}/${PERL_ARCH}/BSD/Resource.pm:${PORTSDIR}/devel/p5-BSD-Resource \

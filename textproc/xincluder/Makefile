@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.ibiblio.org/pub/languages/java/javafaq/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	znerd@FreeBSD.org
+COMMENT=	Java-based XInclude processors
 
 BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/jakarta-ant
 

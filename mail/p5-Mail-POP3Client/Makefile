@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	POP3Client-${PORTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Perl5 module to talk to a POP3 (RFC1081) server
 
 PERL_CONFIGURE=	YES
 

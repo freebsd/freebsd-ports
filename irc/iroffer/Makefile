@@ -13,6 +13,7 @@ DISTNAME=	iroffer${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dburr@FreeBSD.ORG
+COMMENT=	An IRC "bot" that makes sharing files via DCC extremely easy
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure

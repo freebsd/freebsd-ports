@@ -13,6 +13,7 @@ MASTER_SITES=	#
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 
 MAINTAINER=	java@freebsd.org
+COMMENT=	A set of abstract Java classes that model a mail system
 
 RUN_DEPENDS=	${LOCALBASE}/share/java/classes/activation.jar:${PORTSDIR}/java/jaf
 

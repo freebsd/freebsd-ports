@@ -14,6 +14,7 @@ DISTNAME=	gedit-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A small but powerful text editor for Gnome 2.0 Desktop Environment
 
 LIB_DEPENDS=	gnomeprintui-2-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui \
 		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \

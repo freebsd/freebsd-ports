@@ -12,6 +12,7 @@ MASTER_SITES=	http://www2m.biglobe.ne.jp/~dolphin/lha/prog/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//}
 
 MAINTAINER=	ache@FreeBSD.org
+COMMENT=	Archive files using LZW compression (.lzh files)
 
 MAN1=		lha.1
 MANLANG=	ja

@@ -11,6 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://tud.at/programm/fwanalog/
 
 MAINTAINER=	cy@FreeBSD.org
+COMMENT=	A firewall log summarizer that uses Analog
 
 RUN_DEPENDS=	analog:${PORTSDIR}/www/analog
 

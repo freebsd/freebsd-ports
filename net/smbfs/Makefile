@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.butya.kz/pub/smbfs/
 
 MAINTAINER=	bp@freebsd.org
+COMMENT=	SMB/CIFS protocol and SMB/CIFS file system implementation
 
 NO_PACKAGE=     "Depends on kernel"
 

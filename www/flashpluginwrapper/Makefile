@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 MASTER_SITE_SUBDIR=	petef
 
 MAINTAINER=	nork@FreeBSD.org
+COMMENT=	A wrapper allowing use of linux-flashplugin with native mozilla
 
 RUN_DEPENDS=	${LOCALBASE}/lib/flash/libflashplayer.so:${PORTSDIR}/www/linux-flashplugin
 

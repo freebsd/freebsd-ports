@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kris@FreeBSD.org
+COMMENT=	Netscape cache browser
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

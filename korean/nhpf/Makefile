@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://cglab.snu.ac.kr/pub/hangul/n3f/tar/ \
 		ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
 
 MAINTAINER=	cjh@FreeBSD.org
+COMMENT=	Hangul Printing Filter for Netscape with embedded font
 
 do-install:
 	${MKDIR} ${PREFIX}/bin

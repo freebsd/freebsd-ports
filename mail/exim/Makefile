@@ -22,6 +22,7 @@ DISTFILES+=	exiscan-${EXISCAN_VERSION}.tar.bz2
 .endif
 
 MAINTAINER=	sheldonh@FreeBSD.org
+COMMENT=	High performance MTA for Unix systems on the Internet
 
 USE_BZIP2=	yes
 USE_PERL5=	yes

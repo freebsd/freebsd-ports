@@ -13,6 +13,7 @@ DISTNAME=	mmv
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	me@FreeBSD.org
+COMMENT=	Move/copy/append/link multiple files with sophisticated wildcard matching
 
 NO_CDROM=	"No redistribution for charge"
 NO_PACKAGE=	"No modification"

@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.rrbcurnow.freeuk.com/tdl/
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	To-do list manager
 
 USE_REINPLACE=	yes
 

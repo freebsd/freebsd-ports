@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	sobomax
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A kernel driver for reading CD disks with non-English filenames
 
 NO_PACKAGE=	Should be in sync with the kernel to work correctly
 

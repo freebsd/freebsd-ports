@@ -18,6 +18,7 @@ PATCHFILES=	qt-1.45-i18n-20000531.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	kris@FreeBSD.org
+COMMENT=	A C++ X GUI toolkit
 
 LATEST_LINK=	qt1
 USE_GMAKE=	yes

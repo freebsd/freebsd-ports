@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	A graphical network traffic visualization tool for gnome
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

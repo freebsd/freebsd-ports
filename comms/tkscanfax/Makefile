@@ -11,6 +11,7 @@ CATEGORIES=	comms
 MASTER_SITES=	http://shino.pos.to/linux/
 
 MAINTAINER=	mita@FreeBSD.org
+COMMENT=	Tcl/Tk frontend for fax scan/receive/send program (command is tkfax)
 
 RUN_DEPENDS=	wish8.0jp:${PORTSDIR}/japanese/tk80
 

@@ -12,6 +12,7 @@ MASTER_SITES=	http://hp.vector.co.jp/authors/VA012337/soft/lipsf/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	mita@jp.FreeBSD.org
+COMMENT=	Text to LIPS filter
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.//}
 

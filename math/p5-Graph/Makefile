@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Graph
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Graph, the Perl module for graph operations
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Heap.pm:${PORTSDIR}/devel/p5-Heap
 RUN_DEPENDS=	${BUILD_DEPENDS}

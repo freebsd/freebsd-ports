@@ -13,6 +13,7 @@ MASTER_SITES=	http://glload.netpedia.net/source/ \
 MASTER_SITE_SUBDIR=	vanilla
 
 MAINTAINER=	vanilla@FreeBSD.org
+COMMENT=	Gl base load monitor
 
 USE_X_PREFIX=	yes
 USE_MESA=	yes

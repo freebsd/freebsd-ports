@@ -12,6 +12,7 @@ MASTER_SITES=	netu
 EXTRACT_ONLY=
 
 MAINTAINER=	mi@aldan.algebra.com
+COMMENT=	A Commercial Spreadsheet
 
 NO_PACKAGE=	"nothing to build. commercial software"
 

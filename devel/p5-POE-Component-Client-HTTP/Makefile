@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	POE
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	POE component for non-blocking/concurrent HTTP queries
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/POE.pm:${PORTSDIR}/devel/p5-POE \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/HTTP/Request.pm:${PORTSDIR}/www/p5-libwww \

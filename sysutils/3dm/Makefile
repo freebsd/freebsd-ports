@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.procplace.com/pub/contrib/3ware/3dm/ \
 DISTNAME=	3dm-bsd-${PORTVERSION}
 
 MAINTAINER=	dbaker@FreeBSD.org
+COMMENT=	3ware ATA RAID monitoring daemon and web server 
 
 .include <bsd.port.pre.mk>
 

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	sources/bug-buddy/2.0
 DISTNAME=	bug-buddy-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A bug reporting tool for GNOME
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

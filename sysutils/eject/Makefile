@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ports.jp.FreeBSD.org/pub/FreeBSD-jp/OD/ \
 		ftp://ftp.ics.es.osaka-u.ac.jp/pub/mirrors/FreeBSD-jp/OD/
 
 MAINTAINER=	shige@FreeBSD.org
+COMMENT=	Utility for ejecting media from CD or optical disk drive
 
 DOCDIR=		share/doc/eject
 PLIST_SUB=	DOCDIR=${DOCDIR}

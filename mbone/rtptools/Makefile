@@ -11,6 +11,7 @@ CATEGORIES=	mbone
 MASTER_SITES=	http://www.cs.columbia.edu/IRT/software/rtptools/download/
 
 MAINTAINER=	fenner@FreeBSD.org
+COMMENT=	A set of tools to record, playback and monitor RTPv2 data streams
 
 GNU_CONFIGURE=	yes
 

@@ -11,6 +11,7 @@ CATEGORIES=	mail python
 MASTER_SITES=	http://perso.linuxfr.org/jdumont/regm/
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	Extract messages from a mailbox using regular expressions
 
 USE_REINPLACE=	yes
 NO_BUILD=	yes

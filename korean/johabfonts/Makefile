@@ -12,6 +12,7 @@ MASTER_SITES=	http://hanterm.org/download/font/
 DISTNAME=	hanterm-font-${PORTVERSION}
 
 MAINTAINER=	cjh@FreeBSD.org
+COMMENT=	Hangul fonts for X11(johab) used in many hangul-related programs
 
 USE_IMAKE=	yes
 

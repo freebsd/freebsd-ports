@@ -12,6 +12,7 @@ CATEGORIES=	astro
 MASTER_SITES=	http://www.cs.unc.edu/~scheuerm/xglobe/
 
 MAINTAINER=	kris@FreeBSD.org
+COMMENT=	Displays a view of the Earth (like xearth) with a rendered photo map
 
 USE_QT_VER=	3
 USE_X_PREFIX=	yes

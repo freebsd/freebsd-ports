@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	NetAddr
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kappa@freebsd.org.ua
+COMMENT=	Iterates over all IP addresses in a text similar to Email::Find
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/NetAddr/IP.pm:${PORTSDIR}/net/p5-NetAddr-IP
 

@@ -15,6 +15,7 @@ DISTNAME=	gnome-db-${PORTVERSION}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Provide uniform access to data sources for the GNOME environment
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

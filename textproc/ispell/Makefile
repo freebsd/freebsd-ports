@@ -14,6 +14,7 @@ DISTNAME=	ispell-3.2.06		# needed for slave ports / options
 DISTFILES=	ispell-3.2.06.tar.gz    # needed for slave ports / options
 
 MAINTAINER?=	jmz@FreeBSD.org
+COMMENT=	An interactive spelling checker for multiple languages
 ISPELL_FILES= 	ispell-3.2.06.tar.gz
 
 MAN1=		ispell.1

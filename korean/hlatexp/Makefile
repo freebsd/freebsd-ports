@@ -14,6 +14,7 @@ DISTFILES=	unpacked.tar.gz htex.tfm.tar.gz
 DIST_SUBDIR=	htex
 
 MAINTAINER=	cjh@FreeBSD.org
+COMMENT=	Hangul (Korean) LaTeX2e system
 
 # it depends teTeX.
 RUN_DEPENDS=	virtex:${PORTSDIR}/print/teTeX

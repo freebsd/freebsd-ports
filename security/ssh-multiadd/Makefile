@@ -11,6 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.azstarnet.com/~donut/programs/ssh-multiadd/
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	Tool to add multiple ssh keys to the authentication agent
 
 USE_PYTHON=	yes
 USE_REINPLACE=	yes

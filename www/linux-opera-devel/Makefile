@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/11./11-/}.1-static-qt.i386
 
 MAINTAINER=	des@FreeBSD.org
+COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 
 RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXm.so.2:${PORTSDIR}/x11-toolkits/linux-openmotif \
 		${LINUXBASE}/usr/lib/libpng.so.2:${PORTSDIR}/graphics/linux-png

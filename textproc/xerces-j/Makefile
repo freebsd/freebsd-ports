@@ -12,6 +12,7 @@ MASTER_SITES=	http://xml.apache.org/dist/xerces-j/old_xerces2/
 DISTNAME=	Xerces-J-src.${PORTVERSION}
 
 MAINTAINER=	kevlo@FreeBSD.org
+COMMENT=	XML parser for Java
 
 BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/jakarta-ant
 

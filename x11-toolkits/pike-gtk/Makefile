@@ -12,6 +12,7 @@ MASTER_SITES=	http://pike-community.org/sites/pigtk/download/
 DISTNAME=	pigtk_${PORTVERSION}
 
 MAINTAINER=	ijliao@FreeBSD.org
+COMMENT=	A pike interface to Gtk Graphics Library
 
 BUILD_DEPENDS=	pike:${PORTSDIR}/lang/pike70
 

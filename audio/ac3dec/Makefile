@@ -11,6 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://dara.notbsd.org/~aholtzma/ac3/tarballs/
 
 MAINTAINER=	3d@FreeBSD.org
+COMMENT=	Software for research in digital audio coding/decoding
 
 GNU_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	i386 alpha

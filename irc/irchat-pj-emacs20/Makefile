@@ -19,6 +19,7 @@ PATCHFILES=	${PORTNAME}-${PORTVERSION}pl2.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	yoichi@FreeBSD.org
+COMMENT=	IRC client which runs under Emacsen
 
 BUILD_DEPENDS=	${LOCALBASE}/${LISPDIR:S,${PORTNAME},pure,g}/pure-make.el:${PORTSDIR}/irc/pure-${EMACS_PORT_NAME}
 RUN_DEPENDS=	${LOCALBASE}/${LISPDIR:S,${PORTNAME},pure,g}/pure-make.el:${PORTSDIR}/irc/pure-${EMACS_PORT_NAME} \

@@ -13,6 +13,7 @@ MASTER_SITES=	http://bladeenc.mp3.no/source/ \
 EXTRACT_SUFX=	-src-stable.tar.gz
 
 MAINTAINER=	dirk@FreeBSD.org
+COMMENT=	MP3 encoder
 
 GNU_CONFIGURE=	yes
 

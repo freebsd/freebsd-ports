@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ijliao@FreeBSD.org
+COMMENT=	Formats and converts text documents into compressed PalmDoc .pdb files
 
 USE_PERL5=	yes
 

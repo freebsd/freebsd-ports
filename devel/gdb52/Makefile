@@ -18,6 +18,7 @@ PATCH_SITE_SUBDIR=	obrien
 PATCHFILES=	gdb521_xfree-loadmod.diff
 
 MAINTAINER=	mp@FreeBSD.org
+COMMENT=	GNU GDB 5.2 developmental snapshot
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

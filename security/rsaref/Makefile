@@ -19,6 +19,7 @@ DISTNAME=	rsaref20.1996
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	kris@FreeBSD.ORG
+COMMENT=	Encryption/authentication library, RSA/MDX/DES
 
 WRKSRC=		${WRKDIR}/source
 

@@ -10,6 +10,7 @@ CATEGORIES=	misc windowmaker
 MASTER_SITES= 	http://nis-www.lanl.gov/~mgh/WindowMaker/
 
 MAINTAINER=	kris@FreeBSD.org
+COMMENT=	A WMaker dockapp which displays meteorological data for your city
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/Src
 

@@ -12,6 +12,7 @@ MASTER_SITES=		http://www.tei-c.org.uk/Software/passivetex/
 DISTFILES=		passivetex.zip
 
 MAINTAINER=		nik@FreeBSD.org
+COMMENT=	XSL FO processor, written in TeX
 
 BUILD_DEPENDS=		${LOCALBASE}/share/texmf/web2c/xmltex.fmt:${PORTSDIR}/print/xmltex
 

@@ -13,6 +13,7 @@ MASTER_SITES=	http://xml.apache.org/dist/fop/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	kiri@FreeBSD.org
+COMMENT=	Print formatter driven by XSL formatting
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 NO_BUILD=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	asami
 
 MAINTAINER=	kde@freebsd.org
+COMMENT=	A simple utility managing multiple Window Managers with Qt
 
 USE_X_PREFIX=	yes
 USE_QT_VER=	2

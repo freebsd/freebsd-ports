@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	moleskine
 DISTNAME=	GtkScintilla-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A wrapper for the Scintilla editing component
 
 LIB_DEPENDS=	scintilla.1:${PORTSDIR}/x11-toolkits/scintilla
 

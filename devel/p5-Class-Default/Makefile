@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Class
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Static calls apply to a default instantiation
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Class/Inspector.pm:${PORTSDIR}/devel/p5-Class-Inspector
 RUN_DEPENDS=	${BUILD_DEPENDS}

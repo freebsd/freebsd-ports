@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	seanc@FreeBSD.org
+COMMENT=	Ruby interface to the Spread library
 
 LIB_DEPENDS=	tspread.1:${PORTSDIR}/net/spread
 

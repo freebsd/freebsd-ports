@@ -11,6 +11,7 @@ CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://www.sh.rim.or.jp/~ssato/src/
 
 MAINTAINER=	pat@FreeBSD.org
+COMMENT=	An "lcd" dockapp for windowmaker, which displays the current cpuload
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

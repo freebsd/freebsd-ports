@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	PGPLOT
 DISTNAME=	PGPLOT-${PORTVERSION}
 
 MAINTAINER=	jmz@FreeBSD.org
+COMMENT=	A perl5 extension which makes available the pgplot library
 
 LIB_DEPENDS=	pgplot.5:${PORTSDIR}/graphics/pgplot
 BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/ExtUtils/F77.pm:${PORTSDIR}/lang/p5-F77

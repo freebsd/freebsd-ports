@@ -14,6 +14,7 @@ DISTFILES=	netmaj-${PORTVERSION}.tar.gz \
 		netmaj-xui-${PORTVERSION}.tar.gz
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	A mahhjong game for X
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

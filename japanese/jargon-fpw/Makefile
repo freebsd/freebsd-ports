@@ -12,6 +12,7 @@ MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/jargon/
 DISTNAME=	jarg-fpw${PORTVERSION}
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT=	The famous jargon file (EPWING V1 format)
 
 
 USE_ZIP=	yes

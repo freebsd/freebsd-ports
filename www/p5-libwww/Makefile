@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	LWP
 DISTNAME=	libwww-perl-${PORTVERSION}
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	Perl5 library for WWW access
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/URI.pm:${PORTSDIR}/net/p5-URI \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser

@@ -13,6 +13,7 @@ DISTNAME=	LAPACK
 DISTFILES=	lapack.tgz manpages.tgz
 
 MAINTAINER=	jmz@FreeBSD.org
+COMMENT=	A library of Fortran 77 subroutines for linear algebra
 
 DIST_SUBDIR=	lapack
 

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.cs.umd.edu/pub/misc_software/tksol/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	tg@FreeBSD.org
+COMMENT=	A version of the card game solitaire
 
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 

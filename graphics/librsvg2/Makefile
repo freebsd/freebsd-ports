@@ -15,6 +15,7 @@ DIST_SUBDIR=	gnome2
 DISTNAME=	librsvg-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Library for parsing and rendering SVG vector-graphic files
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \

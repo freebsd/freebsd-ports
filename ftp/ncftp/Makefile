@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.ncftp.com/ncftp/
 DISTNAME=	ncftp-${PORTVERSION}
 
 MAINTAINER=	obrien@FreeBSD.org
+COMMENT=	FTP replacement with advanced user interface
 
 MAN1=		ncftp.1
 

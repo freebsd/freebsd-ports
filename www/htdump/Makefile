@@ -11,6 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://arak.cs.hro.nl/~ren/linux/htdump/bin/
 
 MAINTAINER=	mux@FreeBSD.org
+COMMENT=	A tool to retrieve WWW data
 
 LIB_DEPENDS=    gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

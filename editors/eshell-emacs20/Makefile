@@ -13,6 +13,7 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	yoichi@FreeBSD.org
+COMMENT=	Command shell implemented in emacs lisp
 
 EMACS_PORT_NAME=	emacs20
 

@@ -13,6 +13,7 @@ CATEGORIES=		audio
 MASTER_SITES=		http://splay.sourceforge.net/tgz/
 
 MAINTAINER=		cjh@FreeBSD.org
+COMMENT=	An audio player that decodes MPEG Layer I,II,III and WAV files
 
 GNU_CONFIGURE=		yes
 MAN1=			splay.1

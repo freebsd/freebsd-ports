@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Boulder
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	An API for hierarchical tag/value structures
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/XML/Parser/Expat.pm:${PORTSDIR}/textproc/p5-XML-Parser
 RUN_DEPENDS=	${BUILD_DEPENDS}

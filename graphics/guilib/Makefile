@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.libsdl.org/projects/GUIlib/src/
 DISTNAME=	GUIlib-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A very simple GUI framework for use with SDL
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 

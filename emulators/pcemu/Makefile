@@ -24,6 +24,7 @@ MASTER_SITES+=	ftp://ftp.cs.bris.ac.uk/pub/users/hedley/
 DISTNAME=	pcemu1.01alpha
 
 MAINTAINER=	joerg@FreeBSD.org
+COMMENT=	An 8086 PC emulator, by David Hedley
 
 .include <bsd.port.pre.mk>
 

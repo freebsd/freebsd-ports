@@ -11,6 +11,7 @@ CATEGORIES=     audio
 MASTER_SITES=   http://www.erikyyy.de/tempest/
 
 MAINTAINER=	greid@FreeBSD.org
+COMMENT=	A program to send AM radio signals using a PC monitor
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 

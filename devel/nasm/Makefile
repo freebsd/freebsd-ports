@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nasm
 
 MAINTAINER=	murray@FreeBSD.org
+COMMENT=	General-purpose multi-platform x86 assembler
 
 USE_BZ2=	yes
 GNU_CONFIGURE=	yes

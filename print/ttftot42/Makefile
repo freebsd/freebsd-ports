@@ -11,6 +11,7 @@ CATEGORIES=	print
 MASTER_SITES=	http://www.giga.or.at/pub/nih/ttftot42/
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	TrueType to Type42 font converter
 
 USE_FREETYPE=	yes
 GNU_CONFIGURE=	yes

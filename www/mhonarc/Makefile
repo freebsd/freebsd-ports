@@ -18,6 +18,7 @@ MASTER_SITES=	http://www.mhonarc.org/tar/ \
 DISTNAME=	MHonArc${PORTVERSION}
 
 MAINTAINER=	max@FreeBSD.org
+COMMENT=	WWW front end for mail archives
 
 USE_BZIP2=	Yes
 USE_PERL5=	Yes

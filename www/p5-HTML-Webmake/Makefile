@@ -13,6 +13,7 @@ MASTER_SITES=	http://webmake.sourceforge.net/devel/ \
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jkoshy@FreeBSD.org
+COMMENT=	A simple perl based website content management system
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Text/EtText.pm:${PORTSDIR}/textproc/p5-Text-EtText \

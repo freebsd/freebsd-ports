@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.physics.purdue.edu/pub/pundits/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	cy@FreeBSD.org
+COMMENT=	Manage remote serial consoles via TCP/IP
 
 BUILD_DEPENDS=	makeme:${PORTSDIR}/devel/msrc0 \
 		mkcmd:${PORTSDIR}/devel/mkcmd

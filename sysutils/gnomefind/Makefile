@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	gnome-find
 DISTNAME=	gnome-find-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	Graphical version of the GNU "find" utility
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

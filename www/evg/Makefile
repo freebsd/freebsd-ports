@@ -14,6 +14,7 @@ DISTNAME=	evg-1_3_1
 EXTRACT_SUFX=	_tar
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Create index pages in HTML for photo galleries
 
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS+=	xv:${PORTSDIR}/graphics/xv

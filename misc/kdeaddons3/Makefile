@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER?=	kde@FreeBSD.org
+COMMENT=	Additional plugins and scripts for some KDE applications
 
 LIB_DEPENDS+=	noatun.0:${PORTSDIR}/multimedia/kdemultimedia3 \
 		kdegames:${PORTSDIR}/games/kdegames3 \

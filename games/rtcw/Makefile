@@ -13,6 +13,7 @@ DISTNAME=	wolf-linux-${PORTVERSION}.x86
 EXTRACT_SUFX=	.run
 
 MAINTAINER=	nik@FreeBSD.org
+COMMENT=	Return to Castle Wolfenstein for Linux
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX_PREFIX=	yes

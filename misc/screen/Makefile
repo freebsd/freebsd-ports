@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.uni-erlangen.de/pub/utilities/screen/ \
 MASTER_SITE_SUBDIR=	screen
 
 MAINTAINER=	cy@FreeBSD.org
+COMMENT=	A multi-screen window manager
 
 GNU_CONFIGURE=	yes
 MAN1=		screen.1

@@ -15,6 +15,7 @@ DISTNAME=	nulib325
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jseger@FreeBSD.org
+COMMENT=	NuFX archive utility
 
 WRKSRC=		${WRKDIR}/nulib
 MAN1=		nulib.1

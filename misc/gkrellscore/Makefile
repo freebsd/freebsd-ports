@@ -12,6 +12,7 @@ MASTER_SITES=	http://ssl.usu.edu/paul/gkrellscore/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	pat@FreeBSD.org
+COMMENT=	Plugin to GKrellM that displays current sports scores
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm \

@@ -16,6 +16,7 @@ MASTER_SITES=	http://pkedu.fbt.eitn.wau.nl/~olivier/downloads/ \
 		http://bluefish.shellhung.org/downloads/
 
 MAINTAINER=	jim@FreeBSD.org
+COMMENT=	HTML editor designed for the experienced web designer
 
 RUN_DEPENDS=	weblint:${PORTSDIR}/www/weblint
 

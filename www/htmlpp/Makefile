@@ -13,6 +13,7 @@ DISTNAME=	htmlp42a
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dburr@FreeBSD.org
+COMMENT=	A Perl script to allow easy creation of HTML from template files
 
 USE_PERL5=	YES
 

@@ -15,6 +15,7 @@ DISTNAME=	ZWiki-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	wjv@FreeBSD.org
+COMMENT=	A WikiWikiWeb product for Zope
 
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/z2.py:${PORTSDIR}/www/zope
 

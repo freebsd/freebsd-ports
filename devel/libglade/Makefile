@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/libglade/0.17
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	GNOME glade library
 
 USE_X_PREFIX=	yes
 USE_PERL5=	yes

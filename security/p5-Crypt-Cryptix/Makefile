@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.cryptix.org/dist/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	markm@FreeBSD.org
+COMMENT=	Perl5 interface to the Cryptix Crypto Library (Blowfish, DES and IDEA)
 
 PERL_CONFIGURE=	yes
 

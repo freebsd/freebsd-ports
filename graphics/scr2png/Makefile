@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR= nik
 NO_WRKSUBDIR=	yes
 
 MAINTAINER=	nik@freebsd.org
+COMMENT=	Converts the output of "vidcontrol -p" to PNG
 
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 

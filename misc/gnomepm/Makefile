@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	sobomax
 DISTNAME=	${PORTNAME:S/gnome/gnome-/}-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A small GNOME app that collects stock information from Yahoo!(c) Finance
 
 USE_X_PREFIX=	yes
 USE_GNOME=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	http://lynx.isc.org/current/
 DISTNAME=       ${PORTNAME}2.8.5dev.12
 
 MAINTAINER=	ache@FreeBSD.org
+COMMENT=	A non-graphical, text-based World-Wide Web client
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}  \
 MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	deischen@freebsd.org
+COMMENT=	An X/Motif schedule planner with calendar
 
 USE_MOTIF=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src

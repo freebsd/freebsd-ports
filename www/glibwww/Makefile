@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/glibwww/0.2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A library for people wanting to use libwww with gtk/gnome
 
 LIB_DEPENDS=	wwwzip.1:${PORTSDIR}/www/libwww
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.2
 #DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A powerful C++ binding for the GNOME libraries
 
 LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4

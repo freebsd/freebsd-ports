@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.bsddiary.net/xd/
 DISTNAME=	xd-8087
 
 MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
+COMMENT=	Yet another dump utility
 
 MAN1=		xd.1
 MANCOMPRESSED=	maybe

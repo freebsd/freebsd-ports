@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Grouch-${PORTVERSION}
 
 MAINTAINER=	wjv@FreeBSD.org
+COMMENT=	A system for describing and enforcing a Python object schema
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

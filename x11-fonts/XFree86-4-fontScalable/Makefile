@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	XFree86-
 DISTFILES=	X${PORTVERSION:S/.//g}src-2.tgz
 
 MAINTAINER=	anholt@freebsd.org
+COMMENT=	XFree86-4 Scalable font files
 
 BUILD_DEPENDS=	ucs2any.pl:${PORTSDIR}/x11/XFree86-4-clients
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/encodings/encodings.dir:${PORTSDIR}/x11-fonts/XFree86-4-fontEncodings

@@ -12,6 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.gpl.no/liboe/download/
 
 MAINTAINER=	ijliao@FreeBSD.org
+COMMENT=	Convert Outlook Express messages to the Unix mailbox format
 
 USE_REINPLACE=	yes
 MAKEFILE=	makefile

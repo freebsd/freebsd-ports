@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A library for handling 3DS (3D Studio) files
 
 USE_MESA=	yes
 INSTALLS_SHLIB=	yes

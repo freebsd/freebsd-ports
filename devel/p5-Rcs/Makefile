@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Rcs
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Perl Object Class for Revision Control System (RCS)
 
 PERL_CONFIGURE=	yes
 

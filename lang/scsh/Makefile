@@ -11,6 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.scsh.net/pub/scsh/0.6/
 
 MAINTAINER=	alex@FreeBSD.org
+COMMENT=	A Unix shell embedded into Scheme, with access to all Posix calls
 
 CONFIGURE_ENV+=	LDFLAGS="-Wl,-E"
 

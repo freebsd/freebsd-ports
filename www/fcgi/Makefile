@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.fastcgi.com/dist/
 PKGNAMESUFFIX=	-devkit
 
 MAINTAINER=	kbyanc@posi.net
+COMMENT=	FastCGI Development Kit
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes

@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR= sorted/packages-8.0/x11/Tix/4.1.0.007
 DISTNAME=	Tix${PORTVERSION}
 
 MAINTAINER=	jmz@FreeBSD.org
+COMMENT=	An extension to the Tk toolkit
 
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 

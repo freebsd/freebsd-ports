@@ -14,6 +14,7 @@ DISTFILES=	kaist-newmj18.bdf.gz ks_philgi16.bdf.gz \
 		kaist-newmj16.bdf.gz ks_iyagi16.bdf.gz
 
 MAINTAINER=	cjh@FreeBSD.org
+COMMENT=	X11 KAIST font(ksc5601.1987-0 encoding) collection
 
 USE_X_PREFIX=	yes
 

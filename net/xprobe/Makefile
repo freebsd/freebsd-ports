@@ -11,6 +11,7 @@ CATEGORIES=    	net security
 MASTER_SITES=	http://www.sys-security.com/archive/tools/X/
 
 MAINTAINER=	kris@FreeBSD.org
+COMMENT=	ICMP active OS fingerprint scanner
 
 GNU_CONFIGURE=	yes
 

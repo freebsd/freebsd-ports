@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://shadowmere.student.utwente.nl/pub/WindowMaker/
 DISTNAME=	WSoundServer-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	The sound server for Window Maker
 
 BUILD_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker
 LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \

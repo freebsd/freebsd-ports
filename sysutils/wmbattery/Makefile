@@ -12,6 +12,7 @@ MASTER_SITES=	http://kitenet.net/programs/wmbattery/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	pat@FreeBSD.org
+COMMENT=	Window Maker dockapp that displays info about your battery
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

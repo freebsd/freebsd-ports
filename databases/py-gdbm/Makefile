@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${PYTHON_DISTFILE}
 
 MAINTAINER=	tg@FreeBSD.org
+COMMENT=	Python bindings to the GNU dbm library
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 

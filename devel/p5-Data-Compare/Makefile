@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Data
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Data::Compare - compare perl data structures
 
 PERL_CONFIGURE=	yes
 

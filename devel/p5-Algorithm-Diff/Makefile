@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Algorithm
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Perl interface to compute differences between two objects
 
 PERL_CONFIGURE=	yes
 

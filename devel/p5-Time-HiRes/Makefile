@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	Time
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	A perl5 module implementing High resolution time, sleep, and alarm
 
 PERL_CONFIGURE=	yes
 

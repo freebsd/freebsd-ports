@@ -20,6 +20,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	vanilla@FreeBSD.org
+COMMENT=	A very artistic X window manager
 
 LIB_DEPENDS=	Fnlib.0:${PORTSDIR}/graphics/fnlib \
 		ghttp.1:${PORTSDIR}/www/libghttp \

@@ -11,6 +11,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	http://bftpd.sourceforge.net/downloads/src/
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	Very configurable FTP server that can do chroot easily
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-pam

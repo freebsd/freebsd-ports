@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://clockwork.dementia.org/angband/Source/  \
 		ftp://ftp.sunet.se/pub/games/Angband/Source/
 
 MAINTAINER=	mph@freebsd.org
+COMMENT=	Rogue-like game with color, X11 support
 
 GNU_CONFIGURE=	yes
 .if !defined(WITHOUT_X11)

@@ -10,6 +10,7 @@ CATEGORIES=	comms
 MASTER_SITES=   http://people.debian.org/~pa3aba/download/
 
 MAINTAINER=	patrick@FreeBSD.org
+COMMENT=	An Amateur Radio station logging application
 
 USE_GTK=	yes
 GNU_CONFIGURE=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	anders@FreeBSD.org
+COMMENT=	Toolkit for Oracle, a GUI db admin kit supporting MySQL only (for now)
 
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 

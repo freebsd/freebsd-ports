@@ -19,6 +19,7 @@ DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 #PATCHFILES=
 
 MAINTAINER=	ache@FreeBSD.org
+COMMENT=	Library for manipulating PNG images
 
 MAKEFILE=       ${WRKSRC}/scripts/makefile.freebsd
 INSTALLS_SHLIB=	yes

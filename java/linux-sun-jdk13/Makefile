@@ -15,6 +15,7 @@ DISTNAME=	j2sdk-${JDK_VERSION:S/./_/g}_${JDK_REVISION}-linux-i586
 EXTRACT_SUFX=	.bin
 
 MAINTAINER=	znerd@FreeBSD.org
+COMMENT=	Sun Java Development Kit 1.3 for Linux
 
 BUILD_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper

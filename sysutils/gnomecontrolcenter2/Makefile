@@ -14,6 +14,7 @@ DISTNAME=	control-center-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Control center for GNOME 2.0 project
 
 LIB_DEPENDS=	gnome-desktop-2.3:${PORTSDIR}/x11/gnomedesktop \
 		metacity-private.0:${PORTSDIR}/x11-wm/metacity

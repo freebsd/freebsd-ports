@@ -16,6 +16,7 @@ MASTER_SITES=	http://www.gnucash.org/pub/gnucash/sources/stable/ \
 MASTER_SITE_SUBDIR=	gnucash
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Quicken-like money and finace manager
 
 LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile \
 		guppi.16:${PORTSDIR}/math/guppi \

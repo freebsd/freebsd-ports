@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.snes9x.com/zips/
 DISTNAME=	s9xs137c
 
 MAINTAINER=	green@FreeBSD.org
+COMMENT=	Super Nintendo Entertainment System(SNES) Emulator
 
 .if ${MACHINE_ARCH} == i386
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm

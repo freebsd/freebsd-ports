@@ -12,6 +12,7 @@ MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/ebd/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT=	Easton's 1897 Bible Dictionary (EPWING V1 format)
 
 USE_ZIP=	yes
 NO_BUILD=	yes

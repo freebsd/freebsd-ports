@@ -13,6 +13,7 @@ DISTNAME=	dn${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	multi-system emulator
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

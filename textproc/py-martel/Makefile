@@ -15,6 +15,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	biopython-${BIOPYTHON_VERSION}
 
 MAINTAINER=	wjv@FreeBSD.org
+COMMENT=	A parser generator for regular languages, written in Python
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/TextTools/__init__.py:${PORTSDIR}/lang/py-mx-base
 

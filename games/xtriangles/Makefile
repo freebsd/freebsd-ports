@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games/xpuzzles
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	Triangles puzzle
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_IMAKE=	yes

@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	${PORTNAME} support/latex2rtf
 
 MAINTAINER=	joerg@FreeBSD.org
+COMMENT=	Translator from LaTeX to RTF
 
 MAN1=		latex2rtf.1
 

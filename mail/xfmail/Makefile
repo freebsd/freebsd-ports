@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTVERSION}rc1/source/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-rc1
 
 MAINTAINER=	mikeh@FreeBSD.org
+COMMENT=	An X Window System application for receiving electronic mail
 
 BUILD_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf
 

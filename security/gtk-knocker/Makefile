@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	gtk-
 DISTNAME=	gtk-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	pat@FreeBSD.org
+COMMENT=	A simple and easy to use TCP only port scanner (GTK+ version)
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	wxwindows
 DISTNAME=	wxGTK-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	The wxWindows GUI toolkit with GTK+ bindings (unstable version)
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \

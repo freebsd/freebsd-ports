@@ -16,6 +16,7 @@ DISTNAME=	j2sdk-${JDK_VERSION}${JDK_VER_SUFFIX}-linux-i586
 EXTRACT_SUFX=	.bin
 
 MAINTAINER=	znerd@FreeBSD.org
+COMMENT=	Blackdown Java Development Kit 1.4 for Linux
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
 RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper

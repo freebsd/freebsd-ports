@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.linux.tucows.com/files/x11/graphics/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 
 MAINTAINER=	dirk@FreeBSD.org
+COMMENT=	Image viewer
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \

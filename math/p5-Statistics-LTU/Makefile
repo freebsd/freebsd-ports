@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Statistics
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Perl implementation of Linear Threshold Units
 
 PERL_CONFIGURE=	yes
 

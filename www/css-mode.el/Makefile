@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.garshol.priv.no/download/software/css-mode/
 DISTNAME=	css-mode.el
 
 MAINTAINER=	shige@FreeBSD.org
+COMMENT=	A CSS(Cascade Style Sheet) editing mode for Emacsen
 
 EXTRACT_SUFX=	# empty
 DISTFILES=	${DISTNAME} doco.html

@@ -12,6 +12,7 @@ MASTER_SITES=	http://srekcah.org/jcode/
 EXTRACT_SUFX=	# none
 
 MAINTAINER=	sada@FreeBSD.org
+COMMENT=	Perl library for Japanese character code conversion
 
 NO_WRKSUBDIR=		yes
 NO_BUILD=		yes

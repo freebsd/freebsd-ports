@@ -13,6 +13,7 @@ DISTNAME=	fasta${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.shar.Z
 
 MAINTAINER=	wjv@FreeBSD.org
+COMMENT=	A collection of programs for searching DNA and protein databases
 
 NO_CDROM=	May not be sold or incorporated into a commercial product
 WRKSRC=		${WRKDIR}/fasta

@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://cglab.snu.ac.kr/pub/hangul/n3f/tar/ \
 DISTNAME=	pinetree.precomposed-${PORTVERSION}-bdf
 
 MAINTAINER=	cjh@FreeBSD.org
+COMMENT=	Hangul fonts for X11(pinetree, KSC5601-1987-0 encoding)
 
 USE_X_PREFIX=	yes
 

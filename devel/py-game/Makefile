@@ -12,6 +12,7 @@ MASTER_SITES=	http://pygame.seul.org/ftp/
 DISTNAME=	${PORTNAME:S/-//}-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A module designed to write games in Python
 
 BUILD_DEPENDS=	${PYNUMERIC}
 LIB_DEPENDS=	SDL_ttf.3:${PORTSDIR}/graphics/sdl_ttf \

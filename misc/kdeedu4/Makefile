@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER?=	kde@FreeBSD.org
+COMMENT=	Collection of entertaining, educational programs for KDE
 
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}

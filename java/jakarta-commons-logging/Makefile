@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	jakarta-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	znerd@FreeBSD.org
+COMMENT=	Generic Java library for validation of constraints
 
 BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/jakarta-ant \
 		${LOCALBASE}/share/java/classes/jakarta-log4j.jar:${PORTSDIR}/java/jakarta-log4j

@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	An utility to query DNS servers
 
 NO_WRKSUBDIR=	yes
 

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	autotrace
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	An autotrace GUI FRONTend like streamLINE(TM)
 
 LIB_DEPENDS=	autotrace.3:${PORTSDIR}/graphics/autotrace \
 		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2 \

@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.afterstep.org/apps/astime/ \
 		ftp://ftp.tux.org/pub/x/afterstep/apps/astime/
 
 MAINTAINER=	kris@FreeBSD.org
+COMMENT=	Time/Date applet for WindowMaker
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

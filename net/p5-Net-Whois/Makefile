@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	A perl5 module to get information using the Whois protocol
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Locale/Country.pm:${PORTSDIR}/misc/p5-Locale-Codes
 

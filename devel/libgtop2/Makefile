@@ -15,6 +15,7 @@ DISTNAME=	libgtop-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	GNOME 2.0 top library
 
 LIB_DEPENDS=	glib-2.0.200:${PORTSDIR}/devel/glib20
 

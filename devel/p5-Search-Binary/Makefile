@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Search
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Perl module that implements a generic binary search algorithm
 
 PERL_CONFIGURE=	yes
 

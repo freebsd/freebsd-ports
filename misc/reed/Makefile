@@ -11,6 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.sacredchao.net/software/reed/
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	A text pager with autoscrolling and more
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

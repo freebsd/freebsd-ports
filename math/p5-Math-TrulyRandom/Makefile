@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Math
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	anders@FreeBSD.org
+COMMENT=	Perl interface to a truly random number generator function
 
 PERL_CONFIGURE=	yes
 

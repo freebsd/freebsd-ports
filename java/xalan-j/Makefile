@@ -12,6 +12,7 @@ MASTER_SITES=	http://xml.apache.org/dist/${PORTNAME}/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}-src
 
 MAINTAINER=	znerd@FreeBSD.org
+COMMENT=	Apache XSLT processor for transforming XML documents
 
 BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/jakarta-ant
 

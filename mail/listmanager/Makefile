@@ -23,6 +23,7 @@ EXTRACT_SUFX=	.freebsd35
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} INSTALL help.tar.gz listmanager.8 ack
 
 MAINTAINER=	gshapiro@FreeBSD.org
+COMMENT=	Fully-featured mailing list manager
 
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=

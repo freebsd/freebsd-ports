@@ -14,6 +14,7 @@ PKGNAMESUFFIX=	-gdk
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	pat@FreeBSD.org
+COMMENT=	wmcube-gdk is a modified version of the dockapp wmCube
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

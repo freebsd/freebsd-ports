@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/ \
 DISTNAME=	hanemacs-19.34b-1
 
 MAINTAINER=	cjh@FreeBSD.org
+COMMENT=	Korean version of GNU editing macros
 
 NOT_FOR_ARCHS=	alpha
 

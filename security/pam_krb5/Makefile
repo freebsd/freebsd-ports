@@ -11,6 +11,7 @@ CATEGORIES=		security
 MASTER_SITES=		http://www.komquats.com/distfiles/
 
 MAINTAINER=		cy@FreeBSD.org
+COMMENT=	A Pluggable Authentication Module for Kerberos 5
 
 MAN8=			pam_krb5.8
 

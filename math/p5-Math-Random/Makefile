@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Math
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Random number generators
 
 PERL_CONFIGURE=	yes
 

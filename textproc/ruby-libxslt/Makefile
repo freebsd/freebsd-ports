@@ -14,6 +14,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	seanc@FreeBSD.org
+COMMENT=	A developer friendly libxslt binding for Ruby
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/xml2-config:${PORTSDIR}/textproc/libxml2 \
 		${LOCALBASE}/bin/xslt-config:${PORTSDIR}/textproc/libxslt \

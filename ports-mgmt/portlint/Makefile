@@ -15,6 +15,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 
 MAINTAINER=	mharo@FreeBSD.org
+COMMENT=	A verifier for FreeBSD port directory
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

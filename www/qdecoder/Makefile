@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.qDecoder.org/pub/qDecoder/\
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	cjh@FreeBSD.org
+COMMENT=	CGI library for C/C++ language programming
 
 GNU_CONFIGURE=	YES
 

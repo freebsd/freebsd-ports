@@ -14,6 +14,7 @@ MASTER_SITES=   ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/ \
 DISTNAME=	hanyang-font-pcf
 
 MAINTAINER=	cjh@FreeBSD.org
+COMMENT=	Hanyang Hangul fonts for X11
 
 USE_X_PREFIX=	yes
 

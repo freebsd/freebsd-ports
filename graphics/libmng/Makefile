@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mi@aldan.algebra.com
+COMMENT=	Multiple-image Network Graphics (MNG) reference library
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		lcms.1:${PORTSDIR}/graphics/lcms

@@ -11,6 +11,7 @@ CATEGORIES=	x11-clocks windowmaker afterstep
 MASTER_SITES=	http://www.neotokyo.org/illusion/downloads/
 
 MAINTAINER=	jim@FreeBSD.org
+COMMENT=	A clock dockapp that shows the date, time, and internet time
 
 WRKSRC=		${WRKDIR}/wmitime/wmitime
 

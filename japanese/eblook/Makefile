@@ -13,6 +13,7 @@ MASTER_SITES=	http://openlab.ring.gr.jp/edict/eblook/dist/
 DIST_SUBDIR=	eb
 
 MAINTAINER=	shige@FreeBSD.org
+COMMENT=	Interactive EB interface command for seraching words in electoric dictionaries
 
 DOCDIR=		share/doc/eblook
 

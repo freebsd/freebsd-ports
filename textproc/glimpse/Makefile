@@ -12,6 +12,7 @@ CATEGORIES=	textproc databases
 MASTER_SITES=	ftp://ftp.polito.it/pub/tools/unix/harvest/
 
 MAINTAINER=	chuckr@freebsd.org
+COMMENT=	Text search engine
 
 NO_CDROM=	"Restrictive copyright (don't sell for profit)"
 GNU_CONFIGURE=	yes

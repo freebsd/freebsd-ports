@@ -11,6 +11,7 @@ CATEGORIES=     	devel
 MASTER_SITES=		ftp://ftp-dev.cso.uiuc.edu/pub/libtar/
 
 MAINTAINER=		greid@FreeBSD.org
+COMMENT=	A library for manipulating POSIX and GNU tar files
 
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes

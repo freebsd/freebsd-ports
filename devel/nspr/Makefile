@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	nspr/releases/v${PORTVERSION}/src
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A platform-neutral API for system level and libc like functions
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/mozilla/nsprpub/build
 

@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.gulu.net/xskat/
 
 MAINTAINER=	tg@FreeBSD.org
+COMMENT=	Play the card game Skat
 
 USE_IMAKE=	yes
 MAN1=		xskat.1 xskat-de.1

@@ -20,6 +20,7 @@ PATCHFILES=	ezmlm-cgi.patch
 PATCH_SITES=	${MASTER_SITES}
 
 MAINTAINER=	tom@FreeBSD.org
+COMMENT=	Improved version of the ezmlm-0.53 mailing list management software
 
 # QMAIL_DIR is the directory where qmail is installed
 QMAIL_DIR?=	/var/qmail

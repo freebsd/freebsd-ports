@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.nemoto.ecei.tohoku.ac.jp/pub/X11/misc/
 DISTNAME=	xeyes-g
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	Xgolgo watches what you are doing and whether you're hostile or not
 
 WRKSRC=		${WRKDIR}/xeyes
 USE_IMAKE=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=		ftp://linux01.gwdg.de/pub/isdn/estic/old-versions/v1.40/
 DISTNAME=		estic-${PORTVERSION}-sources
 
 MAINTAINER=		jhs@FreeBSD.org
+COMMENT=	Controller for ISDN TK-Anlage (PBX) made by Istec
 
 USE_XLIB=		yes
 USE_ZIP=		yes

@@ -11,6 +11,7 @@ CATEGORIES=	shells
 MASTER_SITES=	http://omnibus.ruf.uni-freiburg.de/~gritter/archive/
 
 MAINTAINER=	greid@ukug.uk.freebsd.org
+COMMENT=	An implementation of the UNIX 6th Edition shell.
 
 MAKEFILE=	makefile
 

@@ -12,6 +12,7 @@ MASTER_SITES=	http://pysol2.sourceforge.net/download/ \
 		http://www.oberhumer.com/opensource/pysol/download/
 
 MAINTAINER=	tg@FreeBSD.org
+COMMENT=	Solitaire game, written in Python
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 

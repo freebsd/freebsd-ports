@@ -12,6 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.crevola.com/about/current/
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	Display the contents of your Netscape cache
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

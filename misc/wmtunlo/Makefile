@@ -11,6 +11,7 @@ CATEGORIES=	misc windowmaker
 MASTER_SITES=	http://clay.ll.pl/download/
 
 MAINTAINER=	adamw@FreeBSD.org
+COMMENT=	A bo(O)oooring 2d tunnel in wmaker dock
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes

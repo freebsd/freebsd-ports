@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jedgar@fxp.org
+COMMENT=	Perl5 modules to implement the IRC protocol (RFC 1459)
 
 PERL_CONFIGURE=	yes
 

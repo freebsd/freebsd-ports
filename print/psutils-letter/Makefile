@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.dcs.ed.ac.uk/pub/ajcd/ \
 DISTNAME=	psutils-p17
 
 MAINTAINER=	jmz@FreeBSD.org
+COMMENT=	Utilities for manipulating PostScript documents
 
 USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/psutils

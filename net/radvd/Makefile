@@ -12,6 +12,7 @@ MASTER_SITES=	http://v6web.litech.org/radvd/dist/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/p4/pl4/}
 
 MAINTAINER=	pat@FreeBSD.org
+COMMENT=	A Linux/BSD IPv6 router advertisement daemon
 
 GNU_CONFIGURE=	yes
 

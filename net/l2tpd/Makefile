@@ -12,6 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.l2tpd.org/downloads/
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	An implementation of the layer two tunneling protocol
 
 USE_REINPLACE=	yes
 

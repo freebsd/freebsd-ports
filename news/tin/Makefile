@@ -15,6 +15,7 @@ MASTER_SITES=   http://mirrors.rcn.net/pub/news/tin/v1.5/ \
 		ftp://ftp.sunet.se/pub/news/readers/tin/v1.5/
 
 MAINTAINER?=    ache@FreeBSD.org
+COMMENT=	Easy-to-use threaded newsreader with NOV/NNTP support
 
 LIB_DEPENDS=	uu.2:${PORTSDIR}/converters/uulib \
 		iconv.3:${PORTSDIR}/converters/libiconv \

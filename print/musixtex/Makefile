@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.tex.ac.uk/tex-archive/macros/musixtex/taupin/
 DISTFILES=	musixtex-T98.tar.gz musixexa-T90.tar.gz
 
 MAINTAINER=	jmz@FreeBSD.org
+COMMENT=	A set of TeX macros to typeset music
 
 BUILD_DEPENDS=	tex:${PORTSDIR}/print/tex
 RUN_DEPENDS=	tex:${PORTSDIR}/print/tex

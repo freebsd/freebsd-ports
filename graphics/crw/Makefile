@@ -11,6 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://apollo.backplane.com/FreeBSDPorts/
 
 MAINTAINER=	dillon@FreeBSD.ORG
+COMMENT=	A utility to process Canon camera RAW (.crw) files
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 

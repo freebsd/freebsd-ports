@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	trn-4.0-test76
 
 MAINTAINER=	mph@freebsd.org
+COMMENT=	Version 4.0 of the threaded readnews newsreader
 
 NO_LATEST_LINK=	yes
 NO_PACKAGE=	"Too many questions"

@@ -25,6 +25,7 @@ PATCHFILES+=	5.8.0${p}
 .endfor
 
 MAINTAINER?=	obrien@FreeBSD.org
+COMMENT=	Vi "workalike", with many additional features
 
 .if defined(PACKAGE_BUILDING) && !defined(LITE)
 BUILD_DEPENDS=	tclsh8.0:${PORTSDIR}/lang/tcl80

@@ -12,6 +12,7 @@ CATEGORIES=	www databases
 MASTER_SITES=   http://www.mnogosearch.org/Download/
 
 MAINTAINER=	ache@FreeBSD.org
+COMMENT=	Full featured SQL-based hypertext search engine
 
 MAN1=		indexer.1
 MAN5=		indexer.conf.5

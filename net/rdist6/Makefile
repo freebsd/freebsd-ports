@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.magnicomp.com/download/rdist/ \
 		ftp://ftp.sunet.se/pub/unix/admin/mirror-magnicomp/download/rdist/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A network file distribution/synchronisation utility
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 400000

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.python.org/ftp/python/doc/${PORTVERSION}/ \
 DISTNAME=	${DOCFORMAT}-${PORTVERSION}
 
 MAINTAINER=	alane@FreeBSD.org
+COMMENT=	Documentation for the Python programming language
 
 DIST_SUBDIR=	python
 USE_PYTHON=	yes

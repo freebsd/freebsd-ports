@@ -11,6 +11,7 @@ CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://home.ins.de/~m.hussmann/software/yank/
 
 MAINTAINER=	jedgar@FreeBSD.org
+COMMENT=	A simple notekeeper and todo-list manager for GNOME
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 

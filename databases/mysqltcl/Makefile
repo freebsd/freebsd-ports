@@ -11,6 +11,7 @@ CATEGORIES=	databases tcl83
 MASTER_SITES=	http://telia.dl.sourceforge.net/mirrors/mysql/Downloads/Contrib/
 
 MAINTAINER=	mi@aldan.algebra.com
+COMMENT=	TCL module for accessing MySQL databases based on msqltcl
 
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client \
 		${TCL_NODOT}:${PORTSDIR}/lang/${TCL_NODOT}

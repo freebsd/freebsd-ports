@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.kourakos.com/pub/pclock/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jim@FreeBSD.org
+COMMENT=	Simple analog clock program for the Window Maker dock
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

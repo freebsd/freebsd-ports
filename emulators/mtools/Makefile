@@ -17,6 +17,7 @@ PATCHFILES=	mtools-3.9.8-20011127.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	jmz@FreeBSD.org
+COMMENT=	A collection of tools for manipulating MSDOS files
 
 GNU_CONFIGURE=	yes
 .if !defined(WITHOUT_X11)

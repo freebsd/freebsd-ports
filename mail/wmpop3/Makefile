@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.cs.mun.ca/~scotth/download/
 DISTFILES=	WMPop3-${PORTVERSION}.tar.gz
 
 MAINTAINER=	jim@FreeBSD.org
+COMMENT=	A POP3 mail check for the Window Maker dock
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmpop3
 

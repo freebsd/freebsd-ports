@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.zipcon.net/~adamf/software/farblazer/
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	An action/arcade game originally based of StarBlazer on the Apple ][
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
 

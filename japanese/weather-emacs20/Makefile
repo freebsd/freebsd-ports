@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.opaopa.org/pub/elisp/ \
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	yoichi@FreeBSD.org
+COMMENT=	Weather Report in Japanese Regions
 
 EMACS_PORT_NAME?=	emacs20
 

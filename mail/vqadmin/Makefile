@@ -11,6 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES= 	http://www.inter7.com/vqadmin/
 
 MAINTAINER=	nbm@FreeBSD.org
+COMMENT=	A cgi-based Virtual Qmail Domains Administrator
 
 BUILD_DEPENDS= \
         ${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail

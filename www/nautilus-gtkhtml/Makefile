@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	sources/nautilus-gtkhtml/0.3
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A simple NautilusView component for displaying html files in Nautilus
 
 LIB_DEPENDS=	gtkhtml-2.0:${PORTSDIR}/www/libgtkhtml \
 		nautilus.2:${PORTSDIR}/x11-fm/nautilus2

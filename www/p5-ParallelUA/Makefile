@@ -15,6 +15,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	ParallelUserAgent-${PORTVERSION}
 
 MAINTAINER=	ache@FreeBSD.org
+COMMENT=	Perl5 Parallel LWP User Agent for WWW access
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/URI.pm:${PORTSDIR}/net/p5-URI \

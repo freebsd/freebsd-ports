@@ -11,6 +11,7 @@ CATEGORIES=	korean converters
 MASTER_SITES=	http://kldp.org/~bangjy/hangul/
 
 MAINTAINER=	cjh@freebsd.org
+COMMENT=	Converts data between Korean KSC-5601 and Unicode 3.0 UTF-16
 
 INSTALLS_SHLIB=	YES
 

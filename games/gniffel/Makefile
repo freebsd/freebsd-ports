@@ -11,6 +11,7 @@ CATEGORIES=	games gnome
 MASTER_SITES=	http://www.informatik.fh-wiesbaden.de/~i820/downloads/
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A clone of the famous Yatzi game, also known as Kniffel, for GNOME
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

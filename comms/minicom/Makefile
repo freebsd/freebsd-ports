@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	anders@FreeBSD.org
+COMMENT=	An MS-DOS Telix serial communication program "workalike"
 
 RUN_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz \
 		lsz:${PORTSDIR}/comms/lrzsz

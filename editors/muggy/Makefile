@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.aaa-int.or.jp/~jfactory/Factory/JDE/dist/
 DISTNAME=	Muggy-${PORTVERSION}
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
+COMMENT=	A simple text editor for the X on TkStep
 
 RUN_DEPENDS=	${RUN_DEP_LIST}
 LIB_DEPENDS=	${LIB_DEP_LIST}

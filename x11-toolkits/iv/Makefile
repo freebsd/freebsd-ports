@@ -13,6 +13,7 @@ DISTNAME=	${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	tanimura@FreeBSD.org
+COMMENT=	InterViews: A toolkit from Stanford University and Silicon Graphics
 
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
 

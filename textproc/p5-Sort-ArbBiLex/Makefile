@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Sort
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Perl module to make sort functions for arbitrary sort orders
 
 PERL_CONFIGURE=	yes
 

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.1
 
 MAINTAINER?=	gnome@FreeBSD.org
+COMMENT=	A components intended to be shared between GNOME development tools
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	Gtk-Perl-${PORTVERSION}
 
 MAINTAINER=	vanilla@FreeBSD.org
+COMMENT=	The Gnome Print module of Gtk-Perl
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gnome.pm:${PORTSDIR}/x11-toolkits/p5-Gnome \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gtk/Gdk/Pixbuf.pm:${PORTSDIR}/x11-toolkits/p5-GdkPixbuf \

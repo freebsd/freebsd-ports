@@ -11,6 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 MAINTAINER=	billf@FreeBSD.org
+COMMENT=	The program to use to have to remember all the options to find(1)
 
 BUILD_DEPENDS=	xterm:${PORTSDIR}/x11/XFree86-4-clients
 

@@ -13,6 +13,7 @@ MASTER_SITES=	http://freebsd.sean.chittenden.org/ports/ \
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER?=	seanc@FreeBSD.org
+COMMENT=	Development snapshots of PostgreSQL's latest features
 
 DIST_SUBDIR=	postgresql
 

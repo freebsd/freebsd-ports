@@ -12,6 +12,7 @@ MASTER_SITES=	http://alpha.luc.ac.be/Research/Algebra/Members/Ttraffic/ \
 		http://www.tobez.org/download/port-mirrors/games/ttraffic/
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	TTraffic - A Tcl/Tk version of Rush Hour
 
 BUILD_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83

@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}_freebsd
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	PC Engine (TG16) emulator on X
 
 NO_WRKSUBDIR=	yes
 USE_XLIB=	yes

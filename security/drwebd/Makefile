@@ -11,6 +11,7 @@ CATEGORIES=	security
 EXTRACT_ONLY=
 
 MAINTAINER=     ache@FreeBSD.org
+COMMENT=	Satellite port to activate DrWeb daemon
 
 DESCR=          ${PORTSDIR}/security/drweb/pkg-descr
 

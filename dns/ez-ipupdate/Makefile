@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://gusnet.cx/proj/ez-ipupdate/dist/
 
 MAINTAINER=	se@FreeBSD.org
+COMMENT=	Update your host name on any dynamic DNS service
 
 GNU_CONFIGURE=	yes
 

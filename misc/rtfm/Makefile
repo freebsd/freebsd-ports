@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	chris
 
 MAINTAINER=	chris@FreeBSD.org
+COMMENT=	A FreeBSD documentation search mechanism
 
 MAN1=		rtfm.1
 

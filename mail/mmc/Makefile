@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.1/-1/}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A tiny mail client for Gnome Desktop
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.1//}
 

@@ -13,6 +13,7 @@ CATEGORIES=	misc gnome
 MASTER_SITES=	http://elysium-project.sourceforge.net/
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A library of utility functions used by several Elysium projects
 
 USE_GNOMENG=	yes
 USE_GNOME=	glib12

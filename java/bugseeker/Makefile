@@ -13,6 +13,7 @@ MASTER_SITES=	#
 DISTNAME=	bugseeker2ee-1_0_2
 
 MAINTAINER=	znerd@FreeBSD.org
+COMMENT=	BugSeeker for Java 2, a debugger for Java applications
 
 RUN_DEPENDS=	${JAVA_HOME}/bin/java:${PORTSDIR}/java/linux-sun-jdk13
 

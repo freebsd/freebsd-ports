@@ -11,6 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://probiers.net/projects/rmoldmail/
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	Prune a mailbox of messages older than a set number of days
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc
 

@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	obrien@FreeBSD.org
+COMMENT=	Shell script and set of fonts to print Vietnamese text on PostScript printer
 
 RUN_DEPENDS=	vn7to8:${PORTSDIR}/vietnamese/vn7to8 \
 		vnpstext:${PORTSDIR}/vietnamese/vnpstext

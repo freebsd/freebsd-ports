@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR= ${PORTNAME}
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	yoichi@FreeBSD.org
+COMMENT=	LaTeX previewer on Emacs
 
 BUILD_DEPENDS=	${LOCALBASE}/${EMACS_SITE_LISPDIR}/auctex/latex.el:${PORTSDIR}/print/auctex \
 		gs:${PORTSDIR}/print/ghostscript-gnu

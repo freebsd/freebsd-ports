@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A C++ wrappers for GtkExtra, for use with Gtk--
 
 LIB_DEPENDS=	gtkextra.17:${PORTSDIR}/x11-toolkits/gtkextra \
 		gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--

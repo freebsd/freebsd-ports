@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	petef
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	A robust log colorizer
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor
 

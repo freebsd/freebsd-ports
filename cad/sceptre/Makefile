@@ -11,6 +11,7 @@ CATEGORIES=	cad
 MASTER_SITES=	ftp://novilux.fh-friedberg.de/pub/sceptre/
 
 MAINTAINER=	grog@FreeBSD.org
+COMMENT=	SCEPTRE is a general purpose circuit analysis program
 
 BUILD_DEPENDS=	f77:${PORTSDIR}/lang/f77
 

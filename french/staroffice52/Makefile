@@ -30,6 +30,7 @@ DISTFILES+=	soa-5_2-ga-bin-linux-fr.bin so-5_2-ga-bin-linux-fr.bin
 EXTRACT_ONLY=	109939-03.tar.Z
 
 MAINTAINER=	mbr@FreeBSD.org
+COMMENT=	Suite bureautique intégrée
 
 FETCH_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 

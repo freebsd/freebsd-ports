@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.greatcircle.com/pub/majordomo/1.94.5/ \
 EXTRACT_SUFX=   .tgz
 
 MAINTAINER=	anders@FreeBSD.org
+COMMENT=	A mailing list manager
 
 .if defined(WITH_SHA1_COOKIES)
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1

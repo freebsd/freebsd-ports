@@ -15,6 +15,7 @@ EXTRACT_SUFX=	# empty
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	IP Calculator
 
 NO_BUILD=	yes
 USE_PERL5=	yes

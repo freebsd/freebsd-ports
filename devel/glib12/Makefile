@@ -16,6 +16,7 @@ BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Some useful routines of C programming (previous stable version)
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

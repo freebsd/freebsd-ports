@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	Perl5 module to communicate with socks v4 and v5 servers
 
 PERL_CONFIGURE=	yes
 

@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a/a/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	wjv@FreeBSD.org
+COMMENT=	A collection of Python modules for bioinformatics
 
 BUILD_DEPENDS=	${PYDISTUTILS}
 RUN_DEPENDS=	${PYNUMERIC} \

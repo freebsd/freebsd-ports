@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	kde@freebsd.org
+COMMENT=	Qt Rapid Application Development Environment for X Window System
 
 USE_PERL5=	yes
 USE_BZIP2=	yes

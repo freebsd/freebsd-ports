@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Bit
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Library of advanced math functions that includes a Perl OO module
 
 PERL_CONFIGURE=	yes
 

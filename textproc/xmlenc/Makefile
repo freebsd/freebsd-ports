@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xmlenc
 
 MAINTAINER=	znerd@FreeBSD.org
+COMMENT=	Light-weight XML encoding library for Java
 
 BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/jakarta-ant
 

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	sources/gtk+/1.2
 DISTNAME=	gtk+-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Gimp Toolkit for X11 GUI (previous stable version)
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	gkrellm
 DISTNAME=	${PORTNAME}_anim-${PORTVERSION}
 
 MAINTAINER=	pat@FreeBSD.org
+COMMENT=	A plugin for GKrellM that displays a rotating earth
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm

@@ -24,6 +24,7 @@ PATCHFILES=		4.2.0-4.2.1-1-freebsd.patch.gz \
 			patch-nvchips.gz
 
 MAINTAINER=	anholt@freebsd.org
+COMMENT=	XFree86-4 X server and related programs
 
 XFREE86_VERSION=	4
 USE_IMAKE=		YES

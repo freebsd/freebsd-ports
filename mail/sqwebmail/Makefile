@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= courier
 
 MAINTAINER=	nbm@FreeBSD.org
+COMMENT=	CGI Webmail client for Maildirs
 
 #
 # User-serviceable variables

@@ -11,6 +11,7 @@ CATEGORIES=	databases devel
 MASTER_SITES=	http://orcane.net/freeodbc++/download/${PORTVERSION}/
 
 MAINTAINER=	wjv@FreeBSD.org
+COMMENT=	A C++ class library and toolset for ODBC access to data sources
 
 BROKEN=		"Does not compile"
 

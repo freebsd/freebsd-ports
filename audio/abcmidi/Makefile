@@ -12,6 +12,7 @@ MASTER_SITES=	http://abc.sourceforge.net/abcMIDI/
 DISTNAME=	abcMIDI
 
 MAINTAINER=	sue@FreeBSD.org
+COMMENT=	Convert abc music files to MIDI and PostScript
 
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -11,6 +11,7 @@ CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.oberhumer.com/opensource/ucl/download/
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A data compression library with low memory usage during decompression
 
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes

@@ -11,6 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://yoyo.cc.monash.edu.au/~pfh/
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	Graphically represents sound in real time
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 

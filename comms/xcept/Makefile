@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
 
 MAINTAINER=	joerg@FreeBSD.org
+COMMENT=	A decoder for the CEPT (Btx) protocol
 
 USE_XLIB=	yes
 MAN1=		xcept.1

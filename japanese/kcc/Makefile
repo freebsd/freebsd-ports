@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT=	Kanji code conversion Filter
 
 INSTALL_TARGET=	install install.man
 MANLANG=	ja

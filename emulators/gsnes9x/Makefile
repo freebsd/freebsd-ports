@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	GSnes9x-${PORTVERSION}
 
 MAINTAINER=	kbyanc@posi.net
+COMMENT=	A GTK front-end for the Snes9X SNES emulator
 
 RUN_DEPENDS=	snes9x:${PORTSDIR}/emulators/snes9x
 

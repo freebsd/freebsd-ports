@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	leeym@FreeBSD.org
+COMMENT=	Show a scrolling 'Matrix' like screen
 
 MAN1=		cmatrix.1
 

@@ -14,6 +14,7 @@ DISTNAME=	gnome-spell-${PORTVERSION}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A GNOME/Bonobo component for spell checking
 
 LIB_DEPENDS=	aspell.15:${PORTSDIR}/textproc/aspell
 

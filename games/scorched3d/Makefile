@@ -16,6 +16,7 @@ PATCH_SITES=	ftp://ftp.jurai.net/users/winter/patches/
 PATCHFILES=	scorched3d-0.32.0-FreeBSD.patch.0.gz
 
 MAINTAINER=	mdodd@FreeBSD.org
+COMMENT=	Scorched is a game based loosely on the classic DOS game
 
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image

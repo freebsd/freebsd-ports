@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= source-highlight
 
 MAINTAINER=	kevlo@FreeBSD.org
+COMMENT=	C/C++ and Java sources to HTML converter
 
 GNU_CONFIGURE=	yes
 .if defined(NOPORTDOCS)

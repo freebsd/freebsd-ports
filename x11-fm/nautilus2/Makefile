@@ -14,6 +14,7 @@ DIST_SUBDIR=	gnome2
 DISTNAME=	nautilus-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	GNOME file manager and graphical shell developed by Eazel
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
 LIB_DEPENDS=	rsvg-2.4:${PORTSDIR}/graphics/librsvg2 \

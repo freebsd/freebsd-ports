@@ -15,6 +15,7 @@ MASTER_SITES=	http://web.wt.net/~billw/gkrellm/
 PKGNAMEPREFIX=	gkrellm-
 
 MAINTAINER=	pat@FreeBSD.org
+COMMENT=	GKrellM plugin that reminds you of important events
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm

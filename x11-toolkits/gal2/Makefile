@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A collection of widgets taken from GNOME 2 gnumeric
 
 LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
 		gnomeprintui-2-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.zope.org/Members/reedstrm/ZPyGreSQLDA-rjr/
 DISTNAME=	ZPyGreSQLDA-0.3-rjr2
 
 MAINTAINER=	nbm@FreeBSD.org
+COMMENT=	PostgreSQL database adapter for Zope
 
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/z2.py:${PORTSDIR}/www/zope
 LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}

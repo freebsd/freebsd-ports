@@ -13,6 +13,7 @@ MASTER_SITES?=	${MASTER_SITE_PORTS_JP} \
 DISTNAME=	communicator-ja-euc-v475-export.generic-generic-generic
 
 MAINTAINER?=	sada@FreeBSD.org
+COMMENT=	Netscape web-surfboard with Japanese resources
 
 # ?= for ports that include this Makefile
 RUN_DEPENDS?=	${PREFIX}/bin/${BROWSER_ARC}-${BROWSER_VERSION}:${PORTSDIR}/www/netscape${BROWSER_VER}-${BROWSER_NAME}

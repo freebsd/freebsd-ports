@@ -13,6 +13,7 @@ DISTNAME=	robocode-setup-${PORTVERSION}
 EXTRACT_SUFX=	.jar
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A game for learning Java[tm] programming language
 
 USE_JAVA=	1.3+
 

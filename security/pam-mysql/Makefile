@@ -12,6 +12,7 @@ MASTER_SITES=	http://download.sourceforge.net/pam-mysql/ \
 		http://atreides.freenix.no/~anders/
 
 MAINTAINER=	anders@FreeBSD.org
+COMMENT=	A pam module for authenticating with MySQL
 
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 

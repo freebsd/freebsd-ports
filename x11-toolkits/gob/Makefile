@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gob/1.0
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A preprocessor for making GTK+ objects with inline C
 
 USE_GMAKE=	yes
 USE_GNOMENG=	yes

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	aolserver
 DISTNAME=	nspostgres3_0
 
 MAINTAINER=	jkoshy@freebsd.org
+COMMENT=	A driver to access PostgreSQL databases from Aolserver
 
 BUILD_DEPENDS=	${LOCALBASE}/aolserver/bin/nsd:${PORTSDIR}/www/aolserver \
 		${LOCALBASE}/bin/postmaster:${PORTSDIR}/${POSTGRESQL_PORT}

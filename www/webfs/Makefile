@@ -12,6 +12,7 @@ MASTER_SITES=	http://bytesex.org/misc/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	jedgar@FreeBSD.org
+COMMENT=	A simple http server for static content
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 USE_REINPLACE=	yes

@@ -24,6 +24,7 @@ PATCHFILES=		emacs-20.4-dl3.diff.gz emacs-20.7-linespace-patch.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	shige@FreeBSD.org
+COMMENT=	GNU editing macros with dynamic loading module function (binary only)
 
 RUN_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs20
 

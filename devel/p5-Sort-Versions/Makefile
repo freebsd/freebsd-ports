@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Sort
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	A perl 5 module for sorting of revision-like numbers
 
 PERL_CONFIGURE=	YES
 

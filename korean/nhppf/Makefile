@@ -11,6 +11,7 @@ CATEGORIES=	korean
 MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/users/cjh/nhppf/
 
 MAINTAINER=	cjh@FreeBSD.org
+COMMENT=	Hangul printing filter for Netscape 3.0 and above
 
 RUN_DEPENDS=    ${PREFIX}/share/texmf/fonts/type1/korean/pkmj/pkmjm0.pfb:$(PORTSDIR)/korean/hlatex-psfonts-wansung
 

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.ntua.gr/pub/X11/v/old/ \
 		ftp://ftp.dl.ac.uk/ccp14/ftp-mirror/programming/objectcentral/old/
 
 MAINTAINER=	dburr@FreeBSD.org
+COMMENT=	A C++ GUI development framework for X11 and Microsoft Windows
 
 .if ${MACHINE_ARCH} == "alpha"
 BROKEN=		compiler error in function fixup_memory_subreg

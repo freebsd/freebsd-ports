@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://k332.feld.cvut.cz/pub/local/lemming/gtkfig/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 
 MAINTAINER=	dirk@FreeBSD.org
+COMMENT=	Figure-drawing tool
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

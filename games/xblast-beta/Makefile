@@ -17,6 +17,7 @@ DISTFILES=	xblast-2.6.1.sound${EXTRACT_SUFX} \
 		xblast-tnt-unix.tar.gz
 
 MAINTAINER=	se@FreeBSD.org
+COMMENT=	Multi-player real-time strategy game for X11 (beta release)
 
 WRKSRC=		${WRKDIR}/XBlast-2.6-sound
 USE_IMAKE=	yes

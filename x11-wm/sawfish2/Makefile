@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}-gtk2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Lisp configurable window manager
 
 LIB_DEPENDS=	rep.12:${PORTSDIR}/lang/librep \
 		Xft.2:${PORTSDIR}/x11-fonts/Xft

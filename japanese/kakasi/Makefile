@@ -11,6 +11,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	ftp://kakasi.namazu.org/pub/kakasi/stable/
 
 MAINTAINER=	max@FreeBSD.org
+COMMENT=	Kanji-Kana Simple Inverter, language filter for Japanese
 
 GNU_CONFIGURE=	yes
 

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	leeym@FreeBSD.org
+COMMENT=	SQL*PLUS with commandline editing, history, and name completion
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	makefile

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	directory/c-sdk/ldap
 DISTNAME=	ldapsdk_12311998
 
 MAINTAINER=	paul@FreeBSD.org
+COMMENT=	Mozilla LDAP sdk
 
 WRKSRC=			${WRKDIR}/mozilla
 MAKEFILE=	${WRKSRC}/directory/ldapsdk.mk

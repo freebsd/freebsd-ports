@@ -16,6 +16,7 @@ DISTFILES=	X${PORTVERSION:S/.//g}src-1.tgz
 EXTRACT_ONLY=	X${PORTVERSION:S/.//g}src-1.tgz
 
 MAINTAINER=	anholt@freebsd.org
+COMMENT=	XFree86-4 Font Server
 
 XFREE86_VERSION=	4
 USE_IMAKE=		YES

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.2
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Provides uniform access to different kinds of data sources
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.ripe.net/tools/
 DISTNAME=	ripe-whois-tools-2.4
 
 MAINTAINER=	joe@uk.freebsd.org
+COMMENT=	RIPE's own version of whois, and a RIPE database tool
 
 NO_WRKSUBDIR=	yes
 

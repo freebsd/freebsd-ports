@@ -16,6 +16,7 @@ PATCH_SITES=	ftp://mitsuko.jaist.ac.jp/pub/nethack/
 PATCHFILES=	j${PORTNAME}-${PORTVERSION}.gz
 
 MAINTAINER=	max@FreeBSD.org
+COMMENT=	A dungeon explorin', slashin', hackin' game
 
 NO_LATEST_LINK=	yes
 

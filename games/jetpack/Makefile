@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jmz@FreeBSD.org
+COMMENT=	Arcade action game for X11
 
 USE_IMAKE=	yes
 MAKE_FLAGS=	PREFIX=${PREFIX} -f

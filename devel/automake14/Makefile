@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	automake
 DISTNAME=	automake-1.4-p5
 
 MAINTAINER=	alane@FreeBSD.org
+COMMENT=	GNU Standards-compliant Makefile generator (legacy version 1.4)
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PERL=${PERL5}

@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://savannah.gnu.org/download/linphone/${PORTVERSION}/sources/
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A web phone that supports SIP protocol
 
 LIB_DEPENDS=	osip.0:${PORTSDIR}/net/libosip \
 		panel-applet-2.0:${PORTSDIR}/x11/gnomepanel \

@@ -20,6 +20,7 @@ EXTRACT_SUFX=	.tar.Z
 LATEST_LINK=	acroread3
 
 MAINTAINER=	tg@FreeBSD.org
+COMMENT=	View, distribute and print PDF documents
 
 .if ${ARCH} == "i386"
 USE_LINUX=	yes

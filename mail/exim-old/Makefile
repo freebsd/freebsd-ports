@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/exim3/ \
 DISTFILES=	exim-3.36.tar.bz2 exim-texinfo-3.30.tar.bz2
 
 MAINTAINER=	sheldonh@FreeBSD.org
+COMMENT=	High performance MTA for Unix systems on the Internet
 
 USE_BZIP2=	yes
 USE_PERL5=	yes

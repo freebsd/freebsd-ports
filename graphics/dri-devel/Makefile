@@ -19,6 +19,7 @@ PATCH_SITE_SUBDIR=	anholt/dri-devel
 PATCHFILES=	dri-20020826-${PORTVERSION}.diff.bz2
 
 MAINTAINER=	anholt@FreeBSD.org
+COMMENT=	Unstable DRI (3d HW OpenGL acceleration) drivers for some chipsets
 
 RUN_DEPENDS=	XFree86:${PORTSDIR}/x11-servers/XFree86-4-Server
 

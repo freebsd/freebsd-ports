@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	IPC
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	IPC::Run - Run subprocesses with piping and redirection
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 		${SITE_PERL}/${PERL_ARCH}/IO/Handle.pm:${PORTSDIR}/devel/p5-IO \

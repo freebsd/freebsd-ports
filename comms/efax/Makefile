@@ -11,6 +11,7 @@ CATEGORIES=	comms
 MASTER_SITES=	http://shino.pos.to/linux/
 
 MAINTAINER=	mita@FreeBSD.org
+COMMENT=	Fax send/receive program
 
 FORBIDDEN=	"Buffer overflow yielding setuid uucp"
 

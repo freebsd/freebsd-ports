@@ -14,6 +14,7 @@ DISTNAME=	netscape-4.7-3.alpha
 EXTRACT_SUFX=	.rpm
 
 MAINTAINER=	obrien@FreeBSD.org
+COMMENT=	The base set of libraries needed in OSF/1 (Tru64) mode
 
 BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
 

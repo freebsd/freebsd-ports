@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz
 
 MAINTAINER=	anholt@FreeBSD.org
+COMMENT=	An IA-32 (x86) PC emulator that runs DOS, Win 95, and more
 
 # Global variables
 #

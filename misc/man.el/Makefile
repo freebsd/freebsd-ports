@@ -11,6 +11,7 @@ CATEGORIES=	misc elisp
 MASTER_SITES=	ftp://daemon.jp.freebsd.org/pub/FreeBSD-jp/man-jp/
 
 MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
+COMMENT=	Browse I18N capable UNIX manual pages with Mule, Emacs and XEmacs
 
 # If you use Japanese manuals, install japanese/man as well.
 

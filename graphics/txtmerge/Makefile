@@ -14,6 +14,7 @@ DISTNAME=	txtmerge101
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	Tool for making GIF Animations
 
 WRKSRC=		${WRKDIR}/txtmerge
 ALL_TARGET=	txtmerge

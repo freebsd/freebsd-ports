@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.philosys.de/~kunze/xzx.purespace.de/xzx/
 DISTNAME=	${PORTNAME}-pro-${PORTVERSION}-eval
 
 MAINTAINER=	adamw@FreeBSD.org
+COMMENT=	ZX Spectrum (48K/128K/+3) Emulator for X11
 
 # xmkmf is used in configure script
 BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake-4

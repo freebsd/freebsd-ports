@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Time
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Rounded or exact English expression of durations
 
 PERL_CONFIGURE=	yes
 

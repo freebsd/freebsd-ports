@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}.pl
 EXTRACT_SUFX=	.uu
 
 MAINTAINER=	ache@FreeBSD.org
+COMMENT=	Complain about inappropriate commercial use (f.e. SPAM) of usenet/e-mail
 
 USE_PERL5=	yes
 

@@ -11,6 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	ftp://postfix.eu.org/pub/calife/
 
 MAINTAINER=	thomas@FreeBSD.org
+COMMENT=	A lightweight alternative to sudo
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	"--with-etcdir=$(PREFIX)/etc"

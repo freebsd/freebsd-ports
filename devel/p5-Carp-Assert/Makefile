@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Carp
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Executable comments like the ANSI C library assert.h
 
 PERL_CONFIGURE=	yes
 

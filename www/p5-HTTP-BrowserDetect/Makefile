@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	HTTP
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Determine the Web browser, version, OS from an HTTP user agent string
 
 PERL_CONFIGURE=	yes
 

@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	yoichi@FreeBSD.org
+COMMENT=	Japanese address book
 
 ALL_TARGET=
 USE_X_PREFIX=	yes

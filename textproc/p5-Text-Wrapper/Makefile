@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Text
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Simple word wrapping routine
 
 PERL_CONFIGURE=	yes
 

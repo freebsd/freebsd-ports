@@ -16,6 +16,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 NO_WRKSUBDIR=	yes
 
 MAINTAINER=	iwasaki@FreeBSD.org
+COMMENT=	Some utilities for Intel ACPICA (Debugger, ASL Compiler and etc.).
 
 pre-install:
 		@${MKDIR} ${PREFIX}/man/man8

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	X11/demos
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	The animated simulation of an ideal gas
 
 USE_IMAKE=	yes
 MAN1=		xgas.1

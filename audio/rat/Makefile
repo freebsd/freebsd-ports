@@ -14,6 +14,7 @@ MASTER_SITES=								      \
 	http://www.icir.org/hodson/ucl-mirror/
 
 MAINTAINER=	orion@freebsd.org
+COMMENT=	IPv4/v6 Multicast and unicast audio conferencing tool
 
 TCLTK_VERSION=  8.2
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82

@@ -11,6 +11,7 @@ CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.internatif.org/pub/unix/echoping/
 
 MAINTAINER=	sumikawa@FreeBSD.org
+COMMENT=	A ping-like program that uses tcp and/or http
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes

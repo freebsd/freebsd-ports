@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	NetAddr
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	NetAddr::IP::Count - Count hosts in named subnets
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/NetAddr/IP.pm:${PORTSDIR}/net/p5-NetAddr-IP
 RUN_DEPENDS=	${BUILD_DEPENDS}

@@ -13,6 +13,7 @@ MASTER_SITES=	http://sorry.vse.cz/~xzemt02/mysql/ \
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	mi@aldan.algebra.com
+COMMENT=	CGI scripts in Perl to edit your MySQL tables
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${CGI_BIN}:${PORTSDIR}/www/apache13

@@ -12,6 +12,7 @@ CATEGORIES=	mbone tk83
 MASTER_SITES=	ftp://mm-ftp.cs.berkeley.edu/pub/rtpmon/
 
 MAINTAINER=	fenner@FreeBSD.org
+COMMENT=	A program to montior loss in multicast sessions
 
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf

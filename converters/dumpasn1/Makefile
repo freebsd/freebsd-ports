@@ -14,6 +14,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 EXTRACT_ONLY=
 
 MAINTAINER=	kris@FreeBSD.org
+COMMENT=	Dumps the contents of an ASN.1 encoded file, e.g. an SSL certificate
 
 .include <bsd.port.pre.mk>
 

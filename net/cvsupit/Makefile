@@ -11,6 +11,7 @@ CATEGORIES=	net
 DISTFILES=	#empty
 
 MAINTAINER=	jkh@FreeBSD.org
+COMMENT=	CVSup installation and setup front-end package (16.1 / GUI V3)
 
 .if !defined(PACKAGE_BUILDING)
 IS_INTERACTIVE= 'Must configure cvsup server information'

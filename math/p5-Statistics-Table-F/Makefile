@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Statistics
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Perl module for computing the statistical F-ratio
 
 PERL_CONFIGURE=	yes
 

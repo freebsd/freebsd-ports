@@ -19,6 +19,7 @@ PATCHFILES=	${PORTNAME}-${PORTVERSION}pl2.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	yoichi@FreeBSD.org
+COMMENT=	Primitive Universal Relay-chat Environment
 
 EMACS_PORT_NAME?=	emacs20
 LISPDIR?=	${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}

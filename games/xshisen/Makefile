@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.techfirm.co.jp/~masaoki/
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	Shisen-sho puzzle game for X11
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 

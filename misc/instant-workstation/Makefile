@@ -12,6 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.lemis.com/pub/
 
 MAINTAINER=	grog@lemis.com
+COMMENT=	Instant workstation installs a typical set of ports for a workstation
 
 RUN_DEPENDS=	acroread:${PORTSDIR}/print/acroread4 \
 		bash:${PORTSDIR}/shells/bash2 \

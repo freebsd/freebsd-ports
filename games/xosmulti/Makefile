@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_tar
 EXTRACT_SUFX=	.gz
 
 MAINTAINER=	flathill@FreeBSD.org
+COMMENT=	A littele girl catoon on the top of the active window
 
 WRKSRC=		${WRKDIR}/xosmulti
 USE_X_PREFIX=	yes

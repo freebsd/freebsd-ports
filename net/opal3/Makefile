@@ -16,6 +16,7 @@ DISTFILES=	openh323_1.11.2.tar.gz \
 		pwlib_1.4.7.tar.gz
 
 MAINTAINER=	roger@freebsd.org
+COMMENT=	A H323 Video Conferencing library, used with OhPhone
 
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
 

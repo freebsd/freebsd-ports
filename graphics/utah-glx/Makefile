@@ -16,6 +16,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		MesaDemos-${MESA_VER}${EXTRACT_SUFX}
 
 MAINTAINER=	3d@FreeBSD.org
+COMMENT=	A hardware OpenGL support for XFree86 X-Servers
 
 BUILD_DEPENDS=	tclsh8.3:${PORTSDIR}/lang/tcl83 \
 		autoconf:${PORTSDIR}/devel/autoconf

@@ -11,6 +11,7 @@ CATEGORIES=	lang
 DISTFILES=
 
 MAINTAINER=	jdp@FreeBSD.org
+COMMENT=	Low-level GUI libraries for the PM3 Modula-3 distribution
 
 BUILD_DEPENDS=	${L1}libm3tcp${L2}:${PORTSDIR}/lang/pm3-net
 RUN_DEPENDS=	${L1}libm3tcp${L2}:${PORTSDIR}/lang/pm3-net

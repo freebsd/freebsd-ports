@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR= falconseye
 DISTNAME=	nethack_source_331_jtp_${PORTVERSION:S/.//g}
 
 MAINTAINER=	kris@FreeBSD.org
+COMMENT=	NetHack derivative
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity

@@ -15,6 +15,7 @@ MASTER_SITES=	http://www.dsmit.com/cons/stable/ \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	rv@FreeBSD.org
+COMMENT=	A test bed for `Cons' development
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 ${LOCALBASE}/bin/cons:${PORTSDIR}/devel/cons
 

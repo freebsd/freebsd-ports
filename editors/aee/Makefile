@@ -11,6 +11,7 @@ CATEGORIES=	editors
 MASTER_SITES=	http://mahon.cwx.net/sources/
 
 MAINTAINER=	kbyanc@posi.net
+COMMENT=	An easy editor with both curses and X11 interfaces
 
 .if !defined(BUILD_XAE)
 ALL_TARGET=	main

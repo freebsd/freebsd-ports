@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	I18N
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Module which maps CharSet names to the names registered with IANA
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Test/Simple.pm:${PORTSDIR}/devel/p5-Test-Simple \

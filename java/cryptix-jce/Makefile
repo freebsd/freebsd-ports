@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	znerd
 DISTNAME=	${PORTNAME}-${PORTVERSION}-snap
 
 MAINTAINER=	znerd@FreeBSD.org
+COMMENT=	JCE(Java Cryptograph Extension) by Cryptix
 
 USE_JAVA=	1.1+
 USE_ZIP=	yes

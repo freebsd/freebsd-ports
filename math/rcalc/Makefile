@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	rCalc-${PORTVERSION}
 
 MAINTAINER=	jedgar@FreeBSD.org
+COMMENT=	Symbolic calculator for GNOME
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

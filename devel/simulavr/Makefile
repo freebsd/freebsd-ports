@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://savannah.nongnu.org/download/simulavr/
 
 MAINTAINER=	joerg@FreeBSD.org
+COMMENT=	A simulator for AVR microcontrollers
 
 BUILD_DEPENDS=	${LOCALBASE}/avr/include/avr/io.h:${PORTSDIR}/devel/avr-libc \
 		avr-ld:${PORTSDIR}/devel/avr-binutils \

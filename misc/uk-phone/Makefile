@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.Awfulhak.org/pub/uk-phone/ \
 EXTRACT_SUFX=	.gz
 
 MAINTAINER=	brian@FreeBSD.org
+COMMENT=	United Kingdom phone codes
 
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${GZCAT}

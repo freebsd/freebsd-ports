@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://stardust.sfc.wide.ad.jp/pub/JG/JG-0.9.1/sources/ \
 		ftp://mirror.nucba.ac.jp/mirror/JG/JG-0.9.1/sources/
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	Puzzle tama, a tetris like game
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_IMAKE=	yes

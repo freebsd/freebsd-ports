@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	stamp
 
 MAINTAINER=	billf@FreeBSD.org
+COMMENT=	Adds a graphical, configurable timestamp to a grayscale image
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt

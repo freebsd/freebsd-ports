@@ -17,6 +17,7 @@ DISTFILES=	MesaLib-${PORTVERSION}${EXTRACT_SUFX} \
 		MesaDemos-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A graphics library similar to SGI's OpenGL
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes

@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 MASTER_SITE_SUBDIR=	dd
 
 MAINTAINER=	dd@FreeBSD.org
+COMMENT=	A small, fast Emacs-like editor
 
 MANSECTS=	1
 MAN1=		mg.1

@@ -11,6 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://www.kyz.uklinux.net/downloads/
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A program to extract Microsoft cabinet (.CAB) files
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

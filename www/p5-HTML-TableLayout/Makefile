@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	HTML
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Layout manager for CGI-based web applications
 
 PERL_CONFIGURE=	yes
 

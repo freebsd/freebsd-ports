@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/printing
 
 MAINTAINER=	mi@aldan.algebra.com
+COMMENT=	Send print jobs to lpd servers anywhere on a network
 
 #LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

@@ -12,6 +12,7 @@ CATEGORIES=	net gnome
 MASTER_SITES=	http://www.gnomemeeting.org/downloads/0.96.0/sources/
 
 MAINTAINER=	roger@FreeBSD.org
+COMMENT=	GNOME H323 Video Conferencing program, similar to NetMeeting
 
 LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap20 \
 		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \

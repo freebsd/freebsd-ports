@@ -16,6 +16,7 @@ DISTFILES=	${CID_FONTS_KO} ${CID_CMAP_KO}
 EXTRACT_ONLY=	${CID_CMAP_KO}
 
 MAINTAINER=	cjh@FreeBSD.org
+COMMENT=	Munhwa CID fonts collection(Basic set)
 
 # sample fonts(cid, free Korean fonts is just only one.. :< )
 CID_FONTS_KO=   Munhwa-Regular Munhwa-Bold \

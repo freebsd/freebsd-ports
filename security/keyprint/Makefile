@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	mharo
 
 MAINTAINER=	mharo@FreeBSD.org
+COMMENT=	Print S/Key keys on a piece of paper, twice the size of a credit card
 
 NO_BUILD=	yes
 USE_REINPLACE=	yes

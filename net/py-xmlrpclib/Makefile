@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	xmlrpc-${PORTVERSION}-010226
 
 MAINTAINER=	wjv@FreeBSD.org
+COMMENT=	A Python implementation of the XML-RPC protocol
 
 USE_PYTHON=	yes
 USE_ZIP=	yes

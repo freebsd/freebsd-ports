@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= system/bbs/mail
 
 MAINTAINER=	hoek@FreeBSD.org
+COMMENT=	An alpha-release reader for reading SOUP and QWK packets
 
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 

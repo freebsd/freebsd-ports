@@ -11,6 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.dewn.com/rfc/
 
 MAINTAINER=	jedgar@FreeBSD.org
+COMMENT=	Perl script to search for RFC's
 
 RUN_DEPENDS=	w3m:${PORTSDIR}/www/w3m
 

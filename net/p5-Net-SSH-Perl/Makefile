@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jesper@FreeBSD.org
+COMMENT=	Perl5 module implements both the SSH1 and SSH2 protocols
 
 NO_PACKAGE=	"Runaway package build"
 

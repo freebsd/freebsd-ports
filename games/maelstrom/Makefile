@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.devolution.com/~slouken/projects/Maelstrom/src/
 DISTNAME=	Maelstrom-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	Asteroids-style game for X Window System
 
 LIB_DEPENDS=	SDL_net.0:${PORTSDIR}/net/sdl_net
 

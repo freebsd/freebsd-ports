@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.zip.com.au/~gsymonds/NAMG/
 DISTNAME=	NAMG-${PORTVERSION}
 
 MAINTAINER=	greid@ukug.uk.freebsd.org
+COMMENT=	A program to download mail from a NetAddress web account
 
 GNU_CONFIGURE=	yes
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Text
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Various niceties for p5-Text-FixedLength lovers
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Text/FixedLength.pm:${PORTSDIR}/textproc/p5-Text-FixedLength
 RUN_DEPENDS=	${BUILD_DEPENDS}

@@ -11,6 +11,7 @@ CATEGORIES=	x11-wm gnome
 MASTER_SITES=	http://ulli.on.openave.net/gnome2wmaker/
 
 MAINTAINER=	reg@FreeBSD.org
+COMMENT=	Inserts the GNOME menu into the WindowMaker menu
 
 LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList
 RUN_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker

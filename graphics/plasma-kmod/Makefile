@@ -12,6 +12,7 @@ MASTER_SITES=   http://users.uk.freebsd.org/~greid/
 PKGNAMESUFFIX=	-kmod
 
 MAINTAINER=	greid@ukug.uk.freebsd.org
+COMMENT=	A plasma-effect screensaver kernel module
 
 .if !exists(/usr/src/sys/dev/syscons/syscons.h)
 BROKEN=		"Requires kernel source (/usr/src/sys) to build"

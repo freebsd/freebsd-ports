@@ -13,6 +13,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-data-${DATAVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A 2D - Jump'n'run shooter
 
 LIB_DEPENDS=  	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 

@@ -16,6 +16,7 @@ MASTER_SITES=	http://download.plt-scheme.org/bundles/${PORTVERSION}/plt/ \
 DISTNAME=	plt.src.x
 
 MAINTAINER=	jkoshy@freebsd.org
+COMMENT=	An interactive, integrated, graphical Scheme programming environment
 
 DIST_SUBDIR=	drscheme/${PORTVERSION}
 HAS_CONFIGURE=	yes

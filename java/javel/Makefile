@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.geocities.com/l.gregoire/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	znerd@FreeBSD.org
+COMMENT=	Java disassembler
 
 NO_WRKSUBDIR=	yes
 USE_REINPLACE=	yes

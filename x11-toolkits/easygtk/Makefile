@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	sobomax
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A wrapper library for GTK+ which provides simplified GUI API
 
 EXTRACT_BEFORE_ARGS=	# it's intentionally left blank
 EXTRACT_CMD=	${CAT}	# not quite `extract', but who cares? ;)

@@ -15,6 +15,7 @@ MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-tomcat/release/v${PORTVER
 MASTER_SITE_SUBDIR=	znerd
 
 MAINTAINER=	znerd@FreeBSD.org
+COMMENT=	Open-source Java web server by Apache, stable 3.x branch
 
 USE_JAVA=	1.2+
 NO_BUILD=	YES

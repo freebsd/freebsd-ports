@@ -11,6 +11,7 @@ MASTER_SITES=	http://www.scl.ameslab.gov/Projects/Netpipe/code/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	jkoshy@freebsd.org
+COMMENT=	A self-scaling network benchmark
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	makefile

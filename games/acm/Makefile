@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.websimulations.com/pub/download/
 
 MAINTAINER=	se@FreeBSD.org
+COMMENT=	A flight simulator for X11
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes

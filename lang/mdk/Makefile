@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_GNU} \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ijliao@FreeBSD.org
+COMMENT=	MIX Development Kit offers an emulation of MIX and MIXAL
 
 USE_X_PREFIX=	yes
 USE_GNOME=	yes

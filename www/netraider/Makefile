@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 
 MAINTAINER=	kde@freebsd.org
+COMMENT=	Fast, small, free and nice web browser for Unix
 
 USE_QT_VER=	2
 USE_REINPLACE=	yes

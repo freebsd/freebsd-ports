@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Yet Another Mp3 Tool which helps you to organize your mp3s
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

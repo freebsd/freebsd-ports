@@ -23,6 +23,7 @@ PATCH_SITE_SUBDIR=	anholt/patches-4.2.0/
 PATCHFILES=		4.2.0-4.2.1-1-freebsd.patch.gz
 
 MAINTAINER=	anholt@freebsd.org
+COMMENT=	XFree86-4 print Server
 
 XFREE86_VERSION=	4
 USE_IMAKE=		YES

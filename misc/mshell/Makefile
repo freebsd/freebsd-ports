@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	jmz
 DISTFILES=	7432.Z
 
 MAINTAINER=	jmz@FreeBSD.org
+COMMENT=	A Unix menuing shell
 
 NO_WRKSUBDIR=	yes
 MAN1=		mshell.1

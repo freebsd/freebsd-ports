@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.1
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	An Assistive Technology Service Provider Interface
 
 LIB_DEPENDS=	gailutil.17:${PORTSDIR}/x11-toolkits/gail \
 		bonobo-2.0:${PORTSDIR}/devel/libbonobo

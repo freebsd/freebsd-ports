@@ -13,6 +13,7 @@ DISTNAME=	l_cc_pu_${PORTVERSION}
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	netchild@FreeBSD.org
+COMMENT=	Intels C/C++ compiler, set up to produce native FreeBSD objects
 
 BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
 

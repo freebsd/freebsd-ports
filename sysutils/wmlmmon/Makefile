@@ -11,6 +11,7 @@ CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://www.fxp.org/~jedgar/wmlmmon/
 
 MAINTAINER=	jedgar@fxp.org
+COMMENT=	WM dock app to display info from MB power management controllers
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

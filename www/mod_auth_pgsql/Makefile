@@ -11,6 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.giuseppetanzilli.it/mod_auth_pgsql/dist/
 
 MAINTAINER=	seanc@FreeBSD.org
+COMMENT=	Allows users to use PostgreSQL databases for user authentication
 
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
 RUN_DEPENDS=	${LOCALBASE}/sbin/${AP_TARGET}:${APACHE_PORT}

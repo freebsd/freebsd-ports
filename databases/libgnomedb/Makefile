@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sources/libgnomedb/0.10
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Library components for the GNOME database frontend
 
 LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
 		gda-2.1:${PORTSDIR}/databases/libgda2

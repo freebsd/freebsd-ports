@@ -16,6 +16,7 @@ DISTNAME=	mars_nwe-0.99.pl19
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	bp@FreeBSD.org
+COMMENT=	Netware server emulator for Un*x systems
 
 WRKSRC=		${WRKDIR}/mars_nwe
 MAKE_ENV=	CC="${CC}"

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	applications/pixmap
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	jmz@FreeBSD.org
+COMMENT=	A pixmap editor based on XPM library
 
 WRKSRC=		${WRKDIR}/pixmap
 USE_IMAKE=	yes

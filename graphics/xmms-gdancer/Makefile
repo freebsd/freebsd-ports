@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.figz.com/gdancer/files/
 DISTNAME=	gdancer-$(PORTVERSION)
 
 MAINTAINER=	netchild@FreeBSD.org
+COMMENT=	XMMS Visualization plugin, displays dancing figures
 
 LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf

@@ -11,6 +11,7 @@ CATEGORIES=    	sysutils
 MASTER_SITES=	http://www.go.dlr.de/fresh/unix/src/misc/
 
 MAINTAINER=	kris@FreeBSD.org
+COMMENT=	List processes as a tree
 
 do-build:
 	cd ${WRKDIR} && ${CC} ${CFLAGS} -o pstree pstree.c

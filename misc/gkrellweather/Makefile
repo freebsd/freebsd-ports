@@ -13,6 +13,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.cse.unsw.edu.au/~flam/repository/c/gkrellm/
 
 MAINTAINER=	pat@FreeBSD.org
+COMMENT=	GKrellWeather is a weather plugin for GKrellM
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm \

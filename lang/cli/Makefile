@@ -16,6 +16,7 @@ DISTNAME=	sscli_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	An implementation of the ECMA CLI and the ECMA C\# language
 
 WRKSRC=		${WRKDIR}/sscli
 

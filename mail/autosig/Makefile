@@ -11,6 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.irendi.com/
 
 MAINTAINER=	leeym@FreeBSD.org
+COMMENT=	A random .signature generator with header file included
 
 MAKEFILE=	makefile
 ALL_TARGET=	${PORTNAME}

@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.2 \
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	C++ wrapper for gtk, a x11 graphics library
 
 LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12 \
 		gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20

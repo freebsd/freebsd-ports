@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.ucolick.org/pub/users/will/
 EXTRACT_SUFX=	-tar.gz
 
 MAINTAINER=	obrien@FreeBSD.org
+COMMENT=	Allow others to run commands as root
 
 .include <bsd.port.pre.mk>
 

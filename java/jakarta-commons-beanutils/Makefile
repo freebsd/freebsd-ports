@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	jakarta-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	znerd@FreeBSD.org
+COMMENT=	JavaBeans utility library
 
 BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/jakarta-ant \
 		${LOCALBASE}/share/java/classes/commons-collections.jar:${PORTSDIR}/java/jakarta-commons-collections

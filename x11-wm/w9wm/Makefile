@@ -11,6 +11,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://inferno.cs.univ-paris8.fr/~drieu/w9wm/src/
 
 MAINTAINER=	greid@ukug.uk.freebsd.org
+COMMENT=	A hack of 9wm to give virtual screens
 
 USE_X_PREFIX=	yes
 MAKEFILE=	Makefile.no-imake

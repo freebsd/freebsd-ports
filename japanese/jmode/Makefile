@@ -11,6 +11,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	http://www.kmc.gr.jp/proj/heke/
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	XIM server for Anthy input method
 
 BUILD_DEPENDS=	${LOCALBASE}/include/anthy.h:${PORTSDIR}/japanese/anthy
 

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/glade/0.6
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A user interface builder for GTK+/GNOME
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	CORBA-ORBit-${PORTVERSION}
 
 MAINTAINER=	vanilla@FreeBSD.org
+COMMENT=	The perl binding for ORBit
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Error.pm:${PORTSDIR}/lang/p5-Error
 LIB_DEPENDS=	ORBit.2:${PORTSDIR}/devel/ORBit

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	CGI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	Perl module intended to make it easier to create reusable web apps
 
 BUILD_DEPENDS=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
 		${SITE_PERL}/CGI/Base.pm:${PORTSDIR}/www/p5-CGI-modules \

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	libs
 
 MAINTAINER=	greid@ukug.uk.freebsd.org
+COMMENT=	A mathematics library with many different functions
 
 INSTALLS_SHLIB=	yes
 

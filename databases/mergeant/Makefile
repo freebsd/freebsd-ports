@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.10
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Provide uniform access to data sources for the GNOME 2.0 environment
 
 LIB_DEPENDS=	gnomedb-2.1:${PORTSDIR}/databases/libgnomedb \
 		gnomeprintui-2-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui

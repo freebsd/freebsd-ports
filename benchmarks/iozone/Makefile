@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/}
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	jmz@FreeBSD.org
+COMMENT=	Performance Test of Sequential File I/O
 
 WRKSRC=		${WRKDIR}/src/current
 

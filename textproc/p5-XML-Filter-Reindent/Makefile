@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	XML
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Reformats whitespace for pretty printing XML
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/XML/Filter/DetectWS.pm:${PORTSDIR}/textproc/p5-XML-Filter-DetectWS
 BUILD_DEPENDS=	${RUN_DEPENDS}

@@ -18,6 +18,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	alane@FreeBSD.org
+COMMENT=	A QT program to queue lots of MP3s for random XMMS play
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 

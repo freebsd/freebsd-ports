@@ -19,6 +19,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 .endif
 
 MAINTAINER=	obrien@FreeBSD.org
+COMMENT=	MOP Loader Daemon for netbooting DEC machines
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 #	MANDIR is concetenated to DESTDIR which all forms the man install dir...

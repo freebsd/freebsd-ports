@@ -12,6 +12,7 @@ CATEGORIES=	misc python
 MASTER_SITES=	http://www.bellz.org/flyway/
 
 MAINTAINER=	kde@freebsd.org
+COMMENT=	A VFR/IFR Route Planner for Pilots
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/qt.py:${PORTSDIR}/x11-toolkits/py-qt
 

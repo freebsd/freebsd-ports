@@ -12,6 +12,7 @@ MASTER_SITES=	http://cvs.morphy.iki.fi/xfrisk/
 DISTNAME=	XFrisk-${PORTVERSION}
 
 MAINTAINER=	mph@freebsd.org
+COMMENT=	A multi-player networked Risk game for X11
 
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.inria.fr/system/benchmark/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	se@FreeBSD.org
+COMMENT=	The BYTE magazine benchmark suite
 
 do-install:
 	-${MKDIR} $(PREFIX)/lib/bytebench

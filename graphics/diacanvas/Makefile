@@ -11,6 +11,7 @@ CATEGORIES=	graphics gnome
 MASTER_SITES=	http://www.linuxstart.com/~arjan/diacanvas/download/
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	A general drawing canvas from dia dialog editor
 
 USE_X_PREFIX=	yes
 USE_GNOME=	yes

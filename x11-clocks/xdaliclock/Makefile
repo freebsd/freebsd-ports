@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.jwz.org/xdaliclock/ \
 MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	gpalmer@FreeBSD.org
+COMMENT=	A rather neat animated clock
 
 MAN1=		xdaliclock.1
 

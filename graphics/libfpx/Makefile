@@ -28,6 +28,7 @@ MASTER_SITES=	http://imagemagick.sourceforge.net/http/delegates/ \
 MASTER_SITE_SUBDIR=	ImageMagick/delegates
 
 MAINTAINER=	mi@aldan.algebra.com
+COMMENT=	Library routines for working with Flashpix images
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 MAKE_ARGS+=	-j2

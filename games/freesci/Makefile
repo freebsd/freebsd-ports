@@ -13,6 +13,7 @@ MASTER_SITES=		ftp://ftp.task.gda.pl/pub/games/linuxgames/freesci/ \
 			http://pelit.saunalahti.fi/telenation/linuxgames/freesci/
 
 MAINTAINER=		greid@FreeBSD.org
+COMMENT=	A portable interpreter for SCI games, such as the Space Quest series.
 
 LIB_DEPENDS=		ggi.2:${PORTSDIR}/graphics/libggi \
 			png.5:${PORTSDIR}/graphics/png

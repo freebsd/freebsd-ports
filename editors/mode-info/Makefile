@@ -11,6 +11,7 @@ CATEGORIES=	elisp
 MASTER_SITES=	http://namazu.org/~tsuchiya/elisp/
 
 MAINTAINER=	yoichi@FreeBSD.org
+COMMENT=	Functions to refer Manuals on Emacsen with describe-* like interface
 
 MI_INDEX+=	mi-emacs.idx
 MI_WITH_ELISP?=	yes

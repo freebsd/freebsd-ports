@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.qstat.org/
 DISTNAME=	qstat${PORTVERSION:S/.//g}
 
 MAINTAINER=	pat@FreeBSD.org
+COMMENT=	A command line program to query game servers on the net
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/qstat ${PREFIX}/bin

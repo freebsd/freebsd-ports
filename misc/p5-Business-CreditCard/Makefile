@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Business
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Perl5 module to validate/generate credit card checksums/names
 
 PERL_CONFIGURE=	YES
 

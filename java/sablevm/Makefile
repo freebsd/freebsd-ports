@@ -15,6 +15,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-native-library-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	archie@freebsd.org
+COMMENT=	Java VM created by McGill University's Sable Research Group
 
 BUILD_DEPENDS=	jikes:${PORTSDIR}/java/jikes
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \

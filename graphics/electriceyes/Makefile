@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sources/ee/0.3
 DISTNAME=	ee-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A graphic view base imlib & gtk
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

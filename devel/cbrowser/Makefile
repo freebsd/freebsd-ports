@@ -13,6 +13,7 @@ MASTER_SITES=	http://download.sourceforge.net/cbrowser/ \
 MASTER_SITE_SUBDIR=jkoshy
 
 MAINTAINER=	jkoshy@freebsd.org
+COMMENT=	Graphical front end for cscope and cscope clones
 
 RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 

@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.sound.net/~hald/projects/memcheck/
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Memory Allocation Checker
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

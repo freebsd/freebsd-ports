@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	steve
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	steve@freebsd.org
+COMMENT=	The parallel make(1) program from the Sprite project
 
 RESTRICTED=	"Non-commercial use only"
 

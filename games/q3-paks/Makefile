@@ -14,6 +14,7 @@ DIST_SUBDIR=	q3-paks
 IGNOREFILES=	${ALLFILES}
 
 MAINTAINER=	nik@FreeBSD.org
+COMMENT=	Quake 3 for Linux .pk3 files
 
 # Make this a BUILD_ rather than a RUN_DEPEND so that it can create the
 # directory hierarchy for us.

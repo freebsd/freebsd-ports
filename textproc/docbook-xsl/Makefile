@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= docbook
 
 MAINTAINER=	des@freebsd.org
+COMMENT=	XSL DocBook stylesheets
 
 RUN_DEPENDS=	${XMLDIR}/docbook/catalog:${PORTSDIR}/textproc/docbook-xml \
 		${XMLDIR}/sdocbook/catalog:${PORTSDIR}/textproc/sdocbook-xml

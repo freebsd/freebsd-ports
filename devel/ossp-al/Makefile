@@ -16,6 +16,7 @@ MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/al/
 PKGNAMEPREFIX=	ossp-
 
 MAINTAINER=	alane@FreeBSD.org
+COMMENT=	Defines an abstract type of buffer that can move data without copying
 
 LIB_DEPENDS=	ex.10:${.CURDIR}/../../devel/ossp-ex
 

@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 MASTER_SITE_SUBDIR=	obrien
 
 MAINTAINER=	obrien@FreeBSD.org
+COMMENT=	Filter that converts English text to Jive
 
 WRKSRC=		${WRKDIR}/jive
 MAN1=		jive.1

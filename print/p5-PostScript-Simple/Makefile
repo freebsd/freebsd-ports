@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	PostScript
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	PostScript::Simple - Produce PostScript files from Perl
 
 PERL_CONFIGURE=	yes
 

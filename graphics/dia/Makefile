@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/dia/0.90
 
 MAINTAINER?=	gnome@FreeBSD.org
+COMMENT=	Diagram creation program, similar to Visio
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \

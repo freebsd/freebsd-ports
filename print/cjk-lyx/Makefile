@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	cjk-
 DISTNAME=	CJK-LyX-${PORTVERSION}-src
 
 MAINTAINER=	cjh@FreeBSD.org
+COMMENT=	Document processor interfaced with LaTeX, with CJK support
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		latex:${PORTSDIR}/print/teTeX

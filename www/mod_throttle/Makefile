@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	anders@FreeBSD.org
+COMMENT=	An Apache module that provides bandwidth & request throttling
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13

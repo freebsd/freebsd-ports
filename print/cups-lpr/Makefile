@@ -15,6 +15,7 @@ CATEGORIES=	print
 MASTER_SITES=	${CUPS_MASTER_SITES}
 
 MAINTAINER=	alane@FreeBSD.org
+COMMENT=	The CUPS BSD and system V compatibility binaries (lp* commands)
 
 post-install:
 	${FIND} ${PREFIX}/man/cat* -type l -name '*.0' -delete

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Mail
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mharo@FreeBSD.org
+COMMENT=	Perl5 module to talk to a IMAP4rev1 (RFC2060) server
 
 PERL_CONFIGURE=	yes
 

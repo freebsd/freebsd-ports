@@ -12,6 +12,7 @@ MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ispell-uk
 
 MAINTAINER=     mi@aldan.algebra.com
+COMMENT=	Ukrainian (KOI8-U) dictionary for ISPELL
 
 BUILD_DEPENDS=  buildhash:${PORTSDIR}/textproc/ispell
 

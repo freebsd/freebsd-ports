@@ -19,6 +19,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/development
 DISTNAME=	${PORTNAME}-${ZSH_VER}-dev-${ZSH_DEV_REV}
 
 MAINTAINER=	shige@FreeBSD.org
+COMMENT=	The Z shell (development version)
 
 USE_AUTOCONF=   yes
 USE_REINPLACE=	yes

@@ -16,6 +16,7 @@ MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/cfg/
 PKGNAMEPREFIX=	ossp-
 
 MAINTAINER=	alane@FreeBSD.org
+COMMENT=	A library for parsing arbitrary C/C++-style configuration files
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes

@@ -13,6 +13,7 @@ DISTNAME=	iNES22-FreeBSD-80x86-bin
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	Nintendo Entertainment System emlator for X
 
 NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Finance
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Get stock and mutual fund quotes from various exchanges
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/HTML/TableExtract.pm:${PORTSDIR}/www/p5-HTML-TableExtract \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww

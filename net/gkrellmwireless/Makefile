@@ -12,6 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://gkrellm.luon.net/files/
 
 MAINTAINER=	jim@FreeBSD.org
+COMMENT=	GKrellM wireless plugin
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm

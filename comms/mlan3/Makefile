@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.dalsemi.com/pub/auto_id/public/
 DISTNAME=	owpd300b
 
 MAINTAINER=	hm@FreeBSD.org
+COMMENT=	Version 3.00 beta API for Dallas Semiconductors 1-wire lan devices
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 

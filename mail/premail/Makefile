@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.jpunix.com/pub/remailer-tools/ \
 		ftp://ftp.kiarchive.ru/pub/unix/crypto/
 
 MAINTAINER=	ache@FreeBSD.org
+COMMENT=	E-mail privacy package, support anon remailers, PGP, nyms
 
 BUILD_DEPENDS+=	pgp:${PORTSDIR}/security/pgp
 

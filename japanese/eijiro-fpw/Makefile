@@ -12,6 +12,7 @@ MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/eijiro/
 DISTNAME=	${PORTNAME}${PORTVERSION}-src
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT=	EIJIRO English - Japanese Dictionary (EPWING V1 format)
 
 BUILD_DEPENDS=	${LOCALBASE}/libexec/freepwing/catdump:${PORTSDIR}/japanese/freepwing \
 		${LOCALBASE}/share/doc/freepwing/fpwutils.mk:${PORTSDIR}/japanese/freepwing \

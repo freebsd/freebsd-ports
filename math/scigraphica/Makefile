@@ -14,6 +14,7 @@ MASTER_SITES=	http://scigraphica.sourceforge.net/src/ \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A scientific application for data analysis and technical graphics
 
 BUILD_DEPENDS=	${PYNUMERIC}
 LIB_DEPENDS=	gtkextra.17:${PORTSDIR}/x11-toolkits/gtkextra

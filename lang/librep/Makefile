@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	librep
 #DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	An Emacs Lisp like runtime library
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
 		intl.4:${PORTSDIR}/devel/gettext

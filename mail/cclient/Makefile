@@ -17,6 +17,7 @@ DISTNAME=	imap-${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	anders@FreeBSD.org
+COMMENT=	Mark Crispin's C-client mail access routines
 
 INSTALLS_SHLIB=	yes
 ALL_TARGET=	bsf

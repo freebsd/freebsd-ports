@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	apps/sound/mp3-utils/mp3info
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	Tool to manipulate ID3 tags for MP3 files
 
 USE_GNOMENG=	yes
 WANT_GNOME=	yes

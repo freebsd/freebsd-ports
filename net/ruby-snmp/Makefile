@@ -16,6 +16,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	seanc@FreeBSD.org
+COMMENT=	Ruby interface to UCD-SNMP library
 
 LIB_DEPENDS=	snmp.4:${PORTSDIR}/net/net-snmp4
 

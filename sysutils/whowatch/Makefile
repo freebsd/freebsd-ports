@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://wizard.ae.krakow.pl/~mike/download/
 
 MAINTAINER=	dannyboy@FreeBSD.org
+COMMENT=	Displays information in real time about users currently logged on
 
 USE_REINPLACE=	yes
 

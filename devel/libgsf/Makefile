@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.7
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	An extensible i/o abstraction for dealing with structured file formats
 
 LIB_DEPENDS=	bonobo-2.0:${PORTSDIR}/devel/libbonobo \
 		gnomevfs-2.0:${PORTSDIR}/devel/gnomevfs2

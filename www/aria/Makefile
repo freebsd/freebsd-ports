@@ -14,6 +14,7 @@ MASTER_SITES=	http://rabien.virtualave.net/linux/storage/sources/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.t/test/}
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	Yet another download tool
 
 USE_BZIP2=	yes
 USE_GNOMENG=	yes

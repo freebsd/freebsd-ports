@@ -13,6 +13,7 @@ DISTNAME=	gogo239b
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	Very fast MP3 encoder using recent x86 processors' features
 
 # More than version 0.98
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	jim
 DISTNAME=	${PORTNAME}-1999-06-20
 
 MAINTAINER=	jim@FreeBSD.org
+COMMENT=	Workman library required by some audio apps
 
 WRKSRC=		${WRKDIR}/libworkman
 USE_IMAKE=	yes

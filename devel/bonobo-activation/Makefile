@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	An object activation framework for GNOME 2.0
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		ORBit-2.0:${PORTSDIR}/devel/ORBit2

@@ -18,6 +18,7 @@ MASTER_SITES=	http://www.iagora.com/~espel/sirc/ \
 		http://dougbarton.net/FreeBSD/Downloads/
 
 MAINTAINER=	DougB@FreeBSD.org
+COMMENT=	Small (150k), fast, perl-based IRC client
 
 USE_PERL5=	yes
 

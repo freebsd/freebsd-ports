@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	Utilities converting Excel and PowerPoint files to HTML and text
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

@@ -11,6 +11,7 @@ CATEGORIES=	mail windowmaker
 MASTER_SITES=	http://tnemeth.free.fr/projets/programmes/
 
 MAINTAINER=	pat@FreeBSD.org
+COMMENT=	Incoming mail monitor dockapp with a similar look to wmcpuload
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.samba-tng.org/download/tng/ \
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}_0.${PORTVERSION:S,c,cvs,}
 
 MAINTAINER=	dwcjr@FreeBSD.org
+COMMENT=	A free SMB and CIFS client and server for UNIX
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 

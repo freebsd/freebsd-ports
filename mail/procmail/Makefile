@@ -31,6 +31,7 @@ MASTER_SITES=	ftp://ftp.procmail.org/pub/procmail/ \
 		ftp://ftp.mirror.ac.uk/sites/ftp.procmail.org/pub/procmail/
 
 MAINTAINER=	ache@FreeBSD.org
+COMMENT=	A local mail delivery agent
 
 # Global variables
 #

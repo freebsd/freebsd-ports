@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.0
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	The component and compound document system for GNOME
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

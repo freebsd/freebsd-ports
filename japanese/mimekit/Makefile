@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.etl.go.jp/pub/DeleGate/
 DISTNAME=	delegate6.1.19
 
 MAINTAINER=	max@FreeBSD.org
+COMMENT=	Library to handle messages with MIME-encoded headers
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/mimekit
 

@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.kotnet.org/~skimo/nvi/devel/ \
 MASTER_SITE_SUBDIR=	dd
 
 MAINTAINER=	dd@FreeBSD.org
+COMMENT=	Development snapshot of the world-renown nvi editor
 
 BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3

@@ -12,6 +12,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=		jim@FreeBSD.org
+COMMENT=	An xbiff-like Window Maker dock app
 
 USE_X_PREFIX=		yes
 USE_XPM=		yes

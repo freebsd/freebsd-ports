@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.1
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Lightweight HTML rendering/printing/editing engine
 
 LIB_DEPENDS=	pspell.15:${PORTSDIR}/textproc/aspell
 

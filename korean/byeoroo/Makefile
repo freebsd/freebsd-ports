@@ -12,6 +12,7 @@ CATEGORIES=	korean x11
 MASTER_SITES=	http://master.debian.or.kr/~cwryu/archive/byeoroo/
 
 MAINTAINER=	cjh@FreeBSD.org
+COMMENT=	Korean X11 Input Method
 
 BROKEN=		"Does not compile"
 

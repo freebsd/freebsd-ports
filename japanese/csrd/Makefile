@@ -11,6 +11,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/csrd/
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT=	Utility for Shogakukan Random House English-Japanese Dictionary
 
 MAKEFILE=	makefile.unx
 ALL_TARGET=	csrd

@@ -12,6 +12,7 @@ MASTER_SITES=	http://sydney.proximity.com.au/~ben/xenon/dist/ \
 		ftp://yankee.proximitygroup.com/pub/xenon/
 
 MAINTAINER=	jedgar@FreeBSD.org
+COMMENT=	Simple X-based text editor
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes

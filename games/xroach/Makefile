@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_BACKUP}
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	markm@FreeBSD.org
+COMMENT=	Cockroaches hide under your windows
 
 MAN6=		xroach.6
 MANCOMPRESSED=	maybe

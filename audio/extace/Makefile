@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	extace
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	An Audio Visualization plugin for the X Window System
 
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 

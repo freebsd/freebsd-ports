@@ -12,6 +12,7 @@ MASTER_SITES=	http://adzapper.sourceforge.net/ \
 MASTER_SITE_SUBDIR=kris
 
 MAINTAINER=	kris@FreeBSD.org
+COMMENT=	Filter out animated ad banners from web pages
 
 WRKSRC=		${WRKDIR}/adzap
 

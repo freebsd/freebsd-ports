@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.th-darmstadt.de/pub/tex/src/makeindex/BETA/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jmz@FreeBSD.org
+COMMENT=	A general purpose, formatter-independent index processor
 
 WRKSRC=		${WRKDIR}/makeindex
 MAN1=		makeindex.1

@@ -13,6 +13,7 @@ DISTNAME=	wansung
 DIST_SUBDIR=	hlatex
 
 MAINTAINER=	cjh@FreeBSD.org
+COMMENT=	HLaTeX extension to use Wansung(KSX1001) fonts
 
 # it depends on HLaTeX(uhc)
 RUN_DEPENDS=	${LOCALBASE}/share/texmf/doc/latex/hlatex/uhc.ks:${PORTSDIR}/korean/hlatex

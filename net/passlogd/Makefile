@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.morphine.com/src/
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	Intercept and dump syslog remote log packets
 
 USE_REINPLACE=	yes
 

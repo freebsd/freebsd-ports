@@ -9,6 +9,7 @@ PORTNAME=	postgresql
 PKGNAMESUFFIX=	-docs
 
 MAINTAINER=	girgen@pingpong.net
+COMMENT=	The PostgreSQL documentation set
 
 POSTGRESQL_SUBPORT=	YES
 POSTGRESQL_PORT?=	databases/postgresql7

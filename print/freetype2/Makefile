@@ -19,6 +19,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME:S/2//}-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A free and portable TrueType font rendering engine
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	Gimp
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vanilla@FreeBSD.org
+COMMENT=	A perl5 module for writing Gimp extension
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/PDL.pm:${PORTSDIR}/math/PDL \

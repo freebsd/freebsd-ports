@@ -11,6 +11,7 @@ CATEGORIES=	converters devel
 MASTER_SITES=	http://huizen.dds.nl/~frodol/psiconv/
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A conversion utility to convert Psion 5(MX) files into other formats
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

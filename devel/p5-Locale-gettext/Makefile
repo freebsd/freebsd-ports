@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	Locale
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Message handling functions
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

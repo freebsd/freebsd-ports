@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 MAINTAINER=	mph@freebsd.org
+COMMENT=	An X11 solitaire game with 14 variations
 
 USE_IMAKE=	yes
 USE_XPM=	yes

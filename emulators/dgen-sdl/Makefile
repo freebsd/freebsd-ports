@@ -12,6 +12,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://pknet.com/~joe/
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A wonderful Sega Genesis/MegaDrive emulator
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12

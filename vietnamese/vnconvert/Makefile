@@ -15,6 +15,7 @@ DISTNAME=	convert
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	obrien@FreeBSD.org
+COMMENT=	Converts Vietnamese text files between popular formats
 
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile

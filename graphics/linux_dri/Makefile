@@ -18,6 +18,7 @@ DISTFILES=	Xbin.tgz:x \
 DIST_SUBDIR=	linux_dri-${PORTVERSION}
 
 MAINTAINER=	anholt@freebsd.org
+COMMENT=	Binary Linux DRI libraries for 3D hardware acceleration of linux apps
 
 WRKSRC=		${WRKDIR}/lib
 NO_BUILD=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.netlib.org/random/
 DISTNAME=	ranlib.c
 
 MAINTAINER=	tg@FreeBSD.org
+COMMENT=	Library of Routines for Random Number Generation
 
 INSTALLS_SHLIB=	yes
 MAKE_ENV=	NOPROFILE=true

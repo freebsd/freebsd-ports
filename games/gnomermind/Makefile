@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A puzzle game for Gnome, loosely based on the classic MasterMind game
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

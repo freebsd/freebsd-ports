@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyvorbis-${PORTVERSION}
 
 MAINTAINER=	nbm@FreeBSD.org
+COMMENT=	Object-oriented Python bindings for the vorbis library
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/ogg/_oggmodule.so:${PORTSDIR}/audio/py-ogg
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ogg/_oggmodule.so:${PORTSDIR}/audio/py-ogg

@@ -11,6 +11,7 @@ MASTER_SITES=	ftp://ftp.cs.ucsd.edu/pub/scg/KeLP/
 DISTNAME=	KeLP1.3
 
 MAINTAINER=	keichii@freebsd.org
+COMMENT=	KeLP is a software infrastructure for parallel computing
 
 BUILD_DEPENDS=	${LOCALBASE}/mpich/bin/mpirun:${PORTSDIR}/net/mpich
 

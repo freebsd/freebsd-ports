@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.kame.net/pub/kame/misc/
 DISTNAME=	pping-${PORTVERSION}
 
 MAINTAINER=	sumikawa@FreeBSD.org
+COMMENT=	Geta(GET Address) - Simple IPv4/IPv6 address resolving tool
 
 WRKSRC=		${WRKDIR}/pping
 GNU_CONFIGURE=	yes

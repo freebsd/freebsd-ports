@@ -15,6 +15,7 @@ PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 DISTNAME=		gadfly-${PORTVERSION}
 
 MAINTAINER=		tg@FreeBSD.org
+COMMENT=	Graph and set datatypes for Python (C extension)
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes

@@ -11,6 +11,7 @@ CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://home.dwave.net/~jking/wmtimer/
 
 MAINTAINER=	pat@FreeBSD.org
+COMMENT=	Multi-Function timer dockapp for WindowMaker
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmtimer
 USE_GMAKE=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://www.qvwm.org/pub/qvwm/ \
 		ftp://ftp.chg.ru/pub/X11/windowmanagers/qvwm/
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	Windows 95/98/NT like window manager for X11
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.mpegtv.com/pub/mpeg/mpegtv/player/x86-unknown-linux-glib
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz libSDLx11.so.tar.gz
 
 MAINTAINER=	kris@FreeBSD.org
+COMMENT=	High-performance MPEG video player (shareware)
 
 RUN_DEPENDS=	/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 

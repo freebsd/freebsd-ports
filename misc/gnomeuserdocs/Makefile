@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sources/gnome-user-docs/1.4
 DISTNAME=	gnome-user-docs-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	GNOME users guide
 
 BUILD_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper

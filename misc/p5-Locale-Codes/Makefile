@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Locale
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Perl5 module providing access to ISO3166 and ISO639 Country Codes
 
 PERL_CONFIGURE=	YES
 

@@ -14,6 +14,7 @@ DISTNAME=	gnome-print-${PORTVERSION}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Gnome print support library
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2

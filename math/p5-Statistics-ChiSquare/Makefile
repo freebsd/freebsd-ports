@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Statistics
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	How random is your data?
 
 PERL_CONFIGURE=	yes
 

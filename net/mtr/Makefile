@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 		ftp://ftp.gw.com/mirrors/pub/unix/mtr/
 
 MAINTAINER=	billf@FreeBSD.org
+COMMENT=	Traceroute and ping in a single graphical network diagnostic tool
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

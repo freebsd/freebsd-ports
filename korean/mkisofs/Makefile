@@ -17,6 +17,7 @@ PATCHFILES=	mkisofs-1.13-cp949.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	cjh@FreeBSD.org
+COMMENT=	Create iso9660/Rock Ridge/Joliet filesystems supporting Korean
 
 MAN8=		apple_driver.8 isoinfo.8 mkhybrid.8 mkisofs.8
 USE_GMAKE=	yes

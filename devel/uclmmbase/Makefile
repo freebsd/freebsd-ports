@@ -12,6 +12,7 @@ MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/common/
 DISTNAME=	common-${PORTVERSION}
 
 MAINTAINER=	fenner@FreeBSD.org
+COMMENT=	Common subroutines for UCL mbone applications
 
 WRKSRC=		${WRKDIR}/common
 GNU_CONFIGURE=	yes

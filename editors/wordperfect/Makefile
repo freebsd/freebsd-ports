@@ -14,6 +14,7 @@ DISTNAME=	GUILG00
 EXTRACT_SUFX=	.GZ
 
 MAINTAINER=	msmith@freebsd.org
+COMMENT=	Graphical word processor ported from Windows
 
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	"LIC: redistribution not allowed"

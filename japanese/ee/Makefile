@@ -16,6 +16,7 @@ DISTFILES=	${PORTNAME}.tar.gz \
 EXTRACT_ONLY=	ee-3.0.tar.gz
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
+COMMENT=	A simple, easy to use Japanese terminal-based screen editor
 
 BROKEN=		"Does not compile"
 

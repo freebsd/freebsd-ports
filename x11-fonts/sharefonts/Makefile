@@ -11,6 +11,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/fonts/
 
 MAINTAINER=	dburr@FreeBSD.org
+COMMENT=	A collection of shareware ATM fonts from the CICA archives
 
 RESTRICTED=	"Shareware.  Cannot be distributed w/o prior authorization."
 NO_CDROM=	${RESTRICTED}

@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	obrien@FreeBSD.org
+COMMENT=	The X Literate Biff - displays the from and subject from incoming mails
 
 USE_IMAKE=	yes
 MAN1=		xlbiff.1

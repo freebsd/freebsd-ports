@@ -18,6 +18,7 @@ MASTER_SITE_SUBDIR=	gtk/v${PORTVERSION:R}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Some useful routines of C programming (current stable version)
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext

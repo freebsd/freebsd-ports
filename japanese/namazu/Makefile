@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.namazu.org/stable/ \
 MASTER_SITE_SUBDIR=	flathill
 
 MAINTAINER=	flathill@FreeBSD.org
+COMMENT=	Search engine software intended for easy use
 
 BUILD_DEPENDS=	kakasi:${PORTSDIR}/japanese/kakasi \
 		nkf:${PORTSDIR}/japanese/nkf

@@ -11,6 +11,7 @@ CATEGORIES=	russian textproc
 MASTER_SITES=	ftp://scon155.phys.msu.su/pub/russian/ispell/
 
 MAINTAINER=	ache@FreeBSD.org
+COMMENT=	New Russian dictionaries for ispell
 
 BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 

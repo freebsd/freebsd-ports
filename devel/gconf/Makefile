@@ -15,6 +15,7 @@ DISTNAME=	GConf-${PORTVERSION}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A configuration database system for GNOME
 
 LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile \
 		db3.3:${PORTSDIR}/databases/db3

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Class
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Object-oriented delegation
 
 PERL_CONFIGURE=	yes
 PLIST_SUB+=	EXAMPLESDIR="share/examples/${PORTNAME}"

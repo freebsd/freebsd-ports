@@ -11,6 +11,7 @@ CATEGORIES=	graphics gnome
 MASTER_SITES=	http://xmps.sourceforge.net/sources/
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	X MPEG Player System - a media player with a very nice GUI
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 

@@ -14,6 +14,7 @@ DISTNAME=	CMFForum-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nbm@FreeBSD.org
+COMMENT=	A forum for ZOPE CMF with file attachments
 
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/z2.py:${PORTSDIR}/www/zope \
 		${LOCALBASE}/${SZOPEBASEDIR}/lib/python/Products/CMFDefault/__init__.py:${PORTSDIR}/www/zope-cmf

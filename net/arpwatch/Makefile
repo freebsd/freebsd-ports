@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.Awfulhak.org/arpwatch/ \
 DISTNAME=	arpwatch-2.1a11
 
 MAINTAINER=	brian@FreeBSD.org
+COMMENT=	Monitor arp & rarp requests
 
 GNU_CONFIGURE=	yes
 HAS_CONFIGURE=	yes

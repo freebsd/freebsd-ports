@@ -12,6 +12,7 @@ CATEGORIES=	palm comms tk83
 MASTER_SITES=	http://www.pilot-link.org/source/
 
 MAINTAINER=	dima@FreeBSD.org
+COMMENT=	PalmPilot communications utilities (backup/restore/install/debug/...)
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		tk83:${PORTSDIR}/x11-toolkits/tk83 \

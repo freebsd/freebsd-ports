@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.wu-ftpd.org/pub/support/	\
 		ftp://ftp.gpad.ac.ru/pub/FreeBSD/distfiles/
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Compiles information about file transfers from logfiles
 
 USE_GNOMENG=	yes
 USE_GNOME=	glib12

@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A GNOME application designed to manage cyclic tasks
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

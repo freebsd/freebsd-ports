@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.sonic.net/pub/users/nbs/unix/x/explosions/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/^0.//}
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	3D objects flying around resembling explosions with various effects
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image

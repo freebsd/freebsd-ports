@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	znerd
 DISTNAME=	jakarta-tomcat-${PORTVERSION}-src
 
 MAINTAINER=	znerd@FreeBSD.org
+COMMENT=	Apache module for Tomcat 3
 
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
 RUN_DEPENDS=	${APXS}:${APACHE_PORT} \

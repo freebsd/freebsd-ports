@@ -13,6 +13,7 @@ MASTER_SITES=	http://download.sourceforge.net/cphone/
 DISTNAME=	cphone_0.1.0
 
 MAINTAINER=	roger@FreeBSD.org
+COMMENT=	H323 Video Conferencing Program which uses QT
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/openh323:build
 

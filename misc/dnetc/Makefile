@@ -32,6 +32,7 @@ BROKEN=		"rc5des/dnetc conflict: Please deinstall all rc5des ports/packages firs
 .endif
 
 MAINTAINER=	dbaker@FreeBSD.org
+COMMENT=	Distributed.net distributed computing project client (modules: rc5-72/ogr)
 
 WRKSRC=		${WRKDIR}/dnetc-freebsd-x86-elf
 NO_BUILD=	yes

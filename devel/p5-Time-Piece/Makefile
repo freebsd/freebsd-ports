@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Time
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Time::Piece - Object Oriented time objects
 
 PERL_CONFIGURE=	yes
 
