@@ -7,28 +7,27 @@
 #
 
 PORTNAME=	epix
-PORTVERSION=	0.8.10a
+PORTVERSION=	1.0.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://mathcs.holycross.edu/~ahwang/software/
+MASTER_SITES=	http://mathcs.holycross.edu/~ahwang/epix/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates math plots and line figures using easy-to-learn syntax
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		latex:${PORTSDIR}/print/teTeX
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}
-
 USE_BZIP2=	yes
+USE_GCC=	3.4
 USE_REINPLACE=	yes
 MAKE_ARGS=	CXX="${CXX}" CFLAGS="${CXXFLAGS} -c" \
 		INSTALL_PROGRAM="${INSTALL_DATA}" \
 		INSTALL_BIN="${INSTALL_SCRIPT}"
-PLIST_SUB=	VERSION="${PORTVERSION:S/a//}"
+PLIST_SUB=	VERSION="${PORTVERSION}"
 
-MAN1=	epix.1
+MAN1=		epix.1
 
 post-patch:
 	@${REINPLACE_CMD} -e \
