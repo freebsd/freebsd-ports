@@ -1,0 +1,33 @@
+--- cpu.c.orig	Mon Dec  2 21:31:48 2002
++++ cpu.c	Mon Dec  2 21:31:40 2002
+@@ -253,7 +253,7 @@
+ 
+ 
+ #define JumpCond(name, cond) \
+-static INLINE2 void i_j ## name ## (void) \
++static INLINE2 void i_j ## name (void) \
+ { \
+       register int tmp = (int)((INT8)GetMemInc(c_cs,ip)); \
+       if (cond) ip = (WORD)(ip+tmp); \
+--- mfs_link.h.orig	Wed Jun 22 16:24:51 1994
++++ mfs_link.h	Mon Dec  2 21:31:40 2002
+@@ -41,7 +41,7 @@
+ 
+ 
+ #define REGS  vm86s.regs
+-#define REG(reg) (REGS.##reg)
++#define REG(reg) (REGS.reg)
+ 
+ #define CF     (1 << 0)
+ #define TF     (1 <<  8)
+--- mfs.h.orig	Mon Dec  2 21:31:48 2002
++++ mfs.h	Mon Dec  2 21:31:40 2002
+@@ -49,7 +49,7 @@
+ extern char *sys_errlist[];
+ #endif
+ 
+-#if !defined(__hpux) && !defined(SOLARIS) && !defined(SGI) && !defined(RS6000)
++#if !defined(__hpux) && !defined(SOLARIS) && !defined(SGI) && !defined(RS6000) && !defined(__FreeBSD__)
+ #define strerror(x) sys_errlist[x]
+ #endif
+ 
