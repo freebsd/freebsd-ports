@@ -76,7 +76,7 @@ install-fonts:
 	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT.TXT ${FONTSDIR}
 
 install-conf:
-	${MKDIR} -p ${PREFIX}/etc/fonts
+	${MKDIR} ${PREFIX}/etc/fonts
 	${INSTALL_DATA} ${WRKSRC}/local.conf ${PREFIX}/etc/fonts
 
 install-docs:
