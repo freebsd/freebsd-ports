@@ -1,2 +1,4 @@
 MD5 (Sablot-0.95.tar.gz) = 5dbcb6eabe8a962f9b84719cdb100390
 MD5 (sablot-docs-0.81.tar.gz) = e9df9492f164120ea7fe7b85713421ea
+MD5 (Sablot-0.95-PHP.patch) = 6d9602848c8e497de1fdae764bb7aa95
+MD5 (Sablot-0.95-GlobVars.patch) = cd31e69fea8e5f22339c120118c07420

@@ -7,9 +7,14 @@
 
 PORTNAME=	Sablot
 PORTVERSION=	0.95
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://download-2.gingerall.cz/download/sablot/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} sablot-docs-0.81${EXTRACT_SUFX}
+
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	Sablot-0.95-PHP.patch Sablot-0.95-GlobVars.patch
+PATCH_DIST_STRIP=	-p2
 
 MAINTAINER=	skv@FreeBSD.org
 
