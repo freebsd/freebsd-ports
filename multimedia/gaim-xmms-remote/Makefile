@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	gaim-xmms-remote
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	multimedia net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	guifications
 
-MAINTAINER=	daniel@xbox-irc.net
+MAINTAINER=	danielshafer@gmail.com
 COMMENT=	Plugin to display current XMMS song in Gaim
 
 BUILD_DEPENDS=	${X11BASE}/include/gaim/config.h:${PORTSDIR}/net/gaim
