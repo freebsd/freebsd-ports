@@ -1,11 +1,11 @@
---- mdel.c.orig	Tue Apr 24 16:00:57 2001
-+++ mdel.c	Tue Apr 24 16:01:01 2001
+--- mdel.c.orig	Sat Apr 28 12:47:05 2001
++++ mdel.c	Sat Apr 28 12:47:18 2001
 @@ -118,7 +118,7 @@
- 	fprintf(stderr,
+ 	fprintf(stderr, 
  		"Mtools version %s, dated %s\n", mversion, mdate);
- 	fprintf(stderr,
+ 	fprintf(stderr, 
 -		"Usage: %s [-v] msdosfile [msdosfiles...]", progname);
 +		"Usage: %s [-v] msdosfile [msdosfiles...]\n", progname);
  	exit(1);
  }
-
+ 
