@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	devel/lang/c
 
-MAINTAINER=	dchapes@zeus.leitch.com
+MAINTAINER=	bsdport@ddm.wox.org
 
 USE_GMAKE=	yes
 MAN1=		cflow.1
