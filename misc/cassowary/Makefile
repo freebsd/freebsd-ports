@@ -15,6 +15,8 @@ MAINTAINER=	nakai@FreeBSD.org
 BUILD_DEPENDS=	guile:${PORTSDIR}/lang/guile
 LIB_DEPENDS=	GTL.3:${PORTSDIR}/misc/gtl
 
+BROKEN=		build
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_NEWGCC=	yes
