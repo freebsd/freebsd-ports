@@ -1,0 +1,12 @@
+bin/xmlwrapp-config
+include/xmlwrapp/attributes.h
+include/xmlwrapp/document.h
+include/xmlwrapp/event_parser.h
+include/xmlwrapp/init.h
+include/xmlwrapp/node.h
+include/xmlwrapp/tree_parser.h
+include/xmlwrapp/xmlwrapp.h
+@dirrm include/xmlwrapp
+lib/libxmlwrapp.a
+lib/libxmlwrapp.so
+lib/libxmlwrapp.so.3

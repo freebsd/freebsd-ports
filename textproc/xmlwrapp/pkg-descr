@@ -1,0 +1,15 @@
+xmlwrapp is a modern style C++ library for working with XML data. It provides
+a simple and easy to use interface for the very powerful libxml2 XML parser.
+
+Features:
+   * Tree parsing. XML data is parsed and a tree of xml::node objects is
+     created. Similar to the DOM.
+   * Event parsing. XML data is parsed as protected member functions of an
+     event class are called. Similar to SAX.
+   * It is easy to construct an XML tree using xml::node objects. Any
+     xml::node may be inserted into an IOStream causing translation to XML
+     text data.
+   * Complete isolation from the backend parser due to the private
+     implementation (pimpl) idiom.
+
+WWW: http://pmade.org/pjones/software/xmlwrapp/
