@@ -14,11 +14,21 @@ MASTER_SITES=	ftp://samba.anu.edu.au/pub/rsync/  \
 		ftp://ftp.sunet.se/pub/unix/admin/rsync/  \
 		ftp://ftp.fu-berlin.de/pub/unix/network/rsync/
 
+PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/ \
+		ftp://ftp.pasta.cs.uit.no/pub/IPv6/misc/
+PATCHFILES=	rsync-231-v6-19990723.diff.gz
+PATCH_DIST_STRIP=	-p1
+
 MAINTAINER=     obrien@FreeBSD.org
 
 Y2K=		http://rsync.samba.org/rsync/y2k.html
 
 GNU_CONFIGURE=	yes
+.if defined(USE_INET6)
+CONFIGURE_ARGS=	--enable-ipv6
+.else
+CONFIGURE_ARGS=	--disable-ipv6
+.endif
 MAN1=		rsync.1
 MAN5=		rsyncd.conf.5
 
