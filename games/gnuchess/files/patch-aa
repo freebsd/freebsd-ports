@@ -1,0 +1,144 @@
+diff --minimal -c orig/gnuchess-4.0.pl77/src/dspcom.c gnuchess-4.0.pl77/src/dspcom.c
+*** orig/gnuchess-4.0.pl77/src/dspcom.c	Sun May 19 23:38:47 1996
+--- src/dspcom.c	Sat Feb 15 00:29:12 1997
+***************
+*** 1099,1105 ****
+  #ifdef NONDSP
+        s[0] = sx[0] = '\0';
+        while (!sx[0])
+! 	(void) gets (sx);
+  #else
+        fflush (stdout);
+  #ifdef MSDOS
+--- 1099,1105 ----
+  #ifdef NONDSP
+        s[0] = sx[0] = '\0';
+        while (!sx[0])
+! 	(void) fgets (sx, 80, stdin);
+  #else
+        fflush (stdout);
+  #ifdef MSDOS
+diff --minimal -c orig/gnuchess-4.0.pl77/src/gnuan.c gnuchess-4.0.pl77/src/gnuan.c
+*** orig/gnuchess-4.0.pl77/src/gnuan.c	Sun May 19 23:39:56 1996
+--- src/gnuan.c	Sat Feb 15 00:28:24 1997
+***************
+*** 1347,1358 ****
+      fpout = stderr;
+      fprintf (fpout, "Input the file with the algebraic moves of the game.\n");
+      fflush (fpout);
+!     gets (infilename);
+      fprintf (fpout, "\n");
+      do
+        {
+  	  fprintf (fpout, "Input the search depth you want to use.  (1 to 29)(- for depth from file)\n");
+! 	  gets (inbuf);
+  	  search_depth = atoi (inbuf);
+  	  if (search_depth < 0)
+  	    {
+--- 1347,1358 ----
+      fpout = stderr;
+      fprintf (fpout, "Input the file with the algebraic moves of the game.\n");
+      fflush (fpout);
+!     fgets (infilename, 255, stdin);
+      fprintf (fpout, "\n");
+      do
+        {
+  	  fprintf (fpout, "Input the search depth you want to use.  (1 to 29)(- for depth from file)\n");
+! 	  fgets (inbuf, 256, stdin);
+  	  search_depth = atoi (inbuf);
+  	  if (search_depth < 0)
+  	    {
+***************
+*** 1368,1374 ****
+      do
+        {
+  	  fprintf (fpout, "Input the maximum number of minutes per move you want to use.\n");
+! 	  gets (inbuf);
+  	  max_minutes = atoi (inbuf);
+  	  if (max_minutes < 0)
+  	    {
+--- 1368,1374 ----
+      do
+        {
+  	  fprintf (fpout, "Input the maximum number of minutes per move you want to use.\n");
+! 	  fgets (inbuf, 256, stdin);
+  	  max_minutes = atoi (inbuf);
+  	  if (max_minutes < 0)
+  	    {
+***************
+*** 1378,1384 ****
+        }
+      while ((max_minutes + max_seconds) < 1);
+      fprintf (fpout, "Post the search results(y/n).\n");
+!     gets (inbuf);
+      if (inbuf[0] == 'y')
+  	flag.post = true;
+      else
+--- 1378,1384 ----
+        }
+      while ((max_minutes + max_seconds) < 1);
+      fprintf (fpout, "Post the search results(y/n).\n");
+!     fgets (inbuf, 256, stdin);
+      if (inbuf[0] == 'y')
+  	flag.post = true;
+      else
+***************
+*** 1558,1564 ****
+  	      while (true)
+  		{
+  		    printf (">");
+! 		    gets (GNUANinbuf1);
+  		    p = GNUANinbuf1;
+  		    q = GNUANinbuf;
+  		    while (true)
+--- 1558,1564 ----
+  	      while (true)
+  		{
+  		    printf (">");
+! 		    fgets (GNUANinbuf1, 128, stdin);
+  		    p = GNUANinbuf1;
+  		    q = GNUANinbuf;
+  		    while (true)
+diff --minimal -c orig/gnuchess-4.0.pl77/src/nondsp.c gnuchess-4.0.pl77/src/nondsp.c
+*** orig/gnuchess-4.0.pl77/src/nondsp.c	Sun May 19 23:40:31 1996
+--- src/nondsp.c	Sat Feb 15 00:25:49 1997
+***************
+*** 264,273 ****
+  
+    NewGame ();
+  
+!   gets (s);			/* skip "setup" command */
+    for (r = 7; r >= 0; r--)
+      {
+!       gets (s);
+        for (c = 0; c <= 7; c++)
+  	{
+  	  ch = s[c];
+--- 264,273 ----
+  
+    NewGame ();
+  
+!   fgets (s, 80, stdin);			/* skip "setup" command */
+    for (r = 7; r >= 0; r--)
+      {
+!       fgets (s, 80, stdin);
+        for (c = 0; c <= 7; c++)
+  	{
+  	  ch = s[c];
+***************
+*** 617,623 ****
+    if (!T[0])
+      {
+        printz (CP[61]);
+!       gets (T);
+      }
+    strcat (T, "XX");
+    /* skip whitespace */
+--- 617,623 ----
+    if (!T[0])
+      {
+        printz (CP[61]);
+!       fgets (T, 64, stdin);
+      }
+    strcat (T, "XX");
+    /* skip whitespace */
