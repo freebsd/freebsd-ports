@@ -35,6 +35,7 @@
     SUBDIR += cadubi
     SUBDIR += cal3d
     SUBDIR += camediaplay
+    SUBDIR += cbrpager
     SUBDIR += cbview
     SUBDIR += chbg
     SUBDIR += cimg
