@@ -6,20 +6,26 @@
 #
 
 PORTNAME=	Hyperlatex
-PORTVERSION=	2.5
-PORTREVISION=	1
+PORTVERSION=	2.6
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.cs.uni-magdeburg.de/pub/ipe/
+MASTER_SITES=	http://www.cs.uu.nl/~otfried/Hyperlatex/
 
 MAINTAINER=	witr@rwwa.com
 COMMENT=	Produce HTML and printed documents from LaTeX source
 
-BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs20
-RUN_DEPENDS=	emacs:${PORTSDIR}/editors/emacs20 \
-		latex:${PORTSDIR}/print/latex
+BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs21
+RUN_DEPENDS=	emacs:${PORTSDIR}/editors/emacs21 \
+		latex:${PORTSDIR}/print/teTeX \
+		ppmtogif:${PORTSDIR}/graphics/netpbm
 
+USE_REINPLACE=	yes
 LATEX_DIR=	${PREFIX}/share/texmf/tex/latex
 HYPERLATEX_DIR=	${PREFIX}/share/texmf/tex/latex/hyperlatex
+
+do-configure:
+	@(cd ${WRKSRC} && \
+	${REINPLACE_CMD} -e 's|http://www.cs.uu.nl/\\~{}otfried/img/||' siteinit.hlx && \
+	${REINPLACE_CMD} -e 's|$$HOME/Hyperlatex/Hlx|${PREFIX}/share/texmf/tex/latex/hyperlatex|' hyperlatex)
 
 do-build:
 	cd ${WRKSRC}; emacs -batch -q -no-site-file -l hyperlatex.el -f hyperlatex-compile
