@@ -1,17 +1,17 @@
---- scripts/mysql_install_db.sh.orig	Wed Dec  9 12:48:04 1998
-+++ scripts/mysql_install_db.sh	Wed Dec 23 23:39:46 1998
-@@ -11,8 +11,8 @@
- ldata=@localstatedir@
- mdata=$ldata/mysql
+--- scripts/mysql_install_db.sh.orig	Fri Jan  1 15:33:33 1999
++++ scripts/mysql_install_db.sh	Wed Jan  6 00:10:55 1999
+@@ -13,8 +13,8 @@
+ execdir=@libexecdir@
+ bindir=@bindir@
  
 -# Are we doing an rpm install?
 -if test "$1" = "-IN-RPM"; then IN_RPM=1; shift; fi
 +# pretend we're doing an RPM install
 +IN_RPM=1
  
- if test ! -x @libexecdir@/mysqld
- then
-@@ -27,8 +27,6 @@
+ # Get mysqld/safe_mysqld options from /etc/my.cnf or ~/.my.cnf
+ if test -w /
+@@ -57,8 +57,6 @@
    fi
  fi
  
@@ -20,7 +20,7 @@
  hostname=`hostname`		# Install this too in the user table
  
  # Check if hostname is valid
-@@ -44,12 +42,9 @@
+@@ -74,14 +72,11 @@
  fi
  
  # Create database directories mysql & test
@@ -29,10 +29,14 @@
 -  if test ! -d $ldata; then mkdir $ldata; fi
 -  if test ! -d $ldata/mysql; then mkdir $ldata/mysql; fi
 -  if test ! -d $ldata/test; then mkdir $ldata/test; fi
--fi
+-  if test -w / -a ! -z "$user"; then
+-    chown $user $ldata $ldata/mysql $ldata/test;
+-  fi
 +if test ! -d $ldata; then mkdir $ldata; fi
 +if test ! -d $ldata/mysql; then mkdir $ldata/mysql; fi
 +if test ! -d $ldata/test; then mkdir $ldata/test; fi
++if test -w / -a ! -z "$user"; then
++  chown $user $ldata $ldata/mysql $ldata/test;
+ fi
  
  # Initialize variables
- c_d="" i_d=""
