@@ -21,6 +21,8 @@ USE_GNOME=	gnomehack gnomeprefix gnometarget gtk20
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
+BROKEN=		"fails checksum test"
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
 .ifndef(NOPORTDOCS)
