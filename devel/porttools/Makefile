@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	porttools
-PORTVERSION=	0.01
+PORTVERSION=	0.10
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sergei@kolobov.com
 COMMENT=	Tools for testing and submitting port updates and new ports
+
+RUN_DEPENDS=	portlint:${PORTSDIR}/devel/portlint \
+		sudo:${PORTSDIR}/security/sudo
 
 NO_BUILD=	yes
 MAKE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
