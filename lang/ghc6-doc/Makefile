@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ghc-doc
-PORTVERSION=	5.04
+PORTVERSION=	5.04.1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.haskell.org/ghc/docs/${PORTVERSION}/ \
 		http://www.haskell.org/ghc/docs/${PORTVERSION}/html/
