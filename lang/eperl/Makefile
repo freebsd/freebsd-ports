@@ -3,7 +3,7 @@
 # Date created:		03-Sep-1997
 # Whom:			Ralf S. Engelschall <rse@engelschall.com>
 #
-# $Id: Makefile,v 1.14 1997/09/03 10:31:41 rse Exp $
+# $Id: Makefile,v 1.15 1997/10/28 12:43:04 rse Exp $
 #
 
 DISTNAME=	eperl-2.2.6
@@ -39,13 +39,13 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/eperl.1 ${PREFIX}/man/man1/eperl.1
 .if !defined(NOPORTDOCS)
 	@if [ ! -d ${PREFIX}/share/examples/eperl ]; then \
-		${MKDIR} -p ${PREFIX}/share/examples/eperl; \
+		${MKDIR} ${PREFIX}/share/examples/eperl; \
 	fi
 	${CP} ${WRKSRC}/eg/* ${PREFIX}/share/examples/eperl/
 .endif
 .if defined(INSTALL_ALSO_AS_SSSL)
 	@if [ ! -d ${PREFIX}/www/cgi-bin ]; then \
-		${MKDIR} -p ${PREFIX}/www/cgi-bin; \
+		${MKDIR} ${PREFIX}/www/cgi-bin; \
 	fi
 	${INSTALL_PROGRAM} ${WRKSRC}/eperl ${PREFIX}/www/cgi-bin/nph-eperl
 	@if [ ".`grep x-httpd-eperl ${PREFIX}/etc/apache/srm.conf`" = . ]; then \
