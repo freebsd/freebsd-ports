@@ -7,7 +7,7 @@
 
 PORTNAME=	sdl-devel
 PORTVERSION=	1.1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.libsdl.org/release/ \
 		http://www.devolution.com/~slouken/SDL/release/
@@ -25,7 +25,8 @@ INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	NASM="${LOCALBASE}/bin/nasm"
 CONFIGURE_ARGS=	--enable-video-aalib \
-		--enable-video-svga
+		--enable-video-svga \
+		--enable-video-vgl
 
 CFLAGS+=	-D_THREAD_SAFE
 

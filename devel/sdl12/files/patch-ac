@@ -1,6 +1,18 @@
---- configure.orig	Thu Dec 21 07:02:47 2000
-+++ configure	Wed Jan  3 13:37:14 2001
-@@ -630,9 +630,9 @@
+
+$FreeBSD$
+
+--- configure.orig	Fri Jan  5 22:18:22 2001
++++ configure	Sun Jan 21 23:03:55 2001
+@@ -80,6 +80,8 @@
+ ac_help="$ac_help
+   --enable-video-svga     use SVGAlib video driver [default=no]"
+ ac_help="$ac_help
++  --enable-video-vgl     use VGL video driver [default=no]"
++ac_help="$ac_help
+   --enable-video-aalib    use AAlib video driver [default=no]"
+ ac_help="$ac_help
+   --enable-video-opengl   include OpenGL context creation [default=yes]"
+@@ -630,9 +632,9 @@
  
  # libtool versioning
  LT_RELEASE=$SDL_MAJOR_VERSION.$SDL_MINOR_VERSION
@@ -12,7 +24,7 @@
  
  
  
-@@ -3022,7 +3022,7 @@
+@@ -3022,7 +3024,7 @@
  
  
  SDL_CFLAGS=""
@@ -21,7 +33,73 @@
  
  
  case "$target" in
-@@ -5899,10 +5899,10 @@
+@@ -5144,6 +5146,57 @@
+     fi
+ }
+ 
++CheckVGL()
++{
++    # Check whether --enable-video-vgl or --disable-video-vgl was given.
++if test "${enable_video_vgl+set}" = set; then
++  enableval="$enable_video_vgl"
++  :
++else
++  enable_video_vgl=no
++fi
++
++    if test x$enable_video = xyes -a x$enable_video_vgl = xyes; then
++        echo $ac_n "checking for libVGL support""... $ac_c" 1>&6
++echo "configure:5162: checking for libVGL support" >&5
++        video_vgl=no
++        cat > conftest.$ac_ext <<EOF
++#line 5165 "configure"
++#include "confdefs.h"
++
++         #include <sys/fbio.h>
++         #include <sys/consio.h>
++         #include <sys/kbio.h>
++         #include <vgl.h>
++        
++int main() {
++
++         VGLMode mode;
++         exit(0);
++        
++; return 0; }
++EOF
++if { (eval echo configure:5180: \"$ac_compile\") 1>&5; (eval $ac_compile) 2>&5; }; then
++  rm -rf conftest*
++  
++        video_vgl=yes
++        
++else
++  echo "configure: failed program was:" >&5
++  cat conftest.$ac_ext >&5
++fi
++rm -f conftest*
++        echo "$ac_t""$video_vgl" 1>&6
++        if test x$video_vgl = xyes; then
++            CFLAGS="$CFLAGS -DENABLE_VGL"
++            SYSTEM_LIBS="$SYSTEM_LIBS -lvgl"
++
++            VIDEO_SUBDIRS="$VIDEO_SUBDIRS vgl"
++            VIDEO_DRIVERS="$VIDEO_DRIVERS vgl/libvideo_vgl.la"
++        fi
++    fi
++}
++
+ CheckAAlib()
+ {
+     # Check whether --enable-video-aalib or --disable-video-aalib was given.
+@@ -5883,6 +5936,7 @@
+         CheckX11
+         CheckDGA
+         CheckSVGA
++        CheckVGL
+         CheckAAlib
+         CheckOpenGL
+         CheckPTHREAD
+@@ -5899,10 +5953,10 @@
    cat >>$new <$old
  
          # Set up files for the audio library
@@ -36,3 +114,19 @@
          # Set up files for the joystick library
          # (No joystick support yet)
          if test x$enable_joystick = xyes; then
+@@ -8412,6 +8466,7 @@
+ src/video/macdsp/Makefile
+ src/video/macrom/Makefile
+ src/video/svga/Makefile
++src/video/vgl/Makefile
+ src/video/aalib/Makefile
+ src/video/wincommon/Makefile
+ src/video/windib/Makefile
+@@ -8621,6 +8676,7 @@
+ src/video/macdsp/Makefile
+ src/video/macrom/Makefile
+ src/video/svga/Makefile
++src/video/vgl/Makefile
+ src/video/aalib/Makefile
+ src/video/wincommon/Makefile
+ src/video/windib/Makefile

@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/video/Makefile.in	2001/01/21 20:10:22	1.1
++++ src/video/Makefile.in	2001/01/21 20:10:38
+@@ -103,7 +103,7 @@
+ 
+ # Define which subdirectories need to be built
+ SUBDIRS = @VIDEO_SUBDIRS@
+-DIST_SUBDIRS = x11 dga fbcon svga ggi aalib                wincommon windib windx5                maccommon macdsp macrom bwindow photon cybergfx
++DIST_SUBDIRS = x11 dga fbcon svga ggi aalib                wincommon windib windx5                maccommon macdsp macrom bwindow photon cybergfx vgl
+ 
+ 
+ DRIVERS = @VIDEO_DRIVERS@
