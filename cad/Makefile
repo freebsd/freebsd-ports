@@ -1,7 +1,6 @@
 # $FreeBSD$
 #
 
-    SUBDIR += acs
     SUBDIR += chipmunk
     SUBDIR += cider
     SUBDIR += electric
