@@ -58,8 +58,16 @@
 # Security mode. Most people will want user level security. See
 # security_level.txt for details.
    security = user
+
 # Use password server option only with security = server
+# The argument list may include:
+#   password server = My_PDC_Name [My_BDC_Name] [My_Next_BDC_Name]
+# or to auto-locate the domain controller/s
+#   password server = *
 ;   password server = <NT-Server-Name>
+
+# Note: Do NOT use the now deprecated option of "domain controller"
+# This option is no longer implemented.
 
 # You may wish to use password encryption. Please read
 # ENCRYPTION.txt, Win95.txt and WinNT.txt in the Samba documentation.
@@ -73,6 +81,8 @@
 
 # Most people will find that this option gives better performance.
 # See speed.txt and the manual pages for details
+# You may want to add the following on a Linux system:
+#         SO_RCVBUF=8192 SO_SNDBUF=8192
    socket options = TCP_NODELAY 
 
 # Configure Samba to use multiple interfaces
@@ -97,10 +107,6 @@
 # Preferred Master causes Samba to force a local browser election on startup
 # and gives it a slightly higher chance of winning the election
 ;   preferred master = yes
-
-# Use only if you have an NT server on your network that has been
-# configured at install time to be a primary domain controller.
-;   domain controller = <NT-Domain-Controller-SMBName>
 
 # Enable this if you want Samba to be a domain logon server for 
 # Windows95 workstations. 
@@ -174,6 +180,10 @@
    comment = Home Directories
    browseable = no
    writeable = yes
+# Un-comment the following two lines to add a recycle bin facility to a samba share
+# NOTE: It currently doesn't work with the [homes] virtual share, use a regular share instead
+;  vfs object = %%SAMBA_VFSDIR%%/recycle.so
+;  vfs options= recycle=.recycle
 
 # Un-comment the following and create the netlogon directory for Domain Logons
 ; [netlogon]
@@ -265,6 +275,9 @@
 ;   only guest = yes
 ;   writeable = yes
 ;   printable = no
+# Un-comment the following two lines to add a recycle bin facility to a samba share
+;  vfs object = %%SAMBA_VFSDIR%%/recycle.so
+;  vfs options= recycle=.recycle
 
 # The following two entries demonstrate how to share a directory so that two
 # users can place files there that will be owned by the specific users. In this

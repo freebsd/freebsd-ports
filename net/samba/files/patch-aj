@@ -1,5 +1,5 @@
---- include/local.h.orig	Fri Jul  6 03:01:26 2001
-+++ include/local.h	Tue Oct 16 17:20:36 2001
+--- source/include/local.h.orig	Fri Jul  6 03:01:26 2001
++++ source/include/local.h	Tue Oct 16 17:20:36 2001
 @@ -176,10 +176,10 @@
   * Default passwd chat script.
   */

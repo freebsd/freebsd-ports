@@ -10,12 +10,10 @@ See document files in /usr/local/share/doc/samba and example config files in
 
 FreeBSD Samba ports for localization and encrypt passwords support are no
 longer provided because these supports have been integrated into the
-original distribution since 1.9.18.  If you're Western European or Japanese
-Windows users, please set "client code page" parameter in smb.conf (1.9.18
-does not support Chinese Windows. If you want to use Chinese samba, please
-use chinese/samba port).  See smb.conf.sample for details.  If you want to
-use NT4+SP3 or Win95+updates clients, set "encrypt passwords" parameter to
-yes and use smbpasswd [username] to use /usr/local/private/smbpasswd for
-authentication.
+original distribution since 1.9.18.  If you're Western European, Japanese,
+or Chinese Windows users, please set "client code page" parameter in smb.conf.
+See smb.conf.sample for details.  If you want to use NT4+SP3 or Win95+updates
+clients, set "encrypt passwords" parameter to yes and use smbpasswd [username]
+to use /usr/local/private/smbpasswd for authentication.
 
 FreeBSD SAMBA ports maintainer: Tatsumi Hosokawa <hosokawa@jp.FreeBSD.org>
