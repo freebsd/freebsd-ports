@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	qalculate
-PORTVERSION=	0.6.3
-PORTREVISION=	1
+PORTVERSION=	0.7.2
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-gtk-${PORTVERSION}
+#DISTNAME=	${PORTNAME}-gtk-${PORTVERSION}
 
-MAINTAINER=	asa@gascom.ru
+MAINTAINER=	asa@agava.com
 COMMENT=	Very powerful GUI calculator for GNOME
 
 LIB_DEPENDS=	cln.3:${PORTSDIR}/math/cln
@@ -22,8 +21,10 @@ RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_INC_LIBTOOL_VER=15
 USE_GNOME=	gnomeprefix gnomehack intlhack libglade2 libgnome
+INSTALLS_OMF=	yes
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
