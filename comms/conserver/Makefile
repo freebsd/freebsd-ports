@@ -25,7 +25,7 @@ MAN8=		autologin.8 console.8 conserver.8
 DEFAULTHOST?=	localhost
 DEFAULTPORT?=	782
 MAKE_ENV+=	DEFAULTHOST="${DEFAULTHOST}" DEFAULTPORT="${DEFAULTPORT}"
-PKGMESSAGE=	${WRKDIR}/MESSAGE
+#PKGMESSAGE=	${WRKDIR}/MESSAGE
 
 do-build:
 	${PERL} -pi.orig -e 's:/usr/local/lib:${PREFIX}/etc:g'  \
@@ -64,6 +64,6 @@ do-install:
 	@${ECHO_MSG} "Installing ${PREFIX}/etc/rc.d/conserver.sh startup file."
 	@${INSTALL_SCRIPT} -m 751 ${FILESDIR}/conserver.sh ${PREFIX}/etc/rc.d
 .endif
-	@${CAT} ${PKGMESSAGE}
+	@#	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
