@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	stunnel
-PORTVERSION=	3.8.4
+PORTVERSION=	3.9
 CATEGORIES=	security
 MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 		ftp://opensores.thebunker.net/pub/mirrors/stunnel/ \
 		ftp://mike.daewoo.com.pl/pub/stunnel/ \
 		ftp://ftp.cryptoarchive.net/pub/cryptoarchive/mirrors/opensores.thebunker.net/pub/mirrors/stunnel/
-DISTNAME=	${PORTNAME}-3.8p4
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	martti.kuparinen@ericsson.com
 
