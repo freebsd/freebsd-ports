@@ -236,7 +236,13 @@ describe:
 .endif
 
 .if !target(readmes)
+.if defined(PORTSTOP)
 readmes: readme ${SUBDIR:S/^/_/:S/$/.readmes/}
+	@${ECHO_MSG} "===>   Creating README.html for all ports"
+	@perl ${.CURDIR}/Tools/make_readmes < ${.CURDIR}/${INDEXFILE}
+.else
+readmes: readme
+.endif
 .endif
 
 .if !target(readme)
@@ -332,6 +338,7 @@ search: ${PORTSDIR}/${INDEXFILE}
 	     -z "$$path"  -a -z "$$xpath"  -a \
 	     -z "$$info"  -a -z "$$xinfo"  -a \
 	     -z "$$maint" -a -z "$$xmaint" -a \
+	     -z "$$cat"   -a -z "$$xcat"   -a \
 	     -z "$$bdeps" -a -z "$$xbdeps" -a \
 	     -z "$$rdeps" -a -z "$$xrdeps" ]; \
 	then \
@@ -351,19 +358,27 @@ search: ${PORTSDIR}/${INDEXFILE}
 	    -v rdeps="$$rdeps"      -v xrdeps="$$xrdeps" \
 	    -v icase="$${icase:-${PORTSEARCH_IGNORECASE}}" \
 	    -v keylim="$${keylim:-${PORTSEARCH_KEYLIM}}" \
-	    -v xkeylim="$${xkeylim:-${PORTSEARCH_XKEYLIM}}"\
+	    -v xkeylim="$${xkeylim:-${PORTSEARCH_XKEYLIM}}" \
 	    -v display="$${display:-${PORTSEARCH_DISPLAY_FIELDS}}" \
 	'BEGIN { \
 	    if (substr(there, 1, length(top)) == top) \
 	      there = "${PORTSDIR}" substr(there, 1 + length(top)); \
 	    therelen = length(there); \
-	    IGNORECASE=icase; \
 	    keylen = length(key); keylim = keylim && keylen; \
 	    if (!keylim && keylen) \
-	      parms[0] = key; \
+	      parms[0] = (icase ? tolower(key) : key); \
 	    xkeylen = length(xkey); xkeylim = xkeylim && xkeylen; \
 	    if (!xkeylim && xkeylen) \
-	      xparms[0] = xkey; \
+	      xparms[0] = (icase ? tolower(xkey) : xkey); \
+		if (icase) { \
+	    if (length(name))  parms[1] = tolower(name);  if (length(xname))  xparms[1] = tolower(xname); \
+	    if (length(path))  parms[2] = tolower(path);  if (length(xpath))  xparms[2] = tolower(xpath); \
+	    if (length(info))  parms[4] = tolower(info);  if (length(xinfo))  xparms[4] = tolower(xinfo); \
+	    if (length(maint)) parms[6] = tolower(maint); if (length(xmaint)) xparms[6] = tolower(xmaint); \
+	    if (length(cat))   parms[7] = tolower(cat);   if (length(xcat))   xparms[7] = tolower(xcat); \
+	    if (length(bdeps)) parms[8] = tolower(bdeps); if (length(xbdeps)) xparms[8] = tolower(xbdeps); \
+	    if (length(rdeps)) parms[9] = tolower(rdeps); if (length(xrdeps)) xparms[9] = tolower(xrdeps); \
+	  } else { \
 	    if (length(name))  parms[1] = name;  if (length(xname))  xparms[1] = xname; \
 	    if (length(path))  parms[2] = path;  if (length(xpath))  xparms[2] = xpath; \
 	    if (length(info))  parms[4] = info;  if (length(xinfo))  xparms[4] = xinfo; \
@@ -371,6 +386,7 @@ search: ${PORTSDIR}/${INDEXFILE}
 	    if (length(cat))   parms[7] = cat;   if (length(xcat))   xparms[7] = xcat; \
 	    if (length(bdeps)) parms[8] = bdeps; if (length(xbdeps)) xparms[8] = xbdeps; \
 	    if (length(rdeps)) parms[9] = rdeps; if (length(xrdeps)) xparms[9] = xrdeps; \
+	  } \
 	    fields["name"]  = 1; names[1] = "Port"; \
 	    fields["path"]  = 2; names[2] = "Path"; \
 	    fields["info"]  = 4; names[4] = "Info"; \
@@ -387,17 +403,17 @@ search: ${PORTSDIR}/${INDEXFILE}
 	    if (substr($$2, 1, therelen) != there) \
 	      next; \
 	    for (i in parms) \
-	      if ($$i !~ parms[i]) \
+	      if ((icase ? tolower($$i) : $$i) !~ parms[i]) \
 	        next; \
 	    for (i in xparms) \
-	      if ($$i ~ xparms[i]) \
+	      if ((icase ? tolower($$i) : $$i) ~ xparms[i]) \
 	        next; \
 	    found = 0; \
 	    for (i = 1; i < 10; i++) \
 	      if (i in disp) { \
-	        if (xkeylim && $$i ~ xkey) \
+	        if (xkeylim && (icase ? tolower($$i) : $$i) ~ xkey) \
 	          next; \
-	        if (!found && keylim && $$i ~ key) \
+	        if (!found && keylim && (icase ? tolower($$i) : $$i) ~ key) \
 	          found = 1; \
 	      } \
 	    if (keylim && !found) \
