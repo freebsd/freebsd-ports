@@ -19,11 +19,11 @@ LINUX_DIR=	/compat/linux
 KMODDIR=	${PREFIX}/modules
 
 CDEV_MAJOR=	202
-DEVFILE=	/dev/rtc
+DEVDIR=		${LINUX_DIR}/dev
 
 STARTUP=	rtc.sh
 MAKE_ARGS=	KMODDIR="${KMODDIR}" CDEV_MAJOR="${CDEV_MAJOR}"
-PLIST_SUB=	DEVFILE="${DEVFILE}" CDEV_MAJOR="${CDEV_MAJOR}" RTC_H_DIR="${RTC_H_DIR}"
+PLIST_SUB=	DEVDIR="${DEVDIR}" CDEV_MAJOR="${CDEV_MAJOR}" RTC_H_DIR="${RTC_H_DIR}"
 
 .include <bsd.port.pre.mk>
 
@@ -46,10 +46,11 @@ do-extract:
 
 pre-install:
 	${MKDIR} ${KMODDIR}
+	${MKDIR} ${DEVDIR}
 
 post-install:
-	${RM} -f ${DEVFILE}
-	mknod ${DEVFILE} c ${CDEV_MAJOR} 0
+	${RM} -f ${DEVDIR}/rtc
+	mknod ${DEVDIR}/rtc c ${CDEV_MAJOR} 0
 	${INSTALL_DATA} ${WRKSRC}/rtc.h ${PREFIX}/include/
 	${MKDIR} ${PREFIX}/share/examples/rtc
 	${INSTALL_DATA} ${WRKSRC}/test.c ${PREFIX}/share/examples/rtc/
