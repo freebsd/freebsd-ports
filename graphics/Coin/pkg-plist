@@ -2,6 +2,7 @@ bin/coin-config
 include/Inventor/lock/SoLockMgr.h
 include/Inventor/system/inttypes.h
 include/Inventor/SbBasic.h
+include/Inventor/C/basic.h
 include/Inventor/VRMLnodes/SoVRMLInterpOutput.h
 include/Inventor/VRMLnodes/SoVRMLInterpolator.h
 include/Inventor/actions/SoSubAction.h
@@ -528,6 +529,7 @@ share/Coin/draggerDefaults/transformerDragger.iv
 share/Coin/draggerDefaults/transformBoxDragger.iv
 @dirrm include/Inventor/lock
 @dirrm include/Inventor/system
+@dirrm include/Inventor/C
 @dirrm include/Inventor/VRMLnodes
 @dirrm include/Inventor/actions
 @dirrm include/Inventor/bundles

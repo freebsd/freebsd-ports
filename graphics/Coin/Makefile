@@ -1,16 +1,16 @@
 # New ports collection makefile for:	Coin
 # Date created:				10 May 2002
-# Whom:					jesse@cs.uni-magdeburg.de
+# Whom:					roland.jesse@gmx.net
 #
 # $FreeBSD$
 #
 
 PORTNAME=	Coin
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.coin3d.org/pub/coin/src/
 
-MAINTAINER=	jesse@cs.uni-magdeburg.de
+MAINTAINER=	roland.jesse@gmx.net
 
 LIB_DEPENDS=	simage.22:${PORTSDIR}/graphics/simage
 
