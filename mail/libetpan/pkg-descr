@@ -1,0 +1,6 @@
+The purpose of this mail library is to provide a portable, efficient
+middleware for different kinds of mail access. When using the drivers
+interface, the interface is the same for all kinds of mail access, remote
+and local mailboxes.
+
+WWW: http://libetpan.sourceforge.net/
