@@ -1,55 +1,117 @@
-*** build.orig	Tue May 14 23:22:47 1996
---- build	Sun Jan 12 20:18:50 1997
-***************
-*** 167,180 ****
-          cd $PHOME/bin
-          rm -f pine mtest imapd pico pilot
-          if [ -s ../pine/pine ] ;      then ln ../pine/pine  pine      ; fi
--         if [ -s ../c-client/mtest ] ; then ln ../c-client/mtest mtest ; fi
--         if [ -s ../imapd/imapd ] ;    then ln ../imapd/imapd imapd    ; fi
-          if [ -s ../pico/pico ] ;      then ln ../pico/pico pico ; fi
-          if [ -s ../pico/pilot ] ;     then ln ../pico/pilot pilot ; fi
-          cd $PHOME
-          echo ''
-          echo "Links to executables are in bin directory:"
--         size bin/pine bin/mtest bin/imapd bin/pico bin/pilot
-          echo "Done"
-          ;;
-  
---- 167,179 ----
-          cd $PHOME/bin
-          rm -f pine mtest imapd pico pilot
-          if [ -s ../pine/pine ] ;      then ln ../pine/pine  pine      ; fi
-          if [ -s ../pico/pico ] ;      then ln ../pico/pico pico ; fi
-          if [ -s ../pico/pilot ] ;     then ln ../pico/pilot pilot ; fi
-+         if [ -s ../pico/libpico.so.1.3 ] ;     
-+ 		then ln ../pico/libpico.so.1.3 libpico.so.1.3 ; fi
-          cd $PHOME
-          echo ''
-          echo "Links to executables are in bin directory:"
-          echo "Done"
-          ;;
-  
-***************
-*** 185,194 ****
-  	make clean
-          echo "Cleaning Pine"
-          cd $PHOME/pine
-!         make -f makefile.ult clean
-          echo "Cleaning pico"
-          cd $PHOME/pico
-!         make $makeargs -f makefile.ult clean
-          echo "Done"
-          cd $PHOME
-          ;;
---- 184,193 ----
-  	make clean
-          echo "Cleaning Pine"
-          cd $PHOME/pine
-!         make -f makefile.bsf clean
-          echo "Cleaning pico"
-          cd $PHOME/pico
-!         make $makeargs -f makefile.bsf clean
-          echo "Done"
-          cd $PHOME
-          ;;
+--- pico/pico.c.orig	Tue Jul  7 05:41:45 1998
++++ pico/pico.c	Wed Jul 15 17:02:31 1998
+@@ -318,7 +318,7 @@
+ 	c = GetKey();
+         if (term.t_nrow < 6 && c != NODATA){
+             (*term.t_beep)();
+-            emlwrite("Please make the screen bigger.", NULL);
++            emlwrite("請將畫面調大一些。", NULL);
+             continue;
+         }
+ 
+@@ -560,9 +560,9 @@
+     }
+     
+     if(c&CTRL)
+-      emlwrite("\007Unknown Command: ^%c", (void *)(c&0xff));
++      emlwrite("\007未知的命令：^%c", (void *)(c&0xff));
+     else
+-      emlwrite("\007Unknown Command", NULL);
++      emlwrite("\007未知的命令", NULL);
+ 
+     lastflag = 0;                           /* Fake last flags.     */
+     return (FALSE);
+@@ -615,7 +615,7 @@
+ 	    return(TRUE);
+ 	}
+ 	else{
+-	    emlwrite("Cancel Cancelled", NULL);
++	    emlwrite("取消", NULL);
+ 	    curwp->w_flag |= WFMODE;		/* and modeline so we  */
+ 	    sgarbk = TRUE;			/* redraw the keymenu  */
+ 	    pclear(term.t_nrow - 1, term.t_nrow + 1);
+@@ -624,17 +624,17 @@
+ 	}
+     }
+     else switch(mlyesno(Pmaster->headents
+-	 ? "Cancel message (answering \"Yes\" will abandon your mail message)"
++	 ? "\"取消\"這個動作將會放棄你目前的信件。確定取消嗎"
+ 	 : (anycb() == FALSE)
+-	     ? "Cancel Edit (and abandon changes)"
+-	     : "Cancel Edit",
++	     ? "取消編輯(並放棄所有的改變)"
++	     : "取消編輯",
+ 	 FALSE)){
+       case TRUE:
+ 	pico_all_done = COMP_CANCEL;
+ 	return(TRUE);
+ 
+       case ABORT:
+-	emlwrite("\007Cancel Cancelled", NULL);
++	emlwrite("\007取消", NULL);
+ 	break;
+ 
+       default:
+@@ -672,7 +672,7 @@
+ 
+ 	/* First, make sure there are no outstanding problems */ 
+ 	if(AttachError()){
+-	    emlwrite("\007Problem with attachments!  Fix errors or delete attachments.", NULL);
++	    emlwrite("\007有問題的附件! 請修復或刪除該附件。", NULL);
+ 	    return(FALSE);
+ 	}
+ 
+@@ -706,7 +706,7 @@
+         if (f != FALSE                          /* Argument forces it.  */
+         || anycb() == FALSE                     /* All buffers clean.   */
+ 						/* User says it's OK.   */
+-        || (s=mlyesno("Save modified buffer (ANSWERING \"No\" WILL DESTROY CHANGES)", -1)) == FALSE) {
++        || (s=mlyesno("存入更改過的緩衝區 (回答 \"No\" 將清除所有已做過的修改)", -1)) == FALSE) {
+                 vttidy();
+ #if     defined(USE_TERMCAP) || defined(USE_TERMINFO) || defined(VMS)
+ 		kbdestroy(kbesc);
+@@ -719,7 +719,7 @@
+ 	      wquit(1, 0);
+ 	}
+ 	else if(s == ABORT){
+-	    emlwrite("Exit cancelled", NULL);
++	    emlwrite("取消離開", NULL);
+ 	    if(term.t_mrow == 0)
+ 	      curwp->w_flag |= WFHARD;	/* cause bottom 3 lines to paint */
+ 	}
+@@ -753,7 +753,7 @@
+ ctrlg(f, n)
+ int f, n;
+ {
+-    emlwrite("Cancelled", NULL);
++    emlwrite("取消", NULL);
+     return (ABORT);
+ }
+ 
+@@ -764,7 +764,7 @@
+ rdonly()
+ {
+     (*term.t_beep)();
+-    emlwrite("Key illegal in VIEW mode", NULL);
++    emlwrite("這不是一個在 VIEW 模式中合法的命令", NULL);
+     return(FALSE);
+ }
+ 
+@@ -1289,7 +1289,7 @@
+        wp->doto = 0;
+    }
+    else
+-     emlwrite("Can't allocate space for text", NULL);
++     emlwrite("無法配置文字的記憶體空間", NULL);
+ 
+    return((void *)wp);
+ }
+@@ -1377,7 +1377,7 @@
+ 	    register LINE *lp;
+ 
+ 	    if((lp = lalloc(0)) == NULL){
+-		emlwrite("Can't allocate space for more characters",NULL);
++		emlwrite("無法配置記憶體空間給更多的字元",NULL);
+ 		return(0);
+ 	    }
+ 

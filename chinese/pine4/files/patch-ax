@@ -1,16 +1,65 @@
---- pico/search.c.orig	Sat Jan 17 20:23:39 1998
-+++ pico/search.c	Sat Jan 17 20:24:28 1998
-@@ -222,11 +222,11 @@
- 	EXTRAKEYS    menu_pat[3];
+--- pine/newmail.c.orig	Fri Mar 27 07:28:33 1998
++++ pine/newmail.c	Wed Jul 15 17:02:35 1998
+@@ -289,38 +289,28 @@
+     ENVELOPE	*e;
+     char	 subject[200], from[2*MAX_SCREEN_COLS],
+ 		 intro[MAX_SCREEN_COLS+1];
+-    static char *carray[] = { "regarding",
+-				"concerning",
+-				"about",
+-				"as to",
+-				"as regards",
+-				"as respects",
+-				"in re",
+-				"re",
+-				"respecting",
+-				"in point of",
+-				"with regard to",
+-				"subject:"
++    static char *carray[] = { "關於",
++				"有關"
+     };
  
- 	menu_pat[0].name  = "^Y";
--	menu_pat[0].label = "FirstLine";
-+	menu_pat[0].label = "第一行";
- 	menu_pat[0].key   = (CTRL|'Y');
- 	KS_OSDATASET(&menu_pat[0], KS_NONE);
- 	menu_pat[1].name  = "^V";
--	menu_pat[1].label = "LastLine";
-+	menu_pat[1].label = "最後一行";
- 	menu_pat[1].key   = (CTRL|'V');
- 	KS_OSDATASET(&menu_pat[1], KS_NONE);
- 	menu_pat[2].name  = NULL;
+     e = mail_fetchstructure(stream, max_num, NULL);
+ 
+     if(!folder) {
+         if(number > 1)
+-          sprintf(intro, "%ld new messages!", number);
++          sprintf(intro, "%ld 封新信件！", number);
+         else
+-	  sprintf(intro, "New mail%s!",
+-		  (e && address_is_us(e->to, ps_global)) ? " to you" : "");
++	  sprintf(intro, "%s新信！",
++		  (e && address_is_us(e->to, ps_global)) ? "您有" : "");
+     }
+     else {
+         if(number > 1)
+-          sprintf(intro,"%ld messages saved to folder \"%s\"", number, folder);
++          sprintf(intro,"%ld 封信件被存至資料匣 \"%s\"", number, folder);
+         else
+-          sprintf(intro, "Mail saved to folder \"%s\"", folder);
++          sprintf(intro, "信件被存至資料匣 \"%s\"", folder);
+     }
+ 
+     if(e && e->from){
+-	sprintf(from, " %srom ", (number > 1L) ? "Most recent f" : "F");
++	sprintf(from, "%s自", (number > 1L) ? "最近來" : "來");
+ 	if(e->from->personal)
+ 	  istrncpy(from + ((number > 1L) ? 18 : 6),
+ 		   (char *) rfc1522_decode((unsigned char *) tmp_20k_buf,
+@@ -337,13 +327,13 @@
+ 
+     if(number <= 1L) {
+         if(e && e->subject){
+-	    sprintf(subject, " %s ", carray[(unsigned)random()%12]);
++	    sprintf(subject, " %s ", carray[(unsigned)random()%2]);
+ 	    istrncpy(subject + strlen(subject),
+ 		     (char *) rfc1522_decode((unsigned char *) tmp_20k_buf,
+ 					     e->subject, NULL), 100);
+ 	}
+ 	else
+-	  strcpy(subject, " with no subject");
++	  strcpy(subject, " 沒有主題");
+ 
+         if(!from[0])
+           subject[1] = toupper((unsigned char)subject[1]);

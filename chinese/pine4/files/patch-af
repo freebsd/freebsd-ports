@@ -1,37 +1,20 @@
-*** imap/ANSI/c-client/Makefile.orig	Sat Jun 22 01:25:45 1996
---- imap/ANSI/c-client/Makefile	Sun Jan 12 19:41:38 1997
-***************
-*** 36,43 ****
-  BINARIES=mail.o bezerk.o mtx.o tenex2.o mbox.o mh.o mmdf.o imap2.o pop3.o \
-  	news.o nntpcunx.o phile.o dummy.o smtp.o nntp.o rfc822.o misc.o \
-  	osdep.o sm_unix.o newsrc.o
-! CC=cc
-! CFLAGS=$(EXTRACFLAGS)
-  DEFAULTDRIVERS=imap nntp pop3 mh tenex mtx mmdf bezerk news phile dummy
-  LN=ln -s
-  MAKE=make
---- 36,43 ----
-  BINARIES=mail.o bezerk.o mtx.o tenex2.o mbox.o mh.o mmdf.o imap2.o pop3.o \
-  	news.o nntpcunx.o phile.o dummy.o smtp.o nntp.o rfc822.o misc.o \
-  	osdep.o sm_unix.o newsrc.o
-! #CC=cc
-! #CFLAGS=$(EXTRACFLAGS)
-  DEFAULTDRIVERS=imap nntp pop3 mh tenex mtx mmdf bezerk news phile dummy
-  LN=ln -s
-  MAKE=make
-***************
-*** 118,123 ****
---- 118,130 ----
-  		STDPROTO=bezerkproto MAILSPOOL=/var/mail \
-  		ACTIVEFILE=/usr/lib/news/active NEWSSPOOL=/usr/spool/news \
-  		RSHPATH=/usr/bin/rsh CFLAGS="-g -O -pipe -DNFSKLUDGE $(EXTRACFLAGS)"
-+ 
-+ bsf:	# FreeBSD
-+ 	$(MAKE) $(ARCHIVE) OS=bsi EXTRADRIVERS="$(EXTRADRIVERS)" \
-+ 		STDPROTO=bezerkproto MAILSPOOL=/var/mail \
-+ 		ACTIVEFILE=/usr/local/news/lib/active NEWSSPOOL=/var/news \
-+               RSHPATH=/usr/bin/rsh CFLAGS="${CFLAGS} -DNFSKLUDGE $(EXTRACFLAGS)" \
-+ 		LDFLAGS="-lcrypt"
-  
-  cvx:	# Convex
-  	$(MAKE) mtest OS=$@ EXTRADRIVERS="$(EXTRADRIVERS)" \
+--- pico/osdep/os-bsf.h.orig	Thu Jul  9 00:37:28 1998
++++ pico/osdep/os-bsf.h	Wed Jul 15 17:02:31 1998
+@@ -23,7 +23,7 @@
+ 
+ #define  USE_DIRENT
+ #include <sys/types.h>
+-#include <sys/dir.h>
++#include <dirent.h>
+ #include <stdlib.h>
+ #include <string.h>
+ 
+@@ -152,7 +152,7 @@
+ /*
+  * Place where mail gets delivered (for pico's new mail checking)
+  */
+-#define MAILDIR		"/usr/spool/mail"
++#define MAILDIR		"/var/mail"
+ 
+ /*
+  * What and where the tool that checks spelling is located.  If this is

@@ -1,15 +1,15 @@
-*** pico/os_unix.c.orig	Wed Jun 12 15:47:21 1996
---- pico/os_unix.c	Fri Jun 14 00:15:30 1996
-***************
-*** 1343,1347 ****
-      extern int  sys_nerr;
-  
-!     return((err >= 0 && err < sys_nerr) ? sys_errlist[err] : NULL);
-  }
-  
---- 1343,1347 ----
-      extern int  sys_nerr;
-  
-!     return(((err >= 0) && (err < sys_nerr)) ? (char*)sys_errlist[err] : NULL);
-  }
-  
+--- imap/src/osdep/unix/os_bsi.h.orig	Thu Feb 13 13:25:33 1997
++++ imap/src/osdep/unix/os_bsi.h	Wed Jul 15 17:02:29 1998
+@@ -37,7 +37,12 @@
+ #include <unistd.h>
+ #include <string.h>
+ #include <sys/types.h>
++#ifdef __FreeBSD__
++#include <dirent.h>
++#define direct dirent
++#else
+ #include <sys/dir.h>
++#endif
+ #include <fcntl.h>
+ #include <syslog.h>
+ #include <sys/file.h>

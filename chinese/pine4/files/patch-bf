@@ -1,142 +1,40 @@
---- pine/pine.c.orig	Thu Feb 27 06:50:46 1997
-+++ pine/pine.c	Sat Jan 17 21:09:06 1998
-@@ -190,30 +190,30 @@
- 
- 
- static struct key main_keys[] =
--       {{"?","Help",KS_SCREENHELP},
--	{"O","OTHER CMDS",KS_NONE},
-+       {{"?","說明",KS_SCREENHELP},
-+	{"O","其它命令",KS_NONE},
- 	{NULL,NULL,KS_NONE},
- 	{NULL,NULL,KS_NONE},
--	{"P","PrevCmd",KS_NONE},
--	{"N","NextCmd",KS_NONE},
-+	{"P","前一個命令",KS_NONE},
-+	{"N","後一個命令",KS_NONE},
- 	{NULL,NULL,KS_NONE},
- 	{NULL,NULL,KS_NONE},
--	{"R","RelNotes",KS_NONE},
--	{"K","KBLock",KS_NONE},
-+	{"R","版權說明",KS_NONE},
-+	{"K","鍵盤鎖定",KS_NONE},
- 	{NULL,NULL,KS_NONE},
- 	{NULL,NULL,KS_NONE},
- 
--	{"?","Help",KS_SCREENHELP},
--	{"O","OTHER CMDS",KS_NONE},
--	{"Q","Quit",KS_EXIT},
--	{"C","Compose",KS_COMPOSER},
--	{"L","ListFldrs",KS_FLDRLIST},
--	{"G","GotoFldr",KS_GOTOFLDR},
--	{"I","Index",KS_FLDRINDEX},
-+	{"?","說明",KS_SCREENHELP},
-+	{"O","其它命令",KS_NONE},
-+	{"Q","離開",KS_EXIT},
-+	{"C","寫信",KS_COMPOSER},
-+	{"L","列出信件",KS_FLDRLIST},
-+	{"G","進入信件夾",KS_GOTOFLDR},
-+	{"I","索引",KS_FLDRINDEX},
- 	{"J","Journal",KS_REVIEW},
--	{"S","Setup",KS_NONE},
--	{"A","AddrBook",KS_ADDRBOOK},
--	{"B","Report Bug",KS_NONE},
-+	{"S","設定",KS_NONE},
-+	{"A","地址簿",KS_ADDRBOOK},
-+	{"B","錯誤回報",KS_NONE},
- 	{NULL,NULL,KS_NONE}};
- INST_KEY_MENU(main_keymenu, main_keys);
- #define MAIN_HELP_KEY		0
-@@ -916,25 +916,25 @@
-     unsigned int key;             /* alpha key that invokes this action */
-     unsigned int keymenu_number;  /* index into keymenu array for this cmd */
- } mkeys[] = {
--    {" %s     HELP               -  Get help using Pine",
-+    {" %s     使用說明               -  PINE 的使用說明",
-        NULL, PF1, '?', MAIN_HELP_KEY},
-     {"", NULL, UNUSED, UNUSED, UNUSED},
--    {" %s     COMPOSE MESSAGE    -  Compose and send%s a message",
-+    {" %s     寫信                   -  寫信或是發表文章",
-        "/post", OPF4, 'C', MAIN_COMPOSE_KEY},
-     {"", NULL, UNUSED, UNUSED, UNUSED},
--    {" %s     FOLDER INDEX       -  View messages in current folder",
-+    {" %s     查看信件夾             -  查看目前信件夾內的信件",
-        NULL, OPF7, 'I', MAIN_INDEX_KEY},
-     {"", NULL, UNUSED, UNUSED, UNUSED},
--    {" %s     FOLDER LIST        -  Select a folder%s to view",
-+    {" %s     信件夾列表             -  列出信件夾或是 NEWS GROUP 以供選擇",
-        " OR news group", OPF5, 'L', MAIN_FOLDER_KEY},
-     {"", NULL, UNUSED, UNUSED, UNUSED},
--    {" %s     ADDRESS BOOK       -  Update address book",
-+    {" %s     地址簿                 -  更新或修改地址簿的內容",
-        NULL, OPF10, 'A', MAIN_ADDRESS_KEY},
-     {"", NULL, UNUSED, UNUSED, UNUSED},
--    {" %s     SETUP              -  Configure or update Pine",
-+    {" %s     設定 PINE              -  設定 PINE 的架構或是內部參數",
-        NULL, OPF9, 'S', MAIN_SETUP_KEY},
-     {"", NULL, UNUSED, UNUSED, UNUSED},
--    {" %s     QUIT               -  Exit the Pine program",
-+    {" %s     離開 PINE              -  結束 PINE 的使用",
-        NULL, OPF3, 'Q', MAIN_QUIT_KEY},
-     {NULL, NULL, UNUSED, UNUSED, UNUSED}
+--- pine/status.c.orig	Sat Jun 27 07:36:34 1998
++++ pine/status.c	Wed Jul 15 17:02:38 1998
+@@ -72,7 +72,7 @@
+ static struct key modal_message_keys[] =
+        {NULL_MENU,
+ 	NULL_MENU,
+-	{"Ret","Finished",{MC_EXIT,2,{ctrl('m'),ctrl('j')}},KS_NONE},
++	{"Ret","完畢",{MC_EXIT,2,{ctrl('m'),ctrl('j')}},KS_NONE},
+ 	NULL_MENU,
+ 	NULL_MENU,
+ 	NULL_MENU,
+@@ -931,8 +931,8 @@
+  * want_to's array passed to radio_buttions...
+  */
+ static ESCKEY_S yorn[] = {
+-    {'y', 'y', "Y", "Yes"},
+-    {'n', 'n', "N", "No"},
++    {'y', 'y', "Y", "是"},
++    {'n', 'n', "N", "否"},
+     {-1, 0, NULL, NULL}
  };
-@@ -1103,7 +1103,7 @@
- 	  ch = PF2OPF(ch);
  
- 	/*----- Validate the command ----*/
--	if(ch == ctrl('M') || ch == ctrl('J') || ch == PF4){
-+	if(ch == ctrl('M') || ch == ctrl('J') || ch == PF4 || ch == KEY_RIGHT){
- 	  ch = F_ON(F_USE_FK,pine_state)
-                                        ? mkeys[current_default_menu_item].f_key
-                                        : mkeys[current_default_menu_item].key;
-@@ -1302,6 +1302,7 @@
- #endif /* !NO_KEYBOARD_LOCK */
+@@ -1139,7 +1139,7 @@
+     memset(fkey_table, NO_OP_COMMAND, 12 * sizeof(int));
+     if(help_text != NO_HELP){		/* if shown, always at position 0 */
+ 	rb_keymenu.keys[0].name  = "?";
+-	rb_keymenu.keys[0].label = "Help";
++	rb_keymenu.keys[0].label = "輔助說明";
+ 	setbitn(0, bitmap);
+ 	fkey_table[0] = ctrl('G');
+ 	start++;
+@@ -1147,7 +1147,7 @@
  
-           /*---------- Quit pine ----------*/
-+          case KEY_LEFT:
- 	  case OPF3: 
- 	  case 'q':
- 	  quit_case :
-@@ -1683,11 +1684,11 @@
- {
-     char        prompt[80];
-     char        letters[20];
--    char        *printer  = "Printer";
--    char        *passwd   = "Newpassword";
--    char        *config   = "Config";
--    char        *update   = "Update";
--    char	*sigedit  = "Signature";
-+    char        *printer  = "*印表機";
-+    char        *passwd   = "設定新密碼";
-+    char        *config   = "環境設定";
-+    char        *update   = "更新環境";
-+    char	*sigedit  = "簽名檔";
-     HelpType     help     = h_mini_setup;
-     int          deefault = 'p';
-     int          s, ekey_num;
-@@ -1758,13 +1759,13 @@
-     }
- 
-     sprintf(prompt,
--	    "Choose a setup task from %s : ",
--	    F_ON(F_BLANK_KEYMENU,ps_global) ? letters : "the menu below");
-+	    "請從%s選擇你所要設定的工作 :",
-+	    F_ON(F_BLANK_KEYMENU,ps_global) ? letters : "下列表單中");
- 
-     s = radio_buttons(prompt, ql, setup_names, deefault, 'x', help, RB_NORM);
-     /* ^C */
-     if(s == 'x') {
--	q_status_message(SM_ORDER,0,3,"Setup command cancelled");
-+	q_status_message(SM_ORDER,0,3,"設定指令已取消");
- 	s = 'e';
-     }
- 
-@@ -2104,7 +2105,7 @@
-     dprint(1, (debugfile, "\n\n    ---- QUIT SCREEN ----\n"));    
- 
-     if(!pine_state->nr_mode && F_OFF(F_QUIT_WO_CONFIRM,pine_state)
--       && want_to("Really quit pine", 'y', 0, NO_HELP, 0, 0) != 'y') {
-+       && want_to("真的要離開本程式嗎?", 'y', 0, NO_HELP, 0, 0) != 'y') {
-         pine_state->next_screen = pine_state->prev_screen;
-         return;
-     }
+     if(on_ctrl_C){			/* if shown, always at position 1 */
+ 	rb_keymenu.keys[1].name  = "^C";
+-	rb_keymenu.keys[1].label = "Cancel";
++	rb_keymenu.keys[1].label = "取消";
+ 	setbitn(1, bitmap);
+ 	fkey_table[1] = ctrl('C');
+ 	start++;

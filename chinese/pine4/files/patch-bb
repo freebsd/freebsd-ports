@@ -1,128 +1,85 @@
---- pine/mailindx.c.orig	Fri Jul 12 06:48:37 1996
-+++ pine/mailindx.c	Sat Jan 17 21:06:20 1998
-@@ -53,28 +53,28 @@
+--- pine/reply.c.orig	Tue Jun 23 12:08:03 1998
++++ pine/reply.c	Wed Jul 15 17:02:37 1998
+@@ -411,7 +411,7 @@
+ #endif
  
+     /* partially formatted outgoing message */
+-    pine_send(outgoing, &body, "COMPOSE MESSAGE REPLY",
++    pine_send(outgoing, &body, "編輯信件回函",
+ 	      fcc.tptr, &reply, NULL, NULL, NULL, 0);
+   done:
+     pine_free_body(&body);
+@@ -485,7 +485,7 @@
+ 			 (ADDRESS *) NULL, env->from, 0);
  
- static struct key index_keys[] = 
--       {{"?","Help",KS_SCREENHELP},	{"O","OTHER CMDS",KS_NONE},
--	{"M","Main Menu",KS_MAINMENU},	{"V","[ViewMsg]",KS_VIEW},
--	{"P","PrevMsg",KS_PREVMSG},	{"N","NextMsg",KS_NEXTMSG},
--	{"-","PrevPage",KS_PREVPAGE},	{"Spc","NextPage",KS_NEXTPAGE},
--	{"D","Delete",KS_DELETE},	{"U","Undelete",KS_UNDELETE},
--	{"R","Reply",KS_REPLY},		{"F","Forward",KS_FORWARD},
--
--	{"?","Help",KS_SCREENHELP},	{"O","OTHER CMDS",KS_NONE},
--	{"Q","Quit",KS_EXIT},		{"C","Compose",KS_COMPOSER},
--	{"L","ListFldrs",KS_FLDRLIST},	{"G","GotoFldr",KS_GOTOFLDR},
--	{"Tab","NextNew",KS_NONE},	{"W","WhereIs",KS_WHEREIS},
--	{"Y","prYnt",KS_PRINT},		{"T","TakeAddr",KS_TAKEADDR},
--	{"S","Save",KS_SAVE},		{"E","Export",KS_EXPORT},
-+       {{"?","輔助說明",KS_SCREENHELP},	{"O","其它命令",KS_NONE},
-+	{"M","回到主選單",KS_MAINMENU},	{"V","[看信]",KS_VIEW},
-+	{"P","前一個",KS_PREVMSG},	{"N","後一個",KS_NEXTMSG},
-+	{"-","上一頁",KS_PREVPAGE},	{"Spc","下一頁",KS_NEXTPAGE},
-+	{"D","刪除",KS_DELETE},		{"U","救回刪除",KS_UNDELETE},
-+	{"R","回信",KS_REPLY},		{"F","轉寄",KS_FORWARD},
-+
-+	{"?","輔助說明",KS_SCREENHELP},	{"O","其它命令",KS_NONE},
-+	{"Q","離開",KS_EXIT},		{"C","寫信",KS_COMPOSER},
-+	{"L","列出信件夾",KS_FLDRLIST},	{"G","進入信件夾",KS_GOTOFLDR},
-+	{"Tab","下一個",KS_NONE},	{"W","搜尋",KS_WHEREIS},
-+	{"Y","列印",KS_PRINT},		{"T","取得地址",KS_TAKEADDR},
-+	{"S","儲存",KS_SAVE},		{"E","匯出",KS_EXPORT},
+     if(ret == 'x') {
+-	cmd_cancelled("Reply");
++	cmd_cancelled("回覆");
+ 	return(0);
+     }
  
--	{"?","Help",KS_SCREENHELP},	{"O","OTHER CMDS",KS_NONE},
-+	{"?","輔助說明",KS_SCREENHELP},	{"O","其它命令",KS_NONE},
- 	{"X",NULL,KS_NONE},		{"&","unXclude",KS_NONE},
--	{";","Select",KS_SELECT},	{"A","Apply",KS_APPLY},
--	{"$","SortIndex",KS_SORT},	{"J","Jump",KS_JUMPTOMSG},
--	{"H","HdrMode",KS_HDRMODE},	{"B","Bounce",KS_BOUNCE},
--	{"*","Flag",KS_FLAG},		{"|","Pipe",KS_NONE},
-+	{";","選擇",KS_SELECT},		{"A","Apply",KS_APPLY},
-+	{"$","索引排序",KS_SORT},	{"J","跳至",KS_JUMPTOMSG},
-+	{"H","標頭模式",KS_HDRMODE},	{"B","Bounce",KS_BOUNCE},
-+	{"*","旗標",KS_FLAG},		{"|","Pipe",KS_NONE},
+@@ -534,7 +534,7 @@
+ 	       || (*saved_cc || *saved_resent))){
+ 	    *flags &= ~RSF_QUERY_REPLY_ALL;
+ 	    if((ret=want_to(ALL_PMT,'n','x',NO_HELP,WT_SEQ_SENSITIVE)) == 'x'){
+-		cmd_cancelled("Reply");
++		cmd_cancelled("回覆");
+ 		return(0);
+ 	    }
+ 	    else if(ret == 'y')
+@@ -1099,8 +1099,8 @@
+ {
+     int ret, edited = 0;
+     static ESCKEY_S rtq_opts[] = {
+-	{'y', 'y', "Y", "Yes"},
+-	{'n', 'n', "N", "No"},
++	{'y', 'y', "Y", "是"},
++	{'n', 'n', "N", "否"},
+ 	{-1, 0, NULL, NULL},	                  /* may be overridden below */
+ 	{-1, 0, NULL, NULL}
+     };
+@@ -1133,7 +1133,7 @@
+ 				   rtq_opts, edited ? 'y' : 'n',
+ 				   'x', NO_HELP, RB_SEQ_SENSITIVE)){
+ 	  case 'x':
+-	    cmd_cancelled("Reply");
++	    cmd_cancelled("回覆");
+ 	    return(-1);
  
--	{"?","Help",KS_SCREENHELP},	{"O","OTHER CMDS",KS_NONE},
-+	{"?","輔助說明",KS_SCREENHELP},	{"O","其它命令",KS_NONE},
- 	{":","SelectCur",KS_SELECTCUR},	{"Z","ZoomMode",KS_NONE},
- 	{NULL,NULL,KS_NONE},		{NULL,NULL,KS_NONE},
- 	{NULL,NULL,KS_NONE},		{NULL,NULL,KS_NONE},
-@@ -94,32 +94,32 @@
- #define ZOOM_KEY 39
+ 	  case 'r':
+@@ -1165,7 +1165,7 @@
+ 			break;
  
- static struct key nr_anon_index_keys[] = 
--       {{"?","Help",KS_SCREENHELP},	{"W","WhereIs",KS_WHEREIS},
--	{"Q","Quit",KS_EXIT},		{"V","[ViewMsg]",KS_VIEW},
--	{"P","PrevMsg",KS_PREVMSG},	{"N","NextMsg",KS_NEXTMSG},
--	{"-","PrevPage",KS_PREVPAGE},	{"Spc","NextPage",KS_NEXTPAGE},
--	{"F","Fwd Email",KS_FORWARD},	{"J","Jump",KS_JUMPTOMSG},
--	{"$","SortIndex",KS_SORT},	{NULL,NULL,KS_NONE}};
-+       {{"?","輔助說明",KS_SCREENHELP},	{"W","搜尋",KS_WHEREIS},
-+	{"Q","離開",KS_EXIT},		{"V","[ViewMsg]",KS_VIEW},
-+	{"P","前一個",KS_PREVMSG},	{"N","後一個",KS_NEXTMSG},
-+	{"-","上一頁",KS_PREVPAGE},	{"Spc","下一頁",KS_NEXTPAGE},
-+	{"F","轉寄",KS_FORWARD},	{"J","跳至",KS_JUMPTOMSG},
-+	{"$","重新排序",KS_SORT},	{NULL,NULL,KS_NONE}};
- INST_KEY_MENU(nr_anon_index_keymenu, nr_anon_index_keys);
+ 		      case 1:
+-			cmd_cancelled("Reply");
++			cmd_cancelled("回覆");
  
- static struct key nr_index_keys[] = 
--       {{"?","Help",KS_SCREENHELP},	{"O","OTHER CMDS",KS_NONE},
-+       {{"?","輔助說明",KS_SCREENHELP},	{"O","其它命令",KS_NONE},
- 	{"Q","Quit",KS_EXIT},		{"V","[ViewMsg]",KS_VIEW},
- 	{"P","PrevMsg",KS_PREVMSG},	{"N","NextMsg",KS_NEXTMSG},
- 	{"-","PrevPage",KS_PREVPAGE},	{"Spc","NextPage",KS_NEXTPAGE},
- 	{"F","Fwd Email",KS_FORWARD},	{"J","Jump",KS_JUMPTOMSG},
--	{"Y","prYnt",KS_PRINT},		{"S","Save",KS_SAVE},
-+	{"Y","列印",KS_PRINT},		{"S","Save",KS_SAVE},
+ 		      case -1:
+ 			return(-1);
+@@ -1542,7 +1542,7 @@
  
--	{"?","Help",KS_SCREENHELP},	{"O","OTHER CMDS",KS_NONE},
-+	{"?","輔助說明",KS_SCREENHELP},	{"O","其它命令",KS_NONE},
- 	{"E","Export",KS_EXPORT},	{"C","Compose",KS_COMPOSER},
- 	{"$","SortIndex",KS_SORT},	{NULL,NULL,KS_NONE},
--	{NULL,NULL,KS_NONE},		{"W","WhereIs",KS_WHEREIS},
-+	{NULL,NULL,KS_NONE},		{"W","搜尋",KS_WHEREIS},
- 	{NULL,NULL,KS_NONE},		{NULL,NULL,KS_NONE},
- 	{NULL,NULL,KS_NONE},		{NULL,NULL,KS_NONE}};
- INST_KEY_MENU(nr_index_keymenu, nr_index_keys);
-   
- static struct key simple_index_keys[] = 
--       {{"?","Help",KS_SCREENHELP},	{NULL,NULL,KS_NONE},
-+       {{"?","輔助說明",KS_SCREENHELP},	{NULL,NULL,KS_NONE},
- 	{"E","ExitSelect",KS_EXITMODE},	{"S","[Select]",KS_SELECT},
- 	{"P","PrevMsg",KS_PREVMSG},	{"N","NextMsg",KS_NEXTMSG},
- 	{"-","PrevPage",KS_PREVPAGE},	{"Spc","NextPage",KS_NEXTPAGE},
-@@ -630,7 +630,7 @@
- 		if(i <= 1L){
- 		    if(mn_get_cur(msgmap) == 1L)
- 		      q_status_message(SM_ORDER, 0, 1,
--			  "Already at start of Index");
-+			  "已經在索引的起頭了");
+ 	case 'x' :		/* cancel or unknown response */
+ 	default  :
+-	  cmd_cancelled("Reply");
++	  cmd_cancelled("回覆");
+ 	  ret = 0;
+ 	  break;
+       }
+@@ -1708,7 +1708,7 @@
+      * up...
+      */
+     if(ret == 'x'){
+-	q_status_message(SM_ORDER, 0, 3, "Forward message cancelled");
++	q_status_message(SM_ORDER, 0, 3, "取消信件轉寄");
+ 	goto clean_early;
+     }
+     else if(ret == 'y'){			/* attach message[s]!!! */
+@@ -1840,7 +1840,7 @@
+       pine_simple_send(outgoing, &body, NULL, NULL, NULL, 1);
+     else			/* partially formatted outgoing message */
+       pine_send(outgoing, &body,
+-		ps->nr_mode ? "SEND MESSAGE" : "FORWARD MESSAGE",
++		ps->nr_mode ? "送出信件" : "轉寄信件",
+ 		NULL, NULL, NULL, NULL, NULL, FALSE);
  
- 		    break;
- 		}
-@@ -664,7 +664,7 @@
- 
- 		if(i >= mn_get_total(msgmap)){
- 		    if(mn_get_cur(msgmap) == k)
--		      q_status_message(SM_ORDER,0,1,"Already at end of Index");
-+		      q_status_message(SM_ORDER,0,1,"已經在索引的結尾了");
- 
- 		    break;
- 		}
-@@ -884,6 +884,7 @@
- 
- 		    break;
- 
-+		  case KEY_LEFT:
- 		  case 'e':		/* exit */
- 		  case 'E':
- 		  case PF3:
-@@ -897,6 +898,7 @@
- 
- 		  case 's':		/* select */
- 		  case ctrl('M'):
-+		  case KEY_RIGHT:
- 		  case ctrl('J'):
- 		  case PF4:
- 		    ps_global->redrawer = NULL;
+   clean:
