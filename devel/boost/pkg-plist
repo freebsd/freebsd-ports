@@ -1,4 +1,5 @@
 bin/bjam
+%%BOOST_PYTHON%%bin/pyste.py
 include/boost/algorithm/minmax.hpp
 include/boost/algorithm/minmax_element.hpp
 include/boost/algorithm/string.hpp
@@ -2987,6 +2988,69 @@ lib/libboost_test_exec_monitor.so.2
 lib/libboost_unit_test_framework.a
 lib/libboost_unit_test_framework.so
 lib/libboost_unit_test_framework.so.2
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/ClassExporter.py
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/CodeExporter.py
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/CppParser.py
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/declarations.py
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/EnumExporter.py
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/Exporter.py
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/exporters.py
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/exporterutils.py
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/FunctionExporter.py
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/GCCXMLParser.py
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/HeaderExporter.py
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/infos.py
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/MultipleCodeUnit.py
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/policies.py
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/pyste.py
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/settings.py
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/SingleCodeUnit.py
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/SmartFile.py
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/utils.py
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/VarExporter.py
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/__init__.py
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/ClassExporter.pyc
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/CodeExporter.pyc
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/CppParser.pyc
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/declarations.pyc
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/EnumExporter.pyc
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/Exporter.pyc
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/exporters.pyc
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/exporterutils.pyc
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/FunctionExporter.pyc
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/GCCXMLParser.pyc
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/HeaderExporter.pyc
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/infos.pyc
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/MultipleCodeUnit.pyc
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/policies.pyc
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/pyste.pyc
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/settings.pyc
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/SingleCodeUnit.pyc
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/SmartFile.pyc
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/utils.pyc
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/VarExporter.pyc
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/__init__.pyc
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/ClassExporter.pyo
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/CodeExporter.pyo
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/CppParser.pyo
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/declarations.pyo
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/EnumExporter.pyo
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/Exporter.pyo
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/exporters.pyo
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/exporterutils.pyo
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/FunctionExporter.pyo
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/GCCXMLParser.pyo
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/HeaderExporter.pyo
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/infos.pyo
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/MultipleCodeUnit.pyo
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/policies.pyo
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/pyste.pyo
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/settings.pyo
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/SingleCodeUnit.pyo
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/SmartFile.pyo
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/utils.pyo
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/VarExporter.pyo
+%%BOOST_PYTHON%%%%PYTHON_SITELIBDIR%%/Pyste/__init__.pyo
 %%PORTDOCS%%%%DOCSDIR%%/boost.css
 %%PORTDOCS%%%%DOCSDIR%%/boost.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/Assignable.html
@@ -6451,6 +6515,7 @@ lib/libboost_unit_test_framework.so.2
 @dirrm include/boost/variant/detail
 @dirrm include/boost/variant
 @dirrm include/boost
+%%BOOST_PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/Pyste
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/html/array/more
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/html/array
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/html/any

@@ -1,0 +1,8 @@
+You have built the Boost.Python library. You have to add the following
+options when building your own code:
+
+Compiler options:
+   -I%%PYTHON_INCLUDEDIR%% -I%%LOCALBASE%%/include
+
+Linker options:
+   -L%%PYTHON_LIBDIR%% -L%%LOCALBASE%%/lib -lboost_python -l%%PYTHON_VERSION%%

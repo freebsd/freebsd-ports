@@ -7,7 +7,7 @@
 
 PORTNAME=	boost
 PORTVERSION=	1.32.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:boost_site,spirit_site/}
 MASTER_SITE_SUBDIR=boost/:boost_site
@@ -30,6 +30,14 @@ OPTIONS=	VERBOSE_BUILD	"Show compiler messages"	off \
 		THREADS		"Thread support"		on  \
 		OPTIMIZED_CFLAGS "Enable -O3 optimization"	off
 
+UNIQ=		/usr/bin/uniq
+BOOST_LIBS=	date_time filesystem prg_exec_monitor program_options \
+		python regex signals test_exec_monitor thread \
+		unit_test_framework
+BOOST_SHARED_LIB_VER=	2
+
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
 #
 # Unfortunately, it is not possible to use OPTIONS to control the
 # optional Python support
@@ -46,6 +54,9 @@ MAKE_ENV+=	PYTHON_ROOT="${LOCALBASE}"\
 		PYTHON_VERSION="${PYTHON_VERSION}"\
 		PYTHON_INCLUDES="${PYTHON_INCLUDEDIR}"\
 		PYTHON_LIB_PATH="${PYTHON_LIBDIR}"
+RUN_DEPENDS+=	gccxml:${PORTSDIR}/devel/gccxml \
+		${PYTHON_SITELIBDIR}/elementtree/ElementTree.py:${PORTSDIR}/devel/py-elementtree
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/elementtree/ElementTree.py:${PORTSDIR}/devel/py-elementtree
 .else
 PLIST_SUB+=	BOOST_PYTHON="@comment "
 .endif
@@ -74,7 +85,7 @@ PLIST_SUB+=	BOOST_WCHAR="@comment "\
 BOOST_STL_OPTS=	"-sSTLPORT_INCLUDE_DIRECTORY=${LOCALBASE}/include/stlport"\
 		"-sSTLPORT_LIB_DIRECTORY=${LOCALBASE}/lib"
 
-RUN_DEPENDS=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
+RUN_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
 BUILD_DEPENDS+=	${RUN_DEPENDS}
 
 # FreeBSD 5
@@ -130,22 +141,6 @@ BJAM=		${WRKSRC}/tools/build/jam_src/bin.freebsdia64/bjam
 BJAM=		${WRKSRC}/tools/build/jam_src/bin.freebsd/bjam
 .endif
 
-SCRIPTS_ENV+=	BJAM="${BJAM}"\
-		NOPORTDOCS="${NOPORTDOCS}"\
-		FIND="${FIND}"\
-		GREP="${GREP}"\
-		REINPLACE_CMD="${REINPLACE_CMD}"\
-		LN="${LN}"\
-		MKDIR="${MKDIR}"\
-		TAR="${TAR}" \
-		RM="${RM}" \
-		UNIQ="/usr/bin/uniq"
-
-.if !defined(NOPORTDOCS)
-SCRIPTS_ENV+=	PORTDOCS="true"\
-		DOCSDIR="${DOCSDIR}"
-.endif
-
 pre-everything::
 .if !defined(WITH_PYTHON)
 	@${ECHO_CMD}
@@ -193,17 +188,110 @@ post-patch:
 		${WRKSRC}/tools/build/v1/gcc-tools.jam \
 		${WRKSRC}/tools/build/v1/gcc-stlport-tools.jam
 
+post-configure:
+# Configure pyste, the Boost.Python code generator
+.if defined(WITH_PYTHON)
+	@cd ${BUILD_WRKSRC}/libs/python/pyste/install && \
+	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} \
+		config ${PYDISTUTILS_CONFIGUREARGS}
+.endif
+
 do-build:
 # build the bjam project build tool
 	cd ${WRKSRC}/tools/build/jam_src && ./build.sh gcc
 
 # build the library
-	@cd ${WRKSRC}; \
+	cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${BJAM} ${BJAM_OPTIONS} --prefix=${PREFIX}\
 		"-sTOOLS=${BOOST_TOOLS}" "-sBUILD=${BJAM_BUILD}"\
 		${BOOST_STL_OPTS}
 
-do-install:
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/do-install
+# Build pyste, the Boost.Python code generator
+.if defined(WITH_PYTHON)
+	cd ${BUILD_WRKSRC}/libs/python/pyste/install && \
+	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} \
+		build ${PYDISTUTILS_BUILDARGS}
+.endif
 
+do-install:
+	${INSTALL_PROGRAM} ${BJAM} ${PREFIX}/bin/
+
+# Install libraries
+	${FIND} ${WRKSRC}/bin/boost/libs -type f -name "*.a"\
+		-exec ${INSTALL_DATA} \{\} ${PREFIX}/lib \;
+
+	${FIND} ${WRKSRC}/bin/boost/libs -type f \
+		-name "*.so.${BOOST_SHARED_LIB_VER}" \
+		-exec ${INSTALL_DATA} \{\} ${PREFIX}/lib \;
+
+# Create symlinks for shared libraries
+.for lib in ${BOOST_LIBS}
+	cd ${PREFIX}/lib && ${RM} -f "libboost_${lib}.so" && \
+	${LN} -s "libboost_${lib}.so.${BOOST_SHARED_LIB_VER}" "libboost_${lib}.so"
+.endfor
+
+# Install headers
+	cd ${WRKSRC} && \
+	${FIND} boost -type d -a \! -name "*.orig"\
+		-exec ${MKDIR} ${PREFIX}/include/\{\} \;
+
+	cd ${WRKSRC} && \
+	${FIND} boost -type f -a \! -name "*.orig"\
+		-exec ${INSTALL_DATA} \{\} ${PREFIX}/include/\{\} \;
+
+# Install pyste, the Boost.Python code generator
+.if defined(WITH_PYTHON)
+	cd ${WRKSRC}/libs/python/pyste/install && \
+	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} \
+		install ${PYDISTUTILS_INSTALLARGS}
+
+.endif
+
+# Documentation & examples
+.if !defined(NOPORTDOCS)
+# Installation
+	${MKDIR} ${DOCSDIR}
+
+	${FIND} ${WRKSRC} -type f -exec ${CHMOD} 0444 {} \;
+	${FIND} ${WRKSRC} -type d -exec ${CHMOD} 0555 {} \;
+	cd ${WRKSRC} &&\
+	${FIND} . -name "*.htm" -o -name "*.html"  -o -name "*.css"\
+		-o -name "*.jp*g" -o -name "*.png" -o -name "*.gif"\
+		| ${TAR} cTf - - | ${TAR} xUCf ${DOCSDIR} -
+
+	cd ${WRKSRC}/libs &&\
+	${FIND} . -name "example" -o -name "examples" -o -name "*example*.cpp"\
+		-o -name "*example*.c" -o -name "*example*.hpp" | ${UNIQ} |\
+		${GREP} -v "assign/test" | ${GREP} -v "iterator/test" | \
+		${GREP} -v "range/test" |\
+	${TAR} cTf - - | ${TAR} xUCf ${DOCSDIR}/libs -
+.endif
+
+# display pkg-message
+post-install:
+	@${TOUCH} ${PKGMESSAGE}
+
+.if ${OSVERSION} < 500000
+	@${CAT} ${.CURDIR}/../boost/pkg-message.stlport >> ${PKGMESSAGE}
+	@${ECHO_CMD} >> ${PKGMESSAGE}
+.endif
+
+.if defined (WITH_THREADS)
+	@${CAT} ${.CURDIR}/../boost/pkg-message.threads >> ${PKGMESSAGE}
+	@${ECHO_CMD} >> ${PKGMESSAGE}
+.endif
+
+.if defined (WITH_PYTHON)
+	@${CAT} ${.CURDIR}/../boost/pkg-message.python >> ${PKGMESSAGE}
+	@${ECHO_CMD} >> ${PKGMESSAGE}
+.endif
+
+	@${REINPLACE_CMD} \
+		-e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
+		-e "s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g" \
+		-e "s|%%PYTHON_INCLUDEDIR%%|${PYTHON_INCLUDEDIR}|g" \
+		-e "s|%%PYTHON_LIBDIR%%|${PYTHON_LIBDIR}|g" \
+		-e "s|%%PYTHON_VERSION%%|${PYTHON_VERSION}|g" ${PKGMESSAGE}
+
+	@${CAT} ${PKGMESSAGE}
 .include <bsd.port.post.mk>
