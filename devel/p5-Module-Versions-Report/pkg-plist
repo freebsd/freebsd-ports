@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Module/Versions/Report.pm
+@dirrm %%SITE_PERL%%/Module/Versions
+@unexec rmdir %D/%%SITE_PERL%%/Module 2>/dev/null || true
