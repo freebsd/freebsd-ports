@@ -1,5 +1,5 @@
 --- pgm/Makefile.orig	Thu Jun 29 01:05:55 2000
-+++ pgm/Makefile	Sat Jul  1 12:00:00 2000
++++ pgm/Makefile	Sat Jul 15 00:00:00 2000
 @@ -3,14 +3,13 @@
  
  LIBROOT = pgm
@@ -21,7 +21,7 @@
  MERGE_OBJECTS = $(patsubst %,%.o2, $(MERGEBINARIES))
  
  LIBOBJECTS = libpgm1.o libpgm2.o
-+LIBSOBJECTS = $(patsubst %.o, %.so, $(LIBOBJECTS))
++SHLIBOBJECTS = $(patsubst %.o, %.lo, $(LIBOBJECTS))
  
  MANUALS1 =	$(BINARIES)
  MANUALS3 =	libpgm

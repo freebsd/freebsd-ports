@@ -1,0 +1,43 @@
+--- pnm/pnmcrop.c.orig	Thu Jul 13 04:41:55 2000
++++ pnm/pnmcrop.c	Sat Jul 15 00:00:00 2000
+@@ -23,6 +23,7 @@
+ #include <string.h>
+ #include <errno.h>
+ #include "pnm.h"
++#include "shhopt.h"
+ 
+ enum bg_choice {BG_BLACK, BG_WHITE, BG_DEFAULT};
+ 
+@@ -54,6 +55,15 @@
+ 
+     int black_opt, white_opt;
+     
++    /* Create the OptStruct structure describing our options */
++    #define OPTENTRY(shortvalue,longvalue,typevalue,outputvalue,flagvalue) {\
++      option_def[option_def_index].shortName = (shortvalue); \
++      option_def[option_def_index].longName = (longvalue); \
++      option_def[option_def_index].type = (typevalue); \
++      option_def[option_def_index].arg = (outputvalue); \
++      option_def[option_def_index].flags = (flagvalue); \
++      option_def_index++; \
++      }
+     option_def_index = 0;   /* incremented by OPTENTRY */
+     OPTENTRY(0,   "black",      OPT_FLAG,   &black_opt,                 0);
+     OPTENTRY(0,   "white",      OPT_FLAG,   &white_opt,                 0);
+@@ -62,6 +72,7 @@
+     OPTENTRY(0,   "top",        OPT_FLAG,   &cmdline_p->top,            0);
+     OPTENTRY(0,   "bottom",     OPT_FLAG,   &cmdline_p->bottom,         0);
+     OPTENTRY(0,   "verbose",    OPT_FLAG,   &cmdline_p->verbose,        0);
++    option_def[option_def_index].type = OPT_END;
+ 
+     /* Set the defaults */
+     cmdline_p->left = cmdline_p->right = cmdline_p->top = cmdline_p->bottom 
+@@ -74,7 +85,7 @@
+     opt.short_allowed = FALSE;  /* We have no short (old-fashioned) options */
+     opt.allowNegNum = FALSE;  /* We have no parms that are negative numbers */
+ 
+-    pm_optParseOptions2(&argc, argv, opt, 0);
++    optParseOptions2(&argc, argv, opt, 0);
+         /* Uses and sets argc, argv, and some of *cmdline_p and others. */
+ 
+     if (argc-1 == 0)
