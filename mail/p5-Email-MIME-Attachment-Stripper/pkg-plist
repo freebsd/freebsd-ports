@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Email/MIME/Attachment/Stripper.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MIME/Attachment/Stripper/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MIME/Attachment/Stripper 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MIME/Attachment 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MIME 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Email 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Email/MIME/Attachment 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Email/MIME 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Email 2>/dev/null || true
