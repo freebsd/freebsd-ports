@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dl
-PORTVERSION=	0.3
+PORTVERSION=	0.5
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://kt-www.jaist.ac.jp/~ttate/ftp/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ MAINTAINER=	knu@FreeBSD.org
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
-WRKSRC=		${WRKDIR}/ruby-${PORTNAME}-${PORTVERSION}
+#WRKSRC=		${WRKDIR}/ruby-${PORTNAME}-${PORTVERSION}
 INSTALL_TARGET=	site-install
 
 DOCS_EN=	Changes README
@@ -31,7 +31,11 @@ post-extract:
 	@${ECHO} "SRCS= test.c" >> ${WRKSRC}/test/Makefile
 	@${ECHO} ".include <bsd.lib.mk>" >> ${WRKSRC}/test/Makefile
 
+post-patch:
+	${RUBY} -i -pe "gsub %r|'\.\./dl'|, %q|'dl'|" ${WRKSRC}/test/test.rb
+
 post-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/h2rb ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/ja
 .for f in ${DOCS_EN}

@@ -1,3 +1,4 @@
+bin/h2rb
 %%RUBY_SITEARCHLIBDIR%%/dl.so
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/Makefile
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/test.c
