@@ -1,6 +1,9 @@
---- configure.orig	Fri Nov 17 22:45:11 2000
-+++ configure	Mon Nov 20 18:27:43 2000
-@@ -4230,6 +4230,12 @@
+
+$FreeBSD$
+
+--- configure.orig	Mon Apr 16 19:12:05 2001
++++ configure	Sun Apr 29 14:01:19 2001
+@@ -6287,6 +6287,12 @@
  	  linux*)
  	    G_MODULE_LDFLAGS='-rdynamic'
  	    ;;
@@ -13,7 +16,7 @@
  	esac
  	LIBS_orig="$LIBS"
  	LDFLAGS_orig="$LDFLAGS"
-@@ -4523,7 +4529,7 @@
+@@ -6753,7 +6759,7 @@
              	        G_THREAD_CFLAGS="$G_THREAD_CFLAGS -mthreads"
  		fi
  		;;
@@ -22,7 +25,7 @@
  		G_THREAD_CFLAGS="$G_THREAD_CFLAGS -D_THREAD_SAFE"
  
  		# FreeBSD 2.2.x shiped with gcc 2.7.2.x, which doesn't support
-@@ -4610,8 +4616,8 @@
+@@ -6840,8 +6846,8 @@
  				add_thread_lib=""
  				IN=""
  			else
@@ -33,30 +36,31 @@
  			fi
  			if test x"$have_threads" = xposix; then
  				defattr=0
-@@ -4912,7 +4918,7 @@
+@@ -7142,7 +7148,7 @@
                                          		sizeof (buffer));
  ; return 0; }
  EOF
--if { (eval echo configure:4916: \"$ac_compile\") 1>&5; (eval $ac_compile) 2>&5; }; then
-+if { (eval echo configure:4916: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null; then
+-if { (eval echo configure:7146: \"$ac_compile\") 1>&5; (eval $ac_compile) 2>&5; }; then
++if { (eval echo configure:7146: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null; then
    rm -rf conftest*
    ac_cv_func_nonposix_getpwuid_r=yes
  else
-@@ -5413,6 +5419,7 @@
- if eval "test \"`echo '$''{'ac_cv_func_iconv_open'+set}'`\" = set"; then
-   echo $ac_n "(cached) $ac_c" 1>&6
+@@ -7440,6 +7446,7 @@
+   if test "$cross_compiling" = yes; then
+     { echo "configure: error: can not run test program while cross compiling" 1>&2; exit 1; }
  else
 +#  LIBS="-liconv  $LIBS"
    cat > conftest.$ac_ext <<EOF
- #line 5418 "configure"
+ #line 7445 "configure"
  #include "confdefs.h"
-@@ -5462,14 +5469,14 @@
+@@ -7747,14 +7754,14 @@
     #
     # Check for libiconv
     #
 -   echo $ac_n "checking for libiconv_open in -liconv""... $ac_c" 1>&6
+-echo "configure:7752: checking for libiconv_open in -liconv" >&5
 +   echo $ac_n "checking for libiconv_open in -lgiconv""... $ac_c" 1>&6
- echo "configure:5467: checking for libiconv_open in -liconv" >&5
++echo "configure:7752: checking for libiconv_open in -lgiconv" >&5
  ac_lib_var=`echo iconv'_'libiconv_open | sed 'y%./+-%__p_%'`
  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
@@ -65,9 +69,9 @@
 -LIBS="-liconv  $LIBS"
 +LIBS="-lgiconv  $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 5475 "configure"
+ #line 7760 "configure"
  #include "confdefs.h"
-@@ -5509,7 +5516,7 @@
+@@ -7794,7 +7801,7 @@
  fi
  
  if test "x$with_libiconv" = "xyes" ; then
