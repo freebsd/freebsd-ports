@@ -1,0 +1,2852 @@
+diff -urN po/ja.po po/ja.po
+--- po/ja.po	Thu Apr  1 17:51:53 2004
++++ po/ja.po	Fri Nov  5 17:38:51 2004
+@@ -7,7 +7,7 @@
+ msgstr ""
+ "Project-Id-Version: 0.7\n"
+ "Report-Msgid-Bugs-To: \n"
+-"POT-Creation-Date: 2004-03-31 17:41+0900\n"
++"POT-Creation-Date: 2004-11-05 17:38+0900\n"
+ "PO-Revision-Date: 2004-03-07 15:34+JST\n"
+ "Last-Translator: Masanori OZAWA <ozawa@ongs.co.jp>\n"
+ "Language-Team: japanese <info@ongs.co.jp>\n"
+@@ -15,176 +15,197 @@
+ "Content-Type: text/plain; charset=EUC-JP\n"
+ "Content-Transfer-Encoding: 8bit\n"
+ 
+-#: ../src/fio/fioservice.cpp:472
++#: ../src/fio/fioservice.cpp:444
+ msgid "Can't create print file."
+ msgstr "印刷用の一時ファイルが構築できません。"
+ 
+-#: ../src/fio/fioservice.cpp:476
++#: ../src/fio/fioservice.cpp:448
+ msgid "Can't write print file."
+ msgstr "印刷用の一時ファイルに書き込めません。"
+ 
+-#: ../src/wnd/fusenshieditdialog.cpp:49
++#: ../src/wnd/fusenshieditdialog.cpp:52
+ msgid "Fusenshi - Edit"
+ msgstr "付箋紙 - 編集"
+ 
+-#: ../src/wnd/fusenshieditdialog.cpp:70
++#: ../src/wnd/fusenshieditdialog.cpp:73
+ msgid "Text"
+ msgstr "テキスト"
+ 
+-#: ../src/wnd/fusenshieditdialog.cpp:72 ../src/wnd/fusenshimainwnd.cpp:120
++#: ../src/wnd/fusenshieditdialog.cpp:75 ../src/wnd/fusenshimainwnd.cpp:165
+ msgid "Property"
+ msgstr "プロパティ"
+ 
+-#: ../src/wnd/fusenshieditdialog.cpp:87 ../src/wnd/fusenshieditdialog.cpp:264
+-#: ../src/wnd/propertydialog.cpp:154 ../src/wnd/propertydialog.cpp:356
++#: ../src/wnd/fusenshieditdialog.cpp:90 ../src/wnd/fusenshieditdialog.cpp:258
++#: ../src/wnd/propertydialog.cpp:151 ../src/wnd/propertydialog.cpp:370
+ msgid "Background Color:"
+ msgstr "背景色:"
+ 
+-#: ../src/wnd/fusenshieditdialog.cpp:92 ../src/wnd/fusenshieditdialog.cpp:292
+-#: ../src/wnd/propertydialog.cpp:159 ../src/wnd/propertydialog.cpp:384
++#: ../src/wnd/fusenshieditdialog.cpp:95 ../src/wnd/fusenshieditdialog.cpp:282
++#: ../src/wnd/propertydialog.cpp:156 ../src/wnd/propertydialog.cpp:394
+ msgid "Foreground Color:"
+ msgstr "前景色:"
+ 
+-#: ../src/wnd/fusenshieditdialog.cpp:97 ../src/wnd/fusenshieditdialog.cpp:320
+-#: ../src/wnd/propertydialog.cpp:164 ../src/wnd/propertydialog.cpp:412
++#: ../src/wnd/fusenshieditdialog.cpp:100 ../src/wnd/fusenshieditdialog.cpp:306
++#: ../src/wnd/propertydialog.cpp:161 ../src/wnd/propertydialog.cpp:418
+ msgid "Font:"
+ msgstr "フォント:"
+ 
+-#: ../src/wnd/fusenshieditdialog.cpp:102 ../src/wnd/fusenshieditdialog.cpp:106
+-#: ../src/wnd/fusenshieditdialog.cpp:110 ../src/wnd/propertydialog.cpp:179
+-#: ../src/wnd/propertydialog.cpp:183 ../src/wnd/propertydialog.cpp:187
++#: ../src/wnd/fusenshieditdialog.cpp:105 ../src/wnd/fusenshieditdialog.cpp:109
++#: ../src/wnd/fusenshieditdialog.cpp:113 ../src/wnd/propertydialog.cpp:176
++#: ../src/wnd/propertydialog.cpp:180 ../src/wnd/propertydialog.cpp:184
+ msgid "Select..."
+ msgstr "選択..."
+ 
+-#: ../src/wnd/fusenshieditdialog.cpp:234 ../src/wnd/propertydialog.cpp:315
++#: ../src/wnd/fusenshieditdialog.cpp:228 ../src/wnd/propertydialog.cpp:328
+ msgid "Can't parse background color."
+ msgstr "背景色を取得できません。"
+ 
+-#: ../src/wnd/fusenshieditdialog.cpp:241 ../src/wnd/propertydialog.cpp:322
++#: ../src/wnd/fusenshieditdialog.cpp:235 ../src/wnd/propertydialog.cpp:335
+ msgid "Can't parse foreground color."
+ msgstr "前景色を取得できません。"
+ 
+-#: ../src/wnd/fusenshimainwnd.cpp:49
++#: ../src/wnd/fusenshimainwnd.cpp:54
+ msgid "Fusenshi Main Window"
+ msgstr "付箋紙 メインウィンドウ"
+ 
+-#: ../src/wnd/fusenshimainwnd.cpp:121
++#: ../src/wnd/fusenshimainwnd.cpp:164
++msgid "Raise windows"
++msgstr "最前面に表示"
++
++#: ../src/wnd/fusenshimainwnd.cpp:166
+ msgid "Quit"
+ msgstr "閉じる"
+ 
+-#: ../src/wnd/fusenshiwnd.cpp:71
++#: ../src/wnd/fusenshiwnd.cpp:74
+ msgid "Fusenshi"
+ msgstr "付箋紙"
+ 
+-#: ../src/wnd/fusenshiwnd.cpp:303
++#: ../src/wnd/fusenshiwnd.cpp:318
+ msgid "May I delete this note?"
+ msgstr "付箋紙を削除してよろしいですか？"
+ 
+-#: ../src/wnd/fusenshiwnd.cpp:392
++#: ../src/wnd/fusenshiwnd.cpp:407
+ msgid "Transmission of the sticky note went wrong.\n"
+ msgstr "付箋紙の送信に失敗しました。\n"
+ 
+-#: ../src/wnd/fusenshiwnd.cpp:407
++#: ../src/wnd/fusenshiwnd.cpp:422
+ msgid "Fusenshi - Print"
+ msgstr "付箋紙 - 印刷"
+ 
+-#: ../src/wnd/fusenshiwnd.cpp:410 ../src/wnd/propertydialog.cpp:169
++#: ../src/wnd/fusenshiwnd.cpp:425 ../src/wnd/propertydialog.cpp:166
+ msgid "Print command:"
+ msgstr "印刷コマンド:"
+ 
+-#: ../src/wnd/fusenshiwnd.cpp:411 ../src/wnd/propertydialog.cpp:174
++#: ../src/wnd/fusenshiwnd.cpp:426 ../src/wnd/propertydialog.cpp:171
+ msgid "    %1: Exchange to print file."
+ msgstr "    %1: 印刷ファイル名へ変換します。"
+ 
+-#: ../src/wnd/fusenshiwnd.cpp:440
++#: ../src/wnd/fusenshiwnd.cpp:455
+ msgid "Edit"
+ msgstr "編集"
+ 
+-#: ../src/wnd/fusenshiwnd.cpp:441
++#: ../src/wnd/fusenshiwnd.cpp:456
+ msgid "Send"
+ msgstr "送信"
+ 
+-#: ../src/wnd/fusenshiwnd.cpp:442
++#: ../src/wnd/fusenshiwnd.cpp:457
+ msgid "Print"
+ msgstr "印刷"
+ 
+-#: ../src/wnd/fusenshiwnd.cpp:443
++#: ../src/wnd/fusenshiwnd.cpp:458
+ msgid "Maximize"
+ msgstr "最大化"
+ 
+-#: ../src/wnd/fusenshiwnd.cpp:444
++#: ../src/wnd/fusenshiwnd.cpp:459
+ msgid "Minimize"
+ msgstr "最小化"
+ 
+-#: ../src/wnd/fusenshiwnd.cpp:445
++#: ../src/wnd/fusenshiwnd.cpp:460
+ msgid "Delete"
+ msgstr "削除"
+ 
+-#: ../src/wnd/propertydialog.cpp:48
++#: ../src/wnd/fusenshiwnd.cpp:478
++msgid "Unmaximize"
++msgstr "最大化解除"
++
++#: ../src/wnd/fusenshiwnd.cpp:481
++msgid "Unminimize"
++msgstr "最小化解除"
++
++#: ../src/wnd/propertydialog.cpp:51
+ msgid "Fusenshi - Property"
+ msgstr "付箋紙 - プロパティ"
+ 
+-#: ../src/wnd/propertydialog.cpp:127
++#: ../src/wnd/propertydialog.cpp:124
+ msgid "Base"
+ msgstr "基本"
+ 
+-#: ../src/wnd/propertydialog.cpp:149
++#: ../src/wnd/propertydialog.cpp:146
+ msgid "Nickname:"
+-msgstr "ニックネーム"
++msgstr "ニックネーム:"
+ 
+-#: ../src/wnd/propertydialog.cpp:208
++#: ../src/wnd/propertydialog.cpp:205
+ msgid "Network"
+ msgstr "ネットワーク"
+ 
+-#: ../src/wnd/propertydialog.cpp:216
++#: ../src/wnd/propertydialog.cpp:213
+ msgid "Broadcast Address"
+ msgstr "ブロードキャストアドレス"
+ 
+-#: ../src/wnd/propertydialog.cpp:221
++#: ../src/wnd/propertydialog.cpp:218
+ msgid "Enable networking."
+ msgstr "ネットワーク機能を有効にします。"
+ 
+-#: ../src/wnd/propertydialog.cpp:224
++#: ../src/wnd/propertydialog.cpp:221
+ msgid "Broadcast address list:"
+ msgstr "ブロードキャストアドレスの一覧:"
+ 
+-#: ../src/wnd/propertydialog.cpp:238
++#: ../src/wnd/propertydialog.cpp:235
+ msgid "Add"
+ msgstr "追加"
+ 
+-#: ../src/wnd/propertydialog.cpp:242
++#: ../src/wnd/propertydialog.cpp:239
+ msgid "Remove"
+ msgstr "削除"
+ 
+-#: ../src/wnd/propertydialog.cpp:436
++#: ../src/wnd/propertydialog.cpp:258
++msgid "Window"
++msgstr "ウィンドウ"
++
++#: ../src/wnd/propertydialog.cpp:262
++msgid "Show on all desktops"
++msgstr "常にデスクトップに貼り付け"
++
++#: ../src/wnd/propertydialog.cpp:442
+ msgid "'' is not broadcast address."
+ msgstr "'' はブロードキャストアドレスではありません。"
+ 
+-#: ../src/wnd/senddialog.cpp:44
++#: ../src/wnd/senddialog.cpp:47
+ msgid "Fusenshi - Send"
+ msgstr "付箋紙 - 送信"
+ 
+-#: ../src/wnd/senddialog.cpp:56
++#: ../src/wnd/senddialog.cpp:59
+ msgid "UserName"
+ msgstr "ユーザ名"
+ 
+-#: ../src/wnd/senddialog.cpp:57
++#: ../src/wnd/senddialog.cpp:60
+ msgid "HostName"
+ msgstr "ホスト名"
+ 
+-#: ../src/wnd/senddialog.cpp:58
++#: ../src/wnd/senddialog.cpp:61
+ msgid "IPAddress"
+ msgstr "IPアドレス"
+ 
+-#: ../src/wnd/senddialog.cpp:64
++#: ../src/wnd/senddialog.cpp:67
+ msgid "Send To:"
+ msgstr "送信先:"
+ 
+-#: ../src/wnd/senddialog.cpp:89
++#: ../src/wnd/senddialog.cpp:92
+ msgid "Update"
+ msgstr "更新"
+ 
+-#: ../src/wnd/wndservice.cpp:520
++#: ../src/wnd/wndservice.cpp:538
++#, c-format
+ msgid ""
+ "I recieved note from follow:\n"
+ "Username: %s\n"
+diff -urN src/Makefile src/Makefile
+--- src/Makefile	Thu Apr  1 17:52:08 2004
++++ src/Makefile	Mon Nov 22 15:06:02 2004
+@@ -1,9 +1,9 @@
+-# $Id: Makefile,v 1.1 2004/04/01 08:52:08 daichi Exp $
++# $Id: Makefile,v 1.2 2004/11/04 17:39:52 ozawa Exp $
+ #
+ # Copyright 2003- ONGS Inc. All rights reserved.
+ #
+ # author: Masanori OZAWA (ozawa@ongs.co.jp)
+-# version: $Revision: 1.1 $
++# version: $Revision: 1.2 $
+ # 
+ # Redistribution and use in source and binary forms, with or without 
+ # modification, are permitted provided that the following conditions
+@@ -47,6 +47,8 @@
+ 
+ .ifndef DEBUG
+ CPPOPT	+= -O2
++.else
++CPPOPT	+= -g
+ .endif
+ 
+ .ifndef WITHOUT_NLS
+diff -urN src/fio/fioservice.cpp src/fio/fioservice.cpp
+--- src/fio/fioservice.cpp	Thu Apr  1 17:52:24 2004
++++ src/fio/fioservice.cpp	Fri Nov  5 17:08:30 2004
+@@ -1,10 +1,10 @@
+ /*
+- * $Id: fioservice.cpp,v 1.1 2004/04/01 08:52:24 daichi Exp $
++ * $Id: fioservice.cpp,v 1.3 2004/11/05 08:08:30 ozawa Exp $
+  *
+  * Copyright 2003- ONGS Inc. All rights reserved.
+  * 
+  * author: Masanori OZAWA (ozawa@ongs.co.jp)
+- * version: $Revision: 1.1 $
++ * version: $Revision: 1.3 $
+  *
+  * Redistribution and use in source and binary forms, with or without 
+  * modification, are permitted provided that the following conditions
+@@ -49,11 +49,6 @@
+ FioService* FioService::m_pInstance = NULL;
+ 
+ /**
+- * 付箋紙の設定
+- */
+-PropertyData FioService::m_cProperty;
+-
+-/**
+  * コンストラクタ
+  */
+ FioService::FioService(int inFD, int outFD)
+@@ -294,48 +289,18 @@
+ }
+ 
+ /**
+- * 付箋紙の設定を取得します。
+- * 
+- * @return 付箋紙の設定
++ * プロパティの変更をウィンドウプロセスへ通知します。
+  */
+-PropertyData FioService::getProperty()
++void FioService::noticeProperty()
+ {
+-    static bool bLoad = false;
+-
+-    if (!bLoad) {
+-        try {
+-            FioService::m_cProperty = PropertyData::loadProperty();
+-        }
+-        catch (...) {
+-            fprintf(stderr, "%s: Can't load property file.", APP_NAME);
+-        }
+-
+-        bLoad = true;
+-    }
+-
+-    return FioService::m_cProperty;
+-}
+-
+-/**
+- * 付箋紙の設定を設定し、直ちに保管します。
+- * 
+- * @param property 付箋紙の設定
+- */
+-void FioService::setProperty(const PropertyData& property)
+-{
+-    if (!PropertyData::saveProperty(property)) {
+-        fprintf(stderr, "%s: Can't save property file.", APP_NAME);
++    // 設定の変更を通知する
++    GString* pStrData = PropertyData::toSerializedString(PropertyData::get());
++    
++    if (pStrData) {
++        m_pCommand->addCommand(PROPERTY_CHANGED, 0, pStrData);
+     }
+     else {
+-        // 変更を保持
+-        FioService::m_cProperty = property;
+-        
+-        // 設定の変更を反映
+-        FioService::updateProperty();
+-
+-        // 設定の変更を通知する
+-        FioService *pInstance = FioService::getInstance();
+-        pInstance->m_pCommand->addCommand(PROPERTY_CHANGED, 0, NULL);
++        throw "Out of Memory Error!";
+     }
+ }
+ 
+@@ -344,7 +309,7 @@
+  */
+ void FioService::updateProperty()
+ {
+-    PropertyData property = FioService::getProperty();
++    const PropertyData& property = PropertyData::get();
+     
+ #ifndef WITHOUT_NETWORK
+     // ネットワークの有効／無効の調整
+@@ -375,14 +340,15 @@
+     FileManager& fm = FileManager::getInstance();
+     
+     const char* pFileName = NULL;
+-    GString* lpStrData = NULL;
++    GString* pString = NULL;
++    PropertyData property;
+     
+     switch (lpCommand->nCommandID) {
+     case SAVE_FUSENSHI:
+         pFileName = fm.getFileName(lpCommand->nFileID);
+-        lpStrData = (GString*)lpCommand->pData;
+-        if (pFileName && lpStrData) {
+-            FusenshiSaver::saveFusenshiData(pFileName, lpStrData);
++        pString = (GString*)lpCommand->pData;
++        if (pFileName && pString) {
++            FusenshiSaver::saveFusenshiData(pFileName, pString);
+         }
+         break;
+     case CREATE_NEW_FUSENSHI:
+@@ -396,13 +362,16 @@
+         fm.removeFile(lpCommand->nFileID);
+         break;
+     case PRINT_FUSENSHI:
+-        lpStrData = (GString*)lpCommand->pData;
+-        if (lpStrData) {
+-            printFusenshi(lpCommand->nFileID, lpStrData->str);
++        pString = (GString*)lpCommand->pData;
++        if (pString) {
++            printFusenshi(lpCommand->nFileID, pString->str);
+         }
+         break;
+     case PROPERTY_CHANGED:
+-        FioService::m_cProperty = PropertyData::loadProperty();
++        pString = (GString*)lpCommand->pData;
++        property = PropertyData::buildObject(pString);
++        // 保存と更新
++        PropertyData::set(property, true);
+         FioService::updateProperty();
+         break;
+     case EXIT_APP:
+@@ -422,7 +391,7 @@
+ FusenshiServer* FioService::getServer()
+ {
+ #ifndef WITHOUT_NETWORK
+-    PropertyData property = FioService::getProperty();
++    const PropertyData& property = PropertyData::get();
+ 
+     if (property.isEnableNetwork()) {
+         return FusenshiServer::getInstance();
+diff -urN src/fio/fioservice.h src/fio/fioservice.h
+--- src/fio/fioservice.h	Thu Apr  1 17:52:24 2004
++++ src/fio/fioservice.h	Fri Nov  5 17:08:30 2004
+@@ -1,10 +1,10 @@
+ /*
+- * $Id: fioservice.h,v 1.1 2004/04/01 08:52:24 daichi Exp $
++ * $Id: fioservice.h,v 1.3 2004/11/05 08:08:30 ozawa Exp $
+  *
+  * Copyright 2003- ONGS Inc. All rights reserved.
+  * 
+  * author: Masanori OZAWA (ozawa@ongs.co.jp)
+- * version: $Revision: 1.1 $
++ * version: $Revision: 1.3 $
+  *
+  * Redistribution and use in source and binary forms, with or without 
+  * modification, are permitted provided that the following conditions
+@@ -89,20 +89,6 @@
+      */
+     static FioService* getInstance(int inFD, int outFD);
+     
+-    /**
+-     * 付箋紙の設定を取得します。
+-     * 
+-     * @return 付箋紙の設定
+-     */
+-    static PropertyData getProperty();
+-    
+-    /**
+-     * 付箋紙の設定を設定し、直ちに保管します。
+-     * 
+-     * @param property 付箋紙の設定
+-     */
+-    static void setProperty(const PropertyData& property);
+-
+ public:
+     /**
+      * デストラクタ
+@@ -138,11 +124,15 @@
+      */
+     void printFusenshi(guint nFileID, const char* pCommand);
+     
+-private:
++    /**
++     * プロパティの変更をウィンドウプロセスへ通知します。
++     */
++    void noticeProperty();
++
+     /**
+      * プロパティの変更後に必要な処理を実行します。
+      */
+-    static void updateProperty();
++    void updateProperty();
+ 
+ private:
+     /**
+@@ -150,11 +140,7 @@
+      */
+     static FioService* m_pInstance;
+     
+-    /**
+-     * 付箋紙の設定
+-     */
+-    static PropertyData m_cProperty;
+-    
++private:
+     /**
+      * 入力側パイプ
+      */
+diff -urN src/fio/fusenshidata.cpp src/fio/fusenshidata.cpp
+--- src/fio/fusenshidata.cpp	Thu Apr  1 17:52:24 2004
++++ src/fio/fusenshidata.cpp	Fri Nov  5 17:08:30 2004
+@@ -1,10 +1,10 @@
+ /*
+- * $Id: fusenshidata.cpp,v 1.1 2004/04/01 08:52:24 daichi Exp $
++ * $Id: fusenshidata.cpp,v 1.3 2004/11/05 08:08:30 ozawa Exp $
+  *
+  * Copyright 2003- ONGS Inc. All rights reserved.
+  * 
+  * author: Masanori OZAWA (ozawa@ongs.co.jp)
+- * version: $Revision: 1.1 $
++ * version: $Revision: 1.3 $
+  *
+  * Redistribution and use in source and binary forms, with or without 
+  * modification, are permitted provided that the following conditions
+@@ -47,8 +47,8 @@
+ {
+     const int sx = gdk_screen_width();
+     const int sy = gdk_screen_height();
+-    PropertyData property = FioService::getProperty();
+-
++    const PropertyData& property = PropertyData::get();
++    
+     // メンバ変数の初期化
+     m_nMajorVersion = FUSENSHIDATA_MAJOR_VERSION;
+     m_nMinorVersion = FUSENSHIDATA_MINOR_VERSION;
+@@ -69,6 +69,14 @@
+ }
+ 
+ /**
++ * コピーコンストラクタ
++ */
++FusenshiData::FusenshiData(const FusenshiData& data)
++{
++    this->operator=(data);
++}
++
++/**
+  * デストラクタ
+  */
+ FusenshiData::~FusenshiData()
+@@ -367,11 +375,11 @@
+ /**
+  * 付箋紙データオブジェクトをシリアライズします。
+  * 
+- * @param pData 付箋紙データオブジェクト
++ * @param data 付箋紙データオブジェクト
+  * @return シリアライズ後のバイト列。
+  *         不要になった段階で破棄する必要があります。
+  */
+-GString* FusenshiData::toSerializedString(const FusenshiData* pData)
++GString* FusenshiData::toSerializedString(const FusenshiData& data)
+ {
+     GString *result = g_string_sized_new(1024);
+     Glib::ustring szBuffer;
+@@ -382,45 +390,45 @@
+     
+     // バージョン
+     g_string_append_printf(result, TYPE_VERSION ": %d.%d.%d\r\n",
+-                           pData->getMajorVersion(),
+-                           pData->getMinorVersion(),
+-                           pData->getMicroVersion());
++                           data.getMajorVersion(),
++                           data.getMinorVersion(),
++                           data.getMicroVersion());
+ 
+     // 背景色
+-    toString(pData->getBackground(), szBuffer);
++    color2string(data.getBackground(), szBuffer);
+     g_string_append_printf
+         (result, TYPE_BG_COLOR ": %s\r\n", szBuffer.c_str());
+ 
+     // 前景色
+-    toString(pData->getForeground(), szBuffer);
++    color2string(data.getForeground(), szBuffer);
+     g_string_append_printf
+         (result, TYPE_FG_COLOR ": %s\r\n", szBuffer.c_str());
+ 
+     // フォント
+     g_string_append_printf(result, TYPE_FONTNAME ": %s\r\n",
+-                           pData->getFontName().c_str());
++                           data.getFontName().c_str());
+ 
+     // ウィンドウポジション
+     g_string_append_printf(result, TYPE_X_POS ": %d\r\n", 
+-                           pData->getXPos());
++                           data.getXPos());
+     g_string_append_printf(result, TYPE_Y_POS ": %d\r\n", 
+-                           pData->getYPos());
++                           data.getYPos());
+ 
+     // ウィンドウサイズ
+     g_string_append_printf(result, TYPE_WIDTH ": %d\r\n",
+-                           pData->getWidth());
++                           data.getWidth());
+     g_string_append_printf(result, TYPE_HEIGHT ": %d\r\n",
+-                           pData->getHeight());
++                           data.getHeight());
+ 
+     // ウィンドウスタイル
+     g_string_append_printf(result, TYPE_STYLE ": %d\r\n", 
+-                           pData->getStyle());
++                           data.getStyle());
+ 
+     // ヘッダの終端行
+     g_string_append(result, "\r\n");
+ 
+     // 本文
+-    g_string_append(result, pData->getText().c_str());
++    g_string_append(result, data.getText().c_str());
+ 
+     return result;
+ }
+@@ -602,7 +610,7 @@
+  */
+ void FusenshiData::parseColorAndSet(GdkColor *pColor, const char *pValue)
+ {
+-    parseColor(pColor, pValue);
++    string2color(pColor, pValue);
+ }
+ 
+ /**
+diff -urN src/fio/fusenshisaver.cpp src/fio/fusenshisaver.cpp
+--- src/fio/fusenshisaver.cpp	Thu Apr  1 17:52:24 2004
++++ src/fio/fusenshisaver.cpp	Fri Nov  5 17:08:30 2004
+@@ -1,10 +1,10 @@
+ /*
+- * $Id: fusenshisaver.cpp,v 1.1 2004/04/01 08:52:24 daichi Exp $
++ * $Id: fusenshisaver.cpp,v 1.2 2004/11/05 08:08:30 ozawa Exp $
+  *
+  * Copyright 2003- ONGS Inc. All rights reserved.
+  * 
+  * author: Masanori OZAWA (ozawa@ongs.co.jp)
+- * version: $Revision: 1.1 $
++ * version: $Revision: 1.2 $
+  *
+  * Redistribution and use in source and binary forms, with or without 
+  * modification, are permitted provided that the following conditions
+@@ -65,7 +65,7 @@
+ void FusenshiSaver::saveFusenshiData
+     (const char* pFileName, const FusenshiData* pData)
+ {
+-    GString* lpStrData = FusenshiData::toSerializedString(pData);
++    GString* lpStrData = FusenshiData::toSerializedString(*pData);
+     
+     if (lpStrData) {
+         saveFusenshiData(pFileName, lpStrData);
+diff -urN src/fio/propertydata.cpp src/fio/propertydata.cpp
+--- src/fio/propertydata.cpp	Thu Apr  1 17:52:24 2004
++++ src/fio/propertydata.cpp	Fri Nov  5 17:08:30 2004
+@@ -1,10 +1,10 @@
+ /*
+- * $Id: propertydata.cpp,v 1.1 2004/04/01 08:52:24 daichi Exp $
++ * $Id: propertydata.cpp,v 1.4 2004/11/05 08:08:30 ozawa Exp $
+  *
+  * Copyright 2003- ONGS Inc. All rights reserved.
+  * 
+  * author: Masanori OZAWA (ozawa@ongs.co.jp)
+- * version: $Revision: 1.1 $
++ * version: $Revision: 1.4 $
+  *
+  * Redistribution and use in source and binary forms, with or without 
+  * modification, are permitted provided that the following conditions
+@@ -46,6 +46,11 @@
+ #define ROOT_NODE          (APP_NAME "-config")
+ 
+ /**
++ * プロパティ
++ */
++PropertyData PropertyData::m_cProperty;
++
++/**
+  * コンストラクタ
+  */
+ PropertyData::PropertyData()
+@@ -69,6 +74,16 @@
+ 
+     m_bEnableNetwork = true;
+     m_cBroadcastList.push_back(IP2STR(INADDR_BROADCAST));
++    
++    m_bStickWindow = false;
++}
++
++/**
++ * コピーコンストラクタ
++ */
++PropertyData::PropertyData(const PropertyData& data)
++{
++    this->operator=(data);
+ }
+ 
+ /**
+@@ -171,6 +186,16 @@
+ }
+ 
+ /**
++ * ウィンドウを張り付け状態にするか調べます。
++ * 
++ * @return 張り付け状態にする場合は true を戻します。
++ */
++bool PropertyData::isStickWindow() const
++{
++	return m_bStickWindow;
++}
++
++/**
+  * ブロードキャストアドレスの一覧を設定します。
+  * 
+  * @param broadcastList ブロードキャストアドレスの一覧
+@@ -252,6 +277,16 @@
+ }
+ 
+ /**
++ * ウィンドウを張り付け状態にするか設定します。
++ * 
++ * @return 張り付け状態にする場合は true を指定します。
++ */
++void PropertyData::setStickWindow(bool bPaste)
++{
++	m_bStickWindow = bPaste;
++}
++
++/**
+  * 印刷用のコマンドを取得します。
+  * 
+  * @return 印刷用のコマンドを戻します。
+@@ -284,6 +319,9 @@
+ 
+     // ブロードキャストアドレス
+     setBroadcastList(data.getBroadcastList());
++    
++    // ウィンドウの張り付けフラグ
++    setStickWindow(data.isStickWindow());
+ 
+     return (*this);
+ }
+@@ -336,6 +374,9 @@
+ 
+     result &= (iter1 == iter1end && iter2 == iter2end);
+ 
++    // ウィンドウの張り付けフラグ
++    result &= (isStickWindow() == data.isStickWindow());
++
+     return result;
+ }
+ 
+@@ -348,6 +389,41 @@
+ }
+ 
+ /**
++ * プロパティを取得します。
++ * 
++ * @return プロパティ
++ */
++const PropertyData& PropertyData::get()
++{
++    static bool bLoad = false;
++    
++    if (!bLoad) {
++        PropertyData::m_cProperty = PropertyData::loadProperty();
++        
++        bLoad = true;
++    }
++    
++    return PropertyData::m_cProperty;
++}
++ 
++/**
++ * プロパティを設定／保存します。
++ * 
++ * @param property 新しいプロパティ
++ * @param save ファイルに保存する場合は true を指定します。
++ */
++void PropertyData::set(const PropertyData& property, bool save)
++{
++    PropertyData::m_cProperty = property;
++    
++    if (save) {
++        if (!PropertyData::saveProperty(property)) {
++            fprintf(stderr, "%s: Can't save property file.", APP_NAME);
++        }
++    }
++}
++ 
++/**
+  * 付箋紙のプロパティを読み込みます。
+  * 
+  * @return ロードした付箋紙のプロパティを戻します。
+@@ -369,12 +445,109 @@
+     }
+ 
+     // 解析
++    if (!PropertyData::loadFromXML(doc, property)) {
++        PropertyData tmp;
++        property = tmp; // 初期化
++    }
++
++    xmlFreeDoc(doc);
++    
++    return property;
++}
++
++/**
++ * 付箋紙のプロパティを保存します。
++ * 
++ * @param property 付箋紙プロパティ
++ * @return 保存に成功した場合は true を戻します。
++ */
++bool PropertyData::saveProperty(const PropertyData& property)
++{
++    // 付箋紙ファイル名の構築
++    Glib::ustring szPropFile = getAppDir(APP_NAME);
++    szPropFile += "/";
++    szPropFile += PROPERTY_FILENAME;
++
++    // 保存用のディレクトリを構築
++    createFusenshiDir();
++    
++    // XMLへ変換
++    xmlDocPtr doc = PropertyData::toXML(property);
++
++    // 保存
++    bool result = (doc ? XMLSaver::save(szPropFile, doc) : false);
++
++    if (doc) xmlFreeDoc(doc);
++
++    return result;
++}
++
++/**
++ * シリアライズ化されたプロパティからプロパティオブジェクトを
++ * 構築します。
++ * 
++ * @param pBytes シリアライズ後のバイト列
++ * @return プロパティオブジェクト。
++ *         不要になった段階で破棄する必要があります。
++ */
++PropertyData PropertyData::buildObject(const GString* pBytes)
++{
++    PropertyData property;
++    
++    // 読み込み
++    xmlDocPtr doc = XMLLoader::load(pBytes);
++
++    if (!doc) {
++        throw "Can't load property data.";
++    }
++
++    // 解析
++    if (!PropertyData::loadFromXML(doc, property)) {
++        PropertyData tmp;
++        property = tmp; // 初期化
++    }
++
++    xmlFreeDoc(doc);
++    
++    return property;
++}
++
++/**
++ * プロパティオブジェクトをシリアライズします。
++ * 
++ * @param pData プロパティオブジェクト
++ * @return シリアライズ後のバイト列。
++ *         不要になった段階で破棄する必要があります。
++ */
++GString* PropertyData::toSerializedString(const PropertyData& property)
++{
++    // XMLへ変換
++    xmlDocPtr doc = PropertyData::toXML(property);
++
++    // 保存
++    GString* pBuffer = (doc ? XMLSaver::toString(doc) : NULL);
++
++    if (doc) xmlFreeDoc(doc);
++
++    return pBuffer;
++}
++
++/**
++ * 付箋紙のプロパティをXMLから読み込みます。
++ * 
++ * @param document XML
++ * @param property プロパティの保存先オブジェクト
++ * @return ロードに成功した場合はtrueを戻します。
++ */
++bool PropertyData::loadFromXML(const xmlDocPtr document, PropertyData& property)
++{
++    // 解析
+     const char *key = NULL;
+-    xmlNodePtr node = xmlDocGetRootElement(doc);
++    xmlNodePtr node = xmlDocGetRootElement(document);
+ 
+     if (xmlStrcmp(node->name, (const xmlChar *)ROOT_NODE)) {
+-        xmlFreeDoc(doc);
+-        throw "Property file is broken.";
++        // XMLが壊れています。
++        return false;
+     }
+ 
+     node = node->xmlChildrenNode;
+@@ -382,15 +555,15 @@
+     property.clearBroadcastList();
+ 
+     while (node) {
+-        key = (char*)xmlNodeListGetString(doc, node->xmlChildrenNode, 1);
++        key = (char*)xmlNodeListGetString(document, node->xmlChildrenNode, 1);
+         if (!xmlStrcmp(node->name, (const xmlChar *)PTYPE_NICKNAME)) {
+             property.setNickName(key);
+         }
+         else if (!xmlStrcmp(node->name, (const xmlChar *)PTYPE_BG_COLOR)) {
+-            parseColor(&property.m_cBackground, key);
++            string2color(&property.m_cBackground, key);
+         }
+         else if (!xmlStrcmp(node->name, (const xmlChar *)PTYPE_FG_COLOR)) {
+-            parseColor(&property.m_cForeground, key);
++            string2color(&property.m_cForeground, key);
+         }
+         else if (!xmlStrcmp(node->name, (const xmlChar *)PTYPE_FONTNAME)) {
+             property.setFontName(key);
+@@ -405,49 +578,43 @@
+         else if (!xmlStrcmp(node->name, (const xmlChar *)PTYPE_BROADCAST_ADDR)) {
+             property.addBroadcastAddr(key);
+         }
++        else if (!xmlStrcmp(node->name, (const xmlChar *)PTYPE_STICK_WND)) {
++          property.setStickWindow
++                (strcasecmp(key, "true") == 0 || strcmp(key, "1") == 0);
++        }
+         xmlFree((xmlChar*)key);
+ 
+         node = node->next;
+     }
+-
+-    xmlFreeDoc(doc);
+-
+-    return property;
++    
++    return true;
+ }
+ 
+ /**
+- * 付箋紙のプロパティを保存します。
++ * 付箋紙のプロパティをXMLに変換します。
+  * 
+  * @param property 付箋紙プロパティ
+- * @return 保存に成功した場合は true を戻します。
++ * @return 変換後のXML
+  */
+-bool PropertyData::saveProperty(const PropertyData& property)
++xmlDocPtr PropertyData::toXML(const PropertyData& property)
+ {
+-    // 付箋紙ファイル名の構築
+-    Glib::ustring szPropFile = getAppDir(APP_NAME);
+-    szPropFile += "/";
+-    szPropFile += PROPERTY_FILENAME;
+-
+-    // 保存用のディレクトリを構築
+-    createFusenshiDir();
+-
+     // XMLドキュメントの構築
+     xmlDocPtr doc = xmlNewDoc((xmlChar*)"1.0");
+ 
+-    Glib::ustring szBuffer;
++    Glib::ustring buf;
+ 
+     doc->children = xmlNewDocNode(doc, NULL, (xmlChar*)ROOT_NODE, NULL);
+ 
+     xmlNewChild(doc->children, NULL, (xmlChar*)PTYPE_NICKNAME,
+                 (xmlChar*)property.getNickName().c_str());
+ 
+-    toString(property.getBackground(), szBuffer);
++    color2string(property.getBackground(), buf);
+     xmlNewChild(doc->children, NULL, (xmlChar*)PTYPE_BG_COLOR,
+-                (xmlChar*)szBuffer.c_str());
++                (xmlChar*)buf.c_str());
+ 
+-    toString(property.getForeground(), szBuffer);
++    color2string(property.getForeground(), buf);
+     xmlNewChild(doc->children, NULL, (xmlChar*)PTYPE_FG_COLOR,
+-                (xmlChar*)szBuffer.c_str());
++                (xmlChar*)buf.c_str());
+ 
+     xmlNewChild(doc->children, NULL, (xmlChar*)PTYPE_FONTNAME,
+                 (xmlChar*)property.getFontName().c_str());
+@@ -458,6 +625,9 @@
+     xmlNewChild(doc->children, NULL, (xmlChar*)PTYPE_ENABLE_NETWORK,
+                 (xmlChar*)(property.isEnableNetwork() ? "true" : "false"));
+ 
++    xmlNewChild(doc->children, NULL, (xmlChar*)PTYPE_STICK_WND,
++                (xmlChar*)(property.isStickWindow() ? "true" : "false"));
++
+     BroadcastList& list = (BroadcastList&)property.getBroadcastList();
+     BroadcastList::iterator iter = list.begin();
+     BroadcastList::iterator iterend = list.end();
+@@ -466,10 +636,6 @@
+         xmlNewChild(doc->children, NULL, (xmlChar*)PTYPE_BROADCAST_ADDR,
+                     (xmlChar*)(*iter).c_str());
+     }
+-
+-    bool result = XMLSaver::save(szPropFile, doc);
+-
+-    xmlFreeDoc(doc);
+-
+-    return result;
++    
++    return doc;
+ }
+diff -urN src/fio/xmlloader.cpp src/fio/xmlloader.cpp
+--- src/fio/xmlloader.cpp	Thu Apr  1 17:52:24 2004
++++ src/fio/xmlloader.cpp	Fri Nov  5 17:08:30 2004
+@@ -1,10 +1,10 @@
+ /*
+- * $Id: xmlloader.cpp,v 1.1 2004/04/01 08:52:24 daichi Exp $
++ * $Id: xmlloader.cpp,v 1.2 2004/11/05 08:08:30 ozawa Exp $
+  *
+  * Copyright 2003- ONGS Inc. All rights reserved.
+  * 
+  * author: Masanori OZAWA (ozawa@ongs.co.jp)
+- * version: $Revision: 1.1 $
++ * version: $Revision: 1.2 $
+  *
+  * Redistribution and use in source and binary forms, with or without 
+  * modification, are permitted provided that the following conditions
+@@ -58,4 +58,17 @@
+ xmlDocPtr XMLLoader::load(Glib::ustring szFile)
+ {
+     return xmlParseFile(szFile.c_str());
++}
++
++/**
++ * XMLをメモリから読み込みます。
++ * 
++ * @param buffer メモリ（XML文字列）
++ * @return XMLドキュメント
++ */
++xmlDocPtr XMLLoader::load(const GString* buffer)
++{
++    if (!buffer) return NULL;
++    
++    return xmlParseMemory(buffer->str, buffer->len);
+ }
+diff -urN src/fio/xmlloader.h src/fio/xmlloader.h
+--- src/fio/xmlloader.h	Thu Apr  1 17:52:24 2004
++++ src/fio/xmlloader.h	Fri Nov  5 17:08:30 2004
+@@ -1,10 +1,10 @@
+ /*
+- * $Id: xmlloader.h,v 1.1 2004/04/01 08:52:24 daichi Exp $
++ * $Id: xmlloader.h,v 1.2 2004/11/05 08:08:30 ozawa Exp $
+  *
+  * Copyright 2003- ONGS Inc. All rights reserved.
+  * 
+  * author: Masanori OZAWA (ozawa@ongs.co.jp)
+- * version: $Revision: 1.1 $
++ * version: $Revision: 1.2 $
+  *
+  * Redistribution and use in source and binary forms, with or without 
+  * modification, are permitted provided that the following conditions
+@@ -55,12 +55,20 @@
+ 
+ public:
+     /**
+-     * XMLファイルを読み込みます。
++     * XMLをファイルから読み込みます。
+      * 
+      * @param szFile ファイル名
+      * @return XMLドキュメント
+      */
+     static xmlDocPtr load(Glib::ustring szFile);
++
++    /**
++     * XMLをメモリから読み込みます。
++     * 
++     * @param buffer メモリ（XML文字列）
++     * @return XMLドキュメント
++     */
++    static xmlDocPtr load(const GString* buffer);
+ };
+ 
+ #endif
+diff -urN src/fio/xmlsaver.cpp src/fio/xmlsaver.cpp
+--- src/fio/xmlsaver.cpp	Thu Apr  1 17:52:24 2004
++++ src/fio/xmlsaver.cpp	Fri Nov  5 17:08:30 2004
+@@ -1,10 +1,10 @@
+ /*
+- * $Id: xmlsaver.cpp,v 1.1 2004/04/01 08:52:24 daichi Exp $
++ * $Id: xmlsaver.cpp,v 1.2 2004/11/05 08:08:30 ozawa Exp $
+  *
+  * Copyright 2003- ONGS Inc. All rights reserved.
+  * 
+  * author: Masanori OZAWA (ozawa@ongs.co.jp)
+- * version: $Revision: 1.1 $
++ * version: $Revision: 1.2 $
+  *
+  * Redistribution and use in source and binary forms, with or without 
+  * modification, are permitted provided that the following conditions
+@@ -50,7 +50,7 @@
+ }
+ 
+ /**
+- * XMLファイルを読み込みます。
++ * XMLをファイルに保存します。
+  * 
+  * @param szFile ファイル名
+  * @param document XMLドキュメント
+@@ -61,4 +61,31 @@
+     int status = xmlSaveFile(szFile.c_str(), document);
+ 
+     return (-1 != status);
++}
++
++/**
++ * XMLを文字列に変換します。
++ * 
++ * @param document XMLドキュメント
++ * @return 変換後の文字列。変換に失敗した場合はNULLを戻す。
++ *         不要になった段階で破棄する必要があります。
++ */
++GString* XMLSaver::toString(const xmlDocPtr document)
++{
++    GString *result = g_string_sized_new(1024);
++    
++    if (!result) {
++        throw "Out of Memory Error!";
++    }
++
++    int size = 0;
++    xmlChar* pMem = NULL;
++    
++    xmlDocDumpMemory(document, &pMem, &size);
++
++    g_string_append(result, (const char*)pMem);
++    
++    xmlFree(pMem);
++
++    return result;
+ }
+diff -urN src/fio/xmlsaver.h src/fio/xmlsaver.h
+--- src/fio/xmlsaver.h	Thu Apr  1 17:52:24 2004
++++ src/fio/xmlsaver.h	Fri Nov  5 17:08:30 2004
+@@ -1,10 +1,10 @@
+ /*
+- * $Id: xmlsaver.h,v 1.1 2004/04/01 08:52:24 daichi Exp $
++ * $Id: xmlsaver.h,v 1.2 2004/11/05 08:08:30 ozawa Exp $
+  *
+  * Copyright 2003- ONGS Inc. All rights reserved.
+  * 
+  * author: Masanori OZAWA (ozawa@ongs.co.jp)
+- * version: $Revision: 1.1 $
++ * version: $Revision: 1.2 $
+  *
+  * Redistribution and use in source and binary forms, with or without 
+  * modification, are permitted provided that the following conditions
+@@ -55,13 +55,22 @@
+ 
+ public:
+     /**
+-     * XMLファイルを読み込みます。
++     * XMLをファイルに保存します。
+      * 
+      * @param szFile ファイル名
+      * @param document XMLドキュメント
+      * @return 正常に保存した場合は true を戻す。
+      */
+     static bool save(Glib::ustring szFile, const xmlDocPtr document);
++
++    /**
++     * XMLを文字列に変換します。
++     * 
++     * @param document XMLドキュメント
++     * @return 変換後の文字列。変換に失敗した場合はNULLを戻す。
++     *         不要になった段階で破棄する必要があります。
++     */
++    static GString* toString(const xmlDocPtr document);
+ };
+ 
+ #endif
+diff -urN src/include/fusenshidata.h src/include/fusenshidata.h
+--- src/include/fusenshidata.h	Thu Apr  1 17:52:40 2004
++++ src/include/fusenshidata.h	Fri Nov  5 17:08:30 2004
+@@ -1,10 +1,10 @@
+ /*
+- * $Id: fusenshidata.h,v 1.1 2004/04/01 08:52:40 daichi Exp $
++ * $Id: fusenshidata.h,v 1.2 2004/11/05 08:08:30 ozawa Exp $
+  *
+  * Copyright 2003- ONGS Inc. All rights reserved.
+  * 
+  * author: Masanori OZAWA (ozawa@ongs.co.jp)
+- * version: $Revision: 1.1 $
++ * version: $Revision: 1.2 $
+  *
+  * Redistribution and use in source and binary forms, with or without 
+  * modification, are permitted provided that the following conditions
+@@ -39,6 +39,8 @@
+ #include "glib.h"
+ #include "gdk/gdk.h"
+ 
++#include "propertydata.h"
++
+ #define FUSENSHIDATA_MAJOR_VERSION      0
+ #define FUSENSHIDATA_MINOR_VERSION      7
+ #define FUSENSHIDATA_MICRO_VERSION      0
+@@ -59,10 +61,17 @@
+ public:
+     /**
+      * コンストラクタ
++     * 
++     * @param property 付箋紙のプロパティ
+      */
+     FusenshiData();
+ 
+     /**
++     * コピーコンストラクタ
++     */
++    FusenshiData(const FusenshiData& data);
++
++    /**
+      * デストラクタ
+      */
+     virtual ~FusenshiData();
+@@ -249,11 +258,11 @@
+     /**
+      * 付箋紙データオブジェクトをシリアライズします。
+      * 
+-     * @param pData 付箋紙データオブジェクト
++     * @param data 付箋紙データオブジェクト
+      * @return シリアライズ後のバイト列。
+      *         不要になった段階で破棄する必要があります。
+      */
+-    static GString* toSerializedString(const FusenshiData* pData);
++    static GString* toSerializedString(const FusenshiData& data);
+ 
+ protected:
+     /**
+diff -urN src/include/propertydata.h src/include/propertydata.h
+--- src/include/propertydata.h	Thu Apr  1 17:52:40 2004
++++ src/include/propertydata.h	Fri Nov  5 17:08:30 2004
+@@ -1,10 +1,10 @@
+ /*
+- * $Id: propertydata.h,v 1.1 2004/04/01 08:52:40 daichi Exp $
++ * $Id: propertydata.h,v 1.3 2004/11/05 08:08:30 ozawa Exp $
+  *
+  * Copyright 2003- ONGS Inc. All rights reserved.
+  *
+  * author: Masanori OZAWA (ozawa@ongs.co.jp)
+- * version: $Revision: 1.1 $
++ * version: $Revision: 1.3 $
+  *
+  * Redistribution and use in source and binary forms, with or without 
+  * modification, are permitted provided that the following conditions
+@@ -36,7 +36,9 @@
+ #ifndef ___PROPERTYDATA_H
+ #define ___PROPERTYDATA_H
+ 
+-#include <gtkmm.h>
++#include "gtkmm.h"
++#include "libxml/parser.h"
++#include "libxml/tree.h"
+ 
+ #define PTYPE_NICKNAME            "Nickname"
+ #define PTYPE_BG_COLOR            "Background-Color"
+@@ -45,6 +47,7 @@
+ #define PTYPE_PRINT_COMMAND       "PrintCommand"
+ #define PTYPE_ENABLE_NETWORK      "EnableNetwork"
+ #define PTYPE_BROADCAST_ADDR      "BroadcastAddr"
++#define PTYPE_STICK_WND           "StickWnd"
+ 
+ typedef std::list<Glib::ustring>    BroadcastList;
+ 
+@@ -56,10 +59,16 @@
+     PropertyData();
+ 
+     /**
++     * コピーコンストラクタ
++     */
++    PropertyData(const PropertyData& data);
++
++    /**
+      * デストラクタ
+      */
+     virtual ~PropertyData();
+ 
++public:
+     /**
+      * ブロードキャストアドレスを追加します。
+      * 
+@@ -124,6 +133,13 @@
+      * @return ネットワーク機能が有効な場合は true を戻します。
+      */
+     bool isEnableNetwork() const;
++    
++    /**
++     * ウィンドウを張り付け状態にするか調べます。
++     * 
++     * @return 張り付け状態にする場合は true を戻します。
++     */
++    bool isStickWindow() const;
+ 
+     /**
+      * ブロードキャストアドレスの一覧を設定します。
+@@ -174,6 +190,13 @@
+      */
+     void setPrintCommand(const Glib::ustring szPrintCommand);
+ 
++    /**
++     * ウィンドウを張り付け状態にするか設定します。
++     * 
++     * @return 張り付け状態にする場合は true を指定します。
++     */
++    void setStickWindow(bool bPaste);
++
+ public:
+     /**
+      * 複写
+@@ -192,6 +215,42 @@
+ 
+ public:
+     /**
++     * プロパティを取得します。
++     * 
++     * @return プロパティ
++     */
++    static const PropertyData& get();
++     
++    /**
++     * プロパティを設定／保存します。
++     * 
++     * @param property 新しいプロパティ
++     * @param save ファイルに保存する場合は true を指定します。
++     */
++    static void set(const PropertyData& property, bool save = false);
++     
++public:
++    /**
++     * シリアライズ化されたプロパティからプロパティオブジェクトを
++     * 構築します。
++     * 
++     * @param pBytes シリアライズ後のバイト列
++     * @return プロパティオブジェクト。
++     *         不要になった段階で破棄する必要があります。
++     */
++    static PropertyData buildObject(const GString* pBytes);
++
++    /**
++     * プロパティオブジェクトをシリアライズします。
++     * 
++     * @param pData プロパティオブジェクト
++     * @return シリアライズ後のバイト列。
++     *         不要になった段階で破棄する必要があります。
++     */
++    static GString* toSerializedString(const PropertyData& property);
++
++private:
++    /**
+      * 付箋紙のプロパティを読み込みます。
+      * 
+      * @return ロードした付箋紙のプロパティを戻します。
+@@ -208,6 +267,30 @@
+ 
+ private:
+     /**
++     * 付箋紙のプロパティをXMLから読み込みます。
++     * 
++     * @param document XML
++     * @param property プロパティの保存先オブジェクト
++     * @return ロードに成功した場合はtrueを戻します。
++     */
++    static bool loadFromXML(const xmlDocPtr document, PropertyData& property);
++
++    /**
++     * 付箋紙のプロパティをXMLに変換します。
++     * 
++     * @param property 付箋紙プロパティ
++     * @return 変換後のXML。不要になった時点で解放する必要があります。
++     */
++    static xmlDocPtr toXML(const PropertyData& property);
++    
++private:
++    /**
++     * ロード済みのプロパティ
++     */
++    static PropertyData m_cProperty;
++
++private:
++    /**
+      * ニックネーム
+      */
+     Glib::ustring m_szNickName;
+@@ -237,6 +320,11 @@
+      * ブロードキャストアドレスの一覧
+      */
+     BroadcastList m_cBroadcastList;
++    
++    /**
++     * ウィンドウの貼り付けフラグ
++     */
++    bool m_bStickWindow;
+ };
+ 
+ #endif
+diff -urN src/main.cpp src/main.cpp
+--- src/main.cpp	Thu Apr  1 17:52:08 2004
++++ src/main.cpp	Fri Nov  5 17:08:30 2004
+@@ -1,10 +1,10 @@
+ /* 
+- * $Id: main.cpp,v 1.1 2004/04/01 08:52:08 daichi Exp $
++ * $Id: main.cpp,v 1.2 2004/11/05 08:08:30 ozawa Exp $
+  *
+  * Copyright 2003- ONGS Inc. All rights reserved.
+  * 
+  * author: Masanori OZAWA (ozawa@ongs.co.jp)
+- * version: $Revision: 1.1 $
++ * version: $Revision: 1.2 $
+  *
+  * Redistribution and use in source and binary forms, with or without 
+  * modification, are permitted provided that the following conditions
+@@ -47,8 +47,8 @@
+ /**
+  * メイン処理
+  * 
+- * @author $Author: daichi $
+- * @version $Revision: 1.1 $
++ * @author $Author: ozawa $
++ * @version $Revision: 1.2 $
+  */
+ int main(int argc, char *argv[])
+ {
+@@ -114,7 +114,7 @@
+         bool bError = false;
+       
+         try {
+-            PropertyData::loadProperty();
++            PropertyData::get();
+         }
+         catch (...) {
+             bError = true;
+@@ -123,7 +123,7 @@
+         // プロパティファイルの構築
+         if (bError) {
+             PropertyData property;
+-            PropertyData::saveProperty(property);
++            PropertyData::set(property, true);
+         }
+     }
+ 
+diff -urN src/misc/commandcontrol.cpp src/misc/commandcontrol.cpp
+--- src/misc/commandcontrol.cpp	Thu Apr  1 17:52:58 2004
++++ src/misc/commandcontrol.cpp	Fri Nov  5 17:08:30 2004
+@@ -1,10 +1,10 @@
+ /*
+- * $Id: commandcontrol.cpp,v 1.1 2004/04/01 08:52:58 daichi Exp $
++ * $Id: commandcontrol.cpp,v 1.2 2004/11/05 08:08:30 ozawa Exp $
+  *
+  * Copyright 2003- ONGS Inc. All rights reserved.
+  *
+  * author: Masanori OZAWA (ozawa@ongs.co.jp)
+- * version: $Revision: 1.1 $
++ * version: $Revision: 1.2 $
+  * 
+  * Redistribution and use in source and binary forms, with or without 
+  * modification, are permitted provided that the following conditions
+@@ -113,12 +113,12 @@
+     case SAVE_FUSENSHI:
+     case VERIFY_RECEIVE_DATA:
+     case PRINT_FUSENSHI:
++    case PROPERTY_CHANGED:
+         g_string_free((GString*)lpCommand->pData, TRUE);
+         break;
+     case CREATE_NEW_FUSENSHI:
+     case DELETE_FUSENSHI:
+     case EXIT_APP:
+-    case PROPERTY_CHANGED:
+     default:
+         break;
+     }
+@@ -211,6 +211,7 @@
+         case SAVE_FUSENSHI:
+         case VERIFY_RECEIVE_DATA:
+         case PRINT_FUSENSHI:
++        case PROPERTY_CHANGED:
+             if (!pData) {
+                 bError = TRUE;
+                 break;
+@@ -224,7 +225,6 @@
+         case CREATE_NEW_FUSENSHI:
+         case DELETE_FUSENSHI:
+         case EXIT_APP:
+-        case PROPERTY_CHANGED:
+         default:
+             result->pData = NULL;
+             break;
+@@ -269,6 +269,7 @@
+     case SAVE_FUSENSHI:
+     case VERIFY_RECEIVE_DATA:
+     case PRINT_FUSENSHI:
++    case PROPERTY_CHANGED:
+         lpString = (GString*)lpCommand->pData;
+         nDataLen = lpString->len;
+         pData = lpString->str;
+@@ -276,7 +277,6 @@
+     case CREATE_NEW_FUSENSHI:
+     case DELETE_FUSENSHI:
+     case EXIT_APP:
+-    case PROPERTY_CHANGED:
+     default:
+         break;
+     }
+diff -urN src/misc/misc.h src/misc/misc.h
+--- src/misc/misc.h	Thu Apr  1 17:52:58 2004
++++ src/misc/misc.h	Fri Nov  5 02:39:52 2004
+@@ -1,10 +1,10 @@
+ /*
+- * $Id: misc.h,v 1.1 2004/04/01 08:52:58 daichi Exp $
++ * $Id: misc.h,v 1.2 2004/11/04 17:39:52 ozawa Exp $
+  *
+  * Copyright 2003- ONGS Inc. All rights reserved.
+  *
+  * author: Masanori OZAWA (ozawa@ongs.co.jp)
+- * version: $Revision: 1.1 $
++ * version: $Revision: 1.2 $
+  *
+  * Redistribution and use in source and binary forms, with or without 
+  * modification, are permitted provided that the following conditions
+@@ -113,7 +113,7 @@
+  * @param pValue 色情報を保持する文字列
+  * @return 設定に成功した場合は true を戻す。
+  */
+-extern bool parseColor(GdkColor *pColor, const char *pValue);
++extern bool string2color(GdkColor *pColor, const char *pValue);
+ 
+ /**
+  * 色を表現する文字列を取得します。
+@@ -121,6 +121,6 @@
+  * @param pColor GdkColor構造体
+  * @param szBuffer 色文字列を格納するバッファ
+  */
+-extern void toString(const GdkColor *pColor, Glib::ustring& szBuffer);
++extern void color2string(const GdkColor *pColor, Glib::ustring& szBuffer);
+ 
+ #endif
+diff -urN src/misc/resourceloader.cpp src/misc/resourceloader.cpp
+--- src/misc/resourceloader.cpp	Thu Apr  1 17:52:58 2004
++++ src/misc/resourceloader.cpp	Fri Nov  5 02:39:52 2004
+@@ -1,10 +1,10 @@
+ /*
+- * $Id: resourceloader.cpp,v 1.1 2004/04/01 08:52:58 daichi Exp $
++ * $Id: resourceloader.cpp,v 1.2 2004/11/04 17:39:52 ozawa Exp $
+  *
+  * Copyright 2003- ONGS Inc. All rights reserved.
+  * 
+  * author: Masanori OZAWA (ozawa@ongs.co.jp)
+- * version: $Revision: 1.1 $
++ * version: $Revision: 1.2 $
+  *
+  * Redistribution and use in source and binary forms, with or without 
+  * modification, are permitted provided that the following conditions
+@@ -48,7 +48,7 @@
+  * 
+  * @param pWidget ウィジェット
+  * @param pFileName Pixmapファイル名 
+- * @return 構築したGtkPixmap
++ * @return 構築したGtkPixmap。不要になった時点で解放(delete)する必要があります。
+  */
+ Gtk::Image* ResourceLoader::createImage(const char* pFileName)
+ {
+@@ -75,18 +75,16 @@
+  */
+ Glib::RefPtr<Gdk::Pixbuf> ResourceLoader::createPixbuf(const char* pFileName)
+ {
+-    std::string path;
+-
+     if (!pFileName || !pFileName[0]) {
+         throw "Argument Exception.";
+     }
+ 
+-    path = findPixmapFile(pFileName);
++    Glib::ustring path = findPixmapFile(pFileName);
+ 
+     if (0 >= path.length()) {
+         throw "Pixbuf file not found.";
+     }
+-
++    
+     return Gdk::Pixbuf::create_from_file(path);
+ }
+ 
+@@ -96,23 +94,26 @@
+  * @param pFileName Pixmapファイル名
+  * @return 発見したPixmapファイルのパス
+  */
+-const char* ResourceLoader::findPixmapFile(const char* pFileName)
++Glib::ustring ResourceLoader::findPixmapFile(const char* pFileName)
+ {
+     GList *pList = m_pPixmapDirs;
+-    gchar *result = NULL;
++    Glib::ustring buf;
+ 
+     while (pList) {
+-        result = g_strdup_printf("%s%s%s", (gchar*)pList->data,
+-                                 G_DIR_SEPARATOR_S, pFileName);
+-        if (g_file_test(result, G_FILE_TEST_EXISTS)) {
+-            return result;
++        buf = (const char*)pList->data;
++        buf += G_DIR_SEPARATOR_S;
++        buf += pFileName;
++
++        if (g_file_test(buf.c_str(), G_FILE_TEST_EXISTS)) {
++            return buf;
+         }
+-        g_free(result);
+ 
+         pList = pList->next;
+     }
++    
++    buf.clear();
+ 
+-    return NULL;
++    return buf;
+ }
+ 
+ /**
+diff -urN src/misc/resourceloader.h src/misc/resourceloader.h
+--- src/misc/resourceloader.h	Thu Apr  1 17:52:58 2004
++++ src/misc/resourceloader.h	Fri Nov  5 02:39:52 2004
+@@ -1,10 +1,10 @@
+ /*
+- * $Id: resourceloader.h,v 1.1 2004/04/01 08:52:58 daichi Exp $
++ * $Id: resourceloader.h,v 1.2 2004/11/04 17:39:52 ozawa Exp $
+  *
+  * Copyright 2003- ONGS Inc. All rights reserved.
+  * 
+  * author: Masanori OZAWA (ozawa@ongs.co.jp)
+- * version: $Revision: 1.1 $
++ * version: $Revision: 1.2 $
+  *
+  * Redistribution and use in source and binary forms, with or without 
+  * modification, are permitted provided that the following conditions
+@@ -44,7 +44,7 @@
+      * GtkImage を構築します。
+      * 
+      * @param pFileName Pixmapファイル名 
+-     * @return 構築したGtkImage
++     * @return 構築したGtkImage。不要になった時点で解放(delete)する必要があります。
+      */
+     static Gtk::Image* createImage(const char* pFileName);
+     
+@@ -71,7 +71,7 @@
+      * @param pFileName Pixmapファイル名
+      * @return 発見したPixmapファイルのパス
+      */
+-    static const char* findPixmapFile(const char* pFileName);
++    static Glib::ustring findPixmapFile(const char* pFileName);
+ 
+ private:
+     /**
+diff -urN src/misc/tools.cpp src/misc/tools.cpp
+--- src/misc/tools.cpp	Thu Apr  1 17:52:58 2004
++++ src/misc/tools.cpp	Fri Nov  5 02:39:52 2004
+@@ -1,10 +1,10 @@
+ /*
+- * $Id: tools.cpp,v 1.1 2004/04/01 08:52:58 daichi Exp $
++ * $Id: tools.cpp,v 1.2 2004/11/04 17:39:52 ozawa Exp $
+  *
+  * Copyright 2003- ONGS Inc. All rights reserved.
+  * 
+  * author: Masanori OZAWA (ozawa@ongs.co.jp)
+- * version: $Revision: 1.1 $
++ * version: $Revision: 1.2 $
+  *
+  * Redistribution and use in source and binary forms, with or without 
+  * modification, are permitted provided that the following conditions
+@@ -286,33 +286,27 @@
+  * @param pValue 色情報を保持する文字列
+  * @return 設定に成功した場合は true を戻す。
+  */
+-bool parseColor(GdkColor *pColor, const char *pValue)
++bool string2color(GdkColor *pColor, const char *pValue)
+ {
+-    char *dummy = NULL;
+-    long nColor = 0L;
+-    
+     if (!pColor || !pValue) {
+         throw "Null Pointer Exception.";
+     }
+-
++    
++    bool result = false;
++    
++    // gtk標準方式の色を解析
+     if (gdk_color_parse(pValue, pColor)) {
+-        return true;
++        result = true;
+     }
+-    else {
+-        if (6 == strlen(pValue)) {
+-            nColor = strtol(pValue, &dummy, 16);
+-            
+-            if (dummy && '\0' == *dummy) {
+-                pColor->red   = (nColor & 0xff0000) >> 8;
+-                pColor->green = (nColor & 0x00ff00);
+-                pColor->blue  = (nColor & 0x0000ff) << 8;
+-                
+-                return true;
+-            }
+-        }
++    // 従来(0.7.0以前)の方式の色を解析
++    else if (6 == strlen(pValue)) {
++        Glib::ustring buf = pValue;
++        buf.insert(0, "#");
++        
++        result = gdk_color_parse(buf.c_str(), pColor);
+     }
+     
+-    return false;
++    return result;
+ }
+ 
+ /**
+@@ -321,14 +315,16 @@
+  * @param pColor GdkColor構造体
+  * @param szBuffer 色文字列を格納するバッファ
+  */
+-void toString(const GdkColor *pColor, Glib::ustring& szBuffer)
++void color2string(const GdkColor *pColor, Glib::ustring& szBuffer)
+ {
+-    char buf[10] = {0};
++    char buf[32] = {0};
++
++    if (!pColor) {
++        throw "Null Pointer Exception.";
++    }
+ 
+-    snprintf(buf, sizeof(buf) -1, "%02x%02x%02x",
+-             (pColor->red & 0xff00) >> 8,
+-             (pColor->green & 0xff00) >> 8,
+-             (pColor->blue & 0xff00) >> 8);
++    snprintf(buf, sizeof(buf) -1, "#%04X%04X%04X",
++             pColor->red, pColor->green, pColor->blue);
+     
+     szBuffer = buf;
+ }
+diff -urN src/net/fusenshiclient.cpp src/net/fusenshiclient.cpp
+--- src/net/fusenshiclient.cpp	Thu Apr  1 17:53:12 2004
++++ src/net/fusenshiclient.cpp	Thu Nov 18 16:08:43 2004
+@@ -1,10 +1,10 @@
+ /*
+- * $Id: fusenshiclient.cpp,v 1.1 2004/04/01 08:53:12 daichi Exp $
++ * $Id: fusenshiclient.cpp,v 1.4 2004/11/18 07:08:43 ozawa Exp $
+  *
+  * Copyright 2003- ONGS Inc. All rights reserved.
+  * 
+  * author: Masanori OZAWA (ozawa@ongs.co.jp)
+- * version: $Revision: 1.1 $
++ * version: $Revision: 1.4 $
+  *
+  * Redistribution and use in source and binary forms, with or without 
+  * modification, are permitted provided that the following conditions
+@@ -173,7 +173,7 @@
+     std::list<Glib::ustring>& ipList = serverList.getIPAddrList();
+     std::list<Glib::ustring>::iterator iter;
+ 
+-    GString* pData = FusenshiData::toSerializedString(&data);
++    GString* pData = FusenshiData::toSerializedString(data);
+     
+     for (iter = ipList.begin(); iter != ipList.end(); iter++) {
+         result &= sendFusenshiData((*iter).c_str(), pData, szNickName);
+diff -urN src/net/fusenshiserver.cpp src/net/fusenshiserver.cpp
+--- src/net/fusenshiserver.cpp	Thu Apr  1 17:53:12 2004
++++ src/net/fusenshiserver.cpp	Wed Nov 17 22:08:41 2004
+@@ -1,10 +1,10 @@
+ /*
+- * $Id: fusenshiserver.cpp,v 1.1 2004/04/01 08:53:12 daichi Exp $
++ * $Id: fusenshiserver.cpp,v 1.2 2004/11/17 13:08:41 ozawa Exp $
+  *
+  * Copyright 2003- ONGS Inc. All rights reserved.
+  * 
+  * author: Masanori OZAWA (ozawa@ongs.co.jp)
+- * version: $Revision: 1.1 $
++ * version: $Revision: 1.2 $
+  *
+  * Redistribution and use in source and binary forms, with or without 
+  * modification, are permitted provided that the following conditions
+@@ -228,23 +228,25 @@
+     
+     // ユーザ、ホスト情報を受信
+     if (sizeof(length) != recv(nCSock, &length, sizeof(length), 0)) {
++        fprintf(stderr, "%s: Server: bad head block received (1).\n", APP_NAME);
+         return false;
+     }
+ 
+     length = ntohl(length);
+     if (2 >= length && MAX_EXT_INFO_LENGTH < length) {
++        fprintf(stderr, "%s: Server: bad head block received (2).\n", APP_NAME);
+         return false;
+     }
+ 
+     buf = (gchar*)g_malloc0(length);
+     
+     if (!buf) {
+-        fprintf(stderr, "%s: Out of Memory Error!\n", APP_NAME);
++        fprintf(stderr, "%s: Server: Out of Memory Error!\n", APP_NAME);
+         return false;
+     }
+     
+-    if (length != recv(nCSock, buf, length, 0) ||
+-        buf[length] != '\0') {
++    if (length != recv(nCSock, buf, length, 0) || buf[length -1] != '\0') {
++        fprintf(stderr, "%s: Server: bad head block received (3).\n", APP_NAME);
+         g_free(buf);
+         return false;
+     }
+@@ -252,6 +254,7 @@
+     gchar* pTmp = strchr(buf, '|');
+     
+     if (!pTmp) {
++       fprintf(stderr, "%s: Server: bad head block received (4).\n", APP_NAME);
+        g_free(buf);
+        return false;
+     }
+diff -urN src/wnd/fusenshieditdialog.cpp src/wnd/fusenshieditdialog.cpp
+--- src/wnd/fusenshieditdialog.cpp	Thu Apr  1 17:53:26 2004
++++ src/wnd/fusenshieditdialog.cpp	Mon Nov 22 17:20:56 2004
+@@ -1,10 +1,10 @@
+ /*
+- * $Id: fusenshieditdialog.cpp,v 1.1 2004/04/01 08:53:26 daichi Exp $
++ * $Id: fusenshieditdialog.cpp,v 1.2 2004/11/04 17:39:52 ozawa Exp $
+  *
+  * Copyright 2003- ONGS Inc. All rights reserved.
+  * 
+  * author: Masanori OZAWA (ozawa@ongs.co.jp)
+- * version: $Revision: 1.1 $
++ * version: $Revision: 1.2 $
+  *
+  * Redistribution and use in source and binary forms, with or without 
+  * modification, are permitted provided that the following conditions
+@@ -134,24 +134,15 @@
+         (SigC::slot(*this, &FusenshiEditDialog::on_fontname_clicked));
+ 
+     // 既存のデータを設定
+-    gchar buf[1024] = {0};
+-    const guint bufsize = sizeof(buf) -1;
++    Glib::ustring buf;
+ 
+-    memset(buf, '\0', sizeof(buf));
+-    
+     // プロパティの設定
+     Gdk::Color bgColor((GdkColor*)pData->getBackground());
+-    snprintf(buf, bufsize, "#%02X%02X%02X", 
+-             (int)rint(bgColor.get_red_p() * 0xff),
+-             (int)rint(bgColor.get_green_p() * 0xff),
+-             (int)rint(bgColor.get_blue_p() * 0xff));
++    color2string(bgColor.gobj(), buf);
+     m_cBackground.set_text(buf);
+ 
+     Gdk::Color fgColor((GdkColor*)pData->getForeground());
+-    snprintf(buf, bufsize, "#%02X%02X%02X", 
+-             (int)rint(fgColor.get_red_p() * 0xff),
+-             (int)rint(fgColor.get_green_p() * 0xff),
+-             (int)rint(fgColor.get_blue_p() * 0xff));
++    color2string(fgColor.gobj(), buf);
+     m_cForeground.set_text(buf);
+     
+     m_cFontName.set_text(pData->getFontName());
+@@ -274,13 +265,9 @@
+     
+     if (Gtk::RESPONSE_OK == colordlg.run()) {
+         Gdk::Color newColor = colordlg.get_colorsel()->get_current_color();
+-        gchar buf[1024] = {0};
++        Glib::ustring buf;
+         
+-        memset(buf, '\0', sizeof(buf));
+-        snprintf(buf, sizeof(buf) -1, "#%02X%02X%02X", 
+-            (int)rint(newColor.get_red_p() * 0xff),
+-            (int)rint(newColor.get_green_p() * 0xff),
+-            (int)rint(newColor.get_blue_p() * 0xff));
++        color2string(newColor.gobj(), buf);
+         m_cBackground.set_text(buf);
+     }
+ }
+@@ -302,13 +289,9 @@
+     
+     if (Gtk::RESPONSE_OK == colordlg.run()) {
+         Gdk::Color newColor = colordlg.get_colorsel()->get_current_color();
+-        gchar buf[1024] = {0};
++        Glib::ustring buf;
+         
+-        memset(buf, '\0', sizeof(buf));
+-        snprintf(buf, sizeof(buf) -1, "#%02X%02X%02X", 
+-            (int)rint(newColor.get_red_p() * 0xff),
+-            (int)rint(newColor.get_green_p() * 0xff),
+-            (int)rint(newColor.get_blue_p() * 0xff));
++        color2string(newColor.gobj(), buf);
+         m_cForeground.set_text(buf);
+     }
+ }
+diff -urN src/wnd/fusenshimainwnd.cpp src/wnd/fusenshimainwnd.cpp
+--- src/wnd/fusenshimainwnd.cpp	Thu Apr  1 17:53:26 2004
++++ src/wnd/fusenshimainwnd.cpp	Mon Nov 22 17:52:33 2004
+@@ -1,10 +1,10 @@
+ /*
+- * $Id: fusenshimainwnd.cpp,v 1.1 2004/04/01 08:53:26 daichi Exp $
++ * $Id: fusenshimainwnd.cpp,v 1.6 2004/11/17 13:08:41 ozawa Exp $
+  *
+  * Copyright 2003- ONGS Inc. All rights reserved.
+  * 
+  * author: Masanori OZAWA (ozawa@ongs.co.jp)
+- * version: $Revision: 1.1 $
++ * version: $Revision: 1.6 $
+  *
+  * Redistribution and use in source and binary forms, with or without 
+  * modification, are permitted provided that the following conditions
+@@ -41,6 +41,11 @@
+ #include "../misc/resourceloader.h"
+ 
+ /**
++ * 唯一のインスタンス
++ */
++FusenshiMainWnd* FusenshiMainWnd::m_pInstance = NULL;
++
++/**
+  * コンストラクタ
+  */
+ FusenshiMainWnd::FusenshiMainWnd()
+@@ -92,6 +97,45 @@
+ }
+ 
+ /**
++ * ウィンドウを終了し、インスタンスを破棄します。
++ */
++void FusenshiMainWnd::destroy()
++{
++    if (m_pInstance) {
++        delete m_pInstance;
++        m_pInstance = NULL;
++    }
++}
++
++/**
++ * 必要に応じてインスタンスを作成し、ウィンドウを構築します。
++ */
++FusenshiMainWnd* FusenshiMainWnd::getInstance()
++{
++    if (!m_pInstance) {
++        m_pInstance = new FusenshiMainWnd();
++    }
++    
++    return m_pInstance;
++}
++
++/**
++ * プロパティの変更後に必要な処理を実行します。
++ * 
++ * @param property 新しいプロパティ
++ */
++void FusenshiMainWnd::updateProperty(const PropertyData& property)
++{
++    // ウィンドウを貼り付ける。
++    if (property.isStickWindow()) {
++        stick();
++    }
++    else {
++        unstick();
++    }
++}
++
++/**
+  * ウィンドウ削除
+  */
+ bool FusenshiMainWnd::on_delete_event(GdkEventAny* pEvent)
+@@ -118,28 +162,41 @@
+     	int count = 0;
+         Gtk::Menu* pMenu = manage(new Gtk::Menu());
+ 
+-#define MENU_NUMBER     2
+-	    Glib::ustring pMenuLabels[MENU_NUMBER] = {
+-	    	Glib::ustring(_("Property")),
+-	    	Glib::ustring(_("Quit")),
+-	    };
+-	    SigC::Slot0<void> slots[MENU_NUMBER] = {
+-	        SigC::slot(*this, &FusenshiMainWnd::on_menu_property_activate),
+-	        SigC::slot(*this, &FusenshiMainWnd::on_menu_close_activate),
+-	    };
++#define MENU_NUMBER     3
++        Glib::ustring pMenuLabels[MENU_NUMBER] = {
++            Glib::ustring(_("Raise windows")),
++            Glib::ustring(_("Property")),
++            Glib::ustring(_("Quit")),
++        };
++        SigC::Slot0<void> slots[MENU_NUMBER] = {
++            SigC::slot(*this, &FusenshiMainWnd::on_menu_raise_windows),
++            SigC::slot(*this, &FusenshiMainWnd::on_menu_property_activate),
++            SigC::slot(*this, &FusenshiMainWnd::on_menu_close_activate),
++        };
++        const int sepPos[] = {
++            1, 0 // 降順で指定する
++        };
+ 	    
+-	    // アイテムを構築
+-	    Gtk::MenuItem* pMenuItem = NULL;
+-	    for (count = 0; count < MENU_NUMBER; count++) {
+-	        pMenuItem = manage(new Gtk::MenuItem(pMenuLabels[count]));
+-	        
+-	        pMenu->append(*pMenuItem);
+-	        
+-	        pMenuItem->signal_activate().connect(slots[count]);
+-	        pMenuItem->show();
+-	    }
++        // アイテムを構築
++        Gtk::MenuItem* pMenuItem = NULL;
++        for (count = 0; count < MENU_NUMBER; count++) {
++            pMenuItem = manage(new Gtk::MenuItem(pMenuLabels[count]));
++        
++            pMenu->append(*pMenuItem);
++        
++            pMenuItem->signal_activate().connect(slots[count]);
++            pMenuItem->show();
++        }
+ #undef MENU_NUMBER
+ 
++        // セパレータを追加
++        for (count = 0; 0 < sepPos[count]; count++) {
++            pMenuItem = manage(new Gtk::MenuItem());
++    
++            pMenu->insert(*pMenuItem, sepPos[count]);
++            pMenuItem->show();
++        }
++        
+         pMenu->show();
+         pMenu->popup(pEvent->button, pEvent->time);
+ 
+@@ -150,14 +207,26 @@
+ }
+ 
+ /**
++ * ポップアップメニューの「最前面に表示」の応答処理
++ */
++void FusenshiMainWnd::on_menu_raise_windows()
++{
++    WndService::getInstance()->raiseFusenshiWndAll();
++}
++
++/**
+  * ポップアップメニューの「設定」の応答処理
+  */
+ void FusenshiMainWnd::on_menu_property_activate()
+ {
+-    PropertyDialog dlg(WndService::getProperty());
++    PropertyDialog dlg(PropertyData::get());
+ 
+     if (Gtk::RESPONSE_OK == dlg.doModal()) {
+-        WndService::setProperty(dlg.getNewData());
++        WndService* pInstance = WndService::getInstance();
++        
++        PropertyData::set(dlg.getNewData());    // 変更を保持
++        pInstance->noticeProperty();            // I/Oへ通知
++        pInstance->updateProperty();            // ウィンドウを更新
+     }
+ }
+ 
+diff -urN src/wnd/fusenshimainwnd.h src/wnd/fusenshimainwnd.h
+--- src/wnd/fusenshimainwnd.h	Thu Apr  1 17:53:26 2004
++++ src/wnd/fusenshimainwnd.h	Wed Nov 17 22:08:41 2004
+@@ -1,10 +1,10 @@
+ /*
+- * $Id: fusenshimainwnd.h,v 1.1 2004/04/01 08:53:26 daichi Exp $
++ * $Id: fusenshimainwnd.h,v 1.5 2004/11/17 13:08:41 ozawa Exp $
+  *
+  * Copyright 2003- ONGS Inc. All rights reserved.
+  * 
+  * author: Masanori OZAWA (ozawa@ongs.co.jp)
+- * version: $Revision: 1.1 $
++ * version: $Revision: 1.5 $
+  *
+  * Redistribution and use in source and binary forms, with or without 
+  * modification, are permitted provided that the following conditions
+@@ -40,17 +40,37 @@
+ 
+ class FusenshiMainWnd : public Gtk::Window
+ {
+-public:
++private:
+     /**
+      * コンストラクタ
+      */
+     FusenshiMainWnd();
+     
++public:
+     /**
+      * デストラクタ
+      */
+     virtual ~FusenshiMainWnd();
+ 
++public:
++    /**
++     * プロパティの変更後に必要な処理を実行します。
++     * 
++     * @param property 新しいプロパティ
++     */
++    void updateProperty(const PropertyData& property);
++
++public:
++    /**
++     * ウィンドウを終了し、インスタンスを破棄します。
++     */
++    static void destroy();
++    
++    /**
++     * 必要に応じてインスタンスを作成し、ウィンドウを構築します。
++     */
++    static FusenshiMainWnd* getInstance();
++
+ protected:
+     /**
+      * ボタン押下応答処理
+@@ -66,7 +86,12 @@
+      * ウィンドウ削除
+      */
+     virtual bool on_delete_event(GdkEventAny* pEvent);
+-    
++
++    /**
++     * ポップアップメニューの「最前面に表示」の応答処理
++     */
++    virtual void on_menu_raise_windows();
++
+     /**
+      * ポップアップメニューの「設定」の応答処理
+      */
+@@ -82,6 +107,12 @@
+      * ボタン
+      */
+     Gtk::Button m_cButton;
++    
++private:
++    /**
++     * 唯一の付箋紙メインウィンドウ
++     */
++    static FusenshiMainWnd *m_pInstance;
+ };
+ 
+ #endif
+diff -urN src/wnd/fusenshiwnd.cpp src/wnd/fusenshiwnd.cpp
+--- src/wnd/fusenshiwnd.cpp	Thu Apr  1 17:53:26 2004
++++ src/wnd/fusenshiwnd.cpp	Mon Nov 22 17:52:51 2004
+@@ -1,10 +1,10 @@
+ /*
+- * $Id: fusenshiwnd.cpp,v 1.1 2004/04/01 08:53:26 daichi Exp $
++ * $Id: fusenshiwnd.cpp,v 1.6 2004/11/17 13:08:41 ozawa Exp $
+  *
+  * Copyright 2003- ONGS Inc. All rights reserved.
+  * 
+  * author: Masanori OZAWA (ozawa@ongs.co.jp)
+- * version: $Revision: 1.1 $
++ * version: $Revision: 1.6 $
+  *
+  * Redistribution and use in source and binary forms, with or without 
+  * modification, are permitted provided that the following conditions
+@@ -244,10 +244,6 @@
+         // 最大化する
+         maximize();
+     }
+-    else if (nStyle & GDK_WINDOW_STATE_STICKY) {
+-        // 棒状にする(タイトルバーのみにする)
+-        stick();
+-    }
+ 
+     // テキストを設定
+     Glib::RefPtr<Gtk::TextBuffer> textBuffer =
+@@ -271,6 +267,7 @@
+     memset(&attributes, 0, sizeof(attributes));
+     attributes.map_state = IsUnviewable;
+ 
++    gdk_error_trap_push();
+     if (XGetWindowAttributes
+         (GDK_WINDOW_XDISPLAY(pWindow),
+          GDK_WINDOW_XWINDOW(pWindow), &attributes))
+@@ -282,11 +279,28 @@
+             result = window->get_state();
+         }
+     }
++    gdk_error_trap_pop();
+ 
+     return result;
+ }
+ 
+ /**
++ * プロパティの変更後に必要な処理を実行します。
++ * 
++ * @param property 新しいプロパティ
++ */
++void FusenshiWnd::updateProperty(const PropertyData& property)
++{
++    // ウィンドウを貼る
++    if (property.isStickWindow()) {
++        stick();
++    }
++    else {
++        unstick();
++    }
++}
++
++/**
+  * 付箋紙ウィンドウの標準タイプを設定します。
+  * 
+  * @param nWndType 付箋紙ウィンドウの標準タイプ
+@@ -303,7 +317,7 @@
+ {
+     // 付箋紙削除を確認する
+     Gtk::MessageDialog dialog
+-        (_("May I delete this note?"),
++        (_("May I delete this note?"),  
+          Gtk::MESSAGE_QUESTION, Gtk::BUTTONS_OK_CANCEL, true, false);
+ 
+     if (Gtk::RESPONSE_OK == dialog.run()) {
+@@ -388,7 +402,7 @@
+         // 送信
+         bool bSend = FusenshiClient::sendFusenshiData
+             (senddlg.getServerList(), *m_pData,
+-             WndService::getProperty().getNickName());
++             PropertyData::get().getNickName());
+ 
+         if (!bSend) {
+             Gtk::MessageDialog msgDlg
+@@ -408,7 +422,7 @@
+ void FusenshiWnd::on_print()
+ {
+     EntryDialog dlg(_("Fusenshi - Print"));
+-    PropertyData property = WndService::getProperty();
++    const PropertyData& property = PropertyData::get();
+     
+     dlg.setEntryLabel(_("Print command:"));
+     dlg.setMessageLabel(_("    %1: Exchange to print file."));
+@@ -459,6 +473,16 @@
+         5, 3, 0 // 降順で指定する
+     };
+     
++    // ウィンドウ状態にあわせてメニューラベルを変更する
++    int style = getXLibWindowStyle();
++
++    if (style & GDK_WINDOW_STATE_MAXIMIZED) { // Maximize
++    	pMenuLabels[3] = _("Unmaximize");
++    }
++    else if (style & GDK_WINDOW_STATE_ICONIFIED) { // Minimize
++    	pMenuLabels[4] = _("Unminimize");
++    }
++    
+     // 既存のアイテムを削除
+     std::list<Widget*> pList = pMenu->get_children();
+     std::list<Widget*>::iterator pIter;
+@@ -469,7 +493,7 @@
+ 
+     // アイテムを構築
+     Gtk::MenuItem* pMenuItem = NULL;
+-    PropertyData property = WndService::getProperty();
++    const PropertyData& property = PropertyData::get();
+     
+     for (count = 0; count < MENU_NUMBER; count++) {
+         pMenuItem = manage(new Gtk::MenuItem(pMenuLabels[count]));
+@@ -503,21 +527,27 @@
+     // 初期化完了フラグをチェック
+     int bInit = (int)get_data(g_cQuarkInitFlag);
+ 
+-    if (bInit && 0 == getXLibWindowStyle()) {
+-        int nX, nY, nWidth, nHeight;
+-        
+-        // ウィンドウポジション取得
+-        get_position(nX, nY);
+-
+-        // ウィンドウサイズ取得
+-        get_size(nWidth, nHeight);
+-
+-        // 保存を要求する
+-        m_pData->setXPos(nX);
+-        m_pData->setYPos(nY);
+-        m_pData->setWidth(nWidth);
+-        m_pData->setHeight(nHeight);
+-        WndService::getInstance()->saveFusenshi(m_nFileID, m_pData);
++    if (bInit) {
++        /*
++         * ウィンドウが通常状態の場合のみ、位置とサイズを保存する。
++         * ただし、貼り付け状態は位置／サイズに影響しないため無視する。
++         */
++        if (0 == (getXLibWindowStyle() & ~Gdk::WINDOW_STATE_STICKY)) {
++            int nX, nY, nWidth, nHeight;
++            
++            // ウィンドウポジション取得
++            get_position(nX, nY);
++    
++            // ウィンドウサイズ取得
++            get_size(nWidth, nHeight);
++    
++            // 保存を要求する
++            m_pData->setXPos(nX);
++            m_pData->setYPos(nY);
++            m_pData->setWidth(nWidth);
++            m_pData->setHeight(nHeight);
++            WndService::getInstance()->saveFusenshi(m_nFileID, m_pData);
++        }
+     }
+ 
+     // ウィンドウの形状を調整
+diff -urN src/wnd/fusenshiwnd.h src/wnd/fusenshiwnd.h
+--- src/wnd/fusenshiwnd.h	Thu Apr  1 20:55:30 2004
++++ src/wnd/fusenshiwnd.h	Fri Nov  5 17:08:30 2004
+@@ -1,10 +1,10 @@
+ /*
+- * $Id: fusenshiwnd.h,v 1.2 2004/04/01 11:55:30 daichi Exp $
++ * $Id: fusenshiwnd.h,v 1.4 2004/11/05 08:08:30 ozawa Exp $
+  *
+  * Copyright 2003- ONGS Inc. All rights reserved.
+  * 
+  * author: Masanori OZAWA (ozawa@ongs.co.jp)
+- * version: $Revision: 1.2 $
++ * version: $Revision: 1.4 $
+  *
+  * Redistribution and use in source and binary forms, with or without 
+  * modification, are permitted provided that the following conditions
+@@ -55,12 +55,20 @@
+ 
+ public:
+     /**
++     * プロパティの変更後に必要な処理を実行します。
++     * 
++     * @param property 新しいプロパティ
++     */
++    void updateProperty(const PropertyData& property);
++
++public:
++    /**
+      * 付箋紙ウィンドウの標準タイプを設定します。
+      * 
+      * @param pWndProp 付箋紙ウィンドウの標準タイプ
+      */
+     static void setDefaultWindowType(WND_TYPE nWndType);
+-
++    
+ protected:
+     /**
+      * ウィンドウの削除要求を処理します。
+diff -urN src/wnd/propertydialog.cpp src/wnd/propertydialog.cpp
+--- src/wnd/propertydialog.cpp	Thu Apr  1 17:53:26 2004
++++ src/wnd/propertydialog.cpp	Mon Nov 22 17:23:37 2004
+@@ -1,10 +1,10 @@
+ /*
+- * $Id: propertydialog.cpp,v 1.1 2004/04/01 08:53:26 daichi Exp $
++ * $Id: propertydialog.cpp,v 1.3 2004/11/04 17:39:52 ozawa Exp $
+  *
+  * Copyright 2003- ONGS Inc. All rights reserved.
+  * 
+  * author: Masanori OZAWA (ozawa@ongs.co.jp)
+- * version: $Revision: 1.1 $
++ * version: $Revision: 1.3 $
+  *
+  * Redistribution and use in source and binary forms, with or without 
+  * modification, are permitted provided that the following conditions
+@@ -59,6 +59,7 @@
+ 
+     createBasePage(*pNotebook);
+     createNetworkPage(*pNotebook);
++    createWindowPage(*pNotebook);
+ 
+     get_action_area()->set_layout(Gtk::BUTTONBOX_END);
+ 
+@@ -73,26 +74,17 @@
+     set_default_response(Gtk::RESPONSE_OK);
+ 
+     // 既存のデータを設定
+-    gchar buf[1024] = {0};
+-    const guint bufsize = sizeof(buf) -1;
+-
+-    memset(buf, '\0', sizeof(buf));
++    Glib::ustring buf;
+     
+     // プロパティの設定
+     m_cNickName.set_text(m_cData.getNickName());
+     
+     Gdk::Color bgColor((GdkColor*)m_cData.getBackground());
+-    snprintf(buf, bufsize, "#%02X%02X%02X", 
+-             (int)rint(bgColor.get_red_p() * 0xff),
+-             (int)rint(bgColor.get_green_p() * 0xff),
+-             (int)rint(bgColor.get_blue_p() * 0xff));
++    color2string(bgColor.gobj(), buf);
+     m_cBackground.set_text(buf);
+ 
+     Gdk::Color fgColor((GdkColor*)m_cData.getForeground());
+-    snprintf(buf, bufsize, "#%02X%02X%02X", 
+-             (int)rint(fgColor.get_red_p() * 0xff),
+-             (int)rint(fgColor.get_green_p() * 0xff),
+-             (int)rint(fgColor.get_blue_p() * 0xff));
++    color2string(fgColor.gobj(), buf);
+     m_cForeground.set_text(buf);
+     
+     m_cFontName.set_text(m_cData.getFontName());
+@@ -109,6 +101,8 @@
+         Gtk::TreeIter treeiter = getListStore()->append();
+         treeiter->set_value(m_cColumns.BROADCAST_ADDR, *iter);
+     }
++    
++    m_cStickWindow.set_active(m_cData.isStickWindow());
+ }
+ 
+ /**
+@@ -253,6 +247,22 @@
+ }
+ 
+ /**
++ * ウィンドウ設定ページを構築します。
++ */
++void PropertyDialog::createWindowPage(Gtk::Notebook& notebook)
++{
++    Gtk::Fixed* pFixed = manage(new Gtk::Fixed());
++    notebook.add(*pFixed);
++
++    notebook.set_tab_label_text
++        (*(notebook.get_nth_page(2)), _("Window"));
++
++    pFixed->put(m_cStickWindow, 10, 10);
++    m_cStickWindow.set_size_request(250, 24);
++    m_cStickWindow.set_label(_("Show on all desktops"));
++}
++
++/**
+  * リストモデルを一時的に取得します。
+  */
+ Glib::RefPtr<Gtk::ListStore> PropertyDialog::getListStore()
+@@ -335,6 +345,7 @@
+         m_cData.setFontName(m_cFontName.get_text().c_str());
+         m_cData.setEnableNetwork(m_cNetButton.get_active());
+         m_cData.setPrintCommand(m_cPrintCommand.get_text().c_str());
++        m_cData.setStickWindow(m_cStickWindow.get_active());
+         
+         Gtk::TreeIter iter = getListStore()->children().begin();
+         Gtk::TreeIter enditer = getListStore()->children().end();
+@@ -366,13 +377,9 @@
+     
+     if (Gtk::RESPONSE_OK == colordlg.run()) {
+         Gdk::Color newColor = colordlg.get_colorsel()->get_current_color();
+-        gchar buf[1024] = {0};
++        Glib::ustring buf;
+         
+-        memset(buf, '\0', sizeof(buf));
+-        snprintf(buf, sizeof(buf) -1, "#%02X%02X%02X", 
+-            (int)rint(newColor.get_red_p() * 0xff),
+-            (int)rint(newColor.get_green_p() * 0xff),
+-            (int)rint(newColor.get_blue_p() * 0xff));
++        color2string(newColor.gobj(), buf);
+         m_cBackground.set_text(buf);
+     }
+ }
+@@ -394,13 +401,9 @@
+     
+     if (Gtk::RESPONSE_OK == colordlg.run()) {
+         Gdk::Color newColor = colordlg.get_colorsel()->get_current_color();
+-        gchar buf[1024] = {0};
++        Glib::ustring buf;
+         
+-        memset(buf, '\0', sizeof(buf));
+-        snprintf(buf, sizeof(buf) -1, "#%02X%02X%02X", 
+-            (int)rint(newColor.get_red_p() * 0xff),
+-            (int)rint(newColor.get_green_p() * 0xff),
+-            (int)rint(newColor.get_blue_p() * 0xff));
++        color2string(newColor.gobj(), buf);
+         m_cForeground.set_text(buf);
+     }
+ }
+@@ -440,8 +443,7 @@
+         msg.insert(1, addr);
+ 
+         Gtk::MessageDialog dialog
+-            (msg, Gtk::MESSAGE_ERROR,
+-             Gtk::BUTTONS_OK, true, false);
++            (msg, Gtk::MESSAGE_ERROR, Gtk::BUTTONS_OK, true, false);
+ 
+         dialog.set_transient_for(*this);
+ 
+diff -urN src/wnd/propertydialog.h src/wnd/propertydialog.h
+--- src/wnd/propertydialog.h	Thu Apr  1 17:53:26 2004
++++ src/wnd/propertydialog.h	Tue Nov  2 19:47:43 2004
+@@ -1,5 +1,5 @@
+ /*
+- * $Id: propertydialog.h,v 1.1 2004/04/01 08:53:26 daichi Exp $
++ * $Id: propertydialog.h,v 1.2 2004/11/02 10:47:43 ozawa Exp $
+  *
+  * Copyright 2003- ONGS Inc. All rights reserved.
+  * 
+@@ -122,6 +122,11 @@
+      */
+     void createNetworkPage(Gtk::Notebook& notebook);
+ 
++    /**
++     * ウィンドウ設定ページを構築します。
++     */
++    void createWindowPage(Gtk::Notebook& notebook);
++
+ private:
+     /**
+      * カラム保持クラス
+@@ -200,6 +205,11 @@
+      * ツリービューのリストモデル
+      */
+     Glib::RefPtr<Gtk::ListStore> m_cListStore;
++    
++    /**
++     * ウィンドウの張り付けフラグ
++     */
++    Gtk::CheckButton m_cStickWindow;
+ };
+ 
+ #endif
+diff -urN src/wnd/senddialog.cpp src/wnd/senddialog.cpp
+--- src/wnd/senddialog.cpp	Thu Apr  1 17:53:26 2004
++++ src/wnd/senddialog.cpp	Mon Nov 22 17:58:06 2004
+@@ -1,10 +1,10 @@
+ /*
+- * $Id: senddialog.cpp,v 1.1 2004/04/01 08:53:26 daichi Exp $
++ * $Id: senddialog.cpp,v 1.3 2004/11/05 08:08:30 ozawa Exp $
+  *
+  * Copyright 2003- ONGS Inc. All rights reserved.
+  * 
+  * author: Masanori OZAWA (ozawa@ongs.co.jp)
+- * version: $Revision: 1.1 $
++ * version: $Revision: 1.3 $
+  * 
+  * Redistribution and use in source and binary forms, with or without 
+  * modification, are permitted provided that the following conditions
+@@ -172,7 +172,7 @@
+     m_nClients = 0;
+     
+     // リクエストを送信
+-    FusenshiClient::sendServerInfoRequest(WndService::getProperty());
++    FusenshiClient::sendServerInfoRequest(PropertyData::get());
+ }
+ 
+ /**
+diff -urN src/wnd/senddialog.h src/wnd/senddialog.h
+--- src/wnd/senddialog.h	Thu Apr  1 17:53:26 2004
++++ src/wnd/senddialog.h	Mon Nov 22 17:58:19 2004
+@@ -1,10 +1,10 @@
+ /*
+- * $Id: senddialog.h,v 1.1 2004/04/01 08:53:26 daichi Exp $
++ * $Id: senddialog.h,v 1.2 2004/11/04 17:39:52 ozawa Exp $
+  *
+  * Copyright 2003- ONGS Inc. All rights reserved.
+  * 
+  * author: Masanori OZAWA (ozawa@ongs.co.jp)
+- * version: $Revision: 1.1 $
++ * version: $Revision: 1.2 $
+  *
+  * Redistribution and use in source and binary forms, with or without 
+  * modification, are permitted provided that the following conditions
+diff -urN src/wnd/wnd.cpp src/wnd/wnd.cpp
+--- src/wnd/wnd.cpp	Thu Apr  1 17:53:26 2004
++++ src/wnd/wnd.cpp	Tue Nov  2 19:47:43 2004
+@@ -1,10 +1,10 @@
+ /*
+- * $Id: wnd.cpp,v 1.1 2004/04/01 08:53:26 daichi Exp $
++ * $Id: wnd.cpp,v 1.2 2004/11/02 10:47:43 ozawa Exp $
+  *
+  * Copyright 2003- ONGS Inc. All rights reserved.
+  * 
+  * author: Masanori OZAWA (ozawa@ongs.co.jp)
+- * version: $Revision: 1.1 $
++ * version: $Revision: 1.2 $
+  *
+  * Redistribution and use in source and binary forms, with or without 
+  * modification, are permitted provided that the following conditions
+@@ -75,7 +75,7 @@
+         FusenshiWnd::setDefaultWindowType(lpWndGlobalProp->wndType);
+         
+         // トップレベルウィンドウの構築
+-        FusenshiMainWnd *pMainWnd = new FusenshiMainWnd();
++        FusenshiMainWnd *pMainWnd = FusenshiMainWnd::getInstance();
+         
+         if (!pMainWnd) {
+             throw "Can't create top level window.";
+@@ -121,8 +121,7 @@
+         g_thread_join(pThread);
+         
+         // 後始末
+-        delete pMainWnd;
+-
++        FusenshiMainWnd::destroy();
+         WndService::destroy();
+         FusenshiServerInfo::destroy();
+     }
+diff -urN src/wnd/wndservice.cpp src/wnd/wndservice.cpp
+--- src/wnd/wndservice.cpp	Thu Apr  1 17:53:26 2004
++++ src/wnd/wndservice.cpp	Mon Nov 22 18:01:15 2004
+@@ -1,10 +1,10 @@
+ /*
+- * $Id: wndservice.cpp,v 1.1 2004/04/01 08:53:26 daichi Exp $
+- *g
++ * $Id: wndservice.cpp,v 1.5 2004/11/05 08:41:20 ozawa Exp $
++ *
+  * Copyright 2003- ONGS Inc. All rights reserved.
+  * 
+  * author: Masanori OZAWA (ozawa@ongs.co.jp)
+- * version: $Revision: 1.1 $
++ * version: $Revision: 1.5 $
+  *
+  * Redistribution and use in source and binary forms, with or without 
+  * modification, are permitted provided that the following conditions
+@@ -35,6 +35,7 @@
+ 
+ #include "../include/fusenshi.h"
+ #include "wndservice.h"
++#include "fusenshimainwnd.h"
+ 
+ #include <sys/select.h>
+ #include <signal.h>
+@@ -132,6 +133,23 @@
+ }
+ 
+ /**
++ * 付箋紙ウィンドウを全て最前面に表示します。
++ */
++void WndService::raiseFusenshiWndAll()
++{
++    FusenshiWndList::iterator iter;
++
++    g_mutex_lock(m_pMutex);
++
++    iter = m_cWndList.begin();
++    for (; m_cWndList.end() != iter; iter++) {
++        (*iter)->raise();
++    }
++
++    g_mutex_unlock(m_pMutex);
++}
++
++/**
+  * 付箋紙ファイルの更新をファイルI/Oプロセスに要求します。
+  * 
+  * @param nFileID ファイルID
+@@ -139,7 +157,7 @@
+  */
+ void WndService::saveFusenshi(guint nFileID, const FusenshiData* pData)
+ {
+-    GString* pStrData = FusenshiData::toSerializedString(pData);
++    GString* pStrData = FusenshiData::toSerializedString(*pData);
+     
+     if (pStrData) {
+         m_pCommand->addCommand(SAVE_FUSENSHI, nFileID, (gpointer)pStrData);
+@@ -319,48 +337,18 @@
+ }
+ 
+ /**
+- * 付箋紙の設定を取得します。
+- * 
+- * @return 付箋紙の設定
+- */
+-PropertyData WndService::getProperty()
+-{
+-    static bool bLoad = false;
+-
+-    if (!bLoad) {
+-        try {
+-            WndService::m_cProperty = PropertyData::loadProperty();
+-        }
+-        catch (...) {
+-            fprintf(stderr, "%s: Can't load property file.", APP_NAME);
+-        }
+-
+-        bLoad = true;
+-    }
+-
+-    return WndService::m_cProperty;
+-}
+-
+-/**
+- * 付箋紙の設定を設定し、直ちに保管します。
+- * 
+- * @param property 付箋紙の設定
++ * プロパティの変更をファイルI/Oプロセスへ通知します。
+  */
+-void WndService::setProperty(const PropertyData& property)
++void WndService::noticeProperty()
+ {
+-    if (!PropertyData::saveProperty(property)) {
+-        fprintf(stderr, "%s: Can't save property file.", APP_NAME);
++    // 設定の変更を通知する
++    GString* pStrData = PropertyData::toSerializedString(PropertyData::get());
++    
++    if (pStrData) {
++        m_pCommand->addCommand(PROPERTY_CHANGED, 0, pStrData);
+     }
+     else {
+-        // 設定を保持
+-        WndService::m_cProperty = property;
+-
+-        // 設定の変更を反映
+-        WndService::updateProperty();
+-
+-        // 設定の変更を通知する
+-        WndService *pInstance = WndService::getInstance();
+-        pInstance->m_pCommand->addCommand(PROPERTY_CHANGED, 0, NULL);
++        throw "Out of Memory Error!";
+     }
+ }
+ 
+@@ -369,7 +357,7 @@
+  */
+ void WndService::updateProperty()
+ {
+-    PropertyData property = WndService::getProperty();
++    const PropertyData& property = PropertyData::get();
+ 
+ #ifndef WITHOUT_NETWORK
+     // ネットワークの有効／無効の調整
+@@ -390,6 +378,25 @@
+         FusenshiServerInfo::destroy();
+     }
+ #endif
++
++    // 付箋紙メインウィンドウの状態を変更
++    FusenshiMainWnd *pMainWnd = FusenshiMainWnd::getInstance();
++
++    if (pMainWnd) {
++        pMainWnd->updateProperty(property);
++    }
++
++	// 付箋紙ウィンドウの状態を変更
++    FusenshiWndList::iterator iter;
++
++    g_mutex_lock(m_pMutex);
++
++    iter = m_cWndList.begin();
++    for (; m_cWndList.end() != iter; iter++) {
++        (*iter)->updateProperty(property);
++    }
++
++    g_mutex_unlock(m_pMutex);
+ }
+ 
+ /**
+@@ -401,6 +408,7 @@
+ {
+     GString* pString = NULL;
+     NetworkFusenshiData* pData = NULL;
++    PropertyData property;
+     
+     switch (lpCommand->nCommandID) {
+     case CREATE_NEW_FUSENSHI_WINDOW:
+@@ -422,8 +430,11 @@
+         }
+         break;
+     case PROPERTY_CHANGED:
+-        WndService::m_cProperty = PropertyData::loadProperty();
+-        WndService::updateProperty();
++        pString = (GString*)lpCommand->pData;
++        property = PropertyData::buildObject(pString);
++        // 保持と更新
++        PropertyData::set(property); // 保存はI/O側で行う
++        updateProperty();
+         break;
+     default:
+         break;
+@@ -448,6 +459,10 @@
+         throw "Out of Memory Error.";
+     }
+     
++    // プロパティの設定
++    const PropertyData& property = PropertyData::get();
++    pWnd->updateProperty(property);
++    
+     // 表示
+     pWnd->show();
+ 
+@@ -531,9 +546,7 @@
+ 
+     // 受信の確認
+     Gtk::MessageDialog dialog
+-        (buf,
+-         Gtk::MESSAGE_QUESTION,
+-         Gtk::BUTTONS_OK_CANCEL, true, false);
++        (buf, Gtk::MESSAGE_QUESTION, Gtk::BUTTONS_OK_CANCEL, true, false);
+ 
+     dialog.set_position(Gtk::WIN_POS_CENTER);
+     dialog.set_default_response(Gtk::RESPONSE_OK);
+diff -urN src/wnd/wndservice.h src/wnd/wndservice.h
+--- src/wnd/wndservice.h	Thu Apr  1 17:53:26 2004
++++ src/wnd/wndservice.h	Fri Nov  5 17:41:20 2004
+@@ -1,10 +1,10 @@
+ /*
+- * $Id: wndservice.h,v 1.1 2004/04/01 08:53:26 daichi Exp $
++ * $Id: wndservice.h,v 1.4 2004/11/05 08:41:20 ozawa Exp $
+  *
+  * Copyright 2003- ONGS Inc. All rights reserved.
+  * 
+  * author: Masanori OZAWA (ozawa@ongs.co.jp)
+- * version: $Revision: 1.1 $
++ * version: $Revision: 1.4 $
+  *
+  * Redistribution and use in source and binary forms, with or without 
+  * modification, are permitted provided that the following conditions
+@@ -80,6 +80,11 @@
+      * @param szCommand 印刷コマンド
+      */
+     void printFusenshi(guint nFileID, Glib::ustring& szCommand);
++    
++    /**
++     * 付箋紙ウィンドウを全て最前面に表示します。
++     */
++    void raiseFusenshiWndAll();
+ 
+     /**
+      * 付箋紙ファイルの更新をファイルI/Oプロセスに要求します。
+@@ -104,6 +109,16 @@
+      */
+     void waitFor();
+     
++    /**
++     * プロパティの変更をファイルI/Oプロセスへ通知します。
++     */
++    void noticeProperty();
++
++    /**
++     * プロパティの変更後に必要な処理を実行します。
++     */
++    void updateProperty();
++
+ public:
+     /**
+      * インスタンスを破棄し、アプリケーションの終了準備を
+@@ -128,20 +143,6 @@
+      */
+     static WndService* getInstance(int inFD, int outFD);
+     
+-    /**
+-     * 付箋紙の設定を取得します。
+-     * 
+-     * @return 付箋紙の設定
+-     */
+-    static PropertyData getProperty();
+-    
+-    /**
+-     * 付箋紙の設定を設定し、直ちに保管します。
+-     * 
+-     * @param property 付箋紙の設定
+-     */
+-    static void setProperty(const PropertyData& property);
+-
+ public:
+     /**
+      * デストラクタ
+@@ -182,12 +183,6 @@
+      * @return 開いても良い場合は Gtk::RESPONSE_OK を戻します。
+      */
+     gint verifyReceive(const NetworkFusenshiData* pData);
+-
+-private:
+-    /**
+-     * プロパティの変更後に必要な処理を実行します。
+-     */
+-    static void updateProperty();
+ 
+ private:
+     /**
