@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://software.decisionsoft.com/software/pathan-1.2r2/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-2-src
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Validating XML parser from the Apache XML Project
 
 LIB_DEPENDS=	xerces-c.23:${PORTSDIR}/textproc/xerces-c2

@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.vmware.com/software/
 DISTNAME=	vmware_drv.o
 EXTRACT_SUFX=	# none
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A XFree86 4.x driver module for VMware guests
 
 RUN_DEPENDS=	XFree86:${PORTSDIR}/x11/XFree86-4

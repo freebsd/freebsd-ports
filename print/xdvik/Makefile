@@ -10,7 +10,7 @@ PORTVERSION=	20a
 CATEGORIES=	print
 MASTER_SITES=	http://www.tug.org/ftp/historic/systems/dviware/xdvik/
 
-MAINTAINER=	ports@FreeBSD.Org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DVI Previewer(kpathsearch) for X
 
 RUN_DEPENDS=	mf:${PORTSDIR}/print/tex

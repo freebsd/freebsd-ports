@@ -11,7 +11,7 @@ CATEGORIES=	science python
 MASTER_SITES=	http://starship.python.net/crew/hinsen/MMTK/
 DISTNAME=	MMTK-${PORTVERSION}
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Open Source program library for molecular simulation applications
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Scientific:${PORTSDIR}/math/py-scientific

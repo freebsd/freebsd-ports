@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=incrtcl
 DISTNAME=	itcl${PORTVERSION}
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	[incr Tcl] (A.K.A. "itcl")
 
 LIB_DEPENDS=	tcl83:${PORTSDIR}/lang/tcl83

@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	fenner
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert invisible (binary) characters to a visible form
 
 MAN1=		viz.1 inviz.1

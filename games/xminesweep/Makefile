@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.netlab.is.tsukuba.ac.jp/pub/X/our_collections/games/ \
 DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ports@FreeBSD.Org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 minesweeper game
 
 USE_IMAKE=	yes

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	wxpython
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}Src-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python bindings for the wxWindows/GTK GUI toolkit
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-opengl

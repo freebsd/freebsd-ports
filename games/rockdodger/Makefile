@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES= 	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	spacerocks
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Addictive rock-dodging greeblie-killing platform game
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=incrtcl
 DISTNAME=	itcl3.2
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	[incr Widgets] (A.K.A. "iwidgets")
 
 LIB_DEPENDS=	itk32.1:${PORTSDIR}/x11-toolkits/itk

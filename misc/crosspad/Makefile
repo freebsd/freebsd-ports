@@ -10,7 +10,7 @@ PORTVERSION=	19991202
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.itojun.org/pub/misc/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Crosspad data downloader/converter
 
 GNU_CONFIGURE=	yes

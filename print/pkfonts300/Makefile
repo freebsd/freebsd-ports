@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	pkfonts
 DISTFILES=	pk${RESOLUTION}.tar.gz
 # see below for RESOLUTION definition
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	English PK fonts, for ghostscripts, xdvi and so on
 
 DIST_SUBDIR=	pkfonts

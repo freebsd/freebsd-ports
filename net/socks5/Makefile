@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	net security
 DISTNAME=	socks5-v1.0r11
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SOCKS v5 application layer gateway and clients
 
 NO_CDROM=	"NEC has a funky license for this software"

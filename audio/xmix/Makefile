@@ -15,7 +15,7 @@ PATCH_SITES=	${MASTER_SITES}
 PATCH_SITE_SUBDIR=	${MASTER_SITE_SUBDIR}
 PATCHFILES=	xmix-2.1.mixers.patch
 
-MAINTAINER=	ports@FreeBSD.Org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mixer for X Window System
 
 USE_IMAKE=	yes

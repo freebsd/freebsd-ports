@@ -10,7 +10,7 @@ PORTVERSION=	1.05
 CATEGORIES=	misc
 MASTER_SITES=	http://www.linuxmafia.com/pub/linux/security/sshbuddy/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple and small GUI utility to manage ssh sessions
 
 RUN_DEPENDS=	expectk:${PORTSDIR}/lang/expect

@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/}
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs Lisp reference manual
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/./-/}

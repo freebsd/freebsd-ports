@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications/WorkMan
 DISTNAME=	WorkMan-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.Org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Look-based CD player tool
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview

@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://coredump.cx/~lcamtuf/soft/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nosuid, secure ping like utility
 
 USE_ZIP=	yes

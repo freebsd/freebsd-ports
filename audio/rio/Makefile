@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.world.co.uk/sba/
 DISTNAME=	rio007
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.Org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for transferring files to and from the Diamond Rio .mp3 player
 
 WRKSRC=		${WRKDIR}/rio107

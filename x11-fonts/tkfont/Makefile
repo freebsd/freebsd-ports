@@ -12,7 +12,7 @@ CATEGORIES=	x11-fonts tcl84 tk84
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	petef
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Tk based replacement for xfontsel
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84

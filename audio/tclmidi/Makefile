@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.cs.ruu.nl/pub/MIDI/PROGRAMS/
 # despite references on the homepage to ftp.xor.com, that server
 # doesn't work - edwin 20021227
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A language designed for creating and editing standard MIDI files
 
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82

@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	diffutils
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GNU diff utilities
 
 USE_REINPLACE=	yes

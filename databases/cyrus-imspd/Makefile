@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The cyrus IMSP (Internet Message Support Protocol) server
 
 LIB_DEPENDS=	sasl.8:${PORTSDIR}/security/cyrus-sasl

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 DISTNAME=	calctool-2.4pl13
 MASTER_SITE_SUBDIR=	nsayer
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multi-GUI (text, X, xview, NeWS, sunview) calculator program
 
 USE_X_PREFIX=	yes

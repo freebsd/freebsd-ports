@@ -10,7 +10,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://kde-look.org/content/files/
 DISTNAME=	4365-flatcurve-${PORTVERSION}
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bluecurve style window decoration for KDEs WM
 
 USE_KDEBASE_VER=	3

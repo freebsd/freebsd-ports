@@ -12,7 +12,7 @@ MASTER_SITES=	http://security.uchicago.edu/tools/net-forensics/files/
 DISTNAME=	flowextract-${PORTVERSION}
 EXTRACT_SUFX=	.cpio.gz
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cisco NetFlow awk-like extracting tool
 
 BUILD_DEPENDS=	flow-cat:${PORTSDIR}/net/flow-tools

@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://manual.gimp.org/pub/manual/
 PKGNAMESUFFIX=	-${DOCFORMAT}
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The user manual for the GNU Image Manipulation Program (GIMP)
 
 .if !defined(DOCFORMAT)
