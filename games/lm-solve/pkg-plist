@@ -1,0 +1,18 @@
+bin/lm-solve
+lib/perl5/site_perl/%%PERL_VER%%/Shlomif/LMSolver/Alice.pm
+lib/perl5/site_perl/%%PERL_VER%%/Shlomif/LMSolver/Base.pm
+lib/perl5/site_perl/%%PERL_VER%%/Shlomif/LMSolver/Input.pm
+lib/perl5/site_perl/%%PERL_VER%%/Shlomif/LMSolver/Minotaur.pm
+lib/perl5/site_perl/%%PERL_VER%%/Shlomif/LMSolver/Numbers.pm
+lib/perl5/site_perl/%%PERL_VER%%/Shlomif/LMSolver/Plank/Base.pm
+lib/perl5/site_perl/%%PERL_VER%%/Shlomif/LMSolver/Tilt/RedBlue.pm
+lib/perl5/site_perl/%%PERL_VER%%/Shlomif/LMSolver/Tilt/Single.pm
+lib/perl5/site_perl/%%PERL_VER%%/Shlomif/LMSolver/Tilt/Multi.pm
+lib/perl5/site_perl/%%PERL_VER%%/Shlomif/LMSolver/Tilt/Base.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Shlomif/LMSolver/Plank
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Shlomif/LMSolver/Tilt
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Shlomif/LMSolver
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Shlomif
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Shlomif/LMSolver/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Shlomif/LMSolver
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Shlomif

@@ -175,6 +175,7 @@
     SUBDIR += libshhcards
     SUBDIR += lincity
     SUBDIR += linux-q3ademo
+    SUBDIR += lm-solve
     SUBDIR += ltris
     SUBDIR += madbomber
     SUBDIR += maelstrom
