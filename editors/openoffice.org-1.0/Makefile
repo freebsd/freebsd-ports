@@ -76,7 +76,9 @@ CONFIGURE_ARGS+=	--with-lang=${LANG_CONFIGURE_ARG},ENUS
 USE_LANG=	en_US.ISO8859-15
 LANG_LIST=	en_US.ISO8859-15 en_US.ISO8859-1 US-ASCII
 .else
+.if !defined(USE_LANG)
 USE_LANG=	${LANG}
+.endif
 .endif
 
 LANG_SORTED=	`${ECHO} ${LANG_LIST} | ${TR} " " "\n" | ${PASTE} -d " " - -`
