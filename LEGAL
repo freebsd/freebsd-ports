@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.63 1997/02/25 09:03:49 tg Exp $
+# $Id: LEGAL,v 1.64 1997/02/27 09:33:22 tg Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -15,7 +15,7 @@ Such ports are listed below:
 
 Dist			Port			Why
 ------------------------------------------------------------------------------
-JDK-*			ports/www/jdk		Put copyright on packaging!
+JDK-*			ports/lang/jdk		Put copyright on packaging!
 bzip-*			ports/archivers/bzip	Some algorithms used may
 						infringe certain US patents.
 						Opinions differ. Commercial 
@@ -23,7 +23,7 @@ bzip-*			ports/archivers/bzip	Some algorithms used may
 						to unfriendly legal action.
 cap60/*			ports/net/cap		Don't sell for profit
 cku190.tar.gz		ports/comms/kermit	Restrictive copyright
-contool-*		ports/x11/contool	Don't incorporate the source
+contool-*		ports/sysutils/contool	Don't incorporate the source
 						code into a product which is
 						subsequently sold.
 crack-5.0		ports/security/crack	Crypto; export-controlled
@@ -61,14 +61,13 @@ msql-*			ports/databases/msql	Not free for commercial org.
 mutt-0.49.tar.gz	ports/mail/mutt.with_pgp ITAR export-controlled
 netscape-*		ports/net/netscape	Commercial product
 nte-1.5a23		ports/mbone/nte		Crypto; export-controlled
-pgp262s.zip		ports/misc/pgp*		Various locality restrictions
+pgp262s.zip		ports/security/pgp*	Various locality restrictions
 quake101.zip		ports/games/quakeserver	Shareware
 radius-2.4.21		ports/net/radius	Restrictive copyright in
 						src/rlmadmin.c
 rkive3.1.tar.gz		ports/news/rkive	Restrictive copyright
 rman-2.4.tar.Z		ports/misc/rman		Restrictive copyright
 rzsz3_36.zip		ports/comms/rzsz	Restrictive copyright
-sattrack-3.1.4		ports/astro/sattrack	Don't sell for profit
 scsh-0.4.4.tar.gz	ports/shells/scsh	The author requested not to
 						include the current version
 						in the CD-ROM.
@@ -80,7 +79,7 @@ su2-1.3.tar.gz		ports/sysutils/su2	Don't sell for profit.
 taipei16.bdf.gz		ports/chinese/big5con	font is transformed from
 						a font with restrictive
 						copyright
-tkman-1.7.3.tar.Z	ports/x11/tkman		Restrictive copyright
+tkman-1.7.3.tar.Z	ports/misc/tkman	Restrictive copyright
 uzap.tar.gz             ports/editors/uzap      Restrictive copyright
 vfrb101e.taz		ports/security/vscan	Commercial software
 webcopy.tgz		ports/www/webcopy	Don't sell for profit
