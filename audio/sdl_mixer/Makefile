@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sdl_mixer
-PORTVERSION=	1.2.4
-PORTREVISION=	1
+PORTVERSION=	1.2.5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_mixer/release/
 DISTNAME=	SDL_mixer-${PORTVERSION}
@@ -15,7 +14,7 @@ DISTNAME=	SDL_mixer-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A sample multi-channel audio mixer library
 
-LIB_DEPENDS=  	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
+LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		smpeg.1:${PORTSDIR}/multimedia/smpeg \
 		vorbis.2:${PORTSDIR}/audio/libvorbis
 
