@@ -1,16 +1,6 @@
 *** configure.orig	Mon Apr 12 09:41:56 2004
 --- configure	Mon Apr 12 09:42:55 2004
 ***************
-*** 8185,8190 ****
---- 8185,8191 ----
-  
-  # This can be used to rebuild libtool when needed
-  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+ $ac_aux_dir/ltconfig $LIBTOOL_DEPS
-  
-  # Always use our own libtool.
-  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-***************
 *** 14905,14911 ****
   #define IM_JA_BINDIR "$IM_JA_BINDIR"
   _ACEOF
