@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	namg
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.zip.com.au/~gsymonds/NAMG/
 DISTNAME=	NAMG-${PORTVERSION}
