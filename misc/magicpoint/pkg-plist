@@ -10,6 +10,7 @@ lib/X11/mgp/mgp2.jpg
 lib/X11/mgp/mgp3.jpg
 share/doc/mgp/COPYRIGHT
 share/doc/mgp/COPYRIGHT.jp
+share/doc/mgp/FAQ
 share/doc/mgp/README
 share/doc/mgp/README.fonts
 share/doc/mgp/README.fonts.jp
@@ -25,7 +26,6 @@ share/doc/mgp/sample/cloud.jpg
 share/doc/mgp/sample/dad.eps
 share/doc/mgp/sample/dad.jpg
 share/doc/mgp/sample/default.mgp
-share/doc/mgp/sample/dns-jp.mgp
 share/doc/mgp/sample/embed-jp.mgp
 share/doc/mgp/sample/embed.mgp
 share/doc/mgp/sample/gradation-jp.mgp
@@ -33,6 +33,7 @@ share/doc/mgp/sample/gradation.mgp
 share/doc/mgp/sample/mgp-old1.jpg
 share/doc/mgp/sample/mgp-old2.jpg
 share/doc/mgp/sample/mgp-old3.jpg
+share/doc/mgp/sample/mgp.mng
 share/doc/mgp/sample/mgp1.jpg
 share/doc/mgp/sample/mgp2.jpg
 share/doc/mgp/sample/mgp3.jpg
