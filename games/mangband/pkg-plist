@@ -1,0 +1,66 @@
+bin/mangband
+bin/mangclient
+bin/mangconsole
+@exec install -d -o bin -g bin -m 555 %D/lib/mangband
+@exec install -d -o games -g games -m 750 %D/lib/mangband/apex
+@exec install -d -o games -g games -m 750 %D/lib/mangband/bone
+@exec install -d -o games -g games -m 750 %D/lib/mangband/data
+@exec install -d -o games -g games -m 750 %D/lib/mangband/edit
+@exec install -d -o games -g games -m 750 %D/lib/mangband/file
+@exec install -d -o games -g games -m 750 %D/lib/mangband/help
+@exec install -d -o games -g games -m 750 %D/lib/mangband/info
+@exec install -d -o games -g games -m 750 %D/lib/mangband/save
+@exec install -d -o games -g games -m 755 %D/lib/mangband/user
+@exec install -d -o games -g games -m 750 %D/lib/mangband/xtra
+lib/mangband/data/a_info.raw
+lib/mangband/data/e_info.raw
+lib/mangband/data/f_info.raw
+lib/mangband/data/k_info.raw
+lib/mangband/data/r_info.raw
+lib/mangband/data/v_info.raw
+lib/mangband/edit/a_info.txt
+lib/mangband/edit/e_info.txt
+lib/mangband/edit/f_info.txt
+lib/mangband/edit/k_info.txt
+lib/mangband/edit/r_info.txt
+lib/mangband/edit/v_info.txt
+lib/mangband/file/dead.txt
+lib/mangband/file/news.txt
+lib/mangband/file/wizards.txt
+lib/mangband/help/attack.txt
+lib/mangband/help/birth.txt
+lib/mangband/help/command.txt
+lib/mangband/help/dungeon.txt
+lib/mangband/help/general.txt
+lib/mangband/help/help.hlp
+lib/mangband/help/mangband.hlp
+lib/mangband/help/option.txt
+lib/mangband/help/version.txt
+lib/mangband/user/font-ami.prf
+lib/mangband/user/font-ibm.prf
+lib/mangband/user/font-win.prf
+lib/mangband/user/graf-ami.prf
+lib/mangband/user/graf-win.prf
+lib/mangband/user/options.prf
+lib/mangband/user/pref-acn.prf
+lib/mangband/user/pref-emx.prf
+lib/mangband/user/pref-ibm.prf
+lib/mangband/user/pref-lsl.prf
+lib/mangband/user/pref-mac.prf
+lib/mangband/user/pref-win.prf
+lib/mangband/user/pref-x11.prf
+lib/mangband/user/pref-xaw.prf
+lib/mangband/user/pref.prf
+lib/mangband/user/priest.prf
+lib/mangband/user/window.prf
+@dirrm lib/mangband/apex
+@dirrm lib/mangband/bone
+@dirrm lib/mangband/data
+@dirrm lib/mangband/edit
+@dirrm lib/mangband/file
+@dirrm lib/mangband/help
+@dirrm lib/mangband/info
+@dirrm lib/mangband/save
+@dirrm lib/mangband/user
+@dirrm lib/mangband/xtra
+@dirrm lib/mangband
