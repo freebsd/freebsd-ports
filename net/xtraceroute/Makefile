@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--with-GL-prefix=${X11BASE}/lib \
 		--with-lib-GL \
 		--with-host=${LOCALBASE}/bin/host
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 DATAFILES=	ndg_files.tar.gz
 
