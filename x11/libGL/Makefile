@@ -18,17 +18,21 @@ COMMENT=	OpenGL library that renders using GLX or DRI
 
 LIB_DEPENDS=	Xxf86vm.1:${PORTSDIR}/x11/libXxf86
 
-BROKEN=		Build fails
-
 CONFLICTS=	XFree86-libraries-*
 
 EXTRA_PATCHES=	${CF_PATCHES}
 
+PREFIX?=	${X11BASE}
 XBUILD_DIRS=	lib/GL
 GLHEADERS=	gl.h glext.h glx.h glxext.h glxint.h glxmd.h glxproto.h \
 		glxtokens.h
 INSTALLS_SHLIB=	yes
 USE_GNOME=	pkgconfig
+
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} < 500043
+BROKEN=	Requires libXThrStub, which should be part of libX11
+.endif
 
 post-extract:
 	(cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
@@ -42,4 +46,4 @@ post-install:
 .endfor
 
 .include "${.CURDIR}/../../x11-servers/xorg-server/Makefile.inc"
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
