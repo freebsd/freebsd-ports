@@ -233,8 +233,8 @@ while [ "$1" ]; do
 			OPENLDAP1=1
 			;;
 		\"OpenLDAP2\")
-			echo "LIB_DEPENDS+=	ldap.2:\${PORTSDIR}/net/openldap2"
-			echo "LIB_DEPENDS+=	lber.2:\${PORTSDIR}/net/openldap2"
+			echo "LIB_DEPENDS+=	ldap.2:\${PORTSDIR}/net/openldap20"
+			echo "LIB_DEPENDS+=	lber.2:\${PORTSDIR}/net/openldap20"
 			echo "CONFIGURE_ARGS+=--with-ldap=\${LOCALBASE}"
 			if [ "$OPENLDAP1" ]; then
 				echo "OpenLDAP1 and OpenLDAP2 are mutually exclusive." > /dev/stderr

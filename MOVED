@@ -174,3 +174,4 @@ net/edonkey-gui-gtk-kioslave||2003-02-19|merged into edonkey-gui-gtk
 print/dvipdfm||2003-02-20|merged into teTeX
 net/amcl|net/gnome-mud|2003-02-23|project renamed
 net/openldap|net/openldap12|2003-02-23|port renamed
+net/openldap2|net/openldap20|2003-02-23|port renamed

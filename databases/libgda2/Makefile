@@ -57,7 +57,7 @@ PLIST_SUB+=	POSTGRES="@comment "
 .endif
 
 .if defined(WITH_LDAP)
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap2
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20
 CONFIGURE_ARGS+=	--with-ldap=${LOCALBASE}
 PLIST_SUB+=	LDAP=""
 .else

@@ -23,7 +23,7 @@ LIB_DEPENDS=	bonobo_conf.0:${PORTSDIR}/devel/bonobo-conf \
 		soup.6:${PORTSDIR}/devel/soup
 
 .if defined(WITH_LDAP)
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap2
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20
 .endif
 RUN_DEPENDS=	gnome-spell-component-0.5:${PORTSDIR}/textproc/gnomespell \
 		gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter

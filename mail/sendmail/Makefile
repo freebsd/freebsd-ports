@@ -40,8 +40,8 @@ PLIST_SUB+=	PREFIX=${PREFIX:S=${PREFIX}/==}
 
 .if defined(SENDMAIL_WITH_LDAP)
 PKGNAMESUFFIX?=	-ldap
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap2
-LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap2
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20
+LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap20
 .endif
 .if defined(SENDMAIL_WITH_SASL)
 LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl

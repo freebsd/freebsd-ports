@@ -18,7 +18,7 @@ DISTNAME=		heimdal-${PORTVERSION}
 MAINTAINER=		nectar@FreeBSD.ORG
 
 .if defined(WITH_LDAP)
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap2
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20
 .endif
 .if defined(WITH_CRACKLIB)
 BUILD_DEPENDS+= ${LOCALBASE}/lib/libcrack.a:${PORTSDIR}/security/cracklib

@@ -14,7 +14,7 @@ MAINTAINER=	bms@spc.org
 COMMENT=	ISO 7816 Smartcard API Library (OpenSSH Compatible)
 
 LIB_DEPENDS=	pcsclite.0:${PORTSDIR}/devel/pcsc-lite	\
-		ldap.2:${PORTSDIR}/net/openldap2
+		ldap.2:${PORTSDIR}/net/openldap20
 
 INSTALLS_SHLIB= yes
 USE_OPENSSL=	yes
