@@ -9,20 +9,17 @@
 PORTNAME=	sdl_gfx
 PORTVERSION=	2.0.8
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.ferzkopp.net/Software/SDL_gfx-${PORTVERSION:R}/
+MASTER_SITES=	http://www.ferzkopp.net/Software/%SUBDIR%/
+MASTER_SIET_SUBDIR=	SDL_gfx-${PORTVERSION:R}
 DISTNAME=	SDL_gfx-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SDL graphics drawing primitives and other support functions
 
-LIB_DEPENDS=	SDL-1.1:${PORTSDIR}/devel/sdl12
-
-SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
-
+USE_SDL=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 INSTALLS_SHLIB=	yes
