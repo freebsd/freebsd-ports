@@ -8,7 +8,7 @@
 PORTNAME=	flite
 PORTVERSION=	1.2
 CATEGORIES=	audio
-MASTER_SITES=	http://ccache.samba.org/ftp/ccache/
+MASTER_SITES=	http://www.speech.cs.cmu.edu/flite/packed/${PKGNAME}/
 DISTNAME=	${PKGNAME}-release
 
 MAINTAINER=	sobomax@FreeBSD.org
