@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.muhri.net/skipstone/
 
 MAINTAINER=	eric@FreeBSD.org
 
+BROKEN=		"Does not work with the current mozilla port"
+
 BUILD_DEPENDS=	${X11BASE}/include/mozilla/gtkembedmoz/gtkmozembed.h:${PORTSDIR}/www/mozilla-headers \
 		${X11BASE}/lib/mozilla-embedded/libgtkembedmoz.so:${PORTSDIR}/www/mozilla-embedded
 RUN_DEPENDS=	${X11BASE}/lib/mozilla-embedded/libgtkembedmoz.so:${PORTSDIR}/www/mozilla-embedded \
