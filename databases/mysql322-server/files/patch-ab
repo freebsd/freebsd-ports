@@ -1,5 +1,5 @@
---- scripts/mysql_install_db.sh.orig	Mon Mar  1 20:08:17 1999
-+++ scripts/mysql_install_db.sh	Thu Mar  4 22:05:57 1999
+--- scripts/mysql_install_db.sh.orig	Sat Aug 28 13:10:54 1999
++++ scripts/mysql_install_db.sh	Mon Sep 13 00:13:04 1999
 @@ -15,10 +15,6 @@
  force=0
  IN_RPM=0
@@ -20,3 +20,16 @@
  hostname=`hostname`		# Install this too in the user table
  
  # Check if hostname is valid
+@@ -255,12 +249,6 @@
+ END_OF_DATA
+ then
+   echo ""
+-  if test "$IN_RPM" -eq 0
+-  then
+-    echo "To start mysqld at boot time you have to copy support-files/mysql.server"
+-    echo "to the right place for your system"
+-    echo
+-  fi
+   echo "PLEASE REMEMBER TO SET A PASSWORD FOR THE MySQL root USER !"
+   echo "This is done with:"
+   echo "$bindir/mysqladmin -u root password 'new-password'"
