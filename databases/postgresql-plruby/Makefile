@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plruby
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	databases ruby
 MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/
 PKGNAMEPREFIX=	postgresql-
@@ -37,6 +37,9 @@ INSTALL_TARGET=	site-install
 DOCS=		Changes README.en plruby.html plruby.rd
 
 PKGMESSAGE=	${WRKDIR}/createlang.sql
+
+post-extract:
+	${FIND} ${WRKSRC} -name '*~' -delete
 
 post-patch:
 	${RUBY} -i -pe 'gsub /test_mklang\.sql/, "../createlang.sql"' \
