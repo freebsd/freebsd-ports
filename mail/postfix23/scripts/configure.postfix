@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix23/scripts/Attic/configure.postfix,v 1.26 2003-01-09 05:10:39 petef Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix23/scripts/Attic/configure.postfix,v 1.27 2003-01-19 07:25:46 sada Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -24,14 +24,16 @@ Please select desired options:" -1 -1 16 \
 PCRE		"Perl Compatible Regular Expressions" "$status_PCRE" \
 SASL		"Cyrus SASLv1 (Simple Authentication and Security Layer)" "$status_SASL" \
 SASL2		"Cyrus SASLv2 (Simple Authentication and Security Layer)" "$status_SASL2" \
+TLS		"SSL and TLS" "$status_TLS" \
+IPv6		"IPv6 support (currently broken)" "$status_IPv6" \
+IPv6TLS		"IPv6 support with SSL and TLS" "$status_IPv6TLS" \
 DB3		"Berkeley DB3 (required if SASL also built with DB3)" "$status_DB3" \
+DB40		"Berkeley DB4.0 (required if SASL also built with DB4.0)" "$status_DB40" \
+DB41		"Berkeley DB4.1 (required if SASL also built with DB4.1)" "$status_DB41" \
 MySQL		"MySQL map lookups" "$status_MySQL" \
 PgSQL		"PostgreSQL map lookups" "$status_PgSQL" \
 OpenLDAP	"OpenLDAP map lookups" "$status_OpenLDAP" \
 Test		"SMTP/LMTP test server and generator" "$status_Test" \
-TLS		"SSL and TLS" "$status_TLS" \
-IPv6		"IPv6 support (currently broken)" "$status_IPv6" \
-IPv6TLS		"IPv6 support with SSL and TLS" "$status_IPv6TLS" \
 2> $tempfile
 
 	retval=$?
@@ -111,17 +113,47 @@ while [ "$1" ]; do
 			echo "MAN8+=		tlsmgr.8"
 			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I/usr/include/openssl"
 			echo "POSTFIX_AUXLIBS+=	-lssl -lcrypto"
-			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.8.12-2.0.0.1-0.9.6h.tar.gz"
-			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.8.12-2.0.0.1-0.9.6h/pfixtls.diff"
+			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.8.13-2.0.1-0.9.7.tar.gz"
+			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.8.13-2.0.1-0.9.7/pfixtls.diff"
 			echo "PATCH_STRIP=	-p1"
 			echo "TLS_SUFFIX=	+tls"
 			SUB_TLS=""
 			;;
 		DB3)
+			if [ X$DB40_SELECTED != "X" -o X$DB41_SELECTED != "X" ]; then
+				/usr/bin/dialog --msgbox "Select exactly one of the DB3, DB40 and DB41 options." 5 60 > /dev/stderr
+				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+				exit 1
+			fi
 			echo "LIB_DEPENDS+=	db3.3:\${PORTSDIR}/databases/db3"
 			echo "POSTFIX_CCARGS+=	-I\${LOCALBASE}/include/db3"
 			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -ldb3"
-			echo "DB3_SUFFIX=	+db3"
+			echo "DB_SUFFIX=	+db3"
+			DB3_SELECTED="YES"
+			;;
+		DB40)
+			if [ X$DB3_SELECTED != "X" -o X$DB41_SELECTED != "X" ]; then
+				/usr/bin/dialog --msgbox "Select exactly one of the DB3, DB40 and DB41 options." 5 60 > /dev/stderr
+				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+				exit 1
+			fi
+			echo "LIB_DEPENDS+=	db4.0:\${PORTSDIR}/databases/db4"
+			echo "POSTFIX_CCARGS+=	-I\${LOCALBASE}/include/db4"
+			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -ldb4"
+			echo "DB_SUFFIX=	+db40"
+			DB40_SELECTED="YES"
+			;;
+		DB41)
+			if [ X$DB3_SELECTED != "X" -o X$DB40_SELECTED != "X" ]; then
+				/usr/bin/dialog --msgbox "Select exactly one of the DB3, DB40 and DB41 options." 5 60 > /dev/stderr
+				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+				exit 1
+			fi
+			echo "LIB_DEPENDS+=	db41.1:\${PORTSDIR}/databases/db41"
+			echo "POSTFIX_CCARGS+=	-I\${LOCALBASE}/include/db41"
+			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -ldb41"
+			echo "DB_SUFFIX=	+db41"
+			DB41_SELECTED="YES"
 			;;
 		MySQL)
 			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/mysql/libmysqlclient.a:\${PORTSDIR}/databases/mysql323-client"
@@ -136,7 +168,7 @@ while [ "$1" ]; do
 			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -L\${LOCALBASE}/pgsql/lib -lpq -lcrypt"
 			echo "PGSQL_SUFFIX=	+pgsql"
 			echo "PATCH_SITES+=	http://mat.cc/postfix/"
-			echo "PATCHFILES+=	postfix-pg.postfix-1.1.8.patch"
+			echo "PATCHFILES+=	postfix-pg.postfix-2.0.0.2.patch"
 			echo "PATCH_DIST_STRIP= -p1"
 			;;
 		OpenLDAP)
@@ -176,10 +208,10 @@ while [ "$1" ]; do
 			echo "MAN8+=		tlsmgr.8"
 			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I/usr/include/openssl"
 			echo "POSTFIX_AUXLIBS+=	-lssl -lcrypto"
-			echo "PATCH_SITES+=	ftp://ftp.stack.nl/pub/postfix/tls+ipv6/1.10/"
-			echo "PATCHFILES+=	tls+ipv6-1.10-pf-2.0.0.1.patch.gz"
+			echo "PATCH_SITES+=	ftp://ftp.stack.nl/pub/postfix/tls+ipv6/1.11/"
+			echo "PATCHFILES+=	tls+ipv6-1.11-pf-2.0.1.patch.gz"
 			echo "PATCH_DIST_STRIP=	-p1"
-			echo "TLS_SUFFIX=	+ipv6+tls"
+			echo "TLS_SUFFIX=	+tls+ipv6"
 			SUB_TLS=""
 			;;
 		*)
@@ -198,4 +230,4 @@ echo "PLIST_SUB+=	SUB_TEST=\"${SUB_TEST}\""
 # we ask the configure questions) doesn't pick up the extensions, but
 # any subsequent build will.  so "make; make install" will build twice.
 # don't do this for now.
-#echo "PKGNAMESUFFIX=	\${PCRE_SUFFIX}\${SASL_SUFFIX}\${DB3_SUFFIX}\${MYSQL_SUFFIX}\${PGSQL_SUFFIX}\${OPENLDAP_SUFFIX}\${TLS_SUFFIX}\${IPv6_SUFFIX}"
+#echo "PKGNAMESUFFIX=	\${PCRE_SUFFIX}\${SASL_SUFFIX}\${DB_SUFFIX}\${MYSQL_SUFFIX}\${PGSQL_SUFFIX}\${OPENLDAP_SUFFIX}\${TLS_SUFFIX}\${IPv6_SUFFIX}"

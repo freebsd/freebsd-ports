@@ -10,8 +10,19 @@ sendmail_msp_queue_enable="NO"
 
 This will disable Sendmail completely.
 
+Alternatively to the above settings, you can enable postfix to start with
+the other local services, for example, after your database server starts if
+you need it to be running for postfix.  To do this, set in your rc.conf file:
 
-Also, you may wish to disable some Sendmail-specific daily maintenance
+sendmail_enable="NONE"                                
+
+Then make the following symbolic link:
+
+cd /usr/local/etc/rc.d
+ln -s /usr/local/sbin/postfix postfix.sh
+
+
+Also, you will want to disable some Sendmail-specific daily maintenance
 routines in your /etc/periodic.conf file:
 
 daily_status_mail_rejects_enable="NO"                                      
@@ -23,3 +34,6 @@ If you are using SASL, you need to make sure that postfix has access to read
 the sasldb file.  This is accomplished by adding postfix to group mail and
 making the /usr/local/etc/sasldb* file(s) readable by group mail (this should
 be the default for new installs).
+
+If you are upgrading from postfix version prior to 2.0, please see the README
+files for recommended changes to your configuration.
