@@ -11,5 +11,6 @@ MASTERDIR=	${.CURDIR}/../yatex
 COMMENT=	Yet Another LaTeX mode and html mode on Emacs (for XEmacs21-mule)
 
 EMACS_PORT_NAME=xemacs21-mule
+IGNORE=		hangs during build
 
 .include	"${MASTERDIR}/Makefile"
