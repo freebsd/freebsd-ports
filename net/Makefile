@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.55 1995/09/23 18:19:34 pst Exp $
+# $Id: Makefile,v 1.56 1995/10/03 07:04:34 asami Exp $
 #
 
+RESTRICTED += Mosaic         # requires Motif, Mosaic itself isn't
     SUBDIR += apache
     SUBDIR += archie
     SUBDIR += cern_httpd
