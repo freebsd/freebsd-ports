@@ -35,6 +35,12 @@ MANN=		dpsexec.man makepsres.man xepsf.man
 .error You have `USE_DGS' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} > 3
+IGNORE=		"is included in XFree86 4.x and above"
+.endif
+
 pre-fetch:
 .if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
 	@${ECHO} ""
@@ -47,4 +53,4 @@ pre-patch:
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|manm|mann|g'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
