@@ -1,8 +1,22 @@
-bin/genfonts
-bin/genstroke
-bin/one
 include/GL/freeglut.h
-lib/libfreeglut-1.3.so.0
-lib/libfreeglut-1.3.so
-lib/libfreeglut-1.3.a
+include/GL/freeglut_ext.h
+include/GL/glut.h
+lib/libglut.a
+lib/libglut.so
+lib/libglut.so.11
+%%PORTDOCS%%%%EXAMPLESDIR%%/fractals
+%%PORTDOCS%%%%EXAMPLESDIR%%/fractals_random
+%%PORTDOCS%%%%EXAMPLESDIR%%/fractals.dat
+%%PORTDOCS%%%%EXAMPLESDIR%%/lorenz
+%%PORTDOCS%%%%EXAMPLESDIR%%/one
+%%PORTDOCS%%%%DOCSDIR%%/download.html
+%%PORTDOCS%%%%DOCSDIR%%/freeglut.html
+%%PORTDOCS%%%%DOCSDIR%%/freeglut_logo.png
+%%PORTDOCS%%%%DOCSDIR%%/freeglut_user_interface.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ogl_sm.png
+%%PORTDOCS%%%%DOCSDIR%%/progress.html
+%%PORTDOCS%%%%DOCSDIR%%/structure.html
 @dirrm include/GL
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

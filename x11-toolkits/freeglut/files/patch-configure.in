@@ -1,9 +1,9 @@
---- configure.in.orig	Sat Jan 26 05:22:54 2002
-+++ configure.in	Fri Apr 25 11:35:52 2003
-@@ -9,8 +9,7 @@
+--- configure.in.orig	Sat Sep 20 18:14:07 2003
++++ configure.in	Mon Sep 22 21:19:52 2003
+@@ -8,8 +8,7 @@
+ AC_PROG_CC
  AC_C_CONST
  AC_EXEEXT
- AC_PROG_RANLIB
 -AC_LIBTOOL_DLOPEN
 -AM_PROG_LIBTOOL
 +AC_PROG_LIBTOOL
