@@ -159,6 +159,7 @@
     SUBDIR += p5-Digest-MD2
     SUBDIR += p5-Digest-MD5
     SUBDIR += p5-Digest-SHA1
+    SUBDIR += p5-File-Scan
     SUBDIR += p5-GnuPG-Interface
     SUBDIR += p5-IO-Socket-SSL
     SUBDIR += p5-MD5
