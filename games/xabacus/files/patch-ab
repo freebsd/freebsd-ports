@@ -5,7 +5,7 @@
    UNINSTALL_XMWIDGET=""
  else
 -  XMWIDGETLIBS="-lXm ${LIBS}"
-+  XMWIDGETLIBS="-lXm -lXext ${LIBS}"
++  XMWIDGETLIBS="\${MOTIFLIB} -lXext ${LIBS}"
    XMWIDGET="xmabacus"
    INSTALL_XMWIDGET="install_xmabacus"
    UNINSTALL_XMWIDGET="uninstall_xmabacus"
