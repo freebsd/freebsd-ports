@@ -1,0 +1,5 @@
+bin/largeprimes
+lib/perl5/site_perl/%%PERL_VER%%/Crypt/Primes.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/Primes/.packlist
+man/man1/largeprimes.1
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/Primes
