@@ -6,25 +6,31 @@
 #
 
 PORTNAME=	madbomber
-PORTVERSION=	0.2.4
+PORTVERSION=	0.2.5
 CATEGORIES=	games
-MASTER_SITES=	http://www.nbswebfx.com/downloads/
+MASTER_SITES=	ftp://ftp.sonic.net/pub/users/nbs/unix/x/madbomber/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A clone of Activision's classic Atari 2600 console game "Kaboom!"
 
-LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image \
-		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
+LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
+		SDL_image.10:${PORTSDIR}/graphics/sdl_image
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
-USE_GMAKE=	yes
-MAKE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
+CPPFLAGS=	`${SDL_CONFIG} --cflags` -DDATA_PREFIX=\"${DATADIR}/\"
+LDFLAGS=	`${SDL_CONFIG} --libs`
+
+do-build:
+	cd ${WRKSRC} && ${CC} ${CFLAGS} ${CPPFLAGS} -o ${PORTNAME} \
+		${PORTNAME}.c ${LDFLAGS} -lSDL_mixer -lSDL_image
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/madbomber ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/madbomber
-	@cd ${WRKSRC}/data; tar cf - . | \
-		(cd ${PREFIX}/share/madbomber; ${TAR} --unlink -xf - )
+	${INSTALL_PROGRAM} ${WRKSRC}/madbomber ${PREFIX}/bin
+	@${MKDIR} ${DATADIR}
+	${TAR} -C ${WRKSRC}/data  --exclude embedded -cf - . | \
+		${TAR} -C ${DATADIR} --unlink -xf -
+	@${FIND} ${DATADIR} | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+	@${FIND} ${DATADIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 
 .include <bsd.port.mk>
