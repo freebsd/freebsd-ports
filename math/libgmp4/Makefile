@@ -6,19 +6,22 @@
 # $FreeBSD$
 #
 
-PORTNAME=	libgmp3
-PORTVERSION=	3.1.1
+PORTNAME=	libgmp
+PORTVERSION=	4.0.1
 CATEGORIES=	math devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gmp
 DISTNAME=	gmp-${PORTVERSION}
 
-MAINTAINER=	ijliao@FreeBSD.org
-
-CONFIGURE_TARGET=	# empty
+MAINTAINER=	ports@FreeBSD.org
 
 USE_LIBTOOL=	yes
-
 INSTALLS_SHLIB=	yes
+
+post-patch:
+	@${PERL} -pi -e "s/--tag=CC//g" ${WRKSRC}/mpn/Makefile.in
+
+pre-configure:
+	@${LN} -fs ${LOCALBASE}/bin/libtool ${WRKSRC}
 
 .include <bsd.port.mk>
