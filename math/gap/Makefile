@@ -16,6 +16,8 @@ DIST_SUBDIR=	gap
 MAINTAINER=	johans@stack.nl
 COMMENT=	GAP is a system for computational discrete algebra
 
+BROKEN=		Unfetchable
+
 .include <bsd.port.pre.mk>
 
 GAP_VERSION=	gap4r4
