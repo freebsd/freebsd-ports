@@ -1,6 +1,7 @@
 bin/fxo_test
 bin/ztcfg
 bin/ztmonitor
+bin/zttest
 bin/zttool
 etc/rc.d/zaptel.sh.sample
 @unexec if cmp -s %D/etc/zaptel.conf %D/etc/zaptel.conf.sample; then rm -f %D/etc/zaptel.conf; fi
@@ -13,4 +14,5 @@ lib/zaptel/linker.hints
 lib/zaptel/wcfxo.ko
 lib/zaptel/wcfxs.ko
 lib/zaptel/zaptel.ko
+lib/zaptel/ztdummy.ko
 @dirrm lib/zaptel
