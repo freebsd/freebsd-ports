@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	seti_applet
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.2
 CATEGORIES=	astro gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/}
@@ -19,17 +19,18 @@ RUN_DEPENDS=	setiathome:${PORTSDIR}/astro/setiathome
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
 USE_LIBTOOL=	yes
+CONFIGURE_ARGS=	--datadir=${PREFIX}/share/gnome
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
+		s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
 post-install:
-	@${SED} "s|%%LOCALBASE%%|${LOCALBASE}|g" ${PKGMESSAGE}
+	${SED} "s|%%LOCALBASE%%|${LOCALBASE}|g" ${PKGMESSAGE}
 
 .include <bsd.port.mk>
