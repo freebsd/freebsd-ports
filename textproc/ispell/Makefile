@@ -97,7 +97,7 @@ MASTER_SITES+=	ftp://ftp.informatik.uni-kiel.de/pub/kiel/dicts/
 .endif
 .if defined(ISPELL_NO)
 NODISTFILE=	ispell-norsk-2.0.tar.gz
-MASTER_SITES+=	ftp://ftp.ntnu.no/store/store/stash/ispell/
+MASTER_SITES+=	http://www.uio.no/~runekl/
 EXTRA_DICT+=	${NODISTFILE}
 EXTRACT_ONLY+=	${NODISTFILE}
 MASKBITS?=	64
