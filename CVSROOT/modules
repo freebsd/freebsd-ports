@@ -2171,6 +2171,7 @@ gpasman		ports/security/gpasman
 gperiodic	ports/biology/gperiodic
 gpgme		ports/security/gpgme
 gphoto2		ports/graphics/gphoto2
+gpkgdep		ports/sysutils/gpkgdep
 gplbp		ports/misc/gplbp
 gplot		ports/graphics/gplot
 gpp		ports/textproc/gpp
