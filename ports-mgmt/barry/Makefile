@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.student.uni-oldenburg.de/frerich.raabe/barry/ \
 MAINTAINER=	so14k@so14k.com
 COMMENT=	A nice KDE frontend to the ports system
 
+BUILD_DEPENDS=	portsdb:${PORTSDIR}/sysutils/portupgrade
+RUN_DEPENDS=	portsdb:${PORTSDIR}/sysutils/portupgrade
+
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_REINPLACE=	yes
