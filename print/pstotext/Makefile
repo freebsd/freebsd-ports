@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.research.digital.com/SRC/virtualpaper/cgi-bin/nph-downl
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ob@breuninger.org
 
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript55
 
