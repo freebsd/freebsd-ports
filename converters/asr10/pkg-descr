@@ -1,0 +1,11 @@
+This is a port of asr10, which provides access to SCSI devices,
+floppies and image files from Ensoniq EPS/EPS+/ASR samplers.
+
+Includes:
+asr10: for ftp-like access to drives and image files,
+wav2asr: for a conversion of WAV-files to asr-inst-files.
+
+- Klaus Michael Indlekofer
+M.Indlekofer@gmx.de
+
+WWW: http://www.spies.com/~kmi/
