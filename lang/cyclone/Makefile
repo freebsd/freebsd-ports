@@ -8,79 +8,36 @@
 #
 
 PORTNAME=	cyclone
-PORTVERSION=	0.2
+PORTVERSION=	0.6
 CATEGORIES=	lang
 MASTER_SITES=	http://www.cs.cornell.edu/projects/cyclone/software/
-#	XXX When this port is upgaded to 0.3, uncomment the following
-#	line, etc.
-#		http://www.research.att.com/projects/cyclone/software/
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
-		${PORTNAME}-${PORTVERSION}-docs.tar.gz
+# Can't conditionalise fetching of docs due to distinfo:
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-docs.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A safe dialect of C from Cornell and AT&T Research
 
-BROKEN=		"Does not compile (5.x) or install (4.x)"
-
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+PLIST_SUB+=	DOCSDIR=${DOCSDIR:S/^${PREFIX}\///} \
+		PORTBLD=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+ALL_TARGET=	all gprof aprof
 CYCBINDIR=	${PREFIX}/bin
 CYCINCDIR=	${PREFIX}/include/cyclone
 CYCLIBDIR=	${PREFIX}/lib/cyclone
-ALL_TARGET=	build
-PLIST_SUB+=	DOCSDIR=${DOCSDIR:S/^${PREFIX}\///}
 
-pre-everything::
-	@${ECHO_MSG} '>>>'
-	@${ECHO_MSG} '>>> You can enable extra optimizations by defining WITH_OPTIMIZED_CFLAGS.'
-	@${ECHO_MSG} '>>>'
-	@${ECHO_MSG} '>>> Note that this port does not respect CC or CFLAGS'
+.include <bsd.port.pre.mk>
 
-post-patch:
-.ifndef(WITH_OPTIMIZED_CFLAGS)
-	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} -e \
-		's/-O3/-O/'
+.if ${OSVERSION} >= 500000
+BROKEN=		"Cannot convert header files on -CURRENT!"
 .endif
 
-do-configure:
-	@cd ${CONFIGURE_WRKSRC} && ${ECHO_CMD} y | ./configure ${CONFIGURE_ARGS}
-
-post-build:
-.for target in cyclone_src update build test
-	@cd ${WRKSRC} && ${MAKE_ENV} ${GMAKE} ${target}
-.endfor
-
 post-install:
-.for prog in cyclone cycbison cyclex cycflex
-	@${CHOWN} ${BINOWN}:${BINGRP} ${CYCBINDIR}/${prog}
-	@${CHMOD} ${BINMODE} ${CYCBINDIR}/${prog}
-.endfor
-	@${RANLIB} ${CYCLIBDIR}/*.a
-	@${CHOWN} -R ${INCOWN}:${INCGRP} ${CYCINCDIR}
-	@${CHOWN} -R ${LIBOWN}:${LIBGRP} ${CYCLIBDIR}
-	@${CHMOD} -R ${INCMODE} ${CYCINCDIR}
-	@${CHMOD} -R ${LIBMODE} ${CYCLIBDIR}
-	@${FIND} ${CYCINCDIR} ${CYCLIBDIR} -type d | ${XARGS} ${CHMOD} +x
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR} ${DOCSDIR}/online-manual
 	@${INSTALL_DATA} ${WRKDIR}/*.pdf ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKDIR}/online-manual/* ${DOCSDIR}/online-manual
 .endif
-
-.include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/bin/bash) || !exists(${LOCALBASE}/bin/ksh)
-BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash2
-
-CONFIGURE_ARGS=	-sh ${LOCALBASE}/bin/bash
-.else
-BUILD_DEPENDS+=	ksh:${PORTSDIR}/shells/pdksh
-
-CONFIGURE_ARGS=	-sh ${LOCALBASE}/bin/ksh
-.endif
-
-CONFIGURE_ARGS+=	-prefix ${PREFIX} \
-		-incdir ${CYCINCDIR} -bindir ${CYCBINDIR} -libdir ${CYCLIBDIR}
 
 .include <bsd.port.post.mk>
