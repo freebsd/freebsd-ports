@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.w3.org/pub/old/comline/ \
 DISTFILES=	w3c-libwww-4.0D.tar.gz \
 		w3c_4.0D_src.tar.gz
 
-MAINTAINER=	ache@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 
 BROKEN=		"Does not build (duplicate strcasestr)"
 
