@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	emcws
-PORTVERSION=	21.2
-PORTREVISION=	4
+PORTVERSION=	${EMACS_VER}
 CATEGORIES=	japanese editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
@@ -15,7 +14,7 @@ DISTNAME=	emacs-${PORTVERSION}
 
 PATCH_SITES=	ftp://ftp.ki.nu/pub/emcws/ \
 		ftp://ftp.jpl.org/pub/misc/
-PATCHFILES=	emcws-${EMACS_VER}-20030212.gz
+PATCHFILES=	emcws-${EMACS_VER}-20030323.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	nakaji@jp.freebsd.org
@@ -29,7 +28,7 @@ WRKSRC=		${WRKDIR}/emacs-${EMACS_VER}
 
 USE_AUTOCONF=	YES
 USE_GMAKE=	YES
-EMACS_VER=	21.2
+EMACS_VER=	21.3
 
 # Change these as you like.
 WITH_WNN6?=	NO
@@ -155,7 +154,7 @@ pre-build:
 	find ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
 	${RM} -rf ${WRKSRC}/info/*
 	@(cd ${WRKSRC}/src/../lisp; \
-	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} compile-files EMACS=${LOCALBASE}/bin/emacs-21.2)
+	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} compile-files EMACS=${LOCALBASE}/bin/emacs-${EMACS_VER})
 	@(cd ${WRKSRC}/src; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} emacs)
 	@(cd ${WRKSRC}/src/../lisp; \
 	${WRKSRC}/src/emacs -batch -q -f batch-byte-compile \
