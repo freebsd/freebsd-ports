@@ -101,7 +101,10 @@ share/aclocal/xsize.m4
 %%DOCSDIR%%/examples/hello-c++-gnome/po/pl.po
 %%DOCSDIR%%/examples/hello-c++-gnome/po/ro.po
 %%DOCSDIR%%/examples/hello-c++-gnome/po/sr.po
+%%DOCSDIR%%/examples/hello-c++-gnome/po/sv.po
+%%DOCSDIR%%/examples/hello-c++-gnome/po/tr.po
 %%DOCSDIR%%/examples/hello-c++-gnome/po/zh_CN.po
+%%DOCSDIR%%/examples/hello-c++-kde/BUGS
 %%DOCSDIR%%/examples/hello-c++-kde/INSTALL
 %%DOCSDIR%%/examples/hello-c++-kde/Makefile.am
 %%DOCSDIR%%/examples/hello-c++-kde/autoclean.sh
@@ -122,7 +125,10 @@ share/aclocal/xsize.m4
 %%DOCSDIR%%/examples/hello-c++-kde/po/pl.po
 %%DOCSDIR%%/examples/hello-c++-kde/po/ro.po
 %%DOCSDIR%%/examples/hello-c++-kde/po/sr.po
+%%DOCSDIR%%/examples/hello-c++-kde/po/sv.po
+%%DOCSDIR%%/examples/hello-c++-kde/po/tr.po
 %%DOCSDIR%%/examples/hello-c++-kde/po/zh_CN.po
+%%DOCSDIR%%/examples/hello-c++-qt/BUGS
 %%DOCSDIR%%/examples/hello-c++-qt/INSTALL
 %%DOCSDIR%%/examples/hello-c++-qt/Makefile.am
 %%DOCSDIR%%/examples/hello-c++-qt/autoclean.sh
@@ -141,6 +147,8 @@ share/aclocal/xsize.m4
 %%DOCSDIR%%/examples/hello-c++-qt/po/pl.po
 %%DOCSDIR%%/examples/hello-c++-qt/po/ro.po
 %%DOCSDIR%%/examples/hello-c++-qt/po/sr.po
+%%DOCSDIR%%/examples/hello-c++-qt/po/sv.po
+%%DOCSDIR%%/examples/hello-c++-qt/po/tr.po
 %%DOCSDIR%%/examples/hello-c++-qt/po/zh_CN.po
 %%DOCSDIR%%/examples/hello-c++/INSTALL
 %%DOCSDIR%%/examples/hello-c++/Makefile.am
@@ -160,6 +168,8 @@ share/aclocal/xsize.m4
 %%DOCSDIR%%/examples/hello-c++/po/pl.po
 %%DOCSDIR%%/examples/hello-c++/po/ro.po
 %%DOCSDIR%%/examples/hello-c++/po/sr.po
+%%DOCSDIR%%/examples/hello-c++/po/sv.po
+%%DOCSDIR%%/examples/hello-c++/po/tr.po
 %%DOCSDIR%%/examples/hello-c++/po/zh_CN.po
 %%DOCSDIR%%/examples/hello-c-gnome/INSTALL
 %%DOCSDIR%%/examples/hello-c-gnome/Makefile.am
@@ -182,6 +192,8 @@ share/aclocal/xsize.m4
 %%DOCSDIR%%/examples/hello-c-gnome/po/pl.po
 %%DOCSDIR%%/examples/hello-c-gnome/po/ro.po
 %%DOCSDIR%%/examples/hello-c-gnome/po/sr.po
+%%DOCSDIR%%/examples/hello-c-gnome/po/sv.po
+%%DOCSDIR%%/examples/hello-c-gnome/po/tr.po
 %%DOCSDIR%%/examples/hello-c-gnome/po/zh_CN.po
 %%DOCSDIR%%/examples/hello-c/INSTALL
 %%DOCSDIR%%/examples/hello-c/Makefile.am
@@ -201,6 +213,8 @@ share/aclocal/xsize.m4
 %%DOCSDIR%%/examples/hello-c/po/pl.po
 %%DOCSDIR%%/examples/hello-c/po/ro.po
 %%DOCSDIR%%/examples/hello-c/po/sr.po
+%%DOCSDIR%%/examples/hello-c/po/sv.po
+%%DOCSDIR%%/examples/hello-c/po/tr.po
 %%DOCSDIR%%/examples/hello-c/po/zh_CN.po
 %%DOCSDIR%%/examples/hello-clisp/INSTALL
 %%DOCSDIR%%/examples/hello-clisp/Makefile.am
@@ -219,6 +233,8 @@ share/aclocal/xsize.m4
 %%DOCSDIR%%/examples/hello-clisp/po/pl.po
 %%DOCSDIR%%/examples/hello-clisp/po/ro.po
 %%DOCSDIR%%/examples/hello-clisp/po/sr.po
+%%DOCSDIR%%/examples/hello-clisp/po/sv.po
+%%DOCSDIR%%/examples/hello-clisp/po/tr.po
 %%DOCSDIR%%/examples/hello-clisp/po/zh_CN.po
 %%DOCSDIR%%/examples/hello-gawk/INSTALL
 %%DOCSDIR%%/examples/hello-gawk/Makefile.am
@@ -237,7 +253,10 @@ share/aclocal/xsize.m4
 %%DOCSDIR%%/examples/hello-gawk/po/pl.po
 %%DOCSDIR%%/examples/hello-gawk/po/ro.po
 %%DOCSDIR%%/examples/hello-gawk/po/sr.po
+%%DOCSDIR%%/examples/hello-gawk/po/sv.po
+%%DOCSDIR%%/examples/hello-gawk/po/tr.po
 %%DOCSDIR%%/examples/hello-gawk/po/zh_CN.po
+%%DOCSDIR%%/examples/hello-java-awt/BUGS
 %%DOCSDIR%%/examples/hello-java-awt/Hello.java
 %%DOCSDIR%%/examples/hello-java-awt/INSTALL
 %%DOCSDIR%%/examples/hello-java-awt/Makefile.am
@@ -257,7 +276,10 @@ share/aclocal/xsize.m4
 %%DOCSDIR%%/examples/hello-java-awt/po/pl.po
 %%DOCSDIR%%/examples/hello-java-awt/po/ro.po
 %%DOCSDIR%%/examples/hello-java-awt/po/sr.po
+%%DOCSDIR%%/examples/hello-java-awt/po/sv.po
+%%DOCSDIR%%/examples/hello-java-awt/po/tr.po
 %%DOCSDIR%%/examples/hello-java-awt/po/zh_CN.po
+%%DOCSDIR%%/examples/hello-java-swing/BUGS
 %%DOCSDIR%%/examples/hello-java-swing/Hello.java
 %%DOCSDIR%%/examples/hello-java-swing/INSTALL
 %%DOCSDIR%%/examples/hello-java-swing/Makefile.am
@@ -277,6 +299,8 @@ share/aclocal/xsize.m4
 %%DOCSDIR%%/examples/hello-java-swing/po/pl.po
 %%DOCSDIR%%/examples/hello-java-swing/po/ro.po
 %%DOCSDIR%%/examples/hello-java-swing/po/sr.po
+%%DOCSDIR%%/examples/hello-java-swing/po/sv.po
+%%DOCSDIR%%/examples/hello-java-swing/po/tr.po
 %%DOCSDIR%%/examples/hello-java-swing/po/zh_CN.po
 %%DOCSDIR%%/examples/hello-java/Hello.java
 %%DOCSDIR%%/examples/hello-java/INSTALL
@@ -295,6 +319,8 @@ share/aclocal/xsize.m4
 %%DOCSDIR%%/examples/hello-java/po/pl.po
 %%DOCSDIR%%/examples/hello-java/po/ro.po
 %%DOCSDIR%%/examples/hello-java/po/sr.po
+%%DOCSDIR%%/examples/hello-java/po/sv.po
+%%DOCSDIR%%/examples/hello-java/po/tr.po
 %%DOCSDIR%%/examples/hello-java/po/zh_CN.po
 %%DOCSDIR%%/examples/hello-librep/INSTALL
 %%DOCSDIR%%/examples/hello-librep/Makefile.am
@@ -313,6 +339,8 @@ share/aclocal/xsize.m4
 %%DOCSDIR%%/examples/hello-librep/po/pl.po
 %%DOCSDIR%%/examples/hello-librep/po/ro.po
 %%DOCSDIR%%/examples/hello-librep/po/sr.po
+%%DOCSDIR%%/examples/hello-librep/po/sv.po
+%%DOCSDIR%%/examples/hello-librep/po/tr.po
 %%DOCSDIR%%/examples/hello-librep/po/zh_CN.po
 %%DOCSDIR%%/examples/hello-objc-gnome/INSTALL
 %%DOCSDIR%%/examples/hello-objc-gnome/Makefile.am
@@ -335,9 +363,12 @@ share/aclocal/xsize.m4
 %%DOCSDIR%%/examples/hello-objc-gnome/po/pl.po
 %%DOCSDIR%%/examples/hello-objc-gnome/po/ro.po
 %%DOCSDIR%%/examples/hello-objc-gnome/po/sr.po
+%%DOCSDIR%%/examples/hello-objc-gnome/po/sv.po
+%%DOCSDIR%%/examples/hello-objc-gnome/po/tr.po
 %%DOCSDIR%%/examples/hello-objc-gnome/po/zh_CN.po
 %%DOCSDIR%%/examples/hello-objc-gnustep/AppController.h
 %%DOCSDIR%%/examples/hello-objc-gnustep/AppController.m
+%%DOCSDIR%%/examples/hello-objc-gnustep/BUGS
 %%DOCSDIR%%/examples/hello-objc-gnustep/GNUmakefile
 %%DOCSDIR%%/examples/hello-objc-gnustep/Hello.h
 %%DOCSDIR%%/examples/hello-objc-gnustep/Hello.m
@@ -356,6 +387,8 @@ share/aclocal/xsize.m4
 %%DOCSDIR%%/examples/hello-objc-gnustep/po/pl.po
 %%DOCSDIR%%/examples/hello-objc-gnustep/po/ro.po
 %%DOCSDIR%%/examples/hello-objc-gnustep/po/sr.po
+%%DOCSDIR%%/examples/hello-objc-gnustep/po/sv.po
+%%DOCSDIR%%/examples/hello-objc-gnustep/po/tr.po
 %%DOCSDIR%%/examples/hello-objc-gnustep/po/zh_CN.po
 %%DOCSDIR%%/examples/hello-objc/INSTALL
 %%DOCSDIR%%/examples/hello-objc/Makefile.am
@@ -375,6 +408,8 @@ share/aclocal/xsize.m4
 %%DOCSDIR%%/examples/hello-objc/po/pl.po
 %%DOCSDIR%%/examples/hello-objc/po/ro.po
 %%DOCSDIR%%/examples/hello-objc/po/sr.po
+%%DOCSDIR%%/examples/hello-objc/po/sv.po
+%%DOCSDIR%%/examples/hello-objc/po/tr.po
 %%DOCSDIR%%/examples/hello-objc/po/zh_CN.po
 %%DOCSDIR%%/examples/hello-pascal/INSTALL
 %%DOCSDIR%%/examples/hello-pascal/Makefile.am
@@ -394,13 +429,16 @@ share/aclocal/xsize.m4
 %%DOCSDIR%%/examples/hello-pascal/po/pl.po
 %%DOCSDIR%%/examples/hello-pascal/po/ro.po
 %%DOCSDIR%%/examples/hello-pascal/po/sr.po
+%%DOCSDIR%%/examples/hello-pascal/po/sv.po
+%%DOCSDIR%%/examples/hello-pascal/po/tr.po
 %%DOCSDIR%%/examples/hello-pascal/po/zh_CN.po
 %%DOCSDIR%%/examples/hello-perl/INSTALL
 %%DOCSDIR%%/examples/hello-perl/Makefile.am
 %%DOCSDIR%%/examples/hello-perl/autoclean.sh
 %%DOCSDIR%%/examples/hello-perl/autogen.sh
 %%DOCSDIR%%/examples/hello-perl/configure.ac
-%%DOCSDIR%%/examples/hello-perl/hello.pl
+%%DOCSDIR%%/examples/hello-perl/hello-1.pl.in
+%%DOCSDIR%%/examples/hello-perl/hello-2.pl.in
 %%DOCSDIR%%/examples/hello-perl/m4/Makefile.am
 %%DOCSDIR%%/examples/hello-perl/po/LINGUAS
 %%DOCSDIR%%/examples/hello-perl/po/Makefile.am
@@ -412,6 +450,8 @@ share/aclocal/xsize.m4
 %%DOCSDIR%%/examples/hello-perl/po/pl.po
 %%DOCSDIR%%/examples/hello-perl/po/ro.po
 %%DOCSDIR%%/examples/hello-perl/po/sr.po
+%%DOCSDIR%%/examples/hello-perl/po/sv.po
+%%DOCSDIR%%/examples/hello-perl/po/tr.po
 %%DOCSDIR%%/examples/hello-perl/po/zh_CN.po
 %%DOCSDIR%%/examples/hello-php/INSTALL
 %%DOCSDIR%%/examples/hello-php/Makefile.am
@@ -431,6 +471,8 @@ share/aclocal/xsize.m4
 %%DOCSDIR%%/examples/hello-php/po/pl.po
 %%DOCSDIR%%/examples/hello-php/po/ro.po
 %%DOCSDIR%%/examples/hello-php/po/sr.po
+%%DOCSDIR%%/examples/hello-php/po/sv.po
+%%DOCSDIR%%/examples/hello-php/po/tr.po
 %%DOCSDIR%%/examples/hello-php/po/zh_CN.po
 %%DOCSDIR%%/examples/hello-python/INSTALL
 %%DOCSDIR%%/examples/hello-python/Makefile.am
@@ -449,6 +491,8 @@ share/aclocal/xsize.m4
 %%DOCSDIR%%/examples/hello-python/po/pl.po
 %%DOCSDIR%%/examples/hello-python/po/ro.po
 %%DOCSDIR%%/examples/hello-python/po/sr.po
+%%DOCSDIR%%/examples/hello-python/po/sv.po
+%%DOCSDIR%%/examples/hello-python/po/tr.po
 %%DOCSDIR%%/examples/hello-python/po/zh_CN.po
 %%DOCSDIR%%/examples/hello-sh/INSTALL
 %%DOCSDIR%%/examples/hello-sh/Makefile.am
@@ -467,6 +511,8 @@ share/aclocal/xsize.m4
 %%DOCSDIR%%/examples/hello-sh/po/pl.po
 %%DOCSDIR%%/examples/hello-sh/po/ro.po
 %%DOCSDIR%%/examples/hello-sh/po/sr.po
+%%DOCSDIR%%/examples/hello-sh/po/sv.po
+%%DOCSDIR%%/examples/hello-sh/po/tr.po
 %%DOCSDIR%%/examples/hello-sh/po/zh_CN.po
 %%DOCSDIR%%/examples/hello-smalltalk/INSTALL
 %%DOCSDIR%%/examples/hello-smalltalk/Makefile.am
@@ -485,6 +531,8 @@ share/aclocal/xsize.m4
 %%DOCSDIR%%/examples/hello-smalltalk/po/pl.po
 %%DOCSDIR%%/examples/hello-smalltalk/po/ro.po
 %%DOCSDIR%%/examples/hello-smalltalk/po/sr.po
+%%DOCSDIR%%/examples/hello-smalltalk/po/sv.po
+%%DOCSDIR%%/examples/hello-smalltalk/po/tr.po
 %%DOCSDIR%%/examples/hello-smalltalk/po/zh_CN.po
 %%DOCSDIR%%/examples/hello-tcl-tk/INSTALL
 %%DOCSDIR%%/examples/hello-tcl-tk/Makefile.am
@@ -503,6 +551,8 @@ share/aclocal/xsize.m4
 %%DOCSDIR%%/examples/hello-tcl-tk/po/pl.po
 %%DOCSDIR%%/examples/hello-tcl-tk/po/ro.po
 %%DOCSDIR%%/examples/hello-tcl-tk/po/sr.po
+%%DOCSDIR%%/examples/hello-tcl-tk/po/sv.po
+%%DOCSDIR%%/examples/hello-tcl-tk/po/tr.po
 %%DOCSDIR%%/examples/hello-tcl-tk/po/zh_CN.po
 %%DOCSDIR%%/examples/hello-tcl/INSTALL
 %%DOCSDIR%%/examples/hello-tcl/Makefile.am
@@ -521,6 +571,8 @@ share/aclocal/xsize.m4
 %%DOCSDIR%%/examples/hello-tcl/po/pl.po
 %%DOCSDIR%%/examples/hello-tcl/po/ro.po
 %%DOCSDIR%%/examples/hello-tcl/po/sr.po
+%%DOCSDIR%%/examples/hello-tcl/po/sv.po
+%%DOCSDIR%%/examples/hello-tcl/po/tr.po
 %%DOCSDIR%%/examples/hello-tcl/po/zh_CN.po
 %%DOCSDIR%%/examples/hello-ycp/INSTALL
 %%DOCSDIR%%/examples/hello-ycp/Makefile.am
@@ -539,6 +591,8 @@ share/aclocal/xsize.m4
 %%DOCSDIR%%/examples/hello-ycp/po/pl.po
 %%DOCSDIR%%/examples/hello-ycp/po/ro.po
 %%DOCSDIR%%/examples/hello-ycp/po/sr.po
+%%DOCSDIR%%/examples/hello-ycp/po/sv.po
+%%DOCSDIR%%/examples/hello-ycp/po/tr.po
 %%DOCSDIR%%/examples/hello-ycp/po/zh_CN.po
 %%DOCSDIR%%/examples/installpaths
 %%DOCSDIR%%/gettext.1.html
@@ -780,33 +834,22 @@ share/locale/zh_TW/LC_MESSAGES/gettext-runtime.mo
 share/locale/zh_TW/LC_MESSAGES/gettext-tools.mo
 @dirrm share/locale/zh_TW/LC_MESSAGES
 @dirrm share/locale/zh_TW
-@dirrm share/locale/zh_CN/LC_MESSAGES
-@dirrm share/locale/uk/LC_MESSAGES
 @dirrm share/locale/sr/LC_MESSAGES
 @dirrm share/locale/sr
 @dirrm share/locale/sk/LC_MESSAGES
 @dirrm share/locale/sk
-@dirrm share/locale/ro/LC_MESSAGES
-@dirrm share/locale/ro
-@dirrm share/locale/pt_BR/LC_MESSAGES
-@dirrm share/locale/pt_BR
 @dirrm share/locale/nn/LC_MESSAGES
 @dirrm share/locale/nn
 @dirrm share/locale/ja/LC_MESSAGES
 @dirrm share/locale/ja
 @dirrm share/locale/id/LC_MESSAGES
 @dirrm share/locale/id
-@dirrm share/locale/gl/LC_MESSAGES
-@dirrm share/locale/gl
 @dirrm share/locale/fi/LC_MESSAGES
 @dirrm share/locale/fi
 @dirrm share/locale/en@quot/LC_MESSAGES
 @dirrm share/locale/en@quot
 @dirrm share/locale/en@boldquot/LC_MESSAGES
 @dirrm share/locale/en@boldquot
-@dirrm share/locale/el/LC_MESSAGES
-@dirrm share/locale/el
-@dirrm share/locale/be/LC_MESSAGES
 @dirrm share/gettext/projects/TP
 @dirrm share/gettext/projects/KDE
 @dirrm share/gettext/projects/GNOME
