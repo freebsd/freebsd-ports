@@ -9,25 +9,21 @@ PORTNAME=	gnomepm
 PORTVERSION=	0.9.3
 PORTREVISION=	1
 CATEGORIES=	misc gnome
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	sobomax
-DISTNAME=	${PORTNAME:S/gnome/gnome-/}-${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_DEBIAN}
+MASTER_SITE_SUBDIR=	pool/main/g/${PORTNAME:S/gnome/gnome-/}
+DISTNAME=	${PORTNAME:S/gnome/gnome-/}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small GNOME app that collects stock information from Yahoo!(c) Finance
 
+LIB_DEPENDS=	ghttp.1:${PORTSDIR}/www/libghttp
+
+WRKSRC=		${WRKDIR}/${PORTNAME:S/gnome/gnome-/}-${PORTVERSION}
+
 USE_X_PREFIX=	yes
-USE_GNOME=	yes
+USE_GNOME=	gnomehack gnomelibs gnomeprefix
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
-
-pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(gnomedatadir\)/gnome/|\$\(gnomedatadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
