@@ -7,6 +7,7 @@
 
 PORTNAME=	screen
 PORTVERSION=	4.0.2
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.uni-erlangen.de/pub/utilities/screen/ \
 		${MASTER_SITE_GNU}
@@ -31,9 +32,10 @@ post-patch:
 	@${RM} ${WRKSRC}/doc/screen.info*
 
 post-install:
-	@${CP} ${WRKSRC}/etc/etcscreenrc ${PREFIX}/etc/screenrc.sample
+	@${MKDIR} ${EXAMPLESDIR}
+	@${CP} ${WRKSRC}/etc/etcscreenrc ${EXAMPLESDIR}/screenrc
 	@if [ ! -f ${PREFIX}/etc/screenrc ]; then \
-		${CP} ${PREFIX}/etc/screenrc.sample ${PREFIX}/etc/screenrc ; \
+		${CP} ${EXAMPLESDIR}/screenrc ${PREFIX}/etc/screenrc ; \
 	fi
 
 .include <bsd.port.post.mk>
