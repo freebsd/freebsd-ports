@@ -1,0 +1,81 @@
+bin/kmerlin
+share/applnk/Internet/kmerlin.desktop
+share/apps/kmerlin/eventsrc
+share/apps/kmerlin/kmerlinbaseui.rc
+share/apps/kmerlin/kmerlinui.rc
+share/apps/kmerlin/pics/kong.png
+share/apps/kmerlin/pics/mail.png
+share/apps/kmerlin/pics/user.png
+share/apps/kmerlin/smilies/angel.png
+share/apps/kmerlin/smilies/angry.png
+share/apps/kmerlin/smilies/bat.png
+share/apps/kmerlin/smilies/beer.png
+share/apps/kmerlin/smilies/boy.png
+share/apps/kmerlin/smilies/cake.png
+share/apps/kmerlin/smilies/camera.png
+share/apps/kmerlin/smilies/cat.png
+share/apps/kmerlin/smilies/clock.png
+share/apps/kmerlin/smilies/coctail.png
+share/apps/kmerlin/smilies/confused.png
+share/apps/kmerlin/smilies/cry.png
+share/apps/kmerlin/smilies/cup.png
+share/apps/kmerlin/smilies/devil.png
+share/apps/kmerlin/smilies/dog.png
+share/apps/kmerlin/smilies/dude_hug.png
+share/apps/kmerlin/smilies/embaressed.png
+share/apps/kmerlin/smilies/envelope.png
+share/apps/kmerlin/smilies/girl.png
+share/apps/kmerlin/smilies/girl_hug.png
+share/apps/kmerlin/smilies/kiss.png
+share/apps/kmerlin/smilies/lightbulb.png
+share/apps/kmerlin/smilies/love.png
+share/apps/kmerlin/smilies/messenger.png
+share/apps/kmerlin/smilies/moon.png
+share/apps/kmerlin/smilies/note.png
+share/apps/kmerlin/smilies/omg.png
+share/apps/kmerlin/smilies/phone.png
+share/apps/kmerlin/smilies/present.png
+share/apps/kmerlin/smilies/regular.png
+share/apps/kmerlin/smilies/rose.png
+share/apps/kmerlin/smilies/sad.png
+share/apps/kmerlin/smilies/shade.png
+share/apps/kmerlin/smilies/smileyrc
+share/apps/kmerlin/smilies/star.png
+share/apps/kmerlin/smilies/teeth.png
+share/apps/kmerlin/smilies/thumbd.png
+share/apps/kmerlin/smilies/thumbu.png
+share/apps/kmerlin/smilies/tounge.png
+share/apps/kmerlin/smilies/ugly.png
+share/apps/kmerlin/smilies/unlove.png
+share/apps/kmerlin/smilies/wilted_rose.png
+share/apps/kmerlin/smilies/wink.png
+share/apps/kmerlin/toolbar/away.png
+share/apps/kmerlin/toolbar/blocked.png
+share/apps/kmerlin/toolbar/e-mail.png
+share/apps/kmerlin/toolbar/filetypes.png
+share/apps/kmerlin/toolbar/invisible.png
+share/apps/kmerlin/toolbar/offline.png
+share/apps/kmerlin/toolbar/online.png
+share/doc/HTML/en/kmerlin/common
+share/doc/HTML/en/kmerlin/index.cache.bz2
+share/doc/HTML/en/kmerlin/index.docbook
+share/icons/hicolor/16x16/apps/kmerlin.png
+share/icons/hicolor/32x32/apps/kmerlin.png
+share/icons/locolor/16x16/apps/kmerlin.png
+share/icons/locolor/32x32/apps/kmerlin.png
+share/locale/ar/LC_MESSAGES/kmerlin.mo
+share/locale/ca/LC_MESSAGES/kmerlin.mo
+share/locale/de/LC_MESSAGES/kmerlin.mo
+share/locale/es/LC_MESSAGES/kmerlin.mo
+share/locale/fr/LC_MESSAGES/kmerlin.mo
+share/locale/is/LC_MESSAGES/kmerlin.mo
+share/locale/nl/LC_MESSAGES/kmerlin.mo
+share/locale/zh_CN/LC_MESSAGES/kmerlin.mo
+share/locale/zh_TW/LC_MESSAGES/kmerlin.mo
+@comment directories
+@dirrm share/doc/HTML/en/kmerlin
+@dirrm share/apps/kmerlin/toolbar
+@dirrm share/apps/kmerlin/smilies
+@dirrm share/apps/kmerlin/pics
+@dirrm share/apps/kmerlin
+@dirrm share/applnk/Internet
