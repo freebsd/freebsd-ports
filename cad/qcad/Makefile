@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qcad
-PORTVERSION=	2.0.1.1
+PORTVERSION=	2.0.1.2
 PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.ribbonsoft.com/archives/qcad/
@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-${PORTREVISION}.src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Professional CAD system
+
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-${PORTREVISION}.src
 
@@ -39,7 +41,7 @@ CFLAGS+=	-O0
 #		-spec ${X11BASE}/share/qt/mkspecs/freebsd-g++ qcad.pro
 
 do-build:
-	cd ${WRKSRC}/scripts && ${SETENV} ${MAKE_ENV} sh ./build_qcad.sh
+	cd ${WRKSRC}/scripts && ${SETENV} ${MAKE_ENV} {SH} ./build_qcad.sh
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qcad/qcad ${PREFIX}/bin/qcad
