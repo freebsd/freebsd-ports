@@ -111,6 +111,14 @@ lib/gnumeric/%%VERSION%%/plugins/openoffice/openoffice.so
 lib/gnumeric/%%VERSION%%/plugins/openoffice/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/plan_perfect/plan_perfect.so
 lib/gnumeric/%%VERSION%%/plugins/plan_perfect/plugin.xml
+lib/gnumeric/%%VERSION%%/plugins/plot_barcol/barcol.so
+lib/gnumeric/%%VERSION%%/plugins/plot_barcol/gog-barcol-prefs.glade
+lib/gnumeric/%%VERSION%%/plugins/plot_barcol/plot-types.xml
+lib/gnumeric/%%VERSION%%/plugins/plot_barcol/plugin.xml
+lib/gnumeric/%%VERSION%%/plugins/plot_pie/gog-pie-prefs.glade
+lib/gnumeric/%%VERSION%%/plugins/plot_pie/pie.so
+lib/gnumeric/%%VERSION%%/plugins/plot_pie/plot-types.xml
+lib/gnumeric/%%VERSION%%/plugins/plot_pie/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/py-func/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/py-func/py_func.py
 lib/gnumeric/%%VERSION%%/plugins/py-func/py_func.pyc
@@ -192,7 +200,13 @@ share/gnome/gnumeric/%%VERSION%%/glade/formula-guru.glade
 share/gnome/gnumeric/%%VERSION%%/glade/fourier-analysis.glade
 share/gnome/gnumeric/%%VERSION%%/glade/function-select.glade
 share/gnome/gnumeric/%%VERSION%%/glade/goalseek.glade
+share/gnome/gnumeric/%%VERSION%%/glade/gog-guru.glade
+share/gnome/gnumeric/%%VERSION%%/glade/gog-style-prefs.glade
 share/gnome/gnumeric/%%VERSION%%/glade/goto.glade
+share/gnome/gnumeric/%%VERSION%%/glade/gradient_n2s.png
+share/gnome/gnumeric/%%VERSION%%/glade/gradient_ne2sw.png
+share/gnome/gnumeric/%%VERSION%%/glade/gradient_nw2se.png
+share/gnome/gnumeric/%%VERSION%%/glade/gradient_w2e.png
 share/gnome/gnumeric/%%VERSION%%/glade/hf-config.glade
 share/gnome/gnumeric/%%VERSION%%/glade/histogram.glade
 share/gnome/gnumeric/%%VERSION%%/glade/hyperlink.glade
@@ -226,6 +240,7 @@ share/gnome/gnumeric/%%VERSION%%/glade/solver.glade
 share/gnome/gnumeric/%%VERSION%%/glade/summary.glade
 share/gnome/gnumeric/%%VERSION%%/glade/tabulate.glade
 share/gnome/gnumeric/%%VERSION%%/glade/variance-tests.glade
+share/gnome/gnumeric/%%VERSION%%/glade/view.glade
 share/gnome/gnumeric/%%VERSION%%/glade/workbook-attr.glade
 share/gnome/gnumeric/%%VERSION%%/gnome-2.0/ui/GNOME_Gnumeric.xml
 share/gnome/gnumeric/%%VERSION%%/gnome-2.0/ui/GNOME_Gnumeric_Component.xml
@@ -710,6 +725,7 @@ share/locale/fi/LC_MESSAGES/gnumeric.mo
 share/locale/fr/LC_MESSAGES/gnumeric.mo
 share/locale/ga/LC_MESSAGES/gnumeric.mo
 share/locale/gl/LC_MESSAGES/gnumeric.mo
+share/locale/he/LC_MESSAGES/gnumeric.mo
 share/locale/hi/LC_MESSAGES/gnumeric.mo
 share/locale/hr/LC_MESSAGES/gnumeric.mo
 share/locale/hu/LC_MESSAGES/gnumeric.mo

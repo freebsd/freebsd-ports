@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnumeric2
-PORTVERSION=	1.1.17
-PORTREVISION=	1
+PORTVERSION=	1.1.19
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/1.1
@@ -35,8 +34,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 PLIST_SUB=	VERSION=${PORTVERSION}-bonobo
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC}/plugins -name "plugin.xml.in" | ${XARGS} \
 		${REINPLACE_CMD} -e 's|\.la|.so|g'
 	@${RM} -f ${WRKSRC}/GNOME_Gnumeric.server.in

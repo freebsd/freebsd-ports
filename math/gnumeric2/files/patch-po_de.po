@@ -1,11 +1,73 @@
---- po/de.po.orig	Fri Feb  7 01:56:00 2003
-+++ po/de.po	Fri Feb  7 02:13:28 2003
-@@ -36,7 +36,7 @@
- "Last-Translator: Christian Neumair <chris@gnome-de.org>\n"
- "Language-Team: German <gnome-de@gnome.org>\n"
- "MIME-Version: 1.0\n"
--"Content-Type: text/plain; charset=UTF-8\n"
-+"Content-Type: text/plain; charset=ISO-8859-1\n"
- "Content-Transfer-Encoding: 8bit\n"
+--- po/de.po.orig	Sat Jun  7 13:25:35 2003
++++ po/de.po	Wed Jun 11 20:49:26 2003
+@@ -17418,8 +17418,6 @@
+ msgid "Modify the workbook attributes"
+ msgstr "Eigenschaften des Arbeitsbuches Ã¤ndern"
  
- #: GNOME_Gnumeric.server.in.in.h:1
+-# Or "Währung"?
+-# 2001-02-17 07:30:29 CET -ke-
+ #: src/GNOME_Gnumeric.xml.h:157 src/workbook-format-toolbar.c:460
+ msgid "Money"
+ msgstr "Geld"
+@@ -17567,8 +17565,6 @@
+ msgid "Rectangle"
+ msgstr "Rechteck"
+ 
+-# Or just: "Rückgängig wiederherstellen"
+-# 2001-02-14 08:43:51 CET -ke-
+ #: src/GNOME_Gnumeric.xml.h:191 src/workbook-control-gui.c:4298
+ msgid "Redo the undone action"
+ msgstr "RÃ¼ckgÃ¤ngig gemachte Aktion wiederherstellen"
+@@ -26334,7 +26330,6 @@
+ msgid "Sheet 1"
+ msgstr "Blatt 1"
+ 
+-# or better: Einzug?
+ # 2001-11-27 14:16:24 CET -ke-
+ #: src/print-info.c:509
+ msgid "tab"
+@@ -26492,7 +26487,6 @@
+ msgid "(Non Blanks...)"
+ msgstr "(Nicht leere...)"
+ 
+-# "überlappt"?
+ # 2001-07-15 06:40:24 CEST -ke-
+ #: src/sheet-merge.c:80
+ #, c-format
+@@ -26627,7 +26621,6 @@
+ msgid "Column %i"
+ msgstr "Spalte %i"
+ 
+-# CHECK, = numerisch?
+ # 2001-02-11 07:05:07 CET -ke-
+ #: src/tools/analysis-tools.c:222
+ #, c-format
+@@ -26657,15 +26650,6 @@
+ msgid "Covariance (%s)"
+ msgstr "Kovarianz (%s)"
+ 
+-# skewness = Schräge / Bitversatz? (lt. leo)
+-# 2001-02-10 00:50:23 CET -ke-
+-#.
+-#. * Note to translators: in the following string and others like it,
+-#. * the "/" is a separator character that can be changed to anything
+-#. * if the translation needs the slash; just use, say, "|" instead.
+-#. *
+-#. * The items are bundled like this to increase translation context.
+-#.
+ #: src/tools/analysis-tools.c:941
+ msgid ""
+ "/Mean/Standard Error/Median/Mode/Standard Deviation/Sample Variance/Kurtosis/"
+@@ -28120,12 +28104,6 @@
+ msgid "Nothing"
+ msgstr "Nichts"
+ 
+-# CHECK
+-# "entfrieren" (sic!)
+-# "auftauen"?
+-# 2001-07-15 06:44:59 CEST -ke-
+-# hmmm, auftauen
+-# 2001-12-24 -cm-
+ #: src/workbook-control-gui.c:1496
+ msgid "Un_freeze Panes"
+ msgstr "FlÃ¤chen au_ftauen"
