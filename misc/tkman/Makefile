@@ -3,11 +3,11 @@
 # Date created:         27 Dec 1994
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.5 1995/04/12 20:31:41 asami Exp $
+# $Id: Makefile,v 1.6 1995/05/13 10:22:04 asami Exp $
 #
 
 DISTNAME=	tkman-1.6
-CATEGORIES+=	x11
+CATEGORIES+=	utilities
 MASTER_SITES=	ftp://ftp.cs.berkeley.edu/ucb/people/phelps/tcltk/
 EXTRACT_SUFX=	.tar.Z
 

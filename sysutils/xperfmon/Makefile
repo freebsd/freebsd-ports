@@ -3,13 +3,13 @@
 # Date created:		8 March 95
 # Whom:			Lars Koeller <lars.koeller@odie.physik2.uni-rostock.de>
 #
-# $Id: Makefile,v 1.3 1995/04/12 15:22:37 asami Exp $
+# $Id: Makefile,v 1.4 1995/04/12 20:32:12 asami Exp $
 #
 
 DISTNAME=	xperfmon++
 PKGNAME=	xperfmon-1.1
 USE_IMAKE=	yes
-CATEGORIES+=	x11
+CATEGORIES+=	utilities
 # In Germany try this
 # MASTER_SITES=	ftp://odie.physik2.uni-rostock.de/pub/
 MASTER_SITES=	ftp://proteus.arc.nasa.gov/pub/
