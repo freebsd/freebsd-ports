@@ -1,9 +1,9 @@
 # New ports collection makefile for:	scotty
-# Version required:	2.1.3
+# Version required:	2.1.5
 # Date created:		18 Februar 1995
 # Whom:			Gennady Sorokopud <gena@netvision.net.il>
 #
-# $Id: Makefile,v 1.17 1997/03/10 10:49:00 asami Exp $
+# $Id: Makefile,v 1.18 1997/04/20 13:19:38 wosch Exp $
 #
 
 DISTNAME=	scotty-2.1.5
