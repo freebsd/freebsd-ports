@@ -22,5 +22,6 @@ USE_GMAKE=	yes
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/yahoo-transport.so ${PREFIX}/lib/jabber/
+	${INSTALL_DATA} ${WRKSRC}/yahoo-jabber.xml ${PREFIX}/etc/yahoo-jabber.xml.sample
 
 .include <bsd.port.mk>
