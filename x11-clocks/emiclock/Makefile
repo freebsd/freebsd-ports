@@ -1,25 +1,23 @@
 # New ports collection makefile for:	EmiClock
-# Version required:	1.0.2
+# Version required:	1.0.4
 # Date created:		15 March 1995
 # Whom:			Nobuhiro Yasutomi
 #
-# $Id: Makefile,v 1.7 1997/05/28 22:41:27 fenner Exp $
+# $Id: Makefile,v 1.8 1997/12/25 22:29:49 asami Exp $
 #
 
-DISTNAME=	EmiClock-1.0.2
-PKGNAME=	emiclock-1.0.2
+DISTNAME=	emiclock-1.0.4
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.iis.u-tokyo.ac.jp/pub1/X/contrib/applications/ \
-		ftp://sunsite.unc.edu/pub/X11/contrib/applications/
+MASTER_SITES=	ftp://ftp.plaza.hitachi-sk.co.jp/pub/EmiClock/X11/
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	nobu@psrc.isac.co.jp
 
 USE_IMAKE=	yes
 
 LANGRES=	resources/R6/EUC/EmiClock.ad
 LANGDIR=	$(X11BASE)/lib/X11/ja_JP.EUC/app-defaults
 EMICLOCKDIR=	$(X11BASE)/lib/X11/EmiClock
-COPYRIGHTS=	COPYRIGHT COPYRIGHT.E
+COPYRIGHTS=	COPYRIGHT COPYRIGHT.en
 
 pre-install:
 	@if [ ! -d $(EMICLOCKDIR) ] ; then mkdir -p $(EMICLOCKDIR); fi
