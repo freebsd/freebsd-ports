@@ -45,6 +45,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAN1=		BitchX.1
 
 .if defined(WITH_GNOME)
+USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gnomelibs
 CONFIGURE_ARGS+=--with-gtk
