@@ -126,11 +126,11 @@ CONFIGURE_ARGS+=	--enable-mp3lame
 .endif
 ## optimization
 .ifdef(WITH_OPTIMIZED_CFLAGS)
-CONFIGURE_ARGS+=	--extra-cflags="-I${LOCALBASE}/include \
+CONFIGURE_ARGS+=	--extra-cflags="-fPIC -I${LOCALBASE}/include \
 			-I${X11BASE}/include \
 			-ffast-math -fomit-frame-pointer"
 .else
-CONFIGURE_ARGS+=	--extra-cflags="-I${LOCALBASE}/include \
+CONFIGURE_ARGS+=	--extra-cflags="-fPIC -I${LOCALBASE}/include \
 			-I${X11BASE}/include" \
 			--disable-opts
 .endif
