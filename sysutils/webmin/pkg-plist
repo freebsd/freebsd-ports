@@ -102,6 +102,7 @@ lib/webmin/apache/create_dir.cgi
 lib/webmin/apache/create_files.cgi
 lib/webmin/apache/create_htaccess.cgi
 lib/webmin/apache/create_virt.cgi
+lib/webmin/apache/darkstar.site
 lib/webmin/apache/defaultacl
 lib/webmin/apache/delete_htaccess.cgi
 lib/webmin/apache/dir_index.cgi
@@ -117,6 +118,7 @@ lib/webmin/apache/edit_virt.cgi
 lib/webmin/apache/edit_vserv.cgi
 lib/webmin/apache/files_index.cgi
 lib/webmin/apache/find_htaccess.cgi
+lib/webmin/apache/florissa.site
 lib/webmin/apache/htaccess.cgi
 lib/webmin/apache/htaccess_index.cgi
 lib/webmin/apache/images/def.gif
@@ -219,6 +221,11 @@ lib/webmin/apache/show_htaccess.cgi
 lib/webmin/apache/show_virt.cgi
 lib/webmin/apache/start.cgi
 lib/webmin/apache/stop.cgi
+lib/webmin/apache/test/conf/access.conf
+lib/webmin/apache/test/conf/httpd.conf
+lib/webmin/apache/test/conf/httpd.conf.old
+lib/webmin/apache/test/conf/mime.types
+lib/webmin/apache/test/conf/srm.conf
 lib/webmin/apache/useradmin_update.pl
 lib/webmin/apache/virt_index.cgi
 lib/webmin/bind8/acl_security.pl
@@ -5069,8 +5076,10 @@ lib/webmin/xinetd/xinetd-lib.pl
 @dirrm lib/webmin/inittab/help
 @dirrm lib/webmin/inittab/lang
 @dirrm lib/webmin/inittab/images
+@dirrm lib/webmin/apache/test/conf
 @dirrm lib/webmin/apache/images
 @dirrm lib/webmin/apache/lang
+@dirrm lib/webmin/apache/test
 @dirrm lib/webmin/bind8/images
 @dirrm lib/webmin/bind8/lang
 @dirrm lib/webmin/bsdexports/images
