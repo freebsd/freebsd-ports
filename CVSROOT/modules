@@ -1952,6 +1952,7 @@ gkrellflynn	ports/sysutils/gkrellflynn
 gkrellkam	ports/graphics/gkrellkam
 gkrellkam2	ports/graphics/gkrellkam2
 gkrellm		ports/sysutils/gkrellm
+gkrellm-gamma	ports/misc/gkrellm-gamma
 gkrellm-reminder	ports/misc/gkrellm-reminder
 gkrellm2	ports/sysutils/gkrellm2
 gkrellm_snmp	ports/net/gkrellm_snmp
