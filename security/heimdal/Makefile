@@ -7,7 +7,7 @@
 #
 
 DISTNAME=		heimdal-0.2l
-CATEGORIES=		security
+CATEGORIES=		security ipv6
 MASTER_SITES=		ftp://ftp.pdc.kth.se/pub/heimdal/src/ \
 			ftp://ftp.replay.com/pub/replay/crypto/APPS/kerberos/heimdal/ \
 			ftp://ftp.tuniv.szczecin.pl/dsk4/ftp.replay.com/pub/crypto/APPS/kerberos/heimdal/ \
