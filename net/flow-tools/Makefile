@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.eng.oar.net/pub/flow-tools/
 
 MAINTAINER=	billf@FreeBSD.org
-COMMENT=	Programs to work with Cisco NetFlow
+COMMENT=	Suite of tools and library to work with netflow data
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
