@@ -42,11 +42,11 @@ do-build:
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/ext/strscanso/strscan.so \
 		${PREFIX}/lib/ruby/site_ruby/${RUBY_VER}/${RUBY_ARCH}/
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/examples/ruby/strscan
 .for f in ${EXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/examples/ruby/strscan/
 .endfor
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/ruby/strscan/ja
 .for f in ${DOCS_EN}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/ruby/strscan/
