@@ -16,10 +16,10 @@ SAMBA
 -------
 
 1) edit the [global] section of smb.conf and make sure it has these
-   lines:
+   lines (see 'man cupsaddsmb' for more info):
 
 [global]
-	load printer = yes
+	load printers = yes
 	printing = cups
 	printcap name = cups
 
@@ -29,12 +29,12 @@ SAMBA
 [printers]
 	comment = All Printers
 	path = /var/spool/samba
-	printer admin = root
-	guest ok = yes
-	printable = yes
 	browseable = no
 	public = yes
+	guest ok = yes
 	writable = no
+	printable = yes
+	printer admin = root
 
 3) edit the [print$] section of smb.conf and make sure it has these
    lines:
@@ -43,6 +43,7 @@ SAMBA
 	comment = Printer Drivers
 	path = %%PREFIX%%/share/cups/drivers
 	browseable = yes
+	# guest ok = yes works too
 	guest ok = no
 	read only = yes
 	write list = root
@@ -79,6 +80,9 @@ will be automagically installed.
 ____________
 NOTE:  Other settings in smb.conf may work, but your REALLY need to
 know what your are doing.  :)
+
+%%PREFIX%%/share/doc/samba/Samba-HOWTO-Collection.pdf has some
+valuable information on this topic, especially chapters 17 and 18.
 
 **********************************************************************
 **********************************************************************
