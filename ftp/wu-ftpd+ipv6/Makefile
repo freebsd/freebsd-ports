@@ -13,7 +13,12 @@ CATEGORIES=	ftp
 MASTER_SITES=   ftp://ftp.vr.net/pub/wu-ftpd/wu-ftpd/
 
 PATCH_SITES=	ftp://ftp.wu-ftpd.org/pub/wu-ftpd/quickfixes/apply_to_2.5.0/
-PATCHFILES=	mapped.path.overrun.patch
+PATCHFILES=     \
+		data-limit.patch \
+		deny.not.nameserved.patch \
+		mapped.path.overrun.patch \
+		not.in.class.patch \
+		rfc931.timeout.patch
 
 MAINTAINER=     ache@FreeBSD.org
 
