@@ -1,5 +1,5 @@
-# New ports collection makefile for:	jdk14
-# Date created:				6 March 2003
+# New ports collection makefile for:	jdk15
+# Date created:				12 January 2005
 # Whom:					Alexey Zelkin <phantom@FreeBSD.org>
 #
 # $FreeBSD$
@@ -9,45 +9,39 @@ PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/software/java2/download.html
-#		 http://www.eyesbeyond.com/freebsddom/java/jdk14.html
-SCSL_SRCFILE=	j2sdk-${JDK_VERSION:S/./_/g}-src-scsl.zip
-SCSL_BINFILE=	j2sdk-${JDK_VERSION:S/./_/g}-bin-scsl.zip
-PATCHSETFILE=	bsd-jdk14-patches-${JDK_PATCHSET_VERSION}.tar.gz
+#		 http://www.eyesbeyond.com/freebsddom/java/jdk15.html
+SCSL_SRCFILE=	jdk-${JDK_VERSION:S/./_/g}-src-scsl.zip
+SCSL_BINFILE=	jdk-${JDK_VERSION:S/./_/g}-bin-scsl.zip
+PATCHSETFILE=	bsd-jdk15-patches-${JDK_PATCHSET_VERSION}.tar.bz2
 DISTFILES=	${SCSL_SRCFILE} ${SCSL_BINFILE} ${PATCHSETFILE}
 
 MAINTAINER=	phantom@FreeBSD.org
-COMMENT=	Java Development Kit 1.4.2
+COMMENT=	Java Development Kit 1.5.0
 
+# XXX: iconv dependency?
 EXTRACT_DEPENDS=zip:${PORTSDIR}/archivers/zip
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		zip:${PORTSDIR}/archivers/zip \
-		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif \
-		${LOCALBASE}/include/nspr/prtypes.h:${PORTSDIR}/devel/nspr
+		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
-.if !defined(MINIMAL)
-RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/URW/fonts.dir:${PORTSDIR}/x11-fonts/urwfonts
-.endif
+
+PLIST=		${WRKDIR}/pkg-plist
+PKGINSTALL=	${WRKDIR}/pkg-install
 
 WRKSRC=		${WRKDIR}/control/make
 
-JDK_VERSION=	1.4.2
-JDK_PATCHSET_VERSION=	7
-LATEST_LINK=	jdk14
+JDK_VERSION=	1.5.0
+JDK_PATCHSET_VERSION=	1
+LATEST_LINK=	jdk15
 
 SUN_LINUX_JDK_VERSION=  1.4.2
 
 .if !defined(WITH_LINUX_BOOTSTRAP)
 NATIVE_BOOTSTRAP_JDKS=	${LOCALBASE}/jdk1.4.2 \
-			${LOCALBASE}/jdk1.4.1
+			${LOCALBASE}/jdk1.5.0
 .endif
 
-LINUX_BOOTSTRAP_JDKS=	${LOCALBASE}/linux-sun-jdk1.4.2_03 \
-			${LOCALBASE}/linux-sun-jdk1.4.2_02 \
-			${LOCALBASE}/linux-sun-jdk1.4.2_01 \
-			${LOCALBASE}/linux-sun-jdk1.4.2 \
-			${LOCALBASE}/linux-sun-jdk1.4.1_02 \
-			${LOCALBASE}/linux-sun-jdk1.4.1_01 \
-			${LOCALBASE}/linux-sun-jdk1.4.1
+LINUX_BOOTSTRAP_JDKS=	${LOCALBASE}/linux-sun-jdk1.4.2
 
 .include <bsd.port.pre.mk>
 
@@ -77,61 +71,54 @@ JDK14DIR?=	${LOCALBASE}/linux-sun-jdk${SUN_LINUX_JDK_VERSION}
 
 BUILD_DEPENDS+=	${JDK14DIR}/bin/javac:${PORTSDIR}/java/linux-sun-jdk14
 
-# workaround to handle both 'zip' and 'tar.gz' distfiles
+# workaround to handle both 'zip' and 'tar.bz2' distfiles
 USE_ZIP=	YES
 EXTRACT_ONLY=	${SCSL_SRCFILE} ${SCSL_BINFILE}
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 USE_GMAKE=	YES
 USE_REINPLACE=	YES
 RESTRICTED=	"Redistribution of pre-compiled binaries is not permitted"
 NO_CDROM=	"Redistribution of pre-compiled binaries is not permitted"
+
 MAKE_ENV=	ALT_BOOTDIR="${JDK14DIR}" \
 		ALT_MOTIF_DIR="${X11BASE}" \
 		SYS_CFLAGS="${CFLAGS}" \
-		DEV_ONLY="YES" \
 		LANG="C" \
 		JAVA_HOME="" \
 		CLASSPATH="" \
 		LD_LIBRARY_PATH="" \
-		MAKEFLAGS=""
-.if defined(MINIMAL)
-MAKE_ENV+=	NO_PLUGIN="YES" \
-		NO_JAVAWS="YES"
-.endif
-ALL_TARGET=	all
-PLIST_SUB+=	JDK_VERSION=${JDK_VERSION}
-PKGINSTALL=	${WRKDIR}/pkg-install
-
-JDKIMAGEDIR=	${WRKSRC}/../build/bsd-i586/j2sdk-image
-JDKIMAGEDIR_G=	${WRKSRC}/../build/bsd-i586/j2sdk-debug-image
-
+		MAKEFLAGS="" \
+		SKIP_COMPARE_IMAGES="YES" \
+		DONT_BUILD_DOCS="YES" \
+		DONT_BUILD_DEPLOY="YES" \
+		DONT_BUILD_INSTALL="YES"
 .if !defined(WITH_IPV6)
-EXTRA_PATCHES+=	${PATCHDIR}/disable-ipv6.patch
+MAKE_ENV+=	DONT_ENABLE_IPV6="YES"
 .endif
 
-.if defined(MINIMAL)
-PLIST_SUB+=	MINIMAL:="@comment "
-PKGNAMESUFFIX=	-minimal
+ALL_TARGET=	all
+
+.if (${ARCH} == amd64)
+HOTSPOTARCH=amd64
 .else
-PLIST_SUB+=	MINIMAL:=""
+HOTSPOTARCH=i586
 .endif
 
-.if defined(WITH_DEBUG)
-PLIST_SUB+=	DEBUG:=""
-.else
-PLIST_SUB+=	DEBUG:="@comment "
-.endif
+JDKIMAGEDIR=	${WRKSRC}/../build/bsd-${HOTSPOTARCH}/j2sdk-image
+JDKIMAGEDIR_G=	${WRKSRC}/../build/bsd-${HOTSPOTARCH}/j2sdk-debug-image
 
 PTHREAD_FILES=	../../hotspot/build/bsd/makefiles/vm.make \
-		../../j2se/make/common/Defs.gmk	\
-		../../j2se/make/common/Program.gmk \
+		../../j2se/make/com/sun/java/pack/Makefile \
+		../../j2se/make/common/Defs.gmk \
 		../../j2se/make/common/Defs-bsd.gmk \
-		../../j2se/make/java/hpi/hpi_common.gmk \
+		../../j2se/make/common/Program.gmk \
 		../../j2se/make/java/hpi/native/Makefile \
 		../../j2se/make/java/net/Makefile \
-		../../deploy/make/common/Defs-bsd.gmk \
-		../../deploy/make/plugin/common/config.gmk
+		../../j2se/make/java/nio/Makefile \
+		../../j2se/make/jpda/transport/socket/Makefile \
+		../../j2se/make/sun/cmm/Makefile \
+		../../j2se/make/sun/xawt/Makefile
 
 LD_LIBRARY_PATH_FILES=	../../hotspot/src/os/bsd/vm/os_bsd.cpp
 
@@ -168,45 +155,17 @@ IGNORE= :\n\
 The source distribution exists on your system, but due to\n\
 licensing restrictions you still need to download the\n\
 patchset, ${PATCHSETFILE}, from\n\
-http://www.eyesbeyond.com/freebsddom/java/jdk14.html.\n\
+http://www.eyesbeyond.com/freebsddom/java/jdk15.html.\n\
 Please place the patchset in ${DISTDIR}.\n
 .endif
 
-# JDK 1.4.2 require recent version of FreeBSD due to recent libc_r updates.
-# Make check for reqiuired primities as early as possible
-
-TESTPROG=testos
-
-.if ${OSVERSION} > 500000
-LINKIT=	-lc_r
-.else
-LINKIT=	-pthread
-.endif
-
-check-os:
-.if !defined(SKIP_OS_TEST)
-	-@mkdir -p ${WRKDIR} ; \
-	rm -f ${WRKDIR}/${TESTPROG} ; \
-	gcc ${LINKIT} -o ${WRKDIR}/${TESTPROG} \
-		${FILESDIR}/${TESTPROG}.c > /dev/null 2>&1
-	@if [ ! -f ${WRKDIR}/${TESTPROG} ] ; \
-	then \
-	/usr/bin/printf "\n\
-You must have a version of FreeBSD later than 4.7-STABLE\n\
-February 2003 or 5-CURRENT February 2003 to compile and\n\
-use JDK 1.4.2.\n\n" ; \
-	exit 1 ; \
-	fi
-	@${WRKDIR}/${TESTPROG} 2>/dev/null
-.endif
-
-pre-fetch:	check-os
+pre-fetch:
 	@${ECHO_MSG}
-	@${ECHO_MSG} "IMPORTANT: To build JDK 1.4.2 port, you should have at least"
+	@${ECHO_MSG} "IMPORTANT: To build JDK 1.5.0 port, you should have at least"
 	@${ECHO_MSG} "1.7Gb of free disk space in build area!"
 	@${ECHO_MSG}
 .if defined(WITH_LINUX_BOOTSTRAP)
-	@${ECHO_MSG} "IMPORTANT: To build JDK 1.4.2 port, you should have linux emulation"
+	@${ECHO_MSG} "IMPORTANT: To build JDK 1.5.0 port, you should have linux emulation"
 	@${ECHO_MSG} "enabled in the kernel and linux procfs (linprocfs) filesystem"
 	@${ECHO_MSG} "mounted."
 	@${ECHO_MSG}
@@ -216,17 +175,21 @@ pre-fetch:	check-os
 	@${ECHO_MSG} "    WITH_DEBUG  - install JDK binaries and libraries"
 	@${ECHO_MSG} "                  with debuging support"
 	@${ECHO_MSG}
-	@${ECHO_MSG} "    MINIMAL     - don't build/install mozilla java"
-	@${ECHO_MSG} "                  plugin, javaws and JDK demos"
-	@${ECHO_MSG}
 	@${ECHO_MSG} "    WITH_IPV6   - enable JDK IPv6 support"
+	@${ECHO_MSG}
+
+pre-everything::
+	@${ECHO_MSG}
+	@${ECHO_MSG} "WARNING: "
+	@${ECHO_MSG} "WARNING: This is ALPHA quality software, and suitable for testing ONLY!"
+	@${ECHO_MSG} "WARNING: "
 	@${ECHO_MSG}
 
 pre-patch:
 	@cd ${WRKDIR} &&  \
-		${GZIP_CMD} -dc ${DISTDIR}/${PATCHSETFILE} | ${TAR} -xf - && \
+		${BZIP2_CMD} -dc ${DISTDIR}/${PATCHSETFILE} | ${TAR} -xf - && \
 		${CHMOD} -R u+w * && \
-		${PATCH} -p0 < ${WRKDIR}/jdk14.patches
+		${PATCH} -p0 < ${WRKDIR}/jdk15.patches
 
 post-patch:
 	@for file in ${LD_LIBRARY_PATH_FILES}; do \
@@ -234,7 +197,7 @@ post-patch:
 			${WRKSRC}/$${file}; \
 	done
 	@for file in ${PTHREAD_FILES}; do \
-		${REINPLACE_CMD} -e "s:-lkse:${PTHREAD_LIBS}:g" \
+		${REINPLACE_CMD} -e "s:-pthread:${PTHREAD_LIBS}:g" \
 			${WRKSRC}/$${file}; \
 	done
 
@@ -280,9 +243,6 @@ do-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
 post-build:
-	@# make sure that SwingSet2/resources does not exists
-	@${RM} -rf ${JDKIMAGEDIR}/demo/jfc/SwingSet2/resources
-	@${RM} -rf ${JDKIMAGEDIR}/demo/plugin/jfc/SwingSet2/resources
 	@# XXX don't install japanese manpages
 	@${RM} -rf ${JDKIMAGEDIR}/man/ja
 	@${RM} -rf ${JDKIMAGEDIR}/man/ja_JP.eucJP
@@ -294,29 +254,28 @@ pre-install:
 	@${ECHO_MSG} "with debugging support."
 	@${ECHO_MSG}
 .endif
-.if defined(MINIMAL)
-	@${RM} -rf ${JDKIMAGEDIR}/demo
-.endif
 
 do-install:
+	${RM} -f ${PLIST}
+	${TOUCH} ${PLIST}
 	${MKDIR} ${PREFIX}/jdk${JDK_VERSION}
 	cd ${JDKIMAGEDIR} && ${FIND} . \
 	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
+	@${FIND} -s ${JDKIMAGEDIR} -not -type d | \
+	  ${SED} -ne 's#^${JDKIMAGEDIR}#jdk${JDK_VERSION}#p' >> ${PLIST}
 .if defined(WITH_DEBUG)
 	cd ${JDKIMAGEDIR_G} && ${FIND} . \
 	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
+	@${FIND} -s ${JDKIMAGEDIR_G} -not -type d | \
+	  ${SED} -ne 's#^${JDKIMAGEDIR}#jdk${JDK_VERSION}#p' >> ${PLIST}
 .endif
-	${INSTALL_DATA} ${FILESDIR}/cacerts \
-		${PREFIX}/jdk${JDK_VERSION}/jre/lib/security/cacerts
-.if !defined(MINIMAL)
-	${INSTALL_DATA} ${FILESDIR}/cacerts \
-		${PREFIX}/jdk${JDK_VERSION}/jre/javaws/cacerts
-.endif
+	@${FIND} -s -d ${PREFIX}/jdk${JDK_VERSION} -type d | \
+	  ${SED} -ne 's#^${PREFIX}/#@dirrm #p' >> ${PLIST}
+	@${ECHO_MSG} "@exec ${LOCALBASE}/bin/registervm ${PREFIX}/jdk${JDK_VERSION}/bin/java # FREEBSD-JDK${JDK_VERSION}" >> ${PLIST}
+	@${ECHO_MSG} "@unexec ${LOCALBASE}/bin/unregistervm ${PREFIX}/jdk${JDK_VERSION}/bin/java" >> ${PLIST}
 
+# XXX: put unregistervm into install script ?
 post-install:
-.if !defined(MINIMAL)
-	${FIND} "${PREFIX}/jdk${JDK_VERSION}/jre/plugin" -type d | ${XARGS} ${CHMOD} a+rx
-.endif
 	@${LOCALBASE}/bin/registervm "${PREFIX}/jdk${JDK_VERSION}/bin/java # FREEBSD-JDK${JDK_VERSION}"
 	@${SED} -e "s:%%JRE_HOME%%:${PREFIX}/jdk${JDK_VERSION}/jre:g" \
 	  < ${FILESDIR}/pkg-install.in > ${PKGINSTALL}

@@ -1,5 +1,5 @@
-SUN COMMUNITY SOURCE LICENSE Version 2.3 (Rev.  Date Feb. 
-23, 1999)
+SUN COMMUNITY SOURCE LICENSE Version 2.3 (Rev. Date Sept. 
+29, 2004)
         
 RECITALS
         
@@ -119,9 +119,8 @@ to You.
 
 3.Requirements and Responsibilities.
 
-3.1 Research Use License.  As a condition of exercising 
-the rights granted under Section 2.1 a) above, You agree to 
-comply with the following:
+3.1 Research Use License.  As a condition of exercising the rights 
+granted under Section 2.1 a) above, You agree to comply with the following:
 
 a) Your Contribution to the Community.  All Error
 Corrections and Shared Modifications which You create or
@@ -309,7 +308,7 @@ Original Code, Upgraded Code, Error Corrections or Shared
 Modifications contributed by You, or Specifications,
 infringe a patent owned or controlled by You.
 
-6.3 Effective of Termination.  Upon termination, You agree
+6.3 Effect of Termination.  Upon termination, You agree
 to discontinue use and return or destroy all copies of
 Covered Code in your possession.  All sublicenses to the
 Covered Code which you have properly granted shall survive
@@ -708,7 +707,7 @@ Java(tm) 2 SDK Technology
 
 Description of "Technology"
 
-Java(tm) 2 SDK Technology v.1.4.2 as described on the
+Java(tm) 2 SDK Technology v. 5.0 as described on the
 Technology Download Site.
 
 ATTACHMENT C
@@ -994,16 +993,16 @@ must be delivered in person or by means evidenced by a
 delivery receipt and will be effective upon receipt by the
 persons at the addresses specified below.
 
-Original Contributor:           You:
+Original Contributor:  			You:
 
-Sun Microsystems, Inc.          _____________________________
+Sun Microsystems, Inc.  		_____________________________
 
-4150 Network Circle             ______________________________
+4150 Network Circle 			______________________________
 
-Santa Clara, California 95054   ______________________________
+Santa Clara, California 95054 	______________________________
 
 Attn.:  VP, Sun Software and 
-Technology Sales                ______________________________
+Technology Sales				______________________________
 cc:  Legal (Software Sales) 
 
 11.  Disclaimer of Agency.  The relationship created hereby
@@ -1014,17 +1013,15 @@ hereby waive the benefit of any state or federal statutes
 dealing with the establishment and regulation of franchises.
 
 Agreed:
+You: 						Original Contributor:
 
-You:                            Original Contributor:
-
-_____________________________   Sun Microsystems, Inc.
+_____________________________ 	Sun Microsystems, Inc.
 (Your Name) 
+By:_________________________		By:_____________________
 
-By:_________________________    By:_____________________
+Title:_______________________		Title:____________________
 
-Title:_______________________   Title:____________________
-
-Date:______________________     Date:____________________
+Date:______________________ 		Date:____________________
 
 ATTACHMENT E TECHNOLOGY COMPATIBILITY KIT
 
