@@ -1,12 +1,10 @@
---- servproc.h.orig	Sat May 27 15:00:37 2000
-+++ servproc.h	Sat May 27 15:00:58 2000
-@@ -29,6 +29,9 @@
+--- servproc.h.orig	Wed Apr  7 09:44:22 1999
++++ servproc.h	Thu Jul 13 18:53:55 2000
+@@ -29,6 +29,7 @@
  #endif
  #include <sys/time.h>
  #include <sys/stat.h>
-+#if defined(__FreeBSD__) && __FreeBSD__ >= 5
 +#include <machine/param.h> /* for ALIGN macro needed by CMSG_DATA */
-+#endif
  #include <sys/socket.h>
  #include <sys/un.h>
  #include <sys/file.h>
