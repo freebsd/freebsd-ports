@@ -1,11 +1,11 @@
 etc/periodic/daily/accounting
 etc/periodic/monthly/accounting
-etc/tas/AcctLog.conf
-etc/tas/AcctLog.conf.default
-etc/tas/accounting.conf
-etc/tas/accounting.conf.default
-etc/tas/tas.conf
-etc/tas/tas.conf.default
+etc/tas/AcctLog.conf.sample
+etc/tas/accounting.conf.sample
+etc/tas/cgi.conf.en
+etc/tas/cgi.conf.ru
+etc/tas/tas.conf.sample
+sbin/AcctConvert
 sbin/AcctFetch
 sbin/AcctJoin
 sbin/AcctLog
@@ -14,8 +14,14 @@ sbin/AcctMax
 sbin/AcctSendmail
 sbin/AcctSquid
 share/doc/tas/TAS.html
-@dirrm share/doc/tas
+share/doc/tas/model.png
+share/doc/tas/newcolumn.png
+share/doc/tas/newlist.png
+share/doc/tas/report.html
+share/tas/cgi/AcctLog.cgi
+share/tas/cgi/Client.cgi
+@unexec if [ -L %D/etc/tas/cgi.conf ] ; then /bin/rm %D/etc/tas/cgi.conf ; fi
 @dirrm etc/tas
-@dirrm etc/periodic/monthly
-@dirrm etc/periodic/daily
-@dirrm etc/periodic
+@dirrm share/doc/tas
+@dirrm share/tas/cgi
+@dirrm share/tas
