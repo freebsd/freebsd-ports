@@ -29,6 +29,7 @@
 */opt/intel/%%COMPILERDIR%%/ia32/include/list.h
 */opt/intel/%%COMPILERDIR%%/ia32/include/locale
 */opt/intel/%%COMPILERDIR%%/ia32/include/map
+*/opt/intel/%%COMPILERDIR%%/ia32/include/math.h
 */opt/intel/%%COMPILERDIR%%/ia32/include/mathf.h
 */opt/intel/%%COMPILERDIR%%/ia32/include/memory
 */opt/intel/%%COMPILERDIR%%/ia32/include/numeric

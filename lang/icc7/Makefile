@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	icc
-PORTVERSION=	7.0.086
+PORTVERSION=	7.1.006
 CATEGORIES=	lang linux devel
 MASTER_SITES=
-DISTNAME=	l_cc_pu_${PORTVERSION}
+DISTNAME=	l_cc_p_${PORTVERSION}
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	netchild@FreeBSD.org
-COMMENT=	Intels C/C++ compiler, set up to produce native FreeBSD objects
+COMMENT=	Intels C/C++ compiler, set up to produce native FreeBSD binaries
 
 BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
 
@@ -41,6 +41,7 @@ ICC_SITE=	http://www.intel.com/software/products/compilers/
 
 ICCCFGVAL!=	${UNAME} -r | ${SED} -e 's/\..*//'
 
+CPIO?=		/usr/bin/cpio
 OBJCOPY?=	/usr/bin/objcopy
 
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})
@@ -61,14 +62,14 @@ post-extract:
 		${FILESDIR}/cpio-exclude_noportdocs >>${WRKDIR}/cpio-exclude
 .endif
 .for i in \
-	intel-icc7-7.0-86.i386.rpm
-#	intel-ildb7-7.0-172.i386.rpm \
-#	intel-isubh7-7.0-86.i386.rpm \
-#	intel-ecc7-7.0-86.ia64.rpm \
-#	intel-eldb7-7.0-172.ia64.rpm \
-#	intel-esubh7-7.0-86.ia64.rpm
+	intel-icc7-7.1-6.i386.rpm
+#	intel-ildb7-7.1-11.i386.rpm \
+#	intel-isubh7-7.1-6.i386.rpm \
+#	intel-ecc7-7.1-6.ia64.rpm \
+#	intel-eldb7-7.1-11.ia64.rpm \
+#	intel-esubh7-7.1-6.ia64.rpm
 	@cd ${WRKSRC} && rpm2cpio 2>/dev/null ${i} | \
-		cpio -idfuE ${WRKDIR}/cpio-exclude --quiet
+		${CPIO} -idfuE ${WRKDIR}/cpio-exclude --quiet
 .endfor
 
 pre-patch:
@@ -143,7 +144,8 @@ do-build:
 	@${CHMOD} 755 ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/ldwrapper/ld
 
 do-install:
-	@cd ${WRKSRC}/opt && find . | cpio -pdu -R ${BINOWN}:${BINGRP} ${PREFIX}
+	@cd ${WRKSRC}/opt && ${FIND} . -print | \
+		${CPIO} -pdu -R ${BINOWN}:${BINGRP} --quiet ${PREFIX}
 
 post-install:
 	@${ECHO_CMD} "${PKGNAME} is now installed in ${PREFIX}/intel, to use it you have to"
