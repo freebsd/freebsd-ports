@@ -1,4 +1,4 @@
-Lcrzoex contains over 300 functionnalities using network library lcrzo.
+Lcrzoex contains over 300 functionalities using network library lcrzo.
 Lcrzoex can be used in the following contexts :
   - discover the Ethernet address of a computer (number 2, 3, 134, etc.)
   - sniff your LAN to detect what's going on (number 7, 8, 9, etc.)
