@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	1.0.1
-PORTREVISION=	3
+PORTVERSION=	1.0.2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
-		http://people.FreeBSD.org/~marcus/:local
+	      	${MASTER_SITE_LOCAL}:local
 MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION:S/.rc/rc/}/src \
 		marcus/:local
 DISTFILES=	${PORTNAME}-source-${PORTVERSION:S/.rc/rc/}${EXTRACT_SUFX} \
@@ -54,11 +53,8 @@ CONFIGURE_ARGS=					\
 		--disable-debug			\
 		--enable-default-toolkit=gtk	\
 		--enable-double-buffer		\
-		--enable-dtd-debug		\
-		--enable-jsd			\
 		--enable-mathml			\
 		--disable-md			\
-		--disable-optimize		\
 		--disable-pedantic		\
 		--disable-plaintext-editor-only	\
 		--enable-strip			\
@@ -90,6 +86,11 @@ CONFIGURE_ARGS+=	--enable-extensions=default,irc,xmlterm
 CONFIGURE_ARGS+=	--enable-extensions=default,xmlterm
 .endif
 CONFIGURE_ENV=	MOZ_INTERNAL_LIBART_LGPL=1
+
+.if defined(WITH_JAVASCRIPT_DEBUGGER)
+CONFIGURE_ARGS+=	--enable-jsd \
+			--enable-dtd-debug
+.endif
 
 .include <bsd.port.pre.mk>
 
