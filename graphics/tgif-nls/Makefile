@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tgif
-PORTVERSION=	4.1.42
-PORTREVISION=	1
+PORTVERSION=	4.1.43
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://bourbon.usc.edu/pub/tgif/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -22,11 +21,10 @@ LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm
 
 USE_IMAKE=	yes
+USE_REINPLACE=	yes
 MAN1=		tgif.1
 
 .if !defined(NOPORTDOCS)
-TGIFDOC=	${PREFIX}/share/doc/tgif
-TGIFDEMO=	${PREFIX}/share/examples/tgif
 DEMO_FILES=	an-sr-flip-flop.obj launch-demo-1.obj \
 		fonts.obj launch-demo.obj keys.obj slide-demo.obj example.tex
 READMES=	Copyright HISTORY LICENSE.QPL README
@@ -42,24 +40,23 @@ post-extract:
 		${CP} ${WRKDIR}/${DISTNAME}/Tgif.tmpl-freebsd \
 		      ${WRKDIR}/${DISTNAME}/Tgif.tmpl
 
-pre-install:
-		(cd ${WRKSRC} ;\
-		  ${MV} tgif.Xdefaults tgif.Xdefaults.org; \
-		  ${SED} -e "s#/usr/local#${PREFIX}#" \
-		         -e "s#/usr/share/lib#${PREFIX}/share/locale#" \
-		         tgif.Xdefaults.org > tgif.Xdefaults \
-		)
+post-patch:
+		${REINPLACE_CMD} -e 's|.TH tgif n|.TH tgif 1L|' \
+			${WRKSRC}/tgif.man
+		${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|; \
+			s|/usr/share/lib|${PREFIX}/share/locale|' \
+			${WRKSRC}/tgif.Xdefaults
 
 post-install:
 .if !defined(NOPORTDOCS)
-		${MKDIR} ${TGIFDOC}; ${MKDIR} ${TGIFDEMO}
+		${MKDIR} ${DOCSDIR}; ${MKDIR} ${EXAMPLESDIR}
 		(cd ${WRKSRC} ;\
-		  ${INSTALL_DATA} ${DEMO_FILES} ${TGIFDEMO} ;\
-		  ${INSTALL_DATA} ${READMES} ${TGIFDOC} \
+		  ${INSTALL_DATA} ${DEMO_FILES} ${EXAMPLESDIR} ;\
+		  ${INSTALL_DATA} ${READMES} ${DOCSDIR} \
 		)
-		${MKDIR} ${TGIFDEMO}/spice
+		${MKDIR} ${EXAMPLESDIR}/spice
 		(cd ${WRKSRC}/spice ;\
-		  ${INSTALL_DATA} ${SPICE_FILES} ${TGIFDEMO}/spice \
+		  ${INSTALL_DATA} ${SPICE_FILES} ${EXAMPLESDIR}/spice \
 		)
 .endif
 		${LN} -fs tgif ${PREFIX}/bin/tgif-nls
