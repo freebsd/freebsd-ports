@@ -699,3 +699,4 @@ cad/kaskade|math/kaskade|2003-11-08|moved to math category
 misc/icemc||2003-11-08|author no longer develops program, distfile gone
 editors/openoffice-1.1-cz|editors/openoffice-1.1-cs|2003-11-08|Czech language ISO code is cs
 editors/openoffice-1.1-sl|editors/openoffice-1.1-sk|2003-11-08|Slovak language ISO code is sk
+x11-toolkits/wxgtk-devel|x11-toolkits/wxgtk|2003-11-10|renamed
