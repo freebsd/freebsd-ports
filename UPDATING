@@ -37,8 +37,8 @@ upgrades.
 
   In KDE 3.4, a number of files were moved between ports, some ports
   were added, one port has been removed and some applictions formerly available
-  in their own ports were incorporated into KDE. This means that you will have 
-  to take some precautions to update your KDE installation. A simple 
+  in their own ports were incorporated into KDE. This means that you will have
+  to take some precautions to update your KDE installation. A simple
   portupgrade -a will not work.
 
   Portupgrade -R kde can fail as well, depending on what parts of KDE you
@@ -47,7 +47,7 @@ upgrades.
   and you to be the superuser (or using sudo). We recommend not being logged in
   to a KDE session on the machine you're performing the upgrade on. If you
   choose to perform the update while being logged in to KDE, expect erratic
-  behaviour and crashes from applications launched until you log out and back 
+  behaviour and crashes from applications launched until you log out and back
   in.
 
   1.) Delete installed packages which conflict with the updated KDE
@@ -90,7 +90,7 @@ upgrades.
 
     	rm ~/.kde/share/config/knotifyrc
 
-    Then log out of KDE and back in again (also see 
+    Then log out of KDE and back in again (also see
     http://freebsd.kde.org/faq.php#q16).
 
   - kdm users might get warnings from kdm about obsolete lines in kdmrc.
