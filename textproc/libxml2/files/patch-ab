@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- configure.orig	Tue Jul 10 18:51:46 2001
-+++ configure	Wed Jul 11 10:25:59 2001
-@@ -3569,7 +3569,7 @@
+--- configure.orig	Mon Jul 23 22:40:34 2001
++++ configure	Mon Jul 30 15:39:38 2001
+@@ -3571,7 +3572,7 @@
  
  
  XML_LIBDIR='-L${libdir}'
@@ -12,37 +12,27 @@ $FreeBSD$
  
  XML_CFLAGS=""
  RDL_LIBS=""
-@@ -4020,16 +4020,16 @@
- 	ICONV_LIBS="-L$with_iconv/lib"
+@@ -4034,15 +4035,15 @@
      fi
  
--    ac_safe=`echo "iconv.h" | sed 'y%./+-%__p_%'`
+     ac_safe=`echo "iconv.h" | sed 'y%./+-%__p_%'`
 -echo $ac_n "checking for iconv.h""... $ac_c" 1>&6
--echo "configure:4026: checking for iconv.h" >&5
-+    ac_safe=`echo "giconv.h" | sed 'y%./+-%__p_%'`
+-echo "configure:4039: checking for iconv.h" >&5
 +echo $ac_n "checking for giconv.h""... $ac_c" 1>&6
-+echo "configure:4026: checking for giconv.h" >&5
++echo "configure:4039: checking for giconv.h" >&5
  if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    cat > conftest.$ac_ext <<EOF
- #line 4031 "configure"
+ #line 4044 "configure"
  #include "confdefs.h"
 -#include <iconv.h>
 +#include <giconv.h>
  EOF
  ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
- { (eval echo configure:4036: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
-@@ -4048,17 +4048,17 @@
- fi
- if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
--  echo $ac_n "checking for iconv""... $ac_c" 1>&6
--echo "configure:4053: checking for iconv" >&5
-+  echo $ac_n "checking for libiconv""... $ac_c" 1>&6
-+echo "configure:4053: checking for libiconv" >&5
- 	cat > conftest.$ac_ext <<EOF
- #line 4055 "configure"
+ { (eval echo configure:4049: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+@@ -4067,11 +4068,11 @@
+ #line 4068 "configure"
  #include "confdefs.h"
  #include <stdlib.h>
 -#include <iconv.h>
@@ -54,15 +44,15 @@ $FreeBSD$
 +libiconv (cd, NULL, NULL, NULL, NULL);
  ; return 0; }
  EOF
- if { (eval echo configure:4065: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
-@@ -4072,23 +4072,23 @@
+ if { (eval echo configure:4078: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+@@ -4085,23 +4086,23 @@
    rm -rf conftest*
    
  	    echo "$ac_t""no" 1>&6
 -	    echo $ac_n "checking for iconv in -liconv""... $ac_c" 1>&6
--echo "configure:4077: checking for iconv in -liconv" >&5
-+	    echo $ac_n "checking for libiconv in -lgiconv""... $ac_c" 1>&6
-+echo "configure:4077: checking for libiconv in -lgiconv" >&5
+-echo "configure:4090: checking for iconv in -liconv" >&5
++	    echo $ac_n "checking for iconv in -lgiconv""... $ac_c" 1>&6
++echo "configure:4090: checking for iconv in -lgiconv" >&5
  
  	    _ldflags="${LDFLAGS}"
  	    _libs="${LIBS}"
@@ -71,7 +61,7 @@ $FreeBSD$
 +	    LIBS="${LIBS} -lgiconv"
  
  	    cat > conftest.$ac_ext <<EOF
- #line 4085 "configure"
+ #line 4098 "configure"
  #include "confdefs.h"
  #include <stdlib.h>
 -#include <iconv.h>
@@ -83,8 +73,8 @@ $FreeBSD$
 +libiconv (cd, NULL, NULL, NULL, NULL);
  ; return 0; }
  EOF
- if { (eval echo configure:4095: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
-@@ -4096,7 +4096,7 @@
+ if { (eval echo configure:4108: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+@@ -4109,7 +4110,7 @@
    
  		echo "$ac_t""yes" 1>&6
  		WITH_ICONV=1
