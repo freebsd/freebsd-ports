@@ -1,0 +1,14 @@
+diff -ru /home/green/ssh/cipher.h ./cipher.h
+--- /home/green/ssh/cipher.h	Sun Oct  3 03:39:00 1999
++++ ./cipher.h	Mon Nov  8 00:06:40 1999
+@@ -16,8 +16,8 @@
+ #ifndef CIPHER_H
+ #define CIPHER_H
+ 
+-#include <des.h>
+-#include <ssl/blowfish.h>
++#include <openssl/blowfish.h>
++#include <openssl/des.h>
+ 
+ /* Cipher types.  New types can be added, but old types should not be removed
+    for compatibility.  The maximum allowed value is 31. */

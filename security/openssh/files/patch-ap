@@ -1,0 +1,28 @@
+diff -ru /home/green/ssh/ssh/Makefile ./ssh/Makefile
+--- /home/green/ssh/ssh/Makefile	Tue Oct 26 03:31:00 1999
++++ ./ssh/Makefile	Mon Nov  8 00:13:55 1999
+@@ -10,14 +10,15 @@
+ BINMODE?=4555
+ .endif
+ 
+-BINDIR=	/usr/bin
+-MAN=	ssh.1
++BINDIR=	/bin
++MAN1=	ssh.1
+ LINKS=	${BINDIR}/ssh ${BINDIR}/slogin
+ MLINKS=	ssh.1 slogin.1
+ 
+ SRCS=	ssh.c sshconnect.c log-client.c readconf.c clientloop.c
+ 
+ .include <bsd.own.mk> # for AFS
++.include "../Makefile.inc"
+ 
+ .if (${KERBEROS} == "yes")
+ CFLAGS+= -DKRB4 -I/usr/include/kerberosIV
+@@ -32,5 +33,5 @@
+ 
+ .include <bsd.prog.mk>
+ 
+-LDADD+=	-lutil -lz -lcrypto
++LDADD+=	-lutil -lz ${CRYPTOLIBS}
+ DPADD+=	${LIBCRYPTO} ${LIBUTIL} ${LIBZ}

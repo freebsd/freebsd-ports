@@ -1,0 +1,19 @@
+diff -ru /home/green/ssh/ssh-keygen/Makefile ./ssh-keygen/Makefile
+--- /home/green/ssh/ssh-keygen/Makefile	Thu Oct 28 03:32:00 1999
++++ ./ssh-keygen/Makefile	Mon Nov  8 00:13:47 1999
+@@ -10,12 +10,12 @@
+ BINMODE?=555
+ .endif
+ 
+-BINDIR=	/usr/bin
+-MAN=	ssh-keygen.1
++BINDIR=	/bin
++MAN1=	ssh-keygen.1
+ 
+ SRCS=	ssh-keygen.c log-client.c
+ 
+ .include <bsd.prog.mk>
+ 
+-LDADD+=	-lcrypto -lutil -lz
++LDADD+=	-lutil -lz ${CRYPTOLIBS}
+ DPADD+=	${LIBCRYPTO} ${LIBDES} ${LIBUTIL} ${LIBZ}

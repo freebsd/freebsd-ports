@@ -1,0 +1,11 @@
+diff -ru /home/green/ssh/login.c ./login.c
+--- /home/green/ssh/login.c	Fri Oct  1 03:42:00 1999
++++ ./login.c	Mon Nov  8 00:06:40 1999
+@@ -20,7 +20,6 @@
+ #include "includes.h"
+ RCSID("$Id: login.c,v 1.7 1999/09/30 16:55:06 deraadt Exp $");
+ 
+-#include <util.h>
+ #include <utmp.h>
+ #include "ssh.h"
+ 
