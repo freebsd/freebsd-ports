@@ -3,7 +3,7 @@ share/dict/pejv-fpw/catalogs
 @dirrm share/dict/pejv-fpw/pejv/data
 @dirrm share/dict/pejv-fpw/pejv
 @dirrm share/dict/pejv-fpw
-share/doc/pejv-fpw/readme
-share/doc/pejv-fpw/legumin.doc
-share/doc/pejv-fpw/pejvo.doc
-@dirrm share/doc/pejv-fpw
+%%PORTDOCS%%%%DOCSDIR%%/readme
+%%PORTDOCS%%%%DOCSDIR%%/legumin.doc
+%%PORTDOCS%%%%DOCSDIR%%/pejvo.doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

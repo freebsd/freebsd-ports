@@ -5,5 +5,5 @@ share/dict/foldoc-fpw/foldoc/gaiji/gai16h
 @dirrm share/dict/foldoc-fpw/foldoc/gaiji
 @dirrm share/dict/foldoc-fpw/foldoc
 @dirrm share/dict/foldoc-fpw
-share/doc/foldoc-fpw/readme.txt
-@dirrm share/doc/foldoc-fpw
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

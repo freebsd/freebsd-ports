@@ -7,6 +7,7 @@
 
 PORTNAME=	web1913-fpw
 PORTVERSION=	${WEBFPW_VER}
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/web1913/
 DISTNAME=	${PORTNAME}${WEBFPW_VER}
@@ -25,8 +26,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/web/data/honmon ${PREFIX}/share/dict/web-fpw/web/data
 	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/web-fpw
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/web-fpw
-	${INSTALL_DATA} ${WRKSRC}/readme ${PREFIX}/share/doc/web-fpw
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

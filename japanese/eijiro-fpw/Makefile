@@ -7,7 +7,7 @@
 
 PORTNAME=	eijiro-fpw
 PORTVERSION=	1.0b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/eijiro/
 DISTNAME=	${PORTNAME}${PORTVERSION}-src
@@ -64,9 +64,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/honmon ${PREFIX}/share/dict/eijiro-fpw/eijiro/data
 	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/eijiro-fpw
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/eijiro-fpw
+	${MKDIR} ${DOCSDIR}
 .for i in readme.sjis
-	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/eijiro-fpw
+	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
 .endif
 

@@ -3,5 +3,5 @@ share/dict/CGdic-fpw/catalogs
 @dirrm share/dict/CGdic-fpw/cg/data
 @dirrm share/dict/CGdic-fpw/cg
 @dirrm share/dict/CGdic-fpw
-share/doc/CGdic-fpw/readme
-@dirrm share/doc/CGdic-fpw
+%%PORTDOCS%%%%DOCSDIR%%/readme
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

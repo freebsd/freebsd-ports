@@ -3,5 +3,5 @@ share/dict/web-fpw/web/data/honmon
 @dirrm share/dict/web-fpw/web/data
 @dirrm share/dict/web-fpw/web
 @dirrm share/dict/web-fpw
-share/doc/web-fpw/readme
-@dirrm share/doc/web-fpw
+%%PORTDOCS%%%%DOCSDIR%%/readme
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

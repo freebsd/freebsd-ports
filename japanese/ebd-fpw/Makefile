@@ -7,6 +7,7 @@
 
 PORTNAME=	ebd-fpw
 PORTVERSION=	1.0
+PORTREVISON=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/ebd/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -24,9 +25,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/ebd/data/honmon ${PREFIX}/share/dict/ebd-fpw/ebd/data
 	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/ebd-fpw
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/ebd-fpw
+	${MKDIR} ${DOCSDIR}
 .for i in readme.1st readme.txt
-	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/ebd-fpw
+	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
 .endif
 

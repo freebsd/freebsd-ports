@@ -7,6 +7,7 @@
 
 PORTNAME=	pejv-fpw
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/pejv/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -24,9 +25,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/pejv/data/honmon ${PREFIX}/share/dict/pejv-fpw/pejv/data
 	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/pejv-fpw
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/pejv-fpw
+	${MKDIR} ${DOCSDIR}
 .for i in readme legumin.doc pejvo.doc
-	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/pejv-fpw
+	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
 .endif
 

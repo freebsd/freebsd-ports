@@ -7,6 +7,7 @@
 
 PORTNAME=	edict-fpw
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/edict/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -24,9 +25,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/edict/data/honmon ${PREFIX}/share/dict/edict-fpw/edict/data
 	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/edict-fpw
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/edict-fpw
+	${MKDIR} ${DOCSDIR}
 .for i in readme.pkg edict.txt
-	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/edict-fpw
+	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
 .endif
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	wdic-fpw
 PORTVERSION=	1.3a
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/wdic/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -26,9 +27,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/wdic/gaiji/gai16h ${PREFIX}/share/dict/wdic-fpw/wdic/gaiji
 	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/wdic-fpw
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/wdic-fpw
+	${MKDIR} ${DOCSDIR}
 .for i in readme.1st readme.txt
-	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/wdic-fpw
+	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
 .endif
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	roget-fpw
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/roget/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -26,9 +27,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/roget/gaiji/gai16h ${PREFIX}/share/dict/roget-fpw/roget/gaiji
 	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/roget-fpw
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/roget-fpw
+	${MKDIR} ${DOCSDIR}
 .for i in readme.pkg readme.txt
-	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/roget-fpw
+	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
 .endif
 

@@ -5,6 +5,6 @@ share/dict/vera-fpw/vera/gaiji/gai16h
 @dirrm share/dict/vera-fpw/vera/gaiji
 @dirrm share/dict/vera-fpw/vera
 @dirrm share/dict/vera-fpw
-share/doc/vera-fpw/readme.txt
-share/doc/vera-fpw/vera.tex
-@dirrm share/doc/vera-fpw
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/vera.tex
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

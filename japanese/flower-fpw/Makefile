@@ -7,6 +7,7 @@
 
 PORTNAME=	flower-fpw
 PORTVERSION=	1.0
+PORTREVISON=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/Flower/
 DISTNAME=	Flower-${PORTVERSION}
@@ -24,9 +25,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/flower/data/honmon ${PREFIX}/share/dict/flower-fpw/flower/data
 	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/flower-fpw
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/flower-fpw
+	${MKDIR} ${DOCSDIR}
 .for i in readme
-	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/flower-fpw
+	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
 .endif
 
