@@ -1,0 +1,31 @@
+  File:     @(#)$Id: README,v 2.6 2000/11/09 18:33:58 Martin Beta $
+  Contents: README file for the pcl3 distribution
+  Author:   Martin Lottermoser, Greifswaldstrasse 28, 38124 Braunschweig,
+            Germany. E-mail: Martin.Lottermoser@t-online.de.
+[...]
+ 8. There is also a bug in ghostscript's default configuration for the
+    undercolour removal and black generation functions. It shows up when
+    printing PostScript documents using the RGB colour space ("setrgbcolor" or
+    "sethsbcolor") on a device where the CMYK space is the native colour space;
+    this is the case for pcl3 if you specify "-sColourModel=CMYK". The bug
+    results in black being printed as a mixture of cyan, magenta, and yellow.
+    On my printer, this is a slightly greenish grey with fuzzy edges. My
+    subjective impression is that correcting this bug leads to sharper-looking
+    images.
+[...]
+
+I generated a patch as suggested from Martin Lottermoser
+
+	-andreas
+
+--- lib/gs_init.ps.orig	Mon Jan  8 20:47:39 2001
++++ lib/gs_init.ps	Mon Jan  8 20:49:02 2001
+@@ -1229,7 +1229,7 @@
+ % Set the default screen and BG/UCR.
+ /.setdefaultbgucr {
+   systemdict /setblackgeneration known {
+-    { pop 0 } dup setblackgeneration setundercolorremoval
++    {} dup setblackgeneration setundercolorremoval
+   } if
+ } bind def
+ /.useloresscreen {	% - .useloresscreen <bool>
