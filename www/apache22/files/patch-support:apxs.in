@@ -1,5 +1,5 @@
 --- support/apxs.in.orig	Sat Nov  3 05:09:20 2001
-+++ support/apxs.in	Sat Nov 17 02:51:43 2001
++++ support/apxs.in	Sun Dec  9 14:47:57 2001
 @@ -66,7 +66,7 @@
  
  # read the configuration variables once
@@ -17,4 +17,31 @@
 +my $httpd = get_vars("sbindir") . "/" . get_vars("progname");
  $httpd = eval qq("$httpd");
  $httpd = eval qq("$httpd");
+ 
+@@ -412,7 +412,7 @@
+         $la =~ s|\.c$|.la|;
+         my $o = $s;
+         $o =~ s|\.c$|.o|;
+-        push(@cmds, "$prefix/build/libtool --silent --mode=compile $CFG_CC $cflags -I$CFG_INCLUDEDIR $opt -c -o $lo $s && touch $slo");
++        push(@cmds, "$prefix/share/mk/apache/libtool --silent --mode=compile $CFG_CC $cflags -I$CFG_INCLUDEDIR $opt -c -o $lo $s && touch $slo");
+         unshift(@objs, $lo);
+     }
+ 
+@@ -437,7 +437,7 @@
+         $opt .= " -l$opt_l";
+     }
+ 
+-    push(@cmds, "$prefix/build/libtool --silent --mode=link $CFG_CC -o $dso_file -rpath $CFG_LIBEXECDIR -module -avoid-version $opt $lo");
++    push(@cmds, "$prefix/share/mk/apache/libtool --silent --mode=link $CFG_CC -o $dso_file -rpath $CFG_LIBEXECDIR -module -avoid-version $opt $lo");
+ 
+     #   execute the commands
+     &execute_cmds(@cmds);
+@@ -467,7 +467,7 @@
+         my $t = $f;
+         $t =~ s|^.+/([^/]+)$|$1|;
+         if ($opt_i) {
+-	    push(@cmds, "$prefix/build/libtool --mode=install cp $f $CFG_LIBEXECDIR/$t");
++	    push(@cmds, "$prefix/share/mk/apache/libtool --mode=install cp $f $CFG_LIBEXECDIR/$t");
+ 	    push(@cmds, "chmod 755 $CFG_LIBEXECDIR/$t");
+         }
  
