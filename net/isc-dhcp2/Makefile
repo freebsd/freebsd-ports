@@ -3,11 +3,11 @@
 # Date created:         7 Mar 1996
 # Whom:                 se
 #
-# $Id: Makefile,v 1.23 1999/02/27 04:32:20 jseger Exp $
+# $Id: Makefile,v 1.24 1999/02/28 14:08:11 jseger Exp $
 #
 
 DISTNAME=       dhcp-2.0b1pl17
-PKGNAME=	isc-dhcp2.b1.17
+PKGNAME=	isc-dhcp-2.b1.17
 CATEGORIES=	net
 MASTER_SITES=   ftp://ftp.isc.org/isc/dhcp/
 
