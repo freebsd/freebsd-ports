@@ -9505,6 +9505,7 @@ py-xmms		ports/audio/py-xmms
 py-xoltar-toolkit	ports/devel/py-xoltar-toolkit
 py-yaml		ports/devel/py-yaml
 py-yapsnmp	ports/net-mgmt/py-yapsnmp
+py-zpt		ports/textproc/py-zpt
 py-zsi		ports/net/py-zsi
 py2html		ports/textproc/py2html
 py_otp_interface	ports/devel/py_otp_interface
