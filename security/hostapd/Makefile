@@ -25,7 +25,7 @@ post-extract:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 600007
-IGNORE="hostapd is not supported on this version"
+IGNORE=is not supported on FreeBSD < 6.0
 .endif
 
 .include <bsd.port.post.mk>
