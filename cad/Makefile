@@ -3,6 +3,7 @@
     SUBDIR += ziarc
 
     SUBDIR += atlc
+    SUBDIR += calculix
     SUBDIR += cascade
     SUBDIR += chipmunk
     SUBDIR += chipvault
