@@ -335,6 +335,7 @@
     SUBDIR += p5-XML-Filter-XInclude
     SUBDIR += p5-XML-Filter-XSLT
     SUBDIR += p5-XML-GDOME
+    SUBDIR += p5-XML-Generator
     SUBDIR += p5-XML-Generator-DBI
     SUBDIR += p5-XML-Generator-PerlData
     SUBDIR += p5-XML-Grove
