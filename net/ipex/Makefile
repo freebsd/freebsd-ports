@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	ipex
-PORTVERSION=	2.4.3
+PORTVERSION=	2.4.4
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ipex
 
-MAINTAINER=	maneo@bsdpro.com
+MAINTAINER=	csjp@FreeBSD.org
 COMMENT=	Packet examination / sniffer utility
 
 MAN1=		ipex.1
