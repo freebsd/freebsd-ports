@@ -1,8 +1,8 @@
 LIB=lcms
 SHLIB_MAJOR=	1
-SHLIB_MINOR=	8
+SHLIB_MINOR=	9
 
-SRCS!=	make -f ${.CURDIR}/Makefile -V SRCS
+SRCS!=	make -V SRCS
 
 NOPROFILE=YES
 
