@@ -26,7 +26,7 @@ TARGET_DIR?=	${PREFIX}/share/doc/jdk${JDK_MAJOR_VER}
 WRKSRC=		${WRKDIR}/jdk${JDK_VERSION:C/_.*\$//g}/docs
 JDK_VERSION=	1.1.8_003
 JDK_MAJOR_VER=	${JDK_VERSION:R}
-DOWNLOAD_URL=	http://java.sun.com/jdk/${JDK_MAJOR_VER}/download-docs.html
+DOWNLOAD_URL=	http://java.sun.com/jdk/${JDK_MAJOR_VER}/docs.html
 
 NO_BUILD=	yes
 
