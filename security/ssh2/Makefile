@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.22 1996/05/24 19:13:04 peter Exp $
+# $Id: Makefile,v 1.23 1996/06/07 04:33:19 peter Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -12,7 +12,6 @@
 DISTNAME=       ssh-1.2.14
 CATEGORIES=	security net
 MASTER_SITES=   ftp://ftp.cs.hut.fi/pub/ssh/
-LIB_DEPENDS=    z\\.1\\.:${PORTSDIR}/devel/libz
 
 MAINTAINER=	torstenb@FreeBSD.ORG
 
