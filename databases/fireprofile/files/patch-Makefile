@@ -1,0 +1,14 @@
+--- Makefile.orig	Fri Apr  5 23:07:59 2002
++++ Makefile	Thu Jan 16 23:34:05 2003
+@@ -2,9 +2,9 @@
+ INSTALL_USER ?= root
+ CFLAGS ?= -O
+ CC ?= cc
+-INCFLAGS =
++INCFLAGS = -I${LOCALBASE}/include
+ INLDFLAGS = -nostdlib
+-INLIBS = -ldl
++#INLIBS = -ldl
+ 
+ .PHONY: all install shared clean distclean install-shared install-man3
+ 
