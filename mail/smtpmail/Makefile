@@ -9,7 +9,7 @@ PORTNAME=	smtpmail
 PORTVERSION=	0.4.2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
-		http://voodoo.oberon.net/
+		http://voodoo.oberon.net/download/
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}.pkg/${PORTVERSION}
 
 MAINTAINER=	krion@FreeBSD.org
