@@ -796,6 +796,10 @@
 %%T%%/man/ja_JP.eucJP/man1/native2ascii.1
 %%T%%/man/ja_JP.eucJP/man1/rmic.1
 %%T%%/man/ja_JP.eucJP/man1/serialver.1
+@exec   mkdir -p %D/share/doc/java
+@unexec rmdir %D/share/doc/java 2>/dev/null || true
+@exec   %%LOCALBASE%%/bin/registervm "%D/%%T%%/bin/java # Linux-Sun-JDK%%PORTVERSION%%"
+@unexec %%LOCALBASE%%/bin/unregistervm "%D/%%T%%/bin/java"
 @dirrm %%T%%/jre/bin/i386/green_threads
 @dirrm %%T%%/jre/bin/i386/native_threads
 @dirrm %%T%%/jre/bin/i386
@@ -955,5 +959,3 @@
 @dirrm %%T%%/man/ja_JP.eucJP
 @dirrm %%T%%/man
 @dirrm %%T%%
-@exec   %D/bin/registervm "%D/%%T%%/bin/java # Linux-JDK%%JDK_VERSION%%"
-@unexec %D/bin/unregistervm "%D/%%T%%/bin/java"
