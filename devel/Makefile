@@ -649,6 +649,7 @@
     SUBDIR += veepee
     SUBDIR += viewcvs
     SUBDIR += vtcl
+    SUBDIR += wizard
     SUBDIR += xmake
     SUBDIR += xparam
     SUBDIR += xtl

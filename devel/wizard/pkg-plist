@@ -1,0 +1,11 @@
+lib/%%PYTHON_VERSION%%/site-packages/wizard.py
+lib/%%PYTHON_VERSION%%/site-packages/wizard.pyc
+%%PORTDOCS%%share/doc/wizard/Makefile
+%%PORTDOCS%%share/doc/wizard/libwizard.tex
+%%PORTDOCS%%share/doc/wizard/wizard.css
+%%PORTDOCS%%share/doc/wizard/wizard.html
+%%PORTDOCS%%share/doc/wizard/wizard.l2h
+%%PORTDOCS%%share/doc/wizard/wizard.pdf
+%%PORTDOCS%%share/doc/wizard/wizard.ps
+%%PORTDOCS%%share/doc/wizard/wizard.tex
+%%PORTDOCS%%@dirrm share/doc/wizard
