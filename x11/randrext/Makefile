@@ -14,6 +14,8 @@ MASTER_SITES=	http://pdx.freedesktop.org/~anholt/dist/
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Header files and documentation for the X Resize and Rotate extension
 
+CONFLICTS=	XFree86-libraries-*
+
 USE_BZIP2=	yes
 PREFIX?=	${X11BASE}
 GNU_CONFIGURE=	yes

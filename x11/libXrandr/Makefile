@@ -22,6 +22,8 @@ BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/randr.pc:${PORTSDIR}/x11/randrext \
 		${LIB_PC_DEPENDS}
 RUN_DEPENDS=	${LIB_PC_DEPENDS}
 
+CONFLICTS=	XFree86-libraries-*
+
 USE_BZIP2=	yes
 PREFIX?=	${X11BASE}
 GNU_CONFIGURE=	yes

@@ -21,6 +21,8 @@ BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig \
 		${LIB_PC_DEPENDS}
 RUN_DEPENDS=	${LIB_PC_DEPENDS}
 
+CONFLICTS=	XFree86-libraries-*
+
 USE_BZIP2=	yes
 PREFIX?=	${X11BASE}
 GNU_CONFIGURE=	yes

@@ -14,6 +14,8 @@ MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X11 extension headers
 
+CONFLICTS=	XFree86-libraries-*
+
 USE_BZIP2=	yes
 PREFIX?=	${X11BASE}
 GNU_CONFIGURE=	yes
