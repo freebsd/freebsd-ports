@@ -9,10 +9,10 @@ PORTNAME=	Perl6-Form
 PORTVERSION=	0.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../../authors/id/M/MA/MARCEL
+MASTER_SITE_SUBDIR=	../../authors/id/D/DC/DCONWAY
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ychsiao@ychsiao.idv.tw
+MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Implements the Perl 6 'form' built-in
 
 BUILD_DEPENDS=	${SITE_PERL}/Perl6/Export.pm:${PORTSDIR}/devel/p5-Perl6-Export \
