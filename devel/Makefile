@@ -347,6 +347,7 @@
     SUBDIR += libtar
     SUBDIR += libtecla
     SUBDIR += libtool
+    SUBDIR += libukcprog
     SUBDIR += libunicode
     SUBDIR += libusb
     SUBDIR += libuta

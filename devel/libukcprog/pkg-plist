@@ -1,0 +1,5 @@
+include/ukcprog.h
+lib/libukcprog.a
+lib/libukcprog.la
+lib/libukcprog.so
+lib/libukcprog.so.0
