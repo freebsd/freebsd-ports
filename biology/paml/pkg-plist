@@ -1,0 +1,11 @@
+bin/baseml
+bin/basemlg
+bin/chi2 
+bin/codeml
+bin/codemlsites
+bin/evolver
+bin/mcmctree
+bin/pamp
+bin/yn00
+share/doc/paml/pamlDOC.pdf
+@dirrm share/doc/paml

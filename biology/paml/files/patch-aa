@@ -1,0 +1,11 @@
+--- Makefile.orig	Sun Mar 12 20:49:36 2000
++++ Makefile	Fri Jul  7 06:32:33 2000
+@@ -1,7 +1,7 @@
+ PRGS =  baseml codeml codemlsites basemlg pamp evolver mcmctree yn00 chi2 
+ CC = cc # cc, gcc, cl
+ 
+-CFLAGS = -fast
++CFLAGS += -O3
+ 
+ #CFLAGS = -w0 -warnprotos -newc -std -fast
+ #CFLAGS = -g -w0 -warnprotos -newc -std -edit1 #
