@@ -1,6 +1,0 @@
-%%PG_PREFIX%%bin/pgtclsh
-%%PG_INCLUDE%%/libpgtcl.h
-%%PG_PREFIX%%lib/libpgtcl.a
-%%PG_PREFIX%%lib/libpgtcl.so
-%%PG_PREFIX%%lib/libpgtcl.so.2
-%%PG_PREFIX%%lib/pltcl.so
