@@ -1,18 +1,49 @@
-diff -ru xmms-1.2.2/xmms/about.c xmms-1.2.2-xfont/xmms/about.c
---- xmms-1.2.2/xmms/about.c	Mon Jun 12 06:27:14 2000
-+++ xmms-1.2.2-xfont/xmms/about.c	Wed Jul 12 00:13:27 2000
-@@ -35,6 +35,7 @@
-  N_("With Additional Help:"),
+diff -ru xmms-1.2.3.orig/po/zh_TW.Big5.po xmms-1.2.3/po/zh_TW.Big5.po
+--- xmms-1.2.3.orig/po/zh_TW.Big5.po	Tue Sep 19 14:32:28 2000
++++ xmms-1.2.3/po/zh_TW.Big5.po	Thu Sep 21 11:39:59 2000
+@@ -3231,17 +3231,17 @@
+ msgid "Credits"
+ msgstr "感謝"
+ 
+-#~ msgid "Select playinfo font:"
+-#~ msgstr "選擇播放資訊字形:"
++msgid "Select playinfo font:"
++msgstr "選擇播放資訊字形:"
+ 
+-#~ msgid "Main Window"
+-#~ msgstr "主要視窗"
++msgid "Main Window"
++msgstr "主要視窗"
+ 
+-#~ msgid "Enable X font display on main window"
+-#~ msgstr "在主要視窗使用 X 字形"
++msgid "Enable X font display on main window"
++msgstr "在主要視窗使用 X 字形"
+ 
+-#~ msgid "Playinfo font"
+-#~ msgstr "播放資訊字形"
++msgid "Playinfo font"
++msgstr "播放資訊字形"
+ 
+-#~ msgid "Chun-Chung Chen (xfont patch)"
+-#~ msgstr "陳俊仲 (xfont 補丁)"
++msgid "Chun-Chung Chen (xfont patch)"
++msgstr "陳俊仲 (xfont 補丁)"
+diff -ru xmms-1.2.3.orig/xmms/about.c xmms-1.2.3/xmms/about.c
+--- xmms-1.2.3.orig/xmms/about.c	Tue Sep  5 06:30:24 2000
++++ xmms-1.2.3/xmms/about.c	Thu Sep 21 11:39:59 2000
+@@ -36,6 +36,7 @@
  	N_("Sean Atkinson"),
+ 	N_("James M. Cape"),
  	N_("Anders Carlsson (effect plugins)"),
 +	N_("Chun-Chung Chen (xfont patch)"),
  	N_("Tim Ferguson (joystick plugin)"),
  	N_("Ben Gertzfield"),
- 	N_("Logan Hanks"),
-diff -ru xmms-1.2.2/xmms/main.c xmms-1.2.2-xfont/xmms/main.c
---- xmms-1.2.2/xmms/main.c.orig	Wed Jul 12 00:11:14 2000
-+++ xmms-1.2.2/xmms/main.c	Sun Aug 20 02:02:52 2000
-@@ -321,8 +321,8 @@
+ 	N_("Vesa Halttunen"),
+diff -ru xmms-1.2.3.orig/xmms/main.c xmms-1.2.3/xmms/main.c
+--- xmms-1.2.3.orig/xmms/main.c	Fri Sep 15 06:36:10 2000
++++ xmms-1.2.3/xmms/main.c	Thu Sep 21 11:39:59 2000
+@@ -319,8 +319,8 @@
  	cfg.always_on_top = FALSE;
  	cfg.sticky = FALSE;
  	cfg.always_show_cb = TRUE;
@@ -23,46 +54,47 @@ diff -ru xmms-1.2.2/xmms/main.c xmms-1.2.2-xfont/xmms/main.c
  	cfg.show_numbers_in_pl = TRUE;
  	cfg.snap_windows = TRUE;
  	cfg.save_window_position = TRUE;
-@@ -335,6 +335,7 @@
+@@ -333,6 +333,8 @@
  	cfg.no_playlist_advance = FALSE;
  	cfg.smooth_title_scroll = TRUE;
  	cfg.random_skin_on_play = FALSE;
 +	cfg.xfont_for_playinfo = TRUE;
++	cfg.use_fontsets = TRUE;
  
  	cfg.playlist_x = 295;
  	cfg.playlist_y = 20;
-@@ -411,7 +412,10 @@
- 		xmms_cfg_read_boolean(cfgfile, "xmms", "playlist_shaded", &cfg.playlist_shaded);
+@@ -410,6 +412,8 @@
  		xmms_cfg_read_boolean(cfgfile, "xmms", "playlist_visible", &cfg.playlist_visible);
- 		if (!xmms_cfg_read_string(cfgfile, "xmms", "playlist_font", &cfg.playlist_font))
--			cfg.playlist_font = g_strdup("-adobe-helvetica-bold-r-*-*-10-*");
-+			cfg.playlist_font = g_strdup("-adobe-helvetica-bold-r-*-*-10-*,*-ming-medium-r-*-*-10-*");
+ 		xmms_cfg_read_string(cfgfile, "xmms", "playlist_font", &cfg.playlist_font);
+ 		xmms_cfg_read_boolean(cfgfile, "xmms", "use_fontsets", &cfg.use_fontsets);
 +		xmms_cfg_read_boolean(cfgfile, "xmms", "xfont_for_playinfo", &cfg.xfont_for_playinfo);
-+		if (!xmms_cfg_read_string(cfgfile, "xmms", "playinfo_font", &cfg.playinfo_font))
-+			cfg.playinfo_font = g_strdup("-adobe-helvetica-medium-r-*-*-8-*,*-ming-medium-r-*-*-8-*");
++		xmms_cfg_read_string(cfgfile, "xmms", "playinfo_font", &cfg.playinfo_font);
  		xmms_cfg_read_int(cfgfile, "xmms", "playlist_position", &cfg.playlist_position);
  		xmms_cfg_read_int(cfgfile, "xmms", "equalizer_x", &cfg.equalizer_x);
  		xmms_cfg_read_int(cfgfile, "xmms", "equalizer_y", &cfg.equalizer_y);
-@@ -458,7 +462,8 @@
+@@ -458,9 +462,10 @@
+ 		
+ 		xmms_cfg_free(cfgfile);
  	}
- 	else
- 	{
+-
+ 	if (cfg.playlist_font == NULL)
 -		cfg.playlist_font = g_strdup("-adobe-helvetica-bold-r-*-*-10-*");
 +		cfg.playlist_font = g_strdup("-adobe-helvetica-bold-r-*-*-10-*,*-ming-medium-r-*-*-10-*");
++	if (cfg.playinfo_font == NULL)
 +		cfg.playinfo_font = g_strdup("-adobe-helvetica-medium-r-*-*-8-*,*-ming-medium-r-*-*-8-*");
- 	}
- 	g_free(filename);
- }
-@@ -537,6 +542,8 @@
- 	xmms_cfg_write_boolean(cfgfile, "xmms", "playlist_shaded", cfg.playlist_shaded);
+ 	if (cfg.outputplugin == NULL)
+ 	{
+ #if defined(HAVE_SYS_SOUNDCARD_H) || defined(HAVE_MACHINE_SOUNDCARD_H)
+@@ -558,6 +563,8 @@
  	xmms_cfg_write_boolean(cfgfile, "xmms", "playlist_visible", cfg.playlist_visible);
  	xmms_cfg_write_string(cfgfile, "xmms", "playlist_font", cfg.playlist_font);
+ 	xmms_cfg_write_boolean(cfgfile, "xmms", "use_fontsets", cfg.use_fontsets);
 +	xmms_cfg_write_boolean(cfgfile, "xmms", "xfont_for_playinfo", cfg.xfont_for_playinfo);
 +	xmms_cfg_write_string(cfgfile, "xmms", "playinfo_font", cfg.playinfo_font);
  	xmms_cfg_write_int(cfgfile, "xmms", "playlist_position", get_playlist_position());
  	dock_get_widget_pos(equalizerwin, &cfg.equalizer_x, &cfg.equalizer_y);
  	xmms_cfg_write_int(cfgfile, "xmms", "equalizer_x", cfg.equalizer_x);
-@@ -2594,6 +2601,7 @@
+@@ -2645,6 +2652,7 @@
  	tbutton_set_toggled(mainwin_pl, cfg.playlist_visible);
  
  	mainwin_info = create_textbox(&mainwin_wlist, mainwin_bg, mainwin_gc, 112, 27, 153, 1, SKIN_TEXT);
@@ -70,43 +102,26 @@ diff -ru xmms-1.2.2/xmms/main.c xmms-1.2.2-xfont/xmms/main.c
  	textbox_set_scroll(mainwin_info, cfg.autoscroll);
  	mainwin_rate_text = create_textbox(&mainwin_wlist, mainwin_bg, mainwin_gc, 111, 43, 15, 0, SKIN_TEXT);
  	mainwin_freq_text = create_textbox(&mainwin_wlist, mainwin_bg, mainwin_gc, 156, 43, 10, 0, SKIN_TEXT);
-
-diff -ru xmms-1.2.2/xmms/main.h xmms-1.2.2-xfont/xmms/main.h
---- xmms-1.2.2/xmms/main.h	Fri Jul  7 09:18:26 2000
-+++ xmms-1.2.2-xfont/xmms/main.h	Wed Jul 12 00:13:32 2000
+--- xmms-1.2.3.orig/xmms/main.h	Tue Aug 29 11:18:19 2000
++++ xmms-1.2.3/xmms/main.h	Thu Sep 21 11:39:59 2000
 @@ -45,8 +45,9 @@
  	gboolean no_playlist_advance, smooth_title_scroll;
  	gboolean use_backslash_as_dir_delimiter, enable_dga;
- 	gboolean random_skin_on_play;
+ 	gboolean random_skin_on_play, use_fontsets;
 +	gboolean xfont_for_playinfo;
  	gfloat equalizer_preamp, equalizer_bands[10];
 -	gchar *skin, *outputplugin, *filesel_path, *playlist_path, *playlist_font;
 +	gchar *skin, *outputplugin, *filesel_path, *playlist_path, *playlist_font, *playinfo_font;
  	gchar *effectplugin;
  	gchar *disabled_iplugins, *enabled_gplugins, *enabled_vplugins;
- 	GList *url_history;
-diff -ru xmms-1.2.2/xmms/playlist_list.c xmms-1.2.2-xfont/xmms/playlist_list.c
---- xmms-1.2.2/xmms/playlist_list.c	Fri Jul  7 09:18:26 2000
-+++ xmms-1.2.2-xfont/xmms/playlist_list.c	Wed Jul 12 00:13:35 2000
-@@ -232,9 +232,9 @@
- 	gdk_gc_set_foreground(gc, get_skin_color(SKIN_PLEDIT_NORMALBG));
- 	gdk_draw_rectangle(obj, gc, TRUE, pl->pl_widget.x, pl->pl_widget.y, width, height);
- 
--/*  	if ((font = gdk_fontset_load(cfg.playlist_font)) != NULL) */
-+	if ((font = gdk_fontset_load(cfg.playlist_font)) != NULL)
- 
--	if ((font = gdk_font_load(cfg.playlist_font)) != NULL)
-+/*	if ((font = gdk_font_load(cfg.playlist_font)) != NULL) */
- 	{
- 		GList *list = get_playlist();
- 		pl->pl_fheight = font->ascent + font->descent + 1;
-diff -ru xmms-1.2.2/xmms/prefswin.c xmms-1.2.2-xfont/xmms/prefswin.c
---- xmms-1.2.2/xmms/prefswin.c	Mon Jun 26 05:27:25 2000
-+++ xmms-1.2.2-xfont/xmms/prefswin.c	Wed Jul 12 00:13:37 2000
-@@ -60,6 +60,11 @@
- GtkWidget *prefswin_options_font_frame, *prefswin_options_font_hbox;
+ 	gchar *eqpreset_default_file, *eqpreset_extension;
+diff -ru xmms-1.2.3.orig/xmms/prefswin.c xmms-1.2.3/xmms/prefswin.c
+--- xmms-1.2.3.orig/xmms/prefswin.c	Tue Sep 12 06:26:38 2000
++++ xmms-1.2.3/xmms/prefswin.c	Thu Sep 21 11:39:59 2000
+@@ -61,6 +61,11 @@
+ GtkWidget *prefswin_options_font_vbox;
  GtkWidget *prefswin_options_font_entry, *prefswin_options_font_browse;
- GtkWidget *prefswin_options_fontsel;
+ GtkWidget *prefswin_options_fontsel, *prefswin_options_fontset;
 +GtkWidget *prefswin_mainwin_frame, *prefswin_mainwin_vbox, *prefswin_mainwin_table;
 +GtkWidget *prefswin_mainwin_xfont;
 +GtkWidget *prefswin_mainwin_font_frame, *prefswin_mainwin_font_hbox;
@@ -115,7 +130,7 @@ diff -ru xmms-1.2.2/xmms/prefswin.c xmms-1.2.2-xfont/xmms/prefswin.c
  GtkWidget *prefswin_vbox, *prefswin_hbox, *prefswin_ok, *prefswin_cancel,
           *prefswin_apply;
  GtkWidget *prefswin_options_mouse_box, *prefswin_options_mouse_label,
-@@ -288,6 +293,7 @@
+@@ -298,6 +303,7 @@
  void prefswin_apply_changes(void)
  {
  	g_free(cfg.playlist_font);
@@ -123,7 +138,7 @@ diff -ru xmms-1.2.2/xmms/prefswin.c xmms-1.2.2-xfont/xmms/prefswin.c
  	cfg.allow_multiple_instances = GTK_TOGGLE_BUTTON(prefswin_options_ami)->active;
  	cfg.always_show_cb = GTK_TOGGLE_BUTTON(prefswin_options_asc)->active;
  	cfg.convert_underscore = GTK_TOGGLE_BUTTON(prefswin_options_cus)->active;
-@@ -298,6 +304,7 @@
+@@ -308,6 +314,7 @@
  	cfg.save_window_position = GTK_TOGGLE_BUTTON(prefswin_options_swp)->active;
  	cfg.dim_titlebar = GTK_TOGGLE_BUTTON(prefswin_options_dim)->active;
  	cfg.playlist_font = g_strdup(gtk_entry_get_text(GTK_ENTRY(prefswin_options_font_entry)));
@@ -131,7 +146,7 @@ diff -ru xmms-1.2.2/xmms/prefswin.c xmms-1.2.2-xfont/xmms/prefswin.c
  	cfg.save_playlist_position = GTK_TOGGLE_BUTTON(prefswin_options_pl_pos)->active;
  	cfg.open_rev_order = GTK_TOGGLE_BUTTON(prefswin_options_oro)->active;
  	cfg.get_info_on_load = GTK_TOGGLE_BUTTON(prefswin_options_giol)->active;
-@@ -310,7 +317,7 @@
+@@ -321,7 +328,7 @@
  	cfg.pause_between_songs_time = atoi(gtk_entry_get_text(GTK_ENTRY(prefswin_options_pbs_entry)));
  	cfg.use_backslash_as_dir_delimiter = GTK_TOGGLE_BUTTON(prefswin_options_ubsd)->active;
  	cfg.enable_dga = GTK_TOGGLE_BUTTON(prefswin_options_edga)->active;
@@ -140,7 +155,7 @@ diff -ru xmms-1.2.2/xmms/prefswin.c xmms-1.2.2-xfont/xmms/prefswin.c
  	cfg.use_eplugins = GTK_TOGGLE_BUTTON(prefswin_egplugins_euse_cbox)->active;
  	cfg.mouse_change = (gint) GTK_ADJUSTMENT(prefswin_options_mouse_entry)->value;
  
-@@ -345,6 +352,10 @@
+@@ -359,6 +366,10 @@
  		textbox_set_scroll(mainwin_info, TRUE);
  	}
  
@@ -151,7 +166,7 @@ diff -ru xmms-1.2.2/xmms/prefswin.c xmms-1.2.2-xfont/xmms/prefswin.c
  	draw_main_window(TRUE);
  	draw_playlist_window(TRUE);
  	draw_equalizer_window(TRUE);
-@@ -388,6 +399,25 @@
+@@ -402,6 +413,30 @@
  	}
  }
  
@@ -174,10 +189,15 @@ diff -ru xmms-1.2.2/xmms/prefswin.c xmms-1.2.2-xfont/xmms/prefswin.c
 +	}
 +}
 +
- void prefswin_egplugins_euse_cb(GtkWidget * w, gpointer data)
++void prefswin_egplugins_euse_cb(GtkWidget * w, gpointer data)
++{
++	cfg.use_eplugins = GTK_TOGGLE_BUTTON(w)->active;
++}
++
+ void prefswin_egplugins_guse_cb(GtkWidget * w, gpointer data)
  {
- 	cfg.use_eplugins = GTK_TOGGLE_BUTTON(w)->active;
-@@ -709,6 +739,37 @@
+ 	gint sel;
+@@ -714,6 +749,37 @@
  	gtk_box_pack_start(GTK_BOX(prefswin_vplugins_hbox), prefswin_vplugins_use_cbox, TRUE, TRUE, 0);
  
  	gtk_notebook_append_page(GTK_NOTEBOOK(prefswin_notebook), prefswin_vplugins_box, gtk_label_new(_("Visualization Plugins")));
@@ -215,7 +235,7 @@ diff -ru xmms-1.2.2/xmms/prefswin.c xmms-1.2.2-xfont/xmms/prefswin.c
  	
  	/*
  	 * Options page
-@@ -1096,6 +1157,7 @@
+@@ -1106,6 +1172,7 @@
  	is_opening = TRUE;
  
  	gtk_entry_set_text(GTK_ENTRY(prefswin_options_font_entry), cfg.playlist_font);
@@ -223,19 +243,19 @@ diff -ru xmms-1.2.2/xmms/prefswin.c xmms-1.2.2-xfont/xmms/prefswin.c
  	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(prefswin_options_ami), cfg.allow_multiple_instances);
  	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(prefswin_options_asc), cfg.always_show_cb);
  	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(prefswin_options_cus), cfg.convert_underscore);
-@@ -1117,6 +1179,7 @@
- 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(prefswin_options_pbs), cfg.pause_between_songs);
+@@ -1128,6 +1195,7 @@
  	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(prefswin_options_ubsd), cfg.use_backslash_as_dir_delimiter);
  	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(prefswin_options_edga), cfg.enable_dga);
+ 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(prefswin_options_fontset), cfg.use_fontsets);
 +	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(prefswin_mainwin_xfont), cfg.xfont_for_playinfo);
  	sprintf(temp, "%u", cfg.pause_between_songs_time);
  	gtk_entry_set_text(GTK_ENTRY(prefswin_options_pbs_entry), temp);
  
-diff -ru xmms-1.2.2/xmms/skin.c xmms-1.2.2-xfont/xmms/skin.c
---- xmms-1.2.2/xmms/skin.c	Mon Jun 12 06:27:14 2000
-+++ xmms-1.2.2-xfont/xmms/skin.c	Wed Jul 12 00:13:39 2000
-@@ -96,6 +96,56 @@
- 	return ret;
+diff -ru xmms-1.2.3.orig/xmms/skin.c xmms-1.2.3/xmms/skin.c
+--- xmms-1.2.3.orig/xmms/skin.c	Fri Sep 15 06:36:10 2000
++++ xmms-1.2.3/xmms/skin.c	Thu Sep 21 11:41:23 2000
+@@ -94,6 +94,56 @@
+ 	gdk_window_get_size(skinpixmap->def_pixmap, &skinpixmap->width, &skinpixmap->height);
  }
  
 +static void _find_textbg_textfg(GdkPixmap *text, GdkColor *bgc, GdkColor *fgc)
@@ -291,61 +311,65 @@ diff -ru xmms-1.2.2/xmms/skin.c xmms-1.2.2-xfont/xmms/skin.c
  void init_skins(void)
  {
  	gint i;
-@@ -106,6 +156,7 @@
- 	skin->def_titlebar = gdk_pixmap_create_from_xpm_d(mainwin->window, NULL, NULL, skin_titlebar);
- 	skin->def_shufrep = gdk_pixmap_create_from_xpm_d(mainwin->window, NULL, NULL, skin_shufrep);
- 	skin->def_text = gdk_pixmap_create_from_xpm_d(mainwin->window, NULL, NULL, skin_text);
-+	_find_textbg_textfg(skin->def_text, skin->def_textbg, skin->def_textfg);
- 	skin->def_volume = gdk_pixmap_create_from_xpm_d(mainwin->window, NULL, NULL, skin_volume);
- 	skin->def_monostereo = gdk_pixmap_create_from_xpm_d(mainwin->window, NULL, NULL, skin_monoster);
- 	skin->def_playpause = gdk_pixmap_create_from_xpm_d(mainwin->window, NULL, NULL, skin_playpaus);
-@@ -488,6 +539,7 @@
- 		skin->titlebar = load_skin_pixmap(path, "titlebar.bmp", skin->def_titlebar);
- 		skin->shufrep = load_skin_pixmap(path, "shufrep.bmp", skin->def_shufrep);
- 		skin->text = load_skin_pixmap(path, "text.bmp", skin->def_text);
-+		_find_textbg_textfg(skin->text, skin->textbg, skin->textfg);
- 		skin->volume = load_skin_pixmap(path, "volume.bmp", skin->def_volume);
- 		skin->balance = load_skin_pixmap(path, "balance.bmp", skin->def_volume);
- 		skin->monostereo = load_skin_pixmap(path, "monoster.bmp", skin->def_monostereo);
-@@ -689,6 +741,14 @@
+@@ -104,6 +154,7 @@
+ 	load_def_pixmap(&skin->titlebar, skin_titlebar);
+ 	load_def_pixmap(&skin->shufrep, skin_shufrep);
+ 	load_def_pixmap(&skin->text, skin_text);
++	_find_textbg_textfg(skin->text.def_pixmap, skin->def_textbg, skin->def_textfg);
+ 	load_def_pixmap(&skin->volume, skin_volume);
+ 	load_def_pixmap(&skin->balance, skin_volume);
+ 	load_def_pixmap(&skin->monostereo, skin_monoster);
+@@ -513,6 +564,7 @@
+ 		load_skin_pixmap(&skin->titlebar, path, "titlebar.bmp");
+ 		load_skin_pixmap(&skin->shufrep, path, "shufrep.bmp");
+ 		load_skin_pixmap(&skin->text, path, "text.bmp");
++		_find_textbg_textfg(skin->text.pixmap, skin->textbg, skin->textfg);
+ 		load_skin_pixmap(&skin->volume, path, "volume.bmp");
+ 		load_skin_pixmap(&skin->balance, path, "balance.bmp");
+ 		if (skin->balance.pixmap == NULL)
+@@ -713,6 +765,18 @@
  			ret = skin->pledit_selectedbg;
  			if (!ret)
  				ret = &skin->def_pledit_selectedbg;
 +			break;
 +	        case SKIN_TEXTBG:
-+			if (skin->text) ret = skin->textbg;
-+			else ret = skin->def_textbg;
++			if (skin->text.pixmap)
++				ret = skin->textbg;
++			else
++				ret = skin->def_textbg;
 +			break;
 +	        case SKIN_TEXTFG:
-+			if (skin->text) ret = skin->textfg;
-+			else ret = skin->def_textfg;
++			if (skin->text.pixmap)
++				ret = skin->textfg;
++			else
++				ret = skin->def_textfg;
  			break;
  	}
  	return ret;
-diff -ru xmms-1.2.2/xmms/skin.h xmms-1.2.2-xfont/xmms/skin.h
---- xmms-1.2.2/xmms/skin.h	Wed Apr 12 06:46:18 2000
-+++ xmms-1.2.2-xfont/xmms/skin.h	Wed Jul 12 00:13:42 2000
-@@ -30,7 +30,7 @@
+diff -ru xmms-1.2.3.orig/xmms/skin.h xmms-1.2.3/xmms/skin.h
+--- xmms-1.2.3.orig/xmms/skin.h	Sat Aug  5 07:10:37 2000
++++ xmms-1.2.3/xmms/skin.h	Thu Sep 21 11:39:59 2000
+@@ -33,7 +33,7 @@
  typedef enum
  {
  	SKIN_PLEDIT_NORMAL, SKIN_PLEDIT_CURRENT, SKIN_PLEDIT_NORMALBG,
 -	SKIN_PLEDIT_SELECTEDBG
 +	SKIN_PLEDIT_SELECTEDBG, SKIN_TEXTBG, SKIN_TEXTFG
  } SkinColorIndex;
- 	
  
-@@ -42,6 +42,8 @@
- 	GdkPixmap *titlebar, *def_titlebar;
- 	GdkPixmap *shufrep, *def_shufrep;
- 	GdkPixmap *text, *def_text;
+ typedef struct
+@@ -64,6 +64,8 @@
+ 	SkinPixmap pledit;
+ 	SkinPixmap eqmain;
+ 	SkinPixmap eq_ex;
 +	GdkColor textbg[6], def_textbg[6];
 +	GdkColor textfg[6], def_textfg[6];
- 	GdkPixmap *volume, *def_volume;
- 	GdkPixmap *balance, *def_balance;
- 	GdkPixmap *monostereo, *def_monostereo;
-diff -ru xmms-1.2.2/xmms/textbox.c xmms-1.2.2-xfont/xmms/textbox.c
---- xmms-1.2.2/xmms/textbox.c	Fri Jun 16 06:17:19 2000
-+++ xmms-1.2.2-xfont/xmms/textbox.c	Wed Jul 12 00:13:44 2000
+ 	GdkColor *pledit_normal, def_pledit_normal;
+ 	GdkColor *pledit_current, def_pledit_current;
+ 	GdkColor *pledit_normalbg, def_pledit_normalbg;
+diff -ru xmms-1.2.3.orig/xmms/textbox.c xmms-1.2.3/xmms/textbox.c
+--- xmms-1.2.3.orig/xmms/textbox.c	Sat Aug  5 07:10:38 2000
++++ xmms-1.2.3/xmms/textbox.c	Thu Sep 21 11:39:59 2000
 @@ -55,9 +55,9 @@
  		cw = tb->tb_pixmap_width - tb->tb_offset;
  		if (cw > tb->tb_widget.width)
@@ -476,9 +500,9 @@ diff -ru xmms-1.2.2/xmms/textbox.c xmms-1.2.2-xfont/xmms/textbox.c
  	g_free(tb->tb_text);
  	g_free(tb);
  }
-diff -ru xmms-1.2.2/xmms/textbox.h xmms-1.2.2-xfont/xmms/textbox.h
---- xmms-1.2.2/xmms/textbox.h	Wed Feb 16 13:05:59 2000
-+++ xmms-1.2.2-xfont/xmms/textbox.h	Wed Jul 12 00:13:47 2000
+diff -ru xmms-1.2.3.orig/xmms/textbox.h xmms-1.2.3/xmms/textbox.h
+--- xmms-1.2.3.orig/xmms/textbox.h	Wed Feb 16 13:05:59 2000
++++ xmms-1.2.3/xmms/textbox.h	Thu Sep 21 11:39:59 2000
 @@ -33,12 +33,14 @@
  	         tb_is_dragging;
  	gint tb_timeout_tag, tb_drag_x, tb_drag_off;
