@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	enigmail
-PORTVERSION=	0.83.1
-PORTREVISION=	1
+PORTVERSION=	0.83.2
+PORTREVISION=	0
 CATEGORIES=	mail security
 MASTER_SITES=	http://mozdev.secsup.org/enigmail/src/ \
 		http://downloads.us-east3.mozdev.org/enigmail/src/
-DISTFILES=	${PORTNAME}-${PORTVERSION:S/.1//}.latest${EXTRACT_SUFX} \
+DISTFILES=	${PORTNAME}-${PORTVERSION:S/.2//}.latest${EXTRACT_SUFX} \
 		ipc-1.0.5${EXTRACT_SUFX}
 
 MAINTAINER=	ale@FreeBSD.org
