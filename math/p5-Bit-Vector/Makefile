@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	Bit-Vector
-PORTVERSION=	6.0
+PORTVERSION=	6.1
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Bit
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tobez@FreeBSD.org
 
 PERL_CONFIGURE=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-MAN3=		Bit::Vector.3 Bit::Vector::Overload.3
+MAN3=		Bit::Vector.3 Bit::Vector::Overload.3 Carp::Clan.3
 
 .include <bsd.port.mk>
