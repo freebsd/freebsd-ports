@@ -37,7 +37,7 @@ PHP_BASE!=	${LOCALBASE}/bin/php-config --prefix
 EXT_DIR!=	${LOCALBASE}/bin/php-config --extension-dir | ${SED} -e \
 			"s:${PHP_BASE}/::"
 .else
-PHP_BASE!=	${LOCALBASE}
+PHP_BASE=	${LOCALBASE}
 .endif
 PEAR=		${LOCALBASE}/bin/pear
 LPHP_LIB=	lib/php
