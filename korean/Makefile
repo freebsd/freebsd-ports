@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += unzip
 
     SUBDIR += FreeWnn-lib
     SUBDIR += FreeWnn-server
