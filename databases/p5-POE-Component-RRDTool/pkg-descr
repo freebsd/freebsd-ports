@@ -8,7 +8,7 @@ be used to create RRD files, update RRDs, retreive data from RRDs, and
 generate graphs from the databases.  This module provides a POE wrapper
 around the rrdtool command line interface.
 
-WWW: http://search.cpan.org/search?dist=POE-Component-RRDTool
+WWW: http://search.cpan.org/dist/POE-Component-RRDTool/
 
 -- Sergey Skvortsov
 skv@FreeBSD.org
