@@ -36,6 +36,7 @@ RADDB=		acct_users attrs clients clients.conf dictionary \
 		snmp.conf sql.conf users x99.conf
 
 post-install:
+	@${MKDIR} ${PREFIX}/etc/raddb
 .for db in ${RADDB}
 	${INSTALL_DATA} ${WRKSRC}/raddb/${db} ${PREFIX}/etc/raddb/${db}.sample
 .endfor
