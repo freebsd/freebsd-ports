@@ -1,13 +1,13 @@
 # New ports collection makefile for:	WindowMaker with i18n extention
-# Version required:	0.61.0
+# Version required:	0.62.0
 # Date created:		24 Nov 1998
 # Whom:			mac@jp.freebsd.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	WindowMaker-0.61.1
-PKGNAME=	windowmaker-i18n-0.61.1
+DISTNAME=	WindowMaker-0.62.0
+PKGNAME=	windowmaker-i18n-0.62.0
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER}
 MASTER_SITE_SUBDIR=	beta/srcs
@@ -42,7 +42,7 @@ CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 MAN1=	geticonset.1x getstyle.1x seticons.1x setstyle.1x \
 	wdwrite.1x wmaker.1x wmsetbg.1x wxcopy.1x wxpaste.1x wsetfont.1x
 
-JA_CATALOGFILE=	WindowMaker-0.61.1ja1
+JA_CATALOGFILE=	
 
 .if defined(JA_CATALOGFILE) && !empty(JA_CATALOGFILE)
 MASTER_SITES+=	ftp://muse.brain.riken.go.jp/pub/ja.po/
@@ -64,7 +64,7 @@ pre-extract:
 
 post-extract:
 	@cd ${WRKSRC} && \
-	${TAR} xfz libwmfun-0.0.2.tar.gz
+	${TAR} xfz libwmfun-0.0.3.tar.gz
 
 .include <bsd.port.pre.mk>
 
