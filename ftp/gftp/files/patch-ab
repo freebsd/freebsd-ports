@@ -1,14 +1,14 @@
---- docs/Makefile.in.orig	Wed Nov 27 19:57:25 2002
-+++ docs/Makefile.in	Wed Nov 27 20:01:29 2002
-@@ -109,15 +109,19 @@
- USE_NLS = @USE_NLS@
+--- docs/Makefile.in.orig	Sun Nov  9 16:31:55 2003
++++ docs/Makefile.in	Sun Nov  9 16:34:04 2003
+@@ -112,15 +112,19 @@
  VERSION = @VERSION@
  
  man_MANS = gftp.1
 +.ifndef WITHOUT_X11
  SUBDIRS = sample.gftp
 +.endif
- EXTRA_DIST = USERS-GUIDE gftp.1 gftp.desktop gftp.lsm gftp.png parse-netrc.pl
+ EXTRA_DIST = USERS-GUIDE gftp.1 gftp.desktop gftp.lsm gftp.png parse-netrc.pl            gftp-faq.sgml
+ 
  
 +.ifdef HAVE_GNOME
  Utilitiesdir = $(datadir)/apps/Internet
