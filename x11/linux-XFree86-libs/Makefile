@@ -7,7 +7,7 @@
 
 PORTNAME=		XFree86-libs
 PORTVERSION=		4.3.0
-PORTREVISION=		0
+PORTREVISION=		1
 CATEGORIES=		x11 linux
 MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX}
 MASTER_SITE_SUBDIR=	updates/9/en/os/i386
@@ -35,5 +35,11 @@ pre-install:
 	usr/X11R6/lib/X11
 	${ECHO_CMD} @dirrm ${ii} >> ${PLIST}
 .endfor
+
+post-install:
+	${RM} -f ${LINUXBASE}/etc/ld.so.cache
+	${FIND} ${LINUXBASE} -name lib -type d | ${SED} 's:${LINUXBASE}::g' \
+		> ${LINUXBASE}/etc/ld.so.conf
+	chroot ${LINUXBASE} sbin/ldconfig
 
 .include "../../x11-toolkits/linux-gtk/Makefile"
