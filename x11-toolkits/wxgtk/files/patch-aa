@@ -1,0 +1,24 @@
+--- configure.orig	Sat Jun 19 14:34:17 1999
++++ configure	Sat Jun 19 14:34:30 1999
+@@ -6424,18 +6424,18 @@
+   if test x$gtk_config_exec_prefix != x ; then
+      gtk_config_args="$gtk_config_args --exec-prefix=$gtk_config_exec_prefix"
+      if test x${GTK_CONFIG+set} != xset ; then
+-        GTK_CONFIG=$gtk_config_exec_prefix/bin/gtk-config
++        GTK_CONFIG=$gtk_config_exec_prefix/bin/gtk10-config
+      fi
+   fi
+   if test x$gtk_config_prefix != x ; then
+      gtk_config_args="$gtk_config_args --prefix=$gtk_config_prefix"
+      if test x${GTK_CONFIG+set} != xset ; then
+-        GTK_CONFIG=$gtk_config_prefix/bin/gtk-config
++        GTK_CONFIG=$gtk_config_prefix/bin/gtk10-config
+      fi
+   fi
+ 
+   # Extract the first word of "gtk-config", so it can be a program name with args.
+-set dummy gtk-config; ac_word=$2
++set dummy gtk10-config; ac_word=$2
+ echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+ echo "configure:6441: checking for $ac_word" >&5
+ if eval "test \"`echo '$''{'ac_cv_path_GTK_CONFIG'+set}'`\" = set"; then
