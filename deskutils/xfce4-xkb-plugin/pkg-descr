@@ -1,0 +1,12 @@
+This plugin displays the current keyboard layout, and refreshes when
+layout changes. Also the layout can be switched by simply clicking on
+the plugin. The new version can display the layout as text label and
+also as an image of the corresponding country's flag. If the flag
+image is unavailable then the plugin falls back to displaying text
+label for that layout.
+
+This plugin is used along with the XKB extension. For now the keyboard
+layouts cannot be configured from the plugin itself, they should be
+set in the XF86Config file or some other way (e.g. setxkbmap).
+
+WWW: http://xfce-goodies.berlios.de/
