@@ -18,6 +18,8 @@ DISTNAME=		${PKGNAMEPREFIX}${LICQ_VER}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Jons GTK plugin for licq
 
+BROKEN=		"Incompatible with licq-1.3.0"
+
 RUN_DEPENDS+=	licq:${PORTSDIR}/${LICQ_PORT}
 
 USE_BZIP2=	yes
