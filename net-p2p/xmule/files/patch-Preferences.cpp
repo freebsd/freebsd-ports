@@ -1,7 +1,7 @@
---- src/Preferences.cpp.orig	Mon May 26 12:08:45 2003
-+++ src/Preferences.cpp	Mon May 26 12:10:14 2003
-@@ -65,7 +65,7 @@
- extern int sprintf(char *__restrict __s,__const char*__restrict __format,...) __attribute__ ((__format__ (__printf__, 2,3)));
+--- src/Preferences.cpp.orig	Tue Sep  9 00:56:24 2003
++++ src/Preferences.cpp	Tue Sep  9 00:56:21 2003
+@@ -60,7 +60,7 @@
+ #endif
  
  #ifdef __FreeBSD__
 -extern long long atoll(char *s);

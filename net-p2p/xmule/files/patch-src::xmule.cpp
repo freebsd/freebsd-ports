@@ -1,20 +1,20 @@
---- src/xmule.cpp.orig	Mon Aug 11 14:38:14 2003
-+++ src/xmule.cpp	Mon Aug 11 14:38:27 2003
-@@ -763,7 +763,7 @@
+--- src/xmule.cpp.orig	Tue Sep  9 00:15:19 2003
++++ src/xmule.cpp	Tue Sep  9 00:16:06 2003
+@@ -797,7 +797,7 @@
+ 	delete[] emulesig_path;
  	delete[] xmulesig_path;
- }
- 
+ } //End Added By Bouc7
 -#if defined(__Linux__)
 +#if 0
  #include <execinfo.h>
  #endif
  
-@@ -776,7 +776,7 @@
-     	theApp.clientudp->Destroy();
+@@ -810,7 +810,7 @@
+ 		theApp.clientudp->Destroy();
  
-     // (stkn) create backtrace
+ 	// (stkn) create backtrace
 -#if defined(__Linux__)
 +#if 0
-     void * bt_array[100]; // 100 should be enough ?!?
-     char ** bt_strings;
-     int num_entries;
+ 	void *bt_array[100];	// 100 should be enough ?!?
+ 	char **bt_strings;
+ 	int num_entries;
