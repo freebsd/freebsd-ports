@@ -3,13 +3,12 @@
 # Date created:	 	19 February 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
-# $Id: Makefile,v 1.5 1999/06/28 02:20:15 billf Exp $
+# $Id: Makefile,v 1.6 1999/08/02 11:42:13 cpiazza Exp $
 #
 
 DISTNAME=	ezbounce-0.99.2
 CATEGORIES=	irc
-MASTER_SITES=  	http://druglord.freelsd.org/ezbounce/ \
-		http://irc.themes.org/downloads/misc/
+MASTER_SITES=  	http://druglord.freelsd.org/ezbounce/
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
