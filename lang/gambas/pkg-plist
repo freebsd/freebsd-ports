@@ -100,16 +100,20 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Automation/KateBrowser/FBrowser.form
 %%PORTDOCS%%%%EXAMPLESDIR%%/Automation/KateBrowser/KateBrowser
 %%PORTDOCS%%%%EXAMPLESDIR%%/Automation/KateBrowser/arrow.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Automation/KateBrowser/kate.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Automation/Scripting/.gambas/FSCRIPT
 %%PORTDOCS%%%%EXAMPLESDIR%%/Automation/Scripting/.kdbgrc.gbx
 %%PORTDOCS%%%%EXAMPLESDIR%%/Automation/Scripting/.project
 %%PORTDOCS%%%%EXAMPLESDIR%%/Automation/Scripting/FScript.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Automation/Scripting/FScript.form
 %%PORTDOCS%%%%EXAMPLESDIR%%/Automation/Scripting/Scripting
+%%PORTDOCS%%%%EXAMPLESDIR%%/Automation/Scripting/background.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Blights/.gambas/WIN1
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Blights/.lang/.pot
+%%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Blights/.lang/fr.po
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Blights/.project
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Blights/Blights
+%%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Blights/ampoule.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Blights/bloff.xpm
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Blights/blon.xpm
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Blights/win1.class
@@ -122,6 +126,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Collection/Collection
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Collection/FStart.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Collection/FStart.form
+%%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Collection/collection.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Object/.gambas/CTHING
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Object/.gambas/FSTART
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Object/.project
@@ -129,11 +134,13 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Object/FStart.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Object/FStart.form
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Object/Object
+%%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Object/object.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Timer/.gambas/FTIMER
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Timer/.project
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Timer/FTimer.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Timer/FTimer.form
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Timer/Timer
+%%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Timer/timer.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Database/DataReportExample/.gambas/FABOUT
 %%PORTDOCS%%%%EXAMPLESDIR%%/Database/DataReportExample/.gambas/FCONN
 %%PORTDOCS%%%%EXAMPLESDIR%%/Database/DataReportExample/.gambas/FMAIN
@@ -166,18 +173,19 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Database/Database/FMain.form
 %%PORTDOCS%%%%EXAMPLESDIR%%/Database/Database/FRequest.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Database/Database/FRequest.form
+%%PORTDOCS%%%%EXAMPLESDIR%%/Database/Database/database.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/AnalogWatch/.gambas/FRMCLOCK
 %%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/AnalogWatch/.kdbgrc.gbx
 %%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/AnalogWatch/.project
 %%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/AnalogWatch/AnalogWatch
 %%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/AnalogWatch/FrmClock.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/AnalogWatch/FrmClock.form
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/AnalogWatch/timer.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/Clock/.gambas/FCLOCK
 %%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/Clock/.icon/16.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/Clock/.icon/32.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/Clock/.icon/48.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/Clock/.project
-%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/Clock/CHANGELOG
 %%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/Clock/Clock
 %%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/Clock/FClock.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/Clock/FClock.form
@@ -194,11 +202,13 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/ImageViewer/FViewer.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/ImageViewer/FViewer.form
 %%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/ImageViewer/ImageViewer
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/ImageViewer/image.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/OnScreenDisplay/.gambas/FONSCREENDISPLAY
 %%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/OnScreenDisplay/.project
 %%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/OnScreenDisplay/FOnScreenDisplay.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/OnScreenDisplay/FOnScreenDisplay.form
 %%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/OnScreenDisplay/OnScreenDisplay
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/OnScreenDisplay/icon.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Exec/Console/.gambas/FCONSOLE
 %%PORTDOCS%%%%EXAMPLESDIR%%/Exec/Console/.kdbgrc.gbx
 %%PORTDOCS%%%%EXAMPLESDIR%%/Exec/Console/.lang/.pot
@@ -207,6 +217,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Exec/Console/Console
 %%PORTDOCS%%%%EXAMPLESDIR%%/Exec/Console/FConsole.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Exec/Console/FConsole.form
+%%PORTDOCS%%%%EXAMPLESDIR%%/Exec/Console/konsole.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Exec/MoviePlayer/.gambas/FMOVIEPLAYER
 %%PORTDOCS%%%%EXAMPLESDIR%%/Exec/MoviePlayer/.project
 %%PORTDOCS%%%%EXAMPLESDIR%%/Exec/MoviePlayer/FMoviePlayer.class
@@ -291,11 +302,13 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/ClientSocket/ClientSocket
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/ClientSocket/FrmMain.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/ClientSocket/FrmMain.form
+%%PORTDOCS%%%%EXAMPLESDIR%%/Networking/ClientSocket/socket.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/DnsClient/.gambas/F
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/DnsClient/.project
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/DnsClient/DnsClient
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/DnsClient/F.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/DnsClient/F.form
+%%PORTDOCS%%%%EXAMPLESDIR%%/Networking/DnsClient/dnsclient.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/HTTPGet/.gambas/CLSPARAMS
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/HTTPGet/.gambas/F
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/HTTPGet/.gambas/FCONFIG
@@ -306,21 +319,25 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/HTTPGet/FConfig.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/HTTPGet/FConfig.form
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/HTTPGet/HTTPGet
+%%PORTDOCS%%%%EXAMPLESDIR%%/Networking/HTTPGet/httpclient.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/HTTPPost/.gambas/F
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/HTTPPost/.project
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/HTTPPost/F.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/HTTPPost/F.form
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/HTTPPost/HTTPPost
+%%PORTDOCS%%%%EXAMPLESDIR%%/Networking/HTTPPost/httpclient.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/SerialPort/.gambas/FSERIALPORT
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/SerialPort/.project
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/SerialPort/FSerialPort.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/SerialPort/FSerialPort.form
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/SerialPort/SerialPort
+%%PORTDOCS%%%%EXAMPLESDIR%%/Networking/SerialPort/serialport.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/ServerSocket/.gambas/FRMMAIN
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/ServerSocket/.project
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/ServerSocket/FrmMain.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/ServerSocket/FrmMain.form
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/ServerSocket/ServerSocket
+%%PORTDOCS%%%%EXAMPLESDIR%%/Networking/ServerSocket/serversocket.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/UDPServerClient/.gambas/FRMCLIENT
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/UDPServerClient/.gambas/FRMSERVER
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/UDPServerClient/.lang/.pot
@@ -332,11 +349,24 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/UDPServerClient/FrmServer.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/UDPServerClient/FrmServer.form
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/UDPServerClient/UDPServerClient
+%%PORTDOCS%%%%EXAMPLESDIR%%/Networking/UDPServerClient/udpsocket.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/WebBrowser/.gambas/FBROWSER
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/WebBrowser/.project
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/WebBrowser/FBrowser.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/WebBrowser/FBrowser.form
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/WebBrowser/WebBrowser
+%%PORTDOCS%%%%EXAMPLESDIR%%/Networking/WebBrowser/webbrowser.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Sound/MusicPlayer/.gambas/FSOUNDPLAYER
+%%PORTDOCS%%%%EXAMPLESDIR%%/Sound/MusicPlayer/.lang/.pot
+%%PORTDOCS%%%%EXAMPLESDIR%%/Sound/MusicPlayer/.project
+%%PORTDOCS%%%%EXAMPLESDIR%%/Sound/MusicPlayer/FSoundPlayer.class
+%%PORTDOCS%%%%EXAMPLESDIR%%/Sound/MusicPlayer/FSoundPlayer.form
+%%PORTDOCS%%%%EXAMPLESDIR%%/Sound/MusicPlayer/MusicPlayer
+%%PORTDOCS%%%%EXAMPLESDIR%%/Sound/MusicPlayer/open.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Sound/MusicPlayer/pause.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Sound/MusicPlayer/play.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Sound/MusicPlayer/sound.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Sound/MusicPlayer/stop.png
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/ChristopheBONNET/ALL_OBJECT.tar.gz
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/ChristopheBONNET/ALL_OBJECT.tar.gz,v
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/DifferencesFromVB/vbdiff.png
@@ -5902,6 +5932,10 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc
 %%PORTDOCS%%@dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Sound/MusicPlayer/.gambas
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Sound/MusicPlayer/.lang
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Sound/MusicPlayer
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Sound
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Networking/WebBrowser/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Networking/WebBrowser
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Networking/UDPServerClient/.lang
