@@ -1,0 +1,8 @@
+Text::FormatTable renders simple tables as text. You pass to the constructor
+a table format specification similar to LaTeX (e.g. "r|l|l") and you call
+methods to fill the table data and insert rules. After the data is filled,
+you render the table as text.
+
+WWW: http://search.cpan.org/search?dist=Text-FormatTable
+
+Seamus Venasse <svenasse@polaris.ca>
