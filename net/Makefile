@@ -62,6 +62,7 @@
     SUBDIR += dgd
     SUBDIR += dgd-lpmud
     SUBDIR += dgd-net
+    SUBDIR += dhcpdump
     SUBDIR += dhcping
     SUBDIR += dhid
     SUBDIR += dhcpconf
