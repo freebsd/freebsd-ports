@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ruby
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.5
 CATEGORIES=	lang ipv6
 MASTER_SITES=	ftp://ftp.netlab.co.jp/pub/lang/ruby/${BRANCH_NAME}/ \
 		ftp://ftp.TokyoNet.AD.JP/pub/misc/ruby/${BRANCH_NAME}/ \
