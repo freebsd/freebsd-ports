@@ -1,14 +1,10 @@
---- Makefile.in.orig	Tue Feb 22 00:06:41 2000
-+++ Makefile.in	Tue Feb 22 11:13:20 2000
-@@ -134,7 +134,7 @@
- 
- SUBDIRS = po intl idl libefs bonobo storage-modules components samples gshell tools tests
+--- Makefile.in.orig	Sat Aug 12 21:17:01 2000
++++ Makefile.in	Mon Aug 14 10:44:14 2000
+@@ -149,3 +149,3 @@
  
 -confexecdir = $(libdir)
 +confexecdir = $(sysconfdir)
- confexec_DATA = bonoboConf.sh
- 
- EXTRA_DIST = bonoboConf.sh.in bonobo.spec.in
+ confexec_DATA = bonoboConf.sh bonoboxConf.sh bonobox_printConf.sh
 --- po/Makefile.in.in.orig	Mon Feb 21 23:37:16 2000
 +++ po/Makefile.in.in	Tue Feb 22 11:18:13 2000
 @@ -18,8 +18,8 @@
