@@ -1,0 +1,4 @@
+bin/radiusniff
+share/radiusniff/clients
+share/radiusniff/dictionary
+@dirrm share/radiusniff/
