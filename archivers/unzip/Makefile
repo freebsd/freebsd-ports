@@ -7,6 +7,7 @@
 
 PORTNAME=	unzip
 PORTVERSION=    5.50
+PORTREVISION=   1
 CATEGORIES=	archivers
 MASTER_SITES=   ftp://ftp.info-zip.org/pub/infozip/src/ \
 		${MASTER_SITE_TEX_CTAN:S,%SUBDIR%,tools/zip/info-zip/src/,}
