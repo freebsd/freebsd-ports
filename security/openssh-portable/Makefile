@@ -24,7 +24,6 @@ MAN8=	sftp-server.8 sshd.8 ssh-keysign.8
 CRYPTOLIBS=	-L${OPENSSLLIB} -lcrypto
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --with-md5-passwords
-CONFIGURE_ARGS+=	--with-privsep-path=${PREFIX}/empty
 CLEAN=		etc/ssh_config etc/sshd_config etc/moduli \
 		etc/ssh_host_key etc/ssh_host_key.pub \
 		etc/ssh_host_dsa_key etc/ssh_host_dsa_key.pub \
@@ -49,7 +48,11 @@ PREFIX=		/usr
 MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man \
 		--sysconfdir=/etc/ssh --localstatedir=/var
+EMPTYDIR=	${PREFIX}/empty
+.else
+EMPTYDIR=	/var/empty
 .endif
+CONFIGURE_ARGS+=	--with-privsep-path=${EMPTYDIR}
 
 .if defined(BATCH)
 EXTRA_PATCHES+=		${FILESDIR}/batch.patch
@@ -81,10 +84,10 @@ pre-configure:
 .endif
 
 pre-install:
+	-${MKDIR} ${EMPTYDIR}
 	if ! pw groupshow sshd; then pw groupadd sshd -g 22; fi
 	if ! pw usershow sshd; then pw useradd sshd -g sshd -u 22 \
-		-h - -d ${PREFIX}/empty -s /nonexistent -c "sshd privilege separation"; fi
-	${MKDIR} ${PREFIX}/empty
+		-h - -d ${EMPTYDIR} -s /nonexistent -c "sshd privilege separation"; fi
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
