@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Nov  3 23:22:29 1995
-+++ Makefile	Tue Dec  5 14:12:38 1995
+--- Makefile.orig	Sat Nov  4 00:22:29 1995
++++ Makefile	Wed Jan 17 14:04:28 1996
 @@ -40,28 +40,28 @@
  ### you need to localize the paths on these lines
  
@@ -8,14 +8,14 @@
 +#WISH = /usr/sww/tcl-7.4/bin/wish-4.0
  #WISH = wish
 -#WISH = /usr/local/bin/wish
-+WISH = /usr/local/bin/wish4.0
++WISH = ${PREFIX}/bin/wish4.0
  
  # the executable `tkman' is placed in BINDIR
  # this should be a directory that's in your bin PATH
 -BINDIR = /home/auspex/h/bair/phelps/bin
 -#BINDIR = /usr/local/bin
 +#BINDIR = /home/auspex/h/bair/phelps/bin
-+BINDIR = /usr/local/bin
++BINDIR = ${PREFIX}/bin
  
  # directory in which to place the manual page.  The help information
  # is maintained in HTML, from which the [tn]roff version is 
@@ -24,7 +24,7 @@
 +#MANDIR = /home/auspex/h/bair/phelps/man/man1
  #MANDIR = /usr/sww/X11/man/man1
 -#MANDIR = /usr/local/man/man1
-+MANDIR = /usr/local/man/man1
++MANDIR = ${PREFIX}/man/man1
  
  
  # # # MACHINE DEPENDENCIES # # #
@@ -37,7 +37,7 @@
  # Ultrix users should uncomment the following line
  #manformat = {tbl | nroff -man | col}
  # for BSDI
-@@ -127,10 +127,10 @@
+@@ -127,12 +127,12 @@
  # so how can you lose?
  
  # BY DEFAULT ON
@@ -45,29 +45,35 @@
 +#glimpse = glimpse
  # IF YOU DON'T WANT TO BOTHER WITH GLIMPSE, you can disable it here
  # ALSO DISABLE GLIMPSEINDEX BELOW
--#glimpse = ""
-+glimpse = ""
+ #glimpse = ""
  # give the full path, if you'd like
- #glimpse = /usr/sww/bin/glimpse
+-#glimpse = /usr/sww/bin/glimpse
++glimpse = ${PREFIX}/bin/glimpse
  # variations (refer to the Glimpse manual page)
-@@ -157,9 +157,9 @@
+ #glimpse = "glimpse -k"
+ #glimpse = "glimpse -B"
+@@ -157,13 +157,13 @@
  # (`-debug' option), obtain the problemmatic glimpseindex command,
  # and make sure it works when executed by hand.
  
 -glimpseindex = glimpseindex
 +#glimpseindex = glimpseindex
  # IF YOU DON'T WANT TO BOTHER WITH GLIMPSE, DISABLE IT HERE *ALSO*
--#glimpseindex = ""
-+glimpseindex = ""
+ #glimpseindex = ""
  # produce a larger index ("7-9%" of source text) allowing faster search w/"-o"
  # Need -o or -b if using -N above.
  #glimpseindex = "glimpseindex -o"
+-#glimpseindex = /usr/sww/bin/glimpseindex
++glimpseindex = "${PREFIX}/bin/glimpseindex -o"
+ 
+ # directory in which to place stray man directories added with manDescAdd
+ # that don't correspond to a directory in MANPATH
 @@ -177,7 +177,7 @@
  # default MANPATH to use if user doesn't have a MANPATH environment variable set.
  # Leave this empty to have TkMan calculate a MANPATH based on a users PATH
  # (like Perl man does).
 -manpathdef = ""
-+manpathdef = /usr/share/man:/usr/local/man:/usr/X11R6/man
++manpathdef = /usr/share/man:${PREFIX}/man:/usr/X11R6/man
  #manpathdef = /usr/man:/usr/local/man
  #manpathdef = /usr/man:/usr/local/man:/usr/sww/man:/usr/sww/X11/man
  # for SGI
@@ -76,7 +82,7 @@
  # if you don't want to RosettaMan (rman) in your PATH, make the name fully qualified
  # (that's probably a good idea if tkman is installed on a central server)
 -rman = rman
-+rman = /usr/local/bin/rman
++rman = ${PREFIX}/bin/rman
  #rman = /home/orodruin/h/bair/phelps/bin/alpha/rman
  
 -manprint = {tbl | eqn | troff -man -t | lpr -t}

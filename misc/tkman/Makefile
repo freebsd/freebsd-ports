@@ -3,7 +3,7 @@
 # Date created:         27 Dec 1994
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.13 1995/12/09 01:30:20 asami Exp $
+# $Id: Makefile,v 1.14 1995/12/18 07:29:08 tg Exp $
 #
 
 DISTNAME=	tkman-1.7.5
@@ -14,7 +14,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	thomas@ghpc8.ihf.rwth-aachen.de
 
 LIB_DEPENDS=	tk40\\.1\\.:${PORTSDIR}/x11/tk4
-RUN_DEPENDS=	rman:${PORTSDIR}/misc/rman
+RUN_DEPENDS=	rman:${PORTSDIR}/misc/rman \
+		glimpse:${PORTSDIR}/misc/glimpse
 
 # Restrictive copyright
 NO_PACKAGE=	yes
