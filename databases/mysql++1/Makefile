@@ -18,6 +18,7 @@ COMMENT=	Complex C++ API for MySQL
 
 USE_MYSQL=	yes
 USE_GMAKE=	yes
+USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -D_FIX_FOR_BSD_ -Wno-deprecated"
 CONFIGURE_ARGS=	--with-mysql=${LOCALBASE} \
