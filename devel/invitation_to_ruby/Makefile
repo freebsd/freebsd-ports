@@ -18,8 +18,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	A talk given by Jim Weirich, a brief introduction to Ruby
 
-BROKEN=		"Broken pkg-plist"
-
 NO_BUILD=	yes
 NO_CDROM=	\
 "no commercial use--see \<URL:http://creativecommons.org/licenses/by-nc/1.0/\>"
@@ -30,10 +28,10 @@ PLIST=		${WRKDIR}/plist
 
 pre-install:
 	${RM} -f ${PLIST}
-	cd ${WRKSRC}; ${FIND} * -type f \
+	cd ${WRKSRC}; ${FIND} . -type f | ${CUT} -c2- \
 		| ${SED} 's|^|${DOCSDIR:S,${PREFIX}/,,}|' \
 		| ${SORT} >> ${PLIST}
-	cd ${WRKSRC}; ${FIND} * -type d \
+	cd ${WRKSRC}; ${FIND} . -type d | ${CUT} -c2- \
 		| ${SED} 's|^|@dirrm ${DOCSDIR:S,${PREFIX}/,,}|' \
 		| ${SORT} -r >> ${PLIST}
 
