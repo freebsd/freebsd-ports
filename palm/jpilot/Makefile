@@ -7,7 +7,7 @@
 # "?=" and "+=" are for including this Makefile from japanese/jpilot
 
 PORTNAME=	jpilot
-PORTVERSION=	0.99.3
+PORTVERSION=	0.99.4
 CATEGORIES+=	palm comms
 MASTER_SITES=	http://jpilot.org/
 
@@ -25,12 +25,12 @@ CONFIGURE_ARGS+=	--with-pilot-prefix=${PREFIX}
 CFLAGS+=	-I${PREFIX}/include
 CONFIGURE_ENV+= CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib"
 
-MAN1=		jpilot-sync.1 jpilot-upgrade-99.1 jpilot.1
+MAN1=		jpilot-sync.1 jpilot.1 jpilot-dump.1
 
 post-install:
 	${MKDIR} ${PREFIX}/man/man1
+	${CP} ${WRKSRC}/docs/jpilot-dump.1 ${PREFIX}/man/man1
 	${CP} ${WRKSRC}/docs/jpilot-sync.1 ${PREFIX}/man/man1
-	${CP} ${WRKSRC}/docs/jpilot-upgrade-99.1 ${PREFIX}/man/man1
 	${CP} ${WRKSRC}/docs/jpilot.1 ${PREFIX}/man/man1
 	${MKDIR} ${PREFIX}/share/jpilot/icons
 	${CP} ${WRKSRC}/icons/jpilot-icon1.xpm ${PREFIX}/share/jpilot/icons

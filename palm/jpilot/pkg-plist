@@ -1,7 +1,6 @@
 bin/jpilot
 bin/jpilot-dump
 bin/jpilot-sync
-bin/jpilot-upgrade-99
 lib/jpilot/plugins/libexpense.la
 lib/jpilot/plugins/libexpense.so
 lib/jpilot/plugins/libexpense.so.0
@@ -57,6 +56,7 @@ share/locale/it/LC_MESSAGES/jpilot.mo
 share/locale/ja/LC_MESSAGES/jpilot.mo
 share/locale/nl/LC_MESSAGES/jpilot.mo
 share/locale/no/LC_MESSAGES/jpilot.mo
+share/locale/ru/LC_MESSAGES/jpilot.mo
 share/locale/sv/LC_MESSAGES/jpilot.mo
 share/locale/tr/LC_MESSAGES/jpilot.mo
 share/locale/zh_CN/LC_MESSAGES/jpilot.mo
@@ -86,6 +86,8 @@ share/locale/zh_TW/LC_MESSAGES/jpilot.mo
 @unexec rmdir %D/share/locale/nl 2>/dev/null || true
 @unexec rmdir %D/share/locale/no/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/no 2>/dev/null || true
+@unexec rmdir %D/share/locale/ru/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ru 2>/dev/null || true
 @unexec rmdir %D/share/locale/sv/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/sv 2>/dev/null || true
 @unexec rmdir %D/share/locale/tr/LC_MESSAGES 2>/dev/null || true
