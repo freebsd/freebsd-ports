@@ -1,19 +1,19 @@
 # New ports collection makefile for:	netscape (navigator only)
-# Version required:     4.04
+# Version required:     4.05
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.17 1998/03/16 14:40:59 markm Exp $
+# $Id: Makefile,v 1.18 1998/03/16 14:48:53 markm Exp $
 #
 
-DISTNAME=       netscape-navigator-4.04
+DISTNAME=       netscape-navigator-4.05
 CATEGORIES=	www
-MASTER_SITES=   ftp://ftp.netscape.com/pub/communicator/4.04/development/english/unix/freebsd/navigator_standalone/
-DISTFILES=      navigator-v404-export.x86-unknown-freebsd.tar.gz
+MASTER_SITES=   ftp://ftp.netscape.com/pub/communicator/4.05/development/english/unix/freebsd/navigator_standalone/
+DISTFILES=      navigator-v405-export.x86-unknown-freebsd.tar.gz
 
 MAINTAINER=     asami@FreeBSD.ORG
 
-NO_WRKSUBDIR=   Yes
+WRKSRC=		${WRKDIR}/navigator-v405.x86-unknown-freebsd
 NO_BUILD=       Yes
 
 NDIR=           ${PREFIX}/lib/netscape
@@ -35,17 +35,17 @@ pre-extract:
 do-install:
 	cd ${WRKSRC} && yes "" | \
 	    LC_TIME=C MOZILLA_HOME="${NDIR}" ./ns-install
-	${MV} -f ${NDIR}/netscape ${NDIR}/navigator-4.04.bin
-	${INSTALL_SCRIPT} ${WRKSRC}/netscape ${BINDIR}/navigator-4.04
-	ln -sf navigator-4.04 ${BINDIR}/navigator-4
+	${MV} -f ${NDIR}/netscape ${NDIR}/navigator-4.05.bin
+	${INSTALL_SCRIPT} ${WRKSRC}/netscape ${BINDIR}/navigator-4.05
+	ln -sf navigator-4.05 ${BINDIR}/navigator-4
 	ln -sf navigator-4 ${BINDIR}/netscape
 	if [ ! -f ${NDIR}/mailcap ] ; then \
 	    ${INSTALL_DATA} ${FILESDIR}/mailcap ${NDIR}; \
 	fi
 	${RM} -rf ${NDIR}/movemail-src
 .if defined(USE_128BIT) && defined(USA_RESIDENT) && ${USA_RESIDENT} == NO
-	cd ${WRKSRC}/Fortify-1.2.1-unix && \
-		(${ECHO} yes ; ${ECHO} no) | ./Fortify.sh ${NDIR}/navigator-4.04.bin
+	cd ${WRKDIR}/Fortify-1.2.1-unix && \
+		(${ECHO} yes ; ${ECHO} no) | ./Fortify.sh ${NDIR}/navigator-4.05.bin
 .endif
 	chown -R bin.bin ${NDIR}
 
