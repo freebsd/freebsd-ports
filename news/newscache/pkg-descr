@@ -10,8 +10,5 @@ this is the case, the article is sent directly to its client. Otherwise,
 the article is requested from the upstream news server, stored in the
 cache area and sent back to the client.
 
-Author: Thomas Gschwind
-WWW: http://www.infosys.tuwien.ac.at/NewsCache/
-
-- arved
-freebsdports@arved.de
+Author: Thomas Gschwind,  Herber Straub
+WWW: 	http://www.linuxhacker.at/newscache/

@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	newscache
-PORTVERSION=	1.1.92
+PORTVERSION=	1.2.r.6
 CATEGORIES=	news
-MASTER_SITES=	http://www.hstraub.at/linux/downloads/src/ \
-		http://www.infosys.tuwien.ac.at/NewsCache/download/
-DISTNAME=	NewsCache-${PORTVERSION}
+MASTER_SITES=	http://www.linuxhacker.at/linux/downloads/src/
+DISTNAME=	NewsCache-${PORTVERSION:S/.r./rc/}
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	NewsCache is a free cache server for USENET News
