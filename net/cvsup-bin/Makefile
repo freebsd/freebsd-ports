@@ -3,7 +3,7 @@
 # Date created:		12 November 1997
 # Whom:			Sheldon Hearn <axl@iafrica.com>
 #
-# $Id: Makefile,v 1.9 1999/02/12 02:29:00 jdp Exp $
+# $Id: Makefile,v 1.10 1999/03/06 22:40:21 wosch Exp $
 #
 
 DISTNAME=	cvsup-bin-16.0
@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/development/CVSup/
 DISTFILES=	cvsup-bin-16.0.tar.gz
 
 MAINTAINER=	jdp@freebsd.org
+
+ONLY_FOR_ARCHS=	i386
 
 NO_BUILD=	yes
 
