@@ -8521,7 +8521,6 @@ ru-xcode	ports/russian/xcode
 ru-xcyrBGR	ports/russian/xcyrBGR
 ru-xmms		ports/russian/xmms
 ru-xruskb	ports/russian/xruskb
-ru-xxkb		ports/russian/xxkb
 rubber		ports/textproc/rubber
 rubix		ports/games/rubix
 ruboard		ports/www/ruboard
@@ -10799,6 +10798,7 @@ xwpl		ports/math/xwpl
 xwrits		ports/deskutils/xwrits
 xxdiff		ports/textproc/xxdiff
 xxgdb		ports/devel/xxgdb
+xxkb		ports/x11/xxkb
 xxl		ports/devel/xxl
 xzgv		ports/graphics/xzgv
 xzip		ports/games/xzip
