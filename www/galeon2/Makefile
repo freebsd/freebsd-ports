@@ -34,8 +34,13 @@ MOZILLA=	${WITH_MOZILLA}
 HEADERS_SUFX=	-devel
 MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="trunk"
 .else
+.if ${WITH_MOZILLA}=="mozilla-embedded"
+MOZILLA=	mozilla-embedded
+HEADERS_SUFX=	
+.else
 MOZILLA=	mozilla
 HEADERS_SUFX=
+.endif
 .endif
 .endif
 .endif
