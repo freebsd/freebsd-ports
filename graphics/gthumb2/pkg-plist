@@ -1,7 +1,4 @@
 bin/gthumb
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gthumb.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/gthumb.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gthumb.schemas > /dev/null || /usr/bin/true
 lib/gthumb/libgthumb.a
 lib/gthumb/libgthumb.so
 lib/gthumb/modules/libduplicates.so
@@ -127,11 +124,11 @@ share/gnome/help/gthumb/C/figures/preferences.png
 share/gnome/help/gthumb/C/gthumb.xml
 share/gnome/help/gthumb/C/legal.xml
 share/gnome/omf/gthumb/gthumb-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gthumb/gthumb-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gthumb.png
 share/locale/am/LC_MESSAGES/gthumb.mo
 share/locale/az/LC_MESSAGES/gthumb.mo
 share/locale/be/LC_MESSAGES/gthumb.mo
+share/locale/bg/LC_MESSAGES/gthumb.mo
 share/locale/ca/LC_MESSAGES/gthumb.mo
 share/locale/cs/LC_MESSAGES/gthumb.mo
 share/locale/da/LC_MESSAGES/gthumb.mo
@@ -157,6 +154,7 @@ share/locale/ml/LC_MESSAGES/gthumb.mo
 share/locale/ms/LC_MESSAGES/gthumb.mo
 share/locale/nb/LC_MESSAGES/gthumb.mo
 share/locale/nl/LC_MESSAGES/gthumb.mo
+share/locale/nn/LC_MESSAGES/gthumb.mo
 share/locale/no/LC_MESSAGES/gthumb.mo
 share/locale/pa/LC_MESSAGES/gthumb.mo
 share/locale/pl/LC_MESSAGES/gthumb.mo
@@ -187,4 +185,3 @@ share/locale/zh_TW/LC_MESSAGES/gthumb.mo
 @dirrm share/gnome/gthumb
 @dirrm lib/gthumb/modules
 @dirrm lib/gthumb
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gthumb/gthumb-C.omf 2>/dev/null || /usr/bin/true
