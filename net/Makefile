@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.270 1999/06/11 09:07:29 taoka Exp $
+# $Id: Makefile,v 1.271 1999/06/12 09:52:46 jmg Exp $
 #
 
     SUBDIR += IglooFTP
@@ -165,6 +165,7 @@
     SUBDIR += roxirc
     SUBDIR += rshell
     SUBDIR += rsync
+    SUBDIR += rtsp_proxy
     SUBDIR += rwhois
     SUBDIR += samba
     SUBDIR += scotty
