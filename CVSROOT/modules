@@ -7232,6 +7232,7 @@ ruby-soap	ports/net/ruby-soap
 ruby-spread	ports/net/ruby-spread
 ruby-spreadsheet-excel	ports/textproc/ruby-spreadsheet-excel
 ruby-sqlrelay	ports/databases/ruby-sqlrelay
+ruby-strongtyping	ports/devel/ruby-strongtyping
 ruby-svg	ports/graphics/ruby-svg
 ruby-sysvipc	ports/devel/ruby-sysvipc
 ruby-tcltklib	ports/lang/ruby-tcltklib
