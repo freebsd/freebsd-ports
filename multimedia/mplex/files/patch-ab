@@ -1,0 +1,14 @@
+--- Makefile.orig	Tue Apr 11 16:46:13 1995
++++ Makefile	Fri Feb 11 09:53:49 2000
+@@ -19,9 +19,9 @@
+ 
+ #CFLAGS =  -g
+ 
+-CFLAGS =  -O
++CFLAGS?=  -O
+ LDFLAGS=  -lm
+-CC     =  cc
++CC     ?=  cc
+ RM     =  /bin/rm -f
+ 
+ OBJS = main.o bitstrm.o buffer.o inits.o inptstrm.o interact.o multplex.o systems.o timecode.o
