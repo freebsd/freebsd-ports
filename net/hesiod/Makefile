@@ -3,12 +3,13 @@
 # Date created:				6/11/1998
 # Whom:					n@nectar.com
 #
-# $Id: Makefile,v 1.3 1998/10/07 19:34:45 nectar Exp $
+# $Id: Makefile,v 1.4 1998/11/14 09:43:26 asami Exp $
 #
 
 DISTNAME=		hesiod-3.0.2
 CATEGORIES=		net
-MASTER_SITES=		ftp://athena-dist.mit.edu/pub/ATHENA/hesiod/
+MASTER_SITES=		ftp://athena-dist.mit.edu/pub/ATHENA/hesiod/   \
+			http://www.nectar.cc/distfiles/
 
 MAINTAINER=		nectar@FreeBSD.ORG
 
