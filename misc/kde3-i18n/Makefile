@@ -25,6 +25,6 @@ PLIST=		${WRKDIR}/PLIST
 SCRIPTS_ENV+=	PLIST=${PLIST}
 
 pre-configure:
-#	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/Configure
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/Configure
 
 .include <bsd.port.mk>
