@@ -1,0 +1,6 @@
+The i855vidctl tool was written by Damien Bergamini <damien.bergamini@free.fr>
+based on code written by Alain Poirier for Linux.
+
+It lets you change the resolution to 1400x1050.
+
+WWW: http://damien.bergamini.free.fr/i855vidctl/

@@ -190,6 +190,7 @@
     SUBDIR += heirloom
     SUBDIR += hourglass
     SUBDIR += httplog
+    SUBDIR += i855vidctl10
     SUBDIR += idled
     SUBDIR += installwatch
     SUBDIR += ipa
