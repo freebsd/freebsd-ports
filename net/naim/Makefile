@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	naim
-PORTVERSION=	0.9.5.2
+PORTVERSION=	0.9.6.2010
 CATEGORIES=	net
 MASTER_SITES=	http://dev.n.ml.org/ \
 		ftp://ftp.netmug.org/pub/FreeBSD/distfiles/
-DISTNAME=	naim-0.9.5-nicer2
+DISTNAME=	naim-0.9.6-2000-06-30-2010
+WRKSRC=		${WRKDIR}/naim-0.9.6
 
 MAINTAINER=	mharo@FreeBSD.org
 
