@@ -1,7 +1,7 @@
 GigaBASE: Object-Relational Database Management System
 
 GigaBASE inherits most of the features of FastDB, but uses page pool instead
-of direct mapping of file on virtual memory. So GigaBASe is able to handle
+of direct mapping of file on virtual memory. So GigaBASE is able to handle
 database, which size significantly exceeds size of computer physical memory.
 Convinient and flexible C++ interface makes development of application for
 GigaBASE very easy and automatic scheme evaluation simplifies maintenance
