@@ -3138,6 +3138,7 @@ libcii		ports/devel/libcii
 libcipher	src/secure/lib/libcipher
 libcom_err	src/lib/libcom_err
 libcompat	src/lib/libcompat
+libcomprex	ports/archivers/libcomprex
 libcoro		ports/devel/libcoro
 libcurses	src/lib/libcurses
 libdbi		ports/databases/libdbi
