@@ -1,0 +1,11 @@
+--- config_h.SH.orig	Thu Jan  6 01:14:27 2000
++++ config_h.SH	Tue Mar 14 20:01:00 2000
+@@ -43,7 +43,7 @@
+  *	This symbol, if defined, indicates that the program is running under
+  *	a BSD system.
+  */
+-#$d_bsd BSD		/**/
++/* #$d_bsd BSD		*/
+ 
+ /* BYTEORDER:
+  *	This symbol hold the hexadecimal constant defined in byteorder,
