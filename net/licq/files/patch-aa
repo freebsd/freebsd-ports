@@ -1,22 +1,55 @@
---- src/messagebox.cpp.old	Tue Mar  9 15:42:14 1999
-+++ src/messagebox.cpp	Tue Mar  9 15:42:55 1999
-@@ -67,7 +67,7 @@
-    QColorGroup newNormal(normal.foreground(), normal.background(), normal.light(), normal.dark(),
-                          normal.mid(), normal.text(), QColor(192, 192, 192));
-    setPalette(QPalette(newNormal, pal.disabled(), newNormal));
--   setStyle(WindowsStyle);
-+   setStyle(MotifStyle);
-    setFrameStyle(QFrame::Panel | QFrame::Sunken);
+--- plugins/qt-gui/configure.orig	Tue Feb  8 16:14:18 2000
++++ plugins/qt-gui/configure	Tue Feb  8 16:15:42 2000
+@@ -3966,7 +3966,7 @@
+       fi
  
- }
---- src/searchuserdlg.cpp.old	Tue Mar  9 15:42:23 1999
-+++ src/searchuserdlg.cpp	Tue Mar  9 15:42:48 1999
-@@ -115,7 +115,7 @@
-    QColorGroup normal(pal.normal());
-    QColorGroup newNormal(normal.foreground(), normal.background(), normal.light(), normal.dark(), normal.mid(), normal.text(), QColor(192, 192, 192));
-    foundView->setPalette(QPalette(newNormal, pal.disabled(), newNormal));*/
--   foundView->setStyle(WindowsStyle);
-+   foundView->setStyle(MotifStyle);
-    foundView->setFrameStyle(QFrame::Box | QFrame::Raised);
-  
-    connect (btnDone, SIGNAL(clicked()), this, SLOT(accept()));
+       for qt_dir in $qt_library_dirs; do
+-        for qt_check_lib in $qt_dir/libqt.so.2; do
++        for qt_check_lib in $qt_dir/libqt2.so.2; do
+           if test -r $qt_check_lib; then
+             ac_qt_libraries=$qt_dir
+             break 2
+@@ -3987,7 +3987,7 @@
+     have_qt_lib="yes"
+   fi
+ 
+-    output=`eval "objdump -C -T $ac_cv_lib_qtlib/libqt.so* | grep QCString"`
++    output=`eval "objdump -C -T $ac_cv_lib_qtlib/libqt2.so* | grep QCString"`
+   if test -z "$output"; then
+     { echo "configure: error: The Qt lib directory
+         $ac_cv_lib_qtlib
+@@ -4050,6 +4050,7 @@
+         /usr/X11/include/X11/qt \
+         /usr/X11R6/include \
+         /usr/X11R6/include/qt \
++        /usr/X11R6/include/qt2 \
+         /usr/X11R6/include/X11/qt \
+         /usr/X11/lib/qt/include"
+ 
+@@ -4113,7 +4114,7 @@
+ 
+ 
+   # Extract the first word of "moc", so it can be a program name with args.
+-set dummy moc; ac_word=$2
++set dummy moc2; ac_word=$2
+ echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+ echo "configure:4119: checking for $ac_word" >&5
+ if eval "test \"`echo '$''{'ac_cv_path_MOC'+set}'`\" = set"; then
+@@ -4137,7 +4138,7 @@
+     fi
+   done
+   IFS="$ac_save_ifs"
+-  test -z "$ac_cv_path_MOC" && ac_cv_path_MOC="$QTDIR/bin/moc"
++  test -z "$ac_cv_path_MOC" && ac_cv_path_MOC="$QTDIR/bin/moc2"
+   ;;
+ esac
+ fi
+@@ -4152,7 +4153,7 @@
+   
+ 
+   if test -z "$QTDIR"; then
+-    echo "** environment variable QTDIR is not set, moc might not be found"
++    echo "** environment variable QTDIR is not set, moc2 might not be found"
+   fi
+ 
+ 

@@ -1,32 +1,58 @@
 # New ports collection makefile for:    licq
-# Version required:                     0.61
+# Version required:                     0.75.3a
 # Date created:                         2 July 1998
 # Whom:                                 Brian Feldman
 #
 # $FreeBSD$
 #
 
-DISTNAME=	licq-0.61
+DISTNAME=	licq-0.75.3a
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.wibble.net/pub/licq/srcs/ \
 		ftp://licq.darkorb.net/srcs/ \
 		ftp://ftp.fanfic.org/pub/licq/srcs/ \
 		ftp://ftp.inter-i.uni-mainz.de/pub/licq/srcs/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILES}
 
 MAINTAINER=	green@FreeBSD.org
 
-USE_QT=		yes
+BUILD_DEPENDS=  aclocal:${PORTSDIR}/devel/automake
 
+USE_QT2=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
+USE_AUTOCONF=	yes
+USE_NEWGCC=     yes
+USE_PERL5=      yes
 
-MAN1=		licq.1
+DATANAME=       licq-data-1.5
+DATAFILES=	${DATANAME}${EXTRACT_SUFX}
+DATADIR=	${WRKDIR}/${DATANAME}
+
+post-configure:
+	@(cd ${WRKSRC}/plugins/qt-gui; ./configure --prefix=${PREFIX})
+
+post-build:
+	@(cd ${WRKSRC}/plugins/qt-gui;\
+	   ${SETENV} ${MAKE_ENV} \
+	   ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/licq
-	@${CP} ${WRKSRC}/contrib/licq.* ${WRKSRC}/contrib/viewurl* \
-	 ${PREFIX}/share/licq
-	@${CHMOD} 555 ${PREFIX}/share/licq/*
-	@${CHOWN} bin.bin ${PREFIX}/share/licq/*
+	strip ${PREFIX}/bin/licq
+	cd ${WRKSRC}/plugins/qt-gui;\
+	   ${SETENV} ${MAKE_ENV} \
+	   ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET}
+	strip ${PREFIX}/lib/licq/licq_qt-gui.so
+	${MKDIR} ${PREFIX}/share/licq/contrib
+	${INSTALL_SCRIPT} ${DATADIR}/contrib/licq.* ${PREFIX}/share/licq/contrib
+	${INSTALL_SCRIPT} ${DATADIR}/contrib/*.sh ${PREFIX}/share/licq/contrib
+	${MKDIR} ${PREFIX}/share/licq/sounds/icq
+	${INSTALL_DATA} ${DATADIR}/sounds/*.wav ${PREFIX}/share/licq/sounds
+	${INSTALL_DATA} ${DATADIR}/sounds/icq/*.wav ${PREFIX}/share/licq/sounds/icq
+	${MKDIR} ${PREFIX}/share/licq/translations
+	${INSTALL_DATA} ${DATADIR}/translations/* ${PREFIX}/share/licq/translations
+	${MKDIR} ${PREFIX}/share/licq/qt-gui
+	cd ${DATADIR}/qt-gui && ${TAR} -chf - * | \
+		${TAR} -xf - -C ${PREFIX}/share/licq/qt-gui
 
 .include <bsd.port.mk>
