@@ -1282,6 +1282,7 @@ share/config/imsmaprc
 share/config/interferencerc
 share/config/kdesktop_custom_menu1
 share/config/kdesktop_custom_menu2
+share/config/kdm/README
 share/config/kdm/kdmrc
 share/config/klipperrc
 share/config/konqsidebartng.rc
@@ -1950,7 +1951,9 @@ share/icons/hicolor/48x48/apps/xv.png
 share/icons/hicolor/48x48/filesystems/file_important.png
 share/icons/hicolor/48x48/filesystems/folder_important.png
 share/icons/locolor/16x16/apps/bell.png
+share/icons/licolor/16x16/apps/gvim.png
 share/icons/locolor/32x32/apps/bell.png
+share/icons/locolor/32x32/apps/gvim.png
 share/locale/C/entry.desktop
 share/locale/C/flag.png
 share/locale/l10n/C/entry.desktop
