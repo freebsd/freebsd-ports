@@ -1,0 +1,29 @@
+bin/makeproto
+share/prototype/Makedefs.h
+share/prototype/base/Makedefs.h
+share/prototype/base/Makefile
+share/prototype/base/PTMakefile
+share/prototype/common/PTMakefile
+share/prototype/lib/Makefile
+share/prototype/lib/PTMakefile
+share/prototype/main/Makefile
+share/prototype/main/PTMakefile
+share/prototype/maintainer/PTmakefile
+share/prototype/maintainer/makefile
+share/prototype/sub/Makefile
+share/prototype/sub/PTMakefile
+share/prototype/templ-inst/Makefile
+share/prototype/templ-inst/PTMakefile
+share/prototype/templ-inst/inst-all-templ
+share/prototype/templ-inst/inst-templ
+share/prototype/test/Makefile
+share/prototype/test/PTMakefile
+@dirrm share/prototype/base
+@dirrm share/prototype/common
+@dirrm share/prototype/lib
+@dirrm share/prototype/main
+@dirrm share/prototype/maintainer
+@dirrm share/prototype/sub
+@dirrm share/prototype/templ-inst
+@dirrm share/prototype/test
+@dirrm share/prototype
