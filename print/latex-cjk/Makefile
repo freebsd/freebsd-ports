@@ -3,7 +3,7 @@
 # Date created:		17 June 1998
 # Whom:			J.T. Jang (keith@email.gcn.net.tw)
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/10/08 15:37:34 vanilla Exp $
 #
 
 DISTNAME=	CJK-4.1.3.src
@@ -11,9 +11,7 @@ PKGNAME=	zh-CJK-4.1.3
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://ftp.edu.tw/Chinese/ifcss/software/tex/ \
 		ftp://ntcuccca.edu.tw/Chinese/ifcss/software/tex/ \
-		ftp://ftp.ifcss.org/pub/software/tex/ \
-		${MASTER_SITE_TEX_CTAN}
-MASTER_SITE_SUBDIR=	language/chinese
+		ftp://ftp.ifcss.org/pub/software/tex/
 
 MAINTAINER=	keith@email.gcn.net.tw
 
