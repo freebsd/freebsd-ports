@@ -20,10 +20,16 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}
 MAN1=		str-config.1
 MAN3=		str.3
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64"
+.endif
+
 post-build:
 	@${ECHO_MSG} "===>  Use 'make test' to run a quick test suite."
 
 test:
 	@cd ${WRKSRC} && ${MAKE} test
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
