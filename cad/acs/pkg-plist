@@ -1,0 +1,3 @@
+@cwd /usr/local
+bin/acs
+lib/acs.hlp
