@@ -5,7 +5,7 @@
  		$(INSTALLCMD) -m $(INSTALLMODE) $$f $(MANDIR)/man5; \
  	done
 -	@for f in $(MAN8_PAGES) ; do \
-+	@for f in $(MAN8_PAGES) $(SNMPPAGES) hp.8 ; do \
++	@for f in $(MAN8_PAGES) $(SNMPPAGES) ; do \
  		echo $(INSTALLCMD) -m $(INSTALLMODE) $$f $(MANDIR)/man8; \
  		$(INSTALLCMD) -m $(INSTALLMODE) $$f $(MANDIR)/man8; \
  	done
