@@ -41,6 +41,14 @@ CONFIGURE_ARGS=	--libdir=${SAMBA_CONFDIR} \
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_SYSLOG)
+CONFIGURE_ARGS+=	--with-syslog
+.endif
+
+.if defined(WITH_SSL)
+CONFIGURE_ARGS+=	--with-ssl -ssl-inc=/usr/include/openssl --ssl-lib=/usr/lib
+.endif
+
 .if defined(WITH_LDAP)
 LIB_DEPENDS+=  ldap.2:\${PORTSDIR}/net/openldap2
 CONFIGURE_ARGS+=--with-ldapsam
