@@ -624,6 +624,7 @@ brs		ports/misc/brs
 bsd-airtools	ports/net/bsd-airtools
 bsdproxy	ports/net/bsdproxy
 bsdsar		ports/sysutils/bsdsar
+bsdtris		ports/games/bsdtris
 bsh		ports/java/bsh
 bsmtp		ports/mail/bsmtp
 bsp		ports/games/bsp
