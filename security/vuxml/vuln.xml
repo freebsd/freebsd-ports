@@ -32,6 +32,51 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="562a3fdf-16d6-11d9-bc4a-000c41e2cdad">
+    <topic>php -- vulnerability in RFC 1867 file upload processing</topic>
+    <affects>
+      <package>
+        <name>mod_php4-twig</name>
+        <name>php4-cgi</name>
+        <name>php4-cli</name>
+        <name>php4-dtc</name>
+        <name>php4-horde</name>
+        <name>php4-nms</name>
+        <name>php4</name>
+        <range><le>4.3.8_2</le></range>
+      </package>
+      <package>
+        <name>mod_php</name>
+        <name>mod_php4</name>
+	<range><ge>4</ge><le>4.3.8_2,1</le></range>
+      </package>
+      <package>
+        <name>php5</name>
+        <name>php5-cgi</name>
+        <name>php5-cli</name>
+        <range><le>5.0.1</le></range>
+      </package>
+      <package>
+        <name>mod_php5</name>
+        <range><le>5.0.1,1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Stefano Di Paolo reports that a bug in PHP's processing of
+          RFC 1867 file uploads that may allow a remote attacker to
+          overwrite arbitrary files.</p>
+      </body>
+    </description>
+    <references>
+      <mlist msgid="1095268057.2818.20.camel@localhost">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109534848430404</mlist>
+    </references>
+    <dates>
+      <discovery>2004-09-15</discovery>
+      <entry>2004-10-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ad74a1bd-16d2-11d9-bc4a-000c41e2cdad">
     <topic>php -- php_variables memory disclosure</topic>
     <affects>
