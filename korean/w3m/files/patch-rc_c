@@ -1,0 +1,11 @@
+--- rc.c.o	Fri Mar 23 15:22:57 2001
++++ rc.c	Fri Mar 23 15:23:07 2001
+@@ -184,7 +184,7 @@
+ #define CMT_FTPPASS      "Password for FTP(use your mail address)"
+ #define CMT_USERAGENT    "User-Agent"
+ #define CMT_ACCEPTLANG   "Accept-Language"
+-/* #define CMT_DOCUMENTCODE "Document Charset" */
++#define CMT_DOCUMENTCODE "Document Charset"
+ #define CMT_WRAP         "Wrap search"
+ #define CMT_VIEW_UNSEENOBJECTS "Display unseenobjects (e.g. bgimage) tag"
+ #ifdef __EMX__

@@ -1,0 +1,44 @@
+--- menu.c.old	Fri Mar 23 14:35:33 2001
++++ menu.c	Fri Mar 23 14:46:55 2001
+@@ -305,6 +305,31 @@
+     {MENU_END, "", NULL, 0, nulcmd, NULL, "", NULL},
+ };
+ #else				/* LANG != JA */
++#if LANG == KO			/* LANG == KO */
++static MenuItem MainMenuItem[] =
++{
++/* type        label           variable value func     popup keys data  */
++    {MENU_FUNC, " 뒤로         (b) ", NULL, 0, backBf, NULL, "b", NULL},
++    {MENU_FUNC, " 버퍼 선택    (s) ", NULL, 0, selBuf, NULL, "s", NULL},
++    {MENU_FUNC, " 소스 보기    (v) ", NULL, 0, vwSrc, NULL, "vV", NULL},
++    {MENU_FUNC, " 소스 편집    (e) ", NULL, 0, editBf, NULL, "eE", NULL},
++    {MENU_FUNC, " 소스 저장    (S) ", NULL, 0, svSrc, NULL, "S", NULL},
++    {MENU_FUNC, " 다시 읽기    (r) ", NULL, 0, reload, NULL, "rR", NULL},
++    {MENU_NOP, " ---------------- ", NULL, 0, nulcmd, NULL, "", NULL},
++    {MENU_FUNC, " 링크 따라가기(a) ", NULL, 0, followA, NULL, "a", NULL},
++    {MENU_FUNC, " 링크 저장    (A) ", NULL, 0, svA, NULL, "A", NULL},
++    {MENU_FUNC, " 이미지 보기  (i) ", NULL, 0, followI, NULL, "i", NULL},
++    {MENU_FUNC, " 이미지 저장  (I) ", NULL, 0, svI, NULL, "I", NULL},
++    {MENU_FUNC, " 프레임 보기  (f) ", NULL, 0, rFrame, NULL, "fF", NULL},
++    {MENU_NOP, " ---------------- ", NULL, 0, nulcmd, NULL, "", NULL},
++    {MENU_FUNC, " 책갈피       (B) ", NULL, 0, ldBmark, NULL, "B", NULL},
++    {MENU_FUNC, " 도움말       (h) ", NULL, 0, ldhelp, NULL, "hH", NULL},
++    {MENU_FUNC, " 옵션         (o) ", NULL, 0, ldOpt, NULL, "oO", NULL},
++    {MENU_NOP, " ---------------- ", NULL, 0, nulcmd, NULL, "", NULL},
++    {MENU_FUNC, " 종료         (q) ", NULL, 0, qquitfm, NULL, "qQ", NULL},
++    {MENU_END, "", NULL, 0, nulcmd, NULL, "", NULL},
++};
++#else				/* LANG != JA/KO */
+ static MenuItem MainMenuItem[] =
+ {
+ /* type        label           variable value func     popup keys data  */
+@@ -328,7 +353,8 @@
+     {MENU_FUNC, " Quit         (q) ", NULL, 0, qquitfm, NULL, "qQ", NULL},
+     {MENU_END, "", NULL, 0, nulcmd, NULL, "", NULL},
+ };
+-#endif				/* LANG != JA  */
++#endif
++#endif				/* LANG != JA/KO  */
+ 
+ /* --- MainMenu (END) --- */
+ 

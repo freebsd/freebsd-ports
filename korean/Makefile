@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += w3m
     SUBDIR += uniksc
     SUBDIR += texinfo
 
