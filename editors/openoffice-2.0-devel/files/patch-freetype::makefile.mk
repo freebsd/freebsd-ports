@@ -4,7 +4,7 @@
  	objs$/.libs$/libfreetype.a
  .IF "$(OS)"=="MACOSX"
  OUT2LIB+=objs$/.libs$/libfreetype.*.dylib
-+.ELSEIF "$(OS)"=="FREEBSD"
++.ELIF "$(OS)"=="FREEBSD"
 +OUT2LIB+=objs$/.libs$/libfreetype.so.7*
  .ELSE
  OUT2LIB+=objs$/.libs$/libfreetype.so.6*
