@@ -15,7 +15,13 @@ MAINTAINER=	d.marks@student.umist.ac.uk
 
 GNU_CONFIGURE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500037
+BROKEN=		libdnet does not currently support ipfw 2
+.endif
+
 MAN3=	dnet.3
 MAN8=	dnet.8
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
