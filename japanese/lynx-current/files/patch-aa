@@ -1,42 +1,41 @@
---- makefile.in.orig	Thu Nov 18 13:08:08 1999
-+++ makefile.in	Sat Dec 11 01:35:28 1999
-@@ -310,7 +310,7 @@
- 	@echo "Use $(MAKE) install-doc to install extra documentation files"
- 	@echo
- 
--install-full: install install-help install-doc
-+install-full: install install-doc install-help
- 	@echo Full installation complete.
- 
- install-bin: $(BINDIR) lynx$x
-@@ -326,7 +326,7 @@
- 	(cd $(srcdir) && tar cf - C[HO]* PROBLEMS README samples test ) | \
- 			       ( cd $(DOCDIR) && tar xf - )
- 	$(SHELL) -c 'for name in COPYING COPYHEADER; do \
--		cd $(HELPDIR) && ( $(LN_S) $(DOCDIR)/$$name . || cp $(DOCDIR)/$$name . );\
-+		cd $(HELPDIR) && cp $(DOCDIR)/$$name . ;\
- 		done'
- 
- # HPUX 'sed' does not seem to like '=' as pattern delimiter.
-@@ -366,10 +366,9 @@
- 	-rm -f $(HELPDIR)/help_files.sed
- 	@echo Updating $(libdir)/lynx.cfg
- 	$(SHELL) -c 'if test -f $(LIBDIR)/lynx.cfg ; then \
+--- makefile.in.orig	Wed Jan  2 10:30:08 2002
++++ makefile.in	Wed Jan 23 02:32:35 2002
+@@ -350,22 +350,19 @@
+ 		if test "$(COMPRESS_PROG)" != "" ; then \
+ 			(cd $(HELPDIR) && $(COMPRESS_PROG) $$files ) \
+ 		fi'
+-	@echo Updating $(libdir)/lynx.cfg
+-	$(SHELL) -c 'if test -f $(LIBDIR)/lynx.cfg ; then \
 -		mv $(LIBDIR)/lynx.cfg $(LIBDIR)/lynx.tmp ; \
 -	else \
 -		cp $(srcdir)/lynx.cfg $(LIBDIR)/lynx.tmp ; \
-+		mv $(LIBDIR)/lynx.cfg $(LIBDIR)/lynx.oldcfg ; \
- 	fi'
-+	@cp $(srcdir)/lynx.cfg $(LIBDIR)/lynx.tmp
- 	@echo Updating $(libdir)/lynx.cfg to point to installed help-files
- 	@ECHO_CC@sed	-e '/^HELPFILE:http/s@^@#@' \
- 		-e '/^#HELPFILE:file/s@#@@' \
-@@ -380,6 +379,8 @@
- 		$(LIBDIR)/lynx.tmp >$(LIBDIR)/lynx.cfg
- 	chmod 644 $(LIBDIR)/lynx.cfg
+-	fi'
+-	@echo Updating $(libdir)/lynx.cfg to point to installed help-files
++	@echo Updating $(libdir)/lynx.cfg.default
++	cp $(srcdir)/lynx.cfg $(LIBDIR)/lynx.tmp
++	@echo Updating $(libdir)/lynx.cfg.default to point to installed help-files
+ 	@ECHO_CC@sed	-e '/^HELPFILE:http/s!^!#!' \
+ 		-e '/^#HELPFILE:file/s!#!!' \
+ 		-e '/^HELPFILE:file/s!PATH_TO/lynx_help!$(helpdir1)!' \
+ 		-e '/^[A-Z_]*:/s!PATH_TO/lynx_doc!$(docdir1)!' \
+ 		-e '/^HELPFILE:file/s!$$!$(COMPRESS_EXT)!' \
+ 		-e '/^HELPFILE:file/s!$(COMPRESS_EXT)$(COMPRESS_EXT)$$!$(COMPRESS_EXT)!' \
+-		$(LIBDIR)/lynx.tmp >$(LIBDIR)/lynx.cfg
+-	chmod 644 $(LIBDIR)/lynx.cfg
++		$(LIBDIR)/lynx.tmp >$(LIBDIR)/lynx.cfg.default
++	chmod 644 $(LIBDIR)/lynx.cfg.default
  	-rm -f $(LIBDIR)/lynx.tmp
-+	-[ ! -f $(LIBDIR)/lynx.cfg.sample ] && $(INSTALL_DATA) $(LIBDIR)/lynx.cfg $(LIBDIR)/lynx.cfg.sample
-+
++	-[ ! -f $(LIBDIR)/lynx.cfg ] && $(INSTALL_DATA) $(LIBDIR)/lynx.cfg.default $(LIBDIR)/lynx.cfg
  
- LYHelp.h : LYHelp.hin
- 	@echo Constructing sed-script
+ LYHelp.h : help_files.sed LYHelp.hin
+ 	@echo Creating $@
+@@ -387,8 +384,7 @@
+ 	$(SHELL) -c '$(srcdir)/cfg_defs.sh $(srcdir)'
+ 
+ install-cfg : $(LIBDIR)
+-	-mv -f $(LIBDIR)/lynx.cfg $(LIBDIR)/lynx.oldcfg
+-	$(INSTALL_DATA) $(srcdir)/lynx.cfg $(LIBDIR)/lynx.cfg
++	$(INSTALL_DATA) $(srcdir)/lynx.cfg $(LIBDIR)/lynx.cfg.default
+ 
+ install-lss : $(LIBDIR)
+ 	-mv -f $(LIBDIR)/lynx.lss $(LIBDIR)/lynx.oldlss

@@ -1,6 +1,6 @@
 bin/lynx
 %%LYNX_LIB%%/lynx.cfg
-%%LYNX_LIB%%/lynx.cfg.sample
+%%LYNX_LIB%%/lynx.cfg.default
 %%LYNX_HELP%%/Lynx_users_guide.html
 %%LYNX_HELP%%/about_lynx.html
 %%LYNX_HELP%%/keystrokes/alt_edit_help.html
@@ -25,36 +25,46 @@ bin/lynx
 %%LYNX_HELP%%/lynx-dev.html
 %%LYNX_HELP%%/lynx_help_main.html
 %%LYNX_HELP%%/lynx_url_support.html
-%%LYNX_DOC%%/CHANGES
-%%LYNX_DOC%%/COPYHEADER
-%%LYNX_DOC%%/COPYING
-%%LYNX_DOC%%/PROBLEMS
-%%LYNX_DOC%%/README
-%%LYNX_DOC%%/samples/blue-background.lss
-%%LYNX_DOC%%/samples/cernrules.txt
-%%LYNX_DOC%%/samples/installdirs.html
-%%LYNX_DOC%%/samples/jumpsUnix.html
-%%LYNX_DOC%%/samples/jumpsVMS.html
-%%LYNX_DOC%%/samples/lynx-keymaps
-%%LYNX_DOC%%/samples/lynx.com
-%%LYNX_DOC%%/samples/lynx.lss
-%%LYNX_DOC%%/samples/mailcap
-%%LYNX_DOC%%/samples/mild-colors.lss
-%%LYNX_DOC%%/samples/mime.types
-%%LYNX_DOC%%/test/ALT88592.html
-%%LYNX_DOC%%/test/ISO_LATIN1_test.html
-%%LYNX_DOC%%/test/README.txt
-%%LYNX_DOC%%/test/TestComment.html
-%%LYNX_DOC%%/test/c1.html
-%%LYNX_DOC%%/test/iso8859-1.html
-%%LYNX_DOC%%/test/iso88592.html
-%%LYNX_DOC%%/test/raw8bit.html
-%%LYNX_DOC%%/test/sgml.html
-%%LYNX_DOC%%/test/spaces.html
-%%LYNX_DOC%%/test/tabtest.html
-%%LYNX_DOC%%/test/unicode.html
-@dirrm %%LYNX_DOC%%/test
-@dirrm %%LYNX_DOC%%/samples
-@dirrm %%LYNX_DOC%%
+@unexec rm -rf %D/%%LYNX_HELP%%/COPYHEADER
+@unexec rm -rf %D/%%LYNX_HELP%%/COPYING
+%%PORTDOCS%%%%LYNX_DOC%%/CHANGES
+%%PORTDOCS%%%%LYNX_DOC%%/COPYHEADER
+%%PORTDOCS%%@exec ln -sf %D/%F %D/%%LYNX_HELP%%/%f
+%%PORTDOCS%%%%LYNX_DOC%%/COPYING
+%%PORTDOCS%%@exec ln -sf %D/%F %D/%%LYNX_HELP%%/%f
+%%PORTDOCS%%%%LYNX_DOC%%/PROBLEMS
+%%PORTDOCS%%%%LYNX_DOC%%/README
+%%PORTDOCS%%%%LYNX_DOC%%/samples/blue-background.lss
+%%PORTDOCS%%%%LYNX_DOC%%/samples/bright-blue.lss
+%%PORTDOCS%%%%LYNX_DOC%%/samples/cernrules.txt
+%%PORTDOCS%%%%LYNX_DOC%%/samples/installdirs.html
+%%PORTDOCS%%%%LYNX_DOC%%/samples/jumpsUnix.html
+%%PORTDOCS%%%%LYNX_DOC%%/samples/jumpsVMS.html
+%%PORTDOCS%%%%LYNX_DOC%%/samples/keepviewer
+%%PORTDOCS%%%%LYNX_DOC%%/samples/lynxdump
+%%PORTDOCS%%%%LYNX_DOC%%/samples/lynx-keymaps
+%%PORTDOCS%%%%LYNX_DOC%%/samples/lynx.com
+%%PORTDOCS%%%%LYNX_DOC%%/samples/lynx.lss
+%%PORTDOCS%%%%LYNX_DOC%%/samples/mailcap
+%%PORTDOCS%%%%LYNX_DOC%%/samples/mailto-form.pl
+%%PORTDOCS%%%%LYNX_DOC%%/samples/mild-colors.lss
+%%PORTDOCS%%%%LYNX_DOC%%/samples/mime.types
+%%PORTDOCS%%%%LYNX_DOC%%/test/ALT88592.html
+%%PORTDOCS%%%%LYNX_DOC%%/test/ISO_LATIN1_test.html
+%%PORTDOCS%%%%LYNX_DOC%%/test/README.txt
+%%PORTDOCS%%%%LYNX_DOC%%/test/TestComment.html
+%%PORTDOCS%%%%LYNX_DOC%%/test/c1.html
+%%PORTDOCS%%%%LYNX_DOC%%/test/iso8859-1.html
+%%PORTDOCS%%%%LYNX_DOC%%/test/iso88592.html
+%%PORTDOCS%%%%LYNX_DOC%%/test/quickbrown.html
+%%PORTDOCS%%%%LYNX_DOC%%/test/raw8bit.html
+%%PORTDOCS%%%%LYNX_DOC%%/test/sgml.html
+%%PORTDOCS%%%%LYNX_DOC%%/test/spaces.html
+%%PORTDOCS%%%%LYNX_DOC%%/test/tabtest.html
+%%PORTDOCS%%%%LYNX_DOC%%/test/unicode.html
+%%PORTDOCS%%%%LYNX_DOC%%/test/utf-8-demo.html
+%%PORTDOCS%%@dirrm %%LYNX_DOC%%/test
+%%PORTDOCS%%@dirrm %%LYNX_DOC%%/samples
+%%PORTDOCS%%@dirrm %%LYNX_DOC%%
 @dirrm %%LYNX_HELP%%/keystrokes
 @dirrm %%LYNX_HELP%%
