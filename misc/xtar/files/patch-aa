@@ -1,0 +1,12 @@
+*** common/str.c.orig	Wed Jul 31 18:04:12 1996
+--- common/str.c	Wed Jul 31 18:04:27 1996
+***************
+*** 283,289 ****
+  char *str_error(int errnum)
+  {
+          extern int sys_nerr;
+-         extern char *sys_errlist[];
+          static char ebuf[40];           /* 64-bit number + slop */
+  
+          if ((unsigned int)errnum < sys_nerr)
+--- 283,288 ----

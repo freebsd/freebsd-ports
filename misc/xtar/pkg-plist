@@ -1,0 +1,4 @@
+bin/xtar
+lib/X11/xtar/xtar.doc
+lib/X11/app-defaults/XTar
+man/man1/xtar.1.gz
