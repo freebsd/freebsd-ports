@@ -226,6 +226,7 @@
     SUBDIR += freelibiberty
     SUBDIR += freescope
     SUBDIR += frink
+    SUBDIR += fsmgenerator
     SUBDIR += ftnchek
     SUBDIR += funnelweb
     SUBDIR += g-wrap

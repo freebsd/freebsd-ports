@@ -1,0 +1,10 @@
+Similarly to the Finite Automata model in Computer Science, Finite State
+Machine model finds its widest use in Software Engineering. As a software
+development design pattern, FSM occurs in many software solutions, but unlike
+most of its pattern counterparts, FSM requires substantial time for manual
+implementation. But the really devastating part of manual implementation is
+usually in its increasing cost of change and maintenance. All of the above
+considerations eventually converge to a necessity of automatic, fault-free FSM
+generation.
+
+WWW: http://fsmgenerator.sourceforge.net/
