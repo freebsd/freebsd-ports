@@ -426,6 +426,7 @@
     SUBDIR += xpdf
     SUBDIR += xshodo
     SUBDIR += xshodou
+    SUBDIR += xtr
     SUBDIR += xv
     SUBDIR += xvi-euc
     SUBDIR += xvi-sjis
