@@ -46,8 +46,7 @@ PLIST_SUB+=	NHC98=""
 PLIST_SUB+=	GHC="@comment "
 .else
 PLIST_SUB+=	NHC98="@comment "
-GHC_VERSION=	`${PREFIX}/bin/ghc --version 2>&1 | \
-			${SED} 's/^.*version[ ]*\([0-9.]*\).*/\1/'`
+GHC_VERSION=	`${LOCALBASE}/bin/ghc --numeric-version`
 PLIST_SUB+=	GHC=""
 PLIST_SUB+=	GHC_VERSION="${GHC_VERSION}"
 .endif
