@@ -1,6 +1,6 @@
---- Makefile.orig	Thu Jun  3 11:30:50 1993
-+++ Makefile	Sun Oct  4 12:44:18 1998
-@@ -63,32 +63,32 @@
+--- Makefile.orig	Fri Jun  4 01:30:50 1993
++++ Makefile	Thu Apr 27 03:27:43 2000
+@@ -63,32 +63,33 @@
  #
  ################################################################
  
@@ -10,7 +10,8 @@
 -FTP= /usr/mlm/ftp/
 -TIFINC= ../tiff/libtiff/
 -TIFLIB= ../tiff/libtiff/
-+INSTALL= install -c
++INSTALL_BIN= ${BSD_INSTALL_PROGRAM}
++INSTALL_MAN= ${BSD_INSTALL_MAN}
 +BIN= $(PREFIX)/bin/
  MANEXT= l
 +MAN= $(PREFIX)/man/man$(MANEXT)/
@@ -20,7 +21,7 @@
  
  # Make the C compiler behave on the NeXT
 -DBG= -g -D__STRICT_BSD__
-+# DBG= -g -D__STRICT_BSD__
++DBG= ${CFLAGS}
  
  #----------------JPEG linkage----------------
  # If you don't have the JPEG library, use these two lines
@@ -45,4 +46,299 @@
 +#RLIB= -L. -lfbm -L$(LOCALBASE)/lib -lrle
  
  LIB= -L. -lfbm $(JLIB) $(RLIB)
+ 
+@@ -309,12 +310,12 @@
+ 	fltiff.o -L$(TIFLIB) $(LIB) -ltiff -lm
+ unmap: gray2clr
+ 	rm -rf unmap
+-	ln gray2clr unmap
++	ln -sf gray2clr unmap
+ idiff: idiff.c
+ 	$(CC) $(DBG) -o idiff idiff.c -lm
+ udiff: idiff
+ 	rm -rf udiff
+-	ln idiff udiff
++	ln -sf idiff udiff
+ pbm2face: pbm2face.c fbm.h libfbm.a
+ 	$(CC) $(DBG) -o pbm2face pbm2face.c $(LIB) -lm
+ pbm2ps: pbm2ps.c
+@@ -341,211 +342,211 @@
+ 	$(CC) $(DBG) -o fbpalet fbpalet.c $(LIB) -lm
+ $(BIN)fbext: fbext
+ 	rm -f $(BIN)fbext
+-	$(INSTALL) fbext $(BIN)fbext
++	$(INSTALL_BIN) fbext $(BIN)fbext
+ $(BIN)fbrot: fbrot
+ 	rm -f $(BIN)fbrot
+-	$(INSTALL) fbrot $(BIN)fbrot
++	$(INSTALL_BIN) fbrot $(BIN)fbrot
+ $(BIN)fbhist: fbhist
+ 	rm -f $(BIN)fbhist
+-	$(INSTALL) fbhist $(BIN)fbhist
++	$(INSTALL_BIN) fbhist $(BIN)fbhist
+ $(BIN)fbinfo: fbinfo
+ 	rm -f $(BIN)fbinfo
+-	$(INSTALL) fbinfo $(BIN)fbinfo
++	$(INSTALL_BIN) fbinfo $(BIN)fbinfo
+ $(BIN)fbmask: fbmask
+ 	rm -f $(BIN)fbmask
+-	$(INSTALL) fbmask $(BIN)fbmask
++	$(INSTALL_BIN) fbmask $(BIN)fbmask
+ $(BIN)fbmedian: fbmedian
+ 	rm -f $(BIN)fbmedian
+-	$(INSTALL) fbmedian $(BIN)fbmedian
++	$(INSTALL_BIN) fbmedian $(BIN)fbmedian
+ $(BIN)fbnorm: fbnorm
+ 	rm -f $(BIN)fbnorm
+-	$(INSTALL) fbnorm $(BIN)fbnorm
++	$(INSTALL_BIN) fbnorm $(BIN)fbnorm
+ $(BIN)fbps: fbps
+ 	rm -f $(BIN)fbps
+-	$(INSTALL) fbps $(BIN)fbps
++	$(INSTALL_BIN) fbps $(BIN)fbps
+ $(BIN)fbsharp: fbsharp
+ 	rm -f $(BIN)fbsharp
+-	$(INSTALL) fbsharp $(BIN)fbsharp
++	$(INSTALL_BIN) fbsharp $(BIN)fbsharp
+ $(BIN)fbedge: fbedge
+ 	rm -f $(BIN)fbedge
+-	$(INSTALL) fbedge $(BIN)fbedge
++	$(INSTALL_BIN) fbedge $(BIN)fbedge
+ $(BIN)fbconv: fbconv
+ 	rm -f $(BIN)fbconv
+-	$(INSTALL) fbconv $(BIN)fbconv
++	$(INSTALL_BIN) fbconv $(BIN)fbconv
+ $(BIN)fbclean: fbclean
+ 	rm -f $(BIN)fbclean
+-	$(INSTALL) fbclean $(BIN)fbclean
++	$(INSTALL_BIN) fbclean $(BIN)fbclean
+ $(BIN)clr2gray: clr2gray
+ 	rm -f $(BIN)clr2gray
+-	$(INSTALL) clr2gray $(BIN)clr2gray
++	$(INSTALL_BIN) clr2gray $(BIN)clr2gray
+ $(BIN)fbcat: fbcat
+ 	rm -f $(BIN)fbcat
+-	$(INSTALL) fbcat $(BIN)fbcat
++	$(INSTALL_BIN) fbcat $(BIN)fbcat
+ $(BIN)fbgamma: fbgamma
+ 	rm -f $(BIN)fbgamma
+-	$(INSTALL) fbgamma $(BIN)fbgamma
++	$(INSTALL_BIN) fbgamma $(BIN)fbgamma
+ $(BIN)fbhalf: fbhalf
+ 	rm -f $(BIN)fbhalf
+-	$(INSTALL) fbhalf $(BIN)fbhalf
++	$(INSTALL_BIN) fbhalf $(BIN)fbhalf
+ $(BIN)fbham: fbham
+ 	rm -f $(BIN)fbham
+-	$(INSTALL) fbham $(BIN)fbham
++	$(INSTALL_BIN) fbham $(BIN)fbham
+ $(BIN)fbm2pod: fbm2pod
+ 	rm -f $(BIN)fbm2pod
+-	$(INSTALL) fbm2pod $(BIN)fbm2pod
++	$(INSTALL_BIN) fbm2pod $(BIN)fbm2pod
+ $(BIN)fbm2sun: fbm2sun
+ 	rm -f $(BIN)fbm2sun
+-	$(INSTALL) fbm2sun $(BIN)fbm2sun
++	$(INSTALL_BIN) fbm2sun $(BIN)fbm2sun
+ $(BIN)fbquant: fbquant
+ 	rm -f $(BIN)fbquant
+-	$(INSTALL) fbquant $(BIN)fbquant
++	$(INSTALL_BIN) fbquant $(BIN)fbquant
+ $(BIN)gray2clr: gray2clr
+ 	rm -f $(BIN)gray2clr
+-	$(INSTALL) gray2clr $(BIN)gray2clr
++	$(INSTALL_BIN) gray2clr $(BIN)gray2clr
+ $(BIN)unmap: $(BIN)gray2clr
+ 	rm -f $(BIN)unmap
+-	ln $(BIN)gray2clr $(BIN)unmap
++	ln -sf $(BIN)gray2clr $(BIN)unmap
+ $(BIN)idiff: idiff
+ 	rm -f $(BIN)idiff
+-	$(INSTALL) idiff $(BIN)idiff
++	$(INSTALL_BIN) idiff $(BIN)idiff
+ $(BIN)udiff: $(BIN)idiff
+ 	rm -f $(BIN)udiff
+-	ln $(BIN)idiff $(BIN)udiff
++	ln -sf $(BIN)idiff $(BIN)udiff
+ $(BIN)fbsample: fbsample
+ 	rm -f $(BIN)fbsample
+-	$(INSTALL) fbsample $(BIN)fbsample
++	$(INSTALL_BIN) fbsample $(BIN)fbsample
+ $(BIN)qrt2fbm: qrt2fbm
+ 	rm -f $(BIN)qrt2fbm
+-	$(INSTALL) qrt2fbm $(BIN)qrt2fbm
++	$(INSTALL_BIN) qrt2fbm $(BIN)qrt2fbm
+ $(BIN)fbm2tga: fbm2tga
+ 	rm -f $(BIN)fbm2tga
+-	$(INSTALL) fbm2tga $(BIN)fbm2tga
++	$(INSTALL_BIN) fbm2tga $(BIN)fbm2tga
+ $(BIN)pic2fbm: pic2fbm
+ 	rm -f $(BIN)pic2fbm
+-	$(INSTALL) pic2fbm $(BIN)pic2fbm
++	$(INSTALL_BIN) pic2fbm $(BIN)pic2fbm
+ $(BIN)tga2fbm: tga2fbm
+ 	rm -f $(BIN)tga2fbm
+-	$(INSTALL) tga2fbm $(BIN)tga2fbm
++	$(INSTALL_BIN) tga2fbm $(BIN)tga2fbm
+ $(BIN)pbm2ps: pbm2ps
+ 	rm -f $(BIN)pbm2ps
+-	$(INSTALL) pbm2ps $(BIN)pbm2ps
++	$(INSTALL_BIN) pbm2ps $(BIN)pbm2ps
+ $(BIN)pbmtitle: pbmtitle
+ 	rm -f $(BIN)pbmtitle
+-	$(INSTALL) pbmtitle $(BIN)pbmtitle
++	$(INSTALL_BIN) pbmtitle $(BIN)pbmtitle
+ $(BIN)raw2fbm: raw2fbm
+ 	rm -f $(BIN)raw2fbm
+-	$(INSTALL) raw2fbm $(BIN)raw2fbm
++	$(INSTALL_BIN) raw2fbm $(BIN)raw2fbm
+ $(BIN)uunet2fbm: uunet2fbm
+ 	rm -f $(BIN)uunet2fbm
+-	$(INSTALL) uunet2fbm $(BIN)uunet2fbm
++	$(INSTALL_BIN) uunet2fbm $(BIN)uunet2fbm
+ $(BIN)mps2fbm: mps2fbm
+ 	rm -f $(BIN)mps2fbm
+-	$(INSTALL) mps2fbm $(BIN)mps2fbm
++	$(INSTALL_BIN) mps2fbm $(BIN)mps2fbm
+ $(BIN)fbrev: fbrev
+ 	rm -f $(BIN)fbrev
+-	$(INSTALL) fbrev $(BIN)fbrev
++	$(INSTALL_BIN) fbrev $(BIN)fbrev
+ $(BIN)tiff2fbm: tiff2fbm
+ 	rm -f $(BIN)tiff2fbm
+-	$(INSTALL) tiff2fbm $(BIN)tiff2fbm
++	$(INSTALL_BIN) tiff2fbm $(BIN)tiff2fbm
+ $(BIN)fbm2tiff: fbm2tiff
+ 	rm -f $(BIN)fbm2tiff
+-	$(INSTALL) fbm2tiff $(BIN)fbm2tiff
++	$(INSTALL_BIN) fbm2tiff $(BIN)fbm2tiff
+ $(BIN)fbpalet: fbpalet
+ 	rm -f $(BIN)fbpalet
+-	$(INSTALL) fbpalet $(BIN)fbpalet
++	$(INSTALL_BIN) fbpalet $(BIN)fbpalet
+ $(BIN)fbthin: fbthin
+ 	rm -f $(BIN)fbthin
+-	$(INSTALL) fbthin $(BIN)fbthin
++	$(INSTALL_BIN) fbthin $(BIN)fbthin
+ 
+ # Manual Entries
+ 
+ $(MAN)clr2gray.$(MANEXT): clr2gray.1
+ 	rm -f $(MAN)clr2gray.$(MANEXT)
+-	$(INSTALL) clr2gray.1 $(MAN)clr2gray.$(MANEXT)
++	$(INSTALL_MAN) clr2gray.1 $(MAN)clr2gray.$(MANEXT)
+ $(MAN)fbcat.$(MANEXT): fbcat.1
+ 	rm -f $(MAN)fbcat.$(MANEXT)
+-	$(INSTALL) fbcat.1 $(MAN)fbcat.$(MANEXT)
++	$(INSTALL_MAN) fbcat.1 $(MAN)fbcat.$(MANEXT)
+ $(MAN)fbclean.$(MANEXT): fbclean.1
+ 	rm -f $(MAN)fbclean.$(MANEXT)
+-	$(INSTALL) fbclean.1 $(MAN)fbclean.$(MANEXT)
++	$(INSTALL_MAN) fbclean.1 $(MAN)fbclean.$(MANEXT)
+ $(MAN)fbconv.$(MANEXT): fbconv.1
+ 	rm -f $(MAN)fbconv.$(MANEXT)
+-	$(INSTALL) fbconv.1 $(MAN)fbconv.$(MANEXT)
++	$(INSTALL_MAN) fbconv.1 $(MAN)fbconv.$(MANEXT)
+ $(MAN)fbedge.$(MANEXT): fbedge.1
+ 	rm -f $(MAN)fbedge.$(MANEXT)
+-	$(INSTALL) fbedge.1 $(MAN)fbedge.$(MANEXT)
++	$(INSTALL_MAN) fbedge.1 $(MAN)fbedge.$(MANEXT)
+ $(MAN)fbext.$(MANEXT): fbext.1
+ 	rm -f $(MAN)fbext.$(MANEXT)
+-	$(INSTALL) fbext.1 $(MAN)fbext.$(MANEXT)
++	$(INSTALL_MAN) fbext.1 $(MAN)fbext.$(MANEXT)
+ $(MAN)fbhalf.$(MANEXT): fbhalf.1
+ 	rm -f $(MAN)fbhalf.$(MANEXT)
+-	$(INSTALL) fbhalf.1 $(MAN)fbhalf.$(MANEXT)
++	$(INSTALL_MAN) fbhalf.1 $(MAN)fbhalf.$(MANEXT)
+ $(MAN)fbham.$(MANEXT): fbham.1
+ 	rm -f $(MAN)fbham.$(MANEXT)
+-	$(INSTALL) fbham.1 $(MAN)fbham.$(MANEXT)
++	$(INSTALL_MAN) fbham.1 $(MAN)fbham.$(MANEXT)
+ $(MAN)fbhist.$(MANEXT): fbhist.1
+ 	rm -f $(MAN)fbhist.$(MANEXT)
+-	$(INSTALL) fbhist.1 $(MAN)fbhist.$(MANEXT)
++	$(INSTALL_MAN) fbhist.1 $(MAN)fbhist.$(MANEXT)
+ $(MAN)fbinfo.$(MANEXT): fbinfo.1
+ 	rm -f $(MAN)fbinfo.$(MANEXT)
+-	$(INSTALL) fbinfo.1 $(MAN)fbinfo.$(MANEXT)
++	$(INSTALL_MAN) fbinfo.1 $(MAN)fbinfo.$(MANEXT)
+ $(MAN)fbm2pod.$(MANEXT): fbm2pod.1
+ 	rm -f $(MAN)fbm2pod.$(MANEXT)
+-	$(INSTALL) fbm2pod.1 $(MAN)fbm2pod.$(MANEXT)
++	$(INSTALL_MAN) fbm2pod.1 $(MAN)fbm2pod.$(MANEXT)
+ $(MAN)fbmask.$(MANEXT): fbmask.1
+ 	rm -f $(MAN)fbmask.$(MANEXT)
+-	$(INSTALL) fbmask.1 $(MAN)fbmask.$(MANEXT)
++	$(INSTALL_MAN) fbmask.1 $(MAN)fbmask.$(MANEXT)
+ $(MAN)fbmedian.$(MANEXT): fbmedian.1
+ 	rm -f $(MAN)fbmedian.$(MANEXT)
+-	$(INSTALL) fbmedian.1 $(MAN)fbmedian.$(MANEXT)
++	$(INSTALL_MAN) fbmedian.1 $(MAN)fbmedian.$(MANEXT)
+ $(MAN)fbnorm.$(MANEXT): fbnorm.1
+ 	rm -f $(MAN)fbnorm.$(MANEXT)
+-	$(INSTALL) fbnorm.1 $(MAN)fbnorm.$(MANEXT)
++	$(INSTALL_MAN) fbnorm.1 $(MAN)fbnorm.$(MANEXT)
+ $(MAN)fbps.$(MANEXT): fbps.1
+ 	rm -f $(MAN)fbps.$(MANEXT)
+-	$(INSTALL) fbps.1 $(MAN)fbps.$(MANEXT)
++	$(INSTALL_MAN) fbps.1 $(MAN)fbps.$(MANEXT)
+ $(MAN)fbquant.$(MANEXT): fbquant.1
+ 	rm -f $(MAN)fbquant.$(MANEXT)
+-	$(INSTALL) fbquant.1 $(MAN)fbquant.$(MANEXT)
++	$(INSTALL_MAN) fbquant.1 $(MAN)fbquant.$(MANEXT)
+ $(MAN)fbrot.$(MANEXT): fbrot.1
+ 	rm -f $(MAN)fbrot.$(MANEXT)
+-	$(INSTALL) fbrot.1 $(MAN)fbrot.$(MANEXT)
++	$(INSTALL_MAN) fbrot.1 $(MAN)fbrot.$(MANEXT)
+ $(MAN)fbsample.$(MANEXT): fbsample.1
+ 	rm -f $(MAN)fbsample.$(MANEXT)
+-	$(INSTALL) fbsample.1 $(MAN)fbsample.$(MANEXT)
++	$(INSTALL_MAN) fbsample.1 $(MAN)fbsample.$(MANEXT)
+ $(MAN)fbsharp.$(MANEXT): fbsharp.1
+ 	rm -f $(MAN)fbsharp.$(MANEXT)
+-	$(INSTALL) fbsharp.1 $(MAN)fbsharp.$(MANEXT)
++	$(INSTALL_MAN) fbsharp.1 $(MAN)fbsharp.$(MANEXT)
+ $(MAN)fbthin.$(MANEXT): fbthin.1
+ 	rm -f $(MAN)fbthin.$(MANEXT)
+-	$(INSTALL) fbthin.1 $(MAN)fbthin.$(MANEXT)
++	$(INSTALL_MAN) fbthin.1 $(MAN)fbthin.$(MANEXT)
+ $(MAN)qrt2fbm.$(MANEXT): qrt2fbm.1
+ 	rm -f $(MAN)qrt2fbm.$(MANEXT)
+-	$(INSTALL) qrt2fbm.1 $(MAN)qrt2fbm.$(MANEXT)
++	$(INSTALL_MAN) qrt2fbm.1 $(MAN)qrt2fbm.$(MANEXT)
+ $(MAN)gray2clr.$(MANEXT): gray2clr.1
+ 	rm -f $(MAN)gray2clr.$(MANEXT)
+-	$(INSTALL) gray2clr.1 $(MAN)gray2clr.$(MANEXT)
++	$(INSTALL_MAN) gray2clr.1 $(MAN)gray2clr.$(MANEXT)
+ $(MAN)idiff.$(MANEXT): idiff.1
+ 	rm -f $(MAN)idiff.$(MANEXT)
+-	$(INSTALL) idiff.1 $(MAN)idiff.$(MANEXT)
++	$(INSTALL_MAN) idiff.1 $(MAN)idiff.$(MANEXT)
+ $(MAN)pbm2ps.$(MANEXT): pbm2ps.1
+ 	rm -f $(MAN)pbm2ps.$(MANEXT)
+-	$(INSTALL) pbm2ps.1 $(MAN)pbm2ps.$(MANEXT)
++	$(INSTALL_MAN) pbm2ps.1 $(MAN)pbm2ps.$(MANEXT)
+ $(MAN)pbmtitle.$(MANEXT): pbmtitle.1
+ 	rm -f $(MAN)pbmtitle.$(MANEXT)
+-	$(INSTALL) pbmtitle.1 $(MAN)pbmtitle.$(MANEXT)
++	$(INSTALL_MAN) pbmtitle.1 $(MAN)pbmtitle.$(MANEXT)
+ $(MAN)raw2fbm.$(MANEXT): raw2fbm.1
+ 	rm -f $(MAN)raw2fbm.$(MANEXT)
+-	$(INSTALL) raw2fbm.1 $(MAN)raw2fbm.$(MANEXT)
++	$(INSTALL_MAN) raw2fbm.1 $(MAN)raw2fbm.$(MANEXT)
+ $(MAN)tiff2fbm.$(MANEXT): tiff2fbm.1
+ 	rm -f $(MAN)tiff2fbm.$(MANEXT)
+-	$(INSTALL) tiff2fbm.1 $(MAN)tiff2fbm.$(MANEXT)
++	$(INSTALL_MAN) tiff2fbm.1 $(MAN)tiff2fbm.$(MANEXT)
+ $(MAN)uunet2fbm.$(MANEXT): uunet2fbm.1
+ 	rm -f $(MAN)uunet2fbm.$(MANEXT)
+-	$(INSTALL) uunet2fbm.1 $(MAN)uunet2fbm.$(MANEXT)
++	$(INSTALL_MAN) uunet2fbm.1 $(MAN)uunet2fbm.$(MANEXT)
+ $(MAN)fbm.$(MANEXT): fbm.1
+ 	rm -f $(MAN)fbm.$(MANEXT)
+-	$(INSTALL) fbm.1 $(MAN)fbm.$(MANEXT)
++	$(INSTALL_MAN) fbm.1 $(MAN)fbm.$(MANEXT)
+ 
+ # Miscellaneous things
  
