@@ -6834,6 +6834,7 @@ p5-HTTPD-Log-Filter	ports/www/p5-HTTPD-Log-Filter
 p5-HTTPD-Tools	ports/www/p5-HTTPD-Tools
 p5-Hash-Merge	ports/textproc/p5-Hash-Merge
 p5-Heap		ports/devel/p5-Heap
+p5-Heap-Simple	ports/devel/p5-Heap-Simple
 p5-Hook-LexWrap	ports/devel/p5-Hook-LexWrap
 p5-I18N-Charset	ports/misc/p5-I18N-Charset
 p5-I18N-LangTags	ports/misc/p5-I18N-LangTags
