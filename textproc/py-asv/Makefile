@@ -7,7 +7,7 @@
 
 PORTNAME=	asv
 PORTVERSION=	0.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc python
 MASTER_SITES=	http://tratt.net/laurie/python/asv/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,6 +21,9 @@ ASV_BASEDIR=	${PREFIX}/lib/${PYTHON_VERSION}/site-packages
 do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+
+pre-install:
+	@ ${SH} ${PKGREQ} INSTALL
 
 do-install:
 	@printf '#!/bin/sh\n${PYTHON_CMD} ${ASV_BASEDIR}/ASV.py "$$@"\n' \
