@@ -6199,6 +6199,7 @@ strings		src/usr.bin/strings
 strip		src/usr.bin/strip
 strobe		ports/security/strobe
 stty		src/bin/stty
+stuffit		ports/archivers/stuffit
 stunnel		ports/security/stunnel
 stuphead	ports/mail/stuphead
 styx		ports/devel/styx
