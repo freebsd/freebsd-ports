@@ -1,0 +1,15 @@
+--- jpeg/Makefile.orig	Fri Aug  4 18:27:00 1995
++++ jpeg/Makefile	Fri Oct 20 19:05:22 2000
+@@ -21,10 +21,10 @@
+ manext = 1
+ 
+ # The name of your C compiler:
+-CC= gcc
++CC?= gcc
+ 
+ # You may need to adjust these cc options:
+-CFLAGS= -O -I$(srcdir)
++CFLAGS+= -I$(srcdir)
+ # Generally, we recommend defining any configuration symbols in jconfig.h,
+ # NOT via -D switches here.
+ # However, any special defines for ansi2knr.c may be included here:
