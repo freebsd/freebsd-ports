@@ -57,9 +57,9 @@ upgrades.
 
   Gnome has been upgraded to 2.10 and gtk/glib to 2.6.
   DO NOT USE portupgrade(1) to update any gnome or gtk
-  or any port that depends on them. Using portupgrade 
-  will cause problems and you will have to manually 
-  upgrade ports.  Please use the gnome_upgrade.sh 
+  or any port that depends on them. Using portupgrade
+  will cause problems and you will have to manually
+  upgrade ports.  Please use the gnome_upgrade.sh
   script from
     http://www.FreeBSD.org/gnome/gnome_upgrade.sh
 
@@ -67,7 +67,7 @@ upgrades.
   AFFECTS: users of mail/maildrop
   AUTHOR: sergei@FreeBSD.org
 
-  maildrop has been recently upgraded to 1.8.0. This version 
+  maildrop has been recently upgraded to 1.8.0. This version
   has the following changes:
 
   - Maildir quota is now enabled by default.
