@@ -9,6 +9,8 @@ etc/vga/dvorak-us.keymap
 etc/vga/libvga.config
 etc/vga/libvga.et4000
 etc/vga/null.keymap
+include/linux/kd.h
+include/linux/keyboard.h
 include/vga.h
 include/vgagl.h
 include/vgajoystick.h
@@ -20,4 +22,5 @@ lib/libvga.so.1
 lib/libvgagl.a
 lib/libvgagl.so
 lib/libvgagl.so.1
+@dirrm include/linux
 @dirrm etc/vga
