@@ -1,0 +1,44 @@
+--- 9term/9term.c.orig	Fri Jun  3 17:35:39 1994
++++ 9term/9term.c	Fri Feb 11 10:08:04 2000
+@@ -10,7 +10,11 @@
+ #include <frame.h>
+ #include <text.h>
+ 
++#ifdef __FreeBSD__
++#include <sys/termios.h>
++#else
+ #include <sys/termio.h>
++#endif
+ #include <signal.h>
+ #include <sys/stat.h>
+ 
+@@ -153,9 +157,9 @@
+ 		}
+ 	}
+ 
+-	setenv("TERM", "9term", 1);
++	O_setenv("TERM", "9term", 1);
+ 	/* Cope with BSD-oid systems. - cks */
+-	setenv("TERMCAP", "9term: :am:bl=^G:do=^J:nl=^J:", 1);
++	O_setenv("TERMCAP", "9term: :am:bl=^G:do=^J:nl=^J:", 1);
+ 	signal(SIGINT, SIG_IGN);
+ 
+ 	init_display(&argc, argv, cmd, resource);
+@@ -718,7 +722,7 @@
+ 	texthighlight(t, t->length, t->length, F&~D);
+ #ifdef REMOTE
+ 	flushstream();
+-	killpg(r == quitchar ? SIGQUIT : SIGINT);
++	O_killpg(r == quitchar ? SIGQUIT : SIGINT);
+ #else
+ 	sendrunes(&r, 1);
+ #endif
+@@ -804,7 +808,7 @@
+  *	export a name-value pair to environment
+  */
+ int
+-setenv(char *name, char *value, int overwrite)
++O_setenv(char *name, char *value, int overwrite)
+ {
+ 	char *p;
+ 

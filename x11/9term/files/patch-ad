@@ -1,5 +1,5 @@
---- 9term/Makefile.orig	Sun Mar 13 22:50:54 1994
-+++ 9term/Makefile	Sun Sep 27 22:36:53 1998
+--- 9term/Makefile.orig	Mon Mar 14 13:50:54 1994
++++ 9term/Makefile	Fri Feb 11 10:18:21 2000
 @@ -11,27 +11,31 @@
  #	Define RISCOS for Mips RISC/os
  #	Define BSDPTYS for BSD-style pty support
@@ -19,10 +19,11 @@
 -INCLUDES=-I. -I../include -I/usr/openwin/include
 -CFLAGS=-g $(OS) $(INCLUDES) -fno-builtin -D_LIBXG_EXTENSION
 -LDFLAGS=-g -R/usr/openwin/lib -L/usr/openwin/lib -R/usr/ucblib -L/usr/ucblib
-+INCLUDES=-I. -I../libtext -I$(SAMPATH)/include -I/usr/X11R6/include
-+CFLAGS= -O2 $(OS) $(INCLUDES)
+-CC=gcc
++INCLUDES=-I. -I../libtext -I$(SAMPATH)/include -I${X11BASE}/include
++CFLAGS+= $(OS) $(INCLUDES)
 +LDFLAGS=
- CC=gcc
++CC?=gcc
  
  # change this if your X11 libraries are in different places
  # or if you need extra libraries to load with X11 applications
@@ -30,7 +31,7 @@
 -XLIBS=-lXt -lX11
 -
 +LIBS=../libtext/libtext.a $(SAMPATH)/libframe/libframe.a $(SAMPATH)/libXg/libXg.a
-+XLIBS= -L/usr/X11R6/lib -lXt -lX11
++XLIBS= -lXt -lX11 -L${X11BASE}/lib
 +.if $(PORTOBJFORMAT) == "elf"
 +XLIBS+=-Wl,-rpath,$(X11BASE)/lib
 +.endif

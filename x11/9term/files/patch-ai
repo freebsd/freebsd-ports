@@ -1,0 +1,78 @@
+--- 9term/pty.c.orig	Sat Jul 23 00:47:29 1994
++++ 9term/pty.c	Fri Feb 11 10:08:05 2000
+@@ -12,7 +12,16 @@
+ 
+ #include <utmp.h>
+ #include <errno.h>
+-#ifdef SUNOS
++
++#ifdef __FreeBSD__
++#	include <termios.h>
++
++/* #	include <stropts.h> */
++	/* Isn't POSIX and portability so much fun? */
++#	define VRPRNT	VREPRINT
++#endif
++
++#if defined(SUNOS) && !defined(__FreeBSD__)
+ #	undef _POSIX_SOURCE
+ #	include <sys/termio.h>
+ #	include <stropts.h>
+@@ -41,7 +50,7 @@
+ #	define 	VEOL2	_VEOL2
+ #endif
+ 
+-#ifdef	RISCOS
++#ifdef RISCOS
+ #	include <sys/stat.h>
+ #	include </usr/include/ctype.h>		/* to defeat posix version */
+ #	define  VLNEXT V_LNEXT
+@@ -49,10 +58,12 @@
+ #	define	VRPRNT V_RPRNT
+ #	define	VWERASE V_WERAS
+ #else
++#ifndef __FreeBSD__
+ #	include <ctype.h>
+ #endif
++#endif
+ 
+-#ifdef	OSF1
++#if defined(OSF1)
+ #	define 	V_START VSTART
+ #	define 	V_STOP VSTOP
+ #	define 	V_SUSP VSUSP
+@@ -115,7 +126,7 @@
+ 	char udef, p9def;
+ };
+ 
+-#if defined(SUNOS) || defined(IRIX) || defined(SOLARIS)
++#if defined(SUNOS) || defined(IRIX) || defined(SOLARIS) || defined(__FreeBSD__)
+ #	define V_START VSTART
+ #	define V_STOP VSTOP
+ #	define V_SUSP VSUSP
+@@ -139,7 +150,7 @@
+ #ifndef _POSIX_SOURCE
+ 	{ "eol2",	4, VEOL2,	0,		0 },
+ #endif
+-#if	!defined(_OSF_SOURCE) && !defined(_POSIX_SOURCE)
++#if	!defined(_OSF_SOURCE) && !defined(_POSIX_SOURCE) && !defined(__FreeBSD__)
+ 	{ "swtch", 	5, VSWTCH,	0,		0 },
+ #endif
+ 	{ "start",	5, V_START,	ctrl('q'),	ctrl('q') },
+@@ -292,10 +303,16 @@
+ 		/* Insure some sanity. */
+ 		ttmode.c_lflag |= ECHO;
+ 		ttmode.c_oflag &= ~(ONLCR);
++#ifndef __FreeBSD__
+ 		ttmode.c_oflag |= ONLRET;
++#endif
+ 	} else {
+ 		ttmode.c_iflag = BRKINT | IGNPAR | ICRNL | IXON;
++#ifdef __FreeBSD__
++		ttmode.c_oflag = OPOST;
++#else
+ 		ttmode.c_oflag = OPOST | ONLRET;
++#endif
+ 		ttmode.c_cflag = B9600 | PARENB | CS8 | CREAD;
+ 		ttmode.c_lflag = ISIG | ICANON | ECHO | ECHOK;
+ #ifdef	__ultrix
