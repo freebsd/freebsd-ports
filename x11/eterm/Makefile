@@ -37,9 +37,7 @@ CONFIGURE_ARGS+=--enable-mmx
 .endif
 
 post-patch:
-	@${RM} ${WRKSRC}/themes/Eterm/*.orig
-	@${RM} ${WRKSRC}/themes/auto/*.orig
-	@${RM} ${WRKSRC}/themes/trans/*.orig
+	@${FIND} ${WRKSRC} -name *.orig | ${XARGS} ${RM}
 
 post-install:
 	@${CHMOD} 4711 ${PREFIX}/bin/Eterm
