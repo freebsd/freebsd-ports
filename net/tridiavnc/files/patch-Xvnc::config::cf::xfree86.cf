@@ -1,0 +1,11 @@
+--- Xvnc/config/cf/xfree86.cf.orig	Thu Apr 13 02:18:21 2000
++++ Xvnc/config/cf/xfree86.cf	Wed Nov 20 21:32:23 2002
+@@ -782,7 +782,7 @@
+ #endif
+ 
+ #ifndef XFree86ConsoleDefines
+-#ifdef i386BsdArchitecture
++#if defined(i386BsdArchitecture) || defined(AlphaBsdArchitecture)
+ #define XFree86ConsoleDefines	-DPCCONS_SUPPORT -DSYSCONS_SUPPORT -DPCVT_SUPPORT
+ #else
+ #define XFree86ConsoleDefines	/**/

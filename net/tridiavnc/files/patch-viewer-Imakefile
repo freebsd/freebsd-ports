@@ -1,8 +1,0 @@
---- vncviewer/Imakefile.orig	Thu Jun 14 14:45:01 2001
-+++ vncviewer/Imakefile	Thu Jun 14 14:45:16 2001
-@@ -41,4 +41,4 @@
- 
- OBJS = $(SRCS:.c=.o)
- 
--ComplexProgramTarget(vncviewer)
-+ComplexProgramTargetNoMan(vncviewer)
