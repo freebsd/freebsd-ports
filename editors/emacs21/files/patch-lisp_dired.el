@@ -4,7 +4,7 @@
  			          "\\|" yyyy s s "?"
  			          "\\|" s "?" yyyy
  			     "\\)"))
-+	 (freebsd-ja (concat s mm "/" dd s "\\(" HH:MM "\\|" s yyyy "\\)"))
++	 (freebsd-ja (concat s mm "\\(" s "\\|/\\)" dd s "\\(" HH:MM "\\|" s yyyy "\\)")
  	 (japanese
  	  (concat mm k "?" s dd k "?" s "+"
  		  "\\(" HH:MM "\\|" yyyy k "?" "\\)")))
