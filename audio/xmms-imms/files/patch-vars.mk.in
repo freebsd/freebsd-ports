@@ -10,7 +10,7 @@
  	   songinfo.o regexx.o strmanip.o levenshtein.o xidle.o md5.o
  
 -CFLAGS = `xmms-config --cflags` @DEBUG_CFLAGS@ -Wall -fPIC -D_REENTRANT
-+CFLAGS = `xmms-config --cflags` @CFLAGS@ -Wall -fPIC -D_REENTRANT
++CFLAGS = `xmms-config --cflags` @DEBUG_CFLAGS@ @CFLAGS@ -Wall -fPIC -D_REENTRANT
  CPPFLAGS = ${CFLAGS} -pedantic -fno-rtti
 -LDFLAGS = `xmms-config --libs` @LIBS@
 +LDFLAGS = `xmms-config --libs` -lc @LIBS@
