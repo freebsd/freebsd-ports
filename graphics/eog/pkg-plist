@@ -1,13 +1,9 @@
 bin/eog
 bin/eog-image-viewer
-etc/gconf/gconf.xml.defaults/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/eog/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/eog/full_screen/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/eog/view/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/eog/window/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/eog/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/eog/full_screen/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/eog/view/%gconf.xml
