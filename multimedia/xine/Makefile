@@ -7,6 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://xine.sourceforge.net/files/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -17,7 +18,7 @@ MAINTAINER=	nobutaka@nobutaka.com
 
 LIB_DEPENDS=	xine.0:${PORTSDIR}/graphics/libxine \
 		aa.1:${PORTSDIR}/graphics/aalib \
-		png.4:${PORTSDIR}/graphics/png
+		png.5:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
