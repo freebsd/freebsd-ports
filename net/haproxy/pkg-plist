@@ -1,5 +1,6 @@
 sbin/haproxy
 etc/rc.d/haproxy.sh
+%%PORTDOCS%%%%DOCSDIR%%/architecture.txt
 %%PORTDOCS%%%%DOCSDIR%%/haproxy-en.txt
 %%PORTDOCS%%%%DOCSDIR%%/haproxy-fr.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/haproxy.cfg
