@@ -10,7 +10,7 @@ share/freeciv/civ1/units.ruleset
 share/freeciv/civ2.serv
 share/freeciv/civ2/buildings.ruleset
 share/freeciv/civ2/governments.ruleset
-share/freeciv/civ2/techs.ruleset 
+share/freeciv/civ2/techs.ruleset
 share/freeciv/civ2/terrain.ruleset
 share/freeciv/civ2/units.ruleset
 share/freeciv/classic/terrain.ruleset
@@ -24,6 +24,8 @@ share/freeciv/default/units.ruleset
 share/freeciv/engels.tilespec
 share/freeciv/engels/cities.spec
 share/freeciv/engels/cities.xpm
+share/freeciv/engels/explosions.spec
+share/freeciv/engels/explosions.xpm
 share/freeciv/engels/flags.spec
 share/freeciv/engels/flags.xpm
 share/freeciv/engels/roads.spec
@@ -32,9 +34,14 @@ share/freeciv/engels/tiles.spec
 share/freeciv/engels/tiles.xpm
 share/freeciv/engels/units.spec
 share/freeciv/engels/units.xpm
+share/freeciv/engels_shields.tilespec
 share/freeciv/helpdata.txt
+share/freeciv/misc/chiefs.spec
+share/freeciv/misc/chiefs.xpm
 share/freeciv/misc/intro.xpm
 share/freeciv/misc/radar.xpm
+share/freeciv/misc/shields.spec
+share/freeciv/misc/shields.xpm
 share/freeciv/misc/small.spec
 share/freeciv/misc/small.xpm
 share/freeciv/misc/space.spec
@@ -48,8 +55,11 @@ share/freeciv/scenario/earth-80x50-v2.sav
 share/freeciv/scenario/europe-200x100-v1.sav
 share/freeciv/scenario/europe-200x100-v2.sav
 share/freeciv/trident.tilespec
+share/freeciv/trident/auto_ll.spec
 share/freeciv/trident/cities.spec
 share/freeciv/trident/cities.xpm
+share/freeciv/trident/explosions.spec
+share/freeciv/trident/explosions.xpm
 share/freeciv/trident/flags.spec
 share/freeciv/trident/flags.xpm
 share/freeciv/trident/roads.spec
@@ -58,19 +68,44 @@ share/freeciv/trident/tiles.spec
 share/freeciv/trident/tiles.xpm
 share/freeciv/trident/units.spec
 share/freeciv/trident/units.xpm
+share/freeciv/trident_shields.tilespec
 share/locale/de/LC_MESSAGES/freeciv.mo
+share/locale/en_GB/LC_MESSAGES/freeciv.mo
 share/locale/es/LC_MESSAGES/freeciv.mo
 share/locale/fr/LC_MESSAGES/freeciv.mo
 share/locale/hu/LC_MESSAGES/freeciv.mo
+share/locale/no/LC_MESSAGES/freeciv.mo
 share/locale/pl/LC_MESSAGES/freeciv.mo
 share/locale/pt/LC_MESSAGES/freeciv.mo
 share/locale/pt_BR/LC_MESSAGES/freeciv.mo
+share/locale/ru/LC_MESSAGES/freeciv.mo
+@dirrm share/freeciv
+@dirrm share/freeciv/misc
+@dirrm share/freeciv/trident
+@dirrm share/freeciv/engels
+@dirrm share/freeciv/default
+@dirrm share/freeciv/classic
 @dirrm share/freeciv/civ1
 @dirrm share/freeciv/civ2
-@dirrm share/freeciv/classic
-@dirrm share/freeciv/default
-@dirrm share/freeciv/engels
-@dirrm share/freeciv/misc
 @dirrm share/freeciv/scenario
-@dirrm share/freeciv/trident
-@dirrm share/freeciv
+@dirrm share/locale
+@dirrm share/locale/de
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/en_GB
+@dirrm share/locale/en_GB/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/hu
+@dirrm share/locale/hu/LC_MESSAGES
+@dirrm share/locale/no
+@dirrm share/locale/no/LC_MESSAGES
+@dirrm share/locale/pl
+@dirrm share/locale/pl/LC_MESSAGES
+@dirrm share/locale/pt
+@dirrm share/locale/pt/LC_MESSAGES
+@dirrm share/locale/pt_BR
+@dirrm share/locale/pt_BR/LC_MESSAGES
+@dirrm share/locale/ru
+@dirrm share/locale/ru/LC_MESSAGES
