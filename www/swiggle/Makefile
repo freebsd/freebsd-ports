@@ -12,7 +12,7 @@ MASTER_SITES=	http://homepage.univie.ac.at/l.ertl/swiggle/files/ \
 		http://www.daemon.li/distfiles/
 
 MAINTAINER=	josef@FreeBSD.org
-COMMENT=	"Swiggle is a commandline web image gallery generator"
+COMMENT=	Swiggle is a commandline web image gallery generator
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg:install \
 		exif.10:${PORTSDIR}/graphics/libexif:install
