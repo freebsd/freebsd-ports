@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openal
-PORTVERSION= 	20000908
+PORTVERSION=	20000908
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.openal.org/pub/openal/
 
