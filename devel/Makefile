@@ -121,6 +121,7 @@
     SUBDIR += mkcmd
     SUBDIR += mkmf
     SUBDIR += mm
+    SUBDIR += moonshine
     SUBDIR += mprof
     SUBDIR += msrc0
     SUBDIR += nana
