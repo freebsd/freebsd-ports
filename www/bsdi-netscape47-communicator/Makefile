@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1997
 # Whom:                 thepish
 #
-# $Id: Makefile,v 1.33 1998/12/11 08:11:23 obrien Exp $
+# $Id: Makefile,v 1.34 1998/12/19 11:20:13 markm Exp $
 #
 
 DISTNAME=	communicator-v45-export.x86-unknown-freebsd
@@ -54,7 +54,7 @@ do-install:
 	${RM} -rf ${NDIR}/movemail-src
 .if defined(USE_128BIT)
 	cd ${WRKDIR}/Fortify-1.3.2-unix-x86 && \
-		(${ECHO} yes ; ${ECHO} no) | ./Fortify.sh ${NDIR}/communicator-4.5.bin
+		(${ECHO} yes ; ${ECHO} no ; ${ECHO} no) | ./Fortify.sh ${NDIR}/communicator-4.5.bin
 .endif
 	chown -R ${BINOWN}.${BINGRP} ${NDIR}
 
