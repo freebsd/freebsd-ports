@@ -291,7 +291,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="ac619d06-3ef8-11d9-8741-c942c075aa41">
-    <topic> Security Vulnerability With Java Plugin</topic>
+    <topic>jdk/jre -- Security Vulnerability With Java Plugin</topic>
     <affects>
       <package>
 	<name>jdk</name>
@@ -311,6 +311,11 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <package>
 	<name>linux-ibm-jdk</name>
 	<range><ge>1.3.0</ge><le>1.4.2</le></range>
+      </package>
+      <package>
+	<name>diablo-jdk</name>
+	<name>diablo-jre</name>
+	<range><ge>1.3.1.0</ge><le>1.3.1.0_1</le></range>
       </package>
     </affects>
     <description>
