@@ -61,6 +61,7 @@
     SUBDIR += py-gdbm
     SUBDIR += rdb
     SUBDIR += ruby-bdb
+    SUBDIR += ruby-cdb
     SUBDIR += ruby-gdbm
     SUBDIR += ruby14-gdbm
     SUBDIR += ruby-mysql
