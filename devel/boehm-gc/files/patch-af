@@ -13,10 +13,3 @@
 -#ifdef FREEBSD
 +#if defined(FREEBSD) && defined(I386)
  #  include <machine/trap.h>
-@@ -144,4 +149,4 @@
- 
--#if defined(LINUX) && (defined(POWERPC) || defined(SPARC) || defined(ALPHA) \
--    		       || defined(IA64))
-+#if (defined(FREEBSD) || defined(LINUX)) \
-+	&& (defined(POWERPC) || defined(SPARC) || defined(ALPHA) || defined(IA64))
-   /* The I386 case can be handled without a search.  The Alpha case	*/

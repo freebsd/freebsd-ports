@@ -1,10 +1,9 @@
 --- Makefile.orig	Fri Oct 29 15:18:48 1999
 +++ Makefile	Tue Jul 18 21:10:50 2000
-@@ -8,15 +8,42 @@
- #	 c++ interface to gc.a
- # cord/de - builds dumb editor based on cords.
+@@ -10,14 +10,41 @@
  ABI_FLAG= 
 -CC=cc $(ABI_FLAG)
+ HOSTCC=$(CC)
 -CXX=g++ $(ABI_FLAG)
 -AS=as $(ABI_FLAG)
 +CC+= $(ABI_FLAG)
