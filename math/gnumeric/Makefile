@@ -7,6 +7,7 @@
 
 PORTNAME=	gnumeric
 PORTVERSION=	0.67
+PORTREVISION=	1
 CATEGORIES?=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnumeric
@@ -26,7 +27,7 @@ USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lintl"
+		LIBS="-L${LOCALBASE}/lib -lintl -lgiconv"
 
 PLIST_SUB=	VERSION=${PORTVERSION}-bonobo
 
