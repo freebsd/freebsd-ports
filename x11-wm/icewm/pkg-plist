@@ -21,7 +21,10 @@ lib/X11/icewm/icons/xterm_16x16.xpm
 lib/X11/icewm/icons/xterm_32x32.xpm
 lib/X11/icewm/icons/xv_16x16.xpm
 lib/X11/icewm/icons/xv_32x32.xpm
-lib/X11/icewm/ledclock/cl.xpm
+lib/X11/icewm/ledclock/a.xpm
+lib/X11/icewm/ledclock/colon.xpm
+lib/X11/icewm/ledclock/dot.xpm
+lib/X11/icewm/ledclock/m.xpm
 lib/X11/icewm/ledclock/n0.xpm
 lib/X11/icewm/ledclock/n1.xpm
 lib/X11/icewm/ledclock/n2.xpm
@@ -32,7 +35,9 @@ lib/X11/icewm/ledclock/n6.xpm
 lib/X11/icewm/ledclock/n7.xpm
 lib/X11/icewm/ledclock/n8.xpm
 lib/X11/icewm/ledclock/n9.xpm
-lib/X11/icewm/ledclock/nc.xpm
+lib/X11/icewm/ledclock/p.xpm
+lib/X11/icewm/ledclock/slash.xpm
+lib/X11/icewm/ledclock/space.xpm
 lib/X11/icewm/menu
 lib/X11/icewm/preferences
 lib/X11/icewm/taskbar/bsd-daemon.xpm
@@ -43,6 +48,71 @@ lib/X11/icewm/taskbar/start.xpm
 lib/X11/icewm/taskbar/unreadmail.xpm
 lib/X11/icewm/taskbar/windows.xpm
 lib/X11/icewm/taskbar/xfreeos2.xpm
+lib/X11/icewm/themes/metal/close.xpm
+lib/X11/icewm/themes/metal/closeA.xpm
+lib/X11/icewm/themes/metal/closeButtonAN.xpm
+lib/X11/icewm/themes/metal/closeButtonAP.xpm
+lib/X11/icewm/themes/metal/closeI.xpm
+lib/X11/icewm/themes/metal/default.theme
+lib/X11/icewm/themes/metal/dframeAB.xpm
+lib/X11/icewm/themes/metal/dframeABL.xpm
+lib/X11/icewm/themes/metal/dframeABR.xpm
+lib/X11/icewm/themes/metal/dframeAL.xpm
+lib/X11/icewm/themes/metal/dframeAR.xpm
+lib/X11/icewm/themes/metal/dframeAT.xpm
+lib/X11/icewm/themes/metal/dframeATL.xpm
+lib/X11/icewm/themes/metal/dframeATR.xpm
+lib/X11/icewm/themes/metal/dframeIB.xpm
+lib/X11/icewm/themes/metal/dframeIBL.xpm
+lib/X11/icewm/themes/metal/dframeIBR.xpm
+lib/X11/icewm/themes/metal/dframeIL.xpm
+lib/X11/icewm/themes/metal/dframeIR.xpm
+lib/X11/icewm/themes/metal/dframeIT.xpm
+lib/X11/icewm/themes/metal/dframeITL.xpm
+lib/X11/icewm/themes/metal/dframeITR.xpm
+lib/X11/icewm/themes/metal/frameAB.xpm
+lib/X11/icewm/themes/metal/frameABL.xpm
+lib/X11/icewm/themes/metal/frameABR.xpm
+lib/X11/icewm/themes/metal/frameAL.xpm
+lib/X11/icewm/themes/metal/frameAR.xpm
+lib/X11/icewm/themes/metal/frameAT.xpm
+lib/X11/icewm/themes/metal/frameATL.xpm
+lib/X11/icewm/themes/metal/frameATR.xpm
+lib/X11/icewm/themes/metal/frameIB.xpm
+lib/X11/icewm/themes/metal/frameIBL.xpm
+lib/X11/icewm/themes/metal/frameIBR.xpm
+lib/X11/icewm/themes/metal/frameIL.xpm
+lib/X11/icewm/themes/metal/frameIR.xpm
+lib/X11/icewm/themes/metal/frameIT.xpm
+lib/X11/icewm/themes/metal/frameITL.xpm
+lib/X11/icewm/themes/metal/frameITR.xpm
+lib/X11/icewm/themes/metal/maximize.xpm
+lib/X11/icewm/themes/metal/maximizeA.xpm
+lib/X11/icewm/themes/metal/maximizeButtonAN.xpm
+lib/X11/icewm/themes/metal/maximizeButtonAP.xpm
+lib/X11/icewm/themes/metal/maximizeI.xpm
+lib/X11/icewm/themes/metal/menuButtonA.xpm
+lib/X11/icewm/themes/metal/menuButtonAN.xpm
+lib/X11/icewm/themes/metal/menuButtonAP.xpm
+lib/X11/icewm/themes/metal/menuButtonI.xpm
+lib/X11/icewm/themes/metal/minimize.xpm
+lib/X11/icewm/themes/metal/minimizeA.xpm
+lib/X11/icewm/themes/metal/minimizeButtonAN.xpm
+lib/X11/icewm/themes/metal/minimizeButtonAP.xpm
+lib/X11/icewm/themes/metal/minimizeI.xpm
+lib/X11/icewm/themes/metal/restore.xpm
+lib/X11/icewm/themes/metal/restoreA.xpm
+lib/X11/icewm/themes/metal/restoreI.xpm
+lib/X11/icewm/themes/metal/titleAB.xpm
+lib/X11/icewm/themes/metal/titleAL.xpm
+lib/X11/icewm/themes/metal/titleAM.xpm
+lib/X11/icewm/themes/metal/titleAR.xpm
+lib/X11/icewm/themes/metal/titleAT.xpm
+lib/X11/icewm/themes/metal/titleIB.xpm
+lib/X11/icewm/themes/metal/titleIL.xpm
+lib/X11/icewm/themes/metal/titleIM.xpm
+lib/X11/icewm/themes/metal/titleIR.xpm
+lib/X11/icewm/themes/metal/titleIT.xpm
 lib/X11/icewm/themes/motif/close.xpm
 lib/X11/icewm/themes/motif/default.theme
 lib/X11/icewm/themes/motif/maximize.xpm
@@ -66,7 +136,8 @@ lib/X11/icewm/themes/warp4/hide.xpm
 lib/X11/icewm/themes/warp4/maximize.xpm
 lib/X11/icewm/themes/warp4/minimize.xpm
 lib/X11/icewm/themes/warp4/restore.xpm
-lib/X11/icewm/themes/win31/close.xpm
+lib/X11/icewm/themes/win31/closeA.xpm
+lib/X11/icewm/themes/win31/closeI.xpm
 lib/X11/icewm/themes/win31/default.theme
 lib/X11/icewm/themes/win31/dframeAB.xpm
 lib/X11/icewm/themes/win31/dframeABL.xpm
@@ -100,10 +171,12 @@ lib/X11/icewm/themes/win31/frameIR.xpm
 lib/X11/icewm/themes/win31/frameIT.xpm
 lib/X11/icewm/themes/win31/frameITL.xpm
 lib/X11/icewm/themes/win31/frameITR.xpm
-lib/X11/icewm/themes/win31/maximize.xpm
+lib/X11/icewm/themes/win31/maximizeA.xpm
+lib/X11/icewm/themes/win31/maximizeI.xpm
 lib/X11/icewm/themes/win31/menuButtonA.xpm
 lib/X11/icewm/themes/win31/menuButtonI.xpm
-lib/X11/icewm/themes/win31/minimize.xpm
+lib/X11/icewm/themes/win31/minimizeA.xpm
+lib/X11/icewm/themes/win31/minimizeI.xpm
 lib/X11/icewm/themes/win31/restore.xpm
 lib/X11/icewm/themes/win31/titleAB.xpm
 lib/X11/icewm/themes/win31/titleAL.xpm
@@ -124,6 +197,7 @@ lib/X11/icewm/winoptions
 @dirrm lib/X11/icewm/icons
 @dirrm lib/X11/icewm/ledclock
 @dirrm lib/X11/icewm/taskbar
+@dirrm lib/X11/icewm/themes/metal
 @dirrm lib/X11/icewm/themes/motif
 @dirrm lib/X11/icewm/themes/nice
 @dirrm lib/X11/icewm/themes/warp3

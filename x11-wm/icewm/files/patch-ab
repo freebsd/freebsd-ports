@@ -1,5 +1,5 @@
---- src/Makefile.orig	Fri Feb 13 06:57:37 1998
-+++ src/Makefile	Fri Feb 13 06:58:21 1998
+--- src/Makefile.orig	Mon Mar  9 00:28:12 1998
++++ src/Makefile	Wed Mar 11 14:14:59 1998
 @@ -1,8 +1,8 @@
  include ../VERSION
  
@@ -8,16 +8,15 @@
 -LIBSDIR     = -L/usr/X11R6/lib
 +INCSDIR     = -I$(PREFIX)/include
 +LIBSDIR     = -L$(PREFIX)/lib
- # overriden by upper makefile
- LIBDIR=../lib
- ETCDIR=../lib
-@@ -24,7 +24,8 @@
+ # HPUX
+ #INCSDIR     = -I/usr/include/X11R5
+ #LIBSDIR     = -L/usr/lib/X11R5
+@@ -32,7 +32,7 @@
  #OPTIMIZE    = -g
  #OPTIMIZE   = -O -g
  #OPTIMIZE   = -O -g -pg
--OPTIMIZE     = -O -s
-+#OPTIMIZE     = -O -s
-+OPTIMIZE     = $(CFLAGS)
+-OPTIMIZE   = -O -s
++#OPTIMIZE   = -O -s
  #OPTIMIZE   = -O2 -s
  
  LIBS        = -lXpm $(SHAPELIB) -lX11
