@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libvanessa_logger
-PORTVERSION=	0.0.4
+PORTVERSION=	0.0.5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.vergenet.net/linux/vanessa/download/%SUBDIR%/
 MASTER_SITE_SUBDIR=	vanessa_logger/${PORTVERSION}

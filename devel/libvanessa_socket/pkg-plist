@@ -3,3 +3,4 @@ include/vanessa_socket.h
 lib/libvanessa_socket.so.0
 lib/libvanessa_socket.so
 lib/libvanessa_socket.a
+lib/libvanessa_socket.la
