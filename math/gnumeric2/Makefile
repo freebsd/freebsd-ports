@@ -17,7 +17,7 @@ BUILD_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore \
 		python:${PORTSDIR}/lang/python
 RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore \
 		python:${PORTSDIR}/lang/python
-LIB_DEPENDS=	gnomeprint.2:${PORTSDIR}/print/gnomeprint \
+LIB_DEPENDS=	gnomeprint.5:${PORTSDIR}/print/gnomeprint \
 		glade.2:${PORTSDIR}/devel/libglade
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
