@@ -7,6 +7,7 @@
 
 PORTNAME=	squirrelmail
 PORTVERSION=	1.4.2
+PORTEPOCH=	1
 CATEGORIES=	japanese mail www
 
 PATCH_SITES=	http://www.yamaai-tech.com/~masato/Download/
@@ -17,7 +18,7 @@ MAINTAINER=	info@otsune.com
 COMMENT=	A webmail system which accesses mail over IMAP with Japanese patch
 
 CONFLICTS=	squirrelmail-1.*
-PATCHVERSION=	20031109
+PATCHVERSION=	20040305
 
 MASTERDIR=	${.CURDIR}/../../mail/squirrelmail
 MD5_FILE=	${.CURDIR}/distinfo
