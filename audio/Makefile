@@ -213,6 +213,7 @@
     SUBDIR += sphinx
     SUBDIR += spiralloops
     SUBDIR += spiralsynth
+    SUBDIR += spiralsynthbaby
     SUBDIR += splay
     SUBDIR += splaytk
     SUBDIR += streamripper
