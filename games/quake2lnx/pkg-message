@@ -9,4 +9,9 @@
     sion data files.  Note that you do not need
     full version to run dedicated server.
 
+    If you decide to build Xatrix/Rogue mission
+    packs, you'll need to copy their data files
+    to ${DATADIR}/xatrix|rogue/
+    directory from installation CD.
+
 ===================================================
