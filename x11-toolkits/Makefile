@@ -15,6 +15,7 @@
     SUBDIR += easygtk
     SUBDIR += eel
     SUBDIR += eel2
+    SUBDIR += efltk
     SUBDIR += engradient
     SUBDIR += erlgtk
     SUBDIR += fl_editor
