@@ -1,0 +1,15 @@
+Icarus Verilog is a Verilog simulation and synthesis tool. It
+operates as a compiler, compiling source code writen in Verilog
+(IEEE-1364) into some target format. For batch simulation, the
+compiler can generate C++ code that is compiled and linked with
+a run time library (called "vvm") then executed as a command to
+run the simulation. For synthesis, the compiler generates netlists
+in the desired format. 
+
+The compiler proper is intended to parse and elaborate design
+descriptions written to the IEEE standard IEEE Std 1364-2000. The
+standard proper is due to be release towards the middle of the
+year 2000. This is a fairly large and complex standard, so it will
+take some time for it to get there, but that's the goal. 
+
+WWW: http://www.icarus.com/eda/verilog/
