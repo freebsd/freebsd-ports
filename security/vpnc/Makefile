@@ -7,21 +7,31 @@
 
 PORTNAME=	vpnc
 PORTVERSION=	0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
-MASTER_SITES=	http://www.unix-ag.uni-kl.de/~massar/vpnc/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-rm+zomb-pre7
+MASTER_SITES=	http://www.unix-ag.uni-kl.de/~massar/vpnc/ \
+	http://dragon.roe.ch/mirrors/distfiles/vpnc/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-rm+zomb-pre8
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${STARTSCRIPT}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	delta@lackas.net
 COMMENT=	Client for Cisco 3000 VPN Concentrator
 
 LIB_DEPENDS=	gcrypt.10:${PORTSDIR}/security/libgcrypt-devel
 
+STARTSCRIPT=    vpnc-wrapper-1.9
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 ALL_TARGET=	vpnc
 
 MAN8=		vpnc.8
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Crashes on startup"
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -32,9 +42,12 @@ post-patch:
 
 do-install:
 	@${INSTALL_PROGRAM} -m 751 ${WRKSRC}/vpnc ${PREFIX}/sbin/vpnc
+	@${CP} ${DISTDIR}/${STARTSCRIPT} ${WRKDIR}/vpnc.sh-fulltunnel
+	@${REINPLACE_CMD} -e 's|PREFIX=/usr/local|PREFIX=${PREFIX}|' ${WRKDIR}/vpnc.sh-fulltunnel
 	@${CP} ${FILESDIR}/vpnc.sh ${WRKDIR}
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKDIR}/vpnc.sh
 	@${INSTALL_SCRIPT} -m 755 ${WRKDIR}/vpnc.sh ${PREFIX}/etc/rc.d/vpnc.sh.sample
+	@${INSTALL_SCRIPT} -m 755 ${WRKDIR}/vpnc.sh-fulltunnel ${PREFIX}/etc/rc.d/vpnc.sh.sample-fulltunnel
 	@${INSTALL_DATA} -m 600 ${WRKSRC}/vpnc.conf ${PREFIX}/etc/vpnc.conf.sample
 .if !defined(NO_INSTALL_MANPAGES)
 	@${INSTALL_MAN} ${FILESDIR}/vpnc.8 ${PREFIX}/man/man8
@@ -49,4 +62,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
