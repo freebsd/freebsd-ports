@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	junit
-PORTVERSION=	3.2
+PORTVERSION=	3.7
 CATEGORIES=	java devel
-MASTER_SITES=	http://www.xprogramming.com/ftp/TestingFramework/JUnit/
-DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	okazaki@be.to
+MAINTAINER=	okazaki@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
 
@@ -26,19 +27,20 @@ FIND?=		/usr/bin/find
 USE_ZIP=	yes
 NO_BUILD=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 JUNIT_SUBDIR=	${PORTNAME}-${PORTVERSION}
 JUNIT_DESTDIR=	${PREFIX}/share/java/${JUNIT_SUBDIR}
 
 PLIST_SUB=	JUNIT_SUBDIR=${JUNIT_SUBDIR}
-DATADIRS=	doc javadoc junit vaj
+.if !defined(NOPORTDOCS)
+DATADIRS=	doc javadoc junit
+.endif
 
 do-install:
 	${MKDIR} ${PREFIX}/share/java/classes ${JUNIT_DESTDIR}
 	cd ${INSTALL_WRKSRC}; \
 		${INSTALL_DATA} junit.jar ${PREFIX}/share/java/classes; \
 		${INSTALL_DATA} README.html ${JUNIT_DESTDIR}; \
-		${INSTALL_DATA} src.zip ${JUNIT_DESTDIR}
+		${INSTALL_DATA} src.jar ${JUNIT_DESTDIR}
 .if defined(DATADIRS)
 .for DIR in ${DATADIRS}
 	cd ${INSTALL_WRKSRC}; \
