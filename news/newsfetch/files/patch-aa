@@ -1,0 +1,22 @@
+--- Makefile.orig	Sat Sep 13 03:33:46 1997
++++ Makefile	Sat Sep 13 03:34:12 1997
+@@ -3,9 +3,10 @@
+ 
+ objs = main.o nntp.o net.o opt.o util.o 
+  
++all: newsfetch
++
+ newsfetch: $(objs)
+ 	$(CC) -o newsfetch $(objs)
+-	strip newsfetch
+ 
+ .c.o:
+ 	$(CC) -c $(CFLAGS) $< 
+@@ -14,5 +15,5 @@
+ 	rm -f *.o newsfetch
+ 
+ install:
+-	cp newsfetch /usr/local/bin
+-	cp newsfetch.1 /usr/man/man1
++	$(INSTALL_PROGRAM) newsfetch $(PREFIX)/bin
++	$(INSTALL_MAN) newsfetch.1 $(PREFIX)/man/man1
