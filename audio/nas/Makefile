@@ -3,7 +3,7 @@
 # Date created:		03 Nov 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.8 1997/01/06 12:04:12 jkh Exp $
+# $Id: Makefile,v 1.9 1998/09/28 01:52:27 steve Exp $
 #
 
 DISTNAME=	nas-1.2p5
@@ -11,6 +11,8 @@ PKGNAME=	nas-1.2.5
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	audio/nas
+
+MAINTAINER=	ports@FreeBSD.ORG
 
 USE_IMAKE=	yes
 ALL_TARGET=	World
