@@ -73,25 +73,23 @@ while [ "$1" ]; do
 			/bin/echo "LIB_DEPENDS+=	sasl.8:\${PORTSDIR}/security/cyrus-sasl"
 			/bin/echo "POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -I\${LOCALBASE}/include -I\${LOCALBASE}/include/sasl1"
 			/bin/echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -lsasl -lpam -lcrypt"
-			/bin/echo "SASL_SUFFIX=	+sasl"
+			/bin/echo "SASL_SUFFIX=		+sasl"
 			if [ -f ${LOCALBASE}/lib/libsasl.a ]; then
 				if /usr/bin/nm ${LOCALBASE}/lib/libsasl.a | grep -wq "mysql_init"; then
 					SASL_USE_MYSQL="YES"
 				fi
 			fi
-			SUB_SASL=""
 			;;
 		SASL2)
 			/bin/echo "LIB_DEPENDS+=	sasl2.2:\${PORTSDIR}/security/cyrus-sasl2"
 			/bin/echo "POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -I\${LOCALBASE}/include -I\${LOCALBASE}/include/sasl"
 			/bin/echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -lsasl2 -lpam -lcrypt"
-			/bin/echo "SASL_SUFFIX=	+sasl2"
+			/bin/echo "SASL_SUFFIX=		+sasl2"
 			if [ -f ${LOCALBASE}/lib/libsasl2.a ]; then
 				if /usr/bin/nm ${LOCALBASE}/lib/libsasl2.a | grep -wq "mysql_init"; then
 					SASL_USE_MYSQL="YES"
 				fi
 			fi
-			SUB_SASL=""
 			;;
 		SASLKRB)
 			/bin/echo "POSTFIX_AUXLIBS+= -lkrb -lcrypto -lcom_err"
@@ -103,7 +101,7 @@ while [ "$1" ]; do
 			/bin/echo "USE_OPENSSL=	yes"
 			/bin/echo "POSTFIX_CCARGS+=	-DUSE_TLS -I\${OPENSSLINC}"
 			/bin/echo "POSTFIX_AUXLIBS+=	-L\${OPENSSLLIB} -lssl -lcrypto"
-			/bin/echo "TLS_SUFFIX=	+tls"
+			/bin/echo "TLS_SUFFIX=		+tls"
 			;;
 		DB3)
 			if [ "X$BDB_SELECTED" != "X" ]; then
@@ -114,7 +112,7 @@ while [ "$1" ]; do
 			/bin/echo "LIB_DEPENDS+=	db3.3:\${PORTSDIR}/databases/db3"
 			/bin/echo "POSTFIX_CCARGS+=	-I\${LOCALBASE}/include/db3"
 			/bin/echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -ldb3"
-			/bin/echo "DB_SUFFIX=	+db3"
+			/bin/echo "DB_SUFFIX=		+db3"
 			BDB_SELECTED="3"
 			;;
 		DB40)
@@ -126,7 +124,7 @@ while [ "$1" ]; do
 			/bin/echo "LIB_DEPENDS+=	db4.0:\${PORTSDIR}/databases/db4"
 			/bin/echo "POSTFIX_CCARGS+=	-I\${LOCALBASE}/include/db4"
 			/bin/echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -ldb4"
-			/bin/echo "DB_SUFFIX=	+db40"
+			/bin/echo "DB_SUFFIX=		+db40"
 			BDB_SELECTED="40"
 			;;
 		DB41)
@@ -138,7 +136,7 @@ while [ "$1" ]; do
 			/bin/echo "LIB_DEPENDS+=	db41.1:\${PORTSDIR}/databases/db41"
 			/bin/echo "POSTFIX_CCARGS+=	-I\${LOCALBASE}/include/db41"
 			/bin/echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -ldb41"
-			/bin/echo "DB_SUFFIX=	+db41"
+			/bin/echo "DB_SUFFIX=		+db41"
 			BDB_SELECTED="41"
 			;;
 		DB42)
@@ -150,7 +148,7 @@ while [ "$1" ]; do
 			/bin/echo "LIB_DEPENDS+=	db-4.2.2:\${PORTSDIR}/databases/db42"
 			/bin/echo "POSTFIX_CCARGS+=	-I\${LOCALBASE}/include/db42"
 			/bin/echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib/db42/ -ldb"
-			/bin/echo "DB_SUFFIX=	+db42"
+			/bin/echo "DB_SUFFIX=		+db42"
 			BDB_SELECTED="42"
 			;;
 		DB43)
@@ -162,13 +160,13 @@ while [ "$1" ]; do
 			/bin/echo "LIB_DEPENDS+=	db-4.3.0:\${PORTSDIR}/databases/db43"
 			/bin/echo "POSTFIX_CCARGS+=	-I\${LOCALBASE}/include/db43"
 			/bin/echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib/db43/ -ldb"
-			/bin/echo "DB_SUFFIX=	+db43"
+			/bin/echo "DB_SUFFIX=		+db43"
 			BDB_SELECTED="43"
 			;;
 		MySQL)
 			/bin/echo "USE_MYSQL=YES"
 			/bin/echo "POSTFIX_CCARGS+=	-DHAS_MYSQL -I\${LOCALBASE}/include/mysql"
-			/bin/echo "POSTFIX_AUXLIBS+= \${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz -lcrypt"
+			/bin/echo "POSTFIX_AUXLIBS+= 	\${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz -lcrypt"
 			if [ -f ${LOCALBASE}/lib/mysql/libmysqlclient.a ]; then
 				if /usr/bin/nm ${LOCALBASE}/lib/mysql/libmysqlclient.a | grep -wq "SSL_new"; then
 					/bin/echo "USE_OPENSSL=	yes"
@@ -182,7 +180,7 @@ while [ "$1" ]; do
 		PgSQL)
 			/bin/echo "USE_PGSQL=YES"
 			/bin/echo "POSTFIX_CCARGS+=	-DHAS_PGSQL -I\${LOCALBASE}/include	-I\${LOCALBASE}/pgsql/include"
-			/bin/echo "POSTFIX_AUXLIBS+= -L\${LOCALBASE}/lib -L\${LOCALBASE}/pgsql/lib -lpq -lcrypt"
+			/bin/echo "POSTFIX_AUXLIBS+= 	-L\${LOCALBASE}/lib -L\${LOCALBASE}/pgsql/lib -lpq -lcrypt"
 			/bin/echo "PGSQL_SUFFIX=	+pgsql"
 			;;
 		OpenLDAP)
@@ -193,7 +191,7 @@ while [ "$1" ]; do
 			;;
 		NIS)
 			/bin/echo "POSTFIX_CCARGS+=	-DHAS_NIS"
-			/bin/echo "NIS_SUFFIX=	+nis"
+			/bin/echo "NIS_SUFFIX=		+nis"
 			;;
 		Test)
 			/bin/echo "BIN1=		smtp-sink smtp-source qmqp-source"
@@ -215,7 +213,7 @@ if [ -z "${BATCH}" ]; then
 		if [ $? = 0 ]; then
 			/bin/echo "USE_MYSQL=YES"
 			/bin/echo "POSTFIX_CCARGS+=	-DHAS_MYSQL -I\${LOCALBASE}/include/mysql"
-			/bin/echo "POSTFIX_AUXLIBS+= \${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz -lcrypt"
+			/bin/echo "POSTFIX_AUXLIBS+= 	\${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz -lcrypt"
 			if [ -f ${LOCALBASE}/lib/mysql/libmysqlclient.a ]; then
 				if /usr/bin/nm ${LOCALBASE}/lib/mysql/libmysqlclient.a | grep -wq "SSL_new"; then
 					/bin/echo "USE_OPENSSL=	yes"
