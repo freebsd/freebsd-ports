@@ -7,6 +7,7 @@
 
 PORTNAME=	libmatroska
 PORTVERSION=	0.6.3
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://dl.matroska.org/downloads/libmatroska/
 
@@ -48,19 +49,11 @@ do-configure:
 .if ${OSVERSION} < 500000
 # this is gcc 2.x
 CFLAGS+= -DNO_WSTRING
-.endif
-
-.if exists(${LOCALBASE}/bin/gcc32)
-WITH_GCC_32=	yes
-.else if exists(${LOCALBASE}/bin/gcc31)
-WITH_GCC_31=	yes
-.endif
-
-# prefer 3.2 over 3.1
-.if defined (WITH_GCC_31)
-USE_GCC=3.1
-.else
+# use gcc 3.2
 USE_GCC=3.2
+.else
+# default for 5.x series
+USE_GCC=3.3
 .endif
 
 .include <bsd.port.post.mk>
