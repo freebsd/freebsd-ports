@@ -1,0 +1,5 @@
+TaBE stands for `Taiwan and Big5 Encoding'. libtabe
+provides unified interface and library dealing with
+Chinese words, phrases, sentences, and phonetic symbols.
+It is intended to be used as the foundation of Chinese
+text processing.
