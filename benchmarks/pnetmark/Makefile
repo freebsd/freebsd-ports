@@ -26,9 +26,6 @@ PORTDOCS=	pm_faq.html
 PNET_STRAP_BIN=	pnetmark \
 		linpack \
 		scimark2
-PLIST_FILES=	bin/pnetmark.exe \
-		bin/linpack.exe \
-		bin/scimark2.exe
 
 .include "../../lang/pnet/Makefile.pnet"
 .include <bsd.port.pre.mk>
