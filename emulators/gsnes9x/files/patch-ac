@@ -1,0 +1,11 @@
+--- pixmaps/Makefile.in.orig	Sun Jun 18 18:54:02 2000
++++ pixmaps/Makefile.in	Sun Jun 18 18:54:55 2000
+@@ -99,7 +99,7 @@
+ ZVT_LIBS = @ZVT_LIBS@
+ l = @l@
+ 
+-pixmapdir = $(datadir)/pixmaps
++pixmapdir = $(datadir)/gnome/pixmaps
+ 
+ pixmap_DATA =  	gsnesdefault.png 	gsnes9x-icon.png
+ 

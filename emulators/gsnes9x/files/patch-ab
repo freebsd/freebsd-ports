@@ -1,0 +1,38 @@
+--- src/confiles.c.orig	Sun Jun 18 17:34:23 2000
++++ src/confiles.c	Sun Jun 18 18:06:27 2000
+@@ -81,7 +81,7 @@
+ 		file = fopen (conf, "r");
+ 	}
+ 
+-	getline (&str, &size, file);
++	fgets (str, size, file);
+ 	str[strlen (str)-1] = '\0';
+ 
+ 	while (!feof (file)) {
+@@ -142,7 +142,7 @@
+ 			}
+ 		}
+ 
+-		getline (&str, &size, file);
++		fgets (str, size, file);
+ 		str[strlen (str)-1] = '\0';
+ 
+ 		if (lval)
+@@ -179,7 +179,7 @@
+ 		return NULL;
+ 	}
+ 	
+-	getline (&str, &size, file);
++	fgets (str, size, file);
+ 	str[strlen (str)-1] = '\0';
+ 	
+ 	while (!feof (file)) {
+@@ -237,7 +237,7 @@
+ 			}
+ 		}
+ 
+-		getline (&str, &size, file);
++		fgets (str, size, file);
+ 		str[strlen (str)-1] = '\0';
+ 		
+ 		if (lval)

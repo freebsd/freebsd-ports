@@ -1,0 +1,46 @@
+--- src/util.c.orig	Sun Jun 18 17:34:30 2000
++++ src/util.c	Sun Jun 18 18:06:56 2000
+@@ -79,7 +79,7 @@
+ 	if (!names)
+ 		return list;
+ 
+-	getline (&str, &size, names);
++	fgets (str, size, names);
+ 	str[strlen (str)-1] = '\0'; /* Rip out the '\n'. */
+ 	
+ 	while (!feof (names)) {
+@@ -102,7 +102,7 @@
+ 		if (rom_info)
+ 			list = g_list_prepend (list, (gpointer)rom_info);
+ 
+-		getline (&str, &size, names);
++		fgets (str, size, names);
+ 		str[strlen(str)-1] = '\0';
+ 	}
+ 
+@@ -314,7 +314,7 @@
+ 	if (!file)
+ 		return list;
+ 
+-	getline (&str, &size, file);
++	fgets (str, size, file);
+ 	str[strlen (str)-1] = '\0'; /* Rip out '\n' */
+ 	if (!strcmp (str, ""))
+ 		return list;
+@@ -322,13 +322,13 @@
+ 	do {
+ 		cheat_code = g_new (CheatCode, 1);
+ 		cheat_code->code = g_strdup (str);
+-		getline (&str, &size, file);
++		fgets (str, size, file);
+ 		str[strlen (str)-1] = '\0'; /* Rip out '\n' */
+ 		cheat_code->name = g_strdup (str);
+-		getline (&str, &size, file);
++		fgets (str, size, file);
+ 		str[strlen (str)-1] = '\0'; /* Rip out '\n' */
+ 		cheat_code->descr = g_strdup (str);
+-		getline (&str, &size, file);
++		fgets (str, size, file);
+ 		
+ 		if (strcmp (str, cheat_code->descr))
+ 			str[strlen (str)-1] = '\0'; /* Rip out '\n' */

@@ -1,0 +1,10 @@
+GSnes9x is a GNOME front-end for the Snes9X SNES emulator.  It
+allows you to set and preserve the options for a particular ROM
+when running it, and to set global options for new ROMs being
+included.  It also keeps a Cheat Codes database for each ROM, where
+you can save as many codes as you want.
+
+WWW: http://abulafia.fciencias.unam.mx/~canek/gsnes9x/
+
+  -Kelly
+   kbyanc@posi.net
