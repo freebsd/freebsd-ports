@@ -40,21 +40,22 @@ PERL_SITEDIR=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 
 BUGZILLADIR=	${PREFIX}/www/data.default/bugzilla
 BUGZILLADOCS=	html images txt rel_notes.txt
-BONSAIPERLWC=	*.cgi *.pl *.pm processmail syncshadowdb
+BONSAIPERLWC=	*.cgi *.pl *.pm processmail syncshadowdb contrib/*.pl
+SENDMAILWC=	*.pl *.pm processmail contrib/*.pl
 
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You may use the following options:"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "  WITHOUT_BUG_CHARTING_MODULES  do not install perl modules required for bug"
-	@${ECHO_MSG} "                                charting support"
+	@${ECHO_MSG} "  WITHOUT_BUG_CHARTING_MODULES do not install perl modules required for bug"
+	@${ECHO_MSG} "                               charting support"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "  WITH_BUG_MAILING_MODULES      install perl modules required for bug"
-	@${ECHO_MSG} "                                mailing support (contrib/bug_email.pl) interface"
+	@${ECHO_MSG} "  WITH_BUG_MAILING_MODULES     install perl modules required for bug mailing"
+	@${ECHO_MSG} "                               support (contrib/bug_email.pl) interface"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "  WITH_BUG_EXPORT_AND_IMPORT    install perl modules required for bug"
-	@${ECHO_MSG} "                                export/import feature to move bugs to or from"
-	@${ECHO_MSG} "                                other bugzilla installations"
+	@${ECHO_MSG} "  WITH_BUG_EXPORT_AND_IMPORT   install perl modules required for bug"
+	@${ECHO_MSG} "                               export/import feature to move bugs to or from"
+	@${ECHO_MSG} "                               other bugzilla installations"
 	@${ECHO_MSG} ""
 
 post-patch:
@@ -65,6 +66,10 @@ post-patch:
 	@find ${WRKSRC} -name \*.orig -type f -exec ${RM} -f {} \;
 .for i in ${BONSAIPERLWC}
 	@${PERL} -pi -e 's@#!/usr/bonsaitools/bin/perl@#!/usr/bin/perl@' \
+		${WRKSRC}/$i
+.endfor
+.for i in ${SENDMAILWC}
+	@${PERL} -pi -e 's@/usr/lib/sendmail@/usr/sbin/sendmail@' \
 		${WRKSRC}/$i
 .endfor
 
