@@ -3,7 +3,7 @@
 # Date created:		18 Februar 1995
 # Whom:			gena
 #
-# $Id: Makefile,v 1.0 1995/02/18 13:41:00 gena Exp $
+# $Id: Makefile,v 1.1.1.1 1995/02/21 17:07:49 jkh Exp $
 #
 
 DISTNAME=	scotty-1.2.0
@@ -15,9 +15,7 @@ MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/tkined/
 HAS_CONFIGURE=  yes
 GNU_CONFIGURE=  yes
 USE_GMAKE=	yes
-LIB_DEPENDS=	tk\\.3\\.:${PORTSDIR}/x11/tk \
-		tclx\\.a:${PORTSDIR}/lang/tclX \
-		tcl\\.7\\.:${PORTSDIR}/lang/tcl
+DEPENDS=	${PORTSDIR}/x11/tk ${PORTSDIR}/lang/tclX ${PORTSDIR}/lang/tcl
 CONFIGURE_ARGS= --with-x --prefix=${PREFIX} --with-tcl-include=${PORTSDIR}/lang/tcl/work/tcl7.3 --with-tcl-library=${PORTSDIR}/lang/tcl/work/tcl7.3 --with-tk-include=${PORTSDIR}/x11/tk/work/tk3.6 --with-tk-library=${PORTSDIR}/x11/tk/work/tk3.6 --with-blt-library=${PORTSDIR}/lang/tclX/work/tclX7.3b/tclmaster/lib
 
 pre-patch:
