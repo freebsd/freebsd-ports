@@ -1,0 +1,10 @@
+z80-asm is a double pass compiler of the Z80 CPU assembly
+language. It supports almost all of the Z80 opcodes and
+functionality that commercial Z80 assemblers have. This
+port also contains an interactive Z80 disassembler. This
+program suite was written by BrainSoft.
+
+WWW: http://artax.karlin.mff.cuni.cz/~brain/
+
+- Samy
+samy@kerneled.com
