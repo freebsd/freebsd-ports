@@ -1,0 +1,14 @@
+lib/linux-psemupro/plugins/libgpuPeteMesaGL.so.1.0.68
+libexec/linux-psemupro/cfg/cfgPeteMesaGL
+share/linux-psemupro/cfg/gpuPeteMesaGL.cfg
+
+@dirrm lib/linux-psemupro/plugins
+@dirrm lib/linux-psemupro
+@dirrm libexec/linux-psemupro/cfg
+@dirrm libexec/linux-psemupro
+@dirrm share/linux-psemupro/cfg
+@dirrm share/linux-psemupro
+
+%%PORTDOCS%%share/doc/linux-pete-mesagpu/readme.txt
+%%PORTDOCS%%share/doc/linux-pete-mesagpu/version.txt
+%%PORTDOCS%%@dirrm share/doc/linux-pete-mesagpu

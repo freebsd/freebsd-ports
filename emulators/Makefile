@@ -33,6 +33,7 @@
     SUBDIR += linux-ePSXe
     SUBDIR += linux-peops-softgpu
     SUBDIR += linux-peops-spu
+    SUBDIR += linux-pete-mesagpu
     SUBDIR += linux-vmware-toolbox
     SUBDIR += linux-winetools
     SUBDIR += linux_base
