@@ -1,6 +1,6 @@
---- pkg.c.orig	Thu Feb  7 14:32:13 2002
-+++ pkg.c	Tue Mar 12 16:54:50 2002
-@@ -93,7 +93,7 @@
+--- pkg.c.orig	Thu Jan 16 16:07:09 2003
++++ pkg.c	Wed Jan 22 18:11:41 2003
+@@ -113,7 +113,7 @@
   * locations, ignoring duplicates
   */
  static void
@@ -9,7 +9,7 @@
  {
    DIR *dir;
    struct dirent *dent;
-@@ -113,7 +113,8 @@
+@@ -133,7 +133,8 @@
    free (dirname_copy);
    if (!dir)
      {
@@ -19,13 +19,14 @@
                    dirname, g_strerror (errno));
        return;
      }
-@@ -177,7 +178,9 @@
+@@ -202,7 +203,9 @@
        path_positions = g_hash_table_new (g_str_hash, g_str_equal);
        
        g_slist_foreach (search_dirs, (GFunc)scan_dir, NULL);
--      scan_dir (PKGLIBDIR);
-+      scan_dir (PKGLIBDIR, (void *)0);
+-      scan_dir (pkglibdir);
++      scan_dir (pkglibdir, (void *)0);
 +      scan_dir (XPKGLIBDIR, (void *)1);
 +      scan_dir (LPKGLIBDIR, (void *)1);
      }
  }
+ 
