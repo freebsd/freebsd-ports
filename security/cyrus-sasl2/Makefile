@@ -41,7 +41,6 @@ MAN3=		sasl.3 sasl_authorize_t.3 sasl_auxprop.3 \
 MAN8=		sasldblistusers2.8 saslpasswd2.8
 
 USE_OPENSSL=	yes
-USE_INC_LIBTOOL_VER=	13
 GNU_CONFIGURE=	YES
 
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
