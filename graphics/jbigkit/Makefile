@@ -1,5 +1,5 @@
 # New ports collection makefile for:	jbig
-# Version required:     1.0
+# Version required:     1.1
 # Date created:		19 November 1996
 # Whom:			mi
 #
@@ -8,7 +8,7 @@
 
 DISTNAME=	jbigkit-1.1
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.informatik.uni-erlangen.de/local/cip/mskuhn/ISO/JBIG/
+MASTER_SITES=	ftp://ftp.informatik.uni-erlangen.de/pub/doc/ISO/JBIG/
 
 MAINTAINER=	mi@aldan.algebra.com
 
