@@ -1,9 +1,2 @@
 TCSH is an extended C-shell with many useful features like
 filename completion, history editing, etc.
-
-This also supports
-   1. Japanese command-line editing
-   2. Japanese NLS catalogs
-   3. colorlized ls-F command
-
-See also ${PREFIX}/share/doc/tcsh.
