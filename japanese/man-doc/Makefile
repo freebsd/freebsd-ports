@@ -36,7 +36,7 @@ do-extract:
 		${CP} -R ${JAMANDIR}/man${sec} ${WRKSRC}/ ; \
 		${ECHO_CMD} >>${WRKSRC}/man${sec}/Makefile; \
 		${ECHO_CMD} pages-list: >>${WRKSRC}/man${sec}/Makefile; \
-		${ECHO_CMD} "	@\$${ECHO_CMD} \$${MAN${sec}} \$${MLINKS}" \
+		${ECHO_CMD} "	@echo \$${MAN${sec}} \$${MLINKS}" \
 			>>${WRKSRC}/man${sec}/Makefile; \
 	fi
 .endfor
