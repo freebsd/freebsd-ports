@@ -1,0 +1,20 @@
+@comment $FreeBSD$
+%%PORTDOCS%%%%DOCSDIR%%/CONFIG
+%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS
+%%PORTDOCS%%%%DOCSDIR%%/FORM
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY
+%%PORTDOCS%%%%DOCSDIR%%/TEMPLATE
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@cwd %%WWW_DIR%%
+cgi-bin/vqregister/vqregister.cgi
+cgi-bin/vqregister/vqregister.email
+cgi-bin/vqregister/vqregister.conf
+cgi-bin/vqregister/html/error.html
+cgi-bin/vqregister/html/failure.html
+cgi-bin/vqregister/html/init_error.html
+cgi-bin/vqregister/html/register.html
+cgi-bin/vqregister/html/register.with.password.html
+cgi-bin/vqregister/html/success.html
+cgi-bin/vqregister/html/success.with.password.html
+@dirrm cgi-bin/vqregister/html
+@dirrm cgi-bin/vqregister
