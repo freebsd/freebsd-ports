@@ -8,9 +8,9 @@
   
 + install::
 + 	(cd source; make -f Makefile.freebsd install)
-+ 	${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m 644 nedit.man ${PREFIX}/man/man1/nedit.1
-+ 	${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m 644 nc.man ${PREFIX}/man/man1/nclient.1
-+ 	${INSTALL} ${COPY} -m 644 NEdit.ad ${X11BASE}/lib/X11/app-defaults/NEdit
++ 	${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m 644 doc/nedit.man ${PREFIX}/man/man1/nedit.1
++ 	${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m 644 doc/nc.man ${PREFIX}/man/man1/nclient.1
++ 	${INSTALL} ${COPY} -m 644 NEdit.ad ${X11BASE}/lib/X11/app-defaults/NEdit.ad
 + 
   clean:
   	(cd util; $(MAKE) -f Makefile.common clean)
