@@ -14,7 +14,17 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 
 MAINTAINER=	ijliao@FreeBSD.org
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-gmp=yes
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if defined(WITH_GMP)
+.if ${OSVERSION} >= 500000
+LIB_DEPENDS+=	gmp.3:${PORTSDIR}/math/libgmp
+CONFIGURE_ENV+=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+.endif
+CONFIGURE_ARGS+=	--enable-gmp=yes
+.endif
+
+GNU_CONFIGURE=	yes
+
+.include <bsd.port.post.mk>
