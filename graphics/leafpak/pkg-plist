@@ -1,4 +1,4 @@
 bin/leafpak
 bin/leafpak2
-share/doc/ja/leafpak/README
-@dirrm share/doc/ja/leafpak
+%%PORTDOCS%%share/doc/ja/leafpak/README
+%%PORTDOCS%%@dirrm share/doc/ja/leafpak
