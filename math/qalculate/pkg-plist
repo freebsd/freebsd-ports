@@ -53,7 +53,7 @@ share/gnome/qalculate/functions.xml
 share/gnome/qalculate/prefixes.xml
 share/gnome/qalculate/units.xml
 share/gnome/qalculate/variables.xml
-%%5X%%share/locale/sv/LC_MESSAGES/qalculate-gtk.mo
+share/locale/sv/LC_MESSAGES/qalculate-gtk.mo
 @exec scrollkeeper-install -q %D/share/gnome/omf/qalculate-gtk/qalculate-gtk-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/qalculate-gtk/qalculate-gtk-C.omf 2>/dev/null || /usr/bin/true
 @dirrm share/gnome/applnk/Utilities
