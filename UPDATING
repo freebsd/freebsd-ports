@@ -93,7 +93,7 @@ upgrades.
   instance that files that were formerly found under
   PREFIX/share/sqwebmail/etc/ are now located under PREFIX/etc/sqwebmail.
   Furthermore you need to set sqwebmaild_enable=YES in your rc.conf 
-  because the rc.d script has been migrated to use the rc.sub Subsystem
+  because the rc.d script has been migrated to use the rc.subr Subsystem
 
 20050108:
   AFFECTS: users of mail/courier-imap
