@@ -18,6 +18,7 @@ DISTNAME=	${PORTNAME}.v2p6
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
+COMMENT=	Electronic rolodex
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 

@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	py-
 DISTNAME=	pysqlite-${PORTVERSION}
 
 MAINTAINER=	gerhard.haering@gmx.de
+COMMENT=	A DB-API v2 Python library for the SQLite embedded SQL engine
 
 RUN_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
 LIB_DEPENDS=	sqlite.2:${PORTSDIR}/databases/sqlite

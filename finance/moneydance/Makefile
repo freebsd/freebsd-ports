@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}_other
 EXTRACT_ONLY=
 
 MAINTAINER=	sreilly@seanreilly.com
+COMMENT=	A Personal Finance Manager
 
 USE_JAVA=	1.3+
 NO_CDROM=	Strict license

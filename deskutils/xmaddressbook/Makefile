@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	office
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	shanee@augusta.de
+COMMENT=	X11/Motif-based addressbook program
 
 USE_MOTIF=	yes
 USE_IMAKE=	yes

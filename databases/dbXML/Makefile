@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.dbxml.com/files/
 DISTNAME=	dbXML-Core-${PORTVERSION}
 
 MAINTAINER=	rws@procopia.com
+COMMENT=	Java Native XML Database
 
 RUN_DEPENDS=	${JAVA_HOME}/bin/java:${PORTSDIR}/java/jdk13
 

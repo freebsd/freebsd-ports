@@ -14,6 +14,7 @@ DISTNAME=	f6kuzzzz
 EXTRACT_SUFX=	.taz
 
 MAINTAINER=	eugen@grosbein.pp.ru
+COMMENT=	Openlink UDBC SDK
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

@@ -15,6 +15,7 @@ DISTFILES=	bootkit-RC2.tar.gz \
 		Firebird-1.0.0-RC2-FreeBSD.tar.gz
 
 MAINTAINER=	chris@aims.com.au
+COMMENT=	The open-source InterBase(tm) 6.0 spin-off (Classic version)
 
 WRKSRC=		${WRKDIR}/interbase
 INSTALLS_SHLIB=	yes

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.guha.com/
 DISTNAME=	rdfdb_src
 
 MAINTAINER=	pjenvey@turntables.org
+COMMENT=	A lightweight RDF database
 
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 

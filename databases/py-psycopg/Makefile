@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	psycopg-${PORTVERSION}
 
 MAINTAINER=	simuran@shaw.ca
+COMMENT=	The high perfomance Python adapter for PostgreSQL
 
 RUN_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
 BUILD_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/nag/tarballs/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
 
 MAINTAINER=	thierry@pompo.net
+COMMENT=	Nag is a simple, multiuser task list manager
 
 RUN_DEPENDS=	${LOCALBASE}/www/horde/imp/index.php:${PORTSDIR}/mail/imp3
 

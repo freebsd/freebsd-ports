@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.free.fr/pub/MySQL/Downloads/mysql++/ \
 		ftp://mirror.sit.wisc.edu/mirrors/mysql/Downloads/mysql++/
 
 MAINTAINER=	mico@bsd.hu
+COMMENT=	Complex C++ API for MySQL
 
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 

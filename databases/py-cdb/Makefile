@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jason@mastaler.com
+COMMENT=	Python interface to D. J. Bernstein's CDB (constant database) library
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

@@ -11,6 +11,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	http://www.lcdf.org/~eddietwo/xwrits/
 
 MAINTAINER=	mab@red-bean.com
+COMMENT=	Reminds you to take wrist breaks
 
 GNU_CONFIGURE=	yes
 

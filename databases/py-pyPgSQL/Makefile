@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	py-
 DISTNAME=	pyPgSQL-${PORTVERSION}
 
 MAINTAINER=	gerhard.haering@gmx.de
+COMMENT=	A Python DB-API 2 compliant library for using PostgreSQL databases
 
 RUN_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
 LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}

@@ -17,6 +17,7 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/kronolith/			\
 		ftp://ftp.pt.horde.org/pub/horde-ftp/kronolith/
 
 MAINTAINER=	thierry@pompo.net
+COMMENT=	Kronolith is the Horde calendar application
 
 RUN_DEPENDS=	${LOCALBASE}/www/horde/imp/index.php:${PORTSDIR}/mail/imp3
 

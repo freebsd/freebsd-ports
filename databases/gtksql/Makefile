@@ -12,6 +12,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://membres.lycos.fr/bbrox/GtkSQL/
 
 MAINTAINER=	domi@saargate.de
+COMMENT=	Graphical query tool for PostgreSQL and/or MySQL
 
 .if defined(PACKAGE_BUILDING) && !defined(WITH_MYSQL) && !defined(WITH_PGSQL)
 WITH_MYSQL=	yes

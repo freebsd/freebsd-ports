@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	gauche-
 DISTFILES=	# none
 
 MAINTAINER=	erik@smluc.org
+COMMENT=	GDBM interface for Gauche
 
 BUILD_DEPENDS=	gosh:${PORTSDIR}/${GAUCHE_PORT} \
 		${NONEXISTENT}:${PORTSDIR}/${GAUCHE_PORT}:configure

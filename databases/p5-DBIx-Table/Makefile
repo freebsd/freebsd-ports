@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	DBIx
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svenasse@polaris.ca
+COMMENT=	Class used to represent DBI database tables
 
 PERL_CONFIGURE=	yes
 

@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.hwaci.com/sw/sqlite/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	gerhard.haering@gmx.de
+COMMENT=	An SQL database engine in a C library, including a Tcl wrapper
 
 LIB_DEPENDS=	tcl${TCL_VER:S/.//}:${PORTSDIR}/lang/tcl${TCL_VER:S/.//}
 

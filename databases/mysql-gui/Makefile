@@ -17,6 +17,7 @@ MASTER_SITE_SUBDIR=	mysqlgui
 DISTNAME=	${PORTNAME:S/-//}-${PORTVERSION}
 
 MAINTAINER=	cyrille.lefevre@laposte.net
+COMMENT=	A graphical SQL client for MySQL
 
 # Global variables
 #

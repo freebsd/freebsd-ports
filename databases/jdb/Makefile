@@ -11,6 +11,7 @@ CATEGORIES=	databases perl5
 MASTER_SITES=	http://www.isi.edu/~johnh/SOFTWARE/JDB/
 
 MAINTAINER=	larse@isi.edu
+COMMENT=	JDB manipulates flat-ASCII databases from shell scripts
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes

@@ -14,6 +14,7 @@ DISTNAME=	mm.mysql-${PORTVERSION}
 EXTRACT_SUFX=	-you-must-unjar-me.jar
 
 MAINTAINER=	dglo@ssec.wisc.edu
+COMMENT=	The mm JDBC interface for MySQL
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/jakarta-ant
 

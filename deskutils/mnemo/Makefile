@@ -16,6 +16,7 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/mnemo/				\
 		ftp://ftp.pt.horde.org/pub/horde-ftp/mnemo/
 
 MAINTAINER=	thierry@pompo.net
+COMMENT=	Mnemo is the Horde notes and memos application
 
 RUN_DEPENDS=	${LOCALBASE}/www/horde/imp/index.php:${PORTSDIR}/mail/imp3
 

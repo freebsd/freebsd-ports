@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.zope.org/Products/ZODB3.1/
 DISTNAME=	ZODB3-${PORTVERSION}
 
 MAINTAINER=	martin.klaffenboeck@gmx.at
+COMMENT=	The Z - Object Database for python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

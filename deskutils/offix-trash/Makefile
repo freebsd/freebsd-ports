@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	desktop_managers/OffiX
 DISTNAME=	Trash-${PORTVERSION}
 
 MAINTAINER=	ruslan@shevchenko.kiev.ua
+COMMENT=	Trash from OffiX
 
 LIB_DEPENDS=	Dnd++.1:${PORTSDIR}/x11/libdnd
 

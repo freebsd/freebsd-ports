@@ -12,6 +12,7 @@ MASTER_SITES=	http://logjam.danga.com/download/
 DISTNAME=	logjam-${PORTVERSION}
 
 MAINTAINER=	ahze@rgv.net
+COMMENT=	A GTK interface to user journals on www.livejournal.com
 
 LIB_DEPENDS=	curl.2:${PORTSDIR}/ftp/curl \
 		gtkspell.0:${PORTSDIR}/textproc/gtkspell2
