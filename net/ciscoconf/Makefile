@@ -6,14 +6,11 @@
 #
 
 PORTNAME=	ciscoconf
-PORTVERSION=	1.0.b1
+PORTVERSION=	1.1
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.patho.gen.nz/pub/users/jabley/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	billf
-DISTNAME=	ciscoconf-1.0beta1
+MASTER_SITES=	http://www.automagic.org/~jabley/
 
-MAINTAINER=	jabley@clear.co.nz
+MAINTAINER=	jabley@automagic.org
 
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/x11/XFree86
 ALL_TARGET=	depend all
