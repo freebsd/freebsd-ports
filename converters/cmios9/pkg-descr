@@ -1,0 +1,7 @@
+This is a port of cmios9, which provides ftp-like access to SCSI devices and
+image files from Fairlight CMI Series III, MFX1, and MFX2 machines.
+These samplers/harddisk recorders use the Fairlight OS9 and MDR-DOS filesystems
+.
+
+- Klaus Michael Indlekofer
+M.Indlekofer@gmx.de

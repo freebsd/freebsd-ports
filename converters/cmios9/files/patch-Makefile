@@ -1,0 +1,11 @@
+--- Makefile.org	Thu Jul 24 22:30:02 2003
++++ Makefile	Wed Jul 30 01:04:48 2003
+@@ -5,7 +5,7 @@
+ all:	cmios9
+ 
+ cmios9:	cmios9.c
+-	$(CC) -O3 -o $@ cmios9.c
++	$(CC) $(CFLAGS) -o $@ cmios9.c
+ 
+ 
+ clean:
