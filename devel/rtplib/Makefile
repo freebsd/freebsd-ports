@@ -16,8 +16,18 @@ COMMENT=	A library for developing applications over RTP
 RTP_HEADERS=	rtp_api.h rtp_highlevel.h rtp_lowlevel.h
 
 RESTRICTED=	"Source recipient must acknowledge license"
+NO_CDROM=	"Source recipient must acknowledge license"
 
 GNU_CONFIGURE=	yes
+
+.include <bsd.port.pre.mk>
+
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+ECHO_MSG = /usr/bin/printf 
+IGNORE = :\n\
+Due to licensing restrictions, you must fetch the sources to "${PORTNAME}" manually.\n\
+Please place the tarball under \"${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}\".\n
+.endif
 
 pre-install:
 .for header in ${RTP_HEADERS}
@@ -28,4 +38,4 @@ pre-install:
 	${INSTALL_DATA} ${WRKSRC}/rtp_api.html ${PREFIX}/share/doc/rtplib
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
