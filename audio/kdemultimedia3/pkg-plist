@@ -6,9 +6,11 @@ bin/kmid
 bin/kmidi
 bin/kmix
 bin/kmixctrl
+bin/kscd
 bin/midisend
 bin/sf2cfg
 bin/timidity
+bin/workman2cddb.pl
 lib/Arts/StructureBuilder.mcopclass
 lib/Arts/StructureDesc.mcopclass
 lib/Arts/Synth_ENVELOPE_ADSR.mcopclass
@@ -40,6 +42,7 @@ share/applnk/Multimedia/kaiman.desktop
 share/applnk/Multimedia/kmid.desktop
 share/applnk/Multimedia/kmidi.desktop
 share/applnk/Multimedia/kmix.desktop
+share/applnk/Multimedia/kscd.desktop
 share/applnk/Multimedia/timidity.desktop
 share/applnk/Settings/Sound/kmix.desktop
 share/apps/aktion/aktion_part.rc
@@ -201,6 +204,49 @@ share/apps/kmidi/Jarre-Chung_Kuo.mid
 share/apps/kmidi/Malaguena.mid
 share/apps/kmidi/Mission_Impossible.mid
 share/apps/kmidi/Take_The_A_Train-Seq_by_Dianne_Lewandowski.mid
+share/apps/kmidi/config/BITMAPS/arrow.xbm
+share/apps/kmidi/config/BITMAPS/back.xbm
+share/apps/kmidi/config/BITMAPS/check.xbm
+share/apps/kmidi/config/BITMAPS/fwd.xbm
+share/apps/kmidi/config/BITMAPS/fwrd.xbm
+share/apps/kmidi/config/BITMAPS/next.xbm
+share/apps/kmidi/config/BITMAPS/off.xbm
+share/apps/kmidi/config/BITMAPS/on.xbm
+share/apps/kmidi/config/BITMAPS/pause.xbm
+share/apps/kmidi/config/BITMAPS/play.xbm
+share/apps/kmidi/config/BITMAPS/prev.xbm
+share/apps/kmidi/config/BITMAPS/quit.xbm
+share/apps/kmidi/config/BITMAPS/restart.xbm
+share/apps/kmidi/config/BITMAPS/stop.xbm
+share/apps/kmidi/config/BITMAPS/tback.xbm
+share/apps/kmidi/config/BITMAPS/timidity.xbm
+share/apps/kmidi/config/BITMAPS/tnext.xbm
+share/apps/kmidi/config/BITMAPS/tpause.xbm
+share/apps/kmidi/config/BITMAPS/tprev.xbm
+share/apps/kmidi/config/BITMAPS/tquit.xbm
+share/apps/kmidi/config/chaos12-voices
+share/apps/kmidi/config/chaos8-voices
+share/apps/kmidi/config/drums
+share/apps/kmidi/config/gravis.cfg
+share/apps/kmidi/config/gsdrum.cfg
+share/apps/kmidi/config/guitar
+share/apps/kmidi/config/megadrum
+share/apps/kmidi/config/megainst
+share/apps/kmidi/config/midia.cfg
+share/apps/kmidi/config/mt32.cfg
+share/apps/kmidi/config/patch/acbass.pat
+share/apps/kmidi/config/patch/cymride1.pat
+share/apps/kmidi/config/patch/hihatcl.pat
+share/apps/kmidi/config/patch/kick1.pat
+share/apps/kmidi/config/patch/kick2.pat 
+share/apps/kmidi/config/patch/nylongt2.pat
+share/apps/kmidi/config/patch/sologrnd.pat
+share/apps/kmidi/config/piano
+share/apps/kmidi/config/piano+guitar
+share/apps/kmidi/config/pila-voices
+share/apps/kmidi/config/sound-canvas-drums
+share/apps/kmidi/config/timidity.cfg
+share/apps/kmidi/config/wowpats.cfg
 share/apps/kmidi/georgia.mid
 share/apps/kmidi/mpostman.mid
 share/apps/kmidi/pics/kmidilogo.png
@@ -219,6 +265,8 @@ share/apps/kmix/pics/mix_treble.png
 share/apps/kmix/pics/mix_unknown.png
 share/apps/kmix/pics/mix_video.png
 share/apps/kmix/pics/mix_volume.png
+share/apps/kscd/pics/cdsmall.xpm
+share/apps/kscd/pics/kscdlogo.xpm
 share/config/aktionrc
 share/doc/HTML/en/artsbuilder/.anchors
 share/doc/HTML/en/artsbuilder/index.docbook
@@ -337,46 +385,62 @@ share/icons/hicolor/32x32/apps/kaiman.png
 share/icons/hicolor/32x32/apps/kmid.png
 share/icons/hicolor/32x32/apps/kmidi.png
 share/icons/hicolor/32x32/apps/kmix.png
+share/icons/hicolor/32x32/apps/kscd.png
 share/icons/hicolor/48x48/apps/kaiman.png
 share/icons/hicolor/48x48/apps/kmid.png
 share/icons/hicolor/48x48/apps/kmidi.png
 share/icons/hicolor/48x48/apps/kmix.png
+share/icons/hicolor/48x48/apps/kscd.png
 share/icons/locolor/16x16/apps/aktion.png
 share/icons/locolor/16x16/apps/kaiman.png
 share/icons/locolor/16x16/apps/kmid.png
 share/icons/locolor/16x16/apps/kmidi.png
 share/icons/locolor/16x16/apps/kmix.png
+share/icons/locolor/16x16/apps/kscd.png
 share/icons/locolor/32x32/apps/aktion.png
 share/icons/locolor/32x32/apps/kaiman.png
 share/icons/locolor/32x32/apps/kmid.png
 share/icons/locolor/32x32/apps/kmidi.png
 share/icons/locolor/32x32/apps/kmix.png
+share/icons/locolor/32x32/apps/kscd.png
 share/mimelnk/audio/x-karaoke.desktop
+share/mimelnk/text/xmcd.desktop
 share/services/kmixctrl_restore.desktop
-@dirrm share/services
-@dirrm share/mimelnk/audio
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/22x22/apps
-@dirrm share/icons/hicolor/22x22
 @dirrm share/doc/HTML/en/kscd
 @dirrm share/doc/HTML/en/kmix
 @dirrm share/doc/HTML/en/kmidi
 @dirrm share/doc/HTML/en/kmid
 @dirrm share/doc/HTML/en/artsbuilder
+@dirrm share/apps/kscd/pics
+@dirrm share/apps/kscd/cddb/soundtrack
+@dirrm share/apps/kscd/cddb/rock
+@dirrm share/apps/kscd/cddb/reggae
+@dirrm share/apps/kscd/cddb/newage
+@dirrm share/apps/kscd/cddb/misc
+@dirrm share/apps/kscd/cddb/jazz
+@dirrm share/apps/kscd/cddb/folk
+@dirrm share/apps/kscd/cddb/data
+@dirrm share/apps/kscd/cddb/country
+@dirrm share/apps/kscd/cddb/classical
+@dirrm share/apps/kscd/cddb/blues
+@dirrm share/apps/kscd/cddb
+@dirrm share/apps/kscd
 @dirrm share/apps/kmix/pics
 @dirrm share/apps/kmix
 @dirrm share/apps/kmidi/pics
+@dirrm share/apps/kmidi/config/patch
+@dirrm share/apps/kmidi/config/BITMAPS
+@dirrm share/apps/kmidi/config
 @dirrm share/apps/kmidi
 @dirrm share/apps/kmid/maps
 @dirrm share/apps/kmid/icons/locolor/16x16/actions
 @dirrm share/apps/kmid/icons/locolor/16x16
+@dirrm share/apps/kmid/icons/locolor
 @dirrm share/apps/kmid/icons/hicolor/32x32/actions
 @dirrm share/apps/kmid/icons/hicolor/32x32
 @dirrm share/apps/kmid/icons/hicolor/22x22/actions
 @dirrm share/apps/kmid/icons/hicolor/22x22
+@dirrm share/apps/kmid/icons/hicolor
 @dirrm share/apps/kmid/icons
 @dirrm share/apps/kmid/fm
 @dirrm share/apps/kmid
