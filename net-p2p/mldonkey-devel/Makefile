@@ -19,7 +19,7 @@ LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
 ONLY_FOR_ARCHS=	alpha i386
 USE_BZIP2=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-distrib-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-distrib-${PORTVERSION:C/.(.)$/-\1/}
 
 DIRNAME=	${HOME}/.mldonkey
 
