@@ -8,7 +8,7 @@
 PORTNAME=	chasen
 PORTVERSION=	1.6
 PORTREVISION=	1
-CATEGORIES=	japanese ruby
+CATEGORIES=	japanese textproc ruby
 MASTER_SITES=	http://www.itlb.te.noda.sut.ac.jp/~ikarashi/ruby/
 # XXX: www.itlb.te.noda.tus.ac.jp is a different host and unreachable
 DISTNAME=	${PORTNAME}${PORTVERSION}
