@@ -103,13 +103,17 @@ share/vim/%%VIM_VER%%/filetype.vim
 share/vim/%%VIM_VER%%/ftoff.vim
 share/vim/%%VIM_VER%%/ftplugin.vim
 share/vim/%%VIM_VER%%/ftplugin/README.txt
-share/vim/%%VIM_VER%%/ftplugin/c/default.vim
-share/vim/%%VIM_VER%%/ftplugin/cpp/default.vim
-share/vim/%%VIM_VER%%/ftplugin/fortran/default.vim
-share/vim/%%VIM_VER%%/ftplugin/mail/default.vim
-share/vim/%%VIM_VER%%/ftplugin/make/default.vim
-share/vim/%%VIM_VER%%/ftplugin/man/default.vim
-share/vim/%%VIM_VER%%/ftplugin/xs/default.vim
+share/vim/%%VIM_VER%%/ftplugin/c.vim
+share/vim/%%VIM_VER%%/ftplugin/changelog.vim
+share/vim/%%VIM_VER%%/ftplugin/cpp.vim
+share/vim/%%VIM_VER%%/ftplugin/fortran.vim
+share/vim/%%VIM_VER%%/ftplugin/kwt.vim
+share/vim/%%VIM_VER%%/ftplugin/mail.vim
+share/vim/%%VIM_VER%%/ftplugin/make.vim
+share/vim/%%VIM_VER%%/ftplugin/man.vim
+share/vim/%%VIM_VER%%/ftplugin/python.vim
+share/vim/%%VIM_VER%%/ftplugin/vim.vim
+share/vim/%%VIM_VER%%/ftplugin/xs.vim
 share/vim/%%VIM_VER%%/ftplugof.vim
 share/vim/%%VIM_VER%%/gvimrc_example.vim
 share/vim/%%VIM_VER%%/indent.vim
@@ -422,13 +426,6 @@ share/vim/%%VIM_VER%%/tutor/tutor
 share/vim/%%VIM_VER%%/vimrc_example.vim
 @exec mkdir share/vim/%%VIM_VER%%/lang
 @dirrm share/vim/%%VIM_VER%%/doc
-@dirrm share/vim/%%VIM_VER%%/ftplugin/c
-@dirrm share/vim/%%VIM_VER%%/ftplugin/cpp
-@dirrm share/vim/%%VIM_VER%%/ftplugin/fortran
-@dirrm share/vim/%%VIM_VER%%/ftplugin/mail
-@dirrm share/vim/%%VIM_VER%%/ftplugin/make
-@dirrm share/vim/%%VIM_VER%%/ftplugin/man
-@dirrm share/vim/%%VIM_VER%%/ftplugin/xs
 @dirrm share/vim/%%VIM_VER%%/ftplugin
 @dirrm share/vim/%%VIM_VER%%/indent
 @dirrm share/vim/%%VIM_VER%%/lang
