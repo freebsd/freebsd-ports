@@ -7,6 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	0.86
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://webadmin.sourceforge.net/webmin/updates/ \
 		http://webadmin.sourceforge.net/webmin/download/
