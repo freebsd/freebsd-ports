@@ -21,6 +21,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 USE_GNOMENG=	yes
 USE_GNOME+=	gnomehack
+USE_REINPLACE=	yes
 
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--disable-gtkport --disable-gtk20
@@ -53,8 +54,9 @@ PLIST_SUB+=	NOX11:=""
 
 .if ${HAVE_GNOME:Mgnomelibs}!=""
 USE_GNOME+=	gnomeprefix gnomelibs
-PKGNAMESUFFIX=	-gnome
-PLIST_SUB=	DATADIR="share/gnome"
+PKGNAMESUFFIX+=	-gnome
+PLIST_SUB+=	DATADIR="share/gnome"
+MAKE_ENV=	HAVE_GNOME=1
 .else
 PLIST_SUB+=	DATADIR="share"
 .endif
@@ -68,7 +70,7 @@ pre-everything::
 	@${ECHO} ""
 
 post-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
 		 s|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
 		 s|\$$\(top_builddir\)/intl/libintl.a|-lintl|g' ${WRKSRC}/configure
