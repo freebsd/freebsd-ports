@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.21 1995/11/09 12:16:42 asami Exp $
+# $Id: Makefile,v 1.22 1995/11/15 10:32:24 asami Exp $
 #
 
     SUBDIR += Canna
@@ -27,6 +27,7 @@
     SUBDIR += ptex2
     SUBDIR += sed
     SUBDIR += tcl
+    SUBDIR += tgif
     SUBDIR += tk
     SUBDIR += xdvi
 
