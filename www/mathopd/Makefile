@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	mathopd
-PORTVERSION=	1.3p6
+PORTVERSION=	1.3p7
 CATEGORIES=	www
-MASTER_SITES=	http://mathop.diva.nl/dist/ \
-		ftp://ftp.prima.eu.org/pub/mirrored_files/mathop.diva.nl/
+MASTER_SITES=	http://www.mathopd.org/dist/ \
+		ftp://ftp.prima.eu.org/pub/mirrored_files/mathop.diva.nl/ \
+		http://www.tobez.org/download/port-mirrors/www/mathopd/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/pl/}
 
 MAINTAINER=	tobez@tobez.org
