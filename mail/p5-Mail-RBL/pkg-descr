@@ -1,0 +1,17 @@
+This module eases the task of checking if a given host is in the list.
+The methods available are described below:
+
+`->new(suffix)'
+    Creates a list handle. The `suffix' parameter is mandatory and
+    specifies which suffix to append to the queries.
+
+`->check($host)'
+    `$host' can be either a hostname or an IP address. In the case of an
+    IP Address, any trailing netmask (anything after a '/' character)
+    will be ignored. In the case of a hostname, all the IP addresses
+    will be looked up and checked against the list. If any of the
+    addresses is in the list, the host will be considered in the list as
+    a whole.
+
+AUTHOR: Luis E. Munoz <lem@cantv.net>
+WWW: http://search.cpan.org/search?dist=Mail-RBL
