@@ -47,9 +47,6 @@ LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap2
 pre-configure:
 	${SED} -e "s=%%PREFIX%%=${PREFIX}=" \
 		${FILESDIR}/site.config.m4 > ${WCONF}/site.config.m4
-.if defined(SENDMAIL_WITH_TLS)
-	${CAT} ${FILESDIR}/site.config.m4.tls >> ${WCONF}/site.config.m4
-.endif
 .if defined(SENDMAIL_WITH_SASL)
 	${SED} -e "s=%%LOCALBASE%%=${LOCALBASE}=" \
 		${FILESDIR}/site.config.m4.sasl >>${WCONF}/site.config.m4
@@ -66,6 +63,10 @@ pre-configure:
 	${SED} -e "s=%%LOCALBASE%%=${LOCALBASE}=" \
 		${FILESDIR}/site.config.m4.ssl >> ${WCONF}/site.config.m4
 .endif
+.endif
+.if defined(SENDMAIL_WITH_TLS)
+	${CAT} ${FILESDIR}/site.config.m4.tls >> ${WCONF}/site.config.m4
+.endif
 .if defined(SENDMAIL_WITH_LDAP)
 	${SED} -e "s=%%LOCALBASE%%=${LOCALBASE}=" \
 		${FILESDIR}/site.config.m4.ldap >> ${WCONF}/site.config.m4
@@ -75,10 +76,10 @@ pre-configure:
 		${FILESDIR}/site.config.m4.local >> ${WCONF}/site.config.m4
 .endif
 
+.if ! exists(${DESTDIR}/etc/mail/mailer.conf)
 PREFIX?=	${DESTDIR}/usr
 MANPREFIX?=	${DESTDIR}/usr/share
 .endif
-
 PLIST_SUB+=	PREFIX=${PREFIX:S=${PREFIX}/==}
 SENDMAIL=	${PREFIX}/sbin/sendmail
 
