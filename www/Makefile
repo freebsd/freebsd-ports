@@ -50,6 +50,7 @@
     SUBDIR += djvuplugin
     SUBDIR += eddie
     SUBDIR += emacs-w3m-emacs20
+    SUBDIR += emacs-w3m-xemacs21-mule
     SUBDIR += encompass
     SUBDIR += erwn
     SUBDIR += evg
