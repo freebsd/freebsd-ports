@@ -2114,10 +2114,6 @@ share/doc/gtkmm-2.0/docs/tutorial/html/ch21.html
 share/doc/gtkmm-2.0/docs/tutorial/html/ch21s02.html
 share/doc/gtkmm-2.0/docs/tutorial/html/ch22.html
 share/doc/gtkmm-2.0/docs/tutorial/html/index.html
-share/doc/gtkmm-2.0/tests/child_widget/main.cc
-share/doc/gtkmm-2.0/tests/child_widget/testwindow.cc
-share/doc/gtkmm-2.0/tests/child_widget/testwindow.h
-share/doc/gtkmm-2.0/tests/child_widget_managed/main.cc
 %%EXAMPLES%%share/devhelp/books/gtkmm-2.0/gtkmm2.devhelp
 %%EXAMPLES%%share/doc/gtkmm-2.0/examples/arrow/arrow.cc
 %%EXAMPLES%%share/doc/gtkmm-2.0/examples/arrow/direction.cc
@@ -2370,9 +2366,6 @@ share/doc/gtkmm-2.0/tests/child_widget_managed/main.cc
 %%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples/arrow
 %%EXAMPLES%%@dirrm share/doc/gtkmm-2.0/examples
 %%EXAMPLES%%@dirrm share/devhelp/books/gtkmm-2.0
-@dirrm share/doc/gtkmm-2.0/tests/child_widget_managed
-@dirrm share/doc/gtkmm-2.0/tests/child_widget
-@dirrm share/doc/gtkmm-2.0/tests
 @dirrm share/doc/gtkmm-2.0/docs/tutorial/html
 @dirrm share/doc/gtkmm-2.0/docs/tutorial/figures
 @dirrm share/doc/gtkmm-2.0/docs/tutorial
