@@ -3561,6 +3561,7 @@ ipdf		ports/textproc/ipdf
 ipe		ports/graphics/ipe
 iperf		ports/net/iperf
 ipex		ports/net/ipex
+ipfilter2dshield	ports/security/ipfilter2dshield
 ipfm		ports/net-mgmt/ipfm
 ipfmeta		ports/security/ipfmeta
 ipfw-graph	ports/net/ipfw-graph
