@@ -175,6 +175,7 @@ MASTER_SITE_EXIM+=	\
 	ftp://ftp.freenet.de/pub/ftp.csx.cam.ac.uk/pub/software/email/exim/%SUBDIR%/ \
 	ftp://ftp.esat.net/pub/networking/mail/mta/exim/%SUBDIR%/ \
 	ftp://exim.stupendous.net/mirror/exim/%SUBDIR%/ \
+	http://washitake.com/mail/exim/mirror/%SUBDIR%/ \
 	http://exim.psshee.com/ftp/%SUBDIR%/ \
 	ftp://ftp.nl.uu.net/pub/unix/mail/exim/%SUBDIR%/ \
 	ftp://ftp.demon.nl/pub/mirrors/exim/%SUBDIR%/ \
@@ -748,15 +749,14 @@ MASTER_SITE_SAVANNAH+= \
 	http://savannah.nongnu.org/download/%SUBDIR%/ \
 	ftp://ftp.gnu.org/pub/savannah/files/%SUBDIR%/
 
-# currently belnet has corrupted distfiles, add when the problems have gone away
-.for mirror in heanet aleron umn
+.for mirror in heanet aleron umn belnet
 MASTER_SITE_SOURCEFORGE+= \
 	http://${mirror}.dl.sourceforge.net/sourceforge/%SUBDIR%/
 .endfor
 
 # official sf.net mirrors that don't mirror all projects, check
 # http://prdownloads.sourceforge.net/%SUBDIR%/
-.for mirror in easynews cesnet switch keihanna twtelecom
+.for mirror in easynews cesnet switch voxel optusnet keihanna twtelecom
 MASTER_SITE_SOURCEFORGE_EXTENDED+= \
 	http://${mirror}.dl.sourceforge.net/sourceforge/%SUBDIR%/
 .endfor
