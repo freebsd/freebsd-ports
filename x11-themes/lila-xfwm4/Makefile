@@ -11,7 +11,7 @@ CATEGORIES=	x11-themes xfce
 MASTER_SITES=	http://stief.tnux.net/Lila/
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	filippo@FreeBSD.org
+MAINTAINER=	filippo@widestore.net
 COMMENT=	XFce 4 Lila window decoration theme for xfwm4
 
 RUN_DEPENDS=	xfwm4:${PORTSDIR}/x11-wm/xfce4-wm
