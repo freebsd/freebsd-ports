@@ -1,0 +1,3 @@
+bin/edonkey-tool-slist
+%%PORTDOCS%%share/doc/edonkey-tool-slist/COPYING
+%%PORTDOCS%%@dirrm share/doc/edonkey-tool-slist
