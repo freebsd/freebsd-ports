@@ -13,7 +13,7 @@ MASTER_SITES=	# none
 PKGNAMEPREFIX=	java-
 DISTFILES=	# none
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java classes to access to SQL Relay
 
 EXTRACT_DEPENDS=	${NONEXISTENT}:${SQLRELAY_PORTDIR}:patch
