@@ -7,7 +7,7 @@
 
 PORTNAME=	iconv
 PORTVERSION=	0.4.2.p3
-CATEGORIES=	converters	# ruby
+CATEGORIES=	converters ruby
 MASTER_SITES=	http://member.nifty.ne.jp/nokada/archive/
 PKGNAMEPREFIX=	ruby-
 DIST_SUBDIR=	ruby

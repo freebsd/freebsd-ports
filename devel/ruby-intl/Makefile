@@ -7,7 +7,7 @@
 
 PORTNAME=	intl
 PORTVERSION=	0.11
-CATEGORIES=	devel	# ruby
+CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.page.sannet.ne.jp/hirata-naoto/
 PKGNAMEPREFIX=	ruby-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}

@@ -7,7 +7,7 @@
 
 PORTNAME=	zlib
 PORTVERSION=	0.3.1
-CATEGORIES=	archivers	# ruby
+CATEGORIES=	archivers ruby
 MASTER_SITES=	http://www.blue.sky.or.jp/atelier/ruby/
 PKGNAMEPREFIX=	ruby-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}

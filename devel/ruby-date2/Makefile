@@ -7,7 +7,7 @@
 
 PORTNAME=	date2
 PORTVERSION=	2
-CATEGORIES=	devel	# ruby
+CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.kt.rim.or.jp/~tadf/
 PKGNAMEPREFIX=	ruby-
 DIST_SUBDIR=	ruby

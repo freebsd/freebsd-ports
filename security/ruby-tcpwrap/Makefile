@@ -7,7 +7,7 @@
 
 PORTNAME=	libwrap
 PORTVERSION=	0.1
-CATEGORIES=	security	# ruby
+CATEGORIES=	security ruby
 MASTER_SITES=	http://www.ruby-lang.org/~shugo/libwrap-ruby/
 PKGNAMEPREFIX=	ruby-
 DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}

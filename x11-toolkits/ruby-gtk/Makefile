@@ -7,7 +7,7 @@
 
 PORTNAME=	ruby-gtk
 PORTVERSION= 	0.23
-CATEGORIES=	x11-toolkits	# ruby
+CATEGORIES=	x11-toolkits ruby
 MASTER_SITES=	http://www.ruby-lang.org/gtk/download/
 DIST_SUBDIR=	ruby
 
