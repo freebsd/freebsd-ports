@@ -1,25 +1,25 @@
-@comment $FreeBSD: /tmp/pcvs/ports/www/apache13+ipv6/Attic/pkg-plist,v 1.14 2002-06-21 12:06:04 sumikawa Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/www/apache13+ipv6/Attic/pkg-plist,v 1.15 2002-06-28 09:51:31 sumikawa Exp $
 bin/checkgid
 bin/dbmmanage
 bin/htdigest
 bin/htpasswd
-@unexec if cmp -s %D/etc/apache/access.conf %D/etc/apache/access.conf.default; then rm -f %D/etc/apache/access.conf; fi
-etc/apache/access.conf.default
+@unexec if cmp -s %D/etc/apache/access.conf %D/etc/apache/access.conf-dist; then rm -f %D/etc/apache/access.conf; fi
+etc/apache/access.conf-dist
 @exec [ -f %B/access.conf ] || cp %B/%f %B/access.conf
-@unexec if cmp -s %D/etc/apache/httpd.conf %D/etc/apache/httpd.conf.default; then rm -f %D/etc/apache/httpd.conf; fi
-etc/apache/httpd.conf.default
+@unexec if cmp -s %D/etc/apache/httpd.conf %D/etc/apache/httpd.conf-dist; then rm -f %D/etc/apache/httpd.conf; fi
+etc/apache/httpd.conf-dist
 @exec [ -f %B/httpd.conf ] || cp %B/%f %B/httpd.conf
-@unexec if cmp -s %D/etc/apache/magic %D/etc/apache/magic.default; then rm -f %D/etc/apache/magic; fi
-etc/apache/magic.default
+@unexec if cmp -s %D/etc/apache/magic %D/etc/apache/magic-dist; then rm -f %D/etc/apache/magic; fi
+etc/apache/magic-dist
 @exec [ -f %B/magic ] || cp %B/%f %B/magic
-@unexec if cmp -s %D/etc/apache/mime.types %D/etc/apache/mime.types.default; then rm -f %D/etc/apache/mime.types; fi
-etc/apache/mime.types.default
+@unexec if cmp -s %D/etc/apache/mime.types %D/etc/apache/mime.types-dist; then rm -f %D/etc/apache/mime.types; fi
+etc/apache/mime.types-dist
 @exec [ -f %B/mime.types ] || cp %B/%f %B/mime.types
-@unexec if cmp -s %D/etc/apache/srm.conf %D/etc/apache/srm.conf.default; then rm -f %D/etc/apache/srm.conf; fi
-etc/apache/srm.conf.default
+@unexec if cmp -s %D/etc/apache/srm.conf %D/etc/apache/srm.conf-dist; then rm -f %D/etc/apache/srm.conf; fi
+etc/apache/srm.conf-dist
 @exec [ -f %B/srm.conf ] || cp %B/%f %B/srm.conf
-@unexec if cmp -s %D/etc/rc.d/apache.sh %D/etc/rc.d/apache.sh.default; then rm -f %D/etc/rc.d/apache.sh; fi
-etc/rc.d/apache.sh.default
+@unexec if cmp -s %D/etc/rc.d/apache.sh %D/etc/rc.d/apache.sh-dist; then rm -f %D/etc/rc.d/apache.sh; fi
+etc/rc.d/apache.sh-dist
 @exec [ -f %B/apache.sh ] || ( cp %B/%f %B/apache.sh; chmod 755 %B/apache.sh )
 include/apache/ap.h
 include/apache/ap_alloc.h
@@ -50,7 +50,9 @@ include/apache/multithread.h
 include/apache/os-inline.c
 include/apache/os.h
 include/apache/rfc1413.h
+include/apache/sa_len.h
 include/apache/scoreboard.h
+include/apache/sockaddr_storage.h
 include/apache/util_date.h
 include/apache/util_md5.h
 include/apache/util_script.h
@@ -106,37 +108,37 @@ sbin/httpd
 sbin/logresolve
 sbin/rotatelogs
 %%SUB_SUEXEC%%sbin/suexec
-www/data.default/apache_pb.gif
+www/data-dist/apache_pb.gif
 @exec [ -d %D/www/data/ ] || ln -fs %B %D/www/data
-www/data.default/index.html.ca
-www/data.default/index.html.cz
-www/data.default/index.html.de
-www/data.default/index.html.dk
-www/data.default/index.html.ee
-www/data.default/index.html.el
-www/data.default/index.html.en
-www/data.default/index.html.es
-www/data.default/index.html.fr
-www/data.default/index.html.he.iso8859-8
-www/data.default/index.html.it
-www/data.default/index.html.ja.jis
-www/data.default/index.html.kr.iso-kr
-www/data.default/index.html.lb.utf8
-www/data.default/index.html.nl
-www/data.default/index.html.nn
-www/data.default/index.html.no
-www/data.default/index.html.po.iso-pl
-www/data.default/index.html.pt
-www/data.default/index.html.pt-br
-www/data.default/index.html.ru.cp-1251
-www/data.default/index.html.ru.cp866
-www/data.default/index.html.ru.iso-ru
-www/data.default/index.html.ru.koi8-r
-www/data.default/index.html.ru.ucs2
-www/data.default/index.html.ru.ucs4
-www/data.default/index.html.ru.utf8
-www/data.default/index.html.se
-www/data.default/index.html.zh
+www/data-dist/index.html.ca
+www/data-dist/index.html.cz
+www/data-dist/index.html.de
+www/data-dist/index.html.dk
+www/data-dist/index.html.ee
+www/data-dist/index.html.el
+www/data-dist/index.html.en
+www/data-dist/index.html.es
+www/data-dist/index.html.fr
+www/data-dist/index.html.he.iso8859-8
+www/data-dist/index.html.it
+www/data-dist/index.html.ja.jis
+www/data-dist/index.html.kr.iso-kr
+www/data-dist/index.html.lb.utf8
+www/data-dist/index.html.nl
+www/data-dist/index.html.nn
+www/data-dist/index.html.no
+www/data-dist/index.html.po.iso-pl
+www/data-dist/index.html.pt
+www/data-dist/index.html.pt-br
+www/data-dist/index.html.ru.cp-1251
+www/data-dist/index.html.ru.cp866
+www/data-dist/index.html.ru.iso-ru
+www/data-dist/index.html.ru.koi8-r
+www/data-dist/index.html.ru.ucs2
+www/data-dist/index.html.ru.ucs4
+www/data-dist/index.html.ru.utf8
+www/data-dist/index.html.se
+www/data-dist/index.html.zh
 share/doc/apache/LICENSE
 share/doc/apache/bind.html.en
 share/doc/apache/bind.html.fr
@@ -412,9 +414,9 @@ share/doc/apache/win_service.html.html
 share/doc/apache/win_service.html.ja.jis
 share/doc/apache/windows.html.en
 share/doc/apache/windows.html.ja.jis
-www/cgi-bin.default/printenv
+www/cgi-bin-dist/printenv
 @exec [ -d %D/www/cgi-bin/ ] || ln -fs %B %D/www/cgi-bin
-www/cgi-bin.default/test-cgi
+www/cgi-bin-dist/test-cgi
 www/icons/README
 www/icons/a.gif
 www/icons/a.png
@@ -648,8 +650,8 @@ www/icons/world2.png
 @dirrm share/doc/apache/search
 @dirrm share/doc/apache/vhosts
 @dirrm share/doc/apache
-@dirrm www/data.default
-@dirrm www/cgi-bin.default
+@dirrm www/data-dist
+@dirrm www/cgi-bin-dist
 @dirrm www/icons/small
 @dirrm www/icons
 @dirrm www/proxy
