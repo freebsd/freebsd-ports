@@ -911,7 +911,6 @@ columns		ports/games/columns
 comclear	ports/www/comclear
 comconsole	ports/sysutils/comconsole
 comcontrol	src/sbin/comcontrol
-comline		ports/www/comline
 comm		src/usr.bin/comm
 committers-guide	doc/en_US.ISO8859-1/articles/committers-guide
 commoncpp	ports/devel/commoncpp
