@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.23 1998/10/14 04:24:20 jseger Exp $
+# $Id: Makefile,v 1.24 1998/11/19 05:17:40 obrien Exp $
 #
 
 DISTNAME=       netscape-communicator-4.07
@@ -14,8 +14,10 @@ AUTOADMIN=      autoadmin-v407.x86-unknown-freebsd.tar.gz
 
 MAINTAINER=     ache@FreeBSD.ORG
 
-NO_FILTER_SHLIBS=	yes
+BROKEN=		"'due to a lack of disk space, Netscape removed\
+		${DISTNAME}'"
 
+NO_FILTER_SHLIBS=	yes
 WRKSRC=         ${WRKDIR}/communicator-v407.x86-unknown-freebsd
 NO_BUILD=       Yes
 
