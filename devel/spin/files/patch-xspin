@@ -1,29 +1,11 @@
---- ../Xspin4.1/xspin412.tcl.orig	Mon Feb 23 12:57:50 2004
-+++ ../Xspin4.1/xspin412.tcl	Mon Feb 23 12:59:00 2004
-@@ -1,25 +1,4 @@
+--- ../Xspin4.1/xspin412.tcl.orig	Mon Mar  8 11:27:07 2004
++++ ../Xspin4.1/xspin412.tcl	Mon Mar  8 11:31:09 2004
+@@ -1,6 +1,6 @@
 -#!/bin/sh
--# the next line restarts using wish \
--exec wish c:/cygwin/bin/xspin -- $*
--
--# make sure this is where (a copy of) this script is stored
--#
--
--# cd	;# enable this line to cd to you home directory by default
--
--# on PCs:
--# adjust the first argument to wish above with the name and
--# location of this file on your system, if different.
--#
--# Cygwin:
--# if you use cygwin, do not refer to the file as /usr/bin/xspin
--# /usr/bin is a symbolic link to /bin, which really
--# lives in c:/cygwin, hence the contortions above
--#
--# on Unix/Linux/Solaris systems
--# replace the first line with something like
--#	#!/usr/bin/wish -f
--# using the pathname for the wish executable on your system
 +#!%%LOCALBASE%%/bin/%%WISH%% -f
+ # the next line restarts using wish \
+-exec wish c:/cygwin/bin/xspin -- $*
++# exec wish c:/cygwin/bin/xspin -- $*
  
- #======================================================================#
- # Tcl/Tk Spin Controller, written by Gerard J. Holzmann, 1995-2004.    #
+ # cd	;# enable to cd to home directory by default
+ 
