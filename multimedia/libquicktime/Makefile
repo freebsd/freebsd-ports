@@ -24,7 +24,8 @@ LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 USE_GL=		yes
-USE_GNOME=	gnometarget gtk12 gnomehack pkgconfig
+USE_GNOME=	gnometarget gnomehack pkgconfig
+WANT_GNOME=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
@@ -48,6 +49,13 @@ PORTDOCS=	codecs.html \
 		qt4l_writing.html
 
 .include <bsd.port.pre.mk>
+
+.if ${HAVE_GNOME:Mgtk12}!=""
+USE_GNOME+=	gtk12
+PLIST_SUB+=	GTK=""
+.else
+PLIST_SUB+=	GTK="@comment "
+.endif
 
 .if defined(WITH_LAME) || exists(${LOCALBASE}/lib/libmp3lame.a)
 LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
