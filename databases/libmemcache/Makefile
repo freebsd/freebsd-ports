@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	libmemcache
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.3
 CATEGORIES=	databases
 MASTER_SITES=	http://people.FreeBSD.org/~seanc/ports/libmemcache/
 
 MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	The C library for accessing a memcache cluster
-
-BROKEN=		"Does not build"
 
 NO_FILTER_SHLIBS=	yes
 BUILD_DEPENDS+=	pmk:${PORTSDIR}/devel/pmk
