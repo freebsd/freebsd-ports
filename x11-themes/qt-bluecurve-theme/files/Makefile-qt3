@@ -37,7 +37,7 @@ bluecurve.la: $(bluecurve_la_OBJECTS) $(bluecurve_la_DEPENDENCIES)
 	$(CXXCOMPILE) -c $<
 .cpp.lo:
 	$(LTCXXCOMPILE) -c $<
-bluecurve.lo bluecurve.o : bluecurve.cpp bluecurve.moc bluecurve.h
+bluecurve.lo bluecurve.o : bluecurve.cpp bluecurve.moc bluecurve.h bits.cpp
 plugin.lo plugin.o : plugin.cpp bluecurve.h
 all-am: $(LTLIBRARIES)
 all-redirect: all-am
