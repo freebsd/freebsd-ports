@@ -61,6 +61,10 @@ CONFIGURE_ARGS+= --with-gpg=${PREFIX}/bin/gpg \
 RUN_DEPENDS+= pgp:${PORTSDIR}/security/pgp6
 CONFIGURE_ARGS+= --with-pgp=${PREFIX}/bin/pgp \
 		 --without-pgpk --without-gpg
+.elif defined(WITH_TIN_PGP5) || exists(${LOCALBASE}/bin/pgpk)
+RUN_DEPENDS+= pgpk:${PORTSDIR}/security/pgp5
+CONFIGURE_ARGS+= --with-pgpk=${PREFIX}/bin/pgpk \
+		 --without-pgp --without-gpg
 .else
 CONFIGURE_ARGS+= --disable-pgp-gpg
 .endif
