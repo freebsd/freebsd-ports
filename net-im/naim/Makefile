@@ -6,22 +6,25 @@
 #
 
 PORTNAME=	naim
-PORTVERSION=	0.11.4.13
+PORTVERSION=	0.11.5
 CATEGORIES=	net
 MASTER_SITES=	http://www.acm.rpi.edu/~n/naim/
 
 MAINTAINER=	rtdean@cytherianage.net
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/p1//}
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		--build=${CONFIGURE_TARGET}
 
 MAN1=		naim.1
+MLINKS=		naim.1 nirc.1
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${DOCSDIR}
 	@ ${INSTALL_DATA} ${WRKSRC}/doc/naim.hlp ${DOCSDIR}
 	@ ${INSTALL_DATA} ${WRKSRC}/doc/COLORS ${DOCSDIR}
+	@ ${INSTALL_DATA} ${WRKSRC}/FAQ ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
