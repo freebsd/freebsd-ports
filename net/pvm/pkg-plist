@@ -57,7 +57,7 @@ lib/pvm/bin/FREEBSD/tracer
 lib/pvm/bin/FREEBSD/trcsort
 lib/pvm/bin/FREEBSD/trsg
 lib/pvm/bin/FREEBSD/tst
-lib/pvm/bin/FREEBSD/xep
+%%X11%%lib/pvm/bin/FREEBSD/xep
 include/fpvm3.h
 include/fpvm3_watcom.h
 include/pvm3.h

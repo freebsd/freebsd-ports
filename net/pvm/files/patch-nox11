@@ -1,0 +1,10 @@
+--- xep/Makefile.aimk	Fri Aug 29 10:17:48 1997
++++ xep/Makefile.aimk	Thu Oct 31 18:28:36 2002
+@@ -32,3 +32,7 @@
+ 
++.if defined(WITHOUT_X11)
++default:	mtile$(EXESFX)
++.else
+ default:	mtile$(EXESFX) xep$(EXESFX)
++.endif
+ 
