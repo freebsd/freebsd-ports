@@ -3,7 +3,7 @@
 # Date created:         29.9.1997
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
-# $Id: Makefile,v 1.9 1998/08/20 19:06:21 hoek Exp $
+# $Id: Makefile,v 1.10 1998/08/20 21:28:09 hoek Exp $
 #
 
 DISTNAME=	ilu-2.0alpha12
@@ -26,13 +26,13 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX}/ilu
 
 INSTALL_TARGET=	Install
 PLIST=		${WRKSRC}/PLIST
-TMPPLIST=	${PLIST}
 
 # Startup script, run at boot time
 startup_dir=	${PREFIX}/etc/rc.d
 startup_script=	${startup_dir}/50.ilu.sh
 
-post-install:
+do-install:
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 	# Empty dir, but we really need it
 	${ECHO} @exec ${MKDIR} %D/ilu/lib/binding > ${PLIST}
 	${ECHO} @unexec ${RM} -r %D/ilu/lib/binding >> ${PLIST}
