@@ -8315,6 +8315,7 @@ websieve	ports/mail/websieve
 webstone	ports/www/webstone
 webstone-ssl	ports/www/webstone-ssl
 weewm		ports/x11-wm/weewm
+wfb2sql		ports/databases/wfb2sql
 wget		ports/ftp/wget
 wget+ipv6	ports/ftp/wget+ipv6
 whatmask	ports/net/whatmask
