@@ -9,10 +9,7 @@ PORTNAME=	sharity-light
 PORTVERSION=	1.2
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.obdev.at/pub/Products/Sharity-Light/	\
-		ftp://ftp.warpnet.ro/mirrors/ftp.obdev.at/pub/Products/Sharity-Light/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	dt
+MASTER_SITES=	ftp://ftp.obdev.at/pub/Products/Sharity-Light/
 DISTNAME=	Sharity-Light.1.2
 
 MAINTAINER=	ports@FreeBSD.org
