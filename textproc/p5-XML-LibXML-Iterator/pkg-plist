@@ -1,0 +1,9 @@
+%%SITE_PERL%%/XML/LibXML/Iterator.pm
+%%SITE_PERL%%/XML/LibXML/NodeList/Iterator.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/LibXML/Iterator/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/LibXML/Iterator
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/LibXML 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
+@dirrm %%SITE_PERL%%/XML/LibXML/NodeList
+@unexec rmdir %D/%%SITE_PERL%%/XML/LibXML 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
