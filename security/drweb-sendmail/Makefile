@@ -60,7 +60,7 @@ pre-build:
 		${ECHO} ${MF_INCDIR} ; \
 		${ECHO} libmilter ; \
 		${ECHO} ${SENDMAIL8_12} ; \
-		${ECHO} ; \
+		${ECHO} ${CFLAGS} ; \
 	} | ./configure
 
 do-install:
