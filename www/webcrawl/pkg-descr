@@ -1,0 +1,7 @@
+WebCrawl is a program designed to download an entire web-site without
+user interaction (although an interactive mode is available). It works simply
+by starting with a single web page, and following all links from that page
+to attempt to recreate the directory structure on the remote server.
+
+--Dima
+dima@chg.ru

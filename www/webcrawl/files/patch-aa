@@ -1,0 +1,11 @@
+--- Makefile.old	Wed Feb  3 15:57:13 1999
++++ Makefile	Wed Feb  3 15:56:34 1999
+@@ -4,7 +4,7 @@
+ 	gcc -o webcrawl $(OBJ)
+ 
+ .c.o:
+-	gcc -Wall -c $*.c
++	gcc ${CFLAGS} -Wall -c $*.c
+ 
+ webcrawl.o: webcrawl.c web.h
+ http.o: http.c web.h
