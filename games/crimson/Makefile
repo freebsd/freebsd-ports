@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	crimson
-PORTVERSION=	0.1.3
+PORTVERSION=	0.2.3
 CATEGORIES=	games
 MASTER_SITES=	http://www.lanipage.de/jens/crimson/
 PKGNAMESUFFIX=	-fields
@@ -13,14 +13,18 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jan@jungnickel.com
 
-LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
+LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
+		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
 
 USE_BZIP2=	yes
+SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
+MAN6=	crimson.6
+
 post-patch:
-	@${PERL} -pi -e "s|sdl-config|sdl11-config|; s|SDL/|SDL11/|" \
+	@${PERL} -pi -e "s|sdl-config|${SDL_CONFIG}|; s|SDL/|SDL11/|" \
 		${WRKSRC}/configure
 
 .include <bsd.port.mk>
