@@ -28,6 +28,6 @@ if ! grep -q drweb /etc/crontab; then
   echo ""
 fi
 [ "$ex" = "1" ] && exit 1
-install -dv -m 0775 -o ${BINOWN} -g drweb ${PREFIX}/drweb/run \
-	${PREFIX}/drweb/infected.!!!
+install -dv -m 0775 -o ${BINOWN} -g drweb ${PREFIX}/drweb/run
+install -dv -m 0770 -o ${BINOWN} -g drweb ${PREFIX}/drweb/infected.!!!
 exit 0
