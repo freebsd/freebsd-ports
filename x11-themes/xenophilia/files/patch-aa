@@ -1,5 +1,8 @@
---- Makefile.orig	Sun Dec 10 00:22:37 2000
-+++ Makefile	Mon Jan  8 02:45:58 2001
+
+$FreeBSD$
+
+--- Makefile.orig	Thu Jan 25 13:55:15 2001
++++ Makefile	Wed Feb  7 16:01:50 2001
 @@ -4,12 +4,13 @@
  # Edit the entries below for your system:
  # In most cases you don't have to
@@ -7,14 +10,14 @@
 -PREFIX		= `gtk-config --prefix`
 -FONTDIR		= /usr/lib/X11/fonts/misc
 +#PREFIX		= `gtk-config --prefix`
-+FONTDIR		= $(X11BASE)/lib/X11/fonts/misc
++FONTDIR		= $(PREFIX)/X11/fonts/misc
  
--CC		= gcc
--CFLAGS		= `gtk-config --cflags`
+-CC			= gcc -pipe -ansi
+-CFLAGS		= -O2 `gtk-config --cflags` -DG_DISABLE_CHECKS
 -LIBS		= `gtk-config --libs`
-+CC		?= gcc
++CC			?= gcc -pipe -ansi
 +GTK_CFLAGS	!= $(GTK_CONFIG) --cflags
-+CFLAGS		+= $(GTK_CFLAGS) -fPIC -DPIC
++CFLAGS		= $(GTK_CFLAGS) -DG_DISABLE_CHECKS
 +LIBS		!= $(GTK_CONFIG) --libs
  
  #Use these for FreeBSD:
@@ -23,12 +26,12 @@
  
  OBJECTS		= xeno_theme_main.o xeno_theme_patches.o xeno_theme_draw.o xeno_theme_color.o \
  			  xeno_theme_images.o
--SONAME		= libxeno.so.0.5
+-SONAME		= libxeno.so.0.6
 -SHORTNAME	= libxeno.so.0
 +SONAME		= libxeno.so
 +SHORTNAME	= libxeno.so
  TINYNAME	= libxeno.so
- OLDNAME		= libxeno.so.0.4
+ OLDNAME		= libxeno.so.0.5
  
 @@ -38,19 +39,25 @@
  		$(LINK) $(GTKLIBS) $(OBJECTS) -shared -Wl,-soname,$(SHORTNAME) -o $(SONAME)
