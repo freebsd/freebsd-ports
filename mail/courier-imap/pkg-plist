@@ -23,3 +23,4 @@ share/doc/courier-imap/ChangeLog
 share/doc/courier-imap/INSTALL
 share/doc/courier-imap/README
 @unexec rmdir %D/libexec/authlib
+@unexec rmdir %D/share/doc/courier-imap
