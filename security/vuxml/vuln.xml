@@ -38,7 +38,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <package>
 	<name>gaim</name>
 	<name>ja-gaim</name>
-	<range><le>0.81_1</le></range>
+	<range><lt>0.81_1</lt></range>
       </package>
     </affects>
     <description>
