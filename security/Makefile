@@ -181,6 +181,7 @@
     SUBDIR += py-gnupg
     SUBDIR += py-m2crypto
     SUBDIR += py-mhash
+    SUBDIR += py-openssl
     SUBDIR += py-pow
     SUBDIR += py-rijndael
     SUBDIR += py-twofish
