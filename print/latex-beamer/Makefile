@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	latex-beamer
-PORTVERSION=	2.10
+PORTVERSION=	2.20
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -47,11 +47,16 @@ CLASS_FILES=	art/beamericonarticle.eps art/beamericonarticle.pdf \
 		base/beamerbasesection.sty base/beamerbasetemplates.sty \
 		base/beamerbasetheorems.sty base/beamerbasetitle.sty \
 		base/beamerbasetoc.sty \
-		emulation/beamerprosper.sty emulation/beamerseminar.sty \
-		emulation/examples/beamerexample-haprosper.pdf \
-		emulation/examples/beamerexample-haprosper.tex \
+		emulation/beamerfoils.sty emulation/beamerprosper.sty \
+		emulation/beamerseminar.sty emulation/beamertexpower.sty\
+		emulation/examples/beamerexample-foils.pdf \
+		emulation/examples/beamerexample-foils.tex \
+		emulation/examples/beamerexample-prosper.pdf \
+		emulation/examples/beamerexample-prosper.tex \
 		emulation/examples/beamerexample-seminar.pdf \
 		emulation/examples/beamerexample-seminar.tex \
+		emulation/examples/beamerexample-texpower.pdf \
+		emulation/examples/beamerexample-texpower.tex \
 		themes/beamerthemebars.sty themes/beamerthemeboxes.sty \
 		themes/beamerthemeclassic.sty themes/beamerthemelined.sty \
 		themes/beamerthemeplain.sty themes/beamerthemeshadow.sty \
