@@ -55,7 +55,7 @@ post-patch:
 	$(CP) ${FILESDIR}/sendto.c ${WRKSRC}
 
 pre-install:
-	PKG_PREFIX=${PREFIX} ./pkg-install ${PKGNAME} PRE-INSTALL
+	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
 
 do-install:
 	cd ${WRKSRC} && \
