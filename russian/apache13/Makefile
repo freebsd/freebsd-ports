@@ -138,7 +138,7 @@ MAN8=		ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8 \
 pre-fetch:
 	@${ECHO_MSG} ""
 .if defined(WITH_DSO_MODULES)
-	@${ECHO_MSG} "Build all modules (except mod_so and mod_charest) as DSO."
+	@${ECHO_MSG} "Build all modules (except mod_so and mod_charset) as DSO."
 .else
 	@${ECHO_MSG} "You could define WITH_DSO_MODULES to build all modules as DSO."
 .endif
