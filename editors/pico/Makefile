@@ -7,7 +7,7 @@
 # All patch files have been taken from mail/pine4
 
 PORTNAME=	pico
-PORTVERSION=	4.55
+PORTVERSION=	4.56
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 		http://mirror.sit.wisc.edu/pub/net/mail/pine/ \
