@@ -21,7 +21,7 @@ LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
-MD5_FILE=	${PORTSDIR}/lang/ruby/files/md5
+MD5_FILE=	${PORTSDIR}/lang/ruby/distinfo
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/ext/gdbm
 

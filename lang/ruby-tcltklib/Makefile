@@ -22,7 +22,7 @@ USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 USE_XLIB=	yes
 
-MD5_FILE=	${PORTSDIR}/lang/ruby/files/md5
+MD5_FILE=	${PORTSDIR}/lang/ruby/distinfo
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/ext/tcltklib
 CONFIGURE_ARGS=	--with-tcllib="${TCL_LIB}" --with-tklib="${TK_LIB}" \
