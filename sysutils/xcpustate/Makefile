@@ -27,7 +27,7 @@ MAN1=		xcpustate.1
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == sparc64
+.if ${OSVERSION} >= 502000
 BROKEN=		Does not compile
 .endif
 
