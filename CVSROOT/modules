@@ -2183,6 +2183,7 @@ ipcalc		ports/net/ipcalc
 ipcheck		ports/net/ipcheck
 ipcrm		src/usr.bin/ipcrm
 ipcs		src/usr.bin/ipcs
+ipdf		ports/textproc/ipdf
 ipe		ports/graphics/ipe
 iperf		ports/net/iperf
 ipf		src/sbin/ipf
