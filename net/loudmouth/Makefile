@@ -6,19 +6,33 @@
 #
 
 PORTNAME=	loudmouth
-PORTVERSION=	0.10.1
+PORTVERSION=	0.11
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.10
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.11
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Lightweight Jabber client library
 
 USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack glib20
+CONFIGURE_ARGS=	--disable-gtk-doc
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/lib/libgnutls.so)
+WITH_GNUTLS=	yes
+.endif
+
+.if defined(WITH_GNUTLS)
+LIB_DEPENDS+=		gnutls.8:${PORTSDIR}/security/gnutls
+.else
+CONFIGURE_ARGS+=	--without-ssl
+.endif
+
+.include <bsd.port.post.mk>
