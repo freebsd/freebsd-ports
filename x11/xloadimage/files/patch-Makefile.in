@@ -1,10 +1,14 @@
---- Makefile.in.orig	Wed Jun  6 23:49:17 2001
-+++ Makefile.in	Wed Jun  6 23:49:29 2001
-@@ -4,7 +4,7 @@
+--- Makefile.in.orig	Tue Jul 10 23:53:36 2001
++++ Makefile.in	Wed Jul 11 12:28:36 2001
+@@ -2,9 +2,10 @@
+ # Makefile for autoconf tutorial
+ #
  
++prefix = @prefix@
  CC = @CC@
- DEFS = @DEFS@
+-DEFS = @DEFS@ -DSYSPATHFILE=\"/etc/X11/Xloadimage\"
 -CFLAGS = @CFLAGS@
++DEFS = @DEFS@ -DSYSPATHFILE=\"@sysconfdir@/xloadimagerc\"
 +CFLAGS = @CFLAGS@ @CPPFLAGS@ @X_CFLAGS@
  XLIB = @X_LIBS@ -lX11 @X_EXTRA_LIBS@
  LDFLAGS = @LDFLAGS@

@@ -1,0 +1,53 @@
+#!/bin/sh
+#
+# De-installation setup of xloadimage
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_FILE=${PREFIX}/etc/xloadimagerc
+
+# Function: tell the user what they need to do to delete the port completely
+#
+do_notice()
+{
+    echo
+    echo "+---------------"
+    echo "| To completely deinstall the $1 package you need to perform"
+    echo "| these steps as root:"
+    echo "|"
+    echo "|       rm -f ${CONFIG_FILE}"
+    echo "|"
+    echo "| Do not do this if you plan on re-installing $1"
+    echo "| at some future time."
+    echo "+---------------"
+    echo
+}
+
+# Verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { DEINSTALL | POST-DEINSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    DEINSTALL)
+	if [ -f ${CONFIG_FILE} ]; then
+	    do_notice "$1"
+	fi
+	;;
+    POST-DEINSTALL)
+: nothing to post-deinstall for this port
+        ;;
+    *)
+	echo "usage: $0 distname { DEINSTALL | POST-DEINSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0

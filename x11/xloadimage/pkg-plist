@@ -3,5 +3,6 @@ bin/uufilter
 bin/xloadimage
 bin/xsetbg
 bin/xview
+etc/xloadimagerc
 share/examples/xloadimage/xloadimagerc
 @dirrm share/examples/xloadimage
