@@ -1,6 +1,4 @@
-An AVI player and converter built around the 
-Windows binary codecs.
-Does not use Wine. It supports the following codecs:
+A huge compilation of Win32 codecs:
 
 Video:
 - Win32 VfW DLLs:
