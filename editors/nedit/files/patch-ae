@@ -1,14 +1,21 @@
---- util/check_lin_tif.c.orig	Thu Nov 13 07:09:50 2003
-+++ util/check_lin_tif.c	Sat Feb  7 14:57:33 2004
-@@ -164,9 +164,8 @@
-             "risking instability and probable data loss.  You are very brave!\n"
-             "Please do not report bugs to the NEdit developers unless you can\n"
-             "reproduce them with a known-good NEdit binary downloaded from:\n"
--            "\thttp://www.nedit.org\n"
--            "\nHIT ENTER TO CONTINUE\n", tif);
--        fgets(buf, 2, stdin);
-+            "\thttp://www.nedit.org\n", tif);
-+	sleep(5);
-         exit(0);
- #else
-         fprintf(stderr,
+--- util/check_lin_tif.c.orig	Thu Nov 13 02:09:50 2003
++++ util/check_lin_tif.c	Sun Aug 15 17:43:47 2004
+@@ -252,7 +252,7 @@
+ 
+         /* Check for the dreaded Open Motif 2.2.2 */
+         if (force_bad || 
+-                (XmVERSION == 2 && XmREVISION == 2 && XmUPDATE_LEVEL <= 3)) {
++                (XmVERSION == 2 && XmREVISION == 2 && XmUPDATE_LEVEL < 3)) {
+             fprintf(stderr, "ERROR:  Bad Open Motif Version:\n\t%s\n", vs);
+             fprintf(stderr, 
+                 "\nThis version of Open Motif is known to be broken and is\n"
+@@ -262,7 +262,8 @@
+                 "\thttp://www.motifdeveloper.com/tips/tip22.html\n"
+                 "\thttp://www.motifdeveloper.com/tips/Motif22Review.pdf\n");
+             finish(1, tif);
+-        }    
++        }  
++        exit(0);
+     }
+ #endif
+     
