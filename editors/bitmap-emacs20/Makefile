@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	bitmap-${EMACS_PORT}
+PORTNAME=	bitmap-${EMACS_PORT_NAME}
 PORTVERSION=	${BITMAP_VER}
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.jpl.org/pub/elisp/bitmap/
@@ -19,19 +19,15 @@ BITMAPDOCDIR=	share/doc/bitmap
 BITMAP_FONT=	${X11BASE}/lib/X11/fonts/local/etl8x16-bitmap.pcf.gz
 
 # emacs20
-EMACS_NAME=	emacs
-EMACS_PORT=	emacs20
-EMACS_VER=	20.6
-EMACS_LIBDIR=		share/${EMACS_NAME}
-EMACS_LIBDIR_WITH_VER=	${EMACS_LIBDIR}/${EMACS_VER}
+EMACS_PORT_NAME=	emacs20
 
 # target name for make build
 ALL_TARGET=	elc
 
 EMACS_CMD=	${PREFIX}/bin/${EMACS_NAME}-${EMACS_VER}
-BUILD_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT} \
+BUILD_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT_NAME} \
 		uncompface:${PORTSDIR}/mail/faces
-RUN_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT} \
+RUN_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT_NAME} \
 		${BITMAP_FONT}:${PORTSDIR}/x11-fonts/bitmap-font
 SCRIPTS_ENV=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER} \
 		EMACS_LIBDIR_WITH_VER=${EMACS_LIBDIR_WITH_VER}
@@ -41,8 +37,8 @@ PLIST_SUB=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER} \
 MAKE_FLAGS=	EMACS=${EMACS_CMD}
 
 # depends on apel
-BUILD_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR}/${EMACS_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT}
-RUN_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR}/${EMACS_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT}
+BUILD_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR}/${EMACS_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
+RUN_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR}/${EMACS_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
 
 post-install:
 .if !defined(NOPORTDOCS)
