@@ -7,7 +7,6 @@ bin/emacs-19.25
 @unexec rm %B/emacs
 bin/etags
 bin/emacsclient
-lib/emacs/lisp
 lib/emacs/site-lisp
 lib/emacs/19.25
 man/man1/emacs.1
