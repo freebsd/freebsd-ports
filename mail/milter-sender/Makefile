@@ -17,12 +17,17 @@ COMMENT=        Real-time sender address verification, based on Milter API
 
 RESTRICTED=     see LICENSE.TXT
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=  yes
 
 WRKSRC=         ${WRKDIR}/com/snert/src/milter-sender
 MAKEFILE=       makefile
 
 .include <bsd.port.pre.mk>
+
+.if ( ${OSVERSION} < 440000 )
+BUILD_DEPENDS=	gxargs:${PORTSBASE}/misc/findutils
+.endif
 
 .if !exists(/usr/lib/libmilter.a) && !exists(${LOCALBASE}/lib/libmilter.a)
 IGNORE=         requires Sendmail 8.12
@@ -41,6 +46,12 @@ CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+= LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+= --with-db --localstatedir=/var/spool \
 		 --enable-milter-cf="${PREFIX}/etc/milter-sender.cf"
+
+.if ( ${OSVERSION} < 440000 )
+post-patch:
+	${REINPLACE_CMD} 's/xargs -J{}/gxargs -i{}/' ${WRKSRC}/../lib/configure
+	${REINPLACE_CMD} 's+/usr/sbin/daemon -f ++' ${WRKSRC}/milter-sender.sh.in
+.endif
 
 pre-configure:
 	@cd ${WRKSRC}/../lib && \
