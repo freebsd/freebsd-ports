@@ -2337,6 +2337,7 @@ gai		ports/x11-toolkits/gai
 gail		ports/accessibility/gail
 gaim		ports/net/gaim
 gaim-encryption	ports/security/gaim-encryption
+gaim-festival	ports/audio/gaim-festival
 gaim-guifications	ports/misc/gaim-guifications
 gaim-openq	ports/net/gaim-openq
 gaim-rss-reader	ports/net/gaim-rss-reader
