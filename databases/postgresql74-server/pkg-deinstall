@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# remove postgresql users
+
+case $2 in 
+
+POST-DEINSTALL)
+	pw groupdel pgsql
+	pw userdel pgsql
+	;;
+
+esac
