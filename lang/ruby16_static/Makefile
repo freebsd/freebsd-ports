@@ -23,7 +23,7 @@ RUBY_VER?=	1.6
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
+.if ${ARCH} == "amd64" && ${RUBY_VER} == 1.6
 BROKEN=		"Configure fails on amd64"
 .endif
 
