@@ -5,16 +5,17 @@
 #
 # $FreeBSD$
 #
+# This port is self contained in the src directory.
+#
 
 PORTNAME=	portlint
-PORTVERSION=	2.1.3
+PORTVERSION=	2.2.0
 CATEGORIES=	devel
-DISTFILES=	# empty
+DISTFILES=	# none
 
 MAINTAINER=	mharo@FreeBSD.org
 
 NO_BUILD=	yes
-NO_CHECKSUM=	yes
 NO_WRKSUBDIR=	yes
 
 SRC=		${.CURDIR}/src
