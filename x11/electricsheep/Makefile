@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	electricsheep
-PORTVERSION=	2.4
-PORTREVISION=	3
+PORTVERSION=	2.5
+PORTREVISION=	0
 CATEGORIES=	x11
 MASTER_SITES=	http://electricsheep.org/
 
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	A nice distributed screensaver
 
-LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2 \
+		jpeg.9:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage \
 		xsetbg:${PORTSDIR}/graphics/xli \
 		curl:${PORTSDIR}/ftp/curl
