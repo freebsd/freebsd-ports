@@ -23,7 +23,7 @@ USE_X_PREFIX=		yes
 USE_BZIP2=		yes
 USE_GMAKE=		yes
 USE_PERL5=		yes
-USE_IMLIB=		yes
+USE_GNOMENG=		yes
 WANT_GNOME=		yes
 GNU_CONFIGURE=		yes
 # Assign with `+=' for slave ports
@@ -53,8 +53,8 @@ BUILD_DEPENDS+=		${X11BASE}/bin/gdk-pixbuf-config:${PORTSDIR}/graphics/gdk-pixbu
 CONFIGURE_ARGS+=	--enable-gdk-pixbuf
 .endif
 
-.if defined(HAVE_GNOME)
-USE_GNOME=		yes
+.if ${HAVE_GNOME:Mimlib}!=""
+USE_GNOME=		imlib
 CONFIGURE_ARGS+=	--enable-gnome --enable-panel --enable-gdk-pixbuf \
 			--enable-zvt
 MAKE_ARGS=		icondir="${PREFIX}/share/gnome/pixmaps" \
