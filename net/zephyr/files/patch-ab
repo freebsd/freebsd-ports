@@ -1,20 +1,13 @@
---- clients/xzwrite/Makefile.in.orig	Fri Jul  7 23:55:14 1995
-+++ clients/xzwrite/Makefile.in	Wed Mar  3 19:29:01 1999
-@@ -17,6 +17,7 @@
- VPATH=@srcdir@
- CC=@CC@
- INSTALL=@INSTALL@
-+SED=/usr/bin/sed
- 
- DEBUG=-O
- CFLAGS=$(DEBUG) -DDATADIR=\"$(datadir)\" -I$(top_srcdir)/h -I$(BUILDTOP)/h \
-@@ -41,7 +42,8 @@
- install: xzwrite XZwrite
- 	$(INSTALL) -m 755 -s xzwrite $(bindir)
- 	$(INSTALL) -m 644 $(srcdir)/xzwrite.1 $(mandir)/man1
--	$(INSTALL) -m 644 XZwrite $(datadir)
-+	$(SED) -e 's#XX_PREFIX_XX#$(prefix)#' < XZwrite >XZwrite.tmp
-+	$(INSTALL) -m 644 XZwrite.tmp $(datadir)/XZwrite
- 	$(INSTALL) -m 644 $(srcdir)/xzwrite.bitmap $(datadir)
- 
- clean:
+--- Makefile.in.orig	Thu Jun 11 20:10:02 1998
++++ Makefile.in		Thu Dec 21 22:08:19 2000
+@@ -30,9 +30,8 @@
+ 	${ENSUREDIR} ${DESTDIR}${bindir} 755
+ 	${ENSUREDIR} ${DESTDIR}${libdir} 755
+ 	${ENSUREDIR} ${DESTDIR}${datadir} 755
+-	${ENSUREDIR} ${DESTDIR}${datadir}/zephyr 755
+ 	${ENSUREDIR} ${DESTDIR}${sysconfdir} 755
+-	${ENSUREDIR} ${DESTDIR}${sysconfdir}/zephyr/acl 755
++	${ENSUREDIR} ${DESTDIR}${sysconfdir}/zephyr 755
+ 	${ENSUREDIR} ${DESTDIR}${sbindir} 755
+ 	${ENSUREDIR} ${DESTDIR}${includedir} 755
+ 	${ENSUREDIR} ${DESTDIR}${includedir}/zephyr 755

@@ -1,59 +1,13 @@
-*** configure.orig	Wed Mar  3 20:37:09 1999
---- configure	Wed Mar  3 20:39:35 1999
-***************
-*** 44,50 ****
-  bindir='${exec_prefix}/bin'
-  sbindir='${exec_prefix}/sbin'
-  libexecdir='${exec_prefix}/libexec'
-! datadir='${prefix}/share'
-  sysconfdir='${prefix}/etc'
-  sharedstatedir='${prefix}/com'
-  localstatedir='${prefix}/var'
---- 44,50 ----
-  bindir='${exec_prefix}/bin'
-  sbindir='${exec_prefix}/sbin'
-  libexecdir='${exec_prefix}/libexec'
-! datadir='${prefix}/share/zephyr'
-  sysconfdir='${prefix}/etc'
-  sharedstatedir='${prefix}/com'
-  localstatedir='${prefix}/var'
-***************
-*** 547,563 ****
-  	       confdir=${confdir-'$(prefix)/etc/zephyr'}
-  	       sbindir=${sbindir-'$(exec_prefix)/sbin'}
-  	       lsbindir=${lsbindir-'$(exec_prefix)/sbin'}
-! 	       SUPPORT_LIBS="et ss"
-! 	       ET_LDFLAGS='-L$(BUILDTOP)/lib/et'
-! 	       ETDEP='$(BUILDTOP)/lib/et/libcom_err.a'
-! 	       SS_LDFLAGS='-L$(BUILDTOP)/lib/ss'
-! 	       SSDEP='$(BUILDTOP)/lib/ss/libss.a'
-! 	       COMPILE_ET='$(BUILDTOP)/lib/et/compile_et'
-! 	       MK_CMDS='$(BUILDTOP)/lib/ss/mk_cmds'
-  	       INITPROGS=true
-! 	       if test ! -d h/ss; then mkdir h/ss; fi
-! 	       cp ${srcdir}/lib/et/com_err.h h
-! 	       cp ${srcdir}/lib/ss/*.h h/ss
-  fi
-  
-  
---- 547,566 ----
-  	       confdir=${confdir-'$(prefix)/etc/zephyr'}
-  	       sbindir=${sbindir-'$(exec_prefix)/sbin'}
-  	       lsbindir=${lsbindir-'$(exec_prefix)/sbin'}
-! #	       SUPPORT_LIBS="et ss"
-! #	       ET_LDFLAGS='-L$(BUILDTOP)/lib/et'
-! #	       ETDEP='$(BUILDTOP)/lib/et/libcom_err.a'
-! #	       SS_LDFLAGS='-L$(BUILDTOP)/lib/ss'
-! #	       SSDEP='$(BUILDTOP)/lib/ss/libss.a'
-! #	       COMPILE_ET='$(BUILDTOP)/lib/et/compile_et'
-! #	       MK_CMDS='$(BUILDTOP)/lib/ss/mk_cmds'
-  	       INITPROGS=true
-! #	       if test ! -d h/ss; then mkdir h/ss; fi
-! #	       cp ${srcdir}/lib/et/com_err.h h
-! #	       cp ${srcdir}/lib/ss/*.h h/ss
-! 	       CPPFLAGS="${CPPFLAGS} -I/usr/include/kerberosIV"
-! 	       COMPILE_ET=compile_et
-! 	       MK_CMDS=mk_cmds
-  fi
-  
-  
+--- clients/xzwrite/Makefile.in.orig	Wed May 26 17:22:09 1999
++++ clients/xzwrite/Makefile.in		Thu Dec 21 21:57:19 2000
+@@ -50,8 +50,8 @@
+ install: xzwrite XZwrite
+ 	${INSTALL} -m 755 -s xzwrite ${DESTDIR}${bindir}
+ 	${INSTALL} -m 644 ${srcdir}/xzwrite.1 ${DESTDIR}${mandir}/man1
+-	${INSTALL} -m 644 XZwrite ${DESTDIR}${datadir}/zephyr
+-	${INSTALL} -m 644 ${srcdir}/xzwrite.bitmap ${DESTDIR}${datadir}/zephyr
++	${INSTALL} -m 644 XZwrite ${DESTDIR}${datadir}
++	${INSTALL} -m 644 ${srcdir}/xzwrite.bitmap ${DESTDIR}${datadir}
+ 
+ clean:
+ 	rm -f ${OBJS} xzwrite
