@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Lingua-EN-Tagger
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Lingua
@@ -17,7 +17,7 @@ COMMENT=	Part-of-speech tagger for English natural language processing
 
 BUILD_DEPENDS=	${SITE_PERL}/Lingua/Stem/En.pm:${PORTSDIR}/textproc/p5-Lingua-Stem \
 		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/Memoize.pm:${PORTSDIR}/devel/p5-Memoize  \
+		${SITE_PERL}/Memoize/ExpireLRU.pm:${PORTSDIR}/devel/p5-Memoize-ExpireLRU \
 		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
