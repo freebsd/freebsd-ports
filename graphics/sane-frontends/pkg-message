@@ -1,6 +1,6 @@
 Congratulations, SANE-FRONTENDS is now installed.
 
-If you built it with GIMP packages/ports installed, you can use
+If you built it with WITH_GIMP set to yes, you can use
 xscanimage as a GIMP plug-in.  To do this, type:
 
 ln -sf /usr/local/bin/xscanimage ~/.gimp-1.2/plug-ins/xscanimage
