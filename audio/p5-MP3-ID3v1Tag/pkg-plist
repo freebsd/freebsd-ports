@@ -1,0 +1,4 @@
+lib/perl5/site_perl/%%PERL_VER%%/MP3/ID3v1Tag.pm
+lib/perl5/site_perl/%%PERL_VER%%/MPEG/ID3v1Tag.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MP3/ID3v1Tag/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MP3/ID3v1Tag
