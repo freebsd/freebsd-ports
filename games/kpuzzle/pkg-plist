@@ -1,5 +1,6 @@
 bin/kpuzzle
 share/applnk/Games/kpuzzle.desktop
+share/apps/kpuzzle/data/background.bmp
 share/apps/kpuzzle/data/biglogo.bmp
 share/apps/kpuzzle/data/large-main.xpm
 share/apps/kpuzzle/data/large.xpm
@@ -37,6 +38,7 @@ share/apps/kpuzzle/levels/plants.bmp
 share/apps/kpuzzle/levels/raum.bmp
 share/apps/kpuzzle/levels/stadt.bmp
 share/apps/kpuzzle/levels/stars.bmp
+share/doc/HTML/de/kpuzzle
 share/doc/HTML/en/kpuzzle/common
 share/doc/HTML/en/kpuzzle/cont-1.html
 share/doc/HTML/en/kpuzzle/cont-2.html
@@ -47,5 +49,5 @@ share/doc/HTML/en/kpuzzle/index.html
 share/doc/HTML/en/kpuzzle/scr_1.png
 share/icons/locolor/16x16/apps/kpuzzle.png
 share/icons/locolor/32x32/apps/kpuzzle.png
-share/locale/de/LC_MESSAGES/de.mo
+share/locale/de/LC_MESSAGES/kpuzzle.mo
 @dirrm share/doc/HTML/en/kpuzzle
