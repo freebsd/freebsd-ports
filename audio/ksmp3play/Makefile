@@ -13,24 +13,26 @@ MASTER_SITES=	http://www.xanadunet.net/ksmp3play/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		smpeg:${PORTSDIR}/graphics/smpeg \
-		gnugetopt:${PORTSDIR}/devel/libgnugetopt
+LIB_DEPENDS=	smpeg.1:${PORTSDIR}/graphics/smpeg
+
+SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 USE_REINPLACE=	yes
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SDL_CONFIG=${SDL_CONFIG} \
-		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
+		CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+
 MAN1=	ksmp3play.1
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
 
-.if !defined(NOPORTDOCS)
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/doc/ksmp3play* ${DOCSDIR}
+	${TAR} -C ${WRKSRC}/doc --exclude "CVS" -cf - . | \
+		${TAR} -C ${DOCSDIR} --unlink -xf -
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
