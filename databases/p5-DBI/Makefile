@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBI
-PORTVERSION=	1.45
+PORTVERSION=	1.46
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBI
@@ -54,6 +54,15 @@ pre-everything::
 	@${ECHO_CMD} "If you need DBI::Proxy, try to set WITH_PROXY."
 	@${ECHO_CMD} ""
 	@sleep 1
+.endif
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	Changes README ToDo
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
 .include <bsd.port.pre.mk>
