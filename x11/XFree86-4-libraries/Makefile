@@ -7,7 +7,7 @@
 
 PORTNAME=	libraries
 PORTVERSION=	4.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
@@ -96,8 +96,8 @@ PLIST_SUB+=	OSMESA:="@comment "
 PLIST_SUB+=	OSMESA:=""
 .endif
 
-# sparc64 doesn't have a working libc_r yet.
-.if ${MACHINE_ARCH} == "sparc64"
+# sparc64 doesn't have a working libc_r yet, and -current doesn't need libXThrStub.
+.if ${MACHINE_ARCH} == "sparc64" || ${OSVERSION} >= 500043
 PLIST_SUB+=	XTHRSTUB:="@comment "
 .else
 PLIST_SUB+=	XTHRSTUB:=""
