@@ -27,8 +27,8 @@ EXTRACT_ONLY=	${DISTNAME}.tgz
 EMACS_DISTNAME=	emacs-${EMACS_VER}
 EMACS_ARC=	${EMACS_DISTNAME}.tar.gz
 EMACS_SRCDIR=	${WRKDIR}/${EMACS_DISTNAME}
-EXTRACT_FILES=	${EMACS_DISTNAME}/man/ack.texi \
-		${EMACS_DISTNAME}/lisp/textmodes/texinfmt.el
+EXTRACT_FILES=	${EMACS_DISTNAME}/man/ack.texi
+TEXINFMT_EL=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/lisp/textmodes/texinfmt.el
 
 # We must apply this patch at first.
 EXTRA_PATCHES=	${WRKSRC}/patch-texinfmt.el
@@ -39,6 +39,14 @@ EXTRACT_ONLY+=	${ERRATA_FILE}.tgz
 EXTRA_PATCHES+=	${WRKDIR}/${ERRATA_FILE}
 .endif
 
+EXTRACT_DEPENDS+=	${TEXINFMT_EL}:${EMACS_PORTSDIR}
+
+INFO=	emacs-ja
+TEXINFO=	emacs.texi
+
+EMACS_ARGS=	-batch -nw --multibyte -no-init-file -no-site-file
+EMACS_LOADLIBS=	--load=texinfmt.el --load=PORT_TEXIFMT.MK
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
@@ -46,30 +54,42 @@ IGNORE=		is broken: hangs during build
 .endif
 
 post-extract:
-	${CP} ${FILESDIR}/Makefile.in ${WRKSRC}/Makefile
 	${CP} ${FILESDIR}/PORT_TEXIFMT.MK ${WRKSRC}
 	@(cd ${WRKDIR} && \
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${EMACS_ARC} ${EXTRACT_AFTER_ARGS} ${EXTRACT_FILES} ; \
 	${CP} ${EXTRACT_FILES} ${WRKSRC})
+	${CP} ${TEXINFMT_EL} ${WRKSRC}
 	${MKDIR} ${WRKDIR}/info
 
 # workaround target (please delete after emacs-20.7-man-jp is released).
 pre-patch:
-	@(cd ${WRKSRC} && \
-	${PATCH} ${PATCH_ARGS} < ${FILESDIR}/extra-patch-texinfmt.el.patch ; \
-	)
+	cd ${WRKSRC}; \
+	${PATCH} ${PATCH_ARGS} < ${FILESDIR}/extra-patch-texinfmt.el.patch
 
 post-patch:
-	cd ${WRKSRC} && \
+	cd ${WRKSRC}; \
 	${REINPLACE_CMD} -E -e 's/(@[^@]*ref{.*,.*,.*, *elisp),/\1-ja,/;' *.texi
 
 pre-build:
 	@${ECHO_MSG} "===>   Now start formatting texinfo. Please wait."
 
+do-build:
+	cd ${WRKSRC}; for f in ${TEXINFO}; do \
+		${EMACS_CMD} ${EMACS_ARGS} ${EMACS_LOADLIBS} \
+			--eval "(port-texinfo-format \"$$f\" 'junet)"; \
+	done
+
 post-build:
 	@${ECHO_MSG} "===>   Done."
 
+do-install:
+.for i in ${INFO}
+	${INSTALL_DATA} ${WRKDIR}/info/$i.info ${PREFIX}/${INFO_PATH}
+.endfor
+
 post-install:
-	install-info ${PREFIX}/info/emacs-ja ${PREFIX}/info/dir
+.for i in ${INFO}
+	install-info ${PREFIX}/${INFO_PATH}/$i.info ${PREFIX}/${INFO_PATH}/dir
+.endfor
 
 .include <bsd.port.post.mk>

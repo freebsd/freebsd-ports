@@ -5,7 +5,7 @@
  @c @settitle GNU Emacs Manual
  @settitle GNU Emacsマニュアル
 -@setfilename ../info/emacs
-+@setfilename ../info/emacs-ja
++@setfilename ../info/emacs-ja.info
 +@footnotestyle end
  @synindex pg cp
  
