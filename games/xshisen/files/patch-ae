@@ -1,0 +1,11 @@
+--- body.C.orig	Sun Dec 12 14:40:15 1999
++++ body.C	Sun Dec 12 14:40:55 1999
+@@ -224,7 +224,7 @@
+     int   max_c;
+ 
+     max_c = xsize*ysize*(xsize*ysize/PKIND - 1)/2;
+-    p = new (Point [max_c][2]);
++    p = new Point[max_c][2];
+     t = new Point[xsize*ysize/PKIND];
+ 
+     if (hintNum == 0)
