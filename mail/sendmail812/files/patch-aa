@@ -33,18 +33,6 @@ diff -ur cf/sh/makeinfo.sh src/contrib/sendmail/cf/sh/makeinfo.sh
  echo '#####' in `pwd` | sed 's/\/tmp_mnt//'
  echo '#####' using $1 as configuration include directory | sed 's/\/tmp_mnt//'
  echo "define(\`__HOST__', $host)dnl"
-diff -ur include/sendmail/pathnames.h.orig include/sendmail/pathnames.h
---- include/sendmail/pathnames.h.orig	Fri Mar 23 23:09:44 2001
-+++ include/sendmail/pathnames.h	Mon May  7 08:32:45 2001
-@@ -41,7 +41,7 @@
- #  endif /* ! _PATH_MAILDIR */
- 
- #  ifndef _PATH_LOCTMP
--#   define _PATH_LOCTMP		"/tmp/local.XXXXXX"
-+#   define _PATH_LOCTMP		"/var/tmp/local.XXXXXX"
- #  endif /* ! _PATH_LOCTMP */
- 
- #  ifndef _PATH_HOSTS
 diff -ur mail.local/mail.local.8.orig mail.local/mail.local.8
 --- mail.local/mail.local.8.orig	Fri Apr  6 01:27:35 2001
 +++ mail.local/mail.local.8	Thu May 31 07:36:03 2001
