@@ -4081,6 +4081,7 @@ libpanelappletmm	ports/x11-toolkits/libpanelappletmm
 libpaper	ports/print/libpaper
 libparanoia	ports/security/libparanoia
 libpathan	ports/textproc/libpathan
+libpcap		ports/net/libpcap
 libpci		ports/devel/libpci
 libpdel		ports/devel/libpdel
 libpdf++	ports/print/libpdf++
