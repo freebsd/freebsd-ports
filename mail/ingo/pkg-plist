@@ -1,0 +1,156 @@
+etc/horde/httpd.conf.ingo
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%INGODIR%%/blacklist.php
+%%INGODIR%%/config/.htaccess
+%%INGODIR%%/config/backends.php
+%%INGODIR%%/config/backends.php.dist
+%%INGODIR%%/config/conf.xml
+%%INGODIR%%/config/fields.php
+%%INGODIR%%/config/fields.php.dist
+%%INGODIR%%/config/prefs.php
+%%INGODIR%%/config/prefs.php.dist
+%%INGODIR%%/filters.php
+%%INGODIR%%/forward.php
+%%INGODIR%%/index.php
+%%INGODIR%%/lib/Driver.php
+%%INGODIR%%/lib/Driver/null.php
+%%INGODIR%%/lib/Driver/timsieved.php
+%%INGODIR%%/lib/Driver/vfs.php
+%%INGODIR%%/lib/Ingo.php
+%%INGODIR%%/lib/Script.php
+%%INGODIR%%/lib/Script/imap.php
+%%INGODIR%%/lib/Script/procmail.php
+%%INGODIR%%/lib/Script/sieve.php
+%%INGODIR%%/lib/Session.php
+%%INGODIR%%/lib/Storage.php
+%%INGODIR%%/lib/Storage/prefs.php
+%%INGODIR%%/lib/api.php
+%%INGODIR%%/lib/base.php
+%%INGODIR%%/lib/version.php
+%%INGODIR%%/locale/cs_CZ/LC_MESSAGES/ingo.mo
+%%INGODIR%%/locale/de_DE/LC_MESSAGES/ingo.mo
+%%INGODIR%%/locale/de_DE/help.xml
+%%INGODIR%%/locale/en_US/help.xml
+%%INGODIR%%/locale/es_ES/LC_MESSAGES/ingo.mo
+%%INGODIR%%/locale/es_ES/help.xml
+%%INGODIR%%/locale/fi_FI/LC_MESSAGES/ingo.mo
+%%INGODIR%%/locale/fr_FR/LC_MESSAGES/ingo.mo
+%%INGODIR%%/locale/hu_HU/LC_MESSAGES/ingo.mo
+%%INGODIR%%/locale/it_IT/LC_MESSAGES/ingo.mo
+%%INGODIR%%/locale/lt_LT/LC_MESSAGES/ingo.mo
+%%INGODIR%%/locale/lv_LV/help.xml
+%%INGODIR%%/locale/nl_NL/LC_MESSAGES/ingo.mo
+%%INGODIR%%/locale/pl_PL/LC_MESSAGES/ingo.mo
+%%INGODIR%%/locale/pt_BR/LC_MESSAGES/ingo.mo
+%%INGODIR%%/locale/ro_RO/LC_MESSAGES/ingo.mo
+%%INGODIR%%/locale/sv_SE/LC_MESSAGES/ingo.mo
+%%INGODIR%%/locale/zh_TW/LC_MESSAGES/ingo.mo
+%%INGODIR%%/po/README
+%%INGODIR%%/po/cs_CZ.po
+%%INGODIR%%/po/de_DE.po
+%%INGODIR%%/po/es_ES.po
+%%INGODIR%%/po/fi_FI.po
+%%INGODIR%%/po/fr_FR.po
+%%INGODIR%%/po/hu_HU.po
+%%INGODIR%%/po/ingo.pot
+%%INGODIR%%/po/it_IT.po
+%%INGODIR%%/po/lt_LT.po
+%%INGODIR%%/po/nl_NL.po
+%%INGODIR%%/po/pl_PL.po
+%%INGODIR%%/po/pt_BR.po
+%%INGODIR%%/po/ro_RO.po
+%%INGODIR%%/po/sv_SE.po
+%%INGODIR%%/po/zh_TW.po
+%%INGODIR%%/rule.php
+%%INGODIR%%/script.php
+%%INGODIR%%/scripts/.htaccess
+%%INGODIR%%/scripts/convert_imp_filters.php
+%%INGODIR%%/templates/blacklist/blacklist.inc
+%%INGODIR%%/templates/common-header.inc
+%%INGODIR%%/templates/filters/filter-none.inc
+%%INGODIR%%/templates/filters/filter.html
+%%INGODIR%%/templates/filters/footer.inc
+%%INGODIR%%/templates/filters/header.inc
+%%INGODIR%%/templates/filters/settings.inc
+%%INGODIR%%/templates/forward/forward.inc
+%%INGODIR%%/templates/javascript/new_folder.js
+%%INGODIR%%/templates/menu.inc
+%%INGODIR%%/templates/rule/filter.inc
+%%INGODIR%%/templates/rule/footer.inc
+%%INGODIR%%/templates/rule/header.inc
+%%INGODIR%%/templates/script/activate.inc
+%%INGODIR%%/templates/script/footer.inc
+%%INGODIR%%/templates/script/header.inc
+%%INGODIR%%/templates/script/script.inc
+%%INGODIR%%/templates/vacation/vacation.inc
+%%INGODIR%%/templates/whitelist/whitelist.inc
+%%INGODIR%%/test.php
+%%INGODIR%%/themes/graphics/blacklist.png
+%%INGODIR%%/themes/graphics/copy.png
+%%INGODIR%%/themes/graphics/disable.png
+%%INGODIR%%/themes/graphics/enable.png
+%%INGODIR%%/themes/graphics/favicon.ico
+%%INGODIR%%/themes/graphics/forward.png
+%%INGODIR%%/themes/graphics/ingo.png
+%%INGODIR%%/themes/graphics/script.png
+%%INGODIR%%/themes/graphics/vacation.png
+%%INGODIR%%/themes/graphics/whitelist.png
+%%INGODIR%%/vacation.php
+%%INGODIR%%/whitelist.php
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%INGODIR%%/themes/graphics
+@dirrm %%INGODIR%%/themes
+@dirrm %%INGODIR%%/templates/whitelist
+@dirrm %%INGODIR%%/templates/vacation
+@dirrm %%INGODIR%%/templates/script
+@dirrm %%INGODIR%%/templates/rule
+@dirrm %%INGODIR%%/templates/javascript
+@dirrm %%INGODIR%%/templates/forward
+@dirrm %%INGODIR%%/templates/filters
+@dirrm %%INGODIR%%/templates/blacklist
+@dirrm %%INGODIR%%/templates
+@dirrm %%INGODIR%%/scripts
+@dirrm %%INGODIR%%/po
+@dirrm %%INGODIR%%/locale/zh_TW/LC_MESSAGES
+@dirrm %%INGODIR%%/locale/zh_TW
+@dirrm %%INGODIR%%/locale/sv_SE/LC_MESSAGES
+@dirrm %%INGODIR%%/locale/sv_SE
+@dirrm %%INGODIR%%/locale/ro_RO/LC_MESSAGES
+@dirrm %%INGODIR%%/locale/ro_RO
+@dirrm %%INGODIR%%/locale/pt_BR/LC_MESSAGES
+@dirrm %%INGODIR%%/locale/pt_BR
+@dirrm %%INGODIR%%/locale/pl_PL/LC_MESSAGES
+@dirrm %%INGODIR%%/locale/pl_PL
+@dirrm %%INGODIR%%/locale/nl_NL/LC_MESSAGES
+@dirrm %%INGODIR%%/locale/nl_NL
+@dirrm %%INGODIR%%/locale/lv_LV
+@dirrm %%INGODIR%%/locale/lt_LT/LC_MESSAGES
+@dirrm %%INGODIR%%/locale/lt_LT
+@dirrm %%INGODIR%%/locale/it_IT/LC_MESSAGES
+@dirrm %%INGODIR%%/locale/it_IT
+@dirrm %%INGODIR%%/locale/hu_HU/LC_MESSAGES
+@dirrm %%INGODIR%%/locale/hu_HU
+@dirrm %%INGODIR%%/locale/fr_FR/LC_MESSAGES
+@dirrm %%INGODIR%%/locale/fr_FR
+@dirrm %%INGODIR%%/locale/fi_FI/LC_MESSAGES
+@dirrm %%INGODIR%%/locale/fi_FI
+@dirrm %%INGODIR%%/locale/es_ES/LC_MESSAGES
+@dirrm %%INGODIR%%/locale/es_ES
+@dirrm %%INGODIR%%/locale/en_US
+@dirrm %%INGODIR%%/locale/de_DE/LC_MESSAGES
+@dirrm %%INGODIR%%/locale/de_DE
+@dirrm %%INGODIR%%/locale/cs_CZ/LC_MESSAGES
+@dirrm %%INGODIR%%/locale/cs_CZ
+@dirrm %%INGODIR%%/locale
+@dirrm %%INGODIR%%/lib/Storage
+@dirrm %%INGODIR%%/lib/Script
+@dirrm %%INGODIR%%/lib/Driver
+@dirrm %%INGODIR%%/lib
+@unexec rmdir %D/%%INGODIR%%/config 2>/dev/null || true
+@unexec rmdir %D/%%INGODIR%% 2>/dev/null || true
