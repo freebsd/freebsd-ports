@@ -35,6 +35,5 @@ MAN1=		gtk12-config.1
 pre-build:
 	${PERL} -i -pe 's/\\"$$/\\/' ${WRKSRC}/gtk/gtkrc.*
 	${RM} -rf ${WRKSRC}/docs/gtk.info*
-#	${CP} ${WRKSRC}/docs/gtk-config.1 ${WRKSRC}/docs/gtk12-config.1
 
 .include <bsd.port.mk>
