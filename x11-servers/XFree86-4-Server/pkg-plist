@@ -109,9 +109,9 @@ lib/modules/codeconv/libVISCII.a
 %%I386%%%%DRI%%lib/modules/dri/i810_dri.so
 %%I386%%%%DRI%%lib/modules/dri/i830_dri.so
 %%DRI%%lib/modules/dri/mga_dri.so
-%%DRI%%lib/modules/dri/radeon_dri.so
 %%DRI%%lib/modules/dri/r200_dri.so
 %%DRI%%lib/modules/dri/r128_dri.so
+%%DRI%%lib/modules/dri/radeon_dri.so
 %%DRI%%lib/modules/dri/tdfx_dri.so
 %%I386%%lib/modules/drivers/apm_drv.o
 %%I386%%lib/modules/drivers/ark_drv.o
