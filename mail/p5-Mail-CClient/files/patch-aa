@@ -1,5 +1,5 @@
---- Makefile.PL.orig	Mon Jun  7 04:59:14 1999
-+++ Makefile.PL	Wed Jul  5 03:32:57 2000
+--- Makefile.PL.orig	Mon Jun  7 19:59:14 1999
++++ Makefile.PL	Thu May 10 06:53:52 2001
 @@ -1,45 +1,10 @@
  use ExtUtils::MakeMaker;
  
@@ -45,7 +45,7 @@
 -    LIBS		=> ["-lc"],
 -    OBJECT		=> "Cclient.o @objects"
 +    INC			=> "-I\${PREFIX}/include/c-client",
-+    LIBS		=> "-lc -L\${PREFIX}/lib -lc-client4",
++    LIBS		=> "-L\${PREFIX}/lib -lc-client4",
 +    OBJECT		=> "Cclient.o"
  );
  
