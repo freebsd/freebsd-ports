@@ -19,8 +19,7 @@ MASTER_SITES=	ftp://ftp.cpan.org/CPAN/src/5.0/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/CPAN/src/5.0/ \
 		ftp://unix.hensa.ac.uk/mirrors/perl-CPAN/src/5.0/ \
 		ftp://ftp.cis.ufl.edu/pub/perl/CPAN/src/5.0/ \
-		ftp://ftp.delphi.com/pub/mirrors/packages/perl/CPAN/src/5.0/ \
-		ftp://uiarchive.cso.uiuc.edu/pub/lang/perl/CPAN/src/5.0/
+		ftp://ftp.delphi.com/pub/mirrors/packages/perl/CPAN/src/5.0/
 DISTNAME=	${PORTNAME}${JPERL_VER}_${JPERL_VER_PL}
 
 PATCH_SITES=	ftp://ftp.cpan.org/CPAN/authors/id/WATANABE/ \
