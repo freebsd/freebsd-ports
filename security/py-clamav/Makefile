@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		clamav
-PORTVERSION=		0.2.1
+PORTVERSION=		0.2.2
 CATEGORIES=		security python
 MASTER_SITES=		http://norman.free.fr/norman/python/pyclamav/
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
@@ -24,21 +24,15 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_BUILDARGS=	build_ext -I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 DOCSDIR?=		${PREFIX}/share/doc/py-${PORTNAME}
-EXAMPLESDIR?=		${PREFIX}/share/examples/py-${PORTNAME}
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
-PLIST_SUB+=	EXAMPLES=""
-.else
-PLIST_SUB+=	EXAMPLES="@comment "
 .endif
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/example.py ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
