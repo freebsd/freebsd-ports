@@ -7,6 +7,7 @@
 
 PORTNAME=	linux_locale
 PORTVERSION=	${VERSION}.0
+PORTREVISION=	1
 CATEGORIES=	japanese emulators linux
 MASTER_SITES=	ftp://ftp.debian.org/debian/dists/woody/main/source/admin/
 DISTNAME=	locale-ja_${VERSION}
@@ -30,6 +31,9 @@ LCDIR=		${PREFIX}/usr/share/locale/ja_JP
 COMPAT_LC=	${PREFIX}/usr/share/locale/ja_JP.EUC
 DOCDIR=		${PREFIX}/usr/doc/locale-ja-${VERSION}
 
+LOCALE_ADD=	ja_JP.EUC
+LOCALE_DEF_ja_JP.EUC=	ja_JP.eucJP
+
 do-build:
 	${MKDIR} ${WRKDIR}/LC_MESSAGES
 	${LCDEF_CMD} ${LCDEF_ARGS} ${WRKDIR}
@@ -43,5 +47,9 @@ do-install:
 	${LN} -sf ja_JP ${COMPAT_LC}
 	${MKDIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/debian/* ${DOCDIR}
+.for locale in ${LOCALE_ADD}
+	@${ECHO} "${locale}	${LOCALE_DEF_${locale}}" \
+		>> ${LINUXBASE}/usr/share/locale/locale.alias
+.endfor
 
 .include <bsd.port.mk>
