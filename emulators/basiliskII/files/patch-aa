@@ -1,0 +1,59 @@
+--- configure.orig	Wed Nov  3 23:04:14 1999
++++ configure	Tue Apr 18 10:35:11 2000
+@@ -2199,7 +2199,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lc_r  $LIBS"
++LIBS="-llthread -llgcc_r $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 2205 "configure"
+ #include "confdefs.h"
+@@ -2233,7 +2233,7 @@
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-lc_r $LIBS"
++  LIBS="-llthread -llgcc_r $LIBS"
+ 
+ else
+   echo "$ac_t""no" 1>&6
+@@ -3819,7 +3819,7 @@
+   Linux*)
+     SYSSRCS="Linux/ether_linux.cpp Linux/scsi_linux.cpp audio_oss_esd.cpp"
+     ;;
+-  FreeBSD*3.*)
++  FreeBSD*[345].*)
+         echo $ac_n "checking for cam_open_btl in -lcam""... $ac_c" 1>&6
+ echo "configure:3825: checking for cam_open_btl in -lcam" >&5
+ ac_lib_var=`echo cam'_'cam_open_btl | sed 'y%./+-%__p_%'`
+@@ -3864,16 +3864,16 @@
+     if [ "x$HAVE_LIBCAM" = "xno" ]; then
+       { echo "configure: error: Cannot find libcam for SCSI management." 1>&2; exit 1; }
+     else
+-            ac_safe=`echo "/sys/cam/cam.h" | sed 'y%./+-%__p_%'`
+-echo $ac_n "checking for /sys/cam/cam.h""... $ac_c" 1>&6
+-echo "configure:3870: checking for /sys/cam/cam.h" >&5
++            ac_safe=`echo "camlib.h" | sed 'y%./+-%__p_%'`
++echo $ac_n "checking for camlib.h""... $ac_c" 1>&6
++echo "configure:3870: checking for camlib.h" >&5
+ if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   cat > conftest.$ac_ext <<EOF
+ #line 3875 "configure"
+ #include "confdefs.h"
+-#include </sys/cam/cam.h>
++#include <camlib.h>
+ EOF
+ ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
+ { (eval echo configure:3880: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+@@ -4093,7 +4093,7 @@
+ WANT_SPARC_V8_ASSEMBLY=no
+ WANT_SPARC_V9_ASSEMBLY=no
+ CPUSRCS="cpuemu1.cpp cpuemu2.cpp cpuemu3.cpp cpuemu4.cpp cpuemu5.cpp cpuemu6.cpp cpuemu7.cpp cpuemu8.cpp"
+-if [ "x$HAVE_GCC27" = "xyes" -a "x$HAVE_I386" = "xyes" ]; then
++if [ "x$HAVE_GCC27" = "xyes" -a "x$HAVE_I386" = "xno" ]; then
+     DEFINES="$DEFINES -DREGPARAM=\"__attribute__((regparm(3)))\""
+   if [ "x$HAVE_GAS" = "xyes" ]; then
+     WANT_X86_ASSEMBLY=yes
