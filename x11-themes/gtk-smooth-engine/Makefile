@@ -21,7 +21,7 @@ USE_GNOME=	gnometarget
 WANT_GNOME=	yes
 CONFIGURE_ENV=	X11BASE="${X11BASE}"
 
-CONFLICTS=	gnome-themes-extras-[0-9]*
+CONFLICTS=	gnome-themes-[0-9]*
 
 .include <bsd.port.pre.mk>
 
