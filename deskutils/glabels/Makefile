@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glabels
-PORTVERSION=	1.89.2
+PORTVERSION=	1.90.0
 CATEGORIES=	deskutils
 MASTER_SITES=	http://snaught.com/glabels/source/
 
