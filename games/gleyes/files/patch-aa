@@ -1,17 +1,17 @@
---- Makefile.orig	Tue Oct 13 09:16:35 1998
-+++ Makefile	Sun Feb  6 16:36:08 2000
+--- Makefile.orig	Wed Oct 14 01:16:35 1998
++++ Makefile	Wed Aug  9 04:33:59 2000
 @@ -5,8 +5,8 @@
  #--------------------------------------------------------------------------
  
  # Where you want to have it installed
 -BINDIR	= /usr/X11/bin
 -MANDIR	= /usr/X11/man/man1
-+BINDIR	= /usr/X11R6/bin
-+MANDIR	= /usr/X11R6/man/man1
++BINDIR	= ${PREFIX}/bin
++MANDIR	= ${PREFIX}/man/man1
  
  # Use these for Mesa
  #GL	= -lglut -lMesaGLU -lMesaGL
-@@ -15,11 +15,14 @@
+@@ -15,11 +15,13 @@
  GL	= -lglut -lGLU -lGL
  
  # Use these for gcc on Linux (may work in other systems as well)
@@ -21,12 +21,22 @@
 +CC	?= gcc
 +CFLAGS	?= -pipe -O2 -fexpensive-optimizations -ffast-math -fomit-frame-pointer \
 +	  -fforce-mem -fforce-addr
-+CFLAGS	+= -Wall -Wno-implicit-int -I/usr/X11R6/include \
-+	  -I/usr/local/include
++CFLAGS	+= -I${X11BASE}/include
 +LD	= $(CC)
  LDFLAGS	= -o $@
 -LIBS	= -L/usr/X11/lib -L/usr/local/lib $(GL) -lX11 -lXext -lXmu -lXi -lm
-+LIBS	= -Wl,-rpath,/usr/X11R6/lib -L/usr/X11R6/lib -L/usr/local/lib $(GL) -lX11 -lXext -lXmu -lXi -lm
++LIBS	= -Wl,-rpath,${X11BASE}/lib -L${X11BASE}/lib $(GL) -lX11 -lXext -lXmu -lXi -lm
  
  # Use these for cc on IRIX (submitted by Andrew Dalke <dalke@bioreason.com>)
  #CC	= cc
+@@ -57,8 +59,8 @@
+ 	rm -f *.o core
+ 
+ install: gleyes
+-	cp gleyes $(BINDIR)
+-	cp gleyes.1 $(MANDIR)
++	${BSD_INSTALL_PROGRAM} gleyes $(BINDIR)
++	${BSD_INSTALL_MAN} gleyes.1 $(MANDIR)
+ 
+ dist:
+ 	rm -Rf $(DIST) $(DIST).tar.gz
