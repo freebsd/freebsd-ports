@@ -1,0 +1,22 @@
+
+$FreeBSD$
+
+--- configure.orig	Mon May 20 15:11:25 2002
++++ configure	Mon May 20 15:12:24 2002
+@@ -7374,6 +7374,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -9978,7 +9979,7 @@
+ 
+ YELP_MODULES="libgtkhtml-2.0 gnome-vfs-2.0 libgnomeui-2.0 libbonobo-2.0"
+ 
+-YELP_IDL_INCLUDES="`$PKG_CONFIG --variable=idldir libgtkhtml-2.0 gnome-vfs-2.0 libgnomeui-2.0 libbonobo-2.0 bonobo-activation-2.0| sed -e 's/^/ /' -e 's/ \+$//' -e 's/ \+/ -I /g' -e 's/^ \+//'`"
++YELP_IDL_INCLUDES="`$PKG_CONFIG --variable=idldir libgtkhtml-2.0 gnome-vfs-2.0 libgnomeui-2.0 libbonobo-2.0 bonobo-activation-2.0| xargs -n1 echo -n ' -I '`"
+ 
+ echo "$as_me:9983: checking for bzread in -lbz2" >&5
+ echo $ECHO_N "checking for bzread in -lbz2... $ECHO_C" >&6
