@@ -64,6 +64,7 @@
     SUBDIR += krefty
     SUBDIR += kronolith
     SUBDIR += krss
+    SUBDIR += ksmoothdock
     SUBDIR += ktagebuch
     SUBDIR += kuake
     SUBDIR += ljcharm
