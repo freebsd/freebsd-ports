@@ -4,6 +4,7 @@ images onto the root window.  The current version supports:
      Sun Rasterfile
      GIF Image
      JFIF-style JPEG Image
+     Portabel Network Graphics (PNG)
      TIFF image
      FBM Image
      CMU WM Raster
