@@ -1,12 +1,12 @@
---- Makefile.orig	Sun Apr  2 18:27:30 2000
-+++ Makefile	Thu Apr 20 15:27:06 2000
+--- Makefile.orig	Fri May 19 11:35:02 2000
++++ Makefile	Fri May 19 11:35:55 2000
 @@ -16,9 +16,9 @@
  
  LOCALHOST=localhost:8080
  
 -INSTDIR=/usr/local
--SPOOLDIR=/var/spool/wwwoffle
--CONFDIR=/var/spool/wwwoffle
+-SPOOLDIR=/var/tmp/w/wwwoffle
+-CONFDIR=/var/tmp/w/wwwoffle
 +INSTDIR=$(PREFIX)
 +SPOOLDIR=$(SPOOL)/wwwoffle
 +CONFDIR=$(SPOOL)/wwwoffle
@@ -129,12 +129,23 @@
  	  done )
  
  
+@@ -354,8 +353,8 @@
+ 	cd $(SPOOLDIR)/html && ./fixup-install.sh $(SPOOLDIR) $(LOCALHOST) && rm ./fixup-install.sh
+ # Now fix the permissions that tar preserved, we needed to use 'tar xpf' to get round root's umask.
+ # These two will fail unless you are root, that is OK because the owner is already you.
+-	-chown -R 0 $(SPOOLDIR)/html > /dev/null 2>&1
+-	-chgrp -R 0 $(SPOOLDIR)/html > /dev/null 2>&1
++	-chown -R ${BINOWN} $(SPOOLDIR)/html > /dev/null 2>&1
++	-chgrp -R ${BINGRP} $(SPOOLDIR)/html > /dev/null 2>&1
+ 
+ install_config :
+ 	sed -e 's%SPOOLDIR%$(SPOOLDIR)%' -e 's%CONFDIR%$(CONFDIR)%' < wwwoffle.conf > wwwoffle.conf.install
 @@ -365,7 +364,7 @@
  	  echo "WWWOFFLE: There is already a configuration file $(CONFDIR)/wwwoffle.conf." ;\
  	  echo "WWWOFFLE: Run 'perl upgrade-config.pl $(CONFDIR)/wwwoffle.conf' to upgrade it." ;\
  	  echo "WWWOFFLE: " )
 -	[  ! -f $(CONFDIR)/wwwoffle.conf ] || $(INSTALL) -c -m 640 wwwoffle.conf.install $(CONFDIR)/wwwoffle.conf.install
-+	$(INSTALL_DATA) wwwoffle.conf.install $(CONFDIR)/wwwoffle.conf.install
++	$(INSTALL_DATA) wwwoffle.conf.install $(CONFDIR)/wwwoffle.conf.default
  	[    -f $(CONFDIR)/wwwoffle.conf ] || $(INSTALL) -c -m 640 wwwoffle.conf.install $(CONFDIR)/wwwoffle.conf
  
  install_fixup-win32:

@@ -5,7 +5,7 @@ bin/wwwoffle-read
 bin/wwwoffle-rm
 bin/wwwoffle-tools
 bin/wwwoffle-write
-etc/rc.d/wwwoffled.sh
+etc/rc.d/wwwoffled.sh.sample
 sbin/wwwoffled
 share/doc/wwwoffle/CHANGES.CONF
 share/doc/wwwoffle/CONVERT
@@ -22,7 +22,7 @@ share/doc/wwwoffle/README.lang
 share/doc/wwwoffle/README.win32
 share/doc/wwwoffle/UPGRADE
 @dirrm share/doc/wwwoffle
-@cwd /var/spool
+@cwd %%SPOOL%%
 wwwoffle/html/FAQ.html
 wwwoffle/html/Welcome.html
 wwwoffle/html/htdig/button1.gif
@@ -137,7 +137,7 @@ wwwoffle/outgoing/Owwwoffle-user
 wwwoffle/outgoing/Uwwwoffle-browser
 wwwoffle/outgoing/Uwwwoffle-user
 wwwoffle/upgrade-config.pl
-wwwoffle/wwwoffle.conf.install
+wwwoffle/wwwoffle.conf.default
 @dirrm wwwoffle/html/htdig/conf
 @dirrm wwwoffle/html/htdig/db
 @dirrm wwwoffle/html/htdig/db-lasttime
