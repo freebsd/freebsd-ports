@@ -15,6 +15,8 @@ MASTER_SITES=	ftp://ftp.gnokii.org/pub/gnokii/ \
 
 MAINTAINER=	anders@FreeBSD.org
 
+FORBIDDEN=	"Contains security hole: http://www.gnokii.org/news.shtml"
+
 LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 USE_GMAKE=	yes
