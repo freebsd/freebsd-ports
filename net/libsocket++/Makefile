@@ -22,7 +22,7 @@ USE_LIBTOOL_VER=	13
 
 INFO=	socket++
 
-post-patch:
+pre-configure:
 	@(cd ${WRKSRC}; ${SETENV} ${SCRIPTS_ENV} ${SH} ./autogen)
 
 post-install:
