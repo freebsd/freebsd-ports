@@ -33,6 +33,7 @@
     SUBDIR += diskusage
     SUBDIR += doconfig
     SUBDIR += eject
+    SUBDIR += extipl
     SUBDIR += fcron
     SUBDIR += ffsrecov
     SUBDIR += fileutils

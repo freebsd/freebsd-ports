@@ -1,0 +1,11 @@
+sbin/extipl
+share/doc/extipl/English/extipl.txt
+share/doc/extipl/English/techical.txt
+share/doc/extipl/English/scorpius.txt
+share/doc/extipl/Japanese/extipl.txt
+share/doc/extipl/Japanese/techical.txt
+share/doc/extipl/Japanese/scorpius.txt
+@dirrm share/doc/extipl/English
+@dirrm share/doc/extipl/Japanese
+@dirrm share/doc/extipl
+@unexec rm -f %D/man/cat8/extipl.8.gz
