@@ -1,0 +1,27 @@
+--- src/Makefile.in.orig	Sat Oct 26 22:01:08 2002
++++ src/Makefile.in	Sat Oct 26 22:01:40 2002
+@@ -1,4 +1,4 @@
+-# Makefile.in generated automatically by automake 1.4-p6 from Makefile.am
++# Makefile.in generated automatically by automake 1.4-p6 from Makefile.am
+ 
+ # Copyright (C) 1994, 1995-8, 1999, 2001 Free Software Foundation, Inc.
+ # This Makefile.in is free software; the Free Software Foundation
+@@ -72,14 +72,14 @@
+ #INCDIR = /usr/X11R6/include
+ 
+-CC = gcc
++CC ?= gcc
+-@USE_SDL_TRUE@SDL_CFLAGS = `sdl-config --cflags` -DUSE_SDL
++@USE_SDL_TRUE@SDL_CFLAGS = `$(SDL_CONFIG) --cflags` -DUSE_SDL
+ @USE_SDL_FALSE@SDL_CFLAGS = 
+-@USE_SDL_TRUE@SDL_LIBS = `sdl-config --libs`
++@USE_SDL_TRUE@SDL_LIBS = `$(SDL_CONFIG) --libs`
+ @USE_SDL_FALSE@SDL_LIBS = 
+ @USE_SDL_TRUE@GLUT_LIBS = 
+ @USE_SDL_FALSE@GLUT_LIBS = -lglut
+ 
+-CFLAGS = -Wall -O3 `freetype-config --cflags` ${SDL_CFLAGS}
++CFLAGS += -Wall `freetype-config --cflags` ${SDL_CFLAGS} -I%%X11BASE%%/include -I%%LOCALBASE%%/include -I%%LOCALBASE%%/include/SDL11
+ 
+ #LIBS   = -L$(LIBDIR) -lglut -lGLU -lGL -lXext -lXaw -lm -lXi -lpng -lz
+ #LIBS   = -L$(LIBDIR) -lglut -lGLU -lGL -lXext -lXaw -lm -lXi -lpng -lz

@@ -83,6 +83,7 @@
     SUBDIR += fkiss
     SUBDIR += flightgear
     SUBDIR += flying
+    SUBDIR += foobillard
     SUBDIR += frabs
     SUBDIR += freecell-solver
     SUBDIR += freeciv
