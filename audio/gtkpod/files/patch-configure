@@ -1,0 +1,27 @@
+--- configure.old	Mon Jan 19 13:54:37 2004
++++ configure	Tue Jan 20 00:27:43 2004
+@@ -6409,7 +6409,6 @@
+       conftest$ac_exeext conftest.$ac_ext
+ if test "$ac_cv_search_MP4FileInfo" = no; then
+   for ac_lib in "mp4v2" "mp4v2 -lstdc++" "mp4v2 -lz" "mp4v2 -lz -lstdc++"; do
+-    LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
+     cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -6468,16 +6467,7 @@
+ fi
+ echo "$as_me:$LINENO: result: $ac_cv_search_MP4FileInfo" >&5
+ echo "${ECHO_T}$ac_cv_search_MP4FileInfo" >&6
+-if test "$ac_cv_search_MP4FileInfo" != no; then
+-  test "$ac_cv_search_MP4FileInfo" = "none required" || LIBS="$ac_cv_search_MP4FileInfo $LIBS"
+-  have_mp4v2="yes -- will build with aac support"
+-cat >>confdefs.h <<_ACEOF
+-#define HAVE_LIBMP4V2 1
+-_ACEOF
+-
+-else
+   have_mp4v2="***no -- will build without aac support"
+-fi
+ 
+ 
+ 
