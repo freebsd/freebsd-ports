@@ -1,7 +1,7 @@
 %%NOGNOME:%%bin/BitchX
-%%NOGNOME:%%bin/BitchX-1.0c18
+%%NOGNOME:%%bin/BitchX-1.0c19
 %%GNOME:%%bin/gtkBitchX
-%%GNOME:%%bin/gtkBitchX-1.0c18
+%%GNOME:%%bin/gtkBitchX-1.0c19
 %%NOGNOME:%%bin/scr-bx
 share/bx/BitchX.help
 share/bx/BitchX.ircnames
@@ -991,10 +991,8 @@ share/doc/bitchx/bxfaq.html
 @dirrm share/bx/help/6_Functions
 @dirrm share/bx/help/5_Programming/on
 @dirrm share/bx/help/5_Programming
-@dirrm share/bx/help/4_Misc/wset
 @dirrm share/bx/help/4_Misc/window
 @dirrm share/bx/help/4_Misc/set
-@dirrm share/bx/help/4_Misc/fset
 @dirrm share/bx/help/4_Misc/bind
 @dirrm share/bx/help/4_Misc
 @dirrm share/bx/help/3_Operators
