@@ -1,0 +1,74 @@
+.\"
+.\" Copyright (c) 1996 David E. O'Brien
+.\"
+.\" All rights reserved.
+.\"
+.\" Redistribution and use in source and binary forms, with or without
+.\" modification, are permitted provided that the following conditions
+.\" are met:
+.\" 1. Redistributions of source code must retain the above copyright
+.\"    notice, this list of conditions and the following disclaimer.
+.\" 2. Redistributions in binary form must reproduce the above copyright
+.\"    notice, this list of conditions and the following disclaimer in the
+.\"    documentation and/or other materials provided with the distribution.
+.\"
+.\" THIS SOFTWARE IS PROVIDED BY THE DEVELOPERS ``AS IS'' AND ANY EXPRESS OR
+.\" IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+.\" OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+.\" IN NO EVENT SHALL THE DEVELOPERS BE LIABLE FOR ANY DIRECT, INDIRECT,
+.\" INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+.\" NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+.\" DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+.\" THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+.\" (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+.\" THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+.\"
+.\" $Id$
+.\"
+.Dd December 2, 1996
+.Os
+.Dt VN7TO8 1
+.Sh NAME
+.Nm vn7to8
+.Sh SYNOPSIS
+.Nm vn7to8
+.Op Fl com Ar composition character
+.Op Fl v | Fl m | Fl l
+.Op Ar file ...
+.Sh DESCRIPTION
+.Nm vn7to8
+converts files encoded in the Vietnamese 7-bit VIQR (VIetnamese Quoted
+Readable) format to the 8-bit VISCII (VIetnamese Standard Code for Information
+Interchange) data format.  The converted output is written to standard out.
+.Pp
+The following options are available:
+.Bl -tag -width indent
+.It Fl com
+specifies the composition character, default is "\\"
+.It Fl v
+sets the initial state to Vietnamese (default)
+.It Fl m
+sets the initial state to English
+.It Fl l
+sets the initial state to Literal
+.El
+.Pp
+If the input file name isn't specified,
+.Nm vn7to8
+reads from standard input.
+.\" .Sh COMPATIBILITY
+.Sh SEE ALSO
+.Xr vn8to7 1 ,
+.Xr vn80to81 1 ,
+.Xr vnterm 1 ,
+.Xr vnelivs 1 ,
+.Xr vnless 1
+.Sh STANDARDS
+Viet-Std Standardization Specification (Viet-Std@Haydn.Stanford.EDU)
+.\" .Sh HISTORY
+.Sh AUTHORS
+Nguye^~n Cu+o+`ng (Cuong T. Nguyen <cuong@haydn.Stanford.EDU>) of the
+TriChlor group.
+.br
+This man page was written by David E. O'Brien.
+.\" .Sh BUGS
