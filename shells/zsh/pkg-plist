@@ -552,24 +552,24 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Prompts/prompt_walters_setup
 %%ZSH_FNDIR%%/Prompts/prompt_zefram_setup
 %%ZSH_FNDIR%%/Prompts/promptinit
-%%ZSH_FNDIR%%/TCP/tcp_alias
-%%ZSH_FNDIR%%/TCP/tcp_close
-%%ZSH_FNDIR%%/TCP/tcp_command
-%%ZSH_FNDIR%%/TCP/tcp_expect
-%%ZSH_FNDIR%%/TCP/tcp_fd_handler
-%%ZSH_FNDIR%%/TCP/tcp_log
-%%ZSH_FNDIR%%/TCP/tcp_open
-%%ZSH_FNDIR%%/TCP/tcp_output
-%%ZSH_FNDIR%%/TCP/tcp_point
-%%ZSH_FNDIR%%/TCP/tcp_proxy
-%%ZSH_FNDIR%%/TCP/tcp_read
-%%ZSH_FNDIR%%/TCP/tcp_rename
-%%ZSH_FNDIR%%/TCP/tcp_send
-%%ZSH_FNDIR%%/TCP/tcp_sess
-%%ZSH_FNDIR%%/TCP/tcp_shoot
-%%ZSH_FNDIR%%/TCP/tcp_spam
-%%ZSH_FNDIR%%/TCP/tcp_talk
-%%ZSH_FNDIR%%/TCP/tcp_wait
+%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_alias
+%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_close
+%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_command
+%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_expect
+%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_fd_handler
+%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_log
+%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_open
+%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_output
+%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_point
+%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_proxy
+%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_read
+%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_rename
+%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_send
+%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_sess
+%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_shoot
+%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_spam
+%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_talk
+%%NO_STATIC%%%%ZSH_FNDIR%%/TCP/tcp_wait
 %%ZSH_FNDIR%%/Zle/backward-kill-word-match
 %%ZSH_FNDIR%%/Zle/backward-word-match
 %%ZSH_FNDIR%%/Zle/capitalize-word-match
@@ -645,7 +645,7 @@ bin/zsh-%%ZSH_VER%%
 @dirrm %%ZSH_FNDIR%%/MIME
 @dirrm %%ZSH_FNDIR%%/Misc
 @dirrm %%ZSH_FNDIR%%/Prompts
-@dirrm %%ZSH_FNDIR%%/TCP
+%%NO_STATIC%%@dirrm %%ZSH_FNDIR%%/TCP
 @dirrm %%ZSH_FNDIR%%/Zle
 @dirrm %%ZSH_FNDIR%%
 @dirrm %%DATADIR%%/%%ZSH_VER%%
