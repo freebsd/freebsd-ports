@@ -3,7 +3,10 @@ bin/dotty
 bin/lefty
 bin/lneato
 bin/neato
+lib/Tcldot/Tcldot.so
 lib/Tcldot/Tcldot.so.1.2
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/Tcldot/pkgIndex.tcl
 share/doc/graphviz/dotguide.ps.gz
 share/doc/graphviz/dotty.ps.gz
