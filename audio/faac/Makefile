@@ -14,7 +14,6 @@ MASTER_SITE_SUBDIR=	faac
 MAINTAINER=	ahze@ahze.net
 COMMENT=	FAAC is an AAC audio encoder
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/audio/faad:extract
 LIB_DEPENDS=	faad.0:${PORTSDIR}/audio/faad
 
 NO_PACKAGE=	Distribution in binary form is prohibited
@@ -27,8 +26,7 @@ USE_GMAKE=	yes
 USE_LIBTOOL_VER=13
 USE_REINPLACE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
-		-I${WRKDIR}/../../../audio/faad/work/faad2/common/mp4v2" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
 
