@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.145 1997/07/16 02:32:32 jfieber Exp $
+# $Id: Makefile,v 1.146 1997/08/04 20:45:51 joerg Exp $
 #
 
     SUBDIR += FWF
@@ -29,6 +29,7 @@
     SUBDIR += gwm
     SUBDIR += iv
     SUBDIR += lesstif
+    SUBDIR += libdnd
     SUBDIR += libsx
     SUBDIR += lupe
     SUBDIR += mlvwm
