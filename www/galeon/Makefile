@@ -58,15 +58,6 @@ FLASHPLAYER=	${LOCALBASE}/lib/libflashplayer.so.1
 
 .include <bsd.port.pre.mk>
 
-.if exists(${X11BASE}/lib/libnautilus.so.0)
-WITH_NAUTILUS=	yes
-.endif
-
-.if defined(WITH_NAUTILUS)
-LIB_DEPENDS+=	nautilus.0:${PORTSDIR}/x11-fm/nautilus
-CONFIGURE_ARGS+=	--enable-nautilus-view
-.endif
-
 .if ${OSVERSION} > 500000
 # Galeon does not build correctly in -CURRENT if -Werror is passed
 # to the compiler.
