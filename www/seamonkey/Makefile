@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	mozilla
-PORTVERSION=	1.3a
-PORTREVISION?=	1
+PORTVERSION=	1.3b
 PORTEPOCH?=	1
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
@@ -36,7 +35,8 @@ WITHOUT_CHATZILLA=	"Contains a buffer overflow reported at http://online.securit
 LIB_DEPENDS+=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20 \
 		ORBit-2.0:${PORTSDIR}/devel/ORBit2
 .else
-USE_GNOME=	gtk12
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12 orbit
 .endif
 
 .if !defined(WITHOUT_XFT)
@@ -89,11 +89,6 @@ CONFIGURE_ARGS=					\
 		--with-system-mng=${LOCALBASE}	\
 		--with-system-png=${LOCALBASE}	\
 		--with-pthreads
-
-.if !defined(WITH_GTK2)
-USE_GNOMENG=	yes
-USE_GNOME+=	orbit
-.endif
 
 PLIST=	${WRKDIR}/pkg-plist
 # LDAP is only used by mail and news so disable both together
@@ -152,6 +147,7 @@ CONFIGURE_ARGS+=	--enable-reorder
 .endif
 
 .if ${ARCH} == "alpha"
+CFLAGS+=	-O0
 BROKEN=	"core dumps on alpha during post-build"
 .endif
 
