@@ -7,38 +7,38 @@
 #
 
 PORTNAME=	scribus
-PORTVERSION=	1.1.7
+PORTVERSION=	1.2
 CATEGORIES=	print editors
-MASTER_SITES=	http://ahnews.music.salford.ac.uk/scribus/downloads/ \
-		http://web2.altmuehlnet.de/fschmid/ \
+MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://scribus.planetmirror.com/ \
+		http://www.scribus.org.uk/downloads/${PORTVERSION}/ \
+		http://docs.scribus.net/releases/${PORTVERSION}/ \
+		http://web2.altmuehlnet.de/fschmid/ \
+		http://ahnews.music.salford.ac.uk/scribus/downloads/ \
 		http://mirrors.ntua.gr/Scribus/
+MASTER_SITE_SUBDIR=	apps/office
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A comprehensive desktop publishing program
 
-LIB_DEPENDS=	art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2 \
-		lcms:${PORTSDIR}/graphics/lcms \
+LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		cups.2:${PORTSDIR}/print/cups-base \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
-USE_GHOSTSCRIPT_RUN=	yes
-
 USE_BZIP2=	yes
 USE_QT_VER=	3
+USE_GNOME=	libartlgpl2 gnometarget
+USE_GHOSTSCRIPT_RUN=	yes
+USE_PYTHON=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_PYTHON=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/scribus/libs \
 		%%PREFIX%%/lib/scribus/plugins
-
-QTCFGLIBS+=	-lm
 
 pre-everything::
 .if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
