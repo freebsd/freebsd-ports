@@ -2921,6 +2921,7 @@ hdf5		ports/science/hdf5
 health-nut	ports/misc/nut
 healthd		ports/sysutils/healthd
 heimdal		ports/security/heimdal
+heirloom	ports/sysutils/heirloom
 helium		ports/lang/helium
 hello		ports/misc/hello
 help2man	ports/misc/help2man
