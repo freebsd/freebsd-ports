@@ -1771,6 +1771,7 @@ gdtclft		ports/graphics/gdtclft
 geda		ports/cad/geda
 geda-symbols	ports/cad/geda-symbols
 gedit		ports/editors/gedit
+gedit2		ports/editors/gedit2
 geekcode	ports/misc/geekcode
 geg		ports/math/geg
 geheimnis	ports/security/geheimnis
