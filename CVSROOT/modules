@@ -677,6 +677,7 @@ c4		ports/devel/c4
 c89		src/usr.bin/c89
 c_c++_reference	ports/devel/c_c++_reference
 c_parser	ports/devel/c_parser
+ca-aspell	ports/textproc/ca-aspell
 ca-ooodict-ES	ports/editors/ooodict-ca_ES
 ca-roots	ports/security/ca-roots
 cabextract	ports/archivers/cabextract
