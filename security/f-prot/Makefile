@@ -15,8 +15,11 @@ DISTNAME=	fp-freebsd-ws-${PORTVERSION}
 MAINTAINER=	tim@bishnet.net
 COMMENT=	F-Prot Antivirus for BSD Workstations
 
-RUN_DEPENDS=	${SITE_PERL}/HTTP/Request.pm:${PORTSDIR}/www/p5-libwww \
-		${LOCALBASE}/f-prot/SIGN.DEF:${PORTSDIR}/security/f-prot-sig
+RUN_DEPENDS=	${SITE_PERL}/HTTP/Request.pm:${PORTSDIR}/www/p5-libwww
+
+.ifndef(WITHOUT_SIGNATURES)
+RUN_DEPENDS+=	${LOCALBASE}/f-prot/SIGN.DEF:${PORTSDIR}/security/f-prot-sig
+.endif
 
 NO_PACKAGE=	Free for personal use only
 NO_CDROM=	Free for personal use only
@@ -41,8 +44,18 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man_pages/f-prot.1 ${MANPREFIX}/man/man1/
 	${CHMOD} 755 ${PREFIX}/f-prot/tools/check-updates.pl
 
+.ifdef(WITHOUT_SIGNATURES)
+post-extract:
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "WARNING: You have chosen not to have the virus signatures installed."
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Make sure you download and update the signatures yourself, or use the"
+	@${ECHO_MSG} "check-updates.pl script provided in this port to do it for you."
+	@${ECHO_MSG} ""
+.endif
+	
 post-install:
-.if !defined(NOPORTDOCS)
+.ifndef(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${CP} -Rp ${WRKSRC}/doc_ws/* ${DOCSDIR}
 .endif
