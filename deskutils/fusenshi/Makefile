@@ -7,6 +7,7 @@
 
 PORTNAME=	fusenshi
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.ongs.co.jp/projects/fusenshi/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -16,6 +17,7 @@ MAINTAINER=	daichi@freebsd.org
 COMMENT=	A Post-it(R) like application with network support
 
 USE_XLIB=	yes
+USE_GCC=	3.4
 USE_GNOME=	libxml2
 LIB_DEPENDS=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24
 
