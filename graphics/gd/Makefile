@@ -7,7 +7,7 @@
 
 PORTNAME=	gd
 PORTVERSION=	1.8.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES+=	graphics
 MASTER_SITES=	http://www.boutell.com/gd/http/ \
 		ftp://ftp.boutell.com/pub/boutell/gd/ \
@@ -35,6 +35,8 @@ USE_XPM=	yes
 
 INSTALLS_SHLIB=	yes
 
+DOCS=		index.html
+
 post-extract:
 	bzip2 -d < ${_DISTDIR}/gd_gif_in.c.bz2 > ${WRKSRC}/gd_gif_in.c
 
@@ -42,6 +44,12 @@ pre-everything:
 .if !defined(WITH_X11)
 	@${ECHO_MSG} "If you want to compile in X support use "
 	@${ECHO_MSG} "'make -DWITH_X11' instead"
+.endif
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
