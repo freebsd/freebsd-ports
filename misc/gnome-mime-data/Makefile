@@ -19,7 +19,7 @@ COMMENT=	A MIME and Application database for GNOME
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomehier gnomeprefix gnometarget pkgconfig
+USE_GNOME=	gnomehack gnomehier intlhack gnomeprefix gnometarget pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl"
