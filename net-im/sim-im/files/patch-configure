@@ -1,0 +1,10 @@
+--- configure.orig	Sun Jun 22 16:33:46 2003
++++ configure	Sun Jun 22 16:33:56 2003
+@@ -25216,7 +25216,6 @@
+ 
+ ac_config_files="$ac_config_files ./Makefile"
+ 
+-ac_config_files="$ac_config_files gkrellm_plugin/Makefile"
+ 
+ ac_config_files="$ac_config_files pict/Makefile"
+ 
