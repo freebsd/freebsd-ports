@@ -27,6 +27,7 @@
     SUBDIR += macutils
     SUBDIR += makeself
     SUBDIR += mscompress
+    SUBDIR += mtf
     SUBDIR += nomarch
     SUBDIR += nulib
     SUBDIR += p5-Archive-Tar

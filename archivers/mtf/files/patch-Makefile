@@ -1,0 +1,11 @@
+--- Makefile.orig	Wed Sep 13 23:06:02 2000
++++ Makefile	Wed Jun 26 14:28:48 2002
+@@ -2,7 +2,7 @@
+ 
+ #ARCH=-mpentiumpro -march=pentiumpro
+ 
+-CFLAGS=-Wall -O2 $(DEFINES) $(ARCH)
++CFLAGS+=-Wall
+ OFILES=mtf.o mtfread.o mtfutil.o
+ 
+ .SUFFIXES: .c .o
