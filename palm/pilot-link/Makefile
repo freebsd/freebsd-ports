@@ -3,11 +3,11 @@
 # Date created:         November, 1997
 # Whom:                 Paul Traina <pst@freebsd.org>
 #
-# $Id: Makefile,v 1.9 1997/11/30 23:27:24 pst Exp $
+# $Id: Makefile,v 1.10 1997/12/16 22:43:23 pst Exp $
 
 DISTNAME=	pilot-link.0.8.9
 PKGNAME=	pilot-link-0.8.9
-CATEGORIES=	comms tk80
+CATEGORIES=	comms pilot tk80
 MASTER_SITES=	ftp://ryeham.ee.ryerson.ca/pub/PalmOS/
 
 MAINTAINER=	pst@freebsd.org
