@@ -1,30 +1,30 @@
---- Makefile.rules.orig	Fri Mar 22 17:00:23 2002
-+++ Makefile.rules	Sat Mar 23 02:51:37 2002
-@@ -18,63 +18,26 @@
- WEBPAGE = "http://safemode.homeip.net"
+--- Makefile.rules.orig	Tue Mar 26 14:21:02 2002
++++ Makefile.rules	Tue Mar 26 14:22:36 2002
+@@ -18,63 +18,25 @@
+ WEBPAGE  = "http://safemode.homeip.net"
  
  all:
 -	@if test -n "$(VORBIS)"; then \
 -	    echo "";\
 -	    echo "___ building backend ___";\
--	    echo "Using flags: $(CXXFLAGS)";\
+-	    echo "Using flags: $(BFLAGS)";\
 -	    echo "";\
 -	    echo "building $(OBJ)";\
--	    $(CXX) $(CXXFLAGS) $(CPPFLAGS) -c -o $(OBJ) $(OBJSRC);\
+-	    $(CXX) $(BFLAGS) $(CPPFLAGS) -c -o $(OBJ) $(OBJSRC);\
 -	    echo "building $(OBJ2)";\
--	    $(CXX) $(CXXFLAGS) $(CPPFLAGS) -c -o $(OBJ2) $(OBJ2SRC);\
+-	    $(CXX) $(BFLAGS) $(CPPFLAGS) -c -o $(OBJ2) $(OBJ2SRC);\
 -	    echo "";\
 -	    echo "___ building frontend ___";\
 -	    if test -n "$(GTK)"; then \
--		echo "Using flags: $(CXXFLAGS) $(BUILDFLAGS)";\
+-		echo "Using flags: $(BUILDFLAGS)";\
 -	        echo "";\
 -	        echo "building and linking $(TARGET)";\
--	        $(CXX) $(BUILDFLAGS) $(CPPFLAGS) -o $(TARGET) $(SRC) $(OBJ) $(OBJ2);\
+-	        $(CXX) $(CPPFLAGS) -o $(TARGET) $(SRC) $(OBJ) $(OBJ2) $(BUILDFLAGS);\
 -	    else \
--		echo "Using flags: $(CXXFLAGS) $(TBUILDFLAGS)";\
+-		echo "Using flags: $(TBUILDFLAGS)";\
 -		echo "";\
 -		echo "building and linking $(TARGET)";\
--		$(CXX) $(TBUILDFLAGS) $(CPPFLAGS) -o $(TARGET) $(TSRC) $(OBJ) $(OBJ2);\
+-		$(CXX) $(CPPFLAGS) -o $(TARGET) $(TSRC) $(OBJ) $(OBJ2) $(TBUILDFLAGS);\
 -	    fi\
 -	else \
 -	    echo "";\
@@ -32,19 +32,19 @@
 -	    echo "Using flags: $(CXXFLAGS)";\
 -	    echo "";\
 -	    echo "building $(OBJ)";\
--	    $(CXX) $(CXXFLAGS) $(CPPFLAGS) -c -o $(OBJ) $(OBJSRC);\
+-	    $(CXX) $(BFLAGS) $(CPPFLAGS) -c -o $(OBJ) $(OBJSRC);\
 -	    echo "";\
 -	    echo "___ building frontend ___";\
 -	    if test -n "$(GTK)"; then \
--		echo "Using flags: $(CXXFLAGS) $(BUILD2FLAGS)";\
+-		echo "Using flags: $(BUILD2FLAGS)";\
 -		echo "";\
 -		echo "building and linking $(TARGET)";\
--		$(CXX) $(BUILD2FLAGS) $(CPPFLAGS) -o $(TARGET) $(SRC) $(OBJ);\
+-		$(CXX) $(CPPFLAGS) -o $(TARGET) $(SRC) $(OBJ) $(BUILD2FLAGS);\
 -	    else \
--		echo "Using flags: $(CXXFLAGS) $(TBUILD2FLAGS)";\
+-		echo "Using flags: $(TBUILD2FLAGS)";\
 -		echo "";\
 -		echo "building and linking $(TARGET)";\
--		$(CXX) $(TBUILD2FLAGS) $(CPPFLAGS) -o $(TARGET) $(TSRC) $(OBJ);\
+-		$(CXX) $(CPPFLAGS) -o $(TARGET) $(TSRC) $(OBJ) $(TBUILD2FLAGS);\
 -	    fi\
 -	fi
 -	@echo " "
@@ -53,7 +53,7 @@
 -	@echo "to disable edit Makefile and comment VORBIS"
 -	@echo " "
 -	@echo "gtk 1.2 ui built by default, to enable"
--	@echo "gtk 2.0 ui, read the Makefile"
+-	@echo "gtk 2.0 ui read the Makefile"
 -	@echo "To disable, edit Makefile and comment GTK"
 -	@echo "-------------------------------------------"
 +ifdef VORBIS
@@ -79,5 +79,5 @@
  install:
 -	strip $(TARGET)
 -	cp $(TARGET) /usr/local/bin
+-
 +	${BSD_INSTALL_PROGRAM} $(TARGET) ${PREFIX}/bin
- 
