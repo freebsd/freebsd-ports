@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	scrollz
-PORTVERSION=	1.8m
+PORTVERSION=	1.9
 CATEGORIES=	irc ipv6
-MASTER_SITES=	http://scrollz.broken.com/source/
+MASTER_SITES=	ftp://ftp.du.se/pub/mirrors/ScrollZ/source/
 DISTNAME=	ScrollZ-${PORTVERSION}
 
-MAINTAINER=	eviilboy@cox.net
+MAINTAINER=	damm@fpsn.net
 COMMENT=	Enhanced ircII client that supports scripts, colors, and more
 
+USE_GMAKE= yes
 IS_INTERACTIVE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--enable-ipv6
+CONFIGURE_ARGS+=	--enable-ipv6 --with-ssl
 
 MAKE_ENV+=	IRCLIB="${PREFIX}/share/scrollz"
 
