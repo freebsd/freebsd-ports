@@ -1,0 +1,10 @@
+--- typedopts.n.orig	Sat Feb 19 19:30:19 1994
++++ typedopts.n	Thu Mar 18 16:05:00 1999
+@@ -155,5 +155,4 @@
+ .B typedopts
+-can't parse its options for any reason, it will print an
+-error message to stderr and return a
+-.B -1
++can't parse its options for any reason, it will
++fail with an error message and return
+ without modifying any other variables.

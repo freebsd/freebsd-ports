@@ -1,0 +1,23 @@
+The package is slightly altered by this porter to:
+	a) use namespace for auxiliary procedures
+	b) return an error rather then output it to stderr
+
+The original README follows:
+
+This package includes two routines for parsing command-line options in
+a TCL script:
+
+foxGetOpt.tcl -- this file contains the routine "getopt", a close
+emulation of the getopt(3) library routine for C programs.
+
+foxTypedOpts.tcl -- This contains the routine "typedopts", which uses
+long option names and which does type checking on option arguments.
+
+There is also a man page for each routine (named after the routine, not
+the file), and an ASCII'fied version of each man page called
+<file>.README.
+
+If you have any comments / suggestions / bug-reports / bug-fixes, etc.,
+please email me at: darkfox@netcom.com
+
+Thanks, and enjoy!  - Johnson Earls
