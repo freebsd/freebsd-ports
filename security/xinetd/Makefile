@@ -8,7 +8,8 @@
 PORTNAME=	xinetd
 PORTVERSION= 	2.1.8.8p2
 CATEGORIES=	security
-MASTER_SITES=	http://synack.net/xinetd/
+MASTER_SITES=	http://www.xinetd.org/ \
+		http://synack.net/xinetd/
 
 MAINTAINER=	vanilla@FreeBSD.org
 
