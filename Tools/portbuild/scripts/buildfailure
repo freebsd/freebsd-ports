@@ -1,0 +1,48 @@
+#!/bin/sh
+#
+# buildfailure <arch> <branch> <pkgname> 
+
+# configurable variables
+pb=/var/portbuild
+arch=$1
+shift 1
+
+. ${pb}/${arch}/portbuild.conf
+. ${pb}/scripts/buildenv
+
+branch=$1
+pkgname=$2
+shift 2
+
+buildenv ${pb} ${arch} ${branch}
+
+# Don't pick up installed packages from the host
+export LOCALBASE=/nonexistentlocal
+export X11BASE=/nonexistentx
+
+index=${PORTSDIR}/${INDEXFILE}
+
+portloc=$(grep "^$pkgname|" ${index} | cut -f 2 -d \| | sed s,/usr/ports/,,)
+pkgbase=$(cd ${pb}/${arch}/${branch}/ports/${portloc}/ && make -V PKGBASE)
+
+cd ${pb}/${arch}/${branch}
+if grep -q "^${portloc}|" failure; then
+    count=$(grep "^${portloc}|" failure | cut -f 5 -d \|)
+    grep -v "^${portloc}|" failure > failure.new
+
+    echo "${portloc}|${pkgbase}|${pkgname}|$(date | tr ' ' '_')|$((${count}+1))" >> failure.new
+    mv failure.new failure
+else
+    # Want newfailure to be in reverse chronological order
+    mv newfailure newfailure.new
+    echo "${portloc}|${pkgbase}|${pkgname}|$(date | tr ' ' '_')" > newfailure
+    cat newfailure newfailure.new > newfailure.new2
+    mv newfailure.new2 newfailure
+    rm newfailure.new
+
+    echo "${portloc}|${pkgbase}|${pkgname}|$(date)|1" >> failure
+fi
+
+
+
+
