@@ -25,22 +25,14 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype1/freetype \
 			  -I${LOCALBASE}/include" \
 		SPOOLER="/usr/bin/lpr" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-fontdir="${LOCALBASE}/share/ghostscript/fonts" \
 		--with-libungif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|CXXFLAGS="-O2"|CXXFLAGS="$$CXXFLAGS"|g ; \
-		 s|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
-		 s|\$$(top_builddir)/intl/libintl.a|-lintl|g' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|CXXFLAGS="-O2"|CXXFLAGS="$$CXXFLAGS"|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		's|-I/usr/include/freetype||g' ${WRKSRC}/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
