@@ -7185,7 +7185,6 @@ rpm2cpio	ports/archivers/rpm2cpio
 rprint		ports/print/rprint
 rqm		ports/mbone/rqm
 rrdtool		ports/net/rrdtool
-rsaref		ports/security/rsaref
 rscheme		ports/lang/rscheme
 rshell		ports/net/rshell
 rsync		ports/net/rsync
