@@ -39,20 +39,11 @@ MAN1=		spamd.1 spamassassin.1 spamc.1 sa-learn.1
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
-SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g'
-
 USE_RC_SUBR=	yes
-RC_DIR?=	${PREFIX}/etc/rc.d
-RC_SUFX?=	.sh
-SED_SCRIPT+=	-e 's|%%RC_SUBR%%|${RC_SUBR}|g' \
-		-e 's|%%RC_DIR%%|${RC_DIR}|g' \
-		-e 's|%%RC_SUFX%%|${RC_SUFX}|g'
-PLIST_SUB+=	RC_DIR=${RC_DIR} \
-		RC_SUFX=${RC_SUFX}
-
+SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g' \
+		-e 's|%%RC_SUBR%%|${RC_SUBR}|g'
 post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -delete
-
 	@${MV} ${WRKSRC}/rules/local.cf ${WRKSRC}/rules/local.cf.sample
 	@${SED} -e 's#local.cf#local.cf.sample#g' \
 		${WRKSRC}/Makefile.PL > ${WRKSRC}/Makefile.PL.sed
@@ -63,8 +54,7 @@ post-build:
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/spamc
-	${INSTALL_SCRIPT} ${WRKDIR}/spamd.sh ${RC_DIR}/spamd${RC_SUFX}
-
+	${INSTALL_SCRIPT} ${WRKDIR}/spamd.sh ${PREFIX}/etc/rc.d/spamd.sh
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/sql/README ${DOCSDIR}/README.sql
@@ -72,7 +62,6 @@ post-install:
 	    BUGS COPYRIGHT Changes README TRADEMARK procmailrc.example sample* \
 	    spamd/README* sql/spamassassin.sql ${DOCSDIR}
 .endif
-
 	@${SED} -e 's#PREFIX#${PREFIX}#' ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
