@@ -1,13 +1,13 @@
 # New ports collection makefile for:    p5-Mysql-modules
-# Version required:			1.2001
+# Version required:			1.2003
 # Date created:				September 29th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.6 1998/08/06 15:13:09 vanilla Exp $
+# $Id: Makefile,v 1.7 1998/08/18 03:07:07 vanilla Exp $
 #
 
-DISTNAME=	Msql-Mysql-modules-1.2001
-PKGNAME=	p5-Mysql-modules-1.2001
+DISTNAME=	Msql-Mysql-modules-1.2003
+PKGNAME=	p5-Mysql-modules-1.2003
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBD
