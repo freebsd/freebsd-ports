@@ -1,16 +1,15 @@
---- Makefile.in.orig	Thu Feb 20 20:58:01 2003
-+++ Makefile.in	Thu Feb 27 12:27:18 2003
-@@ -212,12 +212,7 @@
- EXTRA_DIST = INSTALL-SOURCE README \
- 			COPYING COPYING.LIB
+--- Makefile.in.orig	Sun Dec 14 22:24:01 2003
++++ Makefile.in	Wed Dec 17 09:09:31 2003
+@@ -210,11 +210,7 @@
  
+ # These are built from source in the Docs directory
+ EXTRA_DIST = INSTALL-SOURCE README COPYING 
 -SUBDIRS = . include @docs_dirs@ @readline_dir@ \
 -			@thread_dirs@ pstack @sql_client_dirs@ \
 -			@sql_server_dirs@ scripts man tests \
 -			BUILD @netware_dir@ os2 @libmysqld_dirs@ \
 -			@bench_dirs@ support-files @fs_dirs@ @tools_dirs@
--
 +SUBDIRS =
  
+ 
  # Relink after clean
- linked_sources = linked_client_sources linked_server_sources \
