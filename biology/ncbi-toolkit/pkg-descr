@@ -1,0 +1,16 @@
+"The NCBI Software Development Toolkit was developed for the production and
+distribution of GenBank, Entrez, BLAST, and related services by NCBI. We
+make it freely available to the public without restriction to facilitate the
+use of NCBI by the scientific community. However, please understand that
+while we feel we have done a high quality job, this is not commercial
+software.
+The documentation lags considerably behind the software and we must make any
+changes required by our data production needs. Nontheless, many people have
+found it a useful and stable basis for a number of tools and applications.
+
+The toolkit is available by anonymous ftp from ncbi.nlm.nih.gov"
+
+excerpt from NCBI toolkit README file.
+
+-- Tony Maher <tony.maher@ebioinformatics.com>
+   FreeBSD bio-porters <bio@freebsd.net>

@@ -14,6 +14,7 @@
     SUBDIR += molden
     SUBDIR += mopac
     SUBDIR += nab
+    SUBDIR += ncbi-toolkit
     SUBDIR += ortep3
     SUBDIR += p5-AcePerl
     SUBDIR += p5-bioperl
