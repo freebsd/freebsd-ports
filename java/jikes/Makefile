@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jikes
-PORTVERSION=	1.15
-PORTREVISION=	2
+PORTVERSION=	1.18
 CATEGORIES=	java
 MASTER_SITES=	http://oss.software.ibm.com/pub/jikes/${PORTVERSION}/
 
@@ -18,5 +17,6 @@ MAN1=		jikes.1
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_BZIP2=	yes
 
 .include <bsd.port.mk>
