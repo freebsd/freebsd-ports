@@ -1,0 +1,5 @@
+Ruby/PDFlib is a Ruby extension library to access PDFlib, a library
+for dynamically generating PDF files.
+
+Author:	TAKAHASHI Hitoshi <thitoshi@nh.scphys.kyoto-u.ac.jp>
+WWW:	http://www-nh.scphys.kyoto-u.ac.jp/~thitoshi/ruby/pdf-en.html
