@@ -1,0 +1,17 @@
+
+$FreeBSD$
+
+--- ROX-Filer/src/Makefile.in.orig
++++ ROX-Filer/src/Makefile.in
+@@ -46,10 +46,7 @@
+ 	${CC} -o "${PROG}" ${OBJECTS} ${LDFLAGS}
+ 	[ -d "${PLATFORM_DIR}" ] || mkdir "${PLATFORM_DIR}"
+ 	mv "${PROG}" "${PLATFORM_DIR}"
+-	-(cd "${PLATFORM_DIR}" && \
+-	 objcopy --only-keep-debug ROX-Filer ROX-Filer.dbg && \
+-	 strip ROX-Filer && \
+-	 objcopy --add-gnu-debuglink=ROX-Filer.dbg ROX-Filer)
++	-(cd "${PLATFORM_DIR}" && strip ROX-Filer)
+ 
+ clean:
+ 	rm -f *.o Makefile.bak
