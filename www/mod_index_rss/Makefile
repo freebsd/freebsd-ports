@@ -9,9 +9,9 @@
 PORTNAME=	mod_index_rss
 PORTVERSION=	0.10
 CATEGORIES=	www
-MASTER_SITES=	http://www.tangent.org/mod_index_rss/
+MASTER_SITES=	http://software.tangent.org/download/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
