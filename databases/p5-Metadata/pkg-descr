@@ -1,0 +1,8 @@
+This collection of modules provide an implementation of Dublin Core
+compatible metadata and subclasses for IAFA Templates, SOIF (Harvest)
+and should be easily extendible to similar (fairly flat) metadata
+formats.
+
+WWW: http://search.cpan.org/search?dist=Metadata
+
+Seamus Venasse <svenasse@polaris.ca>

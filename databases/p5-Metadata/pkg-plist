@@ -1,0 +1,7 @@
+lib/perl5/site_perl/%%PERL_VER%%/Metadata/Base.pm
+lib/perl5/site_perl/%%PERL_VER%%/Metadata/HTTP.pm
+lib/perl5/site_perl/%%PERL_VER%%/Metadata/IAFA.pm
+lib/perl5/site_perl/%%PERL_VER%%/Metadata/SOIF.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Metadata/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Metadata
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Metadata

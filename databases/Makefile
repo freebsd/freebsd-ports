@@ -77,6 +77,7 @@
     SUBDIR += p5-GDBM
     SUBDIR += p5-GraphViz-DBI
     SUBDIR += p5-MLDBM
+    SUBDIR += p5-Metadata
     SUBDIR += p5-Msql
     SUBDIR += p5-MyObject
     SUBDIR += p5-Mysql
