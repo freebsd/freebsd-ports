@@ -25,4 +25,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 
 MAN1=		wterm.1
 
+post-install:
+	@${CHMOD} 4711 ${PREFIX}/bin/wterm
+
 .include <bsd.port.mk>

@@ -25,4 +25,7 @@ CONFIGURE_ARGS=	--enable-transparency --enable-background-image \
 
 MAN1=		aterm.1
 
+post-install:
+	@${CHMOD} 4711 ${PREFIX}/bin/aterm
+
 .include <bsd.port.mk>

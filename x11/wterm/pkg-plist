@@ -1,1 +1,2 @@
 bin/wterm
+@exec chmod 4711 %D/bin/wterm

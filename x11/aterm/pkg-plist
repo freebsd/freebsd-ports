@@ -1,1 +1,2 @@
 bin/aterm
+@exec chmod 4711 %D/bin/aterm
