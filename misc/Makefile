@@ -1,5 +1,5 @@
-# $Id: Makefile,v 1.2 1994/09/08 13:32:52 ache Exp $
+# $Id: Makefile,v 1.3 1994/09/11 22:29:01 ache Exp $
 #
-SUBDIR= pkg_install libmytinfo libncurses
+SUBDIR= libmytinfo libncurses
 
 .include <bsd.port.subdir.mk>
