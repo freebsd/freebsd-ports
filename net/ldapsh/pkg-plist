@@ -1,19 +1,28 @@
 bin/ldapsh
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/ldapsh/.packlist
 %%SITE_PERL%%/Net/LDAP/Config.pm
 %%SITE_PERL%%/Net/LDAP/Shell.pm
 %%SITE_PERL%%/Net/LDAP/Shell/Commands/cat.pm
 %%SITE_PERL%%/Net/LDAP/Shell/Commands/clone.pm
+%%SITE_PERL%%/Net/LDAP/Shell/Commands/commands.pm
 %%SITE_PERL%%/Net/LDAP/Shell/Commands/edit.pm
+%%SITE_PERL%%/Net/LDAP/Shell/Commands/help.pm
 %%SITE_PERL%%/Net/LDAP/Shell/Commands/ls.pm
 %%SITE_PERL%%/Net/LDAP/Shell/Commands/new.pm
 %%SITE_PERL%%/Net/LDAP/Shell/Commands/rm.pm
 %%SITE_PERL%%/Net/LDAP/Shell/Commands/search.pm
 %%SITE_PERL%%/Net/LDAP/Shell/Commands/stub.pm
+%%SITE_PERL%%/Net/LDAP/Shell/Complete.pm
 %%SITE_PERL%%/Net/LDAP/Shell/Desc.pm
 %%SITE_PERL%%/Net/LDAP/Shell/Schema.pm
+%%SITE_PERL%%/Net/LDAP/Shell/Parse.pm
+%%SITE_PERL%%/Net/LDAP/Shell/Parser.pm
 %%SITE_PERL%%/Net/LDAP/Shell/Util.pm
+%%SITE_PERL%%/Net/LDAP/Shell/grammar.yp
+%%SITE_PERL%%/Net/LDAP/Shell/makefile
 %%DOCSDIR%%/COMMANDS
-%%EXAMPLESDIR%%/LdapConfig.pl
+%%EXAMPLESDIR%%/ldapsh_config
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ldapsh
 @dirrm %%SITE_PERL%%/Net/LDAP/Shell/Commands
 @dirrm %%SITE_PERL%%/Net/LDAP/Shell
 @dirrm %%DOCSDIR%%

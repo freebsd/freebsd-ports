@@ -2,8 +2,10 @@
 Before using ldapsh, you'll probably want to :
 
 - Create the configuration file (an example is in
-  %%EXAMPLESDIR%%/LdapConfig.pl, modify it to
-  suit your needs and place it in %%PREFIX%%/etc/)
+  %%EXAMPLESDIR%%/ldapsh_config, modify it to
+  suit your needs and place it in %%PREFIX%%/etc/).
+- You can create a per-user configuration, just name the
+  configuration file $HOME/.ldapsh_config.
 - See %%DOCSDIR%%/COMMANDS for an overview of
   the available commands.
 *************************************************************
