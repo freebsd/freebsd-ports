@@ -389,6 +389,7 @@
     SUBDIR += ntp
     SUBDIR += ntp-devel
     SUBDIR += nttcp
+    SUBDIR += nvnet
     SUBDIR += nylon
     SUBDIR += obnc
     SUBDIR += ocaml-jabbr
