@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.81 1997/10/27 00:19:10 chuckr Exp $
+# $Id: Makefile,v 1.82 1997/10/30 08:28:30 tg Exp $
 #
 
     SUBDIR += SWIG
@@ -8,6 +8,7 @@
     SUBDIR += automake
     SUBDIR += bcc
     SUBDIR += boehm-gc
+    SUBDIR += cccc
     SUBDIR += cflow
     SUBDIR += crossgo32
     SUBDIR += crossgo32-djgpp2
