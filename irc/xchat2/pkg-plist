@@ -2,15 +2,19 @@ bin/xchat
 %%PERL%%lib/xchat/plugins/perl.so
 %%PYTHON%%lib/xchat/plugins/python.so
 %%TCL%%lib/xchat/plugins/tcl.so
-share/gnome/apps/Internet/xchat.desktop
+share/gnome/applications/xchat.desktop
 share/gnome/pixmaps/xchat.png
 share/locale/am/LC_MESSAGES/xchat.mo
 share/locale/az/LC_MESSAGES/xchat.mo
+share/locale/bg/LC_MESSAGES/xchat.mo
 share/locale/ca/LC_MESSAGES/xchat.mo
+share/locale/cs/LC_MESSAGES/xchat.mo
 share/locale/de/LC_MESSAGES/xchat.mo
 share/locale/el/LC_MESSAGES/xchat.mo
+share/locale/en_GB/LC_MESSAGES/xchat.mo
 share/locale/es/LC_MESSAGES/xchat.mo
 share/locale/et/LC_MESSAGES/xchat.mo
+share/locale/eu/LC_MESSAGES/xchat.mo
 share/locale/fi/LC_MESSAGES/xchat.mo
 share/locale/fr/LC_MESSAGES/xchat.mo
 share/locale/ja/LC_MESSAGES/xchat.mo
@@ -26,6 +30,8 @@ share/locale/sk/LC_MESSAGES/xchat.mo
 share/locale/sl/LC_MESSAGES/xchat.mo
 share/locale/sr/LC_MESSAGES/xchat.mo
 share/locale/sv/LC_MESSAGES/xchat.mo
+share/locale/uk/LC_MESSAGES/xchat.mo
+share/locale/wa/LC_MESSAGES/xchat.mo
 share/locale/zh_CN/LC_MESSAGES/xchat.mo
 @exec mkdir -p %D/lib/xchat/plugins
 @dirrm lib/xchat/plugins
