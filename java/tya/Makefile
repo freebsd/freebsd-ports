@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	tya
-PORTVERSION=	1.7.2
+PORTVERSION=	1.7.3
 CATEGORIES=	java
 MASTER_SITES=	http://sax.sax.de/~adlibit/
-DISTNAME=	tya17v2
+DISTNAME=	tya17v3
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sobomax@FreeBSD.org
