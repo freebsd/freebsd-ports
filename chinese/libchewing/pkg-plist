@@ -1,0 +1,20 @@
+include/chewing/char.h
+include/chewing/chewing.h
+include/chewing/chewingio.h
+include/chewing/chewingutil.h
+include/chewing/dict.h
+include/chewing/global.h
+include/chewing/hash.h
+include/chewing/userphrase.h
+include/chewing/zuin.h
+lib/libchewing.a
+lib/libchewing.so
+lib/libchewing.so.1
+libdata/pkgconfig/chewing.pc
+share/chewing/ch_index.dat
+share/chewing/dict.dat
+share/chewing/fonetree.dat
+share/chewing/ph_index.dat
+share/chewing/us_freq.dat
+@dirrm include/chewing
+@dirrm share/chewing
