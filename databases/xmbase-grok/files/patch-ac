@@ -1,5 +1,5 @@
---- Imakefile.orig	Thu Jul 10 19:33:34 1997
-+++ Imakefile	Thu Feb 11 22:30:33 1999
+--- Imakefile.orig	Thu Jul 10 10:33:34 1997
++++ Imakefile	Thu Feb 11 18:28:52 1999
 @@ -10,11 +10,8 @@
   * GLIB. The documentation (Manual.ps) is not installed, that's up to you.
   */
@@ -14,6 +14,15 @@
  
  /*
   * Do not change anyhting below.
+@@ -23,7 +20,7 @@
+ #ifdef sgi
+ LIB  =	-lSgm -lXm $(XTOOLLIB) $(XLIB) $(SYSLIBS) $(XMEXTRA_LIBS) -lm
+ #else
+-LIB  =	-lXm $(XTOOLLIB) $(XLIB) $(SYSLIBS) $(XMEXTRA_LIBS) -lm
++LIB  =	$(MOTIFLIB) $(XTOOLLIB) $(XLIB) $(SYSLIBS) $(XMEXTRA_LIBS) -lm
+ #endif
+ 
+ SRC  =	canvdraw.c cardwin.c chart.c chartdrw.c convert.c dbase.c\
 @@ -55,10 +52,10 @@
  AllTarget(grok)
  NormalProgramTarget(grok,y.tab.o $(SRC:.c=.o),,,$(LIB))
