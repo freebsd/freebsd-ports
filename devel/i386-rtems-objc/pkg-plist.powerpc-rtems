@@ -1,0 +1,14 @@
+lib/gcc-lib/powerpc-rtems/2.95.2/include/objc/hash.h
+lib/gcc-lib/powerpc-rtems/2.95.2/include/objc/objc-list.h
+lib/gcc-lib/powerpc-rtems/2.95.2/include/objc/sarray.h
+lib/gcc-lib/powerpc-rtems/2.95.2/include/objc/objc.h
+lib/gcc-lib/powerpc-rtems/2.95.2/include/objc/objc-api.h
+lib/gcc-lib/powerpc-rtems/2.95.2/include/objc/NXConstStr.h
+lib/gcc-lib/powerpc-rtems/2.95.2/include/objc/Object.h
+lib/gcc-lib/powerpc-rtems/2.95.2/include/objc/Protocol.h
+lib/gcc-lib/powerpc-rtems/2.95.2/include/objc/encoding.h
+lib/gcc-lib/powerpc-rtems/2.95.2/include/objc/typedstream.h
+lib/gcc-lib/powerpc-rtems/2.95.2/include/objc/thr.h
+lib/gcc-lib/powerpc-rtems/2.95.2/cc1obj
+lib/gcc-lib/powerpc-rtems/2.95.2/libobjc.a
+@dirrm lib/gcc-lib/powerpc-rtems/2.95.2/include/objc

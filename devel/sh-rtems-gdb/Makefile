@@ -1,0 +1,14 @@
+# New ports collection makefile for:	sh-rtems-gdb
+# Date created:		9 June 2000
+# Whom:			James Housley <jim@thehousleys.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gdb
+
+MAINTAINER=	jim@thehousleys.net
+
+LCLTARGET=	sh-rtems
+CONFIGURE_ARGS=	--verbose --enable-sim
+.include "${.CURDIR}/../i386-rtems-gdb/Makefile"

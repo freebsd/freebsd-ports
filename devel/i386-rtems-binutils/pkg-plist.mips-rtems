@@ -1,0 +1,38 @@
+bin/mips64orion-rtems-size
+bin/mips64orion-rtems-objdump
+bin/mips64orion-rtems-ar
+bin/mips64orion-rtems-strings
+bin/mips64orion-rtems-ranlib
+bin/mips64orion-rtems-objcopy
+bin/mips64orion-rtems-addr2line
+bin/mips64orion-rtems-readelf
+bin/mips64orion-rtems-nm
+bin/mips64orion-rtems-strip
+bin/mips64orion-rtems-c++filt
+bin/mips64orion-rtems-as
+bin/mips64orion-rtems-gasp
+bin/mips64orion-rtems-ld
+include/bfd.h
+include/ansidecl.h
+include/bfdlink.h
+lib/libiberty.a
+lib/libbfd.la
+lib/libbfd.a
+lib/libopcodes.la
+lib/libopcodes.a
+mips64orion-rtems/bin/nm
+mips64orion-rtems/bin/strip
+mips64orion-rtems/bin/ar
+mips64orion-rtems/bin/ranlib
+mips64orion-rtems/bin/as
+mips64orion-rtems/bin/ld
+mips64orion-rtems/lib/ldscripts/elf32ebmip.x
+mips64orion-rtems/lib/ldscripts/elf32ebmip.xbn
+mips64orion-rtems/lib/ldscripts/elf32ebmip.xn
+mips64orion-rtems/lib/ldscripts/elf32ebmip.xr
+mips64orion-rtems/lib/ldscripts/elf32ebmip.xs
+mips64orion-rtems/lib/ldscripts/elf32ebmip.xu
+@dirrm mips64orion-rtems/lib/ldscripts
+@dirrm mips64orion-rtems/lib
+@dirrm mips64orion-rtems/bin
+@dirrm mips64orion-rtems

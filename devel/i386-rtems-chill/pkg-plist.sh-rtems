@@ -1,0 +1,7 @@
+bin/sh-rtems-chill
+@unexec install-info --delete %D/info/chill.info %D/info/dir
+info/chill.info
+@exec install-info %D/info/chill.info %D/info/dir
+lib/gcc-lib/sh-rtems/2.95.2/libchill.a
+lib/gcc-lib/sh-rtems/2.95.2/cc1chill
+lib/gcc-lib/sh-rtems/2.95.2/chillrt0.o

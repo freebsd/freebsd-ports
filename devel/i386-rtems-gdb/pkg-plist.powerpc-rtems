@@ -1,0 +1,16 @@
+bin/powerpc-rtems-gdb
+include/readline/readline.h
+include/readline/chardefs.h
+include/readline/keymaps.h
+include/readline/history.h
+include/readline/tilde.h
+@unexec install-info --delete %D/info/readline.info %D/info/dir
+@unexec install-info --delete %D/info/history.info %D/info/dir
+info/readline.info
+info/history.info
+@exec install-info %D/info/history.info %D/info/dir
+@exec install-info %D/info/readline.info %D/info/dir
+lib/libmmalloc.a
+lib/libreadline.a
+lib/libhistory.a
+@dirrm include/readline

@@ -1,0 +1,38 @@
+bin/sparc-rtems-size
+bin/sparc-rtems-objdump
+bin/sparc-rtems-ar
+bin/sparc-rtems-strings
+bin/sparc-rtems-ranlib
+bin/sparc-rtems-objcopy
+bin/sparc-rtems-addr2line
+bin/sparc-rtems-readelf
+bin/sparc-rtems-nm
+bin/sparc-rtems-strip
+bin/sparc-rtems-c++filt
+bin/sparc-rtems-as
+bin/sparc-rtems-gasp
+bin/sparc-rtems-ld
+include/bfd.h
+include/ansidecl.h
+include/bfdlink.h
+lib/libiberty.a
+lib/libbfd.la
+lib/libbfd.a
+lib/libopcodes.la
+lib/libopcodes.a
+sparc-rtems/bin/nm
+sparc-rtems/bin/strip
+sparc-rtems/bin/ar
+sparc-rtems/bin/ranlib
+sparc-rtems/bin/as
+sparc-rtems/bin/ld
+sparc-rtems/lib/ldscripts/elf32_sparc.x
+sparc-rtems/lib/ldscripts/elf32_sparc.xbn
+sparc-rtems/lib/ldscripts/elf32_sparc.xn
+sparc-rtems/lib/ldscripts/elf32_sparc.xr
+sparc-rtems/lib/ldscripts/elf32_sparc.xs
+sparc-rtems/lib/ldscripts/elf32_sparc.xu
+@dirrm sparc-rtems/lib/ldscripts
+@dirrm sparc-rtems/lib
+@dirrm sparc-rtems/bin
+@dirrm sparc-rtems

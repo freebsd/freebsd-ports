@@ -1,0 +1,38 @@
+bin/m68k-rtems-size
+bin/m68k-rtems-objdump
+bin/m68k-rtems-ar
+bin/m68k-rtems-strings
+bin/m68k-rtems-ranlib
+bin/m68k-rtems-objcopy
+bin/m68k-rtems-addr2line
+bin/m68k-rtems-readelf
+bin/m68k-rtems-nm
+bin/m68k-rtems-strip
+bin/m68k-rtems-c++filt
+bin/m68k-rtems-as
+bin/m68k-rtems-gasp
+bin/m68k-rtems-ld
+include/bfd.h
+include/ansidecl.h
+include/bfdlink.h
+lib/libiberty.a
+lib/libbfd.la
+lib/libbfd.a
+lib/libopcodes.la
+lib/libopcodes.a
+m68k-rtems/bin/nm
+m68k-rtems/bin/strip
+m68k-rtems/bin/ar
+m68k-rtems/bin/ranlib
+m68k-rtems/bin/as
+m68k-rtems/bin/ld
+m68k-rtems/lib/ldscripts/m68kelf.x
+m68k-rtems/lib/ldscripts/m68kelf.xbn
+m68k-rtems/lib/ldscripts/m68kelf.xn
+m68k-rtems/lib/ldscripts/m68kelf.xr
+m68k-rtems/lib/ldscripts/m68kelf.xs
+m68k-rtems/lib/ldscripts/m68kelf.xu
+@dirrm m68k-rtems/lib/ldscripts
+@dirrm m68k-rtems/lib
+@dirrm m68k-rtems/bin
+@dirrm m68k-rtems
