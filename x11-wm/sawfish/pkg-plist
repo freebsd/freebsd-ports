@@ -59,10 +59,10 @@ libexec/sawfish/%%VERSION%%/%%GNUHOST%%/x.so
 %%GNOME:%%share/gnome/control-center/Sawfish/placement-properties.desktop
 %%GNOME:%%share/gnome/control-center/Sawfish/sound-properties.desktop
 %%GNOME:%%share/gnome/control-center/Sawfish/workspace-properties.desktop
-share/gnome/pixmaps/sawfish.png
 %%GNOME:%%share/gnome/pixmaps/sawfish-appearance.png
 %%GNOME:%%share/gnome/pixmaps/sawfish-edgeflip.png
 %%GNOME:%%share/gnome/pixmaps/sawfish-focus.png
+%%GNOME:%%share/gnome/pixmaps/sawfish-logo.png
 %%GNOME:%%share/gnome/pixmaps/sawfish-matched.png
 %%GNOME:%%share/gnome/pixmaps/sawfish-minmax.png
 %%GNOME:%%share/gnome/pixmaps/sawfish-misc.png
@@ -91,6 +91,7 @@ share/locale/no/LC_MESSAGES/sawfish.mo
 share/locale/pl/LC_MESSAGES/sawfish.mo
 share/locale/pt_BR/LC_MESSAGES/sawfish.mo
 share/locale/pt_PT/LC_MESSAGES/sawfish.mo
+share/locale/ro/LC_MESSAGES/sawfish.mo
 share/locale/ru/LC_MESSAGES/sawfish.mo
 share/locale/sk/LC_MESSAGES/sawfish.mo
 share/locale/sl/LC_MESSAGES/sawfish.mo
