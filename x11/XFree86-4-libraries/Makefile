@@ -7,21 +7,20 @@
 
 PORTNAME=	libraries
 PORTVERSION=	4.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
-		${MASTER_SITE_XFREE:S/source//g:S/$/:x421patch/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
 MASTER_SITE_SUBDIR=	4.2.0/:x \
-			${PORTVERSION}/patches/:x421patch \
 			anholt/:local
 PKGNAMEPREFIX=	XFree86-
 DISTFILES=	X420src-1.tgz:x \
-		4.2.0-4.2.1.diff.gz:x421patch \
 		Wraphelp.gz:local
 EXTRACT_ONLY=	X420src-1.tgz
 
-PATCH_DIST_STRIP=	-p1
+PATCH_SITES=		${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	anholt/patches-4.2.0/
+PATCHFILES=		4.2.0-4.2.1-1-freebsd.patch.gz
 
 MAINTAINER=	anholt@freebsd.org
 
@@ -43,7 +42,10 @@ SCRIPTS_ENV=		HasSecureRPC=${HasSecureRPC} \
 			BuildXIE=${BuildXIE} \
 			BuildAoutLibraries=${BuildAoutLibraries} \
 			ForceNormalLib=${ForceNormalLib} \
-			DebuggableLibraries=${DebuggableLibraries}
+			DebuggableLibraries=${DebuggableLibraries} \
+			CC="${CC}" \
+			CXX="${CXX}" \
+			CFLAGS="${CFLAGS}"
 MAKE_ENV=		PKGNAMEPREFIX=${PKGNAMEPREFIX} \
 			PORTNAME=${PORTNAME} \
 			PORTVERSION=${PORTVERSION}
@@ -104,10 +106,6 @@ PLIST_SUB+=	XTHRSTUB:=""
 post-extract:
 	${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/Wraphelp.gz > \
 		${WRKSRC}/lib/Xdmcp/Wraphelp.c
-
-pre-patch:
-	-@${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/4.2.0-4.2.1.diff.gz \
-		| ${PATCH} ${PATCH_DIST_ARGS} --batch
 
 post-patch:
 	cd ${WRKSRC}/nls; \

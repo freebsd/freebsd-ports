@@ -1,5 +1,5 @@
---- config/cf/Imake.tmpl.orig	Tue Jan 15 13:22:33 2002
-+++ config/cf/Imake.tmpl	Tue Sep  3 23:37:40 2002
+--- config/cf/Imake.tmpl.orig	Wed Oct 16 20:56:39 2002
++++ config/cf/Imake.tmpl	Wed Oct 16 21:52:31 2002
 @@ -220,7 +220,7 @@
  
  #ifndef RmanCmd
@@ -9,7 +9,7 @@
  #define RmanCmd rman
  #else
  #define RmanCmd $(TOP)/config/util/rman
-@@ -1273,7 +1273,7 @@
+@@ -1282,7 +1282,7 @@
  #define LoaderLibPrefix /**/
  #endif
  #ifndef ImakeCmd
@@ -18,7 +18,7 @@
  #define ImakeCmd imake
  #else
  #define ImakeCmd $(IMAKESRC)/imake
-@@ -1281,19 +1281,19 @@
+@@ -1290,19 +1290,19 @@
  #endif
  #ifndef DependCmd
  #if UseGccMakeDepend
@@ -41,7 +41,7 @@
  #define DependCmd makedepend
  #else
  #define DependCmd $(DEPENDSRC)/makedepend
-@@ -1320,21 +1320,21 @@
+@@ -1329,21 +1329,21 @@
  #ifndef ExportListCmd
  # ifndef ExportListGenSource
  #  define ExportListCmd		/**/
@@ -66,21 +66,3 @@
  #define RevPathCmd revpath
  #else
  #define RevPathCmd $(CONFIGSRC)/util/revpath
-@@ -1536,7 +1536,7 @@
-        CXXOPTIONS = CplusplusOptions
-       CXXINCLUDES = $(INCLUDES) $(TOP_INCLUDES) $(CXXEXTRA_INCLUDES) 
-        CXXDEFINES = $(CXXINCLUDES) $(CXXSTD_DEFINES) $(THREADS_CXXDEFINES) $(DEFINES) $(CXXEXTRA_DEFINES)
--         CXXFLAGS = $(CXXDEBUGFLAGS) $(CXXOPTIONS) $(THREADS_CXXFLAGS) $(CXXDEFINES)
-+         CXXFLAGS += $(CXXDEBUGFLAGS) $(CXXOPTIONS) $(THREADS_CXXFLAGS) $(CXXDEFINES)
- #endif
- 
- #if !BuildLibraries && AlternateIncRoot
-@@ -1736,7 +1736,7 @@
-  */
-       ALLINCLUDES = $(INCLUDES) $(EXTRA_INCLUDES) $(TOP_INCLUDES) $(INSTALLED_INCLUDES) $(STD_INCLUDES)
-        ALLDEFINES = $(ALLINCLUDES) $(STD_DEFINES) $(PROTO_DEFINES) $(THREADS_DEFINES) $(MODULE_DEFINES) $(DEFINES) $(EXTRA_DEFINES)
--           CFLAGS = $(CDEBUGFLAGS) $(CCOPTIONS) $(THREADS_CFLAGS) $(MODULE_CFLAGS) $(ALLDEFINES)
-+           CFLAGS += $(CDEBUGFLAGS) $(CCOPTIONS) $(THREADS_CFLAGS) $(MODULE_CFLAGS) $(ALLDEFINES)
-         LINTFLAGS = $(LINTOPTS) -DLINT $(ALLDEFINES) $(DEPEND_DEFINES)
-          LDPRELIB = LdPreLib
-         LDPOSTLIB = LdPostLib

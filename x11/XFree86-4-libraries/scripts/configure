@@ -73,6 +73,9 @@ configure () {
     echo "#define FreeBSDBuildXlib  YES" >> $LOCALDEF
     echo "#define FreeBSDBuildXbin   NO" >> $LOCALDEF
     echo "#define UseInstalledPrograms YES" >> $LOCALDEF
+    echo "#define FreeBSDCC	${CC}" >> $LOCALDEF
+    echo "#define FreeBSDCXX	${CXX}" >> $LOCALDEF
+    echo "#define FreeBSDCFLAGS	${CFLAGS}" >> $LOCALDEF
 
     # Copy ORIGDEF to DESTDEF
     rm -f $DESTDEF
