@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kst
-PORTVERSION=	0.97
+PORTVERSION=	0.99
 CATEGORIES=	science kde
 MASTER_SITES=	${MASTER_SITE_KDE} \
 		http://omega.astro.utoronto.ca/${PORTNAME}/
@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g; s|^tagnames=|#tagnames=|g;' \
-		${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|xx||g' ${WRKSRC}/po/Makefile.in
 
 .include <bsd.port.mk>
