@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.66 1999/01/07 12:05:20 asami Exp $
+# $Id: Makefile,v 1.67 1999/01/14 23:46:15 dirk Exp $
 #
 
     SUBDIR += 8hz-mp3
@@ -49,6 +49,7 @@
     SUBDIR += wmmixer
     SUBDIR += wmsound
     SUBDIR += workman
+    SUBDIR += wsoundprefs
     SUBDIR += x11amp
     SUBDIR += xamp
     SUBDIR += xcd
