@@ -9,3 +9,7 @@ o URL for Shougakukan Inc.:
 
 o URL for this converted dictionary:
 WWW: http://openlab.ring.gr.jp/edict/srd-fpw/
+
+Notice: ${PREFIX}/share/dict/srd-fpw/img.dat converted from the
+        original img.data is a PNG format. If you use XEmacs and
+	the converted data then	image data can be inlined.
