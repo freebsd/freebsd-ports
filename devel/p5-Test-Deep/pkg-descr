@@ -1,0 +1,8 @@
+Test::Deep gives you very flexible ways to check that the result you
+got is the result you were expecting. At it's simplest it compares two
+structures by going through each level, ensuring that the values
+match, that arrays and hashes have the same elements and that
+references are blessed into the correct class. It also handles
+circular data struc- tures without getting caught in an infinite loop.
+
+WWW: http://search.cpan.org/dist/Test-Deep/
