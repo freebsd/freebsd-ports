@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	poink
-PORTVERSION=    1.5
+PORTVERSION=	1.6
 CATEGORIES=	net
-MASTER_SITES=   ${MASTER_SITE_NETBSD}
+MASTER_SITES=	http://coredump.cx/~lcamtuf/soft/
+DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@freebsd.org
 COMMENT=	Nosuid, secure ping like utility
+
+USE_ZIP=	yes
 
 .if ${MACHINE_ARCH} == "sparc64"
 BROKEN=		"Hostname resolution broken on ${MACHINE_ARCH}"
