@@ -1276,7 +1276,7 @@ etc_isdn	src/etc/isdn
 etc_kerberosIV	src/etc/kerberosIV
 etc_mail	src/etc/mail
 etc_mtree	src/etc/mtree
-etc_named	src/etc/named
+etc_namedb	src/etc/namedb
 etc_periodic	src/etc/periodic
 etc_ppp		src/etc/ppp
 etc_root	src/etc/root
