@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-Tree
-PORTVERSION= 	0.62
+PORTVERSION= 	3.08
 CATEGORIES=     www perl5
 MASTER_SITES=   ${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
@@ -19,7 +19,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/HTML/He
 USE_PERL5=	yes
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-MAN3=		HTML::Parse.3 HTML::TreeBuilder.3 HTML::AsSubs.3 HTML::Element.3
+MAN3=		HTML::Parse.3 HTML::TreeBuilder.3 HTML::AsSubs.3 \
+		HTML::Element.3 HTML::Element::traverse.3
 
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
