@@ -1,8 +1,13 @@
 bin/nethack
+@exec chmod 2755 %D/bin/nethack
+@exec chown games:games %D/bin/nethack
 share/nethack/nethack
+share/nethack/nethack-start.sh
+@exec mkdir %D/share/nethack/save
 @exec mkdir %D/share/nethack/save
 @exec chmod -R 775 %D/share/nethack
-@exec chmod 2755 %D/share/nethack/nethack
+@exec chmod 755 %D/share/nethack/nethack
+@exec chmod 755 %D/share/nethack/nethack-start.sh
 @exec chown games:games %D/share/nethack/save
 @unexec rm -rf %D/share/nethack/save
 share/doc/nethack/Guidebook.txt
