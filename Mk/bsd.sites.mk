@@ -315,6 +315,7 @@ MASTER_SITE_SUNSITE+=	\
 	ftp://ftp.rz.uni-karlsruhe.de/pub/mirror/ftp.uni-tuebingen.de/pub/linux/mirrors/ftp.metalab.unc.edu/pub/Linux/%SUBDIR%/ \
 	ftp://ftp.uni-magdeburg.de/pub/mirror/linux/ftp.metalab.unc.edu/%SUBDIR%/ \
 	ftp://ftp.uni-stuttgart.de/pub/mirror/sunsite.unc.edu/pub/Linux/%SUBDIR%/ \
+	ftp://ftp.informatik.rwth-aachen.de/pub/comp/Linux/sunsite.unc.edu/%SUBDIR%/ \
 	ftp://ftp.lip6.fr/pub/linux/sunsite/%SUBDIR%/ \
 	ftp://ftp.uvsq.fr/pub5/linux/sunsite/%SUBDIR%/ \
 	ftp://ftp.leidenuniv.nl/pub/linux/sunsite/%SUBDIR%/ \
