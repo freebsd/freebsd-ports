@@ -168,7 +168,6 @@ rtc_detach(struct rtc_softc *sc)
 	if (sc->var.flags.opened) {
 		return EBUSY;
 	}
-	destroy_dev(sc->dev);
 	FREE(sc, M_DEVBUF);
 	return error;
 }
