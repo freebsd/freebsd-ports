@@ -948,3 +948,4 @@ net/wide-dhcp|net-mgmt/wide-dhcp|2004-02-22|new category
 net/zabbix|net-mgmt/zabbix|2004-02-22|new category
 graphics/hdf|science/hdf|2004-02-25|moved to better fitting category
 graphics/hdf5|science/hdf5|2004-02-25|moved to better fitting category
+mail/vpopmail-stable|mail/vpopmail|2004-02-26|vpopmail is now stable
