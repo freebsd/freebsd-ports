@@ -36,6 +36,7 @@
     SUBDIR += tircproxy
     SUBDIR += tkirc
     SUBDIR += trickyirc
+    SUBDIR += xaric
     SUBDIR += xchat
     SUBDIR += xchat-devel
     SUBDIR += yagirc
