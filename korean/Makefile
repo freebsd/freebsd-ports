@@ -1,7 +1,8 @@
-# $Id: Makefile,v 1.29 1999/05/29 08:28:59 kuriyama Exp $
+# $Id: Makefile,v 1.30 1999/06/09 01:30:51 steve Exp $
 #
 
     SUBDIR += Wnn
+    SUBDIR += acroread-korfont
     SUBDIR += afterstep
     SUBDIR += elm
     SUBDIR += engdic
