@@ -1,6 +1,6 @@
---- ltmain.sh.orig	Sat Jun  1 21:12:45 2002
-+++ ltmain.sh	Tue Jun 11 22:25:52 2002
-@@ -967,6 +967,7 @@
+--- ltmain.sh.orig	Mon Aug  5 16:46:18 2002
++++ ltmain.sh	Mon Aug  5 22:32:19 2002
+@@ -961,6 +961,7 @@
  	;;
  
        -avoid-version)
@@ -8,40 +8,16 @@
  	avoid_version=yes
  	continue
  	;;
-@@ -1054,14 +1055,14 @@
- 	    # These systems don't actually have a C library (as such)
- 	    test "X$arg" = "X-lc" && continue
- 	    ;;
--	  *-*-openbsd* | *-*-freebsd*)
-+	  *-*-openbsd*)
- 	    # Do not include libc due to us having libc/libc_r.
- 	    test "X$arg" = "X-lc" && continue
- 	    ;;
- 	  esac
- 	 elif test "X$arg" = "X-lc_r"; then
- 	  case $host in
--	 *-*-openbsd* | *-*-freebsd*)
-+	 *-*-openbsd*)
- 	    # Do not include libc_r directly, use -pthread flag.
- 	    continue
- 	    ;;
-@@ -2468,13 +2469,13 @@
- 	  *-*-netbsd*)
- 	    # Don't link with libc until the a.out ld.so is fixed.
- 	    ;;
--	  *-*-openbsd* | *-*-freebsd*)
-+	  *-*-openbsd*)
- 	    # Do not include libc due to us having libc/libc_r.
- 	    ;;
+@@ -2507,7 +2508,7 @@
  	  *)
  	    # Add libc to deplibs on all other systems if necessary.
- 	    if test $build_libtool_need_lc = "yes"; then
+ 	    if test "$build_libtool_need_lc" = "yes"; then
 -	      deplibs="$deplibs -lc"
 +	      deplibs="$deplibs"
  	    fi
  	    ;;
  	  esac
-@@ -4273,10 +4274,12 @@
+@@ -4329,10 +4330,12 @@
  	fi
  
  	# Install the pseudo-library for information purposes.
