@@ -14,6 +14,11 @@ DISTFILES=	ls-${PORTVERSION}.tar.gz
 
 MAINTAINER=	asami@FreeBSD.org
 
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} >= 500004
+FORBIDDEN=      "colour support is already in the base system"
+.endif
+
 MAN1=		colorls.1
 MANCOMPRESSED=	maybe
 
@@ -22,4 +27,4 @@ WRKSRC=		${WRKDIR}/ls
 pre-patch:
 	${CP} ${WRKSRC}/ls.1 ${WRKSRC}/colorls.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
