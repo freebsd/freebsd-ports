@@ -22,7 +22,7 @@ COMMENT=	Perl Compatible Regular Expressions library
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
-.if defined(ENABLE_UTF8)
+.if defined(WITH_UTF8)
 CONFIGURE_ARGS+= --enable-utf8
 .endif
 
