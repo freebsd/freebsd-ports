@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	POE-API-Peek
-PORTVERSION=	1.23
+PORTVERSION=	1.0251
+PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	POE
+MASTER_SITE_SUBDIR=	../../authors/id/S/SU/SUNGO
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
@@ -18,13 +19,9 @@ COMMENT=	Peek into the internals of a running POE environment
 BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
 MAN3=		POE::API::Peek.3
-
-post-patch:
-	${RM} ${WRKSRC}/inc/Module/Install/AutoInstall.pm
-	${PERL} -pi -e 's/^auto_install.*//;' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.pre.mk>
 
