@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	podlators
-PORTVERSION=	1.25
+PORTVERSION=	1.27
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Pod
@@ -19,17 +19,17 @@ RUN_DEPENDS=	${SITE_PERL}/Pod/Parser.pm:${PORTSDIR}/textproc/p5-PodParser
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS+= INSTALLDIRS=site
+CONFIGURE_ARGS=	INSTALLDIRS=site
 
 MAN1=		pod2man.1 pod2text.1
 MAN3=		Pod::Man.3 Pod::ParseLink.3 Pod::Text.3 Pod::Text::Color.3 \
 		Pod::Text::Overstrike.3 Pod::Text::Termcap.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+.if ${PERL_LEVEL} < 500601
+RUN_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec \
+		${SITE_PERL}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor
 .endif
 
 .include <bsd.port.post.mk>
