@@ -1,11 +1,11 @@
---- run-splitter.in.bak	Wed Jan 10 15:25:43 2001
-+++ run-splitter.in	Sun Jan 28 12:06:37 2001
-@@ -2,7 +2,7 @@
+--- etc/search.htm-dist.bak	Fri Feb 16 12:49:16 2001
++++ etc/search.htm-dist	Tue Feb 20 20:00:27 2001
+@@ -126,7 +126,7 @@
+ <SELECT NAME="wm">
+ <OPTION VALUE="wrd" SELECTED="$wm">Whole word
+ <OPTION VALUE="beg" SELECTED="$wm">Beginning
+-<OPTION VALUE="beg" SELECTED="$wm">Ending
++<OPTION VALUE="end" SELECTED="$wm">Ending
+ <OPTION VALUE="sub" SELECTED="$wm">Substring
+ </SELECT>
  
- PREFIX=@prefix@
- 
--VAR=$PREFIX/var
-+VAR=/var/mnogosearch
- SBIN=$PREFIX/sbin
- PID=$VAR/cachelogd.pid
- SPLITTER=$SBIN/splitter

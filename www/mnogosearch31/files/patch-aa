@@ -1,14 +1,13 @@
-diff -ru ../udmsearch-3.0.19/doc/Makefile.in ./doc/Makefile.in
---- ../udmsearch-3.0.19/doc/Makefile.in	Thu Jun 15 10:27:15 2000
-+++ ./doc/Makefile.in	Sat Jul  8 15:09:00 2000
-@@ -273,9 +273,9 @@
+--- doc/Makefile.in.orig	Tue Feb 20 14:12:34 2001
++++ doc/Makefile.in	Tue Feb 20 19:32:44 2001
+@@ -285,9 +285,9 @@
  
  
  install-data-local:
--	$(mkinstalldirs) $(prefix)/doc
+-	$(mkinstalldirs) $(DESTDIR)$(prefix)/doc
 -	echo ${INSTALL_DATA} docs $(DESTDIR)$(prefix)/doc/
 -	${INSTALL_DATA} ${txt_DOCS} $(DESTDIR)$(prefix)/doc/
-+	$(mkinstalldirs) $(prefix)/share/doc/mnogosearch
++	$(mkinstalldirs) $(DESTDIR)$(prefix)/share/doc/mnogosearch
 +	echo ${INSTALL_DATA} docs $(DESTDIR)$(prefix)/share/doc/mnogosearch
 +	${INSTALL_DATA} ${txt_DOCS} $(DESTDIR)$(prefix)/share/doc/mnogosearch
  

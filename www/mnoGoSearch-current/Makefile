@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mnogosearch
-PORTVERSION=    3.1.10
+PORTVERSION=    3.1.11
 CATEGORIES=	www databases
 MASTER_SITES=	http://search.mnogo.ru/Download/
 
@@ -20,7 +20,8 @@ NO_LATEST_LINK=	yes
 INSTALLS_SHLIB= yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --enable-shared \
+CONFIGURE_ARGS= --enable-phrase \
+		--enable-shared \
 		--enable-freebsd-pthreads \
 		--sysconfdir=${PREFIX}/etc/mnogosearch \
 		--localstatedir=/var/mnogosearch
@@ -44,6 +45,8 @@ LIB_DEPENDS=		mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 
 .else
+CONFIGURE_ARGS+=        --with-built-in
+
 pre-fetch:
 	@${ECHO}
 	@${ECHO} "Defaulting to mnoGoSearch with built-in database."
@@ -53,6 +56,9 @@ pre-fetch:
 	@${ECHO} "WITH_MNOGO_MYSQL=yes or WITH_MNOGO_PGSQL=yes respectively."
 	@${ECHO}
 .endif
+
+post-patch:
+	cp ${FILESDIR}/cross*.txt ${WRKSRC}/create/msql
 
 pre-install:
 	@${MKDIR} ${PREFIX}/share/mnogosearch
