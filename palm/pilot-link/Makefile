@@ -9,7 +9,8 @@ PORTNAME=	pilot-link
 PORTVERSION=	0.11.8
 PORTREVISION=	1
 CATEGORIES=	palm comms tk83
-MASTER_SITES=	http://oss.redundant.com/pub/gentoo/distfiles/
+MASTER_SITES=	${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PalmPilot communications utilities (backup/restore/install/debug/...)
