@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://demian.dyndns.org/src/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	rael@vectorstar.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LostIRC is a simple and minimal IRC client for X
 
 LIB_DEPENDS=	gtkmm-2:${PORTSDIR}/x11-toolkits/gtk--2

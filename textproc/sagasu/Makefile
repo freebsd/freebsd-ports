@@ -11,7 +11,7 @@ CATEGORIES=	textproc gnome
 MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/ \
 		http://demian.dyndns.org/src/
 
-MAINTAINER=	rael@vectorstar.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sagasu is a GNOME tool to find strings in a set of files
 
 USE_X_PREFIX=	yes

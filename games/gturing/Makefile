@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	games gnome
 MASTER_SITES=	ftp://ftp.gnome.org/pub/gnome/sources/gturing/0.1/
 
-MAINTAINER=	rael@vectorstar.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple turing machine simulator for GNOME 2
 
 USE_X_PREFIX=	yes

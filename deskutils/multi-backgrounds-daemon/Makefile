@@ -10,7 +10,7 @@ PORTREVISION=	3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://jk24.free.fr/multi-backgrounds-daemon/
 
-MAINTAINER=	rael@vectorstar.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Change your GNOME2 backgound when you switch to other workspace
 
 USE_X_PREFIX=	yes
