@@ -16,6 +16,6 @@ MAINTAINER=	lofi@freebsd.org
 COMMENT=	XviD configuration panel for transcode
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomeprefix gnomehack gtk20
+USE_GNOME=	gtk20
 
 .include <bsd.port.mk>
