@@ -1,0 +1,50 @@
+--- ORIG/Makefile	Wed Mar 11 23:11:26 1998
++++ Makefile	Wed Aug 18 18:57:46 1999
+@@ -61,23 +61,28 @@
+ CC = cc
+ 
+ # Compiler options:
+-COPTS = -c -O
++COPTS = -c -O -w
+ 
+ # Shared library linker command:
+-SHLINK = cc -G
++SHLINK = cc -shared
+ 
+ # Name for the shared lib:
+-#SH_LIB = libtogl.so.1.3
+-SH_LIB = 
++SH_LIB = libtogl.so.1.3
++#SH_LIB = 
+ 
+-# Where to find tcl.h, tk.h, OpenGL/Mesa headers, etc:
+-INCLUDES = -I/usr/local/include -I/usr/include/tcl
++# Where to find tc.hl, tk.h, OpenGL/Mesa headers, etc:
++INCLUDES = -I/usr/local/include/tcl8.0 \
++           -I/usr/local/include/tk8.0 \
++           -I/usr/local/include/tk8.0/generic \
++           -I/usr/X11R6/include \
++           -I/usr/include/tcl
+ 
+ # Where to find libtcl.a, libtk.a, OpenGL/Mesa libraries:
+-LIBDIRS = -L/usr/local/lib
++LIBDIRS = -L/usr/local/lib \
++          -L/usr/X11R6/lib
+ 
+ # Libraries to link with (-ldl for Linux only?):
+-LIBS = -ltk -ltcl -lGLU -lGL -L/usr/X11/lib -lX11 -lXmu -lXext -lXt -lm -ldl
++LIBS = -ltk80 -ltcl80 -lGLU -lGL -lX11 -lXmu -lXext -lXt -lm
+ 
+ TK_FLAGS =
+ 
+@@ -144,8 +149,8 @@
+ 	$(CC) $(CFLAGS) togl.c
+ 
+ 
+-#$(SH_LIB): togl.o
+-#	$(SHLINK) $(LFLAGS) togl.o $(LIBS) -o $@ 
++$(SH_LIB): togl.o
++	$(SHLINK) $(LFLAGS) togl.o $(LIBS) -o $@ 
+ 
+ 
+ 

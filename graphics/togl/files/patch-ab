@@ -1,0 +1,11 @@
+--- ORIG/togl.c	Fri Aug 21 23:06:00 1998
++++ togl.c	Wed Aug 18 18:41:24 1999
+@@ -118,7 +118,7 @@
+ #elif TK_MAJOR_VERSION==8 && TK_MINOR_VERSION==0 && TK_RELEASE_SERIAL==2
+ #  include "tkInt8.0p2.h"
+ #else
+-   Sorry, you will have to edit togl.c to include the right tkInt.h file
++#  include "tkInt.h"
+ #endif
+ #elif defined(WIN32)
+ #if TK_MAJOR_VERSION<8
