@@ -43,7 +43,7 @@ PLIST_SUB+=	ESOUND="@comment "
 .endif
 
 .if defined(WITH_LIBARTS) || defined(WITH_ALL_PLUGINS)
-LIB_DEPENDS=	libartsc.0:${PORTSDIR}/x11/kdelibs2
+LIB_DEPENDS+=	artsc.0:${PORTSDIR}/x11/kdelibs2
 PLIST_SUB+=	LIBARTS=""
 .else
 CONFIGURE_ARGS+=	--disable-arts
@@ -51,7 +51,7 @@ PLIST_SUB+=	LIBARTS="@comment "
 .endif
 
 .if defined(WITH_VORBIS) || defined(WITH_ALL_PLUGINS)
-LIB_DEPENDS=	vorbis.0:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.0:${PORTSDIR}/audio/libvorbis
 PLIST_SUB+=	VORBIS=""
 .else
 CONFIGURE_ARGS+=	--disable-vorbis
