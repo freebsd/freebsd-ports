@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	py-gnuplot
-PORTVERSION=	1.5
+PORTVERSION=	1.7
 CATEGORIES=	math python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnuplot-py
-DISTNAME=	Gnuplot-${PORTVERSION}
+DISTNAME=	gnuplot-py-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to gnuplot plotting program
