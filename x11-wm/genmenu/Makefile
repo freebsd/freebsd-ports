@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	genmenu
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.7
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://gtk.no/archive/genmenu/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bogorodskiy@inbox.ru
 COMMENT=	Generating menus for Bbox, Fbox, Obox, WM and E
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
