@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	ruby-usersguide
-PORTVERSION=	20010131
+PORTVERSION=	20010216
 CATEGORIES=	lang ruby
-MASTER_SITES=	http://www.cs.iastate.edu/~slagell/ruby/
+MASTER_SITES=	http://www.ruby-lang.org/~slagell/ruby/
 DISTNAME=	${PORTNAME:S/usersguide/uguide/}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
