@@ -253,6 +253,7 @@
     SUBDIR += sing
     SUBDIR += slirp
     SUBDIR += smbtcpdump
+    SUBDIR += smm++
     SUBDIR += sniffit
     SUBDIR += sntop
     SUBDIR += socks5

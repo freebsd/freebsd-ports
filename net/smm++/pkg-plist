@@ -1,0 +1,379 @@
+bin/smm
+smm++/bin/mkindex
+smm++/bin/search
+smm++/bin/search.tmp
+smm++/bin/search.tmpo
+smm++/bin/qsmm
+smm++/bin/desaster
+smm++/bin/install.tcl
+smm++/bin/install.tcl.orig
+smm++/bin/showy
+smm++/bin/installSMM
+smm++/bin/readjust
+smm++/bin/ev.tcl
+smm++/bin/ssmm
+smm++/bin/ssmm.orig
+smm++/bin/A_ATTENTION
+smm++/bin/A_README
+smm++/bin/A_DANGER
+smm++/bin/count
+smm++/bin/font
+smm++/bin/optionmenu.itk
+smm++/bin/mytoplevelusage.tcl
+smm++/bin/o.tcl
+smm++/bin/o.tcl.orig
+smm++/bin/sssm
+smm++/bin/sssm.orig
+smm++/bin/clean
+smm++/bin/o.c
+smm++/bin/a.out
+smm++/bin/tester.tcl
+smm++/bin/tester.tcl.orig
+smm++/bin/a.tcl
+smm++/bin/ia.tcl
+smm++/bin/ia.tcl.orig
+smm++/bin/istest.tcl
+smm++/bin/istest.tcl.orig
+smm++/bin/stest.tcl
+smm++/docu/GPL
+smm++/docu/A_README
+smm++/docu/INSTALL.unix
+smm++/docu/INSTALL.unix.orig
+smm++/docu/html/Licence.html
+smm++/docu/html/ansi.html
+smm++/docu/html/config.html
+smm++/docu/html/gpl.html
+smm++/docu/html/index.html
+smm++/docu/html/mapping.html
+smm++/docu/html/mudding.html
+smm++/docu/html/mudsintro.html
+smm++/docu/html/sysreq.html
+smm++/docu/html/whytcltk.html
+smm++/docu/html/mainwindow.gif
+smm++/docu/html/epilog.html
+smm++/docu/html/SMMheader.gif
+smm++/docu/html/SMMruler.gif
+smm++/docu/html/SMMPanel.gif
+smm++/docu/html/SMMpanelText.gif
+smm++/docu/html/SMMpanelText.jpg
+smm++/docu/html/mud.jpg
+smm++/docu/html/BG.jpg
+smm++/docu/html/uif.html
+smm++/docu/html/TUIF.jpg
+smm++/docu/html/pics/uif/general.jpg
+smm++/docu/html/pics/uif/zoom.jpg
+smm++/docu/html/pics/uif/zif.jpg
+smm++/docu/html/bindex.jpg
+smm++/docu/html/TLicence.jpg
+smm++/docu/html/commands.html
+smm++/docu/html/BHomepage.jpg
+smm++/docu/html/next.jpg
+smm++/docu/html/prev.jpg
+smm++/docu/html/TGStarted.jpg
+smm++/docu/html/gstarted.html
+smm++/docu/html/TMudsIntro.jpg
+smm++/docu/html/TMudding.jpg
+smm++/docu/html/TCommands.jpg
+smm++/docu/html/muddingio.jpg
+smm++/docu/html/TAnsiSupport.jpg
+smm++/docu/html/TEpilog.jpg
+smm++/docu/html/TMapping.jpg
+smm++/docu/html/TSMMConfiguration.jpg
+smm++/docu/html/TSysReq.jpg
+smm++/docu/html/TWhyitcl.jpg
+smm++/docu/html/manString.html
+smm++/docu/html/manExpr.html
+smm++/docu/html/TScriptfileEditor.jpg
+smm++/docu/html/scriptfileeditor.html
+smm++/docu/html/manRegexp.html
+smm++/docu/html/TSMMHowto.jpg
+smm++/docu/html/howto.html
+smm++/docu/html/moreonmaps.html
+smm++/docu/html/TSMMMaps.jpg
+smm++/docu/INSTALL.win
+smm++/docu/CHANGES
+smm++/docu/MAILINGLIST
+smm++/docu/TODO
+smm++/docu/TROUBLESHOOTING
+smm++/docu/ESC
+smm++/docu/FEEDBACK
+smm++/docu/INSTALL.mac
+smm++/docu/REPORT_BUGS
+smm++/docu/CUSTOMIZE_SMM
+smm++/docu/SCRIPTS
+smm++/docu/MAPS
+smm++/docu/THANKS
+smm++/docu/File_id.diz
+smm++/images/bg_color_ontop/roads/sn.gif
+smm++/images/bg_color_ontop/roads/en.gif
+smm++/images/bg_color_ontop/roads/es.gif
+smm++/images/bg_color_ontop/roads/esn.gif
+smm++/images/bg_color_ontop/roads/we.gif
+smm++/images/bg_color_ontop/roads/wen.gif
+smm++/images/bg_color_ontop/roads/wes.gif
+smm++/images/bg_color_ontop/roads/wesn.gif
+smm++/images/bg_color_ontop/roads/wn.gif
+smm++/images/bg_color_ontop/roads/ws.gif
+smm++/images/bg_color_ontop/roads/wsn.gif
+smm++/images/bg_color_ontop/walls/e.gif
+smm++/images/bg_color_ontop/walls/n.gif
+smm++/images/bg_color_ontop/walls/ne.gif
+smm++/images/bg_color_ontop/walls/nw.gif
+smm++/images/bg_color_ontop/walls/s.gif
+smm++/images/bg_color_ontop/walls/se.gif
+smm++/images/bg_color_ontop/walls/sw.gif
+smm++/images/bg_color_ontop/walls/w.gif
+smm++/images/bg_color_ontop/walls/zge.gif
+smm++/images/bg_color_ontop/walls/zgn.gif
+smm++/images/bg_color_ontop/walls/zgs.gif
+smm++/images/bg_color_ontop/walls/zgw.gif
+smm++/images/bg_color_ontop/buildings/inn.gif
+smm++/images/bg_color_ontop/buildings/tower.gif
+smm++/images/bg_color_ontop/buildings/jail.gif
+smm++/images/bg_color_ontop/buildings/fountain.gif
+smm++/images/bg_color_ontop/buildings/house.gif
+smm++/images/bg_color_ontop/buildings/blacksmith.gif
+smm++/images/bg_color_ontop/buildings/church.gif
+smm++/images/stuff/beings/guard.gif
+smm++/images/stuff/beings/person.gif
+smm++/images/stuff/beings/pet.gif
+smm++/images/stuff/books/book.gif
+smm++/images/stuff/books/scroll.gif
+smm++/images/stuff/equipment/armor.gif
+smm++/images/stuff/equipment/magical_item.gif
+smm++/images/stuff/equipment/money.gif
+smm++/images/stuff/equipment/weapon.gif
+smm++/images/stuff/furniture/rest.gif
+smm++/images/stuff/furniture/trap.gif
+smm++/images/stuff/misc/attention.gif
+smm++/images/stuff/misc/cross.gif
+smm++/images/stuff/misc/hidden.gif
+smm++/images/stuff/misc/holy.gif
+smm++/images/stuff/misc/quest_item.gif
+smm++/images/stuff/misc/special.gif
+smm++/images/stuff/misc/stuff.gif
+smm++/images/stuff/misc/whirl.gif
+smm++/images/stuff/provisions/food.gif
+smm++/images/stuff/provisions/potion.gif
+smm++/images/stuff/provisions/water.gif
+smm++/images/system/bg/none.gif
+smm++/images/system/exits/do.gif
+smm++/images/system/exits/dx.gif
+smm++/images/system/exits/uo.gif
+smm++/images/system/exits/ux.gif
+smm++/images/system/stuff/none.gif
+smm++/images/system/buttons/cut.gif
+smm++/images/system/buttons/click.gif
+smm++/images/cursor/click.xbm
+smm++/images/stuff_XL/ornaments/windrose.gif
+smm++/images/stuff_XL/ornaments/scratches.gif
+smm++/images/stuff_XL/ornaments/seadragon.gif
+smm++/images/bg_bw_ontop/misc/deadend.gif
+smm++/images/bg_bw_ontop/misc/def.gif
+smm++/images/bg_bw_ontop/misc/room.gif
+smm++/images/bg_bw_ontop/misc/room_big.gif
+smm++/images/bg_bw_ontop/misc/def_small.gif
+smm++/images/bg_bw_ontop/misc/pin.gif
+smm++/images/bg_bw_ontop/misc/pin_big.gif
+smm++/images/bg_bw_ontop/misc/shelves.gif
+smm++/images/bg_bw_ontop/misc/desk.gif
+smm++/images/bg_bw_ontop/misc/campfire.gif
+smm++/images/bg_bw_ontop/misc/arena.gif
+smm++/images/bg_bw_ontop/buildings/arches.gif
+smm++/images/bg_bw_ontop/buildings/bank.gif
+smm++/images/bg_bw_ontop/buildings/city_center-fountain.gif
+smm++/images/bg_bw_ontop/buildings/city_center.gif
+smm++/images/bg_bw_ontop/buildings/docks.gif
+smm++/images/bg_bw_ontop/buildings/house.gif
+smm++/images/bg_bw_ontop/buildings/inn.gif
+smm++/images/bg_bw_ontop/buildings/shop.gif
+smm++/images/bg_bw_ontop/buildings/tavern.gif
+smm++/images/bg_bw_ontop/buildings/tower.gif
+smm++/images/bg_bw_ontop/buildings/castle.gif
+smm++/images/bg_bw_ontop/buildings/farm.gif
+smm++/images/bg_bw_ontop/buildings/graveyard.gif
+smm++/images/bg_bw_ontop/buildings/bridge.gif
+smm++/images/bg_bw_ontop/buildings/mosque.gif
+smm++/images/bg_bw_ontop/buildings/outpost.gif
+smm++/images/bg_bw_ontop/buildings/temple.gif
+smm++/images/bg_bw_ontop/buildings/tent.gif
+smm++/images/bg_bw_ontop/buildings/tent_mongolian.gif
+smm++/images/bg_bw_ontop/buildings/coloseum.gif
+smm++/images/bg_bw_ontop/landscape/cave.gif
+smm++/images/bg_bw_ontop/landscape/desert.gif
+smm++/images/bg_bw_ontop/landscape/forest.gif
+smm++/images/bg_bw_ontop/landscape/mountains.gif
+smm++/images/bg_bw_ontop/landscape/outlands.gif
+smm++/images/bg_bw_ontop/landscape/swamp.gif
+smm++/images/bg_bw_ontop/landscape/town.gif
+smm++/images/bg_bw_ontop/landscape/water.gif
+smm++/images/bg_bw_ontop/landscape/winter_forest.gif
+smm++/images/bg_bw_ontop/landscape/hills.gif
+smm++/images/bg_bw_ontop/landscape/island.gif
+smm++/images/bg_bw_ontop/landscape/high_mountains.gif
+smm++/images/bg_bw_ontop/landscape/pool.gif
+smm++/images/bg_bw_ontop/landscape/oasis.gif
+smm++/images/bg_bw_ontop/landscape/mines.gif
+smm++/images/bg_bw_ontop/walls/gate_e.gif
+smm++/images/bg_bw_ontop/walls/gate_n.gif
+smm++/images/bg_bw_ontop/walls/gate_ns.gif
+smm++/images/bg_bw_ontop/walls/gate_s.gif
+smm++/images/bg_bw_ontop/walls/gate_w.gif
+smm++/images/bg_bw_ontop/walls/gate_we.gif
+smm++/images/bg_bw_ontop/walls/wall_e.gif
+smm++/images/bg_bw_ontop/walls/wall_n.gif
+smm++/images/bg_bw_ontop/walls/wall_ne.gif
+smm++/images/bg_bw_ontop/walls/wall_nw.gif
+smm++/images/bg_bw_ontop/walls/wall_s.gif
+smm++/images/bg_bw_ontop/walls/wall_se.gif
+smm++/images/bg_bw_ontop/walls/wall_sw.gif
+smm++/images/bg_bw_ontop/walls/wall_w.gif
+smm++/images/bg_bw_below/underworld/tunnel.gif
+smm++/images/bg_bw_below/underworld/cave.gif
+smm++/images/bg_bw_below/underworld/solid_rock.gif
+smm++/images/bg_bw_below/underworld/mines.gif
+smm++/images/bg_bw_below/underworld/area.gif
+smm++/images/bg_bw_below/underworld/shaft_down.gif
+smm++/images/bg_bw_below/underworld/shaft_updown.gif
+smm++/images/bg_bw_below/underworld/shaft_up.gif
+smm++/images/bg_color_below/landscape/grass.gif
+smm++/images/bg_color_below/landscape/water.gif
+smm++/images/bg_color_below/landscape/mud.gif
+smm++/images/bg_color_below/landscape/clovers.gif
+smm++/images/bg_color_below/landscape/marble.gif
+smm++/images/bg_color_below/landscape/mountains.gif
+smm++/images/bg_color_below/landscape/terra.gif
+smm++/images/bg_color_below/landscape/stone.gif
+smm++/images/bg_color_below/landscape/stone2.gif
+smm++/images/bg_color_below/landscape/mud2.gif
+smm++/sources/tclIndex
+smm++/sources/TMainUif.tcl
+smm++/sources/TSession.tcl
+smm++/sources/smm.tcl
+smm++/sources/mapping/TBG.tcl
+smm++/sources/mapping/TCoordinate.tcl
+smm++/sources/mapping/TExit.tcl
+smm++/sources/mapping/tclIndex
+smm++/sources/mapping/TMud.tcl
+smm++/sources/mapping/TMap.tcl
+smm++/sources/mapping/TRoom.tcl
+smm++/sources/mapping/TText.tcl
+smm++/sources/mapping/TStuffList.tcl
+smm++/sources/rsc/TFont.tcl
+smm++/sources/rsc/tclIndex
+smm++/sources/rsc/TColor.tcl
+smm++/sources/rsc/TGUIManager.tcl
+smm++/sources/rsc/TSecondaryWindow.tcl
+smm++/sources/rsc/TInformer.tcl
+smm++/sources/rsc/TFileSystemManager.tcl
+smm++/sources/rsc/TCN.tcl
+smm++/sources/rsc/TImage.tcl
+smm++/sources/rsc/TLimitedFIFO.tcl
+smm++/sources/rsc/minmax.tcl
+smm++/sources/rsc/TNVContainer.tcl
+smm++/sources/rsc/TESCParser.tcl
+smm++/sources/rsc/THLinesConfig.tcl
+smm++/sources/rsc/TLoadFeedback.tcl
+smm++/sources/rsc/TMouseButtonConfig.tcl
+smm++/sources/rsc/pqueue.tcl
+smm++/sources/mudding/TMudder.tcl
+smm++/sources/mudding/TVarManager.tcl
+smm++/sources/mudding/TAliasManager.tcl
+smm++/sources/mudding/TEntryX.tcl
+smm++/sources/mudding/tclIndex
+smm++/sources/mudding/TOutX.tcl
+smm++/sources/mudding/TActionManager.tcl
+smm++/sources/mudding/TSubstManager.tcl
+smm++/sources/mudding/THighlightManager.tcl
+smm++/sources/mudding/TCommandManager.tcl
+smm++/sources/mudding/TTabManager.tcl
+smm++/sources/mudding/TNotouchManager.tcl
+smm++/sources/mudding/TButton.tcl
+smm++/sources/mudding/TTicker.tcl
+smm++/sources/editor/TConfigfileEditor.tcl
+smm++/sources/editor/tclIndex
+smm++/sources/editor/TConfigfileBuffer.tcl
+smm++/sources/editor/TConfigfileSelectors.tcl
+smm++/sources/editor/TConfigfileBufferManager.tcl
+smm++/sources/editor/TClipboard.tcl
+smm++/sources/error/TErrorLogger.tcl
+smm++/sources/error/tclIndex
+smm++/sources/c/tkAppInit.c
+smm++/sources/c/Makefile
+smm++/sources/itcl/iwidgets/generic/fontconfig.tcl
+smm++/sources/itcl/iwidgets/generic/line.tcl
+smm++/sources/itcl/iwidgets/generic/fontmanager.tcl
+smm++/sources/itcl/iwidgets/generic/findreplacedialog.tcl
+smm++/sources/itcl/iwidgets/generic/panedwindow.tcl
+smm++/sources/itcl/iwidgets/generic/tclIndex
+smm++/sources/itcl/iwidgets/generic/colormanager.tcl
+smm++/sources/itcl/iwidgets/generic/labeledwidget.tcl
+smm++/sources/itcl/iwidgets/generic/shell.tcl
+smm++/sources/itcl/iwidgets/generic/dialogshell.tcl
+smm++/sources/itcl/iwidgets/generic/texteddialog.tcl
+smm++/sources/itcl/iwidgets/demos/load.tcl
+smm++/sources/itcl/iwidgets/demos/fontconfig
+smm++/sources/itcl/iwidgets/demos/fontmanager
+smm++/sources/itcl/iwidgets/demos/line
+smm++/sources/itcl/iwidgets/demos/colormanager
+smm++/sources/itcl/iwidgets/demos/labeledwidget
+smm++/sources/itcl/iwidgets/demos/shell
+smm++/smm
+smm++/smm.orig
+smm++/Makefile
+smm++/Makefile.orig
+smm++/smm.itk
+smm++/smm.ITkW
+smm++/config/scripts/welcome
+smm++/config/scripts/bags0
+smm++/config/scripts/automap0
+smm++/config/scripts/mapwalk0
+@dirrm smm++/bin
+@dirrm smm++/docu/html/pics/uif
+@dirrm smm++/docu/html/pics
+@dirrm smm++/docu/html
+@dirrm smm++/docu
+@dirrm smm++/images/bg_color_ontop/roads
+@dirrm smm++/images/bg_color_ontop/walls
+@dirrm smm++/images/bg_color_ontop/buildings
+@dirrm smm++/images/bg_color_ontop
+@dirrm smm++/images/stuff/beings
+@dirrm smm++/images/stuff/books
+@dirrm smm++/images/stuff/equipment
+@dirrm smm++/images/stuff/provisions
+@dirrm smm++/images/stuff/furniture
+@dirrm smm++/images/stuff/misc
+@dirrm smm++/images/stuff
+@dirrm smm++/images/system/bg
+@dirrm smm++/images/system/exits
+@dirrm smm++/images/system/stuff
+@dirrm smm++/images/system/buttons
+@dirrm smm++/images/system
+@dirrm smm++/images/cursor
+@dirrm smm++/images/stuff_XL/ornaments
+@dirrm smm++/images/stuff_XL
+@dirrm smm++/images/bg_bw_ontop/misc
+@dirrm smm++/images/bg_bw_ontop/buildings
+@dirrm smm++/images/bg_bw_ontop/landscape
+@dirrm smm++/images/bg_bw_ontop/walls
+@dirrm smm++/images/bg_bw_ontop
+@dirrm smm++/images/bg_bw_below/underworld
+@dirrm smm++/images/bg_bw_below
+@dirrm smm++/images/bg_color_below/landscape
+@dirrm smm++/images/bg_color_below
+@dirrm smm++/images
+@dirrm smm++/sources/mapping
+@dirrm smm++/sources/rsc
+@dirrm smm++/sources/mudding
+@dirrm smm++/sources/editor
+@dirrm smm++/sources/error
+@dirrm smm++/sources/c
+@dirrm smm++/sources/itcl/iwidgets/doc
+@dirrm smm++/sources/itcl/iwidgets/generic
+@dirrm smm++/sources/itcl/iwidgets/demos
+@dirrm smm++/sources/itcl/iwidgets
+@dirrm smm++/sources/itcl
+@dirrm smm++/sources
+@dirrm smm++/config/scripts
+@dirrm smm++/config
+@dirrm smm++

@@ -1,0 +1,17 @@
+--- /usr/ports/games/smm++/work/smm4r4/smm	Thu Nov 16 20:57:31 2000
++++ smm	Thu Nov 16 21:12:38 2000
+@@ -1,4 +1,4 @@
+-#!/usr/bin/itkwish
++#!/usr/local/bin/itkwish
+ #   --> you may have to edit the line above of this line
+ #   !!! you may edit the path, BUT DO NOT remove the '#!' 
+ #   !!! the '#!' must be the FIRST CHARACTERS on 
+@@ -13,7 +13,7 @@
+ set SMMPATH    $env(HOME)/.smm
+ #
+ # The path to the smm sources
+-set SMMSRCPATH /usr/local/smm4r4
++set SMMSRCPATH /usr/local/smm++
+ #
+ # set SMMMAPWINDOW to 1, if you want the mapper in a separate window
+ # set SMMMAPWINDOW to 0, if you want the mapper to be integrated

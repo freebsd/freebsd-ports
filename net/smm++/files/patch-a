@@ -1,0 +1,68 @@
+--- /usr/ports/games/smm++/work/smm4r4/bin/ia.tcl	Fri Jan 28 08:28:57 2000
++++ bin/ia.tcl	Thu Nov 16 19:06:25 2000
+@@ -1,4 +1,4 @@
+-#!/usr/bin/itkwish
++#!/usr/local/bin/itkwish
+ 
+ proc a {} {
+     set c1 [clock seconds]
+--- /usr/ports/games/smm++/work/smm4r4/bin/install.tcl	Sun Dec 19 12:45:38 1999
++++ bin/install.tcl	Thu Nov 16 19:06:05 2000
+@@ -29,9 +29,9 @@
+ 
+ }
+ 
+-set itkwish "/usr/bin/itkwish"
++set itkwish "/usr/local/bin/itkwish"
+ set userdir "\$env(HOME)/.smm"
+-set srcdir  "/usr/local/smm3r3"
++set srcdir  "/usr/local/smm++"
+ 
+ iwidgets::entryfield .itkwish -labeltext "itkwish executable:" \
+     -labelpos nw -textvariable itkwish \
+--- /usr/ports/games/smm++/work/smm4r4/bin/istest.tcl	Fri Jan 28 06:51:26 2000
++++ bin/istest.tcl	Thu Nov 16 19:06:28 2000
+@@ -1,4 +1,4 @@
+-#!/usr/bin/itkwish
++#!/usr/local/bin/itkwish
+ 
+ proc a {} {
+     set CImagePath images
+--- /usr/ports/games/smm++/work/smm4r4/bin/o.tcl	Sat Dec 25 05:01:32 1999
++++ bin/o.tcl	Thu Nov 16 19:06:15 2000
+@@ -1,4 +1,4 @@
+-#!/usr/bin/itkwish
++#!/usr/local/bin/itkwish
+ 
+ package require Iwidgets 3.0
+ 
+@@ -41,4 +41,4 @@
+ }
+ set en [clock seconds]
+ 
+-puts "[expr $en-$st] seconds -> [expr ($en.0-$st.0)/1000.0] turns/sec"
++puts "[expr $en-$st] seconds -> [expr ($en.0-$st.0)/1000.0] turns/sec"
+--- /usr/ports/games/smm++/work/smm4r4/bin/ssmm	Thu May  4 19:40:23 2000
++++ bin/ssmm	Thu Nov 16 19:06:12 2000
+@@ -1,4 +1,4 @@
+-#!/usr/bin/itkwish
++#!/usr/local/bin/itkwish
+ # ### THIS IS MY PERSONAL STARTUPFILE,    ##################
+ # ### SO DONT BOTHER ABOUT IT      #########################
+ # !!! and dont use it     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+--- /usr/ports/games/smm++/work/smm4r4/bin/sssm	Thu May  4 19:40:29 2000
++++ bin/sssm	Thu Nov 16 19:06:19 2000
+@@ -1,4 +1,4 @@
+-#!/usr/bin/itkwish
++#!/usr/local/bin/itkwish
+ # ### THIS IS MY PERSONAL STARTUPFILE,    ##################
+ # ### SO DONT BOTHER ABOUT IT      #########################
+ # !!! and dont use it     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+--- /usr/ports/games/smm++/work/smm4r4/bin/tester.tcl	Fri Dec 31 23:52:07 1999
++++ bin/tester.tcl	Thu Nov 16 19:06:21 2000
+@@ -1,4 +1,4 @@
+-#!/usr/bin/itkwish
++#!/usr/local/bin/itkwish
+ 
+ set SMMSRCPATH /home/issever/HOME/privat/programming/smm4r3
+ lappend auto_path [file join $SMMSRCPATH sources]

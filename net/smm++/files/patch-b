@@ -1,0 +1,29 @@
+--- /usr/ports/games/smm++/work/smm4r4/docu/INSTALL.unix	Sun Dec 19 13:45:24 1999
++++ docu/INSTALL.unix	Thu Nov 16 19:07:29 2000
+@@ -99,7 +99,7 @@
+      'which itkwish' typed in in the shell gives you the answer, if
+      you dont know it already. Sometimes 'locate itkwish' may help,
+      if itkwish isnt along $PATH.
+-     e.g. /usr/bin/itkwish (default)
++     e.g. /usr/local/bin/itkwish (default)
+ 
+ 
+ From now on I'll explain the installation taking the default values
+@@ -114,7 +114,7 @@
+    to save diskspace.
+ 5. cd smmxxx
+ 6. now edit the file 'smm'
+- a) first line: #!/usr/bin/itkwish
++ a) first line: #!/usr/local/bin/itkwish
+     put in here the right path to itkwish
+  b) line: set SMMPATH    $env(HOME)/.smm
+     put in here the path, where the user data should be stored.
+@@ -162,7 +162,7 @@
+ everything should work OK. 
+ 
+ The first line in 'smm' should look like:
+-#!/usr/bin/itkwish
++#!/usr/local/bin/itkwish
+ 
+ here the path /usr/bin may be wrong.
+ 

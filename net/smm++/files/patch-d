@@ -1,0 +1,8 @@
+--- Makefile	Thu Nov 16 21:16:06 2000
++++ /usr/ports/games/smm++/work/smm4r4/Makefile	Thu Nov 16 21:09:02 2000
+@@ -0,0 +1,5 @@
++install:
++	mkdir /usr/local/smm++
++	cp -r * /usr/local/smm++
++	ln -fs /usr/local/smm++/smm /usr/local/bin/smm
++
