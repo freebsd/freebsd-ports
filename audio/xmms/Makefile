@@ -6,32 +6,41 @@
 #
 
 PORTNAME=	xmms
-PORTVERSION=	1.2.4
-PORTREVISION=	1
+PORTVERSION=	1.2.5
 CATEGORIES+=	audio
-MASTER_SITES=	ftp://ftp.xmms.org/xmms/1.2.x/ 
+MASTER_SITES=	ftp://ftp.xmms.org/xmms/1.2.x/ \
+		http://www.xmms.org/files/1.2.x/ \
+		ftp://ftp.sunet.se/pub/multimedia/xmms/1.2.x/
 
 MAINTAINER?=	esk@ira.uka.de
 
 LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GTK=	yes
 WANT_ESOUND=	yes
 WANT_GNOME=	yes
+USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	configure libxmms/configure
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib" \
-		HAVE_MIKMOD="${HAVE_MIKMOD}" \
-		HAVE_VORBIS="${HAVE_VORBIS}"
+		INPUT_PLUGINS="${INPUT_PLUGINS}" \
+		OUTPUT_PLUGINS="${OUTPUT_PLUGINS}" \
+		VISUALIZATION_PLUGINS="${VISUALIZATION_PLUGINS}"
+MAN1=		gnomexmms.1 wmxmms.1 xmms.1
+
+INPUT_PLUGINS=	cdaudio,idcin,mpg123,tonegen,wav
+OUTPUT_PLUGINS=	OSS,disk_writer
+VISUALIZATION_PLUGINS=	blur_scope,sanalyzer
 
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_MIKMOD)
 LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
-HAVE_MIKMOD=	yes
+INPUT_PLUGINS+=	mikmod
 PLIST_SUB+=	MIKMODPLUGIN:=""
 .else
 PLIST_SUB+=	MIKMODPLUGIN:="@comment "
@@ -39,7 +48,7 @@ PLIST_SUB+=	MIKMODPLUGIN:="@comment "
 
 .if !defined(WITHOUT_VORBIS)
 LIB_DEPENDS+=	vorbis.0:${PORTSDIR}/audio/libvorbis
-HAVE_VORBIS=	yes
+INPUT_PLUGINS+=	vorbis
 PLIST_SUB+=	VORBISPLUGIN:=""
 .else
 PLIST_SUB+=	VORBISPLUGIN:="@comment "
@@ -53,6 +62,7 @@ CONFIGURE_ARGS=	--without-gnome
 
 .if defined(HAVE_ESOUND)
 USE_ESOUND=	yes
+OUTPUT_PLUGINS+=	esd
 PLIST_SUB+=	ESDPLUGIN:=""
 .else
 PLIST_SUB+=	ESDPLUGIN:="@comment "
@@ -87,9 +97,7 @@ pre-extract:
 .endif
 
 pre-patch:
-	@${PERL} -pi -e 's^-l(pthread|c_r)^${PTHREAD_LIBS}^g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/aclocal|\$\(prefix\)/share/aclocal|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'

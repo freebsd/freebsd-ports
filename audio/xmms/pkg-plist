@@ -5,16 +5,16 @@ bin/xmms-config
 %%GNOME:%%etc/CORBA/servers/gnomexmms.gnorba
 %%GNOME:%%share/gnome/applets/Multimedia/gnomexmms.desktop
 include/xmms/configfile.h
-include/xmms/dga.h
 include/xmms/dirbrowser.h
 include/xmms/formatter.h
 include/xmms/fullscreen.h
 include/xmms/plugin.h
+include/xmms/titlestring.h
 include/xmms/util.h
 include/xmms/xmmsctrl.h
 lib/libxmms.a
 lib/libxmms.so
-lib/libxmms.so.1
+lib/libxmms.so.2
 lib/xmms/Effect/libecho.so
 lib/xmms/Effect/libstereo.so
 lib/xmms/Effect/libvoice.so
@@ -46,8 +46,10 @@ share/locale/eo/LC_MESSAGES/xmms.mo
 share/locale/es/LC_MESSAGES/xmms.mo
 share/locale/fr/LC_MESSAGES/xmms.mo
 share/locale/ga/LC_MESSAGES/xmms.mo
+share/locale/gl/LC_MESSAGES/xmms.mo
 share/locale/hr/LC_MESSAGES/xmms.mo
 share/locale/hu/LC_MESSAGES/xmms.mo
+share/locale/id/LC_MESSAGES/xmms.mo
 share/locale/it/LC_MESSAGES/xmms.mo
 share/locale/ja/LC_MESSAGES/xmms.mo
 share/locale/ko/LC_MESSAGES/xmms.mo
@@ -56,16 +58,18 @@ share/locale/lv/LC_MESSAGES/xmms.mo
 share/locale/nl/LC_MESSAGES/xmms.mo
 share/locale/no/LC_MESSAGES/xmms.mo
 share/locale/pl/LC_MESSAGES/xmms.mo
+share/locale/pt/LC_MESSAGES/xmms.mo
 share/locale/pt_BR/LC_MESSAGES/xmms.mo
 share/locale/ro/LC_MESSAGES/xmms.mo
 share/locale/ru/LC_MESSAGES/xmms.mo
 share/locale/sk/LC_MESSAGES/xmms.mo
+share/locale/sr/LC_MESSAGES/xmms.mo
 share/locale/sv/LC_MESSAGES/xmms.mo
 share/locale/tr/LC_MESSAGES/xmms.mo
 share/locale/uk/LC_MESSAGES/xmms.mo
 share/locale/wa/LC_MESSAGES/xmms.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/xmms.mo
-share/locale/zh_TW.Big5/LC_MESSAGES/xmms.mo
+share/locale/zh_TW/LC_MESSAGES/xmms.mo
 @dirrm %%DATADIR%%/xmms
 @dirrm lib/xmms/Visualization
 @dirrm lib/xmms/Output
