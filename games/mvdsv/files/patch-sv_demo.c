@@ -1,6 +1,6 @@
 --- sv_demo.c.orig	Tue Jun  3 17:50:02 2003
 +++ sv_demo.c	Tue Jun  3 17:53:09 2003
-@@ -607,12 +607,12 @@
+@@ -610,12 +610,12 @@
  {
  	if (!USACACHE)
  	{

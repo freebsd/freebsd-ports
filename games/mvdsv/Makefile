@@ -6,29 +6,27 @@
 #
 
 PORTNAME=	mvdsv
-PORTVERSION=	0.165b
+PORTVERSION=	0.1722
 CATEGORIES=	games
-MASTER_SITES=	http://www.wsb.poznan.pl/~pawel/q/q/ktpro/develop/ \
+MASTER_SITES=	http://www.wsb.poznan.pl/~pawel/q/q/ktpro/ \
 		http://freebsd.nsu.ru/distfiles/
-DISTNAME=	qwex_src-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	danfe@regency.nsu.ru
 COMMENT=	Enhanced QuakeWorld server with multi-view demos capability
 
-FORBIDDEN=	Remote buffer overflow exists
-
 MAKEFILE=	${FILESDIR}/Makefile
-WRKSRC=		${WRKDIR}/mvdsrc/source
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/vvd/${PORTNAME}${PORTVERSION}b/source
 
 pre-everything::
+.if !defined(WITH_OPTIMIZED_CFLAGS)
+	@${ECHO_MSG} "Define WITH_OPTIMIZED_CFLAGS to enable extra optimization options"
+.endif
 .if ${MACHINE_ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
 	@${ECHO_MSG} "Define WITHOUT_X86_ASM to disable x86 assembly code"
 .endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-
-post-install:
-	@${SED} -e 's#$${PREFIX}#${PREFIX}#g' ${PKGMESSAGE}
 
 .include <bsd.port.mk>
