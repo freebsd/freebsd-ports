@@ -14,8 +14,6 @@ MASTERDIR=	${.CURDIR}/../../devel/subversion
 PKGDIR=		${.CURDIR}
 PLIST=		${MASTERDIR}/pkg-plist
 
-BROKEN=		Incorrectly installs a perllocal.pod file
-
 WITH_PERL=	yes
 
 .include "${MASTERDIR}/Makefile"
