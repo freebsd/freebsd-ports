@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snort
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.2
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/current/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
