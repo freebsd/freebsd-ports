@@ -1,0 +1,11 @@
+--- zmtx.c.orig	Sat Oct 19 08:53:36 1996
++++ zmtx.c	Sat Oct 19 08:53:14 1996
+@@ -65,7 +65,7 @@
+ 
+ 	cps = ftell(fp) / duration;
+ 
+-	fprintf(stderr,"zmtx: sending file \"%s\" %8ld bytes (%3d %%/%5d cps)           \r",
++	fprintf(stderr,"sending file \"%s\" %8ld bytes (%3d %%/%5d cps)\r",
+ 		name,ftell(fp),percentage,cps);
+ }
+ 
