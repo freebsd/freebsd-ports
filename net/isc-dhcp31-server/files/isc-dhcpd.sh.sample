@@ -29,6 +29,7 @@ dhcpd_withuser=${dhcpd_withuser:-${name}}		# user name to run as
 dhcpd_withgroup=${dhcpd_withgroup:-${name}}		# group name to run as
 
 dhcpd_chroot_enable=${dhcpd_chroot_enable:-"NO"}	# runs chrooted?
+dhcpd_devfs_enable=${dhcpd_devfs_enable:-"YES"}		# devfs if available?
 dhcpd_rootdir=${dhcpd_rootdir:-/var/db/${name}}		# directory to run in
 
 # untested
@@ -58,8 +59,8 @@ precious ()	# entry...
 
 	_rc=0
 	for _entry; do
-		# do nothing if /var/run or /var/db
-		echo ${_entry} | egrep -q '^//*(var//*(run|db)/*)?$' || _rc=1
+		# do nothing if /dev, /var/run or /var/db
+		echo ${_entry} | egrep -q '^//*(dev|var//*(run|db))?/*$' || _rc=1
 	done
 	debug precious: "$@" rc=${_rc}
 	return ${_rc}
@@ -139,7 +140,7 @@ safe_rmdir ()	# dir...
 				safe_run ${_rc} safe_rmdir ${_dir%/*} || _rc=1
 			else
 				warn "unable to remove directory ${_dir}"
-				rc=1
+				_rc=1
 			fi
 		fi
 	done
@@ -162,16 +163,24 @@ safe_touch ()	# file...
 	return ${_rc}
 }
 
-safe_remove ()	# file...
+safe_remove ()	# entry...
 {
-	local _file _rc
+	local _entry _rc
 
 	_rc=0
-	for _file; do
-		if [ -f ${_file} ] &&
-		   ! safe_run ${_rc} rm -f ${_file}; then
-			warn "unable to remove file ${_file}"
-			_rc=1
+	for _entry; do
+		if [ -f ${_entry} ]; then
+			if ! safe_run ${_rc} rm -f ${_entry}; then
+				warn "unable to remove file ${_entry}"
+				_rc=1
+			fi
+		elif [ -d ${_entry} ] &&
+		     ! precious ${_entry} &&
+		     ! mounted ${_entry}; then
+			if ! safe_run ${_rc} rm -rf ${_entry}; then
+				warn "unable to remove directory ${_entry}"
+				_rc=1
+			fi
 		fi
 	done
 	return ${_rc}
@@ -184,12 +193,26 @@ safe_copy ()	# src dst
 	_src=$1 _dst=$2
 
 	_rc=0
-	if ! safe_run ${_rc} safe_remove ${_dst} ||
-	   ! safe_run ${_rc} cp -p ${_src} ${_dst}; then
-		err 1 "unable to copy file ${_src} to ${_dst}"
+	if [ -f ${_src} ]; then
+		if ! safe_run ${_rc} safe_remove ${_dst} ||
+		   ! safe_run ${_rc} cp -p ${_src} ${_dst}; then
+			err 1 "unable to copy file ${_src} to ${_dst}"
+			_rc=1
+		fi
+		safe_run ${_rc} safe_chmog ${_dst} || _rc=1
+	elif [ -d ${_src} ] &&
+	     ! precious ${_dst} &&
+	     ! mounted ${_dst}; then
+		if ! safe_run ${_rc} pax -rw -pe -ts "|^${_src}||" \
+		   ${_src} ${_dst}; then
+			err 1 "unable to copy directory ${_src} to ${_dst}"
+			_rc=1
+		fi
+	else
+		err 1 "unable to copy ${_src} to ${_dst}" \
+		      "-- not a file or a directory"
 		_rc=1
 	fi
-	safe_run ${_rc} safe_chmog ${_dst} || _rc=1
 	return ${_rc}
 }
 
@@ -198,10 +221,12 @@ mounted ()	# dir...
 	local _rc
 
 	_rc=1
-	mount -t devfs | awk '
-	    BEGIN { n = ARGC; ARGC = 2 }
-	    { for (i = 2; i != n; i++) if ($3 == ARGV[i]) exit 1 }
-	' - "$@" || _rc=0
+	if checkyesno dhcpd_devfs_enable; then
+		mount -t devfs | awk '
+		    BEGIN { n = ARGC; ARGC = 2 }
+		    { for (i = 2; i != n; i++) if ($3 == ARGV[i]) exit 1 }
+		' - "$@" || _rc=0
+	fi
 	debug mounted: "$@" rc=${_rc}
 	return ${_rc}
 }
@@ -213,7 +238,8 @@ safe_mount ()	# dir
 	_dir=$1
 
 	_rc=0
-	if ! mounted ${_dir} &&
+	if checkyesno dhcpd_devfs_enable &&
+	   ! mounted ${_dir} &&
 	   ! safe_run ${_rc} mount -t devfs devfs ${_dir}; then
 		err 1 "unable to mount ${_dir}"
 		_rc=1
@@ -228,7 +254,8 @@ safe_umount ()	# dir
 	_dir=$1
 
 	_rc=0
-	if mounted ${_dir} &&
+	if checkyesno dhcpd_devfs_enable &&
+	   mounted ${_dir} &&
 	   ! safe_run ${_rc} umount ${_dir}; then
 		warn "unable to unmount ${_dir}"
 		_rc=1
@@ -311,16 +338,25 @@ check_jail ()
 check_chroot ()
 {
 	if checkyesno paranoia; then
-		if checkyesno dhcpd_chroot_enable &&
-		   [ -z "${dhcpd_rootdir}" ]; then
-			err 1 "dhcpd_rootdir" \
-			      "must be set if dhcpd_chroot_enable is enabled"
+		if checkyesno dhcpd_chroot_enable; then
+			if [ -z "${dhcpd_rootdir}" ]; then
+				err 1 "dhcpd_rootdir must be set" \
+				      "if dhcpd_chroot_enable is enabled"
+			fi
+			if ! ( type mount_devfs ) > /dev/null 2>&1; then
+				warn "dhcpd_devfs_enable disabled" \
+				     "-- not available"
+				dhcpd_devfs_enable=NO
+			fi
+		else
+			dhcpd_devfs_enable=NO
 		fi
 	else
 		if checkyesno dhcpd_chroot_enable; then
 			warn "dhcpd_chroot_enable disabled -- not compiled in"
 			dhcpd_chroot_enable=NO
 		fi
+		dhcpd_devfs_enable=NO
 	fi
 }
 
@@ -346,6 +382,8 @@ rcvar_chroot ()
 {
 	if ! checkyesno paranoia || ! checkyesno dhcpd_chroot_enable; then
 		dhcpd_rootdir=
+	elif checkyesno paranoia && checkyesno dhcpd_chroot_enable; then
+		dhcpd_devdir=${__dhcpd_devdir}
 	fi
 }
 
@@ -364,7 +402,7 @@ rcvar_pidnleases ()
 rcvar_rooted ()
 {
 	_dhcpd_rootdir=${dhcpd_rootdir}
-	_dhcpd_devdir=${dhcpd_rootdir}/dev
+	_dhcpd_devdir=${dhcpd_rootdir}${dhcpd_devdir}
 	_dhcpd_confdir=${dhcpd_rootdir}${dhcpd_confdir}
 	_dhcpd_piddir=${dhcpd_rootdir}${dhcpd_piddir}
 	_dhcpd_leasesdir=${dhcpd_rootdir}${dhcpd_leasesdir}
@@ -404,8 +442,13 @@ setup_umask ()
 setup_chroot ()
 {
 	if checkyesno paranoia && checkyesno dhcpd_chroot_enable; then
-		safe_mkdir ${_dhcpd_rootdir} ${_dhcpd_devdir} ${_dhcpd_confdir}
-		safe_mount ${_dhcpd_devdir}
+		safe_mkdir ${_dhcpd_rootdir} ${_dhcpd_devdir}/_ ${_dhcpd_confdir}
+		safe_rmdir ${_dhcpd_devdir}/_	# /_, so, .../dev is root owned.
+		if checkyesno dhcpd_devfs_enable; then
+			safe_mount ${_dhcpd_devdir}
+		else
+			safe_copy ${dhcpd_devdir} ${_dhcpd_devdir}
+		fi
 		safe_copy ${dhcpd_conffile} ${_dhcpd_conffile}
 	fi
 }
@@ -495,8 +538,13 @@ remove_chroot ()
 {
 	if checkyesno paranoia && checkyesno dhcpd_chroot_enable; then
 		safe_remove ${_dhcpd_conffile}
-		safe_umount ${_dhcpd_devdir}
-		safe_rmdir ${_dhcpd_confdir} ${_dhcpd_devdir} ${_dhcpd_rootdir}
+		if checkyesno dhcpd_devfs_enable; then
+			safe_umount ${_dhcpd_devdir}
+			safe_rmdir ${_dhcpd_devdir}
+		else
+			safe_remove ${_dhcpd_devdir}
+		fi
+		safe_rmdir ${_dhcpd_confdir} ${_dhcpd_rootdir}
 	fi
 }
 
@@ -601,6 +649,7 @@ rcvar=$(set_rcvar)
 load_rc_config ${name}
 
 __dhcpd_uninstall="NO"			# internal use only
+__dhcpd_devdir=/dev			# devices directory
 __dhcpd_piddir=/var/run			# pid file directory
 __dhcpd_leasesdir=/var/db		# leases file directory
 #__dhcpd_rootdir=/var/db/${name}	# root directory
