@@ -33,7 +33,7 @@ libexec/fvwm/%%FVWM_VERSION%%/FvwmDebug
 libexec/fvwm/%%FVWM_VERSION%%/FvwmDragWell
 libexec/fvwm/%%FVWM_VERSION%%/FvwmEvent
 libexec/fvwm/%%FVWM_VERSION%%/FvwmForm
-libexec/fvwm/%%FVWM_VERSION%%/FvwmGtk
+%%GTK%%libexec/fvwm/%%FVWM_VERSION%%/FvwmGtk
 libexec/fvwm/%%FVWM_VERSION%%/FvwmIconBox
 libexec/fvwm/%%FVWM_VERSION%%/FvwmIconMan
 libexec/fvwm/%%FVWM_VERSION%%/FvwmIdent
@@ -51,6 +51,10 @@ libexec/fvwm/%%FVWM_VERSION%%/FvwmTheme
 libexec/fvwm/%%FVWM_VERSION%%/FvwmTile
 libexec/fvwm/%%FVWM_VERSION%%/FvwmWharf
 libexec/fvwm/%%FVWM_VERSION%%/FvwmWinList
+@comment The following are here because they are symlinks
+man/man1/fvwm2.1.gz
+man/man1/xpmroot.1.gz
+@comment End of symlink list
 share/fvwm2/pixmaps/Jlock.xpm
 share/fvwm2/pixmaps/Jnews.xpm
 share/fvwm2/pixmaps/Jrecycle.xpm
