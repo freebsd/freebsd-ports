@@ -46,17 +46,6 @@
  }
  
  gboolean is_audio_cd (const char *device)
-@@ -172,6 +187,10 @@
-   CDMediaType type;
-   int fd, status;
- 
-+  if (tray_is_opened (device)) {
-+    return FALSE;
-+  }
-+
-   type = guess_media_type (device);
-   switch (type) {
-     case CD_MEDIA_TYPE_CD:
 @@ -191,15 +210,19 @@
      return FALSE;
    }

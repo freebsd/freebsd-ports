@@ -1,7 +1,16 @@
---- src/Makefile.in.orig	Tue Jun 15 19:11:10 2004
-+++ src/Makefile.in	Tue Jun 15 19:30:57 2004
-@@ -131,7 +131,7 @@
- install_sh = @install_sh@
+--- src/Makefile.in.orig	Wed Nov 10 22:28:19 2004
++++ src/Makefile.in	Wed Nov 10 22:35:34 2004
+@@ -61,7 +61,7 @@
+ 	sj-about.$(OBJEXT) sj-extracting.$(OBJEXT) $(am__objects_1) \
+ 	$(am__objects_2)
+ sound_juicer_OBJECTS = $(am_sound_juicer_OBJECTS)
+-sound_juicer_LDADD = $(LDADD)
++sound_juicer_LDADD = $(LDADD) -lcam
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I.
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+@@ -228,7 +228,7 @@
+ target_alias = @target_alias@
  
  # General compiler flags
 -AM_CFLAGS = -Wall -Werror -export-dynamic -W -Wno-unused-parameter
@@ -9,12 +18,3 @@
  
  # General CPP flags. When I can demand automake 1.8, this can become
  # sound_juicer_CPPFLAGS.
-@@ -218,7 +218,7 @@
- DEFAULT_INCLUDES =  -I. -I$(srcdir) -I.
- CPPFLAGS = @CPPFLAGS@
- LDFLAGS = @LDFLAGS@
--LIBS = @LIBS@
-+LIBS = @LIBS@ -lcam
- depcomp = $(SHELL) $(top_srcdir)/depcomp
- am__depfiles_maybe = depfiles
- @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/bacon-cd-selection.Po \
