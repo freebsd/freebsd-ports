@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gopchop
-PORTVERSION=	0.9.1
-PORTREVISION=	2
+PORTVERSION=	1.0.0
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://outflux.net/unix/software/GOPchop/download/
@@ -26,10 +25,17 @@ USE_GNOME=	gnometarget gtk12
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--disable-mlib
 
-CPPFLAGS=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include -DHAVE_DECL_GETOPT
+LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| -mcpu=.*"|"|g' ${WRKSRC}/configure
