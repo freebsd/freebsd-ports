@@ -140,6 +140,7 @@
     SUBDIR += flow-tools
     SUBDIR += flowscan
     SUBDIR += forg
+    SUBDIR += fpc-inet
     SUBDIR += fping
     SUBDIR += fprobe
     SUBDIR += freebsd-uucp
