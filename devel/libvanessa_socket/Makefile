@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libvanessa_socket
-PORTVERSION=	0.0.6
-PORTREVISION=	1
+PORTVERSION=	0.0.7
 CATEGORIES=	devel
 MASTER_SITES=	http://www.vergenet.net/linux/vanessa/download/%SUBDIR%/
 MASTER_SITE_SUBDIR=	vanessa_socket/${PORTVERSION}
@@ -22,8 +21,7 @@ LIB_DEPENDS=	vanessa_logger.0:${PORTSDIR}/devel/libvanessa_logger \
 MAN1=		vanessa_socket_pipe.1
 
 INSTALLS_SHLIB=	YES
-
-USE_LIBTOOL_VER=	13
+GNU_CONFIGURE=	YES
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
