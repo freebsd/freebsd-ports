@@ -93,6 +93,8 @@ pre-extract::
 	@${ECHO_MSG}
 
 post-extract::
+# FAKEDIR is here so that nsinstall will install under FAKEDIR, not
+# under PREFIX.  See pre-install and do-install for details.
 	@${SED} -e 's|@CPPFLAGS@|${CPPFLAGS}|'		\
 		-e 's|@CFLAGS@|${CFLAGS}|'		\
 		-e 's|@LDFLAGS@|${LDFLAGS}|'		\
@@ -122,6 +124,9 @@ post-patch:
 		${WRKSRC}/calendar/sunbird/app/profile/all.js
 
 pre-install:
+# Overview:  the program installs itself in FAKEDIR, then a list is made of the
+# files and directories in there.  This is the PLIST (packing list) for the
+# package, replacing the traditional pkg-plist file.
 	@${RM} -rf ${FAKEDIR} ${PLIST}
 	@${MKDIR} ${FAKEDIR}/lib/browser_plugins
 	@${TOUCH} ${PLIST}
@@ -148,6 +153,8 @@ pre-install:
 		${GREP} / >> ${PLIST}
 
 do-install:
+# This is the actual installation.  First, the contents of FAKEDIR are
+# just copied to PREFIX.
 	cd ${FAKEDIR} && ${FIND} * | ${CPIO} -dmp --quiet ${PREFIX}
 
 post-install:
