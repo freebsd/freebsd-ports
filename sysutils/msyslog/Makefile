@@ -7,7 +7,7 @@
 
 PORTNAME=	msyslog
 PORTVERSION=	1.08f
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.corest.com/download/msyslog/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -63,6 +63,12 @@ pre-patch:
 .for f in ${FIXPREFIX}
 	${REINPLACE_CMD} -e "s|/etc/syslog.conf|${PREFIX}/etc/syslog.conf|g" \
 		${WRKSRC}/${f}
+.endfor
+
+post-patch:
+.for f in README src/syslogd.c src/man/im_file.8 src/man/im_streams.8 \
+	 src/man/im_unix.8 src/man/syslogd.8 src/modules/im_streams.c src/modules/im_unix.c
+	${REINPLACE_CMD} -e "s|/dev/log|/var/run/log|" ${WRKSRC}/${f}
 .endfor
 
 post-install:
