@@ -1,5 +1,7 @@
 #! /bin/sh
 
+# $FreeBSD$
+
 # configure.batch - gs driver preconfiguration, batch mode
 # by Andreas Klemm <andreas@FreeBSD.org>
 
