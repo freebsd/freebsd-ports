@@ -173,6 +173,7 @@ share/wesnoth/data/tools/exploder/castle-exploded-convex.cfg
 share/wesnoth/data/tools/exploder/models/castle.cfg
 share/wesnoth/data/translations/brazilian.cfg
 share/wesnoth/data/translations/catalan.cfg
+share/wesnoth/data/translations/czech.cfg
 share/wesnoth/data/translations/danish.cfg
 share/wesnoth/data/translations/dutch.cfg
 share/wesnoth/data/translations/english.cfg
@@ -221,6 +222,7 @@ share/wesnoth/data/units/Drake_Fire.cfg
 share/wesnoth/data/units/Drake_Guard.cfg
 share/wesnoth/data/units/Drake_Mage.cfg
 share/wesnoth/data/units/Drake_Petit.cfg
+share/wesnoth/data/units/Drake_Slasher.cfg
 share/wesnoth/data/units/Drake_Slave.cfg
 share/wesnoth/data/units/Drake_Warrior.cfg
 share/wesnoth/data/units/Drake_Worker.cfg
@@ -479,6 +481,7 @@ share/wesnoth/images/drake-burner-attack-close1.png
 share/wesnoth/images/drake-burner-attack-close2.png
 share/wesnoth/images/drake-burner-attack-ranged.png
 share/wesnoth/images/drake-burner-defend.png
+share/wesnoth/images/drake-burner-flying.png
 share/wesnoth/images/drake-burner.png
 share/wesnoth/images/drake-clasher-attack-spear1.png
 share/wesnoth/images/drake-clasher-attack-spear2.png
@@ -493,6 +496,7 @@ share/wesnoth/images/drake-fighter-attack-close2.png
 share/wesnoth/images/drake-fighter-attack-fire1.png
 share/wesnoth/images/drake-fighter-attack-fire2.png
 share/wesnoth/images/drake-fighter-defend.png
+share/wesnoth/images/drake-fighter-flying.png
 share/wesnoth/images/drake-fighter.png
 share/wesnoth/images/drake-fire-attack-close1.png
 share/wesnoth/images/drake-fire-attack-close2.png
@@ -513,6 +517,17 @@ share/wesnoth/images/drake-mage.png
 share/wesnoth/images/drake-petit-attack.png
 share/wesnoth/images/drake-petit-defend.png
 share/wesnoth/images/drake-petit.png
+share/wesnoth/images/drake-slasher-attack-blade1.png
+share/wesnoth/images/drake-slasher-attack-blade2.png
+share/wesnoth/images/drake-slasher-attack-blade3.png
+share/wesnoth/images/drake-slasher-attack-blade4.png
+share/wesnoth/images/drake-slasher-attack-mace1.png
+share/wesnoth/images/drake-slasher-attack-mace2.png
+share/wesnoth/images/drake-slasher-attack-spear1.png
+share/wesnoth/images/drake-slasher-attack-spear2.png
+share/wesnoth/images/drake-slasher-attack-spear3.png
+share/wesnoth/images/drake-slasher-defend.png
+share/wesnoth/images/drake-slasher.png
 share/wesnoth/images/drake-slave-attack1.png
 share/wesnoth/images/drake-slave-attack2.png
 share/wesnoth/images/drake-slave-defend.png
@@ -521,6 +536,7 @@ share/wesnoth/images/drake-warrior-attack-close1.png
 share/wesnoth/images/drake-warrior-attack-close2.png
 share/wesnoth/images/drake-warrior-attack-ranged.png
 share/wesnoth/images/drake-warrior-defend.png
+share/wesnoth/images/drake-warrior-flying.png
 share/wesnoth/images/drake-warrior.png
 share/wesnoth/images/drake-worker-attack1.png
 share/wesnoth/images/drake-worker-attack2.png
