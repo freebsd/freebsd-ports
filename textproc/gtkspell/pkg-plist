@@ -3,16 +3,6 @@ lib/libgtkspell.a
 lib/libgtkspell.so
 lib/libgtkspell.so.0
 libdata/pkgconfig/gtkspell-2.0.pc
-share/doc/gtkspell/cha-tutorial.html
-share/doc/gtkspell/chapter-tutorial.html
-share/doc/gtkspell/gtk-running.html
-share/doc/gtkspell/gtkspell-gtkspell.html
-share/doc/gtkspell/index.html
-share/doc/gtkspell/index.sgml
-share/doc/gtkspell/reference.html
-share/doc/gtkspell/tutorial-autoconf.html
-share/doc/gtkspell/tutorial-building.html
-share/doc/gtkspell/tutorial.html
 @dirrm share/doc/gtkspell
 @dirrm include/gtkspell-2.0/gtkspell
 @dirrm include/gtkspell-2.0
