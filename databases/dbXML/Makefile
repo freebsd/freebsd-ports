@@ -8,7 +8,7 @@
 PORTNAME=	dbXML
 PORTVERSION=	1.0b2
 CATEGORIES=	databases java
-MASTER_SITES=	http://www.dbxml.org/files/
+MASTER_SITES=	http://www.dbxml.com/files/
 DISTNAME=	dbXML-Core-${PORTVERSION}
 
 MAINTAINER=	rws@procopia.com
