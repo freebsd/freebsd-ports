@@ -6,6 +6,3 @@ bin/sisc
 %%DATADIR%%/sisc.shp
 %%DATADIR%%/slib.scm
 @dirrm %%DATADIR%%
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/README
-@dirrm %%DOCSDIR%%
