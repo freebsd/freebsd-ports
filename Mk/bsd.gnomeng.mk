@@ -20,7 +20,7 @@ _USE_GNOME_ALL=	gnomehack gnomeprefix gnomehier gnomeaudio esound libghttp \
 		glib12 gtk12 libxml gdkpixbuf imlib orbit gnomelibs \
 		gnomecanvas oaf gnomemimedata gconf gnomevfs gnomecc \
 		gnomeprint bonobo libgda gnomedb libglade gal glibwww gtkhtml \
-		gnomecore gnomeaudio
+		gnomecore
 
 gnomehack_PRE_PATCH=	${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
 				's|[(]GNOME_datadir[)]/gnome/|(datadir)/|g ; \
@@ -44,7 +44,6 @@ gnomeprefix_USE_GNOME_IMPL=gnomehier
 
 gnomeaudio_RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/login.wav:${PORTSDIR}/audio/gnomeaudio
 gnomeaudio_DETECT=	${X11BASE}/share/gnome/sounds/login.wav
-gnomeaudio_USE_GNOME_IMPL=gnomehier
 
 ESD_CONFIG?=		${LOCALBASE}/bin/esd-config
 esound_LIB_DEPENDS=	esd.2:${PORTSDIR}/audio/esound
@@ -204,7 +203,7 @@ gtkhtml_USE_GNOME_IMPL=	glibwww gal ghttp gnomecc
 gnomecore_LIB_DEPENDS=	panel_applet.5:${PORTSDIR}/x11/gnomecore
 gnomecore_PKGNAMESUFFIX=-gnome
 gnomecore_DETECT=	${X11BASE}/etc/appletsConf.sh
-gnomecore_USE_GNOME_IMPL=gtkhtml gnomeaudio
+gnomecore_USE_GNOME_IMPL=gnomecc libglade
 
 # This section keeps tests for optional software.  These work off four
 # types of of variables.  WANT_GNOME, WITH_GNOME, HAVE_GNOME and USE_GNOME.
@@ -241,8 +240,8 @@ gnomecore_USE_GNOME_IMPL=gtkhtml gnomeaudio
 # ... Do some other things ...
 # .endif
 
-.if defined(WANT_GNOME) && !defined(WITHOUT_GNOME)
 _USE_GNOME_SAVED:=${USE_GNOME}
+.if defined(WANT_GNOME) && !defined(WITHOUT_GNOME)
 . for component in ${_USE_GNOME_ALL}
 .  if exists(${${component}_DETECT}) || defined(WITH_GNOME)
 HAVE_GNOME+=	${component}
@@ -295,11 +294,13 @@ pre-patch:
 	@${GNOME_PRE_PATCH}
 .endif
 
-.if defined(WANT_GNOME) && ${_USE_GNOME_SAVED}==${USE_GNOME}
+.if defined(WANT_GNOME)
+USE_GNOME?=
+.if ${_USE_GNOME_SAVED}==${USE_GNOME}
 PLIST_SUB+=	GNOME:="@comment " NOGNOME:=""
-.endif
-.if defined(WANT_GNOME) && ${_USE_GNOME_SAVED}!=${USE_GNOME}
+.else
 PLIST_SUB+=	GNOME:="" NOGNOME:="@comment "
+.endif
 .endif
 
 .endif
