@@ -7,6 +7,7 @@
 
 PORTNAME=	balsa2
 PORTVERSION=	2.0.10
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/ \
 		ftp://ftp.newton.cx/pub/balsa/
@@ -20,9 +21,6 @@ LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap20 \
 		aspell.15:${PORTSDIR}/textproc/aspell \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		esmtp.6:${PORTSDIR}/mail/libesmtp \
-		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
-		gnomeprintui-2-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui \
-		gtkhtml-2.0:${PORTSDIR}/www/libgtkhtml \
 		gdbm.3:${PORTSDIR}/databases/gdbm
 RUN_DEPENDS=	${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
 
@@ -32,8 +30,7 @@ USE_LIBTOOL=	yes
 USE_PERL5=	yes
 USE_REINPLACE=	yes
 USE_OPENSSL=	yes
-USE_GNOMENG=	yes
-USE_GNOME=	gnomeprefix gnomehack
+USE_GNOME=	gnomeprefix gnomehack libgnomeui libgnomeprintui libgtkhtml
 LIBTOOLFILES=	libmutt/configure
 CONFIGURE_ARGS=	--enable-threads \
 		--enable-gtkhtml \
@@ -42,7 +39,6 @@ CONFIGURE_ARGS=	--enable-threads \
 		--with-ssl
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib -liconv"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN1=		balsa.1
 
