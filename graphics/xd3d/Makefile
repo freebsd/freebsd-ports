@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xd3d
-PORTVERSION=	8.2.1
+PORTVERSION=	8.2.2
 CATEGORIES=	graphics math
 MASTER_SITES=	http://www.cmap.polytechnique.fr/~jouve/xd3d/
 
@@ -19,8 +19,7 @@ COMMENT=	A simple scientific visualization tool
 # - WITHOUT_IMAGEMAGICK	:	if you don't need to export bitmap images
 #				in gif or png format;
 #
-# - WITHOUT_GIFSICLE	:	if you want to generate some nice animated
-#				gifs;
+# - WITHOUT_GIFSICLE	:	if you don't need to generate animated gifs;
 #
 # - MEMORY_XD3D		:	Max memory for xd3d (MBytes, 64 by default)
 #
