@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.65.1
+PORTVERSION?=	0.67.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/:xmame \
 		http://www.sys2064.com/files/util/:history \
@@ -22,6 +22,7 @@ COMMENT?=	UNIX/X11 port of the Multi Arcade Machine Emulator (MAME)
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 USE_GNOMENG=	yes
 
 MAN6=		x${MAMEMESS}.6
@@ -257,7 +258,7 @@ pre-everything::
 # XXX: The -Imess part was added because of a conflict with cdparanoia-3.9.8_3
 #      which (imho bogusly) installs an 'utils.h' header in $LOCALBASE/include
 do-configure:
-	${SED} -e "s@= gcc@?=  ${CC}@g" \
+	${REINPLACE_CMD} -e "s@= gcc@?=  ${CC}@g" \
 		-e "s@^TARGET.*@TARGET = ${MAMEMESS}@g" \
 		-e "s@# MAME_NET@${NETWORK}MAME_NET@g" \
 		-e "s@# X86_ASM_68000@${ASM_COMMENT}X86_ASM_68000@g" \
@@ -277,7 +278,7 @@ do-configure:
 		-e "s@/usr/X11R6@${X11BASE}@g" \
 		-e "s@^SDL_CONFIG.*@SDL_CONFIG = ${SDL_CONFIG}@g" \
 		-e "s@^GLLIBS=.*@GLLIBS= ${PTHREAD_LIBS}@g" \
-			${WRKSRC}/makefile.unix > ${WRKSRC}/Makefile
+			${WRKSRC}/makefile.unix
 
 post-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} SDL_VIDEODRIVER=aalib \
