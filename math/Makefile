@@ -51,6 +51,7 @@
     SUBDIR += javanns
     SUBDIR += kseg
     SUBDIR += lapack
+    SUBDIR += lapack++
     SUBDIR += libgmp-freebsd
     SUBDIR += libgmp4
     SUBDIR += libneural
