@@ -1,0 +1,27 @@
+# New ports collection makefile for:   vgb
+# Version required:    0.7
+# Date created:        31 October 1996
+# Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
+#
+# $Id$
+#
+
+DISTNAME=	GB
+PKGNAME=        vgb-0.7
+CATEGORIES=	emulator
+MASTER_SITES=	ftp://freefall/pub/FreeBSD/LOCAL_PORTS/
+DISTFILES=	VGB.tar.Z
+
+MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
+
+USE_X11=	yes
+CONFIGURE_ENV+= X11BASE=${X11BASE}
+
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/gblist ${PREFIX}/bin
+	@mkdir -p ${PREFIX}/libexec/VGB ${PREFIX}/share/VGB
+	@${INSTALL_PROGRAM} ${WRKSRC}/vgb ${PREFIX}/libexec/VGB
+	@${INSTALL_DATA} ${WRKSRC}/CART.GB ${PREFIX}/share/VGB
+	@${INSTALL_SCRIPT} ${WRKSRC}/vgb.sh ${PREFIX}/bin/vgb
+
+.include <bsd.port.mk>
