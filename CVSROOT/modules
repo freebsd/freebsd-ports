@@ -2809,6 +2809,7 @@ gnome-icons-ximian-south	ports/x11-themes/gnome-icons-ximian-south
 gnome-industrial-theme	ports/x11-themes/gnome-industrial-theme
 gnome-jabber	ports/net/gnome-jabber
 gnome-look	ports/x11-themes/gnome-look
+gnome-menu-editor	ports/deskutils/gnome-menu-editor
 gnome-mud	ports/net/gnome-mud
 gnome-music-quiz	ports/games/gnome-music-quiz
 gnome-osd	ports/misc/gnome-osd
