@@ -1,0 +1,10 @@
+--- font/Makefile.FreeBSD.orig	Sat Jan 25 19:08:44 1997
++++ font/Makefile.FreeBSD	Fri Dec 24 11:46:26 2004
+@@ -11,6 +11,7 @@
+ .endif
+ 
+ PROG=	fld
++NO_MAN=	yes
+ 
+ .if exists(${.OBJDIR}/../lib)
+ LIBOBJ=	-L${.OBJDIR}/../lib
