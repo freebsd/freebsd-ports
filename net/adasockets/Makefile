@@ -1,4 +1,4 @@
-# New ports collection makefile for:	vreng
+# New ports collection makefile for:	adasockets
 # Date created:		22 May 2000
 # Whom:			sam@inf.enst.fr
 #
@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	adasockets
-PORTVERSION=	0.1.19
+PORTVERSION=	1.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.rfc1149.net/download/adasockets/
 
@@ -15,10 +15,8 @@ MAINTAINER=	sam@inf.enst.fr
 BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
 
 USE_LIBTOOL=	yes
-
-post-install:
-	strip ${PREFIX}/lib/libadasockets.so.0
-	${LDCONFIG} -m ${PREFIX}/lib
+USE_AUTOCONF=	yes
+INSTALLS_SHLIB=	yes
 
 MAN1=		adasockets-config.1
 
