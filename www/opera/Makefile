@@ -12,7 +12,7 @@ MASTER_SITES=	http://opera.online.no/unix/freebsd/612/final/en/static/ \
 		ftp://ftp.opera.com/pub/opera/unix/freebsd/612/final/en/static/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/12./12-/}.1-static-qt.i386.freebsd
 
-MAINTAINER=	des@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
