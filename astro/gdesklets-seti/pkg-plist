@@ -5,10 +5,8 @@ share/gnome/gdesklets/Displays/Seti/gfx/gauge.png
 share/gnome/gdesklets/Displays/Seti/seti.display
 share/gnome/gdesklets/Sensors/Seti/__init__.py
 share/gnome/gdesklets/Sensors/Seti/__init__.pyc
-share/gnome/gdesklets/Sensors/Seti/__init__.pyo
 share/gnome/gdesklets/Sensors/Seti/sah.py
 share/gnome/gdesklets/Sensors/Seti/sah.pyc
-share/gnome/gdesklets/Sensors/Seti/sah.pyo
 @dirrm share/gnome/gdesklets/Sensors/Seti
 @dirrm share/gnome/gdesklets/Displays/Seti/gfx
 @dirrm share/gnome/gdesklets/Displays/Seti
