@@ -1,13 +1,72 @@
---- Makefile.in.orig	Mon Feb 16 12:00:09 1998
-+++ Makefile.in	Fri Feb 20 03:53:10 1998
-@@ -141,8 +141,8 @@
- 	$(CC) -c $(XTRACFLAGS) $(CFLAGS) -Wno-implicit $<
+--- Makefile.in.orig	Sun Jul  5 18:09:59 1998
++++ Makefile.in	Tue Mar 23 16:38:53 1999
+@@ -35,3 +35,3 @@
+ prefix=		@prefix@
+-subdirs=        @allsubdirs@ regex # doc -- use rfc2229 instead
++subdirs=        @allsubdirs@ # regex # doc -- use rfc2229 instead
+ exec_prefix=	@exec_prefix@
+@@ -59,5 +59,5 @@
+ LDFLAGS=        @LDFLAGS@
+-XTRACFLAGS=     @WCFLAGS@ @XTRACFLAGS@ @DEFS@ @CPPFLAGS@ -I. -Iregex
++XTRACFLAGS=     @WCFLAGS@ @XTRACFLAGS@ @DEFS@ @CPPFLAGS@ -I. # -Iregex
+ XTRALDFLAGS=    @WLDFLAGS@ @XTRALDFLAGS@
+-LDLIBS=		@LIBS@ -Lregex -lregex
++LDLIBS=		@LIBS@ -lgnuregex
  
+@@ -77,13 +77,3 @@
+ 		echo making in $$subdir; \
+-	 	if [ "$$subdir" = "zlib" ]; then \
+-			(cd $$subdir \
+-			&& $(MAKE) CC="$(CC)" CFLAGS="$(CFLAGS)" libz.a) \
+-			|| exit 1; \
+-		elif [ "$$subdir" = "regex" ]; then \
+-			(cd $$subdir \
+-			&& $(MAKE) CC="$(CC) $(CFLAGS)" lib) \
+-			|| exit 1; \
+-		else \
+-			(cd $$subdir && $(MAKE)) || exit 1; \
+-		fi \
++		(cd $$subdir && $(MAKE)) || exit 1; \
+ 	done
+@@ -104,3 +94,3 @@
+ dict:: dict.c $(HEADERS) $(CLIOBJS)
+-	$(CC) $(ALLFLAGS) -o $@ $< $(CLIOBJS) $(LDLIBS)
++	$(CC) $(ALLFLAGS) -o $@ $< $(CLIOBJS) -Llibmaa -lmaa
+ 
+@@ -118,7 +108,9 @@
+ 
+-servparse.c: servparse.y
+-	$(YACC) -tdv $<
+-	cmp -s y.tab.h servparse.h || mv y.tab.h servparse.h
+-	cmp -s y.tab.c servparse.c || mv y.tab.c servparse.c
+-	-rm -f y.tab.h y.tab.c
++servparse.c: servparse.h
++
++servparse.h: servparse.y
++	$(YACC) -tdv -b serv $<
++	cmp -s serv.tab.h servparse.h || mv serv.tab.h servparse.h
++	cmp -s serv.tab.c servparse.c || mv serv.tab.c servparse.c
++	-rm -f serv.tab.h serv.tab.c
+ 
+@@ -133,7 +125,9 @@
+ 
+-clientparse.c: clientparse.y
+-	$(YACC) -tdv $<
+-	cmp -s y.tab.h clientparse.h || mv y.tab.h clientparse.h
+-	cmp -s y.tab.c clientparse.c || mv y.tab.c clientparse.c
+-	-rm -f y.tab.h y.tab.c
++clientparse.c: clientparse.h
++
++clientparse.h: clientparse.y
++	$(YACC) -tdv -b client $<
++	cmp -s client.tab.h clientparse.h || mv client.tab.h clientparse.h
++	cmp -s client.tab.c clientparse.c || mv client.tab.c clientparse.c
++	-rm -f client.tab.h client.tab.c
+ 
+@@ -143,4 +137,4 @@
  install.dict: dict
 -	install dict $(bindir)
 -	install -m 644 dict.1 $(man1_prefix)
 +	$(INSTALL) -m 755 -o bin -g bin dict $(bindir)
 +	$(INSTALL) -m 644 -o bin -g bin dict.1 $(man1_prefix)
  
- install.dictzip: dictzip
- 	install dictzip $(bindir)

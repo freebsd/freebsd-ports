@@ -1,0 +1,11 @@
+--- libmaa/configure.in.orig	Sun Jul  5 18:14:34 1998
++++ libmaa/configure.in	Tue Mar 23 16:05:38 1999
+@@ -58,8 +58,2 @@
+ REALCC="$CC"
+-if test "$CC" = gcc; then
+-    CFLAGS='-g -O'
+-    WCFLAGS='-Wall -pedantic'
+-else
+-    CFLAGS='-g'
+-fi
+ 

@@ -3,7 +3,7 @@
 # Date created:        19 February 1998
 # Whom:                Josh Gilliam <josh@quick.net>
 #
-# $Id: Makefile,v 1.4 1998/12/23 19:33:25 obrien Exp $
+# $Id: Makefile,v 1.5 1999/03/22 01:17:24 obrien Exp $
 #
 
 DISTNAME=	dictd-1.4.9
@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.cs.unc.edu/pub/users/faith/dict/ \
 MAINTAINER=	josh@quick.net
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	"--with-cflags=${CFLAGS}"
 USE_GMAKE=	yes
 ALL_TARGET=	dict
 INSTALL_TARGET=	install.dict
