@@ -224,6 +224,7 @@
     SUBDIR += libmorph
     SUBDIR += librsvg
     SUBDIR += librsvg2
+    SUBDIR += libtheora
     SUBDIR += libungif
     SUBDIR += libv3d
     SUBDIR += libwmf

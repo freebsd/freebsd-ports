@@ -1,0 +1,7 @@
+Theora is Xiph.Org's video codec, intended for use within the Ogg
+project's Ogg multimedia streaming system. Theora is derived
+directly from On2's VP3 codec.
+
+This is alpha testing software; the API will probably change.
+
+WWW: http://www.theora.org
