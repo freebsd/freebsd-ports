@@ -1,5 +1,5 @@
---- monitor.c.orig	Fri Jun 21 07:50:51 2002
-+++ monitor.c	Mon Jun 24 20:39:42 2002
+--- monitor.c.orig	Sun Mar 23 20:02:00 2003
++++ monitor.c	Mon Mar 31 16:15:24 2003
 @@ -30,7 +30,7 @@
  #include <openssl/dh.h>
  
@@ -9,21 +9,21 @@
  #endif
  
  #include "ssh.h"
-@@ -656,11 +656,11 @@
+@@ -670,11 +670,11 @@
  int
  mm_answer_skeyquery(int socket, Buffer *m)
  {
 -	struct skey skey;
-+	struct opie opie;
++ 	struct opie opie;
  	char challenge[1024];
- 	int res;
+ 	u_int success;
  
--	res = skeychallenge(&skey, authctxt->user, challenge);
-+	res = opiechallenge(&opie, authctxt->user, challenge);
+-	success = skeychallenge(&skey, authctxt->user, challenge) < 0 ? 0 : 1;
++	success = opiechallenge(&opie, authctxt->user, challenge) < 0 ? 0 : 1;
  
  	buffer_clear(m);
- 	buffer_put_int(m, res);
-@@ -683,8 +683,8 @@
+ 	buffer_put_int(m, success);
+@@ -697,8 +697,8 @@
  
  	authok = (options.challenge_response_authentication &&
  	    authctxt->valid &&

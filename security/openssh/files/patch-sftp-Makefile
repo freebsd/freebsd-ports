@@ -1,5 +1,5 @@
---- sftp/Makefile.orig	Fri May  4 01:09:57 2001
-+++ sftp/Makefile	Wed Oct  3 13:10:32 2001
+--- sftp/Makefile.orig	Sun Jan 12 17:59:14 2003
++++ sftp/Makefile	Mon Mar 31 16:19:55 2003
 @@ -7,13 +7,13 @@
  
  BINMODE?=555
@@ -9,7 +9,7 @@
 +BINDIR=	/bin
 +MAN1=	sftp.1
  
- SRCS=	sftp.c sftp-client.c sftp-int.c sftp-common.c sftp-glob.c misc.c
+ SRCS=	sftp.c sftp-client.c sftp-int.c sftp-common.c sftp-glob.c
  
  .include <bsd.prog.mk>
  
