@@ -1,0 +1,26 @@
+bin/gg
+share/gg/pixmaps/arrow.xpm
+share/gg/pixmaps/away.xpm
+share/gg/pixmaps/cellphone.xpm
+share/gg/pixmaps/chat.xpm
+share/gg/pixmaps/config.xpm
+share/gg/pixmaps/gg.xpm
+share/gg/pixmaps/ignored.xpm
+share/gg/pixmaps/invisible.xpm
+share/gg/pixmaps/malehead.xpm
+share/gg/pixmaps/msg.xpm
+share/gg/pixmaps/offline.xpm
+share/gg/pixmaps/online.xpm
+share/gg/pixmaps/online_connecting.xpm
+share/gg/pixmaps/online_main.xpm
+share/gg/pixmaps/search.xpm
+share/gg/sounds/msg.wav
+share/gg/sounds/usr.wav
+share/gg/sounds/yahoo.wav
+share/gnome/apps/Internet/GnuGadu.desktop
+@unexec rmdir %D/share/gnome/apps/Internet 2>/dev/null || true
+@unexec rmdir %D/share/gnome/apps 2>/dev/null || true
+@unexec rmdir %D/share/gnome 2>/dev/null || true
+@dirrm share/gg/sounds
+@dirrm share/gg/pixmaps
+@dirrm share/gg
