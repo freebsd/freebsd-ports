@@ -1,5 +1,6 @@
 bin/ami
 @exec ln -fs ami %B/wmami
+@unexec rm -f %B/wmami
 bin/hanja-hwp2ami
 share/ami/gtkrc
 share/ami/hanja.dic
