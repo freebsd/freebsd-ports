@@ -38,6 +38,7 @@
     SUBDIR += dbskkd-cdb
     SUBDIR += deepforest
     SUBDIR += devil-fpw
+    SUBDIR += diclookup-emacs20
     SUBDIR += diclookup-mule
     SUBDIR += dserver
     SUBDIR += dvi2dvi
