@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.219 1998/07/20 16:52:45 andreas Exp $
+# $Id: Makefile,v 1.220 1998/08/07 21:59:56 asami Exp $
 #
 
     SUBDIR += FWF
@@ -102,7 +102,6 @@
     SUBDIR += xantfarm
     SUBDIR += xautolock
     SUBDIR += xbae
-    SUBDIR += xbuffy
     SUBDIR += xcb
     SUBDIR += xco
     SUBDIR += xcoloredit

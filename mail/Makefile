@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.70 1998/07/21 17:55:12 asami Exp $
+# $Id: Makefile,v 1.71 1998/07/31 19:10:16 asami Exp $
 #
 
     SUBDIR += adcomplain
@@ -53,6 +53,7 @@
     SUBDIR += smtpfeed
     SUBDIR += tkrat
     SUBDIR += wmmail
+    SUBDIR += xbuffy
     SUBDIR += xfaces
     SUBDIR += xfmail
     SUBDIR += xlbiff
