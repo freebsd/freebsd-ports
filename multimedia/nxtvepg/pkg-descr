@@ -19,6 +19,6 @@ to use nxtvepg.
 
 It is recommended to check the card's setup before using nxtvepg, e.g. with the
 following applications from the ports collection:
-graphic/fxtv for tv tuner and misc/alevtv for Teletext support.
+multimedia/fxtv for tv tuner and misc/alevtv for Teletext support.
 
 WWW: http://nxtvepg.sourceforge.net/

@@ -6,24 +6,32 @@
 #
 
 PORTNAME=	nxtvepg
-PORTVERSION=	2.4.2
-CATEGORIES=	multimedia tcl83 tk83
+PORTVERSION=	2.6.0
+CATEGORIES=	multimedia tcl84 tk84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
 
 MAINTAINER=	barner@gmx.de
 COMMENT=	Viewer for Nextview Electronic TV Programme Guide (needs bktr driver)
 
-LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
+LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
 USE_GMAKE=	yes
 USE_XLIB=	yes
 USE_X_PREFIX=	yes
+MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
 
 MAN1=		nxtvepg.1
 PORTDOCS=	README TODO CHANGES manual.html
 
 .include <bsd.port.pre.mk>
+
+pre-everything::
+.if ${OSVERSION} < 500000
+ONLY_FOR_ARCHS=	i386
+.else
+ONLY_FOR_ARCHS=	alpha i386 ia64
+.endif
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nxtvepg ${PREFIX}/bin
