@@ -4402,7 +4402,7 @@ http_access deny Gopher</pre>
      <affects>
        <package>
          <name>mysql-server</name>
-         <range><lt>3.23.59</lt></range>
+         <range><le>3.23.58_3</le></range>
          <range><ge>4.*</ge><lt>4.0.21</lt></range>
        </package>
      </affects>
@@ -4427,6 +4427,7 @@ http_access deny Gopher</pre>
      <dates>
        <discovery>2004-03-29</discovery>
        <entry>2004-12-16</entry>
+       <modified>2005-03-15</modified>
      </dates>
    </vuln>
 
@@ -4435,7 +4436,7 @@ http_access deny Gopher</pre>
      <affects>
        <package>
          <name>mysql-server</name>
-         <range><lt>3.23.59</lt></range>
+         <range><le>3.23.58_3</le></range>
          <range><ge>4.*</ge><lt>4.0.21</lt></range>
          <range><ge>4.1.*</ge><lt>4.1.1</lt></range>
        </package>
@@ -4463,6 +4464,7 @@ http_access deny Gopher</pre>
      <dates>
        <discovery>2004-01-15</discovery>
        <entry>2004-12-16</entry>
+       <modified>2005-03-15</modified>
      </dates>
    </vuln>
 
@@ -4500,12 +4502,12 @@ http_access deny Gopher</pre>
      <affects>
        <package>
          <name>mysql-server</name>
-         <range><lt>3.23.59</lt></range>
+         <range><le>3.23.58_3</le></range>
          <range><ge>4.*</ge><lt>4.0.21</lt></range>
        </package>
        <package>
          <name>mysql-client</name>
-         <range><lt>3.23.59</lt></range>
+         <range><le>3.23.58_3</le></range>
          <range><ge>4.*</ge><lt>4.0.21</lt></range>
        </package>
      </affects>
@@ -4537,6 +4539,7 @@ http_access deny Gopher</pre>
      <dates>
        <discovery>2004-06-04</discovery>
        <entry>2004-12-16</entry>
+       <modified>2005-03-15</modified>
      </dates>
    </vuln>
 
@@ -4545,7 +4548,7 @@ http_access deny Gopher</pre>
      <affects>
        <package>
          <name>mysql-server</name>
-         <range><lt>3.23.59</lt></range>
+         <range><le>3.23.58_3</le></range>
          <range><ge>4.*</ge><lt>4.0.21</lt></range>
        </package>
      </affects>
@@ -4571,6 +4574,7 @@ http_access deny Gopher</pre>
      <dates>
        <discovery>2004-03-23</discovery>
        <entry>2004-12-16</entry>
+       <modified>2005-03-15</modified>
      </dates>
    </vuln>
 
