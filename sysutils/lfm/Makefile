@@ -7,17 +7,26 @@
 #
 
 PORTNAME=	lfm
-PORTVERSION=	0.9
+PORTVERSION=	0.91
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.terra.es/personal7/inigoserna/lfm/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Last File Manager, a simple 'commander'-type file manager
 
-USE_PYTHON=	yes
+USE_PYTHON=	2.0+
 USE_PYDISTUTILS=	yes
+USE_REINPLACE=	yes
 
-pre-install:
-	@${SH} ${PKGREQ} INSTALL
+post-patch:
+	@${REINPLACE_CMD} -e '/DOC_FILES/d' ${WRKSRC}/setup.py
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in ChangeLog NEWS README README.pyview TODO
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
