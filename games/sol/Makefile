@@ -27,6 +27,12 @@ USE_XPM=	yes
 
 MAN6=		sol.6
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 pre-build:
 	cd ${WRKSRC} && ${GMAKE} depend
 
@@ -46,4 +52,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/sol
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

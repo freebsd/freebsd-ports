@@ -29,6 +29,10 @@ CONFIGURE_ARGS=	--enable-spirit-threadsafe
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 .if ${ARCH} == "amd64"
 IGNORE=		does not build: cc1plus hangs forever (gcc bug)
 .elif ${ARCH} != "i386" && ${ARCH} != "alpha"

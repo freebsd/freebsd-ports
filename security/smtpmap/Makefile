@@ -25,6 +25,12 @@ USE_GMAKE=	yes
 
 MAKEFILE=	makefile
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/makefile.conf
@@ -38,4 +44,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/share/${file} ${DATADIR}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
