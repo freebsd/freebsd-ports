@@ -1,0 +1,28 @@
+# ex:ts=8
+# New ports collection makefile for:	surf
+# Date created:			Apr 23, 2001
+# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	surf
+PORTVERSION=	1.0.3
+CATEGORIES=	math
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	ijliao@FreeBSD.org
+
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		tiff.4:${PORTSDIR}/graphics/tiff
+
+USE_GTK=	yes
+USE_NEWGCC=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+MAN1=	surf.1
+
+.include <bsd.port.mk>
