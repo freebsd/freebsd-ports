@@ -7,28 +7,30 @@
 
 PORTNAME=	tcl-sql
 PORTVERSION=	20000114
-CATEGORIES=	databases tcl82
+CATEGORIES=	databases ${TCL_NODOT}
 MASTER_SITES=	http://www.binevolve.com/~tdarugar/tcl-sql/download/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mi@aldan.algebra.com
 
 LIB_DEPENDS=	mysqlclient.6:${PORTSDIR}/databases/mysql322-client
-RUN_DEPENDS=	tclsh8.2:${PORTSDIR}/lang/tcl82
+RUN_DEPENDS=	${TCL_VERSION:S/tcl/tclsh/}:${PORTSDIR}/lang/${TCL_NODOT}
 
+TCL_VERSION?=	tcl8.3	# Only this needs changing to switch TCL-version
+TCL_NODOT=	${TCL_VERSION:S/.//}
 WRKSRC=		${WRKDIR}/tcl-sql/
+PLIST_SUB=     TCL_VERSION=${TCL_VERSION} LIB_NAME=${LIB_NAME}
 
 do-build:
-	cd ${WRKSRC} && ${MAKE} PREFIX="${PREFIX}" -f ${FILESDIR}/Makefile.bsd
+	cd ${WRKSRC} && ${MAKE} ${PLIST_SUB} -f ${FILESDIR}/Makefile.bsd
 
-SQL_DIR=	${PREFIX}/lib/tcl8.2/sql1.0
+SQL_DIR=	${LOCALBASE}/lib/${TCL_VERSION}/sql1.0
 
 do-install:
 	${MKDIR} ${SQL_DIR}
 	${INSTALL_DATA} ${WRKSRC}/obj/libTclMySQL.so.* ${SQL_DIR}
 	${ECHO} "package ifneeded sql 1.0 \
-		{load \$$tcl_library/sql1.0/`${MAKE} -f \
-			 ${FILESDIR}/Makefile.bsd printname` sql}" \
+		{load ${SQL_DIR}/${LIB_NAME} sql}" \
 		> ${SQL_DIR}/pkgIndex.tcl
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/tcl-MySQL/
@@ -36,3 +38,5 @@ do-install:
 .endif
 
 .include <bsd.port.mk>
+
+LIB_NAME!=	${MAKE} -f ${FILESDIR}/Makefile.bsd printname
