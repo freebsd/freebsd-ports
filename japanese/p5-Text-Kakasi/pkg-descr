@@ -1,0 +1,7 @@
+This is the Kakasi library module for Perl5.
+
+WWW:	http://www.daionet.gr.jp/~knok/kakasi/
+
+Use jman to read the manpage written in Japanese.
+
+	% jman 3 Text::Kakasi

@@ -1,0 +1,12 @@
+--- Makefile.PL~	Wed Sep 29 15:55:02 1999
++++ Makefile.PL	Fri Feb 25 03:21:31 2000
+@@ -3,7 +3,7 @@
+ WriteMakefile(
+ 	      'NAME' => 'Text::Kakasi',
+ 	      'VERSION_FROM' => 'Kakasi.pm',
+-	      'INC' => '-I/usr/local/include',
+-	      'LIBS' => ['-L/usr/local/lib -lkakasi'],
++	      'INC' => "-I$ENV{PREFIX}/include",
++	      'LIBS' => ["-L$ENV{PREFIX}/lib -lkakasi"],
+ 	      'DEFINE' => '-DWAKATIGAKI',
+ );
