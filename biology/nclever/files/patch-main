@@ -1,0 +1,11 @@
+--- main.c.orig	Mon Sep 24 16:34:16 2001
++++ main.c	Mon Sep 24 16:37:26 2001
+@@ -358,7 +358,7 @@
+ /* Read a line from stdin */
+ static Boolean GetCommand(void)
+ {
+-    if (!gets(Command)) return(FALSE);
++    if (!fgets(Command,MAXLINELEN-1,stdin)) return(FALSE);
+     if (EchoCommands) fprintf(CmdStream,"%s\n",Command);
+     return(TRUE);
+ }

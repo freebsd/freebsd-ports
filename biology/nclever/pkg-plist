@@ -1,0 +1,6 @@
+bin/nclever
+%%PORTDOCS%%share/doc/nclever/nclever.citation
+%%PORTDOCS%%share/doc/nclever/nclever_manual.txt
+%%PORTDOCS%%share/doc/nclever/sample_script1.txt
+%%PORTDOCS%%share/doc/nclever/sample_script2.txt
+%%PORTDOCS%%@dirrm share/doc/nclever

@@ -1,0 +1,30 @@
+# New ports collection makefile for:	nclever
+# Date created:				17 August 2001
+# Whom:			 		Tony Maher
+#
+# $FreeBSD$
+#
+
+PORTNAME=	nclever
+PORTVERSION=	4.0
+CATEGORIES=	biology
+MASTER_SITES=	ftp://megasun.bch.umontreal.ca/pub/nclever/
+DISTNAME=	${PORTNAME}${PORTVERSION}
+EXTRACT_SUFX=	.tar.Z
+
+MAINTAINER=	tonym@biolateral.com.au
+
+BUILD_DEPENDS=	${LOCALBASE}/lib/ncbi/libncbi.a:${PORTSDIR}/biology/ncbi-toolkit
+
+do-install:
+	@${MKDIR} ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/nclever ${PREFIX}/bin
+.if !defined(NOPORTSDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/nclever_manual.txt ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/nclever.citation ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/sample_script1.txt ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/sample_script2.txt ${DOCSDIR}
+.endif
+
+.include <bsd.port.mk>

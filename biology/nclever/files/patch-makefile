@@ -1,0 +1,47 @@
+--- Makefile.orig	Thu Dec  7 11:11:31 2000
++++ Makefile	Thu Dec  7 11:34:11 2000
+@@ -29,7 +29,8 @@
+ # NCBI librairies are needed.
+ 
+ # Set the correct path to the NCBI package
+-NCBI    = /usr/local/lib/NCBI
++NCBILIB = /usr/local/lib/ncbi
++NCBIINC = /usr/local/include/ncbi
+ 
+ # Set the name of your ANSI C compiler
+ CC      = gcc
+@@ -39,7 +40,7 @@
+ LIBSNCBI  = -lncbiNacc -lnetentr -lncbicdr -lncbiobj -lnetcli -lncbi
+ # System linking libraries (these are used under Solaris 2.6;
+ # adjust according to your site).
+-LIBSSYS   = -lm -lsocket -lnsl -lxnet
++LIBSSYS   = -lm
+ 
+ #
+ # Nothing to adjust below this line !
+@@ -50,20 +51,20 @@
+ all: nclever
+ 
+ nclever: $(OBJS)
+-	$(CC) $(CCFLAGS) -o nclever -L$(NCBI)/lib $(OBJS) $(LIBSNCBI) $(LIBSSYS)
++	$(CC) $(CCFLAGS) -o nclever -L$(NCBILIB) $(OBJS) $(LIBSNCBI) $(LIBSSYS)
+ 	strip nclever
+ 
+ main.o: main.c main.h
+-	$(CC) $(CCFLAGS) -c -I$(NCBI)/include main.c
++	$(CC) $(CCFLAGS) -c -I$(NCBIINC) main.c
+ 
+ lists.o: lists.c main.h
+-	$(CC) $(CCFLAGS) -c -I$(NCBI)/include lists.c
++	$(CC) $(CCFLAGS) -c -I$(NCBIINC) lists.c
+ 
+ print.o: print.c main.h
+-	$(CC) $(CCFLAGS) -c -I$(NCBI)/include print.c
++	$(CC) $(CCFLAGS) -c -I$(NCBIINC) print.c
+ 
+ entinfo.o: entinfo.c main.h
+-	$(CC) $(CCFLAGS) -c -I$(NCBI)/include entinfo.c
++	$(CC) $(CCFLAGS) -c -I$(NCBIINC) entinfo.c
+ 
+ clean:
+ 	rm *.o
