@@ -67,6 +67,7 @@
     SUBDIR += linemode
     SUBDIR += links
     SUBDIR += linux-flashplugin
+    SUBDIR += linux-lesstif-ns
     SUBDIR += linux-netscape4
     SUBDIR += linux-netscape47-communicator
     SUBDIR += linux-netscape47-navigator
