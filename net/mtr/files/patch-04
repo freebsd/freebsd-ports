@@ -1,0 +1,24 @@
+--- curses.c~	Sat Mar 10 17:04:01 2001
++++ curses.c	Sat Mar 10 17:04:39 2001
+@@ -22,6 +22,7 @@
+ #ifndef NO_CURSES
+ #include <ctype.h>
+ #include <stdlib.h>
++#include <sys/types.h>
+ #include <netdb.h>
+ #include <sys/socket.h>
+ 
+@@ -35,13 +36,6 @@
+ #  include <cursesX.h>
+ #else
+ #  error No curses header file available
+-#endif
+-
+-#if defined(HAVE_SYS_TYPES_H)
+-#include <sys/types.h>
+-#else
+-/* If a system doesn't have sys/types.h, lets hope that time_t is an int */
+-#define time_t int
+ #endif
+ 
+ #ifndef HAVE_ATTRON
