@@ -1,16 +1,16 @@
 # New ports collection makefile for:	libaudiofile
-# Version required:			0.1.6
+# Version required:			0.1.9
 # Date created:				22 Dec 1998
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	audiofile-0.1.6
-PKGNAME=	libaudiofile-0.1.6
+DISTNAME=	audiofile-0.1.9
+PKGNAME=	libaudiofile-0.1.9
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	gnome-1.0/sources
+MASTER_SITE_SUBDIR=	sources/audiofile
 
 MAINTAINER=	vanilla@FreeBSD.org
 

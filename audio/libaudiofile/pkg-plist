@@ -1,6 +1,7 @@
 bin/audiofile-config
 bin/sfconvert
 bin/sfinfo
+include/af_vfs.h
 include/audiofile.h
 include/aupvlist.h
 lib/libaudiofile.a
