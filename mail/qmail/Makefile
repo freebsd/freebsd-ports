@@ -3,7 +3,7 @@
 # Date created:		25 May 1998
 # Whom:			Mario S F Ferreira <lioux@gns.com.br> et al.
 #
-# $Id: Makefile,v 1.5 1998/07/25 21:49:36 hoek Exp $
+# $Id: Makefile,v 1.6 1998/07/28 00:54:03 hoek Exp $
 #
 
 DISTNAME=	qmail-1.03
@@ -45,6 +45,8 @@ MAN8=	qmail-local.8 qmail-lspawn.8 qmail-getpw.8 qmail-remote.8 \
 	qmail-tcpto.8 qmail-pop3d.8 qmail-popup.8 qmail-qmqpc.8 qmail-qmqpd.8 \
 	qmail-qmtpd.8 qmail-smtpd.8 qmail-command.8
 
+PLIST_SUB=	DOCDIR=${DOCDIR}
+
 DOCFILES=	${WRKSRC}/BLURB ${WRKSRC}/BLURB2 ${WRKSRC}/BLURB3 \
 		${WRKSRC}/BLURB4 ${WRKSRC}/INTERNALS ${WRKSRC}/SECURITY \
 		${WRKSRC}/THOUGHTS ${FILESDIR}/PORT_NOTES
@@ -74,8 +76,6 @@ BOOTFILES+=	${FILESDIR}/maildir
 CONFIGUREFILES=	${WRKSRC}/install ${WRKSRC}/dnsfq ${WRKSRC}/hostname \
 		${WRKSRC}/dnsip ${WRKSRC}/ipmeprint ${WRKSRC}/dnsptr
 
-PLIST=	${WRKDIR}/PLIST
-
 .if (${PREFIX} == "/usr/local")
 DOCDIR=	share/doc/qmail
 .else
@@ -92,7 +92,6 @@ do-configure:
 	@PKG_PREFIX=${PREFIX} /usr/bin/perl ${PKGDIR}/INSTALL
 	@${ECHO} ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
 	@${ECHO} ${PREFIX} > ${WRKSRC}/conf-qmail
-	@${SED} s+@DOCDIR@+${DOCDIR}+g ${FILESDIR}/pkg.PLIST > ${PLIST}
 
 post-patch: thereal-post-patch
 

@@ -1,0 +1,156 @@
+%%DOCDIR%%/FAQ
+%%DOCDIR%%/UPGRADE
+%%DOCDIR%%/SENDMAIL
+%%DOCDIR%%/INSTALL
+%%DOCDIR%%/INSTALL.alias
+%%DOCDIR%%/INSTALL.ctl
+%%DOCDIR%%/INSTALL.ids
+%%DOCDIR%%/INSTALL.maildir
+%%DOCDIR%%/INSTALL.mbox
+%%DOCDIR%%/INSTALL.vsm
+%%DOCDIR%%/TEST.deliver
+%%DOCDIR%%/TEST.receive
+%%DOCDIR%%/REMOVE.sendmail
+%%DOCDIR%%/REMOVE.binmail
+%%DOCDIR%%/PIC.local2alias
+%%DOCDIR%%/PIC.local2ext
+%%DOCDIR%%/PIC.local2local
+%%DOCDIR%%/PIC.local2rem
+%%DOCDIR%%/PIC.local2virt
+%%DOCDIR%%/PIC.nullclient
+%%DOCDIR%%/PIC.relaybad
+%%DOCDIR%%/PIC.relaygood
+%%DOCDIR%%/PIC.rem2local
+boot/home
+boot/home+df
+boot/proc
+boot/proc+df
+boot/binm1
+boot/binm1+df
+boot/binm2
+boot/binm2+df
+boot/binm3
+boot/binm3+df
+
+@group qmail
+@mode 04711
+@comment *** NOTE different owner
+@owner qmailq
+bin/qmail-queue
+@owner
+@mode 0700
+bin/qmail-lspawn
+@mode 0700
+bin/qmail-start
+@mode 0711
+bin/qmail-getpw
+@mode 0711
+bin/qmail-local
+@mode 0711
+bin/qmail-remote
+@mode 0711
+bin/qmail-rspawn
+@mode 0711
+bin/qmail-clean
+@mode 0711
+bin/qmail-send
+@mode 0711
+bin/splogger
+@mode 0700
+bin/qmail-newu
+@mode 0700
+bin/qmail-newmrh
+@mode 0711
+bin/qmail-pw2u
+@mode 0755
+bin/qmail-inject
+@mode 0755
+bin/predate
+@mode 0755
+bin/datemail
+@mode 0755
+bin/mailsubj
+@mode 0755
+bin/qmail-showctl
+@mode 0755
+bin/qmail-qread
+@mode 0755
+bin/qmail-qstat
+@mode 0755
+bin/qmail-tcpto
+@mode 0755
+bin/qmail-tcpok
+@mode 0755
+bin/qmail-pop3d
+@mode 0711
+bin/qmail-popup
+@mode 0755
+bin/qmail-qmqpc
+@mode 0755
+bin/qmail-qmqpd
+@mode 0755
+bin/qmail-qmtpd
+@mode 0755
+bin/qmail-smtpd
+@mode 0755
+bin/sendmail
+@mode 0755
+bin/tcp-env
+@mode 0755
+bin/qreceipt
+@mode 0755
+bin/qsmhook
+@mode 0755
+bin/qbiff
+@mode 0755
+bin/forward
+@mode 0755
+bin/preline
+@mode 0755
+bin/condredirect
+@mode 0755
+bin/bouncesaying
+@mode 0755
+bin/except
+@mode 0755
+bin/maildirmake
+@mode 0755
+bin/maildir2mbox
+@mode 0755
+bin/maildirwatch
+@mode 0755
+bin/qail
+@mode 0755
+bin/elq
+@mode 0755
+bin/pinq
+
+@group
+@owner
+@mode
+
+@comment This port installs the following manually (ie. not through qmail-hier)
+configure/install
+configure/config
+configure/dnsfq
+configure/hostname
+configure/dnsip
+configure/ipmeprint
+configure/dnsptr
+%%DOCDIR%%/BLURB
+%%DOCDIR%%/BLURB2
+%%DOCDIR%%/BLURB3
+%%DOCDIR%%/BLURB4
+%%DOCDIR%%/INTERNALS
+%%DOCDIR%%/SECURITY
+%%DOCDIR%%/THOUGHTS
+%%DOCDIR%%/PORT_NOTES
+%%DOCDIR%%/SYSDEPS
+%%DOCDIR%%/mkaliasdir
+boot/maildir
+@dirrm %%DOCDIR%%
+@dirrm configure
+@dirrm boot
+@dirrm bin
+
+@unexec echo "If you are permanently removing qmail, you should also ``rm -Rf ${PKG_PREFIX}/alias ${PKG_PREFIX}/control ${PKG_PREFIX}/queue ${PKG_PREFIX}/users'' and remove the qmail users/groups." | /usr/bin/fmt
