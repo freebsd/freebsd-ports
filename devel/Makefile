@@ -9,6 +9,7 @@
     SUBDIR += SWIG-devel
     SUBDIR += SpecTcl
     SUBDIR += a2dev
+    SUBDIR += acpicatools
     SUBDIR += adabroker
     SUBDIR += ald
     SUBDIR += allegro

@@ -1,0 +1,4 @@
+Acpicatools contains some Intel ACPICA-based utilities for 
+FreeBSD, such as ASL compiler and AML debugger.
+
+WWW: http://developer.intel.com/technology/iapc/acpi/index.htm
