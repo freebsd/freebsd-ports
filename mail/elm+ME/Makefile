@@ -4,7 +4,7 @@
 # Date created:         26 June 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.49 1998/08/28 20:51:28 hoek Exp $
+# $Id: Makefile,v 1.50 1998/09/10 08:08:24 asami Exp $
 #
 
 DISTNAME=       elm-2.4ME+43
@@ -19,7 +19,7 @@ WRKSRC=         ${WRKDIR}/elm2.4.ME+.43
 MAN1=           answer.1 checkalias.1 elm.1 elmalias.1 fastmail.1 \
 		frm.1 listalias.1 messages.1 newalias.1 newmail.1 \
 		printmail.1 readmsg.1
-MLINKS=		frm.1 nfrm.1
+MLINKS=		frm.1 nfrm.1	newmail.1 wnewmail.1
 
 HAS_CONFIGURE=  Yes
 CONFIGURE_SCRIPT= Configure
