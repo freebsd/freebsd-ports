@@ -447,69 +447,68 @@ MASTER_SITE_PERL_CPAN+=	\
 	http://at.cpan.org/modules/by-module/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/lang/perl/CPAN/modules/by-module/%SUBDIR%/
 
+#
+# PostgreSQL mirror sites
+#
+# For the full list, see the following:
+#
+#	http://www.postgresql.org/mirrors-ftp.html
+#
+# Before update mirror list please consult with fenner's distfiles survey.
+#
 MASTER_SITE_PGSQL+= \
 	ftp://ftp3.us.postgresql.org/pub/postgresql/%SUBDIR%/ \
 	ftp://ftp5.us.postgresql.org/pub/PostgreSQL/%SUBDIR%/ \
-	ftp://ftp10.us.postgresql.org/pub/postgresql/%SUBDIR%/ \
-	ftp://ftp13.us.postgresql.org/mirror/postresql/%SUBDIR%/ \
-	ftp://ftp15.us.postgresql.org/%SUBDIR%/ \
 	ftp://ftp8.us.postgresql.org/pub/pgsql/%SUBDIR%/ \
 	ftp://ftp9.us.postgresql.org/pub/mirrors/postgresql/%SUBDIR%/ \
-	ftp://ftp.se.postgresql.org/pub/database/relational/postgresql/%SUBDIR%/ \
-	ftp://ftp2.ch.postgresql.org/mirror/postgresql/%SUBDIR%/ \
-	ftp://ftp.de.postgresql.org/mirror/postgresql/%SUBDIR%/ \
-	ftp://ftp.chg.ru/pub/databases/postgresql/%SUBDIR%/ \
-	ftp://ftp.sunet.se/pub/unix/databases/relational/postgresql/%SUBDIR%/ \
+	ftp://ftp10.us.postgresql.org/pub/postgresql/%SUBDIR%/ \
+	ftp://ftp13.us.postgresql.org/mirror/postgresql/%SUBDIR%/ \
+	ftp://ftp15.us.postgresql.org/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/db/postgresql/&,} \
-	ftp://ftp.us.postgresql.org/%SUBDIR%/ \
 	ftp://ftp.au.postgresql.org/pub/postgresql/%SUBDIR%/ \
 	ftp://ftp.at.postgresql.org/db/www.postgresql.org/pub/%SUBDIR%/ \
 	ftp://ftp.be.postgresql.org/postgresql/%SUBDIR%/ \
+	ftp://ftp.ba.postgresql.org/pub/postgresql/%SUBDIR%/ \
+	ftp://ftp.br.postgresql.org/pub/PostgreSQL/%SUBDIR%/ \
 	ftp://ftp3.ca.postgresql.org/pub/%SUBDIR%/ \
 	ftp://ftp.cl.postgresql.org/pub/GNU/pgsql/%SUBDIR%/ \
 	ftp://ftp2.cr.postgresql.org/pub/Unix/postgres/%SUBDIR%/ \
 	ftp://ftp.cz.postgresql.org/pub/ftp.postgresql.org/%SUBDIR%/ \
 	ftp://ftp2.cz.postgresql.org/pub/postgresql/%SUBDIR%/ \
-	ftp://ftp.dk.postgresql.org/mirrors/postgresql/%SUBDIR%/ \
-	ftp://ftp2.dk.postgresql.org/pub/PostgreSQL/%SUBDIR%/ \
 	ftp://ftp.ee.postgresql.org/mirrors/postgresql/%SUBDIR%/ \
 	ftp://ftp.fr.postgresql.org/%SUBDIR%/ \
 	ftp://ftp2.fr.postgresql.org/postgresql/%SUBDIR%/ \
+	ftp://ftp5.fr.postgresql.org/mirrors/postgresql/%SUBDIR%/ \
+	ftp://ftp.de.postgresql.org/mirror/postgresql/%SUBDIR%/ \
 	ftp://ftp2.de.postgresql.org/pub/comp/os/unix/database/postgresql/%SUBDIR%/ \
 	ftp://ftp3.de.postgresql.org/pub/Mirrors/ftp.postgresql.org/%SUBDIR%/ \
 	ftp://ftp4.de.postgresql.org/pub/postgresql/%SUBDIR%/ \
+	ftp://ftp.gr.postgresql.org/pub/databases/postgresql/%SUBDIR%/ \
 	ftp://ftp.hk.postgresql.org/postgresql/%SUBDIR%/ \
-	ftp://ftp.hu.postgresql.org/pub/postgresql/%SUBDIR%/ \
 	ftp://ftp2.is.postgresql.org/pub/postgresql/%SUBDIR%/ \
 	ftp://ftp.ie.postgresql.org/mirrors/ftp.postgresql.org/pub/%SUBDIR%/ \
 	ftp://ftp2.ie.postgresql.org/mirrors/ftp.postgresql.org/%SUBDIR%/ \
-	ftp://ftp.il.postgresql.org/pub/postgresql/%SUBDIR%/ \
-	ftp://ftp.it.postgresql.org/mirror/postgresql/%SUBDIR%/ \
 	ftp://ftp2.it.postgresql.org/mirrors/postgres/%SUBDIR%/ \
 	ftp://ftp3.it.postgresql.org/postgresql/%SUBDIR%/ \
-	ftp://ftp.jp.postgresql.org/%SUBDIR%/ \
-	ftp://ftp6.jp.postgresql.org/postgresql/%SUBDIR%/ \
 	ftp://ftp.kr.postgresql.org/mirror/database/postgresql/%SUBDIR%/ \
-	ftp://ftp6.kr.postgresql.org/mirror/database/postgresql/%SUBDIR%/ \
-	ftp://ftp.mx.postgresql.org/pub/postgresql/software/%SUBDIR%/ \
-	ftp://ftp.eu.postgresql.org/pub/unix/db/postgresql/%SUBDIR%/ \
+	ftp://ftp.lv.postgresql.org/pub/software/postgresql/%SUBDIR%/ \
 	ftp://ftp.nl.postgresql.org/pub/mirror/postgresql/%SUBDIR%/ \
+	ftp://ftp.eu.postgresql.org/pub/unix/db/postgresql/%SUBDIR%/ \
 	ftp://ftp2.nl.postgresql.org/mirror/postgresql/%SUBDIR%/ \
-	ftp://ftp3.nl.postgresql.org/pub/mirrors/postgresql/%SUBDIR%/ \
 	ftp://ftp4.nl.postgresql.org/postgresql.zeelandnet.nl/%SUBDIR%/ \
-	ftp://ftp5.nl.postgresql.org/pub/postgresql/%SUBDIR%/ \
-	ftp://ftp.nz.postgresql.org/postgresql/%SUBDIR%/ \
 	ftp://ftp.no.postgresql.org/pub/databases/postgresql/%SUBDIR%/ \
 	ftp://ftp2.pl.postgresql.org/mirrors/ftp.postgresql.org/%SUBDIR%/ \
 	ftp://ftp6.pl.postgresql.org/pub/postgresql/%SUBDIR%/ \
 	ftp://ftp7.pl.postgresql.org/pub/mirror/ftp.postgresql.org/%SUBDIR%/ \
-	ftp://ftp.pt.postgresql.org/%SUBDIR%/ \
-	ftp://ftp.ro.postgresql.org/%SUBDIR%/ \
+	ftp://ftp.pt.postgresql.org/postgresql/%SUBDIR%/ \
+	ftp://ftp6.ro.postgresql.org/pub/mirrors/ftp.postgresql.org/%SUBDIR%/ \
 	ftp://ftp.ru.postgresql.org/pub/unix/database/pgsql/%SUBDIR%/ \
+	ftp://ftp2.ru.postgresql.org/pub/databases/postgresql/%SUBDIR%/ \
 	ftp://ftp3.ru.postgresql.org/pub/mirror/postgresql/pub/%SUBDIR%/ \
 	ftp://ftp.za.postgresql.org/%SUBDIR%/ \
-	ftp://ftp4.es.postgresql.org/Mirror/www.postgresql.org/%SUBDIR%/ \
 	ftp://ftp5.es.postgresql.org/mirror/postgresql/%SUBDIR%/ \
+	ftp://ftp.se.postgresql.org/pub/databases/relational/postgresql/%SUBDIR%/ \
+	ftp://ftp2.ch.postgresql.org/mirror/postgresql/%SUBDIR%/ \
 	ftp://ftp.tw.postgresql.org/pub/postgresql/%SUBDIR%/ \
 	ftp://ftp3.tw.postgresql.org/pub/postgresql/%SUBDIR%/ \
 	ftp://ftp.tr.postgresql.org/pub/SQL/postgresql/%SUBDIR%/ \
