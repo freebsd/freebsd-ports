@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	This package provides the basic applications for the KDE system
+COMMENT=	Basic applications for the KDE system
 
 BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 LIB_DEPENDS=	smbclient:${PORTSDIR}/net/samba-libsmbclient
