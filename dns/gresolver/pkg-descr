@@ -1,0 +1,14 @@
+GResolver is a graphical DNS query tool using GTK+. It allows system
+administrators to quickly and easily make the most common DNS queries
+without constructing lengthy dig commands.
+
+GResolver supports all the main resource record types, including AAAA,
+AXFR, MX and TXT, and the appropriate in-addr.arpa address is
+constructed from dotted-quad IP addresses when doing PTR
+queries. There are checkboxes for controlling the most commonly-used
+options.
+
+WWW: http://jodrell.net/projects/gresolver/
+
+- Jean-Yves Lefort
+jylefort@brutele.be

@@ -34,6 +34,7 @@
     SUBDIR += fpdns
     SUBDIR += geta
     SUBDIR += ghtool
+    SUBDIR += gresolver
     SUBDIR += h2n
     SUBDIR += hesiod
     SUBDIR += host
