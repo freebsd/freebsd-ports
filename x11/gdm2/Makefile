@@ -7,7 +7,7 @@
 
 PORTNAME=	gdm2
 PORTVERSION=	2.4.4.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=		sources/${PORTNAME:S/2$//}/2.4
@@ -19,8 +19,9 @@ COMMENT=	GNOME 2 version of xdm display manager
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier libgnomeui librsvg2
+USE_GNOME=	gnomeprefix intlhack gnomehack gnomehier libgnomeui librsvg2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -42,9 +43,9 @@ post-extract:
 		${FILESDIR}/gdm.sh.sample > ${WRKSRC}/gdm.sh.sample
 
 post-patch:
-	${FIND} ${WRKSRC} -name "intltool-merge.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|mkdir $$lang or|mkdir $$lang, 0777 or| ; \
-		 s|^push @INC, "/.*|push @INC, "${LOCALBASE}/share/intltool";|'
+.if ${OSVERSION} >= 450002 && ${OSVERSION} < 500000 || ${OSVERSION} >= 500020
+	@${REINPLACE_CMD} -E -e 's/(..)\.EUC/\1.euc\1/' ${WRKSRC}/config/locale.alias
+.endif
 
 post-install:
 .if !defined(PACKAGE_BUILDING)

@@ -1,18 +1,18 @@
 GDM is installed.
 
-Do _NOT_ use /etc/ttys to start gdm at boot time.  This will result in gdm 
-hanging or restarting constantly.  Instead, copy the included gdm.sh.sample 
+Do _NOT_ use /etc/ttys to start gdm at boot time.  This will result in gdm
+hanging or restarting constantly.  Instead, copy the included gdm.sh.sample
 script to gdm.sh, and restart.  This script is found, by default, in
 /usr/X11R6/etc/rc.d.
 
 GDM uses its own locale.alias file to determine its language and especially
-the GNOME-2 fontencoding. This file is located, by default, in 
-/usr/X11R6/etc/gdm/locale.alias.  By default, the character set for every 
-county using the EURO currency is set to ISO8859-15 in order to enable the 
-EURO sign. If you don't feel comfortable with this, edit this file according 
+the GNOME-2 fontencoding. This file is located, by default, in
+/usr/X11R6/etc/gdm/locale.alias.  By default, the character set for every
+county using the EURO currency is set to ISO8859-15 in order to enable the
+EURO sign. If you don't feel comfortable with this, edit this file according
 to your preferences.
 
-If you are running 5.x and you are running 5.1-RELEASE or earlier, GDM will 
+If you are running 5.x and you are running 5.1-RELEASE or earlier, GDM will
 fail to work due to a bug in OpenPAM.  You can download a patch from
 http://www.FreeBSD.org/~marcus/pam_get_user.c.diff.  You must also have the
 FreeBSD src tree on your system.  Do the following to apply the patch:
