@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.postgresql.org/pub/%SUBDIR%/ \
 		ftp://ftp.chg.ru/pub/databases/postgresql/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/unix/databases/relational/postgresql/%SUBDIR%/ \
 		ftp://ftp2.ch.postgresql.org/mirror/postgresql/%SUBDIR%/ \
-		ftp://ftp4.jp.postgresql.org/mirror/postgresql/%SUBDIR%/ \
+		ftp://ftp.jaist.ac.jp/pub/dbms/PostgreSQL/%SUBDIR%/ \
 		ftp://ftp.us.postgresql.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
 DISTFILES=	postgresql-base-${PORTVERSION}${EXTRACT_SUFX} \
