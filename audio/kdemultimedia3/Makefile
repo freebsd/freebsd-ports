@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.22 1998/12/01 01:49:40 asami Exp $
+# $Id: Makefile,v 1.24 1999/01/07 00:51:33 se Exp $
 #
 
 DISTNAME=	kdemultimedia
@@ -17,7 +17,7 @@ MAINTAINER=	se@freebsd.org
 
 LIB_DEPENDS=	gif.3:${PORTSDIR}/graphics/giflib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		kdecore.2:${PORTSDIR}/x11/kdelibs
+		kdecore.2:${PORTSDIR}/x11/kdelibs11
 
 EXTRACT_CMD=	bzip2
 EXTRACT_BEFORE_ARGS= -cd

@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.20 1998/10/01 18:35:41 brian Exp $
+# $Id: Makefile,v 1.22 1999/01/07 00:51:45 se Exp $
 #
 
 DISTNAME=	kdegames
@@ -17,8 +17,8 @@ MAINTAINER=	se@freebsd.org
 
 LIB_DEPENDS=	gif.3:${PORTSDIR}/graphics/giflib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		kdecore.2:${PORTSDIR}/x11/kdelibs \
-		QwSpriteField.6:${PORTSDIR}/converters/kdesupport
+		kdecore.2:${PORTSDIR}/x11/kdelibs11 \
+		QwSpriteField.6:${PORTSDIR}/converters/kdesupport11
 
 EXTRACT_CMD=	bzip2
 EXTRACT_BEFORE_ARGS= -cd
