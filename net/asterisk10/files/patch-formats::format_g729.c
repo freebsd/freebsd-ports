@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- formats/format_g729.c.orig	Wed Jan 28 23:32:48 2004
-+++ formats/format_g729.c	Thu Feb 19 01:03:30 2004
-@@ -45,7 +45,7 @@
+--- formats/format_g729.c.orig	Mon Feb  7 10:29:19 2005
++++ formats/format_g729.c	Wed Mar  9 06:26:36 2005
+@@ -44,7 +44,7 @@
  	struct ast_frame fr;				/* Frame information */
  	char waste[AST_FRIENDLY_OFFSET];	/* Buffer for sending frames, etc */
  	char empty;							/* Empty character */
@@ -12,7 +9,7 @@ $FreeBSD$
  };
  
  
-@@ -126,11 +126,11 @@
+@@ -125,11 +125,11 @@
  	s->fr.frametype = AST_FRAME_VOICE;
  	s->fr.subclass = AST_FORMAT_G729A;
  	s->fr.offset = AST_FRIENDLY_OFFSET;
@@ -24,10 +21,10 @@ $FreeBSD$
  	s->fr.data = s->g729;
 -	if ((res = read(s->fd, s->g729, 20)) != 20) {
 +	if ((res = read(s->fd, s->g729, 10)) != 10) {
- 		if (res)
+ 		if (res && (res != 10))
  			ast_log(LOG_WARNING, "Short read (%d) (%s)!\n", res, strerror(errno));
  		return NULL;
-@@ -174,7 +174,7 @@
+@@ -173,7 +173,7 @@
  	cur = lseek(fs->fd, 0, SEEK_CUR);
  	max = lseek(fs->fd, 0, SEEK_END);
  	

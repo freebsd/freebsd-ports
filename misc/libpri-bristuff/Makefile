@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libpri
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.6
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.asterisk.org/pub/libpri/ \
 		ftp://ftp.asterisk.org/pub/libpri/old/
@@ -19,7 +19,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	gonzo@univ.kiev.ua
 COMMENT=	A C implementation of the Primary Rate ISDN specification
 
-BRIVER=		bristuff-0.2.0-RC7f
+BRIVER=		bristuff-0.2.0-RC7j
 USE_GMAKE=	yes
 INSTALLS_SHLIB= yes
 
