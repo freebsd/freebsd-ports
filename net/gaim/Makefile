@@ -6,7 +6,7 @@
 
 PORTNAME=	gaim
 PORTVERSION=	0.71
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -32,11 +32,11 @@ MAN1=		gaim.1 gaim-remote.1
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libnss3.so)
+.if !defined(WITHOUT_NSS)
 WITH_NSS=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libgnutls.so)
+.if exists(${LOCALBASE}/lib/libgnutls.so) && !defined(WITHOUT_GNUTLS)
 WITH_GNUTLS=	yes
 .endif
 
@@ -97,7 +97,7 @@ pre-everything::
 	@${ECHO_MSG} "	WITHOUT_GTKSPELL	Turns off spell checking"
 	@${ECHO_MSG} "	WITHOUT_AUDIO		Disable audio support"
 	@${ECHO_MSG} "	WITH_GNUTLS		Enable TLS encryption support"
-	@${ECHO_MSG} "	WITH_NSS		Enable Mozilla NSS encryption support"
+	@${ECHO_MSG} "	WITHOUT_NSS		Disable Mozilla NSS encryption support"
 	@${ECHO_MSG} "	TCL_VER			Use Tcl/Tk (version)"
 	@${ECHO_MSG} ""
 .if !defined(WITH_GNUTLS) && !defined(WITH_NSS)
