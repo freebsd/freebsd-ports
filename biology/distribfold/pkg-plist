@@ -1,0 +1,22 @@
+distribfold/cpu0/blpotential.txt
+distribfold/cpu0/bstdt.val
+distribfold/cpu0/cbdata
+distribfold/cpu0/CompatibilityNotes.txt
+distribfold/cpu0/copyright
+distribfold/cpu0/native.val
+distribfold/cpu0/param19_eef1.inp
+distribfold/cpu0/protein.trj
+distribfold/cpu0/readme1st.txt
+distribfold/cpu0/rotlib.bin.bz2
+distribfold/cpu0/skel.prt
+distribfold/cpu0/solvpar.inp
+distribfold/cpu0/toph19_eef1.inp
+distribfold/cpu0/whatsnew.txt
+distribfold/cpu0/zhangatm.txt
+distribfold/cpu0/zhangeij.txt
+distribfold/cpu0/distrib-update
+distribfold/cpu0/foldit
+distribfold/cpu0/foldtrajlite
+@unexec rmdir %D/distribfold/cpu0 2>/dev/null || true
+etc/rc.d/distribfold.sh
+@unexec rmdir %D/distribfold 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/distribfold`` to remove any binary, configuration and log files left." | fmt

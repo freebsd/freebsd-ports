@@ -1,0 +1,63 @@
+#! /bin/sh
+#
+# $FreeBSD: /tmp/pcvs/ports/biology/distribfold/Attic/pkg-deinstall,v 1.1 2002-10-07 03:07:13 lioux Exp $
+# taken from net/cvsup-mirror
+
+PATH=/bin:/usr/sbin
+
+DNETFOLD_USER=${DNETFOLD_USER:-dnetfold}
+DNETFOLD_GROUP=${DNETFOLD_GROUP:-dnetfold}
+
+ask() {
+    local question default answer
+
+    question=$1
+    default=$2
+    if [ -z "${PACKAGE_BUILDING}" ]; then
+	read -p "${question} [${default}]? " answer
+    fi
+    if [ x${answer} = x ]; then
+	answer=${default}
+    fi
+    echo ${answer}
+}
+
+yesno() {
+    local dflt question answer
+
+    question=$1
+    dflt=$2
+    while :; do
+	answer=$(ask "${question}" "${dflt}")
+	case "${answer}" in
+	[Yy]*)		return 0;;
+	[Nn]*)		return 1;;
+	esac
+	echo "Please answer yes or no."
+    done
+}
+
+delete_account() {
+    local u g home
+
+    u=$1
+    g=$2
+    if yesno "Do you want me to remove group \"${g}\"" y; then
+	pw groupdel -n ${g}
+	echo "Done."
+    fi
+    if yesno "Do you want me to remove user \"${u}\"" y; then
+	eval home=~${u}
+	pw userdel -n ${u}
+	echo "Done."
+	if [ -d "${home}" ]; then
+	    echo "Please remember to remove the home directory \"${home}\""
+	fi
+    fi
+}
+
+if [ x$2 != xDEINSTALL ]; then
+    exit
+fi
+
+delete_account ${DNETFOLD_USER} ${DNETFOLD_GROUP}

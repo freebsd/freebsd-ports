@@ -1,0 +1,16 @@
+--- foldit.orig	Sun Sep 29 16:49:55 2002
++++ foldit	Sun Sep 29 16:50:42 2002
+@@ -1,4 +1,7 @@
+ #!/bin/sh
++
++cd %%DESTINATION_DIR%%
++
+ if [ -f donename.dat ]
+ then
+ 	rm -f tmpfoldit.bat
+@@ -23,4 +26,4 @@
+ 		fi
+ 	fi	
+ fi	
+-./foldtrajlite -f protein -n native 
++exec ./foldtrajlite -f protein -n native 
