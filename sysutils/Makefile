@@ -213,6 +213,7 @@
     SUBDIR += libcdio
     SUBDIR += libchk
     SUBDIR += libgksu
+    SUBDIR += libgksuui
     SUBDIR += libretto-config
     SUBDIR += libutempter
     SUBDIR += lineakd
