@@ -402,6 +402,7 @@
     SUBDIR += xmandel
     SUBDIR += xmfract
     SUBDIR += xmms-avi
+    SUBDIR += xmms-blursk
     SUBDIR += xmms-fishmatic
     SUBDIR += xmms-gforce
     SUBDIR += xmms-goom

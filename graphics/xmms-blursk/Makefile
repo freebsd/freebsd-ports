@@ -1,0 +1,33 @@
+# New ports collection makefile for:	xmms-blursk
+# Date created:				19 Aug 2002
+# Whom:					David Yeske <dyeske@yahoo.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	blursk
+PORTVERSION=	1.3
+CATEGORIES=	graphics
+MASTER_SITES=	http://www.cs.pdx.edu/~kirkenda/blursk/
+PKGNAMEPREFIX=	xmms-
+DISTNAME=	Blursk-${PORTVERSION}
+
+MAINTAINER=	dyeske@yahoo.com
+
+BUILD_DEPENDS=	xmms-config:${PORTSDIR}/audio/xmms
+RUN_DEPENDS=	xmms:${PORTSDIR}/audio/xmms
+
+USE_X_PREFIX=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
+USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
+
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${CFLAGS} ${PTHREAD_CFLAGS}"
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-O2||' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT} \
+		${BUILD_WRKSRC}/Makefile.in
+
+.include <bsd.port.mk>
