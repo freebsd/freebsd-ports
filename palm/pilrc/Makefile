@@ -6,18 +6,20 @@
 #
 
 PORTNAME=	pilrc
-PORTVERSION=	2.5b1
+PORTVERSION=	2.5c
 CATEGORIES=	palm
-MASTER_SITES=	http://www.hig.se/~ardiri/development/palmIII/pilrc/
-DISTNAME=	pilrcsrc
+MASTER_SITES=	http://www.ardiri.com/download/pilrc/
+DISTNAME=	pilrc_src
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		glib12.3:${PORTSDIR}/devel/glib12
 
-USE_ZIP=	YES
-NO_WRKSUBDIR=	YES
+WRKSRC=		${WRKDIR}/pilrc-${PORTVERSION}
+GNU_CONFIGURE=	YES
+CONFIGURE_ENV=	GTK_CONFIG=${X11BASE}/bin/gtk12-config
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pilrc ${WRKSRC}/pilrcui ${PREFIX}/bin
