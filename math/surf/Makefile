@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	surf
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,9 +27,5 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAN1=	surf.1
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
 
 .include <bsd.port.post.mk>
