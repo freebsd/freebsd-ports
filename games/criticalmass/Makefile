@@ -33,6 +33,12 @@ PLIST_FILES=	bin/Packer \
 		share/Critical_Mass/resource.dat
 PLIST_DIRS=	share/Critical_Mass
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG:T}|g ; \
 		 s|^CXXFLAGS|#CXXFLAGS|g ; \
@@ -40,4 +46,4 @@ post-patch:
 	@${GREP} -lR "SDL/SDL" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|SDL/SDL|SDL|g'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
