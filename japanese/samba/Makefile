@@ -7,7 +7,7 @@
 
 PORTNAME=	samba
 PORTVERSION=	${SAMBA_VERSION}.j${SAMBA_JA_VERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese net
 MASTER_SITES=	ftp://ftp.samba.gr.jp/pub/samba-jp/%SUBDIR%/ \
 		ftp://ftp.iij.ad.jp/pub/SAMBA/samba-jp/%SUBDIR%/ \
@@ -107,7 +107,7 @@ CONFIGURE_ARGS+=	--with-msdfs
 .endif
 
 .if defined(WITH_LDAP)
-LIB_DEPENDS+=  ldap.2:${PORTSDIR}/net/openldap20-client
+USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=	--with-ldapsam
 CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
