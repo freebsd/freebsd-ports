@@ -17,22 +17,3 @@
   char homepath[1025];
   char prompt_line[BUFFER_SIZE];
   
-*** chat.c.orig	Sat Sep  2 10:34:02 2000
---- chat.c	Sat Sep  2 10:33:32 2000
-***************
-*** 1458,1464 ****
-    if ((f = fopen("chat.conf", "r")) == NULL) {
-      printf("\n#ERROR: chat.conf not found!\n");
-      printf("        This file must be in your current directory.\n");
-!     printf("        Using defaults...\n");
-      fflush(stdout);
-      return;
-    }
---- 1458,1464 ----
-    if ((f = fopen("chat.conf", "r")) == NULL) {
-      printf("\n#ERROR: chat.conf not found!\n");
-      printf("        This file must be in your current directory.\n");
-!     printf("        You can find example in /usr/local/share/doc/tintin\n");
-      fflush(stdout);
-      return;
-    }
