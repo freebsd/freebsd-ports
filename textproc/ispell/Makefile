@@ -101,7 +101,7 @@ EXTRA_DICT+=	${NLDISTFILE}
 EXTRACT_ONLY+=	${NLDISTFILE}
 .endif
 .if defined(ISPELL_DA)
-DADISTFILE=	ispell-da-1.4.7.tar.gz
+DADISTFILE=	ispell-da-1.4.22.tar.gz
 MASTER_SITES+=	http://da.speling.org/filer/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	asmodai

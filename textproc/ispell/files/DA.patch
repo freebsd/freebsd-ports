@@ -1,5 +1,5 @@
---- ispell-da-1.4.7/Makefile.orig	Tue Jan  2 10:47:45 2001
-+++ ispell-da-1.4.7/Makefile	Wed Jan 10 09:10:51 2001
+--- ispell-da-1.4.22/Makefile.orig	Tue Jan  2 10:47:45 2001
++++ ispell-da-1.4.22/Makefile	Wed Jan 10 09:10:51 2001
 @@ -7,7 +7,7 @@
  	install -o root -g root -m 0644 dansk.aff $(installdir)
  
