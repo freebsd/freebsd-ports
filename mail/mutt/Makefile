@@ -23,7 +23,7 @@ PATCH_SITES=	http://www.spinnaker.de/mutt/compressed/:spinnaker \
 		http://www2.mutt.org.ua/download/mutt-${PORTVERSION}/:vvv \
 		ftp://ftp.mutt.org.ua/pub/mutt/mutt-${PORTVERSION}/:vvv \
 		ftp://ftp2.mutt.org.ua/pub/mutt/mutt-${PORTVERSION}/:vvv
-PATCHFILES=	patch-${PORTVERSION:C/\.[0-9]*$//}.rr.compressed.1.gz:spinnaker \
+PATCHFILES=	patch-${PORTVERSION}.rr.compressed.1.gz:spinnaker \
 		patch-${PORTVERSION:C/\.[0-9]*$//}.vvv.initials.gz:vvv
 PATCH_DIST_STRIP=	-p1
 
@@ -87,13 +87,10 @@ CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
 MAN1=		flea.1 mutt.1 mutt_dotlock.1 muttbug.1
 MAN5=		mbox.5 muttrc.5
 
-pre-patch:
-	cd ${WRKSRC} ; patch < ${FILESDIR}/pre-patch-Makefile.in
-
 .if defined(WITH_MUTT_XFACE)
 post-patch:
 	@${ECHO} "===>  Applying XFACE patch"
-	@slrnface_dir=`${FIND} ${PORTSDIR}/news/slrnface/work -type d \
+	slrnface_dir=`${FIND} ${PORTSDIR}/news/slrnface/work -type d \
 			-name slrnface-\*`; \
 	cd ${BUILD_WRKSRC}; ${PATCH} ${PATCH_ARGS} < $$slrnface_dir/mutt.patch
 .endif
