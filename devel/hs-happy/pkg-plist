@@ -1,5 +1,5 @@
 bin/happy
-bin/happy-1.9
+bin/happy-1.10
 lib/happy.bin
 lib/happy/HappyTemplate
 lib/happy/HappyTemplate-arrays
