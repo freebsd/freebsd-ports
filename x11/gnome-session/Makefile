@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomesession
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-session/2.2
@@ -14,7 +14,7 @@ DISTNAME=	gnome-session-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Session component for the GNOME 2.0 desktop
+COMMENT=	Session component for the GNOME 2 desktop
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -23,7 +23,7 @@ USE_GNOME=	gnomeprefix gnomehack gnomehier libgnomeui
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=	gnome-session.1 gnome-smproxy.1 gnome-wm.1 session-properties.1 \
 	gnome-session-save.1

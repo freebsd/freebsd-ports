@@ -66,18 +66,6 @@ libdata/bonobo/servers/GNOME_Panel.server
 libdata/pkgconfig/libpanelapplet-2.0.pc
 libexec/fish-applet-2
 libexec/notification-area-applet
-share/gnome/control-center-2.0/capplets/gnome-panel-preferences.desktop
-share/gnome/gen_util/pager.glade
-share/gnome/gen_util/tasklist.glade
-share/gnome/gnome-2.0/ui/GNOME_ClockApplet.xml
-share/gnome/gnome-2.0/ui/GNOME_FishApplet.xml
-share/gnome/gnome-2.0/ui/GNOME_MailCheckApplet.xml
-share/gnome/gnome-2.0/ui/GNOME_NotificationAreaApplet.xml
-share/gnome/gnome-2.0/ui/GNOME_PagerApplet.xml
-share/gnome/gnome-2.0/ui/GNOME_Panel_Popup.xml
-share/gnome/gnome-2.0/ui/GNOME_ShowDesktopApplet.xml
-share/gnome/gnome-2.0/ui/GNOME_TasklistApplet.xml
-share/gnome/gnome-panelrc
 share/doc/panel-applet/applet-popups.html
 share/doc/panel-applet/applet-porting.html
 share/doc/panel-applet/applet-writing.html
@@ -89,26 +77,142 @@ share/doc/panel-applet/panel-signals.html
 share/doc/panel-applet/panelapplet.html
 share/doc/panel-applet/server-files.html
 share/doc/panel-applet/session-saving.html
+share/gnome/control-center-2.0/capplets/gnome-panel-preferences.desktop
 share/gnome/fish/fish.glade
+share/gnome/gen_util/pager.glade
+share/gnome/gen_util/tasklist.glade
+share/gnome/gnome-2.0/ui/GNOME_ClockApplet.xml
+share/gnome/gnome-2.0/ui/GNOME_FishApplet.xml
+share/gnome/gnome-2.0/ui/GNOME_MailCheckApplet.xml
+share/gnome/gnome-2.0/ui/GNOME_NotificationAreaApplet.xml
+share/gnome/gnome-2.0/ui/GNOME_PagerApplet.xml
+share/gnome/gnome-2.0/ui/GNOME_Panel_Popup.xml
+share/gnome/gnome-2.0/ui/GNOME_ShowDesktopApplet.xml
+share/gnome/gnome-2.0/ui/GNOME_TasklistApplet.xml
 share/gnome/gnome-panel/glade/panel-test-applets.glade
+share/gnome/gnome-panelrc
 share/gnome/help/clock/C/clock.xml
 share/gnome/help/clock/C/figures/clock_applet.png
 share/gnome/help/clock/C/legal.xml
+share/gnome/help/clock/de/clock.xml
+share/gnome/help/clock/de/figures/clock_applet.png
+share/gnome/help/clock/de/legal.xml
+share/gnome/help/clock/es/clock.xml
+share/gnome/help/clock/es/figures/clock_applet.png
+share/gnome/help/clock/es/legal.xml
+share/gnome/help/clock/fr/clock.xml
+share/gnome/help/clock/fr/figures/clock_applet.png
+share/gnome/help/clock/fr/legal.xml
+share/gnome/help/clock/it/clock.xml
+share/gnome/help/clock/it/figures/clock_applet.png
+share/gnome/help/clock/it/legal.xml
 share/gnome/help/clock/ja/clock.xml
 share/gnome/help/clock/ja/figures/clock_applet.png
 share/gnome/help/clock/ja/legal.xml
+share/gnome/help/clock/ko/clock.xml
+share/gnome/help/clock/ko/figures/clock_applet.png
+share/gnome/help/clock/ko/legal.xml
+share/gnome/help/clock/sv/clock.xml
+share/gnome/help/clock/sv/figures/clock_applet.png
+share/gnome/help/clock/sv/legal.xml
+share/gnome/help/clock/zh_CN/clock.xml
+share/gnome/help/clock/zh_CN/figures/clock_applet.png
+share/gnome/help/clock/zh_CN/legal.xml
+share/gnome/help/clock/zh_TW/clock.xml
+share/gnome/help/clock/zh_TW/figures/clock_applet.png
+share/gnome/help/clock/zh_TW/legal.xml
 share/gnome/help/fish-applet-2/C/figures/fish_applet.png
 share/gnome/help/fish-applet-2/C/fish-applet-2.xml
 share/gnome/help/fish-applet-2/C/legal.xml
+share/gnome/help/fish-applet-2/de/figures/fish_applet.png
+share/gnome/help/fish-applet-2/de/figures/fish_settings.png
+share/gnome/help/fish-applet-2/de/fish-applet-2.xml
+share/gnome/help/fish-applet-2/de/legal.xml
+share/gnome/help/fish-applet-2/es/figures/fish_applet.png
+share/gnome/help/fish-applet-2/es/figures/fish_settings.png
+share/gnome/help/fish-applet-2/es/fish-applet-2.xml
+share/gnome/help/fish-applet-2/es/legal.xml
+share/gnome/help/fish-applet-2/fr/figures/fish_applet.png
+share/gnome/help/fish-applet-2/fr/figures/fish_settings.png
+share/gnome/help/fish-applet-2/fr/fish-applet-2.xml
+share/gnome/help/fish-applet-2/fr/legal.xml
+share/gnome/help/fish-applet-2/it/figures/fish_applet.png
+share/gnome/help/fish-applet-2/it/figures/fish_settings.png
+share/gnome/help/fish-applet-2/it/fish-applet-2.xml
+share/gnome/help/fish-applet-2/it/legal.xml
 share/gnome/help/fish-applet-2/ja/figures/fish_applet.png
 share/gnome/help/fish-applet-2/ja/fish-applet-2.xml
 share/gnome/help/fish-applet-2/ja/legal.xml
+share/gnome/help/fish-applet-2/ko/figures/fish_applet.png
+share/gnome/help/fish-applet-2/ko/figures/fish_settings.png
+share/gnome/help/fish-applet-2/ko/fish-applet-2.xml
+share/gnome/help/fish-applet-2/ko/legal.xml
+share/gnome/help/fish-applet-2/sv/figures/fish_applet.png
+share/gnome/help/fish-applet-2/sv/figures/fish_settings.png
+share/gnome/help/fish-applet-2/sv/fish-applet-2.xml
+share/gnome/help/fish-applet-2/sv/legal.xml
+share/gnome/help/fish-applet-2/zh_CN/figures/fish_applet.png
+share/gnome/help/fish-applet-2/zh_CN/figures/fish_settings.png
+share/gnome/help/fish-applet-2/zh_CN/fish-applet-2.xml
+share/gnome/help/fish-applet-2/zh_CN/legal.xml
+share/gnome/help/fish-applet-2/zh_TW/figures/fish_applet.png
+share/gnome/help/fish-applet-2/zh_TW/figures/fish_settings.png
+share/gnome/help/fish-applet-2/zh_TW/fish-applet-2.xml
+share/gnome/help/fish-applet-2/zh_TW/legal.xml
 share/gnome/help/mailcheck/C/figures/mailcheck_applet.png
 share/gnome/help/mailcheck/C/legal.xml
 share/gnome/help/mailcheck/C/mailcheck.xml
+share/gnome/help/mailcheck/de/figures/mailcheck-applet.png
+share/gnome/help/mailcheck/de/figures/mailcheck-properties-mailbox.png
+share/gnome/help/mailcheck/de/figures/mailcheck-properties-mailcheck.png
+share/gnome/help/mailcheck/de/figures/mailcheck_applet.png
+share/gnome/help/mailcheck/de/legal.xml
+share/gnome/help/mailcheck/de/mailcheck.xml
+share/gnome/help/mailcheck/es/figures/mailcheck-applet.png
+share/gnome/help/mailcheck/es/figures/mailcheck-properties-mailbox.png
+share/gnome/help/mailcheck/es/figures/mailcheck-properties-mailcheck.png
+share/gnome/help/mailcheck/es/figures/mailcheck_applet.png
+share/gnome/help/mailcheck/es/legal.xml
+share/gnome/help/mailcheck/es/mailcheck.xml
+share/gnome/help/mailcheck/fr/figures/mailcheck-applet.png
+share/gnome/help/mailcheck/fr/figures/mailcheck-properties-mailbox.png
+share/gnome/help/mailcheck/fr/figures/mailcheck-properties-mailcheck.png
+share/gnome/help/mailcheck/fr/figures/mailcheck_applet.png
+share/gnome/help/mailcheck/fr/legal.xml
+share/gnome/help/mailcheck/fr/mailcheck.xml
+share/gnome/help/mailcheck/it/figures/mailcheck-applet.png
+share/gnome/help/mailcheck/it/figures/mailcheck-properties-mailbox.png
+share/gnome/help/mailcheck/it/figures/mailcheck-properties-mailcheck.png
+share/gnome/help/mailcheck/it/figures/mailcheck_applet.png
+share/gnome/help/mailcheck/it/legal.xml
+share/gnome/help/mailcheck/it/mailcheck.xml
 share/gnome/help/mailcheck/ja/figures/mailcheck_applet.png
 share/gnome/help/mailcheck/ja/legal.xml
 share/gnome/help/mailcheck/ja/mailcheck.xml
+share/gnome/help/mailcheck/ko/figures/mailcheck-applet.png
+share/gnome/help/mailcheck/ko/figures/mailcheck-properties-mailbox.png
+share/gnome/help/mailcheck/ko/figures/mailcheck-properties-mailcheck.png
+share/gnome/help/mailcheck/ko/figures/mailcheck_applet.png
+share/gnome/help/mailcheck/ko/legal.xml
+share/gnome/help/mailcheck/ko/mailcheck.xml
+share/gnome/help/mailcheck/sv/figures/mailcheck-applet.png
+share/gnome/help/mailcheck/sv/figures/mailcheck-properties-mailbox.png
+share/gnome/help/mailcheck/sv/figures/mailcheck-properties-mailcheck.png
+share/gnome/help/mailcheck/sv/figures/mailcheck_applet.png
+share/gnome/help/mailcheck/sv/legal.xml
+share/gnome/help/mailcheck/sv/mailcheck.xml
+share/gnome/help/mailcheck/zh_CN/figures/mailcheck-applet.png
+share/gnome/help/mailcheck/zh_CN/figures/mailcheck-properties-mailbox.png
+share/gnome/help/mailcheck/zh_CN/figures/mailcheck-properties-mailcheck.png
+share/gnome/help/mailcheck/zh_CN/figures/mailcheck_applet.png
+share/gnome/help/mailcheck/zh_CN/legal.xml
+share/gnome/help/mailcheck/zh_CN/mailcheck.xml
+share/gnome/help/mailcheck/zh_TW/figures/mailcheck-applet.png
+share/gnome/help/mailcheck/zh_TW/figures/mailcheck-properties-mailbox.png
+share/gnome/help/mailcheck/zh_TW/figures/mailcheck-properties-mailcheck.png
+share/gnome/help/mailcheck/zh_TW/figures/mailcheck_applet.png
+share/gnome/help/mailcheck/zh_TW/legal.xml
+share/gnome/help/mailcheck/zh_TW/mailcheck.xml
 share/gnome/help/notification-area/C/figures/notification-area.png
 share/gnome/help/notification-area/C/legal.xml
 share/gnome/help/notification-area/C/notification-area.xml
@@ -116,39 +220,191 @@ share/gnome/help/window-list/C/figures/window_list_applet.png
 share/gnome/help/window-list/C/figures/window_list_group_applet.png
 share/gnome/help/window-list/C/legal.xml
 share/gnome/help/window-list/C/window-list.xml
+share/gnome/help/window-list/de/figures/window_list_applet.png
+share/gnome/help/window-list/de/figures/window_list_group.png
+share/gnome/help/window-list/de/figures/window_list_group_applet.png
+share/gnome/help/window-list/de/legal.xml
+share/gnome/help/window-list/de/window-list.xml
+share/gnome/help/window-list/es/figures/window_list_applet.png
+share/gnome/help/window-list/es/figures/window_list_group.png
+share/gnome/help/window-list/es/figures/window_list_group_applet.png
+share/gnome/help/window-list/es/legal.xml
+share/gnome/help/window-list/es/window-list.xml
+share/gnome/help/window-list/fr/figures/window_list_applet.png
+share/gnome/help/window-list/fr/figures/window_list_group.png
+share/gnome/help/window-list/fr/figures/window_list_group_applet.png
+share/gnome/help/window-list/fr/legal.xml
+share/gnome/help/window-list/fr/window-list.xml
+share/gnome/help/window-list/it/figures/window_list_applet.png
+share/gnome/help/window-list/it/figures/window_list_group.png
+share/gnome/help/window-list/it/figures/window_list_group_applet.png
+share/gnome/help/window-list/it/legal.xml
+share/gnome/help/window-list/it/window-list.xml
 share/gnome/help/window-list/ja/figures/window_list_applet.png
 share/gnome/help/window-list/ja/figures/window_list_group_applet.png
 share/gnome/help/window-list/ja/legal.xml
 share/gnome/help/window-list/ja/window-list.xml
+share/gnome/help/window-list/ko/figures/window_list_applet.png
+share/gnome/help/window-list/ko/figures/window_list_group.png
+share/gnome/help/window-list/ko/figures/window_list_group_applet.png
+share/gnome/help/window-list/ko/legal.xml
+share/gnome/help/window-list/ko/window-list.xml
+share/gnome/help/window-list/sv/figures/window_list_applet.png
+share/gnome/help/window-list/sv/figures/window_list_group.png
+share/gnome/help/window-list/sv/figures/window_list_group_applet.png
+share/gnome/help/window-list/sv/legal.xml
+share/gnome/help/window-list/sv/window-list.xml
+share/gnome/help/window-list/zh_CN/figures/window_list_applet.png
+share/gnome/help/window-list/zh_CN/figures/window_list_group.png
+share/gnome/help/window-list/zh_CN/figures/window_list_group_applet.png
+share/gnome/help/window-list/zh_CN/legal.xml
+share/gnome/help/window-list/zh_CN/window-list.xml
+share/gnome/help/window-list/zh_TW/figures/window_list_applet.png
+share/gnome/help/window-list/zh_TW/figures/window_list_group.png
+share/gnome/help/window-list/zh_TW/figures/window_list_group_applet.png
+share/gnome/help/window-list/zh_TW/legal.xml
+share/gnome/help/window-list/zh_TW/window-list.xml
 share/gnome/help/workspace-switcher/C/figures/workspace_switcher_applet.png
 share/gnome/help/workspace-switcher/C/legal.xml
 share/gnome/help/workspace-switcher/C/workspace-switcher.xml
+share/gnome/help/workspace-switcher/de/figures/workspace_switcher_applet.png
+share/gnome/help/workspace-switcher/de/figures/workspacelist_applet.png
+share/gnome/help/workspace-switcher/de/legal.xml
+share/gnome/help/workspace-switcher/de/workspace-switcher.xml
+share/gnome/help/workspace-switcher/es/figures/workspace_switcher_applet.png
+share/gnome/help/workspace-switcher/es/figures/workspacelist_applet.png
+share/gnome/help/workspace-switcher/es/legal.xml
+share/gnome/help/workspace-switcher/es/workspace-switcher.xml
+share/gnome/help/workspace-switcher/fr/figures/workspace_switcher_applet.png
+share/gnome/help/workspace-switcher/fr/figures/workspacelist_applet.png
+share/gnome/help/workspace-switcher/fr/legal.xml
+share/gnome/help/workspace-switcher/fr/workspace-switcher.xml
+share/gnome/help/workspace-switcher/it/figures/workspace_switcher_applet.png
+share/gnome/help/workspace-switcher/it/figures/workspacelist_applet.png
+share/gnome/help/workspace-switcher/it/legal.xml
+share/gnome/help/workspace-switcher/it/workspace-switcher.xml
 share/gnome/help/workspace-switcher/ja/figures/workspace_switcher_applet.png
 share/gnome/help/workspace-switcher/ja/legal.xml
 share/gnome/help/workspace-switcher/ja/workspace-switcher.xml
+share/gnome/help/workspace-switcher/ko/figures/workspace_switcher_applet.png
+share/gnome/help/workspace-switcher/ko/figures/workspacelist_applet.png
+share/gnome/help/workspace-switcher/ko/legal.xml
+share/gnome/help/workspace-switcher/ko/workspace-switcher.xml
+share/gnome/help/workspace-switcher/sv/figures/workspace_switcher_applet.png
+share/gnome/help/workspace-switcher/sv/figures/workspacelist_applet.png
+share/gnome/help/workspace-switcher/sv/legal.xml
+share/gnome/help/workspace-switcher/sv/workspace-switcher.xml
+share/gnome/help/workspace-switcher/zh_CN/figures/workspace_switcher_applet.png
+share/gnome/help/workspace-switcher/zh_CN/figures/workspacelist_applet.png
+share/gnome/help/workspace-switcher/zh_CN/legal.xml
+share/gnome/help/workspace-switcher/zh_CN/workspace-switcher.xml
+share/gnome/help/workspace-switcher/zh_TW/figures/workspace_switcher_applet.png
+share/gnome/help/workspace-switcher/zh_TW/figures/workspacelist_applet.png
+share/gnome/help/workspace-switcher/zh_TW/legal.xml
+share/gnome/help/workspace-switcher/zh_TW/workspace-switcher.xml
 share/gnome/idl/gnome-panel-2.0/GNOME_Panel.idl
 share/gnome/omf/gnome-panel/clock-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/clock-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/clock-de.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/clock-de.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/clock-es.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/clock-es.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/clock-fr.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/clock-fr.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/clock-it.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/clock-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/clock-ja.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/clock-ja.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/clock-ko.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/clock-ko.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/clock-sv.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/clock-sv.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/clock-zh_CN.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/clock-zh_CN.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/clock-zh_TW.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/clock-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/fish-applet-2-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/fish-applet-2-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/fish-applet-2-de.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/fish-applet-2-de.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/fish-applet-2-es.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/fish-applet-2-es.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/fish-applet-2-fr.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/fish-applet-2-fr.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/fish-applet-2-it.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/fish-applet-2-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/fish-applet-2-ja.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/fish-applet-2-ja.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/fish-applet-2-ko.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/fish-applet-2-ko.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/fish-applet-2-sv.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/fish-applet-2-sv.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/fish-applet-2-zh_CN.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/fish-applet-2-zh_CN.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/fish-applet-2-zh_TW.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/fish-applet-2-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/mailcheck-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/mailcheck-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/mailcheck-de.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/mailcheck-de.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/mailcheck-es.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/mailcheck-es.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/mailcheck-fr.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/mailcheck-fr.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/mailcheck-it.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/mailcheck-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/mailcheck-ja.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/mailcheck-ja.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/mailcheck-ko.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/mailcheck-ko.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/mailcheck-sv.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/mailcheck-sv.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/mailcheck-zh_CN.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/mailcheck-zh_CN.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/mailcheck-zh_TW.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/mailcheck-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/notification-area-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/notification-area-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/window-list-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/window-list-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/window-list-de.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/window-list-de.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/window-list-es.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/window-list-es.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/window-list-fr.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/window-list-fr.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/window-list-it.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/window-list-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/window-list-ja.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/window-list-ja.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/window-list-ko.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/window-list-ko.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/window-list-sv.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/window-list-sv.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/window-list-zh_CN.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/window-list-zh_CN.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/window-list-zh_TW.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/window-list-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/workspace-switcher-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/workspace-switcher-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/workspace-switcher-de.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/workspace-switcher-de.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/workspace-switcher-es.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/workspace-switcher-es.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/workspace-switcher-fr.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/workspace-switcher-fr.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/workspace-switcher-it.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/workspace-switcher-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/workspace-switcher-ja.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/workspace-switcher-ja.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/workspace-switcher-ko.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/workspace-switcher-ko.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/workspace-switcher-sv.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/workspace-switcher-sv.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/workspace-switcher-zh_CN.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/workspace-switcher-zh_CN.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/workspace-switcher-zh_TW.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/workspace-switcher-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/panel/gnome-panel-preferences.glade
 share/gnome/panel/gnome-panel-screenshot.glade
 share/gnome/pixmaps/fish/fishanim.png
@@ -156,18 +412,19 @@ share/gnome/pixmaps/fish/footguy.png
 share/gnome/pixmaps/fish/monkey.png
 share/gnome/pixmaps/fish/oldwanda.png
 share/gnome/pixmaps/gnome-fish.png
+share/gnome/pixmaps/gnome-show-desktop.png
 share/gnome/pixmaps/mailcheck/eclouds.png
 share/gnome/pixmaps/mailcheck/email-e.png
 share/gnome/pixmaps/mailcheck/email-eclouds.png
 share/gnome/pixmaps/mailcheck/email-tiny.png
 share/gnome/pixmaps/mailcheck/email.png
 share/gnome/pixmaps/mailcheck/tux-anim.png
-share/gnome/pixmaps/gnome-show-desktop.png
 share/locale/am/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ar/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/az/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/be/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/bg/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/bn/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ca/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/cs/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/da/LC_MESSAGES/gnome-panel-2.0.mo
@@ -184,6 +441,7 @@ share/locale/fr/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ga/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/gl/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/he/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/hi/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/hu/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/it/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ja/LC_MESSAGES/gnome-panel-2.0.mo
@@ -192,6 +450,7 @@ share/locale/li/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/lt/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/lv/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/mk/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/ml/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/mn/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ms/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/nl/LC_MESSAGES/gnome-panel-2.0.mo
@@ -204,50 +463,131 @@ share/locale/ro/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ru/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/sk/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/sl/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/sp/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/sq/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/sr/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/sr@Latn/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/sv/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ta/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/tr/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/uk/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/vi/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/wa/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/yi/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
 @dirrm share/gnome/omf/gnome-panel
 @dirrm share/gnome/idl/gnome-panel-2.0
+@dirrm share/gnome/help/workspace-switcher/zh_TW/figures
+@dirrm share/gnome/help/workspace-switcher/zh_TW
+@dirrm share/gnome/help/workspace-switcher/zh_CN/figures
+@dirrm share/gnome/help/workspace-switcher/zh_CN
+@dirrm share/gnome/help/workspace-switcher/sv/figures
+@dirrm share/gnome/help/workspace-switcher/sv
+@dirrm share/gnome/help/workspace-switcher/ko/figures
+@dirrm share/gnome/help/workspace-switcher/ko
 @dirrm share/gnome/help/workspace-switcher/ja/figures
 @dirrm share/gnome/help/workspace-switcher/ja
+@dirrm share/gnome/help/workspace-switcher/it/figures
+@dirrm share/gnome/help/workspace-switcher/it
+@dirrm share/gnome/help/workspace-switcher/fr/figures
+@dirrm share/gnome/help/workspace-switcher/fr
+@dirrm share/gnome/help/workspace-switcher/es/figures
+@dirrm share/gnome/help/workspace-switcher/es
+@dirrm share/gnome/help/workspace-switcher/de/figures
+@dirrm share/gnome/help/workspace-switcher/de
 @dirrm share/gnome/help/workspace-switcher/C/figures
 @dirrm share/gnome/help/workspace-switcher/C
 @dirrm share/gnome/help/workspace-switcher
+@dirrm share/gnome/help/window-list/zh_TW/figures
+@dirrm share/gnome/help/window-list/zh_TW
+@dirrm share/gnome/help/window-list/zh_CN/figures
+@dirrm share/gnome/help/window-list/zh_CN
+@dirrm share/gnome/help/window-list/sv/figures
+@dirrm share/gnome/help/window-list/sv
+@dirrm share/gnome/help/window-list/ko/figures
+@dirrm share/gnome/help/window-list/ko
 @dirrm share/gnome/help/window-list/ja/figures
 @dirrm share/gnome/help/window-list/ja
+@dirrm share/gnome/help/window-list/it/figures
+@dirrm share/gnome/help/window-list/it
+@dirrm share/gnome/help/window-list/fr/figures
+@dirrm share/gnome/help/window-list/fr
+@dirrm share/gnome/help/window-list/es/figures
+@dirrm share/gnome/help/window-list/es
+@dirrm share/gnome/help/window-list/de/figures
+@dirrm share/gnome/help/window-list/de
 @dirrm share/gnome/help/window-list/C/figures
 @dirrm share/gnome/help/window-list/C
 @dirrm share/gnome/help/window-list
 @dirrm share/gnome/help/notification-area/C/figures
 @dirrm share/gnome/help/notification-area/C
 @dirrm share/gnome/help/notification-area
+@dirrm share/gnome/help/mailcheck/zh_TW/figures
+@dirrm share/gnome/help/mailcheck/zh_TW
+@dirrm share/gnome/help/mailcheck/zh_CN/figures
+@dirrm share/gnome/help/mailcheck/zh_CN
+@dirrm share/gnome/help/mailcheck/sv/figures
+@dirrm share/gnome/help/mailcheck/sv
+@dirrm share/gnome/help/mailcheck/ko/figures
+@dirrm share/gnome/help/mailcheck/ko
 @dirrm share/gnome/help/mailcheck/ja/figures
 @dirrm share/gnome/help/mailcheck/ja
+@dirrm share/gnome/help/mailcheck/it/figures
+@dirrm share/gnome/help/mailcheck/it
+@dirrm share/gnome/help/mailcheck/fr/figures
+@dirrm share/gnome/help/mailcheck/fr
+@dirrm share/gnome/help/mailcheck/es/figures
+@dirrm share/gnome/help/mailcheck/es
+@dirrm share/gnome/help/mailcheck/de/figures
+@dirrm share/gnome/help/mailcheck/de
 @dirrm share/gnome/help/mailcheck/C/figures
 @dirrm share/gnome/help/mailcheck/C
 @dirrm share/gnome/help/mailcheck
+@dirrm share/gnome/help/fish-applet-2/zh_TW/figures
+@dirrm share/gnome/help/fish-applet-2/zh_TW
+@dirrm share/gnome/help/fish-applet-2/zh_CN/figures
+@dirrm share/gnome/help/fish-applet-2/zh_CN
+@dirrm share/gnome/help/fish-applet-2/sv/figures
+@dirrm share/gnome/help/fish-applet-2/sv
+@dirrm share/gnome/help/fish-applet-2/ko/figures
+@dirrm share/gnome/help/fish-applet-2/ko
 @dirrm share/gnome/help/fish-applet-2/ja/figures
 @dirrm share/gnome/help/fish-applet-2/ja
+@dirrm share/gnome/help/fish-applet-2/it/figures
+@dirrm share/gnome/help/fish-applet-2/it
+@dirrm share/gnome/help/fish-applet-2/fr/figures
+@dirrm share/gnome/help/fish-applet-2/fr
+@dirrm share/gnome/help/fish-applet-2/es/figures
+@dirrm share/gnome/help/fish-applet-2/es
+@dirrm share/gnome/help/fish-applet-2/de/figures
+@dirrm share/gnome/help/fish-applet-2/de
 @dirrm share/gnome/help/fish-applet-2/C/figures
 @dirrm share/gnome/help/fish-applet-2/C
 @dirrm share/gnome/help/fish-applet-2
+@dirrm share/gnome/help/clock/zh_TW/figures
+@dirrm share/gnome/help/clock/zh_TW
+@dirrm share/gnome/help/clock/zh_CN/figures
+@dirrm share/gnome/help/clock/zh_CN
+@dirrm share/gnome/help/clock/sv/figures
+@dirrm share/gnome/help/clock/sv
+@dirrm share/gnome/help/clock/ko/figures
+@dirrm share/gnome/help/clock/ko
 @dirrm share/gnome/help/clock/ja/figures
 @dirrm share/gnome/help/clock/ja
+@dirrm share/gnome/help/clock/it/figures
+@dirrm share/gnome/help/clock/it
+@dirrm share/gnome/help/clock/fr/figures
+@dirrm share/gnome/help/clock/fr
+@dirrm share/gnome/help/clock/es/figures
+@dirrm share/gnome/help/clock/es
+@dirrm share/gnome/help/clock/de/figures
+@dirrm share/gnome/help/clock/de
 @dirrm share/gnome/help/clock/C/figures
 @dirrm share/gnome/help/clock/C
 @dirrm share/gnome/help/clock
-@dirrm share/gnome/gen_util
 @dirrm share/gnome/gnome-panel/glade
 @dirrm share/gnome/gnome-panel
+@dirrm share/gnome/gen_util
 @dirrm share/gnome/fish
 @dirrm share/doc/panel-applet
 @dirrm include/panel-2.0
@@ -292,13 +632,53 @@ share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
 @dirrm etc/gconf/gconf.xml.defaults/apps/panel
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnome_panel_screenshot
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/clock-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/clock-de.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/clock-es.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/clock-fr.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/clock-it.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/clock-ja.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/clock-ko.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/clock-sv.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/clock-zh_CN.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/clock-zh_TW.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/fish-applet-2-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/fish-applet-2-de.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/fish-applet-2-es.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/fish-applet-2-fr.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/fish-applet-2-it.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/fish-applet-2-ja.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/fish-applet-2-ko.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/fish-applet-2-sv.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/fish-applet-2-zh_CN.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/fish-applet-2-zh_TW.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/mailcheck-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/mailcheck-de.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/mailcheck-es.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/mailcheck-fr.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/mailcheck-it.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/mailcheck-ja.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/mailcheck-ko.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/mailcheck-sv.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/mailcheck-zh_CN.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/mailcheck-zh_TW.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/notification-area-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/window-list-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/window-list-de.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/window-list-es.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/window-list-fr.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/window-list-it.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/window-list-ja.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/window-list-ko.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/window-list-sv.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/window-list-zh_CN.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/window-list-zh_TW.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/workspace-switcher-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/workspace-switcher-de.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/workspace-switcher-es.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/workspace-switcher-fr.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/workspace-switcher-it.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/workspace-switcher-ja.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/workspace-switcher-ko.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/workspace-switcher-sv.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/workspace-switcher-zh_CN.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/workspace-switcher-zh_TW.omf 2>/dev/null || /usr/bin/true
