@@ -1,0 +1,4 @@
+lib/libgail-gnome.a
+lib/libgail-gnome.so
+lib/libgail-gnome.so.0
+libdata/pkgconfig/libgail-gnome.pc
