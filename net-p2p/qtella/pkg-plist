@@ -1,4 +1,10 @@
 bin/qtella
+share/qtella/language/qtella_de.qm
+share/qtella/language/qtella_fi.qm
+share/qtella/language/qtella_nb.qm
+share/qtella/language/qtella_pt_BR.qm
+share/qtella/language/qtella_sv.qm
+@dirrm share/qtella/language
 share/qtella/pixmaps/remove.xpm
 share/qtella/pixmaps/ball_g.xpm
 share/qtella/pixmaps/ball_r.xpm
