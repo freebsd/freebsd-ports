@@ -121,7 +121,7 @@ pre-patch:
 		's,/usr/doc/python-docs-,${PREFIX}/share/doc/python,g' \
 		${WRKSRC}/Lib/pydoc.py
 
-post-configure:
+post-configure: ${STACKLESS_POST_CONFIGURE}
 	@# prepare a subdir for shared build
 .for subdir in Modules Parser Python Objects
 	${MKDIR} ${SHARED_WRKSRC}/${subdir}
