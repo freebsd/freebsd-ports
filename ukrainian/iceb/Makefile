@@ -35,7 +35,7 @@ CONFIGURE_ENV=	ICEB_DB_LIB=${LOCALBASE}/lib/mysql
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 500000
-BROKEN=		Doesn't compile on -current
+BROKEN=		Does not compile on -current. Maintainer informed.
 .endif
 
 post-patch:
