@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	vpopmail
-PORTVERSION=	4.9.6.1
+PORTVERSION=	4.9.8
 CATEGORIES=	mail
 MASTER_SITES=	http://www.inter7.com/vpopmail/
-DISTNAME=	vpopmail-4.9.6-1
 
 MAINTAINER=	nbm@FreeBSD.org
 
