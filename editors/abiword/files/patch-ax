@@ -1,0 +1,10 @@
+--- ../wv/libole2/ms-ole.h	Sun Oct  6 20:18:41 2002
++++ ../wv/libole2/ms-ole.h.new	Sun Oct  6 20:18:48 2002
+@@ -20,6 +20,7 @@
+ #if defined(__QNXNTO__)
+ # include <sys/types.h>	
+ #endif
++# include <sys/types.h>	
+ # include <fcntl.h>       /* for mode_t */
+ #else
+ # include <stdlib.h>
