@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pipemeter
-PORTVERSION=	0.8.4
+PORTVERSION=	0.9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ports.abditum.com/pipemeter/ \
 		http://spamaps.org/files/pipemeter/
@@ -18,14 +18,15 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		pipemeter.1
-DOCS=		Changelog README
+PORTDOCS=	Changelog README
+PLIST_FILES=	bin/pipemeter
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pipemeter ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/pipemeter.1 ${MAN1PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
