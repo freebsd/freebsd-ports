@@ -5,6 +5,7 @@ bin/ssh-add
 bin/ssh-agent
 bin/ssh-askpass
 bin/ssh-keygen
+bin/make-ssh-known-hosts
 etc/ssh_config
 etc/ssh_host_key
 etc/ssh_host_key.pub
