@@ -7,16 +7,16 @@
 
 PORTNAME=	icewm
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/icewm/
 MASTER_SITE_SUBDIR=	icewm
 PKGNAMESUFFIX=	-i18n
-DISTNAME=	icewm-${PORTVERSION}
 EXTRACT_SUFX=	.src.tar.gz
 
 PATCH_SITES=	http://www.gnome.gr.jp/~yatt/dist/
-PATCHFILES=	icewm-1.0.4-nls.patch4.gz
+PATCHFILES=	${PORTNAME}-${PORTVERSION}-nls.patch5.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	yatt@msc.biglobe.ne.jp
@@ -34,7 +34,7 @@ USE_XPM=	yes
 
 CONFIGURE_ARGS=	--enable-i18n --enable-nls
 CONFIGURE_ENV=	CXXFLAGS=-I${LOCALBASE}/include \
-		LIBS="-L${LOCALBASE}/lib -lxpg4"
+		LIBS="-L${LOCALBASE}/lib"
 INSTALL_TARGET=	install install-po
 
 .if defined(WITH_GNOME)
