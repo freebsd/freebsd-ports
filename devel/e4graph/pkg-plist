@@ -1,5 +1,6 @@
 bin/testcore
 include/e4graph.h
+%%PYTHON%%include/e4py.h
 include/e4xml.h
 include/t4graph.h
 include/t4graph_c.h
@@ -7,6 +8,9 @@ include/t4xml_c.h
 lib/libe4graph.so
 lib/libe4graph.so.0
 lib/libe4graph.so.0.0.0
+%%PYTHON%%lib/libe4py.so
+%%PYTHON%%lib/libe4py.so.0
+%%PYTHON%%lib/libe4py.so.0.0.0
 lib/libe4xml.so
 lib/libe4xml.so.0
 lib/libe4xml.so.0.0.0
