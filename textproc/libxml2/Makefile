@@ -42,6 +42,10 @@ PLIST_SUB+=	PYTHON:="@comment "
 PKGNAMESUFFIX=	-nopython
 .endif
 
+.if defined(LIBXML_WITHOUT_THREADS)
+CONFIGURE_ARGS+=	--without-threads
+.endif
+
 .if defined(WITH_SCHEMA)
 CONFIGURE_ARGS+=	--with-schemas
 .endif
@@ -63,6 +67,7 @@ pre-everything::
 	@${ECHO_MSG} "libxml2 has the following tunables:"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "		WITHOUT_PYTHON=yes	Turns off Python support"
+	@${ECHO_MSG} "		LIBXML_WITHOUT_THREADS=yes	Turns off pthread support"
 	@${ECHO_MSG} "		WITH_SCHEMA=yes		Turns on XML Schema support"
 	@${ECHO_MSG} "		WITH_MEM_DEBUG=yes	Turns on memory debugging"
 	@${ECHO_MSG} "		WITH_XMLLINT_HIST=yes	Turns on history for xmllint"
