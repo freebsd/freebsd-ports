@@ -30,6 +30,7 @@
     SUBDIR += mhc-xemacs21-mule
     SUBDIR += moneydance
     SUBDIR += mrproject
+    SUBDIR += narval
     SUBDIR += notebook
     SUBDIR += offix-trash
     SUBDIR += phpgroupware

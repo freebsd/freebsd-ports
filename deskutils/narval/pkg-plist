@@ -1,0 +1,252 @@
+bin/horn
+bin/narval
+bin/npm
+etc/narval.conf
+lib/%%PYTHON_VERSION%%/site-packages/narval/Engine.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/Engine.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/EngineListener.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/EngineListener.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/Horn.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/Horn.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/MemoryListener.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/MemoryListener.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/NarvalRC.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/NarvalRC.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/PlanListener.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/PlanListener.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/RpcServer.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/RpcServer.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/bibal.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/bibal.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/check_deps.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/check_deps.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/config.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/config.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/debug.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/debug.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/dom/ALDOMImplementation.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/dom/ALDOMImplementation.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/dom/ALDomAbstraction.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/dom/ALDomAbstraction.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/dom/ALDomletteReader.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/dom/ALDomletteReader.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/dom/ActionElement.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/dom/ActionElement.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/dom/ChangeListeners.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/dom/ChangeListeners.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/dom/Match.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/dom/Match.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/dom/MemoryDocument.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/dom/MemoryDocument.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/dom/NarvalStylesheetReader.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/dom/NarvalStylesheetReader.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/dom/PlanElement.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/dom/PlanElement.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/dom/Prototype.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/dom/Prototype.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/dom/RecipeElement.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/dom/RecipeElement.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/dom/StepElement.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/dom/StepElement.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/dom/Tags.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/dom/Tags.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/dom/TransformElement.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/dom/TransformElement.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/dom/TransitionElement.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/dom/TransitionElement.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/dom/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/dom/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/en/LC_MESSAGES/Horn.mo
+lib/%%PYTHON_VERSION%%/site-packages/narval/ext/HTMLDTD.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/ext/HTMLDTD.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/ext/HtmlLib.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/ext/HtmlLib.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/ext/XHtml2HtmlPrinter.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/ext/XHtml2HtmlPrinter.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/ext/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/ext/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/ext/pDomletteReader.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/ext/pDomletteReader.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/fr/LC_MESSAGES/Horn.mo
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/AboutWindow.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/AboutWindow.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/AddStepWindow.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/AddStepWindow.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/Commands.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/Commands.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/ConnectionWindow.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/ConnectionWindow.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/DialogWindow.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/DialogWindow.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/DirectorySelector.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/DirectorySelector.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/EngineController.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/EngineController.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/EngineModel.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/EngineModel.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/EventView.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/EventView.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/HelpWindow.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/HelpWindow.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/HornActioner.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/HornActioner.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/HornCli.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/HornCli.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/HornCodes.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/HornCodes.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/HornGuiController.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/HornGuiController.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/HornModel.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/HornModel.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/HornRPC.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/HornRPC.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/HornView.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/HornView.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/MemoryCodes.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/MemoryCodes.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/MemoryController.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/MemoryController.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/MemoryModel.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/MemoryModel.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/MemoryView.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/MemoryView.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/MessageView.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/MessageView.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/NarvalDTD.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/NarvalDTD.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/NarvalProxy.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/NarvalProxy.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/NpmManager.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/NpmManager.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/Observer.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/Observer.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/PrefController.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/PrefController.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/PrefManager.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/PrefManager.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/PrefModel.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/PrefModel.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/PrefView.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/PrefView.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/PropertyWindow.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/PropertyWindow.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/RecipeCodes.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/RecipeCodes.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/RecipeController.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/RecipeController.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/RecipeGraphicView.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/RecipeGraphicView.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/RecipeLayout.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/RecipeLayout.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/RecipeModel.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/RecipeModel.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/RecipeTextView.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/RecipeTextView.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/RecipeTreeView.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/RecipeTreeView.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/RecipeWindow.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/RecipeWindow.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/SchedulerView.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/SchedulerView.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/Singleton.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/Singleton.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/gui/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/lib.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/lib.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/npm.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/npm.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/services/BaseService.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/services/BaseService.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/services/ComService.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/services/ComService.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/services/EventScheduler.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/services/EventScheduler.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/services/RPC.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/services/RPC.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/services/Soap.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/services/Soap.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/services/SocketManager.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/services/SocketManager.pyc
+lib/%%PYTHON_VERSION%%/site-packages/narval/services/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/narval/services/__init__.pyc
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/narval/dom
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/narval/en/LC_MESSAGES
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/narval/en
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/narval/ext
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/narval/fr/LC_MESSAGES
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/narval/fr
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/narval/gui
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/narval/services
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/narval
+share/narval/data/horn_preferences.xml
+share/narval/data/memory.xml
+share/narval/data/narvalrc.xml
+share/narval/extensions/__init__.py
+share/narval/extensions/xmlrep/__init__.py
+share/narval/extensions/xmlrep/vcal.py
+share/narval/graphics/element.xpm
+share/narval/graphics/element_s.xpm
+share/narval/graphics/error.xpm
+share/narval/graphics/error_s.xpm
+share/narval/graphics/module.xpm
+share/narval/graphics/module_s.xpm
+share/narval/graphics/plan.xpm
+share/narval/graphics/plan_s.xpm
+share/narval/graphics/recipe.xpm
+share/narval/graphics/recipe_s.xpm
+share/narval/graphics/splash.xpm
+share/narval/graphics/transform.xpm
+share/narval/graphics/transform_s.xpm
+share/narval/modules/AccessControl.py
+share/narval/modules/Basic.py
+share/narval/modules/Checksum.py
+share/narval/modules/Classify.py
+share/narval/modules/Diff.py
+share/narval/modules/Download.py
+share/narval/modules/Email.py
+share/narval/modules/Http.py
+share/narval/modules/Ldap.py
+share/narval/modules/__init__.py
+share/narval/modules/xmlrep.py
+share/narval/recipes/email.xml
+share/narval/transforms/basic/change_file_url.xslt
+share/narval/transforms/basic/email2html.xslt
+share/narval/transforms/basic/flathtml2http-response.xslt
+share/narval/transforms/basic/rss2html.xslt
+share/narval/transforms/extensions/__init__.py
+share/narval/transforms/extensions/narval_ext.py
+@dirrm share/narval/data
+@dirrm share/narval/dtd
+@dirrm share/narval/extensions/xmlrep
+@dirrm share/narval/extensions
+@dirrm share/narval/graphics
+@dirrm share/narval/modules
+@dirrm share/narval/recipes
+@dirrm share/narval/transforms/Email
+@dirrm share/narval/transforms/basic
+@dirrm share/narval/transforms/extensions
+@dirrm share/narval/transforms
+@dirrm share/narval
+share/doc/Narval-%%PORTVERSION%%/ANNOUNCE.en
+share/doc/Narval-%%PORTVERSION%%/ANNOUNCE.fr
+share/doc/Narval-%%PORTVERSION%%/CHANGELOG
+share/doc/Narval-%%PORTVERSION%%/CONTRIBUTORS
+share/doc/Narval-%%PORTVERSION%%/README
+share/doc/Narval-%%PORTVERSION%%/README.UNIX
+share/doc/Narval-%%PORTVERSION%%/README.WIN32
+share/doc/Narval-%%PORTVERSION%%/doc/UML/README
+share/doc/Narval-%%PORTVERSION%%/faq.en.xml
+share/doc/Narval-%%PORTVERSION%%/license.txt
+@dirrm share/doc/Narval-%%PORTVERSION%%/doc/UML
+@dirrm share/doc/Narval-%%PORTVERSION%%/doc/manuals/modules_programmer_handbook
+@dirrm share/doc/Narval-%%PORTVERSION%%/doc/manuals/narval_technical_manual/images
+@dirrm share/doc/Narval-%%PORTVERSION%%/doc/manuals/narval_technical_manual
+@dirrm share/doc/Narval-%%PORTVERSION%%/doc/manuals/narval_user_manual/images
+@dirrm share/doc/Narval-%%PORTVERSION%%/doc/manuals/narval_user_manual
+@dirrm share/doc/Narval-%%PORTVERSION%%/doc/manuals/tutorial
+@dirrm share/doc/Narval-%%PORTVERSION%%/doc/manuals
+@dirrm share/doc/Narval-%%PORTVERSION%%/doc
+@dirrm share/doc/Narval-%%PORTVERSION%%
