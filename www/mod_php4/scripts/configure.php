@@ -28,6 +28,7 @@ OpenLDAP	"OpenLDAP support" OFF \
 SNMP		"SNMP support" OFF \
 XML		"XML support" OFF \
 FTP		"File Transfer Protocol support" OFF \
+CURL		"CURL support" OFF \
 gettext		"gettext library support" OFF \
 japanese	"jstring and mbregex module" OFF \
 YP		"YP/NIS support" OFF \
@@ -165,6 +166,10 @@ while [ "$1" ]; do
 		\"FTP\")
 			echo "CONFIGURE_ARGS+=--enable-ftp"
 			;;
+		\"CURL\")
+			echo "CONFIGURE_ARGS+=--with-curl=\${PREFIX}"
+			echo "BUILD_DEPENDS+=	\${PREFIX}/lib/libcurl.a:\${PORTSDIR}/ftp/curl"
+                        ;;
 		\"gettext\")
 			echo "LIB_DEPENDS+=	intl.1:\${PORTSDIR}/devel/gettext"
 			echo "CONFIGURE_ARGS+=--with-gettext=\${PREFIX}"
