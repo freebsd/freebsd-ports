@@ -1,31 +1,5 @@
 --- bashline.c.deo	Tue May  7 12:52:42 2002
 +++ bashline.c	Sun Sep  8 18:17:30 2002
-@@ -1044,6 +1044,7 @@
- 	}
-       else
- 	{
-+#define CMD_IS_DIR(x) (absolute_pathname(x) == 0 && *(x) != '~' && test_for_directory (x))
- 	  matches = rl_completion_matches (text, command_word_completion_function);
- 	  /* If we are attempting command completion and nothing matches, we
- 	     do not want readline to perform filename completion for us.  We
-@@ -1052,7 +1053,7 @@
- 	     filenames and leave directories in the match list. */
- 	  if (matches == (char **)NULL)
- 	    rl_ignore_some_completions_function = bash_ignore_filenames;
--	  else if (matches[1] == 0 && *matches[0] != '/')
-+	  else if (matches[1] == 0 && CMD_IS_DIR(matches[0]))
- 	    /* Turn off rl_filename_completion_desired so readline doesn't
- 	       append a slash if there is a directory with the same name
- 	       in the current directory, or other filename-specific things.
-@@ -1061,7 +1062,7 @@
- 	       looking in the current directory anyway, so there's no
- 	       conflict. */
- 	    rl_filename_completion_desired = 0;
--	  else if (matches[0] && matches[1] && STREQ (matches[0], matches[1]) && *matches[0] != '/')
-+	  else if (matches[0] && matches[1] && STREQ (matches[0], matches[1]) && CMD_IS_DIR (matches[0]))
- 	    /* There are multiple instances of the same match (duplicate
- 	       completions haven't yet been removed).  In this case, all of
- 	       the matches will be the same, and the duplicate removal code
 @@ -1873,10 +1874,6 @@
      }
  }
