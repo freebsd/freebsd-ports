@@ -14,9 +14,18 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+LIB_DEPENDS=	gmp:${PORTSDIR}/math/libgmp4
+CONFIGURE_ENV+=	GMP=${LOCALBASE}
+.else
+CONFIGURE_ENV+= GMP=/usr
+.endif
+
 PERL_CONFIGURE=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Math::GMP.3
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
