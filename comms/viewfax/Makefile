@@ -3,11 +3,11 @@
 # Date created:         16 sept 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.7 1996/11/18 11:44:07 asami Exp $
+# $Id: Makefile,v 1.8 1997/06/09 15:03:56 jmz Exp $
 #
 DISTNAME=        viewfax-2.3
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.leo.org/pub/comp/networking/communication/modem/mgetty/
+MASTER_SITES=	ftp://ftp.leo.org/pub/comp/os/unix/networking/mgetty/
 
 USE_IMAKE=	yes
 
