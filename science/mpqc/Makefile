@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mpqc
-PORTVERSION=	2.1.3
+PORTVERSION=	2.1.4
 CATEGORIES=	science parallel
 MASTER_SITES=	http://aros.ca.sandia.gov/~cljanss/mpqc/distrib/
 DISTFILES=      mpqc-${PORTVERSION}.tar.gz mpqc-val-2.1.0.tar.gz
@@ -17,11 +17,13 @@ DISTFILES+= mpqc-man-${PORTVERSION}.tar.gz mpqc-html-${PORTVERSION}.tar.gz
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	The massively parallel quantum computing library and program
 
+RUN_DEPENDS=	autoconf257:${PORTSDIR}/devel/autoconf257
 LIB_DEPENDS=	lapack:${PORTSDIR}/math/lapack \
 		atlas:${PORTSDIR}/math/atlas
 
 USE_BISON=	yes
-USE_AUTOCONF=	yes
+GNU_CONFIGURE=	yes
+#USE_AUTOCONF_VER=	253 # 257 is required
 CONFIGURE_ARGS=	--with-cc=${CC} \
 		--with-cxx=${CXX} \
 		--with-f77=${FC} \
@@ -51,21 +53,26 @@ CXXFLAGS+=      -mcpu=i686 -march=i686 -mfancy-math-387
 
 pre-configure:
 	@${ECHO} "You can optimize by setting WITH_OPTIMIZED_FLAGS=yes."
+	@cd ${WRKSRC} ; ${LOCALBASE}/bin/autoconf257
 
 do-install:
 	@cd ${WRKSRC} ; ${GMAKE} install
 	@cd ${WRKSRC} ; ${GMAKE} install_devel
-	@cd ${WRKDIR}/${PORTNAME}-man-${PORTVERSION}/man3/ ; ${TAR} -chf - . | \
-		${TAR} -xf - -C ${PREFIX}/man/man3/
+	@cd ${WRKDIR}/${PORTNAME}-man-${PORTVERSION}/man3/ ; \
+	${INSTALL_MAN} * ${PREFIX}/man/man3
 	@${MKDIR} ${PREFIX}/share/mpqc/ref
 	@cd ${WRKDIR}/ref/ ; ${TAR} -chf - . | \
 		${TAR} -xf - -C ${PREFIX}/share/mpqc/ref
+	@${FIND} ${PREFIX}/share/mpqc/ref | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+	@${FIND} ${PREFIX}/share/mpqc/ref -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/mpqc
+	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKDIR}/${PORTNAME}-html-${PORTVERSION} && ${TAR} -chf - . | \
-		${TAR} -xf - -C ${PREFIX}/share/doc/mpqc/
+		${TAR} -xf - -C ${DOCSDIR}
+	@${FIND} ${DOCSDIR} | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+	@${FIND} ${DOCSDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 .endif
 
 validate:   # it takes few days

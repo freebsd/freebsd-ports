@@ -1,4 +1,30 @@
 MAN3= \
+class.3 \
+compile.3 \
+develop.3 \
+download.3 \
+group.3 \
+keyval.3 \
+molrender.3 \
+mpqc.3 \
+mpqccomp.3 \
+mpqcinp.3 \
+mpqclic.3 \
+mpqcoo.3 \
+mpqcover.3 \
+mpqcpsi.3 \
+mpqcrun.3 \
+mpqcsimp.3 \
+mpqcval.3 \
+mpqcwar.3 \
+overview.3 \
+ref.3 \
+scls.3 \
+scmat.3 \
+scpr.3 \
+srctree.3 \
+state.3 \
+symmetry.3 \
 sc_AccResult.3 \
 sc_AccResultInfo.3 \
 sc_ActiveMsgMemoryGrp.3 \
@@ -230,3 +256,4 @@ sc_XalphaFunctional.3 \
 sc_intMessageGrp.3 \
 sc_mPW91XFunctional.3 \
 sc_scprintf.3
+
