@@ -15,10 +15,9 @@ COMMENT=	XML output extension to GCC
 
 BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
 
-NOT_FOR_ARCHS=	amd64 sparc64 ia64 # cf. lang/gcc30
-
 PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WRKSRC=		${WRKDIR}/${PORTNAME}-build
+USE_REINPLACE=	yes
 
 MAN1=	gccxml.1
 
@@ -28,6 +27,10 @@ post-extract:
 	${MKDIR} ${WRKSRC}
 
 do-configure:
+	${CP} ${TEMPLATES}/config.guess ${WRKSRC}/../gccxml-0.6.0/GCC/
+	${CP} ${TEMPLATES}/config.sub ${WRKSRC}/../gccxml-0.6.0/GCC/
+	${REINPLACE_CMD} -e "s,x86_64,amd64," \
+		${WRKSRC}/../gccxml-0.6.0/GCC/gcc/config.gcc
 	cd ${WRKSRC} && \
 	${LOCALBASE}/bin/cmake ../${DISTNAME} -DCMAKE_INSTALL_PREFIX:PATH=${PREFIX} \
 	  -DGCCXML_MAN_DIR:PATH="/man"
