@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sun Nov  9 10:54:46 1997
-+++ Makefile.in	Sun Nov  9 12:37:55 1997
+--- Makefile.in.orig	Sun Oct  4 13:14:37 1998
++++ Makefile.in	Sun Oct  4 13:23:30 1998
 @@ -38,7 +38,7 @@
  # Directory from which applications will reference the library of Tcl
  # scripts (note: you can set the TK_LIBRARY environment variable at
@@ -38,8 +38,11 @@
  INSTALL_PROGRAM =	${INSTALL}
  INSTALL_DATA =		${INSTALL} -m 644
  
-@@ -294,6 +296,11 @@
+@@ -292,8 +294,14 @@
+ @TK_LIB_FILE@: ${OBJS}
+ 	rm -f @TK_LIB_FILE@
  	@MAKE_LIB@
++	ln -sf @TK_LIB_FILE@ libtkstep80.so
  	$(RANLIB) @TK_LIB_FILE@
  
 +libtkstep80.a: ${OBJS}
@@ -50,7 +53,7 @@
  # Make target which outputs the list of the .o contained in the Tk lib
  # usefull to build a single big shared library containing Tcl/Tk and other
  # extensions.  used for the Tcl Plugin.  -- dl
-@@ -344,7 +351,7 @@
+@@ -344,7 +352,7 @@
  # some ranlibs write to current directory, and this might not always be
  # possible (e.g. if installing as root).
  
@@ -59,8 +62,11 @@
  	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -358,13 +365,19 @@
+@@ -356,15 +364,22 @@
+ 	    done;
+ 	@echo "Installing $(TK_LIB_FILE)"
  	@$(INSTALL_DATA) $(TK_LIB_FILE) $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
++	@ln -sf $(TK_LIB_FILE) $(LIB_INSTALL_DIR)/libtkstep80.so
  	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TK_LIB_FILE))
  	@chmod 555 $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
 +	@echo "Installing libtkstep80.a"
@@ -80,7 +86,7 @@
  		$(SCRIPT_INSTALL_DIR) $(SCRIPT_INSTALL_DIR)/images; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -374,8 +387,19 @@
+@@ -374,8 +389,19 @@
  		else true; \
  		fi; \
  	    done;
@@ -102,7 +108,7 @@
  	for i in $(SRC_DIR)/library/*.tcl $(SRC_DIR)/library/*.xbm $(SRC_DIR)/library/tclIndex $(SRC_DIR)/library/prolog.ps $(UNIX_DIR)/tkAppInit.c; \
  	    do \
  	    echo "Installing $$i"; \
-@@ -434,28 +458,28 @@
+@@ -434,28 +460,28 @@
  	@cd $(SRC_DIR)/doc; for i in *.1; \
  	    do \
  	    echo "Installing doc/$$i"; \
