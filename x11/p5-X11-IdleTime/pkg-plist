@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/X11/IdleTime.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/X11/IdleTime/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/X11/IdleTime/IdleTime.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/X11/IdleTime/IdleTime.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/X11/IdleTime
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/X11 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/X11 2>/dev/null || true
