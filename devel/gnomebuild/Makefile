@@ -20,10 +20,10 @@ LIB_DEPENDS=	gdl-1.0:${PORTSDIR}/x11-toolkits/gdl
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack gnometarget libgnomeui gnomevfs2
+USE_GNOME=	gnomeprefix gnomehack lthack gnometarget libgnomeui gnomevfs2
 USE_LIBTOOL_VER=	13
-GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--enable-compile-warnings=no
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lgnuregex"
@@ -35,5 +35,9 @@ EXTRA_PATCHES+=	${FILESDIR}/current-src_backends_libgbf_am_gbf-am-project.c
 .elif ${ARCH} != "i386"
 EXTRA_PATCHES+=	${FILESDIR}/stable-src_backends_libgbf_am_gbf-am-project.c
 .endif
+
+post-patch:
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -Ee \
+		's|-D[^[:space:]_]+_DISABLE_DEPRECATED||g'
 
 .include <bsd.port.post.mk>
