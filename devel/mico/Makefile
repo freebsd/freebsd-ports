@@ -3,7 +3,7 @@
 # Date created:        11 July 1998
 # Whom:                Marc G. Fournier <scrappy@freebsd.org>
 #
-# $Id: Makefile,v 1.17 1998/11/13 05:32:08 scrappy Exp $
+# $Id: Makefile,v 1.18 1998/11/13 09:29:42 asami Exp $
 #
 
 DISTNAME=	mico-2.2.3
@@ -15,6 +15,8 @@ MAINTAINER=	scrappy@freebsd.org
 LIB_DEPENDS=	gtk.1:${PORTSDIR}/x11-toolkits/gtk \
 		tcl80.1:${PORTSDIR}/lang/tcl80
 BUILD_DEPENDS=	g++28:${PORTSDIR}/lang/gcc28
+
+BROKEN=		build
 
 CC=		gcc28
 CXX=		g++28
