@@ -178,6 +178,7 @@
     SUBDIR += teapop
     SUBDIR += tkrat
     SUBDIR += tkrat2
+    SUBDIR += tmda
     SUBDIR += vbsfilter
     SUBDIR += vpopmail
     SUBDIR += vqadmin
