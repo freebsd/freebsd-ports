@@ -1,16 +1,40 @@
---- Makefile.in.orig	Mon May  7 18:12:50 2001
-+++ Makefile.in	Thu May 10 13:25:48 2001
-@@ -174,3 +174,3 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig	Fri Sep 28 11:17:29 2001
++++ Makefile.in	Fri Sep 28 11:22:06 2001
+@@ -177,9 +177,9 @@
+ l = @l@
+ need_gnome_support = @need_gnome_support@
+ @PLATFORM_GNOME_2_TRUE@SUBDIRS_GNOME = doc
+-@PLATFORM_GNOME_2_FALSE@SUBDIRS_GNOME = doc test
++@PLATFORM_GNOME_2_FALSE@SUBDIRS_GNOME = doc
  
 -SUBDIRS =  	libgnomevfs					libgnomevfs-pthread				idl						modules						data						man						devel-docs					$(SUBDIRS_GNOME)				po
 +SUBDIRS =  	libgnomevfs					libgnomevfs-pthread				idl						modules						data						man						$(SUBDIRS_GNOME)				po
  
-@@ -182,3 +182,3 @@
+ 
+ EXTRA_DIST =  	HACKING						TODO						autogen.sh					gnome-vfs.spec					vfsConf.sh.in					xml-i18n-extract.in				xml-i18n-merge.in				xml-i18n-update.in				gnome-vfs-config.in
+@@ -187,7 +187,7 @@
+ 
+ bin_SCRIPTS = $(top_builddir)/gnome-vfs-config
  
 -confexecdir = $(libdir)
 +confexecdir = $(sysconfdir)
- confexec_DATA =  	vfsConf.sh					vfspthreadConf.sh
-@@ -534,2 +534,3 @@
+ confexec_DATA =  	vfsConf.sh
+ 
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+@@ -526,11 +526,13 @@
+ 	    -e 's?\@VFS_INCLUDEDIR\@?$(VFS_INCLUDEDIR)?g' \
+ 	    -e 's?\@VERSION\@?$(VERSION)?g' \
+ 	    -e 's?\@VFS_LIBS\@?$(VFS_LIBS)?g' \
++	    -e 's?\@PTHREAD_LIB\@?$(PTHREAD_LIB)?g' \
+ 	      < $(srcdir)/vfsConf.sh.in > vfsConf.tmp \
+ 	  && mv vfsConf.tmp vfsConf.sh
+ 
+ gnome-vfs-config: gnome-vfs-config.in Makefile
  	sed -e 's?\@LIBDIR\@?$(libdir)?g' \
 +	    -e 's?\@SYSCONFDIR\@?$(sysconfdir)?g' \
  	    -e 's?\@VFS_LIBDIR\@?$(VFS_LIBDIR)?g' \
+ 	    -e 's?\@VFS_INCLUDEDIR\@?$(VFS_INCLUDEDIR)?g' \
+ 	    -e 's?\@VERSION\@?$(VERSION)?g' \
