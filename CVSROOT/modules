@@ -4339,6 +4339,7 @@ libXft		ports/x11-fonts/libXft
 libXi		ports/x11/libXi
 libXinerama	ports/x11/libXinerama
 libXmu		ports/x11-toolkits/libXmu
+libXp		ports/x11/libXp
 libXpm		ports/x11/libXpm
 libXrandr	ports/x11/libXrandr
 libXrender	ports/x11/libXrender
