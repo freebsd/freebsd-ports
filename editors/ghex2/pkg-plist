@@ -4,14 +4,10 @@ etc/gconf/gconf.xml.defaults/schemas/apps/ghex2/%gconf.xml
 etc/gconf/schemas/ghex2.schemas
 share/gnome/applications/ghex.desktop
 share/gnome/gnome-2.0/ui/ghex-ui.xml
-share/gnome/help/ghex2/ja/authors.html
 share/gnome/help/ghex2/ja/ghex2.sgml
-share/gnome/help/ghex2/ja/ghexconversion.html
 share/gnome/help/ghex2/ja/ghexconverter.png
 share/gnome/help/ghex2/ja/ghexdisplaypref.png
-share/gnome/help/ghex2/ja/ghexediting.html
 share/gnome/help/ghex2/ja/ghexfind.png
-share/gnome/help/ghex2/ja/ghexfindreplace.html
 share/gnome/help/ghex2/ja/ghexfindreplace.png
 share/gnome/help/ghex2/ja/ghexfullwindow.png
 share/gnome/help/ghex2/ja/ghexmdiprefs.png
@@ -20,8 +16,6 @@ share/gnome/help/ghex2/ja/ghexmenues.html
 share/gnome/help/ghex2/ja/ghexprefedit.png
 share/gnome/help/ghex2/ja/ghexprintprefs.png
 share/gnome/help/ghex2/ja/index.html
-share/gnome/help/ghex2/ja/license.html
-share/gnome/help/ghex2/ja/prefs.html
 share/gnome/help/ghex2/ja/topic.dat
 share/gnome/help/ghex2/ja/usage.html
 share/gnome/help/ghex2/C/figures/ghex_window_empty.png
