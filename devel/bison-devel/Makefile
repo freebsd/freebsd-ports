@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	bison
 
 MAINTAINER=		wghicks@bellsouth.net
-MAINTAINER+=	obrien@NUXI.com
+#MAINTAINER+=	obrien@NUXI.com
 
 Y2K=			http://www.gnu.org/software/year2000.html
 
