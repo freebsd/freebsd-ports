@@ -1,0 +1,10 @@
+lib/gtk/themes/engines/libgnomelook.so
+share/themes/Gnome-Look-Grey/gtk/gtkrc
+share/themes/Gnome-Look-Icy/gtk/gtkrc
+share/themes/Gnome-Look/gtk/gtkrc
+@dirrm share/themes/Gnome-Look-Icy/gtk
+@dirrm share/themes/Gnome-Look-Icy
+@dirrm share/themes/Gnome-Look-Grey/gtk
+@dirrm share/themes/Gnome-Look-Grey
+@dirrm share/themes/Gnome-Look/gtk
+@dirrm share/themes/Gnome-Look

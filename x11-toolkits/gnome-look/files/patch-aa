@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Jun 13 16:10:20 2000
++++ Makefile.in	Tue Jun 13 16:10:34 2000
+@@ -84,7 +84,7 @@
+ engine_LTLIBRARIES = libgnomelook.la
+ libgnomelook_la_SOURCES =  	gnomelook_theme_draw.c		gnomelook_theme_main.c		gnomelook_theme.h
+ 
+-libgnomelook_la_LDFLAGS = -export-dynamic
++libgnomelook_la_LDFLAGS = -export-dynamic -avoid-version
+ 
+ themedir = $(datadir)/themes/Gnome-Look/gtk
+ theme_DATA = gtkrc
