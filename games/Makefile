@@ -233,6 +233,7 @@
     SUBDIR += miscom
     SUBDIR += moon-buggy
     SUBDIR += moonlander
+    SUBDIR += moria
     SUBDIR += mvdsv
     SUBDIR += myth2_demo
     SUBDIR += mythserver

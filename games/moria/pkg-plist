@@ -1,0 +1,11 @@
+bin/moria
+share/moria/hours
+share/moria/news
+share/moria/origcmds.hlp
+share/moria/owizcmds.hlp
+share/moria/roglcmds.hlp
+share/moria/rwizcmds.hlp
+share/moria/scores
+share/moria/version.hlp
+share/moria/welcome.hlp
+@dirrm share/moria
