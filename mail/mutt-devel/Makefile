@@ -173,19 +173,19 @@ CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
 PATCH_DIST_STRIP=	-p1
 
 .if defined(WITH_MUTT_COMPRESSED_FOLDERS)
-PATCHFILES+=	mutt-${PATCH_VERSION}.rr.compressed.gz
+PATCHFILES+=	patch-${PATCH_VERSION}.rr.compressed.gz
 CONFIGURE_ARGS+=	--enable-compressed
 .if !defined(WITHOUT_MUTT_SGMLFORMAT)
 SGML_USED=	yes
 .endif
 .endif
 .if defined(WITH_MUTT_NNTP)
-PATCHFILES+=	mutt-${PATCH_VERSION}.vvv.nntp.gz
+PATCHFILES+=	patch-${PATCH_VERSION}.vvv.nntp.gz
 CONFIGURE_ARGS+=	--enable-nntp
 .endif
 .if defined(WITH_MUTT_QUOTE_PATCH)
-PATCHFILES+=	mutt-${PATCH_VERSION}.vvv.initials.gz \
-		mutt-${PATCH_VERSION}.vvv.quote.gz
+PATCHFILES+=	patch-${PATCH_VERSION}.vvv.initials.gz \
+		patch-${PATCH_VERSION}.vvv.quote.gz
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
