@@ -1,0 +1,11 @@
+--- setup.py.orig	Tue May 18 18:37:04 1999
++++ setup.py	Wed May 19 09:44:38 1999
+@@ -212,7 +212,7 @@
+ 
+     if setup == None:
+         setup = os.path.join(sys.prefix, 'lib/python' + sys.version[:3],
+-                             'config/Setup')
++                             'config/Setup.local')
+     print 'reading configuration from', setup, '...',
+     configs = extract_config(setup, ['_tkinter'])
+     print 'done'

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	sketch
-# Version required:	0.5.5
+# Version required:	0.6.0
 # Date created:		04 November 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1999/03/12 10:54:23 tg Exp $
+# $Id: Makefile,v 1.3 1999/05/06 14:09:05 tg Exp $
 #
 
-DISTNAME=	sketch-0.5.5
+DISTNAME=	sketch-0.6.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.online.de/home/sketch/
 
@@ -16,27 +16,16 @@ BUILD_DEPENDS=	${PREFIX}/include/python1.5/Imaging.h:${PORTSDIR}/graphics/py-ima
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python \
 		${PREFIX}/lib/python1.5/site-packages/_imaging.so:${PORTSDIR}/graphics/py-imaging
 
-MAKE_FLAGS=	OPT="${CFLAGS}" -f
-ALL_TARGET=
-
 SKETCHDIR=	${PREFIX}/share/sketch
 SKETCHDOCDIR=	${PREFIX}/share/doc/sketch
 SKETCHDOCS=	BUGS Doc NEWS PROJECTS README TODO
 SKETCHEXDIR=	${PREFIX}/share/examples/sketch
 
-post-extract:
-	${CP} ${FILESDIR}/Setup.Pax ${WRKSRC}/Pax/Setup
-	${CP} ${FILESDIR}/Setup.Modules ${WRKSRC}/Sketch/Modules/Setup
-
 do-configure:
-	(cd ${WRKSRC}/Pax; ${MAKE} -f Makefile.pre.in boot)
-	(cd ${WRKSRC}/Filter; ${MAKE} -f Makefile.pre.in boot)
-	(cd ${WRKSRC}/Sketch/Modules; ${MAKE} -f Makefile.pre.in boot)
+	@(cd ${WRKSRC} && python setup.py configure)
 
 do-build:
-	@(cd ${WRKSRC}/Pax; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
-	@(cd ${WRKSRC}/Filter; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
-	@(cd ${WRKSRC}/Sketch/Modules; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} python setup.py build)
 
 do-install:
 	${MKDIR} ${SKETCHDIR}
@@ -45,8 +34,10 @@ do-install:
 	    (cd ${SKETCHDIR}/; tar xf -)
 .endfor
 	(cd ${WRKSRC}; ${INSTALL_SCRIPT} finishinst.py sk2ps.py sketch.py ${SKETCHDIR})
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${SKETCHDOCDIR}
 	(cd ${WRKSRC}; tar cf - ${SKETCHDOCS}) | (cd ${SKETCHDOCDIR}; tar xf -)
+.endif
 	${MKDIR} ${SKETCHEXDIR}
 	(cd ${WRKSRC}/Examples; tar cf - .) | (cd ${SKETCHEXDIR}; tar xf -)
 	(cd ${SKETCHDIR}; python finishinst.py)

@@ -74,6 +74,7 @@ share/sketch/Resources/Fontmetrics/putri.afm
 share/sketch/Resources/Fontmetrics/pzcmi.afm
 share/sketch/Resources/Fontmetrics/pzdr.afm
 share/sketch/Resources/Fontmetrics/std.sfd
+share/sketch/Resources/Messages/de/LC_MESSAGES/sketch.mo
 share/sketch/Resources/Misc/gamma.spl
 share/sketch/Resources/Misc/mini.spl
 share/sketch/Resources/Misc/pattern.ppm
@@ -473,6 +474,7 @@ share/doc/sketch/Doc/devguide-34.html
 share/doc/sketch/Doc/devguide-35.html
 share/doc/sketch/Doc/devguide-36.html
 share/doc/sketch/Doc/devguide-37.html
+share/doc/sketch/Doc/devguide-38.html
 share/doc/sketch/Doc/devguide-4.html
 share/doc/sketch/Doc/devguide-5.html
 share/doc/sketch/Doc/devguide-6.html
@@ -518,6 +520,7 @@ share/examples/sketch/images.sk
 share/examples/sketch/lena.jpg
 share/examples/sketch/line.sk
 share/examples/sketch/pathtext.sk
+share/examples/sketch/pattern.ppm                    
 share/examples/sketch/text.sk
 @dirrm share/sketch/Sketch/UI
 @dirrm share/sketch/Sketch/Scripting
@@ -530,6 +533,9 @@ share/examples/sketch/text.sk
 @dirrm share/sketch/Sketch
 @dirrm share/sketch/Script
 @dirrm share/sketch/Resources/Misc
+@dirrm share/sketch/Resources/Messages/de/LC_MESSAGES
+@dirrm share/sketch/Resources/Messages/de
+@dirrm share/sketch/Resources/Messages
 @dirrm share/sketch/Resources/Fontmetrics
 @dirrm share/sketch/Resources
 @dirrm share/sketch/Plugins/Objects
