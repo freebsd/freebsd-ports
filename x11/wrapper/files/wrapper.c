@@ -135,9 +135,6 @@ main(int argc, char **argv, char **envp)
     enum BadCode bad = NotBad;
     int i, j;
     char *a, *e;
-#if defined(__QNX__) && !defined(__QNXNTO__)
-    char cmd_name[64];
-#endif
 #ifdef USE_PAM
     pam_handle_t *pamh = NULL;
     struct passwd *pw;
@@ -264,12 +261,7 @@ main(int argc, char **argv, char **envp)
     switch (bad) {
     case NotBad:
 	argv[0] = XSERVER_PATH;
-#if defined(__QNX__) && !defined(__QNXNTO__)
-	sprintf(cmd_name,"%s.%d",XSERVER_PATH,getnid());
-	execve(cmd_name, argv, envp);
-#else
 	execve(XSERVER_PATH, argv, envp);
-#endif
 	fprintf(stderr, "execve failed for %s (errno %d)\n", XSERVER_PATH,
 		errno);
 	break;
