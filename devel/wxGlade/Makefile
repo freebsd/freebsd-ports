@@ -6,6 +6,7 @@
 
 PORTNAME=	wxGlade
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	devel x11-toolkits python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wxglade
@@ -20,13 +21,16 @@ NO_BUILD=	yes
 
 do-install:
 	@${MKDIR} ${PYTHON_SITELIBDIR}/${PORTNAME}
-	(cd ${WRKSRC} && ${FIND} [^d]* \! -name "*.txt" \! -name ".cvsignore" -type f | cpio -pdum ${PYTHON_SITELIBDIR}/${PORTNAME})
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PYTHON_SITELIBDIR}/${PORTNAME}
+	(cd ${WRKSRC} && ${FIND} [^d]* \! -name ".cvsignore" -type f | cpio -R ${SHAREOWN}:${SHAREGRP} -pdum ${PYTHON_SITELIBDIR}/${PORTNAME})
+	${CHMOD} -R 644 ${PYTHON_SITELIBDIR}/${PORTNAME}
+	${FIND} ${PYTHON_SITELIBDIR}/${PORTNAME} -type d | xargs ${CHMOD} 755
+	${CHMOD} 755 ${PYTHON_SITELIBDIR}/${PORTNAME}/wxglade.py \
+		${PYTHON_SITELIBDIR}/${PORTNAME}/xrc2wxg.py
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}/docs && ${FIND} . -type f | cpio -pdum ${DOCSDIR})
-	(cd ${WRKSRC} && ${FIND} . -maxdepth 1 -name "*.txt" | cpio -pdum ${DOCSDIR})
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+	(cd ${WRKSRC}/docs && ${FIND} . -type f | cpio -R ${SHAREOWN}:${SHAREGRP} -pdum ${DOCSDIR})
+	${CHMOD} -R 644 ${DOCSDIR}
+	${FIND} ${DOCSDIR} -type d | xargs ${CHMOD} 755
 .endif
 
 .include <bsd.port.mk>
