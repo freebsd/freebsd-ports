@@ -3,8 +3,10 @@ lib/common-lisp/lml/base.lisp
 lib/common-lisp/lml/downloads.lisp
 lib/common-lisp/lml/files.lisp
 lib/common-lisp/lml/package.lisp
+lib/common-lisp/lml/read-macro.lisp
 lib/common-lisp/lml/stdsite.lisp
 lib/common-lisp/lml/utils.lisp
+lib/common-lisp/lml/tests.lisp
 lib/common-lisp/lml/lml.asd
 lib/common-lisp/system-registry/lml.asd
 @dirrm lib/common-lisp/lml/
