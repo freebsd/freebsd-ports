@@ -1,5 +1,5 @@
---- Imakefile.orig	Fri Dec 20 02:57:11 2002
-+++ Imakefile	Wed Jan  8 09:07:47 2003
+--- Imakefile.orig	Thu Dec 19 18:57:11 2002
++++ Imakefile	Wed Jul 23 16:27:24 2003
 @@ -48,8 +48,8 @@
  XCOMM Redefine the following if your PNG library and/or include file
  XCOMM are in different places
@@ -22,7 +22,7 @@
  #else
  JPEGLIBDIR = ../jpeg
  JPEGINC = -I$(JPEGLIBDIR)
-@@ -87,28 +87,28 @@
+@@ -87,12 +87,12 @@
  XCOMM Change XPMLIBDIR if necessary to point to the xpm library (libXpm)
  XCOMM Change XPMINC if necessary to point to the include file for xpm (xpm.h)
  
@@ -38,13 +38,7 @@
  #endif
  
  XCOMM Uncomment the following definiton if you want to use the small icons
- XCOMM for the panel buttons.  Use this if you have a 800x600 or smaller screen.
- 
--XCOMM #define USESMALLICONS
-+#define USESMALLICONS
- 
- XCOMM Uncomment the following definition for XAW3D if you want to use
- XCOMM the 3d Athena Widget Set (highly recommended!)
+@@ -105,10 +105,10 @@
  XCOMM Then be sure to change the XAW3DINC to point to the directory where your
  XCOMM 3D Athena widget headers are located
  
