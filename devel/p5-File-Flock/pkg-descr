@@ -1,0 +1,6 @@
+File::Flock is a wrapper around the flock() call.  The only thing it
+does that is special is that it creates the lock file if the lock file
+does not already exist.
+
+It will also try to remove the lock file.  This makes it a bit 
+complicated.
