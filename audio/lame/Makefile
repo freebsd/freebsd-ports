@@ -16,7 +16,6 @@ MAINTAINER=	yoshiaki@kt.rim.or.jp
 USE_GMAKE=	yes
 WANT_GTK=	yes
 ALL_TARGET=	lame
-RESTRICTED=	Condition is not clear
 
 MAN1=		lame.1
 
