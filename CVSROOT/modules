@@ -5470,6 +5470,7 @@ p5-String-Random	ports/devel/p5-String-Random
 p5-String-RexxParse	ports/devel/p5-String-RexxParse
 p5-String-Scanf	ports/textproc/p5-String-Scanf
 p5-String-ShellQuote	ports/textproc/p5-String-ShellQuote
+p5-String-ShowDiff	ports/textproc/p5-String-ShowDiff
 p5-String-Similarity	ports/devel/p5-String-Similarity
 p5-String-Strip	ports/textproc/p5-String-Strip
 p5-Sub-Uplevel	ports/devel/p5-Sub-Uplevel
