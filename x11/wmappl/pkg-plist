@@ -1,6 +1,6 @@
 bin/wmappl
-%%PORTDOCS%%share/doc/wmappl/README
-share/examples/wmappl/sample.wmapplrc
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%EXAMPLESDIR%%/sample.wmapplrc
 %%ICONS%%share/wmappl/3D.xpm
 %%ICONS%%share/wmappl/3D2.xpm
 %%ICONS%%share/wmappl/3DGun.xpm
@@ -666,5 +666,5 @@ share/examples/wmappl/sample.wmapplrc
 %%ICONS%%share/wmappl/xv.xpm
 %%ICONS%%share/wmappl/yingyang.xpm
 %%ICONS%%@dirrm share/wmappl
-@dirrm share/examples/wmappl
-%%PORTDOCS%%@dirrm share/doc/wmappl
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
