@@ -42,12 +42,12 @@ etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/slideshow/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/ui/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gthumb/viewer/%gconf.xml
 etc/gconf/schemas/gthumb.schemas
+lib/gthumb/libgthumb.so
 lib/gthumb/modules/libduplicates.so
 lib/gthumb/modules/libjpegtran.so
 lib/gthumb/modules/libpngexporter.so
 lib/gthumb/modules/libsearch.so
 lib/gthumb/modules/libwebexporter.so
-lib/libgthumb.so
 libdata/bonobo/servers/GNOME_GThumb_CatalogView.server
 libdata/bonobo/servers/GNOME_GThumb_Viewer.server
 libexec/gthumb-catalog-view
@@ -164,6 +164,7 @@ share/locale/ca/LC_MESSAGES/gthumb.mo
 share/locale/cs/LC_MESSAGES/gthumb.mo
 share/locale/da/LC_MESSAGES/gthumb.mo
 share/locale/de/LC_MESSAGES/gthumb.mo
+share/locale/en_GB/LC_MESSAGES/gthumb.mo
 share/locale/es/LC_MESSAGES/gthumb.mo
 share/locale/fr/LC_MESSAGES/gthumb.mo
 share/locale/ga/LC_MESSAGES/gthumb.mo
