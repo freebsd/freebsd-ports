@@ -17,10 +17,11 @@ BUILD_DEPENDS=	mule:${.CURDIR}/../../editors/mule \
 		${NONEXISTENT}:${SKK_MASTERDIR}:configure
 RUN_DEPENDS=	${PREFIX}/share/skk/${SKKJISYO}:${SKK_MASTERDIR}
 
+GNU_CONFIGURE=	YES
+
 SKKJISYO_SIZE?=	L
 SKKJISYO?=	SKK-JISYO.${SKKJISYO_SIZE}
-SKK_MASTERDIR=	${.CURDIR}/../../japanese/skk-jisyo
-WRKSRC=		${WRKDIRPREFIX}${SKK_MASTERDIR}/work/skk-${PORTVERSION}
+WRKSRC=		${WRKDIR}/skk-${PORTVERSION}
 
 # we cannot use skk-9.6 on emacs20
 EMACS=		mule
