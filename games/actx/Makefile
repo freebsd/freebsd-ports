@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	actx
-PORTVERSION=	1.10
+PORTVERSION=	1.20
 CATEGORIES=	games
 MASTER_SITES=	http://kurumi.sakura.ne.jp/~chimari/ActX/
 
@@ -21,14 +21,16 @@ ACTXDIR=	${PREFIX}/share/examples/actx
 
 post-extract:
 	@ ${CP} ${WRKSRC}/samples/Imakefile ${WRKSRC}
-	@ ${CP} ${WRKSRC}/samples/sample.actxrc ${WRKSRC}/install.actxrc
-	@ ${CP} ${WRKSRC}/samples/sample.actxrc ${WRKSRC}/install.actxrc-one
 
 post-patch:
-.for i in install.actxrc samples/sample.actxrc
+.for i in samples/sample.actxrc
 	@ ${MV} ${WRKSRC}/$i ${WRKSRC}/$i.old
 	@ ${SED} -e "s#%%ACTXDIR%%#${ACTXDIR}#" ${WRKSRC}/$i.old > ${WRKSRC}/$i
 .endfor
+
+pre-configure:
+	@ ${CP} ${WRKSRC}/samples/sample.actxrc ${WRKSRC}/install.actxrc
+	@ ${CP} ${WRKSRC}/samples/sample.actxrc ${WRKSRC}/install.actxrc-one
 
 post-install:
 # strip binary
