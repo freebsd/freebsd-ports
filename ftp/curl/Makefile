@@ -16,7 +16,7 @@ MASTER_SITES=	http://curl.haxx.se/download/ \
 MASTER_SITE_SUBDIR=	curl
 
 MAINTAINER=	roam@FreeBSD.org
-COMMENT=	"Non-interactive tool to get files from FTP, GOPHER, HTTP(S) servers"
+COMMENT=	Non-interactive tool to get files from FTP, GOPHER, HTTP(S) servers
 
 MAN1=		curl.1 curl-config.1
 MAN3=		curl_easy_cleanup.3 curl_easy_duphandle.3 curl_easy_getinfo.3 \
@@ -51,6 +51,11 @@ USE_OPENSSL=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64" || ${ARCH} == "alpha" || ${ARCH} == "ia64" || \
+	${ARCH} == "powerpc"
+BROKEN=		"DNS resolution problems on 64-bit machines"
+.endif
+
 .if !defined(WITHOUT_SSL)
 CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE}
 .else
@@ -61,7 +66,7 @@ CONFIGURE_ARGS=	--without-ssl
 CONFIGURE_ARGS += --with-krb4=/usr
 .endif
 
-# Note: some of these tests seem to intermitently fail on my system.
+# Note: some of these tests seem to intermittently fail on my system.
 # I don't know why they would do that, yet.
 test:	build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test
