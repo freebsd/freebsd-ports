@@ -1,5 +1,6 @@
---- man/man1/sh.1.orig	Tue Apr  6 05:01:44 1999
-+++ man/man1/sh.1	Wed Oct 20 19:39:36 1999
+$FreeBSD$
+--- src/cmd/ksh93/sh.1.orig	Wed Dec 27 23:10:30 2000
++++ src/cmd/ksh93/sh.1	Wed Dec 27 23:10:44 2000
 @@ -4,7 +4,7 @@
  .\"
  .\" @(#)sh.1 (research!dgk) 12/28/93

@@ -1,0 +1,31 @@
+$FreeBSD$
+--- src/cmd/ksh93/Mamfile.orig	Sat Feb 17 23:27:39 2001
++++ src/cmd/ksh93/Mamfile	Sat Feb 17 23:28:35 2001
+@@ -1117,12 +1117,12 @@
+ done sh/shcomp.c
+ prev sh/shcomp.c
+ setv _BLD_shell -U_BLD_shell
+-exec - ${CC} -O  -I. -Iinclude -I${PACKAGE_ast_INCLUDE} -DSH_DICT='(void*)e_dict' -DKSHELL -D_PACKAGE_ast -DSHOPT_SUID_EXEC -DSHOPT_VSH -DSHOPT_ESH -c sh/shcomp.c
++exec - ${CC} ${CCFLAGS} -I. -Iinclude -I${PACKAGE_ast_INCLUDE} -DSH_DICT='(void*)e_dict' -DKSHELL -D_PACKAGE_ast -DSHOPT_SUID_EXEC -DSHOPT_VSH -DSHOPT_ESH -c sh/shcomp.c
+ done shcomp.o generated
+ prev libshell.a archive
+ setv mam_libshell `sed -e 's,-lshell,libshell.a,' shell.req`
+ prev ${mam_libdl}
+-exec - ${CC} -O ${LDFLAGS} ${mam_cc_L+-L.} ${mam_cc_L+-L${PACKAGE_ast_LIB}}  -o shcomp shcomp.o ${mam_libshell} ${mam_libm} ${mam_cc_static}  ${mam_cc_dynamic} ${mam_libast}
++exec - ${CC} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L.} ${mam_cc_L+-L${PACKAGE_ast_LIB}}  -o shcomp shcomp.o ${mam_libshell} ${mam_libm} ${mam_cc_static}  ${mam_cc_dynamic} ${mam_libast}
+ done shcomp generated
+ make sh/suid_exec.c
+ prev ${PACKAGE_ast_INCLUDE}/error.h implicit
+@@ -1139,10 +1139,10 @@
+ make suid_exec.o
+ prev sh/suid_exec.c
+ prev sh/suid_exec.c
+-exec - ${CC} -O  -I. -I${PACKAGE_ast_INCLUDE} -D_PACKAGE_ast -c sh/suid_exec.c
++exec - ${CC} ${CCFLAGS} -I. -I${PACKAGE_ast_INCLUDE} -D_PACKAGE_ast -c sh/suid_exec.c
+ done suid_exec.o generated
+ prev ${mam_libdl}
+-exec - ${CC} -O ${LDFLAGS} ${mam_cc_L+-L.} ${mam_cc_L+-L${PACKAGE_ast_LIB}}  -o suid_exec suid_exec.o ${mam_cc_static} ${mam_libast} ${mam_cc_dynamic} ${mam_libm} ${mam_cc_static}  ${mam_cc_dynamic} ${mam_libast}
++exec - ${CC} ${CCFLAGS} ${LDFLAGS} ${mam_cc_L+-L.} ${mam_cc_L+-L${PACKAGE_ast_LIB}}  -o suid_exec suid_exec.o ${mam_cc_static} ${mam_libast} ${mam_cc_dynamic} ${mam_libm} ${mam_cc_static}  ${mam_cc_dynamic} ${mam_libast}
+ done suid_exec generated
+ make ${INSTALLROOT}/bin
+ exec - set -

@@ -1,0 +1,21 @@
+$FreeBSD$
+--- src/lib/libast/features/limits.c.orig	Tue Feb  9 15:23:43 1999
++++ src/lib/libast/features/limits.c	Thu Dec 28 19:35:20 2000
+@@ -122,6 +122,7 @@
+ 	while (uc >>= 1) val++;
+ #endif
+ 	printf("#define CHAR_BIT	%lu\n", val);
++#undef MB_LEN_MAX
+ #ifdef MB_LEN_MAX
+ 	val = MB_LEN_MAX;
+ 	printf("#undef	MB_LEN_MAX\n");
+@@ -392,6 +393,9 @@
+ #endif
+ #ifdef	_LIMITS_H_
+ 	printf("#define _LIMITS_H_\n");
++#endif
++#ifdef	_MACHINE_LIMITS_H
++	printf("#define _MACHINE_LIMITS_H_");
+ #endif
+ #ifdef	__LIMITS_H
+ 	printf("#define __LIMITS_H\n");

@@ -1,0 +1,9 @@
+$FreeBSD$
+--- src/lib/libast/features/sfio.orig	Thu Dec 28 02:40:45 2000
++++ src/lib/libast/features/sfio	Thu Dec 28 02:40:52 2000
+@@ -1,4 +1,4 @@
+-hdr	float,floatingpoint,math,values
++hdr	float,floatingpoint,math
+ sys	filio,ioctl
+ lib	qfrexp,qldexp
+ 
