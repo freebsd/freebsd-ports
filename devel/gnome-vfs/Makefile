@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gnomevfs2
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	2.0.0/releases/gnome-2.0-desktop-final
+MASTER_SITE_SUBDIR=	2.0.0/sources/gnome-vfs
 DISTNAME=	gnome-vfs-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -29,7 +29,8 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 		--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome \
-		--disable-gtk-doc
+		--disable-gtk-doc \
+		--with-gconf-source=xml::${PREFIX}/etc/gconf/gconf.xml.defaults
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		BSD_PTHREAD_LIBS=${PTHREAD_LIBS}
