@@ -8441,6 +8441,7 @@ uclmmbase	ports/devel/uclmmbase
 ucpp		ports/devel/ucpp
 ucspi-ssl	ports/sysutils/ucspi-ssl
 ucspi-tcp	ports/sysutils/ucspi-tcp
+ucspi-unix	ports/sysutils/ucspi-unix
 ude		ports/x11-wm/ude
 udesc_dump	ports/sysutils/udesc_dump
 udmsearch	ports/www/udmsearch
