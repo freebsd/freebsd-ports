@@ -3,12 +3,12 @@
 # Date created:		27 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.7 1995/05/06 11:28:43 torstenb Exp $
+# $Id: Makefile,v 1.8 1995/05/17 05:55:38 asami Exp $
 #
 
 DISTNAME=       tcp_wrappers_7.2
 PKGNAME=        tcp_wrappers-7.2
-CATEGORIES+=	networking
+CATEGORIES+=	security networking
 MASTER_SITES=	ftp://ftp.win.tue.nl/pub/security/
 
 MAINTAINER=	torstenb@FreeBSD.ORG
