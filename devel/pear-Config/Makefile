@@ -10,12 +10,11 @@ PORTVERSION=	1.8
 PORTREVISION=	1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	antonio@php.net
 COMMENT=	PEAR Config package provides methods for configuration manipulation
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
-RUN_DEPENDS=	${BUILD_DEPENDS} \
-		${PEARDIR}/XML/Parser.php:${PORTSDIR}/devel/pear-XML_Parser \
+RUN_DEPENDS=	${PEARDIR}/XML/Parser.php:${PORTSDIR}/devel/pear-XML_Parser \
 		${PEARDIR}/XML/Util.php:${PORTSDIR}/devel/pear-XML_Util
 
 FILES=		Config.php Config/Container.php Config/Container/Apache.php \
