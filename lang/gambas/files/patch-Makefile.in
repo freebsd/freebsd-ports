@@ -1,0 +1,104 @@
+--- Makefile.in.orig	Sun Mar 14 15:21:27 2004
++++ Makefile.in	Thu Mar 25 12:18:02 2004
+@@ -376,25 +376,25 @@
+ 
+ install-exec-local:
+ 	@echo
+-	@if test "$(bindir)" != "/usr/bin" && test "$(bindir)" != "/usr/bin/"; then \
+-	 echo "Making symbolic links in /usr/bin..."; \
+-	 rm -f /usr/bin/gbx; \
+-	 ln -s $(bindir)/gbx /usr/bin/gbx; \
+-	 rm -f /usr/bin/gbc; \
+-	 ln -s $(bindir)/gbc /usr/bin/gbc; \
+-	 rm -f /usr/bin/gba; \
+-	 ln -s $(bindir)/gba /usr/bin/gba; \
+-	 rm -f /usr/bin/gbi; \
+-	 ln -s $(bindir)/gbi /usr/bin/gbi; \
++	@if test "$(bindir)" != "%%PREFIX%%" && test "$(bindir)" != "%%PREFIX%%/"; then \
++	 echo "Making symbolic links in %%PREFIX%%..."; \
++	 rm -f %%PREFIX%%/bin/gbx; \
++	 ln -sf $(bindir)/gbx %%PREFIX%%/bin/gbx; \
++	 rm -f %%PREFIX%%/gbc; \
++	 ln -sf $(bindir)/gbc %%PREFIX%%/bin/gbc; \
++	 rm -f %%PREFIX%%/gba; \
++	 ln -sf $(bindir)/gba %%PREFIX%%/bin/gba; \
++	 rm -f %%PREFIX%%/gbi; \
++	 ln -sf $(bindir)/gbi %%PREFIX%%/bin/gbi; \
+ 	fi
+ 
+ 	@echo
+ 	@echo "Installing the development environment..."
+ 	@(cd $(srcdir)/app; d=`pwd`; for p in *; do echo "Compiling $$p..."; cd $$d/$$p; \
+-	  gbc -ag; gba; rm -rf .gambas; $(INSTALL) $$p $(bindir); done)
+-	@if test "$(bindir)" != "/usr/bin" && test "$(bindir)" != "/usr/bin/"; then \
+-	 rm -f /usr/bin/gambas; \
+-	 ln -s $(bindir)/gambas /usr/bin/gambas; \
++	  $(bindir)/gbc -ag; $(bindir)/gba; rm -rf .gambas; $(INSTALL) $$p $(bindir); done)
++	@if test "$(bindir)" != "%%PREFIX%%" && test "$(bindir)" != "%%PREFIX%%/"; then \
++	 rm -f %%PREFIX%%/bin/gambas; \
++	 ln -s $(bindir)/gambas %%PREFIX%%/bin/gambas; \
+         fi
+ 
+ 	@echo
+@@ -404,34 +404,38 @@
+ 	@rm -f $(libdir)/lib.gb.la
+ 	@rm -f $(libdir)/lib.gb.so*
+ 
+-	@echo
+-	@echo "Installing the gambas help files..."
+-	@$(INSTALL) -d $(datadir)/help
+-	@rm -rf $(datadir)/help
+-	@cp -R $(srcdir)/help $(datadir)
+-
+-	@echo
+-	@echo "Installing the gambas examples..."
+-	@rm -rf $(datadir)/examples
+-	@$(INSTALL) -d $(datadir)/examples
+-	@cp -R $(srcdir)/examples $(datadir)
+-	@(cd $(datadir)/examples; d=`pwd`; for p in */ */*/; do cd $$d/$$p; \
+-	  if test -e .project; then \
+-	    echo "Compiling $$p..."; cd $$d/$$p; gbc -ag; gba; \
+-	  fi \
+-	done)
++# FreeBSD-Doc-Comment	@echo
++# FreeBSD-Doc-Comment	@echo "Installing the gambas help files..."
++# FreeBSD-Doc-Comment	@$(INSTALL) -d $(datadir)/doc/gambas
++# FreeBSD-Doc-Comment	@rm -rf $(datadir)/doc/gambas
++# FreeBSD-Doc-Comment	@mv $(srcdir)/help $(srcdir)/gambas
++# FreeBSD-Doc-Comment	@cp -R $(srcdir)/gambas $(datadir)/doc
++# FreeBSD-Doc-Comment	@mv $(srcdir)/gambas $(srcdir)/help
++# FreeBSD-Doc-Comment
++# FreeBSD-Doc-Comment	@echo
++# FreeBSD-Doc-Comment	@echo "Installing the gambas examples..."
++# FreeBSD-Doc-Comment	@rm -rf $(datadir)/examples/gambas
++# FreeBSD-Doc-Comment	@$(INSTALL) -d $(datadir)/examples/gambas
++# FreeBSD-Doc-Comment	@mv $(srcdir)/examples $(srcdir)/gambas
++# FreeBSD-Doc-Comment	@cp -R $(srcdir)/gambas $(datadir)/examples
++# FreeBSD-Doc-Comment	@mv $(srcdir)/gambas $(srcdir)/examples
++# FreeBSD-Doc-Comment	@(cd $(datadir)/examples/gambas; d=`pwd`; for p in */ */*/; do cd $$d/$$p; \
++# FreeBSD-Doc-Comment	  if test -e .project; then \
++# FreeBSD-Doc-Comment	    echo "Compiling $$p..."; cd $$d/$$p; $(bindir)/gbc -ag; $(bindir)/gba; \
++# FreeBSD-Doc-Comment	  fi \
++# FreeBSD-Doc-Comment	done)
+ 
+ uninstall-local:
+-	@rm -f /usr/bin/gbx
+-	@rm -f /usr/bin/gbc
+-	@rm -f /usr/bin/gba
+-	@rm -f /usr/bin/gbi
+-	@rm -f /usr/bin/gambas
++	@rm -f %%PREFIX%%/bin/gbx
++	@rm -f %%PREFIX%%/bin/gbc
++	@rm -f %%PREFIX%%/bin/gba
++	@rm -f %%PREFIX%%/bin/gbi
++	@rm -f %%PREFIX%%/bin/gambas
+ 	@(cd $(srcdir)/app; for p in *; do rm -f $(bindir)/$$p; done)
+ 	@rm -rf $(libdir)/*.component
+ 	@rm -rf $(libdir)/info
+-	@rm -rf $(datadir)/help
+-	@rm -rf $(datadir)/examples
++	@rm -rf $(datadir)/doc/gambas
++	@rm -rf $(datadir)/examples/gambas
+ 
+ dist-hook:
+ 	@(cd $(distdir)/app; for p in *; do rm -rf $$p/.gambas $$p/.xvpics $$p/*/.xvpics $$p/*/*/.xvpics $$p/*~ $$p/*/*~ $$p/*/*/*~ $$p/.*.out $$p/*.out $$p/.lang/*.pot $$p/$$p; done)
