@@ -26,7 +26,9 @@ PATCH_DIST_STRIP=	-p1
 
 USE_BISON=	yes
 
+# Configure these variables as you want them to be.
 HACKNAME?=	jnethack
+HACKDIR?=	lib/${HACKNAME}
 HACKDOCSDIR?=	share/doc/ja/nethack
 
 post-install: jnethack-post-install
