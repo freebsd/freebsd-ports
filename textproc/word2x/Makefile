@@ -3,16 +3,18 @@
 # Date created:		10 June 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1998/06/10 09:42:18 tg Exp $
+# $Id: Makefile,v 1.2 1998/09/14 02:45:06 thepish Exp $
 
 DISTNAME=	word2x
 PKGNAME=	word2x-0.002
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://word2x.astra.co.uk/pub/word2x/
 
-WRKSRC=		${WRKDIR}/word2x-0.002
 MAINTAINER=	ports@FreeBSD.ORG
 
+BROKEN=		build
+
+WRKSRC=		${WRKDIR}/word2x-0.002
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CXXFLAGS="${CFLAGS}"
