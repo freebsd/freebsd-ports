@@ -1,0 +1,8 @@
+*shared*
+
+# The _tkinter module.
+#
+# The TKPATH variable is always enabled, to save you the effort.
+TKPATH=:lib-tk
+
+_tkinter _tkinter.c tkappinit.c -DWITH_APPINIT -I${X11BASE}/include -I${PREFIX}/include/tcl8.3 -I${PREFIX}/include/tk8.3 -L${PREFIX}/lib -ltk83 -ltcl83 -L${X11BASE}/lib -lX11
