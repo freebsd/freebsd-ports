@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	automake
 DISTNAME=	automake-${PORTVERSION}
 
 MAINTAINER=	ade@FreeBSD.org
-COMMENT=	GNU automake generates input files for GNU autoconf
+COMMENT=	GNU Standards-compliant Makefile generator (version 1.7)
 
 BUILD_DEPENDS=	autoconf257:${PORTSDIR}/devel/autoconf257
 RUN_DEPENDS=	autoconf257:${PORTSDIR}/devel/autoconf257
