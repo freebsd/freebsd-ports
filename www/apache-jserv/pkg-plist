@@ -1,0 +1,52 @@
+etc/apache/jserv.conf.default
+etc/apache/jserv.properties.default
+etc/apache/zone.properties.default
+libexec/apache/libjserv.a
+libexec/apache/libjserv.so
+libexec/apache/libjserv.so.0
+libexec/apache/mod_jserv.so
+libexec/apache/ApacheJServ.jar
+share/doc/mod_jserv/FAQ.html
+share/doc/mod_jserv/api/index.html
+share/doc/mod_jserv/bugs.html
+share/doc/mod_jserv/changes.html
+share/doc/mod_jserv/contributing.html
+share/doc/mod_jserv/contributors.html
+share/doc/mod_jserv/features.html
+share/doc/mod_jserv/future/index.html
+share/doc/mod_jserv/future/sandboxing.html
+share/doc/mod_jserv/glossary.html
+share/doc/mod_jserv/howto.load-balancing.html
+share/doc/mod_jserv/images/apache_pb.gif
+share/doc/mod_jserv/images/java-apache-project.gif
+share/doc/mod_jserv/images/lbfail001.gif
+share/doc/mod_jserv/images/lbfail002.gif
+share/doc/mod_jserv/images/lbfail003.gif
+share/doc/mod_jserv/images/lbprod001.gif
+share/doc/mod_jserv/images/lbprod002.gif
+share/doc/mod_jserv/images/lbshm001.gif
+share/doc/mod_jserv/index.html
+share/doc/mod_jserv/license.html
+share/doc/mod_jserv/install/howto.security.html
+share/doc/mod_jserv/install/howto.servlets.html
+share/doc/mod_jserv/install/howto.status.html
+share/doc/mod_jserv/install/howto.unix_install.html
+share/doc/mod_jserv/install/howto.win32_install.html
+share/doc/mod_jserv/install/index.html
+share/doc/mod_jserv/modules.html
+share/doc/mod_jserv/operation.html
+share/doc/mod_jserv/protocol/AJPv1.html
+share/doc/mod_jserv/protocol/AJPv11.html
+share/doc/mod_jserv/protocol/AJPv2.html
+share/doc/mod_jserv/protocol/AJPv21.html
+share/doc/mod_jserv/security.html
+share/doc/mod_jserv/sendbug.html
+share/doc/mod_jserv/support.html
+share/doc/mod_jserv/y2k.html
+share/doc/mod_jserv/zones.html
+@dirrm share/doc/mod_jserv/api
+@dirrm share/doc/mod_jserv/future
+@dirrm share/doc/mod_jserv/images
+@dirrm share/doc/mod_jserv/install
+@dirrm share/doc/mod_jserv/protocol
+@dirrm share/doc/mod_jserv

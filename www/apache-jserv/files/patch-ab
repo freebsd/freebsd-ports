@@ -1,0 +1,11 @@
+--- docs/Makefile.in.orig	Sat Jun 12 05:47:51 1999
++++ docs/Makefile.in	Sat Jun 26 23:45:33 1999
+@@ -87,7 +87,7 @@
+ 
+ DOCFILES = $(strip $(shell ls $(EXTRA_DIST)))
+ 
+-docdir = ${prefix}/docs
++docdir = ${prefix}/share/doc/mod_jserv
+ mkinstalldirs = $(SHELL) $(top_srcdir)/src/scripts/build/unix/mkinstalldirs
+ CONFIG_CLEAN_FILES = 
+ DIST_COMMON =  Makefile.am Makefile.in

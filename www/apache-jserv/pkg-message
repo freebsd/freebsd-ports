@@ -1,0 +1,7 @@
+To activate mod_jserv:
+
+o Copy jserv.conf.default, jserv.properties.default and
+  zone.properties.default in ${PREFIX}/etc/apache to jserv.conf,
+  jserv.properties and zone.properties.
+o Touch /var/log/jserv.log with write permission for owner of httpd.
+o Add "Include etc/apache/jserv.conf" into httpd.conf to activate mod_jserv.

@@ -1,0 +1,20 @@
+--- conf/zone.properties.in~	Fri Feb 19 13:09:29 1999
++++ conf/zone.properties.in	Tue Jun 29 23:04:05 1999
+@@ -23,6 +23,8 @@
+ #       here.
+ 
+ repositories=
++# Uncomment if you use Cocoon.
++#repositories=@prefix@/share/java/classes/Cocoon.jar
+ 
+ # Classloader parameters
+ #########################
+@@ -133,6 +135,8 @@
+ # Syntax: servlet.[classname].initArgs=[name]=[value],[name]=[value],...
+ # Default: NONE
+ # servlet.org.fool.Dummy.initArgs=message=I'm a dummy servlet
++# Uncomment if you use Cocoon.
++#servlet.org.apache.cocoon.Cocoon.initArgs=properties=@prefix@/etc/apache/cocoon.properties
+ 
+ # Aliased Servlet Init Parameters
+ ##################################
