@@ -313,6 +313,7 @@ share/gnome/pybliographer/pybrc.pyo
 share/gnome/pybliographer/pybtex.py
 share/gnome/pybliographer/pybtex.pyc
 share/gnome/pybliographer/pybtex.pyo
+share/locale/az/LC_MESSAGES/pybliographer.mo
 share/locale/da/LC_MESSAGES/pybliographer.mo
 share/locale/de/LC_MESSAGES/pybliographer.mo
 share/locale/fi/LC_MESSAGES/pybliographer.mo
