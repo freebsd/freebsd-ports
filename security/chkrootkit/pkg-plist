@@ -4,6 +4,8 @@ sbin/chkproc
 sbin/chkrootkit
 sbin/chkwtmp
 sbin/ifpromisc
+sbin/check_wtmpx
+sbin/strings
 %%PORTDOCS%%share/doc/chkrootkit/COPYRIGHT
 %%PORTDOCS%%share/doc/chkrootkit/README
 %%PORTDOCS%%share/doc/chkrootkit/README.chklastlog
