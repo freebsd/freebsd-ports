@@ -4,8 +4,11 @@ share/locale/fr/LC_MESSAGES/gtkpod.mo
 share/locale/it/LC_MESSAGES/gtkpod.mo
 share/locale/ja/LC_MESSAGES/gtkpod.mo
 share/locale/sv/LC_MESSAGES/gtkpod.mo
+%%DATADIR%%/scripts/sync-evocalendar.sh
+%%DATADIR%%/scripts/sync-evolution.sh
 %%DATADIR%%/scripts/sync-kaddressbook.sh
 %%DATADIR%%/scripts/sync-korganizer.sh
+%%DATADIR%%/scripts/sync-notes.sh
 %%DATADIR%%/pixmaps/gtkpod-add-dirs.png
 %%DATADIR%%/pixmaps/gtkpod-add-files.png
 %%DATADIR%%/pixmaps/gtkpod-add-playlists.png
