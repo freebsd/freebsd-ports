@@ -66,18 +66,17 @@ PATCHFILES=	linux-netscape6-${PORTVERSION}-generated-files.tar.gz
 MAINTAINER=	trevor@FreeBSD.org
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-RUN_DEPENDS=	${LINUX_BASE}/lib/ld.so:${PORTSDIR}/emulators/linux_base \
-		${LINUX_BASE}/usr/lib/libgtk-1.2.so.0.5.0:${PORTSDIR}/x11-toolkits/linux-gtk \
-		${LINUX_BASE}/usr/lib/libjpeg.so.62.0.0:${PORTSDIR}/graphics/linux-jpeg
+RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0.5.0:${PORTSDIR}/x11-toolkits/linux-gtk \
+		${LINUXBASE}/usr/lib/libjpeg.so.62.0.0:${PORTSDIR}/graphics/linux-jpeg
 
 LATEST_LINK=	linux-netscape6
-LINUX_BASE=	/compat/linux
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=	yes
 ONLY_FOR_ARCHS=	i386
 RESTRICTED=	"License for Java plugin allows internal use only.  Also see license for Netscape itself."
 NO_PACKAGE=	${RESTRICTED}
 NO_CDROM=	${RESTRICTED}
+USE_LINUX=	yes
 USE_XLIB=	yes
 WRKSRC=	${WRKDIR}/netscape-installer/xpi
 INSTALL_DIR=	${PREFIX}/lib/linux-netscape6
