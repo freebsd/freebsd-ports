@@ -1,21 +1,11 @@
---- configure.orig	Fri Feb 15 21:01:04 2002
-+++ configure	Sun Feb 24 14:25:34 2002
-@@ -818,8 +818,9 @@
-         CFLAGS=" -O2 -DNDEBUG -funsigned-char -Wall "
-         CXXFLAGS=" -O2 -DNDEBUG -funsigned-char -Wall "
+--- configure.orig	Mon Jun 10 10:29:34 2002
++++ configure	Wed Nov 27 20:03:03 2002
+@@ -1671,7 +1671,7 @@
  fi
--LIBS=" -L/usr/lib/unicon"
-+LIBS=" -L/usr/lib/unicon -L$ac_default_prefix/lib"
- LDFLAGS=" -Wl,-rpath=/usr/lib/unicon"
-+CPPFLAGS="$CPPFLAGS -I$ac_default_prefix/include"
  
  
+-ZHCON_LOCALE_DIR="/usr/share/locale"
++ZHCON_LOCALE_DIR="/usr/local/share/locale"
  
-@@ -2780,6 +2781,7 @@
- 
- 	     if test "$gt_cv_func_gnugettext1_libintl" = "yes"; then
- 	       	       	       	       INTLLIBS="-lintl $LIBICONV"
-+	       	       	       	       LIBS="-lintl $LIBS"
- 	     fi
- 
- 	     gt_save_LIBS="$LIBS"
+ if test "$ZHCON_ARCH" = "freebsd";then
+     echo $ac_n "checking for main in -lintl""... $ac_c" 1>&6

@@ -1,0 +1,20 @@
+--- tools/Makefile.in.orig	Mon Nov 25 23:45:33 2002
++++ tools/Makefile.in	Mon Nov 25 23:49:43 2002
+@@ -107,7 +107,7 @@
+ LDFLAGS = 
+ CXXFLAGS = 
+ CCFLAGS = 
+-LIBS = 
++LIBS = -lX11 -L/usr/X11R6/lib
+ 
+ EXTRA_DIST = README getbpsf.txt gpm-1.19.6-pty.diff gpm-1.19.6-patched.tar.gz
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+@@ -116,7 +116,7 @@
+ PROGRAMS =  $(bin_PROGRAMS)
+ 
+ 
+-DEFS = @DEFS@ -I. -I$(srcdir) -I..
++DEFS = @DEFS@ -I. -I$(srcdir) -I.. -I/usr/X11R6/include
+ CPPFLAGS = @CPPFLAGS@
+ uc2win_OBJECTS =  uc2win.o
+ uc2win_LDADD = $(LDADD)
