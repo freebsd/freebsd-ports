@@ -1,0 +1,10 @@
+Setup
+Setup.in
+Makefile
+Makefile.pre
+Makefile.pre.in
+sedscript
+README
+*.c
+*.h
+*.o
