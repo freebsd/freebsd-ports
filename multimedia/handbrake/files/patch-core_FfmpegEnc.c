@@ -1,11 +1,11 @@
---- core/FfmpegEnc.c.orig	Mon Nov 22 21:55:47 2004
-+++ core/FfmpegEnc.c	Mon Nov 22 21:28:42 2004
-@@ -7,7 +7,7 @@
- #include "HBInternal.h"
+--- core/FfmpegEnc.c.orig	Sun Dec 19 11:16:49 2004
++++ core/FfmpegEnc.c	Sun Dec 19 11:16:58 2004
+@@ -132,7 +132,7 @@
+     }
 
- /* libavcodec */
--#include "ffmpeg/avcodec.h"
-+#include "avcodec.h"
+     HBBufferClose( &scaledBuffer );
+-    free( frame );
++    av_free( frame );
 
- struct HBWork
- {
+     return 1;
+ }
