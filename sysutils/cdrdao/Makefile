@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	ftp://cdrdao.sourceforge.net/pub/cdrdao/
 EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	futatuki@debug.gr.jp
+MAINTAINER=	lebel@lebel.org
 
 BUILD_DEPENDS=	antlr:${PORTSDIR}/devel/pccts\
 		dlg:${PORTSDIR}/devel/pccts
