@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	qt
-PORTVERSION?=	3.0.3
-PORTREVISION=	5
+PORTVERSION?=	3.0.5
 CATEGORIES?=	x11-toolkits
 MASTER_SITES=   ftp://ftp.trolltech.com/qt/source/ \
                 ftp://ftp.chg.ru/pub/X11/qt/source/
@@ -31,6 +30,8 @@ PLIST_SUB+=	IMAGE_PLUGINS="@comment "
 QT_PREFIX?=	${PREFIX}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i ""
 USE_X_PREFIX=	yes
 USE_NEWGCC=	yes
 HAS_CONFIGURE=	yes
@@ -41,7 +42,7 @@ CONFIGURE_ARGS=	-prefix ${QT_PREFIX} \
 		-${IMAGELIB_TYPE}-imgfmt-jpeg \
 		-${IMAGELIB_TYPE}-imgfmt-mng \
 		-system-libpng -system-libjpeg 	-system-libmng \
-		-no-nas-sound -sm -remote \
+		-no-nas-sound -sm \
 		-docdir ${QT_PREFIX}/share/doc/qt \
 		-I${LOCALBASE}/include -L${LOCALBASE}/lib
 .if defined(WITH_DEBUG)
@@ -57,7 +58,8 @@ PKGMESSAGE=${NONEXISTENT}
 PLIST_SUB+=	OPENGL="@comment "
 CONFIGURE_ARGS+=-disable-opengl
 .endif
-CONFIGURE_ENV=	${ECHO} yes | QTDIR=${WRKSRC}
+CONFIGURE_ENV=	${ECHO} yes | QTDIR="${WRKSRC}" \
+		CFLAGS="${CXXFLAGS}"
 MAKE_ENV?=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib
 ALL_TARGET=	symlinks sub-src sub-tools
 
@@ -99,6 +101,8 @@ post-patch:
 	@cd ${WRKSRC}/extensions/nsplugin/src; \
 		${RM} -f jri.h jri_md.h jritypes.h npapi.h npupp.h \
 			npunix.c npwin.cpp
+	${REINPLACE_CMD} -e 's,-O2,${CXXFLAGS},' \
+		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
 
 # Work around qmake generated dependencies
 pre-install:

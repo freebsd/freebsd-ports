@@ -1,0 +1,7 @@
+--- qmake/GNUmakefile.in	Fri Apr 12 06:20:21 2002
++++ qmake/GNUmakefile.in	Fri Jul 19 12:44:25 2002
+@@ -13,3 +13,3 @@
+ 
+-CFLAGS=@QMAKE_CFLAGS@ -I. -Igenerators -Igenerators/unix -Igenerators/win32  -Igenerators/mac \
++CFLAGS+=@QMAKE_CFLAGS@ -I. -Igenerators -Igenerators/unix -Igenerators/win32  -Igenerators/mac \
+ 	-I@OUT_QTDIR@/include -I@REL_QTDIR@/include -I@OUT_QTDIR@/src/tools \

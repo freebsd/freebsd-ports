@@ -31,9 +31,8 @@ include/private/qmutex_p.h
 include/private/qpainter_p.h
 include/private/qpluginmanager_p.h
 include/private/qpsprinter_p.h
-include/private/qremoteinterface_p.h
-include/private/qremotemessage_p.h
 include/private/qrichtext_p.h
+include/private/qsharedmemory_p.h
 include/private/qsqldriverinterface_p.h
 include/private/qsqlmanager_p.h
 include/private/qstyleinterface_p.h
@@ -264,8 +263,6 @@ include/qrangect.h
 include/qrect.h
 include/qregexp.h
 include/qregion.h
-include/qremotefactory.h
-include/qremoteplugin.h
 include/qrtlcodec.h
 include/qscrbar.h
 include/qscrollbar.h
@@ -278,7 +275,6 @@ include/qsessionmanager.h
 include/qsettings.h
 include/qsgistyle.h
 include/qshared.h
-include/qsharedmemory.h
 include/qsignal.h
 include/qsignalmapper.h
 include/qsignalslotimp.h
@@ -389,7 +385,7 @@ lib/libqnp.prl
 lib/libqt-mt.prl
 lib/libqt-mt.so
 lib/libqt-mt.so.3
-lib/libqt-mt.so.3.0.3
+lib/libqt-mt.so.3.0.5
 @exec rm -f %D/lib/libqt-mt.so.3.0 || true
 @exec ln -s libqt-mt.so.3.0.0 %D/lib/libqt-mt.so.3.0 || true
 @unexec rm -f  %D/lib/libqt-mt.so.3.0 || true
@@ -409,9 +405,12 @@ mkspecs/aix-xlc/qmake.conf
 mkspecs/aix-xlc/qplatformdefs.h
 mkspecs/bsdi-g++/qmake.conf
 mkspecs/bsdi-g++/qplatformdefs.h
+mkspecs/darwin-g++/qmake.conf
+mkspecs/darwin-g++/qplatformdefs.h
 mkspecs/default/qmake.conf
 mkspecs/default/qplatformdefs.h
 mkspecs/dgux-g++/qmake.conf
+mkspecs/dgux-g++/qplatformdefs.h
 mkspecs/freebsd-g++/qmake.conf
 mkspecs/freebsd-g++/qplatformdefs.h
 mkspecs/hpux-acc/qmake.conf
@@ -466,6 +465,7 @@ mkspecs/openunix-cc/qplatformdefs.h
 mkspecs/openunix-g++/qmake.conf
 mkspecs/openunix-g++/qplatformdefs.h
 mkspecs/qnx-g++/qmake.conf
+mkspecs/qnx-g++/qplatformdefs.h
 mkspecs/reliant-64/qmake.conf
 mkspecs/reliant-64/qplatformdefs.h
 mkspecs/reliant-cds/qmake.conf
@@ -480,6 +480,8 @@ mkspecs/solaris-cc/qmake.conf
 mkspecs/solaris-cc/qplatformdefs.h
 mkspecs/solaris-g++/qmake.conf
 mkspecs/solaris-g++/qplatformdefs.h
+mkspecs/solaris-g++-64/qmake.conf
+mkspecs/solaris-g++-64/qplatformdefs.h
 mkspecs/solaris-kcc/qmake.conf
 mkspecs/solaris-kcc/qplatformdefs.h
 mkspecs/sunos-g++/qmake.conf
@@ -496,6 +498,11 @@ mkspecs/unixware7-g++/qplatformdefs.h
 mkspecs/win32-borland/qmake.conf
 mkspecs/win32-borland/qplatformdefs.h
 mkspecs/win32-g++/qmake.conf
+mkspecs/win32-icc/qplatformdefs.h
+mkspecs/win32-icc/win32app.dsp
+mkspecs/win32-icc/win32dll.dsp
+mkspecs/win32-icc/qmake.conf
+mkspecs/win32-icc/win32lib.dsp
 mkspecs/win32-msvc/qmake.conf
 mkspecs/win32-msvc/qplatformdefs.h
 mkspecs/win32-msvc/win32app.dsp
@@ -528,6 +535,7 @@ share/doc/qt/assistant-2.html
 share/doc/qt/assistant-3.html
 share/doc/qt/assistant-4.html
 share/doc/qt/assistant.html
+share/doc/qt/assistant.xml
 share/doc/qt/basic.html
 share/doc/qt/bearings.png
 share/doc/qt/biff-example.html
@@ -541,8 +549,14 @@ share/doc/qt/buttongroup-w.png
 share/doc/qt/buttongroups-example.html
 share/doc/qt/buyhowto.html
 share/doc/qt/callbacks.png
+share/doc/qt/canvas-chart-example.html
 share/doc/qt/canvas-example.html
 share/doc/qt/canvas.html
+share/doc/qt/chart-forms.png
+share/doc/qt/chart-main.png
+share/doc/qt/chart-main2.png
+share/doc/qt/chart-options.png
+share/doc/qt/chart-setdata.png
 share/doc/qt/checklists-example.html
 share/doc/qt/classchart.html
 share/doc/qt/classes.html
@@ -582,6 +596,7 @@ share/doc/qt/designer-manual-8.html
 share/doc/qt/designer-manual-9.html
 share/doc/qt/designer-manual.html
 share/doc/qt/designer.png
+share/doc/qt/designer.xml
 share/doc/qt/designer1.jpg
 share/doc/qt/designer2.jpg
 share/doc/qt/designer3.jpg
@@ -622,6 +637,21 @@ share/doc/qt/embedporting.html
 share/doc/qt/environment.html
 share/doc/qt/events.html
 share/doc/qt/eventsandfilters.html
+share/doc/qt/examples-chart-canvastext-h.html
+share/doc/qt/examples-chart-canvasview-cpp.html
+share/doc/qt/examples-chart-canvasview-h.html
+share/doc/qt/examples-chart-chart-pro.html
+share/doc/qt/examples-chart-chartform-cpp.html
+share/doc/qt/examples-chart-chartform-h.html
+share/doc/qt/examples-chart-chartform_canvas-cpp.html
+share/doc/qt/examples-chart-chartform_files-cpp.html
+share/doc/qt/examples-chart-element-cpp.html
+share/doc/qt/examples-chart-element-h.html
+share/doc/qt/examples-chart-main-cpp.html
+share/doc/qt/examples-chart-optionsform-cpp.html
+share/doc/qt/examples-chart-optionsform-h.html
+share/doc/qt/examples-chart-setdataform-cpp.html
+share/doc/qt/examples-chart-setdataform-h.html
 share/doc/qt/examples.html
 share/doc/qt/face.jpg
 share/doc/qt/filechooser.png
@@ -656,6 +686,7 @@ share/doc/qt/how-to-learn-qt.html
 share/doc/qt/httpd-example.html
 share/doc/qt/i18n-example.html
 share/doc/qt/i18n.html
+share/doc/qt/iconset.png
 share/doc/qt/iconview-example.html
 share/doc/qt/iconview-simple_dd-main-cpp.html
 share/doc/qt/iconview-simple_dd-main-h.html
@@ -683,6 +714,7 @@ share/doc/qt/linguist-manual-3.html
 share/doc/qt/linguist-manual-4.html
 share/doc/qt/linguist-manual.html
 share/doc/qt/linguist.png
+share/doc/qt/linguist.xml
 share/doc/qt/listbox-example.html
 share/doc/qt/listboxcombo-example.html
 share/doc/qt/listviews-example.html
@@ -730,6 +762,9 @@ share/doc/qt/organizers.html
 share/doc/qt/outliner-example.html
 share/doc/qt/overviews-list.html
 share/doc/qt/palette.png
+share/doc/qt/pen-cap-styles.png
+share/doc/qt/pen-join-styles.png
+share/doc/qt/pen-styles.png
 share/doc/qt/penstyles.png
 share/doc/qt/phrasebookdialog.png
 share/doc/qt/phrasebookopen.png
@@ -930,13 +965,7 @@ share/doc/qt/qd-chapdialog-taborder.png
 share/doc/qt/qd-chapdialogs-addingwidgets.png
 share/doc/qt/qd-chapdialogs-creatingmulticlipform3.png
 share/doc/qt/qd-chapdialogs-creatingnewprojects.png
-share/doc/qt/qd-chapdialogs-layoutwidgets-part2-stepone-twogroups.png
-share/doc/qt/qd-chapdialogs-layoutwidgets-part2-steptwo-layoutform.png
-share/doc/qt/qd-chapdialogs-layoutwidgets-part3-stepfive-layoutform.png
-share/doc/qt/qd-chapdialogs-layoutwidgets-part3-steptwo-addspacer.png
 share/doc/qt/qd-chapdialogs-layoutwidgets-stepone-after.png
-share/doc/qt/qd-chapdialogs-layoutwidgets-stepthree-groupedwidgets.png
-share/doc/qt/qd-chapdialogs-layoutwidgets-stepthree-rubberband.png
 share/doc/qt/qd-chapdialogs-objectexplorer.png
 share/doc/qt/qd-chapdialogs-propertyeditor.png
 share/doc/qt/qd-chapmainwin-actioneditor1.png
@@ -1019,6 +1048,12 @@ share/doc/qt/qd-finddirectorydialog.png
 share/doc/qt/qd-helpmenu.png
 share/doc/qt/qd-helptoolbuttons3.png
 share/doc/qt/qd-inputtoolbuttons3.png
+share/doc/qt/qd-layout2.1-twogroups.png
+share/doc/qt/qd-layout2.2-layoutform.png
+share/doc/qt/qd-layout3-groupedwidgets.png
+share/doc/qt/qd-layout3-rubberband.png
+share/doc/qt/qd-layout3.2-addspacer.png
+share/doc/qt/qd-layout3.5-layoutform.png
 share/doc/qt/qd-layoutmenu1.png
 share/doc/qt/qd-layouttoolbuttons3.png
 share/doc/qt/qd-mainwinwzd.png
@@ -1172,6 +1207,7 @@ share/doc/qt/qembed.html
 share/doc/qt/qerrormessage-h.html
 share/doc/qt/qerrormessage-members.html
 share/doc/qt/qerrormessage.html
+share/doc/qt/qerrormessage.png
 share/doc/qt/qeucjpcodec-h.html
 share/doc/qt/qeucjpcodec-members.html
 share/doc/qt/qeucjpcodec.html
@@ -1229,7 +1265,9 @@ share/doc/qt/qframe.html
 share/doc/qt/qftp-h.html
 share/doc/qt/qftp-members.html
 share/doc/qt/qftp.html
-share/doc/qt/qgbkcodec-h.html
+share/doc/qt/qgb18030codec-h.html
+share/doc/qt/qgb18030codec-members.html
+share/doc/qt/qgb18030codec.html
 share/doc/qt/qgbkcodec-members.html
 share/doc/qt/qgbkcodec.html
 share/doc/qt/qgfx_qws-h.html
@@ -1430,6 +1468,7 @@ share/doc/qt/qmake-manual-5.html
 share/doc/qt/qmake-manual-6.html
 share/doc/qt/qmake-manual-7.html
 share/doc/qt/qmake-manual.html
+share/doc/qt/qmake.xml
 share/doc/qt/qmap-h.html
 share/doc/qt/qmap-members.html
 share/doc/qt/qmap.html
@@ -1448,8 +1487,11 @@ share/doc/qt/qmenubar.html
 share/doc/qt/qmenudata-h.html
 share/doc/qt/qmenudata-members.html
 share/doc/qt/qmenudata.html
+share/doc/qt/qmessagebox-crit.png
 share/doc/qt/qmessagebox-h.html
+share/doc/qt/qmessagebox-info.png
 share/doc/qt/qmessagebox-members.html
+share/doc/qt/qmessagebox-warn.png
 share/doc/qt/qmessagebox.html
 share/doc/qt/qmetaobject-h.html
 share/doc/qt/qmetaobject-members.html
@@ -1507,6 +1549,11 @@ share/doc/qt/qobject.html
 share/doc/qt/qobjectcleanuphandler-h.html
 share/doc/qt/qobjectcleanuphandler-members.html
 share/doc/qt/qobjectcleanuphandler.html
+share/doc/qt/qobjectlist-h.html
+share/doc/qt/qobjectlist-members.html
+share/doc/qt/qobjectlist.html
+share/doc/qt/qobjectlistit-members.html
+share/doc/qt/qobjectlistit.html
 share/doc/qt/qpaintdevice-h.html
 share/doc/qt/qpaintdevice-members.html
 share/doc/qt/qpaintdevice.html
@@ -1795,9 +1842,11 @@ share/doc/qt/qstylesheet-members.html
 share/doc/qt/qstylesheet.html
 share/doc/qt/qstylesheetitem-members.html
 share/doc/qt/qstylesheetitem.html
+share/doc/qt/qt-colors.png
 share/doc/qt/qt-members.html
 share/doc/qt/qt-template-lib.html
 share/doc/qt/qt.html
+share/doc/qt/qt.xml
 share/doc/qt/qt30-class-chart.png
 share/doc/qt/qtab-members.html
 share/doc/qt/qtab.html
@@ -2103,33 +2152,25 @@ share/doc/qt/sql.html
 share/doc/qt/sqltable-example.html
 share/doc/qt/statistics-example.html
 share/doc/qt/step-by-step-examples.html
-share/doc/qt/t1.html
 share/doc/qt/t1.png
-share/doc/qt/t10-Makefile.html
 share/doc/qt/t10-cannon-cpp.html
 share/doc/qt/t10-cannon-h.html
 share/doc/qt/t10-lcdrange-cpp.html
 share/doc/qt/t10-lcdrange-h.html
 share/doc/qt/t10-main-cpp.html
-share/doc/qt/t10.html
 share/doc/qt/t10.png
-share/doc/qt/t11-Makefile.html
 share/doc/qt/t11-cannon-cpp.html
 share/doc/qt/t11-cannon-h.html
 share/doc/qt/t11-lcdrange-cpp.html
 share/doc/qt/t11-lcdrange-h.html
 share/doc/qt/t11-main-cpp.html
-share/doc/qt/t11.html
 share/doc/qt/t11.png
-share/doc/qt/t12-Makefile.html
 share/doc/qt/t12-cannon-cpp.html
 share/doc/qt/t12-cannon-h.html
 share/doc/qt/t12-lcdrange-cpp.html
 share/doc/qt/t12-lcdrange-h.html
 share/doc/qt/t12-main-cpp.html
-share/doc/qt/t12.html
 share/doc/qt/t12.png
-share/doc/qt/t13-Makefile.html
 share/doc/qt/t13-cannon-cpp.html
 share/doc/qt/t13-cannon-h.html
 share/doc/qt/t13-gamebrd-cpp.html
@@ -2137,9 +2178,7 @@ share/doc/qt/t13-gamebrd-h.html
 share/doc/qt/t13-lcdrange-cpp.html
 share/doc/qt/t13-lcdrange-h.html
 share/doc/qt/t13-main-cpp.html
-share/doc/qt/t13.html
 share/doc/qt/t13.png
-share/doc/qt/t14-Makefile.html
 share/doc/qt/t14-cannon-cpp.html
 share/doc/qt/t14-cannon-h.html
 share/doc/qt/t14-gamebrd-cpp.html
@@ -2147,39 +2186,27 @@ share/doc/qt/t14-gamebrd-h.html
 share/doc/qt/t14-lcdrange-cpp.html
 share/doc/qt/t14-lcdrange-h.html
 share/doc/qt/t14-main-cpp.html
-share/doc/qt/t14.html
 share/doc/qt/t14.png
-share/doc/qt/t2.html
 share/doc/qt/t2.png
-share/doc/qt/t3.html
 share/doc/qt/t3.png
-share/doc/qt/t4.html
 share/doc/qt/t4.png
-share/doc/qt/t5.html
 share/doc/qt/t5.png
-share/doc/qt/t6.html
 share/doc/qt/t6.png
-share/doc/qt/t7-Makefile.html
 share/doc/qt/t7-lcdrange-cpp.html
 share/doc/qt/t7-lcdrange-h.html
 share/doc/qt/t7-main-cpp.html
-share/doc/qt/t7.html
 share/doc/qt/t7.png
-share/doc/qt/t8-Makefile.html
 share/doc/qt/t8-cannon-cpp.html
 share/doc/qt/t8-cannon-h.html
 share/doc/qt/t8-lcdrange-cpp.html
 share/doc/qt/t8-lcdrange-h.html
 share/doc/qt/t8-main-cpp.html
-share/doc/qt/t8.html
 share/doc/qt/t8.png
-share/doc/qt/t9-Makefile.html
 share/doc/qt/t9-cannon-cpp.html
 share/doc/qt/t9-cannon-h.html
 share/doc/qt/t9-lcdrange-cpp.html
 share/doc/qt/t9-lcdrange-h.html
 share/doc/qt/t9-main-cpp.html
-share/doc/qt/t9.html
 share/doc/qt/t9.png
 share/doc/qt/t9_1.png
 share/doc/qt/t9_2.png
@@ -2224,6 +2251,32 @@ share/doc/qt/tt3_11_en.png
 share/doc/qt/tt3_11_pt.png
 share/doc/qt/tutorial.html
 share/doc/qt/tutorial.png
+share/doc/qt/tutorial1-01.html
+share/doc/qt/tutorial1-02.html
+share/doc/qt/tutorial1-03.html
+share/doc/qt/tutorial1-04.html
+share/doc/qt/tutorial1-05.html
+share/doc/qt/tutorial1-06.html
+share/doc/qt/tutorial1-07.html
+share/doc/qt/tutorial1-08.html
+share/doc/qt/tutorial1-09.html
+share/doc/qt/tutorial1-10.html
+share/doc/qt/tutorial1-11.html
+share/doc/qt/tutorial1-12.html
+share/doc/qt/tutorial1-13.html
+share/doc/qt/tutorial1-14.html
+share/doc/qt/tutorial2-01.html
+share/doc/qt/tutorial2-02.html
+share/doc/qt/tutorial2-03.html
+share/doc/qt/tutorial2-04.html
+share/doc/qt/tutorial2-05.html
+share/doc/qt/tutorial2-06.html
+share/doc/qt/tutorial2-07.html
+share/doc/qt/tutorial2-08.html
+share/doc/qt/tutorial2-09.html
+share/doc/qt/tutorial2-10.html
+share/doc/qt/tutorial2-11.html
+share/doc/qt/tutorial2.html
 share/doc/qt/uic.html
 share/doc/qt/unicode.html
 share/doc/qt/unsmooth.png
@@ -2261,6 +2314,7 @@ templates/Tab_Dialog.ui
 @dirrm mkspecs/win32-visage
 @dirrm mkspecs/win32-msvc
 @dirrm mkspecs/win32-g++
+@dirrm mkspecs/win32-icc
 @dirrm mkspecs/win32-borland
 @dirrm mkspecs/unixware7-g++
 @dirrm mkspecs/unixware7-cc
@@ -2271,6 +2325,7 @@ templates/Tab_Dialog.ui
 @dirrm mkspecs/sunos-g++
 @dirrm mkspecs/solaris-kcc
 @dirrm mkspecs/solaris-g++
+@dirrm mkspecs/solaris-g++-64
 @dirrm mkspecs/solaris-cc
 @dirrm mkspecs/solaris-64
 @dirrm mkspecs/sco-g++
@@ -2304,6 +2359,7 @@ templates/Tab_Dialog.ui
 @dirrm mkspecs/freebsd-g++
 @dirrm mkspecs/dgux-g++
 @dirrm mkspecs/default
+@dirrm mkspecs/darwin-g++
 @dirrm mkspecs/bsdi-g++
 @dirrm mkspecs/aix-xlc
 @dirrm mkspecs/aix-g++
