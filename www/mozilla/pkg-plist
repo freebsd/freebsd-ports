@@ -78,7 +78,8 @@ lib/mozilla/UnicharSelfTest
 lib/mozilla/bloaturls.txt
 lib/mozilla/chrome/US.jar
 lib/mozilla/chrome/chatzilla.jar
-@unexec rm %D/lib/mozilla/chrome/chrome.rdf
+lib/mozilla/chrome/chrome.rdf
+@unexec rm -f %D/lib/mozilla/chrome/chrome.rdf || true
 lib/mozilla/chrome/chromelist.txt
 lib/mozilla/chrome/classic.jar
 lib/mozilla/chrome/comm.jar
@@ -102,7 +103,8 @@ lib/mozilla/chrome/pipnss.jar
 lib/mozilla/chrome/pippki.jar
 lib/mozilla/chrome/toolkit.jar
 lib/mozilla/chrome/venkman.jar
-@unexec rm %D/lib/mozilla/component.reg
+lib/mozilla/component.reg
+@unexec rm -f %D/lib/mozilla/component.reg || true
 lib/mozilla/components/absync.xpt
 lib/mozilla/components/accessibility.xpt
 lib/mozilla/components/addrbook.xpt
@@ -333,7 +335,8 @@ lib/mozilla/components/xpcom_xpti.xpt
 lib/mozilla/components/xpconnect.xpt
 lib/mozilla/components/xpconnect_tests.xpt
 lib/mozilla/components/xpinstall.xpt
-@unexec rm %D/lib/mozilla/components/xpti.dat
+lib/mozilla/components/xpti.dat
+@unexec rm -f %D/lib/mozilla/components/xpti.dat || true
 lib/mozilla/components/xremoteservice.xpt
 lib/mozilla/components/xuldoc.xpt
 lib/mozilla/components/xultmpl.xpt
