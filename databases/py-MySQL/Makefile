@@ -8,7 +8,9 @@
 PORTNAME=	py-MySQL
 PORTVERSION=	1.4
 CATEGORIES=	databases python
-MASTER_SITES=	http://www.mysql.com/Contrib/
+MASTER_SITES=	http://web.tryc.on.ca/mysql/Downloads/Contrib/ \
+		http://mysql.orst.edu/Downloads/Contrib/ \
+		http://mysql.netvisao.pt/Downloads/Contrib/
 DISTNAME=	MySQLmodule-${PORTVERSION}
 
 MAINTAINER=	dr@domix.de
