@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	greed
-PORTVERSION=	3.3
+PORTVERSION=	3.4
 CATEGORIES=	games
 MASTER_SITES=	http://catb.org/~esr/greed/
 PKGNAMESUFFIX=	-game
 
 MAINTAINER=	markp@FreeBSD.org
+COMMENT=	A text puzzle game with the aim of clearing the game field
 
 ALL_TARGET=	greed
 MAN6=		greed.6
