@@ -55,15 +55,16 @@
  #endif
  };
  
-@@ -364,24 +374,37 @@
+@@ -364,28 +374,37 @@
   * Based on dev/streams/streams.c
   */
  static int
-+#if __FreeBSD_version >= 500000
- vmmon_clone(dev_t dev, int flags, void *data, struct thread *td)
-+#else
+ #if __FreeBSD_version >= 502017
+ vmmon_clone(struct cdev *dev, int flags, void *data, struct thread *td)
+ #else
+-vmmon_clone(dev_t dev, int flags, void *data, struct thread *td)
 +vmmon_clone(dev_t dev, int flags, void *data, struct proc *p)
-+#endif
+ #endif
  {
  	int fd, error;
  	struct file *fp;
@@ -104,12 +105,16 @@
  	PROC_UNLOCK(p);
  
  	vmmon_ref_count++;
-@@ -415,7 +438,7 @@
+@@ -415,11 +438,11 @@
   *----------------------------------------------------------------------
   */
  static int
+ #if __FreeBSD_version >= 502017
+ FreeBSD_Driver_Open(struct cdev *dev, int oflag, int devtype, struct thread *td)
+ #else
 -FreeBSD_Driver_Open(dev_t dev, int oflag, int devtype, struct thread *td)
 +FreeBSD_Driver_Open(dev_t dev, int oflag, int devtype, struct proc *p)
+ #endif
  {
  	VMFreeBSD *vmFreeBSD;
  	
