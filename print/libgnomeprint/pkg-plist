@@ -63,9 +63,9 @@ share/locale/zh_TW/LC_MESSAGES/libgnomeprint-2.0.mo
 @dirrm share/gnome/gnome-print-2.0/models
 @dirrm share/gnome/gnome-print-2.0/media
 @dirrm share/gnome/gnome-print-2.0
-@dirrm share/gnome/fonts
 @dirrm lib/gnome-print-2.0/transports
 @dirrm lib/gnome-print-2.0/drivers
 @dirrm lib/gnome-print-2.0
 @dirrm include/libgnomeprint-2.0/libgnomeprint
 @dirrm include/libgnomeprint-2.0
+@unexec /bin/rmdir %D/share/gnome/fonts 2>/dev/null || /usr/bin/true

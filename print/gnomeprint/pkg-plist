@@ -116,7 +116,7 @@ share/locale/zh_TW/LC_MESSAGES/gnome-print.mo
 @dirrm share/gnome/gnome-print
 @dirrm share/gnome/fonts/afms/adobe
 @dirrm share/gnome/fonts/afms
-@dirrm share/gnome/fonts
 @dirrm include/gnome-1.0/libgnomeprint
 @dirrm etc/gnome/fonts
 @dirrm etc/gnome
+@unexec /bin/rmdir %D/share/gnome/fonts 2>/dev/null || /usr/bin/true
