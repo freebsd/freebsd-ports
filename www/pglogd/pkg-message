@@ -6,7 +6,8 @@ You need to create a PostgreSQL database for your logs:
   $ psql pglogd < /usr/local/share/pglogd/pglogd_tables.sql
   $ exit
 
-and copy /usr/local/etc/pglogd.conf.sample to pglogd.conf
+and copy /usr/local/share/pglogd/pglogd.conf
+to /usr/local/etc/pglogd.conf
 
 pglogd can then be started with:
 
