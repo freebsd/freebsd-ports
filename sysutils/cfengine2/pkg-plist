@@ -1,26 +1,3 @@
-@unexec install-info --delete %D/info/cfengine-Anomalies.info %D/info/dir
-@unexec install-info --delete %D/info/cfengine-Reference.info %D/info/dir
-@unexec install-info --delete %D/info/cfengine-Tutorial.info %D/info/dir
-info/cfengine-Anomalies.info
-info/cfengine-Reference.info
-info/cfengine-Reference.info-1
-info/cfengine-Reference.info-2
-info/cfengine-Reference.info-3
-info/cfengine-Reference.info-4
-info/cfengine-Reference.info-5
-info/cfengine-Reference.info-6
-info/cfengine-Reference.info-7
-info/cfengine-Reference.info-8
-info/cfengine-Tutorial.info
-info/cfengine-Tutorial.info-1
-info/cfengine-Tutorial.info-2
-info/cfengine-Tutorial.info-3
-info/cfengine-Tutorial.info-4
-info/cfengine-Tutorial.info-5
-info/cfengine-Tutorial.info-6
-@exec install-info %D/info/cfengine-Anomalies.info %D/info/dir
-@exec install-info %D/info/cfengine-Reference.info %D/info/dir
-@exec install-info %D/info/cfengine-Tutorial.info %D/info/dir
 sbin/cfagent
 sbin/cfdoc
 sbin/cfenvd
@@ -49,12 +26,11 @@ share/cfengine/cfengine.el
 share/cfengine/cfrc.example
 share/cfengine/cfrun.hosts.example
 share/cfengine/cfservd.conf.example
+share/cfengine/html/cfengine-Anomalies.html
 share/cfengine/html/cfengine-Reference.html
 share/cfengine/html/cfengine-Tutorial.html
 share/cfengine/update.conf.example
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 @dirrm share/cfengine/html
 @dirrm share/cfengine/doc
 @dirrm share/cfengine
-@dirrm doc/cfengine-2.0.8p1
+@dirrm doc/cfengine-2.1.0p1
