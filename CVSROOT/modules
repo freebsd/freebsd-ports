@@ -2128,7 +2128,6 @@ gp		ports/print/gp
 gpa		ports/security/gpa
 gpaint		ports/graphics/gpaint
 gpart		ports/sysutils/gpart
-gpasm		ports/devel/gpasm
 gpasman		ports/security/gpasman
 gpc		ports/lang/gpc
 gperf		src/gnu/usr.bin/gperf
@@ -2144,6 +2143,7 @@ gprolog		ports/lang/gprolog
 gps		ports/net/gps
 gpsdrive	ports/astro/gpsdrive
 gpsman		ports/astro/gpsman
+gputils		ports/devel/gputils
 gq		ports/net/gq
 gqmpeg		ports/audio/gqmpeg
 gqview		ports/graphics/gqview
@@ -2290,6 +2290,7 @@ happy		ports/devel/happy
 happydoc	ports/devel/happydoc
 harvest		ports/www/harvest
 hashish		ports/security/hashish
+hat		ports/devel/hat
 haxml		ports/textproc/haxml
 hb		ports/misc/hb
 hbiff		ports/mail/hbiff
