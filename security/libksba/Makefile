@@ -15,15 +15,11 @@ MASTER_SITES=	http://gd.tuwien.ac.at/privacy/gnupg/alpha/aegypten/ \
 
 MAINTAINER=	arved@FreeBSD.org
 
-BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
-
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-GNU_CONFIGURE=	yes
-
-pre-configure:
-	@cd ${WRKSRC}; ${LOCALBASE}/bin/autoconf
+USE_AUTOCONF_VER=	253
+USE_PERL5_BUILD=	yes
 
 .include <bsd.port.mk>
