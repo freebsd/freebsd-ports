@@ -1,0 +1,17 @@
+--- kpanel/sample_kdelnk_files/Makefile.in.orig	Fri May 21 21:24:46 1999
++++ kpanel/sample_kdelnk_files/Makefile.in	Fri May 21 21:36:28 1999
+@@ -302,14 +302,6 @@
+ 
+ install-data-local:
+ 	$(mkinstalldirs) $(kdisknavdir)
+-	@for dir in /cdrom /mnt/cdrom /CDROM /CD-ROM ; do \
+-		if test -d $$dir ; then \
+-			echo $(INSTALL_DATA) $(srcdir)/CD-ROM.kdelnk $(kdisknavdir) ;\
+-			$(INSTALL_DATA) $(srcdir)/CD-ROM.kdelnk $(kdisknavdir) ; \
+-			echo "URL=$$dir" >> $(kdisknavdir)/CD-ROM.kdelnk ; \
+-			break; \
+-		 fi ; \
+-	done 
+ 
+ uninstall-local:
+ 	-rm -f $(kdisknavdir)/CD-ROM.kdelnk

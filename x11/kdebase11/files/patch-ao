@@ -1,0 +1,137 @@
+*** kvt/utmp.c.orig	Wed Feb 17 19:54:08 1999
+--- kvt/utmp.c	Wed Apr 21 18:37:34 1999
+***************
+*** 78,81 ****
+--- 78,86 ----
+  #endif
+  
++ #define UTMP_SUPPORT 1
++ #define HAVE_UTIL 1
++ #define USE_LASTLOG 1
++ #define USE_TTYENT 1
++ 
+  #ifdef HAVE_LASTLOG_H
+  #include <lastlog.h>
+***************
+*** 95,98 ****
+--- 100,115 ----
+  #endif
+  
++ #if USE_LASTLOG
++ # include <paths.h>
++ #endif /* USE_LASTLOG */
++ 
++ #if USE_TTYENT
++ # include <ttyent.h>
++ #endif /* USE_TTYENT */
++ 
++ #if HAVE_UTIL
++ #include <sys/param.h>
++ #endif /* HAVE_UTIL */
++ 
+  void cleanutent(void);
+  void makeutent(char *);
+***************
+*** 140,144 ****
+  int utmp_pos; /* position of utmp-stamp */
+  
+- 
+  /*
+   * on Sparcs login/logouts are logged at /var/adm/wtmp
+--- 157,160 ----
+***************
+*** 146,150 ****
+   */
+  #ifndef UTMP
+! #define UTMP "/etc/utmp"
+  #endif
+  
+--- 162,166 ----
+   */
+  #ifndef UTMP
+! #define UTMP _PATH_UTMP
+  #endif
+  
+***************
+*** 165,168 ****
+--- 181,186 ----
+  #ifdef BSD
+  
++ char global_ut_line[UT_LINESIZE];
++ 
+  /**************************************************************************
+   * get_tslot() - grabbed from xvt-1.0 - modified by David Perry
+***************
+*** 178,182 ****
+    int i;
+    
+!   if ((fs = fopen(TTYTAB,"r")) == NULL)
+      return(-1);
+    i = 1;
+--- 196,200 ----
+    int i;
+    
+!   if ((fs = fopen(_PATH_TTYS,"r")) == NULL)
+      return(-1);
+    i = 1;
+***************
+*** 204,207 ****
+--- 222,235 ----
+  {
+    FILE *utmp;
++ #if USE_LASTLOG
++     FILE *llfp;
++     struct lastlog ll;
++ #endif /* USE_LASTLOG */
++ #if HAVE_UTIL
++     extern char *display_name;
++     char *p;
++     char wthost[MAXHOSTNAMELEN];
++ #endif /* HAVE_UTIL */
++ 
+    if((utmp = fopen(UTMP,"r+")) == NULL)
+      return -1;
+***************
+*** 213,216 ****
+--- 241,273 ----
+    fclose(utmp);
+    madeutent = 1;
++ 
++ #if USE_LASTLOG
++     /* make a lastlog entry */
++     ll.ll_time = (time_t) u->ut_time;
++     (void) strncpy(ll.ll_line, u->ut_line, sizeof ll.ll_line - 1);
++     ll.ll_line[sizeof ll.ll_line - 1] = '\0';
++     (void) strncpy(ll.ll_host, u->ut_host, sizeof ll.ll_host - 1);
++     ll.ll_host[sizeof ll.ll_host - 1] = '\0';
++     llfp = fopen(_PATH_LASTLOG, "a+");
++     if (llfp) {
++         (void) fseek(llfp, getuid(), 0);
++         (void) fwrite(&ll, sizeof ll, 1, llfp);
++         (void) fclose(llfp);
++     }
++ #endif /* USE_LASTLOG */
++ 
++ #if HAVE_UTIL
++     /* save ut_line for later */
++     (void) strncpy(global_ut_line, u->ut_line, sizeof global_ut_line);
++ 
++     /* finally, log the entry to wtmp */
++     (void) strncpy(wthost, display_name, sizeof wthost - 1);
++     wthost[sizeof wthost - 1] = '\0';
++     p = strchr(wthost, ':');
++     if (p)
++         *p = '\0';
++     logwtmp(global_ut_line, u->ut_name, wthost);
++ #endif /* HAVE_UTIL */
++ 
+    return(utmp_pos);
+  }
+***************
+*** 277,280 ****
+--- 334,338 ----
+    fwrite((char *)&u,sizeof(struct utmp),1,ut);
+    fclose(ut);
++     logwtmp(global_ut_line, "", "");
+  }
+  

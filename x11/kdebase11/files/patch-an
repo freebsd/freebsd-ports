@@ -1,0 +1,15 @@
+*** kvt/Makefile.in~	Wed Apr 21 18:22:35 1999
+--- kvt/Makefile.in	Wed Apr 21 18:33:46 1999
+***************
+*** 174,178 ****
+  
+  INCLUDES = $(all_includes)
+! LDADD = $(LIBCURSES) $(LIB_KDEUI)
+  LDFLAGS = $(all_libraries) $(KDE_RPATH)
+  METASOURCES = main.moc
+--- 174,178 ----
+  
+  INCLUDES = $(all_includes)
+! LDADD	= $(LIBUTIL) $(LIBCURSES) $(LIB_KDEUI)
+  LDFLAGS = $(all_libraries) $(KDE_RPATH)
+  METASOURCES = main.moc

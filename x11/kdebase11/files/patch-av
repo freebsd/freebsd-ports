@@ -1,0 +1,17 @@
+*** kdm/session.c~	Wed Sep  1 18:50:32 1999
+--- kdm/session.c	Wed Sep  1 19:09:05 1999
+***************
+*** 1092,1095 ****
+--- 1092,1096 ----
+  
++ #ifndef __FreeBSD__
+  #if defined(Lynx) || defined(SCO) && !defined(SCO_USA) || !defined(HAVE_CRYPT_H)
+  char *crypt(s1, s2)
+  	char	*s1, *s2;
+***************
+*** 1097,1099 ****
+--- 1098,1101 ----
+  	return(s2);
+  }
+  #endif
++ #endif /* __FreeBSD__ */
