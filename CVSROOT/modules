@@ -7686,6 +7686,7 @@ php3		ports/lang/php3
 php4		ports/lang/php4
 php4-bcmath	ports/math/php4-bcmath
 php4-bz2	ports/archivers/php4-bz2
+php4-calendar	ports/misc/php4-calendar
 php4-cgi	ports/www/php4-cgi
 php4-cli	ports/lang/php4-cli
 php4-curl	ports/ftp/php4-curl
