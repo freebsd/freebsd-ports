@@ -16,4 +16,6 @@ COMMENT=	Lossy/lossless audio compressor
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 		PREFIX="${PREFIX}" INSTALL="${INSTALL_PROGRAM}"
 
+PLIST_FILES=	bin/bonk
+
 .include <bsd.port.mk>
