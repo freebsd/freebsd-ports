@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix24/scripts/Attic/configure.postfix,v 1.34 2003-06-02 15:32:39 naddy Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix24/scripts/Attic/configure.postfix,v 1.35 2003-06-27 17:41:09 obraun Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -113,8 +113,8 @@ while [ "$1" ]; do
 			echo "USE_OPENSSL=	yes"
 			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I\${OPENSSLINC}"
 			echo "POSTFIX_AUXLIBS+=	-L\${OPENSSLLIB} -lssl -lcrypto"
-			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.8.13-2.0.9-0.9.7b.tar.gz"
-			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.8.13-2.0.9-0.9.7b/pfixtls.diff"
+			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.8.14-2.0.12-0.9.7b.tar.gz"
+			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.8.14-2.0.12-0.9.7b/pfixtls.diff"
 			echo "PATCH_STRIP=	-p1"
 			echo "TLS_SUFFIX=	+tls"
 			SUB_TLS=""
@@ -209,8 +209,8 @@ while [ "$1" ]; do
 				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 				exit 1
 			fi
-			echo "PATCH_SITES+=	ftp://ftp.stack.nl/pub/postfix/tls+ipv6/1.14/"
-			echo "PATCHFILES+=	ipv6-1.14-pf-2.0.9.patch.gz"
+			echo "PATCH_SITES+=	http://www.ipnet6.org/postfix/download/"
+			echo "PATCHFILES+=	ipv6-1.15-pf-2.0.12.patch.gz"
 			echo "PATCH_DIST_STRIP=	-p1"
 			echo "IPv6_SUFFIX=	+ipv6"
 			echo ""
@@ -226,8 +226,8 @@ while [ "$1" ]; do
 			echo "USE_OPENSSL=	yes"
 			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I\${OPENSSLINC}"
 			echo "POSTFIX_AUXLIBS+=	-L\${OPENSSLLIB} -lssl -lcrypto"
-			echo "PATCH_SITES+=	ftp://ftp.stack.nl/pub/postfix/tls+ipv6/1.14/"
-			echo "PATCHFILES+=	tls+ipv6-1.14-pf-2.0.9.patch.gz"
+			echo "PATCH_SITES+=	http://www.ipnet6.org/postfix/download/"
+			echo "PATCHFILES+=	tls+ipv6-1.15-pf-2.0.12.patch.gz"
 			echo "PATCH_DIST_STRIP=	-p1"
 			echo "TLS_SUFFIX=	+tls+ipv6"
 			SUB_TLS=""
