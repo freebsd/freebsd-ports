@@ -111,8 +111,8 @@ diff -ur ../urt-3.1b-orig/config/urt ./config/urt
 -INCPBMPLUS = -I$(PBMDIR) -I$(PBMDIR)/ppm -I$(PBMDIR)/pgm -I$(PBMDIR)/pbm
 -LIBPBMPLUS = $(PBMDIR)/ppm/libppm.a $(PBMDIR)/pgm/libpgm.a \
 -		$(PBMDIR)/pbm/libpbm.a 
-+INCPBMPLUS = -I/usr/X11R6/include
-+LIBPBMPLUS = -L/usr/X11R6/lib -lppm -lpgm -lpbm
++INCPBMPLUS = -I${X11BASE}/include
++LIBPBMPLUS = -L${X11BASE}/lib -lppm -lpgm -lpbm
  #endif
  
  #ifdef SUNRASTER|SUNTOOLS|TAAC1
@@ -124,8 +124,8 @@ diff -ur ../urt-3.1b-orig/config/urt ./config/urt
 -INCTIFF = -I$(TIFFDIR)
 -LIBTIFF = $(TIFFDIR)/libtiff.a
 +##defpath TIFFDIR
-+INCTIFF = -I/usr/local/include/tiff
-+LIBTIFF = -L/usr/local/lib -ltiff
++INCTIFF = -I${PREFIX}/include/tiff34
++LIBTIFF = -L${PREFIX}/lib -ltiff34
  #endif
  
  #ifdef X10
@@ -135,8 +135,8 @@ diff -ur ../urt-3.1b-orig/config/urt ./config/urt
  #ifdef X11
 -LIBX11 = -lX11
 -INCX11 = 
-+LIBX11 = -L/usr/X11R6/lib -lX11
-+INCX11 = -I/usr/X11R6/include
++LIBX11 = -L${X11BASE}/lib -lX11
++INCX11 = -I${X11BASE}/include
  #endif
 diff -ur ../urt-3.1b-orig/get/getx11/in_cmap.c ./get/getx11/in_cmap.c
 --- ../urt-3.1b-orig/get/getx11/in_cmap.c	Thu Apr 30 10:17:16 1992
