@@ -151,6 +151,7 @@
     SUBDIR += xml4j
     SUBDIR += xp
     SUBDIR += xt
+    SUBDIR += y2l
     SUBDIR += yodl
 
 .include <bsd.port.subdir.mk>
