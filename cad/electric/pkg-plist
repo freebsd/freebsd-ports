@@ -5,6 +5,7 @@ share/electric/lib/EVE.help
 share/electric/lib/QUISC.help
 share/electric/lib/evemenus.mac
 share/electric/lib/evetutor.mac
+share/electric/lib/pads4u.txt
 share/electric/lib/pla_mocmos.txt
 share/electric/lib/sclib.txt
 share/electric/lib/tsmc25.txt
