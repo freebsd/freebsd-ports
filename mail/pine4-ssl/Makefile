@@ -20,10 +20,9 @@ CATEGORIES=	mail news
 
 MAINTAINER=	nsayer@freebsd.org
 
-BUILD_DEPENDS+=	${PREFIX}/lib/libssl.a:${PORTSDIR}/security/openssl \
-		${PREFIX}/lib/libcrypto.a:${PORTSDIR}/security/openssl \
-		${PREFIX}/lib/libRSAglue.a:${PORTSDIR}/security/openssl \
-		${PREFIX}/lib/librsaref.a:${PORTSDIR}/security/rsaref
+BUILD_DEPENDS=	${PREFIX}/lib/librsaref.a:${PORTSDIR}/security/rsaref
+LIB_DEPENDS=	crypto.1:${PORTSDIR}/security/openssl \
+		ssl.1:${PORTSDIR}/security/openssl
 
 EXTRACT_ONLY=	pine4.10${EXTRACT_SUFX}
 

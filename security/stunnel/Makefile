@@ -16,9 +16,9 @@ MASTER_SITES=	http://opensores.thebunker.net/pub/mirrors/stunnel/ \
 
 MAINTAINER=	martti.kuparinen@ericsson.com
 
-BUILD_DEPENDS=	openssl:${PORTSDIR}/security/openssl \
-		${PREFIX}/lib/libssl.a:${PORTSDIR}/security/openssl \
-		${PREFIX}/lib/libcrypto.a:${PORTSDIR}/security/openssl
+BUILD_DEPENDS=	openssl:${PORTSDIR}/security/openssl
+LIB_DEPENDS=	crypto.1:${PORTSDIR}/security/openssl \
+		ssl.1:${PORTSDIR}/security/openssl
 RUN_DEPENDS=	openssl:${PORTSDIR}/security/openssl
 
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES

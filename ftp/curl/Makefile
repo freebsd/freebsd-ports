@@ -15,8 +15,8 @@ MASTER_SITES=	http://www.fts.frontec.se/~dast/stuff/ \
 MAINTAINER=	kris@FreeBSD.org
 
 .if defined(USE_SSL)
-BUILD_DEPENDS=	${PREFIX}/lib/libssl.a:${PORTSDIR}/security/openssl \
-		${PREFIX}/lib/libcrypto.a:${PORTSDIR}/security/openssl
+LIB_DEPENDS=	crypto.1:${PORTSDIR}/security/openssl \
+		ssl.1:${PORTSDIR}/security/openssl
 .endif
 
 .if defined(USE_SSL)

@@ -144,9 +144,9 @@ DISTFILES+=	mod_ssl-\${VERSION_MODSSL}-\${VERSION_APACHE}\${EXTRACT_SUFX}
 
 BUILD_DEPENDS+=	openssl:\${PORTSDIR}/security/openssl \\
 		mm-config:\${PORTSDIR}/devel/mm \\
-		\${PREFIX}/lib/libssl.a:\${PORTSDIR}/security/openssl \\
-		\${PREFIX}/lib/libcrypto.a:\${PORTSDIR}/security/openssl \\
 		\${PREFIX}/lib/libmm.a:\${PORTSDIR}/devel/mm
+LIB_DEPENDS+=	crypto.1:\${PORTSDIR}/security/openssl \\
+		ssl.1:\${PORTSDIR}/security/openssl
 RUN_DEPENDS+=	openssl:\${PORTSDIR}/security/openssl
 
 VERSION_MODSSL=	2.4.8
