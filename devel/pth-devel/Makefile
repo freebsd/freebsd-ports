@@ -3,7 +3,7 @@
 # Date Created:			17 Aug 1999
 # Whom:				Ralf S. Engelschall
 #
-# $Id: Makefile,v 1.7 1999/08/18 13:14:24 rse Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	pth-1.1b7
