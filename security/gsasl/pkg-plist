@@ -46,6 +46,8 @@ libdata/pkgconfig/libgsasl.pc
 %%NLS%%share/locale/sr/LC_MESSAGES/libgsasl.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/libgsasl.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/gsasl.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/libgsasl.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gsasl.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/reference
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
