@@ -3,7 +3,7 @@
 # Date created:         17 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.22 1998/12/28 01:43:34 ache Exp $
+# $Id: Makefile,v 1.23 1999/03/12 15:28:43 scrappy Exp $
 #
 
 DISTNAME=       unzip540
@@ -14,7 +14,6 @@ MASTER_SITES=   ftp://ftp.cdrom.com/pub/infozip/src/
 MAINTAINER=     ache@FreeBSD.ORG
 
 Y2K=		http://www.cdrom.com/pub/infozip/FAQ.html#Y2K
-WWW_SITE=	http://www.cdrom.com/pub/infozip/UnZip.html
 
 WRKSRC=         ${WRKDIR}/unzip-5.40
 MAKEFILE=       unix/Makefile
