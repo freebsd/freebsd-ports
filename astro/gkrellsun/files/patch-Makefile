@@ -1,0 +1,46 @@
+
+$FreeBSD$
+
+--- Makefile.orig	Wed Nov  7 01:36:29 2001
++++ Makefile	Thu Aug 15 15:06:43 2002
+@@ -1,18 +1,18 @@
+-GTK_INCLUDE = `gtk-config --cflags`
+-GTK_LIB = `gtk-config --libs`
++GTK_INCLUDE = `$(GTK_CONFIG) --cflags`
++GTK_LIB = `$(GTK_CONFIG) --libs`
+ 
+-IMLIB_INCLUDE = `imlib-config --cflags-gdk`
+-IMLIB_LIB = `imlib-config --libs-gdk`
+-THREAD_LIB = -lpthread
++IMLIB_INCLUDE = `$(IMLIB_CONFIG) --cflags-gdk`
++IMLIB_LIB = `$(IMLIB_CONFIG) --libs-gdk`
++THREAD_LIB = 
+ INSTALLDIR = /usr/local/share/gkrellm/plugins
+ 
+ ZIPVER=
+ 
+-FLAGS = -O2 -Wall -fPIC $(GTK_INCLUDE) $(IMLIB_INCLUDE)
++FLAGS = -fPIC $(GTK_INCLUDE) $(IMLIB_INCLUDE)
+ LIBS = $(GTK_LIB) $(IMLIB_LIB) $(THREAD_LIB)
+ LFLAGS = -shared
+ 
+-CC = gcc $(CFLAGS) $(FLAGS)
++CC += $(CFLAGS) $(FLAGS)
+ 
+ OBJS = gkrellsun.o CalcEphem.o
+ 
+@@ -32,9 +32,6 @@
+ 	install -c -s -m 644 gkrellsun.so $(INSTALLDIR)
+ 
+ zip:
+-ifeq ($(ZIPVER),)
+-	@echo You must specify ZIPVER for the zip target
+-else
+ 	rm -rf /tmp/gkrellsun-$(ZIPVER)
+ 	rm -f /tmp/tar.exclude
+ 	rm -f /tmp/gkrellsun-$(ZIPVER).tar.gz
+@@ -52,4 +49,3 @@
+ 	cd /tmp && tar cf - gkrellsun-$(ZIPVER) | gzip > gkrellsun-$(ZIPVER).tar.gz
+ 	cd /tmp && zip -rpD gkrellsun-$(ZIPVER).zip gkrellsun-$(ZIPVER)
+ 	rm -f tar.exclude
+-endif
