@@ -42,13 +42,20 @@ pre-install:
 		${PERL} -pi -e "s:^:bin/:g" > ${PLIST}
 	${FIND} ${SCRIPTS} \! -name '*in' -type f | \
 		${PERL} -pi -e "s:^${SCRIPTS}:bin:g" >> ${PLIST}
+.if !defined(NOPORTDOCS)
+.for i in Changelog README
+	${ECHO_CMD} share/doc/alloywm/${i} >> ${PLIST}
+.endfor
+	${ECHO_CMD} @dirrm share/doc/alloywm >> ${PLIST}
+.endif
 
 do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Changelog ${WRKSRC}/README ${DOCSDIR}
 .endif
-	${INSTALL_SCRIPT} ${SCRIPTS}/* ${PREFIX}/bin
+	${FIND} ${SCRIPTS} \! -name '*in' -type f -exec \
+		${INSTALL_SCRIPT}  {} ${PREFIX}/bin \;
 	${FIND} ${WRKSRC} -type f -perm 755 \
 		-exec ${INSTALL_PROGRAM} {} ${PREFIX}/bin \;
 
