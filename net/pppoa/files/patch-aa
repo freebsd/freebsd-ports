@@ -1,5 +1,5 @@
 --- doc-bsd/adsl.sh.sample.orig	Tue Aug 14 22:15:19 2001
-+++ doc-bsd/adsl.sh.sample	Fri Aug 31 09:01:15 2001
++++ doc-bsd/adsl.sh.sample	Sat Sep  1 02:12:23 2001
 @@ -1,3 +1,15 @@
 +#! /bin/sh
 +
@@ -16,3 +16,12 @@
  ISP=adsl
  PATH=$PATH:$PREFIX/bin
  
+@@ -5,7 +17,7 @@
+   start)
+ 	modem_run -f $PREFIX/libdata/mgmt.o -m \
+ 	 && ppp -quiet -auto $ISP \
+-	 && echo -n ' ppp($ISP)'
++	 && echo -n " ppp($ISP)"
+         ;;
+   stop)
+   	killall modem_run
