@@ -1,7 +1,11 @@
+bin/kcd-inst
 bin/kcdmain
 bin/kcdscr
-share/examples/kcd/kcd.csh.init
-share/examples/kcd/kcd.sh.init
+share/locale/en_GB/LC_MESSAGES/kcd.mo
+share/locale/en_GB.UTF-8/LC_MESSAGES/kcd.mo
+share/locale/en_US.UTF-8/LC_MESSAGES/kcd.mo
 %%PORTDOCS%%share/doc/kcd/README
+%%PORTDOCS%%share/examples/kcd/kcd.csh.init
+%%PORTDOCS%%share/examples/kcd/kcd.sh.init
+%%PORTDOCS%%@dirrm share/examples/kcd
 %%PORTDOCS%%@dirrm share/doc/kcd
-@dirrm share/examples/kcd
