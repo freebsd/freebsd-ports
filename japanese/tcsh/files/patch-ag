@@ -1,5 +1,5 @@
---- ../../tcsh-6.07.09/sh.func.c	Wed Jul 22 01:03:33 1998
-+++ sh.func.c	Wed Jul 22 01:04:47 1998
+--- sh.func.c.orig	Sat Sep 19 01:09:11 1998
++++ sh.func.c	Sat Sep 26 19:23:40 1998
 @@ -1286,6 +1286,9 @@
      struct command *c;
  {
@@ -10,7 +10,7 @@
  
      USE(c);
      if (*++v == 0) {
-@@ -1338,7 +1341,15 @@
+@@ -1337,7 +1340,15 @@
  #  ifdef LC_MESSAGES
  	(void) setlocale(LC_MESSAGES, "");
  #  endif /* LC_MESSAGES */

@@ -1,31 +1,23 @@
-# New ports collection makefile for:	tcsh with kanji patch
-# Version required:	6.07.09
+# New ports collection makefile for:	tcsh with multibyte support enabled
+# Version required:	6.07.12
 # Date created:		29 November 1997
 # Whom:			issei <issei@jp.FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1998/07/04 03:20:11 steve Exp $
+# $Id$
 #
 
-DISTNAME=	tcsh-6.07.09
-PKGNAME=	ja-tcsh-6.07.09b5
+DISTNAME=	tcsh-6.07.12
+PKGNAME=	ja-tcsh-6.07.12
 CATEGORIES=	japanese shells
-MASTER_SITES=	http://www2.wbs.ne.jp/~znc/tcsh/
-EXTRACT_SUFX=	.tgz
-
-PATCH_SITES=	http://www2.wbs.ne.jp/~znc/tcsh/
-PATCHFILES=	${DISTNAME}.kanji.patch7b5.gz
+MASTER_SITES=	ftp://ftp.astron.com/pri/
 
 MAINTAINER=	issei@jp.FreeBSD.ORG
 
-PATCH_DIST_STRIP=       -p1
 GNU_CONFIGURE=	yes
-# Ugly hack
-CONFIGURE_ARGS=	--bindir=${PREFIX}/bin
 ALL_TARGET=	all catalogs
 INSTALL_TARGET=	install install.man
 MAN1= 		tcsh.1
-PORTDOCS=	complete.tcsh FAQ HISTORY.kanji.patch.euc HowToMakeNLS.euc \
-		README.kanji.patch.euc
+PORTDOCS=	FAQ Fixes README WishList complete.tcsh
 
 post-install:
 	@(cd ${WRKSRC}; \
