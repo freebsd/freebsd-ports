@@ -7,31 +7,47 @@
 PORTNAME=	jakarta-regexp
 PORTVERSION=	1.2
 CATEGORIES=	java
-MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-regexp/release/v${PORTVERSION}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	http://jakarta.apache.org/builds/${PORTNAME}/release/v${PORTVERSION}/
 
 MAINTAINER=	dglo@ssec.wisc.edu
 
-BUILD_DEPENDS=	${JAVA_HOME}/bin/javac:${PORTSDIR}/java/jdk12
-RUN_DEPENDS=	${JAVA_HOME}/bin/java:${PORTSDIR}/java/jdk12
+BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/jakarta-ant
 
-JAVA_HOME?=	${LOCALBASE}/jdk1.2.2
+USE_JAVA=	1.2+
+NEED_JAVAC=	YES
+
+PLIST=	${WRKDIR}/PLIST
+
+JAVALIBNAME=	${PORTNAME}-${PORTVERSION}
+APIDOCSDIR=	${DOCSDIR}/${JAVALIBNAME}
+
+pre-install:
+	@${RM} -f ${PLIST}
+	@${TOUCH} ${PLIST}
 
 do-build:
-	@cd ${WRKSRC}/build && PATH=$$PATH:${JAVA_HOME}/bin JAVA_HOME=${JAVA_HOME} ${SH} build-regexp.sh package
+	@cd ${WRKSRC}/build && \
+		${SETENV} PATH=$$PATH:${JAVA_HOME}/bin JAVA_HOME=${JAVA_HOME} ${SH} build-regexp.sh package
 
-do-install:
-	@${MKDIR} ${PREFIX}/share/java/classes
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${PORTVERSION}.jar ${LOCALBASE}/share/java/classes/${PORTNAME}.jar
+do-install: do-install-jar do-install-apidocs
 
-post-install:
+do-install-jar:
+	@${MKDIR} ${JAVAJARDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${PORTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}.jar
+	@${ECHO} ${JAVAJARDIR}/${PORTNAME}.jar | \
+		${SED} "s,${PREFIX}/*,," >> ${PLIST}
+	@${ECHO} "@unexec ${RMDIR} ${JAVAJARDIR} 2>/dev/null || true" | \
+		${SED} "s,${PREFIX}/*,," >> ${PLIST}
+
+do-install-apidocs:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
-	@(cd ${WRKSRC}/docs/api && ${TAR} -c -f - .) \
-		| (cd ${PREFIX}/share/doc/${PORTNAME} && ${TAR} --unlink -x -f -)
-	@${CHOWN} -h -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/${PORTNAME} 
-	@(cd ${PREFIX} \
-		&& find share/doc/${PORTNAME} -type f -print >> ${TMPPLIST})
+	@${MKDIR} ${APIDOCSDIR}
+	@${CP} -r ${WRKSRC}/docs/api/* ${APIDOCSDIR}
+	@${CHOWN} -h -R ${SHAREOWN}:${SHAREGRP} ${APIDOCSDIR}
+	@${FIND} ${APIDOCSDIR} -type f -print | \
+		${SED} "s,${PREFIX}/*,," >> ${PLIST}
+	@${FIND} ${APIDOCSDIR} -type d -print | sort -r | \
+		${SED} -e "s,${PREFIX}/*,," -e "s,^,@dirrm ,g" >> ${PLIST}
 .endif
 
-.include <bsd.port.mk> END-of-jakarta-regexp/Makefile
+.include <bsd.port.mk>
