@@ -4,10 +4,11 @@ bin/rxstack
 bin/rxmathfn.rxfn
 bin/rxmathfn.rxlib
 lib/librexx.a
-lib/librexx.so.1.6.4
+lib/librexx.so.2.0
+lib/librexx.so
 include/rexxsaa.h
-@exec ldconfig -m %B
-@unexec /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/doc/rexx-imc/README
 share/doc/rexx-imc/README.avail
 share/doc/rexx-imc/README.bugreport
