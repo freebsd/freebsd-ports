@@ -1,4 +1,3 @@
-../share/guile/1.4/ice-9/greg.scm
 System/Headers/ScriptKit/Guile.h
 System/Headers/ScriptKit/GuileInterpreter.h
 System/Headers/ScriptKit/GuileInvocation.h
