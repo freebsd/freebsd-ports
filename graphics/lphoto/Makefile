@@ -19,12 +19,32 @@ LIB_DEPENDS=	Magick.6:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS=	gphoto2:${PORTSDIR}/graphics/gphoto2 \
 		pyuic:${PORTSDIR}/x11-toolkits/py-qt
 
+USE_REINPLACE=	yes
 USE_KDELIBS_VER=3
 USE_PYTHON=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+# Hack to use OPTIONS since OPTIONS is listed below bsd.port.pre.mk
+OPTIONS=
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+OPTIONS+=	JPEGMMX "Use JPEG with MMX optimization" off
+.endif
+
+.if defined(WITH_JPEGMMX)
+RUN_DEPENDS+=	jpegtran-mmx:${PORTSDIR}/graphics/jpeg-mmx
+.endif
+
+post-patch:
+.if defined(WITH_JPEGMMX)
+	@${REINPLACE_CMD} -e 's|jpegtran|jpegtran-mmx|' \
+		${WRKSRC}/Lphoto/photolibrary.py
+.endif
+
 do-install:
 	@cd ${WRKSRC} && ${PYTHON_CMD} install.py -d ${PREFIX}/${PYTHON_SITELIBDIR:S/${PYTHONBASE}//} -b ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
