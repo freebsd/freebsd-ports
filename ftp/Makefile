@@ -3,6 +3,7 @@
 
     SUBDIR += IglooFTP
     SUBDIR += axyftp
+    SUBDIR += bftpd
     SUBDIR += caitoo
     SUBDIR += cftp
     SUBDIR += curl
