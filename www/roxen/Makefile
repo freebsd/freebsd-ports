@@ -34,4 +34,10 @@ post-install:
 	fi
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(PARALLEL_PACKAGE_BUILD) && ${OSVERSION} >= 500000
+FORBIDDEN=	hang
+.endif
+
+.include <bsd.port.post.mk>
