@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dcgui
-PORTVERSION=	0.1.9
+PORTVERSION=	0.1.11
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://ftp.kde.com/Networking_Internet/File_Sharing/Direct_Connect_4_Linux/ \
@@ -15,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.kde.com/Networking_Internet/File_Sharing/Direct_Connect_4_Linux/ \
 		http://dc.ketelhot.de/files/dcgui/unstable/source/
 MASTER_SITE_SUBDIR=	dc-gui
-DISTNAME=	dcgui-0.1beta9
+DISTNAME=	dcgui-0.1beta11
 
 MAINTAINER=	e96sv@yahoo.se
 
@@ -29,10 +29,15 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libdc=${LOCALBASE} \
-		--with-xml-prefix=${LOCALBASE}
+		--with-xml-prefix=${LOCALBASE} \
+		--program-prefix=
 
 post-patch:
-	@${REINPLACE_CMD} -e 's@xmlversion.h@libxml/xmlversion.h@' \
+# Fix libxml2 test
+# And, do not add optimizations because it might break some ARCHs, e.g.,
+# alpha
+	@${REINPLACE_CMD} -e 's@xmlversion.h@libxml/xmlversion.h@; \
+		s@-O2@@' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>
