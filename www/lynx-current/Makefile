@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	lynx
-PORTVERSION=    2.8.5d17
-PORTREVISION=	1
+PORTVERSION=    2.8.5r1
 CATEGORIES=     www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/
-DISTNAME=       ${PORTNAME}2.8.5dev.17
+DISTNAME=       ${PORTNAME}2.8.5rel.1
 
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	A non-graphical, text-based World-Wide Web client
@@ -22,7 +21,7 @@ NO_LATEST_LINK=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-screen=ncurses --with-zlib --libdir="${L_LIB}" \
 		--enable-nsl-fork --enable-nls --with-bzlib \
-		--enable-nested-tables \
+		--enable-nested-tables --enable-locale-charset \
 		--enable-scrollbar --enable-addrlist-page
 
 .ifndef NO_OPENSSL
