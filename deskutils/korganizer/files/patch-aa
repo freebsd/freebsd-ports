@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Sat Feb  6 09:58:12 1999
++++ src/Makefile.in	Fri Jan 21 15:10:21 2000
+@@ -638,7 +638,7 @@
+ 		mv messages.po ../po/korganizer.pot
+ 
+ $(srcdir)/parseholiday.c: parseholiday.y
+-	cd $(srcdir) && bison -d -o parseholiday.c parseholiday.y
++	cd $(srcdir) && yacc -d -o parseholiday.c parseholiday.y
+ 
+ $(srcdir)/scanholiday.c: scanholiday.lex parseholiday.h
+ 	cd $(srcdir) && flex -B -oscanholiday.c scanholiday.lex
