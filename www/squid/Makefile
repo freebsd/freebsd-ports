@@ -7,11 +7,17 @@
 # Tunables not (yet) configurable via 'make config':
 # SQUID_{U,G}ID
 #   Which user/group squid should run as (default: squid/squid).
-#   The user and group will be created if they do not already exist.
+#   The user and group will be created if they do not already exist using
+#   a uid:gid of 100:100.
 #   NOTE: before version 2.5.4_6, these settings defaulted to
 #   nobody/nogroup.
 #   If you wish to keep these settings, please define SQUID_UID=nobody and
 #   SQUID_GID=nogroup in your make environment before you start the update.
+#   NOTE2:
+#   Before version 2.5.4_11 the numerical id chosen for SQUID_UID (and
+#   SQUID_GID respectively) was the first free id greater than or equal 3128.
+#   If you wish to move your squid user to id 100:100, run "make changeuser",
+#   please see the changeuser target's definition for further information.
 # SQUID_LANGUAGES
 #   A list of languages for which error page files should be installed
 #   (default: all)
@@ -22,8 +28,7 @@
 #   Additional configuration options, see below for a list
 
 PORTNAME=	squid
-PORTVERSION=	2.5.4
-PORTREVISION=	10
+PORTVERSION=	2.5.5
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -32,68 +37,18 @@ MASTER_SITES=	\
 		ftp://ftp.leo.org/pub/comp/general/infosys/www/servers/squid/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,}
 MASTER_SITE_SUBDIR=	squid-2/STABLE
-DISTNAME=	squid-2.5.STABLE4
+DISTNAME=	squid-2.5.STABLE5
 DIST_SUBDIR=	squid2.5
 
 PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.5/bugs/
-PATCHFILES=	squid-2.5.STABLE4-reconfigure_message.patch \
-		squid-2.5.STABLE4-digest_auth_pwchange.patch \
-		squid-2.5.STABLE4-redirect_login_space.patch \
-		squid-2.5.STABLE4-fqdnnegcache.patch \
-		pam_auth-2.2.patch \
-		squid-2.5.STABLE4_auth_param_doc.patch \
-		squid-2.5.STABLE4-errorpages.patch \
-		squid-2.5.STABLE4-error_load_text.patch \
-		squid-2.5.STABLE4-xpi_mime.patch \
-		squid-2.5.STABLE4-size_overflow.patch \
-		squid-2.5.STABLE4-extacl_auth_loop.patch \
-		squid-2.5.STABLE4-squid_ldap_group.patch \
-		squid-2.5.STABLE4-positive_dns_ttl.patch \
-		squid-2.5.STABLE4-gopherhtml.patch \
-		squid-2.5.STABLE4-netroute.patch \
-		squid-2.5.STABLE4-synflood.patch \
-		squid-2.5.STABLE4-fqdn.patch \
-		squid-2.5.STABLE4-connect_cleanup.patch \
-		squid-2.5.STABLE4-pconn_post.patch \
-		squid-2.5.STABLE4-ftp_put.patch \
-		squid-2.5.STABLE4-pconn-load.patch \
-		squid-2.5.STABLE4-icon_urls.patch \
-		squid-2.5.STABLE4-redirector_access.patch \
-		squid-2.5.STABLE4-pconn-lifo.patch \
-		squid-2.5.STABLE4-cache_peer_maxconn.patch \
-		squid-2.5.STABLE4-pid_filename_none.patch \
-		squid-2.5.STABLE4-dns_namelength.patch \
-		squid-2.5.STABLE4-urllogin_acl.patch \
-		squid-2.5.STABLE4-russian.patch \
-		squid-2.5.STABLE4-redirlog.patch \
-		squid-2.5.STABLE4-pinger.patch \
-		squid-2.5.STABLE4-partial_reload.patch \
-		squid-2.5.STABLE4-ldap_tls.patch \
-		squid-2.5.STABLE4-ldap_group_bufsize.patch \
-		squid-2.5.STABLE4-http_workarounds.patch \
-		squid-2.5.STABLE4-empty_proxy_auth.patch \
-		squid-2.5.STABLE4-ftp_telnet.patch \
-		squid-2.5.STABLE4-ntlm_auth_popups.patch \
-		squid-2.5.STABLE4-ldap_group-S.patch \
-		squid-2.5.STABLE4-ipcache_purge.patch \
-		squid-2.5.STABLE4-cache_peer_access_ntlm.patch \
-		squid-2.5.STABLE4-wbinfo_group.patch \
-		squid-2.5.STABLE4-SMB_ntlm_auth.patch \
-		squid-2.5.STABLE4-miss_access_internal.patch \
-		squid-2.5.STABLE4-squidclient_auth.patch \
-		squid-2.5.STABLE4-authfixes.patch \
-		squid-2.5.STABLE4-arp-FreeBSD.patch \
-		squid-2.5.STABLE4-deny_info_reply.patch \
-		squid-2.5.STABLE4-authfixes2.patch \
-		squid-2.5.STABLE4-reply_body_max_size.patch \
-		squid-2.5.STABLE4-digest-abort.patch \
-		squid-2.5.STABLE4-ntlm_auth_user_hash_pointer-leak.patch
+PATCHFILES=	squid-2.5.STABLE5-ntlm_assert.patch \
+		squid-2.5.STABLE5-ldap.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
 COMMENT=	The successful WWW proxy cache and accelerator
 
-CONFLICTS=	squid-*
+CONFLICTS=	squid-2.[^5]*
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_PERL5=	yes
@@ -120,10 +75,16 @@ OPTIONS=	SQUID_LDAP_AUTH "Install LDAP authentication helpers" off \
 		SQUID_CACHE_DIGESTS "Enable cache digests" off \
 		SQUID_WCCP "Enable Web Cache Coordination Protocol" on \
 		SQUID_UNDERSCORES "Allow underscores in hostnames" on \
+		SQUID_CHECK_HOSTNAME "Do hostname checking" on \
 		SQUID_STRICT_HTTP "Be strictly HTTP compliant" off \
 		SQUID_IDENT "Enable ident (RFC 931) lookups" on \
 		SQUID_USERAGENT_LOG "Enable User-Agent-header logging" off \
-		SQUID_ARP_ACL "Enable ACLs based on ethernet address" off
+		SQUID_ARP_ACL "Enable ACLs based on ethernet address" off \
+		SQUID_PF "Enable transp. proxy support using PF" off \
+		SQUID_FOLLOW_XFF "Follow X-Forwarded-For headers" off \
+		SQUID_AUFS "Enable the aufs store type" off \
+		SQUID_COSS "Enable the COSS store type" off \
+		SQUID_STACKTRACES "Create backtraces on fatal errors" off
 
 PLIST_FILES=	etc/rc.d/squid.sh etc/squid/mib.txt etc/squid/mime.conf.default \
 		etc/squid/msntauth.conf.default etc/squid/squid.conf.default \
@@ -133,8 +94,7 @@ CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  --sysconfdir=${PREFIX}/etc/squid \
 		--datadir=${PREFIX}/etc/squid \
 		--libexecdir=${PREFIX}/libexec/squid \
 		--localstatedir=${PREFIX}/squid \
-		--enable-storeio="ufs diskd null" \
-		--enable-removal-policies="lru heap" \
+		--enable-removal-policies="lru heap"
 
 .include <bsd.port.pre.mk>
 
@@ -156,6 +116,20 @@ CONFIGURE_ARGS+=	--enable-auth="basic ntlm digest" \
 			--enable-digest-auth-helpers="password" \
 			--enable-external-acl-helpers="${external_acl}" \
 			--enable-ntlm-auth-helpers="SMB winbind"
+
+# Selection of store types:
+
+store_types=	ufs diskd null
+.if defined(WITH_SQUID_AUFS)
+store_types+=	aufs
+# Nil aufs threads is default, set any other value via SQUID_CONFIGURE_ARGS
+CONFIGURE_ARGS+=	--enable-async-io --with-pthreads
+.endif
+.if defined(WITH_SQUID_COSS)
+store_types+=	coss
+CONFIGURE_ARGS+=	--with-aio
+.endif
+CONFIGURE_ARGS+=	--enable-storeio="${store_types}"
 
 # Other options set via 'make config':
 
@@ -192,6 +166,9 @@ CONFIGURE_ARGS+=	--disable-wccp
 .if defined(WITH_SQUID_UNDERSCORES)
 CONFIGURE_ARGS+=	--enable-underscores
 .endif
+.if defined(WITHOUT_SQUID_CHECK_HOSTNAME)
+CONFIGURE_ARGS+=	--disable-hostname-checks
+.endif
 .if defined(WITH_SQUID_STRICT_HTTP)
 CONFIGURE_ARGS+=	--disable-http-violations
 .endif
@@ -203,6 +180,24 @@ CONFIGURE_ARGS+=	--enable-useragent-log
 .endif
 .if defined(WITH_SQUID_ARP_ACL)
 CONFIGURE_ARGS+=	--enable-arp-acl
+.endif
+.if defined(WITH_SQUID_PF)
+.if ${OSVERSION} >= 502106
+# This will work only systems where PF is part of the base system for now.
+# If someone is eager to teach autoconf to pick up the pf port
+# on 5.[0-2] systems instead, go on, I will integrate your patch.
+CONFIGURE_ARGS+=	--enable-pf-transparent
+.else
+.error WITH_SQUID_PF only works on systems where pf is part of the base system.
+.endif
+.endif
+.if defined(WITH_SQUID_FOLLOW_XFF)
+EXTRA_PATCHES+=		${PATCHDIR}/follow_xff-2.5.patch \
+			${PATCHDIR}/follow_xff-configure.patch
+CONFIGURE_ARGS+=	--enable-follow-x-forwarded-for
+.endif
+.if defined(WITH_SQUID_STACKTRACES)
+CONFIGURE_ARGS+=	--enable-stacktraces
 .endif
 
 # Languages:
@@ -235,16 +230,12 @@ CONFIGURE_ARGS+=	--enable-err-languages="${SQUID_LANGUAGES}" \
 #  Set an explicit hostname in cachemgr.cgi
 # --enable-truncate
 #  Use truncate() rather than unlink()
-# --disable-hostname-checks
-#  Squid by default rejects any host names with odd characters in their name
-#  to conform with internet standards. If you disagree with this you may use
-#  this switch to turn off any such checks, provided that the resolver used by
-#  Squid does not reject such host names. This may be required to participate
-#  in testbeds for international domain names.
 # --disable-unlinkd
 #  Do not use "unlinkd"
-# --enable-stacktraces
-#  Enable automatic call backtrace on fatal errors
+# --with-aufs-threads=N_THREADS
+#  Tune the number of worker threads for the aufs object
+# --with-coss-membuf-size
+#  COSS membuf size (default: 1048576 bytes)
 #
 # This option does not yet work on FreeBSD:
 #
@@ -260,15 +251,15 @@ CONFIGURE_ARGS+=	${SQUID_CONFIGURE_ARGS}
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/doc/squid.8
-# Prevent installation of .orig files by deleting them.
-	@${FIND} ${WRKSRC} -name '*.bak' -delete
-	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's|%%SQUID_UID%%|${SQUID_UID}|g' \
 	    -e 's|%%SQUID_GID%%|${SQUID_GID}|g' ${WRKSRC}/src/cf.data.pre
 
 pre-install:
+# Prevent installation of .orig files by deleting them.
+	@${FIND} ${WRKSRC} -name '*.bak' -delete
+	@${FIND} ${WRKSRC} -name '*.orig' -delete
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
 	    -e 's|%%SQUID_UID%%|${SQUID_UID}|g' ${FILESDIR}/squid.sh \
 	    >${WRKDIR}/squid.sh
@@ -287,14 +278,8 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${docs} ${DOCSDIR}
 .endif
-
-# Work around the fact that the errorpages.patch creates files in
-# an "Attic" subdir:
-.if exists(${PREFIX}/etc/squid/errors/Lithuanian)
-	@${FIND} ${WRKSRC}/errors/Lithuanian/Attic -type f \
-   	    -exec ${INSTALL_DATA} {} ${PREFIX}/etc/squid/errors/Lithuanian/ \;
-.endif
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${SETENV} PKG_PREFIX=${PREFIX} \
+	    ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 # Create package list:
 	@cd ${PREFIX} && ${FIND} libexec/squid -type f -o -type l | ${SORT} \
 	    >>${TMPPLIST}
@@ -308,5 +293,51 @@ post-install:
 	@${ECHO_CMD} "@dirrm etc/squid/errors/${d}" >>${TMPPLIST}
 .endfor
 	@${ECHO_CMD} "@dirrm etc/squid/errors" >>${TMPPLIST}
+
+changeuser:
+# Recover from the problem that earlier versions of this port created the
+# squid pseudo-user with an id greater than 999 which is not allowed in
+# FreeBSD's ports system. The port now uses id 100:100.
+# NOTE:
+# This target assumes that SQUID_GID is the primary group of SQUID_UID. If you
+# have a different setup, do not run this target!
+.if ${SQUID_UID:L} == nobody
+	@${ECHO_CMD} "'nobody' is a system user, you do not need to execute"; \
+	${ECHO_CMD} "this target!"
+	exit 1
+.endif
+	@if [ `id -u` -ne 0 ]; \
+	then ${ECHO_CMD} "Sorry, you must be root to use this target."; exit 1; fi; \
+	current_uid=`id -u ${SQUID_UID}`; \
+	current_gid=`pw groupshow ${SQUID_GID}|cut -f 3 -d :`; \
+	${ECHO_CMD} "I will remove this user:"; \
+	${ID} -P $${current_uid}; \
+	${ECHO_CMD} "and this group:"; \
+	pw groupshow ${SQUID_GID}; \
+	${ECHO_CMD} "I will then re-create them with a user and group id of 100."; \
+	${ECHO_CMD} "Then all files and directories under ${PREFIX} and /var that"; \
+	${ECHO_CMD} "are owned by uid $${current_uid} will be chown(1)'ed."; \
+	${ECHO_CMD} "After that, all files and directories that were accessible"; \
+	${ECHO_CMD} "by group $${current_gid} will chgrp(1)'ed respectively."; \
+	${ECHO_CMD} "Note that this assumes group '${SQUID_GID}' to be the primary"; \
+	${ECHO_CMD} "group of user '${SQUID_UID}'. If you have a different setup"; \
+	${ECHO_CMD} "please abort this target now."; \
+	read -p "Press RETURN to continue or CTRL-C to abort:" dummy ; \
+	${ECHO_CMD} "OK, here we go:"; \
+	${ECHO_CMD} "deleting user $${current_uid} and his primary group..."; \
+	pw userdel -u $${current_uid}; \
+	${ECHO_CMD} "adding user ${SQUID_UID} with id 100..."; \
+	pw groupadd -n ${SQUID_GID} -g 100; \
+	pw useradd -n ${SQUID_UID} -u 100 -c "squid caching-proxy pseudo user" \
+	    -d ${PREFIX}/squid -s /sbin/nologin -h - ; \
+	${ECHO_CMD} "chown(1)'ing everything under ${PREFIX} from $${current_uid} to 100..."; \
+	${FIND} -H ${PREFIX} -user $${current_uid} -exec ${CHOWN} 100 {} \; ; \
+	${ECHO_CMD} "chgrp(1)'ing everything under ${PREFIX} from $${current_gid} to 100..."; \
+	${FIND} -H ${PREFIX} -group $${current_gid} -exec ${CHOWN} :100 {} \; ; \
+	${ECHO_CMD} "chown(1)'ing everything under /var from $${current_uid} to 100..."; \
+	${FIND} -H /var -user $${current_uid} -exec ${CHOWN} 100 {} \; ; \
+	${ECHO_CMD} "chgrp(1)'ing everything under /var from $${current_gid} to 100..."; \
+	${FIND} -H /var -group $${current_gid} -exec ${CHOWN} :100 {} \; ; \
+	${ECHO_CMD} "Finished."
 
 .include <bsd.port.post.mk>
