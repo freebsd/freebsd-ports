@@ -9,7 +9,7 @@ PORTNAME=	pircbot
 PORTVERSION=	1.0.5
 CATEGORIES=	irc java
 MASTER_SITES=	http://www.jibble.org/files/ \
-		http://www.i-scream.org.uk/downloads/other/
+		http://www.i-scream.org/downloads/other/
 
 MAINTAINER=	tim@bishnet.net
 COMMENT=	PircBot Java IRC Bot Framework
