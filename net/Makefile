@@ -480,6 +480,7 @@
     SUBDIR += walker
     SUBDIR += whatmask
     SUBDIR += wide-dhcp
+    SUBDIR += wmlj
     SUBDIR += wmnd
     SUBDIR += wmnet
     SUBDIR += wmnet2
