@@ -10,13 +10,14 @@ PORTVERSION=	8.12.11
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/sendmail/&,}
+PKGNAMESUFFIX?=	${TLS_SUFFIX}${SASL_SUFFIX}${LDAP_SUFFIX}${PKGNAMESUFFIX2}
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Reliable, highly configurable mail transfer agent with utilities
 
-CONFLICTS?=	courier-0.* postfix-1.* postfix-2.* sendmail-8.11.* sendmail-*-8.11.* \
-		smail-3.* zmailer-2.*
+CONFLICTS?=	courier-0.* postfix-1.* postfix-2.* smail-3.* zmailer-2.*
+CONFLICTS+=	sendmail-8.11.* sendmail-*-8.11.* sendmail+*-8.11.*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WCONF=		${WRKSRC}/devtools/Site
@@ -43,6 +44,7 @@ PKGMESSAGE=	${WRKSRC}/pkg-message
 # SENDMAIL_WITH_SASL=yes
 # SENDMAIL_WITH_SASL2=yes
 # SENDMAIL_WITH_LDAP=yes
+# SENDMAIL_WITH_SOCKETMAP=yes
 # SENDMAIL_WITH_PICKY_HELO_CHECK=yes
 
 .if defined(SENDMAIL_WITH_SMTPS)
@@ -54,25 +56,61 @@ pre-configure:
 .endif
 
 .if defined(SENDMAIL_WITH_LDAP)
-PKGNAMESUFFIX?=	-ldap
+LDAP_SUFFIX?=	+ldap
+CONFLICTS+=	sendmail+tls-8.* \
+		sendmail+tls+sasl1-8.* \
+		sendmail+tls+sasl2-8.* \
+		sendmail+sasl1-8.* \
+		sendmail+sasl2-8.*
 CONFLICTS+=	sendmail-sasl-8.* sendmail-sasl2-8.* sendmail-tls-8.*
 LIB_DEPENDS+=	ldap.2:${PORTSDIR}/${LDAP_PORT}
 LIB_DEPENDS+=	lber.2:${PORTSDIR}/${LDAP_PORT}
+.else
+CONFLICTS+=	sendmail*+ldap*-8.*
 .endif
 .if defined(SENDMAIL_WITH_SASL)
-LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
-PKGNAMESUFFIX?=	-sasl
+SASL_SUFFIX?=	+sasl1
+CONFLICTS+=	sendmail+tls-8.* \
+		sendmail+tls+ldap-8.* \
+		sendmail+tls+sasl2-8.* \
+		sendmail+tls+sasl2+ldap-8.* \
+		sendmail+sasl2-8.* \
+		sendmail+sasl2+ldap-8.* \
+		sendmail+ldap-8.*
 CONFLICTS+=	sendmail-ldap-8.* sendmail-sasl2-8.* sendmail-tls-8.*
+LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
+.else
+CONFLICTS+=	sendmail*+sasl1*-8.*
 .endif
 .if defined(SENDMAIL_WITH_SASL2)
+SASL_SUFFIX?=	+sasl2
+CONFLICTS+=	sendmail+tls-8.* \
+		sendmail+tls+ldap-8.* \
+		sendmail+tls+sasl-8.* \
+		sendmail+tls+sasl+ldap-8.* \
+		sendmail+sasl-8.* \
+		sendmail+sasl+ldap-8.* \
+		sendmail+ldap-8.*
+CONFLICTS+=	sendmail-ldap-8.* sendmail-sasl-8.* sendmail-tls-8.*
+LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 RUN_DEPENDS+=	${LOCALBASE}/sbin/saslauthd:${PORTSDIR}/security/cyrus-sasl2-saslauthd
-PKGNAMESUFFIX?=	-sasl2
-CONFLICTS+=	sendmail-ldap-8.* sendmail-sasl-8.* sendmail-tls-8.*
+.else
+CONFLICTS+=	sendmail*+sasl2*-8.*
+.endif
+.if defined(SENDMAIL_WITH_SOCKETMAP)
+EXTRA_PATCHES+=	${FILESDIR}/socketmap.patch
 .endif
 .if defined(SENDMAIL_WITH_TLS) || defined(WITH_TLS)
-PKGNAMESUFFIX?=	-tls
+TLS_SUFFIX?=	+tls
+CONFLICTS+=	sendmail+sasl-8.* \
+		sendmail+sasl+ldap-8.* \
+		sendmail+sasl2-8.* \
+		sendmail+sasl2+ldap-8.* \
+		sendmail+ldap-8.*
 CONFLICTS+=	sendmail-ldap-8.* sendmail-sasl-8.* sendmail-sasl2-8.*
+.else
+CONFLICTS+=	sendmail*+tls*-8.*
 .endif
 
 # Build site.config.m4
@@ -126,9 +164,19 @@ do-configure:
 	${SED} -e "s=%%PREFIX%%=${PREFIX}=g" \
 		-e "s=%%LOCALBASE%%=${LOCALBASE}=g" \
 		${SITE} > ${WCONF}/site.config.m4
+.if defined(SENDMAIL_WITH_SMTPS)
+	${ECHO_CMD} \
+	 'APPENDDEF(`conf_sendmail_ENVDEF'\'', `-D_FFR_SMTP_SSL'\'') \
+		>> ${WCONF}/site.config.m4
+.endif
+.if defined(SENDMAIL_WITH_SOCKETMAP)
+	${ECHO_CMD} \
+	 'APPENDDEF(`conf_sendmail_ENVDEF'\'', `-DSOCKETMAP'\'')' \
+		>> ${WCONF}/site.config.m4
+.endif
 .if defined(SENDMAIL_WITH_PICKY_HELO_CHECK)
 	${ECHO_CMD} \
-	 'APPENDDEF(`conf_sendmail_ENVDEF'\'', `-DPICKY_HELO_CHECK'\'')'  \
+	 'APPENDDEF(`conf_sendmail_ENVDEF'\'', `-DPICKY_HELO_CHECK'\'')' \
 		>> ${WCONF}/site.config.m4
 .endif
 .if defined(SENDMAIL_WITHOUT_SHMEM)
@@ -283,9 +331,6 @@ tls-install:
 SITE+=	${FILESDIR}/site.config.m4.ssl
 .endif
 SITE+=	${FILESDIR}/site.config.m4.tls
-.if defined(SENDMAIL_WITH_SMTPS)
-SITE+=	${FILESDIR}/site.config.m4.smtps
-.endif
 .endif
 
 .if exists(${FILESDIR}/site.config.m4.local)
