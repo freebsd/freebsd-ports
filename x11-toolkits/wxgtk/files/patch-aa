@@ -1,6 +1,9 @@
---- configure.in.orig	Tue Mar 13 00:29:09 2001
-+++ configure.in	Mon May  7 07:12:45 2001
-@@ -1948,16 +1948,12 @@
+
+$FreeBSD$
+
+--- configure.in.orig	Tue May 22 17:27:55 2001
++++ configure.in	Mon May 28 17:26:14 2001
+@@ -1968,16 +1968,12 @@
  WX_LIBRARY_NAME_STATIC_GL="lib${WX_LIBRARY}_gl.a"
  
  dnl the name of the shared library
@@ -21,7 +24,23 @@
  
  dnl shared library settings
  SHARED_LD=
-@@ -2729,24 +2725,6 @@
+@@ -2074,8 +2070,13 @@
+       *-*-freebsd* | *-*-openbsd* | *-*-netbsd*)
+         SHARED_LD="${CC} -shared -o"
+         PIC_FLAG="-fPIC"
+-        WX_ALL_INSTALLED="CREATE_INSTALLED_LINKS"
+-        WX_ALL="CREATE_LINKS"
++	if test "$wxUSE_OPENGL" = "yes"; then
++	    WX_ALL_INSTALLED="CREATE_INSTALLED_LINKS CREATE_INSTALLED_LINKS_GL"
++	    WX_ALL="CREATE_LINKS CREATE_LINKS_GL"
++	else
++	    WX_ALL_INSTALLED="CREATE_INSTALLED_LINKS"
++	    WX_ALL="CREATE_LINKS"
++	fi
+       ;;
+       *-*-osf* )
+         SHARED_LD="${CXX} -shared -o"
+@@ -2749,24 +2750,6 @@
      fi
  fi
  
@@ -46,7 +65,7 @@
  dnl ---------------------------------------------------------------------------
  dnl Optional libraries
  dnl ---------------------------------------------------------------------------
-@@ -3788,8 +3766,6 @@
+@@ -3808,8 +3791,6 @@
  AC_SUBST(WX_LIBRARY)
  AC_SUBST(WX_TARGET_LIBRARY)
  AC_SUBST(WX_LIBRARY_LINK1)
@@ -55,7 +74,7 @@
  AC_SUBST(PROGRAM_EXT)
  
  dnl global gl options
-@@ -3799,8 +3775,6 @@
+@@ -3819,8 +3800,6 @@
  AC_SUBST(WX_LIBRARY_GL)
  AC_SUBST(WX_TARGET_LIBRARY_GL)
  AC_SUBST(WX_LIBRARY_LINK1_GL)

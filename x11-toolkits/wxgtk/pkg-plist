@@ -322,10 +322,13 @@ include/wx/zipstrm.h
 include/wx/zstream.h
 lib/libwx_gtk.so
 lib/libwx_gtk.so.2
+lib/libwx_gtk_gl.so
+lib/libwx_gtk_gl.so.2
 lib/wx/include/wx/gtk/setup.h
 share/locale/cs/LC_MESSAGES/wxstd.mo
 share/locale/da/LC_MESSAGES/wxstd.mo
 share/locale/de/LC_MESSAGES/wxstd.mo
+share/locale/es/LC_MESSAGES/wxstd.mo
 share/locale/fi/LC_MESSAGES/wxstd.mo
 share/locale/fr/LC_MESSAGES/wxstd.mo
 share/locale/it/LC_MESSAGES/wxstd.mo
