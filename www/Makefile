@@ -502,6 +502,7 @@
     SUBDIR += p5-Kwiki-Archive-SVK
     SUBDIR += p5-Kwiki-Atom
     SUBDIR += p5-Kwiki-GDGraphGenerator
+    SUBDIR += p5-Kwiki-Icons-Gnome
     SUBDIR += p5-Kwiki-NewPage
     SUBDIR += p5-Kwiki-PagePrivacy
     SUBDIR += p5-Kwiki-RecentChanges
