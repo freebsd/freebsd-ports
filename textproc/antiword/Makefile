@@ -9,7 +9,6 @@ PORTNAME=	antiword
 PORTVERSION=	0.30
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.winfield.demon.nl/linux/
-DISTNAME=	${PORTNAME}
 
 MAINTAINER=	leeym@cae.ce.ntu.edu.tw
 
