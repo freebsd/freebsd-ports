@@ -145,6 +145,7 @@
     SUBDIR += liblrdf
     SUBDIR += libpathan
     SUBDIR += libtre
+    SUBDIR += libuninameslist
     SUBDIR += libwpd
     SUBDIR += libxml
     SUBDIR += libxml++
