@@ -13,3 +13,4 @@ lib/X11/fonts/artwiz-fonts/mints-strong.pcf.gz
 lib/X11/fonts/artwiz-fonts/nu.pcf.gz
 lib/X11/fonts/artwiz-fonts/snap.pcf.gz
 lib/X11/fonts/artwiz-fonts/fonts.dir
+@dirrm lib/X11/fonts/artwiz-fonts
