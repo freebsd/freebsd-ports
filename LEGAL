@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.36 1996/07/06 12:09:29 gpalmer Exp $
+# $Id: LEGAL,v 1.37 1996/07/06 12:13:58 gpalmer Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -15,6 +15,7 @@ Such ports are listed below:
 
 Dist			Port			Why
 ------------------------------------------------------------------------------
+JDK-*			ports/www/jdk		Put copyright on packaging!
 cku190.tar.gz		ports/comms/kermit	Restrictive copyright
 fwtk-*			ports/security/fwtk	No redistribution allowed
 glimpse-*		ports/misc/glimpse	Don't sell for profit
