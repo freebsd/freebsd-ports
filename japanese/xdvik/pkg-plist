@@ -3,13 +3,14 @@ bin/t1mapper
 bin/xdvi
 bin/xdvizilla
 libexec/xdviprint
-%%TEXMF%%/xdvi/vfontmap
-%%TEXMF%%/xdvi/vfontmap.dist
-%%TEXMF%%/xdvi/xdvi.cfg
-%%TEXMF%%/xdvi/xdvipaper.dvi2ps-j
-%%TEXMF%%/xdvi/xdvipaper.dvips
-%%TEXMF%%/xdvi/xdvipaper.jdvi2kps
-%%TEXMF%%/xdvi/XDvi.ptex-tetex
+%%XDVIETCDIR%%/vfontmap
+%%XDVIETCDIR%%/vfontmap.dist
+%%XDVIETCDIR%%/xdvi.cfg
+%%XDVIETCDIR%%/xdvipaper.dvi2ps-j
+%%XDVIETCDIR%%/xdvipaper.dvips
+%%XDVIETCDIR%%/xdvipaper.jdvi2kps
+%%XDVIETCDIR%%/XDvi
+@dirrm %%XDVIETCDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.xdvik-jp.html
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.xdvik20a-j1.1
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.xdvik20c-j1.0
@@ -36,3 +37,5 @@ libexec/xdviprint
 %%PORTDOCS%%%%DOCSDIR%%/README.xdvik-22.15-j1.04.patch
 %%PORTDOCS%%%%DOCSDIR%%/xdvi.icon
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@exec %%MKTEXLSR%%
+@unexec %%MKTEXLSR%%
