@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	GD
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://kirara.prec.kyoto-u.ac.jp/~tam/GD/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
+PKGNAMESUFFIX=	${PKGNAMESUFFIX_XPM}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
@@ -23,7 +24,8 @@ USE_RUBY_EXTCONF=	yes
 USE_RUBY_RD=	yes
 .endif
 
-CONFIGURE_ARGS=	--with-gd-include="${LOCALBASE}/include/gd" --with-jpeg
+CONFIGURE_ARGS=	--with-gd-include="${LOCALBASE}/include/gd" --with-jpeg \
+		--with-freetype
 INSTALL_TARGET=	site-install
 
 .include <bsd.port.pre.mk>
@@ -32,19 +34,17 @@ INSTALL_TARGET=	site-install
 .if exists(${LOCALBASE}/bin/gd2topng)
 WITH_X11_CHECK!=	ldd ${LOCALBASE}/bin/gd2topng | grep -w 'libX11\.so' || true
 .else
-WITH_X11_CHECK=	#empty
+WITH_X11_CHECK=		# empty
 .endif
 
 .if !empty(WITH_X11_CHECK)
 USE_XLIB=	yes
 USE_XPM=	yes
-USE_FREETYPE=	yes
-
-CONFIGURE_ARGS+=	--with-x-dir="${X11BASE}" --with-xpm --with-ttf
+PKGNAMESUFFIX_XPM=	+xpm
+CONFIGURE_ARGS+=	--with-x-dir="${X11BASE}" --with-xpm
 .endif
 
 EXAMPLES_EN=	example.rb	\
-		gdtestttf.png	\
 		gdtestttf.rb	\
 		webpng.rb
 DOCS_EN=	Changes		\
@@ -81,6 +81,9 @@ TUTORIAL_JA=	gd_intro-ja.html	\
 		imgs/styled_line_transparent.png	\
 		imgs/top.png		\
 		imgs/xpy.png
+
+post-patch:
+	${RUBY} -i -pe 'sub %r:/win98/windows/FONTS:, "${X11BASE}/lib/X11/fonts/TrueType"' ${WRKSRC}/sample/gdtestttf.rb
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -1,6 +1,5 @@
 %%RUBY_SITEARCHLIBDIR%%/GD.so
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gd/example.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gd/gdtestttf.png
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gd/gdtestttf.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gd/webpng.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gd
