@@ -289,7 +289,7 @@ sub change_summary_changed {
 			close RCS;
 		}
 
-		&append_line($outfile, "$rev,$delta,$rcsfile,");
+		&append_line($outfile, "$rev,$delta,,$rcsfile");
 	}
 }
 
@@ -311,7 +311,7 @@ sub change_summary_added {
 			$delta = "+$lines -0";
 		}
 
-		&append_line($outfile, "$rev,$delta,$rcsfile,new");
+		&append_line($outfile, "$rev,$delta,new,$rcsfile");
 	}
 }
 
@@ -344,7 +344,7 @@ sub change_summary_removed {
 			$delta = "+0 -$lines";
 		}
 
-		&append_line($outfile, "$rev,$delta,$rcsfile,dead");
+		&append_line($outfile, "$rev,$delta,dead,$rcsfile");
 	}
 }
 
@@ -508,11 +508,11 @@ sub format_summaries {
 		open FILE, $filename or next;
 		while (<FILE>) {
 			chomp;
-			my ($r, $d, $f, $s) = split /,/, $_;
+			my ($r, $d, $s, $f) = split(/,/, $_, 4);
 			push @revs, $r;
 			push @deltas, $d;
-			push @files, $f;
 			push @statuses, $s;
+			push @files, $f;
 		}
 		close FILE;
 	}    
