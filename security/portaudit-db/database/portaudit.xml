@@ -134,8 +134,11 @@ This file is in the public domain.
       <cvename>CAN-2004-0631</cvename>
       <url>http://secunia.com/advisories/12285</url>
       <url>http://xforce.iss.net/xforce/xfdb/16972</url>
+      <url>http://xforce.iss.net/xforce/xfdb/16973</url>
       <url>http://www.idefense.com/application/poi/display?id=124&amp;type=vulnerabilities&amp;flashstatus=false</url>
       <url>http://www.idefense.com/application/poi/display?id=125&amp;type=vulnerabilities&amp;flashstatus=false</url>
+      <url>http://www.osvdb.org/8654</url>
+      <url>http://www.osvdb.org/8655</url>
     </references>
     <dates>
       <discovery>2004-03-30</discovery>
@@ -763,7 +766,10 @@ This file is in the public domain.
       <cvename>CAN-2004-0500</cvename>
       <url>http://secunia.com/advisories/12125</url>
       <url>http://www.osvdb.org/8382</url>
+      <url>http://www.osvdb.org/8961</url>
+      <url>http://www.osvdb.org/8962</url>
       <url>http://www.suse.com/de/security/2004_25_gaim.html</url>
+      <bid>10865</bid>
     </references>
     <dates>
       <discovery>2004-08-12</discovery>
@@ -828,6 +834,69 @@ This file is in the public domain.
       <discovery>2004-07-22</discovery>
       <entry>2004-08-16</entry>
       <modified>2004-08-16</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="ebffe27a-f48c-11d8-9837-000c41e2cdad">
+    <cancelled superseded="eda0ade6-f281-11d8-81b0-000347a4fa7d"/>
+  </vuln>
+
+  <vuln vid="eda0ade6-f281-11d8-81b0-000347a4fa7d">
+    <topic>Qt 3.x BMP heap-based overflow, GIF and XPM DoS NULL pointer dereference</topic>
+    <affects>
+      <package>
+        <name>qt</name>
+        <range><ge>3.*</ge><lt>3.3.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Chris Evans has discovered flaws in th handling of various bitmap
+          formats, allowing the execution of arbitrary code or causing a DoS.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://scary.beasts.org/security/CESA-2004-004.txt</url>
+      <url>http://secunia.com/advisories/12325</url>
+      <cvename>CAN-2004-0691</cvename>
+      <cvename>CAN-2004-0692</cvename>
+      <cvename>CAN-2004-0693</cvename>
+      <url>http://www.osvdb.org/9026</url>
+      <url>http://xforce.iss.net/xforce/xfdb/17040</url>
+      <url>http://xforce.iss.net/xforce/xfdb/17041</url>
+      <url>http://xforce.iss.net/xforce/xfdb/17042</url>
+    </references>
+    <dates>
+      <discovery>2000-08-18</discovery>
+      <entry>2004-08-20</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0d3a5148-f512-11d8-9837-000c41e2cdad">
+    <cancelled superseded="bacbc357-ea65-11d8-9440-000347a4fa7d"/>
+  </vuln>
+
+  <vuln vid="bacbc357-ea65-11d8-9440-000347a4fa7d">
+    <topic>SpamAssassin DoS vulnerability</topic>
+    <affects>
+      <package>
+        <name>p5-Mail-SpamAssassin</name>
+        <range><lt>2.64</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Unspecified malformed messages can be used to
+          cause a DoS (Denial of Service).</p>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/12255</url>
+      <mlist msgid="20040805034902.6DF465900BB@radish.jmason.org>">http://marc.theaimsgroup.com/?l=spamassassin-announce&amp;m=109168121628767&amp;w=2</mlist>
+    </references>
+    <dates>
+      <discovery>2004-08-05</discovery>
+      <entry>2004-08-10</entry>
     </dates>
   </vuln>
 </vuxml>
