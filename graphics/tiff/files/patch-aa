@@ -162,7 +162,7 @@
  	;;
 +    *-freebsd*)
 +	DSOSUF=so
-+	DSOSUF_VERSION=${DSOSUF}.4.0
++	DSOSUF_VERSION=${DSOSUF}.1.0
 +	LIBCOPTS='-fpic -DPIC'
 +	DSOOPTS='-Bshareable'
 +	DSO=FREEBSD

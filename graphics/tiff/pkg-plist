@@ -1,5 +1,5 @@
 lib/libtiff34.a
-lib/libtiff34.so.4.0
+lib/libtiff34.so.1.0
 lib/libtiff34.so
 @exec /sbin/ldconfig -m %D/lib
 bin/fax2tiff
