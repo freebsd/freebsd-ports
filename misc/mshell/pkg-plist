@@ -1,0 +1,8 @@
+@cd /usr/local
+@mode 644
+@owner bin
+lib/menus/sample.men
+lib/menus/menulogin
+man/man1/mshell.1
+@mode 755
+bin/mshell

@@ -1,0 +1,46 @@
+*** settatr.c.orig	Sat Sep 24 00:47:17 1994
+--- settatr.c	Sat Sep 24 00:49:46 1994
+***************
+*** 15,21 ****
+  	ioctl ( 0, TIOCGETP, &sg );
+  	if (access(".stty", 0) == -1) {	/* not already set up */
+  		sg.sg_erase = '';
+! 		sg.sg_kill  = '';
+  		sg.sg_flags |= XTABS;
+  	}
+  	sg.sg_flags |= ECHO;
+--- 15,21 ----
+  	ioctl ( 0, TIOCGETP, &sg );
+  	if (access(".stty", 0) == -1) {	/* not already set up */
+  		sg.sg_erase = '';
+! 		sg.sg_kill  = 21; /* ^U */
+  		sg.sg_flags |= XTABS;
+  	}
+  	sg.sg_flags |= ECHO;
+***************
+*** 25,36 ****
+  	ioctl ( 0, TIOCSETP, &sg );
+  
+  	ioctl ( 0, TIOCGETC, &tc );
+! 	tc.t_intrc  = '';
+  	ioctl ( 0, TIOCSETC, &tc );
+  
+  	ioctl ( 0, TIOCGLTC, &lt );
+! 	lt.t_werasc = '';
+! 	lt.t_rprntc = '';
+  	ioctl ( 0, TIOCSLTC, &lt );
+  #endif
+  #ifdef SYSV
+--- 25,36 ----
+  	ioctl ( 0, TIOCSETP, &sg );
+  
+  	ioctl ( 0, TIOCGETC, &tc );
+! 	tc.t_intrc  = 3; /* ^C */
+  	ioctl ( 0, TIOCSETC, &tc );
+  
+  	ioctl ( 0, TIOCGLTC, &lt );
+! 	lt.t_werasc = 23; /* ^W */
+! 	lt.t_rprntc = 18; /* ^R */
+  	ioctl ( 0, TIOCSLTC, &lt );
+  #endif
+  #ifdef SYSV

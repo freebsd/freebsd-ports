@@ -1,0 +1,19 @@
+*** mshell.c.orig	Sat Sep 24 00:51:51 1994
+--- mshell.c	Sat Sep 24 00:52:20 1994
+***************
+*** 142,148 ****
+  
+  			if ( strcmp (action_string, NULLSTR) == 0 ) {
+  				invalid_option = TRUE;
+! 				printf ("\tNo such help option name as: %s\!\!\n", opt2);
+  			}
+  			else {
+  				tmpword[0] = EOS;
+--- 142,148 ----
+  
+  			if ( strcmp (action_string, NULLSTR) == 0 ) {
+  				invalid_option = TRUE;
+! 				printf ("\tNo such help option name as: %s!!\n", opt2);
+  			}
+  			else {
+  				tmpword[0] = EOS;
