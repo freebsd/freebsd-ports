@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gedit
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	editors gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ade@FreeBSD.org
 
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
-		gnomeprint.9:${PORTSDIR}/print/gnomeprint \
+		gnomeprint.12:${PORTSDIR}/print/gnomeprint \
 		glade.4:${PORTSDIR}/devel/libglade
 RUN_DEPENDS=	gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter
 
