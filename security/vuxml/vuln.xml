@@ -56,6 +56,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <cvename>CAN-2004-0692</cvename>
       <cvename>CAN-2004-0693</cvename>
       <url>http://www.trolltech.com/developer/changes/changes-3.3.3.html</url>
+      <url>http://scary.beasts.org/security/CESA-2004-004.txt</url>
     </references>
     <dates>
       <discovery>2004-08-11</discovery>
