@@ -13,11 +13,13 @@
 
 PORTNAME=	bind9
 PORTVERSION=	9.3.0
+PORTREVISION=	1
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	bind9/${ISCVERSION}
 DISTNAME=	bind-${ISCVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc \
+		9.3.0-patch1 9.3.0-patch1.asc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	DougB@FreeBSD.org
@@ -90,6 +92,12 @@ MAN3=	lwres.3 lwres_addr_parse.3 lwres_buffer.3 lwres_buffer_add.3 \
 MAN5=	named.conf.5 rndc.conf.5
 MAN8=	dnssec-keygen.8 dnssec-signzone.8 lwresd.8 named-checkconf.8 \
 	named-checkzone.8 named.8 nsupdate.8 rndc-confgen.8 rndc.8
+
+pre-patch:
+	@${SED} -e 's#bind9/lib/dns/validator.c#lib/dns/validator.c#g' \
+		${DISTDIR}/9.3.0-patch1 > ${WRKDIR}/9.3.0-patch1
+
+EXTRA_PATCHES=	${WRKDIR}/9.3.0-patch1
 
 post-patch:
 .for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.8 \
