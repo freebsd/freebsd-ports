@@ -1,0 +1,20 @@
+--- Makefile.orig	Fri Feb  5 22:52:56 1999
++++ Makefile	Fri Feb  5 22:53:25 1999
+@@ -8,7 +8,7 @@
+ PROG   = junkbuster
+ O      = o
+ RM     = rm -f
+-MORE_CFLAGS = -g
++MORE_CFLAGS =
+ 
+ # use this for Solaris 2.x
+ #LDFLAGS = -lnsl -lsocket 
+@@ -47,7 +47,7 @@
+ #MORE_CFLAGS = -relax_pointers
+ #LDFLAGS = -map junkbuster.xMAP
+ 
+-CFLAGS  = $(DEFAULT_CFLAGS) $(MORE_CFLAGS)
++CFLAGS  += $(DEFAULT_CFLAGS) $(MORE_CFLAGS)
+ 
+ OBJS =	jcc.$(O) parsers.$(O) filters.$(O) loaders.$(O) bind.$(O) conn.$(O) \
+ 	encode.$(O) ssplit.$(O) socks4.$(O) acl.$(O) gnu_regex.$(O) win32.$(O)
