@@ -3,7 +3,7 @@
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.55 1999/07/20 22:14:55 jmz Exp $
+# $Id: Makefile,v 1.56 1999/07/20 23:42:28 asami Exp $
 #
 
 DISTNAME=	xc
@@ -32,6 +32,10 @@ MTREE_FILE=	/etc/mtree/BSD.x11.dist
 .if (${MACHINE} == "pc98")
 SCRIPTS_ENV+=	MACHINE=pc98
 PLIST=		${PKGDIR}/PLIST.pc98
+.endif
+.if (${MACHINE} == "alpha")
+SCRIPTS_ENV+=	MACHINE=alpha
+PLIST=		${PKGDIR}/PLIST.alpha
 .endif
 
 .if defined(XDM_DES) && (${USA_RESIDENT} != YES && ${USA_RESIDENT} != NO)
