@@ -7356,6 +7356,7 @@ p5-POE-Component-Pcap	ports/devel/p5-POE-Component-Pcap
 p5-POE-Component-RRDTool	ports/net/p5-POE-Component-RRDTool
 p5-POE-Component-RSS	ports/devel/p5-POE-Component-RSS
 p5-POE-Component-SMTP	ports/mail/p5-POE-Component-SMTP
+p5-POE-Component-SNMP	ports/net-mgmt/p5-POE-Component-SNMP
 p5-POE-Component-SSLify	ports/security/p5-POE-Component-SSLify
 p5-POE-Component-Server-HTTP	ports/www/p5-POE-Component-Server-HTTP
 p5-POE-Component-Server-XMLRPC	ports/devel/p5-POE-Component-Server-XMLRPC
