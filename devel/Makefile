@@ -320,6 +320,7 @@
     SUBDIR += p5-Cache-Cache
     SUBDIR += p5-Carp-Assert
     SUBDIR += p5-Cdk
+    SUBDIR += p5-Class-Accessor
     SUBDIR += p5-Class-Contract
     SUBDIR += p5-Class-Date
     SUBDIR += p5-Class-Delegation
