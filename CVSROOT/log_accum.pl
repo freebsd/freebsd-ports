@@ -385,10 +385,10 @@ sub do_changes_file {
 		$unique{$category} = 1;
 		if ($category =~ /^cvs-/) {
 			# convert mailing list name back to category
+			chomp $category;
+			$category =~ s/^cvs-//;
 
-			$category =~ /^cvs-([a-z]*$)/ or die "Erp!";
-
-			my $changes = "$CVSROOT/CVSROOT/commitlogs/$1";
+			my $changes = "$CVSROOT/CVSROOT/commitlogs/$category";
 			open CHANGES, ">>$changes"
 				or die "Cannot open $changes.\n";
 			print CHANGES join("\n", @text), "\n\n";
