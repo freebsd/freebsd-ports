@@ -32,7 +32,6 @@ else
 		lips2p lips3 lips4 bjc880j lips4v \
 		m8510 coslw2p coslwxl uniprint \
 		lj250 declj250 ap3250 epson eps9mid eps9high lp8000 \
-		epag \
 		escpage lp2000 \
 		alc8600 alc8500 alc2000 alc4000 alc1900 alc4100 \
 		lp9800c lp9000c lp9500c lp8800c lp8300c lp8500c lp3000c \
@@ -52,7 +51,7 @@ else
 		pj pjetxl pjxl paintjet \
 		pjxl300 pxlmono pxlcolor \
 		ijs ibmpro jetp3852 imagen fs600 lxm5700m \
-		lxm3200 lx5000 lex2050 lex3200 lex5700 lex7000 \
+		lx5000 lex2050 lex3200 lex5700 lex7000 \
 		cp50 necp6 \
 		npdl \
 		oce9050 oki182 okiibm atx23 atx24 atx38 r4081 \
@@ -66,7 +65,6 @@ else
 		xcf xcfcmyk \
 		faxg3 faxg32d faxg4 \
 		miff24 inferno jpeg jpeggray \
-		mgrmono mgrgray2 mgrgray4 mgrgray8 mgr4 mgr8 \
 		pcxmono pcxgray pcx16 pcx256 pcx24b pcxcmyk pdfwrite \
 		psdrgb psdcmyk \
 		bit bitrgb bitcmyk plan9bm pam pbm pbmraw \
@@ -150,7 +148,6 @@ Have fun with this new configuration style !     -andreas \n\n\
   "eps9mid"  "Epson-compatible 9-pin, interleaved lines, medium resol" "$status_eps9mid" \
   "eps9high" "Epson-compatible 9-pin, interleaved lines, triple resol" "$status_eps9high" \
   "lp8000"   "Epson LP-8000 line printer" "$status_lp8000" \
-  "epag"     "Epson ESC/Page laser printer (generic) [EPAG]" "$status_epag" \
   "escpage"  "Epson ESC/Page laser printer (generic) [LIPS]" "$status_escpage" \
   "lp2000"   "Epson LP-2000/3000/7000/7000G laser printer [LIPS]" "$status_lp2000" \
   "alc8600"  "Epson AL-C8600 color laser printer [EPLASER]" "$status_alc8600" \
@@ -248,7 +245,6 @@ Have fun with this new configuration style !     -andreas \n\n\
   "imagen"   "Imagen ImPress printers" "$status_imagen" \
   "fs600"    "Kyocera FS-600 (600 dpi)" "$status_fs600" \
   "lxm5700m" "Lexmark 5700 monotone" "$status_lxm5700m" \
-  "lxm3200"  "Lexmark 3200/Z12/Z22/Z31/Z32 [LXM3200]" "$status_lxm3200" \
   "lx5000"   "Lexmark 5000/Z51/Z82 [LX5000]" "$status_lx5000" \
   "lex2050"  "Lexmark 2050 [LEX7000]" "$status_lex2050" \
   "lex3200"  "Lexmark 3200 [LEX7000]" "$status_lex3200" \
@@ -295,12 +291,6 @@ Have fun with this new configuration style !     -andreas \n\n\
   "inferno"  "Inferno bitmaps" "$status_inferno" \
   "jpeg"     "JPEG format, RGB output" "$status_jpeg" \
   "jpeggray" "JPEG format, gray output" "$status_jpeggray" \
-  "mgrmono"  "MGR devices 1-bit monochrome" "$status_mgrmono" \
-  "mgrgray2" "MGR devices 2-bit gray scale" "$status_mgrgray2" \
-  "mgrgray4" "MGR devices 4-bit gray scale" "$status_mgrgray4" \
-  "mgrgray8" "MGR devices 8-bit gray scale" "$status_mgrgray8" \
-  "mgr4"     "MGR devices 4-bit (VGA) color" "$status_mgr4" \
-  "mgr8"     "MGR devices 8-bit color" "$status_mgr8" \
   "pcxmono"  "PCX file format, monochrome 1-bit b/w" "$status_pcxmono" \
   "pcxgray"  "PCX file format, 8-bit gray scale" "$status_pcxgray" \
   "pcx16"    "PCX file format, 4-bit planar EGA/VGA color" "$status_pcx16" \

@@ -1,5 +1,5 @@
---- src/gdevdj9.c.orig	Fri Nov  8 06:15:08 2002
-+++ src/gdevdj9.c	Sun Nov 10 22:00:45 2002
+--- src/gdevdj9.c.orig	Fri Dec 17 19:31:42 2004
++++ src/gdevdj9.c	Fri Dec 17 19:44:07 2004
 @@ -243,19 +243,19 @@
  };
  
@@ -205,6 +205,24 @@
  
  
  /* assign_dpi:  
+@@ -863,7 +863,7 @@
+ 		 2bpp feature of the hp970 someday, it is sized like storage.
+ 		 storagee contains the errors from b/w fs-ditherng */
+ 
+-	data_ptrs.storage = (ulong *) gs_malloc(misc_vars.storage_size_words, W,
++	data_ptrs.storage = (ulong *) gs_malloc(pdev->memory, misc_vars.storage_size_words, W,
+ 					    "cdj970_print_page");
+ 
+ 	/* if we can't allocate working area */
+@@ -884,7 +884,7 @@
+ 	(*cdj970->terminate_page) (pdev, prn_stream);
+ 
+ 	/* Free Memory */
+-	gs_free((char *)data_ptrs.storage, misc_vars.storage_size_words, W,
++	gs_free(pdev->memory, (char *)data_ptrs.storage, misc_vars.storage_size_words, W,
+ 	    "hp970_print_page");
+ 
+ 	PageCtr ++;
 @@ -2292,12 +2292,13 @@
  /* gdev_cmyk_map_cmyk_color: 
  ----------------------------------------------------------------------------------*/
