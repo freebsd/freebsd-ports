@@ -3,7 +3,7 @@
 # Date created:		18 Mar 1996
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.6 1996/09/27 18:17:42 jdp Exp $
+# $Id: Makefile,v 1.7 1996/10/29 23:14:05 jdp Exp $
 #
 
 DISTNAME=	modula-3-3.6
@@ -18,6 +18,11 @@ WRKSRC=		${PORTSDIR}/lang/modula-3-lib/work
 NO_WRKDIR=	yes
 NO_CONFIGURE=	yes
 NO_BUILD=	yes
+
+# Keep these in sync with the PLIST and with the library version numbers
+# in the modula-3-lib port.
+major=		4
+minor=		0
 
 # The Modula-3 build process insists on installing each individual
 # component immediately after that component is built.  To avoid having
@@ -40,7 +45,7 @@ do-install:
 	@echo "Installing files in \"${PREFIX}\""
 	@cd ${temp_prefix}; \
 	    umask 022; \
-	    sed -e "/^@/d" -e "s/\.gz$$//" ${PKGDIR}/PLIST | \
+	    sed -e "/^@/d" -e "/m3build-/d" -e "s/\.gz$$//" ${PKGDIR}/PLIST | \
 		cpio -dump -R ${BINOWN}.${BINGRP} ${PREFIX}
 	@echo "Fixing absolute pathnames in installed files"
 	@/bin/sh ${SCRIPTDIR}/fix_pathnames ${temp_prefix} ${PREFIX}
@@ -72,6 +77,9 @@ do-install:
 	@cd ${temp_prefix}; \
 	    find bin -type f ! -name recordheap | (cd ${PREFIX}; xargs strip)
 	@cd ${PREFIX}/lib/m3/FreeBSD2; strip m3 m3cgc1 m3mkdir
+	@cd ${PREFIX}/bin; \
+	    ln -f m3build m3build-${major}; \
+	    ln -f m3build m3build-${major}.${minor}
 .if !defined(NOMANCOMPRESS)
 	@echo "Compressing manual pages"
 	@cd ${temp_prefix}; \
