@@ -1,9 +1,9 @@
 # New ports collection makefile for:	ezmlm
-# Version required:     0.321
+# Version required:     0.322
 # Date created:		28 November 1998
 # Whom:			Neil Blakey-Milner <nbm@rucus.ru.ac.za>
 #
-# $Id: Makefile,v 1.2 1999/02/22 04:17:39 steve Exp $
+# $Id: Makefile,v 1.3 1999/03/31 15:34:31 steve Exp $
 
 DISTNAME=	ezmlm-idx-${IDX_VERSION}
 CATEGORIES=	mail
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.ezmlm.org/pub/patches/ \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		ezmlm-${EZMLM_VERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	tom@eborcom.com
+MAINTAINER=	tom@FreeBSD.org
 
 # QMAIL_DIR is the directory where qmail is installed
 QMAIL_DIR?=	/var/qmail
@@ -56,7 +56,7 @@ MY_SCRIPTS=	accept check glconf grant mktab test
 MY_CONFIG=	ezmlmglrc ezmlmrc ezmlmsubrc
 
 EZMLM_VERSION=	0.53
-IDX_VERSION=	0.321
+IDX_VERSION=	0.322
 
 PLIST=		${WRKDIR}/PLIST
 
