@@ -63,6 +63,7 @@
     SUBDIR += doxygen
     SUBDIR += dryad
     SUBDIR += elftoaout
+    SUBDIR += entity
     SUBDIR += f77flow
     SUBDIR += fastcrc
     SUBDIR += fhist

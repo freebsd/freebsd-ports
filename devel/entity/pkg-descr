@@ -1,0 +1,24 @@
+Entity is an application framework built around XML. The core of Entity is
+actually an engine that allows you to create objects out of XML by supplying
+methods for creation, attribute-setting, and destruction of XML nodes in a
+tree.
+
+This design allows you to create tags in XML which can be used to represent
+pretty much any object.  We have used this to create a set of tags for the GTK+
+toolkit, allowing you to create graphical applications using XML, and an
+embedded scripting language.
+
+Any scripting language supported by Entity can be used to change the XML tree
+during runtime, and the changes are immediately reflected in the rendered
+representation of the XML.  Using XML for the user interface, data storage, and
+code of an application allows you to easily implement configuration, saving,
+and undo.
+
+The interface for creating UIs and programming in Entity is quite intuitive and
+allows for rapid application development.  Entity currently supports Perl,
+Python, and C for doing runtime XML creation and modification.
+
+WWW:  http://entity.evilplan.org
+
+- filbert
+jesse@cylant.com

@@ -1,0 +1,13 @@
+--- gregex/src/Makefile.in.orig	Thu Jun 22 22:15:40 2000
++++ gregex/src/Makefile.in	Sat Oct 28 06:24:45 2000
+@@ -159,8 +159,8 @@
+ 	$(mkinstalldirs) $(DESTDIR)$(libdir)
+ 	@list='$(lib_LTLIBRARIES)'; for p in $$list; do \
+ 	  if test -f $$p; then \
+-	    echo "$(LIBTOOL)  --mode=install $(INSTALL) $$p $(DESTDIR)$(libdir)/$$p"; \
+-	    $(LIBTOOL)  --mode=install $(INSTALL) $$p $(DESTDIR)$(libdir)/$$p; \
++	    echo "$(LIBTOOL)  --mode=install $(INSTALL_DATA) $$p $(DESTDIR)$(libdir)/$$p"; \
++	    $(LIBTOOL)  --mode=install $(INSTALL_DATA) $$p $(DESTDIR)$(libdir)/$$p; \
+ 	  else :; fi; \
+ 	done
+ 
