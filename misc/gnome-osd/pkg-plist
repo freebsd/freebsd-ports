@@ -1,0 +1,23 @@
+bin/gnome-osd-client
+bin/gnome-osd-properties
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnome-osd.schemas > /dev/null || /usr/bin/true
+etc/gconf/schemas/gnome-osd.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnome-osd.schemas > /dev/null || /usr/bin/true
+libdata/bonobo/servers/GNOME_OSD.server
+%%PYTHON_SITELIBDIR%%/gconfsync.py
+%%PYTHON_SITELIBDIR%%/gconfsync.pyc
+%%PYTHON_SITELIBDIR%%/gconfsync.pyo
+%%PYTHON_SITELIBDIR%%/gosd.py
+%%PYTHON_SITELIBDIR%%/gosd.pyc
+%%PYTHON_SITELIBDIR%%/gosd.pyo
+libexec/gnome-osd-server
+share/gnome/control-center-2.0/capplets/gnome-osd-properties.desktop
+share/gnome/pixmaps/gnome-osd.png
+share/locale/pt/LC_MESSAGES/gnome-osd.mo
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/rbosd.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/xchatosd.py
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
