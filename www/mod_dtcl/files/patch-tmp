@@ -1,0 +1,50 @@
+--- apache_request.c	Mon Mar 19 12:36:42 2001
++++ apache_request.c	Fri Jun  1 20:36:57 2001
+@@ -328,20 +328,34 @@
+     request_rec *r = req->r;
+     FILE *fp;
+-    char prefix[] = "apreq";
+-    char *name;
+-    int fd, tries = 100;
+-    
+-    while (--tries > 0) {
+-	if ( (name = tempnam(req->temp_dir, prefix)) == NULL ) continue;
+-	fd = ap_popenf(r->pool, name, O_CREAT|O_EXCL|O_RDWR, 0600);
+-	if ( fd >= 0 )
+-	    break; /* success */
+-	else
++#define PREFIX "apreq"
++    char *name = NULL;
++    int fd = -1;
++    char *dirs[5], **dir;
++
++    dirs[0] = getenv("TMPDIR"); dirs[1] = req->temp_dir;
++    dirs[2] = P_tmpdir; dirs[3] = "/tmp"; dirs[4] = NULL;
++
++    /*
++     * Look for the non-NULL directory. The order
++     * above is dictated by the tempnam(3) spec
++     */
++    for (dir = dirs; *dir == NULL; dir++) /* Nothing */;
++
++    /* Now, try to create the temporary file in on of the directories: */
++    for (fd = -1; fd == -1 && *dir; dir++) {
++	name = malloc(strlen(*dir) + sizeof PREFIX + 8);
++	if (!name) {
++	    ap_log_rerror(REQ_ERROR, "[libapreq] could not allocate memory");
++	    return(NULL);
++	}
++	sprintf(name, "%s/%s.XXXXXX", *dir, PREFIX);
++	fd = mkstemp(name);
++	if (fd == -1)
+ 	    free(name);
+     }
+-    
+-    if ( tries == 0  || (fp = ap_pfdopen(r->pool, fd, "w+") ) == NULL ) {
++
++    if ( fd == -1 || (fp = ap_pfdopen(r->pool, fd, "w+") ) == NULL ) {
+ 	ap_log_rerror(REQ_ERROR,
+-		      "[libapreq] could not open temp file '%s'", name); 	
++		      "[libapreq] could not open temp file '%s'", name);
+ 	if ( fd >= 0 ) { remove(name); free(name); }
+ 	return NULL;
