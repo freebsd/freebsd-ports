@@ -37,6 +37,7 @@
     SUBDIR += devil-fpw
     SUBDIR += diclookup-emacs20
     SUBDIR += diclookup-mule
+    SUBDIR += drpl
     SUBDIR += dserver
     SUBDIR += dvi2dvi
     SUBDIR += dvi2ps
