@@ -4,7 +4,7 @@
 #
 
 PORTNAME=	nessus-devel
-PORTVERSION=	2.0.10a
+PORTVERSION=	2.1.0
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \
@@ -17,7 +17,7 @@ DISTNAME=	nessus-core-${PORTVERSION}
 MAINTAINER=	udo.schweigert@siemens.com
 COMMENT=	A security scanner: looks for vulnerabilities in a given network
 
-LIB_DEPENDS=	nasl.2:${PORTSDIR}/security/nessus-libnasl-devel
+LIB_DEPENDS=	nasl.3:${PORTSDIR}/security/nessus-libnasl-devel
 
 DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/nessus-core
