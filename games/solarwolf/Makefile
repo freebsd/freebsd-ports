@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	solarwolf
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	games
-MASTER_SITES=	http://shredwheat.zopesite.com/solarwolf/files/
+MASTER_SITES=	http://www.pygame.org/shredwheat/solarwolf/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
@@ -21,7 +21,7 @@ do-build:
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/solarwolf
-	(cd ${WRKSRC}; tar cf - .) | \
+	(cd ${WRKSRC}; tar -cf - --exclude ".xvpics" .) | \
 		(cd ${PREFIX}/share/solarwolf; tar --unlink -xf -)
 	@printf "#!/bin/sh\ncd ${PREFIX}/share/solarwolf && \
 		exec ${PYTHON_CMD} ${PREFIX}/share/solarwolf/solarwolf.py\n" > ${WRKDIR}/solarwolf.sh
