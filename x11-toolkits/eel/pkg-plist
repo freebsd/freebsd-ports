@@ -26,6 +26,7 @@ include/eel/eel-glib-extensions.h
 include/eel/eel-glyph.h
 include/eel/eel-gnome-extensions.h
 include/eel/eel-graphic-effects.h
+include/eel/eel-gtk-container.h
 include/eel/eel-gtk-extensions.h
 include/eel/eel-gtk-macros.h
 include/eel/eel-image-chooser.h
@@ -81,6 +82,7 @@ share/gnome/eel/fonts/urw/n019024l.pfb
 share/gnome/eel/fonts/urw/n019024l.pfm
 share/locale/az/LC_MESSAGES/eel.mo
 share/locale/ca/LC_MESSAGES/eel.mo
+share/locale/cs/LC_MESSAGES/eel.mo
 share/locale/da/LC_MESSAGES/eel.mo
 share/locale/de/LC_MESSAGES/eel.mo
 share/locale/el/LC_MESSAGES/eel.mo
