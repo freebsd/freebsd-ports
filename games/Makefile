@@ -106,6 +106,7 @@
     SUBDIR += freecell-solver
     SUBDIR += freeciv
     SUBDIR += freeciv-gtk
+    SUBDIR += freedroid
     SUBDIR += freesweep
     SUBDIR += frotz
     SUBDIR += frozenbubble
