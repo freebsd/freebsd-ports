@@ -55,8 +55,10 @@ include/fwcompiler/OSConfigurator.hh
 include/fwcompiler/PolicyCompiler.hh
 include/fwcompiler/RuleProcessor.hh
 include/fwcompiler/manifest.hh
+lib/libfwbuilder.a
 lib/libfwbuilder.so
 lib/libfwbuilder.so.5
+lib/libfwcompiler.a
 lib/libfwcompiler.so
 lib/libfwcompiler.so.5
 %%DOCSDIR%%/AUTHORS

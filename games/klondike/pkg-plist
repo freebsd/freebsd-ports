@@ -68,4 +68,4 @@ share/games/klondike/CARDS/c_warnspace.xbm
 @dirrm share/games/klondike/CARDS/
 @dirrm share/games/klondike/SCORES/
 @dirrm share/games/klondike/
-@unexec rmdir share/games 2>/dev/null || true
+@unexec rmdir %D/share/games 2>/dev/null || true
