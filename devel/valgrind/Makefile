@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	valgrind
-PORTVERSION=	327
+PORTVERSION=	352
 CATEGORIES=	devel
 MASTER_SITES=	http://www.rabson.org/
 DISTNAME=	${PORTNAME}-stable-${PORTVERSION}
