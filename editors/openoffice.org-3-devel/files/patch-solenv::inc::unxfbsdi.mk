@@ -1,6 +1,6 @@
 --- ../solenv/inc/unxfbsdi.mk.orig	Wed Oct 24 19:21:47 2001
-+++ ../solenv/inc/unxfbsdi.mk	Wed Mar 13 19:13:59 2002
-@@ -1,84 +1,145 @@
++++ ../solenv/inc/unxfbsdi.mk	Thu Mar 14 17:26:41 2002
+@@ -1,84 +1,139 @@
 -
  # mak file fuer unxfbsdi
  
@@ -16,12 +16,6 @@
 +# not needed at the moment
  LINKOUTPUT_FILTER=" |& $(SOLARENV)$/bin$/msg_filter"
  
-+# name of C Compiler
-+cc=$(CC)
-+
-+# name of C++ Compiler
-+CC=$(CXX)
-+
 +# options for C and C++ Compiler
 +CDEFS+=-D_USE_NAMESPACE=1 -DX86 -DNEW_SOLAR -DSTLPORT_VERSION=400 -DOSVERSION=$(OSVERSION)
 +CDEFS+=$(PTHREAD_CFLAGS)
@@ -57,6 +51,10 @@
 +# Compiler flags for compiling static object in single threaded
 +# environment with character user interface
 +CFLAGSOBJCUIST=-fPIC
++
++# Compiler flags for compiling static object in multi threaded
++# environment with graphical user interface
++CFLAGSOBJGUIMT=-fPIC
  
 -cc=				gcc
 -CC=				g++
@@ -76,10 +74,6 @@
 -CFLAGSSLOCUIMT=	-fPIC
 -CFLAGSPROF=     -pg
 -CFLAGSDEBUG=	-g
-+# Compiler flags for compiling static object in multi threaded
-+# environment with graphical user interface
-+CFLAGSOBJGUIMT=-fPIC
-+
 +# Compiler flags for compiling static object in multi threaded
 +# environment with character user interface
 +CFLAGSOBJCUIMT=-fPIC
@@ -195,7 +189,7 @@
  
  IMPLIB=
  IMPLIBFLAGS=
-@@ -87,12 +148,12 @@
+@@ -87,12 +142,12 @@
  MAPSYMFLAGS=
  
  RC=irc
