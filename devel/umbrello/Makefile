@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR= uml
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	UML Modeller
 
+CONFLICTS=	kdesdk-3.[2-].*
+
 BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
 		automake14:${PORTSDIR}/devel/automake14
 
