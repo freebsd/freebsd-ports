@@ -7,6 +7,7 @@
 
 PORTNAME=	libexecinfo
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.portaone.com/~sobomax/
 
