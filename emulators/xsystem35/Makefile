@@ -3,20 +3,17 @@
 # Date created:		24 Oct 1998
 # Whom:			Seiichirou Hiraoka
 #
-# $Id: Makefile,v 1.12 1999/02/12 15:41:02 flathill Exp $
+# $Id: Makefile,v 1.13 1999/02/12 17:26:06 flathill Exp $
 #
 
-DISTNAME=	xsystem35-1.0.2
-PKGNAME=	xsystem-3.5-1.0.2
+DISTNAME=	xsystem35-1.0.5
+PKGNAME=	xsystem-3.5-1.0.5
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.aist-nara.ac.jp/~masaki-c/private/unitbase/xsys35/down/
 
-#PATCH_SITES=	http://www.aist-nara.ac.jp/~masaki-c/private/unitbase/xsys35/down/
-#PATCHFILES=	patch-19981123.diff.gz
-
 MAINTAINER=	k5@respo.or.jp
 
-LIB_DEPENDS+=	gtk11.1:${PORTSDIR}/x11-toolkits/gtk11
+LIB_DEPENDS+=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12
 
 USE_IMAKE=	YES
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
@@ -33,7 +30,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/../contrib/instgame ${PREFIX}/bin
 
 post-install:
-	strip ${PREFIX}/bin/xsystem35
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/ja/xsystem35
 	@(cd ${WRKSRC}/../doc;\
