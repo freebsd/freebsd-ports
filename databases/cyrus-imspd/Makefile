@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The cyrus IMSP (Internet Message Support Protocol) server
 
+FORBIDDEN=	"potentially exploitable heap overflow, see <http://asg.web.cmu.edu/archive/message.php?mailbox=archive.cyrus-announce&msg=25>"
+
 LIB_DEPENDS=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 BUILD_DEPENDS=	${LOCALBASE}/sbin/pwcheck:${PORTSDIR}/security/cyrus-sasl
 
