@@ -1,0 +1,24 @@
+--- list.cpp.orig	Mon Nov 11 18:53:23 2002
++++ list.cpp	Mon Nov 11 18:54:14 2002
+@@ -17,15 +17,17 @@
+ #include <config.h>
+ #endif
+ 
+-#include <iostream.h>
+-#include <string.h>
++#include <iostream>
++#include <cstring>
+ #include <id3/tag.h>
+ #include <getopt.h>
+-#include <stdlib.h>
+-#include <stdio.h>
++#include <cstdlib>
++#include <cstdio>
+ #include <id3/misc_support.h>
+ #include "frametable.h"
+ #include "genre.h"
++
++using namespace std;
+ 
+ char *GetDescription(const ID3_FrameID eFrameID)
+ {

@@ -2,7 +2,7 @@
 +++ Makefile	Sun Dec 22 03:51:30 2002
 @@ -1,10 +1,9 @@
 -all: id3v2
-+CC=	c++
++CC=	${CXX}
 +PROG=	id3v2
 +SRCS=	id3v2.cpp list.cpp convert.cpp
 +CXXFLAGS+=	-I${DESTDIR}${PREFIX}/include
