@@ -95,6 +95,7 @@
     SUBDIR += serialmail
     SUBDIR += sigrot
     SUBDIR += smail
+    SUBDIR += smapi
     SUBDIR += smtpd
     SUBDIR += smtpfeed
     SUBDIR += solidpop3d

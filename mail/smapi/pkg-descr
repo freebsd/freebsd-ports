@@ -1,0 +1,16 @@
+SMAPI; Modified Squish MSGAPI - version 1.4
+
+Squish MSGAPI0 is copyright 1991 by Scott J. Dudley.  All rights reserved.
+Modifications released to the public domain.
+
+Contained in this archive is the source code for the Squish MSGAPI which
+can be used to access Squish format message bases.  It is based heavily
+on Scott Dudley's original MSGAPI0 code and was modified to support
+compilation on platforms in addition to those supported by MSGAPI0.
+
+SUPPORT
+
+SMAPI is no longer supported by Andrew Clarke.
+
+Latest smapi available at 
+WWW: http://cvs.physcip.uni-stuttgart.de/cvs2/
