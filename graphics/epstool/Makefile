@@ -6,31 +6,29 @@
 #
 
 PORTNAME=	epstool
-PORTVERSION=	2.10
+PORTVERSION=	3.0
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/
-DISTNAME=	gsv42src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create or extract preview bitmaps in EPS files
 
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
-USE_ZIP=	yes
-MAKEFILE=	makefile.unx
+USE_GMAKE=	yes
+MAKEFILE=	makefile
+MAKE_ARGS=	CC="${CC}" CDEBUG="${CFLAGS}" LINK="${CC}" EPSLIB=""
+ALL_TARGET=	${PORTNAME}
 
 post-extract:
-.for file in epstool.zip src.zip
-	@cd ${WRKDIR} && unzip -q -aa ${file}
-.endfor
+	@${RM} -f ${WRKSRC}/epstool
 
-post-install:
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/epstool ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/epstool.htm ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/../gsview.css ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/epstool.htm ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/gsview.css ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
