@@ -3,7 +3,7 @@
 # Date created:		6 January 1997
 # Whom:			proff@suburbia.net
 #
-# $Id: Makefile,v 1.7 1997/12/24 01:21:28 alex Exp $
+# $Id: Makefile,v 1.8 1998/01/25 16:52:44 steve Exp $
 #
 
 DISTNAME=	nntpcache-2.2b4
@@ -18,7 +18,7 @@ MAINTAINER=	nntpcache@nntpcache.org
 
 GNU_CONFIGURE=	TRUE
 CONFIGURE_ARGS=	--localstatedir=/var/spool
-MAN8=		nntpcached.8
+MAN8=		newshound.8 nntpcached.8
 
 USE_GMAKE=	TRUE
 
