@@ -11,39 +11,30 @@ CATEGORIES=	chinese
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	leeym@cae.ce.ntu.edu.tw
+MAINTAINER=	leeym@leeym.com
 
 SRCDIR=		/usr/src/usr.bin/telnet
 
+MAN1=		zh-telnet.1
 
-.include <bsd.port.pre.mk>
 do-extract:
 .if exists (${SRCDIR})
 	@${MKDIR} ${WRKDIR}
 	@${CP} -R ${SRCDIR} ${WRKSRC}
-.if ${OSVERSION} > 500000
 	@${MKDIR} ${WRKSRC}/lib
 	@${CP} -R /usr/src/lib/libtelnet ${WRKSRC}/lib
-.endif
 .else
 BROKEN=	"You need to build this port with ${SRCDIR}"
 .endif
 
-MAN1=		zh-telnet.1
-
-.if ${OSVERSION} > 500000
 pre-patch:
-	@${PERL} -pi -e 's,/../..,,' ${WRKSRC}/Makefile
+	@${PERL} -pi -e 's,/../..,,g' ${WRKSRC}/Makefile
 
 pre-build:
-	@cd ${WRKSRC}/lib/libtelnet; \
-	${MAKE}
-.endif
+	@cd ${WRKSRC}/lib/libtelnet && ${MAKE}
 
 do-install:
-	@cd ${WRKSRC}; \
-	${CP} telnet.1 ${MAN1}; \
-	${INSTALL_PROGRAM} ${WRKSRC}/telnet ${PREFIX}/bin/zh-telnet; \
-	${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1
+	@${INSTALL_PROGRAM} ${WRKSRC}/telnet ${PREFIX}/bin/zh-telnet
+	@${INSTALL_MAN} ${WRKSRC}/telnet.1 ${PREFIX}/man/man1/${MAN1}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
