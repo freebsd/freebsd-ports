@@ -7,6 +7,7 @@
 
 PORTNAME=	postfix
 PORTVERSION=	20001030
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.merit.edu/postfix/experimental/ \
 		ftp://ftp.tux.org/pub/net/postfix/experimental/ \
@@ -21,14 +22,14 @@ DISTNAME=	snapshot-${PORTVERSION}
 MAINTAINER=	dwcjr@inethouston.net
 
 .if !defined(DEBUG)
-MAKEFILEFLAGS+= DEBUG=
+MAKEFILEFLAGS+=	DEBUG=
 .endif
 
 .if defined(CC)
-MAKEFILEFLAGS+= CC="${CC}"
+MAKEFILEFLAGS+=	CC="${CC}"
 .endif
 
-MAKEFILEFLAGS+= OPT="${CFLAGS}"
+MAKEFILEFLAGS+=	OPT="${CFLAGS}"
 
 .if defined(WITH_MYSQL)
 BUILD_DEPENDS+=		${LOCALBASE}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql322-client
@@ -63,6 +64,9 @@ CONF2+=			sample-auth.cf
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libsasl.a:${PORTSDIR}/security/cyrus-sasl
 POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -I${LOCALBASE}/include
 POSTFIX_AUXLIBS+=	${LOCALBASE}/lib/libsasl.a -lpam -lcrypt
+.if exists(/usr/lib/libkrb.a)
+POSTFIX_AUXLIBS+=	-lkrb -ldes -lcom_err
+.endif
 PLIST_SUB+=		WITH_SASL=""
 .else
 PLIST_SUB+=		WITH_SASL="@comment "
@@ -75,8 +79,9 @@ MAN1=	mailq.1 newaliases.1 postalias.1 postcat.1 postconf.1 postdrop.1 \
 MAN5=	access.5 aliases.5 canonical.5 regexp_table.5 relocated.5 \
 	transport.5 virtual.5
 
-MAN8=   bounce.8 cleanup.8 defer.8 error.8 lmtp.8 local.8 master.8 \
-	pickup.8 pipe.8 qmgr.8 showq.8 smtp.8 smtpd.8 trivial-rewrite.8
+MAN8=	bounce.8 cleanup.8 defer.8 error.8 flush.8 lmtp.8 local.8 \
+	master.8 pickup.8 pipe.8 qmgr.8 showq.8 smtp.8 smtpd.8 \
+	spawn.8 trivial-rewrite.8
 
 CONF1=	access aliases canonical main.cf master.cf \
 	regexp_table relocated transport virtual
@@ -87,8 +92,8 @@ CONF2=	sample-aliases.cf sample-canonical.cf sample-debug.cf \
 	sample-resource.cf sample-rewrite.cf sample-smtp.cf \
 	sample-smtpd.cf sample-transport.cf sample-virtual.cf
 
-BIN1=	bounce cleanup error lmtp local master nqmgr pickup \
-	pipe qmgr showq smtp smtpd trivial-rewrite
+BIN1=	bounce cleanup error flush lmtp local master nqmgr pickup \
+	pipe qmgr showq smtp smtpd spawn trivial-rewrite
 
 BIN2=	postalias postcat postconf postdrop postfix \
 	postkick postlog postmap postsuper sendmail
@@ -99,7 +104,7 @@ post-patch:
 	${ECHO} "all: default" >> Makefile)
 
 pre-install:
-	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} Postfix PRE-INSTALL
+	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
 	@${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 0755 \
@@ -160,12 +165,9 @@ do-install:
 		${ECHO_MSG} "Installed HTML documentation in ${DOCDIR}"
 .endif
 
-	@${MKDIR} -m 755 /var/spool/postfix
-	@${CHOWN} root:wheel /var/spool/postfix
-
 	@${ECHO_MSG} '--------------------------------------------------'
 	@${ECHO_MSG} '- To replace your existing sendmail with postfix -'
-	@${ECHO_MSG} '- type "make replace"                          -'
+	@${ECHO_MSG} '- type "make replace"                            -'
 	@${ECHO_MSG} '--------------------------------------------------'
 
 post-install:
