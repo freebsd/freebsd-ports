@@ -14,12 +14,15 @@ DISTNAME=	freebsd-commapi-0.2
 MAINTAINER=	ari.suutari@syncrontech.com
 COMMENT=	Java Communication API for FreeBSD
 
-BUILD_DEPENDS=	${JDKDIR}/bin/javac:${PORTSDIR}/java/jdk13 \
-		${JDKDIR}/jre/lib/ext/comm.jar:${PORTSDIR}/comms/java-commapi
-RUN_DEPENDS=	${JDKDIR}/bin/java:${PORTSDIR}/java/jdk13 \
-		${JDKDIR}/jre/lib/ext/comm.jar:${PORTSDIR}/comms/java-commapi
+BUILD_DEPENDS=	${JDKDIR}/jre/lib/ext/comm.jar:${PORTSDIR}/comms/java-commapi
+RUN_DEPENDS=	${JDKDIR}/jre/lib/ext/comm.jar:${PORTSDIR}/comms/java-commapi
 
-JDKDIR=		${LOCALBASE}/jdk1.3.1
+USE_JAVA=	1.1+
+
+JDKDIR=		${JAVA_HOME}
+
 MAKE_ENV=	JAVA_HOME=${JDKDIR}
+
+PLIST_SUB+=	JAVA_HOME=${JAVA_HOME:S/${PREFIX}\///}
 
 .include <bsd.port.mk>

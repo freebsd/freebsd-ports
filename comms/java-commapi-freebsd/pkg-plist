@@ -1,4 +1,4 @@
-jdk1.3.1/jre/lib/ext/CommDriver.jar
-jdk1.3.1/jre/lib/i386/libSerial.so
-jdk1.3.1/jre/lib/i386/libParallel.so
-jdk1.3.1/jre/lib/javax.comm.properties
+%%JAVA_HOME%%/jre/lib/ext/CommDriver.jar
+%%JAVA_HOME%%/jre/lib/i386/libSerial.so
+%%JAVA_HOME%%/jre/lib/i386/libParallel.so
+%%JAVA_HOME%%/jre/lib/javax.comm.properties
