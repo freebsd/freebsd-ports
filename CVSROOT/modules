@@ -3609,6 +3609,7 @@ jewel		ports/x11-wm/jewel
 jext		ports/editors/jext
 jfc		ports/java/jfc
 jfconv		ports/palm/jfconv
+jffnms		ports/net/jffnms
 jfk		ports/games/jfk
 jfreechart	ports/java/jfreechart
 jftp		ports/ftp/jftp
