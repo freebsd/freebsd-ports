@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	gkrellm
-PORTVERSION=	2.1.4
-PORTREVISION=	1
+PORTVERSION=	2.1.5
+#PORTREVISION=	0
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://web.wt.net/~billw/gkrellm/ \
 		${MASTER_SITE_LOCAL}

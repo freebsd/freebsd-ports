@@ -13,9 +13,11 @@ etc/rc.d/gkrellmd.sh.sample
 %%CLIENT%%bin/gkrellm
 %%CLIENT%%include/gkrellm2/gkrellm.h
 %%CLIENT%%include/gkrellm2/gkrellm-public-proto.h
+%%CLIENT%%share/locale/cs/LC_MESSAGES/gkrellm.mo
 %%CLIENT%%share/locale/de/LC_MESSAGES/gkrellm.mo
 %%CLIENT%%share/locale/es/LC_MESSAGES/gkrellm.mo
 %%CLIENT%%share/locale/fr/LC_MESSAGES/gkrellm.mo
+%%CLIENT%%share/locale/it/LC_MESSAGES/gkrellm.mo
 %%CLIENT%%share/locale/ja/LC_MESSAGES/gkrellm.mo
 %%CLIENT%%share/locale/pl/LC_MESSAGES/gkrellm.mo
 %%CLIENT%%share/locale/ru/LC_MESSAGES/gkrellm.mo
