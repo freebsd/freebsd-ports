@@ -15,12 +15,24 @@ MAINTAINER=	nik@freebsd.org
 
 RUN_DEPENDS=	instant:${PORTSDIR}/textproc/sgmlformat \
 		tidy:${PORTSDIR}/www/tidy \
-		w3m:${PORTSDIR}/www/w3m \
 		${PREFIX}/share/sgml/docbook/dsssl/modular:${PORTSDIR}/textproc/dsssl-docbook-modular \
 		${PREFIX}/share/sgml/html/catalog:${PORTSDIR}/textproc/html \
 		${PREFIX}/share/sgml/linuxdoc:${PORTSDIR}/textproc/linuxdoc \
 		${PREFIX}/share/sgml/docbook/catalog:${PORTSDIR}/textproc/docbook \
 		${PREFIX}/share/sgml/iso8879:${PORTSDIR}/textproc/iso8879
+
+.if defined(WITH_OPENJADE)
+RUN_DEPENDS+=	openjade:${PORTSDIR}/textproc/openjade
+.else
+RUN_DEPENDS+=	jade:${PORTSDIR}/textproc/jade
+.endif
+
+.if ${MACHINE_ARCH} == "alpha"
+WITH_OPENJADE=	yes
+RUN_DEPENDS+=	lynx:${PORTSDIR}/www/lynx
+.else
+RUN_DEPENDS+=	w3m:${PORTSDIR}/www/w3m
+.endif
 
 IS_INTERACTIVE= "user must set JADETEX variable to 'yes' or 'no'"
 
@@ -38,16 +50,6 @@ RUN_DEPENDS+= ${PREFIX}/share/texmf/web2c/jadetex.fmt:${PORTSDIR}/print/jadetex
 
 EXTRACT_ONLY=	# empty
 NO_BUILD=	yes
-
-.if defined(WITH_OPENJADE)
-RUN_DEPENDS+=	openjade:${PORTSDIR}/textproc/openjade
-.else
-RUN_DEPENDS+=	jade:${PORTSDIR}/textproc/jade
-.endif
-
-.if ${MACHINE_ARCH} == "alpha"
-WITH_OPENJADE=	yes
-.endif
 
 do-install:	# empty
 
