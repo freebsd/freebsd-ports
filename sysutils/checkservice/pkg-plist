@@ -1,0 +1,32 @@
+sbin/checkservice
+lib/perl5/site_perl/%%PERL_VER%%/opensocket.pl
+etc/checkservice/checkservice.conf
+etc/checkservice/failed.mail
+etc/checkservice/hosts/localhost
+etc/checkservice/plugins/sms.conf
+etc/checkservice/plugins/smsnet.conf
+etc/checkservice/statuspage.conf
+etc/checkservice/timeout.mail
+etc/checkservice/unreachable.mail
+lib/checkservice/check/ftp.plugin
+lib/checkservice/check/http.plugin
+lib/checkservice/check/https.plugin
+lib/checkservice/check/imap.plugin
+lib/checkservice/check/ldap.plugin
+lib/checkservice/check/mysql.plugin
+lib/checkservice/check/nntp.plugin
+lib/checkservice/check/pop3.plugin
+lib/checkservice/check/postgresql.plugin
+lib/checkservice/check/smtp.plugin
+lib/checkservice/check/ssh.plugin
+lib/checkservice/check/telnet.plugin
+lib/checkservice/check/template.plugin
+lib/checkservice/warning/beep.plugin
+lib/checkservice/warning/sms.plugin
+lib/checkservice/warning/smsnet.plugin
+@dirrm etc/checkservice/hosts
+@dirrm etc/checkservice/plugins
+@dirrm etc/checkservice
+@dirrm lib/checkservice/check
+@dirrm lib/checkservice/warning
+@dirrm lib/checkservice

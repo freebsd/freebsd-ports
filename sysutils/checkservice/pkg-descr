@@ -1,0 +1,17 @@
+Checkservice is written, as the name of the program suggests, to
+check the status of the services that you run on your own or a
+remote server/computer. It can monitor for example the FTP Server
+and Web server you are running and alarm you in several ways if
+something is wrong with them. 
+
+The variety of output types, check- & warningplugins make Checkservice
+suitable for many tasks. With simple configfiles you can scan
+important services on the local host, but also on remote hosts, and
+make sure you know if a vital service fails! Since the 0.9.9-release
+Checkservice supports grouping. This is a convenient way to organize
+the hosts to check in different categories. 
+
+WWW: http://www.linvision.com/checkservice/
+
+-- Ying-Chieh Liao
+   ijliao@FreeBSD.org
