@@ -1,17 +1,17 @@
+bin/addtosmbpass
+bin/nmblookup
 bin/smbclient
+bin/smbpasswd
 bin/smbrun
 bin/smbstatus
-bin/smbpasswd
-bin/nmblookup
 bin/smbtar
-bin/addtosmbpass
 bin/testparm
 bin/testprns
 sbin/smbd
 sbin/nmbd
-man/man1/smbstatus.1.gz
 man/man1/smbclient.1.gz
 man/man1/smbrun.1.gz
+man/man1/smbstatus.1.gz
 man/man1/smbtar.1.gz
 man/man1/testparm.1.gz
 man/man1/testprns.1.gz
@@ -19,3 +19,4 @@ man/man5/smb.conf.5.gz
 man/man7/samba.7.gz
 man/man8/smbd.8.gz
 man/man8/nmbd.8.gz
+man/man8/smbpasswd.8.gz
