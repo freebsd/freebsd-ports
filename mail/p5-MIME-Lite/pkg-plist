@@ -1,0 +1,3 @@
+lib/perl5/site_perl/%%PERL_VER%%/MIME/Lite.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME/Lite/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME/Lite
