@@ -1,0 +1,4 @@
+A linux rpm port of a set of utilities and library to manipulate
+an ext2 filesystem
+
+WWW: http://e2fsprogs.sourceforge.net/
