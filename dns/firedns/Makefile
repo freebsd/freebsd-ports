@@ -8,8 +8,7 @@
 PORTNAME=	firedns
 PORTVERSION=	0.1.30
 CATEGORIES=	dns devel
-MASTER_SITES=	http://ares.penguinhosting.net/~ian/projects/ \
-		http://www.wa.apana.org.au/~dean/sources/ \
+MASTER_SITES=	http://www.wa.apana.org.au/~dean/sources/ \
 		ftp://ftp.wa.apana.org.au/pub/pc/unix/packages/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	-${PORTVERSION}.tar.gz
