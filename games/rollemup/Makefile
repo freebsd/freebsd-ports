@@ -14,6 +14,8 @@ DISTNAME=	Rollemup
 
 MAINTAINER=	sanpei@FreeBSD.org
 
+BROKEN=		"Does not fetch"
+
 LICENSE=	no-commercial-use
 RESTRICTED=	You are not allowed to distribute the software by any means. \
 		You are allowed to download a copy from this site for personal use. \
