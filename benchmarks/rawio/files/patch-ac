@@ -6,7 +6,7 @@
  #include <signal.h>
 -#include "random.h"
 +#if !defined(__FreeBSD__) || !defined(__alpha__)
-+#include <machine/random.h>
++#include <sys/random.h>
 +#endif
  
  /* submitted by Andy Doran <ad@psn.ie> */
