@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mime-types
-PORTVERSION=	1.13
+PORTVERSION=	1.13.1
 CATEGORIES=	mail ruby
 MASTER_SITES=	http://www.halostatue.ca/files/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -19,14 +19,14 @@ USE_RUBY=	yes
 
 NO_BUILD=	yes
 
-DOCS=		ChangeLog Readme doc
+DOCS=		ChangeLog Readme
 
 do-install:
 	${CP} -R ${WRKSRC}/lib/* ${RUBY_SITELIBDIR}/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS}
-	${CP} -R ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .endif
 
