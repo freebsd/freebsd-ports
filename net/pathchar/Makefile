@@ -10,7 +10,7 @@ PORTNAME=	pathchar
 PORTVERSION=	a1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/pathchar/  \
-		http://www.caida.org/Tools/Pathchar/  \
+		http://www.caida.org/tools/utilities/others/pathchar/ \
 		http://sitka.triumf.ca/net/  \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	obrien
