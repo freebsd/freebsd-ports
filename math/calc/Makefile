@@ -17,7 +17,4 @@ MAINTAINER=	jmz@FreeBSD.org
 
 MAN1=		calc.1
 
-pre-install:
-	@${MKDIR} ${PREFIX}/lib/calc/help
-
 .include <bsd.port.mk>
