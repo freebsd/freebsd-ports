@@ -19,17 +19,11 @@ COMMENT=	A curses version of the dice game for one or more players
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
 # Distribution does not include an install target. So here it is.
 #
 do-install:
 	${INSTALL_PROGRAM} -m 2755 -o root -g games ${WRKSRC}/yahtzee ${PREFIX}/bin
-	${MKDIR} -m 0755 ${PREFIX}/share/yahtzee
-	${INSTALL_DATA} -m 0664 -o root -g games /dev/null ${PREFIX}/share/yahtzee/yahtzee.sco
+	${MKDIR} -m 0755 ${DATADIR}
+	${INSTALL_DATA} -m 0664 -o root -g games /dev/null ${DATADIR}/yahtzee.sco
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
