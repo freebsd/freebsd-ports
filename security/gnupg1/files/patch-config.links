@@ -1,0 +1,15 @@
+--- mpi/config.links.orig	Thu Apr 24 20:15:58 2003
++++ mpi/config.links	Sat May 10 16:29:28 2003
+@@ -142,6 +142,12 @@
+        echo '/* configured for sparc64-*netbsd */' >>./mpi/asm-syntax.h
+        path=""
+        ;;
++    sparc64-*-freebsd*)
++       # There are no sparc64 assembler modules that work, so
++       # just use generic C functions
++       echo '/* configured for sparc64-*freebsd* */' >>./mpi/asm-syntax.h
++       path=""
++       ;;
+     sparc9*-*-*     | \
+     sparc64*-*-*    | \
+     ultrasparc*-*-* )
