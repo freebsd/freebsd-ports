@@ -4615,6 +4615,7 @@ nvidia-driver	ports/x11/nvidia-driver
 nwclient	ports/sysutils/nwclient
 nwclient602	ports/sysutils/nwclient602
 nwnusers	ports/games/nwnusers
+nwreckdum	ports/archivers/nwreckdum
 nwrite		ports/misc/nwrite
 nylon		ports/net/nylon
 o2c		ports/lang/o2c
