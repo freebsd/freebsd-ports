@@ -1,0 +1,38 @@
+--- infoBtn.c	Thu Jun 25 16:09:58 1998
++++ /home/andy/tmp/wrk/infoBtn.c	Thu Jul 30 11:27:26 1998
+@@ -292,7 +292,7 @@
+     }
+ }
+ /**************************************************************************/
+-static void setmode(widget, data)  EZ_Widget *widget; void *data; 
++static void _setmode(widget, data)  EZ_Widget *widget; void *data; 
+ {
+   char str[12];
+   infoControl *ptr = (infoControl *)data;
+@@ -349,7 +349,7 @@
+ 			       EZ_GRID_CELL_GEOMETRY,  2, idx , 1, 1,
+ 			       EZ_CLIENT_INT_DATA,     rr,
+ 			       EZ_CLIENT_PTR_DATA,     clabel,
+-			       EZ_CALLBACK,            setmode, data,
++			       EZ_CALLBACK,            _setmode, data,
+ 			       NULL);
+   label =      EZ_CreateWidget(EZ_WIDGET_CHECK_BUTTON, tframe,
+ 			       EZ_LABEL_STRING,        "write",
+@@ -360,7 +360,7 @@
+ 			       EZ_CLIENT_INT_DATA,     ww,
+ 			       EZ_CLIENT_PTR_DATA,     clabel,
+ 			       EZ_GRID_CELL_GEOMETRY,  3, idx , 1, 1, 
+-			       EZ_CALLBACK,            setmode, data,
++			       EZ_CALLBACK,            _setmode, data,
+ 			       NULL);
+   label =      EZ_CreateWidget(EZ_WIDGET_CHECK_BUTTON, tframe,
+ 			       EZ_LABEL_STRING,        "execute",
+@@ -371,7 +371,7 @@
+ 			       EZ_CLIENT_PTR_DATA,     clabel,
+ 			       EZ_CHECK_BUTTON_ON_OFF,  xx&mode,
+ 			       EZ_GRID_CELL_GEOMETRY,  4, idx , 1, 1, 
+-			       EZ_CALLBACK,            setmode, data,
++			       EZ_CALLBACK,            _setmode, data,
+ 			       NULL);
+ }
+ 

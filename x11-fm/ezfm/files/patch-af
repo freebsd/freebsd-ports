@@ -1,0 +1,15 @@
+--- ezfmrc.orig	Tue Jun 30 10:59:34 1998
++++ ezfmrc	Sun Aug  9 16:53:48 1998
+@@ -5,9 +5,9 @@
+ # ezfm needs the following two files to start. 
+ #
+ Section  "Files"
+-   Magicfile     ezfmMagic:~/.ezfmMagic:/etc/ezfmMagic:/usr/lib/ezfm/ezfmMagic:/usr/local/lib/ezfm/ezfmMagic
+-   IconPath      ezfmIcons:~/.ezfmIcons:/usr/lib/ezfm/ezfmIcons:/usr/local/lib/ezfm/ezfmIcons
+-   ExtensionFile ezfmExtension:~/.ezfmExtension
++   Magicfile     ezfmMagic:~/.ezfmMagic:/usr/X11R6/share/ezfm/ezfmMagic
++   IconPath      ezfmIcons:~/.ezfmIcons:/usr/X11R6/share/ezfm/ezfmIcons
++   ExtensionFile ezfmExtension:~/.ezfmExtension:/usr/X11R6/share/ezfm/ezfmExtension
+ EndSection
+ 
+ # list all removable devices here. The format is
