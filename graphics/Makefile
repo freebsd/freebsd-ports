@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.130 1999/06/14 14:02:36 taoka Exp $
+# $Id: Makefile,v 1.131 1999/06/16 13:34:19 billf Exp $
 #
 
     SUBDIR += 4va
@@ -113,6 +113,7 @@
     SUBDIR += xaos
     SUBDIR += xbm2gif
     SUBDIR += xbmbrowser
+    SUBDIR += xdgagrab
     SUBDIR += xdl
     SUBDIR += xfig
     SUBDIR += xfpovray
