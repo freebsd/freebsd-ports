@@ -21,7 +21,7 @@ MAN1=		chicken-config.1 chicken.1 csc.1 csi.1
 
 post-patch:
 	${REINPLACE_CMD} -e 's/\(install-data-am: \)install-data-local/\1/' \
-		${WRKSRC}/Makefile.in
+		-e 's/[a-z]*-static$$(EXEEXT) //' ${WRKSRC}/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
