@@ -19,4 +19,10 @@ USE_PYTHON=	2.1+
 USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha" && ${OSVERSION} < 500000
+BROKEN=		"Coredump during build on alpha 4.x"
+.endif
+
+.include <bsd.port.post.mk>
