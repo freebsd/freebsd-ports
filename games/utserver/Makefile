@@ -12,7 +12,7 @@ CATEGORIES=	games linux
 MASTER_SITES=	http://files.sobservers.com/UnrealTournament/UTServerOnly/
 DISTNAME=	ut-server-${PORTVERSION}
 
-MAINTAINER=	martin@tradex.sk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unreal Tournament Dedicated Server for Linux
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12

@@ -10,7 +10,7 @@ PORTVERSION=	0.5
 MASTER_SITES=	ftp://ftp.abfackeln.com/pub/linux/ut/asu/
 DISTNAME=	asu-${PORTVERSION}
 
-MAINTAINER=	martin@tradex.sk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abfackelns Server Utilities (ASU) for Unreal Tournament Server (Linux)
 
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
