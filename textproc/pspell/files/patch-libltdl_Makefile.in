@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- libltdl/Makefile.in	2001/01/31 23:03:23	1.1
++++ libltdl/Makefile.in	2001/01/31 23:03:38
+@@ -69,7 +69,7 @@
+ GCJFLAGS = @GCJFLAGS@
+ LIBADD_DL = @LIBADD_DL@
+ LIBTOOL = @LIBTOOL@
+-LIBTOOL_DEPS = @LIBTOOL_DEPS@
++LIBTOOL_DEPS = #@LIBTOOL_DEPS@
+ LN_S = @LN_S@
+ MAINT = @MAINT@
+ MAKEINFO = @MAKEINFO@
