@@ -25,7 +25,7 @@ MAINTAINER=	eik@FreeBSD.org
 COMMENT?=	High performance MTA for Unix systems on the Internet
 
 EXIM_VERSION=	4.32
-EXISCAN_VERSION=18
+EXISCAN_VERSION=19
 
 .if !defined(EXIMON_ONLY)
 .if defined(PKGNAMESUFFIX)
@@ -132,7 +132,7 @@ PLIST_SUB=	EXIM_VERSION="${EXIM_VERSION}-${PORTREVISION}" \
 
 # Define WITH_OPENLDAP or WITH_OPENLDAP_VER to link against libldap.
 # Define WITH_OPENLDAP_VER to specify a particular version of
-# OpenLDAP to use. Valid values are currently 12, 20, 21 and 22.
+# OpenLDAP to use. Valid values are currently 21 and 22.
 # Defining WITH_OPENLDAP_VER implies WITH_OPENLDAP.
 # Exim also supports NETSCAPE and SOLARIS7 lookup types, but no
 # client libraries exist for these in the ports tree.
@@ -249,11 +249,7 @@ WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
 
 .if defined(WITH_OPENLDAP)
 USE_OPENLDAP=	yes
-.if defined(WANT_OPENLDAP_VER) && ${WANT_OPENLDAP_VER} == 12
-LDAP_LIB_TYPE=	OPENLDAP1
-.else
 LDAP_LIB_TYPE=	OPENLDAP2
-.endif
 SEDLIST+=	-e 's,XX_LDAP_LIBS_XX,-L${LOCALBASE}/lib -llber -lldap,' \
 		-e 's,XX_LDAP_INCLUDE_XX,-I${LOCALBASE}/include,' \
 		-e 's,XX_LDAP_TYPE_XX,${LDAP_LIB_TYPE},' \
