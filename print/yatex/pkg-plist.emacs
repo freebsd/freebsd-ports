@@ -16,12 +16,15 @@ share/emacs/site-lisp/yatex/yatexsec.el
 share/emacs/site-lisp/yatex-startup.el
 share/emacs/site-lisp/YATEXHLP.jp
 share/emacs/site-lisp/YATEXHLP.eng
+info/yahtmle
 info/yahtmlj
-info/yatexj
 info/yatexe
+info/yatexj
 share/doc/yatex/htmlqa
+share/doc/yatex/htmlqa.eng
 share/doc/yatex/qanda
 share/doc/yatex/qanda.eng
+share/doc/yatex/yahtmle.tex
 share/doc/yatex/yahtmlj.tex
 share/doc/yatex/yatex.new
 share/doc/yatex/yatex.ref

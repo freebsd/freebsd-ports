@@ -15,9 +15,11 @@ lib/xemacs/site-packages/lisp/yatex/yatexprc.el
 lib/xemacs/site-packages/lisp/yatex/yatexsec.el
 lib/xemacs/site-packages/lisp/yatex-startup.el
 lib/xemacs/site-packages/pkginfo/MANIFEST.yatex
+lib/xemacs/site-packages/info/yahtmle.info
 lib/xemacs/site-packages/info/yatexe.info
 lib/xemacs/site-lisp/YATEXHLP.eng
 share/doc/yatex/qanda.eng
+share/doc/yatex/yahtmle.tex
 share/doc/yatex/yatexe.tex
 share/doc/yatex/yatexref.eng
 @dirrm lib/xemacs/site-packages/lisp/yatex
