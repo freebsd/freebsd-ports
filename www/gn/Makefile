@@ -1,12 +1,12 @@
 # New ports collection makefile for:    gn
-# Version required:     2.17
+# Version required:     2.24
 # Date created:         20 Sep 1994
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.11 1995/10/20 09:14:12 adam Exp $
+# $Id: Makefile,v 1.12 1995/11/27 04:10:23 asami Exp $
 #
 
-DISTNAME=       gn-2.23
+DISTNAME=       gn-2.24
 CATEGORIES+=	www net
 MASTER_SITES=	ftp://ftp.acns.nwu.edu/pub/gn/
 
@@ -36,24 +36,20 @@ pre-install:
 .if defined(YES_INSTALL)
 post-install:
 	@cd ${PREFIX}; \
-	  if [ -s etc/gn_mime.types ]; then \
-	    cmp -s etc/gn_mime.types ${WRKSRC}/etc/gn_mime.types || { \
-		echo Aborting install due to ${PREFIX}/etc/gn_mime.types; \
-		exit 0; \
-	    }; \
+	  [ -s etc/gn_mime.types ] && \
+	  if ! cmp -s etc/gn_mime.types ${WRKSRC}/etc/gn_mime.types; then \
+		echo mv etc/gn_mime.types etc/gn_mime.types.old; \
+		mv etc/gn_mime.types etc/gn_mime.types.old; \
   	  fi; \
-	  if [ -s gnroot/menu ]; then \
-	    cmp -s gnroot/menu ${WRKSRC}/gnroot/menu || { \
-		echo Aborting install due to ${PREFIX}/gnroot/menu; \
-		exit 0; \
-	    }; \
+	  [ -s gnroot/menu ] && \
+	  if ! cmp -s gnroot/menu ${WRKSRC}/gnroot/menu; then \
+		echo mv gnroot/menu gnroot/menu.old; \
+		mv gnroot/menu gnroot/menu.old; \
 	  fi; \
 	  tar -cf - -C ${WRKSRC} gnroot libexec bin etc | tar xpf - && \
 		(cd gnroot; ${WRKSRC}/bin/mkcache -r); \
 	  awk '$$1 == "gopher" { exit 1 }' ${INETD_CONF} || { \
-		echo gopher${CONF} >>${INETD_CONF}; \
-		kill -HUP \
-		`ps ax | awk '$$5 == "inetd" { print $$1 }'`; \
+		echo gopher${CONF} >>${INETD_CONF}
 	  }
 .endif
 
