@@ -77,6 +77,11 @@ with a web browser and \"Accept\" the End User License Agreement for\n\
 ${DISTNAME}${EXTRACT_SUFX} in ${DISTDIR}.\n
 .endif
 
+.if ${OSVERSION} >= 502112
+ECHO_MSG=	${ECHO_CMD}
+BROKEN=		"Does not run on FreeBSD >= 5.x"
+.endif
+
 do-install:
 	${MKDIR} ${INSTALL_DIR}
 	cd ${WRKSRC} && ${FIND} . \
