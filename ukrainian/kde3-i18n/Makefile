@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	kde-i18n-uk
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2.2
 CATEGORIES=	ukrainian kde misc
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/src
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
 PKGNAMEPREFIX=
 
 MAINTAINER=	kunia@istc.kiev.ua
 
-BUILD_DEPENDS=	kde2:${PORTSDIR}/x11/kde2
+BUILD_DEPENDS=	kde-config:${PORTSDIR}/x11/kdelibs2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+NO_BUILD=	As of 2.2.2 nothing gets built in this port
 
 .include <bsd.port.mk>
