@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	ircii
-PORTVERSION=	4.4S
+PORTVERSION=	4.4U
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ircftp.au.eterna.com.au/pub/ircII/
 
-MAINTAINER=	torstenb@FreeBSD.org
+MAINTAINER=	anders@sanyusan.se
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	IRCLIB=${PREFIX}/share/irc
