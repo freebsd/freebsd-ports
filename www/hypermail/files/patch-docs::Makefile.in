@@ -1,19 +1,20 @@
 $FreeBSD$
 
---- docs/Makefile.in.orig	Sun May 28 12:43:28 2000
-+++ docs/Makefile.in	Tue Nov 20 17:30:25 2001
-@@ -38,11 +38,14 @@
- 	$(INSTALL_PROG) -c -m 0644 hmrc.4 $(mandir)/man4
- 
+--- docs/Makefile.in.old        Sun Feb  2 20:48:59 2003
++++ docs/Makefile.in    Sun Feb  2 20:55:31 2003
+@@ -39,11 +39,15 @@
+	$(INSTALL_PROG) -c -m 0644 hmrc.4 $(mandir)/man4
+
  install.html:
 +.if !defined(NOPORTDOCS)
- 	@(if [ ! -d $(htmldir) ]; then mkdir -p $(htmldir); fi)
- 	$(INSTALL_PROG) -c -m 0644 hr.yellow.gif $(htmldir)
- 	$(INSTALL_PROG) -c -m 0644 hypermail.gif $(htmldir)
- 	$(INSTALL_PROG) -c -m 0644 hypermail.html $(htmldir)
+	@(if [ ! -d $(htmldir) ]; then mkdir -p $(htmldir); fi)
++	@(if [ ! -d $(imagedir) ]; then mkdir -p $(imagedir); fi)
+	$(INSTALL_PROG) -c -m 0644 hr.yellow.gif $(imagedir)
+	$(INSTALL_PROG) -c -m 0644 hypermail.gif $(imagedir)
+	$(INSTALL_PROG) -c -m 0644 hypermail.html $(htmldir)
 +	$(INSTALL_PROG) -c -m 0644 hypermail-faq.html $(htmldir)
- 	$(INSTALL_PROG) -c -m 0644 customizing.html $(htmldir)
- 	$(INSTALL_PROG) -c -m 0644 hmrc.html $(htmldir)
+	$(INSTALL_PROG) -c -m 0644 customizing.html $(htmldir)
+	$(INSTALL_PROG) -c -m 0644 hmrc.html $(htmldir)
 +.endif
- 
+
  clean:

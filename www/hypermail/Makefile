@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	hypermail
-PORTVERSION=	2.1.5
+PORTVERSION=	2.1.6
 CATEGORIES=	www mail
-MASTER_SITES=	http://www.landfield.com/hypermail/dist/
+MASTER_SITES=	http://isc.hypermail.org/dist/
 
 MAINTAINER=	petef@FreeBSD.org
 
