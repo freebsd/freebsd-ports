@@ -19,7 +19,7 @@ USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 
 WRKSRC=		${RUBY_DBI_WRKSRC}
-CONFIGURE_ARGS=	--with=lib/${PORTNAME},lib/wrapper
+CONFIGURE_ARGS=	--with=bin/commandline,lib/${PORTNAME},lib/wrapper
 
 DOCS_EN=	README.1st doc/* lib/${PORTNAME}/doc/*
 

@@ -1,3 +1,4 @@
+bin/sqlsh.rb
 %%RUBY_SITELIBDIR%%/dbi.rb
 %%RUBY_SITELIBDIR%%/dbi/columninfo.rb
 %%RUBY_SITELIBDIR%%/dbi/dbi.rb
@@ -10,12 +11,11 @@
 @dirrm %%RUBY_SITEARCHLIBDIR%%/dbi
 @dirrm %%RUBY_SITEARCHLIBDIR%%/DBD
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbi/persistence.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbi/proxyserver.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbi/sqlsh.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbi/sqlsh.rb.new
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbi/test1.pl
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbi/test1.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbi/test_blob.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbi/xmlgen.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbi/xmltest.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/dbi
 %%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/ChangeLog

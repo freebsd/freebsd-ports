@@ -22,7 +22,7 @@ USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 
 WRKSRC=		${RUBY_DBI_WRKSRC}
-CONFIGURE_ARGS=	--with=lib/${PORTNAME}
+CONFIGURE_ARGS=	--with=bin/proxyserver,lib/${PORTNAME}
 
 .include "${.CURDIR}/../ruby-dbi/Makefile.common"
 

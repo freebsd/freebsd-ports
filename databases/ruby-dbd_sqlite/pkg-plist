@@ -1,2 +1,4 @@
 %%RUBY_SITEARCHLIBDIR%%/DBD/SQLite/SQLite.so
 @dirrm %%RUBY_SITEARCHLIBDIR%%/DBD/SQLite
+%%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/dbd_sqlite/README
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/dbi/dbd_sqlite
