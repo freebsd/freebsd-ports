@@ -24,6 +24,7 @@ Usage: gimp.setfont <language>
  japanese            -*-fixed-(iso8859-1,jisx0201,jisx0208)
  korean              -*-fixed-(iso8859-1)/-daewoo-gothic-(ksc5601)
  polish              -*-helvetica-(iso8859-2)
+ russian             -*-helvetica-(koi8-r)
  swedish             -*-helvetica-(iso8859-1)
 ----------------------------------------------------------------
 
@@ -214,6 +215,19 @@ if ($lang eq "polish") {
 
     print <<EOF;
 Please set "LANG" environment variable to "pl_PL.ISO_8859-2" and execute "gimp".
+
+EOF
+    exit;
+}
+
+if ($lang eq "russian") {
+    $fontset = "-*-helvetica-medium-r-normal--14-*-*-*-*-*-koi8-r";
+    print "Setting for Russian language...\n\n";
+
+    write_gtkrc($fontset);
+
+    print <<EOF;
+Please set "LANG" environment variable to "ru_SU.KOI8-R" and execute "gimp".
 
 EOF
     exit;
