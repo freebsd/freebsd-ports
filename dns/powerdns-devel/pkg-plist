@@ -17,5 +17,3 @@ etc/rc.d/pdns.sh.sample
 %%PORTDOCS%%share/examples/powerdns/pdns_postgresql.sql
 %%PORTDOCS%%share/examples/powerdns/pdns_sqlite.sql
 %%PORTDOCS%%@dirrm share/examples/powerdns
-%%RECURSOR%%@unexec sed -e "/^# Start of fix (pdns_recursor)$/,/^# End of fix (pdns_recursor)$/d" < /etc/libmap.conf > /etc/libmap.conf.tmp
-%%RECURSOR%%@unexec mv /etc/libmap.conf.tmp /etc/libmap.conf

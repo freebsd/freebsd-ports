@@ -7,7 +7,7 @@
 
 PORTNAME=	powerdns
 PORTVERSION=	2.9.16
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${PORTVERSION}
@@ -144,18 +144,6 @@ post-install:
 		${FILESDIR}/pdns.sh.sample  \
 		> ${WRKSRC}/pdns.sh.sample
 	${INSTALL_SCRIPT} ${WRKSRC}/pdns.sh.sample ${STARTUP_SCRIPT}
-.endif
-.if defined(POWERDNS_WITH_RECURSOR)
-.if !exists(${LIBMAP_CONF})
-	@${ECHO_MSG} "# Start of fix (pdns_recursor)" > ${LIBMAP_CONF}
-.else
-	@${ECHO_MSG} "# Start of fix (pdns_recursor)" >> ${LIBMAP_CONF}
-.endif
-	@${ECHO_MSG} "Installing fix in /etc/libmap.conf for pdns_recursor."
-	@${ECHO_MSG} "[pdns_recursor]" >> ${LIBMAP_CONF}
-	@${ECHO_MSG} "libpthread.so.1		libc_r.so.5" >> ${LIBMAP_CONF}
-	@${ECHO_MSG} "libpthread.so		libc_r.so" >> ${LIBMAP_CONF}
-	@${ECHO_MSG} "# End of fix (pdns_recursor)" >> ${LIBMAP_CONF}
 .endif
 
 .include <bsd.port.post.mk>
