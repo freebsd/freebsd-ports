@@ -1,3 +1,4 @@
+# ex:ts=8
 # ports collection makefile for:	cproto
 # Date created:				2000 Feb. 13
 # Whom:					Abel Chow <abel_chow@yahoo.com>
@@ -10,7 +11,7 @@ PORTVERSION=	4.6
 CATEGORIES=	devel
 MASTER_SITES=	http://www.vex.net/~cthuang/cproto/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
 GNU_CONFIGURE=	YES
 MAN1=		cproto.1
