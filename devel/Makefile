@@ -852,6 +852,7 @@
     SUBDIR += p5-FileHandle-Unget
     SUBDIR += p5-Filesys-Statvfs_Df
     SUBDIR += p5-Filesys-Virtual
+    SUBDIR += p5-Filesys-Virtual-Plain
     SUBDIR += p5-Filter
     SUBDIR += p5-FreezeThaw
     SUBDIR += p5-Getargs-Long
