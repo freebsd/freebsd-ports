@@ -8,14 +8,14 @@
 PORTNAME=	inform
 PORTVERSION=	6.21
 CATEGORIES=	games
-MASTER_SITES=  	ftp://ftp.gmd.de/if-archive/infocom/compilers/inform6/source/ \
-		ftp://ftp.gmd.de/if-archive/infocom/compilers/inform6/library/
+MASTER_SITES=  	ftp://ftp.ifarchive.org/if-archive/infocom/compilers/inform6/source/ \
+		ftp://ftp.ifarchive.org/if-archive/infocom/compilers/inform6/library/
 DISTFILES=	inform621_source.zip inform_library610.zip
 
 MAINTAINER=	mph@freebsd.org
 
 .if !defined(NOPORTDOCS)
-MASTER_SITES+=	ftp://ftp.gmd.de/if-archive/infocom/compilers/inform6/manuals/old/
+MASTER_SITES+=	ftp://ftp.ifarchive.org/if-archive/infocom/compilers/inform6/manuals/old/
 DISTFILES+=	designers_manual_html.zip
 .endif
 
