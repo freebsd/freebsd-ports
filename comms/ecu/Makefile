@@ -1,17 +1,23 @@
-# New ports collection makefile for:    ecy
+# New ports collection makefile for:    ecu
 # Version required:     3.33
 # Date created:         Feb 18, 1995
 # Whom:                 ache
 #
+# $Id$
+#
+
 DISTNAME=       ecu-3.33
-EXTRACT_SUFX=   .cpio.Z
-MASTER_SITES=   ftp://ftp.kiae.su/unix/comm/
 CATEGORIES+=	comms
+MASTER_SITES=   ftp://ftp.kiae.su/unix/comm/
+EXTRACT_SUFX=   .cpio.Z
+
+MAINTAINER=     ache@FreeBSD.ORG
+
 EXTRACT_CMD=    (zcat | cpio -idm)
 EXTRACT_ARGS=   <
-HAS_CONFIGURE=  YES
+HAS_CONFIGURE=  yes
 CONFIGURE_SCRIPT= Configure
-IS_INTERACTIVE= YES
+IS_INTERACTIVE= yes
 
 pre-install:
 	cd ${WRKSRC}/doc; \

@@ -3,12 +3,15 @@
 # Date created:         28 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.3 1995/03/26 02:21:14 ache Exp $
+# $Id: Makefile,v 1.4 1995/04/01 12:43:21 jkh Exp $
 #
 DISTNAME=       sharutils-4.1.4
-MASTER_SITES=   ftp://ftp.iro.umontreal.ca/pub/contrib/pinard/
 CATEGORIES+=	archivers
-GNU_CONFIGURE=  YES
+MASTER_SITES=   ftp://ftp.iro.umontreal.ca/pub/contrib/pinard/
+
+MAINTAINER=     ache@FreeBSD.ORG
+
+GNU_CONFIGURE=  yes
 CONFIGURE_ARGS= --program-prefix=g --disable-uucode --prefix=${PREFIX}
 INSTALL_TARGET= install install-man
 

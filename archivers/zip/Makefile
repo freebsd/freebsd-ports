@@ -3,12 +3,17 @@
 # Date created:         22 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.1.1.1 1994/12/22 12:33:40 ache Exp $
+# $Id: Makefile,v 1.2 1995/04/01 12:43:39 jkh Exp $
 #
+
 DISTNAME=       zip201
-EXTRACT_SUFX=   .tar.Z
-MASTER_SITES=	ftp://garbo.uwasa.fi/unix/arcers/
+PKGNAME=        zip-2.0.1
 CATEGORIES+=	archivers
+MASTER_SITES=	ftp://garbo.uwasa.fi/unix/arcers/
+EXTRACT_SUFX=   .tar.Z
+
+MAINTAINER=     ache@FreeBSD.ORG
+
 ALL_TARGET=     freebsd
 
 pre-install:
