@@ -6,11 +6,11 @@
 #
 
 PORTNAME=       	dnrd
-PORTVERSION=		2.9
+PORTVERSION=		2.10
 CATEGORIES=     	net
 MASTER_SITES=   	http://members.home.com/garsh/dnrd/archive/
 
-MAINTAINER=		greid@ukug.uk.freebsd.org
+MAINTAINER=		greid@FreeBSD.org
 
 WRKSRC=			${WRKDIR}/${DISTNAME}/src
 
