@@ -65,13 +65,6 @@ MAN8=	snort.8
 DOCS=	ChangeLog doc/AUTHORS doc/BUGS doc/CREDITS doc/FAQ doc/NEWS \
 	doc/README* doc/TODO doc/USAGE doc/snort_manual.pdf
 
-OPTIONS=	FLEXRESP "Flexible response to events" off \
-		MYSQL "Mysql logging" off \
-		ODBC "ODBC logging" off \
-		POSTGRES "Postgresql logging" off
-
-.include <bsd.port.pre.mk>
-
 post-patch:
 	${REINPLACE_CMD} "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/src/snort.c
 
@@ -104,4 +97,4 @@ post-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
