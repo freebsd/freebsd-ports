@@ -24,7 +24,7 @@ MAINTAINER=	openoffice@FreeBSD.org
 COMMENT=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
 .endif
 
-IGNORE=		"Does not work yet, installation problems"
+IGNORE=		"Installation is not complete, manual installation works"
 
 NO_LATEST_LINK=		yes
 UNZIP?=			${LOCALBASE}/bin/unzip
@@ -33,13 +33,13 @@ ANT?=			${LOCALBASE}/bin/ant
 TCSH?=			/bin/tcsh
 DIST_SUBDIR=		openoffice2.0
 BUILD_NR=		680
-MILESTONE=		m30
+MILESTONE=		m41
 RELEASE_NR=		2.0
 FRELEASE_NR=		2.0
-SNAPDATE=		20040402
+SNAPDATE=		20040611
 INSTALLATION_BASEDIR=	OpenOffice.org${RELEASE_NR}
 EXTRACT_ONLY=		OOo_${BUILD_NR}${MILESTONE}_${SNAPDATE}_source.tar.bz2
-USE_GNOME=		orbit gtk12
+USE_GNOME=		orbit gtk12 gtk20
 USE_REINPLACE=		yes
 USE_PERL5=		yes
 USE_BZIP2=		yes
@@ -48,7 +48,7 @@ USE_GMAKE=		yes
 LANG_EXT?=		01
 LANG_CONFIGURE_ARG?=	ENUS
 WRKDIR=			${WRKDIRPREFIX}${.CURDIR}/work
-WRKSRC=			${WRKDIR}/oo_${BUILD_NR}${MILESTONE}_src/config_office
+WRKSRC=			${WRKDIR}/oo_${RELEASE_NR}_src/config_office
 
 #XXX dirty
 BUILD_DEPENDS+= gcc32:${PORTSDIR}/lang/gcc32
@@ -58,9 +58,11 @@ CXX=	g++32
 BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk14
 BUILD_DEPENDS+= zip:${PORTSDIR}/archivers/zip
 BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
-BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/apache-ant 
-BUILD_DEPENDS+=	${X11BASE}/lib/libgdk-x11-2.0.so:${PORTSDIR}/x11-toolkits/gtk20
+BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/apache-ant
+BUILD_DEPENDS+= ${X11BASE}/lib/libX11.so:${PORTSDIR}/x11/XFree86-4-libraries
 BUILD_DEPENDS+= ${X11BASE}/lib/libXft.so:${PORTSDIR}/x11-fonts/libXft
+BUILD_DEPENDS+= ${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip
+
 .if !defined(DISPLAY)
 BUILD_DEPENDS+= Xvfb:${PORTSDIR}/x11-servers/XFree86-4-VirtualFramebufferServer
 .endif
@@ -111,7 +113,7 @@ JDKDIR?=	${LOCALBASE}/jdk1.4.2
 JAVAVM=		${JDKDIR}/bin/java
 
 GNU_CONFIGURE=	yes
-USE_AUTOCONF_VER= 253
+USE_AUTOCONF_VER= 259
 .if defined(WITH_DEBUG)
 CFLAGS+=	-g
 .if ${WITH_DEBUG} == 2
@@ -130,7 +132,7 @@ DISPLAYHACK=localhost:1001
 CONFIGURE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 			PTHREAD_LIBS=${PTHREAD_LIBS}
 CONFIGURE_ARGS+=	--with-lang=${LANG_CONFIGURE_ARG}
-CONFIGURE_ARGS+=	--with-jdk-home=${JDKDIR} --with-ant-home=${LOCALBASE}/ant  --with-gnu-cp=${LOCALBASE}/bin/gcp  --enable-mozilla=no
+CONFIGURE_ARGS+=	--with-jdk-home=${JDKDIR} --with-ant-home=${LOCALBASE}/ant  --with-gnu-cp=${LOCALBASE}/bin/gcp  --enable-mozilla=yes
 
 .if defined(WITH_DEBUG)
 .if ${WITH_DEBUG} == 2
