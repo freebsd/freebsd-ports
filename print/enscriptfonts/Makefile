@@ -3,13 +3,13 @@
 # Date created:			15 June, 1998
 # Whom:				kline
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/20 02:30:58 steve Exp $
+# $Id: Makefile,v 1.2 1998/11/20 01:12:26 asami Exp $
 #
 
 DISTNAME=	enscript_fonts-0.75
 PKGNAME=	enscriptfonts-0.75
 CATEGORIES=	print
-MASTER_SITES=	ftp://peloton.physics.montana.edu/pub/distfiles/
+MASTER_SITES=	ftp://magnesium.net/pub/FreeBSD/xenscript/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kline@thought.org
