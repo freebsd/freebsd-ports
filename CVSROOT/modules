@@ -1354,6 +1354,7 @@ demoroniser	ports/www/demoroniser
 denature	ports/textproc/denature
 denemo		ports/audio/denemo
 deskmenu	ports/x11/deskmenu
+desktop-file-utils	ports/devel/desktop-file-utils
 despoof		ports/net/despoof
 destroy		ports/security/destroy
 detach		ports/sysutils/detach
