@@ -8,8 +8,8 @@
 PORTNAME=	CJK
 PORTVERSION=	4.3.0
 CATEGORIES=	chinese
-MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/
-DISTNAME=	cjk-20001003
+MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/
+DISTNAME=	cjk-20011008
 
 MAINTAINER=	keith@FreeBSD.org
 
