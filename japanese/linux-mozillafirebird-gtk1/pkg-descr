@@ -1,6 +1,9 @@
-This is a Linux version of the Netscape suite (Web browser, HTML editor, mail
-user agent and news reader).  It is compatible with Linux versions of plugins.
-The Macromedia Flash plugin is available in this port, as are the Japanese and
-U.S.  regional packs, personal security manager, spell-checker, and talkback.
+Mozilla Firebird is a Web, FTP and gopher browser branched from Mozilla.  It
+does not include an HTML editor, e-mail user agent, IRC client, or news reader.
 
-WWW: http://wp.netscape.com/ja/browser/
+This is a pre-compiled Linux/i386 version, able to run plugins from that
+platform.  This port is compatible with the Flash plugin from
+ports/www/linux-flashplugin6/ and with the Java plugin from
+ports/java/linux-blackdown-jdk14/.
+
+WWW:  http://jt.mozilla.gr.jp/products/firebird/
