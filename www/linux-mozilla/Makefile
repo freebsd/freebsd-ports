@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	0.9.9.2002050810
+PORTVERSION=	1.0
 CATEGORIES=	www linux
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	mozilla/nightly/2002-05-08-10-1.0.0/linux-xpi
+MASTER_SITE_SUBDIR=	mozilla/releases/mozilla${PORTVERSION}/linux-xpi
 
 PKGNAMEPREFIX=	linux-
 DIST_SUBDIR=	linux-mozilla/${PORTVERSION}
@@ -47,6 +47,7 @@ pre-everything::
 	${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
 .endif
 DISTFILES=	browser.xpi \
+		chatzilla.xpi \
 		deflenus.xpi \
 		inspector.xpi \
 		langenus.xpi \
@@ -101,7 +102,7 @@ do-patch:
 	${MKDIR} ${WRKSRC}/tmp
 	${TAR} -C ${WRKSRC}/tmp -xzf ${DISTDIR}/${DIST_SUBDIR}/${PATCHFILES}
 	${TAR} -C ${WRKSRC}/bin -xzf ${DISTDIR}/${DIST_SUBDIR}/${PATCHFILES}
-	for j in chatzilla inspector messenger pippki venkman; do \
+	for j in chatzilla cookie inspector messenger pippki venkman; do \
 		if [ ! -e ${WRKSRC}/bin/chrome/$$j.jar ]; then \
 			for i in communicator editor messenger navigator; do \
 				${GREP} -v $$j ${WRKSRC}/tmp/chrome/overlayinfo/$$i/content/overlays.rdf > \
@@ -125,7 +126,7 @@ do-configure:
 	${ECHO_CMD} "cd ${PREFIX}/lib/linux-mozilla/plugins"	>>${WRKDIR}/linkfarm
 	${ECHO_CMD} -n "${FIND} ../../netscape-linux/plugins/*"	>>${WRKDIR}/linkfarm
 	${ECHO_CMD} " -maxdepth 1 -exec ${LN} -s {} \; 2>/dev/null"	>>${WRKDIR}/linkfarm
-	${ECHO_CMD} -n "${FIND} ../../linux-netscape6/plugins"	>>${WRKDIR}/linkfarm
+	${ECHO_CMD} -n "${FIND} ../../linux-netscape6*/plugins"	>>${WRKDIR}/linkfarm
 	${ECHO_CMD} " -maxdepth 1 -exec ${LN} -s {} \; 2>/dev/null"	>>${WRKDIR}/linkfarm
 
 pre-install:
