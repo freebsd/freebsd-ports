@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	urchin
-PORTVERSION=	5.101
+PORTVERSION=	5.500
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.urchin.com/pub/urchin5/
-DISTNAME=	urchin5101_freebsd4x
+DISTNAME=	urchin5500_freebsd4x
 
 MAINTAINER=	freebsd@urchin.com
 COMMENT=	The most powerful web traffic analysis program available
@@ -22,11 +22,11 @@ NO_CDROM=	"Our installer must be run for proper permissions to be set"
 NO_PACKAGE=	"Our installer must be run for proper permissions to be set"
 
 # Feel free to change this to the user you want Urchin 5 to
-# run as and the files to be owned by.  It's *strongly* advised
-# to make this a non-privileged user.  The port can be changed later
-# if desired.
-USER?=		nobody
-GROUP?=		nobody
+# run as and the files to be owned by (except root).  It's *strongly*
+# advised to make this a non-privileged user.  The port can be changed
+# later if desired.
+USER=		nobody
+GROUP=		nobody
 PORT=		9999
 INSTALLDIR=	${PREFIX}/urchin
 QUIET=		-q
