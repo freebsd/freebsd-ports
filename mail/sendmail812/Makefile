@@ -22,7 +22,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WCONF=		${WRKSRC}/devtools/Site
 SITE=		${FILESDIR}/site.config.m4.pre4
 PLIST=		${WRKDIR}/.PLIST.more
-PKGMESSAGE=	${WRKSRC}/pkg-message
 DOCS=		KNOWNBUGS LICENSE PGPKEYS README RELEASE_NOTES \
 		sendmail/TRACEFLAGS sendmail/SECURITY sendmail/TUNING
 MAN1=		mailq.1 newaliases.1 vacation.1
@@ -306,3 +305,4 @@ pre-everything::
 .endif
 
 .include <bsd.port.post.mk>
+PKGMESSAGE=	${WRKSRC}/pkg-message
