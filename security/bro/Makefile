@@ -4,7 +4,7 @@
 # Date created:			  Sat Feb 28, 1998
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.6 1998/11/04 18:45:38 obrien Exp $
+# $Id: Makefile,v 1.7 1998/12/24 17:52:35 obrien Exp $
 #
 
 DISTNAME=	vp-bro-0.4-alpha
@@ -15,6 +15,8 @@ MASTER_SITES=	ftp://ee.lbl.gov/
 MAINTAINER=     obrien@FreeBSD.org
 
 RESTRICTED=	"Author wishes Alpha releases not to be distrubted."
+
+.include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/vp-bro-0.4-alpha${EXTRACT_SUFX})
 IGNORE='Please contact Vern Paxson <vern@ee.lbl.gov> to obtain the obtain the Bro source.  Put it in ${DISTDIR} as vp-bro-0.4-alpha${EXTRACT_SUFX} and run make again'
@@ -42,4 +44,4 @@ post-install:
 	@${GZIP_CMD} ${PREFIX}/share/doc/bro/bro-usenix98-revised.ps
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
