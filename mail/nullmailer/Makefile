@@ -8,7 +8,7 @@
 PORTNAME=	nullmailer
 # PORTVERSION=	1.00RC5
 PORTVERSION=	1.00r5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/nullmailer/
 # MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -16,8 +16,6 @@ MASTER_SITE_SUBDIR=	1.00RC5
 DISTNAME=	${PORTNAME}-1.00RC5
 
 MAINTAINER=	clive@FreeBSD.org
-
-FORBIDDEN=	"A long standing bug is noted as a vulnerability on bugtraq"
 
 HAS_CONFIGURE=	yes
 
@@ -31,11 +29,15 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 .if defined(BATCH)
 PLIST_SUB=		LOCALSTATEDIR="${PREFIX}"
 PLIST_SUB+=		LOCALSTATEDIR_RM="@dirrm "
+PLIST_SUB+=		SPOOL=""
 NMH_PREFIX=		${PREFIX}
+SPOOL=			spool/
 .else
 PLIST_SUB=		LOCALSTATEDIR=""
 PLIST_SUB+=		LOCALSTATEDIR_RM="@comment "
-CONFIGURE_ARGS+=	'--localstatedir=/var/'
+PLIST_SUB+=		SPOOL="spool/"
+CONFIGURE_ARGS+=	--localstatedir=/var/spool
+#CONFIGURE_ARGS+=	--localstatedir=/var/spool --bindir='$${libexecdir}'/${PORTNAME} --sbindir='$${libexecdir}'/${PORTNAME}
 .endif
 
 # Pass BATCH to pkg-install for Evil Things(tm)

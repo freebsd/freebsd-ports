@@ -22,19 +22,21 @@ TAG=${NULLMAILUSER}
 
 case "$1" in
 start)
+	echo -n ' nullmailer'
 	if [ ! -r ${PIDFILE} ] ; then
-		[ -x ${PREFIX}/sbin/nullmailer-send ] && su -l ${NULLMAILUSER} -c "${PREFIX}/sbin/nullmailer-send | ${LOGGER} -p ${PRIORITY} -t ${TAG} 2>&1 &" && echo -n ' nullmailer'
+		[ -x ${PREFIX}/sbin/nullmailer-send ] && su -l ${NULLMAILUSER} -c "${PREFIX}/sbin/nullmailer-send | ${LOGGER} -p ${PRIORITY} -t ${TAG} 2>&1 &" 
 		JUNK=`${PS} -ax`
 		PID=`${PS} -ax | ${GREP} -e nullmailer-send$ | ${AWK} '{print $1}'`
 		echo $PID > ${PIDFILE}
 	else
-		echo 'nullmailer already running'
+		echo ' already running'
 	fi
 	;;
 stop)
+	echo -n ' nullmailer'
 	if [ -r ${PIDFILE} ] ; then
-#		${KILL} -15 `${CAT} ${PIDFILE}` > /dev/null && echo -n ' nullmailer'
-		${KILLALL} -15 nullmailer-send > /dev/null && echo -n ' nullmailer'
+#		${KILL} -15 `${CAT} ${PIDFILE}` > /dev/null
+		${KILLALL} -15 nullmailer-send > /dev/null
 		${RM} -f ${PIDFILE}
 	fi
 	;;

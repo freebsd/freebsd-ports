@@ -51,7 +51,7 @@ if [ x"$2" = xPRE-INSTALL ]; then
     else
         echo "You need a user \"${user}\"."
         if ([ -n "$BATCH" ] || yesno "Would you like me to create it" y); then
-            /usr/sbin/pw useradd ${user} -u 522 -g ${group} -h - -d ${NMH_PREFIX}/var/nullmailer \
+            /usr/sbin/pw useradd ${user} -u 522 -g ${group} -h - -d ${NMH_PREFIX}/var/${SPOOL}nullmailer \
                 -s /bin/sh -c "Nullmailer Mail System" || exit
             echo "Done."
         else
