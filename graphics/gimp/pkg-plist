@@ -557,6 +557,8 @@ share/aclocal/gimp-2.0.m4
 %%DOCSDIR%%/libgimpwidgets/stock-default-colors-12.png
 %%DOCSDIR%%/libgimpwidgets/stock-device-status-16.png
 %%DOCSDIR%%/libgimpwidgets/stock-device-status-24.png
+%%DOCSDIR%%/libgimpwidgets/stock-display-filter-16.png
+%%DOCSDIR%%/libgimpwidgets/stock-display-filter-24.png
 %%DOCSDIR%%/libgimpwidgets/stock-duplicate-16.png
 %%DOCSDIR%%/libgimpwidgets/stock-edit-16.png
 %%DOCSDIR%%/libgimpwidgets/stock-error-64.png
@@ -1045,6 +1047,7 @@ share/gimp/gradients/Yellow_Contrast.ggr
 share/gimp/gradients/Yellow_Orange.ggr
 share/gimp/images/gimp_logo.png
 share/gimp/images/gimp_splash.png
+share/gimp/images/wilber-devel-icon.png
 share/gimp/images/wilber-icon.png
 share/gimp/images/wilber-tips.png
 share/gimp/images/wilber-wizard.png
@@ -1324,6 +1327,8 @@ share/gimp/themes/Default/images/stock-curve-smooth-16.png
 share/gimp/themes/Default/images/stock-default-colors-12.png
 share/gimp/themes/Default/images/stock-device-status-16.png
 share/gimp/themes/Default/images/stock-device-status-24.png
+share/gimp/themes/Default/images/stock-display-filter-16.png
+share/gimp/themes/Default/images/stock-display-filter-24.png
 share/gimp/themes/Default/images/stock-duplicate-16.png
 share/gimp/themes/Default/images/stock-edit-16.png
 share/gimp/themes/Default/images/stock-error-64.png
@@ -1562,6 +1567,10 @@ share/locale/el/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/el/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/el/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/el/LC_MESSAGES/gimp20.mo
+share/locale/en_CA/LC_MESSAGES/gimp20-libgimp.mo
+share/locale/en_CA/LC_MESSAGES/gimp20-script-fu.mo
+share/locale/en_CA/LC_MESSAGES/gimp20-std-plug-ins.mo
+share/locale/en_CA/LC_MESSAGES/gimp20.mo
 share/locale/en_GB/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/en_GB/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/en_GB/LC_MESSAGES/gimp20-std-plug-ins.mo
