@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library of assorted spiffy things
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
-		Imlib2.2:${PORTSDIR}/graphics/imlib2
+		Imlib2.3:${PORTSDIR}/graphics/imlib2
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack

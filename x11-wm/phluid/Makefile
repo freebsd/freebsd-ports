@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	phluid
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A window manager that emphasizes efficiency, speed, and beauty
 
-LIB_DEPENDS=	Imlib2.2:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

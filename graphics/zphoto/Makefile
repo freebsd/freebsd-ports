@@ -15,7 +15,7 @@ MAINTAINER=	umeno@rr.iij4u.or.jp
 COMMENT=	Zooming photo album generator
 
 LIB_DEPENDS=	ming.3:${PORTSDIR}/graphics/ming \
-		Imlib2.2:${PORTSDIR}/graphics/imlib2 \
+		Imlib2.3:${PORTSDIR}/graphics/imlib2 \
 		popt.0:${PORTSDIR}/devel/popt
 .if !defined (WITHOUT_AVIPLAY)
 LIB_DEPENDS+=	aviplay.0:${PORTSDIR}/multimedia/avifile

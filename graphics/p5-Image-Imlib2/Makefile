@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to the Imlib2 image library
 
-LIB_DEPENDS=	Imlib2.2:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2
 
 PERL_MODBUILD=	yes
 

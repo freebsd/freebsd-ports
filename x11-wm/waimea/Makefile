@@ -27,7 +27,7 @@ GNU_CONFIGURE=	yes
 MAN1=		waimea.1
 
 .if !defined(WITHOUT_PIXMAP)
-LIB_DEPENDS+=	Imlib2.2:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS+=	Imlib2.3:${PORTSDIR}/graphics/imlib2
 .endif
 
 .include <bsd.port.mk>

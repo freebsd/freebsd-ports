@@ -14,7 +14,7 @@ MASTER_SITES=	http://thegraveyard.org/files/
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A full-screen X11 task-switcher like Apple's Expose
 
-LIB_DEPENDS=	Imlib2.2:${PORTSDIR}/graphics/imlib2 \
+LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2 \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
 USE_XLIB=	yes

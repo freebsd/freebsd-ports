@@ -17,7 +17,7 @@ MAINTAINER=	q@uni.de
 COMMENT=	Camserv is a free program to do streaming video via the web
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		Imlib2.2:${PORTSDIR}/graphics/imlib2 \
+		Imlib2.3:${PORTSDIR}/graphics/imlib2 \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
 		freetype.9:${PORTSDIR}/print/freetype2
 

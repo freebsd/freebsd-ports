@@ -16,7 +16,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Imlib2 bindings for Ruby
 
-LIB_DEPENDS=	Imlib2.2:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	enlightenment
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A hardware-accelerated canvas API for X-Windows
 
-LIB_DEPENDS=	Imlib2.2:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

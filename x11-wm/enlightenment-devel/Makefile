@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	A very artistic X window manager
 
-LIB_DEPENDS=	Imlib2.2:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes

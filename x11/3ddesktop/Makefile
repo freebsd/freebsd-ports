@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D Virtual Desktop Switcher
 
 LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut \
-		Imlib2.2:${PORTSDIR}/graphics/imlib2
+		Imlib2.3:${PORTSDIR}/graphics/imlib2
 
 USE_AUTOCONF_VER=	259
 USE_GL=		yes

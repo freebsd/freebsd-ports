@@ -29,7 +29,7 @@ USE_XLIB=	yes
 .if defined(WITHOUT_IMLIB2)
 CONFIGURE_ARGS+=	--disable-imlib2
 .else
-LIB_DEPENDS+=		Imlib2.2:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS+=		Imlib2.3:${PORTSDIR}/graphics/imlib2
 .endif
 .endif
 

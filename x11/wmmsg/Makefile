@@ -14,7 +14,7 @@ MASTER_SITES=	http://taxiway.swapspace.net/~matt/wmmsg/
 MAINTAINER=	t.kempka@web.de
 COMMENT=	Dockapp that notifies you on ICQ, AIM and IRC events
 
-LIB_DEPENDS=	Imlib2:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

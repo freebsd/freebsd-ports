@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.linuxbrit.co.uk/downloads/
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	An object-based image creation/layout application
 
-LIB_DEPENDS=	Imlib2.2:${PORTSDIR}/graphics/imlib2 \
+LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2 \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 XML_CONFIG?=	${LOCALBASE}/bin/xml2-config

@@ -14,7 +14,7 @@ MASTER_SITES=	http://thegraveyard.org/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Root window parameter setting background for X
 
-LIB_DEPENDS=	Imlib2.2:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2
 
 PLIST_FILES=	bin/hsetroot
 USE_X_PREFIX=	YES
