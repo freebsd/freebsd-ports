@@ -10,7 +10,6 @@
     SUBDIR += kde3-i18n-pt_BR
     SUBDIR += koffice-i18n
     SUBDIR += koffice-i18n-pt_BR
-    SUBDIR += netscape7
     SUBDIR += ooodict-pt_BR
     SUBDIR += ooodict-pt_PT
     SUBDIR += openoffice-1.0

@@ -251,7 +251,6 @@
     SUBDIR += ne
     SUBDIR += nethack32
     SUBDIR += nethack34
-    SUBDIR += netscape7
     SUBDIR += netype
     SUBDIR += netypesv
     SUBDIR += newosaka
