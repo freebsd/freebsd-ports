@@ -1,0 +1,5 @@
+POE-Component-Child
+
+This component allows for the creation and management of children
+processes within the POE environment.  
+

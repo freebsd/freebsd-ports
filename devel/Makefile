@@ -840,6 +840,7 @@
     SUBDIR += p5-PCSC-Card
     SUBDIR += p5-POE
     SUBDIR += p5-POE-API-Peek
+    SUBDIR += p5-POE-Component-Child
     SUBDIR += p5-POE-Component-Client-HTTP
     SUBDIR += p5-POE-Component-Client-POP3
     SUBDIR += p5-POE-Component-Client-Ping
