@@ -32,6 +32,32 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a711de5c-05fa-11d9-a9b2-00061bc2ad93">
+    <topic>samba3 DoS attack</topic>
+    <affects>
+      <package>
+        <name>samba3</name>
+        <range><lt>3.0.7,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Code found in nmbd and smbd may allow a remote attacker
+	  to effectively crash the nmbd server or use the smbd
+	  server to exhaust the system memory.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0807</cvename>
+      <cvename>CAN-2004-0808</cvename>
+      <url>www.idefense.com/application/poi/display?id=139&amp;type=vulnerabilities</url>
+    </references>
+    <dates>
+      <discovery>2004-09-02</discovery>
+      <entry>2004-09-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c1d97a8b-05ed-11d9-b45d-000c41e2cdad">
     <topic>mozilla --- POP client heap overflow</topic>
     <affects>
@@ -226,7 +252,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <references>
       <cvename>CAN-2004-0805</cvename>
       <url>http://www.alighieri.org/advisories/advisory-mpg123.txt</url>
-      <url>www.idefense.com/application/poi/display?id=139&amp;type=vulnerabilities</url>
     </references>
     <dates>
       <discovery>2003-08-16</discovery>
