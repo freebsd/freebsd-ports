@@ -38,8 +38,8 @@
  info-am:
  info: info-recursive
  dvi-am:
---- gtk/Makefile.in.orig	Fri Sep 24 09:12:19 1999
-+++ gtk/Makefile.in	Sat Oct  9 22:13:52 1999
+--- gtk/Makefile.in.orig	Fri Oct  8 10:57:08 1999
++++ gtk/Makefile.in	Tue Oct 12 16:04:29 1999
 @@ -126,7 +126,7 @@
  x_libs = @x_libs@
  xinput_progs = @xinput_progs@
@@ -55,10 +55,10 @@
  
 -gtkconfdir = $(sysconfdir)/gtk
 +gtkconfdir = $(datadir)/themes/Default/gtk
- gtkconf_DATA = gtkrc.ja gtkrc.ko gtkrc.ru gtkrc.iso-8859-2
+ gtkconf_DATA = gtkrc.bg gtkrc.el gtkrc.eo gtkrc.he gtkrc.hy gtkrc.ja 	gtkrc.ko gtkrc.ru gtkrc.tr gtkrc.th gtkrc.uk gtkrc.iso-8859-2 	gtkrc.iso-8859-5 gtkrc.iso-8859-13 gtkrc.iso-8859-14 	gtkrc.iso-8859-15 gtkrc.zh_CN gtkrc.zh_TW.Big5 	gtkrc.ka_GE.georgianacademy gtkrc.ka_GE.georgianps 	gtkrc.vi_VN.tcvn gtkrc.vi_VN.viscii
  
- #
-@@ -503,7 +503,7 @@
+ 
+@@ -504,7 +504,7 @@
  uninstall-am: uninstall-libLTLIBRARIES uninstall-gtkconfDATA \
  		uninstall-libgtkincludeHEADERS uninstall-local
  uninstall: uninstall-am
