@@ -20,9 +20,8 @@ include/neon/ne_redirect.h
 include/neon/ne_auth.h
 include/neon/ne_compress.h
 include/neon/ne_acl.h
-lib/libneon.so.18
+lib/libneon.so.19
 lib/libneon.so
-lib/libneon.la
 lib/libneon.a
 %%PORTDOCS%%share/doc/neon/using-neon.txt
 %%PORTDOCS%%@dirrm share/doc/neon
