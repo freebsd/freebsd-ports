@@ -1,9 +1,9 @@
-# $Id: Makefile,v 1.33 1994/12/05 01:50:25 gpalmer Exp $
+# $Id: Makefile,v 1.34 1994/12/05 22:59:10 gpalmer Exp $
 #
 SUBDIR=	ImageMagick Xaw3d color_xterm ctwm emu fvwm ghostview iv ivs \
 	jpeg kterm mpeg-lib olvwm \
 	pcb piewm rxvt tiff tk tkhfs tvtwm xanim xarchie \
-	xcdplayer xdvi xearth xfig xgraph xli xlockmore xpm xsnow \
+	xcdplayer xdvi xearth xfed xfig xgraph xli xlockmore xpm xsnow \
 	xtexshell xv
 
 #
