@@ -1,7 +1,8 @@
-# $Id: Makefile,v 1.33 1997/05/25 08:42:35 andreas Exp $
+# $Id: Makefile,v 1.34 1997/06/03 09:13:05 jmg Exp $
 #
 
     SUBDIR += cam
+    SUBDIR += cddbd
     SUBDIR += gmod
     SUBDIR += gsm
     SUBDIR += maplay
