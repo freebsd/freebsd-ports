@@ -7,6 +7,7 @@
 
 PORTNAME=	openldap
 PORTVERSION=	2.0.7
+PORTREVISION=	1
 CATEGORIES=	net databases
 MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
 		ftp://ftp.net.lut.ac.uk/openldap/%SUBDIR%/ \
@@ -21,6 +22,8 @@ MASTER_SITE_SUBDIR=	openldap-release
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	knu@FreeBSD.org
+
+LIB_DEPENDS=	db3.2:${PORTSDIR}/databases/db3
 
 USE_AUTOCONF=	yes
 USE_LIBTOOL=	yes
@@ -37,18 +40,14 @@ CONFIGURE_ARGS=	--localstatedir=/var/run \
 CONFIGURE_ARGS+=	--enable-wrappers
 .endif
 
-CPPFLAGS+=	-I${LOCALBASE}/include
+# math.h uses _REENTRANT and stdio.h uses _THREAD_SAFE, so define both.
+CPPFLAGS+=	-D_REENTRANT -D_THREAD_SAFE \
+		-I${LOCALBASE}/include \
+		-I${LOCALBASE}/include/db3
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if defined(WITH_DB2)
-BUILD_DEPENDS=	${LOCALBASE}/lib/libdb2.a:${PORTSDIR}/databases/db
-CPPFLAGS+=	-I${LOCALBASE}/include/db2 -D_THREAD_SAFE
-CONFIGURE_ARGS+=	--enable-ldbm \
-			--with-ldbm-api=db2
-.endif
-
 .if defined(WITH_SASL)
-LIB_DEPENDS=	sasl.8:${PORTSDIR}/security/cyrus-sasl
+LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 CPPFLAGS+=	-I${LOCALBASE}/include/sasl
 .endif
 
@@ -56,7 +55,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 
 INSTALLS_SHLIB=	yes
- 
+
 BINS=		bin/ldapadd \
 		bin/ldapdelete \
 		bin/ldapmodify \
