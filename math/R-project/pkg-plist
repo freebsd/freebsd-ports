@@ -42,8 +42,6 @@
 @exec mkdir %D/share/R/library/stepfun/html
 @exec mkdir %D/share/R/library/stepfun/latex
 bin/R
-man/man1/R.1.gz
-man/man1/Rdconv.1.gz
 share/R/afm/AvantB
 share/R/afm/AvantBO
 share/R/afm/AvantD
