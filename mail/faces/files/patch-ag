@@ -1,6 +1,5 @@
-diff -c -N ../faces/x11.c ./x11.c
-*** ../faces/x11.c	Tue Nov 19 05:00:50 1991
---- ./x11.c	Tue Dec 10 20:43:06 1996
+*** x11.c.orig	Tue Nov 19 05:00:50 1991
+--- x11.c	Mon Feb 26 21:29:24 2001
 ***************
 *** 58,64 ****
   
@@ -84,12 +83,41 @@ diff -c -N ../faces/x11.c ./x11.c
                           CWBackPixel | CWBorderPixel | CWEventMask, &winattrs) ;
   
 ***************
-*** 856,861 ****
---- 861,867 ----
+*** 818,823 ****
+--- 823,830 ----
+    int c, r ;         /* Column and row position for this face. */
+    int x, y ;         /* Position of start of this text string. */
+    int textwidth ;
++   Colormap cmap ;
++   XColor selcolor ;
+   
+    c = column ;
+    r = row ;
+***************
+*** 852,861 ****
+        case RIGHT : x = (c + 1) * imagewidth - textwidth - 2 ;
+                     y = (r + 1) * imageheight - 5 ;
+      }
+!   XSetFunction(dpy, gc, GXandInverted) ;
     XFillRectangle(dpy, pr[(int) dtype], gc, x, y-9,
                    (unsigned int) textwidth+2, 13) ;
-    XSetFunction(dpy, gc, GXxor) ;
-+   XSetForeground(dpy, gc, WhitePixel(dpy, screen));
+!   XSetFunction(dpy, gc, GXxor) ;
+    XDrawImageString(dpy, pr[(int) dtype], gc, x, y, str, len) ;
+    XSetFunction(dpy, gc, GXcopy) ;
+  }
+--- 859,873 ----
+        case RIGHT : x = (c + 1) * imagewidth - textwidth - 2 ;
+                     y = (r + 1) * imageheight - 5 ;
+      }
+!   XSetForeground(dpy, gc, WhitePixel(dpy, screen));
+!   XSetFunction(dpy, gc, GXcopy) ;
+    XFillRectangle(dpy, pr[(int) dtype], gc, x, y-9,
+                   (unsigned int) textwidth+2, 13) ;
+!   XSetFunction(dpy, gc, GXcopy) ;
+!   cmap = DefaultColormap(dpy, screen);
+!   XParseColor(dpy, cmap, "red", &selcolor);
+!   XAllocColor(dpy, cmap, &selcolor) ;
+!   XSetForeground(dpy, gc, selcolor.pixel );
     XDrawImageString(dpy, pr[(int) dtype], gc, x, y, str, len) ;
     XSetFunction(dpy, gc, GXcopy) ;
   }

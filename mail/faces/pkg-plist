@@ -1,4 +1,3 @@
-@cwd /usr/local
 bin/compface
 bin/uncompface
 lib/libcompface.a
@@ -29,6 +28,12 @@ bin/face_update
 bin/faces.sendmail
 share/faces/machine.tab
 share/faces/people.tab
+share/faces/lib/allrc
+share/doc/faces/README
+share/doc/faces/README.kinzler
+share/doc/faces/from.allrc-eg
 @dirrm share/faces
+@dirrm share/faces/lib
+@dirrm share/doc/faces
 @cwd /usr/X11R6
 lib/X11/app-defaults/Faces

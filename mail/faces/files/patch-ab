@@ -107,7 +107,7 @@
  		  $(TTEXT) $(TOPIX) $(UPDATE) $(USE_BZERO) $(USE_GETWD) \
  		  $(X11R3) $(X11INCDIR) $(XVIEWINCDIR) $(DEBUG)
 -CCOMP		= -O
-+CCOMP		= -pipe -O2
++CCOMP		= -pipe -O2 -fwritable-strings
  CFLAGS		= $(CCOMP) $(CDEFS)
  #
  #=======================================================================
