@@ -6,6 +6,7 @@ sbin/make_describe_pass2
 sbin/pkg_deinstall
 sbin/pkg_fetch
 sbin/pkg_glob
+sbin/pkg_sort
 sbin/pkgdb
 sbin/portcvsweb
 sbin/portinstall
@@ -30,6 +31,7 @@ etc/pkgtools.conf.sample
 share/zsh/site-functions/_pkg_deinstall
 share/zsh/site-functions/_pkg_fetch
 share/zsh/site-functions/_pkg_glob
+share/zsh/site-functions/_pkg_sort
 share/zsh/site-functions/_pkgdb
 share/zsh/site-functions/_portsclean
 share/zsh/site-functions/_portsdb

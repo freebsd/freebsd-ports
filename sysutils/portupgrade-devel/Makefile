@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	20011105
+PORTVERSION=	20011106
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.iDaemons.org/distfiles/
@@ -30,6 +30,7 @@ MAKE_ARGS=	PREFIX="${PREFIX}" RUBY="${RUBY}"
 MAN1=		pkg_deinstall.1 \
 		pkg_fetch.1 \
 		pkg_glob.1 \
+		pkg_sort.1 \
 		pkgdb.1 \
 		portcvsweb.1 \
 		portsclean.1 \
