@@ -7,8 +7,9 @@
 
 PORTNAME=	sympa
 PORTVERSION?=	4.1.2
+PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES?=	http://www.sympa.org/distribution/
+MASTER_SITES?=	http://www.sympa.org/distribution/old/
 
 MAINTAINER=	autrijus@autrijus.org
 COMMENT?=	Sympa is an electronic mailing list manager
