@@ -36,6 +36,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 
 MAN1=		balsa.1
 
+CONFLICTS=	balsa-*
+
 .if defined(WITH_GPG)
 LIB_DEPENDS+=		gpgme.9:${PORTSDIR}/security/gpgme
 CONFIGURE_ARGS+=	--enable-gpgme
