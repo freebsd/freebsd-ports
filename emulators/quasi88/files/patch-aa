@@ -1,0 +1,20 @@
+--- Makefile.orig	Wed Dec 26 13:08:55 2001
++++ Makefile	Wed Jan  2 09:06:21 2002
+@@ -16,7 +16,7 @@
+ #	通常は環境変数 $(QUASI88_ROM_DIR) で設定したディレクトリを検索
+ #	しますが、その環境変数が設定されていない時は、ここを検索します。
+ 
+-ROMDIR = /local/quasi88/rom/
++ROMDIR = ${PREFIX}/share/quasi88/rom/
+ 
+ 
+ # DISK のありかを設定します
+@@ -26,7 +26,7 @@
+ #	しますが、その環境変数が設定されていない時は、ここを検索します。
+ #	( なお、ここで見つからなければカレントディレクトリを検索します )
+ 
+-DISKDIR = /local/quasi88/disk/
++DISKDIR = ${PREFIX}/share/quasi88/disk/
+ 
+ 
+ # リトルエンディアンの場合の指定
