@@ -1,0 +1,7 @@
+bin/ispell-hu
+share/ispell/magyar.aff
+share/ispell/magyar.dict
+share/ispell/magyar.hash
+%%PORTDOCS%%share/doc/hu-ispell/README
+%%PORTDOCS%%share/doc/hu-ispell/OLVASSEL
+%%PORTDOCS%%@dirrm share/doc/hu-ispell
