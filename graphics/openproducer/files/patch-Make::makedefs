@@ -1,6 +1,7 @@
---- Make/makedefs.orig	Fri Oct  3 00:01:31 2003
-+++ Make/makedefs	Fri Oct 17 18:26:27 2003
-@@ -281,19 +281,25 @@
+diff -urN ../Producer.orig/Make/makedefs ./Make/makedefs
+--- ../Producer.orig/Make/makedefs	Fri Aug 20 10:00:23 2004
++++ ./Make/makedefs	Tue Jan 25 21:36:56 2005
+@@ -287,19 +287,25 @@
        CXX               = g++
      endif
    DEPARG            = -MM
