@@ -64,6 +64,7 @@
     SUBDIR += osf1_base
     SUBDIR += p-interp
     SUBDIR += pcemu
+    SUBDIR += pearpc
     SUBDIR += prodosemu
     SUBDIR += psim-freebsd
     SUBDIR += qcl
