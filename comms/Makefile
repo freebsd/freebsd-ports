@@ -2,6 +2,7 @@
 #
 
     SUBDIR += acfax
+    SUBDIR += aldo
     SUBDIR += asmodem
     SUBDIR += bforce
     SUBDIR += bforce-kst
