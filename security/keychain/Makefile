@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	keychain
-PORTVERSION=	2.0.3
+PORTVERSION=	2.2.0
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	distributions/gentoo/distfiles
+MASTER_SITES=	${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	olive@oban.frmug.org
 COMMENT=	A user-friendly front-end to ssh-agent(1)
