@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mplayer
-PORTVERSION=	0.90.0.9
+PORTVERSION=	0.90.0.10
 CATEGORIES=	graphics
 MASTER_SITES=	http://ftp.mplayerhq.hu/MPlayer/releases/ \
 		http://www.mplayerhq.hu/MPlayer/releases/ \
@@ -16,7 +16,7 @@ MASTER_SITES=	http://ftp.mplayerhq.hu/MPlayer/releases/ \
 		ftp://ftp2.mplayerhq.hu/MPlayer/releases/ \
 		ftp://ftp.lug.udel.edu/MPlayer/releases/ \
 		http://www.rrr.de/~riggs/mplayer/
-DISTNAME=	MPlayer-0.90pre9
+DISTNAME=	MPlayer-0.90pre10
 
 MAINTAINER=	riggs@rrr.de
 
