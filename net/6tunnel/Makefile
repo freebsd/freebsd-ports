@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	6tunnel
-PORTVERSION=	0.09
+PORTVERSION=	0.11.r1
 CATEGORIES=	net ipv6
-MASTER_SITES=	ftp://amba.bydg.pdi.net/pub/wojtekka/ \
-		ftp://ftp.bsdfr.org/pub/projects/6tunnel/ \
-		ftp://atlantis.bsd-fr.org/pub/ipv6/tools/ \
-		http://rencade.raphit.net/~vt/
+MASTER_SITES=	http://toxygen.net/6tunnel/
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}rc1
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	TCP proxy for application that don't speak IPv6
+COMMENT=	TCP proxy for applications that don't speak IPv6
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
+GNU_CONFIGURE=	yes
 ALL_TARGET=	default
 
 MAN1=		6tunnel.1
