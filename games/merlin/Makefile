@@ -1,0 +1,32 @@
+# New ports collection makefile for:	merlin
+# Version required:			1.0
+# Date created:				12 August 1998
+# Whom:					Andrey Zakhvatov
+#
+# $Id$
+#
+
+DISTNAME=	merlin
+PKGNAME=	merlin-1.0
+CATEGORIES=	games
+MASTER_SITES=	http://outoften.doc.ic.ac.uk/~np2/software/download/
+
+MAINTAINER=	andy@icc.surw.chel.su
+
+RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
+
+NO_BUILD=	yes
+USE_X_PREFIX=	yes
+WRKSRC=		${WRKDIR}
+
+post-extract:
+	@ ${MV} ${WRKSRC}/merlin.tcl ${WRKSRC}/merlin
+
+do-install:
+	@ ${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	@ ${MKDIR} ${PREFIX}/share/doc/merlin
+	@ ${INSTALL_DATA} ${WRKSRC}/merlin.README.txt ${PREFIX}/share/doc/merlin/README
+.endif
+
+.include <bsd.port.mk>
