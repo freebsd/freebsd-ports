@@ -655,7 +655,6 @@ MASTER_SITE_PYTHON+= \
 	http://www.python.org/%SUBDIR%/ \
 	http://python.planetmirror.com/%SUBDIR%/ \
 	http://python.ilisys.com.au/%SUBDIR%/ \
-	http://gd.tuwien.ac.at/www.python.org/%SUBDIR%/ \
 	http://ftp.easynet.be/python/%SUBDIR%/ \
 	http://www.linux.org.hk/mirror/python/%SUBDIR%/ \
 	http://mirrors.sunsite.dk/pythonwww/%SUBDIR%/ \
