@@ -7,19 +7,15 @@
 #
 
 PORTNAME=	newspost
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	news
 MASTER_SITES=	http://newspost.unixcab.org/download/
 
 MAINTAINER=	mich@freebsdcluster.org
+COMMENT=	Newspost is a full-featured USEnet binary autoposter
 
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
-
-USE_REINPLACE=  yes
-
-post-patch:
-	@${REINPLACE_CMD} -e "s|^CC|#CC|g" \
-		-e "s|^OPT_FLAGS|#OPT_FLAGS|g" ${WRKSRC}/Makefile
+ALL_TARGET=	main
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
@@ -30,6 +26,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
 .endif
 
-MAN1=           newspost.1
+MAN1=		newspost.1
 
 .include <bsd.port.mk>
