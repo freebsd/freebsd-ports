@@ -1,0 +1,32 @@
+--- gcc/gcc.c.orig	Mon Aug 13 14:03:57 1990
++++ gcc/gcc.c	Sat Dec 26 12:59:35 1998
+@@ -1867,7 +1867,9 @@
+      char *name;
+ {
+   extern int errno, sys_nerr;
++	/*
+   extern char *sys_errlist[];
++	*/
+   char *s;
+ 
+   if (errno < sys_nerr)
+@@ -1881,7 +1883,9 @@
+      char *name;
+ {
+   extern int errno, sys_nerr;
++	/*
+   extern char *sys_errlist[];
++	*/
+   char *s;
+ 
+   if (errno < sys_nerr)
+@@ -1895,7 +1899,9 @@
+      char *name;
+ {
+   extern int errno, sys_nerr;
++	/*
+   extern char *sys_errlist[];
++	*/
+   char *s;
+ 
+   if (errno < sys_nerr)

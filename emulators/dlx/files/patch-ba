@@ -1,0 +1,36 @@
+--- gcc/Makefile.orig	Tue Aug 14 12:29:46 1990
++++ gcc/Makefile	Sat Dec 26 13:49:36 1998
+@@ -45,9 +45,11 @@
+ # Directory where sources are, from where we are.
+ srcdir = .
+ # Directory in which to put the executable for the command `gcc'
+-bindir = $(prefix)/usr/local/bin
++#bindir = $(prefix)/usr/local/bin
++bindir = $(prefix)/bin
+ # Directory in which to put the subprograms used by the compiler.
+-libdir = $(prefix)/usr/local/lib
++#libdir = $(prefix)/usr/local/lib
++libdir = $(prefix)/lib/dlx
+ # Directory in which to put man pages.
+ mandir = $(prefix)/usr/local/man/man1
+ # Number to put in man-page filename.
+@@ -311,7 +313,7 @@
+ gcc.o: gcc.c $(CONFIG_H)
+ 	$(CC) $(CFLAGS) $(INCLUDES) \
+   -DSTANDARD_STARTFILE_PREFIX=\"$(libdir)/\" \
+-  -DSTANDARD_EXEC_PREFIX=\"$(INSTALLDIR)/gcc-\" -c \
++  -DSTANDARD_EXEC_PREFIX=\"$(INSTALLDIR)/dlx-gcc-\" -c \
+   `echo $(srcdir)/gcc.c | sed 's,^\./,,'`
+ 
+ version.o: version.c
+@@ -577,8 +579,8 @@
+ 	$(INSTALL) $(srcdir)/gcc.1 $(mandir)/gcc.$(manext)
+ 
+ install:	all
+-	$(INSTALL) cc1 $(INSTALLDIR)/gcc-cc1 ;fi
+-	$(INSTALL) cpp $(INSTALLDIR)/gcc-cpp
++	$(INSTALL) cc1 $(INSTALLDIR)/dlx-gcc-cc1
++	$(INSTALL) cpp $(INSTALLDIR)/dlx-gcc-cpp
+ 	$(INSTALL) dlxcc $(INSTALLDIR)
+ 	
+ 

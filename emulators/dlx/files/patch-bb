@@ -1,0 +1,12 @@
+--- gcc/stddef.h.orig	Mon Aug 13 14:04:37 1990
++++ gcc/stddef.h	Sat Dec 26 13:02:04 1998
+@@ -9,7 +9,9 @@
+ 
+ #ifndef _SIZE_T	/* in case <sys/types.h> has defined it. */
+ #define _SIZE_T
++	/*
+ typedef unsigned long size_t;
++	*/
+ #endif /* _SIZE_T */
+ 
+ /* A null pointer constant.  */

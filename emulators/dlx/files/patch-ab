@@ -1,0 +1,11 @@
+--- dlxsim/sim.c.orig	Wed May  8 13:37:56 1991
++++ dlxsim/sim.c	Sat Dec 26 13:08:12 1998
+@@ -2833,7 +2833,7 @@
+ static char *errstring()
+ {
+ 	extern int errno, sys_nerr;
+-	extern char *sys_errlist[];
++	/* extern char *sys_errlist[]; */
+ 	static char msgbuf[64];
+ 
+ 	if( !errno )

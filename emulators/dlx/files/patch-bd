@@ -1,0 +1,22 @@
+--- gcc/cccp.c.orig	Mon Aug 13 14:03:34 1990
++++ gcc/cccp.c	Sat Dec 26 13:05:53 1998
+@@ -4752,7 +4752,9 @@
+   int i;
+   FILE_BUF *ip = NULL;
+   extern int errno, sys_nerr;
++  	/*
+   extern char *sys_errlist[];
++  	*/
+ 
+   for (i = indepth; i >= 0; i--)
+     if (instack[i].fname != NULL) {
+@@ -5389,7 +5391,9 @@
+      char *name;
+ {
+   extern int errno, sys_nerr;
++  	/*
+   extern char *sys_errlist[];
++  	*/
+ 
+   fprintf (stderr, "%s: ", progname);
+   if (errno < sys_nerr)

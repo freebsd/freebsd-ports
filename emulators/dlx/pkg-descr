@@ -1,0 +1,4 @@
+Simular and compiler for Hennessy and Patterson's MIPS-like RISC DLX
+architecture.  DLX is documented in "Computer Architecture: A Quantitative
+Approach" by Hennessy and Patterson.
+
