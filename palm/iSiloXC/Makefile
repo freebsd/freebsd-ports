@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iSiloXC
-PORTVERSION=	4.01
+PORTVERSION=	4.15
 CATEGORIES=	palm textproc
 MASTER_SITES=	http://www.isilox.com/download/dl/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}BSD
