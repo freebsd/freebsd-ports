@@ -1,11 +1,12 @@
 This is the lp_solve, A free linear programming solver that can process 
-standard MPL format.
-This lp_solve versions is released under the LGPL license. See LGPL.txt
+standard MPL format, LP format or be accessed directly from your code
+via API calls from a library. This lp_solve versions is released under
+the LGPL license. See LGPL.txt.
 
-bug reports, success stories and requests for changes are welcome at:
+Bug reports, success stories and requests for changes are welcome at:
 
 Michel Berkelaar
 michel@ics.ele.tue.nl
 ________
 NOTE: Current development of this tool is done on Yahoo's "lp_solve" 
-group.
+group, at http://groups.yahoo.com/group/lp_solve/ .
