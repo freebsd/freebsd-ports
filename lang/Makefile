@@ -108,6 +108,7 @@
     SUBDIR += logo
     SUBDIR += lua
     SUBDIR += lua4
+    SUBDIR += lush
     SUBDIR += m3gdb
     SUBDIR += malbolge
     SUBDIR += mawk

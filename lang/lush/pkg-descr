@@ -1,0 +1,12 @@
+Lush is an object-oriented programming language designed for
+researchers, experimenters, and engineers interested in large-scale
+numerical and graphic applications.  Lush is designed to be used in
+situations where one would want to combine the flexibility of a
+high-level, loosely-typed interpreted language, with the efficiency
+of a strongly-typed, natively-compiled language, and with the easy
+integration of code written in C, C++, or other languages.
+
+WWW: http://lush.sourceforge.net/
+
+- David
+dyeske@yahoo.com

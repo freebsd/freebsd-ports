@@ -1,0 +1,11 @@
+--- configure.orig	Sun Dec 28 01:01:52 2003
++++ configure	Sun Dec 28 01:02:14 2003
+@@ -8513,7 +8513,7 @@
+ 
+ 
+ 
+-for ac_header in unistd.h vfork.h
++for ac_header in unistd.h vfork.h sys/types.h
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ if eval "test \"\${$as_ac_Header+set}\" = set"; then
