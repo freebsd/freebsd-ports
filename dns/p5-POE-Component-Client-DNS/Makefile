@@ -16,7 +16,7 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	POE component for non-blocking/concurrent DNS queries
 
 BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
-		${SITE_PERL}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
+		${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

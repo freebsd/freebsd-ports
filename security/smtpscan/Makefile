@@ -15,7 +15,7 @@ COMMENT=	A remote SMTP server version detector
 
 RUN_DEPENDS=	${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
 		${SITE_PERL}/${PERL_ARCH}/IO.pm:${PORTSDIR}/devel/p5-IO \
-		${SITE_PERL}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
+		${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
 
 USE_PERL5=	yes
 MAN1=		smtpscan.1

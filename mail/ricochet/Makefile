@@ -15,7 +15,7 @@ MAINTAINER=     ache@FreeBSD.org
 COMMENT=	An automated agent for tracing and reporting internet junk mail
 
 RUN_DEPENDS=	${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
-		${SITE_PERL}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
+		${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
 		${SITE_PERL}/Text/Template.pm:${PORTSDIR}/textproc/p5-Text-Template \
 		${SITE_PERL}/Net/XWhois.pm:${PORTSDIR}/net/p5-Net-XWhois \
 		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
