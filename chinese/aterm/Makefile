@@ -3,14 +3,15 @@
 # Date created:		26 April 1999
 # Whom:			Chia-Hsing Yu <davidyu@ken.csie.ntu.edu.tw>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/01 13:47:14 steve Exp $
 #
 
 DISTNAME=	aterm-0.3.4
 PKGNAME=	zh-aterm-0.3.4
 CATEGORIES=	chinese
 MASTER_SITES=	http://members.xoom.com/sashav/aterm/ \
-		http://www.tigr.net/afterstep/as-apps/download/aterm/
+		http://www.tigr.net/afterstep/as-apps/download/aterm/	\
+		http://www.freebsd.org/~foxfair/
 
 MAINTAINER=	davidyu@ken.csie.ntu.edu.tw
 
