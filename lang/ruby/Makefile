@@ -10,7 +10,7 @@ PORTVERSION=	${RUBY_PORTVERSION}
 CATEGORIES=	lang ruby ipv6
 MASTER_SITES=		${MASTER_SITE_RUBY} \
 			${ONIGURUMA_MASTER_SITES:S,$,:oniguruma,}
-MASTER_SITE_SUBDIR=	stable \
+MASTER_SITE_SUBDIR=	snapshots \
 			${ONIGURUMA_MASTER_SITE_SUBDIR:S,$,/:oniguruma,}
 DISTFILES=		${RUBY_DISTNAME}${EXTRACT_SUFX} \
 			${ONIGURUMA_DISTFILE:S,$,:oniguruma,}
@@ -33,19 +33,19 @@ PLIST_SUB+=	ONIGURUMA=""
 PLIST_SUB+=	ONIGURUMA="@comment "
 .endif
 
-#USE_BZIP2=	yes
+USE_BZIP2=	yes
 
 USE_RUBY=	yes
 RUBY_NO_BUILD_DEPENDS=	yes
 RUBY_NO_RUN_DEPENDS=	yes
 
-USE_AUTOCONF=	yes	# works either with 2.53 or with 2.13
-INSTALLS_SHLIB=	yes
+#USE_AUTOCONF=	yes	# works either with 2.53 or with 2.13
+GNU_CONFIGURE=	yes
 WRKSRC=		${RUBY_WRKSRC}
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--enable-shared
-MAKE_ENV=	LANG=C	# prevent bison 1.33 w/ gettext 0.10.35 from coredumping
 MAKE_ARGS=	-j3
+INSTALLS_SHLIB=	yes
 MAN1=		ruby${_RUBY_SUFFIX}.1
 
 .include <bsd.port.pre.mk>
@@ -81,7 +81,7 @@ OBSOLETED_MODULES=	sha1 \
 
 post-extract:
 .if defined(WITH_ONIGURUMA)
-	cd ${WRKDIR}; ${TAR} zxvf ${_DISTDIR}/${ONIGURUMA_DISTFILE}
+	${TAR} -zxvf ${DISTDIR}/${DIST_SUBDIR}/${ONIGURUMA_DISTFILE} -C ${WRKDIR}
 .endif
 
 post-patch:
