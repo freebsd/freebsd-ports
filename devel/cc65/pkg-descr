@@ -1,0 +1,19 @@
+CC65 is a C cross-compiler for 6502 systems.  CC65 includes a
+powerful macro assembler, a debugger, an archiver, and a highly
+configurable linker.  The linker supports overlays, ROMable code,
+split output, among other features.  The compiler supports a large
+subset of ISO C (as per the ISO 9899 specification).
+
+It is easy to write code for standalone 6502 boards (target none).  In
+addition, particular support for the following targets is included:
+
+        - C64
+        - C128
+        - C16, C116, Plus/4
+        - CBM 600/700 family (programs run in bank 1)
+        - Newer PET machines (not 2001)
+        - The Apple ][
+
+The assembler and linker also support 65816 as a target.
+
+WWW: http://www.von-bassewitz.de/uz/cc65/
