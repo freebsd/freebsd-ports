@@ -27,16 +27,18 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tmail/m/normal
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tmail/m/sendtest
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tmail/m/simple
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tmail/m/test
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/tmail/m
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/tmail
 %%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/README.en
+%%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/basics.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/bugs.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/changes.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/concept.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/field.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/index.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/item.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/loader.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/mail.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/port.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/tmail.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/tmail/ja/README.ja
