@@ -16,3 +16,4 @@ lib/libgd.a
 lib/libgd.so
 lib/libgd.so.0
 @dirrm include/gd
+@dirrm share/examples/gd
