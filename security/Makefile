@@ -239,6 +239,7 @@
     SUBDIR += secpanel
     SUBDIR += sfs
     SUBDIR += sha
+    SUBDIR += sig2dot
     SUBDIR += siphon
     SUBDIR += skip
     SUBDIR += slurpie

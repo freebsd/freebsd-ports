@@ -1,0 +1,6 @@
+sig2dot can be used to generate a graph of all of the signature relationships
+in a GPG/PGP keyring. It converts the output of "gpg --list-sigs" to a .dot
+file, which is a graph definition that can be rendered by springgraph or
+graphviz.
+
+WWW: http://www.chaosreigns.com/code/sig2dot/
