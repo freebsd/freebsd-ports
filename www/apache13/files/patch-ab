@@ -1,5 +1,5 @@
---- Makefile.tmpl.orig	Sun Oct  7 02:01:09 2001
-+++ Makefile.tmpl	Sun Dec  2 11:19:23 2001
+--- Makefile.tmpl.orig	Wed Nov 28 18:02:12 2001
++++ Makefile.tmpl	Fri Jan 25 07:48:19 2002
 @@ -270,10 +270,12 @@
  	$(MKDIR) $(root)$(mandir)/man1
  	$(MKDIR) $(root)$(mandir)/man8
@@ -15,7 +15,7 @@
  	$(MKDIR) $(root)$(includedir)
  	$(MKDIR) $(root)$(includedir)/xml
  	$(MKDIR) $(root)$(runtimedir)
-@@ -457,33 +459,39 @@
+@@ -459,33 +461,39 @@
  #   icons and distributed CGI scripts.
  install-data:
  	@echo "===> [data: Installing initial data files]"
@@ -70,7 +70,7 @@
  	@echo "Copying tree $(TOP)/icons/ -> $(root)$(iconsdir)/"; \
  	(cd $(TOP)/icons/ && $(TAR) $(TAROPT) - *) |\
  	(cd $(root)$(iconsdir)/ && $(TAR) -xf -); \
-@@ -522,14 +530,14 @@
+@@ -524,10 +532,10 @@
  			-e 's;logs/accept\.lock;$(runtimedir)/$(TARGET).lock;' \
  			-e 's;logs/apache_runtime_status;$(runtimedir)/$(TARGET).scoreboard;' \
  			-e 's;logs/httpd\.pid;$(runtimedir)/$(TARGET).pid;' \
@@ -85,8 +85,3 @@
  			-e 's;conf/magic;$(sysconfdir)/magic;' \
  			-e 's;conf/mime\.types;$(sysconfdir)/mime.types;' \
  			-e 's;User nobody;User $(conf_user);' \
--			-e 's;Group #-1;Group $(conf_group);' \
-+			-e 's;Group "#-1";Group $(conf_group);' \
- 			-e 's;Port 80;Port $(conf_port);' \
- 			-e 's;ServerAdmin you@your.address;ServerAdmin $(conf_serveradmin);' \
- 			-e 's;ServerName new.host.name;ServerName $(conf_servername);' \

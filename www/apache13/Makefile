@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	apache
-PORTVERSION=    1.3.22
-PORTREVISION=   7
+PORTVERSION=    1.3.23
 CATEGORIES=	www
-MASTER_SITES=   http://httpd.apache.org/dist/httpd/ \
+MASTER_SITES=   http://www.apache.org/dist/httpd/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/httpd/ \
 		ftp://ftp.rge.com/pub/infosystems/apache/dist/httpd/ \
 		ftp://apache.compuex.com/pub/apache/dist/httpd/ \
@@ -38,7 +37,7 @@ CONFIGURE_ARGS+=	\
 		--server-uid=www \
 		--server-gid=www \
 		--with-perl=${PERL} \
-		--with-layout=${FILESDIR}/FreeBSD.layout:FreeBSD \
+		--with-layout=FreeBSD \
 		--suexec-docroot=${PREFIX}/www/data \
 		--without-confadjust \
 		--enable-module=most \
@@ -49,8 +48,7 @@ CONFIGURE_ARGS+=	\
 
 OPTIM=		-DHARD_SERVER_LIMIT=512 \
 		-DDOCUMENT_LOCATION=\\"${PREFIX}/www/data/\\" \
-		-DDEFAULT_PATH=\\"/bin:/usr/bin:${PREFIX}/bin\\" \
-		-DACCEPT_FILTER_NAME=\\"httpready\\"
+		-DDEFAULT_PATH=\\"/bin:/usr/bin:${PREFIX}/bin\\"
 
 #
 # Set WITH_APACHE_PERF_TUNING env. variable to YES to get maximum performance
