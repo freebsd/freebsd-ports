@@ -1,5 +1,5 @@
---- libGLU/Makefile.in.orig	Thu Dec 16 05:30:13 1999
-+++ libGLU/Makefile.in	Fri Dec 31 04:19:58 1999
+--- libGLU/Makefile.in.orig	Thu Aug 24 16:53:46 2000
++++ libGLU/Makefile.in	Thu Aug 24 21:42:43 2000
 @@ -13,10 +13,10 @@
  # These define the name/version of the shared library we're building
  # ------------------------------------------------------------------
@@ -16,18 +16,18 @@
  
  # FIXME: different library version for Mesa 3.2?
 @@ -104,8 +104,8 @@
- 	@if [ -d ${INSTALL_libdir} ]; then set +x; \
- 	else (set -x; ${MKDIR} ${INSTALL_libdir}); fi
- 	${INSTALL} ${INSTALLFLAGS} ${INSTBINFLAGS} ${GLULIB} ${INSTALL_libdir}
--	${RM} ${INSTALL_libdir}/lib${LIBNAME}.so.${GLUREV_major} ;\
--	${LN} ${GLULIB} ${INSTALL_libdir}/lib${LIBNAME}.so.${GLUREV_major}
-+#	${RM} ${INSTALL_libdir}/lib${LIBNAME}.so.${GLUREV_major} ;\
-+#	${LN} ${GLULIB} ${INSTALL_libdir}/lib${LIBNAME}.so.${GLUREV_major}
- 	${RM} ${INSTALL_libdir}/lib${LIBNAME}.so ;\
- 	${LN} ${GLULIB} ${INSTALL_libdir}/lib${LIBNAME}.so
+ 	@if [ -d ${DESTDIR}${INSTALL_libdir} ]; then set +x; \
+ 	else (set -x; ${MKDIR} ${DESTDIR}${INSTALL_libdir}); fi
+ 	${INSTALL} ${INSTALLFLAGS} ${INSTBINFLAGS} ${GLULIB} ${DESTDIR}${INSTALL_libdir}
+-	${RM} ${DESTDIR}${INSTALL_libdir}/lib${LIBNAME}.so.${GLUREV_major} ;\
+-	${LN} ${GLULIB} ${DESTDIR}${INSTALL_libdir}/lib${LIBNAME}.so.${GLUREV_major}
++#	${RM} ${DESTDIR}${INSTALL_libdir}/lib${LIBNAME}.so.${GLUREV_major} ;\
++#	${LN} ${GLULIB} ${DESTDIR}${INSTALL_libdir}/lib${LIBNAME}.so.${GLUREV_major}
+ 	${RM} ${DESTDIR}${INSTALL_libdir}/lib${LIBNAME}.so ;\
+ 	${LN} ${GLULIB} ${DESTDIR}${INSTALL_libdir}/lib${LIBNAME}.so
  else
-@@ -128,8 +128,8 @@
- 	${CC} -o ./$@~ ${SHARED_LDFLAGS} -Wl,-soname,lib${LIBNAME}.so.${GLUREV_major} ${OBJS} ${MATHLIBS}
+@@ -135,8 +135,8 @@
+ 	fi;
  	${RM} $@
  	${MV} $@~ $@
 -	${RM} lib${LIBNAME}.so.${GLUREV_major}
