@@ -1,0 +1,9 @@
+@comment $FreeBSD$
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%CLASSDIR%%/lineno.sty
+%%CLASSDIR%%/lineno.tex
+%%CLASSDIR%%/ulineno.tex
+@dirrm %%CLASSDIR%%
+@exec %%MKTEXLSR%%
+@unexec %%MKTEXLSR%%

@@ -105,6 +105,7 @@
     SUBDIR += latex-index
     SUBDIR += latex-keystroke
     SUBDIR += latex-layouts
+    SUBDIR += latex-lineno
     SUBDIR += latex-logpap
     SUBDIR += latex-mathabx
     SUBDIR += latex-pgf
