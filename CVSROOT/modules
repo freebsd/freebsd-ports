@@ -699,6 +699,7 @@ ccmath		ports/math/ccmath
 ccrypt		ports/security/ccrypt
 ccscript	ports/lang/ccscript
 cd-console	ports/audio/cd-console
+cd-discid	ports/audio/cd-discid
 cd-write	ports/sysutils/cd-write
 cd2mp3		ports/audio/cd2mp3
 cd9660_unicode	ports/sysutils/cd9660_unicode
