@@ -7,7 +7,7 @@
 
 PORTNAME=	apache+mod_ssl
 PORTVERSION= 	${VERSION_APACHE}+${VERSION_MODSSL}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www security
 MASTER_SITES=	http://www.apache.org/dist/ \
 		http://www.modssl.org/source/ \
@@ -56,30 +56,23 @@ Y2K=		http://www.modssl.org/docs/2.7/ssl_faq.html#y2k
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--target=apache \
-		--with-layout=GNU \
+		--server-gid=nogroup \
 		--with-perl=${PERL} \
-		--bindir=${PREFIX}/bin \
-		--sbindir=${PREFIX}/sbin \
-		--libexecdir=${PREFIX}/libexec/apache \
-		--mandir=${PREFIX}/man \
-		--sysconfdir=${PREFIX}/etc/apache \
-		--datadir=${PREFIX}/share/apache \
-		--includedir=${PREFIX}/include/apache \
-		--localstatedir=/var \
-		--runtimedir=/var/run \
-		--logfiledir=/var/log \
-		--proxycachedir=/var/spool/apache \
+		--with-layout=${FILESDIR}/FreeBSD.layout:FreeBSD \
+		--suexec-docroot=${PREFIX}/www/data \
 		--without-confadjust \
 		--enable-module=most \
 		--enable-module=auth_db \
+		--enable-module=mmap_static \
 		--disable-module=auth_dbm \
+		--enable-shared=max \
 		--enable-module=ssl \
-		--enable-module=define \
-		--enable-shared=max
+		--enable-module=define
 
 OPTIM=		-DHARD_SERVER_LIMIT=512 \
-		-DDEFAULT_PATH=\\"${PREFIX}/bin:/bin:/usr/bin\\"
+		-DDOCUMENT_LOCATION=\\"${PREFIX}/www/data/\\" \
+		-DDEFAULT_PATH=\\"${PREFIX}/bin:/bin:/usr/bin\\" \
+		-DACCEPT_FILTER_NAME=\\"httpready\\"
 
 .if defined(APACHE_PERF_TUNING) && ${APACHE_PERF_TUNING} == YES
 OPTIM+=		-DBUFFERED_LOGS -DFD_SETSIZE=1024
@@ -96,7 +89,7 @@ CONFIGURE_ENV=	CFLAGS='${CFLAGS}' \
 INSTALL_TARGET=	install-quiet
 
 MAN1=	dbmmanage.1 htdigest.1 htpasswd.1
-MAN8=	ab.8 apachectl.8 apxs.8 apache.8 logresolve.8 rotatelogs.8
+MAN8=	ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8
 
 TYPE=	test
 CRT=
@@ -123,13 +116,9 @@ certificate:
 	&& ${MAKE} certificate TYPE=${TYPE} CRT=${CRT} KEY=${KEY}
 
 post-install:
-	@${RM} -f ${PREFIX}/etc/apache/access.conf.*
-	@${RM} -f ${PREFIX}/etc/apache/srm.conf.*
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/apache.sh startup file."; \
-		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/apache.sh; \
-		${ECHO} "[ -x ${PREFIX}/sbin/apachectl ] && ${PREFIX}/sbin/apachectl startssl >/dev/null && ${ECHO} -n ' apache'" >> ${PREFIX}/etc/rc.d/apache.sh; \
-		${CHMOD} 751 ${PREFIX}/etc/rc.d/apache.sh; \
+		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/apache.sh ${PREFIX}/etc/rc.d/apache.sh; \
 	fi
 
 .include <bsd.port.post.mk>
