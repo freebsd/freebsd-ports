@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	qcl
-PORTVERSION=	0.4.1
-PORTREVISION=   1
-CATEGORIES=	emulators math
+PORTVERSION=	0.6.1
+CATEGORIES=	science math
 MASTER_SITES=	http://tph.tuwien.ac.at/~oemer/tgz/
 EXTRACT_SUFX=	.tgz
 
@@ -19,11 +18,12 @@ USE_GETOPT_LONG=yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile (bad C++ code)"
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile
 .endif
 
-post-install:
-	${STRIP_CMD} ${PREFIX}/bin/qcl
+do-configure:
+	echo 'PREFIX=${PREFIX}' >>${WRKSRC}/Makefile
+	cd ${WRKSRC} && make dep
 
 .include <bsd.port.post.mk>

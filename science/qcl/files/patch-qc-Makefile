@@ -1,0 +1,49 @@
+--- qc/Makefile.orig	Mon Mar 29 15:24:31 2004
++++ qc/Makefile	Tue Feb  1 01:27:33 2005
+@@ -12,7 +12,7 @@
+ 
+ # Debugging options
+ 
+-DEBUG = -g -O2 -DQC_DEBUG
++DEBUG = -DQC_DEBUG
+ #DEBUG = -g -pg -DQC_DEBUG
+ #DEBUG = -O2
+ 
+@@ -21,10 +21,8 @@
+ 
+ #PRGOPT = -DQC_USE_RAND48
+ 
+-CC = g++
+-CFLAGS = -c -pedantic -Wall $(DEBUG) $(PRGOPT)
+-
+-LNKOPT = -L. -lm -lqc
++CXXFLAGS += $(DEBUG) $(PRGOPT)
++LDFLAGS += -L. -lm -lqc
+ 
+ FILESCC = bitvec.cc terms.cc qustates.cc operator.cc
+ FILESH = bitvec.h terms.h qustates.h operator.h qc.h
+@@ -36,23 +34,9 @@
+ 	ar rc libqc.a bitvec.o terms.o qustates.o operator.o
+ 	ranlib libqc.a
+ 
+-bitvec.o: bitvec.cc bitvec.h
+-	$(CC) bitvec.cc -o bitvec.o $(CFLAGS)
+-
+-terms.o: terms.cc terms.h bitvec.h
+-	$(CC) terms.cc -o terms.o $(CFLAGS)
+-
+-qustates.o: qustates.cc qustates.h terms.h bitvec.h
+-	$(CC) qustates.cc -o qustates.o $(CFLAGS)
+-
+-operator.o: operator.cc operator.h qustates.h terms.h bitvec.h
+-	$(CC) operator.cc -o operator.o $(CFLAGS)
+-
+-shor.o: shor.cc qustates.h terms.h bitvec.h 
+-	$(CC) shor.cc -o shor.o $(CFLAGS)
+ 
+ shor: shor.o libqc.a 
+-	$(CC)  shor.o -o shor $(LNKOPT)
++	$(CXX)  shor.o -o shor $(LDFLAGS)
+ 
+ # Other Functions
+ 
