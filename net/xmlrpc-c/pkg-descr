@@ -1,0 +1,17 @@
+XML-RPC is a quick-and-easy way to make procedure calls over the Internet.
+It converts the procedure call into XML document, sends it to a remote
+server using HTTP, and gets back the response as XML.
+
+This library provides a modular implementation of XML-RPC for C and C++.
+
+   - C API and experimental C++ API.
+   - Modular XML-RPC core: If you want, you can supply all your own HTTP
+     code.
+   - Synchronous and asynchronous XML-RPC clients based on w3c-libwww.
+   - Multithreaded XML-RPC server based on the Abyss web server.
+   - Full support for basic types, including <struct>, <array> and <base64>.
+   - Extensive test suites to help verify correct behavior and correct
+     error handling.
+   - Passes the official XML-RPC validator1 test suite.
+
+WWW: http://xmlrpc-c.sourceforge.net/

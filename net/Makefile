@@ -316,6 +316,7 @@
     SUBDIR += xicq
     SUBDIR += xipmsg
     SUBDIR += xisp
+    SUBDIR += xmlrpc-c
     SUBDIR += xsmbrowser
     SUBDIR += xtraceroute
     SUBDIR += xtradius
