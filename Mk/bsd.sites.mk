@@ -204,11 +204,12 @@ MASTER_SITE_SOURCEWARE+= \
 	ftp://unix.hensa.ac.uk/mirrors/sourceware.cygnus.com/pub/%SUBDIR%/
 
 MASTER_SITE_SOURCEFORGE+= \
-	ftp://ftp1.sourceforge.net/pub/sourceforge/%SUBDIR%/ \
-	http://ftp1.sourceforge.net/%SUBDIR%/ \
 	ftp://ftp2.sourceforge.net/pub/sourceforge/%SUBDIR%/ \
 	http://ftp2.sourceforge.net/%SUBDIR%/ \
 	ftp://ftp3.sourceforge.net/pub/sourceforge/%SUBDIR%/ \
+	http://ftp3.sourceforge.net/%SUBDIR%/ \
+	ftp://ftp1.sourceforge.net/pub/sourceforge/%SUBDIR%/ \
+	http://ftp1.sourceforge.net/%SUBDIR%/ \
 	ftp://projects.sourceforge.net/pub/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/sourceforge/%SUBDIR%/ \
 	ftp://ftp.mirror.ac.uk/sites/download.sourceforge.net/pub/sourceforge/%SUBDIR%/
