@@ -22,14 +22,3 @@
  		
  		
  	else
-@@ -5915,8 +5915,8 @@
- fi
- 
- GPILOT_LIBDIR='-L${libdir}'
--GPILOT_LIBS="-lgpilotd -lgpilotdcm -lgpilotdconduit `gnome-config --libs gnome` `glib-config --libs glib gmodule`"
--GPILOT_INCLUDEDIR="-I${includedir} `gnome-config --cflags gnome` `glib-config --cflags glib gmodule`"
-+GPILOT_LIBS="-lgpilotd -lgpilotdcm -lgpilotdconduit `gnome-config --libs gnome` `$GLIB_CONFIG --libs glib gmodule`"
-+GPILOT_INCLUDEDIR="-I${includedir} `gnome-config --cflags gnome` `$GLIB_CONFIG --cflags glib gmodule`"
- 
- 
- 
