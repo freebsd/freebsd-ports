@@ -4,12 +4,16 @@
   |  __/  __/  __/ |  | |
    \___|_|   \___|_|  |_|
                          
-  ePerl -- Embedded Perl 5 for HTML
+  ePerl -- Embedded Perl 5 Language
 
-  ePerl interprets a HTML markup file bristled with Perl 5 program
-  statements by expanding the Perl 5 code. It operates as a stand-alone 
-  NPH-CGI/1.0 compliant Unix program and produces pure HTML markup code 
-  as the resulting data.
+  Version 2.1.1 (01-05-1997)
+
+  ePerl interprets an ASCII file bristled with Perl 5 program statements by
+  evaluating the Perl 5 code while passing through the plain ASCII data. It
+  can operate both as a standard Unix filter for general file generation tasks
+  and as a powerful Webserver scripting language for dynamic HTML page
+  programming. 
 
   The documentation and latest release can be found on
   http://www.engelschall.com/sw/eperl/
+
