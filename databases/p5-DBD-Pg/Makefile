@@ -14,8 +14,8 @@ MASTER_SITE_SUBDIR=	DBD
 
 MAINTAINER=	jfitz@FreeBSD.org
 
-BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-		${PREFIX}/pgsql/lib/libpq.so.2:${PORTSDIR}/databases/postgresql
+BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql
 
 USE_PERL5=	YES
 CONFIGURE_ENV=	POSTGRES_INCLUDE=${PREFIX}/pgsql/include POSTGRES_LIB=${PREFIX}/pgsql/lib
