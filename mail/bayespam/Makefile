@@ -11,6 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.garyarnold.com/projects/
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	qmail spam filter written in Perl using Bayesian classification
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools
 

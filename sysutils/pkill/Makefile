@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	lioux
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	NetBSD's pgrep and pkill: find or signal processes matching criteria
 
 MAKE_ENV=	DESTDIR=${PREFIX} \
 		BINDIR=/bin \

@@ -115,6 +115,7 @@ PATCHFILES+=	big-concurrency.patch
 .endif # WITH_BIG_CONCURRENCY_PATCH && !MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT?=	A SECURE, reliable, efficient, simple, and FAST MTA for UNIX systems
 
 NO_PACKAGE=	djb\'s packaging license does not allow non-standard\
 		qmail binary distributions

@@ -11,6 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://cristal.inria.fr/~xleroy/software/
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	procmail spam filter written in ML using Bayesian classification
 
 BUILD_DEPENDS=	ocaml:${PORTSDIR}/lang/ocaml
 

@@ -13,6 +13,7 @@ MASTER_SITES=	http://unixpages.org/distfiles/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	A DirectConnect (www.neo-modus.com) text client for file sharing
 
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4 \

@@ -25,6 +25,7 @@ PKGNAMESUFFIX=	-doc
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Secure Internet Live Conferencing (SILC) documentation
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

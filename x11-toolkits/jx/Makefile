@@ -17,6 +17,7 @@ MASTER_SITES=	ftp://ftp.fct.unl.pt/.2/linuxberg/files/x11/dev/ \
 DISTNAME=	${PORTNAME}_source-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	A C++ application framework and widget library for X11
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 

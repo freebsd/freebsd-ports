@@ -12,6 +12,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://xmps.sourceforge.net/sources/
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	xmps plugin for Win32 (TM) Codecs
 
 LIB_DEPENDS=	xmps.0:${PORTSDIR}/graphics/xmps \
 		intl.4:${PORTSDIR}/devel/gettext

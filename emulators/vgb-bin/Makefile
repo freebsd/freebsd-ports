@@ -15,6 +15,7 @@ DISTNAME=	VGB${PORTVERSION:S/.//}-FreeBSD-80x86-bin
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Nintendo GameBoy(tm) emulator (closed binary version of vgb)
 
 ONLY_FOR_ARCHS=	i386
 USE_X_PREFIX=	yes

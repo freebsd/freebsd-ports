@@ -16,6 +16,7 @@ EXTRACT_SUFX=	.gz
 EXTRACT_ONLY=
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	A decentralized peer-to-peer file-sharing server (eDonkey2000 server)
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes

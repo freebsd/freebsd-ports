@@ -20,6 +20,7 @@ PKGNAMESUFFIX=	-devel
 DISTNAME=	rxvt-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	A low memory usage xterm replacement that supports color
 
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 

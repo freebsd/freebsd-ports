@@ -17,6 +17,7 @@ PATCH_DIST_STRIP+=	-p1
 EXTRA_PATCHES+=	${QMAIL_PORT_PATCHDIR}/patch-ab ${QMAIL_PORT_PATCHDIR}/patch-ac
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	A SECURE, reliable, and FAST MTA for UNIX systems WITH LDAP support
 
 .if !defined(WITH_LDAP2)
 LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap
@@ -113,7 +114,6 @@ certificate-req:
 MASTERDIR=	${QMAIL_PORT}
 PATCHDIR=	${.CURDIR}/files
 PKGDIR_LOCAL=	${.CURDIR}
-COMMENTFILE=	${PKGDIR_LOCAL}/pkg-comment
 DESCR=		${PKGDIR_LOCAL}/pkg-descr
 PKGMESSAGE=	${PKGDIR_LOCAL}/pkg-message
 PLIST=		${PKGDIR_LOCAL}/pkg-plist

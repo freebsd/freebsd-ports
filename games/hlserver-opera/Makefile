@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp2.extreme-players.de/hl/mod/opera/ \
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/.//}0
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Half-Life mod The Opera full server package for Linux
 
 HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
 

@@ -13,6 +13,7 @@ DISTFILES=	sw10.zip 10linux.zip
 DIST_SUBDIR=	snow
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Half-Life mod Snow War full server package for Linux
 
 USE_ZIP=	yes
 

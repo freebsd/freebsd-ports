@@ -15,6 +15,7 @@ PATCH_SITES+=	http://iain.cx/unix/qmail/download/:mysql
 PATCHFILES+=	qmail-mysql-${MYSQL_PATCH_VERSION}.patch:mysql
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	A SECURE, reliable, and FAST MTA for UNIX systems WITH MySQL support
 
 LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 
@@ -46,7 +47,6 @@ qmail-mysql-post-patch:
 # Local overrides
 MASTERDIR=	${QMAIL_PORT}
 PKGDIR_LOCAL=	${.CURDIR}
-COMMENTFILE=	${PKGDIR_LOCAL}/pkg-comment
 DESCR=		${PKGDIR_LOCAL}/pkg-descr
 PKGMESSAGE=	${PKGDIR_LOCAL}/pkg-message
 

@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp2.extreme-players.de/hl/mod/existence/ \
 DISTNAME=	X-beta1.4.linux
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Half-Life mod Existence (Matrix alike) full server package for Linux
 
 HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
 

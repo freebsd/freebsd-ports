@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Optimized mpeg 1/2 layer 2 audio encoder
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes

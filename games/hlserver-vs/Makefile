@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.thaiguy.net/ \
 DISTNAME=	${PORTNAME}_l-${PORTVERSION}_full
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Half-Life mod Vampire Slayer full server package for Linux
 
 WRKSRC=		${WRKDIR}/VS
 

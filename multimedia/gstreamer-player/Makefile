@@ -14,6 +14,7 @@ PKGNAMESUFFIX=	-player
 DISTNAME=	gst-player-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Simple yet functional mediaplayer written with GStreamer
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	glib-2.0.0:${PORTSDIR}/devel/glib20 \

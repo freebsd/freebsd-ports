@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Math
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Perl module providing an interface to Fast Fourier Transform routines
 
 PERL_CONFIGURE=	yes
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	aoi
 DISTNAME=	artofillusion${PORTVERSION:S/.//g}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	An open source Java written 3D modelling and rendering studio
 
 USE_JAVA=	1.3+
 USE_REINPLACE=	yes

@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Standards-based system to encode, stream and play MPEG-4 audio/video
 
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool \
 		nasm:${PORTSDIR}/devel/nasm \

@@ -14,6 +14,7 @@ PKGNAMESUFFIX=	-tool-hash
 DISTNAME=	ed2k_hash-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Both calculates 'eDonkey/Overnet hashes' producing ed2k:// file links
 
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes

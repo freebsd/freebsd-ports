@@ -22,6 +22,7 @@ PATCH_DIST_STRIP=	-p1
 .endif
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Berkeley POP 3 server (now maintained by Qualcomm)
 
 USE_AUTOCONF=	yes
 USE_REINPLACE=	yes

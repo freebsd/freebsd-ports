@@ -14,6 +14,7 @@ PKGNAMESUFFIX=	-gui
 DISTNAME=	dc_gui-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	A GUI to DirectConnect (www.neo-modus.com) text client
 
 BUILD_DEPENDS=	dctc:${PORTSDIR}/net/dctc
 LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4 \

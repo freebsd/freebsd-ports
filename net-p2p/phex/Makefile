@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION}_j2se1.3
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	A Java multi platform and spyware free gnutella client
 
 USE_JAVA=	1.3+
 USE_ZIP=	yes

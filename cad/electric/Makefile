@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/\1/}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	A Sophisticated electrical CAD system
 
 USE_REINPLACE=	yes
 USE_XLIB=	yes

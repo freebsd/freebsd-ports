@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Math
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Perl module for parsing mathematical expressions into a tree structure
 
 PERL_CONFIGURE=	yes
 

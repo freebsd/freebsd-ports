@@ -12,6 +12,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://download.projectmayo.com/dnload/divx4linux/xmps/
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	xmps plugin using OpenDivX decoding engine from Project Mayo
 
 LIB_DEPENDS=	divxdecore.0:${PORTSDIR}/multimedia/libdivxdecore \
 		xmps.0:${PORTSDIR}/graphics/xmps \

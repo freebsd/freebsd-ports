@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.qcc.sk.ca/~charlesc/software/memtester/
 DISTNAME=	${PORTNAME}er-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Utility to test for faulty memory subsystem
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

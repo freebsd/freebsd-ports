@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/(.)\.(.)\.(.)$/\1\2\3/}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	A Bayesian anti-spam filter written in Python
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes

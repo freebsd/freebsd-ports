@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.bunkus.org/videotools/ogmtools/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.{2})$/\1/}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Tools to extract from/get info about/create OGG media streams
 
 LIB_DEPENDS=	ogg.4:${PORTSDIR}/audio/libogg \
 		vorbis.2:${PORTSDIR}/audio/libvorbis \

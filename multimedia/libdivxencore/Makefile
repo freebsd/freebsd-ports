@@ -13,6 +13,7 @@ PKGNAMESUFFIX=	-devel
 DISTNAME=	encore${PORTVERSION:E}src
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	OpenDivX encoding engine from Project Mayo
 
 ONLY_FOR_ARCHS=	i386
 USE_ZIP=	yes

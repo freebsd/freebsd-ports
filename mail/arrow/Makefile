@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.uniovi.es/pub/unix/mail/
 DISTNAME=	Arrow_source-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Mail Reader for X: view, compose and organize; e.g, PGP, GnuPG, POP & APOP
 
 BUILD_DEPENDS=	${NONEXISTENT}:${JXPORT}:configure \
 		makemake:${JXPORT}

@@ -13,6 +13,7 @@ MASTER_SITES=	http://mirror.oktagone.net/games/half-life/mods/esf/ \
 DISTNAME=	esfb100
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Half-Life mod Earth Special Forces (DBZ) full server package for Linux
 
 IGNORE=         Current version is no longer available anywhere
 

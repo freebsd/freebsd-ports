@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	divx-player-installer
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	DivX(TM) Video Player for Linux from DivX.com
 
 ONLY_FOR_ARCHS=	i386
 

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Open source Java DirectConnect (TM) command-line client
 
 USE_JAVA=	1.2+
 NEED_JAVAC=	YES

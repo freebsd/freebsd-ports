@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= ddd
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Data Display Debugger -- a common graphical front-end for GDB/DBX/XDB
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}

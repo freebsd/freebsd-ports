@@ -14,6 +14,7 @@ PKGNAMESUFFIX=	-gui-qt
 DISTNAME=	dc-qt-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	A Qt GUI for the Direct Connect (TM) dctc text client
 
 RUN_DEPENDS=	dctc:${PORTSDIR}/net/dctc
 

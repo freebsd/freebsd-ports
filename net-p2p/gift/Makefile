@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
 
 MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	A generic interface to the FastTrack (TM) peer-to-peer network
 
 IGNORE=		'Does not currently work'
 
