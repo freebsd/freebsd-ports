@@ -8088,6 +8088,7 @@ timidity++-xaw	ports/audio/timidity++-xaw
 timidity++-xskin	ports/audio/timidity++-xskin
 tin		ports/news/tin
 tinc		ports/security/tinc
+tinderbox	src/tools/tools/tinderbox
 tinker		ports/biology/tinker
 tintin++	ports/net/tintin++
 tintin++-devel	ports/net/tintin++-devel
@@ -8517,6 +8518,7 @@ wget		ports/ftp/wget
 wget+ipv6	ports/ftp/wget+ipv6
 what		src/usr.bin/what
 whatmask	ports/net/whatmask
+whereintheworld	src/tools/tools/whereintheworld
 whereis		src/usr.bin/whereis
 which		src/usr.bin/which
 whichman	ports/misc/whichman
