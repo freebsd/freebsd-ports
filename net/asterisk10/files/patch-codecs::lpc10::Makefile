@@ -1,0 +1,29 @@
+
+$FreeBSD$
+
+--- codecs/lpc10/Makefile.orig	Sun Apr 27 21:13:11 2003
++++ codecs/lpc10/Makefile	Fri Oct 17 12:07:20 2003
+@@ -3,7 +3,7 @@
+ # 
+ 
+ # default C compiler
+-CC= gcc
++CC?= gcc
+ 
+ # 
+ # These definitions for CFLAGS and LIB_TARGET_DIR are used when one
+@@ -22,12 +22,12 @@
+ # 
+ 
+ WARNINGS = -Wall -Wno-comment -Wno-error
+-CFLAGS = $(OPTIMIZE) -I$(LIB_TARGET_DIR) $(WARNINGS) -fPIC
++CFLAGS += $(OPTIMIZE) -I$(LIB_TARGET_DIR) $(WARNINGS) -fPIC
+ #CFLAGS+= $(shell if uname -m | grep -q 86; then echo "-mpentium" ; fi)
+ 
+ #fix for PPC processors
+ ifneq ($(PROC),ppc)
+-	CFLAGS+= -march=$(PROC)
++	CFLAGS+= 
+ endif
+ 
+ LIB = $(LIB_TARGET_DIR)/liblpc10.a

@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- codecs/Makefile	2003/10/17 09:41:04	1.1
++++ codecs/Makefile	2003/10/17 09:41:19
+@@ -95,7 +95,7 @@
+ include .depend
+ 
+ install: all
+-	for x in $(CODECS); do $(INSTALL) -m 755 $$x $(MODULES_DIR) ; done
++	for x in $(CODECS); do $(BSD_INSTALL_PROGRAM) $$x $(MODULES_DIR) ; done
+ 
+ depend: .depend
+ 

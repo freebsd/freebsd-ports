@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- astman/Makefile	2003/10/17 09:43:08	1.1
++++ astman/Makefile	2003/10/17 09:43:31
+@@ -8,7 +8,7 @@
+ install:
+ 	if [ "$(TARGET)" != "none" ]; then \
+ 		for x in $(TARGET); do \
+-			install -m 755 $$x $(ASTSBINDIR)/astman; \
++			$(BSD_INSTALL_PROGRAM) $$x $(ASTSBINDIR)/astman; \
+ 		done ; \
+ 	fi
+ 
