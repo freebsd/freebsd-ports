@@ -31,10 +31,13 @@ if ! pw usershow "${USER}" 2>/dev/null 1>&2; then
 fi
 
 mkdir -m 750 /var/log/ejabberd /var/spool/ejabberd /var/run/ejabberd 2>/dev/null
+
 cat > /var/run/ejabberd/.inetrc << __EOF__
 {lookup,["file","native"]}.
 {host,{127,0,0,1}, ["localhost","hostalias"]}.
 __EOF__
-chown -R ejabberd:ejabberd /var/log/ejabberd /var/spool/ejabberd /var/run/ejabberd
+
+chown -R ejabberd:ejabberd /var/log/ejabberd /var/spool/ejabberd \
+    /var/run/ejabberd
 
 exit 0

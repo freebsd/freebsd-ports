@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ejabberd
-PORTVERSION=	0.7
+PORTVERSION=	0.7.5
 CATEGORIES=	net
 MASTER_SITES=	http://www.jabber.ru/files/ejabberd/
 
@@ -48,6 +48,7 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/ejabberdctl ${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/ejabberd.sh ${PREFIX}/etc/rc.d
 	@${INSTALL_DATA} ${FILESDIR}/ejabberd.cfg.sample ${PREFIX}/etc/
+	@${INSTALL_DATA} ${FILESDIR}/ejabberd.defaults ${PREFIX}/etc/
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/../doc/* ${DOCSDIR}
