@@ -28,6 +28,10 @@ TOGL_INSTDIR=	${PREFIX}/lib/tk8.4/${DISTNAME}
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64 (missing -fPIC)"
+.endif
+
 do-install:
 	${MKDIR} ${TOGL_INSTDIR}
 	${INSTALL_DATA} ${WRKSRC}/libtogl.so.1.3 ${TOGL_INSTDIR}/Togl.so
