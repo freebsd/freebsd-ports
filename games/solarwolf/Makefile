@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	solarwolf
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.4
 CATEGORIES=	games
 MASTER_SITES=	http://www.pygame.org/shredwheat/solarwolf/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	benlutz@datacomm.ch
 COMMENT=	An action/arcade game originally based of SolarFox on the Atari 2600
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
@@ -19,7 +18,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
 USE_PYTHON=	yes
 
 post-extract:
-	${FIND} ${WRKSRC}/data -type f | ${XARGS} ${CHMOD} 644
+	${FIND} ${WRKSRC} -type d | ${XARGS} ${CHMOD} 755
+	${CHMOD} 755 ${WRKSRC}/solarwolf.py
 
 do-build:
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
