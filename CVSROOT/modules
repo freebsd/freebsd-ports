@@ -5910,7 +5910,6 @@ p5-YAPE-HTML	ports/textproc/p5-YAPE-HTML
 p5-YAPE-Regex	ports/textproc/p5-YAPE-Regex
 p5-YAPE-Regex-Explain	ports/textproc/p5-YAPE-Regex-Explain
 p5-bioperl	ports/biology/p5-bioperl
-p5-bioperl-devel	ports/biology/p5-bioperl-devel
 p5-chart	ports/graphics/p5-chart
 p5-dTemplate	ports/textproc/p5-dTemplate
 p5-ePerl	ports/lang/p5-ePerl
@@ -6147,7 +6146,6 @@ pips880		ports/print/pips880
 pips900		ports/print/pips900
 pipsecd		ports/net/pipsecd
 pircbot		ports/irc/pircbot
-pisces		ports/cad/pisces
 pisg		ports/irc/pisg
 pixelize	ports/graphics/pixelize
 pixieplus	ports/graphics/pixieplus
@@ -6205,7 +6203,6 @@ pmap		ports/sysutils/pmap
 pmars		ports/games/pmars
 pmf		ports/net/pmf
 pmw		ports/x11-toolkits/pmw
-pnet		ports/lang/pnet
 png		ports/graphics/png
 png2html	ports/graphics/png2html
 png2ico		ports/graphics/png2ico
@@ -6462,7 +6459,6 @@ pt-webalizer-pt_BR	ports/portuguese/webalizer-pt_BR
 pt-webalizer-pt_PT	ports/portuguese/webalizer-pt_PT
 pth		ports/devel/pth
 ptkei		ports/games/ptkei
-ptl		ports/devel/ptl
 ptoc		ports/lang/ptoc
 ptypes		ports/devel/ptypes
 publib		ports/devel/publib
@@ -6553,7 +6549,6 @@ py-gtk2		ports/x11-toolkits/py-gtk2
 py-gtkextra	ports/x11-toolkits/py-gtkextra
 py-gtkglext	ports/x11-toolkits/py-gtkglext
 py-gtkscintilla	ports/x11-toolkits/py-gtkscintilla
-py-htmlkit	ports/devel/py-htmlkit
 py-iconv	ports/converters/py-iconv
 py-iconvcodec	ports/converters/py-iconvcodec
 py-id3		ports/audio/py-id3
@@ -6757,7 +6752,6 @@ qt145		ports/x11-toolkits/qt145
 qt2-static	ports/x11-toolkits/qt2-static
 qt23		ports/x11-toolkits/qt23
 qt31		ports/x11-toolkits/qt31
-qtella		ports/net/qtella
 qtez		ports/devel/qtez
 qtfw		ports/security/qtfw
 qtk		ports/devel/qtk
@@ -7035,7 +7029,6 @@ ruby-fam	ports/devel/ruby-fam
 ruby-fcgi	ports/www/ruby-fcgi
 ruby-filelock	ports/devel/ruby-filelock
 ruby-flex_rb	ports/devel/ruby-flex_rb
-ruby-fltk	ports/x11-toolkits/ruby-fltk
 ruby-format	ports/textproc/ruby-format
 ruby-formvalidator	ports/textproc/ruby-formvalidator
 ruby-fox	ports/x11-toolkits/ruby-fox
@@ -7248,7 +7241,6 @@ sam2p		ports/graphics/sam2p
 samba		ports/net/samba
 samba-devel	ports/net/samba-devel
 samba-libsmbclient	ports/net/samba-libsmbclient
-samba-tng	ports/net/samba-tng
 sambasentinel	ports/net/sambasentinel
 samefile	ports/sysutils/samefile
 samhain		ports/security/samhain
@@ -7312,9 +7304,7 @@ scsh		ports/lang/scsh
 scud		ports/comms/scud
 scummvm		ports/games/scummvm
 scummvm-tools	ports/games/scummvm-tools
-scwm		ports/x11-wm/scwm
 scwm-icons	ports/graphics/scwm-icons
-sdcc		ports/devel/sdcc
 sdd		ports/sysutils/sdd
 sdf		ports/textproc/sdf
 sdl12		ports/devel/sdl12
@@ -7407,7 +7397,6 @@ showimg		ports/graphics/showimg
 shtool		ports/devel/shtool
 shuffle		ports/misc/shuffle
 shujit		ports/java/shujit
-siag		ports/math/siag
 sic		ports/irc/sic
 siconv		ports/converters/siconv
 sidplay		ports/audio/sidplay
@@ -7420,7 +7409,6 @@ sigslot		ports/devel/sigslot
 silc-client	ports/net/silc-client
 silc-doc	ports/net/silc-doc
 silc-server	ports/net/silc-server
-silc-toolkit	ports/devel/silc-toolkit
 silkymail	ports/mail/silkymail
 sim		ports/emulators/sim
 sim4		ports/biology/sim4
@@ -7439,7 +7427,6 @@ sipcalc		ports/net/sipcalc
 siphon		ports/security/siphon
 sirc		ports/irc/sirc
 sircd		ports/irc/sircd
-sis		ports/cad/sis
 sisc		ports/lang/sisc
 sitecopy	ports/www/sitecopy
 sitescooper	ports/palm/sitescooper
@@ -7451,7 +7438,6 @@ ski		ports/emulators/ski
 skill		ports/sysutils/skill
 skip		ports/security/skip
 sl		ports/games/sl
-slash		ports/www/slash
 slashem-tty	ports/games/slashem-tty
 slay		ports/sysutils/slay
 sleuth		ports/net/sleuth
@@ -8068,7 +8054,6 @@ ude		ports/x11-wm/ude
 udesc_dump	ports/sysutils/udesc_dump
 udmsearch	ports/www/udmsearch
 udptunnel	ports/net/udptunnel
-uds		ports/devel/uds
 uemacs		ports/editors/uemacs
 uf-view		ports/misc/uf-view
 uhexen		ports/games/uhexen
@@ -8197,7 +8182,6 @@ viewcvs		ports/devel/viewcvs
 viewfax		ports/comms/viewfax
 viewkit		ports/x11-toolkits/viewkit
 viewklass	ports/x11-toolkits/viewklass
-viewml		ports/www/viewml
 vifm		ports/misc/vifm
 vigor		ports/editors/vigor
 vile		ports/editors/vile
@@ -8454,7 +8438,6 @@ wots		ports/sysutils/wots
 wping		ports/net/wping
 wprint		ports/print/wprint
 wrapper		ports/x11/wrapper
-wscan		ports/x11/wscan
 wsmake		ports/www/wsmake
 wsoundprefs	ports/audio/wsoundprefs
 wsoundserver	ports/audio/wsoundserver
@@ -8469,7 +8452,6 @@ wwwcount	ports/www/wwwcount
 wwwoffle	ports/www/wwwoffle
 wwwstat		ports/www/wwwstat
 wxGlade		ports/devel/wxGlade
-wxbasic		ports/lang/wxbasic
 wxgtk		ports/x11-toolkits/wxgtk
 wxgtk-devel	ports/x11-toolkits/wxgtk-devel
 wxgtk-docs	ports/x11-toolkits/wxgtk-docs
@@ -8869,7 +8851,6 @@ xpm		ports/graphics/xpm
 xpns		ports/misc/xpns
 xpostit		ports/deskutils/xpostit
 xpostitPlus	ports/deskutils/xpostitPlus
-xpp		ports/print/xpp
 xprobe		ports/net/xprobe
 xprompt		ports/x11/xprompt
 xpuyo		ports/games/xpuyo
@@ -9061,7 +9042,6 @@ zh-big5fs	ports/chinese/big5fs
 zh-bind8	ports/chinese/bind8
 zh-bitchx	ports/chinese/bitchx
 zh-c2t		ports/chinese/c2t
-zh-cce		ports/chinese/cce
 zh-cdict5	ports/chinese/cdict5
 zh-celvis	ports/chinese/celvis
 zh-chinput	ports/chinese/chinput
@@ -9075,7 +9055,6 @@ zh-cnprint	ports/chinese/cnprint
 zh-cwtex	ports/chinese/cwtex
 zh-cwtexttf	ports/chinese/cwtexttf
 zh-cxterm	ports/chinese/cxterm
-zh-dia		ports/chinese/dia
 zh-dictd	ports/chinese/dictd
 zh-dictd-database	ports/chinese/dictd-database
 zh-emacs20	ports/chinese/emacs20
@@ -9111,7 +9090,6 @@ zh-miniChinput	ports/chinese/miniChinput
 zh-mkisofs	ports/chinese/mkisofs
 zh-moefonts-cid	ports/chinese/moefonts-cid
 zh-moettf	ports/chinese/moettf
-zh-mozilla-tclp	ports/chinese/mozilla-tclp
 zh-mplayer-fonts	ports/chinese/mplayer-fonts
 zh-mule-freewnn	ports/chinese/mule-freewnn
 zh-muni		ports/chinese/muni
