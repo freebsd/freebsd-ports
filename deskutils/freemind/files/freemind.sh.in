@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+CLASSPATH="${ADD_JARS}:${CLASSPATH}:`find "%%DATADIR%%/lib" -name \*.jar | tr "\n" ":"`"
+FILE="`realpath "$1"`"
+
+cd "%%DATADIR%%"
+JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" -cp "${CLASSPATH}" freemind.main.FreeMind "${FILE}"

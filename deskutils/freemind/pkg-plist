@@ -1,12 +1,76 @@
+@comment $FreeBSD$
 bin/freemind
-freemind-%%VER%%/accessories/mm2xbel.xsl
-freemind-%%VER%%/accessories/xbel2mm.xsl
-freemind-%%VER%%/doc/freemind.mm
-freemind-%%VER%%/lib/freemind.jar
-freemind-%%VER%%/license
-freemind-%%VER%%/patterns.xml
-freemind-%%VER%%/user.properties
-@dirrm freemind-%%VER%%/accessories
-@dirrm freemind-%%VER%%/doc
-@dirrm freemind-%%VER%%/lib
-@dirrm freemind-%%VER%%
+%%DATADIR%%/accessories/freemind2html.css
+%%DATADIR%%/accessories/freemind2html.xsl
+%%DATADIR%%/accessories/hide.png
+%%DATADIR%%/accessories/ilink.png
+%%DATADIR%%/accessories/leaf.png
+%%DATADIR%%/accessories/marktree.js
+%%DATADIR%%/accessories/minus.png
+%%DATADIR%%/accessories/mm2html.xsl
+%%DATADIR%%/accessories/mm2latexartcl.xsl
+%%DATADIR%%/accessories/mm2latexbook.xsl
+%%DATADIR%%/accessories/mm2opml.xsl
+%%DATADIR%%/accessories/mm2text.xsl
+%%DATADIR%%/accessories/mm2xbel.xsl
+%%DATADIR%%/accessories/opml2mm.xsl
+%%DATADIR%%/accessories/plus.png
+%%DATADIR%%/accessories/show.png
+%%DATADIR%%/accessories/tohtml.xsl
+%%DATADIR%%/accessories/toxhtml.xsl
+%%DATADIR%%/accessories/treestyles.css
+%%DATADIR%%/accessories/xbel2mm.xsl
+%%DATADIR%%/doc/freemind.mm
+%%DATADIR%%/lib/ant/lib/dom.jar
+%%DATADIR%%/lib/ant/lib/jax-qname.jar
+%%DATADIR%%/lib/ant/lib/jaxb-api.jar
+%%DATADIR%%/lib/ant/lib/jaxb-impl.jar
+%%DATADIR%%/lib/ant/lib/jaxb-libs.jar
+%%DATADIR%%/lib/ant/lib/namespace.jar
+%%DATADIR%%/lib/ant/lib/relaxngDatatype.jar
+%%DATADIR%%/lib/ant/lib/sax.jar
+%%DATADIR%%/lib/ant/lib/xsdlib.jar
+%%DATADIR%%/lib/commons-lang-2.0.jar
+%%DATADIR%%/lib/freemind.jar
+%%DATADIR%%/license
+%%DATADIR%%/patterns.xml
+%%DATADIR%%/plugins/ExportSvg.xml
+%%DATADIR%%/plugins/FreemindHelp.xml
+%%DATADIR%%/plugins/TimeManagement.xml
+%%DATADIR%%/plugins/help/help_plugin.jar
+%%DATADIR%%/plugins/help/jhall.jar
+%%DATADIR%%/plugins/svg/batik-awt-util.jar
+%%DATADIR%%/plugins/svg/batik-bridge.jar
+%%DATADIR%%/plugins/svg/batik-css.jar
+%%DATADIR%%/plugins/svg/batik-dom.jar
+%%DATADIR%%/plugins/svg/batik-ext.jar
+%%DATADIR%%/plugins/svg/batik-extension.jar
+%%DATADIR%%/plugins/svg/batik-gui-util.jar
+%%DATADIR%%/plugins/svg/batik-gvt.jar
+%%DATADIR%%/plugins/svg/batik-parser.jar
+%%DATADIR%%/plugins/svg/batik-script.jar
+%%DATADIR%%/plugins/svg/batik-squiggle.jar
+%%DATADIR%%/plugins/svg/batik-svg-dom.jar
+%%DATADIR%%/plugins/svg/batik-svggen.jar
+%%DATADIR%%/plugins/svg/batik-swing.jar
+%%DATADIR%%/plugins/svg/batik-transcoder.jar
+%%DATADIR%%/plugins/svg/batik-util.jar
+%%DATADIR%%/plugins/svg/batik-xml.jar
+%%DATADIR%%/plugins/svg/js.jar
+%%DATADIR%%/plugins/svg/pdf-transcoder.jar
+%%DATADIR%%/plugins/svg/svg_plugin.jar
+%%DATADIR%%/plugins/svg/xerces_2_5_0.jar
+%%DATADIR%%/plugins/svg/xml-apis.jar
+%%DATADIR%%/plugins/time/jcalendar.jar
+%%DATADIR%%/plugins/time/time_plugin.jar
+%%DATADIR%%/user.properties
+@dirrm %%DATADIR%%/accessories
+@dirrm %%DATADIR%%/doc
+@dirrm %%DATADIR%%/lib/ant/lib
+@dirrm %%DATADIR%%/lib/ant
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%/plugins/help
+@dirrm %%DATADIR%%/plugins/svg
+@dirrm %%DATADIR%%/plugins/time
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%
