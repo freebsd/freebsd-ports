@@ -45,6 +45,7 @@
     SUBDIR += oleo
     SUBDIR += p5-AI-NeuralNet-BackProp
     SUBDIR += p5-AI-NeuralNet-Mesh
+    SUBDIR += p5-AI-Perceptron
     SUBDIR += p5-Math-Expr
     SUBDIR += p5-Math-Logic
     SUBDIR += p5-MatrixReal
