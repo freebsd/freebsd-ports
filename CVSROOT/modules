@@ -942,6 +942,7 @@ cpmtools	ports/emulators/cpmtools
 cpp		src/usr.bin/cpp
 cpp2latex	ports/print/cpp2latex
 cppadvio	ports/devel/cppadvio
+cppunit		ports/devel/cppunit
 cproto		ports/devel/cproto
 cpuburn		ports/sysutils/cpuburn
 cpuid		ports/misc/cpuid
