@@ -132,7 +132,7 @@ for i in `cat .logs | sort`; do
 
     test "$9" = "broken" && echo "<font color=\"red\">[B]</font>" >> $of
     reason=$(echo $7 | tr '_' ' ')
-    echo "<a href=\"http://bento.freebsd.org/#$8\">$reason</a>" >> $of
+    echo "<a href=\"http://pointyhat.freebsd.org/#$8\">$reason</a>" >> $of
     echo "</td>" >> $of
 
     date=$(echo ${10} | tr '_' ' ')
@@ -169,7 +169,7 @@ for i in `cat .logs | sort -t \\| +4`; do
     echo "<td>" >> $of
     test "$9" = "broken" && echo "<font color=\"red\">[B]</font>" >> $of
     reason=$(echo $7 | tr '_' ' ')
-    echo "<a href=\"http://bento.freebsd.org/#$8\">$reason</a>" >> $of
+    echo "<a href=\"http://pointyhat.freebsd.org/#$8\">$reason</a>" >> $of
     echo "</td>" >> $of
 
     date=$(echo ${10} | tr '_' ' ')
@@ -206,7 +206,7 @@ for i in `cat .logs | sort -t \\| +5`; do
     echo "<td>" >> $of
     test "$9" = "broken" && echo "<font color=\"red\">[B]</font>" >> $of
     reason=$(echo $7 | tr '_' ' ')
-    echo "<a href=\"http://bento.freebsd.org/#$8\">$reason</a>" >> $of
+    echo "<a href=\"http://pointyhat.freebsd.org/#$8\">$reason</a>" >> $of
     echo "</td>" >> $of
 
     date=$(echo ${10} | tr '_' ' ')
@@ -235,7 +235,7 @@ for i in `cat .logs | sort -t \\| +7`; do
     echo "<td>" >> $of
     test "$9" = "broken" && echo "<font color=\"red\">[B]</font>" >> $of
     reason=$(echo $7 | tr '_' ' ')
-    echo "<a href=\"http://bento.freebsd.org/#$8\">$reason</a>" >> $of
+    echo "<a href=\"http://pointyhat.freebsd.org/#$8\">$reason</a>" >> $of
     echo "</td>" >> $of
 
     echo "<td><a href=\"http://${master}/errorlogs/${arch}-errorlogs/${baselogdir}/$1\">$2</a></td>" >> $of
@@ -283,7 +283,7 @@ for i in `cat .logs | sort -t \\| +9`; do
     echo "<td>" >> $of
     test "$9" = "broken" && echo "<font color=\"red\">[B]</font>" >> $of
     reason=$(echo $7 | tr '_' ' ')
-    echo "<a href=\"http://bento.freebsd.org/#$8\">$reason</a>" >> $of
+    echo "<a href=\"http://pointyhat.freebsd.org/#$8\">$reason</a>" >> $of
     echo "</td>" >> $of
 
     echo "</tr>" >> $of

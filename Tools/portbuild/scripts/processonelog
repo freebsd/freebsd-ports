@@ -27,8 +27,8 @@ datetime=$(sed -n -e '5p' $errordir/$filename | grep '^build started at' | \
 
 # now try to classify the type of error found in the file.
 # the first case handles failures to even try to build any
-# port (i.e. HTML file no longer there, bento being unable
-# to fetch any file, bento being able to build any port, etc.)
+# port (i.e. HTML file no longer there, pointyhat being unable
+# to fetch any file, pointyhat being able to build any port, etc.)
 if [ -z "$dir" -o -z "$datetime" ]; then
   reason="cluster"; tag="cluster"
 elif grep -q 'list of extra files and directories' $1; then
