@@ -1,5 +1,14 @@
---- src/config/wdm-config.in.orig	Thu Sep 16 16:27:58 1999
-+++ src/config/wdm-config.in	Sat Oct 30 12:41:26 1999
+--- src/config/wdm-config.in.orig	Thu Sep 16 09:27:58 1999
++++ src/config/wdm-config.in	Mon Dec 20 16:29:51 1999
+@@ -3,7 +3,7 @@
+ ! wdm configuration file input (sed in Makefile)
+ !
+ DisplayManager.errorLogFile:    #logdir#/xdm-errors.log
+-DisplayManager.pidFile:         #rundir#/xdm-pid
++DisplayManager.pidFile:         #rundir#/xdm.pid
+ DisplayManager.keyFile:         #configdir#/xdm-keys
+ DisplayManager.servers:         #configdir#/Xservers
+ DisplayManager.accessFile:      #configdir#/Xaccess
 @@ -25,11 +25,11 @@
  ! display screen background--if not set or set to none, then the
  !                            background is not set by wdm.
