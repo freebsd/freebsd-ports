@@ -293,6 +293,7 @@ share/XFCE/locale/de/LC_MESSAGES/xfce.mo
 share/XFCE/locale/es/LC_MESSAGES/xfce.mo
 share/XFCE/locale/fr/LC_MESSAGES/xfce.mo
 share/XFCE/locale/it/LC_MESSAGES/xfce.mo
+share/XFCE/locale/ja/LC_MESSAGES/xfce.mo
 share/XFCE/locale/pl/LC_MESSAGES/xfce.mo
 share/XFCE/locale/ru/LC_MESSAGES/xfce.mo
 share/XFCE/palettes/Alpine
@@ -329,6 +330,7 @@ share/XFCE/sample.fvwmrc
 share/XFCE/sample.mwm.xinitrc
 share/XFCE/sample.xfbdrc
 share/XFCE/sample.xfce3rc
+share/XFCE/sample.xfce3rc.ja
 share/XFCE/sample.xfmouserc
 share/XFCE/sample.xfsoundrc
 share/XFCE/sample.xfwmrc
@@ -400,6 +402,8 @@ share/XFCE/xfdefs.py
 @dirrm share/XFCE/locale/fr
 @dirrm share/XFCE/locale/it/LC_MESSAGES
 @dirrm share/XFCE/locale/it
+@dirrm share/XFCE/locale/ja/LC_MESSAGES
+@dirrm share/XFCE/locale/ja
 @dirrm share/XFCE/locale/pl/LC_MESSAGES
 @dirrm share/XFCE/locale/pl
 @dirrm share/XFCE/locale/ru/LC_MESSAGES
