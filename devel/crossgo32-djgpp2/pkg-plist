@@ -1,0 +1,153 @@
+@exec mv %D/i386-go32/lib %D/i386-go32/lib-newlib
+@exec mv %D/i386-go32/include %D/i386-go32/include-newlib
+@exec mkdir -p %D/lib/gcc-lib/i386-go32/2.7.2.2/old-newlib
+@exec mv %D/lib/gcc-lib/i386-go32/2.7.2.2/include %D/lib/gcc-lib/i386-go32/2.7.2.2/old-newlib/
+@exec mv %D/lib/gcc-lib/i386-go32/2.7.2.2/libgcc.a %D/lib/gcc-lib/i386-go32/2.7.2.2/old-newlib/
+@exec mv %D/lib/gcc-lib/i386-go32/2.7.2.2/specs %D/lib/gcc-lib/i386-go32/2.7.2.2/old-newlib/
+bin/i386-go32-stubify
+bin/i386-go32-stubedit
+i386-go32/lib/crt0.o
+i386-go32/lib/djgpp.djl
+i386-go32/lib/dxe.ld
+i386-go32/lib/gcrt0.o
+i386-go32/lib/libc.a
+i386-go32/lib/libdbg.a
+i386-go32/lib/libemu.a
+i386-go32/lib/libg.a
+i386-go32/lib/libgcc.a
+i386-go32/lib/libm.a
+i386-go32/lib/libpc.a
+i386-go32/lib/specs
+i386-go32/include/_ansi
+i386-go32/include/ar.h
+i386-go32/include/assert.h
+i386-go32/include/bios.h
+i386-go32/include/coff.h
+i386-go32/include/conio.h
+i386-go32/include/crt0.h
+i386-go32/include/ctype.h
+i386-go32/include/debug/_ansi
+i386-go32/include/debug/dbgcom.h
+i386-go32/include/debug/stab.h
+i386-go32/include/debug/syms.h
+i386-go32/include/debug/tss.h
+i386-go32/include/debug/v2load.h
+i386-go32/include/debug/wild.h
+i386-go32/include/dir.h
+i386-go32/include/direct.h
+i386-go32/include/dirent.h
+i386-go32/include/dos.h
+i386-go32/include/dpmi.h
+i386-go32/include/errno.h
+i386-go32/include/fcntl.h
+i386-go32/include/file.h
+i386-go32/include/flexlexe.h
+i386-go32/include/float.h
+i386-go32/include/fnmatch.h
+i386-go32/include/ftw.h
+i386-go32/include/getpages.h
+i386-go32/include/glob.h
+i386-go32/include/go32.h
+i386-go32/include/gppconio.h
+i386-go32/include/grp.h
+i386-go32/include/inlines/_inline
+i386-go32/include/inlines/ctype.ha
+i386-go32/include/inlines/ctype.hd
+i386-go32/include/inlines/pc.h
+i386-go32/include/io.h
+i386-go32/include/keys.h
+i386-go32/include/libc/_ansi
+i386-go32/include/libc/asmdefs.h
+i386-go32/include/libc/atexit.h
+i386-go32/include/libc/bss.h
+i386-go32/include/libc/dosexec.h
+i386-go32/include/libc/dosio.h
+i386-go32/include/libc/environ.h
+i386-go32/include/libc/farptrgs.h
+i386-go32/include/libc/file.h
+i386-go32/include/libc/ieee.h
+i386-go32/include/libc/internal.h
+i386-go32/include/libc/local.h
+i386-go32/include/libc/mkfargs.bat
+i386-go32/include/libc/stdiohk.h
+i386-go32/include/libc/stubs.h
+i386-go32/include/libc/ttyprvt.h
+i386-go32/include/libc/unconst.h
+i386-go32/include/libm/math.h
+i386-go32/include/limits.h
+i386-go32/include/locale.h
+i386-go32/include/machine/asm.h
+i386-go32/include/machine/endian.h
+i386-go32/include/malloc.h
+i386-go32/include/math.h
+i386-go32/include/mem.h
+i386-go32/include/memory.h
+i386-go32/include/mntent.h
+i386-go32/include/netinet/_ansi
+i386-go32/include/netinet/in.h
+i386-go32/include/osfcn.h
+i386-go32/include/pc.h
+i386-go32/include/process.h
+i386-go32/include/pwd.h
+i386-go32/include/random.h
+i386-go32/include/regex.h
+i386-go32/include/search.h
+i386-go32/include/setjmp.h
+i386-go32/include/share.h
+i386-go32/include/signal.h
+i386-go32/include/std.h
+i386-go32/include/stdarg.h
+i386-go32/include/stddef.h
+i386-go32/include/stdio.h
+i386-go32/include/stdlib.h
+i386-go32/include/string.h
+i386-go32/include/strings.h
+i386-go32/include/stubinfo.h
+i386-go32/include/sys/_ansi
+i386-go32/include/sys/cdefs.h
+i386-go32/include/sys/config.h
+i386-go32/include/sys/dir.h
+i386-go32/include/sys/djtypes.h
+i386-go32/include/sys/dxe.h
+i386-go32/include/sys/errno.h
+i386-go32/include/sys/exceptn.h
+i386-go32/include/sys/farptr.h
+i386-go32/include/sys/fcntl.h
+i386-go32/include/sys/file.h
+i386-go32/include/sys/fsext.h
+i386-go32/include/sys/ioctl.h
+i386-go32/include/sys/mman.h
+i386-go32/include/sys/mono.h
+i386-go32/include/sys/movedata.h
+i386-go32/include/sys/nearptr.h
+i386-go32/include/sys/param.h
+i386-go32/include/sys/resource.h
+i386-go32/include/sys/segments.h
+i386-go32/include/sys/stat.h
+i386-go32/include/sys/system.h
+i386-go32/include/sys/time.h
+i386-go32/include/sys/timeb.h
+i386-go32/include/sys/times.h
+i386-go32/include/sys/types.h
+i386-go32/include/sys/utsname.h
+i386-go32/include/sys/vfs.h
+i386-go32/include/sys/wait.h
+i386-go32/include/termios.h
+i386-go32/include/time.h
+i386-go32/include/tzfile.h
+i386-go32/include/unistd.h
+i386-go32/include/utime.h
+i386-go32/include/values.h
+i386-go32/include/varargs.h
+info/libc.info
+share/doc/djgpp2/install
+share/doc/djgpp2/readme
+share/doc/djgpp2/Readme.FreeBSD
+@dirrm share/doc/djgpp2
+@unexec rm -rf %D/i386-go32/lib
+@unexec rm -rf %D/i386-go32/include
+@unexec mv %D/i386-go32/lib-newlib %D/i386-go32/lib
+@unexec mv %D/i386-go32/include-newlib %D/i386-go32/include
+@unexec mv %D/lib/gcc-lib/i386-go32/2.7.2.2/old-newlib/include %D/lib/gcc-lib/i386-go32/2.7.2.2/
+@unexec mv %D/lib/gcc-lib/i386-go32/2.7.2.2/old-newlib/libgcc.a %D/lib/gcc-lib/i386-go32/2.7.2.2/
+@unexec mv %D/lib/gcc-lib/i386-go32/2.7.2.2/old-newlib/specs %D/lib/gcc-lib/i386-go32/2.7.2.2/
