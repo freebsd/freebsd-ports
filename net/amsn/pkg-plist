@@ -84,7 +84,6 @@ lib/msn/lang/langaf
 lib/msn/lang/langal
 lib/msn/lang/langbg
 lib/msn/lang/langbn
-lib/msn/lang/langbr
 lib/msn/lang/langbs
 lib/msn/lang/langca
 lib/msn/lang/langcs
@@ -99,7 +98,7 @@ lib/msn/lang/langes
 lib/msn/lang/langeu
 lib/msn/lang/langfi
 lib/msn/lang/langfr
-lib/msn/lang/langfr_ca
+lib/msn/lang/langfr_CA
 lib/msn/lang/langfri
 lib/msn/lang/langfur
 lib/msn/lang/langga
@@ -117,6 +116,7 @@ lib/msn/lang/langnl
 lib/msn/lang/langno
 lib/msn/lang/langpl
 lib/msn/lang/langpt
+lib/msn/lang/langpt_BR
 lib/msn/lang/langro
 lib/msn/lang/langru
 lib/msn/lang/langsi
@@ -127,8 +127,8 @@ lib/msn/lang/langswa
 lib/msn/lang/langta
 lib/msn/lang/langtr
 lib/msn/lang/langva
-lib/msn/lang/langzh-cn
-lib/msn/lang/langzh-tw
+lib/msn/lang/langzh-CN
+lib/msn/lang/langzh-TW
 lib/msn/lang/missing.py
 lib/msn/lang/sortlang
 lib/msn/skins/Tux/desc.txt
@@ -368,6 +368,7 @@ lib/msn/skins/default/pixmaps/dinactive.xpm
 lib/msn/skins/default/pixmaps/dlunch.xpm
 lib/msn/skins/default/pixmaps/doffline.xpm
 lib/msn/skins/default/pixmaps/donline.xpm
+lib/msn/skins/default/pixmaps/download.gif
 lib/msn/skins/default/pixmaps/dphone.xpm
 lib/msn/skins/default/pixmaps/expand.gif
 lib/msn/skins/default/pixmaps/fticon.gif
@@ -410,9 +411,10 @@ lib/msn/skins/default/pixmaps/prefphone.gif
 lib/msn/skins/default/pixmaps/prefprofile.gif
 lib/msn/skins/default/pixmaps/prefproxy.gif
 lib/msn/skins/default/pixmaps/prefstatus.gif
-lib/msn/skins/default/pixmaps/sendmessage.gif
+lib/msn/skins/default/pixmaps/sendbut.gif
 lib/msn/skins/default/pixmaps/typing.gif
 lib/msn/skins/default/pixmaps/unread.gif
+lib/msn/skins/default/pixmaps/warning.gif
 lib/msn/skins/default/smileys/agree.gif
 lib/msn/skins/default/smileys/angel.gif
 lib/msn/skins/default/smileys/angry.gif
@@ -576,6 +578,9 @@ lib/msn/plugins/BWidget-1.7.0/utils.tcl
 lib/msn/plugins/BWidget-1.7.0/widget.tcl
 lib/msn/plugins/BWidget-1.7.0/wizard.tcl
 lib/msn/plugins/BWidget-1.7.0/xpm2image.tcl
+lib/msn/plugins/QuickTimeTcl3.1/QuickTimeTcl3.1.dylib
+lib/msn/plugins/QuickTimeTcl3.1/movie.tcl
+lib/msn/plugins/QuickTimeTcl3.1/pkgIndex.tcl
 lib/msn/plugins/base64/base64.tcl
 lib/msn/plugins/base64/pkgIndex.tcl
 lib/msn/plugins/base64/uuencode.tcl
@@ -598,6 +603,10 @@ lib/msn/plugins/icons/online.xpm
 lib/msn/plugins/icons/onphone.xpm
 lib/msn/plugins/sha1/pkgIndex.tcl
 lib/msn/plugins/sha1/sha1.tcl
+lib/msn/plugins/tclCarbonNotification/Darwin-ppc/critcl.tcl
+lib/msn/plugins/tclCarbonNotification/Darwin-ppc/tclCarbonNotification.dylib
+lib/msn/plugins/tclCarbonNotification/critcl.tcl
+lib/msn/plugins/tclCarbonNotification/pkgIndex.tcl
 lib/msn/plugins/tclzlib/pkgIndex.tcl
 lib/msn/plugins/tclzlib/tclzlib.tcl
 lib/msn/plugins/traydock/Makefile.in
@@ -621,6 +630,7 @@ lib/msn/plugins/winflash/flash.h
 @dirrm lib/msn/icons/winicons
 @dirrm lib/msn/icons
 @dirrm lib/msn/lang
+@dirrm lib/msn/plugins/QuickTimeTcl3.1
 @dirrm lib/msn/plugins/BWidget-1.7.0/images
 @dirrm lib/msn/plugins/BWidget-1.7.0/lang
 @dirrm lib/msn/plugins/BWidget-1.7.0
@@ -628,6 +638,8 @@ lib/msn/plugins/winflash/flash.h
 @dirrm lib/msn/plugins/http2.4
 @dirrm lib/msn/plugins/icons
 @dirrm lib/msn/plugins/sha1
+@dirrm lib/msn/plugins/tclCarbonNotification/Darwin-ppc
+@dirrm lib/msn/plugins/tclCarbonNotification
 @dirrm lib/msn/plugins/tclzlib
 @dirrm lib/msn/plugins/traydock
 @dirrm lib/msn/plugins/winflash
