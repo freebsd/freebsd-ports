@@ -141,11 +141,11 @@ include/rhtvision/tv/video.h
 include/rhtvision/tv/view.h
 include/rhtvision/tv/views.h
 include/rhtvision/tv/window.h
-include/rhtvision/tv/x11/key.h
-include/rhtvision/tv/x11/mouse.h
-include/rhtvision/tv/x11/screen.h
+%%X11_ONLY%%include/rhtvision/tv/x11/key.h
+%%X11_ONLY%%include/rhtvision/tv/x11/mouse.h
+%%X11_ONLY%%include/rhtvision/tv/x11/screen.h
 include/rhtvision/tv/yes_mss.h
-@dirrm include/rhtvision/tv/x11
+%%X11_ONLY%%@dirrm include/rhtvision/tv/x11
 @dirrm include/rhtvision/tv/linux
 @dirrm include/rhtvision/tv
 @dirrm include/rhtvision/cl
