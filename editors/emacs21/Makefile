@@ -32,7 +32,6 @@ PATCH_DIST_STRIP=	-p1
 
 USE_AUTOCONF_VER=213
 USE_GMAKE=	yes
-ALL_TARGET=	bootstrap
 
 CONFIGURE_TARGET=	${MACHINE_ARCH}--freebsd
 .if defined(WITHOUT_X11)
@@ -66,6 +65,13 @@ post-patch:
 	${SED} -e "s/@dircategory Emacs/@dircategory The Emacs editor and associated tools/" < $${f}.texi.orig > $${f}.texi ; \
 	${RM} $${f}.texi.orig ; \
 	done)
+
+post-build:
+	(cd ${WRKSRC}/lisp ; \
+	 ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} recompile ; \
+	 ${RM} ${WRKSRC}/src/emacs ${WRKSRC}/src/emacs-${PORTVERSION}.1 ; \
+	 cd ${WRKSRC}/src ; \
+	 ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
