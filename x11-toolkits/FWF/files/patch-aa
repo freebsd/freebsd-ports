@@ -1,0 +1,239 @@
+diff -c -r FWF.orig/FWF.tmpl FWF/FWF.tmpl
+*** FWF.orig/FWF.tmpl	Wed Apr 19 08:28:49 1995
+--- FWF/FWF.tmpl	Sat Jul 15 04:32:23 1995
+***************
+*** 26,32 ****
+  	Set if you also want Motif versions of the widgets (if available)
+  ------------------------------------------------------------------------*/
+  
+! #define WantMotifVersions 1
+  
+  XCOMM MOTIFINC = -I/usr/include/Motif1.2
+  XCOMM XMLIB = -L/usr/lib/Motif1.2 -lXm
+--- 26,32 ----
+  	Set if you also want Motif versions of the widgets (if available)
+  ------------------------------------------------------------------------*/
+  
+! #define WantMotifVersions 0
+  
+  XCOMM MOTIFINC = -I/usr/include/Motif1.2
+  XCOMM XMLIB = -L/usr/lib/Motif1.2 -lXm
+***************
+*** 52,62 ****
+  
+  #define	HaveXpm		1
+  
+- XPM_LIBDIR = $(LIBDIR)		/* /usr/lib/X11R5.supplement */
+  XPM_INCDIR = $(INCDIR)		/* /usr/include/X11R5.supplement */
+! XPM_LIBBASENAME = Xpm
+! XPM_LIBNAME = lib$(XPM_LIBBASENAME).a
+! XPM_LIB = $(XPM_LIBDIR)/$(XPM_LIBNAME)
+  
+  /*------------------------------------------------------------------------
+  	The following lines might be helpful for your system.  Uncomment
+--- 52,59 ----
+  
+  #define	HaveXpm		1
+  
+  XPM_INCDIR = $(INCDIR)		/* /usr/include/X11R5.supplement */
+! XPM_LIB = -lXpm
+  
+  /*------------------------------------------------------------------------
+  	The following lines might be helpful for your system.  Uncomment
+diff -c -r FWF.orig/src/AnsiTerm/AnsiTermT.c FWF/src/AnsiTerm/AnsiTermT.c
+*** FWF.orig/src/AnsiTerm/AnsiTermT.c	Tue Mar  7 08:48:56 1995
+--- FWF/src/AnsiTerm/AnsiTermT.c	Sat Jul 15 04:32:24 1995
+***************
+*** 30,41 ****
+  #include <signal.h>
+  #include <unistd.h>
+  #include <fcntl.h>
+  #include <sys/ptyio.h>
+  #include <X11/Intrinsic.h>
+  #include <X11/StringDefs.h>
+  #include <Xfwf/AnsiTerm.h>
+  
+! 
+  
+  /*--------------------------------------------------------------------
+   |  Provide rather strict fallback resources, to make the program work
+--- 30,45 ----
+  #include <signal.h>
+  #include <unistd.h>
+  #include <fcntl.h>
++ #if !defined(__FreeBSD__)
+  #include <sys/ptyio.h>
++ #endif
+  #include <X11/Intrinsic.h>
+  #include <X11/StringDefs.h>
+  #include <Xfwf/AnsiTerm.h>
+  
+! #if !defined(KILL_ALL_OTHERS)
+! #define KILL_ALL_OTHERS	-1
+! #endif
+  
+  /*--------------------------------------------------------------------
+   |  Provide rather strict fallback resources, to make the program work
+diff -c -r FWF.orig/src/Dir/RegExp.c FWF/src/Dir/RegExp.c
+*** FWF.orig/src/Dir/RegExp.c	Mon Apr 18 18:07:20 1994
+--- FWF/src/Dir/RegExp.c	Sat Jul 15 04:32:24 1995
+***************
+*** 10,15 ****
+--- 10,19 ----
+  
+   ****************************************************************************/
+  
++ #if defined(__FreeBSD__)	/* This whole file needs converting */
++ #define NO_REGEXP
++ #endif
++ 
+  /*
+   * Author:
+   * 	Brian Totty
+***************
+*** 25,36 ****
+  #include <Xfwf/RegExp.h>
+  #include <regexp.h>
+  
+! void RegExpCompile(regexp,fsm_ptr,fsm_length)
+! char *regexp,*fsm_ptr;
+  int fsm_length;
+  {
+  #ifndef NO_REGEXP
+! 	compile(regexp,fsm_ptr,&(fsm_ptr[fsm_length]),'\0');
+  #endif
+  } /* End RegExpCompile */
+  
+--- 29,40 ----
+  #include <Xfwf/RegExp.h>
+  #include <regexp.h>
+  
+! void RegExpCompile(regex,fsm_ptr,fsm_length)
+! char *regex,*fsm_ptr;
+  int fsm_length;
+  {
+  #ifndef NO_REGEXP
+! 	compile(regex,fsm_ptr,&(fsm_ptr[fsm_length]),'\0');
+  #endif
+  } /* End RegExpCompile */
+  
+diff -c -r FWF.orig/src/EzMenu/EzMenu.c FWF/src/EzMenu/EzMenu.c
+*** FWF.orig/src/EzMenu/EzMenu.c	Fri May  6 12:59:31 1994
+--- FWF/src/EzMenu/EzMenu.c	Sat Jul 15 04:32:24 1995
+***************
+*** 414,422 ****
+--- 414,424 ----
+        SimpleMenuWidget smw = (SimpleMenuWidget) ez_old;
+        SmeObject *entry;
+        
++ #if 0
+        ForAllChildren(smw, entry) {
+  	XtDestroyWidget((Widget)entry);
+        }
++ #endif
+  
+        XfwfEzMenuParseMenu(ez_new, ez_new -> ez_menu.menu, True);
+        ret_val = TRUE;
+diff -c -r FWF.orig/src/FileComp/Imakefile FWF/src/FileComp/Imakefile
+*** FWF.orig/src/FileComp/Imakefile	Mon May  3 12:40:20 1993
+--- FWF/src/FileComp/Imakefile	Sat Jul 15 04:32:24 1995
+***************
+*** 4,10 ****
+  
+  SRCS = $(WIDGET).c squish.c getod.c
+  EXT_OBJS = $(WIDGET)T.o squish.o getod.o
+  
+  #include "../StdImakefile"
+- 
+- AddToLibraryTarget(archive,$(FWF_LIBDIR),$(FWF_LIBNAME),squish.o getod.o)
+--- 4,9 ----
+  
+  SRCS = $(WIDGET).c squish.c getod.c
+  EXT_OBJS = $(WIDGET)T.o squish.o getod.o
++ LIB_OBJS = $(EXT_OBJS)
+  
+  #include "../StdImakefile"
+diff -c -r FWF.orig/src/IconBox/IconBoxT.c FWF/src/IconBox/IconBoxT.c
+*** FWF.orig/src/IconBox/IconBoxT.c	Fri May  6 08:53:22 1994
+--- FWF/src/IconBox/IconBoxT.c	Sat Jul 15 04:32:24 1995
+***************
+*** 42,48 ****
+  };
+  
+  extern int errno;
+- extern char *sys_errlist[];
+  
+  static XtAppContext app_context;
+  static int hlen, vlen;
+--- 42,47 ----
+diff -c -r FWF.orig/src/Imakefile FWF/src/Imakefile
+*** FWF.orig/src/Imakefile	Wed Apr 19 08:31:04 1995
+--- FWF/src/Imakefile	Sat Jul 15 05:05:02 1995
+***************
+*** 28,34 ****
+  	OptButton VScrollb HScrollb Cmap Shistogram Hdial Canvas	\
+  	CircPerc Stack Enforcer Rows MenuBar ScrollWin ScrollWin3 Tabs	\
+  	PieMenu Array FileLister AnsiTerm Entry SpinLabel		\
+! 	Mdial PcBar Toggle Icon Alert Group RadioGroup ThumbWheel	\
+  	FoldingTree IconBox Animator Pager
+  #endif
+  
+--- 28,34 ----
+  	OptButton VScrollb HScrollb Cmap Shistogram Hdial Canvas	\
+  	CircPerc Stack Enforcer Rows MenuBar ScrollWin ScrollWin3 Tabs	\
+  	PieMenu Array FileLister AnsiTerm Entry SpinLabel		\
+! 	PcBar Toggle Icon Alert Group RadioGroup ThumbWheel	\
+  	FoldingTree IconBox Animator Pager
+  #endif
+  
+***************
+*** 53,59 ****
+  	OptButton VScrollb HScrollb Cmap Shistogram Hdial Canvas	\
+  	CircPerc Stack Enforcer Rows MenuBar ScrollWin ScrollWin3 Tabs	\
+  	ThumbWheel2 PieMenu Array FileLister AnsiTerm Entry SpinLabel	\
+! 	Mdial PcBar
+  #endif
+  
+  
+--- 53,59 ----
+  	OptButton VScrollb HScrollb Cmap Shistogram Hdial Canvas	\
+  	CircPerc Stack Enforcer Rows MenuBar ScrollWin ScrollWin3 Tabs	\
+  	ThumbWheel2 PieMenu Array FileLister AnsiTerm Entry SpinLabel	\
+! 	PcBar
+  #endif
+  
+  
+diff -c -r FWF.orig/src/XmAnsiTerm/XmATermT.c FWF/src/XmAnsiTerm/XmATermT.c
+*** FWF.orig/src/XmAnsiTerm/XmATermT.c	Tue Mar  7 08:48:56 1995
+--- FWF/src/XmAnsiTerm/XmATermT.c	Sat Jul 15 04:32:24 1995
+***************
+*** 30,41 ****
+  #include <signal.h>
+  #include <unistd.h>
+  #include <fcntl.h>
+  #include <sys/ptyio.h>
+  #include <X11/Intrinsic.h>
+  #include <X11/StringDefs.h>
+  #include <Xfwf/XmATerm.h>
+  
+! 
+  
+  /*--------------------------------------------------------------------
+   |  Provide rather strict fallback resources, to make the program work
+--- 30,45 ----
+  #include <signal.h>
+  #include <unistd.h>
+  #include <fcntl.h>
++ #if !defined(__FreeBSD__)
+  #include <sys/ptyio.h>
++ #endif
+  #include <X11/Intrinsic.h>
+  #include <X11/StringDefs.h>
+  #include <Xfwf/XmATerm.h>
+  
+! #ifndef KILL_ALL_OTHERS
+! #define KILL_ALL_OTHERS -1
+! #endif
+  
+  /*--------------------------------------------------------------------
+   |  Provide rather strict fallback resources, to make the program work
