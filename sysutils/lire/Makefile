@@ -15,7 +15,7 @@ PORTNAME=	lire
 PORTVERSION=	1.1
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://logreport.org/pub/archive/
+MASTER_SITES=	http://download.logreport.org/pub/archive/
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Logfile analyse toolkit for multiple applications
