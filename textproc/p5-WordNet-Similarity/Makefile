@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WordNet-Similarity
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 PORTREVISION=	0
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -39,11 +39,17 @@ MAN3=		WordNet::Similarity.3 WordNet::Similarity::jcn.3 \
 
 post-patch:
 	@${REINPLACE_CMD} -e  \
-		'/wnUnixPath/s|/usr/local/WordNet-1.7.1|${WNHOME}|; \
+		'/wnUnixPath/s|/usr/local/WordNet-2.0|${WNHOME}|; \
 		 /wnUnixPath/s|."/dict"||' ${WRKSRC}/Makefile.PL
 	@${REINPLACE_CMD} -e  \
 		 "s|'dict|'|" ${WRKSRC}/utils/wnDepths.pl
 	@${FIND} ${WRKSRC}/utils -type f| ${XARGS} ${REINPLACE_CMD} -e \
 		's|/usr/local/bin/perl|${PERL}|'
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500601
+IGNORE=		This port requires perl 5.6.x or later. Install lang/perl5 then try again
+.endif
+
+.include <bsd.port.post.mk>
