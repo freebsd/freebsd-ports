@@ -6,57 +6,43 @@
 #
 
 PORTNAME=	mldonkey
-PORTVERSION=	1.16
+PORTVERSION=	2.02.0
 CATEGORIES=	net
-MASTER_SITES=	http://www.schraegerpunkt.de/ \
-		http://ernie.eit.uni-kl.de/mldonkey/
-	
-DISTNAME=	${PORTNAME}-${PORTVERSION}.static.${ARCH}-FreeBSD
+MASTER_SITES=	http://ernie.eit.uni-kl.de/mldonkey/ \
+		http://savannah.nongnu.org/download/mldonkey/stable/contributed/
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/.0$/-0/}.shared.${ARCH}-${OPSYS}
 
 MAINTAINER=	holger@e-gitt.net
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
+LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
 
-ONLY_FOR_ARCHS= i386
+ONLY_FOR_ARCHS=	alpha i386
 USE_BZIP2=	yes
-USE_PERL5=	yes
-USE_REINPLACE=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-distrib
+WRKSRC=		${WRKDIR}/${PORTNAME}-distrib-${PORTVERSION}
 
 DIRNAME=	${HOME}/.mldonkey
 
-# do not strip, it breaks OCAML binaries
-STRIP=
+DOCFILES=	AUTHORS BUGS ChangeLog Developers.txt FAQ.html \
+		Readme.txt TODO ed2k_links.txt
 
 post-patch:
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|" ${FILESDIR}/wrapper.sh > \
 		${WRKDIR}/wrapper.sh
-	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' \
-		${WRKSRC}/kill_mldonkey
-
-pre-install:
-# we can strip the GTK binary
-	@${STRIP_CMD} ${WRKSRC}/mldonkey_gui
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mldonkey		${PREFIX}/bin/mldonkey-real
-	@${INSTALL_PROGRAM} ${WRKSRC}/mldonkey_gui	${PREFIX}/bin
-	@${INSTALL_SCRIPT} ${WRKSRC}/kill_mldonkey	${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKDIR}/kill_mldonkey	${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/mldonkey_previewer	${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh		${PREFIX}/bin/mldonkey
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/Readme.txt ${DOCSDIR}
+.for file in ${DOCFILES}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
 .endif
 
 post-install:
 	@${SED} -e 's|/usr/local/|${PREFIX}/|' ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-
-install-user: extract
-	@${TEST} -d ${DIRNAME} ||	${MKDIR} ${DIRNAME}
-	@${CP} ${WRKSRC}/servers.ini	${DIRNAME}/
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
