@@ -9,7 +9,7 @@ PORTNAME=	epplets
 PORTVERSION=	0.5
 PORTREVISION=	1
 CATEGORIES=	x11-wm
-MASTER_SITES=	ftp://ftp.enlightenment.org/e/epplets/
+MASTER_SITES=	ftp://ftp.enlightenment.org/enlightenment/epplets/
 DISTNAME=	epplet-base-${PORTVERSION}
 
 MAINTAINER=	nakai@FreeBSD.org
