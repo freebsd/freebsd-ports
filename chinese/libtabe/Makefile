@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PREFIX}/lib/libdb2.a:${PORTSDIR}/databases/db
 RUN_DEPENDS=	${PREFIX}/lib/libdb2.a:${PORTSDIR}/databases/db
 
 WRKSRC=		${WRKDIR}/libtabe
-USE_X11=	yes
+USE_XLIB=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
