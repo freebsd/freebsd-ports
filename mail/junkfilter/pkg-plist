@@ -1,4 +1,6 @@
 etc/junkfilter/LICENSE
+etc/junkfilter/README
+etc/junkfilter/TODO
 etc/junkfilter/addresses
 etc/junkfilter/bodychk
 etc/junkfilter/dialups
@@ -12,17 +14,11 @@ etc/junkfilter/headers
 etc/junkfilter/ip
 etc/junkfilter/jf
 etc/junkfilter/jf-addresses
-etc/junkfilter/jf-addresses-user-default
 etc/junkfilter/jf-bodychk
-etc/junkfilter/jf-bodychk-user-default
 etc/junkfilter/jf-dialups
-etc/junkfilter/jf-dialups-user-default
 etc/junkfilter/jf-domains
-etc/junkfilter/jf-domains-user-default
 etc/junkfilter/jf-headers
-etc/junkfilter/jf-headers-user-default
 etc/junkfilter/jf-ip
-etc/junkfilter/jf-ip-user-default
 etc/junkfilter/jf-white
 etc/junkfilter/junkfilter
 etc/junkfilter/junkfilter.bodychk
@@ -32,11 +28,11 @@ etc/junkfilter/junkfilter.lists
 etc/junkfilter/junkfilter.match
 etc/junkfilter/junkfilter.one
 etc/junkfilter/junkfilter.opt
-etc/junkfilter/junkfilter.readme
 etc/junkfilter/junkfilter.three
 etc/junkfilter/junkfilter.two
 etc/junkfilter/junkfilter.user-default
 etc/junkfilter/junkfilter.white
+etc/junkfilter/procmailrc.sample
 etc/junkfilter/white
 @dirrm etc/junkfilter/domains
 @dirrm etc/junkfilter
