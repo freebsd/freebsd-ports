@@ -20,9 +20,9 @@ COMMENT=	A PostScript printing util for ASCII files, email, USENET news articles
 
 .include <bsd.port.pre.mk>
 
-#.if ${OSVERSION} < 500000
-USE_GCC=       3.1
-#.endif
+.if ${OSVERSION} < 500000
+USE_GCC=       3.4
+.endif
 WRKSRC=		${WRKDIR}/mp
 USE_REINPLACE=	yes
 MAN1=		mp.1
