@@ -85,10 +85,6 @@ lib/libk3bexternalencoder.la
 lib/libk3bexternalencoder.so
 lib/libk3bmaddecoder.la
 lib/libk3bmaddecoder.so
-lib/libk3boggvorbisdecoder.la
-lib/libk3boggvorbisdecoder.so
-lib/libk3boggvorbisencoder.la
-lib/libk3boggvorbisencoder.so
 lib/libk3bplugin.la
 lib/libk3bplugin.so
 lib/libk3bplugin.so.1
@@ -142,10 +138,10 @@ share/apps/k3b/pics/k3bprojectview_right.png
 share/apps/k3b/pics/k3bsetup2_guy.png
 share/apps/k3b/plugins/k3bexternalencoder.plugin
 share/apps/k3b/plugins/k3bmaddecoder.plugin
-share/apps/k3b/plugins/k3boggvorbisdecoder.plugin
-share/apps/k3b/plugins/k3boggvorbisencoder.plugin
 share/apps/k3b/plugins/k3bsoxencoder.plugin
 share/apps/k3b/plugins/k3bwavedecoder.plugin
+share/apps/k3b/plugins/k3boggvorbisdecoder.plugin
+share/apps/k3b/plugins/k3boggvorbisencoder.plugin
 share/apps/k3b/tips
 share/apps/konqueror/servicemenus/k3b_create_audio_cd.desktop
 share/apps/konqueror/servicemenus/k3b_create_data_cd.desktop

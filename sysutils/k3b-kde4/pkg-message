@@ -50,4 +50,5 @@ Notes:
 10. To normalize the volumes of audio cds, install the port audio/normalize.
 11. To rip into more audio formats, install the port audio/sox.
 
-To read this instructions again, type 'make showinfo' in the k3b port directory
+To read these instructions again, type 'make showinfo' in the k3b port
+directory.
