@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.248 1999/01/18 02:50:24 steve Exp $
+# $Id: Makefile,v 1.249 1999/01/18 03:32:29 steve Exp $
 #
 
     SUBDIR += 9term
@@ -35,6 +35,7 @@
     SUBDIR += XttXF98srv-WABEP
     SUBDIR += XttXF98srv-WABS
     SUBDIR += XttXF98srv-WSNA
+    SUBDIR += bgrot
     SUBDIR += blast
     SUBDIR += bricons
     SUBDIR += camltk41
