@@ -15,6 +15,7 @@
     SUBDIR += bitmap-emacs20
     SUBDIR += bitmap-mule
     SUBDIR += bpatch
+    SUBDIR += bvi
     SUBDIR += color-mate
     SUBDIR += cooledit
     SUBDIR += custom-emacs
@@ -39,6 +40,7 @@
     SUBDIR += flim-xemacs20
     SUBDIR += flim-xemacs20-current
     SUBDIR += gedit
+    SUBDIR += ghex
     SUBDIR += gnotepad+
     SUBDIR += gwp
     SUBDIR += gxedit
