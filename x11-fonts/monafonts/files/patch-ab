@@ -1,0 +1,8 @@
+--- tools/mkitalic	Sun Feb 11 09:09:45 2001
++++ tools/mkitalic	Thu Feb 15 20:40:19 2001
+@@ -1,4 +1,4 @@
+-#!/usr/bin/gawk -f
++#!/usr/bin/awk -f
+ #
+ # -- makes BDF font italic
+ #     version 0.00.1
