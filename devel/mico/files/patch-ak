@@ -1,11 +1,11 @@
 --- configure.in.orig	Wed Oct 21 10:29:16 1998
-+++ configure.in	Sun Nov 15 03:40:45 1998
++++ configure.in	Sun Nov 15 15:20:10 1998
 @@ -102,7 +102,7 @@
  # extra dirs
  #
  
 -wi_EXTRA_DIRS(no, /usr/local /local /user/local /usr/share /opt /opt/local $QTDIR $GTKDIR $TCLDIR $SSLDIR)
-+wi_EXTRA_DIRS(no, /usr/local /local /user/local /usr/share /opt /opt/local $QTDIR $GTKDIR $TCLDIR $SSLDIR, tcl8.0)
++wi_EXTRA_DIRS(no, /usr/local /local /user/local /usr/share /opt /opt/local /usr/X11R6 $QTDIR $GTKDIR $TCLDIR $SSLDIR, tcl8.0 X11/qt )
  
  #
  # misc
@@ -14,9 +14,9 @@
      ;;
    *bsd*)
 -    CONF_SOEXT=so.1.0
-+    if [ "$PORTOBJFORMAT" = "elf" ]; then
++    if test "X$PORTOBJFORMAT" = "Xelf"; then
 +      CONF_SHARED_CC="$CXX -shared -Wl,-soname,\$@"
-+      CONF_SOEXE=so.1
++      CONF_SOEXT=so.1
 +    else
 +      CONF_SOEXT=so.1.0
 +    fi

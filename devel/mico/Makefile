@@ -3,7 +3,7 @@
 # Date created:        11 July 1998
 # Whom:                Marc G. Fournier <scrappy@freebsd.org>
 #
-# $Id: Makefile,v 1.23 1998/11/15 07:08:20 scrappy Exp $
+# $Id: Makefile,v 1.24 1998/11/15 07:50:11 scrappy Exp $
 #
 
 DISTNAME=	mico-2.2.3
@@ -11,8 +11,6 @@ CATEGORIES=	devel
 MASTER_SITES=	http://diamant-atm.vsb.cs.uni-frankfurt.de/~mico/
 
 MAINTAINER=	scrappy@freebsd.org
-
-BROKEN_ELF=	yes
 
 .include <bsd.port.pre.mk>
 

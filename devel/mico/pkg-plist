@@ -6,6 +6,8 @@ bin/mico-ar
 bin/mico-c++
 bin/mico-cpp
 bin/mico-ld
+bin/mico-shc++
+bin/mico-shld
 bin/micod
 bin/nsadmin
 bin/nsd
@@ -403,12 +405,18 @@ include/ministl/vector
 include/ministl/vector.h
 lib/libmico2.2.3.a
 lib/libmicoaux2.2.3.a
-lib/libmicoaux2.2.3.so.1.0
+lib/libmicoaux2.2.3.so.1
 lib/libmicocoss2.2.3.a
+lib/libmicogtk2.2.3.a
+lib/libmicogtk2.2.3.so.1
 lib/libmicoqt2.2.3.a
-lib/libmicoqt2.2.3.so.1.0
+lib/libmicoqt2.2.3.so.1
+lib/libmicotcl2.2.3.a
+lib/libmicotcl2.2.3.so.1
 lib/libmicox2.2.3.a
-lib/libmicox2.2.3.so.1.0
+lib/libmicox2.2.3.so.1
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/mico-setup.csh
 lib/mico-setup.sh
 @dirrm include/ministl
