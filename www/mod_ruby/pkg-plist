@@ -6,8 +6,8 @@
 %%RUBY_SITELIBDIR%%/apache/ruby-run.rb
 %%RUBY_SITELIBDIR%%/auto-reload.rb
 @dirrm %%RUBY_SITELIBDIR%%/apache
-etc/apache/httpd.conf.mod_ruby
-libexec/apache/mod_ruby.so
+%%LIBEXECDIR%%/mod_ruby.so
+%%SYSCONFDIR%%/httpd.conf.mod_ruby
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/COPYING
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.en
