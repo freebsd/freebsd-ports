@@ -1,0 +1,2 @@
+include/getopt.h
+lib/libgnugetopt.a
