@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Response/.packlist
+%%SITE_PERL%%/CGI/Response.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Response
+@unexec rmdir %D/%%SITE_PERL%%/CGI 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI 2>/dev/null || true
