@@ -1,0 +1,42 @@
+--- doc/man/Makefile.orig	Fri Mar 14 04:43:51 1997
++++ doc/man/Makefile	Mon Jan  5 14:03:46 1998
+@@ -52,26 +52,26 @@
+ # Target directory for the manual directory tree. Eg., may be used to 
+ # specify the path of an NFS-mounted directory for common files.
+ #
+-DESTDIR=
++DESTDIR= ${MANPREFIX}
+ 
+ #
+ # Default location for manual section directories.
+ #
+-DESTMAN= /usr/share/man
++DESTMAN= /man
+ 
+ #
+ # Install manuals in ${MANDIR}N. For systems that generate catable manual 
+ # entries on the fly, use
+ #	MANDIR = man
+ #
+-MANDIR = cat
++MANDIR = man
+ 
+ #
+ # Default extension for manual entries. To install the manual entries under
+ # their `real' extensions use 
+ #	CATEXT = $$N
+ #
+-CATEXT = 0
++CATEXT = $$N
+ 
+ #
+ # Command to install manual entries
+@@ -105,7 +105,7 @@
+ # can be used. 
+ #	MANROFF = cat
+ #
+-MANROFF = ( tbl | nroff -mandoc )
++MANROFF = cat
+ 
+ #
+ # Default extensions for installed manual entries. The following variables 

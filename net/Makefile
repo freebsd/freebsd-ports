@@ -38,6 +38,7 @@
     SUBDIR += bfilter
     SUBDIR += bgpq
     SUBDIR += bind8
+    SUBDIR += bind84
     SUBDIR += bind9
     SUBDIR += bind9-dlz
     SUBDIR += bing
