@@ -1,0 +1,17 @@
+IglooFTP is a new graphical FTP client written from scratch.
+Its main goals is to be easy to use and intuitive when used 
+by novice,  but powerful and fully configurable in the hand 
+of experienced users.
+
+Already available features are :
+
+Intuitive user friendly interface, graphical configurability, 
+toolbar, fast-connect bar,  graphical directories browser, 
+tree hierarchical site manager with site groups, user profile 
+management,  local and remote prompt command,  
+directories creation/deletion, recursive downloads/uploads
+delete/move/chmod,  file transfert resume, resolution of 
+symbolic links, support of passive and non-passive data 
+connection, possibility to show / hide hidden file, 
+anti-idle tool, DND support, firewall support,
+own Netscape mini-toolbar and a great appearance.
