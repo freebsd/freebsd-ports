@@ -29,9 +29,3 @@ lib/yodl/tex.yo
 lib/yodl/txt.yo
 lib/yodl/xlatin1.tex
 @dirrm lib/yodl
-man/man1/striproff.1.gz
-man/man1/yodl.1.gz
-man/man1/yodlconverters.1.gz
-man/man5/yodl.5.gz
-man/man7/yodlmacros.7.gz
-man/man7/yodlmanpage.7.gz

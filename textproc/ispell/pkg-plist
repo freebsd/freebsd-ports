@@ -12,12 +12,3 @@ lib/american.hash
 lib/americanmed+.hash
 lib/english.aff
 lib/english.hash
-man/man1/buildhash.1.gz
-man/man1/findaffix.1.gz
-man/man1/ispell.1.gz
-man/man1/munchlist.1.gz
-man/man1/sq.1.gz
-man/man1/tryaffix.1.gz
-man/man1/unsq.1.gz
-man/man4/ispell.4.gz
-man/man4/english.4.gz
