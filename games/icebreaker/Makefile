@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	icebreaker
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	games
-MASTER_SITES=	http://www.mattdm.org/icebreaker/
+MASTER_SITES=	http://www.mattdm.org/icebreaker/1.2.x/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sobomax@FreeBSD.org
