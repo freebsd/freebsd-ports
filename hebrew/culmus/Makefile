@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	culmus
-PORTVERSION=	0.93
+PORTVERSION=	0.100
 CATEGORIES=	hebrew
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,7 +21,7 @@ NO_BUILD=	yes
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/X11/fonts/culmus
-.	for filename in Aharoni-Bold Aharoni-BoldOblique Aharoni-Book Aharoni-BookOblique Caladings David-Bold David-Medium David-MediumItalic Drugulin-Bold Drugulin-BoldItalic Ellinia-Bold Ellinia-BoldItalic Ellinia-Light Ellinia-LightItalic FrankRuehl-Bold FrankRuehl-BoldOblique FrankRuehl-Medium FrankRuehl-MediumOblique KtavYad-BoldItalic KtavYad-MediumItalic MiriamMono-Bold MiriamMono-BoldOblique MiriamMono-Book MiriamMono-BookOblique Nachlieli-Bold Nachlieli-BoldOblique Nachlieli-Light Nachlieli-LightOblique
+.	for filename in AharoniCLM-Bold AharoniCLM-BoldOblique AharoniCLM-Book AharoniCLM-BookOblique CaladingsCLM DavidCLM-Bold DavidCLM-Medium DavidCLM-MediumItalic DrugulinCLM-Bold DrugulinCLM-BoldItalic ElliniaCLM-Bold ElliniaCLM-BoldItalic ElliniaCLM-Light ElliniaCLM-LightItalic FrankRuehlCLM-Bold FrankRuehlCLM-BoldOblique FrankRuehlCLM-Medium FrankRuehlCLM-MediumOblique MiriamCLM-Bold MiriamCLM-Book MiriamMonoCLM-Bold MiriamMonoCLM-BoldOblique MiriamMonoCLM-Book MiriamMonoCLM-BookOblique NachlieliCLM-Bold NachlieliCLM-BoldOblique NachlieliCLM-Light NachlieliCLM-LightOblique YehudaCLM-Bold YehudaCLM-Light
 		${INSTALL_DATA} ${WRKSRC}/${filename}.afm ${PREFIX}/lib/X11/fonts/culmus
 		${INSTALL_DATA} ${WRKSRC}/${filename}.pfa ${PREFIX}/lib/X11/fonts/culmus
 .	endfor
