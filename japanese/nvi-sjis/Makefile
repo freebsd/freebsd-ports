@@ -3,7 +3,7 @@
 # Date created:		6 Mar 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.4 1997/04/09 07:34:49 asami Exp $
+# $Id: Makefile,v 1.5 1997/04/09 09:43:53 asami Exp $
 #
 
 # can't use PORTSDIR here, since we haven't included bsd.port.mk
@@ -16,7 +16,7 @@ LIB_DEPENDS=	canna\\.1\\.:${PORTSDIR}/japanese/Canna
 
 .include <${.CURDIR}/../../editors/nvi/Makefile>
 
-PKGNAME=	jp-nvi-sjis-1.79-970408
+PKGNAME=	jp-nvi-sjis-1.79-970617
 CATEGORIES=	japanese editors
 
 MAINTAINER=	itojun@itojun.org
