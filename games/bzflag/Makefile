@@ -15,10 +15,9 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nsayer@FreeBSD.org
 
-BROKEN=		"Does not build"
-
 USE_XLIB=	yes
 USE_MESA=	yes
+USE_REINPLACE=	yes
 
 MAKE_ENV=	PORTCFLAGS="${CFLAGS}" PORTCXXFLAGS="${CXXFLAGS}" \
 		PORTPREFIX="${PREFIX}" PTHREAD_LIBS="${PTHREAD_LIBS}" \
@@ -28,6 +27,10 @@ MAN6=	bzflag.6 bzfrelay.6 bzfls.6 bzfs.6
 
 do-configure:
 	@${CP} ${FILESDIR}/config-sys ${WRKSRC}/
+	${REINPLACE_CMD} "s,libusb.h,libusbhid.h,g" \
+		${WRKSRC}/src/platform/XWindow.h
+	${REINPLACE_CMD} "s,malloc.h,stdlib.h,g" \
+		${WRKSRC}/src/bzflag/HUDRenderer.cxx
 
 post-build:
 	@(cd ${WRKSRC}/man && ${MAKE} targets)
