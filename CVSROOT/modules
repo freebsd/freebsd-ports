@@ -1510,7 +1510,6 @@ dnshijacker	ports/dns/dnshijacker
 dnsjava		ports/dns/dnsjava
 dnsmasq		ports/dns/dnsmasq
 dnsproxy	ports/dns/dnsproxy
-dnssecwalker	ports/dns/dnssecwalker
 dnstop		ports/dns/dnstop
 dnstracer	ports/dns/dnstracer
 dnsutl		ports/dns/dnsutl
