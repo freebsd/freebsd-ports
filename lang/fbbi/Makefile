@@ -8,7 +8,7 @@
 PORTNAME=	fbbi
 PORTVERSION=	2003.0326
 CATEGORIES=	lang
-MASTER_SITES=	http://www.catseye.mb.ca/projects/
+MASTER_SITES=	http://www3.telus.net/public/cpressey/distfiles/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	llwang@infor.org
