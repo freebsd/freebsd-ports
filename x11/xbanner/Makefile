@@ -3,7 +3,7 @@
 # Date created:		13 Jan 1999
 # Whom:			giffunip@asme.org
 #
-# $Id:  Exp $
+# $Id: Makefile,v 1.1.1.1 1999/01/20 08:18:56 flathill Exp $
 #
 
 DISTNAME=	XBanner1.31
@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://physics.fullerton.edu/pub/Linux/XBanner/	\
 MASTER_SITE_SUBDIR=X11/xutils
 
 MAINTAINER=     ports@FreeBSD.ORG
+
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_X_PREFIX=	yes
 #USE_IMAKE=	yes
