@@ -4,14 +4,14 @@ lib/libsocket++_p.a
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 include/Fork.h
-include/echo.h 
+include/echo.h
 include/ftp.h
-include/pipestream.h 
+include/pipestream.h
 include/protocol.h
-include/smtp.h 
-include/sockinet.h 
-include/sockstream.h 
-include/sockunix.h 
+include/smtp.h
+include/sockinet.h
+include/sockstream.h
+include/sockunix.h
 @unexec install-info --delete %D/info/socket++.info %D/info/dir
 info/socket++.info
 @exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir

@@ -5,7 +5,7 @@
 # Whom:				  Narvi <narvi@haldjas.folklore.ee>
 #				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.3 1998/01/07 11:11:48 obrien Exp $
+# $Id: Makefile,v 1.4 1998/10/10 03:23:40 steve Exp $
 #
 
 DISTNAME=	socket++-1.10
@@ -15,7 +15,6 @@ MASTER_SITES=	ftp://ftp.umsicht.fhg.de/pub/unix/language/C++/class-libraries/ \
 		ftp://ftp.par.univie.ac.at/pub/unix/c++/  \
 		ftp://jungfrau.ptf.hro.nl/pub/socket/
 
-
 MAINTAINER=	narvi@haldjas.folklore.ee
 
 GNU_CONFIGURE=	yes
@@ -24,6 +23,11 @@ GNU_CONFIGURE=	yes
 post-configure:
 	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile
 
+pre-install:
+	@if [ ! -f ${PREFIX}/info/dir ]; then \
+	 ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
+	 fi
+
 post-install:
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
@@ -31,5 +35,6 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/libsocket++
 	${INSTALL_MAN} ${WRKSRC}/socket++.ps ${PREFIX}/share/doc/libsocket++
 .endif
+	@install-info ${PREFIX}/info/socket++.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
