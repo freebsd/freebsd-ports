@@ -26,6 +26,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|^CXXFLAGS|#CXXFLAGS|g" \
 		-e s"|LFLAGS|LDFLAGS|" -e "s|^LDFLAGS|#LDFLAGS|" \
 		-e "s|CC|CXX|g" -e "s|^CXX|#CXX|g" ${WRKSRC}/Makefile
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e "s|||"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/codeworker ${PREFIX}/bin
