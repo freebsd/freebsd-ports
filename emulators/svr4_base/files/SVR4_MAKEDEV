@@ -1,0 +1,141 @@
+#!/bin/sh -
+#
+# $FreeBSD$
+#
+# Copyright (c) 1998 Mark Newton
+# Copyright (c) 1995 Christos Zoulas
+# Copyright (c) 1997 Todd Vierling
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+# 3. The names of the authors may not be used to endorse or promote products
+#    derived from this software without specific prior written permission
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+# IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+# OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+# IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+# INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+# NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+# DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+# THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+# (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+# THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Device "make" file.  Valid arguments:
+#	all	everything
+# Terminal devices:
+#	ptmx		pty master multiplexer
+#	pts[0-3]	pty slave devices in /dev/pts (actually symlinks)
+# Network:
+#	udp		UDP socket creation
+#	tcp		TCP socket creation
+#	rawip		RAW socket creation
+#	ticlts		UNIX datagram creation
+#	ticotsord	UNIX stream creation (with orderly release)
+#	ticots		UNIX stream creation
+# Various:
+#	wabi		Windows emulation; /dev/null for now
+#
+PATH=/sbin:/bin/:/usr/bin:/usr/sbin:/usr/etc
+umask 77
+
+for i
+do
+
+unit=`expr $i : '[a-z][a-z]*\([0-9][0-9]*\)'`
+[ "$unit" ] || unit=0
+
+case $i in
+
+all)
+	sh SVR4_MAKEDEV ptmx pts0 pts1 pts2 pts3
+	sh SVR4_MAKEDEV tcp udp rawip ticlts ticotsord ticots wabi
+	;;
+
+ptmx)
+	mknod $i		c 103 10
+	chown bin.bin $i
+	chmod 666 $i
+	;;
+
+pts*)
+	case $unit in
+	0) name=p;;
+	1) name=q;;
+	2) name=r;;
+	3) name=s;;
+	*) name=''; echo 'pts: units range from 0 to 3';;
+	esac
+
+	mkdir >/dev/null 2>&1 pts
+	chown bin.bin pts
+	chmod 755 pts
+	if [ -n "$name" ]; then
+		j=`expr $unit \* 16`
+		for i in 0 1 2 3 4 5 6 7 8 9 a b c d e f; do
+			if [ -e /dev/tty$name$i ]; then
+				ln -s /dev/tty$name$i pts/$j
+			fi
+			j=`expr $j + 1`
+		done
+	fi
+	;;
+
+tcp)
+	mknod $i		c 103 35
+	chown bin.bin $i
+	chmod 666 $i
+	;;
+
+
+udp)
+	mknod udp		c 103 36
+	chown bin.bin $i
+	chmod 666 $i
+	;;
+
+rawip)
+	mknod $i		c 103 37
+	chown bin.bin $i
+	chmod 666 $i
+	;;
+
+ticlts)
+	mknod $i		c 103 38
+	chown bin.bin $i
+	chmod 666 $i
+	;;
+
+ticotsord)
+	mknod $i		c 103 39
+	chown bin.bin $i
+	chmod 666 $i
+	;;
+
+ticots)
+	mknod $i		c 103 40
+	chown bin.bin $i
+	chmod 666 $i
+	;;
+
+
+wabi)
+	mknod $i		c 2 2	# /dev/null
+	chown bin.bin $i
+	chmod 666 $i
+	;;
+
+*)
+	echo $i: unknown device
+	;;
+esac
+done
+
