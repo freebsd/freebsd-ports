@@ -1,4 +1,5 @@
 %%PORTDOCS%%share/texmf/doc/latex/tipa/tipaman.dvi
+%%PORTDOCS%%@dirrm share/texmf/doc/latex/tipa
 share/texmf/dvips/config/tipa.map
 share/texmf/fonts/source/fkr/tipa/gentfm.sh
 share/texmf/fonts/source/fkr/tipa/gentipa.sh
@@ -252,7 +253,6 @@ share/texmf/tex/latex/tipa/utipxtt.fd
 share/texmf/tex/latex/tipa/uxipx.fd
 share/texmf/tex/latex/tipa/uxipxss.fd
 share/texmf/tex/latex/tipa/vowel.sty
-@dirrm share/texmf/doc/latex/tipa
 @dirrm share/texmf/fonts/source/fkr/tipa
 @dirrm share/texmf/fonts/source/fkr
 @dirrm share/texmf/fonts/tfm/fkr/tipa
