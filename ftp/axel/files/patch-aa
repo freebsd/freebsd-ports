@@ -1,0 +1,11 @@
+--- configure.orig	Sun Oct 20 13:53:37 2002
++++ configure	Sun Oct 20 13:53:43 2002
+@@ -19,7 +19,7 @@
+ arch=`uname -s`
+ 
+ while [ -n "$1" ]; do
+-	e="`expr "$1" : '--\(.*=.*\)'`"
++	e="`expr -- "$1" : '--\(.*=.*\)'`"
+ 	if [ -z "$e" ]; then
+ 		cat<<EOF
+ Axel configure
