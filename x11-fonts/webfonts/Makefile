@@ -11,15 +11,9 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.microsoft.com/typography/downloads/ \
 		http://www.eu.microsoft.com/typography/downloads/ \
 		http://www.asia.microsoft.com/typography/downloads/
-.if defined(WITH_ARIAL_UNICODE)
-MASTER_SITES+=	http://download.microsoft.com/download/publisher2000/Aruniup/2000/WIN98/EN-US/
-.endif
 DISTFILES=	andale32.exe trebuc32.exe georgi32.exe verdan32.exe \
 		comic32.exe arialb32.exe impact32.exe arial32.exe \
 		times32.exe courie32.exe webdin32.exe
-.if defined(WITH_ARIAL_UNICODE)
-DISTFILES+=	Aruniupd.exe
-.endif
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -35,7 +29,6 @@ USE_X_PREFIX=	yes
 RUN_DEPENDS=	xfstt:${PORTSDIR}/x11-servers/Xfstt
 .endif
 
-RESTRICTED=	"Restrictive license - cannot place on server for distribution"
 NO_CDROM=	"Restrictive license - cannot sell for profit"
 NO_PACKAGE=	"Restrictive license - cannot distribute in modified form"
 
@@ -45,7 +38,6 @@ EXTRACT_AFTER_ARGS=
 
 PLIST_SUB=	PKG_OLDXF86=${PKG_OLDXF86} \
 		PKG_NSALIAS=${PKG_NSALIAS} \
-		PKG_UNICODE=${PKG_UNICODE} \
 		FONTNAME="${FONTNAME}" \
 		FONTSDIR="${FONTSDIR:S|${PREFIX}/||}" \
 		TTFONTSDIR="${TTFONTSDIR:S|${X11BASE}/||}"
@@ -63,12 +55,6 @@ OLDXF86=        "@comment "
 PKG_NSALIAS=
 .else
 PKG_NSALIAS=    "@comment "
-.endif
-
-.if defined(WITH_ARIAL_UNICODE)
-PKG_UNICODE=
-.else
-PKG_UNICODE=    "@comment "
 .endif
 
 #
@@ -97,12 +83,6 @@ pre-everything::
 	${ECHO_MSG}
 	${ECHO_MSG} "If you want font aliases that work around Netscape's tiny font bug (4.x ONLY),"
 	${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_NETSCAPE_ALIASES=yes\""
-	${ECHO_MSG}
-.endif
-.if !defined(WITH_ARIAL_UNICODE)
-	${ECHO_MSG}
-	${ECHO_MSG} "If you want \"Arial Unicode MS\", a complete Unicode 2.1 font (13.7MB download),"
-	${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_ARIAL_UNICODE=yes\""
 	${ECHO_MSG}
 .endif
 
