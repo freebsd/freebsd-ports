@@ -9,6 +9,7 @@
     SUBDIR += TenDRA
     SUBDIR += aleph
     SUBDIR += alisp
+    SUBDIR += asn1c
     SUBDIR += atlast
     SUBDIR += awka
     SUBDIR += bf2c
