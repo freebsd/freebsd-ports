@@ -519,6 +519,8 @@
 %%PORTDOCS%%%%DATADIR%%/docs/poseidon2-openapi/tree.html
 %%PORTDOCS%%%%DATADIR%%/docs/poseidon2-openapi/treecode.html
 %%PORTDOCS%%%%DATADIR%%/docs/poseidon2-openapi/treemenu.html
+%%DATADIR%%/LICENSE-concurrent.txt
+%%DATADIR%%/lib/floating-server.jar
 %%DATADIR%%/lib/jarImport.jar
 %%DATADIR%%/lib/mdlimport.jar
 %%DATADIR%%/lib/roundtripEngineering.jar
