@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	jetty
-PORTVERSION=	2.4.6
+PORTVERSION=	2.4.9
 CATEGORIES=	www java
 MASTER_SITES=	http://download.sourceforge.net/jetty/ \
 		ftp://jetty.mortbay.com/pub/
 DISTNAME=	Jetty-${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	stephane.legrand@bigfoot.com
 
@@ -19,6 +20,10 @@ RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper \
 
 JAVAVM?=	${LOCALBASE}/bin/javavm
 NO_BUILD=	yes
+
+post-extract:
+	find ${WRKSRC} -name CVS | xargs ${RM} -rf
+	find ${WRKSRC} -name .cvsignore | xargs ${RM} -rf
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/java/${PORTNAME}
