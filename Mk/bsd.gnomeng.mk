@@ -40,6 +40,7 @@ gnomehier_RUN_DEPENDS=	${X11BASE}/share/gnome/.keep_me:${PORTSDIR}/misc/gnomehie
 gnomehier_DETECT=	${X11BASE}/share/gnome/.keep_me
 
 GNOME_HTML_DIR?=	${PREFIX}/share/doc
+gnomeprefix_CONFIGURE_ENV=GTKDOC="false"
 gnomeprefix_CONFIGURE_ARGS=--localstatedir=${PREFIX}/share/gnome \
 			   --datadir=${PREFIX}/share/gnome \
 			   --with-html-dir=${GNOME_HTML_DIR} \
