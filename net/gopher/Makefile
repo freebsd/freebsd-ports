@@ -14,7 +14,6 @@ MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-ALL_TARGET=	all
 
 MAN1=	gopher.1 gophfilt.1
 MAN5=	gopherd.conf.5 gopherrc.5
