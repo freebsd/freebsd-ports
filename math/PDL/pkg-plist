@@ -35,6 +35,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/Filter/Linear.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/Fit/Gaussian.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/Fit/LM.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/Fit/Polynomial.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/Func.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/Gaussian.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/Graphics/IIS.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/Graphics/LUT.pm
@@ -131,33 +132,34 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Core.html
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Dataflow.html
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Dbg.html
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Delta.html
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Doc/Perldl.html
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Doc.html
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Doc_Perldl.html
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Exporter.html
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/FAQ.html
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/FFT.html
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Filter_LinPred.html
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Filter_Linear.html
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Fit_Gaussian.html
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Fit_LM.html
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Fit_Polynomial.html
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Filter/LinPred.html
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Filter/Linear.html
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Fit/Gaussian.html
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Fit/LM.html
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Fit/Polynomial.html
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Func.html
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Gaussian.html
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Graphics_IIS.html
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Graphics_LUT.html
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Graphics_OpenGLQ.html
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Graphics_PGPLOT.html
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Graphics_TriD.html
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Graphics_TriD_MathGraph.html
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Graphics_TriD_Rout.html
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Graphics_TriD_Tk.html
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Graphics_TriD_VRML.html
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/IO_Browser.html
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/IO_FastRaw.html
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/IO_FlexRaw.html
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/IO_Misc.html
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/IO_NDF.html
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/IO_Pic.html
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/IO_Pnm.html
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Graphics/IIS.html
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Graphics/LUT.html
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Graphics/OpenGLQ.html
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Graphics/PGPLOT.html
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Graphics/TriD.html
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Graphics/TriD/MathGraph.html
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Graphics/TriD/Rout.html
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Graphics/TriD/Tk.html
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Graphics/TriD/VRML.html
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/IO/Browser.html
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/IO/FastRaw.html
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/IO/FlexRaw.html
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/IO/Misc.html
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/IO/NDF.html
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/IO/Pic.html
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/IO/Pnm.html
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Image2D.html
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/ImageND.html
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/ImageRGB.html
@@ -171,22 +173,22 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/LiteF.html
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Math.html
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Objects.html
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Ops.html
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Opt_Simplex.html
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Opt/Simplex.html
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Options.html
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/PDL.html
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/PP.html
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Philosophy.html
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Pod_Parser.html
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Pod_Select.html
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Pod_Usage.html
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Pod/Parser.html
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Pod/Select.html
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Pod/Usage.html
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Primitive.html
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Slatec.html
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Slices.html
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Tests.html
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Tips.html
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Types.html
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/pod2html-dircache
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/pod2html-itemcache
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/pod2htmd.x~~
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/pod2htmi.x~~
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/IO/Browser.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/IO/FastRaw.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/IO/FlexRaw.pm
@@ -310,6 +312,14 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/PDL/Tests/Tests.so
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/PP
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/Opt
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/IO
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Pod
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Opt
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/IO
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Graphics/TriD
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Graphics
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Fit
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Filter
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL/Doc
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs/PDL
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/HtmlDocs
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PDL/Graphics/VRML

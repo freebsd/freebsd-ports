@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PDL
-PORTVERSION=	2.005
+PORTVERSION=	2.1.1
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	PDL
@@ -23,7 +23,8 @@ USE_PERL5=	yes
 SCRIPTS_ENV=	PERL=${PERL}
 
 .if defined(KITCHEN_SINK)
-BUILD_DEPENDS+=	fftw.2:${PORTSDIR}/math/fftw
+LIB_DEPENDS+=	fftw.2:${PORTSDIR}/math/fftw \
+		gsl.0:${PORTSDIR}/math/gsl
 RUN_DEPENDS+=	ppmtogif:${PORTSDIR}/graphics/netpbm \
 		mpeg_encode:${PORTSDIR}/graphics/mpeg_encode \
 		saoimage:${PORTSDIR}/astro/saoimage
@@ -45,7 +46,9 @@ BROKEN=	test script t/flexraw.t fails all 26 tests
 MAN1=	PDL::Philosophy.1 PDL::Internals.1 PDL::PP.1 PDL::Tips.1 \
 	PDL::Dataflow.1 PDL::Indexing.1 PDL::FAQ.1 PDL::Delta.1 \
 	PDL::Objects.1 PDL::Impatient.1 pdl.1 perldl.1
-MAN3=	PDL::PP::Dump.3 PDL::PP::Signature.3 PDL::Types.3 PDL::Dbg.3 \
+MAN3=	PDL.3 PDL::Char.3 PDL::Complex.3 PDL::Fit::Gaussian.3 PDL::Func.3 \
+	PDL::Graphics::LUT.3 PDL::LM.3 PDL::Polynomial.3 \
+	PDL::PP::Dump.3 PDL::PP::Signature.3 PDL::Types.3 PDL::Dbg.3 \
 	PDL::Exporter.3 PDL::Core.3 PDL::Basic.3 PDL::Lite.3 PDL::LiteF.3 \
         PDL::Ops.3 PDL::Options.3 PDL::Primitive.3 \
 	PDL::Slices.3 PDL::Tests.3 PDL::Math.3 PDL::AutoLoader.3 \
