@@ -15,7 +15,7 @@ COMMENT=	GTK2 vocabulary builder
 
 USE_X_PREFIX=	yes
 USE_PYTHON=	yes
-USE_GNOME=	gnomehack gnometarget gnomeprefix pygtk2
+USE_GNOME=	gnomehack gnometarget gnomeprefix pygnome2
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
