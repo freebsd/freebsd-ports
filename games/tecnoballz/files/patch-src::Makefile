@@ -1,0 +1,25 @@
+--- src/Makefile.orig	Wed Jan 19 23:37:51 2005
++++ src/Makefile	Thu Jan 20 00:17:11 2005
+@@ -1,10 +1,9 @@
+ CC       = gcc
+-CXX      = g++
+ #CXXFLAGS = -O3 -Wall -s
+-CXXFLAGS = -O3 -Wall
++CXXFLAGS += -Wall `$(SDL_CONFIG) --cflags` `$(LIBMIKMOD_CONFIG) --cflags`
+ PROG     = tecnoballz
+ PREFIX   = /usr/local
+-LIBPATH  = -L/usr/X11R6/lib -L.
++LIBPATH  = `$(SDL_CONFIG) --libs` -lSDL_mixer `$(LIBMIKMOD_CONFIG) --libs`
+ TMPDIR   = /var/tmp/tecnoballz.dist   
+ ifeq ($(PREFIX),)
+ EXEDIR   = $(HOME)/bin
+@@ -94,8 +93,7 @@
+ 
+ 
+ $(PROG): $(OBJ)
+-	$(CXX) $(LIBPATH) $(OBJ) $(PROFLAG) -lm \
+-		-lSDL -lSDL_mixer -lmikmod -o $@
++	$(CXX) $(LIBPATH) $(OBJ) $(PROFLAG) -o $@
+ 
+ clean:
+ 	rm -f $(OBJ)  nomfichierscore.o

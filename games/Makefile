@@ -446,6 +446,7 @@
     SUBDIR += taipan
     SUBDIR += tank
     SUBDIR += taxipilot
+    SUBDIR += tecnoballz
     SUBDIR += teg
     SUBDIR += tenebrae
     SUBDIR += tetrinet
