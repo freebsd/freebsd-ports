@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	AbiWord2
-PORTVERSION=	2.0.11
+PORTVERSION=	2.0.12
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.abisource.com/downloads/Version-${PORTVERSION}/lf/
@@ -107,12 +107,16 @@ post-patch:
 
 post-install:
 .if defined(GNOME_ENABLED)
+	@${MKDIR} ${PREFIX}/share/gnome/apps/Applications
 	@${INSTALL_DATA} ${WRKSRC}/src/pkg/linux/rpm/data/abiword.desktop \
 		${PREFIX}/share/gnome/apps/Applications/abiword.desktop
+	@${MKDIR} ${PREFIX}/share/gnome/pixmaps
 	@${LN} -sf ${PREFIX}/share/AbiSuite-2.0/icons/abiword_48.png \
 		${PREFIX}/share/gnome/pixmaps/abiword_48.png
+	@${MKDIR} ${PREFIX}/libdata/bonobo/servers
 	@${LN} -sf ${PREFIX}/share/AbiSuite-2.0/GNOME_AbiWord_Control_2_0.server \
 		${PREFIX}/libdata/bonobo/servers/GNOME_AbiWord_Control_2_0.server
+	@${MKDIR} ${PREFIX}/share/gnome/gnome-2.0/ui
 	@${LN} -sf ${PREFIX}/share/AbiSuite-2.0/abi-nautilus-view-file.xml \
 		${PREFIX}/share/gnome/gnome-2.0/ui/abi-nautilus-view-file.xml
 .endif
