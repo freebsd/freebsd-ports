@@ -17,8 +17,7 @@ MAINTAINER=	mharo@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS=	--with-skey \
-		--sysconfdir=${PREFIX}/etc \
+CONFIGURE_ARGS= --sysconfdir=${PREFIX}/etc \
 		--disable-log-wrap \
 		--with-ignore-dot \
 		--with-tty-tickets \
@@ -27,6 +26,13 @@ CONFIGURE_ARGS=	--with-skey \
 		--with-all-insults \
 		--with-logincap \
 		--disable-root-sudo
+
+.ifdef(WITH_OPIE)
+CONFIGURE_ARGS+=--with-opie \
+		--with-long-otp-prompt
+.else
+CONFIGURE_ARGS+=--with-skey
+.endif
 
 MAN5=		sudoers.5
 MAN8=		sudo.8 visudo.8
