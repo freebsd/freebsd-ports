@@ -14,7 +14,7 @@ PATCH_SITES=	http://www.nrg4u.com/qmail/
 PATCHFILES=	qmail-ldap-1.03-${LDAP_PATCH_DATE}.patch.gz
 PATCH_DIST_STRIP+=	-p1
 
-EXTRA_PATCHES+=	${QMAILPORT_PATCHDIR}/patch-ab ${QMAILPORT_PATCHDIR}/patch-ac
+EXTRA_PATCHES+=	${QMAIL_PORT_PATCHDIR}/patch-ab ${QMAIL_PORT_PATCHDIR}/patch-ac
 
 MAINTAINER=	lioux@FreeBSD.org
 
@@ -25,14 +25,18 @@ MAIN_QMAIL_PORT_PATCH_BARRIER=	yes
 
 LDAP_PATCH_DATE=	20010201
 
+# Using default from master port, i.e., /var/qmail
+PREFIX?=	${QMAIL_PORT_PREFIX}
+#PREFIX=		/var/qmail-ldap
+
 .if !defined(PRE_MK_INCLUDED)
 .include <bsd.port.pre.mk>
 .endif
 
-#PREFIX=		/var/qmail-ldap
-
-QMAILPORT=	${PORTSDIR}/mail/qmail
-QMAILPORT_PATCHDIR!=	cd ${QMAILPORT} && ${MAKE} -V PATCHDIR
+#QMAIL_PORT=	${PORTSDIR}/mail/qmail
+QMAIL_PORT=	${.CURDIR}/../qmail
+QMAIL_PORT_PREFIX!=	cd ${QMAIL_PORT} && ${MAKE} -V PREFIX
+QMAIL_PORT_PATCHDIR!=	cd ${QMAIL_PORT} && ${MAKE} -V PATCHDIR
 
 DOCFILES+=	${WRKSRC}/QLDAPINSTALL ${WRKSRC}/QLDAPNEWS \
 		${WRKSRC}/QLDAPTODO ${WRKSRC}/QLDAPPICTURE \
@@ -47,7 +51,8 @@ ldap-pre-fetch:
 	@${ECHO_MSG} "WITH_LDAP_CLUSTER=yes	enable cluster support"
 	@${ECHO_MSG} "WITH_AUTOMAILDIRMAKE=yes	enable the auto-maildir-make feature"
 	@${ECHO_MSG} "WITH_AUTOHOMEDIRMAKE=yes	enable the auto-homedir-make feature"
-	@${ECHO_MSG} "WITH_LDAP_DEBUG=yes	enable the possibility to log and debug imap and pop"
+	@${ECHO_MSG} "WITH_LDAP_DEBUG=yes	enable the possibility to log and"
+	@${ECHO_MSG} "				debug imap and pop"
 	@${ECHO_MSG} "WITH_CLEARTEXTPASSWD=yes	use cleartext passwords"
 	@${ECHO_MSG} ""
 
@@ -72,8 +77,7 @@ ldap-post-patch:
 .endif # WITH_CLEARTEXTPASSWD
 
 # Local overrides
-MASTERDIR=	${QMAILPORT}
-#MASTERDIR=	${.CURDIR}/../qmail
+MASTERDIR=	${QMAIL_PORT}
 PATCHDIR=	${.CURDIR}/files
 PKGDIR_LOCAL=	${.CURDIR}
 COMMENT=	${PKGDIR_LOCAL}/pkg-comment

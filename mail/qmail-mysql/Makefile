@@ -19,11 +19,17 @@ LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 
 MYSQL_PATCH_VERSION=	1.1.1
 
+# Using default from master port, i.e., /var/qmail
+PREFIX?=	${QMAIL_PORT_PREFIX}
+#PREFIX=		/var/qmail-mysql
+
 .if !defined(PRE_MK_INCLUDED)
 .include <bsd.port.pre.mk>
 .endif
 
-#PREFIX=		/var/qmail-mysql
+#QMAIL_PORT=	${PORTSDIR}/mail/qmail
+QMAIL_PORT=	${.CURDIR}/../qmail
+QMAIL_PORT_PREFIX!=	cd ${QMAIL_PORT} && ${MAKE} -V PREFIX
 
 # Yet anther ugly hack (works due to code inside the main qmail port)
 yetanotherone-post-patch: qmail-mysql-post-patch
@@ -34,8 +40,7 @@ qmail-mysql-post-patch:
 			${WRKSRC}/Makefile
 
 # Local overrides
-MASTERDIR=	${PORTSDIR}/mail/qmail
-#MASTERDIR=	${.CURDIR}/../qmail
+MASTERDIR=	${QMAIL_PORT}
 PKGDIR_LOCAL=	${.CURDIR}
 COMMENT=	${PKGDIR_LOCAL}/pkg-comment
 DESCR=		${PKGDIR_LOCAL}/pkg-descr
