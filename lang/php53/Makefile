@@ -422,7 +422,7 @@ CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
 .endif
 
 .if defined(WITH_OPENSSL) || defined(WITH_OPENSSL_DEP)
-USE_OPENSSL=	yes
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
 CONFIGURE_ARGS+=--with-openssl-dir=${OPENSSLBASE}
 .endif
 
