@@ -1,0 +1,23 @@
+bin/gniffel
+share/gnome/apps/Games/gniffel.desktop
+share/gnome/help/gniffel/C/index.html
+share/gnome/help/gniffel/C/topic.dat
+share/gnome/help/gniffel/de/index.html
+share/gnome/help/gniffel/de/topic.dat
+share/gnome/pixmaps/gniffel/gnome-die-1.xpm
+share/gnome/pixmaps/gniffel/gnome-die-1_hilite.xpm
+share/gnome/pixmaps/gniffel/gnome-die-2.xpm
+share/gnome/pixmaps/gniffel/gnome-die-2_hilite.xpm
+share/gnome/pixmaps/gniffel/gnome-die-3.xpm
+share/gnome/pixmaps/gniffel/gnome-die-3_hilite.xpm
+share/gnome/pixmaps/gniffel/gnome-die-4.xpm
+share/gnome/pixmaps/gniffel/gnome-die-4_hilite.xpm
+share/gnome/pixmaps/gniffel/gnome-die-5.xpm
+share/gnome/pixmaps/gniffel/gnome-die-5_hilite.xpm
+share/gnome/pixmaps/gniffel/gnome-die-6.xpm
+share/gnome/pixmaps/gniffel/gnome-die-6_hilite.xpm
+share/gnome/pixmaps/gnome-gniffel.png
+@dirrm share/gnome/pixmaps/gniffel
+@dirrm share/gnome/help/gniffel/de
+@dirrm share/gnome/help/gniffel/C
+@dirrm share/gnome/help/gniffel
