@@ -14,6 +14,7 @@ MAINTAINER=	jos@catnook.com
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_PERL5=	yes
 
 MAN1=		htags.1 btreeop.1 gozilla.1 gtags.1 global.1 gctags.1
 
