@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gettext
-PORTVERSION=	0.11.1
-PORTREVISION=	3
+PORTVERSION=	0.11.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gettext
@@ -24,7 +23,8 @@ CONFIGURE_ARGS=	--with-libexpat-prefix=${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-PLIST_SUB=	LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
+PLIST_SUB=	LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} \
+		VERSION=${PORTVERSION}
 
 MAN1=		gettext.1 msgattrib.1 msgcat.1 msgcmp.1 msgcomm.1 \
 		msgconv.1 msgen.1 msgexec.1 msgfilter.1 msgfmt.1 \
