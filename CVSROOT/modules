@@ -3142,6 +3142,7 @@ jakarta-oro	ports/java/jakarta-oro
 jakarta-regexp	ports/java/jakarta-regexp
 jakarta-tomcat3	ports/www/jakarta-tomcat3
 jakarta-tomcat4	ports/www/jakarta-tomcat4
+jakarta-tomcat41	ports/www/jakarta-tomcat41
 jam		ports/devel/jam
 janosvm		ports/java/janosvm
 jargon		ports/misc/jargon
