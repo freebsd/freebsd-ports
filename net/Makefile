@@ -644,6 +644,7 @@
     SUBDIR += simicq
     SUBDIR += sing
     SUBDIR += sipcalc
+    SUBDIR += sipsak
     SUBDIR += slirp
     SUBDIR += slurm
     SUBDIR += smbfs
