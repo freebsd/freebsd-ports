@@ -1,0 +1,11 @@
+--- src/modules/rlm_ippool/Makefile.in.orig	Sat Feb 19 14:57:57 2005
++++ src/modules/rlm_ippool/Makefile.in	Sat Feb 19 14:58:28 2005
+@@ -9,7 +9,7 @@
+ include ../rules.mak
+ 
+ rlm_ippool_tool: rlm_ippool_tool.o
+-	$(LIBTOOL) --mode=link $(CC) $^ $(LIBS) $(RLM_LIBS) -o $@
++	$(LIBTOOL) --mode=link $(CC) $^ $(LDFLAGS) $(LIBS) $(RLM_LIBS) -o $@
+ 
+ rlm_ippool_tool.8: rlm_ippool_tool.pod
+ 	pod2man --release=" " --date="October 2nd, 2003" --center="FreeRADIUS Daemon" --section=8 rlm_ippool_tool.pod > rlm_ippool_tool.8
