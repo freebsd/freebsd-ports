@@ -132,7 +132,8 @@ post-install:
 	@${SED} -e "s;%%PREFIX%%;${PREFIX};g" ${PWCHECK_SUB} \
 		${FILESDIR}/saslauthd.sh > ${PREFIX}/etc/rc.d/saslauthd.sh
 	@${CHMOD} 755 ${PREFIX}/etc/rc.d/saslauthd.sh
-	${INSTALL} -d -m 770 -o cyrus -g cyrus /var/state/saslauthd
+	${MKDIR} -m 770 /var/state/saslauthd
+	${CHOWN} cyrus:cyrus /var/state/saslauthd
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/html
