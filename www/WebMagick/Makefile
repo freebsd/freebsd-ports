@@ -4,7 +4,7 @@
 # Date created:                         20 May 1998
 # Whom:                                 ache
 #
-# $Id: Makefile,v 1.18 1998/05/14 08:23:24 vanilla Exp $
+# $Id: Makefile,v 1.1.1.1 1998/05/19 23:09:46 ache Exp $
 #
 
 DISTNAME=       WebMagick-1.44
@@ -21,8 +21,7 @@ CONFIGURE_ENV=  webmagick_cv_rootpath=${PREFIX}/www/data \
 		webmagick_cv_htimage="" \
 		webmagick_cv_maptype=ncsa
 
-RUN_DEPENDS=    ${PREFIX}/lib/libMagick.a:${PORTSDIR}/graphics/ImageMagick \
-		${PREFIX}/lib/perl5/site_perl/i386-freebsd/auto/Image/Magick/Magick.so:${PORTSDIR}/graphics/p5-PerlMagick
+RUN_DEPENDS=    ${PREFIX}/lib/perl5/site_perl/i386-freebsd/auto/Image/Magick/Magick.so:${PORTSDIR}/graphics/p5-PerlMagick
 
 post-install:
 		cd ${WRKSRC}; \
