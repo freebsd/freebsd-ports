@@ -22,6 +22,7 @@ CFLAGS+=		-Wno-deprecated
 
 USE_AUTOMAKE_VER=15
 USE_LIBTOOL_VER=13
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 

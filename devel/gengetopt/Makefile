@@ -16,6 +16,7 @@ MAINTAINER=	cyrille.lefevre@laposte.net
 COMMENT=	A tool for generating a C function which parses command line arguments
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 
 MAN1=		gengetopt.1
