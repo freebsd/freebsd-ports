@@ -1,0 +1,4 @@
+This is a copy of malsync that produces a library instead
+of an executable. It is based on malsync 2.1.
+
+WWW: http://jasonday.home.att.net/code/libmal/

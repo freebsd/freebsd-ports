@@ -1,0 +1,11 @@
+--- /usr/ports/palm/libmal/work/libmal-0.20/Makefile.in	Sun Aug 25 06:43:59 2002
++++ Makefile.in	Wed Sep  4 15:25:19 2002
+@@ -132,6 +132,8 @@
+ 
+ LOBJS = $(MAL_SRC:.c=.lo)
+ 
++all : libmal.la
++
+ # Targets
+ libmal.la: $(LOBJS) libmal.h
+ 	$(LIBTOOL) $(CC) $(CFLAGS) -o $@ $(LOBJS) \
