@@ -187,7 +187,6 @@ post-patch:
 		${FILESDIR}/apache.sh > ${WRKDIR}/apache2.sh
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/apache2libs.sh > ${WRKDIR}/apache2libs.sh
-	@${CAT} ${FILESDIR}/config.layout >>${WRKSRC}/config.layout
 	@${RM} -f ${WRKSRC}/docs/manual/index.html.ko.euc-kr
 	@${REINPLACE_CMD} -e 's," PLATFORM ",FreeBSD,' \
 			${WRKSRC}/server/core.c
