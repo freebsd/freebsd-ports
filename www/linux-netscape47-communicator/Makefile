@@ -4,9 +4,10 @@
 # Whom:				girgen@partitur.se
 # Based on work by:		thepish
 #
-# $Id: Makefile,v 1.10 1999/07/01 23:36:19 sada Exp $
+# $Id: Makefile,v 1.11 1999/07/21 14:55:42 marcel Exp $
 #
 
+DISTNAME=	linux-netscape-${BROWSER}-${BROWSER_VER}
 MASTER_SITES?=	ftp://ftp.netscape.com/pub/communicator/english/4.61/unix/supported/linux20_libc5/complete_install/
 DISTFILES?=	communicator-v461-export.x86-unknown-linux2.0.tar.gz
 
@@ -16,7 +17,6 @@ RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulat
 
 WRKSRC=		${WRKDIR}/${BROWSER}-v461.x86-unknown-linux2.0
 
-BROWSER_VER=	linux-4.61
 MAILCAP=	${.CURDIR}/files/mailcap
 NSUBDIR?=	lib/netscape-linux
 
