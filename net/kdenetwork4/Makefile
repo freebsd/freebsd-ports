@@ -7,11 +7,11 @@
 
 PORTNAME=	kdenetwork
 PORTVERSION=	2.2
-CATEGORIES=	net news kde
+CATEGORIES?=	net news kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER?=	kde@FreeBSD.org
 
 LIB_DEPENDS=	uu.1:${PORTSDIR}/converters/uulib
 

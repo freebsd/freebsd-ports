@@ -7,11 +7,11 @@
 
 PORTNAME=	kdevelop
 PORTVERSION=	2.0
-CATEGORIES=	devel kde
+CATEGORIES?=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/2.2/src
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER?=	demon@FreeBSD.org
 
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
