@@ -1,5 +1,5 @@
 --- lips/gdevl4v.c.orig	Thu Nov  2 12:09:18 2000
-+++ lips/gdevl4v.c	Wed Dec 10 19:42:42 2003
++++ lips/gdevl4v.c	Tue Jan 13 01:30:38 2004
 @@ -230,41 +230,66 @@
  };
  
@@ -92,31 +92,63 @@
  private int lips4v_setlinewidth(gx_device_vector * vdev, floatp width);
  private int lips4v_setlinecap(gx_device_vector * vdev, gs_line_cap cap);
  private int lips4v_setlinejoin(gx_device_vector * vdev, gs_line_join join);
-@@ -758,10 +783,10 @@
+@@ -758,10 +783,26 @@
      /* 用紙サイズ */
      if (pdev->prev_paper_size != paper_size) {
  	if (paper_size == USER_SIZE) {
 -	    sprintf(paper, "%c80;%d;%dp", LIPS_CSI, width * 10, height * 10);
-+	    sprintf(paper, "%c80;%d;%dp", LIPS_CSI, height * 10, width * 10);
++	    /* modified by shige 06/27 2003
++	    sprintf(paper, "%c80;%d;%dp", LIPS_CSI, width * 10, height * 10); */
++	    /* modified by shige 11/09 2003
++	    sprintf(paper, "%c80;%d;%dp", LIPS_CSI, height * 10, width * 10); */
++	    sprintf(paper, "%c80;%d;%dp", LIPS_CSI, 
++		    (height * 10 > LIPS_HEIGHT_MAX_720)? 
++		    LIPS_HEIGHT_MAX_720 : (height * 10),
++		    (width * 10 > LIPS_WIDTH_MAX_720)? 
++		    LIPS_WIDTH_MAX_720 : (width * 10));
  	    lputs(s, paper);
  	} else if (paper_size == USER_SIZE + LANDSCAPE) {
 -	    sprintf(paper, "%c81;%d;%dp", LIPS_CSI, height * 10, width * 10);
-+	    sprintf(paper, "%c81;%d;%dp", LIPS_CSI, width * 10, height * 10);
++	    /* modified by shige 06/27 2003
++	    sprintf(paper, "%c81;%d;%dp", LIPS_CSI, height * 10, width * 10); */
++	    /* modified by shige 11/09 2003
++	    sprintf(paper, "%c81;%d;%dp", LIPS_CSI, width * 10, height * 10); */
++	    sprintf(paper, "%c80;%d;%dp", LIPS_CSI, 
++		    (width * 10 > LIPS_HEIGHT_MAX_720)? 
++		    LIPS_HEIGHT_MAX_720 : (width * 10),
++		    (height * 10 > LIPS_WIDTH_MAX_720)? 
++		    LIPS_WIDTH_MAX_720 : (height * 10));
  	    lputs(s, paper);
  	} else {
  	    sprintf(paper, "%c%dp", LIPS_CSI, paper_size);
-@@ -770,12 +795,12 @@
+@@ -770,12 +811,28 @@
      } else if (paper_size == USER_SIZE) {
  	if (pdev->prev_paper_width != width ||
  	    pdev->prev_paper_height != height)
 -		sprintf(paper, "%c80;%d;%dp", LIPS_CSI, width * 10, height * 10);
-+		sprintf(paper, "%c80;%d;%dp", LIPS_CSI, height * 10, width * 10);
++	  	/* modified by shige 06/27 2003
++		sprintf(paper, "%c80;%d;%dp", LIPS_CSI, width * 10, height * 10); */
++		/* modified by shige 11/09 2003
++		sprintf(paper, "%c80;%d;%dp", LIPS_CSI, height * 10, width * 10); */
++		sprintf(paper, "%c80;%d;%dp", LIPS_CSI, 
++		    (height * 10 > LIPS_HEIGHT_MAX_720)? 
++		    LIPS_HEIGHT_MAX_720 : (height * 10),
++		    (width * 10 > LIPS_WIDTH_MAX_720)? 
++		    LIPS_WIDTH_MAX_720 : (width * 10));
  	lputs(s, paper);
      } else if (paper_size == USER_SIZE + LANDSCAPE) {
  	if (pdev->prev_paper_width != width ||
  	    pdev->prev_paper_height != height)
 -		sprintf(paper, "%c81;%d;%dp", LIPS_CSI, height * 10, width * 10);
-+		sprintf(paper, "%c81;%d;%dp", LIPS_CSI, width * 10, height * 10);
++		/* modified by shige 06/27 2003
++		sprintf(paper, "%c81;%d;%dp", LIPS_CSI, height * 10, width * 10); */
++	  	/* modified by shige 11/09 2003
++		sprintf(paper, "%c81;%d;%dp", LIPS_CSI, width * 10, height * 10); */
++		sprintf(paper, "%c80;%d;%dp", LIPS_CSI, 
++		    (width * 10 > LIPS_HEIGHT_MAX_720)? 
++		    LIPS_HEIGHT_MAX_720 : (width * 10),
++		    (height * 10 > LIPS_WIDTH_MAX_720)? 
++		    LIPS_WIDTH_MAX_720 : (height * 10));
  	lputs(s, paper);
      }
      pdev->prev_paper_size = paper_size;
