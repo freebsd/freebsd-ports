@@ -82,6 +82,7 @@
 %%SITE_PERL%%/SPOPS/Utility.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SPOPS/.packlist
 %%PORTDOCS%%%%EXAMPLESDIR%%/My/Common.pm
+%%PORTDOCS%%%%EXAMPLESDIR%%/My/CommonResources.pm
 %%PORTDOCS%%%%EXAMPLESDIR%%/My/Doodad.pm
 %%PORTDOCS%%%%EXAMPLESDIR%%/My/Group.pm
 %%PORTDOCS%%%%EXAMPLESDIR%%/My/LDAPConnect.pm
