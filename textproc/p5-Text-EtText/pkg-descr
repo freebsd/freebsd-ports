@@ -1,0 +1,8 @@
+EtText is a simple plain-text to HTML convertor.  It provides an 
+easy-to-edit, easy-to-read and intuitive way to write HTML.
+
+EtText markup is simple and effective; it is very similar to 
+WikiWikiWeb TextFormattingRules or Zope's StructuredText.
+It tries to be XHTML conformant in its generated code.
+
+WWW:	http://ettext.taint.org/

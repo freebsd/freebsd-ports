@@ -171,6 +171,7 @@
     SUBDIR += p5-Text-CSV
     SUBDIR += p5-Text-CSV_XS
     SUBDIR += p5-Text-DoubleMetaphone
+    SUBDIR += p5-Text-EtText
     SUBDIR += p5-Text-FillIn
     SUBDIR += p5-Text-Filter
     SUBDIR += p5-Text-Filter-Chain
