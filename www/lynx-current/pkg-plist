@@ -111,6 +111,7 @@ share/lynx_help/lynx_help_main.html
 share/lynx_help/lynx_url_support.html
 @dirrm share/doc/lynx/samples
 @dirrm share/doc/lynx/test
+@dirrm share/doc/lynx/docs
 @dirrm share/doc/lynx
 @dirrm share/lynx_help/keystrokes
 @dirrm share/lynx_help
