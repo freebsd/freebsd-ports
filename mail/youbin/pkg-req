@@ -7,7 +7,7 @@ case "$2" in
 	echo '*  It is discouraged to use this program to avoid any security       *'
 	echo '*  problem.                                                          *'
 	echo '**********************************************************************'
-	if [ ! -z "${PACKAGE_BUILDING}" || ! -z "${BATCH}" ]; then
+	if [ ! -z "${PACKAGE_BUILDING}" -o ! -z "${BATCH}" ]; then
 	   exit 0
 	fi
 	read -p 'Would you like to proceed (y/n)? ' ans
