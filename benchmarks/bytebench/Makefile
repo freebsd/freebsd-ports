@@ -8,7 +8,7 @@
 PORTNAME=	bytebench
 PORTVERSION=	3.1
 CATEGORIES=	benchmarks
-MASTER_SITES	ftp://ftp.inria.fr/system/benchmark/
+MASTER_SITES=	ftp://ftp.inria.fr/system/benchmark/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	se@FreeBSD.org
