@@ -7,6 +7,7 @@
 
 PORTNAME=	ethereal
 PORTVERSION=	0.10.0a
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.ethereal.com/pub/ethereal/%SUBDIR%/ \
 		ftp://gd.tuwien.ac.at/infosys/security/ethereal/%SUBDIR%/ \
@@ -55,6 +56,13 @@ CONFIGURE_ARGS+=	--with-ssl=/usr
 .endif
 .else
 CONFIGURE_ARGS+=	--enable-snmp=no --without-ucdsnmp --without-net-snmp
+.endif
+
+.if defined(WITH_ADNS) || (!defined(WITHOUT_ADNS) && exists(${LOCALBASE}/lib/adns.so))
+LIB_DEPENDS+=	adns.1:${PORTSDIR}/dns/adns
+CONFIGURE_ARGS+=	--with-adns=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--without-adns
 .endif
 
 MAN1+=		editcap.1 idl2eth.1 mergecap.1 tethereal.1 text2pcap.1
