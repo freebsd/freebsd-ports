@@ -90,7 +90,7 @@ IS_INTERACTIVE=	yes	# configure script asks questions
 pre-configure:
 	@${MKDIR} ${SCRIPTDIR}
 .if defined(BUILD_XDIST)
-	@${CP} ${MASTERDIR}/scripts/configure.build_xdist ${SCRIPTDIR}
+	@${CP} ${MASTERDIR}/scripts/configure.build_xdist ${SCRIPTDIR}/configure
 .else
 	@${CP} ${MASTERDIR}/scripts/configure ${SCRIPTDIR}
 .endif
