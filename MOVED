@@ -341,3 +341,17 @@ misc/p5-DataCash||2003-05-20|No longer available
 net/p5-Net-BGP4|net/p5-Net-BGP|2003-05-21|module was renamed
 x11-wm/kde-icontheme-crystal||2003-05-22|Included in kdelibs
 devel/p5-File-Tools||2003-05-22|Newer version included into Perl distribution
+x11-servers/XttXF98srv-EGC||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
+x11-servers/XttXF98srv-GA968||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
+x11-servers/XttXF98srv-GANBWAP||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
+x11-servers/XttXF98srv-MGA||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
+x11-servers/XttXF98srv-NEC480||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
+x11-servers/XttXF98srv-NECS3||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
+x11-servers/XttXF98srv-NKVNEC||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
+x11-servers/XttXF98srv-PWLB||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
+x11-servers/XttXF98srv-PWSKB||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
+x11-servers/XttXF98srv-SVGA||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
+x11-servers/XttXF98srv-TGUI||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
+x11-servers/XttXF98srv-WABEP||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
+x11-servers/XttXF98srv-WABS||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
+x11-servers/XttXF98srv-WSNA||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
