@@ -1,0 +1,15 @@
+       WARNING: This code is in alpha release. Expect the interface to
+       change
+
+SYNOPSIS       
+
+use Mail::Folder;
+
+DESCRIPTION       
+
+This base class, and it's subclasses provide an object- oriented interface
+to email folders independant of the underlying folder implementation.  There
+are currently two folder interfaces provided with this package:
+
+Mail::Folder::Emaul       
+Mail::Folder::Mbox
