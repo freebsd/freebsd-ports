@@ -455,6 +455,7 @@
     SUBDIR += tdetect
     SUBDIR += telnetx
     SUBDIR += telserv
+    SUBDIR += tethereal
     SUBDIR += thcrut
     SUBDIR += tightvnc
     SUBDIR += tik

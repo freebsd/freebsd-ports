@@ -1,5 +1,5 @@
 bin/editcap
-bin/ethereal
+%%ETHEREAL%%
 bin/idl2eth
 bin/mergecap
 bin/tethereal

@@ -6563,6 +6563,7 @@ termcap		src/share/termcap
 terminality	ports/devel/terminality
 test		src/bin/test
 tet		ports/misc/tet
+tethereal	ports/net/tethereal
 tetrinet	ports/games/tetrinet
 tetrinet-x	ports/games/tetrinet-x
 tex		ports/print/tex
