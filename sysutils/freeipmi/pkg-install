@@ -1,0 +1,27 @@
+#!/bin/sh
+
+conffiles="etc/fish/fish.scm etc/fish/sensors-conf.scm"
+rundir="/var/lib/freeipmi"
+logdir="/var/log/freeipmi"
+
+case "$2" in
+POST-INSTALL)
+	for file in $conffiles; do
+		[ -f "$PKG_PREFIX/$file" ] || \
+			cp "$PKG_PREFIX/$file-dist" "$PKG_PREFIX/$file"
+	done
+
+	mkdir -p "$rundir" "$logdir" && \
+		chmod 0700 "$rundir" "$logdir"
+	touch "$rundir/ipckey"
+	;;
+DEINSTALL)
+	for file in etc/fish/fish.scm etc/fish/sensors-conf.scm; do
+		cmp -s "$PKG_PREFIX/$file" "$PKG_PREFIX/$file-dist" && \
+			rm -f $PKG_PREFIX/$file
+	done
+
+	rm -f "$rundir/ipckey"
+	rmdir "$rundir" "$logdir" 2>/dev/null || :
+	;;
+esac
