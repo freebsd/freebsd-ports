@@ -1,13 +1,13 @@
 # New ports collection makefile for:	gnomecore
-# Version required:			1.0.5
+# Version required:			1.0.9
 # Date created:				17 March 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.23 1999/05/09 17:04:51 steve Exp $
+# $Id: Makefile,v 1.24 1999/05/30 04:00:31 steve Exp $
 #
 
-DISTNAME=	gnome-core-1.0.5
-PKGNAME=	gnomecore-1.0.5
+DISTNAME=	gnome-core-1.0.9
+PKGNAME=	gnomecore-1.0.9
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-core
@@ -16,7 +16,7 @@ MAINTAINER=	nacai@iname.com
 
 RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/startup.wav:${PORTSDIR}/audio/gnomeaudio
 LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop \
-		gnomeprint.0:${PORTSDIR}/print/gnomeprint \
+		gnomeprint.1:${PORTSDIR}/print/gnomeprint \
 		ghttp.1:${PORTSDIR}/www/libghttp
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
