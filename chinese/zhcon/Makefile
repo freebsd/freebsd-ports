@@ -7,16 +7,16 @@
 
 PORTNAME=	zhcon
 PORTVERSION=	0.14f
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	chinese
 MASTER_SITES=	http://freebsd.sinica.edu.tw/~statue/ \
 		ftp://ftp.gnuchina.org/pub/linux/chinese/inputmethod/console/zhcon/BSDPort/ \
 		http://www.cis.nctu.edu.tw/~gis89501/zhcon/
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} zhb5-ime-1.tgz
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} zhb5-ime-2.tgz
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 MAN1=		zhcon.1
@@ -49,14 +49,12 @@ post-patch:
 
 post-build:
 .if defined(WITH_BIG5)
-.for file in make.sh make-mb.sh
-	@cd ${WRKDIR}/zh-big5-ime; ${SH} ${file}
-.endfor
+	@cd ${WRKDIR}/zh-big5-ime; ${SETENV} BATCH=yes ./configure; make all
 .endif
 
 post-install:
 .if defined(WITH_BIG5)
-.for file in big5-ary30.mb big5-cj.mb big5-liu5.mb big5-phone.mb
+.for file in big5-*.mb
 	@${INSTALL_DATA} ${WRKDIR}/zh-big5-ime/mb/${file} ${PREFIX}/lib/zhcon
 .endfor
 	@${INSTALL_DATA} ${WRKDIR}/zh-big5-ime/zhcon.cfg.big5 ${PREFIX}/lib/zhcon/zhcon.cfg

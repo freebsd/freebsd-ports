@@ -4,6 +4,9 @@ lib/zhcon/big516
 %%BIG5IME%%lib/zhcon/big5-ary30.mb
 %%BIG5IME%%lib/zhcon/big5-cj.mb
 %%BIG5IME%%lib/zhcon/big5-liu5.mb
+%%BIG5IME%%lib/zhcon/big5-phone-et.mb
+%%BIG5IME%%lib/zhcon/big5-phone-gy.mb
+%%BIG5IME%%lib/zhcon/big5-phone-ibm.mb
 %%BIG5IME%%lib/zhcon/big5-phone.mb
 lib/zhcon/cjf.mb
 lib/zhcon/cjj.mb
