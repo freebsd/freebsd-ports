@@ -3077,6 +3077,7 @@ kronolith	ports/deskutils/kronolith
 krubik		ports/games/krubik
 ksamba		ports/net/ksamba
 kseg		ports/math/kseg
+ksetispy	ports/astro/ksetispy
 ksetiwatch	ports/astro/ksetiwatch
 ksh93		ports/shells/ksh93
 ksmp3play	ports/audio/ksmp3play
