@@ -155,6 +155,7 @@ Mmsaic			ports/www/Mosaic	Do not sell.  Do not distribute
 mmosaic			ports/www/mmosaic	Do not sell (per NCSA).  Do not
 						distribute binary (GPL/BSD
 						conflict).
+mplayer			ports/graphics/mplayer	Restricted binary distribution
 msql-*			ports/databases/msql	Not free for commercial org.
 mupad/*			ports/math/mupad	unsure to sell for profit
 mypaedia		ports/japanese/mypaedia-fpw The original dictionary is not free
