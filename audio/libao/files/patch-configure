@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- configure.orig	Fri Jul 19 16:16:55 2002
-+++ configure	Fri Aug 23 16:47:25 2002
-@@ -5386,6 +5386,7 @@
+--- configure.orig	Sun Oct  5 03:32:52 2003
++++ configure	Wed Oct  8 16:17:26 2003
+@@ -7787,6 +7787,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -11,25 +11,61 @@ $FreeBSD$
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -5412,7 +5413,7 @@
-                 PROFILE="-v -xpg -g -xO4 -fast -native -fsimple -xcg92 -Dsuncc" ;;
+@@ -7816,7 +7817,7 @@
          *)
+                 PLUGIN_LDFLAGS="-export-dynamic -avoid-version"
                  DEBUG="-g"
 -                CFLAGS="-O"
 +                CFLAGS=""
                  PROFILE="-g -p" ;;
          esac
  else
-@@ -5432,9 +5433,9 @@
-                 CFLAGS="-O20 -D__NO_MATH_INLINES -fsigned-char $SILLY_CARBON_PATH"
-                 PROFILE="-O20 -g -pg -D__NO_MATH_INLINES -fsigned-char $SILLY_CARBON_PATH" ;;
+@@ -7839,9 +7840,9 @@
+                 PROFILE="-g -pg -D__NO_MATH_INLINES -fsigned-char -Ddlsym=dlsym_auto_underscore" ;;
          *)
+                 PLUGIN_LDFLAGS="-export-dynamic -avoid-version"
 -                DEBUG="-g -Wall -D__NO_MATH_INLINES -fsigned-char"
 -                CFLAGS="-O20 -D__NO_MATH_INLINES -fsigned-char"
 -                PROFILE="-O20 -g -pg -D__NO_MATH_INLINES -fsigned-char" ;;
-+                DEBUG="-g -Wall"
-+                CFLAGS=""
-+                PROFILE="-g -pg" ;;
++                DEBUG="-g -Wall -fsigned-char"
++                CFLAGS="-fsigned-char"
++                PROFILE="-g -pg -fsigned-char" ;;
          esac
  fi
  CFLAGS="$CFLAGS $cflags_save"
+@@ -9348,6 +9349,8 @@
+   rm -f conf.esdtest
+ 
+ 
++fi
++
+ 
+ if test "x$have_esd" = xyes; then
+   HAVE_ESD_TRUE=
+@@ -9357,8 +9360,6 @@
+   HAVE_ESD_FALSE=
+ fi
+ 
+-fi
+-
+ 
+ 
+ 
+@@ -12128,7 +12129,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-laudio -lXau $X_LIBS $LIBS"
++LIBS="-laudio -lXau -lXt -lm $X_LIBS $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -12337,7 +12338,7 @@
+ 
+ if test "x$have_nas" = xyes; then
+ 	NAS_CFLAGS="$X_CFLAGS"
+-	NAS_LIBS="-laudio -lXau $X_LIBS"
++	NAS_LIBS="-laudio -lXau -lXt -lm $X_LIBS"
+ else
+ 	NAS_CFLAGS=""
+ 	NAS_LIBS=""
