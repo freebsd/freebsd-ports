@@ -1,0 +1,16 @@
+<IfModule mod_pcgi2.c>
+    PCGI_NAME Zope
+    PCGI_MODULE_PATH %%ZOPEBASEDIR%%/lib/python/Zope
+    PCGI_PUBLISHER %%ZOPEBASEDIR%%/pcgi/pcgi_publisher.py
+    PCGI_EXE %%PYTHON_CMD%%
+    PCGI_SOCKET_FILE %%ZOPEBASEDIR%%/var/pcgi.soc
+    PCGI_PID_FILE %%ZOPEBASEDIR%%/var/pcgi.pid
+    PCGI_ERROR_LOG %%ZOPEBASEDIR%%/var/pcgi.log
+    PCGI_DISPLAY_ERRORS 1
+
+    <Location /zope>
+        SetHandler pcgi-handler
+        PCGI_ROOT /
+        PCGI_SetEnv SiteRootPATH /
+    </Location>
+</IfModule>

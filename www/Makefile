@@ -179,6 +179,7 @@
     SUBDIR += mod_mp3
     SUBDIR += mod_mylo
     SUBDIR += mod_mysqluserdir
+    SUBDIR += mod_pcgi2
     SUBDIR += mod_perl
     SUBDIR += mod_php3
     SUBDIR += mod_php4

@@ -1,0 +1,4 @@
+etc/%%APACHEVER%%/mod_pcgi2.conf
+libexec/%%APACHEVER%%/mod_pcgi2.so
+@exec %%APXS%% -e -a -n pcgi2 %D/%f
+@unexec %%APXS%% -e -A -n pcgi2 %D/%f

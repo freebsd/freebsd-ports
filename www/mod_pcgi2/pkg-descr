@@ -1,0 +1,5 @@
+The mod_pcgi2 is a module for Apache to handle Persistent CGI
+protocol which is supported by Zope to circumvent some of the
+process launch overhead.
+
+WWW: http://www.zope.org/Members/phd/mod_pcgi2/
