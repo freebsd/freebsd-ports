@@ -10,7 +10,9 @@
 %%RUBY_SITELIBDIR%%/rexml/namespace.rb
 %%RUBY_SITELIBDIR%%/rexml/node.rb
 %%RUBY_SITELIBDIR%%/rexml/parent.rb
+%%RUBY_SITELIBDIR%%/rexml/rexml.rb
 %%RUBY_SITELIBDIR%%/rexml/source.rb
+%%RUBY_SITELIBDIR%%/rexml/streamlistener.rb
 %%RUBY_SITELIBDIR%%/rexml/text.rb
 %%RUBY_SITELIBDIR%%/rexml/xmldecl.rb
 %%RUBY_SITELIBDIR%%/rexml/xpath.rb
@@ -65,6 +67,8 @@
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/api/rexml/Source.xml
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/api/rexml/SourceFactory.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/api/rexml/SourceFactory.xml
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/api/rexml/StreamListener.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/api/rexml/StreamListener.xml
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/api/rexml/Text.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/api/rexml/Text.xml
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/api/rexml/XMLDecl.html
