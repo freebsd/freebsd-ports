@@ -1,0 +1,11 @@
+Fakeroot runs a command in an environment were it appears to have
+root privileges for file manipulation, by setting LD_PRELOAD to a
+library with alternative versions of getuid(), stat(), etc. This
+is useful for allowing users to create archives (tar, ar, .deb .rpm
+etc.) with files in them with root permissions/ownership. Without
+fakeroot one would have to have root privileges to create the
+constituent files of the archives with the correct permissions and
+ownership, and then pack them up, or one would have to construct
+the archives directly, without using the archiver.
+
+WWW: http://freshmeat.net/projects/fakeroot

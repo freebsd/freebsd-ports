@@ -1,0 +1,6 @@
+bin/faked
+bin/fakeroot
+lib/libfakeroot.la
+lib/libfakeroot.so.0
+lib/libfakeroot.so
+lib/libfakeroot.a
