@@ -46,7 +46,7 @@ share/applnk/Settings/Information/kcmdf.desktop
 %%ALPHA_NA%%share/applnk/Settings/PowerControl/battery.desktop
 %%ALPHA_NA%%share/applnk/Settings/PowerControl/bwarning.desktop
 %%ALPHA_NA%%share/applnk/Settings/PowerControl/cwarning.desktop
-%%ALPHA_NA%share/applnk/Settings/PowerControl/power.desktop
+%%ALPHA_NA%%share/applnk/Settings/PowerControl/power.desktop
 share/applnk/System/kdf.desktop
 share/applnk/System/kwikdisk.desktop
 share/applnk/Utilities/KCharSelect.desktop
