@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	3.4.0
+PORTVERSION=	3.4.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITES+=	http://people.freebsd.org/~joerg/:local
