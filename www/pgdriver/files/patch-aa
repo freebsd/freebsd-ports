@@ -1,0 +1,31 @@
+--- makefile--	Thu Mar  1 12:44:27 2001
++++ makefile	Thu Mar  1 12:46:38 2001
+@@ -33,15 +33,15 @@
+ #   package installed AOLserver and PostgreSQL
+ 
+ # Location of the PostgreSQL libraries
+-#PGLIB=/usr/local/pgsql/lib
++PGLIB=/usr/local/pgsql/lib
+ 
+ # Location of the PostgreSQL includes
+-#PGINC=/usr/local/pgsql/include
++PGINC=/usr/local/pgsql/include
+ 
+ # Location of the AOLserver files (normally the ~nsadmin directory):
+ #NSHOME=/opt/aolserver
+ # Alternate location for AOLserver
+-#NSHOME=/usr/local/AOLserver
++NSHOME=/usr/local/aolserver
+ 
+ CC=gcc
+ COPTS=-Wall -fpic -shared -I/usr/local/pgsql/include -I/home/nsadmin/include -I-/usr/include
+@@ -82,8 +82,8 @@
+ # FreeBSD 3
+ # The make install target isn't what you want---just copy postgres.so to
+ # /usr/local/libexec/aolserver
+-#COPTS=-g -Wall -fpic -pthread -D_THREAD_SAFE -I/usr/local/include/aolserver -I/usr/local/pgsql/include
+-#LDFLAGS=-pthread -Wl,-E
++COPTS=-g -Wall -fpic -pthread -D_THREAD_SAFE -I${NSHOME}/include -I${PGINC}
++LDFLAGS=-pthread -Wl,-E
+ 
+ # You should not need to edit anything below this line.
