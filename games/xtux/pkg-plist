@@ -5,7 +5,6 @@ bin/tux_serv
 %%PORTDOCS%%share/doc/xtux/mapformat
 %%PORTDOCS%%share/doc/xtux/weapons
 %%PORTDOCS%%share/doc/xtux/README
-share/xtux/images/entities/arrow.xpm
 share/xtux/images/entities/borg.xpm
 share/xtux/images/entities/borg_die.xpm
 share/xtux/images/entities/bsd.xpm
@@ -19,7 +18,6 @@ share/xtux/images/entities/clippy.xpm
 share/xtux/images/entities/clippy_die.xpm
 share/xtux/images/entities/cobol.xpm
 share/xtux/images/entities/cobol_die.xpm
-share/xtux/images/entities/crate.xpm
 share/xtux/images/entities/duckboy.xpm
 share/xtux/images/entities/duckboy_die.xpm
 share/xtux/images/entities/duke.xpm
@@ -57,7 +55,6 @@ share/xtux/images/entities/zombie.xpm
 share/xtux/images/entities/zombie_die.xpm
 share/xtux/images/events/dodgy_door.xpm
 share/xtux/images/events/email.xpm
-share/xtux/images/events/foo.xpm
 share/xtux/images/events/information.xpm
 share/xtux/images/events/newspaper.xpm
 share/xtux/images/events/oldsteam.xpm
@@ -71,9 +68,6 @@ share/xtux/images/items/bitrot.xpm
 share/xtux/images/items/blind_glasses.xpm
 share/xtux/images/items/bullets.xpm
 share/xtux/images/items/can.xpm
-share/xtux/images/items/cloak.xpm
-share/xtux/images/items/cutlery.xpm
-share/xtux/images/items/cutlery1.xpm
 share/xtux/images/items/dewcan.xpm
 share/xtux/images/items/disk.xpm
 share/xtux/images/items/e.xpm
@@ -529,6 +523,7 @@ share/xtux/images/title.xpm
 share/xtux/images/tuxbat.xpm
 share/xtux/maps/ai_test.map
 share/xtux/maps/arctic.map
+share/xtux/maps/bug.map
 share/xtux/maps/desktop.map
 share/xtux/maps/end.map
 share/xtux/maps/geekusa.map
