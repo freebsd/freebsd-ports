@@ -1656,6 +1656,7 @@ getNAME		src/libexec/getNAME
 geta		ports/net/geta
 getbdf		ports/x11-fonts/getbdf
 getconf		src/usr.bin/getconf
+getextattr	src/usr.sbin/getextattr
 getfacl		src/bin/getfacl
 getmail		ports/mail/getmail
 getopt		src/usr.bin/getopt
@@ -5858,6 +5859,7 @@ seqio		ports/biology/seqio
 serialmail	ports/mail/serialmail
 service-config	ports/sysutils/service-config
 setcdboot	ports/sysutils/setcdboot
+setextattr	src/usr.sbin/setextattr
 setfacl		src/bin/setfacl
 seti_applet	ports/astro/seti_applet
 setiathome	ports/astro/setiathome
