@@ -1,0 +1,7 @@
+GSFV is a graphical interface written in GTK+ for manipulating .sfv 
+(Simple File Verification) files. 
+
+The Simple File Verification (SFV) system is a file integrity verification
+system which is popular on some platforms.  A software package may be
+accompanied by an SFV file (usually with extension .sfv) which contains
+CRC-32 checksums for all the files that comprise the package.
