@@ -6,24 +6,22 @@
 #
 
 PORTNAME=	seaview
-PORTVERSION=	2003.11.25
+PORTVERSION=	2004.03.16
 CATEGORIES=	biology
 MASTER_SITES=	ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/seaview/
 DISTNAME=	${PORTNAME}
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	Multiple DNA/protein sequence alignment editor
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
-BROKEN=		Checksum mismatch
-
 USE_X_PREFIX=	yes
 NO_WRKSUBDIR=	yes
-EXTRACT_CMD=		${TAR}
-EXTRACT_BEFORE_ARGS=	-xf
-EXTRACT_AFTER_ARGS=	# empty
+EXTRACT_CMD=		${CAT}
+EXTRACT_BEFORE_ARGS=	#
 ALL_TARGET=	${PORTNAME}
 
 CFLAGS+=	-D HAVE_DIRENT_H \
