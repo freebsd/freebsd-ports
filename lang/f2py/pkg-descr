@@ -1,0 +1,9 @@
+Writing Python C/API wrappers for Fortran routines can be a very tedious task,
+especially if a Fortran routine takes more than 20 arguments but only few of
+them are relevant for the problems that they solve. So, I have developed a
+tool that generates the C/API modules containing wrapper functions of Fortran
+routines. I call this tool as F2PY - Fortran to Python Interface Generator.
+It is completely written in Python language and can be called from the command
+line as f2py.
+
+WWW: http://cens.ioc.ee/projects/f2py2e/
