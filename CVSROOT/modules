@@ -4411,6 +4411,7 @@ konverse	ports/net/konverse
 konwert		ports/converters/konwert
 kooka		ports/graphics/kooka
 korelib		ports/devel/korelib
+koth		ports/games/koth
 kover		ports/print/kover
 kp		ports/misc/kp
 kpacman		ports/games/kpacman
