@@ -193,6 +193,7 @@
     SUBDIR += jabber
     SUBDIR += jabber-aim
     SUBDIR += jabber-conference
+    SUBDIR += jabber-jud
     SUBDIR += jags
     SUBDIR += javadc
     SUBDIR += jift
