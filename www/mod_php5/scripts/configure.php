@@ -53,6 +53,7 @@ sockets		"sockets support" OFF \
 sysvsem		"System V semaphore support" OFF \
 sysvshm		"System V shared memory support" OFF \
 transsid	"Transparent session id" OFF \
+yaz		"YAZ support (ANSI/NISO Z39.50)" OFF \
 2> $tempfile
 
 	retval=$?
@@ -296,6 +297,10 @@ EOF
 			;;
 		\"transsid\")
 			echo "CONFIGURE_ARGS+=--enable-trans-sid"
+			;;
+		\"yaz\")
+			echo "LIB_DEPENDS+=	yaz.1:\${PORTSDIR}/net/yaz"
+			echo "CONFIGURE_ARGS+=--with-yaz=\${LOCALBASE}/bin"
 			;;
 		*)
 			echo "Invalid option(s): $*" > /dev/stderr
