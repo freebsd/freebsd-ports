@@ -9,8 +9,8 @@ PORTNAME=	consolehm
 PORTVERSION=	1.31
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://muir.yi.org/pub/consolehm/ \
-		http://www.es.co.nz/~mmuir/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	fenner
 
 MAINTAINER=	mmuir@cwnet.com
 
