@@ -1,0 +1,11 @@
+--- src/Makefile.old	Thu Sep  2 21:48:00 2004
++++ src/Makefile	Thu Sep  2 21:48:10 2004
+@@ -44,7 +44,7 @@
+ 	ocamlfind ocamlmktop -package netstring,ulex,camlp4 -syntax camlp4o -I +camlp4 -linkpkg -o yaxi.top yaxi.cma
+ 
+ yaxi.ml: yaxi.ml.in
+-	sed -e s/COMPDATE/"$(shell date -R)"/ yaxi.ml.in > yaxi.ml.in.tmp
++	sed -e s/COMPDATE/"$(shell date)"/ yaxi.ml.in > yaxi.ml.in.tmp
+ 	sed -e s/VERSION/${VERSION}/ yaxi.ml.in.tmp > yaxi.ml
+ 	@rm -f yaxi.ml.in.tmp
+ 

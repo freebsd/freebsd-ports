@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	yaxi
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.3
 CATEGORIES=	textproc
 MASTER_SITES=	http://mattam.ath.cx/progs/yaxi/releases/
 PKGNAMEPREFIX=	ocaml-
@@ -35,11 +35,12 @@ PKGDEINSTALL=	${PKGINSTALL}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
+pre-install:
+	${MKDIR} ${PREFIX}/lib/ocaml/site-lib
 
 post-install:
+	@${SETENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGDIR}/pkg-install ${PKGNAME} POST-INSTALL
 	@${FIND} ${PREFIX}/lib/ocaml/site-lib/${PORTNAME} -type f | \
 		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm lib/ocaml/site-lib/${PORTNAME}" >> ${TMPPLIST}
