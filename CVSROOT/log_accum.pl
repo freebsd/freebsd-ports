@@ -49,6 +49,11 @@ $MAILCMD = "/usr/local/bin/mailsend -H";
 $MAILADDRS = 'cvs-committers@FreeBSD.org cvs-all@FreeBSD.org';
 
 
+# Extra banner to add to top of commit messages.
+# i.e. $MAILBANNER = "Project X CVS Repository";
+$MAILBANNER = "";
+
+
 #-------------------------------------------------------
 # FreeBSD site localisation
 # Remember to comment out if using for other purposes.
@@ -61,6 +66,7 @@ if (hostname() =~ /^(freefall|internat)\.freebsd\.org$/i) {
     } else {
 	$crypto = 1;
 	$meister = 'markm@FreeBSD.org';
+	$MAILBANNER = "FreeBSD International Crypto Repository";
     }
 }
 if ($debug && $freebsd) {
@@ -302,6 +308,13 @@ sub build_header {
     $datestr = `/bin/date +"%Y/%m/%d %H:%M:%S %Z"`;
     chop($datestr);
     $header = sprintf("%-8s    %s", $login, $datestr);
+
+    my @text;
+    push @text, $header;
+    push @text, "";
+    push @text, "$MAILBANNER\n" if $MAILBANNER;
+
+    return @text;
 }
 
 # !!! Mailing-list and commitlog history file mappings here !!!
@@ -512,14 +525,8 @@ if ($debug) {
 # single item in the argument list, and an empty log message.
 #
 if ($ARGV[0] =~ /New directory/) {
-    $header = &build_header();
-    @text = ();
-    push(@text, $header);
-    push(@text, "");
-    if ($freebsd and $crypto) {
-	push(@text, "FreeBSD International Crypto Repository");
-	push(@text, "");
-    }
+    @text = &build_header();
+
     push(@text, "  ".$ARGV[0]);
     &do_changes_file(@text);
     #&mail_notification(@text);
@@ -532,15 +539,7 @@ if ($ARGV[0] =~ /New directory/) {
 # single item in the argument list, and a log message.
 #
 if ($ARGV[0] =~ /Imported sources/) {
-    $header = &build_header();
-
-    @text = ();
-    push(@text, $header);
-    push(@text, "");
-    if ($freebsd and $crypto) {
-	push(@text, "FreeBSD International Crypto Repository");
-	push(@text, "");
-    }
+    @text = &build_header();
 
     push(@text, "  ".$ARGV[0]);
     &do_changes_file(@text);
@@ -676,18 +675,11 @@ if (-e "$LAST_FILE.$id") {
 # into a single message, fire a copy off to the mailing list, and drop
 # it on the end of the Changes file.
 #
-$header = &build_header();
 
 #
 # Produce the final compilation of the log messages
 #
-@text = ();
-push(@text, $header);
-push(@text, "");
-if ($freebsd and $crypto) {
-    push(@text, "FreeBSD International Crypto Repository");
-    push(@text, "");
-}
+push @text, &build_header();
 for ($i = 0; ; $i++) {
     last if (! -e "$LOG_FILE.$i.$id");
     @lines = &read_logfile("$CHANGED_FILE.$i.$id", "");
