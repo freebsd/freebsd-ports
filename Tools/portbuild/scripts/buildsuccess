@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# buildsuccess <arch> <branch> <pkgname>
+
+# configurable variables
+pb=/var/portbuild
+arch=$1
+shift
+
+. ${pb}/${arch}/portbuild.conf
+. ${pb}/scripts/buildenv
+
+branch=$1
+pkgname=$2
+shift 2
+
+buildenv ${pb} ${arch} ${branch}
+
+# Don't pick up installed packages from the host
+export LOCALBASE=/nonexistentlocal
+export X11BASE=/nonexistentx
+
+index=${PORTSDIR}/${INDEXFILE}
+
+portloc=$(grep "^$pkgname|" ${index} | cut -f 2 -d \| | sed s,/usr/ports/,,)
+
+cd ${pb}/${arch}/${branch}
+grep -v "^${portloc}|" failure > failure.new
+mv failure.new failure
+
+grep -v "^${portloc}|" newfailure > newfailure.new
+mv newfailure.new newfailure
