@@ -12,7 +12,7 @@ CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	anders@hack.org
+MAINTAINER=	ports@freebsd.org
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 

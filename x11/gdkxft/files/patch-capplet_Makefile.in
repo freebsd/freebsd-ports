@@ -1,0 +1,13 @@
+--- capplet/Makefile.in.orig	Thu Apr  4 23:37:06 2002
++++ capplet/Makefile.in	Thu Apr  4 23:39:17 2002
+@@ -103,7 +103,8 @@
+ 
+ INCLUDES = \
+ 	-DDATADIR=\"$(datadir)\" -DSYSCONFDIR=\"$(sysconfdir)\" \
+-	$(GNOME_INCLUDEDIR) $(LIBGLADE_CFLAGS)
++	$(GNOME_INCLUDEDIR) $(LIBGLADE_CFLAGS) \
++	`gnome-config --cflags capplet`
+ 
+ 
+ LDADD = \
+
