@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.bitchx.org/pub/BitchX/source/ \
 DISTFILES=	ircii-pana-${PORTVERSION}-final${EXTRACT_SUFX}
 EXTRACT_ONLY=	ircii-pana-${PORTVERSION}-final${EXTRACT_SUFX}
 
-MAINTAINER?=	arved@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	"An alternative ircII color client with optional GTK/GNOME support"
 
 WRKSRC=		${WRKDIR}/BitchX
