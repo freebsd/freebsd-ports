@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	tdir
-PORTVERSION=	1.62
+PORTVERSION=	1.66
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.tundraware.com/Software/tdir/
 
