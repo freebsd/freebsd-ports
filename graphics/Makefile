@@ -217,6 +217,7 @@
     SUBDIR += vid
     SUBDIR += view3ds
     SUBDIR += whirlgif
+    SUBDIR += win32-codecs
     SUBDIR += wmgrabimage
     SUBDIR += wmicons
     SUBDIR += xanim
