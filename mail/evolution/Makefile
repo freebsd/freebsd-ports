@@ -65,6 +65,7 @@ PKGINSTALL=	${WRKDIR}/pkg-install
 post-patch:
 	@${FIND} ${WRKSRC} -type f -name "*.[ch]" | ${XARGS} ${GREP} -l '<db.h>' | \
 		${XARGS} ${REINPLACE_CMD} -e 's|<db.h>|<db3/db.h>|g'
+	@${REINPLACE_CMD} -e "s|-pthread|${PTHREAD_LIBS}|g" ${DB3_WRKSRC}/${DB3_CONFIGURE_SCRIPT}
 
 # DB3 stuff. Ugly, I know, but that's life.
 DB3_WRKSRC=	${WRKDIR}/db-3.1.17/build_unix
