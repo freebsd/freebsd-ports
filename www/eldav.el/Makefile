@@ -7,6 +7,7 @@
 
 PORTNAME=	eldav.el
 PORTVERSION=	1
+PORTREVISION=	1
 CATEGORIES=	www elisp
 MASTER_SITES=	http://www.gohome.org/eldav/
 DISTNAME=	eldav.el
