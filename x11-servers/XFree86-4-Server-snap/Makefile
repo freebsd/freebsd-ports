@@ -21,6 +21,8 @@ EXTRACT_ONLY=	XFree86-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XFree86-4 X server and related programs
 
+CONFLICTS=	xorg-server-*
+
 # Override default from XFree86-4-libraries/Makefile.inc
 PATCHDIR=		${MASTERDIR}/files
 
