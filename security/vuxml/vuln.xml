@@ -32,6 +32,36 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   "http://www.vuxml.org/dtd/vuxml-1/vuxml-10.dtd">
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
 
+  <vuln vid="3388eff9-5d6e-11d8-80e3-0020ed76ef5a">
+    <topic>Samba 3.0.x password initialization bug</topic>
+    <affects>
+      <package>
+	<name>samba</name>
+	<range><ge>3.0</ge><lt>3.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>From the Samba 3.0.2 release notes:</p>
+	<blockquote cite="http://www.samba.org/samba/whatsnew/samba-3.0.2.html">
+          <p>Security Announcement: It has been confirmed that
+          previous versions of Samba 3.0 are susceptible to a password
+          initialization bug that could grant an attacker unauthorized
+          access to a user account created by the mksmbpasswd.sh shell
+          script.</p>
+    	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.samba.org/samba/whatsnew/samba-3.0.2.html</url>
+      <cvename>CAN-2004-0082</cvename>
+    </references>
+    <dates>
+      <discovery>2004/02/09</discovery>
+      <entry>2004/02/12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="74a9541d-5d6c-11d8-80e3-0020ed76ef5a">
     <topic>clamav remote denial-of-service</topic>
     <affects>
