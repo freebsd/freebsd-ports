@@ -1,6 +1,8 @@
 @comment $FreeBSD$
 bin/rsync
-share/doc/rsync/README
-share/doc/rsync/COPYING
-share/doc/rsync/tech_report.tex
-@dirrm share/doc/rsync
+etc/rsyncd.conf.sample
+etc/rc.d/rsyncd.sh.sample
+%%PORTDOCS%%share/doc/rsync/README
+%%PORTDOCS%%share/doc/rsync/COPYING
+%%PORTDOCS%%share/doc/rsync/tech_report.tex
+%%PORTDOCS%%@dirrm share/doc/rsync

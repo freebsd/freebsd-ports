@@ -50,6 +50,10 @@ CONFIGURE_ARGS+=	--enable-ipv6
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
+.if ${OSVERSION} >= 500043
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-socket.c
+.endif
+
 MAN1=		rsync.1
 MAN5=		rsyncd.conf.5
 
@@ -68,6 +72,8 @@ pre-configure:
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/rsync
+	${INSTALL_DATA} ${FILESDIR}/rsyncd.conf.sample ${PREFIX}/etc/
+	${INSTALL_SCRIPT} ${FILESDIR}/rsyncd.sh.sample ${PREFIX}/etc/rc.d/
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README          ${DOCSDIR}
