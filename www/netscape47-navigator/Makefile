@@ -1,5 +1,4 @@
 # New ports collection makefile for: netscape (navigator only)
-# Version required:	4.7
 # Date created:		20 Sept 1998
 # Whom:			brett@peloton.physics.montana.edu
 #

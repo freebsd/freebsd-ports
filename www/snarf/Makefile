@@ -1,12 +1,12 @@
 # New ports collection makefile for:   snarf
-# Version required:    2.0.5
 # Date created:        2 January 1999
 # Whom:                Kris Kennaway <kris@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	snarf-2.0.5
+PORTNAME=	snarf
+PORTVERSION= 	2.0.5
 CATEGORIES=	www
 MASTER_SITES=	http://www.xach.com/snarf/
 

@@ -1,5 +1,4 @@
 # New ports collection makefile for: netscape (communicator suite)
-# Version required:     4.7*
 # Date created:		24 Feb 1997
 # Whom:			thepish
 #

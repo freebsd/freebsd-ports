@@ -1,15 +1,15 @@
 # New ports collection makefile for:    Hotjava
-# Version required:	3.0
 # Date created:		1999/07/03
 # Whom:			Jose Marques
 #
 # $FreeBSD$
 #
 
-DISTNAME=	hjb3_0-linux.sfx
-PKGNAME=	hotjava-3.0
+PORTNAME=	hotjava
+PORTVERSION= 	3.0
 CATEGORIES=	www java
 MASTER_SITES=
+DISTNAME=	hjb3_0-linux.sfx
 EXTRACT_SUFX=
 
 MAINTAINER=	noway@nohow.demon.co.uk

@@ -1,16 +1,16 @@
 # New ports collection makefile for:	p5-Apache-DBI
-# Version required:			0.87
 # Date created:				21 December 1999
 # Whom:					Igor Vinokurov <igor@zynaps.ru>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ApacheDBI-0.87
-PKGNAME=	p5-Apache-DBI-0.87
+PORTNAME=	p5-Apache-DBI
+PORTVERSION= 	0.87
 CATEGORIES=	www databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
+DISTNAME=	ApacheDBI-0.87
 
 MAINTAINER=	igor@zynaps.ru
 

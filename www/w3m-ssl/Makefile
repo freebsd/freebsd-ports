@@ -1,13 +1,13 @@
 # New ports collection makefile for:   w3m-ssl
-# Version required:            991028-2
 # Date Created:                12 Oct 1999
 # Whom:                        MANTANI Nobutaka <nobutaka@nobutaka.com>
 #
 # $FreeBSD$
 #
 
-PKGNAME=       w3m-ssl-${W3M_VER}
-CATEGORIES=    www ipv6
+PORTNAME=	w3m-ssl
+PORTVERSION= 	${W3m_VER}
+CATEGORIES=	www ipv6
 
 MASTERDIR=     ${.CURDIR}/../../www/w3m
 PKGDIR=        ${.CURDIR}/pkg

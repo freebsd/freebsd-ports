@@ -1,15 +1,15 @@
 # New ports collection makefile for:	libcgic
-# Version required:			1.06
 # Date created:				27 July 1999
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cgic106
-PKGNAME=	cgic-1.06
+PORTNAME=	cgic
+PORTVERSION= 	1.06
 CATEGORIES=	www
 MASTER_SITES=	http://www.boutell.com/cgic/
+DISTNAME=	${PORTNAME}106
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org

@@ -1,5 +1,4 @@
 # New ports collection makefile for:	junkbuster
-# Version required:	2.0
 # Date created:		2 May 1998
 # Whom:			Ian Struble <ian@broken.net>
 #
@@ -10,10 +9,11 @@
 # I have contacted the author about this though so we may see something new
 # in the next revision.
 
-DISTNAME=	ijb20
-PKGNAME=	junkbuster-2.0.2
+PORTNAME=	junkbuster
+PORTVERSION= 	2.0.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.junkbusters.com/ht/en/
+DISTNAME=	ijb20
 
 MAINTAINER=	ian@broken.net
 

@@ -1,15 +1,16 @@
 # New ports collection makefile for:	mod_dav (apache)
-# Version required:	0.9.14
 # Date created:		Sun Oct 17, 1999
 # Whom:			patrick@mindstep.com
 #
 # $FreeBSD$
 #
 
-DISTNAME=	mod_dav-${DAV_VERSION}-${APACHE_VERSION}
-PKGNAME=	mod_dav-${DAV_VERSION}
+PORTNAME=	mod_dav
+PORTVERSION= 	0.9.14	
+DISTNAME=	mod_dav-${PORTVERSION}-${APACHE_VERSION}
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/mod_dav/
+DISTNAME=	mod_dav-${PORTVERSION}-${APACHE_VERSION}
 
 MAINTAINER=	patrick@mindstep.com
 
@@ -18,7 +19,6 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 
 # This port will work with the following version of Apache and anything newer.
 APACHE_VERSION=	1.3.6
-DAV_VERSION=	0.9.14
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \

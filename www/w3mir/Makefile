@@ -1,12 +1,12 @@
 # New ports collection makefile for:    w3mir
-# Version required:                     1*
 # Date created:                         9 May 1998
 # Whom:                                 ache
 #
 # $FreeBSD$
 #
 
-DISTNAME=       w3mir-1.0.8
+PORTNAME=	w3mir
+PORTVERSION= 	1.0.8
 CATEGORIES=     www perl5
 MASTER_SITES=   http://www.math.uio.no/~janl/w3mir/
 

@@ -1,18 +1,18 @@
 # New ports collection makefile for:    linux-netscape4
-# Version required:     4.08
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
 # $FreeBSD$
 #
 
-DISTNAME=	communicator-v408-export.x86-unknown-linux2.0_libc5
-PKGNAME=	linux-netscape-4.08
+PORTNAME=	linux-netscape
+PORTVERSION= 	4.08
 CATEGORIES=	www linux
 MASTER_SITES=	ftp://ftp.netscape.com/pub/communicator/4.08/english/unix/supported/linux20/base_install/ \
 		ftp://sunsite.doc.ic.ac.uk/Mirrors/ftp.netscape.com/pub/communicator/4.08/english/unix/supported/linux20/base_install/ \
 		ftp://ftp.funet.fi/pub/mirrors/ftp.netscape.com/pub/communicator/4.08/english/unix/supported/linux20/base_install/ \
 		ftp://ftp.sunsite.auc.dk/disk4/mirrorsite.netscape.com/pub/communicator/4.08/english/unix/supported/linux20/base_install/
+DISTNAME=	communicator-v408-export.x86-unknown-linux2.0_libc5
 
 MAINTAINER=	tom@eborcom.com
 

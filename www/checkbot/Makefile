@@ -1,12 +1,12 @@
 # New ports collection makefile for:	checkbot
-# Version required:			1.57
 # Date created:				2. Feb 1998
 # Whom:	      				wosch@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	checkbot-1.57
+PORTNAME=	checkbot
+PORTVERSION= 	1.57
 CATEGORIES=	www perl5
 MASTER_SITES=	http://www.xs4all.nl/~graaff/checkbot/ \
 		http://www.de.freebsd.org/~wosch/src/

@@ -1,5 +1,4 @@
 # New ports collection makefile for:	netscape (navigator only)
-# Version required:     4.08
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #

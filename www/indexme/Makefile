@@ -1,16 +1,16 @@
 # New ports collection makefile for:	indexme
 # Date created:		30 Jan 2000
-# Version required:	0.1
 # Whom:			Carl Johan Madestrand
 #
 # $FreeBSD$
 #
 
-DISTNAME=	indexme
-PKGNAME=	indexme-0.1
+PORTNAME=	indexme
+PORTVERSION= 	0.1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ukug.uk.freebsd.org/pub/lord_cj/	\
 		http://kyb.homepage.com/perl/
+DISTNAME=	${PORTNAME}
 
 MAINTAINER=	calle.madestrand@norrgarden.se
 

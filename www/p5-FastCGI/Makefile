@@ -1,16 +1,16 @@
 # New ports collection makefile for:	p5-FastCGI
-# Version required:			0.48
 # Date created:				October 27th 1999
 # Whom:	      				Kelly Yancey <kbyanc@posi.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	FCGI-0.48
-PKGNAME=	p5-FastCGI-0.48
+PORTNAME=	p5-FastCGI
+PORTVERSION= 	0.48
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	FCGI
+DISTNAME=	FCGI-0.48
 
 MAINTAINER=	kbyanc@posi.net
 

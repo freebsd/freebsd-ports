@@ -1,16 +1,16 @@
 # New ports collection makefile for:	wwwstat
-# Version required:		2.01
 # Date created:			So   2 M-Aär 1997 18:10:49 MET$)B
 # Whom:				Andreas Klemm <andreas@klemm.gtn.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	wwwstat-2.0
-PKGNAME=	wwwstat-2.01
+PORTNAME=	wwwstat
+PORTVERSION= 	2.01
 CATEGORIES=	www
 MASTER_SITES=	ftp://www.ics.uci.edu/pub/websoft/wwwstat/ \
 		ftp://ftp.gwdg.de/pub/misc/www-stat/websoft/wwwstat/
+DISTNAME=	${PORTNAME}-2.0	
 
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	patch-2.01.txt

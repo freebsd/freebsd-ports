@@ -1,12 +1,12 @@
 # New ports collection makefile for:	calmaris
-# Version required:	2.29
 # Date created:         25 December 1998
 # Whom:                 Dima Sivachenko
 #
 # $FreeBSD$
 #
 
-DISTNAME=	calamaris-2.29
+PORTNAME=	calamaris
+PORTVERSION= 	2.29
 CATEGORIES=	www textproc
 MASTER_SITES=	http://calamaris.cord.de/ \
 		ftp://ftp.gpad.ac.ru/pub/FreeBSD/distfiles/

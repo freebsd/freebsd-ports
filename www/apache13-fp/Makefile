@@ -1,13 +1,12 @@
 # New ports collection makefile for:    apache HTTPD w/FrontPage Module
-# Version required:     1.3*	3.0.4 (3.0.2.1330)
 # Date created:         Sat Oct 31 16:30:00 CDT 1997
 # Whom:                 hetzels@westbend.net
 #
 # $FreeBSD$
 #
 
-DISTNAME=	apache_${AP_VERS}
-PKGNAME=	apache_fp-${AP_VERS}
+PORTNAME=	apache_fp
+PORTVERSION=	1.3.12
 CATEGORIES=	www
 MASTER_SITES=	http://www.apache.org/dist/ \
 		ftp://ftp.microsoft.com/products/frontpage/ \
@@ -28,14 +27,14 @@ MASTER_SITES=	http://www.apache.org/dist/ \
 		ftp://ftp.mtnranch.net/pub/apache/dist/ \
 		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/ \
 		ftp://apache.nextpath.com/pub/apache/dist/
+DISTNAME=	apache_1.3.12
 DISTFILES=	${APACHE} ${FRONTPAGE} powerlogo.gif fplogo.gif
 
 MAINTAINER=	hetzels@westbend.net
 
-#PATCH_SITES=	http://www.apache.org/dist/patches/apply_to_${AP_VERS}/
+#PATCH_SITES=	http://www.apache.org/dist/patches/apply_to_${PORTVERSION}/
 #PATCHFILES=
 
-AP_VERS=	1.3.12
 APACHE=		${DISTNAME}${EXTRACT_SUFX}
 FRONTPAGE=	fp40.bsdi.tar.Z
 

@@ -1,16 +1,16 @@
 # New ports collection makefile for:  squirm
-# Version required: 1.0betaB
 # Date created:     24 May 1999
 # Whom:             Maxim Sobolev <sobomax@altavista.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	squirm-1.0betaB
-PKGNAME=	squirm-1.0b
+PORTNAME=	squirm
+PORTVERSION= 	1.0b
 CATEGORIES=	www
 MASTER_SITES=	http://www.senet.com.au/squirm/ \
 		http://www.elab.co.za/squirm/
+DISTNAME=	squirm-1.0betaB
 
 MAINTAINER=	sobomax@altavista.net
 

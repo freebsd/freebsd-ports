@@ -1,12 +1,12 @@
 # New ports collection makefile for:	weblint
-# Version required:	1.020
 # Date created:		Oct 14, 1995
 # Whom:			pst
 #
 # $FreeBSD$
 #
 
-DISTNAME=	weblint-1.020
+PORTNAME=	weblint
+PORTVERSION= 	1.020
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.cre.canon.co.uk/pub/weblint/
 

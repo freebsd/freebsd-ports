@@ -1,15 +1,15 @@
 # New ports collection makefile for:   decss
-# Version required:		1.0
 # Date Created:			20 Feb 2000
 # Whom:				Kris Kennaway <kris@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	decss
-PKGNAME=	decss-1.0
+PORTNAME=	decss
+PORTVERSION= 	1.0
 CATEGORIES=	www perl5
 MASTER_SITES=	http://www.totse.com/DeCSS/
+DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 

@@ -1,15 +1,15 @@
 # New ports collection makefile for:    wwwcount
-# Version required:     2.5
 # Date created:         16 May 1996
 # Whom:                 ache
 #
 # $FreeBSD$
 #
 
-DISTNAME=       wwwcount2.5
-PKGNAME=        wwwcount-2.5
+PORTNAME=	wwwcount
+PORTVERSION= 	2.5
 CATEGORIES=     www
 MASTER_SITES=   http://www.muquit.com/muquit/software/Count/src/wwwcount2.5/
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=     dervish@ikhala.tcimet.net
 

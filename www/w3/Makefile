@@ -1,12 +1,12 @@
 # New ports collection makefile for: w3 on Emacs
-# Version required:	2.2.26	
 # Date created:		31 December 1996
 # Whom:			MITA Yoshio <mita@ee.t.u-tokyo.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	w3-2.2.26
+PORTNAME=	w3
+PORTVERSION= 	2.2.26
 CATEGORIES?=	www elisp
 MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/network/WWW/w3/ \
 		ftp://ftp.cs.indiana.edu/pub/elisp/w3/
@@ -53,7 +53,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PORTSDOCDIR}
 	@${MKDIR} ${SAMPLEDIR}
-.for f in dot.mosaic-hotlist-default 
+.for f in dot.mosaic-hotlist-default
 	@${INSTALL_DATA} ${FILESDIR}/${f} ${SAMPLEDIR}
 .endfor
 .for f in dot.emacs
@@ -68,6 +68,6 @@ post-install:
 		INFODIR=${INFODIR} INFOFILE=${INFOFILE} \
 		ELISPDIR=${ELISPDIR} ADDIR=${ADDIR} \
 		DIRSECTION="${DIRSECTION}" \
-		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL  
+		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL 
 
 .include <bsd.port.mk>

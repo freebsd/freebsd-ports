@@ -1,12 +1,12 @@
 # New ports collection makefile for:	udmsearch
-# Version required:	2.2.1
 # Date created:		11/29/1999
 # Whom:			Kelly Yancey <kbyanc@posi.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	udmsearch-2.2.1b
+PORTNAME=	udmsearch
+PORTVERSION= 	2.2.1b
 CATEGORIES=	www databases
 MASTER_SITES=	http://mysearch.udm.net/Download/	\
 		ftp://ftp.izhcom.ru/pub/unix/UdmSearch/	\

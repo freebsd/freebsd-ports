@@ -1,13 +1,12 @@
 # New ports collection makefile for:	netscape-remote
-# Version required:	1.0
 # Date created:		09/13/1999
 # Whom:			Kelly Yancey <kbyanc@posi.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	netscape-remote
-PKGNAME=	netscape-remote-1.0
+PORTNAME=	netscape-remote
+PORTVERSION= 	1.0
 CATEGORIES=	www
 MASTER_SITES=	http://home.netscape.com/newsref/std/
 DISTFILES=	remote.c vroot.h

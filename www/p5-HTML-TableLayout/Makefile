@@ -1,16 +1,16 @@
 # New ports collection makefile for:	p5-HTML-TableLayout
-# Version required:		1.001008
 # Date Created:			01 February 2000
 # Whom:				Dmitry Sivachenko <dima@Chg.RU>
 #
 # $FreeBSD$
 #
 
-DISTNAME=       HTML-TableLayout-1.001008
-PKGNAME=        p5-HTML-TableLayout-1.001008
+PORTNAME=	p5-HTML-TableLayout
+PORTVERSION= 	1.001008
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
+DISTNAME=	HTML-TableLayout-1.001008
 
 MAINTAINER=	dima@Chg.RU
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	netscape
-# Version required:     3.04
 # Date created:		21 August 1995
 # Whom:			asami
 #
 # $FreeBSD$
 #
 
-DISTNAME?=	netscape-3.04
+PORTNAME?=	netscape
+PORTVERSION?= 	3.04
 CATEGORIES=	www
 MASTER_SITES?=   ftp://archive:oldies@archive.netscape.com/archive/navigator/3.04/shipping/english/unix/bsdi11/navigator_complete/
 DISTFILES=      netscape-v304-export.x86-unknown-bsd.tar.gz

@@ -1,15 +1,15 @@
 # Ports collection Makefile for:	Grail
-# Version required:			0.5
 # Date created:				1/11/1999
 # Whom:					nectar@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=		grail-06
-PKGNAME=		grail-0.6
+PORTNAME=		grail
+PORTVERSION= 		0.6
 CATEGORIES=		www python
 MASTER_SITES=		http://grail.cnri.reston.va.us/grail/source/
+DISTNAME=		${PORTNAME}-06
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		nectar@freebsd.org

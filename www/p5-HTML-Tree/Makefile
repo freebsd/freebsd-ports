@@ -1,16 +1,16 @@
 # New ports collection makefile for:	p5-HTML-Tree
-# Version required:		0.62
 # Date created:			3 January 2000
 # Whom:				Dmitry Sivachenko <dima@Chg.RU>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	HTML-Tree-0.62
-PKGNAME=	p5-HTML-Tree-0.62
+PORTNAME=	p5-HTML-Tree
+PORTVERSION= 	0.62
 CATEGORIES=     www perl5
 MASTER_SITES=   ${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
+DISTNAME=	HTML-Tree-0.62
 
 MAINTAINER=	dima@Chg.RU
 

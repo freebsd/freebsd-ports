@@ -1,5 +1,4 @@
 # New ports collection makefile for: netscape-communcator-linux-4.x
-# Version required:		4.7
 # Date created:			27 June 1999
 # Whom:				girgen@partitur.se
 # Based on work by:		thepish
@@ -7,7 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	linux-netscape-${BROWSER}-${BROWSER_VER}
+PORTNAME=	linux-netscape-${BROWSER}
+PORTVERSION=	${BROWSER_VER}
 CATEGORIES=	www linux
 MASTER_SITES=	ftp://ftp.netscape.com/pub/communicator/english/4.72/unix/supported/linux20_glibc2/complete_install/ \
 		ftp://ftp.sunet.se/pub/www/Netscape/communicator/english/4.72/unix/supported/linux20_glibc2/complete_install/

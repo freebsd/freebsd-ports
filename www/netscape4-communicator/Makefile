@@ -1,12 +1,12 @@
 # New ports collection makefile for:	netscape (full communicator version)
-# Version required:     4.*
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
 # $FreeBSD$
 #
 
-DISTNAME?=	netscape-${BROWSER_ARC}-${BROWSER_VER}
+PORTNAME?=	netscape-${BROWSER_ARC}
+PORTVERSION?=	${BROWSER_VER}
 CATEGORIES?=	www
 MASTER_SITES?=	ftp://ftp.netscape.com/pub/communicator/4.08/english/unix/unsupported/freebsd/professional_edition/
 DISTFILES?=	communicator-v408-export.x86-unknown-freebsd.tar.gz

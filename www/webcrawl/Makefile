@@ -1,12 +1,12 @@
 # New ports collection makefile for:	webcrawl
-# Version required:	1.10
 # Date created:		31 January 1999
 # Whom:			Dima Sivachenko
 #
 # $FreeBSD$
 #
 
-DISTNAME=	webcrawl-1.10
+PORTNAME=	webcrawl
+PORTVERSION= 	1.10
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/www/mirroring

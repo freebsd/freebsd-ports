@@ -1,12 +1,12 @@
 # New ports collection makefile for:	fcgi-devkit
-# Version required:    2.1
 # Date created:        13 May 1999
 # Whom:                kbyanc
 #
 # $FreeBSD$
 #
 
-DISTNAME=	fcgi-devkit-2.1
+PORTNAME=	fcgi-devkit
+PORTVERSION= 	2.1
 CATEGORIES=	www
 MASTER_SITES=	http://fastcgi.idle.com/dist/
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	harvest
-# Version required:	1.4.pl2
 # Date created:		Fri Mar  1 19:43:52 MET 1996
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	harvest-1.5
+PORTNAME=	harvest
+PORTVERSION= 	1.5
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.tardis.ed.ac.uk/pub/harvest/ \
 		ftp://nic.nasa.gov/software/harvest-dist/ \

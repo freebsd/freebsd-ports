@@ -1,12 +1,12 @@
 # New ports collection makefile for:   wmnetselect
-# Version required:    0.4
 # Date created:        7 March 1999
 # Whom:                David McNett <nugget@slacker.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	wmnetselect-0.8
+PORTNAME=	wmnetselect
+PORTVERSION= 	0.8
 CATEGORIES=	www windowmaker
 MASTER_SITES=	http://home.att.net/~apathos/code/
 

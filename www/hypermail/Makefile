@@ -1,20 +1,18 @@
 # New ports collection makefile for:	hypermail
-# Version required:			2b28
 # Date created:				23 Dec 1997
 # Whom:					mjhsieh
 #
 # $FreeBSD$
 #
 
-DISTNAME= 	hypermail-${HYPERMAIL_VERSION}
+PORTNAME=	hypermail
+PORTVERSION=	2b28
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.landfield.com/hypermail/ \
 		ftp://ftp.faqs.org/hypermail/
 
 MAINTAINER=	veers@disturbed.net
 
-HYPERMAIL_VERSION=	2b28
-WRKSRC=		${WRKDIR}/hypermail-${HYPERMAIL_VERSION}
 HAS_CONFIGURE=  yes
 
 MAN1=		hypermail.1

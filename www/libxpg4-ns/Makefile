@@ -1,16 +1,16 @@
 # New ports collection makefile for:	libxpg4-ns
-# Version required:	3.3
 # Date created:		27 February 1999
 # Whom:			sada
 #
 # $FreeBSD$
 #
 
-DISTNAME=	libxpg4-3.3
-PKGNAME=	libxpg4-ns-3.3
+PORTNAME=	libxpg4-ns
+PORTVERSION= 	3.3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
 		http://people.FreeBSD.org/~sada/distfiles/
+DISTNAME=	libxpg4-3.3
 
 MAINTAINER=	sada@FreeBSD.ORG
 

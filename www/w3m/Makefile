@@ -1,12 +1,12 @@
 # New ports collection makefile for:   w3m
-# Version required:		0.1.7
 # Date Created:			7 Oct 1999
 # Whom:				MANTANI Nobutaka <nobutaka@nobutaka.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	w3m-${W3M_VER}
+PORTNAME?=	w3m
+PORTVERSION?=	${W3M_VER}
 CATEGORIES?=	www ipv6
 MASTER_SITES=	ftp://ei5nazha.yz.yamagata-u.ac.jp/w3m/dev/ \
 		ftp://ftp.firedrake.org/w3m/dev/ \

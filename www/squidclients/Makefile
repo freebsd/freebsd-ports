@@ -1,15 +1,15 @@
 # New ports collection makefile for:	squidclients
-# Version required:	1.6
 # Date created:		05 January 1999
 # Whom:			Dima Sivachenko
 #
 # $FreeBSD$
 #
 
-DISTNAME=	squidclients-1.6-freebsd.bin
-PKGNAME=	squidclients-1.6
+PORTNAME=	squidclients
+PORTVERSION= 	1.6
 CATEGORIES=	www
 MASTER_SITES=	http://www.cineca.it/~nico/binaries/
+DISTNAME=	squidclients-1.6-freebsd.bin
 EXTRACT_SUFX=
 
 MAINTAINER=	dima@chg.ru

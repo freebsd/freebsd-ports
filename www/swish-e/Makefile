@@ -1,15 +1,15 @@
 # New ports collection makefile for:    swish-e
-# Version required:     		1.3.2
 # Date created:         		23 Feb 98
 # Whom:              			Daniel O'Connor <doconnor@gsoft.com.au>
 #
 # $FreeBSD$
 #
 
-DISTNAME=       swish-efiles.1.3.2
-PKGNAME=        swish-e-1.3.2
+PORTNAME=	swish-e
+PORTVERSION= 	1.3.2
 CATEGORIES=     www textproc
 MASTER_SITES=   ftp://sunsite.berkeley.edu/pub/swish-e/
+DISTNAME=	swish-efiles.1.3.2
 
 MAINTAINER=	doconnor@gsoft.com.au
 

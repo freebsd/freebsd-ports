@@ -1,12 +1,12 @@
 # New ports collection makefile for:	tinyproxy
-# Version required:	1.2.8
 # Date created:		01 Jul 1999
 # Whom:			Mitsuru Yoshida <mitsuru@riken.go.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tinyproxy-1.2.8
+PORTNAME=	tinyproxy
+PORTVERSION= 	1.2.8
 CATEGORIES=	www
 MASTER_SITES=	http://tinyproxy.attacca.com/ \
 		http://www.flarenet.com/tinyproxy/

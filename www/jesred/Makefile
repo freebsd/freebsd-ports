@@ -1,15 +1,15 @@
 # New ports collection makefile for:	jesred
-# Version required:	1.2.pl1
 # Date created:		Mon Nov  8 17:42:20 MSK 1999
 # Whom:			dsh@vlink.ru
 #
 # $FreeBSD$
 #
 
-DISTNAME=	jesred-1.2pl1
-PKGNAME=	jesred-1.2.1
+PORTNAME=	jesred
+PORTVERSION= 	1.2.1
 CATEGORIES=	www
 MASTER_SITES=	http://ivs.cs.uni-magdeburg.de/~elkner/webtools/src/
+DISTNAME=	jesred-1.2pl1
 
 MAINTAINER=	dsh@vlink.ru
 

@@ -1,13 +1,12 @@
 # New ports collection makefile for:    comline
-# Version required:     4.0D
 # Date created:         9 Dec 1995
 # Whom:                 ache
 #
 # $FreeBSD$
 #
 
-DISTNAME=	WWW
-PKGNAME=        comline-4.0D
+PORTNAME=	comline
+PORTVERSION= 	4.0D
 CATEGORIES=	www
 MASTER_SITES=   ftp://ftp.w3.org/pub/old/comline/ \
 		ftp://ftp.w3.org/pub/libwww/old/ \

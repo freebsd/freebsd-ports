@@ -1,12 +1,12 @@
 # New ports collection makefile for:    cgiwrap
-# Version required:     3.6.1
 # Date created:         30 July 1998
 # Whom:                 Brent J. Nordquist <bjn@visi.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cgiwrap-3.6.3
+PORTNAME=	cgiwrap
+PORTVERSION= 	3.6.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.unixtools.org/cgiwrap/dist/ \
 		ftp://ftp.umr.edu/pub/cgi/cgiwrap/ \
