@@ -102,8 +102,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <url>http://www.securityfocus.com/archive/1/352333</url>
     </references>
     <dates>
-      <discovery>2004/01/30</discovery>
-      <entry>2004/02/13</entry>
+      <discovery>2004-01-30</discovery>
+      <entry>2004-02-13</entry>
     </dates>
   </vuln>
 
@@ -128,8 +128,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <url>http://web.archive.org/web/20030609204812/http://spoor12.edup.tudelft.nl/</url>
     </references>
     <dates>
-      <discovery>2003/04/08</discovery>
-      <entry>2004/02/12</entry>
+      <discovery>2003-04-08</discovery>
+      <entry>2004-02-12</entry>
     </dates>
   </vuln>
 
@@ -158,8 +158,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <bid>2933</bid>
     </references>
     <dates>
-      <discovery>2002/04/28</discovery>
-      <entry>2004/02/12</entry>
+      <discovery>2002-04-28</discovery>
+      <entry>2004-02-12</entry>
     </dates>
   </vuln>
 
@@ -185,8 +185,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <url>http://quasar.mathstat.uottawa.ca/~selinger/nap/NEWS</url>
     </references>
     <dates>
-      <discovery>2001/04/12</discovery>
-      <entry>2004/02/12</entry>
+      <discovery>2001-04-12</discovery>
+      <entry>2004-02-12</entry>
     </dates>
   </vuln>
 
@@ -208,8 +208,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <url>http://programmer.lib.sjtu.edu.cn/cce/cce.html</url>
     </references>
     <dates>
-      <discovery>2000/06/22</discovery>
-      <entry>2004/02/12</entry>
+      <discovery>2000-06-22</discovery>
+      <entry>2004-02-12</entry>
     </dates>
   </vuln>
 
@@ -232,8 +232,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <url>http://cvsweb.freebsd.org/ports/chinese/chitex/Attic/Makefile?rev=1.5&amp;content-type=text/x-cvsweb-markup</url>
     </references>
     <dates>
-      <discovery>2003/04/25</discovery>
-      <entry>2004/02/12</entry>
+      <discovery>2003-04-25</discovery>
+      <entry>2004-02-12</entry>
     </dates>
   </vuln>
 
@@ -258,8 +258,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <url>http://www.freebsd.org/cgi/cvsweb.cgi/ports/mail/pine4/Makefile?rev=1.43&amp;content-type=text/x-cvsweb-markup</url>
     </references>
     <dates>
-      <discovery>2000/09/29</discovery>
-      <entry>2004/02/12</entry>
+      <discovery>2000-09-29</discovery>
+      <entry>2004-02-12</entry>
     </dates>
   </vuln>
 
@@ -284,8 +284,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <freebsdsa>SA-02:05</freebsdsa>
     </references>
     <dates>
-      <discovery>2002/01/04</discovery>
-      <entry>2004/02/12</entry>
+      <discovery>2002-01-04</discovery>
+      <entry>2004-02-12</entry>
     </dates>
   </vuln>
 
@@ -310,8 +310,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <cvename>CAN-2002-1320</cvename>
     </references>
     <dates>
-      <discovery>2002/10/23</discovery>
-      <entry>2004/02/12</entry>
+      <discovery>2002-10-23</discovery>
+      <entry>2004-02-12</entry>
     </dates>
   </vuln>
 
@@ -340,8 +340,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <url>http://www.idefense.com/application/poi/display?id=5</url>
     </references>
     <dates>
-      <discovery>2003/09/10</discovery>
-      <entry>2004/02/12</entry>
+      <discovery>2003-09-10</discovery>
+      <entry>2004-02-12</entry>
     </dates>
   </vuln>
 
@@ -367,8 +367,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <url>http://rsync.samba.org/#security</url>
     </references>
     <dates>
-      <discovery>2003/12/04</discovery>
-      <entry>2004/02/12</entry>
+      <discovery>2003-12-04</discovery>
+      <entry>2004-02-12</entry>
     </dates>
   </vuln>
 
@@ -418,8 +418,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <cvename>CAN-2004-0008</cvename>
     </references>
     <dates>
-      <discovery>2004/01/26</discovery>
-      <entry>2004/02/12</entry>
+      <discovery>2004-01-26</discovery>
+      <entry>2004-02-12</entry>
     </dates>
   </vuln>
 
@@ -448,8 +448,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <cvename>CAN-2004-0082</cvename>
     </references>
     <dates>
-      <discovery>2004/02/09</discovery>
-      <entry>2004/02/12</entry>
+      <discovery>2004-02-09</discovery>
+      <entry>2004-02-12</entry>
     </dates>
   </vuln>
 
@@ -474,8 +474,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <url>http://www.securityfocus.com/archive/1/353186</url>
     </references>
     <dates>
-      <discovery>2004/02/09</discovery>
-      <entry>2004/02/12</entry>
+      <discovery>2004-02-09</discovery>
+      <entry>2004-02-12</entry>
     </dates>
   </vuln>
 
@@ -506,8 +506,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <cvename>CAN-2004-0106</cvename>
     </references>
     <dates>
-      <discovery>2004/02/10</discovery>
-      <entry>2004/02/12</entry>
+      <discovery>2004-02-10</discovery>
+      <entry>2004-02-12</entry>
     </dates>
   </vuln>
 
@@ -532,8 +532,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <url>http://www.mutt.org/news.html</url>
     </references>
     <dates>
-      <discovery>2004/02/11</discovery>
-      <entry>2004/02/12</entry>
+      <discovery>2004-02-11</discovery>
+      <entry>2004-02-12</entry>
     </dates>
   </vuln>
 
@@ -565,8 +565,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <url>http://www.apache-ssl.org/advisory-20040206.txt</url>
     </references>
     <dates>
-      <discovery>2004/02/06</discovery>
-      <entry>2004/02/10</entry>
+      <discovery>2004-02-06</discovery>
+      <entry>2004-02-10</entry>
     </dates>
   </vuln>
 
