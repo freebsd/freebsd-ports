@@ -8,8 +8,11 @@
 PORTNAME=		functional
 PORTVERSION=		0.5
 CATEGORIES=		devel python
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	xoltar-toolkit
+# The functional.py distfile disappeared.
+# I'm storing it on MASTER_SITE_LOCAL until I get around to
+# making a port of the xoltar-toolkit.
+#MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+#MASTER_SITE_SUBDIR=	xoltar-toolkit
 PKGNAMEPREFIX=		py-
 DISTNAME=		functional.py
 EXTRACT_SUFX=		.gz
