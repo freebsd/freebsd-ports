@@ -12,7 +12,7 @@ DISTFILES=	#empty
 
 MAINTAINER=	jkh@FreeBSD.org
 
-BUILD_DEPENDS=	cvsup:${PORTSDIR}/net/cvsup-bin
+RUN_DEPENDS=	cvsup:${PORTSDIR}/net/cvsup-bin
 
 .if (BATCH)
 NO_INSTALL=	yes
