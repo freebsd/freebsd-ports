@@ -1,15 +1,16 @@
 # New ports collection makefile for:	MicroEmacs
 # Version required:     3.12
 # Date created:         16 Jan 1995
-# Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
+# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
 #
-# $Id: Makefile,v 1.8 1996/06/26 22:25:32 gpalmer Exp $
+# $Id: Makefile,v 1.9 1996/11/11 05:07:20 obrien Exp $
 #
 
 DISTNAME=	uemacs
 PKGNAME=	uemacs-3.12
 CATEGORIES=	editors
-MASTER_SITES=	ftp://midas.mgmt.purdue.edu/dist/uemacs312/
+MASTER_SITES=	ftp://midas.mgmt.purdue.edu/dist/uemacs312/ \
+		ftp://ftp.th-darmstadt.de/pub/editors/MicroEMACS/uemacs312/
 DISTFILES=	ue312dev.zip
 
 MAINTAINER=	ports@freebsd.org
