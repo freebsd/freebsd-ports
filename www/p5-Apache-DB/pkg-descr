@@ -1,0 +1,7 @@
+This package provides debugging and profiling tools for mod_perl:
+
+ Apache::DB        - Hooks for the interactive Perl debugger
+ Apache::DProf     - Hooks for Devel::DProf
+ Apache::SmallProf - Hooks for Devel::SmallProf
+
+WWW: http://search.cpan.org/dist/Apache-DB/

@@ -1,0 +1,10 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache/DB.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache/DProf.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache/SmallProf.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache/perl5db.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/DB/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/DB/DB.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/DB/DB.so
+@unexec rmdir %D/%%SITE_PERL%%/Apache 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/DB
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache 2>/dev/null || true
