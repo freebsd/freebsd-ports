@@ -7268,6 +7268,7 @@ ruby-rdoc	ports/textproc/ruby-rdoc
 ruby-rdtool	ports/textproc/ruby-rdtool
 ruby-reference	ports/lang/ruby-reference
 ruby-rexml	ports/textproc/ruby-rexml
+ruby-rfilter	ports/mail/ruby-rfilter
 ruby-ri		ports/lang/ruby-ri
 ruby-rica	ports/irc/ruby-rica
 ruby-rice	ports/irc/ruby-rice
