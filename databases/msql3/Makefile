@@ -44,8 +44,8 @@ post-install:
 		@${MKDIR} ${PREFIX}/etc/rc.d
 		@if [ ! -f ${PREFIX}/etc/rc.d/msql2.sh ]; then \
 			${ECHO} "Installing ${PREFIX}/etc/rc.d/msql2.sh startup file."; \
-			${INSTALL_SCRIPT} -m 751 ${FILESDIR}/msql2d.sh \
-				${PREFIX}/etc/rc.d/msql2d.sh; \
+			${INSTALL_SCRIPT} -m 751 ${FILESDIR}/msql2.sh \
+				${PREFIX}/etc/rc.d/msql2.sh; \
 		fi
 .if !defined(BATCH)
 		@ /usr/bin/more -e ${FILESDIR}/post-install-notes

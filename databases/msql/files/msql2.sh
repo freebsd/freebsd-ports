@@ -7,10 +7,10 @@ fi
 
 case "$1" in
 start)
-	[ -x ${PREFIX}/bin/msql2d ] && su -l msql -c 'exec ${PREFIX}/bin/msql2d' > /dev/null 2>&1 & && echo -n ' msql2'
+	[ -x ${PREFIX}/bin/msql2d ] && su -l msql -c "exec ${PREFIX}/bin/msql2d" > /dev/null 2>&1 & && echo -n ' msql2'
 	;;
 stop)
-	killall msql2d && echo -n ' msql2d'
+	killall msql2d && echo -n ' msql2d' && rm -f ${PREFIX}/etc/msql2/msql2d.pid
 	;;
 *)
 	echo "Usage: `basename $0` {start|stop}" >&2
