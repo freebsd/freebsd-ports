@@ -1,0 +1,24 @@
+# New ports collection makefile for:	gnomeattacks
+# Date created:				01 July 2003
+# Whom:					Adam Weinberger <adamw@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gnomeattacks
+PORTVERSION=	0.2
+CATEGORIES=	games gnome
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	GNOME 2 game featuring a bizarre flying GNOME logo
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gnomehack gnomeprefix gnomevfs2
+
+.include <bsd.port.mk>

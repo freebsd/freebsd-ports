@@ -1,0 +1,12 @@
+bin/gnomeattacks
+share/gnome/pixmaps/gnomeattacks/bullet.png
+share/gnome/pixmaps/gnomeattacks/hiscore.png
+share/gnome/pixmaps/gnomeattacks/instructions.png
+share/gnome/pixmaps/gnomeattacks/level_1_bg.png
+share/gnome/pixmaps/gnomeattacks/level_1_fg.png
+share/gnome/pixmaps/gnomeattacks/level_2_bg.png
+share/gnome/pixmaps/gnomeattacks/level_2_fg.png
+share/gnome/pixmaps/gnomeattacks/ship.png
+share/gnome/pixmaps/gnomeattacks/ship_dead.png
+share/gnome/pixmaps/gnomeattacks/title.png
+@dirrm share/gnome/pixmaps/gnomeattacks
