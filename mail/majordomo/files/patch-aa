@@ -38,7 +38,7 @@
  
  # A directory for temp files..
 -TMPDIR = /usr/tmp
-+TMPDIR = /var/tmp
++TMPDIR ?= /var/tmp
  
  #--------YOU SHOULDN'T HAVE TO CHANGE ANYTHING BELOW THIS LINE.-------------
  
