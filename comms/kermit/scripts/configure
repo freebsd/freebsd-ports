@@ -4,4 +4,3 @@
 #
 mv ${WRKDIR}/makefile  ${WRKDIR}/makefile.dist
 sed -e "s@%%PREFIX%%@${PREFIX}@" < ${FILESDIR}/Makefile.sed > ${WRKDIR}/Makefile
-cp ${FILESDIR}/dot.kermrc ${WRKDIR}
