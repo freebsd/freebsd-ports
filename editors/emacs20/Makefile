@@ -3,7 +3,7 @@
 # Date created:		29 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.29 1997/07/17 10:38:15 asami Exp $
+# $Id: Makefile,v 1.30 1997/12/14 14:51:53 jseger Exp $
 #
 
 DISTNAME=	emacs-20.2
@@ -17,8 +17,6 @@ USE_GMAKE=	yes
 CONFIGURE_ARGS=	i386--freebsd --with-x-toolkit
 STRIP=
 MAN1=		emacs.1 etags.1 ctags.1
-prefix=		${PREFIX}
-sharedstatedir=	${PREFIX}/share/com
 
 pre-build:
 	${RM} -rf ${WRKSRC}/info/*

@@ -19,7 +19,6 @@ bin/rcs-checkin
 @unexec install-info --delete %D/info/viper %D/info/dir
 info/ccmode
 info/cl
-info/dir
 info/dired-x
 info/ediff
 info/emacs
