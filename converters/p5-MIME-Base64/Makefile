@@ -7,6 +7,7 @@
 
 PORTNAME=	MIME-Base64
 PORTVERSION=	2.23
+PORTREVISION=	1
 CATEGORIES=	converters perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	MIME
@@ -20,10 +21,4 @@ PERL_CONFIGURE=	YES
 MAN3=		MIME::Base64.3 \
 		MIME::QuotedPrint.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-BROKEN=		Does not run.
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
