@@ -34,7 +34,7 @@ post-install:
 	@${MKDIR} /var/dovecot
 	@${MKDIR} /var/dovecot/auth
 	@${MKDIR} /var/dovecot/login
-	@${CHOWN} imapd.imapd /var/dovecot
+	@${CHOWN} imapd:imapd /var/dovecot
 	@if [ ! -f ${PREFIX}/etc/rc.d/dovecot-imapd.sh ]; then \
 		${ECHO} "Install ${PREFIX}/etc/rc.d/dovecot-imapd.sh startup file."; \
 		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/dovecot-imapd.sh ${PREFIX}/etc/rc.d/dovecot-imapd.sh; \
