@@ -23,16 +23,10 @@ PORTNAME=	php4
 PORTVERSION=	4.3.6
 PORTREVISION=	1
 CATEGORIES?=	lang devel www
-MASTER_SITES=	http://www.php.net/distributions/:release \
-		http://it.php.net/distributions/:release \
-		http://fi.php.net/distributions/:release \
-		http://de.php.net/distributions/:release \
-		http://gr.php.net/distributions/:release \
-		http://fr.php.net/distributions/:release \
-		http://es.php.net/distributions/:release \
-		http://se.php.net/distributions/:release \
+MASTER_SITES=	${MASTER_SITE_PHP:S,$,:release,} \
 		http://downloads.php.net/ilia/:rc \
 		http://downloads.php.net/jani/:rc
+MASTER_SITE_SUBDIR=	distributions/:release
 .if defined(WITHOUT_CLI) && !defined(WITHOUT_APACHE)
 PKGNAMEPREFIX=	mod_
 .else

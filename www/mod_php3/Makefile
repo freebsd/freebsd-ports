@@ -9,15 +9,12 @@ PORTNAME?=	mod_php3
 PORTVERSION=	3.0.18
 PORTREVISION?=	3
 CATEGORIES?=	www
-MASTER_SITES=	http://php.he.net/${PHP_DISTDIR}/ \
-		http://www.php3.de/${PHP_DISTDIR}/ \
-		http://au.php.net/${PHP_DISTDIR}/ \
-		http://at.php.net/${PHP_DISTDIR}/ \
-		http://br.php.net/${PHP_DISTDIR}/ \
-		http://php3.globe.de/${PHP_DISTDIR}/
+MASTER_SITES=	${MASTER_SITE_PHP}
+MASTER_SITE_SUBDIR=	distributions
 DISTNAME=	php-${PORTVERSION}
 
-PATCH_SITES=	http://www.php.net/distributions/
+PATCH_SITES=	${MASTER_SITE_PHP}
+PATCH_SITE_SUBDIR=	distributions
 PATCHFILES=	mime.c.diff-3.0.gz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -28,8 +25,6 @@ USE_APACHE=	yes
 .endif
 
 PATCH_DIST_ARGS=	-d ${WRKSRC}/functions
-
-PHP_DISTDIR=	distributions
 
 SLAVEDIRS=	lang/php3
 
