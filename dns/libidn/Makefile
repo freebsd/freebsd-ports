@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libidn
-PORTVERSION=	0.3.3
-PORTREVISION=	1
+PORTVERSION=	0.3.4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU_ALPHA} \
 		http://josefsson.org/libidn/releases/
@@ -21,6 +20,7 @@ BUILD_DEPENDS=	gengetopt:${PORTSDIR}/devel/gengetopt
 
 USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 USE_GETOPT_LONG=	yes
 USE_GNOME=	gnomehack
