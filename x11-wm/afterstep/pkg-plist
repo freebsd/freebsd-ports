@@ -52,14 +52,6 @@ include/X11/pixmaps/penguin.xpm
 include/X11/pixmaps/shutdown.xpm
 include/X11/pixmaps/text.xpm
 include/X11/pixmaps/writeletter.xpm
-man/man1/afterstep.1.gz
-man/man1/asclock.1.gz
-man/man1/Animate.1.gz
-man/man1/Audio.1.gz
-man/man1/Auto.1.gz
-man/man1/Banner.1.gz
-man/man1/Pager.1.gz
-man/man1/Wharf.1.gz
 @dirrm lib/X11/afterstep/doc
 @dirrm lib/X11/afterstep/backgrounds
 @dirrm lib/X11/afterstep/sounds

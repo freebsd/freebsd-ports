@@ -20,7 +20,6 @@ lib/X11/qvwm/pixmaps/xterm_s.xpm
 lib/X11/qvwm/pixmaps/xv.xpm
 lib/X11/qvwm/pixmaps/xv_s.xpm
 lib/X11/qvwm/system.qvwmrc
-man/man1/qvwm.1.gz
 share/doc/qvwm/BUGS.en
 share/doc/qvwm/CHANGES.en
 share/doc/qvwm/FAQ.en
