@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	smpeg
-PORTVERSION=	0.3.5
+PORTVERSION=	0.4.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.lokigames.com/development/download/smpeg/
+MASTER_SITES=	ftp://ftp.lokigames.com/pub/open-source/smpeg/
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
