@@ -5118,6 +5118,7 @@ p5-GPS		ports/astro/p5-GPS
 p5-Gateway	ports/news/p5-Gateway
 p5-GdkImlib	ports/x11-toolkits/p5-GdkImlib
 p5-GdkPixbuf	ports/x11-toolkits/p5-GdkPixbuf
+p5-Geo-IP	ports/misc/p5-Geo-IP
 p5-Geo-METAR	ports/astro/p5-Geo-METAR
 p5-Geo-Weather	ports/misc/p5-Geo-Weather
 p5-Getargs-Long	ports/devel/p5-Getargs-Long
