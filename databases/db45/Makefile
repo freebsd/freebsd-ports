@@ -10,7 +10,7 @@ PORTVERSION=	4.0.14
 #PORTREVISION=	2
 #PORTEPOCH=	1
 CATEGORIES=	databases
-MASTER_SITES=	http://www.sleepycat.com/update/${PORTVERSION}/
+MASTER_SITES=	http://www.sleepycat.com/update/snapshot/
 DISTNAME=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
 
