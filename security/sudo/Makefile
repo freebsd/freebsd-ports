@@ -7,7 +7,7 @@
 
 PORTNAME=	sudo
 PORTVERSION=	1.6.8.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		http://probsd.org/sudoftp/ \
