@@ -134,9 +134,13 @@ pre-fetch:	check-os
 	@${ECHO_MSG} "NOTICES:"
 	@${ECHO_MSG}
 	@${ECHO_MSG} "To build JDK 1.4.1 port, you should have at least"
-	@${ECHO_MSG} "1.5Gb of free disk space in build area!"
+	@${ECHO_MSG} "2.5Gb of free disk space in build area!"
 	@${ECHO_MSG}
-	@${ECHO_MSG} "Please use \`make -DNODEBUG' if you don't want to"
+	@${ECHO_MSG} "To build JDK 1.4.1 port, you should have linux emulation"
+	@${ECHO_MSG} "enabled in the kernel and linux procfs (linprocfs) filesystem"
+	@${ECHO_MSG} "mounted."
+	@${ECHO_MSG}
+	@${ECHO_MSG} "NOTE: Please use \`make -DNODEBUG' if you don't want to"
 	@${ECHO_MSG} "install libraries and binaries with debugging support."
 	@${ECHO_MSG}
 
@@ -147,6 +151,7 @@ pre-patch:
 		${PATCH} -p0 < ${WRKDIR}/jdk14.patches
 
 .if !defined(NATIVE_BOOTSTRAP)
+ECHO_MSG=echo
 pre-build:
 	@if [ "$${WRKDIRPREFIX}" -a \
 	     -L "/compat/linux/$${WRKDIRPREFIX}" -a \
@@ -165,6 +170,21 @@ pre-build:
 		${ECHO_MSG} "Having it set to other values, such as 'FreeBSD',"; \
 		${ECHO_MSG} "is known to cause problems during bootstrapping."; \
 		exit 1; \
+	fi
+	@if [ "`/sbin/mount | grep ^linprocfs`" = "" ]; \
+	then \
+		${ECHO_MSG} "ERROR: You have to have LINPROCFS mounted before" ; \
+		${ECHO_MSG} "starting to build of native JDK 1.4.1." ; \
+		${ECHO_MSG} "" ; \
+		${ECHO_MSG} "You may do it by following set of commands:" ; \
+		${ECHO_MSG} "" ; \
+		${ECHO_MSG} "# kldload linprocfs" ; \
+		${ECHO_MSG} "" ; \
+		${ECHO_MSG} "and" ; \
+		${ECHO_MSG} "" ; \
+		${ECHO_MSG} "# mount -t linprocfs linprocfs /compat/linux/proc" ; \
+		${ECHO_MSG} "" ; \
+		exit 1 ; \
 	fi
 .endif
 
