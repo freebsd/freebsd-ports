@@ -82,7 +82,6 @@
     SUBDIR += hyperlatex
     SUBDIR += ifhp
     SUBDIR += jadetex
-    SUBDIR += ktexshell
     SUBDIR += latex
     SUBDIR += latex2rtf
     SUBDIR += latex2slides
