@@ -32,6 +32,42 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="50744596-368f-11d9-a9e7-0001020eed82">
+    <topic>proxytunnel -- format string vulnerability</topic>
+    <affects>
+      <package>
+	<name>proxytunnel</name>
+	<range><lt>1.2.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Gentoo Linux Security Advisory reports:</p>
+	<blockquote cite="http://www.gentoo.org/security/en/glsa/glsa-200411-07.xml">
+	  <p>Florian Schilhabel of the Gentoo Linux Security Audit
+	    project found a format string vulnerability in
+	    Proxytunnel. When the program is started in daemon mode
+	    (-a [port]), it improperly logs invalid proxy answers to
+	    syslog.</p>
+	  <p>A malicious remote server could send specially-crafted
+	    invalid answers to exploit the format string
+	    vulnerability, potentially allowing the execution of
+	    arbitrary code on the tunnelling host with the rights of
+	    the Proxytunnel process.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0992</cvename>
+      <url>http://proxytunnel.sourceforge.net/news.html</url>
+      <url>http://www.gentoo.org/security/en/glsa/glsa-200411-07.xml</url>
+    </references>
+    <dates>
+      <discovery>2004-11-01</discovery>
+      <entry>2004-11-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bdd1537b-354c-11d9-a9e7-0001020eed82">
     <topic>sudo -- privilege escalation with bash scripts</topic>
     <affects>
