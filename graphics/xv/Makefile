@@ -10,14 +10,14 @@ PORTVERSION=	3.10a
 PORTREVISION=	1
 CATEGORIES+=	graphics
 MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/ \
-		http://www.yuasa.kuis.kyoto-u.ac.jp/~shige/FreeBSD/ports/xv/ \
+		${MASTER_SITE_LOCAL} \
 		ftp://ftp.trilon.com/pub/xv/ \
 		ftp://ftp.trilon.com/pub/xv/patches/ \
-		ftp://ftp.airlab.cs.ritsumei.ac.jp/pub/X/xv-jp-extension/working/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	ports/xv
-# Workaround: pdf.patch and mp-tiff-patch must be fetched from my own site.
-#             These are modified for applying after jp-extension-patch.
+		ftp://ftp.airlab.cs.ritsumei.ac.jp/pub/X/xv-jp-extension/working/
+MASTER_SITE_SUBDIR=	shige/xv
+# Workaround: pdf.patch, mp-tiff-patch, and xv-png-1.2d.patch must be fetched
+#		from MASTER_SITE_LOCAL.
+#		These are modified for applying after jp-extension-patch.
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}${PORTVERSION:S/.//}-jp-extension-rev5.3.3.tar.gz \
 		jp-ext-bzip2.patch longname.patch pdf.patch mp-tiff-patch \
