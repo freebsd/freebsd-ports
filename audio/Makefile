@@ -179,6 +179,7 @@
     SUBDIR += p5-MPEG-ID3v2Tag
     SUBDIR += p5-Shout
     SUBDIR += p5-Xmms
+    SUBDIR += p5-libvorbis
     SUBDIR += p5-tagged
     SUBDIR += pd
     SUBDIR += pimp3

@@ -1,0 +1,9 @@
+@comment $FreeBSD$
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ogg/Vorbis.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ogg/Vorbis/Vorbis.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ogg/Vorbis/Vorbis.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ogg/Vorbis/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ogg/Vorbis/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ogg
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ogg/Vorbis
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ogg
