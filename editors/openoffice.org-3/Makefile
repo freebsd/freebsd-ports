@@ -27,7 +27,7 @@ USE_GNOME=	gtk20
 MOZILLA_PROJECT=	cws_srx645_mozooo.20041016.tar.gz
 MOZILLA_SOURCE=		mozilla-source-1.7b-source.tar.gz
 .if !defined(WITHOUT_MOZILLA)
-DISTFILES+=	${MOZILLA_PROJECT}:moz ${MOZILLA_SOURCE}:moz
+DISTFILES+=	${MOZILLA_PROJECT} ${MOZILLA_SOURCE}:moz
 USE_GNOME+=	orbit gtk12
 .endif
 
