@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBD-ODBC
-PORTVERSION=	1.05
+PORTVERSION=	1.06
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBD
@@ -25,6 +25,7 @@ CONFIGURE_ARGS+=	-o ${LOCALBASE}
 MAN3=		DBD::ODBC.3
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/[[:<:]]our[[:>:]]/my/g' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e 's/[[:<:]]our[[:>:]]/my/g' \
+			  -e 's/^    @$$(NOOP)/	@$$(NOOP)/g' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
