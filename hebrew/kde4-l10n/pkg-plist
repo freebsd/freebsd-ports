@@ -62,9 +62,11 @@ share/locale/he/LC_MESSAGES/appletproxy.mo
 share/locale/he/LC_MESSAGES/ark.mo
 share/locale/he/LC_MESSAGES/artsbuilder.mo
 share/locale/he/LC_MESSAGES/artscontrol.mo
+share/locale/he/LC_MESSAGES/artsmodules.mo
 share/locale/he/LC_MESSAGES/atlantik.mo
 share/locale/he/LC_MESSAGES/atlantikdesigner.mo
 share/locale/he/LC_MESSAGES/babelfish.mo
+share/locale/he/LC_MESSAGES/cervisia.mo
 share/locale/he/LC_MESSAGES/charlatanui.mo
 share/locale/he/LC_MESSAGES/childpanelextension.mo
 share/locale/he/LC_MESSAGES/clockapplet.mo
@@ -130,6 +132,7 @@ share/locale/he/LC_MESSAGES/katetextfilter.mo
 share/locale/he/LC_MESSAGES/katexmlcheck.mo
 share/locale/he/LC_MESSAGES/katexmltools.mo
 share/locale/he/LC_MESSAGES/katomic.mo
+share/locale/he/LC_MESSAGES/kaudiocreator.mo
 share/locale/he/LC_MESSAGES/kbackgammon.mo
 share/locale/he/LC_MESSAGES/kbattleship.mo
 share/locale/he/LC_MESSAGES/kblackbox.mo
@@ -442,6 +445,7 @@ share/locale/he/LC_MESSAGES/nsplugin.mo
 share/locale/he/LC_MESSAGES/passwords.mo
 share/locale/he/LC_MESSAGES/pitchablespeed.mo
 share/locale/he/LC_MESSAGES/ppdtranslations.mo
+share/locale/he/LC_MESSAGES/quanta.mo
 share/locale/he/LC_MESSAGES/quicklauncher.mo
 share/locale/he/LC_MESSAGES/secpolicy.mo
 share/locale/he/LC_MESSAGES/synaescope.mo
