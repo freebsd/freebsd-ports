@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openal
-PORTVERSION=	20021215fbsd
+PORTVERSION=	20030125
 CATEGORIES=	audio
 MASTER_SITES=	http://math.smsu.edu/~erik/files/fbsd/\
 		http://www.smluc.org/~erik/\
@@ -14,7 +14,7 @@ MASTER_SITES=	http://math.smsu.edu/~erik/files/fbsd/\
 
 MAINTAINER=	erik@smluc.org
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/linux
+WRKSRC=		${WRKDIR}/${DISTNAME}fbsd/linux
 GNU_CONFIGURE=  yes
 USE_GMAKE=	yes
 
