@@ -1,0 +1,11 @@
+--- Makefile.orig	Mon Mar 22 18:42:40 1999
++++ Makefile	Mon Mar 22 18:42:48 1999
+@@ -8,7 +8,7 @@
+ # You need to change the following line to the full pathname
+ # of your perl interpreter
+ 
+-PERLBIN = /usr/local/bin/perl
++PERLBIN = $(PERL5)
+ 
+ # and here are a some commands that may be system-dependent
+ 
