@@ -1,0 +1,6 @@
+lib/X11/fonts/misc/kaist-newmj16.pcf.gz
+lib/X11/fonts/misc/kaist-newmj18.pcf.gz
+lib/X11/fonts/misc/ks_iyagi16.pcf.gz
+lib/X11/fonts/misc/ks_philgi16.pcf.gz
+@exec cd %D/lib/X11/fonts/misc ; mkfontdir
+@unexec cd %D/lib/X11/fonts/misc ; mkfontdir
