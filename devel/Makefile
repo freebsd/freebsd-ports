@@ -210,6 +210,7 @@
     SUBDIR += haddock
     SUBDIR += happy
     SUBDIR += happydoc
+    SUBDIR += hat
     SUBDIR += hmake
     SUBDIR += hp48cc
     SUBDIR += hypersrc
