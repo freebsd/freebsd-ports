@@ -1,0 +1,11 @@
+--- configure.in.orig	Tue Feb 22 17:48:11 2000
++++ configure.in	Sat Mar 18 18:10:52 2000
+@@ -31,7 +31,7 @@
+ 
+ dnl Checks for header files.
+ AC_HEADER_STDC
+-AC_CHECK_HEADERS(fcntl.h unistd.h set.h)
++AC_CHECK_HEADERS(fcntl.h unistd.h)
+ 
+ 
+ dnl Checks for typedefs, structures, and compiler characteristics.
