@@ -455,7 +455,7 @@ PLIST_SUB+=	LIBAUDIOFILE=""
 CONFIGURE_ARGS+=	--disable-libdv
 PLIST_SUB+=	LIBDV="@comment "
 .else
-LIB_DEPENDS+=	dv.3:${PORTSDIR}/multimedia/libdv
+LIB_DEPENDS+=	dv.4:${PORTSDIR}/multimedia/libdv
 
 PLIST_SUB+=	LIBDV=""
 .endif
@@ -522,7 +522,7 @@ PLIST_SUB+=	LIBMPEG2=""
 CONFIGURE_ARGS+=	--disable-shout
 PLIST_SUB+=	LIBSHOUT="@comment "
 .else
-LIB_DEPENDS+=	shout.2:${PORTSDIR}/audio/libshout
+LIB_DEPENDS+=	shout.3:${PORTSDIR}/audio/libshout2
 
 PLIST_SUB+=	LIBSHOUT=""
 .endif
