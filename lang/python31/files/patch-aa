@@ -1,11 +1,7 @@
 --- Makefile.in.orig	Fri Oct 25 16:37:32 1996
-+++ Makefile.in	Thu Feb  6 12:02:11 1997
-@@ -95,10 +95,10 @@
- 
- # Expanded directories
- BINDIR=		$(exec_prefix)/bin
--LIBDIR=		$(exec_prefix)/lib
-+LIBDIR=		$(exec_prefix)/share
++++ Makefile.in	Mon May 12 21:04:38 1997
+@@ -98,7 +98,7 @@
+ LIBDIR=		$(exec_prefix)/lib
  MANDIR=		$(prefix)/man
  INCLUDEDIR=	$(prefix)/include
 -SCRIPTDIR=	$(prefix)/lib

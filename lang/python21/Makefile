@@ -3,7 +3,7 @@
 # Date created:         08 August 1995
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.12 1997/02/21 14:57:01 tg Exp $
+# $Id: Makefile,v 1.13 1997/04/20 13:19:11 wosch Exp $
 #
 
 DISTNAME=       python1.4
@@ -13,12 +13,10 @@ MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
 		ftp://ftp.cwi.nl/pub/python/src/ \
 		ftp://www.python.org/pub/python/contrib/Graphics/Tkinter/ \
 		ftp://ftp.cwi.nl/pub/python/contrib/Graphics/Tkinter/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} PyTix-1.12.tar.gz
 
 MAINTAINER=	tg@FreeBSD.org
 
-LIB_DEPENDS=	tk41\\.1\\.:${PORTSDIR}/x11/tk41 \
-		tix4175\\.1\\.:${PORTSDIR}/x11/tix
+LIB_DEPENDS=	tk41\\.1\\.:${PORTSDIR}/x11/tk41
 
 WRKSRC=		${WRKDIR}/Python-1.4
 HAS_CONFIGURE=	yes
@@ -26,14 +24,6 @@ HAS_CONFIGURE=	yes
 MAKE_FLAGS+=	'OPT=${CFLAGS}'
 INSTALL_TARGET=	install
 MAN1=		python.1
-
-PYTIXSRC=	${WRKDIR}/PyTix-1.12
-
-post-extract:
-	@${ECHO_MSG} "===>   Add PyTix extensions to Python core"
-	${CP} ${PYTIXSRC}/Tkinter.py ${WRKSRC}/Lib/tkinter
-	${CP} ${PYTIXSRC}/Tix.py ${WRKSRC}/Lib/tkinter
-	${CP} ${PYTIXSRC}/_tkinter.c ${WRKSRC}/Modules
 
 post-configure:
 	${CP} ${FILESDIR}/Setup ${WRKSRC}/Modules

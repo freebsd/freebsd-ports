@@ -71,7 +71,7 @@ SITEPATH=:$(DESTLIB)/NumPy
 TESTPATH=:$(DESTLIB)/test
 
 # Path for machine- or system-dependent modules (and shared libraries)
-MACHDEPPATH=:$(DESTLIB)/$(MACHDEP)
+MACHDEPPATH=:$(DESTLIB)/$(MACHDEP):$(MACHDESTLIB)/sharedmodules
 
 COREPYTHONPATH=.$(SITEPATH)$(DESTPATH)$(TESTPATH)$(MACHDEPPATH)$(STDWINPATH)$(TKPATH)
 PYTHONPATH=$(COREPYTHONPATH)
@@ -128,6 +128,7 @@ select selectmodule.c	# select(2); not on ancient System V
 socket socketmodule.c	# socket(2); not on ancient System V
 errno errnomodule.c	# posix (UNIX) errno values
 
+*shared*
 
 # Some more UNIX dependent modules -- off by default, since these
 # are not supported by all UNIX systems:
@@ -249,7 +250,7 @@ TKPATH=:$(DESTLIB)/tkinter
 #_tkinter _tkinter.c -I/usr/openwin/include -I/usr/local/include -L/usr/openwin/lib -L/usr/local/lib -ltk4.1 -ltcl7.5 -lX11
 # For generic system (may have to add -I/-L options to find X11):
 #_tkinter _tkinter.c -I/usr/local/include -L/usr/local/lib -ltk4.1 -ltcl7.5 -lX11
-_tkinter _tkinter.c -I/usr/local/include -I/usr/X11R6/include -L/usr/local/lib -L/usr/X11R6/lib -ltix4175 -ltk41 -ltcl75 -lX11
+_tkinter _tkinter.c -I/usr/local/include -I/usr/X11R6/include -L/usr/local/lib -L/usr/X11R6/lib -ltk41 -ltcl75 -lX11
 
 
 # Lance Ellinghaus's modules:
