@@ -1,0 +1,20 @@
+--- Makefile.orig	Thu Jan 18 00:35:42 2001
++++ Makefile	Sun Jan 28 18:40:36 2001
+@@ -38,7 +38,7 @@
+ #	-O3   - optimize (it seems that -O3 also help to find out some errors);
+ #	-g    - produce debugging information.
+ #
+-CFLAGS=		-Wall -O3 -g
++#CFLAGS=		-Wall -O3 -g
+ 
+ #
+ # DSTBINDIR - where to install binaries
+@@ -171,7 +171,7 @@
+ 	@${ECHO}
+ .else
+ 	@${ECHO} ">> Installing binaries, manual pages and miscellaneous files"
+-	${INSTALL} -c -g wheel -o root -m 0555 ipa ipastat ${DSTBINDIR}
++	${INSTALL} -c -s -g wheel -o root -m 0555 ipa ipastat ${DSTBINDIR}
+ 	${CHMOD} u+s ${DSTBINDIR}/ipastat
+ 	${INSTALL} -c -g wheel -o root -m 0444 man/ipa.5 man/ipa.conf.5 ${DSTMANDIR}/man5
+ 	${INSTALL} -c -g wheel -o root -m 0444 man/ipa.8 man/ipastat.8 ${DSTMANDIR}/man8
