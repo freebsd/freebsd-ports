@@ -6,12 +6,9 @@
 
 PORTNAME=	python
 PORTVERSION=	2.3.b2
+PORTREVISION=	1
 CATEGORIES=	lang python ipv6
-MASTER_SITES=	http://www.python.org/%SUBDIR%/ \
-		http://python.mirrors.pair.com/%SUBDIR%/ \
-		http://mirrors.ccs.neu.edu/Python/pub/www.python.org/%SUBDIR%/ \
-		http://python.planetmirror.com/%SUBDIR%/ \
-		http://SunSITE.Informatik.RWTH-Aachen.DE/python/%SUBDIR%/
+MASTER_SITES=	${MASTER_SITE_PYTHON}
 MASTER_SITE_SUBDIR=	ftp/python/${PORTVERSION:S/.b2//}
 DISTFILES=	${PYTHON_DISTFILE}
 
@@ -23,8 +20,8 @@ WRKSRC=		${PYTHON_WRKSRC}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fpectl
 CONFIGURE_ENV=	OPT="${CFLAGS}"
-INSTALL_TARGET=	install
-MAN1=		python.1
+INSTALL_TARGET=	altinstall
+MAN1=		${PYTHON_VERSION}.1
 
 USE_PYTHON=	yes
 PYTHON_VERSION=	python2.3
@@ -99,6 +96,12 @@ PLATFORMS=plat-freebsd2 plat-freebsd4 plat-freebsd5
 PLATFORMS=plat-freebsd3 plat-freebsd4 plat-freebsd5
 .endif
 
+post-extract:
+	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
+		${WRKSRC}/Tools/scripts/pydoc > ${WRKDIR}/pydoc2.3
+	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
+		${WRKSRC}/Tools/scripts/idle > ${WRKDIR}/idle2.3
+
 pre-install:
 .for platform in ${PLATFORMS}
 	${MKDIR} ${PYTHONPREFIX_LIBDIR}/${platform}
@@ -109,8 +112,12 @@ pre-install:
 .endfor
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/Misc/python-mode.el \
-		${PREFIX}/share/emacs/site-lisp
+	${INSTALL_SCRIPT} ${WRKDIR}/pydoc2.3 ${WRKDIR}/idle2.3 \
+		${PREFIX}/bin
+	@${MKDIR} ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/Misc/python.man \
+		${MANPREFIX}/man/man1/${PYTHON_VERSION}.1
+
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${TOOLSDIR}
 	@cd ${WRKSRC}; tar -c --exclude='*CVS*' -f - Tools | \

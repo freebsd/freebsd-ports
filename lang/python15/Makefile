@@ -9,8 +9,8 @@ PORTNAME=	python
 PORTVERSION=	1.5.2
 PORTREVISION=	2
 CATEGORIES=	lang python
-MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
-		ftp://ftp.cwi.nl/pub/python/src/
+MASTER_SITES=	${MASTER_SITE_PYTHON}
+MASTER_SITE_SUBDIR=	ftp/python/src
 DISTFILES=	${PYTHON_DISTFILE}
 
 MAINTAINER=	perky@FreeBSD.org
@@ -24,7 +24,7 @@ CONFIGURE_ENV=	OPT="${CFLAGS}"
 INSTALL_TARGET=	altinstall
 PLIST=		${WRKDIR}/PLIST
 MAN1=		${PYTHON_VERSION}.1
-NO_LATEST_LINK=	yes
+LATEST_LINK=	${PYTHON_VERSION:S/.//}
 
 USE_PYTHON=	yes
 PYTHON_VERSION=	python1.5

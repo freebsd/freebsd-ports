@@ -1,11 +1,20 @@
---- setup.py.orig	Fri Mar  2 07:24:14 2001
-+++ setup.py	Mon Mar  5 15:26:17 2001
-@@ -14,7 +14,7 @@
- from distutils.command.build_ext import build_ext
+--- setup.py.orig	Tue Jun 17 11:51:28 2003
++++ setup.py	Fri Jul  4 17:33:05 2003
+@@ -15,7 +15,7 @@
+ from distutils.command.install_lib import install_lib
  
  # This global variable is used to hold the list of modules to be disabled.
 -disabled_module_list = []
 +disabled_module_list = ["_tkinter", "gdbm", "mpz", "pyexpat"]
  
- def find_file(filename, std_dirs, paths):
-     """Searches for the directory where a given file is located,
+ def add_dir_to_list(dirlist, dir):
+     """Add the directory 'dir' to the list 'dirlist' (at the front) if
+@@ -1127,7 +1127,7 @@
+           ext_modules=[Extension('struct', ['structmodule.c'])],
+ 
+           # Scripts to install
+-          scripts = ['Tools/scripts/pydoc', 'Tools/scripts/idle']
++          scripts = []
+         )
+ 
+ # --install-platlib
