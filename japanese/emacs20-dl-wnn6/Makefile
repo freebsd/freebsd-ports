@@ -3,7 +3,7 @@
 # Date created:		10 October 1998
 # Whom:			shige
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/01/11 14:21:24 kuriyama Exp $
 #
 
 DISTNAME=	dl-wnn-0.2.2
@@ -21,7 +21,7 @@ RUN_DEPENDS=	emacs-dl-${EMACS_VER}:${EMACSDL_DIR}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wnn-includes=${PREFIX}/include/wnn --with-wnn6 \
-		--with-emacs-src=${EMACSDL_DIR}/work/emacs-${EMACS_VER}
+		--with-emacs-src=${WRKDIRPREFIX}${EMACSDL_DIR}/work/emacs-${EMACS_VER}
 CONFIGURE_ENV=	EMACS=emacs-dl-${EMACS_VER}
 PLIST_SUB=	EMACS_VER=${EMACS_VER} DOCDIR=${DOCDIR}
 
