@@ -6856,6 +6856,7 @@ route6d		src/usr.sbin/route6d
 routed		src/sbin/routed
 rox-base	ports/x11-fm/rox-base
 rox-filer	ports/x11-fm/rox-filer
+rox-memo	ports/deskutils/rox-memo
 rox-session	ports/x11-fm/rox-session
 roxen		ports/www/roxen
 roxirc		ports/irc/roxirc
