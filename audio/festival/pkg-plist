@@ -68,7 +68,6 @@ share/festival/lib/web.scm
 share/festival/lib/cstr.scm
 share/festival/lib/fringe.scm
 share/festival/lib/sitevars.scm
-@dirrm share/festival/lib
 share/festival/examples/Makefile
 share/festival/examples/webdemo.scm
 share/festival/examples/ex1.email
@@ -105,5 +104,10 @@ share/festival/examples/text2wave
 share/festival/examples/make_utts
 share/festival/examples/dumpfeats
 share/festival/examples/durmeanstd
+@dirrm share/festival/lib/voices/spanish
+@dirrm share/festival/lib/voices/english
+@dirrm share/festival/lib/voices
+@dirrm share/festival/lib/dicts
+@dirrm share/festival/lib
 @dirrm share/festival/examples
 @dirrm share/festival

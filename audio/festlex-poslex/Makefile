@@ -30,7 +30,6 @@ post-extract:
 	@ find ${WRKSRC} -type d -print0 | xargs -0 ${CHMOD} 755
 
 do-install:
-	${MKDIR} ${FHOME}
 	cd ${WRKSRC} && ${CP} -pPR * ${FHOME}
 
 .include <bsd.port.mk>

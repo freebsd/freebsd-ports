@@ -45,9 +45,8 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-aa-ogi
 RESTRICTED=	no-commercial-use
 .endif
 
-PLIST=		${PKGDIR}/pkg-plist
 .if defined (WITH_OGI)
-PLIST=		${PKGDIR}/pkg-plist-ogi
+PLIST=		${WRKDIR}/pkg-plist
 .endif
 
 WRKSRC=		${WRKDIR}
@@ -118,10 +117,17 @@ post-patch:
 	${CP} ${SPEECHTOOLS}/config/systems/ix86_FreeBSD4.0.mak \
 		${SPEECHTOOLS}/config/systems/ix86_FreeBSD5.0.mak
 
+pre-install:
+.if defined (WITH_OGI)
+	${CAT} ${PKGDIR}/pkg-plist-ogi ${PKGDIR}/pkg-plist > ${PLIST}
+.endif
+
 do-install:
-	${MKDIR} ${FHOME}
+	${MKDIR} ${FHOME}/lib/voices/english/
+	${MKDIR}  ${FHOME}/lib/voices/spanish/
+	${MKDIR} ${FHOME}/lib/dicts
 	${CHMOD} -R u+w,a+r,og-w ${FESTIVAL}/lib
-	${FIND} ${FESTIVAL}/lib -type d -print0| xargs -0 ${CHMOD} 755
+	find ${FESTIVAL}/lib -type d -print0| xargs -0 ${CHMOD} 755
 	cd ${FESTIVAL} && ${CP} -pPR lib examples ${FHOME}
 	${RM} -rf ${FHOME}/lib/etc/*FreeBSD*
 	${INSTALL_PROGRAM} ${FESTIVAL}/lib/etc/*FreeBSD*/audsp ${PREFIX}/libexec
