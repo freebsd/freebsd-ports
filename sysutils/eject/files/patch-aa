@@ -1,5 +1,5 @@
---- eject.c.orig	Mon Aug 21 18:49:55 2000
-+++ eject.c	Mon Aug 21 19:00:45 2000
+--- eject.c.orig	Tue Jan  4 23:42:12 2000
++++ eject.c	Fri Apr 20 22:10:06 2001
 @@ -43,8 +43,8 @@
  extern int optind;
  
@@ -59,7 +59,8 @@
 +    if (asprintf(device, "/dev/%sc", name) == -1)
 +	return sts;
      if (vflag || nflag) {
- 	printf("%s: using device %s\n", program, device);
+-	printf("%s: using device %s\n", program, device);
++	printf("%s: using device %s\n", program, *device);
      }
 -    sts = stat(device, &sb);
 +    sts = stat(*device, &sb);
