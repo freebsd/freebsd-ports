@@ -1,44 +1,185 @@
-bin/gswitchit-properties_capplet
-bin/gswitchit_applet
-bin/xkb-properties_capplet
-etc/CORBA/servers/gswitchit_applet.gnorba
-etc/gconf/gconf.xml.defaults/apps/gswitchit_applet/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gswitchit_applet/General/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gswitchit_applet/XKB/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gswitchit_applet/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gswitchit_applet/General/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gswitchit_applet/XKB/%gconf.xml
-etc/gconf/schemas/gswitchit_applet.schemas
-share/gnome/applets/Utility/gswitchit_applet.desktop
-share/gnome/apps/Settings/XKB/.directory
-share/gnome/apps/Settings/XKB/gswitchit-properties.desktop
-share/gnome/apps/Settings/XKB/xkb-properties.desktop
-share/gnome/control-center/capplets/XKB/.directory
-share/gnome/control-center/capplets/XKB/gswitchit-properties.desktop
-share/gnome/control-center/capplets/XKB/xkb-properties.desktop
-share/gnome/gswitchit_applet/interfaces/gswitchit_applet.glade
+bin/gswitchit-properties-capplet
+bin/xkb-properties-capplet
+etc/gconf/gconf.xml.defaults/apps/gswitchit/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gswitchit/General/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gswitchit/XKB/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gswitchit/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gswitchit/General/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gswitchit/XKB/%gconf.xml
+etc/gconf/schemas/gswitchit.schemas
+libdata/bonobo/servers/GNOME_GSwitchItApplet.server
+libexec/gswitchit-applet
+share/gnome/control-center-2.0/capplets/gswitchit-properties.desktop
+share/gnome/control-center-2.0/capplets/xkb-properties.desktop
+share/gnome/gnome-2.0/ui/GNOME_GSwitchItApplet.xml
+share/gnome/gswitchit/interfaces/gswitchit-properties.glade
+share/gnome/gswitchit/interfaces/xkb-properties.glade
+share/gnome/help/gswitchit/C/III.applet.png
+share/gnome/help/gswitchit/C/applet.gif
+share/gnome/help/gswitchit/C/applet.popup.png
+share/gnome/help/gswitchit/C/gb.applet.png
+share/gnome/help/gswitchit/C/gc.png
+share/gnome/help/gswitchit/C/gswitchit-applet.xml
+share/gnome/help/gswitchit/C/gswitchit-properties-capplet.xml
+share/gnome/help/gswitchit/C/gswitchit.xml
+share/gnome/help/gswitchit/C/intro.xml
+share/gnome/help/gswitchit/C/legal.xml
+share/gnome/help/gswitchit/C/refs.xml
+share/gnome/help/gswitchit/C/ru.applet.png
+share/gnome/help/gswitchit/C/us.applet.png
+share/gnome/help/gswitchit/C/xkb-properties-capplet.xml
+share/gnome/help/gswitchit/C/xkb.xml
+share/gnome/help/gswitchit/C/xpc.1.png
+share/gnome/help/gswitchit/C/xpc.2.png
+share/gnome/help/gswitchit/C/xpc.3.png
+share/gnome/help/gswitchit/C/xpc.4.png
+share/gnome/help/gswitchit/C/xpc.5.png
+share/gnome/help/gswitchit/C/xpc.layout_tree.png
+share/gnome/help/gswitchit/ru/III.applet.png
+share/gnome/help/gswitchit/ru/applet.gif
+share/gnome/help/gswitchit/ru/applet.popup.png
+share/gnome/help/gswitchit/ru/gb.applet.png
+share/gnome/help/gswitchit/ru/gc.png
+share/gnome/help/gswitchit/ru/gswitchit-applet.xml
+share/gnome/help/gswitchit/ru/gswitchit-properties-capplet.xml
+share/gnome/help/gswitchit/ru/gswitchit.xml
+share/gnome/help/gswitchit/ru/intro.xml
+share/gnome/help/gswitchit/ru/legal.xml
+share/gnome/help/gswitchit/ru/refs.xml
+share/gnome/help/gswitchit/ru/ru.applet.png
+share/gnome/help/gswitchit/ru/us.applet.png
+share/gnome/help/gswitchit/ru/xkb-properties-capplet.xml
+share/gnome/help/gswitchit/ru/xkb.xml
+share/gnome/help/gswitchit/ru/xpc.1.png
+share/gnome/help/gswitchit/ru/xpc.2.png
+share/gnome/help/gswitchit/ru/xpc.3.png
+share/gnome/help/gswitchit/ru/xpc.4.png
+share/gnome/help/gswitchit/ru/xpc.5.png
+share/gnome/help/gswitchit/ru/xpc.layout_tree.png
+share/gnome/omf/gswitchit/gswitchit-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gswitchit/gswitchit-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gswitchit/gswitchit-ru.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gswitchit/gswitchit-ru.omf 2>/dev/null || /usr/bin/true
+share/gnome/pixmaps/gswitchit-applet.png
+share/gnome/pixmaps/gswitchit-properties-capplet.png
 share/gnome/pixmaps/gswitchit/III.xpm
 share/gnome/pixmaps/gswitchit/IV.xpm
+share/gnome/pixmaps/gswitchit/ae.xpm
+share/gnome/pixmaps/gswitchit/af.xpm
+share/gnome/pixmaps/gswitchit/am.xpm
+share/gnome/pixmaps/gswitchit/ar.xpm
+share/gnome/pixmaps/gswitchit/at.xpm
+share/gnome/pixmaps/gswitchit/az.xpm
+share/gnome/pixmaps/gswitchit/be.xpm
 share/gnome/pixmaps/gswitchit/bg.xpm
+share/gnome/pixmaps/gswitchit/bh.xpm
+share/gnome/pixmaps/gswitchit/br.xpm
+share/gnome/pixmaps/gswitchit/bu.xpm
+share/gnome/pixmaps/gswitchit/by-alt.xpm
+share/gnome/pixmaps/gswitchit/by.xpm
+share/gnome/pixmaps/gswitchit/ca.xpm
+share/gnome/pixmaps/gswitchit/ch.xpm
+share/gnome/pixmaps/gswitchit/cu.xpm
+share/gnome/pixmaps/gswitchit/cz.xpm
+share/gnome/pixmaps/gswitchit/da.xpm
+share/gnome/pixmaps/gswitchit/de.xpm
+share/gnome/pixmaps/gswitchit/dj.xpm
+share/gnome/pixmaps/gswitchit/dz.xpm
+share/gnome/pixmaps/gswitchit/ee.xpm
+share/gnome/pixmaps/gswitchit/eg.xpm
 share/gnome/pixmaps/gswitchit/el.xpm
-share/gnome/pixmaps/gswitchit/gswitchit.png
+share/gnome/pixmaps/gswitchit/en7.xpm
+share/gnome/pixmaps/gswitchit/es.xpm
+share/gnome/pixmaps/gswitchit/eu.xpm
+share/gnome/pixmaps/gswitchit/fi.xpm
+share/gnome/pixmaps/gswitchit/fr.xpm
+share/gnome/pixmaps/gswitchit/gb.xpm
+share/gnome/pixmaps/gswitchit/ge.xpm
+share/gnome/pixmaps/gswitchit/hr.xpm
+share/gnome/pixmaps/gswitchit/hu.xpm
+share/gnome/pixmaps/gswitchit/ie.xpm
+share/gnome/pixmaps/gswitchit/il.xpm
+share/gnome/pixmaps/gswitchit/init.xpm
+share/gnome/pixmaps/gswitchit/iq.xpm
+share/gnome/pixmaps/gswitchit/is.xpm
+share/gnome/pixmaps/gswitchit/it.xpm
+share/gnome/pixmaps/gswitchit/jo.xpm
+share/gnome/pixmaps/gswitchit/jp.xpm
+share/gnome/pixmaps/gswitchit/km.xpm
+share/gnome/pixmaps/gswitchit/kw.xpm
+share/gnome/pixmaps/gswitchit/la.xpm
+share/gnome/pixmaps/gswitchit/lb.xpm
+share/gnome/pixmaps/gswitchit/lt.xpm
+share/gnome/pixmaps/gswitchit/lv.xpm
+share/gnome/pixmaps/gswitchit/ly.xpm
+share/gnome/pixmaps/gswitchit/ma.xpm
+share/gnome/pixmaps/gswitchit/mk.xpm
+share/gnome/pixmaps/gswitchit/mn.xpm
+share/gnome/pixmaps/gswitchit/mx.xpm
+share/gnome/pixmaps/gswitchit/nl.xpm
+share/gnome/pixmaps/gswitchit/no.xpm
+share/gnome/pixmaps/gswitchit/om.xpm
+share/gnome/pixmaps/gswitchit/pl.xpm
+share/gnome/pixmaps/gswitchit/ps.xpm
+share/gnome/pixmaps/gswitchit/pt.xpm
+share/gnome/pixmaps/gswitchit/qc.xpm
+share/gnome/pixmaps/gswitchit/ro.xpm
 share/gnome/pixmaps/gswitchit/ru.xpm
+share/gnome/pixmaps/gswitchit/ru7.xpm
+share/gnome/pixmaps/gswitchit/ru_new.xpm
+share/gnome/pixmaps/gswitchit/sa.xpm
+share/gnome/pixmaps/gswitchit/si.xpm
+share/gnome/pixmaps/gswitchit/sk.xpm
+share/gnome/pixmaps/gswitchit/so.xpm
+share/gnome/pixmaps/gswitchit/su.xpm
+share/gnome/pixmaps/gswitchit/sv.xpm
+share/gnome/pixmaps/gswitchit/sy.xpm
 share/gnome/pixmaps/gswitchit/th.xpm
+share/gnome/pixmaps/gswitchit/tn.xpm
+share/gnome/pixmaps/gswitchit/tr.xpm
+share/gnome/pixmaps/gswitchit/ua.xpm
+share/gnome/pixmaps/gswitchit/uk.xpm
 share/gnome/pixmaps/gswitchit/us.xpm
-share/gnome/pixmaps/gswitchit/xkb.png
-share/locale/bg/LC_MESSAGES/gswitchit_applet.mo
-share/locale/de/LC_MESSAGES/gswitchit_applet.mo
-share/locale/el/LC_MESSAGES/gswitchit_applet.mo
-share/locale/ru/LC_MESSAGES/gswitchit_applet.mo
-share/locale/sv/LC_MESSAGES/gswitchit_applet.mo
+share/gnome/pixmaps/gswitchit/us_new.xpm
+share/gnome/pixmaps/gswitchit/uy.xpm
+share/gnome/pixmaps/gswitchit/vn.xpm
+share/gnome/pixmaps/gswitchit/ye.xpm
+share/gnome/pixmaps/gswitchit/yu.xpm
+share/gnome/pixmaps/xkb-properties-capplet.png
+share/locale/am/LC_MESSAGES/gswitchit.mo
+share/locale/bg/LC_MESSAGES/gswitchit.mo
+share/locale/cs/LC_MESSAGES/gswitchit.mo
+share/locale/de/LC_MESSAGES/gswitchit.mo
+share/locale/el/LC_MESSAGES/gswitchit.mo
+share/locale/es/LC_MESSAGES/gswitchit.mo
+share/locale/fa/LC_MESSAGES/gswitchit.mo
+share/locale/fr/LC_MESSAGES/gswitchit.mo
+share/locale/ja/LC_MESSAGES/gswitchit.mo
+share/locale/lv/LC_MESSAGES/gswitchit.mo
+share/locale/mn/LC_MESSAGES/gswitchit.mo
+share/locale/nl/LC_MESSAGES/gswitchit.mo
+share/locale/no/LC_MESSAGES/gswitchit.mo
+share/locale/pt/LC_MESSAGES/gswitchit.mo
+share/locale/pt_BR/LC_MESSAGES/gswitchit.mo
+share/locale/ru/LC_MESSAGES/gswitchit.mo
+share/locale/sr/LC_MESSAGES/gswitchit.mo
+share/locale/sr@Latn/LC_MESSAGES/gswitchit.mo
+share/locale/sv/LC_MESSAGES/gswitchit.mo
+share/locale/uk/LC_MESSAGES/gswitchit.mo
+share/locale/vi/LC_MESSAGES/gswitchit.mo
+share/locale/zh_CN/LC_MESSAGES/gswitchit.mo
 @dirrm share/gnome/pixmaps/gswitchit
-@dirrm share/gnome/gswitchit_applet/interfaces
-@dirrm share/gnome/gswitchit_applet
-@dirrm share/gnome/control-center/capplets/XKB
-@dirrm share/gnome/apps/Settings/XKB
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gswitchit_applet/XKB
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gswitchit_applet/General
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gswitchit_applet
-@dirrm etc/gconf/gconf.xml.defaults/apps/gswitchit_applet/XKB
-@dirrm etc/gconf/gconf.xml.defaults/apps/gswitchit_applet/General
-@dirrm etc/gconf/gconf.xml.defaults/apps/gswitchit_applet
+@dirrm share/gnome/omf/gswitchit
+@dirrm share/gnome/help/gswitchit/ru
+@dirrm share/gnome/help/gswitchit/C
+@dirrm share/gnome/help/gswitchit
+@dirrm share/gnome/gswitchit/interfaces
+@dirrm share/gnome/gswitchit
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gswitchit/XKB
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gswitchit/General
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gswitchit
+@dirrm etc/gconf/gconf.xml.defaults/apps/gswitchit/XKB
+@dirrm etc/gconf/gconf.xml.defaults/apps/gswitchit/General
+@dirrm etc/gconf/gconf.xml.defaults/apps/gswitchit
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gswitchit/gswitchit-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gswitchit/gswitchit-ru.omf 2>/dev/null || /usr/bin/true
