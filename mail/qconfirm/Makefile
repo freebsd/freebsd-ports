@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qconfirm
-PORTVERSION=	0.10.1
+PORTVERSION=	0.11.0
 CATEGORIES=	mail
 MASTER_SITES=	http://smarden.org/qconfirm/
 
