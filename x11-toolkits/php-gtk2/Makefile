@@ -18,14 +18,14 @@ COMMENT=	An extension to use gtk in PHP-applications
 # automake-1.5 installed - what a mess
 BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake \
 		automake14:${PORTSDIR}/devel/automake14 \
-		autoconf:${PORTSDIR}/devel/autoconf213 \
-		${LOCALBASE}/bin/phpize:${PORTSDIR}/www/mod_php4
+		autoconf:${PORTSDIR}/devel/autoconf \
+		autoconf213:${PORTSDIR}/devel/autoconf213 \
+		phpize:${PORTSDIR}/www/mod_php4
 RUN_DEPENDS=	php:${PORTSDIR}/www/mod_php4
 
 # Don't call autoconf directly, ./buildconf does this
 GNU_CONFIGURE=	yes
 USE_AUTOCONF=	no
-USE_LIBTOOL=	no
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 USE_GNOMENG=	yes
@@ -75,11 +75,9 @@ pre-everything::
 	@${ECHO_MSG} '*                                                       *'
 	@${ECHO_MSG} '*********************************************************'
 
-post-patch-script:
-	@${ECHO_MSG} "===>  Building configuration files for ${PKGNAME}"
-	(cd ${WRKSRC} && ./buildconf)
-
 pre-configure:
+	@${ECHO_MSG} "===>  Building configuration files for ${PKGNAME}"
+	@(cd ${WRKSRC} && ./buildconf)
 .for FILE in ${PIC2FIX}
 	@${REINPLACE_CMD} -e "s|-prefer-pic|${CFLAGS}|g" ${WRKSRC}/${FILE}
 .endfor
