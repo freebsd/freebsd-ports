@@ -7,7 +7,7 @@
 
 PORTNAME=	annotations
 PORTVERSION=	0.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www zope
 MASTER_SITES=	http://zope.org/Members/infrae/Annotations/Annotations-${PORTVERSION}/
 PKGNAMEPREFIX=	zope-
@@ -23,13 +23,6 @@ DIST_SUBDIR=	zope
 
 ZOPEPRODUCTNAME=Annotations
 
-# yes, some of us are running zope on python 2.3
-#PYTHON_VERSION=	python2.3
-
-# You can change this in the environment if you like.
-#SZOPEBASEDIR?=		www/Zope
-
-PLIST_SUB=	ZOPEBASEDIR=${SZOPEBASEDIR}
 WRKSRC=		${WRKDIR}/${ZOPEPRODUCTNAME}
 
 do-build:

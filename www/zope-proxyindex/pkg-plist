@@ -1,24 +1,24 @@
-%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/CREDITS.txt
-%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/Expression.py
-%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/Expression.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/HISTORY.txt
-%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/INSTALL.txt
-%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/LICENSE.txt
-%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/ProxyIndex.py
-%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/ProxyIndex.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/README.txt
-%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/__init__.py
-%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/__init__.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/homepage.html
-%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/tests/__init__.py
-%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/tests/__init__.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/tests/testProxyIndex.py
-%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/tests/testProxyIndex.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/ui/ProxyIndexAddForm.dtml
-%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/ui/ProxyIndexView.dtml
-%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/version.txt
-%%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/www/index.gif
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/www
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/ui
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/tests
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/ProxyIndex/
+%%ZOPEPRODUCTDIR%%/ProxyIndex/CREDITS.txt
+%%ZOPEPRODUCTDIR%%/ProxyIndex/Expression.py
+%%ZOPEPRODUCTDIR%%/ProxyIndex/Expression.pyc
+%%ZOPEPRODUCTDIR%%/ProxyIndex/HISTORY.txt
+%%ZOPEPRODUCTDIR%%/ProxyIndex/INSTALL.txt
+%%ZOPEPRODUCTDIR%%/ProxyIndex/LICENSE.txt
+%%ZOPEPRODUCTDIR%%/ProxyIndex/ProxyIndex.py
+%%ZOPEPRODUCTDIR%%/ProxyIndex/ProxyIndex.pyc
+%%ZOPEPRODUCTDIR%%/ProxyIndex/README.txt
+%%ZOPEPRODUCTDIR%%/ProxyIndex/__init__.py
+%%ZOPEPRODUCTDIR%%/ProxyIndex/__init__.pyc
+%%ZOPEPRODUCTDIR%%/ProxyIndex/homepage.html
+%%ZOPEPRODUCTDIR%%/ProxyIndex/tests/__init__.py
+%%ZOPEPRODUCTDIR%%/ProxyIndex/tests/__init__.pyc
+%%ZOPEPRODUCTDIR%%/ProxyIndex/tests/testProxyIndex.py
+%%ZOPEPRODUCTDIR%%/ProxyIndex/tests/testProxyIndex.pyc
+%%ZOPEPRODUCTDIR%%/ProxyIndex/ui/ProxyIndexAddForm.dtml
+%%ZOPEPRODUCTDIR%%/ProxyIndex/ui/ProxyIndexView.dtml
+%%ZOPEPRODUCTDIR%%/ProxyIndex/version.txt
+%%ZOPEPRODUCTDIR%%/ProxyIndex/www/index.gif
+@dirrm %%ZOPEPRODUCTDIR%%/ProxyIndex/www
+@dirrm %%ZOPEPRODUCTDIR%%/ProxyIndex/ui
+@dirrm %%ZOPEPRODUCTDIR%%/ProxyIndex/tests
+@dirrm %%ZOPEPRODUCTDIR%%/ProxyIndex/

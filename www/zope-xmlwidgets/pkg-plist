@@ -1,38 +1,38 @@
-%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/CREDITS.txt
-%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/EditorService.py
-%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/HISTORY.txt
-%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/INSTALL.txt
-%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/LICENSE.txt
-%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/README.txt
-%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/WidgetDOM.py
-%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/WidgetPathScheme.py
-%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/WidgetRegistry.py
-%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/__init__.py
-%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/helpers.py
-%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/tests/__init__.py
-%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/tests/test_EditorCache.py
-%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/tests/test_EditorService.py
-%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/tests/test_all.py
-%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/tests/__init__.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/tests/test_EditorCache.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/tests/test_EditorService.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/tests/test_all.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/EditorService.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/WidgetDOM.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/WidgetPathScheme.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/WidgetRegistry.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/__init__.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/helpers.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/homepage.html
-%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/version.txt
-%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/www/editorServiceAdd.zpt
-%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/www/editorServiceInfoTab.zpt
-%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/www/editor_service.gif
-%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/www/widgetRegistryAdd.zpt
-%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/www/widgetRegistryInfoTab.zpt
-%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/www/editorServiceEditTab.zpt
-%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/www/widget_registry.gif
-%%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/www/widget_service.gif
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/www
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets/tests
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/XMLWidgets
+%%ZOPEPRODUCTDIR%%/XMLWidgets/CREDITS.txt
+%%ZOPEPRODUCTDIR%%/XMLWidgets/EditorService.py
+%%ZOPEPRODUCTDIR%%/XMLWidgets/HISTORY.txt
+%%ZOPEPRODUCTDIR%%/XMLWidgets/INSTALL.txt
+%%ZOPEPRODUCTDIR%%/XMLWidgets/LICENSE.txt
+%%ZOPEPRODUCTDIR%%/XMLWidgets/README.txt
+%%ZOPEPRODUCTDIR%%/XMLWidgets/WidgetDOM.py
+%%ZOPEPRODUCTDIR%%/XMLWidgets/WidgetPathScheme.py
+%%ZOPEPRODUCTDIR%%/XMLWidgets/WidgetRegistry.py
+%%ZOPEPRODUCTDIR%%/XMLWidgets/__init__.py
+%%ZOPEPRODUCTDIR%%/XMLWidgets/helpers.py
+%%ZOPEPRODUCTDIR%%/XMLWidgets/tests/__init__.py
+%%ZOPEPRODUCTDIR%%/XMLWidgets/tests/test_EditorCache.py
+%%ZOPEPRODUCTDIR%%/XMLWidgets/tests/test_EditorService.py
+%%ZOPEPRODUCTDIR%%/XMLWidgets/tests/test_all.py
+%%ZOPEPRODUCTDIR%%/XMLWidgets/tests/__init__.pyc
+%%ZOPEPRODUCTDIR%%/XMLWidgets/tests/test_EditorCache.pyc
+%%ZOPEPRODUCTDIR%%/XMLWidgets/tests/test_EditorService.pyc
+%%ZOPEPRODUCTDIR%%/XMLWidgets/tests/test_all.pyc
+%%ZOPEPRODUCTDIR%%/XMLWidgets/EditorService.pyc
+%%ZOPEPRODUCTDIR%%/XMLWidgets/WidgetDOM.pyc
+%%ZOPEPRODUCTDIR%%/XMLWidgets/WidgetPathScheme.pyc
+%%ZOPEPRODUCTDIR%%/XMLWidgets/WidgetRegistry.pyc
+%%ZOPEPRODUCTDIR%%/XMLWidgets/__init__.pyc
+%%ZOPEPRODUCTDIR%%/XMLWidgets/helpers.pyc
+%%ZOPEPRODUCTDIR%%/XMLWidgets/homepage.html
+%%ZOPEPRODUCTDIR%%/XMLWidgets/version.txt
+%%ZOPEPRODUCTDIR%%/XMLWidgets/www/editorServiceAdd.zpt
+%%ZOPEPRODUCTDIR%%/XMLWidgets/www/editorServiceInfoTab.zpt
+%%ZOPEPRODUCTDIR%%/XMLWidgets/www/editor_service.gif
+%%ZOPEPRODUCTDIR%%/XMLWidgets/www/widgetRegistryAdd.zpt
+%%ZOPEPRODUCTDIR%%/XMLWidgets/www/widgetRegistryInfoTab.zpt
+%%ZOPEPRODUCTDIR%%/XMLWidgets/www/editorServiceEditTab.zpt
+%%ZOPEPRODUCTDIR%%/XMLWidgets/www/widget_registry.gif
+%%ZOPEPRODUCTDIR%%/XMLWidgets/www/widget_service.gif
+@dirrm %%ZOPEPRODUCTDIR%%/XMLWidgets/www
+@dirrm %%ZOPEPRODUCTDIR%%/XMLWidgets/tests
+@dirrm %%ZOPEPRODUCTDIR%%/XMLWidgets

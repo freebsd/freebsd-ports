@@ -7,6 +7,7 @@
 
 PORTNAME=	formulator
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	www zope
 MASTER_SITES=	http://zope.org/Members/infrae/Formulator/Formulator-${PORTVERSION}/
 PKGNAMEPREFIX=	zope-
@@ -24,7 +25,6 @@ CONFLICTS=	plone-*
 
 ZOPEPRODUCTNAME=	Formulator
 
-PLIST_SUB=	ZOPEBASEDIR=${SZOPEBASEDIR}
 WRKSRC=		${WRKDIR}/${ZOPEPRODUCTNAME}
 CPIO=		cpio --quiet -pdum -R
 
