@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += artemis
     SUBDIR += babel
     SUBDIR += biojava
     SUBDIR += chemeq
