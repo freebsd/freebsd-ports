@@ -279,6 +279,7 @@
     SUBDIR += glademm
     SUBDIR += glib12
     SUBDIR += glib20
+    SUBDIR += glibmm
     SUBDIR += global
     SUBDIR += glrparser
     SUBDIR += glui
