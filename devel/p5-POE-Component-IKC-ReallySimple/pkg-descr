@@ -1,0 +1,8 @@
+POE::Component::IKC::ReallySimple tries to make inter-kernel communication very
+simple. POE::Component::IKC is great but it can be a lot of setup for simple
+projects. This module hides the ick and complication of inter-kernel messaging.
+
+WWW: http://search.cpan.org/search?dist=POE-Component-IKC-ReallySimple
+
+-- Sergey Skvortsov
+skv@protey.ru
