@@ -1,0 +1,26 @@
+
+$FreeBSD$
+
+--- configure.orig	Mon Apr 28 03:07:10 2003
++++ configure	Mon Apr 28 16:41:10 2003
+@@ -4593,6 +4593,20 @@
+ 		distro=debian-3
+ 		;;
+ 
++	freebsd)
++		if test x$section_switch = x
++		then
++			section_switch="-S"
++		fi
++		
++		if test x$manpath_switch = x
++		then
++			manpath_switch="-M"
++		fi
++
++		distro=freebsd
++		;;
++ 		
+ 	*)
+ 		distro=generic
+ 		;;
