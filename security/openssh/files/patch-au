@@ -1,5 +1,5 @@
---- session.c.orig	Wed May  3 14:03:07 2000
-+++ session.c	Sat May 13 15:43:38 2000
+--- session.c.orig	Mon Jun  5 12:53:40 2000
++++ session.c	Tue Jun 20 16:20:37 2000
 @@ -27,6 +27,18 @@
  #include "ssh2.h"
  #include "auth.h"
@@ -19,7 +19,7 @@
  /* types */
  
  #define TTYSZ 64
-@@ -403,6 +415,13 @@
+@@ -401,6 +413,13 @@
  		log_init(__progname, options.log_level, options.log_facility, log_stderr);
  
  		/*
@@ -33,7 +33,7 @@
  		 * Create a new session and process group since the 4.4BSD
  		 * setlogin() affects the entire process group.
  		 */
-@@ -504,6 +523,10 @@
+@@ -502,6 +521,10 @@
  	struct sockaddr_storage from;
  	struct stat st;
  	time_t last_login_time;
@@ -44,7 +44,7 @@
  
  	if (s == NULL)
  		fatal("do_exec_pty: no session");
-@@ -513,15 +536,6 @@
+@@ -511,15 +534,6 @@
  	/* Get remote host name. */
  	hostname = get_canonical_hostname();
  
@@ -60,7 +60,7 @@
  	/* Fork the child. */
  	if ((pid = fork()) == 0) {
  		pid = getpid();
-@@ -530,6 +544,22 @@
+@@ -528,6 +542,22 @@
  		   changed. */
  		log_init(__progname, options.log_level, options.log_facility, log_stderr);
  
@@ -83,7 +83,7 @@
  		/* Close the master side of the pseudo tty. */
  		close(ptyfd);
  
-@@ -573,6 +603,12 @@
+@@ -571,6 +601,12 @@
  		/* Check if .hushlogin exists. */
  		snprintf(line, sizeof line, "%.200s/.hushlogin", pw->pw_dir);
  		quiet_login = stat(line, &st) >= 0;
@@ -96,7 +96,7 @@
  
  		/*
  		 * If the user has logged in before, display the time of last
-@@ -596,6 +632,20 @@
+@@ -594,6 +630,20 @@
  			else
  				printf("Last login: %s from %s\r\n", time_string, buf);
  		}
@@ -117,7 +117,7 @@
  		/*
  		 * Print /etc/motd unless a command was specified or printing
  		 * it was disabled in server options or login(1) will be
-@@ -605,7 +655,18 @@
+@@ -603,7 +653,18 @@
  		if (command == NULL && options.print_motd && !quiet_login &&
  		    !options.use_login) {
  			/* Print /etc/motd if it exists. */
@@ -136,17 +136,21 @@
  			if (f) {
  				while (fgets(line, sizeof(line), f))
  					fputs(line, stdout);
-@@ -743,9 +804,25 @@
+@@ -746,13 +807,29 @@
  	extern char **environ;
  	struct stat st;
  	char *argv[10];
 +#ifdef LOGIN_CAP
-+	login_cap_t *lc;
-+
-+	lc = login_getpwclass(pw);
-+	if (lc == NULL)
-+		lc = login_getclassbyname(NULL, pw);
-+#endif /* LOGIN_CAP */
++ 	login_cap_t *lc;
++ 
++ 	lc = login_getpwclass(pw);
++ 	if (lc == NULL)
++ 		lc = login_getclassbyname(NULL, pw);
++ #endif /* LOGIN_CAP */
+ 
+ 	/* login(1) is only called if we execute the login shell */
+ 	if (options.use_login && command != NULL)
+ 		options.use_login = 0;
  
  	f = fopen("/etc/nologin", "r");
 +#ifdef __FreeBSD__
@@ -162,7 +166,7 @@
  		/* /etc/nologin exists.  Print its contents and exit. */
  		while (fgets(buf, sizeof(buf), f))
  			fputs(buf, stderr);
-@@ -761,6 +838,13 @@
+@@ -768,6 +845,13 @@
  	/* Login(1) does this as well, and it needs uid 0 for the "-h"
  	   switch, so we let login(1) to this for us. */
  	if (!options.use_login) {
@@ -176,7 +180,7 @@
  		if (getuid() == 0 || geteuid() == 0) {
  			if (setgid(pw->pw_gid) < 0) {
  				perror("setgid");
-@@ -783,7 +867,14 @@
+@@ -790,7 +874,14 @@
  	 * Get the shell from the password data.  An empty shell field is
  	 * legal, and means /bin/sh.
  	 */
@@ -191,7 +195,7 @@
  
  #ifdef AFS
  	/* Try to get AFS tokens for the local cell. */
-@@ -807,7 +898,12 @@
+@@ -814,7 +905,12 @@
  		child_set_env(&env, &envsize, "USER", pw->pw_name);
  		child_set_env(&env, &envsize, "LOGNAME", pw->pw_name);
  		child_set_env(&env, &envsize, "HOME", pw->pw_dir);
@@ -204,7 +208,7 @@
  
  		snprintf(buf, sizeof buf, "%.200s/%.50s",
  			 _PATH_MAILDIR, pw->pw_name);
-@@ -896,6 +992,9 @@
+@@ -904,6 +1000,9 @@
  	 * descriptors left by system functions.  They will be closed later.
  	 */
  	endpwent();
@@ -214,7 +218,7 @@
  
  	/*
  	 * Close any extra open file descriptors so that we don\'t have them
-@@ -903,7 +1002,7 @@
+@@ -911,7 +1010,7 @@
  	 * initgroups, because at least on Solaris 2.3 it leaves file
  	 * descriptors open.
  	 */
@@ -223,7 +227,7 @@
  		close(i);
  
  	/* Change current directory to the user\'s home directory. */
-@@ -922,7 +1021,27 @@
+@@ -930,7 +1029,27 @@
  	 * in this order).
  	 */
  	if (!options.use_login) {

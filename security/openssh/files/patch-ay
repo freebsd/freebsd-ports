@@ -1,0 +1,14 @@
+--- auth2.c.orig	Tue Jun 27 14:20:06 2000
++++ auth2.c	Tue Jun 27 14:21:20 2000
+@@ -357,6 +357,11 @@
+ 		copy->pw_gid = pw->pw_gid;
+ 		copy->pw_dir = xstrdup(pw->pw_dir);
+ 		copy->pw_shell = xstrdup(pw->pw_shell);
++#ifdef __FreeBSD__
++		copy->pw_class = xstrdup(pw->pw_class);
++		copy->pw_expire = pw->pw_expire;
++		copy->pw_change = pw->pw_change;
++#endif /* __FreeBSD__ */
+ 		authctxt->valid = 1;
+ 	} else {
+ 		if (strcmp(u, authctxt->user) != 0 ||
