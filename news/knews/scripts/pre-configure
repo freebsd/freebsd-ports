@@ -6,7 +6,7 @@ echo "sh  users: in .profile: NNTPSERVER=host.domain; export NNTPSERVER"
 
 # work around a problem with bmake regarding files ending in .l
 #
-FILES_TO_PATCH="kedit.c widgets.c save.c search.c"
+FILES_TO_PATCH="widgets.c save.c search.c"
 for file in $FILES_TO_PATCH
 do
 	ed -s ${WRKSRC}/src/${file} <<-EOF
