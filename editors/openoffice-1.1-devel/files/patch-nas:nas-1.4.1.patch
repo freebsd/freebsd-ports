@@ -10,7 +10,7 @@
 + 	@echo ""
 + 	Date
 + 	@echo ""
-++	@find . -name '*.[ch]' | xargs \
+++	@find . | egrep "\.(cxx|h|c)$$" | xargs \
 ++                ${PERL} -pi -e "s|<malloc.h>|<stdlib.h>|g"
 + 	$(MAKE) $(MFLAGS) Makefiles
 + 	$(MAKE) $(MFLAGS) clean
