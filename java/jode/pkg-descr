@@ -1,0 +1,24 @@
+JODE is a java package containing a decompiler and an optimizer for
+java. This package is freely available under the GNU GPL. The bytecode
+package and the core decompiler is now under GNU Lesser General Public
+License, so you can integrate it in your project.
+
+Can be used from command line or through the Swing-based GUI.
+
+The decompiler reads in class files and produces something similar to
+the original java file. Jode has support for all constructs of JDK-1.3
+including inner and anonymous classes.
+
+The optimizer transforms class files in various ways with can be
+controlled by a script file. It supports the following operations:
+
+ 
+	. Renaming class, method, field and local names to shorter,
+	  obfuscated, or unique names or according to a given
+	  translation table
+	. Removing debugging information
+	. Removing dead code (classes, fields, methods) and constant
+	  fields
+	. Optimizing local variable allocation
+
+WWW: http://jode.sourceforge.net/
