@@ -67,6 +67,7 @@
     SUBDIR += pmw
     SUBDIR += py-gnome
     SUBDIR += py-gtk
+    SUBDIR += py-gtkscintilla
     SUBDIR += py-kde
     SUBDIR += py-qt
     SUBDIR += py-tkinter

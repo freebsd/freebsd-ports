@@ -1,0 +1,5 @@
+lib/%%PYTHON_VERSION%%/site-packages/GTKSCINTILLA.py
+lib/%%PYTHON_VERSION%%/site-packages/GTKSCINTILLA.pyc
+lib/%%PYTHON_VERSION%%/site-packages/_gtkscintillamodule.so
+lib/%%PYTHON_VERSION%%/site-packages/gtkscintilla.py
+lib/%%PYTHON_VERSION%%/site-packages/gtkscintilla.pyc
