@@ -1,5 +1,5 @@
 --- webmagick.in.orig	Sun Oct 17 23:55:14 1999
-+++ webmagick.in	Thu Aug  9 05:43:20 2001
++++ webmagick.in	Thu Aug  9 06:19:29 2001
 @@ -127,6 +127,7 @@
      $opt_dircolorlink,
      $opt_dircolorvlink,
@@ -269,7 +269,16 @@
  		    if( defined($base_columns) && defined($base_rows) ) {
  			$width = $base_columns;
  			$height = $base_rows;
-@@ -2762,7 +2794,7 @@
+@@ -2740,8 +2772,6 @@
+ 	if( ! $opt_forcejpeg ) {
+ 	print( STDERR "Writing $fileNames{'montageGIF'} ...\n" ) if $opt_debug;
+ 	$status = $image->Write(
+-				colors=>256,
+-				colorspace=>'YUV',
+ 				dither=>'True',
+ 				filename=>"GIF:$fileNames{'montageGIF'}",
+ 				interlace=>'Line'
+@@ -2762,7 +2792,7 @@
  		$status = $montage->Write(
  					  filename=>"JPEG:$fileNames{'montageJPEG'}",
  					  interlace=>'Plane',
@@ -278,7 +287,7 @@
  					  );
  		handleMagickError( __FILE__, __LINE__, $fileNames{'montageJPEG'}, $status) if "$status";
  		last MONTAGE if "$status";
-@@ -3346,6 +3378,7 @@
+@@ -3346,6 +3376,7 @@
  
  Paths:
    --iconpath	     Relative path under rootdir to webmagick icons
@@ -286,7 +295,7 @@
    --prefixpath       Path to prepend to generated URLs (e.g. /~username)
    --rootpath	     Absolute path to server root (NCSA DocumentRoot)
  
-@@ -3369,6 +3402,8 @@
+@@ -3369,6 +3400,8 @@
  
  Montage:
    --forcegif         Force imagemap to be in GIF format
@@ -295,7 +304,7 @@
    --maxgif           Maximum size of GIF imagemap before trying JPEG
    --columns	     Montage columns
    --rows	     Montage rows (max)
-@@ -3408,9 +3443,11 @@
+@@ -3408,9 +3441,11 @@
    --dircolorfore     Foreground color (directory frame)
    --dircolorlink     Link (unvisited) color (directory frame)
    --dircolorvlink    Link (visited) color (directory frame)
