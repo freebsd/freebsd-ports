@@ -3,12 +3,13 @@
 # Date created:		2 May 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.5 1997/07/15 14:47:25 itojun Exp $
+# $Id: Makefile,v 1.6 1997/08/04 01:17:54 itojun Exp $
 #
 
 DISTNAME=	camediaplay-970803
 CATEGORIES=	graphics
-MASTER_SITES=   ftp://ftp.csl.sony.co.jp/pub/C-400L/unix/
+MASTER_SITES=   ftp://ftp.itojun.org/pub/digi-cam/C-400L/unix/ \
+		ftp://ftp.digipri.co.jp/pub/free-software/Olympus/C-400L/unix/ 
 
 MAINTAINER=	itojun@itojun.org
 
