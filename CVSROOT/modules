@@ -3500,7 +3500,7 @@ kannel		ports/www/kannel
 kappdock	ports/x11-wm/kappdock
 kaptain		ports/devel/kaptain
 karamba		ports/deskutils/karamba
-kaskade		ports/cad/kaskade
+kaskade		ports/math/kaskade
 katalog		ports/misc/katalog
 kavmilter	ports/mail/kavmilter
 kawa		ports/lang/kawa
