@@ -23,27 +23,26 @@ SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 USE_X_PREFIX=	yes
 USE_MESA=	yes
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ENV=	X11BASE="${X11BASE}" \
-		LOCALBASE="${LOCALBASE}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}" \
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		SDL_CONFIG="${SDL_CONFIG}"
 
-pre-build:
+CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib -lXext ${PTHREAD_LIBS}
+
+post-patch:
 	${PERL} -pi -e "s+#include <SDL\/+#include <+g" ${WRKSRC}/*.[ch]
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/gltron
-	(cd ${WRKSRC} && ${TAR} -c -f - art data sounds) \
-		| (cd ${PREFIX}/share/gltron && ${TAR} --unlink -x -f -)
 	${INSTALL_PROGRAM} ${WRKSRC}/gltron ${PREFIX}/bin
-
-post-install:
+	@${MKDIR} ${DATADIR}
+	${TAR} -C ${WRKSRC} -cf - art data sounds | \
+		${TAR} -C ${DATADIR} --unlink -xf -
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/gltron
+	@${MKDIR} ${DOCSDIR}
 .for file in CHANGELOG CREDITS README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/gltron
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
