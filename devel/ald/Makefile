@@ -1,16 +1,16 @@
 # New ports collection makefile for:	ald
-# Date created:        28 May 2001
-# Whom:                Patrick Alken <cosine@ellipse.mcs.drexel.edu>
+# Date created:        11 July 2003
+# Whom:                Patrick Alken <pa59@cornell.edu>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	ald
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.4
 CATEGORIES=	devel
-MASTER_SITES=	http://ellipse.mcs.drexel.edu/source/
+MASTER_SITES=	http://dunx1.irt.drexel.edu/~psa22/source/
 
-MAINTAINER=	cosine@ellipse.mcs.drexel.edu
+MAINTAINER=	pa59@cornell.edu
 COMMENT=	Debugger for assembly level programs
 
 GNU_CONFIGURE=	yes
