@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	avidemux2
-PORTVERSION=	2.0.30
+PORTVERSION=	2.0.32
 CATEGORIES=	multimedia
 MASTER_SITES=	http://fixounet.free.fr/avidemux/ \
 		http://download.berlios.de/avidemux/
@@ -119,5 +119,9 @@ post-patch:
 		${WRKSRC}/avidemux/ADM_audiodevice/ADM_deviceSDL.cpp \
 		${WRKSRC}/avidemux/ADM_gui2/GUI_sdlDraw.cpp \
 		${WRKSRC}/avidemux/main.cpp
+.if ${OSVERSION} < 500000
+	@${REINPLACE_CMD} 's|-falign-loops=16||g ; s|-msse||g' ${WRKSRC}/configure \
+		${WRKSRC}/adm_lavcodec/Makefile.in ${WRKSRC}/adm_lavcodec/libpostproc/Makefile.in
+.endif
 
 .include <bsd.port.post.mk>
