@@ -9,7 +9,7 @@ PORTNAME=	Plucene-Plugin-Analyzer-SnowballAnalyzer
 PORTVERSION=	1.1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../by-authors/F/FA/FABPOT
+MASTER_SITE_SUBDIR=	../by-authors/id/F/FA/FABPOT
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
