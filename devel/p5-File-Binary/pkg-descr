@@ -1,6 +1,8 @@
 File::Binary is a perl module that provides an interface to modify
 and read binary files.
 
+WWW:	http://search.cpan.org/dist/File-Binary/
+
 Author: Simon Wistow <simon@twoshortplanks.com>
 
 --will
