@@ -5,11 +5,12 @@
 # $FreeBSD$
 #
 
-PKGNAMESUFFIX=	-wnn4
 CATEGORIES=	chinese
-CWNN4=		yes
+PKGNAMESUFFIX=	-wnn4
 
 MASTERDIR=	${.CURDIR}/../../editors/mule
 PKGDIR=		${.CURDIR}/pkg
+
+CWNN4=		yes
 
 .include "${MASTERDIR}/Makefile"
