@@ -1,8 +1,9 @@
---- Makefile~	Sun Jul 28 18:09:32 2002
-+++ Makefile	Sun Jul 28 18:09:24 2002
+--- Makefile.orig	Sun Jul 28 18:00:40 2002
++++ Makefile	Mon Jul 29 18:54:18 2002
 @@ -1,14 +1,11 @@
 -CC = cc
- CFLAGS = -Wall -O2
+-CFLAGS = -Wall -O2
++CFLAGS += -Wall
  
 -DESTDIR = /usr/local
 -BINDIR = /usr/local/bin
