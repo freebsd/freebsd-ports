@@ -24,6 +24,10 @@ lib/tkcvs/bitmaps/add.gif
 lib/tkcvs/bitmaps/adir.gif
 lib/tkcvs/bitmaps/amod.gif
 lib/tkcvs/bitmaps/arrow.gif
+lib/tkcvs/bitmaps/arrow_dn.gif
+lib/tkcvs/bitmaps/arrow_hl_dn.gif
+lib/tkcvs/bitmaps/arrow_hl_up.gif
+lib/tkcvs/bitmaps/arrow_up.gif
 lib/tkcvs/bitmaps/ball.gif
 lib/tkcvs/bitmaps/branch.gif
 lib/tkcvs/bitmaps/branchtag.gif
@@ -35,16 +39,21 @@ lib/tkcvs/bitmaps/conflict.gif
 lib/tkcvs/bitmaps/delete.gif
 lib/tkcvs/bitmaps/diff.gif
 lib/tkcvs/bitmaps/dir.gif
+lib/tkcvs/bitmaps/edit.gif
 lib/tkcvs/bitmaps/export.gif
 lib/tkcvs/bitmaps/fileedit.gif
 lib/tkcvs/bitmaps/files.gif
 lib/tkcvs/bitmaps/fileview.gif
 lib/tkcvs/bitmaps/import.gif
 lib/tkcvs/bitmaps/logfile.gif
+lib/tkcvs/bitmaps/loop-glasses.gif
+lib/tkcvs/bitmaps/loop-half.gif
+lib/tkcvs/bitmaps/loop.gif
 lib/tkcvs/bitmaps/mdir.gif
 lib/tkcvs/bitmaps/mergebranch.gif
 lib/tkcvs/bitmaps/mergediff.gif
 lib/tkcvs/bitmaps/mod.gif
+lib/tkcvs/bitmaps/modbrowse.gif
 lib/tkcvs/bitmaps/modbrowse.xbm
 lib/tkcvs/bitmaps/modules.gif
 lib/tkcvs/bitmaps/patches.gif
@@ -59,6 +68,8 @@ lib/tkcvs/bitmaps/tclfish_fly.xbm
 lib/tkcvs/bitmaps/tkcvs32.xbm
 lib/tkcvs/bitmaps/tkcvs32_mask.xbm
 lib/tkcvs/bitmaps/tkcvs48.xbm
+lib/tkcvs/bitmaps/trace.xbm
+lib/tkcvs/bitmaps/unedit.gif
 lib/tkcvs/bitmaps/who.gif
 share/doc/tkcvs/README.tkcvs
 @dirrm lib/tkcvs/bitmaps
