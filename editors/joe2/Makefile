@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	toasty@dragondata.com
 
+FORBIDDEN=	"follows hard link (not symlink) to DEADJOE--see http://www.securityfocus.com/archive/1/145305"
+
 WRKSRC=		${WRKDIR}/joe
 ALL_TARGET=	joe
 MAN1=		joe.1
