@@ -548,9 +548,10 @@ bin/ant
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/LogOutputStream.html
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/LogStreamHandler.html
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/Manifest.Attribute.html
-%%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/Manifest.Mode.html
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/Manifest.Section.html
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/ManifestException.html
+%%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/ManifestTask.html
+%%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/ManifestTask.Mode.html
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/MatchingTask.html
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/Mkdir.html
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/Move.html
@@ -609,6 +610,7 @@ bin/ant
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/XSLTLogger.html
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/XSLTLoggerAware.html
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/XSLTProcess.html
+%%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/XSLTProcess.OutputProperty.html
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/XSLTProcess.Param.html
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/Zip.Duplicate.html
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/Zip.html
@@ -751,13 +753,14 @@ bin/ant
 %%T%%/docs/manual/api/org/apache/tools/ant/BuildLogger.html
 %%T%%/docs/manual/api/org/apache/tools/ant/DefaultLogger.html
 %%T%%/docs/manual/api/org/apache/tools/ant/DemuxOutputStream.html
+%%T%%/docs/manual/api/org/apache/tools/ant/Diagnostics.html
 %%T%%/docs/manual/api/org/apache/tools/ant/DirectoryScanner.html
 %%T%%/docs/manual/api/org/apache/tools/ant/DynamicConfigurator.html
 %%T%%/docs/manual/api/org/apache/tools/ant/ExitException.html
 %%T%%/docs/manual/api/org/apache/tools/ant/FileScanner.html
+%%T%%/docs/manual/api/org/apache/tools/ant/Main.html
 %%T%%/docs/manual/api/org/apache/tools/ant/IntrospectionHelper.html
 %%T%%/docs/manual/api/org/apache/tools/ant/Location.html
-%%T%%/docs/manual/api/org/apache/tools/ant/Main.html
 %%T%%/docs/manual/api/org/apache/tools/ant/NoBannerLogger.html
 %%T%%/docs/manual/api/org/apache/tools/ant/package-frame.html
 %%T%%/docs/manual/api/org/apache/tools/ant/package-summary.html
