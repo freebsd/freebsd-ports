@@ -1,14 +1,15 @@
 # New ports collection makefile for:	gftp
-# Version required:	2.0.1
+# Version required:	2.0.4
 # Date Created:		21 Feb 1999
 # Whom:			Damjan Marion <dmarion@open.hr>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gftp-2.0.1
+DISTNAME=	gftp-2.0.4
 CATEGORIES=	ftp
-MASTER_SITES=	http://www.newwave.net/~masneyb/
+MASTER_SITES=	http://gftp.seul.org/ \
+		ftp://gftp.seul.org/pub/gftp
 
 MAINTAINER=	dmarion@open.hr
 
