@@ -22,6 +22,13 @@ DOC_FILES=	CHANGES COPYING
 DATA_FILES=	deep-relax.seq relax.seq test.seq test2.seq test3.seq
 
 post-patch:
+	@if [ -f /usr/include/sys/soundcard.h ]; then \
+		${PERL} -pi -e "s=linux/soundcard.h=sys/soundcard.h=g" \
+			${WRKSRC}/autozen.c; \
+	else \
+		${PERL} -pi -e "s=linux/soundcard.h=machine/soundcard.h=g" \
+			${WRKSRC}/autozen.c; \
+	fi
 	@${PERL} -pi -e "s=X11BASE=${X11BASE}=g" ${WRKSRC}/autozen.c
 
 do-install:
