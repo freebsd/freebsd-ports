@@ -74,6 +74,7 @@
 %%ICONDIR%%/Vacation.%%IMG_SUFFIX%%
 @dirrm %%ICONDIR%%
 %%EMACS_ONLY%%@dirrm %%EMACS_LIBDIR%%/etc/mhc
+%%EMACS_ONLY%%@dirrm %%EMACS_LIBDIR%%/etc
 @dirrm %%LISPDIR%%
 %%PORTDOCS%%share/doc/mhc/DOT.schedule.sample.jp
 %%PORTDOCS%%share/doc/mhc/00copyright
