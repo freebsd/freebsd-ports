@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	reportlab
-PORTVERSION=	1.14
-PORTREVISION=	1
+PORTVERSION=	1.15
 CATEGORIES=	print python
 MASTER_SITES=	ftp://ftp.reportlab.com/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,7 +29,7 @@ EXAMPLEDIR=	${PREFIX}/share/examples/reportlab
 
 post-patch:
 	${MV} ${WRKSRC}/reportlab/lib/setup.py ${WRKDIR}
-	${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/reportlab/rl_config.py
+	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/reportlab/rl_config.py
 
 post-install:
 	${MKDIR} ${REPORTLABDIR}/fonts
