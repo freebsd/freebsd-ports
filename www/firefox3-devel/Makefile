@@ -39,7 +39,6 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk20 libidl
 USE_ICONV=	yes
 USE_PERL5=	yes
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/mozilla
 
@@ -117,11 +116,12 @@ post-patch:
 		${WRKSRC}/js/src/Makefile.in
 	@${PERL} -pi -e 's|libesd\.so\.0|${ESD_LIB}|g' \
 		${WRKSRC}/widget/src/gtk2/nsSound.cpp
-	@${REINPLACE_CMD}  -e \
-		'/accessibility.typeaheadfind.enablesound/s/true/false/' \
-		${WRKSRC}/modules/libpref/src/init/all.js \
-		${WRKSRC}/browser/app/profile/all.js \
-		${WRKSRC}/calendar/sunbird/app/profile/all.js
+.for ii in modules/libpref/src/init browser/app/profile \
+	calendar/sunbird/app/profile
+	${MV} ${WRKSRC}/${ii}/all.js ${WRKSRC}/${ii}/all.js.bak
+	${SED} -e '/accessibility.typeaheadfind.enablesound/s/true/false/' \
+	< ${WRKSRC}/${ii}/all.js.bak > ${WRKSRC}/${ii}/all.js
+.endfor
 
 pre-install:
 # Overview:  the program installs itself in FAKEDIR, then a list is made of the
