@@ -1,6 +1,12 @@
 include/plib/fnt.h
 include/plib/fntLocal.h
 include/plib/js.h
+include/plib/netBuffer.h
+include/plib/netChannel.h
+include/plib/netChat.h
+include/plib/netMessage.h
+include/plib/netMonitor.h
+include/plib/netSocket.h
 include/plib/pu.h
 include/plib/sg.h
 include/plib/sl.h
@@ -9,12 +15,18 @@ include/plib/slMODfile.h
 include/plib/slPortability.h
 include/plib/sm.h
 include/plib/ssg.h
+include/plib/ssgAux.h
 include/plib/ssgKeyFlier.h
+include/plib/ssgaShapes.h
+include/plib/ssgconf.h
 include/plib/ul.h
 lib/libplibfnt.a
-lib/libplibsl.a
-lib/libplibsm.a
+lib/libplibnet.a
 lib/libplibpu.a
 lib/libplibsg.a
+lib/libplibsl.a
+lib/libplibsm.a
 lib/libplibssg.a
+lib/libplibssgaux.a
+lib/libplibul.a
 @dirrm include/plib
