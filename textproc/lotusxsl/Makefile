@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.zip
 MAINTAINER=	kuriyama@FreeBSD.org
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-RUN_DEPENDS=	${PREFIX}/share/java/classes/xml4j.jar:${PORTSDIR}/textproc/xml4j
+RUN_DEPENDS=	${LOCALBASE}/share/java/classes/xml4j.jar:${PORTSDIR}/textproc/xml4j
 
 EXTRACT_CMD=		unzip
 EXTRACT_BEFORE_ARGS=	-a -q -L
