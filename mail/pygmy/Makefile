@@ -1,0 +1,32 @@
+# New ports collection makefile for:	pygmy
+# Date created:				15 August 2000
+# Whom:                 		Maxim Sobolev <sobomax@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	pygmy
+PORTVERSION=	0.4.0
+CATEGORIES=	mail python gnome
+MASTER_SITES=	http://www.cs.uit.no/~kjetilja/Pygmy/
+
+MAINTAINER=	sobomax@FreeBSD.org
+
+BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
+		${LOCALBASE}/lib/python1.5/site-packages/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome
+RUN_DEPENDS=	python:${PORTSDIR}/lang/python \
+		${LOCALBASE}/lib/python1.5/site-packages/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome
+
+ALL_TARGET=	pythonprogs
+
+do-configure:
+	@${ECHO} "PYGMY_PREFIX='${PREFIX}/share'" > ${WRKSRC}/prefix.py
+
+do-install:
+	${MKDIR} ${PREFIX}/share/pygmy/icons
+	${INSTALL_DATA} ${WRKSRC}/*.pyo ${WRKSRC}/*.pyc ${PREFIX}/share/pygmy
+	${INSTALL_DATA} ${WRKSRC}/icons/* ${PREFIX}/share/pygmy/icons
+	${INSTALL_SCRIPT} ${WRKSRC}/pygmy ${PREFIX}/share/pygmy
+	${LN} -sf ${PREFIX}/share/pygmy/pygmy ${PREFIX}/bin/pygmy
+
+.include <bsd.port.mk>
