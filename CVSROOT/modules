@@ -4724,6 +4724,7 @@ p5-WWW-Search-Google	ports/www/p5-WWW-Search-Google
 p5-X11-Protocol	ports/x11/p5-X11-Protocol
 p5-XML-DOM	ports/textproc/p5-XML-DOM
 p5-XML-DT	ports/textproc/p5-XML-DT
+p5-XML-Directory	ports/textproc/p5-XML-Directory
 p5-XML-Dumper	ports/textproc/p5-XML-Dumper
 p5-XML-Encoding	ports/textproc/p5-XML-Encoding
 p5-XML-Filter-Base	ports/textproc/p5-XML-Filter-Base
