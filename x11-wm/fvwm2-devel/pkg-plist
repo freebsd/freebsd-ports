@@ -34,6 +34,7 @@ libexec/fvwm/%%FVWM_VERSION%%/FvwmDragWell
 libexec/fvwm/%%FVWM_VERSION%%/FvwmEvent
 libexec/fvwm/%%FVWM_VERSION%%/FvwmForm
 %%GTK%%libexec/fvwm/%%FVWM_VERSION%%/FvwmGtk
+libexec/fvwm/%%FVWM_VERSION%%/FvwmGtkDebug
 libexec/fvwm/%%FVWM_VERSION%%/FvwmIconBox
 libexec/fvwm/%%FVWM_VERSION%%/FvwmIconMan
 libexec/fvwm/%%FVWM_VERSION%%/FvwmIdent
@@ -409,6 +410,8 @@ share/fvwm/fvwm-script-ComExample.pl
 share/fvwm/fvwm-script-setup95.pl
 share/fvwm/system.fvwm2rc-sample-95
 share/fvwm/perllib/FVWM/Constants.pm
+share/fvwm/perllib/FVWM/Event.pm
+share/fvwm/perllib/FVWM/EventNames.pm
 share/fvwm/perllib/FVWM/Module/Gtk.pm
 share/fvwm/perllib/FVWM/Module/Tk.pm
 share/fvwm/perllib/FVWM/Module.pm
