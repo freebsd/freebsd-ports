@@ -10,7 +10,7 @@ PORTNAME=	hbiff
 PORTVERSION= 	1.2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/misc/  \
-		http://people.FreeBSD.org/~obrien/Distfiles/
+		ftp://ftp.freebsd.org/pub/FreeBSD/local-distfiles/obrien/
 
 MAINTAINER=	obrien@FreeBSD.org
 
