@@ -1,18 +1,11 @@
---- ../Xspin3.5/xspin350.tcl.orig	Sun Sep 29 07:55:34 2002
-+++ ../Xspin3.5/xspin350.tcl	Sun Oct  6 18:33:12 2002
-@@ -1,14 +1,4 @@
+--- ../Xspin3.5/xspin351.tcl.orig	Wed Nov 27 13:45:12 2002
++++ ../Xspin3.5/xspin351.tcl	Sat Dec  7 11:38:00 2002
+@@ -1,6 +1,6 @@
 -#!/bin/sh
--# the next line restarts using wish \
--exec wish c:/cygwin/bin/xspin -- $*
--
--# adjust the first argument to wish above with the
--# location of xspin on your system, if different.
--#
--# cygwin: even when xspin is placed in /usr/bin/xspin
--# the above exec line would not find it there
--# /usr/bin is a symbolic link to /bin, which really
--# lives in c:/cygwin, hence the contortions above
 +#!%%LOCALBASE%%/bin/%%WISH%% -f
+ # the next line restarts using wish \
+-exec wish c:/cygwin/bin/xspin -- $*
++# exec wish c:/cygwin/bin/xspin -- $*
  
- #======================================================================#
- # Tcl/Tk Spin Controller, Gerard J. Holzmann, Bell Laboratories, USA.  #
+ # adjust the first argument to wish above with the
+ # location of xspin on your system, if different.
