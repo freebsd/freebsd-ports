@@ -1,0 +1,7 @@
+--- Makefile.am	Mon May 20 10:26:01 2002
++++ Makefile.am	Wed Jul 24 19:42:33 2002
+@@ -2,3 +2,3 @@
+ #SUBDIRS = include kore demo samples 
+-SUBDIRS = include kore demo
++SUBDIRS = include kore
+ AUTOMAKE_OPTIONS = foreign

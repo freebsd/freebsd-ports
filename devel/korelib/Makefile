@@ -6,19 +6,24 @@
 #
 
 PORTNAME=	korelib
-PORTVERSION=	0.0.1
+PORTVERSION=	1.0
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.rygannon.com/pub/Korelib/releases/
+MASTER_SITES=	ftp://ftp.rygannon.com/pub/Korelib/
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_KDELIBS_VER=2
-USE_LIBTOOL=	yes
+USE_KDELIBS_VER=3
+USE_AUTOMAKE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i ""
 
 pre-configure:
-	${PERL} -pi -e "s@-g -O2@${CFLAGS}@g; s@-O2@${CFLAGS}@g" \
+	${REINPLACE_CMD} -e "s@-g -O2@${CXXFLAGS}@g" -e "s@-O2@${CFLAGS}@g" \
 		${WRKSRC}/configure ${WRKSRC}/*/Makefile.in ${WRKSRC}/*/*/Makefile.in
+
+post-install:
+	${RM} -f ${PREFIX}/lib/libkore.la
 
 .include <bsd.port.mk>
