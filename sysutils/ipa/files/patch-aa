@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Dec  2 20:51:03 2001
-+++ Makefile	Sun Dec  2 20:55:27 2001
+--- Makefile.orig	Tue Dec 25 04:52:48 2001
++++ Makefile	Fri Dec 28 23:10:11 2001
 @@ -38,7 +38,7 @@
  #	-Ox   - optimize;
  #	-g    - produce debugging information.
@@ -24,12 +24,14 @@
  INSTALL_MAN_DIR=	${INSTALL} -d -m 0555 -g wheel -o root
  INSTALL_DATA_DIR=	${INSTALL} -d -m 0555 -g wheel -o root
  
-@@ -212,7 +212,7 @@
- 	${RM} ${DSTMANDIR}/man5/ipa.conf.5 ${DSTMANDIR}/man5/ipa.5 ${DSTMANDIR}/man8/ipa.8 ${DSTMANDIR}/man8/ipastat.8
- 	${RM} ${DSTMANDIR}/ru_SU.KOI8-R/man5/ipa.conf.5 ${DSTMANDIR}/ru_SU.KOI8-R/man5/ipa.5 ${DSTMANDIR}/ru_SU.KOI8-R/man8/ipa.8 ${DSTMANDIR}/ru_SU.KOI8-R/man8/ipastat.8
- 	${RM} ${DSTETCDIR}/ipa.conf.default ${DSTRCDIR}/ipa.sh.sample
--	
-+
- install:
- .if !exists(./ipa) || !exists(./ipastat)
- 	@${ECHO}
+@@ -243,8 +243,10 @@
+ .endif
+ 	${INSTALL_MAN} man/ru_RU.KOI8-R/ipa.5 man/ru_RU.KOI8-R/ipa.conf.5 ${DSTMANDIR}/ru_SU.KOI8-R/man5
+ 	${INSTALL_MAN} man/ru_RU.KOI8-R/ipa.8 man/ru_RU.KOI8-R/ipastat.8 ${DSTMANDIR}/ru_SU.KOI8-R/man8
++.if !defined(NOPORTDOCS)
+ 	${INSTALL_DATA_DIR} ${DSTEXAMPLEDIR}
+ 	${INSTALL_DATA} examples/* ${DSTEXAMPLEDIR}
++.endif
+ .if exists(${DSTRCDIR})
+ 	${INSTALL_SCRIPT} etc/ipa.sh.sample ${DSTRCDIR}
+ .else
