@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP_Server
-PORTVERSION=	0.3
+PORTVERSION=	0.4.0
 CATEGORIES=	www devel pear
 
 MAINTAINER=	tux@pinguru.net
