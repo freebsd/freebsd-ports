@@ -7,5 +7,5 @@ It supports 2/3 type hangul keyboards, KSC5601-1987-* type X11 hangul
 fonts and Johab fonts, originally used in Hanterm early version.
 
 --
-Ports by CHOI Junho <cjh@kr.freebsd.org>
+CHOI Junho <cjh@FreeBSD.org>
 WWW: http://elf.kaist.ac.kr/hanterm/

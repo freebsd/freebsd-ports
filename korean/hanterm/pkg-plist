@@ -1,2 +1,4 @@
 lib/X11/app-defaults/Hanterm
 bin/hanterm
+share/doc/hanterm/hanterm.html
+@dirrm share/doc/hanterm
