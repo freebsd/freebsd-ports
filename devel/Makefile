@@ -139,6 +139,7 @@
     SUBDIR += i960-rtems-binutils
     SUBDIR += i960-rtems-gcc
     SUBDIR += i960-rtems-gdb
+    SUBDIR += icu
     SUBDIR += id-utils
     SUBDIR += idle
     SUBDIR += ilu
