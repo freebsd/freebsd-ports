@@ -6072,6 +6072,7 @@ pl-sms		ports/misc/pl-sms
 plan		ports/deskutils/plan
 planets		ports/astro/planets
 plasma-kmod	ports/graphics/plasma-kmod
+platero		ports/net/platero
 platon		ports/biology/platon
 play		ports/audio/play
 playmidi	ports/audio/playmidi
