@@ -6,30 +6,25 @@
 #
 
 PORTNAME=	imwheel
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.9
 CATEGORIES=	x11
-MASTER_SITES=	http://jcatki.dhs.org/imwheel/files/
-DISTNAME=	${PKGNAME}.nogpm
+MASTER_SITES=	http://jonatkins.org/imwheel/files/
 
-MAINTAINER=	jhb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_GMAKE=	YES
 USE_X_PREFIX=	YES
-WRKSRC=	${WRKDIR}/imwheel
+GNU_CONFIGURE=	YES
+CONFIGURE_ARGS=	--disable-gpm
 
 MAN1=		imwheel.1
 
-.if defined(NOPORTDOCS)
-PLIST=		${PKGDIR}/pkg-plist.nodocs
-.endif
-
 post-patch:
-	@${PERL} -pi -e 's|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/imwheel.1
+.for i in imwheel.1 util.c
+	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/${i}
+.endfor
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/imwheel ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/imwheel.1 ${PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/imwheelrc ${PREFIX}/etc
+post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/imwheel
 	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/EMACS \

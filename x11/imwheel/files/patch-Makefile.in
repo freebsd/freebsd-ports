@@ -1,0 +1,14 @@
+--- Makefile.in.orig	Thu Feb 22 09:41:40 2001
++++ Makefile.in	Fri Jun 29 01:14:30 2001
+@@ -581,9 +581,9 @@
+ @SUID_TRUE@	progname=$(DESTDIR)$(bindir)/`echo imwheel|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'` ; \
+ @SUID_TRUE@	chown @suid@ $$progname ; \
+ @SUID_TRUE@	chmod u+s $$progname
+-@SUID_TRUE@	install -m 644 imwheelrc /etc/imwheelrc
++@SUID_TRUE@	$(BSD_INSTALL_DATA) imwheelrc ${PREFIX}/etc/imwheelrc
+ @SUID_FALSE@install-exec-hook:
+-@SUID_FALSE@	install -m 644 imwheelrc /etc/imwheelrc
++@SUID_FALSE@	$(BSD_INSTALL_DATA) imwheelrc ${PREFIX}/etc/imwheelrc
+ 
+ extras: $(EXTRA_PROGRAMS)
+ 

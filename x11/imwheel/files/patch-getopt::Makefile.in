@@ -1,0 +1,11 @@
+--- getopt/Makefile.in.orig    Thu Feb 22 08:41:45 2001
++++ getopt/Makefile.in
+@@ -79,7 +79,7 @@
+ mdump_dist = @mdump_dist@
+ suid = @suid@
+ 
+-CFLAGS = -O6 -s -Wall
++#CFLAGS = -O6 -s -Wall
+ noinst_LIBRARIES = libgetopt.a
+ libgetopt_a_SOURCES = getopt.c getopt1.c getopt.h
+ 

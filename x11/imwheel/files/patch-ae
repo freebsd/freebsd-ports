@@ -5,7 +5,7 @@
  .LP
  .SH "IMWHEELRC"
 -IMWheel uses, optionally, two configuration files.  One called /etc/imwheelrc,
-+IMWheel uses, optionally, two configuration files.  One called %%X11BASE%%/etc/imwheelrc,
++IMWheel uses, optionally, two configuration files.  One called %%PREFIX%%/etc/imwheelrc,
  which is used for everybody.  The other is $HOME/.imwheelrc, used only for one
  user.  One is supplied and should have been installed automatically in /etc
  if not also in the installing users $HOME as well.  All whitespace is ignored
@@ -14,7 +14,7 @@
  	The users configuration file.
  
 -/etc/.imwheelrc
-+%%X11BASE%%/etc/imwheelrc
++%%PREFIX%%/etc/imwheelrc
  	The global location for the configuration
  	file, it is always loaded.  Overided by
  	the users configuration file.
