@@ -161,8 +161,6 @@ def getrelpath(path, wrksrc):
 		commonpart = commonpart[:-1]
 	path = path[len(commonpart):]
 	wrksrc = wrksrc[len(commonpart):]
-	if wrksrc == '':
-		path = path[1:]
 	adjust = ''
 	while os.path.normpath(os.path.join(wrksrc, adjust)) != '.':
 		adjust = os.path.join(adjust, '..')
