@@ -14,7 +14,7 @@ MASTER_SITES=	http://wit401310.student.utwente.nl/apps/apps/ \
 MAINTAINER=	jim@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-BUILD_DEPENDS=	${PREFIX}/include/dockapp.h:${PORTSDIR}/x11-wm/libdockapp
+BUILD_DEPENDS=	${X11BASE}/include/dockapp.h:${PORTSDIR}/x11-wm/libdockapp
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
