@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	20020218
+PORTVERSION=	20020220
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.iDaemons.org/distfiles/
 MASTER_SITE_SUBDIR=	knu
-DISTNAME=	pkgtools-${PREV_PORTVERSION}
+DISTNAME=	pkgtools-20020204
 
 PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	pkgtools-${PREV_PORTVERSION}-${PORTVERSION}.diff.bz2
+PATCHFILES=	pkgtools-20020204-20020218.diff.bz2 \
+		pkgtools-20020218-20020220.diff.bz2
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	knu@FreeBSD.org
@@ -29,8 +30,6 @@ RUN_DEPENDS=	${RUBY_SITELIBDIR}/optparse.rb:${PORTSDIR}/devel/ruby-optparse \
 
 USE_BZIP2=	yes
 USE_RUBY=	yes
-
-PREV_PORTVERSION=	20020204
 
 MAKE_ARGS=	PREFIX="${PREFIX}" RUBY="${RUBY}"
 
@@ -54,9 +53,6 @@ INSTALL_TARGET=		install
 .if !defined(NOPORTDOCS)
 INSTALL_TARGET+=	install-doc
 .endif
-
-post-patch:
-	${RUBY} -i.orig -ne '/ p / or print' ${WRKSRC}/bin/portcvsweb
 
 post-install:
 	if [ ! -f ${PREFIX}/etc/pkgtools.conf ]; then \
