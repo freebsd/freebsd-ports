@@ -163,358 +163,6 @@ share/enlightenment/config/pix/wait7.png
 share/enlightenment/config/pix/wait8.png
 share/enlightenment/config/pix/wait9.png
 share/enlightenment/config/pix/world.png
-share/enlightenment/themes/Aqua/README
-share/enlightenment/themes/Aqua/actionclasses.cfg
-share/enlightenment/themes/Aqua/borders.cfg
-share/enlightenment/themes/Aqua/borders.cfg.zh_TW.Big5
-share/enlightenment/themes/Aqua/buttons.cfg
-share/enlightenment/themes/Aqua/colormodifiers.cfg
-share/enlightenment/themes/Aqua/cursors.cfg
-share/enlightenment/themes/Aqua/desktops.cfg
-share/enlightenment/themes/Aqua/icondefs.cfg
-share/enlightenment/themes/Aqua/imageclasses.cfg
-share/enlightenment/themes/Aqua/imageclasses.cfg.zh_TW.Big5
-share/enlightenment/themes/Aqua/init.cfg
-share/enlightenment/themes/Aqua/init.cfg.zh_TW.Big5
-share/enlightenment/themes/Aqua/menustyles.cfg
-share/enlightenment/themes/Aqua/menustyles.cfg.zh_TW.Big5
-share/enlightenment/themes/Aqua/slideouts.cfg
-share/enlightenment/themes/Aqua/sound.cfg
-share/enlightenment/themes/Aqua/textclasses.cfg
-share/enlightenment/themes/Aqua/textclasses.cfg.zh_TW.Big5
-share/enlightenment/themes/Aqua/tooltips.cfg
-share/enlightenment/themes/Aqua/windowmatches.cfg
-share/enlightenment/themes/Aqua/ABOUT/MAIN
-share/enlightenment/themes/Aqua/ABOUT/aqua.jpg
-share/enlightenment/themes/Aqua/ABOUT/bg.png
-share/enlightenment/themes/Aqua/ABOUT/logo.png
-share/enlightenment/themes/Aqua/ABOUT/vixar.ttf
-share/enlightenment/themes/Aqua/Eterm/Eterm.cfg
-share/enlightenment/themes/Aqua/Eterm/images/a_d_1.png
-share/enlightenment/themes/Aqua/Eterm/images/a_d_2.png
-share/enlightenment/themes/Aqua/Eterm/images/a_l_1.png
-share/enlightenment/themes/Aqua/Eterm/images/a_l_2.png
-share/enlightenment/themes/Aqua/Eterm/images/a_r_1.png
-share/enlightenment/themes/Aqua/Eterm/images/a_r_2.png
-share/enlightenment/themes/Aqua/Eterm/images/a_u_1.png
-share/enlightenment/themes/Aqua/Eterm/images/a_u_2.png
-share/enlightenment/themes/Aqua/Eterm/images/arrow_down1.png
-share/enlightenment/themes/Aqua/Eterm/images/sb1.png
-share/enlightenment/themes/Aqua/Eterm/images/sb2.png
-share/enlightenment/themes/Aqua/Eterm/images/t.png
-share/enlightenment/themes/Aqua/backgrounds/backgrounds.cfg
-share/enlightenment/themes/Aqua/backgrounds/images/No-Purchase-Necessary-3.jpg
-share/enlightenment/themes/Aqua/backgrounds/images/aqua.jpg
-share/enlightenment/themes/Aqua/backgrounds/images/blue.png
-share/enlightenment/themes/Aqua/backgrounds/images/imac.png
-share/enlightenment/themes/Aqua/backgrounds/images/x.png
-share/enlightenment/themes/Aqua/borders/actions.cfg
-share/enlightenment/themes/Aqua/borders/borders.cfg
-share/enlightenment/themes/Aqua/borders/borders.cfg.zh_TW.Big5
-share/enlightenment/themes/Aqua/borders/images.cfg
-share/enlightenment/themes/Aqua/borders/BORDERLESS/border.cfg
-share/enlightenment/themes/Aqua/borders/DEFAULT/border.cfg
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/button_clear.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/button_clear2_stick.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/button_clear_down.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/button_clear_hi.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/button_clear_stick.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/button_clear_stick_down.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/button_clear_stick_hi.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/button_green.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/button_green_down.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/button_green_hi.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/button_green_stick.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/button_green_stick_down.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/button_green_stick_hi.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/button_inactive.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/button_red.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/button_red_down.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/button_red_hi.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/button_red_stick.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/button_red_stick_down.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/button_red_stick_hi.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/button_yellow.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/button_yellow_down.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/button_yellow_hi.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/button_yellow_stick.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/button_yellow_stick_down.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/button_yellow_stick_hi.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/buttons.xcf
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/frame.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/resize_handle.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/resize_handle_stick.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/title.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/title_active.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/title_stick.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/title_stick_active.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/titlebar.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/titlebar_active.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/titlebar_mask.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/titlebar_mask_active.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/titlebar_stick.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/titlebar_stick_active.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/titlebar_stick_mask.png
-share/enlightenment/themes/Aqua/borders/DEFAULT/images/titlebar_stick_mask_active.png
-share/enlightenment/themes/Aqua/borders/ICONBOX/border.cfg
-share/enlightenment/themes/Aqua/borders/PAGER/border.cfg
-share/enlightenment/themes/Aqua/borders/PAGER/images/pb1.png
-share/enlightenment/themes/Aqua/borders/PAGER/images/pb2.png
-share/enlightenment/themes/Aqua/borders/PAGER/images/pb3.png
-share/enlightenment/themes/Aqua/borders/PAGER/images/pb4.png
-share/enlightenment/themes/Aqua/borders/PAGER/images/pb5.png
-share/enlightenment/themes/Aqua/borders/PAGER/images/pb6.png
-share/enlightenment/themes/Aqua/borders/PAGER/images/pb8.png
-share/enlightenment/themes/Aqua/borders/RIGHT_PAGER/border.cfg
-share/enlightenment/themes/Aqua/borders/RIGHT_PAGER/images/pb1.png
-share/enlightenment/themes/Aqua/borders/RIGHT_PAGER/images/pb2.png
-share/enlightenment/themes/Aqua/borders/RIGHT_PAGER/images/pb3.png
-share/enlightenment/themes/Aqua/borders/RIGHT_PAGER/images/pb4.png
-share/enlightenment/themes/Aqua/borders/RIGHT_PAGER/images/pb5.png
-share/enlightenment/themes/Aqua/borders/RIGHT_PAGER/images/pb6.png
-share/enlightenment/themes/Aqua/borders/RIGHT_PAGER/images/pb8.png
-share/enlightenment/themes/Aqua/borders/SMALL/border.cfg
-share/enlightenment/themes/Aqua/borders/SMALL/images/button_clear.png
-share/enlightenment/themes/Aqua/borders/SMALL/images/button_clear_down.png
-share/enlightenment/themes/Aqua/borders/SMALL/images/button_clear_hi.png
-share/enlightenment/themes/Aqua/borders/SMALL/images/button_inactive.png
-share/enlightenment/themes/Aqua/borders/SMALL/images/button_red.png
-share/enlightenment/themes/Aqua/borders/SMALL/images/button_red_down.png
-share/enlightenment/themes/Aqua/borders/SMALL/images/button_red_hi.png
-share/enlightenment/themes/Aqua/borders/SMALL/images/button_yellow.png
-share/enlightenment/themes/Aqua/borders/SMALL/images/button_yellow_down.png
-share/enlightenment/themes/Aqua/borders/SMALL/images/button_yellow_hi.png
-share/enlightenment/themes/Aqua/borders/SMALL/images/title.png
-share/enlightenment/themes/Aqua/borders/STEEL/border.cfg
-share/enlightenment/themes/Aqua/borders/TRANSIENT/border.cfg
-share/enlightenment/themes/Aqua/borders/VERYSMALLFIXED/border.cfg
-share/enlightenment/themes/Aqua/borders/common/border.cfg
-share/enlightenment/themes/Aqua/borders/common/border.cfg.zh_TW.Big5
-share/enlightenment/themes/Aqua/borders/common/images/fixed_bottom_bg.png
-share/enlightenment/themes/Aqua/borders/common/images/fixed_bottom_fg.png
-share/enlightenment/themes/Aqua/borders/common/images/left_bg.png
-share/enlightenment/themes/Aqua/borders/common/images/left_fg.png
-share/enlightenment/themes/Aqua/borders/common/images/pager_bottom.png
-share/enlightenment/themes/Aqua/borders/common/images/pager_left.png
-share/enlightenment/themes/Aqua/borders/common/images/pager_right.png
-share/enlightenment/themes/Aqua/borders/common/images/pager_top.png
-share/enlightenment/themes/Aqua/borders/common/images/right_bg.png
-share/enlightenment/themes/Aqua/borders/common/images/right_fg.png
-share/enlightenment/themes/Aqua/borders/common/images/transient_title_bg.png
-share/enlightenment/themes/Aqua/borders/common/images/transient_title_fg.png
-share/enlightenment/themes/Aqua/buttons/actions.cfg
-share/enlightenment/themes/Aqua/buttons/buttons.cfg
-share/enlightenment/themes/Aqua/buttons/images.cfg
-share/enlightenment/themes/Aqua/buttons/images/apple.png
-share/enlightenment/themes/Aqua/buttons/images/bl.png
-share/enlightenment/themes/Aqua/buttons/images/br.png
-share/enlightenment/themes/Aqua/buttons/images/browser.png
-share/enlightenment/themes/Aqua/buttons/images/browser_c.png
-share/enlightenment/themes/Aqua/buttons/images/control.png
-share/enlightenment/themes/Aqua/buttons/images/control_c.png
-share/enlightenment/themes/Aqua/buttons/images/dvd.png
-share/enlightenment/themes/Aqua/buttons/images/dvd_c.png
-share/enlightenment/themes/Aqua/buttons/images/edit.png
-share/enlightenment/themes/Aqua/buttons/images/edit_c.png
-share/enlightenment/themes/Aqua/buttons/images/email.png
-share/enlightenment/themes/Aqua/buttons/images/email_c.png
-share/enlightenment/themes/Aqua/buttons/images/folder.png
-share/enlightenment/themes/Aqua/buttons/images/folder_c.png
-share/enlightenment/themes/Aqua/buttons/images/gimp.png
-share/enlightenment/themes/Aqua/buttons/images/gimp_c.png
-share/enlightenment/themes/Aqua/buttons/images/macos_logo.png
-share/enlightenment/themes/Aqua/buttons/images/movie.png
-share/enlightenment/themes/Aqua/buttons/images/movie_c.png
-share/enlightenment/themes/Aqua/buttons/images/mp3.png
-share/enlightenment/themes/Aqua/buttons/images/mp3_c.png
-share/enlightenment/themes/Aqua/buttons/images/rightbutton.png
-share/enlightenment/themes/Aqua/buttons/images/tl.png
-share/enlightenment/themes/Aqua/buttons/images/tr.png
-share/enlightenment/themes/Aqua/common/images/bg.png
-share/enlightenment/themes/Aqua/common/images/blank.png
-share/enlightenment/themes/Aqua/common/images/selected.png
-share/enlightenment/themes/Aqua/coords/coords.cfg
-share/enlightenment/themes/Aqua/cursors/cursors.cfg
-share/enlightenment/themes/Aqua/cursors/bw_images/arrow_left.xbm
-share/enlightenment/themes/Aqua/cursors/bw_images/arrow_left.xbm.mask
-share/enlightenment/themes/Aqua/cursors/bw_images/arrow_right.xbm
-share/enlightenment/themes/Aqua/cursors/bw_images/arrow_right.xbm.mask
-share/enlightenment/themes/Aqua/cursors/bw_images/cursor.xbm
-share/enlightenment/themes/Aqua/cursors/bw_images/cursor.xbm.mask
-share/enlightenment/themes/Aqua/cursors/bw_images/iconify.xbm
-share/enlightenment/themes/Aqua/cursors/bw_images/iconify.xbm.mask
-share/enlightenment/themes/Aqua/cursors/bw_images/kill.xbm
-share/enlightenment/themes/Aqua/cursors/bw_images/kill.xbm.mask
-share/enlightenment/themes/Aqua/cursors/bw_images/max.xbm
-share/enlightenment/themes/Aqua/cursors/bw_images/max.xbm.mask
-share/enlightenment/themes/Aqua/cursors/bw_images/move.xbm
-share/enlightenment/themes/Aqua/cursors/bw_images/move.xbm.mask
-share/enlightenment/themes/Aqua/cursors/bw_images/resize_bl.xbm
-share/enlightenment/themes/Aqua/cursors/bw_images/resize_bl.xbm.mask
-share/enlightenment/themes/Aqua/cursors/bw_images/resize_br.xbm
-share/enlightenment/themes/Aqua/cursors/bw_images/resize_br.xbm.mask
-share/enlightenment/themes/Aqua/cursors/bw_images/resize_h.xbm
-share/enlightenment/themes/Aqua/cursors/bw_images/resize_h.xbm.mask
-share/enlightenment/themes/Aqua/cursors/bw_images/resize_v.xbm
-share/enlightenment/themes/Aqua/cursors/bw_images/resize_v.xbm.mask
-share/enlightenment/themes/Aqua/cursors/bw_images/stick.xbm
-share/enlightenment/themes/Aqua/cursors/bw_images/stick.xbm.mask
-share/enlightenment/themes/Aqua/dialogs/dialogs.cfg
-share/enlightenment/themes/Aqua/dialogs/dialogs.cfg.zh_TW.Big5
-share/enlightenment/themes/Aqua/dialogs/images/button_down.png
-share/enlightenment/themes/Aqua/dialogs/images/button_down2.png
-share/enlightenment/themes/Aqua/dialogs/images/button_up.png
-share/enlightenment/themes/Aqua/dialogs/images/button_up.png.old
-share/enlightenment/themes/Aqua/dialogs/images/button_up2.png
-share/enlightenment/themes/Aqua/dialogs/images/check_off.png
-share/enlightenment/themes/Aqua/dialogs/images/check_on.png
-share/enlightenment/themes/Aqua/dialogs/images/radio_off.png
-share/enlightenment/themes/Aqua/dialogs/images/radio_on.png
-share/enlightenment/themes/Aqua/dialogs/images/separator.png
-share/enlightenment/themes/Aqua/dialogs/images/slider_horiz.png
-share/enlightenment/themes/Aqua/dialogs/images/slider_knob_horiz.png
-share/enlightenment/themes/Aqua/dialogs/images/slider_knob_vert.png
-share/enlightenment/themes/Aqua/dialogs/images/slider_vert.png
-share/enlightenment/themes/Aqua/dialogs/images/window.png
-share/enlightenment/themes/Aqua/dock/dock.cfg
-share/enlightenment/themes/Aqua/dragbar/dragbar.cfg
-share/enlightenment/themes/Aqua/dragbar/images/downarrow.png
-share/enlightenment/themes/Aqua/dragbar/images/downarrow_cl.png
-share/enlightenment/themes/Aqua/dragbar/images/dragbar_horiz.png
-share/enlightenment/themes/Aqua/dragbar/images/dragbar_vert.png
-share/enlightenment/themes/Aqua/dragbar/images/leftarrow.png
-share/enlightenment/themes/Aqua/dragbar/images/leftarrow_cl.png
-share/enlightenment/themes/Aqua/dragbar/images/rightarrow.png
-share/enlightenment/themes/Aqua/dragbar/images/rightarrow_cl.png
-share/enlightenment/themes/Aqua/dragbar/images/uparrow.png
-share/enlightenment/themes/Aqua/dragbar/images/uparrow_cl.png
-share/enlightenment/themes/Aqua/epplets/epplets.cfg
-share/enlightenment/themes/Aqua/epplets/epplets.cfg.zh_TW.Big5
-share/enlightenment/themes/Aqua/epplets/images/ar_d1.png
-share/enlightenment/themes/Aqua/epplets/images/ar_d2.png
-share/enlightenment/themes/Aqua/epplets/images/ar_d3.png
-share/enlightenment/themes/Aqua/epplets/images/ar_l1.png
-share/enlightenment/themes/Aqua/epplets/images/ar_l2.png
-share/enlightenment/themes/Aqua/epplets/images/ar_l3.png
-share/enlightenment/themes/Aqua/epplets/images/ar_r1.png
-share/enlightenment/themes/Aqua/epplets/images/ar_r2.png
-share/enlightenment/themes/Aqua/epplets/images/ar_r3.png
-share/enlightenment/themes/Aqua/epplets/images/ar_u1.png
-share/enlightenment/themes/Aqua/epplets/images/ar_u2.png
-share/enlightenment/themes/Aqua/epplets/images/ar_u3.png
-share/enlightenment/themes/Aqua/epplets/images/b1.png
-share/enlightenment/themes/Aqua/epplets/images/b2.png
-share/enlightenment/themes/Aqua/epplets/images/b3.png
-share/enlightenment/themes/Aqua/epplets/images/bb1.png
-share/enlightenment/themes/Aqua/epplets/images/bb2.png
-share/enlightenment/themes/Aqua/epplets/images/bg.png
-share/enlightenment/themes/Aqua/epplets/images/close1.png
-share/enlightenment/themes/Aqua/epplets/images/close2.png
-share/enlightenment/themes/Aqua/epplets/images/close3.png
-share/enlightenment/themes/Aqua/epplets/images/config1.png
-share/enlightenment/themes/Aqua/epplets/images/config2.png
-share/enlightenment/themes/Aqua/epplets/images/config3.png
-share/enlightenment/themes/Aqua/epplets/images/da.png
-share/enlightenment/themes/Aqua/epplets/images/eject1.png
-share/enlightenment/themes/Aqua/epplets/images/eject2.png
-share/enlightenment/themes/Aqua/epplets/images/eject3.png
-share/enlightenment/themes/Aqua/epplets/images/ff1.png
-share/enlightenment/themes/Aqua/epplets/images/ff2.png
-share/enlightenment/themes/Aqua/epplets/images/ff3.png
-share/enlightenment/themes/Aqua/epplets/images/help1.png
-share/enlightenment/themes/Aqua/epplets/images/help2.png
-share/enlightenment/themes/Aqua/epplets/images/help3.png
-share/enlightenment/themes/Aqua/epplets/images/next1.png
-share/enlightenment/themes/Aqua/epplets/images/next2.png
-share/enlightenment/themes/Aqua/epplets/images/next3.png
-share/enlightenment/themes/Aqua/epplets/images/pause1.png
-share/enlightenment/themes/Aqua/epplets/images/pause2.png
-share/enlightenment/themes/Aqua/epplets/images/pause3.png
-share/enlightenment/themes/Aqua/epplets/images/pb_h.png
-share/enlightenment/themes/Aqua/epplets/images/pb_v.png
-share/enlightenment/themes/Aqua/epplets/images/play1.png
-share/enlightenment/themes/Aqua/epplets/images/play2.png
-share/enlightenment/themes/Aqua/epplets/images/play3.png
-share/enlightenment/themes/Aqua/epplets/images/prev1.png
-share/enlightenment/themes/Aqua/epplets/images/prev2.png
-share/enlightenment/themes/Aqua/epplets/images/prev3.png
-share/enlightenment/themes/Aqua/epplets/images/repeat1.png
-share/enlightenment/themes/Aqua/epplets/images/repeat2.png
-share/enlightenment/themes/Aqua/epplets/images/repeat3.png
-share/enlightenment/themes/Aqua/epplets/images/rw1.png
-share/enlightenment/themes/Aqua/epplets/images/rw2.png
-share/enlightenment/themes/Aqua/epplets/images/rw3.png
-share/enlightenment/themes/Aqua/epplets/images/s_h.png
-share/enlightenment/themes/Aqua/epplets/images/s_k1.png
-share/enlightenment/themes/Aqua/epplets/images/s_k2.png
-share/enlightenment/themes/Aqua/epplets/images/s_v.png
-share/enlightenment/themes/Aqua/epplets/images/skip1.png
-share/enlightenment/themes/Aqua/epplets/images/skip2.png
-share/enlightenment/themes/Aqua/epplets/images/skip3.png
-share/enlightenment/themes/Aqua/epplets/images/stop1.png
-share/enlightenment/themes/Aqua/epplets/images/stop2.png
-share/enlightenment/themes/Aqua/epplets/images/stop3.png
-share/enlightenment/themes/Aqua/focuslist/focuslist.cfg
-share/enlightenment/themes/Aqua/focuslist/focuslist.cfg.zh_TW.Big5
-share/enlightenment/themes/Aqua/focuslist/images/lightbg.png
-share/enlightenment/themes/Aqua/focuslist/images/lightbg_hl.png
-share/enlightenment/themes/Aqua/iconbox/iconbox.cfg
-share/enlightenment/themes/Aqua/iconbox/iconbox.cfg.zh_TW.Big5
-share/enlightenment/themes/Aqua/iconbox/images/ar_d.png
-share/enlightenment/themes/Aqua/iconbox/images/ar_l.png
-share/enlightenment/themes/Aqua/iconbox/images/ar_r.png
-share/enlightenment/themes/Aqua/iconbox/images/ar_u.png
-share/enlightenment/themes/Aqua/iconbox/images/background.png
-share/enlightenment/themes/Aqua/iconbox/images/bt1.png
-share/enlightenment/themes/Aqua/iconbox/images/htrough.png
-share/enlightenment/themes/Aqua/iconbox/images/ib_cover_h.png
-share/enlightenment/themes/Aqua/iconbox/images/ib_cover_v.png
-share/enlightenment/themes/Aqua/iconbox/images/slh.png
-share/enlightenment/themes/Aqua/iconbox/images/slv.png
-share/enlightenment/themes/Aqua/iconbox/images/vtrough.png
-share/enlightenment/themes/Aqua/icons/images/controlcenter.png
-share/enlightenment/themes/Aqua/icons/images/eterm.png
-share/enlightenment/themes/Aqua/icons/images/grab.png
-share/enlightenment/themes/Aqua/icons/images/harddrive.png
-share/enlightenment/themes/Aqua/icons/images/magnify.png
-share/enlightenment/themes/Aqua/icons/images/netscape.png
-share/enlightenment/themes/Aqua/icons/images/trash.png
-share/enlightenment/themes/Aqua/init/init.cfg
-share/enlightenment/themes/Aqua/init/init.cfg.zh_TW.Big5
-share/enlightenment/themes/Aqua/init/images/bar.old.png
-share/enlightenment/themes/Aqua/init/images/bar.png
-share/enlightenment/themes/Aqua/init/images/bg.jpg
-share/enlightenment/themes/Aqua/init/images/logo.png
-share/enlightenment/themes/Aqua/init/images/logo2.png
-share/enlightenment/themes/Aqua/menus/actions.cfg
-share/enlightenment/themes/Aqua/menus/buttons.cfg
-share/enlightenment/themes/Aqua/menus/images.cfg
-share/enlightenment/themes/Aqua/menus/menus.cfg
-share/enlightenment/themes/Aqua/menus/images/go.png
-share/enlightenment/themes/Aqua/menus/images/go_hi.png
-share/enlightenment/themes/Aqua/menus/images/help.png
-share/enlightenment/themes/Aqua/menus/images/help_hi.png
-share/enlightenment/themes/Aqua/menus/images/junk.png
-share/enlightenment/themes/Aqua/menus/images/preferences.png
-share/enlightenment/themes/Aqua/menus/images/special.png
-share/enlightenment/themes/Aqua/menus/images/special_hi.png
-share/enlightenment/themes/Aqua/menustyles/menustyles.cfg
-share/enlightenment/themes/Aqua/menustyles/menustyles.cfg.zh_TW.Big5
-share/enlightenment/themes/Aqua/menustyles/images/submenu.png
-share/enlightenment/themes/Aqua/menustyles/images/submenu_selected.png
-share/enlightenment/themes/Aqua/pager/pager.cfg
-share/enlightenment/themes/Aqua/pager/pager.cfg.zh_TW.Big5
-share/enlightenment/themes/Aqua/pager/images/selected.png
-share/enlightenment/themes/Aqua/pager/images/window.png
-share/enlightenment/themes/Aqua/slideouts/actions.cfg
-share/enlightenment/themes/Aqua/slideouts/buttons.cfg
-share/enlightenment/themes/Aqua/slideouts/slideouts.cfg
-share/enlightenment/themes/Aqua/sound/sound.cfg
-share/enlightenment/themes/Aqua/sound/samples/click.wav
-share/enlightenment/themes/Aqua/sound/samples/login.au
-share/enlightenment/themes/Aqua/sound/samples/logout.au
-share/enlightenment/themes/Aqua/tooltips/tooltips.cfg
-share/enlightenment/themes/Aqua/tooltips/images/ttip.png
 share/enlightenment/themes/BlueSteel/README
 share/enlightenment/themes/BlueSteel/borders.cfg
 share/enlightenment/themes/BlueSteel/borders.cfg.ja
@@ -2328,7 +1976,6 @@ share/enlightenment/themes/Ganymede/cursors/bw_images/slideout_rotated.xbm
 share/enlightenment/themes/Ganymede/cursors/bw_images/slideout_rotated.xbm.mask
 share/enlightenment/themes/Ganymede/cursors/bw_images/sticky.xbm
 share/enlightenment/themes/Ganymede/cursors/bw_images/sticky.xbm.mask
-share/enlightenment/themes/Ganymede/dialogs/#dialogs.cfg#
 share/enlightenment/themes/Ganymede/dialogs/dialogs.cfg
 share/enlightenment/themes/Ganymede/dialogs/dialogs.cfg.ja
 share/enlightenment/themes/Ganymede/dialogs/dialogs.cfg.ja_JP
@@ -2625,6 +2272,291 @@ share/enlightenment/themes/Ganymede/tooltips/images/bubble_large.png
 share/enlightenment/themes/Ganymede/tooltips/images/bubble_small.png
 share/enlightenment/themes/Ganymede/ttfonts/ganymede.ttf
 share/enlightenment/themes/Ganymede/ttfonts/ganymede_italic.ttf
+share/enlightenment/themes/Marble/ChangeLog
+share/enlightenment/themes/Marble/TODO
+share/enlightenment/themes/Marble/borders.cfg
+share/enlightenment/themes/Marble/colormodifiers.cfg
+share/enlightenment/themes/Marble/cursors.cfg
+share/enlightenment/themes/Marble/desktops.cfg
+share/enlightenment/themes/Marble/imageclasses.cfg
+share/enlightenment/themes/Marble/imageclasses.cfg.zh_TW.Big5
+share/enlightenment/themes/Marble/init.cfg
+share/enlightenment/themes/Marble/init.cfg.zh_TW.Big5
+share/enlightenment/themes/Marble/menustyles.cfg
+share/enlightenment/themes/Marble/menustyles.cfg.zh_TW.Big5
+share/enlightenment/themes/Marble/slideouts.cfg
+share/enlightenment/themes/Marble/sound.cfg
+share/enlightenment/themes/Marble/tooltips.cfg
+share/enlightenment/themes/Marble/tooltips.cfg.zh_TW.Big5
+share/enlightenment/themes/Marble/windowmatches.cfg
+share/enlightenment/themes/Marble/ABOUT/MAIN
+share/enlightenment/themes/Marble/ABOUT/benjamingothic.ttf
+share/enlightenment/themes/Marble/backgrounds/backgrounds.cfg
+share/enlightenment/themes/Marble/backgrounds/images/tolk-rivendell.jpg
+share/enlightenment/themes/Marble/backgrounds/images/tolk-tirith.jpg
+share/enlightenment/themes/Marble/borders/borders.cfg
+share/enlightenment/themes/Marble/borders/BORDERLESS/border.cfg
+share/enlightenment/themes/Marble/borders/BORDER_ONLY/border.cfg
+share/enlightenment/themes/Marble/borders/DEFAULT/border.cfg
+share/enlightenment/themes/Marble/borders/FIXED_SIZE/border.cfg
+share/enlightenment/themes/Marble/borders/ICONBOX/border.cfg
+share/enlightenment/themes/Marble/borders/MENU/border.cfg
+share/enlightenment/themes/Marble/borders/MENU_BORDER_ONLY/border.cfg
+share/enlightenment/themes/Marble/borders/PAGER/border.cfg
+share/enlightenment/themes/Marble/borders/SHAPED/border.cfg
+share/enlightenment/themes/Marble/borders/TRANSIENT/border.cfg
+share/enlightenment/themes/Marble/borders/common/border.cfg
+share/enlightenment/themes/Marble/borders/common/images/b0-.png
+share/enlightenment/themes/Marble/borders/common/images/b0.png
+share/enlightenment/themes/Marble/borders/common/images/b1.png
+share/enlightenment/themes/Marble/borders/common/images/b2.png
+share/enlightenment/themes/Marble/borders/common/images/b3.png
+share/enlightenment/themes/Marble/borders/common/images/b4.png
+share/enlightenment/themes/Marble/borders/common/images/b5.png
+share/enlightenment/themes/Marble/borders/common/images/b6.png
+share/enlightenment/themes/Marble/borders/common/images/b7.png
+share/enlightenment/themes/Marble/borders/common/images/b8.png
+share/enlightenment/themes/Marble/borders/common/images/black.png
+share/enlightenment/themes/Marble/borders/common/images/t1-.png
+share/enlightenment/themes/Marble/borders/common/images/t1-b.png
+share/enlightenment/themes/Marble/borders/common/images/t1.png
+share/enlightenment/themes/Marble/borders/common/images/t1b.png
+share/enlightenment/themes/Marble/borders/common/images/t1s.png
+share/enlightenment/themes/Marble/borders/common/images/t1sb.png
+share/enlightenment/themes/Marble/borders/common/images/t2-.png
+share/enlightenment/themes/Marble/borders/common/images/t2.png
+share/enlightenment/themes/Marble/borders/common/images/t2s.png
+share/enlightenment/themes/Marble/borders/common/images/t3.png
+share/enlightenment/themes/Marble/borders/common/images/t3b.png
+share/enlightenment/themes/Marble/borders/common/images/t4.png
+share/enlightenment/themes/Marble/borders/common/images/t4b.png
+share/enlightenment/themes/Marble/borders/common/images/t5.png
+share/enlightenment/themes/Marble/borders/common/images/t5b.png
+share/enlightenment/themes/Marble/common/images/bg.png
+share/enlightenment/themes/Marble/common/images/bg.png_bak
+share/enlightenment/themes/Marble/common/images/blank.png
+share/enlightenment/themes/Marble/common/images/gnomepanel.png
+share/enlightenment/themes/Marble/common/images/notebook1.png
+share/enlightenment/themes/Marble/coords/coords.cfg
+share/enlightenment/themes/Marble/coords/coords.cfg.zh_TW.Big5
+share/enlightenment/themes/Marble/coords/images/mb1.png
+share/enlightenment/themes/Marble/cursors/cursors.cfg
+share/enlightenment/themes/Marble/cursors/bw_images/cursor.xbm
+share/enlightenment/themes/Marble/cursors/bw_images/cursor.xbm.mask
+share/enlightenment/themes/Marble/cursors/bw_images/iconify.xbm
+share/enlightenment/themes/Marble/cursors/bw_images/iconify.xbm.mask
+share/enlightenment/themes/Marble/cursors/bw_images/kill.xbm
+share/enlightenment/themes/Marble/cursors/bw_images/kill.xbm.mask
+share/enlightenment/themes/Marble/cursors/bw_images/move.xbm
+share/enlightenment/themes/Marble/cursors/bw_images/move.xbm.mask
+share/enlightenment/themes/Marble/cursors/bw_images/resize_br.xbm
+share/enlightenment/themes/Marble/cursors/bw_images/resize_br.xbm.mask
+share/enlightenment/themes/Marble/cursors/bw_images/resize_h.xbm
+share/enlightenment/themes/Marble/cursors/bw_images/resize_h.xbm.mask
+share/enlightenment/themes/Marble/cursors/bw_images/resize_tr.xbm
+share/enlightenment/themes/Marble/cursors/bw_images/resize_tr.xbm.mask
+share/enlightenment/themes/Marble/cursors/bw_images/resize_v.xbm
+share/enlightenment/themes/Marble/cursors/bw_images/resize_v.xbm.mask
+share/enlightenment/themes/Marble/dialogs/dialogs.cfg
+share/enlightenment/themes/Marble/dialogs/dialogs.cfg.zh_TW.Big5
+share/enlightenment/themes/Marble/dialogs/images/bt1.png
+share/enlightenment/themes/Marble/dialogs/images/bt2.png
+share/enlightenment/themes/Marble/dialogs/images/p_sel.png
+share/enlightenment/themes/Marble/dialogs/images/r0-.png
+share/enlightenment/themes/Marble/dialogs/images/r0.png
+share/enlightenment/themes/Marble/dialogs/images/r1-.png
+share/enlightenment/themes/Marble/dialogs/images/r1.png
+share/enlightenment/themes/Marble/dialogs/images/sl1.png
+share/enlightenment/themes/Marble/dialogs/images/sl2.png
+share/enlightenment/themes/Marble/dialogs/images/slh.png
+share/enlightenment/themes/Marble/dialogs/images/slv.png
+share/enlightenment/themes/Marble/dialogs/images/w0-.png
+share/enlightenment/themes/Marble/dialogs/images/w0.png
+share/enlightenment/themes/Marble/dialogs/images/w1-.png
+share/enlightenment/themes/Marble/dialogs/images/w1.png
+share/enlightenment/themes/Marble/dock/dock.cfg
+share/enlightenment/themes/Marble/dock/images/bt1.png
+share/enlightenment/themes/Marble/dock/images/bt2.png
+share/enlightenment/themes/Marble/dock/images/bt3.png
+share/enlightenment/themes/Marble/dragbar/dragbar.cfg
+share/enlightenment/themes/Marble/dragbar/images/a1.png
+share/enlightenment/themes/Marble/dragbar/images/a1b.png
+share/enlightenment/themes/Marble/dragbar/images/a2.png
+share/enlightenment/themes/Marble/dragbar/images/a2b.png
+share/enlightenment/themes/Marble/dragbar/images/blank.png
+share/enlightenment/themes/Marble/dragbar/images/bt1.png
+share/enlightenment/themes/Marble/dragbar/images/bt2.png
+share/enlightenment/themes/Marble/epplets/epplets.cfg
+share/enlightenment/themes/Marble/epplets/epplets.cfg.zh_TW.Big5
+
+share/enlightenment/themes/Marble/epplets/images/ar_d1.png
+share/enlightenment/themes/Marble/epplets/images/ar_d2.png
+share/enlightenment/themes/Marble/epplets/images/ar_d3.png
+share/enlightenment/themes/Marble/epplets/images/ar_l1.png
+share/enlightenment/themes/Marble/epplets/images/ar_l2.png
+share/enlightenment/themes/Marble/epplets/images/ar_l3.png
+share/enlightenment/themes/Marble/epplets/images/ar_r1.png
+share/enlightenment/themes/Marble/epplets/images/ar_r2.png
+share/enlightenment/themes/Marble/epplets/images/ar_r3.png
+share/enlightenment/themes/Marble/epplets/images/ar_u1.png
+share/enlightenment/themes/Marble/epplets/images/ar_u2.png
+share/enlightenment/themes/Marble/epplets/images/ar_u3.png
+share/enlightenment/themes/Marble/epplets/images/b1.png
+share/enlightenment/themes/Marble/epplets/images/b2.png
+share/enlightenment/themes/Marble/epplets/images/b3.png
+share/enlightenment/themes/Marble/epplets/images/bb1.png
+share/enlightenment/themes/Marble/epplets/images/bb2.png
+share/enlightenment/themes/Marble/epplets/images/bg_h.png
+share/enlightenment/themes/Marble/epplets/images/bg_v.png
+share/enlightenment/themes/Marble/epplets/images/bt1.png
+share/enlightenment/themes/Marble/epplets/images/bt2.png
+share/enlightenment/themes/Marble/epplets/images/bt3.png
+share/enlightenment/themes/Marble/epplets/images/close1.png
+share/enlightenment/themes/Marble/epplets/images/close2.png
+share/enlightenment/themes/Marble/epplets/images/close3.png
+share/enlightenment/themes/Marble/epplets/images/config1.png
+share/enlightenment/themes/Marble/epplets/images/config2.png
+share/enlightenment/themes/Marble/epplets/images/config3.png
+share/enlightenment/themes/Marble/epplets/images/da.png
+share/enlightenment/themes/Marble/epplets/images/dock2.png
+share/enlightenment/themes/Marble/epplets/images/eject1.png
+share/enlightenment/themes/Marble/epplets/images/eject2.png
+share/enlightenment/themes/Marble/epplets/images/eject3.png
+share/enlightenment/themes/Marble/epplets/images/ff1.png
+share/enlightenment/themes/Marble/epplets/images/ff2.png
+share/enlightenment/themes/Marble/epplets/images/ff3.png
+share/enlightenment/themes/Marble/epplets/images/help1.png
+share/enlightenment/themes/Marble/epplets/images/help2.png
+share/enlightenment/themes/Marble/epplets/images/help3.png
+share/enlightenment/themes/Marble/epplets/images/next1.png
+share/enlightenment/themes/Marble/epplets/images/next2.png
+share/enlightenment/themes/Marble/epplets/images/next3.png
+share/enlightenment/themes/Marble/epplets/images/pause1.png
+share/enlightenment/themes/Marble/epplets/images/pause2.png
+share/enlightenment/themes/Marble/epplets/images/pause3.png
+share/enlightenment/themes/Marble/epplets/images/pb_h.png
+share/enlightenment/themes/Marble/epplets/images/pb_v.png
+share/enlightenment/themes/Marble/epplets/images/play1.png
+share/enlightenment/themes/Marble/epplets/images/play2.png
+share/enlightenment/themes/Marble/epplets/images/play3.png
+share/enlightenment/themes/Marble/epplets/images/prev1.png
+share/enlightenment/themes/Marble/epplets/images/prev2.png
+share/enlightenment/themes/Marble/epplets/images/prev3.png
+share/enlightenment/themes/Marble/epplets/images/repeat1.png
+share/enlightenment/themes/Marble/epplets/images/repeat2.png
+share/enlightenment/themes/Marble/epplets/images/repeat3.png
+share/enlightenment/themes/Marble/epplets/images/rw1.png
+share/enlightenment/themes/Marble/epplets/images/rw2.png
+share/enlightenment/themes/Marble/epplets/images/rw3.png
+share/enlightenment/themes/Marble/epplets/images/s_h.png
+share/enlightenment/themes/Marble/epplets/images/s_k1.png
+share/enlightenment/themes/Marble/epplets/images/s_k2.png
+share/enlightenment/themes/Marble/epplets/images/s_v.png
+share/enlightenment/themes/Marble/epplets/images/skip1.png
+share/enlightenment/themes/Marble/epplets/images/skip2.png
+share/enlightenment/themes/Marble/epplets/images/skip3.png
+share/enlightenment/themes/Marble/epplets/images/slh.png
+share/enlightenment/themes/Marble/epplets/images/slv.png
+share/enlightenment/themes/Marble/epplets/images/stop1.png
+share/enlightenment/themes/Marble/epplets/images/stop2.png
+share/enlightenment/themes/Marble/epplets/images/stop3.png
+share/enlightenment/themes/Marble/eterm/eterm.cfg
+share/enlightenment/themes/Marble/eterm/images/a_d_1.png
+share/enlightenment/themes/Marble/eterm/images/a_d_2.png
+share/enlightenment/themes/Marble/eterm/images/a_l_1.png
+share/enlightenment/themes/Marble/eterm/images/a_l_2.png
+share/enlightenment/themes/Marble/eterm/images/a_r_1.png
+share/enlightenment/themes/Marble/eterm/images/a_r_2.png
+share/enlightenment/themes/Marble/eterm/images/a_u_1.png
+share/enlightenment/themes/Marble/eterm/images/a_u_2.png
+share/enlightenment/themes/Marble/eterm/images/bg.png
+share/enlightenment/themes/Marble/eterm/images/bt.png
+share/enlightenment/themes/Marble/eterm/images/mb1.png
+share/enlightenment/themes/Marble/eterm/images/mb2.png
+share/enlightenment/themes/Marble/eterm/images/mb3.png
+share/enlightenment/themes/Marble/eterm/images/mbg.png
+share/enlightenment/themes/Marble/eterm/images/sb1.png
+share/enlightenment/themes/Marble/eterm/images/tr.png
+share/enlightenment/themes/Marble/focuslist/focuslist.cfg
+share/enlightenment/themes/Marble/focuslist/focuslist.cfg.zh_TW.Big5
+share/enlightenment/themes/Marble/focuslist/images/mb1.png
+share/enlightenment/themes/Marble/focuslist/images/mb2.png
+share/enlightenment/themes/Marble/gkrellm/README
+share/enlightenment/themes/Marble/gkrellm/Marble/bg_bordered.xpm
+share/enlightenment/themes/Marble/gkrellm/Marble/bg_chart.png
+share/enlightenment/themes/Marble/gkrellm/Marble/bg_spacer.xpm
+share/enlightenment/themes/Marble/gkrellm/Marble/chart_grid.xpm
+share/enlightenment/themes/Marble/gkrellm/Marble/frame_horizontal.xpm
+share/enlightenment/themes/Marble/gkrellm/Marble/frame_side.xpm
+share/enlightenment/themes/Marble/gkrellm/Marble/gkrellmrc
+share/enlightenment/themes/Marble/gkrellm/Marble/krell_meter.png
+share/enlightenment/themes/Marble/gkrellm/Marble/krell_meter_mem.png
+share/enlightenment/themes/Marble/gkrellm/Marble/net_leds.png
+share/enlightenment/themes/Marble/gkrellm/Marble/ppp_button.png
+share/enlightenment/themes/Marble/gkrellm/Marble2/bg_bordered.xpm
+share/enlightenment/themes/Marble/gkrellm/Marble2/bg_chart.png
+share/enlightenment/themes/Marble/gkrellm/Marble2/bg_spacer.xpm
+share/enlightenment/themes/Marble/gkrellm/Marble2/chart_grid.xpm
+share/enlightenment/themes/Marble/gkrellm/Marble2/frame_horizontal.xpm
+share/enlightenment/themes/Marble/gkrellm/Marble2/frame_side.xpm
+share/enlightenment/themes/Marble/gkrellm/Marble2/gkrellmrc
+share/enlightenment/themes/Marble/gkrellm/Marble2/krell_meter.png
+share/enlightenment/themes/Marble/gkrellm/Marble2/krell_meter_mem.png
+share/enlightenment/themes/Marble/gkrellm/Marble2/net_leds.png
+share/enlightenment/themes/Marble/gkrellm/Marble2/ppp_button.png
+share/enlightenment/themes/Marble/iconbox/iconbox.cfg
+share/enlightenment/themes/Marble/iconbox/iconbox.cfg.zh_TW.Big5
+share/enlightenment/themes/Marble/iconbox/images/ar_d1.png
+share/enlightenment/themes/Marble/iconbox/images/ar_d2.png
+share/enlightenment/themes/Marble/iconbox/images/ar_l1.png
+share/enlightenment/themes/Marble/iconbox/images/ar_l2.png
+share/enlightenment/themes/Marble/iconbox/images/ar_r1.png
+share/enlightenment/themes/Marble/iconbox/images/ar_r2.png
+share/enlightenment/themes/Marble/iconbox/images/ar_u1.png
+share/enlightenment/themes/Marble/iconbox/images/ar_u2.png
+share/enlightenment/themes/Marble/iconbox/images/bt1.png
+share/enlightenment/themes/Marble/iconbox/images/ib_cover_h.png
+share/enlightenment/themes/Marble/iconbox/images/ib_cover_v.png
+share/enlightenment/themes/Marble/iconbox/images/ib_h.png
+share/enlightenment/themes/Marble/iconbox/images/ib_v.png
+share/enlightenment/themes/Marble/iconbox/images/mb1.png
+share/enlightenment/themes/Marble/iconbox/images/sl1.png
+share/enlightenment/themes/Marble/iconbox/images/sl2.png
+share/enlightenment/themes/Marble/iconbox/images/slh.png
+share/enlightenment/themes/Marble/iconbox/images/slv.png
+share/enlightenment/themes/Marble/init/init.cfg
+share/enlightenment/themes/Marble/init/init.cfg.zh_TW.Big5
+share/enlightenment/themes/Marble/init/images/bg2.png
+share/enlightenment/themes/Marble/init/images/bgo.png
+share/enlightenment/themes/Marble/init/images/bt1.png
+share/enlightenment/themes/Marble/init/images/mb1.png
+share/enlightenment/themes/Marble/init/images/pb.png
+share/enlightenment/themes/Marble/menustyles/menustyles.cfg
+share/enlightenment/themes/Marble/menustyles/menustyles.cfg.zh_TW.Big5
+share/enlightenment/themes/Marble/menustyles/images/mb1.png
+share/enlightenment/themes/Marble/menustyles/images/mb2.png
+share/enlightenment/themes/Marble/menustyles/images/mb3.png
+share/enlightenment/themes/Marble/pager/pager.cfg
+share/enlightenment/themes/Marble/pager/pager.cfg.zh_TW.Big5
+share/enlightenment/themes/Marble/pager/images/bt1.png
+share/enlightenment/themes/Marble/pager/images/bt2.png
+share/enlightenment/themes/Marble/pager/images/mb1.png
+share/enlightenment/themes/Marble/pager/images/p_sel.png
+share/enlightenment/themes/Marble/sound/sound.cfg
+share/enlightenment/themes/Marble/sound/samples/pop2.wav
+share/enlightenment/themes/Marble/sound/samples/pop5.wav
+share/enlightenment/themes/Marble/sound/samples/splat.wav
+share/enlightenment/themes/Marble/sound/samples/stretch.wav
+share/enlightenment/themes/Marble/sound/samples/zap.wav
+share/enlightenment/themes/Marble/sound/samples/zing.wav
+share/enlightenment/themes/Marble/sound/samples/zipperup.wav
+share/enlightenment/themes/Marble/tooltips/tooltips.cfg
+share/enlightenment/themes/Marble/tooltips/tooltips.cfg.zh_TW.Big5
+share/enlightenment/themes/Marble/tooltips/images/cloud1.png
+share/enlightenment/themes/Marble/tooltips/images/cloud2.png
+share/enlightenment/themes/Marble/tooltips/images/cloud_logo.png
+share/enlightenment/themes/Marble/ttfonts/runeng1.ttf
+share/enlightenment/themes/Marble/ttfonts/runeng2.ttf
 share/enlightenment/themes/ShinyMetal/README
 share/enlightenment/themes/ShinyMetal/borders.cfg
 share/enlightenment/themes/ShinyMetal/cursors.cfg
@@ -3107,6 +3039,57 @@ share/locale/tr/LC_MESSAGES/enlightenment.mo
 @dirrm share/enlightenment/themes/ShinyMetal/backgrounds
 @dirrm share/enlightenment/themes/ShinyMetal/ABOUT
 @dirrm share/enlightenment/themes/ShinyMetal
+@dirrm share/enlightenment/themes/Marble/ttfonts
+@dirrm share/enlightenment/themes/Marble/tooltips/images
+@dirrm share/enlightenment/themes/Marble/tooltips
+@dirrm share/enlightenment/themes/Marble/sound/samples
+@dirrm share/enlightenment/themes/Marble/sound
+@dirrm share/enlightenment/themes/Marble/pager/images
+@dirrm share/enlightenment/themes/Marble/pager
+@dirrm share/enlightenment/themes/Marble/menustyles/images
+@dirrm share/enlightenment/themes/Marble/menustyles
+@dirrm share/enlightenment/themes/Marble/init/images
+@dirrm share/enlightenment/themes/Marble/init
+@dirrm share/enlightenment/themes/Marble/iconbox/images
+@dirrm share/enlightenment/themes/Marble/iconbox
+@dirrm share/enlightenment/themes/Marble/gkrellm/Marble2
+@dirrm share/enlightenment/themes/Marble/gkrellm/Marble
+@dirrm share/enlightenment/themes/Marble/gkrellm
+@dirrm share/enlightenment/themes/Marble/focuslist/images
+@dirrm share/enlightenment/themes/Marble/focuslist
+@dirrm share/enlightenment/themes/Marble/eterm/images
+@dirrm share/enlightenment/themes/Marble/eterm
+@dirrm share/enlightenment/themes/Marble/epplets/images
+@dirrm share/enlightenment/themes/Marble/epplets
+@dirrm share/enlightenment/themes/Marble/dragbar/images
+@dirrm share/enlightenment/themes/Marble/dragbar
+@dirrm share/enlightenment/themes/Marble/dock/images
+@dirrm share/enlightenment/themes/Marble/dock
+@dirrm share/enlightenment/themes/Marble/dialogs/images
+@dirrm share/enlightenment/themes/Marble/dialogs
+@dirrm share/enlightenment/themes/Marble/cursors/bw_images
+@dirrm share/enlightenment/themes/Marble/cursors
+@dirrm share/enlightenment/themes/Marble/coords/images
+@dirrm share/enlightenment/themes/Marble/coords
+@dirrm share/enlightenment/themes/Marble/common/images
+@dirrm share/enlightenment/themes/Marble/common
+@dirrm share/enlightenment/themes/Marble/borders/common/images
+@dirrm share/enlightenment/themes/Marble/borders/common
+@dirrm share/enlightenment/themes/Marble/borders/TRANSIENT
+@dirrm share/enlightenment/themes/Marble/borders/SHAPED
+@dirrm share/enlightenment/themes/Marble/borders/PAGER
+@dirrm share/enlightenment/themes/Marble/borders/MENU_BORDER_ONLY
+@dirrm share/enlightenment/themes/Marble/borders/MENU
+@dirrm share/enlightenment/themes/Marble/borders/ICONBOX
+@dirrm share/enlightenment/themes/Marble/borders/FIXED_SIZE
+@dirrm share/enlightenment/themes/Marble/borders/DEFAULT
+@dirrm share/enlightenment/themes/Marble/borders/BORDER_ONLY
+@dirrm share/enlightenment/themes/Marble/borders/BORDERLESS
+@dirrm share/enlightenment/themes/Marble/borders
+@dirrm share/enlightenment/themes/Marble/backgrounds/images
+@dirrm share/enlightenment/themes/Marble/backgrounds
+@dirrm share/enlightenment/themes/Marble/ABOUT
+@dirrm share/enlightenment/themes/Marble
 @dirrm share/enlightenment/themes/Ganymede/ttfonts
 @dirrm share/enlightenment/themes/Ganymede/tooltips/images
 @dirrm share/enlightenment/themes/Ganymede/tooltips
@@ -3324,69 +3307,6 @@ share/locale/tr/LC_MESSAGES/enlightenment.mo
 @dirrm share/enlightenment/themes/BlueSteel/Eterm
 @dirrm share/enlightenment/themes/BlueSteel/ABOUT
 @dirrm share/enlightenment/themes/BlueSteel
-@dirrm share/enlightenment/themes/Aqua/tooltips/images
-@dirrm share/enlightenment/themes/Aqua/tooltips
-@dirrm share/enlightenment/themes/Aqua/sound/samples
-@dirrm share/enlightenment/themes/Aqua/sound
-@dirrm share/enlightenment/themes/Aqua/slideouts/images
-@dirrm share/enlightenment/themes/Aqua/slideouts
-@dirrm share/enlightenment/themes/Aqua/pager/images
-@dirrm share/enlightenment/themes/Aqua/pager
-@dirrm share/enlightenment/themes/Aqua/menustyles/images
-@dirrm share/enlightenment/themes/Aqua/menustyles
-@dirrm share/enlightenment/themes/Aqua/menus/images
-@dirrm share/enlightenment/themes/Aqua/menus
-@dirrm share/enlightenment/themes/Aqua/init/images
-@dirrm share/enlightenment/themes/Aqua/init
-@dirrm share/enlightenment/themes/Aqua/icons/images
-@dirrm share/enlightenment/themes/Aqua/icons
-@dirrm share/enlightenment/themes/Aqua/iconbox/images
-@dirrm share/enlightenment/themes/Aqua/iconbox
-@dirrm share/enlightenment/themes/Aqua/focuslist/images
-@dirrm share/enlightenment/themes/Aqua/focuslist
-@dirrm share/enlightenment/themes/Aqua/epplets/images
-@dirrm share/enlightenment/themes/Aqua/epplets
-@dirrm share/enlightenment/themes/Aqua/dragbar/images
-@dirrm share/enlightenment/themes/Aqua/dragbar
-@dirrm share/enlightenment/themes/Aqua/dock/images
-@dirrm share/enlightenment/themes/Aqua/dock
-@dirrm share/enlightenment/themes/Aqua/dialogs/images
-@dirrm share/enlightenment/themes/Aqua/dialogs
-@dirrm share/enlightenment/themes/Aqua/cursors/bw_images
-@dirrm share/enlightenment/themes/Aqua/cursors
-@dirrm share/enlightenment/themes/Aqua/coords/images
-@dirrm share/enlightenment/themes/Aqua/coords
-@dirrm share/enlightenment/themes/Aqua/common/images
-@dirrm share/enlightenment/themes/Aqua/common
-@dirrm share/enlightenment/themes/Aqua/buttons/images
-@dirrm share/enlightenment/themes/Aqua/buttons
-@dirrm share/enlightenment/themes/Aqua/borders/common/images
-@dirrm share/enlightenment/themes/Aqua/borders/common
-@dirrm share/enlightenment/themes/Aqua/borders/VERYSMALLFIXED/images
-@dirrm share/enlightenment/themes/Aqua/borders/VERYSMALLFIXED
-@dirrm share/enlightenment/themes/Aqua/borders/TRANSIENT/images
-@dirrm share/enlightenment/themes/Aqua/borders/TRANSIENT
-@dirrm share/enlightenment/themes/Aqua/borders/STEEL/images
-@dirrm share/enlightenment/themes/Aqua/borders/STEEL
-@dirrm share/enlightenment/themes/Aqua/borders/SMALL/images
-@dirrm share/enlightenment/themes/Aqua/borders/SMALL
-@dirrm share/enlightenment/themes/Aqua/borders/RIGHT_PAGER/images
-@dirrm share/enlightenment/themes/Aqua/borders/RIGHT_PAGER
-@dirrm share/enlightenment/themes/Aqua/borders/PAGER/images
-@dirrm share/enlightenment/themes/Aqua/borders/PAGER
-@dirrm share/enlightenment/themes/Aqua/borders/ICONBOX/images
-@dirrm share/enlightenment/themes/Aqua/borders/ICONBOX
-@dirrm share/enlightenment/themes/Aqua/borders/DEFAULT/images
-@dirrm share/enlightenment/themes/Aqua/borders/DEFAULT
-@dirrm share/enlightenment/themes/Aqua/borders/BORDERLESS/images
-@dirrm share/enlightenment/themes/Aqua/borders/BORDERLESS
-@dirrm share/enlightenment/themes/Aqua/borders
-@dirrm share/enlightenment/themes/Aqua/backgrounds/images
-@dirrm share/enlightenment/themes/Aqua/backgrounds
-@dirrm share/enlightenment/themes/Aqua/Eterm/images
-@dirrm share/enlightenment/themes/Aqua/Eterm
-@dirrm share/enlightenment/themes/Aqua/ABOUT
-@dirrm share/enlightenment/themes/Aqua
 @dirrm share/enlightenment/themes
 @dirrm share/enlightenment/config/pix
 @dirrm share/enlightenment/config/backup

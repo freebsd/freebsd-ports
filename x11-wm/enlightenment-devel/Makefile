@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	enlightenment
-PORTVERSION= 	0.16.5
-PORTREVISION=	4
+PORTVERSION=	0.16.5
+PORTREVISION=	5
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.enlightenment.org/pub/enlightenment/enlightenment/ \
 		ftp://ftp.dti.ad.jp/pub/X/enlightenment/enlightenment/ \
@@ -17,7 +17,7 @@ MASTER_SITES=	ftp://ftp.enlightenment.org/pub/enlightenment/enlightenment/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	vanilla
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		Aqua.etheme \
+		Marble.etheme \
 		BlueSteel.etheme.zh_TW.Big5 \
 		BrushedMetal-Tigert.etheme.zh_TW.Big5 \
 		ShinyMetal.etheme.zh_TW.Big5
@@ -28,8 +28,6 @@ MAINTAINER=	vanilla@FreeBSD.org
 LIB_DEPENDS=	Fnlib.0:${PORTSDIR}/graphics/fnlib \
 		ghttp.1:${PORTSDIR}/www/libghttp \
 		intl.1:${PORTSDIR}/devel/gettext
-
-RESTRICTED=	aqua.etheme
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
@@ -50,11 +48,12 @@ CONFIGURE_ARS+=	--disable-zoom
 MAN1=		enlightenment.1
 
 pre-build:
-.for i in Aqua.etheme BlueSteel.etheme.zh_TW.Big5 BrushedMetal-Tigert.etheme.zh_TW.Big5 ShinyMetal.etheme.zh_TW.Big5
+.for i in Marble.etheme BlueSteel.etheme.zh_TW.Big5 BrushedMetal-Tigert.etheme.zh_TW.Big5 ShinyMetal.etheme.zh_TW.Big5
 	${CP} ${DISTDIR}/$i ${WRKSRC}/src/themes
 .endfor
 
 post-install:
+	${RM} ${PREFIX}/share/enlightenment/themes/Ganymede/dialogs/#dialogs.cfg#
 	${CHOWN} -R root:wheel ${PREFIX}/share/enlightenment/themes
 	${CHMOD} -R a+rX ${PREFIX}/share/enlightenment/themes
 
