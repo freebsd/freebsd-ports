@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libtool
 
-MAINTAINER=	reg@shale.csir.co.za
+MAINTAINER=	reg
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-ltdl-install
