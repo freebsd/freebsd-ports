@@ -1,0 +1,15 @@
+--- src/Makefile.in.orig	Sun Feb 22 23:52:06 1998
++++ src/Makefile.in	Sun Feb 22 23:52:27 1998
+@@ -32,10 +32,10 @@
+ all: Eterm
+ 
+ Eterm: VERSION.h feature.h $(OBJS) ../libmej/libmej.a
+-	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS) $(XLIB) -lmej -lIm -lXext -lpng -ljpeg -lz -lm
++	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS) $(XLIB) -lmej -lImlib -lXext -lpng -ljpeg -lz -lutil -lm
+ 
+ FreeBSD: VERSION.h $(OBJS) ../libmej/libmej.a
+-	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS) -lutil $(XLIB) -lmej -lIm -lXext -lpng -ljpeg -lz -lm
++	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS) -lutil $(XLIB) -lmej -lImlib -lXext -lpng -ljpeg -lz -lutil -lm
+ 	mv FreeBSD Eterm
+ 
+ VERSION.h:
