@@ -3101,11 +3101,6 @@ ja-xemacs21-canna	ports/japanese/xemacs21-canna
 ja-xemacs21-canna+freewnn	ports/japanese/xemacs21-canna+freewnn
 ja-xemacs21-canna+wnn6	ports/japanese/xemacs21-canna+wnn6
 ja-xemacs21-freewnn	ports/japanese/xemacs21-freewnn
-ja-xemacs21-sumo-canna	ports/japanese/xemacs21-sumo-canna
-ja-xemacs21-sumo-canna+freewnn	ports/japanese/xemacs21-sumo-canna+freewnn
-ja-xemacs21-sumo-canna+wnn6	ports/japanese/xemacs21-sumo-canna+wnn6
-ja-xemacs21-sumo-freewnn	ports/japanese/xemacs21-sumo-freewnn
-ja-xemacs21-sumo-wnn6	ports/japanese/xemacs21-sumo-wnn6
 ja-xemacs21-wnn6	ports/japanese/xemacs21-wnn6
 ja-xjman	ports/japanese/xjman
 ja-xjman-3	ports/japanese/xjman-3
