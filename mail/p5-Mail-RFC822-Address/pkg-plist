@@ -1,5 +1,7 @@
 %%SITE_PERL%%/Mail/RFC822/Address.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/RFC822/Address/.packlist
 @dirrm %%SITE_PERL%%/Mail/RFC822
+@dirrm %%SITE_PERL%%/Mail
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/RFC822/Address
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/RFC822
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
