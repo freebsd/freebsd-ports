@@ -12,7 +12,7 @@ MASTER_SITES=	http://download.sourceforge.net/gtkmm/
 
 MAINTAINER=	erich@tacni.net
 
-LIB_DEPENDS=	gtkmm.1:${PORTSDIR}/x11-toolkits/gtk--
+LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
 BUILD_DEPENDS=	m4:${PORTSDIR}/devel/m4
 
 USE_X_PREFIX=	yes

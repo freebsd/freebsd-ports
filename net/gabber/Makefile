@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	erich@tacni.net
 
-LIB_DEPENDS=	gtkmm.1:${PORTSDIR}/x11-toolkits/gtk-- \
+LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk-- \
 		gnomemm.3:${PORTSDIR}/x11-toolkits/gnome-- \
 		sigc.1:${PORTSDIR}/devel/libsigc++ \
 		gal.4:${PORTSDIR}/x11-toolkits/gal \
