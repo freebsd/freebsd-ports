@@ -7,8 +7,8 @@ share/ldapdiff/samples/webtomware.user.ldif
 @dirrm share/ldapdiff/plugins
 @dirrm share/ldapdiff/samples
 @dirrm share/ldapdiff
-%%PORTDOCS%%share/doc/ldapdiff/CHANGES
-%%PORTDOCS%%share/doc/ldapdiff/ChangeLog
-%%PORTDOCS%%share/doc/ldapdiff/README
-%%PORTDOCS%%share/doc/ldapdiff/TODO
-%%PORTDOCS%%@dirrm share/doc/ldapdiff
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
