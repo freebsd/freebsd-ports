@@ -1,0 +1,23 @@
+Post-install Notes for p5-Apache
+================================
+
+This port has built a new httpd binary that includes the perl5 module
+(mod_perl).  To avoid overwriting an existing httpd binary, it has been
+installed as
+
+${PREFIX}/sbin/httpd_modperl
+
+($PREFIX is usually /usr/local unless you override it).
+
+In order to use this module, you should rename it to httpd.  Remember that
+this binary is the standard apache port, with mod_perl and nothing else
+added.  If you have already built yourself an httpd binary containing
+optional modules, you are better off building mod_perl yourself.
+
+The original source for p5-Apache can be found at any CPAN mirror, in the
+directory
+
+modules/by-module/Apache/
+
+--
+j.
