@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- pyFind/match_files.py.orig	Sat Mar 31 01:48:01 2001
-+++ pyFind/match_files.py	Thu Apr  5 12:25:04 2001
-@@ -97,6 +97,10 @@
+--- pyFind/match_files.py.orig	Tue Apr 17 18:00:00 2001
++++ pyFind/match_files.py	Wed Apr 18 21:56:29 2001
+@@ -113,6 +113,10 @@
      #pclsApp.clstFiles.freeze() 
      pclsApp.apbMain.set_progress(iProgress)
  
@@ -14,13 +14,13 @@ $FreeBSD$
      #case sensitive file name search
      if pbCaseSensitive:
          sParam = ' -name "' #yes
-@@ -126,10 +130,6 @@
+@@ -142,10 +146,6 @@
      #output to command line
-     sFindCmd = sFindCmd + ' -print'
+     sFindCmd = sFindCmd + " -print"
      
 -    #search mounted volumes?
 -    if not pbSearchMounted:
--         sFindCmd = sFindCmd + ' -mount'
+-         sFindCmd = sFindCmd + " -mount"
 -
      #search contents?
      if pbSearchContents:       
