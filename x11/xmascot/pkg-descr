@@ -1,6 +1,5 @@
-XMascot, moving mascot on your X-Window screen.
-
-XMascot have these features.
+XMascot displays a moving mascot on your X-Window screen.  XMascot has
+the following options,
 
  -Moving	pretty mascot moving
  -Strectch	stretch as you like
@@ -17,9 +16,8 @@ PGM	*.pgm	256 level gray scale, in raw
 PBM	*.pbm	2 level monocrome, in raw
 PNM	*.pnm	PPM, PGM, or PBM
 
-XMascot distinguish images from their suffix and can load other image formats
+XMascot distinguishes images from their suffix and can load other image formats
 when {suffix}topnm, *topgm, or *topbm commands are found in your system.
 
-See more infomation for newest xmascot:
 WWW: http://cclub.tutcc.tut.ac.jp:1080/xmascot/
      ftp://cclub.tutcc.tut.ac.jp/pub/xmascot/

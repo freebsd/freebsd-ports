@@ -5,4 +5,3 @@ files.
 
 NOTE: This kit requires as a pre-requisite the Tcl and Tk binary kits.
 This version uses FreeBSD shared libraries.
-
