@@ -2,7 +2,13 @@
 home=/a/asami/portbuild/errorlogs
 scripts=/a/asami/portbuild/scripts
 
-for ver in full latest; do
+lock=$home/lock
+
+if [ -f $lock ]; then exit; fi
+
+touch $lock
+
+for ver in latest full; do
   for num in 3 4 5; do
     cd $home/$num-$ver && ${scripts}/processlogs
   done
@@ -15,3 +21,5 @@ for ver in full latest; do
   done
   cd $home && ${scripts}/bothlogs [3-5]-$ver
 done
+
+rm -f $lock
