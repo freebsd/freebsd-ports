@@ -7,6 +7,7 @@
 
 PORTNAME=	BitTorrent
 PORTVERSION=	3.9.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES?=	net python
 MASTER_SITES=	http://www.bittorrent.com/
@@ -18,6 +19,8 @@ PKGNAMESUFFIX?=	-devel
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT?=	A peer-to-peer tool for distributing files written in Python
+
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dns/__init__.py:${PORTSDIR}/dns/py-dnspython
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
@@ -58,7 +61,7 @@ post-patch:
 		-e 's|/usr/bin/env python|${LOCALBASE}/bin/python|'
 
 post-install:
-.ifndef(NOPORTDOCS) 
+.ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
