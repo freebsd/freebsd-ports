@@ -69,7 +69,6 @@
     SUBDIR += oo2c
     SUBDIR += otcl
     SUBDIR += p2c
-    SUBDIR += p5-B-Graph
     SUBDIR += p5-Error
     SUBDIR += p5-Expect
     SUBDIR += p5-F77
