@@ -7,7 +7,7 @@
 
 PORTNAME=	libraries
 PORTVERSION=	4.3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
@@ -25,23 +25,14 @@ EXTRACT_ONLY=	X430src-1.tgz \
 MAINTAINER=	anholt@freebsd.org
 COMMENT=	XFree86-4 libraries and headers
 
-BUILD_DEPENDS=	${X11BASE}/lib/X11/config/date.def:${PORTSDIR}/devel/imake-4
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
-LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
-RUN_DEPENDS=	mkhtmlindex:${PORTSDIR}/devel/imake-4
+LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
+		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
-XFREE86_VERSION=	4
+USE_X_PREFIX=		no
 PREFIX?=		${X11BASE}
-MANCOMPRESSED=		yes
-XFREE86_HTML_MAN=	yes
 MTREE_FILE=		/etc/mtree/BSD.x11-4.dist
 INSTALLS_SHLIB=		yes
-DIST_SUBDIR=		xc
-WRKSRC=			${WRKDIR}/xc
-SCRIPTS_ENV=		DebuggableLibraries=${DebuggableLibraries} \
-			CC="${CC}" \
-			CXX="${CXX}" \
-			CFLAGS="${CFLAGS}"
+SCRIPTS_ENV=		DebuggableLibraries=${DebuggableLibraries}
 MAN3=			Xaw.3 Xcursor.3 Xrandr.3
 XBUILD_DIRS=		lib nls programs/Xserver/include \
 			programs/Xserver/hw/xfree86/parser
@@ -60,6 +51,7 @@ DebuggableLibraries?=	NO
 .error You have `USE_XLIB' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
+.include "Makefile.inc"
 .include <bsd.port.pre.mk>
 
 # BuildXF86DRI is false for FreeBSD < 4.1
@@ -88,6 +80,8 @@ post-install:
 		${PREFIX}/include/X11/PM
 	${INSTALL_DATA} ${WRKSRC}/programs/proxymngr/PMproto.h \
 		${PREFIX}/include/X11/PM
+	${MKDIR} ${PREFIX}/libdata/pkgconfig
+	${INSTALL_DATA} ${WRKSRC}/lib/Xcursor/xcursor.pc \
+		${PREFIX}/libdata/pkgconfig
 
-.include "Makefile.inc"
 .include <bsd.port.post.mk>

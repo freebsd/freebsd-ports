@@ -7,6 +7,7 @@
 
 PORTNAME=	NestServer
 PORTVERSION=	4.3.0
+PORTREVISION=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
@@ -24,15 +25,6 @@ EXTRACT_ONLY=	X430src-1.tgz \
 MAINTAINER=	anholt@freebsd.org
 COMMENT=	XFree86-4 nested X server
 
-XFREE86_VERSION=	4
-USE_IMAKE=		YES
-DIST_SUBDIR=		xc
-WRKSRC=			${WRKDIR}/xc
-SCRIPTS_ENV=		CC="${CC}" \
-			CXX="${CXX}" \
-			CFLAGS="${CFLAGS}"
-PATCHDIR=		${.CURDIR}/../../x11/XFree86-4-libraries/files
-MANCOMPRESSED=		yes
 MAN1=			Xnest.1 Xserver.1
 XBUILD_DIRS=		lib/font lib/lbxutil lib/Xdmcp lib/Xau programs/Xserver
 XINCLUDE_DIRS=		lib/xkbfile lib/xtrans

@@ -5,7 +5,7 @@
  #endif
  
 -#if BuildLibraries
-+#if BuildLibraries && !FreeBSDBuildXbin
++#if BuildLibraries && FreeBSDBuildXlib
  #define LibInstall YES
  #else
  #define LibInstall NO

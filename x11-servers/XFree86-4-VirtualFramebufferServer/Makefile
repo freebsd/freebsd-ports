@@ -7,6 +7,7 @@
 
 PORTNAME=	VirtualFramebufferServer
 PORTVERSION=	4.3.0
+PORTREVISION=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
@@ -28,14 +29,6 @@ RUN_DEPENDS=	${FONT}:${PORTSDIR}/x11-fonts/XFree86-4-fontDefaultBitmaps
 
 FONT=	${X11BASE}/lib/X11/fonts/misc/cursor.pcf.gz
 
-XFREE86_VERSION=	4
-USE_IMAKE=		YES
-DIST_SUBDIR=		xc
-WRKSRC=			${WRKDIR}/xc
-SCRIPTS_ENV=		CC="${CC}" \
-			CXX="${CXX}" \
-			CFLAGS="${CFLAGS}"
-PATCHDIR=		${.CURDIR}/../../x11/XFree86-4-libraries/files
 MAN1=			Xserver.1 Xvfb.1
 XBUILD_DIRS=		lib/font lib/lbxutil/ lib/Xdmcp lib/Xau programs/Xserver
 XINCLUDE_DIRS=		lib/xkbfile lib/xtrans
