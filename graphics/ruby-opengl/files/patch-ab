@@ -1,0 +1,11 @@
+--- ogl.c.orig	Mon Aug  7 01:20:07 2000
++++ ogl.c	Fri Sep 22 01:58:15 2000
+@@ -4211,7 +4211,7 @@
+ #if defined(GL_VERSION_1_1)
+     rb_define_const(mOGL, "CLIENT_PIXEL_STORE_BIT", INT2NUM(GL_CLIENT_PIXEL_STORE_BIT));
+     rb_define_const(mOGL, "CLIENT_VERTEX_ARRAY_BIT", INT2NUM(GL_CLIENT_VERTEX_ARRAY_BIT));
+-    rb_define_const(mOGL, "CLIENT_ALL_ATTRIB_BITS", INT2NUM(GL_CLIENT_ALL_ATTRIB_BITS));
++    rb_define_const(mOGL, "CLIENT_ALL_ATTRIB_BITS", INT2NUM(GL_ALL_CLIENT_ATTRIB_BITS));
+ #endif /* GL_VERSION_1_1 */
+ 
+     rb_global_variable(&g_current_sel_buffer);
