@@ -1,13 +1,13 @@
 # New ports collection makefile for:	tclplugin2.0.3
-# Version required:	2.0.3-beta
+# Version required:	2.0.4-beta
 # Date created:		Sat Nov  8 10:46:42 CET 1997
 # Whom:			andreas
 #
-# $Id: Makefile,v 1.3 1997/11/10 10:20:06 asami Exp $
+# $Id: Makefile,v 1.4 1997/11/15 23:58:33 andreas Exp $
 #
 
-DISTNAME=	tclplugin2.0.3-beta
-PKGNAME=	tclplugin-2.0.3b
+DISTNAME=	tclplugin2.0.4-beta
+PKGNAME=	tclplugin-2.0.4b
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.sunlabs.com/pub/tcl/plugin/
 

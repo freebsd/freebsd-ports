@@ -1,5 +1,4 @@
-lib/netscape/plugins/libtclp20.so.1.0
-lib/netscape/plugins/libtclplugin.so
+lib/netscape/plugins/libtclp20.so.1.2
 lib/netscape/tclplug/2.0/config/home.cfg
 lib/netscape/tclplug/2.0/config/inside.cfg
 lib/netscape/tclplug/2.0/config/javascript.cfg
@@ -8,6 +7,7 @@ lib/netscape/tclplug/2.0/config/plugin.cfg
 lib/netscape/tclplug/2.0/config/trusted.cfg
 lib/netscape/tclplug/2.0/doc/FAQ
 lib/netscape/tclplug/2.0/doc/README
+lib/netscape/tclplug/2.0/doc/changes
 lib/netscape/tclplug/2.0/doc/config.n
 lib/netscape/tclplug/2.0/doc/feature.n
 lib/netscape/tclplug/2.0/doc/home.n
@@ -38,6 +38,8 @@ lib/netscape/tclplug/2.0/plugin/utils/cfg.tcl
 lib/netscape/tclplug/2.0/plugin/utils/log.tcl
 lib/netscape/tclplug/2.0/plugin/utils/logo.tcl
 lib/netscape/tclplug/2.0/plugin/utils/pkgIndex.tcl
+lib/netscape/tclplug/2.0/plugin/utils/plugtcl.tcl
+lib/netscape/tclplug/2.0/plugin/utils/plugtk.tcl
 lib/netscape/tclplug/2.0/plugin/utils/policy.tcl
 lib/netscape/tclplug/2.0/plugin/utils/rpi.tcl
 lib/netscape/tclplug/2.0/plugin/utils/trustexpr.tcl
@@ -87,38 +89,16 @@ lib/netscape/tclplug/2.0/tk8.0/text.tcl
 lib/netscape/tclplug/2.0/tk8.0/tk.tcl
 lib/netscape/tclplug/2.0/tk8.0/tkfbox.tcl
 lib/netscape/tclplug/2.0/tk8.0/xmfbox.tcl
-lib/netscape/tclplug/html/license.html
-lib/netscape/tclplug/html/licreg.html
-lib/netscape/tclplug/html/top.html
-lib/netscape/tclplug/tcl7.7/init.tcl
-lib/netscape/tclplug/tcl7.7/ldAout.tcl
-lib/netscape/tclplug/tcl7.7/parray.tcl
-lib/netscape/tclplug/tcl7.7/safe.tcl
-lib/netscape/tclplug/tcl7.7/tclIndex
 lib/netscape/tclplug/tclshp2.0
-lib/netscape/tclplug/tk4.3/bgerror.tcl
-lib/netscape/tclplug/tk4.3/button.tcl
-lib/netscape/tclplug/tk4.3/clrpick.tcl
-lib/netscape/tclplug/tk4.3/comdlg.tcl
-lib/netscape/tclplug/tk4.3/console.tcl
-lib/netscape/tclplug/tk4.3/dialog.tcl
-lib/netscape/tclplug/tk4.3/entry.tcl
-lib/netscape/tclplug/tk4.3/focus.tcl
-lib/netscape/tclplug/tk4.3/folder.gif
-lib/netscape/tclplug/tk4.3/listbox.tcl
-lib/netscape/tclplug/tk4.3/menu.tcl
-lib/netscape/tclplug/tk4.3/msgbox.tcl
-lib/netscape/tclplug/tk4.3/obsolete.tcl
-lib/netscape/tclplug/tk4.3/optMenu.tcl
-lib/netscape/tclplug/tk4.3/palette.tcl
-lib/netscape/tclplug/tk4.3/prolog.ps
-lib/netscape/tclplug/tk4.3/scale.tcl
-lib/netscape/tclplug/tk4.3/scrlbar.tcl
-lib/netscape/tclplug/tk4.3/tclIndex
-lib/netscape/tclplug/tk4.3/tearoff.tcl
-lib/netscape/tclplug/tk4.3/text.tcl
-lib/netscape/tclplug/tk4.3/textfile.gif
-lib/netscape/tclplug/tk4.3/tk.tcl
-lib/netscape/tclplug/tk4.3/tkfbox.tcl
-lib/netscape/tclplug/tk4.3/updir.xbm
-lib/netscape/tclplug/tk4.3/xmfbox.tcl
+@dirrm lib/netscape/tclplug/2.0/tk8.0
+@dirrm lib/netscape/tclplug/2.0/tcl8.0/opt0.1
+@dirrm lib/netscape/tclplug/2.0/tcl8.0/http2.0
+@dirrm lib/netscape/tclplug/2.0/tcl8.0/http1.0
+@dirrm lib/netscape/tclplug/2.0/tcl8.0
+@dirrm lib/netscape/tclplug/2.0/safetcl
+@dirrm lib/netscape/tclplug/2.0/plugin/utils
+@dirrm lib/netscape/tclplug/2.0/plugin
+@dirrm lib/netscape/tclplug/2.0/doc
+@dirrm lib/netscape/tclplug/2.0/config
+@dirrm lib/netscape/tclplug/2.0
+@dirrm lib/netscape/tclplug
