@@ -1375,6 +1375,7 @@ easytag		ports/audio/easytag
 eazel-themes	ports/x11-toolkits/eazel-themes
 ebnf2yacc	ports/devel/ebnf2yacc
 eboard		ports/games/eboard
+eboxy		ports/devel/eboxy
 ebuttons	ports/x11/ebuttons
 ecartis		ports/mail/ecartis
 ecasound	ports/audio/ecasound
