@@ -1,0 +1,20 @@
+--- src/main.c.orig	Fri May 19 17:15:10 2000
++++ src/main.c	Mon May 22 11:36:20 2000
+@@ -1348,7 +1348,7 @@
+     { ' ', "", ' ', 0 },
+     { ' ', N_("&Extension file edit"),          'E', ext_cmd },
+     { ' ', N_("&Menu file edit"),               'M', menu_edit_cmd },
+-    {' ',  N_("Menu edi&Tor edit"),             'T', edit_user_menu_cmd}
++/* XXX: only appears in gtkedit   {' ',  N_("Menu edi&Tor edit"),             'T', edit_user_menu_cmd} */
+ };
+ 
+ /* Must keep in sync with the constants in menu_cmd */
+@@ -3015,7 +3015,7 @@
+     }
+     
+     vfs_init ();
+-    edit_init_file();
++/* XXX: only appears in gtkedit??    edit_init_file(); */
+     
+ #ifdef HAVE_X
+     /* NOTE: This call has to be before any our argument handling :) */

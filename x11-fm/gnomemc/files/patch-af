@@ -1,5 +1,5 @@
---- Makefile.in.orig	Thu Sep 23 12:01:07 1999
-+++ Makefile.in	Fri Sep 24 16:54:43 1999
+--- Makefile.in.orig	Wed May 10 17:58:00 2000
++++ Makefile.in	Tue May 16 13:25:57 2000
 @@ -5,8 +5,8 @@
  @MCFGR@@MCF@
  
@@ -34,12 +34,12 @@
  
  uninstall:
  	@for I in $(unixdirs); do cd $$I; $(MAKE) $@ || exit 1; cd ..; done
---- lib/Makefile.in.orig	Sat Mar 18 07:43:44 2000
-+++ lib/Makefile.in	Mon Mar 20 10:25:38 2000
+--- lib/Makefile.in.orig	Wed May 10 17:58:01 2000
++++ lib/Makefile.in	Tue May 16 13:27:02 2000
 @@ -15,16 +15,11 @@
  LIBFILES_IN = mc.ext.in mc-gnome.ext.in
  LIBFILES_OUT = mc.ext mc-gnome.ext mc.csh mc.sh
- LIBFILES_CONST = mc.hint mc.hint.es mc.hint.cs mc.hint.ru mc.lib mc.menu
+ LIBFILES_CONST = mc.hint mc.hint.es mc.hint.cs mc.hint.ru mc.lib mc.menu cedit.menu edit.indent.rc
 -SUPPBIN_IN = mc.csh.in mc.sh.in
 -SUPPBIN_OUT =  mc.csh mc.sh
  DESKTOP_FILES = startup.links README.desktop

@@ -29,13 +29,13 @@ share/locale/wa/LC_MESSAGES/mc.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/mc.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/mc.mo
 share/mc/FAQ
-share/mc/mc.csh
-share/mc/mc.sh
 share/mc/bin/mc.csh
 share/mc/bin/mc.sh
 share/mc/bin/mcfn_install
+share/mc/cedit.menu
 share/mc/desktop-scripts/README.desktop
 share/mc/desktop-scripts/startup.links
+share/mc/edit.indent.rc
 share/mc/extfs/README
 share/mc/extfs/a
 share/mc/extfs/deb
@@ -58,6 +58,7 @@ share/mc/extfs/unarj.diff
 share/mc/extfs/urar
 share/mc/extfs/uzip
 share/mc/extfs/uzoo
+share/mc/mc.csh
 share/mc/mc.ext
 share/mc/mc.hint
 share/mc/mc.hint.cs
@@ -66,6 +67,7 @@ share/mc/mc.hint.ru
 share/mc/mc.hlp
 share/mc/mc.lib
 share/mc/mc.menu
+share/mc/mc.sh
 share/mc/syntax/ada95.syntax
 share/mc/syntax/c.syntax
 share/mc/syntax/changelog.syntax

@@ -6,8 +6,10 @@ etc/mc.global
 share/gnome/idl/FileManager.idl
 share/gnome/idl/Makefile.in
 share/gnome/mc/FAQ
+share/gnome/mc/cedit.menu
 share/gnome/mc/desktop-scripts/README.desktop
 share/gnome/mc/desktop-scripts/startup.links
+share/gnome/mc/edit.indent.rc
 share/gnome/mc/extfs/README
 share/gnome/mc/extfs/a
 share/gnome/mc/extfs/deb
