@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	yacas
-PORTVERSION=	1.0.48r1
+PORTVERSION=	1.0.49
 CATEGORIES=	math
 MASTER_SITES=	http://www.xs4all.nl/~apinkus/backups/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/rev/}
@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/rev/}
 MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
 
