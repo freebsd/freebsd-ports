@@ -40,7 +40,7 @@ pre-everything::
 .if !defined(WITH_X11)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "If you want to compile with Xpm support,"
-	@${ECHO_MSG} "hst Ctrl-C right now and use \"make WITH_X11=yes\""
+	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_X11=yes\""
 	@${ECHO_MSG}
 .endif
 
