@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sympa
-PORTVERSION?=	4.0.b2
+PORTVERSION?=	4.1.1
 CATEGORIES=	mail
 MASTER_SITES?=	http://www.sympa.org/distribution/
 
