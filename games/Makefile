@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.43 1996/11/03 21:07:05 jfitz Exp $
+# $Id: Makefile,v 1.44 1996/11/09 00:02:53 obrien Exp $
 #
 
     SUBDIR += acm
@@ -18,6 +18,7 @@
     SUBDIR += xboard
     SUBDIR += xboing
     SUBDIR += xchomp
+    SUBDIR += xdino
     SUBDIR += xemeraldia
     SUBDIR += xevil
     SUBDIR += xgalaga
@@ -36,6 +37,7 @@
     SUBDIR += xpacman
     SUBDIR += xpilot
     SUBDIR += xpipeman
+    SUBDIR += xpuyo
     SUBDIR += xrisk
     SUBDIR += xripple
     SUBDIR += xroach
@@ -46,6 +48,7 @@
     SUBDIR += xsol
     SUBDIR += xtetris
     SUBDIR += xtic
+    SUBDIR += xtriangles
     SUBDIR += yamsweeper
 
 .include <bsd.port.subdir.mk>
