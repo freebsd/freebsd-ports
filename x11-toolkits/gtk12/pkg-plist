@@ -57,7 +57,6 @@ include/gtk11d/gtk/gtkhseparator.h
 include/gtk11d/gtk/gtkimage.h
 include/gtk11d/gtk/gtkinputdialog.h
 include/gtk11d/gtk/gtkinvisible.h
-include/gtk11d/gtk/gtkintl.h
 include/gtk11d/gtk/gtkitem.h
 include/gtk11d/gtk/gtkitemfactory.h
 include/gtk11d/gtk/gtklabel.h
@@ -148,6 +147,7 @@ share/locale/nl/LC_MESSAGES/gtk+.mo
 share/locale/no/LC_MESSAGES/gtk+.mo
 share/locale/pl/LC_MESSAGES/gtk+.mo
 share/locale/pt/LC_MESSAGES/gtk+.mo
+share/locale/ru/LC_MESSAGES/gtk+.mo
 share/locale/sv/LC_MESSAGES/gtk+.mo
 share/themes/Default/gtk/gtkrc
 @dirrm share/themes/Default/gtk

@@ -1,15 +1,15 @@
---- Makefile.in.orig	Mon Jan 18 08:16:41 1999
-+++ Makefile.in	Thu Jan 21 04:51:44 1999
-@@ -122,7 +122,7 @@
+--- Makefile.in.orig	Sun Jan 31 23:26:39 1999
++++ Makefile.in	Sun Jan 31 23:31:06 1999
+@@ -124,7 +124,7 @@
  SRC_SUBDIRS = gdk gtk
  SUBDIRS = po $(SRC_SUBDIRS) docs
  
 -bin_SCRIPTS = gtk-config
 +bin_SCRIPTS = gtk11d-config
  
- EXTRA_DIST =	\
- 	HACKING		\
-@@ -209,7 +209,7 @@
+ EXTRA_DIST =  	HACKING			gtk+.spec	        gtk.m4          	makecopyright		TODO			NEWS.pre-1-0		ChangeLog.pre-1-0		README.cvs-commits		intl/libgettext.h		intl/po2tbl.sed.in		examples/Makefile		examples/README.1ST		examples/extract.awk		examples/extract.sh		examples/aspectframe/Makefile  	examples/aspectframe/aspectframe.c  	examples/base/Makefile		examples/base/base.c 	examples/buttons/Makefile  	examples/buttons/buttons.c  	examples/buttons/info.xpm  	examples/clist/clist.c 	examples/entry/Makefile  	examples/entry/entry.c  	examples/eventbox/Makefile  	examples/eventbox/eventbox.c  	examples/filesel/Makefile  	examples/filesel/filesel.c  	examples/gtkdial/Makefile  	examples/gtkdial/dial_test.c  	examples/gtkdial/gtkdial.c  	examples/gtkdial/gtkdial.h  	examples/helloworld/Makefile  	examples/helloworld/helloworld.c  	examples/helloworld2/Makefile  	examples/helloworld2/helloworld2.c  	examples/list/Makefile  	examples/list/list.c  	examples/menu/Makefile  	examples/menu/menu.c  	examples/menu/menufactory.c  	examples/menu/menufactory.h  	examples/menu/mfmain.c  	examples/menu/mfmain.h  	examples/notebook/Makefile  	examples/notebook/notebook.c  	examples/packer/Makefile  	examples/packer/pack.c 	examples/packbox/Makefile  	examples/packbox/packbox.c  	examples/paned/Makefile  	examples/paned/paned.c  	examples/pixmap/Makefile  	examples/pixmap/pixmap.c  	examples/progressbar/Makefile  	examples/progressbar/progressbar.c  	examples/radiobuttons/Makefile  	examples/radiobuttons/radiobuttons.c  	examples/rulers/Makefile  	examples/rulers/rulers.c  	examples/scribble-simple/Makefile  	examples/scribble-simple/scribble-simple.c  	examples/scrolledwin/Makefile  	examples/scrolledwin/scrolledwin.c  	examples/selection/Makefile  	examples/selection/gettargets.c  	examples/selection/setselection.c  	examples/statusbar/Makefile  	examples/statusbar/statusbar.c  	examples/table/Makefile  	examples/table/table.c  	examples/tictactoe/Makefile  	examples/tictactoe/tictactoe.c  	examples/tictactoe/tictactoe.h  	examples/tictactoe/ttt_test.c  	examples/wheelbarrow/Makefile  	examples/wheelbarrow/wheelbarrow.c  	examples/find-examples.sh
+ 
+@@ -134,7 +134,7 @@
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = config.h
@@ -18,7 +18,7 @@
  SCRIPTS =  $(bin_SCRIPTS)
  
  DATA =  $(m4data_DATA)
-@@ -263,7 +263,10 @@
+@@ -193,7 +193,10 @@
  	-rm -f config.h
  
  maintainer-clean-hdr:
@@ -27,123 +27,55 @@
 +	cp gtk-config.in gtk11d-config.in
 +
 +gtk11d-config: $(top_builddir)/config.status gtk11d-config.in
- 	cd $(top_builddir) && CONFIG_FILES=$@ CONFIG_HEADERS= ./config.status
+ 	cd $(top_builddir) && CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
  
  install-binSCRIPTS: $(bin_SCRIPTS)
-@@ -285,25 +288,6 @@
- 	  rm -f $(DESTDIR)$(bindir)/`echo $$p|sed '$(transform)'`; \
- 	done
- 
--install-m4dataDATA: $(m4data_DATA)
--	@$(NORMAL_INSTALL)
--	$(mkinstalldirs) $(DESTDIR)$(m4datadir)
--	@list='$(m4data_DATA)'; for p in $$list; do \
--	  if test -f $(srcdir)/$$p; then \
--	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(m4datadir)/$$p"; \
--	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(m4datadir)/$$p; \
--	  else if test -f $$p; then \
--	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(m4datadir)/$$p"; \
--	    $(INSTALL_DATA) $$p $(DESTDIR)$(m4datadir)/$$p; \
--	  fi; fi; \
--	done
--
--uninstall-m4dataDATA:
--	@$(NORMAL_UNINSTALL)
--	list='$(m4data_DATA)'; for p in $$list; do \
--	  rm -f $(DESTDIR)$(m4datadir)/$$p; \
--	done
--
- # This directory's subdirectories are mostly independent; you can cd
- # into them and run `make' without going through this Makefile.
- # To change the values of `make' variables: instead of editing Makefiles,
-@@ -443,21 +427,19 @@
- all-recursive-am: config.h
- 	$(MAKE) all-recursive
- 
--all-am: Makefile $(SCRIPTS) $(DATA) config.h
-+all-am: Makefile $(SCRIPTS) config.h
- 
+@@ -411,15 +414,14 @@
  install-exec-am: install-binSCRIPTS
+ install-exec: install-exec-recursive
  
 -install-data-am: install-m4dataDATA
--
+ install-data: install-data-recursive
+ 
+ install-am: all-am
+-	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
++	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am
+ install: install-recursive
 -uninstall-am: uninstall-binSCRIPTS uninstall-m4dataDATA
 +uninstall-am: uninstall-binSCRIPTS
- 
- install-exec: install-exec-recursive install-exec-am
- 	@$(NORMAL_INSTALL)
- 
--install-data: install-data-recursive install-data-am
-+install-data: install-data-recursive
- 	@$(NORMAL_INSTALL)
- 
--install: install-recursive install-exec-am install-data-am
-+install: install-recursive install-exec-am
- 	@:
- 
- uninstall: uninstall-recursive uninstall-am
-@@ -505,15 +487,15 @@
- 	-rm -f config.status
- 
- .PHONY: mostlyclean-hdr distclean-hdr clean-hdr maintainer-clean-hdr \
--uninstall-binSCRIPTS install-binSCRIPTS uninstall-m4dataDATA \
--install-m4dataDATA install-data-recursive uninstall-data-recursive \
-+uninstall-binSCRIPTS install-binSCRIPTS \
-+install-data-recursive uninstall-data-recursive \
- install-exec-recursive uninstall-exec-recursive installdirs-recursive \
- uninstalldirs-recursive all-recursive check-recursive \
- installcheck-recursive info-recursive dvi-recursive \
- mostlyclean-recursive distclean-recursive clean-recursive \
- maintainer-clean-recursive tags tags-recursive mostlyclean-tags \
- distclean-tags clean-tags maintainer-clean-tags distdir info dvi \
--installcheck all-recursive-am all-am install-exec-am install-data-am \
-+installcheck all-recursive-am all-am install-exec-am \
- uninstall-am install-exec install-data install uninstall all \
- installdirs mostlyclean-generic distclean-generic clean-generic \
- maintainer-clean-generic clean mostlyclean distclean maintainer-clean
---- docs/Makefile.in.orig	Thu Jan 21 04:51:49 1999
-+++ docs/Makefile.in	Thu Jan 21 04:52:04 1999
-@@ -98,7 +98,7 @@
- LT_RELEASE = @LT_RELEASE@
- LT_REVISION = @LT_REVISION@
- MAINT = @MAINT@
--MAKEINFO = @MAKEINFO@
-+MAKEINFO = @MAKEINFO@ --no-split
- MKINSTALLDIRS = @MKINSTALLDIRS@
- NM = @NM@
- PACKAGE = @PACKAGE@
---- gdk/Makefile.in.orig	Mon Jan 18 08:16:45 1999
-+++ gdk/Makefile.in	Thu Jan 21 02:41:48 1999
-@@ -121,7 +121,7 @@
+ uninstall: uninstall-recursive
+-all-am: Makefile $(SCRIPTS) $(DATA) config.h
++all-am: Makefile $(SCRIPTS) config.h
+ all-redirect: all-recursive-am
+ install-strip:
+ 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
+--- gdk/Makefile.in.orig	Sun Jan 31 23:33:26 1999
++++ gdk/Makefile.in	Sun Jan 31 23:35:01 1999
+@@ -123,12 +123,12 @@
  
  gdkincludedir = $(includedir)/gdk
  
 -lib_LTLIBRARIES = libgdk.la
 +lib_LTLIBRARIES = libgdk11d.la
  
- INCLUDES = \
- 	-DG_LOG_DOMAIN=\"Gdk\"	\
-@@ -132,7 +132,7 @@
- 	@GLIB_CFLAGS@		\
- 	@x_cflags@ 
+ INCLUDES =  	-DG_LOG_DOMAIN=\"Gdk\"		-I$(top_srcdir)			@GTK_DEBUG_FLAGS@ 		@GTK_XIM_FLAGS@			@GTK_LOCALE_FLAGS@		@GLIB_CFLAGS@			@x_cflags@ 
  
--libgdk_la_SOURCES = \
-+libgdk11d_la_SOURCES = \
- 	gdk.c		\
- 	gdkcc.c		\
- 	gdkcolor.c	\
-@@ -181,8 +181,8 @@
- 	@GLIB_LIBS@	\
- 	-lm
  
--libgdk_la_LDFLAGS = \
--	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) -release $(LT_RELEASE) \
-+libgdk11d_la_LDFLAGS = \
-+	-version-info 1:3:0 \
-          @GLIB_LIBS@	\
-          @x_ldflags@	\
-          @x_libs@	\
-@@ -209,8 +209,8 @@
+-libgdk_la_SOURCES =  	gdk.c			gdkcc.c			gdkcolor.c		gdkcursor.c		gdkdnd.c		gdkdraw.c		gdkevents.c     	gdkfont.c		gdkgc.c			gdkglobals.c		gdkim.c			gdkimage.c		gdkinput.c		gdkinput.h		gdkinputnone.h  	gdkinputcommon.h 	gdkinputgxi.h		gdkinputxfree.h		gdkpixmap.c		gdkproperty.c		gdkrgb.c		gdkrectangle.c		gdkregion.c		gdkselection.c		gdkvisual.c		gdkwindow.c		gdkxid.c 		MwmUtil.h       	gxid_lib.h		gxid_proto.h	        gxid_lib.c
++libgdk11d_la_SOURCES =  	gdk.c			gdkcc.c			gdkcolor.c		gdkcursor.c		gdkdnd.c		gdkdraw.c		gdkevents.c     	gdkfont.c		gdkgc.c			gdkglobals.c		gdkim.c			gdkimage.c		gdkinput.c		gdkinput.h		gdkinputnone.h  	gdkinputcommon.h 	gdkinputgxi.h		gdkinputxfree.h		gdkpixmap.c		gdkproperty.c		gdkrgb.c		gdkrectangle.c		gdkregion.c		gdkselection.c		gdkvisual.c		gdkwindow.c		gdkxid.c 		MwmUtil.h       	gxid_lib.h		gxid_proto.h	        gxid_lib.c
+ 
+ 
+ gdkinclude_HEADERS =  	gdk.h			gdkcursors.h		gdkrgb.h		gdki18n.h		gdkkeysyms.h		gdkprivate.h		gdktypes.h		gdkx.h
+@@ -137,7 +137,7 @@
+ LDADDS =  	@x_ldflags@		@x_libs@		@GLIB_LIBS@		-lm
+ 
+ 
+-libgdk_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) -release $(LT_RELEASE)          @GLIB_DEPLIBS@	         @x_ldflags@	         @x_libs@	         -lm
++libgdk11d_la_LDFLAGS =  	-version-info 1:3:0 @GLIB_DEPLIBS@	         @x_ldflags@	         @x_libs@	         -lm
+ 
+ 
+ EXTRA_PROGRAMS = gxid
+@@ -161,8 +161,8 @@
  X_LIBS = @X_LIBS@
  X_EXTRA_LIBS = @X_EXTRA_LIBS@
  X_PRE_LIBS = @X_PRE_LIBS@
@@ -154,18 +86,18 @@
  gdkdraw.lo gdkevents.lo gdkfont.lo gdkgc.lo gdkglobals.lo gdkim.lo \
  gdkimage.lo gdkinput.lo gdkpixmap.lo gdkproperty.lo gdkrgb.lo \
  gdkrectangle.lo gdkregion.lo gdkselection.lo gdkvisual.lo gdkwindow.lo \
-@@ -233,8 +233,8 @@
+@@ -186,8 +186,8 @@
  
  TAR = tar
- GZIP = --best
+ GZIP_ENV = --best
 -SOURCES = $(libgdk_la_SOURCES) $(gxid_SOURCES)
 -OBJECTS = $(libgdk_la_OBJECTS) $(gxid_OBJECTS)
 +SOURCES = $(libgdk11d_la_SOURCES) $(gxid_SOURCES)
 +OBJECTS = $(libgdk11d_la_OBJECTS) $(gxid_OBJECTS)
  
- all: Makefile $(LTLIBRARIES) $(PROGRAMS) $(HEADERS)
- 
-@@ -311,8 +311,8 @@
+ all: all-redirect
+ .SUFFIXES:
+@@ -263,8 +263,8 @@
  
  maintainer-clean-libtool:
  
@@ -176,56 +108,46 @@
  
  mostlyclean-binPROGRAMS:
  
---- gtk/Makefile.in.orig	Mon Jan 18 08:16:47 1999
-+++ gtk/Makefile.in	Thu Jan 21 02:41:48 1999
-@@ -123,7 +123,7 @@
+--- gtk/Makefile.in.orig	Sun Jan 31 23:35:10 1999
++++ gtk/Makefile.in	Sun Jan 31 23:37:31 1999
+@@ -125,12 +125,12 @@
  
  gtkincludedir = $(includedir)/gtk
  
 -lib_LTLIBRARIES = libgtk.la
 +lib_LTLIBRARIES = libgtk11d.la
  
- static_SOURCES = \
- 	gtkaccelgroup.c		\
-@@ -233,7 +233,7 @@
- 	fnmatch.c		\
- 	fnmatch.h
+ static_SOURCES =  	gtkaccelgroup.c			gtkaccellabel.c			gtkadjustment.c			gtkalignment.c			gtkarg.c			gtkarrow.c			gtkaspectframe.c		gtkbin.c			gtkbindings.c			gtkbbox.c			gtkbox.c			gtkbutton.c			gtkcalendar.c			gtkcheckbutton.c		gtkcheckmenuitem.c		gtkclist.c			gtkcolorsel.c			gtkcombo.c			gtkcontainer.c			gtkctree.c			gtkcurve.c			gtkdata.c			gtkdialog.c			gtkdnd.c			gtkdrawingarea.c		gtkeditable.c           	gtkentry.c			gtkeventbox.c			gtkfilesel.c			gtkfixed.c			gtkfontsel.c            	gtkframe.c			gtkgamma.c			gtkgc.c				gtkhandlebox.c			gtkhbbox.c			gtkhbox.c			gtkhpaned.c			gtkhruler.c			gtkhscale.c			gtkhscrollbar.c			gtkhseparator.c			gtkimage.c			gtkinputdialog.c		gtkintl.h			gtkinvisible.c			gtkitem.c			gtkitemfactory.c		gtklabel.c			gtklayout.c			gtklist.c			gtklistitem.c			gtkmain.c			gtkmenu.c			gtkmenubar.c			gtkmenufactory.c		gtkmenuitem.c			gtkmenushell.c			gtkmisc.c			gtknotebook.c			gtkobject.c			gtkoptionmenu.c			gtkpacker.c			gtkpaned.c			gtkpixmap.c			gtkplug.c               	gtkpreview.c			gtkprogress.c			gtkprogressbar.c		gtkradiobutton.c		gtkradiomenuitem.c		gtkrange.c			gtkrc.c				gtkruler.c			gtkscale.c			gtkscrollbar.c			gtkscrolledwindow.c		gtkselection.c			gtkseparator.c			gtksignal.c			gtksocket.c             	gtkspinbutton.c			gtkstyle.c			gtkstatusbar.c			gtktable.c			gtktearoffmenuitem.c    	gtktext.c			gtkthemes.c			gtktipsquery.c			gtktogglebutton.c		gtktoolbar.c			gtktooltips.c			gtktree.c			gtktreeitem.c			gtktypeutils.c			gtkvbbox.c			gtkvbox.c			gtkviewport.c			gtkvpaned.c			gtkvruler.c			gtkvscale.c			gtkvscrollbar.c			gtkvseparator.c			gtkwidget.c			gtkwindow.c			fnmatch.c			fnmatch.h
  
--libgtk_la_SOURCES = \
-+libgtk11d_la_SOURCES = \
- 	$(static_SOURCES)	\
- 	gtkmarshal.c
  
-@@ -371,9 +371,8 @@
- 	../gdk/gdktypes.h \
- 	../gdk/gdkrgb.h
+-libgtk_la_SOURCES =  	$(static_SOURCES)		gtkmarshal.c
++libgtk11d_la_SOURCES =  	$(static_SOURCES)		gtkmarshal.c
  
--libgtk_la_LDFLAGS = \
--	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)	\
--	-release $(LT_RELEASE) 					\
-+libgtk11d_la_LDFLAGS = \
-+	-version-info 1:3:0 \
- 	@GLIB_LIBS@ 						\
- 	@x_ldflags@						\
- 	@x_libs@ 						\
-@@ -429,12 +428,12 @@
+ 
+ # Source headers which are non-autogenerated headers
+@@ -150,7 +150,7 @@
+ gdk_headers =  	../gdk/gdktypes.h 	../gdk/gdkrgb.h
+ 
+ 
+-libgtk_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)		-release $(LT_RELEASE) 						@GLIB_DEPLIBS@ 							@x_ldflags@							@x_libs@ 							-lm
++libgtk11d_la_LDFLAGS =  	-version-info 1:3:0 @GLIB_DEPLIBS@ 							@x_ldflags@							@x_libs@ 							-lm
+ 
+ 
+ EXTRA_DIST =  	line-arrow.xbm 			line-wrap.xbm 			testgtk.1 			testgtkrc 			testgtkrc2 			gtkfeatures.h.in		makeenums.pl			makeenums.awk			maketypes.awk			makeenums.h			gtkargcollector.c		gtktypebuiltins_vars.c		gtktypebuiltins_ids.c		gtktypebuiltins_evals.c		gtk-boxed.defs			gtk.defs			genmarshal.pl			gtkmarshal.list			check-y.xpm			check-n.xpm			test.xpm			marble.xpm			3DRings.xpm			FilesQueue.xpm			Modeller.xpm			tree_plus.xpm			tree_minus.xpm			tree_plus.xbm			tree_minus.xbm                  circles.xbm
+@@ -162,10 +162,10 @@
+ noinst_PROGRAMS = testgtk testinput testselection testrgb testdnd simple 
  # testthreads
  
- DEPS =	\
--	libgtk.la					\
--	$(top_builddir)/gdk/libgdk.la
-+	libgtk11d.la					\
-+	$(top_builddir)/gdk/libgdk11d.la
+-DEPS =  	libgtk.la						$(top_builddir)/gdk/libgdk.la
++DEPS =  	libgtk11d.la						$(top_builddir)/gdk/libgdk11d.la
  
- LDADDS = \
--	libgtk.la					\
--	$(top_builddir)/gdk/libgdk.la			\
-+	libgtk11d.la					\
-+	$(top_builddir)/gdk/libgdk11d.la			\
- 	@x_ldflags@					\
- 	@x_libs@					\
- 	@GLIB_LIBS@                                     \
-@@ -469,8 +468,8 @@
+ 
+-LDADDS =  	libgtk.la						$(top_builddir)/gdk/libgdk.la				@x_ldflags@						@x_libs@						@GLIB_LIBS@                                     	-lm
++LDADDS =  	libgtk11d.la						$(top_builddir)/gdk/libgdk11d.la				@x_ldflags@						@x_libs@						@GLIB_LIBS@                                     	-lm
+ 
+ 
+ testgtk_DEPENDENCIES = $(DEPS)
+@@ -197,8 +197,8 @@
  X_LIBS = @X_LIBS@
  X_EXTRA_LIBS = @X_EXTRA_LIBS@
  X_PRE_LIBS = @X_PRE_LIBS@
@@ -236,21 +158,18 @@
  gtkalignment.lo gtkarg.lo gtkarrow.lo gtkaspectframe.lo gtkbin.lo \
  gtkbindings.lo gtkbbox.lo gtkbox.lo gtkbutton.lo gtkcalendar.lo \
  gtkcheckbutton.lo gtkcheckmenuitem.lo gtkclist.lo gtkcolorsel.lo \
-@@ -526,10 +525,10 @@
+@@ -255,8 +255,8 @@
  
  TAR = tar
- GZIP = --best
+ GZIP_ENV = --best
 -SOURCES = $(libgtk_la_SOURCES) testgtk.c testinput.c testselection.c testrgb.c testdnd.c simple.c
 -OBJECTS = $(libgtk_la_OBJECTS) testgtk.o testinput.o testselection.o testrgb.o testdnd.o simple.o
 +SOURCES = $(libgtk11d_la_SOURCES) testgtk.c testinput.c testselection.c testrgb.c testdnd.c simple.c
 +OBJECTS = $(libgtk11d_la_OBJECTS) testgtk.o testinput.o testselection.o testrgb.o testdnd.o simple.o
  
--all: Makefile $(LTLIBRARIES) $(PROGRAMS) $(HEADERS)
-+all: Makefile $(LTLIBRARIES) $(HEADERS)
- 
+ all: all-redirect
  .SUFFIXES:
- .SUFFIXES: .S .c .lo .o .s
-@@ -606,8 +605,8 @@
+@@ -334,8 +334,8 @@
  
  maintainer-clean-libtool:
  
@@ -261,8 +180,17 @@
  
  mostlyclean-noinstPROGRAMS:
  
---- po/Makefile.in.in.orig	Mon Jan 18 07:58:44 1999
-+++ po/Makefile.in.in	Thu Jan 21 02:41:48 1999
+@@ -450,7 +450,7 @@
+ uninstall-am: uninstall-libLTLIBRARIES uninstall-gtkincludeHEADERS \
+ 		uninstall-local
+ uninstall: uninstall-am
+-all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(HEADERS)
++all-am: Makefile $(LTLIBRARIES) $(HEADERS)
+ all-redirect: all-am
+ install-strip:
+ 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
+--- po/Makefile.in.in.orig	Sun Jan 31 23:37:42 1999
++++ po/Makefile.in.in	Sun Jan 31 23:37:51 1999
 @@ -18,7 +18,7 @@
  
  prefix = @prefix@
