@@ -1,0 +1,6 @@
+File(1) tests each argument in an attempt to classify it.  There are
+three sets of tests, performed in this order: filesystem tests, magic
+number tests, and language tests.
+
+This package also includes libmagic(3), a library version of the
+utility.
