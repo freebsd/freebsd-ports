@@ -1,0 +1,13 @@
+CFLAGS+=	-DHAVE_ZLIB -O3 -fPIC -I${X11BASE}/include
+LDFLAGS=	-shared -E -lGL -L${X11BASE}/lib -lX11 -lXi -lXmu -lm -lz
+
+all: libgl2ps.so libgl2ps.a
+
+libgl2ps.a: gl2ps.o
+	${AR} qc $@ $>
+
+libgl2ps.so: gl2ps.o
+	${LD} ${LDFLAGS} $> -o $@
+
+.c.o:
+	${CC} -c ${CFLAGS} $*.c

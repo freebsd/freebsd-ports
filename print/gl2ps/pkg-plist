@@ -1,0 +1,8 @@
+include/gl2ps.h
+lib/libgl2ps.a
+lib/libgl2ps.so
+%%EXAMPLESDIR%%/gl2psTest.c
+%%EXAMPLESDIR%%/Makefile
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/gl2ps.ps
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -71,6 +71,7 @@
     SUBDIR += ghostscript-gnu-nox11
     SUBDIR += ghostview
     SUBDIR += gimp-print
+    SUBDIR += gl2ps
     SUBDIR += gnome-cups-manager
     SUBDIR += gnomephotoprinter
     SUBDIR += gnomeprint
