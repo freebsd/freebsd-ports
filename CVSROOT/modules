@@ -6005,6 +6005,7 @@ postal		ports/benchmarks/postal
 poster		ports/print/poster
 postfix		ports/mail/postfix
 postfix-current	ports/mail/postfix-current
+postgresql-docs	ports/databases/postgresql-docs
 postgresql-jdbc	ports/databases/postgresql-jdbc
 postgresql-odbc	ports/databases/postgresql-odbc
 postgresql-plruby	ports/databases/postgresql-plruby
