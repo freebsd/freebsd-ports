@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	qwt
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=qwt
 
-MAINTAINER= 	bob@fly.homeunix.org
+MAINTAINER=	bob@bomar.us
 
-USE_QT_VER=	2
-
+USE_QT_VER=	3
+USE_BZIP2=	yes
 MAKE_ENV=	CXXFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
 		INCPATH="-I${X11BASE}/include/qt2" \
 		LIBS="-L${X11BASE}/lib" \
@@ -24,21 +24,24 @@ MAKE_ENV=	CXXFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
 MAN3=		Qwt.3			\
 		QwtArrowButton.3	\
 		QwtAutoScale.3		\
-		QwtColorFilter.3	\
 		QwtCounter.3		\
 		QwtCurve.3		\
 		QwtDblRange.3		\
 		QwtDiMap.3		\
-		QwtFltrDim.3		\
-		QwtFltrGray.3		\
-		QwtFltrInv.3		\
 		QwtGrid.3		\
 		QwtKnob.3		\
 		QwtLegend.3		\
 		QwtLegendItem.3		\
 		QwtMarker.3		\
-		QwtPixFrame.3		\
 		QwtPlot.3		\
+		QwtPlotCanvas.3		\
+		QwtPlotCurve.3		\
+		QwtPlotGrid.3		\
+		QwtPlotItem.3		\
+		QwtPlotMappedItem.3	\
+		QwtPlotMarker.3		\
+		QwtPlotPrintFilter.3	\
+		QwtRect.3		\
 		QwtScale.3		\
 		QwtScaleDiv.3		\
 		QwtScaleDraw.3		\
@@ -49,18 +52,17 @@ MAN3=		Qwt.3			\
 		QwtSymbol.3		\
 		QwtThermo.3		\
 		QwtWheel.3		\
-		bug.3			\
 		changes.3		\
 		install.3		\
 		qwt_math.h.3		\
 		screenshots.3
 
 pre-build:
-	${LN} -fs ${WRKSRC}/makefiles/freebsd-g++ ${WRKSRC}/Makefile
+	cd ${WRKSRC}; qmake qwt.pro -o Makefile
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/libqwt.so.0.4.0 ${PREFIX}/lib
-	${LN} -fs libqwt.so.0.4.0 ${PREFIX}/lib/libqwt.so
+	${INSTALL_DATA} ${WRKSRC}/lib/libqwt.so.0.4.1 ${PREFIX}/lib
+	${LN} -fs libqwt.so.0.4.1 ${PREFIX}/lib/libqwt.so
 	${MKDIR} ${PREFIX}/include/qwt
 	${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/include/qwt
 	${INSTALL_MAN} ${WRKSRC}/doc/man/man3/* ${PREFIX}/man/man3
