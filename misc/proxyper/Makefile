@@ -45,7 +45,7 @@ do-install:
 	${INSTALL} -c -m 644 -o ${PROXYUID} -g ${PROXYGID} ${WRKSRC}/Readme.txt ${BINDIR}
 	${CHOWN} ${PROXYUID}:${PROXYGID} ${BINDIR}
 	${CHMOD} 755 ${BINDIR}
-	if [ ! -f ${BINDIR}/proxyper.sh ]; then \
+	if [ ! -f ${LIBDIR}/proxyper.sh ]; then \
 		${LN} -s ${BINDIR}proxyper.sh ${LIBDIR}proxyper.sh; \
 	fi
 
