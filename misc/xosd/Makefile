@@ -16,7 +16,7 @@ MAINTAINER=	perky@fallin.lv
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 .if defined(WITH_XMMS)
-LIB_DEPENDS+=	xmms.2:${PORTSDIR}/audio/xmms
+LIB_DEPENDS+=	xmms.3:${PORTSDIR}/audio/xmms
 .endif
 
 XMMS_CONFIG?=	${X11BASE}/bin/xmms-config
