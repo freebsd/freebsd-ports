@@ -20,6 +20,8 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Secure Internet Live Conferencing (SILC) development toolkit
 
+BROKEN=		"Does not link"
+
 RUN_DEPENDS=	silc:${PORTSDIR}/net/silc-client
 
 USE_BZIP2=	yes
