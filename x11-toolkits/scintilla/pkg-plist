@@ -1,0 +1,16 @@
+include/scintilla/Accessor.h
+include/scintilla/KeyWords.h
+include/scintilla/Platform.h
+include/scintilla/PosRegExp.h
+include/scintilla/PropSet.h
+include/scintilla/SciLexer.h
+include/scintilla/Scintilla.h
+include/scintilla/ScintillaWidget.h
+include/scintilla/WinDefs.h
+include/scintilla/WindowAccessor.h
+lib/libscintilla.so
+lib/libscintilla.so.1
+lib/libscintilla_lexers.so
+lib/libscintilla_lexers.so.1
+@dirrm include/scintilla
+

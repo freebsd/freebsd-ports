@@ -1,0 +1,43 @@
+--- makefile	2000/11/27 09:54:21	1.1
++++ makefile	2000/11/27 12:51:45
+@@ -5,10 +5,11 @@
+ # GNU make does not like \r\n line endings so should be saved to CVS in binary form.
+ 
+ .SUFFIXES: .cxx .o .h .a
+-CC = g++
+-AR = ar
++CC = c++
++AR = $(CC) -shared
+ 
+-COMPLIB=../bin/scintilla.a
++COMPLIB=../bin/libscintilla.so.1
++LEXRLIB=../bin/libscintilla_lexers.so.1
+ 
+ vpath %.h ../src ../include
+ vpath %.cxx ../src
+@@ -25,19 +26,22 @@
+ endif
+ 
+ .cxx.o:
+-	$(CC) `gtk-config --cflags` $(INCLUDEDIRS) $(CXXFLAGS) -c $< -o $@
++	$(CC) -DPIC -fPIC -fpic `$(GTK_CONFIG) --cflags` $(INCLUDEDIRS) $(CXXFLAGS) -c $< -o $@
+ 
+ LEXOBJS	=  LexCPP.o LexHTML.o LexLua.o LexOthers.o LexPerl.o LexPython.o LexSQL.o LexVB.o LexConf.o
+ 
+ # The LEXOBJS have to be treated specially as the functions in them are not called from external code
+ 
+-all: $(COMPLIB) $(LEXOBJS)
++all: $(COMPLIB) $(LEXRLIB)
+ 
+ $(COMPLIB): DocumentAccessor.o WindowAccessor.o KeyWords.o Document.o CallTip.o \
+ 	ScintillaBase.o ContractionState.o Editor.o PropSet.o PlatGTK.o \
+ 	KeyMap.o LineMarker.o ScintillaGTK.o CellBuffer.o ViewStyle.o \
+ 	Style.o Indicator.o AutoComplete.o
+-	$(AR) rc $@ $^
++	$(AR) -o $@ $^
++
++$(LEXRLIB): $(LEXOBJS)
++	$(AR) -o $@ $^
+ 
+ AutoComplete.o: AutoComplete.cxx Platform.h AutoComplete.h
+ CallTip.o: CallTip.cxx Platform.h CallTip.h

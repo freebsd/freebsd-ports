@@ -77,6 +77,7 @@
     SUBDIR += ruby-qt
     SUBDIR += ruby-tk
     SUBDIR += ruby14-tk
+    SUBDIR += scintilla
     SUBDIR += slingshot
     SUBDIR += thinice
     SUBDIR += tix
