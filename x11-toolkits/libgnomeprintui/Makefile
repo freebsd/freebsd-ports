@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libgnomeprintui
-PORTVERSION=	2.6.0
-PORTREVISION=	2
+PORTVERSION=	2.6.1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.6
@@ -23,12 +22,13 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack libgnomeprint libgnomecanvas lthack intlhack
+USE_GNOME=	gnomeprefix gnomehack libgnomeprint libgnomecanvas lthack \
+		intlhack
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=13
 USE_BISON=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
