@@ -66,3 +66,5 @@ ARGPYT | exec | 03-2002 | Execution/E_SUPERV.py
 ARGEXE | exec | 03-2002 | -eficas_path ./Eficas
 #
 GZIP | tool | ? | HOME_GZIP/gzip
+CRP  | tool | ? | HOME_CRP/crp_aster.sh 
+CRS  | tool | ? | HOME_CRS/crs.sh
