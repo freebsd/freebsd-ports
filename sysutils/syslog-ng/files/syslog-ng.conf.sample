@@ -1,0 +1,167 @@
+#
+# This sample configuration file is essentially equilivent to the stock
+# FreeBSD /etc/syslog.conf file.
+#
+
+#
+# options
+#
+options { long_hostnames(off); sync(0); };
+
+#
+# sources
+#
+source src { unix-dgram("/var/run/log"); udp(); internal(); };
+
+#
+# destinations
+#
+destination messages { file("/var/log/messages"); };
+destination security { file("/var/log/security"); };
+destination maillog { file("/var/log/maillog"); };
+destination lpd-errs { file("/var/log/lpd-errs"); };
+destination cron { file("/var/log/cron"); };
+destination all { file("/var/log/all.log"); };
+destination newscrit { file("/var/log/news/news.crit"); };
+destination newserr { file("/var/log/news/news.err"); };
+destination newsnotice { file("/var/log/news/news.notice"); };
+destination slip { file("/var/log/slip.log"); };
+destination ppp { file("/var/log/ppp.log"); };
+destination console { file("/dev/console"); };
+destination root { usertty("root"); };
+destination allusers { usertty("*"); };
+#destination loghost { udp("loghost" port(514)); };
+
+#
+# log facility filters
+#
+filter f_auth { facility(auth); };
+filter f_authpriv { facility(authpriv); };
+filter f_cron { facility(cron); };
+filter f_daemon { facility(daemon); };
+filter f_ftp { facility(ftp); };
+filter f_kern { facility(kern); };
+filter f_lpr { facility(lpr); };
+filter f_mail { facility(mail); };
+filter f_news { facility(news); };
+filter f_security { facility(security); };
+filter f_user { facility(user); };
+filter f_uucp { facility(uucp); };
+filter f_local0 { facility(local0); };
+filter f_local1 { facility(local1); };
+filter f_local2 { facility(local2); };
+filter f_local3 { facility(local3); };
+filter f_local4 { facility(local4); };
+filter f_local5 { facility(local5); };
+filter f_local6 { facility(local6); };
+filter f_local7 { facility(local7); };
+
+#
+# log level filters
+#
+filter f_emerg { level(emerg); };
+filter f_alert { level(alert); };
+filter f_crit { level(crit); };
+filter f_err { level(err); };
+filter f_warning { level(warning); };
+filter f_notice { level(notice); };
+filter f_info { level(info); };
+filter f_debug { level(debug); };
+
+#
+# program filters
+#
+filter f_ppp { program("ppp"); };
+filter f_slip { program("startslip"); };
+
+#
+# *.err;kern.debug;auth.notice;mail.crit		/dev/console
+#
+log { source(src); filter(f_err); destination(console); };
+log { source(src); filter(f_kern); filter(f_debug); destination(console); };
+log { source(src); filter(f_auth); filter(f_notice); destination(console); };
+log { source(src); filter(f_mail); filter(f_crit); destination(console); };
+
+#
+# *.notice;kern.debug;lpr.info;mail.crit;news.err	/var/log/messages
+#
+log { source(src); filter(f_notice); destination(messages); };
+log { source(src); filter(f_kern); filter(f_debug); destination(messages); };
+log { source(src); filter(f_lpr); filter(f_info); destination(messages); };
+log { source(src); filter(f_mail); filter(f_crit); destination(messages); };
+log { source(src); filter(f_news); filter(f_err); destination(messages); };
+
+#
+# security.*						/var/log/security
+#
+log { source(src); filter(f_security); destination(security); };
+
+#
+# mail.info						/var/log/maillog
+#
+log { source(src); filter(f_mail); filter(f_info); destination(maillog); };
+
+#
+# lpr.info						/var/log/lpd-errs
+#
+log { source(src); filter(f_lpr); filter(f_info); destination(lpd-errs); };
+
+#
+# cron.*						/var/log/cron
+#
+log { source(src); filter(f_cron); destination(cron); };
+
+#
+# *.err							root
+#
+log { source(src); filter(f_err); destination(root); };
+
+#
+# *.notice;news.err					root
+#
+log { source(src); filter(f_notice); destination(root); };
+log { source(src); filter(f_news); filter(f_err); destination(root); };
+
+#
+# *.alert						root
+#
+log { source(src); filter(f_alert); destination(root); };
+
+#
+# *.emerg						*
+#
+log { source(src); filter(f_emerg); destination(allusers); };
+
+#
+# uncomment this to enable logging of all log messages to /var/log/all.log
+# *.*							/var/log/all.log
+#
+#log { source(src); destination(all); };
+
+#
+# uncomment this to enable logging to a remote loghost named loghost
+# *.*							@loghost
+#
+#log { source(src); destination(loghost); };
+
+#
+# uncomment these if you're running inn
+# news.crit						/var/log/news/news.crit
+# news.err						/var/log/news/news.err
+# news.notice						/var/log/news/news.notice
+#
+#log { source(src); filter(f_news); filter(f_crit); destination(newscrit); };
+#log { source(src); filter(f_news); filter(f_err); destination(newserr); };
+#log { source(src); filter(f_news); filter(f_notice); destination(newsnotice); };
+
+#
+# !startslip
+# *.*							/var/log/slip.log
+#
+log { source(src); filter(f_slip); destination(slip); };
+
+#
+# !ppp
+# *.*							/var/log/ppp.log
+#
+log { source(src); filter(f_ppp); destination(ppp); };

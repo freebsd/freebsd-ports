@@ -75,6 +75,7 @@
     SUBDIR += stat
     SUBDIR += stmpclean
     SUBDIR += su2
+    SUBDIR += syslog-ng
     SUBDIR += tcplist
     SUBDIR += tua
     SUBDIR += ucspi-tcp

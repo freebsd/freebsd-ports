@@ -1,0 +1,11 @@
+--- src/syslog-ng.h.orig	Sat Apr 22 12:19:19 2000
++++ src/syslog-ng.h	Sat Apr 22 12:28:52 2000
+@@ -34,7 +34,7 @@
+ #define PATH_SYSLOG_NG_CONF     "syslog-ng.conf"
+ #define PATH_PIDFILE            "syslog-ng.pid"
+ #else
+-#define PATH_SYSLOG_NG_CONF     "/etc/syslog-ng/syslog-ng.conf"
++#define PATH_SYSLOG_NG_CONF     "__PREFIX__/etc/syslog-ng/syslog-ng.conf"
+ #define PATH_PIDFILE            "/var/run/syslog-ng.pid"
+ #endif
+ 

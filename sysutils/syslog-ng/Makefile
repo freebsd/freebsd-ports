@@ -1,0 +1,60 @@
+# New ports collection makefile for:	syslog-ng
+# Date created:		22 April 2000
+# Whom:			Vince Valenti <vince@blue-box.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	syslog-ng
+PORTVERSION=	1.4.3
+CATEGORIES=	sysutils
+MASTER_SITES=	http://www.balabit.hu/downloads/syslog-ng/1.4/
+
+MAINTAINER=	vince@blue-box.net
+
+BUILD_DEPENDS=	${LOCALBASE}/lib/libol.a:${PORTSDIR}/devel/libol
+
+MAN5=		syslog-ng.conf.5
+MAN8=		syslog-ng.8
+
+GNU_CONFIGURE=	yes
+
+PKGMESSAGE=	${WRKDIR}/MESSAGE
+
+post-patch:
+	@${PERL} -pi -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/src/syslog-ng.h
+
+post-build:
+	@${SED} -e 's,__PREFIX__,${PREFIX},g' ${PKGDIR}/MESSAGE > ${PKGMESSAGE}
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} \
+			${PREFIX}/share/doc/syslog-ng \
+			${PREFIX}/share/doc/syslog-ng/sgml
+	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${PREFIX}/share/doc/syslog-ng
+	${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/syslog-ng
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${PREFIX}/share/doc/syslog-ng
+	${INSTALL_DATA} ${WRKSRC}/INSTALL ${PREFIX}/share/doc/syslog-ng
+	${INSTALL_DATA} ${WRKSRC}/NEWS ${PREFIX}/share/doc/syslog-ng
+	${INSTALL_DATA} ${WRKSRC}/PORTS ${PREFIX}/share/doc/syslog-ng
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/syslog-ng
+	${INSTALL_DATA} ${WRKSRC}/doc/sgml/syslog-ng.dvi ${PREFIX}/share/doc/syslog-ng/sgml
+	${INSTALL_DATA} ${WRKSRC}/doc/sgml/syslog-ng.html.tar.gz ${PREFIX}/share/doc/syslog-ng/sgml
+	${INSTALL_DATA} ${WRKSRC}/doc/sgml/syslog-ng.ps ${PREFIX}/share/doc/syslog-ng/sgml
+	${INSTALL_DATA} ${WRKSRC}/doc/sgml/syslog-ng.sgml ${PREFIX}/share/doc/syslog-ng/sgml
+	${INSTALL_DATA} ${WRKSRC}/doc/sgml/syslog-ng.txt ${PREFIX}/share/doc/syslog-ng/sgml
+.endif
+	@if [ ! -f ${PREFIX}/etc/syslog-ng/syslog-ng.conf.sample ]; then \
+		${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} ${PREFIX}/etc/syslog-ng; \
+		${INSTALL_DATA} ${FILESDIR}/syslog-ng.conf.sample ${PREFIX}/etc/syslog-ng; \
+	fi
+	@if [ ! -f ${PREFIX}/etc/rc.d/syslog-ng.sh.sample ]; then \
+		${ECHO} "Installing ${PREFIX}/etc/rc.d/syslog-ng.sh.sample startup file."; \
+		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/syslog-ng.sh.sample; \
+		${ECHO} "[ -x ${PREFIX}/sbin/syslog-ng ] && ${PREFIX}/sbin/syslog-ng && ${ECHO} -n ' syslog-ng'" >> ${PREFIX}/etc/rc.d/syslog-ng.sh.sample; \
+		${CHMOD} 755 ${PREFIX}/etc/rc.d/syslog-ng.sh.sample; \
+	fi
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>

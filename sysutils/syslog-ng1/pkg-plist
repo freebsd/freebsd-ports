@@ -1,0 +1,18 @@
+etc/rc.d/syslog-ng.sh.sample
+etc/syslog-ng/syslog-ng.conf.sample
+share/doc/syslog-ng/AUTHORS
+share/doc/syslog-ng/COPYING
+share/doc/syslog-ng/ChangeLog
+share/doc/syslog-ng/INSTALL
+share/doc/syslog-ng/NEWS
+share/doc/syslog-ng/PORTS
+share/doc/syslog-ng/README
+share/doc/syslog-ng/sgml/syslog-ng.dvi
+share/doc/syslog-ng/sgml/syslog-ng.html.tar.gz
+share/doc/syslog-ng/sgml/syslog-ng.ps
+share/doc/syslog-ng/sgml/syslog-ng.sgml
+share/doc/syslog-ng/sgml/syslog-ng.txt
+sbin/syslog-ng
+@dirrm etc/syslog-ng
+@dirrm share/doc/syslog-ng/sgml
+@dirrm share/doc/syslog-ng
