@@ -26,9 +26,7 @@ MAKE_ENV=		TEXMFCNF=${FILESDIR}:${LOCALBASE}/share/texmf/web2c
 MESSAGE=		${PKGDIR}/pkg-message
 PKGMESSAGE=		${WRKDIR}/pkg-message
 
-post-patch: patch-message
-
-patch-message:
+post-patch:
 	@${SED} -e 's,%%LOCALBASE%%,${LOCALBASE},' ${MESSAGE} > ${PKGMESSAGE}
 
 do-install:
