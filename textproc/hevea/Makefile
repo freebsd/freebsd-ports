@@ -20,6 +20,6 @@ TEXHASH=		${PREFIX}/bin/texhash
 post-install:
 	strip ${PREFIX}/bin/hevea
 	strip ${PREFIX}/bin/hacha
-	${CAT} ${MASTERDIR}/pkg/MESSAGE
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
