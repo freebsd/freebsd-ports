@@ -1,0 +1,63 @@
+--- src/common/strlib.c.bak	Mon Aug 20 05:19:28 2001
++++ src/common/strlib.c	Thu Sep 11 10:49:42 2003
+@@ -19,7 +19,7 @@
+ #include <stdlib.h>
+ #include <unistd.h>
+ #include <string.h>
+-#include <varargs.h>
++#include <stdarg.h>
+ #include <ctype.h>
+ #include <common/portability.h>
+ 
+@@ -92,18 +92,16 @@
+ */
+ 
+ 
+-char *dsprintf(va_alist)
+-	va_dcl
++char *dsprintf(char *fmt, ...)
+ {
+ 	va_list args;
+ 	int	len;
+-	char	*fmt,
+-		*tmp;
++	char    *tmp;
+ 
+-	va_start(args);
+-	fmt = va_arg(args, char *);
+ 	(void) bzero(strBuf,STR_LEN);
++	va_start(args, fmt);
+ 	(void) vsprintf(strBuf,fmt,args);
++	va_end(args);
+ 	len = strlen(strBuf);
+ 	tmp = (char *)strdup(strBuf);
+ 	if (!tmp)
+@@ -130,24 +128,20 @@
+ **	Notes	: old string is freed
+ */
+ 
+-char *dcsprintf(va_alist)
+-	va_dcl
++char *dcsprintf(char *s1, char *fmt, ...)
+ {
+ 	va_list	args;
+-	char	*s1,
+-		*tmp,
+-		*fmt;
++	char    *tmp;
+ 
+-	va_start(args);
+-	s1 = va_arg(args, char *);
+-	fmt = va_arg(args, char *);
+ 	(void)bzero(strBuf,STR_LEN);
+ 	if (s1)
+ 	{
+ 		(void)strcpy(strBuf,s1);
+ 		(void)free(s1);
+ 	}
++	va_start(args, fmt);
+ 	(void) vsprintf(strBuf + strlen(strBuf),fmt,args);
++	va_end(args);
+ 	tmp = (char *) strdup(strBuf);
+ 	if (!tmp)
+ 	{
