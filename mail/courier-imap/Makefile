@@ -13,6 +13,9 @@ CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
 
+MAINTAINER=	oliver@FreeBSD.org
+COMMENT=	IMAP (and POP3) server that provides access to Maildir mailboxes
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/courierauthconfig:${PORTSDIR}/mail/courier-authlib
 RUN_DEPENDS=	${LOCALBASE}/bin/courierauthconfig:${PORTSDIR}/mail/courier-authlib
 
@@ -22,9 +25,6 @@ PATCH_SITES=	http://www.smalltown.ne.jp/~usata/pub/patch/
 PATCHFILES=	courier-imap-3.0.6-drac.patch
 PATCH_DIST_STRIP=	-p1
 .endif
-
-MAINTAINER=	oliver@FreeBSD.org
-COMMENT=	IMAP (and POP3) server that provides access to Maildir mailboxes
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
@@ -115,7 +115,6 @@ EXTRA_DOCS=	AUTHORS INSTALL NEWS imap/ChangeLog imap/README \
 		maildir/README.maildirquota.txt \
 		maildir/README.sharedfolders.txt tcpd/README.couriertls \
 
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|^case x$$lockmethod in|${TEST} \&\& &|g' \
 		${WRKSRC}/liblock/configure
@@ -123,6 +122,8 @@ post-patch:
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|@LIBS@|@LIBS@ -rpath=:${LOCALBASE}/lib/courier-authlib|' \
 		${WRKSRC}/imap/Makefile.in
+
+.include <bsd.port.pre.mk>
 
 post-install:
 .for i in imapd pop3d
@@ -142,6 +143,19 @@ post-install:
 
 	cd ${WRKSRC} && ( ${GMAKE} install-configure ; cd - )
 
+	@${ECHO_MSG} "In case you use authpam, you should put the following lines"
+.if ${OSVERSION} >= 500000
+	@${ECHO_MSG} "in your /etc/pam.d/imap"
+	@${ECHO_MSG} "auth    required    pam_unix.so         try_first_pass"
+	@${ECHO_MSG} "account required    pam_unix.so         try_first_pass"
+	@${ECHO_MSG} "session required    pam_permit.so"
+.else
+	@${ECHO_MSG} "in your /etc/pam.conf"
+	@${ECHO_MSG} "imap    auth    required    pam_unix.so         try_first_pass"
+	@${ECHO_MSG} "imap    account required    pam_unix.so         try_first_pass"
+	@${ECHO_MSG} "imap    session required    pam_permit.so"
+.endif
+
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You will have to run ${DATADIR}/mkimapdcert to create"
 	@${ECHO_MSG} "a self-signed certificate if you want to use imapd-ssl."
@@ -149,4 +163,4 @@ post-install:
 	@${ECHO_MSG} "in ${CONFDIR}."
 	@${ECHO_MSG} ""
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
