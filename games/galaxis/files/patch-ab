@@ -1,5 +1,5 @@
 *** galaxis.c	Wed Sep 20 17:16:33 1995
---- /home/andy/tmp/wrk/galaxis.c	Mon Jun 30 08:45:01 1997
+--- /home/andy/tmp/wrk/galaxis.c	Tue Jul  1 06:54:10 1997
 ***************
 *** 8,14 ****
   
@@ -34,3 +34,41 @@
       if(signal(SIGQUIT,SIG_IGN) != SIG_IGN)
   	(void)signal(SIGQUIT,outro);
   
+***************
+*** 540,555 ****
+  {
+      if (board[cury][curx] & S_LIFEBOAT)
+      {
+! 	board[cury][curx] |= S_BOATSEEN;
+! 	prompt("You found a lifeboat!");
+! 	beep();
+! 	turn++;
+! 	boatsfound++;
+!     }
+!     else if (board[cury][curx] & S_BOATSEEN)
+!     {
+! 	prompt("This lifeboat is already visible.");
+! 	beep();
+      }
+      else
+      {
+--- 540,558 ----
+  {
+      if (board[cury][curx] & S_LIFEBOAT)
+      {
+!        if (board[cury][curx] & S_BOATSEEN)
+!        {
+!           prompt("This lifeboat is already visible.");
+!           beep();
+!        }
+!        else
+!        {
+!           board[cury][curx] |= S_BOATSEEN;
+! 	  prompt("You found a lifeboat!");
+! 	  beep();
+! 	  turn++;
+! 	  boatsfound++;
+!        }
+      }
+      else
+      {
