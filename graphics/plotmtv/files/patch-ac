@@ -1,0 +1,8 @@
+--- Plot/Imakefile.orig	Sat Jul 15 04:23:15 1995
++++ Plot/Imakefile	Wed Nov  1 07:37:12 2000
+@@ -31,4 +31,4 @@
+ install.local:: all $(PROGRAM)
+ 	$(INSTALL) -c $(INSTPGMFLAGS)  $(PROGNAME) $(LOCALBINDIR)
+ 
+-ComplexProgramTarget($(PROGNAME))
++ComplexProgramTargetNoMan($(PROGNAME))

@@ -1,0 +1,5 @@
+--- /dev/null	Wed Nov  1 07:50:48 2000
++++ Docs/Imakefile	Wed Nov  1 07:54:17 2000
+@@ -0,0 +1,2 @@
++InstallManPage(plotmtv, $(MANDIR))
++install.local:: all

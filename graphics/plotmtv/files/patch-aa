@@ -1,9 +1,13 @@
-*** Imakefile~	Sat Jul 15 04:07:13 1995
---- Imakefile	Sat Jan 18 07:02:38 1997
-***************
-*** 22,23 ****
-!     CDEBUGFLAGS = -g
-!         DEFINES = -DPRINTER_NAME=\"hpps\" -DPRINTER_CMD=\"lpr\ -h\"
---- 22,23 ----
-!     CDEBUGFLAGS = -O3
-!         DEFINES = -DPRINTER_NAME=\"S\" -DPRINTER_CMD=\"lpr\ -h\"
+--- Imakefile.orig	Sat Jul 15 04:07:13 1995
++++ Imakefile	Wed Nov  1 07:54:28 2000
+@@ -19,9 +19,8 @@
+ #define IHaveSubdirs
+ #define PassCDebugFlags 'CDEBUGFLAGS=$(CDEBUGFLAGS) $(DEFINES)'
+ 
+-    CDEBUGFLAGS = -g
+         DEFINES = -DPRINTER_NAME=\"hpps\" -DPRINTER_CMD=\"lpr\ -h\"
+-    PROGRAMDIRS = Lib Plot
++    PROGRAMDIRS = Lib Plot Docs
+    UTILITIESDIR = Utils
+     LOCALBINDIR = ./Bin
+         SUBDIRS = $(PROGRAMDIRS) $(UTILITIESDIR)
