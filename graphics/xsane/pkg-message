@@ -1,6 +1,6 @@
-Congratulations, XSANE is now installed.
+Congratulations, XSane is now installed.
 
-If you have GIMP installed, you can use XSANE as a GIMP plug-in.
+If you have GIMP installed, you can use XSane as a GIMP plug-in.
 To do this, as root, type:
 
 ln -sf /usr/X11R6/bin/xsane /usr/X11R6/libexec/gimp/1.1/plug-ins/xsane
