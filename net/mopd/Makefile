@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  mopd
-# Version required:		  2.5.3
 # Date created:			  Sun Nov 14, 1999
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #

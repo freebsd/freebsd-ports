@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  hbiff
-# Version required:		  1.2
 # Date created:			  Mon Dec 23, 1998
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #

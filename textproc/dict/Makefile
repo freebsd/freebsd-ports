@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  dict
-# Version required:		  1.4.8
 # Date created:			  19 February 1998
 # Whom:				  Josh Gilliam <josh@quick.net>
 #

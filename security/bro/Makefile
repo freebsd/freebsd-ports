@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  bro
-# Version required:		  0.3alpha
 # Date created:			  Sat Feb 28, 1998
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #

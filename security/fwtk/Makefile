@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  fwtk
-# Version required:		  1.3
 # Date created:			  15th June 1996
 # Whom:				  gpalmer
 #

@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  bash
-# Version required:		  1.14.7
 # Date created:			  21 August 1994
 # Whom:				  jkh
 #

@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  sniffit
-# Version required:		  0.3.5
 # Date created:			  28 Mar 1998
 # Whom:				  bsdx
 #

@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  gbscript
-# Version required:		  1.11
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #

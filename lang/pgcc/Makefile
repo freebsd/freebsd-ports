@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  pgcc
-# Version required:		  1.1.1
 # Date created:			  10 Dec 1998
 # Whom:				  David O'Brien <obrien@NUXI.com>
 #

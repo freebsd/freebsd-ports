@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  urlview
-# Version required:		  0.7
 # Date created:			  21 April 1998
 # Whom:				  Josh Gilliam <josh@quick.net>
 #

@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  kmap
-# Version required:		  0.4
 # Date created:			  Fri Sep 10, 1999
 # Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
 #

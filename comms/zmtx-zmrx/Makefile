@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  zmtx-zmrx
-# Version required:		  1.02
 # Date created:			  29 July 1996
 # Whom:				  David O'Brien <obrien@cs.ucdavis.edu>
 #

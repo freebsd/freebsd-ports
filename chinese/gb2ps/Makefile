@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  gb2ps
-# Version required:		  2.02
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #

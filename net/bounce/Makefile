@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  bounce
-# Version required:		  1.0
 # Date created:			  Mon Dec 23, 1998
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #

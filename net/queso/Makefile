@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  Queso
-# Version required:		  980922
 # Date created:			  13 Oct 1998
 # Whom:				  Wu Ching-hong <woju@freebsd.ee.ntu.edu.tw>
 # 				  and David O'Brien (obrien@NUXI.com)

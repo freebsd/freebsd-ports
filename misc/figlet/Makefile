@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  figlet
-# Version required:		  2.2
 # Date created:			  Sat July 20, 1996
 # Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
 #

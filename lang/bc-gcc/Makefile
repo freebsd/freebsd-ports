@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  gcc-2.7.2 - Bounds checking gcc
-# Version required:		  gcc-2.7.2 + Bounds checking patches
 # Date created:			  Sun June 08, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #

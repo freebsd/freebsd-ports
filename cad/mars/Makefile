@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  MaRS
-# Version required:		  2.1
 # Date created:			  Mon Nov 18, 1996
 # Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
 #

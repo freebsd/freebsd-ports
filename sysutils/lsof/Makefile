@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  lsof
-# Version required:		  3.87
 # Date created:			  Sat July 20, 1996
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #

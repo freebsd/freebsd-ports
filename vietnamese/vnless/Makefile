@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:    vnless
-# Version required:     1.0
 # Date created:         Tue Dec 3, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #

@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  detex
-# Version required:		  2.6
 # Date created:			  Mon Feb 17, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #

@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  Splitvt
-# Version required:		  1.6.1
 # Date created:			  Fri Oct 4, 1996
 # Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
 #

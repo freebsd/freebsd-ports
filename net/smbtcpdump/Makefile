@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  smbtcpdump
-# Version required:		  3.4
 # Date created:			  2 Jun 1998
 # Whom:				  obrien
 #

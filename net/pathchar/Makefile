@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  pathchar
-# Version required:		  a0 (a.out systems), a1 (ELF systems)
 # Date created:			  7 November 1998
 # Whom:				  Josh Gilliam <josh@quick.net>
 #

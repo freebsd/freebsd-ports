@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  find_ddos
-# Version required:		  3.1
 # Date created:			  Sun Feb 12, 2000
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #

@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  nmap
-# Version required:		  1.51
 # Date created:			  Tue Aug 04, 1998
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #

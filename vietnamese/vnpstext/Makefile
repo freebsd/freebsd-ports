@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:    vnpstext
-# Version required:     1.1
 # Date created:         Sat Dec 7, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #

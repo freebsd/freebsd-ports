@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  clog
-# Version required:		  1.6
 # Date created:			  Tue Nov 04, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #

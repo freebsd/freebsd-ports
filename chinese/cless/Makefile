@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  cless
-# Version required:		  2.90
 # Date created:			  Sat Aug 10, 1996
 # Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
 #
