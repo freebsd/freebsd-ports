@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Aug 17 02:54:11 1998
-+++ Makefile	Thu Sep 27 16:49:12 2001
+--- Makefile.orig	Wed Mar 28 15:40:00 2001
++++ Makefile	Wed Apr  3 16:31:21 2002
 @@ -2,13 +2,14 @@
  # See file COPYRIGHT for more information.
  #
@@ -38,14 +38,14 @@
  
  # change WEAVE if you want a different version of noweave to be installed
  WEAVE=noweave		
-@@ -135,12 +136,11 @@
+@@ -143,12 +144,12 @@
  	rm -f $(CATDIR)/nountangle.$(MANEXT).gz
  	(cd $(CATDIR); ln notangle.$(MANEXT).gz nountangle.$(MANEXT).gz)
  install-tex:
 -	-mkdir $(TEXINPUTS) 2>/dev/null
 +	-mkdir -p $(TEXINPUTS) 2>/dev/null
  	cp tex/nwmac.tex tex/noweb.sty $(TEXINPUTS)
--	-texhash
+ 	-texhash || echo "Program texhash not found or failed"
  
  install-elisp:
 -	-mkdir $(ELISP) 2>/dev/null
