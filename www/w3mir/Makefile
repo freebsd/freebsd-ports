@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	w3mir
-PORTVERSION=	1.0.8
+PORTVERSION=    1.0.10
 CATEGORIES=	www perl5
-MASTER_SITES=	http://www.math.uio.no/~janl/w3mir/
+MASTER_SITES=   http://langfeldt.net/w3mir/
 
 MAINTAINER=	ache@freebsd.org
 
