@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gif2png
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.tuxedo.org/~esr/gif2png/
 
@@ -17,6 +17,7 @@ RUN_DEPENDS=	python:${PORTSDIR}/lang/python
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
+USE_GMAKE=	yes
 
 MAN1=		gif2png.1 web2png.1
 
