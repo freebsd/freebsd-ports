@@ -16,8 +16,12 @@ COMMENT=	Very powerful batch file renamer for KDE3
 
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+
+pre-configure:
+	${REINPLACE_CMD} -e 's|-pedantic ||g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
