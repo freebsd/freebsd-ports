@@ -1,0 +1,21 @@
+bin/chasen
+share/chasen/chasenrc
+share/chasen/mkchadic/convgram
+share/chasen/mkchadic/makeint
+share/chasen/mkchadic/makemat
+share/chasen/mkchadic/pattool
+share/chasen/mkchadic/sortdic
+share/chasen/mkchadic/transdic
+share/chasen/dic/Makefile
+share/chasen/dic/chasen.cforms
+share/chasen/dic/chasen.connect
+share/chasen/dic/chasen.connect.c
+share/chasen/dic/chasen.ctypes
+share/chasen/dic/chasen.grammar
+share/chasen/dic/chasen.matrix
+share/chasen/dic/chasen.table
+share/chasen/dic/chadic.int
+share/chasen/dic/chadic.pat
+@dirrm share/chasen/mkchadic
+@dirrm share/chasen/dic
+@dirrm share/chasen

@@ -1,0 +1,11 @@
+--- Makefile~	Mon Jul 28 21:55:58 1997
++++ Makefile	Thu Oct 22 00:46:10 1998
+@@ -19,7 +19,7 @@
+ 
+ # --- install directories
+ BINDIR = /usr/local/bin
+-LIBDIR = /usr/local/lib/chasen
++LIBDIR = /usr/local/share/chasen
+ MKDICDIR = $(LIBDIR)/mkchadic
+ DICDIR = $(LIBDIR)/dic
+ 
