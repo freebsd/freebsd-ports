@@ -6221,6 +6221,7 @@ pnpinfo		src/usr.sbin/pnpinfo
 poc		ports/security/poc
 pocketreader	ports/textproc/pocketreader
 poedit		ports/editors/poedit
+poink		ports/net/poink
 polygraph	ports/benchmarks/polygraph
 pom		src/games/pom
 pop3gwd		ports/mail/pop3gwd
