@@ -1,5 +1,5 @@
 # New ports collection makefile for:	enlightenment
-# Version required:		0.15.5
+# Version required:		0.16.0
 # Date created:			10 June 1997
 # Whom:				Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
