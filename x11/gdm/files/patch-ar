@@ -1,0 +1,19 @@
+
+$FreeBSD$
+
+--- daemon/gdm-net.c.orig	Sun Aug 26 04:56:37 2001
++++ daemon/gdm-net.c	Tue Oct 16 09:35:36 2001
+@@ -238,11 +243,11 @@
+ 		return NULL;
+ 	}
+ 
++	bzero(&addr, sizeof(addr));
+ 	strcpy (addr.sun_path, sockname);
+ 	addr.sun_family = AF_UNIX;
+ 	if (bind (fd,
+-		  (struct sockaddr *) &addr, strlen (addr.sun_path) +
+-		  sizeof (addr.sun_family)) < 0) {
++		  (struct sockaddr *) &addr, sizeof(addr)) < 0) {
+ 		gdm_error (_("%s: Could not bind socket"),
+ 			   "gdm_connection_open_unix");
+ 		close (fd);
