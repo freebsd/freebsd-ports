@@ -3009,10 +3009,10 @@ jdbcpool	ports/java/jdbcpool
 jde		ports/java/jde
 jde-emacs20	ports/java/jde-emacs20
 jdictionary	ports/textproc/jdictionary
-jdk		ports/java/jdk
 jdk-tutorial	ports/java/jdk-tutorial
+jdk11		ports/java/jdk11
 jdk11-doc	ports/java/jdk11-doc
-jdk12-beta	ports/java/jdk12-beta
+jdk12		ports/java/jdk12
 jdk12-doc	ports/java/jdk12-doc
 jdk13		ports/java/jdk13
 jdk13-doc	ports/java/jdk13-doc
@@ -3721,6 +3721,7 @@ linpack		ports/math/linpack
 linplasma	ports/graphics/linplasma
 linpopup	ports/net/linpopup
 linprocfs	src/sys/compat/linprocfs
+linux-blackdown-jdk12	ports/java/linux-blackdown-jdk12
 linux-blackdown-jdk13	ports/java/linux-blackdown-jdk13
 linux-bmrt	ports/graphics/linux-bmrt
 linux-divxplayer	ports/graphics/linux-divxplayer
@@ -3733,9 +3734,6 @@ linux-gtk	ports/x11-toolkits/linux-gtk
 linux-ibm-jdk13	ports/java/linux-ibm-jdk13
 linux-imlib	ports/graphics/linux-imlib
 linux-j		ports/lang/linux-j
-linux-jdk	ports/java/linux-jdk
-linux-jdk13	ports/java/linux-jdk13
-linux-jdk14	ports/java/linux-jdk14
 linux-jpeg	ports/graphics/linux-jpeg
 linux-lesstif-ns	ports/www/linux-lesstif-ns
 linux-libaudiofile	ports/audio/linux-libaudiofile
@@ -3753,6 +3751,8 @@ linux-q3ademo	ports/games/linux-q3ademo
 linux-realplayer	ports/audio/linux-realplayer
 linux-sdl12	ports/devel/linux-sdl12
 linux-sun-jdk12	ports/java/linux-sun-jdk12
+linux-sun-jdk13	ports/java/linux-sun-jdk13
+linux-sun-jdk14	ports/java/linux-sun-jdk14
 linux-tiff	ports/graphics/linux-tiff
 linux-vmware-toolbox ports/emulators/linux-vmware-toolbox
 linux-xalf	ports/x11/linux-xalf
