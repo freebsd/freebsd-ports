@@ -1,7 +1,0 @@
-bmsync reads bookmarks from any number of so called bookmark collections,
-checks for conflicts among the bookmarks, and writes them back to the
-bookmark collections. It supports Netscape, KDE, and MSIE bookmarks.
-
-- Dan Pelleg
-
-daniel+bmsync@pelleg.org
