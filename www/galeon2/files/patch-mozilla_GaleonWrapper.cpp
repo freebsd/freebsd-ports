@@ -4,7 +4,7 @@
  	nsCOMPtr<nsIDocument> doc = do_QueryInterface(DOMDocument);
  	if(!doc) return NS_ERROR_FAILURE;
  
-+#if MOZILLA_SNAPSHOT >= 6
++#if MOZILLA_SNAPSHOT > 6
 +	nsAutoString t;
 +	doc->GetDocumentTitle(t);
 +	*title = g_strdup (NS_ConvertUCS2toUTF8(t).get());
