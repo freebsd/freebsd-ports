@@ -1,11 +1,11 @@
---- Makefile.in.orig	Mon Sep 22 03:00:12 2003
-+++ Makefile.in	Sun Sep 28 05:02:19 2003
-@@ -224,7 +224,7 @@
- 	$(AUTORECONF)
+--- Makefile.in.orig	Fri Feb 25 18:12:38 2005
++++ Makefile.in	Sat Mar 19 19:53:44 2005
+@@ -230,7 +230,7 @@
+ 	-rm -rf autom4te.cache
  	(cd scard && $(MAKE) -f Makefile.in distprep)
  
--install: $(CONFIGFILES) ssh_prng_cmds.out $(MANPAGES) $(TARGETS) install-files host-key check-config
-+install: $(CONFIGFILES) ssh_prng_cmds.out $(MANPAGES) $(TARGETS) install-files check-config
- install-nokeys: $(CONFIGFILES) ssh_prng_cmds.out $(MANPAGES) $(TARGETS) install-files
+-install: $(CONFIGFILES) ssh_prng_cmds.out $(MANPAGES) $(TARGETS) install-files install-sysconf host-key check-config
++install: $(CONFIGFILES) ssh_prng_cmds.out $(MANPAGES) $(TARGETS) install-files install-sysconf check-config
+ install-nokeys: $(CONFIGFILES) ssh_prng_cmds.out $(MANPAGES) $(TARGETS) install-files install-sysconf
+ install-nosysconf: $(CONFIGFILES) ssh_prng_cmds.out $(MANPAGES) $(TARGETS) install-files
  
- check-config:
