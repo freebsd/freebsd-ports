@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.95 1998/03/05 03:38:08 obrien Exp $
+# $Id: Makefile,v 1.96 1998/03/27 10:53:24 tg Exp $
 #
 
     SUBDIR += Gofer
@@ -24,6 +24,7 @@
     SUBDIR += hugs
     SUBDIR += icon
     SUBDIR += idl4
+    SUBDIR += intercal
     SUBDIR += itcl
     SUBDIR += javac_netscape
     SUBDIR += jdk
