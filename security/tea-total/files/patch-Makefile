@@ -1,10 +1,26 @@
---- Makefile.orig	Thu Dec 14 14:40:37 2000
-+++ Makefile	Tue Dec 19 10:49:35 2000
-@@ -1 +1 @@
--CC = gcc
-+#CC = gcc
-@@ -5,2 +5,2 @@
--MD5SUM = md5sum
--CFLAGS = -O3 -Wall
-+MD5SUM ?= /sbin/md5 -r
-+CFLAGS += -Wall
+--- Makefile.orig	Tue Jan  2 05:04:34 2001
++++ Makefile	Fri Jan 12 02:18:24 2001
+@@ -1,5 +1,5 @@
+ include config.inc
+ 
+-CC = $(CROSS_PREFIX)gcc
++#CC = $(CROSS_PREFIX)gcc
+ CP = cp -f
+ RM = rm -f
+@@ -9,5 +9,5 @@
+ MKDIR = mkdir -p
+ CMP = cmp
+-CFLAGS = -O2 -Wall -DARCH_$(ARCH)
++CFLAGS += -O2 -Wall -DARCH_$(ARCH)
+ LDFLAGS =
+ BINDIR = $(PREFIX)/bin
+@@ -27,4 +27,9 @@
+ MANDIR = $(PREFIX)/share/man/man1
+ RANDOM_DEVICE = \"/dev/srandom\"
++else
++ifeq ($(ARCH), FREEBSD)
++MANDIR = $(PREFIX)/man/man1
++RANDOM_DEVICE = \"/dev/random\"
++endif
+ endif
+ endif

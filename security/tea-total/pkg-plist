@@ -1,3 +1,5 @@
+@comment $FreeBSD$
+bin/teatotal
 bin/tea
-bin/tea-keygen
+bin/tea-kgen
 bin/untea
