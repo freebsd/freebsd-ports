@@ -6677,6 +6677,7 @@ vMac		ports/emulators/vMac
 vacation	src/usr.bin/vacation
 varconf		ports/devel/varconf
 vat		ports/mbone/vat
+vb2c		ports/devel/vb2c
 vbidecode	ports/misc/vbidecode
 vbsfilter	ports/mail/vbsfilter
 vcdgear		ports/graphics/vcdgear
