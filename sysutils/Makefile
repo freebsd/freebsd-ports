@@ -19,6 +19,7 @@
     SUBDIR += contool
     SUBDIR += copytape
     SUBDIR += cpbk
+    SUBDIR += cpdup
     SUBDIR += daemontools
     SUBDIR += doconfig
     SUBDIR += ffsrecov
