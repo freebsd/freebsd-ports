@@ -5,3 +5,5 @@ the program honours two environment variables: FISH_RC_DEFAULTS and
 FISH_RC.
 
 WWW: http://energyhq.homeip.net/brain.html
+
+-Adam Weinberger <adamw@FreeBSD.org>

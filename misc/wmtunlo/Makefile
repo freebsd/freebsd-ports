@@ -10,7 +10,7 @@ PORTVERSION=	0.1.1
 CATEGORIES=	misc windowmaker
 MASTER_SITES=	http://clay.ll.pl/download/
 
-MAINTAINER=	adam@vectors.cx
+MAINTAINER=	adamw@FreeBSD.org
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes

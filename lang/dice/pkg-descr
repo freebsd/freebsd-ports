@@ -5,3 +5,5 @@ relocatable and fixed address (ROM) based code. Quite suitable for embedded
 
 WWW: http://www.obviously.com/dice/
 Author: Matt Dillon <dillon@apollo.backplane.com>
+
+-Adam Weinberger <adamw@FreeBSD.org>
