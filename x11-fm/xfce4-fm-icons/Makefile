@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce4-fm-icons
-PORTVERSION=	4.0.5
+PORTVERSION=	4.0.6
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	ftp://ftp.berlios.de/pub/xfce-goodies/${PORTVERSION}/ \
 		http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-${PORTVERSION}/src/

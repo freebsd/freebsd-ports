@@ -25,6 +25,7 @@ include/xfce4/libxfcegui4/xfce_iconbutton.h
 include/xfce4/libxfcegui4/xfce_marshal.h
 include/xfce4/libxfcegui4/xfce_menubutton.h
 include/xfce4/libxfcegui4/xfce_movehandler.h
+include/xfce4/libxfcegui4/xfce_scaled_image.h
 include/xfce4/libxfcegui4/xfce_systemtray.h
 include/xfce4/libxfcegui4/xfce_togglebutton.h
 include/xfce4/libxfcegui4/xinerama.h

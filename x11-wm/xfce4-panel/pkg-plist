@@ -3,6 +3,7 @@ etc/xfce4/xfce4rc
 etc/xfce4/xfce4rc.ar
 etc/xfce4/xfce4rc.az
 etc/xfce4/xfce4rc.ca
+etc/xfce4/xfce4rc.fr
 etc/xfce4/xfce4rc.hu
 etc/xfce4/xfce4rc.it
 etc/xfce4/xfce4rc.nl
@@ -40,6 +41,8 @@ share/locale/cs/LC_MESSAGES/xfce4-panel.mo
 share/locale/de/LC_MESSAGES/xfce4-panel.mo
 share/locale/es/LC_MESSAGES/xfce4-panel.mo
 share/locale/es_MX/LC_MESSAGES/xfce4-panel.mo
+share/locale/et/LC_MESSAGES/xfce4-panel.mo
+share/locale/eu/LC_MESSAGES/xfce4-panel.mo
 share/locale/fa_IR/LC_MESSAGES/xfce4-panel.mo
 share/locale/fi/LC_MESSAGES/xfce4-panel.mo
 share/locale/fr/LC_MESSAGES/xfce4-panel.mo

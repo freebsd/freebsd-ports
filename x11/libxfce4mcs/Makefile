@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libxfce4mcs
-PORTVERSION=	4.0.5
+PORTVERSION=	4.0.6
 PORTREVISION=	0
 CATEGORIES=	x11 xfce
 MASTER_SITES=	ftp://ftp.berlios.de/pub/xfce-goodies/${PORTVERSION}/ \
