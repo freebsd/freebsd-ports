@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	sdl_ttf
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.devolution.com/~slouken/SDL/projects/SDL_ttf/src/
+MASTER_SITES=	http://www.libsdl.org/projects/SDL_ttf/src/
 DISTNAME=	SDL_ttf-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
