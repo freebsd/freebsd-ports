@@ -1,16 +1,13 @@
-diff --exclude=work -ruN /usr/ports/security/fwbuilder/files/CertDruidP30Dialog.
-cc-patch ./files/CertDruidP30Dialog.cc-patch
---- /usr/ports/security/fwbuilder/files/CertDruidP30Dialog.cc-patch     Thu Jan 
- 1 08:00:00 1970
-+++ ./files/CertDruidP30Dialog.cc-patch Fri May 23 07:37:51 2003
-@@ -0,0 +1,9 @@
-+--- src/gui/CertDruidP30Dialog.cc.orig Thu May 22 22:42:13 2003
-++++ src/gui/CertDruidP30Dialog.cc      Thu May 22 22:42:37 2003
-+@@ -25,5 +25,5 @@
-+ */
-+ 
-+-
-++#include <cmath>
-+ 
-+ #define _XOPEN_SOURCE /* glibc2 needs this for strptime   --vk */
-
+--- CertDruidP30Dialog.cc.orig	Wed Jun 11 07:28:35 2003
++++ CertDruidP30Dialog.cc	Wed Jun 11 07:30:23 2003
+@@ -25,8 +25,9 @@
+ */
+ 
+ 
+-
++#if 0
+ #define _XOPEN_SOURCE /* glibc2 needs this for strptime   --vk */
++#endif
+ 
+ #include "config.h"
+ #include "CertDruidP30Dialog.hh"
