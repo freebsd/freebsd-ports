@@ -1,4 +1,6 @@
 @cwd /usr/X11R6
-bin/xlock
 lib/X11/app-defaults/XLock
 man/man1/xlock.1.gz
+@owner root
+@mode 4555
+bin/xlock
