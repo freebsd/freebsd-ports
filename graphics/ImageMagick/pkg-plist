@@ -1,4 +1,4 @@
-lib/libMagick.so.3.10
+lib/libMagick.so.3.11
 @exec ldconfig -m %D/lib
 lib/libMagick.a
 @exec ranlib %D/%F
@@ -34,3 +34,4 @@ include/magick/X.h
 include/magick/widget.h
 include/magick/PreRvIcccm.h
 include/magick/plug-ins.h
+@dirrm include/magick
