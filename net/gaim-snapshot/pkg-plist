@@ -37,6 +37,7 @@ share/gnome/pixmaps/gaim/buttons/text_bigger.png
 share/gnome/pixmaps/gaim/buttons/text_normal.png
 share/gnome/pixmaps/gaim/buttons/text_smaller.png
 share/gnome/pixmaps/gaim/connect.png
+share/gnome/pixmaps/gaim/dialogs/gaim_auth.png
 share/gnome/pixmaps/gaim/dialogs/gaim_cool.png
 share/gnome/pixmaps/gaim/dialogs/gaim_error.png
 share/gnome/pixmaps/gaim/dialogs/gaim_info.png
