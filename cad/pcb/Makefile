@@ -14,8 +14,6 @@ MASTER_SITES=	ftp://ftp.riken.go.jp/pub/Linux/plamo/Plamo-1.4.x/contrib/Electron
 
 MAINTAINER=	ports@FreeBSD.org
 
-BROKEN=		"Does not build"
-
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		latex:${PORTSDIR}/print/teTeX \
 		texi2html:${PORTSDIR}/textproc/texi2html
