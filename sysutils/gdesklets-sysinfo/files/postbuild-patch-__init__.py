@@ -1,5 +1,5 @@
---- work/SysInfo/SysInfo/__init__.py.orig	Fri Sep 12 22:38:38 2003
-+++ work/SysInfo/SysInfo/__init__.py	Mon Nov 17 10:50:07 2003
+--- SysInfo/SysInfo/__init__.py.orig	Fri Sep 12 22:38:38 2003
++++ SysInfo/SysInfo/__init__.py	Mon Nov 17 10:50:07 2003
 @@ -129,7 +129,8 @@
          signal.set("key2[%(index)d]"   % vars(), _("Clock:"))
          signal.set("value2[%(index)d]" % vars(), self.__cpu_speed)
