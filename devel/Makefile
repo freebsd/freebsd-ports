@@ -666,7 +666,6 @@
     SUBDIR += p5-Tie-Cache
     SUBDIR += p5-Tie-DB_FileLock
     SUBDIR += p5-Tie-IxHash
-    SUBDIR += p5-Time
     SUBDIR += p5-Time-Duration
     SUBDIR += p5-Time-HiRes
     SUBDIR += p5-Time-Object
