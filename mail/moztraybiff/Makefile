@@ -15,9 +15,11 @@ DISTNAME=	mozTrayBiff-${PORTVERSION}
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	New mail tray icon for Thunderbird
 
-BUILD_DEPENDS=	${X11BASE}/lib/thunderbird/lib/thunderbird-1.0.2/components/libwidget_gtk2.so:${PORTSDIR}/mail/thunderbird \
+BUILD_DEPENDS=	${X11BASE}/lib/thunderbird/lib/thunderbird-${TBVER}/components/libwidget_gtk2.so:${PORTSDIR}/mail/thunderbird \
 		zip:${PORTSDIR}/archivers/zip
-RUN_DEPENDS=	${X11BASE}/lib/thunderbird/lib/thunderbird-1.0.2/components/libwidget_gtk2.so:${PORTSDIR}/mail/thunderbird
+RUN_DEPENDS=	${X11BASE}/lib/thunderbird/lib/thunderbird-${TBVER}/components/libwidget_gtk2.so:${PORTSDIR}/mail/thunderbird
+
+TBVER!=		cd ../thunderbird && ${MAKE} -V PORTVERSION
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
@@ -25,17 +27,20 @@ USE_GNOME=	libgnome
 USE_REINPLACE=	yes
 MAKE_ARGS+=	MOZILLA_PLATFORM=tbird
 
-FILENAME=	mozTrayBiff-${PORTVERSION}-FreeBSD-tb1.0.2.xpi
+FILENAME=	mozTrayBiff-${PORTVERSION}-FreeBSD-tb${TBVER}.xpi
 PLIST_FILES=	${DATADIR}/${FILENAME}
 PLIST_DIRS=	${DATADIR}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
 post-patch:
-	${REINPLACE_CMD} -e "s|-fshort-wchar||" ${WRKSRC}/components/Makefile
+.if ${OSVERSION} < 500000
+	@${REINPLACE_CMD} -e "s|-fshort-wchar||" \
+		${WRKSRC}/components/Makefile
 .endif
+	@${REINPLACE_CMD} -e "s|%%TBVER%%|${TBVER}|" \
+		${WRKSRC}/components/Makefile
 
 post-build:
 	${SED} 's|%%DATADIR%%|${DATADIR}|' ${PKGDIR}/pkg-message > ${PKGMESSAGE}
