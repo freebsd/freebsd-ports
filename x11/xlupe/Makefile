@@ -8,9 +8,9 @@
 PORTNAME=	xlupe
 PORTVERSION=	1.0
 CATEGORIES=	x11
-MASTER_SITES=	http://www.rostock.zgdv.de/~runge/xlupe/
+MASTER_SITES=	http://www.core.de/~coto/xlupe/
 
-MAINTAINER=	runge@rostock.zgdv.de
+MAINTAINER=	runge@core.de
 
 USE_IMAKE=	yes
 USE_XPM=	yes
