@@ -3,7 +3,7 @@
 # Date created: 	Tue Nov 14 18:29:48 MET 1995
 # Whom: 		Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.3 1995/12/04 02:27:58 asami Exp $
+# $Id: Makefile,v 1.4 1996/09/19 03:00:51 andreas Exp $
 #
 
 DISTNAME=	apsfilter-4.9.3
@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://freefall.FreeBSD.org/pub/FreeBSD/LOCAL_PORTS/
 
 MAINTAINER=	Andreas Klemm <andreas@klemm.gtn.com>
 
-RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript \
+RUN_DEPENDS=	gs4:${PORTSDIR}/print/ghostscript4 \
 		transfig:${PORTSDIR}/print/transfig \
 		cjpeg:${PORTSDIR}/graphics/jpeg \
 		anytopnm:${PORTSDIR}/graphics/netpbm
