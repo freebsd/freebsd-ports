@@ -3,7 +3,7 @@
 # Date created:        25-01-1999
 # Whom:                gmarco@scotty.masternet.it
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/02 04:39:34 steve Exp $
+# $Id: Makefile,v 1.2 1999/04/18 22:52:36 mharo Exp $
 #
 
 DISTNAME=	fortune.it-1.51
@@ -42,7 +42,7 @@ do-install:
 .endif
 
 pre-install:
-.if exists(${STRCMD})
+.if !exists(${STRCMD})
 	@ ${ECHO_MSG}	"Please install the games distribution"
 	@ exit 1
 .endif
