@@ -1,0 +1,46 @@
+--- src/io.c.orig	Thu May 31 04:10:39 2001
++++ src/io.c	Sat Jun  2 13:21:25 2001
+@@ -14,18 +14,40 @@
+ 
+ #include "global.h"
+ #include "io.h"
++#ifdef BSD
++/*
++ * Make a phony iopl call. Opening /dev/io in BSD permits all I/O access.
++ * There is no granularity.
++ */
++#include <stdio.h>
++int iopl(int on) {
++	static FILE *f=NULL;
++
++	if (on) {
++		if (f!=NULL)
++			return 0; /* already on */
++		f=fopen("/dev/io","r+");
++		return (f==NULL);
++	} else {
++		fclose(f);
++		f=NULL;
++		return 0;
++	}
++}
++
++#endif
+ 
+ static int int_pci_conf1_read_config_dword(unsigned char bus, unsigned char device_fn, unsigned char where, unsigned int *value)
+ { 
+-	outl(CONFIG_CMD(bus,device_fn,where), 0xCF8 );
++	outl(0xCF8, CONFIG_CMD(bus,device_fn,where));
+ 	*value = inl(0xCFC); 
+ 	return 1;
+ }
+ 
+ static int int_pci_conf1_write_config_dword(unsigned char bus, unsigned char device_fn, unsigned char where, unsigned int value)
+ { 
+-	outl(CONFIG_CMD(bus,device_fn,where), 0xCF8 );
+-	outl(value, ((0xCFC + (where & 3)))); 
++	outl(0xCF8, CONFIG_CMD(bus,device_fn,where));
++	outl(((0xCFC + (where & 3))), value); 
+ 	return 1;
+ }
+ 
