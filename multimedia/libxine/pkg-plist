@@ -126,7 +126,6 @@ lib/xine/plugins/1.0.0/xineplug_vo_out_xshm.so
 libdata/pkgconfig/libxine.pc
 share/aclocal/xine.m4
 %%DOCSDIR%%/README
-%%DOCSDIR%%/README.config_en
 %%DOCSDIR%%/README.dvb
 %%DOCSDIR%%/README.dxr3
 %%DOCSDIR%%/README.freebsd
