@@ -9,7 +9,7 @@ etc/openslp/slp.conf.default
 etc/openslp/slp.spi.default
 @exec [ -f %B/slp.spi ] || cp %B/%f %B/slp.spi
 @dirrm etc/openslp
-etc/rc.d/slpd.sh.sample
+etc/rc.d/001slpd.sh.sample
 include/slp.h
 lib/libslp.so.1
 lib/libslp.so
