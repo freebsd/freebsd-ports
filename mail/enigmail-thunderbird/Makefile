@@ -17,7 +17,7 @@ MASTERDIR=	${.CURDIR}/../enigmail
 PKGINSTALL=	${.CURDIR}/pkg-install
 PKGDEINSTALL=	${.CURDIR}/pkg-deinstall
 
-LOCAL_SRCDIR=	${PORTSDIR}/mail/mozilla-thunderbird
+LOCAL_SRCDIR=	${PORTSDIR}/mail/thunderbird
 LOCAL_SUBDIR=	lib/thunderbird/lib/mozilla-1.6b
 
 .include "${MASTERDIR}/Makefile"
