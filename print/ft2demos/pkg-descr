@@ -6,7 +6,4 @@ Demo programs for FreeType2.
    ftstring   render given string and show
    fttimer    time rasterization
    ftview     simple glyph viewer
-   ftmemtest  test memory allocation of freetype library
-
-Program 'ftmemtest' (originally compiled as 'memtest') has been
-renamed to avoid conflict against the port 'sysutils/memtest'.
+   ftmemchk   test memory allocation of freetype library
