@@ -1,18 +1,18 @@
-*** Makefile	Fri Jul 28 01:08:16 1995
---- Makefile	Sat Oct 14 16:07:49 1995
+*** Makefile.orig	Sat Aug 16 17:10:21 1997
+--- Makefile	Thu Oct 30 02:07:26 1997
 ***************
-*** 3,10 ****
-  #
-  VERSION	= 1.017
+*** 5,12 ****
+  
+  SHELL	= /bin/sh
   
 ! BINDIR	= /usr/local/bin
 ! MANDIR	= /usr/local/man/man1
   PSROFF	= groff -Tps
   PSVIEW	= ghostview
   RM	= /bin/rm -f
---- 3,12 ----
-  #
-  VERSION	= 1.017
+--- 5,14 ----
+  
+  SHELL	= /bin/sh
   
 ! PREFIX ?= /usr/local
 ! BINDIR	= ${PREFIX}/bin
@@ -22,7 +22,7 @@
   PSVIEW	= ghostview
   RM	= /bin/rm -f
 ***************
-*** 14,26 ****
+*** 16,28 ****
   TARFILE	= $(PROGRAM)-$(VERSION).tar
   TGZ	= $(TARFILE).gz
   
@@ -36,7 +36,7 @@
   
   test:
   	@./test.pl
---- 16,27 ----
+--- 18,29 ----
   TARFILE	= $(PROGRAM)-$(VERSION).tar
   TGZ	= $(TARFILE).gz
   
