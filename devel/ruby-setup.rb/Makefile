@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	setup.rb
-PORTVERSION=	2.2.1
+PORTVERSION=	3.1.2
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.loveruby.net/archive/%SUBDIR%/ \
 		http://www.ruby-lang.org/~knu/backup/
@@ -21,11 +21,11 @@ USE_RUBY=	yes
 
 NO_BUILD=	yes
 
-DOCS_EN=	TODO doc.en/*
-DOCS_JA=	doc.ja/*
+DOCS_EN=	doc.en/* usage-en.txt
+DOCS_JA=	doc.ja/* usage-ja.txt
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME} ${RUBY_SITELIBDIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/install.rb ${WRKSRC}/setup.rb ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/ja
 .for f in ${DOCS_EN}
