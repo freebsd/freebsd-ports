@@ -1,23 +1,22 @@
---- makefile.in.orig	Wed Oct 23 08:08:26 2002
-+++ makefile.in	Sun Nov 10 23:37:39 2002
+--- makefile.in.orig	Sun Nov  9 19:43:06 2003
++++ makefile.in	Thu Dec 11 22:25:58 2003
 @@ -20,7 +20,7 @@
  mandir = @mandir@
  libdir = @libdir@
- modulebasedir = @libdir@/allegro
+ modulebasedir = $(libdir)/allegro
 -moduledir = $(modulebasedir)/$(shared_major_minor)
 +moduledir = $(modulebasedir)/$(shared_version)
  
  EXE =
  OBJ = .o
-@@ -29,13 +29,14 @@
+@@ -29,12 +29,13 @@
  INFO_DIR = $(infodir)/dir
  DESTDIR =
  
 -ACLOCAL = aclocal
-+ACLOCAL = true
- ACLOCAL_M4 = $(srcdir)/aclocal.m4
 -AUTOCONF = autoconf
 -AUTOHEADER = autoheader
++ACLOCAL = true
 +AUTOCONF = true
 +AUTOHEADER = true
  
@@ -27,8 +26,8 @@
  INSTALL_DATA = @INSTALL_DATA@
  INSTALL_INFO = @INSTALL_INFO@
  
-@@ -262,6 +263,11 @@
- all: lib modules programs docs
+@@ -325,6 +326,11 @@
+ full-build: lib modules programs docs
  
  lib: $(ALLEGRO_LIB_TARGETS)
 +	@for l in alleg alld allp; do \
@@ -39,7 +38,7 @@
  
  modules: $(ALLEGRO_MODULE_TARGETS)
  
-@@ -349,35 +355,37 @@
+@@ -436,35 +442,37 @@
  	  fi; \
  	done
  	@for l in alleg alld allp; do \
