@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qiv
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.klografx.net/qiv/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
