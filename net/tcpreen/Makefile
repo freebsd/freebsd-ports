@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tcpreen
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.4
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://rdenisc.free.fr/tcpreen/
 
