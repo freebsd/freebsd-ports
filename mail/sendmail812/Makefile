@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sendmail
-PORTVERSION=	8.12.5
+PORTVERSION=	8.12.6
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/sendmail/&,}
@@ -31,6 +31,7 @@ MAN8=		sendmail.8 mailstats.8 makemap.8 praliases.8 smrsh.8 \
 # SENDMAIL_WITH_TLS=yes
 # SENDMAIL_WITH_SASL=yes
 # SENDMAIL_WITH_LDAP=yes
+# SENDMAIL_WITH_PICKY_HELO_CHECK=yes
 
 .if defined(SENDMAIL_WITH_LDAP)
 PKGNAMESUFFIX?=	-ldap
@@ -90,6 +91,11 @@ do-configure:
 		> ${WRKSRC}/devtools/OS/FreeBSD
 	${SED} -e "s=%%PREFIX%%=${PREFIX}=" -e "s=%%LOCALBASE%%=${LOCALBASE}=" \
 		${SITE} > ${WCONF}/site.config.m4
+.if defined(SENDMAIL_WITH_PICKY_HELO_CHECK)
+	${ECHO_CMD} \
+	 'APPENDDEF(`conf_sendmail_ENVDEF'\'', `-DPICKY_HELO_CHECK'\'')'  \
+		>> ${WCONF}/site.config.m4
+.endif
 
 post-build:
 	( cd ${WRKSRC}/doc/op && ${MAKE} op.txt )
