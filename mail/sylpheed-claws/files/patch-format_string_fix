@@ -1,0 +1,12 @@
+diff -u -r1.18 -r1.19
+--- src/send_message.c	2003/09/27 21:01:26	1.18
++++ src/send_message.c	2003/10/03 17:39:39	1.19
+@@ -608,7 +608,7 @@
+ 	if (log_msg)
+ 		log_warning("%s\n", log_msg);
+ 	if (err_msg) {
+-		alertpanel_error_log(err_msg);
++		alertpanel_error_log("%s", err_msg);
+ 		g_free(err_msg);
+ 	}
+ }
