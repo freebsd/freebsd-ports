@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ltris
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.9
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -23,10 +23,6 @@ GNU_CONFIGURE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	@${GREP} -lR "SDL/SDL" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
-		's|"SDL/SDL|"SDL|g ; \
-		 s|<SDL/SDL|<SDL|g'
 	@${REINPLACE_CMD} -e 's|--mode=666||g' ${WRKSRC}/src/Makefile.in
 
 post-install:
