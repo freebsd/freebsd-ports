@@ -28,8 +28,7 @@ NO_FILTER_SHLIBS=	yes
 PLIST=		${PKGDIR}/pkg-plist.${MACHINE_ARCH}
 MD5_FILE=	${MASTERDIR}/distinfo.${MACHINE_ARCH}
 
-RPM_MIRRORS=	ftp://ftp.freesoftware.com/pub/linux/redhat/old-releases/__DIR__/ \
-		ftp://ftp.freesoftware.com/pub/linux/redhat/__DIR__/
+RPM_MIRRORS=	${MASTER_SITE_BACKUP}
 STDDIR=		redhat-6.1/${MACHINE_ARCH}/RedHat/RPMS
 UPDDIR=		updates/6.1/${MACHINE_ARCH}
 .if (${MACHINE_ARCH} == "i386")

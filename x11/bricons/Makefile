@@ -8,8 +8,7 @@
 PORTNAME=	bricons
 PORTVERSION=	3.0
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.x.org/R5contrib/ \
-		ftp://ftp.freesoftware.com/pub/X11/R5contrib/
+MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	-athena-3.0.tar.Z
 

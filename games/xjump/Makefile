@@ -9,8 +9,7 @@ PORTNAME=	xjump
 PORTVERSION=	2.7.3
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.freesoftware.com/pub/linux/debian/%SUBDIR%/ \
-		ftp://ftp.jp.debian.org/debian/%SUBDIR%/ \
+MASTER_SITES=	ftp://ftp.jp.debian.org/debian/%SUBDIR%/ \
 		ftp://ftp-linux.cc.gatech.edu/pub/linux/distributions/debian/%SUBDIR%/ \
 		ftp://ftp.de.debian.org/debian/%SUBDIR%/ \
 		ftp://ftp.debian.org/debian/%SUBDIR%/

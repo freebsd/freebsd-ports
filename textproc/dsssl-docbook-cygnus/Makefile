@@ -8,8 +8,7 @@
 PORTNAME=	dsssl-docbook-cygnus
 PORTVERSION=	1.44
 CATEGORIES=	textproc
-MASTER_SITES=	ftp://sourceware.cygnus.com/pub/docbook-tools/docware/SOURCES/\
-		ftp://ftp.freesoftware.com/pub/sourceware/docbook-tools/docware/SOURCES/
+MASTER_SITES=	ftp://sourceware.cygnus.com/pub/docbook-tools/docware/SOURCES/
 DISTNAME=	stylesheets
 EXTRACT_SUFX=	.tgz
 

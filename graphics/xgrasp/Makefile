@@ -8,8 +8,7 @@
 PORTNAME=	xgrasp
 PORTVERSION=	1.7d
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.x.org/R5contrib/ \
-		ftp://ftp.freesoftware.com/pub/X11/R5contrib/
+MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
