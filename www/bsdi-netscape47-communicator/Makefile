@@ -3,13 +3,15 @@
 # Date created:         24 Feb 1997
 # Whom:                 thepish
 #
-# $Id: Makefile,v 1.30 1998/11/24 22:10:42 obrien Exp $
+# $Id: Makefile,v 1.31 1998/11/28 09:00:33 obrien Exp $
 #
 
 DISTNAME=	communicator-v45-export.x86-unknown-freebsd
 PKGNAME=	netscape-communicator-4.5
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.netscape.com/pub/communicator/4.5/english/unix/unsupported/freebsd/complete_install/
+# DISTFILES must be set to begin with so USE_128BIT can add on to it.
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	thepish@FreeBSD.ORG
 
