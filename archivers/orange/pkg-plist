@@ -2,5 +2,4 @@ bin/orange
 include/liborange.h
 lib/liborange.so.0
 lib/liborange.so
-lib/liborange.la
 lib/liborange.a
