@@ -1,6 +1,6 @@
---- archive2.pl.orig	Sun Apr 27 20:22:15 1997
-+++ archive2.pl	Sun Apr 27 20:22:23 1997
-@@ -85,7 +85,7 @@
+--- archive2.pl.orig	Thu Aug 28 00:07:44 1997
++++ archive2.pl	Wed Sep 10 00:57:13 1997
+@@ -88,7 +88,7 @@
      exit 1;
  }
  

@@ -1,5 +1,5 @@
---- request-answer.orig	Sun Apr 27 20:26:05 1997
-+++ request-answer	Sun Apr 27 20:26:14 1997
+--- request-answer.orig	Tue Dec 10 01:50:20 1996
++++ request-answer	Wed Sep 10 00:57:36 1997
 @@ -43,7 +43,7 @@
  # Define all of the mailer properties:
  # It is possible that one or both of $sendmail_command and $bounce_mailer

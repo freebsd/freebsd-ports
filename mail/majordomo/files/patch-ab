@@ -1,5 +1,5 @@
---- sample.cf.orig	Sun Apr 27 10:56:45 1997
-+++ sample.cf	Sun Apr 27 20:19:32 1997
+--- sample.cf.orig	Thu Aug 28 00:00:31 1997
++++ sample.cf	Wed Sep 10 00:56:10 1997
 @@ -6,11 +6,11 @@
  
  # $whereami -- What machine am I running on?

@@ -1,5 +1,5 @@
---- contrib/sequencer.orig	Sun Apr 27 20:23:46 1997
-+++ contrib/sequencer	Sun Apr 27 20:24:01 1997
+--- contrib/sequencer.orig	Tue Dec 10 01:50:48 1996
++++ contrib/sequencer	Wed Sep 10 00:57:20 1997
 @@ -399,7 +399,7 @@
      &bounce("Approval required");
  }

@@ -1,15 +1,6 @@
---- digest.orig	Mon Mar 10 12:11:25 1997
-+++ digest	Sun Apr 27 20:19:56 1997
-@@ -23,7 +23,7 @@
- &readconfig;
- $TEMP = "$TMPDIR/digest.$$" || "/usr/tmp/digest.$$";
- 
--$sendmail_command = "/usr/lib/sendmail" if ! defined $sendmail_command ;
-+$sendmail_command = "/usr/sbin/sendmail" if ! defined $sendmail_command ;
- 
- if (defined($opt_r)) {
-     &receive_message;
-@@ -313,7 +313,7 @@
+--- digest.orig	Wed Aug 27 23:42:52 1997
++++ digest	Wed Sep 10 00:56:12 1997
+@@ -314,7 +314,7 @@
  	    } else {
  		# Read and execute the .cf file
  		$cf = $opt_c || $ENV{"MAJORDOMO_CF"} || 
@@ -18,12 +9,12 @@
  		require "$cf";
  
  		chdir($homedir);
-@@ -325,7 +325,7 @@
+@@ -326,7 +326,7 @@
  # Define all of the mailer properties:
  # It is possible that one or both of $sendmail_command and $bounce_mailer
  # are not defined, so we provide reasonable defaults.
 -$sendmail_command = "/usr/lib/sendmail"
 +$sendmail_command = "/usr/sbin/sendmail"
    unless defined $sendmail_command;
- $bounce_mailer = "$sendmail_command -f\$sender -t"
-   unless defined $bounce_mailer;
+ $mailer = "$sendmail_command -oi -oee -f\$sender"
+   unless defined $mailer;

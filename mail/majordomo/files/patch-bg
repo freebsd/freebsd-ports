@@ -1,5 +1,5 @@
---- md-sub/md-sub.cgi.orig	Sun Apr 27 20:25:26 1997
-+++ md-sub/md-sub.cgi	Sun Apr 27 20:25:39 1997
+--- md-sub/md-sub.cgi.orig	Fri Feb  2 00:17:44 1996
++++ md-sub/md-sub.cgi	Wed Sep 10 00:57:34 1997
 @@ -67,7 +67,7 @@
  $cgiloc   = "http://stout/~jco/md-sub.cgi";
  $listsdb  = "/usr/jco/.md-subrc";
