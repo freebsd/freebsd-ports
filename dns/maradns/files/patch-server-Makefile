@@ -1,15 +1,15 @@
---- server/Makefile.orig	Sun Jun 24 11:32:48 2001
-+++ server/Makefile	Mon Jun 25 00:53:57 2001
-@@ -9,7 +9,7 @@
- VERSION=0.7.13
+--- server/Makefile.orig	Wed Jul  4 12:09:16 2001
++++ server/Makefile	Sun Jul  8 15:45:17 2001
+@@ -10,7 +10,7 @@
  
  #FLAGS = -O2 -Wall
--FLAGS = -g -DDEBUG -DNOTHREAD
-+FLAGS = -g -DDEBUG -DNOTHREAD $(CFLAGS)
+ #FLAGS = -g -DDEBUG -DCALL_LOCKS
+-FLAGS = -g -DDEBUG 
++FLAGS = -g -DDEBUG $(CFLAGS)
+ #FLAGS = -g -DDEBUG -DNOTHREAD
  #FLAGS = -g
  
- all: $(EXECS)
-@@ -21,11 +21,11 @@
+@@ -23,11 +23,11 @@
  	cd libs ; make
  
  MaraBigHash.o: MaraBigHash.c ../libs/JessStr.h ../libs/MaraHash.h ../MaraDns.h

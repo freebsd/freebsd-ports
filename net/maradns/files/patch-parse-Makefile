@@ -1,14 +1,14 @@
---- parse/Makefile.old	Mon Jun 25 00:46:40 2001
-+++ parse/Makefile	Mon Jun 25 00:47:50 2001
-@@ -5,7 +5,7 @@
- OBJECTS=$(JOBJS) $(MJOBJS) $(POBJECTS) $(DOBJECTS)
+--- parse/Makefile.orig	Sun Jul  8 15:41:39 2001
++++ parse/Makefile	Sun Jul  8 15:42:39 2001
+@@ -6,7 +6,7 @@
  EXECS=parsetest parsetest2
  
--FLAGS = -O2
-+FLAGS = $(CFLAGS)
- #FLAGS = -g
+ #FLAGS = -O2
+-FLAGS = -g
++FLAGS = -g $(CFLAGS)
  
  all: $(EXECS)
+ 
 @@ -17,17 +17,17 @@
  	cd libs ; make
  
