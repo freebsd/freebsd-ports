@@ -1685,6 +1685,7 @@ gkrellm		ports/sysutils/gkrellm
 gkrellm_snmp	ports/net/gkrellm_snmp
 gkrellmaflag	ports/misc/gkrellmaflag
 gkrellmearth	ports/astro/gkrellmearth
+gkrellmlaunch	ports/misc/gkrellmlaunch
 gkrellmmailwatch	ports/mail/gkrellmmailwatch
 gkrellmms	ports/audio/gkrellmms
 gkrellmoon	ports/astro/gkrellmoon
