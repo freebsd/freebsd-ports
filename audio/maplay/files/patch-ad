@@ -1,0 +1,19 @@
+--- configuration.sh.orig	Thu Jun 23 07:14:46 1994
++++ configuration.sh	Sat Sep 18 14:52:25 1999
+@@ -72,6 +72,16 @@
+      INCLUDEDIRS=
+      LIBRARIES=
+      AUDIO_INCLUDES='#include <sys/audioio.h>' ;;
++  FreeBSD*)
++     COMPILER=g++
++     if [ `uname -m` = "alpha" ]; then
++       COMPILERFLAGS='-O2 -DLINUX'
++     else
++       COMPILERFLAGS='-O2 -m486 -DLINUX -DDAMN_INTEL_BYTE_ORDER'
++     fi
++     INCLUDEDIRS=
++     LIBRARIES= 
++     AUDIO_INCLUDES='#include <machine/soundcard.h>' ;;
+   Linux*)
+      COMPILER=g++
+      COMPILERFLAGS='-O2 -m486 -funroll-loops -DLINUX -DDAMN_INTEL_BYTE_ORDER'
