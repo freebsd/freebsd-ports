@@ -10,7 +10,9 @@ PORTNAME=	dact
 PORTVERSION=	0.8.11
 PORTREVISION=	1
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.rkeene.org/devel/
+#MASTER_SITES=	http://www.rkeene.org/devel/
+MASTER_SITES=	http://www.lbsd.k12.ms.us/~rkeene/www.rkeene.org/devel/ \
+		http://www.jian.tv/pub/linux/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -25,7 +27,7 @@ CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-MAN1=	dact.1
+MAN1=		dact.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dact ${PREFIX}/bin
