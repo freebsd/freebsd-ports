@@ -1,0 +1,13 @@
+bin/conquest
+etc/conquest/conqrule.sample
+libexec/conqdriv
+sbin/conqai
+sbin/conqoper
+sbin/conqstrat
+share/conquest/conqnews.doc.sample
+share/conquest/conquest.doc
+%%PORTDOCS%%share/doc/conquest/README
+%%PORTDOCS%%share/doc/conquest/SERVER.DOC
+%%PORTDOCS%%@dirrm share/doc/conquest
+@dirrm etc/conquest
+@dirrm share/conquest

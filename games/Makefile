@@ -46,6 +46,7 @@
     SUBDIR += clanbomber
     SUBDIR += columns
     SUBDIR += connect4
+    SUBDIR += conquest
     SUBDIR += corewars
     SUBDIR += cosmo
     SUBDIR += cowsay
