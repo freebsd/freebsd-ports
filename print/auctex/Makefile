@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=	Integrated environment for writing LaTeX using GNU Emacs
 
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
-
 EMACS_PORT_NAME?=	emacs21
 EMACS_NO_RUN_DEPENDS=	yes
 LISPDIR=	${EMACS_SITE_LISPDIR}
