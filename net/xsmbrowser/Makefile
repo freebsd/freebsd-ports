@@ -8,7 +8,7 @@
 PORTNAME=	xsmbrowser
 PORTVERSION=	3.4.0
 CATEGORIES=	net
-MASTER_SITES=	http://www2.iastate.edu/~chadspen/
+MASTER_SITES=	http://www.public.iastate.edu/~chadspen/
 
 MAINTAINER=	ports@oven.org
 COMMENT=	Tcl/Tk port of Windows' Network Neighborhood
