@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://the.ausmac.net/wd2a/security/port-loggers/ \
 		ftp://ftp.mayn.de/pub/unix/security/network/ \
-		ftp://ftp.cps.unizar.es/pub/unix/security/ \
+		ftp://webdiis.unizar.es/pub/unix/security/ \
 		ftp://ftp.linux.hr/pub/fakebo/
 
 MAINTAINER=	ports@FreeBSD.org
@@ -27,9 +27,9 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/fakebo.1 ${PREFIX}/man/man1/
 
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/fakebo/
-	${INSTALL_MAN} ${WRKSRC}/custom.replies ${PREFIX}/share/doc/fakebo/
-	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/fakebo/
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/custom.replies ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 bin/fakebo
 etc/fakebo.conf.sample
-share/doc/fakebo/README
-share/doc/fakebo/custom.replies
-@dirrm share/doc/fakebo
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/custom.replies
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
