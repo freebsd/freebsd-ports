@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	wordpress
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.2.1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cafelog
-EXTRACT_SUFX=	-mingus.tar.gz
 
 MAINTAINER=	elvis@sslab.cs.ccu.edu.tw
 COMMENT=	A state-of-the-art semantic personal publishing platform
