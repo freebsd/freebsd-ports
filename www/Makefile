@@ -49,6 +49,7 @@
     SUBDIR += hypermail
     SUBDIR += ijb
     SUBDIR += jesred
+    SUBDIR += kdreamsite
     SUBDIR += libghttp
     SUBDIR += libwww
     SUBDIR += libxpg4-ns
