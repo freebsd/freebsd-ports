@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Data-Page
-PORTVERSION=	0.18
+PORTVERSION=	1.00
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Data
@@ -14,8 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Pager utility for Class::DBI
-
-BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=	yes
 
