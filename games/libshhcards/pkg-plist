@@ -1,8 +1,6 @@
 include/shhcards.h
 lib/libshhcards.so
 lib/libshhcards.so.1.1
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
 share/doc/libshhcards/CREDITS
 share/doc/libshhcards/README
 @dirrm share/doc/libshhcards

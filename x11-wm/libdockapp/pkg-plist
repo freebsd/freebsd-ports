@@ -2,5 +2,3 @@ include/dockapp.h
 lib/libdockapp.a
 lib/libdockapp.so
 lib/libdockapp.so.1
-@exec /sbin/ldconfig -m %D
-@unexec /sbin/ldconfig -R

@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	libs/compression
 MAINTAINER=	ports@FreeBSD.org
 
 USE_LIBTOOL=	yes
+INSTALLS_SHLIBS=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)

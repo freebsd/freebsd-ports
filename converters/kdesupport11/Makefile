@@ -18,12 +18,9 @@ USE_BZIP2=	yes
 
 USE_QT=		yes
 USE_LIBTOOL=	yes
-GNU_CONFIGURE=	yes
+INSTALLS_SHLIBS=	yes
 CONFIGURE_ARGS=	--without-libjpeg --without-libgif \
 		--without-libgdbm --without-libuulib
 CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)" INSTALL_SCRIPT="install -c -m 555"
-
-post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

@@ -39,8 +39,6 @@ lib/libgg.so.0
 lib/libgii.la
 lib/libgii.so
 lib/libgii.so.0
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/doc/libgii/ChangeLog
 share/doc/libgii/NEWS
 share/doc/libgii/README

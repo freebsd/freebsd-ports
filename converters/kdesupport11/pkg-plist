@@ -56,11 +56,9 @@ lib/librdb.so.56
 @exec ln -sf libjs.so.2 %D/lib/libjs.so
 @exec ln -sf libmimelib.so.1 %D/lib/libmimelib.so
 @exec ln -sf librdb.so.55 %D/lib/librdb.so
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @dirrm include/rdb
 @dirrm include/mimelib
 @unexec rm -f %D/lib/libQwSpriteField.so
 @unexec rm -f %D/lib/libjs.so
 @unexec rm -f %D/lib/libmimelib.so
 @unexec rm -f %D/lib/librdb.so
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

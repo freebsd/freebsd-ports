@@ -42,6 +42,4 @@ lib/X11/AuErrorDB
 lib/libaudio.a
 lib/libaudio.so
 lib/libaudio.so.1
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
 @dirrm include/audio

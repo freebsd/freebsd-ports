@@ -1,7 +1,5 @@
 lib/libworkman.so
 lib/libworkman.so.1
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 include/workman/wm_cdda.h
 include/workman/wm_cddb.h
 include/workman/wm_cdinfo.h

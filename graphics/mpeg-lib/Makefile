@@ -13,10 +13,8 @@ MASTER_SITES=	ftp://ftp.bic.mni.mcgill.ca/pub/mpeg/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
+INSTALLS_SHLIBS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OPTIMIZE="${CFLAGS}"
-
-post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

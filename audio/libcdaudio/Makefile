@@ -13,5 +13,6 @@ MASTER_SITES=	ftp://cdcd.undergrid.net/libcdaudio/
 MAINTAINER=	ports@FreeBSD.org
 
 USE_LIBTOOL=	yes
+INSTALLS_SHLIBS=	yes
 
 .include <bsd.port.mk>

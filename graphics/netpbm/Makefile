@@ -19,6 +19,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		png.3:${PORTSDIR}/graphics/png
 
 USE_GMAKE=	yes
+INSTALLS_SHLIBS=	yes
 MAKEFILE=	GNUmakefile
 ALL_TARGET=	merge
 INSTALL_TARGET=	install-merge install-dev
@@ -29,8 +30,5 @@ INSTALL_TARGET=	install-merge install-dev
 
 post-patch:
 	@${PERL} -pi -e "s|%%X11BASE%%|${X11BASE}|g" ${WRKSRC}/pbmplus.h
-
-post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.post.mk>

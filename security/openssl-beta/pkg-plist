@@ -78,5 +78,3 @@ share/doc/openssl/openssl.txt
 @dirrm openssl/private
 @dirrm openssl
 @dirrm share/doc/openssl
-@exec /sbin/ldconfig -m %D/lib
-@unexec /sbin/ldconfig -R

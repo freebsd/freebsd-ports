@@ -1491,5 +1491,3 @@ share/toolbar/configure.png
 @dirrm include/dom
 @dirrm include/artsc
 @dirrm include/arts
-@exec /sbin/ldconfig -m %D/lib
-@unexec /sbin/ldconfig -R

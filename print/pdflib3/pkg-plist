@@ -7,5 +7,3 @@ share/doc/pdflib/compatibility.txt
 share/doc/pdflib/install.txt
 share/doc/pdflib/license.pdf
 @dirrm share/doc/pdflib
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

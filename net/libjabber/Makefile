@@ -15,6 +15,7 @@ MAINTAINER=	lukin@okbmei.msk.su
 LIB_DEPENDS=	xode.1:${PORTSDIR}/textproc/libxode
 
 USE_LIBTOOL=	yes
+INSTALLS_SHLIBS=	yes
 
 MAN1=		jabber-config.1
 

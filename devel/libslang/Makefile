@@ -15,12 +15,10 @@ MAINTAINER=	xaa+ports@timewasters.nl
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+INSTALLS_SHLIBS=	yes
 #WRKSRC=		${WRKDIR}/slang
 
 ALL_TARGET=	all elf
 INSTALL_TARGET=	install install-elf
-
-post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

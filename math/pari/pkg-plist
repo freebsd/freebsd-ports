@@ -17,8 +17,6 @@ include/pari/paritype.h
 lib/libpari.so
 lib/libpari.so.2
 lib/libpari.so.2.0.18
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /bin/mkdir -p %D/lib/pari/data
 lib/pari/Makefile
 lib/pari/paricfg.tex

@@ -13,14 +13,12 @@ MASTER_SITES=	ftp://argeas.cs-net.gr/pub/unix/mcrypt/old/ \
 
 MAINTAINER=	nsayer@freebsd.org
 
+INSTALLS_SHLIBS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-posix-threads
 
 MAN3=		mcrypt.3
 
 RESTRICTED=	"yes - cryptography"
-
-post-install:
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

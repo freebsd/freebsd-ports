@@ -311,8 +311,6 @@ share/toolbar/viewmag+.xpm
 share/toolbar/viewmag-.xpm
 share/toolbar/viewmag.xpm
 share/toolbar/viewzoom.xpm
-@exec /sbin/ldconfig -m %D/lib
-@unexec /sbin/ldconfig -R
 @unexec rmdir %D/share/wallpapers 2>/dev/null || true
 @unexec rmdir %D/share/toolbar 2>/dev/null || true
 @unexec rmdir %D/share/sounds 2>/dev/null || true

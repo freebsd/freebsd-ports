@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	s974123@cc.matsuyama-u.ac.jp
 
 USE_IMAKE=	yes
+INSTALLS_SHLIBS=	yes
 NO_INSTALL_MANPAGES=	yes
 
 do-install:
@@ -25,8 +26,5 @@ do-install:
 	${MKDIR} ${PREFIX}/share/doc/ja/lfview
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ja/lfview
 .endif
-
-post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

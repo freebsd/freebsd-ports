@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.inf.ufrgs.br/~casantos/neXtaw/
 MAINTAINER=	tg@FreeBSD.org
 
 USE_IMAKE=	yes
+INSTALLS_SHLIBS=	yes
 
 MAN1=		neXtclock.1
 
@@ -23,6 +24,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/CHANGES ${PREFIX}/share/doc/neXtaw
 	${INSTALL_DATA} ${WRKSRC}/doc/FAQ ${PREFIX}/share/doc/neXtaw
 .endif
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

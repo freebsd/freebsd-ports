@@ -15,9 +15,9 @@ MAINTAINER=	JoeLu@JoeLu.m8.ntu.edu.tw
 
 GNU_CONFIGURE=	yes
 USE_NEWGCC=	yes
+INSTALLS_SHLIBS=	yes
 
 post-install:
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/libsigc++
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/libsigc++

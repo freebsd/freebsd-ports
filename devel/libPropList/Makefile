@@ -15,6 +15,7 @@ DISTNAME=	libPropList-${PORTVERSION}
 MAINTAINER=	sobomax@FreeBSD.org
 
 USE_LIBTOOL=	yes
+INSTALLS_SHLIBS=	yes
 USE_AUTOCONF=	yes
 
 .include <bsd.port.mk>

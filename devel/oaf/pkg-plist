@@ -10,8 +10,6 @@ include/liboaf/oaf.h
 lib/liboaf.a
 lib/liboaf.so
 lib/liboaf.so.0
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/aclocal/oaf.m4
 share/gnome/idl/gnome-factory.idl
 share/gnome/idl/oaf.idl

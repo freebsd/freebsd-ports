@@ -23,6 +23,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 USE_XLIB=	yes
 USE_LIBTOOL=	yes
+INSTALLS_SHLIBS=	yes
 
 DOCDIR=		${PREFIX}/share/doc/libungif
 

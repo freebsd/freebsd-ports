@@ -4,5 +4,3 @@ include/xmlparse.h
 lib/libxode.a
 lib/libxode.so
 lib/libxode.so.1
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R

@@ -14,5 +14,6 @@ MASTER_SITE_SUBDIR=	stable/sources/libghttp
 MAINTAINER=	vanilla@FreeBSD.org
 
 USE_LIBTOOL=	yes
+INSTALLS_SHLIBS=	yes
 
 .include <bsd.port.mk>

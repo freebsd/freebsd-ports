@@ -1,4 +1,3 @@
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @unexec install-info --delete %D/info/krb425.info %D/info/dir
 @unexec install-info --delete %D/info/krb5-admin.info %D/info/dir
 @unexec install-info --delete %D/info/krb5-install.info %D/info/dir
@@ -118,8 +117,6 @@ share/gnats/mit
 @dirrm include/gssapi
 @dirrm include/kerberosIV
 @dirrm share/doc/krb5
-@exec /sbin/ldconfig -m %D/lib
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
 @exec install-info %D/info/krb425.info %D/info/dir
 @exec install-info %D/info/krb5-admin.info %D/info/dir
 @exec install-info %D/info/krb5-install.info %D/info/dir

@@ -4,5 +4,3 @@ include/ffi_mips.h
 lib/libffi.a
 lib/libffi.so
 lib/libffi.so.2.3
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B

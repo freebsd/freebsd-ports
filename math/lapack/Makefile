@@ -16,6 +16,8 @@ MAINTAINER=	jmz@FreeBSD.org
 
 DIST_SUBDIR=	lapack
 
+INSTALLS_SHLIBS=	yes
+
 MANCOMPRESSED=	maybe
 MANL=	cbdsqr.l cgbbrd.l cgbcon.l cgbequ.l cgbmv.l cgbrfs.l cgbsv.l cgbsvx.l \
 	cgbtf2.l cgbtrf.l cgbtrs.l cgebak.l cgebal.l cgebd2.l cgebrd.l \
@@ -219,7 +221,6 @@ do-install:
 	${LN} -sf libblas.so.2.0 ${PREFIX}/lib/libblas.so
 	${LN} -sf liblapack.so.3.0 ${PREFIX}/lib/liblapack.so
 .endif
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 	${INSTALL_MAN} ${WRKDIR}/blas/man/manl/*.l ${PREFIX}/man/manl
 	${INSTALL_MAN} ${WRKDIR}/man/manl/[a-c]*.l ${PREFIX}/man/manl
 	${INSTALL_MAN} ${WRKDIR}/man/manl/[d-l]*.l ${PREFIX}/man/manl

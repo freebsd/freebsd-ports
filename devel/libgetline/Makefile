@@ -17,4 +17,6 @@ MAN3=		getline.3
 
 WRKSRC=		${WRKDIR}/getline-39
 
+INSTALLS_SHLIBS=	yes
+
 .include <bsd.port.mk>

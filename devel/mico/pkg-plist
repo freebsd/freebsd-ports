@@ -225,8 +225,6 @@ lib/libmicotcl%%MICOVER%%.so.1
 lib/libmicox.%%MICOVER%%.so
 lib/libmicox%%MICOVER%%.a
 lib/libmicox%%MICOVER%%.so.1
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/mico-setup.csh
 lib/mico-setup.sh
 share/doc/mico/examples/MakeVars

@@ -12,12 +12,10 @@ MASTER_SITES=	http://schumann.cx/mhash/dl/
 
 MAINTAINER=	nsayer@freebsd.org
 
+INSTALLS_SHLIBS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= --with-LDFLAGS='-lc_r'
 
 MAN3=		mhash.3
-
-post-install:
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

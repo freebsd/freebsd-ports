@@ -17,6 +17,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.3:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
+INSTALLS_SHLIBS=	yes
+
 MAN1=		kaffe.1
 
 post-install:

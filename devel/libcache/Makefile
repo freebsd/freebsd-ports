@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.afro-productions.com/
 
 MAINTAINER=	will@FreeBSD.org
 
+INSTALLS_SHLIBS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-shared
 WRKSRC=		${WRKDIR}/libcache

@@ -19,12 +19,10 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_XLIB=	yes
+INSTALLS_SHLIBS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype \
 		          -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}"/lib
-
-post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

@@ -25,6 +25,7 @@ MAKE_ENV+=	SOMAJOR="${LIBVER}" SOMINOR="0"
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_QT=		yes
+INSTALLS_SHLIBS=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFLAGS=
 CONFIGURE_ARGS=	--enable-shared --x-includes="$(X11BASE)/include" \

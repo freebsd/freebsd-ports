@@ -17,6 +17,7 @@ BUILD_DEPENDS=		gm4:${PORTSDIR}/devel/m4
 
 KERBEROSV_URL=		http://web.mit.edu/network/kerberos-form.html
 USE_GMAKE=		yes
+INSTALLS_SHLIBS=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS?=	--enable-shared --with-ccopts="${CFLAGS}"
 CONFIGURE_ENV=		INSTALL="${INSTALL}"
@@ -104,7 +105,6 @@ post-build:
 .include <bsd.port.pre.mk>
 
 post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 # html documentation
 .if defined(WANT_HTML) && ${WANT_HTML} == "YES"
 	@${MKDIR} ${PREFIX}/share/doc/krb5

@@ -14,14 +14,12 @@ DISTFILES=	malloc-2.6.5.c
 MAINTAINER=	roberto@FreeBSD.org
 
 NO_WRKSUBDIR=   yes
+INSTALLS_SHLIBS=	yes
 
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
 	${CP} -p ${DISTDIR}/${DISTFILES} ${WRKDIR}
 	${CP} -p ${FILESDIR}/Makefile ${WRKDIR}
-
-post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

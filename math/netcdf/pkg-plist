@@ -10,5 +10,3 @@ lib/libnetcdf.so.1
 lib/libnetcdf_c++.a
 lib/libnetcdf_c++.so
 lib/libnetcdf_c++.so.1
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R

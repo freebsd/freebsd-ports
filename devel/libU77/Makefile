@@ -12,6 +12,8 @@ MASTER_SITES=	http://flo.mech.eng.usyd.edu.au/~norris/src/
 
 MAINTAINER=	ports@FreeBSD.org
 
+INSTALLS_SHLIBS=	yes
+
 pre-build:
 	${CP} ${FILESDIR}/makefile.lib ${WRKSRC}/Makefile
 
@@ -25,7 +27,6 @@ MAN3=   access.3f alarm.3f chdir.3f chmod.3f ctime.3f drand.3f dsecnd.3f    \
 	system.3f time.3f unlink.3f wait.3f wclock.3f
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
 	${INSTALL_MAN} ${WRKSRC}/man/*.3f ${PREFIX}/man/man3
 
 .if !defined(NOPORTDOCS)

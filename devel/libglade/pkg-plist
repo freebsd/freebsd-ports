@@ -11,7 +11,5 @@ lib/libglade.so.3
 lib/libglade-gnome.a
 lib/libglade-gnome.so
 lib/libglade-gnome.so.3
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/aclocal/libglade.m4
 @dirrm include/glade

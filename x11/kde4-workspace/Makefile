@@ -20,6 +20,7 @@ LIB_DEPENDS=	kdeui.4:${PORTSDIR}/x11/kdelibs2 \
 MOC?=		${X11BASE}/bin/moc2
 USE_BZIP2=	yes
 USE_QT2=	yes
+INSTALLS_SHLIBS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+="--with-xdmdir=${X11BASE}/lib/X11/xdm" \
 		--with-qt-dir=${X11BASE} \

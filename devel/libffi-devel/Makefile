@@ -13,9 +13,7 @@ MASTER_SITES=	ftp://sourceware.cygnus.com/pub/libffi/
 MAINTAINER=	horance@freedom.ie.cycu.edu.tw
 
 USE_LIBTOOL=	yes
+INSTALLS_SHLIBS=	yes
 CONFIGURE_TARGET=	# empty
-
-post-install:
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

@@ -101,8 +101,6 @@ lib/libggi.so.2
 lib/libggimisc.la
 lib/libggimisc.so
 lib/libggimisc.so.2
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm include/ggi/display
 @dirrm lib/ggi/default
 @dirrm lib/ggi/display

@@ -13,6 +13,7 @@ DISTNAME=	ranlib.c
 
 MAINTAINER=	tg@FreeBSD.org
 
+INSTALLS_SHLIBS=	yes
 MAKE_ENV=	NOPROFILE=true
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
@@ -29,6 +30,5 @@ post-install:
 .if ${PORTOBJFORMAT} == "aout"
 	${LN} -sf libranlib.so.1.0 ${PREFIX}/lib/libranlib.so
 .endif
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.post.mk>

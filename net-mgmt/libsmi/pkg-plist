@@ -7,8 +7,6 @@ lib/libsmi.a
 lib/libsmi.la
 lib/libsmi.so
 lib/libsmi.so.1
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/smi/mibs/iana/IANA-ADDRESS-FAMILY-NUMBERS-MIB
 share/smi/mibs/iana/IANA-LANGUAGE-MIB
 share/smi/mibs/iana/IANATn3270eTC-MIB

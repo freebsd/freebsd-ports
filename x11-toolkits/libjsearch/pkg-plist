@@ -17,5 +17,3 @@ share/jx/jsearch/replace.xpm
 @dirrm share/jx/jsearch
 %%PORTDOCS:%%@unexec rmdir %D/share/doc/JX 2>/dev/null || true
 @dirrm include/%%INCLUDEDIR%%
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

@@ -22,6 +22,7 @@ WRKSRC=		${WRKDIR}/img1.2.2
 
 ALL_TARGET=	default
 
+INSTALLS_SHLIBS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl=${PREFIX}/lib/tcl8.2 --with-tk=${PREFIX}/lib/tk8.2 \
 		--disable-stubs
