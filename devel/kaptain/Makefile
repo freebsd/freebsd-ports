@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	kaptain
-PORTVERSION=	0.7
-#PORTEPOCH=
+PORTVERSION=	0.71
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,10 +17,20 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for building/running QT GUIs for commmand line programs
 
 USE_QT_VER=	3
-GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS+=--enable-mt
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--enable-mt
 
-.include "${.CURDIR}/maninfo.mk"
+MAN1=		kaptain.1
+INFO=		kaptain
+
+post-extract:
+	@${RM} -f ${WRKSRC}/doc/*.info*
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/examples/dia2code.kaptn
+
 .include <bsd.port.mk>
-#EOF

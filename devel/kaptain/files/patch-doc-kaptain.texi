@@ -1,0 +1,13 @@
+--- doc/kaptain.texi.orig	Mon Mar 24 21:07:29 2003
++++ doc/kaptain.texi	Sat Aug 30 16:13:22 2003
+@@ -3,6 +3,10 @@
+ @c %**start of header
+ @setfilename kaptain.info
+ @settitle Kaptain
++@dircategory
++@direntry Applications
++* Kaptain: (kaptain).		The Universal Graphical Front-end.
++@end direntry
+ @finalout
+ @c %**end of header
+ 
