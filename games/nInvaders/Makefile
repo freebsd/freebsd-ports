@@ -7,19 +7,17 @@
 #
 
 PORTNAME=	nInvaders
-PORTVERSION=	0.0.8
+PORTVERSION=	0.0.9
 CATEGORIES=	games
 MASTER_SITES=	http://dettus.dyndns.org/ninvaders/
-DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	mich@freebsdcluster.org
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|^CC|#CC|g" \
-		-e "s|^CFLAGS|#CFLAGS|g" ${WRKSRC}/Makefile
+	-e "s|^CFLAGS|#CFLAGS|g" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
