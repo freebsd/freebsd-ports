@@ -1,0 +1,40 @@
+--- configure.orig	Mon Aug 19 13:56:03 2002
++++ configure	Mon Aug 19 13:56:59 2002
+@@ -6915,23 +6915,23 @@
+   else
+      PKG_CONFIG_MIN_VERSION=0.9.0
+      if $PKG_CONFIG --atleast-pkgconfig-version $PKG_CONFIG_MIN_VERSION; then
+-        echo "$as_me:$LINENO: checking for gtkspell-2.0 = 2.0.0" >&5
+-echo $ECHO_N "checking for gtkspell-2.0 = 2.0.0... $ECHO_C" >&6
++        echo "$as_me:$LINENO: checking for gtkspell-2.0 >= 2.0.0" >&5
++echo $ECHO_N "checking for gtkspell-2.0 >= 2.0.0... $ECHO_C" >&6
+ 
+-        if $PKG_CONFIG --exists "gtkspell-2.0 = 2.0.0" ; then
++        if $PKG_CONFIG --exists "gtkspell-2.0 >= 2.0.0" ; then
+             echo "$as_me:$LINENO: result: yes" >&5
+ echo "${ECHO_T}yes" >&6
+             succeeded=yes
+ 
+             echo "$as_me:$LINENO: checking GTKSPELL_CFLAGS" >&5
+ echo $ECHO_N "checking GTKSPELL_CFLAGS... $ECHO_C" >&6
+-            GTKSPELL_CFLAGS=`$PKG_CONFIG --cflags "gtkspell-2.0 = 2.0.0"`
++            GTKSPELL_CFLAGS=`$PKG_CONFIG --cflags "gtkspell-2.0 >= 2.0.0"`
+             echo "$as_me:$LINENO: result: $GTKSPELL_CFLAGS" >&5
+ echo "${ECHO_T}$GTKSPELL_CFLAGS" >&6
+ 
+             echo "$as_me:$LINENO: checking GTKSPELL_LIBS" >&5
+ echo $ECHO_N "checking GTKSPELL_LIBS... $ECHO_C" >&6
+-            GTKSPELL_LIBS=`$PKG_CONFIG --libs "gtkspell-2.0 = 2.0.0"`
++            GTKSPELL_LIBS=`$PKG_CONFIG --libs "gtkspell-2.0 >= 2.0.0"`
+             echo "$as_me:$LINENO: result: $GTKSPELL_LIBS" >&5
+ echo "${ECHO_T}$GTKSPELL_LIBS" >&6
+         else
+@@ -6939,7 +6939,7 @@
+             GTKSPELL_LIBS=""
+             ## If we have a custom action on failure, don't print errors, but
+             ## do set a variable so people can do so.
+-            GTKSPELL_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "gtkspell-2.0 = 2.0.0"`
++            GTKSPELL_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "gtkspell-2.0 >= 2.0.0"`
+ 
+         fi
+ 
