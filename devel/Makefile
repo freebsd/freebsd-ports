@@ -1143,6 +1143,7 @@
     SUBDIR += strace
     SUBDIR += styx
     SUBDIR += subversion
+    SUBDIR += subversion-perl
     SUBDIR += swarm
     SUBDIR += swig11
     SUBDIR += swig13
