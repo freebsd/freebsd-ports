@@ -6,7 +6,7 @@
   endif
   
   ifeq ($(OSTYPE),FreeBSD)
-+ ifneq (,$(wildcard $(SYSINCDIR)/machine/ioctl_meteor.h))
++ ifneq (,$(wildcard $(SYSINCDIR)/dev/bktr/ioctl_meteor.h $(SYSINCDIR)/machine/ioctl_meteor.h))
   VIDEO_CAPTURE_SOURCE = video4bsd.cxx
 + endif
   endif

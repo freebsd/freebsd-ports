@@ -33,9 +33,13 @@ MAKE_ENV=	PWLIBDIR=${WRKDIR}/pwlib
 THE_MACHTYPE=	${ARCH:S/i386/x86/}
 MAKE_ARGS=	OSTYPE=${OPSYS} MACHTYPE=${THE_MACHTYPE} OSRELEASE=${OSVERSION} CPLUS=${CXX}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 502101
 ONLY_FOR_ARCHS=	i386
+.endif
 
 do-install:
 #	${INSTALL_PROGRAM} ${WRKSRC}/samples/simple/obj_${OPSYS}_${THE_MACHTYPE}_r/simph323 ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
