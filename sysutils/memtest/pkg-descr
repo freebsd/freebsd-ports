@@ -1,0 +1,9 @@
+memtest is a utility for testing the memory subsystem in a computer
+to determine if it is faulty. The original source was by Simon
+Kirby <sim@stormix.com>. The program has been rewritten by Charles
+Cazabon and many additional tests were added to help catch borderline
+memory. He also rewrote the original tests (which catch mainly
+memory bits which are stuck permanently high or low) so that they
+run approximately an order of magnitude faster.
+
+WWW: http://www.qcc.sk.ca/~charlesc/software/memtester/

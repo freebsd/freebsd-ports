@@ -1,0 +1,10 @@
+--- memtest.c.orig	Tue Jul 18 22:13:31 2000
++++ memtest.c	Tue Jul 18 22:13:58 2000
+@@ -20,6 +20,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <time.h>
++#include <sys/types.h>
+ #include <sys/mman.h>
+ #include <signal.h>
+ #include <unistd.h>
