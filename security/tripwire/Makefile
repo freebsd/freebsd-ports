@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://download.sourceforge.net/tripwire/
 DISTNAME=	tripwire-2.3.1-2
 
-MAINTAINER=	Cy.Schubert@osg.gov.bc.ca
+MAINTAINER=	cy@FreeBSD.org
 
 MAN5=		twfiles.5 twconfig.5 twpolicy.5
 MAN8=		siggen.8 tripwire.8 twadmin.8 twintro.8 twprint.8
