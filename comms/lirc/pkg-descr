@@ -1,0 +1,22 @@
+LIRC is a package that allows you to decode and send infra-red signals
+of many (but not all) commonly used remote controls.
+
+The most important part of LIRC is the lircd daemon that will decode
+IR signals received by the device drivers and provide the information
+on a socket. It will also accept commands for IR signals to be sent if
+the hardware supports this. The second daemon program called lircmd
+will connect to lircd and translate the decoded IR signals to mouse
+movements. You can e.g. configure X to use your remote control as an
+input device.
+
+The user space applications will allow you to control your computer
+with your remote control. You can send X events to applications, start
+programs and much more on just one button press. The possible
+applications are obvious: Infra-red mouse, remote control for your TV
+tuner card or CD-ROM, shutdown by remote, program your VCR and/or
+satellite tuner with your computer, etc.
+
+WWW: http://www.lirc.org/
+
+- Mike
+mikeh@FreeBSD.org
