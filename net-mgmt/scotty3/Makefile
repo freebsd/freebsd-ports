@@ -3,7 +3,7 @@
 # Date created:		18 Februar 1995
 # Whom:			Gennady Sorokopud <gena@netvision.net.il>
 #
-# $Id: Makefile,v 1.13 1996/11/18 11:36:20 asami Exp $
+# $Id: Makefile,v 1.14 1996/12/01 01:23:15 obrien Exp $
 #
 
 DISTNAME=	scotty-2.1.3
@@ -34,9 +34,9 @@ pre-install:
 .else
 	@sed "s,@GZIP@,.gz," /tmp/PLIST >pkg/PLIST
 .endif
-	@{RM} /tmp/PLIST
+	@${RM} /tmp/PLIST
 
 pre-clean:
-	@{RM} -f pkg/PLIST
+	@${RM} -f pkg/PLIST
 
 .include <bsd.port.mk>
