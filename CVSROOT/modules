@@ -3596,6 +3596,7 @@ libgdgeda	ports/graphics/libgdgeda
 libgeda		ports/cad/libgeda
 libgetline	ports/devel/libgetline
 libggi		ports/graphics/libggi
+libghthash	ports/devel/libghthash
 libghttp	ports/www/libghttp
 libgii		ports/devel/libgii
 libglade	ports/devel/libglade
