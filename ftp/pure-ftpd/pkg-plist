@@ -1,0 +1,15 @@
+sbin/mrtginfo
+sbin/pure-ftpd
+sbin/pure-ftpwho
+sbin/pure-config.pl
+etc/pureftpd-ldap.conf.sample
+etc/pure-ftpd.conf.sample
+%%PORTDOCS%%share/doc/pure-ftpd/COPYING
+%%PORTDOCS%%share/doc/pure-ftpd/HISTORY
+%%PORTDOCS%%share/doc/pure-ftpd/NEWS
+%%PORTDOCS%%share/doc/pure-ftpd/README
+%%PORTDOCS%%share/doc/pure-ftpd/README.Configuration-File
+%%PORTDOCS%%share/doc/pure-ftpd/README.LDAP
+%%PORTDOCS%%share/doc/pure-ftpd/README.Netfilter
+%%PORTDOCS%%share/doc/pure-ftpd/THANKS
+%%PORTDOCS%%@dirrm share/doc/pure-ftpd

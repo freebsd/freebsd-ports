@@ -40,6 +40,7 @@
     SUBDIR += pavuk
     SUBDIR += proftpd
     SUBDIR += puf
+    SUBDIR += pure-ftpd
     SUBDIR += ruby-curl
     SUBDIR += sftp
     SUBDIR += spegla
