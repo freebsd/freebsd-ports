@@ -29,10 +29,6 @@ USE_SDL=	mixer sdl
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502000
-BROKEN=		"Configure fails"
-.endif
-
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.cpp" | ${XARGS} \
 		${REINPLACE_CMD} -e 's|SDL/|SDL11/|g'
