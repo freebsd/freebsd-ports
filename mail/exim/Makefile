@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	exim
-PORTVERSION=	4.30
-PORTREVISION=	2
+PORTVERSION=	4.31
+PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_EXIM}
 MASTER_SITE_SUBDIR=	exim4
@@ -42,6 +42,7 @@ USE_PERL5=	yes
 USE_REINPLACE=	yes
 MAN8=		exim.8
 
+PORTDOC_BASE=	ACKNOWLEDGMENTS NOTICE README.UPDATING
 PORTDOC_FILES=	ChangeLog Exim3.upgrade Exim4.upgrade NewStuff \
 		OptionLists.txt README README.SIEVE dbm.discuss.txt \
 		filter.txt pcrepattern.txt pcretest.txt spec.txt
@@ -444,6 +445,9 @@ post-install:
 .if !defined(WITHOUT_EXISCAN)
 	@${INSTALL_DATA} ${WRKDIR}/POST-INSTALL-NOTES.clamd ${DOCSDIR}
 .endif
+.for docfile in ${PORTDOC_BASE}
+	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
+.endfor
 .for docfile in ${PORTDOC_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/doc/${docfile} ${DOCSDIR}
 .endfor
