@@ -17,6 +17,9 @@ MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
 
+ONLY_FOR_ARCHS=	i386
+STRIP=		#empty
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mkvcdfs ${WRKSRC}/vcdmplex ${PREFIX}/bin
 .ifndef NOPORTDOCS
