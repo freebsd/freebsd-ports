@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	sol
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	games
 MASTER_SITES=	http://shh.thathost.com/pub-unix/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	edwin@mavetju.org
 
 LIB_DEPENDS=	shhopt.1:${PORTSDIR}/devel/libshhopt \
 		shhmsg.1:${PORTSDIR}/devel/libshhmsg \
@@ -22,6 +22,9 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 
 MAN6=		sol.6
+
+pre-build:
+	cd ${WRKSRC} && ${GMAKE} depend
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sol ${PREFIX}/bin
