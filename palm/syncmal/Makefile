@@ -19,6 +19,8 @@ BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/palm/jpilot:patch \
 		${NONEXISTENT}:${PORTSDIR}/palm/malsync:patch
 RUN_DEPENDS=	${PREFIX}/bin/jpilot:${PORTSDIR}/palm/jpilot
 
+BROKEN=		Configure fails
+
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ENV=	GTK_CONFIG=${X11BASE}/bin/gtk12-config
