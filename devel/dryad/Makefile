@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	unstable/sources/dryad
 
 MAINTAINER=	ade@FreeBSD.org
 
+BROKEN=		"Requires devel/gnomedebug, which is broken"
+
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 		glade.4:${PORTSDIR}/devel/libglade \
 		oaf.0:${PORTSDIR}/devel/oaf \
