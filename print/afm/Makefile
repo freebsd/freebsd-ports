@@ -8,7 +8,7 @@
 PORTNAME=	afm
 PORTVERSION=	1.0
 CATEGORIES=	print
-MASTER_SITES=	ftp://sgi.com/sgi/fax/source/
+MASTER_SITES=	ftp://ftp.sgi.com/sgi/fax/source/
 DISTNAME=	afm
 EXTRACT_SUFX=   -tar.Z
 
