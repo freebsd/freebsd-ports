@@ -1,7 +1,6 @@
 bin/bygfoot
 share/bygfoot/support_files/bygfoot_icon.png
 share/bygfoot/support_files/bygfoot_team_editor_icon.png
-share/bygfoot/support_files/bygfoot-update-gui
 share/bygfoot/support_files/fin_stad.png
 share/bygfoot/support_files/fire_player.png
 share/bygfoot/support_files/flag_br.png
@@ -32,6 +31,12 @@ share/bygfoot/support_files/text_files/help
 share/bygfoot/support_files/text_files/player_names
 share/bygfoot/support_files/text_files/teams
 share/bygfoot/support_files/transfers.png
+share/locale/de/LC_MESSAGES/bygfoot.mo
+share/locale/fr/LC_MESSAGES/bygfoot.mo
+share/locale/hu/LC_MESSAGES/bygfoot.mo
+share/locale/pt_BR/LC_MESSAGES/bygfoot.mo
+share/locale/ro/LC_MESSAGES/bygfoot.mo
+share/locale/ru/LC_MESSAGES/bygfoot.mo
 @dirrm share/bygfoot/support_files/text_files
 @dirrm share/bygfoot/support_files
 @dirrm share/bygfoot
