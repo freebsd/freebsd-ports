@@ -32,6 +32,9 @@ bin/bttrack.py
 %%PYTHON_SITELIBDIR%%/BitTornado/BT1/FileSelector.py
 %%PYTHON_SITELIBDIR%%/BitTornado/BT1/FileSelector.pyc
 %%PYTHON_SITELIBDIR%%/BitTornado/BT1/FileSelector.pyo
+%%PYTHON_SITELIBDIR%%/BitTornado/BT1/Filter.py
+%%PYTHON_SITELIBDIR%%/BitTornado/BT1/Filter.pyc
+%%PYTHON_SITELIBDIR%%/BitTornado/BT1/Filter.pyo
 %%PYTHON_SITELIBDIR%%/BitTornado/BT1/HTTPDownloader.py
 %%PYTHON_SITELIBDIR%%/BitTornado/BT1/HTTPDownloader.pyc
 %%PYTHON_SITELIBDIR%%/BitTornado/BT1/HTTPDownloader.pyo
@@ -107,12 +110,12 @@ bin/bttrack.py
 %%PYTHON_SITELIBDIR%%/BitTornado/RawServer.py
 %%PYTHON_SITELIBDIR%%/BitTornado/RawServer.pyc
 %%PYTHON_SITELIBDIR%%/BitTornado/RawServer.pyo
-%%PYTHON_SITELIBDIR%%/BitTornado/SocketHandler.py
-%%PYTHON_SITELIBDIR%%/BitTornado/SocketHandler.pyc
-%%PYTHON_SITELIBDIR%%/BitTornado/SocketHandler.pyo
 %%PYTHON_SITELIBDIR%%/BitTornado/ServerPortHandler.py
 %%PYTHON_SITELIBDIR%%/BitTornado/ServerPortHandler.pyc
 %%PYTHON_SITELIBDIR%%/BitTornado/ServerPortHandler.pyo
+%%PYTHON_SITELIBDIR%%/BitTornado/SocketHandler.py
+%%PYTHON_SITELIBDIR%%/BitTornado/SocketHandler.pyc
+%%PYTHON_SITELIBDIR%%/BitTornado/SocketHandler.pyo
 %%PYTHON_SITELIBDIR%%/BitTornado/__init__.py
 %%PYTHON_SITELIBDIR%%/BitTornado/__init__.pyc
 %%PYTHON_SITELIBDIR%%/BitTornado/__init__.pyo
@@ -128,12 +131,15 @@ bin/bttrack.py
 %%PYTHON_SITELIBDIR%%/BitTornado/download_bt1.py
 %%PYTHON_SITELIBDIR%%/BitTornado/download_bt1.pyc
 %%PYTHON_SITELIBDIR%%/BitTornado/download_bt1.pyo
-%%PYTHON_SITELIBDIR%%/BitTornado/launchmanycore.py
-%%PYTHON_SITELIBDIR%%/BitTornado/launchmanycore.pyc
-%%PYTHON_SITELIBDIR%%/BitTornado/launchmanycore.pyo
 %%PYTHON_SITELIBDIR%%/BitTornado/inifile.py
 %%PYTHON_SITELIBDIR%%/BitTornado/inifile.pyc
 %%PYTHON_SITELIBDIR%%/BitTornado/inifile.pyo
+%%PYTHON_SITELIBDIR%%/BitTornado/iprangeparse.py
+%%PYTHON_SITELIBDIR%%/BitTornado/iprangeparse.pyc
+%%PYTHON_SITELIBDIR%%/BitTornado/iprangeparse.pyo
+%%PYTHON_SITELIBDIR%%/BitTornado/launchmanycore.py
+%%PYTHON_SITELIBDIR%%/BitTornado/launchmanycore.pyc
+%%PYTHON_SITELIBDIR%%/BitTornado/launchmanycore.pyo
 %%PYTHON_SITELIBDIR%%/BitTornado/natpunch.py
 %%PYTHON_SITELIBDIR%%/BitTornado/natpunch.pyc
 %%PYTHON_SITELIBDIR%%/BitTornado/natpunch.pyo
@@ -152,21 +158,24 @@ bin/bttrack.py
 %%PYTHON_SITELIBDIR%%/BitTornado/subnetparse.py
 %%PYTHON_SITELIBDIR%%/BitTornado/subnetparse.pyc
 %%PYTHON_SITELIBDIR%%/BitTornado/subnetparse.pyo
+%%PYTHON_SITELIBDIR%%/BitTornado/torrentlistparse.py
+%%PYTHON_SITELIBDIR%%/BitTornado/torrentlistparse.pyc
+%%PYTHON_SITELIBDIR%%/BitTornado/torrentlistparse.pyo
 %%PYTHON_SITELIBDIR%%/BitTornado/zurllib.py
 %%PYTHON_SITELIBDIR%%/BitTornado/zurllib.pyc
 %%PYTHON_SITELIBDIR%%/BitTornado/zurllib.pyo
 %%DATADIR%%/alloc.gif
-%%DATADIR%%/black1.ico
 %%DATADIR%%/black.ico
+%%DATADIR%%/black1.ico
 %%DATADIR%%/blue.ico
-%%DATADIR%%/green1.ico
 %%DATADIR%%/green.ico
+%%DATADIR%%/green1.ico
 %%DATADIR%%/icon_bt.ico
 %%DATADIR%%/icon_done.ico
 %%DATADIR%%/red.ico
 %%DATADIR%%/white.ico
-%%DATADIR%%/yellow1.ico
 %%DATADIR%%/yellow.ico
+%%DATADIR%%/yellow1.ico
 %%PORTDOCS%%%%DOCSDIR%%/BUILD.windows.txt
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.txt
 %%PORTDOCS%%%%DOCSDIR%%/IMPORTANT-multitracker-readme.txt
@@ -178,9 +187,9 @@ bin/bttrack.py
 %%PORTDOCS%%%%DOCSDIR%%/multitracker-spec.txt
 %%PORTDOCS%%%%DOCSDIR%%/multitracker_README.txt
 %%PORTDOCS%%%%DOCSDIR%%/webseed-spec.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%%%EXAMPLESDIR%%/bittornado.sh.sample
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/BitTornado/BT1
 @dirrm %%PYTHON_SITELIBDIR%%/BitTornado
-@dirrm %%DATADIR%%
