@@ -1,32 +1,29 @@
-# New ports collection makefile for:	IrcII-EPIC Client
-# Version required:	2.8.2-EPIC3.004
-# Date created:		19 June 1997
-# Whom:			Matthew Hunt <mph@pobox.com>
+# New ports collection makefile for: 	epic-current
+# Version required:	4pre2.001-NR8
+# Date created:		11 November 1998
+# Whom:			Ben Hutchinson <benhutch@xfiles.org.uk>
 #
-# $Id: Makefile,v 1.4 1998/11/09 21:10:25 mph Exp $
+# $Id$
 #
 
-DISTNAME=	ircii2.8.2-EPIC3.004
-PKGNAME=	ircii-epic-2.8.2.3.004
+DISTNAME=	ircii-EPIC4pre2.001-NR8
+PKGNAME=	epic-4.pre2.001.nr8
 CATEGORIES=	net
-MASTER_SITES=	http://www.min.net/~douglas/ircii/
-DISTFILES=	ircii2.8.2-EPIC3.004.tar.gz ircii2.8.2-EPIC3.help.tar.gz
+MASTER_SITES=	ftp://ftp.epicsol.org/pub/epic/ \
+		ftp://ftp.acronet.net/pub/ircii/
+DISTFILES=	epic4pre2.001-NR8.tar.gz epic4pre2-help.tar.gz
 
-MAINTAINER=	mph@freebsd.org
+MAINTAINER=	benhutch@xfiles.org.uk
 
-BROKEN=		Awaiting upgrade to epic4
-
-EXTRACT_ONLY=	ircii2.8.2-EPIC3.004.tar.gz
+EXTRACT_ONLY=	epic4pre2.001-NR8.tar.gz
 GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/ircii-EPIC3.004
+WRKSRC=		${WRKDIR}/ircii-EPIC4pre2.001-NR8
 
 do-install:
-		(cd ${WRKSRC} && make INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-			INSTALL_DATA="${INSTALL_DATA}" install)
+		( cd ${WRKSRC} && make INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+		INSTALL_DATA="${INSTALL_DATA}" ${INSTALL} )
 
 post-install:
-		(cd $(PREFIX)/lib/irc && tar xzf $(DISTDIR)/ircii2.8.2-EPIC3.help.tar.gz)
-		# Distfile has wrong permissions for...
-		chmod 644 $(PREFIX)/lib/irc/help/ON/SILENCE
+		( cd ${PREFIX}/lib/irc && tar zxf ${DISTDIR}/epic4pre2-help.tar.gz)
 
 .include <bsd.port.mk>
