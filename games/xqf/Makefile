@@ -6,15 +6,18 @@
 #
 
 PORTNAME=	xqf
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.9
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.linuxgames.com/xqf/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	steve@farrell.org
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	qstat:${PORTSDIR}/games/qstat
 
-USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 USE_GTK=	yes
+
+MAN6=		xqf.6
 
 .include <bsd.port.mk>
