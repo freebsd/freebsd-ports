@@ -8,7 +8,10 @@
 PORTNAME=	its
 PORTVERSION=	1.0
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://ftp.usefulprojects.com/pub/FreeBSD/ports/distfiles/
+MASTER_SITES=	http://filbert.tubas.net/~kstailey/ITS/ \
+		http://free.babolo.ru/src/ \
+		http://dl.droso.net/FreeBSD/distfiles/
+
 DISTNAME=	PI-ITS-RP06.0-dbd9
 EXTRACT_SUFX=	.bz2
 EXTRACT_ONLY=	# none
