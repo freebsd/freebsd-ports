@@ -1,16 +1,24 @@
---- Makefile.in.orig	Mon Apr  5 02:03:53 2004
-+++ Makefile.in	Tue Apr  6 10:53:31 2004
-@@ -633,13 +633,7 @@
+--- Makefile.in.orig	Sun Aug  8 14:40:15 2004
++++ Makefile.in	Sun Aug  8 18:16:44 2004
+@@ -633,21 +633,7 @@
  # lets schedule the perl stuff for installation
  # the special call to install-sh is because the -d switch is not portable
  # mac os X has its perl module in bundles so it seems
 -install-data-local:
--	$(top_srcdir)/config/mkinstalldirs $(DESTDIR)$(prefix)/lib/perl/auto/RRDs
--	$(INSTALL) -m 644 $(top_srcdir)/perl-piped/RRDp.pm $(DESTDIR)$(prefix)/lib/perl
--	$(INSTALL) -m 644 $(top_srcdir)/perl-shared/RRDs.pm $(DESTDIR)$(prefix)/lib/perl
--	$(INSTALL) -m 644 $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.bs $(DESTDIR)$(prefix)/lib/perl/auto/RRDs
--	test -f $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.@SO_EXT@  && $(INSTALL) -m 755 $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.@SO_EXT@ $(DESTDIR)$(prefix)/lib/perl/auto/RRDs || true
--	test -f $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.bundle  && $(INSTALL) -m 755 $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.bundle $(DESTDIR)$(prefix)/lib/perl/auto/RRDs || true
+-	@if test "x$(PERL)" != "xno"; then \
+-	  echo "$(top_srcdir)/config/mkinstalldirs $(DESTDIR)$(prefix)/lib/perl/auto/RRDs"; \
+-	  $(top_srcdir)/config/mkinstalldirs $(DESTDIR)$(prefix)/lib/perl/auto/RRDs; \
+-	  echo "$(INSTALL) -m 644 $(top_srcdir)/perl-piped/RRDp.pm $(DESTDIR)$(prefix)/lib/perl"; \
+-	  $(INSTALL) -m 644 $(top_srcdir)/perl-piped/RRDp.pm $(DESTDIR)$(prefix)/lib/perl; \
+-	  echo "$(INSTALL) -m 644 $(top_srcdir)/perl-shared/RRDs.pm $(DESTDIR)$(prefix)/lib/perl"; \
+-	  $(INSTALL) -m 644 $(top_srcdir)/perl-shared/RRDs.pm $(DESTDIR)$(prefix)/lib/perl; \
+-	  echo "$(INSTALL) -m 644 $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.bs $(DESTDIR)$(prefix)/lib/perl/auto/RRDs"; \
+-	  $(INSTALL) -m 644 $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.bs $(DESTDIR)$(prefix)/lib/perl/auto/RRDs; \
+-	  echo "test -f $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.@SO_EXT@  && $(INSTALL) -m 755 $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.@SO_EXT@ $(DESTDIR)$(prefix)/lib/perl/auto/RRDs || true"; \
+-	  test -f $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.@SO_EXT@  && $(INSTALL) -m 755 $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.@SO_EXT@ $(DESTDIR)$(prefix)/lib/perl/auto/RRDs || true; \
+-	  echo "test -f $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.bundle  && $(INSTALL) -m 755 $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.bundle $(DESTDIR)$(prefix)/lib/perl/auto/RRDs|| true"; \
+-	  test -f $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.bundle  && $(INSTALL) -m 755 $(top_builddir)/perl-shared/blib/arch/auto/RRDs/RRDs.bundle $(DESTDIR)$(prefix)/lib/perl/auto/RRDs|| true; \
+-	fi
 +install-data-local: site-perl-inst
  
  # rules for building the perl module
