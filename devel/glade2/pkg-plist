@@ -3,6 +3,7 @@ share/gnome/applications/glade-2.desktop
 share/gnome/glade-2/gtk/autogen.sh
 share/gnome/help/glade-2/C/figures/edit-menu.png
 share/gnome/help/glade-2/C/figures/file-menu.png
+share/gnome/help/glade-2/C/figures/glade-windows.png
 share/gnome/help/glade-2/C/figures/grid-options.png
 share/gnome/help/glade-2/C/figures/help-menu.png
 share/gnome/help/glade-2/C/figures/menu.png
@@ -62,6 +63,7 @@ share/locale/pt_BR/LC_MESSAGES/glade-2.0.mo
 share/locale/ro/LC_MESSAGES/glade-2.0.mo
 share/locale/ru/LC_MESSAGES/glade-2.0.mo
 share/locale/sk/LC_MESSAGES/glade-2.0.mo
+share/locale/sq/LC_MESSAGES/glade-2.0.mo
 share/locale/sr/LC_MESSAGES/glade-2.0.mo
 share/locale/sr@Latn/LC_MESSAGES/glade-2.0.mo
 share/locale/sv/LC_MESSAGES/glade-2.0.mo
