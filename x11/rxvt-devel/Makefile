@@ -23,7 +23,6 @@ MAINTAINER=	lioux@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-utmp --enable-wtmp --enable-languages \
 		--with-xpm --enable-xpm-background --enable-transparency \
 		--enable-shared

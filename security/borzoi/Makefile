@@ -18,7 +18,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libntl.a:${PORTSDIR}/math/ntl
 RUN_DEPENDS=	${LOCALBASE}/lib/libntl.a:${PORTSDIR}/math/ntl
 
 USE_LIBTOOL=	yes
-GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 post-patch:

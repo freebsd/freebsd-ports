@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 
 USE_OPENSSL=	yes
 USE_LIBTOOL=	yes
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/libfreenet
 
 USE_GMAKE=	yes

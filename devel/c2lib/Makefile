@@ -13,7 +13,6 @@ MASTER_SITES=	http://www.annexia.org/freeware/c2lib/
 
 MAINTAINER=	ports@FreeBSD.org
 
-GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes

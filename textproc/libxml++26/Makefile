@@ -17,7 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_LIBTOOL=	yes
-GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 
 USE_GMAKE=	yes

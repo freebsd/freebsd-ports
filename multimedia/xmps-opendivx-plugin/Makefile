@@ -17,7 +17,6 @@ LIB_DEPENDS=	divxdecore.0:${PORTSDIR}/graphics/libdivxdecore \
 		intl.1:${PORTSDIR}/devel/gettext
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.0.2
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_GTK=	yes

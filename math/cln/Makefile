@@ -16,7 +16,6 @@ MASTER_SITES=	ftp://ftp.ilog.fr/pub/Users/haible/gnu/ \
 MAINTAINER=	ijliao@FreeBSD.org
 
 USE_LIBTOOL=	yes
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/cln --infodir=${PREFIX}/info \
 		--mandir=${PREFIX}/man
 

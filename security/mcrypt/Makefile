@@ -23,7 +23,6 @@ LIB_DEPENDS=	mcrypt.6:${PORTSDIR}/security/libmcrypt/ \
 post-patch:
 	${RM} -f ${WRKSRC}/configure
 
-GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--enable-static --with-catgets
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \

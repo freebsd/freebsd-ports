@@ -17,7 +17,6 @@ MAINTAINER=	ijliao@FreeBSD.org
 LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml
 
 USE_LIBTOOL=	yes
-GNU_CONFIGURE=	yes
 
 XML_CONFIG=	${LOCALBASE}/bin/xml-config
 USE_GMAKE=	yes

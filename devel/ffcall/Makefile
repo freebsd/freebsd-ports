@@ -12,7 +12,6 @@ MASTER_SITES=  ftp://ftp.santafe.edu/pub/gnu/
 
 MAINTAINER=    ports@FreeBSD.org
 
-GNU_CONFIGURE= yes
 USE_GMAKE=     yes
 USE_LIBTOOL=   yes
 INSTALLS_SHLIB=        yes

@@ -20,7 +20,6 @@ LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif
 
 USE_LIBTOOL=	yes
-GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--enable-shared --disable-trace

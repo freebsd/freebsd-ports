@@ -19,7 +19,6 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 USE_LIBTOOL=	yes
 USE_AUTOMAKE=	yes
 USE_AUTOCONF=	yes
-GNU_CONFIGURE=	yes
 
 USE_GMAKE=	yes
 

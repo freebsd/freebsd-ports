@@ -17,7 +17,6 @@ MAINTAINER=	pbecke@javagear.com
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=arm-aout
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	configure bfd/configure binutils/configure etc/configure \

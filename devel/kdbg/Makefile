@@ -15,7 +15,6 @@ MAINTAINER=	jedgar@FreeBSD.org
 
 USE_LIBTOOL=	yes
 USE_KDEBASE_VER=2
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-kde-version=2
 
 .include <bsd.port.mk>
