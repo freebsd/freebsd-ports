@@ -8,8 +8,9 @@
 PORTNAME=	frotz
 PORTVERSION=	2.41
 CATEGORIES=	games
-MASTER_SITES=	http://www.cs.csubak.edu/~dgriffi/frotz/files/ \
-		ftp://ftp.gmd.de/if-archive/infocom/interpreters/frotz/
+MASTER_SITES=	ftp://ftp.gmd.de/if-archive/infocom/interpreters/frotz/ \
+		http://wuarchive.wustl.edu/doc/misc/if-archive/infocom/interpreters/frotz/ \
+		http://www.ifarchive.org/if-archive/infocom/interpreters/frotz/
 
 MAINTAINER=	ports@FreeBSD.org
 
