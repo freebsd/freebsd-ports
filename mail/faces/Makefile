@@ -45,6 +45,10 @@ WITH_AUDIO?=	rplay
 .endif
 .endif
 
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+.endif
+
 .if ${WITH_AUDIO} == "nas"
 CONFIGURE_ARGS+=	--enable-audio --with-audio-cmd=${X11BASE}/bin/auplay
 RUN_DEPENDS=	auplay:${PORTSDIR}/audio/nas
