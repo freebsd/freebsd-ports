@@ -5,12 +5,14 @@ share/java/xt/copying.txt
 share/java/xt/demo/date.xsl
 share/java/xt/demo/multiout.xsl
 share/java/xt/demo/nxml.xsl
-share/java/xt/demo/slides.xsl
-share/java/xt/demo/split.xsl
-share/java/xt/demo/textfile.xsl
+share/java/xt/demo/out1.xml
+share/java/xt/demo/out2.xml
 share/java/xt/demo/slides.xml
+share/java/xt/demo/slides.xsl
 share/java/xt/demo/split.xml
+share/java/xt/demo/split.xsl
 share/java/xt/demo/textfile.xml
+share/java/xt/demo/textfile.xsl
 share/java/xt/xt.htm
 @dirrm share/java/xt/demo
 @dirrm share/java/xt
