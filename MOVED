@@ -757,6 +757,8 @@ deskutils/libmrproject|deskutils/planner|2004-01-16|Project renamed
 net/isc-dhcp3||2004-01-18|Split in four partial slave ports
 www/mozilla-headers||2004-01-18|Headers are now installed as part of the main mozilla port
 www/mozilla-headers-devel||2004-01-18|Headers are now installed as part of the main mozilla port
+mail/MailScanner|mail/mailscanner|2004-01-18|renamed to lowercase directory name
+mail/MailScanner-devel|mail/mailscanner-devel|2004-01-18|renamed to lowercase directory name
 misc/sh-utils|sysutils/coreutils|2004-01-21|Merged into sysutils/coreutils port
 sysutils/fileutils|sysutils/coreutils|2004-01-21|Merged into sysutils/coreutils port
 textproc/textutils|sysutils/coreutils|2004-01-21|Merged into sysutils/coreutils port
