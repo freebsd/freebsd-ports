@@ -76,6 +76,7 @@
     SUBDIR += stat
     SUBDIR += stmpclean
     SUBDIR += su2
+    SUBDIR += symlinks
     SUBDIR += syslog-ng
     SUBDIR += tcplist
     SUBDIR += tua
