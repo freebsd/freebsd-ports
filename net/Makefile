@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.143 1998/02/25 01:26:08 steve Exp $
+# $Id: Makefile,v 1.144 1998/02/26 03:01:48 msmith Exp $
 #
 
     SUBDIR += archie
@@ -20,6 +20,7 @@
     SUBDIR += dgd-net
     SUBDIR += dict
     SUBDIR += dip
+    SUBDIR += dnswalk
     SUBDIR += echoping
     SUBDIR += fping
     SUBDIR += freewais-sf
