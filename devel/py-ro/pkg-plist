@@ -80,9 +80,6 @@ bin/xnsc
 %%PYTHON_SITELIBDIR%%/Pyro/xnsc.py
 %%PYTHON_SITELIBDIR%%/Pyro/xnsc.pyc
 %%PYTHON_SITELIBDIR%%/Pyro/xnsc.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/Pyro/ext
-@dirrm %%PYTHON_SITELIBDIR%%/Pyro/EventService
-@dirrm %%PYTHON_SITELIBDIR%%/Pyro
 %%PORTDOCS%%%%DOCSDIR%%/1-intro.html
 %%PORTDOCS%%%%DOCSDIR%%/10-errors.html
 %%PORTDOCS%%%%DOCSDIR%%/11-implementation.html
@@ -187,6 +184,8 @@ bin/xnsc
 %%PORTDOCS%%%%EXAMPLESDIR%%/factory/client.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/factory/factory.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/factory/server.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/filetransfer/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/filetransfer/server.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/hugetransfer/Readme.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/hugetransfer/client.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/hugetransfer/server.py
@@ -218,6 +217,12 @@ bin/xnsc
 %%PORTDOCS%%%%EXAMPLESDIR%%/quickstart/object.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/quickstart/pyrorun
 %%PORTDOCS%%%%EXAMPLESDIR%%/quickstart/server.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/rserve/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/rserve/example-a.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/rserve/example-b.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/rserve/exlib.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/rserve/rserve-broker.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/rserve/rserve.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/simple/Readme.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/simple/client.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/simple/server.py
@@ -227,6 +232,17 @@ bin/xnsc
 %%PORTDOCS%%%%EXAMPLESDIR%%/ssl/certs/client.pem
 %%PORTDOCS%%%%EXAMPLESDIR%%/ssl/certs/server.pem
 %%PORTDOCS%%%%EXAMPLESDIR%%/ssl/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/demoCA/cacert.pem
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/demoCA/index.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/demoCA/index.txt.old
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/demoCA/newcerts/01.pem
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/demoCA/newcerts/02.pem
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/demoCA/private/cakey.pem
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/demoCA/serial
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/demoCA/serial.old
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/newcert.pem
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/newkey.pem
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl/newcerts/newreq.pem
 %%PORTDOCS%%%%EXAMPLESDIR%%/ssl/server.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/stockquotes/Client.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/stockquotes/MClient.py
@@ -238,11 +254,21 @@ bin/xnsc
 %%PORTDOCS%%%%EXAMPLESDIR%%/stresstest/producer.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/testclient.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/testserver.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/user_passwd_auth/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/user_passwd_auth/client.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/user_passwd_auth/connvalidator.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/user_passwd_auth/server.py
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/user_passwd_auth
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/stresstest
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/stockquotes
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ssl/newcerts/demoCA/private
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ssl/newcerts/demoCA/newcerts
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ssl/newcerts/demoCA
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ssl/newcerts
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ssl/certs
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ssl
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/simple
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rserve
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/quickstart-noNS
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/quickstart
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/noNS
@@ -252,6 +278,7 @@ bin/xnsc
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/logging
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/inheritance
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/hugetransfer
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/filetransfer
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/factory
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/exceptions
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/denyhosts
@@ -274,3 +301,6 @@ bin/xnsc
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/AllInOne
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/Pyro/ext
+@dirrm %%PYTHON_SITELIBDIR%%/Pyro/EventService
+@dirrm %%PYTHON_SITELIBDIR%%/Pyro
