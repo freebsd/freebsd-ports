@@ -7,6 +7,7 @@
 
 PORTNAME=	db
 PORTVERSION=	1.11
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.mavetju.org/download/
 
