@@ -23,7 +23,7 @@ DISTFILES+=	changes.txt commands.txt samples.txt
 
 NO_WRKSUBDIR=	YES
 
-DIST_SUBDIR=	${PORTNAME}
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 EXTRACT_AFTER_ARGS=	> ${PORTNAME}.c
 
 do-build:
