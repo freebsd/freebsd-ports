@@ -51,8 +51,8 @@ IGNORE=		"Unknown apache version"
 
 .if !defined(PORT_IS_SERVER)
 .if exists(${APXS})
-APXS_PREFIX!=	${APXS} -q prefix 2> /dev/null || true
-.   if defined(APXS_PREFIX)
+APXS_PREFIX!=	${APXS} -q prefix 2> /dev/null || echo NULL
+.   if ${APXS_PREFIX} == NULL
 IGNORE=	: Your apache does not support DSO modules
 .   endif
 .   if defined(AP_GENPLIST) && ${APXS_PREFIX} != ${PREFIX}
