@@ -7,7 +7,7 @@
 
 PORTNAME=	libexo
 PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 xfce
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 DISTNAME=	exo-${PORTVERSION}
@@ -16,7 +16,7 @@ MAINTAINER=	matt@bsdfly.org
 COMMENT=	Terminal library, extensions to Xfce by os-cillation
 
 LIB_DEPENDS=	xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui \
-		dbus-1.0:${PORTSDIR}/devel/dbus
+		dbus-1.1:${PORTSDIR}/devel/dbus
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 

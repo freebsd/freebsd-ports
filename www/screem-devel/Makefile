@@ -7,7 +7,7 @@
 
 PORTNAME=	screem
 PORTVERSION=	0.12.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,7 @@ COMMENT=	Nice GNOME/GTK-based HTML editor
 
 LIB_DEPENDS+=	neon.24:${PORTSDIR}/www/neon \
 		croco-${CROCO_VERSION}.3:${PORTSDIR}/textproc/libcroco \
-		dbus-1.0:${PORTSDIR}/devel/dbus
+		dbus-1.1:${PORTSDIR}/devel/dbus
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
