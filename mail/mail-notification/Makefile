@@ -6,17 +6,16 @@
 #
 
 PORTNAME=		mail-notification
-PORTVERSION=		0.3.4
-PORTREVISION=	1
+PORTVERSION=		0.4.0
 CATEGORIES=		mail
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	mailnotify
 
 MAINTAINER=		jylefort@brutele.be
-COMMENT=		A mail notification for the GNOME 2.0 system tray
+COMMENT=		A mail notification for freedesktop.org-compliant system trays
 
 USE_X_PREFIX=		yes
-USE_GNOME=		gnomeprefix gnomehack libgnomeui
+USE_GNOME=		gnomeprefix gnomehack eel2
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
