@@ -15,25 +15,24 @@ DISTNAME=		${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=		will@FreeBSD.org
 
-LIB_DEPENDS=		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-			intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+
+GTK_CONFIG?=		${X11BASE}/bin/gtk12-config
+
+WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 USE_X_PREFIX=		yes
+MAKE_ENV=		GTK_CONFIG="${GTK_CONFIG}"
+ALL_TARGET=		IglooFTP
 
-WRKSRC=			${WRKDIR}/IglooFTP-0.6.1
-
-do-build:
-	@ cd ${WRKSRC}/src; ${MAKE}
-
-do-install:
-	@ cd ${WRKSRC}/src; ${MAKE} install
-	@ ${RM} ${PREFIX}/share/IglooFTP/docs/LICENSE~
+post-extract:
+	@${RM} ${WRKSRC}/../share/docs/LICENSE~
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/IglooFTP
+	@${MKDIR} ${PREFIX}/share/doc/IglooFTP
 .for file in AUTHORS BUGS COPYRIGHT THANKS TODO
-	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/IglooFTP
+	${INSTALL_DATA} ${WRKSRC}/../${file} ${PREFIX}/share/doc/IglooFTP
 .endfor
 .endif
 

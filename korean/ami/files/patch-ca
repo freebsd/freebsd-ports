@@ -1,10 +1,11 @@
---- hanjadic/Makefile~	Thu Jul  1 03:31:25 1999
-+++ hanjadic/Makefile	Tue Jul 13 21:16:53 1999
+--- hanjadic/Makefile.orig	Fri Nov 26 23:20:56 1999
++++ hanjadic/Makefile	Sat Jul  1 19:44:26 2000
 @@ -1,5 +1,5 @@
  
- CC = gcc
+-CC = gcc
 -CFLAGS = -g -O2 `glib-config --cflags`
-+CFLAGS = -g -O2 `glib12-config --cflags`
++CC ?= gcc
++CFLAGS += `$(GLIB_CONFIG) --cflags`
  hanja-hwp2ami: hanja-hwp2ami.o
 -	$(CC) -o hanja-hwp2ami hanja-hwp2ami.o `glib-config --libs`
-+	$(CC) -o hanja-hwp2ami hanja-hwp2ami.o `glib12-config --libs`
++	$(CC) -o hanja-hwp2ami hanja-hwp2ami.o `$(GLIB_CONFIG) --libs`

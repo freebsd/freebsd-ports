@@ -1,11 +1,15 @@
---- Makefile.orig	Mon Jun  5 12:39:44 2000
-+++ Makefile	Mon Jun  5 12:39:52 2000
-@@ -21,7 +21,7 @@
- CC = gcc
+--- Makefile.orig	Mon May 22 04:36:02 2000
++++ Makefile	Sat Jul  1 17:39:37 2000
+@@ -18,10 +18,10 @@
+ # along with spager; see the file COPYING.  If not, write to
+ # the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
+ 
+-CC = gcc
++CC ?= gcc
  
  spager: spager.c 
 -	$(CC) -O6 -Wall `gtk-config --cflags`  spager.c -o spager `gtk-config --libs`
-+	$(CC) -O6 -Wall `gtk12-config --cflags`  spager.c -o spager `gtk12-config --libs`
++	$(CC) $(CFLAGS) `$(GTK_CONFIG) --cflags`  spager.c -o spager `$(GTK_CONFIG) --libs`
  
  clean: 
  	rm -f *.o spager

@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Jul 24 15:33:08 1999
-+++ Makefile	Sun Sep 19 13:48:47 1999
+--- Makefile.orig	Sun Jul 25 05:33:08 1999
++++ Makefile	Sat Jul  1 17:57:20 2000
 @@ -2,14 +2,14 @@
  bindir		= $(prefix)/bin
  
@@ -10,23 +10,34 @@
  OBJS		= erwin.o erwinmenu.o erwinfunctions.o erwintoolbar.o \
  		  erwinnotebook.o erwindialogs.o erwintags.o gtkmessage.o
  INSTALL		= install
- DEBUG		= -g -DDEBUG
+-DEBUG		= -g -DDEBUG
++DEBUG		= # -g -DDEBUG
  
 -CFLAGS		= -DNAME=\"$(NAME)\" $(DEBUG) -Wall -O2 -m486 -fno-strength-reduce -malign-functions=4 -malign-jumps=4 -malign-loops=4 -ffast-math -fexpensive-optimizations
-+CFLAGS		= -DNAME=\"$(NAME)\" $(DEBUG) -Wall -O2 -fno-strength-reduce -ffast-math -fexpensive-optimizations
++CFLAGS		+= -DNAME=\"$(NAME)\" $(DEBUG) -fno-strength-reduce -ffast-math -fexpensive-optimizations
  
  all: license $(PROG)
  
-@@ -28,10 +28,10 @@
+@@ -17,8 +17,7 @@
+ 	strip $(PROG)
+ 
+ install:	strip
+-	$(INSTALL) -d $(bindir)
+-	$(INSTALL) -m 0755 $(PROG) $(bindir)
++	${BSD_INSTALL_PROGRAM} $(PROG) $(bindir)
+ 
+ uninstall:
+ 	
+@@ -28,10 +27,10 @@
  	rm -f $(PROG) $(OBJS) *.?~ core license.h
  
  $(PROG):	$(OBJS)
 -	$(CC) $(LDFLAGS) $(shell gtk-config --libs) -o $@ $(OBJS)
-+	$(CC) $(LDFLAGS) $(shell gtk12-config --libs) -o $@ $(OBJS)
++	$(CC) $(LDFLAGS) `$(GTK_CONFIG) --libs` -o $@ $(OBJS)
  
  %.o:		%.c
 -	$(CC) $(CFLAGS) $(shell gtk-config --cflags) -o $@ -c $<
-+	$(CC) $(CFLAGS) $(shell gtk12-config --cflags) -o $@ -c $<
++	$(CC) $(CFLAGS) `$(GTK_CONFIG) --cflags` -o $@ -c $<
  
  tar:	clean
  	cd ..; ln -s erwin $(NAME);tar cf - $(NAME)/* > $(NAME).tar;rm $(NAME);gzip -f $(NAME).tar

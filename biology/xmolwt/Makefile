@@ -1,6 +1,6 @@
-# New ports collection makefile for: xmolwt/gmolwt
-# Date created: 1999-08-30
-# Whom: Ryo MIYAMOTO <rmiya@cc.hirosaki-u.ac.jp>
+# New ports collection makefile for:	xmolwt/gmolwt
+# Date created:		1999-08-30
+# Whom:			Ryo MIYAMOTO <rmiya@cc.hirosaki-u.ac.jp>
 #
 # $FreeBSD$
 
@@ -13,25 +13,25 @@ MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
-USE_GMAKE=	yes
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-post-configure:
-	(cd ${WRKSRC}; ${CP} Makefile.gtk Makefile)
-
-pre-install:
-	(cd ${WRKSRC}; strip gmolwt)
-	${RM} -rf ${PREFIX}/share/doc/xmolwt
-	${MKDIR} ${PREFIX}/share/doc/xmolwt
+USE_GMAKE=	yes
+MAKEFILE=	Makefile.gtk
+MAKE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gmolwt ${PREFIX}/bin
-	(cd ${PREFIX}/bin; ln -s gmolwt molwt)
+	${LN} -sf gmolwt ${PREFIX}/bin/molwt
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/xmolwt
 	${INSTALL_DATA} ${WRKSRC}/Howtouse.* ${PREFIX}/share/doc/xmolwt
 	${INSTALL_DATA} ${WRKSRC}/Readme ${PREFIX}/share/doc/xmolwt
 	${INSTALL_DATA} ${WRKSRC}/Xmolwt ${PREFIX}/share/doc/xmolwt
 	${INSTALL_DATA} ${WRKSRC}/dot.gtkrc ${PREFIX}/share/doc/xmolwt
 	${INSTALL_DATA} ${WRKSRC}/*.html ${PREFIX}/share/doc/xmolwt
 	${INSTALL_DATA} ${WRKSRC}/*.gif ${PREFIX}/share/doc/xmolwt
+.endif
 
 .include <bsd.port.mk>

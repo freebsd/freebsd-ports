@@ -17,10 +17,10 @@ LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
-WRKSRC=		${WRKDIR}/gyroscope
-USE_X_PREFIX=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
-do-build:
-	@(cd ${WRKSRC} && ${MAKE})
+USE_X_PREFIX=	yes
+MAKE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
+ALL_TARGET=	# empty
 
 .include <bsd.port.mk>

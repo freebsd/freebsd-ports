@@ -1,4 +1,4 @@
---- src/main.c	Thu Apr 15 20:05:15 1999
+--- main.c	Thu Apr 15 20:05:15 1999
 +++ /home/andy/tmp/wrk/src/main.c	Mon May  3 13:42:28 1999
 @@ -20,6 +20,9 @@
  #include <stdlib.h>

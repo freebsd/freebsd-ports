@@ -17,14 +17,16 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	cjh@kr.freebsd.org
 
-LIB_DEPENDS=    gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 RUN_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz \
 		${X11BASE}/lib/X11/fonts/local/gulim12.pcf.gz:${PORTSDIR}/korean/baekmukfonts-bdf
+
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=  GLIB_CONFIG=${LOCALBASE}/bin/glib12-config \
-		GTK_CONFIG=${X11BASE}/bin/gtk12-config
+CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
+MAKE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 
 .include <bsd.port.mk>

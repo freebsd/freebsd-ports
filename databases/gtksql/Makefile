@@ -25,7 +25,10 @@ LIB_DEPENDS +=	mysqlclient.6:${PORTSDIR}/databases/mysql322-client
 LIB_DEPENDS +=	pq.2:${PORTSDIR}/databases/postgresql
 .endif
 
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+
 USE_X_PREFIX=	yes
+MAKE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 
 pre-patch:
 .if !defined(WITH_MYSQL) && !defined(WITH_PGSQL)
@@ -49,7 +52,7 @@ do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/gtksql ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${PREFIX}/share/doc/gtksql
-.for file in COPYING Changelog README
+.for file in Changelog README
 	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/gtksql
 .endfor
 .endif

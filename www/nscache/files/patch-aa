@@ -1,6 +1,6 @@
---- configure.in.orig	Sat Jan 15 09:40:55 2000
-+++ configure.in	Sun Mar  5 02:00:42 2000
-@@ -41,14 +41,14 @@
+--- configure.in.orig	Sun Jan 16 02:40:55 2000
++++ configure.in	Sat Jul  1 19:10:54 2000
+@@ -41,17 +41,11 @@
  
  AC_CHECK_LIB(c, gettext, CFLAGS="$CFLAGS -DHAVE_GETTEXT -DNLS_DIR=\"\\\"\$(prefix)/share/locale\\\"\"";MSUBDIRS="po", AC_CHECK_LIB(intl, gettext, LIBS="$LIBS -lintl";CFLAGS="$CFLAGS -DHAVE_GETTEXT -DNLS_DIR=\"\\\"\$(prefix)/share/locale\\\"\"";MSUBDIRS="po"))
  
@@ -10,12 +10,13 @@
  AC_CHECK_HEADER(db1/db.h, CFLAGS="$CFLAGS -DHAVE_DB1_H", AC_CHECK_HEADER(db.h, CFLAGS="$CFLAGS -DHAVE_DB_H"))
  
 -AC_CHECK_PROG(GTK_CONFIG, gtk-config, "yes", "no")
-+AC_CHECK_PROG(GTK_CONFIG, gtk12-config, "yes", "no")
- if eval "test x$GTK_CONFIG = xyes"; then
+-if eval "test x$GTK_CONFIG = xyes"; then
 -	CFLAGS="$CFLAGS `gtk-config --cflags`"
 -	LIBS="$LIBS `gtk-config --libs`"
-+	CFLAGS="$CFLAGS `gtk12-config --cflags`"
-+	LIBS="$LIBS `gtk12-config --libs`"
- else
- 	AC_MSG_ERROR("Unable to find \"gtk-config\" program")
- fi
+-else
+-	AC_MSG_ERROR("Unable to find \"gtk-config\" program")
+-fi
++AM_PATH_GTK(1.2.0, , AC_MSG_ERROR(GTK+ is not installed or badly configured on your system...))
+ 
+ AC_SUBST(CFLAGS)
+ AC_SUBST(LIBS)

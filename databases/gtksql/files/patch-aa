@@ -1,6 +1,10 @@
---- Makefile.orig	Mon Jul 26 19:30:44 1999
-+++ Makefile	Mon Jul 26 19:41:39 1999
-@@ -4,14 +4,14 @@
+--- Makefile.orig	Sat Jun  5 22:05:36 1999
++++ Makefile	Sat Jul  1 16:10:57 2000
+@@ -1,17 +1,17 @@
+ # Your favorite compilation options here :-)
+-MCFLAGS  = -Wall -O -g 
++#MCFLAGS  = -Wall -O -g 
+ LDFLAGS  =  -lcrypt
  
  # Comment out the variables for the databases that you do not want
  # Here, what you need for PostgreSQL
@@ -21,14 +25,27 @@
  
  # Nothing to change below this point...
  DBSQLIBS = $(PGSQLIBS) $(MYSQLIBS)
-@@ -24,8 +24,8 @@
+@@ -22,13 +22,13 @@
+           config.o mytoolbar.o
+ 
  OBJS    = $(MOBJS) $(DBSQLOBJS)
- CFLAGS  = $(MCFLAGS) $(DBSQLFLAGS)
+-CFLAGS  = $(MCFLAGS) $(DBSQLFLAGS)
++CFLAGS  += $(MCFLAGS) $(DBSQLFLAGS)
  
 -GTKLIBS     = `gtk-config --libs`
 -GTKCFLAGS   = `gtk-config --cflags`
-+GTKLIBS     = `gtk12-config --libs`
-+GTKCFLAGS   = `gtk12-config --cflags`
++GTKLIBS     = `$(GTK_CONFIG) --libs`
++GTKCFLAGS   = `$(GTK_CONFIG) --cflags`
  
  all: $(OBJS)
- 	gcc -o gtksql $(OBJS) $(DBSQLIBS) $(GTKLIBS) $(CFLAGS) $(LDFLAGS)
+-	gcc -o gtksql $(OBJS) $(DBSQLIBS) $(GTKLIBS) $(CFLAGS) $(LDFLAGS)
++	$(CC) -o gtksql $(OBJS) $(DBSQLIBS) $(GTKLIBS) $(CFLAGS) $(LDFLAGS)
+ 
+ clean:
+ 	rm -f *.o gtksql
+@@ -37,4 +37,4 @@
+ 	cp gtksql $(DESTDIR)usr/bin/
+ 
+ .c.o: 
+-	gcc $(CFLAGS) $(GTKCFLAGS) $(DBSQLCFLAGS) -c $*.c -o ./$*.o
++	$(CC) $(CFLAGS) $(GTKCFLAGS) $(DBSQLCFLAGS) -c $*.c -o ./$*.o

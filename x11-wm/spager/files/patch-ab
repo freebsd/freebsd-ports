@@ -5,8 +5,8 @@
  
  ;; This is the directory where the archive is untarred.
 -(setq spager-directory "/home/satyaki/spager")
-+(setq spager-directory "/usr/X11R6/share/spager")
-+(setq spager-bin-directory "/usr/X11R6/bin")
++(setq spager-directory "%%PREFIX%%/share/spager")
++(setq spager-bin-directory "%%PREFIX%%/bin")
  
  ;; I don't think you need to change anything under this line...
  (setq load-path (cons spager-directory load-path))

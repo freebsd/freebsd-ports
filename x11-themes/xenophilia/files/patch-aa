@@ -13,8 +13,8 @@
 -CFLAGS		= `gtk-config --cflags`
 -LIBS		= `gtk-config --libs`
 +CC		?= gcc
-+CFLAGS		+= `$(X11BASE)/bin/gtk12-config --cflags` -fPIC -DPIC
-+LIBS		+= `$(X11BASE)/bin/gtk12-config --libs`
++CFLAGS		+= `$(GTK_CONFIG) --cflags` -fPIC -DPIC
++LIBS		+= `$(GTK_CONFIG) --libs`
  
  #Use these for FreeBSD:
  #PREFIX		= `gtk12-config --prefix`

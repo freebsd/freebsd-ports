@@ -1,4 +1,4 @@
---- src/FTP.c	Thu Apr 15 20:05:13 1999
+--- FTP.c	Thu Apr 15 20:05:13 1999
 +++ /home/andy/tmp/wrk/src/FTP.c	Mon May  3 12:59:56 1999
 @@ -15,12 +15,12 @@
   */

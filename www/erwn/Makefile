@@ -19,9 +19,9 @@ GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+MAKE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 
 post-install:
-	@strip ${PREFIX}/bin/erwin
 .if !defined(NOPORTDOCS)
 	@${ECHO} "===>   Installing README in ${PREFIX}/share/doc/erwin"
 	@${MKDIR} ${PREFIX}/share/doc/erwin && ${CHMOD} a+rx ${PREFIX}/share/doc/erwin

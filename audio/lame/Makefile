@@ -28,6 +28,11 @@ MAKE_ENV=	WITHOUT_X11=${WITHOUT_X11}
 ALL_TARGET=	lame
 RESTRICTED=	Condition is not clear
 
+.if !defined(WITHOUT_X11)
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+MAKE_ENV+=	GTK_CONFIG="${GTK_CONFIG}"
+.endif
+
 MAN1=		lame.1
 
 do-install:

@@ -8,7 +8,7 @@
  
  gmixer: gmixer.c 
 -	$(CC) $(FLAGS) `gtk-config --cflags` `gtk-config --libs` gmixer.c -o gmixer
-+	$(CC) $(CFLAGS) `gtk12-config --cflags` `gtk12-config --libs` gmixer.c -o gmixer
++	$(CC) $(CFLAGS) `$(GTK_CONFIG) --cflags` `$(GTK_CONFIG) --libs` gmixer.c -o gmixer
  install: gmixer
  	install -s -m 755 -o 0 -g 0 gmixer /usr/X11R6/bin/
  	install -m 644 -o 0 -g 0 icons/gmixer.xpm /usr/share/pixmaps/

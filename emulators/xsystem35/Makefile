@@ -9,14 +9,18 @@ PORTNAME=	xsystem35
 PORTVERSION=	1.2.5.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.aist-nara.ac.jp/~masaki-c/private/unitbase/xsys35/down/
-DISTNAME=	xsystem35-1.2.5-1
+DISTNAME=	${PORTNAME}-1.2.5-1
 
 MAINTAINER=	k5@cheerful.com
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
-USE_IMAKE=	YES
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
+
+USE_IMAKE=	YES
+MAKE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 PKGMESSAGE=	${WRKSRC}/MESSAGE
 
 DOC_FILES=	BUGS ChangeLog FAQ GRFMT.TXT INSTALL MISCGAME.TXT README \
@@ -42,20 +46,18 @@ pre-configure:
 .endif
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/xsystem35 ${PREFIX}/bin
-	@${INSTALL_SCRIPT} ${WRKSRC}/../contrib/instgame ${PREFIX}/bin
-
-post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/xsystem35 ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/../contrib/instgame ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/ja/xsystem35
 	@(cd ${WRKSRC}/../doc;\
 		${INSTALL_MAN} ${DOC_FILES} ${PREFIX}/share/doc/ja/xsystem35)
+.endif
 	@${MKDIR} ${PREFIX}/share/examples/xsystem35
 	@${INSTALL_DATA} ${WRKSRC}/xsys35rc.sample ${PREFIX}/share/examples/xsystem35
 	@(cd ${WRKSRC}/../contrib; \
 		${INSTALL_DATA} ${EXAMPLES} ${PREFIX}/share/examples/xsystem35)
 	@${SED} -e s,PREFIX,${PREFIX}, ${PKGDIR}/MESSAGE > ${WRKSRC}/MESSAGE
 	@${CAT} ${WRKSRC}/MESSAGE
-.endif
 
 .include <bsd.port.post.mk>

@@ -17,12 +17,15 @@ MAINTAINER=	cjh@kr.freebsd.org
 
 LIB_DEPENDS=    gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 
+GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+
 USE_X_PREFIX=	YES
-GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
-CONFIGURE_ENV=	GLIB_CONFIG=${LOCALBASE}/bin/glib12-config \
-		GTK_CONFIG=${X11BASE}/bin/gtk12-config
-CONFIGURE_ARGS+= --with-hangul-keyboard=2
+GNU_CONFIGURE=	YES
+CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
+CONFIGURE_ARGS=	--with-hangul-keyboard=2
+MAKE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}"
 
 # gnome panel applet support
 .if defined(WITH_GNOME_APPLET)
@@ -33,15 +36,15 @@ CONFIGURE_ARGS+= --enable-gnome-applet
 
 post-build:
 	@cd ${WRKSRC}/hanjadic; \
-	${MAKE}
+	${MAKE_ENV} ${MAKE} ${MAKE_ARGS}
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hanjadic/hanja-hwp2ami ${PREFIX}/bin
 
 	# patch XLC_LOCALE for ko_KR.EUC(harmless)
-	if [ -f ${PREFIX}/lib/X11/locale/ko/XLC_LOCALE ]; then \
-		${MV} -f ${PREFIX}/lib/X11/locale/ko/XLC_LOCALE \
-			${PREFIX}/lib/X11/locale/ko/XLC_LOCALE.orig; \
+	if [ -f ${PREFIX}/lib/X11/locale/ko/XLC_LOCALE; then \
+	${MV} -f ${PREFIX}/lib/X11/locale/ko/XLC_LOCALE \
+		${PREFIX}/lib/X11/locale/ko/XLC_LOCALE.orig; \
 	fi
 	${INSTALL_DATA} ${FILESDIR}/XLC_LOCALE \
 		${PREFIX}/lib/X11/locale/ko/
@@ -50,7 +53,7 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/XLC_LOCALE \
 		${PREFIX}/share/doc/ami
 
-.for NAME in AUTHORS README NEWS COPYING ChangeLog
+.for NAME in AUTHORS README NEWS ChangeLog
 	${INSTALL_DATA} ${WRKSRC}/${NAME} \
 		${PREFIX}/share/doc/ami
 .endfor

@@ -16,8 +16,14 @@ MAINTAINER=	dom@myrddin.demon.co.uk
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+
 USE_X_PREFIX=	yes
+MAKE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 ALL_TARGET=	gxedit
+
+post-patch:
+	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/config.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gtk-shell ${PREFIX}/bin
@@ -29,10 +35,9 @@ do-install:
 .for i in popmail.scr traceroute.scr userinfo.scr www.scr
 	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/gxedit
 .endfor
-
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/gxedit/
-.for i in COPYING charmap.txt manual.ps manual.txt quickref.ps quickref.txt
+.for i in charmap.txt manual.ps manual.txt quickref.ps quickref.txt
 	${INSTALL_DATA} ${WRKSRC}/docs/$i ${PREFIX}/share/doc/gxedit/
 .endfor
 .endif

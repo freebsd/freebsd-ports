@@ -1,0 +1,19 @@
+--- Makefile.am.orig	Tue Jan 18 04:49:06 2000
++++ Makefile.am	Sat Jul  1 20:03:06 2000
+@@ -1,5 +1,7 @@
+ SUBDIRS = @MSUBDIRS@
+ 
++INCLUDES = $(GTK_CFLAGS)
++
+ bin_PROGRAMS = nscache
+ 
+ nscache_SOURCES = \
+@@ -12,6 +14,8 @@
+ 	indexdb.h \
+ 	nls.h \
+ 	setup.c
++        
++nscache_LDADD = $(GTK_LIBS)
+ 
+ nscache.pot: $(nscache_SOURCES)
+ 	xgettext --default-domain=nscache -n -E -o $@ $(nscache_SOURCES)
