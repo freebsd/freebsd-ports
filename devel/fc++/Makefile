@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	fc++
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cc.gatech.edu/~yannis/fc++/
 DISTNAME=	FC++.${PORTVERSION}
