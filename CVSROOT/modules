@@ -2768,6 +2768,7 @@ haproxy		ports/net/haproxy
 hapy		ports/devel/hapy
 harbour		ports/lang/harbour
 harvest		ports/www/harvest
+hashcash	ports/mail/hashcash
 hashish		ports/security/hashish
 hawk		ports/net/hawk
 hayes		ports/multimedia/hayes
