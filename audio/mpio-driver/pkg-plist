@@ -1,2 +1,0 @@
-etc/rc.d/mpio-driver.sh.sample
-@unexec rm -f %%MODDEST%%/modules/mpio.ko 2> /dev/null || true

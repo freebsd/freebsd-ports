@@ -1090,3 +1090,4 @@ security/avmailgate||2004-05-18|removed due to licensing concerns
 databases/postgresql-client|databases/postgresql7|2004-05-25|Remove the -client port because of dependencies problem
 deskutils/logjam2|deskutils/logjam|2004-05-26|GTK2 logjam is now default
 devel/camlp4||2004-05-27|removed, no longer works, no longer developed
+audio/mpio-driver||2004-05-31|no longer needed with mpiosh 0.7.1
