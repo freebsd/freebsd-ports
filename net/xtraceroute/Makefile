@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	xtraceroute
-PORTVERSION=	0.8.14
+PORTVERSION=	0.9.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.dtek.chalmers.se/~d3august/xt/dl/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILES}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
+BUILD_DEPENDS=	host:${PORTSDIR}/net/host
 LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea \
-		tiff.4:${PORTSDIR}/graphics/tiff
+		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
+RUN_DEPENDS=	host:${PORTSDIR}/net/host
 
 USE_X_PREFIX=	yes
 USE_MESA=	yes
