@@ -1,101 +1,69 @@
-*** makefile.orig	Mon Jun 22 05:43:44 1998
---- makefile	Wed Aug  1 12:04:24 2001
-***************
-*** 17,23 ****
-  .SUFFIXES: .html .html-bin .smd .cgi .pl .cgi .scm .cgi
-  
-  .html.html-bin:
-! 	chtml $< :o=$@ 
-  
-  .pl.cgi:
-  	echo "#!`which perl`" > $@
---- 17,23 ----
-  .SUFFIXES: .html .html-bin .smd .cgi .pl .cgi .scm .cgi
-  
-  .html.html-bin:
-! 	./chtml $< :o=$@ 
-  
-  .pl.cgi:
-  	echo "#!`which perl`" > $@
-***************
-*** 191,197 ****
-  
-  
-  pure_chtmlt.err: pure_chtmlt
-! 	pure_chtmlt 2> pure_chtmlt.err
-  
-  pure_next.err: pure_next.cgi
-  	(PATH_INFO=/homes.html-bin; export PATH_INFO; pure_next.cgi 2> pure_next.err)
---- 191,197 ----
-  
-  
-  pure_chtmlt.err: pure_chtmlt
-! 	./pure_chtmlt 2> pure_chtmlt.err
-  
-  pure_next.err: pure_next.cgi
-  	(PATH_INFO=/homes.html-bin; export PATH_INFO; pure_next.cgi 2> pure_next.err)
-***************
-*** 201,231 ****
-             chtml.scm chtml-cmp.scm
-  
-  chtml-cmp.c-bin: chtml-cmp.c
-! 	chtml chtml-cmp.c :o=chtml-cmp.c-bin
-  
-  idiom_test: all link.html-bin-bin link_html-bin-bin.c link_html-bin-bin.scm 
-! 	chtmlt link.html-bin-bin 
-  
-  link.html-bin-bin: link.html-bin link1.html-bin link2.html-bin
-! 	chtml -v03 :action=link link.html-bin link1.html-bin link2.html-bin
-  
-  
-  link_html-bin-bin.c: link.html-bin link1.html-bin link2.html-bin
-! 	chtml -v03 :action=link link.html-bin link1.html-bin link2.html-bin \
-                :o=link_html-bin-bin.c :p=c
-  
-  link_html-bin-bin.scm: link.html-bin link1.html-bin link2.html-bin
-! 	chtml -v03 :action=link link.html-bin link1.html-bin link2.html-bin \
-                :o=link_html-bin-bin.scm :p=read
-  
-  link.html-bin: link.html
-! 	chtml -v02 link.html
-  
-  link1.html-bin: link1.html
-! 	chtml -v02 link1.html
-  
-  link2.html-bin: link2.html
-! 	chtml -v02 link2.html
-  
-  # these targets are is of local use only.
-  
---- 201,231 ----
-             chtml.scm chtml-cmp.scm
-  
-  chtml-cmp.c-bin: chtml-cmp.c
-! 	./chtml chtml-cmp.c :o=chtml-cmp.c-bin
-  
-  idiom_test: all link.html-bin-bin link_html-bin-bin.c link_html-bin-bin.scm 
-! 	./chtmlt link.html-bin-bin 
-  
-  link.html-bin-bin: link.html-bin link1.html-bin link2.html-bin
-! 	./chtml -v03 :action=link link.html-bin link1.html-bin link2.html-bin
-  
-  
-  link_html-bin-bin.c: link.html-bin link1.html-bin link2.html-bin
-! 	./chtml -v03 :action=link link.html-bin link1.html-bin link2.html-bin \
-                :o=link_html-bin-bin.c :p=c
-  
-  link_html-bin-bin.scm: link.html-bin link1.html-bin link2.html-bin
-! 	./chtml -v03 :action=link link.html-bin link1.html-bin link2.html-bin \
-                :o=link_html-bin-bin.scm :p=read
-  
-  link.html-bin: link.html
-! 	./chtml -v02 link.html
-  
-  link1.html-bin: link1.html
-! 	./chtml -v02 link1.html
-  
-  link2.html-bin: link2.html
-! 	./chtml -v02 link2.html
-  
-  # these targets are is of local use only.
-  
+--- makefile.orig	Mon Jun 22 22:43:44 1998
++++ makefile	Tue Nov  5 13:07:32 2002
+@@ -17,7 +17,7 @@
+ .SUFFIXES: .html .html-bin .smd .cgi .pl .cgi .scm .cgi
+ 
+ .html.html-bin:
+-	chtml $< :o=$@ 
++	./chtml $< :o=$@ 
+ 
+ .pl.cgi:
+ 	echo "#!`which perl`" > $@
+@@ -106,7 +106,7 @@
+ 	-mkdir $(INSTALL_BINDIR)
+ 	-mkdir $(INSTALL_INCDIR)
+ 	-mkdir $(INSTALL_SIODDIR)
+-	-mkdir $(INSTALL_PERLDIR)
++	-mkdir -p $(INSTALL_PERLDIR)
+ 	cp -f chtml.1 $(INSTALL_MANDIR)
+ 	cp -f libchtml.a $(INSTALL_LIBDIR)
+ 	cp -f chtml $(INSTALL_BINDIR)
+@@ -191,7 +191,7 @@
+ 
+ 
+ pure_chtmlt.err: pure_chtmlt
+-	pure_chtmlt 2> pure_chtmlt.err
++	./pure_chtmlt 2> pure_chtmlt.err
+ 
+ pure_next.err: pure_next.cgi
+ 	(PATH_INFO=/homes.html-bin; export PATH_INFO; pure_next.cgi 2> pure_next.err)
+@@ -201,31 +201,31 @@
+            chtml.scm chtml-cmp.scm
+ 
+ chtml-cmp.c-bin: chtml-cmp.c
+-	chtml chtml-cmp.c :o=chtml-cmp.c-bin
++	./chtml chtml-cmp.c :o=chtml-cmp.c-bin
+ 
+ idiom_test: all link.html-bin-bin link_html-bin-bin.c link_html-bin-bin.scm 
+-	chtmlt link.html-bin-bin 
++	./chtmlt link.html-bin-bin 
+ 
+ link.html-bin-bin: link.html-bin link1.html-bin link2.html-bin
+-	chtml -v03 :action=link link.html-bin link1.html-bin link2.html-bin
++	./chtml -v03 :action=link link.html-bin link1.html-bin link2.html-bin
+ 
+ 
+ link_html-bin-bin.c: link.html-bin link1.html-bin link2.html-bin
+-	chtml -v03 :action=link link.html-bin link1.html-bin link2.html-bin \
++	./chtml -v03 :action=link link.html-bin link1.html-bin link2.html-bin \
+               :o=link_html-bin-bin.c :p=c
+ 
+ link_html-bin-bin.scm: link.html-bin link1.html-bin link2.html-bin
+-	chtml -v03 :action=link link.html-bin link1.html-bin link2.html-bin \
++	./chtml -v03 :action=link link.html-bin link1.html-bin link2.html-bin \
+               :o=link_html-bin-bin.scm :p=read
+ 
+ link.html-bin: link.html
+-	chtml -v02 link.html
++	./chtml -v02 link.html
+ 
+ link1.html-bin: link1.html
+-	chtml -v02 link1.html
++	./chtml -v02 link1.html
+ 
+ link2.html-bin: link2.html
+-	chtml -v02 link2.html
++	./chtml -v02 link2.html
+ 
+ # these targets are is of local use only.
+ 
