@@ -1,0 +1,4 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/Comma/.packlist
+%%SITE_PERL%%/Template/Plugin/Comma.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/Comma
+@unexec rmdir %D/%%SITE_PERL%%/Template/Plugin 2>/dev/null || true

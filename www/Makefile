@@ -387,6 +387,7 @@
     SUBDIR += p5-Sledge-Plugin-XSLT
     SUBDIR += p5-Sledge-SessionManager-CookieStore
     SUBDIR += p5-Sledge-Template-Expr
+    SUBDIR += p5-Template-Plugin-Comma
     SUBDIR += p5-Template-Toolkit
     SUBDIR += p5-URI-Sequin
     SUBDIR += p5-WWW-Automate
