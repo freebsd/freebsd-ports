@@ -1,6 +1,12 @@
 @comment $FreeBSD$
 bin/gtkwave
 bin/vcd2lxt
+include/gtkwave/format/data.h
+include/gtkwave/format/dictionary.h
+include/gtkwave/format/external.h
+include/gtkwave/format/format.h
+@dirrm include/gtkwave/format
+@dirrm include/gtkwave
 lib/gtkwave/reader_hhh.a
 lib/gtkwave/reader_hhh.la
 lib/gtkwave/reader_hhh.so
