@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Nov 18 12:27:35 1997
-+++ Makefile	Thu Dec  4 08:01:36 1997
+--- Makefile.orig	Wed Jan  7 14:03:22 1998
++++ Makefile	Mon Jan 19 20:50:24 1998
 @@ -1,5 +1,5 @@
 -CHINESE=0
 -TEDDIR=/usr/local/lib/Ted
@@ -30,18 +30,18 @@
 +	cwin.o filebrowse.o kwcomp.o cli_xcin.o
  
 -all:	ted ref ctags tedrc
-+all:	ted tedrc #ref ctags tedrc
++all:	ted tedrc #ref ctags
  ted:	$(OBJS)
  	$(CC) $(OBJS) -o $@ $(LDFLAGS) -lX11
  #	$(CC) $(OBJS) -o $@ $(LDFLAGS) -lX11 -lefence
-@@ -58,11 +58,14 @@
+@@ -58,12 +58,17 @@
  	$(CC) $(CFLAGS) ctags.c -o $@
  	strip $@
  install:
--	cp ted ref ctags /usr/local/bin
 +	install -c -s -o bin -g bin -m 0755 ted /usr/X11R6/bin
+ 	cp ted ref ctags /usr/local/bin
  	if [ ! -d $(TEDDIR) ]; then mkdir $(TEDDIR); fi
--	cp tedrc tedrc.vi tedrc.grep ted.help $(TEDDIR)
+-	cp tedrc tedrc.vi tedrc.grep ted.help ted.filevisit $(TEDDIR)
 -cli_xcin.o:
 -	ln -s ../big5-pack/xcin/cli_xcin.o .
 +	install -c -o bin -g bin -m 0444 tedrc $(TEDDIR)
@@ -51,5 +51,7 @@
 +#cli_xcin.o:
 +#	ln -s ../big5-pack/xcin/cli_xcin.o .
  clean:
++
  	rm -f $(OBJS) ted core *~ *_
  clb5:
+ 	rm -f x.o e.o m.o edln.o
