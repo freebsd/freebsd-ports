@@ -21,7 +21,7 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-USE_GNOME=	gnomeprefix gnomehack libgnome
+USE_GNOME=	gnomeprefix gnomehack libgnome libgnomeprintui
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lgnuregex"
 
