@@ -88,9 +88,7 @@ CXX=	g++32
 EXTRACT_ONLY=	OOo_${PORTVERSION}rc_source.tar.bz2
 
 MAINTAINER=	openoffice@FreeBSD.org
-.if !defined(COMMENT)
 COMMENT=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
-.endif
 
 #
 # The JDK dependency needs to be at the first place, so all
