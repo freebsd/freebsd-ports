@@ -923,7 +923,7 @@ linux-jdk1.3.0/jre/lib/i386/libfontmanager.so
 linux-jdk1.3.0/jre/lib/i386/libhprof.so
 linux-jdk1.3.0/jre/lib/i386/libioser12.so
 linux-jdk1.3.0/jre/lib/i386/libjava.so
-linux-jdk1.3.0/jre/lib/i386/libjavaplugin.so
+linux-jdk1.3.0/jre/lib/i386/libjavaplugin_jni.so
 linux-jdk1.3.0/jre/lib/i386/libjawt.so
 linux-jdk1.3.0/jre/lib/i386/libjcov.so
 linux-jdk1.3.0/jre/lib/i386/libjpeg.so
@@ -972,7 +972,8 @@ linux-jdk1.3.0/jre/man/man1/keytool.1
 linux-jdk1.3.0/jre/man/man1/rmid.1
 linux-jdk1.3.0/jre/man/man1/rmiregistry.1
 linux-jdk1.3.0/jre/man/man1/tnameserv.1
-linux-jdk1.3.0/jre/plugin/i386/javaplugin.so
+linux-jdk1.3.0/jre/plugin/i386/ns4/javaplugin.so
+linux-jdk1.3.0/jre/plugin/i386/ns600/libjavaplugin_oji.so
 linux-jdk1.3.0/lib/dt.jar
 linux-jdk1.3.0/lib/i386/libdt_socket.so
 linux-jdk1.3.0/lib/i386/libjdwp.so
@@ -1001,6 +1002,8 @@ linux-jdk1.3.0/src.jar
 @dirrm linux-jdk1.3.0/man
 @dirrm linux-jdk1.3.0/lib/i386
 @dirrm linux-jdk1.3.0/lib
+@dirrm linux-jdk1.3.0/jre/plugin/i386/ns600
+@dirrm linux-jdk1.3.0/jre/plugin/i386/ns4
 @dirrm linux-jdk1.3.0/jre/plugin/i386
 @dirrm linux-jdk1.3.0/jre/plugin
 @dirrm linux-jdk1.3.0/jre/man/man1

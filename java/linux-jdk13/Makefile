@@ -10,7 +10,7 @@ PORTVERSION=	${JDK_VERSION}
 CATEGORIES=	java devel
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-
-DISTFILES=	j2sdk-1_3_0-linux.bin
+DISTFILES=	j2sdk-1_3_0_02-linux.bin
 
 MAINTAINER=	kevlo@FreeBSD.org
 
@@ -30,7 +30,7 @@ EXTRACT_CMD=		# empty
 EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	#empty
 
-WRKSRC=		${WRKDIR}/jdk1.3
+WRKSRC=		${WRKDIR}/jdk1.3.0_02
 
 NO_BUILD=	yes
 
@@ -38,7 +38,7 @@ NO_BUILD=	yes
 
 .for file in ${DISTFILES}
 .if !exists(${DISTDIR}/${file})
-IGNORE=You must manually fetch the Java SDK 1.3.0 for Linux archive (j2sdk-1_3_0-linux.bin) from http://java.sun.com/j2se/1.3/download-linux.html, place it in ${DISTDIR} and then run make again.
+IGNORE=You must manually fetch the Java SDK 1.3.0 for Linux archive (j2sdk-1_3_0_02-linux.bin) from http://java.sun.com/j2se/1.3/download-linux.html, place it in ${DISTDIR} and then run make again.
 .endif
 .endfor
 
