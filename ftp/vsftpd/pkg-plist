@@ -7,3 +7,45 @@ etc/vsftpd.conf.dist
 @unexec rmdir /var/ftp 2>/dev/null || true
 @dirrm share/vsftpd/empty
 @dirrm share/vsftpd
+%%PORTDOCS%%share/doc/vsftpd/AUDIT
+%%PORTDOCS%%share/doc/vsftpd/BENCHMARKS
+%%PORTDOCS%%share/doc/vsftpd/BUGS
+%%PORTDOCS%%share/doc/vsftpd/COPYING
+%%PORTDOCS%%share/doc/vsftpd/Changelog
+%%PORTDOCS%%share/doc/vsftpd/EXAMPLE/INTERNET_SITE/README
+%%PORTDOCS%%share/doc/vsftpd/EXAMPLE/INTERNET_SITE/vsftpd.conf
+%%PORTDOCS%%share/doc/vsftpd/EXAMPLE/INTERNET_SITE/vsftpd.xinetd
+%%PORTDOCS%%share/doc/vsftpd/EXAMPLE/INTERNET_SITE_NOINETD/README
+%%PORTDOCS%%share/doc/vsftpd/EXAMPLE/INTERNET_SITE_NOINETD/vsftpd.conf
+%%PORTDOCS%%share/doc/vsftpd/EXAMPLE/PER_IP_CONFIG/README
+%%PORTDOCS%%share/doc/vsftpd/EXAMPLE/PER_IP_CONFIG/hosts.allow
+%%PORTDOCS%%share/doc/vsftpd/EXAMPLE/README
+%%PORTDOCS%%share/doc/vsftpd/EXAMPLE/VIRTUAL_HOSTS/README
+%%PORTDOCS%%share/doc/vsftpd/EXAMPLE/VIRTUAL_USERS/README
+%%PORTDOCS%%share/doc/vsftpd/EXAMPLE/VIRTUAL_USERS/logins.txt
+%%PORTDOCS%%share/doc/vsftpd/EXAMPLE/VIRTUAL_USERS/vsftpd.conf
+%%PORTDOCS%%share/doc/vsftpd/EXAMPLE/VIRTUAL_USERS/vsftpd.pam
+%%PORTDOCS%%share/doc/vsftpd/EXAMPLE/VIRTUAL_USERS_2/README
+%%PORTDOCS%%share/doc/vsftpd/FAQ
+%%PORTDOCS%%share/doc/vsftpd/INSTALL
+%%PORTDOCS%%share/doc/vsftpd/LICENSE
+%%PORTDOCS%%share/doc/vsftpd/README
+%%PORTDOCS%%share/doc/vsftpd/README.security
+%%PORTDOCS%%share/doc/vsftpd/REWARD
+%%PORTDOCS%%share/doc/vsftpd/SECURITY/DESIGN
+%%PORTDOCS%%share/doc/vsftpd/SECURITY/IMPLEMENTATION
+%%PORTDOCS%%share/doc/vsftpd/SECURITY/OVERVIEW
+%%PORTDOCS%%share/doc/vsftpd/SECURITY/TRUST
+%%PORTDOCS%%share/doc/vsftpd/SIZE
+%%PORTDOCS%%share/doc/vsftpd/SPEED
+%%PORTDOCS%%share/doc/vsftpd/TODO
+%%PORTDOCS%%share/doc/vsftpd/TUNING
+%%PORTDOCS%%@dirrm share/doc/vsftpd/EXAMPLE/INTERNET_SITE
+%%PORTDOCS%%@dirrm share/doc/vsftpd/EXAMPLE/INTERNET_SITE_NOINETD
+%%PORTDOCS%%@dirrm share/doc/vsftpd/EXAMPLE/PER_IP_CONFIG
+%%PORTDOCS%%@dirrm share/doc/vsftpd/EXAMPLE/VIRTUAL_HOSTS
+%%PORTDOCS%%@dirrm share/doc/vsftpd/EXAMPLE/VIRTUAL_USERS
+%%PORTDOCS%%@dirrm share/doc/vsftpd/EXAMPLE/VIRTUAL_USERS_2
+%%PORTDOCS%%@dirrm share/doc/vsftpd/EXAMPLE
+%%PORTDOCS%%@dirrm share/doc/vsftpd/SECURITY
+%%PORTDOCS%%@dirrm share/doc/vsftpd
