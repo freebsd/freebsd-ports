@@ -1,11 +1,11 @@
 This port provides a simple and easy to use
-possibility for any user to make mplayer ready
-to run with a working codecs.conf and the
-right font by logging in with the username,
-then cd to the mplayer port directory and
-enter:
+tool to provide fonts in OSD.
+Just cd to the ports directory and type
 
 make install-user
+
+Note: This is only for the bitmap fonts! If you've compiled
+mplayer with truetype supprt, this won't work.
 
 Please take a look at docs in
 /usr/local/share/doc/mplayer

@@ -16,4 +16,6 @@ bin/mencoder
 share/mplayer/codecs.conf
 share/mplayer/example.conf
 share/mplayer/input.conf
+share/mplayer/menu.conf
+@unexec rmdir %D/share/mplayer 2>/dev/null || true
 %%PORTDOCS%%@dirrm share/doc/mplayer
