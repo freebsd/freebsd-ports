@@ -5,7 +5,6 @@
 
     SUBDIR += 9e
     SUBDIR += advancecomp
-    SUBDIR += alz2zip
     SUBDIR += arc
     SUBDIR += arj
     SUBDIR += bicom
