@@ -1,0 +1,25 @@
+--- src/gide.c.orig	Tue Aug 17 00:06:24 1999
++++ src/gide.c	Mon Oct 18 20:17:29 1999
+@@ -292,17 +292,17 @@
+ #endif
+ 
+     cfg->tab_width = 4;
+-    cfg->incpath = (gchar *) realloc( cfg->incpath, 40 );
+-    strcpy( cfg->incpath, "/usr/include:/usr/local/include" );
++    cfg->incpath = (gchar *) realloc( cfg->incpath, 60 );
++    strcpy( cfg->incpath, "/usr/include:%%LOCALBASE%%/include:%%X11BASE%%/include" );
+     cfg->ccopt = (gchar *) realloc( cfg->ccopt, 2 );
+     strcpy( cfg->ccopt, "" );
+-    cfg->libpath = (gchar *) realloc( cfg->libpath, 40 );
+-    strcpy( cfg->libpath, "/lib:/usr/lib:/usr/local/lib" );
++    cfg->libpath = (gchar *) realloc( cfg->libpath, 60 );
++    strcpy( cfg->libpath, "/usr/lib:%%LOCALBASE%%/lib:%%X11BASE%%/lib" );
+     cfg->ldopt = (gchar *) realloc( cfg->ldopt, 2 );
+     strcpy( cfg->ldopt, "" );
+ 
+     cfg->bash = (gchar *) realloc( cfg->bash, 20 );
+-    strcpy( cfg->bash, "/bin/bash" );
++    strcpy( cfg->bash, "/bin/sh" );
+ 
+     cfg->xterm = (gchar *) realloc( cfg->xterm, 10 );
+     strcpy( cfg->xterm, "xterm" );
