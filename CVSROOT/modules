@@ -2295,6 +2295,7 @@ ja-csrd		ports/japanese/csrd
 ja-dbskkd-cdb	ports/japanese/dbskkd-cdb
 ja-deepforest	ports/japanese/deepforest
 ja-devil-fpw	ports/japanese/devil-fpw
+ja-diclookup-emacs20	ports/japanese/diclookup-emacs20
 ja-diclookup-mule	ports/japanese/diclookup-mule
 ja-doc		doc/ja_JP.eucJP
 ja-dserver	ports/japanese/dserver
