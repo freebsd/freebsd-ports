@@ -6,11 +6,7 @@
 #
 
 PORTNAME=	libxml
-.if (${MACHINE_ARCH} == "i386")
-PORTVERSION=	1.4.0
-.elif (${MACHINE_ARCH} == "alpha")
-PORTVERSION=	1.7.3
-.endif
+PORTVERSION=	1.8.10
 CATEGORIES=	textproc linux
 
 MAINTAINER=	taoka@FreeBSD.org

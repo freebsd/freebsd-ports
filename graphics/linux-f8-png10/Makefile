@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	png
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.9
 CATEGORIES=	graphics linux
 
-RPM_SET=	libpng-${PORTVERSION}-4.${MACHINE_ARCH}.rpm
+RPM_SET=	libpng-${PORTVERSION}-1.${MACHINE_ARCH}.rpm
 
 .include "../../x11-toolkits/linux-gtk/Makefile"
