@@ -1,5 +1,0 @@
-"jgnat" is an Ada 95 to Java byte-code compiler.  "jgnat" allows
-you to develop Java applets or applications in Ada 95, compile them
-to Java byte-code, and execute them on any Java virtual machine.
-
--- John Merryweather Cooper <jmcoopr@webmail.bmi.net>

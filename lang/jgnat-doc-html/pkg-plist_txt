@@ -1,3 +1,0 @@
-share/doc/jgnat/txt/jgnat_ug.txt
-@dirrm share/doc/jgnat/txt
-@unexec rmdir %D/share/doc/jgnat 2>/dev/null || true

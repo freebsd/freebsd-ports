@@ -641,3 +641,8 @@ textproc/ruby-rexml||2003-10-31|integrated into ruby18 and ruby16-shim-ruby18
 www/ruby-webrick||2003-10-31|integrated into ruby18 and ruby16-shim-ruby18
 editors/AbiWord|editors/AbiWord2|2003-10-31|2.0 is the new stable release
 www/adzapper||2003-11-03|Development is dead, doesn't work with Python2
+lang/jgnat||2003-11-03|Broken and not supported by ACT
+lang/jgnat-doc-html||2003-11-03|Broken and not supported by ACT
+lang/jgnat-doc-info||2003-11-03|Broken and not supported by ACT
+lang/jgnat-doc-ps||2003-11-03|Broken and not supported by ACT
+lang/jgnat-doc-txt||2003-11-03|Broken and not supported by ACT
