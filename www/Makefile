@@ -354,6 +354,7 @@
     SUBDIR += npc
     SUBDIR += nscache
     SUBDIR += nspostgres
+    SUBDIR += nvu
     SUBDIR += ocaml-net
     SUBDIR += ocaml-wdialog
     SUBDIR += oops
