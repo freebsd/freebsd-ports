@@ -1,0 +1,22 @@
+Esecanna-vje listens to canna clients as cannaserver, 
+interprets to the VJE-Delta server what they say, and
+passes what it results to them.
+
+With this, you can use VJE-Delta's smart input engine
+also from the console applications.
+
+	[   Canna clients  ] (mule, jvim, etc.)
+	      ||    /\
+	      \/    ||
+	[   esecanna-vje   ] (esecannaserver)
+	      ||    /\
+	      \/    ||
+	[ VJE-Delta server ] (vjed)
+
+Before running esecannaserver, don't forget to stop
+the "real" cannaserver, if running.
+
+Further documentation is under /usr/local/share/doc/esecanna,
+and the following web site:
+
+WWW: http://plaza.harmonix.ne.jp/~redstar/esecanna.html

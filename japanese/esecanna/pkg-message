@@ -1,0 +1,16 @@
+************************************************************
+NOTE THAT THIS VERSION IS A VERY DEVELOPMENT RELEASE.
+
+First of all, never forget to read the documents located in
+/usr/local/share/doc/esecanna carefully. When and if you
+meet with any problem or strange behavior, please refer to
+the debug log stored in /var/log/esecannaserver.log or
+output to stderr if run by hand, and report it immediately
+to the author of esecanna, or the maintainer of the port.
+
+Thank you for understanding.
+
+
+Using VJE-Delta 3.0 trial, esecannaserver will fail to
+connect to vjed before once you run vje.
+************************************************************

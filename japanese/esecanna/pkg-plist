@@ -1,0 +1,5 @@
+sbin/esecannaserver
+share/doc/esecanna/4DEVELOPERS.jp
+share/doc/esecanna/README.jp
+etc/rc.d/vjeesecannaserver.sh
+@dirrm share/doc/esecanna
