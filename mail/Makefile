@@ -17,6 +17,7 @@
     SUBDIR += bbmail
     SUBDIR += biabam
     SUBDIR += biffer
+    SUBDIR += bincimap
     SUBDIR += bmf
     SUBDIR += bogofilter
     SUBDIR += bsmtp
