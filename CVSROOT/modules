@@ -3862,6 +3862,7 @@ linpack		ports/math/linpack
 linphone	ports/net/linphone
 linplasma	ports/graphics/linplasma
 linpopup	ports/net/linpopup
+linux-ac3d	ports/graphics/linux-ac3d
 linux-acu	ports/sysutils/linux-acu
 linux-agsatellite	ports/net/linux-agsatellite
 linux-beonex	ports/www/linux-beonex
