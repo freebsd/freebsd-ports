@@ -276,6 +276,7 @@ altivore	ports/security/altivore
 amanda		ports/misc/amanda
 amanda-client	ports/misc/amanda-client
 amanda-server	ports/misc/amanda-server
+amap		ports/security/amap
 amaterus	ports/x11-wm/amaterus
 amavis-perl	ports/security/amavis-perl
 amavisd		ports/security/amavisd
