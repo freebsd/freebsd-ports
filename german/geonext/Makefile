@@ -6,37 +6,35 @@
 #
 
 PORTNAME=	geonext
-PORTVERSION=	1.0
+PORTVERSION=	1.11
 CATEGORIES=	german
-MASTER_SITES=	http://geonext.uni-bayreuth.de/data/download/linux/
+MASTER_SITES=	http://geonext.uni-bayreuth.de/data/download/
 PKGNAMEPREFIX?=	de-
-DISTNAME=	geonext
-EXTRACT_SUFX=	.tgz
+DISTNAME=	geonext.${PORTVERSION}
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	fehlner@gmx.de
 COMMENT=	Interactive (dynamic) elementary Geometry Software
 
 WRKSRC=		${WRKDIR}/geonext_install
 NO_BUILD=	yes
+USE_ZIP=	yes
 USE_JAVA=	1.4
 JAVA=		${JAVA_HOME}/bin/java
 GNAME=		geonext-de
 GLOCATE=	${PREFIX}/share/${GNAME}
 DATA=	cacerts didmat.crt geonext.html geonext.jar license.txt index.html
-GIF=	pixel.gif gx.gif gni.gif gn.gif g.gif x.ico
+IMG=	g.gif gn.gif gni.gif geoint.png pixel.gif gx.gif gxt.gif ubt.gif x.ico
 
 do-install:
 	${MKDIR} ${PREFIX}/share/${GNAME}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DATA} ${GLOCATE}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${GIF} ${GLOCATE}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${IMG} ${GLOCATE}
 	@${ECHO_MSG} '#!/bin/sh' > ${GLOCATE}/${GNAME}
 	@${ECHO_MSG} '${JAVA} -cp ${GLOCATE}/geonext.jar geonext/Geonext&'\
 	>>${GLOCATE}/${GNAME}
 	${CHMOD} a+x ${GLOCATE}/${GNAME}
-	${SED} -e 's/GEONExT.html/geonext.html/' ${GLOCATE}/index.html > \
-	${GLOCATE}/index.tmp
 	${LN} ${GLOCATE}/${GNAME} ${GLOCATE}/geonext
-	${MV} ${GLOCATE}/index.tmp ${GLOCATE}/index.html
 	${INSTALL_SCRIPT} ${GLOCATE}/geonext-de ${PREFIX}/bin
 	@${ECHO_MSG} "---------------------------------------------------------"
 	@${ECHO_MSG} "Application:	${GLOCATE}/geonext or geonext-de"
