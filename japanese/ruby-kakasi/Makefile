@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kakasi
-PORTVERSION=	000124
-PORTREVISION=	3
+PORTVERSION=	020928
 CATEGORIES=	japanese ruby
 MASTER_SITES=	http://www.notwork.org/~gotoken/ruby/p/kakasi/
 DIST_SUBDIR=	ruby
@@ -20,8 +19,6 @@ USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
 INSTALL_TARGET=	site-install
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 DOCS_EN=	ChangeLog	README		wdcnt.html
 DOCS_JA=	README.jp
