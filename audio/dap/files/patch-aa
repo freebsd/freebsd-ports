@@ -6,7 +6,7 @@ Index: Makefile
 +all: DAP
 +
 +DAP: 
-+	(cd tooltips; make -f Makefile);
++	(cd tooltips; make -f Makefile.linux);
 +	(cd libaudio; make -f Makefile.linux);
 +	(cd libaudiofile; make -f Makefile.linux);
 +	(cd spkit/spkit; make -f Makefile.linux);
