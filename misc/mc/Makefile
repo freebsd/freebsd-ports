@@ -3,7 +3,7 @@
 # Date created:		15 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.4 1996/10/01 03:53:49 gpalmer Exp $
+# $Id: Makefile,v 1.5 1996/10/20 15:22:09 max Exp $
 #
 
 DISTNAME=	mc-3.2.1
@@ -16,6 +16,7 @@ CONFIGURE_ARGS=	--with-ncurses
 STRIP=
 
 post-install:
+	@/usr/bin/strip ${PREFIX}/bin/mc ${PREFIX}/sbin/mcserv
 .if !defined(NOMANCOMPRESS)
 	@gzip -9nf ${PREFIX}/man/man1/mc.1 ${PREFIX}/man/man8/mcserv.8
 .endif
