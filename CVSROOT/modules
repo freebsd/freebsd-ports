@@ -7715,6 +7715,7 @@ php4-mcrypt	ports/security/php4-mcrypt
 php4-mcve	ports/devel/php4-mcve
 php4-mhash	ports/security/php4-mhash
 php4-ming	ports/graphics/php4-ming
+php4-mnogosearch	ports/www/php4-mnogosearch
 php4-mssql	ports/databases/php4-mssql
 php4-mysql	ports/databases/php4-mysql
 php4-ncurses	ports/devel/php4-ncurses
