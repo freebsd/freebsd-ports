@@ -61,6 +61,7 @@
     SUBDIR += p5-DBIx-XML_RDB
     SUBDIR += p5-DBZ_File
     SUBDIR += p5-GDBM
+    SUBDIR += p5-GraphViz-DBI
     SUBDIR += p5-MLDBM
     SUBDIR += p5-Msql
     SUBDIR += p5-MyObject
