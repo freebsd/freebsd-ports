@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	pcsc-lite
-PORTVERSION=	1.0.2.b2
+PORTVERSION=	1.0.2.b5
 CATEGORIES=	devel security
 MASTER_SITES=	http://www.linuxnet.com/middleware/files/
-DISTNAME=	pcsc-lite-${PORTVERSION:S/b/beta/}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/beta/}
 
 MAINTAINER=	toni@ants.at
 
