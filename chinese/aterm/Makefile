@@ -1,13 +1,13 @@
 # New ports collection makefile for:   zh-aterm
-# Version required:	0.3.5
+# Version required:	0.3.6
 # Date created:		26 April 1999
 # Whom:			Chia-Hsing Yu <davidyu@ken.csie.ntu.edu.tw>
 #
-# $Id: Makefile,v 1.2 1999/05/07 05:05:31 foxfair Exp $
+# $Id: Makefile,v 1.3 1999/05/10 16:20:11 flathill Exp $
 #
 
-DISTNAME=	aterm-0.3.5
-PKGNAME=	zh-aterm-0.3.5
+DISTNAME=	aterm-0.3.6
+PKGNAME=	zh-aterm-0.3.6
 CATEGORIES=	chinese
 MASTER_SITES=	http://members.xoom.com/sashav/aterm/ \
 		http://www.tigr.net/afterstep/as-apps/download/aterm/	\
