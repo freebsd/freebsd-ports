@@ -7,10 +7,12 @@
 
 PORTNAME=	airport
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net java
 MASTER_SITES=	http://edge.mcs.drexel.edu/GICL/people/sevy/airport/
-DISTFILES=	configurator_${PORTVERSION:S/.//}${EXTRACT_SUFX}
+DISTFILES=	configurator_${PORTVERSION:S/.//}${EXTRACT_SUFX} \
+		link_monitor_${LINKMONVERSION:S/.//}${EXTRACT_SUFX} \
+		host_monitor_${HOSTMONVERSION:S/.//}${EXTRACT_SUFX}
 
 MAINTAINER=	nsayer@freebsd.org
 
@@ -18,12 +20,16 @@ RUN_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk \
 		${LOCALBASE}/share/java/classes/jfc-${JFC_VERSION}/swingall.jar:${PORTSDIR}/java/jfc \
 		${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
 
+EXTRACT_BEFORE_ARGS=	-q -o
+
 USE_ZIP=	YES
 
 NO_WRKSUBDIR=	YES
 
 JDK_VERSION=	1.1.8
 JFC_VERSION=	1.1.1
+LINKMONVERSION=	1.1
+HOSTMONVERSION=	1.0
 
 NO_BUILD=	yes
 
@@ -43,5 +49,7 @@ do-install:
 			-e s/%%JDK_VERSION%%/${JDK_VERSION}/ \
 			< ${FILESDIR}/airport > ${PREFIX}/bin/airport; \
 		${CHMOD} a+x ${PREFIX}/bin/airport
+		${LN} ${PREFIX}/bin/airport ${PREFIX}/bin/hostmon
+		${LN} ${PREFIX}/bin/airport ${PREFIX}/bin/linkmon
 
 .include <bsd.port.post.mk>
