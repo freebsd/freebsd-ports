@@ -628,6 +628,7 @@
     SUBDIR += py-coro
     SUBDIR += py-cxx
     SUBDIR += py-dialog
+    SUBDIR += py-docutils
     SUBDIR += py-fileutils
     SUBDIR += py-fortran
     SUBDIR += py-freebsd
