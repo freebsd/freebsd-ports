@@ -1,0 +1,8 @@
+bin/mprime
+bin/mprime-real
+%%PORTDOCS%%%%DOCSDIR%%/license.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/stress.txt
+%%PORTDOCS%%%%DOCSDIR%%/undoc.txt
+%%PORTDOCS%%%%DOCSDIR%%/whatsnew.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
