@@ -7,6 +7,7 @@
 
 PORTNAME=	drweb_sendmail
 PORTVERSION=    4.29.10a
+PORTREVISION=   1
 CATEGORIES=	security mail
 MASTER_SITES=   ftp://ftp.drweb.ru/pub/unix/
 DISTNAME=       drweb-clients-4.29.10-A-sources
