@@ -1,0 +1,11 @@
+The DICT Protocol, described in RFC 2229 is a TCP transaction based
+query/response protocol that allows a client to access dictionary
+definitions from a set of natural language dictionary databases. While
+RFC 2229 is a finished document, we plan to clarify and enhance the
+protocol definition as we gain more experience with large dictionary
+database servers. By default, the DICT protocol uses TCP port 2628. 
+
+WWW: http://www.dict.org/
+
+-- Ying-Chieh Liao
+   ijliao@FreeBSD.org
