@@ -9,12 +9,6 @@ bin/rtelnet
 bin/rtraceroute
 bin/rwhois
 include/socks.h
-man/man1/socks5.1.gz
-man/man1/runsocks.1.gz
-man/man1/stopsocks.1.gz
-man/man1/socks5_clients.1.gz
-man/man5/libsocks5.conf.5.gz
-man/man5/socks5.conf.5.gz
 man/man5/socks5.passwd.5
 lib/libsocks5.a
 @exec ranlib -m %D/lib/libsocks5.a

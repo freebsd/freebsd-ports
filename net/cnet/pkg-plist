@@ -1,5 +1,4 @@
 bin/cnet
-man/man1/cnet.1.gz
 include/cnet.h
 share/examples/cnet/AUSTRALIA.MAP
 share/examples/cnet/CLICK

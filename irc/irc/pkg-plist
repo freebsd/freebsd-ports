@@ -4,7 +4,5 @@ lib/ircd/opers
 lib/ircd/rejects
 lib/ircd/ircd.m4
 lib/ircd/example.conf
-man/man1/irc.1.gz
-man/man8/ircd.8.gz
 sbin/ircd
 sbin/chkconf

@@ -8,15 +8,6 @@ lib/radius/db/conversion.pl.sample
 lib/radius/db/dictionary.sample
 lib/radius/db/users.sample
 lib/radius/db/xas.fsm.sample
-man/man5/dictionary.5.gz
-man/man5/users.5.gz
-man/man5/radius.fsm.5.gz
-man/man5/authfile.5.gz
-man/man5/clients.5.gz
-man/man8/radiusd.8.gz
-man/man8/radpwtst.8.gz
-man/man8/builddbm.8.gz
-man/man8/radcheck.8.gz
 sbin/radiusd
 @dirrm lib/radius/db
 @dirrm lib/radius/acct

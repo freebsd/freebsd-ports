@@ -1,5 +1,4 @@
 bin/xipmsg
-man/man1/xipmsg.1.gz
 lib/X11/app-defaults/XIpmsg
 lib/X11/ja_JP.EUC/app-defaults/XIpmsg
 lib/X11/xipmsg/xbro00.xbm

@@ -2,13 +2,6 @@ sbin/dhcpc
 sbin/dhcpm
 sbin/relay
 sbin/dhcps
-man/man8/dhcpc.8.gz
-man/man8/relay.8.gz
-man/man8/dhcps.8.gz
-man/man8/dhcpm.8.gz
-man/man5/dhcpdb.server.5.gz
-man/man5/dhcpdb.pool.5.gz
-man/man5/dhcpdb.relay.5.gz
 share/doc/dhcp/README
 share/doc/dhcp/README.jis
 share/doc/dhcp/intro.dhcp

@@ -3,7 +3,3 @@ bin/ftpwho
 etc/proftpd.conf
 libexec/proftpd
 sbin/ftpshut
-man/man8/proftpd.8.gz
-man/man8/ftpshut.8.gz
-man/man1/ftpwho.1.gz
-man/man1/ftpcount.1.gz

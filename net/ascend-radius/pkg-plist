@@ -1,8 +1,6 @@
 sbin/radiusd
 sbin/radiusd.dbm
 sbin/builddbm
-man/man1/users-file-syntax.1.gz
-man/man1/builddbm.1.gz
 share/doc/ascend-radius/ascend.doc
 share/doc/ascend-radius/draft-ietf-radius-accounting-01.txt
 share/doc/ascend-radius/draft-ietf-radius-radius-03.txt

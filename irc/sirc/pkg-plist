@@ -9,6 +9,4 @@ libexec/sirc/dsirc
 libexec/sirc/n0thing.pl
 libexec/sirc/sirc.help.gz
 libexec/sirc/socks.pl
-man/man1/sirc.1.gz
-man/man1/ssfe.1.gz
 @dirrm libexec/sirc
