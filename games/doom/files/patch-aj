@@ -1,0 +1,14 @@
+--- sndserv/Makefile.orig	Sun Feb  6 16:36:56 2000
++++ sndserv/Makefile	Sun Feb  6 16:37:13 2000
+@@ -6,8 +6,9 @@
+ #
+ #
+ 
+-CC=gcc
+-CFLAGS=-O -DNORMALUNIX -DLINUX
++CC?=gcc
++CFLAGS?=-O
++CFLAGS+=-DNORMALUNIX -DLINUX
+ LDFLAGS=
+ LIBS=-lm
+ 
