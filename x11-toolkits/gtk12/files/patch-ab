@@ -5,7 +5,7 @@
  {
  	cat <<EOF
 -Usage: gtk-config [OPTIONS] [LIBRARIES]
-+Usage: gtk12-config [OPTIONS] [LIBRARIES]
++Usage: gtk@LT_RELEASE@-config [OPTIONS] [LIBRARIES]
  Options:
  	[--prefix[=DIR]]
  	[--exec-prefix[=DIR]]
@@ -14,6 +14,6 @@
        done
  
 -      echo $libdirs @x_ldflags@ -lgtk -lgdk $my_glib_libs @INTLLIBS@ @x_libs@ @GDK_WLIBS@ -lm
-+      echo $libdirs @x_ldflags@ -lgtk12 -lgdk12 $my_glib_libs @INTLLIBS@ @x_libs@ @GDK_WLIBS@ -lm
++      echo $libdirs @x_ldflags@ -lgtk@LT_RELEASE@ -lgdk@LT_RELEASE@ $my_glib_libs @INTLLIBS@ @x_libs@ @GDK_WLIBS@ -lm
  fi      
  

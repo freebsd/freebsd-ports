@@ -1,5 +1,5 @@
---- gtk/gtkrc.c.orig	Wed Apr 14 05:20:09 1999
-+++ gtk/gtkrc.c	Sun May  2 13:27:23 1999
+--- gtk/gtkrc.c.orig	Tue May 11 04:31:09 1999
++++ gtk/gtkrc.c	Sat May 15 19:01:44 1999
 @@ -231,9 +231,9 @@
  
    var = getenv("GTK_EXE_PREFIX");
@@ -38,8 +38,8 @@
  
    var = g_get_home_dir ();
    if (var)
--    path = g_strdup_printf("%s%s", var, ".gtk/lib/themes/engines");
-+    path = g_strdup_printf("%s%s", var, ".gtk/themes/engines");
+-    path = g_strdup_printf("%s%s", var, "/.gtk/lib/themes/engines");
++    path = g_strdup_printf("%s%s", var, "/.gtk/themes/engines");
    module_path[n++] = g_strdup(path);
    module_path[n] = NULL;
    g_free(path);

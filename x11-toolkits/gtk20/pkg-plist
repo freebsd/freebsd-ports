@@ -123,23 +123,24 @@ include/gtk12/gtk/gtkwindow.h
 @unexec install-info --delete %D/info/gtk.info %D/info/dir
 info/gdk.info
 info/gtk.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/gdk.info %D/info/dir
 @exec install-info %D/info/gtk.info %D/info/dir
 lib/libgdk12.a
-lib/libgdk12.la
 lib/libgdk12.so
-lib/libgdk12.so.1
+lib/libgdk12.so.2
 lib/libgtk12.a
-lib/libgtk12.la
 lib/libgtk12.so
-lib/libgtk12.so.1
+lib/libgtk12.so.2
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+share/aclocal/gtk.m4
+share/locale/ca/LC_MESSAGES/gtk+.mo
 share/locale/cs/LC_MESSAGES/gtk+.mo
 share/locale/de/LC_MESSAGES/gtk+.mo
 share/locale/es/LC_MESSAGES/gtk+.mo
+share/locale/fi/LC_MESSAGES/gtk+.mo
 share/locale/fr/LC_MESSAGES/gtk+.mo
+share/locale/hr/LC_MESSAGES/gtk+.mo
 share/locale/hu/LC_MESSAGES/gtk+.mo
 share/locale/it/LC_MESSAGES/gtk+.mo
 share/locale/ja/LC_MESSAGES/gtk+.mo
@@ -149,11 +150,22 @@ share/locale/no/LC_MESSAGES/gtk+.mo
 share/locale/pl/LC_MESSAGES/gtk+.mo
 share/locale/pt/LC_MESSAGES/gtk+.mo
 share/locale/ru/LC_MESSAGES/gtk+.mo
+share/locale/sk/LC_MESSAGES/gtk+.mo
+share/locale/sl/LC_MESSAGES/gtk+.mo
 share/locale/sv/LC_MESSAGES/gtk+.mo
+share/locale/wa/LC_MESSAGES/gtk+.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/gtk+.mo
 share/themes/Default/gtk/gtkrc
+share/themes/Default/gtk/gtkrc.cs
+share/themes/Default/gtk/gtkrc.hr
+share/themes/Default/gtk/gtkrc.hu
+share/themes/Default/gtk/gtkrc.iso-8859-2
 share/themes/Default/gtk/gtkrc.ja
 share/themes/Default/gtk/gtkrc.ko
+share/themes/Default/gtk/gtkrc.pl
 share/themes/Default/gtk/gtkrc.ru
+share/themes/Default/gtk/gtkrc.sk
+share/themes/Default/gtk/gtkrc.sl
 @exec mkdir -p %D/share/themes/engines
 @dirrm share/themes/Default/gtk
 @dirrm share/themes/Default
