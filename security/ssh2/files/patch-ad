@@ -1,0 +1,10 @@
+--- lib/sshreadline/Makefile.in.old	Tue Nov 24 18:24:57 1998
++++ lib/sshreadline/Makefile.in	Tue Nov 24 18:25:27 1998
+@@ -106,7 +106,6 @@
+ INCLUDES = -I$(srcdir) -I. -I../.. \
+ 	-I$(top_builddir) -I$(top_srcdir) \
+ 	-I../sshmath -I$(srcdir)/../sshmath \
+-	-I../zlib -I$(srcdir)/../zlib \
+ 	-I../sshutil -I$(srcdir)/../sshutil
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../sshconf.h

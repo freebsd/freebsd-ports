@@ -1,15 +1,11 @@
-When you compile *.s with 'cc -pipe' on ELFed FreeBSD, it never ends.
-This patch is ugly hack to avoid the problem.
-
---- lib/sshmath/Makefile.in.old	Thu Oct  8 03:48:38 1998
-+++ lib/sshmath/Makefile.in	Thu Oct  8 03:49:32 1998
-@@ -383,8 +383,7 @@
- 
- .S.o:
- 	$(CPP) $(CPPFLAGS) $(INCLUDES) $(DEFS) $< | grep -v '^#' >tmp-$*.s
--	$(CC) $(CFLAGS) $(SFLAGS) -c tmp-$*.s
--	mv tmp-$*.o $@
-+	$(AS) $(SFLAGS) -o $@ tmp-$*.s
- 	rm -f tmp-$*.s
- 
- includes:
+--- lib/sshapputil/Makefile.in.old	Tue Nov 24 18:24:57 1998
++++ lib/sshapputil/Makefile.in	Tue Nov 24 18:25:12 1998
+@@ -105,7 +105,7 @@
+ INCLUDES = -I../.. -I. -I$(srcdir) \
+ 	-I$(top_builddir) -I$(top_srcdir) \
+ 	-I../sshutil -I$(srcdir)/../sshutil -I../sshmath \
+-	-I$(srcdir)/../sshmath -I../zlib -I$(srcdir)/../zlib
++	-I$(srcdir)/../sshmath
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../sshconf.h
+ CONFIG_CLEAN_FILES = 

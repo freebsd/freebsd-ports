@@ -1,29 +1,24 @@
 # New ports collection makefile for:	ssh2
-# Version required:     2.0.9
+# Version required:     2.0.11
 # Date created:		5 Oct 1998
 # Whom:			Issei Suzuki <issei@jp.FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.73 1998/11/23 05:15:16 kuriyama Exp $
+# $Id: Makefile,v 1.74 1998/12/01 09:33:58 obrien Exp $
 #
 # Maximal ssh2 package requires YES values for
 # USE_SSH1, USE_TCPWRAP
 
-DISTNAME=       ssh-2.0.9
+DISTNAME=       ssh-2.0.11
 CATEGORIES=	security net
 MASTER_SITES=   ftp://ftp.cs.hut.fi/pub/ssh/ \
 		ftp://sunsite.unc.edu/pub/packages/security/ssh/ \
 		ftp://ftp.kyoto.wide.ad.jp/pub/security/ssh/
-
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	${DISTNAME}-configure-patch
 
 MAINTAINER=	issei@jp.FreeBSD.org
 
 RESTRICTED=	"Crypto; export-controlled"
 
 GNU_CONFIGURE=	YES
-MAKE_ENV=	SSH_SERVER_DIR="${PREFIX}/etc/ssh2" \
-		SSH_CLIENT_GLOBAL_CONFIG_FILE="${PREFIX}/etc/ssh2/ssh2_config"
 
 CONFIGURE_ARGS= --prefix=${PREFIX} --with-etcdir=${PREFIX}/etc
 #Uncomment if all your users are in their own group and their homedir
@@ -46,7 +41,7 @@ CONFIGURE_ARGS+= --with-tis
 .endif
 # Include tcp_wrappers support
 .if defined(USE_TCPWRAP) && ${USE_TCPWRAP} == YES
-CONFIGURE_ARGS+= --with-libwrap
+CONFIGURE_ARGS+= --with-libwrap="-L ${PREFIX}/lib -lwrap"
 LIB_DEPENDS+=   wrap.7:${PORTSDIR}/security/tcp_wrapper
 .endif
 
