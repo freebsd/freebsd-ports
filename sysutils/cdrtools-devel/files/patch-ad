@@ -1,12 +1,12 @@
---- RULES/i386-freebsd-cc.rul.orig	Sun Aug 29 16:09:56 1999
-+++ RULES/i386-freebsd-cc.rul	Wed Sep 22 13:21:08 1999
+--- RULES/i386-freebsd-cc.rul.orig	Tue Oct 15 22:43:39 2002
++++ RULES/i386-freebsd-cc.rul	Sun Oct 27 19:59:00 2002
 @@ -24,7 +24,8 @@
  ###########################################################################
  
  CPPFLAGS=	$(CPPOPTS) $(CPPOPTX)
--CFLAGS=		$(COPTS) $(CWARNOPTS) $(COPTOPT) $(COPTX)
+-CFLAGS=		$(COPTS) $(CWARNOPTS) $(COPTOPT) $(GCCOPTOPT) $(COPTX)
 +XCFLAGS:=	$(CFLAGS)
-+CFLAGS=		$(COPTS) $(CWARNOPTS) $(XCFLAGS) $(COPTX)
++CFLAGS=		$(COPTS) $(CWARNOPTS) $(XCFLAGS) $(GCCOPTOPT) $(COPTX)
  
  CPPOPTS=	-I. -I$(ARCHDIR) -I$(OINCSDIR) $(INCDIRS:%=-I%) $(OSDEFS)
  COPTS=
