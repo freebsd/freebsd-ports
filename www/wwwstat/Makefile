@@ -3,7 +3,7 @@
 # Date created:			So   2 Mär 1997 18:10:49 MET
 # Whom:				Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.8 1998/06/07 03:13:43 ache Exp $
+# $Id: Makefile,v 1.9 1998/08/24 12:40:21 asami Exp $
 #
 
 DISTNAME=	wwwstat-2.01
@@ -16,11 +16,10 @@ PATCHFILES=	patch-2.01.txt
 
 MAINTAINER=	andreas@FreeBSD.ORG
 
-BROKEN=		perl5 upgrade
-
 RUN_DEPENDS=    ${PREFIX}/etc/apache/srm.conf:${PORTSDIR}/www/apache13
 
 USE_PERL5=	yes
+MAKE_ENV+=	PERL5=${PERL5}
 DIST_SUBDIR=	wwwstat
 WRKSRC=		${WRKDIR}/wwwstat-2.0
 MAN1=		wwwstat.1 splitlog.1
