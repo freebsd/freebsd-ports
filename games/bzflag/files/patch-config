@@ -1,0 +1,14 @@
+--- config.orig	Fri Feb  2 01:04:26 2001
++++ config	Sat Mar 24 02:23:04 2001
+@@ -41,9 +41,9 @@
+ #
+ # uncomment to enable debug render modes
+ #
+-ifdef DEBUG
++.ifdef DEBUG
+ DEBUG_RENDERING = -DDEBUG_RENDERING
+-endif
++.endif
+ 
+ #
+ # uncomment to enable robot tanks

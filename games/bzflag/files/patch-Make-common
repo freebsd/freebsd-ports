@@ -1,0 +1,19 @@
+--- Make-common.orig	Sat Mar 24 02:21:48 2001
++++ Make-common	Sat Mar 24 02:13:00 2001
+@@ -169,13 +169,13 @@
+ #
+ # default to optimized build
+ #
+-ifdef DEBUG
++.ifdef DEBUG
+ COPTIMIZER    = $(CDEBUG)
+ CXXOPTIMIZER  = $(CXXDEBUG)
+-else
++.else
+ COPTIMIZER    = $(COPT)
+ CXXOPTIMIZER  = $(CXXOPT)
+-endif
++.endif
+ 
+ #
+ # slurp up configuration
