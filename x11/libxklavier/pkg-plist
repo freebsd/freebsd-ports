@@ -2,6 +2,8 @@ include/libxklavier/xklavier.h
 include/libxklavier/xklavier_config.h
 lib/libxklavier.a
 lib/libxklavier.so
-lib/libxklavier.so.6
+lib/libxklavier.so.7
 libdata/pkgconfig/libxklavier.pc
+share/libxklavier/xfree86.xml
+@dirrm share/libxklavier
 @dirrm include/libxklavier
