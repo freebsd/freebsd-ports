@@ -13,7 +13,12 @@ start)
 	echo -n ' noattach'
 	;;
 stop)
-	killall noattach
+	if test -r /var/run/noattach.pid
+	then
+		kill `head -1 /var/run/noattach.pid`
+	else
+		echo " noattach: not running" 2>&1
+	fi
 	rm -f /var/run/noattach.pid
 	;;
 *)
