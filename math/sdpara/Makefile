@@ -8,7 +8,7 @@
 PORTNAME=	sdpara
 PORTVERSION=	0.90
 CATEGORIES=	math parallel
-MASTER_SITES=	http://sdpa.is.titech.ac.jp/
+MASTER_SITES=	http://grid.r.dendai.ac.jp/sdpa/
 DISTFILES=	${PORTNAME}.${PORTVERSION}.src.tar.gz
 .if !defined(NOPORTDOCS)
 DISTFILES+=	${PORTNAME}.${PORTVERSION}.install.txt
