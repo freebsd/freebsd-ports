@@ -1574,6 +1574,7 @@ edonkey-tool-slist	ports/misc/edonkey-tool-slist
 eel2		ports/x11-toolkits/eel2
 efancylauncher	ports/x11/efancylauncher
 efax		ports/comms/efax
+efax-gtk	ports/comms/efax-gtk
 efltk		ports/x11-toolkits/efltk
 egcs		ports/lang/egcs
 eggdrop		ports/irc/eggdrop
