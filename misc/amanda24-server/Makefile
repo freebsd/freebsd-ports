@@ -3,7 +3,7 @@
 # Date created:				28th Feb 1995
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.14 1998/03/20 02:06:07 cwt Exp $
+# $Id: Makefile,v 1.15 1998/04/04 06:20:13 cwt Exp $
 #
 
 DISTNAME=	amanda-2.4.0
@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.amanda.org/pub/amanda/
 MAINTAINER=	cwt@FreeBSD.ORG
 
 WRKSRC=		${WRKDIR}/amanda-2.4.0
+
+BROKEN=		package
 
 NO_LATEST_LINK=	yes
 GNU_CONFIGURE=  yes
