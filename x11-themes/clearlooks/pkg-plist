@@ -1,34 +1,39 @@
 lib/gtk-2.0/2.4.0/engines/libclearlooks.so
-share/gnome/themes/Clearlooks/metacity-1/metacity-theme-1.xml
+share/icons/Clearlooks/16x16/gtk/gtk-apply.png
+share/icons/Clearlooks/16x16/gtk/gtk-cancel.png
+share/icons/Clearlooks/16x16/gtk/gtk-go-back-ltr.png
+share/icons/Clearlooks/16x16/gtk/gtk-go-back-rtl.png
+share/icons/Clearlooks/16x16/gtk/gtk-go-down.png
+share/icons/Clearlooks/16x16/gtk/gtk-go-forward-ltr.png
+share/icons/Clearlooks/16x16/gtk/gtk-go-forward-rtl.png
+share/icons/Clearlooks/16x16/gtk/gtk-go-up.png
+share/icons/Clearlooks/16x16/gtk/gtk-goto-bottom.png
+share/icons/Clearlooks/16x16/gtk/gtk-goto-first-ltr.png
+share/icons/Clearlooks/16x16/gtk/gtk-goto-first-rtl.png
+share/icons/Clearlooks/16x16/gtk/gtk-goto-last-ltr.png
+share/icons/Clearlooks/16x16/gtk/gtk-goto-last-rtl.png
+share/icons/Clearlooks/16x16/gtk/gtk-goto-top.png
+share/icons/Clearlooks/16x16/gtk/gtk-refresh.png
+share/icons/Clearlooks/24x24/gtk/gtk-apply.png
+share/icons/Clearlooks/24x24/gtk/gtk-cancel.png
+share/icons/Clearlooks/24x24/gtk/gtk-go-back-ltr.png
+share/icons/Clearlooks/24x24/gtk/gtk-go-back-rtl.png
+share/icons/Clearlooks/24x24/gtk/gtk-go-down.png
+share/icons/Clearlooks/24x24/gtk/gtk-go-forward-ltr.png
+share/icons/Clearlooks/24x24/gtk/gtk-go-forward-rtl.png
+share/icons/Clearlooks/24x24/gtk/gtk-go-up.png
+share/icons/Clearlooks/24x24/gtk/gtk-goto-bottom.png
+share/icons/Clearlooks/24x24/gtk/gtk-goto-first-ltr.png
+share/icons/Clearlooks/24x24/gtk/gtk-goto-first-rtl.png
+share/icons/Clearlooks/24x24/gtk/gtk-goto-last-ltr.png
+share/icons/Clearlooks/24x24/gtk/gtk-goto-last-rtl.png
+share/icons/Clearlooks/24x24/gtk/gtk-goto-top.png
+share/icons/Clearlooks/24x24/gtk/gtk-ok.png
+share/icons/Clearlooks/24x24/gtk/gtk-refresh.png
+share/icons/Clearlooks/index.theme
 share/themes/Clearlooks-DeepSky/gtk-2.0/gtkrc
-share/themes/Clearlooks-DeepSky/gtk-2.0/iconrc
-share/themes/Clearlooks-DeepSky/gtk-2.0/stock_apply.png
-share/themes/Clearlooks-DeepSky/gtk-2.0/stock_bottom.png
-share/themes/Clearlooks-DeepSky/gtk-2.0/stock_cancel.png
-share/themes/Clearlooks-DeepSky/gtk-2.0/stock_down.png
-share/themes/Clearlooks-DeepSky/gtk-2.0/stock_first.png
-share/themes/Clearlooks-DeepSky/gtk-2.0/stock_last.png
-share/themes/Clearlooks-DeepSky/gtk-2.0/stock_left.png
-share/themes/Clearlooks-DeepSky/gtk-2.0/stock_ok.png
-share/themes/Clearlooks-DeepSky/gtk-2.0/stock_refresh.png
-share/themes/Clearlooks-DeepSky/gtk-2.0/stock_right.png
-share/themes/Clearlooks-DeepSky/gtk-2.0/stock_top.png
-share/themes/Clearlooks-DeepSky/gtk-2.0/stock_up.png
 share/themes/Clearlooks-Olive/gtk-2.0/gtkrc
 share/themes/Clearlooks/gtk-2.0/gtkrc
-share/themes/Clearlooks/gtk-2.0/iconrc
-share/themes/Clearlooks/gtk-2.0/stock_apply.png
-share/themes/Clearlooks/gtk-2.0/stock_bottom.png
-share/themes/Clearlooks/gtk-2.0/stock_cancel.png
-share/themes/Clearlooks/gtk-2.0/stock_down.png
-share/themes/Clearlooks/gtk-2.0/stock_first.png
-share/themes/Clearlooks/gtk-2.0/stock_last.png
-share/themes/Clearlooks/gtk-2.0/stock_left.png
-share/themes/Clearlooks/gtk-2.0/stock_ok.png
-share/themes/Clearlooks/gtk-2.0/stock_refresh.png
-share/themes/Clearlooks/gtk-2.0/stock_right.png
-share/themes/Clearlooks/gtk-2.0/stock_top.png
-share/themes/Clearlooks/gtk-2.0/stock_up.png
 share/themes/Clearlooks/index.theme
 @dirrm share/themes/Clearlooks/gtk-2.0
 @dirrm share/themes/Clearlooks-Olive/gtk-2.0
@@ -36,5 +41,8 @@ share/themes/Clearlooks/index.theme
 @dirrm share/themes/Clearlooks-DeepSky/gtk-2.0
 @dirrm share/themes/Clearlooks-DeepSky
 @dirrm share/themes/Clearlooks
-@dirrm share/gnome/themes/Clearlooks/metacity-1
-@dirrm share/gnome/themes/Clearlooks
+@dirrm share/icons/Clearlooks/24x24/gtk
+@dirrm share/icons/Clearlooks/24x24
+@dirrm share/icons/Clearlooks/16x16/gtk
+@dirrm share/icons/Clearlooks/16x16
+@dirrm share/icons/Clearlooks
