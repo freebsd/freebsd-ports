@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	alisp
-PORTVERSION=	20031029
+PORTVERSION=	20031205
 CATEGORIES=	lang devel lisp
 MASTER_SITES=	http://t3x.dyndns.org/files/ \
 		http://www.t3x.org/files/
@@ -33,5 +33,8 @@ post-patch:
 	${REINPLACE_CMD} \
 		-e 's,/usr/local,${PREFIX},g' \
 		${WRKSRC}/cnf/unix.dfl
+	${REINPLACE_CMD} \
+		-e 's,/usr/local,${PREFIX},g' \
+		${WRKSRC}/cnf/unix-1.dfl
 
 .include <bsd.port.mk>
