@@ -7,6 +7,7 @@
 
 PORTNAME=	estraier
 PORTVERSION=	1.2.25
+PORTREVISION=	1
 CATEGORIES=	japanese textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A full-text search system for personal use
 
-LIB_DEPENDS=	qdbm.3:${PORTSDIR}/databases/qdbm
+LIB_DEPENDS=	qdbm.4:${PORTSDIR}/databases/qdbm
 
 USE_ICONV=	yes
 
@@ -25,11 +26,11 @@ CONFIGURE_ARGS=	--with-sysqdbm \
 		--enable-dlfilter \
 		--enable-devel
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/include ${PTHREAD_LIBS}"
 
 OPTIONS=	CHASEN "Japanese Morphological Analysis Support" On \
-		MECAB "Part-of-Speech and Morphological Analyzer" On \
+		MECAB "Part-of-Speech and Morphological Analyzer" Off \
 		KAKASI "Language processing filter/converter" On
 
 .include <bsd.port.pre.mk>
@@ -40,10 +41,12 @@ LIB_DEPENDS+=	chasen.0:${PORTSDIR}/japanese/chasen-base
 CONFIGURE_ARGS+=	--enable-chasen
 .endif
 
-.if ${ARCH} == i386 && !defined(WITHOUT_MECAB)
+.if ${OSVERSION} > 500000
+.if ${ARCH} == i386 && defined(WITH_MECAB)
 LIB_DEPENDS+=	mecab.0:${PORTSDIR}/japanese/mecab
 
 CONFIGURE_ARGS+=	--enable-mecab
+.endif
 .endif
 
 .if !defined(WITHOUT_KAKASI)
