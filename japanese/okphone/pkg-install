@@ -1,0 +1,21 @@
+#!/bin/sh
+# installation script for okphone
+if [ "$2" != "POST-INSTALL" ]; then
+  exit 0
+fi
+if ! grep -qw ^phone /etc/services; then
+  echo ""
+  echo "I don't see \"phone\" in your /etc/services file."
+  echo "You may want to add the following to your /etc/services."
+  echo ""
+  echo "phone           1167/udp   #phone - conference calling"
+  echo ""
+fi
+if ! grep -qw ^phone /etc/inetd.conf; then
+  echo ""
+  echo "I don't see \"phone\" in your /etc/inetd.conf file."
+  echo "You may want to add the following to your /etc/inetd.conf."
+  echo ""
+  echo "phone   dgram   udp     wait    root    /usr/local/libexec/in.phoned in.phoned"
+  echo ""
+fi

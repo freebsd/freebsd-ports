@@ -1,0 +1,97 @@
+--- ./conv/Makefile.org	Wed Feb  7 18:45:35 1996
++++ ./conv/Makefile	Wed Feb  7 18:45:36 1996
+@@ -5,10 +5,10 @@
+ # This one is pretty straightforward - no special flags for it.
+ 
+ CC	=	cc
+-CFLAGS	=	-O
++CFLAGS	+=	
+ SRCS	=	convd.c
+ DEST	=	convd
+-RDEST	=	/usr/local/etc/convd
++RDEST	=	${PREFIX}/libexec/convd
+ #RDEST	=	/usr/local/lib/convd
+ 
+ all: ${DEST}
+@@ -19,7 +19,7 @@
+ 
+ install:	${DEST}
+ 	/bin/rm -f ${RDEST}
+-	cp ${DEST} ${RDEST}
++	install -cs ${DEST} ${RDEST}
+ 
+ clean:
+ 	/bin/rm -f ${DEST} core *.o
+--- ./client/Makefile.org	Wed Feb  7 18:45:34 1996
++++ ./client/Makefile	Wed Feb  7 18:45:36 1996
+@@ -20,14 +20,14 @@
+ CC     = cc
+ #CFLAGS = -O -DSERVICES -DLOCAL_ECHO
+ #CFLAGS = -g -DSERVICES -DLOCAL_ECHO
+-CFLAGS = -Isw -O -DSERVICES -DLOCAL_ECHO
++CFLAGS += -Isw -DSERVICES -DLOCAL_ECHO
+ #LIBS   = -lcurses -ltermlib #-lresolv
+ LIBS   = sw/libsw.a -ltermlib -ll
+ 
+ LPR    = lpr -Psony
+ #RDEST  = /usr/ucb/phone
+ #RDEST  = /usr/local/phone
+-RDEST  = /usr/local/bin/phone
++RDEST  = ${PREFIX}/bin/phone
+ 
+ HDRS = defs.h
+ 
+@@ -69,7 +69,7 @@
+ 
+ install: ${DEST}
+ 	/bin/rm -f ${RDEST}
+-	cp ${DEST} ${RDEST}
++	install -cs ${DEST} ${RDEST}
+ 
+ print:	${HDRS} ${SRCS}
+ 	pr -f ${HDRS} ${SRCS} | expand -4 | ${LPR}
+--- ./master/Makefile.org	Wed Feb  7 18:45:36 1996
++++ ./master/Makefile	Wed Feb  7 18:45:36 1996
+@@ -29,7 +29,7 @@
+ #CFLAGS = -O -DSERVICES -DDPATH=\"$(CONVD)\" -DFORK
+ #CFLAGS = -O -DINETD -DDPATH=\"$(CONVD)\"
+ #CFLAGS = -O -DINETD -DDPATH=\"$(CONVD)\" -DSERVICES
+-CFLAGS  = $(OFLAG) $(INETD) -DFORK -DSERVICES -DDPATH=\"/usr/local/etc/convd\"
++CFLAGS  += $(INETD) -DFORK -DSERVICES -DDPATH=\"${PREFIX}/libexec/convd\"
+ 
+ LPR     = lpr -Psony
+ CC	= cc
+@@ -44,7 +44,7 @@
+ 			reinvite.o strsave.o utmp.o
+ 
+ DEST	= phoned
+-RDEST	= /usr/local/etc/in.phoned
++RDEST	= ${PREFIX}/libexec/in.phoned
+ #RDEST	= /etc/phoned
+ 
+ 
+@@ -61,7 +61,7 @@
+ 
+ install:	${DEST}
+ 	/bin/rm -f ${RDEST}
+-	cp ${DEST} ${RDEST}
++	install -cs ${DEST} ${RDEST}
+ 
+ clean:
+ 	/bin/rm -f ${DEST} core *.o
+--- ./Makefile.org	Fri Dec 15 01:30:07 1989
++++ ./Makefile	Wed Feb  7 20:39:53 1996
+@@ -13,3 +13,13 @@
+ 	done
+ 
+ default: all	
++
++install:
++	/bin/rm -f ${PREFIX}/man/man1/phone.1*
++	install -c phone.1 ${PREFIX}/man/man1
++	gzip -9nf ${PREFIX}/man/man1/phone.1
++	mkdir -p ${PREFIX}/share/okphone
++	install -c NOTE READ_ME Readme.kana ${PREFIX}/share/okphone
++	for i in ${DIRS} ; do \
++		cd $$i ; make MFLAGS="${MFLAGS}" $@ ; cd .. ; \
++	done
