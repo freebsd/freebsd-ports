@@ -28,6 +28,8 @@ CONFIGURE_ARGS= --localstatedir=/var \
 
 CONFIGURE_ARGS+=--enable-fs
 
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+
 .if !defined(WITHOUT_DEBUG)
 CONFIGURE_ARGS+=--enable-debug
 .endif
@@ -82,12 +84,16 @@ pre-everything::
 	@${ECHO} "WITH_PAM		use PAM for authentication"
 	@${ECHO}
 
+post-patch:
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/jabberd.sh > ${WRKDIR}/jabberd.sh
+
 pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	${ECHO} "Installing ${PREFIX}/etc/rc.d/jabberd.sh startup file."
-	${INSTALL_SCRIPT} ${FILESDIR}/jabberd.sh ${PREFIX}/etc/rc.d/jabberd.sh
+	${INSTALL_SCRIPT} -m 751 ${WRKDIR}/jabberd.sh ${PREFIX}/etc/rc.d/jabberd.sh
 	@${CHOWN} -R jabber:jabber ${PREFIX}/etc/jabberd
 	@${FIND} ${PREFIX}/etc/jabberd -type d | ${XARGS} ${CHMOD} 750
 	@${FIND} ${PREFIX}/etc/jabberd -type f | ${XARGS} ${CHMOD} 660
