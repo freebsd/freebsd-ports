@@ -6,8 +6,9 @@
 
 # configurable variables
 pb=/var/portbuild
+arch=$1
 
-. ${pb}/portbuild.conf
+. ${pb}/${arch}/portbuild.conf
 
 me=$(hostname -s)
 tmpfile=${scratchdir}/${me}
@@ -16,7 +17,7 @@ while true; do
   num=$(echo $(ls -1d ${scratchdir}/*/chroot/*/used 2>/dev/null| wc -l))
   echo -n "$num " > ${tmpfile}
   uptime >> ${tmpfile}
-  scp -q ${tmpfile} $master:${pb}/loads/
+  scp -q ${tmpfile} ${user}@${master}:${pb}/${arch}/loads/
   rm -f ${tmpfile}
   sleep 5
 done
