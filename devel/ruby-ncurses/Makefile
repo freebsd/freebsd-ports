@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ncurses
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://download.berlios.de/ncurses-ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -24,10 +24,6 @@ USE_RUBY_EXTCONF=	yes
 INSTALL_TARGET=	site-install
 
 DOCS=		README THANKS TODO
-
-post-extract:
-	${MKDIR} ${WRKSRC}/lib
-	${MV} ${WRKSRC}/ncurses.rb ${WRKSRC}/lib/
 
 post-install:
 .if !defined(NOPORTDOCS)
