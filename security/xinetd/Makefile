@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xinetd
-PORTVERSION=	2.1.8.9pre13
+PORTVERSION=	2.1.8.9pre14
 CATEGORIES=	security
 MASTER_SITES=	http://www.xinetd.org/ \
 		http://synack.net/xinetd/
