@@ -164,7 +164,7 @@
          disc_optim(tp, &tp->t_termios, com);
          comstop(tp, FREAD | FWRITE);
          comhardclose(com);
-+#if __FreeBSD_version > 502122
++#if __FreeBSD_version < 502122
          ttyclose(tp);
 +#endif
      }
@@ -230,7 +230,7 @@
      disc_optim(tp, &tp->t_termios, com);
      comstop(tp, FREAD | FWRITE);
      comhardclose(com);
-+#if __FreeBSD_version > 502122
++#if __FreeBSD_version < 502122
      ttyclose(tp);
 +#endif
      siosettimeout();

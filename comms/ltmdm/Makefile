@@ -7,13 +7,13 @@
 
 PORTNAME=	ltmdm
 PORTVERSION=	1.4
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	comms
 MASTER_SITES=	http://www.dons.net.au/~darius/ \
 		http://soupnazi.org/FreeBSD/ports/distfiles/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	darius@dons.net.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Driver for the Lucent LT Winmodem chipset
 
 ONLY_FOR_ARCHS=	i386
