@@ -23,7 +23,9 @@ RUN_DEPENDS=	xvinfo:${PORTSDIR}/x11/XFree86-4-clients \
 	${FONTDEFAULT}:${PORTSDIR}/x11-fonts/XFree86-4-fontDefaultBitmaps \
 	${FONTSCALE}:${PORTSDIR}/x11-fonts/XFree86-4-fontScalable \
 	${X11BASE}/bin/xfs:${PORTSDIR}/x11-servers/XFree86-4-FontServer \
-	${X11BASE}/bin/xf86cfg:${PORTSDIR}/x11-servers/XFree86-4-Server
+	${X11BASE}/bin/xf86cfg:${PORTSDIR}/x11-servers/XFree86-4-Server \
+	${X11BASE}/bin/Xwrapper-4:${PORTSDIR}/x11/wrapper
+
 
 MAINTAINER=	jmz@FreeBSD.org
 
