@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	ipython
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.4
 CATEGORIES=	devel python
 MASTER_SITES=	http://ipython.scipy.org/dist/
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
-DISTNAME=	IPython-${PORTVERSION}
 
 MAINTAINER=	dryice@liu.com.cn
 COMMENT=	An enhanced Interactive Python shell
