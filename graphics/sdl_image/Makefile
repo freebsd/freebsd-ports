@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sdl_image
-PORTVERSION=	1.0.10
+PORTVERSION=	1.1.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_image/src/
 DISTNAME=	SDL_image-${PORTVERSION}
