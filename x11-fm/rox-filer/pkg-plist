@@ -10,26 +10,28 @@ apps/ROX-Filer/Help/Manual.html
 apps/ROX-Filer/Help/README
 apps/ROX-Filer/Help/README-es
 apps/ROX-Filer/Help/TODO
-apps/ROX-Filer/Help/ld-id2842228.html
-apps/ROX-Filer/Help/ld-id2846545.html
 apps/ROX-Filer/Messages/README
 apps/ROX-Filer/Messages/da.gmo
 apps/ROX-Filer/Messages/de.gmo
+apps/ROX-Filer/Messages/es.gmo
 apps/ROX-Filer/Messages/fr.gmo
 apps/ROX-Filer/Messages/hu.gmo
 apps/ROX-Filer/Messages/it.gmo
 apps/ROX-Filer/Messages/nl.gmo
+apps/ROX-Filer/Messages/no.gmo
 apps/ROX-Filer/Messages/pl.gmo
 apps/ROX-Filer/Messages/ru.gmo
-apps/ROX-Filer/Messages/sp.gmo
+apps/ROX-Filer/Messages/sv.gmo
 apps/ROX-Filer/Messages/zh_CN.gmo
 apps/ROX-Filer/Messages/zh_TW.gmo
 apps/ROX-Filer/Options.xml
 apps/ROX-Filer/images/application.png
 apps/ROX-Filer/images/dirs.png
 apps/ROX-Filer/images/iconified.png
-apps/ROX-Filer/images/mount.png
-apps/ROX-Filer/images/mounted.png
+apps/ROX-Filer/images/rox-mount.png
+apps/ROX-Filer/images/rox-mounted.png
+apps/ROX-Filer/images/rox-show-details.png
+apps/ROX-Filer/images/rox-show-hidden.png
 apps/ROX-Filer/images/symlink.png
 apps/ROX-Filer/style.css
 bin/rox
@@ -78,6 +80,7 @@ share/Choices/MIME-icons/video.png
 share/Choices/MIME-icons/video_mpeg.png
 share/Choices/MIME-types/application_postscript
 share/Choices/MIME-types/text
+share/Choices/MIME-types/text_html
 @dirrm share/Choices/MIME-types
 @dirrm share/Choices/MIME-icons
 @dirrm share/Choices
