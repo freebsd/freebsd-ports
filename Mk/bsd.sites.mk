@@ -181,6 +181,27 @@ MASTER_SITE_WINDOWMAKER+= \
 	ftp://ftp.minet.net/pub/windowmaker/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/X/WindowMaker/%SUBDIR%/
 
+MASTER_SITE_MOZILLA+= \
+	ftp://ftp.mozilla.org/pub/%SUBDIR%/ \
+	ftp://download.sourceforge.net/pub/mirrors/mozilla/%SUBDIR%/ \
+	ftp://sunsite.utk.edu/pub/netscape-source/%SUBDIR%/ \
+	ftp://ftp.informatik.uni-bonn.de/pub/www/mozilla/%SUBDIR%/ \
+	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/ftp.mozilla.org/pub/%SUBDIR%/ \
+	ftp://sunsite.auc.dk/pub/mozilla/%SUBDIR%/ \
+	ftp://ftp.funet.fi/pub/mirrors/ftp.mozilla.org/pub/%SUBDIR%/ \
+	ftp://ftp.sunsite.kth.se/archive/www/ftp.mozilla.org/%SUBDIR%/ \
+	ftp://ftp2.sinica.edu.tw/pub3/www/mozilla/%SUBDIR%/ \
+	ftp://ftp.is.co.za/networking/info-service/www/clients/netscape/mozilla/%SUBDIR%/ \
+	${MASTER_SITE_RINGSERVER:S,/%SUBDIR%/,/net/www/mozilla/%SUBDIR%/,}
+
+MASTER_SITE_XEMACS+= \
+	ftp://ftp.xemacs.org/pub/xemacs/%SUBDIR%/ \
+	ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/%SUBDIR%/ \
+	ftp://ftp.usyd.edu.au/pub/xemacs/%SUBDIR%/ \
+	ftp://ftp.lab.kdd.co.jp/xemacs/%SUBDIR%/ \
+	ftp://ftp.th-darmstadt.de/pub/editors/xemacs/%SUBDIR%/ \
+	${MASTER_SITE_RINGSERVER:S,/%SUBDIR%/,/text/xemacs/%SUBDIR%/,}
+
 MASTER_SITE_PORTS_JP+=	\
 	ftp://ports.jp.FreeBSD.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/%SUBDIR%/ \
 	ftp://ftp4.jp.FreeBSD.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/%SUBDIR%/ \
