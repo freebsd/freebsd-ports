@@ -16,8 +16,8 @@ MASTER_SITE_SUBDIR=	apps/graphics/misc
 MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--program-prefix=""
 
-MANCOMPRESSED=	yes
 MAN1=	cave.1
 
 pre-build:
