@@ -1,6 +1,6 @@
 # ports collection makefile for:	gigabase
 # Date created:			15 August 2000
-# Whom:				Sergey Osokin aka oZZ <osa@FreeBSD.org.ru>
+# Whom:				Sergey Osokin aka oZZ <ports@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	2.59
 CATEGORIES=	databases
 MASTER_SITES=	http://www.ispras.ru/~knizhnik/
 
-MAINTAINER=	osa@FreeBSD.org.ru
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 INSTALLS_SHLIB=	yes

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	stuphead
 # Date created:		07 December 2000
-# Whom:			Sergey Osokin aka oZZ <osa@FreeBSD.org.ru>
+# Whom:			Sergey Osokin aka oZZ <ports@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -14,7 +14,7 @@ MASTER_SITES=	http://stuphead.antex.ru/
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	${PORTNAME}-${PORTVERSION}-1.patch
 
-MAINTAINER=	osa@FreeBSD.org.ru
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
