@@ -2,14 +2,12 @@ bin/changecode
 bin/hyphen_show
 bin/pages_show
 bin/xtem
-share/xtem/COPYING
 share/xtem/Changelog
 share/xtem/Installation.Reply
 share/xtem/Installation.tex
 share/xtem/Makefile
 share/xtem/README
 share/xtem/README.Tcl-version
-share/xtem/README.Tk4.2p2
 share/xtem/README.Upgrading
 share/xtem/README.hyphen_show
 share/xtem/SyntaxHelp_htx.tex
@@ -57,14 +55,15 @@ share/xtem/help_english/dv_optedi.hlp
 share/xtem/help_english/ev_edisel.hlp
 share/xtem/help_english/ev_grund.hlp
 share/xtem/help_english/ev_h.hlp
+share/xtem/help_english/ev_optedi.hlp
 share/xtem/help_english/ev_syntaxhlp.hlp
 share/xtem/help_english/fs_chgmenu2.hlp
 share/xtem/help_english/fs_chgmenu3.hlp
-share/xtem/help_english/fs_edigrep.hlp
 share/xtem/help_english/fs_dirdisp2.hlp
 share/xtem/help_english/fs_dirdisp3.hlp
 share/xtem/help_english/fs_diredi3.hlp
 share/xtem/help_english/fs_dirsel3.hlp
+share/xtem/help_english/fs_edigrep.hlp
 share/xtem/help_english/fs_edirdisp2.hlp
 share/xtem/help_english/fs_editdisp2.hlp
 share/xtem/help_english/fs_editdisp3.hlp
@@ -422,6 +421,7 @@ share/xtem/help_english/tv_speich.hlp
 share/xtem/help_english/tv_texautost.hlp
 share/xtem/help_english/tv_texposth.hlp
 share/xtem/help_english/tv_undrfull.hlp
+share/xtem/help_english/tv_warnings.hlp
 share/xtem/help_english/ut_createdir.hlp
 share/xtem/help_english/ut_saven.hlp
 share/xtem/help_english/xt_abbruch.hlp
@@ -434,6 +434,7 @@ share/xtem/help_english/xt_filesel.hlp
 share/xtem/help_english/xt_grund.hlp
 share/xtem/help_english/xt_help.hlp
 share/xtem/help_english/xt_index.hlp
+share/xtem/help_english/xt_letters.hlp
 share/xtem/help_english/xt_localnews.hlp
 share/xtem/help_english/xt_mkcmd.hlp
 share/xtem/help_english/xt_preview.hlp
@@ -448,7 +449,6 @@ share/xtem/help_english/xt_syntxhlp.hlp
 share/xtem/help_english/xt_tex.hlp
 share/xtem/help_english/xt_voreinst3.hlp
 share/xtem/help_english/xt_xtem.hlp
-share/xtem/help_english/xt_xtemold.hlp
 share/xtem/help_english/xv_bell.hlp
 share/xtem/help_english/xv_grund.hlp
 share/xtem/help_english/xv_h.hlp
@@ -496,6 +496,7 @@ share/xtem/help_german/dv_optedi.hlp
 share/xtem/help_german/ev_edisel.hlp
 share/xtem/help_german/ev_grund.hlp
 share/xtem/help_german/ev_h.hlp
+share/xtem/help_german/ev_optedi.hlp
 share/xtem/help_german/ev_syntaxhlp.hlp
 share/xtem/help_german/fs_chgmenu2.hlp
 share/xtem/help_german/fs_chgmenu3.hlp
@@ -861,6 +862,7 @@ share/xtem/help_german/tv_speich.hlp
 share/xtem/help_german/tv_texautost.hlp
 share/xtem/help_german/tv_texposth.hlp
 share/xtem/help_german/tv_undrfull.hlp
+share/xtem/help_german/tv_warnings.hlp
 share/xtem/help_german/ut_createdir.hlp
 share/xtem/help_german/ut_saven.hlp
 share/xtem/help_german/xt_abbruch.hlp
@@ -873,6 +875,7 @@ share/xtem/help_german/xt_filesel.hlp
 share/xtem/help_german/xt_grund.hlp
 share/xtem/help_german/xt_help.hlp
 share/xtem/help_german/xt_index.hlp
+share/xtem/help_german/xt_letters.hlp
 share/xtem/help_german/xt_localnews.hlp
 share/xtem/help_german/xt_mkcmd.hlp
 share/xtem/help_german/xt_preview.hlp
@@ -887,7 +890,6 @@ share/xtem/help_german/xt_syntxhlp.hlp
 share/xtem/help_german/xt_tex.hlp
 share/xtem/help_german/xt_voreinst3.hlp
 share/xtem/help_german/xt_xtem.hlp
-share/xtem/help_german/xt_xtemold.hlp
 share/xtem/help_german/xv_bell.hlp
 share/xtem/help_german/xv_grund.hlp
 share/xtem/help_german/xv_h.hlp
@@ -908,21 +910,14 @@ share/xtem/letter.tcl
 share/xtem/logfile.tcl
 share/xtem/lv.tcl
 share/xtem/mkcommand.0
-share/xtem/mkcommand.1
-share/xtem/mkcommand.2
-share/xtem/mkcommand.3
 share/xtem/mkcommand.4
 share/xtem/mkcommand.5
 share/xtem/mkcommand.6
-share/xtem/mkcommand.7
 share/xtem/mkcommand.9
-share/xtem/mkcommand74ff.a
-share/xtem/mkcommand74ff.b
 share/xtem/mv.tcl
 share/xtem/newsfile.tcl
 share/xtem/preview.tcl
 share/xtem/printing.tcl
-share/xtem/process.tcl
 share/xtem/prt_dvijep.tcl
 share/xtem/prt_dvilj.tcl
 share/xtem/prt_dvilj4.tcl
@@ -953,16 +948,16 @@ share/xtem/xtem.tcl
 share/xtem/xtem_async
 share/xtem/xtem_prog
 share/xtem/xteminstall
+share/xtem/xtemlettersdemo/ScriptAppendLine
+share/xtem/xtemlettersdemo/ScriptDay
+share/xtem/xtemlettersdemo/ScriptDayMonthYear
+share/xtem/xtemlettersdemo/ScriptMonth
+share/xtem/xtemlettersdemo/ScriptMonthYear
+share/xtem/xtemlettersdemo/ScriptNameSpecifics
+share/xtem/xtemlettersdemo/br_IWD.vst
+share/xtem/xtemlettersdemo/br_QuickDirty.vst
+share/xtem/xtemlettersdemo/letterhead.tex
 share/xtem/xv.tcl
-share/xtem/xtemletters-demo/ScriptAppendLine
-share/xtem/xtemletters-demo/ScriptDay
-share/xtem/xtemletters-demo/ScriptDayMonthYear
-share/xtem/xtemletters-demo/ScriptMonth
-share/xtem/xtemletters-demo/ScriptMonthYear
-share/xtem/xtemletters-demo/ScriptNameSpecifics
-share/xtem/xtemletters-demo/br_IWD.vst
-share/xtem/xtemletters-demo/br_QuickDirty.vst
-share/xtem/xtemletters-demo/letterhead.tex
 share/xtem_locals_english/bibtex.vst
 share/xtem_locals_english/cleanup.vst
 share/xtem_locals_english/editor.vst
@@ -1037,7 +1032,7 @@ share/xtem_locals_german/xtemstart.news
 @unexec rm -f %D/share/xtem/locals_english
 @dirrm share/xtem_locals_german
 @dirrm share/xtem_locals_english
-@dirrm share/xtem/xtemletters-demo
+@dirrm share/xtem/xtemlettersdemo
 @dirrm share/xtem/help_german/miscellaneous
 @dirrm share/xtem/help_german/latex
 @dirrm share/xtem/help_german
