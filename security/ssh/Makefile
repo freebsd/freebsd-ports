@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.72 1999/01/02 00:12:20 asami Exp $
+# $Id: Makefile,v 1.73 1999/03/13 18:51:11 billf Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -127,12 +127,16 @@ CONFIGURE_ENV+= PERL=/replace_it_with_PERL_path
 .endif
 
 # Include tcp-wrapper support (call remote identd)
+.if exists(/usr/include/tcpd.h)
+CONFIGURE_ARGS+= --with-libwrap
+.else
 .if defined(USE_TCPWRAP) && ${USE_TCPWRAP} == YES || \
     exists(${PREFIX}/lib/libwrap.a) && \
     (!defined(USE_TCPWRAP) || ${USE_TCPWRAP} != NO)
 CONFIGURE_ENV+= LDFLAGS=-L${PREFIX}/lib CFLAGS="${CFLAGS} -I${PREFIX}/include"
 CONFIGURE_ARGS+= --with-libwrap
 LIB_DEPENDS+=   wrap.7:${PORTSDIR}/security/tcp_wrapper
+.endif
 .endif
 
 # Include SOCKS firewall support
