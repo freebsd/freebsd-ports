@@ -1,0 +1,48 @@
+*** ../../../libhelp-1.8.1/Imakefile	Tue Apr  4 17:21:02 1995
+--- Imakefile	Mon Oct 20 22:13:28 1997
+***************
+*** 27,33 ****
+  XCOMM     remove libhtmlw from LIBDIRS
+  XCOMM -------------------------------------------------------------------- 
+  
+! LIBDIRS = libhelp libButtFace libhtmlw
+  
+  XCOMM -------------------------------------------------------------------- 
+  XCOMM  Additional Definitions
+--- 27,33 ----
+  XCOMM     remove libhtmlw from LIBDIRS
+  XCOMM --------------------------------------------------------------------
+  
+! LIBDIRS = libhelp libButtFace libhtmlw libhlpclient
+  
+  XCOMM --------------------------------------------------------------------
+  XCOMM  Additional Definitions
+***************
+*** 36,42 ****
+  CC = gcc -ansi
+  COPT = -O2
+  INCS = 
+! DEFS = 
+  LIBS =
+  
+  #define IHaveSubdirs
+--- 36,42 ----
+  CC = gcc -ansi
+  COPT = -O2
+  INCS =
+! DEFS = -DHELP_PATH=\"$(X11BASE)/lib/X11/xmhelp/help:$(X11BASE)/lib/X11/xmhelp/pixmaps\"
+  LIBS =
+  
+  #define IHaveSubdirs
+***************
+*** 52,60 ****
+  MakeSubdirs($(SUBDIRS))
+  DependSubdirs($(SUBDIRS))
+  CleanSubdirs($(SUBDIRS))
+- 
+- 
+- 
+- 
+- 
+- 
+--- 52,54 ----

@@ -1,0 +1,15 @@
+diff -cb ../../../libhelp-1.8.1/libhelp/load.c libhelp/load.c
+*** ../../../libhelp-1.8.1/libhelp/load.c	Wed Jun 28 15:00:15 1995
+--- libhelp/load.c	Mon Oct 20 19:00:11 1997
+***************
+*** 37,42 ****
+--- 37,45 ----
+  /*----------------------------------------------------------------------*
+  *g  include section
+  **----------------------------------------------------------------------*/
++ #ifdef __FreeBSD__
++ #include <sys/types.h>
++ #endif __FreeBSD__
+  #include <dirent.h>
+  #include <sys/stat.h>
+  #include <unistd.h>

@@ -1,0 +1,13 @@
+diff -cb ../../../libhelp-1.8.1/libButtFace/Center.c libButtFace/Center.c
+*** ../../../libhelp-1.8.1/libButtFace/Center.c	Fri Feb 24 13:28:28 1995
+--- libButtFace/Center.c	Mon Oct 20 19:00:11 1997
+***************
+*** 31,36 ****
+--- 31,37 ----
+   */
+  #include <X11/IntrinsicP.h>
+  #include <X11/StringDefs.h>
++ #include <Xm/ManagerP.h>
+  #include "CenterP.h"
+
+
