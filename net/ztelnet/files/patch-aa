@@ -1,0 +1,46 @@
+diff -c -r ../ztelnet.old/Config.generic ./Config.generic
+*** ../ztelnet.old/Config.generic	Fri Apr  4 14:58:21 1997
+--- ./Config.generic	Fri Apr  4 15:01:52 1997
+***************
+*** 193,200 ****
+  		DEFINES="-DLINEMODE -DTERMCAP -DKLUDGELINEMODE \
+  			-DUSE_TERMIO -DDIAGNOSTICS" \
+  		INCLUDES="-I.." \
+! 		LIB_OBJ="gettytab.o" \
+! 		LIB_SRC="gettytab.c" \
+  		AR=ar ARFLAGS=cq RANLIB=ranlib \
+  		VPATH=/usr/src/libexec/getty \
+  		LIBEXEC=${DESTDIR}/usr/libexec \
+--- 193,200 ----
+  		DEFINES="-DLINEMODE -DTERMCAP -DKLUDGELINEMODE \
+  			-DUSE_TERMIO -DDIAGNOSTICS" \
+  		INCLUDES="-I.." \
+! 		#LIB_OBJ="gettytab.o" \
+! 		#LIB_SRC="gettytab.c" \
+  		AR=ar ARFLAGS=cq RANLIB=ranlib \
+  		VPATH=/usr/src/libexec/getty \
+  		LIBEXEC=${DESTDIR}/usr/libexec \
+diff -c -r ../ztelnet.old/Makefile ./Makefile
+*** ../ztelnet.old/Makefile	Fri Apr  4 14:58:21 1997
+--- ./Makefile	Fri Apr  4 15:00:58 1997
+***************
+*** 1,8 ****
+  CC=cc
+  all:
+! 	cd libtelnet; make CC="${CC}"
+! 	cd telnet; make CC="${CC}"
+  
+  .DEFAULT:
+  	cd libtelnet; make $@ WHAT=${WHAT} CC="${CC}"
+  	cd telnet; make $@ WHAT=${WHAT} CC="${CC}"
+--- 1,10 ----
+  CC=cc
+  all:
+! 	cd zmodem; make CC="${CC}" bsd
+! 	cd libtelnet; make CC="${CC}" 4.4bsd
+! 	cd telnet; make CC="${CC}" 4.4bsd
+  
+  .DEFAULT:
++ 	cd zmodem; make $@ WHAT=${WHAT} CC="${CC}" bsd
+  	cd libtelnet; make $@ WHAT=${WHAT} CC="${CC}"
+  	cd telnet; make $@ WHAT=${WHAT} CC="${CC}"

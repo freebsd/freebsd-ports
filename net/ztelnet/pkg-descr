@@ -1,0 +1,8 @@
+ztelnet
+-------
+
+ztelnet is telnet hack(from BSD source) to do zmodem transfer. It is useful
+for zmodem transfer in BBS.
+
+--
+Ports by Choi Jun Ho <junker@jazz.snu.ac.kr>
