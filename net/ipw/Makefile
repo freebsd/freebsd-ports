@@ -8,10 +8,10 @@
 PORTNAME=	ipw
 PORTVERSION=	3.3.a
 CATEGORIES=	net
-MASTER_SITES=	http://mjhb.marina-del-rey.ca.us/ipw/
+MASTER_SITES=	${MASTER_SITE_FREEBSD}
 DISTNAME=	ipw
 
-MAINTAINER=	mph@freebsd.org
+MAINTAINER=	ports@freebsd.org
 
 NO_WRKSUBDIR=	yes
 
