@@ -69,6 +69,7 @@ EOF
 	while (<MPOLD>) {
 		next if m|use.perl generated line|;
 		next if m|^\s*OPTIONAL_MANPATH\s+\S+/lib/perl5/%%PERL_VERSION%%/man\s*$|;
+		next if m|^\s*OPTIONAL_MANPATH\s+\S+/lib/perl5/%%PERL_VERSION%%/perl/man\s*$|;
 		print MPNEW;
 	}
 	close MPNEW;
@@ -112,6 +113,7 @@ EOF
 	my $perl_port_manpath = <<EOF;
 # -- use.perl generated line -- #
 OPTIONAL_MANPATH	%%PREFIX%%/lib/perl5/%%PERL_VERSION%%/man
+OPTIONAL_MANPATH	%%PREFIX%%/lib/perl5/%%PERL_VERSION%%/perl/man
 EOF
 
 	open MPOLD, "< /etc/manpath.config" or die "/etc/manpath.config: $!";
