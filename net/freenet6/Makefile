@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	freenet6
-PORTVERSION=	0.9.6
-PORTREVISION=	1
+PORTVERSION=	0.9.7
 CATEGORIES=	net ipv6
 MASTER_SITES=	# fetch manually
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	edwin@mavetju.org
+
+RESTRICTED=	"Must Agree to License at http://www.freenet6.net/ on the download page for FreeBSD"
+NO_CDROM=	${RESTRICTED}
+NO_PACKAGE=	${RESTRICTED}
 
 USE_REINPLACE=	yes
 
