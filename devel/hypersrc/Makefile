@@ -16,6 +16,8 @@ MASTER_SITE_SUBDIR=	latest old
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Source code browser
 
+BROKEN=		"Installs files into /root"
+
 RUN_DEPENDS=	exctags:${PORTSDIR}/devel/ctags
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -26,6 +28,8 @@ USE_BISON=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
+
+MAN1=		hypersrc.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|"ctags"|"exctags"|g' ${WRKSRC}/Hypersrc.pl
