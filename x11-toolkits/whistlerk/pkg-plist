@@ -1,0 +1,6 @@
+lib/gtk/themes/engines/libwhistler.so
+share/themes/WhistlerK/ICON.png
+share/themes/WhistlerK/README.html
+share/themes/WhistlerK/gtk/gtkrc
+@dirrm share/themes/WhistlerK/gtk
+@dirrm share/themes/WhistlerK

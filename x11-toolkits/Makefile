@@ -79,6 +79,7 @@
     SUBDIR += v
     SUBDIR += vdk
     SUBDIR += vdkbuilder
+    SUBDIR += whistlerk
     SUBDIR += wxgtk
     SUBDIR += xbae
     SUBDIR += xclasses
