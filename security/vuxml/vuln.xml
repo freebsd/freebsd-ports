@@ -32,6 +32,37 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="92268205-1947-11d9-bc4a-000c41e2cdad">
+    <topic>cyrus-sasl -- dynamic library loading and set-user-ID
+      applications</topic>
+    <affects>
+      <package>
+	<name>cyrus-sasl</name>
+	<range><le>1.5.28_3</le></range>
+	<range><ge>2.*</ge><le>2.1.19</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The Cyrus SASL library, libsasl, contains functions which
+          may load dynamic libraries.  These libraries may be loaded
+          from the path specified by the environmental variable
+          SASL_PATH, which in some situations may be fully controlled
+          by a local attacker.  Thus, if a set-user-ID application
+          (such as chsh) utilizes libsasl, it may be possible for a
+          local attacker to gain superuser privileges.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0884</cvename>
+      <url>https://bugzilla.andrew.cmu.edu/cgi-bin/cvsweb.cgi/src/sasl/lib/common.c#rev1.104</url>
+    </references>
+    <dates>
+      <discovery>2004-09-22</discovery>
+      <entry>2004-10-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="efc4819b-0b2d-11d9-bfe1-000bdb1444a4">
     <topic>imp3 -- XSS hole in the HTML viewer</topic>
     <affects>
