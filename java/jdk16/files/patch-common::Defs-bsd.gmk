@@ -1,23 +1,13 @@
 $FreeBSD$
 
---- ../../j2se/make/common/Defs-bsd.gmk.orig	Fri Mar  7 01:38:41 2003
-+++ ../../j2se/make/common/Defs-bsd.gmk	Fri Mar  7 01:38:01 2003
-@@ -155,7 +155,7 @@
- 
- # DEVTOOLS_PATH is for other tools required for building (such as
- # zip, etc.)
+--- ../../j2se/make/common/Defs-bsd.gmk.orig	Fri Oct 10 09:50:48 2003
++++ ../../j2se/make/common/Defs-bsd.gmk	Fri Oct 10 09:54:35 2003
+@@ -162,7 +162,7 @@
+ ifeq ($(TRUE_PLATFORM), NetBSD)
+ DEVTOOLS_PATH = /usr/pkg/bin/
+ else
 -DEVTOOLS_PATH = /usr/local/bin/
 +DEVTOOLS_PATH = ${LOCALBASE}/bin/
+ endif
  # Allow the user to override the default value...
  ifdef ALT_DEVTOOLS_PATH
- DEVTOOLS_PATH = $(subst //,/,$(ALT_DEVTOOLS_PATH)/)
-@@ -194,7 +194,8 @@
- endif # PLATFORM_SRC
- 
- # platform specific include files
--PLATFORM_INCLUDE  = $(INCLUDEDIR)/$(PLATFORM)
-+TRUE_PLATFORM_INCLUDE := $(shell $(ECHO) $(TRUE_PLATFORM) | $(TR) "[:upper:]" "[:lower:]")
-+PLATFORM_INCLUDE  = $(INCLUDEDIR)/$(TRUE_PLATFORM_INCLUDE)
- 
- #
- # Default BOOTDIR
