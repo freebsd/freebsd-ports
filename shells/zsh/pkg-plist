@@ -1,8 +1,5 @@
-@cwd /usr/local
 bin/zsh
-@exec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak; echo %D/%F) >/etc/shells
-@unexec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells
-man/man1/zsh.1
+bin/zsh-2.6-beta8
 info/zsh.info
 info/zsh.info-1
 info/zsh.info-2
@@ -10,3 +7,11 @@ info/zsh.info-3
 info/zsh.info-4
 info/zsh.info-5
 info/zsh.info-6
+man/man1/zsh.1.gz
+man/man1/zshbuiltins.1.gz
+man/man1/zshcompctl.1.gz
+man/man1/zshexpn.1.gz
+man/man1/zshmisc.1.gz
+man/man1/zshoptions.1.gz
+man/man1/zshparam.1.gz
+man/man1/zshzle.1.gz
