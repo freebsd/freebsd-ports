@@ -3,7 +3,7 @@
 # Date created:        29 Jul 1998
 # Whom:                rom
 #
-# $Id: Makefile,v 1.13 1998/11/06 12:04:27 asami Exp $
+# $Id: Makefile,v 1.14 1998/11/11 17:24:17 vanilla Exp $
 #
 
 DISTNAME= 	gIDE-0.0.11
@@ -20,6 +20,7 @@ USE_X_PREFIX=   yes
 GNU_CONFIGURE=  yes
 USE_GMAKE= 	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
 		GTK_CONFIG="${X11BASE}/bin/gtk11-config" \
 		LIBS="-L${LOCALBASE}/lib"
 
