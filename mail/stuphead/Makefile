@@ -9,7 +9,7 @@ PORTNAME=	stuphead
 PORTVERSION=	0.5.3
 PORTREVISION=	2
 CATEGORIES=	mail gnome
-MASTER_SITES=	http://stuphead.antex.ru/
+MASTER_SITES=	http://stuphead.asplinux.ru/stuphead/
 
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	${PORTNAME}-${PORTVERSION}-1.patch
