@@ -21,9 +21,4 @@ INSTALL_TARGET=	install install-man
 MAN1=		gshar.1 gunshar.1
 INFO=		remsync sharutils
 
-post-install:
-.for info in remsync.info sharutils.info
-	install-info ${PREFIX}/info/${info} ${PREFIX}/info/dir
-.endfor
-
 .include <bsd.port.mk>
