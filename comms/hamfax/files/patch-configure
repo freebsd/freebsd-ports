@@ -1,0 +1,11 @@
+--- configure.orig	Sat Jun  7 11:05:07 2003
++++ configure	Sat Jun  7 11:08:01 2003
+@@ -4172,7 +4172,7 @@
+   ac_status=$?
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }
+-            bnv_err_4=`grep -v '^ *+' bnv_qt_test_4.out`
++            bnv_err_4=`grep -v '^ *+' bnv_qt_test_4.out | grep -v warning:`
+             if test x"$bnv_err_4" != x; then
+               echo "$bnv_err_4" >&5
+             else

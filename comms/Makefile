@@ -20,6 +20,7 @@
     SUBDIR += gnokii
     SUBDIR += gscmxx
     SUBDIR += gsmlib
+    SUBDIR += hamfax
     SUBDIR += hamlib
     SUBDIR += hylafax
     SUBDIR += ixj

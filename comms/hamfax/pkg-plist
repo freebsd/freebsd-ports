@@ -1,0 +1,4 @@
+bin/hamfax
+share/HamFax/HamFax.html
+share/HamFax/hamfax_de.qm
+@dirrm share/HamFax
