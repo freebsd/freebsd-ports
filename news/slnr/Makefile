@@ -3,7 +3,7 @@
 # Date created:		21 July 1996
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id: Makefile,v 1.3 1996/11/18 11:38:06 asami Exp $
+# $Id: Makefile,v 1.4 1997/04/01 04:35:34 max Exp $
 #
 
 DISTNAME=	slnr-2.3.0
@@ -24,7 +24,7 @@ DOCFILES=	${FILESDIR}/porting.notes other/soup12.doc other/slnr.doc \
 do-install:
 .if !defined{NOPORTDOCS}
 	@${ECHO_MSG} "===>  Copying documents to ${PREFIX}/share/doc/slnr"
-	@${MKDIR} -p ${PREFIX}/share/doc/slnr
+	@${MKDIR} ${PREFIX}/share/doc/slnr
 	@cd ${WRKSRC}; \
 		${INSTALL_DATA} ${DOCFILES} ${PREFIX}/share/doc/slnr
 .endif
