@@ -158,5 +158,6 @@ pre-su-install:
 
 post-install:
 	${RM} -f ${PREFIX}/lib/libqt-mt.la
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

@@ -1,0 +1,12 @@
+*******************************************************************************
+
+	To enable QT's database support, install the database plugin ports.
+	The following plugin ports are available:
+
+		IBase/Firebird 	- databases/qt-ibase-plugin
+		MySQL		- databases/qt-mysql-plugin
+		ODBC		- databases/qt-odbc-plugin
+		PostgreSQL	- databases/qt-pgsql-plugin
+		SQLite		- databases/qt-sqlite-plugin				
+
+*******************************************************************************
