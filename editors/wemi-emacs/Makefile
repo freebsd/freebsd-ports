@@ -3,7 +3,7 @@
 # Date created:		9 May 1999
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/10 13:37:21 shige Exp $
+# $Id: Makefile,v 1.2 1999/05/21 13:33:37 shige Exp $
 #
 
 DISTNAME=	wemi-${WEMI_VER}
@@ -18,7 +18,7 @@ PORTCLASS?=	master
 FLIM_VER=	1.9.2
 WEMI_VER=	1.8.6
 WEMIDOCDIR=	share/doc/semi
-WEMI_SETUPEL=	wemi-setup.el
+WEMI_SETUPEL=	wemi-setupel.el
 
 .if (${PORTCLASS} == "master")
 # emacs port setup
@@ -50,9 +50,10 @@ RUN_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}-common
 .else
 RUN_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
 .endif
-SCRIPTS_ENV=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER}
+SCRIPTS_ENV=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER} \
+		TARGETS="${WEMI_SETUPEL}"
 PLIST_SUB=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER} \
-		WEMIDOCDIR=${WEMIDOCDIR}
+		WEMIDOCDIR=${WEMIDOCDIR} WEMI_SETUPEL=${WEMI_SETUPEL}
 MAKE_FLAGS=	EMACS=${EMACS_CMD}
 .if (${EMACS_VER} == "19.34")
 # depends on custom: emacs-19.34 or mule-19.34
