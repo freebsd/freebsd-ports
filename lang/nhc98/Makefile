@@ -13,6 +13,8 @@ DIST_SUBDIR=	nhc98
 
 MAINTAINER=	obraun@informatik.unibw-muenchen.de
 
+USE_REINPLACE=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500000
@@ -22,7 +24,6 @@ BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 
 .if ${OSVERSION} >= 500000
