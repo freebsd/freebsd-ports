@@ -1,0 +1,7 @@
+libgdome-ruby is a ruby extension that provides the DOM level 2 Core
+API for accessing XML documents.
+
+It is implemented as a wrapper around the C library gdome2.
+
+Author:	Tobias Peters <t-peters@berlios.de>
+WWW:	http://libgdome-ruby.berlios.de/
