@@ -43,6 +43,7 @@
     SUBDIR += bmon
     SUBDIR += bnbt
     SUBDIR += boclient
+    SUBDIR += boinc-client
     SUBDIR += bounce
     SUBDIR += bsdproxy
     SUBDIR += btqueue
