@@ -1,11 +1,11 @@
---- INSTALL.orig	Tue Nov 19 13:47:49 2002
-+++ INSTALL	Wed Nov 20 22:34:03 2002
-@@ -32,7 +32,7 @@
-  $ make && make install
+--- INSTALL.orig	Tue Jul 29 12:50:35 2003
++++ INSTALL	Tue Jul 29 18:52:26 2003
+@@ -43,7 +43,7 @@
     (use gmake instead of the standard make on FreeBSD)
  
--2) Create a writeable directory /usr/share/fonts/truetype, copy some
-+2) Create a writeable directory %%TTFONTDIR%%, copy some
-    truetype *.ttf files or create soflinks to truetype directories
-    in there, then run
+ 3) Copy some truetype (.ttf) files or create symlinks to truetype directories
+-   in the default installation directory /usr/local/share/fonts/truetype
++   in the default installation directory %%TTFONTDIR%%
+    (note that this directory may be changed in the configure step). Then to
+    generate the font databases:
  

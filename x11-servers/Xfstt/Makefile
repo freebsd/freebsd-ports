@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfstt
-PORTVERSION=	1.4
+PORTVERSION=	1.6
 CATEGORIES=	x11-servers
 MASTER_SITES=	http://download.berlios.de/xfstt/
 
@@ -17,21 +17,21 @@ USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--disable-nls
+CONFIGURE_ARGS=	--localstatedir=/var --disable-nls
 
 MAN1=		xfstt.1x
 
 TTFONTDIR=	${PREFIX}/lib/X11/fonts/TrueType
 
 post-patch:
-.for file in INSTALL doc/xfstt.1x src/perftest.cc src/xfstt.cc
+.for file in INSTALL doc/xfstt.1x src/Makefile.in
 	@${REINPLACE_CMD} -e 's|%%TTFONTDIR%%|${TTFONTDIR}|g' ${WRKSRC}/${file}
 .endfor
+	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" ${FILESDIR}/xfstt.sh \
+		> ${WRKSRC}/xfstt.sh
 
 post-install:
-	${SED} -e "s:%%PREFIX%%:${PREFIX}:g" ${FILESDIR}/xfstt.sh \
-		> ${PREFIX}/etc/rc.d/xfstt.sh
-	@${CHMOD} 755 ${PREFIX}/etc/rc.d/xfstt.sh
+	${INSTALL_SCRIPT} ${WRKSRC}/xfstt.sh ${PREFIX}/etc/rc.d
 	@${MKDIR} ${TTFONTDIR}
 .if !defined{NOPORTDOCS}
 	@${MKDIR} ${DOCSDIR}
