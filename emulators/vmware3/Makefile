@@ -117,6 +117,19 @@ pre-install: setoptions
 .endif
 
 post-install:
-	${LN} -s ${PREFIX}/etc/vmware /etc/vmware
+	@${LN} -s ${PREFIX}/etc/vmware /etc/vmware
+.if !defined(BATCH)
+	@${ECHO} "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" 
+	@${ECHO} "Before launch vmware, execute the next command"
+	@${ECHO} ${PREFIX}/etc/rc.d/vmware.sh start
+	@${ECHO} 
+	@${ECHO} "to load required kernel modules"
+	@${ECHO} "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" 
+.endif
+
+	
+pre-clean:
+	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc.linproc \
+		  ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc.net
 
 .include <bsd.port.post.mk>
