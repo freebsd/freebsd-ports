@@ -1,0 +1,29 @@
+Index: tools/mkimap
+diff -u tools/mkimap.orig tools/mkimap
+--- tools/mkimap.orig	Thu Jan 25 06:26:51 2001
++++ tools/mkimap	Sat Apr  7 05:42:24 2001
+@@ -119,6 +119,8 @@
+ mkdir "deliverdb", 0755;
+ mkdir "deliverdb/db", 0755;
+ 
++system "/usr/sbin/chown -R cyrus:cyrus .";
++
+ # create the sieve stuff
+ if (!$nosievedir) {
+     print "creating $sievedir...\n";
+@@ -127,6 +129,7 @@
+     if (chdir $sievedir) {
+ 	foreach $i ("a".."z") { mkdir "$i", 0755; }
+     }
++    system "/usr/sbin/chown -R cyrus:cyrus $sievedir";
+ }
+ 
+ $flag = 0;
+@@ -138,6 +141,7 @@
+     chdir $part or die "couldn't change to partition $part";
+     mkdir "stage.", 0755;
+     if ($hashispool) { foreach $i ("a".."z") { mkdir $i, 0755; } }
++    system "/usr/sbin/chown -R cyrus:cyrus $part";
+ }
+ 
+ print "done\n";
