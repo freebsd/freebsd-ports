@@ -1,0 +1,21 @@
+From http://grail.cnri.reston.va.us/grail:
+
+	Grail is an extensible Internet browser. It supports the
+	protocols and file formats commonly found on the World-Wide
+	Web, such as HTTP, FTP, and HTML, but, unlike most browsers,
+	it is also easily extended to support other protocols or file
+	formats, such as CNRI's handle protocol. Grail is distributed
+	by CNRI free of charge, and can be freely redistributed
+	(within reason).
+
+	Grail is written and extensible in Python, a free
+	object-oriented programming language. It also uses Tk, a free
+	UI toolkit by John Ousterhout. Grail should run on any Unix
+	system to which Python and Tk have been ported - i.e. almost
+	all Unix systems supporting X11. In particular, Grail is one
+	of the few web browsers that support Solaris for Intel x86
+	processors. It now also runs on Windows and Macintosh, since
+	there are now stable ports of Tk to those platforms. (You need
+	a lot of RAM though.)
+
+Jacques Vidrine <n@nectar.com>
