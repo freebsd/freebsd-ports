@@ -6,6 +6,7 @@ include/gnome-xml/SAX.h
 include/gnome-xml/debugXML.h
 include/gnome-xml/encoding.h
 include/gnome-xml/entities.h
+include/gnome-xml/nanoftp.h
 include/gnome-xml/nanohttp.h
 include/gnome-xml/parser.h
 include/gnome-xml/parserInternals.h
@@ -29,6 +30,7 @@ share/gnome-xml/gnome-xml-entities.html
 share/gnome-xml/gnome-xml-error.html
 share/gnome-xml/gnome-xml-htmlparser.html
 share/gnome-xml/gnome-xml-htmltree.html
+share/gnome-xml/gnome-xml-nanoftp.html
 share/gnome-xml/gnome-xml-nanohttp.html
 share/gnome-xml/gnome-xml-parser.html
 share/gnome-xml/gnome-xml-parserinternals.html
