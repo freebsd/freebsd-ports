@@ -1,0 +1,9 @@
+SERVER change.it.by.yourself
+PORT 80
+DOCUMENTROOT /usr/local/www/data
+USERDIR public_html
+DIRECTORYINDEX index.html index.shtml
+ALIAS /icons/ /usr/local/www/icons/
+SCRIPTALIAS /cgi-bin/ /usr/local/www/cgi-bin/
+HTTPDCONF /usr/local/etc/apache/httpd.conf
+WGSCRIPTALIAS /cgi-bin/ /usr/local/www/cgi-bin/
