@@ -20,7 +20,7 @@ USE_GCC=	3.2
 USE_GETOPT_LONG=yes
 INSTALLS_SHLIB=	yes
 
-MAKE_ENV=	CC=${CC} LDLIBS="${LDFLAGS}" DOCSDIR="${DOCSDIR}"
+MAKE_ENV=	CC=${CC} LDFLAGS="${LDFLAGS}" DOCSDIR="${DOCSDIR}"
 
 PLUGINDIR=	${WRKSRC}/objs/plugins
 PLUGINS=	cdburner.so clone.so copy_to_clipboard.so du.so for_each.so \
