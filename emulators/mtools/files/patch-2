@@ -67,8 +67,8 @@
 +drive m: file="/dev/afd0" exclusive mformat_only cylinders=80 heads=2 sectors=18
 +
 +# SCSI hard disks
-+#  first disk (sd0) slice 1 (s1)
-+#drive c: file="/dev/ad0s1"
++#  first disk (da0) slice 1 (s1)
++#drive c: file="/dev/da0s1"
 +
 +# IDE hard disks
 +#   first disk on the first IDE interface (wd0) slice 1 (s1)
