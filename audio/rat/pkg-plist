@@ -1,6 +1,7 @@
+bin/rat-4.2.20
+bin/rat-4.2.20-ui
+bin/rat-4.2.20-media
 bin/rat
-bin/rat-ui
-bin/rat-media
-etc/sdr/plugins/sdr2.plugin.S02.audio.rtp.-.rat
+etc/sdr/plugins/sdr2.plugin.S02.audio.rtp.-.rat-4.2.20
 @dirrm etc/sdr/plugins
 @dirrm etc/sdr
