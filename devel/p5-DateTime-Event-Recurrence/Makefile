@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DateTime-Event-Recurrence
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DateTime
@@ -23,12 +23,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		DateTime::Event::Recurrence.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-post-patch:
-	${PERL} -p -i.orig -e 's/(\$$\w+(?:-\>)?{\s*(?:\$$?\w+|\$$\w+->{\w+}\[\$$\w+\])\s*})\(/\&{$$1}(/g;' \
-		${WRKSRC}/lib/DateTime/Event/Recurrence.pm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
