@@ -20,9 +20,10 @@ COMMENT=	C++ wrapper for Gtk+, Pango, Atk
 LIB_DEPENDS=	glibmm-2.4.1:${PORTSDIR}/devel/glibmm
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
+LATEST_LINK=	gtkmm24
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-LATEST_LINK=	gtkmm2
 USE_GMAKE=	yes
 USE_GCC=	3.3
 USE_LIBTOOL_VER=13
