@@ -18,14 +18,15 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 WRKSRC=         ${WRKDIR}/gateway-0.10.2/
 CFLAGS+=	-pthread
+CONFIGURE_ARGS += --with-malloc=native
 
 do-install:
 .if !defined(NOPORTDOCS)
 	@cd ${WRKSRC} && make install-docs
 .endif
 	@cd ${WRKSRC} && make install
-	${INSTALL_DATA} ${WRKSRC}/debian/kannel.conf ${PREFIX}/etc/
-	${INSTALL_DATA} ${WRKSRC}/debian/kannel.wapconf ${PREFIX}/etc/
+	${INSTALL_DATA} ${WRKSRC}/gw/wapkannel.conf ${PREFIX}/etc/
+	${INSTALL_DATA} ${WRKSRC}/gw/smskannel.conf ${PREFIX}/etc/
 
 .if !defined(NOPORTDOCS)
 post-install:

@@ -5,5 +5,5 @@ bin/wmlsc
 bin/wmlsdasm
 bin/seewbmp
 bin/run_kannel_box
-etc/kannel.conf
-etc/kannel.wapconf
+etc/wapkannel.conf
+etc/smskannel.conf
