@@ -1,6 +1,6 @@
-# New ports collection makefile for:	oneko
-# Date created:				5 December 1994
-# Whom:					asami
+# New ports collection makefile for:	mp3c
+# Date created:				11 Jul 2002
+# Whom:					Joris Vandalon <joris@vandalon.nl>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://excelsior.kullen.rwth-aachen.de/pub/linux/wspse/:src \
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:src \
 		cdrip.sh:script
 
-MAINTAINER=	wiebel@FreeBSD.nl
+MAINTAINER=	joris@vandalon.nl
 COMMENT=	A CD to mp3c converter with a console frontend
 
 RUN_DEPENDS=	dagrab:${PORTSDIR}/audio/dagrab \
