@@ -15,5 +15,6 @@ To use those applets:
 Replace the ${name} with the correct name to what you want to use applets.
 
 NOTE: Be sure to login as your user when you use the gdesklets command,
-      as the configuration will be stored in the ~/.gdesklets/ directory.
+      as the configuration will be stored in the ~/.gdesklets/ directory
+      and/or gconf database.
 ##
