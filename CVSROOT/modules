@@ -553,6 +553,7 @@ bsd_uucp	src/usr.bin/uucp
 bsd_whatis	src/usr.bin/whatis
 bsdi-netscape47-communicator	ports/www/bsdi-netscape47-communicator
 bsdi-netscape47-navigator	ports/www/bsdi-netscape47-navigator
+bsdproxy	ports/net/bsdproxy
 bsmtp		ports/mail/bsmtp
 bsvc		ports/emulators/bsvc
 btc		ports/audio/btc
