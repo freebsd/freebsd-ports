@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bidwatcher
-PORTVERSION=	1.1.6
+PORTVERSION=	1.1.6a
 CATEGORIES=	misc
 MASTER_SITES=	http://www.midwestcs.com/bidwatcher/download/
 
