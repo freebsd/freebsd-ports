@@ -1,0 +1,18 @@
+--- monitord.c.orig	Fri Jan 17 03:39:44 2003
++++ monitord.c	Thu Sep 23 17:23:02 2004
+@@ -454,13 +454,13 @@
+ 
+ 	struct timeval *tp;
+ 	struct timezone *tzp;
+-	const time_t *time;
++	time_t *time;
+ 	char *buf;
+ 
+ 	buf = (char *) malloc ( (size_t) _BUFSIZE ); // init the time buffer
+ 	tp = (struct timeval *) malloc ( (size_t) sizeof (struct timeval) ); // init the time buffer
+ 	tzp = (struct timezone *) malloc ( (size_t) sizeof (struct timezone) ); // init the timezone buffer
+-	time = (const time_t *) malloc ( (size_t) sizeof (time_t) ); // init the timezone buffer
++	time = (time_t *) malloc ( (size_t) sizeof (time_t) ); // init the timezone buffer
+ 
+ 	/* Get time of day in seconds since Epoch */
+ 	gettimeofday (tp, tzp);
