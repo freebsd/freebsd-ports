@@ -5,6 +5,7 @@ bin/loom
 bin/patchwork
 bin/velvet
 bin/yardstick
+lib/X11/app-defaults/Velvet.ad
 share/doc/FElt/FAQ.html
 @dirrm share/doc/FElt
 share/examples/FElt/frame3.flt
