@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	cutils
-PORTVERSION=	1.4
+PORTVERSION=	1.6
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
+MASTER_SITES=	http://www.sigala.it/sandro/files/
 
-MAINTAINER=	ssigala@globalnet.it
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
-MAN1=		cdecl.1 cundecl.1 chilight.1 cinfo.1 cinfoc.1 cinfodc.1 \
-		cobfusc.1 cunloop.1 yyextract.1 yyref.1
-MAN5=		cinfodb.5
+MAKE_ENV=	MAKEINFO=/usr/bin/makeinfo
+MAN1=		cdecl.1 chilight.1 cobfusc.1 cundecl.1 cunloop.1 yyextract.1 \
+		yyref.1
+
+post-install:
+	install-info ${PREFIX}/info/${PORTNAME}.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
