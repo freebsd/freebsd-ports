@@ -1,0 +1,7 @@
+6tunnel allows you to use services provided by IPv6 hosts with IPv4-only
+applications and vice versa. It can bind to any of your IPv4 (default) or
+IPv6 addresses and forward all data to IPv4 or IPv6 (default) host.
+It can be used for example as an ipv6-capable IRC proxy.
+
+- Vassili Tchersky
+vt@bsdjeunz.org
