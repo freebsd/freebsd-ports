@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.orig
++++ Makefile
+@@ -2,7 +2,7 @@
+ # Linux Serial Driver
+ # Implementation
+ 
+-CC   = gcc -DCPU_ICAP_PC=1
++CC   = gcc -DCPU_ICAP_PC=1 -fPIC
+ LD   = ld
+ OBJS = serial.o ifdhandler.o ctapi.o AdmHndlr.o T1Hndlr.o
+ LIBN = libslb_rf60.so
