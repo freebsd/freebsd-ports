@@ -12,18 +12,18 @@
 # If you want this script to start with the base rc scripts
 # move cyrus_pwcheck.sh to /etc/rc.d/cyrus_pwcheck
 
-# Define the following cyrus_pwcheck_* variables in one of the following:
-#       /etc/rc.conf
-#       /etc/rc.conf.d/pwcheck
-#       ${prefix}/etc/rc.conf.d/pwcheck
-#
-#       cyrus_pwcheck_enable  - Set to YES to enable pwcheck
-#				Default: %%ENABLE_PWCHECK%%
-#
-#       cyrus_pwcheck_program - Path to pwcheck program (pwcheck/pwcheck_pam)
-#				Default: ${prefix}/sbin/%%PWCHECK%%
-
 prefix=%%PREFIX%%
+
+# Define these cyrus_pwcheck_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/cyrus_pwcheck
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+cyrus_pwcheck_enable="%%ENABLE_PWCHECK%%"			# Enable pwcheck daemon
+cyrus_pwcheck_program="${prefix}/sbin/%%PWCHECK%%"	# pwcheck program to use
+							# (pwcheck/pwcheck_pam)
 
 if [ -f /etc/rc.subr ]; then
 	. /etc/rc.subr
@@ -33,22 +33,7 @@ if [ -f /etc/rc.subr ]; then
 	command=${prefix}/sbin/%%PWCHECK%%
 	pidfile="/var/run/pwcheck.pid"
 
-	# The below may be removed when load_local_rc_config is added to rc.subr
-	
-	if [ -f ${prefix}/etc/rc.conf.d/"$name" ]; then
-        	debug "Sourcing ${prefix}/etc/rc.conf.d/${name}"
-        	. ${prefix}/etc/rc.conf.d/"$name"
-	fi
-
 	load_rc_config $name
-
-	if [ -z "${cyrus_pwcheck_enable}" ] ; then
-        	cyrus_pwcheck_enable=%%ENABLE_PWCHECK%%
-	fi
-
-	# The above may be removed when load_local_rc_config is added to rc.subr
-	#
-	# load_local_rc_config $name
 	run_rc_command "$1"
 else
 	# Suck in the configuration variables.
@@ -61,23 +46,11 @@ else
 		fi
 	fi
 
-	if [ -f "${prefix}/etc/rc.conf.d/cyrus_pwcheck" ]; then
-		. ${prefix}/etc/rc.conf.d/cyrus_pwcheck
-	fi
-
-	if [ -z "${cyrus_pwcheck_enable}" ] ; then
-		cyrus_pwcheck_enable=%%ENABLE_PWCHECK%%
-	fi
-
-	if [ -z "${cyrus_pwcheck_program}" ]; then
-		cyrus_pwcheck_program=${prefix}/sbin/%%PWCHECK%%
-	fi
-
 	rc=0
 
 	case "${cyrus_pwcheck_enable}" in
 	    [Yy][Ee][Ss])
-		case "${action}" in
+		case "${1}" in
 
 		    start)
 			if [ -x ${cyrus_pwcheck_program} ] ; then

@@ -12,21 +12,18 @@
 # If you want this script to start with the base rc scripts
 # move saslauthd1.sh to /etc/rc.d/saslauthd1
 
-# Define the following saslauthd1_* variables in one of the following:
-#	/etc/rc.conf
-#	/etc/rc.conf.d/saslauthd1
-#	${prefix}/etc/rc.conf.d/saslauthd1
-#
-#       saslauthd1_enable  - Set to YES to enable saslauthd
-#			     Default: %%ENABLE_SASLAUTHD%%
-#
-#       saslauthd1_program - Path to saslauthd program
-#                            Default: ${prefix}/sbin/saslauthd1
-#
-#       saslauthd1_flags   - Flags to saslauthd program
-#                            Default: -a pam
-
 prefix=%%PREFIX%%
+
+# Define these saslauthd1_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/saslauthd1
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE 
+#
+saslauthd1_enable="%%ENABLE_SASLAUTHD%%"		# Enable saslauthd
+#saslauthd1_program="${prefix}/sbin/saslauthd1"	# Location of saslauthd1
+saslauthd1_flags="-a pam"			# Flags to saslauthd program
 
 if [ -f /etc/rc.subr ]; then
 	. /etc/rc.subr
@@ -36,22 +33,7 @@ if [ -f /etc/rc.subr ]; then
 	command="${prefix}/sbin/${name}"
 	pidfile="/var/state/${name}/mux.pid"
 
-	# The below may be removed when load_local_rc_config is added to rc.subr
-
-	if [ -f ${prefix}/etc/rc.conf.d/"$name" ]; then
-		debug "Sourcing ${prefix}/etc/rc.conf.d/${name}"
-		. ${prefix}/etc/rc.conf.d/"$name"
-	fi
-
 	load_rc_config $name
-
-	if [ -z "${saslauthd1_enable}" ]; then
-		saslauthd1_enable=%%ENABLE_SASLAUTHD%%
-	fi
-
-	# The above may be removed when load_local_rc_config is added to rc.subr
-	#
-	#load_local_rc_config $name
 	run_rc_command "$1"
 else
 	# Suck in the configuration variables.
@@ -64,17 +46,9 @@ else
 		fi
 	fi
 
-	if [ -f ${prefix}/etc/rc.conf.d/saslauthd1 ]; then
-		. ${prefix}/etc/rc.conf.d/saslauthd1
-	fi
-
 	if [ -n "${sasl_saslauthd1_enable}" ]; then
 		echo "sasl_saslauthd1_enable has been depreciated, use saslauthd1_enable instead"
 		saslauthd1_enable=$sasl_saslauthd1_enable
-	fi
-
-	if [ -z "${saslauthd1_enable}" ]; then
-		saslauthd1_enable=%%ENABLE_SASLAUTHD%%
 	fi
 
 	if [ -z "${saslauthd1_program}" ]; then
@@ -84,10 +58,6 @@ else
 	if [ -n "${sasl_saslauthd1_flags}" ]; then
         	echo "sasl_saslauthd1_flags has been depreciated, use saslauthd1_flags instead"
         	saslauthd1_flags=$sasl_saslauthd1_flags
-	fi
-
-	if [ -z "${saslauthd1_flags}" ]; then
-		saslauthd1_flags="-a pam"
 	fi
 
 	rc=0

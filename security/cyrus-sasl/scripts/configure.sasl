@@ -209,17 +209,6 @@ else
 	ENABLE_SASLAUTHD=no
 fi
 
-echo "PWCHECK=		${PWCHECK}"
-echo "PWCHECK_METHOD=		${PWCHECK_METHOD}"
-echo "ENABLE_PWCHECK=		${ENABLE_PWCHECK}"
-echo "ENABLE_SASLAUTHD=	${ENABLE_SASLAUTHD}"
-
-echo "RC_SCRIPTS_SUB+=	PREFIX=\${PREFIX} \\"
-echo "			PWCHECK=\${PWCHECK} \\"
-echo "			ENABLE_PWCHECK=\${ENABLE_PWCHECK} \\"
-echo "			ENABLE_SASLAUTHD=\${ENABLE_SASLAUTHD} \\"
-echo "			MYSQL_REQ=${MYSQL_REQ}"
-
 if [ ! "${DEFJAVA}" ]; then
 	echo "PLIST_SUB+=	JAVASASL=\"@comment \""
 fi
@@ -227,6 +216,11 @@ if [ ! "${DBLIB}" ]; then
 	echo "CONFIGURE_ARGS+=	--with-dblib=ndbm"
 	echo "SASLDB_NAME=	sasldb.db"
 fi
+
+echo "PWCHECK=		${PWCHECK}"
+echo "PWCHECK_METHOD=		${PWCHECK_METHOD}"
+echo "ENABLE_PWCHECK=		${ENABLE_PWCHECK}"
+echo "ENABLE_SASLAUTHD=	${ENABLE_SASLAUTHD}"
 
 if [ "${MSG}" ]; then
 	if [ -n "${LDAP_REQ}" ]; then
