@@ -753,6 +753,7 @@
     SUBDIR += p5-Devel-Profile
     SUBDIR += p5-Devel-Profiler
     SUBDIR += p5-Devel-Size
+    SUBDIR += p5-Devel-SmallProf
     SUBDIR += p5-Devel-StackTrace
     SUBDIR += p5-Devel-Symdump
     SUBDIR += p5-Devel-Trace
