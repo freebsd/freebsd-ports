@@ -7,6 +7,9 @@ This script should be run manually.
    or
   % ruby @@@@PREFIX@@@@/share/examples/tdiary/tdiaryinst.rb
 
+same as script :
+    @@@@PREFIX@@@@/share/examples/tdiary/tdiary-FreeBSD.sh
+
 There is a document by English in the following directories.
   See ...
   @@@@PREFIX@@@@/share/examples/tdiary/misc/i18n/
@@ -15,4 +18,3 @@ There is a document by English in the following directories.
 
   http://tdiary-users.sourceforge.jp/cgi-bin/wiki.cgi?FrontPage_en
 =============================================================================
-
