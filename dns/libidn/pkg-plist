@@ -3,15 +3,9 @@ include/idn-int.h
 include/idna.h
 include/punycode.h
 include/stringprep.h
-include/stringprep_generic.h
-include/stringprep_iscsi.h
-include/stringprep_kerberos5.h
-include/stringprep_nameprep.h
-include/stringprep_plain.h
-include/stringprep_xmpp.h
 lib/libidn.a
 lib/libidn.so
-lib/libidn.so.10
+lib/libidn.so.11
 lib/pkgconfig/libidn.pc
 %%EMACS%%%%EMACSDIR%%/site-lisp/idna.el
 %%EMACS%%%%EMACSDIR%%/site-lisp/punycode.el
