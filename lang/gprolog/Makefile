@@ -12,7 +12,7 @@ CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	stolz@i2.informatik.rwth-aachen.de
+MAINTAINER=	vs@FreeBSD.org
 COMMENT=	A free Prolog compiler
 
 ONLY_FOR_ARCHS=	i386

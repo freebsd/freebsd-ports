@@ -11,10 +11,9 @@ PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://apwal.free.fr/download/
 
-MAINTAINER=	stolz@i2.informatik.rwth-aachen.de
+MAINTAINER=	vs@FreeBSD.org
 COMMENT=	Simple and powerful application launcher
 
-USE_SIZE=	yes
 USE_GNOME=	gtk20 libxml2
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	hpoj
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	stolz@i2.informatik.rwth-aachen.de
+MAINTAINER=	vs@FreeBSD.org
 COMMENT=	"HP OfficeJet Linux driver; printing, scanning, and photo-card access"
 
 LIB_DEPENDS=	sane.1:${PORTSDIR}/graphics/sane-backends \

@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.cs.cornell.edu/projects/cyclone/software/
 # Can't conditionalise fetching of docs due to distinfo:
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-docs.tgz
 
-MAINTAINER=	stolz@i2.informatik.rwth-aachen.de
+MAINTAINER=	vs@FreeBSD.org
 COMMENT=	A safe dialect of C from Cornell and AT&T Research
 
 ONLY_FOR_ARCHS=	i386
