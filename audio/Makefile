@@ -110,6 +110,7 @@
     SUBDIR += mxv
     SUBDIR += napster
     SUBDIR += nas
+    SUBDIR += normalize
     SUBDIR += nosefart
     SUBDIR += nspmod
     SUBDIR += openal
