@@ -1,0 +1,19 @@
+SRILM is a toolkit for building and applying statistical language models (LMs),
+primarily for use in speech recognition, statistical tagging and segmentation.
+It has been under development in the SRI Speech Technology and 
+Research Laboratory since 1995. The toolkit has also greatly benefitted from 
+its use and enhancements during the Johns Hopkins University/CLSP summer 
+workshops in 1995, 1996, and 1997
+
+SRILM consists of the following components:
+
+    * A set of C++ class libraries implementing language models, 
+	supporting data stuctures and miscellaneous utility functions.
+    * A set of executable programs built on top of these libraries to 
+	perform standard tasks such as training LMs and testing them on 
+	data, tagging or segmenting text, etc.
+    * A collection of miscellaneous scripts facilitating minor related tasks.
+
+WWW:	http://www.speech.sri.com/projects/srilm/
+
+Author:	stolcke@speech.sri.com
