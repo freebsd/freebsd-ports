@@ -1,19 +1,56 @@
 bin/yadex
-bin/yadex-%%PORTVERSION%%
-bin/ybsp
-bin/ybsp-%%PORTVERSION%%
-etc/yadex/%%PORTVERSION%%/yadex.cfg
-share/yadex/%%PORTVERSION%%/doom.ygd
-share/yadex/%%PORTVERSION%%/doom02.ygd
-share/yadex/%%PORTVERSION%%/doom04.ygd
-share/yadex/%%PORTVERSION%%/doom05.ygd
-share/yadex/%%PORTVERSION%%/doom2.ygd
-share/yadex/%%PORTVERSION%%/doompr.ygd
-share/yadex/%%PORTVERSION%%/heretic.ygd
-share/yadex/%%PORTVERSION%%/hexen.ygd
-share/yadex/%%PORTVERSION%%/strife.ygd
-share/yadex/%%PORTVERSION%%/strife10.ygd
-@dirrm share/yadex/%%PORTVERSION%%
-@dirrm share/yadex
-@dirrm etc/yadex/%%PORTVERSION%%
-@dirrm etc/yadex
+etc/yadex.cfg
+%%DATADIR%%/doom.ygd
+%%DATADIR%%/doom02.ygd
+%%DATADIR%%/doom04.ygd
+%%DATADIR%%/doom05.ygd
+%%DATADIR%%/doom2.ygd
+%%DATADIR%%/doompr.ygd
+%%DATADIR%%/heretic.ygd
+%%DATADIR%%/hexen.ygd
+%%DATADIR%%/strife.ygd
+%%DATADIR%%/strife10.ygd
+@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/002f2f.png
+%%PORTDOCS%%%%DOCSDIR%%/E1.png
+%%PORTDOCS%%%%DOCSDIR%%/E2.png
+%%PORTDOCS%%%%DOCSDIR%%/advanced.html
+%%PORTDOCS%%%%DOCSDIR%%/contact.html
+%%PORTDOCS%%%%DOCSDIR%%/credits.html
+%%PORTDOCS%%%%DOCSDIR%%/deu_diffs.html
+%%PORTDOCS%%%%DOCSDIR%%/e1.png
+%%PORTDOCS%%%%DOCSDIR%%/e2.png
+%%PORTDOCS%%%%DOCSDIR%%/editing_docs.html
+%%PORTDOCS%%%%DOCSDIR%%/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/feedback.html
+%%PORTDOCS%%%%DOCSDIR%%/getting_started.html
+%%PORTDOCS%%%%DOCSDIR%%/hackers_guide.html
+%%PORTDOCS%%%%DOCSDIR%%/help.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/keeping_up.html
+%%PORTDOCS%%%%DOCSDIR%%/legal.html
+%%PORTDOCS%%%%DOCSDIR%%/logo.png
+%%PORTDOCS%%%%DOCSDIR%%/logo_small.png
+%%PORTDOCS%%%%DOCSDIR%%/mirror0.png
+%%PORTDOCS%%%%DOCSDIR%%/mirrorh.png
+%%PORTDOCS%%%%DOCSDIR%%/mirrorv.png
+%%PORTDOCS%%%%DOCSDIR%%/nook1.png
+%%PORTDOCS%%%%DOCSDIR%%/nook2.png
+%%PORTDOCS%%%%DOCSDIR%%/packagers_guide.html
+%%PORTDOCS%%%%DOCSDIR%%/palette.html
+%%PORTDOCS%%%%3DRENDER%%%%DOCSDIR%%/preview.html
+%%PORTDOCS%%%%DOCSDIR%%/reporting.html
+%%PORTDOCS%%%%DOCSDIR%%/slice1.png
+%%PORTDOCS%%%%DOCSDIR%%/slice2.png
+%%PORTDOCS%%%%DOCSDIR%%/tips.html
+%%PORTDOCS%%%%DOCSDIR%%/trivia.html
+%%PORTDOCS%%%%DOCSDIR%%/trouble.html
+%%PORTDOCS%%%%DOCSDIR%%/users_guide.html
+%%PORTDOCS%%%%DOCSDIR%%/vflat.png
+%%PORTDOCS%%%%DOCSDIR%%/vsprite.png
+%%PORTDOCS%%%%DOCSDIR%%/vtexture.png
+%%PORTDOCS%%%%DOCSDIR%%/wad_specs.html
+%%PORTDOCS%%%%DOCSDIR%%/yadex1.png
+%%PORTDOCS%%%%DOCSDIR%%/ygd.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
