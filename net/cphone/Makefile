@@ -15,6 +15,8 @@ DISTNAME=	cphone_0.1.0
 MAINTAINER=	roger@FreeBSD.org
 COMMENT=	H323 Video Conferencing Program which uses QT
 
+BROKEN=		"Does not compile"
+
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/openh323:build
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
