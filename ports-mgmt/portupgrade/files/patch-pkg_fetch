@@ -1,0 +1,11 @@
+--- bin/pkg_fetch.orig	Fri Mar 28 18:50:21 2003
++++ bin/pkg_fetch	Fri Mar 28 18:50:33 2003
+@@ -251,7 +251,7 @@
+ 
+   begin
+     FileUtils.mv(temp_path, save_path)
+-  rescue
++  rescue => e
+     warning_message "Failed to save the dowloaded tarball as #{save_path}"
+     raise e
+   end
