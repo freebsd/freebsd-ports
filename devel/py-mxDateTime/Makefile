@@ -8,7 +8,7 @@
 PORTNAME=	mxDateTime
 PORTVERSION=	1.3.0
 CATEGORIES=	devel python
-MASTER_SITES=	http://starship.skyport.net/~lemburg/
+MASTER_SITES=	http://starship.python.net/~lemburg/
 PKGNAMEPREFIX=	py-
 
 MAINTAINER=	tg@FreeBSD.org
