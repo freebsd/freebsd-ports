@@ -5,25 +5,62 @@ lib/gedit/plugins/libdiff.so
 lib/gedit/plugins/libemail.so
 lib/gedit/plugins/libreverse.so
 lib/gedit/plugins/libsample.so
+lib/gedit/plugins/libshell_output.so
 lib/gedit/plugins/libtime.so
 share/gnome/apps/Applications/gedit.desktop
 share/gnome/gedit/glade/about.glade
+share/gnome/gedit/glade/browse.glade
 share/gnome/gedit/glade/convert.glade
+share/gnome/gedit/glade/diff.glade
 share/gnome/gedit/glade/email.glade
 share/gnome/gedit/glade/goto-line.glade
+share/gnome/gedit/glade/plugin-manager.glade
 share/gnome/gedit/glade/prefs.glade
+share/gnome/gedit/glade/program.glade
 share/gnome/gedit/glade/replace.glade
+share/gnome/gedit/glade/shell_output.glade
 share/gnome/help/gedit/C/authors.html
 share/gnome/help/gedit/C/bugs.html
 share/gnome/help/gedit/C/docbook.css
-share/gnome/help/gedit/C/figures/mainwin.png
-share/gnome/help/gedit/C/figures/preferences.png
-share/gnome/help/gedit/C/figures/toolbar.png
+share/gnome/help/gedit/C/faq.html
+share/gnome/help/gedit/C/images/browse.png
+share/gnome/help/gedit/C/images/convert.png
+share/gnome/help/gedit/C/images/diff.png
+share/gnome/help/gedit/C/images/email.png
+share/gnome/help/gedit/C/images/find.png
+share/gnome/help/gedit/C/images/gedit.png
+share/gnome/help/gedit/C/images/goto-line.png
+share/gnome/help/gedit/C/images/lynx.png
+share/gnome/help/gedit/C/images/manager.png
+share/gnome/help/gedit/C/images/mta.png
+share/gnome/help/gedit/C/images/prefs-documents.png
+share/gnome/help/gedit/C/images/prefs-font.png
+share/gnome/help/gedit/C/images/prefs-general.png
+share/gnome/help/gedit/C/images/prefs-paper.png
+share/gnome/help/gedit/C/images/prefs-printing.png
+share/gnome/help/gedit/C/images/print-preview.png
+share/gnome/help/gedit/C/images/print.png
+share/gnome/help/gedit/C/images/replace.png
+share/gnome/help/gedit/C/images/shell.png
+share/gnome/help/gedit/C/images/toolbar.png
 share/gnome/help/gedit/C/index.html
 share/gnome/help/gedit/C/license.html
-share/gnome/help/gedit/C/ln12.html
+share/gnome/help/gedit/C/ln10.html
+share/gnome/help/gedit/C/menus.html
 share/gnome/help/gedit/C/plugins.html
 share/gnome/help/gedit/C/prefs.html
+share/gnome/help/gedit/C/stylesheet-images/caution.gif
+share/gnome/help/gedit/C/stylesheet-images/home.gif
+share/gnome/help/gedit/C/stylesheet-images/important.gif
+share/gnome/help/gedit/C/stylesheet-images/next.gif
+share/gnome/help/gedit/C/stylesheet-images/note.gif
+share/gnome/help/gedit/C/stylesheet-images/prev.gif
+share/gnome/help/gedit/C/stylesheet-images/tip.gif
+share/gnome/help/gedit/C/stylesheet-images/toc-blank.gif
+share/gnome/help/gedit/C/stylesheet-images/toc-minus.gif
+share/gnome/help/gedit/C/stylesheet-images/toc-plus.gif
+share/gnome/help/gedit/C/stylesheet-images/up.gif
+share/gnome/help/gedit/C/stylesheet-images/warning.gif
 share/gnome/help/gedit/C/topic.dat
 share/gnome/help/gedit/C/usage.html
 share/gnome/mime-info/gedit.keys
@@ -58,7 +95,7 @@ share/locale/wa/LC_MESSAGES/gedit.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/gedit.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/gedit.mo
 @dirrm share/gnome/help/gedit/C/stylesheet-images
-@dirrm share/gnome/help/gedit/C/figures
+@dirrm share/gnome/help/gedit/C/images
 @dirrm share/gnome/help/gedit/C
 @dirrm share/gnome/help/gedit
 @dirrm share/gnome/gedit/glade
