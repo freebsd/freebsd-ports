@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	ccrypt
-PORTVERSION=	1.3
-PORTREVISION=	2
+PORTVERSION=	1.7
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://quasar.mathstat.uottawa.ca/~selinger/ccrypt/download/
@@ -30,7 +29,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|gtar|tar|g' ${WRKSRC}/configure
 
 post-install:
-.if !defined(NOPORTDOCS) 
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in README doc/ccrypt.html doc/cypfaq01.txt
 	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
