@@ -1,10 +1,11 @@
-GtkSamba is a GUI tool for the Configuration of the Samba,
+GnoSamba is a GUI tool for the Configuration of the Samba,
 the SMB file server on X11/Unix.  It will read, edit and
 write /usr/local/etc/smb.conf, an alternate configuration
-file, or from a network. It uses the GTK toolkit.
+file, or from a network. It uses the GTK Toolkit and 
+Gnome-libs.
 
 This is an early development release, not all functionality
 is implemented.  It will let you edit any existing
 parameter from a text entry, but without any checking.
 
-WWW: http://www.open-systems.com/gtksamba.html
+WWW: http://www.open-systems.com/gnosamba.html
