@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnumeric
-PORTVERSION=	0.65
-PORTREVISION=	2
+PORTVERSION=	0.67
 CATEGORIES?=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnumeric
@@ -16,25 +15,25 @@ MAINTAINER?=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile \
 		gnomeole2.0:${PORTSDIR}/devel/libole2 \
-		gb.0:${PORTSDIR}/lang/gnomebasic
+		gbrun.0:${PORTSDIR}/lang/gnomebasic
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_GNOME=	yes
 USE_PYTHON=	yes
-USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--without-bonobo
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl"
 
-PLIST_SUB=	VERSION=${PORTVERSION}
+PLIST_SUB=	VERSION=${PORTVERSION}-bonobo
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
