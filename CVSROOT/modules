@@ -8220,7 +8220,6 @@ xemacs-prog-packages	ports/editors/xemacs-prog-packages
 xemacs-wp-packages	ports/editors/xemacs-wp-packages
 xemacs21	ports/editors/xemacs21
 xemacs21-mule	ports/editors/xemacs21-mule
-xemacs21-mule-common	ports/editors/xemacs21-mule-common
 xemacs21-mule-sumo	ports/editors/xemacs21-mule-sumo
 xemacs21-sumo	ports/editors/xemacs21-sumo
 xemeraldia	ports/games/xemeraldia
