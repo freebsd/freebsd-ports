@@ -15,6 +15,5 @@ MAINTAINER=	ports@FreeBSD.org
 USE_LIBTOOL=	yes
 
 MAN1=		scs2ascii.1 tn5250.1
-MANCOMPRESSED=	no
 
 .include <bsd.port.mk>
