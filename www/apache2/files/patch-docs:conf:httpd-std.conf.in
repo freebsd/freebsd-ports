@@ -1,5 +1,5 @@
---- docs/conf/httpd-std.conf.in.orig	Sat Apr 24 20:13:43 2004
-+++ docs/conf/httpd-std.conf.in	Tue Aug 17 12:11:17 2004
+--- docs/conf/httpd-std.conf.in.orig	Mon Aug 16 01:43:56 2004
++++ docs/conf/httpd-std.conf.in	Sun Dec 12 12:34:08 2004
 @@ -68,7 +68,7 @@
  #
  <IfModule !mpm_netware.c>
@@ -34,6 +34,15 @@
  </Directory>
  
  #
+@@ -330,7 +331,7 @@
+ #
+ # This should be changed to whatever you set DocumentRoot to.
+ #
+-<Directory "@exp_htdocsdir@">
++<Directory "%%WWWBASEDIR%%">
+ 
+ #
+ # Possible values for the Options directive are "None", "All",
 @@ -365,24 +366,29 @@
  # UserDir: The name of the directory that is appended onto a user's home
  # directory if a ~user request is received.
@@ -110,7 +119,7 @@
  
  #
  # ServerTokens
-@@ -1049,3 +1055,5 @@
+@@ -1043,3 +1049,5 @@
  #    ErrorLog @rel_logfiledir@/dummy-host.example.com-error_log
  #    CustomLog @rel_logfiledir@/dummy-host.example.com-access_log common
  #</VirtualHost>

@@ -196,6 +196,7 @@ post-patch:
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/apache2libs.sh > ${WRKDIR}/apache2libs.sh
 	@${RM} -f ${WRKSRC}/docs/manual/index.html.ko.euc-kr
+	@${RM} -f ${WRKSRC}/docs/conf/highperformance-std.conf
 	@${REINPLACE_CMD} -e 's," PLATFORM ",FreeBSD,' \
 			${WRKSRC}/server/core.c
 	@${REINPLACE_CMD} -e 's,freebsd\[2345\],freebsd\[23456\],' \
@@ -209,7 +210,8 @@ post-configure:
 	@FTPUSERS=`${EGREP} -v '^#' /etc/ftpusers| ${TR} -s "\n" " "` ;\
 	${REINPLACE_CMD} -e "s,%%FTPUSERS%%,$$FTPUSERS, ; \
 			s,%%WWWOWN%%,${WWWOWN}, ; \
-			s,%%WWWGRP%%,${WWWGRP}, " \
+			s,%%WWWGRP%%,${WWWGRP}, ; \
+			s,%%WWWBASEDIR%%,${PREFIX}/www," \
 			${WRKSRC}/docs/conf/httpd-std.conf
 
 pre-install:
@@ -223,6 +225,7 @@ post-install:
 .endif
 	@${ECHO_CMD} "Installing ${PREFIX}/etc/rc.d/apache2.sh startup script."
 	@${INSTALL_SCRIPT} -m 751 ${WRKDIR}/apache2.sh ${PREFIX}/etc/rc.d/apache2.sh
-	@@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD} ""
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
