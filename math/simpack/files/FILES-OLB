@@ -1,0 +1,16 @@
+	func/event/olb/calendar.o
+	func/event/olb/capifac.o
+	func/event/olb/capifut.o
+	func/event/olb/capiran.o
+	func/event/olb/estatus.o
+	func/event/olb/event.o
+	func/event/olb/facility.o
+	func/event/olb/flist.o
+	func/event/olb/future.o
+	func/event/olb/heap.o
+	func/event/olb/leftist.o
+	func/event/olb/linked.o
+	func/event/olb/service.o
+	func/event/olb/token.o
+	func/event/olb/util.o
+	func/event/olb/vlist.o

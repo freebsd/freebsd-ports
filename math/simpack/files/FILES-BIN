@@ -1,0 +1,5 @@
+	dec/fsa/fsa
+	dec/markov/markov
+	dec/petri/petri
+	func/event/pkgs/Xsimcode/src/Xsimcode
+	func/event/pkgs/minigpss/gpfiles/gpss

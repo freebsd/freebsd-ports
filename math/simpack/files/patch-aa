@@ -1,0 +1,700 @@
+diff -urd Makefile work/simpack/Makefile
+--- Makefile	Fri Aug 25 00:59:55 1995
++++ work/simpack/Makefile	Mon May 19 15:41:15 1997
+@@ -1,10 +1,10 @@
+ all:	
+ 	@more COPYRIGHT
+-	@Ask License
+-	@Ask License.gnu
++	@./Ask License
++	@./Ask License.gnu
+ 	date
+ 	@echo 'Begin making'
+-	(cd func; Make_all)
++	(cd func; ./Make_all)
+ 	@echo 'Unconditionally make the rest of SimPack3:'
+ 	@echo 'Declarative ...'
+ 	(cd dec; make all)
+@@ -26,7 +26,7 @@
+ 	date
+ 	@echo 'Begin cleaning'
+ 	find . -name '*~' -exec rm {} \;
+-	(cd func; Make_clean)
++	(cd func; ./Make_clean)
+ 	(cd dec; make clean)
+ 	(cd multimodel; make clean)
+ 	(cd constraint; make clean)
+diff -urd constraint/differential/deq/order1.c work/simpack/constraint/differential/deq/order1.c
+--- constraint/differential/deq/order1.c	Fri Aug 25 00:59:58 1995
++++ work/simpack/constraint/differential/deq/order1.c	Mon May 19 16:17:44 1997
+@@ -353,7 +353,7 @@
+             s[++i]='-';
+           }
+ 	  s[++i]=ch;
+-	  while isalnum(s[++i]=lower(getchar()));
++	  while (isalnum(s[++i]=lower(getchar())));
+ 	  ch=s[i];
+ 	  s[i]='\0';
+ 	  switch (lookup(s,&time_present,&dim)) {
+diff -urd dec/petri/petri.c work/simpack/dec/petri/petri.c
+--- dec/petri/petri.c	Fri Aug 25 01:00:03 1995
++++ work/simpack/dec/petri/petri.c	Mon May 19 16:05:38 1997
+@@ -15,6 +15,8 @@
+ #include <stdio.h>
+ #include "../../func/queuing/queuing.h"
+ 
++#define random(x,y) random_int(x,y)
++
+ #define BUSY 1
+ #define FREE 0
+ #define BEGINFIRE 1
+diff -urd func/Make_all work/simpack/func/Make_all
+--- func/Make_all	Fri Aug 25 01:00:06 1995
++++ work/simpack/func/Make_all	Mon May 19 15:40:46 1997
+@@ -10,10 +10,10 @@
+ echo 'Done creating SimPack2.x Queuing Library (or it was already current)'
+ 
+ echo 'About to create Sim++ version 1.0 Event Model Tools ...'
+-(cd event; Make_all)
++(cd event; ./Make_all)
+ 
+ echo 'About to create SimPack3 Time-Slice Functional Model Packages ...'
+-(cd slice; Make_all)
++(cd slice; ./Make_all)
+ 
+ echo 'simpack/func/Make_all is done.'
+ date
+diff -urd func/Make_clean work/simpack/func/Make_clean
+--- func/Make_clean	Fri Aug 25 01:00:07 1995
++++ work/simpack/func/Make_clean	Mon May 19 15:41:49 1997
+@@ -2,8 +2,8 @@
+ echo 'Remove Simpack2.x queuing library object file ...'
+ (cd queuing; rm -f queuing.o)
+ echo 'Remove Sim++ ...'
+-(cd event; Make_clean)
++(cd event; ./Make_clean)
+ echo 'Remove SimPack3 Time-Slice Functional Model Packages ...'
+-(cd slice; Make_clean)
++(cd slice; ./Make_clean)
+ echo 'simpack/func/Make_clean is done.'
+ date
+diff -urd func/event/Make_all work/simpack/func/event/Make_all
+--- func/event/Make_all	Fri Aug 25 01:01:00 1995
++++ work/simpack/func/event/Make_all	Mon May 19 15:43:03 1997
+@@ -4,7 +4,7 @@
+ echo 'copyright (c) 1995; see license in root directory of the distribution,'
+ echo 'which is simpack/func/event.'
+ echo 'The License for Sim++ is separate from the SimPack3 License.'
+-Ask License
++./Ask License
+ if ( [ -f REJECT ] ) then
+   echo 'You cannot proceed with Sim++ because you have rejected the terms and'
+   echo 'conditions of the Sim++ License.'
+@@ -20,7 +20,7 @@
+ echo ' '
+ if ( [ "$ansa" = "y" ] ) then
+   echo 'Creating Sim++ Object Library ...'
+-  Translat 
++  ./Translat 
+   echo 'Done.'
+   fi
+ 
+@@ -29,7 +29,7 @@
+ echo ' '
+ if ( [ "$ansa" = "y" ] ) then
+   echo 'Creating Sim++ Example Code Executables ...'
+-  (cd examples; translat)
++  (cd examples; ./translat)
+   echo 'Done.'
+   fi
+ 
+diff -urd func/event/Translat work/simpack/func/event/Translat
+--- func/event/Translat	Fri Aug 25 01:00:59 1995
++++ work/simpack/func/event/Translat	Mon May 19 15:43:52 1997
+@@ -18,22 +18,22 @@
+ echo 'About to Build Sim++ Object Library ...'
+ date
+ (cd src; chmod 600 *)
+-Trans1 calendar
+-Trans1 capifac
+-Trans1 capifut
+-Trans1 capiran
+-Trans1 event
+-Trans1 estatus
+-Trans1 facility
+-Trans1 flist
+-Trans1 future
+-Trans1 heap
+-Trans1 leftist
+-Trans1 linked
+-Trans1 service
+-Trans1 token
+-Trans1 util
+-Trans1 vlist
++./Trans1 calendar
++./Trans1 capifac
++./Trans1 capifut
++./Trans1 capiran
++./Trans1 event
++./Trans1 estatus
++./Trans1 facility
++./Trans1 flist
++./Trans1 future
++./Trans1 heap
++./Trans1 leftist
++./Trans1 linked
++./Trans1 service
++./Trans1 token
++./Trans1 util
++./Trans1 vlist
+ (cd src; chmod 444 *)
+ 
+ echo ' '
+diff -urd func/event/examples/airport/makefile work/simpack/func/event/examples/airport/makefile
+--- func/event/examples/airport/makefile	Fri Aug 25 01:00:34 1995
++++ work/simpack/func/event/examples/airport/makefile	Mon May 19 15:45:05 1997
+@@ -4,26 +4,26 @@
+ #
+ # makefile for examples/airport
+ 
+-	     PGM = airport
++PGM = airport
+ 
+-	    INCL = ../../include                # where to find sim++ *.h
+-	     OLB = ../../olb                    # where to find sim++ *.o
++INCL = ../../include                # where to find sim++ *.h
++OLB = ../../olb                    # where to find sim++ *.o
+ 
+-	COMPILER = g++ -I$(INCL) -c -o
+-	  LINKER = g++ -o
++COMPILER = g++ -I$(INCL) -c -o
++LINKER = g++ -o
+ 
+ 
+ # enumerate sim++ object modules:
+ 
+-	 MAIN_1 = $(OLB)/event.o $(OLB)/facility.o $(OLB)/flist.o $(OLB)/future.o
+-	 MAIN_2 = $(OLB)/service.o $(OLB)/token.o $(OLB)/util.o $(OLB)/estatus.o
+-	 MAIN_OBJ = $(MAIN_1) $(MAIN_2)
++MAIN_1 = $(OLB)/event.o $(OLB)/facility.o $(OLB)/flist.o $(OLB)/future.o
++MAIN_2 = $(OLB)/service.o $(OLB)/token.o $(OLB)/util.o $(OLB)/estatus.o
++MAIN_OBJ = $(MAIN_1) $(MAIN_2)
+ 
+-	 CAPI_OBJ = $(OLB)/capifac.o $(OLB)/capifut.o $(OLB)/capiran.o
++CAPI_OBJ = $(OLB)/capifac.o $(OLB)/capifut.o $(OLB)/capiran.o
+ 
+-	 VLIST_1 = $(OLB)/vlist.o
+-	 VLIST_2 = $(OLB)/calendar.o $(OLB)/heap.o $(OLB)/linked.o $(OLB)/leftist.o
+-	 VLIST_OBJ = $(VLIST_1) $(VLIST_2)
++VLIST_1 = $(OLB)/vlist.o
++VLIST_2 = $(OLB)/calendar.o $(OLB)/heap.o $(OLB)/linked.o $(OLB)/leftist.o
++VLIST_OBJ = $(VLIST_1) $(VLIST_2)
+ 
+ # link
+ 
+diff -urd func/event/examples/block/makefile work/simpack/func/event/examples/block/makefile
+--- func/event/examples/block/makefile	Fri Aug 25 01:00:15 1995
++++ work/simpack/func/event/examples/block/makefile	Mon May 19 15:45:43 1997
+@@ -4,26 +4,26 @@
+ #
+ # makefile for examples/block (formerly blocking)
+ 
+-	     PGM = block
++PGM = block
+ 
+-	    INCL = ../../include                # where to find sim++ *.h
+-	     OLB = ../../olb                    # where to find sim++ *.o
++INCL = ../../include                # where to find sim++ *.h
++OLB = ../../olb                    # where to find sim++ *.o
+ 
+-	COMPILER = g++ -I$(INCL) -c -o
+-	  LINKER = g++ -o
++COMPILER = g++ -I$(INCL) -c -o
++LINKER = g++ -o
+ 
+ 
+ # enumerate sim++ object modules:
+ 
+-	 MAIN_1 = $(OLB)/event.o $(OLB)/facility.o $(OLB)/flist.o $(OLB)/future.o
+-	 MAIN_2 = $(OLB)/service.o $(OLB)/token.o $(OLB)/util.o $(OLB)/estatus.o
+-	 MAIN_OBJ = $(MAIN_1) $(MAIN_2)
++MAIN_1 = $(OLB)/event.o $(OLB)/facility.o $(OLB)/flist.o $(OLB)/future.o
++MAIN_2 = $(OLB)/service.o $(OLB)/token.o $(OLB)/util.o $(OLB)/estatus.o
++MAIN_OBJ = $(MAIN_1) $(MAIN_2)
+ 
+-	 CAPI_OBJ = $(OLB)/capifac.o $(OLB)/capifut.o $(OLB)/capiran.o
++CAPI_OBJ = $(OLB)/capifac.o $(OLB)/capifut.o $(OLB)/capiran.o
+ 
+-	 VLIST_1 = $(OLB)/vlist.o
+-	 VLIST_2 = $(OLB)/calendar.o $(OLB)/heap.o $(OLB)/linked.o $(OLB)/leftist.o
+-	 VLIST_OBJ = $(VLIST_1) $(VLIST_2)
++VLIST_1 = $(OLB)/vlist.o
++VLIST_2 = $(OLB)/calendar.o $(OLB)/heap.o $(OLB)/linked.o $(OLB)/leftist.o
++VLIST_OBJ = $(VLIST_1) $(VLIST_2)
+ 
+ # link
+ 
+diff -urd func/event/examples/cpudisk/makefile work/simpack/func/event/examples/cpudisk/makefile
+--- func/event/examples/cpudisk/makefile	Fri Aug 25 01:00:11 1995
++++ work/simpack/func/event/examples/cpudisk/makefile	Mon May 19 15:46:27 1997
+@@ -4,23 +4,23 @@
+ #
+ # makefile for examples/cpudisk
+ 
+-	    INCL = ../../include                # where to find sim++ *.h
+-	     OLB = ../../olb                    # where to find sim++ *.o
++INCL = ../../include                # where to find sim++ *.h
++OLB = ../../olb                    # where to find sim++ *.o
+ 
+-	COMPILER = g++ -I$(INCL) -c -o
+-	  LINKER = g++ -o
++COMPILER = g++ -I$(INCL) -c -o
++LINKER = g++ -o
+ 
+ # enumerate sim++ object modules:
+ 
+-	 MAIN_1 = $(OLB)/event.o $(OLB)/facility.o $(OLB)/flist.o $(OLB)/future.o
+-	 MAIN_2 = $(OLB)/service.o $(OLB)/token.o $(OLB)/util.o $(OLB)/estatus.o
+-	 MAIN_OBJ = $(MAIN_1) $(MAIN_2)
++MAIN_1 = $(OLB)/event.o $(OLB)/facility.o $(OLB)/flist.o $(OLB)/future.o
++MAIN_2 = $(OLB)/service.o $(OLB)/token.o $(OLB)/util.o $(OLB)/estatus.o
++MAIN_OBJ = $(MAIN_1) $(MAIN_2)
+ 
+-	 CAPI_OBJ = $(OLB)/capifac.o $(OLB)/capifut.o $(OLB)/capiran.o
++CAPI_OBJ = $(OLB)/capifac.o $(OLB)/capifut.o $(OLB)/capiran.o
+ 
+-	 VLIST_1 = $(OLB)/vlist.o
+-	 VLIST_2 = $(OLB)/calendar.o $(OLB)/heap.o $(OLB)/linked.o $(OLB)/leftist.o
+-	 VLIST_OBJ = $(VLIST_1) $(VLIST_2)
++VLIST_1 = $(OLB)/vlist.o
++VLIST_2 = $(OLB)/calendar.o $(OLB)/heap.o $(OLB)/linked.o $(OLB)/leftist.o
++VLIST_OBJ = $(VLIST_1) $(VLIST_2)
+ 
+ # link cpudisk
+ 
+diff -urd func/event/examples/iterate/makefile work/simpack/func/event/examples/iterate/makefile
+--- func/event/examples/iterate/makefile	Fri Aug 25 01:00:33 1995
++++ work/simpack/func/event/examples/iterate/makefile	Mon May 19 15:47:02 1997
+@@ -4,26 +4,26 @@
+ #
+ # makefile for examples/iterate
+ 
+-	     PGM = iterate
++PGM = iterate
+ 
+-	    INCL = ../../include                # where to find sim++ *.h
+-	     OLB = ../../olb                    # where to find sim++ *.o
++INCL = ../../include                # where to find sim++ *.h
++OLB = ../../olb                    # where to find sim++ *.o
+ 
+-	COMPILER = g++ -I$(INCL) -c -o
+-	  LINKER = g++ -o
++COMPILER = g++ -I$(INCL) -c -o
++LINKER = g++ -o
+ 
+ 
+ # enumerate sim++ object modules:
+ 
+-	 MAIN_1 = $(OLB)/event.o $(OLB)/facility.o $(OLB)/flist.o $(OLB)/future.o
+-	 MAIN_2 = $(OLB)/service.o $(OLB)/token.o $(OLB)/util.o $(OLB)/estatus.o
+-	 MAIN_OBJ = $(MAIN_1) $(MAIN_2)
++MAIN_1 = $(OLB)/event.o $(OLB)/facility.o $(OLB)/flist.o $(OLB)/future.o
++MAIN_2 = $(OLB)/service.o $(OLB)/token.o $(OLB)/util.o $(OLB)/estatus.o
++MAIN_OBJ = $(MAIN_1) $(MAIN_2)
+ 
+-	 CAPI_OBJ = $(OLB)/capifac.o $(OLB)/capifut.o $(OLB)/capiran.o
++CAPI_OBJ = $(OLB)/capifac.o $(OLB)/capifut.o $(OLB)/capiran.o
+ 
+-	 VLIST_1 = $(OLB)/vlist.o
+-	 VLIST_2 = $(OLB)/calendar.o $(OLB)/heap.o $(OLB)/linked.o $(OLB)/leftist.o
+-	 VLIST_OBJ = $(VLIST_1) $(VLIST_2)
++VLIST_1 = $(OLB)/vlist.o
++VLIST_2 = $(OLB)/calendar.o $(OLB)/heap.o $(OLB)/linked.o $(OLB)/leftist.o
++VLIST_OBJ = $(VLIST_1) $(VLIST_2)
+ 
+ # link
+ 
+diff -urd func/event/examples/logic/makefile work/simpack/func/event/examples/logic/makefile
+--- func/event/examples/logic/makefile	Fri Aug 25 01:00:31 1995
++++ work/simpack/func/event/examples/logic/makefile	Mon May 19 15:47:39 1997
+@@ -4,26 +4,26 @@
+ #
+ # makefile for examples/logic
+ 
+-	     PGM = logic
++PGM = logic
+ 
+-	    INCL = ../../include                # where to find sim++ *.h
+-	     OLB = ../../olb                    # where to find sim++ *.o
++INCL = ../../include                # where to find sim++ *.h
++OLB = ../../olb                    # where to find sim++ *.o
+ 
+-	COMPILER = g++ -I$(INCL) -c -o
+-	  LINKER = g++ -o
++COMPILER = g++ -I$(INCL) -c -o
++LINKER = g++ -o
+ 
+ 
+ # enumerate sim++ object modules:
+ 
+-	 MAIN_1 = $(OLB)/event.o $(OLB)/facility.o $(OLB)/flist.o $(OLB)/future.o
+-	 MAIN_2 = $(OLB)/service.o $(OLB)/token.o $(OLB)/util.o $(OLB)/estatus.o
+-	 MAIN_OBJ = $(MAIN_1) $(MAIN_2)
++MAIN_1 = $(OLB)/event.o $(OLB)/facility.o $(OLB)/flist.o $(OLB)/future.o
++MAIN_2 = $(OLB)/service.o $(OLB)/token.o $(OLB)/util.o $(OLB)/estatus.o
++MAIN_OBJ = $(MAIN_1) $(MAIN_2)
+ 
+-	 CAPI_OBJ = $(OLB)/capifac.o $(OLB)/capifut.o $(OLB)/capiran.o
++CAPI_OBJ = $(OLB)/capifac.o $(OLB)/capifut.o $(OLB)/capiran.o
+ 
+-	 VLIST_1 = $(OLB)/vlist.o
+-	 VLIST_2 = $(OLB)/calendar.o $(OLB)/heap.o $(OLB)/linked.o $(OLB)/leftist.o
+-	 VLIST_OBJ = $(VLIST_1) $(VLIST_2)
++VLIST_1 = $(OLB)/vlist.o
++VLIST_2 = $(OLB)/calendar.o $(OLB)/heap.o $(OLB)/linked.o $(OLB)/leftist.o
++VLIST_OBJ = $(VLIST_1) $(VLIST_2)
+ 
+ # link
+ 
+diff -urd func/event/examples/network/makefile work/simpack/func/event/examples/network/makefile
+--- func/event/examples/network/makefile	Fri Aug 25 01:00:27 1995
++++ work/simpack/func/event/examples/network/makefile	Mon May 19 15:48:23 1997
+@@ -4,26 +4,26 @@
+ #
+ # makefile for examples/network
+ 
+-	     PGM = network
++PGM = network
+ 
+-	    INCL = ../../include                # where to find sim++ *.h
+-	     OLB = ../../olb                    # where to find sim++ *.o
++INCL = ../../include                # where to find sim++ *.h
++OLB = ../../olb                    # where to find sim++ *.o
+ 
+-	COMPILER = g++ -I$(INCL) -c -o
+-	  LINKER = g++ -o
++COMPILER = g++ -I$(INCL) -c -o
++LINKER = g++ -o
+ 
+ 
+ # enumerate sim++ object modules:
+ 
+-	 MAIN_1 = $(OLB)/event.o $(OLB)/facility.o $(OLB)/flist.o $(OLB)/future.o
+-	 MAIN_2 = $(OLB)/service.o $(OLB)/token.o $(OLB)/util.o $(OLB)/estatus.o
+-	 MAIN_OBJ = $(MAIN_1) $(MAIN_2)
++MAIN_1 = $(OLB)/event.o $(OLB)/facility.o $(OLB)/flist.o $(OLB)/future.o
++MAIN_2 = $(OLB)/service.o $(OLB)/token.o $(OLB)/util.o $(OLB)/estatus.o
++MAIN_OBJ = $(MAIN_1) $(MAIN_2)
+ 
+-	 CAPI_OBJ = $(OLB)/capifac.o $(OLB)/capifut.o $(OLB)/capiran.o
++CAPI_OBJ = $(OLB)/capifac.o $(OLB)/capifut.o $(OLB)/capiran.o
+ 
+-	 VLIST_1 = $(OLB)/vlist.o
+-	 VLIST_2 = $(OLB)/calendar.o $(OLB)/heap.o $(OLB)/linked.o $(OLB)/leftist.o
+-	 VLIST_OBJ = $(VLIST_1) $(VLIST_2)
++VLIST_1 = $(OLB)/vlist.o
++VLIST_2 = $(OLB)/calendar.o $(OLB)/heap.o $(OLB)/linked.o $(OLB)/leftist.o
++VLIST_OBJ = $(VLIST_1) $(VLIST_2)
+ 
+ # link
+ 
+diff -urd func/event/examples/qnet/makefile work/simpack/func/event/examples/qnet/makefile
+--- func/event/examples/qnet/makefile	Fri Aug 25 01:00:28 1995
++++ work/simpack/func/event/examples/qnet/makefile	Mon May 19 15:49:03 1997
+@@ -4,26 +4,26 @@
+ #
+ # makefile for examples/qnet
+ 
+-	     PGM = qnet
++PGM = qnet
+ 
+-	    INCL = ../../include                # where to find sim++ *.h
+-	     OLB = ../../olb                    # where to find sim++ *.o
++INCL = ../../include                # where to find sim++ *.h
++OLB = ../../olb                    # where to find sim++ *.o
+ 
+-	COMPILER = g++ -I$(INCL) -c -o
+-	  LINKER = g++ -o
++COMPILER = g++ -I$(INCL) -c -o
++LINKER = g++ -o
+ 
+ 
+ # enumerate sim++ object modules:
+ 
+-	 MAIN_1 = $(OLB)/event.o $(OLB)/facility.o $(OLB)/flist.o $(OLB)/future.o
+-	 MAIN_2 = $(OLB)/service.o $(OLB)/token.o $(OLB)/util.o $(OLB)/estatus.o
+-	 MAIN_OBJ = $(MAIN_1) $(MAIN_2)
++MAIN_1 = $(OLB)/event.o $(OLB)/facility.o $(OLB)/flist.o $(OLB)/future.o
++MAIN_2 = $(OLB)/service.o $(OLB)/token.o $(OLB)/util.o $(OLB)/estatus.o
++MAIN_OBJ = $(MAIN_1) $(MAIN_2)
+ 
+-	 CAPI_OBJ = $(OLB)/capifac.o $(OLB)/capifut.o $(OLB)/capiran.o
++CAPI_OBJ = $(OLB)/capifac.o $(OLB)/capifut.o $(OLB)/capiran.o
+ 
+-	 VLIST_1 = $(OLB)/vlist.o
+-	 VLIST_2 = $(OLB)/calendar.o $(OLB)/heap.o $(OLB)/linked.o $(OLB)/leftist.o
+-	 VLIST_OBJ = $(VLIST_1) $(VLIST_2)
++VLIST_1 = $(OLB)/vlist.o
++VLIST_2 = $(OLB)/calendar.o $(OLB)/heap.o $(OLB)/linked.o $(OLB)/leftist.o
++VLIST_OBJ = $(VLIST_1) $(VLIST_2)
+ 
+ # link
+ 
+diff -urd func/event/examples/route/makefile work/simpack/func/event/examples/route/makefile
+--- func/event/examples/route/makefile	Fri Aug 25 01:00:31 1995
++++ work/simpack/func/event/examples/route/makefile	Mon May 19 15:49:39 1997
+@@ -4,26 +4,26 @@
+ #
+ # makefile for examples/route
+ 
+-	     PGM = route
++PGM = route
+ 
+-	    INCL = ../../include                # where to find sim++ *.h
+-	     OLB = ../../olb                    # where to find sim++ *.o
++INCL = ../../include                # where to find sim++ *.h
++OLB = ../../olb                    # where to find sim++ *.o
+ 
+-	COMPILER = g++ -I$(INCL) -c -o
+-	  LINKER = g++ -o
++COMPILER = g++ -I$(INCL) -c -o
++LINKER = g++ -o
+ 
+ 
+ # enumerate sim++ object modules:
+ 
+-	 MAIN_1 = $(OLB)/event.o $(OLB)/facility.o $(OLB)/flist.o $(OLB)/future.o
+-	 MAIN_2 = $(OLB)/service.o $(OLB)/token.o $(OLB)/util.o $(OLB)/estatus.o
+-	 MAIN_OBJ = $(MAIN_1) $(MAIN_2)
++MAIN_1 = $(OLB)/event.o $(OLB)/facility.o $(OLB)/flist.o $(OLB)/future.o
++MAIN_2 = $(OLB)/service.o $(OLB)/token.o $(OLB)/util.o $(OLB)/estatus.o
++MAIN_OBJ = $(MAIN_1) $(MAIN_2)
+ 
+-	 CAPI_OBJ = $(OLB)/capifac.o $(OLB)/capifut.o $(OLB)/capiran.o
++CAPI_OBJ = $(OLB)/capifac.o $(OLB)/capifut.o $(OLB)/capiran.o
+ 
+-	 VLIST_1 = $(OLB)/vlist.o
+-	 VLIST_2 = $(OLB)/calendar.o $(OLB)/heap.o $(OLB)/linked.o $(OLB)/leftist.o
+-	 VLIST_OBJ = $(VLIST_1) $(VLIST_2)
++VLIST_1 = $(OLB)/vlist.o
++VLIST_2 = $(OLB)/calendar.o $(OLB)/heap.o $(OLB)/linked.o $(OLB)/leftist.o
++VLIST_OBJ = $(VLIST_1) $(VLIST_2)
+ 
+ # link
+ 
+diff -urd func/event/examples/ssq/makefile work/simpack/func/event/examples/ssq/makefile
+--- func/event/examples/ssq/makefile	Fri Aug 25 01:00:17 1995
++++ work/simpack/func/event/examples/ssq/makefile	Mon May 19 15:50:34 1997
+@@ -4,26 +4,26 @@
+ #
+ # makefile for examples/ssq (formerly q1 in ssq directory)
+ 
+-	     PGM = ssq
++PGM = ssq
+ 
+-	    INCL = ../../include                # where to find sim++ *.h
+-	     OLB = ../../olb                    # where to find sim++ *.o
++INCL = ../../include                # where to find sim++ *.h
++OLB = ../../olb                    # where to find sim++ *.o
+ 
+-	COMPILER = g++ -I$(INCL) -c -o
+-	  LINKER = g++ -o
++COMPILER = g++ -I$(INCL) -c -o
++LINKER = g++ -o
+ 
+ 
+ # enumerate sim++ object modules:
+ 
+-	 MAIN_1 = $(OLB)/event.o $(OLB)/facility.o $(OLB)/flist.o $(OLB)/future.o
+-	 MAIN_2 = $(OLB)/service.o $(OLB)/token.o $(OLB)/util.o $(OLB)/estatus.o
+-	 MAIN_OBJ = $(MAIN_1) $(MAIN_2)
++MAIN_1 = $(OLB)/event.o $(OLB)/facility.o $(OLB)/flist.o $(OLB)/future.o
++MAIN_2 = $(OLB)/service.o $(OLB)/token.o $(OLB)/util.o $(OLB)/estatus.o
++MAIN_OBJ = $(MAIN_1) $(MAIN_2)
+ 
+-	 CAPI_OBJ = $(OLB)/capifac.o $(OLB)/capifut.o $(OLB)/capiran.o
++CAPI_OBJ = $(OLB)/capifac.o $(OLB)/capifut.o $(OLB)/capiran.o
+ 
+-	 VLIST_1 = $(OLB)/vlist.o
+-	 VLIST_2 = $(OLB)/calendar.o $(OLB)/heap.o $(OLB)/linked.o $(OLB)/leftist.o
+-	 VLIST_OBJ = $(VLIST_1) $(VLIST_2)
++VLIST_1 = $(OLB)/vlist.o
++VLIST_2 = $(OLB)/calendar.o $(OLB)/heap.o $(OLB)/linked.o $(OLB)/leftist.o
++VLIST_OBJ = $(VLIST_1) $(VLIST_2)
+ 
+ # link
+ 
+diff -urd func/event/examples/tiktok/makefile work/simpack/func/event/examples/tiktok/makefile
+--- func/event/examples/tiktok/makefile	Fri Aug 25 01:00:25 1995
++++ work/simpack/func/event/examples/tiktok/makefile	Mon May 19 15:51:13 1997
+@@ -4,26 +4,26 @@
+ #
+ # makefile for examples/tiktok (formerly ticktock in clock directory)
+ 
+-	     PGM = tiktok
++PGM = tiktok
+ 
+-	    INCL = ../../include                # where to find sim++ *.h
+-	     OLB = ../../olb                    # where to find sim++ *.o
++INCL = ../../include                # where to find sim++ *.h
++OLB = ../../olb                    # where to find sim++ *.o
+ 
+-	COMPILER = g++ -I$(INCL) -c -o
+-	  LINKER = g++ -o
++COMPILER = g++ -I$(INCL) -c -o
++LINKER = g++ -o
+ 
+ 
+ # enumerate sim++ object modules:
+ 
+-	 MAIN_1 = $(OLB)/event.o $(OLB)/facility.o $(OLB)/flist.o $(OLB)/future.o
+-	 MAIN_2 = $(OLB)/service.o $(OLB)/token.o $(OLB)/util.o $(OLB)/estatus.o
+-	 MAIN_OBJ = $(MAIN_1) $(MAIN_2)
++MAIN_1 = $(OLB)/event.o $(OLB)/facility.o $(OLB)/flist.o $(OLB)/future.o
++MAIN_2 = $(OLB)/service.o $(OLB)/token.o $(OLB)/util.o $(OLB)/estatus.o
++MAIN_OBJ = $(MAIN_1) $(MAIN_2)
+ 
+-	 CAPI_OBJ = $(OLB)/capifac.o $(OLB)/capifut.o $(OLB)/capiran.o
++CAPI_OBJ = $(OLB)/capifac.o $(OLB)/capifut.o $(OLB)/capiran.o
+ 
+-	 VLIST_1 = $(OLB)/vlist.o
+-	 VLIST_2 = $(OLB)/calendar.o $(OLB)/heap.o $(OLB)/linked.o $(OLB)/leftist.o
+-	 VLIST_OBJ = $(VLIST_1) $(VLIST_2)
++VLIST_1 = $(OLB)/vlist.o
++VLIST_2 = $(OLB)/calendar.o $(OLB)/heap.o $(OLB)/linked.o $(OLB)/leftist.o
++VLIST_OBJ = $(VLIST_1) $(VLIST_2)
+ 
+ # link
+ 
+diff -urd func/event/examples/translat work/simpack/func/event/examples/translat
+--- func/event/examples/translat	Fri Aug 25 01:00:34 1995
++++ work/simpack/func/event/examples/translat	Mon May 19 15:57:52 1997
+@@ -7,18 +7,18 @@
+ 
+ if ( [ "$1" = "rm" -o "$1" = "-rm" ] ) then
+   echo ' '
+-  echo 'Removing all translation byproducts from Sim++ program examples ...'
++  echo 'Removing all ./translation byproducts from Sim++ program examples ...'
+   echo ' '
+-  (cd cpudisk; translat -rm)
+-  (cd block;   translat -rm)
+-  (cd tiktok;  translat -rm)
+-  (cd ssq;     translat -rm)
+-  (cd iterate; translat -rm)
+-  (cd airport; translat -rm)
+-  (cd logic;   translat -rm)
+-  (cd network; translat -rm)
+-  (cd qnet;    translat -rm)
+-  (cd route;   translat -rm)
++  (cd cpudisk; ./translat -rm)
++  (cd block;   ./translat -rm)
++  (cd tiktok;  ./translat -rm)
++  (cd ssq;     ./translat -rm)
++  (cd iterate; ./translat -rm)
++  (cd airport; ./translat -rm)
++  (cd logic;   ./translat -rm)
++  (cd network; ./translat -rm)
++  (cd qnet;    ./translat -rm)
++  (cd route;   ./translat -rm)
+   echo ' '
+   echo 'Done Removing.'
+   echo ' '
+@@ -29,16 +29,16 @@
+ echo 'Build (version 1 of) ALL Sim++ Program Examples ...'
+ echo ' '
+ 
+-  (cd cpudisk; translat 1)
+-  (cd block;   translat 1)
+-  (cd tiktok;  translat 1)
+-  (cd ssq;     translat 1)
+-  (cd iterate; translat 1)
+-  (cd logic;   translat 1)
+-  (cd network; translat 1)
+-  (cd qnet;    translat 1)
+-  (cd route;   translat 1)
++  (cd cpudisk; ./translat 1)
++  (cd block;   ./translat 1)
++  (cd tiktok;  ./translat 1)
++  (cd ssq;     ./translat 1)
++  (cd iterate; ./translat 1)
++  (cd logic;   ./translat 1)
++  (cd network; ./translat 1)
++  (cd qnet;    ./translat 1)
++  (cd route;   ./translat 1)
+ 
+ echo ' '
+-echo 'simpack/func/event/examples/translat is done.'
++echo 'simpack/func/event/examples/./translat is done.'
+ echo ' '
+diff -urd func/event/pkgs/Xsimcode/examples/Makefile work/simpack/func/event/pkgs/Xsimcode/examples/Makefile
+--- func/event/pkgs/Xsimcode/examples/Makefile	Fri Aug 25 01:00:46 1995
++++ work/simpack/func/event/pkgs/Xsimcode/examples/Makefile	Mon May 19 16:15:10 1997
+@@ -7,10 +7,10 @@
+ #  modified 950728 by robert cubert as part of SimPack3 release
+ #  including Sim++ version 1.0: see Readme.
+ 
+-	     INCL= ../../../../queuing                   # to find queuing.h
+-          SOBJECT= ../../../../queuing/queuing.o
+-	COMPILER = cc -I$(INCL) -c -o
+-          LINKER = cc -o 
++INCL= ../../../../queuing                   # to find queuing.h
++SOBJECT= ../../../../queuing/queuing.o
++COMPILER = cc -I$(INCL) -c -o
++LINKER = cc -o 
+ 
+ # Do NOT change compiler to gcc!  It will create code that compiles and links
+ # but runs incorrectly.
+diff -urd func/event/pkgs/minigpss/gpsource/Makefile work/simpack/func/event/pkgs/minigpss/gpsource/Makefile
+--- func/event/pkgs/minigpss/gpsource/Makefile	Fri Aug 25 01:00:54 1995
++++ work/simpack/func/event/pkgs/minigpss/gpsource/Makefile	Mon May 19 16:11:42 1997
+@@ -1,5 +1,5 @@
+ QUEUING = ../../../../queuing/queuing.o
+-   INCL = ../../../../queuing
++INCL = ../../../../queuing
+ 
+ gpss:	   	gen main	
+ gen:		lex.yy.c y.tab.c
+diff -urd func/event/pkgs/minigpss/gpsource/main.c work/simpack/func/event/pkgs/minigpss/gpsource/main.c
+--- func/event/pkgs/minigpss/gpsource/main.c	Fri Aug 25 01:00:53 1995
++++ work/simpack/func/event/pkgs/minigpss/gpsource/main.c	Mon May 19 16:00:51 1997
+@@ -2,6 +2,9 @@
+ #include "y.tab.c"
+ #include "error.c"
+ #include "codgen.c"
++
++#define random(x,y) random_int(x,y)
++
+ #define  Pri  1
+ #define  ARRIVE_  1
+ #define  REQUEST_ 2
+diff -urd func/queuing/queuing.c work/simpack/func/queuing/queuing.c
+--- func/queuing/queuing.c	Fri Aug 25 01:00:07 1995
++++ work/simpack/func/queuing/queuing.c	Mon May 19 16:02:15 1997
+@@ -34,6 +34,9 @@
+ #define UNIXX   0
+ #define TURBOC  0
+ 
++#define random(x,y) random_int(x,y)
++#define cfree  free
++
+ #define NIL 0 
+ #define FREE 0 
+ #define BUSY 1 
+@@ -683,7 +686,7 @@
+   if(current_node == NIL) {
+     printf("PREEMPT: Attempt to preempt a non-existent token\n");
+     printf("Token # %d\n",n);
+-    exit();
++    exit(1);
+   } else {
+     temp = current_node->item;
+     if (previous_node == current_node ) {
+@@ -1422,7 +1425,7 @@
+       endwin();
+ #endif
+       printf("\n");
+-      exit();
++      exit(0);
+     }
+   } /* end if */
+ } /* end if (trace_flag == ON) */

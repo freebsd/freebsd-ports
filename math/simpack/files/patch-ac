@@ -1,0 +1,142 @@
+diff -udr simpack/Ask ../simpack.ac/Ask
+--- Ask	Fri Aug 25 00:59:55 1995
++++ ../simpack.ac/Ask	Sun Jun  8 02:07:36 1997
+@@ -1,29 +1,11 @@
+-
+-while ( [ "$1" != "" ] ) do
+-
+-  echo ' '
+-  echo "About to show you the $1"
+-  echo 'Your options are:'
+-  echo ' '
+-  echo "  A = I have seen $1 and accept its terms and conditions"
+-  echo "  R = I reject $1"
+-  echo "  S = Show me $1 and ask me again after i have read it"
+-  read ansa
+-
+-  if ( [ "$ansa" = "a" -o "$ansa" = "A" ] ) then
+-    echo 'We can proceed with installation of SimPack3'
+-    exit 0
+-    fi
+-
+-  if ( [ "$ansa" = "r" -o "$ansa" = "R" ] ) then
+-    echo 'You cannot use SimPack3'
+-    echo 'Have a nice day'
+-    exit 1
+-    fi
+-  
+-  if ( [ "$ansa" = "s" -o "$ansa" = "S" ] ) then
+-    echo "Here is $1:"
+-    more $1
+-    fi
+-
+-  done # end while
++#!/bin/sh
++if [ "$BATCH" != "" ]
++then
++  exit 0
++fi
++if [ "$PACKAGE_BUILDING" != "" ]
++then
++  exit 0
++fi
++cat $1
++exit 0
+diff -udr func/event/Ask ../simpack.ac/func/event/Ask
+--- func/event/Ask	Fri Aug 25 01:00:59 1995
++++ ../simpack.ac/func/event/Ask	Sun Jun  8 01:40:54 1997
+@@ -1,29 +1,11 @@
+-
+-while ( [ "$1" != "" ] ) do
+-
+-  echo "About to show you the $1"
+-  echo 'Your options are:'
+-  echo ' '
+-  echo "  A = I have seen $1 and accept its terms and conditions"
+-  echo "  R = I reject $1"
+-  echo "  S = Show me $1 and ask me again after i have read it"
+-  read ansa
+-
+-  if ( [ "$ansa" = "a" -o "$ansa" = "A" ] ) then
+-    echo 'We can proceed with installation of SimPack3'
+-    exit 0
+-    fi
+-
+-  if ( [ "$ansa" = "r" -o "$ansa" = "R" ] ) then
+-    echo 'You cannot use SimPack3'
+-    echo 'You cannot use SimPack3' > REJECT
+-    echo 'Have a nice day'
+-    exit 1
+-    fi
+-  
+-  if ( [ "$ansa" = "s" -o "$ansa" = "S" ] ) then
+-    echo "Here is $1:"
+-    more $1
+-    fi
+-
+-  done # end while
++#!/bin/sh
++if [ "$BATCH" = "" ]
++then
++  exit 0
++fi
++if [ "$PACKAGE_BUILDING" = "" ]
++then
++  exit 0
++fi
++cat $1
++exit 0
+diff -udr func/event/Make_all ../simpack.ac/func/event/Make_all
+--- func/event/Make_all	Sun Jun  8 01:30:37 1997
++++ ../simpack.ac/func/event/Make_all	Sun Jun  8 01:40:27 1997
+@@ -15,8 +15,9 @@
+   exit 1
+   fi
+ 
+-echo -n 'Create Sim++ Object Library [y/n]?'
+-read ansa
++#echo -n 'Create Sim++ Object Library [y/n]?'
++#read ansa
++ansa=y
+ echo ' '
+ if ( [ "$ansa" = "y" ] ) then
+   echo 'Creating Sim++ Object Library ...'
+@@ -24,8 +25,9 @@
+   echo 'Done.'
+   fi
+ 
+-echo -n 'Create Sim++ Example Code Executables [y/n] ?'
+-read ansa
++#echo -n 'Create Sim++ Example Code Executables [y/n] ?'
++#read ansa
++ansa=y
+ echo ' '
+ if ( [ "$ansa" = "y" ] ) then
+   echo 'Creating Sim++ Example Code Executables ...'
+@@ -33,8 +35,9 @@
+   echo 'Done.'
+   fi
+ 
+-echo -n 'Create SimPack Event Model Packages [y/n]?'
+-read ansa
++#echo -n 'Create SimPack Event Model Packages [y/n]?'
++#read ansa
++ansa=y
+ echo ' '
+ if ( [ "$ansa" = "y" ] ) then
+   echo 'Creating SimPack Functional Model Packages ...'
+diff -udr func/slice/Make_all ../simpack.ac/func/slice/Make_all
+--- func/slice/Make_all	Fri Aug 25 01:01:23 1995
++++ ../simpack.ac/func/slice/Make_all	Sun Jun  8 01:47:35 1997
+@@ -5,8 +5,9 @@
+ echo 'which is simpack.'
+ echo ' '
+ 
+-echo -n 'Create SimPack Time-Slice Functional Model Packages [y/n]?'
+-read ansa
++#echo -n 'Create SimPack Time-Slice Functional Model Packages [y/n]?'
++#read ansa
++ansa=y
+ echo ' '
+ if ( [ "$ansa" = "y" ] ) then
+   echo 'Creating SimPack Time-Slice Functional Model Packages ...'
