@@ -1,16 +1,16 @@
 # New ports collection makefile for:	dnsmasq
 # Date created:				1 June 2003
-# Whom:					Steven Honson <shonson@isoproplex.net>
+# Whom:					Steven Honson <steven@honson.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	dnsmasq
-PORTVERSION=	1.18
+PORTVERSION=	2.1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/
 
-MAINTAINER=	shonson@isoproplex.net
+MAINTAINER=	steven@honson.org
 COMMENT=	A caching DNS forwarder
 
 USE_REINPLACE=	yes
@@ -21,9 +21,13 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 	's|^CC = gcc|CC?=cc|g ; \
 	s|^CFLAGS = -O2|CFLAGS+=-O2|g' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e \
+		"s,\/etc\/dnsmasq.conf,${PREFIX}\/etc\/dnsmasq.conf,g" \
+		${WRKSRC}/src/config.h ${WRKSRC}/dnsmasq.8
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/dnsmasq ${PREFIX}/sbin
+	${INSTALL_DATA} ${WRKSRC}/dnsmasq.conf.example ${PREFIX}/etc/dnsmasq.conf.example
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${PREFIX}/man/man8
 
 .include <bsd.port.mk>
