@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://tsx-11.mit.edu/pub/linux/sources/libs/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	dgilbert@velocet.ca
+MAINTAINER=	ports@dclg.ca
 COMMENT=	A GL Tubing and Extrusion Library
 
 USE_X_PREFIX=	yes

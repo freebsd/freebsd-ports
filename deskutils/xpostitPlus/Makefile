@@ -12,7 +12,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	office
 
-MAINTAINER=	dgilbert@velocet.ca
+MAINTAINER=	ports@dclg.ca
 COMMENT=	PostIt (R) messages onto your X11 screen
 
 USE_IMAKE=	yes
