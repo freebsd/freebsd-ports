@@ -43,9 +43,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <body xmlns="http://www.w3.org/1999/xhtml">
         <p>The kernel interface for creating a snapshot of a
           filesystem is the same as that for changing the flags on
-	  that filesystem.  Due to an oversight, the <a
-	  href="http://www.freebsd.org/cgi/man.cgi?query=mksnap_ffs"
-	  >mksnap_ffs(8)</a>
+	  that filesystem.  Due to an oversight, the <a href="http://www.freebsd.org/cgi/man.cgi?query=mksnap_ffs">mksnap_ffs(8)</a>
           command called that interface with only the snapshot flag
           set, causing all other flags to be reset to the default
 	  value.</p>
@@ -90,9 +88,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>A programming error in the <a
-	  href="http://www.freebsd.org/cgi/man.cgi?query=shmat"
-	  >shmat(2)</a> system call can result
+	<p>A programming error in the <a href="http://www.freebsd.org/cgi/man.cgi?query=shmat">shmat(2)</a> system call can result
           in a shared memory segment's reference count being erroneously
 	  incremented.</p>
         <p>It may be possible to cause a shared memory segment to
@@ -125,9 +121,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>A programming error has been found in the <a
-	  href="http://www.freebsd.org/cgi/man.cgi?query=jail_attach"
-	  >jail_attach(2)</a>
+	<p>A programming error has been found in the <a href="http://www.freebsd.org/cgi/man.cgi?query=jail_attach">jail_attach(2)</a>
           system call which affects the way that system call verifies
           the privilege level of the calling process.  Instead of
           failing immediately if the calling process was already
@@ -237,9 +231,88 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </dates>
   </vuln>
 
+  <vuln vid="6fd02439-5d70-11d8-80e3-0020ed76ef5a">
+    <topic>Several remotely exploitable buffer overflows in gaim</topic>
+    <affects>
+      <package>
+        <name>gaim</name>
+        <range><lt>0.75_3</lt></range>
+        <range><eq>0.75_5</eq></range>
+	<range><eq>0.76</eq></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Stefan Esser of e-matters found almost a dozen remotely
+          exploitable vulnerabilities in Gaim.  From the e-matters
+          advisory:</p>
+        <blockquote cite="http://security.e-matters.de/advisories/012004.txt">
+          <p>While developing a custom add-on, an integer overflow
+          in the handling of AIM DirectIM packets was revealed that
+          could lead to a remote compromise of the IM client. After
+          disclosing this bug to the vendor, they had to make a
+          hurried release because of a change in the Yahoo connection
+          procedure that rendered GAIM useless. Unfourtunately at the
+          same time a closer look onto the sourcecode revealed 11 more
+          vulnerabilities.</p>
+
+          <p>The 12 identified problems range from simple standard
+          stack overflows, over heap overflows to an integer overflow
+          that can be abused to cause a heap overflow. Due to the
+          nature of instant messaging many of these bugs require
+          man-in-the-middle attacks between client and server. But the
+          underlying protocols are easy to implement and MIM attacks
+          on ordinary TCP sessions is a fairly simple task.</p>
+
+          <p>In combination with the latest kernel vulnerabilities or
+          the habit of users to work as root/administrator these bugs
+          can result in remote root compromises.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://security.e-matters.de/advisories/012004.txt</url>
+      <cvename>CAN-2004-0005</cvename>
+      <cvename>CAN-2004-0006</cvename>
+      <cvename>CAN-2004-0007</cvename>
+      <cvename>CAN-2004-0008</cvename>
+    </references>
+    <dates>
+      <discovery>2004-01-26</discovery>
+      <entry>2004-02-12</entry>
+      <modified>2004-04-07</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="290d81b9-80f1-11d8-9645-0020ed76ef5a">
+    <topic>oftpd denial-of-service vulnerability (PORT command)</topic>
+    <affects>
+      <package>
+	<name>oftpd</name>
+	<range><lt>0.3.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Philippe Oechslin reported a denial-of-service vulnerability
+	  in oftpd.  The oftpd server can be crashed by sending a PORT
+	  command containing an integer over 8 bits long (over 255).</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.time-travellers.org/oftpd/oftpd-dos.html</url>
+      <bid>9980</bid>
+      <cvename>CAN-2004-0376</cvename>
+    </references>
+    <dates>
+      <discovery>2004-03-04</discovery>
+      <entry>2004-03-28</entry>
+      <modified>2004-04-05</modified>
+    </dates>
+  </vuln>
+
   <vuln vid="322d4ff6-85c3-11d8-a41f-0020ed76ef5a">
-    <topic>Midnight Commander buffer overflow during symlink
-      resolution</topic>
+    <topic>Midnight Commander buffer overflow during symlink resolution</topic>
     <affects>
       <package>
 	<name>mc</name>
@@ -577,9 +650,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<p>From the FreeBSD Security Advisory:</p>
 	<blockquote>
           <p>A programming error in the handling of some IPv6 socket
-	    options within the <a
-	    href="http://www.freebsd.org/cgi/man.cgi?query=setsockopt"
-	    >setsockopt(2)</a> system call may result
+	    options within the <a href="http://www.freebsd.org/cgi/man.cgi?query=setsockopt">setsockopt(2)</a> system call may result
             in memory locations being accessed without proper
             validation.</p>
           <p>It may be possible for a local attacker to read portions
@@ -626,33 +697,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2003-08-14</discovery>
       <entry>2004-03-29</entry>
-    </dates>
-  </vuln>
-
-  <vuln vid="290d81b9-80f1-11d8-9645-0020ed76ef5a">
-    <topic>oftpd denial-of-service vulnerability (PORT command)</topic>
-    <affects>
-      <package>
-	<name>oftpd</name>
-	<range><lt>0.3.7</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Philippe Oechslin reported a denial-of-service vulnerability
-	  in oftpd.  The oftpd server can be crashed by sending a PORT
-	  command containing an integer over 8 bits long (over 255).</p>
-      </body>
-    </description>
-    <references>
-      <url>http://www.time-travellers.org/oftpd/oftpd-dos.html</url>
-      <bid>9980</bid>
-      <cvename>CAN-2004-0376</cvename>
-    </references>
-    <dates>
-      <discovery>2004-03-04</discovery>
-      <entry>2004-03-28</entry>
-      <modified>2004-04-05</modified>
     </dates>
   </vuln>
 
@@ -1962,59 +2006,6 @@ misc.c:
     <dates>
       <discovery>2003-12-04</discovery>
       <entry>2004-02-12</entry>
-    </dates>
-  </vuln>
-
-  <vuln vid="6fd02439-5d70-11d8-80e3-0020ed76ef5a">
-    <topic>Several remotely exploitable buffer overflows in gaim</topic>
-    <affects>
-      <package>
-        <name>gaim</name>
-        <range><lt>0.75_3</lt></range>
-        <range><eq>0.75_5</eq></range>
-	<range><eq>0.76</eq></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Stefan Esser of e-matters found almost a dozen remotely
-          exploitable vulnerabilities in Gaim.  From the e-matters
-          advisory:</p>
-        <blockquote cite="http://security.e-matters.de/advisories/012004.txt">
-          <p>While developing a custom add-on, an integer overflow
-          in the handling of AIM DirectIM packets was revealed that
-          could lead to a remote compromise of the IM client. After
-          disclosing this bug to the vendor, they had to make a
-          hurried release because of a change in the Yahoo connection
-          procedure that rendered GAIM useless. Unfourtunately at the
-          same time a closer look onto the sourcecode revealed 11 more
-          vulnerabilities.</p>
-
-          <p>The 12 identified problems range from simple standard
-          stack overflows, over heap overflows to an integer overflow
-          that can be abused to cause a heap overflow. Due to the
-          nature of instant messaging many of these bugs require
-          man-in-the-middle attacks between client and server. But the
-          underlying protocols are easy to implement and MIM attacks
-          on ordinary TCP sessions is a fairly simple task.</p>
-
-          <p>In combination with the latest kernel vulnerabilities or
-          the habit of users to work as root/administrator these bugs
-          can result in remote root compromises.</p>
-        </blockquote>
-      </body>
-    </description>
-    <references>
-      <url>http://security.e-matters.de/advisories/012004.txt</url>
-      <cvename>CAN-2004-0005</cvename>
-      <cvename>CAN-2004-0006</cvename>
-      <cvename>CAN-2004-0007</cvename>
-      <cvename>CAN-2004-0008</cvename>
-    </references>
-    <dates>
-      <discovery>2004-01-26</discovery>
-      <entry>2004-02-12</entry>
-      <modified>2004-04-07</modified>
     </dates>
   </vuln>
 
