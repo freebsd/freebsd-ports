@@ -7,7 +7,7 @@
 
 PORTNAME=	flood
 PORTVERSION=	0.20031002
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kuriyama
@@ -44,5 +44,10 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/docs/README ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/docs/docbook/* ${DOCSDIR}/docbook
 .endif
+
+ANONCVS=	cvs -d :pserver:anoncvs@cvs.apache.org:/home/cvspublic
+
+maint-checkout:
+	${ANONCVS} co httpd-test/flood
 
 .include <bsd.port.mk>
