@@ -1,0 +1,10 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+WARNING: This port is a very old Python MySQL interface which doesn't actively
+         maintained by its authors anymore. Some efforts were required to make
+         it working with newest versions of MySQL, and it is highly likely
+         that further MySQL development would make hard or even impossible to
+         get this module working in the future.
+
+         The better port named py-MySQLdb available, which should be used in
+         all cases where compatability and future maintainability is desirable.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
