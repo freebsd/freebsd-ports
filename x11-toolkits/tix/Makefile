@@ -3,7 +3,7 @@
 # Date created:		22 December 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.4 1997/01/24 10:43:07 asami Exp $
+# $Id: Makefile,v 1.5 1997/02/21 14:54:53 tg Exp $
 #
 
 DISTNAME=	Tix4.1.0
@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/unix/tk4.1
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared \
 		--with-tcl=/usr/include/tcl \
-		--with-tk="${PREFIX}/include/tk"
+		--with-tk="${PREFIX}/include/tk4.1"
 # this should probably be added to bsd.port.mk
 CONFIGURE_ENV=	PREFIX=${PREFIX}
 MAN1=		tixwish.1 
