@@ -105,6 +105,7 @@ share/locale/az/LC_MESSAGES/metacity.mo
 share/locale/ca/LC_MESSAGES/metacity.mo
 share/locale/da/LC_MESSAGES/metacity.mo
 share/locale/de/LC_MESSAGES/metacity.mo
+share/locale/el/LC_MESSAGES/metacity.mo
 share/locale/es/LC_MESSAGES/metacity.mo
 share/locale/fr/LC_MESSAGES/metacity.mo
 share/locale/gl/LC_MESSAGES/metacity.mo
@@ -116,6 +117,8 @@ share/locale/ms/LC_MESSAGES/metacity.mo
 share/locale/no/LC_MESSAGES/metacity.mo
 share/locale/pl/LC_MESSAGES/metacity.mo
 share/locale/pt/LC_MESSAGES/metacity.mo
+share/locale/pt_BR/LC_MESSAGES/metacity.mo
+share/locale/ro/LC_MESSAGES/metacity.mo
 share/locale/ru/LC_MESSAGES/metacity.mo
 share/locale/sk/LC_MESSAGES/metacity.mo
 share/locale/sv/LC_MESSAGES/metacity.mo
