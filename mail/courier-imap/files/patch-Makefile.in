@@ -1,0 +1,10 @@
+--- Makefile.in.orig	Mon Mar 24 16:31:17 2003
++++ Makefile.in	Mon Mar 24 16:32:01 2003
+@@ -872,6 +872,7 @@
+ 
+ install-data-local: install-man
+ 	for f in `cat authlib/modulelist ; . authlib/authdaemonrc ; echo $$authmodulelist ` ; do \
++		continue ; \
+ 		test "$$f" = "authpam" || continue ; \
+ 		test -d $(DESTDIR)/etc/pam.d || continue ; \
+ 		test -w $(DESTDIR)/etc/pam.d || continue ; \
