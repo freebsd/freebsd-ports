@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	xmlppm
-PORTVERSION=	0.96
-PORTREVISION=	2
+PORTVERSION=	0.97
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.cs.cornell.edu/People/jcheney/xmlppm/
@@ -18,16 +17,21 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML-Conscious PPM Compression
 
-LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
+		expat.4:${PORTSDIR}/textproc/expat2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
-USE_REINPLACE=	yes
-USE_GMAKE=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/Makefile
+USE_GMAKE=	yes
+MAKE_ARGS=	CC="${CXX}" OPT_FLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -lexpat -liconv"
 
 do-install:
-	@(cd ${WRKSRC} ; ${INSTALL_PROGRAM} xmlppm xmlunppm ${PREFIX}/bin)
+	${INSTALL_PROGRAM} ${WRKSRC}/xmlppm ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/xmlunppm ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/../README ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
