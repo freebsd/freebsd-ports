@@ -1,0 +1,3 @@
+bin/javavm
+bin/registervm
+bin/unregistervm
