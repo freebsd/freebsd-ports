@@ -1,0 +1,18 @@
+--- configure.orig	Sun Aug 29 20:18:38 2004
++++ configure	Sun Aug 29 20:19:38 2004
+@@ -19009,15 +19009,6 @@
+     else
+         :
+     fi
+-
+-    case "$host_cpu" in
+-    i386)           TRY_CFLAGS="$OPT_CFLAGS -mcpu=i386";;
+-    i486)           TRY_CFLAGS="$OPT_CFLAGS -mcpu=i486";;
+-    i586)           TRY_CFLAGS="$OPT_CFLAGS -mcpu=pentium"; CPU_PENTIUM=true ;;
+-    i686)           TRY_CFLAGS="$OPT_CFLAGS -mcpu=pentiumpro"; CPU_PENTIUM=true ;;
+-    k6)             TRY_CFLAGS="$OPT_CFLAGS -mcpu=k6"; CPU_PENTIUM=true ;;
+-    sparc)          TRY_CFLAGS="$OPT_CFLAGS -mcpu=ultrasparc -mvis";;
+-  esac
+ echo "$as_me:$LINENO: checking if $CC supports $TRY_CFLAGS flags" >&5
+ echo $ECHO_N "checking if $CC supports $TRY_CFLAGS flags... $ECHO_C" >&6
+     SAVE_CFLAGS="$CFLAGS"

@@ -1,0 +1,23 @@
+Gavl (Gmerlin Audio Video Library) is a library for handling
+uncompressed video and audio data.
+                            
+Support:
+ Colorspaces: RGB and BGR formats with 15, 16, 24 and 32 bpp, RGBA (32 bpp),
+  YUY2,  Planar YUV formats: 4:2:0, 4:2:2, 4:4:4 with both MPEG and JPEG 
+  quantization.
+
+ Alpha blending with user defined background color
+
+ Audio PCM formats: 8 and 16 bit signed and unsigned, 32 bit signed, floating
+  point. Byte order is always machine native.
+
+ Support for currently 6 audio channels (can easily be extended).  Support for
+  speaker configurations. Downmixing, upmixing and  reordering of channels is
+  done by the audio converter.
+
+ Audio channels can be interleaved or not.
+
+ Generic time type (64 bit, us precision) and routines for converting 
+  frame/sample counts to time values and vice versa.
+
+WWW:	http://gmerlin.sourceforge.net
