@@ -7,7 +7,7 @@
 
 PORTNAME=	phex
 PORTVERSION=	2.0.0.76
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -39,6 +39,9 @@ PLIST_FILES+=	bin/${PORTNAME}
 .for jar in ${JAR_FILES}
 PLIST_FILES+=	%%JAR_DIR%%/${jar}
 .endfor
+
+PLIST_DIRS+=	\
+		%%JAR_DIR%%
 
 post-patch:
 # remove trailing ^M

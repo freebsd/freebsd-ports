@@ -7,6 +7,7 @@
 
 PORTNAME=	jzlib
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	archivers java
 MASTER_SITES=	http://www.jcraft.com/jzlib/
 
@@ -37,6 +38,9 @@ PLIST_FILES+=	%%JAVAJARDIR%%/${PORTNAME}.jar
 .for file in ${EXAMPLE_FILES}
 PLIST_FILES+=	%%EXAMPLESDIR%%/${file}
 .endfor
+
+PLIST_DIRS+=	\
+		%%EXAMPLESDIR%%
 
 do-build:
 	@cd ${BUILD_WRKSRC} && ${FIND} com -name "*.java" | \
