@@ -11,7 +11,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.ba.cnr.it/~paolo/pmacct/
 
 MAINTAINER=	krion@FreeBSD.org
-COMMENT=	Network tool to gather IP traffic information
+COMMENT=	IP accounting and aggregation tool
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
