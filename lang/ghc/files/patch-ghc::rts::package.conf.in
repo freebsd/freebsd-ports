@@ -1,0 +1,10 @@
+--- ghc/rts/package.conf.in.orig	Sun Mar 20 18:40:33 2005
++++ ghc/rts/package.conf.in	Sun Mar 20 18:41:47 2005
+@@ -135,6 +135,7 @@
+          , "-u", "GHCziWeak_runFinalizzerBatch_closure"
+          , "-u", "__stginit_Prelude"
+ #endif
++	 , "-L%%LOCALBASE%%/lib"
+ 
+ framework-dirs:
+ 
