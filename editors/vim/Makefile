@@ -7,7 +7,7 @@
 #
 
 PORTNAME?=	vim
-PATCHLEVEL=	183
+PATCHLEVEL=	206
 PORTVERSION=	6.1.${PATCHLEVEL}
 PORTREVISION?=	0
 CATEGORIES?=	editors
@@ -23,7 +23,7 @@ PATCH_SITES=	${MASTER_SITES:S/unix/patches/}
 PATCHFILES!=    /usr/bin/jot -s " " -w ${PORTVERSION:C/\.[0-9]*$//}.%03d  \
 			${PATCHLEVEL} 1 ${PATCHLEVEL}
 #	bits to remove
-BADPATCHES= 002 016 019 023 035 044 049 050 066 073 076 086 088 093 100 119 147 148 149 151 154 173 184
+BADPATCHES= 002 016 019 023 035 044 049 050 066 073 076 086 088 093 100 119 147 148 149 151 154 173 184 188 190 198 202
 .for p in ${BADPATCHES}
 PATCHFILES:=	${PATCHFILES:N6.1.${p}}
 .endfor
@@ -133,7 +133,7 @@ LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
 USE_XLIB=	yes
 .endif
 
-post-patch:
+pre-configure:
 	@(cd ${WRKSRC}; ${MAKE} distclean)
 	@${REINPLACE_CMD} -e 's|8\.2|8.3|; \
 		s|\$$gtk_config_prefix/bin/gtk-config|\$${GTK_CONFIG}|; \
