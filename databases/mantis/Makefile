@@ -6,9 +6,12 @@
 #
 
 PORTNAME=	mantis
-PORTVERSION=	0.17.5
+PORTVERSION=	0.18.0
 CATEGORIES=	databases www
-MASTER_SITES=	http://switch.dl.sourceforge.net/sourceforge/mantisbt/
+MASTER_SITES=	http://switch.dl.sourceforge.net/sourceforge/mantisbt/ \
+		http://umn.dl.sourceforge.net/sourceforge/mantisbt/ \
+		http://keihanna.dl.sourceforge.net/sourceforge/mantisbt/ \
+		http://flow.dl.sourceforge.net/sourceforge/mantisbt/
 
 MAINTAINER=	gioria@FreeBSD.org
 COMMENT=	A bug tracking system written in PHP
