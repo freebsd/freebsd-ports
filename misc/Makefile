@@ -71,6 +71,7 @@
     SUBDIR += figlet
     SUBDIR += figlet-fonts
     SUBDIR += findutils
+    SUBDIR += floatator
     SUBDIR += flyway
     SUBDIR += fortuneit
     SUBDIR += freedialog
