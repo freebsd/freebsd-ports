@@ -1,0 +1,14 @@
+--- lib/URL.pl.bak	Fri Jan  9 08:58:41 1998
++++ lib/URL.pl	Mon Nov  2 11:49:57 1998
+@@ -49,7 +49,10 @@
+ 	    $host =~ tr/A-Z/a-z/;
+ 	    $port = ($3 ne "" ? $3 : $ftp_port);
+ 	    $path = $4; 
+-	    if ($userstring =~ /(.*):(.*)@/) {
++	    if (!defined($userstring)) {
++		$userid = undef;
++		$passwd = undef;
++	    } elsif ($userstring =~ /(.*):(.*)@/) {
+ 		$userid = $1;
+ 		$passwd = $2;
+ 	    } else {
