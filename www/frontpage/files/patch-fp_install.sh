@@ -1,5 +1,5 @@
---- fp_install.sh.orig	Mon Apr 16 07:39:25 2001
-+++ fp_install.sh	Tue Feb 12 17:37:58 2002
+--- frontpage/version5.0/fp_install.sh.orig	Mon Apr 16 07:39:25 2001
++++ frontpage/version5.0/fp_install.sh	Tue Feb 12 17:37:58 2002
 @@ -12,7 +12,7 @@
  main() {
      initialize
