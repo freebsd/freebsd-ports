@@ -1,5 +1,5 @@
 --- auth1.c.orig	Wed Jun 19 02:27:55 2002
-+++ auth1.c	Fri Jun 28 06:45:24 2002
++++ auth1.c	Sun Jul  7 20:36:36 2002
 @@ -26,6 +26,15 @@
  #include "session.h"
  #include "uidswap.h"
@@ -55,7 +55,7 @@
  	for (;;) {
  		/* default to fail */
  		authenticated = 0;
-@@ -243,12 +268,48 @@
+@@ -243,12 +268,52 @@
  			packet_check_eom();
  
  			/* Try authentication with the password. */
@@ -74,7 +74,11 @@
 +#ifdef USE_PAM
 +		case SSH_CMSG_AUTH_TIS:
 +			debug("rcvd SSH_CMSG_AUTH_TIS: Trying PAM");
++			if (pw == NULL)
++				break;
 +			pam_cookie = ipam_start_auth("sshd", pw->pw_name);
++			if (pam_cookie == NULL)
++				break;
 +			/* We now have data available to send as a challenge */
 +			if (pam_cookie->num_msg != 1 ||
 +			    (pam_cookie->msg[0]->msg_style != PAM_PROMPT_ECHO_OFF &&
@@ -105,7 +109,7 @@
  		case SSH_CMSG_AUTH_TIS:
  			debug("rcvd SSH_CMSG_AUTH_TIS");
  			if (options.challenge_response_authentication == 1) {
-@@ -275,6 +336,12 @@
+@@ -275,6 +340,12 @@
  				xfree(response);
  			}
  			break;
@@ -118,7 +122,7 @@
  
  		default:
  			/*
-@@ -284,6 +351,34 @@
+@@ -284,6 +355,34 @@
  			log("Unknown message during authentication: type %d", type);
  			break;
  		}
@@ -153,7 +157,7 @@
  #ifdef BSD_AUTH
  		if (authctxt->as) {
  			auth_close(authctxt->as);
-@@ -299,9 +394,23 @@
+@@ -299,9 +398,23 @@
  		    !auth_root_allowed(get_authname(type)))
  			authenticated = 0;
  
@@ -177,7 +181,7 @@
  		if (authenticated)
  			return;
  
-@@ -354,6 +463,11 @@
+@@ -354,6 +467,11 @@
  		authctxt->valid = 1;
  	else
  		debug("do_authentication: illegal user %s", user);

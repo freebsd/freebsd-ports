@@ -7,7 +7,7 @@
 
 PORTNAME=	openssh
 PORTVERSION=	3.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/ \
 		ftp://ftp.usa.openbsd.org/pub/OpenBSD/OpenSSH/ \
@@ -85,7 +85,7 @@ post-extract:
 	@${CP} ${FILESDIR}/${i} ${WRKSRC}/
 .endfor
 
-post-patch:
+pre-configure:
 .for i in ${MODIFY:S/pathnames.h//} ${MAN1:S/slogin.1//} ${MAN5} ${MAN8}
 	@${MV} ${WRKSRC}/${i} ${WRKSRC}/${i}.sed
 	${SED} -e "s=/etc/ssh=${ETCSSH}/ssh=" \
