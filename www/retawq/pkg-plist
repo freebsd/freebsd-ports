@@ -14,4 +14,5 @@ share/locale/fr/LC_MESSAGES/retawq.mo
 %%PORTDOCS%%share/doc/retawq/raq.html
 %%PORTDOCS%%share/doc/retawq/rfc.html
 %%PORTDOCS%%share/doc/retawq/rtconfig.html
+%%PORTDOCS%%share/doc/retawq/scheme.html
 %%PORTDOCS%%@dirrm share/doc/retawq
