@@ -8,7 +8,7 @@
 
 PORTNAME=	open-motif
 PORTVERSION=	2.1.30
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://openmotif.opengroup.org/pub/openmotif/R${PORTVERSION}/tars/  \
 		ftp://ftp.opengroup.org/pub/openmotif/R${PORTVERSION}/tars/  \
@@ -665,16 +665,6 @@ pre-configure:
 post-configure:
 	@${CP} ${X11BASE}/bin/imake ${WRKSRC}/config/imake/
 	cd ${WRKSRC} && ${MAKE} imake.bootstrap
-
-pre-install:
-	@if [ -f ${PREFIX}/lib/X11/config/host.def.orig ]; then \
-		: ; \
-	elif [ -f ${PREFIX}/lib/X11/config/host.def ]; then \
-		${MV} ${PREFIX}/lib/X11/config/host.def \
-		   ${PREFIX}/lib/X11/config/host.def.orig; \
-	else \
-		: ; \
-	fi
 
 post-install: share-doc share-guides share-examples
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib

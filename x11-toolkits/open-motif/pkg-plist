@@ -1,7 +1,4 @@
 @comment $FreeBSD$
-@exec [ -f %D/lib/X11/config/host.def.orig ] || mv %D/lib/X11/config/host.def %D/lib/X11/config/host.def.orig
-lib/X11/config/host.def
-@unexec [ -f %D/%F.orig ] && mv %D/%F.orig %D/%F || :
 %%MOTIF_DEMOS%%bin/DNDDemo
 %%MOTIF_DEMOS%%bin/UTMXmText
 %%MOTIF_DEMOS%%bin/aicon
@@ -370,9 +367,7 @@ lib/X11/bindings/sun
 lib/X11/bindings/sun_at
 lib/X11/bindings/tek
 lib/X11/bindings/xmbind.alias
-lib/X11/config/Motif.rules
 lib/X11/config/Motif.rules.openmotif
-lib/X11/config/Motif.tmpl
 lib/X11/config/Motif.tmpl.openmotif
 %%MOTIF_DEMOS%%lib/X11/help/aicon.help
 %%MOTIF_DEMOS%%lib/X11/help/draw.help
