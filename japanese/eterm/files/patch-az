@@ -1,0 +1,17 @@
+--- themes/irc/theme.cfg.in.orig	Mon Feb  7 22:13:53 2000
++++ themes/irc/theme.cfg.in	Mon Feb  7 22:14:09 2000
+@@ -250,10 +250,10 @@
+ # The XIM support options.
+ # input_method: set the name of your favorate input method program
+ # preedit_type: OverTheSpot or OffTheSpot or Root
+-#  begin xim
+-#    input_method Ami
+-#    preedit_type OverTheSpot
+-#  end xim
++  begin xim
++    input_method Ami
++    preedit_type OverTheSpot
++  end xim
+ 
+ # Boolean variables.  The values can be "1", "on", or "true" for TRUE, or "0",
+ # "off", or "false" for FALSE.
