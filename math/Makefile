@@ -258,6 +258,7 @@
     SUBDIR += xldlas
     SUBDIR += xlispstat
     SUBDIR += xplot
+    SUBDIR += xppaut
     SUBDIR += xspread
     SUBDIR += xwpl
     SUBDIR += yacas
