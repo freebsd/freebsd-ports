@@ -96,6 +96,7 @@
     SUBDIR += pm3-net
     SUBDIR += pm3-netobj
     SUBDIR += ptoc
+    SUBDIR += py-mx-base
     SUBDIR += python
     SUBDIR += python+ipv6
     SUBDIR += python-doc-html

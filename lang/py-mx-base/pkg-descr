@@ -1,7 +1,16 @@
-This package provides several different functions and mechanisms
-to do fast text text processing. Amongst these are character set
-operations, parsing & tagging tools (using a finite state machine
-executing byte code) and common things such as Boyer-Moore search
-objects. For full documentation see the home page.
+eGenix.com mx Extensions for Python
 
-WWW: http://starship.skyport.net/~lemburg/mxTextTools.html
+The mx Extension Series(TM) is a collection of software packages which aims at
+providing professional quality add-ons for the Open Source Language Python
+(see http://www.python.org).
+   
+It consists of the following packages:
+
+mxDateTime	- Generic Date/Time Types
+mxTextTools	- Fast Text Processing Tools
+mxStack		- Fast and Memory-Efficient Stack Type
+mxTools		- Collection of Additional Builtins
+mxProxy		- Generic Proxy Wrapper Type
+mxBeeBase	- On-disk B+Tree Based Database Kit
+
+WWW: http://www.egenix.com

@@ -1,52 +1,38 @@
-# New ports collection makefile for:	py-mxTextTools
-# Date created:		12 May 1999
+# New ports collection makefile for:	py-mx-base
+# Date created:		18 March 2001
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	py-mxTextTools
-PORTVERSION=	1.1.1
-CATEGORIES=	textproc python
-MASTER_SITES=	http://starship.python.net/~lemburg/
-DISTNAME=	mxTextTools-1.1.1
+PORTNAME=	mx-base
+PORTVERSION=	2.0.0
+CATEGORIES=	lang python
+MASTER_SITES=	http://www.lemburg.com/python/
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	egenix-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	tg@FreeBSD.org
 
+BUILD_DEPENDS=	${PYDISTUTILS}
+
 USE_PYTHON=	yes
-USE_ZIP=	yes
-EXTRACT_BEFORE_ARGS=	-aq
-WRKSRC=		${WRKDIR}/TextTools/mxTextTools
-CONFIGURE_ENV=	PYTHON=${PYTHON_CMD}
-ALL_TARGET=	sharedmods
 
-TEXTTOOLSDIR=	${PYTHON_SITELIBDIR}/TextTools
-DOCDIR=		${PREFIX}/share/doc/py-mxTextTools
-EXAMPLEDIR=	${PREFIX}/share/examples/py-mxTextTools
+DOCDIR=		${PREFIX}/share/doc/py-mx
 
-post-extract:
-	@${CP} ${FILESDIR}/Setup ${WRKSRC}
-	@${CP} ${PYTHON_LIBDIR}/config/Makefile.pre.in ${WRKSRC}
-
-do-configure:
-	@(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${MAKE} -f Makefile.pre.in boot)
+do-build:
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py build)
 
 do-install:
-	@${MKDIR} ${TEXTTOOLSDIR}
-	${INSTALL_DATA} ${WRKDIR}/TextTools/*.py ${TEXTTOOLSDIR}
-	@${MKDIR} ${TEXTTOOLSDIR}/Constants
-	${INSTALL_DATA} ${WRKDIR}/TextTools/Constants/*.py ${TEXTTOOLSDIR}/Constants
-	@${MKDIR} ${TEXTTOOLSDIR}/mxTextTools
-.for file in __init__.py mxTextTools.so
-	${INSTALL_DATA} ${WRKDIR}/TextTools/mxTextTools/${file} ${TEXTTOOLSDIR}/mxTextTools
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py install)
+
+post-install:
+.for dir in DateTime Proxy Stack TextTools Tools
+	@cd ${PYTHON_SITELIBDIR} && ${LN} -sf mx/${dir} ${dir}
 .endfor
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${TEXTTOOLSDIR}
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${TEXTTOOLSDIR}
-	@${MKDIR} ${EXAMPLEDIR}
-	${INSTALL_DATA} ${WRKDIR}/TextTools/Examples/* ${EXAMPLEDIR}
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKDIR}/TextTools/Doc/* ${DOCDIR}
-.endif
+	@${SED} -e "s;%%PYTHON_SITELIBDIR%%;${PYTHON_SITELIBDIR};g" \
+		< ${FILESDIR}/index.html.in > ${DOCDIR}/index.html
+	@${CHMOD} 644 ${DOCDIR}/index.html
 
 .include <bsd.port.mk>

@@ -1,35 +1,355 @@
-lib/%%PYTHON_VERSION%%/site-packages/TextTools/Constants/Sets.py
-lib/%%PYTHON_VERSION%%/site-packages/TextTools/Constants/Sets.pyc
-lib/%%PYTHON_VERSION%%/site-packages/TextTools/Constants/Sets.pyo
-lib/%%PYTHON_VERSION%%/site-packages/TextTools/Constants/TagTables.py
-lib/%%PYTHON_VERSION%%/site-packages/TextTools/Constants/TagTables.pyc
-lib/%%PYTHON_VERSION%%/site-packages/TextTools/Constants/TagTables.pyo
-lib/%%PYTHON_VERSION%%/site-packages/TextTools/Constants/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/TextTools/Constants/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/TextTools/Constants/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/TextTools/TextTools.py
-lib/%%PYTHON_VERSION%%/site-packages/TextTools/TextTools.pyc
-lib/%%PYTHON_VERSION%%/site-packages/TextTools/TextTools.pyo
-lib/%%PYTHON_VERSION%%/site-packages/TextTools/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/TextTools/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/TextTools/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/TextTools/mxTextTools/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/TextTools/mxTextTools/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/TextTools/mxTextTools/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/TextTools/mxTextTools/mxTextTools.so
-share/doc/py-mxTextTools/mxTextTools.html
-share/examples/py-mxTextTools/HTML.py
-share/examples/py-mxTextTools/Loop.py
-share/examples/py-mxTextTools/Python.py
-share/examples/py-mxTextTools/RTF.py
-share/examples/py-mxTextTools/RegExp.py
-share/examples/py-mxTextTools/Tim.py
-share/examples/py-mxTextTools/Words.py
-share/examples/py-mxTextTools/__init__.py
-share/examples/py-mxTextTools/altRTF.py
-share/examples/py-mxTextTools/pytag.py
-@dirrm share/examples/py-mxTextTools
-@dirrm share/doc/py-mxTextTools
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/TextTools/mxTextTools
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/TextTools/Constants
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/TextTools
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/BeeBase.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/BeeBase.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/BeeBase.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/BeeDict.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/BeeDict.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/BeeDict.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/BeeIndex.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/BeeIndex.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/BeeIndex.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/BeeStorage.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/BeeStorage.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/BeeStorage.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/COPYRIGHT
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/Cache.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/Cache.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/Cache.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/Doc/mxBeeBase.html
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/Doc/mxLicense.html
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/ExitFunctions.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/ExitFunctions.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/ExitFunctions.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/FileLock.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/FileLock.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/FileLock.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/LICENSE
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/mxBeeBase/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/mxBeeBase/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/mxBeeBase/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/mxBeeBase/mxBeeBase.so
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/mxBeeBase/test.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/mxBeeBase/test.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/mxBeeBase/test.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/showBeeDict.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/showBeeDict.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/showBeeDict.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/COPYRIGHT
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/ARPA.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/ARPA.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/ARPA.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/COPYRIGHT
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/DateTime.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/DateTime.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/DateTime.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Doc/mxDateTime-History.html
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Doc/mxDateTime.html
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Doc/mxLicense.html
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Examples/AtomicClock.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Examples/AtomicClock.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Examples/AtomicClock.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Examples/CommandLine.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Examples/CommandLine.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Examples/CommandLine.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Examples/Y2000.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Examples/Y2000.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Examples/Y2000.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Examples/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Examples/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Examples/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Examples/alarm.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Examples/alarm.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Examples/alarm.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Examples/lifespan.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Examples/lifespan.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Examples/lifespan.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Feasts.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Feasts.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Feasts.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/ISO.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/ISO.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/ISO.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/LICENSE
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/LazyModule.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/LazyModule.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/LazyModule.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Locale.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Locale.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Locale.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/NIST.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/NIST.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/NIST.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/ODMG.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/ODMG.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/ODMG.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Parser.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Parser.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Parser.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Timezone.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Timezone.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Timezone.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/mxDateTime/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/mxDateTime/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/mxDateTime/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/mxDateTime/mxDateTime.so
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/mxDateTime/mxDateTime_Python.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/mxDateTime/mxDateTime_Python.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/mxDateTime/mxDateTime_Python.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/mxDateTime/test.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/mxDateTime/test.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/mxDateTime/test.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/mxDateTime/testcmp.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/mxDateTime/testcmp.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/mxDateTime/testcmp.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/mxDateTime/testcomdates.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/mxDateTime/testcomdates.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/mxDateTime/testcomdates.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/mxDateTime/testnow.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/mxDateTime/testnow.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/mxDateTime/testnow.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/mxDateTime/teststrftime.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/mxDateTime/teststrftime.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/mxDateTime/teststrftime.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/mxDateTime/testticks.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/mxDateTime/testticks.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/mxDateTime/testticks.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/timegm.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/timegm.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/timegm.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Doc/mxExtensions.html
+lib/%%PYTHON_VERSION%%/site-packages/mx/Doc/mxLicense.html
+lib/%%PYTHON_VERSION%%/site-packages/mx/LICENSE
+lib/%%PYTHON_VERSION%%/site-packages/mx/Log.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Log.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Log.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Misc/Cache.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Misc/Cache.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Misc/Cache.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Misc/CommandLine.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Misc/CommandLine.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Misc/CommandLine.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Misc/ConfigFile.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Misc/ConfigFile.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Misc/ConfigFile.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Misc/Cookie.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Misc/Cookie.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Misc/Cookie.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Misc/FileLock.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Misc/FileLock.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Misc/FileLock.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Misc/LazyModule.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Misc/LazyModule.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Misc/LazyModule.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Misc/Namespace.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Misc/Namespace.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Misc/Namespace.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Misc/OrderedMapping.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Misc/OrderedMapping.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Misc/OrderedMapping.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Misc/PackageTools.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Misc/PackageTools.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Misc/PackageTools.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Misc/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Misc/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Misc/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/NewBuiltins.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/NewBuiltins.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/NewBuiltins.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/COPYRIGHT
+lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/Doc/mxLicense.html
+lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/Doc/mxProxy.html
+lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/LICENSE
+lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/Proxy.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/Proxy.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/Proxy.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/mxProxy/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/mxProxy/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/mxProxy/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/mxProxy/mxProxy.so
+lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/mxProxy/test.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/mxProxy/test.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/mxProxy/test.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/mxProxy/testvlad.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/mxProxy/testvlad.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/mxProxy/testvlad.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/mxProxy/weakreftest.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/mxProxy/weakreftest.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/mxProxy/weakreftest.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Queue/COPYRIGHT
+lib/%%PYTHON_VERSION%%/site-packages/mx/Queue/Doc/mxLicense.html
+lib/%%PYTHON_VERSION%%/site-packages/mx/Queue/Doc/mxQueue.html
+lib/%%PYTHON_VERSION%%/site-packages/mx/Queue/LICENSE
+lib/%%PYTHON_VERSION%%/site-packages/mx/Queue/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Queue/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Queue/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Queue/mxQueue/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Queue/mxQueue/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Queue/mxQueue/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Queue/mxQueue/mxQueue.so
+lib/%%PYTHON_VERSION%%/site-packages/mx/Queue/mxQueue/test.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Queue/mxQueue/test.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Queue/mxQueue/test.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Queue/queuebench.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Queue/queuebench.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Queue/queuebench.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Stack/UserStack.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Stack/UserStack.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Stack/UserStack.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Stack/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Stack/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Stack/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Stack/mxStack/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Stack/mxStack/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Stack/mxStack/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Stack/mxStack/mxStack.so
+lib/%%PYTHON_VERSION%%/site-packages/mx/Stack/mxStack/test.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Stack/mxStack/test.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Stack/mxStack/test.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Stack/stackbench.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Stack/stackbench.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Stack/stackbench.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/COPYRIGHT
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Constants/Sets.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Constants/Sets.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Constants/Sets.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Constants/TagTables.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Constants/TagTables.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Constants/TagTables.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Constants/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Constants/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Constants/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Doc/mxLicense.html
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Doc/mxTextTools.html
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/HTML.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/HTML.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/HTML.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/Loop.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/Loop.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/Loop.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/Python.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/Python.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/Python.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/RTF.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/RTF.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/RTF.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/RegExp.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/RegExp.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/RegExp.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/Tim.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/Tim.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/Tim.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/Words.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/Words.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/Words.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/altRTF.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/altRTF.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/altRTF.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/mysplit.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/mysplit.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/mysplit.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/pytag.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/pytag.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples/pytag.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/LICENSE
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/TextTools.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/TextTools.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/TextTools.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/mxTextTools/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/mxTextTools/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/mxTextTools/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/mxTextTools/mxTextTools.so
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/mxTextTools/test.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/mxTextTools/test.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/mxTextTools/test.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/COPYRIGHT
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/Doc/mxLicense.html
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/Doc/mxTools.html
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/Examples/Acquisition.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/Examples/Acquisition.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/Examples/Acquisition.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/Examples/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/Examples/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/Examples/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/LICENSE
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/NewBuiltins.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/NewBuiltins.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/NewBuiltins.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/Tools.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/Tools.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/Tools.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/mxTools/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/mxTools/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/mxTools/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/mxTools/bench1.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/mxTools/bench1.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/mxTools/bench1.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/mxTools/bench2.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/mxTools/bench2.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/mxTools/bench2.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/mxTools/hack.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/mxTools/hack.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/mxTools/hack.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/mxTools/mxTools.so
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/mxTools/test.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/mxTools/test.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/mxTools/test.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/mxTools/xmap.so
+lib/%%PYTHON_VERSION%%/site-packages/mx/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/mx/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/mx/__init__.pyo
+share/doc/py-mx/index.html
+@exec ln -sf mx/DateTime %D/lib/%%PYTHON_VERSION%%/site-packages/DateTime
+@exec ln -sf mx/Proxy %D/lib/%%PYTHON_VERSION%%/site-packages/Proxy
+@exec ln -sf mx/Stack %D/lib/%%PYTHON_VERSION%%/site-packages/Stack
+@exec ln -sf mx/TextTools %D/lib/%%PYTHON_VERSION%%/site-packages/TextTools
+@exec ln -sf mx/Tools %D/lib/%%PYTHON_VERSION%%/site-packages/Tools
+@unexec rm -f %D/lib/%%PYTHON_VERSION%%/site-packages/Tools
+@unexec rm -f %D/lib/%%PYTHON_VERSION%%/site-packages/TextTools
+@unexec rm -f %D/lib/%%PYTHON_VERSION%%/site-packages/Stack
+@unexec rm -f %D/lib/%%PYTHON_VERSION%%/site-packages/Proxy
+@unexec rm -f %D/lib/%%PYTHON_VERSION%%/site-packages/DateTime
+@dirrm share/doc/py-mx
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/mxTools
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/Examples
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/Doc
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/Tools
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/mxTextTools
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Examples
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Doc
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools/Constants
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/TextTools
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/Stack/mxStack
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/Stack
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/Queue/mxQueue
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/Queue/Doc
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/Queue
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/mxProxy
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy/Doc
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/Proxy
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/Misc
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/Doc
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/mxDateTime
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Examples
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime/Doc
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/DateTime
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/mxBeeBase
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase/Doc
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/BeeBase
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx
