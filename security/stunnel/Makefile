@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stunnel
-PORTVERSION=	3.21
+PORTVERSION=	3.21b
 CATEGORIES=	security
 MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 		ftp://stunnel.mirt.net/stunnel/ \
@@ -19,9 +19,11 @@ USE_OPENSSL=	YES
 IS_INTERACTIVE=	YES	# prompts for information while generating certificate
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=/var/run
+CONFIGURE_ARGS=	--localstatedir=/var/run --with-pem-dir=${PEM_DIR}
 
 MAN8=		stunnel.8
+
+PEM_DIR?=	${PREFIX}/etc
 
 post-install:
 	@${SED} "s+!!PREFIX!!+${PREFIX}+g" < ${FILESDIR}/stunnel.sh \
@@ -42,6 +44,6 @@ cert:
 	@${ECHO} "**************************************************************************"
 	@${ECHO} ""
 	@(cd ${WRKSRC}; make cert)
-	${INSTALL} -m 600 ${WRKSRC}/stunnel.pem ${PREFIX}/etc/
+	${INSTALL} -m 600 ${WRKSRC}/stunnel.pem ${PEM_DIR}/
 
 .include <bsd.port.mk>
