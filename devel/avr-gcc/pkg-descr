@@ -6,7 +6,7 @@ microcontrollers.
 Included is the basic C++ compiler, although this is only of limited
 use without a libstdc++, and it is little tested.
 
-Supported debugging formats: -gstabs [default] and -gstabs
+Supported debugging formats: -gstabs [default] and -gdwarf-2
 Locally hack added: recognizes 0bXXX binary constants
 
 WWW: http://gcc.gnu.org/
