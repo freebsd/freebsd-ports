@@ -12,8 +12,8 @@ CATEGORIES=	devel www pear
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR command-line option parser
 
-BUILD_DEPENDS=	pear:${PORTSDIR}/lang/php4
-RUN_DEPENDS=	${BUILD_DEPENDS}
+WANT_PHP_PEAR=	yes
+USE_PHP=	yes
 
 FILES=		Console/Getopt.php
 
