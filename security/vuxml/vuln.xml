@@ -32,6 +32,34 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="013fa252-0724-11d9-b45d-000c41e2cdad">
+    <topic>mod_dav --- lock related denial-of-service</topic>
+    <affects>
+      <package>
+	<name>apache</name>
+	<range><ge>2.0</ge><lt>2.0.51</lt></range>
+      </package>
+      <package>
+	<name>mod_dav</name>
+	<range><le>1.0.3_1</le></range>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A malicious user with DAV write privileges can trigger a null
+	  pointer dereference in the Apache mod_dav module.  This
+	  could cause the server to become unavailable.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0809</cvename>
+      <url>http://nagoya.apache.org/bugzilla/show_bug.cgi?id=31183</url>
+    </references>
+    <dates>
+      <discovery>2004-09-15</discovery>
+      <entry>2004-09-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4d49f4ba-071f-11d9-b45d-000c41e2cdad">
     <topic>apache --- ap_resolve_env buffer overflow</topic>
     <affects>
