@@ -3,7 +3,7 @@
 # Date created:		Tue Jun 10 21:58:54 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.1.1.1 1997/06/11 06:20:46 andreas Exp $
+# $Id: Makefile,v 1.2 1997/06/11 06:37:54 andreas Exp $
 #
 
 DISTNAME=	ghostscript-5.0
@@ -64,4 +64,3 @@ post-install:
 	strip ${PREFIX}/bin/gs
 
 .include <bsd.port.mk>
-
