@@ -1,0 +1,11 @@
+--- man/Makefile.in.orig	Tue Apr 30 07:16:45 1996
++++ man/Makefile.in	Mon Jan  4 10:56:08 1999
+@@ -82,7 +82,7 @@
+ # pathname prefix in the .so commands when setting
+ # up alternate files for multi-function manual pages.
+ #
+-#MANDIR	= man3/
++MANDIR	=
+ 
+ MANTOOLS=\
+ 	apps/fax2tiff.1 \
