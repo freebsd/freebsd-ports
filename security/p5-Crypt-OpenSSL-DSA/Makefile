@@ -7,6 +7,7 @@
 
 PORTNAME=	Crypt-OpenSSL-DSA
 PORTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Crypt
@@ -19,5 +20,7 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Crypt::OpenSSL::DSA.3 Crypt::OpenSSL::DSA::Signature.3
 
+post-patch:
+	@${RM} ${WRKSRC}/lib/Crypt/OpenSSL/DSA.pm.orig
 
 .include <bsd.port.mk>
