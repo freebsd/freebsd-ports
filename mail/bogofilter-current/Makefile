@@ -18,7 +18,7 @@ COMMENT=	"Fast, teachable, learning spam detector"
 # values for some of our variables
 WITH_DB_VER?=	4
 .if ${WITH_DB_VER} == 42
-LIB_DEPENDS?=	db-4.2.2:${PORTSDIR}/databases/db42
+LIB_DEPENDS?=	db-4.2:${PORTSDIR}/databases/db42
 libs=		-ldb-4.2
 .else
 WITH_DB_VER=	4
@@ -54,7 +54,6 @@ pre-everything::
 	@${ECHO} "Use -DWITH_DB_VER=42 to link against db42 instead of the default db4"
 	@${ECHO} ""
 .endif
-	
 
 post-build::
 	cd ${WRKSRC} && make check SHELL=${SH}
