@@ -43,8 +43,8 @@ lib/http-analyze/btn/year_on.png
 lib/http-analyze/bugreport.html
 lib/http-analyze/rotate-httpd
 lib/http-analyze/sample.conf
-share/doc/http-analyze/http-analyze.pdf
-share/doc/http-analyze/http-analyze.ps
+%%PORTDOCS%%%%DOCSDIR%%/http-analyze.pdf
+%%PORTDOCS%%%%DOCSDIR%%/http-analyze.ps
 @dirrm lib/http-analyze/btn
 @dirrm lib/http-analyze
-@dirrm share/doc/http-analyze
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
