@@ -1,0 +1,19 @@
+--- config.ps.orig	Tue Nov 26 02:45:18 2002
++++ config.ps	Fri Apr 18 17:57:19 2003
+@@ -13,7 +13,7 @@
+ 
+ % How to print, maybe with lp instead lpr, etc. If commented-out, output
+ % will go into a file by default.
+-o |lpr
++% o |lpr
+ 
+ % Default resolution of this device, in dots per inch.
+ D 600
+@@ -45,6 +45,7 @@
+ % This shows how to add your own map file.
+ % Remove the comment and adjust the name:
+ % p +myfonts.map
++p +kanji.map
+ 
+ @ A4size 210mm 297mm
+ @+ %%PaperSize: A4
