@@ -48,6 +48,7 @@ share/opensc/opensc.conf.example
 share/opensc/pkcs15.profile
 share/opensc/scldap.conf.example
 @dirrm include/opensc
+@dirrm share/opensc/plugins
 @dirrm share/opensc
 @dirrm lib/security
 @dirrm lib/pkcs11
