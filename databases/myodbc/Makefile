@@ -16,6 +16,8 @@ DISTNAME=	MyODBC-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ODBC driver for MySQL
 
+BROKEN=		Does not compile
+
 USE_MYSQL=	yes
 
 USE_GMAKE=	yes
