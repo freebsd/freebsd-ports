@@ -1,0 +1,9 @@
+Minicom is a serial communication program.  It is a un*x clone of the
+well-known MS-DOS Telix program.  It has ANSI color, dialing directory,
+dial-a-list, script language, file up/download support, screen capture,
+scroll-back, etc.
+
+The author is Miquel van Smoorenburg (miquels@cistron.nl -or-
+miquels@drinkel.ow.org).  Note, minicom is covered by the GNU GPL.
+
+-- David	(obrien@cs.ucdavis.edu)

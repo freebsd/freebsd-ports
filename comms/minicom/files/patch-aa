@@ -1,0 +1,70 @@
+--- Makefile.orig	Thu Jan 18 14:32:00 1996
++++ Makefile	Mon Mar  4 23:36:34 1996
+@@ -12,10 +12,17 @@
+ #
+ 
+ # Where to install things for Linux sites (FSSTND)
+-BINDIR	= /usr/bin
+-LIBDIR	= /etc
+-DOCDIR	= /usr/doc/examples/minicom
+-MANDIR	= /usr/man/man1
++#BINDIR	= /usr/bin
++#LIBDIR	= /etc
++#DOCDIR	= /usr/doc/examples/minicom
++#MANDIR	= /usr/man/man1
++
++# Where to install things for FreeBSD sites.
++BINDIR	= /usr/local/bin
++LIBDIR	= /usr/local/etc/minicom
++#DOCDIR	= /usr/local/share/minicom
++DOCDIR	= /usr/local/etc/minicom
++MANDIR	= /usr/local/man/man1
+ 
+ # Where to install things for "normal" sites.
+ # BINDIR	= /usr/local/bin
+@@ -31,19 +38,19 @@
+ #CC	= cc
+ 
+ # Take these compilation flags for Linux with ncurses.
+-FLAGS	= -Wall -D_POSIX -D_SYSV -D_SELECT -D_HAVE_MACROS # -I/usr/include/ncurses
+-PROGS	= minicom runscript
+-LFLAGS	= -s
+-LIBS	= -lncurses
+-CC	= cc
+-
+-# Take these compilation flags for FreeBSD.
+-#FLAGS	= -Wall -D_POSIX -D_BSD43 -D_SELECT -D_HAVE_MACROS -D_DCDFLOW
++#FLAGS	= -Wall -D_POSIX -D_SYSV -D_SELECT -D_HAVE_MACROS # -I/usr/include/ncurses
+ #PROGS	= minicom runscript
+ #LFLAGS	= -s
+-#LIBS	= -ltermcap
++#LIBS	= -lncurses
+ #CC	= cc
+ 
++# Take these compilation flags for FreeBSD.
++FLAGS	= -Wall -D_POSIX -D_BSD43 -D_SELECT -D_HAVE_MACROS -D_DCDFLOW
++PROGS	= minicom runscript
++LFLAGS	= -s
++LIBS	= -ltermcap
++CC	= cc
++
+ # Take these flags for SCO unix.
+ #FLAGS	= -D_SYSV -D_SCO -D_POSIX -D_SELECT -D_HAVE_MACROS
+ #PROGS	= minicom runscript
+@@ -146,7 +153,7 @@
+ 
+ SOBJS	= script.o sysdep1.o
+ 
+-CFLAGS	= $(FLAGS) -DLIBDIR=\"$(LIBDIR)\"
++CFLAGS	+= $(FLAGS) -DLIBDIR=\"$(LIBDIR)\"
+ 
+ R	= $(ROOTDIR)
+ 
+@@ -197,6 +204,7 @@
+ rwconf.o:	rwconf.c $(HDRS)
+ 
+ install:	$(PROGS)
++	#	-/bin/mkdir -p $(R)$(BINDIR) $(R)$(LIBDIR) $(R)$(MANDIR) $(R)$(DOCDIR)
+ 		sh install.sh $(R)$(LIBDIR) $(R)$(BINDIR) $(R)$(MANDIR) $(R)$(DOCDIR)
+ 
+ clobber:
