@@ -1,24 +1,36 @@
 bin/moleskine
 etc/gnome/config/Moleskine/LanguageModes
+share/gnome/Moleskine/Moleskine/AboutDialog.py
+share/gnome/Moleskine/Moleskine/AboutDialog.pyc
 share/gnome/Moleskine/Moleskine/Document.py
 share/gnome/Moleskine/Moleskine/Document.pyc
+share/gnome/Moleskine/Moleskine/FindDialog.py
+share/gnome/Moleskine/Moleskine/FindDialog.pyc
 share/gnome/Moleskine/Moleskine/LanguageMode.py
 share/gnome/Moleskine/Moleskine/LanguageMode.pyc
-share/gnome/Moleskine/Moleskine/LanguageSettings.py
-share/gnome/Moleskine/Moleskine/LanguageSettings.pyc
+share/gnome/Moleskine/Moleskine/LanguagesDialog.py
+share/gnome/Moleskine/Moleskine/LanguagesDialog.pyc
 share/gnome/Moleskine/Moleskine/MoleskineApp.py
 share/gnome/Moleskine/Moleskine/MoleskineApp.pyc
+share/gnome/Moleskine/Moleskine/ReplaceDialog.py
+share/gnome/Moleskine/Moleskine/ReplaceDialog.pyc
 share/gnome/Moleskine/Moleskine/__init__.py
 share/gnome/Moleskine/Moleskine/__init__.pyc
+share/gnome/Moleskine/Moleskine/menu-GNOME.py
+share/gnome/Moleskine/Moleskine/menu-GNOME.pyc
 share/gnome/Moleskine/Moleskine/menu.py
 share/gnome/Moleskine/Moleskine/menu.pyc
 share/gnome/Moleskine/Moleskine/toolbar.py
 share/gnome/Moleskine/Moleskine/toolbar.pyc
 share/gnome/Moleskine/Moleskine/utils.py
 share/gnome/Moleskine/Moleskine/utils.pyc
-share/gnome/Moleskine/dialogs/about_dialog.glade
-share/gnome/Moleskine/dialogs/language_settings.glade
+share/gnome/Moleskine/dialogs/find_dialog.glade
+share/gnome/Moleskine/dialogs/languages_dialog.glade
+share/gnome/Moleskine/dialogs/replace_dialog.glade
+share/gnome/Moleskine/images/moleskine-book-icon.png
+share/gnome/Moleskine/images/moleskine-logo.jpeg
 share/gnome/Moleskine/moleskine
+@dirrm share/gnome/Moleskine/images
 @dirrm share/gnome/Moleskine/dialogs
 @dirrm share/gnome/Moleskine/Moleskine
 @dirrm share/gnome/Moleskine
