@@ -7,4 +7,5 @@ This port installs full Chinese BIG5/GB support, including TTF fonts. For
 other Asian languages, you have to supply those TTF fonts, then manually
 modify relative settings.
 
+WWW: http://cjk.ffii.org/
 Jing-Tang Keith Jang <keith@FreeBSD.org>
