@@ -56,6 +56,7 @@
     SUBDIR += htdig
     SUBDIR += html
     SUBDIR += info2html
+    SUBDIR += info_to_html
     SUBDIR += isearch
     SUBDIR += iso12083
     SUBDIR += iso8879
