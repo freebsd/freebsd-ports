@@ -1,32 +1,31 @@
---- multi.c.orig	Mon Jun  1 20:00:25 1998
-+++ multi.c	Fri Oct 30 22:36:03 1998
-@@ -296,7 +296,7 @@
-       idr = (struct iso_directory_record *) &dirbuff[i];
-       if(idr->length[0] == 0) 
- 	{
--	  i = (i + SECTOR_SIZE - 1) & ~(SECTOR_SIZE - 1);
-+	  i = ROUND_UP(i);
- 	  continue;
- 	}
-       (*nent)++;
-@@ -324,7 +324,7 @@
-       idr = (struct iso_directory_record *) &dirbuff[i];
-       if(idr->length[0] == 0) 
- 	{
--	  i = (i + SECTOR_SIZE - 1) & ~(SECTOR_SIZE - 1);
-+	  i = ROUND_UP(i);
- 	  continue;
- 	}
-       *pnt = (struct directory_entry *) e_malloc(sizeof(**rtn));
-@@ -436,8 +436,9 @@
-    */
-   if( tt_extent != 0 && tt_size != 0 )
-     {
--      tt_buf = (unsigned char *) e_malloc(tt_size);
--      readsecs(tt_extent, tt_buf, tt_size/SECTOR_SIZE);
-+      tt_buf = (unsigned char *) e_malloc(ROUND_UP(tt_size));
-+      memset(tt_buf, 0, tt_size);
-+      readsecs(tt_extent, tt_buf, (tt_size + SECTOR_SIZE - 1) / SECTOR_SIZE);
+--- RULES/i386-freebsd-cc.rul.orig	Sun Aug 29 16:09:56 1999
++++ RULES/i386-freebsd-cc.rul	Wed Sep 22 13:21:08 1999
+@@ -24,7 +24,8 @@
+ ###########################################################################
  
-       /*
-        * Loop through the file, examine each entry, and attempt to
+ CPPFLAGS=	$(CPPOPTS) $(CPPOPTX)
+-CFLAGS=		$(COPTS) $(CWARNOPTS) $(COPTOPT) $(COPTX)
++XCFLAGS:=	$(CFLAGS)
++CFLAGS=		$(COPTS) $(CWARNOPTS) $(XCFLAGS) $(COPTX)
+ 
+ CPPOPTS=	-I. -I$(ARCHDIR) -I$(OINCSDIR) $(INCDIRS:%=-I%) $(OSDEFS)
+ COPTS=
+@@ -57,14 +58,13 @@
+ 
+ FLOAT_OPTIONS=	
+ 
+-CC=		@echo "	==> COMPILING \"$@\""; gcc
+-LDCC=		@echo "	==> LINKING \"$@\""; gcc
+-DYNLD=		@echo "	==> LINKING dynamic library \"$@\""; gcc
+-RANLIB=		@echo "	==> RANDOMIZING ARCHIVE \"$@\""; ranlib
++LDCC=		$(CC)
++DYNLD=		$(CC)
++RANLIB=		ranlib
+ ARFLAGS=	cr
+ LORDER=		lorder
+ TSORT=		tsort
+ 
+ RMDEP=		:
+-MKDEP=		@echo "	==> MAKING DEPENDENCIES \"$@\""; $(RMDEP); gcc -M
++MKDEP=		$(CC) -M
+ MKDEP_OUT=
