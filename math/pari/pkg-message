@@ -1,0 +1,19 @@
+*************************************************************************
+Copyright notice:
+
+This is version 1.39 of PARI, (c) 1989-1993 by
+C. Batut, D. Bernardi, H. Cohen and M. Olivier.
+
+This software is intended as a service to the scientific community,
+but the authors cannot be held responsible for any consequences,
+either direct or indirect, which the use of this package may have. 
+It can be freely copied and spread, as long as no files are modified, and
+that the whole package (source and manual), including this README file
+is included.
+*****
+Original copyright is in pari-1.39.03/src/README in the distfile:
+pari-1.39.03.tar.gz
+
+This distfile can be found in /cdrom/ports/distfiles or 
+ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/.
+*************************************************************************
