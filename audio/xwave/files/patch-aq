@@ -1,0 +1,11 @@
+--- src/types.h.orig	Wed Aug 12 23:27:10 1998
++++ src/types.h	Sun Jun 11 13:17:49 2000
+@@ -27,7 +27,7 @@
+ typedef unsigned char byte;
+ typedef byte bool;
+ 
+-#ifdef FreeBSD
++#ifdef __FreeBSD__
+ typedef unsigned long ulong;
+ #endif
+ 
