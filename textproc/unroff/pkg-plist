@@ -1,22 +1,23 @@
+@comment $FreeBSD$
 bin/unroff
-share/unroff/misc/sample.unroff
-share/unroff/misc/tmac.hyper
-share/unroff/scm/troff.scm
-share/unroff/scm/troff.scm.orig
-share/unroff/scm/html/common.scm
-share/unroff/scm/html/common.scm.orig
-share/unroff/scm/html/m.scm
-share/unroff/scm/html/man.scm
-share/unroff/scm/html/me.scm
-share/unroff/scm/html/me.scm.orig
-share/unroff/scm/html/ms.scm
-share/unroff/scm/html/ms.scm.orig
-share/unroff/scm/misc/hyper.scm
-share/unroff/scm/misc/hyper.scm.orig
-%%PORTDOCS%%share/doc/unroff/manual.ms
-%%PORTDOCS%%@dirrm share/doc/unroff
-@dirrm share/unroff/misc
-@dirrm share/unroff/scm/html
-@dirrm share/unroff/scm/misc
-@dirrm share/unroff/scm
-@dirrm share/unroff
+%%PORTDOCS%%%%DOCSDIR%%/manual.ms
+%%DATADIR%%/misc/sample.unroff
+%%DATADIR%%/misc/tmac.hyper
+%%DATADIR%%/scm/troff.scm
+%%DATADIR%%/scm/troff.scm.orig
+%%DATADIR%%/scm/html/common.scm
+%%DATADIR%%/scm/html/common.scm.orig
+%%DATADIR%%/scm/html/m.scm
+%%DATADIR%%/scm/html/man.scm
+%%DATADIR%%/scm/html/me.scm
+%%DATADIR%%/scm/html/me.scm.orig
+%%DATADIR%%/scm/html/ms.scm
+%%DATADIR%%/scm/html/ms.scm.orig
+%%DATADIR%%/scm/misc/hyper.scm
+%%DATADIR%%/scm/misc/hyper.scm.orig
+@dirrm %%DATADIR%%/scm/misc
+@dirrm %%DATADIR%%/scm/html
+@dirrm %%DATADIR%%/scm
+@dirrm %%DATADIR%%/misc
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

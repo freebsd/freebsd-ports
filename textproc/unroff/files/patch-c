@@ -1,0 +1,14 @@
+--- src/error.h.orig	Fri Jun  2 22:16:01 1995
++++ src/error.h	Thu Nov  6 22:13:38 2003
+@@ -12,9 +12,11 @@
+ void write_error(char *) NORETURN;
+ void open_error(char *) NORETURN;
+ 
++#if 0
+ /* Redefined to add NORETURN
+  */
+ extern Primitive_Error() NORETURN;
++#endif
+ 
+ char *printable_string(char *, int);
+ char *printable_char(char);
