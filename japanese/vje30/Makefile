@@ -14,7 +14,7 @@ MASTER_SITES=	file:${MOUNT_PT}/freebsd/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	knu
 DISTFILES=	${MAINDIST} \
-		vje-delta-3.0-${DISTOBJFORMAT}-update.tgz \
+		vje-delta-3.0-ELF-update.tgz \
 		delta.tgz \
 		vje-delta-3.0-source-update.tgz
 DIST_SUBDIR=	vje30
@@ -44,13 +44,7 @@ MAKEFILE=	Makefile.FreeBSD
 
 .include <bsd.port.pre.mk>
 
-.if ${PORTOBJFORMAT} == "aout"
-DISTOBJFORMAT=	AOUT
-.else
-DISTOBJFORMAT=	ELF
-.endif
-
-MAINDIST=	${PORTNAME}-delta-${PORTVERSION}-${DISTOBJFORMAT}.tgz
+MAINDIST=	${PORTNAME}-delta-${PORTVERSION}-ELF.tgz
 
 BINSTUFF=	vje	\
 		vjed	\
