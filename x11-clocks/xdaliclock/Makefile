@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xdaliclock
-PORTVERSION=	2.19
+PORTVERSION=	2.20
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.jwz.org/xdaliclock/ \
 		${MASTER_SITE_XCONTRIB}
@@ -15,12 +15,11 @@ MASTER_SITE_SUBDIR=	applications
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A rather neat animated clock
 
-MAN1=		xdaliclock.1
-
 WRKSRC=		${WRKDIR}/${DISTNAME}/X11
 
-CONFIGURE_ARGS+=	--prefix=${X11BASE}
-HAS_CONFIGURE=	YES
-USE_X_PREFIX=	YES
+USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+MAN1=		xdaliclock.1
 
 .include <bsd.port.mk>
