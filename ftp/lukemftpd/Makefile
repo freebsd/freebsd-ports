@@ -12,7 +12,7 @@ CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/lukemftp/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 
-MAINTAINER=	debolaz@debolaz.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced ftp server from NetBSD
 
 USE_REINPLACE=	yes
@@ -38,7 +38,7 @@ pre-patch:
 	${WRKSRC}/src/${f}
 .endfor
 	${REINPLACE_CMD} -e \
-		"s@^#define\t_DEFAULT_CONFDIR\t\"/etc\"@#define\t_DEFAULT_CONFDIR\t\"${PREFIX}/etc\"@" \
+		"s@^#define	_DEFAULT_CONFDIR	\"/etc\"@#define	_DEFAULT_CONFDIR	\"${PREFIX}/etc\"@" \
 	${WRKSRC}/src/pathnames.h
 
 do-install:
