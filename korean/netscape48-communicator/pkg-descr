@@ -1,0 +1,18 @@
+Netscape 3.01-intl-ko
+---------------------
+
+This is the netscape web-surfboard.  Please read the file
+"/usr/local/lib/netscape/LICENSE" for the licensing terms.
+
+Note: If Java applets fail to display.  Type this as root:
+		cd /usr/X11R6/lib/X11/fonts/misc
+		/usr/X11R6/bin/mkfontdir
+		chmod 444 fonts.dir
+      And then exit and restart your X server.
+
+This version of Netscape is some hack of Netscape 3.01 and international
+supplementary file of Korean, OSF/1 2.0 version. Please check there is
+no FreeBSD version of intl. It need Hanyang X11 fonts(KSC5601-1987.0)
+
+--
+Port By Choi Jun Ho <junker@jazz.snu.ac.kr>
