@@ -8,3 +8,8 @@ MyDNS does not include recursive name service, nor a resolver library.
 It is primarily designed for organizations with many zones and/or
 resource records who desire the ability to perform real-time dynamic
 updates on their DNS data via MySQL.
+
+WWW: http://mydns.bboy.net/
+
+- Simon Dick
+simond@irrelevant.org
