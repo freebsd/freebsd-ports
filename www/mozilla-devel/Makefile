@@ -7,6 +7,7 @@
 
 PORTNAME=	mozilla
 PORTVERSION=	1.2b
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
@@ -23,11 +24,15 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		mng.1:${PORTSDIR}/graphics/libmng \
-		Xft2.2:${PORTSDIR}/x11-fonts/Xft
+		freetype.9:${PORTSDIR}/print/freetype2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 WITHOUT_CHATZILLA=	"Contains a buffer overflow reported at http://online.securityfocus.com/archive/1/270249"
+
+.if !defined(WITHOUT_XFT)
+LIB_DEPENDS+=	Xft2.2:${PORTSDIR}/x11-fonts/Xft
+.endif
 
 LATEST_LINK=	mozilla-devel
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/* \
@@ -64,7 +69,6 @@ CONFIGURE_ARGS=					\
 		--disable-tests			\
 		--disable-xterm-updates		\
 		--enable-xinerama		\
-		--enable-xft			\
 		--with-system-jpeg=${LOCALBASE}	\
 		--with-system-mng=${LOCALBASE}	\
 		--with-system-png=${LOCALBASE}	\
@@ -89,6 +93,10 @@ CONFIGURE_ARGS+=	--enable-extensions=default,irc,xmlterm
 CONFIGURE_ARGS+=	--enable-extensions=default,xmlterm
 .endif
 CONFIGURE_ENV=	MOZ_INTERNAL_LIBART_LGPL=1
+
+.if !defined(WITHOUT_XFT)
+CONFIGURE_ARGS+=	--enable-xft
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -127,11 +135,13 @@ post-build:
 
 pre-install:
 	${TOUCH} -f ${PLIST}
-	${TEST} ! -x ${PREFIX}/bin/mozilla && ${TEST} ! -L ${PREFIX}/bin/mozilla && \
-	${ECHO_CMD} bin/mozilla >> ${PLIST}
+	if [ ! -x ${PREFIX}/bin/mozilla -a ! -L ${PREFIX}/bin/mozilla ]; then
+	    ${ECHO_CMD} bin/mozilla >> ${PLIST}
+	fi
 	${ECHO_CMD} bin/mozilla-devel >> ${PLIST}
-	${TEST} ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so && \
-	${ECHO_CMD} lib/browser_plugins/libjavaplugin_oji.so >> ${PLIST}
+	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then
+	    ${ECHO_CMD} lib/browser_plugins/libjavaplugin_oji.so >> ${PLIST}
+	fi
 	cd ${WRKSRC}/dist/bin && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's:^:lib/mozilla-devel/:' >> ${PLIST} \
 		&& ${FIND} -d * -type d | \
@@ -144,13 +154,16 @@ do-install:
 	cd ${WRKSRC}/dist/bin && ${FIND} . | \
 		cpio -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/mozilla-devel
 	${INSTALL_SCRIPT} ${WRKSRC}/mozilla-devel ${PREFIX}/bin
-	${TEST} ! -x ${PREFIX}/bin/mozilla && ${TEST} ! -L ${PREFIX}/bin/mozilla && \
-	${LN} -sf ${PREFIX}/bin/mozilla-devel ${PREFIX}/bin/mozilla
-	${TEST} ! -d ${PREFIX}/lib/browser_plugins && \
-	${MKDIR} ${PREFIX}/lib/browser_plugins
-	${TEST} ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so && \
-	${LN} -sf ${LOCALBASE}/jdk1.3.1/jre/plugin/i386/ns600/libjavaplugin_oji.so \
-		${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so
+	if [ ! -x ${PREFIX}/bin/mozilla -a ! -L ${PREFIX}/bin/mozilla ]; then
+	    ${LN} -sf ${PREFIX}/bin/mozilla-devel ${PREFIX}/bin/mozilla
+	fi
+	if [ ! -d ${PREFIX}/lib/browser_plugins ]; then
+	    ${MKDIR} ${PREFIX}/lib/browser_plugins
+	fi
+	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then
+	    ${LN} -sf ${LOCALBASE}/jdk1.3.1/jre/plugin/i386/ns600/libjavaplugin_oji.so \
+	    	${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so
+	fi
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
