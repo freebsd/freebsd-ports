@@ -7,6 +7,7 @@
 
 PORTNAME=	asmail
 PORTVERSION=	0.56
+PORTREVISION=	1
 CATEGORIES=	mail afterstep
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://gates.enemy.at/pub/
