@@ -3,7 +3,7 @@
 # Date created:		28 Oct 1997
 # Whom:	      		Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.14 1998/09/15 21:31:58 asami Exp $
+# $Id: Makefile,v 1.15 1998/09/22 22:55:56 asami Exp $
 #
 
 DISTNAME=	Gtk-0.3
@@ -14,7 +14,8 @@ MASTER_SITE_SUBDIR=	Gtk
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
-LIB_DEPENDS=	gtk.1:${PORTSDIR}/x11-toolkits/gtk
+LIB_DEPENDS=	gtk11.1:${PORTSDIR}/x11-toolkits/gtk
+#		gdk_imlib.1:${PORTSDIR}/graphics/imlib
 
 USE_PERL5=	YES
 
@@ -23,5 +24,6 @@ MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
+#		--with-gtkxhtml
 
 .include <bsd.port.mk>
