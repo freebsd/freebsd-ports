@@ -353,6 +353,9 @@ collect_stats()
     off_t ifnetaddr;
     register int i, tmp;
     int mib[3], size;
+#if (__FreeBSD_version >= 300004)
+    struct vfsconf vfc;
+#endif
 
     kread(X_CPTIME, s.time, sizeof(s.time));
 #ifndef HAVE_DEVSTAT
@@ -449,8 +452,11 @@ collect_stats()
 
     size = sizeof(nfsstats);
     mib[0] = CTL_FS;
-#if (__FreeBSD_version >= 300003) /* ?? */
-    mib[1] = MNT_EXPORTED;
+#if (__FreeBSD_version >= 300004)
+    if (getvfsbyname("nfs", &vfc) < 0)
+	/* no NFS in the kernel */
+	return;
+    mib[1] = vfc.vfc_typenum;
 #else
     mib[1] = MOUNT_NFS;
 #endif
