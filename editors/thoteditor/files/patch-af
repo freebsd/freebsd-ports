@@ -1,0 +1,11 @@
+--- ../thotlib/include/sysdep.h.orig	Sat Sep 25 15:08:35 1999
++++ ../thotlib/include/sysdep.h	Sat Sep 25 15:10:04 1999
+@@ -1239,7 +1239,7 @@
+  */
+ #ifndef CACHE_FILE_PREFIX
+ #ifdef unix
+-#define CACHE_FILE_PREFIX  "/usr/wsrc/"
++#define CACHE_FILE_PREFIX  "/usr/tmp/"
+ #endif
+ #endif
+ /*
