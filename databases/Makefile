@@ -88,6 +88,7 @@
     SUBDIR += p5-GraphViz-DBI
     SUBDIR += p5-Ima-DBI
     SUBDIR += p5-MLDBM
+    SUBDIR += p5-MLDBM-Sync
     SUBDIR += p5-Metadata
     SUBDIR += p5-Msql
     SUBDIR += p5-MyObject
