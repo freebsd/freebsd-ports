@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://excelsior.kullen.rwth-aachen.de/pub/linux/wspse/:src \
 		http://www.cobweb.nl/wiebel/:script
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:src \
 		cdrip.sh:script
+EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	joris@vandalon.nl
 COMMENT=	A CD to mp3c converter with a console frontend
