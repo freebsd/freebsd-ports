@@ -3,7 +3,7 @@
 # Date created:         29.9.1997
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
-# $Id: Makefile,v 1.3 1997/10/03 09:16:36 asami Exp $
+# $Id: Makefile,v 1.4 1997/10/03 13:09:43 cracauer Exp $
 #
 
 DISTNAME=       ilu-2.0alpha11
@@ -25,6 +25,10 @@ INSTALL_TARGET=	Install
 NOMANCOMPRESS=
 PLIST=		${WRKSRC}/PLIST
 
+# Startup script, run at boot time
+startup_dir=    ${PREFIX}/etc/rc.d
+startup_script= ${startup_dir}/50.ilu.sh
+
 post-install:
 	# Empty dirs
 	${RMDIR} ${PREFIX}/ilu/man/man[358]
@@ -45,5 +49,14 @@ post-install:
 	# Empty dir, but we really need it
 	${ECHO} @exec ${MKDIR} %D/ilu/lib/binding >> ${PLIST}
 	${ECHO} @exec chmod 777 %D/ilu/lib/binding >> ${PLIST}
+	${ECHO} @exec ${LDCONFIG} -m %D/ilu/lib >> ${PLIST}
+	${ECHO} etc/rc.d/50.ilu.sh >> ${PLIST}
+	${ECHO} "Installing ${startup_script} file"
+	test -d ${startup_dir} || ${MKDIR} ${startup_dir}
+	${ECHO} "#!/bin/sh" > ${startup_script}
+	${ECHO} "${ECHO} -n ' ILU-shlibs'" >> ${startup_script}
+	${ECHO} "${LDCONFIG} -m ${PREFIX}/ilu/lib" >> ${startup_script}
+	chmod 755 ${startup_script};
+	${startup_script}
 
 .include <bsd.port.mk>
