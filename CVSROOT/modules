@@ -4833,6 +4833,7 @@ libuninameslist	ports/textproc/libuninameslist
 libunp		ports/net/libunp
 libunpipc	ports/net/libunpipc
 libuta		ports/devel/libuta
+libutempter	ports/sysutils/libutempter
 libutf		ports/misc/libutf
 libutf-8	ports/converters/libutf-8
 libutils	ports/lang/libutils
