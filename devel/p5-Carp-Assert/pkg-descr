@@ -1,0 +1,6 @@
+Carp::Assert is intended for a purpose like the ANSI C library assert.h.
+
+WWW: http://search.cpan.org/search?dist=Carp-Assert
+
+-- Sergey Skvortsov
+skv@protey.ru
