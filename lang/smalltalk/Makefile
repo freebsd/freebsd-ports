@@ -3,7 +3,7 @@
 # Date created:		09 Feb 1995
 # Whom:			gpalmer
 #
-# $Id: Makefile,v 1.2 1995/04/01 12:47:10 jkh Exp $
+# $Id: Makefile,v 1.3 1995/04/15 05:44:50 asami Exp $
 #
 
 DISTNAME=	smalltalk-1.1.1
@@ -17,7 +17,7 @@ pre-configure:
 	@(cd ${WRKSRC} ; ./config.mst fbsd-2)
 	@${TOUCH} ${TOUCH_FLAGS} ${CONFIGURE_COOKIE}
 
-install:
+install: build
 	@echo ">> The install target for smalltalk-1.1.1 is interactive."
 	@echo ">> Please read the file mst.texinfo for more information."
 	@${DO_NADA}

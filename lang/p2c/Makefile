@@ -3,7 +3,7 @@
 # Date created:         4 October 1994
 # Whom:                 jmz
 #
-# $Id$
+# $Id: Makefile,v 1.5 1995/04/15 05:44:43 asami Exp $
 #
 
 DISTNAME=	p2c-1.21alpha-07.Dec.93
@@ -14,7 +14,7 @@ DISTFILES=	p2c-1.21alpha2.tar.gz
 
 MAINTAINER=	jmz@FreeBSD.org
 
-pre-install:
+pre-install: build
 	@mkdir -p ${PREFIX}/bin
 	@mkdir -p ${PREFIX}/lib
 	@mkdir -p ${PREFIX}/man/man1
