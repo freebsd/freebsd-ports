@@ -1,4 +1,3 @@
-www/cgi-bin/openwebmail/.checkmail.pl
 www/cgi-bin/openwebmail/.openwebmail-abook.pl
 www/cgi-bin/openwebmail/.openwebmail-advsearch.pl
 www/cgi-bin/openwebmail/.openwebmail-cal.pl
@@ -8,6 +7,7 @@ www/cgi-bin/openwebmail/.openwebmail-prefs.pl
 www/cgi-bin/openwebmail/.openwebmail-read.pl
 www/cgi-bin/openwebmail/.openwebmail-send.pl
 www/cgi-bin/openwebmail/.openwebmail-spell.pl
+www/cgi-bin/openwebmail/.openwebmail-tool.pl
 www/cgi-bin/openwebmail/.openwebmail-viewatt.pl
 www/cgi-bin/openwebmail/.openwebmail.pl
 www/cgi-bin/openwebmail/auth_ldap.pl
@@ -20,7 +20,6 @@ www/cgi-bin/openwebmail/auth_pgsql.pl
 www/cgi-bin/openwebmail/auth_pop3.pl
 www/cgi-bin/openwebmail/auth_unix.pl
 www/cgi-bin/openwebmail/auth_unix_cobalt.pl
-www/cgi-bin/openwebmail/checkmail.pl
 www/cgi-bin/openwebmail/etc/address.book
 www/cgi-bin/openwebmail/etc/b2g.map
 www/cgi-bin/openwebmail/etc/calendar.book
@@ -31,6 +30,7 @@ www/cgi-bin/openwebmail/etc/lang/ca
 www/cgi-bin/openwebmail/etc/lang/cs
 www/cgi-bin/openwebmail/etc/lang/da
 www/cgi-bin/openwebmail/etc/lang/de
+www/cgi-bin/openwebmail/etc/lang/el
 www/cgi-bin/openwebmail/etc/lang/en
 www/cgi-bin/openwebmail/etc/lang/es
 www/cgi-bin/openwebmail/etc/lang/fi
@@ -39,11 +39,11 @@ www/cgi-bin/openwebmail/etc/lang/hu
 www/cgi-bin/openwebmail/etc/lang/id
 www/cgi-bin/openwebmail/etc/lang/it
 www/cgi-bin/openwebmail/etc/lang/ja_JP.Shift_JIS
+www/cgi-bin/openwebmail/etc/lang/ja_JP.eucJP
 www/cgi-bin/openwebmail/etc/lang/kr
 www/cgi-bin/openwebmail/etc/lang/lt
 www/cgi-bin/openwebmail/etc/lang/nl
 www/cgi-bin/openwebmail/etc/lang/no
-www/cgi-bin/openwebmail/etc/lang/no_NY
 www/cgi-bin/openwebmail/etc/lang/pl
 www/cgi-bin/openwebmail/etc/lang/pt
 www/cgi-bin/openwebmail/etc/lang/pt_BR
@@ -92,12 +92,14 @@ www/cgi-bin/openwebmail/etc/templates/bg/editfilter.template
 www/cgi-bin/openwebmail/etc/templates/bg/editfolders.template
 www/cgi-bin/openwebmail/etc/templates/bg/editfroms.template
 www/cgi-bin/openwebmail/etc/templates/bg/editpop3.template
+www/cgi-bin/openwebmail/etc/templates/bg/editstationery.template
 www/cgi-bin/openwebmail/etc/templates/bg/firsttimeuser.template
 www/cgi-bin/openwebmail/etc/templates/bg/footer.js.template
 www/cgi-bin/openwebmail/etc/templates/bg/footer.template
 www/cgi-bin/openwebmail/etc/templates/bg/header.template
 www/cgi-bin/openwebmail/etc/templates/bg/history.template
 www/cgi-bin/openwebmail/etc/templates/bg/importabook.template
+www/cgi-bin/openwebmail/etc/templates/bg/listview.template
 www/cgi-bin/openwebmail/etc/templates/bg/login.template
 www/cgi-bin/openwebmail/etc/templates/bg/loginfailed.template
 www/cgi-bin/openwebmail/etc/templates/bg/logout.template
@@ -128,12 +130,14 @@ www/cgi-bin/openwebmail/etc/templates/ca/editfilter.template
 www/cgi-bin/openwebmail/etc/templates/ca/editfolders.template
 www/cgi-bin/openwebmail/etc/templates/ca/editfroms.template
 www/cgi-bin/openwebmail/etc/templates/ca/editpop3.template
+www/cgi-bin/openwebmail/etc/templates/ca/editstationery.template
 www/cgi-bin/openwebmail/etc/templates/ca/firsttimeuser.template
 www/cgi-bin/openwebmail/etc/templates/ca/footer.js.template
 www/cgi-bin/openwebmail/etc/templates/ca/footer.template
 www/cgi-bin/openwebmail/etc/templates/ca/header.template
 www/cgi-bin/openwebmail/etc/templates/ca/history.template
 www/cgi-bin/openwebmail/etc/templates/ca/importabook.template
+www/cgi-bin/openwebmail/etc/templates/ca/listview.template
 www/cgi-bin/openwebmail/etc/templates/ca/login.template
 www/cgi-bin/openwebmail/etc/templates/ca/loginfailed.template
 www/cgi-bin/openwebmail/etc/templates/ca/logout.template
@@ -164,12 +168,14 @@ www/cgi-bin/openwebmail/etc/templates/cs/editfilter.template
 www/cgi-bin/openwebmail/etc/templates/cs/editfolders.template
 www/cgi-bin/openwebmail/etc/templates/cs/editfroms.template
 www/cgi-bin/openwebmail/etc/templates/cs/editpop3.template
+www/cgi-bin/openwebmail/etc/templates/cs/editstationery.template
 www/cgi-bin/openwebmail/etc/templates/cs/firsttimeuser.template
 www/cgi-bin/openwebmail/etc/templates/cs/footer.js.template
 www/cgi-bin/openwebmail/etc/templates/cs/footer.template
 www/cgi-bin/openwebmail/etc/templates/cs/header.template
 www/cgi-bin/openwebmail/etc/templates/cs/history.template
 www/cgi-bin/openwebmail/etc/templates/cs/importabook.template
+www/cgi-bin/openwebmail/etc/templates/cs/listview.template
 www/cgi-bin/openwebmail/etc/templates/cs/login.template
 www/cgi-bin/openwebmail/etc/templates/cs/loginfailed.template
 www/cgi-bin/openwebmail/etc/templates/cs/logout.template
@@ -200,12 +206,14 @@ www/cgi-bin/openwebmail/etc/templates/da/editfilter.template
 www/cgi-bin/openwebmail/etc/templates/da/editfolders.template
 www/cgi-bin/openwebmail/etc/templates/da/editfroms.template
 www/cgi-bin/openwebmail/etc/templates/da/editpop3.template
+www/cgi-bin/openwebmail/etc/templates/da/editstationery.template
 www/cgi-bin/openwebmail/etc/templates/da/firsttimeuser.template
 www/cgi-bin/openwebmail/etc/templates/da/footer.js.template
 www/cgi-bin/openwebmail/etc/templates/da/footer.template
 www/cgi-bin/openwebmail/etc/templates/da/header.template
 www/cgi-bin/openwebmail/etc/templates/da/history.template
 www/cgi-bin/openwebmail/etc/templates/da/importabook.template
+www/cgi-bin/openwebmail/etc/templates/da/listview.template
 www/cgi-bin/openwebmail/etc/templates/da/login.template
 www/cgi-bin/openwebmail/etc/templates/da/loginfailed.template
 www/cgi-bin/openwebmail/etc/templates/da/logout.template
@@ -236,12 +244,14 @@ www/cgi-bin/openwebmail/etc/templates/de/editfilter.template
 www/cgi-bin/openwebmail/etc/templates/de/editfolders.template
 www/cgi-bin/openwebmail/etc/templates/de/editfroms.template
 www/cgi-bin/openwebmail/etc/templates/de/editpop3.template
+www/cgi-bin/openwebmail/etc/templates/de/editstationery.template
 www/cgi-bin/openwebmail/etc/templates/de/firsttimeuser.template
 www/cgi-bin/openwebmail/etc/templates/de/footer.js.template
 www/cgi-bin/openwebmail/etc/templates/de/footer.template
 www/cgi-bin/openwebmail/etc/templates/de/header.template
 www/cgi-bin/openwebmail/etc/templates/de/history.template
 www/cgi-bin/openwebmail/etc/templates/de/importabook.template
+www/cgi-bin/openwebmail/etc/templates/de/listview.template
 www/cgi-bin/openwebmail/etc/templates/de/login.template
 www/cgi-bin/openwebmail/etc/templates/de/loginfailed.template
 www/cgi-bin/openwebmail/etc/templates/de/logout.template
@@ -257,6 +267,44 @@ www/cgi-bin/openwebmail/etc/templates/de/timeoutwarning.template
 www/cgi-bin/openwebmail/etc/templates/de/viewfolder.template
 www/cgi-bin/openwebmail/etc/templates/de/weekview.template
 www/cgi-bin/openwebmail/etc/templates/de/yearview.template
+www/cgi-bin/openwebmail/etc/templates/el/about.template
+www/cgi-bin/openwebmail/etc/templates/el/addressbook.template
+www/cgi-bin/openwebmail/etc/templates/el/advsearch.template
+www/cgi-bin/openwebmail/etc/templates/el/chpwd.template
+www/cgi-bin/openwebmail/etc/templates/el/chpwdconfirmmismatch.template
+www/cgi-bin/openwebmail/etc/templates/el/chpwdfailed.template
+www/cgi-bin/openwebmail/etc/templates/el/chpwdok.template
+www/cgi-bin/openwebmail/etc/templates/el/composemessage.template
+www/cgi-bin/openwebmail/etc/templates/el/dayview.template
+www/cgi-bin/openwebmail/etc/templates/el/editaddresses.template
+www/cgi-bin/openwebmail/etc/templates/el/editcalendar.template
+www/cgi-bin/openwebmail/etc/templates/el/editfilter.template
+www/cgi-bin/openwebmail/etc/templates/el/editfolders.template
+www/cgi-bin/openwebmail/etc/templates/el/editfroms.template
+www/cgi-bin/openwebmail/etc/templates/el/editpop3.template
+www/cgi-bin/openwebmail/etc/templates/el/editstationery.template
+www/cgi-bin/openwebmail/etc/templates/el/firsttimeuser.template
+www/cgi-bin/openwebmail/etc/templates/el/footer.js.template
+www/cgi-bin/openwebmail/etc/templates/el/footer.template
+www/cgi-bin/openwebmail/etc/templates/el/header.template
+www/cgi-bin/openwebmail/etc/templates/el/history.template
+www/cgi-bin/openwebmail/etc/templates/el/importabook.template
+www/cgi-bin/openwebmail/etc/templates/el/listview.template
+www/cgi-bin/openwebmail/etc/templates/el/login.template
+www/cgi-bin/openwebmail/etc/templates/el/loginfailed.template
+www/cgi-bin/openwebmail/etc/templates/el/logout.template
+www/cgi-bin/openwebmail/etc/templates/el/monthview.template
+www/cgi-bin/openwebmail/etc/templates/el/prefs.template
+www/cgi-bin/openwebmail/etc/templates/el/prefssaved.template
+www/cgi-bin/openwebmail/etc/templates/el/printmessage.template
+www/cgi-bin/openwebmail/etc/templates/el/readmessage.template
+www/cgi-bin/openwebmail/etc/templates/el/rebuildfailed.template
+www/cgi-bin/openwebmail/etc/templates/el/sessiontimeout.template
+www/cgi-bin/openwebmail/etc/templates/el/spellcheck.template
+www/cgi-bin/openwebmail/etc/templates/el/timeoutwarning.template
+www/cgi-bin/openwebmail/etc/templates/el/viewfolder.template
+www/cgi-bin/openwebmail/etc/templates/el/weekview.template
+www/cgi-bin/openwebmail/etc/templates/el/yearview.template
 www/cgi-bin/openwebmail/etc/templates/en/about.template
 www/cgi-bin/openwebmail/etc/templates/en/addressbook.template
 www/cgi-bin/openwebmail/etc/templates/en/advsearch.template
@@ -272,12 +320,14 @@ www/cgi-bin/openwebmail/etc/templates/en/editfilter.template
 www/cgi-bin/openwebmail/etc/templates/en/editfolders.template
 www/cgi-bin/openwebmail/etc/templates/en/editfroms.template
 www/cgi-bin/openwebmail/etc/templates/en/editpop3.template
+www/cgi-bin/openwebmail/etc/templates/en/editstationery.template
 www/cgi-bin/openwebmail/etc/templates/en/firsttimeuser.template
 www/cgi-bin/openwebmail/etc/templates/en/footer.js.template
 www/cgi-bin/openwebmail/etc/templates/en/footer.template
 www/cgi-bin/openwebmail/etc/templates/en/header.template
 www/cgi-bin/openwebmail/etc/templates/en/history.template
 www/cgi-bin/openwebmail/etc/templates/en/importabook.template
+www/cgi-bin/openwebmail/etc/templates/en/listview.template
 www/cgi-bin/openwebmail/etc/templates/en/login.template
 www/cgi-bin/openwebmail/etc/templates/en/loginfailed.template
 www/cgi-bin/openwebmail/etc/templates/en/logout.template
@@ -308,12 +358,14 @@ www/cgi-bin/openwebmail/etc/templates/es/editfilter.template
 www/cgi-bin/openwebmail/etc/templates/es/editfolders.template
 www/cgi-bin/openwebmail/etc/templates/es/editfroms.template
 www/cgi-bin/openwebmail/etc/templates/es/editpop3.template
+www/cgi-bin/openwebmail/etc/templates/es/editstationery.template
 www/cgi-bin/openwebmail/etc/templates/es/firsttimeuser.template
 www/cgi-bin/openwebmail/etc/templates/es/footer.js.template
 www/cgi-bin/openwebmail/etc/templates/es/footer.template
 www/cgi-bin/openwebmail/etc/templates/es/header.template
 www/cgi-bin/openwebmail/etc/templates/es/history.template
 www/cgi-bin/openwebmail/etc/templates/es/importabook.template
+www/cgi-bin/openwebmail/etc/templates/es/listview.template
 www/cgi-bin/openwebmail/etc/templates/es/login.template
 www/cgi-bin/openwebmail/etc/templates/es/loginfailed.template
 www/cgi-bin/openwebmail/etc/templates/es/logout.template
@@ -344,12 +396,14 @@ www/cgi-bin/openwebmail/etc/templates/fi/editfilter.template
 www/cgi-bin/openwebmail/etc/templates/fi/editfolders.template
 www/cgi-bin/openwebmail/etc/templates/fi/editfroms.template
 www/cgi-bin/openwebmail/etc/templates/fi/editpop3.template
+www/cgi-bin/openwebmail/etc/templates/fi/editstationery.template
 www/cgi-bin/openwebmail/etc/templates/fi/firsttimeuser.template
 www/cgi-bin/openwebmail/etc/templates/fi/footer.js.template
 www/cgi-bin/openwebmail/etc/templates/fi/footer.template
 www/cgi-bin/openwebmail/etc/templates/fi/header.template
 www/cgi-bin/openwebmail/etc/templates/fi/history.template
 www/cgi-bin/openwebmail/etc/templates/fi/importabook.template
+www/cgi-bin/openwebmail/etc/templates/fi/listview.template
 www/cgi-bin/openwebmail/etc/templates/fi/login.template
 www/cgi-bin/openwebmail/etc/templates/fi/loginfailed.template
 www/cgi-bin/openwebmail/etc/templates/fi/logout.template
@@ -380,12 +434,14 @@ www/cgi-bin/openwebmail/etc/templates/fr/editfilter.template
 www/cgi-bin/openwebmail/etc/templates/fr/editfolders.template
 www/cgi-bin/openwebmail/etc/templates/fr/editfroms.template
 www/cgi-bin/openwebmail/etc/templates/fr/editpop3.template
+www/cgi-bin/openwebmail/etc/templates/fr/editstationery.template
 www/cgi-bin/openwebmail/etc/templates/fr/firsttimeuser.template
 www/cgi-bin/openwebmail/etc/templates/fr/footer.js.template
 www/cgi-bin/openwebmail/etc/templates/fr/footer.template
 www/cgi-bin/openwebmail/etc/templates/fr/header.template
 www/cgi-bin/openwebmail/etc/templates/fr/history.template
 www/cgi-bin/openwebmail/etc/templates/fr/importabook.template
+www/cgi-bin/openwebmail/etc/templates/fr/listview.template
 www/cgi-bin/openwebmail/etc/templates/fr/login.template
 www/cgi-bin/openwebmail/etc/templates/fr/loginfailed.template
 www/cgi-bin/openwebmail/etc/templates/fr/logout.template
@@ -416,12 +472,14 @@ www/cgi-bin/openwebmail/etc/templates/hu/editfilter.template
 www/cgi-bin/openwebmail/etc/templates/hu/editfolders.template
 www/cgi-bin/openwebmail/etc/templates/hu/editfroms.template
 www/cgi-bin/openwebmail/etc/templates/hu/editpop3.template
+www/cgi-bin/openwebmail/etc/templates/hu/editstationery.template
 www/cgi-bin/openwebmail/etc/templates/hu/firsttimeuser.template
 www/cgi-bin/openwebmail/etc/templates/hu/footer.js.template
 www/cgi-bin/openwebmail/etc/templates/hu/footer.template
 www/cgi-bin/openwebmail/etc/templates/hu/header.template
 www/cgi-bin/openwebmail/etc/templates/hu/history.template
 www/cgi-bin/openwebmail/etc/templates/hu/importabook.template
+www/cgi-bin/openwebmail/etc/templates/hu/listview.template
 www/cgi-bin/openwebmail/etc/templates/hu/login.template
 www/cgi-bin/openwebmail/etc/templates/hu/loginfailed.template
 www/cgi-bin/openwebmail/etc/templates/hu/logout.template
@@ -452,12 +510,14 @@ www/cgi-bin/openwebmail/etc/templates/id/editfilter.template
 www/cgi-bin/openwebmail/etc/templates/id/editfolders.template
 www/cgi-bin/openwebmail/etc/templates/id/editfroms.template
 www/cgi-bin/openwebmail/etc/templates/id/editpop3.template
+www/cgi-bin/openwebmail/etc/templates/id/editstationery.template
 www/cgi-bin/openwebmail/etc/templates/id/firsttimeuser.template
 www/cgi-bin/openwebmail/etc/templates/id/footer.js.template
 www/cgi-bin/openwebmail/etc/templates/id/footer.template
 www/cgi-bin/openwebmail/etc/templates/id/header.template
 www/cgi-bin/openwebmail/etc/templates/id/history.template
 www/cgi-bin/openwebmail/etc/templates/id/importabook.template
+www/cgi-bin/openwebmail/etc/templates/id/listview.template
 www/cgi-bin/openwebmail/etc/templates/id/login.template
 www/cgi-bin/openwebmail/etc/templates/id/loginfailed.template
 www/cgi-bin/openwebmail/etc/templates/id/logout.template
@@ -488,12 +548,14 @@ www/cgi-bin/openwebmail/etc/templates/it/editfilter.template
 www/cgi-bin/openwebmail/etc/templates/it/editfolders.template
 www/cgi-bin/openwebmail/etc/templates/it/editfroms.template
 www/cgi-bin/openwebmail/etc/templates/it/editpop3.template
+www/cgi-bin/openwebmail/etc/templates/it/editstationery.template
 www/cgi-bin/openwebmail/etc/templates/it/firsttimeuser.template
 www/cgi-bin/openwebmail/etc/templates/it/footer.js.template
 www/cgi-bin/openwebmail/etc/templates/it/footer.template
 www/cgi-bin/openwebmail/etc/templates/it/header.template
 www/cgi-bin/openwebmail/etc/templates/it/history.template
 www/cgi-bin/openwebmail/etc/templates/it/importabook.template
+www/cgi-bin/openwebmail/etc/templates/it/listview.template
 www/cgi-bin/openwebmail/etc/templates/it/login.template
 www/cgi-bin/openwebmail/etc/templates/it/loginfailed.template
 www/cgi-bin/openwebmail/etc/templates/it/logout.template
@@ -524,12 +586,14 @@ www/cgi-bin/openwebmail/etc/templates/ja_JP.Shift_JIS/editfilter.template
 www/cgi-bin/openwebmail/etc/templates/ja_JP.Shift_JIS/editfolders.template
 www/cgi-bin/openwebmail/etc/templates/ja_JP.Shift_JIS/editfroms.template
 www/cgi-bin/openwebmail/etc/templates/ja_JP.Shift_JIS/editpop3.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.Shift_JIS/editstationery.template
 www/cgi-bin/openwebmail/etc/templates/ja_JP.Shift_JIS/firsttimeuser.template
 www/cgi-bin/openwebmail/etc/templates/ja_JP.Shift_JIS/footer.js.template
 www/cgi-bin/openwebmail/etc/templates/ja_JP.Shift_JIS/footer.template
 www/cgi-bin/openwebmail/etc/templates/ja_JP.Shift_JIS/header.template
 www/cgi-bin/openwebmail/etc/templates/ja_JP.Shift_JIS/history.template
 www/cgi-bin/openwebmail/etc/templates/ja_JP.Shift_JIS/importabook.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.Shift_JIS/listview.template
 www/cgi-bin/openwebmail/etc/templates/ja_JP.Shift_JIS/login.template
 www/cgi-bin/openwebmail/etc/templates/ja_JP.Shift_JIS/loginfailed.template
 www/cgi-bin/openwebmail/etc/templates/ja_JP.Shift_JIS/logout.template
@@ -545,6 +609,44 @@ www/cgi-bin/openwebmail/etc/templates/ja_JP.Shift_JIS/timeoutwarning.template
 www/cgi-bin/openwebmail/etc/templates/ja_JP.Shift_JIS/viewfolder.template
 www/cgi-bin/openwebmail/etc/templates/ja_JP.Shift_JIS/weekview.template
 www/cgi-bin/openwebmail/etc/templates/ja_JP.Shift_JIS/yearview.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/about.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/addressbook.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/advsearch.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/chpwd.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/chpwdconfirmmismatch.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/chpwdfailed.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/chpwdok.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/composemessage.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/dayview.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/editaddresses.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/editcalendar.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/editfilter.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/editfolders.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/editfroms.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/editpop3.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/editstationery.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/firsttimeuser.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/footer.js.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/footer.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/header.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/history.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/importabook.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/listview.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/login.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/loginfailed.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/logout.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/monthview.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/prefs.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/prefssaved.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/printmessage.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/readmessage.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/rebuildfailed.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/sessiontimeout.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/spellcheck.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/timeoutwarning.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/viewfolder.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/weekview.template
+www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP/yearview.template
 www/cgi-bin/openwebmail/etc/templates/kr/about.template
 www/cgi-bin/openwebmail/etc/templates/kr/addressbook.template
 www/cgi-bin/openwebmail/etc/templates/kr/advsearch.template
@@ -560,12 +662,14 @@ www/cgi-bin/openwebmail/etc/templates/kr/editfilter.template
 www/cgi-bin/openwebmail/etc/templates/kr/editfolders.template
 www/cgi-bin/openwebmail/etc/templates/kr/editfroms.template
 www/cgi-bin/openwebmail/etc/templates/kr/editpop3.template
+www/cgi-bin/openwebmail/etc/templates/kr/editstationery.template
 www/cgi-bin/openwebmail/etc/templates/kr/firsttimeuser.template
 www/cgi-bin/openwebmail/etc/templates/kr/footer.js.template
 www/cgi-bin/openwebmail/etc/templates/kr/footer.template
 www/cgi-bin/openwebmail/etc/templates/kr/header.template
 www/cgi-bin/openwebmail/etc/templates/kr/history.template
 www/cgi-bin/openwebmail/etc/templates/kr/importabook.template
+www/cgi-bin/openwebmail/etc/templates/kr/listview.template
 www/cgi-bin/openwebmail/etc/templates/kr/login.template
 www/cgi-bin/openwebmail/etc/templates/kr/loginfailed.template
 www/cgi-bin/openwebmail/etc/templates/kr/logout.template
@@ -596,12 +700,14 @@ www/cgi-bin/openwebmail/etc/templates/lt/editfilter.template
 www/cgi-bin/openwebmail/etc/templates/lt/editfolders.template
 www/cgi-bin/openwebmail/etc/templates/lt/editfroms.template
 www/cgi-bin/openwebmail/etc/templates/lt/editpop3.template
+www/cgi-bin/openwebmail/etc/templates/lt/editstationery.template
 www/cgi-bin/openwebmail/etc/templates/lt/firsttimeuser.template
 www/cgi-bin/openwebmail/etc/templates/lt/footer.js.template
 www/cgi-bin/openwebmail/etc/templates/lt/footer.template
 www/cgi-bin/openwebmail/etc/templates/lt/header.template
 www/cgi-bin/openwebmail/etc/templates/lt/history.template
 www/cgi-bin/openwebmail/etc/templates/lt/importabook.template
+www/cgi-bin/openwebmail/etc/templates/lt/listview.template
 www/cgi-bin/openwebmail/etc/templates/lt/login.template
 www/cgi-bin/openwebmail/etc/templates/lt/loginfailed.template
 www/cgi-bin/openwebmail/etc/templates/lt/logout.template
@@ -632,12 +738,14 @@ www/cgi-bin/openwebmail/etc/templates/nl/editfilter.template
 www/cgi-bin/openwebmail/etc/templates/nl/editfolders.template
 www/cgi-bin/openwebmail/etc/templates/nl/editfroms.template
 www/cgi-bin/openwebmail/etc/templates/nl/editpop3.template
+www/cgi-bin/openwebmail/etc/templates/nl/editstationery.template
 www/cgi-bin/openwebmail/etc/templates/nl/firsttimeuser.template
 www/cgi-bin/openwebmail/etc/templates/nl/footer.js.template
 www/cgi-bin/openwebmail/etc/templates/nl/footer.template
 www/cgi-bin/openwebmail/etc/templates/nl/header.template
 www/cgi-bin/openwebmail/etc/templates/nl/history.template
 www/cgi-bin/openwebmail/etc/templates/nl/importabook.template
+www/cgi-bin/openwebmail/etc/templates/nl/listview.template
 www/cgi-bin/openwebmail/etc/templates/nl/login.template
 www/cgi-bin/openwebmail/etc/templates/nl/loginfailed.template
 www/cgi-bin/openwebmail/etc/templates/nl/logout.template
@@ -668,12 +776,14 @@ www/cgi-bin/openwebmail/etc/templates/no/editfilter.template
 www/cgi-bin/openwebmail/etc/templates/no/editfolders.template
 www/cgi-bin/openwebmail/etc/templates/no/editfroms.template
 www/cgi-bin/openwebmail/etc/templates/no/editpop3.template
+www/cgi-bin/openwebmail/etc/templates/no/editstationery.template
 www/cgi-bin/openwebmail/etc/templates/no/firsttimeuser.template
 www/cgi-bin/openwebmail/etc/templates/no/footer.js.template
 www/cgi-bin/openwebmail/etc/templates/no/footer.template
 www/cgi-bin/openwebmail/etc/templates/no/header.template
 www/cgi-bin/openwebmail/etc/templates/no/history.template
 www/cgi-bin/openwebmail/etc/templates/no/importabook.template
+www/cgi-bin/openwebmail/etc/templates/no/listview.template
 www/cgi-bin/openwebmail/etc/templates/no/login.template
 www/cgi-bin/openwebmail/etc/templates/no/loginfailed.template
 www/cgi-bin/openwebmail/etc/templates/no/logout.template
@@ -689,42 +799,6 @@ www/cgi-bin/openwebmail/etc/templates/no/timeoutwarning.template
 www/cgi-bin/openwebmail/etc/templates/no/viewfolder.template
 www/cgi-bin/openwebmail/etc/templates/no/weekview.template
 www/cgi-bin/openwebmail/etc/templates/no/yearview.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/about.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/addressbook.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/advsearch.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/chpwd.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/chpwdconfirmmismatch.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/chpwdfailed.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/chpwdok.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/composemessage.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/dayview.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/editaddresses.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/editcalendar.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/editfilter.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/editfolders.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/editfroms.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/editpop3.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/firsttimeuser.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/footer.js.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/footer.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/header.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/history.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/importabook.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/login.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/loginfailed.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/logout.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/monthview.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/prefs.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/prefssaved.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/printmessage.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/readmessage.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/rebuildfailed.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/sessiontimeout.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/spellcheck.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/timeoutwarning.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/viewfolder.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/weekview.template
-www/cgi-bin/openwebmail/etc/templates/no_NY/yearview.template
 www/cgi-bin/openwebmail/etc/templates/pl/about.template
 www/cgi-bin/openwebmail/etc/templates/pl/addressbook.template
 www/cgi-bin/openwebmail/etc/templates/pl/advsearch.template
@@ -740,12 +814,14 @@ www/cgi-bin/openwebmail/etc/templates/pl/editfilter.template
 www/cgi-bin/openwebmail/etc/templates/pl/editfolders.template
 www/cgi-bin/openwebmail/etc/templates/pl/editfroms.template
 www/cgi-bin/openwebmail/etc/templates/pl/editpop3.template
+www/cgi-bin/openwebmail/etc/templates/pl/editstationery.template
 www/cgi-bin/openwebmail/etc/templates/pl/firsttimeuser.template
 www/cgi-bin/openwebmail/etc/templates/pl/footer.js.template
 www/cgi-bin/openwebmail/etc/templates/pl/footer.template
 www/cgi-bin/openwebmail/etc/templates/pl/header.template
 www/cgi-bin/openwebmail/etc/templates/pl/history.template
 www/cgi-bin/openwebmail/etc/templates/pl/importabook.template
+www/cgi-bin/openwebmail/etc/templates/pl/listview.template
 www/cgi-bin/openwebmail/etc/templates/pl/login.template
 www/cgi-bin/openwebmail/etc/templates/pl/loginfailed.template
 www/cgi-bin/openwebmail/etc/templates/pl/logout.template
@@ -776,12 +852,14 @@ www/cgi-bin/openwebmail/etc/templates/pt/editfilter.template
 www/cgi-bin/openwebmail/etc/templates/pt/editfolders.template
 www/cgi-bin/openwebmail/etc/templates/pt/editfroms.template
 www/cgi-bin/openwebmail/etc/templates/pt/editpop3.template
+www/cgi-bin/openwebmail/etc/templates/pt/editstationery.template
 www/cgi-bin/openwebmail/etc/templates/pt/firsttimeuser.template
 www/cgi-bin/openwebmail/etc/templates/pt/footer.js.template
 www/cgi-bin/openwebmail/etc/templates/pt/footer.template
 www/cgi-bin/openwebmail/etc/templates/pt/header.template
 www/cgi-bin/openwebmail/etc/templates/pt/history.template
 www/cgi-bin/openwebmail/etc/templates/pt/importabook.template
+www/cgi-bin/openwebmail/etc/templates/pt/listview.template
 www/cgi-bin/openwebmail/etc/templates/pt/login.template
 www/cgi-bin/openwebmail/etc/templates/pt/loginfailed.template
 www/cgi-bin/openwebmail/etc/templates/pt/logout.template
@@ -812,12 +890,14 @@ www/cgi-bin/openwebmail/etc/templates/pt_BR/editfilter.template
 www/cgi-bin/openwebmail/etc/templates/pt_BR/editfolders.template
 www/cgi-bin/openwebmail/etc/templates/pt_BR/editfroms.template
 www/cgi-bin/openwebmail/etc/templates/pt_BR/editpop3.template
+www/cgi-bin/openwebmail/etc/templates/pt_BR/editstationery.template
 www/cgi-bin/openwebmail/etc/templates/pt_BR/firsttimeuser.template
 www/cgi-bin/openwebmail/etc/templates/pt_BR/footer.js.template
 www/cgi-bin/openwebmail/etc/templates/pt_BR/footer.template
 www/cgi-bin/openwebmail/etc/templates/pt_BR/header.template
 www/cgi-bin/openwebmail/etc/templates/pt_BR/history.template
 www/cgi-bin/openwebmail/etc/templates/pt_BR/importabook.template
+www/cgi-bin/openwebmail/etc/templates/pt_BR/listview.template
 www/cgi-bin/openwebmail/etc/templates/pt_BR/login.template
 www/cgi-bin/openwebmail/etc/templates/pt_BR/loginfailed.template
 www/cgi-bin/openwebmail/etc/templates/pt_BR/logout.template
@@ -848,12 +928,14 @@ www/cgi-bin/openwebmail/etc/templates/ro/editfilter.template
 www/cgi-bin/openwebmail/etc/templates/ro/editfolders.template
 www/cgi-bin/openwebmail/etc/templates/ro/editfroms.template
 www/cgi-bin/openwebmail/etc/templates/ro/editpop3.template
+www/cgi-bin/openwebmail/etc/templates/ro/editstationery.template
 www/cgi-bin/openwebmail/etc/templates/ro/firsttimeuser.template
 www/cgi-bin/openwebmail/etc/templates/ro/footer.js.template
 www/cgi-bin/openwebmail/etc/templates/ro/footer.template
 www/cgi-bin/openwebmail/etc/templates/ro/header.template
 www/cgi-bin/openwebmail/etc/templates/ro/history.template
 www/cgi-bin/openwebmail/etc/templates/ro/importabook.template
+www/cgi-bin/openwebmail/etc/templates/ro/listview.template
 www/cgi-bin/openwebmail/etc/templates/ro/login.template
 www/cgi-bin/openwebmail/etc/templates/ro/loginfailed.template
 www/cgi-bin/openwebmail/etc/templates/ro/logout.template
@@ -884,12 +966,14 @@ www/cgi-bin/openwebmail/etc/templates/ru/editfilter.template
 www/cgi-bin/openwebmail/etc/templates/ru/editfolders.template
 www/cgi-bin/openwebmail/etc/templates/ru/editfroms.template
 www/cgi-bin/openwebmail/etc/templates/ru/editpop3.template
+www/cgi-bin/openwebmail/etc/templates/ru/editstationery.template
 www/cgi-bin/openwebmail/etc/templates/ru/firsttimeuser.template
 www/cgi-bin/openwebmail/etc/templates/ru/footer.js.template
 www/cgi-bin/openwebmail/etc/templates/ru/footer.template
 www/cgi-bin/openwebmail/etc/templates/ru/header.template
 www/cgi-bin/openwebmail/etc/templates/ru/history.template
 www/cgi-bin/openwebmail/etc/templates/ru/importabook.template
+www/cgi-bin/openwebmail/etc/templates/ru/listview.template
 www/cgi-bin/openwebmail/etc/templates/ru/login.template
 www/cgi-bin/openwebmail/etc/templates/ru/loginfailed.template
 www/cgi-bin/openwebmail/etc/templates/ru/logout.template
@@ -920,12 +1004,14 @@ www/cgi-bin/openwebmail/etc/templates/sk/editfilter.template
 www/cgi-bin/openwebmail/etc/templates/sk/editfolders.template
 www/cgi-bin/openwebmail/etc/templates/sk/editfroms.template
 www/cgi-bin/openwebmail/etc/templates/sk/editpop3.template
+www/cgi-bin/openwebmail/etc/templates/sk/editstationery.template
 www/cgi-bin/openwebmail/etc/templates/sk/firsttimeuser.template
 www/cgi-bin/openwebmail/etc/templates/sk/footer.js.template
 www/cgi-bin/openwebmail/etc/templates/sk/footer.template
 www/cgi-bin/openwebmail/etc/templates/sk/header.template
 www/cgi-bin/openwebmail/etc/templates/sk/history.template
 www/cgi-bin/openwebmail/etc/templates/sk/importabook.template
+www/cgi-bin/openwebmail/etc/templates/sk/listview.template
 www/cgi-bin/openwebmail/etc/templates/sk/login.template
 www/cgi-bin/openwebmail/etc/templates/sk/loginfailed.template
 www/cgi-bin/openwebmail/etc/templates/sk/logout.template
@@ -956,12 +1042,14 @@ www/cgi-bin/openwebmail/etc/templates/sv/editfilter.template
 www/cgi-bin/openwebmail/etc/templates/sv/editfolders.template
 www/cgi-bin/openwebmail/etc/templates/sv/editfroms.template
 www/cgi-bin/openwebmail/etc/templates/sv/editpop3.template
+www/cgi-bin/openwebmail/etc/templates/sv/editstationery.template
 www/cgi-bin/openwebmail/etc/templates/sv/firsttimeuser.template
 www/cgi-bin/openwebmail/etc/templates/sv/footer.js.template
 www/cgi-bin/openwebmail/etc/templates/sv/footer.template
 www/cgi-bin/openwebmail/etc/templates/sv/header.template
 www/cgi-bin/openwebmail/etc/templates/sv/history.template
 www/cgi-bin/openwebmail/etc/templates/sv/importabook.template
+www/cgi-bin/openwebmail/etc/templates/sv/listview.template
 www/cgi-bin/openwebmail/etc/templates/sv/login.template
 www/cgi-bin/openwebmail/etc/templates/sv/loginfailed.template
 www/cgi-bin/openwebmail/etc/templates/sv/logout.template
@@ -992,12 +1080,14 @@ www/cgi-bin/openwebmail/etc/templates/th/editfilter.template
 www/cgi-bin/openwebmail/etc/templates/th/editfolders.template
 www/cgi-bin/openwebmail/etc/templates/th/editfroms.template
 www/cgi-bin/openwebmail/etc/templates/th/editpop3.template
+www/cgi-bin/openwebmail/etc/templates/th/editstationery.template
 www/cgi-bin/openwebmail/etc/templates/th/firsttimeuser.template
 www/cgi-bin/openwebmail/etc/templates/th/footer.js.template
 www/cgi-bin/openwebmail/etc/templates/th/footer.template
 www/cgi-bin/openwebmail/etc/templates/th/header.template
 www/cgi-bin/openwebmail/etc/templates/th/history.template
 www/cgi-bin/openwebmail/etc/templates/th/importabook.template
+www/cgi-bin/openwebmail/etc/templates/th/listview.template
 www/cgi-bin/openwebmail/etc/templates/th/login.template
 www/cgi-bin/openwebmail/etc/templates/th/loginfailed.template
 www/cgi-bin/openwebmail/etc/templates/th/logout.template
@@ -1028,12 +1118,14 @@ www/cgi-bin/openwebmail/etc/templates/tr/editfilter.template
 www/cgi-bin/openwebmail/etc/templates/tr/editfolders.template
 www/cgi-bin/openwebmail/etc/templates/tr/editfroms.template
 www/cgi-bin/openwebmail/etc/templates/tr/editpop3.template
+www/cgi-bin/openwebmail/etc/templates/tr/editstationery.template
 www/cgi-bin/openwebmail/etc/templates/tr/firsttimeuser.template
 www/cgi-bin/openwebmail/etc/templates/tr/footer.js.template
 www/cgi-bin/openwebmail/etc/templates/tr/footer.template
 www/cgi-bin/openwebmail/etc/templates/tr/header.template
 www/cgi-bin/openwebmail/etc/templates/tr/history.template
 www/cgi-bin/openwebmail/etc/templates/tr/importabook.template
+www/cgi-bin/openwebmail/etc/templates/tr/listview.template
 www/cgi-bin/openwebmail/etc/templates/tr/login.template
 www/cgi-bin/openwebmail/etc/templates/tr/loginfailed.template
 www/cgi-bin/openwebmail/etc/templates/tr/logout.template
@@ -1064,12 +1156,14 @@ www/cgi-bin/openwebmail/etc/templates/uk/editfilter.template
 www/cgi-bin/openwebmail/etc/templates/uk/editfolders.template
 www/cgi-bin/openwebmail/etc/templates/uk/editfroms.template
 www/cgi-bin/openwebmail/etc/templates/uk/editpop3.template
+www/cgi-bin/openwebmail/etc/templates/uk/editstationery.template
 www/cgi-bin/openwebmail/etc/templates/uk/firsttimeuser.template
 www/cgi-bin/openwebmail/etc/templates/uk/footer.js.template
 www/cgi-bin/openwebmail/etc/templates/uk/footer.template
 www/cgi-bin/openwebmail/etc/templates/uk/header.template
 www/cgi-bin/openwebmail/etc/templates/uk/history.template
 www/cgi-bin/openwebmail/etc/templates/uk/importabook.template
+www/cgi-bin/openwebmail/etc/templates/uk/listview.template
 www/cgi-bin/openwebmail/etc/templates/uk/login.template
 www/cgi-bin/openwebmail/etc/templates/uk/loginfailed.template
 www/cgi-bin/openwebmail/etc/templates/uk/logout.template
@@ -1100,12 +1194,14 @@ www/cgi-bin/openwebmail/etc/templates/zh_CN.GB2312/editfilter.template
 www/cgi-bin/openwebmail/etc/templates/zh_CN.GB2312/editfolders.template
 www/cgi-bin/openwebmail/etc/templates/zh_CN.GB2312/editfroms.template
 www/cgi-bin/openwebmail/etc/templates/zh_CN.GB2312/editpop3.template
+www/cgi-bin/openwebmail/etc/templates/zh_CN.GB2312/editstationery.template
 www/cgi-bin/openwebmail/etc/templates/zh_CN.GB2312/firsttimeuser.template
 www/cgi-bin/openwebmail/etc/templates/zh_CN.GB2312/footer.js.template
 www/cgi-bin/openwebmail/etc/templates/zh_CN.GB2312/footer.template
 www/cgi-bin/openwebmail/etc/templates/zh_CN.GB2312/header.template
 www/cgi-bin/openwebmail/etc/templates/zh_CN.GB2312/history.template
 www/cgi-bin/openwebmail/etc/templates/zh_CN.GB2312/importabook.template
+www/cgi-bin/openwebmail/etc/templates/zh_CN.GB2312/listview.template
 www/cgi-bin/openwebmail/etc/templates/zh_CN.GB2312/login.template
 www/cgi-bin/openwebmail/etc/templates/zh_CN.GB2312/loginfailed.template
 www/cgi-bin/openwebmail/etc/templates/zh_CN.GB2312/logout.template
@@ -1136,12 +1232,14 @@ www/cgi-bin/openwebmail/etc/templates/zh_TW.Big5/editfilter.template
 www/cgi-bin/openwebmail/etc/templates/zh_TW.Big5/editfolders.template
 www/cgi-bin/openwebmail/etc/templates/zh_TW.Big5/editfroms.template
 www/cgi-bin/openwebmail/etc/templates/zh_TW.Big5/editpop3.template
+www/cgi-bin/openwebmail/etc/templates/zh_TW.Big5/editstationery.template
 www/cgi-bin/openwebmail/etc/templates/zh_TW.Big5/firsttimeuser.template
 www/cgi-bin/openwebmail/etc/templates/zh_TW.Big5/footer.js.template
 www/cgi-bin/openwebmail/etc/templates/zh_TW.Big5/footer.template
 www/cgi-bin/openwebmail/etc/templates/zh_TW.Big5/header.template
 www/cgi-bin/openwebmail/etc/templates/zh_TW.Big5/history.template
 www/cgi-bin/openwebmail/etc/templates/zh_TW.Big5/importabook.template
+www/cgi-bin/openwebmail/etc/templates/zh_TW.Big5/listview.template
 www/cgi-bin/openwebmail/etc/templates/zh_TW.Big5/login.template
 www/cgi-bin/openwebmail/etc/templates/zh_TW.Big5/loginfailed.template
 www/cgi-bin/openwebmail/etc/templates/zh_TW.Big5/logout.template
@@ -1159,6 +1257,10 @@ www/cgi-bin/openwebmail/etc/templates/zh_TW.Big5/weekview.template
 www/cgi-bin/openwebmail/etc/templates/zh_TW.Big5/yearview.template
 www/cgi-bin/openwebmail/etc/users.conf/SAMPLE
 www/cgi-bin/openwebmail/filelock.pl
+www/cgi-bin/openwebmail/iconv-chinese.pl
+www/cgi-bin/openwebmail/iconv-japan.pl
+www/cgi-bin/openwebmail/iconv.pl
+www/cgi-bin/openwebmail/lunar.pl
 www/cgi-bin/openwebmail/maildb.pl
 www/cgi-bin/openwebmail/mailfilter.pl
 www/cgi-bin/openwebmail/mime.pl
@@ -1170,16 +1272,19 @@ www/cgi-bin/openwebmail/openwebmail-main.pl
 www/cgi-bin/openwebmail/openwebmail-prefs.pl
 www/cgi-bin/openwebmail/openwebmail-read.pl
 www/cgi-bin/openwebmail/openwebmail-send.pl
-www/cgi-bin/openwebmail/openwebmail-shared.pl
 www/cgi-bin/openwebmail/openwebmail-spell.pl
+www/cgi-bin/openwebmail/openwebmail-tool.pl
 www/cgi-bin/openwebmail/openwebmail-viewatt.pl
 www/cgi-bin/openwebmail/openwebmail.pl
+www/cgi-bin/openwebmail/ow-shared.pl
 www/cgi-bin/openwebmail/pop3mail.pl
 www/cgi-bin/openwebmail/uty/dbmtest.pl
 www/cgi-bin/openwebmail/uty/dumpdb.pl
 www/cgi-bin/openwebmail/uty/dumpmaildb.pl
 www/cgi-bin/openwebmail/uty/fakedspell.sh
 www/cgi-bin/openwebmail/uty/filelock.pl.diff
+www/cgi-bin/openwebmail/uty/iconv.pl.fake
+www/cgi-bin/openwebmail/uty/jcode.pl
 www/cgi-bin/openwebmail/uty/makemaildb.pl
 www/cgi-bin/openwebmail/uty/mkcool3d_en.sh
 www/cgi-bin/openwebmail/uty/mkcool3d_it.sh
@@ -1187,16 +1292,146 @@ www/cgi-bin/openwebmail/uty/mktgz.sh
 www/cgi-bin/openwebmail/uty/notify.sh
 www/cgi-bin/openwebmail/uty/openwebmail.conf.diff
 www/cgi-bin/openwebmail/uty/pamtest.pl
+www/cgi-bin/openwebmail/uty/replacestr.pl
 www/cgi-bin/openwebmail/uty/wrapsuid.pl
 www/cgi-bin/openwebmail/vacation.pl
+www/data/openwebmail/doc/Mandrake-README.txt
 www/data/openwebmail/doc/RedHat-README.txt
 www/data/openwebmail/doc/changes.txt
+www/data/openwebmail/doc/cobalt-virtualdomain.txt
 www/data/openwebmail/doc/copyright.txt
 www/data/openwebmail/doc/faq.txt
-www/data/openwebmail/doc/memory.usage
-www/data/openwebmail/doc/owmvirtual.txt
+www/data/openwebmail/doc/files.txt
+www/data/openwebmail/doc/memory-usage.txt
 www/data/openwebmail/doc/readme.txt
-www/data/openwebmail/doc/sun-cobalt.txt
+www/data/openwebmail/doc/virtualuser.txt
+www/data/openwebmail/help/en/def/browser.html
+www/data/openwebmail/help/en/def/byte.html
+www/data/openwebmail/help/en/def/cgi.html
+www/data/openwebmail/help/en/def/character_set.html
+www/data/openwebmail/help/en/def/javascript.html
+www/data/openwebmail/help/en/def/open_source.html
+www/data/openwebmail/help/en/def/regex.html
+www/data/openwebmail/help/en/def/smtp.html
+www/data/openwebmail/help/en/def/url.html
+www/data/openwebmail/help/en/images/buttons/about.gif
+www/data/openwebmail/help/en/images/buttons/add_address.gif
+www/data/openwebmail/help/en/images/buttons/address.gif
+www/data/openwebmail/help/en/images/buttons/address_book.gif
+www/data/openwebmail/help/en/images/buttons/backtoinbox.gif
+www/data/openwebmail/help/en/images/buttons/block_sender.gif
+www/data/openwebmail/help/en/images/buttons/block_smtp.gif
+www/data/openwebmail/help/en/images/buttons/browse.gif
+www/data/openwebmail/help/en/images/buttons/calendar.gif
+www/data/openwebmail/help/en/images/buttons/checkbox.gif
+www/data/openwebmail/help/en/images/buttons/clear_addresses.gif
+www/data/openwebmail/help/en/images/buttons/copy.gif
+www/data/openwebmail/help/en/images/buttons/day.gif
+www/data/openwebmail/help/en/images/buttons/dest_menu.gif
+www/data/openwebmail/help/en/images/buttons/double_left.gif
+www/data/openwebmail/help/en/images/buttons/edit_email.gif
+www/data/openwebmail/help/en/images/buttons/edit_pop3.gif
+www/data/openwebmail/help/en/images/buttons/export.gif
+www/data/openwebmail/help/en/images/buttons/filter.gif
+www/data/openwebmail/help/en/images/buttons/folder_menu.gif
+www/data/openwebmail/help/en/images/buttons/folder_menu2.gif
+www/data/openwebmail/help/en/images/buttons/folders.gif
+www/data/openwebmail/help/en/images/buttons/forward.gif
+www/data/openwebmail/help/en/images/buttons/forwardattach.gif
+www/data/openwebmail/help/en/images/buttons/group.gif
+www/data/openwebmail/help/en/images/buttons/history.gif
+www/data/openwebmail/help/en/images/buttons/import.gif
+www/data/openwebmail/help/en/images/buttons/left.gif
+www/data/openwebmail/help/en/images/buttons/logout.gif
+www/data/openwebmail/help/en/images/buttons/month.gif
+www/data/openwebmail/help/en/images/buttons/move.gif
+www/data/openwebmail/help/en/images/buttons/new.gif
+www/data/openwebmail/help/en/images/buttons/password.gif
+www/data/openwebmail/help/en/images/buttons/pop3.gif
+www/data/openwebmail/help/en/images/buttons/print.gif
+www/data/openwebmail/help/en/images/buttons/refresh.gif
+www/data/openwebmail/help/en/images/buttons/reply.gif
+www/data/openwebmail/help/en/images/buttons/replyall.gif
+www/data/openwebmail/help/en/images/buttons/search.gif
+www/data/openwebmail/help/en/images/buttons/settings.gif
+www/data/openwebmail/help/en/images/buttons/trash.gif
+www/data/openwebmail/help/en/images/buttons/up.gif
+www/data/openwebmail/help/en/images/buttons/week.gif
+www/data/openwebmail/help/en/images/buttons/year.gif
+www/data/openwebmail/help/en/images/fade.gif
+www/data/openwebmail/help/en/images/globe.gif
+www/data/openwebmail/help/en/images/index.html
+www/data/openwebmail/help/en/images/logo.gif
+www/data/openwebmail/help/en/images/logo_small.gif
+www/data/openwebmail/help/en/images/screens/add_calendar_entry.gif
+www/data/openwebmail/help/en/images/screens/address_book.gif
+www/data/openwebmail/help/en/images/screens/calendar.gif
+www/data/openwebmail/help/en/images/screens/calendar_small.gif
+www/data/openwebmail/help/en/images/screens/compose.gif
+www/data/openwebmail/help/en/images/screens/compose_small.gif
+www/data/openwebmail/help/en/images/screens/inbox_messages.gif
+www/data/openwebmail/help/en/images/screens/login.gif
+www/data/openwebmail/help/en/images/screens/message_big.gif
+www/data/openwebmail/help/en/images/screens/message_small.gif
+www/data/openwebmail/help/en/images/screens/message_toolbar.gif
+www/data/openwebmail/help/en/images/screens/movcop.gif
+www/data/openwebmail/help/en/images/screens/spellcheck.gif
+www/data/openwebmail/help/en/images/screens/subject_circled.gif
+www/data/openwebmail/help/en/images/space.gif
+www/data/openwebmail/help/en/images/toolbars/calendar.gif
+www/data/openwebmail/help/en/images/toolbars/main.gif
+www/data/openwebmail/help/en/images/toolbars/message.gif
+www/data/openwebmail/help/en/images/toolbars/search.gif
+www/data/openwebmail/help/en/images/toolbars/settings.gif
+www/data/openwebmail/help/en/index.html
+www/data/openwebmail/help/en/templates_and_data/blank-template.html
+www/data/openwebmail/help/en/templates_and_data/borders-template.html
+www/data/openwebmail/help/en/templates_and_data/def.js
+www/data/openwebmail/help/en/templates_and_data/definition_template.txt
+www/data/openwebmail/help/en/templates_and_data/index.html
+www/data/openwebmail/help/en/templates_and_data/makewin.js
+www/data/openwebmail/help/en/templates_and_data/style.css
+www/data/openwebmail/help/en/tutorial/address_book/editing.html
+www/data/openwebmail/help/en/tutorial/address_book/import_export.html
+www/data/openwebmail/help/en/tutorial/address_book/index.html
+www/data/openwebmail/help/en/tutorial/address_book/using.html
+www/data/openwebmail/help/en/tutorial/basics/config.html
+www/data/openwebmail/help/en/tutorial/basics/inbox.html
+www/data/openwebmail/help/en/tutorial/basics/index.html
+www/data/openwebmail/help/en/tutorial/basics/login.html
+www/data/openwebmail/help/en/tutorial/basics/reading.html
+www/data/openwebmail/help/en/tutorial/calendar/adding.html
+www/data/openwebmail/help/en/tutorial/calendar/index.html
+www/data/openwebmail/help/en/tutorial/calendar/viewing.html
+www/data/openwebmail/help/en/tutorial/configuration/calendar.html
+www/data/openwebmail/help/en/tutorial/configuration/display.html
+www/data/openwebmail/help/en/tutorial/configuration/index.html
+www/data/openwebmail/help/en/tutorial/configuration/message_filtering.html
+www/data/openwebmail/help/en/tutorial/configuration/message_operation.html
+www/data/openwebmail/help/en/tutorial/configuration/message_reading.html
+www/data/openwebmail/help/en/tutorial/configuration/message_replying.html
+www/data/openwebmail/help/en/tutorial/configuration/misc.html
+www/data/openwebmail/help/en/tutorial/configuration/personal.html
+www/data/openwebmail/help/en/tutorial/index.html
+www/data/openwebmail/help/en/tutorial/messages/attach.html
+www/data/openwebmail/help/en/tutorial/messages/compose.html
+www/data/openwebmail/help/en/tutorial/messages/filter.html
+www/data/openwebmail/help/en/tutorial/messages/folders.html
+www/data/openwebmail/help/en/tutorial/messages/index.html
+www/data/openwebmail/help/en/tutorial/messages/move_copy.html
+www/data/openwebmail/help/en/tutorial/messages/saving.html
+www/data/openwebmail/help/en/tutorial/messages/spellcheck.html
+www/data/openwebmail/help/en/tutorial/notes/addhelp.html
+www/data/openwebmail/help/en/tutorial/notes/advantages.html
+www/data/openwebmail/help/en/tutorial/notes/common.html
+www/data/openwebmail/help/en/tutorial/notes/index.html
+www/data/openwebmail/help/en/tutorial/notes/using_owm_help.html
+www/data/openwebmail/help/en/tutorial/toolbars/calendar.html
+www/data/openwebmail/help/en/tutorial/toolbars/index.html
+www/data/openwebmail/help/en/tutorial/toolbars/main.html
+www/data/openwebmail/help/en/tutorial/toolbars/message.html
+www/data/openwebmail/help/en/tutorial/toolbars/search.html
+www/data/openwebmail/help/en/tutorial/toolbars/settings.html
 www/data/openwebmail/images/backgrounds/Cursive.gif
 www/data/openwebmail/images/backgrounds/DSLab.gif
 www/data/openwebmail/images/backgrounds/Envelope.gif
@@ -1208,12 +1443,12 @@ www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/addrbook.s.gif
 www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/advsearch.gif
 www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/attach.gif
 www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/backtofolder.gif
-www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/big52gb.gif
 www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/blockemail.gif
 www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/blockrelay.gif
 www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/calendar.gif
 www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/chpwd.gif
 www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/clearaddress.gif
+www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/clearst.gif
 www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/compose.gif
 www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/dayview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/down.gif
@@ -1223,6 +1458,8 @@ www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/download.s.ow.gif
 www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/earth.gif
 www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/editdraft.gif
 www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/editfroms.gif
+www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/editst.gif
+www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/email.gif
 www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/export.gif
 www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/filtersetup.gif
 www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/first-grey.gif
@@ -1232,7 +1469,6 @@ www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/follow.down.gif
 www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/follow.up.gif
 www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/forward.gif
 www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/forwardasatt.gif
-www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/gb2big5.gif
 www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/group.gif
 www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/history.gif
 www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/import.gif
@@ -1243,6 +1479,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/last-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/last.gif
 www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/left-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/left.gif
+www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/listview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/logout.gif
 www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/monthview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/owm.gif
@@ -1257,6 +1494,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/reply.gif
 www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/replyall.gif
 www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/right-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/right.gif
+www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/sound.gif
 www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/totrash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/trash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Bulgarian/unread.a.gif
@@ -1269,12 +1507,12 @@ www/data/openwebmail/images/iconsets/Cool3D.Catalan/addrbook.s.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/advsearch.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/attach.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/backtofolder.gif
-www/data/openwebmail/images/iconsets/Cool3D.Catalan/big52gb.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/blockemail.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/blockrelay.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/calendar.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/chpwd.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/clearaddress.gif
+www/data/openwebmail/images/iconsets/Cool3D.Catalan/clearst.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/compose.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/dayview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/down.gif
@@ -1284,6 +1522,8 @@ www/data/openwebmail/images/iconsets/Cool3D.Catalan/download.s.ow.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/earth.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/editdraft.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/editfroms.gif
+www/data/openwebmail/images/iconsets/Cool3D.Catalan/editst.gif
+www/data/openwebmail/images/iconsets/Cool3D.Catalan/email.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/export.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/filtersetup.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/first-grey.gif
@@ -1293,7 +1533,6 @@ www/data/openwebmail/images/iconsets/Cool3D.Catalan/follow.down.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/follow.up.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/forward.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/forwardasatt.gif
-www/data/openwebmail/images/iconsets/Cool3D.Catalan/gb2big5.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/group.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/history.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/import.gif
@@ -1304,6 +1543,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Catalan/last-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/last.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/left-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/left.gif
+www/data/openwebmail/images/iconsets/Cool3D.Catalan/listview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/logout.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/monthview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/owm.gif
@@ -1318,6 +1558,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Catalan/reply.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/replyall.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/right-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/right.gif
+www/data/openwebmail/images/iconsets/Cool3D.Catalan/sound.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/totrash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/trash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/unread.a.gif
@@ -1325,18 +1566,83 @@ www/data/openwebmail/images/iconsets/Cool3D.Catalan/unread.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/up.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/weekview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Catalan/yearview.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/addrbook.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/addrbook.s.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/advsearch.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/attach.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/backtofolder.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/blank.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/blockemail.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/blockrelay.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/calendar.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/chpwd.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/clearaddress.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/clearst.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/compose.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/dayview.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/down.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/download.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/download.s.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/download.s.ow.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/earth.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/editdraft.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/editfroms.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/editst.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/email.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/export.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/filtersetup.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/first-grey.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/first.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/folder.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/follow.down.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/follow.up.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/forward.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/forwardasatt.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/group.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/history.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/import.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/import.s.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/important.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/info.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/last-grey.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/last.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/left-grey.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/left.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/listview.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/logout.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/monthview.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/owm.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/pop3.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/pop3setup.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/prefs.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/print.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/read.a.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/read.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/refresh.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/reply.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/replyall.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/right-grey.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/right.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/sound.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/totrash.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/trash.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/unread.a.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/unread.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/up.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/weekview.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified/yearview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/addrbook.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/addrbook.s.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/advsearch.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/attach.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/backtofolder.gif
-www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/big52gb.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/blank.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/blockemail.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/blockrelay.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/calendar.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/chpwd.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/clearaddress.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/clearst.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/compose.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/dayview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/down.gif
@@ -1346,6 +1652,8 @@ www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/download.s.ow.gi
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/earth.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/editdraft.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/editfroms.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/editst.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/email.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/export.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/filtersetup.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/first-grey.gif
@@ -1355,7 +1663,6 @@ www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/follow.down.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/follow.up.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/forward.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/forwardasatt.gif
-www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/gb2big5.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/group.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/history.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/import.gif
@@ -1366,6 +1673,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/last-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/last.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/left-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/left.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/listview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/logout.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/monthview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/owm.gif
@@ -1380,6 +1688,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/reply.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/replyall.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/right-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/right.gif
+www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/sound.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/totrash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/trash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/unread.a.gif
@@ -1392,12 +1701,12 @@ www/data/openwebmail/images/iconsets/Cool3D.Czech/addrbook.s.gif
 www/data/openwebmail/images/iconsets/Cool3D.Czech/advsearch.gif
 www/data/openwebmail/images/iconsets/Cool3D.Czech/attach.gif
 www/data/openwebmail/images/iconsets/Cool3D.Czech/backtofolder.gif
-www/data/openwebmail/images/iconsets/Cool3D.Czech/big52gb.gif
 www/data/openwebmail/images/iconsets/Cool3D.Czech/blockemail.gif
 www/data/openwebmail/images/iconsets/Cool3D.Czech/blockrelay.gif
 www/data/openwebmail/images/iconsets/Cool3D.Czech/calendar.gif
 www/data/openwebmail/images/iconsets/Cool3D.Czech/chpwd.gif
 www/data/openwebmail/images/iconsets/Cool3D.Czech/clearaddress.gif
+www/data/openwebmail/images/iconsets/Cool3D.Czech/clearst.gif
 www/data/openwebmail/images/iconsets/Cool3D.Czech/compose.gif
 www/data/openwebmail/images/iconsets/Cool3D.Czech/dayview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Czech/down.gif
@@ -1407,6 +1716,8 @@ www/data/openwebmail/images/iconsets/Cool3D.Czech/download.s.ow.gif
 www/data/openwebmail/images/iconsets/Cool3D.Czech/earth.gif
 www/data/openwebmail/images/iconsets/Cool3D.Czech/editdraft.gif
 www/data/openwebmail/images/iconsets/Cool3D.Czech/editfroms.gif
+www/data/openwebmail/images/iconsets/Cool3D.Czech/editst.gif
+www/data/openwebmail/images/iconsets/Cool3D.Czech/email.gif
 www/data/openwebmail/images/iconsets/Cool3D.Czech/export.gif
 www/data/openwebmail/images/iconsets/Cool3D.Czech/filtersetup.gif
 www/data/openwebmail/images/iconsets/Cool3D.Czech/first-grey.gif
@@ -1416,7 +1727,6 @@ www/data/openwebmail/images/iconsets/Cool3D.Czech/follow.down.gif
 www/data/openwebmail/images/iconsets/Cool3D.Czech/follow.up.gif
 www/data/openwebmail/images/iconsets/Cool3D.Czech/forward.gif
 www/data/openwebmail/images/iconsets/Cool3D.Czech/forwardasatt.gif
-www/data/openwebmail/images/iconsets/Cool3D.Czech/gb2big5.gif
 www/data/openwebmail/images/iconsets/Cool3D.Czech/group.gif
 www/data/openwebmail/images/iconsets/Cool3D.Czech/history.gif
 www/data/openwebmail/images/iconsets/Cool3D.Czech/import.gif
@@ -1427,6 +1737,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Czech/last-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Czech/last.gif
 www/data/openwebmail/images/iconsets/Cool3D.Czech/left-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Czech/left.gif
+www/data/openwebmail/images/iconsets/Cool3D.Czech/listview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Czech/logout.gif
 www/data/openwebmail/images/iconsets/Cool3D.Czech/monthview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Czech/owm.gif
@@ -1441,6 +1752,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Czech/reply.gif
 www/data/openwebmail/images/iconsets/Cool3D.Czech/replyall.gif
 www/data/openwebmail/images/iconsets/Cool3D.Czech/right-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Czech/right.gif
+www/data/openwebmail/images/iconsets/Cool3D.Czech/sound.gif
 www/data/openwebmail/images/iconsets/Cool3D.Czech/totrash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Czech/trash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Czech/unread.a.gif
@@ -1453,12 +1765,12 @@ www/data/openwebmail/images/iconsets/Cool3D.Danish/addrbook.s.gif
 www/data/openwebmail/images/iconsets/Cool3D.Danish/advsearch.gif
 www/data/openwebmail/images/iconsets/Cool3D.Danish/attach.gif
 www/data/openwebmail/images/iconsets/Cool3D.Danish/backtofolder.gif
-www/data/openwebmail/images/iconsets/Cool3D.Danish/big52gb.gif
 www/data/openwebmail/images/iconsets/Cool3D.Danish/blockemail.gif
 www/data/openwebmail/images/iconsets/Cool3D.Danish/blockrelay.gif
 www/data/openwebmail/images/iconsets/Cool3D.Danish/calendar.gif
 www/data/openwebmail/images/iconsets/Cool3D.Danish/chpwd.gif
 www/data/openwebmail/images/iconsets/Cool3D.Danish/clearaddress.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/clearst.gif
 www/data/openwebmail/images/iconsets/Cool3D.Danish/compose.gif
 www/data/openwebmail/images/iconsets/Cool3D.Danish/dayview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Danish/down.gif
@@ -1468,6 +1780,8 @@ www/data/openwebmail/images/iconsets/Cool3D.Danish/download.s.ow.gif
 www/data/openwebmail/images/iconsets/Cool3D.Danish/earth.gif
 www/data/openwebmail/images/iconsets/Cool3D.Danish/editdraft.gif
 www/data/openwebmail/images/iconsets/Cool3D.Danish/editfroms.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/editst.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/email.gif
 www/data/openwebmail/images/iconsets/Cool3D.Danish/export.gif
 www/data/openwebmail/images/iconsets/Cool3D.Danish/filtersetup.gif
 www/data/openwebmail/images/iconsets/Cool3D.Danish/first-grey.gif
@@ -1477,7 +1791,6 @@ www/data/openwebmail/images/iconsets/Cool3D.Danish/follow.down.gif
 www/data/openwebmail/images/iconsets/Cool3D.Danish/follow.up.gif
 www/data/openwebmail/images/iconsets/Cool3D.Danish/forward.gif
 www/data/openwebmail/images/iconsets/Cool3D.Danish/forwardasatt.gif
-www/data/openwebmail/images/iconsets/Cool3D.Danish/gb2big5.gif
 www/data/openwebmail/images/iconsets/Cool3D.Danish/group.gif
 www/data/openwebmail/images/iconsets/Cool3D.Danish/history.gif
 www/data/openwebmail/images/iconsets/Cool3D.Danish/import.gif
@@ -1488,6 +1801,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Danish/last-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Danish/last.gif
 www/data/openwebmail/images/iconsets/Cool3D.Danish/left-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Danish/left.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/listview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Danish/logout.gif
 www/data/openwebmail/images/iconsets/Cool3D.Danish/monthview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Danish/owm.gif
@@ -1502,6 +1816,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Danish/reply.gif
 www/data/openwebmail/images/iconsets/Cool3D.Danish/replyall.gif
 www/data/openwebmail/images/iconsets/Cool3D.Danish/right-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Danish/right.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/sound.gif
 www/data/openwebmail/images/iconsets/Cool3D.Danish/totrash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Danish/trash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Danish/unread.a.gif
@@ -1514,13 +1829,13 @@ www/data/openwebmail/images/iconsets/Cool3D.Deutsch/addrbook.s.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/advsearch.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/attach.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/backtofolder.gif
-www/data/openwebmail/images/iconsets/Cool3D.Deutsch/big52gb.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/blank.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/blockemail.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/blockrelay.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/calendar.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/chpwd.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/clearaddress.gif
+www/data/openwebmail/images/iconsets/Cool3D.Deutsch/clearst.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/compose.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/dayview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/down.gif
@@ -1530,6 +1845,8 @@ www/data/openwebmail/images/iconsets/Cool3D.Deutsch/download.s.ow.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/earth.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/editdraft.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/editfroms.gif
+www/data/openwebmail/images/iconsets/Cool3D.Deutsch/editst.gif
+www/data/openwebmail/images/iconsets/Cool3D.Deutsch/email.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/export.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/filtersetup.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/first-grey.gif
@@ -1539,7 +1856,6 @@ www/data/openwebmail/images/iconsets/Cool3D.Deutsch/follow.down.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/follow.up.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/forward.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/forwardasatt.gif
-www/data/openwebmail/images/iconsets/Cool3D.Deutsch/gb2big5.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/group.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/history.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/import.gif
@@ -1550,6 +1866,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Deutsch/last-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/last.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/left-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/left.gif
+www/data/openwebmail/images/iconsets/Cool3D.Deutsch/listview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/logout.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/monthview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/owm.gif
@@ -1564,6 +1881,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Deutsch/reply.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/replyall.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/right-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/right.gif
+www/data/openwebmail/images/iconsets/Cool3D.Deutsch/sound.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/totrash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/trash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Deutsch/unread.a.gif
@@ -1576,13 +1894,13 @@ www/data/openwebmail/images/iconsets/Cool3D.Dutch/addrbook.s.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/advsearch.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/attach.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/backtofolder.gif
-www/data/openwebmail/images/iconsets/Cool3D.Dutch/big52gb.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/blank.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/blockemail.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/blockrelay.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/calendar.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/chpwd.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/clearaddress.gif
+www/data/openwebmail/images/iconsets/Cool3D.Dutch/clearst.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/compose.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/dayview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/down.gif
@@ -1592,6 +1910,8 @@ www/data/openwebmail/images/iconsets/Cool3D.Dutch/download.s.ow.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/earth.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/editdraft.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/editfroms.gif
+www/data/openwebmail/images/iconsets/Cool3D.Dutch/editst.gif
+www/data/openwebmail/images/iconsets/Cool3D.Dutch/email.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/export.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/filtersetup.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/first-grey.gif
@@ -1601,7 +1921,6 @@ www/data/openwebmail/images/iconsets/Cool3D.Dutch/follow.down.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/follow.up.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/forward.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/forwardasatt.gif
-www/data/openwebmail/images/iconsets/Cool3D.Dutch/gb2big5.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/group.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/history.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/import.gif
@@ -1612,6 +1931,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Dutch/last-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/last.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/left-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/left.gif
+www/data/openwebmail/images/iconsets/Cool3D.Dutch/listview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/logout.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/monthview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/owm.gif
@@ -1626,6 +1946,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Dutch/reply.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/replyall.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/right-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/right.gif
+www/data/openwebmail/images/iconsets/Cool3D.Dutch/sound.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/totrash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/trash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Dutch/unread.a.gif
@@ -1638,13 +1959,13 @@ www/data/openwebmail/images/iconsets/Cool3D.English/addrbook.s.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/advsearch.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/attach.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/backtofolder.gif
-www/data/openwebmail/images/iconsets/Cool3D.English/big52gb.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/blank.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/blockemail.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/blockrelay.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/calendar.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/chpwd.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/clearaddress.gif
+www/data/openwebmail/images/iconsets/Cool3D.English/clearst.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/compose.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/dayview.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/down.gif
@@ -1654,6 +1975,8 @@ www/data/openwebmail/images/iconsets/Cool3D.English/download.s.ow.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/earth.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/editdraft.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/editfroms.gif
+www/data/openwebmail/images/iconsets/Cool3D.English/editst.gif
+www/data/openwebmail/images/iconsets/Cool3D.English/email.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/export.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/filtersetup.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/first-grey.gif
@@ -1663,7 +1986,6 @@ www/data/openwebmail/images/iconsets/Cool3D.English/follow.down.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/follow.up.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/forward.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/forwardasatt.gif
-www/data/openwebmail/images/iconsets/Cool3D.English/gb2big5.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/group.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/history.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/import.gif
@@ -1674,6 +1996,7 @@ www/data/openwebmail/images/iconsets/Cool3D.English/last-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/last.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/left-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/left.gif
+www/data/openwebmail/images/iconsets/Cool3D.English/listview.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/logout.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/monthview.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/owm.gif
@@ -1688,6 +2011,7 @@ www/data/openwebmail/images/iconsets/Cool3D.English/reply.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/replyall.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/right-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/right.gif
+www/data/openwebmail/images/iconsets/Cool3D.English/sound.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/totrash.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/trash.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/unread.a.gif
@@ -1700,12 +2024,12 @@ www/data/openwebmail/images/iconsets/Cool3D.Francais/addrbook.s.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/advsearch.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/attach.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/backtofolder.gif
-www/data/openwebmail/images/iconsets/Cool3D.Francais/big52gb.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/blockemail.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/blockrelay.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/calendar.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/chpwd.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/clearaddress.gif
+www/data/openwebmail/images/iconsets/Cool3D.Francais/clearst.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/compose.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/dayview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/down.gif
@@ -1715,6 +2039,8 @@ www/data/openwebmail/images/iconsets/Cool3D.Francais/download.s.ow.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/earth.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/editdraft.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/editfroms.gif
+www/data/openwebmail/images/iconsets/Cool3D.Francais/editst.gif
+www/data/openwebmail/images/iconsets/Cool3D.Francais/email.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/export.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/filtersetup.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/first-grey.gif
@@ -1724,7 +2050,6 @@ www/data/openwebmail/images/iconsets/Cool3D.Francais/follow.down.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/follow.up.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/forward.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/forwardasatt.gif
-www/data/openwebmail/images/iconsets/Cool3D.Francais/gb2big5.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/group.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/history.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/import.gif
@@ -1735,6 +2060,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Francais/last-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/last.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/left-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/left.gif
+www/data/openwebmail/images/iconsets/Cool3D.Francais/listview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/logout.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/monthview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/owm.gif
@@ -1749,6 +2075,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Francais/reply.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/replyall.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/right-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/right.gif
+www/data/openwebmail/images/iconsets/Cool3D.Francais/sound.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/totrash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/trash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/unread.a.gif
@@ -1756,17 +2083,81 @@ www/data/openwebmail/images/iconsets/Cool3D.Francais/unread.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/up.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/weekview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/yearview.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/addrbook.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/addrbook.s.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/advsearch.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/attach.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/backtofolder.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/blockemail.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/blockrelay.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/calendar.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/chpwd.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/clearaddress.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/clearst.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/compose.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/dayview.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/down.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/download.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/download.s.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/download.s.ow.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/earth.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/editdraft.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/editfroms.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/editst.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/email.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/export.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/filtersetup.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/first-grey.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/first.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/folder.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/follow.down.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/follow.up.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/forward.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/forwardasatt.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/group.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/history.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/import.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/import.s.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/important.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/info.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/last-grey.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/last.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/left-grey.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/left.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/listview.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/logout.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/monthview.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/owm.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/pop3.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/pop3setup.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/prefs.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/print.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/read.a.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/read.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/refresh.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/reply.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/replyall.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/right-grey.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/right.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/sound.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/totrash.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/trash.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/unread.a.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/unread.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/up.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/weekview.gif
+www/data/openwebmail/images/iconsets/Cool3D.Hellenic/yearview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/addrbook.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/addrbook.s.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/advsearch.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/attach.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/backtofolder.gif
-www/data/openwebmail/images/iconsets/Cool3D.Italian/big52gb.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/blockemail.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/blockrelay.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/calendar.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/chpwd.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/clearaddress.gif
+www/data/openwebmail/images/iconsets/Cool3D.Italian/clearst.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/compose.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/dayview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/down.gif
@@ -1776,6 +2167,8 @@ www/data/openwebmail/images/iconsets/Cool3D.Italian/download.s.ow.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/earth.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/editdraft.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/editfroms.gif
+www/data/openwebmail/images/iconsets/Cool3D.Italian/editst.gif
+www/data/openwebmail/images/iconsets/Cool3D.Italian/email.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/export.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/filtersetup.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/first-grey.gif
@@ -1785,7 +2178,6 @@ www/data/openwebmail/images/iconsets/Cool3D.Italian/follow.down.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/follow.up.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/forward.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/forwardasatt.gif
-www/data/openwebmail/images/iconsets/Cool3D.Italian/gb2big5.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/group.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/history.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/import.gif
@@ -1796,6 +2188,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Italian/last-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/last.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/left-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/left.gif
+www/data/openwebmail/images/iconsets/Cool3D.Italian/listview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/logout.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/monthview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/owm.gif
@@ -1810,6 +2203,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Italian/reply.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/replyall.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/right-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/right.gif
+www/data/openwebmail/images/iconsets/Cool3D.Italian/sound.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/totrash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/trash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Italian/unread.a.gif
@@ -1822,12 +2216,12 @@ www/data/openwebmail/images/iconsets/Cool3D.Korean/addrbook.s.gif
 www/data/openwebmail/images/iconsets/Cool3D.Korean/advsearch.gif
 www/data/openwebmail/images/iconsets/Cool3D.Korean/attach.gif
 www/data/openwebmail/images/iconsets/Cool3D.Korean/backtofolder.gif
-www/data/openwebmail/images/iconsets/Cool3D.Korean/big52gb.gif
 www/data/openwebmail/images/iconsets/Cool3D.Korean/blockemail.gif
 www/data/openwebmail/images/iconsets/Cool3D.Korean/blockrelay.gif
 www/data/openwebmail/images/iconsets/Cool3D.Korean/calendar.gif
 www/data/openwebmail/images/iconsets/Cool3D.Korean/chpwd.gif
 www/data/openwebmail/images/iconsets/Cool3D.Korean/clearaddress.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/clearst.gif
 www/data/openwebmail/images/iconsets/Cool3D.Korean/compose.gif
 www/data/openwebmail/images/iconsets/Cool3D.Korean/dayview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Korean/down.gif
@@ -1837,6 +2231,8 @@ www/data/openwebmail/images/iconsets/Cool3D.Korean/download.s.ow.gif
 www/data/openwebmail/images/iconsets/Cool3D.Korean/earth.gif
 www/data/openwebmail/images/iconsets/Cool3D.Korean/editdraft.gif
 www/data/openwebmail/images/iconsets/Cool3D.Korean/editfroms.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/editst.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/email.gif
 www/data/openwebmail/images/iconsets/Cool3D.Korean/export.gif
 www/data/openwebmail/images/iconsets/Cool3D.Korean/filtersetup.gif
 www/data/openwebmail/images/iconsets/Cool3D.Korean/first-grey.gif
@@ -1846,7 +2242,6 @@ www/data/openwebmail/images/iconsets/Cool3D.Korean/follow.down.gif
 www/data/openwebmail/images/iconsets/Cool3D.Korean/follow.up.gif
 www/data/openwebmail/images/iconsets/Cool3D.Korean/forward.gif
 www/data/openwebmail/images/iconsets/Cool3D.Korean/forwardasatt.gif
-www/data/openwebmail/images/iconsets/Cool3D.Korean/gb2big5.gif
 www/data/openwebmail/images/iconsets/Cool3D.Korean/group.gif
 www/data/openwebmail/images/iconsets/Cool3D.Korean/history.gif
 www/data/openwebmail/images/iconsets/Cool3D.Korean/import.gif
@@ -1857,6 +2252,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Korean/last-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Korean/last.gif
 www/data/openwebmail/images/iconsets/Cool3D.Korean/left-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Korean/left.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/listview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Korean/logout.gif
 www/data/openwebmail/images/iconsets/Cool3D.Korean/monthview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Korean/owm.gif
@@ -1871,6 +2267,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Korean/reply.gif
 www/data/openwebmail/images/iconsets/Cool3D.Korean/replyall.gif
 www/data/openwebmail/images/iconsets/Cool3D.Korean/right-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Korean/right.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/sound.gif
 www/data/openwebmail/images/iconsets/Cool3D.Korean/totrash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Korean/trash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Korean/unread.a.gif
@@ -1883,12 +2280,12 @@ www/data/openwebmail/images/iconsets/Cool3D.Large.English/addrbook.s.gif
 www/data/openwebmail/images/iconsets/Cool3D.Large.English/advsearch.gif
 www/data/openwebmail/images/iconsets/Cool3D.Large.English/attach.gif
 www/data/openwebmail/images/iconsets/Cool3D.Large.English/backtofolder.gif
-www/data/openwebmail/images/iconsets/Cool3D.Large.English/big52gb.gif
 www/data/openwebmail/images/iconsets/Cool3D.Large.English/blockemail.gif
 www/data/openwebmail/images/iconsets/Cool3D.Large.English/blockrelay.gif
 www/data/openwebmail/images/iconsets/Cool3D.Large.English/calendar.gif
 www/data/openwebmail/images/iconsets/Cool3D.Large.English/chpwd.gif
 www/data/openwebmail/images/iconsets/Cool3D.Large.English/clearaddress.gif
+www/data/openwebmail/images/iconsets/Cool3D.Large.English/clearst.gif
 www/data/openwebmail/images/iconsets/Cool3D.Large.English/compose.gif
 www/data/openwebmail/images/iconsets/Cool3D.Large.English/dayview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Large.English/down.gif
@@ -1898,6 +2295,8 @@ www/data/openwebmail/images/iconsets/Cool3D.Large.English/download.s.ow.gif
 www/data/openwebmail/images/iconsets/Cool3D.Large.English/earth.gif
 www/data/openwebmail/images/iconsets/Cool3D.Large.English/editdraft.gif
 www/data/openwebmail/images/iconsets/Cool3D.Large.English/editfroms.gif
+www/data/openwebmail/images/iconsets/Cool3D.Large.English/editst.gif
+www/data/openwebmail/images/iconsets/Cool3D.Large.English/email.gif
 www/data/openwebmail/images/iconsets/Cool3D.Large.English/export.gif
 www/data/openwebmail/images/iconsets/Cool3D.Large.English/filtersetup.gif
 www/data/openwebmail/images/iconsets/Cool3D.Large.English/first-grey.gif
@@ -1907,7 +2306,6 @@ www/data/openwebmail/images/iconsets/Cool3D.Large.English/follow.down.gif
 www/data/openwebmail/images/iconsets/Cool3D.Large.English/follow.up.gif
 www/data/openwebmail/images/iconsets/Cool3D.Large.English/forward.gif
 www/data/openwebmail/images/iconsets/Cool3D.Large.English/forwardasatt.gif
-www/data/openwebmail/images/iconsets/Cool3D.Large.English/gb2big5.gif
 www/data/openwebmail/images/iconsets/Cool3D.Large.English/group.gif
 www/data/openwebmail/images/iconsets/Cool3D.Large.English/history.gif
 www/data/openwebmail/images/iconsets/Cool3D.Large.English/import.gif
@@ -1918,6 +2316,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Large.English/last-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Large.English/last.gif
 www/data/openwebmail/images/iconsets/Cool3D.Large.English/left-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Large.English/left.gif
+www/data/openwebmail/images/iconsets/Cool3D.Large.English/listview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Large.English/logout.gif
 www/data/openwebmail/images/iconsets/Cool3D.Large.English/monthview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Large.English/owm.gif
@@ -1932,6 +2331,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Large.English/reply.gif
 www/data/openwebmail/images/iconsets/Cool3D.Large.English/replyall.gif
 www/data/openwebmail/images/iconsets/Cool3D.Large.English/right-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Large.English/right.gif
+www/data/openwebmail/images/iconsets/Cool3D.Large.English/sound.gif
 www/data/openwebmail/images/iconsets/Cool3D.Large.English/totrash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Large.English/trash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Large.English/unread.a.gif
@@ -1944,13 +2344,13 @@ www/data/openwebmail/images/iconsets/Cool3D.Norwegian/addrbook.s.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/advsearch.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/attach.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/backtofolder.gif
-www/data/openwebmail/images/iconsets/Cool3D.Norwegian/big52gb.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/blank.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/blockemail.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/blockrelay.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/calendar.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/chpwd.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/clearaddress.gif
+www/data/openwebmail/images/iconsets/Cool3D.Norwegian/clearst.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/compose.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/dayview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/down.gif
@@ -1960,6 +2360,8 @@ www/data/openwebmail/images/iconsets/Cool3D.Norwegian/download.s.ow.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/earth.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/editdraft.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/editfroms.gif
+www/data/openwebmail/images/iconsets/Cool3D.Norwegian/editst.gif
+www/data/openwebmail/images/iconsets/Cool3D.Norwegian/email.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/export.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/filtersetup.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/first-grey.gif
@@ -1969,7 +2371,6 @@ www/data/openwebmail/images/iconsets/Cool3D.Norwegian/follow.down.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/follow.up.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/forward.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/forwardasatt.gif
-www/data/openwebmail/images/iconsets/Cool3D.Norwegian/gb2big5.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/group.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/history.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/import.gif
@@ -1980,6 +2381,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Norwegian/last-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/last.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/left-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/left.gif
+www/data/openwebmail/images/iconsets/Cool3D.Norwegian/listview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/logout.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/monthview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/owm.gif
@@ -1994,6 +2396,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Norwegian/reply.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/replyall.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/right-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/right.gif
+www/data/openwebmail/images/iconsets/Cool3D.Norwegian/sound.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/totrash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/trash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Norwegian/unread.a.gif
@@ -2006,12 +2409,12 @@ www/data/openwebmail/images/iconsets/Cool3D.Polish/addrbook.s.gif
 www/data/openwebmail/images/iconsets/Cool3D.Polish/advsearch.gif
 www/data/openwebmail/images/iconsets/Cool3D.Polish/attach.gif
 www/data/openwebmail/images/iconsets/Cool3D.Polish/backtofolder.gif
-www/data/openwebmail/images/iconsets/Cool3D.Polish/big52gb.gif
 www/data/openwebmail/images/iconsets/Cool3D.Polish/blockemail.gif
 www/data/openwebmail/images/iconsets/Cool3D.Polish/blockrelay.gif
 www/data/openwebmail/images/iconsets/Cool3D.Polish/calendar.gif
 www/data/openwebmail/images/iconsets/Cool3D.Polish/chpwd.gif
 www/data/openwebmail/images/iconsets/Cool3D.Polish/clearaddress.gif
+www/data/openwebmail/images/iconsets/Cool3D.Polish/clearst.gif
 www/data/openwebmail/images/iconsets/Cool3D.Polish/compose.gif
 www/data/openwebmail/images/iconsets/Cool3D.Polish/dayview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Polish/down.gif
@@ -2021,6 +2424,8 @@ www/data/openwebmail/images/iconsets/Cool3D.Polish/download.s.ow.gif
 www/data/openwebmail/images/iconsets/Cool3D.Polish/earth.gif
 www/data/openwebmail/images/iconsets/Cool3D.Polish/editdraft.gif
 www/data/openwebmail/images/iconsets/Cool3D.Polish/editfroms.gif
+www/data/openwebmail/images/iconsets/Cool3D.Polish/editst.gif
+www/data/openwebmail/images/iconsets/Cool3D.Polish/email.gif
 www/data/openwebmail/images/iconsets/Cool3D.Polish/export.gif
 www/data/openwebmail/images/iconsets/Cool3D.Polish/filtersetup.gif
 www/data/openwebmail/images/iconsets/Cool3D.Polish/first-grey.gif
@@ -2030,7 +2435,6 @@ www/data/openwebmail/images/iconsets/Cool3D.Polish/follow.down.gif
 www/data/openwebmail/images/iconsets/Cool3D.Polish/follow.up.gif
 www/data/openwebmail/images/iconsets/Cool3D.Polish/forward.gif
 www/data/openwebmail/images/iconsets/Cool3D.Polish/forwardasatt.gif
-www/data/openwebmail/images/iconsets/Cool3D.Polish/gb2big5.gif
 www/data/openwebmail/images/iconsets/Cool3D.Polish/group.gif
 www/data/openwebmail/images/iconsets/Cool3D.Polish/history.gif
 www/data/openwebmail/images/iconsets/Cool3D.Polish/import.gif
@@ -2041,6 +2445,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Polish/last-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Polish/last.gif
 www/data/openwebmail/images/iconsets/Cool3D.Polish/left-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Polish/left.gif
+www/data/openwebmail/images/iconsets/Cool3D.Polish/listview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Polish/logout.gif
 www/data/openwebmail/images/iconsets/Cool3D.Polish/monthview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Polish/owm.gif
@@ -2055,6 +2460,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Polish/reply.gif
 www/data/openwebmail/images/iconsets/Cool3D.Polish/replyall.gif
 www/data/openwebmail/images/iconsets/Cool3D.Polish/right-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Polish/right.gif
+www/data/openwebmail/images/iconsets/Cool3D.Polish/sound.gif
 www/data/openwebmail/images/iconsets/Cool3D.Polish/totrash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Polish/trash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Polish/unread.a.gif
@@ -2067,12 +2473,12 @@ www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/addrbook.s.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/advsearch.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/attach.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/backtofolder.gif
-www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/big52gb.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/blockemail.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/blockrelay.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/calendar.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/chpwd.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/clearaddress.gif
+www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/clearst.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/compose.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/dayview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/down.gif
@@ -2082,6 +2488,8 @@ www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/download.s.ow.g
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/earth.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/editdraft.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/editfroms.gif
+www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/editst.gif
+www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/email.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/export.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/filtersetup.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/first-grey.gif
@@ -2091,7 +2499,6 @@ www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/follow.down.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/follow.up.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/forward.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/forwardasatt.gif
-www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/gb2big5.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/group.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/history.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/import.gif
@@ -2102,6 +2509,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/last-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/last.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/left-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/left.gif
+www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/listview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/logout.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/monthview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/owm.gif
@@ -2116,6 +2524,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/reply.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/replyall.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/right-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/right.gif
+www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/sound.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/totrash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/trash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/unread.a.gif
@@ -2128,12 +2537,12 @@ www/data/openwebmail/images/iconsets/Cool3D.Romanian/addrbook.s.gif
 www/data/openwebmail/images/iconsets/Cool3D.Romanian/advsearch.gif
 www/data/openwebmail/images/iconsets/Cool3D.Romanian/attach.gif
 www/data/openwebmail/images/iconsets/Cool3D.Romanian/backtofolder.gif
-www/data/openwebmail/images/iconsets/Cool3D.Romanian/big52gb.gif
 www/data/openwebmail/images/iconsets/Cool3D.Romanian/blockemail.gif
 www/data/openwebmail/images/iconsets/Cool3D.Romanian/blockrelay.gif
 www/data/openwebmail/images/iconsets/Cool3D.Romanian/calendar.gif
 www/data/openwebmail/images/iconsets/Cool3D.Romanian/chpwd.gif
 www/data/openwebmail/images/iconsets/Cool3D.Romanian/clearaddress.gif
+www/data/openwebmail/images/iconsets/Cool3D.Romanian/clearst.gif
 www/data/openwebmail/images/iconsets/Cool3D.Romanian/compose.gif
 www/data/openwebmail/images/iconsets/Cool3D.Romanian/dayview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Romanian/down.gif
@@ -2143,6 +2552,8 @@ www/data/openwebmail/images/iconsets/Cool3D.Romanian/download.s.ow.gif
 www/data/openwebmail/images/iconsets/Cool3D.Romanian/earth.gif
 www/data/openwebmail/images/iconsets/Cool3D.Romanian/editdraft.gif
 www/data/openwebmail/images/iconsets/Cool3D.Romanian/editfroms.gif
+www/data/openwebmail/images/iconsets/Cool3D.Romanian/editst.gif
+www/data/openwebmail/images/iconsets/Cool3D.Romanian/email.gif
 www/data/openwebmail/images/iconsets/Cool3D.Romanian/export.gif
 www/data/openwebmail/images/iconsets/Cool3D.Romanian/filtersetup.gif
 www/data/openwebmail/images/iconsets/Cool3D.Romanian/first-grey.gif
@@ -2152,7 +2563,6 @@ www/data/openwebmail/images/iconsets/Cool3D.Romanian/follow.down.gif
 www/data/openwebmail/images/iconsets/Cool3D.Romanian/follow.up.gif
 www/data/openwebmail/images/iconsets/Cool3D.Romanian/forward.gif
 www/data/openwebmail/images/iconsets/Cool3D.Romanian/forwardasatt.gif
-www/data/openwebmail/images/iconsets/Cool3D.Romanian/gb2big5.gif
 www/data/openwebmail/images/iconsets/Cool3D.Romanian/group.gif
 www/data/openwebmail/images/iconsets/Cool3D.Romanian/history.gif
 www/data/openwebmail/images/iconsets/Cool3D.Romanian/import.gif
@@ -2163,6 +2573,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Romanian/last-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Romanian/last.gif
 www/data/openwebmail/images/iconsets/Cool3D.Romanian/left-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Romanian/left.gif
+www/data/openwebmail/images/iconsets/Cool3D.Romanian/listview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Romanian/logout.gif
 www/data/openwebmail/images/iconsets/Cool3D.Romanian/monthview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Romanian/owm.gif
@@ -2177,6 +2588,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Romanian/reply.gif
 www/data/openwebmail/images/iconsets/Cool3D.Romanian/replyall.gif
 www/data/openwebmail/images/iconsets/Cool3D.Romanian/right-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Romanian/right.gif
+www/data/openwebmail/images/iconsets/Cool3D.Romanian/sound.gif
 www/data/openwebmail/images/iconsets/Cool3D.Romanian/totrash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Romanian/trash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Romanian/unread.a.gif
@@ -2189,13 +2601,13 @@ www/data/openwebmail/images/iconsets/Cool3D.Slovak/addrbook.s.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/advsearch.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/attach.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/backtofolder.gif
-www/data/openwebmail/images/iconsets/Cool3D.Slovak/big52gb.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/blank.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/blockemail.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/blockrelay.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/calendar.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/chpwd.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/clearaddress.gif
+www/data/openwebmail/images/iconsets/Cool3D.Slovak/clearst.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/compose.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/dayview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/down.gif
@@ -2205,6 +2617,8 @@ www/data/openwebmail/images/iconsets/Cool3D.Slovak/download.s.ow.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/earth.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/editdraft.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/editfroms.gif
+www/data/openwebmail/images/iconsets/Cool3D.Slovak/editst.gif
+www/data/openwebmail/images/iconsets/Cool3D.Slovak/email.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/export.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/filtersetup.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/first-grey.gif
@@ -2214,7 +2628,6 @@ www/data/openwebmail/images/iconsets/Cool3D.Slovak/follow.down.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/follow.up.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/forward.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/forwardasatt.gif
-www/data/openwebmail/images/iconsets/Cool3D.Slovak/gb2big5.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/group.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/history.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/import.gif
@@ -2225,6 +2638,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Slovak/last-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/last.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/left-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/left.gif
+www/data/openwebmail/images/iconsets/Cool3D.Slovak/listview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/logout.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/monthview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/owm.gif
@@ -2239,6 +2653,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Slovak/reply.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/replyall.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/right-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/right.gif
+www/data/openwebmail/images/iconsets/Cool3D.Slovak/sound.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/totrash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/trash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/unread.a.gif
@@ -2246,17 +2661,82 @@ www/data/openwebmail/images/iconsets/Cool3D.Slovak/unread.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/up.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/weekview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Slovak/yearview.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/addrbook.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/addrbook.s.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/advsearch.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/attach.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/backtofolder.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/blank.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/blockemail.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/blockrelay.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/calendar.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/chpwd.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/clearaddress.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/clearst.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/compose.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/dayview.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/down.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/download.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/download.s.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/download.s.ow.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/earth.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/editdraft.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/editfroms.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/editst.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/email.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/export.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/filtersetup.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/first-grey.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/first.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/folder.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/follow.down.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/follow.up.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/forward.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/forwardasatt.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/group.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/history.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/import.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/import.s.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/important.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/info.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/last-grey.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/last.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/left-grey.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/left.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/listview.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/logout.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/monthview.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/owm.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/pop3.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/pop3setup.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/prefs.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/print.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/read.a.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/read.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/refresh.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/reply.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/replyall.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/right-grey.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/right.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/sound.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/totrash.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/trash.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/unread.a.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/unread.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/up.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/weekview.gif
+www/data/openwebmail/images/iconsets/Cool3D.Soumi/yearview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/addrbook.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/addrbook.s.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/advsearch.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/attach.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/backtofolder.gif
-www/data/openwebmail/images/iconsets/Cool3D.Spanish/big52gb.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/blockemail.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/blockrelay.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/calendar.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/chpwd.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/clearaddress.gif
+www/data/openwebmail/images/iconsets/Cool3D.Spanish/clearst.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/compose.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/dayview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/down.gif
@@ -2266,6 +2746,8 @@ www/data/openwebmail/images/iconsets/Cool3D.Spanish/download.s.ow.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/earth.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/editdraft.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/editfroms.gif
+www/data/openwebmail/images/iconsets/Cool3D.Spanish/editst.gif
+www/data/openwebmail/images/iconsets/Cool3D.Spanish/email.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/export.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/filtersetup.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/first-grey.gif
@@ -2275,7 +2757,6 @@ www/data/openwebmail/images/iconsets/Cool3D.Spanish/follow.down.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/follow.up.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/forward.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/forwardasatt.gif
-www/data/openwebmail/images/iconsets/Cool3D.Spanish/gb2big5.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/group.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/history.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/import.gif
@@ -2286,6 +2767,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Spanish/last-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/last.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/left-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/left.gif
+www/data/openwebmail/images/iconsets/Cool3D.Spanish/listview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/logout.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/monthview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/owm.gif
@@ -2300,6 +2782,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Spanish/reply.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/replyall.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/right-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/right.gif
+www/data/openwebmail/images/iconsets/Cool3D.Spanish/sound.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/totrash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/trash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Spanish/unread.a.gif
@@ -2312,13 +2795,13 @@ www/data/openwebmail/images/iconsets/Cool3D.Turkish/addrbook.s.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/advsearch.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/attach.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/backtofolder.gif
-www/data/openwebmail/images/iconsets/Cool3D.Turkish/big52gb.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/blank.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/blockemail.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/blockrelay.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/calendar.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/chpwd.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/clearaddress.gif
+www/data/openwebmail/images/iconsets/Cool3D.Turkish/clearst.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/compose.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/dayview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/down.gif
@@ -2328,6 +2811,8 @@ www/data/openwebmail/images/iconsets/Cool3D.Turkish/download.s.ow.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/earth.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/editdraft.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/editfroms.gif
+www/data/openwebmail/images/iconsets/Cool3D.Turkish/editst.gif
+www/data/openwebmail/images/iconsets/Cool3D.Turkish/email.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/export.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/filtersetup.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/first-grey.gif
@@ -2337,7 +2822,6 @@ www/data/openwebmail/images/iconsets/Cool3D.Turkish/follow.down.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/follow.up.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/forward.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/forwardasatt.gif
-www/data/openwebmail/images/iconsets/Cool3D.Turkish/gb2big5.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/group.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/history.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/import.gif
@@ -2348,6 +2832,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Turkish/last-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/last.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/left-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/left.gif
+www/data/openwebmail/images/iconsets/Cool3D.Turkish/listview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/logout.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/monthview.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/owm.gif
@@ -2362,6 +2847,7 @@ www/data/openwebmail/images/iconsets/Cool3D.Turkish/reply.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/replyall.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/right-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/right.gif
+www/data/openwebmail/images/iconsets/Cool3D.Turkish/sound.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/totrash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/trash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Turkish/unread.a.gif
@@ -2374,13 +2860,13 @@ www/data/openwebmail/images/iconsets/Cool3D/addrbook.s.gif
 www/data/openwebmail/images/iconsets/Cool3D/advsearch.gif
 www/data/openwebmail/images/iconsets/Cool3D/attach.gif
 www/data/openwebmail/images/iconsets/Cool3D/backtofolder.gif
-www/data/openwebmail/images/iconsets/Cool3D/big52gb.gif
 www/data/openwebmail/images/iconsets/Cool3D/blank.gif
 www/data/openwebmail/images/iconsets/Cool3D/blockemail.gif
 www/data/openwebmail/images/iconsets/Cool3D/blockrelay.gif
 www/data/openwebmail/images/iconsets/Cool3D/calendar.gif
 www/data/openwebmail/images/iconsets/Cool3D/chpwd.gif
 www/data/openwebmail/images/iconsets/Cool3D/clearaddress.gif
+www/data/openwebmail/images/iconsets/Cool3D/clearst.gif
 www/data/openwebmail/images/iconsets/Cool3D/compose.gif
 www/data/openwebmail/images/iconsets/Cool3D/dayview.gif
 www/data/openwebmail/images/iconsets/Cool3D/down.gif
@@ -2390,6 +2876,8 @@ www/data/openwebmail/images/iconsets/Cool3D/download.s.ow.gif
 www/data/openwebmail/images/iconsets/Cool3D/earth.gif
 www/data/openwebmail/images/iconsets/Cool3D/editdraft.gif
 www/data/openwebmail/images/iconsets/Cool3D/editfroms.gif
+www/data/openwebmail/images/iconsets/Cool3D/editst.gif
+www/data/openwebmail/images/iconsets/Cool3D/email.gif
 www/data/openwebmail/images/iconsets/Cool3D/export.gif
 www/data/openwebmail/images/iconsets/Cool3D/filtersetup.gif
 www/data/openwebmail/images/iconsets/Cool3D/first-grey.gif
@@ -2399,7 +2887,6 @@ www/data/openwebmail/images/iconsets/Cool3D/follow.down.gif
 www/data/openwebmail/images/iconsets/Cool3D/follow.up.gif
 www/data/openwebmail/images/iconsets/Cool3D/forward.gif
 www/data/openwebmail/images/iconsets/Cool3D/forwardasatt.gif
-www/data/openwebmail/images/iconsets/Cool3D/gb2big5.gif
 www/data/openwebmail/images/iconsets/Cool3D/group.gif
 www/data/openwebmail/images/iconsets/Cool3D/history.gif
 www/data/openwebmail/images/iconsets/Cool3D/import.gif
@@ -2410,6 +2897,7 @@ www/data/openwebmail/images/iconsets/Cool3D/last-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D/last.gif
 www/data/openwebmail/images/iconsets/Cool3D/left-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D/left.gif
+www/data/openwebmail/images/iconsets/Cool3D/listview.gif
 www/data/openwebmail/images/iconsets/Cool3D/logout.gif
 www/data/openwebmail/images/iconsets/Cool3D/monthview.gif
 www/data/openwebmail/images/iconsets/Cool3D/owm.gif
@@ -2424,6 +2912,7 @@ www/data/openwebmail/images/iconsets/Cool3D/reply.gif
 www/data/openwebmail/images/iconsets/Cool3D/replyall.gif
 www/data/openwebmail/images/iconsets/Cool3D/right-grey.gif
 www/data/openwebmail/images/iconsets/Cool3D/right.gif
+www/data/openwebmail/images/iconsets/Cool3D/sound.gif
 www/data/openwebmail/images/iconsets/Cool3D/totrash.gif
 www/data/openwebmail/images/iconsets/Cool3D/trash.gif
 www/data/openwebmail/images/iconsets/Cool3D/unread.a.gif
@@ -2436,12 +2925,12 @@ www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/addrbook.s.gif
 www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/advsearch.gif
 www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/attach.gif
 www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/backtofolder.gif
-www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/big52gb.gif
 www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/blockemail.gif
 www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/blockrelay.gif
 www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/calendar.gif
 www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/chpwd.gif
 www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/clearaddress.gif
+www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/clearst.gif
 www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/compose.gif
 www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/dayview.gif
 www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/down.gif
@@ -2451,6 +2940,8 @@ www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/download.s.ow.g
 www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/earth.gif
 www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/editdraft.gif
 www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/editfroms.gif
+www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/editst.gif
+www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/email.gif
 www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/export.gif
 www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/filtersetup.gif
 www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/first-grey.gif
@@ -2460,7 +2951,6 @@ www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/follow.down.gif
 www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/follow.up.gif
 www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/forward.gif
 www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/forwardasatt.gif
-www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/gb2big5.gif
 www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/group.gif
 www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/history.gif
 www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/import.gif
@@ -2471,6 +2961,7 @@ www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/last-grey.gif
 www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/last.gif
 www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/left-grey.gif
 www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/left.gif
+www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/listview.gif
 www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/logout.gif
 www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/monthview.gif
 www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/owm.gif
@@ -2485,6 +2976,7 @@ www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/reply.gif
 www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/replyall.gif
 www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/right-grey.gif
 www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/right.gif
+www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/sound.gif
 www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/totrash.gif
 www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/trash.gif
 www/data/openwebmail/images/iconsets/Default.Chinese.Traditional/unread.a.gif
@@ -2497,12 +2989,12 @@ www/data/openwebmail/images/iconsets/Default.Deutsch/addrbook.s.gif
 www/data/openwebmail/images/iconsets/Default.Deutsch/advsearch.gif
 www/data/openwebmail/images/iconsets/Default.Deutsch/attach.gif
 www/data/openwebmail/images/iconsets/Default.Deutsch/backtofolder.gif
-www/data/openwebmail/images/iconsets/Default.Deutsch/big52gb.gif
 www/data/openwebmail/images/iconsets/Default.Deutsch/blockemail.gif
 www/data/openwebmail/images/iconsets/Default.Deutsch/blockrelay.gif
 www/data/openwebmail/images/iconsets/Default.Deutsch/calendar.gif
 www/data/openwebmail/images/iconsets/Default.Deutsch/chpwd.gif
 www/data/openwebmail/images/iconsets/Default.Deutsch/clearaddress.gif
+www/data/openwebmail/images/iconsets/Default.Deutsch/clearst.gif
 www/data/openwebmail/images/iconsets/Default.Deutsch/compose.gif
 www/data/openwebmail/images/iconsets/Default.Deutsch/dayview.gif
 www/data/openwebmail/images/iconsets/Default.Deutsch/down.gif
@@ -2512,6 +3004,8 @@ www/data/openwebmail/images/iconsets/Default.Deutsch/download.s.ow.gif
 www/data/openwebmail/images/iconsets/Default.Deutsch/earth.gif
 www/data/openwebmail/images/iconsets/Default.Deutsch/editdraft.gif
 www/data/openwebmail/images/iconsets/Default.Deutsch/editfroms.gif
+www/data/openwebmail/images/iconsets/Default.Deutsch/editst.gif
+www/data/openwebmail/images/iconsets/Default.Deutsch/email.gif
 www/data/openwebmail/images/iconsets/Default.Deutsch/export.gif
 www/data/openwebmail/images/iconsets/Default.Deutsch/filtersetup.gif
 www/data/openwebmail/images/iconsets/Default.Deutsch/first-grey.gif
@@ -2521,7 +3015,6 @@ www/data/openwebmail/images/iconsets/Default.Deutsch/follow.down.gif
 www/data/openwebmail/images/iconsets/Default.Deutsch/follow.up.gif
 www/data/openwebmail/images/iconsets/Default.Deutsch/forward.gif
 www/data/openwebmail/images/iconsets/Default.Deutsch/forwardasatt.gif
-www/data/openwebmail/images/iconsets/Default.Deutsch/gb2big5.gif
 www/data/openwebmail/images/iconsets/Default.Deutsch/group.gif
 www/data/openwebmail/images/iconsets/Default.Deutsch/history.gif
 www/data/openwebmail/images/iconsets/Default.Deutsch/import.gif
@@ -2532,6 +3025,7 @@ www/data/openwebmail/images/iconsets/Default.Deutsch/last-grey.gif
 www/data/openwebmail/images/iconsets/Default.Deutsch/last.gif
 www/data/openwebmail/images/iconsets/Default.Deutsch/left-grey.gif
 www/data/openwebmail/images/iconsets/Default.Deutsch/left.gif
+www/data/openwebmail/images/iconsets/Default.Deutsch/listview.gif
 www/data/openwebmail/images/iconsets/Default.Deutsch/logout.gif
 www/data/openwebmail/images/iconsets/Default.Deutsch/monthview.gif
 www/data/openwebmail/images/iconsets/Default.Deutsch/owm.gif
@@ -2546,6 +3040,7 @@ www/data/openwebmail/images/iconsets/Default.Deutsch/reply.gif
 www/data/openwebmail/images/iconsets/Default.Deutsch/replyall.gif
 www/data/openwebmail/images/iconsets/Default.Deutsch/right-grey.gif
 www/data/openwebmail/images/iconsets/Default.Deutsch/right.gif
+www/data/openwebmail/images/iconsets/Default.Deutsch/sound.gif
 www/data/openwebmail/images/iconsets/Default.Deutsch/totrash.gif
 www/data/openwebmail/images/iconsets/Default.Deutsch/trash.gif
 www/data/openwebmail/images/iconsets/Default.Deutsch/unread.a.gif
@@ -2558,12 +3053,12 @@ www/data/openwebmail/images/iconsets/Default.English/addrbook.s.gif
 www/data/openwebmail/images/iconsets/Default.English/advsearch.gif
 www/data/openwebmail/images/iconsets/Default.English/attach.gif
 www/data/openwebmail/images/iconsets/Default.English/backtofolder.gif
-www/data/openwebmail/images/iconsets/Default.English/big52gb.gif
 www/data/openwebmail/images/iconsets/Default.English/blockemail.gif
 www/data/openwebmail/images/iconsets/Default.English/blockrelay.gif
 www/data/openwebmail/images/iconsets/Default.English/calendar.gif
 www/data/openwebmail/images/iconsets/Default.English/chpwd.gif
 www/data/openwebmail/images/iconsets/Default.English/clearaddress.gif
+www/data/openwebmail/images/iconsets/Default.English/clearst.gif
 www/data/openwebmail/images/iconsets/Default.English/compose.gif
 www/data/openwebmail/images/iconsets/Default.English/dayview.gif
 www/data/openwebmail/images/iconsets/Default.English/down.gif
@@ -2573,6 +3068,8 @@ www/data/openwebmail/images/iconsets/Default.English/download.s.ow.gif
 www/data/openwebmail/images/iconsets/Default.English/earth.gif
 www/data/openwebmail/images/iconsets/Default.English/editdraft.gif
 www/data/openwebmail/images/iconsets/Default.English/editfroms.gif
+www/data/openwebmail/images/iconsets/Default.English/editst.gif
+www/data/openwebmail/images/iconsets/Default.English/email.gif
 www/data/openwebmail/images/iconsets/Default.English/export.gif
 www/data/openwebmail/images/iconsets/Default.English/filtersetup.gif
 www/data/openwebmail/images/iconsets/Default.English/first-grey.gif
@@ -2582,7 +3079,6 @@ www/data/openwebmail/images/iconsets/Default.English/follow.down.gif
 www/data/openwebmail/images/iconsets/Default.English/follow.up.gif
 www/data/openwebmail/images/iconsets/Default.English/forward.gif
 www/data/openwebmail/images/iconsets/Default.English/forwardasatt.gif
-www/data/openwebmail/images/iconsets/Default.English/gb2big5.gif
 www/data/openwebmail/images/iconsets/Default.English/group.gif
 www/data/openwebmail/images/iconsets/Default.English/history.gif
 www/data/openwebmail/images/iconsets/Default.English/import.gif
@@ -2593,6 +3089,7 @@ www/data/openwebmail/images/iconsets/Default.English/last-grey.gif
 www/data/openwebmail/images/iconsets/Default.English/last.gif
 www/data/openwebmail/images/iconsets/Default.English/left-grey.gif
 www/data/openwebmail/images/iconsets/Default.English/left.gif
+www/data/openwebmail/images/iconsets/Default.English/listview.gif
 www/data/openwebmail/images/iconsets/Default.English/logout.gif
 www/data/openwebmail/images/iconsets/Default.English/monthview.gif
 www/data/openwebmail/images/iconsets/Default.English/owm.gif
@@ -2607,6 +3104,7 @@ www/data/openwebmail/images/iconsets/Default.English/reply.gif
 www/data/openwebmail/images/iconsets/Default.English/replyall.gif
 www/data/openwebmail/images/iconsets/Default.English/right-grey.gif
 www/data/openwebmail/images/iconsets/Default.English/right.gif
+www/data/openwebmail/images/iconsets/Default.English/sound.gif
 www/data/openwebmail/images/iconsets/Default.English/totrash.gif
 www/data/openwebmail/images/iconsets/Default.English/trash.gif
 www/data/openwebmail/images/iconsets/Default.English/unread.a.gif
@@ -2619,12 +3117,12 @@ www/data/openwebmail/images/iconsets/Default.Norwegian/addrbook.s.gif
 www/data/openwebmail/images/iconsets/Default.Norwegian/advsearch.gif
 www/data/openwebmail/images/iconsets/Default.Norwegian/attach.gif
 www/data/openwebmail/images/iconsets/Default.Norwegian/backtofolder.gif
-www/data/openwebmail/images/iconsets/Default.Norwegian/big52gb.gif
 www/data/openwebmail/images/iconsets/Default.Norwegian/blockemail.gif
 www/data/openwebmail/images/iconsets/Default.Norwegian/blockrelay.gif
 www/data/openwebmail/images/iconsets/Default.Norwegian/calendar.gif
 www/data/openwebmail/images/iconsets/Default.Norwegian/chpwd.gif
 www/data/openwebmail/images/iconsets/Default.Norwegian/clearaddress.gif
+www/data/openwebmail/images/iconsets/Default.Norwegian/clearst.gif
 www/data/openwebmail/images/iconsets/Default.Norwegian/compose.gif
 www/data/openwebmail/images/iconsets/Default.Norwegian/dayview.gif
 www/data/openwebmail/images/iconsets/Default.Norwegian/down.gif
@@ -2634,6 +3132,8 @@ www/data/openwebmail/images/iconsets/Default.Norwegian/download.s.ow.gif
 www/data/openwebmail/images/iconsets/Default.Norwegian/earth.gif
 www/data/openwebmail/images/iconsets/Default.Norwegian/editdraft.gif
 www/data/openwebmail/images/iconsets/Default.Norwegian/editfroms.gif
+www/data/openwebmail/images/iconsets/Default.Norwegian/editst.gif
+www/data/openwebmail/images/iconsets/Default.Norwegian/email.gif
 www/data/openwebmail/images/iconsets/Default.Norwegian/export.gif
 www/data/openwebmail/images/iconsets/Default.Norwegian/filtersetup.gif
 www/data/openwebmail/images/iconsets/Default.Norwegian/first-grey.gif
@@ -2643,7 +3143,6 @@ www/data/openwebmail/images/iconsets/Default.Norwegian/follow.down.gif
 www/data/openwebmail/images/iconsets/Default.Norwegian/follow.up.gif
 www/data/openwebmail/images/iconsets/Default.Norwegian/forward.gif
 www/data/openwebmail/images/iconsets/Default.Norwegian/forwardasatt.gif
-www/data/openwebmail/images/iconsets/Default.Norwegian/gb2big5.gif
 www/data/openwebmail/images/iconsets/Default.Norwegian/group.gif
 www/data/openwebmail/images/iconsets/Default.Norwegian/history.gif
 www/data/openwebmail/images/iconsets/Default.Norwegian/import.gif
@@ -2654,6 +3153,7 @@ www/data/openwebmail/images/iconsets/Default.Norwegian/last-grey.gif
 www/data/openwebmail/images/iconsets/Default.Norwegian/last.gif
 www/data/openwebmail/images/iconsets/Default.Norwegian/left-grey.gif
 www/data/openwebmail/images/iconsets/Default.Norwegian/left.gif
+www/data/openwebmail/images/iconsets/Default.Norwegian/listview.gif
 www/data/openwebmail/images/iconsets/Default.Norwegian/logout.gif
 www/data/openwebmail/images/iconsets/Default.Norwegian/monthview.gif
 www/data/openwebmail/images/iconsets/Default.Norwegian/owm.gif
@@ -2668,6 +3168,7 @@ www/data/openwebmail/images/iconsets/Default.Norwegian/reply.gif
 www/data/openwebmail/images/iconsets/Default.Norwegian/replyall.gif
 www/data/openwebmail/images/iconsets/Default.Norwegian/right-grey.gif
 www/data/openwebmail/images/iconsets/Default.Norwegian/right.gif
+www/data/openwebmail/images/iconsets/Default.Norwegian/sound.gif
 www/data/openwebmail/images/iconsets/Default.Norwegian/totrash.gif
 www/data/openwebmail/images/iconsets/Default.Norwegian/trash.gif
 www/data/openwebmail/images/iconsets/Default.Norwegian/unread.a.gif
@@ -2680,12 +3181,12 @@ www/data/openwebmail/images/iconsets/Default.Slovak/addrbook.s.gif
 www/data/openwebmail/images/iconsets/Default.Slovak/advsearch.gif
 www/data/openwebmail/images/iconsets/Default.Slovak/attach.gif
 www/data/openwebmail/images/iconsets/Default.Slovak/backtofolder.gif
-www/data/openwebmail/images/iconsets/Default.Slovak/big52gb.gif
 www/data/openwebmail/images/iconsets/Default.Slovak/blockemail.gif
 www/data/openwebmail/images/iconsets/Default.Slovak/blockrelay.gif
 www/data/openwebmail/images/iconsets/Default.Slovak/calendar.gif
 www/data/openwebmail/images/iconsets/Default.Slovak/chpwd.gif
 www/data/openwebmail/images/iconsets/Default.Slovak/clearaddress.gif
+www/data/openwebmail/images/iconsets/Default.Slovak/clearst.gif
 www/data/openwebmail/images/iconsets/Default.Slovak/compose.gif
 www/data/openwebmail/images/iconsets/Default.Slovak/dayview.gif
 www/data/openwebmail/images/iconsets/Default.Slovak/down.gif
@@ -2695,6 +3196,8 @@ www/data/openwebmail/images/iconsets/Default.Slovak/download.s.ow.gif
 www/data/openwebmail/images/iconsets/Default.Slovak/earth.gif
 www/data/openwebmail/images/iconsets/Default.Slovak/editdraft.gif
 www/data/openwebmail/images/iconsets/Default.Slovak/editfroms.gif
+www/data/openwebmail/images/iconsets/Default.Slovak/editst.gif
+www/data/openwebmail/images/iconsets/Default.Slovak/email.gif
 www/data/openwebmail/images/iconsets/Default.Slovak/export.gif
 www/data/openwebmail/images/iconsets/Default.Slovak/filtersetup.gif
 www/data/openwebmail/images/iconsets/Default.Slovak/first-grey.gif
@@ -2704,7 +3207,6 @@ www/data/openwebmail/images/iconsets/Default.Slovak/follow.down.gif
 www/data/openwebmail/images/iconsets/Default.Slovak/follow.up.gif
 www/data/openwebmail/images/iconsets/Default.Slovak/forward.gif
 www/data/openwebmail/images/iconsets/Default.Slovak/forwardasatt.gif
-www/data/openwebmail/images/iconsets/Default.Slovak/gb2big5.gif
 www/data/openwebmail/images/iconsets/Default.Slovak/group.gif
 www/data/openwebmail/images/iconsets/Default.Slovak/history.gif
 www/data/openwebmail/images/iconsets/Default.Slovak/import.gif
@@ -2715,6 +3217,7 @@ www/data/openwebmail/images/iconsets/Default.Slovak/last-grey.gif
 www/data/openwebmail/images/iconsets/Default.Slovak/last.gif
 www/data/openwebmail/images/iconsets/Default.Slovak/left-grey.gif
 www/data/openwebmail/images/iconsets/Default.Slovak/left.gif
+www/data/openwebmail/images/iconsets/Default.Slovak/listview.gif
 www/data/openwebmail/images/iconsets/Default.Slovak/logout.gif
 www/data/openwebmail/images/iconsets/Default.Slovak/monthview.gif
 www/data/openwebmail/images/iconsets/Default.Slovak/owm.gif
@@ -2729,6 +3232,7 @@ www/data/openwebmail/images/iconsets/Default.Slovak/reply.gif
 www/data/openwebmail/images/iconsets/Default.Slovak/replyall.gif
 www/data/openwebmail/images/iconsets/Default.Slovak/right-grey.gif
 www/data/openwebmail/images/iconsets/Default.Slovak/right.gif
+www/data/openwebmail/images/iconsets/Default.Slovak/sound.gif
 www/data/openwebmail/images/iconsets/Default.Slovak/totrash.gif
 www/data/openwebmail/images/iconsets/Default.Slovak/trash.gif
 www/data/openwebmail/images/iconsets/Default.Slovak/unread.a.gif
@@ -2741,12 +3245,12 @@ www/data/openwebmail/images/iconsets/Default.Spanish/addrbook.s.gif
 www/data/openwebmail/images/iconsets/Default.Spanish/advsearch.gif
 www/data/openwebmail/images/iconsets/Default.Spanish/attach.gif
 www/data/openwebmail/images/iconsets/Default.Spanish/backtofolder.gif
-www/data/openwebmail/images/iconsets/Default.Spanish/big52gb.gif
 www/data/openwebmail/images/iconsets/Default.Spanish/blockemail.gif
 www/data/openwebmail/images/iconsets/Default.Spanish/blockrelay.gif
 www/data/openwebmail/images/iconsets/Default.Spanish/calendar.gif
 www/data/openwebmail/images/iconsets/Default.Spanish/chpwd.gif
 www/data/openwebmail/images/iconsets/Default.Spanish/clearaddress.gif
+www/data/openwebmail/images/iconsets/Default.Spanish/clearst.gif
 www/data/openwebmail/images/iconsets/Default.Spanish/compose.gif
 www/data/openwebmail/images/iconsets/Default.Spanish/dayview.gif
 www/data/openwebmail/images/iconsets/Default.Spanish/down.gif
@@ -2756,6 +3260,8 @@ www/data/openwebmail/images/iconsets/Default.Spanish/download.s.ow.gif
 www/data/openwebmail/images/iconsets/Default.Spanish/earth.gif
 www/data/openwebmail/images/iconsets/Default.Spanish/editdraft.gif
 www/data/openwebmail/images/iconsets/Default.Spanish/editfroms.gif
+www/data/openwebmail/images/iconsets/Default.Spanish/editst.gif
+www/data/openwebmail/images/iconsets/Default.Spanish/email.gif
 www/data/openwebmail/images/iconsets/Default.Spanish/export.gif
 www/data/openwebmail/images/iconsets/Default.Spanish/filtersetup.gif
 www/data/openwebmail/images/iconsets/Default.Spanish/first-grey.gif
@@ -2765,7 +3271,6 @@ www/data/openwebmail/images/iconsets/Default.Spanish/follow.down.gif
 www/data/openwebmail/images/iconsets/Default.Spanish/follow.up.gif
 www/data/openwebmail/images/iconsets/Default.Spanish/forward.gif
 www/data/openwebmail/images/iconsets/Default.Spanish/forwardasatt.gif
-www/data/openwebmail/images/iconsets/Default.Spanish/gb2big5.gif
 www/data/openwebmail/images/iconsets/Default.Spanish/group.gif
 www/data/openwebmail/images/iconsets/Default.Spanish/history.gif
 www/data/openwebmail/images/iconsets/Default.Spanish/import.gif
@@ -2776,6 +3281,7 @@ www/data/openwebmail/images/iconsets/Default.Spanish/last-grey.gif
 www/data/openwebmail/images/iconsets/Default.Spanish/last.gif
 www/data/openwebmail/images/iconsets/Default.Spanish/left-grey.gif
 www/data/openwebmail/images/iconsets/Default.Spanish/left.gif
+www/data/openwebmail/images/iconsets/Default.Spanish/listview.gif
 www/data/openwebmail/images/iconsets/Default.Spanish/logout.gif
 www/data/openwebmail/images/iconsets/Default.Spanish/monthview.gif
 www/data/openwebmail/images/iconsets/Default.Spanish/owm.gif
@@ -2790,6 +3296,7 @@ www/data/openwebmail/images/iconsets/Default.Spanish/reply.gif
 www/data/openwebmail/images/iconsets/Default.Spanish/replyall.gif
 www/data/openwebmail/images/iconsets/Default.Spanish/right-grey.gif
 www/data/openwebmail/images/iconsets/Default.Spanish/right.gif
+www/data/openwebmail/images/iconsets/Default.Spanish/sound.gif
 www/data/openwebmail/images/iconsets/Default.Spanish/totrash.gif
 www/data/openwebmail/images/iconsets/Default.Spanish/trash.gif
 www/data/openwebmail/images/iconsets/Default.Spanish/unread.a.gif
@@ -2802,12 +3309,12 @@ www/data/openwebmail/images/iconsets/Default/addrbook.s.gif
 www/data/openwebmail/images/iconsets/Default/advsearch.gif
 www/data/openwebmail/images/iconsets/Default/attach.gif
 www/data/openwebmail/images/iconsets/Default/backtofolder.gif
-www/data/openwebmail/images/iconsets/Default/big52gb.gif
 www/data/openwebmail/images/iconsets/Default/blockemail.gif
 www/data/openwebmail/images/iconsets/Default/blockrelay.gif
 www/data/openwebmail/images/iconsets/Default/calendar.gif
 www/data/openwebmail/images/iconsets/Default/chpwd.gif
 www/data/openwebmail/images/iconsets/Default/clearaddress.gif
+www/data/openwebmail/images/iconsets/Default/clearst.gif
 www/data/openwebmail/images/iconsets/Default/compose.gif
 www/data/openwebmail/images/iconsets/Default/dayview.gif
 www/data/openwebmail/images/iconsets/Default/down.gif
@@ -2817,6 +3324,8 @@ www/data/openwebmail/images/iconsets/Default/download.s.ow.gif
 www/data/openwebmail/images/iconsets/Default/earth.gif
 www/data/openwebmail/images/iconsets/Default/editdraft.gif
 www/data/openwebmail/images/iconsets/Default/editfroms.gif
+www/data/openwebmail/images/iconsets/Default/editst.gif
+www/data/openwebmail/images/iconsets/Default/email.gif
 www/data/openwebmail/images/iconsets/Default/export.gif
 www/data/openwebmail/images/iconsets/Default/filtersetup.gif
 www/data/openwebmail/images/iconsets/Default/first-grey.gif
@@ -2826,7 +3335,6 @@ www/data/openwebmail/images/iconsets/Default/follow.down.gif
 www/data/openwebmail/images/iconsets/Default/follow.up.gif
 www/data/openwebmail/images/iconsets/Default/forward.gif
 www/data/openwebmail/images/iconsets/Default/forwardasatt.gif
-www/data/openwebmail/images/iconsets/Default/gb2big5.gif
 www/data/openwebmail/images/iconsets/Default/group.gif
 www/data/openwebmail/images/iconsets/Default/history.gif
 www/data/openwebmail/images/iconsets/Default/import.gif
@@ -2837,6 +3345,7 @@ www/data/openwebmail/images/iconsets/Default/last-grey.gif
 www/data/openwebmail/images/iconsets/Default/last.gif
 www/data/openwebmail/images/iconsets/Default/left-grey.gif
 www/data/openwebmail/images/iconsets/Default/left.gif
+www/data/openwebmail/images/iconsets/Default/listview.gif
 www/data/openwebmail/images/iconsets/Default/logout.gif
 www/data/openwebmail/images/iconsets/Default/monthview.gif
 www/data/openwebmail/images/iconsets/Default/owm.gif
@@ -2851,6 +3360,7 @@ www/data/openwebmail/images/iconsets/Default/reply.gif
 www/data/openwebmail/images/iconsets/Default/replyall.gif
 www/data/openwebmail/images/iconsets/Default/right-grey.gif
 www/data/openwebmail/images/iconsets/Default/right.gif
+www/data/openwebmail/images/iconsets/Default/sound.gif
 www/data/openwebmail/images/iconsets/Default/totrash.gif
 www/data/openwebmail/images/iconsets/Default/trash.gif
 www/data/openwebmail/images/iconsets/Default/unread.a.gif
@@ -2858,6 +3368,9 @@ www/data/openwebmail/images/iconsets/Default/unread.gif
 www/data/openwebmail/images/iconsets/Default/up.gif
 www/data/openwebmail/images/iconsets/Default/weekview.gif
 www/data/openwebmail/images/iconsets/Default/yearview.gif
+www/data/openwebmail/images/iconsets/Text.Chinese.Simplified/icontext
+www/data/openwebmail/images/iconsets/Text.Chinese.Traditional/icontext
+www/data/openwebmail/images/iconsets/Text.English/icontext
 www/data/openwebmail/images/openwebmail.gif
 www/data/openwebmail/images/openwebmail.ico
 www/data/openwebmail/images/powered-by-openwebmail.gif
@@ -2879,11 +3392,41 @@ www/data/openwebmail/images/smilies/FaceYukky.png
 www/data/openwebmail/images/spon_by_norv.gif
 www/data/openwebmail/images/timezone.jpg
 www/data/openwebmail/index.html
+www/data/openwebmail/javascript/showmsg.js
 www/data/openwebmail/openwebmail.html
 www/data/openwebmail/sounds/YouGotMail.English.wav
 www/data/openwebmail/sounds/YouGotMail.French.wav
+www/data/openwebmail/sounds/addamsahmailsin.wav
+www/data/openwebmail/sounds/addamsmailsin.wav
+www/data/openwebmail/sounds/alert.wav
+www/data/openwebmail/sounds/cuckoo.wav
+www/data/openwebmail/sounds/delivery.wav
+www/data/openwebmail/sounds/doorbell.wav
+www/data/openwebmail/sounds/duhmail.wav
+www/data/openwebmail/sounds/gnid3.wav
+www/data/openwebmail/sounds/gotmail.wav
+www/data/openwebmail/sounds/halmsgs.wav
+www/data/openwebmail/sounds/hommer.wav
+www/data/openwebmail/sounds/incoming.wav
+www/data/openwebmail/sounds/intel.wav
+www/data/openwebmail/sounds/intercom.wav
+www/data/openwebmail/sounds/jetsndb.wav
+www/data/openwebmail/sounds/junkmail.wav
+www/data/openwebmail/sounds/letter.wav
+www/data/openwebmail/sounds/ltr4me.wav
+www/data/openwebmail/sounds/madmail.wav
+www/data/openwebmail/sounds/mailsong.wav
+www/data/openwebmail/sounds/mailvato.wav
+www/data/openwebmail/sounds/msg4usir.wav
+www/data/openwebmail/sounds/newmsg.wav
+www/data/openwebmail/sounds/robymail.wav
+www/data/openwebmail/sounds/silymail.wav
 @dirrm www/data/openwebmail/sounds
+@dirrm www/data/openwebmail/javascript
 @dirrm www/data/openwebmail/images/smilies
+@dirrm www/data/openwebmail/images/iconsets/Text.English
+@dirrm www/data/openwebmail/images/iconsets/Text.Chinese.Traditional
+@dirrm www/data/openwebmail/images/iconsets/Text.Chinese.Simplified
 @dirrm www/data/openwebmail/images/iconsets/Default.Spanish
 @dirrm www/data/openwebmail/images/iconsets/Default.Slovak
 @dirrm www/data/openwebmail/images/iconsets/Default.Norwegian
@@ -2893,6 +3436,7 @@ www/data/openwebmail/sounds/YouGotMail.French.wav
 @dirrm www/data/openwebmail/images/iconsets/Default
 @dirrm www/data/openwebmail/images/iconsets/Cool3D.Turkish
 @dirrm www/data/openwebmail/images/iconsets/Cool3D.Spanish
+@dirrm www/data/openwebmail/images/iconsets/Cool3D.Soumi
 @dirrm www/data/openwebmail/images/iconsets/Cool3D.Slovak
 @dirrm www/data/openwebmail/images/iconsets/Cool3D.Romanian
 @dirrm www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian
@@ -2901,6 +3445,7 @@ www/data/openwebmail/sounds/YouGotMail.French.wav
 @dirrm www/data/openwebmail/images/iconsets/Cool3D.Large.English
 @dirrm www/data/openwebmail/images/iconsets/Cool3D.Korean
 @dirrm www/data/openwebmail/images/iconsets/Cool3D.Italian
+@dirrm www/data/openwebmail/images/iconsets/Cool3D.Hellenic
 @dirrm www/data/openwebmail/images/iconsets/Cool3D.Francais
 @dirrm www/data/openwebmail/images/iconsets/Cool3D.English
 @dirrm www/data/openwebmail/images/iconsets/Cool3D.Dutch
@@ -2908,12 +3453,29 @@ www/data/openwebmail/sounds/YouGotMail.French.wav
 @dirrm www/data/openwebmail/images/iconsets/Cool3D.Danish
 @dirrm www/data/openwebmail/images/iconsets/Cool3D.Czech
 @dirrm www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional
+@dirrm www/data/openwebmail/images/iconsets/Cool3D.Chinese.Simplified
 @dirrm www/data/openwebmail/images/iconsets/Cool3D.Catalan
 @dirrm www/data/openwebmail/images/iconsets/Cool3D.Bulgarian
 @dirrm www/data/openwebmail/images/iconsets/Cool3D
 @dirrm www/data/openwebmail/images/iconsets
 @dirrm www/data/openwebmail/images/backgrounds
 @dirrm www/data/openwebmail/images
+@dirrm www/data/openwebmail/help/en/tutorial/toolbars
+@dirrm www/data/openwebmail/help/en/tutorial/notes
+@dirrm www/data/openwebmail/help/en/tutorial/messages
+@dirrm www/data/openwebmail/help/en/tutorial/configuration
+@dirrm www/data/openwebmail/help/en/tutorial/calendar
+@dirrm www/data/openwebmail/help/en/tutorial/basics
+@dirrm www/data/openwebmail/help/en/tutorial/address_book
+@dirrm www/data/openwebmail/help/en/tutorial
+@dirrm www/data/openwebmail/help/en/templates_and_data
+@dirrm www/data/openwebmail/help/en/images/toolbars
+@dirrm www/data/openwebmail/help/en/images/screens
+@dirrm www/data/openwebmail/help/en/images/buttons
+@dirrm www/data/openwebmail/help/en/images
+@dirrm www/data/openwebmail/help/en/def
+@dirrm www/data/openwebmail/help/en
+@dirrm www/data/openwebmail/help
 @dirrm www/data/openwebmail/doc
 @dirrm www/data/openwebmail
 @dirrm www/cgi-bin/openwebmail/uty
@@ -2931,11 +3493,11 @@ www/data/openwebmail/sounds/YouGotMail.French.wav
 @dirrm www/cgi-bin/openwebmail/etc/templates/pt_BR
 @dirrm www/cgi-bin/openwebmail/etc/templates/pt
 @dirrm www/cgi-bin/openwebmail/etc/templates/pl
-@dirrm www/cgi-bin/openwebmail/etc/templates/no_NY
 @dirrm www/cgi-bin/openwebmail/etc/templates/no
 @dirrm www/cgi-bin/openwebmail/etc/templates/nl
 @dirrm www/cgi-bin/openwebmail/etc/templates/lt
 @dirrm www/cgi-bin/openwebmail/etc/templates/kr
+@dirrm www/cgi-bin/openwebmail/etc/templates/ja_JP.eucJP
 @dirrm www/cgi-bin/openwebmail/etc/templates/ja_JP.Shift_JIS
 @dirrm www/cgi-bin/openwebmail/etc/templates/it
 @dirrm www/cgi-bin/openwebmail/etc/templates/id
@@ -2944,6 +3506,7 @@ www/data/openwebmail/sounds/YouGotMail.French.wav
 @dirrm www/cgi-bin/openwebmail/etc/templates/fi
 @dirrm www/cgi-bin/openwebmail/etc/templates/es
 @dirrm www/cgi-bin/openwebmail/etc/templates/en
+@dirrm www/cgi-bin/openwebmail/etc/templates/el
 @dirrm www/cgi-bin/openwebmail/etc/templates/de
 @dirrm www/cgi-bin/openwebmail/etc/templates/da
 @dirrm www/cgi-bin/openwebmail/etc/templates/cs
