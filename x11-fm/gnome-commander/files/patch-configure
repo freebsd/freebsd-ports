@@ -1,0 +1,11 @@
+--- configure.orig	Fri Apr 26 20:09:18 2002
++++ configure	Fri Apr 26 20:09:42 2002
+@@ -4265,7 +4265,7 @@
+ if test "x${prefix}" = "xNONE"; then
+   PACKAGE_PIXMAPS_DIR="${ac_default_prefix}/share/pixmaps/${PACKAGE}"
+ else
+-  PACKAGE_PIXMAPS_DIR="${prefix}/share/pixmaps/${PACKAGE}"
++  PACKAGE_PIXMAPS_DIR="${datadir}/pixmaps/${PACKAGE}"
+ fi
+ 
+ PIXMAPS_DIR="-DPIXMAPS_DIR=\\\"$PACKAGE_PIXMAPS_DIR\\\""
