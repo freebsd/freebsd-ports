@@ -55,6 +55,7 @@ while [ "$1" ]; do
 			;;
 		\"FreeType\")
 			echo "LIB_DEPENDS+=		ttf.3:\${PORTSDIR}/print/freetype"
+			echo "PHP3_CONF_ARGS+=	--with-ttf=\${PREFIX}"
 			if [ -z "$GD" ]; then
 				set $* \"GD\"
 			fi
