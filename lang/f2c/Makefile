@@ -8,10 +8,11 @@
 PORTNAME=	f2c
 PORTVERSION=	3.0.0
 CATEGORIES=	lang
-MASTER_SITES=	ftp://troutmask.apl.washington.edu/pub/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	lioux
 DISTNAME=	f2c-freebsd.3.0.0
 
-MAINTAINER=	kargl@troutmask.apl.washington.edu
+MAINTAINER=	ports@FreeBSD.org
 
 .include <bsd.port.pre.mk>
 

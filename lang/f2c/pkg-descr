@@ -3,9 +3,5 @@ Fortran-to-C converter available from ftp.netlib.org.  This
 software was originally developed by AT&T, Lucent Technologies,
 and Bellcore.  The port contains some enhancements for FreeBSD.
 
-WWW: http://www.netlib.org
-FTP: ftp://ftp.netlib.org
-
---
-Steve
-kargl@troutmask.apl.washington.edu
+WWW: http://www.netlib.org/
+FTP: ftp://ftp.netlib.org/
