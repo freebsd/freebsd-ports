@@ -28,7 +28,7 @@ USE_BZIP2=	yes
 .include <bsd.port.pre.mk>
 
 GCC_REV=	${DISTNAME:S/gcc-//g}
-LIBSTDCPP_REV=	4
+LIBSTDCPP_REV=	2100
 
 .if ${PORTOBJFORMAT} == "elf"
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
