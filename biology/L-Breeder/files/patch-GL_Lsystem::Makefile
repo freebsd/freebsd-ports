@@ -1,0 +1,11 @@
+--- GL_Lsystem/Makefile.orig	Wed Aug 16 08:08:27 2000
++++ GL_Lsystem/Makefile	Tue Jan 22 00:58:31 2002
+@@ -2,6 +2,8 @@
+ 
+ .PHONY : clean all
+ 
++CFLAGS+= -I${X11BASE}/include
++
+ all          : GLGraphics.o GL_Lsystem.o trackball.o Lstring Lturtle
+ 
+ GLGraphics.o : GLGraphics.cpp  GLGraphics.h ../Extras/vect3.h ../Lsystem/UIBaseClass.h
