@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2002-04-01
+SNAPDATE=	2002-04-15
 SNAPVER=	${SNAPDATE:S/-//g}
 
 PORTNAME=	gcc
@@ -68,6 +68,7 @@ USE_BISON=	yes
 CONFIGURE_ARGS=	--disable-nls --with-gnu-as --with-gnu-ld \
 		--with-gxx-include-dir=${TARGLIB}/include/g++
 #CONFIGURE_ARGS+=	--program-prefix=e
+CONFIGURE_ARGS+=	--disable-libgcj	# does not bootstrap now
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 .if defined(WANT_SHAREDLIBS)
 CONFIGURE_ARGS+= --enable-shared
