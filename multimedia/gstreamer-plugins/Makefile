@@ -792,14 +792,14 @@ PLIST_SUB+=	XINE=""
 .endif
 
 # xvid
-.ifndef(WITH_XVID)
+#.ifndef(WITH_XVID)
 CONFIGURE_ARGS+=	--disable-xvid
 PLIST_SUB+=	XVID="@comment "
-.undef WITH_XVID
+#.undef WITH_XVID
 #.else
 #LIB_DEPENDS+=	xvidcore.2:${PORTSDIR}/multimedia/xvid
 #PLIST_SUB+=	XVID=""
-.endif
+#.endif
 
 pre-everything::
 .ifndef(WITH_AALIB)
