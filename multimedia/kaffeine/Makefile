@@ -24,10 +24,4 @@ CONFIGURE_ENV=		CXXFLAGS="${CFLAGS}"
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-.include <bsd.port.pre.mk>
-
-.if ${MACHINE_ARCH} == "amd64"
-BROKEN=	"crashes on start"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
