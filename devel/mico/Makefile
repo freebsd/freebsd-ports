@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mico
-PORTVERSION=	2.3.9
+PORTVERSION=	2.3.10
 CATEGORIES=	devel
 MASTER_SITES=	http://www.mico.org/
 
@@ -27,10 +27,6 @@ MAN5=		micorc.5
 MAN8=		ird.8 micod.8 nsd.8
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e "s,so.1.0,so, ;s,-O2,${CFLAGS}," ${WRKSRC}/configure
