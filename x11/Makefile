@@ -59,6 +59,7 @@
     SUBDIR += xfedor
     SUBDIR += xfishtank
     SUBDIR += xgrab
+    SUBDIR += xkbctrl
     SUBDIR += xkeycaps
     SUBDIR += xkeywrap
     SUBDIR += xloadimage
