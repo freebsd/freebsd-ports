@@ -17,6 +17,4 @@ occur, including pending I/O on filedescriptors, asynchronous signals,
 elapsed timers, pending I/O on message ports, thread and process
 termination, and even customized callback functions.
 
-The documentation and latest release can be found on
- o http://www.gnu.org/software/pth/
- o ftp://ftp.gnu.org/gnu/pth/
+WWW: http://www.gnu.org/software/pth/
