@@ -1,15 +1,15 @@
 # New ports collection makefile for:    musixtex
-# Version required:     T76
+# Version required:     T80
 # Date created:         9 july 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.11 1997/09/14 08:05:38 asami Exp $
+# $Id: Makefile,v 1.12 1997/09/15 22:54:35 jmz Exp $
 #
 
-DISTNAME=       musixtex-T77
+DISTNAME=       musixtex-T80
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.tex.ac.uk//tex-archive/macros/musixtex/taupin/
-DISTFILES=      musixtex-T77.tar.gz musixexa-T74.tar.gz
+DISTFILES=      musixtex-T80.tar.gz musixexa-T79.tar.gz
 
 MAINTAINER=	jmz@FreeBSD.org
 
