@@ -70,6 +70,12 @@ pre-install:
 	@${MKDIR} ${TEXMF_TREE}
 	@tar zxf ${_DISTDIR}/${TETEX_TEXMF} -C ${TEXMF_TREE}
 	@tar zxf ${_DISTDIR}/${PTEX_TEXMF} -C ${TEXMF_TREE}
+# Following two commands are intended to be temporary until 
+# the original distribution is updated.
+	${MV} -f ${PREFIX}/share/texmf/tex/latex/base/latex.ltx ${WRKDIR}
+	${SED} -e 's/\\ifnum\\count@>17/\\ifnum\\count@>57/' \
+		${WRKDIR}/latex.ltx \
+		> ${PREFIX}/share/texmf/tex/latex/base/latex.ltx
 
 post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/texinfo/util/texi2dvi ${PREFIX}/bin
