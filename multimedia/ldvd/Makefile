@@ -9,7 +9,7 @@ PORTNAME=	ldvd9to5
 PORTVERSION=	1.12
 PORTREVISION=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www.gff-clan.net/hdr/ldvd9to5/
+MASTER_SITES=	http://ldvd9to5.gff-clan.net/ldvd9to5/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
