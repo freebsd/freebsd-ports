@@ -47,7 +47,7 @@ _JAVA_VERSIONS=		1.1 1.2 1.3 1.4
 _JAVA_HOME_FREEBSD_1_1=			${LOCALBASE}/jdk1.1.8
 _JAVA_HOME_FREEBSD_1_2=			${LOCALBASE}/jdk1.2.2
 _JAVA_HOME_FREEBSD_1_3=			${LOCALBASE}/jdk1.3.1
-_JAVA_HOME_FREEBSD_1_4=			${LOCALBASE}/jdk1.4.1
+_JAVA_HOME_FREEBSD_1_4=			${LOCALBASE}/jdk1.4.2
 _JAVA_HOME_DIABLO_FREEBSD_1_3=		${LOCALBASE}/diablo-jdk1.3.1
 _JAVA_HOME_BLACKDOWN_LINUX_1_2=	${LOCALBASE}/linux-blackdown-jdk1.2.2
 _JAVA_HOME_BLACKDOWN_LINUX_1_3=	${LOCALBASE}/linux-blackdown-jdk1.3.1
@@ -380,13 +380,13 @@ JAVA_PORT=		${_JAVA_PORT_DIABLO_FREEBSD_1_3}
 # If the port needs Java 1.4, then there are 4 choices. They are, in order or
 # preference:
 #
-#    (1) JDK 1.4.1 for FreeBSD
-#    (2) Sun JDK 1.4.1 for Linux
+#    (1) JDK 1.4.2 for FreeBSD
+#    (2) Sun JDK 1.4.2 for Linux
 #    (3) IBM JDK 1.4.1 for Linux
 #    (4) Blackdown JDK 1.4.1 for Linux
 #
-# If the FreeBSD JDK 1.4.1 is installed or if none of the 1.4.1 JDK's is
-# installed, then the FreeBSD JDK 1.4.1 is used as a dependency for the port.
+# If the FreeBSD JDK 1.4.2 is installed or if none of the 1.4.1 JDK's is
+# installed, then the FreeBSD JDK 1.4.2 is used as a dependency for the port.
 #
 # Otherwise, one of the installed Linux JDKs is chosen, based on their
 # preferences.
@@ -412,13 +412,13 @@ JAVA_PORT=		${_JAVA_PORT_IBM_LINUX_1_4}
 .			elif defined(HAVE_JAVA_SUN_LINUX_1_4) \
 			&& !defined(HAVE_JAVA_FREEBSD_1_4)
 JAVA_VENDOR=	Sun
-JAVA_VER=		1.4.1
+JAVA_VER=		1.4.2
 JAVA_OS=		Linux
 JAVA_HOME=		${_JAVA_HOME_SUN_LINUX_1_4}
 JAVA_PORT=		${_JAVA_PORT_SUN_LINUX_1_4}
 .			else
 JAVA_VENDOR=	FreeBSD
-JAVA_VER=		1.4.1
+JAVA_VER=		1.4.2
 JAVA_OS=		FreeBSD
 JAVA_HOME=		${_JAVA_HOME_FREEBSD_1_4}
 JAVA_PORT=		${_JAVA_PORT_FREEBSD_1_4}
