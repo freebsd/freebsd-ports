@@ -1,6 +1,10 @@
 DISTNAME=	eispack
 DISTDIR=${PORTSDIR}/distfiles/${DISTNAME}
 MASTER_SITES=	ftp://netlib.att.com/netlib/eispack/
+.if defined(MASTER_SITE_OVERRIDE)
+MASTER_SITES:= ${MASTER_SITE_OVERRIDE}/eispack/
+.undef MASTER_SITE_OVERRIDE
+.endif
 EXTRACT_CMD=scripts/uncomp
 EXTRACT_SUFX=.Z
 EXTRACT_ARGS= ${WRKDIR}
