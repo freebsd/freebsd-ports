@@ -9351,6 +9351,7 @@ yafic		ports/security/yafic
 yafray		ports/graphics/yafray
 yahtzee		ports/games/yahtzee
 yale-tftpd	ports/ftp/yale-tftpd
+yalias		ports/x11/yalias
 yammi		ports/audio/yammi
 yamsweeper	ports/games/yamsweeper
 yamt		ports/audio/yamt
