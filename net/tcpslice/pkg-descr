@@ -1,0 +1,10 @@
+TCPSLICE 1.1
+Lawrence Berkeley National Laboratory
+Network Research Group
+tcpdump@ee.lbl.gov
+ftp://ftp.ee.lbl.gov/tcpslice.tar.Z
+
+This directory contains source code for tcpslice, a tool for extracting
+portions of packet trace files generated using tcpdump's -w flag. The
+original distribution is available via anonymous ftp to ftp.ee.lbl.gov,
+in tcpslice.tar.Z.
