@@ -1,0 +1,7 @@
+#!/bin/sh
+
+FILE=/var/games/lbreakout2.hscr
+[ "$2" != "POST-INSTALL" -o -f "$FILE" ] && exit 0
+
+echo "===>   Creating initial high score file $FILE"
+install -o root -g games -m 664 ${PKG_PREFIX}/share/lbreakout2/empty.hscr $FILE
