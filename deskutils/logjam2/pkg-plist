@@ -1,4 +1,5 @@
 bin/logjam
+%%WITH_XMMS%%bin/logjam-xmms-client
 share/gnome/applications/logjam.desktop
 share/gnome/pixmaps/logjam_goat.png
 share/gnome/pixmaps/logjam_pencil.png

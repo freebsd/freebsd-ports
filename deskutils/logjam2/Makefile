@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	logjam2
-PORTVERSION=	4.3.1
+PORTVERSION=	4.3.2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://logjam.danga.com/download/
 DISTNAME=	logjam-${PORTVERSION}
@@ -25,7 +25,8 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack \
 		gnomeprefix \
 		gtk20 \
-		libxml2
+		libxml2 \
+		intlhack
 CONFIGURE_ARGS=	--program-transform-name="s/$$//"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
@@ -38,7 +39,9 @@ CONFIGURE_ARGS+=	--without-gtkspell
 
 .if defined(WITH_XMMS)
 LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
+PLIST_SUB+=	WITH_XMMS=""
 .else
+PLIST_SUB+=	WITH_XMMS="@comment "
 CONFIGURE_ARGS+=	--without-xmms
 .endif
 
