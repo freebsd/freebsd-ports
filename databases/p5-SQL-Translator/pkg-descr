@@ -1,0 +1,9 @@
+SQL::Translator is a group of Perl modules that converts vendor-specific
+SQL table definitions into other formats, such as other vendor-specific
+SQL, ER diagrams, documentation (POD and HTML), XML, and Class::DBI
+classes.SQL::Translator is a group of Perl modules that converts
+vendor-specific SQL table definitions into other formats, such as
+other vendor-specific SQL, ER diagrams, documentation (POD and
+HTML), XML, and Class::DBI classes.
+
+WWW: http://search.cpan.org/dist/SQL-Translator/
