@@ -1,5 +1,5 @@
---- stub/l_linux.c.orig	Wed Jan 28 03:36:25 2004
-+++ stub/l_linux.c	Tue Feb 17 07:27:42 2004
+--- stub/l_linux.c.orig	Wed Jan 21 00:32:56 2004
++++ stub/l_linux.c	Wed Jan  5 14:43:57 2005
 @@ -51,7 +51,11 @@
      // note: we can assert(count > 0);
      do {
@@ -100,9 +100,9 @@
  
  #if defined(USE_MALLOC)
 +#if defined(__FreeBSD__)
-+    buf = mmap(0, mmapsize, PROT_READ | PROT_WRITE, MAP_PRIVATE, fdo, 0);
++    buf = (unsigned char *) mmap(0, mmapsize, PROT_READ | PROT_WRITE, MAP_PRIVATE, fdo, 0);
 +#else
-     buf = mmap(malloc_args);
+     buf = (unsigned char *) mmap(malloc_args);
 +#endif
      if ((unsigned long) buf >= (unsigned long) -4095)
          goto error;

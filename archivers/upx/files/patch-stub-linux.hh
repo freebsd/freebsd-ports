@@ -1,21 +1,11 @@
---- stub/linux.hh.orig	Tue Feb 17 01:31:35 2004
-+++ stub/linux.hh	Tue Feb 17 07:30:02 2004
-@@ -26,8 +26,8 @@
-  */
- 
- 
--#if !defined(__linux__) || !defined(__i386__)
--#  error "this stub must be compiled under linux/i386"
-+#if (!defined(__linux__) || !defined(__i386__)) && !defined(__FreeBSD__)
-+#  error "this stub must be compiled under linux/i386 or FreeBSD"
- #endif
- 
- 
-@@ -35,6 +35,16 @@
- // includes
+--- stub/linux.hh.orig	Wed Jan  5 14:42:03 2005
++++ stub/linux.hh	Wed Jan  5 14:43:40 2005
+@@ -35,6 +35,19 @@
+ //
  **************************************************************************/
  
 +#if defined(__FreeBSD__)
++
 +#include <sys/types.h>
 +#include <sys/mman.h>
 +#include <sys/time.h>
@@ -24,31 +14,17 @@
 +#include <fcntl.h>
 +#include <time.h>
 +#include <unistd.h>
++
 +#else
- struct timex;
++
+ // <stddef.h>
+ typedef long ptrdiff_t;
+ typedef unsigned long size_t;
+@@ -412,6 +425,7 @@
+ #define PT_INTERP       3
+ #define PT_PHDR         6
  
- #define __need_timeval
-@@ -54,6 +64,7 @@
- 
- #define CONST_CAST(type, var) \
-     ((type) ((unsigned long) (var)))
-+#endif
- 
++#endif /* __FreeBSD__ */
  
  /*************************************************************************
-@@ -122,6 +133,7 @@
- #define PAGE_SIZE   ( 1u<<12)
- 
- 
-+#if !defined(__FreeBSD__)
- /*************************************************************************
- // syscalls
- //
-@@ -312,6 +324,7 @@
- 
- #undef Z0
- #undef Z1
-+#endif
- 
- 
- /*
+ // UPX stuff
