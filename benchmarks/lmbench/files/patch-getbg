@@ -1,0 +1,214 @@
+--- scripts/getbg.orig	Mon May  7 06:28:25 2001
++++ scripts/getbg	Mon May  7 07:07:10 2001
+@@ -1,12 +1,10 @@
+-
++#!/usr/bin/perl
+ # Extract bargraph data from lmbench results.
+ # Usage: getbg file file file....
+ #
+ # Hacked into existence by Larry McVoy (lm@sun.com now lm@sgi.com).
+ # Copyright (c) 1994 Larry McVoy.  GPLed software.
+ # $Id: getbg,v 1.14 1995/11/11 04:15:18 lm Exp $
+-eval "exec perl -Sws $0 $*"
+-	if 0;
+ 
+ @bw_file = @files = @lat_ctx32_8 = @lat_ctx32 = @lat_ctx8 = @lat_ctx =
+ @lat_shproc = @lat_simpleproc = @lat_nullproc =
+@@ -24,66 +22,66 @@
+ 	while (<FD>) {
+ 		chop;
+ 		if (/^\[lmbench/) {
+-			split;
++			@_ = split;
+ 			if ($_[3] eq "SunOS") {
+ 				$_[3] .= "-$_[5]";
+ 			}
+ 			push(@uname, "@_");
+ 		}
+ 		if (/Mhz/) {
+-			split;
++			@_ = split;
+ 			push(@misc_mhz, $_[0]);
+ 		}
+ 		if (/^Null syscall:/) {
+-			split;
++			@_ = split;
+ 			push(@lat_nullsys, $_[2]);
+ 		}
+ 		if (/^Signal handler installation:/) {
+-			split;
++			@_ = split;
+ 			push(@lat_sigaction, $_[3]);
+ 		}
+ 		if (/^Signal handler overhead:/) {
+-			split;
++			@_ = split;
+ 			push(@lat_signal, $_[3]);
+ 		}
+ 		if (/^Pipe latency:/) {
+-			split;
++			@_ = split;
+ 			push(@lat_pipe, $_[2]);
+ 		}
+ 		if (/UDP latency using localhost:/) {
+-			split;
++			@_ = split;
+ 			push(@lat_udp_local, $_[4]);
+ 		}
+ 		if (/TCP latency using localhost/) {
+-			split;
++			@_ = split;
+ 			push(@lat_tcp_local, $_[4]);
+ 		}
+ 		if (/RPC.udp latency using localhost/) {
+-			split;
++			@_ = split;
+ 			push(@lat_rpc_udp_local, $_[4]);
+ 		}
+ 		if (/RPC.tcp latency using localhost/) {
+-			split;
++			@_ = split;
+ 			push(@lat_rpc_tcp_local, $_[4]);
+ 		}
+ 		if (/TCP\/IP connection cost to localhost/) {
+-			split;
++			@_ = split;
+ 			push(@lat_connect, $_[5]);
+ 		}
+ 		if (/^Process fork.exit/) {
+-			split;
++			@_ = split;
+ 			push(@lat_nullproc, $_[2]);
+ 		}
+ 		if (/^Process fork.execve:/) {
+-			split;
++			@_ = split;
+ 			push(@lat_simpleproc, $_[2]);
+ 		}
+ 		if (/^Process fork..bin.sh/) {
+-			split;
++			@_ = split;
+ 			push(@lat_shproc, $_[3]);
+ 		}
+ 		if (/^Pagefaults on/) {
+-			split;
++			@_ = split;
+ 			push(@lat_pagefault, $_[3]);
+ 		}
+ 		if (/size=0 ovr=/) {
+@@ -94,7 +92,7 @@
+ 					push(@lat_ctx, -1);
+ 				}
+ 				next unless /^2/;
+-				split;
++				@_ = split;
+ 				push(@lat_ctx, $_[1]);
+ 			    	last;
+ 			}
+@@ -105,7 +103,7 @@
+ 					push(@lat_ctx, -1);
+ 				}
+ 				next unless /^8/;
+-				split;
++				@_ = split;
+ 				push(@lat_ctx8, $_[1]);
+ 			    	last;
+ 			}
+@@ -118,7 +116,7 @@
+ 					push(@lat_ctx32, -1);
+ 				}
+ 				next unless /^2/;
+-				split;
++				@_ = split;
+ 				push(@lat_ctx32, $_[1]);
+ 			    	last;
+ 			}
+@@ -129,25 +127,25 @@
+ 					push(@lat_ctx32_8, -1);
+ 				}
+ 				next unless /^8/;
+-				split;
++				@_ = split;
+ 				push(@lat_ctx32_8, $_[1]);
+ 			    	last;
+ 			}
+ 		}
+ 		if (/^Pipe bandwidth/) {
+-			split;
++			@_ = split;
+ 			push(@bw_pipe, $_[2]);
+ 		}
+ 		if (/^Socket bandwidth using localhost/) {
+-			split;
++			@_ = split;
+ 			push(@bw_tcp_local, $_[4]);
+ 		}
+ 		if (/^Disk .* latency:/) {
+-			split;
++			@_ = split;
+ 			push(@lat_disk, $_[3]);
+ 		}
+ 		if (/^File .* write bandwidth/) {
+-			split;
++			@_ = split;
+ 			$bw = sprintf("%.2f", $_[4] / 1024.);
+ 			push(@bw_file, $bw);
+ 		}
+@@ -180,7 +178,7 @@
+ 			push(@bw_mem_wr, $value);
+ 		}
+ 		if (/^0k\s/) {
+-			split; 
++			@_ = split; 
+ 			push(@lat_fs_create, int(1000000/$_[2]));
+ 			push(@lat_fs_delete, int(1000000/$_[3]));
+ 		}
+@@ -188,13 +186,13 @@
+ 			$save = -1;
+ 			while (<FD>) {
+ 				if (/^0.00098\s/) {
+-					split;
++					@_ = split;
+ 					push(@lat_l1, $_[1]);
+ 				} elsif (/^0.12500\s/) {
+-					split;
++					@_ = split;
+ 					push(@lat_l2, $_[1]);
+ 				} elsif (/^[45678].00000\s/) {
+-					split;
++					@_ = split;
+ 					$size = $_[0];
+ 					$save = $_[1];
+ 					last if /^8.00000\s/;
+@@ -661,18 +659,18 @@
+ 
+ sub papernames
+ {
+-	$_ = "IBM PowerPC" if /AIX powerpc@134/;
+-	$_ = "IBM Power2" if /AIX rs6000-990@71/;
+-	$_ = "FreeBSD/i586" if /FreeBSD i586@133/;
+-	$_ = "HP 9000/819" if /HP-UX 9000.819@/;
+-	$_ = "SGI Challenge" if /IRIX.* IP19@/;
+-	$_ = "SGI Indigo2" if /IRIX.* IP22@/;
+-	$_ = "Linux/Alpha" if /Linux alpha@/;
+-	$_ = "Linux/i686" if /Linux i686@/;
+-	$_ = "Linux/i586" if /Linux i586@/;
+-	$_ = "DEC Alpha@150" if /OSF1 alpha@147/;
+-	$_ = "DEC Alpha@300" if /OSF1 alpha@303/;
+-	$_ = "Sun SC1000" if /SunOS-5.5 sun4d@5/;
++	$_ = "IBM PowerPC" if /AIX powerpc\@134/;
++	$_ = "IBM Power2" if /AIX rs6000-990\@71/;
++	$_ = "FreeBSD/i586" if /FreeBSD i586\@133/;
++	$_ = "HP 9000/819" if /HP-UX 9000.819\@/;
++	$_ = "SGI Challenge" if /IRIX.* IP19\@/;
++	$_ = "SGI Indigo2" if /IRIX.* IP22\@/;
++	$_ = "Linux/Alpha" if /Linux alpha\@/;
++	$_ = "Linux/i686" if /Linux i686\@/;
++	$_ = "Linux/i586" if /Linux i586\@/;
++	$_ = "DEC Alpha\@150" if /OSF1 alpha\@147/;
++	$_ = "DEC Alpha\@300" if /OSF1 alpha\@303/;
++	$_ = "Sun SC1000" if /SunOS-5.5 sun4d\@5/;
+ 	$_ = "Sun Ultra1" if /SunOS-5.5 sun4u/;
+ 	$_ = "Unixware/i686" if /UNIX_SV x86at/;
+ }
+
