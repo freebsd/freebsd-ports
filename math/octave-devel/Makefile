@@ -23,6 +23,10 @@ USE_BZIP2=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not build on amd64 (Shared libraries must be compiled with -fPIC)"
+.endif
+
 .if ${PORTOBJFORMAT} == "elf"
 GNU_HOST=	${ARCH}-portbld-freebsd${OSREL}
 .else
