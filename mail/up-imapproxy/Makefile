@@ -15,7 +15,7 @@ MAINTAINER=	mbr@FreeBSD.org
 COMMENT=	A caching IMAP proxy server
 
 USE_REINPLACE=	YES
-HAS_CONFIGURE=	YES
+GNU_CONFIGURE=	YES
 USE_RC_SUBR=	YES
 
 SAMPLE_EXT=	sample
@@ -26,7 +26,7 @@ RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
 		RC_SUBR=${RC_SUBR}
 
 post-patch:
-	${REINPLACE_CMD} -e "s|-lc_r|${PTHREAD_LIBS}|g; s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s|-lc_r|${PTHREAD_LIBS}|g; s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
 
 post-install:
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
