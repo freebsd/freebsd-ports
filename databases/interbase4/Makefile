@@ -35,7 +35,7 @@ do-fetch:
 do-install:
 	@${MKDIR} ${IB_PATH}
 	@[ -d ${PREFIX}/lib/aout ] || ${MKDIR} ${PREFIX}/lib/aout
-	@${CHMOD} 777 ${IB_PATH}
+	@${CHMOD} 755 ${IB_PATH}
 	@(cd ${IB_PATH}; tar xfv ${ARCHIVE})
 	@${LN} -sf ${IB_PATH}/include/gds.h   ${PREFIX}/include/gds.h
 	@${LN} -sf ${IB_PATH}/include/ibase.h ${PREFIX}/include/ibase.h
@@ -45,7 +45,7 @@ do-install:
 	@${LN} -sf ${IB_PATH}/lib/gdsintl     ${PREFIX}/lib/aout/libgdsintl.so
 	@${LN} -sf libgdslib.so.1.0	   ${PREFIX}/lib/aout/libgdslib.so
 	@${TOUCH} ${IB_PATH}/isc_event.gbl.localhost
-	@${CHMOD} 777 ${IB_PATH}/isc_event.gbl.localhost
+	@${CHMOD} 644 ${IB_PATH}/isc_event.gbl.localhost
 	@${ECHO} "Building Interbase sample databases."
 	@${LDCONFIG} -aout -m ${PREFIX}/lib/aout
 .for file in isc4.gdb help/help.gdb examples/v3/atlas.gdb examples/v3/emp.gdb examples/v4/employee.gdb examples/v4/intlemp.gdb
