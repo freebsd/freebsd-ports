@@ -13,8 +13,8 @@ share/snort/ping-lib
 share/snort/rpc-lib
 share/snort/scan-lib
 share/snort/smtp-lib
-share/snort/snort-lib
 share/snort/telnet-lib
+share/snort/web-lib
 share/snort/webcf-lib
 share/snort/webcgi-lib
 share/snort/webfp-lib
