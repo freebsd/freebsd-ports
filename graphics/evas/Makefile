@@ -8,9 +8,10 @@
 PORTNAME=	evas
 PORTVERSION=	0.0.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://download.sourceforge.net/enlightenment/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	enlightenment
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ishmael27@home.com
 
 LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2-tmp
 
