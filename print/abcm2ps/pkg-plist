@@ -3,6 +3,4 @@ bin/abcm2ps
 %%DATADIR%%/fonts.fmt
 %%DATADIR%%/landscape.fmt
 %%DATADIR%%/tight.fmt
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
