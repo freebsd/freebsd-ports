@@ -1,0 +1,10 @@
+--- apps/ssh/ssh2_config.orig	Sun Aug 27 02:30:11 2000
++++ apps/ssh/ssh2_config	Sun Aug 27 02:30:48 2000
+@@ -43,6 +43,7 @@
+ ## SSH1 Compatibility
+ 
+         Ssh1Compatibility               yes
++	Ssh1Path			/usr/bin/ssh
+ 	Ssh1AgentCompatibility		none
+ #	Ssh1AgentCompatibility		traditional
+ #	Ssh1AgentCompatibility		ssh2

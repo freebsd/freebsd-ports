@@ -1,6 +1,6 @@
---- lib/sshutil/sshincludes.h.old	Wed May 17 18:39:44 2000
-+++ lib/sshutil/sshincludes.h	Wed May 17 18:40:19 2000
-@@ -166,7 +166,7 @@
+--- lib/sshutil/sshincludes.h.orig	Thu Aug 24 17:43:30 2000
++++ lib/sshutil/sshincludes.h	Sun Aug 27 01:22:27 2000
+@@ -213,7 +213,7 @@
  #define SSH_UID_ROOT 0
  #endif /* SSH_UID_ROOT */
  
@@ -9,7 +9,7 @@
  /* Define zlib to have ssh prefix, so we will not care if there is another zlib
     in the kernel */
  #define deflateInit_            ssh_z_deflateInit_
-@@ -202,6 +202,6 @@
+@@ -249,6 +249,6 @@
  #define uLongf                  ssh_z_uLongf
  #define voidpf                  ssh_z_voidpf
  #define voidp                   ssh_z_voidp
