@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.hellug.gr/pub/software/hydra/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A high performance multi-threaded web server
 
-LIB_DEPENDS=	gnutls.8:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	gnutls.7:${PORTSDIR}/security/gnutls
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
