@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/widgets/Makefile.in	2001/12/19 10:46:38	1.1
++++ src/widgets/Makefile.in	2001/12/19 10:47:05
+@@ -110,7 +110,7 @@
+ ZVT_LIBS = @ZVT_LIBS@
+ l = @l@
+ 
+-INCLUDES = -I$(top_srcdir) -I$(includedir) $(GNOME_INCLUDEDIR) 	-DG_LOG_DOMAIN=\"GNOME-IconEditor\" -g -Wall 	-Wmissing-prototypes -Wmissing-declarations
++INCLUDES = $(GDK_PIXBUF_CFLAGS)	-I$(top_srcdir) -I$(includedir) $(GNOME_INCLUDEDIR) 	-DG_LOG_DOMAIN=\"GNOME-IconEditor\" -g -Wall 	-Wmissing-prototypes -Wmissing-declarations
+ 
+ 
+ noinst_LIBRARIES = libwidgets.a
