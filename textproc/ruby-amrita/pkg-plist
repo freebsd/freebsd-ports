@@ -36,6 +36,112 @@ bin/amx
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.xml
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/index_ja.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/index_ja.xml
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/AmsHandler.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/AmsTemplate.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/AsIsFormatter.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/Attr.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/AttrArray.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/CacheManager.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/DummyCacheManager.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/Element.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/ExpandByMember.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/ExpandContext.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/Formatter.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/HtmlParseError.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/HtmlParser.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/HtmlTagInfo.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/Listener.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/MergeTemplate.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/ModelMisMatch.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/ModuleCache.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/Node.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/NodeArray.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/PartsTemplate.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/PartsTemplate/PartsTempleteExpander.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/PreFormatter.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/PrettyPrintFormatter.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/SanitizedString.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/Sanitizer.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/SingleLineFormatter.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/SourceCache.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/Tag.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/TagBlock.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/TagDD.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/TagDT.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/TagEmpty.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/TagInfo.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/TagInfo/TagInfoItem.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/TagInline.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/TagItem.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/TagList.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/TagP.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/TagPre.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/TagTableSection.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/Template.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/TemplateFile.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/TemplateFileWithCache.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/TemplateText.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amrita/XMLParser.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amx.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amx/AmxContext.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amx/Document.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Amx/Template.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Array.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/CKAmritaElement.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Integer.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Number.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/REXML.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/REXML/Element.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/created.rid
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/README.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/README_ja.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/README_ja.html.back
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/docs/Cgi.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/docs/Cgi_ja.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/docs/Cgi_ja.html.back
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/docs/QuickStart.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/docs/QuickStart_ja.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/docs/QuickStart_ja.html.back
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/docs/Tour.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/docs/Tour2.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/docs/Tour2_ja.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/docs/Tour2_ja.html.back
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/docs/Tour_ja.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/docs/Tour_ja.html.back
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/docs/XML.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/docs/XML_ja.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/docs/XML_ja.html.back
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/lib/amrita/ams_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/lib/amrita/amx_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/lib/amrita/cgikit_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/lib/amrita/compiler_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/lib/amrita/format_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/lib/amrita/handlers_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/lib/amrita/merge_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/lib/amrita/node_expand_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/lib/amrita/node_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/lib/amrita/parser_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/lib/amrita/parts_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/lib/amrita/tag_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/lib/amrita/template_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/lib/amrita/xml_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/fr_class_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/fr_file_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/fr_method_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/rdoc-style.css
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/html/files/lib/amrita
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/html/files/lib
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/html/files/docs
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/html/files
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/html/classes/REXML
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/html/classes/Amx
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/html/classes/Amrita/TagInfo
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/html/classes/Amrita/PartsTemplate
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/html/classes/Amrita
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/html/classes
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/html
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/README
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/advertize_sample.html
@@ -70,6 +176,12 @@ bin/amx
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/test/bbs.conf
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/test/testbbs.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/bbs/view.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/benchmark/amrita.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/benchmark/bench.dat
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/benchmark/do_bench.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/benchmark/eruby.rhtml
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/benchmark/plain.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/benchmark/test.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/.cvsignore
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/.htaccess
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/amshandler
@@ -90,6 +202,10 @@ bin/amx
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/HeaderFooter/HeaderFooter.ckd
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/HeaderFooter/HeaderFooter.html
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/HeaderFooter/HeaderFooter.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/HeaderFooter/HeaderFooterParts.ckd
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/HeaderFooter/HeaderFooterParts.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/HeaderFooter/HeaderFooterParts.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/HeaderFooter/HeaderFooterParts_ja.html
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/HeaderFooter/HeaderFooter_ja.html
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/IndexPage/IndexPage.ckd
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgikit/Examples/IndexPage/IndexPage.html
@@ -162,6 +278,7 @@ bin/amx
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgikit/Examples
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgikit
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/benchmark
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/bbs/test
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/bbs/template/slash_en
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/bbs/template/simple
