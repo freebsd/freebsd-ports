@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	mod_sequester
-PORTVERSION=	1.7.0
+PORTVERSION=	1.8
 CATEGORIES=	www
 MASTER_SITES=	http://MeepZor.Com/packages/mod_sequester/
+DISTNAME=	${PORTNAME}-1.7.0
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache module that controls access to the website using secure info
