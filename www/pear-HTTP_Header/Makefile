@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	HTTP_Header
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	www devel pear
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	PEAR OO-Interface to modify HTTP-Headers easily
+MAINTAINER=	antonio@php.net
+COMMENT=	PEAR OO interface to modify and handle HTTP headers and status codes
 
 BUILD_DEPENDS=	${PEARDIR}/HTTP.php:${PORTSDIR}/www/pear-HTTP
 RUN_DEPENDS=	${BUILD_DEPENDS}
