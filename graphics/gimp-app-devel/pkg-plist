@@ -1,4 +1,12 @@
-bin/gimp
+lib/libgimp.so.1.0
+lib/libgimp.la
+lib/libgimp.a
+lib/libgimpui.so.1.0
+lib/libgimpui.la
+lib/libgimpui.a
+lib/libgck.so.0.1
+lib/libgck.la
+lib/libgck.a
 include/libgimp/gimp.h
 include/libgimp/gimpenums.h
 include/libgimp/gimpmenu.h
@@ -13,18 +21,6 @@ include/gck/gcktypes.h
 include/gck/gckui.h
 include/gck/gcknotebook.h
 include/gck/gckvector.h
-info/pdb.info
-info/pdb.info-1
-info/pdb.info-2
-lib/libgimp.so.1.0
-lib/libgimp.la
-lib/libgimp.a
-lib/libgimpui.so.1.0
-lib/libgimpui.la
-lib/libgimpui.a
-lib/libgck.so.0.1
-lib/libgck.la
-lib/libgck.a
 libexec/gimp/0.99/plug-ins/libmegawidget.a
 libexec/gimp/0.99/plug-ins/MapObject
 libexec/gimp/0.99/plug-ins/AlienMap
@@ -50,8 +46,9 @@ libexec/gimp/0.99/plug-ins/warp
 libexec/gimp/0.99/plug-ins/tiff
 libexec/gimp/0.99/plug-ins/jpeg
 libexec/gimp/0.99/plug-ins/png
-libexec/gimp/0.99/plug-ins/xpm
+libexec/gimp/0.99/plug-ins/xd
 libexec/gimp/0.99/plug-ins/mpeg
+libexec/gimp/0.99/plug-ins/xpm
 libexec/gimp/0.99/plug-ins/CML_explorer
 libexec/gimp/0.99/plug-ins/align_layers
 libexec/gimp/0.99/plug-ins/apply_lens
@@ -77,6 +74,7 @@ libexec/gimp/0.99/plug-ins/deinterlace
 libexec/gimp/0.99/plug-ins/depthmerge
 libexec/gimp/0.99/plug-ins/despeckle
 libexec/gimp/0.99/plug-ins/destripe
+libexec/gimp/0.99/plug-ins/fp
 libexec/gimp/0.99/plug-ins/diffraction
 libexec/gimp/0.99/plug-ins/displace
 libexec/gimp/0.99/plug-ins/edge
@@ -88,7 +86,7 @@ libexec/gimp/0.99/plug-ins/figures
 libexec/gimp/0.99/plug-ins/film
 libexec/gimp/0.99/plug-ins/fits
 libexec/gimp/0.99/plug-ins/flame
-libexec/gimp/0.99/plug-ins/fp
+libexec/gimp/0.99/plug-ins/flarefx
 libexec/gimp/0.99/plug-ins/fractaltrace
 libexec/gimp/0.99/plug-ins/gauss_iir
 libexec/gimp/0.99/plug-ins/gauss_rle
@@ -107,9 +105,9 @@ libexec/gimp/0.99/plug-ins/hot
 libexec/gimp/0.99/plug-ins/hrz
 libexec/gimp/0.99/plug-ins/ifscompose
 libexec/gimp/0.99/plug-ins/illusion
+libexec/gimp/0.99/plug-ins/lic
 libexec/gimp/0.99/plug-ins/iwarp
 libexec/gimp/0.99/plug-ins/laplace
-libexec/gimp/0.99/plug-ins/lic
 libexec/gimp/0.99/plug-ins/magiceye
 libexec/gimp/0.99/plug-ins/mail
 libexec/gimp/0.99/plug-ins/max_rgb
@@ -165,6 +163,13 @@ libexec/gimp/0.99/plug-ins/whirlpinch
 libexec/gimp/0.99/plug-ins/xwd
 libexec/gimp/0.99/plug-ins/zealouscrop
 libexec/gimptcl
+share/gimp/gflares/Bright_Star
+share/gimp/gflares/Classic
+share/gimp/gflares/Default
+share/gimp/gflares/Distant_Sun
+share/gimp/gflares/GFlare_101
+share/gimp/gflares/GFlare_102
+share/gimp/gflares/Hidden_Planet
 share/gimp/scripts/3dTruchet.scm
 share/gimp/scripts/add-bevel.scm
 share/gimp/scripts/addborder.scm
@@ -187,6 +192,7 @@ share/gimp/scripts/blended-logo.scm
 share/gimp/scripts/carve-it.scm
 share/gimp/scripts/carved-logo.scm
 share/gimp/scripts/chalk.scm
+share/gimp/scripts/chip-away.scm
 share/gimp/scripts/chrome-it.scm
 share/gimp/scripts/chrome-logo.scm
 share/gimp/scripts/circle-logo.scm
@@ -243,6 +249,7 @@ share/gimp/scripts/weave.scm
 share/gimp/scripts/xach-effect.scm
 share/gimp/user_install
 share/gimp/gimprc
+share/gimp/gimprc_user
 share/gimp/gtkrc
 share/gimp/gimp_logo.ppm
 share/gimp/gimp_tips.txt
@@ -273,6 +280,9 @@ share/gimp/brushes/5x5squareBlur.gbr
 share/gimp/brushes/7fcircle.gbr
 share/gimp/brushes/9circle.gbr
 share/gimp/brushes/9fcircle.gbr
+share/gimp/brushes/DStar11.gbr
+share/gimp/brushes/DStar17.gbr
+share/gimp/brushes/DStar25.gbr
 share/gimp/brushes/callig1.gbr
 share/gimp/brushes/callig2.gbr
 share/gimp/brushes/callig3.gbr
@@ -287,12 +297,12 @@ share/gimp/brushes/thegimp.gbr
 share/gimp/brushes/50x50cone.gbr
 share/gimp/brushes/50x50square.gbr
 share/gimp/brushes/50x50squareBlur.gbr
+share/gimp/brushes/bird.gbr
 share/gimp/brushes/50x50squareBlur2.gbr
 share/gimp/brushes/bigcircle.gbr
 share/gimp/brushes/bigcircle2.gbr
 share/gimp/brushes/bigcircle3.gbr
 share/gimp/brushes/bigcircle4.gbr
-share/gimp/brushes/bird.gbr
 share/gimp/brushes/bullethole.gbr
 share/gimp/brushes/cloth.gbr
 share/gimp/brushes/flower.gbr
@@ -582,17 +592,25 @@ share/gimp/patterns/weird2.pat
 share/gimp/patterns/whirledstuff.pat
 share/gimp/patterns/woodblind.pat
 share/gimp/patterns/worn_metal_chex.pat
+bin/gimp
+@unexec install-info --delete %D/info/pdb.info %D/info/dir
+@unexec install-info --delete %D/info/pdb.info-1 %D/info/dir
+@unexec install-info --delete %D/info/pdb.info-2 %D/info/dir
+@exec install-info %D/info/pdb.info %D/info/dir
+@exec install-info %D/info/pdb.info-1 %D/info/dir
+@exec install-info %D/info/pdb.info-2 %D/info/dir
+info/pdb.info
+info/pdb.info-1
+info/pdb.info-2
 lib/libgimp.so
-@unexec rm %D/%F
 lib/libgimpui.so
-@unexec rm %D/%F
 lib/libgck.so
-@unexec rm %D/%F
 @dirrm include/libgimp
 @dirrm include/gck
 @dirrm libexec/gimp/0.99/plug-ins
 @dirrm libexec/gimp/0.99
 @dirrm libexec/gimp
+@dirrm share/gimp/gflares
 @dirrm share/gimp/scripts
 @dirrm share/gimp/brushes
 @dirrm share/gimp/palettes
