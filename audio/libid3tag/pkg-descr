@@ -1,0 +1,12 @@
+MAD is a high-quality MPEG audio decoder. It currently supports MPEG-1
+as well as the MPEG-2 extension to Lower Sampling Frequencies. All
+three audio layers (Layer I, Layer II, and Layer III a.k.a. MP3) are
+fully implemented.
+
+MAD does not yet support MPEG-2 multichannel audio (although it should
+be backward compatible with such streams) or AAC, nor does it support
+the so-called MPEG 2.5 format.
+
+This is ID3 tag library, which is part of the project.
+
+WWW: http://mad.sourceforge.net/

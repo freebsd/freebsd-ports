@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Wed Nov 26 09:37:37 2003
++++ Makefile.in	Wed Nov 26 09:37:57 2003
+@@ -213,7 +213,7 @@
+ 	ltmain.sh missing mkinstalldirs
+ SOURCES = $(libid3tag_la_SOURCES) $(EXTRA_libid3tag_la_SOURCES)
+ 
+-all: $(BUILT_SOURCES) config.h
++all: $(BUILT_SOURCES)
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
+ 
+ .SUFFIXES:
