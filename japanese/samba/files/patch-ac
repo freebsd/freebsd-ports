@@ -1,0 +1,36 @@
+*** lib/pidfile.c.orig	Wed Jul 21 10:25:08 1999
+--- lib/pidfile.c	Mon Dec 27 04:46:26 1999
+***************
+*** 37,43 ****
+  	unsigned ret;
+  	pstring pidFile;
+  
+! 	slprintf(pidFile, sizeof(pidFile)-1, "%s/%s.pid", lp_lockdir(), name);
+  
+  	fd = sys_open(pidFile, O_NONBLOCK | O_RDWR, 0644);
+  	if (fd == -1) {
+--- 37,43 ----
+  	unsigned ret;
+  	pstring pidFile;
+  
+! 	slprintf(pidFile, sizeof(pidFile)-1, "%s/%s.pid", lp_piddir(), name);
+  
+  	fd = sys_open(pidFile, O_NONBLOCK | O_RDWR, 0644);
+  	if (fd == -1) {
+***************
+*** 78,84 ****
+  	pstring pidFile;
+  	pid_t pid;
+  
+! 	slprintf(pidFile, sizeof(pidFile)-1, "%s/%s.pid", lp_lockdir(), name);
+  
+  	pid = pidfile_pid(name);
+  	if (pid != 0) {
+--- 78,84 ----
+  	pstring pidFile;
+  	pid_t pid;
+  
+! 	slprintf(pidFile, sizeof(pidFile)-1, "%s/%s.pid", lp_piddir(), name);
+  
+  	pid = pidfile_pid(name);
+  	if (pid != 0) {

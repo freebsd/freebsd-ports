@@ -1,0 +1,19 @@
+*** configure.in.orig	Wed Jul 21 10:24:53 1999
+--- configure.in	Mon Dec 27 04:46:26 1999
+***************
+*** 1064,1070 ****
+    --whithout-krb5          Don't include Kerbers 5 support (default)],
+  [   AC_MSG_RESULT(yes)
+      AC_DEFINE(KRB5_AUTH)
+!     LIBS="$LIBS -ldes425 -lkrb5 -lcrypto -lcom_err"
+      CFLAGS="$CFLAGS -I$withval/include"
+      LDFLAGS="$LDFLAGS -L$withval/lib"],
+    AC_MSG_RESULT(no)
+--- 1064,1070 ----
+    --whithout-krb5          Don't include Kerbers 5 support (default)],
+  [   AC_MSG_RESULT(yes)
+      AC_DEFINE(KRB5_AUTH)
+!     LIBS="$LIBS -ldes425 -lkrb5 -lk5crypto -lcom_err"
+      CFLAGS="$CFLAGS -I$withval/include"
+      LDFLAGS="$LDFLAGS -L$withval/lib"],
+    AC_MSG_RESULT(no)

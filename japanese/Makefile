@@ -211,6 +211,7 @@
     SUBDIR += recjis
     SUBDIR += rubytk
     SUBDIR += rxvt
+    SUBDIR += samba
     SUBDIR += sdic
     SUBDIR += sed
     SUBDIR += seizedesktop
