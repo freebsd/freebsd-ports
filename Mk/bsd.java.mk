@@ -365,7 +365,7 @@ WITH_JIKES=	YES
 	@${ECHO} "${PKGNAME}: \"${USE_JIKES}\" is not a valid value for USE_JIKES. It should be YES or NO, or it should be undefined.";
 	@${FALSE}
 .				endif
-.			elif exists(${_JIKES_PATH})
+.			elif exists(${_JIKES_PATH}) && !defined(NO_BUILD)
 JAVAC=		${_JIKES_PATH}
 WITH_JIKES=	YES
 .			endif
