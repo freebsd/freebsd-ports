@@ -125,17 +125,22 @@ do-configure:
 	${ECHO_CMD} -n "cd "		>>${WRKDIR}/${STARTUP_CMD}
 	${ECHO_CMD} ${INSTALL_DIR}		>>${WRKDIR}/${STARTUP_CMD}
 	${ECHO_CMD} 'exec ./mozilla $$@'	>>${WRKDIR}/${STARTUP_CMD}
-	${ECHO_CMD} "#!/bin/sh"					>${WRKDIR}/linkfarm
-	${ECHO_CMD} "# Run this after installing Netscape plugins."	>>${WRKDIR}/linkfarm
-	${ECHO_CMD} "cd ${PREFIX}/lib/linux-mozilla/plugins"	>>${WRKDIR}/linkfarm
-	${ECHO_CMD} -n "${FIND} ../../netscape-linux/plugins/*"	>>${WRKDIR}/linkfarm
-	${ECHO_CMD} " -maxdepth 1 -exec ${LN} -s {} \; 2>/dev/null"	>>${WRKDIR}/linkfarm
-	${ECHO_CMD} -n "${FIND} ../../linux-netscape*/plugins"	>>${WRKDIR}/linkfarm
-	${ECHO_CMD} " -maxdepth 1 -exec ${LN} -s {} \; 2>/dev/null"	>>${WRKDIR}/linkfarm
-	${ECHO_CMD} -n "${FIND} ../../linux-beonex/plugins"	>>${WRKDIR}/linkfarm
-	${ECHO_CMD} " -maxdepth 1 -exec ${LN} -s {} \; 2>/dev/null"	>>${WRKDIR}/linkfarm
-	${ECHO_CMD} -n "${FIND} ../../linux-flashplugin6"	>>${WRKDIR}/linkfarm
-	${ECHO_CMD} " -maxdepth 1 -exec ${LN} -s {} \; 2>/dev/null"	>>${WRKDIR}/linkfarm
+	${ECHO_CMD} "#!/bin/sh" > ${WRKDIR}/linkfarm
+	${ECHO_CMD} "# Run this after installing Netscape plugins." \
+		>> ${WRKDIR}/linkfarm
+	${ECHO_CMD} "cd ${PREFIX}/lib/linux-mozilla/plugins" \
+		>> ${WRKDIR}/linkfarm
+
+.for ii in lib/linux-beonex/plugins lib/netscape-linux/plugins lib/flash \
+	lib/linux-mozilla/plugins lib/linux-netscape*/plugins \
+	lib/linux-flashplugin6 \
+	linux-blackdown-jdk1.3.1/jre/plugin/i386/mozilla \
+	linux-blackdown-jdk1.4.1/jre/plugin/i386/mozilla
+	${ECHO_CMD} -n "${FIND} ${LOCALBASE}/${ii}/*" \
+		>> ${WRKDIR}/linkfarm
+	${ECHO_CMD} " -maxdepth 1 -exec ${LN} -s {} \; 2>/dev/null" \
+		>> ${WRKDIR}/linkfarm
+.endfor
 
 pre-install:
 	${ECHO_CMD} bin/${STARTUP_CMD} > ${PLIST}
