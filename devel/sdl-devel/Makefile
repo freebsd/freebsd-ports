@@ -41,6 +41,9 @@ CONFIGURE_ARGS+=--enable-video-opengl
 
 MAN3!=		/bin/cat ${FILESDIR}/man3
 
+pre-configure:
+	@find ${WRKSRC} -type f -name Makefile.in | xargs ${TOUCH}
+
 post-configure:
 	@cd ${WRKSRC} && \
 		${CP} sdl-config sdl11-config && \
