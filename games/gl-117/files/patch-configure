@@ -1,0 +1,240 @@
+--- configure.orig	Fri Aug 22 08:07:20 2003
++++ configure	Sun Aug 24 12:25:25 2003
+@@ -5602,7 +5602,7 @@
+  path=""
+  for tmp in /usr/local /usr/X11R6 /usr $with_sdl_dir
+  do
+-  if test -f $tmp/include/SDL/SDL.h ; then
++  if test -f $tmp/include/SDL11/SDL.h ; then
+    path=$tmp
+   fi
+  done
+@@ -5612,8 +5612,8 @@
+  else
+   echo "$as_me:$LINENO: result: $path" >&5
+ echo "${ECHO_T}$path" >&6
+-  CPPFLAGS="$CPPFLAGS -I$path/include"
+-  CXXFLAGS="$CXXFLAGS -I$path/include"
++  CPPFLAGS="$CPPFLAGS -I$path/include/SDL11"
++  CXXFLAGS="$CXXFLAGS -I$path/include/SDL11"
+   LIBS="$LIBS -L$path/lib"
+  fi
+ 
+@@ -6280,8 +6280,8 @@
+ 
+ 
+ if test "${ac_cv_header_SDL_SDL_h+set}" = set; then
+-  echo "$as_me:$LINENO: checking for SDL/SDL.h" >&5
+-echo $ECHO_N "checking for SDL/SDL.h... $ECHO_C" >&6
++  echo "$as_me:$LINENO: checking for SDL11/SDL.h" >&5
++echo $ECHO_N "checking for SDL11/SDL.h... $ECHO_C" >&6
+ if test "${ac_cv_header_SDL_SDL_h+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ fi
+@@ -6289,8 +6289,8 @@
+ echo "${ECHO_T}$ac_cv_header_SDL_SDL_h" >&6
+ else
+   # Is the header compilable?
+-echo "$as_me:$LINENO: checking SDL/SDL.h usability" >&5
+-echo $ECHO_N "checking SDL/SDL.h usability... $ECHO_C" >&6
++echo "$as_me:$LINENO: checking SDL11/SDL.h usability" >&5
++echo $ECHO_N "checking SDL11/SDL.h usability... $ECHO_C" >&6
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -6299,7 +6299,7 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ $ac_includes_default
+-#include <SDL/SDL.h>
++#include <SDL11/SDL.h>
+ _ACEOF
+ rm -f conftest.$ac_objext
+ if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
+@@ -6325,8 +6325,8 @@
+ echo "${ECHO_T}$ac_header_compiler" >&6
+ 
+ # Is the header present?
+-echo "$as_me:$LINENO: checking SDL/SDL.h presence" >&5
+-echo $ECHO_N "checking SDL/SDL.h presence... $ECHO_C" >&6
++echo "$as_me:$LINENO: checking SDL11/SDL.h presence" >&5
++echo $ECHO_N "checking SDL11/SDL.h presence... $ECHO_C" >&6
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -6334,7 +6334,7 @@
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+-#include <SDL/SDL.h>
++#include <SDL11/SDL.h>
+ _ACEOF
+ if { (eval echo "$as_me:$LINENO: \"$ac_cpp conftest.$ac_ext\"") >&5
+   (eval $ac_cpp conftest.$ac_ext) 2>conftest.er1
+@@ -6367,10 +6367,10 @@
+ # So?  What about this header?
+ case $ac_header_compiler:$ac_header_preproc in
+   yes:no )
+-    { echo "$as_me:$LINENO: WARNING: SDL/SDL.h: accepted by the compiler, rejected by the preprocessor!" >&5
+-echo "$as_me: WARNING: SDL/SDL.h: accepted by the compiler, rejected by the preprocessor!" >&2;}
+-    { echo "$as_me:$LINENO: WARNING: SDL/SDL.h: proceeding with the preprocessor's result" >&5
+-echo "$as_me: WARNING: SDL/SDL.h: proceeding with the preprocessor's result" >&2;}
++    { echo "$as_me:$LINENO: WARNING: SDL11/SDL.h: accepted by the compiler, rejected by the preprocessor!" >&5
++echo "$as_me: WARNING: SDL11/SDL.h: accepted by the compiler, rejected by the preprocessor!" >&2;}
++    { echo "$as_me:$LINENO: WARNING: SDL11/SDL.h: proceeding with the preprocessor's result" >&5
++echo "$as_me: WARNING: SDL11/SDL.h: proceeding with the preprocessor's result" >&2;}
+     (
+       cat <<\_ASBOX
+ ## ------------------------------------ ##
+@@ -6381,12 +6381,12 @@
+       sed "s/^/$as_me: WARNING:     /" >&2
+     ;;
+   no:yes )
+-    { echo "$as_me:$LINENO: WARNING: SDL/SDL.h: present but cannot be compiled" >&5
+-echo "$as_me: WARNING: SDL/SDL.h: present but cannot be compiled" >&2;}
+-    { echo "$as_me:$LINENO: WARNING: SDL/SDL.h: check for missing prerequisite headers?" >&5
+-echo "$as_me: WARNING: SDL/SDL.h: check for missing prerequisite headers?" >&2;}
+-    { echo "$as_me:$LINENO: WARNING: SDL/SDL.h: proceeding with the preprocessor's result" >&5
+-echo "$as_me: WARNING: SDL/SDL.h: proceeding with the preprocessor's result" >&2;}
++    { echo "$as_me:$LINENO: WARNING: SDL11/SDL.h: present but cannot be compiled" >&5
++echo "$as_me: WARNING: SDL11/SDL.h: present but cannot be compiled" >&2;}
++    { echo "$as_me:$LINENO: WARNING: SDL11/SDL.h: check for missing prerequisite headers?" >&5
++echo "$as_me: WARNING: SDL11/SDL.h: check for missing prerequisite headers?" >&2;}
++    { echo "$as_me:$LINENO: WARNING: SDL11/SDL.h: proceeding with the preprocessor's result" >&5
++echo "$as_me: WARNING: SDL11/SDL.h: proceeding with the preprocessor's result" >&2;}
+     (
+       cat <<\_ASBOX
+ ## ------------------------------------ ##
+@@ -6397,8 +6397,8 @@
+       sed "s/^/$as_me: WARNING:     /" >&2
+     ;;
+ esac
+-echo "$as_me:$LINENO: checking for SDL/SDL.h" >&5
+-echo $ECHO_N "checking for SDL/SDL.h... $ECHO_C" >&6
++echo "$as_me:$LINENO: checking for SDL11/SDL.h" >&5
++echo $ECHO_N "checking for SDL11/SDL.h... $ECHO_C" >&6
+ if test "${ac_cv_header_SDL_SDL_h+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+@@ -6420,8 +6420,8 @@
+ 
+ 
+ if test "${ac_cv_header_SDL_SDL_mixer_h+set}" = set; then
+-  echo "$as_me:$LINENO: checking for SDL/SDL_mixer.h" >&5
+-echo $ECHO_N "checking for SDL/SDL_mixer.h... $ECHO_C" >&6
++  echo "$as_me:$LINENO: checking for SDL11/SDL_mixer.h" >&5
++echo $ECHO_N "checking for SDL11/SDL_mixer.h... $ECHO_C" >&6
+ if test "${ac_cv_header_SDL_SDL_mixer_h+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ fi
+@@ -6429,8 +6429,8 @@
+ echo "${ECHO_T}$ac_cv_header_SDL_SDL_mixer_h" >&6
+ else
+   # Is the header compilable?
+-echo "$as_me:$LINENO: checking SDL/SDL_mixer.h usability" >&5
+-echo $ECHO_N "checking SDL/SDL_mixer.h usability... $ECHO_C" >&6
++echo "$as_me:$LINENO: checking SDL11/SDL_mixer.h usability" >&5
++echo $ECHO_N "checking SDL11/SDL_mixer.h usability... $ECHO_C" >&6
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -6439,7 +6439,7 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ $ac_includes_default
+-#include <SDL/SDL_mixer.h>
++#include <SDL11/SDL_mixer.h>
+ _ACEOF
+ rm -f conftest.$ac_objext
+ if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
+@@ -6465,8 +6465,8 @@
+ echo "${ECHO_T}$ac_header_compiler" >&6
+ 
+ # Is the header present?
+-echo "$as_me:$LINENO: checking SDL/SDL_mixer.h presence" >&5
+-echo $ECHO_N "checking SDL/SDL_mixer.h presence... $ECHO_C" >&6
++echo "$as_me:$LINENO: checking SDL11/SDL_mixer.h presence" >&5
++echo $ECHO_N "checking SDL11/SDL_mixer.h presence... $ECHO_C" >&6
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -6474,7 +6474,7 @@
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+-#include <SDL/SDL_mixer.h>
++#include <SDL11/SDL_mixer.h>
+ _ACEOF
+ if { (eval echo "$as_me:$LINENO: \"$ac_cpp conftest.$ac_ext\"") >&5
+   (eval $ac_cpp conftest.$ac_ext) 2>conftest.er1
+@@ -6507,10 +6507,10 @@
+ # So?  What about this header?
+ case $ac_header_compiler:$ac_header_preproc in
+   yes:no )
+-    { echo "$as_me:$LINENO: WARNING: SDL/SDL_mixer.h: accepted by the compiler, rejected by the preprocessor!" >&5
+-echo "$as_me: WARNING: SDL/SDL_mixer.h: accepted by the compiler, rejected by the preprocessor!" >&2;}
+-    { echo "$as_me:$LINENO: WARNING: SDL/SDL_mixer.h: proceeding with the preprocessor's result" >&5
+-echo "$as_me: WARNING: SDL/SDL_mixer.h: proceeding with the preprocessor's result" >&2;}
++    { echo "$as_me:$LINENO: WARNING: SDL11/SDL_mixer.h: accepted by the compiler, rejected by the preprocessor!" >&5
++echo "$as_me: WARNING: SDL11/SDL_mixer.h: accepted by the compiler, rejected by the preprocessor!" >&2;}
++    { echo "$as_me:$LINENO: WARNING: SDL11/SDL_mixer.h: proceeding with the preprocessor's result" >&5
++echo "$as_me: WARNING: SDL11/SDL_mixer.h: proceeding with the preprocessor's result" >&2;}
+     (
+       cat <<\_ASBOX
+ ## ------------------------------------ ##
+@@ -6521,12 +6521,12 @@
+       sed "s/^/$as_me: WARNING:     /" >&2
+     ;;
+   no:yes )
+-    { echo "$as_me:$LINENO: WARNING: SDL/SDL_mixer.h: present but cannot be compiled" >&5
+-echo "$as_me: WARNING: SDL/SDL_mixer.h: present but cannot be compiled" >&2;}
+-    { echo "$as_me:$LINENO: WARNING: SDL/SDL_mixer.h: check for missing prerequisite headers?" >&5
+-echo "$as_me: WARNING: SDL/SDL_mixer.h: check for missing prerequisite headers?" >&2;}
+-    { echo "$as_me:$LINENO: WARNING: SDL/SDL_mixer.h: proceeding with the preprocessor's result" >&5
+-echo "$as_me: WARNING: SDL/SDL_mixer.h: proceeding with the preprocessor's result" >&2;}
++    { echo "$as_me:$LINENO: WARNING: SDL11/SDL_mixer.h: present but cannot be compiled" >&5
++echo "$as_me: WARNING: SDL11/SDL_mixer.h: present but cannot be compiled" >&2;}
++    { echo "$as_me:$LINENO: WARNING: SDL11/SDL_mixer.h: check for missing prerequisite headers?" >&5
++echo "$as_me: WARNING: SDL11/SDL_mixer.h: check for missing prerequisite headers?" >&2;}
++    { echo "$as_me:$LINENO: WARNING: SDL11/SDL_mixer.h: proceeding with the preprocessor's result" >&5
++echo "$as_me: WARNING: SDL11/SDL_mixer.h: proceeding with the preprocessor's result" >&2;}
+     (
+       cat <<\_ASBOX
+ ## ------------------------------------ ##
+@@ -6537,8 +6537,8 @@
+       sed "s/^/$as_me: WARNING:     /" >&2
+     ;;
+ esac
+-echo "$as_me:$LINENO: checking for SDL/SDL_mixer.h" >&5
+-echo $ECHO_N "checking for SDL/SDL_mixer.h... $ECHO_C" >&6
++echo "$as_me:$LINENO: checking for SDL11/SDL_mixer.h" >&5
++echo $ECHO_N "checking for SDL11/SDL_mixer.h... $ECHO_C" >&6
+ if test "${ac_cv_header_SDL_SDL_mixer_h+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+@@ -6743,13 +6743,13 @@
+ echo "$as_me: WARNING: GLUT not found - please install GLUT or MesaGLUT" >&2;}
+ fi
+ 
+-echo "$as_me:$LINENO: checking for SDL_Init in -lSDL" >&5
+-echo $ECHO_N "checking for SDL_Init in -lSDL... $ECHO_C" >&6
++echo "$as_me:$LINENO: checking for SDL_Init in -lSDL-1.1" >&5
++echo $ECHO_N "checking for SDL_Init in -lSDL-1.1... $ECHO_C" >&6
+ if test "${ac_cv_lib_SDL_SDL_Init+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lSDL -lpthread $LIBS"
++LIBS="-lSDL-1.1 -pthread $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -6798,7 +6798,7 @@
+ echo "$as_me:$LINENO: result: $ac_cv_lib_SDL_SDL_Init" >&5
+ echo "${ECHO_T}$ac_cv_lib_SDL_SDL_Init" >&6
+ if test $ac_cv_lib_SDL_SDL_Init = yes; then
+-  LIBS="$LIBS -lSDL -lSDLmain"
++  LIBS="$LIBS -lSDL-1.1 -lSDLmain-1.1"
+ else
+   { echo "$as_me:$LINENO: WARNING: SDL not found - please install SDL" >&5
+ echo "$as_me: WARNING: SDL not found - please install SDL" >&2;}
