@@ -21,6 +21,7 @@ PREFIX?=	${LOCALBASE}/gnu-autotools
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
 GNU_CONFIGURE=	yes
 NO_MTREE=	yes
+INFO=		libtool
 CONFIGURE_ARGS=	--disable-ltdl-install
 CONFIGURE_ENV=	PREFIX=${PREFIX}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

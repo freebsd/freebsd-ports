@@ -1,8 +1,5 @@
 bin/libtool
 bin/libtoolize
-@unexec install-info --delete %D/info/libtool.info %D/info/dir
-info/libtool.info
-@exec install-info %D/info/libtool.info %D/info/dir
 share/aclocal/libtool.m4
 share/aclocal/ltdl.m4
 share/libtool/config.guess
