@@ -1,11 +1,11 @@
---- configure.orig	Mon Sep 27 18:50:13 2004
-+++ configure	Sat Nov 20 21:16:08 2004
-@@ -2893,51 +2893,8 @@
+--- configure.orig	Sat Dec 18 09:56:14 2004
++++ configure	Sat Dec 18 18:43:28 2004
+@@ -2922,51 +2922,8 @@
    echo "$ac_t""no" 1>&6
  fi
  
 -        echo $ac_n "checking for hid_init in -lusb""... $ac_c" 1>&6
--echo "configure:2898: checking for hid_init in -lusb" >&5
+-echo "configure:2927: checking for hid_init in -lusb" >&5
 -ac_lib_var=`echo usb'_'hid_init | sed 'y%./+-%__p_%'`
 -if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
 -  echo $ac_n "(cached) $ac_c" 1>&6
@@ -13,7 +13,7 @@
 -  ac_save_LIBS="$LIBS"
 -LIBS="-lusb  $LIBS"
 -cat > conftest.$ac_ext <<EOF
--#line 2906 "configure"
+-#line 2935 "configure"
 -#include "confdefs.h"
 -/* Override any gcc2 internal prototype to avoid an error.  */
 -/* We use char because int might match the return type of a gcc2
@@ -24,7 +24,7 @@
 -hid_init()
 -; return 0; }
 -EOF
--if { (eval echo configure:2917: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
+-if { (eval echo configure:2946: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
 -  rm -rf conftest*
 -  eval "ac_cv_lib_$ac_lib_var=yes"
 -else
