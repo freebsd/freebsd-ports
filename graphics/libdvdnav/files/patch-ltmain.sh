@@ -1,6 +1,6 @@
---- ltmain.sh.orig	Mon Apr 29 18:30:38 2002
-+++ ltmain.sh	Tue May 21 01:46:02 2002
-@@ -958,6 +958,7 @@
+--- ltmain.sh.orig	Sat Jun  1 21:12:45 2002
++++ ltmain.sh	Tue Jun 11 22:25:52 2002
+@@ -967,6 +967,7 @@
  	;;
  
        -avoid-version)
@@ -8,7 +8,7 @@
  	avoid_version=yes
  	continue
  	;;
-@@ -1045,14 +1046,14 @@
+@@ -1054,14 +1055,14 @@
  	    # These systems don't actually have a C library (as such)
  	    test "X$arg" = "X-lc" && continue
  	    ;;
@@ -25,7 +25,7 @@
  	    # Do not include libc_r directly, use -pthread flag.
  	    continue
  	    ;;
-@@ -2459,7 +2460,7 @@
+@@ -2468,13 +2469,13 @@
  	  *-*-netbsd*)
  	    # Don't link with libc until the a.out ld.so is fixed.
  	    ;;
@@ -34,7 +34,14 @@
  	    # Do not include libc due to us having libc/libc_r.
  	    ;;
  	  *)
-@@ -4247,10 +4248,12 @@
+ 	    # Add libc to deplibs on all other systems if necessary.
+ 	    if test $build_libtool_need_lc = "yes"; then
+-	      deplibs="$deplibs -lc"
++	      deplibs="$deplibs"
+ 	    fi
+ 	    ;;
+ 	  esac
+@@ -4273,10 +4274,12 @@
  	fi
  
  	# Install the pseudo-library for information purposes.
