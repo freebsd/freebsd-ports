@@ -1,5 +1,17 @@
 --- scripts/exim_install.orig	Mon Aug  2 17:43:03 1999
 +++ scripts/exim_install	Tue Aug  3 14:31:20 1999
+@@ -142,9 +142,9 @@
+     from=../util/
+   fi
+ 
+-  if [ ! -s ${from}${name} ]; then
++  if [ ! -r ${from}${name} ]; then
+     echo $com ""
+-    echo $com "*** `pwd`/${from}${name} does not exist or is empty"
++    echo $com "*** `pwd`/${from}${name} does not exist"
+     echo $com "*** Have you built Exim successfully?"
+     echo $com "*** Exim installation ${ver}failed ***"
+     exit 1
 @@ -195,25 +195,40 @@
    fi
  done
