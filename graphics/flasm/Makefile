@@ -13,6 +13,8 @@ DISTNAME=	flasm13src
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
+BROKEN=		"Checksum fails"
+
 USE_ZIP=	YES
 USE_GMAKE=	YES
 USE_BISON=	YES
