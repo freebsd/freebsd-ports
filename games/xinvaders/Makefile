@@ -3,7 +3,7 @@
 # Date created:         3 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.8 1996/11/18 10:36:05 asami Exp $
+# $Id: Makefile,v 1.9 1996/12/07 09:28:42 max Exp $
 #
 
 DISTNAME=       xinvaders
@@ -12,8 +12,10 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/x11/video
 
-USE_IMAKE=	yes
+MAINTAINER=	swallace@FreeBSD.org
 
 NO_CDROM=	"don't sell for profit"
+USE_IMAKE=	yes
+
 
 .include <bsd.port.mk>

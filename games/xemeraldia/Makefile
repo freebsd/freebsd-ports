@@ -3,7 +3,7 @@
 # Date created:         22 Mar 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.10 1996/11/18 11:25:25 asami Exp $
+# $Id: Makefile,v 1.11 1996/12/17 05:33:18 asami Exp $
 #
 
 DISTNAME=       xemeraldia-0.3
@@ -21,8 +21,8 @@ do-extract:
 	  if [ ! -f ${DISTNAME}.tar.gz ]; then \
 	    zcat ${DISTFILES} | uudecode; \
 	  fi)
-	@rm -rf ${WRKDIR}
-	@mkdir -p ${WRKDIR}
+	@${RM} -rf ${WRKDIR}
+	@${MKDIR} ${WRKDIR}
 	@(cd ${WRKDIR}; tar -xzf \
 		${DISTDIR}/${DISTNAME}.tar.gz)
 
@@ -31,6 +31,6 @@ post-install:
 	chmod 666 ${PREFIX}/lib/X11/.xemeraldia.scores
 
 pre-clean:
-	@rm -f ${DISTDIR}/${DISTNAME}.tar.gz
+	@${RM} -f ${DISTDIR}/${DISTNAME}.tar.gz
 
 .include <bsd.port.mk>

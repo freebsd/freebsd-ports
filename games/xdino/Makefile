@@ -3,7 +3,7 @@
 # Date created:        12 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/11/16 12:49:18 asami Exp $
 #
 
 DISTNAME=	xdino
@@ -18,7 +18,7 @@ USE_IMAKE=	yes
 
 post-install:
 	@chmod 755 ${PREFIX}/bin/xdino
-	@chown bin.bin ${PREFIX}/bin/xdino
+	@/usr/sbin/chown ${BINOWN}.${BINGRP} ${PREFIX}/bin/xdino
 	@${INSTALL_DATA} ${WRKSRC}/Dino.ad ${PREFIX}/lib/X11/app-defaults/Dino
 
 .include <bsd.port.mk>

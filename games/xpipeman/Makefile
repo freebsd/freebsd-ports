@@ -3,7 +3,7 @@
 # Date created:         2 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.6 1995/05/17 14:48:53 asami Exp $
+# $Id: Makefile,v 1.7 1996/11/18 11:26:38 asami Exp $
 #
 
 DISTNAME=       xpipeman
@@ -11,6 +11,8 @@ PKGNAME=        xpipeman-1.0
 CATEGORIES=	games
 MASTER_SITES=	ftp://iraun1.ira.uka.de/pub/x11/
 EXTRACT_SUFX=	.tar.Z
+
+MAINTAINER=	swallace@FreeBSD.org
 
 USE_IMAKE=	yes
 
