@@ -9,6 +9,7 @@ share/doc/xine/README
 share/doc/xine/README.freebsd
 share/doc/xine/README.syncfb
 share/doc/xine/bug_report_form
+share/idl/xine.idl
 share/xine/skins/default/arrowdn.png
 share/xine/skins/default/arrowdn2.png
 share/xine/skins/default/arrowup.png
@@ -95,12 +96,40 @@ share/xine/skins/metal/slider_pad.png
 share/xine/skins/metal/slider_v.png
 share/xine/skins/metal/smallbtn.png
 share/xine/skins/metal/stop.png
+share/xine/skins/pitt/arrowdn.png
+share/xine/skins/pitt/arrowup.png
+share/xine/skins/pitt/bg.png
+share/xine/skins/pitt/close.png
+share/xine/skins/pitt/eject.png
+share/xine/skins/pitt/fastb.png
+share/xine/skins/pitt/fastf.png
+share/xine/skins/pitt/fullsc.png
+share/xine/skins/pitt/largebtn.png
+share/xine/skins/pitt/letters.png
+share/xine/skins/pitt/next.png
+share/xine/skins/pitt/pause.png
+share/xine/skins/pitt/pl_bg.png
+share/xine/skins/pitt/pl_btn.png
+share/xine/skins/pitt/pl_itembtn.png
+share/xine/skins/pitt/pl_slidpad.png
+share/xine/skins/pitt/pl_slidv.png
+share/xine/skins/pitt/play.png
+share/xine/skins/pitt/power.png
+share/xine/skins/pitt/prev.png
+share/xine/skins/pitt/ptdn.png
+share/xine/skins/pitt/ptup.png
+share/xine/skins/pitt/skinconfig
+share/xine/skins/pitt/slider_bg.png
+share/xine/skins/pitt/slider_pad.png
+share/xine/skins/pitt/smallbtn.png
+share/xine/skins/pitt/stop.png
 share/xine/skins/xine_logo.png
-@dirrm lib/xine/plugins
-@dirrm lib/xine
-@dirrm share/doc/xine
-@dirrm share/xine/skins/default
-@dirrm share/xine/skins/lcd
+@dirrm share/xine/skins/pitt
 @dirrm share/xine/skins/metal
+@dirrm share/xine/skins/lcd
+@dirrm share/xine/skins/default
 @dirrm share/xine/skins
 @dirrm share/xine
+@dirrm share/doc/xine
+@dirrm lib/xine/plugins
+@dirrm lib/xine
