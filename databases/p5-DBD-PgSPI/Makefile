@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	DBD-PgSPI
-PORTVERSION=	0.01
-PORTREVISION=	1
+PORTVERSION=	0.02
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBD
@@ -25,6 +24,19 @@ LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 PERL_CONFIGURE=	yes
 
 MAN3=		DBD::PgSPI.3
+
+post-patch:
+	@${PERL} -i -pe '$$_ = "" if /ppport.h/' \
+		${WRKSRC}/PgSPI.h
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	Changes README
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
 
 .include <bsd.port.pre.mk>
 
