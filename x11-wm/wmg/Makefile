@@ -3,7 +3,7 @@
 # Date created:        27 August 1999
 # Whom:                Yukihiro Nakai <Nacai@iname.com>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	wmG-0.14.0
