@@ -95,6 +95,7 @@ PLIST_SUB+=		WANT_SWIG_JAVA="@comment "
 CONFIGURE_ARGS +=	--without-java
 .endif
 
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:U}
 USE_LIBTOOL_VER=	13
@@ -107,6 +108,9 @@ PLIST_SUB+=	VER="${VER}"
 .if ${ARCH} == "sparc64"
 BROKEN=		"Build fails on sparc64"
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's/SKIP_CHICKEN=$$/&"1"/' ${WRKSRC}/configure
 
 post-install:
 # A separate swig13-runtime port might be nice
