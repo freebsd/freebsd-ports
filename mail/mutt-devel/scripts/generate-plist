@@ -28,7 +28,8 @@ bin/muttbug
 bin/pgpewrap
 bin/pgpring
 bin/smime_keys
-etc/Muttrc
+@unexec if cmp -s %D/etc/Muttrc.dist %D/etc/Muttrc; then rm -f %D/etc/Muttrc; fi
+etc/Muttrc.dist
 etc/mime.types
 share/locale/ca/LC_MESSAGES/mutt.mo
 share/locale/cs/LC_MESSAGES/mutt.mo
