@@ -1,0 +1,11 @@
+--- configure.orig	Mon Mar 15 03:48:52 2004
++++ configure	Mon Mar 15 03:49:27 2004
+@@ -3332,7 +3332,7 @@
+ ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
+ 
+   if test x"$ac_cv_c_compiler_gnu" != x; then
+-    CXX_LINK=${CC}
++    CXX_LINK=${CXX}
+   fi
+ 
+ 
