@@ -32,6 +32,42 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="88ff90f2-6e43-11d9-8c87-000a95bc6fae">
+    <topic>mod_dosevasive -- insecure temporary file creation</topic>
+    <affects>
+      <package>
+	<name>mod_dosevasive20</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An LSS Security Advisory reports:</p>
+	<blockquote cite="http://security.lss.hr/en/index.php?page=details&amp;ID=LSS-2005-01-01">
+	  <p>When a denial of service attack is detected,
+	    mod_dosevasive will, among other things, create a
+	    temporary file which it will use to trace actions from the
+	    offensive IP address. This file is insecurely created in
+	    /tmp and it's name is easily predictable.</p>
+	  <p>It is then easy for an attacker to create arbitrary files
+	    in any directory that the user under which apache runs has
+	    privileges to write.</p>
+	  <p><em>[...]</em> once the target file is opened, there is a
+	    race attack (although difficult to exploit) which can lead
+	    to mod_dosevasive overwriting any file that the user under
+	    which apache runs has privileges to write.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://security.lss.hr/en/index.php?page=details&amp;ID=LSS-2005-01-01</url>
+    </references>
+    <dates>
+      <discovery>2005-01-04</discovery>
+      <entry>2005-01-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b4d94fa0-6e38-11d9-9e1e-c296ac722cb3">
     <topic>squid -- possible cache-poisoning via malformed HTTP
       responses</topic>
