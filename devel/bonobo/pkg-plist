@@ -6,6 +6,7 @@ bin/bonobo-text-plain
 bin/echo-client
 bin/efstool
 bin/gshell
+bin/libefs-config
 bin/paint-component-simple
 bin/sample-canvas-item
 bin/sample-container
@@ -46,6 +47,7 @@ include/bonobo/bonobo-object.h
 include/bonobo/bonobo-persist-file.h
 include/bonobo/bonobo-persist-stream.h
 include/bonobo/bonobo-persist.h
+include/bonobo/bonobo-plug.h
 include/bonobo/bonobo-print-client.h
 include/bonobo/bonobo-print.h
 include/bonobo/bonobo-progressive.h
@@ -54,6 +56,8 @@ include/bonobo/bonobo-property-bag.h
 include/bonobo/bonobo-property-types.h
 include/bonobo/bonobo-property.h
 include/bonobo/bonobo-selector.h
+include/bonobo/bonobo-sizeable.h
+include/bonobo/bonobo-socket.h
 include/bonobo/bonobo-storage.h
 include/bonobo/bonobo-stream-client.h
 include/bonobo/bonobo-stream-fs.h
@@ -76,6 +80,7 @@ lib/libefs.so
 lib/libefs.so.0
 lib/libstorage_efs.so
 lib/libstorage_fs.so
+share/gnome/bonobo/html/bonobo-api.html
 share/gnome/bonobo/html/bonobo-api.sgml
 share/gnome/bonobo/html/bonobo-decl.txt
 share/gnome/bonobo/html/bonobo-sections.txt
@@ -132,6 +137,7 @@ share/gnome/idl/bonobo-persist.idl
 share/gnome/idl/bonobo-print.idl
 share/gnome/idl/bonobo-progressive.idl
 share/gnome/idl/bonobo-property.idl
+share/gnome/idl/bonobo-sizeable.idl
 share/gnome/idl/bonobo-storage.idl
 share/gnome/idl/bonobo-ui-handler.idl
 share/gnome/idl/bonobo-unknown.idl
@@ -148,9 +154,12 @@ share/gnome/oaf/text-plain.oafinfo
 share/locale/da/LC_MESSAGES/bonobo.mo
 share/locale/de/LC_MESSAGES/bonobo.mo
 share/locale/el/LC_MESSAGES/bonobo.mo
+share/locale/en_GB/LC_MESSAGES/bonobo.mo
 share/locale/es/LC_MESSAGES/bonobo.mo
+share/locale/fi/LC_MESSAGES/bonobo.mo
 share/locale/fr/LC_MESSAGES/bonobo.mo
 share/locale/gl/LC_MESSAGES/bonobo.mo
+share/locale/hu/LC_MESSAGES/bonobo.mo
 share/locale/it/LC_MESSAGES/bonobo.mo
 share/locale/ja/LC_MESSAGES/bonobo.mo
 share/locale/nl/LC_MESSAGES/bonobo.mo
@@ -159,10 +168,14 @@ share/locale/pl/LC_MESSAGES/bonobo.mo
 share/locale/pt_BR/LC_MESSAGES/bonobo.mo
 share/locale/ro/LC_MESSAGES/bonobo.mo
 share/locale/ru/LC_MESSAGES/bonobo.mo
+share/locale/sl/LC_MESSAGES/bonobo.mo
 share/locale/sv/LC_MESSAGES/bonobo.mo
 share/locale/tr/LC_MESSAGES/bonobo.mo
 share/locale/uk/LC_MESSAGES/bonobo.mo
 share/locale/wa/LC_MESSAGES/bonobo.mo
+@dirrm share/gnome/gtk-doc/html/libefs
+@dirrm share/gnome/gtk-doc/html
+@dirrm share/gnome/gtk-doc
 @dirrm share/gnome/bonobo/html/bonobo
 @dirrm share/gnome/bonobo/html
 @dirrm share/gnome/bonobo/docs/audio_ulaw/C/images
