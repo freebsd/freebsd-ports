@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Search-Google
-PORTVERSION=	0.20
+PORTVERSION=	0.21
 PORTEPOCH=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -16,7 +16,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	erwin@lansing.dk
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/WWW/Search.pm:${PORTSDIR}/www/p5-WWW-Search \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/Google.pm:${PORTSDIR}/net/p5-Net-Google
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
