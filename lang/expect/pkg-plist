@@ -9,6 +9,7 @@ bin/ftp-rfc
 bin/kibitz
 bin/lpunlock
 bin/mkpasswd
+bin/multixterm
 bin/passmass
 bin/rftp
 bin/rlogin-cwd
@@ -24,9 +25,9 @@ include/expect.h
 include/expect_comm.h
 include/expect_tcl.h
 include/tcldbg.h
-lib/expect5.32/pkgIndex.tcl
-lib/expect5.32/libexpect532.a
-lib/libexpect532.a
-lib/libexpect532.so
-lib/libexpect532.so.1
-@dirrm lib/expect5.32
+lib/expect%%EXPECT_VER%%/pkgIndex.tcl
+lib/expect%%EXPECT_VER%%/libexpect%%LIBEXPECT_VER%%.a
+lib/libexpect%%LIBEXPECT_VER%%.a
+lib/libexpect%%LIBEXPECT_VER%%.so
+lib/libexpect%%LIBEXPECT_VER%%.so.1
+@dirrm lib/expect%%EXPECT_VER%%

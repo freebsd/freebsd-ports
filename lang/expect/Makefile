@@ -5,11 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	expect
-PORTVERSION=	5.32.1
+PORTVERSION=	5.37.2
 CATEGORIES=	lang tcl83 tk83
 MASTER_SITES=	http://expect.nist.gov/src/
 
-MAINTAINER=	john@coastalgeology.org
+EXPECT_VER=	5.37
+LIBEXPECT_VER=	537
+
+MAINTAINER=	ports@freebsd.org
 
 .if !defined(WITHOUT_X11)
 LIB_DEPENDS?=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
@@ -17,12 +20,15 @@ LIB_DEPENDS?=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 LIB_DEPENDS?=	tcl83.1:${PORTSDIR}/lang/tcl83
 .endif
 
-WRKSRC=		${WRKDIR}/expect-5.32
-INSTALLS_SHLIB=	yes
+WRKSRC=		${WRKDIR}/expect-${EXPECT_VER}
+INSTALLS_SHLIB= yes
 GNU_CONFIGURE=	yes
 
+PLIST_SUB+=	EXPECT_VER="${EXPECT_VER}"
+PLIST_SUB+=	LIBEXPECT_VER="${LIBEXPECT_VER}"
+
 .if defined(WITHOUT_X11)
-TK_CONFIG_ARGS = 
+TK_CONFIG_ARGS =
 PLIST_SUB += XFILES="@comment "
 .else
 TK_CONFIG_ARGS = --with-tkconfig=${PREFIX}/lib/tk8.3 \
@@ -34,17 +40,19 @@ CONFIGURE_ARGS?= --enable-shared \
 		--with-tclconfig=${PREFIX}/lib/tcl8.3 \
 		--with-tclinclude=${PREFIX}/include/tcl8.3 \
 		${TK_CONFIG_ARGS}
+
 .if !defined(NO_MAN_INSTALL)
 MAN1=		autoexpect.1 cryptdir.1 decryptdir.1 dislocate.1 \
-		expect.1 kibitz.1 mkpasswd.1 passmass.1 \
+		expect.1 kibitz.1 mkpasswd.1 multixterm.1 passmass.1 \
 		tknewsbiff.1 unbuffer.1 xkibitz.1
 .if !defined(WITHOUT_X11)
-MAN1 += expectk.1 
+MAN1 += expectk.1
 .endif
 MAN3=		libexpect.3
 .endif
 
 post-install:
-	${LN} -sf libexpect532.so.1 ${PREFIX}/lib/libexpect532.so
+	${LN} -sf libexpect${LIBEXPECT_VER}.so.1 \
+		${PREFIX}/lib/libexpect${LIBEXPECT_VER}.so
 
 .include <bsd.port.mk>
