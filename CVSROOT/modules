@@ -2365,6 +2365,7 @@ gkrellm-gift	ports/net/gkrellm-gift
 gkrellm-gtodo	ports/deskutils/gkrellm-gtodo
 gkrellm-helium	ports/misc/gkrellm-helium
 gkrellm-reminder	ports/misc/gkrellm-reminder
+gkrellm-reminder2	ports/deskutils/gkrellm-reminder2
 gkrellm-xkb	ports/misc/gkrellm-xkb
 gkrellm2	ports/sysutils/gkrellm2
 gkrellm_snmp	ports/net/gkrellm_snmp
