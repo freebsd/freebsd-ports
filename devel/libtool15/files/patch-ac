@@ -1,5 +1,5 @@
---- ltconfig.orig	Tue Dec  7 13:50:48 1999
-+++ ltconfig	Mon Jan 17 16:31:24 2000
+--- ltconfig.orig	Tue Dec  7 23:50:48 1999
++++ ltconfig	Wed Sep 20 11:11:39 2000
 @@ -169,7 +169,7 @@
  # Constants:
  PROGRAM=ltconfig
@@ -18,7 +18,12 @@
  enable_dlopen=unknown
  enable_win32_dll=no
  ltmain=
-@@ -246,6 +248,9 @@
+@@ -242,10 +244,14 @@
+ 
+ Generate a system-specific libtool script.
+ 
++    --build                no-op to keep compatability with configure scripts generated for 1.4
+     --debug                enable verbose shell tracing
      --disable-shared       do not build shared libraries
      --disable-static       do not build static libraries
      --disable-fast-install do not optimize for fast installation
@@ -28,7 +33,16 @@
      --enable-dlopen        enable dlopen support
      --enable-win32-dll     enable building dlls on win32 hosts
      --help                 display this help and exit
-@@ -279,6 +284,12 @@
+@@ -268,6 +274,8 @@
+   exit 0
+   ;;
+ 
++  --build=*) ;;
++
+   --debug)
+     echo "$progname: enabling shell trace mode"
+     set -x
+@@ -279,6 +287,12 @@
  
    --disable-fast-install) enable_fast_install=no ;;
  
@@ -41,7 +55,7 @@
    --enable-dlopen) enable_dlopen=yes ;;
  
    --enable-win32-dll) enable_win32_dll=yes ;;
-@@ -971,11 +982,11 @@
+@@ -971,11 +985,11 @@
    $rm conftest.dat
    if ln -s X conftest.dat 2>/dev/null; then
      $rm conftest.dat
@@ -55,7 +69,7 @@
      echo "$ac_t"yes 1>&6
    else
      echo "$ac_t"no 1>&6
-@@ -1226,8 +1237,8 @@
+@@ -1226,8 +1240,8 @@
  
    *)
      if $LD --help 2>&1 | egrep ': supported targets:.* elf' > /dev/null; then
@@ -66,7 +80,7 @@
      else
        ld_shlibs=no
      fi
-@@ -1353,14 +1364,6 @@
+@@ -1353,14 +1367,6 @@
      hardcode_shlibpath_var=no
      ;;
  
@@ -81,7 +95,7 @@
    hpux9* | hpux10* | hpux11*)
      case "$host_os" in
      hpux9*) archive_cmds='$rm $objdir/$soname~$LD -b +b $install_libdir -o $objdir/$soname $libobjs $deplibs $linkopts~test $objdir/$soname = $lib || mv $objdir/$soname $lib' ;;
-@@ -1775,7 +1778,7 @@
+@@ -1775,7 +1781,7 @@
  version_type=none
  dynamic_linker="$host_os ld.so"
  sys_lib_dlsearch_path_spec="/lib /usr/lib"
@@ -90,7 +104,7 @@
  file_magic_cmd=
  file_magic_test_file=
  deplibs_check_method='unknown'
-@@ -1874,18 +1877,21 @@
+@@ -1874,18 +1880,21 @@
    case "$version_type" in
      freebsd-elf*)
        deplibs_check_method='file_magic ELF [0-9][0-9]*-bit [LM]SB shared object'
@@ -120,7 +134,7 @@
    shlibpath_var=LD_LIBRARY_PATH
    case "$host_os" in
    freebsd2* | freebsd3.[01]* | freebsdelf3.[01]*)
-@@ -2776,6 +2782,15 @@
+@@ -2776,6 +2785,15 @@
  
  # Shell to use when invoking shell scripts.
  SHELL=$LTSHELL
