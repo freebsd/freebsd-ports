@@ -1,0 +1,17 @@
+#!/bin/sh
+
+if [ -n "${PACKAGE_BUILDING}" ]; then
+    exit 0
+fi
+
+if [ "$2" = "POST-INSTALL" ]; then
+    mkdir -p ${PKG_PREFIX}/share/gnome/games
+    SCORES="gweled.easy.scores"
+    for i in ${SCORES}; do
+	if [ ! -f ${PKG_PREFIX}/share/gnome/games/${i} ]; then
+	    touch -f ${PKG_PREFIX}/share/gnome/games/${i}
+	    chown games:games ${PKG_PREFIX}/share/gnome/games/${i}
+	    chmod 664 ${PKG_PREFIX}/share/gnome/games/${i}
+	fi
+    done
+fi

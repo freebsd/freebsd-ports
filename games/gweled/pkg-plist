@@ -1,0 +1,21 @@
+bin/gweled
+share/gnome/applications/gweled.desktop
+@unexec [ -s %D/share/gnome/games/gweled.easy.scores ] || rm -f %D/share/gnome/games/gweled.easy.scores
+share/gnome/gweled/gweled.glade
+share/gnome/gweled/gweled_icon.png
+share/gnome/gweled/gweled_logo.png
+share/gnome/pixmaps/gweled.png
+share/gnome/pixmaps/gweled/cursor.svg
+share/gnome/pixmaps/gweled/font_24_20.png
+share/gnome/pixmaps/gweled/font_48_40.png
+share/gnome/pixmaps/gweled/gem01.svg
+share/gnome/pixmaps/gweled/gem02.svg
+share/gnome/pixmaps/gweled/gem03.svg
+share/gnome/pixmaps/gweled/gem04.svg
+share/gnome/pixmaps/gweled/gem05.svg
+share/gnome/pixmaps/gweled/gem06.svg
+share/gnome/pixmaps/gweled/gem07.svg
+share/gnome/pixmaps/gweled/tile_even.svg
+share/gnome/pixmaps/gweled/tile_odd.svg
+@dirrm share/gnome/pixmaps/gweled
+@dirrm share/gnome/gweled
