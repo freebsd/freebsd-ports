@@ -9,8 +9,8 @@ PORTVERSION=	0.6.1
 CATEGORIES?=	net devel
 MASTER_SITES=	ftp://ftp.swampwolf.com/pub/
 
-MAINTAINER=	ports@freebsd.org
-COMMENT=	Howl is an implementation of the Zeroconf networking standard
+MAINTAINER=	paul@aps.org
+COMMENT=	Zeroconf/Rendezvous implementation
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
