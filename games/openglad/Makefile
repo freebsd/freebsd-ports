@@ -24,6 +24,8 @@ USE_SDL=	sdl mixer
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include"
 PLIST_SUB=	DOCDIR=share/doc/${PORTNAME}
 
+NOT_FOR_ARCHS=	sparc64
+
 post-configure:
 	${REINPLACE_CMD} -e 's|/path/to/data/dir|${LOCALBASE}/share/openglad|g' \
 		${WRKSRC}/openglad.cfg
