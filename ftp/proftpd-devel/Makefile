@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	proftpd
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2rc1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.stikman.com/pub/proftpd/source/ \
@@ -14,8 +14,6 @@ MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.club-internet.fr/pub/mirrors/ftp.proftpd.org/distrib/source/
 
 MAINTAINER=	mharo@FreeBSD.org
-
-FORBIDDEN=	"Security vulnerability - check back in a few days"
 
 .if defined(WITH_LDAP)
 MASTER_SITES+=	http://www.horde.net/~jwm/software/proftpd-ldap/
