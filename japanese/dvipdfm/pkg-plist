@@ -1,0 +1,29 @@
+bin/dvipdfm
+bin/dvipdft
+bin/ebb
+share/dvipdfm/dvipdfm.def
+share/texmf/doc/dvipdfm/dvipdfm.pdf
+share/texmf/doc/dvipdfm/dvipdfm.tex
+share/texmf/doc/dvipdfm/mwicks.bb
+share/texmf/doc/dvipdfm/mwicks.jpeg
+share/texmf/doc/dvipdfm/transistor.bb
+share/texmf/doc/dvipdfm/transistor.eps
+share/texmf/doc/dvipdfm/transistor.fig
+share/texmf/doc/dvipdfm/transistor.pdf
+share/texmf/dvipdfm/base/ot1.enc
+share/texmf/dvipdfm/base/ot1alt.enc
+share/texmf/dvipdfm/base/ot1r.enc
+share/texmf/dvipdfm/config/cmr.map
+share/texmf/dvipdfm/config/config
+share/texmf/dvipdfm/config/lw35urw.map
+share/texmf/dvipdfm/config/lw35urwa.map
+share/texmf/dvipdfm/config/psbase14.map
+share/texmf/dvipdfm/config/t1fonts.map
+share/texmf/dvipdfm/config/cid.map
+@exec %D/bin/mktexlsr
+@unexec %D/bin/mktexlsr
+@dirrm share/dvipdfm
+@dirrm share/texmf/doc/dvipdfm
+@dirrm share/texmf/dvipdfm/base
+@dirrm share/texmf/dvipdfm/config
+@dirrm share/texmf/dvipdfm
