@@ -1,0 +1,64 @@
+--- sdts++/builder/sb_Accessor.cpp.orig	Tue Jun 10 22:51:40 2003
++++ sdts++/builder/sb_Accessor.cpp	Sat Dec 13 14:17:48 2003
+@@ -26,6 +26,12 @@
+ #include <cctype>
+ #include <cstring>
+ 
++#if __FreeBSD__
++#  include <osreldate.h>
++#  if __FreeBSD_version < 500035
++#    include <stlport/iosfwd>
++#  endif
++#endif
+ #include <boost/smart_ptr.hpp>
+ #include <boost/filesystem/path.hpp>
+ #include <boost/filesystem/operations.hpp>
+@@ -155,27 +158,27 @@
+ 
+ 
+ 
+-static const char* module_mnemonics_[] =
+-{ 
+-  {"CATS"},
+-  {"CATD"},
+-  {"DDOM"},
+-  {"DDSH"},
+-  {"MDOM"},
+-  {"MDEF"},
+-  {"DQHL"},
+-  {"DQPA"},
+-  {"DQAA"},
+-  {"DQLC"},
+-  {"DQCG"},
+-  {"IDEN"},
+-  {"IREF"},
+-  {"LDEF"},
+-  {"RSDF"},
+-  {"STAT"},
+-  {"XREF"},
+-  {""}
+-}; // module_mnemonics
++static const char* module_mnemonics_[] =
++{ 
++  "CATS",
++  "CATD",
++  "DDOM",
++  "DDSH",
++  "MDOM",
++  "MDEF",
++  "DQHL",
++  "DQPA",
++  "DQAA",
++  "DQLC",
++  "DQCG",
++  "IDEN",
++  "IREF",
++  "LDEF",
++  "RSDF",
++  "STAT",
++  "XREF",
++  ""
++}; // module_mnemonics
+ 
+ 
+ 

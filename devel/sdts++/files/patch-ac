@@ -1,0 +1,11 @@
+--- sdts++/Makefile.in.orig	Sat Dec 13 14:19:23 2003
++++ sdts++/Makefile.in	Sat Dec 13 14:21:14 2003
+@@ -147,7 +147,7 @@
+ 
+ AUTOMAKE_OPTIONS := subdir-objects
+ 
+-AM_CPPFLAGS := -I. -I.. -Icontainer -Iio -Ibuilder -Ilogical -I${prefix}/include -I${BOOST_HEADER}
++AM_CPPFLAGS := -I. -I.. -Icontainer -Iio -Ibuilder -Ilogical -I${prefix}/include -I${BOOST_HEADER} -I${BOOST_HEADER}/stlport
+ 
+ container_sources := container/sc_Subfield.cpp		\
+                      container/sc_Field.cpp		\
