@@ -1,5 +1,7 @@
 # .mozconfig.in -*-shell-script-*-
 # $FreeBSD$
+######################################################################
+# standard opts from README
 export MOZ_PHOENIX=1
 mk_add_options MOZ_PHOENIX=1
 ac_add_options --enable-crypto
@@ -8,16 +10,35 @@ ac_add_options --disable-debug
 ac_add_options --disable-mailnews
 ac_add_options --disable-composer
 ac_add_options --enable-optimize=-O2
+######################################################################
 # FBSD specific
+export PERL=@LOCALBASE@/bin/perl5.8.0
+mk_add_options PERL=$PERL
 export GTK_CONFIG=@X11BASE@/bin/gtk12-config
 mk_add_options GTK_CONFIG=$GTK_CONFIG
 export GLIB_CONFIG=@LOCALBASE@/bin/glib12-config
 mk_add_options GLIB_CONFIG=$GLIB_CONFIG
-# Use ports for these
+######################################################################
+# Use ports for these libraries
 ac_add_options --with-system-jpeg=@LOCALBASE@
 ac_add_options --with-system-zlib
 ac_add_options --with-system-png=@LOCALBASE@
 ac_add_options --with-system-mng=@LOCALBASE@
-# other options
-ac_add_options --disable-ldap
+######################################################################
+# enable features
 ac_add_options --with-pthreads
+ac_add_options --enable-crypto
+ac_add_options --enable-xinerama
+ac_add_options --enable-reorder
+ac_add_options --enable-strip
+#ac_add_options --enable-crash-on-assert
+######################################################################
+# disable unneeded to speed up build/runtime
+ac_add_options --disable-tests
+ac_add_options --disable-ldap
+ac_add_options --disable-logging
+ac_add_options --disable-dtd-debug
+ac_add_options --disable-auto-deps
+ac_add_options --disable-pedantic
+######################################################################
+
