@@ -7,7 +7,7 @@ The defaults used here are suited to boot FreeBSD ELF kernels over NFS.
 
 To produce an etherboot floppy (or HD partition) do
 
-	cd work/etherboot/src 
+	cd work/etherboot-5.2.4/src 
 	cat bin/boot1a.bin bin/<device>.zrom > /dev/fd0
 
 Replace <device> with the specific code for your card, and /dev/fd0
