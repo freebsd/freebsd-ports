@@ -7,7 +7,7 @@
 
 PORTNAME=	dsssl-docbook-modular
 PORTVERSION=	1.78
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -27,7 +27,7 @@ RELDIR=		docbook/dsssl/modular
 INSTDIR=	${PREFIX}/share/sgml/${RELDIR}
 XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
 CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
-PLIST_SUB=	XMLCATMGR=${XMLCATMGR} DTDDIR=${INSTDIR} \
+PLIST_SUB=	XMLCATMGR=${XMLCATMGR} DTDDIR=${RELDIR} \
 		CATALOG_PORTS_SGML=${CATALOG_PORTS_SGML}
 
 do-build:
@@ -43,7 +43,7 @@ do-install:
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 
 post-install:
-	${XMLCATMGR} -sc ${CATALOG_PORTS_SGML} add CATALOG ${RELDIR}/catalog
+	-${XMLCATMGR} -sc ${CATALOG_PORTS_SGML} add CATALOG ${RELDIR}/catalog
 	@${CAT} ${FILESDIR}/install-note
 
 .include <bsd.port.mk>
