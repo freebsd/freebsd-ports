@@ -31,7 +31,7 @@ RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
 QTLIBDIR=	${X11BASE}/lib
 QTINCDIR=	${X11BASE}/include/X11/qt
 
-.if defined(WITH_QTI18N)
+.if defined(WITH_I18N)
 I18NQT=		-DI18NQT
 QTLIB=		qti18n
 QTLIB_SHLIBVER=	3
