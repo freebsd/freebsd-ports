@@ -23,16 +23,11 @@ RUN_DEPENDS=	${ARCH_PERL}/Crypt/DES.pm:${PORTSDIR}/security/p5-Crypt-DES \
 		${ARCH_PERL}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
 		${SITE_PERL}/Digest/HMAC.pm:${PORTSDIR}/security/p5-Digest-HMAC
 
-USE_PERL5=	yes
 PERL_CONFIGURE=	yes
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 ARCH_PERL=	${SITE_PERL}/${PERL_ARCH}
 
-PERL_MAJOR=${PERL_VER:C|^([1-9]+).*|\1|}
-PERL_MINOR=${PERL_VER:C|^[1-9]+\.0*([1-9]+).*|\1|}
-
-.if ${PERL_MAJOR} < 5 || ${PERL_MAJOR} == 5 && ${PERL_MINOR} < 6
-BROKEN=		"This port requires Perl v5.6.0 or newer"
+.if ${PERL_LEVEL} < 500600
+IGNORE=         Port requires perl 5.6.x or later. Install lang/perl5 then try again
 .endif
 
 MAN1=		snmpkey.1
