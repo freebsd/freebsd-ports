@@ -41,6 +41,7 @@ PLIST_SUB=	OLDFILE="@comment " \
 
 USE_MESA=	yes
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS}" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
@@ -81,7 +82,9 @@ post-extract:
 .endif
 
 post-patch:
-	${PERL} -i -pe 's/^(SUBDIRS\s*=\s*).*/$$1utils include src \$${DOC}/' \
+	${REINPLACE_CMD} -E 's/^(SUBDIRS[ 	]*=[ 	]*).*/\1utils include src $${DOC}/' \
 		${WRKSRC}/Makefile.in
+	${FIND} ${WRKSRC} -name Makefile.in -print0 | \
+		${XARGS} -0 ${REINPLACE_CMD} -E 's:\$$\(prefix\)/@PACKAGE@:$$(datadir)/doc/@PACKAGE@:'
 
 .include <bsd.port.mk>
