@@ -1533,6 +1533,7 @@ file2c		src/usr.bin/file2c
 file_menu_applet	ports/x11-fm/file_menu_applet
 filedupe	ports/sysutils/filedupe
 filepp		ports/textproc/filepp
+fileroller	ports/archivers/fileroller
 filerunner	ports/x11-fm/filerunner
 fileutils	ports/sysutils/fileutils
 find		src/usr.bin/find
