@@ -15,7 +15,7 @@ MAINTAINER=	jon@witchspace.com
 COMMENT=	A graphical screensaver kernel module
 
 .if !exists(/usr/src/sys/dev/syscons/syscons.h)
-IGNORE=		"Requires kernel source (/usr/src/sys) to build"
+IGNORE=		Requires kernel source (/usr/src/sys) to build
 .endif
 PLIST_FILES=	lib/kix_saver.ko
 
