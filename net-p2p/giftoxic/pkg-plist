@@ -1,0 +1,8 @@
+bin/giFToxic
+share/gnome/applications/giFToxic.desktop
+share/gnome/giFToxic/logo.png
+share/gnome/pixmaps/giFToxic-48.png
+share/locale/de/LC_MESSAGES/giFToxic.mo
+share/locale/es/LC_MESSAGES/giFToxic.mo
+share/locale/nl/LC_MESSAGES/giFToxic.mo
+@dirrm share/gnome/giFToxic
