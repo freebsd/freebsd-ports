@@ -78,7 +78,7 @@ PLIST_SUB=	HORDEDIR=${LHORDEDIR} IMPDIR=${LIMPDIR}
 HORDEDIR=	${PREFIX}/${LHORDEDIR}
 IMPDIR=		${PREFIX}/${LIMPDIR}
 
-pre-everything:
+pre-everything::
 .if !defined(WITHOUT_IMAPSERVER)
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Press CTRL-C and define WITHOUT_IMAPSERVER"
