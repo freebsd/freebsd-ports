@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.118 1997/08/19 07:10:09 fenner Exp $
+# $Id: Makefile,v 1.119 1997/10/07 04:33:17 obrien Exp $
 #
 
     SUBDIR += archie
@@ -7,6 +7,7 @@
     SUBDIR += bb
     SUBDIR += bing
     SUBDIR += cap
+    SUBDIR += choparp
     SUBDIR += cvsup
     SUBDIR += cvsup-mirror
     SUBDIR += delegate
