@@ -1,0 +1,20 @@
+bftpd is an FTP server for Linux, BSD/OS, FreeBSD, Solaris, DG-UX
+and Tru64.  It runs either with inetd or standalone.
+
+It tries to be very configurable while being fast and small. You
+can make defaults for each configuration option, and then override
+these defaults in user-specific structures. Support for
+directory-specific options is planned.
+
+Features of bftpd include:
+	* Easy configuration
+	* Speed
+	* Support for most RFC FTP commands
+	* tar.gz on-the-fly compression/archiving
+	* Security with chroot without special setup
+	* No need for filessh, ls...) in a chroot environment
+	* Logging to wtmp and to a config file
+	* PAM and passwd/shadow support
+	* Support for SITE CHOWN/CHMOD
+
+WWW: http://www.bftpd.org/
