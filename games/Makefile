@@ -303,6 +303,7 @@
     SUBDIR += xroach
     SUBDIR += xroads
     SUBDIR += xrobots
+    SUBDIR += xrot
     SUBDIR += xrubik
     SUBDIR += xscavenger
     SUBDIR += xscorch
