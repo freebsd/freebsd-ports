@@ -1,0 +1,5 @@
+bin/showtable
+lib/perl5/man/man3/Data::ShowTable.3.gz
+lib/perl5/site_perl/Data/ShowTable.pm
+man/man1/showtable.1.gz
+lib/perl5/site_perl/i386-freebsd/auto/Data/ShowTable/.packlist
