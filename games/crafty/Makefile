@@ -6,19 +6,23 @@
 #
 
 PORTNAME=	crafty
-PORTVERSION=	17.9
+PORTVERSION=	18.9
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/ \
 		ftp://ftp.cis.uab.edu/pub/hyatt/common/ \
-		ftp://ftp.cis.uab.edu/pub/hyatt/v17/ \
+		ftp://ftp.cis.uab.edu/pub/hyatt/v18/ \
 		ftp://ftp.jpunix.com/pub/hyatt/ \
 		ftp://ftp.jpunix.com/pub/hyatt/common/ \
-		ftp://ftp.jpunix.com/pub/hyatt/v17/
+		ftp://ftp.jpunix.com/pub/hyatt/v18/
 DISTFILES=	crafty-${PORTVERSION}.tar.gz crafty.doc crafty.faq read.me start.zip
 
 MAINTAINER=	seggers@semyam.dinoco.de
 
-ALL_TARGET=	crafty
+.if ${MACHINE_ARCH} == "i386"
+ALL_TARGET=	freebsd-i386
+.else
+ALL_TARGET=	freebsd-generic
+.endif
 DIST_SUBDIR=	crafty
 EXTRACT_ONLY=	crafty-${PORTVERSION}.tar.gz
 IGNOREFILES=	crafty.doc crafty.faq read.me
