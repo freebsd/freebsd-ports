@@ -191,11 +191,11 @@ lib/libomnisslTP.so.4.0
 lib/libomnithread.so
 lib/libomnithread.so.3
 lib/libomnithread.so.3.0
-lib/pkgconfig/omniCOS4.pc
-lib/pkgconfig/omniCOSDynamic4.pc
-lib/pkgconfig/omniDynamic4.pc
-lib/pkgconfig/omniORB4.pc
-lib/pkgconfig/omnithread3.pc
+libdata/pkgconfig/omniCOS4.pc
+libdata/pkgconfig/omniCOSDynamic4.pc
+libdata/pkgconfig/omniDynamic4.pc
+libdata/pkgconfig/omniORB4.pc
+libdata/pkgconfig/omnithread3.pc
 %%PYTHON_SITELIBDIR%%/_omniidlmodule.so
 %%PYTHON_SITELIBDIR%%/_omniidlmodule.so.1
 %%PYTHON_SITELIBDIR%%/_omniidlmodule.so.1.0
@@ -402,7 +402,7 @@ share/omniORB/idl/poa_include.idl
 @dirrm share/omniORB/idl/COS
 @dirrm share/omniORB/idl
 @dirrm share/omniORB
-@dirrm lib/pkgconfig
+@dirrm libdata/pkgconfig
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tex
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/omniORB
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
