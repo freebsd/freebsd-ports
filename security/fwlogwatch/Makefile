@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.kybs.de/boris/sw/
 MAINTAINER=	jim@corebsd.or.id
 COMMENT=	A packet filter and firewall log analyzer
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes

@@ -18,7 +18,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	corecode@corecode.ath.cx
 COMMENT=	A lightweight and very featureful GTK+ based e-mail and news client
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 THEMEVERSION=	20030712
 THEMEFILE=	sylpheed-iconset-${THEMEVERSION}.tar.gz

@@ -13,7 +13,7 @@ DISTNAME=	dpkg_${PORTVERSION}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Package maintenance system for Debian
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
 		iconv.3:${PORTSDIR}/converters/libiconv
 
 GNU_CONFIGURE=	yes

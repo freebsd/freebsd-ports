@@ -22,7 +22,7 @@ BROKEN=		Does not configure
 BUILD_DEPENDS=	autoconf257:${PORTSDIR}/devel/autoconf257
 LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt/ \
 		mhash.2:${PORTSDIR}/security/mhash/ \
-		intl.4:${PORTSDIR}/devel/gettext
+		intl.5:${PORTSDIR}/devel/gettext
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--enable-static --with-catgets

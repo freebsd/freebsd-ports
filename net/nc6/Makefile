@@ -15,7 +15,7 @@ MAINTAINER=	filippo@widestore.net
 COMMENT=	Netcat 6 is a netcat clone with IPv6 support
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-				intl.4:${PORTSDIR}/devel/gettext
+				intl.5:${PORTSDIR}/devel/gettext
 
 MAN1=	nc6.1
 GNU_CONFIGURE=	yes

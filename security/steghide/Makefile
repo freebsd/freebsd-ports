@@ -16,7 +16,7 @@ COMMENT=	"Steganography tool to hide data in binary files"
 
 LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt \
 		mhash.2:${PORTSDIR}/security/mhash \
-		intl.4:${PORTSDIR}/devel/gettext
+		intl.5:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=

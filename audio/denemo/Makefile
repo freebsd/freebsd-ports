@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Graphical score editor
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
 		xml.5:${PORTSDIR}/textproc/libxml
 
 USE_GETOPT_LONG=yes

@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	Janos.Mohacsi@bsd.hu
 COMMENT=	A simple TCP session re-engineering tool
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 USE_BZIP2=	yes
 USE_GETOPT_LONG=	yes

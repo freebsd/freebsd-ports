@@ -18,7 +18,7 @@ LIB_DEPENDS=	dvdcss.2:${PORTSDIR}/multimedia/libdvdcss \
 		mad.1:${PORTSDIR}/audio/mad \
 		avcodec.0:${PORTSDIR}/multimedia/ffmpeg \
 		a52.0:${PORTSDIR}/audio/liba52 \
-		intl.4:${PORTSDIR}/devel/gettext \
+		intl.5:${PORTSDIR}/devel/gettext \
 		iconv.3:${PORTSDIR}/converters/libiconv \
 		vorbis.2:${PORTSDIR}/audio/libvorbis \
 		ogg.4:${PORTSDIR}/audio/libogg \

@@ -17,7 +17,7 @@ COMMENT=	A parser generator from FSF, (mostly) compatible with Yacc
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 .if !defined(WITHOUT_NLS)
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 PLIST_SUB=	NLS=""
 .else
 PLIST_SUB=	NLS="@comment "

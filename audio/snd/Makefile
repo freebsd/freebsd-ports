@@ -16,7 +16,7 @@ MAINTAINER=		trevor@FreeBSD.org
 COMMENT=		Multitracking sound editor and utilities
 
 LIB_DEPENDS=		gsl.4:${PORTSDIR}/math/gsl \
-			intl.4:${PORTSDIR}/devel/gettext
+			intl.5:${PORTSDIR}/devel/gettext
 
 .if !defined(WITHOUT_ESD)
 RUN_DEPENDS=		esd:${PORTSDIR}/audio/esound

@@ -16,7 +16,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} eboard-extras-${EXTRASVERSION}.tar.gz
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	GTK+ chess board interface (mainly for FICS and chessd)
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	imlib

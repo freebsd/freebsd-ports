@@ -34,7 +34,7 @@ MASTER_SITES=	ftp://ftp.phear.org/pub/linux/networking/ftp/client/lftp/ \
 MAINTAINER=	fm@code.org.ua
 COMMENT=	Shell-like command line ftp client
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 USE_BZIP2=	yes
 

@@ -13,7 +13,7 @@ MASTER_SITES=	http://home.worldonline.dk/byrial/spellutils/
 MAINTAINER=	thierry@pompo.net
 COMMENT=	Programs used to isolate some parts or texts before spell-checking
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes

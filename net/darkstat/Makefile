@@ -14,7 +14,7 @@ MASTER_SITES=	http://members.optushome.com.au/emikulic/net/darkstat/ \
 MAINTAINER=	emikulic@optushome.com.au
 COMMENT=	Network statistics gatherer, similar to but smaller than ntop
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
 

@@ -18,7 +18,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP, FTP and Gopher mirroring tool
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 USE_REINPLACE=	yes
 WANT_GNOME=	yes

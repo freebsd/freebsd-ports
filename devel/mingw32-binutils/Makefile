@@ -31,7 +31,7 @@ MAINTAINER=	lev@FreeBSD.org
 COMMENT=	FSF binutils-2.13 for Windows cross-development
 
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 BINUTILVERSION=	2.13.90
 PATCHVERSION=	20030111.1

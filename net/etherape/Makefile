@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	samy@kerneled.com
 COMMENT=	A graphical network traffic visualization tool for gnome
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 USE_GNOME=	libglade2 libgnomeui
 USE_LIBTOOL=	yes

@@ -17,7 +17,7 @@ COMMENT=	A Sybase DBI driver for Perl 5
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 LIB_DEPENDS=	ct.1:${PORTSDIR}/databases/freetds \
-		intl.4:${PORTSDIR}/devel/gettext
+		intl.5:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

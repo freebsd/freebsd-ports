@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.de
 COMMENT=	A daemon for controlling APC UPS
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 STARTUP_SCRIPT=	apcupsd.sh.sample
 PLIST_SUB=	STARTUP_SCRIPT=${STARTUP_SCRIPT}

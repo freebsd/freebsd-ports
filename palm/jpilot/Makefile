@@ -15,7 +15,7 @@ MAINTAINER?=	varju@webct.com
 COMMENT?=	Desktop Organizer Software for the Palm Pilot
 
 LIB_DEPENDS=	pisock.8:${PORTSDIR}/palm/pilot-link \
-		intl.4:${PORTSDIR}/devel/gettext
+		intl.5:${PORTSDIR}/devel/gettext
 
 USE_GNOME=	gtk12
 USE_LIBTOOL=	yes

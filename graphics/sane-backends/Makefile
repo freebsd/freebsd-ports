@@ -18,7 +18,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	API for access to scanners, digitals camera, frame grabbers etc
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
 		usb-0.1.7:${PORTSDIR}/devel/libusb \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 

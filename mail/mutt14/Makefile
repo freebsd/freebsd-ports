@@ -39,7 +39,7 @@ RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell \
 WITH_SGML_DOCS?=yes
 .endif
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 .if defined(WITH_SLANG)
 LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
 .elif defined(WITH_NCURSES_PORT)

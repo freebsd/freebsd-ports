@@ -18,7 +18,7 @@ COMMENT=	The GNU Gregorian calendar program
 # Global variables
 #
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
 

@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	xmule
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Port of eMule eDonkey P2P client using wxWindows class library
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
 		expat.4:${PORTSDIR}/textproc/expat2 \
 		wx_gtk.2:${PORTSDIR}/x11-toolkits/wxgtk-devel
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget

@@ -16,7 +16,7 @@ MAINTAINER=	henrik.motakef@web.de
 COMMENT=	An ANSI Common Lisp
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		intl.4:${PORTSDIR}/devel/gettext
+		intl.5:${PORTSDIR}/devel/gettext
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

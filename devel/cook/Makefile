@@ -13,7 +13,7 @@ MASTER_SITES=	http://gd.tuwien.ac.at/softeng/Aegis/cook/
 MAINTAINER=	ports@freebsd.org
 COMMENT=	Like make(1), but more powerful and clean
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib \

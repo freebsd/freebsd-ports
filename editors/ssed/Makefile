@@ -14,7 +14,7 @@ DISTNAME=	sed-${PORTVERSION}
 MAINTAINER=	verm@drunkmonk.net
 COMMENT=	Super-sed is a heavily enhanced version of sed
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
 		iconv:${PORTSDIR}/converters/libiconv
 
 GNU_CONFIGURE=	yes

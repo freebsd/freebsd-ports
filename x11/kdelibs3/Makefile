@@ -23,7 +23,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xslt.1:${PORTSDIR}/textproc/libxslt \
 		pcre.0:${PORTSDIR}/devel/pcre \
-		intl.4:${PORTSDIR}/devel/gettext \
+		intl.5:${PORTSDIR}/devel/gettext \
 		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2 \
 		cups.2:${PORTSDIR}/print/cups-base
 RUN_DEPENDS=	${FONTSCALE}:${PORTSDIR}/x11-fonts/XFree86-4-fontScalable \

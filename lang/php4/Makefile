@@ -328,7 +328,7 @@ CONFIGURE_ARGS+=--with-gdbm=${LOCALBASE}
 .endif
 
 .if defined(WITH_GETTEXT)
-LIB_DEPENDS+=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS+=	intl.5:${PORTSDIR}/devel/gettext
 CONFIGURE_ARGS+=--with-gettext=${LOCALBASE}
 .endif
 

@@ -18,7 +18,7 @@ COMMENT=	The FSF's versions of date(1), expr(1), test(1), etc
 # Global variables
 #
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 USE_PERL5_BUILD=yes
 USE_REINPLACE=	yes
