@@ -1,7 +1,6 @@
 The GNU Ada compiler system built on GCC 2.8.1.
 
 The libraries supplied with this version of GNAT support tasking
-with FreeBSD 3.x, and 4.x versions of libc_r.
+with FreeBSD 3.x, 4.x, and 5.x versions of libc_r.
 
-Daniel Eischen
-eischen@vigrid.com
+WWW: http://www.gnat.com/

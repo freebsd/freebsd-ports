@@ -54,18 +54,18 @@
 --    __ARCH              = I386
 --    __OS                = FREEBSD
 --    __HAS_SIGCONTEXT    = 1
---    __HAS_UCONTEXT      = 0
+--    __HAS_UCONTEXT      = 1
 --    __THREADS           = POSIX_THREADS
 --    __THREAD_VARIANT    = ??
 --    __HAS_TIMESPEC      = 1
 --    __HAS_NANOSLEEP     = 1
---    __HAS_CLOCK_GETTIME = 0
+--    __HAS_CLOCK_GETTIME = 1
 --    __HAS_GETTIMEOFDAY  = 1
---    __POSIX_THREAD_PRIO_PROTECT = 0
---    __POSIX_THREAD_PRIO_INHERIT = 0
+--    __POSIX_THREAD_PRIO_PROTECT = 1
+--    __POSIX_THREAD_PRIO_INHERIT = 1
 --    __POSIX_THREAD_ATTR_STACKADDR = 1
 --    __POSIX_THREAD_ATTR_STACKSIZE = 1
---    __POSIX_THREAD_PRIORITY_SCHEDULING = 0
+--    __POSIX_THREAD_PRIORITY_SCHEDULING = 1
 
 --  This package encapsulates all direct interfaces to OS services
 --  that are needed by children of System.
@@ -192,6 +192,22 @@ package System.OS_Interface is
    SIGUSR1    : constant := 30; --  user defined signal 1
    SIGUSR2    : constant := 31; --  user defined signal 2
 
+   SIGADAABORT : constant := SIGABRT;
+   --  Change this if you want to use another signal for task abort.
+   --  SIGTERM might be a good one.
+
+   type Signal_Set is array (Natural range <>) of Signal;
+
+   --  Interrupts that must be unmasked at all times.  FreeBSD
+   --  pthreads will not allow an application to mask out any
+   --  interrupt needed by the threads library.
+   Unmasked : constant Signal_Set :=
+     (SIGTRAP, SIGBUS, SIGTTIN, SIGTTOU, SIGTSTP);
+
+   --  FreeBSD will uses SIGPROF for timing.  Do not allow a
+   --  handler to attach to this signal.
+   Reserved : constant Signal_Set := (0 .. 0 => SIGPROF);
+
    type sigset_t is private;
 
    function sigaddset
@@ -239,7 +255,7 @@ package System.OS_Interface is
    end record;
    pragma Convention (C, new_struct_sigaction);
 
-   subtype struct_sigaction is __FreeBSD__sigaction;
+   subtype struct_sigaction is new_struct_sigaction;
    type struct_sigaction_ptr is access all struct_sigaction;
 
 
@@ -268,7 +284,7 @@ package System.OS_Interface is
    -- Time --
    ----------
 
-   Time_Slice_Supported : constant boolean := True;
+   Time_Slice_Supported : constant Boolean := True;
    --  Indicates wether time slicing is supported (i.e SCHED_RR is supported)
 
    type timespec is private;
@@ -321,10 +337,6 @@ package System.OS_Interface is
    -- Priority Scheduling --
    -------------------------
 
-   MIN_PRIO     : constant := 0;
-   MAX_PRIO     : constant := 126;
-   DEFAULT_PRIO : constant := 64;
-
    SCHED_FIFO  : constant := 1;
    SCHED_OTHER : constant := 2;
    SCHED_RR    : constant := 3;
@@ -371,7 +383,7 @@ package System.OS_Interface is
    -- Stack --
    -----------
 
-   Stack_Base_Available : constant boolean := False;
+   Stack_Base_Available : constant Boolean := False;
    --  Indicates wether the stack base is available on this target.
    --  This allows us to share s-osinte.adb between all the FSU run time.
    --  Note that this value can only be true if pthread_t has a complete
@@ -508,6 +520,9 @@ package System.OS_Interface is
       abstime : access timespec)
      return    int;
    pragma Import (C, pthread_cond_timedwait, "pthread_cond_timedwait");
+
+   Relative_Timed_Wait : constant Boolean := False;
+   --  pthread_cond_timedwait requires an absolute delay time
 
    ----------------------------
    --  POSIX.1c  Section 13  --
@@ -721,7 +736,7 @@ package System.OS_Interface is
 
 private
 
-   type sigset_t is array (1 .. __FreeBSD__sigset_words) of unsigned;
+   type sigset_t is array (1 .. 4) of unsigned;
 
    --  In FreeBSD the component sa_handler turns out to
    --  be one a union type, and the selector is a macro:

@@ -1,0 +1,18 @@
+--- ada/a-link.c.orig	Sat May  6 19:38:57 2000
++++ ada/a-link.c	Sat May  6 19:41:09 2000
+@@ -149,6 +149,15 @@
+ unsigned char objlist_file_supported = 0;
+ unsigned char using_gnu_linker = 0;
+ 
++#elif defined (__FreeBSD__)
++char *object_file_option = "";
++char *run_path_option = "";
++char shared_libgnat_default = SHARED;
++int link_max = 2147483647;
++unsigned char objlist_file_supported = 0;
++unsigned char using_gnu_linker = 0;
++char *object_library_extension = ".a";
++
+ #elif defined (linux)
+ char *object_file_option = "";
+ char *run_path_option = "-Wl,-rpath,";

@@ -1,8 +1,8 @@
-*** ./ada/Makefile.in.orig	Fri Sep 24 08:41:35 1999
---- ./ada/Makefile.in	Tue Nov  2 10:53:14 1999
+*** ada/Makefile.in.orig	Wed Jul 19 15:08:56 2000
+--- ada/Makefile.in	Sun Oct 15 01:09:35 2000
 ***************
-*** 909,914 ****
---- 909,927 ----
+*** 976,981 ****
+--- 976,1002 ----
     endif
   endif
   
@@ -11,14 +11,39 @@
 +   a-intnam.ads<4fintnam.ads \
 +   s-inmaop.adb<7sinmaop.adb \
 +   s-intman.adb<5fintman.adb \
++   s-mastop.adb<5omastop.adb \
 +   s-osinte.adb<5fosinte.adb \
 +   s-osinte.ads<5fosinte.ads \
 +   s-osprim.adb<7sosprim.adb \
 +   s-taprop.adb<5ftaprop.adb \
-+   s-taspri.ads<5ftaspri.ads \
-+   s-tpopsp.adb<7stpopsp.adb
++   s-taspri.ads<7staspri.ads \
++   s-tpopsp.adb<7stpopsp.adb \
++   s-traceb.adb<5wtraceb.adb \
++   system.ads<5fsystem.ads
++ 
++   threadslib=
++   LIBRARY_VERSION := $(strip $(shell grep Library_Version $(fsrcpfx)gnatvsn.ads | sed -e 's/.*GNAT Lib v\(.*\)[ "].*/\1/'))
++   SHARED_MAJOR = 1
++   soext = .so.$(SHARED_MAJOR)
 + endif
 + 
   ifeq ($(strip $(filter-out mips sgi irix%,$(targ))),)
+    ifeq ($(strip $(filter-out mips sgi irix6%,$(targ))),)
+      LIBGNAT_TARGET_PAIRS = \
+***************
+*** 1818,1824 ****
+  		$(GNATRTL_NONTASKING_OBJS) $(LIBGNAT_OBJS) $(misclib) -lm
+  	cd rts; ../../xgcc -B../../ -shared $(TARGET_LIBGCC2_CFLAGS) \
+  		-o libgnarl-$(LIBRARY_VERSION)$(soext) $(SO_OPTS)libgnarl-$(LIBRARY_VERSION)$(soext) \
+! 		$(GNATRTL_TASKING_OBJS) -l$(threadslib)
   
-    threadsletter=A
+  gnatlib-shared-dual:
+  	$(MAKE) $(FLAGS_TO_PASS) \
+--- 1839,1845 ----
+  		$(GNATRTL_NONTASKING_OBJS) $(LIBGNAT_OBJS) $(misclib) -lm
+  	cd rts; ../../xgcc -B../../ -shared $(TARGET_LIBGCC2_CFLAGS) \
+  		-o libgnarl-$(LIBRARY_VERSION)$(soext) $(SO_OPTS)libgnarl-$(LIBRARY_VERSION)$(soext) \
+! 		$(GNATRTL_TASKING_OBJS) $(threadslib)
+  
+  gnatlib-shared-dual:
+  	$(MAKE) $(FLAGS_TO_PASS) \
