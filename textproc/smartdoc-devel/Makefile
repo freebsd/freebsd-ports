@@ -29,6 +29,7 @@ EXTRACT_CMD=	${JAVA}
 EXTRACT_BEFORE_ARGS=	-jar ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} \
 			-batch -bindir:${WRKSRC}/bin -installbasedir:${WRKSRC}
 EXTRACT_AFTER_ARGS=	#
+NO_LATEST_LINK=	yes
 
 JAVALIBDIR=	${PREFIX}/share/java
 XMLDIR=		${PREFIX}/share/xml
