@@ -247,6 +247,7 @@
     SUBDIR += xmms
     SUBDIR += xmms-crossfade
     SUBDIR += xmms-crystality
+    SUBDIR += xmms-fc
     SUBDIR += xmms-kde
     SUBDIR += xmms-liveice
     SUBDIR += xmms-quix3dn
