@@ -67,6 +67,7 @@ include/libetpan/mailprivacy_gnupg.h
 include/libetpan/mailprivacy_smime.h
 include/libetpan/mailprivacy_tools.h
 include/libetpan/mailprivacy_types.h
+include/libetpan/mailsem.h
 include/libetpan/mailsmtp.h
 include/libetpan/mailsmtp_helper.h
 include/libetpan/mailsmtp_socket.h
