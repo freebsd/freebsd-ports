@@ -277,13 +277,13 @@ ruby-extconf-configure:
 .else
 	@${ECHO_MSG} "===>  Running ${RUBY_EXTCONF} to configure"
 .if defined(RUBY_WITH_PTHREAD)
-	cd ${WRKSRC}; \
-	${RUBY} ${RUBY_FLAGS} -i -pe '~ /\brequire\s+[\047"]mkmf[\047"]/ \
+	cd ${WRKSRC}; if [ ! -e ${WRKSRC}/${RUBY_EXTCONF}.pth.orig ]; then \
+	${RUBY} ${RUBY_FLAGS} -i.pth.orig -pe '~ /\brequire\s+[\047"]mkmf[\047"]/ \
 	and $$_ += %Q|\
 		$$libs.sub!(/-lc\\b/, "")\n \
 		$$libs += " " + with_config("pthread-libs") + " "\n \
 		$$CFLAGS += " " + with_config("pthread-cflags") + " "\n \
-	|' ${RUBY_EXTCONF}
+	|' ${RUBY_EXTCONF}; fi
 .endif
 	@cd ${WRKSRC}; \
 	${SETENV} ${CONFIGURE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_EXTCONF} ${CONFIGURE_ARGS}
