@@ -323,6 +323,7 @@
     SUBDIR += xgalaga
     SUBDIR += xgammon
     SUBDIR += xgolgo
+    SUBDIR += xgospel
     SUBDIR += xhexagons
     SUBDIR += xhime
     SUBDIR += xinfocom
