@@ -1,8 +1,9 @@
-A gtk-based client to control the one disc linux router fli4l
-You can dial, hangup, add lins, remove links, check timetables ...
+GTK-Imonc is a GTK2-based imond-client to control an on(e) disc fli4l
+router. You can dial/hangup the connection, show status information
+(traffic, cpu), shutdown/reboot and even remotely update the router.
 
-Author: Stefan "Steve" Strigler <zeank@x-berg.de>
+Author: Stefan "Steve" Strigler <steve@zeank.in-berlin.de>
 WWW: http://userpage.fu-berlin.de/%7Ezeank/gtk-imonc/
 
--- Steffen Vogelreuter
-steffen@vogelreuter.de
+- berg
+aberg@doomnet.de
