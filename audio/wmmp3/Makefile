@@ -4,7 +4,7 @@
 #
 # $FreeBSD$
 
-PORTNAMEN=	wmmp3
+PORTNAME=	wmmp3
 PORTVERSION=	0.11
 CATEGORIES=	audio windowmaker
 MASTER_SITES= 	http://www.dotfiles.com/software/wmmp3/
