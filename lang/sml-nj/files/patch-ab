@@ -1,12 +1,16 @@
---- config/install.sh.orig	Wed Aug  5 13:43:43 1998
-+++ config/install.sh	Sat Jan 29 20:46:09 2000
-@@ -181,6 +181,18 @@
+--- config/install.sh.orig	Fri Oct 20 16:02:25 2000
++++ config/install.sh	Tue Mar 11 22:30:59 2003
+@@ -155,6 +155,22 @@
  if [ "$?" != "0" ]; then
    exit $?
  fi
 +# we need to patch just before build
 +echo "applying source patches"
 +patch_file="${FILESDIR}/extra-patch-global-names"
++if [ -f $patch_file ]; then
++	$PATCH $PATCH_ARGS < $patch_file
++fi
++patch_file="${FILESDIR}/extra-patch-genposixnames"
 +if [ -f $patch_file ]; then
 +	$PATCH $PATCH_ARGS < $patch_file
 +fi
