@@ -6,22 +6,25 @@
 #
 
 PORTNAME=	E-Weather
-PORTVERSION=	0.4a
+PORTVERSION=	0.4b
 CATEGORIES=	x11
 MASTER_SITES=	http://streiff.net/software/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Weather epplet for Enlightenment similar to wmWeather
 
+LIB_DEPENDS=	epplet.1:${PORTSDIR}/x11-wm/libepplet
 RUN_DEPENDS=	GrabWeather:${PORTSDIR}/misc/wmweather
-LIB_DEPENDS=	epplet.1:${PORTSDIR}/x11-wm/epplets
 
-USE_GMAKE=	yes
 USE_X_PREFIX=	yes
+USE_GMAKE=	yes
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
+		LIBS="-L${X11BASE}/lib -lepplet ${PTHREAD_LIBS}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/E-Weather.epplet ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/share/enlightenment/epplet_icons
 	${INSTALL_DATA} ${WRKSRC}/E-Weather.icon \
-	    ${PREFIX}/share/enlightenment/epplet_icons
+		${PREFIX}/share/enlightenment/epplet_icons
 
 .include <bsd.port.mk>
