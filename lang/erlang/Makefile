@@ -83,10 +83,9 @@ pre-configure:
 	fi
 .endif
 
-# If X11 is not used, skip gs and etk applications.
+# If X11 is not used, skip the gs application.
 .if defined(WITHOUT_X11)
 	@${ECHO_CMD} "WITHOUT_X11 defined" > ${WRKSRC}/lib/gs/SKIP
-	@${ECHO_CMD} "WITHOUT_X11 defined" > ${WRKSRC}/lib/etk/SKIP
 .endif
 
 # Install documentation. (HTML docs need to be in same dir as the
