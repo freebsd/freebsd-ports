@@ -1,0 +1,444 @@
+diff -rNu common.h common.h
+--- common.h	Thu May  9 02:50:35 2002
++++ common.h	Mon Jun 16 17:30:59 2003
+@@ -1,11 +1,10 @@
+ /* common stuff for fdisk, cfdisk, sfdisk */
+ 
+-/* including <linux/fs.h> fails */
+-#include <sys/ioctl.h>
+-#define BLKRRPART  _IO(0x12,95)    /* re-read partition table */
+-#define BLKGETSIZE _IO(0x12,96)    /* return device size */
+-#define BLKFLSBUF  _IO(0x12,97)    /* flush buffer cache */
+-#define BLKSSZGET  _IO(0x12,104)   /* get block device sector size */
++#include <sys/types.h>
++typedef u_int16_t __u16;
++typedef u_int32_t __u32;
++typedef int16_t __s16;
++typedef u_int8_t __u8;
+ 
+ /* including <linux/hdreg.h> also fails */
+ struct hd_geometry {
+@@ -15,9 +14,6 @@
+       unsigned long start;
+ };
+ 
+-#define HDIO_GETGEO		0x0301	/* get device geometry */
+-
+-
+ struct systypes {
+ 	unsigned char type;
+ 	char *name;
+@@ -26,3 +22,8 @@
+ extern struct systypes i386_sys_types[];
+ 
+ extern char *partname(char *dev, int pno, int lth);
++
++unsigned int sys_bsd_sectorsize(int fd);
++int sys_bsd_getsectors(int fd, unsigned long* s);
++int sys_bsd_ptsync(int fd);
++int sys_bsd_getgeometry(int, struct hd_geometry*);
+diff -rNu fdisk.c fdisk.c
+--- fdisk.c	Sat Nov 23 18:05:24 2002
++++ fdisk.c	Mon Jun 16 17:37:33 2003
+@@ -37,11 +37,6 @@
+ #include "fdisksgilabel.h"
+ #include "fdiskaixlabel.h"
+ 
+-#include "../defines.h"
+-#ifdef HAVE_blkpg_h
+-#include <linux/blkpg.h>
+-#endif
+-
+ static void delete_partition(int i);
+ 
+ #define hex_val(c)	({ \
+@@ -198,8 +193,8 @@
+ "       fdisk -l [-b SSZ] [-u] DISK  List partition table(s)\n"
+ "       fdisk -s PARTITION           Give partition size(s) in blocks\n"
+ "       fdisk -v                     Give fdisk version\n"
+-"Here DISK is something like /dev/hdb or /dev/sda\n"
+-"and PARTITION is something like /dev/hda7\n"
++"Here DISK is something like /dev/ad1 or /dev/da0\n"
++"and PARTITION is something like /dev/ad0s7\n"
+ "-u: give Start and End in sector (instead of cylinder) units\n"
+ "-b 2048: (for certain MO disks) use 2048-byte sectors\n");
+ 			break;
+@@ -207,10 +202,8 @@
+ 		  /* msg in cases where fdisk used to probe */
+ 			message = _(
+ "Usage: fdisk [-l] [-b SSZ] [-u] device\n"
+-"E.g.: fdisk /dev/hda  (for the first IDE disk)\n"
+-"  or: fdisk /dev/sdc  (for the third SCSI disk)\n"
+-"  or: fdisk /dev/eda  (for the first PS/2 ESDI drive)\n"
+-"  or: fdisk /dev/rd/c0d0  or: fdisk /dev/ida/c0d0  (for RAID devices)\n"
++"E.g.: fdisk /dev/ad0  (for the first IDE disk)\n"
++"  or: fdisk /dev/da0  (for the third SCSI disk)\n"
+ "  ...\n");
+ 			break;
+ 		case unable_to_open:
+@@ -231,7 +224,7 @@
+ 			break;
+ 		case ioctl_error:
+ 			snprintf(error, sizeof(error),
+-				 _("BLKGETSIZE ioctl failed on %s\n"),
++				 _("DIOCGDINFO ioctl failed on %s\n"),
+ 				disk_device);
+ 			break;
+ 		case out_of_memory:
+@@ -248,8 +241,8 @@
+ 
+ static void
+ seek_sector(int fd, uint secno) {
+-	ext2_loff_t offset = (ext2_loff_t) secno * sector_size;
+-	if (ext2_llseek(fd, offset, SEEK_SET) == (ext2_loff_t) -1)
++	off_t offset = (off_t) secno * sector_size;
++	if (lseek(fd, offset, SEEK_SET) == (off_t) -1)
+ 		fatal(unable_to_seek);
+ }
+ 
+@@ -725,53 +718,23 @@
+ 	get_boot(create_empty_dos);
+ }
+ 
+-#include <sys/utsname.h>
+-#define MAKE_VERSION(p,q,r)     (65536*(p) + 256*(q) + (r))
+-
+-static int
+-linux_version_code(void) {
+-	static int kernel_version = 0;
+-        struct utsname my_utsname;
+-        int p, q, r;
+-
+-        if (!kernel_version && uname(&my_utsname) == 0) {
+-                p = atoi(strtok(my_utsname.release, "."));
+-                q = atoi(strtok(NULL, "."));
+-                r = atoi(strtok(NULL, "."));
+-                kernel_version = MAKE_VERSION(p,q,r);
+-        }
+-        return kernel_version;
+-}
+-
+ static void
+ get_sectorsize(int fd) {
+-#if defined(BLKSSZGET)
+-	if (!user_set_sector_size &&
+-	    linux_version_code() >= MAKE_VERSION(2,3,3)) {
+-		int arg;
+-		if (ioctl(fd, BLKSSZGET, &arg) == 0)
+-			sector_size = arg;
+-		if (sector_size != DEFAULT_SECTOR_SIZE)
+-			printf(_("Note: sector size is %d (not %d)\n"),
+-			       sector_size, DEFAULT_SECTOR_SIZE);
+-	}
+-#else
+-	/* maybe the user specified it; and otherwise we still
+-	   have the DEFAULT_SECTOR_SIZE default */
+-#endif
++	unsigned int r = sys_bsd_sectorsize(fd);
++	if (r)
++		sector_size = r;
++	if (sector_size != DEFAULT_SECTOR_SIZE)
++		printf(_("Note: sector size is %d (not %d)\n"),
++		       sector_size, DEFAULT_SECTOR_SIZE);
+ }
+ 
+ static void
+ get_kernel_geometry(int fd) {
+-#ifdef HDIO_GETGEO
+-	struct hd_geometry geometry;
+-
+-	if (!ioctl(fd, HDIO_GETGEO, &geometry)) {
+-		kern_heads = geometry.heads;
+-		kern_sectors = geometry.sectors;
+-		/* never use geometry.cylinders - it is truncated */
++	struct hd_geometry h;
++	if (!sys_bsd_getgeometry(fd, &h)) {
++		kern_heads = h.heads;
++		kern_sectors = h.sectors;
+ 	}
+-#endif
+ }
+ 
+ static void
+@@ -813,7 +776,7 @@
+ 
+ 	get_sectorsize(fd);
+ 	sec_fac = sector_size / 512;
+-	guess_device_type(fd);
++	//guess_device_type(fd);
+ 	heads = cylinders = sectors = 0;
+ 	kern_heads = kern_sectors = 0;
+ 	pt_heads = pt_sectors = 0;
+@@ -828,8 +791,11 @@
+ 		pt_sectors ? pt_sectors :
+ 		kern_sectors ? kern_sectors : 63;
+ 
+-	if (ioctl(fd, BLKGETSIZE, &longsectors))
+-		longsectors = 0;
++	;{
++		unsigned long r;
++		if (sys_bsd_getsectors(fd, &r) == 0)
++			longsectors = r;
++	}
+ 
+ 	sector_offset = 1;
+ 	if (dos_compatible_flag)
+@@ -1404,7 +1370,7 @@
+  * Jan.  1990 (version 1.2.1 by Gordon W. Ross Aug. 1990; Modified by S.
+  * Lubkin Oct.  1991). */
+ 
+-static void long2chs(ulong ls, uint *c, uint *h, uint *s) {
++static void long2chs(unsigned long ls, uint *c, uint *h, uint *s) {
+ 	int	spc = heads * sectors;
+ 
+ 	*c = ls / spc;
+@@ -2102,16 +2068,8 @@
+ 	printf(_("Calling ioctl() to re-read partition table.\n"));
+ 	sync();
+ 	sleep(2);
+-	if ((i = ioctl(fd, BLKRRPART)) != 0) {
++	if ((i = sys_bsd_ptsync(fd)) != 0) {
+                 error = errno;
+-        } else {
+-                /* some kernel versions (1.2.x) seem to have trouble
+-                   rereading the partition table, but if asked to do it
+-		   twice, the second time works. - biro@yggdrasil.com */
+-                sync();
+-                sleep(2);
+-                if ((i = ioctl(fd, BLKRRPART)) != 0)
+-                        error = errno;
+         }
+ 
+ 	if (i) {
+@@ -2403,9 +2361,11 @@
+ 	int j, c;
+ 	int optl = 0, opts = 0;
+ 
++#if 0
+ 	setlocale(LC_ALL, "");
+ 	bindtextdomain(PACKAGE, LOCALEDIR);
+ 	textdomain(PACKAGE);
++#endif
+ 
+ 	/*
+ 	 * Calls:
+@@ -2455,7 +2415,7 @@
+ 			break;
+ 		case 'V':
+ 		case 'v':
+-			printf("fdisk v" UTIL_LINUX_VERSION "\n");
++			printf("fdisk v" "2.11z" "-freebsd-portbld" "\n");
+ 			exit(0);
+ 		default:
+ 			fatal(usage);
+@@ -2504,7 +2464,7 @@
+ 			disk_device = argv[j];
+ 			if ((fd = open(disk_device, type_open)) < 0)
+ 				fatal(unable_to_open);
+-			if (ioctl(fd, BLKGETSIZE, &size))
++			if (sys_bsd_getsectors(fd, &size))
+ 				fatal(ioctl_error);
+ 			close(fd);
+ 			if (opts == 1)
+diff -rNu fdiskaixlabel.c fdiskaixlabel.c
+--- fdiskaixlabel.c	Tue Apr 18 15:21:28 2000
++++ fdiskaixlabel.c	Mon Jun 16 16:46:01 2003
+@@ -8,7 +8,7 @@
+ #include <string.h>             /* strstr */
+ #include <unistd.h>             /* write */
+ 
+-#include <endian.h>
++#include <sys/endian.h>
+ 
+ #include "common.h"
+ #include "fdisk.h"
+diff -rNu fdiskaixlabel.h fdiskaixlabel.h
+--- fdiskaixlabel.h	Sun Feb 20 18:50:51 2000
++++ fdiskaixlabel.h	Mon Jun 16 16:46:01 2003
+@@ -1,4 +1,3 @@
+-#include <linux/types.h>   /* for __u32 etc */
+ /*
+  * Copyright (C) Andreas Neuper, Sep 1998.
+  *	This file may be redistributed under
+diff -rNu fdiskbsdlabel.c fdiskbsdlabel.c
+--- fdiskbsdlabel.c	Thu Oct 31 15:43:42 2002
++++ fdiskbsdlabel.c	Mon Jun 16 16:46:01 2003
+@@ -566,7 +566,7 @@
+   sector = get_start_sect(xbsd_part);
+ #endif
+ 
+-  if (ext2_llseek (fd, (ext2_loff_t) sector * SECTOR_SIZE, SEEK_SET) == -1)
++  if (lseek (fd, (off_t) sector * SECTOR_SIZE, SEEK_SET) == -1)
+     fatal (unable_to_seek);
+   if (BSD_BBSIZE != write (fd, disklabelbuffer, BSD_BBSIZE))
+     fatal (unable_to_write);
+@@ -735,7 +735,7 @@
+ 	sector = 0;
+ #endif
+ 
+-	if (ext2_llseek (fd, (ext2_loff_t) sector * SECTOR_SIZE, SEEK_SET) == -1)
++	if (lseek (fd, (off_t) sector * SECTOR_SIZE, SEEK_SET) == -1)
+ 		fatal (unable_to_seek);
+ 	if (BSD_BBSIZE != read (fd, disklabelbuffer, BSD_BBSIZE))
+ 		fatal (unable_to_read);
+@@ -781,12 +781,12 @@
+ 
+ #if defined (__alpha__) && BSD_LABELSECTOR == 0
+   alpha_bootblock_checksum (disklabelbuffer);
+-  if (ext2_llseek (fd, (ext2_loff_t) 0, SEEK_SET) == -1)
++  if (lseek (fd, (off_t) 0, SEEK_SET) == -1)
+     fatal (unable_to_seek);
+   if (BSD_BBSIZE != write (fd, disklabelbuffer, BSD_BBSIZE))
+     fatal (unable_to_write);
+ #else
+-  if (ext2_llseek (fd, (ext2_loff_t) sector * SECTOR_SIZE + BSD_LABELOFFSET,
++  if (lseek (fd, (off_t) sector * SECTOR_SIZE + BSD_LABELOFFSET,
+ 		   SEEK_SET) == -1)
+     fatal (unable_to_seek);
+   if (sizeof (struct xbsd_disklabel) != write (fd, d, sizeof (struct xbsd_disklabel)))
+diff -rNu fdiskbsdlabel.h fdiskbsdlabel.h
+--- fdiskbsdlabel.h	Thu Oct 31 15:45:34 2002
++++ fdiskbsdlabel.h	Mon Jun 16 16:46:01 2003
+@@ -31,8 +31,6 @@
+  * SUCH DAMAGE.
+  */
+ 
+-#include <linux/types.h>	/* for __u32, __u16, __u8, __s16 */
+-
+ #ifndef BSD_DISKMAGIC
+ #define BSD_DISKMAGIC     ((__u32) 0x82564557)
+ #endif
+diff -rNu fdisksgilabel.c fdisksgilabel.c
+--- fdisksgilabel.c	Thu May  9 02:51:31 2002
++++ fdisksgilabel.c	Mon Jun 16 17:31:32 2003
+@@ -17,9 +17,8 @@
+ #include <sys/stat.h>           /* stat */
+ #include <assert.h>             /* assert */
+ 
+-#include <endian.h>
++#include <sys/endian.h>
+ #include "nls.h"
+-#include <linux/major.h>        /* FLOPPY_MAJOR */
+ 
+ #include "common.h"
+ #include "fdisk.h"
+@@ -382,7 +381,7 @@
+ 	 */
+ 	sgiinfo*info = fill_sgiinfo();	/* fills the block appropriately */
+ 	int infostartblock = SSWAP32( sgilabel->directory[0].vol_file_start );
+-	if( ext2_llseek(fd, (ext2_loff_t)infostartblock*
++	if( lseek(fd, (off_t)infostartblock*
+ 	    SECTOR_SIZE, SEEK_SET) < 0 )
+ 	    fatal(unable_to_seek);
+ 	if( write(fd, info, SECTOR_SIZE) != SECTOR_SIZE )
+@@ -735,11 +734,7 @@
+ 
+     other_endian = (BYTE_ORDER == LITTLE_ENDIAN);
+ 
+-#ifdef HDIO_REQ
+-    if (!ioctl(fd, HDIO_REQ, &geometry))
+-#else
+-    if (!ioctl(fd, HDIO_GETGEO, &geometry))
+-#endif
++    if (!sys_bsd_getgeometry(fd, &geometry))
+     {
+ 	heads = geometry.heads;
+ 	sectors = geometry.sectors;
+diff -rNu fdisksgilabel.h fdisksgilabel.h
+--- fdisksgilabel.h	Tue Feb 20 12:26:53 2001
++++ fdisksgilabel.h	Mon Jun 16 16:46:01 2003
+@@ -1,4 +1,3 @@
+-#include <linux/types.h>   /* for __u32 etc */
+ /*
+  * Copyright (C) Andreas Neuper, Sep 1998.
+  *	This file may be modified and redistributed under
+diff -rNu fdisksunlabel.c fdisksunlabel.c
+--- fdisksunlabel.c	Fri Nov  1 03:55:25 2002
++++ fdisksunlabel.c	Mon Jun 16 17:30:38 2003
+@@ -16,18 +16,18 @@
+ #include <unistd.h>		/* write */
+ #include <sys/ioctl.h>		/* ioctl */
+ #include <sys/stat.h>		/* stat */
+-#include <sys/sysmacros.h>	/* major */
++//#include <sys/sysmacros.h>	/* major */
+ 
+ #include "nls.h"
+ 
+-#include <endian.h>
+-#include "../defines.h"		/* for HAVE_scsi_h */
++#include <sys/endian.h>
++//#include "../defines.h"		/* for HAVE_scsi_h */
+ #ifdef HAVE_scsi_h
+ #define u_char	unsigned char
+ #include <scsi/scsi.h>		/* SCSI_IOCTL_GET_IDLUN */
+ #undef u_char
+ #endif
+-#include <linux/major.h>	/* FLOPPY_MAJOR */
++//#include <linux/major.h>	/* FLOPPY_MAJOR */
+ 
+ #include "common.h"
+ #include "fdisk.h"
+@@ -71,6 +71,7 @@
+ 	return SSWAP32(p.num_sectors);
+ }
+ 
++#if 0
+ #ifndef IDE0_MAJOR
+ #define IDE0_MAJOR 3
+ #endif
+@@ -97,6 +98,7 @@
+                 floppy = 0;
+ 	}
+ }
++#endif
+ 
+ static void
+ set_sun_partition(int i, uint start, uint stop, int sysid) {
+@@ -296,11 +298,7 @@
+ 	    }
+ 	}
+ 	if (!p || floppy) {
+-#ifdef HDIO_REQ
+-	    if (!ioctl(fd, HDIO_REQ, &geometry)) {
+-#else
+-	    if (!ioctl(fd, HDIO_GETGEO, &geometry)) {
+-#endif
++	    if (!sys_bsd_getgeometry(fd, &geometry)) {
+ 	        heads = geometry.heads;
+ 	        sectors = geometry.sectors;
+ 	        cylinders = geometry.cylinders;
+diff -rNu fdisksunlabel.h fdisksunlabel.h
+--- fdisksunlabel.h	Tue Oct  3 00:42:10 2000
++++ fdisksunlabel.h	Mon Jun 16 16:46:01 2003
+@@ -1,4 +1,3 @@
+-#include <linux/types.h>   /* for __u16, __u32 */
+ 
+ typedef struct {
+ 	unsigned char info[128];   /* Informative text string */
+diff -rNu nls.h nls.h
+--- nls.h	Thu Jan  1 03:00:00 1970
++++ nls.h	Mon Jun 16 16:46:01 2003
+@@ -0,0 +1,2 @@
++#define _(x) (x)
++#define N_(x) (x)
+diff -rNu partname.c partname.c
+--- partname.c	Sun Jul  7 15:16:43 2002
++++ partname.c	Mon Jun 16 16:46:02 2003
+@@ -21,14 +21,16 @@
+ 	p = "";
+ 
+ 	if (isdigit(dev[w-1]))
+-		p = "p";
++		p = "s";
+ 
++#if 0
+ 	/* devfs kludge - note: fdisk partition names are not supposed
+ 	   to equal kernel names, so there is no reason to do this */
+ 	if (strcmp (dev + w - 4, "disc") == 0) {
+ 		w -= 4;
+ 		p = "part";
+ 	}
++#endif
+ 
+ 	wp = strlen(p);
+ 		

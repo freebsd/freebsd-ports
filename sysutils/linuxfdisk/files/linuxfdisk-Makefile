@@ -1,0 +1,15 @@
+all: linuxfdisk
+
+OBJS = fdisk.o i386_sys_types.o partname.o \
+	fdiskbsdlabel.o fdisksunlabel.o fdiskaixlabel.o fdisksgilabel.o \
+	sys_bsd.o
+INSTALL?=	install -c
+## Debug
+#CFLAGS+=	-O0 -g -Wall
+
+linuxfdisk: $(OBJS)
+	$(CC) -o linuxfdisk $(OBJS)
+
+install:
+	$(INSTALL) -c -m 0555 -s linuxfdisk ${DESTDIR}${PREFIX}/sbin/linuxfdisk
+	cat linuxfdisk.8 >${DESTDIR}${PREFIX}/man/man8/linuxfdisk.8
