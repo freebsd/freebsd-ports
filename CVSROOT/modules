@@ -6917,6 +6917,7 @@ ruby-narray	ports/math/ruby-narray
 ruby-ncurses	ports/devel/ruby-ncurses
 ruby-netcdf	ports/math/ruby-netcdf
 ruby-nis	ports/net/ruby-nis
+ruby-nodedump	ports/devel/ruby-nodedump
 ruby-nqxml	ports/textproc/ruby-nqxml
 ruby-o_dbm	ports/databases/ruby-o_dbm
 ruby-odbc	ports/databases/ruby-odbc
