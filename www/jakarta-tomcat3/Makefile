@@ -153,7 +153,7 @@ do-install:
 
 post-install:
 	@${ECHO_CMD} "${APP_TITLE} ${PORTVERSION} has been installed in ${APP_HOME}."
-	@${ECHO_CMD} "If a user should be able to use ${CONTROL_SCRIPT_NAME}, put it in the group ${GROUP}."
+	@${ECHO_CMD} "If a user should be able to use ${CONTROL_SCRIPT_NAME}, then put this user in the group ${GROUP}."
 .if !defined(NOPORTDOCS)
 	@${ECHO_CMD} "Use 'man ${CONTROL_SCRIPT_NAME}' for information about starting and stopping ${APP_TITLE}."
 .endif
