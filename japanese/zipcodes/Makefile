@@ -3,7 +3,7 @@
 # Date created:		5 Nov 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.6 1998/03/23 06:18:51 itojun Exp $
+# $Id: Makefile,v 1.7 1998/10/21 08:58:13 asami Exp $
 #
 
 DISTNAME=	ken_all
@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.postal.mpt.go.jp/lzh/
 EXTRACT_SUFX=	.lzh
 
 MAINTAINER=	itojun@itojun.org
+
+BROKEN=		"Post office stopped supplying the original distribution"
 
 BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		nkf:${PORTSDIR}/japanese/nkf
