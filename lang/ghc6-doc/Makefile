@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ghc6-doc
-PORTVERSION=	6.2
+PORTVERSION=	6.2.1
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/docs/${PORTVERSION}/ \
 		http://www.haskell.org/ghc/docs/${PORTVERSION}/html/ \
@@ -18,7 +18,7 @@ DISTFILES=      building.html.tar.gz building.ps.gz hslibs.html.tar.gz \
 DIST_SUBDIR=	ghc-${PORTVERSION}
 EXTRACT_ONLY=
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Documentation (HTML, PS) for the Glasgow Haskell Compiler
 
 NO_BUILD=	yes
