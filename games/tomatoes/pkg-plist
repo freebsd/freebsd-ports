@@ -1,0 +1,7 @@
+bin/tomatoes
+etc/tomatoes/config.cfg
+share/tomatoes/music/IHaveNoTomatoes.it
+share/tomatoes/tomatoes.mpk
+@dirrm share/tomatoes/music
+@dirrm share/tomatoes
+@dirrm etc/tomatoes

@@ -464,6 +464,7 @@
     SUBDIR += tinymux
     SUBDIR += tkmoo
     SUBDIR += tksol
+    SUBDIR += tomatoes
     SUBDIR += tome
     SUBDIR += toppler
     SUBDIR += torcs
