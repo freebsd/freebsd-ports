@@ -18,7 +18,13 @@ USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${PERL} -pi -e "s/cfree/free/g" ${WRKSRC}/src/list.c
+.if ${OSVERSION} <= 500027
+	@${FIND} ${WRKSRC}/src -type f | ${XARGS} ${PERL} -pi \
+		-e 's|<stdint.h>|<inttypes.h>|'
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
