@@ -1,3 +1,4 @@
+bin/mlcc
 bin/mlterm
 bin/mlclient
 bin/w3mmlconfig
@@ -6,6 +7,7 @@ etc/mlterm/color
 etc/mlterm/font
 etc/mlterm/key
 etc/mlterm/main
+etc/mlterm/menu
 etc/mlterm/termcap
 etc/mlterm/taafont
 etc/mlterm/tfont
