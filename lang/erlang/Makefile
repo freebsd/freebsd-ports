@@ -118,11 +118,11 @@ post-install:
 	@${CHMOD} -R o+rX-w,g+rX-w ${PREFIX}/lib/erlang
 	@sslapp=`ls -d ${PREFIX}/lib/erlang/lib/ssl-* | tail -1`; \
 	cd $$sslapp/priv/obj && ${MAKE} && strip ../bin/ssl_esock
-	@cd ${PREFIX} ; find lib/erlang/* -type f -o -type l \
+	@cd ${PREFIX} ; ${FIND} lib/erlang/* -type f -o -type l \
 		| ${GREP} -v "^lib/erlang/man" \
 		| sort \
 		> ${WRKDIR}/PLIST.lib-erlang
-	@cd ${PREFIX} ; find lib/erlang/* -type d | sort -r \
+	@cd ${PREFIX} ; ${FIND} lib/erlang/* -type d | sort -r \
 		| ${GREP} -v "^lib/erlang/man" \
 	    	| ${SED} -e 's/^/@dirrm /g' \
 		>> ${WRKDIR}/PLIST.lib-erlang
