@@ -9,11 +9,10 @@
 #
 
 PORTNAME=	isakmpd
-PORTVERSION=	20021118
-PORTREVISION=	2
+PORTVERSION=	20030903
 CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_NETBSD}
-MASTER_SITE_SUBDIR=	LOCAL_PORTS
+MASTER_SITE_SUBDIR=	.
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenBSD IKE daemon
@@ -38,8 +37,8 @@ MAN8=		certpatch.8 isakmpd.8
 MANCOMPRESSED=	yes
 
 post-patch:
-	@(cd ${WRKSRC}; ${REINPLACE_CMD} -e "s!/etc/!${PREFIX}/etc/!" \
-		conf.h ike_auth.c isakmpd.8 isakmpd.conf.5 \
-		isakmpd.policy.5 policy.h)
+.for f in conf.h ike_auth.c isakmpd.8 isakmpd.conf.5 isakmpd.policy.5 policy.h
+	${REINPLACE_CMD} -e "s!/etc/!${PREFIX}/etc/!" ${WRKSRC}/${f}
+.endfor
 
 .include <bsd.port.mk>
