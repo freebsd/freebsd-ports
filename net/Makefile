@@ -23,6 +23,7 @@
     SUBDIR += ascend-radius
     SUBDIR += asfrecorder
     SUBDIR += balance
+    SUBDIR += bbsnet
     SUBDIR += bind8
     SUBDIR += bind9
     SUBDIR += bing

@@ -7,7 +7,7 @@
 
 PORTNAME=	bbsnet
 PORTVERSION=	2.7
-CATEGORIES=	chinese
+CATEGORIES=	net
 MASTER_SITES=	http://linux.ee.tku.edu.tw/~kids/resource/ \
 		http://freebsd.sinica.edu.tw/~statue/
 
