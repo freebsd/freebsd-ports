@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	physcalc
-PORTVERSION=	1.0
+PORTVERSION=	2.4
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.lightlink.com/pub/vulcan/
 DISTNAME=	${PORTNAME}
