@@ -1,0 +1,11 @@
+Danpei is a Gtk+ based Image Viewer, works on X Window Sysytem.
+
+Features:
+  o File operations like Windows Explorer
+  o View image files with thumbnail format
+  o View/Edit image files with your favorite applications (ImageMagick,
+    Gimp etc)
+  o Cache displayed images
+  o Print out images
+
+WWW: http://danpei.sourceforge.net/

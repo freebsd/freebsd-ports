@@ -49,6 +49,7 @@
     SUBDIR += crw
     SUBDIR += cthumb
     SUBDIR += curator
+    SUBDIR += danpei
     SUBDIR += dataplot
     SUBDIR += dc20ctrl
     SUBDIR += dc20pack
