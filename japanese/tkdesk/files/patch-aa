@@ -1,0 +1,13 @@
+--- configure.orig	Tue Sep 21 15:27:50 1999
++++ configure	Tue Sep 21 15:27:50 1999
+@@ -646,8 +646,8 @@
+   # ITCL_LIB_SPEC already set in itclConfig.sh
+   ITCL_LIB_STATIC=${TCLCONF_PATH}/libitcl${ITCL_VERSION}.a
+ else
+-  TCL_INCLUDE_PATH=$TCL_EXEC_PREFIX/include
+-  TK_INCLUDE_PATH=$TK_EXEC_PREFIX/include
++  TCL_INCLUDE_PATH=$TCL_EXEC_PREFIX/include/tcl${TCL_VERSION}
++  TK_INCLUDE_PATH=$TK_EXEC_PREFIX/include/tk${TK_VERSION}
+   NEED_ITCL_LIB=lib_itcl
+   ITCL_LIB_SPEC=itcl/libitcl.a
+   ITCL_LIB_STATIC=itcl/libitcl.a
