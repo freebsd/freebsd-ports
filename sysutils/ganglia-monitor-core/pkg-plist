@@ -38,4 +38,5 @@ lib/libganglia.a
 %%GMETAD%%sbin/gmetad
 sbin/gmond
 @dirrm include/ganglia
-@unexec rmdir /var/db/ganglia/rrds /var/db/ganglia 2>/dev/null || true
+@unexec rmdir %D/var/db/ganglia/rrds 2>/dev/null || true
+@unexec rmdir %D/var/db/ganglia 2>/dev/null || true
