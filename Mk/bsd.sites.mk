@@ -301,10 +301,10 @@ MASTER_SITE_RINGSERVER+=	\
 	http://www.t.ring.gr.jp/archives/%SUBDIR%/
 
 MASTER_SITE_RUBY+= \
-	ftp://xyz.lcs.mit.edu/pub/ruby/%SUBDIR%/ \
-	http://www.ibiblio.org/pub/languages/ruby/%SUBDIR%/ \
-	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,lang/ruby/&,} \
 	ftp://ftp.iij.ad.jp/pub/lang/ruby/%SUBDIR%/ \
+	http://www.ibiblio.org/pub/languages/ruby/%SUBDIR%/ \
+	ftp://xyz.lcs.mit.edu/pub/ruby/%SUBDIR%/ \
+	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,lang/ruby/&,} \
 	ftp://ftp.ruby-lang.org/pub/ruby/%SUBDIR%/ \
 	ftp://ftp.fu-berlin.de/unix/languages/ruby/%SUBDIR%/ \
 	ftp://ftp.easynet.be/ruby/ruby/%SUBDIR%/ \
