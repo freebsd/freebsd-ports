@@ -23,6 +23,6 @@ INSTALLS_SHLIB=	yes
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|-Wall -g -O2||g' 
+		's|-Wall -g -O2||g'
 
 .include <bsd.port.mk>

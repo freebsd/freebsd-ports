@@ -8,7 +8,7 @@
 # can't use PORTSDIR here, since we haven't included bsd.port.mk
 
 PORTNAME=	xpbiff-youbin
-PORTVERSION=	1.27	
+PORTVERSION=	1.27
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A replacement for xbiff that handles popup window with mail header

@@ -8,7 +8,7 @@
 PORTNAME=	momspider
 PORTVERSION=	1.00
 CATEGORIES=	www
-MASTER_SITES=   http://wolfram.schneider.org/src/
+MASTER_SITES=	http://wolfram.schneider.org/src/
 DISTNAME=	MOMspider-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} libwww-perl-0.40.tar.gz
 

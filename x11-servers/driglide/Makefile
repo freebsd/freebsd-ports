@@ -10,7 +10,7 @@ PORTVERSION=	0.9.1
 PORTREVISION=	2
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR= anholt/driglide/
+MASTER_SITE_SUBDIR=	anholt/driglide/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libraries to support 3dfx Voodoo3/4/5/Banshee with the DRI
@@ -28,7 +28,7 @@ MAKE_ARGS=		PREPROCESSOR=/usr/bin/cpp
 ONLY_FOR_ARCHS=		i386
 
 # Glide DOES NOT work with CFLAGS greater than -O2
-CFLAGS+= -O
+CFLAGS+=	-O
 
 post-extract:
 	cd $(WRKSRC) && ${ACLOCAL} -I ${LOCALBASE}/share/aclocal

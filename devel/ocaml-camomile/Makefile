@@ -11,7 +11,7 @@ PORTVERSION=	0.4.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-PKGNAMEPREFIX=	ocaml-              
+PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A comprehensive Unicode library for objective caml language

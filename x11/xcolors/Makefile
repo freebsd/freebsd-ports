@@ -10,7 +10,7 @@ PORTVERSION=	1.3
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	markp
-DISTNAME=	${PORTNAME}	
+DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display all (ok, most of) the colors in the universe

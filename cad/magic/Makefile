@@ -20,7 +20,7 @@ USE_GMAKE=	yes
 MAKE_ENV=	CADDIR="${PREFIX}" X11BASE="${X11BASE}"
 ALL_TARGET=	mains
 
-BINS=	XHelper7 ext2sim ext2spice extcheck magic magicusage net2ir 
+BINS=	XHelper7 ext2sim ext2spice extcheck magic magicusage net2ir
 MAN1=	ext2sim.1 ext2spice.1 extcheck.1 magic.1 magicusage.1
 MAN3=	dqueue.3 extflat.3 geometry.3 hash.3 heap.3 libmalloc.3 list.3 \
 	magicutils.3 malloc.3 path.3 runstats.3 set.3 show.3 stack.3 string.3

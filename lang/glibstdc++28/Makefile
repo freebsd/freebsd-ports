@@ -29,7 +29,7 @@ DEPRECATED=	"This port is no longer in use by anything in the ports collection a
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
+BROKEN=		"Does not compile (bad C++ code)"
 .endif
 
 CC=		gcc28

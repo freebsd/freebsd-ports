@@ -53,7 +53,7 @@ DISPLAY_MSG=	${DO_NADA}
 .endif
 
 .if defined(WITH_NAS)
-LIB_DEPENDS+=  audio.2:${PORTSDIR}/audio/nas
+LIB_DEPENDS+=	audio.2:${PORTSDIR}/audio/nas
 .else
 CONFIGURE_ARGS+=--disable-nas
 .endif

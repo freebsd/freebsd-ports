@@ -21,21 +21,21 @@ CONFLICTS=	openssh-* openssh-portable-* openssh-gssapi-* ssh2-3.*
 USE_AUTOCONF_VER=	213
 GNU_CONFIGURE=	YES
 USE_PERL5=	YES
-CONFIGURE_ENV+= PERL=${PERL5}
+CONFIGURE_ENV+=	PERL=${PERL5}
 
-CONFIGURE_ARGS+= --with-etcdir=${PREFIX}/etc
+CONFIGURE_ARGS+=--with-etcdir=${PREFIX}/etc
 
 # Uncomment if all your users are in their own group and their homedir
 # is writeable by that group.  Beware the security implications!
 #
-#CONFIGURE_ARGS+= --enable-group-writeability
+#CONFIGURE_ARGS+=	--enable-group-writeability
 
 # Uncomment if you want to allow ssh to emulate an unencrypted rsh connection
 # over a secure medium (i.e. allow SSH connections without encryption).
 # This is normally dangerous since it can lead to the disclosure of keys
 # and passwords.
 #
-#CONFIGURE_ARGS+= --with-none
+#CONFIGURE_ARGS+=	--with-none
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
 CONFIGURE_ARGS+=--with-kerberos5=${KRB5_HOME} --enable-kerberos-tgt-passing \
@@ -46,7 +46,7 @@ CONFIGURE_ARGS+=--with-kerberos5=${KRB5_HOME} --enable-kerberos-tgt-passing \
 # Warning: untested !
 #
 .if defined(WITH_SECUREID)
-CONFIGURE_ARGS+= --with-secureid
+CONFIGURE_ARGS+=	--with-secureid
 .endif
 
 # Don't use IDEA. IDEA can be freely used for non-commercial use. However,
@@ -56,7 +56,7 @@ CONFIGURE_ARGS+= --with-secureid
 # into trouble.
 #
 .if defined(WITHOUT_IDEA)
-CONFIGURE_ARGS+= --without-idea
+CONFIGURE_ARGS+=	--without-idea
 .endif
 
 .include <bsd.port.pre.mk>
@@ -104,12 +104,12 @@ post-install:
 
 # Include tcp-wrapper support (call remote identd)
 .if exists(/usr/include/tcpd.h)
-CONFIGURE_ARGS+= --with-libwrap
+CONFIGURE_ARGS+=	--with-libwrap
 .else
 .if defined(WITH_TCPWRAP) || (exists(${PREFIX}/lib/libwrap.a) \
 	&& !defined(WITHOUT_TCPWRAP))
-CONFIGURE_ENV+= LDFLAGS=-L${PREFIX}/lib CFLAGS="${CFLAGS} -I${PREFIX}/include"
-CONFIGURE_ARGS+= --with-libwrap
+CONFIGURE_ENV+=	LDFLAGS=-L${PREFIX}/lib CFLAGS="${CFLAGS} -I${PREFIX}/include"
+CONFIGURE_ARGS+=	--with-libwrap
 LIB_DEPENDS+=	wrap.7:${PORTSDIR}/security/tcp_wrapper
 .endif
 .endif
@@ -126,7 +126,7 @@ CONFIGURE_ARGS+=	--disable-ipv6
 
 # Include SOCKS firewall support
 .if defined(WITH_SOCKS)
-CONFIGURE_ARGS+= --with-socks="-L${PREFIX}/lib -lsocks5" --with-socks5
+CONFIGURE_ARGS+=	--with-socks="-L${PREFIX}/lib -lsocks5" --with-socks5
 .endif
 
 # Include extra files if X11 is installed
@@ -137,7 +137,7 @@ PLIST:=		${WRKDIR}/PLIST
 pre-install:
 	@${CAT} ${PKGDIR}/pkg-plist.x11 ${PKGDIR}/pkg-plist > ${PLIST}
 .else
-CONFIGURE_ARGS+= --without-x
+CONFIGURE_ARGS+=	--without-x
 .endif
 
 .include <bsd.port.post.mk>

@@ -61,13 +61,13 @@ pre-configure:
 
 # hack to avoid shipping binaries linked with Motif
 .if defined(MOTIF_STATIC)
-CONFIGURE_ARGS+= --with-dialogs=athena
+CONFIGURE_ARGS+=	--with-dialogs=athena
 .endif
 
 # Drop faces (libcompface) and offix (libDnd) if building package,
 # autodetect otherwise
 .if defined(PACKAGE_BUILDING)
-CONFIGURE_ARGS+= --with-xface=no --with-offix=no
+CONFIGURE_ARGS+=	--with-xface=no --with-offix=no
 .endif
 
 post-install:

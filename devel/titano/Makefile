@@ -28,7 +28,7 @@ USE_LIBTOOL_VER=	13
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
+BROKEN=		"Does not compile (bad C++ code)"
 .endif
 
 pre-patch:

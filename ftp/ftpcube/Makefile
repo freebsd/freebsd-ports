@@ -24,5 +24,5 @@ USE_PYDISTUTILS=	yes
 
 post-patch:
 	@${REINPLACE_CMD} 's,/usr/local,${PREFIX},' ${WRKSRC}/setup.cfg
-	
+
 .include <bsd.port.mk>

@@ -21,7 +21,7 @@ MAN8=		vtund.8
 MLINKS=		vtund.8 vtun.8
 
 USE_OPENSSL=	yes
-USE_AUTOCONF_VER= 213
+USE_AUTOCONF_VER=	213
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-ssl-headers=${OPENSSLBASE}/include/openssl \
 		--with-ssl-lib=${OPENSSLBASE}/lib \

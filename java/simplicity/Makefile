@@ -21,7 +21,7 @@ RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/jdk13
 JDK13DIR?=	${LOCALBASE}/jdk1.3.1
 JAVAVM=		${JDK13DIR}/bin/java
 
-RESTRICTED=     "Restrictive license"
+RESTRICTED=	"Restrictive license"
 USE_XLIB=	yes
 USE_REINPLACE=	yes
 NO_BUILD=	yes

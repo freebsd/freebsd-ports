@@ -22,7 +22,7 @@ COMMENT=	Toolkit and library for raster image processing
 
 LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
 
-NO_WRKSUBDIR=   yes
+NO_WRKSUBDIR=	yes
 
 USE_XLIB=	yes
 HAS_CONFIGURE=	yes

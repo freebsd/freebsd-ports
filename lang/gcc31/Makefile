@@ -1,5 +1,5 @@
-# ex:ts=8 
-# Ports collection makefile for:	egcs 
+# ex:ts=8
+# Ports collection makefile for:	egcs
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
@@ -28,7 +28,7 @@ PATCHFILES=	port_gcc31_${SNAPDATE}.diff
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Compiler Collection 3.1 (inprogress version)
 
-DEPRECATED=     "This port is no longer in use by anything in the ports collection and will be removed in the future.  Use a later release instead"
+DEPRECATED=	"This port is no longer in use by anything in the ports collection and will be removed in the future.  Use a later release instead"
 
 NOT_FOR_ARCHS=	amd64 ia64
 NO_CDROM=	'dated material'
@@ -72,14 +72,14 @@ CONFIGURE_ARGS=	--disable-nls --with-gnu-as --with-gnu-ld \
 CONFIGURE_ARGS+=	--with-system-zlib --includedir=${TARGLIB}/include/Java
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 .if defined(WANT_SHAREDLIBS)
-CONFIGURE_ARGS+= --enable-shared
+CONFIGURE_ARGS+=	--enable-shared
 .else
-CONFIGURE_ARGS+= --disable-shared
+CONFIGURE_ARGS+=	--disable-shared
 .endif
 .if defined(WANT_THREADS_SUPPORT)
-CONFIGURE_ARGS+= --enable-threads
+CONFIGURE_ARGS+=	--enable-threads
 #	?is this an ObjC only thing?
-CONFIGURE_ARGS+= --enable-threads=posix
+CONFIGURE_ARGS+=	--enable-threads=posix
 .endif
 ALL_TARGET=	bootstrap
 MAN1=		cpp31.1 g++31.1 g77-31.1 gcc31.1 gcov31.1 \
@@ -165,7 +165,7 @@ post-install:
 	cd ${WRKDIR} ; ex < ex.script
 
 cklatest:
-.for SITE in ftp://gcc.gnu.org/pub/gcc/snapshots/                                   ftp://mirrors.rcn.net/mirrors/sources.redhat.com/gcc/snapshots/	
+.for SITE in ftp://gcc.gnu.org/pub/gcc/snapshots/                                   ftp://mirrors.rcn.net/mirrors/sources.redhat.com/gcc/snapshots/
 	@-ncftpls ${SITE} | grep LATEST
 .endfor
 

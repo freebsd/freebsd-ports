@@ -41,13 +41,13 @@ IS_INTERACTIVE=	yes
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
 
-AUDIT?=         "@comment "
-RECYCLE?=       "@comment "
-LIBSAMBA?=      "@comment "
-BUILD_VFS?=     "@comment "
-WINBIND?=       "@comment "
+AUDIT?=		"@comment "
+RECYCLE?=	"@comment "
+LIBSAMBA?=	"@comment "
+BUILD_VFS?=	"@comment "
+WINBIND?=	"@comment "
 WINBIND_NSS?=	"@comment "
-WINBIND_AUTH_CHALLENGE?= "@comment "
+WINBIND_AUTH_CHALLENGE?=	"@comment "
 
 .if defined(WITH_AUDIT)
 AUDIT=		""
@@ -113,7 +113,7 @@ CONFIGURE_ARGS+=	--with-msdfs
 LIB_DEPENDS+=	popt.0:${PORTSDIR}/devel/popt
 
 .if defined(WITH_LDAP)
-LIB_DEPENDS+=  ldap.2:${PORTSDIR}/net/openldap20-client
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20-client
 CONFIGURE_ARGS+=	--with-ldapsam
 CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
@@ -157,7 +157,7 @@ LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
 CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
 .else
-CONFIGURE_ARGS+= --disable-cups
+CONFIGURE_ARGS+=	--disable-cups
 .endif
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})

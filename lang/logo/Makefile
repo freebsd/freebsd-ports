@@ -8,7 +8,7 @@
 PORTNAME=	ucblogo
 PORTVERSION=	5.2
 CATEGORIES=	lang
-MASTER_SITES= 	${MASTER_SITE_GNU} \
+MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.cs.berkeley.edu/pub/ucblogo/
 MASTER_SITE_SUBDIR=non-gnu/ucblogo
 
@@ -16,12 +16,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Brian Harvey's logo language interpreter
 
 .if defined(EMACS_LOGO_MODE)
-BUILD_DEPENDS=  emacs:${PORTSDIR}/editors/emacs19
+BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs19
 .endif
 .if defined(WITH_FULL_DOCS)
 .undef NOPORTDOCS
 
-BUILD_DEPENDS+= tex:${PORTSDIR}/print/teTeX \
+BUILD_DEPENDS+=	tex:${PORTSDIR}/print/teTeX \
 		ps2pdf:${PORTSDIR}/${GHOSTSCRIPT_PORT}
 .endif
 

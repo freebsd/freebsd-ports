@@ -23,7 +23,7 @@ ALL_TARGET=	${DISTNAME}
 WRKSRC=		${WRKDIR}/${DISTNAME}
 MAKE_ENV+=	PCFLAGS="${CFLAGS}"
 
-DEPRECATED=		"${PORTNAME} is outdated and full of bugs" 
+DEPRECATED=		"${PORTNAME} is outdated and full of bugs"
 EXPIRATION_DATE=	2004-05-26
 
 do-install:

@@ -15,7 +15,6 @@ MASTER_SITES=	# http://xmps.sourceforge.net/sources/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X MPEG Player System - a media player with a very nice GUI
 
-
 USE_SDL=	sdl
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs gdkpixbuf

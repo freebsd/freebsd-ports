@@ -36,7 +36,7 @@ MASTER_SITE_SUBDIR=	experimental/sparc/stages/sparc64
 DISTNAME=	stage1-sparc64-20031011
 .endif
 DIST_SUBDIR=	gentoo-linux
-EXTRACT_ONLY=	
+EXTRACT_ONLY=
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Files from Gentoo distribution, for Linux compatibility
@@ -57,7 +57,7 @@ pre-install:
 	${GREP} '/$$' ${WRKDIR}/list.txt | ${SED} -e "s:^:@dirrm :g" >> ${PLIST}
 	${RM} ${WRKDIR}/list.txt
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-	
+
 do-install:
 	- ${MKDIR} ${PREFIX}
 	${TAR} -C ${PREFIX} -xypSf ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES}

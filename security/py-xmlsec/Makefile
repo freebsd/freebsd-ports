@@ -9,7 +9,7 @@
 PORTNAME=	xmlsec
 PORTVERSION=	0.2.0
 CATEGORIES=	security python
-MASTER_SITES= 	http://pyxmlsec.labs.libre-entreprise.org/releases/sources/
+MASTER_SITES=	http://pyxmlsec.labs.libre-entreprise.org/releases/sources/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 

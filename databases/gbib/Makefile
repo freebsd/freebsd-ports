@@ -13,9 +13,9 @@ MASTER_SITES=	ftp://ftp.seul.org/pub/gbib/src/ \
 		http://www.unixpages.org/distfiles/
 
 PATCH_SITES=	${MASTER_SITE_DEBIAN}
-PATCH_SITE_SUBDIR=      pool/main/g/gbib
-PATCHFILES=     ${PORTNAME}_${PORTVERSION}-1.diff.gz
-PATCH_DIST_STRIP=       -p1
+PATCH_SITE_SUBDIR=	pool/main/g/gbib
+PATCHFILES=	${PORTNAME}_${PORTVERSION}-1.diff.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Editor/browser for BibTeX bibliographic databases

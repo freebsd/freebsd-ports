@@ -30,7 +30,7 @@ MAN1=		zmrx.1 zmtx.1
 
 do-install:
 .for f in zmrx zmtx
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin 
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${f}.1 ${PREFIX}/man/man1
 .endfor
 

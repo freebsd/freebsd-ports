@@ -27,7 +27,7 @@ DEPRECATED=	"This port is no longer in use by anything in the ports collection a
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
+BROKEN=		"Does not compile (bad C++ code)"
 .endif
 
 EGCS_REV=	egcs-2.91.66
@@ -44,7 +44,7 @@ USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-gnu-as --with-gnu-ld \
 		--with-gxx-include-dir=${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/include/g++
 .if defined(WANT_SHAREDLIBS)
-CONFIGURE_ARGS+= --enable-shared
+CONFIGURE_ARGS+=--enable-shared
 .endif
 ALL_TARGET=	bootstrap
 MAN1=		cccp.1 g++.1 g77.1 gcc.1

@@ -28,16 +28,16 @@ DOC_FILES=	CHANGES COPYING README
 
 post-patch:
 .for ii in \
-        Makefile.in \
-        PluginLink.sh \
-        SpiralInfo.C \
-        SpiralSound/Midi.h \
-        SpiralSound/Output.h \
-        SpiralSound/SpiralInfo.h \
-        SpiralSound/Synth.C \
-        SpiralSound/Synth.h \
-        SpiralSound/_SynthInfo.C \
-        Synth.h
+	Makefile.in \
+	PluginLink.sh \
+	SpiralInfo.C \
+	SpiralSound/Midi.h \
+	SpiralSound/Output.h \
+	SpiralSound/SpiralInfo.h \
+	SpiralSound/Synth.C \
+	SpiralSound/Synth.h \
+	SpiralSound/_SynthInfo.C \
+	Synth.h
 	${MV} ${WRKSRC}/${ii} ${WRKSRC}/${ii}.orig
 	${SED} -e 's|-O3|${PTHREAD_CFLAGS}|g ; \
 			s|CC	=|CC?	=|g ; \

@@ -33,7 +33,7 @@ PORTVERSION=	a0
 .endif
 
 NO_BUILD=	yes
-NO_WRKSUBDIR=   yes
+NO_WRKSUBDIR=	yes
 
 pre-patch:
 	@${CP} ${DISTDIR}/pathchar.8 ${WRKSRC}

@@ -11,7 +11,7 @@ CATEGORIES=	x11-toolkits tk80
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
 DISTNAME=	tk${PORTVERSION}
 
-PATCH_SITES= 	ftp://touchwood.ee.uts.edu.au/pub/TkSTEP/
+PATCH_SITES=	ftp://touchwood.ee.uts.edu.au/pub/TkSTEP/
 PATCHFILES=	tk8.0.4-to-tkstep8.0.4-2.patch.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -27,9 +27,9 @@ PATCH_DIST_ARGS=	-p1 -d ${WRKDIR}/tk8.0.4 -E --quiet
 WRKSRC=		${WRKDIR}/tk8.0.4/unix
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --enable-shared --enable-xpm --enable-step --enable-dnd \
+CONFIGURE_ARGS=	--enable-shared --enable-xpm --enable-step --enable-dnd \
 		 --enable-tiff --with-optimize="${CFLAGS} -I${PREFIX}/include"
-CONFIGURE_ENV=  PORTSDIR=${PORTSDIR}
+CONFIGURE_ENV=	PORTSDIR=${PORTSDIR}
 PKGINSTALL=	${PORTSDIR}/x11-toolkits/tk82/pkg-install.wish
 PKGDEINSTALL=	${PORTSDIR}/x11-toolkits/tk82/pkg-deinstall.wish
 

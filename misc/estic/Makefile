@@ -30,12 +30,12 @@ PBX_MAN=${MANPREFIX}/man/man1
 PBX_BIN=${PREFIX}/bin
 PBX_DOC=${DOCSDIR}
 ESTIC=${WRKSRC}/estic
-MAKE_E= make X11BASE=${X11BASE} -f make/freebsd${X_OR_NOT}.mak
+MAKE_E=	make X11BASE=${X11BASE} -f make/freebsd${X_OR_NOT}.mak
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
+BROKEN=		"Does not compile (bad C++ code)"
 .endif
 
 do-configure:

@@ -16,7 +16,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CwTeX let you use Chinese Big5 codes in TeX/LaTeX documents
 
-BUILD_DEPENDS=  latex:${PORTSDIR}/print/teTeX
+BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 
 NO_BUILD=	YES
 

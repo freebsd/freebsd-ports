@@ -19,10 +19,10 @@ LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --enable-shared --with-tk
+CONFIGURE_ARGS=	--enable-shared --with-tk
 PLIST_SUB=	TCLX_LONG_VER=8.0.4 TCLX_SHORT_VER=804
 
-MAN3=   CmdWrite.3 Handles.3 Keylist.3 ObjCmdWrite.3 TclXInit.3 \
+MAN3=	CmdWrite.3 Handles.3 Keylist.3 ObjCmdWrite.3 TclXInit.3 \
 	TclCommandWriting.3 \
 	TclX_KeyedListDelete.3 TclX_KeyedListGet.3 TclX_KeyedListGetKeys.3 \
 	TclX_KeyedListSet.3 TclX_Main.3 TclX_NewKeyedListObj.3 \

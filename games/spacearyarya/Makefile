@@ -16,7 +16,7 @@ COMMENT=	Space Harrier, the ancient video game like game
 
 BUILD_DEPENDS=	${X11BASE}/include/KXL.h:${PORTSDIR}/games/kxl
 
-NO_CDROM=       Possible copyright infringement
+NO_CDROM=	Possible copyright infringement
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

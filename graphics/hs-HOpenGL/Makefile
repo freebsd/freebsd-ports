@@ -12,7 +12,7 @@ CATEGORIES=	graphics haskell
 MASTER_SITES=	http://haskell.cs.yale.edu/HOpenGL/releases/
 PKGNAMEPREFIX=	hs-
 
-MAINTAINER= 	ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Binding for OpenGL and GLUT for the lazy functional language Haskell
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc5 \

@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://samba.org/picturebook/
 DISTNAME=	capture
-EXTRACT_SUFX=  .tgz
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SONY VAIO camera capture utility

@@ -19,7 +19,7 @@ BUILD_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
 LIB_DEPENDS=	sword.1:${PORTSDIR}/misc/sword
 RUN_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
 
-USE_X_PREFIX=  	yes
+USE_X_PREFIX=	yes
 USE_GNOME=	gal gnomehack gnomeprefix gtkhtml
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

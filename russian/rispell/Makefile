@@ -9,14 +9,14 @@ PORTNAME=	ispell
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	russian textproc
-MASTER_SITES=   http://www.garret.ru/~knizhnik/
+MASTER_SITES=	http://www.garret.ru/~knizhnik/
 DISTNAME=	rispell
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Russian (KOI8-R) dictionary for ISPELL
 
 # Very dirty implementation, use rus-ispell port instead
-NO_LATEST_LINK= yes
+NO_LATEST_LINK=	yes
 
 BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 

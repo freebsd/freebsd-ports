@@ -5,18 +5,18 @@
 # $FreeBSD$
 #
 
-PORTNAME=       adabooch
+PORTNAME=	adabooch
 PORTVERSION=	20020602
-CATEGORIES=     devel
+CATEGORIES=	devel
 MASTER_SITES=	http://www.adapower.net/booch/download/ \
 		http://www.pogner.demon.co.uk/components/bc/download/
-DISTNAME=       bc-${PORTVERSION}
-EXTRACT_SUFX=   .tgz
+DISTNAME=	bc-${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=     ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library which provide container classes as well as powertools for Ada
 
-NO_BUILD=       yes
+NO_BUILD=	yes
 
 do-install:
 	@${ECHO} Installing library files

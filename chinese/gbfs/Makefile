@@ -42,7 +42,7 @@ NTFSPATCH=	ntfs.diff
 .endif
 
 .if !exists (${SYSDIR})
-IGNORE= "You need to extract kernel source tree before you build this package"
+IGNORE=	"You need to extract kernel source tree before you build this package"
 .endif
 
 do-extract:

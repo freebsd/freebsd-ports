@@ -33,11 +33,11 @@ pre-fetch:
 
 .if defined(WITH_VIEWER)
 .if ${XFREE86_VERSION} == 3
-BUILD_DEPENDS+= imake:${PORTSDIR}/devel/imake
+BUILD_DEPENDS+=	imake:${PORTSDIR}/devel/imake
 .elif ${XFREE86_VERSION} == 4
-BUILD_DEPENDS+= imake:${PORTSDIR}/devel/imake-4
+BUILD_DEPENDS+=	imake:${PORTSDIR}/devel/imake-4
 .endif
-USE_XLIB=       yes
+USE_XLIB=	yes
 PLIST_SUB+=	WITH_VIEWER=""
 post-build:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/build_viewer
@@ -51,9 +51,9 @@ pre-extract:
 .endif
 
 .if defined(WITH_OPTIMIZED_FLAGS)
-FFLAGS+=        -O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations
+FFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations
 .if (${MACHINE_ARCH} == "i386")
-FFLAGS+=        -mfancy-math-387 -malign-double
+FFLAGS+=	-mfancy-math-387 -malign-double
 .endif # i386
 .endif
 pre-everything::

@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-MASTERDIR=      ${.CURDIR}/../nethack34
+MASTERDIR=	${.CURDIR}/../nethack34
 
 MAINTAINER=	ports@FreeBSD.org
 

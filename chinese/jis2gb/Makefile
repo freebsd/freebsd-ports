@@ -5,20 +5,20 @@
 # $FreeBSD$
 #
 
-PORTNAME=      jis2gb
-PORTVERSION=   1.5
-CATEGORIES=    chinese
-MASTER_SITES=  http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/ftp/program/
-DISTFILES= jis2gb.tar.Z
+PORTNAME=	jis2gb
+PORTVERSION=	1.5
+CATEGORIES=	chinese
+MASTER_SITES=	http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/ftp/program/
+DISTFILES=	jis2gb.tar.Z
 
-MAINTAINER=    ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert JIS Kanji to GuoBiao Hanzi
 
-WRKSRC= ${WRKDIR}/jis2gb
+WRKSRC=		${WRKDIR}/jis2gb
 ALL_TARGET=
 
-MAN1=          jis2gb.1
-MANCOMPRESSED= yes
+MAN1=		jis2gb.1
+MANCOMPRESSED=	yes
 
 post-install:
 # install manual

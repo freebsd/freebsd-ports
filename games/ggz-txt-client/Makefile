@@ -9,7 +9,7 @@
 PORTNAME=	ggz-txt-client
 PORTVERSION=	0.0.8
 CATEGORIES=	games
-MASTER_SITES=	http://ggzgamingzone.org/pub/ggz/%SUBDIR%/ 
+MASTER_SITES=	http://ggzgamingzone.org/pub/ggz/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

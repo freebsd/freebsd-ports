@@ -35,7 +35,7 @@ MYPORTDOCS=	README docs/APINOTES docs/CHANGES docs/README.webcam \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
+BROKEN=		"Does not compile"
 .endif
 
 post-install:

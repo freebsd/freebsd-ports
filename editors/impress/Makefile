@@ -15,7 +15,7 @@ DISTNAME=	imp${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Publishing and presentation tool
 
-RUN_DEPENDS=    wish8.4:${PORTSDIR}/x11-toolkits/tk84
+RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

@@ -20,7 +20,7 @@ PLIST_FILES=	bin/ncftp2
 
 .if defined(WITH_SOCKS)
 BUILD_DEPENDS=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
-CONFIGURE_ARGS+=   --enable-socks5
+CONFIGURE_ARGS+=--enable-socks5
 .endif
 
 do-install:

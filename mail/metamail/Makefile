@@ -27,7 +27,7 @@ RUN_DEPENDS+=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 
 USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
-MAN1= 		audiocompose.1 audiosend.1 extcompose.1 \
+MAN1=		audiocompose.1 audiosend.1 extcompose.1 \
 		getfilename.1 mailto-hebrew.1 mailto.1 metamail.1 \
 		metasend.1 mime.1 mimencode.1 mmencode.1 \
 		patch-metamail.1 richtext.1 showaudio.1 \

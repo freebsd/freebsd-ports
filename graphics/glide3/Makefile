@@ -39,7 +39,7 @@ MAKEFILE=		makefile.autoconf
 ONLY_FOR_ARCHS=		i386
 
 # Glide3 DOES NOT work with CFLAGS greater than -O2
-CFLAGS+= -O
+CFLAGS+=	-O
 
 .include <bsd.port.pre.mk>
 

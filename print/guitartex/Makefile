@@ -41,7 +41,6 @@ do-install:
 	@${MKDIR} ${DATADIR}/templates
 	${INSTALL_DATA} ${WRKSRC}/templates/* ${DATADIR}/templates
 
-	
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	gtkstep-pastel
-PORTVERSION=    0.10.1
+PORTVERSION=	0.10.1
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_THEMES}
-MASTER_SITE_SUBDIR= gtksteppastel
+MASTER_SITE_SUBDIR=	gtksteppastel
 DISTNAME=	gtksteppastel-1.2.x
 
 MAINTAINER=	ports@FreeBSD.org

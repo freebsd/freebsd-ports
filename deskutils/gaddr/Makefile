@@ -25,7 +25,7 @@ WANT_GNOME=	yes
 .if ${HAVE_GNOME:Mgnomelibs}!=""
 USE_GNOME+=	gnomelibs
 PKGNAMESUFFIX=	-gnome
-CONFIGURE_ARGS+= --enable-gnome
+CONFIGURE_ARGS+=--enable-gnome
 .endif
 
 .include <bsd.port.post.mk>

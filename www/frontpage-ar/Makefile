@@ -19,9 +19,9 @@ COMMENT?=	Microsoft Frontpage Arabic Web Administration
 
 RUN_DEPENDS=	${FPSETPERM}:${PORTSDIR}/www/frontpage
 
-FP_LANG?=       ara
-FP_LANGUAGE?=   Arabic
-FP_LCID?=       1025
+FP_LANG?=	ara
+FP_LANGUAGE?=	Arabic
+FP_LCID?=	1025
 
 .for _FP_LANG in ${FP_LANG}
 DISTFILES+=	fp${PORTVERSION:S/.//:C/\..*//}_${_FP_LANG}.tar.Z

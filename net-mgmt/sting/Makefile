@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113 || defined(IPFW2)
-BROKEN=         "Does not work with ipfw2"
+BROKEN=		"Does not work with ipfw2"
 .endif
 
 do-install:

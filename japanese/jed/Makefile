@@ -38,10 +38,10 @@ BINSTUFF=	jed rgrep
 .include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_CANNA)
-CONFIGURE_ARGS+= --with-canna=no
+CONFIGURE_ARGS+=	--with-canna=no
 .else
-CONFIGURE_ARGS+= --with-canna=yes
-LIBDEP_CANNA=	canna.1:${PORTSDIR}/japanese/Canna
+CONFIGURE_ARGS+=	--with-canna=yes
+LIBDEP_CANNA=		canna.1:${PORTSDIR}/japanese/Canna
 .endif
 
 # XJED core dumps on 3.x-STABLE for the present.

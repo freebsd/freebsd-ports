@@ -19,7 +19,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
 
 .if defined(WITH_CHANGEWORD)
-CONFIGURE_ARGS+= --enable-changeword
+CONFIGURE_ARGS+=	--enable-changeword
 .endif
 
 post-install:

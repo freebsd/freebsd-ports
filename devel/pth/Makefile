@@ -32,7 +32,7 @@ MAN3=		pth.3 pthread.3
 post-patch:
 	${REINPLACE_CMD} -e \
 		"s,-funroll-loops -fstrength-reduce -fomit-frame-pointer -ffast-math,${CFLAGS}," \
-		${WRKSRC}/configure	
+		${WRKSRC}/configure
 post-build:
 	@${ECHO_MSG} "===>  Use 'make test' to run a quick test suite."
 

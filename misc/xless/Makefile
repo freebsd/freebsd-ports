@@ -17,6 +17,6 @@ COMMENT=	An X11 viewer for text files.  Useful as an add-on tool for other apps
 
 USE_IMAKE=	yes
 MAN1=		xless.1
-MANCOMPRESSED=	yes	
+MANCOMPRESSED=	yes
 
 .include <bsd.port.mk>

@@ -24,15 +24,15 @@ COMMENT=	A Spreadsheet Program + Japanese patches
 # xmkmf is for configure script, not for USE_IMAKE.
 BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake-4
 
-CONFIGURE_ENV= CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 GNU_CONFIGURE=yes
-USE_XLIB=      yes
+USE_XLIB=	yes
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
+BROKEN=		"Does not compile"
 .endif
 
 post-install:

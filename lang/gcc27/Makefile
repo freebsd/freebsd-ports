@@ -30,7 +30,7 @@ LATEST_LINK=	gcc27
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
+BROKEN=		"Does not compile"
 .endif
 
 GCC_VER=	2.7.2.3

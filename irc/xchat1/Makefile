@@ -65,7 +65,7 @@ CONFIGURE_ARGS+=	--disable-gnome --disable-zvt
 .endif
 
 .if defined(WITH_PYTHON)
-USE_PYTHON=     yes
+USE_PYTHON=	yes
 CONFIGURE_ARGS+=	--enable-python
 .else
 CONFIGURE_ARGS+=	--disable-python

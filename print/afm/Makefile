@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.sgi.com/sgi/fax/source/
 DISTNAME=	afm
-EXTRACT_SUFX=   -tar.Z
+EXTRACT_SUFX=	-tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adobe Font Metrics

@@ -23,5 +23,4 @@ MAN3=		Crypt::DES.3 \
 		Math::BigInteger.3 \
 		Math::TrulyRandom.3
 
-
 .include <bsd.port.mk>

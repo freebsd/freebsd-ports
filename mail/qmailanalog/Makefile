@@ -34,7 +34,7 @@ QMAIL_DIR?=	/var/qmail
 .if !defined(NOSUBDIR)
 MYSUBDIR?=	qmailanalog/
 .else
-MYSUBDIR?=	
+MYSUBDIR?=
 .endif
 
 QMPREFIX?=	${PREFIX}/${MYSUBDIR}

@@ -14,7 +14,7 @@ MASTER_SITES=	http://spruce.sourceforge.net/gmime/sources/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library (written in C) for parsing and creating messages using MIME
 
-CONFLICTS= 	gmime-2.1.*
+CONFLICTS=	gmime-2.1.*
 USE_X_PREFIX=	YES
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES

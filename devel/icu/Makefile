@@ -10,7 +10,7 @@ PORTVERSION=	1.7
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://oss.software.ibm.com/developerworks/opensource/icu/project/download/${PORTVERSION}/
-EXTRACT_SUFX=   .tgz
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	International Components for Unicode (from IBM)(old version)
@@ -21,7 +21,7 @@ USE_GMAKE=	yes
 
 CONFIGURE_ARGS+=--disable-shared --enable-static
 CONFIGURE_ENV=	CXXFLAGS="-O3"
-CONFIGURE_ENV+= CFLAGS="-O3"
+CONFIGURE_ENV+=	CFLAGS="-O3"
 
 .include <bsd.port.pre.mk>
 

@@ -26,7 +26,7 @@ RUN_DEPENDS=	\
 
 USE_ZIP=	yes
 USE_PYTHON=	yes
-USE_PYDISTUTILS= yes
+USE_PYDISTUTILS=yes
 
 post-install:
 .if !defined(NOPORTDOCS)

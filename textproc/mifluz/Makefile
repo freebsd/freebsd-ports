@@ -20,7 +20,7 @@ USE_REINPLACE=	yes
 USE_LIBTOOL_VER=13
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 		--without-unac
-INSTALLS_SHLIB= yes
+INSTALLS_SHLIB=	yes
 
 USE_BISON=	yes
 USE_GCC=	2.95

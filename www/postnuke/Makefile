@@ -16,16 +16,16 @@ DISTNAME=	Rogue_714
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An automated website package to distribute and manage content
 
-RUN_DEPENDS=    ${LOCALBASE}/share/pear/System.php:${PORTSDIR}/devel/pear-PEAR
+RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:${PORTSDIR}/devel/pear-PEAR
 
 USE_MYSQL=	YES
 
 NO_BUILD=	yes
-WRKSRC=         ${WRKDIR}/pn_714
+WRKSRC=		${WRKDIR}/pn_714
 NO_WRKSUBDIR=	yes
 DOCFILES=	README-FIRST.txt THEME_UPGRADES.txt UPGRADE.txt pnAPI.pdf pnMDG.pdf
 PLIST_SUB=	NUKEDIR=${NUKEDIR}
-PKGMESSAGE=     ${WRKDIR}/pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_REINPLACE=	yes
 
 pre-fetch:
@@ -35,7 +35,7 @@ pre-fetch:
 	@${ECHO_MSG} ""
 .endif
 
-NUKEDIR?=       www/data/postnuke
+NUKEDIR?=	www/data/postnuke
 
 post-configure:
 	${CP} pkg-message ${PKGMESSAGE}

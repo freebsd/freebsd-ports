@@ -5,18 +5,18 @@
 # $FreeBSD$
 #
 
-PORTNAME=      adabindx
-PORTVERSION=   0.7.2
-CATEGORIES=    devel
-MASTER_SITES=  http://home.arcor.de/hfvogt/
+PORTNAME=	adabindx
+PORTVERSION=	0.7.2
+CATEGORIES=	devel
+MASTER_SITES=	http://home.arcor.de/hfvogt/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Ada-binding to the X Window System and *tif
 
-BUILD_DEPENDS= gnatmake:${PORTSDIR}/lang/gnat
+BUILD_DEPENDS=	gnatmake:${PORTSDIR}/lang/gnat
 
-USE_MOTIF=     yes
-PREFIX=        ${X11BASE}
+USE_MOTIF=	yes
+PREFIX=		${X11BASE}
 
 post-patch:
 #	@mv ${WRKSRC}/lib ${WRKSRC}/src

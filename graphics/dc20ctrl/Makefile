@@ -9,7 +9,7 @@ PORTNAME=	dc20ctrl
 PORTVERSION=	0.4
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=   http://www.paternostro.org/~ugo/binaries/
+MASTER_SITES=	http://www.paternostro.org/~ugo/binaries/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Digital camera control and download tool for Kodak DC20 camera

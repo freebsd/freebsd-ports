@@ -25,7 +25,7 @@ QTCPPFLAGS+=	-I${X11BASE}/include
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
+BROKEN=		"Does not compile"
 .endif
 
 .if ${MACHINE_ARCH} == "alpha"

@@ -18,7 +18,7 @@ COMMENT=	A command line Gnutella client
 MAN1=		mutella.1
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET= --build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 

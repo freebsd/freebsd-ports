@@ -16,7 +16,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general-purpose tool for parameter handling in C++
 
-
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes

@@ -22,7 +22,7 @@ USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE}/include
 
-.include <bsd.port.pre.mk>                                          
+.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500035
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport

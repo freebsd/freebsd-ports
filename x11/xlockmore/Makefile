@@ -18,15 +18,15 @@ COMMENT=	Like XLock session locker/screen saver, but just more
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --without-gl --without-motif --without-sx \
+CONFIGURE_ARGS=	--without-gl --without-motif --without-sx \
 		--without-editres --without-dtsaver --without-rplay \
 		--without-nas --without-gtk --without-esound
 .if defined(MAKE_KERBEROS4)
-CONFIGURE_ARGS+= --enable-kerberos4
+CONFIGURE_ARGS+=--enable-kerberos4
 KRB4LIB=	-lcom_err -lcrypto
 .endif
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
-CONFIGURE_ARGS+= --enable-kerberos5
+CONFIGURE_ARGS+=--enable-kerberos5
 CFLAGS+=	-I${KRB5_HOME}/include
 KRB5LIB=	-L${KRB5_HOME}/lib
 .endif
@@ -48,15 +48,15 @@ CONFIGURE_ARGS+=	--without-mesa --without-opengl
 .endif
 
 .if defined(WITH_MB)
-CONFIGURE_ARGS+= --enable-use_mb
+CONFIGURE_ARGS+=	--enable-use_mb
 .endif
 
 .if defined(XLOCKMORE_LANG)
-CONFIGURE_ARGS+= --with-lang=${XLOCKMORE_LANG}
+CONFIGURE_ARGS+=	--with-lang=${XLOCKMORE_LANG}
 .endif
 
 .if defined(WITH_SYSLOG)
-CONFIGURE_ARGS+= --enable-syslog
+CONFIGURE_ARGS+=	--enable-syslog
 .endif
 
 CONFIGURE_ENV+=		XLOCKLIBS="${KRB5LIB} ${KRB4LIB} ${MESALIB}"

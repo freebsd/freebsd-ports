@@ -58,7 +58,7 @@ post-patch:
 .endfor
 
 post-build:
-.for file in sather-tutorial.texinfo sather-mode.texinfo sather.texinfo 
+.for file in sather-tutorial.texinfo sather-mode.texinfo sather.texinfo
 	cd ${WRKSRC}/Emacs && /usr/bin/makeinfo --no-split ${file}
 .endfor
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flowscan
-PORTVERSION=    1.006
+PORTVERSION=	1.006
 PORTREVISION=	7
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://net.doit.wisc.edu/~plonka/FlowScan/

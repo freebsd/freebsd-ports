@@ -24,7 +24,7 @@ PLIST_FILES=	bin/pbasic
 
 do-configure:
 	-cd ${WRKSRC} ; ${RM} -rf termio m68000 msdos vax pyramid ns32000 \
-			pdp11 cursor/cursor.dos cursor/cursor.ukc 
+			pdp11 cursor/cursor.dos cursor/cursor.ukc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/basic ${PREFIX}/bin/pbasic

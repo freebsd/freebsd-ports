@@ -35,7 +35,7 @@ PLIST_SUB+=	XMMS="@comment "
 .endif
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=    yes
+USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls
