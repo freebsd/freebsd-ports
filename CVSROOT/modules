@@ -6105,6 +6105,7 @@ parmetis	ports/math/parmetis
 parrot		ports/devel/parrot
 party		ports/irc/party
 pash		ports/shells/pash
+passepartout	ports/graphics/passepartout
 passivetex	ports/print/passivetex
 passlogd	ports/net/passlogd
 patanjali	ports/misc/patanjali
