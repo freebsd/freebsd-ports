@@ -1,5 +1,5 @@
---- etc/drweb/drweb32.ini.orig	Sat May 18 14:28:51 2002
-+++ etc/drweb/drweb32.ini	Tue May 21 19:10:43 2002
+--- etc/drweb/drweb32.ini.orig	Thu Aug 22 19:09:19 2002
++++ etc/drweb/drweb32.ini	Fri Aug 23 23:42:50 2002
 @@ -1,11 +1,11 @@
  [BSD]
 -EnginePath = "/opt/drweb/lib/drweb32.dll"
@@ -18,7 +18,7 @@
  RenameFilesTo = #??
  FilesTypes = EXE,COM,SYS,OV?,BAT,BIN,DRV,PRG,BOO,SCR,CMD,VXD,386,DLL,FON,DO?
  FilesTypes = XL?,WIZ,RTF,CL*,HT*,VB*,JS*,INF,AR?,ZIP,R??,PP?,OBJ,LIB,HLP,MD?
-@@ -30,40 +30,40 @@
+@@ -30,44 +30,44 @@
  ScanSubDirectories = Yes
  PromptOnAction = No
  LimitLog = No
@@ -30,6 +30,10 @@
 -UpdatePath = "/opt/drweb/updates"
 +UpdatePath = "%INSTALL%/updates"
  
+ RecodeNonprintable = Yes
+ RecodeMode = QuotedPrintable
+ RecodeChar = "?"
+ 
  [BSD:Daemon]
 -EnginePath = "/opt/drweb/lib/drweb32.dll"
 -VirusBase = "/var/drweb/bases/*.vdb", "/var/drweb/bases/*.VDB"
@@ -40,7 +44,7 @@
 +MoveFilesTo = "%INSTALL%/infected"
 +;LngFileName = "%INSTALL%/lib/russian.dwl"
  
--Key = "/opt/drweb/drweb.key"
+-Key = "/opt/drweb/drwebd.key"
 +Key = "%INSTALL%/drwebd.key"
  LogTime = Yes
  LogFileName = "syslog"
@@ -48,16 +52,16 @@
 -;BusyFile = "/var/drweb/run/drwebd.bsy"
 -SocketMode = TCP
 -SocketFile = "/var/drweb/run/drwebd.socket"
--;PidFile = "/var/drweb/run/drwebd.pid"
 -;SocketMode = Unix
 -;SocketAccess 0666
+-;PidFile = "/var/drweb/run/drwebd.pid"
 +;LogFileName = "/var/log/drwebd.log"
 +;BusyFile = "%INSTALL%/run/drwebd.bsy"
 +;SocketMode = TCP
 +SocketFile = "%INSTALL%/run/drwebd.sock"
-+PidFile = "%INSTALL%/run/drwebd.pid"
 +SocketMode = Unix
 +SocketAccess 0660
++PidFile = "%INSTALL%/run/drwebd.pid"
  DaemonPort = 3000
  SocketTimeout = 40
  SocketReuseAddr = Yes
@@ -76,7 +80,7 @@
  ;UserID = 
  ;GroupID = 
  ScanFiles = All
-@@ -73,7 +73,7 @@
+@@ -77,10 +77,10 @@
  SyslogPriority = "Alert"
  
  FilterRule X-Mailer ".*Mass.*Sender.*" Reject
@@ -87,3 +91,6 @@
  
 -UpdatePath = "/opt/drweb/updates"
 +UpdatePath = "%INSTALL%/updates"
+ 
+ RecodeNonprintable = Yes
+ RecodeMode = QuotedPrintable
