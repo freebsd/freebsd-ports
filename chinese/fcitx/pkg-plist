@@ -5,8 +5,4 @@ share/fcitx/pybase.mb
 share/fcitx/pyphrase.mb
 share/fcitx/sp.dat
 share/fcitx/wbx.mb
-share/fcitx/fcitx
-share/fcitx/fonts/fonts.dir
-share/fcitx/fonts/gbkst16.pcf.gz
-@dirrm share/fcitx/fonts
 @dirrm share/fcitx
