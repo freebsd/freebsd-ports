@@ -19,6 +19,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/bsddb3/__init__.py:${PORTSDIR}/databases/py-bs
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+CONFLICTS=	zodb*-3.*
 
 pre-install:
 	@ ${SH} ${PKGREQ} INSTALL
