@@ -14,6 +14,9 @@ MAINTAINER=	sysadmin@alexdupre.com
 
 LIB_DEPENDS=	glib12.3:${PORTSDIR}/devel/glib12
 
+USE_REINPLACE=	YES
+REINPLACE_ARGS=	#empty
+
 DOCS=		INSTALL LICENSE README TODO
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
@@ -21,8 +24,8 @@ MAKE_ENV+=	CPPFLAGS="-DPREFIX=\\\"${PREFIX}\\\""
 MAKE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 post-build:
-	@${SED} 's,%%PREFIX%%,${PREFIX},g' ${.CURDIR}/pkg-message.in \
-							> ${WRKDIR}/pkg-message
+	${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' \
+		${.CURDIR}/pkg-message.in > ${WRKDIR}/pkg-message
 
 do-install:
 	@${ECHO_CMD} "Installing files..."
