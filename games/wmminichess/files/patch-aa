@@ -1,0 +1,60 @@
+--- Makefile.orig	Wed Jul 28 21:59:39 1999
++++ Makefile	Wed Sep 29 20:13:10 1999
+@@ -20,34 +20,43 @@
+ # (See COPYING / GPL-2.0)
+ #
+ 
++# PREFIX on FreeBSD
++PREFIX ?= /usr/X11R6
++LOCAL = ${LOCALBASE}
++
++# Other stuff.
++SHARE_DIR = $(PREFIX)/share/wmminichess
++#INSTALL_DATA = install -c -o root -g wheel -m 644
++#INSTALL_PROGRAM = install -c -s -o root -g wheel -m 755
+ 
+ # Specify the location of gnuchessx on your system.
+-GNUCHESS = /usr/local/bin/gnuchessx
++GNUCHESS = $(LOCAL)/bin/gnuchessx
+ 
+ # Where do you want the binary installed?
+-DESTDIR = /usr/local/bin
++DESTDIR = $(PREFIX)/bin
+ 
+ # What do you want to name the binary?
+ BIN_NAME = minichess
+ 
+-# Uncomment this line if your using Solaris.
+-#SOLARIS_LIBS = -lsocket
+-
+-CFLAGS = -ansi -I/usr/X11R6/include
+-LIBDIR = -L/usr/X11R6/lib
+-LIBS   = -lXpm -lXext -lX11 $(SOLARIS_LIBS)
++CFLAGS += -I$(PREFIX)/include
++LIBDIR = -L$(PREFIX)/lib
++LIBS   = -lXpm -lXext -lX11
+ OBJS   = chess.o xgen.o
+ 
+ .c.o:
+-	gcc $(CFLAGS) -DENGINE=\"$(GNUCHESS)\" -c $< -o $*.o
++	${CC} $(CFLAGS) -DENGINE=\"$(GNUCHESS)\" -c $< -o $*.o
++
++all: $(BIN_NAME)
+ 
+ $(BIN_NAME): $(OBJS)
+-	gcc $(CFLAGS) -o $(BIN_NAME) $(OBJS) $(LIBDIR) $(LIBS)
++	${CC} $(CFLAGS) -o $(BIN_NAME) $(OBJS) $(LIBDIR) $(LIBS)
+ 
+ clean:
+ 	rm -f $(OBJS) $(BIN_NAME)
+ 
+-install:
+-	cp -f $(BIN_NAME) $(DESTDIR)
+-	chmod 755 $(DESTDIR)/$(BIN_NAME)
+-
++install: $(BIN_NAME)
++	$(MKDIR) $(SHARE_DIR)
++	$(INSTALL_PROGRAM) $(BIN_NAME) $(DESTDIR)
++	$(INSTALL_DATA) README $(SHARE_DIR)
++	$(INSTALL_DATA) TODO $(SHARE_DIR)
++	$(INSTALL_DATA) COPYING $(SHARE_DIR)
