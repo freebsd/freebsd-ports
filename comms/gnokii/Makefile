@@ -28,7 +28,7 @@ CONFIGURE_ARGS+=	--with-libintl-prefix=${LOCALBASE} --enable-security \
 CONFIGURE_ENV+=	MSGFMT="${LOCALBASE}/bin/msgfmt" \
 		XGETTEXT="${LOCALBASE}/bin/xgettext" \
 		CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LIBS="-L../common -L${LOCALBASE}/lib"
 
 MAN1=	gnokii.1 todologo.1 ppm2nokia.1 sendsms.1
 MAN8=	gnokiid.8 mgnokiidev.8
