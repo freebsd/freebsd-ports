@@ -1,5 +1,5 @@
---- src/Makefile.in.orig	Fri Jun  9 14:16:13 2000
-+++ src/Makefile.in	Fri Jun  9 14:16:17 2000
+--- src/Makefile.in.orig	Fri Apr 21 04:55:44 2000
++++ src/Makefile.in	Tue Nov  7 09:18:04 2000
 @@ -60,11 +60,11 @@
  
  
@@ -14,7 +14,13 @@
  memops.c options.c response.c vsnprintf.c
  
  
-@@ -95,7 +95,7 @@
+@@ -90,12 +90,12 @@
+ 
+ 
+ DEFS = @DEFS@ -DDEFCONFIGFILENAME=\"$(sysconfdir)/spop3d.conf\" \
+--DBULLDIR=\"$(localstatedir)/bulletins/\" -I. -I$(srcdir) -I..
++-DBULLDIR=\"/var/spool/spop3d\" -I. -I$(srcdir) -I..
+ LDFLAGS = @LDFLAGS@
  LIBS = @LIBS@
  pop_auth_OBJECTS =  pop_auth.o fdfgets.o vsnprintf.o
  spop3d_OBJECTS = authenticate.o cmds.o log.o fdfgets.o maildrop.o main.o \

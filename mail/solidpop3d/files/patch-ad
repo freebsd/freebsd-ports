@@ -1,5 +1,5 @@
---- src/maildir.c.orig	Sat May 13 16:18:35 2000
-+++ src/maildir.c	Fri Jun  9 14:57:07 2000
+--- src/maildir.c.orig	Sat May 13 21:18:35 2000
++++ src/maildir.c	Tue Nov  7 08:59:40 2000
 @@ -59,6 +59,10 @@
  #endif
  #endif
