@@ -4439,6 +4439,7 @@ ogle		ports/multimedia/ogle
 ogle-gui	ports/multimedia/ogle-gui
 ogmtools	ports/multimedia/ogmtools
 ohphone		ports/net/ohphone
+ohugs		ports/lang/ohugs
 oidentd		ports/security/oidentd
 oinkmaster	ports/security/oinkmaster
 okle		ports/multimedia/okle
