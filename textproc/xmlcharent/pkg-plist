@@ -1,0 +1,25 @@
+@unexec %%MKCATALOG%% -c %D/share/xml/catalog -q deinstall xmlcharent
+share/xml/xmlcharent/catalog
+@exec %%MKCATALOG%% -c %D/share/xml/catalog -q install xmlcharent
+share/xml/xmlcharent/iso-amsa.ent
+share/xml/xmlcharent/iso-amsb.ent
+share/xml/xmlcharent/iso-amsc.ent
+share/xml/xmlcharent/iso-amsn.ent
+share/xml/xmlcharent/iso-amso.ent
+share/xml/xmlcharent/iso-amsr.ent
+share/xml/xmlcharent/iso-box.ent
+share/xml/xmlcharent/iso-cyr1.ent
+share/xml/xmlcharent/iso-cyr2.ent
+share/xml/xmlcharent/iso-dia.ent
+share/xml/xmlcharent/iso-grk1.ent
+share/xml/xmlcharent/iso-grk2.ent
+share/xml/xmlcharent/iso-grk3.ent
+share/xml/xmlcharent/iso-grk4.ent
+share/xml/xmlcharent/iso-lat1.ent
+share/xml/xmlcharent/iso-lat2.ent
+share/xml/xmlcharent/iso-num.ent
+share/xml/xmlcharent/iso-pub.ent
+share/xml/xmlcharent/iso-tech.ent
+@dirrm share/xml/xmlcharent
+share/doc/xmlcharent/entities-2001-11-19.html
+@dirrm share/doc/xmlcharent

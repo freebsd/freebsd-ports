@@ -280,6 +280,7 @@
     SUBDIR += xls2xml
     SUBDIR += xml-i18n-tools
     SUBDIR += xml4j
+    SUBDIR += xmlcharent
     SUBDIR += xmlpp
     SUBDIR += xmlppm
     SUBDIR += xp
