@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	atari800
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -45,17 +45,17 @@ post-patch:
 		${WRKSRC}/compfile.c
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/atari800 ${PREFIX}/bin/atari800
-	@${INSTALL_MAN} ${WRKSRC}/atari800.man ${MANPREFIX}/man/man1/atari800.1
+	${INSTALL_PROGRAM} ${WRKSRC}/atari800 ${PREFIX}/bin/atari800
+	${INSTALL_MAN} ${WRKSRC}/atari800.man ${MANPREFIX}/man/man1/atari800.1
 	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} -m 644 ${WRKSRC}/atari800.cfg ${DATADIR}
+	${INSTALL_DATA} -m 644 ${WRKSRC}/atari800.cfg ${DATADIR}
 .for file in ${ATARI_XF}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DATADIR}
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in BUGS CHANGES CREDITS FAQ INSTALL README TODO USAGE
-	@${INSTALL_DATA} ${WRKSRC}/../DOC/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/../DOC/${file} ${DOCSDIR}
 .endfor
 .endif
 
