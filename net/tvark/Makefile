@@ -6,21 +6,18 @@
 #
 
 PORTNAME=	tvark
-PORTVERSION=	0.3
-PORTREVISION=	1
+PORTVERSION=	0.4
 CATEGORIES=	net
-MASTER_SITES=	http://www.tvark.com/
+MASTER_SITES=	http://voodoo.oberon.net/ \
+		http://www.tvark.com/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI network monitoring tool, tied to a MySQL database
 
-LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-
-BROKEN=		"Checksum mismatch"
-
 USE_X_PREFIX=	yes
 USE_PERL5_BUILD=yes
 USE_GNOME=	gtk12
+USE_MYSQL=	yes
 
 .include <bsd.port.pre.mk>
 
