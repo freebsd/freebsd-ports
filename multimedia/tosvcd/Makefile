@@ -14,7 +14,7 @@ MASTER_SITES=	http://muse.seh.de/tosvcd/
 MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	mpeg2enc:${PORTSDIR}/multimedia/mjpegtools \
-		vcdimager:${PORTSDIR}/graphics/vcdimager
+		vcdimager:${PORTSDIR}/multimedia/vcdimager
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
