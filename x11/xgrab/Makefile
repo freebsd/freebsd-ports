@@ -3,7 +3,7 @@
 # Date created:         27 February 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.11 1998/06/07 01:08:05 asami Exp $
+# $Id: Makefile,v 1.12 1998/09/26 23:20:10 steve Exp $
 #
 
 DISTNAME=	xgrabsc.2_41
@@ -23,7 +23,7 @@ XMKMF=		xmkmf
 # Needs to actually *run* xrdb
 #IS_INTERACTIVE=	yes
 .if !defined(DISPLAY)
-BROKEN=		requires X session to run xrdb
+BROKEN=		Requires an active X session to run xrdb.  Please compile this while running X.
 .endif
 
 MAN1=		xgrab.1 xgrabsc.1
