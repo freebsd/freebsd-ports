@@ -1,1 +1,2 @@
 bin/balance
+etc/rc.d/balance.sh
