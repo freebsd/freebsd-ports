@@ -1,0 +1,4 @@
+An analyzer plugin for p5-Plucene search engine, which filters
+StandardTokenizer with SnowballAnalyzer.
+
+WWW: http://search.cpan.org/dist/Plucene-Plugin-Analyzer-SnowballAnalyzer
