@@ -8729,6 +8729,7 @@ poster		ports/print/poster
 postfinger	ports/mail/postfinger
 postfix		ports/mail/postfix
 postfix-current	ports/mail/postfix-current
+postfix-gps	ports/mail/postfix-gps
 postfix1	ports/mail/postfix1
 postfixadmin	ports/mail/postfixadmin
 postgis		ports/databases/postgis
