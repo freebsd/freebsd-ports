@@ -407,6 +407,7 @@
     SUBDIR += tmake
     SUBDIR += tvision
     SUBDIR += uclmmbase
+    SUBDIR += ucpp
     SUBDIR += ups-debug
     SUBDIR += veepee
     SUBDIR += viewcvs
