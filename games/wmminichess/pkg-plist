@@ -1,0 +1,5 @@
+bin/minichess
+share/wmminichess/README
+share/wmminichess/COPYING
+share/wmminichess/TODO
+@dirrm share/wmminichess

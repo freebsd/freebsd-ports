@@ -1,0 +1,24 @@
+miniCHESS, or as I've christened it in this port, wmminichess,
+is a rather interesting dockapp that puts the power of gnuchess
+in a windowmaker dockapp.
+
+However, be warned:
+
+	[quote]
+
+	miniCHESS was born out of boredom.  I warn you... if your a chess
+enthusiast and play a lot then please use xboard or some other chess
+gui.  Even though miniCHESS has that kinda cool factor, it does get hard
+on the eyes.  I like using miniCHESS for games in which I'm in no hurry
+to finish and go on for a couple days.  Sorry but miniCHESS has no
+save/restore features yet.
+
+	[end quote]
+
+The README in /usr/X11R6/share/wmminichess/ should explain how to
+play. It really does a nice job of that.
+
+WWW: http://www.electricrain.com/edavis/miniCHESS/
+Author: Eric Davis <ead@pobox.com>
+
+- Will <andrews@technologist.com>
