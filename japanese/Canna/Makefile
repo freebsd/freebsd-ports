@@ -22,7 +22,7 @@ USE_X_PREFIX=	no
 ALL_TARGET=	canna
 INSTALLS_SHLIB=	yes
 
-MANLANG=ja ""
+MANLANG="" ja
 MAN1=	addwords.1 cannacheck.1 cannakill.1 cannaserver.1 cannastat.1 \
 	catdic.1 chmoddic.1 cpdic.1 cshost.1 ctow.1 delwords.1 dicar.1 \
 	dpbindic.1 dpromdic.1 lsdic.1 mkbindic.1 mkdic.1 mkromdic.1 \
