@@ -1,5 +1,5 @@
 # New ports collection makefile for: Mew (for xemacs-mule)
-# Version required:	1.93
+# Version required:	1.94.1
 # Date created:		17 January 1998
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
@@ -8,6 +8,4 @@
 
 EMACS_PORT_NAME=	xemacs-mule
 
-MASTERDIR=		${.CURDIR}/../../mail/mew
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../mew/Makefile"

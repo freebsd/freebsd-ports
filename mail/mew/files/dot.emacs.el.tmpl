@@ -1,0 +1,95 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Mew ;;;;;;;;;
+;;;       Mew (Ver.%%version%%)                                             ;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;
+;;; Site configuration
+;;;
+%%REQUIRE%%
+(autoload 'mew "mew" nil t)
+(autoload 'mew-send "mew" nil t)
+(setq mew-mail-domain-list '("%%nameserver%%"))
+(setq mew-icon-directory "%%emacsdir%%/etc/mew")
+;;;
+;;; Window tips
+;;;
+;; If you use XEmacs and your video chip provides only limited
+;; color map(e.g. 256), put the following line to avoid exhaustion
+;; of colors.
+;(setq mew-demo-picture nil)
+(cond
+ ((string-match "XEmacs" emacs-version)
+;  (setq url-be-asynchronous t)
+;  (setq-default buffer-file-coding-system 'iso-2022-jp)
+;  (setq keyboard-coding-system    'iso-2022-jp)
+;  (setq terminal-coding-system    'iso-2022-jp)
+  (add-menu-item '("Apps") "Read Mail (Mew)" 'mew t "Read Mail (VM)...")
+  (add-menu-item '("Apps") "Send Mail (Mew)" 'mew-send t "Read Mail (VM)...")
+;  (delete-menu-item '("Apps" "Read Mail (VM)..."))
+;  (delete-menu-item '("Apps" "Read Mail (MH)..."))
+;  (delete-menu-item '("Apps" "Send mail..."))
+  (setq toolbar-mail-reader 'Mew)
+  (setq toolbar-mail-commands-alist
+	(cons '(Mew . mew) toolbar-mail-commands-alist))
+  )
+ ((string< "20" emacs-version)
+;  (setq standard-fontset-spec14
+;	"-*-fixed-medium-r-normal-*-14-*-*-*-*-*-fontset-standard")
+;  (create-fontset-from-fontset-spec standard-fontset-spec14 nil 'noerror)
+;  (set-default-font standard-fontset-spec14)
+  (setup-japanese-environment)
+  )
+ (t ;; Mule 2.3 or Emacs 19
+  )
+ )
+;;;
+;;; Citation tip
+;;;
+(setq mew-cite-fields '("From:" "Subject:" "Date:" "Message-ID:"))
+(setq mew-cite-format "From: %s\nSubject: %s\nDate: %s\nMessage-ID: %s\n\n")
+(setq mew-cite-prefix-function 'mew-cite-prefix-username)
+;(setq mew-cite-fields '("Message-ID:" "From:"))
+;(setq mew-cite-format "Message-ID: %s の記事にて\n%s さんは書かれました :\n\n")
+;; Change citation according to the message body language.
+;(setq mew-cite-fields '("Message-ID:" "From:"))
+;(defadvice mew-draft-cite (before my-add activate)
+;  (save-excursion
+;    (set-buffer (or mew-message-citation-buffer (mew-buffer-message)))
+;    (if (string= (mew-charset-guess-region (point-min) (point-max))
+;                 "us-ascii" )
+;        ;; us-ascii
+;        (setq mew-cite-format "In Message-ID: %s\n%s wrote  :\n\n")
+;      ;; others
+;      (setq mew-cite-format "Message-ID: %s の記事にて\n%s さんは書かれました :\n\n") )))
+;;;
+;;; Signature tip
+;;;
+;; Change signature according to the message body language.
+;(setq mew-signature-file "~/.signature")
+;(make-local-variable 'mew-signature-file)
+;(defadvice mew-draft-insert-signature (before my-add activate)
+;  ;; 本文が英語なら mew-signature-file に ~/.signature.eng を代入する。
+;  ;; 本文が英語以外なら mew-signature-file に ~/.signature を代入する。
+;  ;; ~/.signature.eng に英語用の署名を書いておくこと。
+;  (save-match-data
+;    (let ((eng (string-match "\\.eng$" mew-signature-file)))
+;      (if (string= (mew-charset-guess-region (point-min) (point-max))
+;                   "us-ascii" )
+;          (if (not eng)
+;              (setq mew-signature-file (concat mew-signature-file ".eng")) )
+;        (if eng
+;            (setq mew-signature-file (substring mew-signature-file 0 -4)) )))))
+;
+(setq mew-signature-insert-last t)
+(add-hook 'mew-send-hook 'mew-draft-insert-signature)
+;;;
+;;; Thread tip
+;;;
+;; Now threading is insufficient,but partially makes enough by comment out following line.
+;(setq mew-prog-imls-arg-list '("--thread=yes" "--indent=2"))
+;;;
+;;; Miscellaneous
+;;;
+(setq mew-underline-lines-use t)
+(setq mew-use-highlight-body t)
+;; If you use Wnn4/6,sj3 or Canna, comment out following line.
+;(setq mew-use-overlay-keymap nil)

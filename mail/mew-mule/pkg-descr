@@ -9,13 +9,12 @@ and to make it easy to view and compose them. With Mew you can send a
 picture of a birthday cake with the song "Happy Birthday to you" to your
 friend, which is encrypted by strong cryptograph.
 
-Info path and elisp load path would be set as follows :
+This port is the Mew for mule-19.34(mail/mew-mule). 
+The Mew port and corresponding Emacs port are listed bellow and elisp
+`site-lisp' directory(elisp load path), info path and etc directory(only
+effective for xemacs ports) are shown as well. 
 
-    Info path - ${PREFIX}/share/mule/19.28/site-lisp/mew   
-    load path - ${PREFIX}/share/mule/19.28/info
-
-Before build this port, You must be prepared Mew-common-port
-(mail/mew-common). 
-
-- Kiriyama Kazuhiko
-kiri@kiri.toba-cmt.ac.jp
+mail/mew-mule(mew-mule-1.94.1) ===> editors/mule(mule-19.34) 
+	Lisp directory : /usr/local/share/mule/site-lisp/mew
+	Info directory : /usr/local/share/mule/info
+	ETC directory  : /usr/local/share/mule/etc/mew
