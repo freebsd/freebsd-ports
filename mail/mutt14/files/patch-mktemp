@@ -1,0 +1,12 @@
+--- muttlib.c.orig	Mon Feb  9 08:25:28 2004
++++ muttlib.c	Mon Feb  9 08:32:46 2004
+@@ -656,7 +656,8 @@
+ 
+ void mutt_mktemp (char *s)
+ {
+-  snprintf (s, _POSIX_PATH_MAX, "%s/mutt-%s-%d-%d", NONULL (Tempdir), NONULL(Hostname), (int) getpid (), Counter++);
++  snprintf (s, _POSIX_PATH_MAX, "%s/mutt-%s-XXXXXXXX", NONULL(Tempdir), NONULL(Hostname));
++  mktemp (s);
+   unlink (s);
+ }
+ 

@@ -8,7 +8,7 @@
 
 PORTNAME=	mutt
 PORTVERSION=	1.4.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES+=	mail ipv6
 MASTER_SITES=	ftp://ftp.mutt.org/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
