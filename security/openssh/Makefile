@@ -23,7 +23,7 @@ CAT?=		/bin/cat
 DISTFILES!=	${CAT} ${FILESDIR}/distfiles
 
 CVS_CMD?=	cvs -z3
-CVS_DATE=	Thu Dec 23 01:07:56 EST 1999
+CVS_DATE=	Fri Jan  7 01:25:49 JST 2000
 SED?=		/usr/bin/sed
 CVS_DATE_!=	${ECHO} -n "${CVS_DATE}" | ${SED} 's/[ \t:]/_/g'
 CVS_SITES=	anoncvs@anoncvs1.ca.openbsd.org:/cvs \
@@ -34,6 +34,9 @@ CRYPTOLIBS+=	-lRSAglue -lrsaref
 .endif
 # Here, MANDIR is concetenated to DESTDIR which all forms the man install dir...
 MAKE_ENV=	DESTDIR=${PREFIX} MANDIR=/man/man CRYPTOLIBS="${CRYPTOLIBS}"
+.if defined(USE_INET6)
+MAKE_ENV+=	USET_INET6=yes
+.endif
 .if !exists(/usr/include/tcpd.h)
 MAKE_ENV+=	TCP_WRAPPERS=no
 .endif
@@ -113,6 +116,12 @@ do-extract:
 	@${MKDIR} ${WRKDIR}
 	@${CP} -r ${DISTDIR}/${PKGNAME}/${DISTNAME} ${WRKDIR}
 	@${CP} ${FILESDIR}/strlcat.c ${FILESDIR}/strlcpy.c ${WRKSRC}/lib/
+.if !defined(USE_INET6)
+	@${CP} ${FILESDIR}/getaddrinfo.c  ${FILESDIR}/name6.c ${WRKSRC}/lib/
+	@${CP} ${FILESDIR}/bindresvport.c ${FILESDIR}/rcmd.c ${WRKSRC}/lib/
+	@${CP} ${FILESDIR}/getnameinfo.c ${FILESDIR}/rcmd.c ${WRKSRC}/lib/
+	@${CP} ${FILESDIR}/netdb.h ${WRKSRC}/
+.endif
 	@${MKDIR} ${WRKSRC}/pam_ssh
 	@${CP} ${FILESDIR}/pam_ssh_Makefile ${WRKSRC}/pam_ssh/Makefile
 	@${CP} ${FILESDIR}/pam_ssh.c ${WRKSRC}/pam_ssh/

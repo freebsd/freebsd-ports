@@ -1,6 +1,6 @@
---- /usr/ports/distfiles/OpenSSH-1.2/src/usr.bin/ssh/Makefile.inc	Mon Oct 25 16:27:26 1999
-+++ Makefile.inc	Mon Nov 29 01:06:23 1999
-@@ -2,10 +2,14 @@
+--- Makefile.inc.orig	Fri Jan 14 08:35:05 2000
++++ Makefile.inc	Fri Jan 14 08:40:03 2000
+@@ -2,10 +2,17 @@
  
  .include <bsd.obj.mk>
  
@@ -16,6 +16,9 @@
 +.if !defined(MAKEFILE_INC_FIRST_PASS)
 +MAKEFILE_INC_FIRST_PASS=	0
 +CFLAGS+=	-I${PREFIX}/include
++.if defined(USE_INET6)
++CFLAGS+=	-DINET6
++.endif
  LDADD+=         -L${.CURDIR}/../lib -lssh
  DPADD+=         ${.CURDIR}/../lib/libssh.a
  .endif

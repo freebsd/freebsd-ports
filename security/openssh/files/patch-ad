@@ -1,16 +1,20 @@
---- lib/Makefile.orig	Tue Dec  7 22:50:49 1999
-+++ lib/Makefile	Tue Dec  7 22:53:22 1999
-@@ -4,7 +4,8 @@
+--- lib/Makefile.orig	Fri Jan 14 04:55:08 2000
++++ lib/Makefile	Fri Jan 14 08:01:17 2000
+@@ -4,7 +4,12 @@
  SRCS=   authfd.c authfile.c bufaux.c buffer.c canohost.c channels.c \
  	cipher.c compat.c compress.c crc32.c deattack.c fingerprint.c \
  	hostfile.c log.c match.c mpaux.c nchan.c packet.c readpass.c \
 -	rsa.c tildexpand.c ttymodes.c uidswap.c xmalloc.c atomicio.c
 +	rsa.c tildexpand.c ttymodes.c uidswap.c xmalloc.c atomicio.c \
 +	strlcat.c strlcpy.c
++
++.if !defined(USE_INET6)
++SRCS+=	getaddrinfo.c getnameinfo.c name6.c rcmd.c bindresvport.c
++.endif
  
  NOPROFILE= yes
  NOPIC=	yes
-@@ -13,6 +14,7 @@
+@@ -13,6 +18,7 @@
  	@echo -n
  
  .include <bsd.own.mk>
