@@ -8,6 +8,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestConfig.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestConfigC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestConfigData.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestConfigPHP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestConfigParse.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestConfigPerl.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestHandler.pm
@@ -19,6 +20,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestReportPerl.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestRequest.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestRun.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestRunPHP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestRunPerl.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestSSLCA.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestServer.pm
