@@ -5,6 +5,7 @@ etc/orbit2rc.default
 @exec if [ ! -f %D/etc/orbit2rc ] ; then cp -p %D/%F %B/orbit2rc; fi
 include/orbit-2.0/ORBitservices/CosNaming.h
 include/orbit-2.0/ORBitservices/CosNaming_impl.h
+include/orbit-2.0/ORBitservices/orbit-imodule.h
 include/orbit-2.0/orbit-idl/orbit-idl-backend.h
 include/orbit-2.0/orbit/GIOP/giop-basics.h
 include/orbit-2.0/orbit/GIOP/giop-connection.h
@@ -58,12 +59,16 @@ include/orbit-2.0/orbit/util/orbit-util.h
 lib/libORBit-2.a
 lib/libORBit-2.so
 lib/libORBit-2.so.0
+lib/libORBit-imodule-2.a
+lib/libORBit-imodule-2.so
+lib/libORBit-imodule-2.so.0
 lib/libORBitCosNaming-2.a
 lib/libORBitCosNaming-2.so
 lib/libORBitCosNaming-2.so.0
 lib/libname-server-2.a
 libdata/pkgconfig/ORBit-2.0.pc
 libdata/pkgconfig/ORBit-idl-2.0.pc
+libdata/pkgconfig/ORBit-imodule-2.0.pc
 libdata/pkgconfig/ORBit-CosNaming-2.0.pc
 share/aclocal/ORBit2.m4
 share/idl/orbit-2.0/CosNaming.idl
