@@ -9,11 +9,9 @@ PORTNAME=	JX
 PORTVERSION=	1.5.3
 PORTREVISION=	2
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://ftp.fct.unl.pt/.2/linuxberg/files/x11/dev/ \
-		ftp://ftp.cadvision.com/pub/linuxberg/files/x11/dev/ \
-		ftp://ftp.matrix.com.br/pub/linuxberg/files/x11/dev/ \
-		ftp://ftp.duth.gr/pub/linuxberg/files/x11/dev/ \
-		ftp://ftp.rz.uni-karlsruhe.de/pub/mirror/ftp.uni-tuebingen.de/pub/linux/mirrors/ftp.metalab.unc.edu/pub/Linux/libs/X/c++libs/
+MASTER_SITES=	ftp://ftp.matrix.com.br/pub/linuxberg/files/x11/dev/ \
+		${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	libs/X/c++libs
 DISTNAME=	${PORTNAME}_source-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
