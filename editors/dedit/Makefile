@@ -22,7 +22,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lgiconv"
+		LIBS="-L${LOCALBASE}/lib -liconv"
 
 MAN1=		dedit.1
 MANLANG=	"" ja

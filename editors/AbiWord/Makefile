@@ -38,7 +38,7 @@ WANT_GNOME=	yes
 AUTOMAKE=	${WRKSRC}/autogen.sh && ${FIXME}
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lgiconv"
+		LDFLAGS="-L${LOCALBASE}/lib -liconv"
 MAKEFILE=	GNUmakefile
 FIXME=		find ${WRKSRC} -name GNUmakefile.in | xargs ${PERL} -pi -e \
 		    's|\$$\(libdir\)/\@PACKAGE\@|\$$\(datadir\)/\@PACKAGE\@|g ; \

@@ -31,7 +31,7 @@ GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-evolution
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib -lintl -lgiconv ${PTHREAD_LIBS}"
+		LIBS="-L${LOCALBASE}/lib -lintl -liconv ${PTHREAD_LIBS}"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 PLIST_SUB=	VERSION=${PORTVERSION}-bonobo

@@ -136,7 +136,6 @@ post-extract:
 
 post-patch:
 	${PERL} -i -p \
-		-e 's,\blibiconv\b,libgiconv,g;s,-liconv\b,-lgiconv,g;' \
 		-e 's,/usr/local\b,${PREFIX},g;' \
 		-e 's,\bgtk-config\b,${GTK_CONFIG:T},g;' \
 			${WRKSRC}/configure

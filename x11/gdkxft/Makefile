@@ -21,7 +21,7 @@ USE_GTK=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lgnuregex -lgiconv"
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lgnuregex -liconv"
 CONFIGURE_ARGS=	--sbindir=${PREFIX}/bin
 INSTALLS_SHLIB=	yes
 

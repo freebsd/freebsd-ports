@@ -30,11 +30,6 @@ MAN3=		bind_textdomain_codeset.3 bindtextdomain.3 dcgettext.3 \
 		dcngettext.3 dgettext.3 dngettext.3 gettext.3 ngettext.3 \
 		textdomain.3
 
-# X X X - I know, but it doesn't work with BSD iconv yet. :(((
-post-patch:
-	@${FIND} ${WRKSRC} -type f | ${XARGS} ${PERL} -pi -e \
-		's|-liconv|-lgiconv|g ; s|iconv\.h|giconv\.h|g'
-
 pre-configure:
 	${RM} ${WRKSRC}/doc/gettext.info*
 

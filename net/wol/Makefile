@@ -21,6 +21,6 @@ LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext-old \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lgiconv -lgnugetopt"
+		LDFLAGS="-L${LOCALBASE}/lib -liconv -lgnugetopt"
 
 .include <bsd.port.mk>
