@@ -10,6 +10,7 @@
 
 PORTNAME=	ssh
 PORTVERSION=	1.2.27
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.cs.hut.fi/pub/ssh/ \
 		ftp://ftp.bitcon.no/.4/console/system/ \
@@ -20,13 +21,7 @@ MASTER_SITES=	ftp://ftp.cs.hut.fi/pub/ssh/ \
 
 MAINTAINER=	kris@FreeBSD.org
 
-.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
-CONFIGURE_ARGS+= --with-rsaref
-LIB_DEPENDS+=	rsaref.2:${PORTSDIR}/security/rsaref
-BUILD_DEPENDS+=	/nonexistent:${PORTSDIR}/security/rsaref:extract
-.endif
-
-RESTRICTED=	"Crypto: export-controlled"
+#RESTRICTED=	"Crypto: export-controlled"
 
 USE_AUTOCONF=	YES
 GNU_CONFIGURE=	YES
@@ -85,19 +80,6 @@ MLINKS=		make-ssh-known-hosts1.1 make-ssh-known-hosts.1 \
 pre-patch:
 	@${MV} -f ${WRKSRC}/make-ssh-known-hosts.pl \
 	    ${WRKSRC}/make-ssh-known-hosts.pl.in
-
-fetch-depends:
-.if !defined(USA_RESIDENT) || ${USA_RESIDENT} != YES && ${USA_RESIDENT} != NO
-	@ ${ECHO}
-	@ ${ECHO} You must set the variable USA_RESIDENT to YES if you are a
-	@ ${ECHO} United States resident, otherwise NO.
-	@ ${ECHO} If you are a US resident then this port must also fetch
-	@ ${ECHO} the RSAREF2 library from sources abroad \(RSA Inc. holds a
-	@ ${ECHO} patent on RSA and public key crypto in general in the United
-	@ ${ECHO} States so using RSA implementations other than RSAREF there
-	@ ${ECHO} may violate US patent law\).
-	@ ${FALSE}
-.endif
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/ssh_host_key ]; then \
