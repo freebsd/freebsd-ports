@@ -84,6 +84,7 @@
     SUBDIR += gal
     SUBDIR += gawk
     SUBDIR += gd
+    SUBDIR += ghostscript-gnu-cjk
     SUBDIR += gicq
     SUBDIR += gn-gnspool
     SUBDIR += gn-mnews
