@@ -19,7 +19,7 @@ ALL_TARGET=	prog
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/*jis ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/lib/recjis
-	${INSTALL} ${COPY} -o ${SHAREOWN} -g ${SHAREGRP} -m 777 \
+	${INSTALL} ${COPY} -o ${SHAREOWN} -g ${SHAREGRP} -m 644 \
 		${WRKSRC}/*_tbl ${PREFIX}/lib/recjis
 
 .include <bsd.port.mk>
