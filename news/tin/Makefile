@@ -58,13 +58,15 @@ pre-configure:
 	${CP} ${FILESDIR}/pcre.h ${WRKSRC}/pcre
 
 post-configure:
-	(nm /usr/lib/libc.a | grep -q strcasestr) && \
-		echo "#define HAVE_STRCASESTR 1" >> ${WRKSRC}/include/autoconf.h
-	echo "#define HAVE_ICONV_H 1" >> ${WRKSRC}/include/autoconf.h
-	echo "#define HAVE_ICONV 1" >> ${WRKSRC}/include/autoconf.h
+	if nm /usr/lib/libc.a | ${GREP} -q strcasestr; then \
+		${ECHO} "#define HAVE_STRCASESTR 1" \
+			>> ${WRKSRC}/include/autoconf.h; \
+	fi
+	${ECHO} "#define HAVE_ICONV_H 1" >> ${WRKSRC}/include/autoconf.h
+	${ECHO} "#define HAVE_ICONV 1" >> ${WRKSRC}/include/autoconf.h
 
 post-build:
-	cd ${WRKSRC}/po; gmake
+	cd ${WRKSRC}/po; ${GMAKE}
 
 post-install:
 	cd ${WRKSRC}/doc; ${INSTALL_DATA} tin.defaults ${PREFIX}/etc/tin.defaults.dist
