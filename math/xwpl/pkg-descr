@@ -1,0 +1,13 @@
+XWPL is an X based tool to examine one-dimensional real-valued signals using
+wavelets and wavelet packets.  It has been designed to be as easy to use as
+possible for beginners.  It is intended more as an educational and exploratory
+tool than as a numerical analysis program, even though it uses fast, optimized
+wavelet and wavelet packet transforms.
+
+In short, wavelets are a way to analyze a signal using base functions which
+are localized both in time (as diracs, but unlike sine waves), and in
+frequency (as sine waves, but unlike diracs).  They can be used for efficient
+numerical algorithms and many DSP or compression applications.
+
+The mathematical theory behind wavelets (and other related transforms) is
+given in the appendix of the XWPL reference manual.
