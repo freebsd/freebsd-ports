@@ -374,6 +374,7 @@
     SUBDIR += tcb
     SUBDIR += team
     SUBDIR += telbook
+    SUBDIR += tempcontrol
     SUBDIR += terraform
     SUBDIR += tet
     SUBDIR += tkcron
