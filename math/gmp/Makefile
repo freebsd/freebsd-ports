@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	libgmp
-PORTVERSION=	4.1.2
-PORTREVISION=	3
+PORTVERSION=	4.1.3
 CATEGORIES=	math devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gmp
@@ -19,13 +18,16 @@ COMMENT=	A free library for arbitrary precision arithmetic
 
 CONFLICTS=	libgmp-2*
 USE_REINPLACE=	yes
+USE_GNOME=	lthack
 USE_LIBTOOL_VER=13
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS=	--enable-cxx --enable-mpfr
 INSTALLS_SHLIB=	yes
 
+INFO=		gmp mpfr
+
 post-extract:
-	@rm -f ${WRKSRC}/gmp.info*
+	@${RM} -f ${WRKSRC}/gmp.info*
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | \
