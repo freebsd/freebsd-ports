@@ -1,0 +1,13 @@
+--- make.texinfo.orig	Mon Jul 15 01:30:15 1996
++++ make.texinfo	Thu Jun 12 20:37:09 1997
+@@ -2,6 +2,10 @@
+ @c %**start of header
+ @setfilename make.info
+ @settitle GNU @code{make}
++@dircategory Programming & development tools.
++@direntry
++* Gmake: (make).        The GNU Make utility
++@end direntry
+ @setchapternewpage odd
+ @c %**end of header
+ 
