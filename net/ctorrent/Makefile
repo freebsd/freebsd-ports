@@ -17,5 +17,6 @@ COMMENT=	BitTorrent Client written in C for FreeBSD and Linux
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/ctorrent
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.mk>
