@@ -2,6 +2,10 @@ bin/glib11d-config
 include/glib11d/glib.h
 include/glib11d/glibconfig.h
 include/glib11d/gmodule.h
+@unexec install-info --delete %D/info/glib.info %D/info/dir
+info/glib.info
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/glib.info %D/info/dir
 lib/libglib11d.a
 lib/libglib11d.la
 lib/libglib11d.so
