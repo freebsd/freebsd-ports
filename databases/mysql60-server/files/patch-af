@@ -1,6 +1,6 @@
---- scripts/safe_mysqld.sh.orig	Mon Mar 12 00:18:24 2001
-+++ scripts/safe_mysqld.sh	Mon Mar 12 07:36:07 2001
-@@ -64,30 +64,9 @@
+--- scripts/safe_mysqld.sh.orig	Thu Apr 19 10:11:02 2001
++++ scripts/safe_mysqld.sh	Thu Apr 19 15:15:54 2001
+@@ -73,30 +73,9 @@
    done
  }
  
@@ -12,7 +12,7 @@
 -  MY_BASEDIR_VERSION=$MY_PWD		# Where bin, share and data are
 -  ledir=$MY_BASEDIR_VERSION/bin		# Where mysqld is
 -  DATADIR=$MY_BASEDIR_VERSION/data
--  if test -z "defaults"
+-  if test -z "$defaults"
 -  then
 -    defaults="--defaults-extra-file=$MY_BASEDIR_VERSION/data/my.cnf"
 -  fi
@@ -34,7 +34,7 @@
  
  MYSQL_UNIX_PORT=${MYSQL_UNIX_PORT:-@MYSQL_UNIX_ADDR@}
  MYSQL_TCP_PORT=${MYSQL_TCP_PORT:-@MYSQL_TCP_PORT@}
-@@ -224,34 +203,6 @@
+@@ -240,34 +219,6 @@
    if test ! -f $pid_file		# This is removed if normal shutdown
    then
      break

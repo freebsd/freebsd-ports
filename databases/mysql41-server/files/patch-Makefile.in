@@ -1,6 +1,6 @@
---- Makefile.in.orig	Fri Sep  8 10:00:29 2000
-+++ Makefile.in	Sat Sep 23 21:26:18 2000
-@@ -172,8 +172,12 @@
+--- Makefile.in.orig	Wed Apr 18 10:54:42 2001
++++ Makefile.in	Sat Apr 21 13:00:23 2001
+@@ -181,8 +181,12 @@
  # These are built from source in the Docs directory
  EXTRA_DIST = INSTALL-SOURCE README 			COPYING COPYING.LIB MIRRORS
  
@@ -9,8 +9,8 @@
 +.if defined(CLIENT_ONLY)
 +SUBDIRS = include @readline_dir@ @sql_client_dirs@ tests man
 +.else
-+SUBDIRS = include @thread_dirs@ @docs_dirs@ @sql_server_dirs@ scripts @bench_dirs@ support-files
++SUBDIRS = include @thread_dirs@ @docs_dirs@ @sql_server_dirs@ scripts support-files
 +.endif
  
  # Relink after clean
- CLEANFILES = linked_client_sources linked_server_sources linked_libmysql_sources linked_libmysql_r_sources
+ CLEANFILES = linked_client_sources linked_server_sources linked_libmysql_sources linked_libmysql_r_sources linked_include_sources

@@ -142,6 +142,7 @@ share/mysql/my-medium.cnf
 share/mysql/my-small.cnf
 share/mysql/mysql-%%MYSQL_VERSION%%.spec
 share/mysql/mysql-log-rotate
+share/mysql/mysql-max-%%MYSQL_VERSION%%.spec
 share/mysql/mysql.server
 share/mysql/norwegian-ny/errmsg.sys
 share/mysql/norwegian-ny/errmsg.txt
