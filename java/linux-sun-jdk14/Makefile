@@ -17,6 +17,7 @@ EXTRACT_SUFX=	.bin
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Sun Java Development Kit 1.4 for Linux
 
+EXTRACT_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 BUILD_DEPENDS=  ${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
