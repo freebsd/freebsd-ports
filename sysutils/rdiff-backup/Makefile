@@ -7,6 +7,7 @@
 
 PORTNAME=	rdiff-backup
 PORTVERSION=	0.12.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://rdiff-backup.stanford.edu/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
