@@ -1,4 +1,4 @@
-Vaders*BitmapDirectory:        /usr/X11R6/lib/X11/xinvaders/
+Vaders*font:                   -*-*-*-*-*-sans-14-*-*-*-m-*-*-*
 Vaders*Scale:                  2
 Vaders*defaultfore:            white
 Vaders*defaultback:            black
