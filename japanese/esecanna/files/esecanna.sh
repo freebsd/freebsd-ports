@@ -18,7 +18,7 @@ start)
 	if [ -x $esecannaserver ]; then
 	    rm -f /tmp/.iroha_unix/IROHA
 	    echo -n ' esecanna: '
-	    $esecannaserver
+	    nohup $esecannaserver
 	fi
 	;;
 stop)
