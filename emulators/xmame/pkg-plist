@@ -22,7 +22,7 @@ share/%%MAMEMESS%%/%%MAMEMESS%%rc
 %%MAMEONLY%%%%PORTDOCS%%share/doc/xmame/changes.mame
 %%MAMEONLY%%%%PORTDOCS%%share/doc/xmame/gamelist.mame
 %%MAMEONLY%%%%PORTDOCS%%share/doc/xmame/readme.mame
-%%MESSONLY%%%%PORTDOCS%%share/doc/credits.txt
+%%MESSONLY%%%%PORTDOCS%%share/doc/xmess/credits.txt
 %%MESSONLY%%%%PORTDOCS%%share/doc/xmess/changes.mess
 %%MESSONLY%%%%PORTDOCS%%share/doc/xmess/gamelist.mess
 %%MESSONLY%%%%PORTDOCS%%share/doc/xmess/readme.mess
@@ -66,7 +66,6 @@ share/%%MAMEMESS%%/%%MAMEMESS%%rc
 %%MESSONLY%%%%PORTDOCS%%share/doc/xmess/sysinfo/t1000hx.txt
 %%MESSONLY%%%%PORTDOCS%%share/doc/xmess/sysinfo/vip.txt
 %%MESSONLY%%%%PORTDOCS%%@dirrm share/doc/xmess/sysinfo
-%%PINMAMEONLY%%%%PORTDOCS%%share/doc/credits.txt
 %%PINMAMEONLY%%%%PORTDOCS%%share/doc/xpinmame/simulation.txt
 %%PINMAMEONLY%%%%PORTDOCS%%share/doc/xpinmame/whatsnew.txt
 %%PINMAMEONLY%%%%PORTDOCS%%share/doc/xpinmame/pinmame.txt
