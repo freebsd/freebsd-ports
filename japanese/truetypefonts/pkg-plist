@@ -1,4 +1,4 @@
-lib/X11/fonts/TrueType/wadalab-gothic.ttf
-lib/X11/fonts/TrueType/watanabe-mincho.ttf
-lib/X11/fonts/TrueType/fonts.dir.truetype
-lib/X11/fonts/TrueType/fonts.alias.truetype
+%%FONTSDIR%%/fonts.alias.truetype
+%%FONTSDIR%%/fonts.dir.truetype
+%%FONTSDIR%%/wadalab-gothic.ttf
+%%FONTSDIR%%/watanabe-mincho.ttf
