@@ -44,6 +44,7 @@
     SUBDIR += hc
     SUBDIR += hztty
     SUBDIR += irssi
+    SUBDIR += jis2gb
     SUBDIR += joe
     SUBDIR += kcfonts
     SUBDIR += kde2-i18n

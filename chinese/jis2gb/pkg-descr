@@ -1,0 +1,8 @@
+jis2gb converts JISX0208-1983 and JISX0212-1990 characters
+to  GB2312-80  and  GB8565-88  characters.   JISX0208-1983
+(^[$B),  JISX0208-1990  (^[&@^[$B), JISX0212-1990 (^[$(D),
+JISC6226-1978 (^[$@), and Japanese-EUC are  available  for
+Kanji code.
+
+--
+Maintainer: Zhang Shu <jo-c@is.aist-nara.ac.jp>

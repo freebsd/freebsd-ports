@@ -1,0 +1,12 @@
+*** Makefile	Thu Oct  5 17:21:32 1995
+--- Makefile.new	Thu Nov  8 17:38:38 2001
+***************
+*** 26,31 ****
+--- 26,32 ----
+  install: jis2gb jis2gb.1
+  	cp jis2gb /usr/local/bin/jis2gb
+  	cp jis2gb.1 /usr/local/man/man1/jis2gb.1
++ 	cp jis2gb.el /usr/local/share/emacs/site-lisp/jis2gb.el
+  #	nroff -man jis2gb.1 > /usr/local/catman/C/u_man/cat1/jis2gb.1
+  
+  clean:
