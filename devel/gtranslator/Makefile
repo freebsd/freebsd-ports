@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	gtranslator
-PORTVERSION=	1.0
-PORTREVISION=	2
+PORTVERSION=	1.0.1
 CATEGORIES=	devel gnome
-MASTER_SITES=	http://www.gtranslator.org/download/releases/${PORTVERSION}/ \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GNOME application for developing ".pot" files used with GNU Gettext
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomeprefix gnometarget gnomevfs2 libgnomeui 
+USE_GNOME=	gnomehack gnomeprefix gnometarget gnomevfs2 libgnomeui
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -29,8 +27,8 @@ MAN1=		gtranslator.1 pozilla.sh.1
 MANCOMPRESSED=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|/usr/share/gtranslator|${PREFIX}/share/gnome/${PORTNAME}|g; \
-		s|/usr/share/pixmaps|${PREFIX}/share/gnome/pixmaps|g" \
+	@${REINPLACE_CMD} -e "s|/usr/local/share/gtranslator|${PREFIX}/share/gnome/${PORTNAME}|g; \
+		s|/usr/local/share/pixmaps|${PREFIX}/share/gnome/pixmaps|g" \
 		${WRKSRC}/src/defines.h
 
 .include <bsd.port.mk>
