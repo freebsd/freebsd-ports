@@ -92,12 +92,10 @@ ALLDOCS=	${GENERALDOCS} ${PINMAMEDOCS}
 # CPS-2 patches - this enables extra games in MAME.
 .if ${MAMEMESS} == "mame"
 .if defined(WITH_CPS2) && ${WITH_CPS2} == "yes"
-# CPS2VERSION=	20010527
+CPS2VERSION=	20010711
 
-# PATCH_SITES+=	http://www.win.tue.nl/~stijn/xmame/
-# PATCHFILES+=	${DISTNAME}-cps2-${CPS2VERSION}.patch.gz
-pre-everything::
-	@${ECHO_MSG} "===> Warning: CPS2 patches temporarily unavailable"
+PATCH_SITES+=	http://www.win.tue.nl/~stijn/xmame/
+PATCHFILES+=	${DISTNAME}-cps2-${CPS2VERSION}.patch.gz
 .else
 pre-everything::
 	@${ECHO_MSG} "===> If you want to compile MAME with CPS-2 support, use \"make WITH_CPS2=yes\""
@@ -143,12 +141,19 @@ ASM_COMMENT=
 ASM_COMMENT=\#
 .endif
 
-# Heavy optimization - enabled by default because it doesn't seem
-# to break things, and enables considerable speedup.
-.if !defined(WITH_OPTIMIZATION) || ${WITH_OPTIMIZATION} != "no"
+# Heavy optimization - disabled by default because it breaks things. It's
+# still available because it enables considerable speedup.
+.if defined(WITH_OPTIMIZATION) && ${WITH_OPTIMIZATION} == "yes"
 CFLAGS+=	-O3 -Wall -Wno-unused -funroll-loops \
 		-fstrength-reduce -fomit-frame-pointer -ffast-math \
 		-malign-functions=4 -malign-jumps=4 -malign-loops=4
+.else
+.if !defined(WITH_OPTIMIZATION)
+pre-everything::
+	@${ECHO_MSG} "===> If you want to enable high optimization levels, use "
+	@${ECHO_MSG} "     \"make WITH_OPTIMIZATION=yes\". Be warned that this is known to"
+	@${ECHO_MSG} "     break some games though."
+.endif
 .endif
 
 # Choose one of several display targets:
