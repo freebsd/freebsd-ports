@@ -1,13 +1,12 @@
 # New ports collection makefile for:   dejasearch
-# Version required:    1.6.3
+# Version required:    1.7.2
 # Date created:        15 March 1999
 # Whom:                Kris Kennaway <kris@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	dejasearch163
-PKGNAME=	dejasearch-1.6.3
+DISTNAME=	dejasearch-1.7.2
 CATEGORIES=	news
 MASTER_SITES=	http://homemade.hypermart.net/dejasearch/ \
 		http://homemade.virtualave.net/dejasearch/ \
@@ -15,7 +14,7 @@ MASTER_SITES=	http://homemade.hypermart.net/dejasearch/ \
 
 MAINTAINER=	kris@FreeBSD.org
 
-RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
 
 MAN1=		dejasearch.1
 
