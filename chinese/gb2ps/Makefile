@@ -4,11 +4,11 @@
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.1.1.1 1997/02/08 00:18:54 obrien Exp $
+# $Id: Makefile,v 1.2 1997/02/11 04:40:17 obrien Exp $
 #
 
 DISTNAME=	gb2ps.2.02
-PKGNAME=	cn-gb2ps-2.02
+PKGNAME=	zh-gb2ps-2.02
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/print/  \
 		ftp://ftp.ifcss.org/pub/software/fonts/gb/misc/  \

@@ -3,11 +3,11 @@
 # Date created:         Sat Aug 10, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.3 1996/11/12 02:16:34 obrien Exp $
+# $Id: Makefile,v 1.4 1996/11/18 11:22:18 asami Exp $
 #
 
 DISTNAME=	cless-290
-PKGNAME=	cn-${DISTNAME}
+PKGNAME=	zh-${DISTNAME}
 CATEGORIES=	chinese misc
 MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/c-utils/  \
 		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/c-utils/ \

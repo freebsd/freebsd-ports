@@ -3,11 +3,11 @@
 # Date created:         Sat Aug 10, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.8 1996/12/06 00:00:02 asami Exp $
+# $Id: Makefile,v 1.9 1997/07/31 23:11:28 obrien Exp $
 #
 
 DISTNAME=	cxterm5.0.p3
-PKGNAME=	cn-cxterm-5.0.3
+PKGNAME=	zh-cxterm-5.0.3
 CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/x-win/cxterm/  \
 		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/x-win/cxterm/ \

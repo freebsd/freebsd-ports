@@ -4,10 +4,10 @@
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.2 1997/01/25 18:08:40 obrien Exp $
+# $Id: Makefile,v 1.1.1.1 1997/02/08 00:36:01 obrien Exp $
 #
 
-PKGNAME=	cn-hc-3.0
+PKGNAME=	zh-hc-3.0
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/convert/  \
 		ftp://ftp.edu.tw/Chinese/ifcss/software/unix/convert/  \

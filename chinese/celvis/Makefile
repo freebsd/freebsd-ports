@@ -4,11 +4,11 @@
 # Date created:         Thur Aug 15, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.4 1996/11/18 11:22:12 asami Exp $
+# $Id: Makefile,v 1.5 1997/08/23 09:33:27 obrien Exp $
 #
 
 DISTNAME=	celvis
-PKGNAME=	cn-celvis-1.3
+PKGNAME=	zh-celvis-1.3
 CATEGORIES=	chinese editors
 MASTER_SITES=	ftp://ftp.edu.cn/PUB/Chinese/
 #

@@ -3,10 +3,10 @@
 # Date created:		20 July 1997
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1 1997/09/10 08:49:23 asami Exp $
 #
 
-PKGNAME=	cn-mule-wnn4-2.3
+PKGNAME=	zh-mule-wnn4-2.3
 CATEGORIES=	chinese editors
 CWNN4=		yes
 
