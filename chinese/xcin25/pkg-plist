@@ -18,7 +18,7 @@ lib/X11/xcin25/doc/Usage
 lib/X11/xcin25/doc/UserGuide
 lib/X11/xcin25/doc/internal/IMdkit
 lib/X11/xcin25/doc/internal/gen_inp
-lib/X11/xcin25/doc/internal/greq_menusel
+lib/X11/xcin25/doc/internal/gui_request
 lib/X11/xcin25/doc/internal/module
 lib/X11/xcin25/doc/internal/structer
 lib/X11/xcin25/doc/modules/bimsphone
@@ -37,18 +37,19 @@ lib/X11/xcin25/tab/big5/simplex.tab
 lib/X11/xcin25/tab/big5/sys.tab
 lib/X11/xcin25/tab/big5/tsi.db
 lib/X11/xcin25/tab/big5/yin.db
-lib/X11/xcin25/tab/EUC/default.phr
-lib/X11/xcin25/tab/EUC/jtcj_gb.tab
-lib/X11/xcin25/tab/EUC/pinyin.tab
-lib/X11/xcin25/tab/EUC/shuangpin.tab
-lib/X11/xcin25/tab/EUC/sys.tab
-lib/X11/xcin25/tab/EUC/wubizixing.tab
+lib/X11/xcin25/tab/euc/default.phr
+lib/X11/xcin25/tab/euc/jtcj_gb.tab
+lib/X11/xcin25/tab/euc/phonegb2.tab
+lib/X11/xcin25/tab/euc/pinyin.tab
+lib/X11/xcin25/tab/euc/shuangpin.tab
+lib/X11/xcin25/tab/euc/sys.tab
+lib/X11/xcin25/tab/euc/wubizixing.tab
 share/locale/zh_TW.Big5/LC_MESSAGES/xcin.mo
 @dirrm lib/X11/xcin25/bin
 @dirrm lib/X11/xcin25/doc/internal
 @dirrm lib/X11/xcin25/doc/modules
 @dirrm lib/X11/xcin25/doc
 @dirrm lib/X11/xcin25/tab/big5
-@dirrm lib/X11/xcin25/tab/EUC
+@dirrm lib/X11/xcin25/tab/euc
 @dirrm lib/X11/xcin25/tab
 @dirrm lib/X11/xcin25
