@@ -273,6 +273,7 @@ an		ports/games/an
 analog		ports/www/analog
 ancontrol	src/usr.sbin/ancontrol
 angband		ports/games/angband
+angst		ports/net/angst
 anjuta		ports/devel/anjuta
 anteater	ports/sysutils/anteater
 antipolix	ports/games/antipolix
