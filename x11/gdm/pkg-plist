@@ -175,3 +175,4 @@ share/locale/zh_TW/LC_MESSAGES/gdm.mo
 @dirrm share/gnome/help/gdm/C
 @dirrm share/gnome/help/gdm
 @dirrm etc/pam.d
+@unexec /bin/rmdir %D/sbin 2>/dev/null || /usr/bin/true
