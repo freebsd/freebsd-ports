@@ -155,7 +155,7 @@ int __sched_rr_get_interval(pid_t pid, struct timespec *interval)
 int	_getpriority __P((int, int));
 int	_setpriority __P((int, int, int));
 
-int sched_setparam(pid_t pid, const struct sched_param *param)
+int __sched_setparam(pid_t pid, const struct sched_param *param)
 {
 	int policy = __sched_getscheduler (pid);
 
@@ -163,9 +163,11 @@ int sched_setparam(pid_t pid, const struct sched_param *param)
 		return (-1);
 	return (__sched_setscheduler (pid, policy, param));
 }
-#pragma weak __sched_setparam=sched_setparam
 
-int sched_setscheduler(pid_t pid, int policy,
+int sched_setparam(pid_t pid, const struct sched_param *param)
+	__attribute__ ((weak, alias("__sched_setparam")));
+
+int __sched_setscheduler(pid_t pid, int policy,
                          const struct sched_param *param)
 {
 	struct rtprio rtp;
@@ -213,9 +215,12 @@ int sched_setscheduler(pid_t pid, int policy,
 		return (-1);
 	}
 }
-#pragma weak __sched_setscheduler=sched_setscheduler
 
-int sched_getscheduler(pid_t pid)
+int sched_setscheduler(pid_t pid, int policy,
+		       const struct sched_param *param)
+	__attribute__ ((weak, alias("__sched_setscheduler")));
+	
+int __sched_getscheduler(pid_t pid)
 {
 	int ret;
 	struct rtprio rtp;
@@ -238,9 +243,11 @@ int sched_getscheduler(pid_t pid)
 	}
 	return (ret);
 }
-#pragma weak __sched_getscheduler=sched_getscheduler
 
-int sched_get_priority_max(int policy)
+int sched_getscheduler(pid_t pid)
+	__attribute__ ((weak, alias("__sched_getscheduler")));
+
+int __sched_get_priority_max(int policy)
 {
 	switch (policy)
 	{
@@ -256,9 +263,11 @@ int sched_get_priority_max(int policy)
 		return (-1);
 	}
 }
-#pragma weak __sched_get_priority_max=sched_get_priority_max
 
-int sched_get_priority_min(int policy)
+int sched_get_priority_max(int policy)
+	__attribute__ ((weak, alias("__sched_get_priority_max")));
+
+int __sched_get_priority_min(int policy)
 {
 	switch (policy)
 	{
@@ -274,10 +283,12 @@ int sched_get_priority_min(int policy)
 		return (-1);
 	}
 }
-#pragma weak __sched_get_priority_min=sched_get_priority_min
+
+int sched_get_priority_min(int policy)
+	__attribute__ ((weak, alias("__sched_get_priority_min")));
 
 
-int sched_getparam(pid_t pid, struct sched_param *param)
+int __sched_getparam(pid_t pid, struct sched_param *param)
 {
 	int ret = 0;
 	struct rtprio rtp;
@@ -303,9 +314,11 @@ int sched_getparam(pid_t pid, struct sched_param *param)
 	return (ret);
 		
 }
-#pragma weak __sched_getparam=sched_getparam
 
-int sched_rr_get_interval(pid_t pid, struct timespec *interval)
+int sched_getparam(pid_t pid, struct sched_param *param)
+	__attribute__ ((weak, alias("__sched_getparam")));
+
+int __sched_rr_get_interval(pid_t pid, struct timespec *interval)
 {
         if (_posix_priority_scheduling)
 	  return (_sched_rr_get_interval(pid, interval));
@@ -315,6 +328,7 @@ int sched_rr_get_interval(pid_t pid, struct timespec *interval)
 	}
 }
 
-#pragma weak __sched_rr_get_interval=sched_rr_get_interval
+int sched_rr_get_interval(pid_t pid, struct timespec *interval)
+	__attribute__ ((weak, alias("__sched_rr_get_interval")));
 
 #endif
