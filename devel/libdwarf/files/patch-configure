@@ -1,0 +1,11 @@
+--- configure.orig	Mon Nov 22 19:20:35 2004
++++ configure	Sat Feb 12 22:06:36 2005
+@@ -3255,7 +3255,7 @@
+ 
+ 
+ 
+-for ac_header in alloca.h elf.h elfaccess.h libelf.h libelf/libelf.h  sys/types.h sys/ia64/elf.h
++for ac_header in alloca.h elfaccess.h libelf.h libelf/libelf.h  sys/types.h sys/ia64/elf.h
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ if eval "test \"\${$as_ac_Header+set}\" = set"; then
