@@ -1,5 +1,127 @@
 bin/ed2k_gui
 bin/edonkey-gui-gtk
-%%PORTDOCS%%share/doc/edonkey-gui-gtk/faq.html
-%%PORTDOCS%%share/doc/edonkey-gui-gtk/faq_german.html
-%%PORTDOCS%%@dirrm share/doc/edonkey-gui-gtk
+%%PORTDOCS%%share/doc/ed2k_gui/index-1.html
+%%PORTDOCS%%share/doc/ed2k_gui/index-2.html
+%%PORTDOCS%%share/doc/ed2k_gui/index-3.html
+%%PORTDOCS%%share/doc/ed2k_gui/index-4.html
+%%PORTDOCS%%share/doc/ed2k_gui/index-5.html
+%%PORTDOCS%%share/doc/ed2k_gui/index-6.html
+%%PORTDOCS%%share/doc/ed2k_gui/index.html
+%%PORTDOCS%%share/doc/ed2k_gui/index.sgml
+share/ed2k_gui/icons/default/200more.xpm
+share/ed2k_gui/icons/default/about.xpm
+share/ed2k_gui/icons/default/app.xpm
+share/ed2k_gui/icons/default/app_alternative_1.xpm
+share/ed2k_gui/icons/default/cancel.xpm
+share/ed2k_gui/icons/default/columnhide.xpm
+share/ed2k_gui/icons/default/columnshow.xpm
+share/ed2k_gui/icons/default/connect.xpm
+share/ed2k_gui/icons/default/core.xpm
+share/ed2k_gui/icons/default/disconnect.xpm
+share/ed2k_gui/icons/default/dotblue.xpm
+share/ed2k_gui/icons/default/dotgreen.xpm
+share/ed2k_gui/icons/default/dotpurple.xpm
+share/ed2k_gui/icons/default/dotred.xpm
+share/ed2k_gui/icons/default/dotwhite.xpm
+share/ed2k_gui/icons/default/dotyellow.xpm
+share/ed2k_gui/icons/default/download.xpm
+share/ed2k_gui/icons/default/exit.xpm
+share/ed2k_gui/icons/default/extend.xpm
+share/ed2k_gui/icons/default/eyes.xpm
+share/ed2k_gui/icons/default/faq.xpm
+share/ed2k_gui/icons/default/fetch.xpm
+share/ed2k_gui/icons/default/folder.xpm
+share/ed2k_gui/icons/default/ignition.xpm
+share/ed2k_gui/icons/default/mail.xpm
+share/ed2k_gui/icons/default/mainlogo.xpm
+share/ed2k_gui/icons/default/mainlogo_notgreen.xpm
+share/ed2k_gui/icons/default/monitor.xpm
+share/ed2k_gui/icons/default/ok.xpm
+share/ed2k_gui/icons/default/onestar.xpm
+share/ed2k_gui/icons/default/optionoff.xpm
+share/ed2k_gui/icons/default/optionon.xpm
+share/ed2k_gui/icons/default/options.xpm
+share/ed2k_gui/icons/default/pause.xpm
+share/ed2k_gui/icons/default/pauseall.xpm
+share/ed2k_gui/icons/default/refresh.xpm
+share/ed2k_gui/icons/default/resume.xpm
+share/ed2k_gui/icons/default/resumeall.xpm
+share/ed2k_gui/icons/default/search.xpm
+share/ed2k_gui/icons/default/servers.xpm
+share/ed2k_gui/icons/default/skull.xpm
+share/ed2k_gui/icons/default/status.xpm
+share/ed2k_gui/icons/default/threestars.xpm
+share/ed2k_gui/icons/default/tux.xpm
+share/ed2k_gui/icons/default/twostars.xpm
+share/ed2k_gui/icons/default/updown.xpm
+share/ed2k_gui/icons/default/upload.xpm
+share/ed2k_gui/icons/default/wizard.xpm
+share/ed2k_gui/icons/default/wizard_off.xpm
+share/ed2k_gui/icons/gnome2/200more.xpm
+share/ed2k_gui/icons/gnome2/about.xpm
+share/ed2k_gui/icons/gnome2/app.xpm
+share/ed2k_gui/icons/gnome2/cancel.xpm
+share/ed2k_gui/icons/gnome2/columnhide.xpm
+share/ed2k_gui/icons/gnome2/columnshow.xpm
+share/ed2k_gui/icons/gnome2/connect.xpm
+share/ed2k_gui/icons/gnome2/core.xpm
+share/ed2k_gui/icons/gnome2/disconnect.xpm
+share/ed2k_gui/icons/gnome2/dotblue.xpm
+share/ed2k_gui/icons/gnome2/dotgreen.xpm
+share/ed2k_gui/icons/gnome2/dotpurple.xpm
+share/ed2k_gui/icons/gnome2/dotred.xpm
+share/ed2k_gui/icons/gnome2/dotwhite.xpm
+share/ed2k_gui/icons/gnome2/dotyellow.xpm
+share/ed2k_gui/icons/gnome2/download.xpm
+share/ed2k_gui/icons/gnome2/exit.xpm
+share/ed2k_gui/icons/gnome2/extend.xpm
+share/ed2k_gui/icons/gnome2/eyes.xpm
+share/ed2k_gui/icons/gnome2/faq.xpm
+share/ed2k_gui/icons/gnome2/fetch.xpm
+share/ed2k_gui/icons/gnome2/folder.xpm
+share/ed2k_gui/icons/gnome2/ignition.xpm
+share/ed2k_gui/icons/gnome2/mail.xpm
+share/ed2k_gui/icons/gnome2/mainlogo.xpm
+share/ed2k_gui/icons/gnome2/mainlogo_notgreen.xpm
+share/ed2k_gui/icons/gnome2/monitor.xpm
+share/ed2k_gui/icons/gnome2/ok.xpm
+share/ed2k_gui/icons/gnome2/onestar.xpm
+share/ed2k_gui/icons/gnome2/optionoff.xpm
+share/ed2k_gui/icons/gnome2/optionon.xpm
+share/ed2k_gui/icons/gnome2/options.xpm
+share/ed2k_gui/icons/gnome2/pause.xpm
+share/ed2k_gui/icons/gnome2/pauseall.xpm
+share/ed2k_gui/icons/gnome2/refresh.xpm
+share/ed2k_gui/icons/gnome2/resume.xpm
+share/ed2k_gui/icons/gnome2/resumeall.xpm
+share/ed2k_gui/icons/gnome2/search.xpm
+share/ed2k_gui/icons/gnome2/servers.xpm
+share/ed2k_gui/icons/gnome2/skull.xpm
+share/ed2k_gui/icons/gnome2/status.xpm
+share/ed2k_gui/icons/gnome2/threestars.xpm
+share/ed2k_gui/icons/gnome2/tux.xpm
+share/ed2k_gui/icons/gnome2/twostars.xpm
+share/ed2k_gui/icons/gnome2/updown.xpm
+share/ed2k_gui/icons/gnome2/upload.xpm
+share/ed2k_gui/icons/gnome2/wizard.xpm
+share/ed2k_gui/icons/gnome2/wizard_off.xpm
+share/locale/de/LC_MESSAGES/ed2k_gui.mo
+share/locale/es/LC_MESSAGES/ed2k_gui.mo
+share/locale/fr/LC_MESSAGES/ed2k_gui.mo
+share/locale/nl/LC_MESSAGES/ed2k_gui.mo
+share/locale/sl/LC_MESSAGES/ed2k_gui.mo
+@unexec rmdir %D/rmdir %D/share/locale/sl/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/sl 2>/dev/null || true
+@unexec rmdir %D/share/locale/nl/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/nl 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr 2>/dev/null || true
+@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/es 2>/dev/null || true
+@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/de 2>/dev/null || true
+@dirrm share/ed2k_gui/icons/gnome2
+@dirrm share/ed2k_gui/icons/default
+@dirrm share/ed2k_gui/icons
+@dirrm share/ed2k_gui
+%%PORTDOCS%%@dirrm share/doc/ed2k_gui
