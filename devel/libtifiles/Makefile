@@ -15,12 +15,9 @@ MASTER_SITE_SUBDIR=	tilp
 MAINTAINER=	tijl@ulyssis.org
 COMMENT=	TI calculator file types library
 
-BUILD_DEPENDS=  pkg-config:${PORTSDIR}/devel/pkgconfig
-RUN_DEPENDS=    pkg-config:${PORTSDIR}/devel/pkgconfig
-
-USE_AUTOMAKE_VER=	15
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
+USE_GNOME=	pkgconfig
 USE_LIBTOOL_VER=	13
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes

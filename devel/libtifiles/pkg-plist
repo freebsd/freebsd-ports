@@ -25,6 +25,5 @@ lib/libtifiles.la
 lib/libtifiles.so
 lib/libtifiles.so.5
 libdata/pkgconfig/tifiles.pc
-share/aclocal/tifiles.m4
 share/locale/fr/LC_MESSAGES/libtifiles.mo
 @unexec rmdir %D/include/tilp 2>/dev/null || true
