@@ -42,6 +42,7 @@ HALFLIFESERVER_PORT=	${.CURDIR}/../halflifeserver
 HLDSDIR!=	cd ${HALFLIFESERVER_PORT} && ${MAKE} -V HLDSDIR
 HL_PROGRAM!=	cd ${HALFLIFESERVER_PORT} && ${MAKE} -V HL_PROGRAM
 PLIST_SUB_MASTER!=	cd ${HALFLIFESERVER_PORT} && ${MAKE} -V PLIST_SUB_FOR_THIS_PORT
+PKGMESSAGE!=	cd ${HALFLIFESERVER_PORT} && ${MAKE} -V PKGMESSAGE
 
 pre-patch:
 # remove trailing ^M
@@ -85,5 +86,8 @@ install-run-scripts:
 .for script in dirs files
 	@${SH} ${WRKDIR}/${script}.sh
 .endfor
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -1,0 +1,9 @@
+*WARNING* *WARNING* *WARNING* *WARNING* *WARNING* *WARNING*
+------------------------------------------------------------
+There is a bug in HLDS regarding the server log placement.
+Temporary workaround for this little problem is to run HLDS in
+a non-root environment. You may create a separate account for
+this or use an existing one as long as it does not have super-
+user privileges and manually do a recursive change in ownership
+and permissions to HLDS and any mods you install accordingly.
+------------------------------------------------------------
