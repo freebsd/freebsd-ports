@@ -29,15 +29,16 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		CPPFLAGS="`${SDL_CONFIG} --cflags`" \
 		LIBS="`${SDL_CONFIG} --libs` -lgnugetopt -lm"
 
 pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@find ${WRKSRC} \( -name "*.cpp" -or -name "*.h" \) | xargs \
-		${PERL} -pi -e 's|malloc\.h|stdlib.h|g'
+		${REINPLACE_CMD} -e 's|malloc[.]h|stdlib.h|g'
 
 pre-configure:
 	@${RM} -f ${WRKSRC}/config.cache
