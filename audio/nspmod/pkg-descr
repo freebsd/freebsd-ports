@@ -5,3 +5,6 @@ enables your PC play MODs without DSP such as Gravis UltraSound (GUS)
 GF1.
 
 This program requires VoxWare v2.90 compatible 8bit DAC device.
+
+I, John-Mark Gurney, have added support for output in 16bits.  The
+volume level is slightly less than the 8bit version though.
