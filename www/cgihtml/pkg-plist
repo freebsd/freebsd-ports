@@ -3,6 +3,7 @@ include/cgi-llist.h
 include/html-lib.h
 include/string-lib.h
 lib/libcgihtml.a
+lib/libcgihtml.so
 lib/libcgihtml.so.1
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
