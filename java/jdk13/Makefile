@@ -181,7 +181,7 @@ or 5-CURRENT February 2003 to use either native threads or HotSpot.\n
 
 # Warn user about HotSpot build
 .if defined(WITH_HOTSPOT)
-pre-everything:
+pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You have set WITH_HOTSPOT to enable the build of the HotSpot VM."
 	@${ECHO_MSG} "Please note that HotSpot development is still experimental and is"
