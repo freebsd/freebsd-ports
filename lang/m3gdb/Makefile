@@ -27,6 +27,10 @@ PLIST_FILES=	bin/m3gdb
 BROKEN=		does not support a.out systems
 .endif
 
+.if ${OSVERSION} >= 503000
+BROKEN=		"Does not build on FreeBSD >= 5.x"
+.endif
+
 pre-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} depend
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} libbuild
