@@ -14,7 +14,8 @@ MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/ \
 		ftp://ftp.jpunix.com/pub/hyatt/ \
 		ftp://ftp.jpunix.com/pub/hyatt/common/ \
 		ftp://ftp.jpunix.com/pub/hyatt/v18/
-DISTFILES=	crafty-${PORTVERSION}.tar.gz crafty.doc crafty.faq read.me start.zip
+DISTFILES=	crafty-${PORTVERSION}.tar.gz crafty.doc.ascii crafty.doc.ps \
+		crafty.faq read.me start.zip
 
 MAINTAINER=	seggers@semyam.dinoco.de
 
@@ -25,7 +26,7 @@ ALL_TARGET=	freebsd-generic
 .endif
 DIST_SUBDIR=	crafty
 EXTRACT_ONLY=	crafty-${PORTVERSION}.tar.gz
-IGNOREFILES=	crafty.doc crafty.faq read.me
+IGNOREFILES=	crafty.faq read.me
 
 MAN6=		crafty.6
 NO_WRKSUBDIR=	yes
@@ -42,13 +43,10 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/books.bin ${PREFIX}/lib/crafty/books.bin
 	${INSTALL_MAN} ${FILESDIR}/crafty.6 ${MANPREFIX}/man/man6/crafty.6
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/crafty
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/crafty.doc ${PREFIX}/share/doc/crafty/crafty.doc
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/crafty.faq ${PREFIX}/share/doc/crafty/crafty.faq
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/read.me ${PREFIX}/share/doc/crafty/read.me
+	${MKDIR} ${DOCSDIR}
+.for file in crafty.doc.ascii crafty.doc.ps crafty.faq read.me
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${file} ${DOCSDIR}
+.endfor
 .endif
-
-post-install:
-	strip ${PREFIX}/bin/crafty
 
 .include <bsd.port.mk>
