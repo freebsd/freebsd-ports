@@ -172,7 +172,7 @@ share/doc/libecal/libecal.devhelp
 share/doc/libecal/right.png
 share/doc/libecal/style.css
 share/doc/libecal/up.png
-share/gnome/evolution-data-server-%%VERSION%%/evolutionperson.schema
+%%LDAP%%share/gnome/evolution-data-server-%%VERSION%%/evolutionperson.schema
 share/gnome/evolution-data-server-%%VERSION%%/zoneinfo/Africa/Abidjan.ics
 share/gnome/evolution-data-server-%%VERSION%%/zoneinfo/Africa/Accra.ics
 share/gnome/evolution-data-server-%%VERSION%%/zoneinfo/Africa/Addis_Ababa.ics
