@@ -1,0 +1,11 @@
+--- configure.orig	Thu Jul  8 18:29:34 2004
++++ configure	Thu Jul  8 18:29:51 2004
+@@ -6464,7 +6464,7 @@
+ 
+ 
+ 
+-for ac_header in fcntl.h unistd.h libc.h sys/dsreq.h sys/select.h \
++for ac_header in fcntl.h unistd.h sys/dsreq.h sys/select.h \
+     sys/time.h sys/shm.h \
+     sys/scanio.h scsi.h sys/scsi.h sys/scsicmd.h sys/scsiio.h \
+     bsd/dev/scsireg.h scsi/sg.h /usr/src/linux/include/scsi/sg.h io/cam/cam.h \
