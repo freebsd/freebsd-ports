@@ -9,6 +9,7 @@
 
 PORTNAME=	august
 PORTVERSION=	0.63b
+PORTREVISION=	1
 CATEGORIES=	www editors
 MASTER_SITES=	http://www.bostream.nu/johanb/august/ \
 		http://www.lls.se/~johanb/august/
@@ -19,14 +20,15 @@ COMMENT=	HTML editor for the experienced Web author
 
 RUN_DEPENDS=	weblint:${PORTSDIR}/www/weblint \
 		identify:${PORTSDIR}/graphics/ImageMagick \
-		wish8.3:${PORTSDIR}/x11-toolkits/tk83
+		wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/pkg-plist
 
 do-patch:
-	${PERL} -pi -e "s:/usr/bin/wish:${PREFIX}/bin/wish8.3:g" \
-		${WRKSRC}/august
+	${MV} ${WRKSRC}/august ${WRKSRC}/august.orig
+	${SED} -e "s:/usr/bin/wish:${PREFIX}/bin/wish8.4:g" \
+		< ${WRKSRC}/august.orig > ${WRKSRC}/august
 
 pre-install:
 	${ECHO_CMD} bin/august > ${PLIST}
