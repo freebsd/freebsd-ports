@@ -3,10 +3,10 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.32 1997/11/10 11:23:24 asami Exp $
+# $Id: Makefile,v 1.33 1997/12/15 02:19:19 jmz Exp $
 #
 
-VERSION=	97.06
+VERSION=	98.01
 DISTNAME=	latex
 PKGNAME=	latex2e-${VERSION}
 CATEGORIES=     print
