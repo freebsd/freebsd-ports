@@ -31,6 +31,7 @@ do-configure:
 	${REINPLACE_CMD} -e "s:%%PERL%%:${PERL}:" \
 		-e "s:%%CXX%%:${CXX}:" \
 		-e "s:%%CXXFLAGS%%:${CXXFLAGS}:" \
+		-e "s:-pedantic::" \
 		${WRKSRC}/${MAKEFILE}
 
 do-install:
