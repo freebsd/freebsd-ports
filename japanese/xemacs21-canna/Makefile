@@ -14,4 +14,6 @@ MASTERDIR=	${.CURDIR}/../../editors/xemacs21-mule
 
 CANNA=		yes
 
+BROKEN=		"Incomplete pkg-plist"
+
 .include	"${MASTERDIR}/Makefile"

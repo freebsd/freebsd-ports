@@ -10,4 +10,6 @@ RUN_DEPENDS=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/bitmap/bitmap.el:${PORTSDIR
 MASTERDIR=	${.CURDIR}/../lookup
 EMACS_PORT_NAME=	emacs20
 
+BROKEN=		Incomplete pkg-plist
+
 .include	"${MASTERDIR}/Makefile"
