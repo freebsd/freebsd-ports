@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	LDAP-Account-Manager
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	sysutils www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lam
-DISTNAME=	${PORTNAME}-${PORTVERSION}-1
+DISTNAME=	${PORTNAME}-${PORTVERSION}-0
 
 MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	Webfrontend for managing accounts stored in an OpenLDAP server
@@ -49,7 +49,8 @@ WWW_USER?=	www
 WWW_GROUP?=	www
 WWW_DIR=	config graphics help lib locale sess style templates
 DOC_FILES=	COPYING HISTORY INSTALL README TODO docs/README.fpdf \
-		docs/README.lamdaemon.pl docs/README.openldap docs/README.shells
+		docs/README.openldap docs/README.shells docs/README.hosts \
+		docs/README.security docs/README.lamdaemon.pl
 
 CVS_DIRS=	${WRKSRC}/lib/font/CVS ${WRKSRC}/lib/font/makefont/CVS
 
