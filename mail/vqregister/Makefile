@@ -10,7 +10,7 @@ PORTVERSION=	2.6
 CATEGORIES=	mail www
 MASTER_SITES=	http://www.inter7.com/vqregister/
 
-MAINTAINER=	daniel@freebsd.ro
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extremely admin-configurable email user signup CGI
 
 BUILD_DEPENDS=	${VPOPMAIL_DIR}:${PORTSDIR}/mail/vpopmail
