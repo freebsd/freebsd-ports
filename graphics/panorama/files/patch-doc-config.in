@@ -1,0 +1,20 @@
+--- doc/config.in.orig	Sat May 15 15:23:46 1999
++++ doc/config.in	Tue Dec  9 09:43:58 2003
+@@ -6,13 +6,13 @@
+ PluginConfigFile=@prefix@/etc/pluginrc
+ 
+ # Path to the plugins directory
+-PluginPath=@prefix@/lib/plugins
++PluginPath=@prefix@/lib/panorama/plugins
+ 
+ # Path to the gradients directory
+-GradientPath=@prefix@/lib/gradients
++GradientPath=@prefix@/lib/panorama/gradients
+ 
+ # Path to the textures directory
+-TexturePath=@prefix@/lib/texture
++TexturePath=@prefix@/lib/panorama/texture
+ 
+ # Path to the includes directory
+-IncludePath=@prefix@/include
++IncludePath=@prefix@/share/panorama/include

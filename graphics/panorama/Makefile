@@ -6,26 +6,24 @@
 #
 
 PORTNAME=	panorama
-PORTVERSION=	0.13.2
-PORTREVISION=	1
+PORTVERSION=	0.18.01
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
-DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
-
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	${PORTNAME}_${PORTVERSION}-2.1.diff.gz
-PATCH_DIST_STRIP=	-p1
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	panorama
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU framework for 3D graphics production
 
+USE_BZIP2=	yes
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png:${PORTSDIR}/graphics/png \
-		ungif:${PORTSDIR}/graphics/libungif
+		ungif:${PORTSDIR}/graphics/libungif \
+		gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_FREETYPE=	yes
+USE_LIBTOOL=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -42,7 +40,7 @@ LDFLAGS=	-L${LOCALBASE}/lib
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
+BROKEN=		"Does not link render"
 .endif
 
 .include <bsd.port.post.mk>

@@ -1,32 +1,22 @@
---- Makefile.vars.in.orig	Thu Nov 21 20:25:39 2002
-+++ Makefile.vars.in	Thu Nov 21 20:33:44 2002
-@@ -14,14 +14,15 @@
- BIN_DIR      = ${DESTDIR}@bindir@
- LIB_DIR      = ${DESTDIR}@libdir@
- DATA_DIR     = ${DESTDIR}@datadir@
--CONFIG_DIR   = ${DESTDIR}@sysconfdir@
-+ETC_DIR      = ${DESTDIR}@sysconfdir@
- 
-+CONFIG_DIR   = ${ETC_DIR}/panorama/
- DOC_DIR      = ${TOPDIR}/share/doc/panorama/
+--- Makefile.vars.in.orig	Wed Feb 12 03:16:22 2003
++++ Makefile.vars.in	Tue Dec  9 09:40:47 2003
+@@ -11,12 +11,12 @@
+ BIN_DIR      = ${TOPDIR}/bin/
+-INCLUDE_DIR  = ${TOPDIR}/include/
++INCLUDE_DIR  = ${TOPDIR}/share/panorama/include/
+ LIB_DIR      = ${TOPDIR}/lib/
+-DOC_DIR      = ${TOPDIR}/doc/
+-CONFIG_DIR   = ${TOPDIR}/etc/
 -PLUGIN_DIR   = ${LIB_DIR}/plugins/
--TEXTURE_DIR  = ${DATA_DIR}/texture/
--GRADIENT_DIR = ${DATA_DIR}/gradients/
--SCENE_DIR    = ${DATA_DIR}/scenes/
--INCLUDE_DIR  = ${DATA_DIR}/include/
+-TEXTURE_DIR  = ${LIB_DIR}/texture/
+-GRADIENT_DIR = ${LIB_DIR}/gradients/
+-SCENE_DIR    = ${TOPDIR}/scenes/
++DOC_DIR      = ${TOPDIR}/share/doc/panorama/
++CONFIG_DIR   = ${TOPDIR}/etc/panorama/
 +PLUGIN_DIR   = ${LIB_DIR}/panorama/plugins/
-+TEXTURE_DIR  = ${DATA_DIR}/panorama/texture/
-+GRADIENT_DIR = ${DATA_DIR}/panorama/gradients/
-+SCENE_DIR    = ${DATA_DIR}/panorama/scenes/
-+INCLUDE_DIR  = ${DATA_DIR}/panorama/include/
++TEXTURE_DIR  = ${LIB_DIR}/panorama/texture/
++GRADIENT_DIR = ${LIB_DIR}/panorama/gradients/
++SCENE_DIR    = ${TOPDIR}/share/panorama/scenes/
  
  #
  # Don't change anything below this line.
-@@ -64,5 +65,5 @@
- PROF = -fomit-frame-pointer
- endif
- 
--CXXFLAGS = ${OPT} ${STAT} ${PROF} -ansi -pedantic -fno-exceptions -fno-rtti \
--	   -Wall -Wstrict-prototypes ${DEFS} ${INCLUDE}
-+CXXFLAGS = @CXXFLAGS@ ${STAT} ${PROF} -ansi -pedantic -fno-exceptions -fno-rtti \
-+	   -Wall -Wstrict-prototypes ${DEFS} ${INCLUDE}
