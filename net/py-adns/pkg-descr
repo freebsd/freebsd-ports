@@ -1,0 +1,4 @@
+The adns module provides an interface to
+the GNU adns asynchronous DNS resolver library.
+
+WWW: http://dustman.net/andy/python/adns-python/

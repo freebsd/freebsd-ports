@@ -373,6 +373,7 @@
     SUBDIR += punkbuster-data
     SUBDIR += pvm
     SUBDIR += pvm++
+    SUBDIR += py-adns
     SUBDIR += py-ipy
     SUBDIR += py-jabber
     SUBDIR += py-libnet
