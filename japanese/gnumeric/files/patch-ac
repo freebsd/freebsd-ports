@@ -1,0 +1,14 @@
+--- src/item-edit.c.orig	Mon Oct 30 23:06:00 2000
++++ src/item-edit.c	Mon Oct 30 23:08:03 2000
+@@ -223,6 +223,11 @@
+ 		return;
+ 	top_pos += item_edit->font->ascent;
+ 
++	/* Handle multibyte */
++	if( cursor_pos != -1 )
++		cursor_pos = strlen(gtk_editable_get_chars(GTK_EDITABLE(item_edit->entry),
++		 0, cursor_pos));
++
+        	/* Draw the background (recall that gdk_draw_rectangle excludes far coords) */
+ 	gdk_draw_rectangle (
+ 		drawable, canvas->style->white_gc, TRUE,

@@ -65,6 +65,7 @@
     SUBDIR += gnomecore
     SUBDIR += gnomeicu
     SUBDIR += gnomelibs
+    SUBDIR += gnumeric
     SUBDIR += gp
     SUBDIR += grep
     SUBDIR += groff

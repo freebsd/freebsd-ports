@@ -1,0 +1,11 @@
+--- src/dialogs/dialog-stf-preview.c.orig	Mon Oct 30 17:44:01 2000
++++ src/dialogs/dialog-stf-preview.c	Mon Oct 30 17:44:31 2000
+@@ -711,7 +711,7 @@
+ 	renderdata->gridgroup    = NULL;
+ 	renderdata->hashtable    = g_hash_table_new (g_int_hash, g_int_equal);
+ 
+-	renderdata->font       = gdk_font_load ("fixed");
++	renderdata->font       = gdk_fontset_load ("-misc-fixed-medium-r-normal--14-*-*-*-*-*-*-*");
+ 	renderdata->charwidth  = gdk_string_width (renderdata->font, "W");
+ 	renderdata->charheight = gdk_string_height (renderdata->font, "W");
+ 
