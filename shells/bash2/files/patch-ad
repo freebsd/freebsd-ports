@@ -1,18 +1,11 @@
---- support/shobj-conf.bak	Tue Dec 29 23:05:29 1998
-+++ support/shobj-conf	Fri May 28 04:34:07 1999
-@@ -86,13 +86,13 @@
- 	SHLIB_LIBVERSION='$(SHLIB_LIBSUFF).$(SHLIB_MAJOR)$(SHLIB_MINOR)'
- 	;;
+--- support/shobj-conf.orig	Tue Sep 21 21:03:43 1999
++++ support/shobj-conf	Mon May  8 00:12:30 2000
+@@ -97,7 +97,7 @@
+ #	;;
  
+ # FreeBSD-3.x ELF
 -freebsd3*)
-+freebsd[34]*)
++freebsd[3-9]*)
  	SHOBJ_CFLAGS=-fpic
  	SHOBJ_LD='${CC}'
- 	SHOBJ_LDFLAGS='-shared'
  
- 	SHLIB_XLDFLAGS='-R$(libdir)'
--	SHLIB_LIBVERSION='$(SHLIB_LIBSUFF).$(SHLIB_MAJOR)$(SHLIB_MINOR)'
-+	SHLIB_LIBVERSION='$(SHLIB_LIBSUFF).$(SHLIB_MAJOR)'
- 	;;
- 
- linux*)

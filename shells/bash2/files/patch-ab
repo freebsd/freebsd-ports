@@ -1,19 +1,11 @@
-*** l	Wed Apr 14 15:38:05 1999
---- Makefile.in	Wed Apr 14 15:38:21 1999
-***************
-*** 550,556 ****
-  
-  install:	.made installdirs
-  	$(INSTALL_PROGRAM) $(INSTALLMODE) $(Program) $(bindir)/$(Program)
-! 	$(INSTALL_PROGRAM) $(INSTALLMODE) bashbug $(bindir)/bashbug
-  	-( cd $(DOCDIR) ; $(MAKE) $(MFLAGS) \
-  		man1dir=$(man1dir) man1ext=$(man1ext) \
-  		man3dir=$(man3dir) man3ext=$(man3ext) \
---- 550,556 ----
-  
-  install:	.made installdirs
-  	$(INSTALL_PROGRAM) $(INSTALLMODE) $(Program) $(bindir)/$(Program)
-! 	$(INSTALL) $(INSTALLMODE) bashbug $(bindir)/bashbug
-  	-( cd $(DOCDIR) ; $(MAKE) $(MFLAGS) \
-  		man1dir=$(man1dir) man1ext=$(man1ext) \
-  		man3dir=$(man3dir) man3ext=$(man3ext) \
+--- Makefile.in.orig	Wed Mar  1 22:52:12 2000
++++ Makefile.in	Mon May  8 00:05:03 2000
+@@ -582,7 +582,7 @@
+ 
+ install:	.made installdirs
+ 	$(INSTALL_PROGRAM) $(INSTALLMODE) $(Program) $(bindir)/$(Program)
+-	$(INSTALL_PROGRAM) $(INSTALLMODE2) bashbug $(bindir)/bashbug
++	$(INSTALL) $(INSTALLMODE2) bashbug $(bindir)/bashbug
+ 	-( cd $(DOCDIR) ; $(MAKE) $(MFLAGS) \
+ 		man1dir=$(man1dir) man1ext=$(man1ext) \
+ 		man3dir=$(man3dir) man3ext=$(man3ext) \
