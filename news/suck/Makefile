@@ -18,6 +18,7 @@ GNU_CONFIGURE=	yes
 MAN1=		suck.1 rpost.1 testhost.1 lmove.1
 
 .if defined(NEWSBIN)
+PKGNAMESUFFIX=	-cnews
 EXTRA_PATCHES+=	${FILESDIR}/cnews.patch
 .else
 EXTRA_PATCHES+=	${FILESDIR}/inn2.patch
