@@ -1,0 +1,16 @@
+--- src/install/freebsd/osirisd.in.old	Tue Jan 27 18:23:16 2004
++++ src/install/freebsd/osirisd.in	Tue Jan 27 18:24:07 2004
+@@ -1,11 +1,11 @@
+ #!/bin/sh
+ 
+-OSIRISD=@INSTALLDIR@/osirisd
++OSIRISD=%%PREFIX%%/sbin/osirisd
+ 
+ case "$1" in
+ 	start)
+ 		if [ -x ${OSIRISD} ]; then
+-			${OSIRISD} -r @OSIRISDIR@ -l2 && echo -n ' osirisd'
++			${OSIRISD} -r %%PREFIX%%/osiris -l2 && echo -n ' osirisd'
+ 		fi
+ 		;;
+ 	stop)
