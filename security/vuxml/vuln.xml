@@ -32,6 +32,36 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="70b62f5e-9e2e-11d9-a256-0001020eed82">
+    <topic>clamav -- zip handling DoS vulnerability</topic>
+    <affects>
+      <package>
+	<name>clamav</name>
+	<range><lt>0.81</lt></range>
+      </package>
+      <package>
+	<name>clamav-devel</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The clamav daemon is vulnerable to a DoS vulnerability due
+	  to insufficient handling of malformed zip files which can
+	  crash the clamav daemon.</p>
+      </body>
+    </description>
+    <references>
+      <bid>12408</bid>
+      <cvename>CAN-2005-0133</cvename>
+      <url>http://sourceforge.net/project/shownotes.php?release_id=300116</url>
+    </references>
+    <dates>
+      <discovery>2005-01-27</discovery>
+      <entry>2005-03-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="48a59c96-9c6e-11d9-a040-000a95bc6fae">
     <topic>wine -- information disclosure due to insecure temporary
       file handling</topic>
