@@ -32,6 +32,52 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ef253f8b-0727-11d9-b45d-000c41e2cdad">
+    <topic>xpm --- image decoding vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>agenda-snow-libs</name>
+	<name>libXpm</name>
+	<name>mupad</name>
+	<name>XFree86-libraries</name>
+	<name>xorg-libraries</name>
+	<name>xpm</name>
+	<name>zh-cle_base</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chris Evans discovered several vulnerabilities in the libXpm
+	  image decoder:</p>
+	<ul>
+	  <li>A stack-based buffer overflow in xpmParseColors</li>
+	  <li>An integer overflow in xpmParseColors</li>
+	  <li>A stack-based buffer overflow in ParsePixels and
+	    ParseAndPutPixels</li>
+	</ul>
+	<p>The X11R6.8.1 release announcement reads:</p>
+	<blockquote
+	  cite="http://freedesktop.org/pipermail/xorg/2004-September/003172.html">
+          <p>This version is purely a security release, addressing
+            multiple integer and stack overflows in libXpm, the X
+            Pixmap library; all known versions of X (both XFree86
+            and X.Org) are affected, so all users of X are strongly
+            encouraged to upgrade.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0687</cvename>
+      <cvename>CAN-2004-0688</cvename>
+      <url>http://freedesktop.org/pipermail/xorg/2004-September/003172.html</url>
+    </references>
+    <dates>
+      <discovery>2004-09-15</discovery>
+      <entry>2004-09-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="013fa252-0724-11d9-b45d-000c41e2cdad">
     <topic>mod_dav --- lock related denial-of-service</topic>
     <affects>
