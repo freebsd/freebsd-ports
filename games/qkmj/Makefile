@@ -19,7 +19,7 @@ MAINTAINER=	clive@FreeBSD.org
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500000
-RUN_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
+LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
 .endif
 
 NO_WRKSUBDIR=	yes
@@ -27,8 +27,10 @@ NO_BUILD=	yes
 NO_CDROM=	'Do not sell for profit.'
 
 do-install:
-	${INSTALL} -c ${DISTDIR}/${DISTNAME} ${PREFIX}/bin/${DISTNAME}
-	@${LN} -s ${PREFIX}/bin/${DISTNAME} ${PREFIX}/bin/${PORTNAME}
+	${INSTALL} -c ${DISTDIR}/${DISTNAME} ${PREFIX}/libexec/${DISTNAME}
+	@${ECHO} '#!/bin/sh' > ${PREFIX}/bin/${PORTNAME}
+	@${ECHO} env TERM=vt100 ${PREFIX}/libexec/${DISTNAME} >> ${PREFIX}/bin/${PORTNAME}
+	@${CHMOD} +x ${PREFIX}/bin/${PORTNAME}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
