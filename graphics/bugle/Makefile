@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bugle
-PORTVERSION=	0.0.20041025
+PORTVERSION=	0.0.20041108
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bugle
@@ -25,4 +25,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LIBS="-L${X11BASE}/lib"
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		Port requires perl 5.6.x or later to build. Install lang/perl5.8 then try again
+.endif
+
+.include <bsd.port.post.mk>
