@@ -1,11 +1,11 @@
---- src/Makefile.in.orig	Fri Jul 30 22:43:08 1999
-+++ src/Makefile.in	Fri Jul 30 22:43:21 1999
-@@ -149,7 +149,7 @@
+--- src/Makefile.in.orig	Mon Jan 22 19:14:16 2001
++++ src/Makefile.in	Thu Sep  6 11:21:43 2001
+@@ -131,7 +131,7 @@
  
- librecode_la_SOURCES = argmatch.c charname.c combine.c fr-charname.c hash.c merged.c names.c outer.c recode.c request.c strip-pool.c task.c $(C_STEPS)
+ librecode_la_SOURCES = argmatch.c charname.c combine.c fr-charname.c hash.c iconv.c libiconv.c localcharset.c merged.c names.c outer.c quotearg.c recode.c request.c strip-pool.c task.c xmalloc.c $(C_STEPS)
  
 -librecode_la_LDFLAGS = -version-info 0:0:0
-+librecode_la_LDFLAGS = -version-info 3:5:0
++librecode_la_LDFLAGS = -version-info 3:6:0
  
- INCLUDES = -I.. -I../intl -I$(srcdir) -I$(top_srcdir)/lib
- 
+ INCLUDES = -I.. -I$(srcdir) -I$(top_srcdir)/lib -I$(top_srcdir)/libiconv
+ DEFS = -DLIBDIR=\"$(libdir)\" @DEFS@

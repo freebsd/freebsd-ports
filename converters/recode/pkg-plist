@@ -1,22 +1,19 @@
 bin/recode
+include/recode.h
+include/recodext.h
 @unexec install-info --delete %D/info/recode.info %D/info/dir
 info/recode.info
-info/recode.info-1
-info/recode.info-2
-info/recode.info-3
-info/recode.info-4
-info/recode.info-5
-info/recode.info-6
-@exec install-info --delete %D/info/recode.info %D/info/dir
+@exec install-info %D/info/recode.info %D/info/dir
 lib/librecode.a
 lib/librecode.so
 lib/librecode.so.3
-include/recode.h
-include/recodext.h
 share/locale/da/LC_MESSAGES/recode.mo
 share/locale/de/LC_MESSAGES/recode.mo
+share/locale/el/LC_MESSAGES/recode.mo
 share/locale/es/LC_MESSAGES/recode.mo
 share/locale/fr/LC_MESSAGES/recode.mo
+share/locale/gl/LC_MESSAGES/recode.mo
+share/locale/it/LC_MESSAGES/recode.mo
 share/locale/nl/LC_MESSAGES/recode.mo
 share/locale/pl/LC_MESSAGES/recode.mo
 share/locale/pt/LC_MESSAGES/recode.mo
