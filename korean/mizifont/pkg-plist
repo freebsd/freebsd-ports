@@ -1,11 +1,11 @@
-lib/X11/fonts/misc/mzgt16e.pcf.gz
-lib/X11/fonts/misc/mzgt16h.pcf.gz
-lib/X11/fonts/misc/mzgt16h1.pcf.gz
-lib/X11/fonts/misc/mzmj16e.pcf.gz
-lib/X11/fonts/misc/mzmj16h.pcf.gz
-lib/X11/fonts/misc/mzpg16e.pcf.gz
-lib/X11/fonts/misc/mzpg16h.pcf.gz
-lib/X11/fonts/misc/mzsm16e.pcf.gz
-lib/X11/fonts/misc/mzsm16h.pcf.gz
-@exec cd %D/lib/X11/fonts/misc ; mkfontdir
-@unexec cd %D/lib/X11/fonts/misc ; mkfontdir
+lib/X11/fonts/local/mzgt16e.pcf.gz
+lib/X11/fonts/local/mzgt16h.pcf.gz
+lib/X11/fonts/local/mzgt16h1.pcf.gz
+lib/X11/fonts/local/mzmj16e.pcf.gz
+lib/X11/fonts/local/mzmj16h.pcf.gz
+lib/X11/fonts/local/mzpg16e.pcf.gz
+lib/X11/fonts/local/mzpg16h.pcf.gz
+lib/X11/fonts/local/mzsm16e.pcf.gz
+lib/X11/fonts/local/mzsm16h.pcf.gz
+@exec cd %D/lib/X11/fonts/local ; %D/bin/mkfontdir
+@unexec cd %D/lib/X11/fonts/local ; %D/bin/mkfontdir
