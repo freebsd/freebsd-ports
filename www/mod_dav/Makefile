@@ -14,12 +14,10 @@ DISTNAME=	mod_dav-${PORTVERSION}-${APACHE_VERSION}
 MAINTAINER=	patrick@mindstep.com
 COMMENT=	An Apache module that provides DAV capabilities
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
-RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
-
 # This port will work with the following version of Apache and anything newer.
 APACHE_VERSION=	1.3.6
 
+USE_APACHE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--bindir=${PREFIX}/bin \
@@ -29,7 +27,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--sysconfdir=${PREFIX}/etc/apache \
 		--datadir=${PREFIX}/share/apache \
 		--includedir=${PREFIX}/include/apache \
-		--with-apxs=${PREFIX}/sbin/apxs
+		--with-apxs=${APXS}
 
 CONFIGURE_ENV=	CFLAGS='${CFLAGS}' \
 		PATH="${PREFIX}/bin:${PREFIX}/sbin:${PATH}"

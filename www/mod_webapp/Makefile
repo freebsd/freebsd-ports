@@ -16,11 +16,10 @@ DIST_SUBDIR=	mod_webapp
 MAINTAINER=	asachs@uunet.co.za
 COMMENT=	Apache module mounts Tomcat web applications
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13 \
-		${NONEXISTANT}:${PORTSDIR}/devel/apr:extract \
+BUILD_DEPENDS=	${NONEXISTANT}:${PORTSDIR}/devel/apr:extract \
 		${AUTOCONF}:${PORTSDIR}/devel/autoconf
-RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 
+USE_APACHE=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	# none
 USE_GMAKE=	yes
@@ -33,7 +32,6 @@ CONNECTORS_RELEASE=	${PORTVERSION}
 .include <bsd.port.pre.mk>
 
 # Apache locations.
-APXS?=		${LOCALBASE}/sbin/apxs
 APACHECTL?=	${LOCALBASE}/sbin/apachectl
 APR_LIB?=	${LOCALBASE}/lib/
 APR_INCLUDE?=	${LOCALBASE}/include/apr-0/

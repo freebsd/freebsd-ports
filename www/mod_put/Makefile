@@ -14,11 +14,7 @@ DISTFILES=	mod_put.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Apache module that provides PUT and DELETE methods
 
-BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
-RUN_DEPENDS=	${APXS}:${APACHE_PORT}
-
-APXS?=		${LOCALBASE}/sbin/apxs
-APACHE_PORT?=	${PORTSDIR}/www/apache13
+USE_APACHE=	yes
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 do-build:

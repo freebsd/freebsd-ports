@@ -15,12 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Apache module that embeds the Python interpreter within the server
 
-BUILD_DEPENDS=	${LOCALBASE}/include/apache2/httpd.h:${PORTSDIR}/www/apache2
-RUN_DEPENDS=	${LOCALBASE}/include/apache2/httpd.h:${PORTSDIR}/www/apache2
-
+USE_APACHE=	yes
 USE_PYTHON=	yes
-
-APXS?=		${LOCALBASE}/sbin/apxs
 
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes

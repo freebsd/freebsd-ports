@@ -13,12 +13,9 @@ MASTER_SITES=	http://www.pvv.org/~oyving/code/mod_mylo/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Apache module to make Apache log to MySQL
 
-BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
-RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
-
+USE_APACHE=	yes
 USE_MYSQL=	YES
 
-APXS=	${LOCALBASE}/sbin/apxs
 DOCS=	mod_mylo.sql README
 
 do-build:

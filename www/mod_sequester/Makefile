@@ -14,12 +14,8 @@ DISTNAME=	${PORTNAME}-1.7.0
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache module that controls access to the website using secure info
 
-BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
-RUN_DEPENDS=	${APXS}:${APACHE_PORT}
-
+USE_APACHE=	yes
 WRKSRC=		${WRKDIR}/mod_sequester
-APXS?=		${LOCALBASE}/sbin/apxs
-APACHE_PORT?=	${PORTSDIR}/www/apache13
 
 do-build:
 	@cd ${WRKSRC} && ${APXS} -c ${PORTNAME}.c

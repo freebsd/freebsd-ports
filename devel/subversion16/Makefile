@@ -33,7 +33,6 @@ MANCOMPRESSED=	no
 .include <bsd.port.pre.mk>
 
 SVNREPOS?=	/home/svn/repos
-APXS=		${LOCALBASE}/sbin/apxs
 
 .if defined(WITH_MOD_DAV_SVN)
 WITH_APACHE2_APR=	yes
@@ -48,9 +47,9 @@ SVNGROUP?=	svn
 .endif
 
 .if defined(WITH_APACHE2_APR)
-APACHE2_PORT?=	${PORTSDIR}/www/apache2
-BUILD_DEPENDS+=	${APXS}:${APACHE2_PORT}
-RUN_DEPENDS+=	${APXS}:${APACHE2_PORT}
+APACHE2_PORT?=	www/apache2
+BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE2_PORT}
+RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE2_PORT}
 CONFIGURE_ARGS+=--with-apr=${LOCALBASE}/lib/apache2/apr-config \
 		--with-apr-util=${LOCALBASE}/lib/apache2/apu-config
 .else

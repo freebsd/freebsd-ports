@@ -13,9 +13,8 @@ MASTER_SITES=	http://software.tangent.org/download/
 MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	Apache2 module to wrap served pages with a header and/or footer
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache2
-RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache2
-
+USE_APACHE=	yes
+WITH_APACHE2=	yes
 LATEST_LINK=	mod_layout2
 
 USE_REINPLACE=	yes

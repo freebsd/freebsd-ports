@@ -13,17 +13,14 @@ MASTER_SITES=	http://www.giuseppetanzilli.it/mod_auth_pgsql/dist/
 MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	Allows users to use PostgreSQL databases for user authentication
 
-BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
-RUN_DEPENDS=	${LOCALBASE}/sbin/${AP_TARGET}:${APACHE_PORT}
+BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
+RUN_DEPENDS=	${LOCALBASE}/sbin/${AP_TARGET}:${PORTSDIR}/${APACHE_PORT}
 LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}
 
 .include <bsd.port.pre.mk>
 
-APXS?=		${LOCALBASE}/sbin/apxs
-AP_PORT?=	apache13
-APACHE_PORT?=	${PORTSDIR}/www/${AP_PORT}
 POSTGRESQL_PORT?=	databases/postgresql7
 
 .if exists(${APXS})

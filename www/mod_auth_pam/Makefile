@@ -14,10 +14,7 @@ MASTER_SITES=	http://pam.sourceforge.net/mod_auth_pam/dist/ \
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Allows users to use PAM modules for user authentication
 
-BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
-RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
-
-APXS?=		${LOCALBASE}/sbin/apxs
+USE_APACHE=	yes
 
 .include <bsd.port.pre.mk>
 

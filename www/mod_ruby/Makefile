@@ -14,15 +14,11 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	An Apache module that embeds Ruby interpreter within
 
-BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
 LIB_DEPENDS=	eruby.10:${PORTSDIR}/textproc/eruby
-RUN_DEPENDS=	${APXS}:${APACHE_PORT}
 
+USE_APACHE=	yes
 USE_RUBY=	yes
 USE_REINPLACE=	yes
-
-APXS?=		${LOCALBASE}/sbin/apxs
-APACHE_PORT?=	${PORTSDIR}/www/apache13
 
 CONFIGURE_ARGS=	--with-apxs="${APXS}" \
 		--enable-eruby=yes \

@@ -14,7 +14,7 @@ MASTER_SITES=   http://www.mnogosearch.org/Download/
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	Full featured SQL-based hypertext search engine
 
-RUN_DEPENDS+=	${APXS}:${APACHE_PORT}
+RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 
 APXS?=          ${LOCALBASE}/sbin/apxs
 APACHE_PORT?=   ${PORTSDIR}/www/apache13

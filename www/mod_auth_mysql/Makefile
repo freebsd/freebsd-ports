@@ -14,16 +14,13 @@ MASTER_SITE_SUBDIR=	mod-auth-mysql
 MAINTAINER=	jeh@FreeBSD.org
 COMMENT=	Allows users to use MySQL databases for user authentication
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/${AP_PORT}
-RUN_DEPENDS=	${LOCALBASE}/sbin/${AP_TARGET}:${PORTSDIR}/www/${AP_PORT}
+BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
+RUN_DEPENDS=	${LOCALBASE}/sbin/${AP_TARGET}:${PORTSDIR}/${APACHE_PORT}
 
 USE_MYSQL=	yes
 
 .include <bsd.port.pre.mk>
 
-APXS=		${LOCALBASE}/sbin/apxs
-
-AP_PORT?=	apache13
 .if exists(${APXS})
 APXS_WORKS!=	${APXS} -q TARGET 2>/dev/null || echo no
 .endif

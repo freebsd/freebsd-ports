@@ -15,10 +15,9 @@ MASTER_SITE_SUBDIR=	mod-acct
 MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	An Apache module that records traffic statistics into a database
 
-BUILD_DEPENDS+=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
+BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 
 MAKE_ARGS+=	APXS="${APXS}"
-APXS?=		${LOCALBASE}/sbin/apxs
 
 .if defined(WITHOUT_PGSQL)
 MAKE_ARGS+=	WITHOUT_PGSQL=YES

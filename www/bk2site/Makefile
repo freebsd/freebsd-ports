@@ -16,9 +16,8 @@ MAINTAINER=	clive@FreeBSD.org
 COMMENT=	Transforms Netscape bookmarks into a Yahoo-like website
 
 .include <bsd.port.pre.mk>
-APXS=		${LOCALBASE}/sbin/apxs
 .if exists(${APXS})
-RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
+RUN_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 
 # Specify these directories in relative paths to ${PREFIX}.
 .if !exists(${PREFIX}/www) && exists(${PREFIX}/share/apache)

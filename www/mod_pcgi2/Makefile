@@ -17,18 +17,17 @@ COMMENT=	Persistent CGI module for Apache and Zope
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/z2.py:${PORTSDIR}/www/zope
 
 .if defined(WITH_APACHE13)
-BUILD_DEPENDS=	${LOCALBASE}/include/apache/httpd.h:${PORTSDIR}/www/apache13
-RUN_DEPENDS=	${LOCALBASE}/include/apache/httpd.h:${PORTSDIR}/www/apache13
+BUILD_DEPENDS=	${LOCALBASE}/include/apache/httpd.h:${PORTSDIR}/${APACHE_PORT}
+RUN_DEPENDS=	${LOCALBASE}/include/apache/httpd.h:${PORTSDIR}/${APACHE_PORT}
 .else
-BUILD_DEPENDS=	${LOCALBASE}/include/apache2/httpd.h:${PORTSDIR}/www/apache2
-RUN_DEPENDS=	${LOCALBASE}/include/apache2/httpd.h:${PORTSDIR}/www/apache2
+BUILD_DEPENDS=	${LOCALBASE}/include/apache2/httpd.h:${PORTSDIR}/${APACHE_PORT}
+RUN_DEPENDS=	${LOCALBASE}/include/apache2/httpd.h:${PORTSDIR}/${APACHE_PORT}
 .endif
 
 USE_PYTHON=	yes
 
 # You can change this in the environment if you like.
 SZOPEBASEDIR?=	www/Zope
-APXS?=		${LOCALBASE}/sbin/apxs
 
 # Don't change these
 ZOPEBASEDIR=	${LOCALBASE}/${SZOPEBASEDIR}
@@ -43,6 +42,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 .if defined(WITH_APACHE13)
 APACHEVER=	apache
 .else
+WITH_APACHE2=	yes
 APACHEVER=	apache2
 BUILDOPT+=	-DAPACHE2 -Wc,-shared
 .endif

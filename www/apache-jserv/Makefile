@@ -18,10 +18,10 @@ COMMENT=	Loadable servlet module for apache
 USE_JAVA=	1.1+
 NEED_JAVAC=	yes
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apachectl:${PORTSDIR}/www/apache13\
+BUILD_DEPENDS=	${LOCALBASE}/sbin/apachectl:${PORTSDIR}/${APACHE_PORT}\
 		${LOCALBASE}/share/java/classes/jsdk.jar:${PORTSDIR}/java/jsdk
 RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper\
-		${LOCALBASE}/sbin/apachectl:${PORTSDIR}/www/apache13\
+		${LOCALBASE}/sbin/apachectl:${PORTSDIR}/${APACHE_PORT}\
 		${LOCALBASE}/share/java/classes/jsdk.jar:${PORTSDIR}/java/jsdk
 
 USE_GMAKE=	yes
@@ -35,7 +35,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}\
 		--libdir=${LOCALBASE}/libexec/apache\
 		--with-logdir=/var/log\
 		--sysconfdir=${PREFIX}/etc/apache\
-		--with-apxs=${LOCALBASE}/sbin/apxs\
+		--with-apxs=${APXS}\
 		--with-jdk-home=${JAVA_HOME}\
 		--with-JSDK=${LOCALBASE}/share/java/classes/jsdk.jar\
 		--with-java=${JAVA}\

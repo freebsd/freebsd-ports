@@ -13,11 +13,7 @@ MASTER_SITES=	http://software.tangent.org/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache module to make debugging server-side scripts easier
 
-BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
-RUN_DEPENDS=	${APXS}:${APACHE_PORT}
-
-APXS?=		${LOCALBASE}/sbin/apxs
-APACHE_PORT?=	${PORTSDIR}/www/apache13
+USE_APACHE=	yes
 
 do-build:
 	@cd ${WRKSRC} && ${APXS} -c ${PORTNAME}.c

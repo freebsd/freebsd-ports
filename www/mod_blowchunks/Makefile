@@ -15,13 +15,9 @@ EXTRACT_SUFX=	.c
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache module for rejecting and logging chunked requests
 
-BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
-RUN_DEPENDS=	${APXS}:${APACHE_PORT}
-
+USE_APACHE=	yes
 NO_WRKSUBDIR=	YES
 
-APXS?=		${LOCALBASE}/sbin/apxs
-APACHE_PORT?=	${PORTSDIR}/www/apache13
 APXSFLAGS=	-DTRUE=1 -DFALSE=0
 .if !defined(WITHOUT_BLOWCHUNK_LOG)
 APXSFLAGS+=	-DLOG_BLOWCHUNK

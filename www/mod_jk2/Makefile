@@ -16,11 +16,8 @@ DISTNAME=	jakarta-tomcat-connectors-jk-${PORTVERSION}-src
 MAINTAINER=	lansil@fuzzynerd.com
 COMMENT=	Apache 2.0 module for Tomcat
 
-BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
-RUN_DEPENDS=	${APXS}:${APACHE_PORT}
-
-APXS?=		${PREFIX}/sbin/apxs
-APACHE_PORT?=	${PORTSDIR}/www/apache2
+USE_APACHE=	yes
+WITH_APACHE2=	yes
 APACHE_CONF=	${PREFIX}/etc/apache2
 WRKSRC=		${WRKDIR}/jakarta-tomcat-connectors-jk-${PORTVERSION}-src/jk/native
 

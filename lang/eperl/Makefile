@@ -22,7 +22,7 @@ COMMENT=	Embedded Perl 5 Language
 #INSTALL_ALSO_AS_SSSL=	yes
 
 .if defined(INSTALL_ALSO_AS_SSSL)
-RUN_DEPENDS=	${PREFIX}/etc/apache/srm.conf:${PORTSDIR}/www/apache
+RUN_DEPENDS=	${PREFIX}/etc/apache/srm.conf:${PORTSDIR}/${APACHE_PORT}
 .endif
 
 USE_PERL5=	yes

@@ -14,12 +14,10 @@ MAINTAINER=	mbr@FreeBSD.org
 COMMENT=	Improved mod_frontpage for Apache, as APXS installation
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_mirfak-${PORTVERSION}
-AP_PORT?=	apache13
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/${AP_PORT}
-RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/${AP_PORT}
 RUN_DEPENDS=	${FPSETPERM}:${PORTSDIR}/www/frontpage
 
+USE_APACHE=	yes
 FP_VER=		5.0
 FP_DIR=		${PREFIX}/frontpage/version${FP_VER}
 FPSETPERM=	${FP_DIR}/set_default_perms.sh
@@ -30,8 +28,6 @@ PKGMESSAGE=	pkg-message
 
 INSTALL_FILE=	${INSTALL} -c -m 555 -o bin -g bin
 PKG_PREFIX=	${PREFIX}
-
-APXS=		${LOCALBASE}/sbin/apxs
 
 .if exists(${APXS})
 APXS_WORKS!=	${APXS} -q TARGET 2>/dev/null || ${ECHO} no

@@ -522,21 +522,20 @@ CONFIGURE_ARGS+=--with-zlib=yes
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_APACHE)
-APXS?=		${LOCALBASE}/sbin/apxs
 .if exists(${LOCALBASE}/include/apache2/apr.h)
 WITH_APACHE2=	yes
 .endif
 .if defined(WITH_APACHE2)
-APACHE_PORT?=	${PORTSDIR}/www/apache2
+APACHE_PORT?=	www/apache2
 CONFIGURE_ARGS+=--with-apxs2=${APXS}
 SAPI_FILE=	libexec/apache2/libphp4.so
 .else
-APACHE_PORT?=	${PORTSDIR}/www/apache13
+APACHE_PORT?=	www/apache13
 CONFIGURE_ARGS+=--with-apxs=${APXS}
 SAPI_FILE=	libexec/apache/libphp4.so
 .endif
-BUILD_DEPENDS+=	${APXS}:${APACHE_PORT}
-RUN_DEPENDS+=	${APXS}:${APACHE_PORT}
+BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
+RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 .endif
 
 PLIST_SUB+=	SAPI_FILE=${SAPI_FILE} \

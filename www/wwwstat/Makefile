@@ -19,7 +19,7 @@ PATCHFILES=	patch-2.01.txt
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Webserver logfile analysis package
 
-RUN_DEPENDS=	${LOCALBASE}/etc/apache/httpd.conf:${PORTSDIR}/www/apache13
+RUN_DEPENDS=	${LOCALBASE}/etc/apache/httpd.conf:${PORTSDIR}/${APACHE_PORT}
 
 USE_PERL5=	yes
 MAKE_ENV+=	PERL5=${PERL5}

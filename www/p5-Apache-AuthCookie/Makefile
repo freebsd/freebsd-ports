@@ -16,10 +16,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A perl module to provide custom forms for reauthentication
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
-		${LOCALBASE}/sbin/apxs:${APACHE_PORT}
+		${APXS}:${PORTSDIR}/${APACHE_PORT}
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-APACHE_PORT?=	${PORTSDIR}/www/apache13
 CURUSER?=	`whoami`
 CURGRP?=	`groups | ${AWK} '{print $$1}'`
 TESTPORT?=	8228

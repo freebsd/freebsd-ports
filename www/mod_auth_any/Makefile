@@ -13,13 +13,8 @@ MASTER_SITES=	http://www.itlab.musc.edu/webNIS/dist/
 MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	Apache module to use any command line program to authenticate a user
 
-BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
-RUN_DEPENDS=	${APXS}:${APACHE_PORT}
-
+USE_APACHE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
-
-APXS?=		${LOCALBASE}/sbin/apxs
-APACHE_PORT?=	${PORTSDIR}/www/apache13
 
 do-build:
 	@cd ${WRKSRC}/src && ${APXS} -c ${PORTNAME}.c

@@ -16,10 +16,8 @@ DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
 MAINTAINER=	vivek@kciLink.com
 COMMENT=	An Apache module that works as a Netscape Roaming Access server
 
-BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache2
-RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache2
-
-APXS=		${LOCALBASE}/sbin/apxs
+USE_APACHE=	yes
+WITH_APACHE2=	yes
 
 DOCS=		CHANGES	INSTALL	LICENSE	README
 

@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	CGI scripts in Perl to edit your MySQL tables
 
-RUN_DEPENDS=	${CGI_BIN}:${PORTSDIR}/www/apache13
+RUN_DEPENDS=	${CGI_BIN}:${PORTSDIR}/${APACHE_PORT}
 
 NO_BUILD=	True
 

@@ -13,11 +13,10 @@ MASTER_SITES=	http://tcl.apache.org/mod_dtcl/download/
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Embeds a TCL8 interpreter in the Apache server
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
+BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 LIB_DEPENDS=	tcl83:${PORTSDIR}/lang/tcl83
 
 WRKSRC=		${WRKDIR}/mod_dtcl
-
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 
 do-install:

@@ -17,11 +17,8 @@ DIST_SUBDIR=	apache
 MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	Bandwidth management module for the Apache webserver
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
+USE_APACHE=	YES
 USE_PERL5=	YES
-APXS?=		${LOCALBASE}/sbin/apxs
 
 do-build:
 	@(cd ${WRKSRC} && ${APXS} -c ${PORTNAME}.c)

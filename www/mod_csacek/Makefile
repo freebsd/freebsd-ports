@@ -14,11 +14,7 @@ DISTNAME=	${PORTNAME:S/mod_//g}-${PORTVERSION}
 MAINTAINER=	ms@vol.cz
 COMMENT=	Charset recoding module for Apache
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
-RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
-
-APXS?=		${LOCALBASE}/sbin/apxs
-
+USE_APACHE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-target=Apache \

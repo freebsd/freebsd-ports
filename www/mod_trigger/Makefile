@@ -14,10 +14,7 @@ MASTER_SITES=	http://software.tangent.org/download/ \
 MAINTAINER=	svenasse@polaris.ca
 COMMENT=	Apache module to launch triggers if certain actions occur
 
-BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
-APXS?=		${LOCALBASE}/sbin/apxs
+USE_APACHE=	yes
 
 do-build:
 	@cd ${WRKSRC} && ${APXS} -c ${PORTNAME}.c

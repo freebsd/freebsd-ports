@@ -17,7 +17,7 @@ DISTFILES?=	rt-${PORTVERSION:S/./-/g}.tar.gz
 MAINTAINER=	autrijus@autrijus.org
 COMMENT?=	RT is an industrial-grade ticketing system written in Perl
 
-BUILD_DEPENDS+=	${APXS}:${APACHE_PORT} \
+BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 		${SITE_PERL}/Apache/Mason.pm:${PORTSDIR}/www/p5-HTML-Mason \
 		${SITE_PERL}/Apache/Session.pm:${PORTSDIR}/www/p5-Apache-Session \
 		${SITE_PERL}/Cache/Cache.pm:${PORTSDIR}/devel/p5-Cache-Cache \
@@ -70,10 +70,8 @@ CONFIGURE_ARGS=	--prefix=${RT_PATH} \
 
 .if defined(WITH_FASTCGI)
 .if defined(WITH_APACHE2)
-APACHE_PORT?=	${PORTSDIR}/www/apache2
 BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
 .else
-APACHE_PORT?=	${PORTSDIR}/www/apache13
 BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
 .endif
 BUILD_DEPENDS+=		${SITE_PERL}/${PERL_ARCH}/FCGI.pm:${PORTSDIR}/www/p5-FastCGI
@@ -81,17 +79,13 @@ DEPENDS_ARGS+=	WITHOUT_MODPERL=yes
 .else
 BUILD_DEPENDS+=	${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI
 .if defined(WITH_APACHE2)
-APACHE_PORT?=	${PORTSDIR}/www/apache2
 BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_perl.so:${PORTSDIR}/www/mod_perl2
 DEPENDS_ARGS+=	WITHOUT_MODPERL=yes
 DEPENDS_ARGS+=	WITH_MODPERL2=yes
 .else
-APACHE_PORT?=	${PORTSDIR}/www/apache13
 BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl
 .endif
 .endif
-
-APXS?=		${LOCALBASE}/sbin/apxs
 
 DB_TYPE?=	mysql
 

@@ -17,10 +17,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/_/}
 MAINTAINER=	larse@isi.edu
 COMMENT=	Embeds a Perl interpreter in the Apache2 server
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${APACHE2_PORT}
-RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${APACHE2_PORT}
-
+USE_APACHE=	yes
+WITH_APACHE2=	yes
 PERL_CONFIGURE=	yes
+
 CONFIGURE_ARGS=	MP_APXS=${LOCALBASE}/sbin/apxs \
 		MP_INST_APACHE2=1 PREFIX=${PREFIX}
 
@@ -28,8 +28,6 @@ MAN3=		Apache::TestRequest.3 Apache::TestSmoke.3 Apache::TestRun.3 \
 		Apache::TestTrace.3 Apache::TestMM.3 Bundle::ApacheTest.3 \
 		Apache::Test.3 Apache::TestUtil.3 Apache::Build.3 \
 		Bundle::Apache2.3 ModPerl::Code.3
-
-APACHE2_PORT?=	${PORTSDIR}/www/apache2
 
 .include <bsd.port.pre.mk>
 
