@@ -6,19 +6,22 @@
 #
 
 PORTNAME=	sdl_net
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	net
-MASTER_SITES=	http://www.devolution.com/~slouken/SDL/projects/SDL_net/src/
+MASTER_SITES=	http://www.libsdl.org/projects/SDL_net/release/
 DISTNAME=	SDL_net-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl \
+LIB_DEPENDS=	SDL-1.1.3:${PORTSDIR}/devel/sdl-devel \
 		GUI.0:${PORTSDIR}/graphics/guilib
+
+SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
+CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 
 post-extract:
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \

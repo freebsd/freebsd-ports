@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.in	2001/04/06 13:15:50	1.1
++++ Makefile.in	2001/04/06 13:16:13
+@@ -89,7 +89,7 @@
+ 
+ lib_LTLIBRARIES = libSDL_net.la
+ 
+-libSDL_netincludedir = $(includedir)/SDL
++libSDL_netincludedir = $(includedir)/SDL11
+ libSDL_netinclude_HEADERS =  	SDL_net.h
+ 
+ 
