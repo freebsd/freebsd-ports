@@ -97,7 +97,6 @@
     SUBDIR += maint
     SUBDIR += manck
     SUBDIR += medusa
-    SUBDIR += mei
     SUBDIR += memtest
     SUBDIR += mgeupsd
     SUBDIR += mixer
