@@ -8,7 +8,7 @@
 PORTNAME=	imgvtopgm
 PORTVERSION=	2.0
 CATEGORIES=	palm graphics
-MASTER_SITES=	http://www.trends.net/~mu/srcs/
+MASTER_SITES=	http://www.trends.net/~mu/
 
 MAINTAINER=	sumikawa@FreeBSD.org
 
