@@ -20,7 +20,7 @@ PWD=`pwd`
 3) cd $PWD/releng
 4) make RELEASE=4.6-RELEASE SRCSCRIPTDIR=${PWD}/srcscripts
 5) cd 4.6-RELEASE
-6) ./doit.sh
+6) ./doit.sh <path to ports/packages to split>
    [ answer prompts and stuff as it appears ]
 
 More documentation to come later.
