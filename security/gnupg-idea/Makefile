@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnupg-idea
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/%SUBDIR%/ \
 		http://www.gnupg.dk/contrib-dk/:idea \
