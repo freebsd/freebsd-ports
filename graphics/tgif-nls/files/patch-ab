@@ -1,5 +1,5 @@
---- Tgif.tmpl.orig	Fri Aug 25 05:21:24 2000
-+++ Tgif.tmpl	Fri Aug 25 05:27:31 2000
+--- Tgif.tmpl.orig	Wed Oct 24 07:09:18 2001
++++ Tgif.tmpl	Wed Oct 24 07:10:48 2001
 @@ -41,6 +41,9 @@
  XIMPDEFINES      =
  #endif
@@ -10,19 +10,10 @@
  PROGRAMS	= tgif XCOMM prtgif frontend11.o testdrive
  TGIFDIR		= $(LIBDIR)/tgif
  XCOMM CDEBUGFLAGS= -g -Wall
-@@ -48,7 +51,7 @@
- XCOMM BINDIR	= /u/halfmoon/bin
- XCOMM MANPATH	= /u/halfmoon/man
- XCOMM TGIFDIR	= /u/halfmoon/lib/X11/tgif
--LOCALEDIR	= /usr/share/locale
-+LOCALEDIR	= $(PREFIX)/share/locale
- DIRDEFINES	= -DTGIF_PATH=\"$(TGIFDIR)\" -DPSFILE_MOD=0664 \@@\
-                   -DLOCALEDIR=\"$(LOCALEDIR)\" \@@\
-                   -DTELEPORT_ATTR=\"warp_to=\" -DTMP_DIR=\"/tmp/\" \@@\
-@@ -60,14 +63,16 @@
-                   -DNETLIST_FILE_EXT=\"net\" -DCOMP_FILE_EXT=\"cmp\"
+@@ -61,14 +64,16 @@
  MISCDEFINES	= -D_BACKGROUND_DONT_FORK -D_USE_XDRAWPOINT_TO_PUT_A_POINT \@@\
-                   -D_USE_PS_ADOBE_STRING=\"3.0/3.0\" -D_DONT_USE_MKTEMP
+                   -D_USE_PS_ADOBE_STRING=\"3.0/3.0\" -D_DONT_USE_MKTEMP \@@\
+ 		  -D_DONT_REENCODE=\"FFDingbests:ZapfDingbats\"
 -MOREDEFINES	=
 +MOREDEFINES	= -DUSE_XT_INITIALIZE -D_ENABLE_NLS -DA4PAPER
  

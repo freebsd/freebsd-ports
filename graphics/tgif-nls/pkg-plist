@@ -11,9 +11,9 @@ lib/X11/tgif/eq4-2x.sym
 lib/X11/tgif/eq4-ps2epsi.sym
 lib/X11/tgif/eq4-epstool.sym
 lib/X11/tgif/keys.obj
-share/doc/tgif/Copyright
-share/doc/tgif/HISTORY
-share/doc/tgif/README
+%%PORTDOCS%%share/doc/tgif/Copyright
+%%PORTDOCS%%share/doc/tgif/HISTORY
+%%PORTDOCS%%share/doc/tgif/README
 share/examples/tgif/an-sr-flip-flop.obj
 share/examples/tgif/example.tex
 share/examples/tgif/fonts.obj
@@ -49,7 +49,7 @@ share/examples/tgif/spice/resistor.sym
 share/locale/fr/LC_MESSAGES/tgif.mo
 share/locale/ja/LC_MESSAGES/tgif.mo
 share/locale/ru/LC_MESSAGES/tgif.mo
-@dirrm share/doc/tgif
+%%PORTDOCS%%@dirrm share/doc/tgif
 @dirrm share/examples/tgif/spice
 @dirrm share/examples/tgif
 @dirrm lib/X11/tgif
