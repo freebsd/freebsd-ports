@@ -15,6 +15,12 @@ DISTNAME=	xvs-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X Visualization System, a plugin for XMMS
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
@@ -39,4 +45,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
