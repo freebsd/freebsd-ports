@@ -68,6 +68,7 @@
     SUBDIR += du2ps
     SUBDIR += dump9660
     SUBDIR += durep
+    SUBDIR += dvd+rw-tools
     SUBDIR += dvdtape
     SUBDIR += dwatch
     SUBDIR += e2fsprogs
