@@ -1,0 +1,29 @@
+--- chmlib/chm_lib.h.orig	Sun Apr  3 19:53:57 2005
++++ chmlib/chm_lib.h	Sun Apr  3 19:54:41 2005
+@@ -139,18 +139,15 @@
+ /* I386, 32-bit, non-Windows */
+ /* Sparc        */
+ /* MIPS         */
+-#elif __i386__ || __sun || __sgi
+-typedef unsigned char           UChar;
+-typedef short                   Int16;
+-typedef unsigned short          UInt16;
+-typedef long                    Int32;
+-typedef unsigned long           UInt32;
+-typedef long long               Int64;
+-typedef unsigned long long      UInt64;
+ #else
+-
+-/* yielding an error is preferable to yielding incorrect behavior */
+-#error "Please define the sized types for your platform in chm_lib.c"
++/* In Unix we have fixed size types in sys/types.h */
++typedef unsigned char           UChar;
++typedef int16_t                 Int16;
++typedef uint16_t                UInt16;
++typedef int32_t                 Int32;
++typedef uint32_t                UInt32;
++typedef int64_t                 Int64;
++typedef uint64_t                UInt64;
+ #endif
+ 
+ 
