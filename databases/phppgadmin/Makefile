@@ -21,7 +21,7 @@ USE_PHP=	yes
 WRKSRC=		${WRKDIR}/phpPgAdmin
 NO_BUILD=	YES
 
-PHP_PORT?=	www/mod_php4-twig
+PHP_PORT?=	${PORTSDIR}/www/mod_php4-twig
 PGADMDIR?=      www/data/phpPgAdmin
 PLIST_SUB+=     PGADMDIR=${PGADMDIR}
 
