@@ -1708,7 +1708,7 @@ gcvs		ports/devel/gcvs
 gd		ports/graphics/gd
 gdal		ports/graphics/gdal
 gdb		src/gnu/usr.bin/gdb
-gdb51		ports/devel/gdb51
+gdb52		ports/devel/gdb52
 gdbm		ports/databases/gdbm
 gdcd		ports/audio/gdcd
 gdchart		ports/graphics/gdchart
