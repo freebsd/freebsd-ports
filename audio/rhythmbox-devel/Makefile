@@ -6,16 +6,13 @@
 #
 
 PORTNAME=	rhythmbox
-PORTVERSION=	0.6.10
-PORTREVISION=	1
+PORTVERSION=	0.8.0
 CATEGORIES=	audio gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	rhythmbox \
-			sources/${PORTNAME}/0.6
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.8
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	marcus@FreeBSD.org
+MAINTAINER=	marcus@freebsd.org
 COMMENT=	Audio player for the Gnome 2 desktop environment
 
 LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
@@ -23,22 +20,39 @@ LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
 		mad.2:${PORTSDIR}/audio/libmad \
 		id3tag.2:${PORTSDIR}/audio/libid3tag
 
-#USE_BZIP2=	yes
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomeprefix libgnomeui
-USE_LIBTOOL_VER=	13
+USE_GNOME=	gnomehack intlhack lthack gnomeprefix libgnomeui
+USE_LIBTOOL_VER=13
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 
+OPTIONS=	XINE "Use xine backend instead of GStreamer" off \
+		MONKEYMEDIA "Use MonkeyMedia metadata reader" off \
+		IPOD "Enable iPod support" off
+
+.include <bsd.port.pre.mk>
+
 .ifdef (WITH_XINE)
 LIB_DEPENDS+=		xine.9:${PORTSDIR}/multimedia/libxine
-CONFIGURE_ARGS+=	--enable-xine
+CONFIGURE_ARGS+=	--with-player=xine
+WITH_MONKEYMEDIA=	yes
 .else
+CONFIGURE_ARGS+=	--with-player=gstreamer
 USE_GNOME+=		gstreamerplugins
 .endif
 
-.include <bsd.port.pre.mk>
+.ifdef (WITH_MONKEYMEDIA)
+CONFIGURE_ARGS+=	--with-metadata=monkeymedia
+.else
+CONFIGURE_ARGS+=	--with-metadata=gstreamer
+USE_GNOME+=		gstreamerplugins
+.endif
+
+.ifdef (WITH_IPOD)
+CONFIGURE_ARGS+=	--enable-ipod
+.endif
 
 .if exists(${LOCALBASE}/lib/libvorbis.so)
 WITH_VORBIS=	yes
@@ -59,11 +73,6 @@ pre-everything::
 .if !defined(WITH_VORBIS)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Define WITH_VORBIS to enable Vorbis support"
-	@${ECHO_MSG}
-.endif
-.if !defined(WITH_XINE)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "Define WITH_XINE to use xine backend instead of gstreamer"
 	@${ECHO_MSG}
 .endif
 
