@@ -125,15 +125,14 @@ news/lib/libinn.a
 news/lib/libstorage.a
 news/log/.keep_me
 news/run/.keep_me
-@dirrm news/log/OLD
-@dirrm news/log
+@dirrm news/bin/auth
 @dirrm news/bin/control
 @dirrm news/bin/filter
 @dirrm news/bin/rnews.libexec
-@dirrm news/bin/auth
 @dirrm news/bin
-@dirrm news/etc
-@dirrm news/run
 @dirrm news/db
+@dirrm news/etc
 @dirrm news/lib
+@dirrm news/log
+@dirrm news/run
 @dirrm news
