@@ -8,8 +8,8 @@
 PORTNAME=	nethack
 PORTVERSION=	1.0.5.19970924
 CATEGORIES=	japanese games
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	nethack
+MASTER_SITES=	ftp://ftp.nethack.org/pub/nethack/nh322/src/ \
+		ftp://ftp.wtower.com/nethack/sources/
 DISTNAME=	${PORTNAME}-3.2.2
 
 PATCH_SITES=	ftp://mitsuko.jaist.ac.jp/pub/nethack/

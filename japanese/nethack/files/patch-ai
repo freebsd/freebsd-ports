@@ -1,0 +1,11 @@
+--- include/system.h.orig      Sun Mar 31 20:46:35 2002
++++ include/system.h   Sun Mar 31 20:55:33 2002
+@@ -507,7 +507,7 @@
+ #  endif
+ # endif
+ 
+-# if defined(ULTRIX) || defined(SYSV) || defined(MICRO) || defined(VMS) || defined(MAC)
++# if defined(ULTRIX) || defined(SYSV) || defined(MICRO) || defined(VMS) || defined(MAC) || defined(BSD)
+ E time_t FDECL(time, (time_t *));
+ # else
+ E long FDECL(time, (time_t *));
