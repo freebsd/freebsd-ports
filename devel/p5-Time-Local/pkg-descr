@@ -1,0 +1,8 @@
+These routines are the inverse of built-in perl functions localtime() and
+gmtime(). They accept a date as a six-element array, and return the
+corresponding time(2) value in seconds since the system epoch (Midnight,
+January 1, 1970 UTC on Unix, for example). This value can be positive or
+negative, though POSIX only requires support for positive values, so dates
+before the system's epoch may not work on all operating systems.
+
+WWW: http://search.cpan.org/dist/Time-Local/
