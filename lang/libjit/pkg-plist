@@ -4,6 +4,7 @@ include/jit/jit-common.h
 include/jit/jit-context.h
 include/jit/jit-defs.h
 include/jit/jit-dump.h
+include/jit/jit-dynamic.h
 include/jit/jit-elf.h
 include/jit/jit-except.h
 include/jit/jit-function.h
@@ -19,5 +20,12 @@ include/jit/jit-value.h
 include/jit/jit-walk.h
 include/jit/jit.h
 lib/libjit.a
+lib/libjit.so
+lib/libjit.so.0
+lib/libjitdynamic.a
+lib/libjitdynamic.so
+lib/libjitdynamic.so.0
 lib/libjitplus.a
+lib/libjitplus.so
+lib/libjitplus.so.0
 @dirrm include/jit
