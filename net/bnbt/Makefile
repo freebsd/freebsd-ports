@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	bnbt
-PORTVERSION=	7.5b
+PORTVERSION=	7.5b2
 CATEGORIES=	net
 MASTER_SITES=	http://bnbt.go-dedicated.com/
-DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
+DISTNAME=	bnbt75b-2
 
 MAINTAINER=	flz@xbsd.org
 COMMENT=	A C++ BitTorrent Tracker
@@ -28,10 +28,8 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bnbt ${PREFIX}/bin
 	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/footer.html ${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/header.html ${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/lesser.txt ${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/readme.txt ${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/users.txt ${DATADIR}
+.for i in footer.html header.html lesser.txt readme.txt users.txt
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/$i ${DATADIR}
+.endfor
 
 .include <bsd.port.mk>
