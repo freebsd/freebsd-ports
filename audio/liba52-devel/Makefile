@@ -7,6 +7,7 @@
 
 PORTNAME=	liba52
 PORTVERSION=	0.7.1.b
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://liba52.sourceforge.net/files/
 DISTNAME=	a52dec-${PORTVERSION:S/.b/b/}
@@ -18,6 +19,8 @@ CONFIGURE_ARGS=	--disable-oss --enable-shared
 USE_LIBTOOL=	yes
 
 MAN1=	a52dec.1 extract_a52.1
+
+HEADER_FILES=	liba52/a52_internal.h
 
 .ifndef(WITH_OPTIMIZED_CFLAGS)
 USE_AUTOCONF=	yes
@@ -41,5 +44,8 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/liba52.txt ${DOCSDIR}
 .endif
+.for file in ${HEADER_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/include/a52dec
+.endfor
 
 .include <bsd.port.mk>
