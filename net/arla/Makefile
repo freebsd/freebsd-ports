@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	arla-0.9
+DISTNAME=	arla-0.28
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.stacken.kth.se/pub/arla/
 
