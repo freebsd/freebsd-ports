@@ -8,7 +8,7 @@
 PORTNAME=	pcsc-lite
 PORTVERSION=	0.6
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://soth.at/PCSC-ruby/dist/
+MASTER_SITES=	http://soth.at/PCSC-ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	PCSC-ruby-${PORTVERSION}
 DIST_SUBDIR=	ruby
