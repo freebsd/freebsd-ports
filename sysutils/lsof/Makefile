@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	lsof
-PORTVERSION=	4.56.3
+PORTVERSION=	4.56.4
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/NEW/ \
@@ -19,7 +19,7 @@ MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://ftp.sunet.se/pub/unix/admin/lsof/  \
 		ftp://ftp.sunet.se/pub/unix/admin/lsof/NEW/
 #DISTNAME=	${PORTNAME}_${PORTVERSION}_W
-DISTNAME=	${PORTNAME}_4.57C.freebsd
+DISTNAME=	${PORTNAME}_4.57D.freebsd
 
 MAINTAINER=	obrien@FreeBSD.org
 
@@ -30,12 +30,6 @@ CONFIGURE_ARGS=	-n freebsd
 CONFIGURE_ENV=	LSOF_CC="${CC}"
 FREEBSD_SYS?=	/usr/src/sys
 MAN8=		lsof.8
-
-.if defined(PACKAGE_BUILDING)
-.if !exists(${FREEBSD_SYS}/miscfs/fdesc/fdesc.h)
-BROKEN=	'please install kernel source for official package builds'
-.endif
-.endif
 
 SRCBALL_NAME=	${DISTNAME:S/_W$//}
 
@@ -66,8 +60,16 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${PREFIX}/share/lsof
 	@${CHMOD} 0444 ${PREFIX}/share/lsof/00*
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500019
 .if !exists(${FREEBSD_SYS}/miscfs/fdesc/fdesc.h)
-post-install:
+.if defined(PACKAGE_BUILDING)
+BROKEN=	'please install kernel source for official package builds'
+.endif
+
+pre-configure:
+	@${ECHO} ""
 	@${ECHO} "************************************************************"
 	@${ECHO} "*                      W a r n i n g                       *"
 	@${ECHO} "* A more capable version of LSOF is built if you have      *"
@@ -76,6 +78,8 @@ post-install:
 	@${ECHO} "* /usr/src/sys, you may set the FREEBSD_SYS variable       *"
 	@${ECHO} "* to the correct path.                                     *"
 	@${ECHO} "************************************************************"
+	@${ECHO} ""
+.endif
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
