@@ -1,0 +1,11 @@
+--- libiberty/configure.orig	Tue Dec 11 00:03:27 2001
++++ libiberty/configure	Fri Aug 22 16:07:09 2003
+@@ -836,7 +836,7 @@
+
+ if test $ac_cv_prog_gcc = yes; then
+   GCC=yes
+-  ac_libiberty_warn_cflags='-W -Wall -Wtraditional -pedantic'
++  ac_libiberty_warn_cflags='-W -Wall -Wno-long-long -pedantic'
+   ac_test_CFLAGS="${CFLAGS+set}"
+   ac_save_CFLAGS="$CFLAGS"
+   CFLAGS=
