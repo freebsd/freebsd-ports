@@ -1,6 +1,6 @@
---- pine/init.c.orig	Wed Mar  5 05:11:10 2003
-+++ pine/init.c	Wed Mar  5 05:21:57 2003
-@@ -1463,6 +1463,9 @@
+--- pine/init.c.orig	Fri May 23 09:10:06 2003
++++ pine/init.c	Fri Sep  5 01:44:21 2003
+@@ -1485,6 +1485,9 @@
      GLO_NORM_FORE_COLOR		= cpystr(colorx(DEFAULT_NORM_FORE));
      GLO_NORM_BACK_COLOR		= cpystr(colorx(DEFAULT_NORM_BACK));
  #endif

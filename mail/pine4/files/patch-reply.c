@@ -1,6 +1,6 @@
---- pine/reply.c.orig	Wed Dec  4 21:10:12 2002
-+++ pine/reply.c	Mon Dec 16 03:40:23 2002
-@@ -5092,7 +5092,10 @@
+--- pine/reply.c.orig	Fri Aug 29 14:43:38 2003
++++ pine/reply.c	Fri Sep  5 01:44:21 2003
+@@ -5183,7 +5183,10 @@
  char *
  generate_message_id()
  {
@@ -12,7 +12,7 @@
      char        *id;
      time_t       now;
      struct tm   *now_x;
-@@ -5100,14 +5103,11 @@
+@@ -5191,14 +5194,11 @@
  
      now   = time((time_t *)0);
      now_x = localtime(&now);
@@ -31,7 +31,7 @@
  
      hostpart = F_ON(F_ROT13_MESSAGE_ID, ps_global)
  		 ? rot13(ps_global->hostname)
-@@ -5116,8 +5116,8 @@
+@@ -5207,8 +5207,8 @@
      if(!hostpart)
        hostpart = cpystr("huh");
  

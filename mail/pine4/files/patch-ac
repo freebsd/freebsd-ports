@@ -1,5 +1,5 @@
-*** pine/osdep/os-bsf.h.orig	Tue Feb  6 17:30:45 2001
---- pine/osdep/os-bsf.h	Wed Mar  5 05:30:16 2003
+*** pine/osdep/os-bsf.h.orig	Fri May 23 09:05:21 2003
+--- pine/osdep/os-bsf.h	Fri Sep  5 01:44:20 2003
 ***************
 *** 87,93 ****
      NOTE: You'll also have to make sure the appropriate osdep/postreap.*
@@ -18,8 +18,8 @@
   
   
 ***************
-*** 203,208 ****
---- 203,210 ----
+*** 209,214 ****
+--- 209,216 ----
   #define DF_KBLOCK_PASSWD_COUNT    "1"
   #define DF_REMOTE_ABOOK_HISTORY   "3"
   
@@ -29,7 +29,7 @@
      The default printer when pine starts up for the first time with no printer
    ----*/
 ***************
-*** 268,274 ****
+*** 280,286 ****
          8
          9 logs gross details of command execution
    ----*/
@@ -37,7 +37,7 @@
   
   
   
---- 270,276 ----
+--- 282,288 ----
          8
          9 logs gross details of command execution
    ----*/
