@@ -859,6 +859,7 @@ cdpr		ports/net-mgmt/cdpr
 cdrdao		ports/sysutils/cdrdao
 cdroot		ports/sysutils/cdroot
 cdrtools	ports/sysutils/cdrtools
+cdrtools-cjk	ports/sysutils/cdrtools-cjk
 cdrtools-devel	ports/sysutils/cdrtools-devel
 cedet		ports/devel/cedet
 celestia	ports/astro/celestia
