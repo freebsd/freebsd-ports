@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	supertux
-PORTVERSION=	0.0.6
+PORTVERSION=	0.1.0
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	http://pingus.seul.org/~grumbel/tmp/ \
+		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	super-tux
 
 MAINTAINER=	ahze@ahze.net
