@@ -34,7 +34,6 @@ NO_CDROM=	'dated material'
 ##INSTALL_WRKSRC=		${WRKDIR}/build
 ##CONFIGURE_SCRIPT=	${WRKSRC}/configure
 EGCS_REV=	2.97
-LIBSTDCPP_REV=	4
 SRCDIR=		${WRKDIR}/gcc-${SNAPVER}
 WRKSRC=		${WRKDIR}/build
 PATCH_ARGS=	-d ${SRCDIR} -E ${PATCH_STRIP}
@@ -52,7 +51,7 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
 .endif
 
 PLIST_SUB=	EGCS_REV=${EGCS_REV} GNU_HOST=${CONFIGURE_TARGET}  \
-		LIBSTDCPP_REV=${LIBSTDCPP_REV} SNAPVER=${SNAPVER}
+		SNAPVER=${SNAPVER}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
@@ -60,6 +59,8 @@ CONFIGURE_ARGS=	--disable-nls --with-gnu-as --with-gnu-ld \
 		--with-gxx-include-dir=${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/include/g++
 .if defined(WANT_SHAREDLIBS)
 CONFIGURE_ARGS+= --enable-shared
+.else
+CONFIGURE_ARGS+= --disable-shared
 .endif
 .if defined(WANT_THREADS_SUPPORT)
 CONFIGURE_ARGS+= --enable-threads
@@ -67,7 +68,7 @@ CONFIGURE_ARGS+= --enable-threads
 CONFIGURE_ARGS+= --enable-threads=posix
 .endif
 ALL_TARGET=	bootstrap
-MAN1=		ecpp.1 eg++.1 eg77.1 egcc.1
+MAN1=		gcpp.1 gg++.1 gg77.1 ggcc.1
 
 pre-configure:
 	@(MAJ=`sysctl -n kern.osreldate | ${SED} -e '/.....$$/s///'` ; \
@@ -102,10 +103,10 @@ post-install:
 	do \
 		strip $$prog ; \
 	done )
-	${MV} ${PREFIX}/bin/gcc ${PREFIX}/bin/egcc
-	${MV} ${PREFIX}/bin/g++ ${PREFIX}/bin/eg++
-	${MV} ${PREFIX}/bin/g77 ${PREFIX}/bin/eg77
-	${MV} ${PREFIX}/bin/g++filt ${PREFIX}/bin/eg++filt
+	${MV} ${PREFIX}/bin/gcc ${PREFIX}/bin/ggcc
+	${MV} ${PREFIX}/bin/g++ ${PREFIX}/bin/gg++
+	${MV} ${PREFIX}/bin/g77 ${PREFIX}/bin/gg77
+	${MV} ${PREFIX}/bin/g++filt ${PREFIX}/bin/gg++filt
 	${MV} ${PREFIX}/bin/gccbug ${PREFIX}/bin/gccbug-${SNAPVER}
 	${RM} -f ${PREFIX}/bin/${GNU_HOST}-c++
 	${RM} -f ${PREFIX}/bin/cpp
@@ -113,16 +114,14 @@ post-install:
 	# 	with the stock compiler.
 	${MV} ${PREFIX}/lib/libiberty.a  \
 		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}
-	${MV} -f ${PREFIX}/lib/libstdc++.a.${LIBSTDCPP_REV}  \
+	${MV} -f ${PREFIX}/lib/libstdc++.a  \
 		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}
-	cd ${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV} ; \
-		${LN} -sf libstdc++.a.${LIBSTDCPP_REV} libstdc++.a
 	${MV} -f ${PREFIX}/lib/libzgcj.*  \
 		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}
-	${MV} ${PREFIX}/man/man1/gcc.1 ${PREFIX}/man/man1/egcc.1
-	${MV} ${PREFIX}/man/man1/g++.1 ${PREFIX}/man/man1/eg++.1
-	${MV} ${PREFIX}/man/man1/g77.1 ${PREFIX}/man/man1/eg77.1
-	${MV} ${PREFIX}/man/man1/cpp.1 ${PREFIX}/man/man1/ecpp.1
+	${MV} ${PREFIX}/man/man1/gcc.1 ${PREFIX}/man/man1/ggcc.1
+	${MV} ${PREFIX}/man/man1/g++.1 ${PREFIX}/man/man1/gg++.1
+	${MV} ${PREFIX}/man/man1/g77.1 ${PREFIX}/man/man1/gg77.1
+	${MV} ${PREFIX}/man/man1/cpp.1 ${PREFIX}/man/man1/gcpp.1
 .if defined(WANT_SHAREDLIBS)
 	${MV} -f ${PREFIX}/lib/libstdc++.so*  \
 		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}

@@ -1,8 +1,8 @@
 @comment $FreeBSD$
-bin/eg++filt
-bin/eg++
-bin/eg77
-bin/egcc
+bin/gg++filt
+bin/gg++
+bin/gg77
+bin/ggcc
 bin/%%GNU_HOST%%-gcc
 bin/%%GNU_HOST%%-g++
 bin/gccbug-%%SNAPVER%%
