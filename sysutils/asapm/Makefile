@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asapm
-PORTVERSION=	2.12
+PORTVERSION=	2.13
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.tigr.net/afterstep/download/asapm/ \
 		${MASTER_SITE_AFTERSTEP}
