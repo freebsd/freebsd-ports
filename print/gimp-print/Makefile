@@ -5,15 +5,16 @@
 # $FreeBSD$
 
 PORTNAME=	gimp-print
-PORTVERSION=	4.2.1
+PORTVERSION=	4.2.2
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	dgilbert@velocet.ca
+MAINTAINER=	ports@freebsd.org
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -29,6 +30,7 @@ MAN8=	cups-calibrate.8
 PLIST_SUB+=	CUPS="@comment "
 .else
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
+BUILD_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
 CONFIGURE_ARGS+=	--with-cups=${PREFIX}
 PLIST_SUB+=	CUPS=""
 .endif
@@ -57,10 +59,12 @@ post-extract:
 	@${RM} -f ${WRKSRC}/doc/gimpprint.info*
 
 post-patch:
-	@${PERL} -pi -e 's|makeinfo$$|"makeinfo --no-split"|g ; \
-		 s|\$$\{CFLAGS:=\} -O|\$$\{CFLAGS\}|g' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
-		's|\$$\(PACKAGE\)/doc|doc/\$$\(PACKAGE\)|g ; \
-		 s|\$$\(RM\) -r|\$$\(RM\) -f -r|g'
+	@${REINPLACE_CMD} -e 's|=makeinfo|="makeinfo --no-split"|g ; \
+		 s|[\$$][{]CFLAGS:=[}] -O|\$$\{CFLAGS\}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|[\$$][{]CFLAGS:=[}] -O|\$$\{CFLAGS\}|g' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|[\$$][(]PACKAGE[)]/doc|doc/\$$\(PACKAGE\)|g ; \
+		 s|[\$$][(]RM[)] -r|\$$\(RM\) -f -r|g'
 
 .include <bsd.port.mk>
