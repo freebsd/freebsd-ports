@@ -7840,7 +7840,7 @@ shout		ports/audio/shout
 show		ports/graphics/show
 showgrammar	ports/devel/showgrammar
 showimg		ports/graphics/showimg
-showkey		ports/converters
+showkey		ports/converters/showkey
 shtool		ports/devel/shtool
 shuffle		ports/misc/shuffle
 shujit		ports/java/shujit
