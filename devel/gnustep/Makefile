@@ -17,7 +17,7 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	dinoex@FreeBSD.org
 
-RUN_DEPENDS=	${LOCALBASE}/System/Makefiles/GNUstep.sh:${PORTSDIR}/devel/gnustep-make
+RUN_DEPENDS=	${SYSTEMDIR}/Makefiles/GNUstep.sh:${PORTSDIR}/devel/gnustep-make
 RUN_DEPENDS+=	${SYSLIBDIR}/libobjc.so:${PORTSDIR}/lang/gnustep-objc
 RUN_DEPENDS+=	${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
 .if defined(GNUSTEP_GUI_DEVEL)
