@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.32
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Xml internationalization support for GNOME, and others
+COMMENT=	Tools to internationalize various kinds of data files
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
