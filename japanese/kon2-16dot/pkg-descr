@@ -1,0 +1,8 @@
+Kon is a kanji console. This is an alpha version. Supported video card is
+VGA only, and, supported font are Minix/V and BDF. This program requires
+shared memory.
+
+This version supports ja_JP.ujis ja_JP.sjis zh_TW.big5 zh_CN.ugb ko_KR.euc.
+
+Orignal kon written by manabe@papilio.tutics.tut.ac.jp.
+This port is done by ogura@st.rim.or.jp.
