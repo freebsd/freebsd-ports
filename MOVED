@@ -254,7 +254,7 @@ graphics/xtheater|multimedia/xtheater|2003-04-04|new category
 graphics/recmpeg|multimedia/recmpeg|2003-04-04|new category
 graphics/spigot|multimedia/spigot|2003-04-04|new category
 net/gaim-snapshot|net/gaim|2003-04-05|rolled into net/gaim
-net/gift||2003-04-05|no current official releases
+net/gift|net/gift|2003-04-05|no current official releases (resurrected on 2003-10-04)
 net/jift||2003-04-05|lack of development
 x11-toolkits/pike-gtk||2003-04-09|included in pike
 japanese/samba20|japanese/samba|2003-04-13|security vulnerability
