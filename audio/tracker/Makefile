@@ -3,7 +3,7 @@
 # Date created:         2 Oct 1994
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.27 1996/01/16 01:44:20 ache Exp $
+# $Id: Makefile,v 1.28 1996/11/12 06:02:02 ache Exp $
 #
 
 DISTNAME=       tracker-5.3
@@ -12,6 +12,8 @@ MASTER_SITES=   ftp://ftp.ens.fr/pub/dmi/users/espie/beta/
 EXTRACT_SUFX=   .tgz
 
 MAINTAINER=     ache@FreeBSD.ORG
+
+RESTRICTED=     "Non-redistributable beta"
 
 WRKSRC=         ${WRKDIR}/tracker
 USE_GMAKE=      yes
@@ -22,8 +24,12 @@ MAKE_FLAGS=     MACHINE=freebsd CC=$(CC) INSTALL="$(INSTALL)" \
 		-f
 
 post-install:
-	cd ${WRKSRC}/Docs; makeinfo --no-split tracker.texinfo -o tracker.info; \
-	cd ${WRKSRC}/Docs; gzip -f tracker.info; \
-	$(INSTALL_MAN) tracker.info.gz ${PREFIX}/info
+	cd ${WRKSRC}/Docs && \
+	makeinfo --no-split tracker.texinfo -o tracker.info && \
+	gzip -f tracker.info && \
+	$(INSTALL_MAN) tracker.info.gz ${PREFIX}/info && \
+	rm -f tracker.info.gz *.orig
+	-${MKDIR} ${PREFIX}/share/doc/tracker
+	cp -R ${WRKSRC}/Docs/* ${PREFIX}/share/doc/tracker
 
 .include <bsd.port.mk>
