@@ -7527,6 +7527,7 @@ t_coffee	ports/biology/t_coffee
 tabs		src/usr.bin/tabs
 tac_plus4	ports/net/tac_plus4
 tail		src/usr.bin/tail
+taipan		ports/games/taipan
 talk		src/usr.bin/talk
 talkd		src/libexec/talkd
 tamago		ports/editors/tamago
