@@ -6,7 +6,7 @@
 
 PORTNAME=	ipv6socket_scrub
 PORTVERSION=    1.0
-CATEGORIES=	devel ipv6
+CATEGORIES=	net devel ipv6
 MASTER_SITES=	#http://www.sun.com/solaris/ipv6
 DISTNAME=	IPv6socket_scrub
 EXTRACT_SUFX=	.tar
