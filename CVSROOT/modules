@@ -4492,6 +4492,7 @@ mod_accounting	ports/www/mod_accounting
 mod_auth_any	ports/www/mod_auth_any
 mod_auth_cookie_mysql	ports/www/mod_auth_cookie_mysql
 mod_auth_external	ports/www/mod_auth_external
+mod_auth_external2	ports/www/mod_auth_external2
 mod_auth_kerb	ports/www/mod_auth_kerb
 mod_auth_mysql	ports/www/mod_auth_mysql
 mod_auth_mysql_another	ports/www/mod_auth_mysql_another
