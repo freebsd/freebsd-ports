@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gigabase
-PORTVERSION=	2.59
+PORTVERSION=	2.64
 CATEGORIES=	databases
-MASTER_SITES=	http://www.ispras.ru/~knizhnik/
+MASTER_SITES=	http://www.garret.ru/~knizhnik/
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -16,6 +16,5 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared --build=$(ARCH} --host=unknown-freebsd --target=${OSREL}
 
 .include <bsd.port.mk>
