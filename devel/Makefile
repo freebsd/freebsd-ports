@@ -663,6 +663,7 @@
     SUBDIR += p5-Data-Hexdumper
     SUBDIR += p5-Data-Hierarchy
     SUBDIR += p5-Data-Properties
+    SUBDIR += p5-Data-Random
     SUBDIR += p5-Data-Serializer
     SUBDIR += p5-Data-ShowTable
     SUBDIR += p5-Data-TemporaryBag
