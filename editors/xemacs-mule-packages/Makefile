@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	xemacs-mule-packages
-PORTVERSION=	3.6
+PORTVERSION=	3.7
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|kiri/xemacs|} \
 		${MASTER_SITE_XEMACS:S|%SUBDIR%|packages|}
 DISTFILES=	\
-		edict-1.15-pkg.tar.gz \
-		egg-its-1.26-pkg.tar.gz \
-		latin-unity-1.07-pkg.tar.gz \
-		leim-1.21-pkg.tar.gz \
-		locale-1.20-pkg.tar.gz \
-		lookup-1.13-pkg.tar.gz \
-		mule-base-1.43-pkg.tar.gz \
-		mule-ucs-1.04-pkg.tar.gz \
+		edict-1.16-pkg.tar.gz \
+		egg-its-1.27-pkg.tar.gz \
+		latin-unity-1.09-pkg.tar.gz \
+		leim-1.22-pkg.tar.gz \
+		locale-1.21-pkg.tar.gz \
+		lookup-1.14-pkg.tar.gz \
+		mule-base-1.44-pkg.tar.gz \
+		mule-ucs-1.05-pkg.tar.gz \
 		skk-1.23-pkg.tar.gz
 DIST_SUBDIR=	xemacs
 
