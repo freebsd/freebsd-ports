@@ -855,6 +855,7 @@ cmail		ports/mail/cmail
 cmake		ports/devel/cmake
 cmatrix		ports/misc/cmatrix
 cmdwatch	ports/sysutils/cmdwatch
+cmios9		ports/converters/cmios9
 cmp3		ports/audio/cmp3
 cmpsfont	ports/print/cmpsfont
 cmt		ports/audio/cmt
