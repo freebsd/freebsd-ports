@@ -1,18 +1,5 @@
-icecast
-~~~~~~~
 Icecast provides nearly all the functionality of the Shoutcast Linux
 server.  It will accept encoding streams from either iceplay or WinAmp.
 It can also add itself to a directory server such as our own
 icecast.linuxpower.org or Nullsoft's yp.shoutcast.com.  It does not yet 
 support redirection of streams from other icecast servers, but soon will.
-Command-line options are as follows (these can be obtained by running 
-'icecast -h' as well):
-
-contacts and webpage
-~~~~~~~~~~~~~~~~~~~~
-The main webpage for icecast is http://icecast.linuxpower.org
-Please send any suggestions, bugfixes, or anything else to
-icecast@linuxpower.org
-
---
-Chip Marshall <chip@eboai.org> http://www.eboai.org/~chip/
