@@ -1,7 +1,8 @@
 bin/gtksopwith
 bin/sopwith
-%%PORTDOCS%%share/doc/sopwith/FAQ
-%%PORTDOCS%%share/doc/sopwith/keys.txt
-%%PORTDOCS%%share/doc/sopwith/license.txt
-%%PORTDOCS%%share/doc/sopwith/origdoc.txt
-%%PORTDOCS%%@dirrm share/doc/sopwith
+share/doc/sopwith/keys.txt
+share/doc/sopwith/dlcvsamj.txt
+share/doc/sopwith/license.txt
+share/doc/sopwith/origdoc.txt
+share/doc/sopwith/readme.txt
+@dirrm share/doc/sopwith
