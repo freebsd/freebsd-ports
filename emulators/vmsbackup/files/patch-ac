@@ -1,0 +1,15 @@
+*** vmsbackup.c	Tue Sep 23 17:27:13 1997
+--- ../../src/vmsbackup.c	Tue Sep 23 17:30:12 1997
+***************
+*** 262,266 ****
+  		printf("extract %s [ny]",filename);
+  		fflush(stdout);
+! 		gets(ans);
+  		if(*ans != 'y') procf = NULL;
+  	}
+--- 262,266 ----
+  		printf("extract %s [ny]",filename);
+  		fflush(stdout);
+! 		fgets(ans, 80, stdin);
+  		if(*ans != 'y') procf = NULL;
+  	}
