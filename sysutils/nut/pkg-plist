@@ -1,0 +1,17 @@
+sbin/apcsmart
+sbin/genericups
+sbin/optiups
+sbin/bestups
+sbin/ups-trust425+625
+sbin/fentonups
+sbin/upsc
+sbin/upslog
+sbin/upsmon
+sbin/upsct
+sbin/upsct2
+sbin/upsd
+etc/nut/hosts.conf.sample
+etc/nut/multimon.conf.sample
+etc/nut/upsd.conf.sample
+etc/nut/upsmon.conf.sample
+etc/rc.d/upsd.sh.sample
