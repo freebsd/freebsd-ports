@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	FD-1.03j
-PKGNAME=	fd-1.03j
+DISTNAME=	FD-1.03k
+PKGNAME=	fd-1.03k
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.ics.es.osaka-u.ac.jp/pub/FDclone/
 
