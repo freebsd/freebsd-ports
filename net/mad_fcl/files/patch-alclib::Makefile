@@ -1,0 +1,11 @@
+--- alclib/Makefile.orig	Fri Feb 13 15:58:54 2004
++++ alclib/Makefile	Fri Feb 13 15:58:54 2004
+@@ -1,7 +1,7 @@
+ #CC = ccmalloc gcc-2.95
+ #CC = g++
+ CC = gcc
+-CFLAGS += -Wall -g -fPIC -DLINUX
++CFLAGS += -Wall -g -fPIC -O -DLINUX
+ 
+ SOURCES = alc_channel.c alc_hdr.c alc_rx.c alc_session.c alc_socket.c alc_tx.c \
+ 	lct_hdr.c mad.c mad_cc.c transport.c blocking_alg.c fec.c null_fec.c rs_fec.c
