@@ -11,6 +11,9 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ \
 		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
+#
+# XXX Remove the following line when NTP develoopment resumes.
+IGNORE=		4.2.0 just released, no development version available.
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
