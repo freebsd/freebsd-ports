@@ -1,9 +1,11 @@
-%%Q3DIR%%Freeze.cfg
-%%Q3DIR%%description.txt
+%%PORTDOCS%%%%Q3DIR%%Freeze Tag.lnk
+%%PORTDOCS%%%%Q3DIR%%description.txt
+%%Q3DIR%%freeze.cfg
 %%Q3DIR%%freeze0.pk3
 %%Q3DIR%%freeze1.pk3
-%%Q3DIR%%ft.bat
 %%Q3DIR%%ft.config
-%%Q3DIR%%readme.txt
-%%Q3DIR%%voices.txt
+%%Q3DIR%%missionpack/Freeze Tag.lnk
+%%Q3DIR%%missionpack/freeze_ta0.pk3
+%%PORTDOCS%%%%Q3DIR%%readme.txt
+@dirrm %%Q3DIR%%/missionpack
 @dirrm %%Q3DIR%%
