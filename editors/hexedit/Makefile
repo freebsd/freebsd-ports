@@ -3,10 +3,10 @@
 # Date created:				5 August 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.3 1998/10/09 10:05:49 asami Exp $
+# $Id: Makefile,v 1.4 1999/01/10 18:58:29 steve Exp $
 #
 
-DISTNAME=		hexedit-1.0.0
+DISTNAME=		hexedit-1.1.0
 CATEGORIES=		editors
 MASTER_SITES=		http://www.chez.com/prigaux/ \
 			${MASTER_SITE_SUNSITE}
