@@ -4807,6 +4807,7 @@ objformat	src/usr.bin/objformat
 obliterate	ports/sysutils/obliterate
 obnc		ports/net/obnc
 ocaml		ports/lang/ocaml
+ocaml-classes	ports/devel/ocaml-classes
 ocaml-findlib	ports/devel/ocaml-findlib
 ocaml-lablgl	ports/graphics/ocaml-lablgl
 ocaml-lablgtk	ports/x11-toolkits/ocaml-lablgtk
