@@ -6,33 +6,49 @@
 #
 
 PORTNAME=	xdvik
-PORTVERSION=	20a
-PORTREVISION=	1
+PORTVERSION=	22.78
 CATEGORIES=	print
-MASTER_SITES=	http://www.tug.org/ftp/historic/systems/dviware/xdvik/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	xdvi
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	DVI Previewer(kpathsearch) for X
 
-RUN_DEPENDS=	mf:${PORTSDIR}/print/tex
+BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
+RUN_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
+LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib
 
 USE_XLIB=	yes
-GNU_CONFIGURE=YES
-#CONFIGURE_ARGS=--enable-shared=yes
-USE_GMAKE=YES
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		--with-system-t1lib --with-t1lib-libdir=${LIBT1_PREFIX}/lib \
+		--with-t1lib-include=${LIBT1_PREFIX}/include
+CONFIGURE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
+		INSTALL_DATA="${INSTALL_DATA}" \
+		INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 
-MAN1=xdvi.1 gsftopk.1
+PLIST_SUB=	TEXMFDIR=${TEXMFDIR} MKTEXLSR=${MKTEXLSR}
+CONFLICTS=	xdvi-* *-xdvi*
 
-pre-build:
-	(cd ${WRKSRC} ; ${FIND} . -name '*.orig' -exec ${RM} -f {} \;)
+MAN1=		xdvi.1 t1mapper.1 xdvizilla.1
+
+TEXMFDIR?=	share/texmf
+MKTEXLSR?=	${LOCALBASE}/bin/mktexlsr
+LIBT1_PREFIX?=	${LOCALBASE}
+DOC_FILES=	BUGS CHANGES INSTALL \
+		README README.CVS README_maintainer TODO
 
 do-install:
-	(cd ${WRKSRC}/xdvik ; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
+	cd ${WRKSRC}/texk/xdvik && \
+		${MAKE_ENV} ${MAKE} ${INSTALL_TARGET}
 
 post-install:
-	${MKDIR} ${PREFIX}/share/doc/xdvi
-	${INSTALL_DATA} ${WRKSRC}/xdvik/xdvi.FAQ ${PREFIX}/share/doc/xdvi
-	${INSTALL_DATA} ${WRKSRC}/xdvik/README ${PREFIX}/share/doc/xdvi
-	${INSTALL_DATA} ${WRKSRC}/xdvik/ChangeLog ${PREFIX}/share/doc/xdvi
+	${INSTALL_SCRIPT} ${WRKSRC}/texk/xdvik/t1mapper ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${DOC_FILES:S@^@${WRKSRC}/@} ${DOCSDIR}
+.endif
+	${MKTEXLSR}
 
 .include <bsd.port.mk>

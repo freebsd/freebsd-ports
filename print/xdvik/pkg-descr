@@ -1,10 +1,5 @@
+Xdvik is a program for displaying DVI files (generated e.g. by Troff or TeX)
+on the X window system. It is based on the regular (non-k) xdvi of the same
+version number.
 
-dvi file previewer for X.
-
-    1. require METAFONT
-    2. require kpathsearch libraries version 3.0 (search library)
-    3. built-in EPS preview(need to any ghostscript)
-    4. print out from this program(use lpr).
-
-- Kentarou Inagaki
-JBD01226@niftyserve.ne.jp
+WWW: http://xdvi.sourceforge.net/
