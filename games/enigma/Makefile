@@ -7,7 +7,7 @@
 
 PORTNAME=	enigma
 PORTVERSION=	0.81
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	sdl11-config:${PORTSDIR}/devel/sdl12 \
 		lua:${PORTSDIR}/lang/lua
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer	\
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image \
-		SDL_gfx.9:${PORTSDIR}/graphics/sdl_gfx
+		SDL_gfx.10:${PORTSDIR}/graphics/sdl_gfx
 
 GNU_CONFIGURE=	yes
 USE_XLIB=	yes
