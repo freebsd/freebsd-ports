@@ -48,8 +48,8 @@
     SUBDIR += guile-gtk
     SUBDIR += icegradient
     SUBDIR += itk
-    SUBDIR += iwidgets
     SUBDIR += iv
+    SUBDIR += iwidgets
     SUBDIR += jx
     SUBDIR += lesstif
     SUBDIR += libgtkeditor
@@ -128,7 +128,7 @@
     SUBDIR += xforms
     SUBDIR += xg
     SUBDIR += xmhtml
-    SUBDIR += xview-clients
     SUBDIR += xview
+    SUBDIR += xview-clients
 
 .include <bsd.port.subdir.mk>

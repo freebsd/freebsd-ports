@@ -87,8 +87,8 @@
     SUBDIR += mindterm-binary
     SUBDIR += nbaudit
     SUBDIR += nessus
-    SUBDIR += nessus-libraries
     SUBDIR += nessus-libnasl
+    SUBDIR += nessus-libraries
     SUBDIR += nessus-plugins
     SUBDIR += nmap
     SUBDIR += nmapfe

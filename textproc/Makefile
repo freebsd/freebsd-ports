@@ -69,9 +69,9 @@
     SUBDIR += ispell
     SUBDIR += jade
     SUBDIR += java2html
-    SUBDIR += latte
     SUBDIR += kdoc
     SUBDIR += latex2html
+    SUBDIR += latte
     SUBDIR += libxml
     SUBDIR += libxml++
     SUBDIR += libxml2
