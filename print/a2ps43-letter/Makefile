@@ -3,13 +3,13 @@
 # Date created:         6 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.4 1995/04/15 04:33:31 asami Exp $
+# $Id: Makefile,v 1.5 1995/11/22 13:17:46 asami Exp $
 #
 
 DISTNAME=	a2ps
 PKGNAME=	a2ps-4.3
 CATEGORIES+=	print
-MASTER_SITES=	ftp://ftp.imag.fr/archive/postscript/
+MASTER_SITES=	ftp://ftp.imag.fr/archive/postscript/format.translators/
 DISTFILES=	a2ps.V4.3.tar.gz
 
 MAINTAINER=	jmz@FreeBSD.org
