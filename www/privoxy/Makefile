@@ -35,7 +35,7 @@ post-patch:
 	${WRKSRC}/config
 
 pre-configure:
-	@(cd ${WRKSRC}; ${AUTOHEADER})
+	@cd ${WRKSRC}; ${AUTOHEADER}
 
 pre-install:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
