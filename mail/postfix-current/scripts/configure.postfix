@@ -31,6 +31,7 @@ OpenLDAP	"OpenLDAP map lookups" "$status_OpenLDAP" \
 Test		"SMTP/LMTP test server and generator" "$status_Test" \
 TLS		"SSL and TLS" "$status_TLS" \
 IPv6		"IPv6 support (currently broken)" "$status_IPv6" \
+IPv6TLS		"IPv6 support with SSL and TLS" "$status_IPv6TLS" \
 2> $tempfile
 
 	retval=$?
@@ -110,8 +111,8 @@ while [ "$1" ]; do
 			echo "MAN8+=		tlsmgr.8"
 			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I/usr/include/openssl"
 			echo "POSTFIX_AUXLIBS+=	-lssl -lcrypto"
-			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.8.11a-1.1.11-20020917-0.9.6g.tar.gz"
-			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.8.11a-1.1.11-20020917-0.9.6g/pfixtls.diff"
+			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.8.11a-1.1.11-20021031-0.9.6g.tar.gz"
+			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.8.11a-1.1.11-20021031-0.9.6g/pfixtls.diff"
 			echo "PATCH_STRIP=	-p1"
 			echo "TLS_SUFFIX=	+tls"
 			SUB_TLS=""
@@ -154,7 +155,7 @@ while [ "$1" ]; do
 			exit 1
 			fi
 			if [ X$SUB_TLS = "X" ]; then
-				/usr/bin/dialog --msgbox "IPv6 and TLS patch cannot be used simultaneously!" 5 60 > /dev/stderr
+				/usr/bin/dialog --msgbox "Select exactly one of the IPv6 and TLS patches" 5 60 > /dev/stderr
 				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 				exit 1
 			fi
@@ -163,9 +164,25 @@ while [ "$1" ]; do
 			echo "PATCH_DIST_STRIP= -p1"
 			echo "IPv6_SUFFIX=	+ipv6"
 			echo ""
+			IPv6SELECTED=YES
+			;;
+		IPv6TLS)
+			if [ X$SUB_TLS = "X" -o X$IPv6SELECTED != X ]; then
+				/usr/bin/dialog --msgbox "Select exactly one of the IPv6 and TLS patches" 5 60 > /dev/stderr
+				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+				exit 1
+			fi
+			echo "MAN8+=		tlsmgr.8"
+			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I/usr/include/openssl"
+			echo "POSTFIX_AUXLIBS+=	-lssl -lcrypto"
+			echo "PATCH_SITES+=	ftp://ftp.stack.nl/pub/postfix/tls+ipv6/1.8/"
+			echo "PATCHFILES+=	tls+ipv6-1.8-pf-1.1.11-20021115.patch"
+			echo "PATCH_DIST_STRIP=	-p1"
+			echo "TLS_SUFFIX=	+ipv6+tls"
+			SUB_TLS=""
 			;;
 		*)
-			echo "Invalid option(s): $*" > /dev/stderr
+			echo "Unknown option(s): $*" > /dev/stderr
 			rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			exit 1
 			;;
