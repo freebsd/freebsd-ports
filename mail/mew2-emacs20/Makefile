@@ -19,7 +19,7 @@ MAINTAINER?=	kiri@FreeBSD.org
 MEW_MAJOR_VER?=	2
 
 # distfile version
-MEW_VER=	${MEW_MAJOR_VER}.0
+MEW_VER=	${MEW_MAJOR_VER}.1
 
 # document install directory by install-doc target
 MEW_DOCDIR?=	share/doc/${PORTNAME}${MEW_MAJOR_VER}

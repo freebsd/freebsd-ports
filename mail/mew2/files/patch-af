@@ -1,0 +1,55 @@
+--- bin/mewls.c.orig	Sat Sep  8 11:07:12 2001
++++ bin/mewls.c	Tue Nov 20 10:26:04 2001
+@@ -124,8 +124,8 @@
+ private void init_fields(char *);
+ private void print_field(char *, int, char *, char *);
+ private void init_search(char *, int);
+-private char *strcasechr(char *, int);
+-private char *strcasestr(char *, char *);
++private char *mystrcasechr(char *, int);
++private char *mystrcasestr(char *, char *);
+ private int  print_for_scan(FILE *, char *, char *);
+ private int  print_for_sort(FILE *, char *, char *);
+ private int  print_for_pick(FILE *, char *, char *);
+@@ -473,7 +473,7 @@
+ }
+ 
+ private char *
+-strcasechr(char *s, int c)
++mystrcasechr(char *s, int c)
+ {
+ 	int lc = tolower(c);
+ 	int uc = toupper(c);
+@@ -486,12 +486,12 @@
+ }
+ 
+ private char *
+-strcasestr(char *s1, char *s2)
++mystrcasestr(char *s1, char *s2)
+ {
+ 	char *p;
+ 	unsigned int len = strlen(s2);
+ 
+-	for (p = s1; (p = strcasechr(p, *s2)) != NULL; p++)
++	for (p = s1; (p = mystrcasechr(p, *s2)) != NULL; p++)
+ 		if (strncasecmp(p, s2, len) == 0)
+ 			return p;
+ 	return NULL;
+@@ -513,7 +513,7 @@
+ 				return TRUE;
+ 			}
+ 		} else {
+-			if (strcasestr(p, value) != NULL) {
++			if (mystrcasestr(p, value) != NULL) {
+ 				*end = tmp;
+ 				return TRUE;
+ 			}
+@@ -540,7 +540,7 @@
+ 					return TRUE;
+ 				}
+ 			} else {
+-				if (strcasestr(beg, value) != NULL) {
++				if (mystrcasestr(beg, value) != NULL) {
+ 					*end = tmp;
+ 					return TRUE;
+ 				}

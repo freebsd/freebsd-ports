@@ -47,7 +47,7 @@ share/doc/mew%%MEW_MAJOR_VER%%/contrib/mewinc
 %%EMACS_LIBDIR%%/etc/mew%%MEW_MAJOR_VER%%/mew-Image.xpm
 %%EMACS_LIBDIR%%/etc/mew%%MEW_MAJOR_VER%%/mew-Octet-Stream.xpm
 %%EMACS_LIBDIR%%/etc/mew%%MEW_MAJOR_VER%%/mew-Postscript.xpm
-%%EMACS_LIBDIR%%/etc/mew%%MEW_MAJOR_VER%%/mew-Rfc82%%MEW_MAJOR_VER%%.xpm
+%%EMACS_LIBDIR%%/etc/mew%%MEW_MAJOR_VER%%/mew-Rfc822.xpm
 %%EMACS_LIBDIR%%/etc/mew%%MEW_MAJOR_VER%%/mew-Text.xpm
 %%EMACS_LIBDIR%%/etc/mew%%MEW_MAJOR_VER%%/mew-Unknown.xpm
 %%EMACS_LIBDIR%%/etc/mew%%MEW_MAJOR_VER%%/mew-Video.xpm
