@@ -35,10 +35,6 @@ NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 502101
-EXTRA_PATCHES=	${FILESDIR}/extrapatch-gcc__config__freebsd-spec.h
-.endif
-
 .if ${PORTOBJFORMAT} == "aout"
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
 .else
