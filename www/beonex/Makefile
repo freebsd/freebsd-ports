@@ -64,6 +64,8 @@ CONFIGURE_ARGS=					\
 #		--with-pthreads
 #		--enable-svg
 
+# compiles but segfaults on 5.0-RC3/alpha
+ONLY_FOR_ARCHS=	i386
 PLIST=		${WRKDIR}/pkg-plist
 # LDAP is only used by mail and news so disable both together
 .if defined(WITHOUT_MAILNEWS)
