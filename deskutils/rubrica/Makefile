@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rubrica
-PORTVERSION=	1.0.12
-PORTREVISION=	2
+PORTVERSION=	1.0.13
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://digilander.libero.it/nfragale/download/rubrica/
 
@@ -17,10 +16,22 @@ COMMENT=	An addressbook for the gnome2 desktop
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget libgnomeui
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+INSTALL_TARGET=	install install-schemas
+
+GCONF_SCHEMAS=	rubrica.schemas
+
+post-patch:
+.for file in src/dialog.c src/ui.c
+	@${REINPLACE_CMD} -e 's|rub\.png|rubrica.png|g' ${WRKSRC}/${file}
+.endfor
+.for file in src/rubrica_type.h
+	@${REINPLACE_CMD} -e '/^#include/d' ${WRKSRC}/${file}
+.endfor
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -1,5 +1,4 @@
 bin/rubrica
-etc/gconf/schemas/rubrica.schemas
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -83,8 +82,8 @@ share/gnome/pixmaps/rubrica/question.png
 share/gnome/pixmaps/rubrica/remove-menu.png
 share/gnome/pixmaps/rubrica/remove.png
 share/gnome/pixmaps/rubrica/role.png
-share/gnome/pixmaps/rubrica/rub.png
 share/gnome/pixmaps/rubrica/rubrica.jpg
+share/gnome/pixmaps/rubrica/rubrica.png
 share/gnome/pixmaps/rubrica/save.png
 share/gnome/pixmaps/rubrica/sbug.png
 share/gnome/pixmaps/rubrica/scalabria.png
@@ -98,6 +97,7 @@ share/gnome/pixmaps/rubrica/testa.png
 share/gnome/pixmaps/rubrica/time.png
 share/gnome/pixmaps/rubrica/translation-info.png
 share/gnome/pixmaps/rubrica/translation.png
+share/gnome/pixmaps/rubrica/university.png
 share/gnome/pixmaps/rubrica/very-hi.png
 share/gnome/pixmaps/rubrica/view-column.png
 share/gnome/pixmaps/rubrica/view-info.png
