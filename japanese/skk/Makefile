@@ -11,7 +11,7 @@ CATEGORIES=	japanese elisp
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 
-MAINTAINER=	matusita@jp.freebsd.org
+MAINTAINER=	matusita@jp.FreeBSD.org
 
 SKKJISYO_SIZE?=	L
 SKKJISYO?=	SKK-JISYO.${SKKJISYO_SIZE}

@@ -11,7 +11,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	ftp://skk.kuis.kyoto-u.ac.jp/skk/${PORTVERSION}/
 DISTNAME=	skk${PORTVERSION}
 
-MAINTAINER=	matusita@jp.freebsd.org
+MAINTAINER=	matusita@jp.FreeBSD.org
 
 BUILD_DEPENDS=	/nonexistent:${SKK_MASTERDIR}:configure
 
