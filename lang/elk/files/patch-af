@@ -1,19 +1,41 @@
---- src/print.c.orig	Thu Apr  4 07:25:04 1996
-+++ src/print.c	Sun Dec 12 16:29:07 1999
-@@ -6,6 +6,7 @@
+--- ../../work.orig/elk-3.0/src/print.c	Thu Apr  4 08:25:04 1996
++++ src/print.c	Mon Oct 21 15:48:05 2002
+@@ -5,6 +5,7 @@
+ 
  #include <errno.h>
  #include <ctype.h>
++#include <string.h>
  #include <varargs.h>
-+#include <sys/param.h>
  
  #ifdef FLUSH_TIOCFLUSH
- #  include <sys/ioctl.h>
-@@ -556,7 +557,7 @@
+@@ -555,10 +556,6 @@
+     char *p;
      register c;
      char buf[256];
-     extern sys_nerr;
+-    extern sys_nerr;
 -#ifndef __bsdi__
-+#if !(defined(BSD) && (BSD >= 199306))
-     extern char *sys_errlist[];
- #endif
+-    extern char *sys_errlist[];
+-#endif
      GC_Node;
+     Alloca_Begin;
+ 
+@@ -573,13 +570,13 @@
+ 	    } else if (c == '%') {
+ 		Print_Char (port, '\n');
+ 	    } else if (c == 'e' || c == 'E') {
+-		if (Saved_Errno > 0 && Saved_Errno < sys_nerr) {
+-		    s = sys_errlist[Saved_Errno];
+-		    sprintf (buf, "%c%s", isupper (*s) ? tolower (*s) :
+-			*s, s+1);
+-		} else {
+-		    sprintf (buf, "error %d", Saved_Errno);
++		if (strerror_r(Saved_Errno, buf, sizeof(buf)) != 0) {
++			snprintf(buf, sizeof(buf) - 1, "unknown error: %d",
++				Saved_Errno);
++			buf[sizeof(buf) - 1] = '\0';
+ 		}
++		if (isupper(buf[0]))
++			buf[0] = tolower(buf[0]);
+ 		Print_Object (Make_String (buf, strlen (buf)), port,
+ 		    c == 'E', 0, 0);
+ 	    } else {
