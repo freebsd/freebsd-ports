@@ -4104,6 +4104,7 @@ o2c		ports/lang/o2c
 oaf		ports/devel/oaf
 objc		ports/lang/objc
 objformat	src/usr.bin/objformat
+objprelink	ports/devel/objprelink
 obliterate	ports/sysutils/obliterate
 obnc		ports/net/obnc
 ocaml		ports/lang/ocaml
