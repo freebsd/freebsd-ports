@@ -7,7 +7,7 @@
 
 PORTVERSION=	2.1.2
 MASTERDIR=	${.CURDIR}/../pips800
-COMMENT=	Photo Image Print System for Linux --- EPSON PM-780C (LPR)
+COMMENT=	Photo Image Print System for Linux --- EPSON PM-780C
 
 PRTYPE=		780
 
