@@ -45,6 +45,8 @@
 #include "spinlock.h"
 #include "restart.h"
 
+#if __FreeBSD__ == 4
+
 /*
  * Weak symbols for externally visible functions in this file:
  */
@@ -396,3 +398,11 @@ void __fresetlockfiles()
 	}
 	_SPINUNLOCK(&hash_lock);
 }
+
+#else
+
+void __fresetlockfiles()
+{
+	/* XXX: Should do something */
+}
+#endif
