@@ -407,24 +407,18 @@ share/VFlib/%%VFLIB_VERSION%%/jTeX/jfmsrc/minslg9.tfm
 share/VFlib/%%VFLIB_VERSION%%/jTeX/macros/Gen
 share/VFlib/%%VFLIB_VERSION%%/jTeX/macros/STYLE-SRC
 share/VFlib/%%VFLIB_VERSION%%/jTeX/README.euc
+share/VFlib/%%VFLIB_VERSION%%/vfontcap.orig
 share/VFlib/%%VFLIB_VERSION%%/vfontcap.mgp
 share/VFlib/%%VFLIB_VERSION%%/vfontcap.comp2
 share/VFlib/%%VFLIB_VERSION%%/vfontcap.bdf
-share/VFlib/%%VFLIB_VERSION%%/vfontcap.ORG
 share/VFlib/%%VFLIB_VERSION%%/vfontcap
 share/VFlib/%%VFLIB_VERSION%%/QA.txt
 share/VFlib/%%VFLIB_VERSION%%/QA-english.tex
 share/VFlib/%%VFLIB_VERSION%%/man.ps
 share/VFlib/%%VFLIB_VERSION%%/man.dvi
-share/fonts/watanabe_font/README
-share/fonts/watanabe_font/dviprt.vfn
-share/fonts/watanabe_font/mincho.vf1
-share/fonts/watanabe_font/mincho.vf2
 @dirrm share/VFlib/%%VFLIB_VERSION%%/jTeX/macros
 @dirrm share/VFlib/%%VFLIB_VERSION%%/jTeX/jfonts
 @dirrm share/VFlib/%%VFLIB_VERSION%%/jTeX/jfmsrc
 @dirrm share/VFlib/%%VFLIB_VERSION%%/jTeX
 @dirrm share/VFlib/%%VFLIB_VERSION%%
 @dirrm share/VFlib
-@dirrm share/fonts/watanabe_font
-@unexec rmdir %D/share/fonts 2>/dev/null || true

@@ -10,14 +10,14 @@ PORTVERSION=	${VFLIB_VERSION}
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://gull.se.hiroshima-u.ac.jp/pub/TypeHack/
 DISTNAME=	VFlib2-${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		watanabe-vf.tar.Z
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	mita@FreeBSD.org
 
 BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake-4
+RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/TrueType/kochi-mincho.ttf:${PORTSDIR}/japanese/kochi-ttfonts
 
-VFLIB_VERSION=	2.25.2
+VFLIB_VERSION=	2.25.6
 PLIST_SUB=	VFLIB_VERSION=${VFLIB_VERSION}
 
 USE_FREETYPE=	yes
@@ -36,9 +36,6 @@ pre-install:
 	  ${CP} COPYING COPYING.LIB README.txt.JP_EUC \
 		${PREFIX}/share/VFlib/${VFLIB_VERSION} ;\
 	  ${CP} -R jTeX ${PREFIX}/share/VFlib/${VFLIB_VERSION})
-	${MKDIR} ${PREFIX}/share/fonts/watanabe_font
-	tar -C ${PREFIX}/share/fonts/watanabe_font \
-	  -xzf ${DISTDIR}/watanabe-vf.tar.Z
 
 post-install:
 	${MV} ${PREFIX}/share/VFlib/${VFLIB_VERSION}/VF.h ${PREFIX}/include
