@@ -36,6 +36,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gtk12 gdkpixbuf
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 
 MAN1=		macopix.1
 
