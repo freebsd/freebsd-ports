@@ -1,5 +1,5 @@
 # New ports collection makefile for:   RT2
-# Date created:        12 Auguest 2002
+# Date created:        12 August 2002
 # Whom:                plasma
 #
 # $FreeBSD$
@@ -7,6 +7,7 @@
 
 PORTNAME=	rt2
 PORTVERSION=	2.0.15
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.fsck.com/pub/rt/release/
 DISTNAME=	rt-${PORTVERSION:S/./-/g}
@@ -39,8 +40,6 @@ BUILD_DEPENDS=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl \
 		${SITE_PERL}/Tie/IxHash.pm:${PORTSDIR}/devel/p5-Tie-IxHash \
 		${SITE_PERL}/CGI/Cookie.pm:${PORTSDIR}/www/p5-CGI.pm \
 		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
-
-BROKEN=         "Does not build"
 
 WRKSRC=		${WRKDIR}/rt-${RT_VERSION}
 RT_VERSION=	${PORTVERSION:C/\./-/g}
