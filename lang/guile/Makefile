@@ -7,7 +7,7 @@
 
 PORTNAME=	guile
 PORTVERSION=	1.6.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang scheme
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	guile
@@ -18,7 +18,8 @@ COMMENT=	GNU Ubiquitous Intelligent Language for Extension
 USE_LIBLTDL=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+LIBTOOLFILES=	configure guile-readline/configure
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnometarget
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
