@@ -16,7 +16,8 @@ MASTER_SITES=	http://www.m-hollstein.de/libgxx/  \
 		ftp://ftp.ninemoons.com/pub/mirrors/egcs/infrastructure/  \
 		${MASTER_SITE_GNU}
 
-PATCH_SITES=	http://www.m-hollstein.de/libgxx/
+PATCH_SITES=	http://www.m-hollstein.de/libgxx/  \
+		http://people.FreeBSD.org/~obrien/Distfiles/
 PATCHFILES=	${DISTNAME}-20000312.diff.gz
 PATCH_DIST_STRIP=	-p1
 
