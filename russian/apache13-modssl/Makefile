@@ -92,6 +92,10 @@ MAN8+=		suexec.8
 	@${ECHO} "Define WITH_SUEXEC to build with suexec support."
 .endif
 
+.if defined(APACHE_CONFIGURE_ARGS)
+CONFIGURE_ARGS+=	${APACHE_CONFIGURE_ARGS}
+.endif
+
 pre-patch:
 	@cd ${WRKDIR}/mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE} \
 	&& ${ECHO_MSG} "===>  Applying mod_ssl-${VERSION_MODSSL} extension" \
