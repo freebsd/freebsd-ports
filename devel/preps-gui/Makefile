@@ -17,6 +17,8 @@ COMMENT=	Problem reporting system
 
 LIB_DEPENDS+=	preps-1.6.1:${PORTSDIR}/devel/libpreps
 
+BROKEN=		Incomplete pkg-plist
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12 gnomelibs

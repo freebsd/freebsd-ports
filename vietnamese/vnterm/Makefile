@@ -24,6 +24,8 @@ BUILD_DEPENDS=  ${LOCALBASE}/lib/libviqr.a:${PORTSDIR}/vietnamese/libviet \
 		mkfontdir:${X_CLIENTS_PORT}
 RUN_DEPENDS=	${PREFIX}/lib/X11/fonts/vietnamese/fonts.dir:${PORTSDIR}/vietnamese/vnxfonts
 
+BROKEN=		Incomplete pkg-plist
+
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - xc/programs/xterm
 WRKSRC=		${WRKDIR}/xc/programs/xterm
 XMKMF=		xmkmf

@@ -19,6 +19,8 @@ COMMENT=	Chinese GB2312,BIG5,Japanese code input server
 BUILD_DEPENDS=	xmkmf:${X_IMAKE_PORT} \
 		mkfontdir:${X_CLIENTS_PORT}
 
+BROKEN=		Incomplete pkg-plist
+
 USE_XLIB=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

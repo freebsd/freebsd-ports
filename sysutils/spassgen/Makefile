@@ -16,6 +16,8 @@ COMMENT=	Qt GUI secure password generator
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
+BROKEN=		Incomplete pkg-plist
+
 USE_QT_VER=	3
 USE_GMAKE=	yes
 USE_BZIP2=	yes

@@ -18,6 +18,8 @@ COMMENT=	A clone of the classic game Missile Command
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
+BROKEN=		Incomplete pkg-plist
+
 USE_SDL=	mixer sdl
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

@@ -15,6 +15,8 @@ DISTNAME=	OilWar-${PORTVERSION}
 MAINTAINER=	hendrik@scholz.net
 COMMENT=	Evil army wants to steal your oil
 
+BROKEN=		Incomplete pkg-plist
+
 USE_SDL=	image mixer sdl
 GNU_CONFIGURE=	yes
 

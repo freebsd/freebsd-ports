@@ -18,6 +18,8 @@ EXTRA_PATCHES=	${.CURDIR}/files/extra-patch-configure.in \
 		${.CURDIR}/files/extra-patch-src:feature.h \
 		${.CURDIR}/files/extra-patch-src:options.c
 
+BROKEN=		Incomplete pkg-plist
+
 USE_AUTOCONF_VER=	213
 CONFIGURE_ARGS=	--enable-trans --enable-utmp \
 		--enable-xim --with-theme-update \

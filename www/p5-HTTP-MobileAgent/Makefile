@@ -20,6 +20,8 @@ RUN_DEPENDS=	${PM_DEPENDS}
 
 PM_DEPENDS=	${SITE_PERL}/HTTP/Headers.pm:${PORTSDIR}/www/p5-libwww
 
+BROKEN=		Incomplete pkg-plist
+
 PERL_CONFIGURE=	yes
 
 MAN3=		HTTP::MobileAgent.3 \
