@@ -13,7 +13,7 @@ DISTNAME=	tv-${PORTVERSION}
 
 MAINTAINER=	tonym@biolateral.com.au
 
-LIB_DEPENDS=	wx_gtk.2:${PORTSDIR}/x11-toolkits/wxgtk
+LIB_DEPENDS=	wx_gtk-2.2.2:${PORTSDIR}/x11-toolkits/wxgtk
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

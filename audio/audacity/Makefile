@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	freebsdports@arved.de
 
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	wx_gtk.2:${PORTSDIR}/x11-toolkits/wxgtk \
+LIB_DEPENDS=	wx_gtk-2.2.2:${PORTSDIR}/x11-toolkits/wxgtk \
 		mad.1:${PORTSDIR}/audio/mad
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
