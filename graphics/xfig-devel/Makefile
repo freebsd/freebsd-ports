@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	xfig
-PORTVERSION=	3.2.3a
+PORTVERSION=	3.2.3c
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
-		ftp://www-epb.lbl.gov/xfig/
+MASTER_SITES=	ftp://www-epb.lbl.gov/xfig/ \
+		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications/drawing_tools/xfig
-DISTNAME=	${PORTNAME}.${PORTVERSION}
+DISTNAME=	${PORTNAME}.${PORTVERSION}.full
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -19,6 +19,8 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		Xaw3d.6:${PORTSDIR}/x11-toolkits/Xaw3d
 RUN_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
+
+WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}
 
 USE_IMAKE=	yes
 MAN1=		xfig.1
@@ -30,7 +32,6 @@ pre-fetch:
 .endif
 
 post-patch:
-	@${PERL} -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/Imakefile
 .if defined(NO_GSBIT)
 	@${PERL} -pi -e 's|-DGSBIT ||g' ${WRKSRC}/Imakefile
 .endif
