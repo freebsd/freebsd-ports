@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	talkfilters
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.2
 CATEGORIES=	misc
-MASTER_SITES=	http://www2.dystance.net:8080/software/talkfilters/
+MASTER_SITES=	http://www2.dystance.net/software/talkfilters/
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Set of filters to convert English text to various stereotyped dialects
