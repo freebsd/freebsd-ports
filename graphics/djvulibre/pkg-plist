@@ -36,6 +36,7 @@ share/djvu/osi/ja_JP/libdjvu++.xml
 share/djvu/osi/ja_JP/messages.xml
 @dirrm share/djvu/ja_JP
 @dirrm share/djvu
-%%PORTDOCS%%share/doc/djvulibre/djvu2spec.djvu
-%%PORTDOCS%%share/doc/djvulibre/djvu3changes.txt
-%%PORTDOCS%%share/doc/djvulibre/lizard2002.djvu
+%%PORTDOCS%%%%DOCSDIR%%/djvu2spec.djvu
+%%PORTDOCS%%%%DOCSDIR%%/djvu3changes.txt
+%%PORTDOCS%%%%DOCSDIR%%/lizard2002.djvu
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
