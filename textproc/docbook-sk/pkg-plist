@@ -2,8 +2,6 @@ share/xml/docbook/%%DTD_VERSION%%/40chg.txt
 share/xml/docbook/%%DTD_VERSION%%/41chg.txt
 share/xml/docbook/%%DTD_VERSION%%/ChangeLog
 share/xml/docbook/%%DTD_VERSION%%/calstblx.dtd
-@unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove %%DOCBOOKDIR%%/catalog.xmlshare/xml/docbook/%%DTD_VERSION%%/catalog.xml
-@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add nextCatalog %%DOCBOOKDIR%%/catalog.xml
 share/xml/docbook/%%DTD_VERSION%%/dbcentx.mod
 share/xml/docbook/%%DTD_VERSION%%/dbgenent.mod
 share/xml/docbook/%%DTD_VERSION%%/dbhierx.mod
