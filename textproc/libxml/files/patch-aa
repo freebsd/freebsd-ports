@@ -1,33 +1,22 @@
---- Makefile.in.orig	Fri May  4 02:42:20 2001
-+++ Makefile.in	Fri May  4 11:39:59 2001
+--- Makefile.in.orig	Mon May 14 05:39:15 2001
++++ Makefile.in	Mon May 21 22:15:39 2001
+@@ -37,3 +37,3 @@
+ pkgdatadir = $(datadir)/@PACKAGE@
+-pkglibdir = $(libdir)/@PACKAGE@
++pkglibdir = $(prefix)/libdata/pkgconfig
+ pkgincludedir = $(includedir)/@PACKAGE@
 @@ -108,3 +108,3 @@
  
 -libxml_la_LDFLAGS = -version-info @LIBXML_VERSION_INFO@ @Z_LIBS@
 +libxml_la_LDFLAGS = -version-info 5:0:0 @Z_LIBS@
- 
+
 @@ -140,3 +140,3 @@
  
 -confexecdir = $(libdir)
 +confexecdir = $(sysconfdir)
  confexec_DATA = xmlConf.sh
-@@ -176,3 +176,3 @@
- LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
--DATA =  $(confexec_DATA) $(pkgconfig_DATA)
-+DATA =  $(confexec_DATA)
+@@ -147,3 +147,3 @@
  
-@@ -623,4 +623,3 @@
- 
--install-data-am: install-pkgconfigDATA install-xmlincHEADERS \
--		install-data-local
-+install-data-am: install-xmlincHEADERS install-data-local
- install-data: install-data-recursive
-@@ -634,3 +633,3 @@
- uninstall: uninstall-recursive
--all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(SCRIPTS) $(DATA) \
-+all-am: Makefile $(LTLIBRARIES) $(SCRIPTS) $(DATA) \
- 		$(HEADERS) config.h
-@@ -642,3 +641,3 @@
- 	$(mkinstalldirs)  $(DESTDIR)$(libdir) $(DESTDIR)$(bindir) \
--		$(DESTDIR)$(confexecdir) $(DESTDIR)$(pkgconfigdir) \
-+		$(DESTDIR)$(confexecdir) \
- 		$(DESTDIR)$(xmlincdir)
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(pkglibdir)
+ pkgconfig_DATA = libxml.pc

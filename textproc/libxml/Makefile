@@ -7,11 +7,15 @@
 
 PORTNAME=	libxml
 PORTVERSION=	1.8.13
+PORTREVISION=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/libxml
 
 MAINTAINER=	gnome@FreeBSD.org
+
+BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
+RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes

@@ -1,23 +1,21 @@
---- Makefile.in.orig	Thu Oct 12 11:06:49 2000
-+++ Makefile.in	Thu Oct 12 13:28:39 2000
-@@ -97,3 +97,3 @@
+--- Makefile.in.orig	Sun May 13 02:20:09 2001
++++ Makefile.in	Mon May 21 22:32:11 2001
+@@ -37,3 +37,3 @@
+ pkgdatadir = $(datadir)/@PACKAGE@
+-pkglibdir = $(libdir)/@PACKAGE@
++pkglibdir = $(prefix)/libdata/pkgconfig
+ pkgincludedir = $(includedir)/@PACKAGE@
+@@ -93,3 +93,2 @@
+ YACC = @YACC@
+-pkglibdir = @pkglibdir@
+ 
+@@ -97,3 +96,3 @@
  
 -SUBDIRS = popt libIDL src test
 +SUBDIRS = popt libIDL src
  
-@@ -114,3 +114,3 @@
+@@ -106,3 +105,3 @@
  
--DATA =  $(m4data_DATA) $(pkgconfig_DATA)
-+DATA =  $(m4data_DATA)
- 
-@@ -396,3 +396,3 @@
- 
--install-data-am: install-m4dataDATA install-pkgconfigDATA
-+install-data-am: install-m4dataDATA
- install-data: install-data-recursive
-@@ -411,4 +411,3 @@
- installdirs-am:
--	$(mkinstalldirs)  $(DESTDIR)$(bindir) $(DESTDIR)$(m4datadir) \
--		$(DESTDIR)$(pkgconfigdir)
-+	$(mkinstalldirs)  $(DESTDIR)$(bindir) $(DESTDIR)$(m4datadir)
- 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(pkglibdir)
+ pkgconfig_DATA = ORBit.pc

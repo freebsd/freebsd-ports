@@ -16,5 +16,7 @@ lib/libImlib.so.5
 lib/libgdk_imlib.a
 lib/libgdk_imlib.so
 lib/libgdk_imlib.so.5
+libdata/pkgconfig/imlib.pc
+libdata/pkgconfig/imlibgdk.pc
 share/aclocal/imlib.m4
 @dirrm etc/imlib

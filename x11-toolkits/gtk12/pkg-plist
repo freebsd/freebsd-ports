@@ -131,6 +131,8 @@ lib/libgdk12.so.2
 lib/libgtk12.a
 lib/libgtk12.so
 lib/libgtk12.so.2
+libdata/pkgconfig/gdk.pc
+libdata/pkgconfig/gtk+.pc
 share/aclocal/gtk.m4
 share/locale/az/LC_MESSAGES/gtk+.mo
 share/locale/ca/LC_MESSAGES/gtk+.mo
@@ -223,6 +225,7 @@ share/themes/Default/gtk/gtkrc.yi
 share/themes/Default/gtk/gtkrc.zh_CN
 share/themes/Default/gtk/gtkrc.zh_TW.Big5
 @exec mkdir -p %D/lib/gtk/themes/engines
+@dirrm libdata/pkgconfig
 @dirrm lib/gtk/themes/engines
 @dirrm lib/gtk/themes
 @dirrm lib/gtk

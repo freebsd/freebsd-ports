@@ -14,5 +14,8 @@ lib/libglade-bonobo.so.4
 lib/libglade-gnome.a
 lib/libglade-gnome.so
 lib/libglade-gnome.so.4
+libdata/pkgconfig/libglade.pc
+libdata/pkgconfig/libglade-bonobo.pc
+libdata/pkgconfig/libglade-gnome.pc
 share/aclocal/libglade.m4
 @dirrm include/glade

@@ -1,17 +1,12 @@
---- libefs/Makefile.in.orig	Tue Oct  3 21:50:49 2000
-+++ libefs/Makefile.in	Tue Oct  3 22:26:30 2000
-@@ -91,3 +91,3 @@
- CONFIG_CLEAN_FILES =  libefs-config libefs.pc
--SCRIPTS =  $(bin_SCRIPTS) $(pc_SCRIPTS)
-+SCRIPTS =  $(bin_SCRIPTS)
+--- libefs/Makefile.in.orig	Mon May 14 17:01:15 2001
++++ libefs/Makefile.in	Tue May 22 11:04:58 2001
+@@ -37,3 +37,3 @@
+ pkgdatadir = $(datadir)/@PACKAGE@
+-pkglibdir = $(libdir)/@PACKAGE@
++pkglibdir = $(prefix)/libdata/pkgconfig
+ pkgincludedir = $(includedir)/@PACKAGE@
+@@ -85,3 +85,3 @@
  
-@@ -350,3 +350,3 @@
- 
--install-data-am: install-pcSCRIPTS
-+install-data-am:
- install-data: install-data-recursive
-@@ -364,3 +364,3 @@
- installdirs-am:
--	$(mkinstalldirs)  $(DESTDIR)$(bindir) $(DESTDIR)$(pcdir)
-+	$(mkinstalldirs)  $(DESTDIR)$(bindir)
- 
+-pcdir = $(libdir)/pkgconfig
++pcdir = $(pkglibdir)
+ pc_SCRIPTS = libefs.pc

@@ -106,6 +106,7 @@ lib/libbonobox.so.2
 lib/libefs.a
 lib/libefs.so
 lib/libefs.so.1
+libdata/pkgconfig/libefs.pc
 share/gnome/bonobo/html/bonobo-api.html
 share/gnome/bonobo/html/bonobo-api.sgml
 share/gnome/bonobo/html/bonobo-decl.txt

@@ -23,6 +23,8 @@ lib/libgconf-1.so.1
 lib/libgconf-gtk-1.a
 lib/libgconf-gtk-1.so
 lib/libgconf-gtk-1.so.1
+libdata/pkgconfig/gconf.pc
+libdata/pkgconfig/gconfgtk.pc
 share/aclocal/gconf-1.m4
 share/gnome/oaf/gconfd-1.oafinfo
 share/locale/az/LC_MESSAGES/GConf.mo

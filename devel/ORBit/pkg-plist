@@ -93,6 +93,8 @@ lib/libORBitutil.so
 lib/libORBitutil.so.2
 lib/libname-server.a
 lib/liborbit-c-backend.a
+libdata/pkgconfig/ORBit.pc
+libdata/pkgconfig/libIDL.pc
 share/aclocal/ORBit.m4
 share/aclocal/libIDL.m4
 @dirrm include/IIOP

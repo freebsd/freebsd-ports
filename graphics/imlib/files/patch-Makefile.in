@@ -1,24 +1,12 @@
 --- Makefile.in.orig	Tue Mar 27 22:21:26 2001
-+++ Makefile.in	Tue Apr  3 13:22:57 2001
-@@ -109,4 +109,2 @@
++++ Makefile.in	Mon May 21 19:43:10 2001
+@@ -37,3 +37,3 @@
+ pkgdatadir = $(datadir)/@PACKAGE@
+-pkglibdir = $(libdir)/@PACKAGE@
++pkglibdir = $(prefix)/libdata/pkgconfig
+ pkgincludedir = $(includedir)/@PACKAGE@
+@@ -109,3 +109,3 @@
  
 -pkgconfigdir = $(libdir)/pkgconfig
--pkgconfig_DATA = imlib.pc imlibgdk.pc
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-@@ -117,3 +115,3 @@
- 
--DATA =  $(m4data_DATA) $(pkgconfig_DATA)
-+DATA =  $(m4data_DATA)
- 
-@@ -402,3 +400,3 @@
- 
--install-data-am: install-m4dataDATA install-pkgconfigDATA
-+install-data-am: install-m4dataDATA
- install-data: install-data-recursive
-@@ -417,4 +415,4 @@
- installdirs-am:
--	$(mkinstalldirs)  $(DESTDIR)$(bindir) $(DESTDIR)$(m4datadir) \
--		$(DESTDIR)$(pkgconfigdir)
-+	$(mkinstalldirs)  $(DESTDIR)$(bindir) $(DESTDIR)$(m4datadir)
-+		
- 
++pkgconfigdir = $(pkglibdir)
+ pkgconfig_DATA = imlib.pc imlibgdk.pc

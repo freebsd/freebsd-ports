@@ -39,42 +39,29 @@
 -libORBitCosNaming_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
 +libORBitCosNaming_la_LDFLAGS =  	-version-info 2:0:0
  
---- libIDL/Makefile.in.orig	Thu Oct 12 11:06:54 2000
-+++ libIDL/Makefile.in	Thu Oct 12 13:30:30 2000
+--- libIDL/Makefile.in.orig	Sun May 13 02:20:15 2001
++++ libIDL/Makefile.in	Mon May 21 22:33:45 2001
+@@ -42,3 +42,3 @@
+ pkgdatadir = $(datadir)/@PACKAGE@
+-pkglibdir = $(libdir)/@PACKAGE@
++pkglibdir = $(prefix)/libdata/pkgconfig
+ pkgincludedir = $(includedir)/@PACKAGE@
 @@ -92,3 +92,3 @@
  MAINT = @MAINT@
 -MAKEINFO = @MAKEINFO@
 +MAKEINFO = @MAKEINFO@ --no-split
  OBJDUMP = @OBJDUMP@
-@@ -122,4 +122,3 @@
+@@ -122,3 +122,3 @@
  
 -libIDL_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)				  -release $(LT_RELEASE)
--
 +libIDL_la_LDFLAGS = -version-info 2:0:0
  
-@@ -131,3 +130,3 @@
+@@ -131,6 +131,6 @@
  
 -confexecdir = $(libdir)
 +confexecdir = $(sysconfdir)
  confexec_DATA = libIDLConf.sh
-@@ -164,3 +163,3 @@
- TEXINFOS = libIDL.texi
--DATA =  $(confexec_DATA) $(m4data_DATA) $(pkgconfig_DATA)
-+DATA =  $(confexec_DATA) $(m4data_DATA)
  
-@@ -596,3 +595,3 @@
- install-data-am: install-info-am install-m4dataDATA \
--		install-pkgconfigDATA install-pkgincludeHEADERS
-+		install-pkgincludeHEADERS
- install-data: install-data-am
-@@ -607,3 +606,3 @@
- uninstall: uninstall-am
--all-am: Makefile $(INFO_DEPS) $(LTLIBRARIES) $(PROGRAMS) $(SCRIPTS) \
-+all-am: Makefile $(INFO_DEPS) $(LTLIBRARIES) $(SCRIPTS) \
- 		$(DATA) $(HEADERS)
-@@ -615,4 +614,3 @@
- 		$(DESTDIR)$(infodir) $(DESTDIR)$(confexecdir) \
--		$(DESTDIR)$(m4datadir) $(DESTDIR)$(pkgconfigdir) \
--		$(DESTDIR)$(pkgincludedir)
-+		$(DESTDIR)$(m4datadir) $(DESTDIR)$(pkgincludedir)
- 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(pkglibdir)
+ pkgconfig_DATA = libIDL.pc
