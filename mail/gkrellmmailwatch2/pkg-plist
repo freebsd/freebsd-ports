@@ -1,3 +1,1 @@
 libexec/gkrellm2/plugins/mailwatch.so
-@dirrm libexec/gkrellm2/plugins
-@dirrm libexec/gkrellm2
