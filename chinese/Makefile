@@ -107,6 +107,7 @@
     SUBDIR += qterm
     SUBDIR += scim-chinese
     SUBDIR += scim-tables
+    SUBDIR += srecite
     SUBDIR += stardict2-dict-zh_CN
     SUBDIR += stardict2-dict-zh_TW
     SUBDIR += tcl83
