@@ -1,9 +1,19 @@
-Tagged Message Delivery Agent (TMDA).
+Tagged Message Delivery Agent (TMDA) is designed to significantly reduce the
+amount of spam (junk-mail) you receive.  TMDA strives to be more effective, 
+yet less time-consuming than traditional spam filters. 
 
-TMDA is an OSI certified software application designed to
-significantly reduce the amount of SPAM/UCE (junk-mail) you receive.
-TMDA combines a "whitelist" (for known/trusted senders), a "blacklist"
-(for undesired senders), and a cryptographically enhanced confirmation
-system (for unknown, but legitimate senders).
+The technical countermeasures used by TMDA to thwart spam include: 
+- whitelists: accept mail from known, trusted senders
+- blacklists: refuse mail from undesired senders
+- challenge/response: allows unknown senders which aren't on the whitelist or
+  blacklist the chance to confirm that their message is legitimate (non-spam)
+- tagged addresses: special-purpose e-mail addresses such as time-dependent
+  addresses, or addresses which only accept certain kinds of communication.
+  These increase the transparency of TMDA for unknown senders by allowing them
+  to safely circumvent the challenge/response system.
 
-WWW: http://tmda.net/
+TMDA can also be used as a general purpose local mail delivery agent to filter,
+sort, deliver and dispose of incoming mail.
+
+Author:	Jason R. Mastaler
+WWW:	http://tmda.net/
