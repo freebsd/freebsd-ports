@@ -8,6 +8,8 @@ share/yacas/addons/editvi.ys
 share/yacas/addons/editvi.ys.def
 share/yacas/addons/gnuplot.ys
 share/yacas/addons/gnuplot.ys.def
+share/yacas/addons/unix.ys
+share/yacas/addons/unix.ys.def
 share/yacas/array.rep/code.ys
 share/yacas/array.rep/code.ys.def
 share/yacas/assoc.rep/code.ys
@@ -34,6 +36,11 @@ share/yacas/documentation/codingchapter4.html
 share/yacas/documentation/codingchapter5.html
 share/yacas/documentation/codingchapters.html
 share/yacas/documentation/codingmanual.html
+share/yacas/documentation/essays.html
+share/yacas/documentation/essayschapter1.html
+share/yacas/documentation/essayschapter2.html
+share/yacas/documentation/essayschapters.html
+share/yacas/documentation/essaysmanual.html
 share/yacas/documentation/intro.html
 share/yacas/documentation/introchapter1.html
 share/yacas/documentation/introchapter2.html
@@ -63,16 +70,19 @@ share/yacas/documentation/refprogchapter1.html
 share/yacas/documentation/refprogchapter2.html
 share/yacas/documentation/refprogchapter3.html
 share/yacas/documentation/refprogchapter4.html
+share/yacas/documentation/refprogchapter5.html
 share/yacas/documentation/refprogchapters.html
 share/yacas/documentation/refprogmanual.html
 share/yacas/documentation/yacaslogo.gif
 share/yacas/example.rep/code.ys
 share/yacas/example.rep/code.ys.def
+share/yacas/examples/ABIN.ys
 share/yacas/examples/benchbuild.ys
 share/yacas/examples/benchmark.ys
 share/yacas/examples/benchmark2.ys
 share/yacas/examples/findsum.ys
 share/yacas/examples/goldbach.ys
+share/yacas/examples/pi.ys
 share/yacas/examples/queens.ys
 share/yacas/examples/series.ys
 share/yacas/examples/tests.ys
@@ -87,6 +97,72 @@ share/yacas/functional.rep/code.ys.def
 share/yacas/glview.ys
 share/yacas/html.rep/code.ys
 share/yacas/html.rep/code.ys.def
+share/yacas/include/anumber.h
+share/yacas/include/anumber.inl
+share/yacas/include/arggetter.h
+share/yacas/include/arrayclass.h
+share/yacas/include/arrayclass.inl
+share/yacas/include/choices.h
+share/yacas/include/commandline.h
+share/yacas/include/ctokenizer.h
+share/yacas/include/debugmem.h
+share/yacas/include/deffile.h
+share/yacas/include/deffile.inl
+share/yacas/include/errors.h
+share/yacas/include/evalfunc.h
+share/yacas/include/genericobject.h
+share/yacas/include/genericstructs.h
+share/yacas/include/grower.h
+share/yacas/include/grower.inl
+share/yacas/include/infixparser.h
+share/yacas/include/lispassert.h
+share/yacas/include/lispatom.h
+share/yacas/include/lispcleanupstack.h
+share/yacas/include/lispenvironment.h
+share/yacas/include/lisperror.h
+share/yacas/include/lispeval.h
+share/yacas/include/lispevalhash.h
+share/yacas/include/lispglobals.h
+share/yacas/include/lisphash.h
+share/yacas/include/lisphash.inl
+share/yacas/include/lispio.h
+share/yacas/include/lispobject.h
+share/yacas/include/lispobject.inl
+share/yacas/include/lispparser.h
+share/yacas/include/lispplugin.h
+share/yacas/include/lispstring.h
+share/yacas/include/lispstring.inl
+share/yacas/include/lispuserfunc.h
+share/yacas/include/log.h
+share/yacas/include/mathcommands.h
+share/yacas/include/mathenvironment.h
+share/yacas/include/mathuserfunc.h
+share/yacas/include/mathutil.h
+share/yacas/include/numbers.h
+share/yacas/include/patcher.h
+share/yacas/include/patternclass.h
+share/yacas/include/patterns.h
+share/yacas/include/plat/linux32/lisptype.h
+share/yacas/include/plat/linux32/platdll.h
+share/yacas/include/plat/linux32/platfileio.h
+share/yacas/include/plat/linux32/stubs.inl
+share/yacas/include/platmath.h
+share/yacas/include/ramdisk.h
+share/yacas/include/refcount.h
+share/yacas/include/standard.h
+share/yacas/include/standard.inl
+share/yacas/include/stdcommandline.h
+share/yacas/include/stdfileio.h
+share/yacas/include/stringio.h
+share/yacas/include/stubs.h
+share/yacas/include/substitute.h
+share/yacas/include/tokenizer.h
+share/yacas/include/unipoly.h
+share/yacas/include/unixcommandline.h
+share/yacas/include/xmltokenizer.h
+share/yacas/include/yacas.h
+share/yacas/include/yacasbase.h
+share/yacas/include/yacasprivate.h
 share/yacas/integrate.rep/code.ys
 share/yacas/integrate.rep/code.ys.def
 share/yacas/limit.rep/code.ys
@@ -99,6 +175,7 @@ share/yacas/localrules.rep/code.ys
 share/yacas/localrules.rep/code.ys.def
 share/yacas/logic.rep/code.ys
 share/yacas/logic.rep/code.ys.def
+share/yacas/maketest
 share/yacas/multivar.rep/code.ys
 share/yacas/multivar.rep/code.ys.def
 share/yacas/newly.rep/code.ys
@@ -153,53 +230,56 @@ share/yacas/trigsimp.rep/code.ys.def
 share/yacas/univar.rep/code.ys
 share/yacas/univar.rep/code.ys.def
 share/yacas/yacasinit.ys
-@dirrm share/yacas/univar.rep
-@dirrm share/yacas/trigsimp.rep
-@dirrm share/yacas/texform.rep
-@dirrm share/yacas/testers.rep
-@dirrm share/yacas/tensor.rep
-@dirrm share/yacas/sums.rep
-@dirrm share/yacas/substitute.rep
-@dirrm share/yacas/stubs.rep
-@dirrm share/yacas/stdfuncs.rep
-@dirrm share/yacas/stats.rep
-@dirrm share/yacas/solve.rep
-@dirrm share/yacas/simplify.rep
-@dirrm share/yacas/random.rep
-@dirrm share/yacas/radsimp.rep
-@dirrm share/yacas/rabinmiller.rep
-@dirrm share/yacas/pslq.rep
-@dirrm share/yacas/predicates.rep
-@dirrm share/yacas/patterns.rep
-@dirrm share/yacas/padic.rep
-@dirrm share/yacas/orthopoly.rep
-@dirrm share/yacas/openmath.rep
-@dirrm share/yacas/odesolver.rep
-@dirrm share/yacas/numbers.rep
-@dirrm share/yacas/newly.rep
-@dirrm share/yacas/multivar.rep
-@dirrm share/yacas/logic.rep
-@dirrm share/yacas/localrules.rep
-@dirrm share/yacas/lists.rep
-@dirrm share/yacas/linalg.rep
-@dirrm share/yacas/limit.rep
-@dirrm share/yacas/integrate.rep
-@dirrm share/yacas/html.rep
-@dirrm share/yacas/functional.rep
-@dirrm share/yacas/formula.rep
-@dirrm share/yacas/fakedb.rep
-@dirrm share/yacas/factors.rep
-@dirrm share/yacas/examples
-@dirrm share/yacas/example.rep
-@dirrm share/yacas/documentation
-@dirrm share/yacas/deriv.rep
-@dirrm share/yacas/deffunc.rep
-@dirrm share/yacas/cstubgen.rep
-@dirrm share/yacas/controlflow.rep
-@dirrm share/yacas/constants.rep
-@dirrm share/yacas/complex.rep
-@dirrm share/yacas/c_form.rep
-@dirrm share/yacas/assoc.rep
-@dirrm share/yacas/array.rep
 @dirrm share/yacas/addons
+@dirrm share/yacas/array.rep
+@dirrm share/yacas/assoc.rep
+@dirrm share/yacas/c_form.rep
+@dirrm share/yacas/complex.rep
+@dirrm share/yacas/constants.rep
+@dirrm share/yacas/controlflow.rep
+@dirrm share/yacas/cstubgen.rep
+@dirrm share/yacas/deffunc.rep
+@dirrm share/yacas/deriv.rep
+@dirrm share/yacas/documentation
+@dirrm share/yacas/example.rep
+@dirrm share/yacas/examples
+@dirrm share/yacas/factors.rep
+@dirrm share/yacas/fakedb.rep
+@dirrm share/yacas/formula.rep
+@dirrm share/yacas/functional.rep
+@dirrm share/yacas/html.rep
+@dirrm share/yacas/include/plat/linux32
+@dirrm share/yacas/include/plat
+@dirrm share/yacas/include
+@dirrm share/yacas/integrate.rep
+@dirrm share/yacas/limit.rep
+@dirrm share/yacas/linalg.rep
+@dirrm share/yacas/lists.rep
+@dirrm share/yacas/localrules.rep
+@dirrm share/yacas/logic.rep
+@dirrm share/yacas/multivar.rep
+@dirrm share/yacas/newly.rep
+@dirrm share/yacas/numbers.rep
+@dirrm share/yacas/odesolver.rep
+@dirrm share/yacas/openmath.rep
+@dirrm share/yacas/orthopoly.rep
+@dirrm share/yacas/padic.rep
+@dirrm share/yacas/patterns.rep
+@dirrm share/yacas/predicates.rep
+@dirrm share/yacas/pslq.rep
+@dirrm share/yacas/rabinmiller.rep
+@dirrm share/yacas/radsimp.rep
+@dirrm share/yacas/random.rep
+@dirrm share/yacas/simplify.rep
+@dirrm share/yacas/solve.rep
+@dirrm share/yacas/stats.rep
+@dirrm share/yacas/stdfuncs.rep
+@dirrm share/yacas/stubs.rep
+@dirrm share/yacas/substitute.rep
+@dirrm share/yacas/sums.rep
+@dirrm share/yacas/tensor.rep
+@dirrm share/yacas/testers.rep
+@dirrm share/yacas/texform.rep
+@dirrm share/yacas/trigsimp.rep
+@dirrm share/yacas/univar.rep
 @dirrm share/yacas
