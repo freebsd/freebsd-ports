@@ -7,6 +7,7 @@
 
 PORTNAME=	tla
 PORTVERSION=	1.2
+PORTREVISION=   1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		http://regexps.srparish.net/src/${PORTNAME}/ \
@@ -26,7 +27,7 @@ USE_GMAKE=	yes
 ORIGWRKSRC=	${WRKDIR}/${DISTNAME}/src
 WRKSRC=		${ORIGWRKSRC}/=build
 
-pre-configure:
+pre-patch:
 	${MKDIR} ${WRKSRC}
 
 do-configure:
