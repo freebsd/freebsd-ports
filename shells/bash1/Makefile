@@ -3,14 +3,14 @@
 # Date created:		21 August 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.23 1997/02/17 06:41:50 obrien Exp $
+# $Id: Makefile,v 1.24 1997/06/16 11:00:19 max Exp $
 #
 
 DISTNAME=       bash-1.14.7
 CATEGORIES=	shells
 MASTER_SITES=   ${MASTER_SITE_GNU}
 
-MAINTAINER=	obrien@NUXI.com.
+MAINTAINER=	obrien@NUXI.com
 
 WRKSRC=         ${WRKDIR}/${DISTNAME}
 # Don't compress manpages or .so not works.
