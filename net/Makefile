@@ -786,6 +786,7 @@
     SUBDIR += xarchie
     SUBDIR += xbms
     SUBDIR += xbone
+    SUBDIR += xbone-gui
     SUBDIR += xferstats
     SUBDIR += xicq
     SUBDIR += xipdump
