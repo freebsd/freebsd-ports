@@ -3,7 +3,7 @@
 @@ -15,9 +15,9 @@
  use String::CRC32;
  
- my $version = '425';
+ my $version = '426';
 -my $url = $ARGV[1] || 'http://www.drweb.ru/ftp/update_free/linux/drweb32.lst';
 +#my $url = $ARGV[1] || 'http://www.drweb.ru/ftp/update_free/linux/drweb32.lst';
  #my $url = $ARGV[1] || 'http://www.drweb.ru/ftp/update_free/freebsd3/drweb32.lst';
