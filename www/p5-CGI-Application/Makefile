@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CGI-Application
-PORTVERSION=	2.1
+PORTVERSION=	2.3
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	CGI
@@ -15,13 +15,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	petef@FreeBSD.org
 
 BUILD_DEPENDS=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
-		${SITE_PERL}/CGI/Base.pm:${PORTSDIR}/www/p5-CGI-modules
+		${SITE_PERL}/CGI/Base.pm:${PORTSDIR}/www/p5-CGI-modules \
+		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 PERL_CONFIGURE=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-MAN3=		CGI::Application.3
+MAN3=		CGI::Application.3 CGI::Application::Mailform.3
 
 .include <bsd.port.mk>
