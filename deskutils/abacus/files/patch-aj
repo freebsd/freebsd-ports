@@ -1,0 +1,13 @@
+--- calc/Makefile.orig	Tue Oct 20 06:41:42 1998
++++ calc/Makefile	Thu Jan 20 18:36:31 2000
+@@ -40,8 +40,8 @@
+ 
+ gram.cc: gram.y scan.c
+ 	$(YACC) -d gram.y 
+-	mv gram.tab.c gram.cc
+-	mv gram.tab.h gram.h
++	mv y.tab.c gram.cc
++	mv y.tab.h gram.h
+ 
+ #
+ # include a dependency file if one exists

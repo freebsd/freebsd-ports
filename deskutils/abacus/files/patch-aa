@@ -1,6 +1,13 @@
---- Makefile.options	Tue Oct 20 20:19:08 1998
-+++ /home/andy/tmp/wrk/Makefile.options	Tue Jan  5 17:08:02 1999
-@@ -18,7 +18,7 @@
+--- Makefile.options.orig	Tue Oct 20 13:19:08 1998
++++ Makefile.options	Thu Jan 20 18:04:03 2000
+@@ -12,13 +12,13 @@
+ CPP=g++ -E
+ 
+ # Grammar generator - e.g. bison,yacc
+-YACC = bison
++YACC = yacc
+ 
+ # Lexical scanner - e.g. flex,lex
  LEX = flex
  
  # Favourite flags for favourite compiler
