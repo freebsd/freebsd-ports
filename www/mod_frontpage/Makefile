@@ -11,6 +11,8 @@ MASTER_SITES=	http://people.freebsd.org/~mbr/distfiles/
 
 MAINTAINER=	mbr@FreeBSD.org
 
+FORBIDDEN=	"Buffer overflows in fpexec, exploitable locally. A fix is in work"
+
 AP_PORT?=	apache13
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/${AP_PORT}
