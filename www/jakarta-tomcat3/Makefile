@@ -9,14 +9,14 @@ PORTNAME=	jakarta-tomcat
 PORTVERSION=	3.3.2
 PORTREVISION=	0
 CATEGORIES=	www java
-MASTER_SITES=	http://www.apache.org/dist/jakarta/tomcat-3/v${PORTVERSION}/bin/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	znerd
+MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
+MASTER_SITE_SUBDIR=	tomcat-3/v${PORTVERSION}/bin
 
 MAINTAINER=	liukang@bjut.edu.cn
 COMMENT=	Open-source Java web server by Apache, stable 3.x branch
 
-USE_JAVA=	1.2+
+USE_JAVA=	YES
+JAVA_VERSION=	1.2+
 NO_BUILD=	YES
 LATEST_LINK=	${APP_SHORTNAME}
 
