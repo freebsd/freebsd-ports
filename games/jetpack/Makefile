@@ -3,12 +3,12 @@
 # Date created:         21 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.13 1995/04/24 09:10:11 asami Exp $
+# $Id: Makefile,v 1.14 1995/05/02 11:30:04 asami Exp $
 #
 
 DISTNAME=	jetpack
 PKGNAME=	jetpack-1.0
-CATEGORIES+=	games
+CATEGORIES=	games
 MASTER_SITES=	ftp://qiclab.scn.rain.com/pub/games/
 DISTFILES=	jetpack.tar.Z
 

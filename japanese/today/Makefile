@@ -3,12 +3,12 @@
 # Date created:		24 June 1996
 # Whom:			ABURAYER Rewsirow <pcs51674@asciinet.or.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1996/10/18 15:04:49 asami Exp $
+# $Id: Makefile,v 1.1.1.2 1996/11/10 12:40:13 asami Exp $
 #
 
 DISTNAME=	td210bs
 PKGNAME=	jp-today-2.10b
-CATEGORIES+=	japanese games
+CATEGORIES=	japanese games
 MASTER_SITES=	ftp://ftp.waseda.ac.jp/pub/archive/fj.binaries.msdos/
 
 DISTFILES=	td210bs.lzh td210bm.lzh

@@ -3,12 +3,12 @@
 # Date created:         Sat Nov 5 11:43:03 PST 1994
 # Whom:                 piero
 #
-# $Id: Makefile,v 1.8 1996/03/26 04:02:32 ache Exp $
+# $Id: Makefile,v 1.9 1996/09/26 21:27:12 ache Exp $
 #
 
 DISTNAME=       xanim27063
 PKGNAME=        xanim-2.70.6.3
-CATEGORIES+=	graphics x11
+CATEGORIES=	graphics x11
 MASTER_SITES=	ftp://ftp.portal.com/pub/podlipec/ \
 		ftp://ftp.portal.com/pub/podlipec/cinepak/ \
 		ftp://ftp.portal.com/pub/podlipec/indeo/ \

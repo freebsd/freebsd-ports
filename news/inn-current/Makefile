@@ -3,12 +3,12 @@
 # Date created:		20 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.15 1996/06/24 21:52:17 torstenb Exp $
+# $Id: Makefile,v 1.16 1996/07/08 22:55:17 torstenb Exp $
 #
 
 DISTNAME=	inn1.4sec
 PKGNAME=	inn-1.4
-CATEGORIES+=	news
+CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.uu.net/networking/news/nntp/inn/
 EXTRACT_SUFX=	.tar.Z
 

@@ -3,12 +3,12 @@
 # Date created: 19 February 1995
 # Whom: hsu
 #
-# $Id: Makefile,v 1.3 1995/04/09 07:09:43 asami Exp $
+# $Id: Makefile,v 1.4 1995/05/16 11:34:33 asami Exp $
 #
 
 DISTNAME=	vcg.1.30
 PKGNAME=	vcg-1.30
-CATEGORIES+=	graphics
+CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.cs.uni-sb.de/pub/graphics/vcg/
 DISTFILES=	vcg.1.30.r3.17.tgz
 

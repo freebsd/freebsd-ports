@@ -3,11 +3,11 @@
 # Date created:         17 Sep 96
 # Whom:                 jmacd@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.2 1996/09/18 00:54:30 jmacd Exp $
+# $Id: Makefile,v 1.3 1996/10/08 07:32:33 asami Exp $
 #
 
 DISTNAME= 	prcs-1.0.1
-CATEGORIES+=	devel
+CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.xcf.berkeley.edu/pub/prcs/
 
 MAINTAINER=	jmacd@FreeBSD.ORG

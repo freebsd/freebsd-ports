@@ -3,11 +3,11 @@
 # Date created:		10 February 1995
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.3 1995/04/09 07:09:33 asami Exp $
+# $Id: Makefile,v 1.4 1996/03/07 00:21:43 asami Exp $
 #
 
 DISTNAME=	pdore-6.0
-CATEGORIES+=	graphics
+CATEGORIES=	graphics
 MASTER_SITES=   ftp://freefall.freebsd.org/pub/FreeBSD/LOCAL_PORTS/
 EXTRACT_SUFX=	.tar.Z
 

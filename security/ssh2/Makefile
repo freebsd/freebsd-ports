@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.33 1996/08/19 10:31:04 asami Exp $
+# $Id: Makefile,v 1.34 1996/10/16 04:55:58 ache Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -52,6 +52,11 @@ CONFIGURE_ARGS+= --with-secureid
 CONFIGURE_ARGS+= --without-idea
 .endif
 
+MAN1=		scp.1 ssh-add.1 ssh-agent.1 ssh-keygen.1 ssh.1 \
+		make-ssh-known-hosts.1
+MAN8=		sshd.8
+
+
 pre-patch:
 	@mv -f ${WRKSRC}/make-ssh-known-hosts.pl \
 	    ${WRKSRC}/make-ssh-known-hosts.pl.in
@@ -80,10 +85,6 @@ post-install:
 		${PREFIX}/bin/ssh-keygen -f ${PREFIX}/etc/ssh_host_key -N ""; \
 	fi
 .if !defined(NOMANCOMPRESS)
-	gzip -9nf ${PREFIX}/man/man1/scp.1 ${PREFIX}/man/man1/ssh-add.1 \
-		${PREFIX}/man/man1/ssh-agent.1 ${PREFIX}/man/man1/ssh-keygen.1 \
-		${PREFIX}/man/man1/ssh.1 ${PREFIX}/man/man8/sshd.8 \
-		${PREFIX}/man/man1/make-ssh-known-hosts.1
 	rm -f ${PREFIX}/man/man1/slogin.1
 	ln -sf ssh.1.gz ${PREFIX}/man/man1/slogin.1.gz
 .endif

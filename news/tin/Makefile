@@ -4,12 +4,12 @@
 # Date created:		25 July 1996
 # Whom:			obrien@cs.ucdavis.edu
 #
-# $Id: Makefile,v 1.12 1996/11/12 20:44:59 ache Exp $
+# $Id: Makefile,v 1.13 1996/11/17 01:25:16 ache Exp $
 #
 
 DISTNAME=       tin1.3-unoff-BETA-961115
 PKGNAME=        tin-1.3.961115
-CATEGORIES+=	news
+CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.akk.uni-karlsruhe.de/pub/tin/  \
 		ftp://nuxi.cs.ucdavis.edu/pub/tin/
 EXTRACT_SUFX=	.tgz
@@ -28,6 +28,7 @@ CONFIGURE_ARGS+= --with-nntp-default-server=news  \
 		 --with-metamail=${PREFIX}/bin/metamail
 MAKEFILE=	makefile
 ALL_TARGET=     build
+MAN1=		tin.1
 
 .if defined(NNTP_ONLY)
 CONFIGURE_ARGS+=	--enable-nntp-only
@@ -36,10 +37,5 @@ CONFIGURE_ARGS+=	--enable-nntp-only
 post-configure:
 	echo '#define NNTP_SERVER_FILE "${PREFIX}/etc/nntpserver"' >>${WRKSRC}/include/autoconf.h
 	echo '#define SMTP_SERVER_FILE "${PREFIX}/etc/smtpserver"' >>${WRKSRC}/include/autoconf.h
-
-post-install:
-.if !defined(NOMANCOMPRESS)
-	gzip -9nf ${PREFIX}/man/man1/tin.1
-.endif
 
 .include <bsd.port.mk>

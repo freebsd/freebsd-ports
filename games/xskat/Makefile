@@ -3,11 +3,11 @@
 # Date created:		27 Apr 1996
 # Whom:			thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/05/14 12:13:07 tg Exp $
 #
 
 DISTNAME=	xskat-1.6
-CATEGORIES+=	games
+CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.germany.eu.net/pub/X11/misc/
 
 MAINTAINER=	thomas@ghpc8.ihf.rwth-aachen.de

@@ -3,12 +3,12 @@
 # Date created:		October 21st 1996
 # Whom:			jfitz
 #
-# $Id: Makefile,v 1.3 1996/08/06 21:18:00 jfitz Exp $
+# $Id: Makefile,v 1.4 1996/10/22 00:48:59 jfitz Exp $
 #
 
 DISTNAME=	analog.1.92.1
 PKGNAME=	analog-1.92.1
-CATEGORIES+=	www
+CATEGORIES=	www
 MASTER_SITES=	http://www.statslab.cam.ac.uk/~sret1/ \
 		http://www.lightside.net/analog/ \
 		http://www.gamesdomain.com/analog/ \

@@ -3,12 +3,12 @@
 # Date created:		15 Aug 1996
 # Whom:			David Leonard <leonard@dstc.edu.au>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/08/16 07:39:56 asami Exp $
 #
 
 DISTNAME=	dclock
 PKGNAME=	dclock-pl4
-CATEGORIES+=	x11
+CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.ucs.ubc.ca/pub/old/X11/contrib/ \
 		ftp://pdq.coe.montana.edu/pub/mirrors/X11-contrib/ \
 		ftp://ftp.pasteur.fr/pub/computing/unix/X11/R5contrib/

@@ -3,7 +3,7 @@
 # Date created:		5 July 1995
 # Whom:			janek@gaja.ipan.lublin.pl
 #
-# $Id: Makefile,v 1.4 1996/10/18 16:11:04 max Exp $
+# $Id: Makefile,v 1.5 1996/11/15 23:14:01 obrien Exp $
 #
 
 DISTNAME=	radio2.0.4
@@ -15,11 +15,6 @@ MAINTAINER=	janek@gaja.ipan.lublin.pl
 
 NO_WRKSUBDIR=	yes
 MAKE_FLAGS=	FreeBSD -f
-
-post-install:
-.if !defined(NOMANCOMPRESS)
-	gzip -9nf ${PREFIX}/man/man1/radio.1
-	gzip -9nf ${PREFIX}/man/man1/broadcast.1
-.endif
+MAN1=		radio.1 broadcast.1
 
 .include <bsd.port.mk>

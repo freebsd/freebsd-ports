@@ -3,12 +3,12 @@
 # Date created:				24 Apr 1996
 # Whom:					pst
 #
-# $Id: Makefile,v 1.6 1996/08/14 16:02:42 jdp Exp $
+# $Id: Makefile,v 1.7 1996/08/14 18:52:40 jdp Exp $
 #
 
 PKGNAME=	socks5-0.16.6
 DISTNAME=	socks5-beta-0.16.6-exportable
-CATEGORIES+=	net security
+CATEGORIES=	net security
 MASTER_SITES=	ftp://ftp.nec.com/pub/socks/socks5/
 
 MAINTAINER=	ambrisko@ambrisko.roble.com

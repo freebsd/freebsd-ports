@@ -3,12 +3,12 @@
 # Date created:         7 December 1994
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.10 1996/03/07 01:57:29 asami Exp $
+# $Id: Makefile,v 1.11 1996/06/26 23:06:49 gpalmer Exp $
 #
 
 DISTNAME=	xfed
 PKGNAME=	xfed-1.0
-CATEGORIES+=	x11
+CATEGORIES=	x11
 
 MAINTAINER=	asami@FreeBSD.ORG
 

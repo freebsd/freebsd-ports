@@ -3,12 +3,12 @@
 # Date created:         Mon Aug 28 13:35:31 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.4 1996/08/20 13:32:17 erich Exp $
+# $Id: Makefile,v 1.5 1996/08/22 12:46:41 erich Exp $
 #
 
 DISTNAME=	aero_1.5.2_src
 PKGNAME=	aero-1.5.2
-CATEGORIES+=	graphics
+CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.povray.org/pub/povray/modellers/aero/
 
 MAINTAINER=	erich@FreeBSD.org

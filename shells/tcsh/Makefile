@@ -3,12 +3,14 @@
 # Date created:		22 August 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.12 1995/10/11 10:28:59 jkh Exp $
+# $Id: Makefile,v 1.13 1996/05/01 01:33:55 ache Exp $
 #
 
 DISTNAME=       tcsh-6.06
-CATEGORIES+=	shells
+CATEGORIES=	shells
 MASTER_SITES=   ftp://ee.cornell.edu/pub/tcsh/
+
+MAINTAINER=     ache@FreeBSD.ORG
 
 ALL_TARGET=     all catalogs
 INSTALL_TARGET= install install.man
@@ -24,7 +26,5 @@ post-install:
 	cd ${WRKSRC}; install -c -o bin -g bin -m 444 tcsh.german.cat ${PREFIX}/share/nls/de_DE.ISO_8859-1/tcsh.cat
 	ln -sf ${PREFIX}/share/nls/de_DE.ISO_8859-1/tcsh.cat ${PREFIX}/share/nls/de_AT.ISO_8859-1/tcsh.cat
 	ln -sf ${PREFIX}/share/nls/de_DE.ISO_8859-1/tcsh.cat ${PREFIX}/share/nls/de_CH.ISO_8859-1/tcsh.cat
-
-MAINTAINER=     ache@FreeBSD.ORG
 
 .include <bsd.port.mk>

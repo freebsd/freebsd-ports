@@ -4,7 +4,7 @@
 # Date created:         18 Apr 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/11 23:17:38 ache Exp $
+# $Id: Makefile,v 1.2 1996/11/11 23:24:31 ache Exp $
 #
 
 DISTNAME=       speak_freely-6.1b
@@ -19,6 +19,7 @@ UTILS=   sfspeaker sfmike sflwl
 DEMNS=   sfecho sflwld
 DDEMNS=  sfvod
 SFLIB=   ${PREFIX}/lib/speak_freely
+MAN1=	 ${UTILS:S/$/.1/} ${DEMNS:S/$/.1/} ${DDEMNS:S/$/.1/}
 
 do-install:
 	if [ ! -d ${SFLIB} ]; then \
@@ -41,10 +42,5 @@ do-install:
 		$(INSTALL_SCRIPT) $$p ${PREFIX}/sbin; \
 		$(INSTALL_MAN) $$p.1 ${PREFIX}/man/man1; \
 	done;
-.if !defined(NOMANCOMPRESS)
-	for p in ${UTILS} ${DEMNS} ${DDEMNS}; do \
-		gzip -9nf ${PREFIX}/man/man1/$$p.1; \
-	done
-.endif
 
 .include <bsd.port.mk>

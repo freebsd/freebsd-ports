@@ -3,12 +3,12 @@
 # Date created:		?
 # Whom:			jmz (original)
 #
-# $Id: Makefile,v 1.6 1995/04/01 12:45:56 jkh Exp $
+# $Id: Makefile,v 1.7 1995/04/09 07:09:38 asami Exp $
 #
 
 DISTNAME=	netpbm
 PKGNAME=	netpbm-94.3.1
-CATEGORIES+=	graphics
+CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTFILES=	netpbm-1mar1994.tar.gz
 

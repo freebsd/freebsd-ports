@@ -3,12 +3,12 @@
 # Date created:		31 Januar 1995
 # Whom:			janek
 #
-# $Id$
+# $Id: Makefile,v 1.6 1995/04/11 00:20:45 asami Exp $
 #
 
 DISTNAME=	xminesweep3.0
 PKGNAME=	xminesweep-3.0
-CATEGORIES+=	games
+CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.icm.edu.pl/pub/X11/contrib/games/
 EXTRACT_SUFX=	.tar.Z
 

@@ -3,11 +3,11 @@
 # Date created:		June 21, 1996
 # Whom:			"Philippe Charnier" <charnier@lirmm.fr>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/07/10 05:32:53 asami Exp $
 #
 
 DISTNAME=	mpeg2codec-1.1a
-CATEGORIES+=	graphics
+CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.netcom.com/pub/cf/cfogg/mpeg2/
 DISTFILES=	mpeg2codec_v1.1a.tar.gz
 

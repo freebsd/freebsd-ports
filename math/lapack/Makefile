@@ -3,12 +3,12 @@
 # Date created:         2 July 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.1.1.1 1996/06/07 15:39:53 jmz Exp $
+# $Id: Makefile,v 1.2 1996/06/10 21:19:55 asami Exp $
 #
 
 DISTNAME=	LAPACK
 PKGNAME=	lapack-2.0
-CATEGORIES+=	math
+CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.netlib.org/lapack/
 DISTFILES=	lapack.tar.gz manpages.tar.gz
 

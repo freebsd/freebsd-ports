@@ -3,7 +3,7 @@
 # Date created:         20 Jul 1996
 # Whom:                 lukin@okbmei.msk.su
 #
-# $Id: Makefile,v 1.1.1.1 1996/08/09 08:16:16 asami Exp $
+# $Id: Makefile,v 1.2 1996/11/12 02:17:22 obrien Exp $
 #
 
 DISTNAME=       freeze-2.5
@@ -14,12 +14,6 @@ MAINTAINER=     lukin@okbmei.msk.su
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	prog
-
-post-install:
-.if !defined(NOMANCOMPRESS)
-.for man in freeze melt unfreeze fcat statist
-	gzip -9nf ${PREFIX}/man/man1/${man}.1
-.endfor
-.endif
+MAN1=		freeze.1 melt.1 unfreeze.1 fcat.1 statist.1
 
 .include <bsd.port.mk>

@@ -3,12 +3,12 @@
 # Date created:         Thu Aug  1 10:50:57 CDT 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.1.1.1 1996/08/01 20:11:56 erich Exp $
+# $Id: Makefile,v 1.2 1996/08/02 07:43:06 asami Exp $
 #
 
 DISTNAME=	mpegedit_v2.2
 PKGNAME=	mpegedit-2.2
-CATEGORIES+=	graphics
+CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.demon.co.uk/.d2/unix/unix/tools/
 
 MAINTAINER=	erich@FreeBSD.org

@@ -3,7 +3,7 @@
 # Date Created:		04 Aug 1996
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id: Makefile,v 1.3 1996/10/15 08:24:22 asami Exp $
+# $Id: Makefile,v 1.4 1996/11/12 02:17:49 obrien Exp $
 #
 
 DISTNAME=	uudeview-0.5.4
@@ -22,6 +22,7 @@ GNU_CONFIGURE=	Yes
 # its own minews do-hicky.
 CONFIGURE_ARGS=		--disable-minews
 CONFIGURE_ARGS+=	--disable-tcl
+MAN1=			uudeview.1 uuenview.1
 
 EXTRAFILES+=	porting.notes
 
@@ -54,10 +55,6 @@ post-install:
 	then \
 		${ECHO_MSG} "===>  Not copying available documents to ${PREFIX}/${PORTDOCDIR}"; \
 	fi;
-.endif
-.if !defined(NOMANCOMPRESS)
-	gzip -9nf ${PREFIX}/man/man1/uudeview.1
-	gzip -9nf ${PREFIX}/man/man1/uuenview.1
 .endif
 	strip ${PREFIX}/bin/uudeview
 	strip ${PREFIX}/bin/uuenview

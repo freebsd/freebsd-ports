@@ -3,11 +3,11 @@
 # Date created:		June 21, 1996
 # Whom:			"Philippe Charnier" <charnier@lirmm.fr>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/07/10 05:38:41 asami Exp $
 #
 
 DISTNAME=	mpeg2play-1.1b
-CATEGORIES+=	graphics
+CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.netcom.com/pub/cf/cfogg/mpeg2/
 DISTFILES=	mpeg2play_v1.1b.tar.gz
 

@@ -3,12 +3,12 @@
 # Date created:					October 25th 1996
 # Whom:						jfitz@FreeBSD.ORG
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/10/27 05:18:54 jfitz Exp $
 #
 
 DISTNAME=	qcc
 PKGNAME=	qcc-1.01
-CATEGORIES+=	games
+CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.stomped.com/pub/idgames2/quakec/
 
 MAINTAINER=	jfitz@freebsd.org

@@ -7,7 +7,7 @@
 #
 
 DISTNAME=	trn-3.6
-CATEGORIES+=	news
+CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.uu.net/networking/news/readers/trn/
 
 IS_INTERACTIVE=	yes

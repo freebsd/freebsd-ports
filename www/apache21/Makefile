@@ -3,12 +3,12 @@
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.20 1996/11/07 01:49:46 ache Exp $
+# $Id: Makefile,v 1.21 1996/11/07 01:53:14 ache Exp $
 #
 
 DISTNAME=       apache_1.1.1
 PKGNAME=        apache-1.1.1
-CATEGORIES+=	www
+CATEGORIES=	www
 MASTER_SITES=   ftp://www.apache.org/apache/dist/
 
 MAINTAINER=	ache@freebsd.org

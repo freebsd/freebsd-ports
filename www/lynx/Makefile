@@ -5,12 +5,12 @@
 # Date created:         15 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.29 1996/11/02 00:55:08 ache Exp $
+# $Id: Makefile,v 1.30 1996/11/11 05:30:54 ache Exp $
 #
 
 DISTNAME=       lynx2-6
 PKGNAME=        lynx-2.6
-CATEGORIES+=	www
+CATEGORIES=	www
 MASTER_SITES=   ftp://ftp2.cc.ukans.edu/pub/lynx/lynx2-6/ \
 		ftp://ftp.more.net/pub/mirrors/lynx/ \
 		http://www.mtsu.edu/~ripa0003/

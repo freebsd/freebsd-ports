@@ -3,12 +3,12 @@
 # Date created:		17 April 1995
 # Whom:			NIIMI Satoshi <sa2c@and.or.jp>
 #
-# $Id: Makefile,v 1.10 1996/02/19 23:39:14 ache Exp $
+# $Id: Makefile,v 1.11 1996/03/09 06:42:02 peter Exp $
 #
 
 DISTNAME=	WWW
 PKGNAME=        linemode-4.0D
-CATEGORIES+=	www
+CATEGORIES=	www
 MASTER_SITES=   ftp://ftp.w3.org/pub/linemode/ \
 		ftp://ftp.w3.org/pub/libwww/
 DISTFILES=      libwww_4.0D_src.tar.gz \

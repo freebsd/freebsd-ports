@@ -3,11 +3,11 @@
 # Date created:         2 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.8 1996/06/15 00:51:15 asami Exp $
+# $Id: Makefile,v 1.9 1996/09/29 16:08:44 chuckr Exp $
 #
 
 DISTNAME=       xpaint-2.4.6
-CATEGORIES+=	graphics x11
+CATEGORIES=	graphics x11
 MASTER_SITES=	http://www2.dk-online.dk/users/Torsten_Martinsen/xpaint/
 
 LIB_DEPENDS=    jpeg\\.6\\.:${PORTSDIR}/graphics/jpeg \

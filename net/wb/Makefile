@@ -3,11 +3,11 @@
 # Date created:		2 Novermber 1996
 # Whom:			fenner
 #
-# $Id: $
+# $Id: Makefile,v 1.1.1.1 1996/11/10 21:13:06 fenner Exp $
 #
 
 DISTNAME=       wb-1.59
-CATEGORIES+=	mbone
+CATEGORIES=	mbone
 MASTER_SITES=   ftp://ftp.ee.lbl.gov/conferencing/wb/
 DISTFILES=      i386-wb-1.59.tar.Z
 

@@ -3,12 +3,12 @@
 # Date created:		24 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.8 1995/04/01 12:51:03 jkh Exp $
+# $Id: Makefile,v 1.9 1995/04/12 20:31:20 asami Exp $
 #
 
 DISTNAME=	piewm
 PKGNAME=	piewm-1.0
-CATEGORIES+=	x11
+CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 EXTRACT_SUFX=	.tar.Z
 

@@ -3,11 +3,11 @@
 # Date created:		22nd March 1995
 # Whom:			jkh@FreeBSD.org
 #
-# $Id: Makefile,v 1.2 1995/04/01 12:51:06 jkh Exp $
+# $Id: Makefile,v 1.3 1995/04/12 20:31:27 asami Exp $
 #
 
 DISTNAME=	sxpc-1.4
-CATEGORIES+=	x11
+CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 EXTRACT_SUFX=	.shar.Z
 

@@ -3,12 +3,12 @@
 # Date created:         31 October 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.8 1995/06/24 11:40:37 asami Exp $
+# $Id: Makefile,v 1.9 1996/03/10 09:01:03 asami Exp $
 #
 
 DISTNAME=	linpack
 PKGNAME=	linpack-1.0
-CATEGORIES+=	math
+CATEGORIES=	math
 MASTER_SITES=	ftp://netlib.att.com/netlib/linpack/
 
 DIST_SUBDIR=	${DISTNAME}

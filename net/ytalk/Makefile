@@ -3,12 +3,12 @@
 # Date created:		18 March 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.4 1995/04/15 05:42:11 asami Exp $
+# $Id: Makefile,v 1.5 1995/11/27 04:05:58 asami Exp $
 #
 
 DISTNAME=	ytalk-v3pl2
 PKGNAME=	ytalk-3.0.2
-CATEGORIES+=	net
+CATEGORIES=	net
 MASTER_SITES=	ftp://knot.queensu.ca/pub/unix/software/
 
 MAINTAINER=	asami@FreeBSD.ORG

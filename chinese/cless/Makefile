@@ -3,7 +3,7 @@
 # Date created:         Sat Aug 10, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.2 1996/10/29 04:55:52 max Exp $
+# $Id: Makefile,v 1.3 1996/11/12 02:16:34 obrien Exp $
 #
 
 DISTNAME=	cless-290
@@ -18,13 +18,9 @@ MAINTAINER=     obrien@cs.ucdavis.edu
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-DHANZI # LDFLAGS=-s datadir=/usr/local/lib/less
+MAN1=		cless.1 clesskey.1
 
 post-install:
-.if !defined(NOMANCOMPRESS)
-.for mp in cless clesskey
-	gzip -9nf ${PREFIX}/man/man1/${mp}.1
-.endfor
-.endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} -p ${PREFIX}/share/doc/cless
 	${INSTALL_DATA} ${WRKSRC}/README.CLESS ${PREFIX}/share/doc/cless

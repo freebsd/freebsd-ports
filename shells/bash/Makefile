@@ -3,12 +3,12 @@
 # Date created:		21 August 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.15 1996/02/09 07:20:37 adam Exp $
+# $Id: Makefile,v 1.16 1996/08/28 15:21:00 ache Exp $
 #
 
 DISTNAME=       bash-1.14.7
 WRKSRC=         ${WRKDIR}/bash-1.14.7
-CATEGORIES+=	shells
+CATEGORIES=	shells
 MASTER_SITES=   ftp://slc2.ins.cwru.edu/pub/dist/
 
 MAINTAINER=     ache@FreeBSD.ORG

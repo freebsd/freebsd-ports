@@ -3,17 +3,17 @@
 # Date created:		3 August 1996
 # Whom:			lukin <lukin@okbmei.msk.su>
 #
-# $Id: Makefile,v 1.9 1996/10/16 08:32:05 asami Exp $
+# $Id: Makefile,v 1.10 1996/11/13 12:41:36 asami Exp $
 #
 
 DISTNAME=	blt-2.1
-CATEGORIES+=	x11
+CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/NEW/
 DISTFILES=	BLT2.1.tar.gz
 
 MAINTAINER=	lukin@okbmei.msk.su
 
-LIB_DEPENDS=	tk41\\.:${PORTSDIR}/x11/tk41
+LIB_DEPENDS=	tk41\\.1:${PORTSDIR}/x11/tk41
 
 WRKSRC=		${WRKDIR}/blt2.1
 GNU_CONFIGURE=	yes

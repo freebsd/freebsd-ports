@@ -3,12 +3,12 @@
 # Date created:         9 Dec 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.4 1996/01/11 01:20:17 ache Exp $
+# $Id: Makefile,v 1.5 1996/02/19 23:38:33 ache Exp $
 #
 
 DISTNAME=	WWW
 PKGNAME=        comline-4.0D
-CATEGORIES+=	www
+CATEGORIES=	www
 MASTER_SITES=   ftp://ftp.w3.org/pub/comline/ \
 		ftp://ftp.w3.org/pub/libwww/
 DISTFILES=      libwww_4.0D_src.tar.gz \

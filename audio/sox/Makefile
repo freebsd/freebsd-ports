@@ -3,7 +3,7 @@
 # Date created:		17 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.6 1995/05/05 20:54:27 torstenb Exp $
+# $Id: Makefile,v 1.7 1996/11/15 23:14:24 obrien Exp $
 #
 
 DISTNAME=	sox10p11
@@ -14,7 +14,6 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	torstenb@FreeBSD.ORG
 
-post-install:
-	gzip -9nf ${PREFIX}/man/man1/sox.1
+MAN1=		sox.1
 
 .include <bsd.port.mk>
