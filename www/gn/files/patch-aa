@@ -1,5 +1,26 @@
-*** Makefile.org	Mon Jul 18 10:27:03 1994
---- Makefile	Fri Sep 16 19:45:13 1994
+*** Makefile.old	Fri May  5 08:34:10 1995
+--- Makefile	Fri May  5 08:40:46 1995
+***************
+*** 7,15 ****
+  #
+  #	Where to put the programs
+  #
+! SERVBINDIR  = ../bin
+  BINDIR  = ../bin
+! LIBDIR = ../lib
+  
+  #
+  #	Compiler Flags (-I.. *MUST* be included)
+--- 7,15 ----
+  #
+  #	Where to put the programs
+  #
+! SERVBINDIR  = ../libexec
+  BINDIR  = ../bin
+! LIBDIR = ../etc
+  
+  #
+  #	Compiler Flags (-I.. *MUST* be included)
 ***************
 *** 43,49 ****
   
