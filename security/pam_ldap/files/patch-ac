@@ -1,6 +1,11 @@
---- Makefile.am.orig	Sat May 26 17:13:48 2001
-+++ Makefile.am	Sat May 26 17:20:03 2001
-@@ -8,20 +8,13 @@
+--- Makefile.am.orig	Mon Jan  8 18:00:14 2001
++++ Makefile.am	Mon Jun 11 11:44:42 2001
+@@ -4,24 +4,18 @@
+ 
+ pam_ldap_so_SOURCES = pam_ldap.c pam_ldap.h md5.c md5.h
+ pam_ldap_so_LDFLAGS = @pam_ldap_so_LDFLAGS@
++CFLAGS = @CFLAGS@ -DLDAP_CONF_FILE=\"$(sysconfdir)/ldap.conf\"
+ 
  
  install-exec-local: pam_ldap.so
  	@$(NORMAL_INSTALL)

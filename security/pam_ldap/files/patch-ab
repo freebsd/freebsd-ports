@@ -1,11 +1,11 @@
---- pam_ldap.c.orig	Sat May 26 16:06:17 2001
-+++ pam_ldap.c	Sat May 26 16:07:05 2001
-@@ -551,7 +551,7 @@
+--- pam_ldap.c.orig	Mon Jun 11 11:44:49 2001
++++ pam_ldap.c	Mon Jun 11 11:45:07 2001
+@@ -557,7 +557,7 @@
  
    /* configuration file location is configurable; default /etc/ldap.conf */
    if (configFile == NULL)
 -    configFile = "/etc/ldap.conf";
-+    configFile = "/usr/local/etc/pam_ldap/ldap.conf";
++    configFile = LDAP_CONF_FILE;
  
    fp = fopen (configFile, "r");
  
