@@ -1,5 +1,5 @@
---- Makefile.in.orig	Mon Jan 21 16:49:14 2002
-+++ Makefile.in	Mon Jan 21 16:50:21 2002
+--- Makefile.in.orig	Sun Feb  3 17:33:38 2002
++++ Makefile.in	Sun Feb  3 17:35:12 2002
 @@ -151,9 +151,9 @@
  
  AUTOMAKE_OPTIONS = 1.0 no-dependencies foreign
@@ -13,7 +13,7 @@
  
  #
  # INCLUDE defines
-@@ -529,10 +529,7 @@
+@@ -528,10 +528,7 @@
  
  install-dirs:
  	-mkdir -p $(etcdir)
@@ -24,7 +24,7 @@
  
  generate-server-key:
  	-@if test '!' -f $(etcdir)/silcd.pub ; then \
-@@ -561,18 +558,13 @@
+@@ -565,17 +562,12 @@
  	$(INSTALL_DATA) $(srcdir)/doc/examples/cell* $(docdir)/examples/
  
  etc-install:
@@ -40,9 +40,7 @@
  	fi
  
 -@SILC_DIST_CLIENT_TRUE@install-data-hook: install-dirs sim-install doc-install etc-install
--@SILC_DIST_CLIENT_FALSE@install-data-hook: install-dirs generate-server-key sim-install doc-install examples-install etc-install
 +@SILC_DIST_CLIENT_TRUE@install-data-hook: install-dirs etc-install
-+@SILC_DIST_CLIENT_FALSE@install-data-hook: install-dirs generate-server-key etc-install
+ @SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_TRUE@install-data-hook: install-dirs generate-server-key sim-install doc-install toolkit-install examples-install etc-install
+ @SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_FALSE@install-data-hook: install-dirs generate-server-key sim-install doc-install examples-install etc-install
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
- .NOEXPORT:

@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	silc
-PORTVERSION=	0.7.3
-CATEGORIES=	net security
+PORTVERSION=	0.7.6.1
+CATEGORIES=	net ipv6 security
 MASTER_SITES=	http://www.silcnet.org/download/client/sources/ \
 		ftp://ftp.silcnet.org/silc/client/sources/ \
 		http://www.planetmirror.com/pub/silcnet/client/sources/ \
@@ -67,6 +67,10 @@ post-install:
 
 .if ${ARCH} != "i386"
 WITHOUT_OPTIMIZED_ASM=	yes
+.endif
+
+.if ${OSVERSION} >= 400014
+CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
 .ifdef(WITHOUT_OPTIMIZED_ASM)
