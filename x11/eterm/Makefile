@@ -3,7 +3,7 @@
 # Date created:        24 November 1997
 # Whom:                Murray Stokely <murray@cdrom.com>
 #
-# $Id: Makefile,v 1.11 1998/10/30 04:21:20 asami Exp $
+# $Id: Makefile,v 1.12 1999/01/14 17:08:22 vanilla Exp $
 #
 
 DISTNAME=	Eterm-0.8.7
@@ -19,6 +19,7 @@ LIB_DEPENDS=	Imlib.2:${PORTSDIR}/graphics/imlib
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		Eterm.1
 
