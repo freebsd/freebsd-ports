@@ -6,6 +6,7 @@
 
 PORTNAME=	libesmtp
 PORTVERSION=	1.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.stafford.uklinux.net/libesmtp/ \
