@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	enlightenment
 
 MAINTAINER=	ishmael27@home.com
 
-LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2-tmp
+LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2
 
 USE_X_PREFIX=	yes
 USE_FREETYPE=	yes

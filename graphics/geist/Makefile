@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.linuxbrit.co.uk/downloads/
 
 MAINTAINER=	ishmael27@home.com
 
-LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2-tmp \
+LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2 \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 XML_CONFIG?=	${LOCALBASE}/bin/xml2-config

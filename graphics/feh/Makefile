@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.linuxbrit.co.uk/downloads/
 
 MAINTAINER=	ishmael27@home.com
 
-LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2-tmp
+LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2
 
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
