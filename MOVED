@@ -1034,3 +1034,4 @@ x11-servers/XttXF86srv-VGA16||2004-04-10|removed broken port
 x11-servers/XttXF86srv-W32||2004-04-10|removed broken port
 x11-servers/XttXF86srv-common||2004-04-10|removed broken port
 x11-servers/XttXF86srv-xfs||2004-04-10|removed broken port
+emulators/scummvm|games/scummvm|2004-04-13|new category
