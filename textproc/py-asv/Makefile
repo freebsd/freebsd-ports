@@ -9,10 +9,10 @@ PORTNAME=	asv
 PORTVERSION=	0.4
 PORTREVISION=	2
 CATEGORIES=	textproc python
-MASTER_SITES=	http://tratt.net/~laurie/python/asv/releases/
+MASTER_SITES=	http://tratt.net/laurie/python/asv/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	johann@egenetics.com
+MAINTAINER=	wjv@FreeBSD.org
 
 PYTHON_VERSION=	python2.1
 
