@@ -3,11 +3,11 @@
 # Date created:		9 Jan 1997
 # Whom:			pst
 #
-# $Id: Makefile,v 1.12 1998/05/30 16:45:51 steve Exp $
+# $Id: Makefile,v 1.13 1998/06/07 23:01:28 steve Exp $
 #
 
-DISTNAME=	imap-4.1.BETA
-PKGNAME=	imap-uw-4.1b
+DISTNAME=	imap-4.1.FINAL
+PKGNAME=	imap-uw-4.1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.freebsd.org/~steve/ \
 		ftp://ftp.cac.washington.edu/imap/
@@ -18,8 +18,8 @@ MAINTAINER=	imap-uw@freebsd.ady.ro
 ALL_TARGET=	bsf
 MAN8=		ipopd.8 imapd.8
 
-pre-build:
-	@chmod 755 ${WRKSRC}/src/osdep/unix/drivers ${WRKSRC}/src/osdep/unix/mkauths
+#pre-build:
+#	@chmod 755 ${WRKSRC}/src/osdep/unix/drivers ${WRKSRC}/src/osdep/unix/mkauths
 
 # this rule currently isn't called or used, because it's not sufficient to
 # install just the .a file and mail.h, so we shouldn't install anything at all!
@@ -29,7 +29,6 @@ install-lib:
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/c-client/libc-client.so.2.1 ${PREFIX}/lib
-	${LDCONFIG} -m ${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKSRC}/imapd/imapd ${PREFIX}/libexec
 	${INSTALL_PROGRAM} ${WRKSRC}/ipopd/ipop2d ${PREFIX}/libexec
 	${INSTALL_PROGRAM} ${WRKSRC}/ipopd/ipop3d ${PREFIX}/libexec
@@ -38,5 +37,8 @@ do-install:
 		${WRKSRC}/src/imapd/imapd.8c ${PREFIX}/man/man8/imapd.8
 	${INSTALL_MAN} \
 		${WRKSRC}/src/ipopd/ipopd.8c ${PREFIX}/man/man8/ipopd.8
+
+post-install:
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
