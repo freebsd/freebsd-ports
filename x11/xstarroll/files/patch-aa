@@ -1,19 +1,8 @@
---- Makefile.orig	Fri Oct 30 01:09:07 1998
-+++ Makefile	Wed Dec 23 21:46:53 1998
-@@ -1,11 +1,14 @@
+--- Makefile~	Thu Jan 14 20:12:51 1999
++++ Makefile	Thu Jan 14 20:13:13 1999
+@@ -1,4 +1,4 @@
 -XSTARROLL_PREFIX = /usr/X11R6
-+XSTARROLL_PREFIX = ${X11BASE}
++XSTARROLL_PREFIX = ${PREFIX}
  XSTARROLL_BIN = ${XSTARROLL_PREFIX}/bin
  XSTARROLL_MAN = ${XSTARROLL_PREFIX}/man/man1
- XSTARROLL_TARBALL = xstarroll-1.02
-+.if ${PORTOBJFORMAT} == "elf"
-+LDFLAGS=-Wl,-rpath,$(X11BASE)/lib
-+.endif
- 
- xstarroll :	xstarroll.c
- 		gcc -o xstarroll xstarroll.c \
--		-O -I/usr/X11R6/include -L/usr/X11R6/lib \
-+		-O -I/usr/X11R6/include ${LDFLAGS} -L${X11BASE}/lib \
-                 -lX11 -lXt -lXmu -lXaw -lXpm
- clean :
- 		rm xstarroll
+ XSTARROLL_TARBALL = xstarroll-1.04

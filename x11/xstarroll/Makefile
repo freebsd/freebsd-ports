@@ -1,14 +1,14 @@
 # New ports collection makefile for:   XStarRoll
-# Version required:    1.02
-# Date created:        30 October 1998
+# Version required:    1.04
+# Date created:        14 January 1999
 # Whom:                Sakai Hiroaki <sakai@miya.ee.kagu.sut.ac.jp>
 #
 # $Id$
 #
 
-DISTNAME=	xstarroll-1.02
+DISTNAME=	xstarroll-1.04
 CATEGORIES=	x11
-MASTER_SITES=	http://www.ed.kagu.sut.ac.jp/~j4397617/
+MASTER_SITES=	http://wwwmiya.ee.kagu.sut.ac.jp/~sakai/
 
 MAINTAINER=	sakai@miya.ee.kagu.sut.ac.jp
 
