@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ksteak
-PORTVERSION=	0.9.4
-PORTREVISION=	2
+PORTVERSION=	1.0.0.p2
 CATEGORIES=	german kde
 MASTER_SITES=	http://www.der-fritz.de/ksteak/
+DISTNAME=	ksteak-1.0.0pre2
 
 MAINTAINER=	h.eichmann@gmx.de
 COMMENT=	KDE frontend for steak, an english - german dictionary
@@ -26,8 +26,5 @@ CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 GNU_CONFIGURE=	yes
-
-post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/ksteak/ksteakui.rc ${PREFIX}/share/apps/ksteak
 
 .include <bsd.port.mk>
