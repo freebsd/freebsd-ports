@@ -54,7 +54,6 @@
     SUBDIR += py-scientific
     SUBDIR += pygist
     SUBDIR += rcalc
-    SUBDIR += rng
     SUBDIR += ruby-bigfloat
     SUBDIR += sc
     SUBDIR += scigraphica
