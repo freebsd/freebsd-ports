@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ftpcube
-PORTVERSION=	0.3.2
+PORTVERSION=	0.4.3
 CATEGORIES=	ftp python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,9 +15,13 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical FTP Client
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/gtk.py:${PORTSDIR}/x11-toolkits/py-gtk
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/wx/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython
 
+USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
+post-patch:
+	@${REINPLACE_CMD} 's,/usr/local,${PREFIX},' ${WRKSRC}/setup.cfg
+	
 .include <bsd.port.mk>
