@@ -1,7 +1,5 @@
 bin/gimp
 bin/gimptool
-include/gpc.h
-include/megawidget.h
 include/gck/gck.h
 include/gck/gckcolor.h
 include/gck/gckcommon.h
@@ -11,43 +9,47 @@ include/gck/gckmath.h
 include/gck/gcktypes.h
 include/gck/gckui.h
 include/gck/gckvector.h
+include/gpc.h
 include/libgimp/color_selector.h
 include/libgimp/gimp.h
-include/libgimp/gimpentry.h
+include/libgimp/gimpchainbutton.h
 include/libgimp/gimpenums.h
+include/libgimp/gimpenv.h
 include/libgimp/gimpfeatures.h
+include/libgimp/gimpfileselection.h
 include/libgimp/gimpintl.h
 include/libgimp/gimpmatrix.h
 include/libgimp/gimpmenu.h
 include/libgimp/gimpmodule.h
+include/libgimp/gimppatheditor.h
+include/libgimp/gimpsizeentry.h
 include/libgimp/gimpui.h
+include/libgimp/gimpunit.h
+include/libgimp/gimpunitmenu.h
 include/libgimp/gserialize.h
 include/libgimp/parasite.h
 include/libgimp/parasiteF.h
 include/libgimp/parasiteP.h
-lib/libgck-1.1.so.2
+include/megawidget.h
 lib/libgck.a
-lib/libgck.la
-lib/libgck.so.2
-lib/libgimp-1.1.so.2
+lib/libgck.so
+lib/libgck.so.5
 lib/libgimp.a
-lib/libgimp.la
-lib/libgimp.so.2
-lib/libgimpui-1.1.so.2
+lib/libgimp.so
+lib/libgimp.so.5
 lib/libgimpui.a
-lib/libgimpui.la
-lib/libgimpui.so.2
+lib/libgimpui.so
+lib/libgimpui.so.5
 lib/libgpc.a
 lib/libmegawidget.a
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-libexec/gimp/1.1/modules/libcolorsel_gtk.a
-libexec/gimp/1.1/modules/libcolorsel_gtk.la
-libexec/gimp/1.1/modules/libcolorsel_triangle.a
-libexec/gimp/1.1/modules/libcolorsel_triangle.la
+libexec/gimp/1.1/modules/libcolorsel_gtk.so
+libexec/gimp/1.1/modules/libcolorsel_triangle.so
 libexec/gimp/1.1/plug-ins/AlienMap
 libexec/gimp/1.1/plug-ins/CEL
 libexec/gimp/1.1/plug-ins/CML_explorer
+libexec/gimp/1.1/plug-ins/FractalExplorer
 libexec/gimp/1.1/plug-ins/Lighting
 libexec/gimp/1.1/plug-ins/MapObject
 libexec/gimp/1.1/plug-ins/aa
@@ -88,14 +90,18 @@ libexec/gimp/1.1/plug-ins/flame
 libexec/gimp/1.1/plug-ins/flarefx
 libexec/gimp/1.1/plug-ins/fp
 libexec/gimp/1.1/plug-ins/fractaltrace
+libexec/gimp/1.1/plug-ins/gap_filter
+libexec/gimp/1.1/plug-ins/gap_plugins
 libexec/gimp/1.1/plug-ins/gauss_iir
 libexec/gimp/1.1/plug-ins/gauss_rle
 libexec/gimp/1.1/plug-ins/gbr
+libexec/gimp/1.1/plug-ins/gdyntext
 libexec/gimp/1.1/plug-ins/gee
 libexec/gimp/1.1/plug-ins/gfig
 libexec/gimp/1.1/plug-ins/gfli
 libexec/gimp/1.1/plug-ins/gicon
 libexec/gimp/1.1/plug-ins/gif
+libexec/gimp/1.1/plug-ins/gifload
 libexec/gimp/1.1/plug-ins/glasstile
 libexec/gimp/1.1/plug-ins/gqbist
 libexec/gimp/1.1/plug-ins/gradmap
@@ -142,6 +148,7 @@ libexec/gimp/1.1/plug-ins/print
 libexec/gimp/1.1/plug-ins/ps
 libexec/gimp/1.1/plug-ins/psd
 libexec/gimp/1.1/plug-ins/randomize
+libexec/gimp/1.1/plug-ins/rcm
 libexec/gimp/1.1/plug-ins/ripple
 libexec/gimp/1.1/plug-ins/rotate
 libexec/gimp/1.1/plug-ins/rotators
@@ -155,7 +162,6 @@ libexec/gimp/1.1/plug-ins/shift
 libexec/gimp/1.1/plug-ins/sinus
 libexec/gimp/1.1/plug-ins/smooth_palette
 libexec/gimp/1.1/plug-ins/snoise
-libexec/gimp/1.1/plug-ins/snp
 libexec/gimp/1.1/plug-ins/sobel
 libexec/gimp/1.1/plug-ins/sparkle
 libexec/gimp/1.1/plug-ins/spread
@@ -171,15 +177,18 @@ libexec/gimp/1.1/plug-ins/url
 libexec/gimp/1.1/plug-ins/video
 libexec/gimp/1.1/plug-ins/vinvert
 libexec/gimp/1.1/plug-ins/vpropagate
-libexec/gimp/1.1/plug-ins/waves
 libexec/gimp/1.1/plug-ins/waterselect
+libexec/gimp/1.1/plug-ins/waves
 libexec/gimp/1.1/plug-ins/webbrowser
 libexec/gimp/1.1/plug-ins/whirlpinch
 libexec/gimp/1.1/plug-ins/wind
+libexec/gimp/1.1/plug-ins/wmf
 libexec/gimp/1.1/plug-ins/xbm
+libexec/gimp/1.1/plug-ins/xjt
 libexec/gimp/1.1/plug-ins/xpm
 libexec/gimp/1.1/plug-ins/xwd
 libexec/gimp/1.1/plug-ins/zealouscrop
+share/aclocal/gimp.m4
 share/gimp/brushes/10x10square.gbr
 share/gimp/brushes/10x10squareBlur.gbr
 share/gimp/brushes/11circle.gbr
@@ -221,6 +230,39 @@ share/gimp/brushes/pixel.gbr
 share/gimp/brushes/round1.vbr
 share/gimp/brushes/thegimp.gbr
 share/gimp/brushes/xcf.gbr
+share/gimp/fractalexplorer/Asteroid_Field
+share/gimp/fractalexplorer/Bar_Code_Label
+share/gimp/fractalexplorer/Beauty_of_Nature
+share/gimp/fractalexplorer/Blue_Curtain
+share/gimp/fractalexplorer/Car_Track
+share/gimp/fractalexplorer/Energetic_Diamond
+share/gimp/fractalexplorer/Explosive
+share/gimp/fractalexplorer/Flower
+share/gimp/fractalexplorer/Fragments
+share/gimp/fractalexplorer/Hemp
+share/gimp/fractalexplorer/High_Voltage
+share/gimp/fractalexplorer/Hoops
+share/gimp/fractalexplorer/Ice_Crystal
+share/gimp/fractalexplorer/Leaves
+share/gimp/fractalexplorer/Lightning
+share/gimp/fractalexplorer/Mandelbrot
+share/gimp/fractalexplorer/Marble
+share/gimp/fractalexplorer/Marble2
+share/gimp/fractalexplorer/Medusa
+share/gimp/fractalexplorer/Nautilus
+share/gimp/fractalexplorer/Nebula
+share/gimp/fractalexplorer/Plant
+share/gimp/fractalexplorer/Rose
+share/gimp/fractalexplorer/Saturn
+share/gimp/fractalexplorer/Snow_Crystal
+share/gimp/fractalexplorer/Soma
+share/gimp/fractalexplorer/Spark
+share/gimp/fractalexplorer/Suns
+share/gimp/fractalexplorer/Tentacles
+share/gimp/fractalexplorer/The_Green_Place
+share/gimp/fractalexplorer/Wave
+share/gimp/fractalexplorer/Wood
+share/gimp/fractalexplorer/Zooming_Circle
 share/gimp/gfig/A_star
 share/gimp/gfig/curves
 share/gimp/gfig/polys
@@ -231,6 +273,12 @@ share/gimp/gfig/spirals_and_stars
 share/gimp/gfig/sprial
 share/gimp/gfig/star2
 share/gimp/gfig/stars
+share/gimp/gimp1_1_splash.ppm
+share/gimp/gimp_logo.ppm
+share/gimp/gimp_splash.ppm
+share/gimp/gimp_tips.txt
+share/gimp/gimprc
+share/gimp/gimprc_user
 share/gimp/gradients/Abstract_1
 share/gimp/gradients/Abstract_2
 share/gimp/gradients/Abstract_3
@@ -273,10 +321,10 @@ share/gimp/gradients/German_flag_smooth
 share/gimp/gradients/Golden
 share/gimp/gradients/Greens
 share/gimp/gradients/Horizon_1
-share/gimp/gradients/Land_1
-share/gimp/gradients/Land_and_Sea
 share/gimp/gradients/Horizon_2
 share/gimp/gradients/Incandescent
+share/gimp/gradients/Land_1
+share/gimp/gradients/Land_and_Sea
 share/gimp/gradients/Metallic_Something
 share/gimp/gradients/Mexican_flag
 share/gimp/gradients/Mexican_flag_smooth
@@ -309,6 +357,8 @@ share/gimp/gradients/Wood_1
 share/gimp/gradients/Wood_2
 share/gimp/gradients/Yellow_Contrast
 share/gimp/gradients/Yellow_Orange
+share/gimp/gtkrc
+share/gimp/gtkrc.forest2
 share/gimp/palettes/Bears
 share/gimp/palettes/Bgold
 share/gimp/palettes/Blues
@@ -336,8 +386,8 @@ share/gimp/palettes/Muted
 share/gimp/palettes/Named_Colors
 share/gimp/palettes/News3
 share/gimp/palettes/Op2
-share/gimp/palettes/Pastels
 share/gimp/palettes/Paintjet
+share/gimp/palettes/Pastels
 share/gimp/palettes/Plasma
 share/gimp/palettes/Reds
 share/gimp/palettes/Reds_And_Purples
@@ -392,8 +442,8 @@ share/gimp/patterns/rock.pat
 share/gimp/patterns/sky.pat
 share/gimp/patterns/slate.pat
 share/gimp/patterns/sm_squares.pat
-share/gimp/patterns/stone33.pat
 share/gimp/patterns/starfield.pat
+share/gimp/patterns/stone33.pat
 share/gimp/patterns/terra.pat
 share/gimp/patterns/walnut.pat
 share/gimp/patterns/warning.pat
@@ -402,6 +452,7 @@ share/gimp/patterns/wood2.pat
 share/gimp/patterns/wood3.pat
 share/gimp/patterns/wood4.pat
 share/gimp/patterns/wood5.pat
+share/gimp/ps-menurc
 share/gimp/scripts/3d-outline.scm
 share/gimp/scripts/3dTruchet.scm
 share/gimp/scripts/add-bevel.scm
@@ -470,6 +521,7 @@ share/gimp/scripts/pupi-button.scm
 share/gimp/scripts/rendermap.scm
 share/gimp/scripts/ripply-anim.scm
 share/gimp/scripts/round-corners.scm
+share/gimp/scripts/sel-to-anim-img.scm
 share/gimp/scripts/select_to_brush.scm
 share/gimp/scripts/select_to_image.scm
 share/gimp/scripts/selection-round.scm
@@ -499,15 +551,7 @@ share/gimp/scripts/waves-anim.scm
 share/gimp/scripts/weave.scm
 share/gimp/scripts/web-browser.scm
 share/gimp/scripts/xach-effect.scm
-share/gimp/gimp1_1_splash.ppm
-share/gimp/gimp_logo.ppm
-share/gimp/gimp_splash.ppm
-share/gimp/gimp_tips.txt
-share/gimp/gimprc
-share/gimp/gimprc_user
-share/gimp/gtkrc
-share/gimp/gtkrc.forest2
-share/gimp/ps-menurc
+share/gimp/unitrc
 share/gimp/user_install
 share/locale/de/LC_MESSAGES/gimp.mo
 share/locale/fi/LC_MESSAGES/gimp.mo
@@ -518,17 +562,20 @@ share/locale/ja/LC_MESSAGES/gimp.mo
 share/locale/ko/LC_MESSAGES/gimp.mo
 share/locale/nl/LC_MESSAGES/gimp.mo
 share/locale/pl/LC_MESSAGES/gimp.mo
+share/locale/ru/LC_MESSAGES/gimp.mo
 share/locale/sv/LC_MESSAGES/gimp.mo
-@dirrm libexec/gimp/1.1/modules
+@dirrm share/gimp/scripts
+@dirrm share/gimp/patterns
+@dirrm share/gimp/palettes
+@dirrm share/gimp/gradients
+@dirrm share/gimp/gfig
+@dirrm share/gimp/fractalexplorer
+@dirrm share/gimp/brushes
+@dirrm share/gimp
 @dirrm libexec/gimp/1.1/plug-ins
+@dirrm libexec/gimp/1.1/modules
 @dirrm libexec/gimp/1.1
 @dirrm libexec/gimp
 @dirrm include/libgimp
 @dirrm include/gck
-@dirrm share/gimp/brushes
-@dirrm share/gimp/gfig
-@dirrm share/gimp/gradients
-@dirrm share/gimp/palettes
-@dirrm share/gimp/patterns
-@dirrm share/gimp/scripts
-@dirrm share/gimp
+@unexec rmdir %D/share/aclocal 2>/dev/null || true

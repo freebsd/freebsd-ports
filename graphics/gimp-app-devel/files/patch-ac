@@ -16,8 +16,8 @@
  	gpc.h
  
  INCLUDES = \
---- plug-ins/gpc/Makefile.in.orig	Thu Feb  4 11:21:25 1999
-+++ plug-ins/gpc/Makefile.in	Sat Feb 20 17:33:30 1999
+--- plug-ins/gpc/Makefile.in.orig	Tue Mar  9 02:58:46 1999
++++ plug-ins/gpc/Makefile.in	Mon May 10 10:17:48 1999
 @@ -162,10 +162,14 @@
  prefix = @prefix@
  
@@ -117,13 +117,9 @@
  	@for file in $(DISTFILES); do \
  	  d=$(srcdir); \
  	  if test -d $$d/$$file; then \
-@@ -380,10 +401,38 @@
- 	    || cp -p $$d/$$file $(distdir)/$$file || :; \
+@@ -381,6 +402,37 @@
  	  fi; \
  	done
--gpc.o: gpc.c ../../libgimp/gimp.h ../../libgimp/gimpenums.h \
--	../../libgimp/gimpfeatures.h ../../libgimp/parasite.h \
--	../../libgimp/parasiteF.h ../../libgimp/parasiteP.h
  
 +DEPS_MAGIC := $(shell mkdir .deps > /dev/null 2>&1 || :)
 +
@@ -159,7 +155,7 @@
  info-am:
  info: info-am
  dvi-am:
-@@ -395,20 +444,23 @@
+@@ -392,20 +444,23 @@
  install-exec-am:
  install-exec: install-exec-am
  
@@ -187,7 +183,7 @@
  
  
  mostlyclean-generic:
-@@ -421,27 +473,27 @@
+@@ -418,27 +473,27 @@
  
  maintainer-clean-generic:
  mostlyclean-am:  mostlyclean-pluginlibLIBRARIES mostlyclean-compile \
@@ -221,7 +217,7 @@
  	@echo "This command is intended for maintainers to use;"
  	@echo "it deletes files that may require special tools to rebuild."
  
-@@ -453,13 +505,15 @@
+@@ -450,13 +505,15 @@
  mostlyclean-compile distclean-compile clean-compile \
  maintainer-clean-compile mostlyclean-libtool distclean-libtool \
  clean-libtool maintainer-clean-libtool install-man3 uninstall-man3 \

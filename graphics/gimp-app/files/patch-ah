@@ -1,33 +1,34 @@
---- configure.in.orig	Thu Feb  4 08:37:10 1999
-+++ configure.in	Sun Feb 21 00:11:35 1999
-@@ -441,7 +441,7 @@
+--- configure.orig	Tue May  4 06:06:39 1999
++++ configure	Sat May 22 21:39:37 1999
+@@ -3538,7 +3538,10 @@
+   cat conftest.$ac_ext >&5
+   rm -rf conftest*
+   CATOBJEXT=.mo
+-		   DATADIRNAME=lib
++		   DATADIRNAME=share
++		   INTLDEPS='-lintl'
++		   INTLLIBS=$INTLDEPS
++		   LIBS=`echo $LIBS | sed -e 's/-lintl//'`
+ fi
+ rm -f conftest*
+ 		INSTOBJEXT=.mo
+@@ -7165,7 +7168,7 @@
  fi
  
  gimpdatadir=$datadir/gimp
 -gimpplugindir=$libdir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
 +gimpplugindir=$libexecdir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
- localedir=$datadir/locale
+ localedir='${prefix}/${DATADIRNAME}/locale'
  
  brushdata=`ls -1 $srcdir/data/brushes | grep -v Makefile`
---- configure.orig	Thu Feb  4 08:38:47 1999
-+++ configure	Sun Feb 21 00:11:46 1999
-@@ -7254,7 +7254,7 @@
- fi
+@@ -8746,10 +8749,6 @@
+       *) # Relative path.
+         ac_sub_cache_file="$ac_dots$cache_file" ;;
+       esac
+-  case "$ac_given_INSTALL" in
+-        [/$]*) INSTALL="$ac_given_INSTALL" ;;
+-        *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
+-        esac
  
- gimpdatadir=$datadir/gimp
--gimpplugindir=$libdir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
-+gimpplugindir=$libexecdir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
- localedir=$datadir/locale
- 
- brushdata=`ls -1 $srcdir/data/brushes | grep -v Makefile`
---- Makefile.in.orig	Sat Feb 20 23:45:16 1999
-+++ Makefile.in	Sun Feb 21 00:12:00 1999
-@@ -530,7 +530,7 @@
- install-exec: install-exec-recursive
- 
- install-data-am: install-gimpdataSCRIPTS install-man \
--		install-gimpdataDATA install-m4dataDATA
-+		install-gimpdataDATA
- install-data: install-data-recursive
- 
- install-am: all-am
+       echo "running ${CONFIG_SHELL-/bin/sh} $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_sub_srcdir"
+       # The eval makes quoting arguments work.
