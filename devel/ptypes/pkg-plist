@@ -29,6 +29,13 @@ lib/libptypesn.a
 %%PORTDOCS%%%%DOCSDIR%%/doc/cset.operators.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/deploying.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/freshmeat-logo.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/htsrc.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/include/pasync.h.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/include/pinet.h.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/include/pport.h.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/include/pstreams.h.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/include/ptime.h.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/include/ptypes.h.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/index.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/inet.examples.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/inet.html
@@ -122,6 +129,7 @@ lib/libptypesn.a
 %%PORTDOCS%%%%EXAMPLESDIR%%/wshare/wshare.mak
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/wshare
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/include
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/ptypes
