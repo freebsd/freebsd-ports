@@ -5787,6 +5787,7 @@ platon		ports/biology/platon
 play		ports/audio/play
 playmidi	ports/audio/playmidi
 plb		ports/net/plb
+plconfig	ports/sysutils/plconfig
 plib		ports/x11-toolkits/plib
 plone		ports/www/plone
 plor		ports/news/plor
