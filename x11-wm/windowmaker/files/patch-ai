@@ -1,0 +1,11 @@
+--- util/Makefile.in.orig	Sat Jun  5 15:25:51 1999
++++ util/Makefile.in	Sat Jun  5 15:26:38 1999
+@@ -146,7 +146,7 @@
+ PROGRAMS =  $(bin_PROGRAMS)
+ 
+ 
+-DEFS = @DEFS@ -I. -I$(srcdir) -I../src
++DEFS = @DEFS@ -I. -I../WINGs -I$(srcdir) -I../src
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
