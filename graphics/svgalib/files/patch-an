@@ -1,0 +1,19 @@
+diff -druN svgalib-1.4.2.orig/src/vgamisc.c src/vgamisc.c
+--- svgalib-1.4.2.orig/src/vgamisc.c	Fri Aug 25 04:39:39 2000
++++ src/vgamisc.c	Fri Aug 25 04:39:57 2000
+@@ -73,12 +73,12 @@
+     return __svgalib_graph_mem;
+ }
+ 
+-#include <syscall.h>
+-#include <linux/kernel.h>
++#include <sys/syscall.h>
++/*#include <linux/kernel.h>*/
+ 
+ int __svgalib_physmem(void)
+ {
+-#ifdef __alpha__
++#if defined(__alpha__) || defined(__FreeBSD__)
+     printf("__svgalib_physmem: are you sure you wanna do this??\n");
+     return -1;
+ #else

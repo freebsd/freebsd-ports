@@ -1,0 +1,50 @@
+diff -druN svgalib-1.4.2.orig/src/keyboard/keyboard.c src/keyboard/keyboard.c
+--- svgalib-1.4.2.orig/src/keyboard/keyboard.c	Fri Aug 25 04:39:39 2000
++++ src/keyboard/keyboard.c	Fri Aug 25 04:39:57 2000
+@@ -28,12 +28,13 @@
+ #include <sys/ioctl.h>
+ #include <fcntl.h>
+ #include <termios.h>
+-#include <linux/kd.h>
++#include <sys/kbio.h>
+ /* linux/keyboard.h defines NR_KEYS and some scancode-like constants, so it */
+ /* should also be useful for svgalib programs using the keyboard. It misses */
+ /* a few KERNEL ifdefs around kernel data structures though. */
+-#include <linux/keyboard.h>
+-#include <sys/vt.h>
++/*#include <linux/keyboard.h>*/
++#define NR_KEYS 128
++#include <sys/consio.h>
+ /* Needed to check uid of keymap files */
+ #include <sys/stat.h>
+ #include <unistd.h>
+@@ -340,7 +341,7 @@
+ 
+     tcsetattr(__svgalib_kbd_fd, TCSAFLUSH, &newkbdtermios);
+ 
+-    ioctl(__svgalib_kbd_fd, KDSKBMODE, K_MEDIUMRAW);
++    ioctl(__svgalib_kbd_fd, KDSKBMODE, K_RAW);
+ 
+     keyboard_clearstate();
+ 
+@@ -578,7 +579,7 @@
+ 	    /* VT switch. */
+ 	    /* *** what about F11 & F12? */
+ 	    int j, vt = 0;
+-	    struct vt_stat vts;
++	    int vts;
+ 	    for (j = 0; j < 12; j++)
+ 		if (functionkey_state & (1 << j)) {
+ 		    vt = j + 1;
+@@ -587,9 +588,9 @@
+ 		}
+ 
+ 	    /* Do not switch vt's if need not to */
+-	    ioctl(__svgalib_tty_fd, VT_GETSTATE, &vts);
++	    ioctl(__svgalib_tty_fd, VT_GETACTIVE, &vts);
+ 
+-	    if(vt != vts.v_active) { 
++	    if(vt != vts) { 
+ 	        /* if switching vt's, need to clear keystates */
+ 	        keyboard_clearstate();
+ 	        /*

@@ -1,0 +1,103 @@
+--- Makefile.cfg.orig	Fri Jul 21 11:21:34 2000
++++ Makefile.cfg	Fri Aug 25 05:05:04 2000
+@@ -9,8 +9,8 @@
+ # to n means yes!
+ 
+ MAJOR_VER = 1
+-MINOR_VER = 4.2
+-VERSION = $(MAJOR_VER).$(MINOR_VER)
++MINOR_VER = 
++VERSION = $(MAJOR_VER)
+ 
+ #----------------------------------------------------------------------
+ # Configuration Section
+@@ -24,8 +24,8 @@
+ 
+ # Common prefix for installation directories.
+ # NOTE: This directory must exist when you start the install.
+-TOPDIR=
+-prefix = $(TOPDIR)/usr/local
++TOPDIR=$(PREFIX)
++prefix = $(PREFIX)
+ exec_prefix = $(prefix)
+ 
+ # Directory where the shared stubs and static library will be installed.
+@@ -82,7 +82,7 @@
+ # BACKGROUND = y
+ 
+ # Uncomment this if you want to compile and install the static libs.
+-# INSTALLSTATICLIB = installstaticlib
++INSTALLSTATICLIB = installstaticlib
+ 
+ # Comment this out if you don't want to install the shared libs.
+ # If you do not install the shared nor the static libs, 'make static'
+@@ -94,7 +94,7 @@
+ # a.out image is available install it in the first directory named something
+ # like *aout/ in /etc/ld.so.conf.
+ # If you want this, do not comment out the next line:
+-INSTALLAOUTLIB = installaoutcompat
++#INSTALLAOUTLIB = installaoutcompat
+ 
+ # Comment this out if you want to keep old shared images. Old header files,
+ # library stubs and static libraries CANNOT be kept in public locations
+@@ -126,20 +126,20 @@
+ #INCLUDE_ET4000_DRIVER = y
+ INCLUDE_CIRRUS_DRIVER = y
+ INCLUDE_TVGA_DRIVER = y
+-#INCLUDE_OAK_DRIVER = y
+-#INCLUDE_EGA_DRIVER = y
++INCLUDE_OAK_DRIVER = y
++INCLUDE_EGA_DRIVER = y
+ INCLUDE_MACH32_DRIVER = y
+ INCLUDE_S3_DRIVER = y
+-#INCLUDE_ET3000_DRIVER = y
+-#INCLUDE_GVGA6400_DRIVER = y
+-#INCLUDE_ARK_DRIVER = y
+-#INCLUDE_ATI_DRIVER = y
+-#INCLUDE_ALI_DRIVER = y
++INCLUDE_ET3000_DRIVER = y
++INCLUDE_GVGA6400_DRIVER = y
++INCLUDE_ARK_DRIVER = y
++INCLUDE_ATI_DRIVER = y
++INCLUDE_ALI_DRIVER = y
+ INCLUDE_CHIPS_DRIVER = y
+ INCLUDE_APM_DRIVER = y
+ INCLUDE_NV3_DRIVER = y
+ INCLUDE_ET6000_DRIVER = y
+-INCLUDE_VESA_DRIVER = y
++#INCLUDE_VESA_DRIVER = y
+ INCLUDE_MX_DRIVER = y
+ INCLUDE_PARADISE_DRIVER = y
+ INCLUDE_RAGE_DRIVER = y
+@@ -154,15 +154,15 @@
+ #INCLUDE_ET4000_DRIVER_TEST = y
+ INCLUDE_CIRRUS_DRIVER_TEST = y
+ INCLUDE_TVGA_DRIVER_TEST = y
+-#INCLUDE_OAK_DRIVER_TEST = y
+-#INCLUDE_EGA_DRIVER_TEST = y
++INCLUDE_OAK_DRIVER_TEST = y
++INCLUDE_EGA_DRIVER_TEST = y
+ INCLUDE_MACH32_DRIVER_TEST = y
+-#INCLUDE_GVGA6400_DRIVER_TEST = y
++INCLUDE_GVGA6400_DRIVER_TEST = y
+ INCLUDE_S3_DRIVER_TEST = y
+-#INCLUDE_ET3000_DRIVER_TEST = y
+-#INCLUDE_ARK_DRIVER_TEST = y
+-#INCLUDE_ATI_DRIVER_TEST = y
+-#INCLUDE_ALI_DRIVER_TEST = y
++INCLUDE_ET3000_DRIVER_TEST = y
++INCLUDE_ARK_DRIVER_TEST = y
++INCLUDE_ATI_DRIVER_TEST = y
++INCLUDE_ALI_DRIVER_TEST = y
+ INCLUDE_CHIPS_DRIVER_TEST = y
+ INCLUDE_APM_DRIVER_TEST = y
+ INCLUDE_NV3_DRIVER_TEST = y
+@@ -177,7 +177,7 @@
+ INCLUDE_NEO_DRIVER_TEST = y
+ 
+ #Might be too dangerous:
+-INCLUDE_VESA_DRIVER_TEST = y
++#INCLUDE_VESA_DRIVER_TEST = y
+ 
+ #
+ # Comment out any dac support that you don't want included in the library.

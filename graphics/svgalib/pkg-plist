@@ -1,0 +1,23 @@
+bin/dumpreg
+bin/restorefont
+bin/restorepalette
+bin/restoretextmode
+bin/savetextmode
+bin/svgakeymap
+bin/textmode
+etc/vga/dvorak-us.keymap
+etc/vga/libvga.config
+etc/vga/libvga.et4000
+etc/vga/null.keymap
+include/vga.h
+include/vgagl.h
+include/vgajoystick.h
+include/vgakeyboard.h
+include/vgamouse.h
+lib/libvga.a
+lib/libvga.so
+lib/libvga.so.1
+lib/libvgagl.a
+lib/libvgagl.so
+lib/libvgagl.so.1
+@dirrm etc/vga

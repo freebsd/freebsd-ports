@@ -1,0 +1,13 @@
+This is a low level console graphics library, originally based on VGAlib 1.2 by
+Tommy Frandsen. VGAlib supported  a number  of  standard  VGA graphics modes,
+as well high resolution/high color modes on many popular graphics adapters. As
+of now, support for  many  more  chipsets  has  been  added.       
+
+It supports transparent virtual  console  switching,  that is,  you can switch
+consoles to and from text and graphics mode consoles using alt-[function key].
+Also, svgalib corrects  most  of  VGAlib's textmode corruption behaviour by
+catching SIGSEGV, SIGFPE, SIGILL, and other fatal  signals and  ensuring  that
+a program is running in the currently visible virtual console before setting a
+graphics mode.
+
+WWW: http://www.svgalib.org/

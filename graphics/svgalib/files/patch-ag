@@ -1,0 +1,12 @@
+diff -druN svgalib-1.4.2.orig/src/joystick/joydev.h src/joystick/joydev.h
+--- svgalib-1.4.2.orig/src/joystick/joydev.h	Fri Aug 25 04:39:39 2000
++++ src/joystick/joydev.h	Fri Aug 25 04:39:57 2000
+@@ -1,6 +1,6 @@
+-#include <linux/version.h>
++/*#include <linux/version.h>*/
+ 
+-#if ( LINUX_VESION_CODE >= 131584) 
++#if 0 /*( LINUX_VESION_CODE >= 131584) */
+ #include <linux/joystick.h>
+ #else
+ /* Joystick interface modeled after svgalibs keyboard and mouse interfaces 
