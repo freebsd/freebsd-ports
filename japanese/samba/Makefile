@@ -27,6 +27,7 @@ SAMBA_JA_VERSION=	1.0
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
 USE_SUBMAKE=	yes
@@ -192,7 +193,7 @@ post-build:
 		> ${WRKDIR}/samba.sh.sample
 .if defined(WITH_RECYCLE) || defined(WITH_AUDIT)
 	cd ${WRKDIR}/${DISTNAME}/examples/VFS; \
-		./configure;${GMAKE}; \
+		${SETENV} LIBTOOL=${LIBTOOL} ./configure;${GMAKE}; \
 		${RM} -f config.cache config.log config.status
 .endif
 
