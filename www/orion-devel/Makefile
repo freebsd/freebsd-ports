@@ -7,7 +7,7 @@
 
 PORTNAME=	orion
 PORTVERSION=	1.5.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	www java
 MASTER_SITES=	http://www.orionserver.com/distributions/ \
 		http://www.atlassian.com/software/orion/downloads/ \
@@ -113,7 +113,7 @@ do-install:
 	@${ECHO_CMD} " [ DONE ]"
 .endfor
 
-.if ${WITH_JIKES} == "YES"
+.if defined(WITH_JIKES) && ${WITH_JIKES} == "YES"
 	@${ECHO_CMD} -n ">> Configuring Jikes support..."
 	@${SED} -e "/\<!-- \<compiler executable=\"jikes\" classpath=\"\/myjdkdir\/jre\/lib\/rt.jar\" \/\> -->/s//\<compiler executable=\"${JIKES_LOCATION:S/\//\\\//g}\" classpath=\"${JAVA_HOME:S/\//\\\//g}\/jre\/lib\/rt.jar\"\/\>/" \
 	${WRKSRC}/config/server.xml > ${APP_HOME}/config/server.xml
