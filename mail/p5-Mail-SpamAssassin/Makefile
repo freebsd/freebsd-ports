@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-SpamAssassin
-PORTVERSION=	2.53
+PORTVERSION=	2.54
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://spamassassin.org/released/ \
 		${MASTER_SITE_PERL_CPAN}
@@ -54,6 +54,10 @@ DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -delete
 
+	@${SED} -e 's#mkdir $$spam_conf_dir#mkdir($$spam_conf_dir, 0700)#' \
+		${WRKSRC}/spamd/spamd.raw > ${WRKSRC}/spamd/spamd.raw.sed
+	@${MV} ${WRKSRC}/spamd/spamd.raw.sed ${WRKSRC}/spamd/spamd.raw
+
 	@${MV} ${WRKSRC}/rules/local.cf ${WRKSRC}/rules/local.cf.sample
 	@${SED} -e 's#local.cf#local.cf.sample#g' \
 		${WRKSRC}/Makefile.PL > ${WRKSRC}/Makefile.PL.sed
@@ -71,6 +75,6 @@ post-install:
 	    spamd/README* sql/spamassassin.sql ${DOCSDIR}
 .endif
 
-	@${SED} -e 's#PREFIX#${PREFIX}#' pkg-message
+	@${SED} -e 's#PREFIX#${PREFIX}#' ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
