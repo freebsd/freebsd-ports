@@ -68,9 +68,9 @@ Have fun with this new configuration style !     -andreas \n\n\
    "x11"      "X version 11, release >=4" ON \
    "x11alpha" "X masquer. as device with alpha capability" ON \
    "x11cmyk"  "X masquer. as 1-bit-per-plane CMYK device" ON \
-   "x11cmyk2"  "X masquer. as 2-bit-per-plane CMYK device" ON \
-   "x11cmyk4"  "X masquer. as 4-bit-per-plane CMYK device" OFF \
-   "x11cmyk8"  "X masquer. as 8-bit-per-plane CMYK device" OFF \
+   "x11cmyk2" "X masquer. as 2-bit-per-plane CMYK device" ON \
+   "x11cmyk4" "X masquer. as 4-bit-per-plane CMYK device" OFF \
+   "x11cmyk8" "X masquer. as 8-bit-per-plane CMYK device" OFF \
    "x11gray2" "X masquer. as device with 2-bit gray-scale device" ON \
    "x11gray4" "X masquer. as device with 4-bit gray-scale device" OFF \
    "x11mono"  "X masquer. as black-and-white device" ON \
@@ -84,7 +84,6 @@ Have fun with this new configuration style !     -andreas \n\n\
    "bj200"    "Canon BubbleJet BJ200" ON \
    "bjc600"   "Canon Color BubbleJet BJC-600/4000/70" ON \
    "bjc800"   "Canon Color BubbleJet BJC-800" ON \
-   "lbp8"     "Canon LBP-8II laser printer" OFF \
    "lips2p"   "Canon LIPS II+ laser printer " OFF \
    "lips3"    "Canon LIPS III laser printer " ON \
    "lips4"    "Canon LIPSIV laser printer, mono" ON \
@@ -152,16 +151,14 @@ Have fun with this new configuration style !     -andreas \n\n\
    "oki182"   "Okidata MicroLine 182" OFF \
    "okiibm"   "Okidata MicroLine IBM-compatible printers" OFF \
    "r4081"    "Ricoh 4081 laser printer" OFF \
-   "nx100f"  "Ricoh Printer Description Language (RPDL) (fixed)" ON \
-   "nx100v"  "Ricoh Printer Description Language (RPDL) (variable)" ON \
-   "nwp533"   "Sony Microsystems NWP533 laser printer" OFF \
+   "nx100f"   "Ricoh Printer Description Language (RPDL) (fixed)" ON \
+   "nx100v"   "Ricoh Printer Description Language (RPDL) (variable)" ON \
    "sj48"     "StarJet 48 inkjet printer" OFF \
    "t4693d2"  "Tektronix 4693d color, 2 bits per R/G/B component" OFF \
    "t4693d4"  "Tektronix 4693d color, 4 bits per R/G/B component" OFF \
    "t4693d8"  "Tektronix 4693d color, 8 bits per R/G/B component" OFF \
    "tek4696"  "Tektronix 4695/4696 inkjet plotter" OFF \
    "uniprint" "Unified printer driver ESC/P ESC/P2 HP-RTL/PCL..." ON \
-   "xes"      "Xerox XES printers (2700, 3700, 4045, etc.)" OFF \
    "dfaxhigh" "DigiBoard, DigiFAX software format (high resol)" OFF \
    "dfaxlow"  "DigiFAX low (normal) resol" OFF \
    "faxg3"    "Group 3 fax, with EOLs but no header or EOD" ON \

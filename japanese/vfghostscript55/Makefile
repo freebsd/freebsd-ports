@@ -3,7 +3,7 @@
 # Date created:		26 Aug 1997
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.31 1999/04/16 23:35:00 sada Exp $
+# $Id: Makefile,v 1.32 1999/06/14 01:02:14 taoka Exp $
 #
 
 DISTNAME=	ghostscript-5.50
@@ -103,7 +103,6 @@ post-patch:
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/gdevdmpr.patch
 	@${CAT} ${WRKSRC}/gdev10v.mak >> ${WRKSRC}/contrib.mak
 	@${CAT} ${WRKSRC}/gdevdmpr.mak >> ${WRKSRC}/contrib.mak
-#	@${CAT} ${WRKSRC}/mjc.dev >> ${WRKSRC}/contrib.mak
 	@${CAT} ${WRKSRC}/gdevlips.mak >> ${WRKSRC}/contrib.mak
 	@${CAT} ${WRKSRC}/gdevrpdl.mak >> ${WRKSRC}/contrib.mak
 	@${CAT} ${WRKSRC}/gdevmjc.mak >> ${WRKSRC}/contrib.mak
@@ -124,12 +123,12 @@ post-install:
 	  ${CP} ${PRINTER}/gdev10v/gdev10v.jis ${DOC_DIR} ; \
 	  ${CP} ${PRINTER}/gdevlips-2.3.2/Gdevlips.htm ${DOC_DIR} ; \
 	  ${CP} ${PRINTER}/gdevlips-2.3.2/gs_statd.dif ${DOC_DIR} ; \
-	  ${MKDIR} ${DOC_DIR}/gdevmjc-0.8
+	  ${MKDIR} ${DOC_DIR}/gdevmjc-0.8 ; \
 	  ${CP} ${PRINTER}/gdevmjc-0.8/README.mjc ${DOC_DIR}/gdevmjc-0.8/ ; \
 	  ${CP} ${PRINTER}/gdevmjc-0.8/README.noz ${DOC_DIR}/gdevmjc-0.8/ ; \
 	  ${CP} ${PRINTER}/gdevmjc-0.8/README.mje ${DOC_DIR}/gdevmjc-0.8/ ; \
 	  ${CP} ${PRINTER}/gdevmjc-0.8/cpem.doc ${DOC_DIR}/gdevmjc-0.8/ ; \
-	  ${CP} ${PRINTER}/gdevmjc-0.8/MJ700V2C.FAQ ${DOC_DIR}/gdevmjc.0.8/ ; \
+	  ${CP} ${PRINTER}/gdevmjc-0.8/MJ700V2C.FAQ ${DOC_DIR}/gdevmjc-0.8/ ; \
 	  ${CP} ${PRINTER}/gdevalps-0.2/README.gdevalps ${DOC_DIR}/README.gdevalps ; \
 	  ${CP} ${PRINTER}/gdevmd2k-0.2a/README.jis ${DOC_DIR}/gdevmd2k.jis ; \
 	  ${CP} ${PRINTER}/gdevrpdl-1.2/gdevrpdl.doc ${DOC_DIR} ; \
