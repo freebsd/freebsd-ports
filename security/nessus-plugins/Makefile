@@ -1,5 +1,5 @@
 # Ports collection makefile for:	nessus-plugins
-# Version required:			0.98.3
+# Version required:			0.99.4
 # Date created:				16 October 1999
 # Whom:					Anders Nordby <anders@fix.no>
 #
@@ -33,10 +33,4 @@ GNU_CONFIGURE=	yes
 
 MAN1=		nessus-build.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 400001
-BROKEN=		"Can't be built successfully in -CURRENT"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
