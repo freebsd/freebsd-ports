@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	resume
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xmlresume
@@ -15,22 +15,17 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	fuyuki@hadaly.org
 
-RUN_DEPENDS=	${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog
-
 NO_BUILD=	yes
-PLIST_SUB=	MKCATALOG=${MKCATALOG}
 
 XMLDIR=		${PREFIX}/share/xml/${PORTNAME}
-MKCATALOG=	${LOCALBASE}/sbin/mkcatalog
 
 do-install:
-	${MKDIR} ${XMLDIR}
-.for i in dtd xsl
-	${CP} -R ${WRKSRC}/${i} ${XMLDIR}
-.endfor
+	${MKDIR} ${PREFIX}/share/xml/${PORTNAME}
+	${CP} -R ${WRKSRC}/dtd/* ${PREFIX}/share/xml/${PORTNAME}
+	${MKDIR} ${PREFIX}/share/xsl/${PORTNAME}
+	${CP} -R ${WRKSRC}/xsl/* ${PREFIX}/share/xsl/${PORTNAME}
 
 post-install:
-	${MKCATALOG} -c ${PREFIX}/share/xml/catalog -q install resume/dtd
 	${MKDIR} ${EXAMPLESDIR}
 .for i in css examples/*
 	${CP} -R ${WRKSRC}/${i} ${EXAMPLESDIR}

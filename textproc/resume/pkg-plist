@@ -1,64 +1,62 @@
-@unexec %%MKCATALOG%% -c %D/share/xml/catalog -q deinstall resume/dtd
-share/xml/resume/dtd/catalog
-@exec %%MKCATALOG%% -c %D/share/xml/catalog -q install resume/dtd
-share/xml/resume/dtd/iso-lat1.ent
-share/xml/resume/dtd/resume.dcl
-share/xml/resume/dtd/resume.dtd
-share/xml/resume/xsl/country/br.xsl
-share/xml/resume/xsl/country/de.xsl
-share/xml/resume/xsl/country/fr.xsl
-share/xml/resume/xsl/country/it.xsl
-share/xml/resume/xsl/country/nl.xsl
-share/xml/resume/xsl/country/uk.xsl
-share/xml/resume/xsl/country/us.xsl
-share/xml/resume/xsl/format/fo.xsl
-share/xml/resume/xsl/format/html.xsl
-share/xml/resume/xsl/format/text.xsl
-share/xml/resume/xsl/lib/address.xsl
-share/xml/resume/xsl/lib/common.xsl
-share/xml/resume/xsl/lib/deprecated.xsl
-share/xml/resume/xsl/lib/pub.xsl
-share/xml/resume/xsl/lib/string.xsl
-share/xml/resume/xsl/lib/textlayout.xsl
-share/xml/resume/xsl/misc/124-130.xsl
-share/xml/resume/xsl/misc/13x-140.xsl
-share/xml/resume/xsl/misc/default.xsl
-share/xml/resume/xsl/misc/html_contemporary.xsl
-share/xml/resume/xsl/misc/html_professional.xsl
-share/xml/resume/xsl/output/br-a4.xsl
-share/xml/resume/xsl/output/br-html.xsl
-share/xml/resume/xsl/output/br-text.xsl
-share/xml/resume/xsl/output/de-a4.xsl
-share/xml/resume/xsl/output/de-html.xsl
-share/xml/resume/xsl/output/de-text.xsl
-share/xml/resume/xsl/output/fr-a4.xsl
-share/xml/resume/xsl/output/fr-html.xsl
-share/xml/resume/xsl/output/fr-text.xsl
-share/xml/resume/xsl/output/it-a4.xsl
-share/xml/resume/xsl/output/it-html.xsl
-share/xml/resume/xsl/output/it-text.xsl
-share/xml/resume/xsl/output/nl-a4.xsl
-share/xml/resume/xsl/output/nl-html.xsl
-share/xml/resume/xsl/output/nl-text.xsl
-share/xml/resume/xsl/output/uk-a4.xsl
-share/xml/resume/xsl/output/uk-html.xsl
-share/xml/resume/xsl/output/uk-text.xsl
-share/xml/resume/xsl/output/us-html.xsl
-share/xml/resume/xsl/output/us-letter.xsl
-share/xml/resume/xsl/output/us-text.xsl
-share/xml/resume/xsl/paper/a4.xsl
-share/xml/resume/xsl/paper/letter.xsl
-share/xml/resume/xsl/params.xsl
-@dirrm share/xml/resume/xsl/paper
-@dirrm share/xml/resume/xsl/output
-@dirrm share/xml/resume/xsl/misc
-@dirrm share/xml/resume/xsl/lib
-@dirrm share/xml/resume/xsl/format
-@dirrm share/xml/resume/xsl/country
-@dirrm share/xml/resume/xsl/common
-@dirrm share/xml/resume/xsl
-@dirrm share/xml/resume/dtd
+share/xml/resume/catalog
+share/xml/resume/iso-lat1.ent
+share/xml/resume/resume.dcl
+share/xml/resume/resume.dtd
 @dirrm share/xml/resume
+share/xsl/resume/country/br.xsl
+share/xsl/resume/country/de.xsl
+share/xsl/resume/country/fr.xsl
+share/xsl/resume/country/it.xsl
+share/xsl/resume/country/nl.xsl
+share/xsl/resume/country/uk.xsl
+share/xsl/resume/country/us.xsl
+share/xsl/resume/format/fo.xsl
+share/xsl/resume/format/html.xsl
+share/xsl/resume/format/text.xsl
+share/xsl/resume/lib/address.xsl
+share/xsl/resume/lib/common.xsl
+share/xsl/resume/lib/deprecated.xsl
+share/xsl/resume/lib/pub.xsl
+share/xsl/resume/lib/string.xsl
+share/xsl/resume/lib/textlayout.xsl
+share/xsl/resume/misc/124-130.xsl
+share/xsl/resume/misc/13x-140.xsl
+share/xsl/resume/misc/default.xsl
+share/xsl/resume/misc/html_contemporary.xsl
+share/xsl/resume/misc/html_professional.xsl
+share/xsl/resume/misc/normalize-whitespace.xsl
+share/xsl/resume/output/br-a4.xsl
+share/xsl/resume/output/br-html.xsl
+share/xsl/resume/output/br-text.xsl
+share/xsl/resume/output/de-a4.xsl
+share/xsl/resume/output/de-html.xsl
+share/xsl/resume/output/de-text.xsl
+share/xsl/resume/output/fr-a4.xsl
+share/xsl/resume/output/fr-html.xsl
+share/xsl/resume/output/fr-text.xsl
+share/xsl/resume/output/it-a4.xsl
+share/xsl/resume/output/it-html.xsl
+share/xsl/resume/output/it-text.xsl
+share/xsl/resume/output/nl-a4.xsl
+share/xsl/resume/output/nl-html.xsl
+share/xsl/resume/output/nl-text.xsl
+share/xsl/resume/output/uk-a4.xsl
+share/xsl/resume/output/uk-html.xsl
+share/xsl/resume/output/uk-text.xsl
+share/xsl/resume/output/us-html.xsl
+share/xsl/resume/output/us-letter.xsl
+share/xsl/resume/output/us-text.xsl
+share/xsl/resume/paper/a4.xsl
+share/xsl/resume/paper/letter.xsl
+share/xsl/resume/params.xsl
+@dirrm share/xsl/resume/paper
+@dirrm share/xsl/resume/output
+@dirrm share/xsl/resume/misc
+@dirrm share/xsl/resume/lib
+@dirrm share/xsl/resume/format
+@dirrm share/xsl/resume/country
+@dirrm share/xsl/resume
+@unexec rmdir %D/share/xsl 2>/dev/null || true
 share/examples/resume/Makefile
 share/examples/resume/addressing/Makefile
 share/examples/resume/addressing/README
@@ -71,6 +69,7 @@ share/examples/resume/addressing/nz.xml
 share/examples/resume/addressing/uk.xml
 share/examples/resume/addressing/untagged.xml
 share/examples/resume/addressing/usa.xml
+share/examples/resume/css/compact.css
 share/examples/resume/css/resume1.css
 share/examples/resume/css/resume2.css
 share/examples/resume/css/resume3.css
@@ -233,6 +232,7 @@ share/examples/resume/example2.xml
 %%PORTDOCS%%share/doc/resume/manual/html/param.referees.display.html
 %%PORTDOCS%%share/doc/resume/manual/html/param.skills.format.html
 %%PORTDOCS%%share/doc/resume/manual/html/param.skills.level.display.html
+%%PORTDOCS%%share/doc/resume/manual/html/param.subjects.format.html
 %%PORTDOCS%%share/doc/resume/manual/html/paramref.html
 %%PORTDOCS%%share/doc/resume/manual/html/ref.html
 %%PORTDOCS%%share/doc/resume/manual/manual.css
