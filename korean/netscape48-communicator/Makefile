@@ -17,7 +17,7 @@ MAINTAINER?=	cjh@kr.freebsd.org
 
 # ?= for ports that include this Makefile
 RUN_DEPENDS?=	${PREFIX}/bin/${BROWSER}-${BROWSER_VERSION}:${PORTSDIR}/www/netscape4-${BROWSER}
-RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/local/hgm12.pcf.gz:${PORTSDIR}/korean/hanyangfonts \
+RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/local/gulim12.pcf.gz:${PORTSDIR}/korean/baekmukfonts-bdf \
 		${X11BASE}/lib/X11/fonts/local/mzgt16h1.pcf.gz:${PORTSDIR}/korean/mizifont
 
 NO_BUILD=	yes
@@ -35,6 +35,8 @@ BROWSER_BIN?=   ${BROWSER}-${BROWSER_VERSION}.bin
 BROWSER_CMD?=   ko-${BROWSER}-4
 BROWSER_VERSION?= 4.08
 NETHELP?=	nethelp-v403
+PREVFONTNAME=	kodig
+NEWFONTNAME=	gulim
 KOREAN_KIT?=	netscape-v408.generic-generic-generic-19990612
 
 LANG=		ko_KR.EUC
@@ -44,7 +46,8 @@ MAKESCRIPT=	${SED} -e "s;@X11BASE@;${X11BASE};g" \
 			-e "s;@RDIR@;${NDIR};g" \
 			-e "s;@BROWSER@;${BROWSER};g" \
 			-e "s;@BROWSER_BIN@;${BROWSER_BIN};g" \
-			-e "s;@LANG@;${LANG};g"
+			-e "s;@LANG@;${LANG};g" \
+			-e "s;-${PREVFONTNAME}-;-${NEWFONTNAME}-;g"
 TAR=		/usr/bin/tar
 
 .if ${BROWSER_VERSION} == 4.08
