@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	hylafax
-PORTVERSION=	4.1.b2
-PORTREVISION=	2
+PORTVERSION=	4.1.b3
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.hylafax.org/source/
-DISTNAME=	${PORTNAME}-4.1beta2
+DISTNAME=	${PORTNAME}-4.1beta3
+WRKSRC=		${WRKDIR}/${PORTNAME}-4.1beta2
 
 PATCH_SITES=	http://www.hylafax.org/patches/
 PATCHFILES=	tiff-3.5-interfaces.patch cvtDateTime.patch
