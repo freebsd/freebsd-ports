@@ -449,7 +449,6 @@ lib/perl5/man/man3/DynaLoader.3.gz
 lib/perl5/man/man3/DB_File.3.gz
 lib/perl5/man/man3/Fcntl.3.gz
 lib/perl5/man/man3/FileHandle.3.gz
-lib/perl5/man/man3/GDBM_File.3.gz
 lib/perl5/man/man3/NDBM_File.3.gz
 lib/perl5/man/man3/POSIX.3.gz
 lib/perl5/man/man3/SDBM_File.3.gz

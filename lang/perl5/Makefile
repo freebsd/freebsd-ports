@@ -3,7 +3,7 @@
 # Date created:		16 April 1995
 # Whom:			markm
 #
-# $Id: Makefile,v 1.13 1996/11/26 11:10:27 asami Exp $
+# $Id: Makefile,v 1.14 1996/12/07 14:23:25 asami Exp $
 #
 
 DISTNAME=	perl5.003
@@ -51,7 +51,7 @@ MANTHREE=	AnyDBM_File.3 AutoLoader.3 AutoSplit.3 Benchmark.3 \
 	Text::Soundex.3 Text::Tabs.3 Text::Wrap.3 Tie::Hash.3 \
 	Tie::Scalar.3 Tie::SubstrHash.3 Time::Local.3 diagnostics.3 \
 	integer.3 less.3 lib.3 overload.3 sigtrap.3 strict.3 vars.3 \
-	Config.3 DynaLoader.3 DB_File.3 Fcntl.3 FileHandle.3 GDBM_File.3 \
+	Config.3 DynaLoader.3 DB_File.3 Fcntl.3 FileHandle.3 \
 	NDBM_File.3 POSIX.3 SDBM_File.3 Safe.3 Socket.3
 
 test:
