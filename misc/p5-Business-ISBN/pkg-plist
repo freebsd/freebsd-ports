@@ -1,0 +1,7 @@
+lib/perl5/site_perl/%%PERL_VER%%/Business/ISBN.pm
+lib/perl5/site_perl/%%PERL_VER%%/Business/ISBN/Data.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/ISBN/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/ISBN
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Business/ISBN
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Business 2>/dev/null || true
