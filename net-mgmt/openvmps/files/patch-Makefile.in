@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Jan 25 18:16:11 2005
++++ Makefile.in	Tue Jan 25 18:17:02 2005
+@@ -684,7 +684,7 @@
+ 
+ install-data-am: install-man
+ 
+-install-exec-am: install-binPROGRAMS install-sysconfDATA
++install-exec-am: install-binPROGRAMS
+ 
+ install-info: install-info-am
+ 
