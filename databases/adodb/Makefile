@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	adodb
-PORTVERSION=	2.50
+PORTVERSION=	3.60
 CATEGORIES=	databases www
 MASTER_SITES=	http://phplens.com/lens/dl/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
