@@ -1,0 +1,9 @@
+String::Checker - An extensible string validation module (allowing commonly
+used checks on strings to be called more concisely and consistently).
+Why is this useful?  If you're only checking one string, it probably
+isn't.  However, if you're checking a bunch of strings (say, for
+example, CGI input parameters) against a set of expectations, this
+comes in pretty handy.  As a matter of fact, the CGI::ArgChecker
+module is a simple, CGI.pm aware wrapper for this library.
+
+--will
