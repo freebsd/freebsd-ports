@@ -9,10 +9,6 @@ bin/xgettext
 include/libintl.h
 @unexec install-info --delete %D/info/gettext.info %D/info/dir
 info/gettext.info
-info/gettext.info-1
-info/gettext.info-2
-info/gettext.info-3
-info/gettext.info-4
 @exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/gettext.info %D/info/dir
 lib/libintl.a
