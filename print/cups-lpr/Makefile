@@ -13,7 +13,6 @@ CATEGORIES?=	print
 MAINTAINER=	ports@geeksrus.net
 
 LIB_DEPENDS=	cups.2:${.CURDIR}/../../print/cups-base
-RUN_DEPENDS=	espgs:${.CURDIR}/../../print/cups-pstoraster
 
 MAN1=		lp.1 lpoptions.1 lpq.1 lpr.1 lprm.1 lpstat.1 \
 		lppasswd.1
