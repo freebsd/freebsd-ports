@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Sep 28 17:26:39 2003
-+++ Makefile	Sat Dec  6 02:29:28 2003
+--- Makefile.orig	Sun Dec 28 09:52:46 2003
++++ Makefile	Sun Dec 28 10:00:38 2003
 @@ -6,8 +6,7 @@
  
  VPATH=$(SRC_PATH)
@@ -10,7 +10,20 @@
  
  ifeq ($(TARGET_GPROF),yes)
  CFLAGS+=-p
-@@ -69,8 +68,8 @@
+@@ -33,10 +32,11 @@
+ DEP_LIBS=libavcodec/$(SLIBPREF)avcodec$(SLIBSUF) libavformat/$(SLIBPREF)avformat$(SLIBSUF)
+ else
+ DEP_LIBS=libavcodec/$(LIBPREF)avcodec$(LIBSUF) libavformat/$(LIBPREF)avformat$(LIBSUF)
++endif
++
+ ifeq ($(CONFIG_MP3LAME),yes)
+ EXTRALIBS+=-lmp3lame
+ endif
+-endif
+ 
+ ifeq ($(CONFIG_VORBIS),yes)
+ EXTRALIBS+=-logg -lvorbis -lvorbisenc
+@@ -69,8 +69,8 @@
  all: lib $(PROG) $(PROGTEST) $(VHOOK)
  
  lib:
