@@ -1,12 +1,26 @@
-diff -ruN ./sys/unix/Makefile.doc ../nethack-3.2.2/sys/unix/Makefile.doc
---- ./sys/unix/Makefile.doc	Wed Dec 11 05:20:08 1996
-+++ ../nethack-3.2.2/sys/unix/Makefile.doc	Sun Mar 21 17:25:02 1999
-@@ -31,7 +31,7 @@
+$FreeBSD$
+
+--- sys/unix/Makefile.doc.orig	Tue Dec 10 13:20:08 1996
++++ sys/unix/Makefile.doc	Thu Apr  8 16:29:59 2004
+@@ -31,15 +31,15 @@
  
  
  GAME	= nethack
 -MANDIR	= /usr/man/man6
-+MANDIR	= ${PREFIX}/man/man6
++MANDIR	= ${MANPREFIX}/man/man6
  MANEXT	= 6
  
  # manual installation for most BSD-style systems
+-GAMEMANCREATE = cp nethack.6
+-LEVMANCREATE = cp lev_comp.6
+-DGNMANCREATE = cp dgn_comp.6
+-RCVRMANCREATE = cp recover.6
+-DLBMANCREATE = cp dlb.6
++GAMEMANCREATE = ${BSD_INSTALL_MAN} nethack.6
++LEVMANCREATE = ${BSD_INSTALL_MAN} lev_comp.6
++DGNMANCREATE = ${BSD_INSTALL_MAN} dgn_comp.6
++RCVRMANCREATE = ${BSD_INSTALL_MAN} recover.6
++DLBMANCREATE = ${BSD_INSTALL_MAN} dlb.6
+ # manual installation for most SYSV-style systems
+ # GAMEMANCREATE = nroff -man nethack.6 >
+ # LEVMANCREATE = nroff -man lev_comp.6 >

@@ -7,7 +7,7 @@
 
 PORTNAME=	nethack
 PORTVERSION=	3.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=     ${PORTNAME}
@@ -30,11 +30,10 @@ USE_GMAKE=	yes
 MAN6=		dgn_comp.6 dlb.6 lev_comp.6 nethack.6 recover.6
 
 pre-configure:
-	@cd ${WRKSRC}/sys/unix; ${SH} setup.sh
+	@cd ${WRKSRC}/sys/unix && ${SH} setup.sh
 
 post-install:
-	@cd ${WRKSRC}/doc; ${CHMOD} 644 *.6
-	@cd ${WRKSRC}/doc; PREFIX=${PREFIX} ${MAKE} manpages
+	@cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${MAKE} manpages
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/Guidebook.txt ${DOCSDIR}
