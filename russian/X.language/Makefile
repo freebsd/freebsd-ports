@@ -3,13 +3,13 @@
 # Date created:         31 Aug 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.7 1996/03/20 10:38:59 asami Exp $
+# $Id: Makefile,v 1.8 1996/09/01 13:47:03 ache Exp $
 #
 
-DISTNAME=       xrus-1.0-bin
+DISTNAME=       xrus-2.0-bin
 PKGNAME=        ru-X11-3.1.2
 CATEGORIES+=    russian x11
-MASTER_SITES=   ftp://ftp.kiae.su/misc/fonts/cyrillic/xwindows/
+MASTER_SITES=   ftp://ftp.relcom.ru/misc/fonts/cyrillic/xwindows/
 EXTRACT_SUFX=   .tgz
 
 MAINTAINER=	ache@FreeBSD.ORG
@@ -23,18 +23,25 @@ NO_BUILD=       YES
 USE_X11=        YES
 
 XLIB = ${X11BASE}/lib/X11
-INSTALL_DATA = ${INSTALL} -c -m 644 -o ${BINOWN} -g ${BINGRP}
 
 #Be careful to not delete embedded tab characters
 do-install:
 	-mv ${XLIB}/fonts/cyrillic ${XLIB}/fonts/cyrillic.old
-	-mkdir ${XLIB}/fonts/cyrillic
-	cd ${WRKSRC}; ${INSTALL_DATA} * ${XLIB}/fonts/cyrillic
+	-mkdir -p ${XLIB}/fonts/cyrillic/100dpi
+	-mkdir -p ${XLIB}/fonts/cyrillic/75dpi
+	-mkdir -p ${XLIB}/fonts/cyrillic/misc
+	cd ${WRKSRC}; \
+	${INSTALL_DATA} xrus.info ${XLIB}/fonts/cyrillic; \
+	for i in 100dpi 75dpi misc; do \
+		${INSTALL_DATA} $$i/* ${XLIB}/fonts/cyrillic/$$i; \
+	done
 	if [ -f	/etc/XF86Config	]; then	\
-		grep -q	${XLIB}/fonts/cyrillic /etc/XF86Config || { \
+		grep -q ${XLIB}/fonts/cyrillic/misc /etc/XF86Config || { \
 			cp /etc/XF86Config /etc/XF86Config.old; \
 			(echo "/^[ 	]*FontPath/i"; \
-			 echo "    FontPath	\"${XLIB}/fonts/cyrillic\""; \
+			 echo "    FontPath	\"${XLIB}/fonts/cyrillic/75dpi\""; \
+			 echo "    FontPath	\"${XLIB}/fonts/cyrillic/100dpi\""; \
+			 echo "    FontPath	\"${XLIB}/fonts/cyrillic/misc\""; \
 			 echo "."; echo "w"; echo "q"; ) > /tmp/ed.$$$$; \
 			ed - /etc/XF86Config < /tmp/ed.$$$$; \
 			rm -f /tmp/ed.$$$$; \
