@@ -1,12 +1,16 @@
 Japanese 20 dot mincho font named `kappa font'.
 
 You can use 
-	"k20m"  	medium mincho
-	"k20b"  	bold mincho
-	"10x20m" 	ascii
-	"10x20b" 	bold ascii
-	"10x20rkm" 	kana
-	"10x20rkb" 	bold kana
+	k20[mb]		mincho	(JIS X 0208)
+			('m' for medium mincho, 'b' for bold mincho)
+	10x20[mb]	ascii		(ISO-8859-1(Latin 1))
+	10x20rk[mb]	kana		(JIS X 0201)
+	10x20L[239][mb]	ISO 8859-[239]	(Latin [239])
+	ipa-10x20[mb]	Mule IPA fonts
+	vk20[mb]	k20[mb] modified for vertical writings
 
-A simple usage:
-	% kterm -fn 10x20b -fr 10x20rkb -fk k20b
+An example usage:
+  % kterm -fn a20m -fb a20b -fr r10m -frb a20b -fk k20m -fkb k20b -lsp 3
+or in your Xresources file:
+  KTerm*VT100*fontList:		-kappa-fixed-medium-r-normal--20-*
+  KTerm*VT100*boldFontList:	-kappa-fixed-bold-r-normal--20-*
