@@ -1,0 +1,41 @@
+@comment $FreeBSD$
+bin/ldapdns
+bin/ldapaxfr
+bin/ldapdns-conf
+bin/ldapaxfr-conf
+bin/domainname.sh
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.axfr
+%%PORTDOCS%%%%DOCSDIR%%/README.comparison
+%%PORTDOCS%%%%DOCSDIR%%/README.generic-rr
+%%PORTDOCS%%%%DOCSDIR%%/README.search
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/README.admin
+%%PORTDOCS%%%%DOCSDIR%%/README.configure
+%%PORTDOCS%%%%DOCSDIR%%/README.how-can-i-help
+%%PORTDOCS%%%%DOCSDIR%%/README.quotes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/admin/add_basic_zone
+%%EXAMPLESDIR%%/admin/add_generic_record
+%%EXAMPLESDIR%%/admin/add_sub_alias
+%%EXAMPLESDIR%%/admin/add_sub_host
+%%EXAMPLESDIR%%/admin/add_sub_mx
+%%EXAMPLESDIR%%/admin/config.pl
+%%EXAMPLESDIR%%/admin/dhcp_names
+%%EXAMPLESDIR%%/admin/samba_names
+%%EXAMPLESDIR%%/admin/secondary_zone
+%%EXAMPLESDIR%%/admin/set_generic_record
+%%EXAMPLESDIR%%/admin/set_ip_pointer
+%%EXAMPLESDIR%%/admin/set_sub_alias
+%%EXAMPLESDIR%%/admin/set_sub_host
+%%EXAMPLESDIR%%/admin/set_sub_mx
+%%EXAMPLESDIR%%/admin/set_txt
+%%EXAMPLESDIR%%/admin/transfer_zone
+%%EXAMPLESDIR%%/admin/unset_ip_pointer
+%%EXAMPLESDIR%%/axfr
+%%EXAMPLESDIR%%/ldapdns.conf
+@dirrm %%EXAMPLESDIR%%/admin
+@dirrm %%EXAMPLESDIR%%
