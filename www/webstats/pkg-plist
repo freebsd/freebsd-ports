@@ -1,0 +1,23 @@
+webstats/webstats
+etc/webstats/webstats.ini-dist
+etc/webstats/default.cfg-dist
+etc/webstats/default.ini-dist
+etc/webstats/vhosts/analog.cfg-dist
+etc/webstats/vhosts/rmagic.ini-dist
+webstats/README
+webstats/INSTALL
+webstats/VERSION
+webstats/CHANGES
+share/doc/webstats.html
+webstats/web/bullet.gif
+webstats/web/class.inifile.php
+webstats/web/menu.css
+webstats/web/webstats.php
+webstats/stuff/README
+webstats/stuff/advxsplitlogfile
+webstats/stuff/DynamicVhosts.conf
+@dirrm webstats/stuff
+@dirrm webstats/web
+@dirrm webstats
+@dirrm etc/webstats/vhosts
+@dirrm etc/webstats

@@ -517,6 +517,7 @@
     SUBDIR += weblint
     SUBDIR += webredirect
     SUBDIR += webresolve
+    SUBDIR += webstats
     SUBDIR += webstone
     SUBDIR += webstone-ssl
     SUBDIR += wml
