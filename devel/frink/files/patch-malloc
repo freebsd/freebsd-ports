@@ -1,0 +1,7 @@
+--- tcl.c	Mon Apr 23 10:31:13 2001
++++ tcl.c	Tue May  8 15:30:28 2001
+@@ -23,3 +23,3 @@
+ #else
+-#include <malloc.h>
++#include <stdlib.h>
+ #endif
