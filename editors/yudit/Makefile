@@ -6,20 +6,24 @@
 #
 
 PORTNAME=	yudit
-PORTVERSION=	1.5
+PORTVERSION=	1.5.p1
 CATEGORIES=	editors converters print
 MASTER_SITES=	http://yudit.org/download/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= apps/editors/X
+
+PATCH_SITES=	http://yudit.org/download/
+PATCHFILES=	yudit-1.5.patch1
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	rch@WriteMe.Com
 
 LIB_DEPENDS=	ttf.4:${PORTSDIR}/print/freetype
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 
-CONFIGURE_ENV=	LC_ALL=C
+CONFIGURE_ENV=	LC_ALL=
 GNU_CONFIGURE=	YES
-MAKE_ENV=	LC_ALL=C
+MAKE_ENV=	LC_ALL=
 MAN1=		yudit.1 makeumap.1 stripumap.1 uniconv.1 uniprint.1
 USE_GMAKE=	YES
 
