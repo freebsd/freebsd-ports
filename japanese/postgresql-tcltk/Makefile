@@ -180,12 +180,12 @@ post-install:
 	@ ${INSTALL_DATA} ${FILESDIR}/post-install-notes ${PREFIX}/pgsql
 .if defined(USE_TCL)
 	@${CP} ${TMPPLIST} ${TMPPLIST}.notcl
-	@${CAT} ${PKGDIR}/PLIST.tcl ${TMPPLIST}.notcl > ${TMPPLIST}
+	@${CAT} ${PKGDIR}/pkg-plist.tcl ${TMPPLIST}.notcl > ${TMPPLIST}
 	@${RM} ${TMPPLIST}.notcl
 .endif
 .if defined(USE_ODBC)
 	@${CP} ${TMPPLIST} ${TMPPLIST}.noodbc
-	@${CAT} ${PKGDIR}/PLIST.odbc ${TMPPLIST}.noodbc > ${TMPPLIST}
+	@${CAT} ${PKGDIR}/pkg-plist.odbc ${TMPPLIST}.noodbc > ${TMPPLIST}
 	@${RM} ${TMPPLIST}.noodbc
 .endif
 .if defined(USE_JDBC)
@@ -196,7 +196,7 @@ post-install:
 	@ ${ECHO_MSG} "Putting postgresql.jar in ${PREFIX}/share/java"
 	@ ${ECHO_MSG} "Add this to your CLASSPATH!"
 	@ ${ECHO_MSG} "---------------------------------------------------------"
-	${CAT} ${PKGDIR}/PLIST.jdbc >> ${TMPPLIST}
+	${CAT} ${PKGDIR}/pkg-plist.jdbc >> ${TMPPLIST}
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} -m 0555 ${PREFIX}/share/examples/pgsql/jdbc
 	@ ${INSTALL_DATA} ${WRKSRC}/interfaces/jdbc/example/*java \
