@@ -1,9 +1,0 @@
---- player/mywidget.h.orig	Wed Apr 18 22:06:31 2001
-+++ player/mywidget.h	Wed Apr 18 22:06:41 2001
-@@ -7,7 +7,7 @@
- #include <pthread.h>
- 
- #ifdef USE_SDL
--#include <SDL/SDL_keysym.h>
-+#include <SDL11/SDL_keysym.h>
- #endif
