@@ -1,39 +1,30 @@
---- Makefile.orig	Sat May 10 02:20:54 1997
-+++ Makefile	Tue Oct  7 13:39:00 1997
-@@ -5,11 +5,11 @@
+--- Makefile.orig	Sat Sep 11 20:32:16 1999
++++ Makefile	Fri Oct  8 18:18:25 1999
+@@ -2,11 +2,11 @@
  # SRCDIR should be a path to the directory that will hold fractint.hlp
  # You will have to copy fractint.hlp to SRCDIR and make it world readable.
  # SRCDIR should also hold the .par, .frm, etc. files
--SRCDIR = /usr/local/bin/X11/fractint
-+SRCDIR = ${PREFIX}/lib/fractint
+-SRCDIR =  /usr/src/xfractint
++SRCDIR =  ${PREFIX}/lib/fractint
  # BINDIR is where you put your X11 binaries
--BINDIR = /usr/local/bin/X11
+-BINDIR = /usr/X11R6/bin
 +BINDIR = ${PREFIX}/bin
  # MANDIR is where you put your chapter 1 man pages
--MANDIR = /usr/local/man/man1
+-MANDIR = /usr/X11R6/man/man1
 +MANDIR = ${PREFIX}/man/man1
  
  NOBSTRING =
  HAVESTRI =
-@@ -28,7 +28,7 @@
- #     prompts2.c to "#else".
- #
- 
--#NOBSTRING = -DNOBSTRING
-+NOBSTRING = -DNOBSTRING
- #HAVESTRI = -DHAVESTRI
- #DEBUG adds some sanity checking but will slow xfractint down
- #DEBUG = -DEBUG
-@@ -53,7 +53,7 @@
+@@ -51,7 +51,7 @@
  #For Solaris, use CFLAGS = -I. -I/usr/openwin/include $(DEFINES) -g
  
  #CFLAGS = -I. -D_CONST $(DEFINES)
--CFLAGS = -I. $(DEFINES) -g -DBIG_ANSI_C -DLINUX
+-CFLAGS = -I. $(DEFINES) -g -DBIG_ANSI_C -DLINUX 
 +CFLAGS += -I. $(DEFINES) -DBIG_ANSI_C -I${X11BASE}/include
  
  # Gcc is often the only compiler that works for this
  # For HPUX, use CC = cc -Aa -D_HPUX_SOURCE
-@@ -70,8 +70,8 @@
+@@ -68,8 +68,8 @@
  # For Apollo, change -lX11 to -L/usr/X11/libX11
  # For Solaris, add -L/usr/openwin/lib
  # For Linux, use  
@@ -44,7 +35,7 @@
  #LIBS = -lX11 -lm -lcurses -ltermcap
  
  # HPUX fixes thanks to David Allport, Bill Broadley, and R. Lloyd.
-@@ -149,6 +149,8 @@
+@@ -166,6 +166,8 @@
  .SUFFIXES:
  .SUFFIXES: .o .c .s .h
  
@@ -53,7 +44,7 @@
  xfractint: fractint.hlp .WAIT $(OBJS)
  	$(CC) -o xfractint $(CFLAGS) $(OBJS) $(LIBS)
  #	strip xfractint
-@@ -166,6 +168,12 @@
+@@ -183,6 +185,12 @@
  	cp xfractint $(BINDIR)/xfractint
  	strip $(BINDIR)/xfractint
  	chmod a+x $(BINDIR)/xfractint

@@ -1,15 +1,15 @@
---- port.h.orig	Fri Feb 28 05:21:13 1997
-+++ port.h	Tue Oct  7 13:27:56 1997
-@@ -40,7 +40,7 @@
- /* If endian.h is not present, it can be handled in the code below, */
- /* but if you have this file, it can make it more fool proof. */
- #if (defined(XFRACT) && !defined(__sun))
+--- port.h.orig	Mon Sep  6 10:38:10 1999
++++ port.h	Fri Oct  8 18:19:32 1999
+@@ -45,7 +45,7 @@
+ #if defined(sgi)
+ #include <sys/endian.h>
+ #else
 -#include <endian.h>
 +#include <machine/endian.h>
  #endif
+ #endif
  #ifndef BIG_ENDIAN
- #define BIG_ENDIAN    4321  /* to show byte order (taken from gcc) */
-@@ -282,6 +282,9 @@
+@@ -288,6 +288,9 @@
  #define DO_NOT_USE_LONG_DOUBLE
  #endif
  #ifdef sun
