@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wine
-PORTVERSION=	20040309
+PORTVERSION=	20040408
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/wine/development
@@ -56,7 +56,7 @@ post-configure:
 
 do-install:
 	cd ${WRKSRC} && ${GMAKE} install
-	-@${MKDIR} ${PREFIX}/etc
+	-@${MKDIR} ${PREFIX}/etc/rc.d
 	${INSTALL_DATA} ${WRKSRC}/documentation/samples/config ${PREFIX}/etc/wine.conf.sample
 	[ -f ${PREFIX}/etc/wine.conf ] \
 		|| ${INSTALL_DATA} ${PREFIX}/etc/wine.conf.sample ${PREFIX}/etc/wine.conf

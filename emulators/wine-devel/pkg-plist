@@ -23,6 +23,7 @@ bin/winelauncher
 bin/winemaker
 bin/winemine
 bin/winepath
+bin/wineprefixcreate
 bin/wineserver
 bin/wineshelllink
 bin/winhelp
@@ -44,6 +45,7 @@ include/wine/msvcrt/dos.h
 include/wine/msvcrt/eh.h
 include/wine/msvcrt/errno.h
 include/wine/msvcrt/fcntl.h
+include/wine/msvcrt/float.h
 include/wine/msvcrt/io.h
 include/wine/msvcrt/limits.h
 include/wine/msvcrt/locale.h
@@ -91,6 +93,7 @@ include/wine/windows/compobj.h
 include/wine/windows/control.h
 include/wine/windows/cpl.h
 include/wine/windows/custcntl.h
+include/wine/windows/cvconst.h
 include/wine/windows/d3d.h
 include/wine/windows/d3d8.h
 include/wine/windows/d3d8caps.h
@@ -192,6 +195,7 @@ include/wine/windows/mssip.h
 include/wine/windows/mswsock.h
 include/wine/windows/nb30.h
 include/wine/windows/netspi.h
+include/wine/windows/npapi.h
 include/wine/windows/nspapi.h
 include/wine/windows/ntddcdrm.h
 include/wine/windows/ntddscsi.h
@@ -309,8 +313,9 @@ lib/wine/avifile.dll.so
 lib/wine/aviinfo.exe.so
 lib/wine/aviplay.exe.so
 lib/wine/bug_report.pl
-lib/wine/capi2032.dll.so
 lib/wine/cabinet.dll.so
+lib/wine/capi2032.dll.so
+lib/wine/cards.dll.so
 lib/wine/cfgmgr32.dll.so
 lib/wine/clock.exe.so
 lib/wine/comcat.dll.so
@@ -329,6 +334,7 @@ lib/wine/d3d8.dll.so
 lib/wine/d3d9.dll.so
 lib/wine/d3dim.dll.so
 lib/wine/d3dx8.dll.so
+lib/wine/dbghelp.dll.so
 lib/wine/dciman32.dll.so
 lib/wine/ddeml.dll.so
 lib/wine/ddraw.dll.so
@@ -349,6 +355,7 @@ lib/wine/dmusic32.dll.so
 lib/wine/dpnhpast.dll.so
 lib/wine/dplay.dll.so
 lib/wine/dplayx.dll.so
+lib/wine/dpnet.dll.so
 lib/wine/dsound.dll.so
 lib/wine/dswave.dll.so
 lib/wine/expand.exe.so
@@ -375,6 +382,7 @@ lib/wine/libavicap32.def
 lib/wine/libavifil32.def
 lib/wine/libcabinet.def
 lib/wine/libcapi2032.def
+lib/wine/libcards.def
 lib/wine/libcfgmgr32.def
 lib/wine/libcomcat.def
 lib/wine/libcomctl32.def
@@ -386,6 +394,7 @@ lib/wine/libd3d8.def
 lib/wine/libd3d9.def
 lib/wine/libd3dim.def
 lib/wine/libd3dx8.def
+lib/wine/libdbghelp.def
 lib/wine/libdciman32.def
 lib/wine/libddraw.def
 lib/wine/libdevenum.def
@@ -400,13 +409,12 @@ lib/wine/libdmstyle.def
 lib/wine/libdmsynth.def
 lib/wine/libdmusic.def
 lib/wine/libdmusic32.def
+lib/wine/libdpnet.def
 lib/wine/libdpnhpast.def
 lib/wine/libdxerr8.a
 lib/wine/libdxerr9.a
 lib/wine/libdxguid.a
 lib/wine/libglut32.def
-lib/wine/libmshtml.def
-lib/wine/libmsvcrtd.def
 lib/wine/libdplay.def
 lib/wine/libdplayx.def
 lib/wine/libdsound.def
@@ -424,6 +432,7 @@ lib/wine/libmapi32.def
 lib/wine/libmpr.def
 lib/wine/libmsacm32.def
 lib/wine/libmsdmo.def
+lib/wine/libmshtml.def
 lib/wine/libmsi.def
 lib/wine/libmsimg32.def
 lib/wine/libmsnet32.def
@@ -431,6 +440,7 @@ lib/wine/libmsrle32.def
 lib/wine/libmsvcrt.def
 lib/wine/libmsvcrt20.def
 lib/wine/libmsvcrt40.def
+lib/wine/libmsvcrtd.def
 lib/wine/libmsvfw32.def
 lib/wine/libmsvidc32.def
 lib/wine/libmswsock.def
@@ -471,6 +481,7 @@ lib/wine/liburlmon.def
 lib/wine/libuser32.def
 lib/wine/libuuid.a
 lib/wine/libuxtheme.def
+lib/wine/libvdmdbg.def
 lib/wine/libversion.def
 lib/wine/libw32skrnl.def
 lib/wine/libwined3d.def
@@ -572,6 +583,7 @@ lib/wine/storage.dll.so
 lib/wine/stress.dll.so
 lib/wine/system.drv.so
 lib/wine/tapi32.dll.so
+lib/wine/taskmgr.exe.so
 lib/wine/toolhelp.dll.so
 lib/wine/ttydrv.dll.so
 lib/wine/twain_32.dll.so
@@ -584,6 +596,7 @@ lib/wine/user.exe.so
 lib/wine/user32.dll.so
 lib/wine/uxtheme.dll.so
 lib/wine/vdhcp.vxd.so
+lib/wine/vdmdbg.dll.so
 lib/wine/ver.dll.so
 lib/wine/version.dll.so
 lib/wine/vmm.vxd.so
