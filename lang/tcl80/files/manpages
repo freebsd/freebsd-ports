@@ -69,6 +69,7 @@ MAN3+=	Tcl_Main.3
 MAN3+=	TraceVar.3
 MAN3+=	Translate.3
 MAN3+=	UpVar.3
+MAN3+=	WrongNumArgs.3
 
 MANN+=	Tcl.n
 MANN+=	after.n
@@ -156,6 +157,8 @@ MANN+=	update.n
 MANN+=	uplevel.n
 MANN+=	upvar.n
 MANN+=	variable.n
+MANN+=	vwait.n
+MANN+=	while.n
 
 MLINKS+=	AddErrInfo.3 Tcl_AddErrorInfo.3
 MLINKS+=	AddErrInfo.3 Tcl_AddObjErrorInfo.3
