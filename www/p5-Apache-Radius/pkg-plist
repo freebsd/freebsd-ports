@@ -1,2 +1,5 @@
 %%SITE_PERL%%/Apache/AuthenRadius.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/AuthenRadius/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/AuthenRadius
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Apache 2>/dev/null || true
