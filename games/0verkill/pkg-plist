@@ -10,6 +10,12 @@ bin/0verkill-test_server
 share/0verkill/data/banner.dat
 share/0verkill/data/level.dat
 share/0verkill/data/sprites.dat
+share/0verkill/data/level1.dn
+share/0verkill/data/level1.sp
+share/0verkill/data/level1.st
+share/0verkill/data/level2.dn
+share/0verkill/data/level2.sp
+share/0verkill/data/level2.st
 share/0verkill/grx/0verkill.avi
 share/0verkill/grx/ackermann.avi
 share/0verkill/grx/altar.avi

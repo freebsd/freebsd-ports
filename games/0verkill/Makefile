@@ -35,7 +35,7 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/data/|g' ${WRKSRC}/cfg.h
-	@${REINPLACE_CMD} -e 's|grx/|${DATADIR}/grx/|g' ${WRKSRC}/data/sprites.dat
+	@${REINPLACE_CMD} -e 's|grx/|${DATADIR}/grx/|g' ${WRKSRC}/data/*
 	@${REINPLACE_CMD} -e 's|-O3 ||g ; \
 		 s|gcc |\$$\(CC\) |g' ${WRKSRC}/Makefile.in
 
@@ -51,7 +51,7 @@ do-install:
 .endfor
 .endif
 	@${MKDIR} ${DATADIR}/data
-.for file in banner.dat level.dat sprites.dat
+.for file in banner.dat level.dat sprites.dat *.sp *.dn *.st
 	${INSTALL_DATA} ${WRKSRC}/data/${file} ${DATADIR}/data
 .endfor
 	@${MKDIR} ${DATADIR}/grx
