@@ -6,37 +6,37 @@
 #
 
 PORTNAME=	spin
-PORTVERSION=	3.4.14
+PORTVERSION=	3.4.16
 CATEGORIES=	math
 MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/spin/ \
 		ftp://www.netlib.org/spin/
 DISTFILES=	spin${PORTVERSION:S/.//g}.tar.gz html.tar.gz
 
-MAINTAINER=	jhanna@home.com
+MAINTAINER=	jhanna@shaw.ca
 
 DIST_SUBDIR=	spin
-WRKSRC=		${WRKDIR}/Src3.4
+WRKSRC=		${WRKDIR}/Src${PORTVERSION}
 MAKEFILE=	makefile
 ALL_TARGET=	spin
 
 post-extract:
-	@cd ${WRKDIR}/Test && ${SH} ${WRKDIR}/Test/examples
+	@cd ${WRKDIR}/Test && ${TR} -d '\015' < ${WRKDIR}/Test/examples | ${SH}
 
 post-patch:
 	@WISH=`(cd ${LOCALBASE}/bin ; ls wish8* ) | tail -1` ; \
 	if [ -z "$$WISH" ] ; then WISH=wish8.0 ; fi ; \
 	${PERL} -pi \
 		-e "s|%%LOCALBASE%%|${LOCALBASE}|g;" \
-		-e "s|%%WISH%%|$$WISH|g" ${WRKDIR}/Xspin3.4/xspin347.tcl
+		-e "s|%%WISH%%|$$WISH|g" ${WRKDIR}/Xspin3.4/xspin3415.tcl
 
 pre-build:
 	cd ${WRKSRC} && ${MAKE} clean
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/spin ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKDIR}/Xspin3.4/xspin347.tcl ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/Xspin3.4/xspin3415.tcl ${PREFIX}/bin
 	${RM} -f ${PREFIX}/bin/xspin
-	${LN} -s ${PREFIX}/bin/xspin347.tcl ${PREFIX}/bin/xspin
+	${LN} -s ${PREFIX}/bin/xspin3415.tcl ${PREFIX}/bin/xspin
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/spin/Doc
