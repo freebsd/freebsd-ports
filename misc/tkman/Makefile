@@ -1,12 +1,12 @@
 # New ports collection makefile for:	tkman
-# Version required:     2.0.4
+# Version required:     2.0.5
 # Date created:         27 Dec 1994
 # Whom:                 Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.27 1997/11/06 08:01:54 tg Exp $
+# $Id: Makefile,v 1.28 1997/12/08 15:51:20 tg Exp $
 #
 
-DISTNAME=	tkman-2.0.4
+DISTNAME=	tkman-2.0.5
 CATEGORIES=	misc tk80
 MASTER_SITES=	ftp://ftp.cs.berkeley.edu/ucb/people/phelps/tcltk/
 EXTRACT_SUFX=	.tar.Z
