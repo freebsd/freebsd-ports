@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	OpenSSH-askpass
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.2.2001.02.24
 CATEGORIES=	security
 # ${MASTER_SITES} is only for if CVS won't work, period.
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -25,8 +25,7 @@ IGNOREFILES!=	${SED} 's:^\(.*\)$$:${PKGNAME}/\1:g' ${FILESDIR}/ignorefiles
 DISTFILES+=	${IGNOREFILES}
 
 CVS_CMD?=	cvs -z3
-CVS_DATE=	Sun Feb 27 22:21:56 PST 2000
-CVS_DATE_!=	${ECHO} -n "${CVS_DATE}" | ${SED} 's/[ \t:]/_/g'
+CVS_DATE=	Sat Feb 24 20:27:43 PST 2001
 CVS_SITES?=	anoncvs@anoncvs1.ca.openbsd.org:/cvs \
 		:pserver:anoncvs@anoncvs1.usa.openbsd.org:/cvs
 STAMPFILE=	${DISTDIR}/${PKGNAME}/.stamp
@@ -67,12 +66,12 @@ do-fetch:
 makesrctarball: fetch
 	@cd ${DISTDIR}; \
 	${ECHO_MSG} ">> Creating source tarball in ${DISTDIR}"; \
-	${ECHO_MSG} ">> \"${PKGNAME}.${CVS_DATE_}.tar.gz\"."; \
-	${TAR} cfz ${PKGNAME}.${CVS_DATE_}.tar.gz ${PKGNAME}
+	${ECHO_MSG} ">> \"${PKGNAME}.tar.gz\"."; \
+	${TAR} cfz ${PKGNAME}.tar.gz ${PKGNAME}
 
 fetchsrctarball:
 	@cd ${DISTDIR}; \
-	file=${PKGNAME}.${CVS_DATE_}.tar.gz; \
+	file=${PKGNAME}.tar.gz; \
 	if [ -e $$file ]; then \
 		exit; \
 	fi; \
