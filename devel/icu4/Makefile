@@ -73,15 +73,29 @@ pre-patch:
 # VPATH does not work due to IBM's mistake:
 	${LN} -s ${FILESDIR}/*.ucm ${WRKSRC}/source/data/mappings/
 	@for l in ${FILESDIR}/*.ucm ; do \
-		echo UCM_SOURCE_LOCAL+=`basename $$l` >> \
+		${ECHO} UCM_SOURCE_LOCAL+=`basename $$l` >> \
 		    ${WRKSRC}/source/data/mappings/ucmlocal.mk ; \
 	done
 
-post-build test:
-	${GMAKE} -C ${ICUWRKSRC}/test
-.for t in intltest iotest cintltst
-	cd ${ICUWRKSRC}/test/$t && ${SETENV} \
-	    LD_LIBRARY_PATH=${ICUWRKSRC}/lib:${ICUWRKSRC}/tools/ctestfw ./$t
-.endfor
+iotest cintltst intltest:
+	-${GMAKE} -C ${ICUWRKSRC}/test
+	cd ${ICUWRKSRC}/test/${.TARGET} && ${SETENV} \
+	    LD_LIBRARY_PATH=${ICUWRKSRC}/lib:${ICUWRKSRC}/tools/ctestfw \
+	    ./${.TARGET}
+
+test: iotest cintltst intltest
+
+post-build: iotest cintltst
+	#
+	# Note, due to occasional hangs in one of the intltest's
+	# multi-threading subtests, the intltest is not part of automatic
+	# test in the current version of this port. This an unresolved
+	# problem so far:
+	#	http://www.jtcsv.com/cgibin/icu-bugs/incoming?id=1141
+	#
+	# If you wish to help resolving it, try
+	#
+	#	`make intltest' manually.
+	#
 
 .include <bsd.port.mk>
