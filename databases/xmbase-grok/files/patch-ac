@@ -1,20 +1,20 @@
---- Imakefile.orig	Wed May  1 02:40:56 1996
-+++ Imakefile	Sat Aug 30 15:06:09 1997
-@@ -10,10 +10,10 @@
+--- Imakefile.orig	Thu Jul 10 19:33:34 1997
++++ Imakefile	Thu Feb 11 22:30:33 1999
+@@ -10,11 +10,8 @@
   * GLIB. The documentation (Manual.ps) is not installed, that's up to you.
   */
  
 -GBIN = /usr/local/bin
 -GLIB = /usr/local/lib
+-
+-CDEBUGFLAGS = -O2
+-
 +GBIN = ${X11BASE}/bin
 +GLIB = ${X11BASE}/lib/X11/xmbase-grok
  
--CDEBUGFLAGS = -O3 -m486	/* to turn optimizing off, comment this line out */
-+CDEBUGFLAGS = -pipe -O	/* to turn optimizing off, comment this line out */
- 
- 
  /*
-@@ -53,10 +53,10 @@
+  * Do not change anyhting below.
+@@ -55,10 +52,10 @@
  AllTarget(grok)
  NormalProgramTarget(grok,y.tab.o $(SRC:.c=.o),,,$(LIB))
  InstallProgram(grok,$(GBIN))
@@ -27,7 +27,7 @@
  
  
  $(SRC:.c=.o): config.h grok.h proto.h form.h
-@@ -88,14 +88,18 @@
+@@ -90,14 +87,18 @@
  
  
  #---------------------------------------------------------------
@@ -36,21 +36,21 @@
 -	-rm -f doc/jobname.cont doc/main.cont doc/main.log
 -
 -
--doc/main.dvi: doc/formedit.tex doc/grammar.tex doc/macro.tex doc/main.tex
+-doc/main.dvi: $(DOC)
 -	cd doc; tex main.tex; tex main.tex
 -	-rm -f doc/jobname.cont doc/main.cont doc/main.log
 +#
 +# Don't want the need to have TeX installed for the make install target !
 +# -Andreas
 +#
-+# Manual.ps: doc/main.dvi
-+# 	dvips -f doc/main.dvi >Manual.ps
-+# 	-rm -f doc/jobname.cont doc/main.cont doc/main.log
-+# 
-+# 
-+# doc/main.dvi: doc/formedit.tex doc/grammar.tex doc/macro.tex doc/main.tex
-+# 	cd doc; tex main.tex; tex main.tex
-+# 	-rm -f doc/jobname.cont doc/main.cont doc/main.log
++#Manual.ps: doc/main.dvi
++#	dvips -f doc/main.dvi >Manual.ps
++#	-rm -f doc/jobname.cont doc/main.cont doc/main.log
++#
++#
++#doc/main.dvi: $(DOC)
++#	cd doc; tex main.tex; tex main.tex
++#	-rm -f doc/jobname.cont doc/main.cont doc/main.log
  
  clean::
  	-rm -f y.tab.h y.tab.c lex.yy.c grok y.output *.shar*
