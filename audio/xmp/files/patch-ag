@@ -1,0 +1,11 @@
+--- src/main/Makefile.orig	Thu Jan 20 00:59:33 2000
++++ src/main/Makefile	Sat Aug  5 02:43:15 2000
+@@ -32,7 +32,7 @@
+ install:: $(BINS)
+ 	@echo Installing binaries in $(BIN_DIR)...
+ 	@[ -d $(BIN_DIR) ] || mkdir -p $(BIN_DIR)
+-	$(INSTALL) -s -m755 $(BINS) $(BIN_DIR)
++	$(INSTALL_PROGRAM) $(BINS) $(BIN_DIR)
+ 
+ $(OBJS): ../../Makefile.rules Makefile
+ 

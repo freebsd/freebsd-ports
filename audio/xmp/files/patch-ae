@@ -1,0 +1,13 @@
+--- docs/Makefile.orig	Thu Jan 20 06:49:20 2000
++++ docs/Makefile	Sat Aug  5 02:44:20 2000
+@@ -21,8 +21,8 @@
+ install:: docs
+ 	@echo Installing manpages in $(MAN_DIR)...
+ 	@[ -d $(MAN_DIR) ] || mkdir -p $(MAN_DIR)
+-	$(INSTALL) -m644 xmp.1 $(MAN_DIR)
++	$(INSTALL_DATA) xmp.1 $(MAN_DIR)
+ 	@if test "$(X_XMP)x" = xxmpx; then \
+-	    $(INSTALL) -m644 $(X_XMP).1 $(MAN_DIR); \
++	    $(INSTALL_DATA) $(X_XMP).1 $(MAN_DIR); \
+ 	fi
+ 

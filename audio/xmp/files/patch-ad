@@ -1,0 +1,21 @@
+--- Makefile.rules.in.orig	Sun May  7 09:51:31 2000
++++ Makefile.rules.in	Sat Aug  5 02:40:28 2000
+@@ -7,14 +7,17 @@
+ exec_prefix= @prefix@
+ BIN_DIR	= @bindir@
+ LIB_DIR = @libdir@
++ETC_DIR = @sysconfdir@
+ MAN_DIR	= @mandir@/man1
+ 
+ CC	= @CC@
+-CFLAGS	= -c @CFLAGS@ @DEFS@ @CINCS@
++CFLAGS	= -c @CFLAGS@ @DEFS@ @CINCS@ -DETC_DIR=\"$(ETC_DIR)\"
+ LD	= @CC@
+ LFLAGS	= -o$@
+ RANLIB	= @RANLIB@
+ INSTALL	= @INSTALL@
++INSTALL_PROGRAM	= @INSTALL_PROGRAM@
++INSTALL_DATA	= @INSTALL_DATA@
+ LIBS	= @LIBS@ $(XLIBS)
+ SHELL	= /bin/sh
+ PLATFORM= @PLATFORM@
