@@ -204,10 +204,6 @@ share/heroes/tilesets/level09.pie
 share/heroes/tilesets/level10.glz
 share/heroes/tilesets/level10.pcx
 share/heroes/tilesets/level10.pie
-share/heroes/txt_cfg/heroes.hlp
-share/heroes/txt_cfg/heroes.sdf
-share/heroes/txt_cfg/txti.cfg
-@dirrm share/heroes/txt_cfg
 @dirrm share/heroes/tilesets
 @dirrm share/heroes/sfx
 @dirrm share/heroes/pics
