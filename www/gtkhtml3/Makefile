@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtkhtml
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/gtkhtml
