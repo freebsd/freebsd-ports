@@ -1,0 +1,29 @@
+--- trophy/Makefile.orig	Thu Jan 22 16:19:22 2004
++++ trophy/Makefile	Thu Jan 22 16:46:00 2004
+@@ -1,6 +1,6 @@
+ # Generated automatically from Makefile.in by configure.
+ 
+-prefix =	/usr/local
++prefix =	${PREFIX}
+ exec_prefix =	${prefix}
+ datadir =	${prefix}/share
+ bindir =	${exec_prefix}/bin
+@@ -37,7 +37,8 @@
+ 		catrophy.o \
+ 		cawidget.o
+ #DATAFILES =     resources.dat
+-EXTERN_LIBS =   -lclanCore -lclanSound -lclanDisplay -lclanApp -lHermes
++EXTERN_LIBS =   -L$(LOCALBASE)/lib -lclanCore -lclanSound -lclanDisplay -lclanApp -lHermes $(PTHREAD_LIBS)
++INCLUDES =      -I$(LOCALBASE)/include
+ 
+ all: trophy $(DATAFILES)
+ 
+@@ -54,7 +55,7 @@
+ 	$(CXX) $(EXTERN_LIBS) -o trophy $(OBJF)
+ 
+ %.o : %.cpp
+-	$(CXX) -c $(CPPFLAGS) $(CXXFLAGS) -O3 -Wall -DPKGDATADIR=\"$(datadir)/trophy\" $< -o $@
++	$(CXX) -c $(CPPFLAGS) $(CXXFLAGS) $(PTHREAD_CFLAGS) $(INCLUDES) -Wall -DPKGDATADIR=\"$(datadir)/trophy\" $< -o $@
+ 
+ %.dat : %.scr trophy
+ 	./trophy -datafile $< $@
