@@ -1,0 +1,11 @@
+--- configure	2000/08/29 12:12:11	1.1
++++ configure	2000/08/29 12:13:43
+@@ -3409,7 +3409,7 @@
+ 	  	  PY_VERSION=`python -c 'import sys ; print sys.version[0:3]'`
+ 	  	  if test -f $PY_PREFIX/include/python$PY_VERSION/Python.h; then
+ 		  PY_LIBS="python$PY_VERSION"
+-		  PY_LIB_LOC="-L$PY_EXEC_PREFIX/lib/python$PY_VERSION/config"
++		  PY_LIB_LOC="-pthread -L$PY_EXEC_PREFIX/lib/python$PY_VERSION/config"
+                   array_loc=`find $PY_PREFIX/include/python$PY_VERSION/ -name arrayobject.h -printf %h`
+                   echo arrayobject.h location: $array_loc
+                   PY_CFLAGS="-I$PY_PREFIX/include/python$PY_VERSION"
