@@ -10,7 +10,7 @@ PORTNAME=	relay
 PORTVERSION=	1.10
 CATEGORIES=	net security
 MASTER_SITES=	http://www.iagora.com/~espel/  \
-		ftp://ftp.freebsd.org/pub/FreeBSD/local-distfiles/obrien/
+		ftp://ftp.freebsd.org/pub/FreeBSD/ports/local-distfiles/obrien/
 DISTNAME=	relay
 
 MAINTAINER=	obrien@FreeBSD.org
