@@ -46,3 +46,4 @@ share/automake/texinfo.tex
 share/automake/ansi2knr.c
 share/automake/ansi2knr.1
 share/automake/aclocal.m4
+@dirrm share/automake.
