@@ -29,7 +29,7 @@ MAKE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_VERSION} == "python2.1"
+.if (${PYTHON_VERSION} == "python2.1" || ${PYTHON_VERSION} == "python2.2")
 PYNUMERIC=	${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
 .else
 PYNUMERIC=	${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric17
