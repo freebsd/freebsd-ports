@@ -226,6 +226,7 @@ adzap2squirm	ports/www/adzap2squirm
 aee		ports/editors/aee
 aegis		ports/devel/aegis
 aescrypt	ports/security/aescrypt
+aewan		ports/editors/aewan
 aewm		ports/x11-wm/aewm
 aewm++		ports/x11-wm/aewm++
 af-aspell	ports/textproc/af-aspell
