@@ -17,30 +17,34 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	anders@FreeBSD.org
 
-BROKEN=		"Configure fails"
-
 RUN_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz \
 		lsz:${PORTSDIR}/comms/lrzsz
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/.src//}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-dfl-baud=57600 \
-			--enable-dfl-port=/dev/modem \
 			--sysconfdir=${PREFIX}/etc/minicom \
 			--enable-lock-dir=/var/spool/lock
-
-USE_AUTOCONF=	yes
+.if defined(BATCH)
+CONFIGURE_ARGS+=	--enable-dfl-port=/dev/cuaa0
+.else
+CONFIGURE_ARGS+=	--enable-dfl-port=/dev/modem
+.endif
 
 MAN1=		minicom.1 runscript.1 ascii-xfr.1
 
 post-patch:
-	${PERL} -pi -e "s@/usr/local/bin/@${LOCALBASE}/bin/@g;s@/sz@/lsz@g; \
-		s@/sb@/lsb@g;s@/sx@/lsx@g;s@/rz@/lrz@g;s@/rb@/lrb@g; \
-		s@/rx@/lrx@g" ${WRKSRC}/src/rwconf.c
+	${MV} ${WRKSRC}/src/rwconf.c ${WRKSRC}/src/rwconf.c.pre_sed
+	${SED} -e "s:/usr/local/bin/:${LOCALBASE}/bin/:g" \
+		-e "s:/sz:/lsz:g" \
+		-e "s:/sb:/lsb:g" \
+		-e "s:/sx:/lsx:g" \
+		-e "s:/rz:/lrz:g" \
+		-e "s:/rb:/lrb:g" \
+		-e "s:/rx:/lrx:g" \
+		< ${WRKSRC}/src/rwconf.c.pre_sed > ${WRKSRC}/src/rwconf.c
 
 pre-configure:
-	${PERL} -pi -e "s@autoheader@${AUTOHEADER}@;s@autoconf@${AUTOCONF}@" \
-		${WRKSRC}/aclocal.m4
 .if !defined(BATCH)
 	# this script creates a link from your comm port to /dev/modem
 	${SH} ${SCRIPTDIR}/create-dev-link
