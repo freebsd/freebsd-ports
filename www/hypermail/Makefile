@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	hypermail
-PORTVERSION=	2b28
+PORTVERSION=	2b30
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.landfield.com/hypermail/ \
 		ftp://ftp.faqs.org/hypermail/
 
 MAINTAINER=	veers@disturbed.net
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--with-htmldir=${PREFIX}/share/hypermail
 
 MAN1=		hypermail.1
 MAN4=		hmrc.4
