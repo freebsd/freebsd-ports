@@ -1,0 +1,8 @@
+--- libiberty/Makefile.in.orig	Sat May 23 15:32:53 1998
++++ libiberty/Makefile.in	Sun Nov 24 14:17:03 2002
+@@ -120 +120 @@
+-	strrchr.c strsignal.c strstr.c strtod.c strtol.c strtoul.c \
++	strrchr.c             strstr.c strtod.c strtol.c strtoul.c \
+@@ -128 +128 @@
+-  strsignal.o xatexit.o xexit.o xmalloc.o xstrdup.o xstrerror.o
++              xatexit.o xexit.o xmalloc.o xstrdup.o xstrerror.o
