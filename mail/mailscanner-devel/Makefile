@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.29.5
+PORTVERSION=	4.31.3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-${PORTVERSION}-${PATCHLEVEL}
+DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
 
 MAINTAINER=	j.koopmann@seceidos.de
 COMMENT=	Powerful virus/spam scanning framework for mail gateways
@@ -40,7 +40,7 @@ PATCHLEVEL=	1
 
 USE_PERL5=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-install-${PORTVERSION}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAN8=		MailScanner.8
@@ -65,6 +65,9 @@ USRLOCAL_FILES_LIB=	\
 		kavdaemonclient-wrapper mcafee-autoupdate \
 		nod32-autoupdate rav-autoupdate \
 		rav-wrapper sophos-autoupdate
+
+post-extract:
+	cd ${WRKSRC} && tar xvzf perl-tar/MailScanner-${PORTVERSION}-${PATCHLEVEL}.tar.gz > /dev/null && ${MV} MailScanner-${PORTVERSION}/* .
 
 do-build:
 	${PERL} -pi -e \

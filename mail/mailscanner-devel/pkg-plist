@@ -47,6 +47,8 @@ lib/MailScanner/MailScanner/CustomFunctions/MyExample.pm
 libexec/MailScanner/MailScanner
 libexec/MailScanner/antivir-autoupdate.sample
 libexec/MailScanner/antivir-wrapper.sample
+libexec/MailScanner/avg-autoupdate.sample
+libexec/MailScanner/avg-wrapper.sample
 libexec/MailScanner/bitdefender-autoupdate.sample
 libexec/MailScanner/bitdefender-wrapper.sample
 libexec/MailScanner/clamav-autoupdate.sample
@@ -80,6 +82,8 @@ libexec/MailScanner/sophos-autoupdate.sample
 libexec/MailScanner/sophos-wrapper.sample
 libexec/MailScanner/trend-autoupdate.sample
 libexec/MailScanner/trend-wrapper.sample
+libexec/MailScanner/vexira-wrapper.sample
+libexec/MailScanner/vexira-autoupdate.sample
 libexec/MailScanner/update_virus_scanners
 %%DATADIR%%/reports/ca/deleted.filename.message.txt.sample
 %%DATADIR%%/reports/ca/deleted.virus.message.txt.sample
@@ -443,6 +447,7 @@ libexec/MailScanner/update_virus_scanners
 %%PORTDOCS%%%%DOCSDIR%%/donations.shtml
 %%PORTDOCS%%%%DOCSDIR%%/downloadgraphs.shtml
 %%PORTDOCS%%%%DOCSDIR%%/downloads.shtml
+%%PORTDOCS%%%%DOCSDIR%%/ellen2.jpg
 %%PORTDOCS%%%%DOCSDIR%%/ecs.css
 %%PORTDOCS%%%%DOCSDIR%%/faq.shtml
 %%PORTDOCS%%%%DOCSDIR%%/images/JulianField1_small.jpg
@@ -536,6 +541,7 @@ libexec/MailScanner/update_virus_scanners
 @dirrm %%DATADIR%%/reports/de
 @dirrm %%DATADIR%%/reports/cz
 @dirrm %%DATADIR%%/reports/cy+en
+@dirrm %%DATADIR%%/reports/cat
 @dirrm %%DATADIR%%/reports/ca
 @dirrm %%DATADIR%%/reports
 @dirrm %%DATADIR%%
