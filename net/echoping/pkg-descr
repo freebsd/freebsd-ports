@@ -8,9 +8,4 @@ remote host by sending it TCP "echo" (or other protocol) packets.
 
 It's useful for checking that http servers are running and not wedged.
 
-The reference site for echoping is:
-
-ftp://ftp.pasteur.fr/pub/Network/echoping
-
-Stephane Bortzmeyer <bortzmeyer@pasteur.fr>. October 1995 for the
-first version. November 1996 for this one.
+WWW:	http://echoping.sourceforge.net/
