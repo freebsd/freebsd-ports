@@ -1,0 +1,116 @@
+--- aub.orig	Sat Oct 31 14:17:33 1998
++++ aub	Sat Oct 31 14:18:37 1998
+@@ -38,6 +38,8 @@
+ $SUM = "/bin/sum";   &find_pg("sum", 0)  unless (-x $SUM);
+ $CAT = "/bin/cat";   &find_pg("cat", 0)  unless (-x $CAT);
+ $MV = "/bin/mv";     &find_pg("mv", 0)   unless (-x $MV);
++$HOSTNAME = "/bin/hostname"; $HOSTNAME = &find_pg("hostname", 0) unless
++  (-x $HOSTNAME);
+ 
+ # CONSTANTS: 	most likely you want to leave these alone.  
+ #
+@@ -149,6 +151,12 @@
+ # v2.1 will be bug fixes for v2.0.)
+ #
+ 
++# Modified the 7th of december 1994 by Laurent VALLEE
++# in purpose of compatibility with Perl 5 :
++#
++# load the socket library to connect the server in NNTP mode
++BEGIN { require "Socket.pm"; import Socket; }
++
+ (&Getopts("cd:nCMm")) || (exit(1));
+ 
+ &long_manual if ($opt_M);			# None of these subroutines
+@@ -198,15 +206,21 @@
+          "environment variable\nor specify an NNTP server or disk based " .
+          "news access in your configuration file.") unless ($server);
+ 
+-  if ($opt_d > 1) {
+-    print "Searching library directories:";
+-    foreach $libr (@INC) {
+-      print " $libr";
+-    }
+-    print " for sys/socket.ph...\n";
+-  } 
++# Modified the 7th of december 1994 by Laurent VALLEE
++# in purpose of compatibility with Perl 5 :
++#
++# no need to load the socket library because it has already been done
++# at the beginning of the script. So comment the lines...
++
++#  if ($opt_d > 1) {
++#    print "Searching library directories:";
++#    foreach $libr (@INC) {
++#      print " $libr";
++#    }
++#    print " for sys/socket.ph...\n";
++#  } 
+ 
+-  &need_to_run_h2ph unless (eval("require <sys/socket.ph>"));
++#  &need_to_run_h2ph unless (eval("require <sys/socket.ph>"));
+ 
+   print "Using NNTP-based news access; server is $server\n"
+     if ($opt_d);
+@@ -929,7 +943,14 @@
+   local($sock) = pop(@_);
+   local($line) = &getline($sock);
+ 
++  if ($line =~ m/INN/) {                        # This code by mwe@dfw.net,
++    &putline($sock, "mode reader");             #  looks pretty good to me.
++    &getline($sock);                            #   -mfs, 2/95.
++  }
++
+   return if (($line =~ m/^200\s/) || ($line =~ m/^201\s/));
++  &abort("Remote nntp service is too busy to talk to us now.")
++    if ($line =~ m/^400\s/);
+   &abort("Remote nntp service doesn't look like nntp service to me.");
+ } 
+ 
+@@ -1022,7 +1043,7 @@
+   local($protocol) = "tcp";
+   local($thishost, $problem, $junk);
+ 
+-  $thishost = `hostname`; chop $thishost;
++  $thishost = `$HOSTNAME`; chop $thishost;
+ 
+ # Figure out our address...
+   ($name, $junk, $junk, $junk, $ouraddr) = gethostbyname($thishost);
+@@ -1875,6 +1896,12 @@
+ }
+ 
+ 
++# Modified the 7th of december 1994 by Laurent VALLEE
++# in purpose of compatibility with Perl 5 :
++#
++# in strings, "@" must be preceded by a "\". So the mail adresses
++# must be modified.
++
+ sub long_manual {
+ #
+ #
+@@ -2463,8 +2490,8 @@
+ 
+ 
+ 						Mark Stantz
+-						stantz@sierra.stanford.edu
+-						stantz@sgi.com
++						stantz\@sierra.stanford.edu
++						stantz\@sgi.com
+ 						8/92
+ 
+ EOF
+@@ -2482,7 +2509,12 @@
+ # This has some (not much) value as a debugging aid.
+ #
+ 
+-&abort("", &process_line(join('&',"82G5S=\"!A;F]T:","5R('!E<FP@:","%C:V5R"),4))
++# Modified the 7th of december 1994 by Laurent VALLEE
++# in purpose of compatibility with Perl 5 :
++#
++# in strings, "@" must be preceded by a "\". So modify the expression.
++
++&abort("", &process_line(join('&',"82G5S=\"!A;F]T:","5R('!E<FP\@:","%C:V5R"),4))
+   if (open(DECODE, ">&STDOUT"));
+ }
+ 
