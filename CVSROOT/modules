@@ -8135,6 +8135,7 @@ py-simpleparse	ports/devel/py-simpleparse
 py-sip		ports/devel/py-sip
 py-ski		ports/games/py-ski
 py-smb		ports/net/py-smb
+py-smbpasswd	ports/net/py-smbpasswd
 py-snmp		ports/net-mgmt/py-snmp
 py-soapy	ports/net/py-soapy
 py-spambayes	ports/mail/py-spambayes
