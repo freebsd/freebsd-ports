@@ -33,6 +33,7 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/SNMP.pm:${PORTSDIR}/net-mgmt/net-snmp
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_PERL5=	yes
 USE_RC_SUBR=	yes
 USE_REINPLACE=	yes
 NO_BUILD=	yes
