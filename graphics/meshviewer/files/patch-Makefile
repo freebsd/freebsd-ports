@@ -1,22 +1,35 @@
---- Makefile.orig	Sun Apr 27 01:08:06 2003
-+++ Makefile	Sun Apr 27 01:08:54 2003
-@@ -4,15 +4,15 @@
- LIBPATH = -L$(QTDIR)/lib -L/usr/local/lib -L/usr/X11R6/lib
+--- Makefile.orig	Thu Nov 27 08:40:45 2003
++++ Makefile	Thu Nov 27 23:48:26 2003
+@@ -1,13 +1,13 @@
  
- CC=g++
+ #QTDIR=/usr/lib/qt3
+-INCPATH = -I. -Itexture -Imesh -Imathvector -I$(QTDIR)/include
+-LIBPATH = -L$(QTDIR)/lib -L/usr/local/lib -L/usr/X11R6/lib
++INCPATH = -I. -Itexture -Imesh -Imathvector $(QTCPPFLAGS)
++LIBPATH = ${QTCFGLIBS}
+ 
+-CC=g++
 -MOC=$(QTDIR)/bin/moc
++CC=$(CXX)
 +#MOC=$(QTDIR)/bin/moc
  EXE=mview
  
 -CPPFLAGS = $(INCPATH) -O2
-+CPPFLAGS+= $(INCPATH) -O2
++CPPFLAGS = $(INCPATH) $(CXXFLAGS)
  # supposedly compiler options for faster code
  #CPPFLAGS = $(INCPATH) -O3 -fexceptions --fast-math -felide-constructors -fexpensive-optimizations -fdelayed-branch -fschedule-insns
  
--LIBS_QT = -lGL -lGLU -lqt-mt -ljpeg
--LIBS_GLUT = -lGL -lGLU -lglut -ljpeg
-+LIBS_QT = ${LIBS} -lGL -lGLU -lqt-mt -ljpeg
-+LIBS_GLUT = ${LIBS} -lGL -lGLU -lglut -ljpeg
-  
- QT =	qt/main.o \
- 	qt/mview.o \
+@@ -65,11 +65,11 @@
+ 
+ QT:
+ 	rm -f qt/mview.o
+-	make QT_2
++	$(MAKE) QT_2
+ 
+ QT_TEXT:
+ 	rm -f qt/mview.o
+-	make QT_TEXT_2 "FLAGS=-DTEXT_MAP"
++	$(MAKE) QT_TEXT_2 "FLAGS=-DTEXT_MAP"
+ 
+ GLUT: $(GLUT) $(TEXT) $(MESH) $(VEC)
+ 	$(CC) $? $(LIBPATH) $(LIBS_GLUT) -o $(EXE)
