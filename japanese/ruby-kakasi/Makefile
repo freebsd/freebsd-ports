@@ -9,7 +9,6 @@ PORTNAME=	kakasi
 PORTVERSION=	000124
 CATEGORIES=	japanese ruby
 MASTER_SITES=	http://www.notwork.org/~gotoken/ruby/p/kakasi/
-PKGNAMEPREFIX=	ruby-
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
@@ -29,6 +28,10 @@ RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
 
 DOCS_EN=	ChangeLog	README		wdcnt.html
 DOCS_JA=	README.jp
+
+.include <bsd.port.pre.mk>
+
+PKGNAMEPREFIX:=	${PKGNAMEPREFIX}ruby-
 
 post-patch:
 	${PERL} -i -pe 's,/usr/local,${PREFIX},g' ${WRKSRC}/extconf.rb
@@ -52,4 +55,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

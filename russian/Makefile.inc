@@ -1,8 +1,4 @@
 # $FreeBSD$
 #
 
-.if defined(PKGNAMEPREFIX)
-PKGNAMEPREFIX:=	ru-${PKGNAMEPREFIX}
-.else
-PKGNAMEPREFIX=	ru-
-.endif
+PKGNAMEPREFIX?=	ru-
