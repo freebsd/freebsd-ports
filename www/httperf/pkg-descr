@@ -1,0 +1,21 @@
+Quoted from the website below:
+
+	"This paper describes httperf, a tool for measuring web server 
+performance. It provides a flexible facility for generating various 
+HTTP workloads and for measuring server performance. The focus of httperf 
+is not on implementing one particular benchmark but on providing a robust, 
+high-performance tool that facilitates the construction of both micro- 
+and macro-level benchmarks. The three distinguishing characteristics of 
+httperf are its robustness, which includes the ability to generate and 
+sustain server overload, support for the HTTP/1.1 protocol, and its 
+extensibility to new workload generators and performance measurements. 
+In addition to reporting on the design and implementation of httperf this 
+paper also discusses some of the experiences and insights gained while 
+realizing this tool." 
+
+"This paper" refers to the paper that was written on this program. I don't
+think I could possibly summarize it better than the above paragraph.
+
+WWW: http://www.hpl.hp.com/personal/David_Mosberger/httperf.html
+
+- Will <andrews@technologist.com>
