@@ -1,0 +1,7 @@
+Guis is a small widget server. It is a gtk2 based program listening on a pipe
+for widget requests (requests are Python [or Ruby] scripts) and outputting
+events or replies Guis is useful for programs (in particular, setuid programs
+or (ruby,ocaml,perl...) scripts) which do not want to link in a full widget
+toolkit but prefer to delegate the user interface to another process.
+
+WWW: http://www.starynkevitch.net/Basile/guisdoc.html
