@@ -1,11 +1,11 @@
-# New ports collection makefile for:	forgate
+# New ports collection makefile for:	4g8
 # Date created:				25.01.2004
 # Whom:					krion
 #
 # $FreeBSD$
 #
 
-PORTNAME=	forgate
+PORTNAME=	4g8
 PORTVERSION=	0.9b
 CATEGORIES=	net
 MASTER_SITES=	http://forgate.sourceforge.net/downloads/
@@ -21,6 +21,6 @@ CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
-PLIST_FILES=	sbin/forgate
+PLIST_FILES=	sbin/4g8
 
 .include <bsd.port.mk>
