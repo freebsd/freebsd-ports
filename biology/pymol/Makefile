@@ -6,7 +6,7 @@
 
 PORTNAME=	pymol
 PORTVERSION=	0.82
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	biology python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pymol
@@ -31,6 +31,10 @@ pre-patch:
 post-patch:
 	@${INSTALL_DATA} ${WRKSRC}/setup/pymol.com.linux-rh7x ${WRKSRC}/setup/pymol.com
 	@${REINPLACE_CMD} 's,@PREFIX@,${PREFIX},g' ${WRKSRC}/setup/pymol.com
+	@${REINPLACE_CMD} -e 's,@PREFIX@,${PREFIX},g' \
+		-e 's,examples\(/devel/cgo03.py\),${EXAMPLESDIR}\1,' \
+		${WRKSRC}/modules/pmg_tk/Demo.py
+	@${RM} -f ${WRKSRC}/modules/pmg_tk/Demo.py.*
 	@${REINPLACE_CMD} 's,@PYTHON_VERSION@,${PYTHON_VERSION},g' ${WRKSRC}/Rules.make
 
 do-install:
