@@ -1,0 +1,15 @@
+--- ../SrcUnix/EmTransportSerialUnix.cpp.orig	Wed Apr 19 20:27:37 2000
++++ ../SrcUnix/EmTransportSerialUnix.cpp	Sun May 14 13:20:23 2000
+@@ -311,6 +311,12 @@
+ #ifdef __QNXNTO__
+ 	results.push_back ("/dev/ser1");
+ 	results.push_back ("/dev/ser2");
++#elif __FreeBSD__
++	results.push_back ("/dev/pilot");
++	results.push_back ("/dev/cuaa0");
++	results.push_back ("/dev/cuaa1");
++	results.push_back ("/dev/cuaa2");
++	results.push_back ("/dev/cuaa3");
+ #else
+ 	results.push_back ("/dev/ttyS0");
+ 	results.push_back ("/dev/ttyS1");
