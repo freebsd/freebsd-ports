@@ -1,0 +1,45 @@
+--- src/support/apachectl.orig	Sun Oct 26 20:53:07 2003
++++ src/support/apachectl	Mon Oct 27 22:27:30 2003
+@@ -105,14 +105,14 @@
+     restart)
+ 	if [ $RUNNING -eq 0 ]; then
+ 	    echo "$0 $ARG: httpd not running, trying to start"
+-	    if $HTTPD ; then
++	    if $HTTPD -DSSL ; then
+ 		echo "$0 $ARG: httpd started"
+ 	    else
+ 		echo "$0 $ARG: httpd could not be started"
+ 		ERROR=5
+ 	    fi
+ 	else
+-	    if $HTTPD -t >/dev/null 2>&1; then
++	    if $HTTPD -DSSL -t >/dev/null 2>&1; then
+ 		if kill -HUP $PID ; then
+ 		    echo "$0 $ARG: httpd restarted"
+ 		else
+@@ -129,14 +129,14 @@
+     graceful)
+ 	if [ $RUNNING -eq 0 ]; then
+ 	    echo "$0 $ARG: httpd not running, trying to start"
+-	    if $HTTPD ; then
++	    if $HTTPD -DSSL ; then
+ 		echo "$0 $ARG: httpd started"
+ 	    else
+ 		echo "$0 $ARG: httpd could not be started"
+ 		ERROR=5
+ 	    fi
+ 	else
+-	    if $HTTPD -t >/dev/null 2>&1; then
++	    if $HTTPD -DSSL -t >/dev/null 2>&1; then
+ 		if kill -USR1 $PID ; then
+ 		    echo "$0 $ARG: httpd gracefully restarted"
+ 		else
+@@ -157,7 +157,7 @@
+ 	$LYNX $STATUSURL
+ 	;;
+     configtest)
+-	if $HTTPD -t; then
++	if $HTTPD -DSSL -t; then
+ 	    :
+ 	else
+ 	    ERROR=8

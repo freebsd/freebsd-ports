@@ -1,0 +1,595 @@
+diff -urN src/include/httpd.h apache_1.3.29/src/include/httpd.h
+--- src/include/httpd.h	Wed Jul 16 22:20:26 2003
++++ apache_1.3.29/src/include/httpd.h	Fri Oct 24 18:11:40 2003
+@@ -274,6 +274,9 @@
+ /* The size of the server's internal read-write buffers */
+ #define IOBUFSIZE 8192
+ 
++/* The max number of regex captures that can be expanded by ap_pregsub */
++#define AP_MAX_REG_MATCH 10
++
+ /* Number of servers to spawn off by default --- also, if fewer than
+  * this free when the caretaker checks, it will spawn more.
+  */
+diff -urN src/main/buff.c apache_1.3.29/src/main/buff.c
+--- src/main/buff.c	Mon Feb  3 18:13:20 2003
++++ apache_1.3.29/src/main/buff.c	Sun Oct 19 20:00:35 2003
+@@ -1497,7 +1497,6 @@
+ 	rc1 = ap_bflush(fb);
+     else
+ 	rc1 = 0;
+-#if defined(WIN32) || defined(NETWARE) || defined(CYGWIN_WINSOCK) 
+     if (fb->flags & B_SOCKET) {
+ 	rc2 = ap_pclosesocket(fb->pool, fb->fd);
+ 	if (fb->fd_in != fb->fd) {
+@@ -1506,24 +1505,13 @@
+ 	else {
+ 	    rc3 = 0;
+ 	}
+-    }
+-#if !defined(NETWARE) && !defined(CYGWIN_WINSOCK) 
+-    else if (fb->hFH != INVALID_HANDLE_VALUE) {
++    } else {
++#if defined(WIN32)
++    if (fb->hFH != INVALID_HANDLE_VALUE) {
+         rc2 = ap_pcloseh(fb->pool, fb->hFH);
+         rc3 = 0;
+     }
+-#endif
+     else {
+-#elif defined(BEOS)
+-    if (fb->flags & B_SOCKET) {
+-	rc2 = ap_pclosesocket(fb->pool, fb->fd);
+-	if (fb->fd_in != fb->fd) {
+-	    rc3 = ap_pclosesocket(fb->pool, fb->fd_in);
+-	}
+-	else {
+-	    rc3 = 0;
+-	}
+-    } else {
+ #endif
+ 	rc2 = ap_pclosef(fb->pool, fb->fd);
+ 	if (fb->fd_in != fb->fd) {
+@@ -1532,7 +1520,8 @@
+ 	else {
+ 	    rc3 = 0;
+ 	}
+-#if defined(WIN32) || defined (BEOS) || defined(NETWARE) || defined(CYGWIN_WINSOCK) 
++    }
++#if defined(WIN32)
+     }
+ #endif
+ 
+diff -urN src/main/http_core.c apache_1.3.29/src/main/http_core.c
+--- src/main/http_core.c	Mon Jul  7 15:02:28 2003
++++ apache_1.3.29/src/main/http_core.c	Sun Oct 19 15:20:57 2003
+@@ -1276,7 +1276,7 @@
+     if (error_number == 401 &&
+ 	line[0] != '/' && line[0] != '"') { /* Ignore it... */
+ 	ap_log_error(APLOG_MARK, APLOG_NOERRNO|APLOG_NOTICE, cmd->server,
+-		     "cannot use a full or relative URL in a 401 ErrorDocument "
++		     "cannot use a full URL in a 401 ErrorDocument "
+ 		     "directive --- ignoring!");
+     }
+     else { /* Store it... */
+diff -urN src/main/http_request.c apache_1.3.29/src/main/http_request.c
+--- src/main/http_request.c	Mon Jul  7 02:34:10 2003
++++ apache_1.3.29/src/main/http_request.c	Sat Oct 18 16:15:58 2003
+@@ -1117,7 +1117,15 @@
+              * apache code, and continue with the usual REDIRECT handler.
+              * But note that the client will ultimately see the wrong
+              * status...
++             *
++             * Also, before updating r->status, we may need to ensure that
++             * the connection is dropped.  For example, there may be
++             * unread request body that would confuse us if we try
++             * to read another request.
+              */
++            if (ap_status_drops_connection(r->status)) {
++                r->connection->keepalive = -1;
++            }
+             r->status = REDIRECT;
+             ap_table_setn(r->headers_out, "Location", custom_response);
+         }
+diff -urN src/main/rfc1413.c apache_1.3.29/src/main/rfc1413.c
+--- src/main/rfc1413.c	Mon Feb  3 18:13:23 2003
++++ apache_1.3.29/src/main/rfc1413.c	Thu Sep 18 23:13:17 2003
+@@ -99,6 +99,38 @@
+ 
+ int ap_rfc1413_timeout = RFC1413_TIMEOUT;	/* Global so it can be changed */
+ 
++#if (defined (NETWARE) || defined (WIN32))
++#define write(a,b,c) send(a,b,c,0)
++#define read(a,b,c) recv(a,b,c,0)
++#endif
++
++#ifdef MULTITHREAD
++#define RFC_USER_STATIC 
++
++static int setsocktimeout (int sock, int timeout)
++{
++#if (defined (NETWARE) || defined (WIN32))
++    u_long msec = 0;
++
++    /* Make sure that we are in blocking mode */
++    if (ioctlsocket(sock, FIONBIO, &msec) == SOCKET_ERROR) {
++        return h_errno;
++    }
++
++    /* Win32 timeouts are in msec, represented as int */
++    msec = timeout * 1000;
++    setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, 
++               (char *) &msec, sizeof(msec));
++    setsockopt(sock, SOL_SOCKET, SO_SNDTIMEO, 
++               (char *) &msec, sizeof(msec));
++#else
++    /* XXX Needs to be implemented for non-winsock platforms */
++#endif
++    return 0;
++}
++#else /* MULTITHREAD */
++
++#define RFC_USER_STATIC static
+ static JMP_BUF timebuf;
+ 
+ /* ident_timeout - handle timeouts */
+@@ -106,6 +138,7 @@
+ {
+     ap_longjmp(timebuf, sig);
+ }
++#endif
+ 
+ /* bind_connect - bind both ends of a socket */
+ /* Ambarish fix this. Very broken */
+@@ -237,22 +270,28 @@
+ /* rfc1413 - return remote user name, given socket structures */
+ API_EXPORT(char *) ap_rfc1413(conn_rec *conn, server_rec *srv)
+ {
+-    static char user[RFC1413_USERLEN + 1];	/* XXX */
+-    static char *result;
+-    static int sock;
++    RFC_USER_STATIC char user[RFC1413_USERLEN + 1];	/* XXX */
++    RFC_USER_STATIC char *result;
++    RFC_USER_STATIC int sock;
+ 
+     result = FROM_UNKNOWN;
+ 
+     sock = ap_psocket_ex(conn->pool, AF_INET, SOCK_STREAM, IPPROTO_TCP, 1);
+     if (sock < 0) {
+-	ap_log_error(APLOG_MARK, APLOG_CRIT, srv,
+-		    "socket: rfc1413: error creating socket");
+-	conn->remote_logname = result;
++    	ap_log_error(APLOG_MARK, APLOG_CRIT, srv,
++    		    "socket: rfc1413: error creating socket");
++    	conn->remote_logname = result;
+     }
+ 
+     /*
+      * Set up a timer so we won't get stuck while waiting for the server.
+      */
++#ifdef MULTITHREAD
++    if (setsocktimeout(sock, ap_rfc1413_timeout) == 0) {
++        if (get_rfc1413(sock, &conn->local_addr, &conn->remote_addr, user, srv) >= 0)
++            result = ap_pstrdup (conn->pool, user);
++    }
++#else
+     if (ap_setjmp(timebuf) == 0) {
+ 	ap_set_callback_and_alarm(ident_timeout, ap_rfc1413_timeout);
+ 
+@@ -260,8 +299,10 @@
+ 	    result = user;
+     }
+     ap_set_callback_and_alarm(NULL, 0);
++#endif
+     ap_pclosesocket(conn->pool, sock);
+     conn->remote_logname = result;
+ 
+     return conn->remote_logname;
+ }
++
+diff -urN src/modules/proxy/proxy_ftp.c apache_1.3.29/src/modules/proxy/proxy_ftp.c
+--- src/modules/proxy/proxy_ftp.c	Mon Feb  3 18:13:26 2003
++++ apache_1.3.29/src/modules/proxy/proxy_ftp.c	Thu Jul 17 18:05:51 2003
+@@ -547,13 +547,14 @@
+  */
+ int ap_proxy_ftp_handler(request_rec *r, cache_req *c, char *url)
+ {
+-    char *host, *path, *strp, *parms;
++    char *desthost, *path, *strp, *parms;
++    char *strp2;
+     char *cwd = NULL;
+     char *user = NULL;
+ /*    char *account = NULL; how to supply an account in a URL? */
+     const char *password = NULL;
+     const char *err;
+-    int port, i, j, len, rc, nocache = 0;
++    int destport, i, j, len, rc, nocache = 0;
+     int csd = 0, sock = -1, dsock = -1;
+     struct sockaddr_in server;
+     struct hostent server_hp;
+@@ -562,6 +563,8 @@
+     BUFF *ctrl = NULL;
+     BUFF *data = NULL;
+     pool *p = r->pool;
++    char *destportstr = NULL;
++    const char *urlptr = NULL;
+     int one = 1;
+     NET_SIZE_T clen;
+     char xfer_type = 'A';       /* after ftp login, the default is ASCII */
+@@ -593,17 +596,34 @@
+ 
+ /* We break the URL into host, port, path-search */
+ 
+-    host = r->parsed_uri.hostname;
+-    port = (r->parsed_uri.port != 0)
+-        ? r->parsed_uri.port
+-        : ap_default_port_for_request(r);
+-    path = ap_pstrdup(p, r->parsed_uri.path);
+-    if (path == NULL)
+-        path = "";
+-    else
+-        while (*path == '/')
+-            ++path;
+-
++    urlptr = strstr(url, "://");
++    if (urlptr == NULL)
++        return HTTP_BAD_REQUEST;
++    urlptr += 3;
++    destport = 21;
++    strp = strchr(urlptr, '/');
++    if (strp == NULL) {
++        desthost = ap_pstrdup(p, urlptr);
++        urlptr = "/";
++    }
++    else {
++        char *q = ap_palloc(p, strp - urlptr + 1);
++        memcpy(q, urlptr, strp - urlptr);
++        q[strp - urlptr] = '\0';
++        urlptr = strp;
++        desthost = q;
++    }
++
++    strp2 = strchr(desthost, ':');
++    if (strp2 != NULL) {
++        *(strp2++) = '\0';
++        if (ap_isdigit(*strp2)) {
++            destport = atoi(strp2);
++            destportstr = strp2;
++        }
++    }
++    path = strchr(urlptr, '/')+1;
++    
+     /*
+      * The "Authorization:" header must be checked first. We allow the user
+      * to "override" the URL-coded user [ & password ] in the Browsers'
+@@ -643,25 +663,25 @@
+     }
+ 
+     /* check if ProxyBlock directive on this host */
+-    destaddr.s_addr = ap_inet_addr(host);
++    destaddr.s_addr = ap_inet_addr(desthost);
+     for (i = 0; i < conf->noproxies->nelts; i++) {
+         if (destaddr.s_addr == npent[i].addr.s_addr ||
+             (npent[i].name != NULL &&
+-          (npent[i].name[0] == '*' || strstr(host, npent[i].name) != NULL)))
++          (npent[i].name[0] == '*' || strstr(desthost, npent[i].name) != NULL)))
+             return ap_proxyerror(r, HTTP_FORBIDDEN,
+                                  "Connect to remote machine blocked");
+     }
+ 
+-    ap_log_error(APLOG_MARK, APLOG_DEBUG | APLOG_NOERRNO, r->server, "FTP: connect to %s:%d", host, port);
++    ap_log_error(APLOG_MARK, APLOG_DEBUG | APLOG_NOERRNO, r->server, "FTP: connect to %s:%d", desthost, destport);
+ 
+-    parms = strchr(path, ';');
++    parms = strchr(url, ';');
+     if (parms != NULL)
+         *(parms++) = '\0';
+ 
+     memset(&server, 0, sizeof(struct sockaddr_in));
+     server.sin_family = AF_INET;
+-    server.sin_port = htons((unsigned short)port);
+-    err = ap_proxy_host2addr(host, &server_hp);
++    server.sin_port = htons((unsigned short)destport);
++    err = ap_proxy_host2addr(desthost, &server_hp);
+     if (err != NULL)
+         return ap_proxyerror(r, HTTP_INTERNAL_SERVER_ERROR, err);
+ 
+@@ -1293,7 +1313,7 @@
+             if (destaddr.s_addr == ncent[i].addr.s_addr ||
+                 (ncent[i].name != NULL &&
+                  (ncent[i].name[0] == '*' ||
+-                  strstr(host, ncent[i].name) != NULL))) {
++                  strstr(desthost, ncent[i].name) != NULL))) {
+                 nocache = 1;
+                 break;
+             }
+diff -urN src/modules/standard/mod_alias.c apache_1.3.29/src/modules/standard/mod_alias.c
+--- src/modules/standard/mod_alias.c	Thu Apr 24 18:08:21 2003
++++ apache_1.3.29/src/modules/standard/mod_alias.c	Fri Oct 24 18:11:41 2003
+@@ -299,7 +299,7 @@
+ static char *try_alias_list(request_rec *r, array_header *aliases, int doesc, int *status)
+ {
+     alias_entry *entries = (alias_entry *) aliases->elts;
+-    regmatch_t regm[10];
++    regmatch_t regm[AP_MAX_REG_MATCH];
+     char *found = NULL;
+     int i;
+ 
+@@ -308,10 +308,10 @@
+ 	int l;
+ 
+ 	if (p->regexp) {
+-	    if (!ap_regexec(p->regexp, r->uri, p->regexp->re_nsub + 1, regm, 0)) {
++	    if (!ap_regexec(p->regexp, r->uri, AP_MAX_REG_MATCH, regm, 0)) {
+ 		if (p->real) {
+ 		    found = ap_pregsub(r->pool, p->real, r->uri,
+-				    p->regexp->re_nsub + 1, regm);
++                                       AP_MAX_REG_MATCH, regm);
+ 		    if (found && doesc) {
+ 			found = ap_escape_uri(r->pool, found);
+ 		    }
+diff -urN src/modules/standard/mod_include.c apache_1.3.29/src/modules/standard/mod_include.c
+--- src/modules/standard/mod_include.c	Mon Feb  3 18:13:28 2003
++++ apache_1.3.29/src/modules/standard/mod_include.c	Sun Sep 21 23:32:12 2003
+@@ -1506,6 +1506,7 @@
+             }
+             else {
+                 new->left = current->right;
++                new->left->parent = new;
+                 current->right = new;
+                 new->parent = current;
+             }
+@@ -1609,6 +1610,7 @@
+             }
+             else {
+                 new->left = current->right;
++                new->left->parent = new;
+                 current->right = new;
+                 new->parent = current;
+             }
+diff -urN src/modules/standard/mod_mime.c apache_1.3.29/src/modules/standard/mod_mime.c
+--- src/modules/standard/mod_mime.c	Mon Feb  3 18:13:29 2003
++++ apache_1.3.29/src/modules/standard/mod_mime.c	Sun Aug 31 22:41:41 2003
+@@ -347,7 +347,7 @@
+ 
+     if (!(f = ap_pcfg_openfile(p, types_confname))) {
+         ap_log_error(APLOG_MARK, APLOG_ERR, s,
+-		     "could not open mime types log file %s.", types_confname);
++		     "could not open mime types config file %s.", types_confname);
+         exit(1);
+     }
+ 
+diff -urN src/modules/standard/mod_rewrite.c apache_1.3.29/src/modules/standard/mod_rewrite.c
+--- src/modules/standard/mod_rewrite.c	Mon May 19 04:35:31 2003
++++ apache_1.3.29/src/modules/standard/mod_rewrite.c	Fri Oct 24 18:11:41 2003
+@@ -1834,7 +1834,7 @@
+     const char *vary;
+     char newuri[MAX_STRING_LEN];
+     regex_t *regexp;
+-    regmatch_t regmatch[MAX_NMATCH];
++    regmatch_t regmatch[AP_MAX_REG_MATCH];
+     backrefinfo *briRR = NULL;
+     backrefinfo *briRC = NULL;
+     int prefixstrip;
+@@ -1891,7 +1891,7 @@
+         rewritelog(r, 3, "[per-dir %s] applying pattern '%s' to uri '%s'",
+                    perdir, p->pattern, uri);
+     }
+-    rc = (ap_regexec(regexp, uri, regexp->re_nsub+1, regmatch, 0) == 0);
++    rc = (ap_regexec(regexp, uri, AP_MAX_REG_MATCH, regmatch, 0) == 0);
+     if (! (( rc && !(p->flags & RULEFLAG_NOTMATCH)) ||
+            (!rc &&  (p->flags & RULEFLAG_NOTMATCH))   ) ) {
+         return 0;
+@@ -2179,7 +2179,7 @@
+     char input[MAX_STRING_LEN];
+     struct stat sb;
+     request_rec *rsub;
+-    regmatch_t regmatch[MAX_NMATCH];
++    regmatch_t regmatch[AP_MAX_REG_MATCH];
+     int rc;
+ 
+     /*
+@@ -2283,8 +2283,7 @@
+     }
+     else {
+         /* it is really a regexp pattern, so apply it */
+-        rc = (ap_regexec(p->regexp, input,
+-                         p->regexp->re_nsub+1, regmatch,0) == 0);
++        rc = (ap_regexec(p->regexp, input, AP_MAX_REG_MATCH, regmatch,0) == 0);
+ 
+         /* if it isn't a negated pattern and really matched
+            we update the passed-through regex subst info structure */
+@@ -2442,7 +2441,7 @@
+ 		bri = briRC;
+ 	    }
+ 	    /* see ap_pregsub() in src/main/util.c */
+-            if (bri && n <= bri->nsub &&
++            if (bri && n < AP_MAX_REG_MATCH &&
+ 		bri->regmatch[n].rm_eo > bri->regmatch[n].rm_so) {
+ 		span = bri->regmatch[n].rm_eo - bri->regmatch[n].rm_so;
+ 		if (span > space) {
+diff -urN src/modules/standard/mod_rewrite.h apache_1.3.29/src/modules/standard/mod_rewrite.h
+--- src/modules/standard/mod_rewrite.h	Mon May 19 04:35:31 2003
++++ apache_1.3.29/src/modules/standard/mod_rewrite.h	Fri Oct 24 18:11:41 2003
+@@ -253,8 +253,6 @@
+ 
+ #define MAX_ENV_FLAGS 15
+ 
+-#define MAX_NMATCH    10
+-
+ /* default maximum number of internal redirects */
+ #define REWRITE_REDIRECT_LIMIT 10
+ 
+@@ -368,7 +366,7 @@
+ typedef struct backrefinfo {
+     char *source;
+     int nsub;
+-    regmatch_t regmatch[10];
++    regmatch_t regmatch[AP_MAX_REG_MATCH];
+ } backrefinfo;
+ 
+ 
+diff -urN src/modules/standard/mod_usertrack.c apache_1.3.29/src/modules/standard/mod_usertrack.c
+--- src/modules/standard/mod_usertrack.c	Mon Feb  3 18:13:30 2003
++++ apache_1.3.29/src/modules/standard/mod_usertrack.c	Thu Oct 16 19:23:26 2003
+@@ -126,6 +126,8 @@
+     char *cookie_name;
+     char *cookie_domain;
+     char *prefix_string;
++    char *regexp_string;  /* used to compile regexp; save for debugging */
++    regex_t *regexp;  /* used to find usertrack cookie in cookie header */
+ } cookie_dir_rec;
+ 
+ /* Define this to allow post-2000 cookies. Cookies use two-digit dates,
+@@ -284,35 +286,48 @@
+     return;
+ }
+ 
++/* dcfg->regexp is "^cookie_name=([^;]+)|;[ \t]+cookie_name=([^;]+)",
++ * which has three subexpressions, $0..$2 */
++#define NUM_SUBS 3
++
+ static int spot_cookie(request_rec *r)
+ {
+     cookie_dir_rec *dcfg = ap_get_module_config(r->per_dir_config,
+ 						&usertrack_module);
+-    const char *cookie;
+-    char *value;
++    const char *cookie_header;
++    regmatch_t regm[NUM_SUBS];
++    int i;
+ 
+     if (!dcfg->enabled) {
+         return DECLINED;
+     }
+ 
+-    if ((cookie = ap_table_get(r->headers_in,
+-                               (dcfg->style == CT_COOKIE2
+-                                ? "Cookie2"
+-                                : "Cookie"))))
+-        if ((value = strstr(cookie, dcfg->cookie_name))) {
+-            char *cookiebuf, *cookieend;
+-
+-            value += strlen(dcfg->cookie_name) + 1;  /* Skip over the '=' */
+-            cookiebuf = ap_pstrdup(r->pool, value);
+-            cookieend = strchr(cookiebuf, ';');
+-            if (cookieend)
+-                *cookieend = '\0';      /* Ignore anything after a ; */
+-
+-            /* Set the cookie in a note, for logging */
+-            ap_table_setn(r->notes, "cookie", cookiebuf);
++    if ((cookie_header = ap_table_get(r->headers_in,
++                                      (dcfg->style == CT_COOKIE2
++                                       ? "Cookie2"
++                                       : "Cookie")))) {
++	if (!ap_regexec(dcfg->regexp, cookie_header, NUM_SUBS, regm, 0)) {
++	    char *cookieval = NULL;
++	    /* Our regexp,
++	     * ^cookie_name=([^;]+)|;[ \t]+cookie_name=([^;]+)
++	     * only allows for $1 or $2 to be available. ($0 is always
++	     * filled with the entire matched expression, not just
++	     * the part in parentheses.) So just check for either one
++	     * and assign to cookieval if present. */
++	    if (regm[1].rm_so != -1) {
++		cookieval = ap_pregsub(r->pool, "$1", cookie_header, 
++                                       NUM_SUBS, regm);
++	    }
++	    if (regm[2].rm_so != -1) {
++		cookieval = ap_pregsub(r->pool, "$2", cookie_header, 
++                                       NUM_SUBS, regm);
++	    }
++	    /* Set the cookie in a note, for logging */
++	    ap_table_setn(r->notes, "cookie", cookieval);
+ 
+-            return DECLINED;    /* There's already a cookie, no new one */
+-        }
++	    return DECLINED;    /* There's already a cookie, no new one */
++	}
++    }
+     make_cookie(r);
+     return OK;                  /* We set our cookie */
+ }
+@@ -422,7 +437,26 @@
+ {
+     cookie_dir_rec *dcfg = (cookie_dir_rec *) mconfig;
+ 
++    /* The goal is to end up with this regexp, 
++     * ^cookie_name=([^;]+)|;[ \t]+cookie_name=([^;]+)
++     * with cookie_name
++     * obviously substituted with the real cookie name set by the
++     * user in httpd.conf. */
++    dcfg->regexp_string = ap_pstrcat(cmd->pool, "^", name, 
++                                     "=([^;]+)|;[ \t]+", name, 
++                                     "=([^;]+)", NULL);
++
+     dcfg->cookie_name = ap_pstrdup(cmd->pool, name);
++
++    dcfg->regexp = ap_pregcomp(cmd->pool, dcfg->regexp_string, REG_EXTENDED);
++    if (dcfg->regexp == NULL) {
++	return "Regular expression could not be compiled.";
++    }
++    if (dcfg->regexp->re_nsub + 1 != NUM_SUBS) {
++        return ap_pstrcat(cmd->pool, "Invalid cookie name \"",
++                           name, "\"", NULL);
++    }
++
+     return NULL;
+ }
+ 
+diff -urN src/support/ab.c apache_1.3.29/src/support/ab.c
+--- src/support/ab.c	Sun Jul  6 19:52:27 2003
++++ apache_1.3.29/src/support/ab.c	Thu Jul 31 22:30:26 2003
+@@ -1358,14 +1358,14 @@
+ static void copyright(void)
+ {
+     if (!use_html) {
+-	printf("This is ApacheBench, Version %s\n", VERSION " <$Revision: 1.69 $> apache-1.3");
++	printf("This is ApacheBench, Version %s\n", VERSION " <$Revision: 1.70 $> apache-1.3");
+ 	printf("Copyright (c) 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/\n");
+ 	printf("Copyright (c) 1998-2002 The Apache Software Foundation, http://www.apache.org/\n");
+ 	printf("\n");
+     }
+     else {
+ 	printf("<p>\n");
+-	printf(" This is ApacheBench, Version %s <i>&lt;%s&gt;</i> apache-1.3<br>\n", VERSION, "$Revision: 1.69 $");
++	printf(" This is ApacheBench, Version %s <i>&lt;%s&gt;</i> apache-1.3<br>\n", VERSION, "$Revision: 1.70 $");
+ 	printf(" Copyright (c) 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/<br>\n");
+ 	printf(" Copyright (c) 1998-2002 The Apache Software Foundation, http://www.apache.org/<br>\n");
+ 	printf("</p>\n<p>\n");
+@@ -1593,7 +1593,12 @@
+ 	     */
+ 	    while (isspace((int)*optarg))
+ 		optarg++;
+-	    l = ap_base64encode(tmp, optarg, strlen(optarg));
++            if (ap_base64encode_len(strlen(optarg)) > sizeof(tmp)) {
++                fprintf(stderr, "%s: Authentication credentials too long\n",
++                        argv[0]);
++                exit(1);
++            }
++            l = ap_base64encode(tmp, optarg, strlen(optarg));
+ 	    tmp[l] = '\0';
+ 
+ 	    strncat(auth, "Authorization: Basic ", sizeof(auth)-strlen(auth)-1);
+@@ -1606,6 +1611,10 @@
+ 	     */
+ 	    while (isspace((int)*optarg))
+ 		optarg++;
++            if (ap_base64encode_len(strlen(optarg)) > sizeof(tmp)) {
++                fprintf(stderr, "%s: Proxy credentials too long\n", argv[0]);
++                exit(1);
++            }
+ 	    l = ap_base64encode(tmp, optarg, strlen(optarg));
+ 	    tmp[l] = '\0';
+ 
+diff -urN src/support/dbmmanage apache_1.3.29/src/support/dbmmanage
+--- src/support/dbmmanage	Mon Feb  3 18:13:36 2003
++++ apache_1.3.29/src/support/dbmmanage	Thu Sep  4 16:01:19 2003
+@@ -211,7 +211,7 @@
+ 	srand (time ^ $$ or time ^ ($$ + ($$ << 15)));
+     }
+     else {
+-        for (qw(-xlwwa -le)) { 
++        for (qw(xlwwa -le)) { 
+ 	    `ps $_ 2>/dev/null`;
+             $psf = $_, last unless $?;
+         }
