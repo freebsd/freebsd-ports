@@ -7,11 +7,10 @@
 #
 
 PORTNAME=	gsasl
-PORTVERSION=	0.1.4
-PORTREVISION=	1
+PORTVERSION=	0.2.0
 CATEGORIES=	security
-MASTER_SITES=	http://josefsson.org/${PORTNAME}/releases/ \
-		${MASTER_SITE_GNU_ALPHA}
+MASTER_SITES=	${MASTER_SITE_GNU_ALPHA} \
+		http://josefsson.org/${PORTNAME}/releases/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	krion@FreeBSD.org
@@ -49,7 +48,7 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/reference
-	${INSTALL_DATA} ${WRKSRC}/doc/reference/*.html ${DOCSDIR}/reference
+	${INSTALL_DATA} ${WRKSRC}/doc/reference/html/* ${DOCSDIR}/reference
 .endif
 
 .include "Makefile.man"

@@ -1,0 +1,20 @@
+
+$FreeBSD$
+
+--- doc/gsasl.texi.orig
++++ doc/gsasl.texi
+@@ -123,14 +123,6 @@
+ and the command-line interface, self-tests and examples are licensed
+ under the GNU General Public License.
+ 
+-@float Illustration,fig:abstraction
+-@image{abstraction,10cm,5cm}
+-
+-@caption{Logical overview showing how applications use authentication
+-mechanisms through an abstract interface.}
+-
+-@end float
+-
+ @menu
+ * Getting Started::
+ * Features::
