@@ -20,6 +20,7 @@
     SUBDIR += pdksh
     SUBDIR += perlsh
     SUBDIR += rc
+    SUBDIR += rssh
     SUBDIR += sash
     SUBDIR += scponly
     SUBDIR += tcshrc

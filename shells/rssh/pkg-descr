@@ -1,0 +1,9 @@
+rssh is a Restricted Secure SHell that allow only the use of sftp or scp.
+It could be use when you need an account (and a valid shell) in order to
+execute sftp or scp but when you don't want to give the possibility to log
+in to this user.
+
+WWW: http://www.pizzashack.org/rssh/index.shtml
+
+- enigmatyc
+enigmatyc@laposte.net
