@@ -25,7 +25,7 @@ lib/%%DISTNAME%%/boot/syspred.pl
 lib/%%DISTNAME%%/boot/toplevel.pl
 lib/%%DISTNAME%%/boot/topvars.pl
 lib/%%DISTNAME%%/boot/writef.pl
-lib/%%DISTNAME%%/boot32.prc
+lib/%%DISTNAME%%/boot%%BITS%%.prc
 lib/%%DISTNAME%%/dotfiles/README
 lib/%%DISTNAME%%/dotfiles/dotplrc
 lib/%%DISTNAME%%/dotfiles/dotxpcerc
