@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Mowitz
-PORTVERSION=	0.1.1
+PORTVERSION=	0.2.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://siag.nu/pub/mowitz/
 
@@ -18,12 +18,6 @@ USE_XPM=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xawm=Xaw3d
-
-.if defined(X11BASE) && ${X11BASE} != /usr/X11R6
-post-patch:
-	${PERL} -pi -e 's,/usr/X11R6,${X11BASE},g' \
-		`find ${WRKSRC} | xargs fgrep -l --mmap /usr/X11R6`
-.endif
 
 post-install:
 	${RM} ${PREFIX}/lib/libMowitz.la
