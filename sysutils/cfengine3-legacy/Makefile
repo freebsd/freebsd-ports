@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	cfengine
 
 MAINTAINER=	jseger@FreeBSD.org
 
+FORBIDDEN=	"Remote root vulnerability"
+
 .if defined(PACKAGE_BUILDING) && !exists(/usr/include/tcpd.h)
 LIB_DEPENDS=	wrap.7:${PORTSDIR}/security/tcp_wrapper
 .endif
