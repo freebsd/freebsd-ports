@@ -33,6 +33,7 @@
     SUBDIR += dore
     SUBDIR += drm-kmod
     SUBDIR += dumpmpeg
+    SUBDIR += dynamechs
     SUBDIR += ecg2png
     SUBDIR += electriceyes
     SUBDIR += enfle
