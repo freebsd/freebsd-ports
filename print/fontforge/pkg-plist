@@ -1,6 +1,7 @@
 bin/fontforge
 bin/sfddiff
 bin/acorn2sfd
+bin/pfaedit
 lib/libgdraw.a
 lib/libgdraw.la
 lib/libgdraw.so
@@ -372,6 +373,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/overlappedlines.png
 %%PORTDOCS%%%%DOCSDIR%%/overshoot.png
 %%PORTDOCS%%%%DOCSDIR%%/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/palmfonts.html
 %%PORTDOCS%%%%DOCSDIR%%/pcf-format.html
 %%PORTDOCS%%%%DOCSDIR%%/pfaeditchangelog.html
 %%PORTDOCS%%%%DOCSDIR%%/pfaeditmath.html
