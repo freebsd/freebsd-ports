@@ -4,7 +4,7 @@
  *
  * Daemon control program.
  *
- * $FreeBSD: /tmp/pcvs/ports/www/jakarta-tomcat4/files/Attic/daemonctl.c,v 1.3 2002-04-03 20:42:07 znerd Exp $
+ * $FreeBSD: /tmp/pcvs/ports/www/jakarta-tomcat4/files/Attic/daemonctl.c,v 1.4 2002-04-08 19:19:31 znerd Exp $
  */
 
 #include <assert.h>
@@ -109,7 +109,6 @@ int openPIDFile(void) {
  	int file;
 
 	/* Attempt to open the PID file */
-	printf(">> Opening PID file (%%PID_FILE%%)...");
 	file = open("%%PID_FILE%%", O_RDWR);
 	if (file < 0) {
 		printf(" [ FAILED ]\n");
@@ -117,7 +116,6 @@ int openPIDFile(void) {
 		perror(NULL);
 		exit(ERR_PID_FILE_NOT_FOUND);
 	}
-	printf(" [ DONE ]\n");
 
 	return file;
 }
@@ -142,7 +140,6 @@ int readPID(int file) {
 	int pid;
 
 	/* Read the PID file contents */
-	printf(">> Reading PID file...");
 	buffer = (char *) malloc((MAX_FILE_SIZE + 1) * sizeof(char));
 	count = read(file, buffer, MAX_FILE_SIZE + 1);
 	if (count > MAX_FILE_SIZE) {
@@ -245,10 +242,11 @@ void start(void) {
 	struct stat sb;
 
 	/* Open and read the PID file */
+	printf(">> Reading PID file (%%PID_FILE%%)...");
 	file = openPIDFile();
 	pid = readPID(file);
 
-	printf(">> Checking that %%APP_TITLE%% is not already running...");
+	printf(">> Starting %%APP_TITLE%%...");
 	if (pid != -1) {
 
 		/* Check if the process actually exists */
@@ -260,9 +258,7 @@ void start(void) {
 		}
 	}
 
-	printf(" [ DONE ]\n");
-
-	printf(">> Checking for Java VM...");
+	/* Check if the JDK home directory is actually a directory */
 	result = stat("%%JAVA_HOME%%", &sb);
 	if (result != 0) {
 		printf(" [ FAILED ]\n");
@@ -276,6 +272,7 @@ void start(void) {
 		exit(ERR_JAVA_HOME_NOT_DIR);
 	}
 
+	/* Check if the Java command is actually an executable regular file */
 	result = stat("%%JAVA_HOME%%/%%JAVA_CMD%%", &sb);
 	if (result != 0) {
 		printf(" [ FAILED ]\n");
@@ -295,9 +292,6 @@ void start(void) {
 		perror(NULL);
 		exit(ERR_JAVA_CMD_NOT_EXECUTABLE);
 	}
-	printf(" [ DONE ]\n");
-
-	printf(">> Starting %%APP_TITLE%%...");
 
 	/* Change directory */
 	result = chdir("%%APP_HOME%%");
@@ -368,6 +362,7 @@ void stop(void) {
 	int pid;
 
 	/* Open and read the PID file */
+	printf(">> Opening PID file (%%PID_FILE%%)...");
 	file = openPIDFile();
 	pid = readPID(file);
 
