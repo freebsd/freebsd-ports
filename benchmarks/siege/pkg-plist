@@ -1,7 +1,4 @@
 bin/siege
-bin/scout
 bin/bombardment
 bin/siege2csv
 bin/siege.config
-%%PORTDOCS%%share/doc/siege/manual.html
-%%PORTDOCS%%@dirrm share/doc/siege
