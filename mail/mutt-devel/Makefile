@@ -60,8 +60,7 @@ CONFIGURE_ARGS=	--enable-pop --enable-imap --enable-flock --disable-fcntl \
 		--with-sharedir=${PREFIX}/share/mutt \
 		--with-docdir=${PREFIX}/share/doc/mutt \
 		--sysconfdir=${PREFIX}/etc \
-		--with-iconv=${PREFIX} \
-		--enable-compressed
+		--with-iconv=${PREFIX}
 
 .if defined(WITH_LOCALES_FIX)
 CONFIGURE_ARGS+=	--enable-locales-fix
@@ -75,6 +74,13 @@ CONFIGURE_ARGS+=	--with-curses=${PREFIX}
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 .endif
 
+.if defined(WITH_COMPRESSED_FOLDERS)
+PATCHFILES=	patch-${PATCH_VERSION}.rr.compressed.1.gz
+PATCH_DIST_STRIP=	-p1
+PATCH_SITES=	http://www.spinnaker.de/mutt/compressed/
+CONFIGURE_ARGS+=	--enable-compressed
+.endif
+
 .if defined(WITH_VVV_PATCHES)
 PATCHFILES=	patch-${PATCH_VERSION}.rr.compressed.gz \
 		patch-${PATCH_VERSION}.vvv.nntp.gz \
@@ -84,7 +90,7 @@ PATCHFILES=	patch-${PATCH_VERSION}.rr.compressed.gz \
 PATCH_DIST_STRIP=	-p1
 PATCH_SITES=	http://mutt.org.ua/download/mutt-${PATCH_VERSION}/ \
 		ftp://mutt.org.ua/mutt/mutt-${PATCH_VERSION}/
-CONFIGURE_ARGS+=	--enable-nntp --with-regex 
+CONFIGURE_ARGS+=	--enable-nntp --with-regex --enable-compressed
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
