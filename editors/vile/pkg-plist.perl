@@ -147,6 +147,7 @@ share/vile/tbl.keywords
 share/vile/tc.keywords
 share/vile/tcl.keywords
 share/vile/ti.keywords
+share/vile/which.rc
 share/vile/xres.keywords
 share/vile/xs.keywords
 share/vile/macros/color-ls.rc
@@ -163,6 +164,7 @@ share/vile/macros/vileinit.rc
 share/vile/macros/vilemenu.rc
 share/vile/macros/vileperl.rc
 share/vile/macros/vile-pager
+share/vile/macros/which.rc
 share/vile/yacc.keywords
 @dirrm share/vile/perl/Vile
 @dirrm share/vile/perl
