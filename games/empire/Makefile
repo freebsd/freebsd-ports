@@ -8,8 +8,8 @@
 PORTNAME=	empire
 PORTVERSION=	1.2
 CATEGORIES=	games
-MASTER_SITES=	http://www.tuxedo.org/~esr/
-DISTNAME=	vms-${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	http://www.tuxedo.org/~esr/vms-empire/
+DISTNAME=	vms-empire-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
