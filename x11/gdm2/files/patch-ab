@@ -1,5 +1,5 @@
---- config/gdm.conf.in.orig	Wed Aug 14 22:13:10 2002
-+++ config/gdm.conf.in	Tue Aug 20 16:43:26 2002
+--- config/gdm.conf.in.orig	Fri Aug 23 13:59:57 2002
++++ config/gdm.conf.in	Sun Aug 25 13:57:05 2002
 @@ -33,14 +33,14 @@
  # The gdm configuration program that is run from the login screen, you should
  # probably leave this alone
@@ -26,7 +26,7 @@
  # You should probably never change this value unless you have a weird setup
  PidFile=/var/run/gdm.pid
  PostSessionScriptDir=@EXPANDED_SYSCONFDIR@/gdm/PostSession/
-@@ -80,11 +80,11 @@
+@@ -84,11 +84,11 @@
  UserAuthFBDir=/tmp
  UserAuthFile=.Xauthority
  # The X server to use if we can't figure out what else to run.
@@ -37,28 +37,19 @@
  # the X nest command
 -Xnest=/usr/X11R6/bin/Xnest -name Xnest
 +Xnest=@EXPANDED_BINDIR@/Xnest -name Xnest
- 
- [security]
- # If any distributions ship with this one off, they should be shot
-@@ -118,7 +118,7 @@
- Willing=@EXPANDED_SYSCONFDIR@/gdm/Xwilling
- 
- [gui]
+ # Automatic VT allocation.  Right now only works on Linux.  This way
+ # we force X to use specific vts.  turn VTAllocation to false if this
+ # is causing problems.
+@@ -153,7 +153,7 @@
+ # The 'theme'.  By default we're using the default gtk theme
+ # Of course assuming that gtk got installed in the same prefix,
+ # if not change this.
 -GtkRC=@EXPANDED_DATADIR@/themes/Default/gtk/gtkrc
 +GtkRC=@EXPANDED_DATADIR@/../themes/Default/gtk-2.0/gtkrc
+ # Maximum size of an icon, larger icons are scaled down
  MaxIconWidth=128
  MaxIconHeight=128
- 
-@@ -127,7 +127,7 @@
- ConfigAvailable=true
- Browser=false
- DefaultFace=@EXPANDED_PIXMAPDIR@/nobody.png
--DefaultLocale=en_US
-+DefaultLocale=en_US.ISO_8859-1
- # These are things excluded from the face browser, not from logging in
- Exclude=bin,daemon,adm,lp,sync,shutdown,halt,mail,news,uucp,operator,nobody,gdm,postgres,pvm,rpm
- # As an alternative to the above this is the minimum uid to show
-@@ -205,7 +205,7 @@
+@@ -281,7 +281,7 @@
  # Definition of the standard X server.
  [server-Standard]
  name=Standard server
@@ -67,7 +58,7 @@
  flexible=true
  
  # To use this server type you should add -query host or -indirect host
-@@ -213,7 +213,7 @@
+@@ -289,7 +289,7 @@
  [server-Terminal]
  name=Terminal server
  # Add -terminate to make things behave more nicely
