@@ -26,6 +26,7 @@ RESTRICTED=	"Redistribution of repackaged binaries not permitted"
 
 WRKSRC=		${WRKDIR}/j2sdk${DL_JDK_VERSION}
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///} PORTVERSION=${PORTVERSION}
+PKGINSTALL=	${WRKDIR}/pkg-install
 
 NO_BUILD=	yes
 USE_LINUX=	yes
