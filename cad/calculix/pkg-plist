@@ -1,6 +1,6 @@
 bin/ccx
 bin/cgx
-%%PORTDOCS%%%%DOCSDIR%%/ccx_1.0.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/ccx_1.1.ps.gz
 %%PORTDOCS%%%%DOCSDIR%%/ccx/ccx.html
 %%PORTDOCS%%%%DOCSDIR%%/ccx/index.html
 %%PORTDOCS%%%%DOCSDIR%%/ccx/node1.html
@@ -189,6 +189,14 @@ bin/cgx
 %%PORTDOCS%%%%DOCSDIR%%/ccx/node97.html
 %%PORTDOCS%%%%DOCSDIR%%/ccx/node98.html
 %%PORTDOCS%%%%DOCSDIR%%/ccx/node99.html
+%%PORTDOCS%%%%DOCSDIR%%/ccx/node187.html
+%%PORTDOCS%%%%DOCSDIR%%/ccx/node188.html
+%%PORTDOCS%%%%DOCSDIR%%/ccx/node189.html
+%%PORTDOCS%%%%DOCSDIR%%/ccx/node190.html
+%%PORTDOCS%%%%DOCSDIR%%/ccx/node191.html
+%%PORTDOCS%%%%DOCSDIR%%/ccx/node192.html
+%%PORTDOCS%%%%DOCSDIR%%/ccx/node193.html
+%%PORTDOCS%%%%DOCSDIR%%/ccx/node194.html
 %%PORTDOCS%%%%DOCSDIR%%/ccx/img1.png
 %%PORTDOCS%%%%DOCSDIR%%/ccx/img10.png
 %%PORTDOCS%%%%DOCSDIR%%/ccx/img100.png
@@ -452,6 +460,83 @@ bin/cgx
 %%PORTDOCS%%%%DOCSDIR%%/ccx/img97.png
 %%PORTDOCS%%%%DOCSDIR%%/ccx/img98.png
 %%PORTDOCS%%%%DOCSDIR%%/ccx/img99.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img264.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img265.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img266.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img267.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img268.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img269.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img270.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img271.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img272.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img273.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img274.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img275.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img276.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img277.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img278.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img279.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img280.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img281.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img282.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img283.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img284.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img285.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img286.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img287.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img288.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img289.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img290.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img291.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img292.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img293.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img294.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img295.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img296.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img297.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img298.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img299.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img300.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img301.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img302.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img303.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img304.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img305.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img306.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img307.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img308.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img309.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img310.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img311.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img312.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img313.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img314.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img315.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img316.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img317.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img318.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img319.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img320.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img321.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img322.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img323.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img324.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img325.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img326.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img327.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img328.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img329.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img330.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img331.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img332.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img333.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img334.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img335.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img336.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img337.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img338.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img339.png
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ccx
 %%PORTDOCS%%%%DOCSDIR%%/cgx.ps.gz
 %%PORTDOCS%%%%DOCSDIR%%/cgx/cgx.html
 %%PORTDOCS%%%%DOCSDIR%%/cgx/node1.html
@@ -603,6 +688,7 @@ bin/cgx
 %%PORTDOCS%%%%DOCSDIR%%/cgx/node147.html
 %%PORTDOCS%%%%DOCSDIR%%/cgx/node148.html
 %%PORTDOCS%%%%DOCSDIR%%/cgx/node149.html
+%%PORTDOCS%%%%DOCSDIR%%/cgx/node152.html
 %%PORTDOCS%%%%DOCSDIR%%/cgx/images.tex
 %%PORTDOCS%%%%DOCSDIR%%/cgx/images.aux
 %%PORTDOCS%%%%DOCSDIR%%/cgx/images.log
@@ -632,8 +718,8 @@ bin/cgx
 %%PORTDOCS%%%%DOCSDIR%%/cgx/img10.gif
 %%PORTDOCS%%%%DOCSDIR%%/cgx/node151.html
 %%PORTDOCS%%%%DOCSDIR%%/cgx/img19.gif
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/ccx/
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/cgx/
+%%PORTDOCS%%%%DOCSDIR%%/cgx/img20.gif
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/cgx
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/basic/cylinder.fbd
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/basic/disc.fbd
@@ -647,6 +733,8 @@ bin/cgx
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/compressor/ccx/lavfm_cyl.bou
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/compressor/ccx/lavfm.msh
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/compressor/ccx/cyc/lavfmcyc.inp
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/nurbs/halter.fbd
+%%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/nurbs
 %%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/compressor/cgx
 %%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/compressor/ccx/cyc
 %%WITH_EXAMPLES%%@dirrm %%EXAMPLESDIR%%/compressor/ccx
@@ -671,12 +759,18 @@ bin/cgx
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/test/achtelp.inp
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/test/aniso.dat.ref
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/test/aniso.inp
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/test/anipla.dat.ref
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/test/anipla.inp
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/test/axial.dat.ref
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/test/axial.inp
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/test/axiplane.dat.ref
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/test/axiplane.inp
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/test/beam.dat.ref
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/test/beam.inp
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/test/beammrco.dat.ref
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/test/beammrco.inp
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/test/beamtor.dat.ref
+%%WITH_EXAMPLES%%%%EXAMPLESDIR%%/test/beamtor.inp
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/test/beam10p.dat.ref
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/test/beam10p.inp
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/test/beam20p.dat.ref

@@ -1,0 +1,33 @@
+--- ccx_1.1/src/Makefile.orig	Wed Aug  6 16:22:49 2003
++++ ccx_1.1/src/Makefile	Thu Aug  7 08:48:23 2003
+@@ -1,8 +1,8 @@
+-CFLAGS = -Wall -O -I ../../../SPOOLES.2.2 -DARCH="Linux"
+-FFLAGS = -Wall -O
++CFLAGS += -I%%LOCALBASE%%/include/spooles -DARCH="FreeBSD"
++#FFLAGS = -Wall -O
+ 
+-CC=cc
+-FC=g77
++CC=%%CC%%
++FC=%%FC%%
+ 
+ .c.o :
+ 	$(CC) $(CFLAGS) -c $<
+@@ -225,15 +225,10 @@
+ OCCXC = $(SCCXC:.c=.o)
+ OCCXMAIN = $(SCCXMAIN:.c=.o)
+ 
+-DIR=../../../SPOOLES.2.2
+-
+-LIBS = \
+-       $(DIR)/spooles.a \
+-	../../../ARPACK/libarpack_INTEL.a \
+-       -lm
++LIBS = -lspooles -larpack %%BLAS_LIBS%% -lm
+ 
+ ccx_1.1: $(OCCXMAIN) ccx_1.1.a  $(LIBS)
+-	g77 -Wall -O -o $@ $(OCCXMAIN) ccx_1.1.a  $(LIBS)
++	$(FC) -O -o $@ $(OCCXMAIN) ccx_1.1.a  $(LIBS) -L%%LOCALBASE%%/lib
+ 
+ ccx_1.1.a: $(OCCXF) $(OCCXC)
+ 	ar vr $@ $?

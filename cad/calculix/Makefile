@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CalculiX
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.dhondt.de/
 DISTFILES=	ccx_${PORTVERSION}.src.tar.gz cgx_${PORTVERSION}.tar.gz
@@ -17,6 +17,7 @@ DISTFILES+=	ccx_${PORTVERSION}.ps.tar.gz cgx_${PORTVERSION}.ps.tar.gz \
 .ifdef WITH_EXAMPLES
 DISTFILES+=	ccx_${PORTVERSION}.test.tar.gz
 .endif
+DIST_SUBDIR=	calculix
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A Three-Dimensional Structural Finite Element Program
@@ -30,6 +31,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_MESA=	yes
 USE_REINPLACE=	yes
 BLAS_LIBS=	-lf77blas -latlas
+BROWSER?=	mozilla
+PSVIEWER?=	gv
 
 .if !defined(WITH_EXAMPLES)
 PLIST_SUB=      WITH_EXAMPLES="@comment "
@@ -45,21 +48,26 @@ pre-everything::
 pre-build:
 	@${REINPLACE_CMD} -e 's+%%FC%%+${FC}+g ; s+%%CC%%+${CC}+g ; \
 	s+%%BLAS_LIBS%%+${BLAS_LIBS}+ ; \
-	s+%%LOCALBASE%%+${LOCALBASE}+g;' ${WRKSRC}/ccx_${PORTVERSION}/src/Makefile
-	@${REINPLACE_CMD} -e 's+%%X11BASE%%+${X11BASE}+g ; \
-	s+%%CFLAGS%%+${CFLAGS}+g;' ${WRKSRC}/cgx_${PORTVERSION}/src/Makefile
-	@${REINPLACE_CMD} -e 's+%%DOCSDIR%%+${DOCSDIR}+g;' ${WRKSRC}/cgx_${PORTVERSION}/src/cgx.h
+	s+%%LOCALBASE%%+${LOCALBASE}+g;' \
+		${WRKSRC}/ccx_${PORTVERSION}/src/Makefile
+	@${REINPLACE_CMD} -e 's+%%X11BASE%%+${X11BASE}+g; \
+	s+%%PTHREAD_CFLAGS%%+${PTHREAD_CFLAGS}+g; \
+	s+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+g;' \
+		${WRKSRC}/cgx_${PORTVERSION}/src/Makefile
+	@${REINPLACE_CMD} -e 's+%%DOCSDIR%%+${DOCSDIR}+g; \
+	s+"netscape"+"${BROWSER}"+ ; \
+	s+"ghostview"+"${PSVIEWER}"+ ;' \
+		${WRKSRC}/cgx_${PORTVERSION}/src/cgx.h
 
 do-build:
-	@(cd ${WRKSRC}/ccx_${PORTVERSION}/src; $(MAKE) )
-	@(cd ${WRKSRC}/cgx_${PORTVERSION}/src; $(MAKE) )
+	@(cd ${WRKSRC}/ccx_${PORTVERSION}/src; ${SETENV} ${MAKE_ENV} $(MAKE) )
+	@(cd ${WRKSRC}/cgx_${PORTVERSION}/src; ${SETENV} ${MAKE_ENV} $(MAKE) )
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/ccx_${PORTVERSION}/src/ccx_${PORTVERSION} \
 	  ${PREFIX}/bin/ccx
 	@${INSTALL_PROGRAM} ${WRKSRC}/cgx_${PORTVERSION}/src/cgx \
 	  ${PREFIX}/bin/cgx
-#The online help system requires the html documentation
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/ccx
