@@ -3,12 +3,12 @@
 # Date created:         9 july 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.16 1998/01/08 18:52:12 fenner Exp $
+# $Id: Makefile,v 1.17 1998/01/25 22:23:52 jmz Exp $
 #
 
 DISTNAME=       musixtex-T86
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.tex.ac.uk//tex-archive/macros/musixtex/taupin/
+MASTER_SITES=	ftp://ftp.tex.ac.uk/tex-archive/macros/musixtex/taupin/
 DISTFILES=      musixtex-T86.tar.gz musixexa-T86.tar.gz
 
 MAINTAINER=	jmz@FreeBSD.org
