@@ -28,21 +28,18 @@ BUILD_DEPENDS=	\
 
 #RUN_DEPENDS=	ifhp:${PORTSDIR}/print/ifhp
 
-.if defined(PREFIX)
-  CONFIGURE_ARGS+=  --prefix="${PREFIX}"
-.endif
 .if defined(SYSCONFDIR)
-  CONFIGURE_ARGS+=  --with-sysconfdir="${SYSCONFDIR}"
+PLIST_SUB+=	CWD="" SYSCONFDIR="${SYSCONFDIR:S,^/,,}"
+.else
+SYSCONFDIR=	${PREFIX}/etc
+PLIST_SUB+=	CWD="@comment " SYSCONFDIR="${SYSCONFDIR:S,^${PREFIX}/,,}"
 .endif
 
-HAS_CONFIGURE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
-HAS_CONFIGURE=	yes
-
-CONFIGURE_ARGS+=\
-    --with-spool_directory=/var/spool/lpd
+CONFIGURE_ARGS+=	--with-spool_directory=/var/spool/lpd \
+			--with-sysconfdir="${SYSCONFDIR}"
 
 MAN1=lprngtool.1
 
@@ -60,5 +57,10 @@ pre-everything::
 		exit 1; \
 	fi
 	@${ECHO_MSG} "Configuring with '${CONFIGURE_ARGS}'"
+
+post-install:
+	@if [ ! -f ${SYSCONFDIR}/lprngtool.conf ]; then \
+		${CP} ${SYSCONFDIR}/lprngtool.conf.sample ${SYSCONFDIR}/lprngtool.conf; \
+	fi
 
 .include <bsd.port.mk>
