@@ -7,6 +7,7 @@
 
 PORTNAME=	plruby
 PORTVERSION=	0.2.5
+PORTREVISION=	1
 CATEGORIES=	databases ruby
 MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/
 PKGNAMEPREFIX=	postgresql-
@@ -19,21 +20,14 @@ LIB_DEPENDS=	pq.2:${PGSQL_PORTDIR}
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
-PGSQL_VERSION?=		71
+PGSQL_VERSION?=		72
 PGSQL_PORTDIR?=		${PORTSDIR}/databases/postgresql7
 PGSQL_WRKSRC_CMD=	cd ${PGSQL_PORTDIR} && ${MAKE} -V WRKSRC
 
 CONFIGURE_ARGS=		--with-pgsql-version="${PGSQL_VERSION}" \
-			--with-pgsql-srcinc-dir="`${PGSQL_WRKSRC_CMD}`/src/include"
-.if defined(WITH_OLD_LAYOUT)
-CONFIGURE_ARGS+=
-			--with-pgsql-include-dir="${LOCALBASE}/pgsql/include" \
-			--with-pgsql-lib-dir="${LOCALBASE}/pgsql/lib"
-.else
-CONFIGURE_ARGS+=	--with-pgsql-include-dir="${LOCALBASE}/include/pgsql" \
+			--with-pgsql-srcinc-dir="`${PGSQL_WRKSRC_CMD}`/src/include" \
+			--with-pgsql-include-dir="${LOCALBASE}/include" \
 			--with-pgsql-lib="${LOCALBASE}/lib"
-.endif
-
 INSTALL_TARGET=	site-install
 
 DOCS=		README.en plruby.html plruby.rd
