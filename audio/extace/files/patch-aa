@@ -1,11 +1,44 @@
---- configure.orig	Mon Apr 10 15:41:18 2000
-+++ configure	Mon Apr 10 15:42:04 2000
-@@ -3619,7 +3619,7 @@
+--- configure.orig	Sat Jul 22 07:40:27 2000
++++ configure	Mon Jul 31 12:39:34 2000
+@@ -1210,9 +1210,9 @@
+   fi
+ else
+   if test "$GCC" = yes; then
+-    CFLAGS="-O2"
++#    CFLAGS="-O2"
+   else
+-    CFLAGS=
++#    CFLAGS=
+   fi
+ fi
+ 
+@@ -1748,9 +1748,9 @@
+   fi
+ else
+   if test "$GCC" = yes; then
+-    CFLAGS="-O2"
++#    CFLAGS="-O2"
+   else
+-    CFLAGS=
++#    CFLAGS=
+   fi
+ fi
+ 
+@@ -2764,7 +2764,7 @@
+ done
+ 
+ 
+-CFLAGS="-O2 "
++#CFLAGS="-O2 "
+ 
+ 
+ EXTRA_LIBS=""
+@@ -3301,7 +3301,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-lgdk_imlib `gtk-config --libs`  $LIBS"
 +LIBS="-lgdk_imlib `$GTK_CONFIG --libs`  $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 3625 "configure"
+ #line 3307 "configure"
  #include "confdefs.h"
