@@ -16,6 +16,9 @@ USE_X_PREFIX= 	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 
+DATADIR?=	${PREFIX}/lib/gfaim
+MAKE_ENV+=	DATADIR=${DATADIR}
+
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/gfaim
 
