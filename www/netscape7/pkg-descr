@@ -5,7 +5,8 @@ Many plugins are distributed only as Linux binaries.
 
 In this port/package, the Java virtual machine is omitted because
 it does not work.  AOL Instant Messenger is also omitted.  Only
-the U.S. English locale is installed.
+the U.S. English locale is installed.  Plugins do not work.
+Messenger can be started by going to a mailto: or news: URL.
 
 WWW:  http://home.netscape.com/eng/mozilla/ns6/relnotes/6.0.html
 
