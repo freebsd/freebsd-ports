@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	muh
-PORTVERSION=	2.05a
+PORTVERSION=	2.05c
 CATEGORIES=	irc
 MASTER_SITES=	http://mind.riot.org/muh/download/
 DISTNAME=	${PORTNAME}${PORTVERSION}
