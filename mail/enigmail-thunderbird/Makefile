@@ -13,6 +13,8 @@ COMMENT=	A GnuPG extension for the Thunderbird mail client
 EXTRACT_DEPENDS=${WRKDIR}/../../../${LOCAL_SRCDIR}/work/mozilla/Makefile:${PORTSDIR}/${LOCAL_SRCDIR}:configure
 RUN_DEPENDS=	thunderbird:${PORTSDIR}/${LOCAL_SRCDIR}
 
+IGNORE=		cannot be installed globally with the new thunderbird 0.7+ extension manager
+
 IPCVERSION=	1.0.7
 
 MASTERDIR=	${.CURDIR}/../enigmail
