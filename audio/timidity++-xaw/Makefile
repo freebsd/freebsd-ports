@@ -1,6 +1,6 @@
 # New ports collection makefile for:	TiMidity++
 # Date created:		27 Feb 1999
-# Whom:			Yoichi Asai <yatt@msc.biglobe.ne.jp>
+# Whom:			Yoichi Asai <yatt@luna2.org>
 #
 # $FreeBSD$
 #
