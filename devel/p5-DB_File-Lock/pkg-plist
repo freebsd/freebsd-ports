@@ -1,0 +1,5 @@
+lib/perl5/site_perl/%%PERL_VER%%/DB_File/Lock.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DB_File/Lock/.packlist
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DB_File/Lock 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DB_File      2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/DB_File                         2>/dev/null || true
