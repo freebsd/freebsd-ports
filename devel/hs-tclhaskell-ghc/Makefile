@@ -44,5 +44,6 @@ post-install:
 .endif
 	@${SED} -e s,GHC_VERSION,${GHC_VERSION}, <${MASTERDIR}/pkg-install.in >${PKGINSTALL}
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} dummy POST-INSTALL
+	@${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
 
 .include <bsd.port.mk>
