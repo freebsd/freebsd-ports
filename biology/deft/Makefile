@@ -34,12 +34,12 @@ post-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/DeFT.exec ${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME}/examples/DeFT ${PREFIX}/bin/
-	${MKDIR} ${PREFIX}/share/doc/DeFT
 	${MKDIR} ${PREFIX}/share/DeFT
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/bases ${PREFIX}/share/DeFT/
 
 post-install:
 .if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/DeFT
 	${MKDIR} ${PREFIX}/share/examples/DeFT
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/README_Liability \
 		${PREFIX}/share/doc/DeFT/
