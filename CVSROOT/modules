@@ -726,6 +726,7 @@ bmp-extra-plugins	ports/multimedia/bmp-extra-plugins
 bmp-faad	ports/audio/bmp-faad
 bmp-rootvis	ports/graphics/bmp-rootvis
 bmp-scrobbler	ports/audio/bmp-scrobbler
+bmp-songchange	ports/audio/bmp-songchange
 bmp-wma		ports/audio/bmp-wma
 bn-aspell	ports/textproc/bn-aspell
 bnbt		ports/net/bnbt
