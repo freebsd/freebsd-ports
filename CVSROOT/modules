@@ -5934,6 +5934,7 @@ nqc		ports/lang/nqc
 nrg		ports/net-mgmt/nrg
 nrg2iso		ports/sysutils/nrg2iso
 nrpe		ports/net-mgmt/nrpe
+nrpe2		ports/net-mgmt/nrpe2
 nrpep		ports/net-mgmt/nrpep
 ns		ports/net/ns
 nsc		ports/net-mgmt/nsc
