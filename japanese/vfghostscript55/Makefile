@@ -3,7 +3,7 @@
 # Date created:		26 Aug 1997
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.23 1998/10/07 06:11:42 asami Exp $
+# $Id: Makefile,v 1.24 1998/10/16 05:27:15 jseger Exp $
 #
 
 DISTNAME=	ghostscript-5.10
@@ -26,8 +26,6 @@ MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/gs510/ \
 DISTFILES=	${GS_SOURCES} ${GS_DRIVERS} ${GS_FONTS_STD} ${GS_FONTS_OTHER}
 
 MAINTAINER=	mita@jp.FreeBSD.org
-
-BROKEN_ELF=	yes
 
 LIB_DEPENDS=	VFlib2.23:${PORTSDIR}/japanese/vflib
 

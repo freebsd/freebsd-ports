@@ -1,48 +1,20 @@
+bin/bdftops
+bin/font2c
 bin/gs 
 bin/gsbj 
 bin/gsdj
 bin/gslj
 bin/gslp
 bin/gsnd
-bin/bdftops
-bin/font2c
+bin/paramod
 bin/ps2ascii
 bin/ps2epsi
-bin/paramod
 lib/ghostscript/Fontmap
 lib/ghostscript/README
 lib/ghostscript/bdftops.ps
 lib/ghostscript/decrypt.ps
 lib/ghostscript/dmp_init.ps
 lib/ghostscript/dmp_site.ps
-lib/ghostscript/font2c.ps
-lib/ghostscript/gamma15.ps
-lib/ghostscript/gamma20.ps
-lib/ghostscript/gamma30.ps
-lib/ghostscript/gs_dbt_e.ps
-lib/ghostscript/gs_dps1.ps
-lib/ghostscript/gs_fonts.ps
-lib/ghostscript/gs_init.ps
-lib/ghostscript/gs_lev2.ps
-lib/ghostscript/gs_statd.ps
-lib/ghostscript/gs_sym_e.ps
-lib/ghostscript/gs_type0.ps
-lib/ghostscript/gslp.ps
-lib/ghostscript/impath.ps
-lib/ghostscript/landscap.ps
-lib/ghostscript/level1.ps
-lib/ghostscript/mirrorA4.ps
-lib/ghostscript/prfont.ps
-lib/ghostscript/ps2ascii.ps
-lib/ghostscript/ps2epsi.ps
-lib/ghostscript/ps2image.ps
-lib/ghostscript/pstoppm.ps
-lib/ghostscript/quit.ps
-lib/ghostscript/showpage.ps
-lib/ghostscript/testpage.ps
-lib/ghostscript/type1ops.ps
-lib/ghostscript/uglyr.gsf
-lib/ghostscript/wrfont.ps
 lib/ghostscript/doc/MJ700V2C.FAQ
 lib/ghostscript/doc/NEWS
 lib/ghostscript/doc/ansi2knr.1
@@ -83,6 +55,7 @@ lib/ghostscript/examples/escher.ps
 lib/ghostscript/examples/golfer.ps
 lib/ghostscript/examples/snowflak.ps
 lib/ghostscript/examples/tiger.ps
+lib/ghostscript/font2c.ps
 lib/ghostscript/fonts/COPYING
 lib/ghostscript/fonts/a010013l.afm
 lib/ghostscript/fonts/a010013l.pfb
@@ -248,6 +221,19 @@ lib/ghostscript/fonts/z003034l.pfm
 lib/ghostscript/fonts/zcb.gsf
 lib/ghostscript/fonts/zcr.gsf
 lib/ghostscript/fonts/zcro.gsf
+lib/ghostscript/gamma15.ps
+lib/ghostscript/gamma20.ps
+lib/ghostscript/gamma30.ps
+lib/ghostscript/gs_dbt_e.ps
+lib/ghostscript/gs_dps1.ps
+lib/ghostscript/gs_fonts.ps
+lib/ghostscript/gs_init.ps
+lib/ghostscript/gs_lev2.ps
+lib/ghostscript/gs_statd.ps
+lib/ghostscript/gs_sym_e.ps
+lib/ghostscript/gs_type0.ps
+lib/ghostscript/gslp.ps
+lib/ghostscript/impath.ps
 lib/ghostscript/kanji/allkanji.ps
 lib/ghostscript/kanji/article9.ps
 lib/ghostscript/kanji/fmaptype.ps
@@ -277,9 +263,22 @@ lib/ghostscript/kanji/vchars.ps
 lib/ghostscript/kanji/vflib.ps
 lib/ghostscript/kanji/zeit.ps
 lib/ghostscript/kanji/ztbez.ps
-@dirrm lib/ghostscript/doc
-@dirrm lib/ghostscript/examples
+lib/ghostscript/landscap.ps
+lib/ghostscript/level1.ps
+lib/ghostscript/mirrorA4.ps
+lib/ghostscript/prfont.ps
+lib/ghostscript/ps2ascii.ps
+lib/ghostscript/ps2epsi.ps
+lib/ghostscript/ps2image.ps
+lib/ghostscript/pstoppm.ps
+lib/ghostscript/quit.ps
+lib/ghostscript/showpage.ps
+lib/ghostscript/testpage.ps
+lib/ghostscript/type1ops.ps
+lib/ghostscript/uglyr.gsf
+lib/ghostscript/wrfont.ps
 @dirrm lib/ghostscript/kanji
 @dirrm lib/ghostscript/fonts
+@dirrm lib/ghostscript/examples
+@dirrm lib/ghostscript/doc
 @dirrm lib/ghostscript
-man/man1/gs.1.gz
