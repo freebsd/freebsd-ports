@@ -59,6 +59,7 @@
     SUBDIR += epsmerge
     SUBDIR += epsonepl
     SUBDIR += font2svg
+    SUBDIR += fontforge
     SUBDIR += foomatic-db
     SUBDIR += foomatic-db-engine
     SUBDIR += freetype
