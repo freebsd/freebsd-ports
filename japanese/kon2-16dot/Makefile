@@ -7,6 +7,7 @@
 
 PORTNAME=	kon2
 PORTVERSION=	0.3
+PORTREVISION=	1
 PKGNAMESUFFIX=	-${KONFONT}
 CATEGORIES+=	japanese # '+=' is for slave ports
 # note kon is only in first directory and fonts are only in second directory
