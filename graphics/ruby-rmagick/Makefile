@@ -7,7 +7,7 @@
 
 PORTNAME=	rmagick
 PORTVERSION=	1.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://rubyforge.org/frs/download.php/2231/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -21,6 +21,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby binding for ImageMagick
 
+BUILD_DEPENDS=	wmf2eps:${PORTSDIR}/graphics/libwmf
 LIB_DEPENDS=	Magick.8:${PORTSDIR}/graphics/ImageMagick
 
 USE_RUBY=	yes
@@ -40,6 +41,11 @@ DOCS=		ChangeLog README.html
 
 .if ${OSVERSION} < 500000
 BROKEN=		"Does not compile on FreeBSD 4.x"
+.endif
+
+# XXX should be resolved in 1.7.2
+.if ${ARCH} == "amd64"
+BROKEN=		"Segfaults during build"
 .endif
 
 pre-configure:
