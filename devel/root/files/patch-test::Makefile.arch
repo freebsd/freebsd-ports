@@ -1,25 +1,40 @@
---- test/Makefile.arch.orig	Sat Apr 17 10:25:16 2004
-+++ test/Makefile.arch	Sat Apr 17 10:41:58 2004
-@@ -9,7 +9,6 @@
- ARCH         := $(shell root-config --arch)
- PLATFORM      = $(ARCH)
- 
--CXX           =
- ObjSuf        = o
- SrcSuf        = cxx
- ExeSuf        =
-@@ -426,10 +425,10 @@
- 
- ifeq ($(ARCH),freebsd4)
- # FreeBSD with glibc
--CXX           = g++
--CXXFLAGS      = -O -pipe -W -Wall -fPIC
--LD            = g++
--LDFLAGS       = -O
-+#CXX          = g++
-+CXXFLAGS     += -W -Wall -fPIC
-+LD            = $(CXX)
-+#LDFLAGS      = -O
- SOFLAGS       = -shared -Wl,-x
- endif
- 
+*** test/Makefile.arch.orig	Tue Jun 15 20:02:44 2004
+--- test/Makefile.arch	Wed Jun 16 10:05:39 2004
+***************
+*** 9,15 ****
+  ARCH         := $(shell root-config --arch)
+  PLATFORM      = $(ARCH)
+  
+- CXX           =
+  ObjSuf        = o
+  SrcSuf        = cxx
+  ExeSuf        =
+--- 9,14 ----
+***************
+*** 426,435 ****
+  
+  ifeq ($(ARCH),freebsd4)
+  # FreeBSD with glibc
+! CXX           = g++
+! CXXFLAGS      = -O -pipe -W -Wall -fPIC
+! LD            = g++
+! LDFLAGS       = -O
+  SOFLAGS       = -shared -Wl,-x
+  endif
+  
+--- 425,439 ----
+  
+  ifeq ($(ARCH),freebsd4)
+  # FreeBSD with glibc
+! CXXFLAGS     += -W -Wall -fPIC
+! LD            = $(CXX)
+! SOFLAGS       = -shared -Wl,-x
+! endif
+! 
+! ifeq ($(ARCH),freebsd5)
+! # FreeBSD with glibc
+! CXXFLAGS     += -W -Wall -fPIC
+! LD            = $(CXX)
+  SOFLAGS       = -shared -Wl,-x
+  endif
+  

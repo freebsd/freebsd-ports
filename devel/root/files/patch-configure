@@ -1,11 +1,35 @@
---- configure.orig	Thu Feb 19 01:11:18 2004
-+++ configure	Sat Apr 17 13:54:24 2004
-@@ -901,7 +901,7 @@
-     ;;
- freebsd*)
-     if test "x$enable_thread" = "xyes"; then
--       threadlib="-pthread"
-+       threadlib="$PTHREAD_LIBS"
-        threadlibdir=
-     fi
-     ;;
+*** configure.orig	Tue Jun 15 19:44:02 2004
+--- configure	Wed Jun 16 09:42:21 2004
+***************
+*** 905,918 ****
+      ;;
+  freebsd*)
+      if test "x$enable_thread" = "xyes"; then
+!        threadlib="-pthread"
+         threadlibdir=
+      fi
+      ;;
+  esac
+  if test "x$enable_thread" = "xyes" && \
+     test ! "$platform" = "win32"    && \
+!    test ! "$platform" = "freebsd4" ; then
+      check_library "libpthread" "$enable_shared" "$threadlibdir" \
+  	$THREAD $THREAD/lib /usr/lib /usr/local/lib /usr/lib/X11 \
+  	/usr/local/lib/X11 /usr/X11R6/lib /usr/local/X11R6/lib \
+--- 905,920 ----
+      ;;
+  freebsd*)
+      if test "x$enable_thread" = "xyes"; then
+!        threadlib="$PTHREAD_LIBS"
+         threadlibdir=
+      fi
+      ;;
+  esac
+  if test "x$enable_thread" = "xyes" && \
+     test ! "$platform" = "win32"    && \
+!    test ! "$platform" = "freebsd5" && \
+!    test ! "$platform" = "freebsd4" && \
+!    test ! "$platform" = "freebsd" ; then
+      check_library "libpthread" "$enable_shared" "$threadlibdir" \
+  	$THREAD $THREAD/lib /usr/lib /usr/local/lib /usr/lib/X11 \
+  	/usr/local/lib/X11 /usr/X11R6/lib /usr/local/X11R6/lib \

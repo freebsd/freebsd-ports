@@ -1,80 +1,67 @@
 # New ports collection makefile for:   root
-# Date created:        7 April 2004
-# Whom:                Simon Lang <slang@freebsd.org>
+# Date created:        17 July 2004
+# Whom:                Simon Lang <simon@lang-clan.de>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	root
-PORTVERSION=	4.00.03
-CATEGORIES=	devel science math
-MASTER_SITES=	ftp://root.cern.ch/root/
-DISTNAME=	${PORTNAME}_v${PORTVERSION}.source
+PORTNAME=		root
+PORTVERSION=		4.00.06
+CATEGORIES=		devel science math
+MASTER_SITES=		ftp://root.cern.ch/root/
+DISTNAME=		${PORTNAME}_v${PORTVERSION}.sourcea
 
-MAINTAINER=	simon@lang-clan.de
-COMMENT=	An Object-Oriented Data Analysis Framework
+MAINTAINER=		simon@lang-clan.de
+COMMENT=		An Object-Oriented Data Analysis Framework
 
 HAS_CONFIGURE=		yes
-CONFIGURE_TARGET=	freebsd4
+CONFIGURE_TARGET=	freebsd5
 ALL_TARGET=		showbuild skip all
 USE_GMAKE=		yes
-USE_OPENLDAP=		yes
-USE_QT_VER=		3
-QT_NONSTANDARD=		yes
 USE_XLIB=		yes
 USE_XPM=		yes
 USE_GL=			yes
 USE_REINPLACE=		yes
+LIB_DEPENDS=		gmp.6:${PORTSDIR}/math/libgmp4
+USE_GNOME=		libxml2
 REINPLACE_ARGS=		-i ""
 WRKSRC=			${WRKDIR}/${PORTNAME}
 
 F77?=			f77
 
-# If the related ports are installed you may enable ROOT's support
-# for them, too. It *seams* that
-#   --enable-asimage   (After Image: ports/graphics/libafterimage)
-#   --enable-mysql     (MySQL:       ports/databases/mysql50-client)
-#   --enable-pgsql     (PostgreSQL:  ports/databases/postgresql73)
-# are working. A know but yet unsolved problem: The support of
-# Kerberos 5 needs some patches to ROOT.
-# For this port my intention was to use only features that are
-# available out of the box on a FreeBSD system running X11/QT.
+# If you have installed MySQL (ports/databases/mysql50-client), then
+# you may enable ROOT's support for it, too.
+# A know but yet unsolved problem: The support of Kerberos 5 needs some
+# patches to ROOT.
 # A lot of the features are related to software used in high
-# energy physics projects. Have a look to the ROOT web page for
-# more informations.
-CONFIGURE_ARGS=				\
-	${CONFIGURE_TARGET}		\
-	--prefix=${PREFIX}		\
-	--etcdir=${PREFIX}/etc		\
-	--mandir=${PREFIX}/man/man1	\
-	--disable-afs			\
-	--disable-alien			\
-	--disable-asimage		\
-	--disable-cern			\
-	--disable-chirp			\
-	--disable-dcache		\
-	--enable-exceptions		\
-	--enable-explicitlink		\
-	--disable-globus		\
-	--disable-krb5			\
-	--enable-ldap			\
-	--disable-mysql			\
-	--enable-opengl			\
-	--disable-openiv		\
-	--disable-pgsql			\
-	--disable-pythia		\
-	--disable-pythia6		\
-	--with-qt-incdir=${QT_PREFIX}/include	\
-	--with-qt-libdir=${QT_PREFIX}/lib	\
-	--disable-rfio			\
-	--disable-rpath			\
-	--disable-sapdb			\
-	--disable-shadowpw		\
-	--enable-shared			\
-	--enable-soversion		\
-	--disable-srp			\
-	--disable-table			\
-	--disable-venus
+# energy physics projects. Have a look to the ROOT web page for more
+# informations.
+CONFIGURE_ARGS=		${CONFIGURE_TARGET}		\
+			--prefix=${PREFIX}		\
+			--etcdir=${PREFIX}/etc		\
+			--mandir=${PREFIX}/man/man1	\
+			--disable-afs			\
+			--disable-alien			\
+			--disable-cern			\
+			--disable-chirp			\
+			--disable-dcache		\
+			--disable-globus		\
+			--disable-krb5			\
+			--disable-mysql			\
+			--disable-openiv		\
+			--disable-pythia		\
+			--disable-pythia6		\
+			--disable-rfio			\
+			--disable-rpath			\
+			--disable-sapdb			\
+			--disable-shadowpw		\
+			--disable-venus			\
+			--enable-opengl			\
+			--enable-exceptions		\
+			--enable-explicitlink		\
+			--enable-shared			\
+			--enable-soversion		\
+			--enable-table
 
 INSTALLS_SHLIB=		yes
 NO_FILTER_SHLIBS=	yes
@@ -86,12 +73,76 @@ MAN1+=			root.exe.1 rootcint.1 rootd.1 rootn.exe.1
 MODTESTS=		Event hsimple minexam tcollex tstring
 MAKE_TENV=		${MAKE_ENV} CXX="${CXX}" LDFLAGS="${LDFLAGS}"
 
+# Auto detection of installed packages which then can be used by ROOT
+.if exists(${LOCALBASE}/lib/libpq.so.3)
+WITH_POSTGRESQL=	yes
+.endif
+
+.if exists(${LOCALBASE}/lib/libldap.so.2)
+WITH_LDAP=		yes
+.endif
+
+.if exists(${LOCALBASE}/lib/libsrp.a)
+WITH_SRP=		yes
+.endif
+
+# Settings depending on additionally installed packages
+.if !defined(WITHOUT_QT)
+USE_QT_VER=		3
+QT_NONSTANDARD=		yes
+CONFIGURE_ARGS+=	--enable-qt                           \
+			--with-qt-incdir=${QT_PREFIX}/include \
+			--with-qt-libdir=${QT_PREFIX}/lib
+PLIST_SUB+=		QT=""
+.else
+CONFIGURE_ARGS+=	--disable-qt
+LIB_DEPENDS+=		tiff.4:${PORTSDIR}/graphics/tiff      \
+			jpeg.9:${PORTSDIR}/graphics/jpeg      \
+			png.5:${PORTSDIR}/graphics/png        \
+			ungif.5:${PORTSDIR}/graphics/libungif
+PLIST_SUB+=		QT="@comment "
+.endif
+
+.if !defined(WITHOUT_AFTERIMAGE)
+CONFIGURE_ARGS+=	--enable-asimage
+PLIST_SUB+=		AFTERIMAGE=""
+LIB_DEPENDS+=		AfterImage.0:${PORTSDIR}/graphics/libafterimage
+.else
+CONFIGURE_ARGS+=	--disable-asimage
+PLIST_SUB+=		AFTERIMAGE="@comment "
+.endif
+
+.if !defined(WITHOUT_POSTGRESQL) && defined(WITH_POSTGRESQL)
+CONFIGURE_ARGS+=	--enable-pgsql
+LIB_DEPENDS+=		pq.3:${PORTSDIR}/databases/postgresql
+PLIST_SUB+=		POSTGRESQL=""
+.else
+CONFIGURE_ARGS+=	--disable-pgsql
+PLIST_SUB+=		POSTGRESQL="@comment "
+.endif
+
+.if !defined(WITHOUT_LDAP) && defined(WITH_LDAP)
+USE_OPENLDAP=		yes
+CONFIGURE_ARGS+=	--enable-ldap
+PLIST_SUB+=		LDAP=""
+.else
+CONFIGURE_ARGS+=	--disable-ldap
+PLIST_SUB+=		LDAP="@comment "
+.endif
+
+.if !defined(WITHOUT_SRP) && defined(WITH_SRP)
+CONFIGURE_ARGS+=	--enable-srp
+BUILD_DEPENDS+=		${LOCALBASE}/lib/libsrp.a:${PORTSDIR}/security/srp
+.else
+CONFIGURE_ARGS+=	--disable-srp
+.endif
+
 .include <bsd.port.pre.mk>
 
 # The thread sub-system was not working for ROOT versions 3.x on FreeBSD 4.x
 # systems. Meanwhile maybe it's working with some patches - but I have no
 # FreeBSD 4.x system still running for testing  ;-)
-.if ${OSVERSION} < 500016
+.if ${OSVERSION} < 500016 || defined(WITHOUT_THREADS)
 CONFIGURE_ARGS+=	--disable-thread
 PLIST_SUB+=		THREADS="@comment "
 .else
@@ -103,15 +154,44 @@ MAKE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"	\
 PLIST_SUB+=		THREADS=""
 .endif
 
-.if ${OSVERSION} >= 502112
-BROKEN=			"Coredump during install on FreeBSD >= 5.x"
+pre-everything::
+.if !defined(WITHOUT_QT)
+	@${ECHO_MSG} "===> Define WITHOUT_QT to disable QT backend"
 .endif
+.if !defined(WITHOUT_THREADS)
+	@${ECHO_MSG} "===> Define WITHOUT_THREADS to disable threads"
+.endif
+.if !defined(WITHOUT_AFTERIMAGE)
+	@${ECHO_MSG} "===> Define WITHOUT_AFTERIMAGE to disable AfterImage support"
+.endif
+.if defined(WITHOUT_LDAP) || !defined(WITH_LDAP)
+	@${ECHO_MSG} "===> Define WITH_LDAP to enable LDAP support"
+.endif
+.if defined(WITHOUT_SRP) || !defined(WITH_SRP)
+	@${ECHO_MSG} "===> Define WITH_SRP to enable SRP authentification"
+.endif
+.if defined(WITHOUT_POSTGRESQL) || !defined(WITH_POSTGRESQL)
+	@${ECHO_MSG} "===> Define WITH_POSTGRESQL to enable Postgres SQL support"
+.endif
+	@sleep 3
 
 post-patch:
+	@${RM} ${WRKSRC}/configure.orig
+	@${RM} ${WRKSRC}/config/Makefile.freebsd4.orig
+	@${RM} ${WRKSRC}/config/Makefile.freebsd5.orig
+	@${RM} ${WRKSRC}/config/root-config.in.orig
 	@${RM} ${WRKSRC}/test/Makefile.arch.orig
-	@${REINPLACE_CMD} -e 's|auxcflags=\"-pthread|auxcflags=\"${PTHREAD_CFLAGS}| ;	\
-		s|auxlibs=\"-pthread|auxlibs=\"${PTHREAD_LIBS}|'			\
-			${WRKSRC}/config/root-config.in
+.if ${OSVERSION} < 500016 || defined(WITHOUT_THREADS)
+	@${REINPLACE_CMD} -e                                  \
+		's|auxcflags=\"PTHREAD-CFLAGS|auxcflags=\"| ; \
+		s|auxlibs=\"PTHREAD-LIBS|auxlibs=\"|'         \
+		${WRKSRC}/config/root-config.in
+.else
+	@${REINPLACE_CMD} -e                                                 \
+		's|auxcflags=\"PTHREAD-CFLAGS|auxcflags=\"${PTHREAD_CFLAGS}|;\
+		s|auxlibs=\"PTHREAD-LIBS|auxlibs=\"${PTHREAD_LIBS}|'         \
+		${WRKSRC}/config/root-config.in
+.endif
 
 .if defined(MAINTAINER_MODE)
 test:	install
