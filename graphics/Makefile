@@ -155,6 +155,7 @@
     SUBDIR += libdv
     SUBDIR += libdvdcss
     SUBDIR += libdvdread
+    SUBDIR += libfame
     SUBDIR += libflash
     SUBDIR += libfpx
     SUBDIR += libgdgeda

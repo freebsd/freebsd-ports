@@ -1,0 +1,15 @@
+libfame is a video encoding library.
+
+It can currently encode MPEG-1 and MPEG-4 rectangular video, as well as
+MPEG-4 video with arbitrary shape.
+
+Objectives
+   - Compliance : Provide bitstreams compliant to the MPEG-1, MPEG-2 and
+     MPEG-4 video standards.
+   - Speed : Provide a fast implementation of the techniques used in MPEG
+     standards.
+   - Flexibility : Allow the user to choose between different options for
+     speed, compression ratio and quality.
+   - Portability : Support many different platforms and architectures.
+
+WWW: http://fame.sourceforge.net/
