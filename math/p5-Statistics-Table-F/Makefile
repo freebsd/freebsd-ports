@@ -20,6 +20,7 @@ PERL_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/Statistics/Table/F
 
 DEPRECATED=	"no longer on CPAN"
+EXPIRATION_DATE=	2005-03-21
 MAN3=		Statistics::Table::F.3
 
 .include <bsd.port.mk>
