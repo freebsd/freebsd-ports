@@ -66,7 +66,7 @@ MAN3=		compface.3
 MLINKS=		compface.1 uncompface.1 \
 		compface.3 uncompface.3
 
-pre-everything:
+pre-everything::
 	@${ECHO_MSG} "***"
 	@${ECHO_MSG} "*** Note: You can use the following options:"
 	@${ECHO_MSG} "***       -DWITHOUT_AUDIO build without audio support!"

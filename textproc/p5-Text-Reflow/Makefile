@@ -20,7 +20,7 @@ PERL_CONFIGURE=	yes
 MAN3=		Text::Reflow.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
-pre-everything:
+pre-everything::
 	@${PERL} -M5.006 -e1 2>/dev/null || \
 	( ${ECHO_MSG} "===> Requires perl 5.6 or above (available from the port collection)"; \
 	  ${FALSE} )

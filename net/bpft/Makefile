@@ -19,7 +19,7 @@ MAN1=		traflog.1 trafstat.1
 MAN8=		trafstatd.8 trafd.8
 MANCOMPRESSED=	yes
 
-pre-everything:
+pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	@${ECHO_MSG} "!!!                         WARNING                           !!!"

@@ -46,7 +46,7 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=	terminatorX.1
 
-pre-everything:
+pre-everything::
 .if !defined(WITHOUT_SOX)
 	@${ECHO_MSG} "You can disable support for sox by defining WITHOUT_SOX."
 .endif

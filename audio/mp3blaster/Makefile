@@ -33,7 +33,7 @@ CONFIGURE_ARGS+=	--without-oggvorbis
 MAN1=		mp3blaster.1 nmixer.1 splay.1
 
 .if !defined(WITHOUT_VORBIS)
-pre-everything:
+pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You can disable support for Ogg Vorbis by defining WITHOUT_VORBIS."
 	@${ECHO_MSG}

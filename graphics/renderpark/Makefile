@@ -43,7 +43,7 @@ PLIST_SUB=	WITH_SCENES="@comment "
 PLIST_SUB=	WITH_SCENES=""
 .endif
 
-pre-everything:
+pre-everything::
 .ifndef (WITH_XRML)
 	@${ECHO} "Defining WITH_XRML=yes will allow you to read XRML input files"
 .endif

@@ -119,7 +119,7 @@ MAN8=	dnssec-keygen.8 dnssec-makekeyset.8 dnssec-signkey.8 dnssec-signzone.8 \
 	lwresd.8 named-checkconf.8 named-checkzone.8 named.8 nsupdate.8 \
 	rndc-confgen.8 rndc.8
 
-pre-everything:
+pre-everything::
 	@ ${SETENV} ${SCRIPTS_ENV} ${SH} ${FILESDIR}/configure.bind9-dlz
 
 pre-patch:

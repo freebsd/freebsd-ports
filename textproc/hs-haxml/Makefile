@@ -53,7 +53,7 @@ PLIST_SUB+=	GHC="" GHC_VERSION="${GHC_VERSION}"
 PLIST_SUB+=	GHC="@comment "
 .endif
 
-pre-everything:
+pre-everything::
 	@${ECHO_CMD} ""
 .if defined(WITH_GHC) && !defined(WITHOUT_NHC98)
 	@${ECHO_CMD} " HaXml will be installed for both nhc98 and ghc."

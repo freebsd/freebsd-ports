@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/php-config:${PORTSDIR}/www/mod_php4
 PKGMESSAGE=	${WRKDIR}/pkg-message
 NO_BUILD=	yes
 
-pre-everything:
+pre-everything::
 	@${ECHO} ""
 	@${ECHO} "You have to configure PHP with IMAP support in order"
 	@${ECHO} "to let Nocc connect to your POP3/IMAP server."

@@ -47,7 +47,7 @@ PLIST_SUB=	WAD:="@comment "
 PLIST_SUB=	WAD:=""
 .endif
 
-pre-everything:
+pre-everything::
 	@${ECHO} ""
 	@${ECHO} "You may use the following build options:"
 	@${ECHO} ""

@@ -138,7 +138,7 @@ BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 PLIST_SUB+=	SKIN:="@comment "
 .endif
 
-pre-everything:
+pre-everything::
 .if !defined(NO_WAD)
 	@${ECHO_MSG} "Define NO_WAD to stop from using shareware version!"
 .endif

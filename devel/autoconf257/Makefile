@@ -50,7 +50,7 @@ GENERIC_TOOLS=	config.guess	\
 		mkinstalldirs
 
 .if defined(USE_AUTOCONF) || defined(USE_AUTOCONF_VER)
-pre-everything:
+pre-everything::
 	@${ECHO} ===========================================================
 	@${ECHO} "You have 'USE_AUTOCONF' or 'USE_AUTOCONF_VER' variables"
 	@${ECHO} "defined either in environment or in make(1) arguments."

@@ -37,7 +37,7 @@ USE_GCC=2.95
 .endif
 
 .ifndef (WITH_EXAMPLES)
-pre-everything:
+pre-everything::
 	@${ECHO} "You can define WITH_EXAMPLES=yes to install example VRML files"
 .endif
 

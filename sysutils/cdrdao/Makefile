@@ -70,7 +70,7 @@ CONFIGURE_ARGS+=	--without-lame
 PLIST_SUB+=		TOC2MP3="@comment "
 .endif
 
-pre-everything:
+pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You may use the following build options:"
 	@${ECHO_MSG} ""

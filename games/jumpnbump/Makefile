@@ -26,7 +26,7 @@ PLIST_SUB +=	WITH_TCL="@comment "
 MAN6=	jumpnbump.6
 
 .if !defined (WITHOUT_TCL)
-pre-everything:
+pre-everything::
 	@${ECHO_MSG} "Define WITHOUT_TCL to disable the X11 frontend."
 .endif
 

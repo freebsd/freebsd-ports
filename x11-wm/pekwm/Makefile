@@ -26,7 +26,7 @@ CONFIGURE_ARGS+=	--enable-xinerama
 CONFIGURE_ARGS+=	--enable-harbour
 .endif
 
-pre-everything:
+pre-everything::
 .if !defined(WITH_XINERAMA)
 	@${ECHO_CMD} "To enable xinerama support define WITH_XINERAMA"
 .endif

@@ -28,7 +28,7 @@ MANLANG=	"" ru_RU.KOI8-R
 
 .include <bsd.port.pre.mk>
 
-pre-everything:
+pre-everything::
 	@${ECHO_MSG} "-------------------------------------------------------------------"
 .if !defined(WITHOUT_IPFW)
 	@${ECHO_MSG} "o You can remove IPv4 Firewall support by defining WITHOUT_IPFW"

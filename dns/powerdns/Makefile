@@ -57,7 +57,7 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 
 MAN8=		pdns_control.8 pdns_server.8 zone2sql.8
 
-pre-everything:
+pre-everything::
 	@ ${SETENV} ${SCRIPTS_ENV} ${SH} ${FILESDIR}/configure.powerdns
 
 post-install:
