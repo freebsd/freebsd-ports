@@ -6,6 +6,8 @@
 buildlogdir=$(realpath .)
 if [ "$2" != "" ]; then buildlogdir="$2"; fi
 
+baselogdir=$(basename ${buildlogdir})
+
 # establish which directory INDEX lives in (leave out for
 # backwards compatibility)
 indexlogdir=$(realpath .)
@@ -14,6 +16,13 @@ if [ "$3" != "" ]; then indexlogdir="$3"; fi
 # allow this script to be run from anywhere in the tree
 scriptdir=$(dirname $0)
 errorscript=$scriptdir/processonelog
+
+# Figure out which arch we're building for
+pb=/var/portbuild
+rpb=$(realpath ${pb} | sed -e "s,/$,," )
+
+arch=$(echo ${buildlogdir} | sed -e "s,${rpb}/,," | cut -f 1 -d /)
+. ${pb}/${arch}/portbuild.conf
 
 # create a name for the tempfile
 of=.index.html
@@ -112,7 +121,7 @@ for i in `cat .logs | sort`; do
 
     echo "<tr>" >> $of
 
-    echo "<td><a href=\"$1\">$2</a></td>" >> $of
+    echo "<td><a href=\"http://${master}/errorlogs/${arch}-errorlogs/${baselogdir}/$1\">$2</a></td>" >> $of
 
     affby=$3
     test $affby = "0" -o $affby = "-1" && affby="&nbsp;"
