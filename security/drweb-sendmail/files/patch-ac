@@ -1,14 +1,6 @@
---- ../sendmail/configure.orig	Wed Sep 26 01:02:29 2001
-+++ ../sendmail/configure	Sat Oct  6 08:20:13 2001
-@@ -22,6 +22,7 @@
- ___T_MILTER_LOGLEVEL___="-- ERROR ---"
- ___T_MILTER_TIMEOUT_1___="-- ERROR ---"
- ___T_MILTER_TIMEOUT_2___="-- ERROR ---"
-+___T_COMMENT_LCF___="-- ERROR --"
- ___T_COMMENT_LOG___="-- ERROR --"
- ___T_COMMENT_FFR___="-- ERROR --"
- 
-@@ -100,13 +101,13 @@
+--- ../sendmail/configure.orig	Tue Oct 16 19:28:24 2001
++++ ../sendmail/configure	Sun Oct 21 00:09:16 2001
+@@ -117,7 +117,7 @@
  
  CACHE_ADDR="n"
  POS=`$GREP PidFile $DAEMON_INI | $GREP -v ";"`
@@ -17,38 +9,3 @@
      echo
      echo -n "Daemon pidfile not defined in ini-file ..."
      POS=`$GREP SocketMode $DAEMON_INI | $GREP -v ";" | $AWK '{ print match( $0, /[Tt][Cc][Pp]/ ) }'`
-     if [ $POS -eq 0 ] ; then
-         echo " but defined UNIX sockets"
--        ___T_DAEMON_SOCKET___=`$GREP SocketFile $DAEMON_INI | $GREP -v ";" | $AWK '{ str = substr( $0, 1+match( $0, /\/./ ) ); gsub( /["[:blank:]]/, "", str ); print str; }'`
-+	___T_DAEMON_SOCKET___=`$GREP SocketFile $DAEMON_INI | $GREP -v ";" | $AWK '{ str = substr( $0, match( $0, /\/./ ) ); gsub( /["[:blank:]]/, "", str ); print str; }'`
-         ___T_DAEMON_IP___=""
-         ___T_DAEMON_PORT___=""
-         ___T_DAEMON_PID___=""
-@@ -421,10 +422,12 @@
- read INPUT
- if [ "x$INPUT" = "x" -o "x$INPUT" = "xy" -o "x$INPUT" = "xY" ] ; then
-     MILTER_FFR="n"
-+    ___T_COMMENT_LCF___=""
-     ___T_COMMENT_LOG___=""
-     ___T_COMMENT_FFR___="dnl "
- else
-     MILTER_FFR="y"
-+    ___T_COMMENT_LCF___="#"
-     ___T_COMMENT_LOG___="dnl "
-     ___T_COMMENT_FFR___=""
- fi
-@@ -633,7 +636,7 @@
-     mv -f sendmail.cf.addon sendmail.cf.addon.bak
- fi
- $SED \
--        -e "s&___COMMENT_LOG___&${___T_COMMENT_LOG___}&" \
-+	-e "s&___COMMENT_LCF___&${___T_COMMENT_LCF___}&" \
-         -e "s&___MILTER_LOGLEVEL___&${___T_MILTER_LOGLEVEL___}&" \
-         -e "s&___MILTER_ADDRESS___&${___T_MILTER_ADDRESS___}&" \
-         -e "s&___MILTER_ACTION___&${___T_MILTER_ACTION___}&" \
-@@ -729,4 +732,5 @@
- #echo "___T_MILTER_TIMEOUT_1___="${___T_MILTER_TIMEOUT_1___}
- #echo "___T_MILTER_TIMEOUT_2___="${___T_MILTER_TIMEOUT_2___}
- #echo "___T_COMMENT_LOG___="${___T_COMMENT_LOG___}
-+#echo "___T_COMMENT_LCF___="${___T_COMMENT_LCF___}
- #echo "___T_COMMENT_FFR___="${___T_COMMENT_FFR___}

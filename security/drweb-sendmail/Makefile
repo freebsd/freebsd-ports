@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	drweb_sendmail
-PORTVERSION=    4.26
-PORTREVISION=   12
+PORTVERSION=    4.26b
 CATEGORIES=	security mail
 MASTER_SITES=	http://www.drweb.ru/ftp/web_pub/
 DISTNAME=	drwebd-${PORTVERSION}-freebsd4
@@ -92,8 +91,10 @@ do-install:
 		${ECHO} y; \
 		${ECHO} /tmp; \
 		${ECHO} y; \
+		${ECHO} y; \
 		${ECHO} ; \
 		${ECHO} postmaster@${WITH_DRWEBSMF_HOSTNAME}; \
+		${ECHO} y; \
 		${ECHO} y; \
 		${ECHO} y; \
 		${ECHO} c; \

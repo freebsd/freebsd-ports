@@ -1,9 +1,0 @@
---- ../sendmail/template.mc.addon.bak	Wed Sep 26 01:02:29 2001
-+++ ../sendmail/template.mc.addon	Wed Oct  3 11:17:54 2001
-@@ -1,5 +1,4 @@
- ___COMMENT_FFR___define(`_FFR_MILTER',1)
--MAIL_FILTER(`drweb-filter', `S=___MILTER_ADDRESS___
--, ___MILTER_ACTION___ T=S:___MILTER_TIMEOUT_1___;R:___MILTER_TIMEOUT_1___;E:___MILTER_TIMEOUT_2___')
-+MAIL_FILTER(`drweb-filter', `S=___MILTER_ADDRESS___, ___MILTER_ACTION___ T=S:___MILTER_TIMEOUT_1___;R:___MILTER_TIMEOUT_1___;E:___MILTER_TIMEOUT_2___')
- define(`confINPUT_MAIL_FILTERS', `drweb-filter')
- ___COMMENT_LOG___define(`confMILTER_LOG_LEVEL',`___MILTER_LOGLEVEL___')
