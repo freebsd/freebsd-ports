@@ -1,1 +1,11 @@
 bin/curl
+include/curl/curl.h
+include/curl/easy.h
+include/curl/mprintf.h
+include/curl/stdcheaders.h
+include/curl/types.h
+@dirrm include/curl
+lib/libcurl.a
+lib/libcurl.la
+lib/libcurl.so.%%SHLIB_VER%%
+@unexec rm -f %B/libcurl.so
