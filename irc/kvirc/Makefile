@@ -8,8 +8,9 @@
 PORTNAME=	kvirc
 PORTVERSION=	2.0.0
 CATEGORIES=	irc
-MASTER_SITES=	ftp://ftp.kvirc.bz.nu/pub/mirror/kvirc/2.0.0/source/ \
-		ftp://kvirc.firenze.linux.it/pub/kvirc/2.0.0/source/
+MASTER_SITES=	ftp://ftp.kvirc.net/kvirc/${PORTVERSION}/source/ \
+		ftp://ftp.kvirc.bz.nu/pub/mirror/kvirc/${PORTVERSION}/source/ \
+		ftp://kvirc.firenze.linux.it/pub/kvirc/${PORTVERSION}/source/
 
 MAINTAINER=	trevor@FreeBSD.org
 
