@@ -5,11 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	mod_mylo
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.pvv.org/~oyving/code/mod_mylo/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Apache module to make Apache log to MySQL
@@ -18,8 +17,6 @@ BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
 
 USE_MYSQL=	YES
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 APXS=	${LOCALBASE}/sbin/apxs
 DOCS=	mod_mylo.sql README
