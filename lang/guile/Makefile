@@ -14,15 +14,10 @@ MASTER_SITE_SUBDIR=	guile
 
 MAINTAINER=	jseger@FreeBSD.org
 
-GNU_CONFIGURE=	YES
-CONFIGURE_ARGS=	--with-threads
-
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	configure guile-readline/configure
+CONFIGURE_ARGS=	--with-threads
 
 PLIST_SUB=	GUILE_VER=1.3.4
-
-post-install:
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
