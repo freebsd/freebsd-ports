@@ -17,6 +17,7 @@ BUILD_DEPENDS=	${X11BASE}/lib/libaux.a:${PORTSDIR}/graphics/libaux
 
 USE_MESA=	yes
 USE_GMAKE=	yes
+MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 ALL_TARGET=	linux-mesa-elf
 
 do-install:
