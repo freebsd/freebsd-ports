@@ -20,6 +20,7 @@
     SUBDIR += arm-rtems-binutils
     SUBDIR += arm-rtems-chill
     SUBDIR += arm-rtems-g77
+    SUBDIR += arm-rtems-gcc
     SUBDIR += as80
     SUBDIR += asis
     SUBDIR += asl
