@@ -7,7 +7,7 @@
 
 PORTNAME=	openoffice
 PORTVERSION=	1.0.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES+=	editors
 MASTER_SITES+=	http://sf1.mirror.openoffice.org/${PORTVERSION}/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/ \
@@ -102,13 +102,12 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
 BUILD_DEPENDS+= zip:${PORTSDIR}/archivers/zip
 BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk13
-BUILD_DEPENDS+=	imake:${PORTSDIR}/devel/imake-4
+BUILD_DEPENDS+= X11.6:${PORTSDIR}/x11/XFree86-4-libraries
 .if !defined(DISPLAY)
 BUILD_DEPENDS+= Xvfb:${PORTSDIR}/x11-servers/XFree86-4-VirtualFramebufferServer
 .endif
 
 USE_PERL5=	yes
-USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
