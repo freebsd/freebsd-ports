@@ -35,6 +35,7 @@
     SUBDIR += checkbot
     SUBDIR += chimera
     SUBDIR += chimera2
+    SUBDIR += comclear
     SUBDIR += comline
     SUBDIR += css-mode.el
     SUBDIR += decss

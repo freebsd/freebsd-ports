@@ -1,0 +1,11 @@
+--- Makefile.am	2000/11/14 08:59:14	1.1.1.1
++++ Makefile.am	2000/11/14 09:48:03	1.2
+@@ -5,7 +5,7 @@
+ bin_PROGRAMS = comclear
+ comclear_SOURCES = comclear.c gui.c gui.h
+ 
+-docdir = $(prefix)/doc/$(PACKAGE)-$(VERSION)
++docdir = $(datadir)/doc/$(PACKAGE)
+ doc_DATA = README NEWS ChangeLog AUTHORS COPYING INSTALL
+ 
+ dist-hook: comclear.spec
