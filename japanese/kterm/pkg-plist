@@ -1,0 +1,5 @@
+@cwd /usr/X11R6
+@mode 755
+bin/kterm
+lib/X11/app-defaults/KTerm
+man/man1/kterm.1.gz

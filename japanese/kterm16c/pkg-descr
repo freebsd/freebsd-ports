@@ -1,0 +1,3 @@
+kterm is a xterm replacement with Japanese (Kanji) support.  It also
+understands ANSI color sequences.  This version is 6.1.0, available
+from the X11R6 contrib tape.

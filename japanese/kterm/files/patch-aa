@@ -1,0 +1,49 @@
+--- ./main.c.org	Sat Jun  4 08:44:11 1994
++++ ./main.c	Tue Nov 15 20:59:40 1994
+@@ -284,22 +284,34 @@
+ #ifdef UTMP_FILE
+ #define UTMP_FILENAME UTMP_FILE
+ #else
++#ifdef _PATH_UTMP
++#define UTMP_FILENAME _PATH_UTMP
++#else
+ #define UTMP_FILENAME "/etc/utmp"
+ #endif
+ #endif
++#endif
+ 
+ #ifndef LASTLOG_FILENAME
++#ifdef _PATH_LASTLOG
++#define LASTLOG_FILENAME _PATH_LASTLOG
++#else
+ #define LASTLOG_FILENAME "/usr/adm/lastlog"  /* only on BSD systems */
+ #endif
++#endif
+ 
+ #ifndef WTMP_FILENAME
+ #ifdef WTMP_FILE
+ #define WTMP_FILENAME WTMP_FILE
+ #else
++#ifdef _PATH_WTMP
++#define WTMP_FILENAME _PATH_WTMP
++#else
+ #ifdef SYSV
+ #define WTMP_FILENAME "/etc/wtmp"
+ #else
+ #define WTMP_FILENAME "/usr/adm/wtmp"
++#endif
+ #endif
+ #endif
+ #endif
+--- ./misc.c.org	Mon Mar 28 15:27:03 1994
++++ ./misc.c	Tue Nov 15 21:06:54 1994
+@@ -765,7 +765,9 @@
+ char *SysErrorMsg (n)
+     int n;
+ {
++#ifndef __FreeBSD__
+     extern char *sys_errlist[];
++#endif
+     extern int sys_nerr;
+ 
+     return ((n >= 0 && n < sys_nerr) ? sys_errlist[n] : "unknown error");
