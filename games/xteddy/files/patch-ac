@@ -1,0 +1,37 @@
+--- xteddy.c.orig	Mon Jan 31 20:12:15 1994
++++ xteddy.c	Wed Jun  3 17:09:27 1998
+@@ -19,7 +19,7 @@
+ #include <X11/cursorfont.h>
+ 
+ #ifndef NOXPM
+-#include <xpm.h>
++#include <X11/xpm.h>
+ #endif
+ 
+ #include <stdio.h>
+@@ -33,6 +33,14 @@
+ #include "xteddy_color.xpm"
+ #endif
+ 
++#ifndef TRUE
++#define TRUE 1
++#endif /* TRUE */
++
++#ifndef FALSE
++#define FALSE 0
++#endif /* FALSE */
++
+ #include "patchlevel.h"
+ 
+ static char *progname;
+@@ -335,8 +343,8 @@
+ 	  break;
+ 	case KeyPress:
+ 	  /* Exit on "q" or "Q" */
+-	  charcount = XLookupString(&report, buffer, bufsize,
+-				    &keysym, &compose);
++	  charcount = XLookupString(&report.xkey, 
++				    buffer, bufsize, &keysym, &compose);
+ 	  if((keysym == XK_Q) || (keysym == XK_q))
+ 	    {
+ 	      XCloseDisplay(display);

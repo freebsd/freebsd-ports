@@ -1,0 +1,16 @@
+--- xteddy.man.orig	Wed Jun  3 17:23:30 1998
++++ xteddy.man	Wed Jun  3 17:08:40 1998
+@@ -0,0 +1,13 @@
++.Dd Jun 03, 1998
++.Dt XTEDDY 1
++.Os
++.Sh NAME
++.Nm xteddy
++.Nd shows a cuddlesome teddy on the X desktop
++.Sh SYNOPSIS
++.Nm xteddy
++.Sh DESCRIPTION
++.Nm xteddy 
++shows a very cuddlesome teddy on the X desktop. The teddy can be removed
++by moving the mouse cursor over the teddy and typing "q" or "Q". But it's
++not advised to do that.
