@@ -13,6 +13,8 @@ MASTER_SITES=	http://dl.bytesex.org/releases/${PORTNAME}/
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A number of fonts which are useful for TV applications
 
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
