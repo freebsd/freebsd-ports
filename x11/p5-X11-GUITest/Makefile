@@ -20,7 +20,12 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:cpan \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides GUI testing/interaction facilities
 
+USE_REINPLACE=	yes
+USE_XLIB=	yes
 PERL_CONFIGURE=	yes
 MAN3=	X11::GUITest.3
+
+post-patch:
+	@${REINPLACE_CMD} -e "s,/usr/X11R6,${X11BASE},g" ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
