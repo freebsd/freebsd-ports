@@ -16,6 +16,7 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	OpenDivX encoding engine from Project Mayo
 
 ONLY_FOR_ARCHS=	i386
+USE_SIZE=	yes
 USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-q -a -L
 MAKE_ARGS=	LIB_VERSION="${LIB_VERSION}" PREFIX=${PREFIX}

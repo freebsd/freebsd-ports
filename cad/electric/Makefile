@@ -16,6 +16,7 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A Sophisticated electrical CAD system
 
 USE_REINPLACE=	yes
+USE_SIZE=	yes
 USE_XLIB=	yes
 USE_MOTIF=	yes
 GNU_CONFIGURE=	yes

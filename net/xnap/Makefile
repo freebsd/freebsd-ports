@@ -17,6 +17,7 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A pure java napster client; also, supports OpenNap & giFT (FastTrack)
 
 USE_JAVA=	1.3+
+USE_SIZE=	yes
 NO_BUILD=	yes
 NO_BUILD_DEPENDS_JAVA=	yes
 PLIST_SUB=	JAR_DIR=${JAR_DIR}

@@ -18,6 +18,7 @@ COMMENT=	Understand can parse a Ada project helping reverse engineer it
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
+USE_SIZE=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 

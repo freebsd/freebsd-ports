@@ -22,6 +22,7 @@ CONFIGURE_ARGS=	--with-motif-libraries="${LIBXMDIR}" \
 		--with-readline-libraries=/usr/lib
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+USE_SIZE=	yes
 USE_XPM=	yes
 USE_MOTIF=	yes
 PLIST_SUB=	VERSION=${PORTVERSION}

@@ -17,6 +17,7 @@ COMMENT=	Utility to test for faulty memory subsystem
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_SIZE=	yes
 
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/memtest

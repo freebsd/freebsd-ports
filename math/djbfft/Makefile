@@ -15,6 +15,7 @@ COMMENT=	An extremely fast library for floating-point convolution
 
 NO_PACKAGE=	Forbidden - we have patches to the distribution.
 
+USE_SIZE=	yes
 ALL_TARGET=
 INSTALL_TARGET=setup check
 USE_PERL5_BUILD=yes

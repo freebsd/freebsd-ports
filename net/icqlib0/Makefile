@@ -17,6 +17,7 @@ COMMENT=	Old branch 0.x.x of library required by kicq (used by icqmail)
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
+USE_SIZE=	yes
 INSTALLS_SHLIB=	yes
 
 LATEST_LINK=	icqlib0

@@ -19,6 +19,7 @@ COMMENT=	Automatically add links found in web pages to MLDonkey queue
 BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 
 USE_PERL5=	yes
+USE_SIZE=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

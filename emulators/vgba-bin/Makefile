@@ -18,6 +18,7 @@ COMMENT=	Virtual GameBoy Advance is an emulator of Nintendo GameBoy Advance(TM)
 
 ONLY_FOR_ARCHS=	i386
 USE_X_PREFIX=	yes
+USE_SIZE=	yes
 NO_BUILD=	no
 NO_WRKSUBDIR=	no
 

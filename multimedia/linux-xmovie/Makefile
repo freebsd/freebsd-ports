@@ -22,6 +22,7 @@ BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
+USE_SIZE=	yes
 EXTRACT_CMD=	rpm2cpio
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS= | ${CPIO} -id --quiet

@@ -31,6 +31,7 @@ USE_GNOME=	gnomehack \
 		gconf2
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
+USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-tests \
 		--disable-alsa \

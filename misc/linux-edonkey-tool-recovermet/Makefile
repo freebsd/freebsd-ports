@@ -20,6 +20,7 @@ COMMENT=	Tool that tries to re-create x.part.met files compromised due to crash
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
+USE_SIZE=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 PLIST_FILES=	bin/edonkey-tool-recovermet

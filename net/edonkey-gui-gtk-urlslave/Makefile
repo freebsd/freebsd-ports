@@ -20,6 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
 RUN_DEPENDS=	ed2k_gui:${PORTSDIR}/net/edonkey-gui-gtk
 
 USE_PERL5=	yes
+USE_SIZE=	yes
 NO_BUILD=	yes
 
 BINARY_NAME=	ed2k_urlslave

@@ -27,6 +27,7 @@ USE_GNOME=	gnomehack \
 		gnomeprefix \
 		gnomedesktop
 USE_LIBTOOL=	yes
+USE_SIZE=	yes
 GNOME_DESKTOP_VERSION=2
 WANT_GNOME=	yes
 PLIST_SUB=	\

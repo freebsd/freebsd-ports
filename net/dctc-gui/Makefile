@@ -27,6 +27,7 @@ USE_XLIB=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_SIZE=	yes
 CONFIGURE_ARGS=	--with-gnome=${X11BASE} \
 		--with-gtk-prefix=${LOCALBASE} \
 		--enable-manual-db-detect \

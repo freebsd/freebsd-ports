@@ -16,6 +16,7 @@ COMMENT=	procmail spam filter written in ML using Bayesian classification
 BUILD_DEPENDS=	ocaml:${PORTSDIR}/lang/ocaml
 
 USE_REINPLACE=	yes
+USE_SIZE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|^(CPP=)gcc[[:space:]]+-E|\1${CPP}|' \

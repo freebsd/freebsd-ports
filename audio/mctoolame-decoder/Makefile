@@ -20,6 +20,7 @@ COMMENT=	A LayerII MPEG Audio decoder which supports multi-channel encoding
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+USE_SIZE=	yes
 ALL_TARGET=
 PLIST_SUB=	PKGNAMESUFFIX="${PKGNAMESUFFIX}"
 

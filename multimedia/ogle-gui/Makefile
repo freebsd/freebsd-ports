@@ -30,6 +30,7 @@ USE_GNOME=	gnomehack \
 WANT_GNOME=	yes
 USE_XPM=	yes
 USE_REINPLACE=	yes
+USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-dvd-includes=${LOCALBASE}/include \

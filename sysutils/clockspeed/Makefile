@@ -19,6 +19,7 @@ LIB_DEPENDS=	tai.1:${PORTSDIR}/devel/libtai
 
 ALL_TARGET=	it
 USE_REINPLACE=	yes
+USE_SIZE=	yes
 INSTALL_TARGET=	setup check
 
 MAN1=		clockadd.1 clockspeed.1 clockview.1 sntpclock.1 \

@@ -17,6 +17,7 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A library for storing and manipulating dates and times in second/attosecond
 
 USE_REINPLACE=	yes
+USE_SIZE=	yes
 
 ALL_TARGET=	it
 INSTALLS_SHLIB=	yes

@@ -17,6 +17,7 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	File-sharing tool for FreeNet with Usenet like forum support
 
 USE_JAVA=	1.4+
+USE_SIZE=	yes
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_BUILD_DEPENDS_JAVA=	yes

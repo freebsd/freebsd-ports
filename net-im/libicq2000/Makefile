@@ -19,6 +19,7 @@ LIB_DEPENDS=	sigc.1:${PORTSDIR}/devel/libsigc++
 
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
+USE_SIZE=	yes
 INSTALLS_SHLIB=	yes
 
 MAN1=	libicq2000-config.1

@@ -19,6 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libebml.a:${PORTSDIR}/textproc/libebml
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+USE_SIZE=	yes
 BUILD_WRKSRC=	${WRKSRC}/make/linux
 INSTALL_WRKSRC=	${WRKSRC}/make/linux
 

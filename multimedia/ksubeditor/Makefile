@@ -23,6 +23,7 @@ USE_KDELIBS_VER=	3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
+USE_SIZE=	yes
 
 post-extract:
 	@${TOUCH} ${WRKSRC}/stamp-h.in
