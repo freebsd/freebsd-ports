@@ -58,10 +58,6 @@ RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 .if ${OSVERSION} < 500035
 CFLAGS+=	-Wno-non-template-friend -ftemplate-depth-30
 .endif
