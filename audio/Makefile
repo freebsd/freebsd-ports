@@ -148,6 +148,7 @@
     SUBDIR += mp3chew
     SUBDIR += mp3ck
     SUBDIR += mp3encode
+    SUBDIR += mp3gain
     SUBDIR += mp3info
     SUBDIR += mp3mover
     SUBDIR += mp3rename
