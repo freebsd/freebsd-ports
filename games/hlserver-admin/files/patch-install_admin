@@ -1,0 +1,189 @@
+--- install_admin.orig	Fri Feb 14 14:07:46 2003
++++ install_admin	Fri Feb 14 14:07:53 2003
+@@ -17,6 +17,22 @@
+ doit=
+ 
+ 
++# make sure we are running with bash
++if [ x"$BASH" = 'x' ] ; then
++    # we are not running as bash, probably xBSD
++    # check if we have one
++    am_bash=`(bash --version) 2> /dev/null`
++    if [ x"$am_bash" = 'x' ] ; then
++	echo "This is a script for the Bash. You need to have the Bash"
++	echo "shell installed in order to run this script. Please install"
++	echo "the Bash (Bourne Again SHell) before running this script."
++	exit
++    else
++	exec bash $0 "$@"
++    fi
++fi
++
++
+ 
+ FALLBACK_VERSION="2.50.50"
+ 
+@@ -257,9 +273,9 @@
+ 		if ( echo $second | $grep '[0-9][0-9]*\.[0-9][0-9]' ) >/dev/null 2>&1 ; then
+ 			# this number is of the format xx.yy.zz
+ 			major1=`echo $first | $sed 's/^\([0-9][0-9]*\).*/\1/'`
+-			rest=`echo $first | $sed 's/^\([0-9][0-9]*\)\.\?\(.*\)/\2/'`
++			rest=`echo $first | $sed 's/^\([0-9][0-9]*\)\.\{0,1\}\(.*\)/\2/'`
+ 			minor1=`echo $rest | $sed 's/^\([0-9][0-9]*\).*/\1/'`
+-			rest=`echo $rest | $sed 's/^\([0-9][0-9]*\)\.\?\(.*\)/\2/'`
++			rest=`echo $rest | $sed 's/^\([0-9][0-9]*\)\.\{0,1\}\(.*\)/\2/'`
+ 			patch1=`echo $rest | $sed 's/^\([0-9][0-9]*\).*/\1/'`
+ 
+ 			[ -z "$major1" ] && major1=0
+@@ -268,9 +284,9 @@
+ 
+ 			# this number is of the format xx.yy.zz
+ 			major2=`echo $second | $sed 's/^\([0-9][0-9]*\).*/\1/'`
+-			rest=`echo $second | $sed 's/^\([0-9][0-9]*\)\.\?\(.*\)/\2/'`
++			rest=`echo $second | $sed 's/^\([0-9][0-9]*\)\.\{0,1\}\(.*\)/\2/'`
+ 			minor2=`echo $rest | $sed 's/^\([0-9][0-9]*\).*/\1/'`
+-			rest=`echo $rest | $sed 's/^\([0-9][0-9]*\)\.\?\(.*\)/\2/'`
++			rest=`echo $rest | $sed 's/^\([0-9][0-9]*\)\.\{0,1\}\(.*\)/\2/'`
+ 			patch2=`echo $rest | $sed 's/^\([0-9][0-9]*\).*/\1/'`
+ 
+ 			[ -z "$major2" ] && major2=0
+@@ -706,7 +722,7 @@
+   TOPDIR=$foundtopdir
+ fi
+ 
+-if [[ ( ! -z "$premod_dir" ) && ( "$premod_dir" != "." ) ]]  ; then
++if [  ! -z "$premod_dir" -a  x"$premod_dir" != 'x.' ]  ; then
+   TOPDIR=$premod_dir
+ fi
+ 
+@@ -901,7 +917,7 @@
+ 					install="inst:"
+ 				else
+ 					# the old version is in a different path
+-					if [[ ( "$gamedll" = "dlls/metamod_i386.so" ) && ( -z "$oldMMversion" ) ]] ; then
++					if [ x"$gamedll" = 'xdlls/metamod_i386.so' -a -z "$oldMMversion" ] ; then
+ 						# probably a pre-addons-standard old version.
+ 						echo ""
+ 						echo ""
+@@ -962,7 +978,7 @@
+ 	$doit $cp $MYDIR/dlls/$mmDso $MODDIR/$mmBaseDir/$mmDllDir
+ 	$doit $rm $gamedll
+ 	$doit $cp $MODDIR/metamod.ini $MODDIR/$mmBaseDir/plugins.ini
+-	$doit $cp $MODDIR/metaexec.cfg $MODDIR/$mmBaseDir/exec.cfg
++	$doit $cp $MODDIR/metaexec.cfg $MODDIR/$mmBaseDir/exec.cfg > /dev/null 2>&1
+ 	$doit $rm $MODDIR/metamod.ini
+ 	$doit $rm $MODDIR/metaexec.cfg
+ 	mmPluginsFile="$MODDIR/$mmBaseDir/plugins.ini"
+@@ -1038,7 +1054,7 @@
+ # check if we already have an adminmod installed.
+ if [ -f $MODDIR/$mmBaseDir/plugins.ini ] ; then
+ # first check plugins.ini
+-	amdll=`$grep '^ *linux  *.*admin_MM_i386' $MODDIR/$mmBaseDir/plugins.ini | $sed -e 's/.* \([^ ][^ ]*\) *.\?$/\1/'`
++	amdll=`$grep '^ *linux  *.*admin_MM_i386' $MODDIR/$mmBaseDir/plugins.ini | $sed -e 's/.* \([^ ][^ ]*\) *.\{0,1\}$/\1/'`
+ 	if [ ! -z "$amdll" ] ; then
+ 		oldAMdso=`$basename $amdll`
+ 		oldAMdir=`$dirname $amdll`
+@@ -1049,7 +1065,7 @@
+ 	mmPluginsFile="$MODDIR/$mmBaseDir/plugins.ini"
+ elif [ -f $MODDIR/metamod.ini ] ; then
+ # second check for metamod.ini
+-	amdll=`$grep '^ *linux  *.*admin_MM_i386' $MODDIR/metamod.ini | $sed -e 's/.* \([^ ][^ ]*\) *.\?$/\1/'`
++	amdll=`$grep '^ *linux  *.*admin_MM_i386' $MODDIR/metamod.ini | $sed -e 's/.* \([^ ][^ ]*\) *.\{0,1\}$/\1/'`
+ 	if [ ! -z "$amdll" ] ; then
+ 		oldAMdso=`$basename $amdll`
+ 		oldAMdir=`$dirname $amdll`
+@@ -1074,9 +1090,9 @@
+ # check if the installed version is older than ours.
+ if [ ! -z "$amdll" ] ; then
+ 	if [ ! -z "$ident" ] ; then  # use ident
+-		oldAMversion=`$ident $amdll 2>/dev/null | $grep Pg: | $sed 's/.*-- \(b\?[0-9][0-9]*\.\?[0-9][0-9]*\(\.\?[0-9][0-9]*\)\).*/\1/'`
++		oldAMversion=`$ident $amdll 2>/dev/null | $grep Pg: | $sed 's/.*-- \(b\{0,1\}[0-9][0-9]*\.\{0,1\}[0-9][0-9]*\(\.\{0,1\}[0-9][0-9]*\)\).*/\1/'`
+ 	elif [ ! -z "$strings" ] ; then # use strings
+-		oldAMversion=`$strings $amdll | $grep '\$Pg: Admin Mod.* \\$' | $sed 's/.*-- \(b\?[0-9][0-9]*\.\?[0-9][0-9]*\(\.\?[0-9][0-9]*\)\).*/\1/'`
++		oldAMversion=`$strings $amdll | $grep '\$Pg: Admin Mod.* \\$' | $sed 's/.*-- \(b\{0,1\}[0-9][0-9]*\.\{0,1\}[0-9][0-9]*\(\.\{0,1\}[0-9][0-9]*\)\).*/\1/'`
+ 	else
+ 		echo "I am unable to find out which version of Admin Mod you have currently installed."
+ 		echo "I will assume that it is older that the one that comes with this package."
+@@ -1226,7 +1242,7 @@
+ 	echo ""
+ 	echon "Trying to locate your config files and moving them to $mod_name/$amBaseDir/$amConfDir ..."
+ 	# do we have a users.ini file?
+-	cfile=`$grep "^ *users_file" $MODDIR/server.cfg | $sed 's/.* \"\?\([^\"][^\"]*\)\"\? *.\?$/\1/'`
++	cfile=`$grep "^ *users_file" $MODDIR/server.cfg | $sed 's/.* \"\{0,1\}\([^\"][^\"]*\)\"\{0,1\} *.\{0,1\}$/\1/'`
+ 	if [ -z "$cfile" ] ; then
+ 		[ -f $MODDIR/users.ini ] && cfile="users.ini"
+ 	fi
+@@ -1242,7 +1258,7 @@
+ 	fi
+ 
+ 	# do we have a maps.ini file?
+-	cfile=`$grep "^ *maps_file" $MODDIR/server.cfg | $sed 's/.* \"\?\([^\"][^\"]*\)\"\? *.\?$/\1/'`
++	cfile=`$grep "^ *maps_file" $MODDIR/server.cfg | $sed 's/.* \"\{0,1\}\([^\"][^\"]*\)\"\{0,1\} *.\{0,1\}$/\1/'`
+ 	if [ -z "$cfile" ] ; then
+ 		[ -f "$MODDIR/maps.ini" ] && cfile="maps.ini"
+ 	fi
+@@ -1258,7 +1274,7 @@
+ 	fi
+ 
+ 	# do we have a ips.ini file?
+-	cfile=`$grep "^ *ips_file" $MODDIR/server.cfg | $sed 's/.* \"\?\([^\"][^\"]*\)\"\? *.\?$/\1/'`
++	cfile=`$grep "^ *ips_file" $MODDIR/server.cfg | $sed 's/.* \"\{0,1\}\([^\"][^\"]*\)\"\{0,1\} *.\{0,1\}$/\1/'`
+ 	if [ -z "$cfile" ] ; then
+ 		[ -f "$MODDIR/ips.ini" ] && cfile="ips.ini"
+ 	fi
+@@ -1274,7 +1290,7 @@
+ 	fi
+ 
+ 	# do we have a models.ini file?
+-	cfile=`$grep "^ *models_file" $MODDIR/server.cfg | $sed 's/.* \"\?\([^\"][^\"]*\)\"\? *.\?$/\1/'`
++	cfile=`$grep "^ *models_file" $MODDIR/server.cfg | $sed 's/.* \"\{0,1\}\([^\"][^\"]*\)\"\{0,1\} *.\{0,1\}$/\1/'`
+ 	if [ -z "$cfile" ] ; then
+ 		[ -f "$MODDIR/modles.ini" ] && cfile="modles.ini"
+ 	fi
+@@ -1290,7 +1306,7 @@
+ 	fi
+ 
+ 	# do we have a vault.ini file?
+-	cfile=`$grep "^ *admin_vault_file" $MODDIR/server.cfg | $sed 's/.* \"\?\([^\"][^\"]*\)\"\? *.\?$/\1/'`
++	cfile=`$grep "^ *admin_vault_file" $MODDIR/server.cfg | $sed 's/.* \"\{0,1\}\([^\"][^\"]*\)\"\{0,1\} *.\{0,1\}$/\1/'`
+ 	if [ -z "$cfile" ] ; then
+ 		[ -f $MODDIR/vault.ini ] && cfile="vault.ini"
+ 	fi
+@@ -1306,7 +1322,7 @@
+ 	fi
+ 
+ 	# do we have a plugin.ini file?
+-	cfile=`$grep "^ *admin_plugin_file" $MODDIR/server.cfg | $sed 's/.* \"\?\([^\"][^\"]*\)\"\? *.\?$/\1/'`
++	cfile=`$grep "^ *admin_plugin_file" $MODDIR/server.cfg | $sed 's/.* \"\{0,1\}\([^\"][^\"]*\)\"\{0,1\} *.\{0,1\}$/\1/'`
+ 	if [ -z "$cfile" ] ; then
+ 		[ -f $MODDIR/plugin.ini ] && cfile="plugin.ini"
+ 	fi
+@@ -1333,10 +1349,10 @@
+ 		echo ""
+ 		echon "Relocating your script files to $mod_name/$amBaseDir/$amAmxDir ..."
+ 		( cat $MODDIR/$cfile | while read plugin ; do 
+-			if ( echo $plugin | grep '^;\? *dlls/.*\.amx' ) >/dev/null 2>&1 ; then
++			if ( echo $plugin | grep '^;\{0,1\}#\{0,1\} *dlls/.*\.amx' ) >/dev/null 2>&1 ; then
+ 				# if this is a plugin installed in the default MOD/dlls path
+ 				# we copy it over
+-				pfile=`echo $plugin | $sed 's/^\(\;\?#\?\) *dlls\/\(..*\.amx\).*/dlls\/\2/'`
++				pfile=`echo $plugin | $sed 's/^\(\;\{0,1\}#\{0,1\}\) *dlls\/\(..*\.amx\).*/dlls\/\2/'`
+ 				bpfile=`$basename $pfile`
+ 				$doit $mv $MODDIR/$pfile $MODDIR/$amBaseDir/$amAmxDir/
+ 				echol "$pfile"
+@@ -1345,7 +1361,7 @@
+ 				echo "Leaving \"$plugin\" in place. You can move it by hand if you need it."
+ 			fi
+ 		done )
+-		$doit eval "$cat $MODDIR/${cfile} | $sed 's/^\(\;\?#\?\) *dlls\/\(..*\.amx\)/\1addons\/adminmod\/scripts\/\2/' > $MODDIR/$amBaseDir/$amConfDir/$bcfile"
++		$doit eval "$cat $MODDIR/${cfile} | $sed 's/^\(\;\{0,1\}#\{0,1\}\) *dlls\/\(..*\.amx\)/\1addons\/adminmod\/scripts\/\2/' > $MODDIR/$amBaseDir/$amConfDir/$bcfile"
+ 		$doit $mv $MODDIR/$cfile $MODDIR/${cfile}.old	
+ 	else
+ 		$doit $cp $MYDIR/config/plugin.ini $MODDIR/$amBaseDir/$amConfDir
+@@ -1649,4 +1665,4 @@
+ 
+ 
+ 
+-#this_is_the_last_line
+\ No newline at end of file
++#this_is_the_last_line
