@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tramp
-PORTVERSION=	0.0.20020218
+PORTVERSION=	0.0.20020411
 CATEGORIES=	net elisp
 MASTER_SITES=	http://tramp.sourceforge.net/download/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -47,7 +47,7 @@ pre-build:
 .endif
 post-build:
 .if !defined(NOPORTDOCS)
-	(cd ${WRKSRC}/texi; ${GMAKE} EMACS=${EMACS_CMD} MAKEINFO=makeinfo tramp.info)
+#	(cd ${WRKSRC}/texi; ${GMAKE} EMACS=${EMACS_CMD} MAKEINFO=makeinfo tramp.info)
 .if defined(JAPANESE_INFO)
 	(cd ${WRKSRC}/texi; ${GMAKE} EMACS=${EMACS_CMD} MAKEINFO=jmakeinfo tramp_ja.info)
 .endif
