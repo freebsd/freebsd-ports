@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	metakit
-PORTVERSION=	2.4.9.2
-PORTREVISION=	2
+PORTVERSION=	2.4.9.3
 CATEGORIES=	databases
-MASTER_SITES=	http://www.equi4.com/pub/mk/older/
+MASTER_SITES=	http://www.equi4.com/pub/mk/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -23,8 +22,9 @@ LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
 BUILD_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 .endif
 
+USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/builds
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=	14
 CONFIGURE_SCRIPT=	../unix/configure
 LIBTOOLFILES=	${CONFIGURE_SCRIPT}
 INSTALLS_SHLIB=	yes
@@ -33,7 +33,6 @@ ONLY_FOR_ARCHS=	i386 alpha
 
 .if defined(METAKIT_WITH_PYTHON)
 USE_PYTHON=	yes
-PYTHON_VERSION?=	python2.2
 CONFIGURE_ARGS+=	--with-python=${LOCALBASE}
 CATEGORIES+=	python
 PLIST_SUB+=	WITH_PYTHON=""
@@ -66,29 +65,28 @@ PLIST_SUB+=	WITH_TCL="@comment "
 .include <bsd.port.pre.mk>
 
 pre-patch:
-	@${MV} ${WRKSRC}/../MetaKit.html ${WRKSRC}/../MetaKit.html.sed
-	${SED} -e "s=doc/==" \
-		${WRKSRC}/../MetaKit.html.sed > ${WRKSRC}/../MetaKit.html
+	${REINPLACE_CMD} -e "s=doc/==" ${WRKSRC}/../Metakit.html
 .if defined(METAKIT_WITH_TCL83) || defined(METAKIT_WITH_TCL84)
-	@${CP} ${WRKSRC}/../unix/Makefile.in ${WRKSRC}/../unix/Makefile.in.sed
-	${SED} -e "s/= tclsh/=tclsh${TCL_V}/" -e "s/tcl8.4/tcl${TCL_V}/" \
-		${WRKSRC}/../unix/Makefile.in.sed \
-		> ${WRKSRC}/../unix/Makefile.in
+	${REINPLACE_CMD} \
+		-e "s/= tclsh/=tclsh${TCL_V}/" -e "s/tcl8.4/tcl${TCL_V}/" \
+		${WRKSRC}/../unix/Makefile.in
 .endif
 .if defined(METAKIT_WITH_PYTHON)
-	@${CP} ${WRKSRC}/../unix/Makefile.in ${WRKSRC}/../unix/Makefile.in.sed
-	${SED} -e "s=python2.2=${PYTHON_VERSION}=" \
-		${WRKSRC}/../unix/Makefile.in.sed \
-		> ${WRKSRC}/../unix/Makefile.in
-	@${CP} ${WRKSRC}/../unix/configure ${WRKSRC}/../unix/configure.sed
-	${SED} -e "s=python2.2=${PYTHON_VERSION}=" \
-		${WRKSRC}/../unix/configure.sed \
-		> ${WRKSRC}/../unix/configure
+	${REINPLACE_CMD} -e "s=python2.2=${PYTHON_VERSION}=" \
+		${WRKSRC}/../unix/Makefile.in ${WRKSRC}/../unix/configure
 .endif
 
+post-build:
+	(cd ${WRKSRC} && cc -shared `make -V LIBTOOL_SHLIB_FLAGS -V SHLOBJS` \
+		-lc  -Wl,-soname -Wl,libmk4.so -o .libs/libmk4.so )
+	${SED} -e 's|nstalled=no|installed=yes|' \
+		${WRKSRC}/libmk4.la > ${WRKSRC}/.libs/libmk4.lai
+
 post-install:
-	${MV} ${PREFIX}/lib/libmk4.so ${PREFIX}/lib/libmk4.so.0
+	@${INSTALL_PROGRAM} ${WRKSRC}/.libs/libmk4.so \
+		${PREFIX}/lib/libmk4.so.0
 	@${LN} -sf libmk4.so.0 ${PREFIX}/lib/libmk4.so
+	@${MV}  ${PREFIX}/lib/libmk4.al ${PREFIX}/lib/libmk4.a
 .if defined(METAKIT_WITH_PYTHON)
 	@${INSTALL_PROGRAM} ${WRKSRC}/.libs/libmk4py.a ${PREFIX}/lib
 	@${INSTALL_PROGRAM} ${WRKSRC}/.libs/libmk4py.so ${PREFIX}/lib
@@ -101,7 +99,7 @@ post-install:
 	${MKDIR} ${DOCSDIR}
 	${TAR} -C ${WRKSRC}/../doc --exclude "*CVS" -cf - . | \
 		${TAR} -C ${DOCSDIR} --unlink -xf -
-	${INSTALL_DATA} ${WRKSRC}/../MetaKit.html ${WRKSRC}/../CHANGES \
+	${INSTALL_DATA} ${WRKSRC}/../Metakit.html ${WRKSRC}/../CHANGES \
 		${WRKSRC}/../README ${WRKSRC}/../WHATSNEW ${DOCSDIR}/
 .endif
 
