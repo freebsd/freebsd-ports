@@ -161,6 +161,7 @@
     SUBDIR += icqnix
     SUBDIR += icukrell
     SUBDIR += ip-tun
+    SUBDIR += ip6_int
     SUBDIR += ipcad
     SUBDIR += ipcalc
     SUBDIR += ipcheck
