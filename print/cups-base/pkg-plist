@@ -428,4 +428,10 @@ share/locale/zh_CN/cups_zh_CN
 @dirrm etc/cups/ppd
 @dirrm etc/cups/interfaces
 @dirrm etc/cups/certs
+@exec mkdir -p /var/spool/cups/tmp || true
+@exec chown -R root:daemon /var/spool/cups
+@exec mkdir %D/etc/cups/certs || true
+@exec mkdir %D/etc/cups/ppd || true
+@exec mkdir %D/etc/cups/interfaces || true
+@unexec rm -rf /var/spool/cups
 @unexec rmdir %D/etc/cups 2>/dev/null || true
