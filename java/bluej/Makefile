@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	bluej
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.2
 CATEGORIES=	java editors
-MASTER_SITES=	ftp://ftp.bluej.org/pub/bluej/ \
-		http://www.metaverse.nl/~ernst/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	znerd
+MASTER_SITES=	ftp://ftp.bluej.org/pub/bluej/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.jar
 
@@ -22,17 +19,13 @@ IS_INTERACTIVE=	yes
 EXTRACT_ONLY=
 NO_BUILD=	yes
 
-# Called MY_JDK and MY_JDK_PORT so not to conflict with any other possible
-# definitions in the ports system.
-MY_JDK=		linux-sun-jdk1.4.0
-MY_JDK_PORT=	linux-sun-jdk14
-RUN_DEPENDS=    ${LOCALBASE}/${MY_JDK}/bin/java:${PORTSDIR}/java/${MY_JDK_PORT}
+USE_JAVA=	1.3+
 
 do-install:
-	@${LN} -s ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ${PREFIX}/${DISTNAME}${EXTRACT_SUFX}
 	@${ECHO} Starting BlueJ graphical installer...  Please install to default path of
 	@${ECHO} ${PREFIX}/bluej.  Close the installer when done.
-	@cd ${PREFIX}; ${LOCALBASE}/${MY_JDK}/bin/java -jar ${DISTNAME}${EXTRACT_SUFX}
-	@${RM} -f ${PREFIX}/${DISTNAME}${EXTRACT_SUFX}
+	@cd ${PREFIX}; ${JAVA_HOME}/bin/java -jar ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
+	-@${MKDIR} ${PREFIX}/bin
+	@${LN} -sf ${PREFIX}/bluej/bluej ${PREFIX}/bin/bluej
 
 .include <bsd.port.mk>
