@@ -1,4 +1,4 @@
-libunp is the library used in W. Richard Steven's book "UNIX Network
+libunp is the library used in W. Richard Stevens' book "UNIX Network
 Programming Volume 1, 2nd Edition".  It contains the library and headers
 used in the examples as well as all programs from the text that compile on
 FreeBSD systems.
