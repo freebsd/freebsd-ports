@@ -1,11 +1,11 @@
---- SConstruct.orig	Fri Aug 20 22:36:47 2004
-+++ SConstruct	Fri Aug 20 22:36:52 2004
+--- SConstruct.orig	Thu Aug  5 00:00:39 2004
++++ SConstruct	Thu Oct 21 23:20:37 2004
 @@ -681,6 +681,86 @@
      openal_lib = ['openal']
      openal_libpath = ['/usr/lib']
      openal_include = ['/usr/include']
 +    
-+elif sys.platform=='freebsd4' or sys.platform=='freebsd5':
++elif sys.platform=='freebsd4' or sys.platform=='freebsd5' or sys.platform=='freebsd6':
 +    print "Building for FreeBSD"
 +    use_international = 'false'
 +    use_gameengine = 'false'
@@ -92,11 +92,11 @@
  		shutil.copy("../lib/windows/sdl/lib/SDL.dll", "dist/SDL.dll")
  		shutil.copy("../lib/windows/gettext/lib/gnu_gettext.dll", "dist/gnu_gettext.dll")
 -	elif sys.platform in ['linux2', 'linux-i386']:
-+	elif sys.platform in ['linux2', 'linux-i386', 'freebsd4', 'freebsd5']:
++	elif sys.platform in ['linux2', 'linux-i386', 'freebsd4', 'freebsd5', 'freebsd6']:
  		shutil.copy("blender", "dist/blender")
  		if user_options_dict['BUILD_BLENDER_PLAYER'] == 1:
  			shutil.copy("blenderplayer", "dist/blenderplayer")
-@@ -1376,6 +1456,12 @@
+@@ -1376,6 +1456,15 @@
  	elif sys.platform == 'linux2' or sys.platform == 'linux-i386':
  		zipext += ".tar.gz"
  		pf = "linux"
@@ -106,10 +106,13 @@
 +	elif sys.platform == 'freebsd5':
 +		zipext += ".tar.gz"
 +		pf = "freebsd5"
++	elif sys.platform == 'freebsd6':
++		zipext += ".tar.gz"
++		pf = "freebsd6"
  	
  	if user_options_dict['BUILD_BINARY'] == 'release':
  		blendname = "blender-" + version + "-" + config_guess
-@@ -1391,7 +1477,7 @@
+@@ -1391,7 +1480,7 @@
  	print
  	if sys.platform == 'win32':
  		print "Create the zip!"
@@ -118,12 +121,12 @@
  		print "Create the tarball!"
  	print
  	
-@@ -1601,7 +1687,7 @@
+@@ -1601,7 +1690,7 @@
  		if user_options_dict['BUILD_BLENDER_PLAYER'] == 1:
  			app_env.Depends(Mappit, playername)
  		app_env.Alias("release", Mappit)
 -	elif sys.platform in ['win32', 'linux2', 'linux-i386']:
-+	elif sys.platform in ['win32', 'linux2', 'linux-i386', 'freebsd4', 'freebsd5']:
++	elif sys.platform in ['win32', 'linux2', 'linux-i386', 'freebsd4', 'freebsd5', 'freebsd6']:
  		release_env = Environment()
  		releaseit = release_env.Command('blenderrelease', appname, zipit)
  		if user_options_dict['BUILD_BLENDER_PLAYER'] == 1:
