@@ -30,16 +30,24 @@ USE_BZIP2=	yes
 GCC_REV=	${DISTNAME:S/gcc-//g}
 LIBSTDCPP_REV=	4
 
+.if ${OSVERSION} < 400000
+PLIST_SUB+=     CURSES:="@comment "
+.else
+PLIST_SUB+=     CURSES:=""
+.endif
+
 .if ${PORTOBJFORMAT} == "elf"
 .if ${MACHINE_ARCH} == "i386"
-PLIST=		${WRKDIR}/PLIST
+PLIST_SUB+=	ELF:=""
+.else
+PLIST_SUB+=	ELF:="@comment "
 .endif
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .else
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
 .endif
 
-PLIST_SUB=	EGCS_REV=${GCC_REV} GNU_HOST=${CONFIGURE_TARGET}
+PLIST_SUB+=	EGCS_REV=${GCC_REV} GNU_HOST=${CONFIGURE_TARGET}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-gnu-as --with-gnu-ld \
@@ -63,9 +71,6 @@ pre-configure:
 	${SED} -e "s:__FreeBSD__[0-9=]*:__FreeBSD__=$${MAJ}:" ${FILESDIR}/freebsd.h \
 		>${WRKSRC}/gcc/config/freebsd.h )
 	@${CP} ${FILESDIR}/alpha-freebsd.h ${WRKSRC}/gcc/config/alpha/freebsd.h
-.if ${PORTOBJFORMAT} == "elf" && ${MACHINE_ARCH} == "i386"
-	@${SED} -e 's/^@comment ELF-only://' ${PKGDIR}/pkg-plist >${PLIST}
-.endif
 	@# Keep from running `autoconf' and `autoheader' since we modified
 	@# configure.in by patching it.
 	@touch ${WRKSRC}/gcc/configure
