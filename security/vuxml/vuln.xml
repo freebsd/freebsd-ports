@@ -32,6 +32,38 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="74c86a29-81ef-11d9-a9e7-0001020eed82">
+    <topic>bidwatcher -- format string vulnerability</topic>
+    <affects>
+      <package>
+	<name>bidwatcher</name>
+	<range><lt>1.3.17</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Debian Security Advisory reports:</p>
+	<blockquote cite="http://www.debian.org/security/2005/dsa-687">
+	  <p>Ulf Härnhammer from the Debian Security Audit Project
+	    discovered a format string vulnerability in bidwatcher, a
+	    tool for watching and bidding on eBay auctions. This
+	    problem can be triggered remotely by a web server of eBay,
+	    or someone pretending to be eBay, sending certain data
+	    back.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>12590</bid>
+      <cvename>CAN-2005-0158</cvename>
+      <url>http://www.debian.org/security/2005/dsa-687</url>
+    </references>
+    <dates>
+      <discovery>2005-02-18</discovery>
+      <entry>2005-02-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2d8cf857-81ea-11d9-a9e7-0001020eed82">
     <topic>gftp -- directory traversal vulnerability</topic>
     <affects>
