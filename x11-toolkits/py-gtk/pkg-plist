@@ -1,47 +1,62 @@
-lib/python1.5/site-packages/GDK.py
-lib/python1.5/site-packages/GDK.pyc
-lib/python1.5/site-packages/GdkImlib.py
-lib/python1.5/site-packages/GdkImlib.pyc
-lib/python1.5/site-packages/GTK.py
-lib/python1.5/site-packages/GTK.pyc
-lib/python1.5/site-packages/GtkExtra.py
-lib/python1.5/site-packages/GtkExtra.pyc
-lib/python1.5/site-packages/Gtkinter.py
-lib/python1.5/site-packages/Gtkinter.pyc
-lib/python1.5/site-packages/pyglade/build.py
-lib/python1.5/site-packages/pyglade/build.pyc
-lib/python1.5/site-packages/pyglade/style.py
-lib/python1.5/site-packages/pyglade/style.pyc
-lib/python1.5/site-packages/pyglade/xmlparse.py
-lib/python1.5/site-packages/pyglade/xmlparse.pyc
 lib/python1.5/site-packages/pyglade/__init__.py
+lib/python1.5/site-packages/pyglade/build.py
+lib/python1.5/site-packages/pyglade/style.py
+lib/python1.5/site-packages/pyglade/xmlparse.py
 lib/python1.5/site-packages/pyglade/__init__.pyc
-lib/python1.5/site-packages/_gdkimlibmodule.so
-lib/python1.5/site-packages/_gtkmodule.so
+lib/python1.5/site-packages/pyglade/build.pyc
+lib/python1.5/site-packages/pyglade/style.pyc
+lib/python1.5/site-packages/pyglade/xmlparse.pyc
+lib/python1.5/site-packages/pyglade/__init__.pyo
+lib/python1.5/site-packages/pyglade/build.pyo
+lib/python1.5/site-packages/pyglade/style.pyo
+lib/python1.5/site-packages/pyglade/xmlparse.pyo
 @dirrm lib/python1.5/site-packages/pyglade
+lib/python1.5/site-packages/_gtkmodule.so
+lib/python1.5/site-packages/_gdkimlibmodule.so
+lib/python1.5/site-packages/gtk.py
+lib/python1.5/site-packages/Gtkinter.py
+lib/python1.5/site-packages/GTK.py
+lib/python1.5/site-packages/GDK.py
+lib/python1.5/site-packages/GtkExtra.py
+lib/python1.5/site-packages/GdkImlib.py
+lib/python1.5/site-packages/gtk.pyc
+lib/python1.5/site-packages/Gtkinter.pyc
+lib/python1.5/site-packages/GTK.pyc
+lib/python1.5/site-packages/GDK.pyc
+lib/python1.5/site-packages/GtkExtra.pyc
+lib/python1.5/site-packages/GdkImlib.pyc
+lib/python1.5/site-packages/gtk.pyo
+lib/python1.5/site-packages/Gtkinter.pyo
+lib/python1.5/site-packages/GTK.pyo
+lib/python1.5/site-packages/GDK.pyo
+lib/python1.5/site-packages/GtkExtra.pyo
+lib/python1.5/site-packages/GdkImlib.pyo
 share/doc/pygtk/README
+@dirrm share/doc/pygtk
 share/examples/pygtk/glade/README
+share/examples/pygtk/glade/test2.glade
 share/examples/pygtk/glade/glade.py
 share/examples/pygtk/glade/test.glade
-share/examples/pygtk/glade/test2.glade
-share/examples/pygtk/ide/README
-share/examples/pygtk/ide/break.xpm
-share/examples/pygtk/ide/browse.py
-share/examples/pygtk/ide/continue.xpm
-share/examples/pygtk/ide/edit.py
-share/examples/pygtk/ide/edit.xpm
+@dirrm share/examples/pygtk/glade
 share/examples/pygtk/ide/gtkcons.py
 share/examples/pygtk/ide/gtkdb.py
-share/examples/pygtk/ide/gtkprof.py
+share/examples/pygtk/ide/edit.py
+share/examples/pygtk/ide/browse.py
 share/examples/pygtk/ide/minibreak.xpm
-share/examples/pygtk/ide/next.xpm
+share/examples/pygtk/ide/README
+share/examples/pygtk/ide/gtkprof.py
 share/examples/pygtk/ide/pyide.py
-share/examples/pygtk/ide/quit.xpm
+share/examples/pygtk/ide/break.xpm
 share/examples/pygtk/ide/return.xpm
-share/examples/pygtk/ide/run.xpm
+share/examples/pygtk/ide/next.xpm
+share/examples/pygtk/ide/continue.xpm
 share/examples/pygtk/ide/step.xpm
+share/examples/pygtk/ide/edit.xpm
+share/examples/pygtk/ide/run.xpm
+share/examples/pygtk/ide/quit.xpm
+@dirrm share/examples/pygtk/ide
 share/examples/pygtk/imlib/view.py
-share/examples/pygtk/neil/README
+@dirrm share/examples/pygtk/imlib
 share/examples/pygtk/neil/TAppli.py
 share/examples/pygtk/neil/TAppli2.py
 share/examples/pygtk/neil/TAppli3.py
@@ -49,26 +64,22 @@ share/examples/pygtk/neil/TAppli4.py
 share/examples/pygtk/neil/TAppli5.py
 share/examples/pygtk/neil/bomb.xpm
 share/examples/pygtk/neil/gtk-logo.xpm
-share/examples/pygtk/neil/notebook.py
 share/examples/pygtk/neil/question.xpm
-share/examples/pygtk/simple/README
-share/examples/pygtk/simple/dnd.py
+share/examples/pygtk/neil/notebook.py
+share/examples/pygtk/neil/README
+@dirrm share/examples/pygtk/neil
 share/examples/pygtk/simple/hello1.py
 share/examples/pygtk/simple/hello2.py
-share/examples/pygtk/simple/scribble.py
 share/examples/pygtk/simple/simple1.py
 share/examples/pygtk/simple/simple2.py
 share/examples/pygtk/simple/tooltip1.py
 share/examples/pygtk/simple/tooltip2.py
-share/examples/pygtk/testgtk/README
-share/examples/pygtk/testgtk/test.xpm
-share/examples/pygtk/testgtk/testgtk.py
-share/examples/pygtk/testgtk/testgtkrc
-@dirrm share/examples/pygtk/testgtk
+share/examples/pygtk/simple/scribble.py
+share/examples/pygtk/simple/README
 @dirrm share/examples/pygtk/simple
-@dirrm share/examples/pygtk/neil
-@dirrm share/examples/pygtk/imlib
-@dirrm share/examples/pygtk/ide
-@dirrm share/examples/pygtk/glade
+share/examples/pygtk/testgtk/testgtk.py
+share/examples/pygtk/testgtk/test.xpm
+share/examples/pygtk/testgtk/testgtkrc
+share/examples/pygtk/testgtk/README
+@dirrm share/examples/pygtk/testgtk
 @dirrm share/examples/pygtk
-@dirrm share/doc/pygtk

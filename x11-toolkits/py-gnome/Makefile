@@ -1,13 +1,13 @@
 # New ports collection makefile for:	pygtk
-# Version required:	0.5.2
-# Date created:		30 May 1998
-# Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
+# Version required:			0.5.9
+# Date created:				12/26/1998
+# Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.13 1998/10/15 14:31:45 jseger Exp $
+# $Id: Makefile,v 1.14 1998/11/11 05:37:38 asami Exp $
 #
 
-DISTNAME=	pygtk-0.5.2
-PKGNAME=	py-gtk-0.5.2
+DISTNAME=	pygtk-0.5.9
+PKGNAME=	py-gtk-0.5.9
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	ftp://ftp.daa.com.au/pub/james/python/ \
 		ftp://ftp.gimp.org/pub/gtk/python/ \
@@ -15,21 +15,14 @@ MASTER_SITES=	ftp://ftp.daa.com.au/pub/james/python/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/python/ \
 		ftp://stef.u-picardie.fr/mirror/ftp.gimp.org/gtk/python/
 
-MAINTAINER=	ports@FreeBSD.ORG
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 300000
-BROKEN=         python
-.endif
+MAINTAINER=	nectar@FreeBSD.ORG
 
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
 LIB_DEPENDS=	Imlib.1:${PORTSDIR}/graphics/imlib
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-gtk-config=${X11BASE}/bin/gtk11-config
-ALL_TARGET=	sharedmods
+CONFIGURE_ENV=	GTK_CONFIG=${X11BASE}/bin/gtk11d-config
 MAKE_FLAGS=	OPT="${CFLAGS}"
 
 post-install:
@@ -41,6 +34,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/pygtk
 .endif
 
-BROKEN=		gtk
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
