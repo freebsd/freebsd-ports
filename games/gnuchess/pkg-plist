@@ -1,0 +1,16 @@
+bin/gnuchess
+bin/gnuchessr
+bin/gnuchessn
+bin/gnuchessx
+bin/gnuchessc
+bin/postprint
+bin/gnuan
+bin/game
+lib/gnuchess.lang
+lib/eco.pgn
+lib/gnuchess.data
+lib/gnuchess.eco
+man/man6/game.6
+man/man6/gnuan.6
+man/man6/gnuchess.6
+man/man6/postprint.6
