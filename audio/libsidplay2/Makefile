@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	sidplay-1_36_31
-PKGNAME=        sidplay-1.36.31
+DISTNAME=	sidplay-1_36_35
+PKGNAME=        sidplay-1.36.35
 CATEGORIES=	audio emulators
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/packages/
 EXTRACT_SUFX=	.tgz
