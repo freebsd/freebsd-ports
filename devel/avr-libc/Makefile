@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	avr-libc
-PORTVERSION=	2002.09.01
+PORTVERSION=	2002.10.02
 CATEGORIES=	devel
 # There are currently no official master sites for it.  Everything is
 # in savannah.gnu.org's CVS only.
@@ -29,8 +29,9 @@ USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CC=avr-gcc PREFIX=${PREFIX}
 CONFIGURE_SCRIPT= doconf
+CONFIGURE_ARGS=	--disable-versioned-doc
 # get rid of that silly -mcpu=pentiumpro -current is so fond of. :-(
-MAKE_ENV=	CPUTYPE=foo
+MAKE_ENV=	MACHINE_ARCH=avr
 
 PDFDOC=		avr-tools.pdf
 
