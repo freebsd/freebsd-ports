@@ -1,0 +1,5 @@
+%%RUBY_SITELIBDIR%%/http-access.rb
+%%PORTDOCS%%%%RUBY_DOCDIR%%/http-access/README_en.txt
+%%PORTDOCS%%%%RUBY_DOCDIR%%/http-access/ja/README_ja.txt
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/http-access/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/http-access
