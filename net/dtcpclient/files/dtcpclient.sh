@@ -10,11 +10,11 @@
 #
 # NOTE for FreeBSD 5.0+:
 # If you want this script to start with the base rc scripts
-# move imapd.sh to /etc/rc.d/dtcpclient
+# move dtcpclient.sh to /etc/rc.d/dtcpclient
 
 prefix=%%PREFIX%%
 
-# Define these imapd_* variables in one of these files:
+# Define these dtcpclient_* variables in one of these files:
 #	/etc/rc.conf
 #	/etc/rc.conf.local
 #	/etc/rc.conf.d/dtcpclient
