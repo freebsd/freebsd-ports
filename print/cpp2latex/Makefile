@@ -14,17 +14,17 @@ MASTER_SITES=	http://www.arnoldarts.de/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert C++ source to a file you can input in an LaTeX-document
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e 's|-pedantic||g' ${WRKSRC}/configure
 
-.if !defined(NOPORTDOCS)
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for docfile in AUTHORS ChangeLog README TODO
 	${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
