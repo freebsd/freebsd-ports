@@ -1,4 +1,0 @@
-bin/font2svg
-%%DATADIR%%/encodings
-%%DATADIR%%/font2svg.ps
-@dirrm %%DATADIR%%
