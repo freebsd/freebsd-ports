@@ -1,29 +1,31 @@
-# New ports collection makefile for:   libsigc++
-# Date created:        30 September 2002
-# Whom:                Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
+# New ports collection makefile for:   libsigc++2
+# Date created:        14 Feb 2004
+# Whom:                Alexander Nedotsukov <bland@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	libsigc++
-PORTVERSION=	1.2.5
-PORTREVISION=	1
-CATEGORIES=	devel gnome
-MASTER_SITES=	${MASTER_SITE_GNOME} \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.2 \
-		libsigc
-DIST_SUBDIR=	gnome2
+PORTVERSION=	2.0.3
+CATEGORIES=	devel
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	libsigc \
+			sources/libsigc++/${PORTVERSION:R}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Callback Framework for C++
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
+USE_BZIP2=	yes
+USE_GCC=	3.3
 USE_GMAKE=	yes
-LATEST_LINK=	libsigc++12
+LATEST_LINK=	libsigc++20
 INSTALLS_SHLIB=	yes
-USE_GNOME=	gnomehack gnometarget pkgconfig
-USE_LIBTOOL_VER=	13
+USE_GNOME=	gnomehack lthack gnometarget pkgconfig
+USE_LIBTOOL_VER=13
+
+PLIST_SUB=	VERSION="2.0" API_VERSION="2.0"
 
 .include <bsd.port.mk>
