@@ -1,0 +1,7 @@
+lib/tls1.3/pkgIndex.tcl
+lib/tls1.3/tls.tcl
+@dirrm lib/tls1.3
+lib/libtls%%TCL_VER%%.so.1
+lib/libtls%%TCL_VER%%.so
+share/doc/tls1.3/tls.htm
+@dirrm share/doc/tls1.3
