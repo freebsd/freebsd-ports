@@ -102,6 +102,7 @@
     SUBDIR += linux_glx
     SUBDIR += linux_mesa
     SUBDIR += linux_mesa3
+    SUBDIR += morpheus
     SUBDIR += mpeg
     SUBDIR += mpeg-lib
     SUBDIR += mpeg2codec

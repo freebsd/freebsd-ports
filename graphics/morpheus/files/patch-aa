@@ -1,0 +1,26 @@
+--- src/main.c	2000/09/14 08:12:19	1.1
++++ src/main.c	2000/09/14 08:13:43
+@@ -186,11 +186,6 @@
+ 		{ "application/x-color",	0, TARGET_COLOR }
+ 	};
+ 
+-	if( gdk_gl_query() == FALSE ) {
+-		g_print( "no OpenGL capability\n" );
+-		return 0;
+-	}
+-	
+ /*	if( gpLoadScene( argv[ 1 ] ) )
+ 		return 0;
+ */
+@@ -199,6 +194,11 @@
+ 	textdomain( PACKAGE );
+ 
+ 	gnome_init( "morpheus", VERSION, argc, argv );
++
++	if( gdk_gl_query() == FALSE ) {
++		g_print( "no OpenGL capability\n" );
++		return 0;
++	}
+ 
+ 	app1 = create_app1();
+ 	morpheus.app = app1;

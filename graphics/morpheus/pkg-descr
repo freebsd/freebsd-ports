@@ -1,0 +1,6 @@
+Morpheus is a mesh (3D model) viewer for GNOME desktop. It uses OpenGL as a
+rendering API via GtkGLArea widget, which is glue between Gtk+ widget toolkit
+and Mesa library, the free implementation of OpenGL. Models are loaded with
+libmorph library. 
+
+WWW: http://wine.sexcity.pl/morpheus/
