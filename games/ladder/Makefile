@@ -7,6 +7,7 @@
 
 PORTNAME=	ladder
 PORTVERSION=	1.00
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.srv.net/~kth/ \
 		ftp://ftp.42.org/pub/unix/games/
