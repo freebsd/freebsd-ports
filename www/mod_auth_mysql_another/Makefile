@@ -13,13 +13,13 @@ EXTRACT_SUFX=	.c.gz
 
 MAINTAINER=	mbr@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/${AP_PORT}
+BUILD_DEPENDS=	${PREFIX}/sbin/apxs:${PORTSDIR}/www/${AP_PORT}
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-RUN_DEPENDS=	${LOCALBASE}/sbin/${AP_TARGET}:${PORTSDIR}/www/${AP_PORT}
+RUN_DEPENDS=	${PREFIX}/sbin/${AP_TARGET}:${PORTSDIR}/www/${AP_PORT}
 
 .include <bsd.port.pre.mk>
 
-APXS=		${LOCALBASE}/sbin/apxs
+APXS=		${PREFIX}/sbin/apxs
 
 AP_PORT?=	apache13
 .if exists(${APXS})
@@ -56,6 +56,11 @@ do-extract:
 		${CHOWN} -R 0:0 ${WRKDIR}; \
 	fi
 .endif
+
+post-patch:
+	@${CP} ${WRKDIR}/mod_auth_mysql/Makefile ${WRKDIR}/mod_auth_mysql/Makefile.new
+	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' < ${WRKDIR}/mod_auth_mysql/Makefile.new \
+	    > ${WRKDIR}/mod_auth_mysql/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)
