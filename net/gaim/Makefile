@@ -18,8 +18,8 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_GTK=	yes
-WANT_ESOUND=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomehack gtk12 esound
 WANT_GNOME=	yes
 USE_PERL5=	yes
 USE_LIBTOOL=	yes
@@ -33,26 +33,19 @@ MAN1=		gaim.1
 
 .if !defined(WITHOUT_GDK_PIXBUF)
 # Note, gdk-pixbuf is needed for buddy icon support.
-LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
+USE_GNOME+=	gdkpixbuf
 .endif
-.if defined(HAVE_GNOME)
-USE_GNOME=	yes
+.if ${HAVE_GNOME:Mlibpanel} != ""
+USE_GNOME+=	libpanel
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 CONFIGURE_ARGS+=	--enable-panel
+PKGNAMESUFFIX=	-gnome
 .else
 CONFIGURE_ARGS+=	--disable-gnome
 .endif
-.if defined(HAVE_ESOUND)
-USE_ESOUND=	yes
-.else
-CONFIGURE_ARGS+=	--disable-esd
-.endif
 
-pre-patch:
+post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthreads|${PTHREAD_LIBS:S/"//g}|g; \
 		s|-lpthread|${PTHREAD_LIBS:S/"//g}|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in*" | xargs ${REINPLACE_CMD} -e \
-		's|[(]datadir[)]/gnome/|(datadir)/|g ; \
-		 s|[(]datadir[)]/locale|(prefix)/share/locale|g'
 
 .include <bsd.port.post.mk>
