@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	kdirstat
-PORTVERSION=	2.2.0
+PORTVERSION=	2.3.7
 CATEGORIES=	sysutils kde
 MASTER_SITES=	http://kdirstat.sourceforge.net/download/
-EXTRACT_SUFX=   .tgz
 
 MAINTAINER=	stefan.jahn@nemesis-sektor.de
 COMMENT=	A small KDE utility that sums up disk usage for direcory trees
 
+USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
