@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lame
-PORTVERSION=	3.95.1
-PORTREVISION=	2
+PORTVERSION=	3.96
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.fu-berlin.de/unix/sound/%SUBDIR%/
@@ -30,7 +29,7 @@ NO_PACKAGE=	"patent issues, see http://www.mp3licensing.com/"
 
 MAN1=		lame.1
 
-DOC_FILES=	API LICENSE PRESETS.draft README TODO USAGE
+DOC_FILES=	API LICENSE README TODO USAGE
 
 .if defined(NOPORTDOCS)
 do-install:
