@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	highlight
-PORTVERSION=	2.0.23
-PORTEPOCH=	1
+PORTVERSION=	2.0.25
+PORTEPOCH=	0
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.andre-simon.de/zip/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
@@ -27,8 +27,16 @@ MAKE_ARGS=	CC="${CXX}" \
 		LDFLAGS="${LDFLAGS}"
 ALL_TARGET=	${PORTNAME}
 
+PLIST_FILES=	bin/highlight
+
 MAN1=		${PORTNAME}.1
 MANCOMPRESSED=	yes
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
+
+.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -56,4 +64,12 @@ do-install:
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+post-install:
+.for dir in ${PREFIX}/share/${PORTNAME} ${PREFIX}/share/examples/${PORTNAME}
+	@${FIND} ${dir} ! -type d | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${dir} -type d | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+.endfor
+
+.include <bsd.port.post.mk>
