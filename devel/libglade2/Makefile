@@ -1,22 +1,20 @@
 # New ports collection makefile for:	libglade
-# Version required:			0.3
+# Version required:			0.7
 # Date created:				18 August 1999
 # Whom:					Ade Lovett <ade@lovett.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	libglade-0.3
+DISTNAME=	libglade-0.7
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/libglade
 
 MAINTAINER=	ade@lovett.com
 
-LIB_DEPENDS=	gnome.2:${PORTSDIR}/x11/gnomelibs \
-		xml.4:${PORTSDIR}/textproc/libxml
-
-BROKEN=		problems with rpath handling in libtool
+LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs \
+		xml.5:${PORTSDIR}/textproc/libxml
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
