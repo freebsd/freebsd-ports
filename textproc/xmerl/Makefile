@@ -25,6 +25,12 @@ USE_GMAKE=	yes
 
 XMERL=		${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 do-install:
 	@${MKDIR} ${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}
 
@@ -44,4 +50,4 @@ do-install:
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${XMERL}
 	@${LN} -sf ${PORTNAME}-${PORTVERSION} ${PREFIX}/lib/erlang/lib/${PORTNAME}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

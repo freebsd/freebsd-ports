@@ -25,6 +25,12 @@ USE_SIZE=	yes
 MAN1=		yaws.1
 MAN5=		yaws.conf.5 yaws_api.5
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 post-extract:
 	@${RM} -r ${WRKSRC}/www/.xvpics ${WRKSRC}/www/testdir
 	@${FIND} ${WRKSRC} -name .empty | ${XARGS} ${RM}
@@ -56,4 +62,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/yaws.pdf ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
