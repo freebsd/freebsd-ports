@@ -1,0 +1,56 @@
+momspider/libwww-perl-0.40/LWP_Changes.pl
+momspider/libwww-perl-0.40/wwwdates.pl
+momspider/libwww-perl-0.40/wwwerror.pl
+momspider/libwww-perl-0.40/wwwfile.pl
+momspider/libwww-perl-0.40/wwwhtml.pl
+momspider/libwww-perl-0.40/wwwhttp.pl
+momspider/libwww-perl-0.40/wwwmime.pl
+momspider/libwww-perl-0.40/wwwurl.pl
+momspider/libwww-perl-0.40/get
+momspider/libwww-perl-0.40/testdates
+momspider/libwww-perl-0.40/mime.types
+momspider/libwww-perl-0.40/README.html
+momspider/libwww-perl-0.40/Artistic.txt
+momspider/libwww-perl-0.40/Makefile
+momspider/libwww-perl-0.40/INSTALL.txt
+momspider/libwww-perl-0.40/testescapes
+momspider/libwww-perl-0.40/testlinks
+momspider/libwww-perl-0.40/wwwbot.pl
+momspider/libwww-perl-0.40/testbot
+momspider/libwww-perl-0.40/wwwmailcap.pl
+momspider/libwww-perl-0.40/sys_socket_ph.c
+momspider/libwww-perl-0.40/hostname.pl
+momspider/libwww-perl-0.40/www.pl
+momspider/examples/short-email.txt
+momspider/examples/.momspider-sites
+momspider/examples/.momspider-avoid
+momspider/examples/short-instruct
+momspider/examples/short-index.html
+momspider/examples/short-outfile.txt
+momspider/examples/ICS-instruct
+momspider/examples/.momspider-instruct
+momspider/docs/extending.html
+momspider/docs/config.html
+momspider/docs/www94_paper.ps
+momspider/docs/instruct.html
+momspider/docs/usage.html
+momspider/docs/avoiding.html
+momspider/docs/metainfo.html
+momspider/docs/INSTALL.txt
+momspider/momvisit.pl
+momspider/momspider
+momspider/momindex.pl
+momspider/momhistory.pl
+momspider/momevent.pl
+momspider/momemail.pl
+momspider/momconfig.pl.orig
+momspider/momconfig.pl
+momspider/momavoid.pl
+momspider/README.html
+momspider/system-sites
+momspider/MOM_Changes.pl
+momspider/system-avoid
+@dirrm momspider/libwww-perl-0.40
+@dirrm momspider/examples
+@dirrm momspider/docs
+@dirrm momspider
