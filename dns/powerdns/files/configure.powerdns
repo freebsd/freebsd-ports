@@ -16,7 +16,6 @@ PostgreSQL	"PostgreSQL driver" ON \
 MySQL323	"MySQL 3.23 driver" OFF \
 MySQL40		"MySQL 4.0 driver" OFF \
 MySQL41		"MySQL 4.1 driver" OFF \
-OpenLDAP20	"OpenLDAP 2.0 backend" OFF \
 OpenLDAP21	"OpenLDAP 2.1 backend" OFF \
 OpenLDAP22	"OpenLDAP 2.2 backend" OFF \
 SQLite		"SQLite backend" OFF \
@@ -59,10 +58,6 @@ while [ "$1" ]; do
 		\"MySQL41\")
 			echo WITH_MYSQL_DRIVER=YES
 			echo MYSQL_PORT?=databases/mysql41-client
-			;;
-		\"OpenLDAP20\")
-			echo WITH_LDAP=YES
-			echo LDAP_PORT?=net/openldap20-client
 			;;
 		\"OpenLDAP21\")
 			echo WITH_LDAP=YES
