@@ -1,0 +1,4 @@
+IO - various IO modules
+
+This ports aims to add IO::Dir, IO::Poll, IO::Socket::INET, IO::Socket::UNIX
+to standart perl 5.00503 distribution.
