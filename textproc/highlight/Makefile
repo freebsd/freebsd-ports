@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	highlight
-PORTVERSION=	2.0d11	#someday, people will stick to numbers and decimal points
+PORTVERSION=	2.0d12	#someday, people will stick to numbers and decimal points
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.andre-simon.de/zip/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/d/-/}
