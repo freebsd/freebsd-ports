@@ -1,0 +1,22 @@
+This is the distributed.net's rc5/des/csc/ogr distributed
+computing client.
+
+Please look at the dnetc man page for more information.
+
+As a "loosely knit" group of computer users from all
+over the world, we take up challenges which require
+a lot of computing power.  We solve these by distributing
+the cpu power needed over the computers of our members.  That's
+why we're called "distributed.net."  Read more about
+it at www.distributed.net.
+
+For your statistics, check out:
+	http://stats.distributed.net/
+
+For general help with the client or distributed.net, mail:
+	help@distributed.net
+
+For specific information regarding this port/package, mail:
+	dbaker@distributed.net or dbaker@cuckoo.com
+
+http://www.distributed.net/cgi-bin/dnet-finger.cgi?user=dbaker
