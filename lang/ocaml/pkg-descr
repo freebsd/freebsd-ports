@@ -17,3 +17,15 @@ the generated programs deliver excellent performance (better than
 Standard ML of New Jersey 1.08 on our tests), while retaining the
 moderate memory requirements of the bytecode compiler. The native-code
 compiler currently runs on the following platforms:
+
+    Alpha processors: DecStation 3000 under OSF1
+    Sparc processors: Sun Sparcstation under SunOS 4.1 or Solaris 2
+    Intel 386 / 486 / Pentium processors: PCs under Linux, NextStep, FreeBSD,
+					Windows NT, Windows 95
+    Mips processors: DecStation 3100 and 5000 under Ultrix 4
+    HP PA-RISC processors: HP 9000/700 under NextStep (sorry, no HPUX yet)
+    PowerPC and IBM RS/6000 processors: IBM workstations under AIX 3.2
+
+More information on Objective Caml is available on the World Wide Web:
+
+    http://pauillac.inria.fr/ocaml/
