@@ -1,0 +1,12 @@
+--- prips.c.orig	Tue Jan 11 20:26:36 2000
++++ prips.c	Tue Jan 11 20:26:38 2000
+@@ -1,8 +1,8 @@
++#include "prips.h"
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <math.h>
+ #include <arpa/inet.h>
+-#include "prips.h"
+ 
+ #if !defined(INET_ADDRSTRLEN)
+ #define INET_ADDRSTRLEN 16
