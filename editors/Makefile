@@ -2,6 +2,7 @@
 #
 
     SUBDIR += AbiWord
+    SUBDIR += AbiWord2
     SUBDIR += MathPlanner
     SUBDIR += aee
     SUBDIR += apel
