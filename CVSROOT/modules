@@ -3869,6 +3869,7 @@ kannel		ports/www/kannel
 kappdock	ports/x11-wm/kappdock
 kaptain		ports/devel/kaptain
 karamba		ports/deskutils/karamba
+kasablanca	ports/ftp/kasablanca
 kaskade		ports/math/kaskade
 kaspaliste	ports/print/kaspaliste
 katalog		ports/misc/katalog
