@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.sleepycat.com/update/snapshot/
 DISTNAME=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 #PATCH_SITES=	${MASTER_SITES}
 #PATCHFILES=	patch.${PORTVERSION}.1 patch.${PORTVERSION}.2

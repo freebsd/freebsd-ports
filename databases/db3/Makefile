@@ -17,7 +17,7 @@ PATCH_SITES=	http://www.sleepycat.com/update/${PORTVERSION}/
 PATCHFILES=	patch.${PORTVERSION}.1 patch.${PORTVERSION}.2
 PATCH_DIST_STRIP= -d ${WRKDIR}/${DISTNAME}
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 

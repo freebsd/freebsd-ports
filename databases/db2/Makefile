@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sleepycat.com/update/snapshot/
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 Y2K=		http://www.sleepycat.com/faq.html#A8
 
