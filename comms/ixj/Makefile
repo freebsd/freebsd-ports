@@ -18,6 +18,10 @@ ONLY_FOR_ARCHS=	i386
 WRKSRC=         ${WRKDIR}/ixj_freebsd
 MAKEFILE=	Makefile.BSD
 
+post-patch:
+	${CP} ${FILESDIR}/ixj.sh ${WRKSRC}
+	${PERL} -pi.orig -e "s@%%PREFIX%%@${PREFIX}@g" ${WRKSRC}/ixj.sh
+
 pre-build:
 .if !exists(${SRC_BASE}/sys/Makefile)
 	@${ECHO} "*************************************************"; \
@@ -26,17 +30,18 @@ pre-build:
 	exit 1
 .endif
 
-post-patch:
-	${CP} ${FILESDIR}/ixj.sh ${WRKSRC}
-	${PERL} -pi.orig -e "s@%%PREFIX%%@${PREFIX}@g" ${WRKSRC}/ixj.sh
-
 do-install:
-	@${MKDIR} -p ${PREFIX}/modules
+	@${MKDIR} ${PREFIX}/modules
 	@${INSTALL_DATA} ${WRKSRC}/ixj.ko ${PREFIX}/modules
-	@${MKDIR} -p ${PREFIX}/include/sys
+	@${MKDIR} ${PREFIX}/include/sys
 	@${INSTALL_DATA} ${WRKSRC}/ixjuser.h ${PREFIX}/include/sys
 	@${INSTALL_DATA} ${WRKSRC}/telephony.h ${PREFIX}/include/sys
 	@${INSTALL_SCRIPT} ${WRKSRC}/ixj.sh ${PREFIX}/etc/rc.d/
 	@${CAT} ${PKGMESSAGE}
+
+header-install: patch
+	@${MKDIR} ${PREFIX}/include/sys
+	@${INSTALL_DATA} ${WRKSRC}/ixjuser.h ${PREFIX}/include/sys
+	@${INSTALL_DATA} ${WRKSRC}/telephony.h ${PREFIX}/include/sys
 
 .include <bsd.port.mk>
