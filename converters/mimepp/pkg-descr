@@ -1,0 +1,8 @@
+MIME++ is a C++ class library for creating, parsing, and
+editing messages in MIME format.  The class structure in
+MIME++ closely follows the BNF grammar specified in RFC-822
+and RFC-1521, making the library intuitive for developers
+who are familiar with the MIME standard.  MIME++ supports
+quoted-printable and base64 encoding/decoding, and all
+header fields specified in RFC-822, RFC-1036, and RFC-1521.
+MIME++ is extensible through inheritance and polymorphism.
