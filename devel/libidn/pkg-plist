@@ -1,4 +1,5 @@
 bin/idn
+include/idn-free.h
 include/idn-int.h
 include/idna.h
 include/punycode.h
