@@ -4804,6 +4804,7 @@ mpgtx		ports/graphics/mpgtx
 mpich		ports/net/mpich
 mplayer		ports/multimedia/mplayer
 mplayer-fonts	ports/multimedia/mplayer-fonts
+mplayer-plugin	ports/www/mplayer-plugin
 mplayer-skins	ports/multimedia/mplayer-skins
 mplayerxp	ports/multimedia/mplayerxp
 mplex		ports/graphics/mplex
