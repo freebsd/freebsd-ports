@@ -15,24 +15,22 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lars@thegler.dk
 COMMENT=	Log4j implementation for Perl
 
-RUN_DEPENDS=	${SITE_PERL}/Log/Dispatch.pm:${PORTSDIR}/devel/p5-Log-Dispatch
-RUN_DEPENDS+=	${SITE_PERL}/Test/Simple.pm:${PORTSDIR}/devel/p5-Test-Simple
-
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-RUN_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
-.endif # ${PERL_LEVEL} < 500601
+BUILD_DEPENDS=	${SITE_PERL}/Log/Dispatch.pm:${PORTSDIR}/devel/p5-Log-Dispatch \
+		${SITE_PERL}/Test/Simple.pm:${PORTSDIR}/devel/p5-Test-Simple
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PERL5=	yes
 PERL_CONFIGURE=	yes
-ARCH_PERL=	${SITE_PERL}/${PERL_ARCH}
 
 MAN3=		Log::Log4perl.3 \
 		Log::Log4perl::Appender.3 \
 		Log::Log4perl::Appender::DBI.3 \
 		Log::Log4perl::Appender::TestArrayBuffer.3 \
 		Log::Log4perl::Appender::TestBuffer.3 \
+		Log::Log4perl::Config.3 \
+		Log::Log4perl::Config::DOMConfigurator.3 \
+		Log::Log4perl::Config::PropertyConfigurator.3 \
+		Log::Log4perl::Config::Watch.3 \
 		Log::Log4perl::DateFormat.3 \
 		Log::Log4perl::FAQ.3 \
 		Log::Log4perl::Filter.3 \
@@ -57,6 +55,11 @@ MAN3=		Log::Log4perl.3 \
 		Log::Log4perl::MDC.3 \
 		Log::Log4perl::NDC.3
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500601
+BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+RUN_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+.endif # ${PERL_LEVEL} < 500601
 
 .include <bsd.port.post.mk>
