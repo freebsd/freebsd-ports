@@ -15,11 +15,14 @@ lib/perl5/site_perl/%%PERL_VER%%/gnump3d/oggtagreader.pm
 lib/perl5/site_perl/%%PERL_VER%%/gnump3d/playlist.pm
 lib/perl5/site_perl/%%PERL_VER%%/gnump3d/plugins/COPYING.pm
 lib/perl5/site_perl/%%PERL_VER%%/gnump3d/plugins/bug.pm
+lib/perl5/site_perl/%%PERL_VER%%/gnump3d/plugins/info.pm
 lib/perl5/site_perl/%%PERL_VER%%/gnump3d/plugins/last.pm
+lib/perl5/site_perl/%%PERL_VER%%/gnump3d/plugins/now.pm
 lib/perl5/site_perl/%%PERL_VER%%/gnump3d/plugins/playlist.pm
 lib/perl5/site_perl/%%PERL_VER%%/gnump3d/plugins/prefs.pm
 lib/perl5/site_perl/%%PERL_VER%%/gnump3d/plugins/search.pm
 lib/perl5/site_perl/%%PERL_VER%%/gnump3d/plugins/stats.pm
+lib/perl5/site_perl/%%PERL_VER%%/gnump3d/tagreader.pm
 share/gnump3d/LaFrere/AUTHOR
 share/gnump3d/LaFrere/config.ini
 share/gnump3d/LaFrere/error.html
@@ -56,6 +59,8 @@ share/gnump3d/Thexder/spacer.gif
 share/gnump3d/Thexder/stats.html
 share/gnump3d/default/AUTHOR
 share/gnump3d/default/error.html
+share/gnump3d/default/footer.tmpl
+share/gnump3d/default/header.tmpl
 share/gnump3d/default/index.html
 share/gnump3d/default/plugin.html
 share/gnump3d/default/results.html
@@ -63,6 +68,7 @@ share/gnump3d/default/search.html
 share/gnump3d/default/stats.html
 share/gnump3d/default/style.css
 share/gnump3d/nausicaa/AUTHOR
+share/gnump3d/nausicaa/config.ini
 share/gnump3d/nausicaa/error.html
 share/gnump3d/nausicaa/index.html
 share/gnump3d/nausicaa/plugin.html
