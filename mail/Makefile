@@ -191,6 +191,7 @@
     SUBDIR += tlb
     SUBDIR += tmda
     SUBDIR += vbsfilter
+    SUBDIR += vm-pop3d
     SUBDIR += vpopmail
     SUBDIR += vqadmin
     SUBDIR += vrfy
