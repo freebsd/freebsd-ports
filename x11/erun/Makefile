@@ -12,7 +12,7 @@ MASTER_SITES=	http://void.mapopolis.com/~jacob/c0de/
 
 MAINTAINER=	kbyanc@posi.net
 
-LIB_DEPENDS=    epplet.1:${PORTSDIR}/x11-wm/epplets
+LIB_DEPENDS=    epplet.1:${PORTSDIR}/x11-wm/libepplet
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
