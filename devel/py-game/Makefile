@@ -35,7 +35,7 @@ PYNUMERIC=	${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric17
 .endif
 
 do-configure:
-	@${SETUP_CMD} config.py
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} config.py
 
 .if !defined(NOPORTDOCS)
 post-install:
