@@ -1,0 +1,5 @@
+include/statgrab.h
+lib/libstatgrab.a
+lib/libstatgrab.la
+lib/libstatgrab.so
+lib/libstatgrab.so.1
