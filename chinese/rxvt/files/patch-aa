@@ -1,52 +1,42 @@
---- Makefile.in.orig	Mon Mar 29 13:31:37 1999
-+++ Makefile.in	Tue Jun 22 11:20:32 1999
+--- Makefile.in.orig	Tue Dec 21 18:07:54 1999
++++ Makefile.in	Tue Feb  8 14:01:20 2000
 @@ -9,7 +9,7 @@
  first_rule: all
  dummy:
  
--subdirs = src doc rclock src/graphics
+-subdirs = src doc rclock src/graphics src/test
 +subdirs = src doc src/graphics
  
  DIST =	INSTALL README.configure configure Makefile Makefile.in ChangeLog
  
---- doc/Makefile.in.orig	Tue Jun  8 17:53:55 1999
-+++ doc/Makefile.in	Tue Jun 22 11:23:47 1999
-@@ -55,7 +55,7 @@
+--- doc/Makefile.in.orig	Tue Sep 28 15:04:39 1999
++++ doc/Makefile.in	Tue Feb  8 14:02:31 2000
+@@ -56,7 +56,7 @@
  
  tags allbin:
  
 -alldoc:	$(basedir)/$(VERNAME).lsm rxvt.1 rxvt.html rxvtRef.html rxvtRef.txt
 +alldoc:	rxvt.1
  
- yodl/versioninfo.yo: yodl/versioninfo.yo.in ../autoconf/Make.common.in
+ yodl/versioninfo.yo: yodl/versioninfo.yo.in ../src/version.h
  	$(SED) $(SEDREPLACE) < $(srcdir)/yodl/versioninfo.yo.in > $@
-@@ -66,8 +66,7 @@
- rxvt.tbl: yodl/rxvt.yo $(YODL_RXVT) yodl/versioninfo.yo yodl/masonyodl.yo
- 	yodl2man -orxvt.tbl yodl/rxvt.yo
- 
--rxvt.1: rxvt.tbl Makefile
--	@if test x$(TBL) = x; then : ; else echo "Making rxvt.1"; $(TBL) $(srcdir)/rxvt.tbl > rxvt.1 ; fi
-+rxvt.1: 
- 
- rxvt.html: yodl/rxvt.yo $(YODL_RXVT) yodl/versioninfo.yo yodl/masonyodl.yo
- 	yodl2html -o$@ yodl/rxvt.yo
-@@ -87,7 +86,7 @@
+@@ -85,7 +85,7 @@
  distclean:
  
- install: rxvt.1
+ install:
 -	$(INSTALL_DATA) rxvt.1 $(DESTDIR)$(mandir)/$(manprefix)rxvt.$(manext)
-+	$(INSTALL_DATA) rxvt.1 $(DESTDIR)$(mandir)/$(manprefix)crxvt.$(manext)
++	$(INSTALL_DATA) rxvt.1 $(PREFIX)/man/man1/crxvt.1
  
  uninstall:
  	-cd $(mandir); $(RMF) $(manprefix)rxvt.$(manext)
---- src/Makefile.in.orig	Tue Jun 22 11:21:05 1999
-+++ src/Makefile.in	Tue Jun 22 11:21:17 1999
-@@ -98,7 +98,7 @@
+--- src/Makefile.in.orig	Tue Feb  8 14:03:35 2000
++++ src/Makefile.in	Tue Feb  8 14:04:10 2000
+@@ -97,7 +97,7 @@
  	(cd $(srcdir); $(RMF) Makefile)
  
  install: allbin alldoc
 -	$(INSTALL_PROGRAM) rxvt $(DESTDIR)$(bindir)/$(binprefix)rxvt
-+	$(INSTALL_PROGRAM) rxvt $(DESTDIR)$(bindir)/$(binprefix)crxvt
++	$(INSTALL_PROGRAM) rxvt $(PREFIX)/bin/crxvt
  
  uninstall:
  	(cd $(bindir); $(RMF) $(binprefix)rxvt)
