@@ -67,6 +67,9 @@ share/gnome/gnomeicu/emoticons/Default/sad.png
 share/gnome/gnomeicu/emoticons/Default/scream.png
 share/gnome/gnomeicu/emoticons/Default/smile.png
 share/gnome/gnomeicu/emoticons/Default/smile2.png
+share/gnome/gnomeicu/emoticons/Default/smile8.png
+share/gnome/gnomeicu/emoticons/Default/straight.png
+share/gnome/gnomeicu/emoticons/Default/tongue.png
 share/gnome/gnomeicu/emoticons/Default/unsure.png
 share/gnome/gnomeicu/emoticons/Default/wink.png
 share/gnome/gnomeicu/emoticons/MSN/angel.gif
@@ -129,11 +132,7 @@ share/gnome/gnomeicu/glade/main.glade
 share/gnome/gnomeicu/glade/message.glade
 share/gnome/gnomeicu/glade/pref.glade
 share/gnome/gnomeicu/glade/user_info.glade
-share/gnome/gnomeicu/icons/Default/gnomeicu-animation001.png
-share/gnome/gnomeicu/icons/Default/gnomeicu-animation002.png
-share/gnome/gnomeicu/icons/Default/gnomeicu-animation003.png
-share/gnome/gnomeicu/icons/Default/gnomeicu-animation004.png
-share/gnome/gnomeicu/icons/Default/gnomeicu-animation005.png
+share/gnome/gnomeicu/icons/Default/gnomeicu-animation.gif
 share/gnome/gnomeicu/icons/Default/gnomeicu-auth.png
 share/gnome/gnomeicu/icons/Default/gnomeicu-away.png
 share/gnome/gnomeicu/icons/Default/gnomeicu-blank.png
@@ -157,10 +156,9 @@ share/gnome/gnomeicu/icons/Default/gnomeicu-online.png
 share/gnome/gnomeicu/icons/Default/gnomeicu-rename.png
 share/gnome/gnomeicu/icons/Default/gnomeicu-still.png
 share/gnome/gnomeicu/icons/Default/gnomeicu-url.png
-share/gnome/gnomeicu/icons/Eyeballs/gnomeicu-animation.png
+share/gnome/gnomeicu/icons/Eyeballs/gnomeicu-animation.gif
 share/gnome/gnomeicu/icons/Eyeballs/gnomeicu-auth.png
 share/gnome/gnomeicu/icons/Eyeballs/gnomeicu-away.png
-share/gnome/gnomeicu/icons/Eyeballs/gnomeicu-blank.png
 share/gnome/gnomeicu/icons/Eyeballs/gnomeicu-cancel.png
 share/gnome/gnomeicu/icons/Eyeballs/gnomeicu-chat.png
 share/gnome/gnomeicu/icons/Eyeballs/gnomeicu-contact.png
@@ -180,7 +178,7 @@ share/gnome/gnomeicu/icons/Eyeballs/gnomeicu-online.png
 share/gnome/gnomeicu/icons/Eyeballs/gnomeicu-rename.png
 share/gnome/gnomeicu/icons/Eyeballs/gnomeicu-still.png
 share/gnome/gnomeicu/icons/Eyeballs/gnomeicu-url.png
-share/gnome/gnomeicu/icons/Gradients/gnomeicu-animation.png
+share/gnome/gnomeicu/icons/Gradients/gnomeicu-animation.gif
 share/gnome/gnomeicu/icons/Gradients/gnomeicu-away.png
 share/gnome/gnomeicu/icons/Gradients/gnomeicu-dnd.png
 share/gnome/gnomeicu/icons/Gradients/gnomeicu-ffc.png
@@ -190,30 +188,18 @@ share/gnome/gnomeicu/icons/Gradients/gnomeicu-na.png
 share/gnome/gnomeicu/icons/Gradients/gnomeicu-occ.png
 share/gnome/gnomeicu/icons/Gradients/gnomeicu-offline.png
 share/gnome/gnomeicu/icons/Gradients/gnomeicu-online.png
-share/gnome/gnomeicu/icons/reDubbed/gnomeicu-animation.png
-share/gnome/gnomeicu/icons/reDubbed/gnomeicu-auth.png
 share/gnome/gnomeicu/icons/reDubbed/gnomeicu-away.png
-share/gnome/gnomeicu/icons/reDubbed/gnomeicu-blank.png
-share/gnome/gnomeicu/icons/reDubbed/gnomeicu-cancel.png
-share/gnome/gnomeicu/icons/reDubbed/gnomeicu-chat.png
-share/gnome/gnomeicu/icons/reDubbed/gnomeicu-contact.png
 share/gnome/gnomeicu/icons/reDubbed/gnomeicu-dnd.png
 share/gnome/gnomeicu/icons/reDubbed/gnomeicu-ffc.png
-share/gnome/gnomeicu/icons/reDubbed/gnomeicu-file.png
-share/gnome/gnomeicu/icons/reDubbed/gnomeicu-hist.png
 share/gnome/gnomeicu/icons/reDubbed/gnomeicu-info
-share/gnome/gnomeicu/icons/reDubbed/gnomeicu-info.png
 share/gnome/gnomeicu/icons/reDubbed/gnomeicu-inv.png
-share/gnome/gnomeicu/icons/reDubbed/gnomeicu-message.png
 share/gnome/gnomeicu/icons/reDubbed/gnomeicu-na.png
 share/gnome/gnomeicu/icons/reDubbed/gnomeicu-occ.png
 share/gnome/gnomeicu/icons/reDubbed/gnomeicu-offline.png
-share/gnome/gnomeicu/icons/reDubbed/gnomeicu-ok.png
 share/gnome/gnomeicu/icons/reDubbed/gnomeicu-online.png
-share/gnome/gnomeicu/icons/reDubbed/gnomeicu-rename.png
-share/gnome/gnomeicu/icons/reDubbed/gnomeicu-still.png
-share/gnome/gnomeicu/icons/reDubbed/gnomeicu-url.png
-share/gnome/pixmaps/gnome-gnomeicu.xpm
+share/gnome/help/gnomeicu/C/gnomeicu.xml
+share/gnome/omf/gnomeicu/gnomeicu-C.omf
+share/gnome/pixmaps/gnome-gnomeicu.png
 share/gnome/sounds/gnomeicu/message.wav
 share/locale/ca/LC_MESSAGES/gnomeicu.mo
 share/locale/cs/LC_MESSAGES/gnomeicu.mo
@@ -250,6 +236,9 @@ share/locale/vi/LC_MESSAGES/gnomeicu.mo
 share/locale/zh_CN/LC_MESSAGES/gnomeicu.mo
 share/locale/zh_TW/LC_MESSAGES/gnomeicu.mo
 @dirrm share/gnome/sounds/gnomeicu
+@dirrm share/gnome/omf/gnomeicu
+@dirrm share/gnome/help/gnomeicu/C
+@dirrm share/gnome/help/gnomeicu
 @dirrm share/gnome/gnomeicu/icons/reDubbed
 @dirrm share/gnome/gnomeicu/icons/Gradients
 @dirrm share/gnome/gnomeicu/icons/Eyeballs
