@@ -1,21 +1,21 @@
 # New ports collection makefile for:	astyle
-# Version required:	1.11.5
+# Version required:	1.11.6
 # Date created:		31 Jan 1999
 # Whom:			Don Croyle <croyle@gelemna.ft-wayne.in.us>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	astyle_1.11.5_src
-PKGNAME=	astyle-1.11.5
+DISTNAME=	astyle_1.11.6_src
+PKGNAME=	astyle-1.11.6
 CATEGORIES= 	devel textproc
-MASTER_SITES=	http://gene.md.huji.ac.il/~tald/astyle/stable/src/ \
+MASTER_SITES=	ftp://astyle.sourceforge.net/pub/astyle/stable/src/\
 		http://www.infonex.com/~dacroyle/freebsd/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	croyle@gelemna.ft-wayne.in.us
 
-WRKSRC=		${WRKDIR}/astyle_1.11.5
+WRKSRC=		${WRKDIR}/astyle_1.11.6
 
 ALL_TARGET=	astyle
 
