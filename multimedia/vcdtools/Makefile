@@ -10,10 +10,12 @@ PORTNAME=	vcdtools
 PORTVERSION=	0.4
 PORTREVISION=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	ftp://ftp.debian.org/debian/pool/main/v/vcdtools/
+MASTER_SITES=	${MASTER_SITE_DEBIAN}
+MASTER_SITE_SUBDIR=	pool/main/v/vcdtools
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Create your own VCD
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
 

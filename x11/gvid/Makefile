@@ -8,10 +8,12 @@
 PORTNAME=	gvid
 PORTVERSION=	0.3
 CATEGORIES=	x11 gnome
-MASTER_SITES=	ftp://ftp.debian.org/debian/pool/main/g/gvid/
+MASTER_SITES=	${MASTER_SITE_DEBIAN}
+MASTER_SITE_SUBDIR=	pool/main/g/gvid
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Gnome applet to change video resolution
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
 

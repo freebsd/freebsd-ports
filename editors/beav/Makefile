@@ -8,10 +8,12 @@
 PORTNAME=	beav
 PORTVERSION=	1.40.15
 CATEGORIES=	editors
-MASTER_SITES=	ftp://ftp.debian.org/debian/pool/main/b/beav/
+MASTER_SITES=	${MASTER_SITE_DEBIAN}
+MASTER_SITE_SUBDIR=	pool/main/b/beav
 DISTNAME=	${PORTNAME}_${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Binary Editor And Viewer, a full featured binary file editor
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
