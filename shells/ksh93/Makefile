@@ -27,6 +27,12 @@ MAKE_ENV+=	LDFLAGS=-static
 MAN1=		ksh93.1
 INSTALLROOT=	${WRKSRC}/arch/freebsd.${ARCH}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64"
+.endif
+
 do-build:
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} ${SH} bin/package make
 
@@ -52,4 +58,4 @@ test: build
 	    ${SETENV} SHELL=${INSTALLROOT}/bin/ksh \
 		${INSTALLROOT}/bin/ksh shtests
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
