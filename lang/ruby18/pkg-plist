@@ -94,6 +94,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/time.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/timeout.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/tracer.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/uri.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/weakref.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/cgi/session.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/irb/xmp.rb
@@ -131,6 +132,13 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/shell/process-controller.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/shell/system-command.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/shell/version.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/uri/common.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/uri/ftp.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/uri/generic.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/uri/http.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/uri/https.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/uri/ldap.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/uri/mailto.rb
 @exec /bin/mkdir -p %D/%%RUBY_SITEARCHLIBDIR%%
 @dirrm %%RUBY_SITEARCHLIBDIR%%
 %%RUBYLIB%%@dirrm %%RUBY_SITELIBDIR%%
@@ -142,6 +150,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/irb
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/net
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/shell
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/uri
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%
 @unexec rmdir -p %D/lib/xemacs/site-lisp 2>/dev/null || true
 %%RUBY_ELISPDIR%%/.keep_me
