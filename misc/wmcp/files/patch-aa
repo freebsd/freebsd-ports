@@ -1,19 +1,21 @@
---- Makefile.orig	Thu May 27 00:17:20 1999
-+++ Makefile	Tue Jun 29 10:07:22 1999
-@@ -1,6 +1,6 @@
+--- Makefile.orig	Thu May 27 16:17:20 1999
++++ Makefile	Fri Aug 11 02:28:17 2000
+@@ -1,7 +1,7 @@
  
  
 -INCLUDES =-I/usr/X11R6/include/X11 -I/usr/local/include -I/usr/include/X11R6/X11
-+INCLUDES =-I/usr/X11R6/include/X11 -I/usr/X11R6/include -I/usr/local/include -I/usr/include/X11R6/X11
- LIBINC =-L/usr/X11R6/lib -L/usr/include/lib
+-LIBINC =-L/usr/X11R6/lib -L/usr/include/lib
++INCLUDES = -I${X11BASE}/include/X11 -I${X11BASE}/include
++LIBINC = -L${X11BASE}/lib
  LIBS = -lm -lX11 -lXpm -lXext
  
+ TARGET  = wmcp
 @@ -31,10 +31,10 @@
  ###################################################################
  
  ${OBJECTS}: ${SOURCE}
 -	gcc -g -c -Wall ${INCLUDES} ${FLAGS} $< -o $*.o
-+	${CC} ${CFLAGS} -c -Wall ${INCLUDES} ${FLAGS} $< -o $*.o
++	${CC} ${CFLAGS} -c ${INCLUDES} ${FLAGS} $< -o $@
  
  ${TARGET}: ${OBJECTS}
 -	gcc -g -o ${TARGET} ${OBJECTS} ${LIBINC} ${LIBS}
