@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thudboard
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.7
 CATEGORIES=	games
 MASTER_SITES=	http://www.million.nl/file/
 
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinte
 
 USE_PYTHON=	yes
 
-WRKSRC=		${WRKDIR}/thud
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-configure:
 	@${SED} -e "s#%%PREFIX%%#${PREFIX}# ; s#%%PYTHON_CMD%%#${PYTHON_CMD}#" \
@@ -30,9 +30,8 @@ do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC} 2>/dev/null
 
 do-install:
-	@${RM} -f ${WRKSRC}/battle.py.orig
 	@${MKDIR} ${DATADIR}
-	@${TAR} -C ${WRKSRC} --exclude="docs*" -cf - . | ${TAR} -C ${DATADIR} --unlink -xf -
+	@${TAR} -C ${WRKSRC} --exclude="*.py.orig" --exclude="docs*" -cf - . | ${TAR} -C ${DATADIR} --unlink -xf -
 	@${INSTALL_SCRIPT} ${WRKDIR}/thudboard.tmp ${PREFIX}/bin/thudboard
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
