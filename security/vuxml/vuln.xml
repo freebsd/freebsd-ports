@@ -30,6 +30,74 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+
+  <vuln vid="5e7f58c3-b3f8-4258-aeb8-795e5e940ff8">
+    <topic>mplayer heap overflow in http requests</topic>
+    <affects>
+      <package>
+	<name>mplayer</name>
+	<name>mplayer-gtk</name>
+	<name>mplayer-esound</name>
+	<name>mplayer-gtk-esound</name>
+	<range><lt>0.92.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>A remotely exploitable heap buffer overflow vulnerability was
+	  found in MPlayer's URL decoding code.  If an attacker can
+	  cause MPlayer to visit a specially crafted URL, arbitrary code
+	  execution with the privileges of the user running MPlayer may
+	  occur.  A `visit' might be caused by social engineering, or a
+	  malicious web server could use HTTP redirects which MPlayer
+	  would then process.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.mplayerhq.hu/homepage/design6/news.html</url>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108066964709058</url>
+      <!-- <freebsdpr>ports/64974</freebsdpr> -->
+    </references>
+    <dates>
+      <discovery>2004-03-30</discovery>
+      <entry>2004-03-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f8551668-de09-4d7b-9720-f1360929df07">
+    <topic>tcpdump ISAKMP payload handling remote denial-of-service</topic>
+    <affects>
+      <package>
+	<name>tcpdump</name>
+	<range><lt>3.8.3</lt></range>
+      </package>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>0</ge></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Chad Loder has discovered vulnerabilities in tcpdump's
+          ISAKMP protocol handler.  During an audit to repair these
+          issues, Bill Fenner discovered some related problems.</p>
+        <p>These vulnerabilities may be used by an attacker to crash a
+	  running `tcpdump' process.  They can only be triggered if
+	  the `-v' command line option is being used.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108067265931525</url>
+      <url>http://www.rapid7.com/advisories/R7-0017.html</url>
+      <cvename>CAN-2004-0183</cvename>
+      <cvename>CAN-2004-0184</cvename>
+    </references>
+    <dates>
+      <discovery>2004-03-12</discovery>
+      <entry>2004-03-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cad045c0-81a5-11d8-9645-0020ed76ef5a">
     <topic>zebra/quagga denial of service vulnerability</topic>
     <affects>
