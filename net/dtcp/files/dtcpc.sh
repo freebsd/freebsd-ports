@@ -37,5 +37,5 @@ pidfile="/var/run/${name}.pid"
 extra_commands="reload"
 
 load_rc_config $name
-flags="${dtcpc_flags} -u ${dtcpc_username} ${dtcpc_server}"
+command_args="-u ${dtcpc_username} ${dtcpc_server}"
 run_rc_command "$1"

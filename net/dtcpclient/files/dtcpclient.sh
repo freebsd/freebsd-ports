@@ -36,5 +36,5 @@ pidfile="/var/run/${name}.pid"
 extra_commands="reload"
 
 load_rc_config $name
-flags="${dtcpclient_flags} -u ${dtcpclient_username} ${dtcpclient_server}"
+command_args="-u ${dtcpclient_username} ${dtcpclient_server}"
 run_rc_command "$1"
