@@ -5,11 +5,11 @@ include/glib/gmodule.h
 lib/libglib11.a
 lib/libglib11.la
 lib/libglib11.so
-lib/libglib11.so.0
+lib/libglib11.so.0.3
 lib/libgmodule11.a
 lib/libgmodule11.la
 lib/libgmodule11.so
-lib/libgmodule11.so.0
+lib/libgmodule11.so.0.3
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/aclocal/glib.m4
