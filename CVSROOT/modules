@@ -3778,6 +3778,7 @@ mit-scheme	ports/lang/mit-scheme
 mixal		ports/lang/mixal
 mixer		src/usr.sbin/mixer
 mixer.app	ports/audio/mixer.app
+mixer_port	ports/sysutils/mixer
 mk		src/share/mk
 mk_cmds		src/usr.bin/mk_cmds
 mkbold		ports/x11-fonts/mkbold
