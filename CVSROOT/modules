@@ -3458,6 +3458,7 @@ krename		ports/sysutils/krename
 kripp		ports/security/kripp
 kronolith	ports/deskutils/kronolith
 krss		ports/deskutils/krss
+krusader	ports/x11-fm/krusader
 kseg		ports/math/kseg
 ksetispy	ports/astro/ksetispy
 ksetiwatch	ports/astro/ksetiwatch
