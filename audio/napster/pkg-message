@@ -1,5 +1,6 @@
-Each user will have to make their own copy of ${PREFIX}/share/nap/nap.conf
-into a directory of their choice, then run nap from that directory.
+Each user will have to make their own copy of @PREFIX@/share/nap/nap.conf.dist
+(named nap.conf) into a directory of their choice, then run nap from that 
+directory.
 
 The first time you run nap, run it with the '-b' file to create an index
 of your available MP3's.  You'll have to do this whenever you add new
@@ -10,7 +11,7 @@ to create an account, enter the desired username/password in nap.conf
 and run `nap -m'.
 
 For more documentation on this version of Napster, read the file
-${PREFIX}/share/doc/nap.  For information about Napster in general,
+@PREFIX@/share/doc/nap/README.  For information about Napster in general,
 check http://www.napster.com/ and http://www.napster.com/FAQ/
 
 Have fun!
