@@ -1,0 +1,11 @@
+--- Imakefile.orig	Wed Sep 22 17:51:17 1999
++++ Imakefile	Thu Sep  7 23:21:45 2000
+@@ -37,7 +37,7 @@
+ XCOMM CONFIGDEFS=-Dbison
+ 
+ XCOMM ************* WARNING: IF YOU CHANGE THIS CHANGE ALSO IN data/Imakefile
+-GWMDIR = /usr/local/lib/gwm
++GWMDIR = $(LIBDIR)/gwm
+ 
+ #if defined (UseInstalledXpm)
+ XPMINC =

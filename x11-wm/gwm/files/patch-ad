@@ -1,0 +1,14 @@
+--- gwm-parsers/y.tab.c.orig	Fri Dec  8 16:53:50 1995
++++ gwm-parsers/y.tab.c	Fri Sep  8 00:23:43 2000
+@@ -49,9 +49,9 @@
+ # define RIGHTBRA 266
+ # define NAME 267
+ 
+-#include <malloc.h>
++#include <stdlib.h>
+ #include <memory.h>
+-#include <values.h>
++#include <limits.h>
+ 
+ #ifdef __cplusplus
+ 
