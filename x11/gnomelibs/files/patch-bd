@@ -1,15 +1,15 @@
---- libgnomeui/Makefile.in.orig	Tue Feb 16 01:09:16 1999
-+++ libgnomeui/Makefile.in	Fri Feb 19 00:26:03 1999
-@@ -200,7 +200,7 @@
+--- libgnomeui/Makefile.in.orig	Wed Apr  7 21:34:11 1999
++++ libgnomeui/Makefile.in	Fri Apr 30 17:30:51 1999
+@@ -202,7 +202,7 @@
  EXTRA_DIST =  	$(SGML)						$(gtkrc_DATA)					AUTHORS						gnome.defs 					maketypes.awk					makeenums.pl					gnome-boxed.defs				gnometypebuiltins_vars.c			gnometypebuiltins_ids.c				gnometypebuiltins_evals.c
  
  
--libgnomeui_la_LDFLAGS = -version-info 40:0:8 -rpath $(libdir)
-+libgnomeui_la_LDFLAGS = -version-info 1:0:0
+-libgnomeui_la_LDFLAGS = -version-info 41:0:9 -rpath $(libdir)
++libgnomeui_la_LDFLAGS = -version-info 1:0:0 -rpath $(libdir)
  libgnomeui_la_LIBADD = $(LIBGNOMEUI_LIBS)
  
- gnome_segv_LDADD =  	$(top_builddir)/libgnomeui/libgnomeui.la 		$(top_builddir)/libgnome/libgnome.la 			$(top_builddir)/libart_lgpl/libart_lgpl.la 		@LIBSUPPORT@ $(LIBGNOMEUI_LIBS) 	$(INTLLIBS)
-@@ -1468,7 +1468,7 @@
+ gnome_segv_LDADD =  	libgnomeui.la 						$(top_builddir)/libgnome/libgnome.la 			$(top_builddir)/libart_lgpl/libart_lgpl.la 		@LIBSUPPORT@ $(LIBGNOMEUI_LIBS) 	$(INTLLIBS)
+@@ -1478,7 +1478,7 @@
  check: check-recursive
  installcheck-am:
  installcheck: installcheck-recursive
@@ -18,7 +18,7 @@
  install-exec: install-exec-recursive
  
  install-data-am: install-gtkrcDATA install-libgnomeuiincludeHEADERS
-@@ -1480,7 +1480,7 @@
+@@ -1490,7 +1490,7 @@
  uninstall-am: uninstall-libLTLIBRARIES uninstall-binPROGRAMS \
  		uninstall-gtkrcDATA uninstall-libgnomeuiincludeHEADERS
  uninstall: uninstall-recursive

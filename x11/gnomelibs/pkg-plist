@@ -8,7 +8,6 @@ bin/gnome-name-service
 bin/goad-browser
 bin/libart-config
 bin/loadshlib
-bin/new-object
 etc/gnomeConf.sh
 etc/libartConf.sh
 etc/mime-magic
@@ -16,8 +15,6 @@ etc/mime-magic.dat
 etc/paper.config
 etc/sound/events/gnome.soundlist
 etc/sound/events/gtk-events.soundlist
-@dirrm etc/sound/events
-@dirrm etc/sound
 include/gnome.h
 include/gnomesupport.h
 include/gtk-xmhtml/HTML.h
@@ -28,7 +25,6 @@ include/gtk-xmhtml/gtk-xmhtml-p.h
 include/gtk-xmhtml/gtk-xmhtml.h
 include/gtk-xmhtml/miniparse.h
 include/gtk-xmhtml/toolkit.h
-@dirrm include/gtk-xmhtml
 include/libart_lgpl/art_affine.h
 include/libart_lgpl/art_alphagamma.h
 include/libart_lgpl/art_bpath.h
@@ -60,7 +56,6 @@ include/libart_lgpl/art_uta_vpath.h
 include/libart_lgpl/art_vpath.h
 include/libart_lgpl/art_vpath_bpath.h
 include/libart_lgpl/art_vpath_svp.h
-@dirrm include/libart_lgpl
 include/libgnome/gnome-config.h
 include/libgnome/gnome-defs.h
 include/libgnome/gnome-dentry.h
@@ -83,7 +78,6 @@ include/libgnome/gnome-triggers.h
 include/libgnome/gnome-url.h
 include/libgnome/gnome-util.h
 include/libgnome/libgnome.h
-@dirrm include/libgnome
 include/libgnomeui/gnome-about.h
 include/libgnomeui/gnome-animator.h
 include/libgnomeui/gnome-app-helper.h
@@ -156,16 +150,15 @@ include/libgnomeui/gtkcauldron.h
 include/libgnomeui/gtkdial.h
 include/libgnomeui/gtkpixmapmenuitem.h
 include/libgnomeui/libgnomeui.h
-@dirrm include/libgnomeui
+include/libgnorba/GnomeObject.h
+include/libgnorba/Table.h
 include/libgnorba/gnome-factory.h
 include/libgnorba/gnorba.h
-@dirrm include/libgnorba
 include/popt-gnome.h
 include/zvt/lists.h
 include/zvt/vt.h
 include/zvt/vtx.h
 include/zvt/zvtterm.h
-@dirrm include/zvt
 lib/libart_lgpl.a
 lib/libart_lgpl.la
 lib/libart_lgpl.so
@@ -200,21 +193,17 @@ lib/libzvt.so
 lib/libzvt.so.1
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@exec mkdir -p %D/share/gnome/games
-@dirrm share/gnome/games
 share/gnome/gtkrc
 share/gnome/gtkrc.ja
 share/gnome/gtkrc.ko
 share/gnome/gtkrc.ru
 share/gnome/idl/GnomeObject.idl
 share/gnome/idl/Table.idl
-share/gnome/idl/base.idl
 share/gnome/idl/gnome-editor.idl
 share/gnome/idl/gnome-factory.idl
+share/gnome/idl/gnome-file.idl
 share/gnome/idl/name-service.idl
-@dirrm share/gnome/idl
 share/gnome/mime-info/gnome.mime
-@dirrm share/gnome/mime-info
 share/gnome/pixmaps/calculator-font.png
 share/gnome/pixmaps/gnome-default-dlg.png
 share/gnome/pixmaps/gnome-error.png
@@ -223,12 +212,9 @@ share/gnome/pixmaps/gnome-question.png
 share/gnome/pixmaps/gnome-warning.png
 share/gnome/pixmaps/no.xpm
 share/gnome/pixmaps/yes.xpm
-@dirrm share/gnome/pixmaps
 share/gnome/type-convert/gnome-make-postscript-mimes
 share/gnome/type-convert/postscript.convert
 share/gnome/type-convert/type.convert
-@dirrm share/gnome/type-convert
-@dirrm share/gnome
 share/locale/ca/LC_MESSAGES/gnome-libs.mo
 share/locale/cs/LC_MESSAGES/gnome-libs.mo
 share/locale/da/LC_MESSAGES/gnome-libs.mo
@@ -247,3 +233,19 @@ share/locale/pl/LC_MESSAGES/gnome-libs.mo
 share/locale/pt/LC_MESSAGES/gnome-libs.mo
 share/locale/ru/LC_MESSAGES/gnome-libs.mo
 share/locale/sv/LC_MESSAGES/gnome-libs.mo
+share/locale/wa/LC_MESSAGES/gnome-libs.mo
+@exec mkdir -p %D/share/gnome/games
+@dirrm etc/sound/events
+@dirrm etc/sound
+@dirrm include/gtk-xmhtml
+@dirrm include/libart_lgpl
+@dirrm include/libgnome
+@dirrm include/libgnomeui
+@dirrm include/libgnorba
+@dirrm include/zvt
+@dirrm share/gnome/games
+@dirrm share/gnome/idl
+@dirrm share/gnome/mime-info
+@dirrm share/gnome/pixmaps
+@dirrm share/gnome/type-convert
+@dirrm share/gnome
