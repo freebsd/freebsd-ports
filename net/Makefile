@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.87 1997/01/02 07:26:52 tg Exp $
+# $Id: Makefile,v 1.88 1997/01/07 12:46:33 asami Exp $
 #
 
     SUBDIR += archie
@@ -6,6 +6,7 @@
     SUBDIR += bb
     SUBDIR += cap
     SUBDIR += cvsup
+    SUBDIR += cvsup-mirror
     SUBDIR += dgd
     SUBDIR += dgd-lpmud
     SUBDIR += dgd-net
