@@ -160,12 +160,6 @@ post-patch:
 post-build:
 	@${SED} "s|%%DB_DIR%%|${DB_DIR}|g" ${PKGDIR}/pkg-install > ${WRKDIR}/pkg-install
 
-.if defined(WITH_OPENSSL) && defined(BUILD_STATIC)
-pre-configure:
-	@${ECHO} "You can't use the BUILD_STATIC option when using OpenSSL."
-	@${FALSE}
-.endif
-
 post-install:
 .if !defined(PACKAGE_BUILDING)
 .if exists(${DB_DIR}) && defined(OVERWRITE_DB) && ${OVERWRITE_DB:L} != "no"
@@ -248,5 +242,11 @@ post-patch:
 # Common part
 post-extract:
 	@${CP} /usr/include/tcpd.h ${WRKSRC}/sql/mytcpd.h
+
+.if defined(WITH_OPENSSL) && defined(BUILD_STATIC)
+pre-configure:
+	@${ECHO} "You can't use the BUILD_STATIC option when using OpenSSL."
+	@${FALSE}
+.endif
 
 .include <bsd.port.post.mk>
