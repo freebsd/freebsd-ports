@@ -1,0 +1,20 @@
+--- Makefile.orig	Tue Jan  4 14:54:58 2000
++++ Makefile	Sat Jul 22 18:29:32 2000
+@@ -6,12 +6,12 @@
+ OPTS	= -DALLBYOPTS -DRAND48 -DDEBIAN
+ 
+ # Standard items
+-CC	= gcc
+-CFLAGS	= -O3
++CC     ?= gcc
++CFLAGS += -I/usr/local/include
+ LD	= cc
+-#LDFLAGS	= -g
+-LIBS	= -lm
+-INSTALL	= install -s
++LDFLAGS = -L/usr/local/lib
++LIBS	= -lm -lgnugetopt
++INSTALL?= install -s
+ INFLAGS	=
+ 
+ # Where to install
