@@ -25,6 +25,8 @@ NO_CDROM=	"Redistribution is not permitted"
 J2SDKEEVERSION=	${PORTVERSION}_${PORTREVISION}
 DOWNLOAD_URL=	http://java.sun.com/j2ee/sdk_1.3/
 
+IS_INTERACTIVE=	yes
+
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTFILES}) && !defined(PACKAGE_BUILDING)
