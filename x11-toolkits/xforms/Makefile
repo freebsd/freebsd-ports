@@ -3,13 +3,13 @@
 # Date created:		01 October 1995
 # Whom:			gena
 #
-# $Id: $
+# $Id: Makefile,v 1.3 1995/10/05 12:34:15 asami Exp $
 #
 
 DISTNAME=	bxform-075
 PKGNAME=	xforms-0.75
 CATEGORIES+=	graphics x11
-MASTER_SITES=	ftp://bloch.phys.uwm.edu/pub/xforms/freeBSD/
+MASTER_SITES=	ftp://laue.phys.uwm.edu/pub/xforms/freeBSD/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gena@NetVision.net.il
