@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	geg
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	math
-MASTER_SITES=	http://www.infolaunch.com/~daveb/ \
-		ftp://metalab.unc.edu/pub/Linux/science/visualization/plotting/
+MASTER_SITES=	${MASTER_SITE_SUNSITE} \
+		http://www.infolaunch.com/~daveb/
+MASTER_SITE_SUBDIR=	science/visualization/plotting
 
 MAINTAINER=	domi@saargate.de
 
