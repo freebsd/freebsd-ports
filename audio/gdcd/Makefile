@@ -17,7 +17,7 @@ LIB_DEPENDS=	cdaudio.1:${PORTSDIR}/audio/libcdaudio
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
 USE_AUTOMAKE=	yes
-AUTOMAKE=	automake -a -i
+AUTOMAKE_ARGS=	-a -i
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
