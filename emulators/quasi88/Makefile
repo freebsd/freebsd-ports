@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	quasi88
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.5
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.117.ne.jp/~show/pc8801/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	nishika@cheerful.com
+MAINTAINER=	nishika@manbow.com
 
 USE_X_PREFIX=	yes
 USE_XLIB=	yes
