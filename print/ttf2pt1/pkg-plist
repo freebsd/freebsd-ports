@@ -69,6 +69,7 @@ share/ttf2pt1/other/cmpf.c
 share/ttf2pt1/other/cntstems.pl
 share/ttf2pt1/other/dmpf.c
 share/ttf2pt1/other/lst.pl
+share/ttf2pt1/other/showdf
 share/ttf2pt1/other/showg
 share/ttf2pt1/scripts/convert
 share/ttf2pt1/scripts/convert.cfg.sample
