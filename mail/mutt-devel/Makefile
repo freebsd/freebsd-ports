@@ -8,6 +8,7 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.3.21
+PORTREVISION=	1
 CATEGORIES+=	mail
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -40,7 +41,6 @@ PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${PATCH_VERSION}/ \
 		ftp://ftp2.mutt.org.ua/pub/mutt/mutt-${PATCH_VERSION}/
 .endif
 
-PATCH_VERSION=	1.3.20
 .if !defined(PATCH_VERSION)
 PATCH_VERSION=	${PORTVERSION}
 .endif
