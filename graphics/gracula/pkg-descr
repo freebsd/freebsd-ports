@@ -1,0 +1,22 @@
+Graphic Counter Language is a powerful programming language for the creation of
+graphic and textual counters and timers. These can be used on the web, as well
+as in graphic application programs (such as XWindow applications) which can
+call the GCL interpeter internally and have it create a counter or a timer.
+
+Gracula is the compiler/interpreter for Graphic Counter Language, developed
+under FreeBSD, though usable on any Unix system.
+
+For details about the language, visit GCL home page (www.whizkidtech.net/gcl/)
+as well as Count Gracula's Gallery (www.whizkidtech.net/gcl/gallery) which
+contains a number of sample GCL scripts and showcases various counter designs.
+
+GCL requires no configuration files. All you provide is graphic images and
+simple scripts. Optionally, you may link the images directly into the gracula
+executable. GCL can also receive input from external programs. A sample program
+is included (sec2000). It allows the creation of GCL counters to display the
+number of seconds (or minutes, hours, days) left till the Year 2000.
+
+Gracula is written in C and highly optimized for speed which makes it work
+reliably even on the busiest web sites.
+
+G. Adam Stanislav <adam@whizkidtech.net>
