@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zebedee
-PORTVERSION=	2.2.2
+PORTVERSION=	2.4.1
 CATEGORIES=	security
 MASTER_SITES=	http://www.winton.org.uk/zebedee/ \
 		http://www.hewgill.com/zebedee/
@@ -22,7 +22,7 @@ USE_OPENSSL=	YES
 USE_PERL5=	yes
 
 MAKE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS=${PTHREAD_LIBS}
+		PTHREAD_LIBS=${PTHREAD_LIBS} \
 
 MAN1=		zebedee.1 ftpgw.tcl.1
 
