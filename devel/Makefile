@@ -392,6 +392,7 @@
     SUBDIR += libltdl
     SUBDIR += libmba
     SUBDIR += libmcve
+    SUBDIR += libmimedir
     SUBDIR += libmtrie
     SUBDIR += libol
     SUBDIR += libole2
