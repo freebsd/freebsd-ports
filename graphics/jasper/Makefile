@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jasper
-PORTVERSION=	1.500.4
+PORTVERSION=	1.600.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ece.uvic.ca/~mdadams/jasper/software/ \
 		${MASTER_SITE_IMAGEMAGICK}
