@@ -1,0 +1,8 @@
+bin/tea
+share/locale/ru/LC_MESSAGES/tea.mo
+share/locale/uk/LC_MESSAGES/tea.mo
+%%PORTDOCS%%%%DOCSDIR%%/en/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/index.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ru
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

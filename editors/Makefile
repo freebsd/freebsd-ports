@@ -177,6 +177,7 @@
     SUBDIR += sted
     SUBDIR += tamago
     SUBDIR += tamago-emacs20
+    SUBDIR += tea
     SUBDIR += ted
     SUBDIR += tetradraw
     SUBDIR += texmacs
