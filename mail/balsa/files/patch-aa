@@ -1,0 +1,11 @@
+--- src/Makefile.in	2000/10/20 10:41:33	1.1
++++ src/Makefile.in	2000/10/20 10:41:50
+@@ -149,7 +149,7 @@
+ 
+ CFLAGS = @CFLAGS@ $(GTKHTML_CFLAGS)
+ 
+-balsa_LDADD =  	$(top_builddir)/libbalsa/libbalsa.a		$(top_builddir)/libmutt/imap/libimap.a		$(top_builddir)/libmutt/libmutt.a		$(top_builddir)/libinit_balsa/libinit_balsa.a 	-lpspell 	-lltdl 	@LIBESD_LIB@ 	$(GNOME_LIBDIR) 	$(GNOMEUI_LIBS) 	$(INTLLIBS) 	$(PTHREAD_LIB) 	$(GNOME_PRINT_LIBS) 	$(GTKHTML_LIBS)	
++balsa_LDADD =  	$(top_builddir)/libbalsa/libbalsa.a		$(top_builddir)/libmutt/imap/libimap.a		$(top_builddir)/libmutt/libmutt.a		$(top_builddir)/libinit_balsa/libinit_balsa.a 	-lpspell 	@LIBESD_LIB@ 	$(GNOME_LIBDIR) 	$(GNOMEUI_LIBS) 	$(INTLLIBS) 	$(PTHREAD_LIB) 	$(GNOME_PRINT_LIBS) 	$(GTKHTML_LIBS)	
+ 
+ 
+ balsa_DEPENDENCIES =  	$(top_builddir)/libbalsa/libbalsa.a		$(top_builddir)/libmutt/libmutt.a	        $(top_builddir)/libmutt/imap/libimap.a		$(top_builddir)/libmutt/libmutt.a		$(top_builddir)/libinit_balsa/libinit_balsa.a
