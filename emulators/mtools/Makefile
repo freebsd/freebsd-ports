@@ -7,10 +7,14 @@
 
 PORTNAME=	mtools
 PORTVERSION=	3.9.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.tux.org/pub/knaff/mtools/  \
 		http://mtools.linux.lu/
+
+PATCH_SITES=	http://mtools.linux.lu/
+PATCHFILES=	mtools-3.9.7-20001213.diff.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	jmz@FreeBSD.org
 
@@ -38,7 +42,7 @@ post-install:
 	@#	mwrite has been removed by author, but we'll keep it just a bit longer
 	@${LN} -sf ${PREFIX}/bin/mtools ${PREFIX}/bin/mwrite
 	@${LN} -sf ${PREFIX}/man/man1/mcopy.1.gz ${PREFIX}/man/man1/mwrite.1.gz
-	@${INSTALL_DATA} ${WRKSRC}/mtools.conf ${PREFIX}/etc
+	@${INSTALL_DATA} ${WRKSRC}/mtools.conf ${PREFIX}/etc/mtools.conf.sample
 	@${ECHO} "Please verify ${PREFIX}/etc/mtools.conf for your machine."
 	@install-info ${PREFIX}/info/mtools.info ${PREFIX}/info/dir
 
