@@ -1,16 +1,15 @@
---- configure.orig	Tue Jun  1 09:08:41 2004
-+++ configure	Tue Jun  1 09:08:41 2004
-@@ -18835,9 +18835,6 @@
+--- configure.orig	Fri Jul  2 11:24:14 2004
++++ configure	Fri Jul  2 11:24:37 2004
+@@ -18829,8 +18829,6 @@
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
  
+-# Always use our own libtool.
+-LIBTOOL='$(SHELL) $(top_builddir)/libtool'
  
+ # Prevent multiple expansion
  
--# Ensure that we have --preserve-dup-deps defines, otherwise we get link
--# problems of 'mysql' with CXX=g++
--LIBTOOL="$LIBTOOL --preserve-dup-deps"
- 
- #AC_LIBTOOL_DLOPEN AC_LIBTOOL_WIN32_DLL AC_DISABLE_FAST_INSTALL AC_DISABLE_SHARED AC_DISABLE_STATIC
- 
-@@ -23625,8 +23622,8 @@
+@@ -23783,8 +23781,8 @@
  # Some system specific hacks
  #
  
