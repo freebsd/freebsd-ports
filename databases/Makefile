@@ -77,6 +77,7 @@
     SUBDIR += mergeant
     SUBDIR += metakit
     SUBDIR += mird
+    SUBDIR += mrtg-mysql-load
     SUBDIR += msql
     SUBDIR += mtop
     SUBDIR += myodbc

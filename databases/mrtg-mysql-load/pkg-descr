@@ -1,0 +1,6 @@
+mrtg-mysq-load is a small Perl script which is meant
+to be run by mrtg. It will fetch the total number of queries
+and slow queries handled by a mysql server.
+
+Author:	Carsten H. Pedersen <mysqlfaq@bitbybit.dk>
+WWW:	http://www.bitbybit.dk/mysqlfaq/mrtg-mysql-load/
