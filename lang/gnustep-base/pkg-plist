@@ -5,17 +5,15 @@ System/Library/DTDs/gsdoc-0_6_5.dtd
 System/Library/DTDs/gsdoc-0_6_6.dtd
 System/Library/DTDs/gsdoc-0_6_7.dtd
 System/Library/DTDs/gsdoc-1_0_0.dtd
-%%GNUSTEP_DEVEL%%System/Library/DTDs/gsdoc-1_0_1.dtd
+System/Library/DTDs/gsdoc-1_0_1.dtd
 System/Library/DTDs/plist-0_9.dtd
-%%GNUSTEP_STABLE%%System/Library/DocTemplates/AutoDocTemplate.gsdoc
-%%GNUSTEP_STABLE%%System/Library/DocTemplates/indextemplate.gsdoc
-%%GNUSTEP_DEVEL%%System/Library/Documentation/man/man1/autogsdoc.1.gz
-%%GNUSTEP_DEVEL%%System/Library/Documentation/man/man1/cvtenc.1.gz
-%%GNUSTEP_DEVEL%%System/Library/Documentation/man/man1/defaults.1.gz
+System/Library/Documentation/man/man1/autogsdoc.1.gz
+System/Library/Documentation/man/man1/cvtenc.1.gz
+System/Library/Documentation/man/man1/defaults.1.gz
 System/Library/Documentation/man/man1/gdnc.1.gz
-%%GNUSTEP_DEVEL%%System/Library/Documentation/man/man1/pldes.1.gz
-%%GNUSTEP_DEVEL%%System/Library/Documentation/man/man1/sfparse.1.gz
-%%GNUSTEP_DEVEL%%System/Library/Documentation/man/man1/xmlparse.1.gz
+System/Library/Documentation/man/man1/pldes.1.gz
+System/Library/Documentation/man/man1/sfparse.1.gz
+System/Library/Documentation/man/man1/xmlparse.1.gz
 System/Library/Documentation/man/man8/gdomap.8.gz
 System/Library/Headers/Foundation/Foundation.h
 System/Library/Headers/Foundation/GSMime.h
@@ -31,7 +29,6 @@ System/Library/Headers/Foundation/NSCalendarDate.h
 System/Library/Headers/Foundation/NSCharacterSet.h
 System/Library/Headers/Foundation/NSClassDescription.h
 System/Library/Headers/Foundation/NSCoder.h
-%%GNUSTEP_STABLE%%System/Library/Headers/Foundation/NSConcreteNumber.h
 System/Library/Headers/Foundation/NSConnection.h
 System/Library/Headers/Foundation/NSData.h
 System/Library/Headers/Foundation/NSDate.h
@@ -44,7 +41,7 @@ System/Library/Headers/Foundation/NSDistantObject.h
 System/Library/Headers/Foundation/NSDistributedLock.h
 System/Library/Headers/Foundation/NSDistributedNotificationCenter.h
 System/Library/Headers/Foundation/NSEnumerator.h
-%%GNUSTEP_DEVEL%%System/Library/Headers/Foundation/NSError.h
+System/Library/Headers/Foundation/NSError.h
 System/Library/Headers/Foundation/NSException.h
 System/Library/Headers/Foundation/NSFileHandle.h
 System/Library/Headers/Foundation/NSFileManager.h
@@ -52,10 +49,10 @@ System/Library/Headers/Foundation/NSFormatter.h
 System/Library/Headers/Foundation/NSGeometry.h
 System/Library/Headers/Foundation/NSHashTable.h
 System/Library/Headers/Foundation/NSHost.h
-%%GNUSTEP_DEVEL%%System/Library/Headers/Foundation/NSIndexSet.h
+System/Library/Headers/Foundation/NSIndexSet.h
 System/Library/Headers/Foundation/NSInvocation.h
 System/Library/Headers/Foundation/NSKeyValueCoding.h
-%%GNUSTEP_DEVEL%%System/Library/Headers/Foundation/NSKeyedArchiver.h
+System/Library/Headers/Foundation/NSKeyedArchiver.h
 System/Library/Headers/Foundation/NSLock.h
 System/Library/Headers/Foundation/NSMapTable.h
 System/Library/Headers/Foundation/NSMethodSignature.h
@@ -71,7 +68,7 @@ System/Library/Headers/Foundation/NSPortCoder.h
 System/Library/Headers/Foundation/NSPortMessage.h
 System/Library/Headers/Foundation/NSPortNameServer.h
 System/Library/Headers/Foundation/NSProcessInfo.h
-%%GNUSTEP_DEVEL%%System/Library/Headers/Foundation/NSPropertyList.h
+System/Library/Headers/Foundation/NSPropertyList.h
 System/Library/Headers/Foundation/NSProtocolChecker.h
 System/Library/Headers/Foundation/NSProxy.h
 System/Library/Headers/Foundation/NSRange.h
@@ -107,7 +104,7 @@ System/Library/Headers/GNUstepBase/GCObject.h
 System/Library/Headers/GNUstepBase/GSMime.h
 System/Library/Headers/GNUstepBase/GSXML.h
 System/Library/Headers/GNUstepBase/GSLocale.h
-%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/GSLock.h
+System/Library/Headers/GNUstepBase/GSLock.h
 System/Library/Headers/GNUstepBase/Unicode.h
 System/Library/Headers/GNUstepBase/GNUstep.h
 System/Library/Headers/GNUstepBase/behavior.h
@@ -120,7 +117,7 @@ System/Library/Headers/gnustep/base/GSFileHandle.h
 System/Library/Headers/gnustep/base/GSIArray.h
 System/Library/Headers/gnustep/base/GSIMap.h
 System/Library/Headers/gnustep/base/GSLocale.h
-%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/base/GSLock.h
+System/Library/Headers/gnustep/base/GSLock.h
 System/Library/Headers/gnustep/base/GSMime.h
 System/Library/Headers/gnustep/base/GSObjCRuntime.h
 System/Library/Headers/gnustep/base/GSUnion.h
@@ -144,7 +141,7 @@ System/Library/Libraries/Resources/gnustep-base/Languages/Dutch
 System/Library/Libraries/Resources/gnustep-base/Languages/English
 System/Library/Libraries/Resources/gnustep-base/Languages/French
 System/Library/Libraries/Resources/gnustep-base/Languages/German
-%%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-base/Languages/Hungarian
+System/Library/Libraries/Resources/gnustep-base/Languages/Hungarian
 System/Library/Libraries/Resources/gnustep-base/Languages/Italian
 System/Library/Libraries/Resources/gnustep-base/Languages/Locale.aliases
 System/Library/Libraries/Resources/gnustep-base/Languages/Locale.encodings
@@ -233,6 +230,7 @@ System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Aragua
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Aruba
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Asuncion
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Atka
+%%GNUSTEP_STABLE%%System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Bahia
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Barbados
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Belem
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Belize
@@ -242,6 +240,7 @@ System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Boise
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Buenos_Aires
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Cambridge_Bay
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Cancun
+%%GNUSTEP_STABLE%%System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Campo_Grande
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Caracas
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Catamarca
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Cayenne
@@ -343,6 +342,7 @@ System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Teguci
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Thule
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Thunder_Bay
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Tijuana
+%%GNUSTEP_STABLE%%System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Toronto
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Tortola
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Vancouver
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Virgin
@@ -356,6 +356,7 @@ System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Antarctica/Dum
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Antarctica/Mawson
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Antarctica/McMurdo
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Antarctica/Palmer
+%%GNUSTEP_STABLE%%System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Antarctica/Rothera
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Antarctica/South_Pole
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Antarctica/Syowa
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Antarctica/Vostok
@@ -738,7 +739,7 @@ System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/WET
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Zulu
 System/Library/Libraries/Resources/gnustep-base/TraditionalChinese.lproj/Localizable.strings
 System/Library/Libraries/libgnustep-base.so
-System/Library/Libraries/libgnustep-base.so.%%MAJORVERSION%%
+System/Library/Libraries/libgnustep-base.so.%%BASEVERSION%%
 System/Library/Libraries/libgnustep-base.so.%%VERSION%%
 System/Makefiles/Additional/base.make
 System/Tools/autogsdoc
