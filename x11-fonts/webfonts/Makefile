@@ -18,7 +18,6 @@ MASTER_SITES=	${MASTER_SITE_NETBSD:S/%SUBDIR%/ms-ttf/} \
 	ftp://ftp.sinn.ru/pub/win95/fonts/ \
 	ftp://ftp.lexa.ru/pub/mirrors/ftp.vsu.ru/pub/tex/font-packs/mscore/ \
 	ftp://ftp.botik.ru/rented/znamensk/distributions/ftp.vsu.ru/pub/tex/font-packs/mscore/
-
 DISTFILES=	andale32.exe trebuc32.exe georgi32.exe verdan32.exe \
 		comic32.exe arialb32.exe impact32.exe arial32.exe \
 		times32.exe courie32.exe webdin32.exe
@@ -56,13 +55,13 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 .if ${XFREE86_VERSION} == 3
 OLDXF86=
 .else
-OLDXF86=        "@comment "
+OLDXF86=	"@comment "
 .endif
 
 .if defined(WITH_NETSCAPE_ALIASES)
 PKG_NSALIAS=
 .else
-PKG_NSALIAS=    "@comment "
+PKG_NSALIAS=	"@comment "
 .endif
 
 #
@@ -77,8 +76,8 @@ TTMKFDIR_CMD?=	${X11BASE}/bin/ttmkfdir
 SORT?=	sort
 
 # The following are for the NS aliases, feel free to tweak them!
-FONTSIZES=      8 9 10 12 14 16 18 20 24
-FONTLIMIT=      11
+FONTSIZES=	8 9 10 12 14 16 18 20 24
+FONTLIMIT=	11
 
 .SILENT:
 
