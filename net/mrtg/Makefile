@@ -3,10 +3,10 @@
 # Date created:				April 18th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#	$Id$
+#	$Id: Makefile,v 1.12 1999/03/29 17:09:03 jfitz Exp $
 #
 
-DISTNAME=	mrtg-2.7.2
+DISTNAME=	mrtg-2.8.6
 CATEGORIES=	net
 MASTER_SITES=	http://ee-staff.ethz.ch/~oetiker/webtools/mrtg/pub/
 
