@@ -7,13 +7,14 @@
 
 PORTNAME=	stardict
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	chinese textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		ftp://freebsd.sinica.edu.tw/pub/statue/stardict2/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	stardict-${PORTVERSION}.tar.bz2 \
 		stardict-cdict-big5-2.1.0.tar.bz2 \
 		stardict-cedict-big5-2.1.0.tar.bz2 \
+		stardict-oxford-big5-2.1.0.tar.bz2 \
 		stardict-xdict-big5-2.1.0.tar.bz2 \
 		stardict-xdict-ce-big5-2.1.0.tar.bz2
 
@@ -34,6 +35,7 @@ post-install:
 		${MKDIR} ${PREFIX}/share/stardict/dic/
 		${INSTALL_DATA} ${WRKDIR}/stardict-cdict-big5-2.1.0/* ${PREFIX}/share/stardict/dic/
 		${INSTALL_DATA} ${WRKDIR}/stardict-cedict-big5-2.1.0/* ${PREFIX}/share/stardict/dic/
+		${INSTALL_DATA} ${WRKDIR}/stardict-oxford-big5-2.1.0/* ${PREFIX}/share/stardict/dic/
 		${INSTALL_DATA} ${WRKDIR}/stardict-xdict-big5-2.1.0/* ${PREFIX}/share/stardict/dic/
 		${INSTALL_DATA} ${WRKDIR}/stardict-xdict-ce-big5-2.1.0/* ${PREFIX}/share/stardict/dic/
 
