@@ -595,7 +595,7 @@ post-patch:
 .endif
 
 post-configure:
-	${REINPLACE_CMD} -e 's=${WRKDIRPREFIX}=$${WRKDIRPREFIX}=' \
+	${REINPLACE_CMD} -e 's=${WRKDIRPREFIX}/=$${WRKDIRPREFIX}/=' \
 		${WRKSRC}/tclConfig.sh
 
 .include <bsd.port.pre.mk>

@@ -341,7 +341,7 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	text.n tk_textPaste.n
 
 post-configure:
-	${REINPLACE_CMD} -e 's=${WRKDIRPREFIX}=$${WRKDIRPREFIX}=' \
+	${REINPLACE_CMD} -e 's=${WRKDIRPREFIX}/=$${WRKDIRPREFIX}/=' \
 		${WRKSRC}/tkConfig.sh
 
 .include <bsd.port.pre.mk>
