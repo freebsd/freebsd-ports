@@ -14,7 +14,14 @@ EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	nbm@FreeBSD.org
 
+LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3
+
 WRKSRC=		${WRKDIR}/bzflag
+
+USE_XLIB=	yes
+
+MAKE_ENV=	PORTCFLAGS="${CFLAGS}" PORTCXXFLAGS="${CXXFLAGS}" \
+		PORTPREFIX="${PREFIX}"
 
 MAN6=	bzflag.6 bzfrelay.6 bzfls.6 bzfs.6
 
@@ -24,5 +31,7 @@ do-configure:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${PREFIX}/bin/
 	@${INSTALL_MAN}	${WRKSRC}/man/*.6 ${PREFIX}/man/man6/
+	@${MKDIR} ${PREFIX}/share/bzflag/data
+	@${INSTALL_DATA} ${WRKSRC}/data/* ${PREFIX}/share/bzflag/data/
 
 .include <bsd.port.mk>
