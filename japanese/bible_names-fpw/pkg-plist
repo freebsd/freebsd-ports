@@ -3,6 +3,5 @@ share/dict/bible_names-fpw/catalogs
 @dirrm share/dict/bible_names-fpw/biblenam/data
 @dirrm share/dict/bible_names-fpw/biblenam
 @dirrm share/dict/bible_names-fpw
-%%PORTDOCS%%%%DOCSDIR%%/biblenam.txt
 %%PORTDOCS%%%%DOCSDIR%%/readme
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
