@@ -89,6 +89,7 @@
     SUBDIR += squeak1
     SUBDIR += squeak2
     SUBDIR += sr
+    SUBDIR += starlogo
     SUBDIR += swi-pl
     SUBDIR += tcl76
     SUBDIR += tcl80

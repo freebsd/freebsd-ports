@@ -1,0 +1,41 @@
+bin/starlogo
+share/java/starlogo/starlogo.jar
+share/java/starlogo/README
+share/java/starlogo/reference.txt
+share/java/starlogo/projects/ant-trails.slogo
+share/java/starlogo/projects/circle.slogo
+share/java/starlogo/projects/dla.slogo
+share/java/starlogo/projects/firefly.slogo
+share/java/starlogo/projects/gaussian.slogo
+share/java/starlogo/projects/graphics.slogo
+share/java/starlogo/projects/horn.slogo
+share/java/starlogo/projects/rope.slogo
+share/java/starlogo/projects/termites.slogo
+share/java/starlogo/projects/tree.slogo
+share/java/starlogo/sounds/applause.au
+share/java/starlogo/sounds/bark.au
+share/java/starlogo/sounds/bong.au
+share/java/starlogo/sounds/bubbles.au
+share/java/starlogo/sounds/busy.au
+share/java/starlogo/sounds/chirp.au
+share/java/starlogo/sounds/clink.au
+share/java/starlogo/sounds/computer.au
+share/java/starlogo/sounds/cowbell.au
+share/java/starlogo/sounds/crash.au
+share/java/starlogo/sounds/cuckoo.au
+share/java/starlogo/sounds/dialtone.au
+share/java/starlogo/sounds/doorbell.au
+share/java/starlogo/sounds/drip.au
+share/java/starlogo/sounds/fastbusy.au
+share/java/starlogo/sounds/flush.au
+share/java/starlogo/sounds/gong.au
+share/java/starlogo/sounds/ring.au
+share/java/starlogo/sounds/rooster.au
+share/java/starlogo/sounds/spacemusic.au
+share/java/starlogo/sounds/splat.au
+share/java/starlogo/sounds/train.au
+share/java/starlogo/sounds/whistle.au
+@dirrm share/java/starlogo/projects
+@dirrm share/java/starlogo/sounds
+@dirrm share/java/starlogo
+@unexec rmdir %D/share/java || true
