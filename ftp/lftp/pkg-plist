@@ -21,5 +21,6 @@ share/locale/pl/LC_MESSAGES/lftp.mo
 share/locale/pt_BR/LC_MESSAGES/lftp.mo
 share/locale/ru/LC_MESSAGES/lftp.mo
 share/locale/zh_CN/LC_MESSAGES/lftp.mo
+share/locale/zh_TW/LC_MESSAGES/lftp.mo
 %%PORTDOCS%%@dirrm share/doc/lftp
 @dirrm share/lftp

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lftp
-PORTVERSION=	2.3.9
+PORTVERSION=	2.3.11
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/ \
 		${MASTER_SITE_SUNSITE}
@@ -30,6 +30,9 @@ pre-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/lftp.conf ${PREFIX}/etc/lftp.conf.sample
+# remove some empty directories
+	${RMDIR} ${PREFIX}/lib/lftp/2.3.11
+	${RMDIR} ${PREFIX}/lib/lftp
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/lftp
 .for file in COPYING FAQ NEWS README THANKS TODO
