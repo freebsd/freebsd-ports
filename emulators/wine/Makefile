@@ -85,6 +85,7 @@ do-install:
 	-@${MKDIR} ${PREFIX}/lib/wine/reg
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/bug_report.pl \
 		${PREFIX}/lib/wine
+	${INSTALL_PROGRAM} ${WRKSRC}/programs/regapi/regapi.exe.so ${PREFIX}/lib/wine
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/programs/regapi/regFixer.pl \
 		${WRKSRC}/programs/regapi/regRestorer.pl \
