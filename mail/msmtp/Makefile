@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	msmtp
-PORTVERSION=	0.5.0
+PORTVERSION=	0.7.2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	msmtp
@@ -14,28 +14,32 @@ MASTER_SITE_SUBDIR=	msmtp
 MAINTAINER=	rip@devco.net
 COMMENT=	SMTP plugin for MUAs
 
-USE_GETOPT_LONG=	yes
-USE_OPENSSL=	yes
-USE_REINPLACE=	yes
-
+GNU_CONFIGURE=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GMAKE=	yes
 MAN1=		msmtp.1
 PLIST_FILES=	bin/msmtp
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|CFLAGS =|CFLAGS +=|g ; \
-		s|CC =|CC ?=|g' \
-		${WRKSRC}/Makefile
+.if !defined(WITH_OPENSSL)
+WITH_GNUTLS=	yes
+.endif
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/msmtp ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/msmtp.1 ${PREFIX}/man/man1
+.if defined(WITH_GNUTLS)
+LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
+.endif
 
-post-install:
-	@${ECHO_CMD} "*****************************************************************************"
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "Please note that since version 0.5.0 this program uses a configuration file"
-	@${ECHO_CMD} "rather than the old command line options, see the man page."
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "***************************************************************************##"
+.if defined(WITH_OPENSSL)
+USE_OPENSSL=	yes
+CONFIGURE_ARGS+=	--with-ssl=openssl
+.endif
+
+.if defined(WITH_GNU_SASL)
+LIB_DEPENDS+=	gsasl:${PORTSDIR}/security/gsasl
+.else
+CONFIGURE_ARGS+=	--disable-gsasl
+.endif
 
 .include <bsd.port.mk>
