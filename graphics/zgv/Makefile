@@ -22,7 +22,9 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 ONLY_FOR_ARCHS=	i386
 USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
-ALL_TARGET=	all info
+USE_REINPLACE=	yes
+ALL_TARGET=	zgv info
+MAKE_ENV=	ZGV_LIBS="${LDFLAGS}"
 
 PLIST_FILES=	bin/zgv etc/zgvrc.sample
 .if !defined(NO_INSTALL_MANPAGES)
@@ -35,6 +37,7 @@ PORTDOCS=	NEWS README SECURITY TODO INSTALL
 
 post-patch:
 	${RM} ${WRKSRC}/doc/zgv
+	@${REINPLACE_CMD} -e 's|ZGV_LIBS=|ZGV_LIBS+=|' ${WRKSRC}/src/Makefile
 
 do-install:
 	${INSTALL} -c -g wheel -o root -m 4755 ${WRKSRC}/src/zgv ${PREFIX}/bin
