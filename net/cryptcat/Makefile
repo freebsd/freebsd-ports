@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	cryptcat
-PORTVERSION=	0.0
+PORTVERSION=	2.0
 CATEGORIES=	net
-MASTER_SITES=	http://farm9.com/content/Free_Tools/
-DISTNAME=	cryptcat_linux
+MASTER_SITES=	http://farm9.org/Cryptcat/
+DISTNAME=	cryptcat_linux2
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	roman@xpert.com
