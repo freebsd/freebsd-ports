@@ -1,0 +1,25 @@
+
+$FreeBSD$
+
+--- glib/libcharset/Makefile.in	2002/01/18 08:04:15	1.1
++++ glib/libcharset/Makefile.in	2002/01/18 08:13:49
+@@ -148,7 +148,7 @@
+ ms_librarian = @ms_librarian@
+ 
+ INCLUDES = \
+-	-DLIBDIR=\"$(libdir)\"
++	-DLIBDIR=\"$(prefix)/libdata\"
+ 
+ 
+ noinst_LTLIBRARIES = libcharset.la
+@@ -172,8 +172,8 @@
+ 	make-patch.sh
+ 
+ 
+-charset_alias = $(DESTDIR)$(libdir)/charset.alias
+-charset_tmp = $(DESTDIR)$(libdir)/charset.tmp
++charset_alias = $(DESTDIR)$(prefix)/libdata/charset.alias
++charset_tmp = $(DESTDIR)$(prefix)/libdata/charset.tmp
+ 
+ SUFFIXES = .sed .sin
+ 

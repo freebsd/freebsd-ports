@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glib
-PORTVERSION=	1.3.9
+PORTVERSION=	1.3.12
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/%SUBDIR%/ \
@@ -29,6 +29,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN1=		glib-genmarshal.1 glib-mkenums.1
 
