@@ -644,6 +644,7 @@
     SUBDIR += tcptrace
     SUBDIR += tcptraceroute
     SUBDIR += tcpview
+    SUBDIR += tcpwatch
     SUBDIR += tdetect
     SUBDIR += telnetx
     SUBDIR += telserv
