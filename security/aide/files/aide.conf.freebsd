@@ -78,7 +78,7 @@ database_out=file:///var/adm/aide/databases/aide.db.new
 
 #  First, root's traditional "home".  Note that FreeBSD's root's home (/root)
 #  is protected by R-tiger-rmd160-sha1 protections in the default config file.
-=/		L
+=/$		L
 /.rhosts	R
 /.profile	R
 /.cshrc		R
@@ -111,7 +111,7 @@ database_out=file:///var/adm/aide/databases/aide.db.new
 # /etc/spwd.db		L
 
 # /home
-=/home			L-c
+=/home$			L-c
 
 # /lkm
 /lkm			R-tiger-rmd160-sha1
