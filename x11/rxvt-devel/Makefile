@@ -21,12 +21,12 @@ MAINTAINER=	lioux@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-utmp --enable-wtmp --enable-languages \
 		--with-xpm --enable-xpm-background --enable-transparency \
 		--enable-shared
 USE_LIBTOOL=	yes
-INSTALLS_SHLIB= yes
+INSTALLS_SHLIB=	yes
 USE_BZIP2=	yes
 
 MAN1=		rxvt.1

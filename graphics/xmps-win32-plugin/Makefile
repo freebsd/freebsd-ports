@@ -27,7 +27,7 @@ PLIST_SUB=	LIB_VERSION="${LIB_VERSION}"
 #CODEC_PORT=	${PORTSDIR}/graphics/win32-codecs
 CODEC_PORT=	${.CURDIR}/../win32-codecs
 CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
-LIB_VERSION=    0
+LIB_VERSION=	0
 
 post-patch:
 	${PERL} -pi -ne "s|/usr/lib/win32|${LOCALBASE}/lib/win32|" ${WRKSRC}/src/win32_codec.c
