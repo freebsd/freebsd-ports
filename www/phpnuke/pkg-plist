@@ -66,6 +66,11 @@ www/phpnuke/html/backend.php
 www/phpnuke/html/banners.php
 www/phpnuke/html/bb_smilies.php
 www/phpnuke/html/bbcode_ref.php
+www/phpnuke/html/blocks/block-Sample_Block.php
+www/phpnuke/html/blocks/block-Top10_Downloads.php
+www/phpnuke/html/blocks/block-Top10_Links.php
+www/phpnuke/html/blocks/index.html
+www/phpnuke/html/blocks/readme.txt
 www/phpnuke/html/categories.php
 www/phpnuke/html/comments.php
 www/phpnuke/html/config.php
@@ -111,6 +116,7 @@ www/phpnuke/html/images/admin/sections.gif
 www/phpnuke/html/images/admin/submissions.gif
 www/phpnuke/html/images/admin/topicsman.gif
 www/phpnuke/html/images/admin/users.gif
+www/phpnuke/html/images/articles/index.html
 www/phpnuke/html/images/banners/index.html
 www/phpnuke/html/images/blackpixel.gif
 www/phpnuke/html/images/blue.gif
@@ -378,6 +384,7 @@ www/phpnuke/html/images/language/flag-danish.png
 www/phpnuke/html/images/language/flag-dutch.png
 www/phpnuke/html/images/language/flag-english.png
 www/phpnuke/html/images/language/flag-french.png
+www/phpnuke/html/images/language/flag-galego.png
 www/phpnuke/html/images/language/flag-german.png
 www/phpnuke/html/images/language/flag-greek.png
 www/phpnuke/html/images/language/flag-hungarian.png
@@ -395,6 +402,7 @@ www/phpnuke/html/images/language/flag-romanian.png
 www/phpnuke/html/images/language/flag-russian.png
 www/phpnuke/html/images/language/flag-spanish.png
 www/phpnuke/html/images/language/flag-swedish.png
+www/phpnuke/html/images/language/flag-thai.png
 www/phpnuke/html/images/language/flag-turkish.png
 www/phpnuke/html/images/links/editicon.gif
 www/phpnuke/html/images/links/new-english.gif
@@ -525,6 +533,7 @@ www/phpnuke/html/language/lang-danish.php
 www/phpnuke/html/language/lang-dutch.php
 www/phpnuke/html/language/lang-english.php
 www/phpnuke/html/language/lang-french.php
+www/phpnuke/html/language/lang-galego.php
 www/phpnuke/html/language/lang-german.php
 www/phpnuke/html/language/lang-greek.php
 www/phpnuke/html/language/lang-hungarian.php
@@ -535,6 +544,7 @@ www/phpnuke/html/language/lang-portuguese.php
 www/phpnuke/html/language/lang-russian.php
 www/phpnuke/html/language/lang-spanish.php
 www/phpnuke/html/language/lang-swedish.php
+www/phpnuke/html/language/lang-thai.php
 www/phpnuke/html/links.php
 www/phpnuke/html/mainfile.php
 www/phpnuke/html/manual/admin.html
@@ -701,6 +711,7 @@ www/phpnuke/html/upgrades/upgrade35-4.php
 www/phpnuke/html/upgrades/upgrade42_43.php
 www/phpnuke/html/upgrades/upgrade43-44.php
 www/phpnuke/html/upgrades/upgrade44-50.php
+www/phpnuke/html/upgrades/upgrade50-51.php
 www/phpnuke/html/user.php
 www/phpnuke/html/viewpmsg.php
 www/phpnuke/html/voteinclude.php
@@ -747,9 +758,11 @@ www/phpnuke/sql/nuke.sql
 @dirrm www/phpnuke/html/images/forum
 @dirrm www/phpnuke/html/images/download
 @dirrm www/phpnuke/html/images/banners
+@dirrm www/phpnuke/html/images/articles
 @dirrm www/phpnuke/html/images/admin/filemanager
 @dirrm www/phpnuke/html/images/admin
 @dirrm www/phpnuke/html/images
+@dirrm www/phpnuke/html/blocks
 @dirrm www/phpnuke/html/admin/modules
 @dirrm www/phpnuke/html/admin/links
 @dirrm www/phpnuke/html/admin/case
