@@ -24,12 +24,13 @@ d_rename='define'
 d_symlink='define'
 d_whoami='undef'
 d_poll='define'
+d_mmap='define'
 d_inttypes='define'
 d_nointtypes='undef'
 n='-n'
 c=''
 orderlib='false'
-ranlib='/usr/bin/ranlib'
+ranlib=':'
 package='elm2'
 pager='builtin++'
 startsh='#!/bin/sh'
@@ -42,6 +43,8 @@ cp
 echo
 expr
 grep
+fgrep
+head
 ln
 ls
 make
@@ -51,6 +54,7 @@ sed
 sleep
 touch
 tr
+cut
 '
 expr='/bin/expr'
 sed='/usr/bin/sed'
@@ -64,6 +68,8 @@ tr='/usr/bin/tr'
 sort=''
 uniq=''
 grep='/usr/bin/grep'
+fgrep='/usr/bin/fgrep'
+head='/usr/bin/head'
 trylist='
 Mcc
 compress
@@ -145,9 +151,9 @@ col=''
 pack='pack'
 compress='/usr/bin/compress'
 execmail=''
-libswanted='intl nls'
+libswanted='sun intl nls c_s'
 noaddlib='yes'
-c_date='Wed Apr  7 21:35:37 MSD 1999'
+c_date='Wed Sep  8 21:06:00 MSD 1999'
 d_ascii='undef'
 d_broke_ctype='undef'
 d_calendar='define'
@@ -189,7 +195,7 @@ defencoding=''
 d_8bitmime='define'
 d_binarymime='undef'
 d_dsn='define'
-defcharset='ISO-8859-1'
+defcharset='DISPLAY'
 defdispcharset='ISO-8859-1'
 d_mmdf='undef'
 d_newauto='define'
@@ -252,7 +258,7 @@ libc='/usr/lib/libc.so'
 linepr='/usr/bin/lp'
 maildir='/var/mail'
 mailer='/usr/sbin/sendmail'
-mailgrp='bin'
+mailgrp='mail'
 mansrc="${PREFIX}/man/man1"
 catmansrc="${PREFIX}/man/cat1"
 manext='.1'
@@ -264,12 +270,6 @@ manroff='/usr/bin/nroff'
 manroffopts=''
 suffix=''
 packer=''
-models='none'
-split=''
-small=''
-medium=''
-large=''
-huge=''
 optimize="$CFLAGS"
 ccflags=''
 cppflags=''
@@ -280,7 +280,7 @@ nametype='bsd'
 d_passnames='define'
 d_berknames='define'
 d_usgnames='undef'
-# passcat='cat /etc/passwd'
+# passcat=''
 rmttape='unknown-remote-tape-unit'
 roff='/usr/bin/troff'
 roffopts=''
@@ -295,14 +295,11 @@ xencf=''
 xenlf=''
 d_xenix='undef'
 d_bsd='define'
-locale='/usr/share/locale'
+locale='locale'
 d_pgp='define'
 pgp="${PREFIX}/bin/pgp"
 pgp_path="${PREFIX}/bin/pgp"
 special_path='/usr/local/bin'
-d_remailer='define'
-finger='/usr/bin/finger'
-finger_path='/usr/bin/finger'
 CONFIG=true
 EOF
 

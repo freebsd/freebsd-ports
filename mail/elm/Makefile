@@ -7,7 +7,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=       elm-2.4ME+54
+DISTNAME=       elm-2.4ME+61
 CATEGORIES=	mail
 MASTER_SITES=   ftp://ftp.ozone.fmi.fi/KEH/ \
 		ftp://ftp.funet.fi/pub/unix/mail/elm/elm-2.4ME+/ \
@@ -15,7 +15,7 @@ MASTER_SITES=   ftp://ftp.ozone.fmi.fi/KEH/ \
 
 MAINTAINER=	ache@FreeBSD.org
 
-WRKSRC=         ${WRKDIR}/elm2.4.ME+.54
+WRKSRC=         ${WRKDIR}/elm2.4.ME+.61
 MAN1=           answer.1 checkalias.1 elm.1 elmalias.1 fastmail.1 \
 		frm.1 listalias.1 messages.1 newalias.1 newmail.1 \
 		printmail.1 readmsg.1
@@ -24,7 +24,7 @@ MLINKS=		frm.1 nfrm.1	newmail.1 wnewmail.1
 HAS_CONFIGURE=  Yes
 CONFIGURE_SCRIPT= Configure
 CONFIGURE_ENV=  PREFIX="${PREFIX}"
-CONFIGURE_ARGS= -S
+CONFIGURE_ARGS= -S -d
 
 post-configure:
 	${CP} ${FILESDIR}/elm.mimecharsets ${WRKSRC}/bin
