@@ -9,7 +9,7 @@
 PORTNAME=	htmltolatex
 PORTVERSION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://66.108.152.41/~nradisch/docgen/
+MASTER_SITES=	ftp://crydee.sai.msu.ru/zeus/unix/WWW/tools/converters/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
