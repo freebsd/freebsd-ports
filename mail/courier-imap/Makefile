@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	courier-imap
-PORTVERSION=	1.7.1
+PORTVERSION=	2.0.0
 PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -44,11 +44,16 @@ LIBEXECDIR?=	${PREFIX}/libexec/${PORTNAME}
 
 VPOPMAILDIR?=	${LOCALBASE}/vpopmail
 
+PLIST_SUB=	CONFDIR=${CONFDIR:S,^${PREFIX}/,,} \
+		RCDIR=${RCDIR:S,^${PREFIX}/,,} \
+		USERDB=${USERDB:S,^${PREFIX}/,,} \
+		LIBEXECDIR=${LIBEXECDIR:S,^${PREFIX}/,,}
+
 .if !defined(WITHOUT_OPENSSL)
 USE_OPENSSL=	YES
-PLIST_SUB=	OPENSSLFLAG=
+PLIST_SUB+=	OPENSSLFLAG=
 .else
-PLIST_SUB=	OPENSSLFLAG="@comment "
+PLIST_SUB+=	OPENSSLFLAG="@comment "
 .endif
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -158,9 +163,12 @@ post-patch:
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/authlib/authtest ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/authlib/authuserdb \
+	${PREFIX}/libexec/courier-imap/authlib
 .for i in imapd pop3d
 	${INSTALL_DATA} ${WRKSRC}/imap/${i}.cnf ${CONFDIR}/${i}.cnf.dist
 	${LN} -s ${LIBEXECDIR}/${i}.rc ${RCDIR}/${PORTNAME}-${i}.sh.sample
+	${LN} -s ${LIBEXECDIR}/${i}-ssl.rc ${RCDIR}/${PORTNAME}-${i}-ssl.sh.sample
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
