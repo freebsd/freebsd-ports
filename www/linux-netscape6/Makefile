@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	linux-netscape
-PORTVERSION?=	6.2.2
-PORTREVISION?=	1
+PORTVERSION?=	6.2.3
+PORTREVISION?=	0
 CATEGORIES?=	www linux
 MASTER_SITES=	ftp://ftp.netscape.com/pub/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.cica.es/pub6/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
@@ -43,8 +43,6 @@ PATCH_SITE_SUBDIR=	trevor
 PATCHFILES=	linux-netscape6-${PORTVERSION}-generated-files.tar.gz
 
 MAINTAINER?=	trevor@FreeBSD.org
-
-FORBIDDEN=	"may have zlib double free() bug"
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0.5.0:${PORTSDIR}/x11-toolkits/linux-gtk \

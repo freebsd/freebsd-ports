@@ -6,6 +6,7 @@
 # $FreeBSD$
 #
 
+PKGNAMEPREFIX=	ja-
 PORTREVISION=	0
 CATEGORIES=	japanese www linux
 

@@ -6,6 +6,7 @@
 # $FreeBSD$
 #
 
+PKGNAMEPREFIX?=	fr-
 PORTREVISION=	0
 CATEGORIES=	french www linux
 
