@@ -17,6 +17,23 @@ USE_GMAKE=	yes
 USE_AUTOMAKE_VER=14
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
+REGEX=		"s@EXTRA_DIST \+@EXTRA_DIST @g"
+
+pre-configure:
+.for M in examples include src util
+	@${PERL} -pi -e ${REGEX} ${WRKSRC}/${M}/Makefile.am
+.endfor
+.for M in build cgi cipher comm fifobuf fstring log mem misc mt nvtp ph proc \
+	random smtp sock tn url xml
+	@${PERL} -pi -e ${REGEX} ${WRKSRC}/src/${M}/Makefile.am
+.endfor
+.for M in framework/application framework/application/src test
+	@${PERL} -pi -e ${REGEX} ${WRKSRC}/util/${M}/Makefile.am
+.endfor
+.for M in smtp
+	@${PERL} -pi -e ${REGEX} ${WRKSRC}/examples/${M}/Makefile.am
+.endfor
+	${PERL} -pi -e "s@autoheader,@${AUTOHEADER},@g" ${WRKSRC}/aclocal.m4
 
 post-install:
 .if !defined(NOPORTDOCS)
