@@ -9,7 +9,7 @@ PORTNAME=	scrollz
 PORTVERSION=	1.8i6
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ns0.hole.org/pub/ScrollZ/Bins/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-fbsd-3.4
+DISTNAME=	${PORTNAME}-18i6-fbsd-3.4
 EXTRACT_SUFX=	.bz2
 
 MAINTAINER=	will@FreeBSD.org
