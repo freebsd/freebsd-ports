@@ -1,0 +1,9 @@
+--- src/lib/search.c	Tue Jun 19 11:02:47 2001
++++ src/lib/search.c	Tue Oct 30 23:11:26 2001
+@@ -2051,5 +2051,5 @@
+    passed and return bit mask. */
+   
+-unsigned int is_defined(char *searchstr, int dbase)
++unsigned long is_defined(char *searchstr, int dbase)
+ {
+     IndexPtr index;

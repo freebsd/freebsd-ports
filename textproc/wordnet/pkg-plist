@@ -1,45 +1,42 @@
 bin/wnb
 bin/wn
-include/wordnet-1.6/license.h
-include/wordnet-1.6/setutil.h
-include/wordnet-1.6/wn.h
-include/wordnet-1.6/wnconsts.h
-include/wordnet-1.6/wnglobal.h
-include/wordnet-1.6/wnhelp.h
-include/wordnet-1.6/wnrtl.h
-include/wordnet-1.6/wntypes.h
+include/wordnet-%%VER%%/license.h
+include/wordnet-%%VER%%/setutil.h
+include/wordnet-%%VER%%/wn.h
+include/wordnet-%%VER%%/wnconsts.h
+include/wordnet-%%VER%%/wnglobal.h
+include/wordnet-%%VER%%/wnhelp.h
+include/wordnet-%%VER%%/wnrtl.h
+include/wordnet-%%VER%%/wntypes.h
 lib/libwn1.a
-lib/libwn1.so.6
+lib/libwn1.so.7
 lib/libwn1.so
-lib/libtclwn1.so.6
+lib/libtclwn1.so.7
 lib/libtclwn1.so
 lib/tcl%%TCL_DVER%%/Wordnet/pkgIndex.tcl
-share/wordnet-1.6/adj.exc
-share/wordnet-1.6/adv.exc
-share/wordnet-1.6/cntlist
-share/wordnet-1.6/cousin.exc
-share/wordnet-1.6/cousin.tops
-share/wordnet-1.6/data.adj
-share/wordnet-1.6/data.adv
-share/wordnet-1.6/data.noun
-share/wordnet-1.6/data.verb
-share/wordnet-1.6/index.adj
-share/wordnet-1.6/index.adv
-share/wordnet-1.6/index.gloss
-share/wordnet-1.6/index.noun
-share/wordnet-1.6/index.sense
-share/wordnet-1.6/index.verb
-share/wordnet-1.6/lexnames
-share/wordnet-1.6/noun.exc
-share/wordnet-1.6/sentidx.vrb
-share/wordnet-1.6/sents.vrb
-share/wordnet-1.6/stoplist.pl
-share/wordnet-1.6/verb.exc
-share/wordnet-1.6/wnres/license.txt
-share/wordnet-1.6/wnres/wn.xbm
-share/wordnet-1.6/wnres/wnb.man
-share/wordnet-1.6/wnres/wngloss.man
-@dirrm include/wordnet-1.6
+share/wordnet-%%VER%%/adj.exc
+share/wordnet-%%VER%%/adv.exc
+share/wordnet-%%VER%%/cntlist
+share/wordnet-%%VER%%/cntlist.rev
+share/wordnet-%%VER%%/data.adj
+share/wordnet-%%VER%%/data.adv
+share/wordnet-%%VER%%/data.noun
+share/wordnet-%%VER%%/data.verb
+share/wordnet-%%VER%%/index.adj
+share/wordnet-%%VER%%/index.adv
+share/wordnet-%%VER%%/index.noun
+share/wordnet-%%VER%%/index.sense
+share/wordnet-%%VER%%/index.verb
+share/wordnet-%%VER%%/lexnames
+share/wordnet-%%VER%%/noun.exc
+share/wordnet-%%VER%%/sentidx.vrb
+share/wordnet-%%VER%%/sents.vrb
+share/wordnet-%%VER%%/verb.exc
+share/wordnet-%%VER%%/wnres/license.txt
+share/wordnet-%%VER%%/wnres/wn.xbm
+share/wordnet-%%VER%%/wnres/wnb.man
+share/wordnet-%%VER%%/wnres/wngloss.man
+@dirrm include/wordnet-%%VER%%
 @dirrm lib/tcl%%TCL_DVER%%/Wordnet
-@dirrm share/wordnet-1.6/wnres
-@dirrm share/wordnet-1.6
+@dirrm share/wordnet-%%VER%%/wnres
+@dirrm share/wordnet-%%VER%%
