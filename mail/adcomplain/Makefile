@@ -1,10 +1,10 @@
 # New ports collection makefile for:    adcomplain
-# http://www.rdrop.com/users/billmc/
+# http://www.rdrop.com/users/billmc/adcomplain.html
 # Version required:     1.6
 # Date created: 13 Sep 1997
 # Whom:         ache@FreeBSD.org
 #
-# $Id: Makefile,v 1.1.1.1 1997/09/13 14:04:21 ache Exp $
+# $Id: Makefile,v 1.2 1997/09/13 21:31:54 max Exp $
 #
 
 DISTNAME=      adcomplain.pl.uu
