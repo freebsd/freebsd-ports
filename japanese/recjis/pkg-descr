@@ -1,0 +1,24 @@
+Recjis - Recover jis codeing system
+
+Recjis is some programs to repair broken japanese texts such
+as MSB or ESC lost. You cannot recover perfectly with recjis
+but its high repair rate make it useful.
+
+COMMAND:
+	rjis  --  recover jis code that lost ESCs
+	rujis --  recover ujis (EUC, DEC without 1 byte kana
+	          charactor) files that lost MSBs
+	rsjis --  recover Shift JIS files that lost MSBs
+	dejis --  exclude  ESCs  and  set  MSB  0 to destroy 
+	          japanese texts (it's only for sample :-)
+
+USAGE:
+	r[us]jis input output
+	r[us]jis input > output
+	r[us]jis < input > output
+
+OPTIONS:
+	-h        show usage
+	-l        study mode - Let rujis or rsjis remake tables.
+	          They learn from files with MSBs. No output.
+	-t        use user-specify tables
