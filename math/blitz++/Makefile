@@ -15,16 +15,11 @@ DISTNAME=	blitz-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ class library for scientific computing
 
-BROKEN=		"Does not compile"
-
-LIB_DEPENDS=	blas.1:${PORTSDIR}/math/blas
-
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	LDFLAGS="-lg2c"
-CONFIGURE_ARGS=	--with-cxx=gcc --disable-debug --with-blas=${LOCALBASE}/lib
+CONFIGURE_ARGS=	--with-cxx=gcc --enable-optimize --disable-debug
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 
