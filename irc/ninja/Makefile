@@ -16,11 +16,13 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	IRCLIB="${IRCLIB}"
+USE_REINPLACE=	yes
 
 IRCLIB=		${PREFIX}/share/ninja
 
 post-patch:
-	@${PERL} -e "s|%%IRCLIB%%|${IRCLIB}|g" ${WRKSRC}/include/config.h.dist
+	@${REINPLACE_CMD} -e "s|%%IRCLIB%%|${IRCLIB}|g" \
+		${WRKSRC}/include/config.h.dist
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ninja ${PREFIX}/bin
