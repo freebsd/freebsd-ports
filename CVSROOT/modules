@@ -7887,6 +7887,7 @@ py-google	ports/net/py-google
 py-graphviz	ports/graphics/py-graphviz
 py-grouch	ports/devel/py-grouch
 py-gsl		ports/math/py-gsl
+py-gstreamer	ports/multimedia/py-gstreamer
 py-gtk		ports/x11-toolkits/py-gtk
 py-gtk2		ports/x11-toolkits/py-gtk2
 py-gtkextra	ports/x11-toolkits/py-gtkextra
