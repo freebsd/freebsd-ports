@@ -1,8 +1,13 @@
 %%RUBY_SITEARCHLIBDIR%%/fox.so
 %%RUBY_SITELIBDIR%%/fox/aliases.rb
+%%RUBY_SITELIBDIR%%/fox/core.rb
+%%RUBY_SITELIBDIR%%/fox/colors.rb
+%%RUBY_SITELIBDIR%%/fox/glshapes.rb
 %%RUBY_SITELIBDIR%%/fox/iterators.rb
 %%RUBY_SITELIBDIR%%/fox/keys.rb
+%%RUBY_SITELIBDIR%%/fox/overloads.rb
 %%RUBY_SITELIBDIR%%/fox/responder.rb
+%%RUBY_SITELIBDIR%%/fox/responder2.rb
 %%RUBY_SITELIBDIR%%/fox/undolist.rb
 @dirrm %%RUBY_SITELIBDIR%%/fox
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fox/README
@@ -10,6 +15,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fox/button.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fox/datatarget.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fox/dialog.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fox/dilbert.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fox/dirlist.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fox/examples.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fox/examples.xml
@@ -24,6 +30,8 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fox/imageviewer.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fox/inputs.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fox/mditest.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fox/scintilla-test.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fox/scribble-orig.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fox/scribble.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fox/shutter.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fox/splitter.rb
@@ -94,6 +102,7 @@
 %%PORTDOCS%%%%RUBY_DOCDIR%%/fox/doc/button.png
 %%PORTDOCS%%%%RUBY_DOCDIR%%/fox/doc/changes.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/fox/doc/differences.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/fox/doc/events.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/fox/doc/glviewer.gif
 %%PORTDOCS%%%%RUBY_DOCDIR%%/fox/doc/goals.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/fox/doc/imageviewer.png
