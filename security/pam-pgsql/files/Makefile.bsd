@@ -4,9 +4,9 @@ SRCS=	pam_pgsql.c pam_get_pass.c pam_std_option.c pam_get_service.c
 LIB=	pam_pgsql
 SHLIB_NAME=${LIB}.so
 
-LDADD=		-lpam -L${LOCALBASE}/lib -lpq -lmhash
+LDADD=		-lpam -L${LOCALBASE}/lib -lpq -lmd
 CFLAGS+=	-Wall -D_GNU_SOURCE \
-		-I${LOCALBASE}/include/pgsql -I${LOCALBASE}/include
+		-I${LOCALBASE}/include/pgsql
 
 INTERNALLIB=	we don't need no stinking static lib
 NOPROFILE=	we don't need no profiling either

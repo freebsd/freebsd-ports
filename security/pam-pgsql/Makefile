@@ -14,10 +14,9 @@ DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	mi@aldan.algebra.com
 
-LIB_DEPENDS=	mhash:${PORTSDIR}/security/mhash \
-		pq:${PORTSDIR}/databases/postgresql7
+LIB_DEPENDS=	pq:${PORTSDIR}/databases/postgresql7
 
-FORBIDDEN=	security
+FORBIDDEN=	can be broken by carefully crafted password string
 
 # When the family of Debian mirrors is added to bsd.port.mk,
 # this will suddenly start making sense:
