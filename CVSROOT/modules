@@ -1099,7 +1099,6 @@ date		src/bin/date
 datedif		ports/misc/datedif
 db		ports/databases/db
 db3		ports/databases/db3
-db33		ports/databases/db33
 db4		ports/databases/db4
 dbXML		ports/databases/dbXML
 dbconnect	ports/databases/dbconnect
