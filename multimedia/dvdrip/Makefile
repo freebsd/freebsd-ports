@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dvdrip
-PORTVERSION=	0.50.16
-PORTREVISION=	1
+PORTVERSION=	0.50.18
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.exit1.org/dvdrip/dist/
 DISTNAME=	Video-DVDRip-${PORTVERSION}
@@ -56,7 +55,8 @@ pre-everything::
 
 post-patch:
 	@${PERL} -pi -e 's#/usr/sbin/fping#${LOCALBASE}/sbin/fping#' \
-		${WRKSRC}/lib/Video/DVDRip/Cluster/Master.pm
+		${WRKSRC}/lib/Video/DVDRip/Cluster/Master.pm \
+		${WRKSRC}/lib/Video/DVDRip/Depend.pm
 	@${PERL} -pi -e 's#/usr/local/bin/perl#${PERL5}#' \
 		${WRKSRC}/dvdrip
 	@${PERL} -pi -e 's#/usr/local/bin/perl#${PERL5}#' \
