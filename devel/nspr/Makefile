@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nspr
-PORTVERSION=	4.1.2
+PORTVERSION=	4.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.mozilla.org/pub/nspr/releases/v${PORTVERSION}/src/
 
@@ -28,7 +28,7 @@ LIBS=		libnspr4.so.1 libplc4.so.1 libplds4.so.1
 do-install:
 	${MKDIR} ${PREFIX}/include/nspr
 	${TAR} -C ${WRKSRC}/dist/include --dereference -cf - . | \
-		${TAR} -C ${PREFIX}/include/nspr -xf -
+		${TAR} -C ${PREFIX}/include -xf -
 	${TAR} -C ${WRKSRC}/dist/lib --dereference -cf - . | \
 		${TAR} -C ${PREFIX}/lib -xf -
 .for lib in ${LIBS}
