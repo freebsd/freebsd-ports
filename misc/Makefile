@@ -74,6 +74,7 @@
     SUBDIR += jargon
     SUBDIR += jive
     SUBDIR += kcd
+    SUBDIR += kde2-i18n
     SUBDIR += kdeutils2
     SUBDIR += kdirstat
     SUBDIR += khotkeys
