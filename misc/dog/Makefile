@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	dog
-PORTVERSION=	1.5
+PORTVERSION=	1.7
 CATEGORIES=	misc
 MASTER_SITES=	http://jl.photodex.com/dog/
 
-MAINTAINER=	dan@tanelorn.demon.co.uk
+MAINTAINER=	rooneg@electricjellyfish.net
 
 USE_GMAKE=	yes
 ALL_TARGET=	dog
