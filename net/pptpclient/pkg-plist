@@ -1,4 +1,3 @@
-libexec/pptp_callmgr
 sbin/pptp
 share/examples/pptpclient/README
 share/examples/pptpclient/ppp.conf
