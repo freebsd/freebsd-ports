@@ -5,3 +5,4 @@
 ^src/contrib/.*/FREEBSD-Xlist
 ^src/usr.bin/more/more.help
 ^src/etc/motd
+^src/share/man/man0
