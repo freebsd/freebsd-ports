@@ -1,11 +1,11 @@
-%%MICO_SERVICE%%bin/extcontainmentd
-%%MICO_SERVICE%%bin/extnoded
-%%MICO_SERVICE%%bin/extreferenced
-%%MICO_SERVICE%%bin/streamd
 %%MICO_SERVICE%%bin/ccmload
 %%MICO_SERVICE%%bin/componentserver
 %%MICO_SERVICE%%bin/containmentd
 %%MICO_SERVICE%%bin/eventd
+%%MICO_SERVICE%%bin/extcontainmentd
+%%MICO_SERVICE%%bin/extcriteriad
+%%MICO_SERVICE%%bin/extnoded
+%%MICO_SERVICE%%bin/extreferenced
 bin/idl
 bin/imr
 bin/iordump
@@ -30,6 +30,7 @@ bin/micod
 %%MICO_SERVICE%%bin/proxyd
 %%MICO_SERVICE%%bin/randomd
 %%MICO_SERVICE%%bin/referenced
+%%MICO_SERVICE%%bin/streamd
 %%MICO_SERVICE%%bin/timed
 %%MICO_SERVICE%%bin/traderd
 %%MICO_SERVICE%%bin/traversald
@@ -1000,6 +1001,13 @@ lib/mico-setup.sh
 %%PORTDOCS%%%%MICO_SSL%%share/examples/mico/security/tutorial/ssl
 %%PORTDOCS%%share/examples/mico/services/Makefile
 %%PORTDOCS%%share/examples/mico/services/README
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/events/Makefile
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/events/client.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/events/client2.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/events/runit
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/events/server.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/events/server2.cc
+%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/events/server3.cc
 %%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/Documents.idl
 %%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/DocumentsServer.cc
 %%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/Documents_impl.cc
@@ -1017,13 +1025,6 @@ lib/mico-setup.sh
 %%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/simple-test.cc
 %%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/stop-servers
 %%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/externalize/test
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/events/Makefile
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/events/client.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/events/client2.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/events/runit
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/events/server.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/events/server2.cc
-%%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/events/server3.cc
 %%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/Documents.idl
 %%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/DocumentsServer.cc
 %%PORTDOCS%%%%MICO_SERVICE%%share/examples/mico/services/lifecycle/Documents_impl.cc
@@ -1155,8 +1156,8 @@ lib/mico-setup.sh
 %%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/services/naming-lb
 %%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/services/naming
 %%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/services/lifecycle
-%%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/services/events
 %%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/services/externalize
+%%PORTDOCS%%%%MICO_SERVICE%%@dirrm share/examples/mico/services/events
 %%PORTDOCS%%@dirrm share/examples/mico/services
 %%PORTDOCS%%%%MICO_SSL%%@dirrm share/examples/mico/security/tutorial
 %%PORTDOCS%%%%MICO_SSL%%@dirrm share/examples/mico/security/l2

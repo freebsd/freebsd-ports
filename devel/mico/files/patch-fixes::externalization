@@ -1,5 +1,5 @@
---- coss/externalization/Makefile.orig	Fri Feb 14 13:55:55 2003
-+++ coss/externalization/Makefile	Fri Jul  4 15:01:11 2003
+--- coss/externalization/Makefile.orig	Wed Jul  9 18:02:19 2003
++++ coss/externalization/Makefile	Wed Jul  9 18:02:27 2003
 @@ -85,6 +85,8 @@
  	$(CXX) $(CXXFLAGS) $(LDFLAGS) extreferenced.o $(LDLIBS) -o extreferenced
  	$(POSTLD) $@
@@ -9,6 +9,15 @@
  CosExternalization.h CosExternalization.cc: \
  		../../include/coss/CosExternalization.idl $(IDL)
  	$(IDL) $(IDLFLAGS) --name CosExternalization \
+@@ -125,6 +127,8 @@
+ 	$(IBINCMD) extcontainmentd $(INSTDIR)/bin
+ 	$(IDIRCMD) $(INSTDIR)/bin
+ 	$(IBINCMD) extreferenced $(INSTDIR)/bin
++	$(IDIRCMD) $(INSTDIR)/bin
++	$(IBINCMD) extcriteriad $(INSTDIR)/bin
+ 
+ 
+ ifeq (.depend, $(wildcard .depend))
 --- include/coss/CosStream_impl.h.orig	Fri Jul  4 15:24:06 2003
 +++ include/coss/CosStream_impl.h	Fri Jul  4 17:12:36 2003
 @@ -58,8 +58,8 @@
