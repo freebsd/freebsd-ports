@@ -2,6 +2,10 @@ bin/uqm
 lib/uqm/uqm
 share/uqm/content/packages/uqm-0.3-content.zip
 share/uqm/content/version
+%%VOICEADDON%%share/uqm/content/packages/addons/voice/uqm-0.3-voice.zip
+%%MUSICADDON%%share/uqm/content/packages/addons/3domusic/uqm-0.3-3domusic.zip
+%%VOICEADDON%%@dirrm share/uqm/content/packages/addons/voice
+%%MUSICADDON%%@dirrm share/uqm/content/packages/addons/3domusic
 @dirrm share/uqm/content/packages/addons
 @dirrm share/uqm/content/packages
 @dirrm share/uqm/content
