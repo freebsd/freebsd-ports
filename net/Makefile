@@ -98,6 +98,7 @@
     SUBDIR += domtools
     SUBDIR += driftnet
     SUBDIR += easysoap
+    SUBDIR += echolot
     SUBDIR += echoping
     SUBDIR += edonkey-core
     SUBDIR += edonkey-gui-gtk
