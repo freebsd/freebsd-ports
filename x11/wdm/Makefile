@@ -3,7 +3,7 @@
 # Date created:		August 31, 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/09/04 07:17:26 tg Exp $
 
 DISTNAME=	wdm-0.11
 CATEGORIES=	x11
@@ -28,7 +28,9 @@ CONFIGURE_ENV=	X11BASE=${X11BASE} CPPFLAGS=-I${PREFIX}/include
 CONFIGURE_ARGS=	--with-gfx-libs="-L${PREFIX}/lib -L${LOCALBASE}/lib" \
 	--with-gfx-incs="-I${LOCALBASE}/include/tiff34 -I${LOCALBASE}/include" \
 	--with-logdir=/var/log --with-runlockdir=/var/run \
-	--with-WDMDIR=${PREFIX}/lib/X11/wdm
+	--with-WDMDIR=${PREFIX}/lib/X11/wdm \
+	--with-DEFUSERPATH=/bin:/usr/bin:/sbin:/usr/sbin:${X11BASE}/bin:${LOCALBASE}/bin \
+	--with-DEFSYSTEMPATH=/bin:/usr/bin:/sbin:/usr/sbin:${X11BASE}/bin
 
 MAN1=	wdm.1 wdmLogin.1
 
