@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	fd
-PORTVERSION=	1.03q
+PORTVERSION=	1.03r
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA012337/soft/fd/ \
 		${MASTER_SITE_LOCAL}
