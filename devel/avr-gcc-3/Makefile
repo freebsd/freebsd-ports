@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	3.4.1
+PORTVERSION=	3.4.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITES+=	http://people.freebsd.org/~joerg/:local
 MASTER_SITE_SUBDIR=	releases/${DISTNAME}
 PKGNAMEPREFIX=	avr-
 DISTFILES=	gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
-		gcc-g++-${PORTVERSION}${EXTRACT_SUFX} \
-		${MAN_AUX}:local
+		gcc-g++-${PORTVERSION}${EXTRACT_SUFX}
 EXTRACT_ONLY=	gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
 		gcc-g++-${PORTVERSION}${EXTRACT_SUFX}
 
@@ -37,8 +36,6 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--target=avr --disable-nls
 
-MAN_AUX=	gcc-man.${PORTVERSION}.tar.gz
-
 MAKE_FLAGS=	LANGUAGES="c c++"
 # get rid of that silly -mcpu=pentiumpro FreeBSD 5+ is so fond of. :-(
 MAKE_ENV=	MACHINE_ARCH=avr
@@ -47,16 +44,16 @@ MAN1=		avr-cpp.1 avr-gcc.1 avr-g++.1 avr-gcov.1
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
 INFO=		cpp gcc gccint cppinternals gccinstall
 
+# As files/patch-binary-constants updates the documentation, we need to
+# recreate it.
+pre-build:
+	cd ${WRKSRC}/gcc &&\
+		makeinfo -I doc -I doc/include --no-split -o doc/gcc.info doc/gcc.texi
+
 .include <bsd.port.pre.mk>
 
-# Since the pod2man in FreeBSD 4-stable's /usr/bin cannot be used, we
-# help out by extracting precompiled manpages there.
-pre-build:
-		if ${PERL} -e 'use 1.10 Pod::Man' >/dev/null 2>/dev/null ; \
-		then : ; \
-		else \
-			cd ${WRKDIR}/gcc-${PORTVERSION} ; \
-			${TAR} -xvzf ${DISTDIR}/${MAN_AUX} ; \
-		fi
+.if ${OSVERSION} < 500000
+BROKEN=		"System's Pod::Man too old to generate the documentation."
+.endif
 
 .include <bsd.port.post.mk>
