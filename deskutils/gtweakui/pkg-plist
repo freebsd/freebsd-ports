@@ -1,6 +1,7 @@
 bin/gtweakui-menus
 bin/gtweakui-session
 bin/gtweakui-nautilus
+bin/gtweakui-galeon
 share/gnome/gTweakUI/g.png
 share/gnome/gTweakUI/menus0.png
 share/gnome/gTweakUI/menus1.png
@@ -9,10 +10,14 @@ share/gnome/gTweakUI/menus3.png
 share/gnome/gTweakUI/menus.glade
 share/gnome/gTweakUI/session.glade
 share/gnome/gTweakUI/nautilus.glade
+share/gnome/gTweakUI/galeon.glade
 share/gnome/gTweakUI/about.glade
 share/gnome/gTweakUI/notice.glade
 share/gnome/gTweakUI/bullet.png
-share/gnome/applications/gtweakui-menus.desktop
-share/gnome/applications/gtweakui-session.desktop
-share/gnome/applications/gtweakui-nautilus.desktop
+share/gnome/control-center-2.0/capplets/gtweakui-menus.desktop
+share/gnome/control-center-2.0/capplets/gtweakui-session.desktop
+share/gnome/control-center-2.0/capplets/gtweakui-nautilus.desktop
+share/gnome/control-center-2.0/capplets/gtweakui-galeon.desktop
 @dirrm share/gnome/gTweakUI
+@dirrm share/gnome/control-center-2.0/capplets
+@dirrm share/gnome/control-center-2.0
