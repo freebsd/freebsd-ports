@@ -30,11 +30,9 @@ LIBFFIWRKSRC=	${WRKDIR}/libffi-${LIBFFIVERSION}
 CONFIGURE_ARGS=	--enable-static --disable-shared
 CONFIGURE_WRKSRC=${LIBFFIWRKSRC}
 
-.include <bsd.port.pre.mk>
+ONLY_FOR_ARCHS=	i386 alpha powerpc
 
-.if ${ARCH} == "ia64"
-BROKEN=		"does not build"
-.endif
+.include <bsd.port.pre.mk>
 
 post-patch:
 	${LN} -sf ${LIBFFIWRKSRC}/config-ml.in ${LIBFFIWRKSRC}/..
@@ -44,7 +42,7 @@ post-patch:
 		"ffi_type_sint8"), ("ffi_type_sshort","ffi_type_sint16")],|' \
 		${WRKSRC}/setup.py
 	${REINPLACE_CMD} -e 's,\(alpha\*-.*-osf.*\)),\1 | alpha*-*-freebsd*),' \
-                ${LIBFFIWRKSRC}/configure
+		${LIBFFIWRKSRC}/configure
 .if ${ARCH} == "ia64"
 	${LN} -sf ${LIBFFIWRKSRC}/${ARCH}/${ARCH}_flags.h ${LIBFFIWRKSRC}/
 	${REINPLACE_CMD} -e 's|defined(IA64)|defined(__ia64__)|' \
