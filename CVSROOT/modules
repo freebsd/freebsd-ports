@@ -7317,6 +7317,7 @@ xmms		ports/audio/xmms
 xmms-avi	ports/graphics/xmms-avi
 xmms-crossfade	ports/audio/xmms-crossfade
 xmms-crystality	ports/audio/xmms-crystality
+xmms-fc		ports/audio/xmms-fc
 xmms-gforce	ports/graphics/xmms-gforce
 xmms-kde	ports/audio/xmms-kde
 xmms-liveice	ports/audio/xmms-liveice
