@@ -1,60 +1,28 @@
-*** conf/main.cf.orig	Mon Sep  6 22:20:55 1999
---- conf/main.cf	Fri Sep 10 21:49:50 1999
-***************
-*** 18,36 ****
-  # Postfix support programs and daemons. This setting can be overruled
-  # with the command_directory and daemon_directory parameters.
-  #
-! program_directory = /some/where/postfix/bin
-  
-  # The command_directory parameter specifies the location of all
-  # postXXX commands.  The default value is $program_directory.
-  #
-! command_directory = /usr/sbin
-  
-  # The daemon_directory parameter specifies the location of all Postfix
-  # daemon programs (i.e. programs listed in the master.cf file). The
-  # default value is $program_directory. This directory must be owned
-  # by root.
-  #
-! daemon_directory = /usr/libexec/postfix
-  
-  # QUEUE AND PROCESS OWNERSHIP
-  #
---- 18,36 ----
-  # Postfix support programs and daemons. This setting can be overruled
-  # with the command_directory and daemon_directory parameters.
-  #
-! program_directory = !!PREFIX!!/libexec/postfix
-  
-  # The command_directory parameter specifies the location of all
-  # postXXX commands.  The default value is $program_directory.
-  #
-! command_directory = !!PREFIX!!/sbin
-  
-  # The daemon_directory parameter specifies the location of all Postfix
-  # daemon programs (i.e. programs listed in the master.cf file). The
-  # default value is $program_directory. This directory must be owned
-  # by root.
-  #
-! daemon_directory = !!PREFIX!!/libexec/postfix
-  
-  # QUEUE AND PROCESS OWNERSHIP
-  #
-***************
-*** 47,53 ****
-  # These rights are used in the absence of a recipient user context.
-  # DO NOT SPECIFY A PRIVILEGED USER OR THE POSTFIX OWNER.
-  #
-! #default_privs = nobody
-  
-  # INTERNET HOST AND DOMAIN NAMES
-  # 
---- 47,53 ----
-  # These rights are used in the absence of a recipient user context.
-  # DO NOT SPECIFY A PRIVILEGED USER OR THE POSTFIX OWNER.
-  #
-! default_privs = nobody
-  
-  # INTERNET HOST AND DOMAIN NAMES
-  # 
+--- conf/main.cf.orig	Tue Dec 28 05:03:38 1999
++++ conf/main.cf	Sun Jan  2 21:31:24 2000
+@@ -17,14 +17,14 @@
+ # The command_directory parameter specifies the location of all
+ # postXXX commands.  The default value is $program_directory.
+ #
+-command_directory = /usr/sbin
++command_directory = !!PREFIX!!/sbin
+ 
+ # The daemon_directory parameter specifies the location of all Postfix
+ # daemon programs (i.e. programs listed in the master.cf file). The
+ # default value is $program_directory. This directory must be owned
+ # by root.
+ #
+-daemon_directory = /usr/libexec/postfix
++daemon_directory = !!PREFIX!!/libexec/postfix
+ 
+ # QUEUE AND PROCESS OWNERSHIP
+ #
+@@ -41,7 +41,7 @@
+ # These rights are used in the absence of a recipient user context.
+ # DO NOT SPECIFY A PRIVILEGED USER OR THE POSTFIX OWNER.
+ #
+-#default_privs = nobody
++default_privs = nobody
+ 
+ # INTERNET HOST AND DOMAIN NAMES
+ # 
