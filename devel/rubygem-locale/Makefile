@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gettext
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.0
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://home2.highway.ne.jp/mutoh/tools/ruby/
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,9 +16,11 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext \
+		racc:${PORTSDIR}/devel/ruby-racc
 
 USE_RUBY=	yes
+USE_RUBY_FEATURES=	racc-runtime
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb
 

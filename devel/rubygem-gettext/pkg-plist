@@ -1,4 +1,5 @@
 bin/rgettext
+bin/rmsgfmt
 %%RUBY_SITELIBDIR%%/gettext.rb
 %%RUBY_SITELIBDIR%%/gettext/locale.rb
 %%RUBY_SITELIBDIR%%/gettext/locale_default.rb
@@ -9,6 +10,7 @@ bin/rgettext
 %%RUBY_SITELIBDIR%%/gettext/mo.rb
 @dirrm %%RUBY_SITELIBDIR%%/gettext
 share/locale/ja/LC_MESSAGES/rgettext.mo
+share/locale/ja/LC_MESSAGES/rmsgfmt.mo
 @unexec rmdir -p %D/share/locale/ja/LC_MESSAGES 2>/dev/null || true
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/README
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hello.rb
@@ -37,7 +39,6 @@ share/locale/ja/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/ja/hellogtk.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/ja/hellotk.po
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/po/ja
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/po/ja_JP.eucJP
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/po
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/ja/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/ja
