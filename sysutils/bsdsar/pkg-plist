@@ -2,3 +2,4 @@ bin/bsdsar
 bin/bsdsar_gather
 %%PORTDOCS%%share/doc/bsdsar/CHANGELOG
 %%PORTDOCS%%share/doc/bsdsar/README
+%%PORTDOCS%%@dirrm share/doc/bsdsar
