@@ -364,6 +364,7 @@
     SUBDIR += ngrep
     SUBDIR += ngrep-lib
     SUBDIR += nic
+    SUBDIR += nicmond
     SUBDIR += nitpicker
     SUBDIR += nload
     SUBDIR += nocol

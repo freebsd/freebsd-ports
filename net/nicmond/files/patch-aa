@@ -1,0 +1,9 @@
+--- Makefile.org	Fri May 23 20:21:18 2003
++++ Makefile		Fri May 23 20:21:34 2003
+@@ -1,6 +1,3 @@
+-CFLAGS=	-O2 -Wall
+-PREFIX=	/usr/local
+-
+ all:	nicmond
+ 
+ nicmond: nicmond.c
