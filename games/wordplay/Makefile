@@ -11,7 +11,7 @@ MASTER_SITES=	http://pokey.itsc.uah.edu/~criswell/
 DISTNAME=	wordplay722
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ben@scientia.demon.co.uk
+MAINTAINER=	ben@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
