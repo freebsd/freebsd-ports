@@ -7,7 +7,7 @@
 
 PORTNAME=	Crypt-DH
 PORTVERSION=	0.03
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Crypt
@@ -24,7 +24,7 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Crypt::DH.3
 PLIST_FILES=	%%SITE_PERL%%/Crypt/DH.pm \
-				%%SITE_PERL%%/mach/auto/Crypt/DH/.packlist
-PLIST_DIRS=		%%SITE_PERL%%/mach/auto/Crypt/DH
+		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/DH/.packlist
+PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/DH
 
 .include <bsd.port.mk>
