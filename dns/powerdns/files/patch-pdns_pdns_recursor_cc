@@ -1,33 +1,29 @@
---- pdns/pdns_recursor.cc.orig Tue Nov 16 21:21:59 2004
-+++ pdns/pdns_recursor.cc      Tue Nov 16 21:22:31 2004
-@@ -22,6 +22,8 @@
- #include <errno.h>
- #include <map>
- #include <set>
-+#include <semaphore.h>
-+#include <pthread.h>
- #ifndef WIN32
- #include <netdb.h>
- #endif // WIN32
-@@ -42,21 +44,6 @@
- MemRecursorCache RC;
+--- pdns/pdns_recursor.cc.orig	Wed Jan 12 15:30:19 2005
++++ pdns/pdns_recursor.cc	Wed Jan 12 15:31:01 2005
+@@ -39,7 +39,7 @@
+ #include <fstream>
+ #include "recursor_cache.hh"
+ 
+-#ifdef FreeBSD           // see cvstrac ticket #26
++#ifdef __FreeBSD__       // see cvstrac ticket #26
+ #include <pthread.h>
+ #include <semaphore.h>
+ #endif
+@@ -48,7 +48,8 @@
  
  string s_programname="pdns_recursor";
--
--#ifndef WIN32
--extern "C" {
--  int sem_init(sem_t*, int, unsigned int){return 0;}
--  int sem_wait(sem_t*){return 0;}
--  int sem_trywait(sem_t*){return 0;}
--  int sem_post(sem_t*){return 0;}
--  int sem_getvalue(sem_t*, int*){return 0;}
--  pthread_t pthread_self(void){return (pthread_t) 0;}
--  int pthread_mutex_init(pthread_mutex_t *mutex, const pthread_mutexattr_t *mutexattr){ return 0; }
--  int pthread_mutex_lock(pthread_mutex_t *mutex){ return 0; }
--  int pthread_mutex_unlock(pthread_mutex_t *mutex) { return 0; }
--
--}
--#endif // WIN32
+ 
+-#if !WIN32 && !FreeBSD
++#ifndef WIN32 
++#ifndef __FreeBSD__
+ extern "C" {
+   int sem_init(sem_t*, int, unsigned int){return 0;}
+   int sem_wait(sem_t*){return 0;}
+@@ -61,6 +62,7 @@
+   int pthread_mutex_unlock(pthread_mutex_t *mutex) { return 0; }
+ 
+ }
++#endif // __FreeBSD__
+ #endif // WIN32
  
  StatBag S;
- ArgvMap &arg()
