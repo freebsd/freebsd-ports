@@ -1,0 +1,15 @@
+--- src/Makefile.in.orig	Mon Feb 24 23:47:30 2003
++++ src/Makefile.in	Mon Feb 24 23:49:01 2003
+@@ -120,10 +120,8 @@
+ cpustbl.c: cpuemu.c
+ cputbl.h: cpuemu.c
+ 
+-cpufast.s: cpuemu.c tools/cpuopti
+-	$(CC) $(INCLUDES) -S $(INCDIRS) $(CFLAGS) $(X_CFLAGS) $(DEBUGFLAGS) $(NO_SCHED_CFLAGS) $< -o cputmp.s
+-	./tools/cpuopti <cputmp.s >$@
+-	rm cputmp.s
++cpufast.s: cpuemu.c
++	$(CC) $(INCLUDES) -S $(INCDIRS) $(CFLAGS) $(X_CFLAGS) $(DEBUGFLAGS) $(NO_SCHED_CFLAGS) $< -o $@
+ 
+ console_missing.o: missing.c
+ 	$(CC) $(INCLUDES) -c $(INCDIRS) $(CFLAGS) $(X_CFLAGS) $(DEBUGFLAGS) $(CFLAGS_$@) $< -o $@
