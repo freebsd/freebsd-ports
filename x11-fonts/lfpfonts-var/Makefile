@@ -8,7 +8,8 @@
 PORTNAME=	lfpfonts-var
 PORTVERSION=	0.83
 CATEGORIES=	x11-fonts
-MASTER_SITES=	${MASTER_SITES_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	xfonts
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Variable width fonts from the Linux Font Project
