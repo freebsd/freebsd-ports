@@ -303,15 +303,20 @@ share/gnome/pybliographer/pybrc.pyo
 share/gnome/pybliographer/pybtex.py
 share/gnome/pybliographer/pybtex.pyc
 share/gnome/pybliographer/pybtex.pyo
-@unexec rm -f %D/share/gnome/pybliographer/pybrc.old
 share/locale/da/LC_MESSAGES/pybliographer.mo
 share/locale/de/LC_MESSAGES/pybliographer.mo
+share/locale/fi/LC_MESSAGES/pybliographer.mo
 share/locale/fr/LC_MESSAGES/pybliographer.mo
 share/locale/hu/LC_MESSAGES/pybliographer.mo
 share/locale/it/LC_MESSAGES/pybliographer.mo
+share/locale/ja/LC_MESSAGES/pybliographer.mo
 share/locale/no/LC_MESSAGES/pybliographer.mo
+share/locale/pt_BR/LC_MESSAGES/pybliographer.mo
 share/locale/ru/LC_MESSAGES/pybliographer.mo
+share/locale/sv/LC_MESSAGES/pybliographer.mo
+share/locale/tr/LC_MESSAGES/pybliographer.mo
 share/locale/uk/LC_MESSAGES/pybliographer.mo
+@unexec rm -f %D/share/gnome/pybliographer/pybrc.old
 @dirrm share/gnome/pybliographer/Styles
 @dirrm share/gnome/pybliographer/Pyblio/Style
 @dirrm share/gnome/pybliographer/Pyblio/Output
