@@ -24,4 +24,7 @@ CONFIGURE_ARGS=	--enable-utmp --enable-wtmp \
 USE_BZIP2=	yes
 MAN1=		rxvt.1
 
+post-install:
+	@${CHMOD} 4711 ${PREFIX}/bin/rxvt
+
 .include <bsd.port.mk>
