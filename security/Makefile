@@ -80,6 +80,7 @@
     SUBDIR += fwlogwatch
     SUBDIR += fwtk
     SUBDIR += gag
+    SUBDIR += gcipher
     SUBDIR += geheimnis
     SUBDIR += gnupg
     SUBDIR += gnupg-idea

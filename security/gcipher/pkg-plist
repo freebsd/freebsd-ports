@@ -1,0 +1,65 @@
+bin/gcipher
+share/gnome/applications/gcipher.desktop
+share/gnome/gcipher/CONTRIB
+share/gnome/gcipher/LICENSE
+share/gnome/gcipher/README
+share/gnome/gcipher/lib/cipher/__init__.pyc
+share/gnome/gcipher/lib/cipher/Ceasar.py
+share/gnome/gcipher/lib/cipher/CharacterCipher.py
+share/gnome/gcipher/lib/cipher/Gie.py
+share/gnome/gcipher/lib/cipher/KeyedCipher.py
+share/gnome/gcipher/lib/cipher/Rot.py
+share/gnome/gcipher/lib/cipher/Tools.py
+share/gnome/gcipher/lib/cipher/Vigenere.py
+share/gnome/gcipher/lib/cipher/__init__.py
+share/gnome/gcipher/lib/cipher/KeyedCipher.pyc
+share/gnome/gcipher/lib/cipher/Vigenere.pyc
+share/gnome/gcipher/lib/cipher/CharacterCipher.pyc
+share/gnome/gcipher/lib/cipher/Tools.pyc
+share/gnome/gcipher/lib/cipher/Gie.pyc
+share/gnome/gcipher/lib/cipher/Ceasar.pyc
+share/gnome/gcipher/lib/cipher/Rot.pyc
+share/gnome/gcipher/lib/AutomaticClass.py
+share/gnome/gcipher/lib/Const.py
+share/gnome/gcipher/lib/GtkAttributesFacade.py
+share/gnome/gcipher/lib/LibGladeApplication.py
+share/gnome/gcipher/lib/MainCLI.py
+share/gnome/gcipher/lib/MainGUI.py
+share/gnome/gcipher/lib/Proxy.py
+share/gnome/gcipher/lib/gcipher.glade
+share/gnome/gcipher/lib/gcipher.gladep
+share/gnome/gcipher/lib/ciphergui/__init__.pyc
+share/gnome/gcipher/lib/ciphergui/Ceasar.py
+share/gnome/gcipher/lib/ciphergui/CipherGUIList.py
+share/gnome/gcipher/lib/ciphergui/Gie.py
+share/gnome/gcipher/lib/ciphergui/KeyDialog.py
+share/gnome/gcipher/lib/ciphergui/Rot.py
+share/gnome/gcipher/lib/ciphergui/Vigenere.py
+share/gnome/gcipher/lib/ciphergui/__init__.py
+share/gnome/gcipher/lib/ciphergui/rot.glade
+share/gnome/gcipher/lib/ciphergui/rot.gladep
+share/gnome/gcipher/lib/ciphergui/vigenere.glade
+share/gnome/gcipher/lib/ciphergui/vigenere.gladep
+share/gnome/gcipher/lib/ciphergui/CipherGUIList.pyc
+share/gnome/gcipher/lib/ciphergui/Vigenere.pyc
+share/gnome/gcipher/lib/ciphergui/KeyDialog.pyc
+share/gnome/gcipher/lib/ciphergui/Gie.pyc
+share/gnome/gcipher/lib/ciphergui/Ceasar.pyc
+share/gnome/gcipher/lib/ciphergui/Rot.pyc
+share/gnome/gcipher/lib/Const.pyc
+share/gnome/gcipher/lib/MainCLI.pyc
+share/gnome/gcipher/lib/AutomaticClass.pyc
+share/gnome/gcipher/lib/MainGUI.pyc
+share/gnome/gcipher/lib/LibGladeApplication.pyc
+share/gnome/gcipher/lib/GtkAttributesFacade.pyc
+share/gnome/gcipher/lib/Proxy.pyc
+share/gnome/gcipher/plugins/cipher/Identity.py
+share/gnome/gcipher/plugins/ciphergui/Identity.py
+share/gnome/gcipher/plugins/ciphergui/PluginCipherGUIList.py
+@dirrm share/gnome/gcipher/lib/cipher
+@dirrm share/gnome/gcipher/lib/ciphergui
+@dirrm share/gnome/gcipher/lib
+@dirrm share/gnome/gcipher/plugins/cipher
+@dirrm share/gnome/gcipher/plugins/ciphergui
+@dirrm share/gnome/gcipher/plugins
+@dirrm share/gnome/gcipher

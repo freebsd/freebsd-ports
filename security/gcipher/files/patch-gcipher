@@ -1,0 +1,16 @@
+diff -ur ../gcipher-1.0.orig/src/gcipher ./src/gcipher
+--- ../gcipher-1.0.orig/src/gcipher	Wed Jun 25 14:03:43 2003
++++ ./src/gcipher	Wed Jun 25 14:06:14 2003
+@@ -1,10 +1,10 @@
+-#!/usr/bin/python
++#!/usr/local/bin/python
+ 
+ """This is the main executable script."""
+ 
+ # Edit the path below if you need to port GCipher.
+ import sys
+-# sys.path.append("/usr/share/gcipher/lib")
++sys.path.append("/usr/X11R6/share/gnome/gcipher/lib")
+ 
+ from os import environ 
+ from os.path import join
