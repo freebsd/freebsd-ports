@@ -7,6 +7,7 @@
     SUBDIR += apache13
     SUBDIR += apache13-modssl
     SUBDIR += aspell
+    SUBDIR += bogofilter
     SUBDIR += cyrproxy
     SUBDIR += d1489
     SUBDIR += elm.language
