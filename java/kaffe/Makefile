@@ -3,13 +3,14 @@
 # Date created:         18 September 1996
 # Whom:                 Mark Huizer <xaa@stack.urc.tue.nl>
 #
-# $Id: Makefile,v 1.7 1996/08/08 19:43:44 chuckr Exp $
+# $Id: Makefile,v 1.9 1996/09/23 23:44:25 chuckr Exp $
 #
 
-DISTNAME=	kaffe-0.5p4
-PKGNAME=	kaffe-0.5.4
+DISTNAME=	kaffe-0.5.5
+PKGNAME=	kaffe-0.5.5
 CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.sarc.city.ac.uk/pub/kaffe/
+MASTER_SITES+=	ftp://alterego.stack.urc.tue.nl/pub/kaffe/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	xaa@stack.urc.tue.nl

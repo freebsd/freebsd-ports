@@ -7,13 +7,13 @@ bin/kaffe
 bin/kaffeh
 include/kaffe/jtypes.h
 include/kaffe/native.h
-include/kaffe/stubPreamble.h
+include/kaffe/StubPreamble.h
 man/man1/kaffe.1.gz
 share/kaffe/license.terms
-lib/libkaffe_native.so.0.5
+lib/libkaffe_native.so.0.55
 lib/libkaffe_native.so
-lib/libkaffe_vm.so.0.5
+lib/libkaffe_vm.so.0.55
 lib/libkaffe_vm.so
-lib/libkaffe_net.so.0.5
+lib/libkaffe_net.so.0.55
 lib/libkaffe_net.so
 @exec /sbin/ldconfig -m %B
