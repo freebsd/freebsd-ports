@@ -388,6 +388,7 @@
     SUBDIR += tcplist
     SUBDIR += tct
     SUBDIR += tdir
+    SUBDIR += tenshi
     SUBDIR += tentakel
     SUBDIR += testdisk
     SUBDIR += thefish

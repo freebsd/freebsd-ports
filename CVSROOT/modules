@@ -9359,10 +9359,10 @@ semi113-mule	ports/editors/semi113-mule
 semi113-xemacs21-mule	ports/editors/semi113-xemacs21-mule
 sendfile	ports/net/sendfile
 sendip		ports/net-mgmt/sendip
-sendmail811	ports/mail/sendmail811
-sendmail812	ports/mail/sendmail812
 sendmail-ldap	ports/mail/sendmail-ldap
 sendmail-sasl	ports/mail/sendmail-sasl
+sendmail811	ports/mail/sendmail811
+sendmail812	ports/mail/sendmail812
 senken		ports/games/senken
 senso		ports/games/senso
 sentinel	ports/mail/sentinel
@@ -9953,6 +9953,7 @@ temperature.app	ports/x11/temperature.app
 tempest_for_eliza	ports/audio/tempest_for_eliza
 templ		ports/devel/templ
 tenebrae	ports/games/tenebrae
+tenshi		ports/sysutils/tenshi
 tensile		ports/lang/tensile
 tentakel	ports/sysutils/tentakel
 terminality	ports/devel/terminality
