@@ -9,7 +9,7 @@ PORTNAME=	drweb_qmail
 PORTVERSION=	4.29.12
 PORTREVISION=	2
 CATEGORIES=	security mail
-MASTER_SITES=	ftp://ftp.drweb.ru/pub/unix/
+MASTER_SITES=	ftp://ftp.drweb.ru/pub/drweb/unix/archive/drweb-clients-${PORTVERSION}/
 
 MAINTAINER=	den@FreeBSD.org
 COMMENT=	Qmail client for DrWeb antivirus suite
