@@ -21,14 +21,15 @@ BUILD_DEPENDS=	gengetopt:${PORTSDIR}/devel/gengetopt
 USE_GETTEXT=	yes
 USE_PERL5_BUILD=	yes
 USE_LIBTOOL_VER=	13
+USE_GETOPT_LONG=	yes
+USE_GNOME=		gnomehack
+INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-INSTALLS_SHLIB=	yes
-USE_GETOPT_LONG=	yes
-USE_GNOME=	gnomehack
-INFO=		libidn
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+
+INFO=	libidn
 
 .if exists(${LOCALBASE}/bin/emacs)
 PLIST_SUB+=	EMACS="" EMACSDIR=share/emacs
