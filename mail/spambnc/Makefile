@@ -19,6 +19,8 @@ COMMENT=	Set of procmail recipies which handle known/suspected spam
 
 RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
 
+BROKEN=		Size mismatch
+
 IGNOREFILES=	index.shtml
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

@@ -16,6 +16,8 @@ COMMENT=		A simple and powerful GTK+ text editor
 
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+BROKEN=			Size mismatch
+
 USE_X_PREFIX=		yes
 USE_BZIP2=		yes
 USE_REINPLACE=		yes

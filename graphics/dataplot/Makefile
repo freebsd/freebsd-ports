@@ -18,6 +18,8 @@ EXTRACT_ONLY=	dpsrc_1_2005${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free software system for statistical visualization
 
+BROKEN=		Size mismatch
+
 #FORBIDDEN=	checksum mismatch due to extensive changes to distfile
 LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \
 		png:${PORTSDIR}/graphics/png \
