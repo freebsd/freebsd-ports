@@ -2,6 +2,8 @@ bin/norton
 bin/norton-reinit
 bin/reinit
 etc/coda/server.conf.ex
+@dirrm etc/coda
+sbin/au
 sbin/auth2
 sbin/backup
 sbin/backup.sh
