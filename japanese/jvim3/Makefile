@@ -32,7 +32,7 @@ PLIST_SUB=	VERSION=${PORTVERSION}
 PORT_DOCDIR=	${PREFIX}/share/doc/ja-jvim-${PORTVERSION}
 # -DUSE_X11 is the cause of a problem treating Japanese
 MACHINE=	-DBSD_UNIX -DUSE_LOCALE
-CC=		cc ${CFLAGS} -Wall -traditional -Dconst=
+CC=		cc ${CFLAGS} -Wall
 LIBS=		-ltermlib -lxpg4 -L${PREFIX}/lib 
 
 .if !defined(WITHOUT_X11)
@@ -102,7 +102,7 @@ PLIST_SUB+=     HAS_JVIM3RC="@comment "
 .endif
 
 post-extract:
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${JPATCH} \
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}${JPATCH} \
 		${EXTRACT_AFTER_ARGS} -C ${WRKSRC}
 
 pre-patch:
