@@ -128,6 +128,7 @@
     SUBDIR += gkrellm2
     SUBDIR += gkrellmouse
     SUBDIR += gkrellmwho
+    SUBDIR += gkrellmwho2
     SUBDIR += glload
     SUBDIR += gnome-pkgview
     SUBDIR += gnomecontrolcenter
