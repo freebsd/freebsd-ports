@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tinyca
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	security net
 MASTER_SITES=	http://tinyca.sm-zone.net/
 
