@@ -7,6 +7,7 @@
 
 PORTNAME=	dbi
 PORTVERSION=	0.0.4
+PORTREVISION=	1
 CATEGORIES=	databases ruby
 MASTER_SITES=	http://www.sprytech.com/~rainer.perl/ruby/files/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -29,6 +30,7 @@ post-extract:
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/${PORTNAME}/*.rb ${RUBY_SITELIBDIR}/
+	${MKDIR} ${RUBY_SITEARCHLIBDIR}/${PORTNAME}
 	${MKDIR} ${RUBY_SITELIBDIR}/${PORTNAME}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
