@@ -40,13 +40,15 @@ DISTFILES+=	helpcontent_31_unix.tgz:help helpcontent_33_unix.tgz:help \
 		helpcontent_46_unix.tgz:help helpcontent_49_unix.tgz:help \
 		helpcontent_55_unix.tgz:help \
 		helpcontent_81_unix.tgz:help helpcontent_82_unix.tgz:help \
-		helpcontent_86_unix.tgz:help helpcontent_88_unix.tgz:help
+		helpcontent_86_unix.tgz:help \
+		helpcontent_90_unix.tgz:help
 L10NHELPS=	helpcontent_31_unix.tgz helpcontent_33_unix.tgz \
 		helpcontent_34_unix.tgz helpcontent_39_unix.tgz \
 		helpcontent_46_unix.tgz helpcontent_49_unix.tgz \
 		helpcontent_55_unix.tgz \
 		helpcontent_81_unix.tgz helpcontent_82_unix.tgz \
-		helpcontent_86_unix.tgz helpcontent_88_unix.tgz
+		helpcontent_86_unix.tgz helpcontent_88_unix.tgz \
+		helpcontent_90_unix.tgz
 .endif
 
 .if ${OSVERSION} > 502010
