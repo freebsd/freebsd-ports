@@ -9,7 +9,7 @@
 #
 
 PORTNAME=	ssltunnel
-PORTVERSION=	1.13
+PORTVERSION=	1.15
 PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	http://www.hsc.fr/ressources/outils/ssltunnel/download/
