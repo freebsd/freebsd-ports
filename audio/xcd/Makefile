@@ -1,12 +1,12 @@
 # New ports collection makefile for:    xcd
-# Version required:     1.3
+# Version required:     1.4
 # Date created:         22 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.9 1995/11/23 14:33:20 jmz Exp $
+# $Id: Makefile,v 1.10 1995/12/13 02:12:54 jmz Exp $
 #
 
-DISTNAME=	xcd-1.3
+DISTNAME=	xcd-1.4
 CATEGORIES+=	audio
 MASTER_SITES=	ftp://ftp.obs-besancon.fr/pub/outgoing/
 
