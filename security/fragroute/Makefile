@@ -16,8 +16,6 @@ MASTER_SITE_SUBDIR=	UNIX/security
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for intercepting, modifying and rewriting egress traffic
 
-BROKEN=		"Incompatible with (current) libdnet"
-
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet \
 		${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
 
