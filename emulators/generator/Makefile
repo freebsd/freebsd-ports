@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.squish.net/generator/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SEGA Genesis emulator
 
+# apparently the configure script can't handle this
+NOT_FOR_ARCHS=	alpha
+
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		SDL-1.1.5:${PORTSDIR}/devel/sdl12
 .if (${MACHINE_ARCH} == "i386")
@@ -50,6 +53,10 @@ post-patch:
 		's|-malign-loops|-falign-loops|g ; \
 		 s|-malign-jumps|-falign-jumps|g ; \
 		 s|-malign-functions|-falign-functions|g' ${WRKSRC}/configure
+.endif
+
+.if ${OSVERSION} >= 501102
+BROKEN=		"Fails to compile due to gcc3.3 preprocessor"
 .endif
 
 .include <bsd.port.post.mk>
