@@ -9,7 +9,7 @@
 INC =  -I/usr/local/include -I/usr/include
 DEF =  -DUSE_ZLIB -DUSE_PCRE -DUSE_NCURSES -DHAVE_NCURSES_H -DUSE_IDEA -DUSE_SOCK -DSPOOL='"/var/tmp/mixmaster"' -DGLOBALMIXCONF='"/usr/local/etc/mixmaster/client.cfg"' -DHOMEMIXDIR="\".Mix\"" 
 LIBS =     
-LDFLAGS =  -lz -lpcre -L/usr/local/lib -lncurses -rpath=${LOCALBASE}/lib -lcrypto
+LDFLAGS =  -lz -lpcre -L/usr/local/lib -lncurses -ltermcap -rpath=${LOCALBASE}/lib -lcrypto
 
 OPT = -g -Wall
 # OPT = -g -pg -Wall -DDEBUG
