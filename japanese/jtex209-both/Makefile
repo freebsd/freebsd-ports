@@ -3,13 +3,12 @@
 # Date created:		4 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.6 1997/11/10 11:22:24 asami Exp $
+# $Id: Makefile,v 1.7 1997/11/22 01:38:46 asami Exp $
 #
 
 DISTNAME?=	ja-jlatex209-a17-n152
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://bash.cc.keio.ac.jp/pub/TeX/ASCII/ \
-		ftp://ftp.iis.u-tokyo.ac.jp/TeX/NTT-JTeX/:old/ \
+MASTER_SITES=	ftp://ftp.iis.u-tokyo.ac.jp/TeX/NTT-JTeX/:old/ \
 		ftp://ftp.iis.u-tokyo.ac.jp/TeX/fonts/pk/ \
 		ftp://ftp.waseda.ac.jp/pub/tex/ascii-OLD/
 DISTFILES=	jtex-1.52.tar.gz tfm-files.tar.Z jtex1.7.tar.gz pTeX-JIS-patch
