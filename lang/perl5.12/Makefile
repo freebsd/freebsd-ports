@@ -3,7 +3,7 @@
 # Date created:		16 April 1995
 # Whom:			markm
 #
-# $Id: Makefile,v 1.24 1998/08/06 10:43:21 markm Exp $
+# $Id: Makefile,v 1.25 1998/08/15 16:33:13 markm Exp $
 #
 
 DISTNAME=	perl5.005_02
@@ -17,6 +17,11 @@ MAINTAINER=	markm@FreeBSD.ORG
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=		-sde -Dprefix=${PREFIX}
+
+OSVER!= sysctl -n kern.osreldate
+.if ${OSVER} > 300003
+BROKEN= perl is in system
+.endif
 
 MAN1=	a2p.1 c2ph.1 h2ph.1 h2xs.1 perl.1 perl5004delta.1 \
 	perlapio.1 perlbook.1 perlbot.1 perlbug.1 perlcall.1 \

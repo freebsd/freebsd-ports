@@ -208,7 +208,6 @@ lib/perl5/5.00502/i386-freebsd/CORE/intrpvar.h
 lib/perl5/5.00502/i386-freebsd/CORE/iperlsys.h
 lib/perl5/5.00502/i386-freebsd/CORE/keywords.h
 lib/perl5/5.00502/i386-freebsd/CORE/libperl.a
-@exec ranlib %D/%F
 lib/perl5/5.00502/i386-freebsd/CORE/mg.h
 lib/perl5/5.00502/i386-freebsd/CORE/nostdio.h
 lib/perl5/5.00502/i386-freebsd/CORE/objXSUB.h
@@ -264,7 +263,6 @@ lib/perl5/5.00502/i386-freebsd/auto/DB_File/autosplit.ix
 lib/perl5/5.00502/i386-freebsd/auto/Data/Dumper/Dumper.bs
 lib/perl5/5.00502/i386-freebsd/auto/Data/Dumper/Dumper.so
 lib/perl5/5.00502/i386-freebsd/auto/DynaLoader/DynaLoader.a
-@exec ranlib %D/%F
 lib/perl5/5.00502/i386-freebsd/auto/DynaLoader/autosplit.ix
 lib/perl5/5.00502/i386-freebsd/auto/DynaLoader/dl_expandspec.al
 lib/perl5/5.00502/i386-freebsd/auto/DynaLoader/dl_find_symbol_anywhere.al
