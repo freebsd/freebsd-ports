@@ -8,7 +8,9 @@
 PORTNAME=	wput
 PORTVERSION=	0.5
 CATEGORIES=	ftp
-MASTER_SITES=	http://itooktheredpill.dyndns.org/wput/
+MASTER_SITES=	http://itooktheredpill.dyndns.org/wput/ \
+		${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=distfiles
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	chip-set@mail.ru
