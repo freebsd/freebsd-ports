@@ -7,7 +7,7 @@
 #
 
 PORTNAME=		pccts
-PORTVERSION=		1.33.31
+PORTVERSION=		1.33.33
 CATEGORIES=		devel
 MASTER_SITES=		http://www.polhode.com/
 DISTNAME=		pccts${PORTVERSION:R:S/.//}mr${PORTVERSION:E}
