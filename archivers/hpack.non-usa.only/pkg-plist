@@ -1,0 +1,6 @@
+@cwd /usr/local
+bin/hpack
+lib/hpack
+etc/hpack.cfg
+bin/keycvt
+man/man1/hpack.1
