@@ -1,8 +1,8 @@
 Index: Makefile
 diff -u Makefile.orig Makefile
---- Makefile.orig	Fri Aug 30 03:01:56 2002
-+++ Makefile	Fri Aug 30 22:00:06 2002
-@@ -3,17 +3,15 @@
+--- Makefile.orig	Thu Nov  7 01:50:59 2002
++++ Makefile	Thu Nov  7 04:49:05 2002
+@@ -3,12 +3,12 @@
  GTK_CONFIG = pkg-config gtk+-2.0
  
  PLUGIN_DIR ?= /usr/local/lib/gkrellm2/plugins
@@ -17,13 +17,17 @@ diff -u Makefile.orig Makefile
  LIBS = $(GTK_LIB)
  LFLAGS = -shared
  
+@@ -22,8 +22,6 @@
+ FLAGS += -DPACKAGE="\"$(PACKAGE)\"" 
+ export PACKAGE LOCALEDIR
+ 
 -CC = gcc $(CFLAGS) $(FLAGS)
 -
  INSTALL = install -c
  INSTALL_PROGRAM = $(INSTALL) -s
  
-@@ -22,7 +20,7 @@
- all:	volume.so
+@@ -33,7 +31,7 @@
+ 	(cd po && ${MAKE} all )
  
  volume.so: $(OBJS)
 -	$(CC) $(OBJS) -o volume.so $(LIBS) $(LFLAGS)
