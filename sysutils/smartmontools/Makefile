@@ -49,9 +49,7 @@ do-install:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 501105
-pre-everything::
-	@${ECHO_MSG} "WARNING: ATAng is required to support monitoring of ATA devices,"
-	@${ECHO_MSG} "ATAng is available in 5.1-CURRENT (__FreeBSD_version > 501105)."
+IGNORE=	"ATAng is required to support monitoring of ATA devices"
 .endif
 
 post-install:
