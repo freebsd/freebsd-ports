@@ -157,6 +157,8 @@
     SUBDIR += rmoldmail
     SUBDIR += ruby-tmail
     SUBDIR += sendmail
+    SUBDIR += sendmail-ldap
+    SUBDIR += sendmail-sasl
     SUBDIR += serialmail
     SUBDIR += sigrot
     SUBDIR += smail

@@ -7,6 +7,7 @@
 
 PORTNAME=	sendmail
 PORTVERSION=	8.11.4
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/sendmail/&,}
@@ -16,17 +17,25 @@ MAINTAINER=	dirk.meyer@dinoex.sub.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WCONF=		${WRKSRC}/devtools/Site
+SITE=		${FILESDIR}/site.config.m4.pre4
 PLIST=		${WRKDIR}/.PLIST.more
-DOCS=		KNOWNBUGS LICENSE PGPKEYS README RELEASE_NOTES
+DOCS=		KNOWNBUGS LICENSE PGPKEYS README RELEASE_NOTES \
+		sendmail/TRACEFLAGS
+MAN1=		mailq.1 newaliases.1 vacation.1
+MAN5=		aliases.5
+MAN8=		sendmail.8 mailstats.8 makemap.8 praliases.8 smrsh.8 \
+		mail.local.8 rmail.8
 
 # Options to define Features:
+# SENDMAIL_WITHOUT_IPV6=yes
+# SENDMAIL_WITH_MILTER=yes
+# SENDMAIL_WITH_TLS=yes
+# SENDMAIL_WITH_SASL=yes
+# SENDMAIL_WITH_SFIO=yes
+# SENDMAIL_WITH_LDAP=yes
 .if defined(BATCH)
 # all on for package build
-SENDMAIL_WITH_TLS=YES
-SENDMAIL_WITH_SASL=YES
-SENDMAIL_WITH_SFIO=YES
-SENDMAIL_WITH_MILTER=YES
-SENDMAIL_WITH_LDAP=YES
+SENDMAIL_WITH_MILTER=yes
 .endif
 
 .if defined(SENDMAIL_WITH_LDAP)
@@ -38,7 +47,7 @@ LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap2
 LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 PKGNAMESUFFIX?=	-sasl
 .endif
-.if defined(SENDMAIL_WITH_TLS)
+.if defined(SENDMAIL_WITH_TLS) || defined(WITH_TLS)
 PKGNAMESUFFIX?=	-tls
 USE_OPENSSL=	yes
 .endif
@@ -47,39 +56,36 @@ PKGNAMESUFFIX?=	-sfio
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libsfio.a:${PORTSDIR}/devel/sfio
 .endif
 
+# Build site.config.m4
 .if exists(${DESTDIR}/etc/mail/mailer.conf)
-pre-configure:
-	${SED} -e "s=%%PREFIX%%=${PREFIX}=" \
-		${FILESDIR}/site.config.m4 > ${WCONF}/site.config.m4
-.if defined(SENDMAIL_WITH_SASL)
-	${SED} -e "s=%%LOCALBASE%%=${LOCALBASE}=" \
-		${FILESDIR}/site.config.m4.sasl >>${WCONF}/site.config.m4
+SITE+=	${FILESDIR}/site.config.m4
+.if ! defined(SENDMAIL_WITHOUT_IPV6)
+SITE+=	${FILESDIR}/site.config.m4.ipv6
+.endif
 .endif
 .if defined(SENDMAIL_WITH_SFIO)
-	${SED} -e "s=%%LOCALBASE%%=${LOCALBASE}=" \
-		${FILESDIR}/site.config.m4.sfio >>${WCONF}/site.config.m4
+SITE+=	${FILESDIR}/site.config.m4.sfio
 .endif
-.else
-pre-configure:
-	${SED} -e "s=%%PREFIX%%=${PREFIX}=" \
-		${FILESDIR}/site.config.m4.pre4 > ${WCONF}/site.config.m4
-.if defined(SENDMAIL_WITH_TLS)
-	${SED} -e "s=%%LOCALBASE%%=${LOCALBASE}=" \
-		${FILESDIR}/site.config.m4.ssl >> ${WCONF}/site.config.m4
+.if defined(SENDMAIL_WITH_TLS) || defined(WITH_TLS)
+.if ! exists(${DESTDIR}/etc/mail/mailer.conf)
+SITE+=	${FILESDIR}/site.config.m4.ssl
 .endif
+SITE+=	${FILESDIR}/site.config.m4.tls
 .endif
-.if defined(SENDMAIL_WITH_TLS)
-	${CAT} ${FILESDIR}/site.config.m4.tls >> ${WCONF}/site.config.m4
+.if defined(SENDMAIL_WITH_SASL)
+SITE+=	${FILESDIR}/site.config.m4.sasl
 .endif
 .if defined(SENDMAIL_WITH_LDAP)
-	${SED} -e "s=%%LOCALBASE%%=${LOCALBASE}=" \
-		${FILESDIR}/site.config.m4.ldap >> ${WCONF}/site.config.m4
+SITE+=	${FILESDIR}/site.config.m4.ldap
+.endif
+.if defined(SENDMAIL_WITH_MILTER)
+SITE+=	${FILESDIR}/site.config.m4.milter
 .endif
 .if exists(${FILESDIR}/site.config.m4.local)
-	${SED} -e "s=%%LOCALBASE%%=${LOCALBASE}=" \
-		${FILESDIR}/site.config.m4.local >> ${WCONF}/site.config.m4
+SITE+=	${FILESDIR}/site.config.m4.local
 .endif
 
+# install directly if no mailwrapper support
 .if ! exists(${DESTDIR}/etc/mail/mailer.conf)
 PREFIX?=	${DESTDIR}/usr
 MANPREFIX?=	${DESTDIR}/usr/share
@@ -87,10 +93,14 @@ MANPREFIX?=	${DESTDIR}/usr/share
 PLIST_SUB+=	PREFIX=${PREFIX:S=${PREFIX}/==}
 SENDMAIL=	${PREFIX}/sbin/sendmail
 
-MAN1=	mailq.1 newaliases.1 vacation.1
-MAN5=	aliases.5
-MAN8=	sendmail.8 mailstats.8 makemap.8 praliases.8 smrsh.8 \
-	mail.local.8 rmail.8
+do-configure:
+	${SED} -e "s=%%PREFIX%%=${PREFIX}=" -e "s=%%LOCALBASE%%=${LOCALBASE}=" \
+		${SITE} > ${WCONF}/site.config.m4
+
+.if defined(SENDMAIL_WITH_MILTER)
+post-build:
+	( cd ${WRKSRC}/libmilter && ${MAKE} )
+.endif
 
 pre-install:
 	@${CAT} ${PKGDIR}/pkg-plist >${PLIST}
@@ -104,18 +114,10 @@ pre-install:
 	${AWK} '{print "@dirrm share/sendmail/" $$1}' >>${PLIST}
 	@${ECHO} "@dirrm share/sendmail" >>${PLIST}
 .for i in ${DOCS}
-	@${ECHO} ${i} | \
+	@${ECHO} `${BASENAME} ${i}` | \
 	${AWK} '{print "share/doc/sendmail/" $$1}' >>${PLIST}
 .endfor
 	@${ECHO} "@dirrm share/doc/sendmail" >>${PLIST}
-.endif
-
-.if defined(SENDMAIL_WITH_MILTER)
-post-configure:
-	${CAT} ${FILESDIR}/site.config.m4.milter >>${WCONF}/site.config.m4
-
-post-build:
-	( cd ${WRKSRC}/libmilter && ${MAKE} )
 .endif
 
 # We want mail.local and rmail for our system.
@@ -150,7 +152,15 @@ post-install:
 	${MKDIR} ${PREFIX}/share/sendmail ${PREFIX}/share/doc/sendmail
 	@cd ${WRKSRC}; ${TAR} cf - cf |\
 		(cd ${PREFIX}/share/sendmail; ${TAR} xf -)
-	@cd ${WRKSRC}; ${CP} ${DOCS} ${PREFIX}/share/doc/sendmail/
+	@cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/sendmail/
+	${INSTALL_DATA} ${WRKSRC}/devtools/README \
+		${PREFIX}/share/doc/sendmail/DEVTOOLS
+	${INSTALL_DATA} ${WRKSRC}/sendmail/README \
+		${PREFIX}/share/doc/sendmail/SENDMAIL
+	${INSTALL_DATA} ${WRKSRC}/mail.local/README \
+		${PREFIX}/share/doc/sendmail/MAIL.LOCAL
+	${INSTALL_DATA} ${WRKSRC}/smrsh/README \
+		${PREFIX}/share/doc/sendmail/SMRSH
 .if defined(SENDMAIL_WITH_MILTER)
 	${INSTALL_DATA} ${WRKSRC}/libmilter/README \
 		${PREFIX}/share/doc/sendmail/MILTER
