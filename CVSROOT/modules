@@ -2697,6 +2697,7 @@ jafm		ports/x11-fm/jafm
 jags		ports/net/jags
 jail		src/usr.sbin/jail
 jakarta-ant	ports/devel/jakarta-ant
+jakarta-oro	ports/java/jakarta-oro
 jakarta-regexp	ports/java/jakarta-regexp
 jakarta-tomcat	ports/www/jakarta-tomcat
 jam		ports/devel/jam
