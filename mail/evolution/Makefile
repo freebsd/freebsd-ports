@@ -44,7 +44,7 @@ CONFIGURE_ARGS=	--with-db3-libs=${DB3_WRKSRC} \
 		--enable-nss=no \
 		--enable-openssl=yes
 
-EVO_VERSION=	"1.4"
+EVO_VERSION=	1.4
 
 .if defined(WITH_LDAP)
 CONFIGURE_ARGS+= --with-openldap=${LOCALBASE}
@@ -94,6 +94,6 @@ pre-configure:
 
 post-install:
 	@${FIND} ${PREFIX}/share/gnome/evolution/${EVO_VERSION}/default_user \
-		-type f | ${XARGS} ${CHMOD} 0644
+		-type f | ${XARGS} ${CHMOD} u+w
 
 .include <bsd.port.mk>
