@@ -1,0 +1,6 @@
+There are so many nice splash screens available but it's bothering to always
+change them manually on GConf. With Splashsetter you can change your splash
+screen with a GUI or randomly if called from the commandline with the
+parameter "--random".
+
+WWW: http://webonaut.com/splashsetter/
