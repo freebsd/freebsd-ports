@@ -9,7 +9,7 @@ PORTNAME=	ted
 PORTVERSION=	2.10
 CATEGORIES=	editors textproc print
 MASTER_SITES=	ftp://ftp.nluug.nl/pub/editors/ted/
-DISTNAME=	ted-${PORTVERSION}.src.tar.gz
+DISTNAME=	ted-${PORTVERSION}.src
 
 MAINTAINER=	ports@FreeBSD.org
 
