@@ -1,0 +1,14 @@
+--- cf/Imake.cf.orig	Fri Jul 30 21:45:47 1999
++++ cf/Imake.cf	Wed Mar  1 17:31:52 2000
+@@ -160,6 +160,11 @@
+ #  define i386Architecture
+ #  undef i386
+ # endif
++# ifdef __alpha__
++#  define AlphaBsdArchitecture
++#  define AlphaArchitecture
++#  undef __alpha__
++# endif
+ #endif /* __FreeBSD__ */
+ 
+ #ifdef AMOEBA

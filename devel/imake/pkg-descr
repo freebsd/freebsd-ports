@@ -1,0 +1,6 @@
+This port provides some useful utilities originally provided as a part
+of the XFree86 package.  Imake, among others, is one of the most
+frequently used programs when compiling software packages.  Lndir is
+another useful tools.  See man pages for the detail.
+
+- Max
