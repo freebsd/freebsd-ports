@@ -7,7 +7,7 @@
 
 PORTNAME=	firefox
 PORTVERSION=	1.0
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -176,7 +176,7 @@ pre-install:
 		${FAKEDIR}/bin/firefox \
 		${FAKEDIR}/bin/firefox-config
 	for i in ${EXTRA_SCRIPTS}; do \
-		${ECHO_CMD} bin/${i} >> ${PLIST}; \
+		${ECHO_CMD} bin/$${i} >> ${PLIST}; \
 	done
 	${ECHO_CMD} bin/firefox >> ${PLIST}
 	${ECHO_CMD} bin/firefox-config >> ${PLIST}
