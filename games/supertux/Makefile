@@ -8,8 +8,7 @@
 PORTNAME=	supertux
 PORTVERSION=	0.1.1
 CATEGORIES=	games
-MASTER_SITES=	http://pingus.seul.org/~grumbel/tmp/ \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	super-tux
 
 MAINTAINER=	ahze@ahze.net
