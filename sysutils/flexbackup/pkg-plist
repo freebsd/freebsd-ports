@@ -1,4 +1,5 @@
 bin/flexbackup
+etc/flexbackup.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
