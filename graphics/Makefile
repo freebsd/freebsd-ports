@@ -236,6 +236,7 @@
     SUBDIR += xmovie
     SUBDIR += xmps
     SUBDIR += xmps-opendivx-plugin
+    SUBDIR += xmps-win32-plugin
     SUBDIR += xmrm
     SUBDIR += xpaint
     SUBDIR += xpdf
