@@ -1,5 +1,5 @@
 --- nntp.c.orig	Tue Oct  9 11:39:11 2001
-+++ nntp.c	Fri Dec  7 07:10:29 2001
++++ nntp.c	Mon Jun 10 10:15:02 2002
 @@ -37,6 +37,7 @@
  #include <errno.h>
  #include <pwd.h>
@@ -66,6 +66,15 @@
   * get_server_line: get a line from the server.
   *
   *	Expects to be connected to the server.
+@@ -634,7 +679,7 @@
+ 	    can_post = 0;
+ 	    break;
+ 	default:
+-	    nn_exitmsg(1, line);
++	    nn_exitmsg(1, "%s", line);
+ 	    /* NOTREACHED */
+ 	}
+     }
 @@ -1726,7 +1771,7 @@
   * Phil Lapsley <phil@ucbvax.berkeley.edu>
   */

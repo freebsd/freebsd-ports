@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	nn
-PORTVERSION=	6.6.2
+PORTVERSION=	6.6.2_1
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.nndev.org/pub/nn-6.6/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jooji@nickelkid.com
-
-FORBIDDEN=	"Remotely exploitable format string vulnerability."
 
 MAN1=		nn.1 nncheck.1 nngoback.1 nngrab.1  nngrep.1 nnpost.1 \
 		nntidy.1 nnview.1 nnacct.1m nnadmin.1m nnstats.1m nnusage.1m
