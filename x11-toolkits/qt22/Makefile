@@ -1,12 +1,12 @@
-# New ports collection makefile for:   qt-1.0
-# Version required:	1.0
+# New ports collection makefile for:   qt
+# Version required:	1.1
 # Date created:		30 Jul 1996
 # Whom:			searle@longacre.demon.co.uk
 #
-# $Id: Makefile,v 1.7 1996/11/18 11:43:30 asami Exp $
+# $Id: Makefile,v 1.8 1996/12/11 10:18:45 asami Exp $
 #
 
-DISTNAME=	qt-1.0
+DISTNAME=	qt-1.1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 
@@ -83,15 +83,15 @@ post-extract:
 	cd $(WRKDIR)/$(DISTNAME)/arch; $(GMAKE) freebsd
 
 do-install:
-	${INSTALL_PROGRAM} $(WRKDIR)/qt-1.0/bin/moc $(X11BASE)/bin
-	${INSTALL_DATA} $(WRKDIR)/qt-1.0/lib/libqt.so.1.0 $(X11BASE)/lib
+	${INSTALL_PROGRAM} $(WRKDIR)/qt-1.1/bin/moc $(X11BASE)/bin
+	${INSTALL_DATA} $(WRKDIR)/qt-1.1/lib/libqt.so.1.1 $(X11BASE)/lib
 	/sbin/ldconfig -m $(PREFIX)/lib
 	mkdir -p $(PREFIX)/include/X11/qt
-	${INSTALL_DATA} $(WRKDIR)/qt-1.0/include/* $(PREFIX)/include/X11/qt
-	${INSTALL_MAN} $(WRKDIR)/qt-1.0/man/man1/* $(PREFIX)/man/man1
-	${INSTALL_MAN} $(WRKDIR)/qt-1.0/man/man3/* $(PREFIX)/man/man3
+	${INSTALL_DATA} $(WRKDIR)/qt-1.1/include/* $(PREFIX)/include/X11/qt
+	${INSTALL_MAN} $(WRKDIR)/qt-1.1/man/man1/* $(PREFIX)/man/man1
+	${INSTALL_MAN} $(WRKDIR)/qt-1.1/man/man3/* $(PREFIX)/man/man3
 	mkdir -p ${PREFIX}/share/doc/qt
-	${INSTALL_DATA} ${WRKDIR}/qt-1.0/README ${PREFIX}/share/doc/qt
-	${INSTALL_DATA} ${WRKDIR}/qt-1.0/README.QT ${PREFIX}/share/doc/qt
+	${INSTALL_DATA} ${WRKDIR}/qt-1.1/README ${PREFIX}/share/doc/qt
+	${INSTALL_DATA} ${WRKDIR}/qt-1.1/README.QT ${PREFIX}/share/doc/qt
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-lib/libqt.so.1.0
+lib/libqt.so.1.1
 @exec /sbin/ldconfig -m %B
 man/man1/moc.1.gz
 man/man3/qaccel.3qt.gz
@@ -316,4 +316,3 @@ include/X11/qt/qwmatrix.h
 bin/moc
 share/doc/qt/README
 share/doc/qt/README.QT
-
