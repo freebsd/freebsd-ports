@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- makefile.orig	Sun Apr 15 10:25:06 2001
-+++ makefile	Tue Apr 17 14:16:28 2001
+--- makefile.orig	Thu Oct 18 18:29:34 2001
++++ makefile	Thu Oct 18 18:32:28 2001
 @@ -10,34 +10,34 @@
  
  # For the Gnome desktop stuff to work, prefix must point to where Gnome thinks it is.
@@ -33,8 +33,8 @@ $FreeBSD$
  CXXBASEFLAGS=-W -Wall -DGTK -DSCI_LEXER -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" $(INCLUDEDIRS)
  
  ifdef DEBUG
--CXXFLAGS=-DDEBUG $(CXXBASEFLAGS)
-+CXXFLAGS+=-DDEBUG $(CXXBASEFLAGS)
+-CXXFLAGS=-DDEBUG -g $(CXXBASEFLAGS)
++CXXFLAGS+=-DDEBUG -g $(CXXBASEFLAGS)
  else
 -CXXFLAGS=-DNDEBUG $(CXXBASEFLAGS)
 +CXXFLAGS+=-DNDEBUG $(CXXBASEFLAGS)
@@ -49,11 +49,11 @@ $FreeBSD$
 @@ -51,8 +51,8 @@
  LEXEROBJS=$(wildcard ../../scintilla/gtk/Lex*.o)
  
- $(PROG): SciTEGTK.o SciTEBase.o SciTEBuffers.o SciTEIO.o Exporters.o \
--SciTEProps.o ../../scintilla/bin/scintilla.a $(LEXEROBJS)
+ $(PROG): SciTEGTK.o SciTEBase.o SciTEBuffers.o SciTEIO.o Exporters.o DirectorExtension.o \
+-SciTEProps.o $(LEXEROBJS) ../../scintilla/bin/scintilla.a
 -	$(CC) `gtk-config --libs` -DGTK $^ -o $@
-+SciTEProps.o # ../../scintilla/bin/scintilla.a $(LEXEROBJS)
-+	$(CC) $(shell $(GTK_CONFIG) --libs) -DGTK $^ -o $@ -L$(X11BASE)/lib -lscintilla -lscintilla_lexers
++SciTEProps.o # $(LEXEROBJS) ../../scintilla/bin/scintilla.a
++	$(CC) $(shell $(GTK_CONFIG) --libs) -DGTK $^ -L$(X11BASE)/lib -lscintilla -lscintilla_lexers -o $@
  
  # SciTE-static no longer builds. Kept here in case of later need.
  SciTE-static: SciTEGTK.o SciTEBase.o SciTEBuffers.o SciTEIO.o Exporters.o SciTEProps.o \
