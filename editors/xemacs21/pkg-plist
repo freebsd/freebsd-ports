@@ -10,6 +10,7 @@ bin/rcs-checkin
 bin/xemacs-%%XEMACS_VER%%
 @exec ln -s %D/%F %B/xemacs
 @exec ln -s %D/%F %B/xemacs21
+@exec mkdir -p /var/run/emacs/lock ; chmod 1777 /var/run/emacs/lock
 @exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/etc/app-defaults
 @exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/etc/app-defaults/fr
 @exec mkdir -p %D/lib/xemacs-%%XEMACS_VER%%/etc/app-defaults/ja
