@@ -3,13 +3,15 @@
 # Date created:				24 Apr 1996
 # Whom:					pst
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/04/24 05:09:40 pst Exp $
 #
 
 PKGNAME=	socks5-0.12
 DISTNAME=	socks5-beta-0.12
 CATEGORIES+=	net security
 MASTER_SITES=	ftp://ftp.nec.com/pub/socks/socks5/
+
+MAINTAINER=	ambrisko@ambrisko.roble.com
 
 NO_CDROM=	NEC has a funky license for this software
 RESTRICTED=	ITAR license required to export outside US/Canada
