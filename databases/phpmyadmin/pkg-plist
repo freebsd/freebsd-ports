@@ -6,7 +6,7 @@
 %%MYADMDIR%%/INSTALL
 %%MYADMDIR%%/LICENSE
 %%MYADMDIR%%/README
-%%MYADMDIR%%/RELEASE-DATE-2.5.1
+%%MYADMDIR%%/RELEASE-DATE-2.5.2
 %%MYADMDIR%%/TODO
 %%MYADMDIR%%/badwords.txt
 %%MYADMDIR%%/chk_rel.%%PHP_SUFX%%
@@ -26,6 +26,7 @@
 %%MYADMDIR%%/db_search.%%PHP_SUFX%%
 %%MYADMDIR%%/docSQL/README
 %%MYADMDIR%%/docs.css
+%%MYADMDIR%%/export.%%PHP_SUFX%%
 %%MYADMDIR%%/footer.inc.%%PHP_SUFX%%
 %%MYADMDIR%%/header.inc.%%PHP_SUFX%%
 %%MYADMDIR%%/header_printview.inc.%%PHP_SUFX%%
@@ -147,8 +148,8 @@
 %%MYADMDIR%%/libraries/auth/config.auth.lib.%%PHP_SUFX%%
 %%MYADMDIR%%/libraries/auth/cookie.auth.lib.%%PHP_SUFX%%
 %%MYADMDIR%%/libraries/auth/http.auth.lib.%%PHP_SUFX%%
+%%MYADMDIR%%/libraries/blowfish.%%PHP_SUFX%%
 %%MYADMDIR%%/libraries/bookmark.lib.%%PHP_SUFX%%
-%%MYADMDIR%%/libraries/build_dump.lib.%%PHP_SUFX%%
 %%MYADMDIR%%/libraries/charset_conversion.lib.%%PHP_SUFX%%
 %%MYADMDIR%%/libraries/common.lib.%%PHP_SUFX%%
 %%MYADMDIR%%/libraries/config_import.lib.%%PHP_SUFX%%
@@ -160,6 +161,11 @@
 %%MYADMDIR%%/libraries/defines_php.lib.%%PHP_SUFX%%
 %%MYADMDIR%%/libraries/display_export.lib.%%PHP_SUFX%%
 %%MYADMDIR%%/libraries/display_tbl.lib.%%PHP_SUFX%%
+%%MYADMDIR%%/libraries/dom-drag.js
+%%MYADMDIR%%/libraries/export/csv.%%PHP_SUFX%%
+%%MYADMDIR%%/libraries/export/latex.%%PHP_SUFX%%
+%%MYADMDIR%%/libraries/export/sql.%%PHP_SUFX%%
+%%MYADMDIR%%/libraries/export/xml.%%PHP_SUFX%%
 %%MYADMDIR%%/libraries/fpdf/README
 %%MYADMDIR%%/libraries/fpdf/font/courier.%%PHP_SUFX%%
 %%MYADMDIR%%/libraries/fpdf/font/helvetica.%%PHP_SUFX%%
@@ -184,10 +190,12 @@
 %%MYADMDIR%%/libraries/ip_allow_deny.lib.%%PHP_SUFX%%
 %%MYADMDIR%%/libraries/kanji-encoding.lib.%%PHP_SUFX%%
 %%MYADMDIR%%/libraries/left.js
+%%MYADMDIR%%/libraries/mysql_charsets.lib.%%PHP_SUFX%%
 %%MYADMDIR%%/libraries/mysql_wrappers.lib.%%PHP_SUFX%%
 %%MYADMDIR%%/libraries/ob.lib.%%PHP_SUFX%%
 %%MYADMDIR%%/libraries/read_dump.lib.%%PHP_SUFX%%
 %%MYADMDIR%%/libraries/relation.lib.%%PHP_SUFX%%
+%%MYADMDIR%%/libraries/relation_cleanup.lib.%%PHP_SUFX%%
 %%MYADMDIR%%/libraries/select_lang.lib.%%PHP_SUFX%%
 %%MYADMDIR%%/libraries/server_privileges.js
 %%MYADMDIR%%/libraries/sqlparser.data.%%PHP_SUFX%%
@@ -196,6 +204,7 @@
 %%MYADMDIR%%/libraries/sqlvalidator.lib.%%PHP_SUFX%%
 %%MYADMDIR%%/libraries/string.lib.%%PHP_SUFX%%
 %%MYADMDIR%%/libraries/tbl_change.js
+%%MYADMDIR%%/libraries/transformations.lib.%%PHP_SUFX%%
 %%MYADMDIR%%/libraries/transformations/README
 %%MYADMDIR%%/libraries/transformations/TEMPLATE
 %%MYADMDIR%%/libraries/transformations/TEMPLATE_MIMETYPE
@@ -213,7 +222,6 @@
 %%MYADMDIR%%/libraries/transformations/text_plain__imagelink.inc.%%PHP_SUFX%%
 %%MYADMDIR%%/libraries/transformations/text_plain__link.inc.%%PHP_SUFX%%
 %%MYADMDIR%%/libraries/transformations/text_plain__substr.inc.%%PHP_SUFX%%
-%%MYADMDIR%%/libraries/transformations.lib.%%PHP_SUFX%%
 %%MYADMDIR%%/libraries/url_generating.lib.%%PHP_SUFX%%
 %%MYADMDIR%%/libraries/user_password.js
 %%MYADMDIR%%/libraries/zip.lib.%%PHP_SUFX%%
@@ -236,6 +244,7 @@
 %%MYADMDIR%%/scripts/updatedocs.sh
 %%MYADMDIR%%/server_common.inc.%%PHP_SUFX%%
 %%MYADMDIR%%/server_databases.%%PHP_SUFX%%
+%%MYADMDIR%%/server_export.%%PHP_SUFX%%
 %%MYADMDIR%%/server_links.inc.%%PHP_SUFX%%
 %%MYADMDIR%%/server_privileges.%%PHP_SUFX%%
 %%MYADMDIR%%/server_processlist.%%PHP_SUFX%%
@@ -246,7 +255,6 @@
 %%MYADMDIR%%/tbl_alter.%%PHP_SUFX%%
 %%MYADMDIR%%/tbl_change.%%PHP_SUFX%%
 %%MYADMDIR%%/tbl_create.%%PHP_SUFX%%
-%%MYADMDIR%%/tbl_dump.%%PHP_SUFX%%
 %%MYADMDIR%%/tbl_indexes.%%PHP_SUFX%%
 %%MYADMDIR%%/tbl_move_copy.%%PHP_SUFX%%
 %%MYADMDIR%%/tbl_printview.%%PHP_SUFX%%
@@ -256,7 +264,6 @@
 %%MYADMDIR%%/tbl_properties_export.%%PHP_SUFX%%
 %%MYADMDIR%%/tbl_properties_links.%%PHP_SUFX%%
 %%MYADMDIR%%/tbl_properties_operations.%%PHP_SUFX%%
-%%MYADMDIR%%/tbl_properties_options.%%PHP_SUFX%%
 %%MYADMDIR%%/tbl_properties_structure.%%PHP_SUFX%%
 %%MYADMDIR%%/tbl_properties_table_info.%%PHP_SUFX%%
 %%MYADMDIR%%/tbl_query_box.%%PHP_SUFX%%
@@ -272,6 +279,7 @@
 @dirrm %%MYADMDIR%%/libraries/transformations
 @dirrm %%MYADMDIR%%/libraries/fpdf/font
 @dirrm %%MYADMDIR%%/libraries/fpdf
+@dirrm %%MYADMDIR%%/libraries/export
 @dirrm %%MYADMDIR%%/libraries/dbg
 @dirrm %%MYADMDIR%%/libraries/auth
 @dirrm %%MYADMDIR%%/libraries
