@@ -2,6 +2,7 @@ lib/perl5/site_perl/%%PERL_VER%%/Mail/ListDetector.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/ListDetector/Detector/Base.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/ListDetector/Detector/Ecartis.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/ListDetector/Detector/Ezmlm.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/ListDetector/Detector/Fml.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/ListDetector/Detector/Listar.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/ListDetector/Detector/Mailman.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/ListDetector/Detector/Majordomo.pm
