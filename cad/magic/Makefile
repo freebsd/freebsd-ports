@@ -3,22 +3,21 @@
 # Date created:         18 Dec 1994
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.10 1996/11/13 12:40:40 asami Exp $
+# $Id: Makefile,v 1.11 1996/11/15 23:30:57 obrien Exp $
 #
 
-DISTNAME=       magic-6.4.4
+DISTNAME=       magic-6.5
+DISTFILES=	magic-6_5_tar.Z
 CATEGORIES=	cad
-MASTER_SITES=	ftp://gatekeeper.dec.com/pub/DEC/WRL/projects/magic/6.4/
-EXTRACT_SUFX=   .tar.Z
+MASTER_SITES=	ftp://gatekeeper.dec.com/pub/DEC/WRL/projects/magic/6.5/
 
 MAINTAINER=	swallace@FreeBSD.org
 
 USE_GMAKE=	yes
 
-BINS=	magic ext2dlys ext2sim fsleeper magicusage net2ir extcheck X11Helper
-MAN1=	ext2dlys.1 ext2spice.1 extcheck.1 magic.1 magicusage.1		\
-	grsunprog.1 ext2sim.1 net2ir.1 rsleeper.1 sim2spice.1 sleeper.1	\
-	fsleeper.1
+BINS=	magic ext2sim magicusage net2ir extcheck X11Helper ext2spice
+MAN1=	ext2spice.1 extcheck.1 magic.1 magicusage.1		\
+	ext2sim.1 net2ir.1 rsleeper.1 sleeper.1
 MAN3=	mpack.3 dqueue.3 extflat.3 geometry.3 hash.3 heap.3 libmalloc.3	\
 	list.3 magicutils.3 malloc.3 path.3 runstats.3 set.3 show.3	\
 	stack.3 string.3
@@ -26,6 +25,8 @@ MAN5=	cmap.5 displays.5 dlys.5 sim.5 dstyle.5 ext.5 glyphs.5 magic.5 net.5
 MAN8=	prleak.8
 
 post-install:
+	@chmod ${BINMODE} ${PREFIX}/bin/spice2sim
+	@chown ${BINOWN}.${BINGRP} ${PREFIX}/bin/spice2sim
 .for f in ${BINS}
 	@chmod ${BINMODE} ${PREFIX}/bin/$f
 	@chown ${BINOWN}.${BINGRP} ${PREFIX}/bin/$f

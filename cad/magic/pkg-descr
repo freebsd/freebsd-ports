@@ -1,5 +1,3 @@
-Magic 6.4.4
-
 Magic is an interactive editor for VLSI layouts that runs under BSD.
 
 To run magic, users should set CAD_HOME to the base installation directory
