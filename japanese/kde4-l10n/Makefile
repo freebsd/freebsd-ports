@@ -7,7 +7,7 @@
 
 CATEGORIES=	japanese kde misc
 
-MAINTAINER=	tadayuki.okada@windriver.com
+MAINTAINER=	sahiro@crest.ocn.ne.jp
 
 LINGUAS=	"ja"
 MASTERDIR=	${.CURDIR}/../../misc/kde2-i18n
