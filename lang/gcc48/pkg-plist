@@ -1,4 +1,4 @@
-@comment $Id: PLIST,v 1.17 1998/08/18 18:33:11 hoek Exp $
+@comment $Id: PLIST,v 1.18 1998/08/26 09:51:16 obrien Exp $
 bin/g++filt
 bin/g++
 bin/eg++
@@ -213,8 +213,10 @@ info/gcc.info-9
 @exec install-info %D/info/gcc.info %D/info/dir
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/SYSCALLS.c.X
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/cc1
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/cc1chill
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/cc1obj
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/cc1plus
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/chillrt0.o
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/cpp
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/collect2
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/f771
@@ -240,6 +242,9 @@ lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/objc/thr.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/objc/typedstream.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/syslimits.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/typeinfo
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/jc1
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/jvgenmain
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/libchill.a
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/libgcc.a
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/libobjc.a
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/specs
