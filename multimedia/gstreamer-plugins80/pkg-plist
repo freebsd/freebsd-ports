@@ -89,6 +89,7 @@ lib/gstreamer-%%VERSION%%/libgstinterleave.so
 %%LAME%%lib/gstreamer-%%VERSION%%/libgstlame.so
 lib/gstreamer-%%VERSION%%/libgstlevel.so
 %%LIBFAME%%lib/gstreamer-%%VERSION%%/libgstlibfame.so
+%%LIBVISUAL%%lib/gstreamer-%%VERSION%%/libgstlibvisual.so
 %%LIBMAD%%lib/gstreamer-%%VERSION%%/libgstmad.so
 lib/gstreamer-%%VERSION%%/libgstmatroska.so
 lib/gstreamer-%%VERSION%%/libgstmedian.so
@@ -109,6 +110,7 @@ lib/gstreamer-%%VERSION%%/libgstmpegstream.so
 lib/gstreamer-%%VERSION%%/libgstmulaw.so
 lib/gstreamer-%%VERSION%%/libgstmultifilesink.so
 lib/gstreamer-%%VERSION%%/libgstmultipart.so
+%%MUSEPACK%%lib/gstreamer-%%VERSION%%/libgstmusepack.so
 %%NAS%%lib/gstreamer-%%VERSION%%/libgstnassink.so
 lib/gstreamer-%%VERSION%%/libgstnavigationtest.so
 %%OGG%%lib/gstreamer-%%VERSION%%/libgstogg.so

@@ -56,8 +56,6 @@ CONFIGURE_ARGS+=\
 		--disable-tarkin \
 		--disable-lcs \
 		--disable-shout2 \
-		--disable-libvisual \
-		--disable-musepack \
 		--disable-dirac \
 		--disable-librfb
 
@@ -138,6 +136,10 @@ post-patch:
 		${WRKSRC}/sys/cdrom/gstcdplayer_ioctl.c \
 		${WRKSRC}/sys/vcd/vcdsrc.c \
 		${WRKSRC}/sys/vcd/vcdsrc.h
+
+# tell configure where the musepack includes live
+	@${REINPLACE_CMD} -e 's|/usr/include/musepack|${LOCALBASE}/include/musepack|g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.pre.mk>
 
@@ -316,6 +318,11 @@ WITH_LIBSNDFILE=yes
 WITH_LIBTHEORA=yes
 .endif
 
+# libvisual
+.if exists(${LOCALBASE}/lib/libvisual.a)
+WITH_LIBVISUAL=yes
+.endif
+
 # mad
 .if exists(${LOCALBASE}/lib/libmad.a)
 WITH_MAD=yes
@@ -324,6 +331,11 @@ WITH_MAD=yes
 # mjpegtools
 .if exists(${LOCALBASE}/lib/libmjpegutils.a)
 WITH_MJPEGTOOLS=yes
+.endif
+
+# musepack
+.if exists(${LOCALBASE}/lib/libmusepack.a)
+WITH_MUSEPACK=yes
 .endif
 
 # nas
@@ -736,6 +748,16 @@ LIB_DEPENDS+=	theora.0:${PORTSDIR}/graphics/libtheora
 PLIST_SUB+=	LIBTHEORA=""
 .endif
 
+# libvisual
+.ifndef(WITH_LIBVISUAL)
+CONFIGURE_ARGS+=	--disable-libvisual
+PLIST_SUB+=	LIBVISUAL="@comment "
+.else
+LIB_DEPENDS+=	visual.0:${PORTSDIR}/graphics/libvisual
+
+PLIST_SUB+=	LIBVISUAL=""
+.endif
+
 # mad
 .ifndef(WITH_MAD)
 CONFIGURE_ARGS+=	--disable-mad
@@ -760,6 +782,16 @@ EXTRA_BUILD_DIR+=	ext/mpeg2enc
 CONFIGURE_ENV+=	HAVE_CXX=yes
 
 PLIST_SUB+=	MJPEGTOOLS=""
+.endif
+
+# musepack
+.ifndef(WITH_MUSEPACK)
+CONFIGURE_ARGS+=	--disable-musepack
+PLIST_SUB+=	MUSEPACK="@comment "
+.else
+LIB_DEPENDS+=	musepack.1:${PORTSDIR}/audio/musepack
+
+PLIST_SUB+=	MUSEPACK=""
 .endif
 
 # nas
@@ -1072,6 +1104,10 @@ pre-everything::
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===> Define WITH_LIBTHEORA to enable libtheora Video plugin'
 .endif
+.ifndef(WITH_LIBVISUAL)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> Define WITH_LIBVISUAL to enable libvisual Video plugin'
+.endif
 .ifndef(WITH_MAD)
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===> Define WITH_MAD to enable mad Audio plugin'
@@ -1079,6 +1115,10 @@ pre-everything::
 .ifndef(WITH_MNG)
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===> Define WITH_MNG to enable libmng plugin'
+.endif
+.ifndef(WITH_MUSEPACK)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> Define WITH_MUSEPACK to enable musepack Audio plugin'
 .endif
 .ifndef(WITH_NAS)
 	@${ECHO_MSG} '===>'
