@@ -212,6 +212,7 @@
     SUBDIR += momspider
     SUBDIR += mozilla
     SUBDIR += mozilla-devel
+    SUBDIR += mozilla-devel-gtk2
     SUBDIR += mozilla-embedded
     SUBDIR += mozilla-embedded-devel
     SUBDIR += mozilla-embedded-vendor
