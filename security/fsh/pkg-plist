@@ -1,3 +1,4 @@
+bin/fcp
 bin/fsh
 bin/fshd
 bin/in.fshd
@@ -12,3 +13,4 @@ share/fsh/infshd.py
 @unexec install-info --delete %D/info/fsh.info %D/info/dir
 info/fsh.info
 @exec install-info --section="Shells and utilities" --entry="* FSH: (fsh).			fast remote command execution." %D/info/lsh.info %D/info/dir
+@dirrm share/fsh
