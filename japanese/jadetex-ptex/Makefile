@@ -7,35 +7,33 @@
 
 PORTNAME=		jadetex
 PORTVERSION=		3.13
+PORTREVISION=		1
 CATEGORIES=		japanese print
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	jadetex
+MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=		-ptex
 DISTNAME=		jadetex-${PORTVERSION}
 
 MAINTAINER=		hrs@FreeBSD.org
 COMMENT=		A pTeX backend for Jade, for typesetting SGML documents
 
-BUILD_DEPENDS=		ptex:${PORTSDIR}/japanese/ptex
+BUILD_DEPENDS=		ptex:${PORTSDIR}/japanese/ptex-tetex
 LIB_DEPENDS=		png.5:${PORTSDIR}/graphics/png
-RUN_DEPENDS=		ptex:${PORTSDIR}/japanese/ptex
+RUN_DEPENDS=		ptex:${PORTSDIR}/japanese/ptex-tetex
 
-MESSAGE=		${PKGDIR}/pkg-message
 PKGMESSAGE=		${WRKDIR}/pkg-message
+PKGMESSAGE_SUB=		LOCALBASE=${LOCALBASE}
 
 pre-patch:
-	@${SED} -e 's,%%LOCALBASE%%,${LOCALBASE},' ${MESSAGE} > ${PKGMESSAGE}
+	${SED} ${PKGMESSAGE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		< ${PKGDIR}/pkg-message > ${PKGMESSAGE}
 
-post-install: rebuild-tex-database display-message
+post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}${PKGNAMESUFFIX}
-	${INSTALL_MAN} ${WRKSRC}/README.jadetex-ptex ${DOCSDIR}${PKGNAMESUFFIX}
+	${INSTALL_MAN} ${WRKSRC}/README.jadetex-ptex ${DOCSDIR}${PKGNAMESUFFIX}/
 .endif
-
-rebuild-tex-database:
 	${LOCALBASE}/bin/mktexlsr
-
-display-message:
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
