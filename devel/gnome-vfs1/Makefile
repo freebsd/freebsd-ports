@@ -15,6 +15,7 @@ DISTNAME=	gnome-vfs-${PORTVERSION}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	GNOME Virtual File System
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 .if !exists(/usr/bin/bzip2)
