@@ -1,0 +1,20 @@
+--- configure.orig	Thu Sep 25 13:23:42 2003
++++ configure	Thu Sep 25 13:23:52 2003
+@@ -8173,7 +8173,7 @@
+ echo $ECHO_N "checking to see if compiler understands -Werror... $ECHO_C" >&6
+ 
+   save_CFLAGS="$CFLAGS"
+-  CFLAGS="$CFLAGS -Werror"
++  CFLAGS="$CFLAGS"
+ 
+   cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+@@ -8214,7 +8214,7 @@
+   CFLAGS="$save_CFLAGS"
+ 
+   if test "X$flag_ok" = Xyes ; then
+-    GST_ERROR="$GST_ERROR -Werror"
++    GST_ERROR="$GST_ERROR"
+     true
+   else
+ 
