@@ -35,6 +35,8 @@ share/lbreakout/shot.bmp
 share/lbreakout/shot.wav
 share/lbreakout/shrink.wav
 share/lbreakout/slime.wav
+share/lbreakout/speeddown.wav
+share/lbreakout/speedup.wav
 share/lbreakout/title.bmp
 share/lbreakout/verygood.wav
 share/lbreakout/wall.wav
