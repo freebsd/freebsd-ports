@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- data/Makefile.in	2001/05/22 19:52:06	1.1
++++ data/Makefile.in	2001/05/22 19:52:26
+@@ -76,7 +76,7 @@
+ 
+ pkgdata_DATA = main.con
+ 
+-pkgdatadir = $(datadir)/games/@PACKAGE@
++pkgdatadir = $(datadir)/@PACKAGE@
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 
