@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.webdav.org/cadaver/ \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	josh@tcbug.org
 COMMENT=	Commandline client for DAV
 
 LIB_DEPENDS=	neon:${PORTSDIR}/www/neon
