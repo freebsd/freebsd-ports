@@ -1,0 +1,18 @@
+--- src/gubby.cpp.orig	Tue Feb  4 16:16:09 2003
++++ src/gubby.cpp	Tue Feb  4 16:15:32 2003
+@@ -49,13 +49,13 @@
+ 		char buf[1024];
+ 
+ 		if ( f != 0 )
+-			while ( !feof(f) ) {
++			while ( !feof(f.fptr()) ) {
+ 
+ 				buf[0] = 0;
+ 				char* s = &buf[0];
+ 				const char* p = find;
+ 
+-				fgets(s, sizeof buf / sizeof(char), f);
++				fgets(s, sizeof buf / sizeof(char), f.fptr());
+ 
+ 				// search for matched string
+ 				while ( *p++ == *s++ );
