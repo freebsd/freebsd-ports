@@ -6,6 +6,7 @@
 
 PORTNAME=	ksh93
 PORTVERSION=	${VERSION:S/-//g}
+PORTREVISION=	1
 VERSION=	2002-06-28
 CATEGORIES=	shells
 MASTER_SITES=	http://www.research.att.com/~gsf/download/tgz/
@@ -26,13 +27,18 @@ MAKE_ENV+=	LDFLAGS=-static
 MAN1=		ksh93.1
 
 do-build:
-	@cd ${WRKSRC} && env -i ${MAKE_ENV} ./bin/package make
+	@cd ${WRKSRC} && env -i ${MAKE_ENV} ${SH} bin/package make
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/arch/freebsd.${ARCH}/bin/ksh \
 	    ${PREFIX}/bin/ksh93
 	${INSTALL_MAN} ${WRKSRC}/arch/freebsd.${ARCH}/man/man1/sh.1 \
 	    ${MANPREFIX}/man/man1/ksh93.1
+	${MKDIR} ${PREFIX}/share/examples/ksh93
+.for fun in dirs popd
+	${INSTALL_SCRIPT} ${WRKSRC}/arch/freebsd.${ARCH}/fun/${fun} \
+	    ${PREFIX}/share/examples/ksh93/
+.endfor
 
 post-install:
 	@${ECHO} "updating /etc/shells"
