@@ -8,8 +8,9 @@
 PORTNAME=	xemacs-mule-packages
 PORTVERSION=	1.1
 CATEGORIES=	editors elisp
-MASTER_SITES=	${MASTER_SITE_XEMACS}
-MASTER_SITE_SUBDIR=	packages
+MASTER_SITES=	${MASTER_SITE_XEMACS} \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	packages kiri
 DISTFILES=	\
 		edict-1.10-pkg.tar.gz \
 		leim-1.15-pkg.tar.gz \

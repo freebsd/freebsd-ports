@@ -8,8 +8,9 @@
 PORTNAME=	xemacs-games-packages
 PORTVERSION=	1.2
 CATEGORIES=	editors elisp
-MASTER_SITES=	${MASTER_SITE_XEMACS}
-MASTER_SITE_SUBDIR=	packages
+MASTER_SITES=	${MASTER_SITE_XEMACS} \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	packages kiri
 DISTFILES=	\
 		cookie-1.12-pkg.tar.gz \
 		games-1.12-pkg.tar.gz \

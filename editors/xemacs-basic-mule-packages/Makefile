@@ -8,8 +8,9 @@
 PORTNAME=	xemacs-basic-mule-packages
 PORTVERSION=	1.2
 CATEGORIES=	editors elisp
-MASTER_SITES=	${MASTER_SITE_XEMACS}
-MASTER_SITE_SUBDIR=	packages
+MASTER_SITES=	${MASTER_SITE_XEMACS} \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	packages kiri
 DISTFILES=	\
 		egg-its-1.23-pkg.tar.gz \
 		elib-1.07-pkg.tar.gz \
