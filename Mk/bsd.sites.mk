@@ -1294,5 +1294,5 @@ MASTER_SITE_XORG+= \
 MASTER_SITE_GNUSTEP+= \
 	http://python.planetmirror.com/pub/gnustep/gnustep/%SUBDIR%/ \
 	ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/ \
-	ftp://ftp.easynet.nl/mirror/GNUstep/pub/gnustep/%SUBDIR%/ 
+	ftp://ftp.easynet.nl/mirror/GNUstep/pub/gnustep/%SUBDIR%/
 

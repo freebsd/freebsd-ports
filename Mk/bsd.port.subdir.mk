@@ -2,7 +2,7 @@
 # $FreeBSD$
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
-# for building ports subdirectories. 
+# for building ports subdirectories.
 #
 #
 # +++ variables +++
