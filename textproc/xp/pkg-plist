@@ -190,7 +190,6 @@ share/java/xp-%%XP_VERSION%%/docs/api/Package-com.jclark.xml.tok.html
 share/java/xp-%%XP_VERSION%%/docs/api/AllNames.html
 share/java/xp-%%XP_VERSION%%/docs/index.html
 share/java/xp-%%XP_VERSION%%/docs/copying.txt
-@dirrm share/java/classes
 @dirrm share/java/xp-%%XP_VERSION%%/com/jclark/xml/sax
 @dirrm share/java/xp-%%XP_VERSION%%/com/jclark/xml/tok
 @dirrm share/java/xp-%%XP_VERSION%%/com/jclark/xml/output
