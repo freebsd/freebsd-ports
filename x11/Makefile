@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.112 1996/12/17 11:07:12 asami Exp $
+# $Id: Makefile,v 1.113 1996/12/30 07:15:08 tg Exp $
 #
 
     SUBDIR += FWF
@@ -12,6 +12,7 @@
     SUBDIR += bricons
     SUBDIR += ctwm
     SUBDIR += dclock
+    SUBDIR += etlfont
     SUBDIR += emiclock
     SUBDIR += emu
     SUBDIR += filerunner
