@@ -1,8 +1,11 @@
 MPD MULTI-LINK PPP DAEMON FOR FREEBSD
 
-Release 1.0b3
+Release 1.0b4
 Written by Archie Cobbs <archie@whistle.com>
 Based on IIJ-PPP by Toshiharu OHNO <tony-o@iij.ad.jp>
+
+Please see the CHANGES file if you are updating from mpd-1.0b3.
+
 
 * WHAT IS IT?
 
@@ -42,4 +45,3 @@ Based on IIJ-PPP by Toshiharu OHNO <tony-o@iij.ad.jp>
 
   Email me any questions <archie@whistle.com> and I'll do my best
   to answer them.
-
