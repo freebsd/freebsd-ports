@@ -1,0 +1,23 @@
+The UDS (Useful Development Stuff) Collection is a C++ library that
+assists you while developing and debugging programs. It was developed
+as part of Frost. Features were only added when needed, but it
+provides already a nice bunch of features. 
+
+Features: 
+   - Automatic search for memory leaks 
+   - Logging of memory [de]allocations 
+   - Zombie objects 
+   - Exception system for (almost) fatal errors. A core can be dumped
+     when the exception is thrown. 
+   - Action, FinalAction, and VRemember 
+   - Function objects that are more flexible than STL function objects 
+   - Threads, Mutexes, Semaphores Posix Threads wrapper classes 
+   - Socket Stream class 
+   - ProcStream class (new) 
+   - Classes for reference counting that make it easy to implement
+     copy-on-write and garbage collection. 
+   - Simple pseudo-random number generators 
+   - Several "convenience functions" to create temporary file names;
+     open files, fork, wait etc. and throw an exception if something goes wrong 
+
+WWW: http://frost.flewid.de/uds/
