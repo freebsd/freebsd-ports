@@ -16,6 +16,8 @@ DISTNAME=	OB-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A CORBA 2 implementation
 
+BROKEN=		"Unfetchable"
+
 RESTRICTED=	"Non-commercial use only"
 USE_XLIB=	yes
 INSTALLS_SHLIB=	yes
