@@ -1,20 +1,24 @@
---- Makefile.orig	Wed Feb 13 14:09:52 2002
-+++ Makefile	Thu Jul 18 00:11:49 2002
-@@ -1,4 +1,3 @@
+
+$FreeBSD$
+
+--- Makefile.orig	Tue Feb 11 15:36:39 2003
++++ Makefile	Thu Feb 27 19:16:03 2003
+@@ -1,6 +1,6 @@
+ # Makefile for "docsis" program. 
+ #
 -CC 	=  gcc 
++#CC 	=  gcc 
  DEFS	= -DYY_NO_UNPUT  -DDEBUG
  #
- # We assume ucd-snmp is installed in /opt/ucd-snmp-4.2. If not, replace with 
-@@ -7,8 +6,10 @@
+ # We assume net-snmp is installed in /opt/net-snmp. If not, replace with 
+@@ -8,8 +8,8 @@
+ # -lnetsnmp is NET-SNMP
  # -lcrypto is OpenSSL. 
  # 
- # CFLAGS	= -g -Wall -I/usr/local/include
--CFLAGS	= -g -Wall -I/opt/ucd-snmp-4.2/include
--LIBS  	= -L/opt/ucd-snmp-4.2/lib -lsnmp -lcrypto -lnsl -lfl -lm
-+CFLAGS	+= -g -Wall -I${LOCALBASE}/include
-+LIBS  	+= -L${LOCALBASE}/lib -lsnmp -lcrypto -lfl -lm
-+
-+all: docsis
+-CFLAGS	= -g -Wall -I/opt/net-snmp/include
+-LIBS  	= -L/opt/net-snmp/lib -lnetsnmp -lcrypto -lnsl -lfl -lm
++CFLAGS	+= -I${PREFIX}/include -I${OPENSSLINC}
++LIBS  	= -L${PREFIX}/lib -L${OPENSSLLIB} -lnetsnmp -lcrypto -lfl -lm
  
- docsis: Makefile docsis_decode.o docsis_yy.o docsis_main.o md5.o hmac_md5.o docsis_snmp.o ethermac.h ethermac.o version.h docsis_encode.o 
- 	$(CC) $(CFLAGS) $(DEFS) -g -o docsis docsis_main.o docsis_encode.o docsis_decode.o docsis_yy.o md5.o hmac_md5.o docsis_snmp.o ethermac.o $(LIBS)
+ # If you installed NET-SNMP in /usr/local, uncomment the following two lines:
+ # CFLAGS	= -g -Wall -I/usr/local/include

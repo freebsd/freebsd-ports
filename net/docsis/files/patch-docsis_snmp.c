@@ -1,10 +1,13 @@
---- docsis_snmp.c.orig	Fri Jul  5 14:56:11 2002
-+++ docsis_snmp.c	Fri Jul  5 14:56:53 2002
-@@ -165,6 +165,7 @@
-     if (snmp_set_var_objid(vp, objid, vp->name_length))
-         return -1;
+
+$FreeBSD$
+
+--- docsis_snmp.c.orig	Tue Feb 11 16:36:30 2003
++++ docsis_snmp.c	Thu Feb 27 19:17:23 2003
+@@ -206,6 +206,7 @@
+   static char outbuf[1024];
+   char *cp;
  
 +    badtype = 0;
-     len = PACKET_LENGTH;
-     switch((short)vp->type){
-     case ASN_INTEGER:
+   memset (outbuf, 0, 1024);
+ 
+   vp = (struct variable_list *) malloc (sizeof (struct variable_list));
