@@ -1,0 +1,28 @@
+# New ports collection makefile for:    libgnomemm
+# Date created:         22 May 2003
+# Whom:                 Alexander Nedotsukov <bland@mail.ru>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	libgnomemm
+PORTVERSION=	1.3.10
+CATEGORIES=	x11 gnome
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	gtkmm
+DIST_SUBDIR=	gnome2
+
+MAINTAINER=	bland@mail.ru
+COMMENT=	C++ wrapper for libgnome library
+
+LIB_DEPENDS=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtk--2
+BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+
+USE_X_PREFIX=	yes
+USE_GMAKE=	yes
+USE_GNOME=	libgnome
+USE_LIBTOOL=	yes
+INSTALLS_SHLIB=	yes
+CONFIGURE_ARGS=	--enable-static
+
+.include <bsd.port.mk>

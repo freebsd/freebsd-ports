@@ -76,6 +76,7 @@
     SUBDIR += libcapplet
     SUBDIR += libdnd
     SUBDIR += libgnome
+    SUBDIR += libgnomemm
     SUBDIR += libpanel
     SUBDIR += libsx
     SUBDIR += libxklavier
