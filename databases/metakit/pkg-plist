@@ -10,7 +10,7 @@ lib/libmk4.la
 %%WITH_PYTHON%%lib/libmk4py.so
 %%WITH_PYTHON%%lib/libmk4py.so.0
 %%WITH_PYTHON%%lib/libmk4py.la
-%%WITH_PYTHON%%lib/python1.5/site-packages/Mk4py.so
+%%WITH_PYTHON%%lib/%%PYTHON_VERSION%%/site-packages/Mk4py.so
 %%WITH_TCL%%lib/libmk4tcl.a
 %%WITH_TCL%%lib/libmk4tcl.so
 %%WITH_TCL%%lib/libmk4tcl.so.0
