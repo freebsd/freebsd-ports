@@ -18,6 +18,7 @@ LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
 		audiofile.0:${PORTSDIR}/audio/libaudiofile \
 		dockapp.1:${PORTSDIR}/x11-wm/libdockapp \
 		${ESD_DEPENDS}
+RUN_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
