@@ -69,9 +69,6 @@ SITE+=	${FILESDIR}/site.config.m4.ldap
 .if ! defined(SENDMAIL_WITHOUT_MILTER)
 SITE+=	${FILESDIR}/site.config.m4.milter
 .endif
-.if exists(${FILESDIR}/site.config.m4.local)
-SITE+=	${FILESDIR}/site.config.m4.local
-.endif
 
 # install directly if no mailwrapper support
 .if ! exists(${DESTDIR}/etc/mail/mailer.conf)
@@ -195,4 +192,10 @@ submit.cf:
 		SENDMAIL_CF_DIR=${PREFIX}/share/sendmail/cf \
 		SENDMAIL_MC=submit )
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if exists(${FILESDIR}/site.config.m4.local)
+SITE+=	${FILESDIR}/site.config.m4.local
+.endif
+
+.include <bsd.port.post.mk>
