@@ -5,11 +5,12 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	chinese
+CATEGORIES=	chinese editors
 
 LANG_PKGNAME=	zh_TW
 LANG_EXT=	88
 LANG_CONFIGURE_ARG=	CHINTRAD
+BUILD_DEPENDS+=	${PREFIX}/share/fonts/TrueType/bsmi00lp.ttf:${PORTSDIR}/chinese/arphicttf
 MASTERDIR=	${.CURDIR}/../../editors/openoffice
 
 .include "${MASTERDIR}/Makefile"
