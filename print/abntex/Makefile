@@ -8,7 +8,8 @@
 PORTNAME=	abntex
 PORTVERSION=	0.8.2
 CATEGORIES=	print
-MASTER_SITES=	http://download.codigolivre.org.br/abntex/
+MASTER_SITES=	http://mirror.isp.net.au/ftp/pub/freebsd/distfiles/ \
+		http://download.codigolivre.org.br/abntex/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 EXTRACT_SUFX=	.tgz
 
