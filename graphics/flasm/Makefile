@@ -6,13 +6,10 @@
 #
 
 PORTNAME=	flasm
-PORTVERSION=	1.41
-PORTREVISION=	1
+PORTVERSION=	1.51
 CATEGORIES=	graphics
-#MASTER_SITES=	http://www.nowrap.de/
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	kuriyama
-DISTNAME=	flasm141src
+MASTER_SITES=	http://www.nowrap.de/download/
+DISTNAME=	flasm15src
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Command line assembler/disassembler of flash actionscript bytecode
