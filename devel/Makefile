@@ -83,6 +83,7 @@
     SUBDIR += fhist
     SUBDIR += flick
     SUBDIR += flux
+    SUBDIR += fnccheck
     SUBDIR += fnorb
     SUBDIR += fortran-utils
     SUBDIR += fpp

@@ -1,0 +1,10 @@
+bin/fncaverage
+bin/fncdump
+lib/libfnccheck.so
+%%PORTDOCS%%share/doc/fnccheck/CHANGES.txt
+%%PORTDOCS%%share/doc/fnccheck/README.txt
+%%PORTDOCS%%share/doc/fnccheck/README1ST.txt
+%%PORTDOCS%%share/doc/fnccheck/fncdump.html
+%%PORTDOCS%%share/doc/fnccheck/fncdump.info
+%%PORTDOCS%%share/doc/fnccheck/fncdump_toc.html
+%%PORTDOCS%%@dirrm share/doc/fnccheck
