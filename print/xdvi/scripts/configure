@@ -15,7 +15,7 @@ A4=n
 
 prefix=$PREFIX;
 if `echo $PREFIX |grep -q X11` ; then
-  prefix=/usr/local
+  prefix=${LOCALBASE}
 fi
 CACHE=$prefix/share/texmf/fonts
 

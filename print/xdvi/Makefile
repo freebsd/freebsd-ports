@@ -7,7 +7,7 @@
 
 PORTNAME=	xdvi
 PORTVERSION=	pl20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
@@ -19,10 +19,13 @@ COMMENT=	A DVI Previewer for the X Window System
 
 CONFLICTS=	teTeX-*
 
-DIST_SUBDIR=	xdvi	# to share distfiles with japanese/xdvi
+DIST_SUBDIR=	xdvi
 USE_REINPLACE=	yes
 USE_IMAKE=	yes
 USE_GMAKE=	yes
+PKGINSTALL=	${WRKDIR}/pkg-install
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+PLIST_SUB=	LOCALBASE=${LOCALBASE}
 XMKMF=		xmkmf
 .if defined(PACKAGE_BUILDING)
 SCRIPTS_ENV=	PACKAGE_BUILDING=${PACKAGE_BUILDING}
@@ -34,19 +37,13 @@ MAN1=		xdvi.1
 
 post-configure:
 	@${REINPLACE_CMD} -e "s=distclean::=distclean:=g" ${WRKSRC}/Makefile
-
-pre-install:
-	@if ${LS} ${PKG_DBDIR} | grep -qi ^tetex; then\
-	${ECHO_MSG} "*** WARNING ***";\
-	${ECHO_MSG} "This port conflicts with teTeX!  If you have already installed";\
-	${ECHO_MSG} "teTeX, you may want to backup the xdvi and MakeTeXPK commands.";\
-	${ECHO};\
-	${ECHO_MSG} "To cancel or suspend installation, press control-C or control-Z.";\
-	for i in 1 2 3 4 5; do ${ECHO} -n ; sleep 1; done; fi
+.for F in pkg-install pkg-deinstall
+	${SED}	-e "s=%%PREFIX%%=${PREFIX}=" \
+		-e "s=%%LOCALBASE%%=${LOCALBASE}=" \
+		< ${PKGDIR}/${F} > ${WRKDIR}/${F}
+.endfor
 
 do-install:
-	@${MKDIR} ${PREFIX}/man/man1
-	@${MKDIR} ${PREFIX}/bin
 	@(cd ${WRKSRC}; ${GMAKE} install.man \
 		MANDIR=${PREFIX}/man/man1 MANSUFFIX=1)
 	@(cd ${WRKSRC}; ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} xdvi.man)
@@ -54,6 +51,6 @@ do-install:
 	@(cd ${WRKSRC}; ${INSTALL_SCRIPT} MakeTeXPK ${PREFIX}/bin)
 
 post-install:
-	@if [ -f ${WRKDIR}/post-install ]; then sh ${WRKDIR}/post-install; fi
+	@if [ -f ${WRKDIR}/post-install ]; then ${SH} ${WRKDIR}/post-install; fi
 
 .include <bsd.port.mk>

@@ -1,8 +1,9 @@
 #!/bin/sh
 
-prefix=/usr/local
+prefix=%%PREFIX%%
+localbase=%%LOCALBASE%%
 
-if [ "$2" = "POST-INSTALL" ]; then
+if [ "$2" != "PRE-INSTALL" ]; then
   exit 0
 fi
 
@@ -21,7 +22,7 @@ fi
 cat << END
 
 This package has been compiled with some defaults:
-1 fonts will be created in $prefix/lib/texmf/fonts/pk and this
+1 fonts will be created in ${localbase}/share/texmf/fonts/pk and this
   directory will be made world writable
 
 2 300 dpi fonts will be created with MODE=imagen
@@ -31,7 +32,7 @@ This package has been compiled with some defaults:
    72 dpi fonts will be created with MODE=nextscreen
 
 If you are not satisfied with 1, you need to recompile xdvi
-If you are not satisfied with 2, you will need to edit $prefix/MakeTeXPK
+If you are not satisfied with 2, you will need to edit $prefix/bin/MakeTeXPK
 
 END
 
@@ -42,7 +43,7 @@ case $answ in
   *) exit 1;;
 esac
 
-mkdir -p $prefix/lib/texmf/fonts/pk; chmod 1777 $prefix/lib/texmf/fonts/pk
+mkdir -p ${localbase}/share/texmf/fonts/pk; chmod 1777 ${localbase}/share/texmf/fonts/pk
 
 exit 0
 
