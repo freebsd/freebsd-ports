@@ -22,8 +22,10 @@ ifgraph/templates/pt-br/main-trailer.html
 @dirrm ifgraph/templates/en/
 @dirrm ifgraph/templates/pt-br/
 @dirrm ifgraph/templates
+@dirrm ifgraph/htdocs
 @unexec rmdir %D/ifgraph 2>/dev/null || true
 @unexec rmdir %D/var/ifgraph 2>/dev/null || true
+@unexec rmdir %D/var 2>/dev/null || true
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/INSTALACAO
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL

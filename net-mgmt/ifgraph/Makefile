@@ -7,6 +7,7 @@
 
 PORTNAME=	ifgraph
 PORTVERSION=	0.4.9
+PORTREVISION=	1
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://ifgraph.sourceforge.net/stable/
 
