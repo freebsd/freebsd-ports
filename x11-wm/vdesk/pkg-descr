@@ -1,0 +1,11 @@
+This is a small command-line utility for setting up and using virtual
+desktops.
+
+from the Web page:
+
+	invoke it as vdesk <desktop number> to switch to a desktop,
+	or vdesk <desktop number> <window id> ... to move windows
+	to a desktop, where desktop 0 means that the window should
+	be made sticky.
+
+WWW:  http://azz.us-lot.org/code.html
