@@ -1,2 +1,6 @@
 bin/rtf2LaTeX
-lib/rtf
+share/rtf/ansi.code
+share/rtf/english.land
+share/rtf/german.land
+share/rtf/mac.code
+@dirrm share/rtf
