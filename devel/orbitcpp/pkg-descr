@@ -1,4 +1,16 @@
-orbitcpp provides C++ bindings for ORBit, an open source CORBA
-2.2-compliant Object Request Broker.
+Paraphrasing the website:
+
+  ORBit-C++ provides C++ bindings for ORBit, an open source CORBA
+  2.2-compliant Object Request Broker.
+
+  The primary objectives of ORBit-C++ are:
+  - To provide a spec-compliant C++ CORBA mapping for ORBit.
+  - To allow programmers to use and write ORBit objects and gnome components
+    in C++ with little or no runtime overhead (compared to writing C ones)
+  - To allow C programmers to use C++ objects without having to deal with any
+    of that "horrible C++ syntax".
+
+  In short, to C++ programmers, all ORBit objects look like C++ objects, and
+  to C programmers, all ORBit objects should look like C objects.
 
 WWW: http://orbitcpp.sourceforge.net/
