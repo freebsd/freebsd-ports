@@ -161,9 +161,13 @@ MLINKS=		dgst.1 md4.1 \
 		ASN1_STRING_length.3 ASN1_STRING_dup.3 \
 		ASN1_STRING_length.3 ASN1_STRING_set.3 \
 		ASN1_STRING_length.3 ASN1_STRING_type.3 \
+		ASN1_STRING_length.3 ASN1_STRING_length_set.3 \
 		ASN1_STRING_new.3 ASN1_STRING_free.3 \
 		ASN1_STRING_new.3 ASN1_STRING_type_new.3 \
+		ASN1_STRING_print_ex.3 ASN1_STRING_print_ex_fp.3 \
 		BIO_ctrl.3 BIO_callback_ctrl.3 \
+		BIO_ctrl.3 BIO_ctrl_pending.3 \
+		BIO_ctrl.3 BIO_ctrl_wpending.3 \
 		BIO_ctrl.3 BIO_eof.3 \
 		BIO_ctrl.3 BIO_flush.3 \
 		BIO_ctrl.3 BIO_get_close.3 \
@@ -173,6 +177,7 @@ MLINKS=		dgst.1 md4.1 \
 		BIO_ctrl.3 BIO_ptr_ctrl.3 \
 		BIO_ctrl.3 BIO_reset.3 \
 		BIO_ctrl.3 BIO_seek.3 \
+		BIO_ctrl.3 BIO_set_callback_arg.3 \
 		BIO_ctrl.3 BIO_set_close.3 \
 		BIO_ctrl.3 BIO_set_info_callback.3 \
 		BIO_ctrl.3 BIO_tell.3 \
@@ -343,12 +348,16 @@ MLINKS=		dgst.1 md4.1 \
 		DSA_set_method.3 DSA_get_default_method.3 \
 		DSA_set_method.3 DSA_new_method.3 \
 		DSA_set_method.3 DSA_set_default_method.3 \
+		DSA_sign.3 DSA_sign_setup.3 \
 		DSA_sign.3 DSA_verify.3 \
 		ERR_GET_LIB.3 ERR_GET_FUNC.3 \
 		ERR_GET_LIB.3 ERR_GET_REASON.3 \
+		ERR_error_string.3 ERR_error_string_n.3 \
 		ERR_error_string.3 ERR_func_error_string.3 \
 		ERR_error_string.3 ERR_lib_error_string.3 \
 		ERR_error_string.3 ERR_reason_error_string.3 \
+		ERR_get_error.3 ERR_get_error_line.3 \
+		ERR_get_error.3 ERR_get_error_line_data.3 \
 		ERR_get_error.3 ERR_peek_error.3 \
 		ERR_get_error.3 ERR_peek_error_line.3 \
 		ERR_get_error.3 ERR_peek_error_line_data.3 \
@@ -359,8 +368,10 @@ MLINKS=		dgst.1 md4.1 \
 		ERR_load_crypto_strings.3 SSL_load_error_strings.3 \
 		ERR_load_strings.3 ERR_PACK.3 \
 		ERR_load_strings.3 ERR_get_next_error_library.3 \
+		ERR_print_errors.3 ERR_print_errors_fp.3 \
 		ERR_put_error.3 ERR_add_error_data.3 \
 		EVP_DigestInit.3 EVP_DigestFinal_ex.3 \
+		EVP_DigestInit.3 EVP_DigestInit_ex.3 \
 		EVP_DigestInit.3 EVP_DigestUpdate.3 \
 		EVP_DigestInit.3 EVP_MAX_MD_SIZE.3 \
 		EVP_DigestInit.3 EVP_MD_CTX_block_size.3 \
@@ -424,6 +435,7 @@ MLINKS=		dgst.1 md4.1 \
 		EVP_EncryptInit.3 EVP_DecryptInit_ex.3 \
 		EVP_EncryptInit.3 EVP_DecryptUpdate.3 \
 		EVP_EncryptInit.3 EVP_EncryptFinal.3 \
+		EVP_EncryptInit.3 EVP_EncryptInit_ex.3 \
 		EVP_EncryptInit.3 EVP_EncryptFinal_ex.3 \
 		EVP_EncryptInit.3 EVP_EncryptUpdate.3 \
 		EVP_EncryptInit.3 EVP_get_cipherbyname.3 \
@@ -494,6 +506,7 @@ MLINKS=		dgst.1 md4.1 \
 		RSA_print.3 DSA_print_fp.3 \
 		RSA_print.3 DSAparams_print.3 \
 		RSA_print.3 DSAparams_print_fp.3 \
+		RSA_print.3 RSA_print_fp.3 \
 		RSA_private_encrypt.3 RSA_public_decrypt.3 \
 		RSA_public_encrypt.3 RSA_private_decrypt.3 \
 		RSA_set_method.3 RSA_PKCS1_SSLeay.3 \
@@ -545,6 +558,7 @@ MLINKS=		dgst.1 md4.1 \
 		SSL_CTX_set_client_CA_list.3 SSL_add_client_CA.3 \
 		SSL_CTX_set_client_CA_list.3 SSL_set_client_CA_list.3 \
 		SSL_CTX_set_client_cert_cb.3 SSL_CTX_get_client_cert_cb.3 \
+		SSL_CTX_set_default_passwd_cb.3 SSL_CTX_set_default_passwd_cb_userdata.3 \
 		SSL_CTX_set_generate_session_id.3 SSL_has_matching_session_id.3 \
 		SSL_CTX_set_generate_session_id.3 SSL_set_generate_session_id.3 \
 		SSL_CTX_set_info_callback.3 SSL_CTX_get_info_callback.3 \
@@ -556,6 +570,7 @@ MLINKS=		dgst.1 md4.1 \
 		SSL_CTX_set_mode.3 SSL_CTX_get_mode.3 \
 		SSL_CTX_set_mode.3 SSL_get_mode.3 \
 		SSL_CTX_set_mode.3 SSL_set_mode.3 \
+		SSL_CTX_set_msg_callback.3 SSL_CTX_set_msg_callback_arg.3 \
 		SSL_CTX_set_msg_callback.3 SSL_get_msg_callback_arg.3 \
 		SSL_CTX_set_msg_callback.3 SSL_set_msg_callback.3 \
 		SSL_CTX_set_options.3 SSL_CTX_get_options.3 \
@@ -577,6 +592,7 @@ MLINKS=		dgst.1 md4.1 \
 		SSL_CTX_set_tmp_rsa_callback.3 SSL_need_tmp_rsa.3 \
 		SSL_CTX_set_tmp_rsa_callback.3 SSL_set_tmp_rsa.3 \
 		SSL_CTX_set_tmp_rsa_callback.3 SSL_set_tmp_rsa_callback.3 \
+		SSL_CTX_set_verify.3 SSL_CTX_set_verify_depth.3 \
 		SSL_CTX_set_verify.3 SSL_set_verify.3 \
 		SSL_CTX_set_verify.3 SSL_set_verify_depth.3 \
 		SSL_CTX_use_certificate.3 SSL_CTX_check_private_key.3 \
@@ -586,6 +602,9 @@ MLINKS=		dgst.1 md4.1 \
 		SSL_CTX_use_certificate.3 SSL_CTX_use_RSAPrivateKey.3 \
 		SSL_CTX_use_certificate.3 SSL_CTX_use_RSAPrivateKey_ASN1.3 \
 		SSL_CTX_use_certificate.3 SSL_CTX_use_RSAPrivateKey_file.3 \
+		SSL_CTX_use_certificate.3 SSL_CTX_use_certificate_ASN1.3 \
+		SSL_CTX_use_certificate.3 SSL_CTX_use_certificate_file.3 \
+		SSL_CTX_use_certificate.3 SSL_CTX_use_certificate_chain_file.3 \
 		SSL_CTX_use_certificate.3 SSL_check_private_key.3 \
 		SSL_CTX_use_certificate.3 SSL_use_PrivateKey.3 \
 		SSL_CTX_use_certificate.3 SSL_use_PrivateKey_ASN1.3 \
@@ -598,9 +617,11 @@ MLINKS=		dgst.1 md4.1 \
 		SSL_CTX_use_certificate.3 SSL_use_certificate_file.3 \
 		SSL_SESSION_get_ex_new_index.3 SSL_SESSION_get_ex_data.3 \
 		SSL_SESSION_get_ex_new_index.3 SSL_SESSION_set_ex_data.3 \
+		SSL_SESSION_get_time.3 SSL_SESSION_get_timeout.3 \
 		SSL_SESSION_get_time.3 SSL_SESSION_set_time.3 \
 		SSL_alert_type_string.3 SSL_alert_desc_string.3 \
 		SSL_alert_type_string.3 SSL_alert_desc_string_long.3 \
+		SSL_alert_type_string.3 SSL_alert_type_string_long.3 \
 		SSL_get_ciphers.3 SSL_get_cipher_list.3 \
 		SSL_get_client_CA_list.3 SSL_CTX_get_client_CA_list.3 \
 		SSL_get_current_cipher.3 SSL_get_cipher.3 \
@@ -611,8 +632,14 @@ MLINKS=		dgst.1 md4.1 \
 		SSL_get_ex_new_index.3 SSL_set_ex_data.3 \
 		SSL_library_init.3 OpenSSL_add_ssl_algorithms.3 \
 		SSL_library_init.3 SSLeay_add_ssl_algorithms.3 \
+		SSL_rstate_string.3 SSL_rstate_string_long.3 \
 		SSL_set_connect_state.3 SSL_get_accept_state.3 \
 		SSL_set_shutdown.3 SSL_get_shutdown.3 \
+		SSL_state_string.3 SSL_state_string_long.3 \
+		SSL_want.3 SSL_want_nothing.3 \
+		SSL_want.3 SSL_want_read.3 \
+		SSL_want.3 SSL_want_write.3 \
+		SSL_want.3 SSL_want_x509_lookup.3 \
 		X509_NAME_ENTRY_get_object.3 X509_NAME_ENTRY_create_by_NID.3 \
 		X509_NAME_ENTRY_get_object.3 X509_NAME_ENTRY_create_by_OBJ.3 \
 		X509_NAME_ENTRY_get_object.3 X509_NAME_ENTRY_create_by_txt.3 \
@@ -630,6 +657,7 @@ MLINKS=		dgst.1 md4.1 \
 		X509_NAME_get_index_by_NID.3 X509_NAME_get_text_by_OBJ.3 \
 		X509_NAME_print_ex.3 X509_NAME_oneline.3 \
 		X509_NAME_print_ex.3 X509_NAME_print.3 \
+		X509_NAME_print_ex.3 X509_NAME_print_ex_fp.3 \
 		X509_new.3 X509_free.3 \
 		blowfish.3 BF_cbc_encrypt.3 \
 		blowfish.3 BF_cfb64_encrypt.3 \
@@ -681,6 +709,8 @@ MLINKS=		dgst.1 md4.1 \
 		d2i_DSAPublicKey.3 i2d_DSAPublicKey.3 \
 		d2i_DSAPublicKey.3 i2d_DSA_PUBKEY.3 \
 		d2i_DSAPublicKey.3 i2d_DSA_SIG.3 \
+		d2i_PKCS8PrivateKey.3 d2i_PKCS8PrivateKey_bio.3 \
+		d2i_PKCS8PrivateKey.3 d2i_PKCS8PrivateKey_fp.3 \
 		d2i_PKCS8PrivateKey.3 i2d_PKCS8PrivateKey_bio.3 \
 		d2i_PKCS8PrivateKey.3 i2d_PKCS8PrivateKey_fp.3 \
 		d2i_PKCS8PrivateKey.3 i2d_PKCS8PrivateKey_nid_bio.3 \
@@ -694,10 +724,13 @@ MLINKS=		dgst.1 md4.1 \
 		d2i_RSAPublicKey.3 i2d_RSA_PUBKEY.3 \
 		d2i_SSL_SESSION.3 i2d_SSL_SESSION.3 \
 		d2i_X509.3 i2d_X509.3 \
+		d2i_X509.3 d2i_X509_REQ_bio.3 \
+		d2i_X509.3 d2i_X509_REQ_fp.3 \
 		d2i_X509.3 i2d_X509_bio.3 \
 		d2i_X509.3 i2d_X509_fp.3 \
 		d2i_X509_ALGOR.3 i2d_X509_ALGOR.3 \
 		d2i_X509_CRL.3 d2i_509_CRL_fp.3 \
+		d2i_X509_CRL.3 d2i_X509_bio.3 \
 		d2i_X509_CRL.3 i2d_X509_CRL.3 \
 		d2i_X509_CRL.3 i2d_X509_CRL_bio.3 \
 		d2i_X509_CRL.3 i2d_X509_CRL_fp.3 \
@@ -706,6 +739,8 @@ MLINKS=		dgst.1 md4.1 \
 		d2i_X509_REQ.3 i2d_X509_REQ_bio.3 \
 		d2i_X509_REQ.3 i2d_X509_REQ_fp.3 \
 		d2i_X509_SIG.3 i2d_X509_SIG.3 \
+		d2i_X509_REQ.3 d2i_X509_fp.3 \
+		d2i_X509_REQ.3 d2i_X509_CRL_bio.3 \
 		des.3 DES_cbc_cksum.3 \
 		des.3 DES_cfb64_encrypt.3 \
 		des.3 DES_cfb_encrypt.3 \
@@ -747,6 +782,7 @@ MLINKS=		dgst.1 md4.1 \
 		lh_stats.3 lh_node_stats_bio.3 \
 		lh_stats.3 lh_node_usage_stats.3 \
 		lh_stats.3 lh_node_usage_stats_bio.3 \
+		lh_stats.3 lh_stats_bio.3 \
 		lhash.3 lh_delete.3 \
 		lhash.3 lh_doall.3 \
 		lhash.3 lh_doall_arg.3 \
