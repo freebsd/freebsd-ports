@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	cclient
-PORTVERSION=	2001a
+PORTVERSION=	2002
 PORTEPOCH=	1
 CATEGORIES=	mail devel
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/ \
 		http://atreides.freenix.no/~anders/ \
 		ftp://ftp.funet.fi/pub/mirrors/ftp.cac.washington.edu/imap/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
-MASTER_SITE_SUBDIR=	. old
-DISTNAME=	imap-2001a
+DISTNAME=	imap-${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	anders@FreeBSD.org
@@ -22,11 +21,11 @@ MAINTAINER=	anders@FreeBSD.org
 INSTALLS_SHLIB=	yes
 ALL_TARGET=	bsf
 .if defined(WITH_SSL)
-MAKE_ARGS+=	SSLTYPE=unix
+MAKE_ARGS+=	SSLTYPE=unix.nopwd
 USE_OPENSSL=	yes
 .endif
 
-WRKSRC=		${WRKDIR}/imap-2001a
+WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_REINPLACE=	yes
 
 SHLIBBASE=	c-client4
@@ -35,9 +34,6 @@ SHLIBNAME=	lib${SHLIBBASE}.so.${SHLIBMAJ}
 MAKE_ENV=	SHLIBNAME=${SHLIBNAME} SHLIBBASE=${SHLIBBASE}
 PLIST_SUB=	SHLIBNAME=${SHLIBNAME} SHLIBBASE=${SHLIBBASE}
 
-PREFIX_FIX_FILES=	Makefile src/osdep/unix/Makefile \
-			src/osdep/unix/Makefile.gss
-
 .include <bsd.port.pre.mk>
 
 .if ${PORTOBJFORMAT} == "aout"
@@ -45,7 +41,7 @@ SHLIBNAME=	lib${SHLIBBASE}.so.${SHLIBMAJ}.0
 .endif
 
 post-patch:
-.for file in ${PREFIX_FIX_FILES}
+.for file in Makefile src/osdep/unix/Makefile src/osdep/unix/Makefile.gss
 	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g" ${WRKSRC}/${file}
 .endfor
 

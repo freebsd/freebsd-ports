@@ -1,12 +1,13 @@
---- src/osdep/unix/Makefile.orig	Tue Jul  3 08:02:10 2001
-+++ src/osdep/unix/Makefile	Mon Oct  1 10:13:43 2001
+--- src/osdep/unix/Makefile.orig	Mon Oct 14 15:45:24 2002
++++ src/osdep/unix/Makefile	Tue Nov 26 01:44:27 2002
 @@ -22,18 +22,18 @@
  
  EXTRAAUTHENTICATORS=
  EXTRADRIVERS=mbox
 -PASSWDTYPE=std
+-SSLTYPE=nopwd
 +PASSWDTYPE=pam
- SSLTYPE=none
++SSLTYPE=nopwd.nopwd
  
  
  # Extended flags needed for SSL.  You may need to modify.
@@ -129,14 +130,19 @@
  	osdep.h env_unix.h tcp_unix.h \
  	osdep.c env_unix.c fs_unix.c ftl_unix.c nl_unix.c tcp_unix.c \
  	auths.c crexcl.c flocksim.c nfstest.c flcksafe.c fsync.c gethstid.c \
-@@ -824,7 +841,12 @@
+@@ -824,12 +841,17 @@
  	write.c sslstdio.c \
  	strerror.c strpbrk.c strstr.c strtok.c strtoul.c \
  	OSCFLAGS
--	`$(CAT) CCTYPE` -c `$(CAT) CFLAGS` `$(CAT) OSCFLAGS` -c osdep.c
 +
 +osdep.o: $(OSDEPS)
-+	$(CC) $(CFLAGS) `$(CAT) OSCFLAGS` -c osdep.c
++	 $(CC) $(CFLAGS) `$(CAT) OSCFLAGS` -c osdep.c
+ 	@echo Building OS-dependent module
+ 	@echo If you get No such file error messages for files x509.h, ssl.h,
+ 	@echo pem.h, buffer.h, bio.h, and crypto.h, that means that OpenSSL
+ 	@echo is not installed on your system.  Either install OpenSSL first
+ 	@echo or build with command: make `$(CAT) OSTYPE` SSLTYPE=none
+-	`$(CAT) CCTYPE` -c `$(CAT) CFLAGS` `$(CAT) OSCFLAGS` -c osdep.c
 +
 +osdep.so: $(OSDEPS)
 +	$(CC) -fpic -DPIC -c $(CFLAGS) `cat OSCFLAGS` osdep.c -o $@
