@@ -1,6 +1,6 @@
---- unix/Makefile.orig	Fri Oct 24 11:38:04 1997
-+++ unix/Makefile	Sat Jan 22 16:56:34 2000
-@@ -16,7 +16,7 @@
+--- unix/Makefile.orig	Mon Nov 29 14:22:42 1999
++++ unix/Makefile	Tue Feb 15 21:41:55 2000
+@@ -17,7 +17,7 @@
  LN = ln -s
  
  # (to use the Gnu compiler, change cc to gcc in CC)
@@ -9,3 +9,12 @@
  BIND = $(CC)
  AS = $(CC) -c
  E =
+@@ -45,7 +45,7 @@
+ #   CFLAGS    flags for C compile
+ #   LFLAGS1   flags after output file spec, before obj file list
+ #   LFLAGS2   flags after obj file list (libraries, etc)
+-CFLAGS = -O2 -I. -DUNIX $(LOCAL_ZIP)
++CFLAGS += -I. -DUNIX $(LOCAL_ZIP)
+ LFLAGS1 =
+ LFLAGS2 = -s
+ 
