@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-Bulkmail
-PORTVERSION=	3.07
+PORTVERSION=	3.09
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
@@ -23,7 +23,7 @@ MAN3=		Mail::Bulkmail.3 Mail::Bulkmail::Dynamic.3 \
 
 post-patch:
 	${PERL} -pi -e '$$_="" if /^use 5/;' \
-		-e '$$_="" if /use warnings/;' \
+		-e '$$_="" if /(use|no) warnings/;' \
 		${WRKSRC}/Bulkmail.pm ${WRKSRC}/Bulkmail/Object.pm \
 		${WRKSRC}/Bulkmail/Dynamic.pm \
 		${WRKSRC}/Bulkmail/Server.pm \
