@@ -1,0 +1,21 @@
+--- Docs/Makefile.in.orig	Fri Mar  5 15:59:43 2004
++++ Docs/Makefile.in	Fri Mar  5 16:00:00 2004
+@@ -446,7 +446,7 @@
+ 
+ all:			$(targets) txt_files
+ 
+-txt_files:		../INSTALL-SOURCE ../COPYING ../INSTALL-WIN-SOURCE \
++txt_files:		../INSTALL-SOURCE ../COPYING \
+ 			INSTALL-BINARY ../support-files/MacOSX/ReadMe.txt
+ 
+ CLEAN_FILES:		$(BUILD_SOURCES)
+@@ -609,9 +609,6 @@
+ 
+ ../INSTALL-SOURCE:	mysql.info $(GT)
+ 	perl -w $(GT) mysql.info "Installing" "Tutorial" > $@
+-
+-../INSTALL-WIN-SOURCE:	mysql.info $(GT)
+-	perl -w $(GT) mysql.info "Windows source build" "Post-installation" > $@
+ 
+ # We put the description for the binary installation here so that
+ # people who download source wont have to see it. It is moved up to
