@@ -1,11 +1,6 @@
-Index: lib/portinfo.rb
-===================================================================
-RCS file: /home/cvs/pkgtools/lib/portinfo.rb,v
-retrieving revision 1.16
-diff -u -r1.16 portinfo.rb
---- lib/portinfo.rb	8 Nov 2002 17:18:27 -0000	1.16
-+++ lib/portinfo.rb	21 Jun 2004 17:36:11 -0000
-@@ -17,9 +17,9 @@
+--- lib/portinfo.rb.orig	Sat Nov  9 02:18:27 2002
++++ lib/portinfo.rb	Tue Jun 22 13:07:48 2004
+@@ -17,11 +17,9 @@
      line.is_a?(String) or raise ArgumentError,
        "You must specify a one line text of port info."
  
@@ -13,7 +8,9 @@ diff -u -r1.16 portinfo.rb
 +    values = line.chomp.split(FIELD_SEPARATOR)
  
 -    if values.size != NFIELDS || values[NFIELDS - 1].index(FIELD_SEPARATOR)
-+    if values.size < NFIELDS || values[NFIELDS - 1].index(FIELD_SEPARATOR)
-       raise ArgumentError, "Port info line must consist of #{NFIELDS} fields."
-     end
+-      raise ArgumentError, "Port info line must consist of #{NFIELDS} fields."
+-    end
++    values.push("") while values.size < NFIELDS
+ 
+     @attr = {}
  
