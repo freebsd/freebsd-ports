@@ -50,6 +50,7 @@ lib/dotfile-2.2/Generator/save.tcl
 lib/dotfile-2.2/Generator/parse.tcl
 lib/dotfile-2.2/Generator/menus.tcl
 lib/dotfile-2.2/Generator/makeHelp.tcl
+lib/dotfile-2.2/Generator/makeHelp.orig
 lib/dotfile-2.2/Generator/makeHelp
 lib/dotfile-2.2/Generator/mail.tcl
 lib/dotfile-2.2/Generator/load.tcl
