@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	smtpscan
-PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTVERSION=   0.4
 CATEGORIES=	security mail perl5
 MASTER_SITES=	http://www.greyhats.org/outils/smtpscan/
 

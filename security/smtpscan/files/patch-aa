@@ -1,6 +1,6 @@
---- configure.orig	Sun Dec  1 19:13:29 2002
-+++ configure	Sun Dec  1 19:17:43 2002
-@@ -9,42 +9,51 @@
+--- configure.orig     Sun May  4 23:36:44 2003
++++ configure  Sun May  4 23:40:21 2003
+@@ -10,45 +10,54 @@
  BINDIR="$DESTDIR/bin"
  MANDIR="$DESTDIR/man/man1"
  
@@ -64,7 +64,10 @@
 +if [ "$1" = "build" ]
 +then
  perl -i -pe "s{(\\\$LOCAL_SHARE\s+=\s+)'/usr/local/share';}{\$1'$SHAREDIR';};" ./src/smtpscan
- perl -i -pe "s{\\@prefix\\@}{$DESTDIR};" ./docs/man/smtpscan.1
+ perl -i -pe "s{\\@prefix\\@}{$SHAREDIR};" ./docs/man/smtpscan.1
+ perl -i -pe "s{\\@VERSION\\@}{$VERSION};" ./src/smtpscan
+ perl -i -pe "s{\\@VERSION\\@}{$VERSION};" ./INSTALL
+ perl -i -pe "s{\\@VERSION\\@}{$VERSION};" ./docs/man/smtpscan.1
 +fi
  
 +if [ "$1" = "install" ]
