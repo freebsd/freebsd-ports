@@ -12,4 +12,5 @@ share/doc/dopewars/metaserver.html
 share/doc/dopewars/server.html
 share/doc/dopewars/servercommands.html
 share/doc/dopewars/windows.html
+share/dopewars.sco
 @dirrm share/doc/dopewars
