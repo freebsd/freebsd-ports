@@ -1,0 +1,20 @@
+--- Makefile.orig	Fri Oct  3 18:00:32 2003
++++ Makefile	Fri Oct  3 18:01:51 2003
+@@ -1,5 +1,7 @@
++CC ?= gcc
++CFLAGS+=-DFREEBSD
+ DESTDIR=
+-prefix=/usr/local
++prefix=${PREFIX}
+ 
+ all:
+ 	@case "`uname -s`" in \
+@@ -19,7 +21,7 @@
+ 	gcc -DLINUX -Wall -o trfs trfs.c
+ 
+ freebsd:
+-	gcc -DFREEBSD -Wall -o trfs trfs.c
++	$(CC) $(CFLAGS) -o trfs trfs.c
+ 
+ trfs:
+ 	make all
