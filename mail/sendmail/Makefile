@@ -135,7 +135,7 @@ post-install:
 	 ${WRKSRC}/obj.`${WRKSRC}/devtools/bin/Build -A`/libsmdb/libsmdb.a \
 	 ${PREFIX}/lib/
 .endif
-	${INSTALL_DATA} ${WRKSRC}/sm-client.sh \
+	${INSTALL_SCRIPT} ${WRKSRC}/sm-client.sh \
 		${PREFIX}/etc/rc.d/sm-client.sh.sample
 	${CHOWN} smmsp:smmsp /var/spool/clientmqueue
 	${CHMOD} 770 /var/spool/clientmqueue
