@@ -9,7 +9,7 @@ PORTNAME=	http_load
 PORTVERSION=	20010405
 CATEGORIES=	www
 MASTER_SITES=	http://www.acme.com/software/http_load/
-DISTNAME=	http_load_05apr2001
+DISTNAME=	${PORTNAME}-05apr2001
 
 MAINTAINER=	ask@valueclick.com
 
