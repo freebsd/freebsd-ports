@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kdepim
-PORTVERSION=	2.1
+PORTVERSION=	2.1.1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/src
