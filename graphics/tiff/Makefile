@@ -113,10 +113,4 @@ MLINKS=	TIFFError.3t          TIFFSetErrorHandler.3t \
 	TIFFtile.3t           TIFFTileRowSize.3t \
 	TIFFtile.3t           TIFFVTileSize.3t
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502101
-BROKEN=	configure stops waiting for stdin
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
