@@ -29,7 +29,7 @@ do-install:
 	${MKDIR} ${PREFIX}/include/ctags ${PREFIX}/lib/ctags
 	${INSTALL_DATA} ${WRKSRC}/readtags.h ${PREFIX}/include/ctags/
 	${INSTALL_DATA} ${WRKSRC}/readtags.o ${PREFIX}/lib/ctags/
-	@${SED} 's:%%PREFIX%%:'${PREFIX}':' < pkg-message > ${PKGMESSAGE}
+	@${SED} 's:%%PREFIX%%:'${PREFIX}':' < ${PKGDIR}/pkg-message > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
