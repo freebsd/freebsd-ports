@@ -25,6 +25,7 @@
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/plruby/plp
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/plruby/plt
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/plruby
+%%PORTDOCS%%%%RUBY_DOCDIR%%/plruby/Changes
 %%PORTDOCS%%%%RUBY_DOCDIR%%/plruby/README.en
 %%PORTDOCS%%%%RUBY_DOCDIR%%/plruby/plruby.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/plruby/plruby.rd

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	plruby
-PORTVERSION=	0.2.5
-PORTREVISION=	1
+PORTVERSION=	0.2.7
 CATEGORIES=	databases ruby
 MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/
 PKGNAMEPREFIX=	postgresql-
@@ -30,7 +29,7 @@ CONFIGURE_ARGS=		--with-pgsql-version="${PGSQL_VERSION}" \
 			--with-pgsql-lib="${LOCALBASE}/lib"
 INSTALL_TARGET=	site-install
 
-DOCS=		README.en plruby.html plruby.rd
+DOCS=		Changes README.en plruby.html plruby.rd
 
 PKGMESSAGE=	${WRKDIR}/createlang.sql
 
