@@ -9,7 +9,7 @@ PORTNAME=	xroads
 PORTVERSION=	0.6
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://linux.tucows.com/files/x11/entertain/
+MASTER_SITES=	http://math.smsu.edu/~erik/files/fbsd/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	erik@smluc.org
