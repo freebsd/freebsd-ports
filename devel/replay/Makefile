@@ -1,0 +1,17 @@
+# New ports collection makefile for:	replay
+# Date created:				22 Apr 2003
+# Whom:					alfred@freebsd.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	replay
+PORTVERSION=	1.0.0
+CATEGORIES=	devel
+MASTER_SITES=	http://people.freebsd.org/~alfred/sources/replay/
+USE_BZIP2=	dongs
+
+MAINTAINER=	alfred@FreeBSD.org
+COMMENT=	A program that helps you fix a build interactively.
+
+.include <bsd.port.mk>
