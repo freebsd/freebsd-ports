@@ -1,0 +1,8 @@
+The Binder is a file manager program that was made for
+the JDE desktop enviropment on X Window System.
+
+Note that both x11-fm/binder and japanese/binder are mutually exclusive and 
+SHOULD NOT BE INSTALLED SIMULTANEOUSLY!
+
+-KIRIYAMA Kazuhiko
+<kiri@pis.toba-cmt.ac.jp>
