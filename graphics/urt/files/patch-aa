@@ -124,7 +124,7 @@ diff -ur ../urt-3.1b-orig/config/urt ./config/urt
 -INCTIFF = -I$(TIFFDIR)
 -LIBTIFF = $(TIFFDIR)/libtiff.a
 +##defpath TIFFDIR
-+INCTIFF = -I/usr/local/include
++INCTIFF = -I/usr/local/include/tiff
 +LIBTIFF = -L/usr/local/lib -ltiff
  #endif
  
