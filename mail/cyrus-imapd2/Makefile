@@ -32,7 +32,8 @@ CONFIGURE_ARGS=	--with-cyrus-prefix=${PREFIX}/cyrus \
 		--with-sasl=${LOCALBASE} \
 		--with-bdb-libdir=${LOCALBASE}/lib \
 		--with-auth=unix \
-		--with-com_err
+		--with-com_err \
+		--with-perl=${PERL5}
 
 .if defined(WITH_BDB_VER)
 USE_BDB_VER=	${WITH_BDB_VER}

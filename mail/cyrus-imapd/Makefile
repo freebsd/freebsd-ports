@@ -32,7 +32,8 @@ CONFIGURE_ARGS=	--with-cyrus-prefix=${PREFIX}/cyrus \
 		--with-sasl=${LOCALBASE} \
 		--with-dbdir=${LOCALBASE} \
 		--with-auth=unix \
-		--with-com_err
+		--with-com_err \
+		--with-perl=${PERL5}
 
 .if defined(WITH_SNMP)
 # It seems not compilable due to lack of auto_nlist_value() in libucdagent.
