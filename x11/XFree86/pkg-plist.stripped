@@ -1,4 +1,6 @@
 bin/SuperProbe
+bin/X
+bin/XF86_SVGA
 bin/Xvfb
 bin/appres
 bin/atobm
