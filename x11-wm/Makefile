@@ -53,6 +53,7 @@
     SUBDIR += mlvwm
     SUBDIR += mosfet-liquid
     SUBDIR += olvwm
+    SUBDIR += openbox
     SUBDIR += oroborus
     SUBDIR += phluid
     SUBDIR += piewm
