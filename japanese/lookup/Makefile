@@ -36,6 +36,12 @@ CONFIGURE_ARGS= --with-emacs=${EMACS_CMD} \
 		--with-lispdir=${ELISPDIR} \
 		--infodir=${PORTINFODIR}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not build on FreeBSD >= 5.x"
+.endif
+
 post-install:
 .if (${EMACS_PORT_NAME} == "xemacs21-mule")
 	${RM} -f ${WRKDIR}/${MANIFEST}
@@ -47,4 +53,4 @@ post-install:
 		${EMACSDIR}/pkginfo/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
