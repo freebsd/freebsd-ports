@@ -24,6 +24,7 @@
     SUBDIR += ixj
     SUBDIR += java-commapi
     SUBDIR += java-commapi-freebsd
+    SUBDIR += kallers
     SUBDIR += kermit
     SUBDIR += kpsk
     SUBDIR += lrzsz
