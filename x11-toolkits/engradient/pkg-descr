@@ -1,0 +1,9 @@
+This is an engine-gradient theme based off of the IceGradient theme by JM
+Perez. It hacked to use normal scrollbars and real checkbox/radio buttons from
+the Mac2 theme engine, instead of the in/out buttons of the thinice and default
+theme (which i can never tell are in or out until i click one). Four different
+color schemes are provided along with the theme engine: A default grey, a
+thinice scheme, an emacs-like theme based off emacsdef, and a blue theme of
+my own creation.
+
+WWW: http://gtk.themes.org/themes.phtml?themeid=965938626
